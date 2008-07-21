@@ -1,0 +1,223 @@
+/*
+Theme Name: 3COL-RDMBAN RR
+Theme URI: http://takteekmedia.com/
+Version: 1.0
+Description: Black 3 column theme with 10 rotating banners.
+Author: TAKTEEK
+Author URI: http://takteekmedia.com/
+Tags: 3 column, right sidebar, widget ready, fixed width, rising sun, simple, black, gray
+*/
+
+/* -standards- */
+
+body {
+	background: #000000;
+	color: #ffffff;
+	font-family: "Arial";
+	font-size: .75em;
+	display: block;
+	}
+p {
+	text-align: justify;
+	}
+h2 {
+	color: #ffffff;
+	font-size: 1.5em;
+	font-weight: normal;
+	text-transform: uppercase;
+	}
+#content h2, #content h2 a {
+	color: #5fe062;
+	}
+#content h2 a:hover {
+	color: #404040;
+	}
+a {
+	color: #ffffff;
+	text-decoration: none;
+	}
+a:hover {
+	color: #5fe062;
+	}
+blockquote {
+	background: url("images/blockquote.jpg") no-repeat top left;
+	font-style: italic;
+	padding-left: 30px;
+	}
+
+/* -header- */
+
+#topbar {
+	padding: 10px 0 10px 0;
+	width: 860px;
+	}
+#banner {
+	border-top: 1px solid #252525;
+	border-bottom: 1px solid #252525;
+	height: 296px;
+	width: 860px;
+	}
+#banner img {
+	height: 296px;
+	width: 860px;
+	}
+
+/* -content- */
+
+#contentwrap {
+	margin-top: 20px;
+	width: 860px;
+	}
+#content {
+	float: left;
+	margin-right: 30px;
+	width: 500px;
+	}
+
+/* -navigation- */
+
+#navigationwrap1 {
+	margin-right: 30px;
+	}
+#navigationwrap1, #navigationwrap2 {
+	float: left;
+	}
+#navigation1, #navigation2 {
+	float: left;
+	width: 150px;
+	}
+#navigation1 h2 {
+	font-weight: normal;
+	text-transform: uppercase;
+	}
+#navigation1 h2.small, #navigation2 h2.small, #navigation1 h2.widgettitle, #navigation2 h2.widgettitle {
+	border-bottom: 1px dotted #404040;
+	color: #404040;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+	text-transform: none;
+	}
+#navigation1 ul, #navigation2 ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	}
+#navigation1 li, #navigation2 li {
+	list-style: none;
+	}
+#navigation1 ul li, #navigation2 ul li {
+	border-bottom: 1px dotted #252525;
+	padding: 3px 3px 3px 10px;
+	}
+#navigation1 ul li ul li, #navigation2 ul li ul li {
+	border: none;
+	padding: 3px 3px 3px 10px;
+	}
+
+/* -post and entries- */
+
+.date {
+	font-size: .9em;
+	font-weight: bold;
+	text-transform: uppercase;
+	}
+.postmetadata-top {
+	clear: both;
+	margin-top: -15px;
+	padding-bottom: 10px;
+	}
+.postmetadata-bottom {
+	background: #252525;
+	margin: 20px 0 40px 0;
+	padding: 3px;
+	}
+.postmetadata-bottom a {
+	color: #000000;
+	}
+.postmetadata-bottom a:hover {
+	color: #ffffff;
+	}
+.entry {
+	clear: both;
+	}
+.cat-slash {
+	color: #000000;
+	}
+
+/* -search form- */
+
+#searchsubmit {
+	display: none;
+	}
+#s {
+	background: #ffffff url("images/magnifier.png") no-repeat top left;
+	border: none;
+	padding: 1px 2px 1px 17px;
+	width: 250px;
+	}
+
+/* -footer- */
+
+#footer {
+	color: #404040;
+	padding: 30px 0 30px 0;
+	}
+#footer a {
+	color: #404040;
+	}
+
+/* -comments- */
+
+#comments {
+	clear: both;
+	border-top: 1px solid #ffffff;
+	margin-top: 30px;
+	padding-top: 20px;
+	}
+#comments2 {
+	clear: both;
+	border-top: 1px solid #ffffff;
+	margin-top: 30px;
+	padding-top: 20px;
+	}
+.comment-info-split {
+	clear: both;
+	}
+.commentmetadata {
+	text-transform: uppercase;
+	}
+.commentlist div.alt {
+	background: #252525;
+	color: #ffffff;
+	padding: 10px;
+	}
+.commentlist div {
+	padding: 10px;
+	}
+.comment-div {
+	display: block;
+	}
+.comment-left {
+	width: 30%;
+	}
+.comment-right {
+	width: 70%;
+	}
+
+/* -floats -*/
+
+.aligncenter,
+div.aligncenter {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.alignleft {
+   float: left;
+}
+
+.alignright {
+   float: right;
+}
