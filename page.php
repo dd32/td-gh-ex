@@ -4,7 +4,8 @@
 		<?php if (have_posts()) : ?>
 		<?php while (have_posts()) : the_post(); ?>
 		<div class="post" id="post-<?php the_ID(); ?>">
-			<div class="pagetitle"><?php the_title(); ?> <small><?php edit_post_link(); ?></small></div>
+			<div class="pagetitle"><?php the_title(); ?></div>
+			<div><?php edit_post_link(); ?></div>
 			<div align="center" class="entrywhole">
 				<div align="left" class="entry">
 					<?php the_content('Read more &raquo;'); ?>

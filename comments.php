@@ -30,7 +30,7 @@
 		<table width="100%" border="0" cellpadding="2" cellspacing="2">
 			<tbody>
 				<tr>
-					<td width="30%" valign="top"><cite><b><?php comment_author_link() ?></b></cite></td>
+					<td width="30%" valign="top"><div align="center"><cite><b><?php comment_author_link() ?></b></cite><br /><br /><?php echo get_avatar( $comment, 32 ); ?></div></td>
 					<td width="70%" valign="top"><small><?php comment_date('F jS, Y') ?></small> <small class="commentmetadata"><?php comment_time() ?></small> <small><?php edit_comment_link('Edit Comment','&nbsp;&nbsp;',''); ?></small>
 						<br />
 						<?php if ($comment->comment_approved == '0') : ?>

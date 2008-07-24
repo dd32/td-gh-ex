@@ -14,6 +14,11 @@
 			<?php wp_register(); ?>
 			<li><?php wp_loginout(); ?></li>
 			</ul>
+			<h2 class="small">RSS Feeds</h2>
+			<ul>
+				<li><a href="<?php bloginfo('rss2_url'); ?>">Entries (RSS)</a></li>
+				<li><a href="<?php bloginfo('comments_rss2_url'); ?>">Comments (RSS)</a></li>
+			</ul>
 			<?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar(1) ) : else : ?>
 			<?php endif; ?>
 		</div>

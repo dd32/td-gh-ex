@@ -1,11 +1,11 @@
 /*
 Theme Name: 10PAD2-Rising Sun
 Theme URI: http://takteekmedia.com/
-Version: 1.0
+Version: 1.1
 Description: White 2 column theme with an orange rising sun banner.
 Author: TAKTEEK
 Author URI: http://takteekmedia.com/
-Tags: 2 column, right sidebar, widget ready, fixed width, rising sun, simple, white, orange, black
+Tags: two columns, right sidebar, widget ready, fixed width, rising sun, simple, white, orange, black
 */
 
 /* -standards- */
@@ -157,6 +157,7 @@ blockquote {
 	}
 .entry {
 	border-bottom: 1px dotted #a9a9a9;
+	padding-bottom: 10px;
 	}
 
 /* -search form- */
