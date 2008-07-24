@@ -8,7 +8,7 @@
 	<script type="text/javascript">
 	// <![CDATA[
 	var rotator1 = {
-		path:   '<?php bloginfo('url'); ?>/wp-content/themes/3col-rdmbanv1/banners/',
+		path:   '<?php bloginfo('url'); ?>/wp-content/themes/3col-rdmban-rr/banners/',
 		images: ["3col-523-1.jpg", "3col-523-2.jpg", "3col-523-3.jpg", "3col-523-4.jpg", "3col-523-5.jpg", "3col-523-6.jpg", "3col-523-7.jpg", "3col-523-8.jpg", "3col-523-9.jpg", "3col-523-10.jpg"]
 		}
 	function getRandomImage(rObj) {

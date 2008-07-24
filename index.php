@@ -6,7 +6,7 @@
 			<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 			<div align="center" class="entrywhole">
 				<div class="postmetadata-top">
-					<div class="float-left"><small>Posted on <?php the_time('F j, Y') ?> <?php edit_post_link(); ?></small></div>
+					<div align="left"><small>Categores: <?php the_category(', '); ?><br />Posted on <?php the_time('F j, Y') ?> <?php edit_post_link(); ?></small></div>
 				</div>
 				<div align="left" class="entry">
 					<?php the_content('Read more &raquo;'); ?>
@@ -15,7 +15,7 @@
 					<?php comments_popup_link('Comments: 0', 'Comments: 1', 'Comments: %'); ?>
 				</div>
 				<div class="postmetadata-bottom" align="left">
-					Categories: <?php the_category(' <span class="cat-slash">/</span> '); ?>
+					Tags: <?php the_tags(''); ?>
 				</div>
 			</div>
 		</div>
