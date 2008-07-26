@@ -19,7 +19,6 @@
 
 <!-- You can start editing here. -->
 
-<div id="commentwrap">
 <?php if ($comments) : ?>
 	<h2 id="comments">There are <?php comments_number('No Comments', '1 Comments', '% Comments' );?> to this article</h2>
 
@@ -105,7 +104,6 @@
 <?php do_action('comment_form', $post->ID); ?>
 
 </form>
-</div>
 
 <?php endif; // If registration required and not logged in ?>
 
