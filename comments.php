@@ -19,9 +19,9 @@
 
 <!-- You can start editing here. -->
 
+<div id="commentwrap">
 <?php if ($comments) : ?>
-<div id="comments"></div>
-	<h3><?php comments_number('No Comments', '1 Comment', '% Comments' );?></h3>
+	<h2 id="comments">There are <?php comments_number('No Comments', '1 Comments', '% Comments' );?> to this article</h2>
 
 	<div class="commentlist">
 
@@ -31,8 +31,10 @@
 		<table width="100%" border="0" cellpadding="2" cellspacing="2">
 			<tbody>
 				<tr>
-					<td width="30%" valign="top"><div align="center"><cite><b><?php comment_author_link() ?></b></cite><br /><br /><?php echo get_avatar( $comment, 32 ); ?></div></td>
-					<td width="70%" valign="top"><small><?php comment_date('F jS, Y') ?></small> <small class="commentmetadata"><?php comment_time() ?></small> <small><?php edit_comment_link('Edit Comment','&nbsp;&nbsp;',''); ?></small>
+					<td width="10%" valign="top"><div align="center"><?php echo get_avatar( $comment, 32 ); ?></div></td>
+					<td width="90%" valign="top"><cite><?php comment_author_link() ?></cite> says:
+						<br />
+						<small><?php comment_date('m/d/Y') ?> <?php edit_comment_link('Edit Comment'); ?></small>
 						<br />
 						<?php if ($comment->comment_approved == '0') : ?>
 						<em>Your comment is awaiting moderation.</em>
@@ -68,8 +70,7 @@
 
 <?php if ('open' == $post->comment_status) : ?>
 
-<div id="comments2"></div>
-<h3 id="respond">Leave a Comment</h3>
+<h2 id="respond">Write a Comment</h2>
 
 <?php if ( get_option('comment_registration') && !$user_ID ) : ?>
 <p>You must be <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>">logged in</a> to post a comment.</p>
@@ -79,24 +80,24 @@
 
 <?php if ( $user_ID ) : ?>
 
-<p>Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="Log out of this account">Log out</a></p>
+<p>Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a> | <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="Log out of this account">Log out</a></p>
 
 <?php else : ?>
 
 <p><input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" tabindex="1" />
-<label for="author"><small>Name <?php if ($req) echo "*"; ?></small></label></p>
+<label for="author">Name <?php if ($req) echo "*"; ?></label></p>
 
 <p><input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="22" tabindex="2" />
-<label for="email"><small>Your E-Mail <?php if ($req) echo "*"; ?><br />(Your e-mail address will not be shown)</small></label></p>
+<label for="email">E-Mail <?php if ($req) echo "*"; ?> (Will not be shown)</label></p>
 
 <p><input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="22" tabindex="3" />
-<label for="url"><small>Website</small></label></p>
+<label for="url">Website URL</label></p>
 
 <?php endif; ?>
 
 <!--<p><small><strong>XHTML:</strong> You can use these tags: <code><?php echo allowed_tags(); ?></code></small></p>-->
 
-<p><textarea name="comment" id="comment" cols="40" rows="10" tabindex="4"></textarea></p>
+<p><textarea name="comment" id="comment" rows="" cols="" tabindex="4"></textarea></p>
 
 <p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
 <input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
@@ -104,6 +105,7 @@
 <?php do_action('comment_form', $post->ID); ?>
 
 </form>
+</div>
 
 <?php endif; // If registration required and not logged in ?>
 

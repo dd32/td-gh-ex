@@ -9,5 +9,9 @@
 			<ul>
 				<?php wp_list_cats('show_count=1'); ?>
 			</ul>
+			<h2 class="small">Latest Posts</h2>
+			<ul>
+				<?php wp_get_archives('type=postbypost&limit=5'); ?>
+			</ul>
 			<?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar(1) ) : else : ?>				<?php endif; ?>
 		</div>

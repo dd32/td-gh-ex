@@ -1,7 +1,7 @@
 /*
 Theme Name: 3COL-RDMBAN RR
 Theme URI: http://takteekmedia.com/
-Version: 1.1
+Version: 1.2
 Description: Black 3 column theme with 10 rotating banners.
 Author: TAKTEEK
 Author URI: http://takteekmedia.com/
@@ -24,13 +24,6 @@ h2 {
 	color: #ffffff;
 	font-size: 1.5em;
 	font-weight: normal;
-	text-transform: uppercase;
-	}
-#content h2, #content h2 a {
-	color: #5fe062;
-	}
-#content h2 a:hover {
-	color: #404040;
 	}
 a {
 	color: #ffffff;
@@ -39,19 +32,18 @@ a {
 a:hover {
 	color: #5fe062;
 	}
-blockquote {
-	background: url("images/blockquote.jpg") no-repeat top left;
-	font-style: italic;
-	padding-left: 30px;
+#navlink {
+	margin-bottom: 40px;
 	}
 
 /* -header- */
 
 #topbar {
-	padding: 10px 0 10px 0;
+	padding: 30px 0 10px 0;
 	width: 860px;
 	}
 #banner {
+	background: url("banners/rotator.php") no-repeat top left;
 	border-top: 1px solid #252525;
 	border-bottom: 1px solid #252525;
 	height: 296px;
@@ -81,6 +73,7 @@ blockquote {
 	}
 #navigationwrap1, #navigationwrap2 {
 	float: left;
+	margin-bottom: 40px;
 	}
 #navigation1, #navigation2 {
 	float: left;
@@ -106,6 +99,9 @@ blockquote {
 #navigation1 li, #navigation2 li {
 	list-style: none;
 	}
+#navigation1 ul li:hover , #navigation2 ul li:hover {
+	background: #252525;
+	}
 #navigation1 ul li, #navigation2 ul li {
 	border-bottom: 1px dotted #252525;
 	padding: 3px 3px 3px 10px;
@@ -117,10 +113,21 @@ blockquote {
 
 /* -post and entries- */
 
-.date {
-	font-size: .9em;
-	font-weight: bold;
+.post h2, .post h2 a {
+	color: #5fe062;
 	text-transform: uppercase;
+	}
+.post h2 a:hover {
+	color: #ffffff;
+	}
+.post img, .post object, .post embed {
+	display: block;
+	margin: 0 auto;
+	}
+.post blockquote {
+	background: url("images/blockquote.jpg") no-repeat top left;
+	font-style: italic;
+	padding-left: 30px;
 	}
 .postmetadata-top {
 	clear: both;
@@ -129,20 +136,18 @@ blockquote {
 	}
 .postmetadata-bottom {
 	background: #252525;
+	font-size: .9em;
 	margin: 20px 0 40px 0;
 	padding: 3px;
 	}
 .postmetadata-bottom a {
-	color: #000000;
+	color: #dadada;
 	}
 .postmetadata-bottom a:hover {
 	color: #ffffff;
 	}
 .entry {
 	clear: both;
-	}
-.cat-slash {
-	color: #000000;
 	}
 
 /* -search form- */
@@ -160,8 +165,11 @@ blockquote {
 /* -footer- */
 
 #footer {
+	border-top: 1px solid #252525;
+	clear: both;
 	color: #404040;
-	padding: 30px 0 30px 0;
+	padding: 10px 0 30px 0;
+	width: 860px;
 	}
 #footer a {
 	color: #404040;
@@ -171,18 +179,11 @@ blockquote {
 
 #comments {
 	clear: both;
-	border-top: 1px solid #ffffff;
-	margin-top: 30px;
-	padding-top: 20px;
 	}
-#comments2 {
+#respond {
+	border-top: #252525 1px solid;
 	clear: both;
-	border-top: 1px solid #ffffff;
-	margin-top: 30px;
-	padding-top: 20px;
-	}
-.comment-info-split {
-	clear: both;
+	padding-top: 30px;
 	}
 .commentmetadata {
 	text-transform: uppercase;
@@ -195,29 +196,26 @@ blockquote {
 .commentlist div {
 	padding: 10px;
 	}
-.comment-div {
-	display: block;
+.commentlist div blockquote {
+	border-left: 3px solid #404040;
+	padding-left: 10px;
 	}
-.comment-left {
-	width: 30%;
-	}
-.comment-right {
-	width: 70%;
+#comment {
+	height: 200px;
+	width: 500px;
 	}
 
 /* -floats -*/
 
 .aligncenter,
 div.aligncenter {
-   display: block;
-   margin-left: auto;
-   margin-right: auto;
-}
-
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	}
 .alignleft {
-   float: left;
-}
-
+	float: left;
+	}
 .alignright {
-   float: right;
-}
+	float: right;
+	}
