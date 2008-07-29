@@ -15,7 +15,7 @@
 
         <p class="author">
 				  Posted by <cite><?php the_author() ?></cite> on
-          <abbr class="published" title="<?php the_time('Y-m-d\TH:i:s') ?>"><span class="posted_date" title="<?php the_time('Y-m-d H:i:sP') ?>"><?php the_time('F d, Y') ?></span></abbr>
+          <span class="published posted_date" title="<?php the_time('Y-m-d H:i:sP') ?>"><?php the_time('F d, Y') ?></span>
         </p>
 				
 				<div class="content">
@@ -23,7 +23,8 @@
 				</div>
 		
 				<ul class="meta">
-          <li class="tags"><?php the_tags(); ?></li>
+	<li class="categories">Category: <?php the_category(', ') ?></li>
+	<li class="tags"><?php the_tags(); ?></li>
           <li>Meta:
             <?php comments_popup_link('no comments', '1 comment', '% comments'); ?>,
             <a href="<?php the_permalink() ?>" rel="bookmark">permalink</a>,

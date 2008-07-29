@@ -17,7 +17,7 @@
         <span class="vcard">
           Posted by <span class="fn"><?php the_author() ?></span>
         </span>
-        <abbr class="published" title="<?php the_time_xml() ?>"><span class="posted_date" title="<?php the_time('Y-m-d H:i:sP') ?>">on <?php the_time('F d, Y') ?></span></abbr>
+        <span class="published posted_date" title="<?php the_time('Y-m-d H:i:sP') ?>">on <?php the_time('F d, Y') ?></span>
       </div>
       <br class="clear" />	
 			<div class="entry-content">
@@ -26,7 +26,8 @@
 				<?php link_pages('<p><strong>Pages:</strong> ', '</p>', 'number'); ?>
 			</div>
       <ul class="meta">
-        <li class="tags"><?php the_tags(); ?></li>
+	  <li class="categories">Category: <?php the_category(', ') ?></li>
+	  <li class="tags"><?php the_tags(); ?></li>
         <li>Meta:
           <a href="#comments"><?php comments_number('no comments', '1 comment', '% comments'); ?></a>,
           <a href="<?php the_permalink() ?>" rel="bookmark">permalink</a>,

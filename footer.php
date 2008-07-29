@@ -14,7 +14,7 @@
 
 <!-- Original theme design by Packagethief - http://quotedprintable.com/pages/scribbish -->
 <!-- WordPress theme port by Kenny Pitt - http://pittcrew.net/geekblog/scribbishwp -->
-<!-- WordPress 2.5 update by the Simplish project - http://labs.utopian.net/blogs/simplish/ -->
+<!-- Further development and maintenance by the Simplish project - http://labs.utopian.net/blogs/simplish/ -->
 <?php ?>
 
 		<?php wp_footer(); ?>

@@ -15,13 +15,14 @@
           <span class="vcard">
             Posted by <span class="fn"><?php the_author() ?></span>
           </span>
-          <abbr class="published" title="<?php the_time_xml() ?>"><span class="posted_date" title="<?php the_time('Y-m-d H:i:sP') ?>">on <?php the_time('F d, Y') ?></span></abbr>
+          <span class="published posted_date" title="<?php the_time('Y-m-d H:i:sP') ?>">on <?php the_time('F d, Y') ?></span>
         </div>
 			  <br class="clear" />	
 				<div class="entry-content">
 					<?php the_content('Continue reading...'); ?>
 				</div>
 				<ul class="meta">
+	<li class="categories">Category: <?php the_category(', ') ?></li>
           <li class="tags"><?php the_tags(); ?></li>
           <li>Meta:
             <?php comments_popup_link('no comments', '1 comment', '% comments'); ?>,

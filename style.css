@@ -3,7 +3,7 @@ Theme Name: Simplish
 Theme URI: http://labs.utopian.net/blogs/simplish/
 Description: Simplish is a WordPress variant of the Scribbish theme for blogs.
 TAGS: two column, fixed width, widgets, galleries, tags, microformats, hatom, scribbish
-Version: 1.3.3
+Version: 1.5.3
 Author: Simplish Project
 Author URI: http://labs.utopian.net/blogs/simplish/
 */
@@ -407,10 +407,6 @@ span.caps {
 	background-color: #eeeeee;
 	padding-top: 4px;
 	margin: 10px;
-	-moz-border-radius: 3px;
-	-khtml-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
 }
 .wp-caption img {
 	margin: 0;

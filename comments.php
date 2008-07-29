@@ -37,9 +37,9 @@
       <?php foreach ($comments as $comment) : ?>
 
         <li class="comment" id="comment-<?php comment_ID() ?>">
-          <div class="author">
+          <div class="author vcard">
 	 <?php if(function_exists('get_avatar')) { echo get_avatar($comment, '48'); } ?>
-            <cite><?php comment_author_link() ?></cite>
+            <cite class="fn n"><?php comment_author_link() ?></cite>
             <abbr title="<?php comment_time('Y-m-d H:i:sP') ?>"><?php comment_time('M d, Y H:i') ?></abbr>
             <?php if ($comment->comment_approved == '0') : ?>
             <em>Your comment is awaiting moderation.</em>
