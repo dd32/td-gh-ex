@@ -13,7 +13,7 @@
 <table border="0" cellspacing="0" cellpadding="0" id="topbar">
 	<tbody>
 		<tr>
-			<td width="50%" valign="top"><div align="left"><strong><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></strong> | <?php bloginfo('description'); ?></div></td>
+			<td width="50%" valign="top"><div align="left"><span class="title"><strong><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></strong></span> | <?php bloginfo('description'); ?></div></td>
 			<td width="50%" valign="top"><div align="right"><?php include (TEMPLATEPATH . '/searchform.php'); ?></div></td>
 		</tr>
 	</tbody>
