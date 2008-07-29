@@ -11,7 +11,7 @@
 <table border="0" cellspacing="0" cellpadding="0" id="topbar">
 	<tbody>
 		<tr>
-			<td width="50%" valign="middle"><div align="left"><span class="blogtitle"><?php bloginfo('name'); ?></span> <span class="blogdescription"><?php bloginfo('description'); ?></span></div></td>
+			<td width="50%" valign="middle"><div align="left"><span class="blogtitle"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></span> <span class="blogdescription"><?php bloginfo('description'); ?></span></div></td>
 			<td width="50%" valign="middle"><div align="right"><?php include (TEMPLATEPATH . '/searchform.php'); ?></div></td>
 		</tr>
 	</tbody>
