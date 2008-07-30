@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: basic2col.pot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-18 19:13+0100\n"
-"PO-Revision-Date: 2008-07-18 19:13+0100\n"
+"POT-Creation-Date: 2008-07-30 11:06+0100\n"
+"PO-Revision-Date: 2008-07-30 11:06+0100\n"
 "Last-Translator: Kristin K. Wangen <kristin@kzkw.net>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -61,7 +61,7 @@ msgid "Trackback"
 msgstr ""
 
 #: comments.php:31
-#: index.php:24
+#: index.php:26
 msgid "Comments closed"
 msgstr ""
 
@@ -84,7 +84,7 @@ msgstr ""
 #: page-archives.php:16
 #: single.php:13
 #: archive.php:46
-#: index.php:28
+#: index.php:30
 #: search.php:15
 msgid "Edit"
 msgstr ""
@@ -230,11 +230,11 @@ msgstr ""
 msgid "Theme: Basic2Col by Kristin K. Wangen"
 msgstr ""
 
-#: contentfooter.php:30
+#: contentfooter.php:32
 msgid "Powered by WordPress"
 msgstr ""
 
-#: contentfooter.php:33
+#: contentfooter.php:35
 #: sidebar.php:61
 msgid "Hosted by"
 msgstr ""
@@ -243,11 +243,11 @@ msgstr ""
 msgid "continued &raquo;"
 msgstr ""
 
-#: index.php:21
+#: index.php:23
 msgid "Comments to"
 msgstr ""
 
-#: index.php:22
+#: index.php:24
 #: sidebar.php:55
 msgid "Comments"
 msgstr ""
@@ -256,19 +256,23 @@ msgstr ""
 msgid "Search results for"
 msgstr ""
 
-#: functions.php:112
+#: functions.php:111
+msgid "- Tags:  "
+msgstr ""
+
+#: functions.php:120
 msgid "404 Not Found"
 msgstr ""
 
-#: functions.php:113
+#: functions.php:121
 msgid "Whatever you were looking for can not be found"
 msgstr ""
 
-#: functions.php:118
+#: functions.php:128
 msgid "Welcome to "
 msgstr ""
 
-#: functions.php:134
+#: functions.php:139
 msgid "Your comment is awaiting moderation"
 msgstr ""
 

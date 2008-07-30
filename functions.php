@@ -84,11 +84,12 @@ function basic2col_lang_init() {
 }
 add_action('init', 'basic2col_lang_init' );
 
+/*support for wpmu*/
 function is_basic2col_wpmu() {
 	return function_exists('is_site_admin');
 }
 
-/*custom css file support*/
+/*basic2col css files support*/
 function basic2col_css() { ?>
 
 	<link type="text/css" href="<?php bloginfo('template_url'); ?>/css/classes.css" media="all" rel="stylesheet" />
@@ -103,33 +104,41 @@ function basic2col_css() { ?>
 <?php } 
 
 
-
-
-
 /*filters */
 
+/*This filter allows you to remove the tag list from the frontpage or set it up differently*/
+function basic2col_tags_front() {
+	$tags = ' ' . the_tags(__('- Tags:  ','basic2col'), ', ', '') . ' ';
+
+	return apply_filters('basic2col_tags_front', $tagcode);
+
+}
+
+
+/*This filter let you change the 404 message*/
 function basic2col_404_message() {
 	$message = '<h2 id="pagetitle">'.__('404 Not Found','basic2col') .'</h2>
 	<p>'. __('Whatever you were looking for can not be found','basic2col') .'</p>';
 
 	return apply_filters('basic2col_404_message', $message);
 }
+
+/*This filter let you change the welcome message if you use a page on front*/
 function basic2col_welcome_message() {
 	$message = ''.__('Welcome to ','basic2col') . get_bloginfo('name') .'';
 
 	return apply_filters('basic2col_welcome_message', $message);
 }
-function basic2col_credits() {
-	$message = '';
 
-	return apply_filters('basic2col_credits', $message);
-}
-
+/*This filter let you change the doctype*/
 function basic2col_doctype() {
 	$doctype = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">';
 
 	return apply_filters('basic2col_doctype', $doctype);
 }
+
+
+/*This filter let you change the awaiting moderation message*/
 function basic2col_moderation_message() {
 	$message = ''.__('Your comment is awaiting moderation','basic2col').'';
 
@@ -220,11 +229,11 @@ function get_basic2col_archive($show_comment_count, $before, $after, $listclass)
 		));
 
 
-/*Bring on the basic2col widgets*/
+/*basic2col widgets*/
 function widget_basic2col_search() { ?>
 
 		<li id="search">
-		<form id="searchform" method="get" action="<?php bloginfo('url'); ?>/">
+		<form id="searchform" method="get" action="<?php bloginfo('url'); ?>">
 			<h2><label for="s"><?php _e('Search','basic2col'); ?></label></h2>
 			<div>
 				<input type="text" value="" name="s" id="s" />

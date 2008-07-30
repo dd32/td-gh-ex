@@ -17,9 +17,11 @@
 	<p class="postmeta">
 		<?php _e('Filed in','basic2col'); ?> <?php the_category(',') ?>
 
+		<?php echo basic2col_tags_front(); ?>		
+
 		<?php if(comments_open() || pings_open()) : ?>
-			<a href="<?php comments_link(); ?>" title="<?php _e('Comments to','basic2col'); ?> <?php the_title(); ?>">
-			- <?php comments_number('0','1','%'); ?> <?php _e('Comments','basic2col'); ?></a>
+			- <a href="<?php comments_link(); ?>" title="<?php _e('Comments to','basic2col'); ?> <?php the_title(); ?>">
+			<?php comments_number('0','1','%'); ?> <?php _e('Comments','basic2col'); ?></a>
 		<?php else : ?>
 			- <?php _e('Comments closed','basic2col'); ?>
 		<?php endif; ?>

@@ -10,7 +10,7 @@
 
 
 	<li id="search">
-	<form id="searchform" method="get" action="<?php get_bloginfo('url'); ?>/">
+	<form id="searchform" method="get" action="<?php bloginfo('url') ?>">
 	
 		<h2><label for="s"><?php _e('Search','basic2col'); ?></label></h2>
 		<div>
