@@ -22,12 +22,10 @@
 
 <body>
 <div id="topbar">
-<a href="/">Home</a>
-&nbsp;
-<a href="/about/">About</a>
-&nbsp;
-<a href="/contact/">Contact</a>
-&nbsp;
+<a href="<?php echo get_option('home'); ?>">Home</a>
+&nbsp; 
+<a href="http://wordpress.org/">Wordpress</a> 
+&nbsp; 
 <?php wp_loginout(); ?>
 
 </div>

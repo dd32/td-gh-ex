@@ -1,5 +1,5 @@
 <?php // Do not delete these lines
-	if ('comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
+	if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
 		die ('Please do not load this page directly. Thanks!');
 
 	if (!empty($post->post_password)) { // if there's a password
@@ -27,12 +27,17 @@
 
 	<?php foreach ($comments as $comment) : ?>
 
-		<li <?php echo $oddcomment; ?>id="comment-<?php comment_ID() ?>">
-			<cite><?php comment_author_link() ?>  </cite>| <small><a href="#comment-<?php comment_ID() ?>" title=""><?php comment_date('j/m/y') ?></a> <!-- at <?php comment_time() ?> --> <?php edit_comment_link('edit','&nbsp;&nbsp;',''); ?></small>
+		
+
+<li <?php echo $oddcomment; ?>id="comment-<?php comment_ID() ?>">
+			
+
+<?php if(function_exists('get_avatar')) { echo get_avatar($comment, '20'); } ?>
+
+<cite><?php comment_author_link() ?>  </cite>| <small><a href="#comment-<?php comment_ID() ?>" title=""><?php comment_date('j/m/y') ?></a> <!-- at <?php comment_time() ?> --> <?php edit_comment_link('edit','&nbsp;&nbsp;',''); ?></small>
 
 
-
-			<?php if ($comment->comment_approved == '0') : ?>
+ 			<?php if ($comment->comment_approved == '0') : ?>
 			<em>Your comment is awaiting moderation.</em>
 			<?php endif; ?>
 		 

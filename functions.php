@@ -11,5 +11,5 @@ register_sidebar(array('name'=>'sidebar2',
         'after_widget' => '',
         'before_title' => '<h4>',
         'after_title' => '</h4>',
-));
+)); 
 ?>

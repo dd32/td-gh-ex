@@ -30,10 +30,11 @@
 		<?php while (have_posts()) : the_post(); ?>
 		<div class="post">
 				<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-				<small><?php the_time('F jS, Y') ?> <!-- by <?php the_author() ?> --> |  <?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?> | Filed in <?php the_category(', ') ?> <?php edit_post_link('Edit'); ?>  </small>
+				<small><?php the_time('F jS, Y') ?>  by <?php the_author() ?> |  <?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?> | Filed in <?php the_category(', ') ?> <?php edit_post_link('Edit'); ?>  </small>
 
 				<div class="entry">
 					<?php the_content() ?>
+   <?php the_tags( '<p>Tags: ', ', ', '</p>'); ?>
 				</div>
  
 
@@ -49,7 +50,11 @@
 	<?php else : ?>
 
 		<h2 class="center">Not Found</h2>
-		<?php include (TEMPLATEPATH . '/searchform.php'); ?>
+		<form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
+<div><input type="text" value="<?php the_search_query(); ?>" name="s" id="s" size="30" />
+<input type="submit" id="searchsubmit" value="Search" />
+</div>
+</form>
 
 	<?php endif; ?>
 

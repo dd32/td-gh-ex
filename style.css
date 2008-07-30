@@ -1,15 +1,16 @@
 /*  
 Theme Name: QuickPress 
 Theme URI: http://www.quickonlinetips.com/archives/quickpress/
-Description: 3-column, widget-ready, SEO-optimized, Ad-ready, compatible wordpress theme by <a href="http://www.quickonlinetips.com/">Quick Online Tips</a>.
-Version: 1.0
+Description: 3 columns, widget ready, SEO optimized, Ad ready, compatible wordpress theme by <a href="http://www.quickonlinetips.com/">Quick Online Tips</a>.
+Version: 1.2
 Author: Quick Online Tips
 Author URI: http://www.quickonlinetips.com/
 Tags: blue, widget ready, fixed width, three columns, widgets, valid CSS, valid XHTML
 */
 
 
-/* Begin Typography & Colors */
+/* Begin Typography & Colors 
+------------------------------------- */
 body {
 	font-size: 70%;  
 	font-family: Georgia, "Times New Roman", Times, serif;  
@@ -24,9 +25,9 @@ body {
 	line-height: 1.3em;
         background: #444;
         padding: 7px;
-        width: 100%;
         margin: 0 0 20px 0;
-        color: #ccc;
+        color: #ccc; 
+        text-transform: uppercase;
         }
 
 #topbar a {
@@ -207,12 +208,10 @@ a:hover {
 .entry a:hover {
 	text-decoration: none;
         }   
+ 
 
-/* End Typography & Colors */
-
-
-
-/* Begin Structure */
+/* Begin Structure 
+------------------------------------- */
 body {
 	margin: 0 0 10px 0;
 	padding: 0; 
@@ -293,13 +292,11 @@ body {
 
 #footer a:hover {
 	color: #fff; 
-	}
-	
-/* End Structure */
+	} 
 
 
-
-/*	Begin Headers */
+/*	Begin Headers
+------------------------------------- */
 #content h1   {
 	margin: 30px 0 0;
 	}
@@ -332,12 +329,11 @@ h3 {
 h3.comments {
 	padding: 0;
 	margin: 40px auto 20px ;
-	}
-/* End Headers */
+	} 
 
 
-
-/* Begin Images */
+/* Begin Images
+------------------------------------- */
 p img {
 	padding: 0;
 	max-width: 100%;
@@ -371,12 +367,11 @@ img.alignleft {
 
 .alignleft {
 	float: left
-	}
-/* End Images */
+	} 
 
 
-
-/* Begin Lists */
+/* Begin Lists 
+------------------------------------- */
 
 html>body .entry ul {
 	margin-left: 0px;
@@ -434,12 +429,12 @@ ol li, #sidebar ul ol li {
 #sidebar ul ul li, #sidebar ul ol li {
 	margin: 6px 0 0;
 	padding: 0;
-	}
-/* End Entry Lists */
+	} 
 
 
 
-/* Begin Form Elements */
+/* Begin Form Elements
+------------------------------------- */
 #searchform {
 	margin: 10px auto;
 	padding: 5px 3px; 
@@ -477,12 +472,12 @@ select {
 #commentform #submit {
 	margin: 0;
 	float: right;
-	}
-/* End Form Elements */
+	} 
 
 
 
-/* Begin Comments*/
+/* Begin Comments
+------------------------------------- */
 .alt {
 	margin: 0;
 	padding: 10px;
@@ -490,6 +485,7 @@ select {
 
 .commentlist {
 	padding: 0;
+        margin: 0;
 	text-align: justify;
 	}
 
@@ -517,27 +513,34 @@ select {
 	margin: 0;
 	display: block;
 	}
-/* End Comments */
+
+img.avatar {
+        float:left; 
+        margin: 0;
+        padding: 0 4px 0 0; 
+        vertical-align:middle;
+        }
+ 
 
 
-
-/* Begin Sidebar */
+/* Begin Sidebar 
+------------------------------------- */
 #sidebar
 {
 	font-family: Arial, Helvetica, Sans-Serif;
 	padding: 20px 0 10px 0;
         margin-left: 565px;
-	width: 360px;
+	width: 370px;
         background: #fff;
-	font-size: 1.1em;
+	font-size: 1.1em; 
         }
 
 #adbox { 
         text-align: center;
-        padding: 6px 4px;
+        padding: 5px;
         margin: 0 0 5px 0;
         background: #f9f9f9;
-        border: 5px solid #ddd;
+        border: 2px solid #ddd;
         }
 
 #sidebar_low {
@@ -545,28 +548,29 @@ select {
 	}
 
 #l_sidebar {
-	width:165px;
+	width:170px;
 	float: left; 
-        padding: 0 0 5px 5px;
+        padding: 5px;
         border: 1px solid #DDD;
         background: #f9f9f9;
         }
 
 #r_sidebar {
-	width:165px;
+	width:170px;
 	float: right; 
-        padding: 0 0 5px 5px;
+        padding: 5px;
         background: #f9f9f9;
         border: 1px solid #DDD;
         }
 
+
 #sidebar form {
 	margin: 0;
-	}
-/* End Sidebar */
+	} 
 
 
-/* Begin Tags & Classes */
+/* Begin Tags & Classes 
+------------------------------------- */
 acronym, abbr, span.caps {
 	cursor: help;
 	}
@@ -603,10 +607,10 @@ a img {
 	text-align: center;
 	margin-top: 10px;
 	margin-bottom: 60px;
-	}
-/* End Tags & Classes*/
+	} 
 
-/* Captions */
+/* Captions 
+------------------------------------- */
 .aligncenter,
 div.aligncenter {
 	display: block;
@@ -620,10 +624,6 @@ div.aligncenter {
 	background-color: #f3f3f3;
 	padding-top: 4px;
 	margin: 10px;
-	-moz-border-radius: 3px;
-	-khtml-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
 }
 
 .wp-caption img {
@@ -637,5 +637,4 @@ div.aligncenter {
 	line-height: 17px;
 	padding: 0 4px 5px;
 	margin: 0;
-}
-/* End captions */
+} 
