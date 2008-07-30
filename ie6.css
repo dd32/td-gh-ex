@@ -1,0 +1,12 @@
+.narrowcolumn {
+	display: inline; /* corrects double margin float bug */
+}
+pre {
+	height: 80px; /* required to compensate for IE6 treating min-height as height */
+	margin: 0 16px 10px 0; /* required to see entire vertical scroll bar */
+	width: 90%;
+}
+.commentlist li pre {
+	/* controls text within <code> brackets within comments (pre is added automatically by codeautoescape plugin) */	
+	width: 90%;
+}
