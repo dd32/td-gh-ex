@@ -2,7 +2,7 @@
 Theme Name: ADSimple
 Theme URI:
 Description: Simple theme based on <a href="http://articlesss.com/article-directory-wordpress-theme/">Article Directory</a> theme.
-Version: 1.0
+Version: 1.0.1
 Author: Dimox
 Author URI: http://dimox.name/
 Tags: white, fixed width, three columns, widgets, right sidebar, simple
@@ -43,13 +43,41 @@ blockquote p {
 	font-size: 1em !important;
 	margin: 0;
 }
+.aligncenter,
 div.aligncenter {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
+img.aligncenter {margin: 7px margin}
 .alignleft {float: left}
+img.alignleft {margin: 5px 10px 3px 0}
 .alignright {float: right}
+img.alignright {margin: 5px 0 3px 10px}
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	/* optional rounded corners for browsers that support it */
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
+
 
 #wrapper {
 	width: 990px;
@@ -182,13 +210,6 @@ div.aligncenter {
 	padding: 1px 0 4px;
 	margin-bottom: 0.2em;
 	border-bottom: 1px solid #EEE;
-}
-
-#content img {
-	float: left;
-	border: 3px solid #eee;
-	padding: 1px;
-	margin: 5px 10px 5px 0;
 }
 
 #content p,
