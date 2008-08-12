@@ -102,7 +102,6 @@
 <?php query_posts('pagename=about');?>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 <?php the_content_rss('', FALSE, 'more_file', 20); ?>
-<br /><a href="/about/">&#8594; Read more...</a>
 </li></ul>
 <?php endwhile; endif; ?>  		
 <?php } ?>
@@ -125,7 +124,7 @@
                        
 <?php /* If this is the frontpage */ if ( is_home() || is_page() ) { ?>						
 		
-                        <h2><?php _e('Liens'); ?></h2>
+                        <h2><?php _e('Links'); ?></h2>
 				<ul>
 <?php get_links('-1', '<li>', '</li>', '<br />', FALSE, 'id', FALSE, FALSE, -1, FALSE); ?>
 				</ul>

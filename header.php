@@ -24,6 +24,8 @@
 </div>
 
 <div id="header">
-<div class="row2"></div>
+<div class="row2">
+<div class="log"><?php bloginfo('description'); ?></div>
+</div>
 </div>
 <hr />
