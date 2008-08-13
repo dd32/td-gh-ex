@@ -2,35 +2,35 @@ Wordpress Theme "Atahualpa" - INSTALLATION:
 
 * THIS THEME DOES NOT WORK WITH WORDPRESS 2.1 OR OLDER *
 
-1) After you've extracted the "atahualpa.zip" file on your desktop computer, you'll
- get a directory "atahualpa" with files and subdirectories
+1) After you've extracted the "atahualpa2.zip" file on your desktop computer, you'll
+ get a directory "atahualpa2" with files and subdirectories
 
-/directory-where-you-saved-the-zip-file-to/atahualpa.zip
-/directory-where-you-saved-the-zip-file-to/atahualpa/
-/directory-where-you-saved-the-zip-file-to/atahualpa/functions/
-/directory-where-you-saved-the-zip-file-to/atahualpa/images/
-/directory-where-you-saved-the-zip-file-to/atahualpa/_plugins/
-/directory-where-you-saved-the-zip-file-to/atahualpa/..bunch of files..
+/directory-where-you-saved-the-zip-file-to/atahualpa2.zip
+/directory-where-you-saved-the-zip-file-to/atahualpa2/
+/directory-where-you-saved-the-zip-file-to/atahualpa2/functions/
+/directory-where-you-saved-the-zip-file-to/atahualpa2/images/
+/directory-where-you-saved-the-zip-file-to/atahualpa2/_plugins/
+/directory-where-you-saved-the-zip-file-to/atahualpa2/..bunch of files..
 
 2) Remove the subdirectory "_plugins" from
-the main directory "atahualpa" and put it one level higher. You can do this with CTRL+x (cut) and CTRL+v (paste) or
+the main directory "atahualpa2" and put it one level higher. You can do this with CTRL+x (cut) and CTRL+v (paste) or
 with the right mouse button ("cut"..., then "paste"), so that you end up with something like. 
 
-/directory-where-you-saved-the-zip-file-to/atahualpa.zip
-/directory-where-you-saved-the-zip-file-to/atahualpa/
-/directory-where-you-saved-the-zip-file-to/atahualpa/functions/
-/directory-where-you-saved-the-zip-file-to/atahualpa/images/
-/directory-where-you-saved-the-zip-file-to/atahualpa/..bunch of files..
-/directory-where-you-saved-the-zip-file-to/_plugins/		<--- This directory is now side by side with "atahualpa", and not inside of it anymore
+/directory-where-you-saved-the-zip-file-to/atahualpa2.zip
+/directory-where-you-saved-the-zip-file-to/atahualpa2/
+/directory-where-you-saved-the-zip-file-to/atahualpa2/functions/
+/directory-where-you-saved-the-zip-file-to/atahualpa2/images/
+/directory-where-you-saved-the-zip-file-to/atahualpa2/..bunch of files..
+/directory-where-you-saved-the-zip-file-to/_plugins/		<--- This directory is now side by side with "atahualpa2", and not inside of it anymore
 
-3) Now upload the whole "atahualpa" directory with its subdirectories and files to your 
+3) Now upload the whole "atahualpa2" directory with its subdirectories and files to your 
 web hosting account, into the directory "/whereever-your-wordpress-installation-is/wp-content/themes/".
-The final location of the "atahualpa" directory should look like this:
+The final location of the "atahualpa2" directory should look like this:
 
-/whereever-your-wordpress-installation-is/wp-content/themes/atahualpa/
-/whereever-your-wordpress-installation-is/wp-content/themes/atahualpa/functions/
-/whereever-your-wordpress-installation-is/wp-content/themes/atahualpa/images/
-/whereever-your-wordpress-installation-is/wp-content/themes/atahualpa/..bunch of files..
+/whereever-your-wordpress-installation-is/wp-content/themes/atahualpa2/
+/whereever-your-wordpress-installation-is/wp-content/themes/atahualpa2/functions/
+/whereever-your-wordpress-installation-is/wp-content/themes/atahualpa2/images/
+/whereever-your-wordpress-installation-is/wp-content/themes/atahualpa2/..bunch of files..
 
 4) Log in to your Wordpress admin area and click on "Design" (WP 2.5 and newer) or "Presentation" (WP 2.3 and older). 
 Scroll down and click on either the name or the screenshot of the "Atahualpa" theme. (From WP 2.6 on there'll be a 
@@ -43,7 +43,7 @@ will not break, the missing functions will just gracefully dissapear or be repla
 
 6) Upload the CONTENT (not the directory itself, only what's IN that directory) of 
 /_plugins/_upload_for_all_WP_versions/ to /whereever-your-wordpress-installation-is/wp-content/plugins/. 
-Note that we're uploading to /.../plugins/ now and not to /.../themes/ anymore.
+Note that you're uploading to /.../plugins/ now and not to /.../themes/ anymore.
 The final location of the subdirectories and files of the /_plugins/_upload_for_all_WP_versions/ directory 
 would be
 
@@ -118,7 +118,7 @@ options page. You can always set everything back to default by clicking on "Rese
 
 10) Upload your own header images: All image file names must have the extension ".jpg", ".gif" or ".png" but 
 the file name itself doesn't matter: "jhkrekjfk7.jpg" will work. Upload the images to
-/wp-content/themes/atahualpa/images/header/
+/wp-content/themes/atahualpa2/images/header/
 
 The images should be 1280 pixels wide or wider, the height doesn't matter, you can set the visible height at the
 options page (see step 9 above). Default setting is "show 150 pixels from top".
@@ -128,7 +128,7 @@ Leave 2 or more images there, and they'll be rotated randomly.
 
 11) You may want to turn off that graphical icon on the left hand side of the blog title, look at the options page 
 (see step 9 above). Or, upload your own: Create a 50x50 pixels "logosymbol.gif" with a white background and upload to 
-"/wp-content/themes/atahualpa/images/" so that you end up with "/wp-content/themes/atahualpa/images/logosymbol.gif".
+"/wp-content/themes/atahualpa2/images/" so that you end up with "/wp-content/themes/atahualpa2/images/logosymbol.gif".
 
 12) You can remove the "Email This Post" Icon (and also change that text) below each post at Admin -> Email.
 You can remove the "Print This Post" Icon (and also change that text) below each post at Admin -> Settings -> Print.

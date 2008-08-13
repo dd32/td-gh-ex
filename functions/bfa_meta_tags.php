@@ -3,13 +3,15 @@ if ( is_home() ) {
 	bloginfo('name');} else {
 
 	if ( is_single() OR is_page() ) { 
-		$ata_page_title = htmlentities(single_post_title('', false),ENT_QUOTES); } 
+#		$ata_page_title = htmlentities(single_post_title('', false),ENT_QUOTES); } 
+		$ata_page_title = single_post_title('', false); } // post and page titles get their own filter from WP
 	elseif ( is_category() ) { 
-		$ata_page_title = htmlentities(single_cat_title('', false),ENT_QUOTES); } 
+		$ata_page_title = htmlentities(single_cat_title('', false),ENT_QUOTES); } // cat titles don't get a filter, so htmlentities is required
 	elseif ( function_exists('is_tag') && is_tag() ) { 
-		$ata_page_title = htmlentities(single_tag_title('', false),ENT_QUOTES); }
+#		$ata_page_title = htmlentities(single_tag_title('', false),ENT_QUOTES); }
+		$ata_page_title = single_tag_title('', false); } // tag titles get their own filter from WP
 	elseif ( is_search() ) { 
-		$ata_page_title = htmlentities(wp_specialchars($s),ENT_QUOTES);	} 
+		$ata_page_title = htmlentities(wp_specialchars($s),ENT_QUOTES);	} // no WP filter, htmlentities required for quotes
 	elseif ( is_day() ) { 
 		$ata_page_title = get_the_time('l, F jS, Y'); } 
 	elseif ( is_month() ) { 
@@ -17,7 +19,7 @@ if ( is_home() ) {
 	elseif ( is_year() ) { 
 		$ata_page_title = get_the_time('Y'); } 
 #	elseif ( is_author() ) { 
-#		$ata_page_title = htmlentities(the_author(),ENT_QUOTES); }   // this would not work
+#		$ata_page_title = htmlentities(the_author(),ENT_QUOTES); }   // this won't work
 	elseif ( is_404() ) { 
 		$ata_page_title = "404 - Page not found"; }
 	else { 
@@ -58,19 +60,19 @@ if ( is_home() ) {
 // To be set in WP Admin -> Design ("Presentation" in WP 2.3 and older) -> [Theme Name] Theme Options -> SEO
 //
 if ( is_home() && trim($ata_homepage_meta_description) != "" ) { 
-	echo "<meta name=\"description\" content=\"$ata_homepage_meta_description\">\n"; 
+	echo "<meta name=\"description\" content=\"" . htmlentities($ata_homepage_meta_description,ENT_QUOTES) . "\" />\n"; 
 	}
 //
 // META KEYWORDS Tag for (only) the HOMEPAGE. 
 // To be set in WP Admin -> Design ("Presentation" in WP 2.3 and older) -> [Theme Name] Theme Options -> SEO
 if ( is_home() && trim($ata_homepage_meta_keywords) != "" ) { 
-	echo "<meta name=\"keywords\" content=\"$ata_homepage_meta_keywords\">\n"; 
+	echo "<meta name=\"keywords\" content=\"" . htmlentities($ata_homepage_meta_keywords,ENT_QUOTES) . "\" />\n"; 
 	}
 //
 // META DESCRIPTION Tag for CATEGORY PAGES, if a category description exists:
 //
 if ( is_category() && strip_tags(trim(category_description())) != "" ) {
-	echo "<meta name=\"description\" content=\"" . category_description() . "\" />\n"; 	 
+	echo "<meta name=\"description\" content=\"" . strip_tags(trim(category_description())) . "\" />\n"; 	 
 }
 //
 // prevent duplicate content by making archive pages noindex:

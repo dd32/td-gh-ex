@@ -1,8 +1,8 @@
 /*  
 Theme Name: Atahualpa 
 Theme URI: http://wordpress.bytesforall.com/
-Description: v. 2.0 - Fluid width, 2 or 3 column theme for WP 2.2 - WP 2.6, with rotating header images, customizable logo and options page. Plug & Play for various plugins. 
-Version: 2.0
+Description: v. 2.01 - Fluid width, 2 or 3 column theme for WP 2.2 - WP 2.6, with rotating header images, customizable logo and options page. Plug & Play for various plugins. 
+Version: 2.01
 Author: BFA Webdesign
 Author URI: http://www.bytesforall.com/
 Tags: fluid width, options page, widget ready, 2 columns, 3 columns, left sidebar, right sidebar, custom header, rotating header images, seo friendly, gravatars, popular posts, related posts, wp-pagenavi, wp-print, wp-email, subscribe to comments
@@ -13,7 +13,7 @@ Tags: fluid width, options page, widget ready, 2 columns, 3 columns, left sideba
 *
 YOUR OWN HEADER IMAGE(S) HOW-TO: Upload one or several images with any filename(s) but
 all ending on either ".jpg", ".gif" or ".png" (you can mix and match) to the directory 
-"/wp-content/themes/atahualpa/images/header" in the wordpress installation directory on 
+"/wp-content/themes/atahualpa2/images/header" in the wordpress installation directory on 
 your web hosting account. All gif, jpg and png images in that directory will be used for the
 header rotation. This is a fluid layout, 
 meaning that the visible width of the header image(s) will depend on the visitor's browser 
@@ -26,7 +26,7 @@ and the 288 pixels of the right hand side. You can set the visible height of the
 *
 YOUR OWN LOGO ICON IMAGE HOWTO: Upload a "logosymbol.gif" 
 with the size of 50x50 pixels and white background to 
-"/wp-content/themes/atahualpa/images/".
+"/wp-content/themes/atahualpa2/images/".
 *
 *
 *
