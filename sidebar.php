@@ -80,7 +80,7 @@
 
 <!-- Categories --> 
 <ul>
-     <?php wp_list_categories('show_count=1&title_li=<h4>Categories</h4>'); ?>
+     <?php wp_list_categories('show_count=0&title_li=<h4>Categories</h4>'); ?>
 </ul>
 
 
