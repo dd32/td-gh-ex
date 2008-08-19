@@ -2,61 +2,53 @@
 	if ('comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
 		die ('Please do not load this page directly. Thanks!');
 
-  if (!empty($post->post_password)) { // if there's a password
-    if ($_COOKIE['wp-postpass_' . COOKIEHASH] != $post->post_password) {  // and it doesn't match the cookie
+	if (!empty($post->post_password)) { // if there's a password
+		if ($_COOKIE['wp-postpass_' . COOKIEHASH] != $post->post_password) {  // and it doesn't match the cookie
 ?>
 
-      <p class="nocomments">This post is password protected. Enter the password to view comments.<p>
+	<p class="nocomments">This post is password protected. Enter the password to view comments.<p>
 
 <?php
-      return;
-    }
-  }
+	return;
+		}
+	}
 ?>
 
-<!-- You can start editing here. -->
-
-  <h5><a name="comments">Comments</a></h5> 
-  <?php if ('open' == $post->comment_status) : ?> 
-    <!-- If comments are open. -->
-    <?php if ( get_option('comment_registration') && !$user_ID ) : ?>
-      <p>You must be <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php the_permalink(); ?>">logged in</a> to leave a response.</p>
-    <?php else : ?>
-      <p><a href="#commentform">Leave a response</a></p>
-    <?php endif; ?>
+	<h5><a name="comments">Comments</a></h5>
+	<?php if ('open' == $post->comment_status) : /* Comments open */ ?>
+		<?php if ( get_option('comment_registration') && !$user_ID ) : ?>
+			<p>You must be <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php the_permalink(); ?>">logged in</a> to leave a response.</p>
+		<?php else : ?>
+			<p><a href="#commentform">Leave a response</a></p>
+		<?php endif; ?>
 		
-	 <?php else : // comments are closed ?>
-		<p class="nocomments">Comments are closed.</p>
-		
+	<?php else : /* Comments closed */ ?>
+			<p class="nocomments">Comments are closed.</p>
 	<?php endif; ?>
 
-  <?php if ($comments) : ?>
-    <div id="comments_div">
-      <ol id="comments" class="comments">
+	<?php if ($comments) : ?>
+		<div id="comments_div">
+			<ol id="comments" class="comments">
 
-      <?php foreach ($comments as $comment) : ?>
+			<?php foreach ($comments as $comment) : ?>
+				<li class="comment" id="comment-<?php comment_ID() ?>">
+					<div class="comment-head">
+						<span class="comment-author vcard"><?php sp_commenter_link() ?></span>
+						<abbr class="comment-published" title="<?php comment_time('Y-m-d\TH:i:sP') ?>"><?php comment_time('M d, Y H:i') ?></abbr>
+						<?php if ($comment->comment_approved == '0') : ?>
+							<em>Your comment is awaiting moderation.</em>
+						<?php endif; ?>
+						<small><?php edit_comment_link('edit','',''); ?></small>
+					</div>
+					<div class="content">
+						<?php comment_text() ?>
+					</div>
+				</li>
 
-        <li class="comment" id="comment-<?php comment_ID() ?>">
-          <div class="author vcard">
-	 <?php if(function_exists('get_avatar')) { echo get_avatar($comment, '48'); } ?>
-            <cite class="fn n"><?php comment_author_link() ?></cite>
-            <abbr title="<?php comment_time('Y-m-d H:i:sP') ?>"><?php comment_time('M d, Y H:i') ?></abbr>
-            <?php if ($comment->comment_approved == '0') : ?>
-            <em>Your comment is awaiting moderation.</em>
-            <?php endif; ?>
-            <small><?php edit_comment_link('edit','',''); ?></small>
-          </div>
+			<?php endforeach; /* End for each comment */ ?>
 
-          <div class="content">
-            <?php comment_text() ?>
-          </div>
-
-        </li>
-
-      <?php endforeach; /* end for each comment */ ?>
-
-      </ol>
-    </div>
+			</ol>
+		</div><!-- #comments_div (id needs rename) -->
 
 	<?php endif; ?>
 
@@ -72,8 +64,8 @@
   <?php if ( $user_ID ) : ?>
 
     <p>
-      Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>.<br />
-      <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="Log out of this account">Logout &raquo;</a>
+      [ Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>
+      | <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="Log out of this account">Log out</a> ]
     </p>
 
   <?php else : ?>
@@ -115,4 +107,4 @@
 
 <?php endif; // If registration required and not logged in ?>
 
-<?php endif; // if you delete this the sky will fall on your head ?>
+<?php endif; // DO NOT REMOVE ?>

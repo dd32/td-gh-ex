@@ -1,81 +1,151 @@
 <?php
-/* width set same as width in style.css:/^#content */
+
+/* Width set equal to width in style.css:/^#content */
 $GLOBALS['content_width'] = 662;
 
-/* 
- * Utility Functions
- */
-function the_comment_count_elem() {
-	global $post;
-
-	if ( ! isset($post->comment_count) )
-		$count = 0;
-	else
-		$count = $post->comment_count;
-		
-	if ( $count > 0 )
-		echo '<span class="comment_count">' . $count . '</span>';
-}
-
-/* 
- * Widget Sidebar Functions
- */
-if ( function_exists('register_sidebars') )
+/* Widget Sidebar Functions */
+if ( function_exists('register_sidebars') ) {
 	register_sidebar();
-
-function widget_simplish_syndicate() {
-	?>
-		<li id="syndicate"><h2 class="sidebar-title">Syndicate</h2>
-			<ul>
-				<li><a href="feed:<?php bloginfo('rss2_url'); ?>" title="RSS 2.0 feed">Articles</a></li>
-				<li><a href="feed:<?php bloginfo('comments_rss2_url'); ?>" title="Comments RSS 2.0 feed">Comments</a></li>
-			</ul>
-		</li>
-	<?php
 }
 
-function widget_simplish_meta($args) {
-	extract($args);
-	$options = get_option('widget_meta');
-	$feeds = $options['feeds'];
-	$title = empty($options['title']) ? __('Meta') : $options['title'];
-	?>
-		<li id="meta"><h2 class="sidebar-title"><?php echo $title ?></h2>
-			<ul>
-			<?php wp_register(); ?>
-			<li><?php wp_loginout(); ?></li>
-			<?php if ( $feeds ) { ?>
-			<li><a href="feed:<?php bloginfo('rss2_url'); ?>" title="RSS 2.0 feed">Articles Feed</a></li>
-			<li><a href="feed:<?php bloginfo('comments_rss2_url'); ?>" title="Comments RSS 2.0 feed">Comments Feed</a></li>
-			<?php } ?>
-			<?php wp_meta(); ?>
-			</ul>
-		</li>
-	<?php
+/*
+ * hCard producers based on blog.txt,
+ * http://www.plaintxt.org/themes/blogtxt/
+ */
+/* 
+ * Echoes hCard for blog admin, with URL. 
+ * Currently unused. It returns the site admin on MU, where only blog
+ * owner is wanted.
+ * See http://mu.wordpress.org/forums/topic.php?id=7476
+ */
+function sp_admin_hcard()
+{
+	global $wpdb, $admin_info;
+
+	$admin_info = get_userdata(1);
+	echo '<span class="vcard"><a class="url fn n" href="' . $admin_info->user_url . '"><span class="given-name">' . $admin_info->first_name . '</span> <span class="family-name">' . $admin_info->last_name . '</span></a></span>';
 }
 
-function widget_simplish_meta_control() {
-	$options = $newoptions = get_option('widget_meta');
-	if ( $_POST["meta-submit"] ) {
-		$newoptions['feeds'] = isset($_POST['meta-feeds']);
-		$newoptions['title'] = strip_tags(stripslashes($_POST["meta-title"]));
+/* Echoes hCard for post author, with URL of his posts. */
+function sp_author_hcard()
+{
+	global $wpdb, $authordata;
+
+	echo '<span class="entry-author author vcard"><a class="url fn n" href="' . get_author_link(false, $authordata->ID, $authordata->user_nicename) . '" title="More posts by ' . $authordata->display_name . '">' . get_the_author() . '</a></span>';
+}
+
+/*
+ * Echoes hCard for post author, with (from author's profile):
+ * display name, avatar image for email addr, bio info, URL.
+ * Takes integer option for img square size in pixels.
+ * Default size from wp's get_avatar() is 96.
+ */
+function sp_author_ext_hcard($size)
+{
+	global $wpdb, $authordata;
+
+	$email = get_the_author_email();
+	$avatar = str_replace( "class='avatar", "class='photo avatar", get_avatar( "$email", "$size" ) );
+	if ( !(''== $authordata->user_description) ) {
+		$note = '<span class="note">' . apply_filters('archive_meta', $authordata->user_description) . '</span>';
 	}
-	if ( $options != $newoptions ) {
-		$options = $newoptions;
-		update_option('widget_meta', $options);
-	}
-	$feeds = $options['feeds'] ? 'checked="checked"' : '';
-	$title = htmlspecialchars($options['title'], ENT_QUOTES);
-	?>
-		<p><label for="meta-title"><?php _e('Title:'); ?> <input style="width: 250px;" id="meta-title" name="meta-title" type="text" value="<?php echo $title; ?>" /></label></p>
-		<p style="text-align:right;margin-right:40px;"><label for="meta-feeds"><?php _e('Show RSS feed links', 'widgets'); ?> <input class="checkbox" type="checkbox" <?php echo $feeds; ?> id="meta-feeds" name="meta-feeds" /></label></p>
-		<input type="hidden" id="meta-submit" name="meta-submit" value="1" />
-	<?php
+	echo ( '<span class="author vcard">' . $avatar . '<a class="url fn n" rel="me" title="' . get_the_author() . ' home page" href="' . get_the_author_url() . '">' . get_the_author() . '</a>' . $note . '</span>' );
 }
 
-if ( function_exists('register_sidebar_widget') ) {
-	register_sidebar_widget(__('Syndicate'), 'widget_simplish_syndicate');
-	register_sidebar_widget(array('Meta', 'widgets'), 'widget_simplish_meta');
-	register_widget_control(array('Meta', 'widgets'), 'widget_simplish_meta_control', 300, 90);
+/* Echoes comment avatar img and author link, ready for hCard wrapping. */
+function sp_commenter_link()
+{
+	$commenter = get_comment_author_link();
+	if ( ereg( '<a[^>]* class=[^>]+>', $commenter ) ) {
+		$commenter = ereg_replace( '(<a[^>]* class=[\'"]?)', '\\1url ' , $commenter );
+	} else {
+		$commenter = ereg_replace( '(<a )/', '\\1class="url "' , $commenter );
+	}
+	$email = get_comment_author_email();
+	$avatar = str_replace( "class='avatar", "class='photo avatar", get_avatar( "$email", "48" ) );
+	echo $avatar . ' <span class="fn n">' . $commenter . '</span>';
 }
+
+/*
+ * Filter wp's [gallery] shortcode.
+ * Returns a gallery div, echoed in turn by the shortcode.
+ * Requires support in (and see) style.css.
+ * Very directly from blog.txt,
+ * http://www.plaintxt.org/themes/blogtxt/
+ *
+ * Done _only_ because wp core's [gallery]
+ * output is invalid XHTML.
+ */
+function sp_vallery($attr)
+{
+	global $post;
+	if ( isset($attr['orderby']) ) {
+		$attr['orderby'] = sanitize_sql_orderby($attr['orderby']);
+		if ( !$attr['orderby'] )
+			unset($attr['orderby']);
+	}
+
+	extract(shortcode_atts( array(
+		'orderby'    => 'menu_order ASC, ID ASC',
+		'id'         => $post->ID,
+		'itemtag'    => 'dl',
+		'icontag'    => 'dt',
+		'captiontag' => 'dd',
+		'columns'    => 3,
+		'size'       => 'thumbnail',
+	), $attr ));
+
+	$id           =  intval($id);
+	$orderby      =  addslashes($orderby);
+	$attachments  =  get_children("post_parent=$id&post_type=attachment&post_mime_type=image&orderby={$orderby}");
+
+	if ( empty($attachments) )
+		return null;
+
+	if ( is_feed() ) {
+		$output = "\n";
+		foreach ( $attachments as $id => $attachment )
+			$output .= wp_get_attachment_link( $id, $size, true ) . "\n";
+		return $output;
+	}
+
+	$listtag     =  tag_escape($listtag);
+	$itemtag     =  tag_escape($itemtag);
+	$captiontag  =  tag_escape($captiontag);
+	$columns     =  intval($columns);
+	$itemwidth   =  $columns > 0 ? floor(100/$columns) : 100;
+
+	$output = apply_filters( 'gallery_style', "\n" . '<div class="gallery">', 9 ); // Available filter: gallery_style
+
+	foreach ( $attachments as $id => $attachment ) {
+		$img_lnk = get_attachment_link($id);
+		$img_src = wp_get_attachment_image_src( $id, $size );
+		$img_src = $img_src[0];
+		$img_alt = $attachment->post_excerpt;
+		if ( $img_alt == null )
+			$img_alt = $attachment->post_title;
+		$img_rel = apply_filters( 'gallery_img_rel', 'attachment' ); // Available filter: gallery_img_rel
+		$img_class = apply_filters( 'gallery_img_class', 'gallery-image' ); // Available filter: gallery_img_class
+
+		$output  .=  "\n\t" . '<' . $itemtag . ' class="gallery-item gallery-columns-' . $columns .'">';
+		$output  .=  "\n\t\t" . '<' . $icontag . ' class="gallery-icon"><a href="' . $img_lnk . '" title="' . $img_alt . '" rel="' . $img_rel . '"><img src="' . $img_src . '" alt="' . $img_alt . '" class="' . $img_class . ' attachment-' . $size . '" /></a></' . $icontag . '>';
+
+		if ( $captiontag && trim($attachment->post_excerpt) ) {
+			$output .= "\n\t\t" . '<' . $captiontag . ' class="gallery-caption">' . $attachment->post_excerpt . '</' . $captiontag . '>';
+		}
+
+		$output .= "\n\t" . '</' . $itemtag . '>';
+		if ( $columns > 0 && ++$i % $columns == 0 )
+			$output .= "\n</div>\n" . '<div class="gallery">';
+	}
+	$output .= "\n</div>\n";
+
+	return $output;
+}
+
+add_filter('post_gallery', 'sp_vallery', $attr);
+
+/* For translation. Simplish gettext support _very_ incomplete. */
+load_theme_textdomain('simplish')
+
 ?>

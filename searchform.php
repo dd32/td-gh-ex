@@ -1,5 +1,6 @@
-<form method="get" id="searchform" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-<div><input type="text" value="<?php echo wp_specialchars($s, 1); ?>" name="s" id="s" />
-<input type="submit" id="searchsubmit" value="Search" />
-</div>
+<form id="searchform" method="get" action="<?php bloginfo('home') ?>">
+	<div>
+		<input id="s" name="s" type="text" value="<?php the_search_query() ?>" />
+		<input id="searchsubmit" name="searchsubmit" type="submit" value="Search" />
+	</div>
 </form>

@@ -1,23 +1,26 @@
-    <br style="clear:both;" />
-  </div>
+		<br class="clear" />
+	</div><!--// #page -->
 
-  <div id="footer">
-    <hr />
-	  <p><a href="<?php echo get_settings('home'); ?>"><?php bloginfo('name'); ?></a></p>
-    <ul>
-      <li>powered by <a href="http://wordpress.org">WordPress</a> /
-          styled with <a href="http://labs.utopian.net/blogs/simplish/">Simplish</a></li>
-    </ul>
-  	<!-- php echo $wpdb->num_queries; ?> queries. <?php timer_stop(1); ?> seconds. -->
-  </div>
-</div>
+	<div id="footer">
+	<hr />
+	<p><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></p>
+	<ul>
+		<li><a href="http://wordpress.org" title="WordPress Engine">WordPress</a> | 
+			<span class="vcard">
+				<a class="url fn n" rel="follow designer" title="Simplish Style" href="http://labs.utopian.net/blogs/simplish/">
+					<span class="given-name">Simplish</span>
+					<span class="additional-name hidden"> from <span class="org">Utopian.net Labs</span></span>
+				</a>
+			</span>
+		</li>
+	</ul>
+	</div><!--// #footer -->
+</div><!--// #container -->
 
-<!-- Original theme design by Packagethief - http://quotedprintable.com/pages/scribbish -->
-<!-- WordPress theme port by Kenny Pitt - http://pittcrew.net/geekblog/scribbishwp -->
-<!-- Further development and maintenance by the Simplish project - http://labs.utopian.net/blogs/simplish/ -->
-<?php ?>
+<!--// Original theme design by Jeffrey Allen Hardy - http://quotedprintable.com/pages/scribbish -->
+<!--// Initial Typo to WordPress theme port by Kenny Pitt - http://pittcrew.net/geekblog/scribbishwp -->
 
-		<?php wp_footer(); ?>
+<?php wp_footer(); //DO NOT REMOVE, used by plugins ?>
 
 </body>
 </html>

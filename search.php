@@ -1,53 +1,35 @@
 <?php get_header(); ?>
 
-	<div id="content">
+		<div id="content" class="hfeed search-results">
 
-	<?php if (have_posts()) : ?>
+		<?php if (have_posts()) : ?>
 
-		<h2 class="pagetitle">Search Results</h2>
+			<h1 class="archive-title">Results for <span class="archive-subtitle"><?php the_search_query() ?></span></h1>
 		
-		<?php while (have_posts()) : the_post(); ?>
+			<?php while (have_posts()) : the_post(); ?>
 				
-		  <div class="atomentry" id="article-<?php the_ID(); ?>">
-				<h2 class="title">
-          <a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a>
-        </h2>
-
-        <p class="author">
-				  Posted by <cite><?php the_author() ?></cite> on
-          <span class="published posted_date" title="<?php the_time('Y-m-d H:i:sP') ?>"><?php the_time('F d, Y') ?></span>
-        </p>
-				
-				<div class="content">
+			<div class="hentry" id="article-<?php the_ID(); ?>">
+					<h2 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+				<div class="entry-content">
 					<?php the_excerpt() ?>
 				</div>
-		
-				<ul class="meta">
-	<li class="categories">Category: <?php the_category(', ') ?></li>
-	<li class="tags"><?php the_tags(); ?></li>
-          <li>Meta:
-            <?php comments_popup_link('no comments', '1 comment', '% comments'); ?>,
-            <a href="<?php the_permalink() ?>" rel="bookmark">permalink</a>,
-            <?php comments_rss_link('rss'); ?>
-          </li>
-        </ul>
+			</div>
+
+			<?php endwhile; ?>
+
+			<div class="navigation">
+				<div class="alignleft"><?php next_posts_link('&laquo; Previous Entries') ?></div>
+				<div class="alignright"><?php previous_posts_link('Next Entries &raquo;') ?></div>
 			</div>
 	
-		<?php endwhile; ?>
+		<?php else : ?>
 
-		<div class="navigation">
-			<div class="alignleft"><?php next_posts_link('&laquo; Previous Entries') ?></div>
-			<div class="alignright"><?php previous_posts_link('Next Entries &raquo;') ?></div>
-		</div>
-	
-	<?php else : ?>
+			<h1 class="archive-title">No results for <span class="archive-subtitle"><?php the_search_query() ?></span></h1>
+			<?php include (TEMPLATEPATH . '/searchform.php'); ?>
 
-		<h2 class="center">Not Found</h2>
-		<?php include (TEMPLATEPATH . '/searchform.php'); ?>
-
-	<?php endif; ?>
+		<?php endif; ?>
 		
-	</div>
+		</div>
 
 <?php get_sidebar(); ?>
 
