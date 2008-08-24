@@ -1,3 +1,8 @@
+<?php
+global $options;
+foreach ($options as $value) {
+if (get_settings( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_settings( $value['id'] ); } }
+?>
 <?php get_header(); ?>
 			<div id="outer-column-container">
 				<div id="inner-column-container">
@@ -8,52 +13,66 @@
 		<?php if (have_posts()) : ?>
  	  <?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
  	  <?php /* If this is a category archive */ if (is_category()) { ?>
-		<h2 class="pagetitle"><span style="color: #999999">Archive for</span> <?php single_cat_title(); ?></h2>
+		<h2><?php _e('Archive for', 'atahualpa'); ?> <?php single_cat_title(); ?></h2>
  	  <?php /* If this is a tag archive */ } elseif( function_exists('is_tag') && is_tag() ) { ?>
-		<h2 class="pagetitle"><span style="color: #999999">Posts tagged</span> <?php single_tag_title(); ?></h2>
+		<h2><?php _e('Posts tagged', 'atahualpa'); ?> <?php single_tag_title(); ?></h2>
  	  <?php /* If this is a daily archive */ } elseif (is_day()) { ?>
-		<h2 class="pagetitle"><span style="color: #999999">Archive for</span> <?php the_time('F jS, Y'); ?></h2>
+		<h2><?php _e('Archive for', 'atahualpa'); ?> <?php the_time(__('F jS, Y', 'atahualpa')); ?></h2>
  	  <?php /* If this is a monthly archive */ } elseif (is_month()) { ?>
-		<h2 class="pagetitle"><span style="color: #999999">Archive for</span> <?php the_time('F, Y'); ?></h2>
+		<h2><?php _e('Archive for', 'atahualpa'); ?> <?php the_time(__('F, Y', 'atahualpa')); ?></h2>
  	  <?php /* If this is a yearly archive */ } elseif (is_year()) { ?>
-		<h2 class="pagetitle"><span style="color: #999999">Archive for</span> <?php the_time('Y'); ?></h2>
+		<h2><?php _e('Archive for', 'atahualpa'); ?> <?php the_time(__('Y', 'atahualpa')); ?></h2>
 	  <?php /* If this is an author archive */ } elseif (is_author()) { ?>
-		<h2 class="pagetitle">Author Archive</h2>
+		<h2><?php _e('Author Archive', 'atahualpa'); ?></h2>
  	  <?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
-		<h2 class="pagetitle">Blog Archives</h2>
+		<h2><?php _e('Blog Archives', 'atahualpa'); ?></h2>
  	  <?php } ?>
-<?php if (function_exists('show_posts_nav') && show_posts_nav()) : ?>
-		<div class="navigation">
-				<div class='older'><?php next_posts_link('&laquo; Older Entries'); ?></div>
-				<div class='newer'><?php previous_posts_link('Newer Entries &raquo;'); ?></div>
-		</div>
-<?php endif; ?><div style="clear: both"></div><div class="line1pix"></div>
+
+<div style="clear: both"></div><div class="line1pix"></div>
 		<?php while (have_posts()) : the_post(); ?>
 			<?php if (is_last_post()) {?><div class="post-last"><?php } else { ?><div class="post"><?php } ?>
-				<!--<div class="calendar">
-				<div class="calendar1"><?php the_time('M') ?></div><div style="clear:left"></div>
-				<div class="calendar2"><?php the_time('j') ?></div><div style="clear:left"></div>
-				<div class="calendar3"><?php the_time('Y') ?></div><div style="clear:left"></div>
-				</div>
-				<div class="vert1"><div class="vert2"><div class="vert3">--><h2 style="line-height: 1.2em;" id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php if (function_exists('the_title_attribute')) {the_title_attribute();} elseif (function_exists('the_title')) {the_title();} ?>"><?php the_title(); ?></a></h2><!--</div></div></div>-->
+				<h2 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e('Permanent Link to', 'atahualpa'); ?> <?php if (function_exists('the_title_attribute')) {the_title_attribute();} elseif (function_exists('the_title')) {the_title();} ?>"><?php the_title(); ?></a></h2>
 				<div style="clear: left;"></div><div class="entry">
-					<?php if(is_category() || is_archive() || ( function_exists('is_tag') && is_tag() ) ) {
- 					    the_excerpt();
-					 } else {
-					     the_content();
-					} ?> 
-				<p class="postmetadata">Posted on <?php the_time('F jS, Y') ?> under <?php the_category(', ') ?>. <?php if ( function_exists('the_tags') ) {the_tags('Tags: ', ', ', '. ');} ?><?php edit_post_link('Edit', '', '. '); ?><?php comments_popup_link('Comments: None', 'Comments: 1', 'Comments: %'); ?></p>
+					<?php if (is_category()) { if ($ata_excerpts_category == "Full Posts") { 
+					the_content(__('More &raquo;', 'atahualpa')); } else {
+					the_excerpt(); }} 
+					elseif (is_day() OR is_month() OR is_year()) { if ($ata_excerpts_archive == "Full Posts") { 
+					the_content(__('More &raquo;', 'atahualpa')); } else {
+					the_excerpt(); }}
+					elseif (function_exists('is_tag') && is_tag() ) { if ($ata_excerpts_tag == "Full Posts") { 
+					the_content(__('More &raquo;', 'atahualpa')); } else {
+					the_excerpt(); }}
+					elseif (is_search()) { if ($ata_excerpts_search == "Full Posts") { 
+					the_content(__('More &raquo;', 'atahualpa')); } else {
+					the_excerpt(); }}
+					else { the_excerpt(); } ?>
+				<p class="postmetadata">
+				<?php the_time(__('F jS, Y', 'atahualpa')); ?><?php _e(' | ', 'atahualpa'); ?>
+				<?php if ( function_exists('the_tags') && get_the_tags()) {the_tags(__('Tags: ', 'atahualpa'), __(', ', 'atahualpa'), __(' | ', 'atahualpa'));} ?>
+				<?php _e('Category:', 'atahualpa'); ?> <?php the_category(__(', ', 'atahualpa')) ?><?php _e(' | ', 'atahualpa'); ?>
+				<?php comments_popup_link(__('Leave a comment', 'atahualpa'),
+                          	__('Comments (1)', 'atahualpa'), __ngettext('Comment (%)', 'Comments (%)', get_comments_number(), 'atahualpa')); ?>				
+				<?php edit_post_link(__('Edit', 'atahualpa'), __(' | ', 'atahualpa'), ''); ?>
+                          	</p>
 				</div>
 			</div>
 		<?php endwhile; ?>
-<?php if (function_exists('show_posts_nav') && show_posts_nav()) : ?>
-		<div class="navigation">
-				<span class='older'><?php next_posts_link('&laquo; Older Entries'); ?></span>
-				<span class='newer'><?php previous_posts_link('Newer Entries &raquo;'); ?></span>
-		</div>
-<?php endif; ?>
+
+
+	<?php if(function_exists('wp_pagenavi')) { ?>
+	<div class="wp-pagenavi-navigation">
+	<?php wp_pagenavi(); ?> 
+	</div>
+	<?php } else { ?>
+	<div class="navigation">
+	<div class="older"><?php next_posts_link(__('&laquo; Older Entries', 'atahualpa')); ?></div>
+	<div class="newer"><?php previous_posts_link(__('Newer Entries &raquo;', 'atahualpa')); ?></div>
+	<div style="clear:both"></div>
+	</div>
+	<?php } ?>
+
 	<?php else : ?>
-		<h2 class="center">Not Found</h2>
+		<h2 class="center"><?php _e('Not Found', 'atahualpa'); ?></h2>
 		<?php include (TEMPLATEPATH . '/searchform.php'); ?>
 	<?php endif; ?>
 							</div>

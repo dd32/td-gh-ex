@@ -11,151 +11,158 @@ a:hover {
 	font-weight: <?php echo $ata_link_weight; ?>; 
 	text-decoration: <?php echo $ata_link_hover_decoration; ?>; 
 	}
-
-
-	
-.postmetadata a:link, .postmetadata a:visited, .postmetadata a:active {
-	color: #777; 
-	font-weight: normal
-	}
-	
-h3.widgettitle {
-	color: #555555; 
-	width: 100%; 
-	font-size: 1.3em; 
-	margin-bottom: 0px; 
-	padding-bottom: 0px; 
-	font-family: <?php echo $ata_body_font; ?>; 
-	}
-	
-p.header { 
-	float: left; 
-	margin: 0 10px 8px 0px; 
-	font-size:1.2em; 
-	font-weight: bold; 
-	/*line-height:1.2em*/; 
-	color: #<?php echo $ata_blog_tagline_color; ?>; 
-	}
 	
 h1 { 
 	font-family: <?php echo $ata_blog_title_font; ?>; 
-	letter-spacing:-1px; 
-	line-height: 1.0em; 
 	font-size: <?php echo $ata_blog_title_fontsize; ?>em; 
-	/*float:left;*/ 
-	/*width: 49%;*/ 
-	margin: 10px 20px 0 0; 
-	padding:0; 
+	}
+
+h2 {
+	color: #<?php echo $ata_h2_color; ?>; 
 	}
 	
 h2 a:link, h2 a:visited, h2 a:active  {
-	color:#666666; 
-	text-decoration: none
+	color: #<?php echo $ata_post_title_color; ?>; 
 	}
 
 h2 a:hover  {
-	color:#000000; 
-	text-decoration: none
+	color:#<?php echo $ata_post_title_hover_color; ?>; 
+	}
+
+h3.widgettitle {
+	color: #<?php echo $ata_sidebar_title_color; ?>; 
+	font-size: <?php echo $ata_sidebar_title_size; ?>em; 
 	}
 		
-
 a.header:link, a.header:visited, a.header:active {
 	color: #<?php echo $ata_blog_title_color; ?>; 
-	text-decoration: none; 
 	}
 	
 a.header:hover {
 	color: #<?php echo $ata_blog_title_hover_color; ?>; 
-	text-decoration: none; 
 	}
-		
+
+p.header { 
+	color: #<?php echo $ata_blog_tagline_color; ?>; 
+	}
+			
 #page-container {
-	background: #ffffff; 
-	/*border: solid 0px #ffffff;*/
-	min-width: 800px; 
-	margin: 0 10px; 
 	font-family: <?php echo $ata_body_font; ?>, <?php echo $ata_body_backup_font; ?>; 
+	min-width: <?php echo $ata_min_width; ?>px;
+	font-size: <?php echo $ata_body_font_size; ?>%;
+	margin: 0 <?php echo $ata_body_left_right_margin; ?>px; 
+	}
+
+<?php if ($ata_body_left_right_margin < 10) { 
+// these things shouldn't touch the browser border: ?>
+#left-column .inside {
+	margin-left: <?php echo 10 - $ata_body_left_right_margin; ?>px;		
+	}
+.rss-icon {
+	margin-right: <?php echo 10 - $ata_body_left_right_margin; ?>px;
+	}
+.logo-icon {
+	margin-left: <?php echo 10 - $ata_body_left_right_margin; ?>px;
 	}
 	
+	<?php if ($ata_show_logo_icon == "No") { ?>
+	.blogtitle-box {
+	margin-left: <?php echo 10 - $ata_body_left_right_margin; ?>px;
+	}
+	<?php } ?>
+<?php } ?>
+
 #outer-column-container {
-	border-left: solid <?php echo $ata_leftcolumn_width; ?>em #ffffff; 
-	border-right: solid <?php echo $ata_rightcolumn_width; ?>em #ffffff;
+	border-left: solid <?php echo $ata_leftcolumn_width; ?>em #fff; 
+	border-right: solid <?php echo $ata_rightcolumn_width; ?>em #fff;
 	}
 	
 #left-column {
-	float: left; 
 	margin-left: -<?php echo $ata_leftcolumn_width; ?>em; 
 	width: <?php echo $ata_leftcolumn_width; ?>em; 
-	margin-right: 1px; 
 	}
 	
 #right-column {
-	float: right; 
 	margin-right: -<?php echo $ata_rightcolumn_width; ?>em; 
 	width: <?php echo $ata_rightcolumn_width; ?>em; 
-	margin-left: 1px; 
 	}
 	
-#masthead {
-	background: #ffffff url(<?php echo get_bloginfo('template_directory'); ?>/images/headerimage.jpg) <?php echo $ata_header_image_alignment; ?> no-repeat;
-	border-top: 0px solid #ffb0b3; 
-	padding-top: 1px; 
-	border-bottom: solid 15px #913357;
+.searchbox {
+	width: <?php echo $ata_searchbox_width; ?>em; 
 	}
-	
-#footer {
-	background-color: #ffffff; 
-	border-top: dashed 1px #cccccc; 
-	padding-bottom: 1px;
-	}
-	
-#inner-column-container {
-	border: dashed 1px #cccccc;
-	border-width: 0 1px; 
-	margin: 0 -1px;
-	}
-	
-#inner-column-container {
-	background-color: #ffffff;
-	}
-	
-/* set page sub sub pages back so they don't get highlighted as well: */
 
-li.current_page_item li a:link, li.current_page_item li a:active, li.current_page_item li a:visited, li.current_page_item li a:hover {
-	color: #<?php echo $ata_link_color; ?>; 
-	font-weight: normal; 
+#left-column .inside .searchfield {
+	width: <?php echo 100 - (ceil(100 / $ata_leftcolumn_width * 3)); ?>%;
+	}
+
+#right-column .inside .searchfield {
+	width: <?php echo 100 - (ceil(100 / $ata_rightcolumn_width * 3)); ?>%;
+	}
+
+#left-column .inside ul li a, 
+#right-column .inside ul li a {
+	color: #<?php echo $ata_sidebar_link_color; ?>; 
+	border-left: solid <?php echo $ata_sidebar_link_decoration_size; ?>px #<?php echo $ata_sidebar_link_decoration_color; ?>; 
+<?php if ($ata_sidebar_link_decoration_size == 0 ) { ?>
+	padding: 0;
+<?php } ?>
 	}
 	
-.inside {
-	margin: 15px; 
+#left-column .inside ul li a:hover, 
+#right-column .inside ul li a:hover {
+	color: #<?php echo $ata_sidebar_link_hover_color; ?>; 
+	border-left: solid <?php echo $ata_sidebar_link_decoration_size; ?>px #<?php echo $ata_sidebar_link_decoration_hover_color; ?>; 
 	}
-	
-#left-column .inside {
-	margin: 15px 15px 15px 5px
+
+<?php if ($ata_show_header_image == "No") { ?>
+#headerimage-bottom { 
+	height: 1px; 
+	padding: 0;
+	margin: 0;
 	}
-	
-#footer .inside {
-	text-align: center;
+<?php } ?>
+
+<?php if ($ata_show_top_menu_bar == "Yes" && $ata_show_logo_area == "No") { ?>
+#headerimage-top { 
+	border-top: none; 
 	}
-	
-form input {
-	color: #000; 
-	background: #f4f4f4; 
-	padding: 0; 
-	margin:0; 
-	border: 1px solid #cccccc; 
+<?php } ?>
+
+<?php if ($ata_show_top_menu_bar == "No" && $ata_show_logo_area == "No") { ?>
+#headerimage-top { 
+	display: none; 
 	}
-	
-.postmetadata2 a:hover {
-	color: #<?php echo $ata_link_color; ?>; 
-	text-decoration: underline
-	}
-	
-#right-column p {
-	margin-bottom: 15px;
-	}
-	
-.headerright {
-	width: <?php echo $ata_rightcolumn_width; ?>em; 
-	}
+<?php } ?>
+
+/* Print Style Sheet */
+@media print {
+
+body { background:white; color:black; margin:0; }
+a:link:after, a:visited:after { content:" [" attr(href) "] "; font-weight: normal; text-decoration:none; font-size: 12pt;} 
+a:link, a:visited {text-decoration:underline; color:#000}
+.postmetadata a:link:after, .postmetadata a:visited:after { content:""; } 
+h2 a:link:after, h2 a:visited:after { content:""; } 
+h2, h2 a:link, h2 a:visited, h2 a:active {color: #000; font-size: 18pt}
+h3 {color: #000; font-size: 15pt;} 
+#outer-column-container { border-left: none; border-right: none }
+#page-container {font-size: 12pt; font-family: arial, sans-serif; margin:0; background: #fff; color: #000}
+.remove-for-print, 
+#left-column, 
+#right-column, 
+#footer, 
+.navigation, 
+.wp-pagenavi-navigation, 
+#commentform {display:none}
+
+}		
+
 </style>
+<!--[if lte IE 6]>
+<style type="text/css" media="screen">
+    div#page-container {
+        width:expression(((document.compatMode && document.compatMode=='CSS1Compat') ? document.documentElement.clientWidth : document.body.clientWidth) < <?php echo $ata_min_width; ?> ? "<?php echo $ata_min_width; ?>px" : "auto");
+        }
+    .searchbox { margin-right: -6px; }
+    em { font-style:normal;}  
+</style>
+<![endif]-->

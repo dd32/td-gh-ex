@@ -15,232 +15,13 @@ if ( function_exists('register_sidebar') ) {
         'after_title' => '</h3>',
     ));  
 } ?>
-<?php if (eregi('^(2|3)\.(2|3|5)', get_bloginfo('version'))) {  // If Wordpress version number starts with "2.2" or higher ?>
-<?php 
-function widget_pages( $args ) {
-	extract( $args );
-	$options = get_option( 'widget_pages' );
-	$title = empty( $options['title'] ) ? __( 'Pages' ) : $options['title'];
-	$sortby = empty( $options['sortby'] ) ? 'menu_order' : $options['sortby'];
-	$exclude = empty( $options['exclude'] ) ? '' : $options['exclude'];
-	if ( $sortby == 'menu_order' ) {
-		$sortby = 'menu_order, post_title';
-	}
-	$out = wp_list_pages( array('title_li' => '', 'echo' => 0, 'sort_column' => $sortby, 'exclude' => $exclude) );
-	if ( !empty( $out ) ) {
-?>
-	<?php echo $before_widget; ?>
-		<?php echo $before_title . $title . $after_title; ?>
-		<ul>
-			<?php echo $out; ?>
-		</ul>
-	<?php echo $after_widget; ?>
 <?php
-	}
-}
-function widget_pages_control() {
-	$options = $newoptions = get_option('widget_pages');
-	if ( $_POST['pages-submit'] ) {
-		$newoptions['title'] = strip_tags(stripslashes($_POST['pages-title']));
-		$sortby = stripslashes( $_POST['pages-sortby'] );
-		if ( in_array( $sortby, array( 'post_title', 'menu_order', 'ID' ) ) ) {
-			$newoptions['sortby'] = $sortby;
-		} else {
-			$newoptions['sortby'] = 'menu_order';
-		}
-		$newoptions['exclude'] = strip_tags( stripslashes( $_POST['pages-exclude'] ) );
-	}
-	if ( $options != $newoptions ) {
-		$options = $newoptions;
-		update_option('widget_pages', $options);
-	}
-	$title = attribute_escape($options['title']);
-	$exclude = attribute_escape( $options['exclude'] );
-?>
-			<p><label for="pages-title"><?php _e('Title:'); ?> <input style="width: 250px;" id="pages-title" name="pages-title" type="text" value="<?php echo $title; ?>" /></label></p>
-			<p><label for="pages-sortby"><?php _e( 'Sort by:' ); ?>
-				<select name="pages-sortby" id="pages-sortby">
-					<option value="post_title"<?php selected( $options['sortby'], 'post_title' ); ?>><?php _e('Page title'); ?></option>
-					<option value="menu_order"<?php selected( $options['sortby'], 'menu_order' ); ?>><?php _e('Page order'); ?></option>
-					<option value="ID"<?php selected( $options['sortby'], 'ID' ); ?>><?php _e( 'Page ID' ); ?></option>
-				</select></label></p>
-			<p><label for="pages-exclude"><?php _e( 'Exclude:' ); ?> <input type="text" value="<?php echo $exclude; ?>" name="pages-exclude" id="pages-exclude" style="width: 180px;" /></label><br />
-			<small><?php _e( 'Page IDs, separated by commas.' ); ?></small></p>
-			<input type="hidden" id="pages-submit" name="pages-submit" value="1" />
-<?php
-}
-function widget_search($args) {
-	extract($args);
-?>
-		<?php echo $before_widget; ?>
-<form method="get" class="searchform" action="<?php bloginfo('url'); ?>/">
-<div style="margin: 15px 0;"><input type="text" value="<?php the_search_query(); ?>" name="s" id="s" />
-<input type="image" src="<?php echo get_bloginfo('template_directory'); ?>/images/search.gif" style="border:none; vertical-align: bottom; margin-right: 0;" id="searchsubmit" value="Search" />
-</div>
-</form>
-		<?php echo $after_widget; ?>
-<?php
-}
-function widget_meta($args) {
-	extract($args);
-	$options = get_option('widget_meta');
-	$title = empty($options['title']) ? __('Meta') : $options['title'];
-?>
-		<?php echo $before_widget; ?>
-			<?php echo $before_title . $title . $after_title; ?>
-			<ul>
-			<?php wp_register(); ?>
-			<li><?php wp_loginout(); ?></li>
-			<?php wp_meta(); ?>
-			</ul>
-		<?php echo $after_widget; ?>
-<?php
-}
-function widget_meta_control() {
-	$options = $newoptions = get_option('widget_meta');
-	if ( $_POST["meta-submit"] ) {
-		$newoptions['title'] = strip_tags(stripslashes($_POST["meta-title"]));
-	}
-	if ( $options != $newoptions ) {
-		$options = $newoptions;
-		update_option('widget_meta', $options);
-	}
-	$title = attribute_escape($options['title']);
-?>
-			<p><label for="meta-title"><?php _e('Title:'); ?> <input style="width: 250px;" id="meta-title" name="meta-title" type="text" value="<?php echo $title; ?>" /></label></p>
-			<input type="hidden" id="meta-submit" name="meta-submit" value="1" />
-<?php
-}
-
-
-	$dims150 = array( 'height' => 150, 'width' => 300 );
-	$class = array('classname' => 'widget_pages');
-	register_sidebar_widget('Pages','widget_pages', $class);
-	register_widget_control('Pages','widget_pages_control', $dims150);
-	$class['classname'] = 'widget_search';
-	register_sidebar_widget('Search','widget_search', $class);   
-	$class['classname'] = 'widget_meta';
-	register_sidebar_widget('Meta','widget_meta', $class);  
-	register_widget_control('Meta','widget_meta_control', $dims150); 
-?>
-<?php
-/*
-Plugin Name: Subpages widget
-Description: Adds a subpages menu to your sidebar if subpages are present.
-Author: Michael Wender
-Version: 1.0
-Plugin URI: http://wenderhost.com/downloads/wordpress-plugins/subpages-widget/
-Author URI: http://michaelwender.com
-*/
-function widget_subpages_init() {
-	// Check for the required plugin functions. This will prevent fatal
-	// errors occurring when you deactivate the dynamic-sidebar plugin.
-	if ( !function_exists('register_sidebar_widget') )
-		return;	
-	register_deactivation_hook( __FILE__ , 'delete_widget_subpages_options'); //removing the options from the option table
-	
-	
-	function widget_subpages($args){
-		extract($args);
-		$options = get_option('widget_subpages');
-		$top_id = widget_subpages_top_parent_page();
-		$top_page = get_post($top_id);
-		$top_title = $top_page->post_title; 
-		$top_permalink = get_permalink($top_page->ID);
-		(!empty($options['sort_column']))? $sort_column = $options['sort_column'] : $sort_column = 'menu_order';
-		$sub_pages = wp_list_pages('sort_column=' .$sort_column. '&title_li=&echo=0&child_of=' .$top_id);
-		if ($sub_pages <> "" ){
-			echo $before_widget;
-#			echo $before_title . '<span id="subpages-title"><a href="' .$top_permalink. '">' .$top_title. '</a> &raquo;</span>' . $after_title;
-			echo $before_title . '<span id="subpages-title">' .$top_title. ' &raquo;</span>' . $after_title;
-		?>
-			<ul id="subpages"><?php echo $sub_pages; ?></ul>
-		<?php 
-			echo $after_widget;
-			
-			if(is_array($options)){
-				if($options['divider'] == true) echo '<li class="subpages-divider" style="' .$options['divider_style']. '">&nbsp;</li>' . "\n";
-			}
-		}
-	}
-
-	function widget_subpages_top_parent_page(){
-		global $post;
-		$widget_subpages_post = $post;
-		$topparentpageid = $widget_subpages_post->ID;
-		$widget_subpages_post_parent_id = $widget_subpages_post->post_parent;
-		while ($widget_subpages_post_parent_id) {
-			$widget_subpages_post = &get_post($widget_subpages_post_parent_id);
-			$topparentpageid = $widget_subpages_post->ID;
-			$widget_subpages_post_parent_id = $widget_subpages_post->post_parent;
-		}
-		return $topparentpageid;
-	}
-	
-	// This registers the widget so it appears with the other available
-	// widgets and can be dragged and dropped into any active sidebars.
-	register_sidebar_widget(array('Subpages', 'widgets'), 'widget_subpages');
-	
-	function widget_subpages_options(){
-		// Get our options and see if we're handling a form submission.
-		$options = get_option('widget_subpages');
-		if ( !is_array($options) )
-			$options = array('divider'=>'', 'divider_style'=> '');
-		if ( $_POST['widget_subpages-submit'] ) {
-
-			// Remember to sanitize and format use input appropriately.
-			$options['sort_column'] = $_POST['widget_subpages-sort_column'];
-			$options['divider'] = strip_tags(stripslashes($_POST['widget_subpages-divider']));
-			$options['divider_style'] = strip_tags(stripslashes($_POST['widget_subpages-divider_style']));
-			update_option('widget_subpages', $options);
-		}
-
-		// Be sure you format your options to be valid HTML attributes.
-		if(!empty($options['sort_column'])){
-			if($options['sort_column'] == 'post_title'){
-				$menu_order_checked = '';
-				$post_title_checked = ' checked="checked"';
-			} else {
-				$menu_order_checked = ' checked="checked"';
-				$post_title_checked = '';			
-			}
-		} else {
-			$menu_order_checked = ' checked="checked"';
-		}
-		if($options['divider'] == 1) $checked = ' checked="checked"';
-		$divider_style = htmlspecialchars($options['divider_style'], ENT_QUOTES);
-		
-		echo '<p style="text-align:left;"><label for="widget_subpages-sort_column">' . __('Sort subpages by:'). "\n";
-		echo '<br />Menu Order: <input id="widget_subpages-sort_column1" name="widget_subpages-sort_column" type="radio" value="menu_order"' .$menu_order_checked. '/>' . "\n"; 
-		echo '<br />Page Title: <input id="widget_subpages-sort_column2" name="widget_subpages-sort_column" type="radio" value="post_title"' .$post_title_checked. '/></label></p>' . "\n";
-		echo '<p style="text-align:left;"><label for="widget_subpages-divider">' . __('Use divider:') . ' <input id="widget_subpages-divider" name="widget_subpages-divider" type="checkbox" value="1"' .$checked. '/></label><br />(Adds a visual divider beneath the subpages sidebox.)</p>';
-		echo '<p style="text-align:left;"><label for="widget_subpages-divider_style">' . __('Divider CSS Styles:', 'widgets') . ' <input style="width: 350px;" id="widget_subpages-divider_style" name="widget_subpages-divider_style" type="text" value="'.$divider_style.'" /></label></p>';
-		echo '<input type="hidden" id="widget_subpages-submit" name="widget_subpages-submit" value="1" />';		
-	}
-	register_widget_control(array('Subpages', 'widgets'), 'widget_subpages_options', 400, 200);
-		
-	function delete_widget_subpages_options(){
-		/* hooks submitted upon deactivation*/
-		delete_option('widget_subpages');
-	}			
-
-}
-add_action('widgets_init', 'widget_subpages_init');
-?>
-<?php
-/**
- * If more than one page exists, return TRUE.
- */
-function show_posts_nav() {
-	global $wp_query;
-	return ($wp_query->max_num_pages > 1) ? TRUE : FALSE;
-}
-?>
-<?php } // "if Wordpress 2.2.x or newer" ends here ?>
-<?php
-include (TEMPLATEPATH . '/functions/simple_recent_comments.php');
-include (TEMPLATEPATH . '/functions/most_commented.php');
-include (TEMPLATEPATH . '/functions/most_commented_per_cat.php');
+#include (TEMPLATEPATH . '/functions/simple_recent_comments.php');
+#include (TEMPLATEPATH . '/functions/most_commented.php');
+#include (TEMPLATEPATH . '/functions/most_commented_per_cat.php');
+include (TEMPLATEPATH . '/functions/bfa_recent_comments.php');
+include (TEMPLATEPATH . '/functions/bfa_popular_posts.php');
+include (TEMPLATEPATH . '/functions/bfa_popular_in_cat.php');
 ?>
 <?php 
 function bfa_add_stuff_admin_head() {
@@ -250,21 +31,40 @@ function bfa_add_stuff_admin_head() {
 add_action('admin_head', 'bfa_add_stuff_admin_head');
 ?>
 <?php
+$header_image_text_wp = "<br /><br /><em>You add your own header image(s), upload one or several images with any file names <strong>anything.[jpg|gif|png]</strong>  (i.e. hfk7wdfw8.gif, IMAGE_1475.jpg, bla.png) to /wp-content/themes/[theme-name]/images/header/ through FTP. The image(s) should be 1300 pixels wide or even wider, if you care about those who surf with an even wider browser viewport, like 1500 or 1600 pixels wide. The theme will autmatically recognize all images in that directory. If there's only one image, then it'll be your single, \"static\" header image. If there's more than one, then the theme will rotate them with every pageview.</em>";
+$header_image_text_wpmu = "<br /><br /><em>To upload your own header images, you'll need to prepare your header image(s) on your harddrive first. The image(s) should be 1300 pixels wide or even wider, if you care about those who surf with an even wider browser viewport, like 1500 or 1600 pixels wide. Rename them to <strong>atahualpa_header_XX.[jpg|gif|png|bmp]</strong> (Example: atahualpa_header_1.jpg, atahualpa_header_3.png, atahualpa_header_182.gif) and then, upload them to your WordPress site through your WordPress Editor</strong>. <br /><br />There is no \"upload\" tab in the admin area though. To upload an image, you'll have to act as if you're going to add an image to a post: Go to Admin -> Manage -> Posts, and click on the title of an existing post to open the editor. Click on the \"Add Media\" link, and in the next window click on the \"Choose files to upload\" button. That will open a window on your local computer where you can find and select the header image (which you've already renamed as described before) on your harddrive. Select \"Full Size\" and, instead of clicking on \"Insert into Post\", you will click on \"Save all changes\" because you just want to upload the image and not insert it into the post. Now reload your Homepage and the new header image should appear. If you want more than one header image (to have them rotate) simply repeat all these steps. The theme will autmatically recognize all images that are named atahualpa_header_X.[jpg|png|gif]. If there's only one image, then it'll be your single, \"static\" header image. If there's more than one, then the theme will rotate them with every pageview.</em>";
+$logo_icon_text_wp = "upload a \"logosymbol.gif\" with the size of 50x50 pixels and white background to <strong>/wp-content/themes/atahualpa2/images/</strong></em>";
+$logo_icon_text_wpmu = "upload a \"logosymbol.gif\" with the size of 50x50 pixels and white background through the WordPress Editor. There's no \"upload\" tab though. To upload the image you will have to act as if you're going to add an image to a post: Go to Admin -> Manage -> Posts, and click on the title of an existing post to open the editor. Click on the \"Add Media\" link, and in the next window click on the \"Choose files to upload\" button. That will open a window on your local computer where you can select the \"logosymbol.gif\" on your harddrive. After you've selected the image, choose \"Full Size\" and, instead of clicking on \"Insert into Post\", click on \"Save all changes\". Now reload your Homepage and the logo icon should appear instead of the default one.</em>";
+if (file_exists(ABSPATH."/wpmu-settings.php")) {
+$header_image_text = $header_image_text_wpmu; 
+$logo_icon_text = $logo_icon_text_wpmu; }
+else {$header_image_text = $header_image_text_wp; 
+$logo_icon_text = $logo_icon_text_wp;}
+?>
+<?php
 $themename = "Atahualpa";
 $shortname = "ata";
 $options = array (
+
+     array(    "name" => "Use Bytes For All SEO options",
+    	    "category" => "seo",
+            "id" => $shortname."_use_bfa_seo",
+            "type" => "select",
+            "std" => "No",
+            "options" => array("No", "Yes"),
+            "info" => "<strong>Leave this at \"No\" if you're using ANY SEO plugin</strong> such as \"All-in-one-SEO\", or any plugin that deals with meta tags in some way. If both a SEO plugin and the theme's SEO functions are activated, the meta tags of your site may get messed up, which might affect your search engine rankings. <br /><br />If you leave this at \"No\", the next SEO options (except the last one, \"Nofollow RSS...\") will become obsolete, you may just skip them. <br /><br /><em>Note: Even if you set this to \"Yes\", the SEO functions listed below (except \"Nofollow RSS...\") will NOT be activated IF the theme recognizes that a SEO plugin is activated.</em>"),
 
     array(    "name" => "Homepage Meta Description",
             "id" => $shortname."_homepage_meta_description",
             "std" => "",
             "type" => "textarea",
-            "info" => "Type 1-3 sentences, about 20-30 words total. Will be used as Meta Description for (only) the homepage. If left blank, no Meta Description will be added to the homepage. <strong>Example:</strong> <em>Comprehensive real estate and property listings. Includes information on buying and selling, tips on building, an auction timetable and other helpful information.</em>"),    
+            "info" => "Type 1-3 sentences, about 20-30 words total. Will be used as Meta Description for (only) the homepage. If left blank, no Meta Description will be added to the homepage. Default: <strong>blank</strong>"),    
 
     array(    "name" => "Homepage Meta Keywords",
             "id" => $shortname."_homepage_meta_keywords",
             "std" => "",
             "type" => "textarea",
-            "info" => "Type 5-30 words or phrases, separated by comma. Will be used as the Meta Keywords for (only) the homepage. If left blank, no Meta Keywords will be added to the homepage. <strong>Example:</strong> <em>real estate, property listings, buying, selling, tips, building, auction, information</em>"),
+            "info" => "Type 5-30 words or phrases, separated by comma. Will be used as the Meta Keywords for (only) the homepage. If left blank, no Meta Keywords will be added to the homepage. Default: <strong>blank</strong>"),
 
      array(    "name" => "Meta Title Tag format",
     	    "category" => "seo",
@@ -280,45 +80,56 @@ $options = array (
             "type" => "select",
             "std" => "1",
             "options" => array("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"),
-            "info" => "If you selected to include the blog title in the meta title (the option above), choose here what to put BETWEEN the page and the blog title (or vice versa): 1( &#171; ),  2( &#187; ),  3( &#58; ),  4(&#58; ),  5( &#62; ),  6( &#60; ),  7( &#45; ),  8( &#8249; ),  9( &#8250; ),  10( &#8226; ), 11( &#183; ), 12( &#151; ) or 13( &#124; )."),
+            "info" => "If you chose to include the blog title in the meta title (the option above), choose here what to put BETWEEN the page and the blog title (or vice versa):<br /><br /> 1( &#171; ),  2( &#187; ),  3( &#58; ),  4(&#58; ),  5( &#62; ),  6( &#60; ),  7( &#45; ),  8( &#8249; ),  9( &#8250; ),  10( &#8226; ), 11( &#183; ), 12( &#151; ) or 13( &#124; )."),
  
-     array(    "name" => "Noindex Date Archive-Pages?",
+     array(    "name" => "Noindex Date Archive Pages?",
             "id" => $shortname."_archive_noindex",
             "type" => "select",
-            "std" => "Yes",
-            "options" => array("Yes", "No"),
-            "info" => "Include meta tag \"noindex, follow\" into date based archive pages? The purpose is to keep search engines from spidering duplicate content from your site. Default is <strong>Yes</strong>"),
+            "std" => "No",
+            "options" => array("No", "Yes"),
+            "info" => "Include meta tag \"noindex, follow\" into date based archive pages? The purpose is to keep search engines from spidering duplicate content from your site. Default is <strong>No</strong>"),
 
-     array(    "name" => "Noindex Category & Tags pages?",
-            "id" => $shortname."_cat_tag_noindex",
+     array(    "name" => "Noindex Category pages?",
+            "id" => $shortname."_cat_noindex",
             "type" => "select",
             "std" => "No",
-            "options" => array("Yes", "No"),
-            "info" => "Include meta tag \"noindex, follow\" into category & tag pages? The purpose is to keep search engines from spidering duplicate content from your site. Default is <strong>No</strong> (Meaning the \"noindex\" meta tag will NOT be set, and the pages will be indexed)"),
+            "options" => array("No", "Yes"),
+            "info" => "Include meta tag \"noindex, follow\" into category pages? Same purpose as above. Default is <strong>No</strong>"),
+
+     array(    "name" => "Noindex Tag pages?",
+            "id" => $shortname."_tag_noindex",
+            "type" => "select",
+            "std" => "No",
+            "options" => array("No", "Yes"),
+            "info" => "Include meta tag \"noindex, follow\" into tag pages? Same purpose as above. Default is <strong>No</strong>"),
 
      array(    "name" => "Nofollow RSS, trackback & admin links?",
             "id" => $shortname."_nofollow",
             "type" => "select",
-            "std" => "Yes",
-            "options" => array("Yes", "No"),
-            "info" => "Make RSS, trackback & admin links \"nofollow\"? Same purpose as above. Default is <strong>Yes</strong>"),
-
-
+            "std" => "No",
+            "options" => array("No", "Yes"),
+            "info" => "Make RSS, trackback & admin links \"nofollow\"? Same purpose as above. Default is <strong>No</strong>"),
 
     array(    "name" => "Body Font",
             "id" => $shortname."_body_font",
             "type" => "select",
             "std" => "Tahoma",
             "options" => array("Tahoma", "Arial", "Calibri", "Cambria", "Candara", "Comic Sans MS", "Consolas", "Constantia", "Corbel", "Courier New", "Georgia", "Times New Roman", "Trebuchet MS", "Verdana"),
-            "info" => "The font face for the main content. The fonts starting with \"C\" (except Comic Sans and Courier New) are installed on Computers running Windows Vista. If you choose a Vista font here (recommended, because they're \"fresh\"), choose an Windows XP font (all other fonts in the list) in the section below, as backup for XP users. The \"serif\" or \"sans-serif\" part in the next option will cover all other website visitors, i.e Mac and Linux users. Google Adsense uses Arial, so if you want to blend in Adsense as much as possible you should use Arial here, even though that is a quite often used font face. Default: <strong>Tahoma</strong>"),
-
+            "info" => "The font face for the main content. Default: <strong>Tahoma</strong>"),
+          
     array(    "name" => "Body Backup Font",
             "id" => $shortname."_body_backup_font",
             "type" => "select",
             "std" => "Arial, sans-serif",
             "options" => array("Arial, sans-serif", "Calibri, sans-serif", "Cambria, serif", "Candara, sans-serif", "Comic Sans MS, sans-serif", "Consolas, sans-serif", "Constantia, serif", "Corbel, sans-serif", "Courier New, sans-serif", "Georgia, serif", "Tahoma, sans-serif", "Times New Roman, serif", "Trebuchet MS, sans-serif", "Verdana, sans-serif"),
-            "info" => "Show this font for users that don't have the main font face (option above) installed on their computer. I.e., if you've chosen Calibri as the main font, you could choose \"Arial, sans-serif\" as the backup font, for a consistent typographical look for all website visitors."),
-                                             
+            "info" => "Show this font for users that don't have the main font face (option above) installed on their computer. Default: <strong>Arial, sans serif</strong>"),
+
+    array(    "name" => "Body Font Size",
+            "id" => $shortname."_body_font_size",
+            "std" => "80",
+            "type" => "text",
+            "info" => "In % (percent). Default: <strong>80</strong>"),
+                                                        
     array(    "name" => "Link Default Color",
             "id" => $shortname."_link_color",
             "std" => "666666",
@@ -336,29 +147,108 @@ $options = array (
             "type" => "select",
             "std" => "none",
             "options" => array("none", "underline"),
-            "info" => "Underline links or not. Default: <strong>none</strong>"),
+            "info" => "Underline links or not, in their default state? Default: <strong>none</strong>"),
 
     array(    "name" => "Link Hover Decoration",
             "id" => $shortname."_link_hover_decoration",
             "type" => "select",
             "std" => "underline",
             "options" => array("underline", "none"),
-            "info" => "When the mouse pointer hovers over a link, underline it or not. Default: <strong>underline</strong>"),        
+            "info" => "When the mouse pointer hovers over a link, underline it or not? Default: <strong>underline</strong>"),        
 
     array(    "name" => "Link Text Bold or Not",
             "id" => $shortname."_link_weight",
             "type" => "select",
             "std" => "bold",
             "options" => array("bold", "normal"),
-            "info" => "Make link text bold or not. Default: <strong>bold</strong>"),
+            "info" => "Make link text bold or not? Default: <strong>bold</strong>"),
+
+    array(    "name" => "Body Margin Left/Right",
+            "id" => $shortname."_body_left_right_margin",
+            "std" => "10",
+            "type" => "text",
+            "info" => "In the default setup, there's some space on the left and right hand side of the layout. You can increase that, or set it to \"0\" to make the layout stretch from left to right 100%. Default: <strong>10</strong> (pixels)"),
+
+    array(    "name" => "Show Top Menu Bar?",
+            "id" => $shortname."_show_top_menu_bar",
+             "type" => "select",
+            "std" => "Yes",
+            "options" => array("Yes", "No"),
+            "info" => "Show the Top Menu Bar for \"Pages\" at the very top of the layout? Default: <strong>Yes</strong>.<br /><br /> <em>To put the navigation for \"Pages\" into a sidebar, go to Admin -> Design (\"Presentation\" in WP 2.3 and older) -> Widgets, and add the \"Pages\" widget to one of the sidebars.</em>"),
+
+    array(    "name" => "Show Header Logo Area?",
+            "id" => $shortname."_show_logo_area",
+             "type" => "select",
+            "std" => "Yes",
+            "options" => array("Yes", "No"),
+            "info" => "Show the whole area BETWEEN the Top Menu Bar and the Header Image? If set to \"No\", the Logo Icon, the Blog Title, the Blog Tagline, the RSS Icon, the Header Search Box, and the whole area containing those will dissapear, and the next 4 setttings will become obsolete. Default: <strong>Yes</strong>.<br /><br /> <em>If you set this to \"No\" you will have no Blog Title anymore. Choose \"Yes\" at \"Overlay Blog Title over Header Image(s)?\" below, to get a Blog Title again. </em>"),
 
     array(    "name" => "Show Logo Icon?",
             "id" => $shortname."_show_logo_icon",
              "type" => "select",
             "std" => "Yes",
             "options" => array("Yes", "No"),
-            "info" => "Show the graphic on the left hand side of the blog title? Default: <strong>Yes</strong>. To use your own graphic, leave this option at <strong>Yes</strong> and Upload a \"logosymbol.gif\" with the size of 50x50 pixels and white background to <strong>/wp-content/themes/atahualpa/images/</strong>"),
-                                            
+            "info" => "Show the graphic on the left hand side of the blog title? Default: <strong>Yes</strong>.<br /><br /> <em>To use your own graphic, leave this option at <strong>Yes</strong> and " . $logo_icon_text),
+
+    array(    "name" => "Show search box in header area?",
+            "id" => $shortname."_show_search_box",
+            "type" => "select",
+            "std" => "Yes",
+            "options" => array("Yes", "No"),
+            "info" => "You can remove the search box from the header here. Default: <strong>Yes</strong>. <br /><br /><em>To put a search box into one of the sidebars, go to Admin -> Design (Presentation in WP 2.3 and older) -> Widgets, and add the \"Search\" widget to one of the sidebars.</em>"),
+
+    array(    "name" => "Search box width",
+            "id" => $shortname."_searchbox_width",
+            "std" => "15",
+            "type" => "text",
+            "info" => "Width of the searchbox in the header. For a visually pleasing result you should probably set this to the same value as \"Right sidebar width\" (see option below), unless you have removed the right sidebar. Default: <strong>15</strong>."),
+
+    array(    "name" => "Show RSS icon in header area?",
+            "id" => $shortname."_show_rss_icon",
+            "type" => "select",
+            "std" => "Yes",
+            "options" => array("Yes", "No"),
+            "info" => "You can remove the RSS icon from the header here. Default: <strong>Yes</strong>."),
+
+    array(    "name" => "Show Header Image(s)?",
+            "id" => $shortname."_show_header_image",
+            "type" => "select",
+            "std" => "Yes",
+            "options" => array("Yes", "No"),
+            "info" => "Choose whether to display Header Image(s) or not. If you chose \"No\" at \"Show Header Logo Area?\" (see a few options above), then you should leave this setting here at \"Yes\", and additionally set the next option \"Overlay Blog Title over Header Image?\" to \"Yes\", too, or you won't have a Blog Title anywhere. Default: <strong>Yes</strong>. " . $header_image_text),
+
+    array(    "name" => "Overlay Blog Title over Header Image(s)?",
+            "id" => $shortname."_overlay_blog_title",
+            "type" => "select",
+            "std" => "No",
+            "options" => array("No", "Yes - left aligned", "Yes - centered", "Yes - right aligned"),
+            "info" => "If you chose \"No\" at \"Show Header Logo Area?\" above, then you will have no blog title anywhere in the header area. This setting here is meant to provide an alternative location for the blog title. Default: <strong>No</strong>."),
+
+    array(    "name" => "Overlayed Blog Title Top Padding",
+            "id" => $shortname."_overlay_blog_title_top_padding",
+            "std" => "20",
+            "type" => "text",
+            "info" => "Top padding (the space above the blog title, in pixels) for an overlayed blog title. If you chose to overlay the blog title over the header image, you may adjust it's position here by moving it up and down. Default: <strong>20</strong> (pixels). <br /><br /><em>Increase this value to push the blog title down. </em>"),
+          
+    array(    "name" => "Header Image Height",
+            "id" => $shortname."_headerimage_height",
+            "std" => "150",
+            "type" => "text",
+            "info" => "Visible height of the header image(s), in pixels. Default: <strong>150</strong>. Change this value to show a taller or less tall area of the header image(s). <br /><br /><em>This value does not need to match the actual height of your header image(s). In fact, all your header images could have different (actual) heights. Only the top XXX (= value that you set here) pixels of each image will be shown, the rest will be hidden. </em>"),
+
+    array(    "name" => "Header Image Alignment",
+            "id" => $shortname."_headerimage_alignment",
+            "type" => "select",
+            "std" => "top center",
+            "options" => array("top center", "top left", "top right", "center left", "center center", "center right", "bottom left", "bottom center", "bottom right"),
+            "info" => "Default: <strong>top center</strong>. You should have header images with a width of 1300 pixels or wider to account for visitors with large monitors. If someone with, say a 1024 pixel monitor comes along, SOME part of the header image(s) will have to be cut off. Choose here which part to cut off. The aligned edge or end of the image will be the fixed part, and the image will be cut off from the opposite edge or end. <br /><br />Example: If you choose \"Top Left\" as the alignment, then the image(s) will be cut off from the opposite edge, which would be \"Bottom Right\" in this case, if the image doesn't fit into the visitor's browser viewport. Default: <strong>top center</strong>."),
+
+    array(    "name" => "Header Image Opacity",
+            "id" => $shortname."_header_opacity",
+            "std" => "40",
+            "type" => "text",
+            "info" => "Opacity overlay for the left and right hand side of the header image. Numeric values between 0 and 99. Put 0 here to remove the Opacity. Default: <strong>40</strong>. "),
+                                                    
     array(    "name" => "Blog Title Color",
             "id" => $shortname."_blog_title_color",
             "std" => "666666",
@@ -371,12 +261,6 @@ $options = array (
             "type" => "text",
             "info" => "Color when hovering over the blog title. All hex color codes. Default: <strong>000000</strong>"),
             
-    array(    "name" => "Blog Tagline Color",
-            "id" => $shortname."_blog_tagline_color",
-            "std" => "666666",
-            "type" => "text",
-            "info" => "All hex color codes. Default: <strong>666666</strong>"),
-
     array(    "name" => "Blog Title Font",
             "id" => $shortname."_blog_title_font",
             "type" => "select",
@@ -396,19 +280,114 @@ $options = array (
             "std" => "2.5",
             "type" => "text",
             "info" => "All numeric values such as <strong>2.5</strong>, <strong>3</strong> or <strong>1.92</strong>. Default: <strong>2.5</strong>"),
- 
-    array(    "name" => "Header Image Height",
-            "id" => $shortname."_headerimage_height",
-            "std" => "150",
-            "type" => "text",
-            "info" => "Visible height of the header image, in pixels. You might need to edit this if you upload your own, bigger or smaller header image. This value does not need to match the actual image height. Only the top XXX pixels will be shown, the rest will be hidden. Default: <strong>150</strong>"),
 
-    array(    "name" => "Header Image Opacity",
-            "id" => $shortname."_header_opacity",
-            "std" => "40",
+    array(    "name" => "Blog Tagline Color",
+            "id" => $shortname."_blog_tagline_color",
+            "std" => "666666",
             "type" => "text",
-            "info" => "Opacity overlay for the left and right hand side of the header image. Numeric values between 0 and 99. Put 0 here to remove the Opacity. Default: <strong>40</strong>. "),
-                    
+            "info" => "All hex color codes. Default: <strong>666666</strong>"),
+
+    array(    "name" => "Post Title Color (h2)",
+            "id" => $shortname."_h2_color",
+            "std" => "666666",
+            "type" => "text",
+            "info" => "This will be used for post and page titles that are not linked, i.e. on single post pages, \"page\" pages, and for the titles on category, archive, tag and search result pages. Default: <strong>666666</strong><br /><br />If you use a <strong>h2</strong> heading within posts or pages, this color would be used there, too. You should probably not use h2 within posts and pages and leave h2 to the auto-generated post and page titles. h3 would be well suited for titles of paragraphs within post and page text."),
+            
+    array(    "name" => "Post Title Link Color",
+            "id" => $shortname."_post_title_color",
+            "std" => "666666",
+            "type" => "text",
+            "info" => "Used for the linked post tiles, on the home page, archive, category, tag and search pages. All hex color codes. Default: <strong>666666</strong>"),
+
+    array(    "name" => "Post Title Link Hover Color",
+            "id" => $shortname."_post_title_hover_color",
+            "std" => "000000",
+            "type" => "text",
+            "info" => "For linked post titles. All hex color codes. Default: <strong>000000</strong>"),
+            
+    array(    "name" => "Sidebars: Title Color",
+            "id" => $shortname."_sidebar_title_color",
+            "std" => "555555",
+            "type" => "text",
+            "info" => "Color of the widget/section titles in the sidebars. All hex color codes. Default: <strong>555555</strong>"),
+
+    array(    "name" => "Sidebars: Title Size",
+            "id" => $shortname."_sidebar_title_size",
+            "std" => "1.3",
+            "type" => "text",
+            "info" => "Font size of the widget/section titles in the sidebars, in \"em\". Default: <strong>1.3</strong>. Any numerical values such as <strong>1.23</strong>, <strong>2</strong> or <strong>0.9</strong>"),
+
+    array(    "name" => "Sidebars: Link Default Color",
+            "id" => $shortname."_sidebar_link_color",
+            "std" => "666666",
+            "type" => "text",
+            "info" => "Default color of link text in a sidebar. All hex color codes. Default: <strong>666666</strong>"),
+
+    array(    "name" => "Sidebars: Link Hover Color",
+            "id" => $shortname."_sidebar_link_hover_color",
+            "std" => "000000",
+            "type" => "text",
+            "info" => "Hover color of link text in a sidebar. All hex color codes. Default: <strong>000000</strong>"),
+
+    array(    "name" => "Sidebars: Link Decoration Color",
+            "id" => $shortname."_sidebar_link_decoration_color",
+            "std" => "dddddd",
+            "type" => "text",
+            "info" => "Default color of the little (by default: gray) boxes on the left hand side of each link in the sidebar. All hex color codes. Default: <strong>dddddd</strong>"),
+
+    array(    "name" => "Sidebars: Link Hover Decoration Color",
+            "id" => $shortname."_sidebar_link_decoration_hover_color",
+            "std" => "000000",
+            "type" => "text",
+            "info" => "Hover color of the little (by default: gray, and in hover state: black) boxes on the left hand side of each link in the sidebar. All hex color codes. Default: <strong>000000</strong>"),
+
+    array(    "name" => "Sidebars: Link Decoration Size",
+            "id" => $shortname."_sidebar_link_decoration_size",
+            "std" => "7",
+            "type" => "text",
+            "info" => "Width (in pixels) of the little boxes on the left hand side of each link in the sidebar. Default: <strong>7</strong>. Set to 0 to remove those boxes. If you remove them, you could start using the default \"Recent Comments\" widget of WordPress because the styling shouldn't look messed up anymore. "),
+            
+    array(    "name" => "Posts or excerpts on HOME page?",
+            "id" => $shortname."_excerpts_home",
+            "type" => "select",
+            "std" => "Full Posts",
+            "options" => array("Only Excerpts", "Full Posts"),
+            "info" => "Show full posts or only excerpts, on the Homepage? Default: <strong>Full Posts</strong>."),
+            
+    array(    "name" => "Posts or excerpts on CATEGORY pages?",
+            "id" => $shortname."_excerpts_category",
+            "type" => "select",
+            "std" => "Only Excerpts",
+            "options" => array("Only Excerpts", "Full Posts"),
+            "info" => "Show full posts or only excerpts, on Category pages? Default: <strong>Only Excerpts</strong>."),
+            
+    array(    "name" => "Posts or excerpts on ARCHIVE pages?",
+            "id" => $shortname."_excerpts_archive",
+            "type" => "select",
+            "std" => "Only Excerpts",
+            "options" => array("Only Excerpts", "Full Posts"),
+            "info" => "Show full posts or only excerpts, on (date based) Archive pages? Default: <strong>Only Excerpts</strong>."),
+
+    array(    "name" => "Posts or excerpts on TAG pages?",
+            "id" => $shortname."_excerpts_tag",
+            "type" => "select",
+            "std" => "Only Excerpts",
+            "options" => array("Only Excerpts", "Full Posts"),
+            "info" => "Show full posts or only excerpts, on Tag pages? Default: <strong>Only Excerpts</strong>."),
+            
+    array(    "name" => "Posts or excerpts on SEARCH RESULT pages?",
+            "id" => $shortname."_excerpts_search",
+            "type" => "select",
+            "std" => "Only Excerpts",
+            "options" => array("Only Excerpts", "Full Posts"),
+            "info" => "Show full posts or only excerpts, on Search Result pages? Default: <strong>Only Excerpts</strong>."),
+
+     array(    "name" => "Layout min width",
+            "id" => $shortname."_min_width",
+            "std" => "800",
+            "type" => "text",
+            "info" => "The width (in pixels) at which the layout will stop shrinking, and start to show a horizontal scrollbar instead. Default: <strong>800</strong>. <br /><br /><strong>As a rough estimate, this value should be approx. (width of your widest image) + 420 pixels</strong>, IF you use the default setup with 2 sidebars, each 15em wide. How to find the optimal min-width: Surf to a post or page with your biggest image, resize your browser window so that the image barely fits into the main column, estimate the current browser viewport width based on your screen size (i.e. current browser window width 3/4 of a 1280 pixels monitor = around 960 pixels), and add 50 or so pixels to be sure (IE6 will start dropping a little before the other browsers start overlapping).<br /><br /><em>This setting is needed mainly for IE6 because it will drop the sidebars below the main column, if you have images in the main column that are too big for the browser viewport (screen width) of a given visitor. This setting will benefit other browsers too, because otherwise, an image that is too big would overlap parts of the right sidebar if the browser viewport is too small for the given image. </em> "),
+                                           
      array(    "name" => "Left sidebar width",
             "id" => $shortname."_leftcolumn_width",
             "std" => "15",
@@ -421,12 +400,20 @@ $options = array (
             "type" => "text",
             "info" => "Numbers between 10-25 make sense. Default: <strong>15</strong>. Put 0 here to make the right sidebar dissapear. You'll have a 2 column layout then."),
 
+    array(    "name" => "Allow comments on \"Page\" pages, too?",
+            "id" => $shortname."_comments_on_pages",
+            "type" => "select",
+            "std" => "No",
+            "options" => array("No", "Yes"),
+            "info" => "Set to Yes to have a comment form (and comments if any) on \"Page\" pages, too, and not only on Post pages. Default: <strong>No</strong>."),
+
      array(    "name" => "Copyright start year",
            "id" => $shortname."_copyright_start_year",
             "std" => "",
             "type" => "text",
-            "info" => "Start year for copyright notice at bottom of page: &copy; <strong>XXXX</strong> - [current year]. (The current year will be included automatically). Default: blank. Example: If you put <strong>2006</strong> into this field, then in 2008 it will read \"2006-2008\" on your page, and on 1-1-2009 it will change to \"2006-2009\", and so on"),
+            "info" => "Start year for copyright notice at bottom of page: &copy; <strong>XXXX</strong> - [current year]. (The current year will be included automatically). Default: <strong>blank</strong>.<br /><br /><em> Example: If you put <strong>2006</strong> into this field, then in 2008 it will read \"2006-2008\" on your page, and on 1-1-2009 it will change to \"2006-2009\", and so on... </em>"),
 );
+
 function mytheme_add_admin() {
     global $themename, $shortname, $options;
     if ( $_GET['page'] == basename(__FILE__) ) {
@@ -465,6 +452,7 @@ if ($value['type'] == "text") { ?>
     <td>
     <?php echo $value['info']; ?>
     </td>
+    </tr><tr><td colspan="3"><HR NOSHADE SIZE=20 color="#eee"></td>
 </tr>
 <?php } elseif ($value['type'] == "textarea") { ?>
 <tr valign="top">
@@ -475,6 +463,7 @@ if ($value['type'] == "text") { ?>
     <td>
     <?php echo $value['info']; ?>
     </td>
+    </tr><tr><td colspan="3"><HR NOSHADE SIZE=20 color="#eee"></td>
 </tr>
 <?php } elseif ($value['type'] == "select") { ?>
     <tr valign="top">
@@ -489,6 +478,7 @@ if ($value['type'] == "text") { ?>
         <td>
         <?php echo $value['info']; ?>
         </td>
+    </tr><tr><td colspan="3"><HR NOSHADE SIZE=20 color="#eee"></td>
     </tr>
 <?php
 }
@@ -516,3 +506,67 @@ function is_last_post()
 	return ($wp_query->current_post == $wp_query->post_count - 1);
 }
 ?>
+<?php if (file_exists(ABSPATH."/wpmu-settings.php")) { ?>
+<?php
+function m_find_in_dir( $root, $pattern, $recursive = true, $case_sensitive = false ) {
+    $result = array();
+    if( $case_sensitive ) {
+        if( false === m_find_in_dir__( $root, $pattern, $recursive, $result )) {
+            return false;
+        }
+    } else {
+        if( false === m_find_in_dir_i__( $root, $pattern, $recursive, $result )) {
+            return false;
+        }
+    }
+   
+    return $result;
+}
+
+/**
+ * @access private
+ */
+function m_find_in_dir__( $root, $pattern, $recursive, &$result ) {
+    $dh = @opendir( $root );
+    if( false === $dh ) {
+        return false;
+    }
+    while( $file = readdir( $dh )) {
+        if( "." == $file || ".." == $file ){
+            continue;
+        }
+        if( false !== @ereg( $pattern, "{$root}/{$file}" )) {
+            $result[] = "{$root}/{$file}";
+        }
+        if( false !== $recursive && is_dir( "{$root}/{$file}" )) {
+            m_find_in_dir__( "{$root}/{$file}", $pattern, $recursive, $result );
+        }
+    }
+    closedir( $dh );
+    return true;
+}
+
+/**
+ * @access private
+ */
+function m_find_in_dir_i__( $root, $pattern, $recursive, &$result ) {
+    $dh = @opendir( $root );
+    if( false === $dh ) {
+        return false;
+    }
+    while( $file = readdir( $dh )) {
+        if( "." == $file || ".." == $file ){
+            continue;
+        }
+        if( false !== @eregi( $pattern, "{$root}/{$file}" )) {
+            $result[] = "{$root}/{$file}";
+        }
+        if( false !== $recursive && is_dir( "{$root}/{$file}" )) {
+            m_find_in_dir__( "{$root}/{$file}", $pattern, $recursive, $result );
+        }
+    }
+    closedir( $dh );
+    return true;
+}
+?>     
+<?php } ?>                                                                                                    

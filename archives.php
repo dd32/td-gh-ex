@@ -4,11 +4,11 @@
 					<div id="source-order-container">
 						<div id="middle-column">
 							<div class="inside">
-<h2>Archives by Month:</h2>
+<h2><?php _e('Archives by Month:', 'atahualpa'); ?></h2>
 	<ul>
 		<?php wp_get_archives('type=monthly'); ?>
 	</ul>
-<h2>Archives by Subject:</h2>
+<h2><?php _e('Archives by Subject:', 'atahualpa'); ?></h2>
 	<ul>
 		 <?php wp_list_categories(); ?>
 	</ul>

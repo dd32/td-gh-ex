@@ -1,5 +1,27 @@
 Wordpress Theme "Atahualpa" - INSTALLATION:
 
+Changelog v. 2.2 - Aug 24 - 2008:
+
+- MANY little fixes and improvements
+- When you used All-in-one-SEO your Meta Tags might have been messed up due to the theme's own SEO options.
+DO upgrade if you are using All-in-one-SEO or another SEO plugin with v. 2.01
+- No hardcoded areas in the right sidebar anymore for related post, popular posts, recent comments. 
+Instead, there are 3 widgets included in the theme now. They will install automatically. You don't need to
+do anything.
+- The plugin "Related Posts" is not included or integrated anymore. I couldn't turn it into a widget for now.
+Please feel free to install that plugin or another one, i.e. "Similar Posts" on your own. 
+- Many additonal options on the options page.
+- Code cleaned up considerably. You should be able to edit the CSS now. The PHP code got a bit more complicated through
+the localization though. 
+- Localization not finished yet but should be in the next version. 
+- WPMU users can upload header images and a logo icon, too
+- Print styles integrated. Even if you don't install WP-Print, visitors will still get a decent print
+version of any of your pages if they choose to print out a page through their browser's print function.
+
+
+
+
+
 * THIS THEME DOES NOT WORK WITH WORDPRESS 2.1 OR OLDER *
 
 1) After you've extracted the "atahualpa2.zip" file on your desktop computer, you'll
@@ -48,11 +70,9 @@ The final location of the subdirectories and files of the /_plugins/_upload_for_
 would be
 
 /whereever-your-wordpress-installation-is/wp-content/plugins/wp-pagenavi/
-/whereever-your-wordpress-installation-is/wp-content/plugins/related-posts.php
-/whereever-your-wordpress-installation-is/wp-content/plugins/related-posts-readme-first.txt
 /whereever-your-wordpress-installation-is/wp-content/plugins/subscribe-to-comments.php
 
-7) Now you've uploaded the 3 plugins "WP-Pagenavi", "Related Posts" & "Subscribe To Comments".
+7) Now you've uploaded the 2 plugins "WP-Pagenavi" & "Subscribe To Comments".
 The remaining plugins "WP-Print" and "WP-Email" are different for almost each WP version. Make sure that you
 upload the right directories depending on your WordPress version.
 
@@ -73,13 +93,11 @@ In all threee cases (7.a, 7.b or 7.c) you should end up with
 /whereever-your-wordpress-installation-is/wp-content/plugins/wp-email/
 /whereever-your-wordpress-installation-is/wp-content/plugins/wp-print/
 
-So with all 5 Plugins installed, you should have:
+So with all 4 Plugins installed, you should have:
 
 /whereever-your-wordpress-installation-is/wp-content/plugins/wp-email/
 /whereever-your-wordpress-installation-is/wp-content/plugins/wp-pagenavi/
 /whereever-your-wordpress-installation-is/wp-content/plugins/wp-print/
-/whereever-your-wordpress-installation-is/wp-content/plugins/related-posts.php
-/whereever-your-wordpress-installation-is/wp-content/plugins/related-posts-readme-first.txt
 /whereever-your-wordpress-installation-is/wp-content/plugins/subscribe-to-comments.php
 
 
@@ -89,25 +107,20 @@ your WP version because WP-Email may appear twice in the list, as "WP-Email" and
 The usage of "WP-Email Widget" will not be covered here.
 
 Click on the "Activate" links of:
-- "Related Posts"
 - "Subscribe To Comments"
 - "WP-Email"
 - "WP-Pagenavi"
 - "WP-Print"
 
 When you check your site again, you should see the WP-Print and WP-Email links at the bottom of posts, 
-the "Subscribe to comments" checkbox at the bottom of the comment form, and a list of related posts (if any) at the top
-of the right sidebar, when on a single post page. If the related posts aren't there, try another post, the one 
-that you're looking at may not have any related posts.
+and the "Subscribe to comments" checkbox at the bottom of the comment form.
 
-You should also have (already integrated into the theme, no plugin installation required):
+You should also have (already integrated into the theme, no plugin installation required),
+3 new widgets under Admin -> Design ("Presentation" in WP 2.3 and older):
 
-- "Popular posts" on the top of the right sidebar, when on the homepage. 
-(Won't display if you don't have a single comment on any of your posts)
-
-- "Popular in [category name]" on the top of the right sidebar, when on a category page.
-(Won't display if you don't have a single comment on any of your posts in that category)
-
+- BFA Recent Comments
+- BFA Popular Posts
+- BFA Popular in Cat  (Popular Post in the given Category)
 
 9) Back in the admin area of your site, click on "Design" (WP 2.5 and newer) or "Presentation" (WP 2.3 and older) 
 and then on "Atahualpa Theme Options". Look through the list of options and salt to taste. If you are unsure about 
@@ -123,14 +136,10 @@ the file name itself doesn't matter: "jhkrekjfk7.jpg" will work. Upload the imag
 The images should be 1280 pixels wide or wider, the height doesn't matter, you can set the visible height at the
 options page (see step 9 above). Default setting is "show 150 pixels from top".
 
-Leave one image in that directory, and it will be the only ("static") header image of your site.
-Leave 2 or more images there, and they'll be rotated randomly.
+Put one image in that directory, and it will be the only ("static") header image of your site.
+Put 2 or more images there, and they'll be rotated randomly.
 
-11) You may want to turn off that graphical icon on the left hand side of the blog title, look at the options page 
-(see step 9 above). Or, upload your own: Create a 50x50 pixels "logosymbol.gif" with a white background and upload to 
-"/wp-content/themes/atahualpa2/images/" so that you end up with "/wp-content/themes/atahualpa2/images/logosymbol.gif".
-
-12) You can remove the "Email This Post" Icon (and also change that text) below each post at Admin -> Email.
+11) You can remove the "Email This Post" Icon (and also change that text) below each post at Admin -> Email.
 You can remove the "Print This Post" Icon (and also change that text) below each post at Admin -> Settings -> Print.
 
 

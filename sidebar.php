@@ -42,7 +42,7 @@ if (get_settings( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } e
 			<?php wp_list_categories('show_count=0&title_li='); ?>
 			</ul>
 			
-			<?php if ( function_exists('wp_tag_cloud') ) { ?>
+			<?php if ( function_exists('wp_tag_cloud') && get_the_tags() ) { ?>
 			<h3 class="widgettitle">Tags</h3>
 			<?php wp_tag_cloud('format=list'); } ?>	
 					
