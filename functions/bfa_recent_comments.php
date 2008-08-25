@@ -194,6 +194,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 	  // remove empty author links
           $output = preg_replace("/<a href=\"\"(.*?)>(.*?)<\/a>/i","\\2",$output);
+          $output = preg_replace("/<a href=\"http:\/\/\"(.*?)>(.*?)<\/a>/i","\\2",$output);
 	  
 	  // These lines generate the output
 
