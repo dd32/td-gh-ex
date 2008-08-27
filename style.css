@@ -1,0 +1,471 @@
+/*
+Theme Name: 	AquaBlock
+Description: 	A quick loading 3 column theme
+Version: 		1.0.0
+Author: 		Lyndi Geldenhuis
+Author URI: 	http://nice2all.com/themes/
+Tags: 			3 column, widget ready, valid XHTML, valid CSS, most poular posts, wp-pagenavi, related posts, comments on pages, documentation and support.
+
+	The CSS, XHTML and design is released under GPL:
+	http://www.opensource.org/licenses/gpl-license.php
+
+*/
+
+/* RESET 
+---------------------------------------*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,del,dfn,font,img,ins,kbd,q,s,samp,strike,sub,sup,tt,var,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-weight:normal;font-style:normal;font-size:100%;font-family:inherit;vertical-align:baseline;}
+:focus{outline:0}
+body{font-family:Arial, Helvetica, sans-serif;font-size:62.5%;}
+ol,ul{list-style:none;}
+table{border-collapse:separate;border-spacing:0;}
+caption,th,td{text-align:left;font-weight:normal;}
+blockquote:before,blockquote:after,q:before,q:after{content: "";}
+blockquote,q{quotes: "" "";}
+/* STRUCTURE
+---------------------------------------*/
+body
+	{
+	width:100%;
+	background:#fff;
+	color:#000;
+	font-size:.8em;
+	line-height:1.6;
+	}
+#skip
+	{
+	width:100%;
+	display:none;
+	background:#f1f1f1;
+	color:#000;
+	}
+#header-container
+	{
+	width:100%;
+	float:left;
+	border-top:5px solid #000080;
+	}
+#header
+	{
+	float:left;
+	width:70%;
+	}
+#rss
+	{
+	float:right;
+	width:30%;
+	}
+#menu 
+	{
+	float:left;
+	width:100%;
+	border-top:1px solid #ddd;
+	border-bottom:1px solid #ddd;
+	background:#f1f1f1;
+	}
+#container
+	{
+	clear:both;
+	width:100%;
+	}
+#content-container
+	{
+	margin-top:20px;
+	float:left;
+	width:70%;
+	margin-bottom:10px;
+	}
+#content
+	{
+	float:right;
+	width:74%;
+	overflow:hidden;
+	}
+#sidebar-left
+	{
+	float:left;
+	overflow:hidden;
+	width:26%;
+	}
+#sidebar-right
+	{
+	margin-top:20px;
+	float:right;
+	width:30%;
+	overflow:hidden;
+	margin-bottom:10px;
+	}
+#footer
+	{
+	clear:both;
+	width:100%;
+	background:#f1f1f1;
+	color:#000;
+	border-top:1px solid #ddd;
+	border-bottom:1px solid #ddd;
+	}
+/* BLOCK
+---------------------------------------*/
+.block
+	{
+	clear:both;
+	background:#f1f1f1;
+	color:#000;
+	padding:10px 0;
+	margin:10px 10px 0 10px;
+	border:1px solid #ddd;
+	}
+.halfblock
+	{
+	width:50%;
+	float:left;
+	padding:0;
+	margin:0;
+	}
+.postmetadata
+	{
+	background:#f1f1f1;
+	color:#000;
+	padding:10px !important;
+	margin:20px 10px 20px 20px;
+	border:1px solid #ddd;
+	}
+/* TYPOGRAPHY
+---------------------------------------*/
+p, h1, h2, h3, h4, h5, h6
+	{
+	padding: 5px 10px 0 10px;
+	}
+h1
+	{
+	font-size:2em;
+	background:url(images/logo.jpg) 5px 5px no-repeat;
+	padding:0;
+	margin:10px 0 0 0;
+	padding-left:50px;
+	}
+h2
+	{
+	font-size:1.8em;
+	}
+h3
+	{
+	font-size:1.6em;
+	}
+h4
+	{
+	font-size:1.4em;
+	}
+h5
+	{
+	font-size:1.2em;
+	}
+h6
+	{
+	font-size:1em;
+	}
+#content p, #content h1, #content h2, #content h3, #content h4, #content h5, #content h6, #content small
+	{
+	padding: 10px 20px;
+	}
+#header p
+	{
+	padding:0;
+	margin:0;
+	padding-left:60px;
+	}
+/* IMAGES
+----------------------------------------*/
+img.centered 
+	{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	}
+img.aligncenter 
+	{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	}
+img.alignright
+	{
+	padding:4px;
+	margin:0 0 2px 7px;
+	display:inline;
+	}
+img.alignleft
+	{
+	padding:4px;
+	margin:0 7px 2px 0;
+	display:inline;
+	}
+.alignright
+	{
+	float:right;
+	margin-left:10px;
+	}
+.alignleft
+	{
+	float:left;
+	margin-right:10px;
+	}
+/* LISTS
+----------------------------------------*/
+ul
+	{
+	list-style:none;
+	margin:5px 0 0 0;
+	}
+ol
+	{
+	list-style:decimal;
+	margin:5px 0 0 0;
+	}
+li
+	{
+	margin-left:10px;
+	padding:0;
+	}
+dl
+	{
+	margin-left:20px;
+	}
+dt
+	{
+	margin-left:10px;
+	}
+dd
+	{
+	margin-left:20px;
+	}
+#content ul
+	{
+	list-style:outside square;
+	margin:5px 0 5px 30px;
+	}
+#content ol
+	{
+	margin:5px 0 5px 30px;
+	}
+#content li
+	{
+	margin-left:20px;
+	padding:0;
+	}
+.inline ul
+	{
+	margin:0;
+	padding:0;
+	}
+.inline li
+	{
+	display:inline;
+	list-style-type:none;
+	padding:10px;
+	margin:0;
+	}
+ul#menu 
+ 	{
+ 	float:left;
+   	list-style-type:none;
+   	text-align:left;
+	padding:0;
+	margin:0;
+	margin-top:20px;
+ 	}
+ul#menu a
+ 	{
+   	background-color:#008080;
+   	padding:5px;
+   	height:auto;
+   	color:#fff;
+   	font-weight:bold;
+   	font-style:normal;
+   	text-decoration:none;
+ 	}
+ul#menu li 
+ 	{
+   	display:inline;
+   	text-align:center;
+	margin:0;
+	padding:0;
+ 	}
+ul#menu li.first 
+ 	{
+   	display:inline;
+   	text-align:center;
+	margin:0 0 0 10px;
+	padding:0;
+ 	}
+ul#menu a:hover, ul#menu a:focus, ul#menu a:active 
+ 	{
+   	background-color:#000080;
+   	color:#fff;
+ 	}
+ul#menu li.current_page_item a, ul#menu li.current_page_item a:hover,
+ul#menu li.current_page_item a:focus, ul#menu li.current_page_item a:active 
+ 	{
+   	background-color:#005080;
+   	color:#fff;
+   	cursor:default;
+   	text-align:left;
+ 	}
+/* LINKS
+---------------------------------------*/
+a:link, a:visited
+	{
+	color:#008080;
+	text-decoration:none;
+	}
+a:hover, a:focus, a:active
+	{
+	color:#000080;
+	text-decoration:underline;
+	}
+/* FORMS
+---------------------------------------*/
+#searchform 
+	{
+	padding:0 0 0 10px;
+	text-align:left;
+	}
+#searchform #s 
+	{
+	width:80%;
+	padding:2px 2px 2px 20px;
+	margin-top:30px;
+	background:#f1f1f1 url(images/search.jpg) 5px 5px no-repeat;
+	color:#000;
+	border:1px solid #ccc;
+	}
+#searchsubmit 
+	{
+	padding:1px;
+	background:#f1f1f1;
+	color:#000;
+	border:1px solid #ddd;
+	}
+form textarea
+	{
+	width:80%;
+	border:1px solid #ddd;
+	padding:0;
+	margin-right:10px;
+	color:#000;
+	background:#f1f1f1;
+	}
+form input
+	{
+	border:1px solid #ddd;
+	padding:3px;
+	margin:2px 0;
+	color:#000;
+	background:#f1f1f1;
+	}
+form input submit
+	{
+	margin:10px 0;
+	}
+form input:focus, form textarea:focus
+	{
+	color:#000;
+	background:#fff;
+	}
+form p
+	{
+	margin:0;
+	}
+/* MISCELLANEOUS
+---------------------------------------*/
+.hidden
+	{
+	display:none;
+	}
+.clear
+	{
+	clear:both;
+	}
+.center
+	{
+	text-align:center;
+	}
+.author
+	{
+	color:#666;
+	font-size:.9em;
+	}
+.navigation
+	{
+	margin:10px 20px;
+	}
+.navigation-right
+	{
+	text-align:right;
+	}
+.navigation-left
+	{
+	text-align:left;
+	}
+code
+	{
+	font-size:1.4em;
+	}
+blockquote
+	{
+	background:#f1f1f1;
+	color:#000;
+	padding:10px !important;
+	margin:20px 10px 20px 20px;
+	border:1px solid #ddd;
+	}
+cite
+	{
+	margin:10px 10px 10px 20px;
+	}
+/* PAGENAVI
+---------------------------------------*/
+.wp-pagenavi a, .wp-pagenavi a:link, .wp-pagenavi a:active 
+	{
+	color:#008080 !important;
+	background:transparent !important;
+	}
+.wp-pagenavi a:hover 
+	{
+	color:#000080 !important;
+	background:transparent !important;
+	}
+.wp-pagenavi span.pages 
+	{
+	background:transparent !important;
+	}
+.wp-pagenavi span.current 
+	{
+	background:transparent !important;
+	}
+.wp-pagenavi span.extend 
+	{
+	background:transparent !important;
+	}
+/* COMMENTS
+---------------------------------------*/
+.commentlist li .avatar
+	{ 
+	float:right;
+	border:1px solid #eee;
+	padding:2px;
+	margin:2px 0;
+	background:#fff;
+	color:#000;
+	}
+.commentlist li
+	{
+	list-style:decimal;
+	margin:10px;
+	padding:0;
+	}
+.commentlist .alt
+	{
+	background:#f1f1f1;
+	color:#000;
+	border:1px solid #ddd;
+	}
