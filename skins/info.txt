@@ -1,0 +1,2 @@
+This directory is for support for WordPreciousss 3.1.1 http://wangenweb.com/wordpreciousss/ and allows you to create skins for the theme.
+But if you don't use the plugin on your site, feel free to delete this directory.

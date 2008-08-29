@@ -17,7 +17,7 @@
 	<p class="postmeta">
 		<?php _e('Filed in','basic2col'); ?> <?php the_category(',') ?>
 
-		<?php echo basic2col_tags_front(); ?>		
+		<?php basic2col_tags_front(); ?>		
 
 		<?php if(comments_open() || pings_open()) : ?>
 			- <a href="<?php comments_link(); ?>" title="<?php _e('Comments to','basic2col'); ?> <?php the_title(); ?>">

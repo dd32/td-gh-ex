@@ -110,7 +110,7 @@ function basic2col_css() { ?>
 function basic2col_tags_front() {
 	$tags = ' ' . the_tags(__('- Tags:  ','basic2col'), ', ', '') . ' ';
 
-	return apply_filters('basic2col_tags_front', $tagcode);
+	echo apply_filters('basic2col_tags_front', $tags);
 
 }
 

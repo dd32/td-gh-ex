@@ -25,7 +25,7 @@
 </ul>
 
 <ul>
-<li><a href="http://wangenweb.com/" title="<?php _e('Theme: Basic2Col by Kristin K. Wangen','basic2col'); ?>" rel="nofollow">Basic2Col</a></li>
+<li><a href="http://fruw.no/" title="<?php _e('Theme: Basic2Col by Kristin K. Wangen','basic2col'); ?>" rel="nofollow">Basic2Col</a></li>
 
 <?php do_action('basic2col_credits'); ?>
 
