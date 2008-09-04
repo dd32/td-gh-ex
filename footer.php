@@ -3,7 +3,7 @@
 
 	<div id="footer">
 	<hr />
-	<p><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></p>
+	<p><a href="<?php bloginfo('url'); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
 	<ul>
 		<li><a href="http://wordpress.org" title="WordPress Engine">WordPress</a> | 
 			<span class="vcard">

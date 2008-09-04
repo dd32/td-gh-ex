@@ -9,13 +9,13 @@
 
 				<li id="categories"><h2 class="sidebar-title"><?php _e( 'Categories', 'simplish' ) ?></h2>
 					<ul>
-					<?php wp_list_cats('sort_column=name&optioncount=1&hierarchical=0'); ?>
+					<?php wp_list_cats('sort_column=name&optioncount=0&hierarchical=1'); ?>
 					</ul>
 				</li>
 
 				<li id="archives"><h2 class="sidebar-title"><?php _e( 'Archives', 'simplish' ) ?></h2>
 					<ul>
-					<?php wp_get_archives('type=monthly'); ?>
+					<?php wp_get_archives('type=monthly&show_post_count=0'); ?>
 					</ul>
 				</li>
 

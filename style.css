@@ -3,7 +3,7 @@ THEME NAME: Simplish
 THEME URI: http://labs.utopian.net/blogs/simplish/
 DESCRIPTION: Simplish is a WordPress variant of the Scribbish theme for blogs.
 TAGS: two columns, fixed width, right sidebar, galleries, gravatars, captions, widgets, microformats, hatom, hcard, valid CSS, valid XHTML
-VERSION: 2.0
+VERSION: 2.1
 AUTHOR: <a href="http://labs.utopian.net">Utopian.net Labs</a>, <a href="http://pittcrew.net/geekblog/">K. Pitt</a>, <a href="http://quotedprintable.com">J. Hardy</a>
 AUTHOR URI:
 */
@@ -17,166 +17,155 @@ AUTHOR URI:
  * 	#footer
  */
 
-body {
+body{
+	background: url(img/background.gif) repeat-x left top;
+	font: normal 12px "lucida grande", verdana, arial, helvetica, sans-serif;
 	margin: 0;
 	padding: 0.6em 1em 1em;
 	text-align: center;
 }
-#container {
+#container{
 	margin: 0 auto;
 	padding: 0;
 	text-align: left;
+	width: 900px;
 }
-#header {
+#header{
+	border-bottom: 3px solid #ccc;
 	height: 62px;
 	margin: 0 -0.5px 12px 0;
 	padding: 0;
 }
-#page {
+#page{
 }
-#content {
+#content{
 	float: left;
 	padding: 0 0 0 5px;
+	width: 662px;
 }
-#sidebar {
+#sidebar{
 	border-left: 1px dotted #ddd;
 	float: right;
+	font-size: 11px; 
 	padding-left: 15px;
 	text-align: left;
 	width: 200px;
 }
-#footer {
-	clear:both; 
+#footer{
+	border-top: 1px solid #ccc; 
+	clear: both; 
+	font-size: 90%;
 	height: 40px; 
 	margin: 10px 0 0;
 	padding: 10px 0 0;
 }
-#container {
-	width: 900px;
-}
-#content {
-	width: 662px;
-}
-#sidebar {
-	border-left: 1px dotted #ddd; 
-	float: right;
-	padding-left: 15px; 
-	text-align: left;
-}
-#content {
-	float: left;
-	padding-left: 5px; 
-}
-#header {
-	background: url(img/header_shadow.gif) repeat-x left bottom;
-}
-#header a:link, #header a:visited {
+#header a:link, #header a:visited{
 	color:#000;
 	text-decoration: none;
 }
-#header a:hover, #header a:active {
+#header a:hover, #header a:active{
 	background: transparent;
 	color:#760909;
 	text-decoration: none;
 }
-#header h1 {
+#header h1{
 	float: left;
 	font: bold 410% georgia, serif;
 	letter-spacing: -1px;
 	margin: 0;
 }
-#header h2 {
+#header h2{
 	float: right;
 	font: normal 12px verdana, arial, sans-serif;
 	margin: 2.35em 0.2em 0 0;
 }
-#content h1, #content h2, #content h3, #content h4, #content h5 {
+#content h1, #content h2, #content h3, #content h4, #content h5{
 	font-family: georgia, times, serif;
 	font-weight: normal;
 	letter-spacing: -1px;
 }
-#content h2 {
+#content h2{
 	font-size: 24px;
 	margin: 0 0 0.3em;
 }
-#content h3 {
+#content h3{
 	font-size: 22px;
 	margin: 1.2em 0 0.3em;
 }
-#content h4 {
+#content h4{
 	border-bottom: 1px dotted #bbb;
 	font-size: 20px;
 	margin: 1.2em 0 0.3em;
 }
-#content h5 {
+#content h5{
 	background: #ffd;
 	border-bottom: 1px dotted #aaa;
 	font-size: 20px;
 	margin: 1.2em 0 0.3em;
 }
-#content h1.archive-title {
+#content h1.archive-title{
 	color: #a9a9a9;
 	font-size: 28px;
 	margin: 0 0 0.3em;
 	text-transform: uppercase;
 }
-#content h1.archive-title span.archive-subtitle {
+#content h1.archive-title span.archive-subtitle{
 	font-size: 26px;
 	font-weight: bold;
 	text-transform: none;
 }
-#content .archive-meta {
+#content .archive-meta{
 	color: #a9a9a9;
 	font-size: 16px;
 	margin: 0 6em;
 	text-align: justify;
 }
-#content .archive-meta .vcard .fn {
+#content .archive-meta .vcard .fn{
 	font-family: georgia, times, serif;
 	font-size: 26px;
 	letter-spacing: -1px;
 }
-#content .archive-meta .vcard img.avatar {
+#content .archive-meta .vcard img.avatar{
 	border: 1px solid #ddd;
 	clear: both;
 	float: left;
 	margin: 0 8px 0 0;
 }
-#content .archive-meta .vcard .note {
+#content .archive-meta .vcard .note{
 	margin: 0 0 0 8px;
 }
-#content p {
+#content p{
 	line-height: 14px;
 	margin: 0 0 1.2em;
 }
-#content ul, #content ol {
+#content ul, #content ol{
 	margin: 1em;
 	padding:0;
 }
-#content ul {
+#content ul{
 	list-style-type: square;
 }
-#content li {
+#content li{
 	line-height: 15px;
 	margin: 0 0 0 1em;
 	padding: 0;
 }
-#content hr {
+#content hr{
 	color: #ffffff;
 	background-color: #ffffff;
 	border-top: 1px dotted #bbbbbb;
 	margin-bottom: 1em;
 }
-#content blockquote {
+#content blockquote{
 	color: #555;
 	border-left: 5px solid #ccc;
 	margin: 1.3em 1em;
 	padding: 0 1em;
 }
-#content code {
+#content code{
 	font: normal 12px "bitstream vera sans mono", monaco, "lucida console", "courier new", courier, serif;
 }
-#content pre {
+#content pre{
 	background: #FFFFFF;
 	border: 1px solid #EEEEEE;
 	color: #000000;
@@ -185,49 +174,49 @@ body {
 	overflow: auto;
 	padding: 8px;
 }
-#content .hentry {
+#content .hentry{
 	margin: 0 0 3em 0;
 }
-#content .hentry .entry-title {
+#content .hentry .entry-title{
 	font-size: 30px;
 	letter-spacing: -1.5px; 
 	line-height: 99%;
 	margin: 0;
 }
-#content .hentry h2.page-title {
+#content .hentry h2.page-title{
 	margin: 0 0 .3em;
 }
-#content .hentry .entry-title a:link, #content .hentry .entry-title a:visited {
+#content .hentry .entry-title a:link, #content .hentry .entry-title a:visited{
 	color: #111;
 	text-decoration: none;
 }
-#content .hentry .entry-title a:hover, #content .hentry .entry-title a:active {
+#content .hentry .entry-title a:hover, #content .hentry .entry-title a:active{
 	background: transparent;
 	color: #000;
 	text-decoration: underline;
 }
-#content .hentry .posted {
+#content .hentry .posted{
 	color: #a9a9a9;
 	float: left;
 	font: normal 14px/14px helvetica, arial, verdana, sans-serif;
 	letter-spacing: -1px;
 	margin: 1px 0 0.6em 2px;
 }
-#content .hentry .posted .fn {
+#content .hentry .posted .fn{
 	font-weight: bold;
 }
-#content .hentry .posted a.url, #content .hentry .posted a:hover.url {
+#content .hentry .posted a.url, #content .hentry .posted a:hover.url{
 	color: #a9a9a9;
 	background: transparent;
 	text-decoration: none;
 }
-.clear {
+.clear{
 	clear: both;
 }
-#content br.downpad {
+#content br.downpad{
 	margin: 0 0 33px;
 }
-#content .hentry ul.meta {
+#content .hentry ul.meta{
 	background: #eee;
 	border: 1px solid #ddd;
 	clear: both;
@@ -236,51 +225,54 @@ body {
 	margin: 0;
 	padding: 5px;
 }
-#content .hentry ul.meta li {
+#content .hentry ul.meta li{
 	line-height: 13px;
 	margin: 0;
 	padding: 0;
 }
-#content .hentry .meta a:link, #content .hentry .meta a:visited {
+#content .hentry .meta a:link, #content .hentry .meta a:visited{
 	border-bottom: 1px dotted #aaa;
 	color: #555;
 	text-decoration: none;
 }
-#content .hentry .meta a:hover, #content .hentry .meta a:active {
+#content .hentry .meta a:hover, #content .hentry .meta a:active{
 	color: #fff;
 }
-#content ol.comments, #content ol.trackbacks {
+#content ol.comments, #content ol.trackbacks{
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 }
-#content li.comment, #content li.trackback {
+#content li.comment, #content li.trackback{
 	border: 2px solid #ddd;
 	margin: 0 0 1.5em;
 	padding: 1em;
 }
-#content li.comment.preview {
+#content li.comment.preview{
 	background: #ffc;
 	border: 3px solid #fab444;
 	margin: 0 0 1.5em;
 	padding: 1em;
 }
-#content li.comment .comment-head, #content li.trackback .comment-head {
+#content li.comment .comment-head,
+#content li.trackback .comment-head{
 	font-weight: bold;
 	margin-bottom: 1em;
 }
-#content li.comment .comment-author, #content li.trackback .comment-author {
+#content li.comment .comment-author,
+#content li.trackback .comment-author{
 	font-size: 16px;
 	letter-spacing: -1px;
 }
-#content li.comment .comment-head abbr, #content li.trackback .comment-head abbr {
+#content li.comment .comment-head abbr,
+#content li.trackback .comment-head abbr{
 	color: #999;
 	padding-left:4px;
 }
-#content li.comment .comment-author {
+#content li.comment .comment-author{
 	height:36px;
 }
-#content li.comment .comment-author img.avatar {
+#content li.comment .comment-author img.avatar{
 	background: #fff;
 	clear:both;
 	float: right;
@@ -288,99 +280,92 @@ body {
 	margin: 0 0 0.5em 0.5em;
 	width: 48px;
 }
-#content li.comment p {
+#content li.comment p{
 	padding-left:24px;
 	padding-right:48px;
 }
-#content form.comments {
+#content form.comments{
 	background: #f2f2f2;
 	border-top: 1px solid #ddd;
 	padding: 1em 0.5em;
 }
-#content form.comments fieldset {
+#content form.comments fieldset{
 	border: none;
 }
-#content form.comments legend {
+#content form.comments legend{
 	display: none;
 }
-#content form.comments label {
+#content form.comments label{
 	font-weight: bold;
 }
-#content form.comments textarea {
+#content form.comments textarea{
 	height: 150px;
 	padding: 3px;
 	width: 90%;
 }
-#content .readmore {
+#content .readmore{
 	font-style: italic;
 }
-#sidebar {
-	font-size: 11px; 
-}
-#sidebar h2 {
+#sidebar h2{
 	font: bold 14px "lucida grande", verdana, arial, helvetica, sans-serif;
 	margin: 0 0 0.5em;
 }
-#sidebar h2 a:link, #sidebar h2 a:visited {
+#sidebar h2 a:link, #sidebar h2 a:visited{
 	color: #000;
 	text-decoration: none;
 }
-#sidebar h2 a:hover, #sidebar h2 a:active {
+#sidebar h2 a:hover, #sidebar h2 a:active{
 	background: transparent;
 	text-decoration: underline;
 }
-#sidebar ul {
+#sidebar ul{
 	list-style-type: none;
 	margin: 0 0 2em;
 	padding: 0;
 }
-#sidebar li {
+#sidebar li{
 	margin: 0;
 	padding: 1px 0;
 }
-#sidebar ul ul ul {
+#sidebar ul ul ul{
 	margin: 0;
 	padding: 0;
 }
-#sidebar ul li li li {
+#sidebar ul li li li{
 	list-style-type: square;
 	margin:0px 0px 0px 1.5em;
 }
-#sidebar ul li li li li {
+#sidebar ul li li li li{
 	list-style-type: disc;
 	margin:0px 0px 0px 1.5em;
 }
-#sidebar em {
+#sidebar em{
 	font-style: normal;
 }
-#sidebar .search p input {
+#sidebar .search p input{
 	font-size: 11px;
 	width: 92%;
 }
-#sidebar li#search {
+#sidebar li#search{
         margin-bottom: 2em;
 }
-#footer {
-	border-top: 1px solid #ccc; 
-	font-size: 90%; 
-}
-#footer a:link, #footer a:visited {
+#footer a:link, #footer a:visited{
 	color: #000;
 }
-#footer a:hover, #footer a:active {
+#footer a:hover, #footer a:active{
 	color: #fff;
 	background: #000;
 }
-#footer hr {
+#footer hr{
 	display: none;
 }
-#footer p {
+#footer p{
 	float: left; 
 	margin: 0;
 	padding: 0; 
 	width: 40%;
 }
-#footer ul {
+#footer ul{
 	float: right;
 	list-style-type: none; 
 	margin: 0;
@@ -388,178 +373,178 @@ body {
 	text-align: right; 
 	width: 40%;
 }
-#footer li {
+#footer li{
 	display: inline; 
 	margin: 0;
 	padding: 0 0 0 1em;
 }
-body {
-	background: url(img/background.gif) repeat-x left top;
-	font: normal 12px "lucida grande", verdana, arial, helvetica, sans-serif;
-}
-input, textarea {
+input, textarea{
 	font: normal 12px "bitstream vera sans", verdana, sans-serif;
 }
-abbr {
+abbr{
 	border: none;
 }
-cite {
+cite{
 	font-style: normal;
 }
-a img {
+a img{
 	border: none;
 	margin: 0;
 	padding: 0;
 }
-a:link, a:visited {
+a:link, a:visited{
 	color: #000;
 }
-a:hover, a:active {
+a:hover, a:active{
 	background: #000;
 	color: #fff;
 }
-span.caps {
+span.caps{
 	font-size: 0.9em;
 	letter-spacing: .07em;
 }
-p img {
+p img{
 	max-width: 100%;
 	padding: 0;
 }
-.aligncenter, div.aligncenter, img.centered {
+.aligncenter, div.aligncenter, img.centered{
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
-img.alignleft {
+img.alignleft{
 	display: inline;
 	margin: 0 7px 2px 0;
 	padding: 4px;
 }
-img.alignright {
+img.alignright{
 	display: inline;
 	margin: 0 0 2px 7px;
 	padding: 4px;
 }
-.alignleft {
+.alignleft{
 	float: left
 }
-.alignright {
+.alignright{
 	float: right;
 }
-span.caps {
+span.caps{
 	cursor: help;
 }
-.center {
+.center{
 	text-align: center;
 }
-.navigation {
+.navigation{
 	display: block;
 	font-size: 10px;
 	margin-bottom: 60px;
 	margin-top: 24px;
 	text-align: center;
 }
-.hidden {
+.hidden{
 	display: none;
 }
-.wp-caption {
+.wp-caption{
 	background-color: #eeeeee;
 	border: 1px solid #ddd;
 	margin: 10px;
 	padding-top: 4px;
 	text-align: center;
 }
-.wp-caption img {
+.wp-caption img{
 	border: 0 none;
 	margin: 0;
 	padding: 0;
 }
-.wp-caption p.wp-caption-text {
+.wp-caption p.wp-caption-text{
 	font-size: 0.8em;
 	padding: 1em 4px 0 5px;
 }
-/* sp_vallery() Gallery styling. From blogtxt, http://plaintxt.org/themes/blogtxt/ */
-div.entry-content div.gallery {
+/* sp_vallery() Gallery styling. */
+div.entry-content div.gallery{
 	clear: both;
 	float: left;
 	margin: 1em auto;
 	text-align: center;
 	width: 100%;
 }
-div.entry-content div.gallery dl {
+div.entry-content div.gallery dl{
 	float: left;
 	margin: 0 auto;
 	text-align: center;
 }
-div.entry-content div.gallery dl.gallery-columns-2 {
+div.entry-content div.gallery dl.gallery-columns-2{
 	width: 49%;
 }
-div.entry-content div.gallery dl.gallery-columns-3 {
+div.entry-content div.gallery dl.gallery-columns-3{
 	width: 33%;
 }
-div.entry-content div.gallery dl.gallery-columns-4 {
+div.entry-content div.gallery dl.gallery-columns-4{
 	width: 24%;
 }
-div.entry-content div.gallery dl.gallery-columns-5 {
+div.entry-content div.gallery dl.gallery-columns-5{
 	width: 19%;
 }
-div.entry-content div.gallery dd {
+div.entry-content div.gallery dd{
 	font-style: italic;
 	margin: 0 auto 1em auto;
 	text-align: center;
 }
-div.entry-content div.gallery * {
+div.entry-content div.gallery *{
 	margin: 0;
 	padding: 0;
 }
-/* Sitemap template styles for hentry/entry-title classes used as list items. */
-#sitemap-list .hentry {
+/* Sitemap template styles for hentry/entry-title used as list items. */
+#sitemap-list .hentry{
 	margin: 0 0 0 1em;
 }
-#sitemap-list #all-posts span.entry-title {
+#sitemap-list #all-posts span.entry-title{
 	font-size: 12px;
 	letter-spacing: normal;
 	line-height: normal;
 }
-#sitemap-list ul ul, #sitemap-list ol ol {
+#sitemap-list ul ul, #sitemap-list ol ol{
 	margin: 0;
 }
-#sitemap-list #all-posts .hentry .entry-title a:link, #sitemap-list #all-posts .hentry .entry-title a:visited {
+#sitemap-list #all-posts .hentry .entry-title a:link,
+#sitemap-list #all-posts .hentry .entry-title a:visited{
 	text-decoration: underline;
 }
-#sitemap-list #all-posts .hentry .entry-title a:hover, #sitemap-list #all-posts .hentry .entry-title a:active {
+#sitemap-list #all-posts .hentry .entry-title a:hover,
+#sitemap-list #all-posts .hentry .entry-title a:active{
 	background: #000 none repeat scroll 0 0;
 	color: #fff;
 }
 /* Search template style overrides. */
-#content.search-results .hentry {
+#content.search-results .hentry{
 	margin: 0;
 }
-#content.search-results .hentry h2.entry-title {
+#content.search-results .hentry h2.entry-title{
 	font-size: 20px;
 	letter-spacing: -1px;
 }
-#content.search-results .hentry .entry-title a:link, #content.search-results .hentry .entry-title a:visited {
+#content.search-results .hentry .entry-title a:link,
+#content.search-results .hentry .entry-title a:visited{
 	text-decoration: underline;
 }
-#content.search-results .hentry .entry-title a:hover, #content.search-results .hentry .entry-title a:active {
+#content.search-results .hentry .entry-title a:hover,
+#content.search-results .hentry .entry-title a:active{
 	background: #000 none repeat scroll 0 0;
 	color: #fff;
 }
-@media print {
-	#content {
+@media print{
+	#content{
 		float: none;
 		width: 90%;
 	}
-	#content pre {
+	#content pre{
 		background: #eee;
 		color: #000;
 	}
-	#content form.comments {
+	#content form.comments{
 		display: none;
 	}
-	#sidebar {
+	#sidebar{
 		display:none;
 	}
 }

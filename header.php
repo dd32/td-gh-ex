@@ -18,7 +18,7 @@
 <body>
 <div id="container">
 	<div id="header">
-		<h1><span><a href="<?php echo get_settings('home'); ?>"><?php bloginfo('name'); ?></a></span></h1>
+		<h1><span><a href="<?php echo get_settings('home'); ?>" rel="home"><?php bloginfo('name'); ?></a></span></h1>
 		<h2><?php bloginfo('description'); ?></h2>
 	</div>
 	<div id="page">

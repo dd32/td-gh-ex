@@ -14,7 +14,7 @@ Template Name: Links
 <?php get_links_list(); ?>
 </ul>
 
-<?php edit_post_link(__('Edit&hellip;', 'simplish'),'<p class="admin-edit"> [ ',' ]</p>') ?>
+<?php edit_post_link(__('Edit&hellip;', 'simplish'),'<p class="admin-edit">&#91; ',' &#93;</p>') ?>
 
 </div>	
 

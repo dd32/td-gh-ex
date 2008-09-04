@@ -1,9 +1,9 @@
 <?php // Do not delete these lines
-	if ('comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
+	if('comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
 		die ('Please do not load this page directly. Thanks!');
 
-	if (!empty($post->post_password)) { // if there's a password
-		if ($_COOKIE['wp-postpass_' . COOKIEHASH] != $post->post_password) {  // and it doesn't match the cookie
+	if(!empty($post->post_password)){ // if there's a password
+		if($_COOKIE['wp-postpass_' . COOKIEHASH] != $post->post_password){  // and it doesn't match the cookie
 ?>
 
 	<p class="nocomments">This post is password protected. Enter the password to view comments.<p>
@@ -15,27 +15,35 @@
 ?>
 
 	<h5><a name="comments">Comments</a></h5>
-	<?php if ('open' == $post->comment_status) : /* Comments open */ ?>
-		<?php if ( get_option('comment_registration') && !$user_ID ) : ?>
-			<p>You must be <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php the_permalink(); ?>">logged in</a> to leave a response.</p>
-		<?php else : ?>
-			<p><a href="#commentform">Leave a response</a></p>
+	<?php if('open' == $post->comment_status) : /* Comments open */ ?>
+		<?php if(get_option('comment_registration') && !$user_ID): ?>
+			<p><a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php the_permalink(); ?>">Log in</a> to respond
+			<?php if('open' == $post->ping_status): // trackbacks open ?>
+				| <a href="<?php trackback_url(true); ?>" rel="trackback">Trackback</a>
+			<?php endif; ?>
+			</p>
+		<?php else: ?>
+			<p><a href="#commentform">Respond</a>
+			<?php if('open' == $post->ping_status): // trackbacks open ?>
+				| <a href="<?php trackback_url(true); ?>" rel="trackback">Trackback</a>
+			<?php endif; ?>
+			</p>
 		<?php endif; ?>
 		
 	<?php else : /* Comments closed */ ?>
-			<p class="nocomments">Comments are closed.</p>
+			<p class="nocomments">Closed</p>
 	<?php endif; ?>
 
-	<?php if ($comments) : ?>
+	<?php if($comments): ?>
 		<div id="comments_div">
 			<ol id="comments" class="comments">
 
-			<?php foreach ($comments as $comment) : ?>
+			<?php foreach($comments as $comment): ?>
 				<li class="comment" id="comment-<?php comment_ID() ?>">
 					<div class="comment-head">
 						<span class="comment-author vcard"><?php sp_commenter_link() ?></span>
-						<abbr class="comment-published" title="<?php comment_time('Y-m-d\TH:i:sP') ?>"><?php comment_time('M d, Y H:i') ?></abbr>
-						<?php if ($comment->comment_approved == '0') : ?>
+						<abbr class="comment-published" title="<?php comment_time('Y-m-d\TH:i:sP') ?>"><?php comment_date() ?> <?php comment_time() ?></abbr>
+						<?php if($comment->comment_approved == '0'): ?>
 							<em>Your comment is awaiting moderation.</em>
 						<?php endif; ?>
 						<small><?php edit_comment_link('edit','',''); ?></small>
@@ -53,15 +61,15 @@
 	<?php endif; ?>
 
 
-<?php if ('open' == $post->comment_status) : ?>
+<?php if('open' == $post->comment_status): ?>
 
-<?php if (!( get_option('comment_registration') && !$user_ID )) : ?>
+<?php if(!(get_option('comment_registration') && !$user_ID)): ?>
 
 <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" class="comments" id="commentform" method="post">
 
 <fieldset>
   <legend>Comments</legend>
-  <?php if ( $user_ID ) : ?>
+  <?php if($user_ID): ?>
 
     <p>
       [ Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>
@@ -71,13 +79,13 @@
   <?php else : ?>
 
     <p>
-      <label>Name: <?php if ($req) echo "<small>(required)</small>"; ?><br />
+      <label>Name: <?php if($req) echo "<small>(required)</small>"; ?><br />
         <input name="author" id="author" value="<?php echo $comment_author; ?>" size="30" type="text" tabindex="1" />
       </label>
     </p>
 
     <p>
-      <label>Email: <?php if ($req) echo "<small>(required)</small>"; ?><br />
+      <label>Email: <?php if($req) echo "<small>(required)</small>"; ?><br />
         <input name="email" id="email" value="<?php echo $comment_author_email; ?>" size="30" type="text" tabindex="2" />
         <small>(will not be published)</small>
       </label>

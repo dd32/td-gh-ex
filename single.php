@@ -2,38 +2,35 @@
 
 		<div id="content">
 
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+<?php if(have_posts()): while(have_posts()): the_post(); ?>
 
 			<div class="hentry" id="article-<?php the_ID(); ?>">
 				<h2 class="entry-title"><?php the_title(); ?></h2>
 
 				<div class="posted">Posted by <?php sp_author_hcard() ?>
-					<abbr class="published posted_date" title="<?php the_time('Y-m-d\TH:i:sP') ?>">on <?php the_time('F d, Y') ?></abbr>
+					<abbr class="published posted_date" title="<?php the_time('Y-m-d\TH:i:sP') ?>">on <?php echo get_the_time(get_option('date_format')) ?></abbr>
 				</div>
 				<br class="clear" />	
 				<div class="entry-content">
 					<?php the_content(); ?>
 					<?php link_pages('<p><strong>Pages:</strong> ', '</p>', 'number'); ?>
 				</div>
-<?php edit_post_link(__('Edit&hellip;', 'simplish'),'<p class="admin-edit"> [ ',' ]</p>') ?>
+<?php edit_post_link(__('Edit&hellip;', 'simplish'),'<p class="admin-edit">&#91; ',' &#93;</p>') ?>
 				<ul class="meta">
-					<li class="categories">Category: <?php the_category(', ') ?></li>
+				<?php if(!in_category('1')): /* Assumes Uncategorized is catID #1 */ ?>
+					<li class="categories"><?php _e('Category:', 'simplish') ?> <?php the_category(', ') ?></li>
+				<?php endif; ?>
+				<?php if(get_the_tags() != ''): ?>
 					<li class="tags"><?php the_tags(); ?></li>
+				<?php endif; ?>
 					<li>Meta:
-						<a href="#comments"><?php comments_number('no comments', '1 comment', '% comments'); ?></a>,
-						<a href="<?php the_permalink() ?>" rel="bookmark">permalink</a>,
-						<?php comments_rss_link('rss'); ?>
+					<a href="#comments"><?php comments_number('0 Comments', '1 Comment', '% Comments'); ?></a> | 
+					<?php comments_rss_link('Feed'); ?> | 
+					<a href="<?php the_permalink() ?>" rel="bookmark">Permalink</a>
 					</li>
 				</ul>
 				<!-- <?php trackback_rdf(); ?> -->
 			</div>
-
-			<h5><a name="trackbacks">Trackbacks</a></h5>
-		<?php if ('open' == $post->ping_status) : //trackbacks open ?>
-			<p>Use <a href="<?php trackback_url(true); ?>" rel="trackback">this link</a> to trackback from your own site.</p>
-		<?php else : // trackbacks closed ?>
-			<p class="nopings">Trackbacks are closed.</p>
-		<?php endif; ?>
 
 		<?php comments_template(); ?>
 
