@@ -1,0 +1,539 @@
+/*
+Theme Name: ACMS
+Theme URI: http://www.codescheme.net/2007/06/06/acms-wordpress-theme/
+Description: Fixed-width 3-col layout CMS-style 
+Version: 1.5
+Author: Codescheme
+Author URI: http://www.codescheme.net/
+Tags: fixed width, widget ready, 3 columns, white, blue, gray
+*/
+
+
+body {
+margin: 0;
+padding:0;  
+font-size: 100.1%;
+color: #333;
+background: #FCF7F3;
+text-align:center;
+font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+}
+
+#wrapper{
+width: 870px;
+margin: 0px auto;
+padding: 2px 0 0 0;
+border-bottom: 1px solid #777;
+text-align:left;
+background: #555;
+}
+
+#wrapper2{
+padding: 0;
+border-bottom: 1px solid #777;
+text-align:left;
+background: white;
+border-left:1px solid #ccc;
+border-right:1px solid #ccc;
+}
+
+#header{
+border-top:1px solid white;
+background: #129AC4;
+height: 87px;
+}
+
+#superheader{
+background:#ccc;
+border-bottom:1px solid #666;
+}	
+
+#subheader{
+border-top:2px solid white;
+background: #5A88D8;
+}
+		
+form#searchform{
+margin:5px 10px 5px 0;
+font-size: 68%;
+}
+
+#sidebar {
+float:left;
+width: 160px; 
+margin: 0;
+padding: 5px 10px;
+overflow:hidden;
+
+}
+
+#content {
+margin: 0;
+padding: 0;
+font-size: 78%;
+overflow:hidden;
+}
+
+#contentwrapper{
+margin: 0 0 0 182px;
+}
+
+#centercontent{
+margin:0 170px 0 0;
+padding:0 15px 20px 8px;
+}
+
+#pagecontent{
+margin:0;
+padding:0 10px;
+}
+
+#news{
+float:right;
+width: 160px;
+padding: 0 10px 0 0;
+overflow:hidden;
+}
+
+#footer {
+clear: both;
+font-size: 68%;
+background: #f0f0f0;
+padding: 5px 0 15px 0;
+height: 30px;
+text-align:center;
+}
+
+#subscribe{
+font-size:90%;
+}
+
+
+#navigation{
+padding: 5px 15px;
+
+}
+
+#navigation div.fleft{
+float:left;
+}
+
+#navigation div.fright{ 
+float:right;
+}
+
+/*  ********** default styles *********** */
+
+p, h1, h2, h3, h4, h5, h6{
+margin: 12px 0;
+padding: 0;
+}
+p,li{
+line-height:20px;
+}
+h1, h5, h6{
+font-weight:100;
+}
+h2, h3, h4{
+
+}
+
+h1{
+	font-size: 190%;
+}
+h2{
+	font-size: 160%;
+}
+h3{
+	font-size: 140%;
+}
+h4{
+	font-size: 120%;
+}
+h5{
+	font-size: 100%;
+}
+h6{
+	font-size: 70%;
+}
+
+table{
+	font-size: 100%;
+}
+
+table tr{
+vertical-align:top;
+}
+
+a{
+color:#3970D0;
+font-weight:100;
+text-decoration:none;
+}
+a:hover{
+color:#244F99;
+}
+
+a img{
+border:0px;
+}
+
+hr{
+height:2px;
+margin:5px 0;
+border-bottom: 1px solid #ccc;
+border-top: 1px solid #ccc;
+}
+
+blockquote{
+padding: 5px 10px;
+margin:3px 15px;
+font-style:italic;
+}
+
+blockquote ul{
+padding: 3px 10px;
+margin: 4px;
+}
+
+form{
+margin: 0;
+padding:3px;
+}
+
+fieldset{
+padding:10px;
+margin:0;
+border:none;
+}
+
+legend{
+font-weight:800;
+}
+
+/* Headings */ 
+
+#superheader h3{
+margin: 0;
+padding: 5px 10px 10px 10px;
+color:;
+}
+
+#superheader h3 a{
+font-weight:100;
+}
+
+#superheader h3 a:hover{
+text-decoration:none;
+}
+
+#subheader h1{
+margin: 0;
+font-family: Verdana, sans-serif;
+padding: 3px 10px;
+font-weight:100;
+color: #fff;
+font-size: 85%;
+}
+
+#footer a{
+font-weight: 100;
+text-decoration:underline;
+}
+
+
+
+
+/* post styles */
+
+#centercontent a{
+font-weight:800;
+}
+
+.post{
+margin: 0 0 15px 0;
+}
+
+
+.post h2, #centercontent h2 {
+border-bottom: 1px solid #eee;
+padding: 0 0 0 16px;
+}
+
+#centercontent h2 {
+font-size:160%;
+font-weight: 100;
+color:#5A88D8;
+}
+
+.post h2 a{
+font-weight:100 !important;
+}
+
+
+.postmetadata{
+font-size:78%;
+border-bottom:1px solid #bbb;
+padding: 1px 0 1px 5px;
+text-align:right;
+margin: 0;
+}
+
+.postmetadata p{
+margin: 0;
+}
+
+.navigation{
+text-align:center;
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.alignleft {
+	float: left;
+}
+
+.alignright {
+	float: right;
+}
+
+
+.wp-caption {
+   border: 1px solid #ddd;
+   text-align: center;
+   background-color: #f3f3f3;
+   padding-top: 4px;
+   margin: 10px;
+   /* optional rounded corners for browsers that support it */
+   -moz-border-radius: 3px;
+   -khtml-border-radius: 3px;
+   -webkit-border-radius: 3px;
+   border-radius: 3px;
+}
+
+.wp-caption img {
+   margin: 0;
+   padding: 0;
+   border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+   font-size: 11px;
+   line-height: 17px;
+   padding: 0 4px 5px;
+   margin: 0;
+}
+
+
+/*  Comments   */
+
+h3#comments, h3#postcomment{
+	font-size: 100%;
+	font-family:verdana, sans-serif;
+}	
+
+
+li p.commentheader{
+margin: 3px 0 10px 0;
+display: block;
+padding: 1px 5px;
+
+}
+
+
+ul#commentlist{
+padding: 0 0 0 0px;
+list-style-type:none;
+font-size: 90%;
+margin:0;
+}
+
+ul#commentlist li{
+	border-bottom: 1px solid #ddd;
+	padding: 0 20px 5px 5px;
+	margin: 0 0 16px 0;
+}
+
+ul#commentlist li table{
+	
+}
+
+ul#commentlist li table td.author {
+	width:55px;
+	text-align: center;
+}
+
+ul#commentlist li table td.author img{
+border: 2px solid #ccc;
+}
+
+
+ul#commentlist li p.commentauthor {
+	padding: 0;
+	margin: 0 0 2px 0;
+	overflow:hidden;
+}
+
+
+ul#commentlist li p.commentheader{
+margin: 0 0 10px 0;
+padding: 1px 0px;
+font-size: 100%;
+}
+
+ul#commentlist li td{
+padding: 2px 8px;
+}
+
+ul#commentlist li div.commenttext{
+width:100%;
+padding:0 8px 2px 8px;
+}
+
+
+/*  sidebar styles */
+
+.menu{
+padding:0 2px 0 2px;
+margin:0;
+font-size:90%;
+}
+.menu a{
+font-weight: 100;
+}
+
+.menu ul{
+margin:0px 0px 0 0px;
+padding:0 0 0 5px;
+list-style-type:none;
+}
+
+.menu #pagemenu ul{
+padding: 0px;
+}
+
+.menu ul li{
+border-bottom:1px dotted #ccc;
+background: none;
+padding: 0px 0px;
+margin:0;
+}
+
+.menu ul li ul li{
+border: none !important;
+padding: 0 0 0 6px;
+}
+
+.menu a:hover{
+}
+
+.menu h3{
+font-family:verdana, sans-serif;
+font-size:100%;
+margin:7px 0px 4px 0;
+padding:5px 0 4px 5px;
+color: #333;
+background: #ccc;
+font-weight: 100;
+}
+
+.menu form{
+margin:0px;
+padding:5px 0px;
+}
+
+
+.menu #pagemenu ul li{
+border-bottom:none !important;
+
+}
+
+/* Calendar styles */
+#wp-calendar {
+empty-cells: show;
+margin: 10px auto 0;
+width: 155px;
+}
+
+#wp-calendar #next a {
+padding-right: 10px;
+text-align: right;
+}
+
+#wp-calendar #prev a {
+padding-left: 10px;
+text-align: left;
+}
+
+#wp-calendar a {
+display: block;
+font-weight: 800;
+}
+
+#wp-calendar caption {
+text-align: center;
+width: 100%;
+}
+
+#wp-calendar td {
+padding: 3px 0;
+text-align: center;
+}
+
+#wp-calendar td.pad:hover {
+background-color: #fff;
+}
+
+#footer ul {
+margin:0;
+padding:0;
+}
+
+#footer ul li{
+display:inline;
+}
+
+#footer a{
+text-decoration:none;
+}
+
+
+/* Pages Menu */
+	
+#pagemenu {
+	width: 156px;
+	margin: 0px;
+	padding: 3px 0 0 0;
+	}
+	
+#pagemenu li a {
+	height: 32px;
+  	voice-family: "\"}\""; 
+  	voice-family: inherit;
+  	height: 24px;
+	text-decoration: none;
+	}	
+	
+#pagemenu li a:link, #pagemenu li a:visited {
+	color: #333;
+	display: block;
+	padding: 8px 0 0 10px;
+	}
+	
+#pagemenu li a:hover {
+	color: #FFF;
+	padding: 8px 0 0 10px;
+}	
+	
+.credits{
+color:#777;
+font-size:9px;
+text-align: right;
+padding-right: 20px;
+}			
+
+
