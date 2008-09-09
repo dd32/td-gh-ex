@@ -2,7 +2,7 @@
 Theme Name: QuickPress 
 Theme URI: http://www.quickonlinetips.com/archives/quickpress/
 Description: 3-columns, widget ready, SEO optimized, fast loading, free support wordpress theme by <a href="http://www.quickonlinetips.com/">Quick Online Tips</a>.
-Version: 1.2.2
+Version: 1.2.3
 Author: Quick Online Tips
 Author URI: http://www.quickonlinetips.com/
 Tags: blue, widget ready, fixed width, three columns, simple, widgets, right sidebar, valid CSS, valid XHTML 
@@ -43,7 +43,7 @@ body {
 	}
 
 .alt {
-        background: #EAF3FA;
+        background: #f3f3f3;
 	}
 
 #footer {
@@ -252,6 +252,10 @@ body {
 
 .narrowcolumn {
 	float: left;
+
+
+
+
 	padding: 0 0 20px 45px;
 	margin: 0px 0 0;
 	width: 470px;
@@ -570,7 +574,7 @@ img.avatar {
 	width:170px;
 	float: right; 
         padding: 5px;
-        background: #f6f6f6;
+        background: #F0F6FB;
         border: 1px solid #DDD;
         }
 
