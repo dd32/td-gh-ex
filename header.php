@@ -28,9 +28,8 @@
 &nbsp;
 <a href="http://wordpress.org/">Wordpress</a> 
 &nbsp;
-&nbsp;
-<?php wp_loginout(); ?> 
- 
+&nbsp; 
+<a href="http://codex.wordpress.org/Main_Page">Codex</a> 
 </div>
 
 <div id="page">

@@ -2,7 +2,7 @@
 Theme Name: QuickPress 
 Theme URI: http://www.quickonlinetips.com/archives/quickpress/
 Description: 3-columns, widget ready, SEO optimized, fast loading, free support wordpress theme by <a href="http://www.quickonlinetips.com/">Quick Online Tips</a>.
-Version: 1.2.1
+Version: 1.2.2
 Author: Quick Online Tips
 Author URI: http://www.quickonlinetips.com/
 Tags: blue, widget ready, fixed width, three columns, simple, widgets, right sidebar, valid CSS, valid XHTML 
@@ -13,7 +13,7 @@ Tags: blue, widget ready, fixed width, three columns, simple, widgets, right sid
 ------------------------------------- */
 body {
 	font-size: 70%;  
-	font-family: Georgia, "Times New Roman", Times, serif;  
+	font-family: Arial, Helvetica, Sans-Serif; 
 	background: #666;
 	color: #111;
 	text-align: center;
@@ -58,7 +58,7 @@ small {
 	}
 
 h1, h2, h3, h4 {
-	font-weight: bold;
+	font-weight: bold;	
 	}
 
 #content h1 {
@@ -74,11 +74,13 @@ h1, h2, h3, h4 {
 	font-size: 1em; 
         margin: 0;
         padding:0;
+        font-family: Georgia, "Times New Roman", Times, serif;  
 	}
 
 .blogtitle {
 	font-size: 3em !important; 
 	text-align: left;
+        font-family: Georgia, "Times New Roman", Times, serif;  
  	font-weight: bold; 
         margin: 10px 0 0 0;
         padding: 0;
@@ -183,8 +185,12 @@ a:hover {
 	color: #DD0000; 
 	}
 
+.entry a {
+	border-bottom: 1px #0066cc dotted;
+        }  
+
 .entry a:hover {
-	text-decoration: underline;
+	text-decoration: none;
         }   
 
 #sidebar a:hover {
@@ -209,26 +215,27 @@ body {
 #header {
 	background-color: #14568A;
 	margin: 0 0px; 
-	padding: 15px 20px 0 20px; 
+	padding: 15px 20px 0 30px; 
 	height: 100px; 
-	width: 910px;
+	width: 900px;
 	}
 
 #header a {
-	color: #ccc;
+	color: #f3f3f3;
 	text-decoration: none;
 	}
 
 #header a:hover {
-	color: #fff;
+	color: #ccc;
 	}
 
 #topbar {
 	font-family: Arial, Helvetica, Sans-Serif;
-	font-size: 1.1em;
+	font-size: 1.2em;
+	font-weight:bold;
 	line-height: 1.3em;
         background: #444;
-        padding: 7px;
+        padding: 10px;
         margin: 0 0 20px 0;
         color: #ccc; 
         text-transform: uppercase;
@@ -236,7 +243,7 @@ body {
 
 #topbar a {
 	color: #ccc;
-        text-decoration:none 
+        text-decoration:none; 
         }
 
 #topbar a:hover {
@@ -543,8 +550,8 @@ img.avatar {
         text-align: center;
         padding: 5px;
         margin: 0 0 5px 0;
-        background: #f9f9f9;
-        border: 2px solid #ddd;
+        background: #ffffff;
+        border: 5px solid #ddd;
         }
 
 #sidebar_low {
@@ -556,14 +563,14 @@ img.avatar {
 	float: left; 
         padding: 5px;
         border: 1px solid #DDD;
-        background: #f9f9f9;
+        background: #EDF3DE;
         }
 
 #r_sidebar {
 	width:170px;
 	float: right; 
         padding: 5px;
-        background: #f9f9f9;
+        background: #f6f6f6;
         border: 1px solid #DDD;
         }
 
