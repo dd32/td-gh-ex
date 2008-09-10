@@ -1,28 +1,17 @@
 <?php get_header(); ?>
 
-<!--
+<!-- some preliminary work towards a del.icio.us links section using an existing plugin
 <div id='recent'>
-
     <div id='recentheader'>
-        Recent Posts
         <div id='recentclose'
-            onClick='document.getElementById("recentlist").style.display = "none";'>+</div>
+            onClick='toggleDisplay("recentlist");'>+</div>
+        <div id='recentmore' class='capsule'
+            onClick='document.location="http://delicious.com/YOUR_DELICIOUS_ID";'> More </div>
+        Recent News and Links
+        <div id='recentlist'>
+           <! ?php delicious_bookmarks('YOUR_DELICIOUS_ID', 5, true, false); ?>
+        </div>
     </div>
-
-    <div id='recentlist'>
-        <ul>
-        <?php
-            $myposts = get_posts('numberposts=5');
-            foreach($myposts as $post)
-            {
-                print "<li><a href='"; the_permalink(); print "'>";
-                the_title();
-                print "</a></li>\n";
-            }
-        ?>
-        </ul>
-    </div>
-
 </div>
 -->
 
@@ -65,18 +54,37 @@
                             '% Comments &#187;'); ?>
                     </span>
 
-                    <span
-                        class='cattrigger capsule'
-                        onClick='toggleDisplay("postcats-<?php the_ID();?>");'>
-                        Categories
-                    </span>
+                    <input type='button' class='cattrigger capsule'
+                        value='Categories'
+                        onClick='toggleDisplay("postcats-<?php the_ID();?>");'/>
+
+                    <input type='button' class='cattrigger capsule'
+                        value='Tags'
+                        onClick='toggleDisplay("posttags-<?php the_ID();?>");'/>
+
                     <div id='postcats-<?php the_ID(); ?>' class='postcats'>
+                    CATEGORIES:
                     <?php
                         foreach((get_the_category()) as $cat)
                             print
                                 "<a href='" . get_category_link($cat->cat_ID) . "'>" .
                                 "<span class='capsule'>$cat->cat_name</span></a>\n";
                     ?>
+                    </div>
+
+                    <div id='posttags-<?php the_ID(); ?>' class='postcats'>
+                    TAGS:
+                    <?php
+                        print
+                            get_the_tag_list(
+                                    $before = '<span class="capsule">',
+                                    // leave newlines below... Safari needs them
+                                    // for rounded borders!!!
+                                    $sep = '
+                                            </span><span class="capsule">
+                                           ',
+                                    $after = '</span>');
+                    ?> 
                     </div>
 
                 </div>

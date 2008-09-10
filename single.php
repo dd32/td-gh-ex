@@ -24,12 +24,6 @@
 
                 <?php edit_post_link('Edit Entry', '<li>', '</li>'); ?>
 
-                <li>
-                    <img border=0 valign='middle'
-                        src='<?php print bloginfo('template_directory') . "/images/rss-icon.gif"; ?>'>
-                    <?php comments_rss_link('Comments Feed'); ?>
-                </li>
-
                 <?php
                             
                     if (('open' == $post-> comment_status) && ('open' == $post->ping_status))
@@ -43,7 +37,14 @@
                     {
                         print "<li> <a href='" . trackback_url(true) . "' rel='trackback'>Trackback</a> </li>";
                     }
+
                 ?>
+
+                <li>
+                    <img border=0 valign='middle'
+                        src='<?php print bloginfo('template_directory') . "/images/rss-icon.gif"; ?>'>
+                    <?php comments_rss_link('Comments Feed'); ?>
+                </li>
 
                 </ul>
 
@@ -56,26 +57,42 @@
             <br clear='all'/>
 
             <div class="postmetadata">
-                <div>
-                Posted in:
+
+                <input type='button' class='cattrigger capsule'
+                    value='Categories'
+                    onClick='toggleDisplay("postcats");'/>
+
+                <input type='button' class='cattrigger capsule'
+                    value='Tags'
+                    onClick='toggleDisplay("posttags");'/>
+
+                <div id='postcats' class='postcats'>
+                &nbsp;CATEGORIES:
                 <?php
                     foreach((get_the_category()) as $cat)
                         print
-                            "<a href='" . get_category_link($cat->cat_ID) . "'>" .
-                            "<span class='capsule category'>$cat->cat_name</span></a>\n";
+                            "<span class='capsule'>
+                                <a href='" . get_category_link($cat->cat_ID) . "'>" .
+                                $cat->cat_name . "</a>
+                            </span>\n";
                 ?>
                 </div>
-                <br/>
-                <div>
-                Tagged:
+
+                <div id='posttags' class='postcats'>
+                &nbsp;TAGS:
                 <?php
                     print
                         get_the_tag_list(
-                                $before = '<span class="capsule category">',
-                                $sep = ', ',
+                                $before = '<span class="capsule">',
+                                // leave newlines below... Safari needs them
+                                // for rounded borders!!!
+                                $sep = '
+                                        </span><span class="capsule">
+                                       ',
                                 $after = '</span>');
                 ?> 
                 </div>
+
             </div>
 
         </fieldset>

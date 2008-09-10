@@ -41,7 +41,7 @@
                 </small>
             </div>
 
-            <?php if(function_exists('get_avatar')) { echo get_avatar($comment, '50'); } ?>
+            <?php if(function_exists('get_avatar')) { echo get_avatar(get_comment_author_email(), '50'); } ?>
 
             <div class='commenttext'>
 

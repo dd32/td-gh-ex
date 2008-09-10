@@ -2,12 +2,12 @@
 Theme Name: Ahimsa
 Theme URI: http://ahren.org/code/ahimsa
 Description: Ahimsa -- a theme that attempts to inflict the least violence on your aesthetics!
-Version: 1.0
+Version: 1.1
 Author: Ravi Sarma
 Author URI: http://ahren.org/code/
 Tags: fluid width, widget ready, 2 columns, left sidebar, gravatars
 
-	 Ahimsa 1.0
+	 Ahimsa 1.1
 	 http://ahren.org/code/ahimsa
 
 	Theme built for the Ahren Code site but free for all
@@ -24,6 +24,7 @@ BODY
     padding: 0;
     background-color: #9fc03d;
     font-size: medium;
+    font-family: "Gill Sans", "Trebuchet MS", Helvetica;
 }
 
 A
@@ -35,7 +36,6 @@ A
 A:hover
 {
     text-decoration: none;
-    border-bottom: 1px dotted #aaaaaa;
 }
 
 IMG
@@ -162,24 +162,40 @@ BLOCKQUOTE
     font-family: "Trebuchet MS", "Gill Sans", Skia, "Century Gothic";
 }
 
+#recentmore
+{
+    float: right;
+    font-size: small;
+    background-color: #b70100;
+}
+
 #recentclose
 {
     background-color: #b70100;
     color: #ffffff;
-    float: right;
-    padding: 1px 3px;
+    float: left;
+    clear: left;
+    padding: 1px 3px 3px 3px;
     font-family: Verdana;
     font-size: xx-small;
     font-weight: bold;
-    border: 1px solid #ffffff;
+    /* border: 1px solid #ffffff; */
+    margin-right: 8px;
     cursor: pointer;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
 
 #recentlist
 {
     font-family: Futura, "Century Gothic", Helvetica, Arial;
-    padding: 0px 15px 10px 0px;
-    background-color: #947d31;
+    padding: 15px 15px 15px 0px;
+    background-color: #555555;
+    margin: 10px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
 }
 
 #recentlist ul
@@ -193,9 +209,15 @@ BLOCKQUOTE
     color: #ffffff;
     border-bottom: 1px solid #aaaaaa;
     padding: 2px 5px;
+    font-size: small;
 }
 
-#recentlist a,a:hover
+#recentlist ul li:last-child
+{
+    border-style: none;
+}
+
+#recentlist a, #recentlist a:hover
 {
     text-decoration: none;
     color: #ffffff;
@@ -312,11 +334,6 @@ BLOCKQUOTE
     color: #334400;
 }
 
-#postaction a
-{
-    color: #553333;
-}
-
 .sidebarlist a
 {
     color: #553333;
@@ -370,6 +387,11 @@ legend.title a, fieldset.comment legend, fieldset.comment legend a
     margin-top: 5px;
 }
 
+.post fieldset .dateauthor .capsule
+{
+    background-color: #cc9900;
+}
+
 .entry
 {
     padding: 10px 25px;
@@ -378,19 +400,31 @@ legend.title a, fieldset.comment legend, fieldset.comment legend a
     color: #111111;
 }
 
+.entry A:hover
+{
+    text-decoration: none;
+    border-bottom: 1px dotted #aaaaaa;
+}
+
+
 #postaction
 {
     float: right;
     padding: 10px 15px 10px 10px;
     margin: 20px;
-    background-color: #ffdd99;
+    background-color: #dd6f06;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px; 
 }
 
+#postaction a
+{
+    color: #ffffff;
+}
+
 .postmetadata
 {
-    text-align: right;
+    text-align: left;
     padding: 12px 12px 30px 12px;
     border-top: 2px solid #6f900d;
     margin: 0px 10px;
@@ -399,7 +433,7 @@ legend.title a, fieldset.comment legend, fieldset.comment legend a
 
 .postmetadata #commentlink
 {
-    background-color: #846d21;
+    background-color: #dd6f06;
     float: right;
     padding: 3px 8px;
 }
@@ -408,6 +442,12 @@ legend.title a, fieldset.comment legend, fieldset.comment legend a
 {
     cursor: pointer;
     float: left;
+    background-image: URL('images/down_arrow.png');
+    background-position: 85% 50%;
+    padding-right: 35px;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+    border-width: 0px;
 }
 
 .postcats
@@ -423,17 +463,13 @@ legend.title a, fieldset.comment legend, fieldset.comment legend a
     clear: both;
     text-align: left;
     line-height: 30px;
+    color: #442222;
 }
 
 .postcats .capsule
 {
     font-size: smaller;
     margin-right: 5px;
-}
-
-.dateauthor, .postmetadata, .commentmeta
-{
-    color: #444466;
 }
 
 DIV#comments
@@ -505,7 +541,7 @@ fieldset.comment .commenttext
 .entry > P:first-child:first-letter
 {
     color: #662222;
-    font-size: xx-large;
+    font-size: larger;
 }
 
 #credits
@@ -570,9 +606,8 @@ fieldset.comment .commenttext
     text-align: center;
     padding: 4px 10px;
     font-family: Optima, Verdana, Helvetica;
-    font-weight: bold;
     color: #ffffff;
-    background-color: #cc9900;
+    background-color: #dd6f06;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px; 
     border-radius: 10px; 
