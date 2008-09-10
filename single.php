@@ -16,6 +16,7 @@
 						/* $entry_datetime = abs(strtotime($post->post_date) - (60*120)); echo time_since($entry_datetime); echo ' ago'; */ ?>
 						on <?php the_time('l, F jS, Y') ?> at <?php the_time() ?>
 						and is filed under <?php the_category(', ') ?>.
+						 The entry is tagged under <?php the_tags(' ', ', ', '.'); ?>
 						You can follow any responses to this entry through the <?php post_comments_feed_link('RSS 2.0'); ?> feed.
 						<?php if (('open' == $post-> comment_status) && ('open' == $post->ping_status)) {
 							// Both Comments and Pings are open ?>
