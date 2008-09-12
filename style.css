@@ -1,0 +1,86 @@
+/* Theme Name: A
+Theme URI: http://cembele.com/a-theme/
+Description: Simple green css theme, with 5 template pages, widget ready, social bookmarks... <a href="http://cembele.com/">M</a>
+Author: M
+Author URI: http://cembele.com/
+Tags: green, 800px, simple_recent_comments, simple, two columns, white, fixed width, widgets, valid CSS, valid XHTML, widget ready, left sidebar, five template pages, social bookmarks
+Version: 1
+The CSS, XHTML, and design is released under GPL:
+http://opensource.org/licenses/gpl-license.php
+*/
+#center{height:100%;margin-top:4px;overflow:hidden;width:100%;}
+#content{float:right;overflow:hidden;padding-left:4px;padding-right:4px;width:600px;}
+#footer{background-color:#000000;}
+#hdescr{color:#008000;float:left;font-family:Courier New,Courier;padding-left:8px;width:400px;}
+#head{height:100px;}
+#hpages{padding:1px;text-align:right;}
+#hpages .current_page_item a,.navileft a,.naviright a{background-color:#008000;color:#00FF00;}
+#hpages .current_page_item li a{background-color:#F7FFF7;color:#00FF00;}
+#hpages ul,#hpages li{display:inline;}
+#hsearch .s{background-color:#E0FFE0;border-color:#008000;border-style:solid;border-width:1px;color:#008000;float:right;margin-right:8px;width:200px;}
+#htitle{font-size:36pt;text-align:center;}
+#htitle a{text-decoration:none;}
+#mapc{border-bottom-color:#008000;border-bottom-style:dotted;border-bottom-width:1px;border-left-color:#008000;border-left-style:dotted;border-left-width:1px;float:right;padding-right:4px;padding-left:4px;}
+#mappa{border-bottom-color:#008000;border-bottom-style:dotted;border-bottom-width:1px;border-left-color:#008000;border-left-style:dotted;border-left-width:1px;border-right-color:#008000;border-right-style:dotted;border-right-width:1px;float:right;margin-right:-1px;padding-left:4px;padding-right:4px;}
+#page{margin-left:auto;margin-right:auto;width:820px;}
+#side{border-right-color:#000080;border-right-style:dotted;border-right-width:1px;margin-right:4px;padding-left:8px;width:200px;}
+#widgetl{border-right-color:#008000;border-right-style:dotted;border-right-width:1px;float:left;margin-right:4px;width:295px;}
+#widgetr{float:right;width:300px;}
+*{color:#001000;font-family:Trebuchet MS,Sans-Serif;margin:0;padding:0;}
+.aligncenter,div.aligncenter{display:block;margin-left:auto;margin-right:auto;}
+.alignleft{float:left;}
+.alignright{float:right;}
+.alt{}
+.arch{border-left-color:#008000;border-left-style:solid;border-left-width:1px;float:left;padding-left:8px;width:280px;}
+.clear{clear:both;}
+.comment-list{clear:both;width:600px;}
+.comment-list .comment{float:left;list-style-position:outside;list-style-type:none;margin-bottom:8px;width:600px;}
+.comment-list .trackping{background-color:#FFFFFF;border-bottom-color:#008000;border-bottom-style:dotted;border-bottom-width:1px;border-top-color:#00FF00;border-top-style:dotted;border-top-width:1px;float:left;list-style-position:outside;list-style-type:none;width:600px;}
+.comment-list li .avatar{background-color:#00FF00;float:left;margin-right:8px;padding:4px;}
+.comment-list li cite{background-color:#008000;clear:both;float:left;margin-bottom:8px;width:600px;}
+.comment-list li p{padding:4px;}
+.commentstitle{border-top-color:#008000;border-top-style:dotted;border-top-width:1px;}
+.date-header{color:#008000;font-size:8pt;}
+.linkcat{border-color:#00FF00;border-style:dotted;border-width:1px;float:left;margin:4px;}
+.navi{background-color:#008000;overflow:hidden;text-align:center;}
+.navileft{background-color:#f7fff7;border-right-color:#f7fff7;border-right-style:solid;border-right-width:10px;float:left;text-align:right;width:290px;}
+.naviright{background-color:#f7fff7;border-left-color:#f7fff7;border-left-style:solid;border-left-width:10px;float:right;text-align:left;width:290px;}
+.post{border-bottom-color:#008000;border-bottom-style:dotted;border-bottom-width:1px;margin-bottom:16px;overflow:hidden;padding-bottom:8px;padding-left:8px;}
+.post-body{overflow:hidden;}
+.post-body li{list-style-position:inside;list-style-type:decimal;}
+.post-body ol{margin-bottom:8px;margin-left:8px;}
+.post-body ol li{list-style-position:inside;list-style-type:decimal;margin-left:4px;}
+.post-body ul{list-style-position:inside;list-style-type:square;margin-bottom:8px;margin-left:8px;}
+.post-body ul li{list-style-position:inside;list-style-type:square;}
+.post-footer a{color:#000000;margin-bottom:4px;margin-top:12px;}
+.post-footer-2{background-color:#008000;color:#E0FFE0;font-size:8pt;line-height:125%;margin-left:auto;margin-right:auto;text-align:justify;width:450px;}
+.post-title a,.content h2{color:#008000;display:block;font-size:18pt;text-decoration:none;}
+.serchsub{}
+.widget{border-bottom-color:#008000;border-bottom-style:dotted;border-bottom-width:1px;margin-bottom:4px;overflow:hidden;width:200px;}
+.widgettitle,widgettitle h2{font-size:16pt;}
+.wp-caption{border-color:#008000;border-style:dotted;border-width:1px;text-align:center;}
+.wp-caption img{border-style:none;border-width:0;padding:4px;}
+.wp-caption p.wp-caption-text{}
+a{color:#00cc00;}
+a img,img{border-width:0;}
+a:hover{color:#00FF00;}
+acronym,abbr{border-bottom-color:#008000;border-bottom-style:dotted;border-bottom-width:1px;color:#00CC00;}
+blockquote{border-left-color:#008000;border-left-style:solid;border-left-width:3px;margin-bottom:4px;margin-left:8px;margin-top:4px;padding-left:4px;}
+blockquote cite,code cite{display:block;}
+body{background-color:#F7FFF7;cursor:default;font-size:10pt;padding-bottom:50px;}
+code{background-color:#00CC00;border-color:#008000;border-style:solid;border-width:1px;display:block;margin-left:4px;padding-left:4px;}
+form#formset{display:inline-block;width:600px;}
+form#formset #allowed{float:right;width:420px;}
+form#formset #formtop{display:inline-block;float:left;}
+form#formset #formtop .formbox{float:left;}
+form#formset #formtop .formbox small{font-family:Times New Roman,Serif;font-size:8pt;}
+form#formset #formtop input{background-color:#E0FFE0;border-color:#008000;border-style:solid;border-width:2px;font-family:Trebuchet MS,Sans-Serif;font-size:10pt;margin-right:6px;width:190px;}
+form#formset #formtop input:hover,form#formset fieldset textarea:hover,input:hover{border-color:#00cc00;}
+form#formset fieldset{border-width:0;}
+form#formset fieldset #submit{background-color:#008000;border-color:#00ff00;border-style:solid;border-width:2px;cursor:pointer;}
+form#formset fieldset #submit:hover{background-color:#00cc00;border-color:#008000;}
+form#formset fieldset legend{border-bottom-color:#008000;border-bottom-style:solid;border-bottom-width:1px;cursor:default;font-size:14pt;}
+form#formset fieldset textarea{background-color:#E0FFE0;border-color:#008000;border-style:solid;border-width:2px;margin-bottom:4px;margin-top:4px;width:590px;}
+h1,h2,h3,h4,h5{margin:0;}
+p img{max-width:100%;padding:0;}
+ul,ol,li{list-style-type:none;}
