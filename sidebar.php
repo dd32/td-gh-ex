@@ -1,5 +1,5 @@
 	<div class="sidebar">
-    	<div class="rss"><a href="#"><span>RSS</span></a></div>
+    	<div class="rss"><a href="<?php bloginfo('rss2_url'); ?>"><span>RSS</span></a></div>
         <div style="clear:both"></div>
 		<ul>
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : ?>

@@ -102,8 +102,8 @@
 <div class="all">
 	<div class="header">
     	<div class="logo">
-        	<h1><a href="<?php echo get_option('home'); ?>/">Amarandei</a></h1>
-            <h2>hai pa</h2>    	<a name="top"></a>
+        	<h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
+            <h2><?php bloginfo('description'); ?></h2>    	<a name="top"></a>
 		</div> <!-- logo -->
 
     	<div class="header">
