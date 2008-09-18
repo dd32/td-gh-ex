@@ -4,7 +4,7 @@
 
 			<div class="post">
 				<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
-				<div class="postmetadata"><?php the_time('d.m.Y') ?> | Author: <a href="<?php bloginfo('url'); ?>/author/<?php the_author_login(); ?>/"><?php the_author() ?></a> | Posted in <?php the_category(', ') ?></div>
+				<div class="postmetadata"><?php the_time('m.d.Y') ?> | Author: <a href="<?php bloginfo('url'); ?>/author/<?php the_author_login(); ?>/"><?php the_author() ?></a> | Posted in <?php the_category(', ') ?></div>
 				<div class="entry">
 				  <?php the_content(); ?>
 				</div>

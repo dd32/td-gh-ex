@@ -2,7 +2,7 @@
 Theme Name: ADSimple
 Theme URI:
 Description: Simple theme based on <a href="http://articlesss.com/article-directory-wordpress-theme/">Article Directory</a> theme.
-Version: 1.0.1
+Version: 1.0.2
 Author: Dimox
 Author URI: http://dimox.name/
 Tags: white, fixed width, three columns, widgets, right sidebar, simple
@@ -216,6 +216,9 @@ img.alignright {margin: 5px 0 3px 10px}
 #content li {
 	font-size: 1.3em;
 	line-height: 1.4em;
+}
+#content li li {
+  font-size: 1em;
 }
 
 #content .post {
