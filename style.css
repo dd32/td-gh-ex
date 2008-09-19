@@ -1,0 +1,490 @@
+/*
+
+Theme Name: Asusena
+Description: Dark and high contrast wordpress theme by <a href="http://loreleiwebdesign.com">Lorelei Web Design</a>, inspired by Abduzeedo's modern psychedelic art style.
+Version: 1.0
+Author: pswish_themes
+Author URI: http://loreleiwebdesign.com
+Tags: right sidebar, two columns, black, white, fixed width, valid CSS, valid XHTML, widgets ready, rounded corners, web 2.0, red, blue, gravatars, 
+*/
+
+/*
+
+This theme is released under the GPL.
+
+*/
+
+
+
+* {
+list-style:none;
+margin:0;
+padding:0;
+}
+
+body {
+font:55% Arial, serif;
+background:#070707 url(./images/bg.jpg) repeat-x;
+}
+
+img {
+border:0;
+float:left;
+padding:3px;
+border: 1px solid #abced7;
+}
+
+div#wrapper {
+width:768px;
+padding-top:8px;
+background:url(./images/top.png) no-repeat;
+margin:25px auto 0;
+}
+
+div#masthead {
+width:768px;
+background:url(./images/main_bg.png) repeat-y;
+position:relative;
+}
+
+/* Blog Title */
+h1 {
+font:3.2em "Century gothic",verdana,Arial,sans-serif;
+
+}
+
+h1 a {
+position:absolute;
+width:300px;
+height:30px;
+left:40px;
+top:15px;
+font-weight:700;
+text-decoration:none;
+color:#cf2d00;
+}
+
+/* Tagline */
+#masthead p {
+position:relative;
+top:62px;
+left:50px;
+color:#35044c;
+text-transform:uppercase;
+margin:0;
+font-size:11px;
+}
+
+/* Pages Navigation */
+div#masthead ul {
+float:right;
+margin-right:22px;
+position:relative;
+z-index:2;
+bottom:-2px;
+
+}
+
+div#masthead ul li a {
+color:#35044c;
+text-decoration:none;
+display:block;
+font-size:1.3em;
+font-weight:700;
+text-transform:uppercase;
+padding:40px 20px 18px;
+}
+
+div#masthead ul li a:hover,div#masthead ul li.current_page_item {
+background:url(./images/nav_bg.png) bottom repeat-x;
+}
+
+/* Banner image dropshadow */
+div#masthead_image {
+background:url(./images/image_bg.png) center no-repeat;
+width:724px;
+height:148px;
+clear:both;
+position:relative;
+z-index:1;
+padding:8px 22px;
+}
+
+a {
+outline:0;
+}
+
+/* Page dropshadow */
+div#content {
+width:768px;
+background:url(./images/main_bg.png) repeat-y;
+}
+
+/* Main Content */
+
+div#main {
+width:490px;
+float:left;
+text-align:justify;
+padding:0 25px 25px;
+}
+
+/* Main header on single pages */
+h2.header {
+color:#cf2d00;
+font-size:24px;
+line-height:1;
+border-bottom:1px solid #e7e7e7;
+position:relative;
+margin:0 0 5px;
+padding:18px 0 0;
+}
+
+div#main h2.header a {
+color:#cf2d00;
+text-decoration:none;
+text-transform:uppercase;
+font-size: 22px;
+font-weight:700;
+font-family:"Century gothic",verdana,Arial,sans-serif;
+}
+
+h2.header span {
+position:relative;
+background:#FFF;
+padding-right:10px;
+
+bottom:7px;
+}
+
+/* Secondary headline above comments and comment form */
+div#main h3 {
+color:#cf2d00;
+margin:15px 0 5px;
+}
+
+div#main p {
+color:#24314a;
+line-height:2;
+font-size:12px;
+margin:10px 0;
+}
+
+
+
+div#main a {
+color:#0a6804;
+text-decoration:none;
+
+}
+
+
+.article {
+margin-bottom:20px;
+}
+.article img{
+margin:2px 12px 2px 2px;
+}
+
+
+.article blockquote {
+border-left:1px dotted #390363;
+background:#d6dee0;
+margin:0 15px;
+line-height:50%;
+color:#4b474f;
+padding:1px 15px;
+}
+
+.article ul,.article ol {
+font-size:1.2em;
+color:#3e0d55;
+margin-left:15px;
+}
+
+.article ul li {
+padding-left:15px;
+background:url(./images/square.png) 0 center no-repeat;
+margin:5px 0;
+}
+
+.article ol {
+margin-left:30px;
+}
+
+.article ol li {
+list-style:decimal;
+margin:10px 0;
+}
+
+.article ol li ol {
+font-size:1em;
+margin-left:15px;
+}
+
+#main p.byline {
+color:#459804;
+text-align:right;
+font-size:11px;
+
+}
+
+ul.article_footer {
+text-align:right;
+background:url(images/form_bg.jpg) repeat-x top left;
+border:1px solid #DADADA;
+line-height:1.5;
+border-width:1px;
+margin:10px 0;
+padding:5px 10px;
+}
+
+ul.article_footer li {
+font-size:0.9em;
+display:inline;
+background:none;
+border-left:1px solid #DADADA;
+margin-left:5px;
+padding-left:10px;
+}
+
+ul.article_footer li.first {
+border-left:0;
+}
+
+/* Secondary Content */
+div#secondary {
+width:200px;
+float:left;
+padding:15px 20px 20px 0;
+}
+
+div#secondary ul#sidebar {
+color:#0a6804;
+padding-bottom:10px;
+border-bottom:1px solid #e7e7e7;
+margin:15px 0 20px;
+}
+
+div#secondary ul#sidebar li {
+font-size:1.2em;
+line-height:1.5em;
+margin:5px 0;
+}
+
+
+/* Sidebar headers */
+div#secondary h2 {
+text-transform:uppercase;
+
+font-family:"Century gothic",verdana,Arial,sans-serif;
+color:#0a6804;
+font-size:1.2em;
+line-height:1;
+margin:30px 0 8px;
+border-bottom:1px dotted #d6dee0;
+padding-bottom:3px;
+}
+
+div#secondary a {
+color:#264901;
+text-decoration:none;
+border-left:4px solid #0895ad;
+margin-bottom:2px;
+padding:3px 3px 3px 5px;
+}
+
+div#secondary a:hover {
+text-decoration:none;
+border-left:4px solid #d03301;
+padding:3px 3px 3px 5px;
+
+}
+
+div#secondary ul.children {
+margin-left:5px;
+padding-left:10px;
+border-left:5px solid #EAEAEA;
+}
+
+div#secondary ul#sidebar li li {
+font-size:1em;
+}
+
+div#secondary p {
+line-height:1.5;
+color:#666;
+margin:5px 0;
+}
+
+/* Search input */
+form#searchform {
+position:relative;
+height:20px;
+margin-bottom:20px;
+}
+
+form#searchform input#s {
+position:absolute;
+top:0;
+height:18px;
+width:156px;
+background:url(./images/form_bg.jpg) repeat-x;
+border:1px solid #bcbcbc;
+padding:5px;
+}
+
+input#search_submit {
+position:absolute;
+right:0;
+}
+
+/*  Footer */
+
+ul#footer {
+height:8px;
+width:768px;
+background:url(./images/bottom.png) no-repeat;
+text-align:center;
+font-size:1em;
+color:#e28602;
+margin:0 auto;
+padding:15px 0;
+}
+
+ul#footer li {
+display:inline;
+margin-left:10px;
+}
+
+ul#footer li span {
+position:absolute;
+text-indent:-9999em;
+}
+
+ul#footer li a {
+color:#e28602;
+text-decoration:none;
+}
+
+
+ol.commentlist {
+margin-top:15px;
+color:#555;
+}
+
+/* Background color for visitor comments */
+ol.commentlist li {
+background:#F1F1F1;
+margin:10px 0;
+padding:10px;
+}
+
+/* Background color for Admin comments */
+ol.commentlist li.alt {
+background:#EBF9FC;
+}
+
+textarea#comment {
+width:500px;
+}
+
+#main p.comment_meta {
+float:right;
+margin:0;
+}
+
+/* Optional popup window (NOTE: popups make for bad UI IMHO) */
+body#commentspopup {
+background:#FFF;
+padding:20px;
+}
+
+body#commentspopup a {
+color:#666;
+}
+
+body#commentspopup h1 a {
+position:relative;
+top:0;
+left:0;
+}
+
+body#commentspopup h3 {
+color:#555;
+}
+
+body#commentspopup p {
+color:#555;
+margin:10px 0;
+}
+
+body#commentspopup textarea {
+width:340px;
+}
+
+/* Image stuff for 2.6.1 */
+.aligncenter {
+display:block;
+margin-left:auto;
+margin-right:auto;
+}
+
+.alignright {
+float:right;
+}
+
+.wp-caption {
+border:1px solid #ddd;
+text-align:center;
+background-color:#f3f3f3;
+padding-top:4px;
+-moz-border-radius:3px;
+-khtml-border-radius:3px;
+-webkit-border-radius:3px;
+border-radius:3px;
+margin:10px;
+}
+
+.wp-caption img {
+border:0 none;
+margin:0;
+padding:0;
+}
+
+.wp-caption-dd {
+font-size:11px;
+line-height:17px;
+margin:0;
+padding:0 4px 5px;
+}
+
+p.entry_info {
+clear:both;
+}
+
+div.navigation {
+margin:10px 0;
+}
+
+/* CSS Magic */
+.clearfix:after {
+content:".";
+display:block;
+height:0;
+clear:both;
+visibility:hidden;
+}
+
+/* Hide from IE Mac \*/
+.clearfix {
+display:block;
+}
+
+p,h2,h3,h4,h5,div#author h2 {
+font-size:1.2em;
+}
+
+div#masthead ul li,.alignleft {
+float:left;
+}
