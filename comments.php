@@ -41,10 +41,10 @@
 			<?php foreach($comments as $comment): ?>
 				<li class="comment" id="comment-<?php comment_ID() ?>">
 					<div class="comment-head">
-						<span class="comment-author vcard"><?php sp_commenter_link() ?></span>
-						<abbr class="comment-published" title="<?php comment_time('Y-m-d\TH:i:sP') ?>"><?php comment_date() ?> <?php comment_time() ?></abbr>
+						<span class="comment-author vcard"><?php sp_commenter_hlink('48') ?></span>
+						<a class="comment-permalink" href="#comment-<?php comment_ID() ?>"><abbr class="comment-published" title="<?php comment_time('Y-m-d\TH:i:sP') ?>"><?php comment_date() ?> <?php comment_time() ?></abbr></a>
 						<?php if($comment->comment_approved == '0'): ?>
-							<em>Your comment is awaiting moderation.</em>
+							<small><em>Your comment is awaiting moderation.</em></small>
 						<?php endif; ?>
 						<small><?php edit_comment_link('edit','',''); ?></small>
 					</div>

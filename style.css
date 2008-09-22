@@ -3,7 +3,7 @@ THEME NAME: Simplish
 THEME URI: http://labs.utopian.net/blogs/simplish/
 DESCRIPTION: Simplish is a WordPress variant of the Scribbish theme for blogs.
 TAGS: two columns, fixed width, right sidebar, galleries, gravatars, captions, widgets, microformats, hatom, hcard, valid CSS, valid XHTML
-VERSION: 2.1
+VERSION: 2.1.1
 AUTHOR: <a href="http://labs.utopian.net">Utopian.net Labs</a>, <a href="http://pittcrew.net/geekblog/">K. Pitt</a>, <a href="http://quotedprintable.com">J. Hardy</a>
 AUTHOR URI:
 */
@@ -13,13 +13,18 @@ AUTHOR URI:
  * 	#header
  * 	#page
  * 		#content
+ * 			#article-num (.hentry)
+ * 				.entry-title
+ * 				.posted
+ * 				.entry-content
+ * 				.meta
  * 		#sidebar
  * 	#footer
  */
 
 body{
 	background: url(img/background.gif) repeat-x left top;
-	font: normal 12px "lucida grande", verdana, arial, helvetica, sans-serif;
+	font: normal 12px "lucida grande", calibri, "liberation sans", verdana, arial, helvetica, sans-serif;
 	margin: 0;
 	padding: 0.6em 1em 1em;
 	text-align: center;
@@ -59,6 +64,7 @@ body{
 	margin: 10px 0 0;
 	padding: 10px 0 0;
 }
+
 #header a:link, #header a:visited{
 	color:#000;
 	text-decoration: none;
@@ -79,6 +85,7 @@ body{
 	font: normal 12px verdana, arial, sans-serif;
 	margin: 2.35em 0.2em 0 0;
 }
+
 #content h1, #content h2, #content h3, #content h4, #content h5{
 	font-family: georgia, times, serif;
 	font-weight: normal;
@@ -135,7 +142,6 @@ body{
 	margin: 0 0 0 8px;
 }
 #content p{
-	line-height: 14px;
 	margin: 0 0 1.2em;
 }
 #content ul, #content ol{
@@ -146,9 +152,11 @@ body{
 	list-style-type: square;
 }
 #content li{
-	line-height: 15px;
 	margin: 0 0 0 1em;
 	padding: 0;
+}
+#content dl dt{
+	font-weight:bold;
 }
 #content hr{
 	color: #ffffff;
@@ -173,6 +181,37 @@ body{
 	margin: 0.9em 0;
 	overflow: auto;
 	padding: 8px;
+}
+/* Tables - derived from http://blueprintcss.org. */
+table,tbody,tfoot,thead.tr,th,td{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+#content table{
+	margin-bottom: 1.4em;
+	width: 85%;
+}
+#content th{
+	font-weight: bold;
+	background: #eee;
+}
+#content th,td{
+	padding: 4px 10px 4px 5px;
+}
+#content tr.even td{
+	background: #E5ECF9;
+}
+#content tfoot{
+	font-style: italic;
+}
+#content caption{
+	background: #eee;
 }
 #content .hentry{
 	margin: 0 0 3em 0;
@@ -205,13 +244,10 @@ body{
 #content .hentry .posted .fn{
 	font-weight: bold;
 }
-#content .hentry .posted a.url, #content .hentry .posted a:hover.url{
+#content .hentry .posted a, #content .hentry .posted a:hover{
 	color: #a9a9a9;
 	background: transparent;
 	text-decoration: none;
-}
-.clear{
-	clear: both;
 }
 #content br.downpad{
 	margin: 0 0 33px;
@@ -267,7 +303,10 @@ body{
 #content li.comment .comment-head abbr,
 #content li.trackback .comment-head abbr{
 	color: #999;
-	padding-left:4px;
+}
+#content li.comment .comment-head a.comment-permalink,
+#content li.trackback .comment-head a.comment-permalink{
+	text-decoration: none;
 }
 #content li.comment .comment-author{
 	height:36px;
@@ -276,9 +315,7 @@ body{
 	background: #fff;
 	clear:both;
 	float: right;
-	height: 48px;
 	margin: 0 0 0.5em 0.5em;
-	width: 48px;
 }
 #content li.comment p{
 	padding-left:24px;
@@ -306,8 +343,23 @@ body{
 #content .readmore{
 	font-style: italic;
 }
+#content .navigation{
+	display: block;
+	font-size: 10px;
+	margin-bottom: 60px;
+	margin-top: 24px;
+	text-align: center;
+}
+#content .navigation .prevlink{
+	float: left;
+}
+
+#content .navigation .nextlink{
+	float:right;
+}
+
 #sidebar h2{
-	font: bold 14px "lucida grande", verdana, arial, helvetica, sans-serif;
+	font: bold 14px "lucida grande", calibri, "liberation sans", verdana, arial, helvetica, sans-serif;
 	margin: 0 0 0.5em;
 }
 #sidebar h2 a:link, #sidebar h2 a:visited{
@@ -346,9 +398,10 @@ body{
 	font-size: 11px;
 	width: 92%;
 }
-#sidebar li#search{
+#sidebar #search, #sidebar #tag_cloud{
         margin-bottom: 2em;
 }
+
 #footer a:link, #footer a:visited{
 	color: #000;
 }
@@ -378,6 +431,8 @@ body{
 	margin: 0;
 	padding: 0 0 0 1em;
 }
+
+/* Applied-last Element Treatments */
 input, textarea{
 	font: normal 12px "bitstream vera sans", verdana, sans-serif;
 }
@@ -434,16 +489,14 @@ span.caps{
 .center{
 	text-align: center;
 }
-.navigation{
-	display: block;
-	font-size: 10px;
-	margin-bottom: 60px;
-	margin-top: 24px;
-	text-align: center;
-}
 .hidden{
 	display: none;
 }
+.clear{
+	clear: both;
+}
+
+/* WordPress img captions */
 .wp-caption{
 	background-color: #eeeeee;
 	border: 1px solid #ddd;
@@ -460,7 +513,8 @@ span.caps{
 	font-size: 0.8em;
 	padding: 1em 4px 0 5px;
 }
-/* sp_vallery() Gallery styling. */
+
+/* sp_vallery() Galleries. */
 div.entry-content div.gallery{
 	clear: both;
 	float: left;
@@ -494,7 +548,8 @@ div.entry-content div.gallery *{
 	margin: 0;
 	padding: 0;
 }
-/* Sitemap template styles for hentry/entry-title used as list items. */
+
+/* Sitemap template uses .hentry .entry-title as list item. */
 #sitemap-list .hentry{
 	margin: 0 0 0 1em;
 }
@@ -515,7 +570,8 @@ div.entry-content div.gallery *{
 	background: #000 none repeat scroll 0 0;
 	color: #fff;
 }
-/* Search template style overrides. */
+
+/* Search template specifics. */
 #content.search-results .hentry{
 	margin: 0;
 }
@@ -532,6 +588,7 @@ div.entry-content div.gallery *{
 	background: #000 none repeat scroll 0 0;
 	color: #fff;
 }
+
 @media print{
 	#content{
 		float: none;

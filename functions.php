@@ -33,7 +33,7 @@ function sp_admin_hcard()
 }
 
 /* Echo hCard for post author, with URL of author's archive. */
-function sp_author_hcard()
+function sp_byline_hcard()
 {
 	global $wpdb, $authordata;
 
@@ -52,13 +52,12 @@ function sp_author_hcard()
  * Takes integer option for img square size in pixels.
  * Default size from wp's get_avatar() is 96.
  */
-function sp_author_ext_hcard($size)
+function sp_author_hcard($size)
 {
 	global $wpdb, $authordata;
 
 	$email = get_the_author_email();
-	$avatar = str_replace( "class='avatar", "class='photo avatar",
-				get_avatar( "$email", "$size" ) );
+	$avatar = str_replace( "class='avatar", "class='photo avatar", get_avatar($email, $size) );
 	if($authordata->user_description !=''){
 		$note = '<span class="note">' .
 		apply_filters('archive_meta', $authordata->user_description) .
@@ -74,8 +73,11 @@ function sp_author_ext_hcard($size)
 		'</span>';
 }
 
-/* Echo comment author avatar img and URL, ready for hCard wrapping. */
-function sp_commenter_link()
+/*
+ * Echo comment author avatar span with
+ * img and URL, ready for hCard wrapping.
+ */
+function sp_commenter_hlink($size)
 {
 	$commenter = get_comment_author_link();
 	if(ereg('<a[^>]* class=[^>]+>', $commenter))
@@ -83,8 +85,7 @@ function sp_commenter_link()
 	else
 		$commenter = ereg_replace( '(<a )/', '\\1class="url "' , $commenter );
 	$email = get_comment_author_email();
-	$avatar = str_replace( "class='avatar", "class='photo avatar",
-				get_avatar( "$email", "48" ) );
+	$avatar = str_replace( "class='avatar", "class='photo avatar", get_avatar($email, $size) );
 	echo $avatar . ' <span class="fn n">' . $commenter . '</span>';
 }
 

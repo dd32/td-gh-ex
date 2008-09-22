@@ -4,11 +4,11 @@
 
 <?php if(have_posts()): while(have_posts()): the_post(); ?>
 
-		<div class="hentry" id="post-<?php the_ID(); ?>">
+		<div id="post-<?php the_ID(); ?>" class="hentry">
 			<h2 class="entry-title"><a href="<?php echo get_permalink($post->post_parent); ?>" rev="attachment"><?php echo get_the_title($post->post_parent); ?></a> &raquo; <?php the_title(); ?></h2>
 			
 			<div class="posted">
-				Posted by <?php sp_author_hcard() ?>
+				Posted by <?php sp_byline_hcard() ?>
 					<abbr class="published posted_date" title="<?php the_time('Y-m-d\TH:i:sP') ?>">on <?php echo get_the_time(get_option('date_format')) ?></abbr>
 			</div>
 			<br class="clear" />	
@@ -19,14 +19,13 @@
 
 				<?php the_content(); ?>
 
-				<div class="navigation">
-					<div class="alignleft"><?php previous_image_link() ?></div>
-					<div class="alignright"><?php next_image_link() ?></div>
+				<div id="gallerynav" class="navigation">
+					<div class="prevlink"><?php previous_image_link() ?></div>
+					<div class="nextlink"><?php next_image_link() ?></div>
 				</div>
 				<br class="clear" />
-
 			</div>
-
+<?php include(TEMPLATEPATH . '/hentrymeta.php'); ?>
 		</div>
 
 	<?php comments_template(); ?>
