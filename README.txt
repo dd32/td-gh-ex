@@ -48,7 +48,7 @@ below:
   edit the Theme and remove it from the Sidebar, if you disagree that
   a blog should display its list of authors.
 
-* Which reminds me: this is untested in IE.
+* Which reminds me: this is not fully tested in IE.
 
 * The word "ahimsa" can be taken to mean "non-violence".
 

@@ -1,20 +1,31 @@
 /*  
 Theme Name: Ahimsa
 Theme URI: http://ahren.org/code/ahimsa
-Description: Ahimsa -- a theme that attempts to inflict the least violence on your aesthetics!
-Version: 1.1
+Description: Ahimsa -- basic colours, low graphics, minimal distractions, with rounded corners in Firefox, Opera, Safari. Please visit http://ahren.org/code/ahimsa to suggest fixes and enhancements.
+Version: 1.2
 Author: Ravi Sarma
 Author URI: http://ahren.org/code/
 Tags: fluid width, widget ready, 2 columns, left sidebar, gravatars
 
-	 Ahimsa 1.1
+	 Ahimsa 1.2
 	 http://ahren.org/code/ahimsa
 
 	Theme built for the Ahren Code site but free for all
-    to use.
+    to use. The aim of this theme is to minimise the
+    distractions to the reader through the use of clean
+    (mostly) primary colours, low graphics, etc. This
+    theme uses rounded borders viewable in all browsers
+    that support them.
 
 	The CSS, XHTML and design is released under GPL:
 	http://www.opensource.org/licenses/gpl-license.php
+
+    Version 1.2 includes these fixes and features:
+
+    * Fixed: A grey rectangle was overlaid on posts without comments,
+      on blogs that require registration to comment.
+    * Fixed: The actions box on the top right of posts had a bad
+      link for posts with comments disabled.
 
 */
 

@@ -35,7 +35,7 @@
                     }
                     elseif (!('open' == $post-> comment_status) && ('open' == $post->ping_status))
                     {
-                        print "<li> <a href='" . trackback_url(true) . "' rel='trackback'>Trackback</a> </li>";
+                        print "<li> <a href='" . trackback_url(false) . "' rel='trackback'>Trackback</a> </li>";
                     }
 
                 ?>
