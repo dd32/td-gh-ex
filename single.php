@@ -5,7 +5,7 @@
 	<?php if (have_posts()) : ?>
 		<?php while (have_posts()) : the_post(); ?>
 	   	<div class="post post_single">
-       	   	<div class="date"><?php the_time('m') ?><br /><?php the_time('M') ?></div> <!-- DATE -->
+       	   	<div class="date"><?php the_time('d') ?><br /><?php the_time('M') ?></div> <!-- DATE -->
             <div class="title"><h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2></div> <!-- TITLE -->
             <div class="post_info">author: <?php the_author() ?> &nbsp; &nbsp; &nbsp; category: <?php the_category(', ') ?></div> <!-- POST INFO -->
             <div style="clear:both"></div>

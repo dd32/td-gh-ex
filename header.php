@@ -49,7 +49,6 @@
   <script src="<?php bloginfo('template_url'); ?>/js/sifr.js" type="text/javascript"></script>
   <script src="<?php bloginfo('template_url'); ?>/js/sifr-debug.js" type="text/javascript"></script>
   <script type="text/javascript">
-  //<[CDATA[
   sIFR.forceClear = true;
   var fagocotf = { src: '<?php bloginfo('template_url'); ?>/fagocotf.swf' };
 
@@ -91,9 +90,6 @@
     selector: '.sidebar h2'
     ,css: [ '.sIFR-root { text-align: left; font-weight: bold; color: #005f6b; line-height: 1px; letter-spacing: -1; line-height: -2; }' ]
   });
-
-
-  //]]>
   </script>
 
 <?php wp_head(); ?>
