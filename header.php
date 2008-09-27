@@ -8,7 +8,12 @@
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-
+<!--[if IE 6]>
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/ie6.css" type="text/css" media="screen" />
+<![endif]-->
+<!--[if IE]>
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/ie.css" type="text/css" media="screen" />
+<![endif]-->
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/sIFR-screen.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/sIFR-print.css" type="text/css" media="print" />
 
@@ -101,8 +106,5 @@
         	<h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
             <h2><?php bloginfo('description'); ?></h2>    	<a name="top"></a>
 		</div> <!-- logo -->
-
-    	<div class="header">
-		</div> <!-- HEADER -->
 	</div> <!-- HEADER -->
     <div style="clear"></div>

@@ -2,7 +2,7 @@
 Theme Name: Bella
 Theme URI: http://wpglamour.com/bella-free-wordpress-theme/
 Description: Free wordpres theme from http://wpglamour.com/
-Version: 1.2.1
+Version: 1.3
 Author: Glamour gaby
 Author http://wpglamour.com/
 Tags: black, blue, orange, simple, minimalist, minimalistic, two columns, fixed width, widgets, widget ready, gravatars, valid XHTML
@@ -194,7 +194,7 @@ float: right;
 
 .rss a{
 display: block;
-width: 144px;
+width: 149px;
 height: 25px;
 background: url(img/rss.jpg) top center no-repeat;
 }
@@ -240,11 +240,6 @@ background: url(img/search-bg.jpg) top left no-repeat;
 width: 110px;
 height: 28px;
 }
-
-
-
-
-
 
 
 

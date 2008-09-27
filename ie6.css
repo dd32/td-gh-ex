@@ -1,0 +1,16 @@
+.post_info {
+color: #2aace0;
+font-weight:bold;
+font-size: 13px;
+width: 390px;
+float: left;
+height: 50px;
+}
+
+.entry {
+margin-top: -45px;
+}
+
+.navigation {
+line-height: 1.5em;
+}
