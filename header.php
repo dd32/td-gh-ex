@@ -7,6 +7,10 @@
 	<meta name="generator" content="WordPress <?php bloginfo('version'); ?>" /> <!-- leave this for stats -->
 	<script src="<?php bloginfo('stylesheet_directory'); ?>/scripts/jquery-1.2.6.js" type="text/javascript" charset="utf-8"></script>
 	<script src="<?php bloginfo('stylesheet_directory'); ?>/scripts/unobtrusive.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" charset="utf-8">
+		var blank = new Image();
+		 blank.src = "<?php bloginfo('stylesheet_directory'); ?>/img/blank.gif";
+	</script>
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" title="Default Stylesheet" /><!-- Adept Theme : alpha 0.2 -->
 	<style type='text/css'>
 		/* inline css, jQuery sniffes for older FF and Safari and appends */

@@ -1,6 +1,4 @@
 // http://docs.jquery.com/Tutorials:PNG_Opacity_Fix_for_IE6#The_Solution
-var blank = new Image();
- blank.src = 'images/blank.gif';
 
 $(document).ready(function() {
   var badBrowser = (/MSIE ((5\.5)|6)/.test(navigator.userAgent) && navigator.platform == "Win32");
@@ -23,13 +21,9 @@ $(document).ready(function() {
 	 || (($.browser.safari) && (parseFloat($.browser.version) < 523)) 
 	 || (($.browser.msie) && (parseFloat($.browser.version) < 7)) 
 	 ) { 
-  		alert('Please upgrade your browser ;-)');
+  		//alert('Please upgrade your browser ;-)');
   		$('head > style').append("@import url('css/degradation.css');");
   };
-
-	// add class to top nav
-	//$('#topNav ul.tabs li.page_item:first').addClass('alpha');
-	//$('#topNav ul.tabs li.page_item:last').addClass('omega');
 	
 	// add characters to top nav
 	$('#topNav ul.tabs li.page_item a').prepend('<span class="unibullet">&raquo;</span> ');
