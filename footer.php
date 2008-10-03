@@ -52,12 +52,12 @@
 			
 			
 			<div id="copyright" class="grid_6">
-				<p>&copy;2008 <!-- Enter your legal name here --></p>
+				<p>&copy; 2008 <!-- Enter your legal name here --></p>
 			</div><!-- /#copyright -->
 			
 			<div id="footerNav" class="grid_10">
 				
-				<!-- If you'd like to support WordPress, having the "powered by" link somewhere on your blog is the best way; it's our only promotion or advertising. --><p class="smalltype">Theme Preview is proudly powered by <a href="http://wordpress.org/">WordPress</a> <a href="http://wp-themes.com/?feed=rss2">Entries (RSS)</a> and <a href="http://wp-themes.com/?feed=comments-rss2">Comments (RSS)</a>. <br />
+				<!-- If you'd like to support WordPress, having the "powered by" link somewhere on your blog is the best way; it's our only promotion or advertising. --><p class="smalltype">Theme Preview is proudly powered by <a href="http://wordpress.org/">WordPress</a>. [ <em>RSS feeds:</em> <a href="<?php bloginfo('rss2_url'); ?>"><u>Entries</u></a> and <a href="<?php bloginfo('comments_rss2_url'); ?>"><u>Comments</u> ]</a><br />
 				<!-- Artists need credit too!! Please keep the reference to the Adept 1.0 Template by Bill Heaton - http://overhaulindustries.com/adept --><em><a href="http://wordpress.org/extend/themes/adept" target="_blank"><u>Adept</u></a> Template</em> by <a href="http://overhaulindustries.com/adept" target="_blank">Overhaul Industries</a> is licensed under <a rel="license" href="http://www.gnu.org/licenses/gpl-3.0.txt">The GNU General Public License</a>.</p>
 			</div><!-- /#footerNav -->
 			

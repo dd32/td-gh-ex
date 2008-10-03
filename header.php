@@ -3,7 +3,7 @@
 <head profile="http://gmpg.org/xfn/11">
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 	<title><?php bloginfo('name'); ?><?php if ( !(is_404()) && (is_single()) or (is_page()) or (is_archive()) ) { ?> | <?php } ?><?php wp_title(''); ?></title>
-	<meta name="author" content="http://overhaulindustries.com">      
+	<meta name="author" content="http://overhaulindustries.com" />      
 	<meta name="generator" content="WordPress <?php bloginfo('version'); ?>" /> <!-- leave this for stats -->
 	<script src="<?php bloginfo('stylesheet_directory'); ?>/scripts/jquery-1.2.6.js" type="text/javascript" charset="utf-8"></script>
 	<script src="<?php bloginfo('stylesheet_directory'); ?>/scripts/unobtrusive.js" type="text/javascript" charset="utf-8"></script>
@@ -31,7 +31,7 @@
 	<div id="header" class="container_16">
 		
 		<div id="logo" class="grid_5 suffix_1 alpha serif">
-			<img src="<?php bloginfo('stylesheet_directory'); ?>/img/pixelhandler_logo.gif" />&nbsp; &nbsp;
+			<img src="<?php bloginfo('stylesheet_directory'); ?>/img/pixelhandler_logo.gif" alt="graphic" />&nbsp; &nbsp;
 			<a href="<?php echo get_option('home'); ?>/" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a>
 		</div><!-- /#logo -->
 		

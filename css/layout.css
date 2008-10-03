@@ -13,16 +13,11 @@ supported by Blueprint but not 960.gs
 .showGrid{background:#fff url(img/16_col.gif) repeat-y;}
 /* colors 
 -------------------------------------------------------------- 
-.blue{color:#0082be;}
-HSL 199° 74.5% 37.3% 
-.green{color:#39af4c;}
-130° 46.3% 45.5% 
-.orange{color:#f39a2b;}
-33° 78.4% 56.1% 
-.red{color:#e81e25;}
--2° 79.2% 51.4% 
-.gray{color:#333;}
-0° 0.0% 20.0% 
+.blue{color:#0082be;} HSL 199° 74.5% 37.3% 
+.green{color:#39af4c;} HSL 130° 46.3% 45.5% 
+.orange{color:#f39a2b;} HSL 33° 78.4% 56.1% 
+.red{color:#e81e25;} HSL -2° 79.2% 51.4% 
+.gray{color:#333;} HSL 0° 0.0% 20.0% 
 */
 .blue{color:#0082be;}
 /* HSL 199° 74.5% 37.3% */
@@ -76,7 +71,6 @@ hr.space,
 /* Header
 -------------------------------------------------------------- */
 #header{height:50px;background-color:white;}
-#logo{margin-top:10px;text-align:center;}
 #logo{margin-top:9px;text-align:left;}
 #logo img{float:left;}
 #logo a{line-height:21px;font-size:24px;top:9px;position:relative;}
@@ -92,6 +86,7 @@ input#searchsubmit:hover{background-color:#e81e25;}
 #navArea #pageTitle a{color:#666;text-decoration:none;}
 #navArea #pageTitle a:hover{color:#e81e25;}
 #navInset{}
+#topNav ul.tabs {margin-left:3px;}
 #topNav .tabs li{text-align:right;font-size:18px;text-transform:lowercase;}
 #topNav .tabs a{padding:0px 12px;color:white;text-decoration:none;line-height:40px;}
 #topNav .tabs li a .unibullet{padding:0px 2px;}
@@ -145,10 +140,12 @@ a.tag-5{font-size:1.6em;font-weight:bold;}
 .articleInfo p{line-height:33px;}
 .articleInfo p a{text-decoration:underline;}
 #pageContent{background-color:white;}
-#pageContent hr{border:1px solid #999;}
+#pageContent hr{border-top:1px solid #999;}
 #pageContent hr.short{width:180px;}
 #pageContent hr.full{width:460px;}
 .more,.more a:link{color:#e81e25;}
+.archive {text-align: right;}
+.archive h2 {font-size: 14px; font-weight: normal;}
 .more a{text-decoration:none;}
 .more a:hover,.more a:focus{text-decoration:underline;}
 .article{}
@@ -170,5 +167,5 @@ a.tag-5{font-size:1.6em;font-weight:bold;}
 #footerCol-2,
 #footerCol-3,
 #footerCol-4{padding-left:10px;padding-right:0px;margin-right:0px;}
-#footerNav{}
+#footer p { padding-left: 27px;}
 #copyright{}

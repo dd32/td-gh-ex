@@ -54,25 +54,25 @@
 			<?php if ( $user_ID ) : ?>
 				<p>Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="Log out of this account">Logout &raquo;</a></p>
 			<?php else : ?>
-				<p class="commentinput push grid_8">
-					<label for="author"class="grid_3 alpha">Name <?php if ($req) echo "(required)"; ?></label>
-					<input type="text" class="grid_5 omega" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" tabindex="1" />
-				</p>
-				<p class="commentinput push grid_8">
-					<label for="email" class="grid_3 alpha">Mail (not published) <?php if ($req) echo "(required)"; ?></label>
-					<input type="text" class="grid_5 omega" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="22" tabindex="2" />
-				</p>
-				<p class="commentinput push grid_8">
-					<label for="url" class="grid_3 alpha">Website</label>
-					<input type="text" class="grid_5 omega" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="22" tabindex="3" />
-				</p>
+				<div class="commentinput grid_8">
+					<p class="grid_3 alpha"><label for="author">Name <?php if ($req) echo "(required)"; ?></label></p>
+					<p class="grid_3 omega"><input type="text" class="grid_5 omega" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" tabindex="1" /></p>
+				</div>
+				<div class="commentinput push grid_8">
+					<p class="grid_3 alpha"><label for="email">Mail (not published) <?php if ($req) echo "(required)"; ?></label></p>
+					<p class="grid_3 omega"><input type="text" class="grid_5 omega" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="22" tabindex="2" /></p>
+				</div>
+				<div class="commentinput push grid_8">
+					<p class="grid_3 alpha"><label for="url">Website</label></p>
+					<p class="grid_3 omega"><input type="text" class="grid_5 omega" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="22" tabindex="3" /></p>
+				</div>
 				<div class="clear">&nbsp;</div>
 			<?php endif; ?>
-			<p class="commenttext grid_8">
-				<label for="comment" class="grid_3 alpha" >Your Comment</label>
-				<textarea name="comment" id="comment" rows="5" cols="10" tabindex="4"></textarea>
-			</p>
-			<p>
+			<div class="commenttext grid_6">
+				<p><label for="comment">Your Comment</label></p>
+				<p><textarea name="comment" id="comment" rows="5" cols="10" tabindex="4"></textarea></p>
+			</div>
+			<p class="grid_6">
 				<button name="submit" type="submit" id="submit" tabindex="5">Submit Comment</button>
 				<button name="reset" type="reset" id="reset" tabindex="6">Reset Form</button>
 				<input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />

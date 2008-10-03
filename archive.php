@@ -12,22 +12,22 @@
 	
 			<div id="pageContent" class="grid_10 serif">
 			<?php if (have_posts()) : ?>
-				<div class="grid_8 prefix_1 suffix_1 alpha omega article">
+				<div class="grid_9 omega archive">
 				<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
 		 	  <?php /* If this is a category archive */ if (is_category()) { ?>
-				<h2 class="pagetitle">&#8216;<?php single_cat_title(); ?>&#8217; Category</h2>
+				<h2 class="pagetitle"><em>&#8216;<?php single_cat_title(); ?>&#8217; Category</em></h2>
 		 	  <?php /* If this is a tag archive */ } elseif( is_tag() ) { ?>
-				<h2 class="pagetitle">Posts Tagged &#8216;<?php single_tag_title(); ?>&#8217;</h2>
+				<h2 class="pagetitle"><em>Posts Tagged &#8216;<?php single_tag_title(); ?>&#8217;</em></h2>
 		 	  <?php /* If this is a daily archive */ } elseif (is_day()) { ?>
-				<h2 class="pagetitle">Archive for <?php the_time('F jS, Y'); ?></h2>
+				<h2 class="pagetitle"><em>Archive for <?php the_time('F jS, Y'); ?></em></h2>
 		 	  <?php /* If this is a monthly archive */ } elseif (is_month()) { ?>
-				<h2 class="pagetitle">Archive for <?php the_time('F, Y'); ?></h2>
+				<h2 class="pagetitle"><em>Archive for <?php the_time('F, Y'); ?></em></h2>
 		 	  <?php /* If this is a yearly archive */ } elseif (is_year()) { ?>
-				<h2 class="pagetitle">Archive for <?php the_time('Y'); ?></h2>
+				<h2 class="pagetitle"><em>Archive for <?php the_time('Y'); ?></em></h2>
 			  <?php /* If this is an author archive */ } elseif (is_author()) { ?>
-				<h2 class="pagetitle">Author Archive</h2>
+				<h2 class="pagetitle"><em>Author Archive</em></h2>
 		 	  <?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
-				<h2 class="pagetitle">Blog Archives</h2>
+				<h2 class="pagetitle"><em>Blog Archives</em></h2>
 		 	  <?php } ?>
 				</div>
 				<?php while (have_posts()) : the_post(); ?>

@@ -1,13 +1,13 @@
 /*
 Theme Name: Adept
 Theme URI: http://overhaulindustries.com/adept/
-Description: Adept is a versatile theme, optimized for speed with seven 'sidebar' widget positions for a richly customizable blog template (three in the sidebar and four in the extended footer). Adept is a clean design, suitable for a wide range of applications; and ideal for business use. Design enthusiasts, will appreciate the fixed width layout composed using a grid and featuring a baseline grid for text alignment. To visitors this makes the site 'look and feel' right!  
-Version: 1.0.1
+Description: Adept is a versatile theme, built for speed with seven widget positions; three in the sidebar and four in an extended footer. Adept features a clean design, suitable for a wide range of applications; even business use. Design enthusiasts, will appreciate the fixed width grid layout, including a baseline grid for vertical text alignment. To visitors this makes the site 'look and feel' right. Users will also appreciate the light page weight, around 100k!
+Version: 1.0.2
 Author: Bill Heaton
 Author URI: http://pixelhandler.com/
 Tags: fixed width, three columns, widgets, widget ready, left sidebar, valid XHTML, CSS3, graceful degradation, white, black, gray, simple recent comments, extended footer, footer widgets, grid layout, business, clean, fast, lightweight
 
-	Adept 1.0.1
+	Adept v.1
 	http://overhaulindustries.com/adept/
 
 	This theme was designed and built by Bill Heaton, http://pixelhandler.com/
@@ -32,11 +32,13 @@ Tags: fixed width, three columns, widgets, widget ready, left sidebar, valid XHT
 .current_page_item{}
 .current_page_parent{}
 /* Begin Comments */
+#respond{margin-left:50px;}
 #commentform p{font-family:"Helvetica Neue",Helvetica,Arial,"MS Trebuchet",Sans-Serif;margin:5px 0;}
 #commentform label{font-weight:normal;font-size:.8em;color:#999;}
 #commentform input{width:170px;padding:2px;margin:5px 5px 1px 0;}
 #commentform textarea{width:100%;padding:2px;}
-#commentform #submit{margin:0;float:right;}
+#commentform #submit{float:right;}
+#commentform #reset{float:left; margin-left:30px;}
 .alt{margin:0;padding:10px;}
 .commentlist{padding:0;text-align:justify;}
 .commentlist li{margin:15px 0 3px;padding:5px 10px 3px;list-style:none;}
@@ -56,6 +58,8 @@ Tags: fixed width, three columns, widgets, widget ready, left sidebar, valid XHT
 #wp-calendar td{text-align:right;}
 #wp-calendar a{color:#fff;}
 #wp-calendar #prev a,#wp-calendar #next a{font-size:9pt;}
+td#next {text-align:right;}
+td#prev {text-align:left;}
 /* End Calendar */
 /* Begin page nav */
 .navigation{display:block;text-align:center;margin-top:20px;margin-bottom:40px;font-family:Georgia,Times,"Times New Roman",Serif;font-size:1.2em;float:left;}
