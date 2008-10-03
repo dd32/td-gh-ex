@@ -1,0 +1,393 @@
+/*
+Theme Name: Northern-Web-Coders
+Theme URI: http://www.northern-web-coders.de
+Description: Northern-Web-Coders - Theme
+Version: 2.0
+Author: Kai Ackermann (aka jaman)
+Author URI: http://www.design-coding.de
+Tags: valid XHTML, fixed-width, two-columns, widgets, widget-ready, writing
+*/
+
+#navcontainer ul
+{
+padding: 0;
+margin: 0;
+background: transparent;
+border-bottom: 1px solid #DFDFDF;
+float: left;
+width: 850px;
+font: 16px arial, helvetica, sans-serif;
+}
+
+#navcontainer ul li { display: inline; }
+
+#navcontainer ul li a
+{
+padding: 10px 14px 11px 14px;
+background: transparent;
+color: #fff;
+text-decoration: none;
+float: left;
+font-weight: bold;
+}
+
+#navcontainer ul li.page_item a
+{
+padding: 10px 14px 11px 14px;
+background: transparent;
+color: #fff;
+text-decoration: none;
+float: left;
+font-weight: bold;
+}
+
+#navcontainer ul li.page_item a:hover
+{
+color: #FF9F00;
+}
+
+#navcontainer ul li.current_page_item a
+{
+padding: 10px 14px 11px 14px;
+background: transparent;
+color: #FF9F00;
+text-decoration: none;
+float: left;
+}
+
+#navcontainer ul li.current_page_item a:hover
+{
+color: #FF9F00
+}
+
+
+#navcontainer ul li form
+{
+margin: 0;
+padding: 0;
+}
+
+#navcontainer ul li input#s
+{
+float: right;
+margin: 6px 5px 0 2px;
+padding: 0;
+}
+
+#navcontainer ul li input.such
+{
+float: right;
+margin: 5px 0 0 5px;
+padding: 0;
+}
+
+#navcontainer ul.sub
+{
+padding: 0;
+margin: 0;
+background: transparent;
+border: 0;
+}
+
+#navcontainer ul.sub li a
+{
+border-right: 1px solid #FFFFFF;
+}
+
+
+body
+{
+background: #5F5F5F;
+font-family: Arial, Verdana, sans-serif;
+margin: 15px 0 10px 0;
+padding: 0;
+}
+
+a
+{
+font-size: 13px;
+color: #fff;
+}
+
+a:hover
+{
+color: #FF9F00;
+}
+
+#rap
+{
+background: transparent;
+margin: 0 auto 0 auto;
+width: 850px;
+border: 0px solid #EFEFEF;
+}
+
+h1#header
+{
+background: transparent;
+width: 850px;
+margin: 0;
+padding: 0;
+text-align: left;
+}
+
+h1#header a
+{
+font: bold 50px/115px Arial, Verdana, sans-serif;
+background: transparent;
+padding: 0;
+color: #FF9F00;
+text-decoration: none;
+}
+
+h1#header a:hover
+{
+color: #fff;
+}
+
+#content
+{
+padding: 0;
+width: 850px;
+color: #fff;
+font-size: 11px;
+background: transprent;
+}
+
+#content .post
+{
+margin: 15px;
+padding: 15px;
+border: 0px solid #000;
+font-size: 13px;
+background: transparent;
+}
+
+#content .post .meta
+{
+font-size: 12px;
+margin: 0 0 5px 0
+}
+
+#content .post .meta a
+{
+text-decoration: none;
+color: #fff;
+font-size: 12px;
+}
+
+#content .post h2
+{
+margin: 0;
+padding: 0;
+font-size: 16px;
+}
+
+#content .post p
+{
+margin: 0 0 10px 0;
+padding: 0;
+}
+
+#content .post p a img
+{
+border: 0
+}
+
+h3.storytitle
+{
+margin: 0 0 0 -2px;
+padding: 0;
+font-size: 25px;
+}
+
+h3.storytitle a
+{
+margin: 0;
+padding: 0;
+font-size: 25px;
+color: #FF9F00;
+text-decoration: none;
+}
+
+h3.storytitle a:hover
+{
+color: #fff;
+}
+
+
+
+
+
+
+
+
+div.column-left
+{
+background: transparent;
+float: left;
+width: 400px;
+margin: 10px 0 10px 10px;
+}
+
+div.column-right
+{
+background: transparent;
+float: left;
+width: 400px;
+margin: 10px
+}
+
+div.comment-right
+{
+background: transparent;
+float: left;
+width: 400px;
+border: 0px solid #000000;
+margin: 10px;
+font-size: 12px
+}
+
+div.comment-right a
+{
+font-size: 12px
+}
+
+
+
+div.column-full
+{
+background: transparent;
+float: left;
+width: 800px;
+margin: 10px 0 10px 10px
+}
+
+h2#comments
+{
+margin: 30px 0 0 0;
+padding: 0;
+font-size: 16px;
+}
+
+textarea#comment
+{
+margin: 0 0 0 0;
+width: 400px
+}
+
+div.footer
+{
+color: #fff;
+background: transparent;
+border-top: 1px solid #DFDFDF;
+clear: both;
+font-size: 13px;
+margin: 0;
+padding: 10px 17px 20px 0;
+width: 850px;
+}
+
+div.footer a
+{
+color: #FF9F00
+}
+
+.footerbox
+{
+float: left;
+width: 200px;
+background: transparent;
+margin: 0 11px 20px 0;
+padding: 0;
+}
+
+
+.footerbox ul
+{
+padding: 0 10px 0 0;
+margin: 0 10px 0 0;
+color: #fff
+}
+
+.footerbox ul ul
+{
+padding: 0 10px 0 10px;
+margin: 0 10px 0 10px;
+color: #fff
+}
+
+.footerbox ul li
+{
+font-size: 13px:
+color: #fff
+}
+
+.footerbox h2
+{
+color: #FF9F00;
+margin: 10px 0 3px -2px;
+padding: 0;
+border-bottom: 1px solid #fff;
+width: 170px
+}
+
+.footerbox li.widget
+{
+list-style: none
+}
+
+
+
+img.avatar {
+border: 1px solid #BFBFBF;
+padding: 3px;
+margin: 3px;
+display: block
+}
+
+
+.aligncenter,
+div.aligncenter {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+
+.alignright {
+   float: right;
+}
+
+.alignleft {
+   float: left;
+}
+
+.wp-caption {
+   border: 1px solid #ddd;
+   text-align: center;
+   background-color: #f3f3f3;
+   padding-top: 4px;
+   margin: 10px;
+   /* optional rounded corners for browsers that support it */
+   -moz-border-radius: 3px;
+   -khtml-border-radius: 3px;
+   -webkit-border-radius: 3px;
+   border-radius: 3px;
+}
+
+.wp-caption img {
+   margin: 0;
+   padding: 0;
+   border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+   font-size: 11px;
+   line-height: 17px;
+   padding: 0 4px 5px;
+   margin: 0;
+}
+
+div.comment
+{clear: both}
