@@ -34,5 +34,8 @@
 							<?php wp_list_categories('title_li=&show_count=0&hierarchical=0'); ?>
 						</ul>
 					</div>
+					<div class="menu opacity">
+						<?php wp_widget_calendar(); ?>
+					</div
 					<?php endif; ?>
 				</div><!-- /#leftCol -->

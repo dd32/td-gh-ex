@@ -14,7 +14,7 @@
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 				<?php $attachment_link = get_the_attachment_link($post->ID, true, array(450, 800)); // This also populates the iconsize for the next line ?>
 				<?php $_post = &get_post($post->ID); $classname = ($_post->iconsize[0] <= 128 ? 'small' : '') . 'attachment'; // This lets us style narrow icons specially ?>
-				<div class="grid_8 vtab articleInfo" id="post-<?php the_ID(); ?>">
+				<div class="grid_9 vtab articleInfo" id="post-<?php the_ID(); ?>">
 					<p><span class="unibullet">&raquo;</span> posted on <?php the_time('l, F jS, Y'); ?> at <?php the_time(); ?> by <?php the_author(); ?></p>
 				</div><!-- /#articleInfo -->
 				<div class="clear">&nbsp;</div>

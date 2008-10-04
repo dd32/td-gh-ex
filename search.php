@@ -10,11 +10,11 @@
 			</div><!-- /#sideBar -->
 			
 			<div id="pageContent" class="grid_10 serif">
-				<div class="grid_8 prefix_1 suffix_1 alpha omega article"><h1>You are viewing the Search Results for "<?php the_search_query(); ?>"</h1></div>
+				<div class="grid_9 omega archive"><h2>You are viewing the Search Results for <strong>"<?php the_search_query(); ?>"</strong></h2></div>
 			<?php if (have_posts()) : ?><?php //if (is_home()) { query_posts("cat=-1"); } ?>
 				<?php while (have_posts()) : the_post(); ?>
-				<div class="grid_8 vtab articleInfo">
-					<p><span class="unibullet">&raquo;</span> <?php the_time('F jS, Y') ?> | filed in: <?php the_category(', '); ?></p>
+				<div class="grid_9 vtab articleInfo">
+					<p><span class="unibullet">&raquo;</span> <?php the_time('F jS, Y') ?></p>
 				</div><!-- /#articleInfo -->
 				<div class="clear">&nbsp;</div>
 				<hr class="space short" />
@@ -26,7 +26,7 @@
 				
 				<div class="grid_8 prefix_1 suffix_1 alpha omega articleMeta sansSerif">
 					<hr class="space" />
-					<p><?php comments_popup_link('post a comment', 'one Comment', '% comments'); ?><?php the_tags( ' | tags: ', ', ', ''); ?></p>
+					<p><?php comments_popup_link('post a comment', 'one Comment', '% comments'); ?><?php the_tags( ' | tags: ', ', ', ''); ?><br />filed in: <?php the_category(', '); ?></p>
 				</div><!-- /#articleMeta -->
 				<?php endwhile; ?>
 				<?php include (TEMPLATEPATH . '/navigation.php'); ?>
