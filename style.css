@@ -1,0 +1,145 @@
+/*  
+Theme Name: Autumn Almanac
+Theme URI: http://the-cloisters.net/themedemos/?SelectedTheme=Autumn+Almanac
+Description: 3 Column, widget-ready fixed width theme in rustic autumn colors featuring an author box, author info page, gravatars and highlighted author comments in the comments section along with Custom Archives, Custom Intro Box, Sitemap and full width No Sidebars page templates.  Tested in Firefox, Opera, Safari, IE6 and IE7.
+Version: 1.0
+Author: Mina
+Author URI: http://www.the-cloisters.net/
+Tags: 3 column, fixed width, gravatars, widgets, brown, green, gold, red, Autumn, Fall, rustic, author box, sitemap, archives
+
+*/
+
+
+/***** TYPOGRAPHY AND LINKS *****/
+body, address, dd, dl, hr, p, form { font-family: "Trebuchet MS", Verdana, Tahoma, Arial, Sans-serif; margin: 0; padding: 0; }
+
+h1, h2, h3, h4, h5, h6 { font-family: Georgia, "Trebuchet MS", Helvetica, Verdana, Times, Tahoma, Arial, Sans-serif; margin: 0; padding: 0 0 20px 5px; color: #61574a; }
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.4em; }
+h4 { font-size: 1.3em; }
+h5 { font-size: 1.2em; }
+h6 { font-size: 1.1em; }
+
+a:link, a:visited { text-decoration: none; color: #711f1f; }
+a:hover { text-decoration: underline; color: #cc9933; }
+p { padding: 10px; }
+blockquote { margin: 15px 40px 10px 30px; padding: 0 10px 10px 20px; border-left: 2px solid #a89166; border-right: 2px solid #b6c0af; }
+
+/***** MAIN CONTENT *****/
+body { margin: 0; font-size: 76.5%; text-align: center; vertical-align: top; background: #993300 url(images/body-bg.gif) repeat; color: #000; }
+
+#wrapper { margin: 0 auto 0 auto; width: 1000px; text-align: left; }
+
+#main_content { background: #e0dcc5 url(images/page-bg.jpg) repeat; float: left; margin: 0 auto 0 auto; padding: 0; width: 1000px; border: #cc9933 1px solid; }
+#container { background: #e0dcc5; float: left; width: 520px; margin: 0 10px 0 10px; padding: 0 10px 10px 10px; border: #94927b 3px double; }
+#container_wide { background: #e0dcc5; float: left; width: 900px; margin: 0 0 0 35px; padding: 5px 5px 0 7px; border: #94927b 2px solid; }
+
+.post { padding: 10px 0 5px 0; }
+.post h2 { font-size: 1.3em; margin: 0 0 0px 5px; padding-top: 5px; }
+.entry { font-size: 1.02em; border-bottom: #8c8e6b 1px solid; line-height: 1.42em; }
+.postmetadata { margin: 10px 0 0 0; font-size: 9px; }
+.date {	font-size: .9em; margin-top: -30px; font-style: italic; }
+
+#author-box { width: 90%; min-height: 115px; margin: 10px 10px 20px 10px; padding: 0 10px 10px 10px; background: #cc9933; border: 1px solid #94927b; }
+#author-box .avatar { float: left; width: 80px; height: 80px; }
+#author-box h2 { padding: 0; margin: 5px 0 5px 0; }
+
+/***** HEADER *****/
+#header { float: left; width: 1000px; height: 250px; background: #e0dcc5 url(images/header.jpg) no-repeat; padding: 0; margin: 0 auto 0 auto; }
+#header h1 { padding: 0; margin: 20px 0 0 30px; font-family: Georgia, Times New Roman, Sans-serif; font-size: 3.5em; line-height: 38px; text-align: left; }
+#header h1 a { text-decoration: none; color: #ddd7c0; }
+#header h1 a:hover { text-decoration: none; color: #cc9933; }
+#header .description { margin: 0 0 0 60px; padding: 0; font-size: 1.5em; font-weight: normal; font-family: Georgia; color: #ddd7c0; text-align: left; text-transform: lowercase; }
+
+/***** HORIZONTAL MENU *****/
+.menu  { float: left; width: 1000px; height: 30px; margin: 0 0 10px 0; padding: 0; display: inline; background: #999967 url(images/menu-bg.gif) repeat-x; border-top: #cc9933 2px solid; border-bottom: #cc9933 2px solid; }
+.menu ul { width: 100%; margin: 0; padding: 8px 0; list-style: none; }
+.menu ul li { display: inline; margin: 0; }
+.menu ul li a { padding: 0 0 0 10px; text-decoration: none; color: #660000; font-weight: normal; font-size: 1.1em; }
+.menu ul li a:hover { color: #cc9933; text-decoration: underline; }
+
+/***** IMAGES *****/
+p img { padding: 0; max-width: 100%; }
+a img { border: #b0aa96 1px solid; padding: 3px; background: none; }
+
+img.avatar { float: left; margin: 3px; border: #afb997 1px solid; }
+img.centered { display: block; margin-left: auto; margin-right: auto; }
+img.alignright { padding: 3px; margin: 0 0 0 7px; display: inline; }
+img.alignleft { padding: 3px; margin: 0 7px 0 0; display: inline; }
+
+.alignright { float: right; }
+.alignleft { float: left; }
+.aligncenter, div.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+
+.wp-caption { border: 1px solid #ddd; text-align: center; background-color: #f3f3f3;   padding-top: 4px; margin: 10px; /* optional rounded corners for browsers that support it */ -moz-border-radius: 3px; -khtml-border-radius: 3px; -webkit-border-radius: 3px;    border-radius: 3px; }
+.wp-caption img { margin: 0; padding: 0; border: 0 none; }
+.wp-caption p.wp-caption-text { font-size: 11px; line-height: 17px; padding: 0 4px 5px; margin: 0; }
+
+#flickrrss img { border: 1px solid #61574a; float: left; margin: 0 0 3px 3px; }
+
+.thumbnail { width: 60px; height: 60px; float: left; margin: 3px; border: #3f464f 1px solid; }
+.medium { width: 250px; height: 150px; float: left; margin: 3px; border: #3f464f 1px solid; }
+
+/***** NAVIGATION *****/
+.navigation { padding: 5px 0 5px 10px; font-size: 9px; font-weight: bold; line-height: 18px; }
+
+/***** SUBSCRIPTION *****/
+.subscribe  { background: url(images/feed-icon.jpg) no-repeat 2% center; width: 25px; margin: 5px 0 0 10px; padding: 6px 0 6px 20px; text-decoration: none; }
+.subscribe a:hover { text-decoration: none; }
+
+/***** SIDEBAR *****/
+#left_sidebar { background: #e0dcc5 url(images/sidebar-bg.gif) repeat; width: 200px; float: left; margin: 0 0 20px 10px; padding: 0 auto 0 auto; border: #94927b 3px double; } 
+#right_sidebar { background: #e0dcc5 url(images/sidebar-bg.gif) repeat; width: 200px; float: left; margin: 0 0 20px 0; padding: 0 auto 0 auto; border: #94927b 3px double; }  
+#left_sidebar ul li a:hover, #right_sidebar ul li a:hover { color: #cc9933; }
+#left_sidebar a.title, #right_sidebar a.title { color: #6b6b47; padding: 0px; margin: 0px; }	
+#left_sidebar ul li a, #right_sidebar ul li a { display: inline; margin: 0; padding-left: 10px; }
+#left_sidebar ul li, #right_sidebar ul li { display: block; padding: 0; margin: 0px; font-size: 1em; color: #6b6b47; list-style: none; }
+#left_sidebar ul ul, #right_sidebar ul ul { margin: 0 0 0 10px; }
+#left_sidebar ul ul ul, #right_sidebar ul ul ul { margin: 0 0 0 10px; }
+#left_sidebar ul, #right_sidebar ul { margin: 0 0 5px 0; padding: 0; }
+#left_sidebar h2, #right_sidebar h2, #commentblock h2 { width: 80%; font-size: 1.2em; text-transform: uppercase; letter-spacing: normal; margin: 15px auto 5px auto; padding: 3px 3px 3px 7px; text-align: left; background: transparent; border-bottom: #94927b 1px solid; } 
+
+/***** INTRO BOX *****/
+#intro { width: 515px; margin: 14px 0 20px 0; float: left; padding: 0; text-align: left; background: transparent url(images/dot.gif) repeat-x scroll 0pt 100%; } 
+#intro p { font-size: 1em; font-style: italic; line-height: 1.42em; }
+#intro h2 { font-size: 1.077em; text-transform: uppercase; width: 90%; background: none; margin: 0 auto 0 auto; padding: 3px; text-align: left; border-bottom: #94927b 2px solid; } 
+
+/***** SEARCH *****/
+.search { float: right; width: 160px; margin: 10px 35px 0 0; }
+.search form { float: left; margin: .5em 0 0 0px; padding: 0; }
+.search input#s { color: #797a52; width: 160px; margin: 0 10px 0 0; padding: 3px 5px; border: 1px solid #c4cccf; }
+.search .search-submit { display: none; }
+
+/***** Calendar *****/
+#wp-calendar { text-align: center; background: #cc9933; margin: 0 0 10px 20px;
+padding: 0; width: 80%; border: #993300 2px solid; font-variant: small-caps;
+font-family: Times, Verdana, Sans-Serif; }
+#wp-calendar td { line-height: 10px; font-size: 10px; color: #600000; font-variant: small-caps; }
+#wp-calendar td a { display: block; color: #600000; text-decoration: none; line-height: 10px;
+font-weight: bold; font-variant: small-caps; font-size: 10px; }
+#wp-calendar #prev a { width: 30px; font-variant: small-caps; }
+#wp-calendar #next a { width: 30px; margin: 0 0 0 30px; font-variant: small-caps; }
+#wp-calendar #today { background: #600000; color: #e6ddbc; font-variant: small-caps; }
+#wp-calendar #today a { color: #463e35; font-weight: 700; font-variant: small-caps; }
+#wp-calendar caption { color: #600000; text-align: center; width: 80%; margin: 5px 0 5px 20px; font-variant: small-caps; font-family: Times, Verdana,Sans-Serif; font-size:12px; }
+
+/***** COMMENTS *****/
+.comments-template { margin: 0 10px; border-top: 1px solid #dcd7bc; padding: 0 10px; }
+.comments-template ol { margin: 0; padding: 0 0 15px; list-style: none; }
+.comments-template ol li { margin: 0; line-height: 14px; padding: 10px 0 10px 5px; }
+.comments-template h2, .comments-template h3 { font-family: Georgia, Sans-serif; font-size: 12px; margin: 10px 0 0 0; }
+.commentmetadata { font-size: 9px; }
+.comments-template p.nocomments { padding: 0; }
+.comments-template textarea { width: 95%; max-width: 500px; font-family: Arial, Helvetica, Georgia, Sans-serif; font-size: 11px; background: #efeadc; }
+.authorcomment { background: #cc9933; }
+
+/***** FOOTER *****/
+#footer { clear: both; float: left; width: 1000px; margin-top: 15px; padding: 0; background: #61574a;  }
+#footer p { font-size: .9em; width: 900px; float: right; line-height: 18px; padding: 10px 10px 0 10px; text-align: right; color: #ddd7c0; }
+#footer a { color: #cc9933; }
+
+/***** IE HACKS *****/
+*html #left_sidebar { margin: 0 0 20px 5px; } 
+*html .search { margin: 10px 10px 0 0; }
