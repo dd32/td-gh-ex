@@ -1,15 +1,9 @@
 <?php get_header(); ?>
 	<div id="contentArea">
 		<div id="main" class="container_16">
-			
-			<div id="sideBar" class="grid_6">
-				<?php include (TEMPLATEPATH . '/sidebar-left.php'); ?>
-				<?php include (TEMPLATEPATH . '/sidebar-right.php'); ?>
-				<?php include (TEMPLATEPATH . '/sidebar-double.php'); ?>
-				<div class="clear">&nbsp;</div>
-			</div><!-- /#sideBar -->
-			
+			<div class="sec508"><a href="#menus">Go to menus</a><hr /></div>
 			<div id="pageContent" class="grid_10 serif">
+			
 			<?php if (have_posts()) : ?><?php //if (is_home()) { query_posts("cat=-1"); } ?>
 				<?php while (have_posts()) : the_post(); ?>
 				<div class="grid_9 vtab articleInfo">
@@ -19,7 +13,7 @@
 				<hr class="space short" />
 				<div class="grid_8 prefix_1 suffix_1 alpha omega article">
 					<h1><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h1>
-					<?php the_content('[<br /> <span class="more">&raquo; read more</a></span>]'); ?>
+					<?php the_content('<span class="more">&raquo; read more</a></span>'); ?>
 				</div><!-- /#article -->
 				<div class="clear">&nbsp;</div>
 				
@@ -40,6 +34,14 @@
 				<div class="clear">&nbsp;</div>
 			<?php endif; ?>	
 			</div><!-- /#pageContent -->
+			
+			<div id="sideBar" class="grid_6">
+				<div class="sec508"><a name="menus" id="menus" class="accessiblity"></a></div>
+				<?php include (TEMPLATEPATH . '/sidebar-left.php'); ?>
+				<?php include (TEMPLATEPATH . '/sidebar-right.php'); ?>
+				<?php include (TEMPLATEPATH . '/sidebar-double.php'); ?>
+				<div class="clear">&nbsp;</div>
+			</div><!-- /#sideBar -->
 			
 			<div class="clear">&nbsp;</div>
 		</div><!-- /#main -->

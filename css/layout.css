@@ -139,7 +139,7 @@ a.tag-5{font-size:1.6em;font-weight:bold;}
 .articleInfo .unibullet{background-color:#333;color:white;margin:9px 6px 9px 0px;padding:0px 1px 2px 2px;font-size:1em;line-height:1em;display:block;float:left;}
 .articleInfo p{line-height:33px;}
 .articleInfo p a{text-decoration:underline;}
-#pageContent{background-color:white;}
+#pageContent{background-color:white;float:right;}
 #pageContent hr{border-top:1px solid #999;}
 #pageContent hr.short{width:180px;}
 #pageContent hr.full{width:460px;}
@@ -169,3 +169,6 @@ a.tag-5{font-size:1.6em;font-weight:bold;}
 #footerCol-4{padding-left:10px;padding-right:0px;margin-right:0px;}
 #footer p { padding-left: 27px;}
 #copyright{}
+/* section 508
+-------------------------------------------------------------- */
+.sec508 {display:none;}

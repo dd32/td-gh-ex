@@ -1,15 +1,7 @@
 <?php get_header(); ?>
-
-		<div id="contentArea">
-			<div id="main" class="container_16">
-						
-			<div id="sideBar" class="grid_6">
-				<?php include (TEMPLATEPATH . '/sidebar-left.php'); ?>
-				<?php include (TEMPLATEPATH . '/sidebar-right.php'); ?>
-				<?php include (TEMPLATEPATH . '/sidebar-double.php'); ?>
-				<div class="clear">&nbsp;</div>
-			</div><!-- /#sideBar -->
-	
+	<div id="contentArea">
+		<div id="main" class="container_16">
+			<div class="sec508"><a href="#menus">Go to menus</a><hr /></div>
 			<div id="pageContent" class="grid_10 serif">
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 				<?php $attachment_link = get_the_attachment_link($post->ID, true, array(450, 800)); // This also populates the iconsize for the next line ?>
@@ -21,7 +13,7 @@
 				<hr class="space short" />
 				<div class="grid_8 prefix_1 suffix_1 alpha omega article">
 					<p class="<?php echo $classname; ?>"><?php echo $attachment_link; ?><br /><?php echo basename($post->guid); ?></p>
-					<?php the_content('[<br /> <span class="more">&raquo; read more</a></span>]'); ?>
+					<?php the_content('<span class="more">&raquo; read more</a></span>'); ?>
 					<?php wp_link_pages(array('before' => '<p><strong>pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
 				</div><!-- /#article -->
 				<div class="clear">&nbsp;</div>
@@ -68,6 +60,14 @@
 				<div class="clear">&nbsp;</div>
 			<?php endif; ?>	
 			</div><!-- /#pageContent -->
+			
+			<div id="sideBar" class="grid_6">
+				<div class="sec508"><a name="menus" id="menus" class="accessiblity"></a></div>
+				<?php include (TEMPLATEPATH . '/sidebar-left.php'); ?>
+				<?php include (TEMPLATEPATH . '/sidebar-right.php'); ?>
+				<?php include (TEMPLATEPATH . '/sidebar-double.php'); ?>
+				<div class="clear">&nbsp;</div>
+			</div><!-- /#sideBar -->
 			
 			<div class="clear">&nbsp;</div>
 		</div><!-- /#main -->
