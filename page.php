@@ -10,7 +10,6 @@ get_header();
 <div class="storycontent">
 <?php the_content(__('(more...)')); ?>
 </div>
-
 <!--
 <?php trackback_rdf(); ?>
 -->
