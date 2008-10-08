@@ -22,7 +22,7 @@
 						</ul>
 					</div>
 					<div class="menu opacity">
-						<?php wp_widget_calendar(); ?>
+						<?php get_calendar(true); ?>
 					</div
 					<?php endif; ?>
 				</div><!-- /#leftCol -->
