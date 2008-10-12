@@ -1,9 +1,11 @@
-Adept Wordpress Template 1.0 
+Adept Wordpress Template 1.1
 
-Adept 1.0
+Adept 1.1
 http://overhaulindustries.com/adept/
 
-A versitile WordPress theme with seven 'sidebar' widget positions for a richly customizable blog template. Adept is a clean design, suitable for a wide range of applications; and ideal for business use. Design enthusiasts, will appreciate the fixed width layout composed using a hoizontal grid and featuring a baseline grid for text alignment. To visitors this makes the site 'look and feel' right!  
+Adept is a versatile theme with a custom theme admin page to set colors, add your contact info and analytics tracking code. Adept is built for speed with seven widget positions; three in the sidebar and four in an extended footer. Users will also appreciate the light page weight, around 100k! 
+
+Clean design, suitable for a wide range of applications; and ideal for business use. Design enthusiasts, will appreciate the fixed width layout composed using a hoizontal grid and featuring a baseline grid for text alignment. To visitors this makes the site 'look and feel' right!  
 
 This theme was designed and built by Bill Heaton, http://pixelhandler.com/
 

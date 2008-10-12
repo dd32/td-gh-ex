@@ -125,5 +125,6 @@ function simple_recent_comments($src_count=3, $src_length=24, $pre_HTML='', $pos
 	echo $output;
 
 }
-
+// Create Theme Options Page
+require_once (TEMPLATEPATH . '/customize.php');
 ?>

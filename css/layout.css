@@ -73,7 +73,7 @@ hr.space,
 #header{height:50px;background-color:white;}
 #logo{margin-top:9px;text-align:left;}
 #logo img{float:left;}
-#logo a{line-height:21px;font-size:24px;top:9px;position:relative;}
+#logo a{line-height:21px;font-size:24px;top:9px;position:relative;color:black;}
 #search{padding-top:22px;}
 #search #s{font-size:10px;padding:4px 0px 0px 4px;margin:0px 10px;height:14px;background-color:#ccc;border:none;color:#fff;}
 #search #searchsubmit{font-size:10px;background-color:#f39a2b;border:none;color:white;height:18px;padding:0px 6px;}
@@ -90,11 +90,11 @@ input#searchsubmit:hover{background-color:#e81e25;}
 #topNav .tabs li{text-align:right;font-size:18px;text-transform:lowercase;}
 #topNav .tabs a{padding:0px 12px;color:white;text-decoration:none;line-height:40px;}
 #topNav .tabs li a .unibullet{padding:0px 2px;}
-#topNav .tabs .page_item{margin:0px;background-color:#0082be; background-image:url('../img/blkgrad-blu.jpg');background-repeat:repeat-y;filter:alpha(opacity=78);-moz-opacity:.78;opacity:.78;}/* blue */
+#topNav .tabs .page_item{margin:0px;background-color:#0082be; background-image:url('../img/blkgrad.png');background-repeat:repeat-y;background-position:-50px 0px;filter:alpha(opacity=70);-moz-opacity:.70;opacity:.70;}/* blue */
 #topNav .tabs .page_item a{background-image:url('../img/blkgrad.png');background-repeat:repeat-y;}
 #topNav .tabs .page_item a:hover{background-color:white;background-image:none;color:#e81e25;}
-#topNav .tabs .current a{background-color:#333;background-image:url('../img/blkgrad.png');background-repeat:repeat-y;background-position:-25px 0px;}
-#topNav .tabs .page_item + li.current{background-color:#fff;}
+#topNav .tabs .current_page_item a{color:#e81e25;background-color:#fff;background-image:none;}
+#topNav .tabs .page_item + li.current_page_item{background-color:#fff;filter:alpha(opacity=100);-moz-opacity:1;opacity:1;}
 #main{background:transparent url('../img/whitebkg.gif') repeat-y 370px 0px;}
 /* Sidebar
 -------------------------------------------------------------- */
@@ -103,7 +103,7 @@ div.menu h3,div.menu ul{padding:0px 0px 0px 10px;line-height:32px}
 div.menu li,div.menu h3,.vtab{height:33px;overflow:hidden;}
 #leftCol,#rightCol,#doubleCol{margin-top:20px;}
 #leftCol div.menu{background-color:#0082be;/* blue */}
-#leftCol div.menu + div.menu{background-color:#39af4c;;/* green */}
+#leftCol div.menu + div.menu{background-color:#39af4c;/* green */}
 #rightCol div.menu{background-color:#f39a2b;/* orange */}
 div.menu.opacity{filter:alpha(opacity=78);-moz-opacity:.78;opacity:.78;}
 
@@ -154,9 +154,9 @@ a.tag-5{font-size:1.6em;font-weight:bold;}
 -------------------------------------------------------------- */
 #footer{padding:12px 0px 16px 0px;margin-bottom:0px;background-color:#333;color:#a7a7a7;}
 #footer p{line-height:1.2em;margin-bottom:0px;}
-#footer p a{color:#a7a7a7;;padding:2px;}
+#footer p a{color:#a7a7a7;padding:2px;}
 #footerExtended{margin-top:10px;padding:10px 0px 5px;background-color:black;color:#a7a7a7;}
-#footerExtended h4{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;;margin:6px 0px 2px 0px;color:white;line-height:12px;}
+#footerExtended h4{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;margin:6px 0px 2px 0px;color:white;line-height:12px;}
 #footerExtended h4 span.unibullet{background-color:#0082be;color:#fff;margin:0px 8px 0px 0px;}
 #footerExtended ul{list-style:none;margin-bottom:6px;}
 #footerExtended a:hover,#footerExtended a:focus,

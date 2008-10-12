@@ -7,7 +7,7 @@ elements.css
 -------------------------------------------------------------- */
 /* Default font settings. 
 The font-size percentage is of 16px. (0.75 * 16px = 12px) */
-body{font-size:75%;color:#222;background:#c1c1c1;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;line-height:1.5;/* changed to 1.5 for 18px baseline grid*/}
+body{font-size:75%;color:#222;background-color:#c1c1c1;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;line-height:1.5;/* changed to 1.5 for 18px baseline grid*/}
 /* Headings
 -------------------------------------------------------------- */
 h1,h2,h3,h4,h5,h6{color:#111;font:normal normal normal 1em/1.5em Georgia,Times,"Times New Roman",serif;}
@@ -51,9 +51,9 @@ dd{margin-left:1.5em;}
 /* Tables
 -------------------------------------------------------------- */
 table{margin-bottom:1.4em;width:100%;}
-th{font-weight:bold;background:#C3D9FF;}
+th{font-weight:bold;background:#0082be;}
 th,td{padding:4px 10px 4px 5px;}
-tr.even td{background:#E5ECF9;}
+tr.even td{background:#c1c1c1;}
 tfoot{font-style:italic;}
 caption{background:#eee;}
 /* Rules

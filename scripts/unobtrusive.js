@@ -12,10 +12,7 @@ $(document).ready(function() {
       }
     });
   }
-
-  $("input#searchsubmit").mouseover( function() { $(this).attr({ style: "background-color: #e81e25;" }); });
-  $("input#searchsubmit").mouseout( function() { $(this).attr({ style: "background-color: #f39a2b;" }); });
-  
+	
   // compare browser and rendering engine
   if (  (($.browser.mozilla) && (parseFloat($.browser.version) < 1.9)) 
 	 || (($.browser.safari) && (parseFloat($.browser.version) < 523)) 
@@ -26,7 +23,7 @@ $(document).ready(function() {
   };
 	
 	// add characters to top nav
-	$('#topNav ul.tabs li.page_item a').prepend('<span class="unibullet">&raquo;</span> ');
+	$('#topNav a').prepend('<span class="unibullet">&raquo;</span> ');
 
 });
 

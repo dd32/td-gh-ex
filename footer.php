@@ -66,5 +66,9 @@
 	</div><!-- /#footer -->
 	
 </div><!-- /#wrapper -->
+<?php /* theme custom options: tracking code */ 
+	$trackingCode = get_option('adept_trackingCode'); 
+	if ($trackingCode != '') echo stripslashes($trackingCode);
+?>
 </body>
 </html>

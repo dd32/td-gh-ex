@@ -7,19 +7,36 @@
 	<meta name="generator" content="WordPress <?php bloginfo('version'); ?>" /> <!-- leave this for stats -->
 	<script src="<?php bloginfo('stylesheet_directory'); ?>/scripts/jquery-1.2.6.js" type="text/javascript" charset="utf-8"></script>
 	<script src="<?php bloginfo('stylesheet_directory'); ?>/scripts/unobtrusive.js" type="text/javascript" charset="utf-8"></script>
+	<?php /* Begin Customize */ 
+		$customOptions = get_option('adept_customOptions'); 
+		if ($customOptions == 'on') { 
+			$attribute = 'style: "background-color: #' ;
+			$hoverColor = $attribute . get_option('Adept_hoverColor') . ';"' ; 
+			$sidebarTwo = $attribute . get_option('Adept_sidebarTwo') . ';"' ;
+	?><script type="text/javascript" charset="utf-8">
+		$(document).ready(function() {
+			// search button hover 
+			$("input#searchsubmit").mouseover( function() { $(this).attr({ <?php echo $hoverColor; ?> }); });
+			$("input#searchsubmit").mouseout( function() { $(this).attr({ <?php echo $sidebarTwo; ?> }); });
+		});
+	</script><?php } else { /* no custom colors */ ?>
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function() {
+			// search button hover 
+			$("input#searchsubmit").mouseover( function() { $(this).attr({ style: "background-color: #e81e25;" }); });
+			$("input#searchsubmit").mouseout( function() { $(this).attr({ style: "background-color: #f39a2b;" }); });
+		});
+	</script>
+	<?php } /* End Customize */ ?>
 	<script type="text/javascript" charset="utf-8">
 		var blank = new Image();
-		 blank.src = "<?php bloginfo('stylesheet_directory'); ?>/img/blank.gif";
+		blank.src = "<?php bloginfo('stylesheet_directory'); ?>/img/blank.gif";
 	</script>
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" title="Default Stylesheet" /><!-- Adept Theme : alpha 0.2 -->
-	<style type='text/css'>
-		/* inline css, jQuery sniffes for older FF and Safari and appends */
-		.gracefulDegradation {}
-	</style>
+	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" title="Default Stylesheet" /><!-- Adept Theme : alpha v1 -->
 	<!--[if IE]><style type="text/css">
-		@import url("css/degradation.css");
 		@import url("css/ie.css");
 	</style><![endif]-->
+	<?php /* Begin Customize */ if ($customOptions == 'on') { ?><link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/custom.php" type="text/css" media="screen" /><?php } /* End Customize */ ?>
 	<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 	<link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/img/favicon.ico" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
@@ -40,7 +57,7 @@
 		</div><!-- /#search -->
 		
 		<div id="phone" class="grid_3 omega serif">
-			<strong>&raquo; contact info</strong>
+			<strong><?php $contactInfo = get_option('Adept_contactInfo'); if ($contactInfo != '') { echo $contactInfo; } else { echo('&raquo; contact info'); }?></strong>
 		</div><!-- /#phone -->
 
 		<div class="clear">&nbsp;</div>
@@ -56,9 +73,9 @@
 				
 				<div id="topNav" class="grid_10 serif omega" >
 					<ul class="tabs">
-						<li class="page_item<?php if (is_home()) { echo ' current'; } ?>"><a href="<?php echo get_option('home'); ?>">home</a></li>
+						<li class="<?php if (is_home()) { echo ' current_page_item'; } else { echo 'page_item'; }?>"><a href="<?php echo get_option('home'); ?>">home</a></li>
 						<?php wp_list_pages('depth=1&title_li=0&sort_column=menu_order'); ?>
-			    </ul>
+					</ul>
 				</div><!-- /#topNav -->
 				
 			</div><!-- /#navInset -->
