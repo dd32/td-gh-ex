@@ -23,6 +23,7 @@
 					</div>
 					<div class="menu opacity">
 						<?php get_calendar(true); ?>
-					</div
+					</div>
 					<?php endif; ?>
 				</div><!-- /#leftCol -->
+

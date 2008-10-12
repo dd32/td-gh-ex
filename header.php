@@ -34,7 +34,7 @@
 	</script>
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" title="Default Stylesheet" /><!-- Adept Theme : alpha v1 -->
 	<!--[if IE]><style type="text/css">
-		@import url("css/ie.css");
+		@import url("<?php bloginfo('stylesheet_directory'); ?>/css/ie.css");
 	</style><![endif]-->
 	<?php /* Begin Customize */ if ($customOptions == 'on') { ?><link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/custom.php" type="text/css" media="screen" /><?php } /* End Customize */ ?>
 	<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
