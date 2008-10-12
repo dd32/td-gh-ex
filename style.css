@@ -1,0 +1,413 @@
+/*  
+Theme Name: A Kelleyroo Halloween
+Theme URI: http://www.kelleyroo.com/dl_themes/a_kelleyroo_halloween.zip
+Description: A Halloween Wordpress theme
+Version: 1.0
+Author: kelleyroo
+Author URI: http://www.kelleyroo.com/
+Tags: valid XHTML, Halloween, two columns, right sidebar, black, orange, purple, skulls
+*/
+
+
+
+body{
+margin: 0;
+font-family: Verdana, Arial, Helvetica, Georgia, Sans-serif;
+font-size: 12px;
+text-align: justify;
+line-height: 16pt;
+vertical-align: top;
+background: #000000;
+color: #ccc;
+background-image: url(images/bg.jpg);
+
+}
+
+
+#container {
+margin: 0px auto;
+width: 930px;
+background: #000000;
+}
+
+
+
+
+#header {
+width: 930px;
+height: 325px;
+background-image: url(images/header.jpg);
+background-position: top center; 
+background-repeat: no-repeat;
+background-color: #000;
+}
+
+
+
+
+#content {
+float: left;
+margin-left: 20px;
+width: 682px;
+}
+
+
+
+#footer {
+clear: both;
+width: 100%;
+height: 75px;
+margin-top: 20px;
+padding-bottom: 50px;
+text-align: center;
+color: #fff;
+background-image: url(images/skull.jpg);
+background-attachment:fixed;
+background-position: bottom center;  
+background-repeat: no-repeat;
+}
+
+
+
+.date{
+color: #0093a2;
+font-size: 10px;
+}
+
+
+h2{
+font-family: verdana, arial, sans-serif;
+font-size: 17px;
+font-weight: normal;
+}
+
+
+.title h2 a{
+text-transform: uppercase;
+margin-bottom: -12px;
+font-family: verdana, arial, sans-serif;
+letter-spacing: 3px;
+font-weight: normal;
+text-align: left;
+font-size: 21px;
+color: #f26522;
+}
+
+
+a:link, a:visited{
+text-decoration: none;
+color: #2e3092;
+}
+
+
+a:hover{
+text-decoration: none;
+color: #f26522;
+}
+
+
+#entry{
+padding: 0px 20px;
+
+}
+
+.textarea{
+width: 75%;
+}
+
+#entry p{
+padding: 0;
+}
+
+
+p.postmetadata {
+border-bottom: 1px dotted #dfeef1;
+margin: 10px 0 50px 0;
+padding-bottom: 6px;
+font-size: 10px;
+color: #fff;
+}
+
+
+blockquote {
+ padding: 9px 40px 15px 75px;
+color: #000000;
+border: 2px solid #2e3092;
+background: #ffffff;
+background-image: url(images/blockquote.jpg);
+background-position: top left; 
+background-repeat: no-repeat;
+text-align: justify;
+font-size: 11px; }
+
+
+
+
+
+#from {
+margin: -92px 242px 80px 0;
+height: 20px;
+color: #000;
+font-weight: bold;
+font-size: 15px;
+}
+
+
+
+
+
+
+/*Sidebar*/
+
+.sidebar {
+float: right;
+width: 200px;
+padding-top: 25px;
+
+}
+
+
+
+.sidebar ul{
+list-style-type: none;
+margin: 0;
+padding: 0 10px 0 0px;
+
+}
+
+
+
+.sidebar ul li{
+padding:  0;
+margin-right: 17px;
+}
+
+
+
+.sidebar ul li h2{
+font-family: verdana, arial, sans-serif;
+font-size: 14px;
+text-transform: UPPERCASE;
+color: #ffffff;
+padding-top: 0px;
+letter-spacing: 2px;
+font-weight: bold;
+margin-top: 25px;
+}
+
+
+
+.sidebar ul ul li{
+padding: 0;
+
+}
+
+/*End Sidebar*/
+
+
+
+
+
+
+
+
+/* Navigation*/
+ 
+#tabs {
+margin-top: -20px;
+height: 20px;
+padding-top: 0px;
+margin-bottom: 25px;
+}
+
+
+	
+#tabs ul {
+	margin-left: 0;
+	padding-left: 0;
+	display: inline;
+	} 
+
+#tabs ul li {
+	margin-left: 0;
+	margin-bottom: 0;
+	padding: 2px 15px 5px;
+	border: 0px solid #000;
+	list-style: none;
+	display: inline;
+	}
+	
+		
+#tabs ul li.here {
+
+	list-style: none;
+	display: inline;
+	}
+	
+.nav a{
+color: #fff;
+text-transform: uppercase;
+font-size: 15px;
+font-weight: bold;
+font-family: verdana, arial, sans-serif;
+
+}
+
+
+.nav a:hover{
+color: #fff;
+}
+	
+	
+/* End Navigation*/	
+	
+
+	
+	
+/*Comments*/
+	
+	
+	.commentlist li .avatar { 
+	float: left;
+	border: 0px solid #eee;
+	padding-right: 7px;
+
+	}
+	
+	
+.alt {
+	margin: 0;
+	padding: 10px;
+	}
+
+.commentlist {
+	padding: 0;
+	text-align: justify;
+	}
+
+.commentlist li {
+	margin: 15px 0 3px;
+	padding: 5px 10px 3px;
+	list-style: none;
+	}
+
+.commentlist p {
+	margin: 10px 5px 10px 0;
+	}
+
+#commentform p {
+	margin: 5px 0;
+	}
+
+.nocomments {
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	}
+
+.commentmetadata {
+	margin: 0;
+	display: block;
+	}
+	
+	
+	
+	
+h3.comments {
+	padding: 0;
+	margin: 40px auto 20px ;
+	}
+	
+/* End Comments */
+
+
+
+
+
+
+
+/*Search Form*/
+#searchform {
+border: 0px solid #f28aae;
+font-family: verdana, arial, sans-serif;
+color: #000;
+}
+
+#searchsubmit {
+background-color: #fff;
+border: 0px solid #f28aae;
+font-family: verdana, arial, sans-serif;
+color: #000;
+}
+
+#s {
+background-color: #fff;
+border: 0px solid #f28aae;
+font-family: verdana, arial, sans-serif;
+color: #000;
+}
+
+/*End Search Form*/
+
+
+
+
+
+
+/*Flickr Sidebar styling (for use with the default Flickr.com badge*/
+
+#flickr a img {
+width: 60px;
+height: auto;
+margin-top:40px;
+padding: 5px; margin: 0 5px 5px 0; 
+border: 1px dotted #ccc;
+}
+
+
+/*End Flickr*/
+
+
+
+
+
+.aligncenter,
+div.aligncenter {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.alignleft {
+   float: left;
+}
+
+.alignright {
+   float: right;
+}
+
+.wp-caption {
+   border: 1px solid #ccc;
+   text-align: center;
+   background-color: #0000000;
+   padding-top: 4px;
+   margin: 10px;
+   /* optional rounded corners for browsers that support it */
+   -moz-border-radius: 3px;
+   -khtml-border-radius: 3px;
+   -webkit-border-radius: 3px;
+   border-radius: 3px;
+}
+
+.wp-caption img {
+   margin: 0;
+   padding: 0;
+   border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+   font-size: 10px;
+   line-height: 17px;
+   padding: 0 4px 5px;
+   margin: 0;
+}
