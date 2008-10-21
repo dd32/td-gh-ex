@@ -4,12 +4,12 @@
 
 <?php if(have_posts()): while(have_posts()): the_post(); ?>
 
-			<div id="article-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<div id="article-<?php the_ID(); ?>" class="hentry">
 <?php include(TEMPLATEPATH . '/hentryhead.php'); ?>
 				<br class="clear" />	
 				<div class="entry-content">
 					<?php the_content(); ?>
-					<?php link_pages('<p><strong>' . __('Pages:', 'simplish') . '</strong> ', '</p>', 'number'); ?>
+					<?php link_pages('<p><strong>Pages:</strong> ', '</p>', 'number'); ?>
 				</div><!--#entry-content-->
 <?php edit_post_link(__('Edit&hellip;', 'simplish'),'<p class="admin-edit">&#91; ',' &#93;</p>') ?>
 

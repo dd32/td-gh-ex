@@ -4,12 +4,12 @@
 
 <?php if(have_posts()): while(have_posts()): the_post(); ?>
 
-		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<div id="post-<?php the_ID(); ?>" class="hentry">
 			<h2 class="entry-title"><a href="<?php echo get_permalink($post->post_parent); ?>" rev="attachment"><?php echo get_the_title($post->post_parent); ?></a> &raquo; <?php the_title(); ?></h2>
 			
 			<div class="posted">
-				<?php _e('Posted by', 'simplish'); ?> <?php sp_byline_hcard() ?>
-					<abbr class="published posted_date" title="<?php the_time('Y-m-d\TH:i:sP') ?>"> &ndash; <?php echo get_the_time(get_option('date_format')) ?></abbr>
+				Posted by <?php sp_byline_hcard() ?>
+					<abbr class="published posted_date" title="<?php the_time('Y-m-d\TH:i:sP') ?>">on <?php echo get_the_time(get_option('date_format')) ?></abbr>
 			</div>
 			<br class="clear" />	
 			
@@ -32,7 +32,7 @@
 
 	<?php endwhile; else: ?>
 
-		<p><?php _e('Sorry, no attachments matched your criteria.', 'simplish'); ?></p>
+		<p>Sorry, no attachments matched your criteria.</p>
 
 <?php endif; ?>
 

@@ -1,7 +1,9 @@
 <?php get_header(); ?>
 
 	<div id="content">
-	<h1 class="center"><?php _e('Error 404 &ndash; Not Found', 'simplish'); ?></h1>
+
+		<h1 class="center">Error 404 - Not Found</h1>
+
 	</div>
 
 <?php get_sidebar(); ?>
