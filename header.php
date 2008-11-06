@@ -21,16 +21,7 @@
 </head>
 
 <body>
-<div id="topbar">
- 
-<a href="<?php echo get_option('home'); ?>">Home</a> 
-&nbsp;
-&nbsp;
-<a href="http://wordpress.org/">Wordpress</a> 
-&nbsp;
-&nbsp; 
-<a href="http://codex.wordpress.org/Main_Page">Codex</a> 
-</div>
+
 
 <div id="page">
 

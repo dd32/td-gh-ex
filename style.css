@@ -2,10 +2,10 @@
 Theme Name: QuickPress 
 Theme URI: http://www.quickonlinetips.com/archives/quickpress/
 Description: 3-columns, widget ready, SEO optimized, fast loading, free support wordpress theme by <a href="http://www.quickonlinetips.com/">Quick Online Tips</a>.
-Version: 1.2.3
+Version: 1.3
 Author: Quick Online Tips
 Author URI: http://www.quickonlinetips.com/
-Tags: blue, widget ready, fixed width, three columns, simple, widgets, right sidebar, valid CSS, valid XHTML 
+Tags: blue, widget ready, fixed width, three columns, clean, simple, widgets, right sidebar, valid CSS, valid XHTML 
 */
 
 
@@ -21,8 +21,8 @@ body {
 
 #page {
 	background-color: white; 
-	text-align: left;
-	}
+	text-align: left; 
+        }
 
 #header { 
 	background: #14568A;
@@ -54,7 +54,7 @@ body {
 small {
 	font-family: Arial, Helvetica, Sans-Serif;
 	font-size: 0.9em;
-	line-height: 1.5em;
+	line-height: 2em;
 	}
 
 h1, h2, h3, h4 {
@@ -78,10 +78,10 @@ h1, h2, h3, h4 {
 	}
 
 .blogtitle {
-	font-size: 3em !important; 
+	font-size: 2.5em !important; 
 	text-align: left;
         font-family: Georgia, "Times New Roman", Times, serif;  
- 	font-weight: bold; 
+  	font-weight: bold; 
         margin: 10px 0 0 0;
         padding: 0;
 	}
@@ -182,15 +182,17 @@ a, a:visited, h2 a:hover, h3 a:hover {
 	}
 
 a:hover {
-	color: #DD0000; 
+	color: #06c; 
 	}
 
 .entry a {
-	border-bottom: 1px #0066cc dotted;
+	border-bottom: 1px solid #ddd; 
+        text-decoration: none;
         }  
 
 .entry a:hover {
-	text-decoration: none;
+	text-decoration: underline;
+ 	border-bottom: 0px solid #ddd; 
         }   
 
 #sidebar a:hover {
@@ -206,16 +208,16 @@ body {
 
 #page {
 	background-color: white;
-	margin: 20px auto 10px auto;
+	margin: 40px auto;
 	padding: 0;
 	width: 950px;
-	border: 1px solid #14568A;
+	border: 1px solid #333;
 	}
 
 #header {
 	background-color: #14568A;
 	margin: 0 0px; 
-	padding: 15px 20px 0 30px; 
+	padding: 25px 20px 0 30px; 
 	height: 100px; 
 	width: 900px;
 	}
@@ -228,34 +230,9 @@ body {
 #header a:hover {
 	color: #ccc;
 	}
-
-#topbar {
-	font-family: Arial, Helvetica, Sans-Serif;
-	font-size: 1.2em;
-	font-weight:bold;
-	line-height: 1.3em;
-        background: #444;
-        padding: 10px;
-        margin: 0 0 20px 0;
-        color: #ccc; 
-        text-transform: uppercase;
-        }
-
-#topbar a {
-	color: #ccc;
-        text-decoration:none; 
-        }
-
-#topbar a:hover {
-	color: #fff; 
-        }
-
+ 
 .narrowcolumn {
 	float: left;
-
-
-
-
 	padding: 0 0 20px 45px;
 	margin: 0px 0 0;
 	width: 470px;
@@ -264,20 +241,21 @@ body {
 
 .post {
 	margin: 0 0 40px;
-	text-align: justify;
+	text-align: justify; 
 	}
 
 .post hr {
 	display: block;
 	}
 
+.entry{ 
+        border-top: 1px solid #ddd;  
+	}
 
 .narrowcolumn .postmetadata {
 
 	padding-top: 5px;
 	}
-
- 
 
 .postmetadata {
 	clear: left;
@@ -313,7 +291,7 @@ body {
 /*	Begin Headers
 ------------------------------------- */
 #content h1   {
-	margin: 30px 0 0;
+	margin: 30px 0 0; 
 	}
 
 h2 {
@@ -555,7 +533,7 @@ img.avatar {
         padding: 5px;
         margin: 0 0 5px 0;
         background: #ffffff;
-        border: 5px solid #ddd;
+        border: 1px solid #ddd;
         }
 
 #sidebar_low {
@@ -567,14 +545,14 @@ img.avatar {
 	float: left; 
         padding: 5px;
         border: 1px solid #DDD;
-        background: #EDF3DE;
+        background: #f6f6f6;
         }
 
 #r_sidebar {
 	width:170px;
 	float: right; 
         padding: 5px;
-        background: #F0F6FB;
+        background: #f6f6f6;
         border: 1px solid #DDD;
         }
 

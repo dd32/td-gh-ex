@@ -12,6 +12,11 @@
 
 			</div>
 		</div>
+
+
+	<?php comments_template(); ?>
+
+
 		<?php endwhile; endif; ?>
 	<?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
 	</div>
