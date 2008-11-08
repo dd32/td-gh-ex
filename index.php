@@ -45,9 +45,8 @@ $arc_day = get_the_time('d');
 <?php the_category(', ') ?>
 </li>
 
-<li class="tag">
-<?php the_tags('Tags:',',',''); ?>
-</li>
+
+<?php if (get_the_tags()) the_tags('<li class="tag">Tags: ', ',', '</li>'); ?> 
 
 <?php if ( pings_open() ) : ?>
 <li class="trackback">

@@ -23,7 +23,8 @@
 <p class="meta_archive">
 
 by <a href="index.php?author=<?php the_author_ID(); ?>">
-      <?php the_author(); ?></a> - <?php the_time('j M Y'); ?> - posted in <?php the_category(', ') ?> - <?php comments_popup_link(__('No Comment'), __('1 Comment'), __('% Comments')); ?> - <a href="<?php the_permalink() ?>" rel="bookmark">Read the post</a>
+      <?php the_author(); ?></a> - <?php the_time('j M Y'); ?> - posted in <?php the_category(', ') ?> - 
+<?php if (get_the_tags()) the_tags('Tags: ', ', ', ' -'); ?>  <?php comments_popup_link(__('No Comment'), __('1 Comment'), __('% Comments')); ?> - <a href="<?php the_permalink() ?>" rel="bookmark">Read the post</a>
 </p>
 
 

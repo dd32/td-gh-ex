@@ -86,9 +86,9 @@ jQuery("#header_center h1").dropShadow();
 
  <div id="topsearchform">
 <form id="search_form" method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-		<input type="text" name="search" id="search" value="Search..." onfocus="this.value=''" />
+		<input type="text" name="s" id="search" value="Search..." onfocus="this.value=''" />
  <span class="send">
-        <input name="submit" type="submit" value="" class="search" />
+        <input name="submit" id="submit" type="submit" value="" class="search" />
         </span>
 </form>
 </div>

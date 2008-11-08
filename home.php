@@ -41,6 +41,8 @@ $arc_day = get_the_time('d');
 <?php the_category(', ') ?>
 </li>
 
+<?php if (get_the_tags()) the_tags('<li class="tag">Tags: ', ',', '</li>'); ?> 
+
 <li class="more">
 <a href="<?php the_permalink() ?>" rel="bookmark">Continue</a>
 </li>
