@@ -1,0 +1,127 @@
+/*
+* This CSS includes the appearence of the content.
+* Like text fonts, images, headings etc.
+*/
+
+
+
+/*******************************************************************************
+*********************** Headings ***********************************************
+********************************************************************************/
+#content h1,
+#content h2,
+#content h3,
+#content h4,
+#content h5,
+#content h6 {
+	color: #444;
+	margin: 0 0 5px 0;
+}
+
+#content h1{
+	font-size: 45px;
+    font-weight: normal;
+    letter-spacing: -0.05em;
+    padding:10px 0 0px 0;
+}
+#page_title{
+	border-bottom: 2px solid #F1F2F4;
+}
+#content h2{
+	font-size: 40px;
+    font-weight: normal;
+    letter-spacing: -0.05em;
+}
+#content h3{
+	font-size: 15px;
+}
+#content h4{
+	font-size: 13px;
+}
+
+/*******************************************************************************
+*********************** LINKS ***********************************************
+********************************************************************************/
+
+a{
+	color: #444444;
+	outline: medium none;
+	text-decoration: none;
+}
+a:hover, #content .entry a {
+    color: #0299FF;
+    outline: 0 none;
+    text-decoration: none;
+}
+.postmetadata{
+	border-top:2px solid #666666;
+}
+#content .tags a, #content .categories a{
+	height:10px;
+	background-color:#333;
+	border-radius:3px;
+	color:white;
+	padding:0 13px 1px 13px;
+	line-height:25px;
+}
+.tags, .categories{
+	padding-bottom:10px;
+
+}
+
+
+/*******************************************************************************
+************************* T H U M B N A I L S **********************************
+********************************************************************************/
+.attachment-post-thumbnail{
+	float:left;
+	margin: 3px 5px 5px 0;	
+}
+
+/*******************************************************************************
+*************************** F O N T S ******************************************
+********************************************************************************/
+body,
+input,
+textarea,
+.page-title span,
+.pingback a.url {
+	font-family: Georgia, "Bitstream Charter", serif;
+}
+
+h3#comments-title,
+h3#reply-title,
+#access .menu,
+#access div.menu ul,
+#cancel-comment-reply-link,
+.form-allowed-tags,
+#site-info,
+#site-title,
+#wp-calendar,
+.comment-meta,
+.comment-body tr th,
+.comment-body thead th,
+.entry-content label,
+.entry-content tr th,
+.entry-content thead th,
+.entry-meta,
+.entry-title,
+.entry-utility,
+#respond label,
+.navigation,
+.page-title,
+.pingback p,
+.reply,
+.widget-title,
+.wp-caption-text,
+input[type=submit]
+{
+	font-family: "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+}
+pre {
+	font-family: "Courier 10 Pitch", Courier, monospace;
+}
+code {
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+

@@ -1,0 +1,269 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: webfish\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-02-21 15:47+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Tobias Nyholm <tobias.nyholm@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: ../index.php:21
+#: ../single.php:20
+msgid "Read the rest of this entry &raquo;"
+msgstr ""
+
+#: ../index.php:24
+#: ../archive.php:50
+msgid "Tags"
+msgstr ""
+
+#: ../index.php:24
+#: ../attachment.php:58
+#: ../attachment.php:105
+#: ../search.php:27
+#: ../archive.php:50
+msgid "Edit"
+msgstr ""
+
+#: ../index.php:24
+#: ../archive.php:50
+msgid "No Comments &#187;"
+msgstr ""
+
+#: ../index.php:24
+#: ../archive.php:50
+msgid "1 Comment &#187;"
+msgstr ""
+
+#: ../index.php:24
+#: ../archive.php:50
+msgid "% Comments &#187;"
+msgstr ""
+
+#: ../index.php:30
+#: ../search.php:16
+#: ../search.php:33
+#: ../archive.php:37
+#: ../archive.php:57
+msgid "&laquo; Older Entries"
+msgstr ""
+
+#: ../index.php:31
+#: ../search.php:17
+#: ../search.php:34
+#: ../archive.php:38
+#: ../archive.php:58
+msgid "Newer Entries &raquo;"
+msgstr ""
+
+#: ../index.php:36
+msgid "Not Found"
+msgstr ""
+
+#: ../index.php:37
+msgid "Sorry, but you are looking for something that isn't here."
+msgstr ""
+
+#: ../attachment.php:17
+#, php-format
+msgid "Return to %s"
+msgstr ""
+
+#: ../attachment.php:19
+#, php-format
+msgid "<span class=\"meta-nav\">&larr;</span> %s"
+msgstr ""
+
+#: ../attachment.php:27
+#, php-format
+msgid "<span class=\"%1$s\">By</span> %2$s"
+msgstr ""
+
+#: ../attachment.php:38
+#, php-format
+msgid "<span class=\"%1$s\">Published</span> %2$s"
+msgstr ""
+
+#: ../attachment.php:48
+#, php-format
+msgid "Full size is %s pixels"
+msgstr ""
+
+#: ../attachment.php:51
+msgid "Link to full-size image"
+msgstr ""
+
+#: ../attachment.php:98
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: ../attachment.php:99
+#: ../page.php:19
+#: ../single.php:22
+msgid "Pages:"
+msgstr ""
+
+#: ../functions.php:32
+msgid "Just a simple sidebar"
+msgstr ""
+
+#: ../functions.php:33
+msgid "Why not put some widgets in the footer"
+msgstr ""
+
+#: ../functions.php:39
+msgid "Main menu"
+msgstr ""
+
+#: ../image.php:51
+#: ../page.php:33
+msgid "Edit this entry."
+msgstr ""
+
+#: ../base-functions.php:161
+msgid "Select a Color"
+msgstr ""
+
+#: ../page.php:17
+msgid "Read the rest of this page &raquo;"
+msgstr ""
+
+#: ../page.php:26
+msgid "Page not found"
+msgstr ""
+
+#: ../page.php:28
+msgid "We could not find the page you are looking for. We have searched in more than 404 places..."
+msgstr ""
+
+#: ../search.php:13
+msgid "Search Results"
+msgstr ""
+
+#: ../search.php:39
+msgid "No posts found. Try a different search?"
+msgstr ""
+
+#: ../comments.php:21
+msgid "No Responses"
+msgstr ""
+
+#: ../comments.php:21
+msgid "One Response"
+msgstr ""
+
+#: ../comments.php:21
+msgid "% Responses"
+msgstr ""
+
+#: ../comments.php:21
+msgid "to"
+msgstr ""
+
+#: ../comments.php:53
+msgid "Leave a Reply"
+msgstr ""
+
+#: ../comments.php:53
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: ../comments.php:67
+msgid "Logged in as"
+msgstr ""
+
+#: ../comments.php:67
+msgid "Log out of this account"
+msgstr ""
+
+#: ../comments.php:67
+msgid "Log out"
+msgstr ""
+
+#: ../comments.php:72
+msgid "Name"
+msgstr ""
+
+#: ../comments.php:72
+#: ../comments.php:75
+msgid "(required)"
+msgstr ""
+
+#: ../comments.php:75
+msgid "Mail (will not be published)"
+msgstr ""
+
+#: ../comments.php:78
+msgid "Website"
+msgstr ""
+
+#: ../comments.php:86
+msgid "Submit Comment"
+msgstr ""
+
+#: ../sidebar.php:43
+msgid "Pages"
+msgstr ""
+
+#: ../sidebar.php:50
+msgid "Archives"
+msgstr ""
+
+#: ../sidebar.php:57
+msgid "Meta"
+msgstr ""
+
+#: ../single.php:23
+msgid "Tags:"
+msgstr ""
+
+#: ../single.php:54
+#: ../single.php:58
+msgid "Edit this entry"
+msgstr ""
+
+#: ../archive.php:21
+#: ../archive.php:23
+#: ../archive.php:25
+msgid "Archive for"
+msgstr ""
+
+#: ../archive.php:27
+msgid "Author Archives"
+msgstr ""
+
+#: ../archive.php:29
+msgid "Blog Archives"
+msgstr ""
+
+#: ../archive.php:50
+msgid "Posted in"
+msgstr ""
+
+#: ../archive.php:63
+#, php-format
+msgid "Sorry, but there aren't any posts in the %s category yet."
+msgstr ""
+
+#: ../archive.php:65
+msgid "Sorry, but there aren't any posts with this date."
+msgstr ""
+
+#: ../archive.php:68
+#, php-format
+msgid "Sorry, but there aren't any posts by %s yet."
+msgstr ""
+
+#: ../archive.php:70
+msgid "No posts found."
+msgstr ""
+

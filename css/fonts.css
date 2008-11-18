@@ -1,0 +1,14 @@
+/*
+* This CSS lets you import different fonts into your projects using @fontface
+*/
+
+/* Example on how to write the font import  */
+
+@font-face {
+    font-family: 'WebFont';
+    src: url('myfont.eot');  /* IE6+ */
+    src: local('☺'), 
+        url('myfont.woff') format('woff'),  /* FF3.6 */
+        url('myfont.ttf') format('truetype');  /* Saf3+,Chrome,Opera10+ */
+}
+
