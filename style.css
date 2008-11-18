@@ -1,0 +1,586 @@
+/*
+
+Theme Name: Anfaust
+
+Theme URI: http://templates.thewebhunter.se/WP-anfaust
+
+Description: This is a light-weight yet dark 2 column theme.
+
+Version: 1.1
+
+Author: Andreas Hultgren
+
+Author URI: http://thewebhunter.se/
+
+Tags: red, white, black, two columns, widgets ready
+
+*/
+
+
+
+/* Body */
+
+body
+{
+    margin: 0;
+    padding:0 0 20px 0;
+    background: #000;
+    font: 80%/140% verdana;
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* Wrapper */
+
+#wrap
+{
+    background: #D80500 url(./bilder/wrapbg3.jpg) repeat-x;
+    width: 750px;
+    height: auto;
+    margin: 20px auto;
+    padding: 8px 8px 0 8px;
+    border: 1px solid #D80500;
+    overflow: hidden;
+}
+
+/************header************/
+#headerbg
+{
+    height: 120px;
+    padding: 0px;
+}
+#header
+{
+    height: 95px;
+    background: url(./bilder/hbg.jpg) repeat-x top left;
+    padding: 12px 20px;
+    border: 1px solid #333;
+    margin: 0px 0px 7px 0px;
+}
+#header a
+{
+    color: #222;
+    text-decoration: none;
+}
+#header a:hover
+{
+    color: #333;
+    text-decoration: none;
+}
+
+#toplinks
+{
+    padding: 5px 2px 2px 3px;
+    text-align: right;
+}
+
+
+
+/* Headers */
+
+#header h1
+{
+    font-family: verdana,arial, helvetica,sans-serif;
+    font-size: 4em;
+    font-weight: bolder;
+    letter-spacing: -4px;
+    line-height:1em;
+    color: #000;
+    text-align: left;
+    text-transform:uppercase;
+    margin-top: 20px;
+}
+#header h2
+{
+    font-family: verdana, arial,sans-serif;
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #000;
+    text-align: left;
+    margin-top: 0;
+    margin-left: 20px;
+    padding-bottom: 0px;
+}
+#content h2
+{
+    font-family: verdana, arial, sans-serif;
+    font-size: 1.25em;
+    font-weight: bold;
+    text-align: left;
+    margin: 0px 0px 0px 0px;
+    color: #555;
+}
+#content h3
+{
+    font-size:1em;
+    font-weight:bold;
+    color:#666;
+}
+table#wp-calendar caption
+{
+    text-align: left;
+    font-weight: bold;
+    color: #fff;
+    font-size: 1.2em;
+    text-transform:uppercase;
+    letter-spacing: -1px;
+    margin: 0 0 8px;
+    padding: 0 2px 4px 5px;
+}
+table#wp-calendar a
+{
+    color:#000;
+}
+
+
+
+
+/************topmenu************/
+
+#topmenu
+{
+    background: #fff;
+    background: #000 url(./bilder/gmenu.jpg) repeat-x top center;
+    width: 748px;
+    height:27px;
+    border: 1px solid #333;
+    margin: 0px 0px 7px 0px;
+}
+#topmenu ul
+{
+    font-size: 16px;
+    margin: 0px;
+    padding: 0px;
+}
+#topmenu li
+{
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#topmenu a
+{
+    border-right: 1px solid #333;
+    color: #555;
+    display: block;
+    font-size: 0.7em;
+    padding: 4px 10px 6px;
+    text-transform: uppercase;
+}
+#topmenu a:hover, #topmenu li.current_page_item a, #topmenu a.active
+{
+    background: url(./bilder/gmenuhover.jpg) top center repeat-x;
+    color: #111;
+    text-decoration: none;
+}
+
+/* Sidebar */
+
+#sidebar
+{
+    float: left;
+    width: 136px;
+    margin: 0px;
+    padding: 12px 12px 12px 12px;
+    background: transparent;
+    border: 1px solid #333;
+    font-size: 0.9em;
+}
+
+#sidebar h2
+{
+    font-family: verdana, Arial, Helvetica, Sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    margin: 0px;
+}
+
+#sidebar p, #sidebar ul, #sidebar .textwidget
+{
+    margin: 0 0 15px 0;
+}
+
+#sidebar li
+{
+    list-style: none;
+    margin: 0 0 6px;
+}
+
+#sidebar li a
+{
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 2px;
+    color: #000;
+}
+
+#sidebar li a:hover
+{
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 2px;
+}
+
+#sidebar ul ul
+{
+    margin: 5px 0 5px 10px;
+}
+
+#sidebar ul ul li
+{
+    margin: 0 0 5px;
+}
+
+#sidebar ul ul li a
+{
+    font-weight: bold;
+}
+
+
+
+/* Content */
+
+#content
+{
+    float: right !important;
+    background: #111 top right repeat-y;
+    border: 1px solid #333;
+    padding: 20px;
+    width: 538px;
+    overflow: visible;
+    display: block;
+}
+#content p
+{
+    font-family: verdana, "Lucida Sans" , arial, sans-serif;
+    border: 0px solid #000;
+    font-weight: normal;
+    color: #999;
+    line-height: 140%;
+    margin: 0 0 10px 0;
+    padding: 0 10px 10px 10px;
+}
+
+#content h4
+{
+    color: #555;
+    font-family: Verdana, "Lucida Sans" , Arial, Sans-Serif;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+#content ul, #content ol
+{
+    margin: 0 0 18px 30px;
+    padding: 0 0 0 5px;
+    color:#999;
+}
+
+#content ul li, #content ol li
+{
+    margin: 0 0 3px;
+}
+
+#content ul ul, #content ol ol
+{
+    margin: 5px 0 5px 15px;
+}
+
+#content img
+{
+    float: right;
+    clear:right;
+    margin: 10px;
+    clear: both;
+    border: 1px #fff solid;
+}
+#content img.left
+{
+    float: left;
+    clear:left;
+}
+
+#content p.timestamp
+{
+    font-size: 0.9em;
+    color:#555;
+    margin: 0 0 0 10px;
+}
+
+#content p.timestamp a
+{
+    font-weight: normal;
+}
+
+#content #postnav
+{
+    padding: 5px;
+    margin: 5px 0 18px;
+}
+
+#content #postnav p
+{
+    margin: 0;
+    padding-left: 5px;
+}
+
+#content #postnav p.right
+{
+    text-align: right;
+    padding-right: 5px;
+    margin-top: -18px;
+}
+
+/* Comments */
+
+#content div.comment
+{
+    margin-bottom: 15px;
+    border: solid 1px #555;
+}
+
+#content div.comment p
+{
+    margin: 0 0 0px 10px;
+}
+
+#commentsection p
+{
+    margin: 0 0 0 10px;
+}
+
+#commentsection input, #commentsection textarea
+{
+    padding: 2px;
+    width: 250px;
+}
+
+#commentsection textarea#comment
+{
+    width: 300px;
+}
+
+#commentsection input#submit
+{
+    width: 75px;
+    color: #333;
+    background-color: #fff;
+}
+
+#commentsection input, #commentsection textarea, form div.searchbox input
+{
+    font: 94% Verdana,Tahoma,Arial,sans-serif;
+    border: 1px solid #ccc;
+}
+
+/* Footer */
+
+#footer
+{
+    float: right;
+    width: 500px;
+    padding: 5px;
+    font-size: 1em;
+    clear: both;
+    display: block;
+}
+#footer a
+{
+    color: #000;
+}
+
+/* Tags */
+
+blockquote
+{
+    border: 1px solid #dadada;
+    font-size: 0.9em;
+    margin: 20px 10px;
+    padding: 8px;
+}
+
+blockquote p
+{
+    padding: 2px 0;
+    margin: 0;
+    font-weight: bold;
+}
+
+table#wp-calendar
+{
+    width: 140px;
+    margin: 0 0 0 -5px;
+}
+
+p
+{
+    display: block;
+}
+
+ul, ol, dl
+{
+    font-size: 0.9em;
+    margin: 2px 0 16px 35px;
+}
+
+ul ul, ol ol
+{
+    margin: 4px 0 4px 35px;
+}
+
+code
+{
+    font-size: 1.1em;
+    background-color: #f4f4f4;
+    color: #555;
+    display: block;
+    margin: 5px 0 15px 0;
+    padding: 5px 5px 5px 7px;
+    border: 1px solid #ccc;
+}
+
+
+
+/* Links */
+
+a
+{
+    color: #900;
+    font-weight: bold;
+    text-decoration: none;
+}
+a:hover
+{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+img
+{
+    border: 0;
+    clear: both;
+    z-index: 999;
+}
+
+a img
+{
+    border: 0;
+    clear: both;
+    z-index: 999;
+}
+
+
+
+/* Float fix */
+
+.contenttext
+{
+    overflow: hidden;
+}
+
+* html .contenttext
+{
+    height: 1px;
+    overflow: visible;
+}
+
+* html .contenttext p
+{
+    overflow: hidden;
+    width: 99%;
+}
+
+
+
+/* Searchbox */
+
+.searchbox
+{
+    margin: 8px 0 15px 10px;
+}
+
+.searchbox label
+{
+    display: none;
+}
+
+.searchbox input
+{
+    font-size: 0.9em;
+    padding: 5px;
+    width: 110px;
+    border: 1px solid #ccc;
+}
+
+
+
+/* Other */
+
+.post
+{
+    margin: 0 0 15px;
+}
+
+.textright
+{
+    text-align: right;
+}
+
+.textcenter
+{
+    text-align: center;
+}
+
+.hide
+{
+    display: none;
+}
+
+hr
+{
+    color: #900;
+}
+.aligncenter,
+div.aligncenter {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.alignleft {
+   float: left;
+}
+
+.alignright {
+   float: right;
+}
+
+.wp-caption {
+   border: 1px solid #ddd;
+   text-align: center;
+   background-color: #f3f3f3;
+   padding-top: 4px;
+   margin: 10px;
+}
+
+.wp-caption img {
+   margin: 0;
+   padding: 0;
+   border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+   font-size: 11px;
+   line-height: 17px;
+   padding: 0 4px 5px;
+   margin: 0;
+}
