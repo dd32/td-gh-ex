@@ -6,7 +6,6 @@
 		<div class="post" id="post-<?php the_ID(); ?>">
 		<h2><?php the_title(); ?></h2>
 			<div class="entry">
-
 <?php
 $children = wp_list_pages('title_li=&child_of='.$post->ID.'&echo=0');
 if ($children) { ?>

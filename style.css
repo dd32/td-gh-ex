@@ -1,8 +1,7 @@
 /*   
 Theme Name: 31Three
-Theme URI: 
 Description: Ported from an Expression Engine Theme from Jesse at <a href="http://31three.com">31three.com</a>.
-Version: 1.0
+Version: 1.6
 Author: Zeus
 Author URI: http://HeyZeus.org
 Tags: blue, fixed width, two columns, widgets
@@ -208,22 +207,17 @@ font: 1.0em 'Lucida Grande',Verdana,Arial,Sans-Serif;
 text-align: justify;
 color: black;
 }
-
-#commentlist {
-text-align: justify;
-}
-
 #comments {
 width: 95%;
 color: #CCCCCC;
-text-align: center;
 }
 
 #respond {
 color: #CCCCCC;
 }
-.commentlist {
+.commentlist li {
 font-weight: bold;
+
 color: #CCCCCC;
 }
 .commentlist cite,.commentlist cite a {
@@ -255,7 +249,6 @@ color: #CCCCCC;
 font-size: .9em;
 color: #1D7FC6;
 }
-
 
 /*--------Header, header h1, header a, headerimg, header description---------------------*/
 #header  {
@@ -308,7 +301,7 @@ padding: 0;
 font-size: 1.0em;
 color: #27343C;
 }
-/*-------------------Sidebar, sidebar subscribe, sidebar h2, sidebar p, a, ul, li----------------- */
+/*-------------------Sidebar, sidebar subscribe, sidebar h2, sidebar p, a, ul, li------------------------ */
 #sidebar {
 text-align: justify;
 margin-left: 77%;
@@ -376,7 +369,8 @@ font-size: 1.4em;
 color: #27343C;
 }
 
-/*-------------h1, h2, h3, h1 a, h1 a:hover, h1 a:visited---------------------------*/
+/*----------------------------h1, h2, h3, h1 a, h1 a:hover, h1 a:visited------------------------------------------*/
+
 
 h2 ul {
 font-size: .9em;
@@ -461,6 +455,7 @@ font-size: 1.1em;
 padding: 4px;
 border: none;
 }
+
 
 .entry .alignright {
 float:right;
@@ -564,6 +559,14 @@ margin: 10px 10px 0px 10px;
 .archivespage {
 }
 
+#twitter_div #twitter_update_list li {
+font-size: 1.3em;
+list-style-position: outside;
+list-style-type: none;
+list-style-image: none;
+padding-bottom: 10px;
+padding-right: 10px;
+}
 .pagetitle {
 font-size: 1.6em;
 font-variant: small-caps;
@@ -573,68 +576,6 @@ padding: 0px;
 text-align: left;
 text-decoration: none;
 }
-
-#wp-calendar #next a {
-	padding-right:0;
-	padding-left:10px;
-	text-align:left;
-}
-#wp-calendar #prev a {
-	padding-left:0;
-	padding-right:10px;
-	text-align:right;
-}
-
-#wp-calendar #prev a, #wp-calendar #next a {
-	font-size: 9pt;
-	}
-
-#wp-calendar a {
-	text-decoration: none;
-	}
-
-#wp-calendar caption {
-	font: bold 1.3em 'Lucida Grande', Verdana, Arial, Sans-Serif;
-	text-align: center;
-	}
-
-#wp-calendar th {
-	font-style: normal;
-	text-transform: capitalize;
-	}
-
-/* Begin Calendar */
-#wp-calendar {
-	empty-cells: show;
-	width: 155px;
-	}
-
-#wp-calendar #next a {
-	padding-right: 10px;
-	text-align: right;
-	}
-
-#wp-calendar #prev a {
-	padding-left: 10px;
-	text-align: left;
-	}
-
-#wp-calendar a {
-	display: block;
-	}
-
-#wp-calendar caption {
-	}
-
-#wp-calendar td {
-	padding: 3px 0;
-	text-align: center;
-	}
-
-#wp-calendar td.pad:hover { /* Doesn't work in IE */
-	background-color: #fff; }
-/* End Calendar */
-
 .aligncenter {
 	display: block;
 	margin-left: auto;

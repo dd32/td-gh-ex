@@ -20,22 +20,25 @@
 <!-- You can start editing here. -->
 
 <?php if ($comments) : ?>
-	<div id="comments"><h3><?php comments_number('No Responses', 'One Response', '% Responses' );?> to &#8220;<?php the_title(); ?>&#8221;</h3></div>
+	<h3 id="comments"><?php comments_number('No Responses', 'One Response', '% Responses' );?> to &#8220;<?php the_title(); ?>&#8221;</h3>
 
-	<div class="commentlist">
+	<ol class="commentlist">
+
 
 	<?php foreach ($comments as $comment) : ?>
 
-		<?php echo get_avatar( get_the_author_email(), '64' ); ?>
-			<cite><?php comment_author_link() ?></cite> Says:<?php comment_text() ?>
+		<li <?php echo $oddcomment; ?>id="comment-<?php comment_ID() ?>"> <?php echo get_avatar( $id_or_email, $size = '23', $default = '<path_to_url>' );?> 
+			<cite><?php comment_author_link() ?></cite> Says:
 			<?php if ($comment->comment_approved == '0') : ?>
 			<em>Your comment is awaiting moderation.</em>
 			<?php endif; ?>
-			
+			<br />
 
 			<small class="commentmetadata"><a href="#comment-<?php comment_ID() ?>" title=""><?php comment_date('F jS, Y') ?> at <?php comment_time() ?></a> <?php edit_comment_link('edit','&nbsp;&nbsp;',''); ?></small>
 
-			
+			<?php comment_text() ?>
+
+		</li>
 
 	<?php
 		/* Changes every other comment to a different class */
@@ -43,7 +46,8 @@
 	?>
 
 	<?php endforeach; /* end for each comment */ ?>
-</div>
+
+	</ol>
 
  <?php else : // this is displayed if there are no comments so far ?>
 

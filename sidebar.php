@@ -1,18 +1,21 @@
 	<div id="sidebar">
-		<ul>
+		
 <div class="subscribe"><h2><a href="<?php bloginfo('rss2_url'); ?>">Subscribe to RSS</a></h2></div>
-			<?php 	/* Widgetized sidebar, if you have the plugin installed. */
-					if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : ?>
+			<ul>
+
+<?php 	/* Widgetized sidebar, if you have the plugin installed. */
+			if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : ?>
+
 			<li>
 				<?php include (TEMPLATEPATH . '/searchform.php'); ?>
 			</li>
 
 			<!-- Author information is disabled per default. Uncomment and fill in your details if you want to use it.
 			<li><h2>Author</h2>
-			<p>Tell about yourself here.</p>
+			<p>A little something about you, the author. Nothing lengthy, just an overview.</p>
 			</li>
-			
--->
+			-->
+
 			<?php if ( is_404() || is_category() || is_day() || is_month() ||
 						is_year() || is_search() || is_paged() ) {
 			?> <li>
