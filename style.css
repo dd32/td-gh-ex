@@ -1,7 +1,8 @@
 /*   
 Theme Name: 31Three
-Description: Ported from an Expression Engine Theme from Jesse at <a href="http://31three.com">31three.com</a>.
-Version: 1.6
+Theme URI: http://twothirdsrevolution.com/31-three-theme-released/
+Description: 2 Column Blue Theme
+Version: 1.8
 Author: Zeus
 Author URI: http://HeyZeus.org
 Tags: blue, fixed width, two columns, widgets
@@ -557,15 +558,6 @@ margin: 10px 10px 0px 10px;
 }
 
 .archivespage {
-}
-
-#twitter_div #twitter_update_list li {
-font-size: 1.3em;
-list-style-position: outside;
-list-style-type: none;
-list-style-image: none;
-padding-bottom: 10px;
-padding-right: 10px;
 }
 .pagetitle {
 font-size: 1.6em;

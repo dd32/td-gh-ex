@@ -24,10 +24,9 @@
 
 	<ol class="commentlist">
 
-
 	<?php foreach ($comments as $comment) : ?>
 
-		<li <?php echo $oddcomment; ?>id="comment-<?php comment_ID() ?>"> <?php echo get_avatar( $id_or_email, $size = '23', $default = '<path_to_url>' );?> 
+		<li <?php echo $oddcomment; ?>id="comment-<?php comment_ID() ?>"><?php if(function_exists('get_avatar')) { echo get_avatar($comment, '34'); } ?>
 			<cite><?php comment_author_link() ?></cite> Says:
 			<?php if ($comment->comment_approved == '0') : ?>
 			<em>Your comment is awaiting moderation.</em>
