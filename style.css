@@ -2,7 +2,7 @@
 Theme Name: QuickPic
 Theme URI: http://www.quickonlinetips.com/archives/quickpic/
 Description: 1-column photoblogging theme, widget ready, SEO optimized by <a href="http://www.quickonlinetips.com/">Quick Online Tips</a>.
-Version: 1.0
+Version: 1.1
 Author: Quick Online Tips
 Author URI: http://www.quickonlinetips.com/
 Tags: clean, simple, widget ready, fixed width, one column, widgets, valid CSS, valid XHTML, white, photoblog, photo
@@ -66,7 +66,7 @@ body {
 	}
 
 .alt {
-        background: #f9f9f9;
+        background: #f3f3f3;
 	}
 
 #footer { 
@@ -217,13 +217,13 @@ body {
 
 #page {
 	background-color: white;
-	margin: 0px auto 0px auto;
+	margin: 20px auto 20px auto;
 	padding: 0;
 	width: 610px; 
 	}
 
 #header { 
-	margin: 20px 0 0 0; 
+	margin: 0 0 0 0; 
 	padding: 20px 10px;  
         text-align:center;
 	}
@@ -264,13 +264,12 @@ body {
        }
  
 #footer {  
-
 	font-family: Arial, Helvetica, Sans-Serif;	
         padding: 0;
         color: #f3f3f3;
         font-size: 1.1em;
         line-height: 1.5em;
-	margin: 0 auto;
+	margin: 0 auto ;
 	width: 610px;
 	clear: both;
         background: #555;
@@ -287,7 +286,7 @@ body {
 	}
 
 #footer p {
-	margin: 0 0 10px 0;
+	margin: 0 0;
 	padding: 10px 0;
 	text-align: center;
 	}
@@ -473,6 +472,7 @@ select {
 
 .commentlist {
 	padding: 0;
+        margin: 0;
 	text-align: justify;
 	}
 
@@ -483,8 +483,7 @@ select {
 	}
 
 .commentlist p {
-	margin: 10px;
-        border: 1px solid #DDD;
+	margin: 10px 5px 10px 0; 
 	}
 
 #commentform p {
@@ -525,9 +524,9 @@ img.avatar {
 #adbox { 
         text-align: left;
         padding: 5px;
-        margin: 4px;
-        background: #f3f3f3; 
-        border: #DDD 2px solid;
+        margin: 0 0 5px 0;
+        background: #f6f6f6; 
+        border: #DDD 1px solid;
         text-align: center;
         }
 
