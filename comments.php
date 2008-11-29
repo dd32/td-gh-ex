@@ -99,7 +99,7 @@
 
 <p><textarea name="comment" id="comment" cols="100%" rows="10" tabindex="4"></textarea></p>
 
-<p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
+<p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" class="formbutton" />
 <input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
 </p>
 <?php do_action('comment_form', $post->ID); ?>
