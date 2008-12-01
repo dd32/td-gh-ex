@@ -5,9 +5,9 @@
 &nbsp;
 
 
-<!-- DO NOT REMOVE OR EDIT. ATTRIBUTION REQUIRED TO USE THIS THEME --> 
+<!-- Released under GPL compatible license --> 
 <a href="http://www.quickonlinetips.com/archives/quickpress/" title="QuickPress">QuickPress</a> theme by <a href="http://www.quickonlinetips.com/" title="Quick Online Tips">Quick Online Tips</a>
-<!-- DO NOT REMOVE OR EDIT. ATTRIBUTION REQUIRED TO USE THIS THEME --> 
+<!-- Released under GPL compatible license --> 
 
 </p>
 </div>
