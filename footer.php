@@ -3,7 +3,7 @@
 	<p>
 		<?php bloginfo('name'); ?> is proudly powered by
 		<a href="http://wordpress.org/">WordPress</a>
-		and <a href="<?php bloginfo('comments_rss2_url'); ?>">Comments (RSS)</a>. <br/>Theme ported from Jesse and his <a href="http://31three.com/weblog/archive/expressionengine_control_panel_theme">31Three Expression Engine Theme.</a>
+		and <a href="<?php bloginfo('comments_rss2_url'); ?>">Comments (RSS)</a>. 
 		<!-- <?php echo get_num_queries(); ?> queries. <?php timer_stop(1); ?> seconds. -->
 	</p>
 </div>
