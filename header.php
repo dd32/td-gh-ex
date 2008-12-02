@@ -35,7 +35,7 @@
 	</div>
 
 <div id="navbar">
-<a href="/">Home</a>
+<a href="<?php echo get_option('home'); ?>/">Home</a>
 
 &nbsp; 
 &nbsp;
