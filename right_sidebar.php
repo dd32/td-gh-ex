@@ -10,7 +10,7 @@
         	
 	<li>
                <h2><?php _e('Tags'); ?></h2>
-		<?php wp_tag_cloud(''); ?>
+		<p><?php wp_tag_cloud(''); ?></p>
 	</li>
 
         <li><h2><?php _e('Subscribe'); ?></h2>
@@ -23,13 +23,17 @@
 	</li>
 
 
-   <!-- <li><h2><?php _e('Meta'); ?></h2>
+   <li><h2><?php _e('Meta'); ?></h2>
 		<ul>
 			<?php wp_register(); ?>
 			<li><?php wp_loginout(); ?></li>
 			<?php wp_meta(); ?>
 		</ul>
-	</li> -->
+	</li>
+
+       <li>
+		<?php include ('searchform.php'); ?>
+	</li>
      	
 <?php endif; ?>
 

@@ -15,15 +15,13 @@
 
 	<?php wp_get_archives('type=monthly&format=link'); ?>
 	<?php //comments_popup_script(); // off by default ?>
+	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 	<?php wp_head(); ?>
 </head>
 <body><div id="wrapper">
 <div id="main_content">
 
 <div id="header">
-
-<div class="search"><?php include(TEMPLATEPATH . '/searchform.php'); ?></div>
-
 
 <h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
 <div class="description"><?php bloginfo('description'); ?></div>            

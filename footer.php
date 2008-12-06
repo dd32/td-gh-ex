@@ -7,5 +7,7 @@
 
 </div>
 </div>
-</div></body>
+</div>
+<?php wp_footer(); ?>
+</body>
 </html>

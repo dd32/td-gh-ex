@@ -1,6 +1,7 @@
 <form method="get" id="searchform" action="<?php bloginfo('home'); ?>/">
 <div>
-	<input class="search" type="text" name="s" id="s" tabindex="7" value="Search this site..."  />
-	<input class="search-submit" name="submit" type="submit" id="search-submit" tabindex="8" value="Go" />
+	<div>
+		<input type="text" class="txt" name="s" id="s" value="Type and hit enter to search" onfocus="if (this.value == 'Type and hit enter to search') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Type and hit enter to search';}" />
+	</div>
 </div>
 </form>

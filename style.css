@@ -1,11 +1,11 @@
 /*  
 Theme Name: Autumn Almanac
 Theme URI: http://the-cloisters.net/themedemos/?SelectedTheme=Autumn+Almanac
-Description: 3 Column, widget-ready fixed width theme in rustic autumn colors featuring an author box, author info page, gravatars and highlighted author comments in the comments section along with Custom Archives, Custom Intro Box, Sitemap and full width No Sidebars page templates.  Tested in Firefox, Opera, Safari, IE6 and IE7.
-Version: 1.0
+Description: 3 Column, widget-ready fixed width theme in rustic autumn colors featuring an author box, author info page, gravatars and highlighted author comments in the comments section along with Custom Archives, Custom Intro Box, Sitemap and full width No Sidebars page templates.  Tested in Firefox, Opera, Safari, IE6 and IE7. Compatible up to WP 2.7.
+Version: 1.1
 Author: Mina
 Author URI: http://www.the-cloisters.net/
-Tags: 3 column, fixed width, gravatars, widgets, brown, green, gold, red, Autumn, Fall, rustic, author box, sitemap, archives
+Tags: 3 column, fixed width, gravatars, widgets, brown, green, gold, red, Autumn, Fall, rustic, author box, sitemap, archives, 2.7
 
 */
 
@@ -107,10 +107,9 @@ img.alignleft { padding: 3px; margin: 0 7px 0 0; display: inline; }
 #intro h2 { font-size: 1.077em; text-transform: uppercase; width: 90%; background: none; margin: 0 auto 0 auto; padding: 3px; text-align: left; border-bottom: #94927b 2px solid; } 
 
 /***** SEARCH *****/
-.search { float: right; width: 160px; margin: 10px 35px 0 0; }
-.search form { float: left; margin: .5em 0 0 0px; padding: 0; }
-.search input#s { color: #797a52; width: 160px; margin: 0 10px 0 0; padding: 3px 5px; border: 1px solid #c4cccf; }
-.search .search-submit { display: none; }
+#searchform { margin: 10px auto; padding: 5px 3px; text-align: center; }
+#sidebar #searchform #s { width: 108px; padding: 2px; }
+#sidebar #searchsubmit { padding: 1px; }
 
 /***** Calendar *****/
 #wp-calendar { text-align: center; background: #cc9933; margin: 0 0 10px 20px;

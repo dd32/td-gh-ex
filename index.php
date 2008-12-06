@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 
-<?php include(TEMPLATEPATH."/menu.php");?>
-<?php include(TEMPLATEPATH."/left_sidebar.php");?>
+<?php include('menu.php');?>
+<?php include('left_sidebar.php');?>
 
 <div id="container">
-<?php include(TEMPLATEPATH."/intro.php");?>
+<?php include('intro.php');?>
     
 
 	<?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
@@ -22,7 +22,7 @@
 				<?php the_content(); ?>
 
 				<p class="postmetadata">
-<?php _e('Category&#58;'); ?> <?php the_category(', ') ?> <?php _e(''); ?> |  
+<?php _e('Category&#58;'); ?> <?php the_category(', ') ?> |  
 <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>
                      <br />
 <span class="tags"><?php _e('Tags: '); ?> <?php the_tags('', ', ', ''); ?></span>
@@ -48,6 +48,6 @@
 
 </div>
 
-<?php include(TEMPLATEPATH."/right_sidebar.php");?>
+<?php include('right_sidebar.php');?>
 
 <?php get_footer(); ?>

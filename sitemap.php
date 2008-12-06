@@ -6,8 +6,8 @@ Template name: Sitemap
 
 <?php get_header(); ?>
 
-<?php include(TEMPLATEPATH."/menu.php");?>
-<?php include(TEMPLATEPATH."/left_sidebar.php");?>
+<?php include('menu.php');?>
+<?php include('left_sidebar.php');?>
 
 <div id="container">
 <br />
@@ -54,6 +54,6 @@ Template name: Sitemap
 	
 </div>
 
-<?php include(TEMPLATEPATH."/right_sidebar.php");?>
+<?php include('right_sidebar.php');?>
 
 <?php get_footer(); ?>

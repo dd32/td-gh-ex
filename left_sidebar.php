@@ -24,8 +24,7 @@
 		</ul>
 	</li>
 
-	<?php get_links_list(); ?>
-	
+	<?php wp_list_bookmarks(); ?>	
 	
 <?php endif; ?>
 
