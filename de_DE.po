@@ -1,0 +1,367 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Ayumi WordPress Theme\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2008-09-10 18:30+0100\n"
+"Last-Translator: Thomas Schneider\n"
+"Language-Team: im web gefunden www.im.web.gefunden.de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+
+#: 404.php:7
+msgid "Error 404 - Not Found"
+msgstr "Fehler 404 - Nicht gefunden"
+
+#: 404.php:8
+msgid "Sorry, Nothing found here on this momment"
+msgstr "Das Gesuchte existiert nicht."
+
+#: archive.php:10
+msgid "Archive for the"
+msgstr "Archiv für die Kategorie"
+
+#: archive.php:12
+#: archive.php:16
+#: archive.php:20
+msgid "Archive for"
+msgstr "Archiv für"
+
+#: archive.php:24
+msgid "Author Archive"
+msgstr "Autorenarchiv"
+
+#: archive.php:26
+msgid "Blog Archives"
+msgstr "Blog-Archiv"
+
+#: archive.php:30
+#: archive.php:53
+#: index.php:24
+#: search.php:25
+msgid "Previous Entries"
+msgstr "Ältere Beiträge"
+
+#: archive.php:33
+#: archive.php:56
+#: index.php:27
+#: search.php:28
+msgid "Next Entries"
+msgstr "Neuere Beiträge"
+
+#: archive.php:38
+#: index.php:9
+#: search.php:10
+#: single.php:7
+msgid "Permanent Link to"
+msgstr "Link zum Artikel:"
+
+#: archive.php:47
+#: index.php:18
+#: search.php:11
+#: single.php:8
+msgid "Posted in"
+msgstr "in"
+
+#: archive.php:47
+#: index.php:18
+#: search.php:11
+#: single.php:8
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: archive.php:47
+#: index.php:18
+#: search.php:11
+msgid "with"
+msgstr "mit"
+
+#: archive.php:47
+msgid "No Comments"
+msgstr "Keinem Kommentar"
+
+#: archive.php:47
+msgid "1 Comment"
+msgstr "einem Kommentar"
+
+#: archive.php:47
+#: footer.php:12
+msgid "Comments"
+msgstr "Kommentare"
+
+#: archive.php:60
+#: index.php:31
+msgid "Not Found"
+msgstr "Nicht gefunden"
+
+#: archives.php:12
+msgid "Archives by Month:"
+msgstr "Monatsarchiv"
+
+#: archives.php:16
+msgid "Archives by Subject:"
+msgstr "Archiv nach Titel:"
+
+#: attachment.php:15
+msgid "Permanent Link:"
+msgstr "Link zum Artikel:"
+
+#: attachment.php:21
+#: search.php:14
+#: single.php:11
+msgid "Read the rest of this entry"
+msgstr "Weiterlesen"
+
+#: attachment.php:22
+#: page.php:12
+#: search.php:15
+#: single.php:12
+msgid "Pages:"
+msgstr "Seiten:"
+
+#: attachment.php:23
+msgid "This entry was posted"
+msgstr "Veröffentlicht"
+
+#: attachment.php:28
+#: search.php:11
+#: single.php:8
+msgid "on"
+msgstr "an"
+
+#: attachment.php:30
+#: comments.php:66
+msgid "at"
+msgstr "um"
+
+#: attachment.php:32
+msgid "and is filed under"
+msgstr "und ist einsortiert in"
+
+#: attachment.php:35
+msgid "You can follow any responses to this entry through the"
+msgstr "Kommentare für diesen Beitrag verfolgen per"
+
+#: attachment.php:37
+msgid "feed."
+msgstr "Feed."
+
+#: attachment.php:40
+msgid "You can <a href=\"#respond\">leave a response</a>, or"
+msgstr "Du kannst einen  <a href=\"#respond\">Kommentar hinterlassen</a>, oder "
+
+#: attachment.php:40
+#: attachment.php:43
+msgid "trackback</a> from your own site."
+msgstr "einen Trackback</a> von Deinem Blog senden."
+
+#: attachment.php:43
+msgid "Responses are currently closed, but you can"
+msgstr "Kommentare sind geschlossen. Aber Du kannst"
+
+#: attachment.php:46
+msgid "You can skip to the end and leave a response. Pinging is currently not allowed."
+msgstr "Du kannst einen Kommentar hinterlassen. Pings sind nicht möglich."
+
+#: attachment.php:49
+msgid "Both comments and pings are currently closed."
+msgstr "Kommentare und Pings sind nicht möglich."
+
+#: attachment.php:50
+#: page.php:16
+msgid "Edit this entry."
+msgstr "Bearbeiten"
+
+#: attachment.php:56
+msgid "Sorry, no attachments matched your criteria."
+msgstr "Leider gibt es keinen Beitrag, der Deinen Kriterien entspricht."
+
+#: comments.php:9
+msgid "This post is password protected. Enter the password to view comments."
+msgstr "Dieser Beitrag ist mit einem Passwort geschützt."
+
+#: comments.php:25
+msgid "Trackback"
+msgstr "Trackback"
+
+#: comments.php:29
+msgid "Comments RSS"
+msgstr "Kommentare per RSS"
+
+#: comments.php:38
+msgid "No Responses"
+msgstr "Keinem Kommentar"
+
+#: comments.php:38
+msgid "One Response"
+msgstr "Ein Kommentar"
+
+#: comments.php:38
+msgid "% Responses"
+msgstr "% Kommentare"
+
+#: comments.php:39
+msgid "to &#8220;"
+msgstr "zu &#8220;"
+
+#: comments.php:59
+msgid "Says:"
+msgstr "sagt:"
+
+#: comments.php:61
+msgid "Your comment is awaiting moderation."
+msgstr "Dein Kommentar wartet auf seine Freischaltung"
+
+#: comments.php:69
+msgid "e"
+msgstr "Bearbeiten"
+
+#: comments.php:84
+msgid "Comments are closed."
+msgstr "Kommentare sind nicht möglich."
+
+#: comments.php:88
+msgid "Leave a Reply"
+msgstr "Hinterlasse einen Kommentar"
+
+#: comments.php:90
+msgid "You must be"
+msgstr "Du mußt"
+
+#: comments.php:90
+msgid "logged in</a> to post a comment."
+msgstr "angemeldet sein</a> um kommentieren zu können."
+
+#: comments.php:94
+msgid "Logged in as"
+msgstr "Angemeldet als"
+
+#: comments.php:94
+msgid "Log out of this account"
+msgstr "Diesen Benutzer abmelden"
+
+#: comments.php:94
+msgid "Logout"
+msgstr "Abmelden"
+
+#: comments.php:98
+msgid "Name"
+msgstr "Name"
+
+#: comments.php:99
+#: comments.php:105
+msgid "(required)"
+msgstr "(notwendig)"
+
+#: comments.php:104
+msgid "Mail (will not be published)"
+msgstr "Email (wird nicht veröffentlicht)"
+
+#: comments.php:110
+msgid "Website"
+msgstr "Webseite"
+
+#: comments.php:113
+msgid "You can use these tags:"
+msgstr "Du kannst diese Schlüsselwörter benutzen:"
+
+#: comments.php:118
+msgid "Submit Comment"
+msgstr "Kommentar abschicken"
+
+#: footer.php:9
+msgid "&copy; 2007-2008 All Rights Reserved, Powered By"
+msgstr "&copy; 2007-2008 All Rights Reserved, Powered By"
+
+#: footer.php:9
+msgid "Run in"
+msgstr "Erstellt mit"
+
+#: footer.php:9
+msgid "queries."
+msgstr "Abfragen, in "
+
+#: footer.php:9
+msgid " seconds."
+msgstr " Sekunden."
+
+#: footer.php:12
+msgid "made by"
+msgstr "von"
+
+#: footer.php:12
+msgid "Entries"
+msgstr "Einträge"
+
+#: footer.php:12
+msgid "and"
+msgstr "und"
+
+#: header.php:34
+msgid "Home"
+msgstr "Start"
+
+#: index.php:11
+msgid "More &rarr;"
+msgstr "Mehr &rarr;"
+
+#: index.php:15
+#: search.php:18
+#: single.php:15
+msgid "Tags: "
+msgstr "Tags: "
+
+#: index.php:18
+#: search.php:11
+msgid "No Comments &rarr;"
+msgstr "keinem Kommentar &rarr;"
+
+#: index.php:18
+#: search.php:11
+msgid "1 Comment &rarr;"
+msgstr "einem Kommentar &rarr;"
+
+#: index.php:18
+#: search.php:11
+msgid "% Comments &rarr;"
+msgstr "% Kommentaren &rarr;"
+
+#: index.php:32
+msgid "Sorry, but you are looking for something that isn't here."
+msgstr "Du hast nach etwas gesucht, dass es hier nicht gibt."
+
+#: links.php:11
+msgid "Links:"
+msgstr "Links:"
+
+#: page.php:11
+msgid "Read the rest of this page"
+msgstr "Weiterlesen"
+
+#: searchform.php:6
+#: searchform.php:9
+msgid "To Search, just type and enter"
+msgstr "Suchbegriff eingeben und Enter drücken"
+
+#: searchform.php:10
+msgid "Search"
+msgstr "Suchen"
+
+#: search.php:7
+msgid "Search Results"
+msgstr "Suchergebnisse"
+
+#: search.php:33
+msgid "No posts found. Try a different search?"
+msgstr "Nichts gefunden. Vielleicht hilft es, wenn Du Deine Suche etwas veränderst."
+
+#: sidebar.php:17
+msgid "Archives"
+msgstr "Archive"
+
+#: single.php:23
+msgid "Sorry, no posts matched your criteria."
+msgstr "Leider gibt es keinen Beitrag, der deinen Kriterien entspricht."
+

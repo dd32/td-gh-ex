@@ -1,0 +1,335 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-09-10 18:30+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: 404.php:7
+msgid "Error 404 - Not Found"
+msgstr ""
+
+#: 404.php:8
+msgid "Sorry, Nothing found here on this momment"
+msgstr ""
+
+#: archive.php:10
+msgid "Archive for the"
+msgstr ""
+
+#: archive.php:12 archive.php:16 archive.php:20
+msgid "Archive for"
+msgstr ""
+
+#: archive.php:24
+msgid "Author Archive"
+msgstr ""
+
+#: archive.php:26
+msgid "Blog Archives"
+msgstr ""
+
+#: archive.php:30 archive.php:53 index.php:24 search.php:25
+msgid "Previous Entries"
+msgstr ""
+
+#: archive.php:33 archive.php:56 index.php:27 search.php:28
+msgid "Next Entries"
+msgstr ""
+
+#: archive.php:38 index.php:9 search.php:10 single.php:7
+msgid "Permanent Link to"
+msgstr ""
+
+#: archive.php:47 index.php:18 search.php:11 single.php:8
+msgid "Posted in"
+msgstr ""
+
+#: archive.php:47 index.php:18 search.php:11 single.php:8
+msgid "Edit"
+msgstr ""
+
+#: archive.php:47 index.php:18 search.php:11
+msgid "with"
+msgstr ""
+
+#: archive.php:47
+msgid "No Comments"
+msgstr ""
+
+#: archive.php:47
+msgid "1 Comment"
+msgstr ""
+
+#: archive.php:47 footer.php:12
+msgid "Comments"
+msgstr ""
+
+#: archive.php:60 index.php:31
+msgid "Not Found"
+msgstr ""
+
+#: archives.php:12
+msgid "Archives by Month:"
+msgstr ""
+
+#: archives.php:16
+msgid "Archives by Subject:"
+msgstr ""
+
+#: attachment.php:15
+msgid "Permanent Link:"
+msgstr ""
+
+#: attachment.php:21 search.php:14 single.php:11
+msgid "Read the rest of this entry"
+msgstr ""
+
+#: attachment.php:22 page.php:12 search.php:15 single.php:12
+msgid "Pages:"
+msgstr ""
+
+#: attachment.php:23
+msgid "This entry was posted"
+msgstr ""
+
+#: attachment.php:28 search.php:11 single.php:8
+msgid "on"
+msgstr ""
+
+#: attachment.php:30 comments.php:66
+msgid "at"
+msgstr ""
+
+#: attachment.php:32
+msgid "and is filed under"
+msgstr ""
+
+#: attachment.php:35
+msgid "You can follow any responses to this entry through the"
+msgstr ""
+
+#: attachment.php:37
+msgid "feed."
+msgstr ""
+
+#: attachment.php:40
+msgid "You can <a href=\"#respond\">leave a response</a>, or"
+msgstr ""
+
+#: attachment.php:40 attachment.php:43
+msgid "trackback</a> from your own site."
+msgstr ""
+
+#: attachment.php:43
+msgid "Responses are currently closed, but you can"
+msgstr ""
+
+#: attachment.php:46
+msgid ""
+"You can skip to the end and leave a response. Pinging is currently not "
+"allowed."
+msgstr ""
+
+#: attachment.php:49
+msgid "Both comments and pings are currently closed."
+msgstr ""
+
+#: attachment.php:50 page.php:16
+msgid "Edit this entry."
+msgstr ""
+
+#: attachment.php:56
+msgid "Sorry, no attachments matched your criteria."
+msgstr ""
+
+#: comments.php:9
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#: comments.php:25
+msgid "Trackback"
+msgstr ""
+
+#: comments.php:29
+msgid "Comments RSS"
+msgstr ""
+
+#: comments.php:38
+msgid "No Responses"
+msgstr ""
+
+#: comments.php:38
+msgid "One Response"
+msgstr ""
+
+#: comments.php:38
+msgid "% Responses"
+msgstr ""
+
+#: comments.php:39
+msgid "to &#8220;"
+msgstr ""
+
+#: comments.php:59
+msgid "Says:"
+msgstr ""
+
+#: comments.php:61
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: comments.php:69
+msgid "e"
+msgstr ""
+
+#: comments.php:84
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:88
+msgid "Leave a Reply"
+msgstr ""
+
+#: comments.php:90
+msgid "You must be"
+msgstr ""
+
+#: comments.php:90
+msgid "logged in</a> to post a comment."
+msgstr ""
+
+#: comments.php:94
+msgid "Logged in as"
+msgstr ""
+
+#: comments.php:94
+msgid "Log out of this account"
+msgstr ""
+
+#: comments.php:94
+msgid "Logout"
+msgstr ""
+
+#: comments.php:98
+msgid "Name"
+msgstr ""
+
+#: comments.php:99 comments.php:105
+msgid "(required)"
+msgstr ""
+
+#: comments.php:104
+msgid "Mail (will not be published)"
+msgstr ""
+
+#: comments.php:110
+msgid "Website"
+msgstr ""
+
+#: comments.php:113
+msgid "You can use these tags:"
+msgstr ""
+
+#: comments.php:118
+msgid "Submit Comment"
+msgstr ""
+
+#: footer.php:9
+msgid "&copy; 2007-2008 All Rights Reserved, Powered By"
+msgstr ""
+
+#: footer.php:9
+msgid "Run in"
+msgstr ""
+
+#: footer.php:9
+msgid "queries."
+msgstr ""
+
+#: footer.php:9
+msgid " seconds."
+msgstr ""
+
+#: footer.php:12
+msgid "made by"
+msgstr ""
+
+#: footer.php:12
+msgid "Entries"
+msgstr ""
+
+#: footer.php:12
+msgid "and"
+msgstr ""
+
+#: header.php:34
+msgid "Home"
+msgstr ""
+
+#: index.php:11
+msgid "More &rarr;"
+msgstr ""
+
+#: index.php:15 search.php:18 single.php:15
+msgid "Tags: "
+msgstr ""
+
+#: index.php:18 search.php:11
+msgid "No Comments &rarr;"
+msgstr ""
+
+#: index.php:18 search.php:11
+msgid "1 Comment &rarr;"
+msgstr ""
+
+#: index.php:18 search.php:11
+msgid "% Comments &rarr;"
+msgstr ""
+
+#: index.php:32
+msgid "Sorry, but you are looking for something that isn't here."
+msgstr ""
+
+#: links.php:11
+msgid "Links:"
+msgstr ""
+
+#: page.php:11
+msgid "Read the rest of this page"
+msgstr ""
+
+#: searchform.php:6 searchform.php:9
+msgid "To Search, just type and enter"
+msgstr ""
+
+#: searchform.php:10
+msgid "Search"
+msgstr ""
+
+#: search.php:7
+msgid "Search Results"
+msgstr ""
+
+#: search.php:33
+msgid "No posts found. Try a different search?"
+msgstr ""
+
+#: sidebar.php:17
+msgid "Archives"
+msgstr ""
+
+#: single.php:23
+msgid "Sorry, no posts matched your criteria."
+msgstr ""
