@@ -112,14 +112,14 @@ and the modification Last X days by DJ Chuang www.djchuang.com
 	  $bfa_pic_title = htmlspecialchars($bfa_pic_options['bfa_pic_title'], ENT_QUOTES);
 
 ?>
-	    <?php _e('Title:'); ?> <input style="width: 450px;" id="bfa_pic_src-title" name="bfa_pic_src-title" type="text" value="<?php echo $bfa_pic_title; ?>" />
+	    <?php _e('Title:','atahualpa'); ?> <input style="width: 450px;" id="bfa_pic_src-title" name="bfa_pic_src-title" type="text" value="<?php echo $bfa_pic_title; ?>" />
             <hr noshade size="1" style="clear:left; color: #ccc">
-            <p style="text-align: left;"><input id="bfa_pic_prepend_cat_title" name="bfa_pic_prepend_cat_title" type="checkbox" <?php if($bfa_pic_prepend_cat_title == "on"){echo " CHECKED";}?> />Prepend &nbsp; 
-            <p style="text-align: left;"><input id="bfa_pic_append_cat_title" name="bfa_pic_append_cat_title" type="checkbox" <?php if($bfa_pic_append_cat_title == "on"){echo " CHECKED";}?> /> Append &nbsp;&nbsp;&nbsp;Category Name to Title
+            <p style="text-align: left;"><input id="bfa_pic_prepend_cat_title" name="bfa_pic_prepend_cat_title" type="checkbox" <?php if($bfa_pic_prepend_cat_title == "on"){echo " CHECKED";}?> /><?php _e('Prepend','atahualpa'); ?> &nbsp; 
+            <p style="text-align: left;"><input id="bfa_pic_append_cat_title" name="bfa_pic_append_cat_title" type="checkbox" <?php if($bfa_pic_append_cat_title == "on"){echo " CHECKED";}?> /> <?php _e('Append &nbsp;&nbsp;&nbsp;Category Name to Title','atahualpa'); ?>
             <hr noshade size="1" style="clear:left; color: #ccc">
-            <p style="text-align: left;"><?php _e('Show'); ?> <input style="width: 20px;" id="bfa_pic_no_posts" name="bfa_pic_no_posts" type="text" value="<?php echo $bfa_pic_no_posts; ?>" /> 
-            <?php _e('posts not older than'); ?> <input style="width: 40px;" id="bfa_pic_duration" name="bfa_pic_duration" type="text" value="<?php echo $bfa_pic_duration; ?>" /> <?php _e('days and with at least'); ?>&nbsp;
-   	    <input style="width: 20px;" id="bfa_pic_min_amount_comments" name="bfa_pic_min_amount_comments" type="text" value="<?php echo $bfa_pic_min_amount_comments; ?>" /> <?php _e('comment(s)'); ?>
+            <p style="text-align: left;"><?php _e('Show','atahualpa'); ?> <input style="width: 20px;" id="bfa_pic_no_posts" name="bfa_pic_no_posts" type="text" value="<?php echo $bfa_pic_no_posts; ?>" /> 
+            <?php _e('posts not older than','atahualpa'); ?> <input style="width: 40px;" id="bfa_pic_duration" name="bfa_pic_duration" type="text" value="<?php echo $bfa_pic_duration; ?>" /> <?php _e('days and with at least','atahualpa'); ?>&nbsp;
+   	    <input style="width: 20px;" id="bfa_pic_min_amount_comments" name="bfa_pic_min_amount_comments" type="text" value="<?php echo $bfa_pic_min_amount_comments; ?>" /> <?php _e('comment(s)','atahualpa'); ?>
    	    </p>
             <div style="clear:left"></div>
   	    <input type="hidden" id="bfa_pic_src-submit" name="bfa_pic_src-submit" value="1" />     

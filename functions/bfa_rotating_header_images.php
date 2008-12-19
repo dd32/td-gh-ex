@@ -21,7 +21,7 @@ if (file_exists(ABSPATH."/wpmu-settings.php")) {
 
 } else {
 		
-	################### images in /images/header/
+	################### images in /images/header/ (on regular WordPress)
 
 	$files = "";
 	$imgpath = TEMPLATEPATH . '/images/header/';

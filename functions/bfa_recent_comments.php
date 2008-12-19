@@ -115,7 +115,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 	  // Generate the output string, prepend and append the HTML specified
 	  $output = $bfa_rc_pre_HTML;
-	  $output .= "\n<ul>";
+	  $output .= "\n<ul id=\"bfarecentcomments\">";
 	  if (!empty($comments)) {
 	    foreach ($comments as $comment) {
 	      // Make a check if we need to print out '...' after the selected
@@ -129,7 +129,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 	      elseif ($limit_by == "words") {
 	      if ( $bfa_rc_src_length <= count(explode(" ", strip_tags($comment->comment_content))) ) {$dots = "...";}
 	      }
-	      	
+
 
 	      $comment_link = get_permalink($comment->ID) . "#comment-" . $comment->comment_ID;
 	      $post_link = get_permalink($comment->ID);
@@ -155,24 +155,24 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 	      if ($author_bold == "on") {$author_text2 = "<strong>$author_text</strong>"; } else {$author_text2 = $author_text; }
 	      if ($author_em == "on") {$author_text2 = "<em>$author_text2</em>"; }     
 
-	      $output .= "\n\t<li>";
+	      $output .= "\n\t<li class=\"bfarecentcomments\">";
 	      
 	      if ( $bfa_rc_linking_scheme == "Author Comment link-1" ) {
-	      $output .= "<a href=\"$first_link\" title=\"On: $post_text\">$author_text2</a>: $comment_text2";
+	      $output .= "<a href=\"$first_link\" title=\"" . __('On: ','atahualpa') . "$post_text\">$author_text2</a>: $comment_text2";
 	      } elseif ( $bfa_rc_linking_scheme == "Author Comment link-2" ) {
-              $output .= "$author_text2: <a href=\"$first_link\" title=\"On: $post_text\">$comment_text2</a>";
+              $output .= "$author_text2: <a href=\"$first_link\" title=\"" . __('On: ','atahualpa') . "$post_text\">$comment_text2</a>";
 	      } elseif ( $bfa_rc_linking_scheme == "Author Comment link-1 link-2" ) {
-              $output .= "<a href=\"$first_link\">$author_text2</a>: <a href=\"$second_link\" title=\"On: $post_text\">$comment_text2</a>";
+              $output .= "<a href=\"$first_link\">$author_text2</a>: <a href=\"$second_link\" title=\"" . __('On: ','atahualpa') . "$post_text\">$comment_text2</a>";
 	      } elseif ( $bfa_rc_linking_scheme == "Author Comment link-all" ) {
-              $output .= "<a href=\"$first_link\" title=\"On: $post_text\">$author_text2: $comment_text2</a>";
+              $output .= "<a href=\"$first_link\" title=\"" . __('On: ','atahualpa') . "$post_text\">$author_text2: $comment_text2</a>";
 	      } elseif ( $bfa_rc_linking_scheme == "Author on Post link-1" ) {
-              $output .= "<a href=\"$first_link\" title=\"$comment_text\">$author_text2</a> on: $post_text2";
+              $output .= "<a href=\"$first_link\" title=\"$comment_text\">$author_text2</a>" . __(' on: ','atahualpa') . "$post_text2";
 	      } elseif ( $bfa_rc_linking_scheme == "Author on Post link-2" ) {
-              $output .= "$author_text2 on: <a href=\"$first_link\" title=\"$comment_text\">$post_text2</a>";
+              $output .= "$author_text2" . __(' on: ','atahualpa') . "<a href=\"$first_link\" title=\"$comment_text\">$post_text2</a>";
 	      } elseif ( $bfa_rc_linking_scheme == "Author on Post link-1 link-2" ) {
-              $output .= "<a href=\"$first_link\" title=\"$comment_text\">$author_text2</a> on: <a href=\"$second_link\">$post_text2</a>";
+              $output .= "<a href=\"$first_link\" title=\"$comment_text\">$author_text2</a>" . __(' on: ','atahualpa') . "<a href=\"$second_link\">$post_text2</a>";
 	      } elseif ( $bfa_rc_linking_scheme == "Author on Post link-all" ) {
-              $output .= "<a href=\"$first_link\" title=\"$comment_text\">$author_text2 on: $post_text2</a>";
+              $output .= "<a href=\"$first_link\" title=\"$comment_text\">$author_text2" . __(' on: ','atahualpa') . "$post_text2</a>";
 	      } elseif ( $bfa_rc_linking_scheme == "Post Comment link-1" ) {
               $output .= "<a href=\"$first_link\" title=\"$author_text\">$post_text2</a>: $comment_text2";
 	      } elseif ( $bfa_rc_linking_scheme == "Post Comment link-2" ) {
@@ -187,7 +187,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 	    }
 	  } else {
-	    $output .= "No comments.";
+	    $output .= __('No comments.','atahualpa');
 	  }
 	  $output .= "\n</ul>";
 	  $output .= $bfa_rc_post_HTML;
@@ -199,7 +199,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 	  // These lines generate the output
 
 	  echo $before_widget . $before_title . $bfa_rc_title . $after_title;
-	  echo $output;
+	  echo $output;  
 	  echo $after_widget;
 	}
 	}
@@ -283,48 +283,48 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 	  $bfa_rc_title = htmlspecialchars($bfa_rc_options['bfa_rc_title'], ENT_QUOTES);
 
 ?>
-	    <?php _e('Title:'); ?> <input style="width: 450px;" id="bfa_rc_src-title" name="bfa_rc_src-title" type="text" value="<?php echo $bfa_rc_title; ?>" />
+	    <?php _e('Title:','atahualpa'); ?> <input style="width: 450px;" id="bfa_rc_src-title" name="bfa_rc_src-title" type="text" value="<?php echo $bfa_rc_title; ?>" />
 	    <hr noshade size="1" style="clear:left; color: #ccc">
-            <p style="text-align: left;"><?php _e('Show'); ?> <input style="width: 20px;" id="bfa_rc_src_count" name="bfa_rc_src_count" type="text" value="<?php echo $bfa_rc_src_count; ?>" /> comments like this:</p>
-            <p style="float: left; width: 195px; text-align: left;"><input id="bfa_rc_linking_scheme" name="bfa_rc_linking_scheme" type="radio" value="Author Comment link-1" <?php if($bfa_rc_linking_scheme == "Author Comment link-1"){echo " CHECKED";}?> /> <a href="#" title="On: Post Title">Author Name</a>: Comment Text</p>
-            <p style="float: left; width: 195px; text-align: left;"><input id="bfa_rc_linking_scheme" name="bfa_rc_linking_scheme" type="radio" value="Author Comment link-2" <?php if($bfa_rc_linking_scheme == "Author Comment link-2"){echo " CHECKED";}?> /> Author Name: <a href="#" title="On: Post Title">Comment Text</a></p>
-            <p style="float: left; width: 195px; text-align: left;"><input id="bfa_rc_linking_scheme" name="bfa_rc_linking_scheme" type="radio" value="Author Comment link-1 link-2" <?php if($bfa_rc_linking_scheme == "Author Comment link-1 link-2"){echo " CHECKED";}?> /> <a href="#">Author Name</a>: <a href="#" title="On: Post Title">Comment Text</a></p>
-            <p style="float: left; width: 195px; text-align: left;"><input id="bfa_rc_linking_scheme" name="bfa_rc_linking_scheme" type="radio" value="Author Comment link-all" <?php if($bfa_rc_linking_scheme == "Author Comment link-all"){echo " CHECKED";}?> /> <a href="#" title="On: Post Title">Author Name: Comment Text</a></p>
-            <p style="float: left; width: 195px; text-align: left;"><input id="bfa_rc_linking_scheme" name="bfa_rc_linking_scheme" type="radio" value="Author on Post link-1" <?php if($bfa_rc_linking_scheme == "Author on Post link-1"){echo " CHECKED";}?> /> <a href="#" title="Comment Text">Author Name</a> on: Post Title</p>
-            <p style="float: left; width: 195px; text-align: left;"><input id="bfa_rc_linking_scheme" name="bfa_rc_linking_scheme" type="radio" value="Author on Post link-2" <?php if($bfa_rc_linking_scheme == "Author on Post link-2"){echo " CHECKED";}?> /> Author Name on: <a href="#" title="Comment Text">Post Title</a></p>
-            <p style="float: left; width: 195px; text-align: left;"><input id="bfa_rc_linking_scheme" name="bfa_rc_linking_scheme" type="radio" value="Author on Post link-1 link-2" <?php if($bfa_rc_linking_scheme == "Author on Post link-1 link-2"){echo " CHECKED";}?> /> <a href="#" title="Comment Text">Author Name</a> on: <a href="#">Post Title</a></p>
-            <p style="float: left; width: 195px; text-align: left;"><input id="bfa_rc_linking_scheme" name="bfa_rc_linking_scheme" type="radio" value="Author on Post link-all" <?php if($bfa_rc_linking_scheme == "Author on Post link-all"){echo " CHECKED";}?> /> <a href="#" title="Comment Text">Author Name on: Post Title</a></p>
-            <p style="float: left; width: 195px; text-align: left;"><input id="bfa_rc_linking_scheme" name="bfa_rc_linking_scheme" type="radio" value="Post Comment link-1" <?php if($bfa_rc_linking_scheme == "Post Comment link-1"){echo " CHECKED";}?> /> <a href="#" title="Author Name">Post Title</a>: Comment Text</p>
-            <p style="float: left; width: 195px; text-align: left;"><input id="bfa_rc_linking_scheme" name="bfa_rc_linking_scheme" type="radio" value="Post Comment link-2" <?php if($bfa_rc_linking_scheme == "Post Comment link-2"){echo " CHECKED";}?> /> Post Title: <a href="#" title="Author Name">Comment Text</a></p>
-            <p style="float: left; width: 195px; text-align: left;"><input id="bfa_rc_linking_scheme" name="bfa_rc_linking_scheme" type="radio" value="Post Comment link-1 link-2" <?php if($bfa_rc_linking_scheme == "Post Comment link-1 link-2"){echo " CHECKED";}?> /> <a href="#">Post Title</a>: <a href="#" title="Author Name">Comment Text</a></p>
-            <p style="float: left; width: 195px; text-align: left;"><input id="bfa_rc_linking_scheme" name="bfa_rc_linking_scheme" type="radio" value="Post Comment link-all" <?php if($bfa_rc_linking_scheme == "Post Comment link-all"){echo " CHECKED";}?> /> <a href="#" title="Author Name">Post Title: Comment Text</a></p>
+            <p style="text-align: left;"><?php _e('Show','atahualpa'); ?> <input style="width: 20px;" id="bfa_rc_src_count" name="bfa_rc_src_count" type="text" value="<?php echo $bfa_rc_src_count; ?>" /><?php _e(' comments like this:','atahualpa'); ?></p>
+            <p style="float: left; width: 195px; text-align: left;"><input id="bfa_rc_linking_scheme" name="bfa_rc_linking_scheme" type="radio" value="Author Comment link-1" <?php if($bfa_rc_linking_scheme == "Author Comment link-1"){echo " CHECKED";}?> /> <?php _e('<a href="#" title="On: Post Title">Author Name</a>: Comment Text','atahualpa'); ?></p>
+            <p style="float: left; width: 195px; text-align: left;"><input id="bfa_rc_linking_scheme" name="bfa_rc_linking_scheme" type="radio" value="Author Comment link-2" <?php if($bfa_rc_linking_scheme == "Author Comment link-2"){echo " CHECKED";}?> /> <?php _e('Author Name: <a href="#" title="On: Post Title">Comment Text</a>','atahualpa'); ?></p>
+            <p style="float: left; width: 195px; text-align: left;"><input id="bfa_rc_linking_scheme" name="bfa_rc_linking_scheme" type="radio" value="Author Comment link-1 link-2" <?php if($bfa_rc_linking_scheme == "Author Comment link-1 link-2"){echo " CHECKED";}?> /> <?php _e('<a href="#">Author Name</a>: <a href="#" title="On: Post Title">Comment Text</a>','atahualpa'); ?></p>
+            <p style="float: left; width: 195px; text-align: left;"><input id="bfa_rc_linking_scheme" name="bfa_rc_linking_scheme" type="radio" value="Author Comment link-all" <?php if($bfa_rc_linking_scheme == "Author Comment link-all"){echo " CHECKED";}?> /> <?php _e('<a href="#" title="On: Post Title">Author Name: Comment Text</a>','atahualpa'); ?></p>
+            <p style="float: left; width: 195px; text-align: left;"><input id="bfa_rc_linking_scheme" name="bfa_rc_linking_scheme" type="radio" value="Author on Post link-1" <?php if($bfa_rc_linking_scheme == "Author on Post link-1"){echo " CHECKED";}?> /> <?php _e('<a href="#" title="Comment Text">Author Name</a> on: Post Title','atahualpa'); ?></p>
+            <p style="float: left; width: 195px; text-align: left;"><input id="bfa_rc_linking_scheme" name="bfa_rc_linking_scheme" type="radio" value="Author on Post link-2" <?php if($bfa_rc_linking_scheme == "Author on Post link-2"){echo " CHECKED";}?> /> <?php _e('Author Name on: <a href="#" title="Comment Text">Post Title</a>','atahualpa'); ?></p>
+            <p style="float: left; width: 195px; text-align: left;"><input id="bfa_rc_linking_scheme" name="bfa_rc_linking_scheme" type="radio" value="Author on Post link-1 link-2" <?php if($bfa_rc_linking_scheme == "Author on Post link-1 link-2"){echo " CHECKED";}?> /> <?php _e('<a href="#" title="Comment Text">Author Name</a> on: <a href="#">Post Title</a>','atahualpa'); ?></p>
+            <p style="float: left; width: 195px; text-align: left;"><input id="bfa_rc_linking_scheme" name="bfa_rc_linking_scheme" type="radio" value="Author on Post link-all" <?php if($bfa_rc_linking_scheme == "Author on Post link-all"){echo " CHECKED";}?> /> <?php _e('<a href="#" title="Comment Text">Author Name on: Post Title</a>','atahualpa'); ?></p>
+            <p style="float: left; width: 195px; text-align: left;"><input id="bfa_rc_linking_scheme" name="bfa_rc_linking_scheme" type="radio" value="Post Comment link-1" <?php if($bfa_rc_linking_scheme == "Post Comment link-1"){echo " CHECKED";}?> /> <?php _e('<a href="#" title="Author Name">Post Title</a>: Comment Text','atahualpa'); ?></p>
+            <p style="float: left; width: 195px; text-align: left;"><input id="bfa_rc_linking_scheme" name="bfa_rc_linking_scheme" type="radio" value="Post Comment link-2" <?php if($bfa_rc_linking_scheme == "Post Comment link-2"){echo " CHECKED";}?> /> <?php _e('Post Title: <a href="#" title="Author Name">Comment Text</a>','atahualpa'); ?></p>
+            <p style="float: left; width: 195px; text-align: left;"><input id="bfa_rc_linking_scheme" name="bfa_rc_linking_scheme" type="radio" value="Post Comment link-1 link-2" <?php if($bfa_rc_linking_scheme == "Post Comment link-1 link-2"){echo " CHECKED";}?> /> <?php _e('<a href="#">Post Title</a>: <a href="#" title="Author Name">Comment Text</a>','atahualpa'); ?></p>
+            <p style="float: left; width: 195px; text-align: left;"><input id="bfa_rc_linking_scheme" name="bfa_rc_linking_scheme" type="radio" value="Post Comment link-all" <?php if($bfa_rc_linking_scheme == "Post Comment link-all"){echo " CHECKED";}?> /> <?php _e('<a href="#" title="Author Name">Post Title: Comment Text</a>','atahualpa'); ?></p>
 	    <hr noshade size="1" style="clear:left; color: #ccc">
-            <p style="clear:left"><?php _e('Point the first link to:'); ?></p> 
-            <p style="float: left; text-align: left;"><input id="point_first_link" name="point_first_link" type="radio" value="author" <?php if($point_first_link == "author"){echo " CHECKED";}?> /> the Author's Homepage (if any)</p>
-            <p style="float: left; margin-left: 10px; text-align: left;"><input id="point_first_link" name="point_first_link" type="radio" value="comment" <?php if($point_first_link == "comment"){echo " CHECKED";}?> /> the Comment</p>            
-            <p style="float: left; margin-left: 10px; text-align: left;"><input id="point_first_link" name="point_first_link" type="radio" value="post" <?php if($point_first_link == "post"){echo " CHECKED";}?> /> the Post</p>              
-            <p style="clear:left"><?php _e('Point the second link (if any) to:'); ?></p>
-            <p style="float: left; text-align: left;"><input id="point_second_link" name="point_second_link" type="radio" value="author" <?php if($point_second_link == "author"){echo " CHECKED";}?> /> the Author's Homepage (if any)</p>
-            <p style="float: left; margin-left: 10px; text-align: left;"><input id="point_second_link" name="point_second_link" type="radio" value="comment" <?php if($point_second_link == "comment"){echo " CHECKED";}?> /> the Comment</p>            
-            <p style="float: left; margin-left: 10px; text-align: left;"><input id="point_second_link" name="point_second_link" type="radio" value="post" <?php if($point_second_link == "post"){echo " CHECKED";}?> /> the Post</p>              
+            <p style="clear:left"><?php _e('Point the first link to:','atahualpa'); ?></p> 
+            <p style="float: left; text-align: left;"><input id="point_first_link" name="point_first_link" type="radio" value="author" <?php if($point_first_link == "author"){echo " CHECKED";}?> /> <?php _e("the Author's Homepage (if any)","atahualpa"); ?></p>
+            <p style="float: left; margin-left: 10px; text-align: left;"><input id="point_first_link" name="point_first_link" type="radio" value="comment" <?php if($point_first_link == "comment"){echo " CHECKED";}?> /> <?php _e('the Comment','atahualpa'); ?></p>            
+            <p style="float: left; margin-left: 10px; text-align: left;"><input id="point_first_link" name="point_first_link" type="radio" value="post" <?php if($point_first_link == "post"){echo " CHECKED";}?> /> <?php _e('the Post','atahualpa'); ?></p>              
+            <p style="clear:left"><?php _e('Point the second link (if any) to:','atahualpa'); ?></p>
+            <p style="float: left; text-align: left;"><input id="point_second_link" name="point_second_link" type="radio" value="author" <?php if($point_second_link == "author"){echo " CHECKED";}?> /> <?php _e("the Author's Homepage (if any)","atahualpa"); ?></p>
+            <p style="float: left; margin-left: 10px; text-align: left;"><input id="point_second_link" name="point_second_link" type="radio" value="comment" <?php if($point_second_link == "comment"){echo " CHECKED";}?> /> <?php _e('the Comment','atahualpa'); ?></p>            
+            <p style="float: left; margin-left: 10px; text-align: left;"><input id="point_second_link" name="point_second_link" type="radio" value="post" <?php if($point_second_link == "post"){echo " CHECKED";}?> /> <?php _e('the Post','atahualpa'); ?></p>              
 	    <hr noshade size="1" style="clear:left; color: #ccc">
-	    <p><input id="author_nofollow" name="author_nofollow" type="checkbox" <?php if($author_nofollow == "on"){echo " CHECKED";}?> /> <?php _e('Set the link to the Author Homepage to "Nofollow"'); ?></p>
+	    <p><input id="author_nofollow" name="author_nofollow" type="checkbox" <?php if($author_nofollow == "on"){echo " CHECKED";}?> /> <?php _e('Set the link to the Author Homepage to "Nofollow"','atahualpa'); ?></p>
 	    <hr noshade size="1" style="clear:left; color: #ccc">
-   	    <?php _e('Limit the comment text to'); ?> <input style="width: 20px;" id="bfa_rc_src_length" name="bfa_rc_src_length" type="text" value="<?php echo $bfa_rc_src_length; ?>" /> <input id="limit_by" name="limit_by" type="radio" value="letters" <?php if($limit_by == "letters"){echo " CHECKED";}?> /> <?php _e('letters'); ?> <input id="limit_by" name="limit_by" type="radio" value="words" <?php if($limit_by == "words"){echo " CHECKED";}?> /> <?php _e('words'); ?>.&nbsp;&nbsp;&nbsp;<input id="add_dots" name="add_dots" type="checkbox" <?php if($add_dots == "on"){echo " CHECKED";}?> /> add "..." if the actual comment is longer than that.</p>
+   	    <?php _e('Limit the comment text to','atahualpa'); ?> <input style="width: 20px;" id="bfa_rc_src_length" name="bfa_rc_src_length" type="text" value="<?php echo $bfa_rc_src_length; ?>" /> <input id="limit_by" name="limit_by" type="radio" value="letters" <?php if($limit_by == "letters"){echo " CHECKED";}?> /> <?php _e('letters','atahualpa'); ?> <input id="limit_by" name="limit_by" type="radio" value="words" <?php if($limit_by == "words"){echo " CHECKED";}?> /> <?php _e('words','atahualpa'); ?>.&nbsp;&nbsp;&nbsp;<input id="add_dots" name="add_dots" type="checkbox" <?php if($add_dots == "on"){echo " CHECKED";}?> /> <?php _e('add "..." if the actual comment is longer than that.','atahualpa'); ?></p>
 	    <hr noshade size="1" style="clear:left; color: #ccc">
-	    <p><?php _e('Make the Author Name'); ?> <input id="author_bold" name="author_bold" type="checkbox" <?php if($author_bold == "on"){echo " CHECKED";}?> /> <strong>Bold</strong>  <input id="author_em" name="author_em" type="checkbox" <?php if($author_em == "on"){echo " CHECKED";}?> /> <em>Emphasized</em></p>
-	    <p><?php _e('Make the Comment Text'); ?> <input id="comment_bold" name="comment_bold" type="checkbox" <?php if($comment_bold == "on"){echo " CHECKED";}?> /> <strong>Bold</strong>  <input id="comment_em" name="comment_em" type="checkbox" <?php if($comment_em == "on"){echo " CHECKED";}?> /> <em>Emphasized</em></p>
-	    <p><?php _e('Make the Post Title'); ?> <input id="post_bold" name="post_bold" type="checkbox" <?php if($post_bold == "on"){echo " CHECKED";}?> /> <strong>Bold</strong>  <input id="post_em" name="post_em" type="checkbox" <?php if($post_em == "on"){echo " CHECKED";}?> /> <em>Emphasized</em></p>
+	    <p><?php _e('Make the Author Name','atahualpa'); ?> <input id="author_bold" name="author_bold" type="checkbox" <?php if($author_bold == "on"){echo " CHECKED";}?> /> <strong><?php _e('Bold','atahualpa'); ?></strong>  <input id="author_em" name="author_em" type="checkbox" <?php if($author_em == "on"){echo " CHECKED";}?> /> <em><?php _e('Emphasized','atahualpa'); ?></em></p>
+	    <p><?php _e('Make the Comment Text','atahualpa'); ?> <input id="comment_bold" name="comment_bold" type="checkbox" <?php if($comment_bold == "on"){echo " CHECKED";}?> /> <strong><?php _e('Bold','atahualpa'); ?></strong>  <input id="comment_em" name="comment_em" type="checkbox" <?php if($comment_em == "on"){echo " CHECKED";}?> /> <em><?php _e('Emphasized','atahualpa'); ?></em></p>
+	    <p><?php _e('Make the Post Title','atahualpa'); ?> <input id="post_bold" name="post_bold" type="checkbox" <?php if($post_bold == "on"){echo " CHECKED";}?> /> <strong><?php _e('Bold','atahualpa'); ?></strong>  <input id="post_em" name="post_em" type="checkbox" <?php if($post_em == "on"){echo " CHECKED";}?> /> <em><?php _e('Emphasized','atahualpa'); ?></em></p>
 	    <hr noshade size="1" style="clear:left; color: #ccc">
-            <p><?php _e('Display the list on:'); ?></p>            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_rc_display_homepage" name="bfa_rc_display_homepage" type="checkbox" <?php if($bfa_rc_display_homepage == "on"){echo " CHECKED";}?> /> Homepage</p>
-            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_rc_display_category" name="bfa_rc_display_category" type="checkbox" <?php if($bfa_rc_display_category == "on"){echo " CHECKED";}?> /> Category Pages</p>
-            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_rc_display_post" name="bfa_rc_display_post" type="checkbox" <?php if($bfa_rc_display_post == "on"){echo " CHECKED";}?> /> Single Post Pages</p>
-            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_rc_display_page" name="bfa_rc_display_page" type="checkbox" <?php if($bfa_rc_display_page == "on"){echo " CHECKED";}?> /> "Page" Pages</p>
-            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_rc_display_archive" name="bfa_rc_display_archive" type="checkbox" <?php if($bfa_rc_display_archive == "on"){echo " CHECKED";}?> /> Archive Pages</p>
-            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_rc_display_tag" name="bfa_rc_display_tag" type="checkbox" <?php if($bfa_rc_display_tag == "on"){echo " CHECKED";}?> /> Tag Pages</p>
-            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_rc_display_search" name="bfa_rc_display_search" type="checkbox" <?php if($bfa_rc_display_search == "on"){echo " CHECKED";}?> /> Search Result Pages</p>
-            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_rc_display_author" name="bfa_rc_display_author" type="checkbox" <?php if($bfa_rc_display_author == "on"){echo " CHECKED";}?> /> Author Pages</p>
-            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_rc_display_404" name="bfa_rc_display_404" type="checkbox" <?php if($bfa_rc_display_404 == "on"){echo " CHECKED";}?> /> 404 Not Found Pages</p>
+            <p><?php _e('Display the list on:','atahualpa'); ?></p>            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_rc_display_homepage" name="bfa_rc_display_homepage" type="checkbox" <?php if($bfa_rc_display_homepage == "on"){echo " CHECKED";}?> /> <?php _e('Homepage','atahualpa'); ?></p>
+            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_rc_display_category" name="bfa_rc_display_category" type="checkbox" <?php if($bfa_rc_display_category == "on"){echo " CHECKED";}?> /> <?php _e('Category Pages','atahualpa'); ?></p>
+            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_rc_display_post" name="bfa_rc_display_post" type="checkbox" <?php if($bfa_rc_display_post == "on"){echo " CHECKED";}?> /> <?php _e('Single Post Pages','atahualpa'); ?></p>
+            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_rc_display_page" name="bfa_rc_display_page" type="checkbox" <?php if($bfa_rc_display_page == "on"){echo " CHECKED";}?> /> <?php _e('"Page" Pages','atahualpa'); ?></p>
+            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_rc_display_archive" name="bfa_rc_display_archive" type="checkbox" <?php if($bfa_rc_display_archive == "on"){echo " CHECKED";}?> /> <?php _e('Archive Pages','atahualpa'); ?></p>
+            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_rc_display_tag" name="bfa_rc_display_tag" type="checkbox" <?php if($bfa_rc_display_tag == "on"){echo " CHECKED";}?> /> <?php _e('Tag Pages','atahualpa'); ?></p>
+            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_rc_display_search" name="bfa_rc_display_search" type="checkbox" <?php if($bfa_rc_display_search == "on"){echo " CHECKED";}?> /> <?php _e('Search Result Pages','atahualpa'); ?></p>
+            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_rc_display_author" name="bfa_rc_display_author" type="checkbox" <?php if($bfa_rc_display_author == "on"){echo " CHECKED";}?> /> <?php _e('Author Pages','atahualpa'); ?></p>
+            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_rc_display_404" name="bfa_rc_display_404" type="checkbox" <?php if($bfa_rc_display_404 == "on"){echo " CHECKED";}?> /> <?php _e('404 Not Found Pages','atahualpa'); ?></p>
   	    <input type="hidden" id="bfa_rc_src-submit" name="bfa_rc_src-submit" value="1" />     
 <?php
 	 }

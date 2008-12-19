@@ -1,83 +1,251 @@
 <?php // Do not delete these lines
-	if ('comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
-		die ('Please do not load this page directly. Thanks!');
-	if (!empty($post->post_password)) { // if there's a password
-		if ($_COOKIE['wp-postpass_' . COOKIEHASH] != $post->post_password) {  // and it doesn't match the cookie
-			?>
-			<p class="nocomments">This post is password protected. Enter the password to view comments.</p>
-			<?php
-			return;
-		}
-	}
+if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
+	die (__('Please do not load this page directly. Thanks!','atahualpa'));
+if ( post_password_required() ) {
+	_e('This post is password protected. Enter the password to view comments.','atahualpa');
+	return;
+}
+
 	/* This variable is for alternating comment background */
-	$oddcomment = 'class="alt" ';
+	#$oddcomment = 'class="alt" ';
+
+global $options;
+foreach ($options as $value) {
+if (get_option( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_option( $value['id'] ); } }
 ?>
-<!-- You can start editing here. -->
-<?php if ($comments) : ?>
-	<h3 id="comments"><?php comments_number('No Responses', 'One Response', '% Responses' );?> to &#8220;<?php the_title(); ?>&#8221;</h3>
-	<ol class="commentlist">
-	<?php $comment_number = 1; foreach ($comments as $comment) : ?>
-<!--		<li <?php echo $oddcomment; ?>id="comment-<?php comment_ID() ?>"> -->
-		<li <?php if ( $comment->comment_author_email == get_the_author_email() ) echo 'class="authorcomment" '; else echo $oddcomment; ?>id="comment-<?php comment_ID() ?>">
-<?php // Gravatar support
-if (function_exists('get_avatar')) {
-      echo get_avatar($comment -> comment_author_email, $size='55');
-   } else {
-if(!empty($comment -> comment_author_email)) {
-$md5 = md5($comment -> comment_author_email);
-$default = urlencode(get_bloginfo('template_directory') . '/images/no-gravatar2.gif');
-echo "<img class=\"avatar\" src='http://www.gravatar.com/avatar.php?gravatar_id=$md5&size=55&default=$default' alt='Gravatar' />";
-}
-}
-?>
-<div style="float: right; font-size: 30px; line-height: 30px; font-family: georgia, serif; font-weight: bold; color: #ddd; margin: -10px 0 0 0; position: relative; height: 1%"><?php echo $comment_number; ?></div>
-			<!--<cite>--><?php comment_author_link() ?><!--</cite>-->:
-			<?php if ($comment->comment_approved == '0') : ?>
-			<em>Your comment is awaiting moderation.</em>
-			<?php endif; ?>
-			<br />
-			<small class="commentmetadata"><!--<a href="#comment-<?php comment_ID() ?>" title="">--><?php comment_date('F jS, Y') ?> at <?php comment_time() ?></a> <?php edit_comment_link('edit','&nbsp;&nbsp;',''); ?></small>
-			<?php comment_text() ?>
-		</li>
-	<?php
-		/* Changes every other comment to a different class */
-		$oddcomment = ( empty( $oddcomment ) ) ? 'class="alt" ' : '';
+<!-- You can start editing below: -->
+
+<?php // If there are any comments
+if ( have_comments() ) : ?>
+	
+	<h3 id="comments"><?php // Comment Area Title 
+	printf(__('%1$s to %2$s', 'atahualpa'), comments_number(__('No Comments', 'atahualpa'), __('1 Comment', 'atahualpa'), __ngettext('% comment', '% comments', get_comments_number(), 'atahualpa')), get_the_title());
 	?>
-	<?php $comment_number ++; endforeach; /* end for each comment */ ?>
-	</ol>
- <?php else : // this is displayed if there are no comments so far ?>
-	<?php if ('open' == $post->comment_status) : ?>
-		<!-- If comments are open, but there are no comments. -->
-	 <?php else : // comments are closed ?>
-		<!-- If comments are closed. -->
-		<p class="nocomments">Comments are closed.</p>
+	</h3>
+	
+	
+	<?php 
+?>
+	
+
+				<?php // Next/Previous Comments Links 
+				// in next_comments_link "next" means newer 
+				// if navigation above comments is set
+				if ( strpos($bfa_ata_location_comments_next_prev,'Above')!==false ) {
+				// if any navigation links exist, paginated or next/previous:
+				$number_of_comment_pages = get_query_var('cpage'); 
+				if ( !$number_of_comment_pages ) $number_of_comment_pages = 1;
+				if ( $number_of_comment_pages > 1 ) {
+					// Overall navigation container
+					echo '<div class="navigation-comments-above">';
+						// paginated links
+						if ($bfa_ata_next_prev_comments_pagination == "Yes") {
+							paginate_comments_links(array(
+							'prev_text' => bfa_escape($bfa_ata_comments_next_prev_older),
+							'next_text' => bfa_escape($bfa_ata_comments_next_prev_newer),
+							)); 
+						// next/previous links
+						} else {
+							echo '<div class="older">'; 
+							$bfa_ata_next_prev_orientation == 'Older Left, Newer Right' ? 
+							previous_comments_link(bfa_escape($bfa_ata_comments_next_prev_older)) : 
+							next_comments_link(bfa_escape($bfa_ata_comments_next_prev_newer)); 
+							echo ' &nbsp;</div><div class="newer">&nbsp; ';
+							$bfa_ata_next_prev_orientation == 'Older Left, Newer Right' ? 
+							next_comments_link(bfa_escape($bfa_ata_comments_next_prev_newer)) : 
+							previous_comments_link(bfa_escape($bfa_ata_comments_next_prev_older)); 
+							echo '</div>
+							<div style="clear:both"></div>';
+						}
+					echo '</div>'; 
+				} 
+				} ?>		
+				
+	<!-- Comment List -->
+	<ul class="commentlist">
+		
+		<!-- Do this for every comment -->
+		<?php if ($bfa_ata_separate_trackbacks == "Yes") {
+		wp_list_comments(array(
+					'avatar_size'=>$bfa_ata_avatar_size,
+					'reply_text'=>__(' &middot; Reply','atahualpa'),
+					'login_text'=>__('Log in to Reply','atahualpa'),
+					'walker' => new Walker_Comment2, 
+					'max_depth' => '', 
+					'style' => 'ul', 
+					'callback' => null, 
+					'end-callback' => null, 
+					'type' => 'comment',
+					'page' => '', 
+					'per_page' => '', 
+					'reverse_top_level' => null, 
+					'reverse_children' => ''
+				)); 
+		wp_list_comments(array(
+					'avatar_size'=>$bfa_ata_avatar_size,
+					'reply_text'=>__(' &middot; Reply','atahualpa'),
+					'login_text'=>__('Log in to Reply','atahualpa'),
+					'walker' => new Walker_Comment2, 
+					'max_depth' => '', 
+					'style' => 'ul', 
+					'callback' => null, 
+					'end-callback' => null, 
+					'type' => 'pings',
+					'page' => '', 
+					'per_page' => '', 
+					'reverse_top_level' => null, 
+					'reverse_children' => ''
+				)); 
+		} else {
+		wp_list_comments(array(
+					'avatar_size'=>$bfa_ata_avatar_size,
+					'reply_text'=>__(' &middot; Reply','atahualpa'),
+					'login_text'=>__('Log in to Reply','atahualpa'),
+					'walker' => new Walker_Comment2, 
+					'max_depth' => '', 
+					'style' => 'ul', 
+					'callback' => null, 
+					'end-callback' => null, 
+					'type' => 'all',
+					'page' => '', 
+					'per_page' => '', 
+					'reverse_top_level' => null, 
+					'reverse_children' => ''
+				)); 
+		}
+		?>
+	
+	</ul>
+	<!-- / Comment List -->
+	
+
+				<?php // Next/Previous Comments Links 
+				// in next_comments_link "next" means newer 
+				// if navigation below comments is set
+				if ( strpos($bfa_ata_location_comments_next_prev,'Below')!==false ) {
+				// if any navigation links exist, paginated or next/previous:
+				$number_of_comment_pages = get_query_var('cpage'); 
+				if ( !$number_of_comment_pages ) $number_of_comment_pages = 1;
+				if ( $number_of_comment_pages > 1 ) {
+					// Overall navigation container				
+					echo '<div class="navigation-comments-below">';
+						// paginated links
+						if ($bfa_ata_next_prev_comments_pagination == "Yes") {
+							paginate_comments_links(array(
+							'prev_text' => bfa_escape($bfa_ata_comments_next_prev_older),
+							'next_text' => bfa_escape($bfa_ata_comments_next_prev_newer),
+							)); 
+						// next/previous links
+						} else {
+							echo '<div class="older">'; 
+							$bfa_ata_next_prev_orientation == 'Older Left, Newer Right' ? 
+							previous_comments_link(bfa_escape($bfa_ata_comments_next_prev_older)) : 
+							next_comments_link(bfa_escape($bfa_ata_comments_next_prev_newer)); 
+							echo ' &nbsp;</div><div class="newer">&nbsp; ';
+							$bfa_ata_next_prev_orientation == 'Older Left, Newer Right' ? 
+							next_comments_link(bfa_escape($bfa_ata_comments_next_prev_newer)) : 
+							previous_comments_link(bfa_escape($bfa_ata_comments_next_prev_older)); 
+							echo '</div>
+							<div style="clear:both"></div>';
+						}
+					echo '</div>'; 
+				} 
+				} ?>		
+
+
+<?php 
+// END of "If there ARE any comments"
+else : 
+// START of "If there are NO comments" 
+?>
+
+	<?php 
+	// If comments are open, but there are no comments:
+	if ('open' == $post->comment_status) : 
+	?>
+		<!-- .... -->
+
+	<?php 
+	// END of "If comments are open, but there are no comments"
+	else : 
+	// If comments are closed:
+	?>
+		<p><?php _e('Comments are closed.','atahualpa'); ?></p>
 	<?php endif; ?>
+
+<?php 
+// END of "If there are NO comments"
+endif; 
+?>
+
+<?php // If comments are open
+if ('open' == $post->comment_status) : ?>
+
+
+	<?php // If Login is required and User is not logged in 
+	if ( get_option('comment_registration') && !$user_ID ) : ?>
+	<p><?php printf(__('You must be %slogged in</a> to post a comment.', 'atahualpa'), '<a href="' . get_option('siteurl') . '/wp-login.php?redirect_to=' . urlencode(get_permalink()) . '">')?></p>		
+
+	<?php // If Login is not required, or User is logged in 
+	else : ?>
+		
+		<!-- Comment Form -->
+		<div id="respond">
+		
+		<h3><?php comment_form_title(  $noreplytext = __('Leave a Reply','atahualpa'), $replytext = __('Leave a Reply to %s','atahualpa'), $linktoparent = TRUE  ); ?></h3>
+	
+		<div id="cancel-comment-reply">
+		<?php cancel_comment_reply_link(__('Cancel','atahualpa')) ?>
+		</div>
+	
+		<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
+
+			<?php // If User is logged in
+			if ( $user_ID ) : ?>
+			<p>
+			<?php printf(__('Logged in as %s.', 'atahualpa'), '<a href="' . get_option('siteurl') . '/wp-admin/profile.php">' . $user_identity . '</a>')?>			
+			<a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="<?php _e('Log out of this account','atahualpa'); ?>"><?php _e('Logout &raquo;','atahualpa'); ?></a>
+			</p>
+
+			<?php // If User is not logged in: Display the form fields "Name", "Email", "URL"
+			else : ?>
+			<p>
+			<input class="text author" type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="30" tabindex="1" />
+			<label for="<?php _e('author','atahualpa'); ?>"><?php _e('Name ','atahualpa'); if ($req) _e('(required)','atahualpa'); ?></label>
+			</p>
+			<p>
+			<input class="text email" type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="30" tabindex="2" />
+			<label for="<?php _e('email','atahualpa'); ?>"><?php _e('Mail (will not be published) ','atahualpa'); if ($req) _e('(required)','atahualpa'); ?></label>
+			</p>
+			<p>
+			<input class="text url" type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="30" tabindex="3" />
+			<label for="<?php _e('url','atahualpa'); ?>"><?php _e('Website','atahualpa'); ?></label>
+			</p>
+			<?php endif; ?>
+	
+		<!-- Display Quicktags or allowed XHTML Tags -->
+		<?php if (function_exists('lmbbox_comment_quicktags_display')) { echo "<p>"; lmbbox_comment_quicktags_display(); echo "</p>"; } 
+		else { ?>
+		<p><?php _e('<strong>XHTML:</strong> You can use these tags:','atahualpa'); ?></p>
+		<p><code><?php echo allowed_tags(); ?></code></p>
+		<?php } ?>
+	
+		<!-- Comment Textarea -->
+		<p><textarea name="comment" id="comment" rows="10" cols="10" tabindex="4"></textarea></p>
+
+		<!-- Submit -->
+		<p>
+		<input name="submit" type="submit" class="button" id="submit" tabindex="5" value="<?php _e('Submit Comment','atahualpa'); ?>" />
+		<?php comment_id_fields(); ?>
+		</p>
+	
+		<?php do_action('comment_form', $post->ID); ?>
+		</form>
+		</div><!-- / respond -->
+		<!-- / Comment Form -->
+
+	<?php endif; ?>
+	<!-- / If Login is not required, or User is logged in -->
+	
 <?php endif; ?>
-<?php if ('open' == $post->comment_status) : ?>
-<h3 id="respond">Leave a Reply</h3>
-<?php if ( get_option('comment_registration') && !$user_ID ) : ?>
-<p>You must be <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>">logged in</a> to post a comment.</p>
-<?php else : ?>
-<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
-<?php if ( $user_ID ) : ?>
-<p>Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="Log out of this account">Logout &raquo;</a></p>
-<?php else : ?>
-<p><input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" tabindex="1" />
-<label for="author"><small>Name <?php if ($req) echo "(required)"; ?></small></label></p>
-<p><input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="22" tabindex="2" />
-<label for="email"><small>Mail (will not be published) <?php if ($req) echo "(required)"; ?></small></label></p>
-<p><input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="22" tabindex="3" />
-<label for="url"><small>Website</small></label></p>
-<?php endif; ?>
-<!--<p><small><strong>XHTML:</strong> You can use these tags: <code><?php echo allowed_tags(); ?></code></small></p>-->
-<p><textarea name="comment" id="comment" class="comment-textarea" rows="10" cols="20" tabindex="4"></textarea></p>
-<?php if (function_exists('show_subscription_checkbox')) { ?>
-<?php show_subscription_checkbox(); ?>
-<?php } ?>
-<p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
-<input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
-</p>
-<?php do_action('comment_form', $post->ID); ?>
-</form>
-<?php endif; // If registration required and not logged in ?>
-<?php endif; // if you delete this the sky will fall on your head ?>
+<!-- If comments are open -->

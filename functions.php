@@ -1,572 +1,637 @@
 <?php
+# Load translation file if available
+load_theme_textdomain('atahualpa');
+# Sidebars:
 if ( function_exists('register_sidebar') ) {
     register_sidebar(array(
         'name'=>'Left Sidebar',
-        'before_widget' => '',
-        'after_widget' => '',
-        'before_title' => '<h3 class="widgettitle">',
-        'after_title' => '</h3>',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div></div>',
+        'before_title' => '<div class="widget-title"><h3>',
+        'after_title' => '</h3></div><div class="widget-content">',
     ));
     register_sidebar(array(
          'name'=>'Right Sidebar',
-        'before_widget' => '',
-        'after_widget' => '',
-        'before_title' => '<h3 class="widgettitle">',
-        'after_title' => '</h3>',
-    ));  
-} ?>
-<?php
-#include (TEMPLATEPATH . '/functions/simple_recent_comments.php');
-#include (TEMPLATEPATH . '/functions/most_commented.php');
-#include (TEMPLATEPATH . '/functions/most_commented_per_cat.php');
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div></div>',
+        'before_title' => '<div class="widget-title"><h3>',
+        'after_title' => '</h3></div><div class="widget-content">',
+    )); 
+} 
+# Load functions
+include (TEMPLATEPATH . '/functions/bfa_header_config.php');
+include (TEMPLATEPATH . '/functions/bfa_hor_cats.php');
+include (TEMPLATEPATH . '/functions/bfa_hor_pages.php');
+include (TEMPLATEPATH . '/functions/bfa_footer.php');
 include (TEMPLATEPATH . '/functions/bfa_recent_comments.php');
 include (TEMPLATEPATH . '/functions/bfa_popular_posts.php');
 include (TEMPLATEPATH . '/functions/bfa_popular_in_cat.php');
-?>
-<?php 
+include (TEMPLATEPATH . '/functions/bfa_subscribe.php');
+include (TEMPLATEPATH . '/functions/bfa_text_widget.php');
+include (TEMPLATEPATH . '/functions/bfa_search_widget.php');
+include (TEMPLATEPATH . '/functions/bfa_calendar_widget.php');
+if (!function_exists('paged_comments')) { include (TEMPLATEPATH . '/functions/bfa_comment_walker.php'); }
+if (function_exists('sociable_html')) { include (TEMPLATEPATH . '/functions/bfa_sociable2.php'); }
+// find in directory function, needed for header images on WPMU
+if (file_exists(ABSPATH."/wpmu-settings.php")) {include (TEMPLATEPATH . '/functions/bfa_m_find_in_dir.php');}
+# Add admin page CSS
 function bfa_add_stuff_admin_head() {
     $url_base = get_bloginfo('template_directory');
+	// add jquery function only to theme page or widgets won't work in 2.3 and older
+	if ( $_GET['page'] == basename(__FILE__) ) { 
 	echo "<script src=\"$url_base/options/jscolor/jscolor.js\" type=\"text/javascript\"></script>\n";
+	echo "<style type=\"text/css\">\n";
+	echo "div.tabcontent { height: auto; border: none; margin: 0; padding: 0; display:none; /*overflow: visible;*/ width: auto} \n"; 
+	echo ".bfa-container { width: 100%; border: solid 3px #C6D9E9; background-color: #E4F2FD; margin: 10px auto; padding: 0; \n";
+	echo "-moz-border-radius: 5px; -khtml-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;	}\n";
+	echo ".bfa-container ul {list-style: circle url('" . get_bloginfo('template_directory') . "/options/images/list-arrow.gif') !important; margin: 1em 1em 1em 2em;} \n";
+	echo ".bfa-container-left { display: block; float: left; text-align: right; width: 35%; border-right: solid 1px #C6D9E9; margin: 0; padding: 10px; }\n";
+	echo ".bfa-container-right { display: block; float: right; width: 58%; margin: 0; padding: 10px; }\n";
+	echo ".bfa-container-full { /*display:block;*/ width: auto; margin: 0; padding: 10px; }\n";
+	echo ".bfa-container h2 { font-size: 1.5em; color: #666; margin:0; padding: 3px; border: none}\n";
+	echo ".bfa-container input { text-align: right }\n";
+	echo ".bfa-container label { font-size: 16px; font-weight: bold; color: #444; }\n";
+	echo ".bfa-container input, .bfa-container-left textarea, .bfa-container-left select { margin: 7px 0 4px 7px}\n";
+	echo "ul#bfaoptiontabs {text-align: left;list-style-type: none; margin: 10px 0 0 0; padding: 0; -moz-padding-start: 0}\n";
+	echo "ul#bfaoptiontabs li {display: inline; list-style-type: none; padding-top: 5px; }\n";
+	echo "ul#bfaoptiontabs li a:link, ul#bfaoptiontabs li a:visited, ul#bfaoptiontabs li a:active {display: -moz-inline-box; display: inline-block; white-space: nowrap; outline: 0; text-decoration: none; position: relative; z-index: 1; padding: 3px 6px; \n";
+	echo "margin-right: 1px; margin-top: 5px; border: 1px solid #C6D9E9; color: #1e698a; background-color: #E4F2FD; /*line-height: 22px; height: 22px;*/\n";
+	echo "-moz-border-radius: 3px; -khtml-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px;}\n";
+	echo "ul#bfaoptiontabs li a:hover {background-color: #ffffff; color: #D54E21; }\n";
+	echo "ul#bfaoptiontabs li a.selected {border: 1px solid #883215; background-color: #D54E21; color: #ffffff !important; outline: 0}\n";
+	echo "table.bfa-optiontable-layout {width: 100%; }\n";
+	echo "table.bfa-optiontable {text-align: left; white-space: wrap; background-color: #f1f9fe; border-collapse: collapse; border: solid 1px #c4e2fb }\n";
+	echo "table.bfa-optiontable input {margin: 0 2px 0 2px; padding: 2px; text-align: left }\n";
+	echo "table.bfa-optiontable input.color {text-align: right }\n";
+	echo "table.bfa-optiontable thead tr td {line-height: 11px; }\n";
+	echo "table.bfa-optiontable-layout td {vertical-align:top; }\n";
+	echo "table.bfa-optiontable td {vertical-align:middle; padding: 1px 3px}\n";
+	echo "table.bfa-optiontable thead td {text-align: center; background-color: #c4e2fb; font-weight: bold; padding: 5px; }\n";
+	echo "div.more_blog_title_font { display: none }\n";
+	echo "div.more_show_header_image { display: none }\n";
+	echo "h4 {font-size: 18px; font-family:\"Courier New\", Courier, monospace; margin-bottom: 5px}\n";
+	echo "code {background: #ffffff; padding-left: 5px; padding-right: 5px;}\n";
+	echo "i {color: red; font-style: normal; font-weight: bold;}\n";
+	echo "</style>\n";
+	// add jquery to WP 2.3 and older
+	if ( substr(get_bloginfo('version'), 0, 3) < 2.5 ) {   
+	echo "<script type=\"text/javascript\" src=\"$url_base/js/jquery-1.2.6.min.js\"></script>\n";
+	}
+	echo "<script type=\"text/javascript\" src=\"$url_base/options/tabcontent/tabcontent.js\">\n";
+	echo "/***********************************************\n";
+	echo "* Tab Content script v2.2- © Dynamic Drive DHTML code library (www.dynamicdrive.com)\n";
+	echo "* This notice MUST stay intact for legal use\n";
+	echo "* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code\n";
+	echo "***********************************************/\n";
+	echo "</script>\n";
+	}
 }
 add_action('admin_head', 'bfa_add_stuff_admin_head');
 ?>
 <?php
-$header_image_text_wp = "<br /><br /><em>You add your own header image(s), upload one or several images with any file names <strong>anything.[jpg|gif|png]</strong>  (i.e. hfk7wdfw8.gif, IMAGE_1475.jpg, bla.png) to /wp-content/themes/[theme-name]/images/header/ through FTP. The image(s) should be 1300 pixels wide or even wider, if you care about those who surf with an even wider browser viewport, like 1500 or 1600 pixels wide. The theme will autmatically recognize all images in that directory. If there's only one image, then it'll be your single, \"static\" header image. If there's more than one, then the theme will rotate them with every pageview.</em>";
-$header_image_text_wpmu = "<br /><br /><em>To upload your own header images, you'll need to prepare your header image(s) on your harddrive first. The image(s) should be 1300 pixels wide or even wider, if you care about those who surf with an even wider browser viewport, like 1500 or 1600 pixels wide. Rename them to <strong>atahualpa_header_XX.[jpg|gif|png|bmp]</strong> (Example: atahualpa_header_1.jpg, atahualpa_header_3.png, atahualpa_header_182.gif) and then, upload them to your WordPress site through your WordPress Editor</strong>. <br /><br />There is no \"upload\" tab in the admin area though. To upload an image, you'll have to act as if you're going to add an image to a post: Go to Admin -> Manage -> Posts, and click on the title of an existing post to open the editor. Click on the \"Add Media\" link, and in the next window click on the \"Choose files to upload\" button. That will open a window on your local computer where you can find and select the header image (which you've already renamed as described before) on your harddrive. Select \"Full Size\" and, instead of clicking on \"Insert into Post\", you will click on \"Save all changes\" because you just want to upload the image and not insert it into the post. Now reload your Homepage and the new header image should appear. If you want more than one header image (to have them rotate) simply repeat all these steps. The theme will autmatically recognize all images that are named atahualpa_header_X.[jpg|png|gif]. If there's only one image, then it'll be your single, \"static\" header image. If there's more than one, then the theme will rotate them with every pageview.</em>";
-$logo_icon_text_wp = "upload a \"logosymbol.gif\" with the size of 50x50 pixels and white background to <strong>/wp-content/themes/atahualpa2/images/</strong></em>";
-$logo_icon_text_wpmu = "upload a \"logosymbol.gif\" with the size of 50x50 pixels and white background through the WordPress Editor. There's no \"upload\" tab though. To upload the image you will have to act as if you're going to add an image to a post: Go to Admin -> Manage -> Posts, and click on the title of an existing post to open the editor. Click on the \"Add Media\" link, and in the next window click on the \"Choose files to upload\" button. That will open a window on your local computer where you can select the \"logosymbol.gif\" on your harddrive. After you've selected the image, choose \"Full Size\" and, instead of clicking on \"Insert into Post\", click on \"Save all changes\". Now reload your Homepage and the logo icon should appear instead of the default one.</em>";
-if (file_exists(ABSPATH."/wpmu-settings.php")) {
-$header_image_text = $header_image_text_wpmu; 
-$logo_icon_text = $logo_icon_text_wpmu; }
-else {$header_image_text = $header_image_text_wp; 
-$logo_icon_text = $logo_icon_text_wp;}
+// Escape single & double quotes
+function bfa_escape($string) {
+	$string = str_replace('"', '&#34;', $string);
+	$string = str_replace("'", '&#39;', $string);
+	return $string;
+}
+// change them back
+function bfa_unescape($string) {
+	$string = str_replace('&#34;', '"', $string);
+	$string = str_replace('&#39;', "'", $string);
+	return $string;
+}
+function bfa_escapelt($string) {
+	$string = str_replace('<', '&lt;', $string);
+	$string = str_replace('>', '&gt;', $string);
+	return $string;
+}
 ?>
 <?php
-$themename = "Atahualpa";
-$shortname = "ata";
-$options = array (
-
-     array(    "name" => "Use Bytes For All SEO options",
-    	    "category" => "seo",
-            "id" => $shortname."_use_bfa_seo",
-            "type" => "select",
-            "std" => "No",
-            "options" => array("No", "Yes"),
-            "info" => "<strong>Leave this at \"No\" if you're using ANY SEO plugin</strong> such as \"All-in-one-SEO\", or any plugin that deals with meta tags in some way. If both a SEO plugin and the theme's SEO functions are activated, the meta tags of your site may get messed up, which might affect your search engine rankings. <br /><br />If you leave this at \"No\", the next SEO options (except the last one, \"Nofollow RSS...\") will become obsolete, you may just skip them. <br /><br /><em>Note: Even if you set this to \"Yes\", the SEO functions listed below (except \"Nofollow RSS...\") will NOT be activated IF the theme recognizes that a SEO plugin is activated.</em>"),
-
-    array(    "name" => "Homepage Meta Description",
-            "id" => $shortname."_homepage_meta_description",
-            "std" => "",
-            "type" => "textarea",
-            "info" => "Type 1-3 sentences, about 20-30 words total. Will be used as Meta Description for (only) the homepage. If left blank, no Meta Description will be added to the homepage. Default: <strong>blank</strong>"),    
-
-    array(    "name" => "Homepage Meta Keywords",
-            "id" => $shortname."_homepage_meta_keywords",
-            "std" => "",
-            "type" => "textarea",
-            "info" => "Type 5-30 words or phrases, separated by comma. Will be used as the Meta Keywords for (only) the homepage. If left blank, no Meta Keywords will be added to the homepage. Default: <strong>blank</strong>"),
-
-     array(    "name" => "Meta Title Tag format",
-    	    "category" => "seo",
-            "id" => $shortname."_add_blogtitle",
-            "type" => "select",
-            "std" => "Page Title - Blog Title",
-            "options" => array("Page Title - Blog Title", "Blog Title - Page Title", "Page Title"),
-            "info" => "Show the blog title in front of or after the page title, in the meta title tag of every page? Or, show only the page title?"),
-
-     array(    "name" => "Meta Title Tag Separator",
-    	    "category" => "seo",
-            "id" => $shortname."_title_separator_code",
-            "type" => "select",
-            "std" => "1",
-            "options" => array("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"),
-            "info" => "If you chose to include the blog title in the meta title (the option above), choose here what to put BETWEEN the page and the blog title (or vice versa):<br /><br /> 1( &#171; ),  2( &#187; ),  3( &#58; ),  4(&#58; ),  5( &#62; ),  6( &#60; ),  7( &#45; ),  8( &#8249; ),  9( &#8250; ),  10( &#8226; ), 11( &#183; ), 12( &#151; ) or 13( &#124; )."),
- 
-     array(    "name" => "Noindex Date Archive Pages?",
-            "id" => $shortname."_archive_noindex",
-            "type" => "select",
-            "std" => "No",
-            "options" => array("No", "Yes"),
-            "info" => "Include meta tag \"noindex, follow\" into date based archive pages? The purpose is to keep search engines from spidering duplicate content from your site. Default is <strong>No</strong>"),
-
-     array(    "name" => "Noindex Category pages?",
-            "id" => $shortname."_cat_noindex",
-            "type" => "select",
-            "std" => "No",
-            "options" => array("No", "Yes"),
-            "info" => "Include meta tag \"noindex, follow\" into category pages? Same purpose as above. Default is <strong>No</strong>"),
-
-     array(    "name" => "Noindex Tag pages?",
-            "id" => $shortname."_tag_noindex",
-            "type" => "select",
-            "std" => "No",
-            "options" => array("No", "Yes"),
-            "info" => "Include meta tag \"noindex, follow\" into tag pages? Same purpose as above. Default is <strong>No</strong>"),
-
-     array(    "name" => "Nofollow RSS, trackback & admin links?",
-            "id" => $shortname."_nofollow",
-            "type" => "select",
-            "std" => "No",
-            "options" => array("No", "Yes"),
-            "info" => "Make RSS, trackback & admin links \"nofollow\"? Same purpose as above. Default is <strong>No</strong>"),
-
-    array(    "name" => "Body Font",
-            "id" => $shortname."_body_font",
-            "type" => "select",
-            "std" => "Tahoma",
-            "options" => array("Tahoma", "Arial", "Calibri", "Cambria", "Candara", "Comic Sans MS", "Consolas", "Constantia", "Corbel", "Courier New", "Georgia", "Times New Roman", "Trebuchet MS", "Verdana"),
-            "info" => "The font face for the main content. Default: <strong>Tahoma</strong>"),
-          
-    array(    "name" => "Body Backup Font",
-            "id" => $shortname."_body_backup_font",
-            "type" => "select",
-            "std" => "Arial, sans-serif",
-            "options" => array("Arial, sans-serif", "Calibri, sans-serif", "Cambria, serif", "Candara, sans-serif", "Comic Sans MS, sans-serif", "Consolas, sans-serif", "Constantia, serif", "Corbel, sans-serif", "Courier New, sans-serif", "Georgia, serif", "Tahoma, sans-serif", "Times New Roman, serif", "Trebuchet MS, sans-serif", "Verdana, sans-serif"),
-            "info" => "Show this font for users that don't have the main font face (option above) installed on their computer. Default: <strong>Arial, sans serif</strong>"),
-
-    array(    "name" => "Body Font Size",
-            "id" => $shortname."_body_font_size",
-            "std" => "80",
-            "type" => "text",
-            "info" => "In % (percent). Default: <strong>80</strong>"),
-                                                        
-    array(    "name" => "Link Default Color",
-            "id" => $shortname."_link_color",
-            "std" => "666666",
-            "type" => "text",
-            "info" => "All hex color codes. Default: <strong>666666</strong>"),
-
-    array(    "name" => "Link Hover Color",
-            "id" => $shortname."_link_hover_color",
-            "std" => "cc0000",
-            "type" => "text",
-            "info" => "Color of links when \"hovering\" over them with the mouse pointer. All hex color codes. Default: <strong>cc0000</strong>"),
-
-    array(    "name" => "Link Default Decoration",
-            "id" => $shortname."_link_default_decoration",
-            "type" => "select",
-            "std" => "none",
-            "options" => array("none", "underline"),
-            "info" => "Underline links or not, in their default state? Default: <strong>none</strong>"),
-
-    array(    "name" => "Link Hover Decoration",
-            "id" => $shortname."_link_hover_decoration",
-            "type" => "select",
-            "std" => "underline",
-            "options" => array("underline", "none"),
-            "info" => "When the mouse pointer hovers over a link, underline it or not? Default: <strong>underline</strong>"),        
-
-    array(    "name" => "Link Text Bold or Not",
-            "id" => $shortname."_link_weight",
-            "type" => "select",
-            "std" => "bold",
-            "options" => array("bold", "normal"),
-            "info" => "Make link text bold or not? Default: <strong>bold</strong>"),
-
-    array(    "name" => "Body Margin Left/Right",
-            "id" => $shortname."_body_left_right_margin",
-            "std" => "10",
-            "type" => "text",
-            "info" => "In the default setup, there's some space on the left and right hand side of the layout. You can increase that, or set it to \"0\" to make the layout stretch from left to right 100%. Default: <strong>10</strong> (pixels)"),
-
-    array(    "name" => "Show Top Menu Bar?",
-            "id" => $shortname."_show_top_menu_bar",
-             "type" => "select",
-            "std" => "Yes",
-            "options" => array("Yes", "No"),
-            "info" => "Show the Top Menu Bar for \"Pages\" at the very top of the layout? Default: <strong>Yes</strong>.<br /><br /> <em>To put the navigation for \"Pages\" into a sidebar, go to Admin -> Design (\"Presentation\" in WP 2.3 and older) -> Widgets, and add the \"Pages\" widget to one of the sidebars.</em>"),
-
-    array(    "name" => "Show Header Logo Area?",
-            "id" => $shortname."_show_logo_area",
-             "type" => "select",
-            "std" => "Yes",
-            "options" => array("Yes", "No"),
-            "info" => "Show the whole area BETWEEN the Top Menu Bar and the Header Image? If set to \"No\", the Logo Icon, the Blog Title, the Blog Tagline, the RSS Icon, the Header Search Box, and the whole area containing those will dissapear, and the next 4 setttings will become obsolete. Default: <strong>Yes</strong>.<br /><br /> <em>If you set this to \"No\" you will have no Blog Title anymore. Choose \"Yes\" at \"Overlay Blog Title over Header Image(s)?\" below, to get a Blog Title again. </em>"),
-
-    array(    "name" => "Show Logo Icon?",
-            "id" => $shortname."_show_logo_icon",
-             "type" => "select",
-            "std" => "Yes",
-            "options" => array("Yes", "No"),
-            "info" => "Show the graphic on the left hand side of the blog title? Default: <strong>Yes</strong>.<br /><br /> <em>To use your own graphic, leave this option at <strong>Yes</strong> and " . $logo_icon_text),
-
-    array(    "name" => "Show search box in header area?",
-            "id" => $shortname."_show_search_box",
-            "type" => "select",
-            "std" => "Yes",
-            "options" => array("Yes", "No"),
-            "info" => "You can remove the search box from the header here. Default: <strong>Yes</strong>. <br /><br /><em>To put a search box into one of the sidebars, go to Admin -> Design (Presentation in WP 2.3 and older) -> Widgets, and add the \"Search\" widget to one of the sidebars.</em>"),
-
-    array(    "name" => "Search box width",
-            "id" => $shortname."_searchbox_width",
-            "std" => "15",
-            "type" => "text",
-            "info" => "Width of the searchbox in the header. For a visually pleasing result you should probably set this to the same value as \"Right sidebar width\" (see option below), unless you have removed the right sidebar. Default: <strong>15</strong>."),
-
-    array(    "name" => "Show RSS icon in header area?",
-            "id" => $shortname."_show_rss_icon",
-            "type" => "select",
-            "std" => "Yes",
-            "options" => array("Yes", "No"),
-            "info" => "You can remove the RSS icon from the header here. Default: <strong>Yes</strong>."),
-
-    array(    "name" => "Show Header Image(s)?",
-            "id" => $shortname."_show_header_image",
-            "type" => "select",
-            "std" => "Yes",
-            "options" => array("Yes", "No"),
-            "info" => "Choose whether to display Header Image(s) or not. If you chose \"No\" at \"Show Header Logo Area?\" (see a few options above), then you should leave this setting here at \"Yes\", and additionally set the next option \"Overlay Blog Title over Header Image?\" to \"Yes\", too, or you won't have a Blog Title anywhere. Default: <strong>Yes</strong>. " . $header_image_text),
-
-    array(    "name" => "Overlay Blog Title over Header Image(s)?",
-            "id" => $shortname."_overlay_blog_title",
-            "type" => "select",
-            "std" => "No",
-            "options" => array("No", "Yes - left aligned", "Yes - centered", "Yes - right aligned"),
-            "info" => "If you chose \"No\" at \"Show Header Logo Area?\" above, then you will have no blog title anywhere in the header area. This setting here is meant to provide an alternative location for the blog title. Default: <strong>No</strong>."),
-
-    array(    "name" => "Overlayed Blog Title Top Padding",
-            "id" => $shortname."_overlay_blog_title_top_padding",
-            "std" => "20",
-            "type" => "text",
-            "info" => "Top padding (the space above the blog title, in pixels) for an overlayed blog title. If you chose to overlay the blog title over the header image, you may adjust it's position here by moving it up and down. Default: <strong>20</strong> (pixels). <br /><br /><em>Increase this value to push the blog title down. </em>"),
-          
-    array(    "name" => "Header Image Height",
-            "id" => $shortname."_headerimage_height",
-            "std" => "150",
-            "type" => "text",
-            "info" => "Visible height of the header image(s), in pixels. Default: <strong>150</strong>. Change this value to show a taller or less tall area of the header image(s). <br /><br /><em>This value does not need to match the actual height of your header image(s). In fact, all your header images could have different (actual) heights. Only the top XXX (= value that you set here) pixels of each image will be shown, the rest will be hidden. </em>"),
-
-    array(    "name" => "Header Image Alignment",
-            "id" => $shortname."_headerimage_alignment",
-            "type" => "select",
-            "std" => "top center",
-            "options" => array("top center", "top left", "top right", "center left", "center center", "center right", "bottom left", "bottom center", "bottom right"),
-            "info" => "Default: <strong>top center</strong>. You should have header images with a width of 1300 pixels or wider to account for visitors with large monitors. If someone with, say a 1024 pixel monitor comes along, SOME part of the header image(s) will have to be cut off. Choose here which part to cut off. The aligned edge or end of the image will be the fixed part, and the image will be cut off from the opposite edge or end. <br /><br />Example: If you choose \"Top Left\" as the alignment, then the image(s) will be cut off from the opposite edge, which would be \"Bottom Right\" in this case, if the image doesn't fit into the visitor's browser viewport. Default: <strong>top center</strong>."),
-
-    array(    "name" => "Header Image Opacity",
-            "id" => $shortname."_header_opacity",
-            "std" => "40",
-            "type" => "text",
-            "info" => "Opacity overlay for the left and right hand side of the header image. Numeric values between 0 and 99. Put 0 here to remove the Opacity. Default: <strong>40</strong>. "),
-                                                    
-    array(    "name" => "Blog Title Color",
-            "id" => $shortname."_blog_title_color",
-            "std" => "666666",
-            "type" => "text",
-            "info" => "All hex color codes. Default: <strong>666666</strong>"),
-
-    array(    "name" => "Blog Title Hover Color",
-            "id" => $shortname."_blog_title_hover_color",
-            "std" => "000000",
-            "type" => "text",
-            "info" => "Color when hovering over the blog title. All hex color codes. Default: <strong>000000</strong>"),
-            
-    array(    "name" => "Blog Title Font",
-            "id" => $shortname."_blog_title_font",
-            "type" => "select",
-            "std" => "Tahoma",
-            "options" => array("Tahoma", "Arial", "Calibri", "Cambria", "Candara", "Comic Sans MS", "Consolas", "Constantia", "Corbel", "Courier New", "Georgia", "Times New Roman", "Trebuchet MS", "Verdana"),
-            "info" => "The font face for the blog title."),
-
-    array(    "name" => "Blog Title Backup Font",
-            "id" => $shortname."_blog_title_backup_font",
-            "type" => "select",
-            "std" => "Arial, sans-serif",
-            "options" => array("Arial, sans-serif", "Calibri, sans-serif", "Cambria, serif", "Candara, sans-serif", "Comic Sans MS, sans-serif", "Consolas, sans-serif", "Constantia, serif", "Corbel, sans-serif", "Courier New, sans-serif", "Georgia, serif", "Tahoma, sans-serif", "Times New Roman, serif", "Trebuchet MS, sans-serif", "Verdana, sans-serif"),
-            "info" => "The backup font for the blog title, for visitors that don't have the default font (see one option above) available on their computer."),
-
-    array(    "name" => "Blog Title Font Size",
-            "id" => $shortname."_blog_title_fontsize",
-            "std" => "2.5",
-            "type" => "text",
-            "info" => "All numeric values such as <strong>2.5</strong>, <strong>3</strong> or <strong>1.92</strong>. Default: <strong>2.5</strong>"),
-
-    array(    "name" => "Blog Tagline Color",
-            "id" => $shortname."_blog_tagline_color",
-            "std" => "666666",
-            "type" => "text",
-            "info" => "All hex color codes. Default: <strong>666666</strong>"),
-
-    array(    "name" => "Post Title Color (h2)",
-            "id" => $shortname."_h2_color",
-            "std" => "666666",
-            "type" => "text",
-            "info" => "This will be used for post and page titles that are not linked, i.e. on single post pages, \"page\" pages, and for the titles on category, archive, tag and search result pages. Default: <strong>666666</strong><br /><br />If you use a <strong>h2</strong> heading within posts or pages, this color would be used there, too. You should probably not use h2 within posts and pages and leave h2 to the auto-generated post and page titles. h3 would be well suited for titles of paragraphs within post and page text."),
-            
-    array(    "name" => "Post Title Link Color",
-            "id" => $shortname."_post_title_color",
-            "std" => "666666",
-            "type" => "text",
-            "info" => "Used for the linked post tiles, on the home page, archive, category, tag and search pages. All hex color codes. Default: <strong>666666</strong>"),
-
-    array(    "name" => "Post Title Link Hover Color",
-            "id" => $shortname."_post_title_hover_color",
-            "std" => "000000",
-            "type" => "text",
-            "info" => "For linked post titles. All hex color codes. Default: <strong>000000</strong>"),
-            
-    array(    "name" => "Sidebars: Title Color",
-            "id" => $shortname."_sidebar_title_color",
-            "std" => "555555",
-            "type" => "text",
-            "info" => "Color of the widget/section titles in the sidebars. All hex color codes. Default: <strong>555555</strong>"),
-
-    array(    "name" => "Sidebars: Title Size",
-            "id" => $shortname."_sidebar_title_size",
-            "std" => "1.3",
-            "type" => "text",
-            "info" => "Font size of the widget/section titles in the sidebars, in \"em\". Default: <strong>1.3</strong>. Any numerical values such as <strong>1.23</strong>, <strong>2</strong> or <strong>0.9</strong>"),
-
-    array(    "name" => "Sidebars: Link Default Color",
-            "id" => $shortname."_sidebar_link_color",
-            "std" => "666666",
-            "type" => "text",
-            "info" => "Default color of link text in a sidebar. All hex color codes. Default: <strong>666666</strong>"),
-
-    array(    "name" => "Sidebars: Link Hover Color",
-            "id" => $shortname."_sidebar_link_hover_color",
-            "std" => "000000",
-            "type" => "text",
-            "info" => "Hover color of link text in a sidebar. All hex color codes. Default: <strong>000000</strong>"),
-
-    array(    "name" => "Sidebars: Link Decoration Color",
-            "id" => $shortname."_sidebar_link_decoration_color",
-            "std" => "dddddd",
-            "type" => "text",
-            "info" => "Default color of the little (by default: gray) boxes on the left hand side of each link in the sidebar. All hex color codes. Default: <strong>dddddd</strong>"),
-
-    array(    "name" => "Sidebars: Link Hover Decoration Color",
-            "id" => $shortname."_sidebar_link_decoration_hover_color",
-            "std" => "000000",
-            "type" => "text",
-            "info" => "Hover color of the little (by default: gray, and in hover state: black) boxes on the left hand side of each link in the sidebar. All hex color codes. Default: <strong>000000</strong>"),
-
-    array(    "name" => "Sidebars: Link Decoration Size",
-            "id" => $shortname."_sidebar_link_decoration_size",
-            "std" => "7",
-            "type" => "text",
-            "info" => "Width (in pixels) of the little boxes on the left hand side of each link in the sidebar. Default: <strong>7</strong>. Set to 0 to remove those boxes. If you remove them, you could start using the default \"Recent Comments\" widget of WordPress because the styling shouldn't look messed up anymore. "),
-            
-    array(    "name" => "Posts or excerpts on HOME page?",
-            "id" => $shortname."_excerpts_home",
-            "type" => "select",
-            "std" => "Full Posts",
-            "options" => array("Only Excerpts", "Full Posts"),
-            "info" => "Show full posts or only excerpts, on the Homepage? Default: <strong>Full Posts</strong>."),
-            
-    array(    "name" => "Posts or excerpts on CATEGORY pages?",
-            "id" => $shortname."_excerpts_category",
-            "type" => "select",
-            "std" => "Only Excerpts",
-            "options" => array("Only Excerpts", "Full Posts"),
-            "info" => "Show full posts or only excerpts, on Category pages? Default: <strong>Only Excerpts</strong>."),
-            
-    array(    "name" => "Posts or excerpts on ARCHIVE pages?",
-            "id" => $shortname."_excerpts_archive",
-            "type" => "select",
-            "std" => "Only Excerpts",
-            "options" => array("Only Excerpts", "Full Posts"),
-            "info" => "Show full posts or only excerpts, on (date based) Archive pages? Default: <strong>Only Excerpts</strong>."),
-
-    array(    "name" => "Posts or excerpts on TAG pages?",
-            "id" => $shortname."_excerpts_tag",
-            "type" => "select",
-            "std" => "Only Excerpts",
-            "options" => array("Only Excerpts", "Full Posts"),
-            "info" => "Show full posts or only excerpts, on Tag pages? Default: <strong>Only Excerpts</strong>."),
-            
-    array(    "name" => "Posts or excerpts on SEARCH RESULT pages?",
-            "id" => $shortname."_excerpts_search",
-            "type" => "select",
-            "std" => "Only Excerpts",
-            "options" => array("Only Excerpts", "Full Posts"),
-            "info" => "Show full posts or only excerpts, on Search Result pages? Default: <strong>Only Excerpts</strong>."),
-
-     array(    "name" => "Layout min width",
-            "id" => $shortname."_min_width",
-            "std" => "800",
-            "type" => "text",
-            "info" => "The width (in pixels) at which the layout will stop shrinking, and start to show a horizontal scrollbar instead. Default: <strong>800</strong>. <br /><br /><strong>As a rough estimate, this value should be approx. (width of your widest image) + 420 pixels</strong>, IF you use the default setup with 2 sidebars, each 15em wide. How to find the optimal min-width: Surf to a post or page with your biggest image, resize your browser window so that the image barely fits into the main column, estimate the current browser viewport width based on your screen size (i.e. current browser window width 3/4 of a 1280 pixels monitor = around 960 pixels), and add 50 or so pixels to be sure (IE6 will start dropping a little before the other browsers start overlapping).<br /><br /><em>This setting is needed mainly for IE6 because it will drop the sidebars below the main column, if you have images in the main column that are too big for the browser viewport (screen width) of a given visitor. This setting will benefit other browsers too, because otherwise, an image that is too big would overlap parts of the right sidebar if the browser viewport is too small for the given image. </em> "),
-                                           
-     array(    "name" => "Left sidebar width",
-            "id" => $shortname."_leftcolumn_width",
-            "std" => "15",
-            "type" => "text",
-            "info" => "Numbers between 10-25 make sense. Default: <strong>15</strong>. Put 0 here to make the left sidebar dissapear. You'll have a 2 column layout then."),
-                                                           
-     array(    "name" => "Right sidebar width",
-            "id" => $shortname."_rightcolumn_width",
-            "std" => "15",
-            "type" => "text",
-            "info" => "Numbers between 10-25 make sense. Default: <strong>15</strong>. Put 0 here to make the right sidebar dissapear. You'll have a 2 column layout then."),
-
-    array(    "name" => "Allow comments on \"Page\" pages, too?",
-            "id" => $shortname."_comments_on_pages",
-            "type" => "select",
-            "std" => "No",
-            "options" => array("No", "Yes"),
-            "info" => "Set to Yes to have a comment form (and comments if any) on \"Page\" pages, too, and not only on Post pages. Default: <strong>No</strong>."),
-
-     array(    "name" => "Copyright start year",
-           "id" => $shortname."_copyright_start_year",
-            "std" => "",
-            "type" => "text",
-            "info" => "Start year for copyright notice at bottom of page: &copy; <strong>XXXX</strong> - [current year]. (The current year will be included automatically). Default: <strong>blank</strong>.<br /><br /><em> Example: If you put <strong>2006</strong> into this field, then in 2008 it will read \"2006-2008\" on your page, and on 1-1-2009 it will change to \"2006-2009\", and so on... </em>"),
-);
+// get the theme options
+include (TEMPLATEPATH . '/functions/bfa_theme_options.php');
 
 function mytheme_add_admin() {
     global $themename, $shortname, $options;
     if ( $_GET['page'] == basename(__FILE__) ) {
         if ( 'save' == $_REQUEST['action'] ) {
-                foreach ($options as $value) {
-                    update_option( $value['id'], $_REQUEST[ $value['id'] ] ); }
-                foreach ($options as $value) {
-                    if( isset( $_REQUEST[ $value['id'] ] ) ) { update_option( $value['id'], $_REQUEST[ $value['id'] ]  ); } else { delete_option( $value['id'] ); } }
-                header("Location: themes.php?page=functions.php&saved=true");
-                die;
-        } else if( 'reset' == $_REQUEST['action'] ) {
+ 
+			foreach ($options as $value) {
+               	if ( $value['escape'] == "yes" ) {  
+					update_option( $value['id'], stripslashes(bfa_escape($_REQUEST[ $value['id'] ] )));  
+				} elseif ( $value['stripslashes'] == "no" ) {   
+					update_option( $value['id'], $_REQUEST[ $value['id'] ] ); 
+				} else {
+					update_option( $value['id'], stripslashes($_REQUEST[ $value['id'] ] )); 
+				}
+			}
+				
             foreach ($options as $value) {
-                delete_option( $value['id'] ); }
+               	if ( $value['escape'] == "yes" ) {
+					if( isset( $_REQUEST[ $value['id'] ] ) ) { 
+						update_option( $value['id'], stripslashes(bfa_escape($_REQUEST[ $value['id'] ]  ))); 
+					} else { 
+						delete_option( $value['id'] ); 
+					} 
+				} elseif ($value['stripslashes'] == "no") { 
+					if( isset( $_REQUEST[ $value['id'] ] ) ) { 
+						update_option( $value['id'], $_REQUEST[ $value['id'] ]  ); 
+					} else { 
+						delete_option( $value['id'] ); 
+					} 
+				} else { 
+					if( isset( $_REQUEST[ $value['id'] ] ) ) { 
+						update_option( $value['id'], stripslashes($_REQUEST[ $value['id'] ]  )); 
+					} else { 
+						delete_option( $value['id'] ); 
+					} 
+				} 
+			} 
+				
+            header("Location: themes.php?page=functions.php&saved=true");
+            die;
+
+		} else if( 'reset' == $_REQUEST['action'] ) {
+            foreach ($options as $value) {
+                delete_option( $value['id'] ); 
+				}
             header("Location: themes.php?page=functions.php&reset=true");
             die;
         }
     }
-    add_theme_page($themename." Options", "Atahualpa Theme Options", 'edit_themes', basename(__FILE__), 'mytheme_admin');
+    add_theme_page($themename. __(" Options","atahualpa"), __("Atahualpa Theme Options","atahualpa"), 'edit_themes', basename(__FILE__), 'mytheme_admin');
 }
+
 function mytheme_admin() {
     global $themename, $shortname, $options;
-    if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings saved.</strong></p></div>';
-    if ( $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings reset.</strong></p></div>';
+    if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename. __(' settings saved.','atahualpa').'</strong></p></div>';
+    if ( $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename. __(' settings reset.','atahualpa').'</strong></p></div>';
 ?>
+<?php 
+#
+$theme_name = "Atahualpa";
+$theme_version = "3.1";
+#
+$border_styles = array("solid", "dotted", "dashed", "double", "groove", "ridge", "inset", "outset");
+$background_repeat = array("vertic. and horiz.", "vertically", "horizontally", "don't repeat");
+$background_position = array("top left", "top center", "top right", "center left", "center center", "center right", "bottom left", "bottom center", "bottom right");
+$background_attachment = array("scroll", "fixed");
+$background_image_location = array("Remote: http://", "Local: /themes/atahualpa3/images/");
+$font_family = array("Tahoma", "Arial", "Calibri", "Cambria", "Candara", "Comic Sans MS", "Consolas", "Constantia", "Corbel", "Courier New", "Georgia", "Times New Roman", "Trebuchet MS", "Verdana");
+$font_family_backup = array("Tahoma, sans-serif", "Arial, sans-serif", "Calibri, sans-serif", "Cambria, serif", "Candara, sans-serif", "Comic Sans MS, sans-serif", "Consolas, sans-serif", "Constantia, serif", "Corbel, sans-serif", "Courier New, sans-serif", "Georgia, serif", "Times New Roman, serif", "Trebuchet MS, sans-serif", "Verdana, sans-serif");
+$font_size = array("0.5", "0.55", "0.6", "0.65", "0.7", "0.75", "0.8", "0.85", "0.9", "0.95", "1", "1.05", "1.1", "1.15", "1.2", "1.25", "1.3", "1.35", "1.4", "1.45", "1.5", "1.55", "1.6", "1.65", "1.7", "1.75", "1.8", "1.85", "1.9", "1.95", "2", "2.05", "2.1", "2.15", "2.2", "2.25", "2.3", "2.35", "2.4", "2.45", "2.5", "2.55", "2.6", "2.65", "2.7", "2.75", "2.8", "2.85", "2.9", "2.95", "3", "3.05", "3.1", "3.15", "3.2", "3.25", "3.3", "3.35", "3.4", "3.45", "3.5", "3.55", "3.6", "3.65", "3.7", "3.75", "3.8", "3.85", "3.9", "3.95", "4");
+$font_weight = array("normal", "bold");
+$font_style =array("normal", "italic");
+$text_align = array("left", "center", "right", "justify");
+$line_height = array("normal", "0.7", "0.75", "0.8", "0.85", "0.9", "0.95", "1", "1.05", "1.1", "1.15", "1.2", "1.25", "1.3", "1.35", "1.4", "1.45", "1.5", "1.55", "1.6", "1.65", "1.7", "1.75", "1.8", "1.85", "1.9", "1.95", "2");
+$text_transform = array("none", "capitalize", "uppercase", "lowercase");
+$text_decoration = array("none", "underline", "overline", "line-through");
+$url_base = get_bloginfo('template_directory');
+?>
+<table width="100%" cellpadding="2" cellspacing="0"><tr><td valign="middle" width="380"><h2 style="margin:0 30px 0 0; padding: 5px 0 5px 0;"><?php echo $theme_name . " " . $theme_version; ?> Theme Options</h2></td><td valign="middle"><iframe src="http://wordpress.bytesforall.com/update.php?theme=<?php echo $theme_name; ?>&version=<?php echo $theme_version; ?>" width="98%" height="40" scrolling="no" frameborder="0"></iframe></td>
+</tr></table>
 <div class="wrap">
-<h2><?php echo $themename; ?> settings</h2>
-<form method="post">
-<table class="optiontable">
-<?php foreach ($options as $value) {
+<form method="post"><ul id="bfaoptiontabs" class="shadetabs">
+<li><a href="#" rel="start-here" class="selected"><?php _e('START','atahualpa'); ?></a></li>
+<li><a href="#" rel="seo"><?php _e('SEO','atahualpa'); ?></a></li>
+<li><a href="#" rel="body-font-links"><?php _e('Body, Text &amp; Links','atahualpa'); ?></a></li>
+<li><a href="#" rel="layout"><?php _e('Layout','atahualpa'); ?></a></li>
+<li><a href="#" rel="favicon"><?php _e('Favicon','atahualpa'); ?></a></li>
+<li><a href="#" rel="header"><?php _e('Header','atahualpa'); ?></a></li>
+<li><a href="#" rel="header-image"><?php _e('Header Image','atahualpa'); ?></a></li>
+<li><a href="#" rel="feed-links"><?php _e('RSS Feed Links','atahualpa'); ?></a></li>
+<li><a href="#" rel="page-menu-bar"><?php _e('Page Menu Bar','atahualpa'); ?></a></li>
+<li><a href="#" rel="cat-menu-bar"><?php _e('Category Menu Bar','atahualpa'); ?></a></li>
+<li><a href="#" rel="center"><?php _e('Center','atahualpa'); ?></a></li>
+<li><a href="#" rel="next-prev-nav"><?php _e('Next/Previous Navigation','atahualpa'); ?></a></li>
+<li><a href="#" rel="sidebars"><?php _e('Sidebars','atahualpa'); ?></a></li>
+<li><a href="#" rel="widgets"><?php _e('Widgets','atahualpa'); ?></a></li>
+<li><a href="#" rel="postinfos"><?php _e('Post/Page Info Items','atahualpa'); ?></a></li>
+<li><a href="#" rel="posts"><?php _e('Post/Page Styling','atahualpa'); ?></a></li>
+<li><a href="#" rel="posts-or-excerpts"><?php _e('Posts or Excerpts','atahualpa'); ?></a></li>
+<li><a href="#" rel="more-tag"><?php _e('"Read More" tag','atahualpa'); ?></a></li>
+<li><a href="#" rel="comments"><?php _e('Comments','atahualpa'); ?></a></li>
+<li><a href="#" rel="footer-style"><?php _e('Footer','atahualpa'); ?></a></li>
+<li><a href="#" rel="tables"><?php _e('Tables','atahualpa'); ?></a></li>
+<li><a href="#" rel="forms"><?php _e('Forms','atahualpa'); ?></a></li>
+<li><a href="#" rel="blockquotes"><?php _e('Blockquotes','atahualpa'); ?></a></li>
+<li><a href="#" rel="images"><?php _e('Images','atahualpa'); ?></a></li>
+<li><a href="#" rel="html-inserts"><?php _e('HTML/CSS Inserts','atahualpa'); ?></a></li>
+<li><a href="#" rel="archives-page"><?php _e('Archives Page','atahualpa'); ?></a></li>
+</ul>
+
+<div id="start-here" class="tabcontent">   <!-- opening the first tab content div, first option should be start-here, in the options array above //-->
+<?php foreach ($options as $value) {     # start the options loop, check first, if we need to switch to another tab = option category
+
+# open/close category tab divs
+	if ( eregi("switchto:", $value['category'])) {     
+	$new_category = ereg_replace("switchto:", "", $value['category']); 
+	echo "</div>\n<div id=\"$new_category\" class=\"tabcontent\">\n";
+	}
+
+# extra info for some categories
+
+if($value['category'] == "switchto:postinfos") { ?>
+<div class="bfa-container">
+    <div class="bfa-container-full"><img src="<?php echo get_bloginfo('template_directory'); ?>/options/images/post-structure.gif" style="float: right; margin: 40px 0 15px 15px;">
+	<?php _e("<label for=\"Post Info Items\">Post Info Items</label><br /><br />
+	Configure a <strong>Kicker</strong>, a <strong>Byline</strong> and a <strong>Footer</strong> for posts and pages by arranging these <strong>Post Info Items</strong>. 
+	<br /><br />Some of these post info items have one or several <strong>parameters</strong>: 
+<ul>
+	<li>You can leave parameters empty but do not remove their single quotes, even if the parameter is empty.</li>
+	<li>Replace the parameter <code>delimiter</code> with what you want to put between the list items of the tag or category list, i.e. a comma.</li>
+	<li>Replace the parameters <code>before</code> and <code>after</code> with what you want to display before or after that info item. If an item has these \"before/after\" parameters, use them instead of 
+	hard coding text before and after that item: Example: Use <br /><code>%tags-linked('<i>Tags: </i>', '<i>, </i>', '<i> - </i>')%</code><br />instead of<br /><code>Tags: %tags-linked('', '<i>, </i>', '')% - </code></li>
+	<li>Replace the parameter <code>linktext</code> with the link text for that item.</li>
+</ul>
+HTML and <strong>icons</strong> can be used, inside of parameters, too, just not inside the date item:
+<ul>
+<li><code>&lt;image(someimage.gif)&gt;</code> to include an image. <em>Note: The image item doesn't have quotes</em></li>
+<li>To use your own images, upload them to /[theme-folder]/images/icons/</li>
+</ul>
+	<h3>Icons</h3>
+<strong>Currently available images (Once you uploaded yours they will be listed here):</strong><br /><br />","atahualpa"); ?>
+<?php
+if ($handle = opendir( TEMPLATEPATH . '/images/icons/')) {
+    while (false !== ($file = readdir($handle))) {
+		if ($file != "." && $file != "..") {
+		$files[] = $file;
+		}
+	}
+    closedir($handle);
+}
+sort($files);
+foreach ($files as $key => $file) {
+        echo '<span style="float:left; width: 280px; margin-right: 10px; height: 22px;"><img src="' . get_bloginfo('template_directory') . '/images/icons/' . "$file" . '" /> &nbsp;<code>&lt;image(' . "$file" . ')&gt;</code></span>';
+}
+?>
+<div style="clear:left">&nbsp;</div>
+<?php _e("<h3>Examples</h3>
+Examples for <strong>Post Bylines</strong>:
+<ul>
+	<li><code>By %author%, on %date('<i>F jS, Y</i>')%</code></li>
+	<li><code>&lt;strong&gt;%author-linked%&lt;/strong&gt; posted this in &lt;strong&gt;%categories-linked('<i>, </i>')%&lt;/strong&gt; on &lt;em&gt;%date('<i>F jS, Y</i>')%&lt;/em&gt;</code></li>
+	<li><code>&lt;image(user.gif)&gt; %author-linked% &lt;image(date.gif)&gt; %date('<i>l, jS \of F Y \a\t h:i:s A</i>')%</code></li>
+	</ul>
+Examples for <strong>Post Footers</strong>:
+	<ul>
+	<li><code>%tags-linked('<i>&lt;strong&gt;Tags:&lt;/strong&gt; </i>', '<i>, </i>', '<i> &amp;mdash; </i>')% &lt;strong&gt;Categories:&lt;/strong&gt; %categories-linked('<i>, </i>')% &amp;mdash; %comments('<i>Nobody has commented yet, kick it off...</i>', '<i>One comment so far</i>', '<i>% people had their say - be the next!</i>', '<i>Sorry, but comments are closed</i>')% &amp;mdash;  
+	%wp-print% &amp;mdash; %wp-email% &amp;mdash; %sociable% &amp;mdash; %wp-postviews%</code></li>
+	</ul>
+	
+	<h3>Post Info Items</h3>
+	List of available post info items:
+<br /><h4>%author%</h4>
+Prints the name of the author of the post.
+<br /><h4>%author-linked%</h4>
+Prints the name of the author of the post, and links it to a page listing all posts by that author.
+<br /><h4>%date('F jS, Y')%</h4>
+Prints the date and/or time the post was published at. Many configuration options at <a href='http://www.php.net/date'>PHP Date</a>. 
+Because most letters of the alphabet represent a certain date/time output function, you will have to <strong>escape</strong> each letter that you want to display LITERALLY, for instance, to 
+include words like <strong>at</strong>, <strong>on</strong>, or <strong>the</strong> somewhere <strong>inside</strong> the date output. <strong>Escaping</strong> a letter means to put a backslash <strong>\</strong> right before that letter. 
+That will tell PHP that you mean the actual letter and not the corresponding date function.<br /><br />
+<strong>How to escape literal strings</strong>
+<ul><li>on -> <code>&#092;o&#092;n</code></li>
+<li>of -> <code>&#092;of</code> &nbsp;&nbsp;<em>(Note how the the lowercase <strong>f</strong> didn't get a backslash. That's because <strong>f</strong> is one of the letters of the alphabet that does not represent a PHP date function)</em></li>
+<li>at -> <code>&#092;a&#092;t</code></li>
+<li>the -> <code>&#092;t&#092;h&#092;e</code></li>
+<li>The arrows just illustrate how to change a word to display it literally inside a date function, don't use them</li>
+</ul>
+<strong>Examples:</strong>
+	<ul>
+	<li><code>%date('<i>F j, Y, &#092;a&#092;t g:i a</i>')%</code> displays: December 10, 2008, at 5:16 pm <br />
+	<em>Note how the letters <strong>a</strong> and <strong>t</strong> of the word <strong>at</strong> are <strong>escaped</strong> with backslashes 
+	to display them literally instead of being interpreted as a PHP date function.</em>
+	</li>
+	<li><code>%date('<i>F j, Y, g:i a</i>')%</code> displays: December 10, 2008, 5:16 pm
+	</li>
+	<li><code>%date('<i>m.d.y</i>')%</code> displays: 10.12.08
+	</li>
+	</ul>
+<br /><h4>%category%</h4>
+Prints the name of the <strong>first</strong> category the post is filed under.
+<br /><h4>%category-linked%</h4>
+Prints the name of the <strong>first</strong> category the post is filed under and links the name to that category page.
+<br /><h4>%categories('delimiter')%</h4>
+Prints the names of <strong>all</strong> categories the post is filed under, separated by delimiter.
+<br /><strong>Example:</strong> <code>%categories('<i>, </i>')%</code>
+<br /><h4>%categories-linked('delimiter')%</h4>
+Prints the names of <strong>all</strong> categories the post is filed under, separated by delimiter, and links each name to the respective category page.
+<br /><strong>Example:</strong> <code>%categories-linked('<i> | </i>')%</code>
+<br /><h4>%tags('before', 'delimiter', 'after')%</h4>
+Prints the names of all tags attached to the post, separated by delimiter.
+<br /><strong>Example:</strong> <code>%tags('<i>Tags: </i>', '<i>, </i>', '')%</code>
+<br /><h4>%tags-linked('before', 'delimiter', 'after')%</h4>
+Prints the names of all tags attached to the post, separated by delimiter, and links each name to the respective tag page.
+<br /><strong>Example:</strong> <code>%tags-linked('<i>Tagged with: </i>', '<i> - </i>', '<i>. </i>')%</code>
+<br /><h4>%comments('No comments', '1 comment', '% comments', 'Comments closed')%</h4>
+Prints a link to the comment section of the post. The link text depends on the comment count & status (open/closed). 
+<br /><br /><strong>When using this item, provide 4 text strings for the 4 possible comment states:</strong> <ul>
+<li>Replace <code>'No Comments'</code> with your link text for posts that have no comments yet</li>
+<li>Replace <code>'1 comment'</code> with your text for posts with 1 comment</li>
+<li>Replace <code>'% comments'</code> with your text for posts with 2 or more comments. The <code>%</code> (percent) character 
+will be replaced with the comment count. Use that character in your own text, too, unless you do not want to display the comment count.</li>
+<li>Replace <code>'Comments closed'</code> with your text for posts where comments are closed.</li>
+</ul>
+<br /><strong>Example:</strong> <code>%comments('<i>Leave your comment</i>', '<i>One comment so far</i>', '<i>% people had their say - chime in!</i>', '<i>Sorry, but comments are closed</i>')%</code>
+<br /><h4>%comments-rss('linktext')%</h4>
+Prints a link to the RSS feed of the post's comments, with <em>linktext</em> as the link text.
+<br /><strong>Example:</strong> <code>%comments-rss('<i>Subscribe to the comments of this post</i>')%</code>
+<br /><h4>%trackback%</h4>
+Prints the trackback URL of the post, without linking it.
+<br /><h4>%trackback-linked('linktext')%</h4>
+Prints a link to the trackback URL of the post, with <em>linktext</em> as the link text.
+<br /><strong>Example:</strong> <code>%trackback-linked('<i>Trackback this Post</i>')%</code>
+<br /><h4>%print('linktext')%</h4>
+Prints a link with <em>linktext</em> as the link text, which, when clicked, will start printing the content of the center column of the current page, without header, sidebars and footer.
+<br /><strong>Example:</strong> <code>%print('<i>Print this Page</i>')%</code>
+<br /><h4>%edit('before', 'linktext', 'after')%</h4>
+Prints a direct edit link for the post, IF the current viewer is permitted to edit posts, with <em>linktext</em> as the link text.
+<br /><strong>Example:</strong> <code>%edit('<i> - </i>', '<i>Edit This Post</i>', '')%</code>", "atahualpa"); ?>
+<br /><h4>%wp-print%</h4>
+<?php _e("Prints a link to a print preview page of the post. A configurable alternative to the theme's own basic print function (which prints right away, without preview page).","atahualpa"); ?><br />
+<?php echo ( function_exists('wp_print') ? 
+__('Customize the output at the <a title="If this link doesn\'t work, go to \'Settings\' (top right) -> \'Print\'" 
+href="options-general.php?page=wp-print/print-options.php">WP-Print Options Page</a>.','atahualpa') : 
+__('To use this item, you must first install (= upload) and activate the plugin "<a href="http://wordpress.org/extend/plugins/wp-print/">WP-Print</a>"','atahualpa') ); ?>
+<br /><h4>%wp-email%</h4>
+<?php _e("Prints a link to a form where visitors can e-mail the post to others.","atahualpa"); ?><br />
+<?php echo ( function_exists('wp_email') ? 
+__('Customize the output at the <a title="If this link doesn\'t work, click on \'E-Mail\' at the top of the current page, then \'E-Mail Options\'" 
+href="admin.php?page=wp-email/email-options.php">WP-Email Options Page</a>.<br />
+<strong>Settings:</strong> <ul><li>Change settings in the section "E-Mail Styles" to customize the output of this item</li>
+<li>Make other changes as you see fit</li>
+<li>Click "Save Changes"</li></ul>','atahualpa') : 
+__('To use this item, you must first install (= upload) and activate the plugin "<a href="http://wordpress.org/extend/plugins/wp-email/">WP-Email</a>"','atahualpa') ); ?>
+<br /><h4>%wp-postviews%</h4>
+<?php _e("Prints how many times the post was viewed.","atahualpa"); ?><br />
+<?php echo ( function_exists('the_views') ? 
+__('Customize the output at the <a title="If this link doesn\'t work, go to \'Settings\' (top right) -> \'Post Views\'" 
+href="options-general.php?page=wp-postviews/postviews-options.php">WP-PostViews Options Page</a>.<br />
+<strong>Settings:</strong> <ul><li>Change "Views Template" to customize the output of this item</li>
+<li>Make other changes as you see fit</li>
+<li>Click "Save Changes"</li></ul>','atahualpa') : 
+__('To use this item, you must first install (= upload) and activate the plugin "<a href="http://wordpress.org/extend/plugins/wp-postviews/">WP-PostViews</a>"','atahualpa') ); ?>
+<!-- used to work but currently messes up style.css.php
+<br /><h4>%wp-postratings%</h4>
+<?php _e("Prints stars or other graphics showing the vote/rating of a post, and lets visitors rate the post.","atahualpa"); ?><br />
+<?php echo ( function_exists('the_ratings') ? 
+__('Customize the output at the <a title="If this link doesn\'t work, click on \'Ratings\' at the top of the current page" 
+href="admin.php?page=wp-postratings/postratings-manager.php">WP-PostRatings Options Page</a>.<br />
+<strong>Settings:</strong> <ul><li>Delete <code>%RATINGS_TEXT%</code> from the bottom of the textarea named "Ratings Vote Text:"</li>
+<li>Delete <code>%RATINGS_TEXT%</code> from the bottom of the textarea named "Ratings None:"</li>
+<li>Make other changes as you see fit</li>
+<li>Click "Save Changes"</li></ul>','atahualpa') : 
+__('To use this item, you must first install (= upload) and activate the plugin "<a href="http://wordpress.org/extend/plugins/wp-postratings/">WP-PostRatings</a>"','atahualpa') ); ?>
+-->
+<br /><h4>%sociable%</h4>
+<?php _e("Prints little icons, linking the post to social bookmark sites.","atahualpa"); ?><br />
+<?php echo ( function_exists('sociable_html') ? 
+__('Customize the output at the <a title="If this link doesn\'t work, go to \'Settings\' (top right) -> \'Sociable\'" 
+href="options-general.php?page=Sociable">Sociable Options Page</a>.<br />
+<strong>Settings:</strong> <ul><li>"Tagline:" - Will be ignored</li><li>"Position:" - Uncheck all boxes</li><li>"Use CSS:" - Uncheck this</li>
+<li>"Open in new window:" - Check or uncheck, will be used</li><li>Click "Save Changes"</li></ul>','atahualpa') : 
+__('To use this item, you must first install (= upload) and activate the plugin "<a href="http://wordpress.org/extend/plugins/sociable/">Sociable</a>"','atahualpa') ); ?>
+    </div>
+</div>
+<?php } 
+#####################################################################
+#     TEXT                                                                                                     
+#####################################################################
 if ($value['type'] == "text") { ?>
-<tr valign="top">
-    <th scope="row"><?php echo $value['name']; ?>:</th>
-    <td>
-        <input <?php if (eregi("color", $value['id'])) { ?>class="color" <?php } ?>name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php if ( get_settings( $value['id'] ) != "") { echo get_settings( $value['id'] ); } else { echo $value['std']; } ?>" />
-    </td>
-    <td>
+<div class="bfa-container">
+    <div class="bfa-container-left"><label for="<?php echo $value['name']; ?>"><?php echo $value['name']; ?></label><br />
+        <input <?php if ($value['size'] != "") { echo "size=" . $value['size'] . ($value['size'] > 20 ? " style=\"width: 95%;\"" : " "); } ?><?php 
+		if (eregi("color", $value['id'])) { ?>class="color" <?php } ?>name="<?php echo $value['id']; ?>" id="<?php 
+		echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php 
+		if ( get_option( $value['id'] ) !== FALSE) { 
+			echo ( $value['editable'] == "yes" ? stripslashes(format_to_edit(get_option( $value['id'] ))) : get_option( $value['id'] ) ); 
+		} else { 
+			echo ( $value['editable'] == "yes" ? stripslashes(format_to_edit($value['std'])) : $value['std'] ); 
+		}
+		?>" />
+        <br /><?php _e('Default: ','atahualpa'); ?><strong>
+		<?php if ($value['std'] == "") { 
+			echo __("blank","atahualpa"); 
+		} else { 
+			echo ( $value['editable'] == "yes" ? stripslashes(format_to_edit($value['std'])) : $value['std'] ); } ?></strong>
+    </div>
+    <div class="bfa-container-right">
     <?php echo $value['info']; ?>
-    </td>
-    </tr><tr><td colspan="3"><HR NOSHADE SIZE=20 color="#eee"></td>
-</tr>
-<?php } elseif ($value['type'] == "textarea") { ?>
-<tr valign="top">
-    <th scope="row"><?php echo $value['name']; ?>:</th>
-    <td>
-        <textarea name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" cols="30" rows="6"><?php if ( get_settings( $value['id'] ) != "") { echo get_settings( $value['id'] ); } else { echo $value['std']; } ?></textarea>
-    </td>
-    <td>
-    <?php echo $value['info']; ?>
-    </td>
-    </tr><tr><td colspan="3"><HR NOSHADE SIZE=20 color="#eee"></td>
-</tr>
-<?php } elseif ($value['type'] == "select") { ?>
-    <tr valign="top">
-        <th scope="row"><?php echo $value['name']; ?>:</th>
-        <td>
-            <select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>">
-                <?php foreach ($value['options'] as $option) { ?>
-                <option<?php if ( get_settings( $value['id'] ) == $option) { echo ' selected="selected"'; } elseif ($option == $value['std']) { echo ' selected="selected"'; } ?>><?php echo $option; ?></option>
+    </div>
+  	<div style="clear:both"></div>  
+</div>
+<?php } 
+#####################################################################
+#     WIDGET LIST ITEMS                                                                                                     
+#####################################################################
+elseif ($value['type'] == "widget-list-items") { 
+# needed for multi array options
+$current_options = get_option( $value['id']);	
+?>
+<div class="bfa-container">
+<div class="bfa-container-full">
+<label for="<?php echo $value['name']; ?>"><?php echo $value['name']; ?></label>
+<br />
+<br />
+<?php echo $value['info']; ?>
+<br />
+<br />
+<table class="bfa-optiontable" border="0" cellspacing="0">
+	<thead>
+		<tr><td colspan="8"><?php _e('List items and links inside','atahualpa'); ?></td></tr>
+		</thead>
+<tbody>
+	<tr><td><?php _e('Left Margin for whole Item','atahualpa'); ?></td><td><?php _e('Left Border Width for Links','atahualpa'); ?></td><td><?php _e('Left Border Color for Links','atahualpa'); ?></td><td><?php _e('Left Border Hover Color for Links','atahualpa'); ?></td><td><?php _e('Left Padding for Links','atahualpa'); ?></td><td><?php _e('Link Text Weight','atahualpa'); ?></td><td><?php _e('Link Text Color','atahualpa'); ?></td><td><?php _e('Link Text Hover Color','atahualpa'); ?></td></tr>
+  <tr>
+  	<td>
+  			<select name="<?php echo $value['id'] . '[li-margin-left]'; ?>" id="<?php echo $value['id'] . '[li-margin-left]'; ?>">
+                <?php for ($i = 0; $i <= 20; $i++) { ?>
+                <option<?php if ( $current_options['li-margin-left'] == $i) { echo ' selected="selected"'; } elseif ( !isset($current_options['li-margin-left']) AND $i == $value['std']['li-margin-left']) { echo ' selected="selected"'; } ?>><?php echo $i; ?></option>
                 <?php } ?>
-            </select>
-        </td>
-        <td>
+        </select>
+  	</td>
+  	<td>
+  			<select name="<?php echo $value['id'] . '[link-border-left-width]'; ?>" id="<?php echo $value['id'] . '[link-border-left-width]'; ?>">
+                <?php for ($i = 0; $i <= 20; $i++) { ?>
+                <option<?php if ( $current_options['link-border-left-width'] == $i) { echo ' selected="selected"'; } elseif ( !isset($current_options['link-border-left-width']) AND $i == $value['std']['link-border-left-width']) { echo ' selected="selected"'; } ?>><?php echo $i; ?></option>
+                <?php } ?>
+        </select>
+  	</td>
+   	<td>
+        <input size="8" class="color" name="<?php echo $value['id'] . '[link-border-left-color]'; ?>" id="<?php echo $value['id'] . '[link-border-left-color]'; ?>" type="text" value="<?php if ( $current_options['link-border-left-color'] != "") { echo $current_options['link-border-left-color'] ; } else { echo $value['std']['link-border-left-color']; } ?>" />
+  	</td>
+   	<td>
+        <input size="8" class="color" name="<?php echo $value['id'] . '[link-border-left-hover-color]'; ?>" id="<?php echo $value['id'] . '[link-border-left-hover-color]'; ?>" type="text" value="<?php if ( $current_options['link-border-left-hover-color'] != "") { echo $current_options['link-border-left-hover-color'] ; } else { echo $value['std']['link-border-left-hover-color']; } ?>" />
+  	</td>
+  	<td>
+  			<select name="<?php echo $value['id'] . '[link-padding-left]'; ?>" id="<?php echo $value['id'] . '[link-padding-left]'; ?>">
+                <?php for ($i = 0; $i <= 20; $i++) { ?>
+                <option<?php if ( $current_options['link-padding-left'] == $i) { echo ' selected="selected"'; } elseif ( !isset($current_options['link-padding-left']) AND $i == $value['std']['link-padding-left']) { echo ' selected="selected"'; } ?>><?php echo $i; ?></option>
+                <?php } ?>
+        </select>
+  	</td>
+  	<td>
+  			<select name="<?php echo $value['id'] . '[link-weight]'; ?>" id="<?php echo $value['id'] . '[link-weight]'; ?>">
+                <?php foreach ($font_weight as $option) { ?>
+                <option<?php if ( $current_options['link-weight'] == $option) { echo ' selected="selected"'; } elseif ( !isset($current_options['link-weight']) AND $option == $value['std']['link-weight']) { echo ' selected="selected"'; } ?>><?php echo $option; ?></option>
+                <?php } ?>
+        </select>
+  	</td>
+   	<td>
+        <input size="8" class="color" name="<?php echo $value['id'] . '[link-color]'; ?>" id="<?php echo $value['id'] . '[link-color]'; ?>" type="text" value="<?php if ( $current_options['link-color'] != "") { echo $current_options['link-color'] ; } else { echo $value['std']['link-color']; } ?>" />
+  	</td>
+   	<td>
+        <input size="8" class="color" name="<?php echo $value['id'] . '[link-hover-color]'; ?>" id="<?php echo $value['id'] . '[link-hover-color]'; ?>" type="text" value="<?php if ( $current_options['link-hover-color'] != "") { echo $current_options['link-hover-color'] ; } else { echo $value['std']['link-hover-color']; } ?>" />
+  	</td>
+  </tr>
+</tbody>
+</table>	
+<div style="clear:both"></div>
+</div>
+</div>
+<?php } 
+#####################################################################
+#     DISPLAY ON                                                                                                     
+#####################################################################
+elseif ($value['type'] == "displayon") { 
+# special for checkboxes, if  checkbox is unchecked then there won't be any key/value  pair for that checkbox in the options table.
+if (get_option( $value['id'] ) === FALSE) { $current_options = $value['std']; } else { $current_options = get_option( $value['id'] ); }
+
+echo '<div class="bfa-container">
+<div class="bfa-container-left"><label for="' . $value['name'] . '">' . $value['name'] . '</label><br /><br />
+<table align="right" class="bfa-optiontable" border="0" cellspacing="0" cellpadding="2">
+<tbody><tr><td>
+<input type="checkbox" name="' . $value['id'] . '[homepage]" ' . ($current_options['homepage'] ? 'checked="checked"' : '' ) . ' /> ' . __('Homepage','atahualpa') . '<br /> 
+<input type="checkbox" name="' . $value['id'] . '[frontpage]" ' . ($current_options['frontpage'] ? 'checked="checked"' : '' ) . ' /> ' . __('Front Page (*)','atahualpa') . '<br /> 
+<input type="checkbox" name="' . $value['id'] . '[single]" ' . ($current_options['single'] ? 'checked="checked"' : '' ) . ' /> ' . __('Single Posts','atahualpa') . '<br /> 
+<input type="checkbox" name="' . $value['id'] . '[page]" ' . ($current_options['page'] ? 'checked="checked"' : '' ) . ' /> ' . __('"Page" pages','atahualpa') . '<br /> 
+</td><td>
+<input type="checkbox" name="' . $value['id'] . '[category]" ' . ($current_options['category'] ? 'checked="checked"' : '' ) . ' /> ' . __('Category Pages','atahualpa') . '<br /> 
+<input type="checkbox" name="' . $value['id'] . '[date]" ' . ($current_options['date'] ? 'checked="checked"' : '' ) . ' /> ' . __('Archive Pages','atahualpa') . '<br /> 
+<input type="checkbox" name="' . $value['id'] . '[tag]" ' . ($current_options['tag'] ? 'checked="checked"' : '' ) . ' /> ' . __('Tag Pages','atahualpa') . '<br /> 
+<input type="checkbox" name="' . $value['id'] . '[search]" ' . ($current_options['search'] ? 'checked="checked"' : '' ) . ' /> ' . __('Search Results','atahualpa') . '<br /> 
+</td><td valign="top">
+<input type="checkbox" name="' . $value['id'] . '[author]" ' . ($current_options['author'] ? 'checked="checked"' : '' ) . ' /> ' . __('Author Pages','atahualpa') . '<br /> 
+<input type="checkbox" name="' . $value['id'] . '[404]" ' . ($current_options['404'] ? 'checked="checked"' : '' ) . ' /> ' . __('"Not Found"','atahualpa') . '<br /> 
+<input type="checkbox" name="' . $value['id'] . '[attachment]" ' . ($current_options['attachment'] ? 'checked="checked"' : '' ) . ' /> ' . __('Attachments','atahualpa') . '<br /> 
+<input type="hidden" name="' . $value['id'] . '[check-if-saved-once]" value="saved">
+</td></tr></tbody>
+</table>
+</div><div class="bfa-container-right">' . $value['info'] . '
+</div><div style="clear:both"></div></div>';
+} 
+#####################################################################
+#     TEXTAREA                                                                                                    
+#####################################################################
+elseif ($value['type'] == "textarea") { ?>
+<div class="bfa-container">
+    <div class="bfa-container-left"><label for="<?php echo $value['name']; ?>"><?php echo $value['name']; ?></label><br />
+        <textarea name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" cols="35" style="width: 95%" rows="6"><?php if ( get_option( $value['id'] ) !== FALSE) { echo ( $value['editable'] == "yes" ? stripslashes(format_to_edit(get_option( $value['id'] ))) : get_option( $value['id'] ) ) ; } else { echo ( $value['editable'] == "yes" ? stripslashes(format_to_edit($value['std'])) : $value['std'] ); } ?></textarea>
+        <br /><?php _e('Default: ','atahualpa'); ?><strong><?php if ($value['std'] == "") { _e("blank","atahualpa"); } else { echo "<br /><code>" . ( $value['editable'] == "yes" ? str_replace("\n", "<br />", htmlentities($value['std'], ENT_QUOTES)) : str_replace("\n", "<br />", $value['std']) ) . "</code>"; } ?></strong>
+    </div>
+    <div class="bfa-container-right">
+    <?php echo $value['info']; ?>
+    </div>
+   	<div style="clear:both"></div> 
+</div>
+<?php } 
+#####################################################################
+#     POSTINFOS                                                                                                     
+#####################################################################
+elseif ($value['type'] == "postinfos") { ?>
+<div class="bfa-container">
+    <div class="bfa-container-full"><label for="<?php echo $value['name']; ?>"><?php echo $value['name']; ?></label><br />
+	    <?php echo $value['info']; ?><br />
+        <textarea name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" cols="110" rows="3"><?php if ( get_option( $value['id'] ) !== FALSE) { echo stripslashes(format_to_edit(get_option( $value['id'] ))); } else { echo stripslashes(format_to_edit($value['std'])); } ?></textarea>
+        <br /><?php _e('Default: ','atahualpa'); ?><strong><?php if ($value['std'] == "") { _e("blank","atahualpa"); } else { echo stripslashes(format_to_edit($value['std'])); } ?></strong>
+    </div>
+</div>
+<?php } 
+#####################################################################
+#     INFO                                                                                                     
+#####################################################################
+elseif ($value['type'] == "info") { ?>
+<div class="bfa-container">
+    <div class="bfa-container-full"><label for="<?php echo $value['name']; ?>"><?php echo $value['name']; ?></label><br />
+	    <?php echo $value['info']; ?>
+	</div>
+</div>
+<?php } 
+#####################################################################
+#     SELECT                                                                                                     
+#####################################################################
+elseif ($value['type'] == "select") { ?>
+<div class="bfa-container">
+		<div class="bfa-container-left"><label for="<?php echo $value['name']; ?>"><?php echo $value['name']; ?></label><br />
+				<select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>">
+                <?php foreach ($value['options'] as $option) { ?>
+                <option<?php if ( get_option( $value['id'] ) == $option) { echo ' selected="selected"'; } elseif ( get_option( $value['id']) === FALSE AND $option == $value['std']) { echo ' selected="selected"'; } ?>><?php echo $option; ?></option>
+                <?php } ?>
+        </select>
+        <br /><?php _e('Default: ','atahualpa'); ?><strong><?php if ($value['std'] == "") { _e("blank","atahualpa"); } else { echo $value['std']; } ?></strong>
+     </div>
+     <div class="bfa-container-right">
         <?php echo $value['info']; ?>
-        </td>
-    </tr><tr><td colspan="3"><HR NOSHADE SIZE=20 color="#eee"></td>
-    </tr>
+     </div>
+     	<div style="clear:both"></div>
+</div>
 <?php
 }
 }
 ?>
-</table>
+</div> <!-- closing the last tab content div //-->
+<script type="text/javascript">
+var myflowers=new ddtabcontent("bfaoptiontabs") //enter ID of Tab Container
+myflowers.setpersist(true) //toogle persistence of the tabs' state
+myflowers.setselectedClassTarget("link") //"link" or "linkparent"
+myflowers.init()
+</script>
 <p class="submit">
-<input name="save" type="submit" value="Save changes" />    
+<input name="save" type="submit" value="<?php _e('Save changes','atahualpa'); ?>" />    
 <input type="hidden" name="action" value="save" />
 </p>
 </form>
 <form method="post">
 <p class="submit">
-<input name="reset" type="submit" value="Reset" />
+<input name="reset" type="submit" value="<?php _e('Reset','atahualpa'); ?>" />
 <input type="hidden" name="action" value="reset" />
 </p>
 </form>
+</div><!-- / class=wrap -->
 <?php
 }
-add_action('admin_menu', 'mytheme_add_admin'); ?>
+add_action('admin_menu', 'mytheme_add_admin'); 
+?>
 <?php
-function is_last_post()
-{
-	global $wp_query;
-	return ($wp_query->current_post == $wp_query->post_count - 1);
+function footer_output($footer_content) {
+$footer_content .= sprintf(__('<br />Powered by %1$sWordPress</a> &middot; %2$sWP Themes</a> by BFA','atahualpa'), '<a href="http://www.wordpress.org/">', '<a href="http://wordpress.bytesforall.com/">');
+if (get_option('bfa_ata_show_2nd_footer_link') != "No") { $footer_content .= ' <a href="http://bytesforall.com/">' . __('Web Hosting','atahualpa') . '</a>'; }
+return $footer_content;
 }
 ?>
-<?php if (file_exists(ABSPATH."/wpmu-settings.php")) { ?>
+<?php 
+function special_char_import($string) {
+$special_placeholders = array("<b>", "</b>", "<i>", "</i>", "<br>", "<raquo>", "<laquo>", "<rsaquo>", "<lsaquo>", "<rarr>", "<larr>", "<s>");
+$html_replacement = array("<strong>", "</strong>", "<em>", "</em>", "<br />", "&raquo;", "&laquo;", "&rsaquo;", "&lsaquo;", "&rarr;", "&larr;", "&nbsp;"); 
+$string = str_replace($special_placeholders, $html_replacement, $string);
+return $string;
+}
+?>
 <?php
-function m_find_in_dir( $root, $pattern, $recursive = true, $case_sensitive = false ) {
-    $result = array();
-    if( $case_sensitive ) {
-        if( false === m_find_in_dir__( $root, $pattern, $recursive, $result )) {
-            return false;
-        }
-    } else {
-        if( false === m_find_in_dir_i__( $root, $pattern, $recursive, $result )) {
-            return false;
-        }
-    }
-   
-    return $result;
+// new comment template for WP 2.7+, legacy template for old WP 2.6 and older
+if (!function_exists('paged_comments')) {
+add_filter('comments_template', 'legacy_comments');
+function legacy_comments($file) {
+	if(!function_exists('wp_list_comments')) 	$file = TEMPLATEPATH . '/legacy.comments.php';
+	return $file;
 }
-
-/**
- * @access private
- */
-function m_find_in_dir__( $root, $pattern, $recursive, &$result ) {
-    $dh = @opendir( $root );
-    if( false === $dh ) {
-        return false;
-    }
-    while( $file = readdir( $dh )) {
-        if( "." == $file || ".." == $file ){
-            continue;
-        }
-        if( false !== @ereg( $pattern, "{$root}/{$file}" )) {
-            $result[] = "{$root}/{$file}";
-        }
-        if( false !== $recursive && is_dir( "{$root}/{$file}" )) {
-            m_find_in_dir__( "{$root}/{$file}", $pattern, $recursive, $result );
-        }
-    }
-    closedir( $dh );
-    return true;
 }
-
-/**
- * @access private
- */
-function m_find_in_dir_i__( $root, $pattern, $recursive, &$result ) {
-    $dh = @opendir( $root );
-    if( false === $dh ) {
-        return false;
-    }
-    while( $file = readdir( $dh )) {
-        if( "." == $file || ".." == $file ){
-            continue;
-        }
-        if( false !== @eregi( $pattern, "{$root}/{$file}" )) {
-            $result[] = "{$root}/{$file}";
-        }
-        if( false !== $recursive && is_dir( "{$root}/{$file}" )) {
-            m_find_in_dir__( "{$root}/{$file}", $pattern, $recursive, $result );
-        }
-    }
-    closedir( $dh );
-    return true;
+?>
+<?php
+// see if several pages exist to avoid empty next/prev navigation on multi post pages
+function show_posts_nav() {
+	global $wp_query;
+	return ($wp_query->max_num_pages > 1) ? TRUE : FALSE;
 }
-?>     
-<?php } ?>
+?>
