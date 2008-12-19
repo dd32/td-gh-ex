@@ -912,6 +912,7 @@ $options3 = array(
 								"attachment" => "on", 
 								"check-if-saved-once" => FALSE),
             "type" => "displayon",
+			"stripslashes" => "no",
             "info" => __("(*) \"Front Page\" will only affect WP 2.5 and newer: For those newer WP versions, IF you select a static \"Page\" page as the home page, then \"Front Page\" becomes the actual homepage, while the \"Homepage\" will be the home page for Posts (but not the whole blog). If no static front page is selected, Homepage and Front Page will be the same.", "atahualpa")),
 
     array(    "name" => __("LEFT sidebar: Don't display on Pages:","atahualpa"),
@@ -946,6 +947,7 @@ $options3 = array(
 								"attachment" => "on", 
 								"check-if-saved-once" => FALSE),
             "type" => "displayon",
+			"stripslashes" => "no",
             "info" => __("(*) \"Front Page\" will only affect WP 2.5 and newer: For those newer WP versions, IF you select a static \"Page\" page as the home page, then \"Front Page\" becomes the actual homepage, while the \"Homepage\" will be the home page for Posts (but not the whole blog). If no static front page is selected, Homepage and Front Page will be the same.", "atahualpa")),
 
     array(    "name" => __("RIGHT sidebar: Don't display on Pages:","atahualpa"),
