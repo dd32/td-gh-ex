@@ -1,18 +1,17 @@
 /*
 Theme Name: ADSimple
-Theme URI:
+Theme URI: http://wordpress.org/extend/themes/adsimple
 Description: Simple theme based on <a href="http://articlesss.com/article-directory-wordpress-theme/">Article Directory</a> theme.
-Version: 1.0.2
+Version: 1.1
 Author: Dimox
 Author URI: http://dimox.name/
-Tags: white, fixed width, three columns, widgets, right sidebar, simple
+Tags: red, white, silver, three-columns, fixed-width, threaded-comments
 */
 
 * { margin: 0; padding: 0; }
 html { filter: expression(document.execCommand("BackgroundImageCache", false, true)); }
 body {
-	font: 62.5% "Trebuchet MS", Tahoma, Arial, sans-serif;
-	line-height: 1.6em;
+	font: 13px/18px "Trebuchet MS", Tahoma, Arial, sans-serif;
 	color: #444;
 }
 a {
@@ -28,7 +27,7 @@ h1 {margin: 20px 0 0}
 img {border: 0}
 input {vertical-align: middle}
 h2 {
-	font: normal 1.6em "Trebuchet MS", Arial, Sans-Serif;
+	font: normal 16px "Trebuchet MS", Arial, Sans-Serif;
 	margin: 0 0 12px;
 }
 blockquote {
@@ -36,11 +35,9 @@ blockquote {
 	border-left: 3px solid #E60000;
 	background: #EEE;
 	padding: 5px 15px;
-	font-size: 1.3em;
 }
 * html blockquote {height: 1%;}
 blockquote p {
-	font-size: 1em !important;
 	margin: 0;
 }
 .aligncenter,
@@ -82,7 +79,6 @@ img.alignright {margin: 5px 0 3px 10px}
 #wrapper {
 	width: 990px;
 	margin: 0 auto;
-	padding: 20px 0 0 0;
 	border-top: 5px solid #EEE;
 }
 
@@ -90,32 +86,37 @@ img.alignright {margin: 5px 0 3px 10px}
 /* Header
 -----------------------------------------------------------------------------*/
 #header {
-	height: 117px;
+	height: 137px;
 	border-bottom: 3px solid #EAEAEA;
 	margin-bottom: 28px;
+	position: relative;
 }
-#top{
-	float: right;
-	text-align: right;
+#top-nav {
+	position: absolute;
+	top: 20px;
+	right: 0;
+	list-style: none;
 }
-#top li {
-	display: inline;
+#top-nav li {
+	float: left;
 }
-#top a {
+#top-nav a {
 	color: #808080;
 	margin: 0 0 0 13px;
-	background: url(i/toparrow.gif) center left no-repeat;
+	background: url(i/toparrow.gif) 0 6px no-repeat;
 	padding: 0 0 0 12px;
-	font-size: 1.2em;
+	font-size: 12px;
 }
-#top .current_page_item a {
+#top-nav .current_page_item a {
 	background-image: url(i/toparrow2.gif);
 }
 #searchform {
-	margin: 20px 0 0;
+	position: absolute;
+	top: 57px;
+	right: 0;
 }
 #searchform input {
-	font: 1.1em "Trebuchet MS", Arial, Sans-Serif;
+	font: 11px "Trebuchet MS", Arial, Sans-Serif;
 	float: left;
 }
 #s {
@@ -136,20 +137,25 @@ img.alignright {margin: 5px 0 3px 10px}
 }
 
 #logo {
-	float: left;
+	position: absolute;
+	top: 11px;
 	color: #808080;
-	line-height: 0.85em;
-	font-size: 3.3em;
-	margin: 14px 0 15px;
+	line-height: 1;
+	font-size: 33px;
 }
 #logo span {
 	display: block;
-	font-size: 0.38em;
+	font-size: 13px;
 	font-weight: normal;
 	text-transform: uppercase;
+	margin: 5px 0 0;
 }
 
-#menu {
+#nav {
+	position: absolute;
+	top: 105px;
+	left: 0;
+	width: 100%;
 	height: 24px;
 	padding: 7px 0 0 0;
 	clear: both;
@@ -157,18 +163,17 @@ img.alignright {margin: 5px 0 3px 10px}
 	border-bottom: 1px solid #CCC;
 	position: relative;
 }
-#menu li {
-	font-size: 1.1em;
+#nav li {
+	font-size: 13px;
 	display: inline;
 	text-transform: uppercase;
 }
-#menu li a {
+#nav li a {
 	margin: 0 25px 0 10px;
 	color: #808080;
-	font-size: 1.2em;
 }
-#menu li a:hover {color: #444;}
-#menu li.current_page_item {
+#nav li a:hover {color: #444;}
+#nav li.current_page_item {
 	background: url(i/arrow.gif) no-repeat center left;
 }
 
@@ -196,37 +201,28 @@ img.alignright {margin: 5px 0 3px 10px}
 }
 
 #content h2 {
-	font: normal 1.9em "Trebuchet MS", Arial, Sans-Serif;
+	font: normal 19px "Trebuchet MS", Arial, Sans-Serif;
 	padding: 0 0 3px;
 	border-bottom: 1px solid #EEE;
-	margin-bottom: 1.2em;
+	margin-bottom: 12px;
 }
 #content h2.pagetitle {
 	padding-left: 3px;
 	padding: 1px 0 4px;
 }
 #content h3 {
-	font: normal 1.7em "Trebuchet MS", Arial, Sans-Serif;
+	font: normal 17px "Trebuchet MS", Arial, Sans-Serif;
 	padding: 1px 0 4px;
-	margin-bottom: 0.2em;
+	margin-bottom: 2px;
 	border-bottom: 1px solid #EEE;
 }
 
-#content p,
-#content li {
-	font-size: 1.3em;
-	line-height: 1.4em;
-}
-#content li li {
-  font-size: 1em;
-}
-
 #content .post {
-	margin: 0 0 2.2em;
+	margin: 0 0 22px;
 }
 #content .post h2,
 #content .post h3 {
-	font-size: 2em;
+	font-size: 20px;
 	margin: 0 0 2px;
 }
 .post ul,
@@ -237,7 +233,7 @@ img.alignright {margin: 5px 0 3px 10px}
 	padding: 2px 0;
 }
 .post .postmetadata {
-	font-size: 1.1em;
+	font-size: 11px;
 	padding: 0 0 7px;
 	color: #AAA;
 }
@@ -254,24 +250,24 @@ img.alignright {margin: 5px 0 3px 10px}
 }
 
 .entry h1 {
-	font-size: 1.8em;
+	font-size: 18px;
 	margin: 15px 0 10px;
 }
 .entry h2 {
-	font-size: 1.65em !important;
+	font-size: 17px !important;
 	font-weight: bold !important;
 	margin: 15px 0 10px !important;
 	padding: 0 !important;
 	border: none !important;
 }
 .entry h3 {
-	font-size: 1.45em !important;
+	font-size: 15px !important;
 	font-weight: bold !important;
 	margin: 15px 0 10px !important;
 	padding: 0 !important;
 }
 .entry h4 {
-	font-size: 1.3em;
+	font-size: 13px;
 	margin: 15px 0 10px;
 	font-weight: bold !important;
 }
@@ -284,75 +280,69 @@ img.alignright {margin: 5px 0 3px 10px}
 }
 
 .nav {
-	font-size: 1.3em;
 	padding: 0 0 22px;
 }
 .navigation {
-	font-size: 1.3em;
 	margin: 20px 0;
-	height: 1.3em;
+	height: 18px;
 }
 .alignleft {float: left;}
 .alignright {float: right;}
 
-h3#comments,
-h3#respond {
-	padding: 1px 0 4px;
-	border-bottom: 1px solid #EEE;
+h3#comments {
+	margin-bottom: -10px;
 }
-
-.commentlist {
-	margin: 20px 0 30px 25px;
-}
-.commentlist li {
-	padding: 8px 0 2px;
-}
-.cdata {
-	background: #F5F5F5;
-	border-bottom: 1px solid #DDD;
-	padding: 3px 3px 3px 7px;
+#respond h3 {
+	margin: 20px 0 10px;
 	height: 1%;
 }
-.cdata strong {
-  display: block;
-}
-#content img.avatar {
-  float: right;
-	display: inline;
-	border: 0;
-	margin: 1px 1px 0;
-}
-.ctext {
-  padding: 0 7px;
-}
 
-.commentlist li p {
-	font-size: 1em !important;
-}
-.commentmetadata {
-	font-size: 0.85em;
-}
-.commentmetadata a {
-  color: #A5A5A5;
-}
+ol.commentlist {list-style: none; margin: 20px 0 -5px; padding: 0;}
+ol.commentlist li {height: 1%; padding: 10px 7px; position: relative;}
+ol.commentlist ul.children li {margin: 0 0 2px; position: relative; right: -7px;}
+ol.commentlist li.comment-author-admin {padding: 3px 10px 8px; border: 1px solid #AAA;}
+ol.commentlist ul.children li.comment-author-admin {margin: 20px 0 10px 0}
+ol.commentlist li div.vcard {background: #F5F5F5; border-bottom: 1px solid #DDD; padding: 4px 3px 3px 7px; margin: 0 -7px; height: 38px; position: relative;}
+ol.commentlist li div.vcard cite.fn {font-style: normal; font-weight: bold;}
+ol.commentlist li div.vcard img.avatar {border: 1px solid #DDD !important; padding: 2px !important; position: absolute; right: 4px; top: 4px; margin: 0 !important; background: #FFF;}
+ol.commentlist li div.comment-meta {position: absolute; top: 34px; left: 7px; font-size: 11px; color: #A5A5A5;}
+ol.commentlist.old li div.comment-meta {top: 23px;}
+ol.commentlist li.comment-author-admin div.comment-meta {top: 27px; left: 10px;}
+ol.commentlist li div.comment-meta a {color: #A5A5A5;}
+ol.commentlist li div.reply {font-size: 13px; line-height: 16px; width: 100%; overflow: hidden; text-transform: lowercase; margin: 3px 0 0}
+ol.commentlist li div.reply a {background: #F4F4F4; float: left; color: #AA0001; text-decoration: none; padding: 0 6px 2px; border: 1px solid #CCC;}
+ol.commentlist li div.reply a:hover {background: #E60000; color: #FFF; border: 1px solid #E60000;}
+ol.commentlist li ul.children {list-style: none; margin: 10px 0 -10px 15px;}
+#cancel-comment-reply small {font-size: 13px}
 
+#commentform p {
+	padding: 8px 0 3px;
+}
 #author, #email, #url, #comment, #submit {
-	font: 1em "Trebuchet MS", Arial, Sans-Serif;
-	padding: 2px 4px;
+	font: 13px "Trebuchet MS", Arial, Sans-Serif;
+	padding: 3px 5px;
 	width: 200px;
 	border: 1px solid #CCC;
 }
+#author:focus, #email:focus, #url:focus, #comment:focus, #submit:focus {
+	border-color: #999;
+}
 #comment {
-	width: 470px;
+	width: 97%;
 	height: 170px;
 }
 #submit {
 	width: 115px;
-	height: 22px;
+	height: 24px;
 	padding: 0;
 	background: #F4F4F4;
 	cursor: pointer;
 	overflow: visible;
+}
+#submit:hover {
+	background: #E60000;
+	color: #FFF;
+	border: 1px solid #E60000;
 }
 
 
@@ -361,8 +351,8 @@ h3#respond {
 #sidebars {
 	float: left;
 	width: 440px;
-	font-size: 1.2em;
-	line-height: 1.4em;
+	font-size: 12px;
+	line-height: 17px;
 }
 * html #sidebars {height: 1%;}
 #sidebars:after {
@@ -406,12 +396,12 @@ h3#respond {
 	color: #808080;
 }
 #sidebars h2 {
-	font: normal 1.7em "Trebuchet MS", Arial, Sans-Serif;
+	font: normal 19px "Trebuchet MS", Arial, Sans-Serif;
 	padding: 0 0 3px 3px;
 	border-bottom: 1px solid #EEE;
 }
 #sidebars h3 {
-	font: normal 1.4em/1.1em "Trebuchet MS", Arial, Sans-Serif;
+	font: normal 15px/1 "Trebuchet MS", Arial, Sans-Serif;
 	padding: 0 0 3px;
 }
 
@@ -443,7 +433,8 @@ h3#respond {
 	clear: both;
 	padding: 7px 10px;
 	margin: 0 0 15px;
-	font-size: 1.1em;
+	font-size: 11px;
+	line-height: 16px;
 	color: #808080;
 	background: #EEE;
 }

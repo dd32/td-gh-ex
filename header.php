@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 	<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 	<?php wp_head(); ?>
 </head>
 
@@ -14,18 +15,16 @@
 <div id="wrapper">
 
 	<div id="header">
-		<div id="top">
-			<ul>
-				<li<?php if(is_home()) echo ' class="current_page_item"' ?>><a href="<?php bloginfo('url'); ?>/">Home</a></li>
-				<?php wp_list_pages('title_li=&depth=1&include='); ?>
-			</ul>
-			<form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
-				<input type="text" name="s" id="s" value="Search Keywords" onfocus="document.forms['searchform'].s.value='';" onblur="if (document.forms['searchform'].s.value == '') document.forms['searchform'].s.value='Search Keywords';" />
-				<input type="submit" id="searchsubmit" value="Search" />
-			</form>
-		</div>
 		<h1 id="logo"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a> <span><?php bloginfo('description'); ?></span></h1>
-		<ul id="menu">
+		<ul id="top-nav">
+			<li<?php if(is_home()) echo ' class="current_page_item"' ?>><a href="<?php bloginfo('url'); ?>/">Home</a></li>
+			<?php wp_list_pages('title_li=&depth=1&include='); ?>
+		</ul>
+		<form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
+			<input type="text" name="s" id="s" value="Search Keywords" onfocus="document.forms['searchform'].s.value='';" onblur="if (document.forms['searchform'].s.value == '') document.forms['searchform'].s.value='Search Keywords';" />
+			<input type="submit" id="searchsubmit" value="Search" />
+		</form>
+		<ul id="nav">
 			<li<?php if(is_home()) echo ' class="current_page_item"' ?>><a href="<?php bloginfo('url'); ?>/">Home</a></li>
 			<?php wp_list_pages('title_li=&depth=1&include='); ?>
 		</ul>
