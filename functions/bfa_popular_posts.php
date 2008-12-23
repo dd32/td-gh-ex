@@ -119,23 +119,23 @@ and the modification Last X days by DJ Chuang www.djchuang.com
 	  $bfa_pp_title = htmlspecialchars($bfa_pp_options['bfa_pp_title'], ENT_QUOTES);
 
 ?>
-	    <?php _e('Title:','atahualpa'); ?> <input style="width: 450px;" id="bfa_pp_src-title" name="bfa_pp_src-title" type="text" value="<?php echo $bfa_pp_title; ?>" />
+	    Title: <input style="width: 450px;" id="bfa_pp_src-title" name="bfa_pp_src-title" type="text" value="<?php echo $bfa_pp_title; ?>" />
             <hr noshade size="1" style="clear:left; color: #ccc">
-            <p style="text-align: left;"><?php _e('Show','atahualpa'); ?> <input style="width: 20px;" id="bfa_pp_no_posts" name="bfa_pp_no_posts" type="text" value="<?php echo $bfa_pp_no_posts; ?>" /> 
-            <?php _e('posts not older than','atahualpa'); ?> <input style="width: 40px;" id="bfa_pp_duration" name="bfa_pp_duration" type="text" value="<?php echo $bfa_pp_duration; ?>" /> <?php _e('days and with at least','atahualpa'); ?>&nbsp;
-   	    <input style="width: 20px;" id="bfa_pp_min_amount_comments" name="bfa_pp_min_amount_comments" type="text" value="<?php echo $bfa_pp_min_amount_comments; ?>" /> <?php _e('comment(s)','atahualpa'); ?>
+            <p style="text-align: left;">Show <input style="width: 40px;" id="bfa_pp_no_posts" name="bfa_pp_no_posts" type="text" value="<?php echo $bfa_pp_no_posts; ?>" /> 
+            posts not older than <input style="width: 60px;" id="bfa_pp_duration" name="bfa_pp_duration" type="text" value="<?php echo $bfa_pp_duration; ?>" /> days and with at least&nbsp;
+   	    <input style="width: 40px;" id="bfa_pp_min_amount_comments" name="bfa_pp_min_amount_comments" type="text" value="<?php echo $bfa_pp_min_amount_comments; ?>" /> comment(s)
    	    </p>
   	    <hr noshade size="1" style="clear:left; color: #ccc">
-            <p><?php _e('And display the list on:','atahualpa'); ?> </p>
-            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_homepage" name="bfa_pp_display_homepage" type="checkbox" <?php if($bfa_pp_display_homepage == "on"){echo " CHECKED";}?> /> <?php _e('Homepage','atahualpa'); ?></p>
-            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_category" name="bfa_pp_display_category" type="checkbox" <?php if($bfa_pp_display_category == "on"){echo " CHECKED";}?> /> <?php _e('Category Pages','atahualpa'); ?></p>
-            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_post" name="bfa_pp_display_post" type="checkbox" <?php if($bfa_pp_display_post == "on"){echo " CHECKED";}?> /> <?php _e('Single Post Pages','atahualpa'); ?></p>
-            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_page" name="bfa_pp_display_page" type="checkbox" <?php if($bfa_pp_display_page == "on"){echo " CHECKED";}?> /> <?php _e('"Page" Pages','atahualpa'); ?></p>
-            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_archive" name="bfa_pp_display_archive" type="checkbox" <?php if($bfa_pp_display_archive == "on"){echo " CHECKED";}?> /> <?php _e('Archive Pages','atahualpa'); ?></p>
-            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_tag" name="bfa_pp_display_tag" type="checkbox" <?php if($bfa_pp_display_tag == "on"){echo " CHECKED";}?> /> <?php _e('Tag Pages','atahualpa'); ?></p>
-            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_search" name="bfa_pp_display_search" type="checkbox" <?php if($bfa_pp_display_search == "on"){echo " CHECKED";}?> /> <?php _e('Search Result Pages','atahualpa'); ?></p>
-            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_author" name="bfa_pp_display_author" type="checkbox" <?php if($bfa_pp_display_author == "on"){echo " CHECKED";}?> /> <?php _e('Author Pages','atahualpa'); ?></p>
-            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_404" name="bfa_pp_display_404" type="checkbox" <?php if($bfa_pp_display_404 == "on"){echo " CHECKED";}?> /> <?php _e('404 Not Found Pages','atahualpa'); ?></p>
+            <p>And display the list on: </p>
+            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_homepage" name="bfa_pp_display_homepage" type="checkbox" <?php if($bfa_pp_display_homepage == "on"){echo " CHECKED";}?> /> Homepage</p>
+            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_category" name="bfa_pp_display_category" type="checkbox" <?php if($bfa_pp_display_category == "on"){echo " CHECKED";}?> /> Category Pages</p>
+            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_post" name="bfa_pp_display_post" type="checkbox" <?php if($bfa_pp_display_post == "on"){echo " CHECKED";}?> /> Single Post Pages</p>
+            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_page" name="bfa_pp_display_page" type="checkbox" <?php if($bfa_pp_display_page == "on"){echo " CHECKED";}?> /> "Page" Pages</p>
+            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_archive" name="bfa_pp_display_archive" type="checkbox" <?php if($bfa_pp_display_archive == "on"){echo " CHECKED";}?> /> Archive Pages</p>
+            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_tag" name="bfa_pp_display_tag" type="checkbox" <?php if($bfa_pp_display_tag == "on"){echo " CHECKED";}?> /> Tag Pages</p>
+            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_search" name="bfa_pp_display_search" type="checkbox" <?php if($bfa_pp_display_search == "on"){echo " CHECKED";}?> /> Search Result Pages</p>
+            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_author" name="bfa_pp_display_author" type="checkbox" <?php if($bfa_pp_display_author == "on"){echo " CHECKED";}?> /> Author Pages</p>
+            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_404" name="bfa_pp_display_404" type="checkbox" <?php if($bfa_pp_display_404 == "on"){echo " CHECKED";}?> /> 404 Not Found Pages</p>
             <div style="clear:left"></div>
   	    <input type="hidden" id="bfa_pp_src-submit" name="bfa_pp_src-submit" value="1" />     
 <?php

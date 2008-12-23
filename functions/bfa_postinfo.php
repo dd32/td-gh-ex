@@ -5,6 +5,9 @@ return '<img src="' . get_bloginfo('template_directory') . '/images/icons/' . $m
 
 function postinfo($postinfo_string) {
 
+# put date format escape backslashes back in
+$postinfo_string = bfa_unescape_date_format_slashes($postinfo_string);
+
 # get all the data for the current post
 //$post_id = $wp_query->get_queried_object_id();
 $post_id = $post->ID;

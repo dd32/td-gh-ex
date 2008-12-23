@@ -88,3 +88,142 @@ $bfa(document).ready(function(){
 <?php } ?>
 <?php echo ($bfa_ata_html_inserts_header != "" ? apply_filters(widget_text, $bfa_ata_html_inserts_header) : ''); ?>
 </head>
+<?php
+// load postinfo function
+include (TEMPLATEPATH . '/functions/bfa_postinfo.php');
+// if this is a multi post page, and a "home" link is set for the next/prev navigation on multi post pages, 
+// figure out if this the blog homepage, and remove the "home" link from the next/prev navigation if true
+if ( !is_single() AND !is_page() AND $bfa_ata_home_multi_next_prev != '' ) {
+	$nav_home_div_on = '<div class="home"><a href="' . get_option('home') . '/">' . $bfa_ata_home_multi_next_prev . '</a></div>'; 
+	// for WP 2.5 and newer
+	if ( function_exists('is_front_page') ) {
+		// make sure this is the real homepage and not a subsequent page
+		if (is_front_page() && !is_paged() ) {
+		$nav_home_add = ""; $nav_home_div = ""; 
+		} else {
+		$nav_home_add = '-home';
+		$nav_home_div = $nav_home_div_on; 
+		}
+	} 
+	// for WP 2.3 and older
+	// make sure this is the real homepage and not a subsequent page
+	elseif ( is_home() && !is_paged() ) {
+	$nav_home_add = ""; $nav_home_div = "";
+	}
+	else { 
+	$nav_home_add = '-home'; 
+	$nav_home_div = $nav_home_div_on; 
+	}
+}
+// Home link for next/prev on single pages
+if ( is_single() ) {
+	if ($bfa_ata_home_single_next_prev != '') {
+	$nav_home_div_on_single = '<div class="home"><a href="' . get_option('home') . '/">' . $bfa_ata_home_single_next_prev . '</a></div>'; 
+	$nav_home_add_single = '-home';
+	} else {
+	$nav_home_div_on_single = "";
+	$nav_home_add_single = "";
+	}
+}
+// figure out sidebars
+global $cols;
+$cols = 1;
+if ( is_page() ) {
+#$current_page_id = $wp_query->get('page_id');
+$current_page_id = $wp_query->get_queried_object_id();
+	if ($bfa_ata_left_col_pages_exclude != "") { 
+	$pages_exlude_left = explode(",", str_replace(" ", "", $bfa_ata_left_col_pages_exclude));
+		if ( $bfa_ata_leftcol_on['page'] && !in_array($current_page_id, $pages_exlude_left) ) {
+		$cols++; $left_col = "on"; }
+	} else {
+		if ( $bfa_ata_leftcol_on['page'] ) {
+		$cols++; $left_col = "on"; }
+	}
+	if ($bfa_ata_right_col_pages_exclude != "") { 
+	$pages_exlude_right = explode(",", str_replace(" ", "", $bfa_ata_right_col_pages_exclude));
+		if ( $bfa_ata_rightcol_on['page'] && !in_array($current_page_id, $pages_exlude_right) ) {
+		$cols++; $right_col = "on"; }
+	} else {
+		if ( $bfa_ata_rightcol_on['page'] ) {
+		$cols++; $right_col = "on"; }
+	}
+} elseif ( is_category() ) {
+$current_cat_id = get_query_var('cat');
+	if ($bfa_ata_left_col_cats_exclude != "") {
+	$cats_exlude_left = explode(",", str_replace(" ", "", $bfa_ata_left_col_cats_exclude));
+		if ( $bfa_ata_leftcol_on['category'] && !in_array($current_cat_id, $cats_exlude_left) ) {
+		$cols++; $left_col = "on"; }
+	} else {
+		if ( $bfa_ata_leftcol_on['category'] ) {
+		$cols++; $left_col = "on"; }
+	}
+	if ($bfa_ata_right_col_cats_exclude != "") {
+	$cats_exlude_right = explode(",", str_replace(" ", "", $bfa_ata_right_col_cats_exclude));
+		if ( $bfa_ata_rightcol_on['category'] && !in_array($current_cat_id, $cats_exlude_right) ) {
+		$cols++; $right_col = "on"; }
+	} else {
+		if ( $bfa_ata_rightcol_on['category'] ) {
+		$cols++; $right_col = "on"; }
+	}
+} else {
+if ( (is_home() && $bfa_ata_leftcol_on['homepage']) || ( is_front_page() && $bfa_ata_leftcol_on['frontpage']) || 
+( is_single() && $bfa_ata_leftcol_on['single']) || ( is_date() && $bfa_ata_leftcol_on['date']) || 
+( is_tag() && $bfa_ata_leftcol_on['tag']) || ( is_search() && $bfa_ata_leftcol_on['search']) || 
+( is_author() && $bfa_ata_leftcol_on['author']) || ( is_404() && $bfa_ata_leftcol_on['404']) || 
+( is_attachment() && $bfa_ata_leftcol_on['attachment']) ) {
+	$cols++; $left_col = "on"; 
+	}
+if ( (is_home() && $bfa_ata_rightcol_on['homepage']) || ( is_front_page() && $bfa_ata_rightcol_on['frontpage']) || 
+( is_single() && $bfa_ata_rightcol_on['single']) || ( is_date() && $bfa_ata_rightcol_on['date']) || 
+( is_tag() && $bfa_ata_rightcol_on['tag']) || ( is_search() && $bfa_ata_rightcol_on['search']) || 
+( is_author() && $bfa_ata_rightcol_on['author']) || ( is_404() && $bfa_ata_rightcol_on['404']) || 
+( is_attachment() && $bfa_ata_rightcol_on['attachment']) ) {
+	$cols++; $right_col = "on"; 
+	}
+}
+
+?>
+<body<?php echo ($bfa_ata_html_inserts_body_tag != "" ? ' ' . apply_filters(widget_text, $bfa_ata_html_inserts_body_tag) : ''); ?>>
+<?php echo ($bfa_ata_html_inserts_body_top != "" ? apply_filters(widget_text, $bfa_ata_html_inserts_body_top) : ''); ?>
+<div id="wrapper">
+<div id="container">
+<table id="layout" border="0" cellspacing="0" cellpadding="0">
+<colgroup>
+<?php if ( $left_col == "on" ) { ?>
+<col class="colone" />
+<?php } ?>
+<col class="coltwo" />
+<?php if ( $right_col == "on" ) { ?>
+<col class="colthree" />
+<?php } ?>
+</colgroup> 
+	<tr>
+
+		<!-- Header -->
+		<td id="header" colspan="<?php echo $cols; ?>">
+		
+		<?php bfa_header_config($bfa_ata_configure_header); ?>
+
+		</td>
+		<!-- / Header -->
+
+	</tr>
+
+	<!-- Main Body -->	
+	<tr>
+
+		<?php if ( $left_col == "on" ) { ?>
+		<!-- Left Sidebar -->
+		<td id="left">
+
+			<?php // Widgetize the Left Sidebar 
+			if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar(1) ) : 	
+			endif; ?>
+
+		</td>
+		<!-- / Left Sidebar -->
+		<?php } ?>
+
+
+		<!-- Main Column -->
+		<td id="middle">

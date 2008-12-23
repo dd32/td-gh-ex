@@ -82,49 +82,49 @@ function widget_bfa_subscribe_control() {
 	$comments_text = format_to_edit($options['comments-text']);
 	$id = attribute_escape($options['id']);
 ?>
-<?php _e('You may have to save this widget once (Click "Done" and "Save Changes") before you can edit the text fields bewow...<br /><br />','atahualpa'); ?>
-<p><label for="subscribe-title"><?php _e('Optional: Title:','atahualpa'); ?> 
+You may have to save this widget once (Click "Done" and "Save Changes") before you can edit the text fields bewow...<br /><br />
+<p><label for="subscribe-title">Optional: Title: 
 <input class="widefat" id="subscribe-title" name="subscribe-title" type="text" value="<?php echo $title; ?>" /></label></p>
 
 <p><label for="subscribe-email-text">
-<?php _e('Text for Email section','atahualpa'); if ( current_user_can('unfiltered_html')) _e(' (HTML allowed. Email subscribe URL = %email-url)','atahualpa'); ?>
+Text for Email section. <?php if ( current_user_can('unfiltered_html')) echo' (HTML allowed. Email subscribe URL = %email-url)'; ?>
 <textarea class="widefat" style="width: 98%" rows="3" cols="20" id="subscribe-email-text" name="subscribe-email-text">
 <?php echo $email_text; ?></textarea></label></p>
 
 <p style="float: left; width: 69%; display: block">
-<label for="feedburner-email-field-text"><?php _e('Optional: Text inside Email input field:','atahualpa'); ?> 
+<label for="feedburner-email-field-text">Optional: Text inside Email input field: 
 <input class="widefat" id="feedburner-email-field-text" name="feedburner-email-field-text" type="text" value="<?php echo $field_text; ?>" /></label></p>
 
 <p style="float: right; width: 29%; display: block">
-<label for="feedburner-email-submit-text"><?php _e('Text for Email submit button:','atahualpa'); ?> 
+<label for="feedburner-email-submit-text">Text for Email submit button: 
 <input class="widefat" id="feedburner-email-submit-text" name="feedburner-email-submit-text" type="text" value="<?php echo $submit_text; ?>" /></label></p>
 <div style="clear: both"></div>
 
 <p><label for="subscribe-posts-text">
-<?php _e('Text for Posts RSS section','atahualpa'); if ( current_user_can('unfiltered_html')) _e(' (HTML allowed. Posts feed URL = %posts-url)','atahualpa'); ?>
+Text for Posts RSS section <?php if ( current_user_can('unfiltered_html')) echo ' (HTML allowed. Posts feed URL = %posts-url)'; ?>
 <textarea class="widefat" style="width: 98%" rows="3" cols="20" id="subscribe-posts-text" name="subscribe-posts-text">
 <?php echo $posts_text; ?></textarea></label></p>
 
 <p><label for="subscribe-comments-text">
-<?php _e('Text for Comments RSS section','atahualpa'); if ( current_user_can('unfiltered_html')) _e(' (HTML allowed. Comments feed URL = %comments-url)','atahualpa'); ?>
+Text for Comments RSS section <?php if ( current_user_can('unfiltered_html')) echo ' (HTML allowed. Comments feed URL = %comments-url)'; ?>
 <textarea class="widefat" style="width: 98%" rows="3" cols="20" id="subscribe-comments-text" name="subscribe-comments-text">
 <?php echo $comments_text; ?></textarea></label></p>
 
 <p><label for="feedburner-email-id">
-<?php _e('Feedburner Email ID:','atahualpa'); ?> 
+Feedburner Email ID:
 <input class="widefat" id="feedburner-email-id" name="feedburner-email-id" type="text" value="<?php echo $id; ?>" /></label></p>
 
-<p><?php _e('<strong>How to find the feed ID for this site at Feedburner:</strong><br />
+<p><strong>How to find the feed ID for this site at Feedburner:</strong><br />
 You must have a Feedburner account, and you must have created a feed for this site ("My Feeds" -> "Burn a feed right this instant"). 
 Login to your Feedburner account, click "My Feeds" -> Title of the feed in question -> Publicize -> Email Subscriptions -> Check out the two textareas. 
 Both contain the ID somewhere in the text. In the bigger textarea it appears as "...?ffid=<strong>XXXXXXX</strong>", 
-in the smaller one as "?feedId=<strong>XXXXXXX</strong>". <strong>XXXXXXX</strong> is the number that you need to put here.','atahualpa'); ?></p>
+in the smaller one as "?feedId=<strong>XXXXXXX</strong>". <strong>XXXXXXX</strong> is the number that you need to put here.</p>
 			<input type="hidden" id="subscribe-submit" name="subscribe-submit" value="1" />
 <?php
 }
 // register feedburner email widget
-	$widget_ops = array('classname' => 'widget_bfa_subscribe', 'description' => __( "Subscribe widget for RSS and Email") );
+	$widget_ops = array('classname' => 'widget_bfa_subscribe', 'description' => 'Subscribe widget for RSS and Email' );
 	$control_ops = array('width' => 600, 'height' => 500);
-	wp_register_sidebar_widget('bfa_subscribe', __('BFA Subscribe','atahualpa'), 'widget_bfa_subscribe', $widget_ops);
-	wp_register_widget_control('bfa_subscribe', __('BFA Subscribe','atahualpa'), 'widget_bfa_subscribe_control', $control_ops);		
+	wp_register_sidebar_widget('bfa_subscribe', 'BFA Subscribe', 'widget_bfa_subscribe', $widget_ops);
+	wp_register_widget_control('bfa_subscribe', 'BFA Subscribe', 'widget_bfa_subscribe_control', $control_ops);		
 ?>

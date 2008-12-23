@@ -10,7 +10,7 @@ function widget_calendar($args) {
 }
 ?>
 <?php // unregister old / register new calendar widget
-	$widget_ops = array('classname' => 'widget_calendar', 'description' => __( "A calendar of your blog's posts","atahualpa") );
-	unregister_sidebar_widget('calendar', __('Calendar','atahualpa'), 'wp_widget_calendar', $widget_ops);
-	wp_register_sidebar_widget('calendar', __('Calendar','atahualpa'), 'widget_calendar', $widget_ops);
+	$widget_ops = array('classname' => 'widget_calendar', 'description' => __( "A calendar of your blog's posts") );
+	unregister_sidebar_widget('calendar', __('Calendar'), 'wp_widget_calendar', $widget_ops);
+	wp_register_sidebar_widget('calendar', __('Calendar'), 'widget_calendar', $widget_ops);
 ?>

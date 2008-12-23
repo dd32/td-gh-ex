@@ -1,52 +1,96 @@
-<?php header("Content-type: text/css");?>
-/* ------------------------------------------------------------------
----------- BASE LAYOUT ----------------------------------------------
------------------------------------------------------------------- */
 <?php 
-// if this is WPMU
-if (file_exists( dirname(__FILE__) . '../../../../wpmu-settings.php')) {
-	require_once( dirname(__FILE__) . '../../../../wpmu-settings.php'); 
-} else {
-// if this is regular WordPress
-// find wp-config.php
+error_reporting(0);
+$fb = 0;
+
+	// find wp-config
 	$d = 0; // search depth;
 	while (!file_exists(str_repeat('../', $d) . 'wp-config.php')) if (++$d > 99) exit;
 	$wpconfig = str_repeat('../', $d) . 'wp-config.php';
-	require_once $wpconfig; 
-	foreach (explode("\n", file_get_contents($wpconfig)) as $line) {
-		if (preg_match('/define.+?DB_|table_prefix/', $line))
-			eval($line);
-	}
+	
+	// if this is a wpmu setup or we have been instructed to use the fallback method
+	if ($_GET['fb'] OR file_exists(str_repeat('../', $d) . 'wpmu-settings.php'))
+		$fb++;
+	elseif (file_exists($wpconfig))
+		// evaluate constant definitions from wp-config.php so we can connect directly to the database and save some time
+		foreach (explode("\n", file_get_contents($wpconfig)) as $line) {
+			if (preg_match('/define.+?DB_|table_prefix/', $line))
+				eval($line);
+		}
+
+
+	// if we seem to have the credentials to the database
 	if (defined('DB_USER')) {
 		$dbh = @mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
 		@mysql_select_db(DB_NAME, $dbh);
 		$r = @mysql_query(
-			"SELECT option_name,option_value FROM ". $table_prefix ."options WHERE option_name REGEXP '^bfa_ata_';",
+			"SELECT option_name,option_value FROM ". $table_prefix ."options WHERE (option_name REGEXP '^bfa_ata_' OR option_name REGEXP '^(stylesheet|siteurl)$');",
 			$dbh
 		);
 		while ($a = @mysql_fetch_row($r)) {
 			$$a[0] = $a[1];
 		}
 		@mysql_free_result($r);
+		
 		// if theme options were available in options table
 		if (isset($bfa_ata_widget_lists)) {
 		$bfa_ata_widget_lists = unserialize($bfa_ata_widget_lists);
 		$bfa_ata_widget_lists2 = unserialize($bfa_ata_widget_lists2);
 		$bfa_ata_widget_lists3 = unserialize($bfa_ata_widget_lists3);
 		}
-	}	
-}
-// get default options in case no individual options were saved to wp_options yet
+		
+		// if the options array seems to be empty/incomplete, fallback
+		#if (!isset($bfa_ata_widget_lists))
+		#	$fb++;
+		global $stylesheet_directory;
+		$stylesheet_directory = $siteurl .'/wp-content/themes/'. $stylesheet;
+	}
+	else $fb++;
+	
+	// fallback, fewer lines but way longer to process
+	if ($fb) {
+		// if we're here without 'fb' in the query string, then redirect to this same page and start over
+		// this prevents constant redeclaration errors
+		if (!$_GET['fb']) {
+			$redirect = preg_replace('/(\?.*|$)/', '', $_SERVER['REQUEST_URI']) . '?fb=1';
+			header("Location: $redirect");
+			exit;
+		}
+		require_once($wpconfig);
+		
+		// get default options in case no individual options were saved to wp_options yet
 	$d = 0; // search depth;
 	while (!file_exists(str_repeat('../', $d) . '/wp-content/themes/atahualpa3/functions/bfa_theme_options.php')) if (++$d > 99) exit;
 	$bfa_options = str_repeat('../', $d) . '/wp-content/themes/atahualpa3/functions/bfa_theme_options.php';
-require_once $bfa_options;	
-global $options; foreach ($options as $value) { 
+	include $bfa_options;	
+	global $options; foreach ($options as $value) { 
 	if ( !isset($$value['id']) ) { 
 			$$value['id'] = $value['std']; 
 	}
-}
+	}
+		
+		global $stylesheet_directory;
+		$stylesheet_directory = get_bloginfo('stylesheet_directory');
+		status_header(200);
+	}
+
+
+	// get default options in case no individual options were saved to wp_options yet
+	$d = 0; // search depth;
+	while (!file_exists(str_repeat('../', $d) . '/wp-content/themes/atahualpa3/functions/bfa_theme_options.php')) if (++$d > 99) exit;
+	$bfa_options = str_repeat('../', $d) . '/wp-content/themes/atahualpa3/functions/bfa_theme_options.php';
+	include $bfa_options;	
+	global $options; foreach ($options as $value) { 
+	if ( !isset($$value['id']) ) { 
+		$$value['id'] = $value['std']; 
+		}
+	}
+
+		
+header("Content-type: text/css");
 ?>
+/* ------------------------------------------------------------------
+---------- BASE LAYOUT ----------------------------------------------
+------------------------------------------------------------------ */
 body {
 	text-align: center;  /* centering the page container, 
 							text-align will be reset to left 
@@ -267,11 +311,13 @@ h1.blogtitle {
 h1.blogtitle a:link, 
 h1.blogtitle a:visited, 
 h1.blogtitle a:active {
-
+	text-decoration: none;
+	color: #<?php echo $bfa_ata_blog_title_color; ?>;
 	}
 	
 h1.blogtitle a:hover {
-	<?php echo $bfa_ata_blog_title_style_hover; ?>
+	text-decoration: none;
+	color: #<?php echo $bfa_ata_blog_title_color_hover; ?>;
 	}
 
 
@@ -644,12 +690,57 @@ div.widget select {
 .widget ul li a:visited, 
 .widget ul li a:active,
 .widget ul li a:hover {
-	display: block;
+	display: block;   /* if we set this to inline-block, we cannot
+						overwrite it to "inline" for the comments widgets, for IE */
 	height: 1%;   /* IE needs this */
+	}
+
+/* the archive widgets get inline-blick so post counts won't wrap
+into the next line. In FF2 items that don't fit into a single line 
+will overflow the sidebar but that is unlikely as the longest item 
+would be "[month name] (post count)" */
+.widget_categories ul li a:link, 
+.widget_categories ul li a:visited, 
+.widget_categories ul li a:active,
+.widget_categories ul li a:hover,
+.widget_archive ul li a:link, 
+.widget_archive ul li a:visited, 
+.widget_archive ul li a:active,
+.widget_archive ul li a:hover {
+	display: -moz-inline-box; /* Firefox 2 doesn't know default "inline-block" */
+	display: inline-block !important;  
+	}
+
+/* We cannot use inline-block for the category widget because unlike the archive 
+widget the category widget items may need to wrap on top of (possibly) being 
+displayed hierarchically. If "post count" is not displayed then it's easy: use "block". 
+With post count turned on we'll display it inline, because inline-block
+will cause it to overflow in FF2 and look bad in IE, too, if the item needs to wrap*/
+.widget_categories ul li a:link, 
+.widget_categories ul li a:visited, 
+.widget_categories ul li a:active,
+.widget_categories ul li a:hover {
+	display: <?php echo $bfa_ata_category_widget_display_type; ?> !important;  
 	}
 	
 /*------------- list items with 2 links or link & text ----*/
+/* different styles for the default Recent Comments widget,
+the BFA Recent Comments widget and the Get Recent Comments widget */
 
+/* The Get Recent Comments widget's first level (= Post Title)
+doesn't get a border or padding */
+div#get_recent_comments_wrap ul li {
+	padding: 0px;
+	display: block; 
+	border-left: 0px;
+	}
+
+div#get_recent_comments_wrap ul li ul li {
+	margin-left: 0px;
+	}
+	
+/* Get Recent comments 2nd level, others 1st level: */
+div#get_recent_comments_wrap ul li ul li,
 .widget_recent_comments ul li, 
 .widget_simple_recent_comments ul li {
 	padding: 0 0 0 <?php echo $bfa_ata_widget_lists['link-padding-left']; ?>px; 
@@ -657,6 +748,8 @@ div.widget select {
 	border-left: solid <?php echo $bfa_ata_widget_lists['link-border-left-width']; ?>px #<?php echo $bfa_ata_widget_lists['link-border-left-color']; ?>; 
 	}
 
+/* Get Recent comments 3rd level, others 2nd level: */	
+div#get_recent_comments_wrap ul li ul li ul li, 
 .widget_recent_comments ul li ul li, 
 .widget_simple_recent_comments ul li ul li {
 	padding: 0 0 0 <?php echo $bfa_ata_widget_lists2['link-padding-left']; ?>px; 
@@ -671,15 +764,19 @@ div.widget select {
 	
 /*- with sfhover for IE6 because it doesn't know li:hover -*/
 
+div#get_recent_comments_wrap ul li ul li:hover, 
 .widget_recent_comments ul li:hover, 
-.widget_simple_recent_comments ul li:hover, 	
+.widget_simple_recent_comments ul li:hover, 
+div#get_recent_comments_wrap ul li ul li.sfhover, 	
 .widget_recent_comments ul li.sfhover, 
 .widget_simple_recent_comments ul li.sfhover {	
 	border-left: solid <?php echo $bfa_ata_widget_lists['link-border-left-width']; ?>px #<?php echo $bfa_ata_widget_lists['link-border-left-hover-color']; ?>; 
 	}
 
+div#get_recent_comments_wrap ul li ul li ul li:hover, 
 .widget_recent_comments ul li ul li:hover, 
 .widget_simple_recent_comments ul li ul li:hover, 	
+div#get_recent_comments_wrap ul li ul li ul li.sfhover, 
 .widget_recent_comments ul li ul li.sfhover, 
 .widget_simple_recent_comments ul li ul li.sfhover {	
 	border-left: solid <?php echo $bfa_ata_widget_lists2['link-border-left-width']; ?>px #<?php echo $bfa_ata_widget_lists2['link-border-left-hover-color']; ?>; 
@@ -694,6 +791,10 @@ div.widget select {
 	
 /*--- comments get the border on the li instead of the a --*/
 
+div#get_recent_comments_wrap ul li a:link, 
+div#get_recent_comments_wrap ul li a:visited, 
+div#get_recent_comments_wrap ul li a:active, 
+div#get_recent_comments_wrap ul li a:hover,
 .widget ul li.recentcomments a:link, 
 .widget ul li.recentcomments a:visited, 
 .widget ul li.recentcomments a:active, 
@@ -703,10 +804,11 @@ div.widget select {
 .widget ul li.bfarecentcomments a:active, 
 .widget ul li.bfarecentcomments a:hover { 	
 	border-left: 0px !important; 
-	display: inline !important; display: inline;
+	display: inline !important; 
 	padding: 0px !important; 
 	margin: 0px !important; 
 	}
+
 
 
 /* ------------------------------------------------------------------
@@ -825,9 +927,10 @@ div.post-bodycopy p {
 	margin: 1em 0;
 	padding: 0;
 	display: block;
-	/* This would create hor. scrollbars in Firefox instead of 
-	overflowing long strings, but then text won't float around images 
-	anymore. Uncomment this if you don't float images anyway */
+	/* The rule below would create hor. scrollbars in Firefox, 
+	which would be better than overflowing long strings, but the
+	downside is that text won't float around images anymore. 
+	Uncomment this if you don't float images anyway */
 	/* overflow: auto; */
 	}
 
@@ -1183,7 +1286,6 @@ ol.commentlist li {
 	border-bottom: <?php echo $bfa_ata_comment_border; ?>;
 	padding: 15px 10px;
 	display: block;
-
 	height: 1%; /* for IE6 */
 	margin: 0;
 	}
@@ -1192,14 +1294,12 @@ ol.commentlist li.alt {
 	background-color: #<?php echo $bfa_ata_comment_alt_background_color; ?>;
 	border-bottom: <?php echo $bfa_ata_comment_border; ?>;
 	display: block;
-
 	height: 1%; /* for IE6 */
 	}
 
 ol.commentlist li.authorcomment {
 	background-color: #<?php echo $bfa_ata_author_highlight_color; ?>;
 	display: block;
-
 	height: 1%;
 	}
 
@@ -1245,9 +1345,6 @@ textarea.comment {
 	width: 96%; 
 	margin: 0; 
 	}
-
-
-
 
 
 /* ------------------------------------------------------------------
@@ -1342,7 +1439,6 @@ ul.commentlist li p {
 ul.commentlist span.authorname {
 	font-size: <?php echo $bfa_ata_comment_author_size; ?>;
 	}
-
 
 div.comment-meta a:link, 
 div.comment-meta a:visited, 
@@ -1460,8 +1556,12 @@ div.archives-page img {
 	<?php echo $bfa_ata_post_image_caption_style; ?>
 	}
 
+/* for imges inside a caption container IE6 does not
+stretch images vertically as it does with images without
+caption so we can leave this rule although it is probably not
+required as jQuery sets the height for caption'ed images too */
 * html .wp-caption {
-	height: 100%;
+	height: 100%; 
 	}
 	
 .wp-caption img {
@@ -1469,8 +1569,6 @@ div.archives-page img {
    	padding: 0;
    	border: 0 none;
 	}
-
-
 	
 .wp-caption p.wp-caption-text {
 	<?php echo $bfa_ata_image_caption_text; ?>
@@ -2017,14 +2115,14 @@ ul#rmenu li a:link, ul#rmenu li a:hover, ul#rmenu li a:visited, ul#rmenu li a:ac
 	}
 
 
-
+/*
 ul.rMenu li.sfhover a:active,
 ul.rMenu li:hover a:active
 	{
 	color: #fff;
 	background-color: #c00;
 	}
-
+*/
 
 	
 ul.rMenu li
@@ -2066,13 +2164,16 @@ ul#rmenu li.sfhover
 
 
 
-	
+/* "current" page and hover */
+ul.rMenu li.current_page_item, 
 ul.rMenu li a:hover
 	{
 	background-color: #<?php echo $bfa_ata_page_menu_bar_background_color_hover; ?>;
 	color: #<?php echo $bfa_ata_page_menu_bar_link_color_hover; ?>;
 	}
 /*added*/
+/* "current" category and hover */
+ul#rmenu li.current-cat,
 ul#rmenu li a:hover
 	{
 	background-color: #<?php echo $bfa_ata_cat_menu_bar_background_color_hover; ?>;

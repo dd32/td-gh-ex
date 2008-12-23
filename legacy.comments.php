@@ -23,7 +23,9 @@ if (get_option( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } els
 if ($comments) : ?>
 	
 	<h3 id="comments"><?php // Comment Area Title 
-	printf(__('%1$s to %2$s', 'atahualpa'), comments_number(__('No Comments', 'atahualpa'), __('1 Comment', 'atahualpa'), __ngettext('% comment', '% comments', get_comments_number(), 'atahualpa')), get_the_title()); ?></h3>
+	comments_number(__('No comments yet to ', 'atahualpa'), __('1 comment to ', 'atahualpa'), __('% comments to ', 'atahualpa')); echo get_the_title();
+	?>
+	</h3>
 	
 	<!-- Comment List -->
 	<ol class="commentlist">

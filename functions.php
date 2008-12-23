@@ -106,9 +106,18 @@ function bfa_escapelt($string) {
 	$string = str_replace('>', '&gt;', $string);
 	return $string;
 }
+function bfa_escape_date_format_slashes($string) {
+	$string = str_replace('\\', 'xxxdateslashxxx', $string);
+	return $string;
+}
+function bfa_unescape_date_format_slashes($string) {
+	$string = str_replace('xxxdateslashxxx', '\\', $string);
+	return $string;
+}
 ?>
 <?php
 // get the theme options
+$stylesheet_directory = get_bloginfo('template_directory');
 include (TEMPLATEPATH . '/functions/bfa_theme_options.php');
 
 function mytheme_add_admin() {
@@ -117,35 +126,47 @@ function mytheme_add_admin() {
         if ( 'save' == $_REQUEST['action'] ) {
  
 			foreach ($options as $value) {
-               	if ( $value['escape'] == "yes" ) {  
-					update_option( $value['id'], stripslashes(bfa_escape($_REQUEST[ $value['id'] ] )));  
-				} elseif ( $value['stripslashes'] == "no" ) {   
-					update_option( $value['id'], $_REQUEST[ $value['id'] ] ); 
-				} else {
-					update_option( $value['id'], stripslashes($_REQUEST[ $value['id'] ] )); 
+				if ( $value['category'] == $_REQUEST['category'] ) {
+					if ( $value['escape'] == "yes" ) {  
+						update_option( $value['id'], stripslashes(bfa_escape($_REQUEST[ $value['id'] ] )));  
+					} elseif ( $value['type'] == "postinfos" ) {   
+						update_option( $value['id'], bfa_escape_date_format_slashes($_REQUEST[ $value['id'] ] )); 
+					} elseif ( $value['stripslashes'] == "no" ) {   
+						update_option( $value['id'], $_REQUEST[ $value['id'] ] ); 
+					} else {
+						update_option( $value['id'], stripslashes($_REQUEST[ $value['id'] ] )); 
+					}
 				}
 			}
 				
             foreach ($options as $value) {
-               	if ( $value['escape'] == "yes" ) {
-					if( isset( $_REQUEST[ $value['id'] ] ) ) { 
-						update_option( $value['id'], stripslashes(bfa_escape($_REQUEST[ $value['id'] ]  ))); 
+				if ( $value['category'] == $_REQUEST['category'] ) {
+					if ( $value['escape'] == "yes" ) {
+						if( isset( $_REQUEST[ $value['id'] ] ) ) { 
+							update_option( $value['id'], stripslashes(bfa_escape($_REQUEST[ $value['id'] ]  ))); 
+						} else { 
+							delete_option( $value['id'] ); 
+						} 
+					} elseif ($value['type'] == "postinfos") { 
+						if( isset( $_REQUEST[ $value['id'] ] ) ) { 
+							update_option( $value['id'], bfa_escape_date_format_slashes($_REQUEST[ $value['id'] ]  )); 
+						} else { 
+							delete_option( $value['id'] ); 
+						} 
+					} elseif ($value['stripslashes'] == "no") { 
+						if( isset( $_REQUEST[ $value['id'] ] ) ) { 
+							update_option( $value['id'], $_REQUEST[ $value['id'] ]  ); 
+						} else { 
+							delete_option( $value['id'] ); 
+						} 
 					} else { 
-						delete_option( $value['id'] ); 
+						if( isset( $_REQUEST[ $value['id'] ] ) ) { 
+							update_option( $value['id'], stripslashes($_REQUEST[ $value['id'] ]  )); 
+						} else { 
+							delete_option( $value['id'] ); 
+						} 
 					} 
-				} elseif ($value['stripslashes'] == "no") { 
-					if( isset( $_REQUEST[ $value['id'] ] ) ) { 
-						update_option( $value['id'], $_REQUEST[ $value['id'] ]  ); 
-					} else { 
-						delete_option( $value['id'] ); 
-					} 
-				} else { 
-					if( isset( $_REQUEST[ $value['id'] ] ) ) { 
-						update_option( $value['id'], stripslashes($_REQUEST[ $value['id'] ]  )); 
-					} else { 
-						delete_option( $value['id'] ); 
-					} 
-				} 
+				}
 			} 
 				
             header("Location: themes.php?page=functions.php&saved=true");
@@ -153,24 +174,26 @@ function mytheme_add_admin() {
 
 		} else if( 'reset' == $_REQUEST['action'] ) {
             foreach ($options as $value) {
-                delete_option( $value['id'] ); 
+				if ( $value['category'] == $_REQUEST['category'] OR "reset-all" == $_REQUEST['category'] ) {
+					delete_option( $value['id'] ); 
+					}
 				}
             header("Location: themes.php?page=functions.php&reset=true");
             die;
         }
     }
-    add_theme_page($themename. __(" Options","atahualpa"), __("Atahualpa Theme Options","atahualpa"), 'edit_themes', basename(__FILE__), 'mytheme_admin');
+    add_theme_page($themename. " Options", "Atahualpa Theme Options", 'edit_themes', basename(__FILE__), 'mytheme_admin');
 }
 
 function mytheme_admin() {
     global $themename, $shortname, $options;
-    if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename. __(' settings saved.','atahualpa').'</strong></p></div>';
-    if ( $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename. __(' settings reset.','atahualpa').'</strong></p></div>';
+    if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename. ' settings saved.</strong></p></div>';
+    if ( $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename. ' settings reset.</strong></p></div>';
 ?>
 <?php 
 #
 $theme_name = "Atahualpa";
-$theme_version = "3.1";
+$theme_version = "3.1.2";
 #
 $border_styles = array("solid", "dotted", "dashed", "double", "groove", "ridge", "inset", "outset");
 $background_repeat = array("vertic. and horiz.", "vertically", "horizontally", "don't repeat");
@@ -191,56 +214,60 @@ $url_base = get_bloginfo('template_directory');
 <table width="100%" cellpadding="2" cellspacing="0"><tr><td valign="middle" width="380"><h2 style="margin:0 30px 0 0; padding: 5px 0 5px 0;"><?php echo $theme_name . " " . $theme_version; ?> Theme Options</h2></td><td valign="middle"><iframe src="http://wordpress.bytesforall.com/update.php?theme=<?php echo $theme_name; ?>&version=<?php echo $theme_version; ?>" width="98%" height="40" scrolling="no" frameborder="0"></iframe></td>
 </tr></table>
 <div class="wrap">
-<form method="post"><ul id="bfaoptiontabs" class="shadetabs">
-<li><a href="#" rel="start-here" class="selected"><?php _e('START','atahualpa'); ?></a></li>
-<li><a href="#" rel="seo"><?php _e('SEO','atahualpa'); ?></a></li>
-<li><a href="#" rel="body-font-links"><?php _e('Body, Text &amp; Links','atahualpa'); ?></a></li>
-<li><a href="#" rel="layout"><?php _e('Layout','atahualpa'); ?></a></li>
-<li><a href="#" rel="favicon"><?php _e('Favicon','atahualpa'); ?></a></li>
-<li><a href="#" rel="header"><?php _e('Header','atahualpa'); ?></a></li>
-<li><a href="#" rel="header-image"><?php _e('Header Image','atahualpa'); ?></a></li>
-<li><a href="#" rel="feed-links"><?php _e('RSS Feed Links','atahualpa'); ?></a></li>
-<li><a href="#" rel="page-menu-bar"><?php _e('Page Menu Bar','atahualpa'); ?></a></li>
-<li><a href="#" rel="cat-menu-bar"><?php _e('Category Menu Bar','atahualpa'); ?></a></li>
-<li><a href="#" rel="center"><?php _e('Center','atahualpa'); ?></a></li>
-<li><a href="#" rel="next-prev-nav"><?php _e('Next/Previous Navigation','atahualpa'); ?></a></li>
-<li><a href="#" rel="sidebars"><?php _e('Sidebars','atahualpa'); ?></a></li>
-<li><a href="#" rel="widgets"><?php _e('Widgets','atahualpa'); ?></a></li>
-<li><a href="#" rel="postinfos"><?php _e('Post/Page Info Items','atahualpa'); ?></a></li>
-<li><a href="#" rel="posts"><?php _e('Post/Page Styling','atahualpa'); ?></a></li>
-<li><a href="#" rel="posts-or-excerpts"><?php _e('Posts or Excerpts','atahualpa'); ?></a></li>
-<li><a href="#" rel="more-tag"><?php _e('"Read More" tag','atahualpa'); ?></a></li>
-<li><a href="#" rel="comments"><?php _e('Comments','atahualpa'); ?></a></li>
-<li><a href="#" rel="footer-style"><?php _e('Footer','atahualpa'); ?></a></li>
-<li><a href="#" rel="tables"><?php _e('Tables','atahualpa'); ?></a></li>
-<li><a href="#" rel="forms"><?php _e('Forms','atahualpa'); ?></a></li>
-<li><a href="#" rel="blockquotes"><?php _e('Blockquotes','atahualpa'); ?></a></li>
-<li><a href="#" rel="images"><?php _e('Images','atahualpa'); ?></a></li>
-<li><a href="#" rel="html-inserts"><?php _e('HTML/CSS Inserts','atahualpa'); ?></a></li>
-<li><a href="#" rel="archives-page"><?php _e('Archives Page','atahualpa'); ?></a></li>
+<ul id="bfaoptiontabs" class="shadetabs">
+<li><a href="#" rel="start-here" class="selected">START</a></li>
+<li><a href="#" rel="seo">SEO</a></li>
+<li><a href="#" rel="body-font-links">Body, Text &amp; Links</a></li>
+<li><a href="#" rel="layout">Layout</a></li>
+<li><a href="#" rel="favicon">Favicon</a></li>
+<li><a href="#" rel="header">Header</a></li>
+<li><a href="#" rel="header-image">Header Image</a></li>
+<li><a href="#" rel="feed-links">RSS Settings</a></li>
+<li><a href="#" rel="page-menu-bar">Page Menu Bar</a></li>
+<li><a href="#" rel="cat-menu-bar">Category Menu Bar</a></li>
+<li><a href="#" rel="center">Center</a></li>
+<li><a href="#" rel="next-prev-nav">Next/Previous Navigation</a></li>
+<li><a href="#" rel="sidebars">Sidebars</a></li>
+<li><a href="#" rel="widgets">Widgets</a></li>
+<li><a href="#" rel="postinfos">Post/Page Info Items</a></li>
+<li><a href="#" rel="posts">Post/Page Styling</a></li>
+<li><a href="#" rel="posts-or-excerpts">Posts or Excerpts</a></li>
+<li><a href="#" rel="more-tag">"Read More" tag</a></li>
+<li><a href="#" rel="comments">Comments</a></li>
+<li><a href="#" rel="footer-style">Footer</a></li>
+<li><a href="#" rel="tables">Tables</a></li>
+<li><a href="#" rel="forms">Forms</a></li>
+<li><a href="#" rel="blockquotes">Blockquotes</a></li>
+<li><a href="#" rel="images">Images</a></li>
+<li><a href="#" rel="html-inserts">HTML/CSS Inserts</a></li>
+<li><a href="#" rel="archives-page">Archives Page</a></li>
 </ul>
 
 <div id="start-here" class="tabcontent">   <!-- opening the first tab content div, first option should be start-here, in the options array above //-->
 <?php foreach ($options as $value) {     # start the options loop, check first, if we need to switch to another tab = option category
 
-# open/close category tab divs
-	if ( eregi("switchto:", $value['category'])) {     
-	$new_category = ereg_replace("switchto:", "", $value['category']); 
-	echo "</div>\n<div id=\"$new_category\" class=\"tabcontent\">\n";
-	}
+# open/close category tab divs 
+if ( $value['switch'] == "yes") {     
+		
+	echo "</div>\n<div id=\"" . $value['category'] . "\" class=\"tabcontent\">\n";
+	
+	// all categories except first category "start-here" get an opening form tag. "start-here" has no value "switch" so no IF required here
+	echo '<form method="post">'; 
+	
+}
 
 # extra info for some categories
 
-if($value['category'] == "switchto:postinfos") { ?>
+if($value['category'] == "postinfos" AND $value['switch'] == "yes") { ?>
 <div class="bfa-container">
     <div class="bfa-container-full"><img src="<?php echo get_bloginfo('template_directory'); ?>/options/images/post-structure.gif" style="float: right; margin: 40px 0 15px 15px;">
-	<?php _e("<label for=\"Post Info Items\">Post Info Items</label><br /><br />
+	<label for="Post Info Items">Post Info Items</label><br /><br />
 	Configure a <strong>Kicker</strong>, a <strong>Byline</strong> and a <strong>Footer</strong> for posts and pages by arranging these <strong>Post Info Items</strong>. 
 	<br /><br />Some of these post info items have one or several <strong>parameters</strong>: 
 <ul>
 	<li>You can leave parameters empty but do not remove their single quotes, even if the parameter is empty.</li>
 	<li>Replace the parameter <code>delimiter</code> with what you want to put between the list items of the tag or category list, i.e. a comma.</li>
-	<li>Replace the parameters <code>before</code> and <code>after</code> with what you want to display before or after that info item. If an item has these \"before/after\" parameters, use them instead of 
+	<li>Replace the parameters <code>before</code> and <code>after</code> with what you want to display before or after that info item. If an item has these "before/after" parameters, use them instead of 
 	hard coding text before and after that item: Example: Use <br /><code>%tags-linked('<i>Tags: </i>', '<i>, </i>', '<i> - </i>')%</code><br />instead of<br /><code>Tags: %tags-linked('', '<i>, </i>', '')% - </code></li>
 	<li>Replace the parameter <code>linktext</code> with the link text for that item.</li>
 </ul>
@@ -250,7 +277,7 @@ HTML and <strong>icons</strong> can be used, inside of parameters, too, just not
 <li>To use your own images, upload them to /[theme-folder]/images/icons/</li>
 </ul>
 	<h3>Icons</h3>
-<strong>Currently available images (Once you uploaded yours they will be listed here):</strong><br /><br />","atahualpa"); ?>
+<strong>Currently available images (Once you uploaded yours they will be listed here):</strong><br /><br />
 <?php
 if ($handle = opendir( TEMPLATEPATH . '/images/icons/')) {
     while (false !== ($file = readdir($handle))) {
@@ -266,7 +293,7 @@ foreach ($files as $key => $file) {
 }
 ?>
 <div style="clear:left">&nbsp;</div>
-<?php _e("<h3>Examples</h3>
+<h3>Examples</h3>
 Examples for <strong>Post Bylines</strong>:
 <ul>
 	<li><code>By %author%, on %date('<i>F jS, Y</i>')%</code></li>
@@ -347,51 +374,51 @@ Prints a link with <em>linktext</em> as the link text, which, when clicked, will
 <br /><strong>Example:</strong> <code>%print('<i>Print this Page</i>')%</code>
 <br /><h4>%edit('before', 'linktext', 'after')%</h4>
 Prints a direct edit link for the post, IF the current viewer is permitted to edit posts, with <em>linktext</em> as the link text.
-<br /><strong>Example:</strong> <code>%edit('<i> - </i>', '<i>Edit This Post</i>', '')%</code>", "atahualpa"); ?>
+<br /><strong>Example:</strong> <code>%edit('<i> - </i>', '<i>Edit This Post</i>', '')%</code>
 <br /><h4>%wp-print%</h4>
-<?php _e("Prints a link to a print preview page of the post. A configurable alternative to the theme's own basic print function (which prints right away, without preview page).","atahualpa"); ?><br />
+Prints a link to a print preview page of the post. A configurable alternative to the theme's own basic print function (which prints right away, without preview page).<br />
 <?php echo ( function_exists('wp_print') ? 
-__('Customize the output at the <a title="If this link doesn\'t work, go to \'Settings\' (top right) -> \'Print\'" 
-href="options-general.php?page=wp-print/print-options.php">WP-Print Options Page</a>.','atahualpa') : 
-__('To use this item, you must first install (= upload) and activate the plugin "<a href="http://wordpress.org/extend/plugins/wp-print/">WP-Print</a>"','atahualpa') ); ?>
+'Customize the output at the <a title="If this link doesn\'t work, go to \'Settings\' (top right) -> \'Print\'" 
+href="options-general.php?page=wp-print/print-options.php">WP-Print Options Page</a>.' : 
+'To use this item, you must first install (= upload) and activate the plugin "<a href="http://wordpress.org/extend/plugins/wp-print/">WP-Print</a>"' ); ?>
 <br /><h4>%wp-email%</h4>
-<?php _e("Prints a link to a form where visitors can e-mail the post to others.","atahualpa"); ?><br />
+Prints a link to a form where visitors can e-mail the post to others.<br />
 <?php echo ( function_exists('wp_email') ? 
-__('Customize the output at the <a title="If this link doesn\'t work, click on \'E-Mail\' at the top of the current page, then \'E-Mail Options\'" 
+'Customize the output at the <a title="If this link doesn\'t work, click on \'E-Mail\' at the top of the current page, then \'E-Mail Options\'" 
 href="admin.php?page=wp-email/email-options.php">WP-Email Options Page</a>.<br />
 <strong>Settings:</strong> <ul><li>Change settings in the section "E-Mail Styles" to customize the output of this item</li>
 <li>Make other changes as you see fit</li>
-<li>Click "Save Changes"</li></ul>','atahualpa') : 
-__('To use this item, you must first install (= upload) and activate the plugin "<a href="http://wordpress.org/extend/plugins/wp-email/">WP-Email</a>"','atahualpa') ); ?>
+<li>Click "Save Changes"</li></ul>' : 
+'To use this item, you must first install (= upload) and activate the plugin "<a href="http://wordpress.org/extend/plugins/wp-email/">WP-Email</a>"' ); ?>
 <br /><h4>%wp-postviews%</h4>
-<?php _e("Prints how many times the post was viewed.","atahualpa"); ?><br />
+Prints how many times the post was viewed.<br />
 <?php echo ( function_exists('the_views') ? 
-__('Customize the output at the <a title="If this link doesn\'t work, go to \'Settings\' (top right) -> \'Post Views\'" 
+'Customize the output at the <a title="If this link doesn\'t work, go to \'Settings\' (top right) -> \'Post Views\'" 
 href="options-general.php?page=wp-postviews/postviews-options.php">WP-PostViews Options Page</a>.<br />
 <strong>Settings:</strong> <ul><li>Change "Views Template" to customize the output of this item</li>
 <li>Make other changes as you see fit</li>
-<li>Click "Save Changes"</li></ul>','atahualpa') : 
-__('To use this item, you must first install (= upload) and activate the plugin "<a href="http://wordpress.org/extend/plugins/wp-postviews/">WP-PostViews</a>"','atahualpa') ); ?>
+<li>Click "Save Changes"</li></ul>' : 
+'To use this item, you must first install (= upload) and activate the plugin "<a href="http://wordpress.org/extend/plugins/wp-postviews/">WP-PostViews</a>"' ); ?>
 <!-- used to work but currently messes up style.css.php
 <br /><h4>%wp-postratings%</h4>
-<?php _e("Prints stars or other graphics showing the vote/rating of a post, and lets visitors rate the post.","atahualpa"); ?><br />
+Prints stars or other graphics showing the vote/rating of a post, and lets visitors rate the post.<br />
 <?php echo ( function_exists('the_ratings') ? 
-__('Customize the output at the <a title="If this link doesn\'t work, click on \'Ratings\' at the top of the current page" 
+'Customize the output at the <a title="If this link doesn\'t work, click on \'Ratings\' at the top of the current page" 
 href="admin.php?page=wp-postratings/postratings-manager.php">WP-PostRatings Options Page</a>.<br />
 <strong>Settings:</strong> <ul><li>Delete <code>%RATINGS_TEXT%</code> from the bottom of the textarea named "Ratings Vote Text:"</li>
 <li>Delete <code>%RATINGS_TEXT%</code> from the bottom of the textarea named "Ratings None:"</li>
 <li>Make other changes as you see fit</li>
-<li>Click "Save Changes"</li></ul>','atahualpa') : 
-__('To use this item, you must first install (= upload) and activate the plugin "<a href="http://wordpress.org/extend/plugins/wp-postratings/">WP-PostRatings</a>"','atahualpa') ); ?>
+<li>Click "Save Changes"</li></ul>' : 
+'To use this item, you must first install (= upload) and activate the plugin "<a href="http://wordpress.org/extend/plugins/wp-postratings/">WP-PostRatings</a>"' ); ?>
 -->
 <br /><h4>%sociable%</h4>
-<?php _e("Prints little icons, linking the post to social bookmark sites.","atahualpa"); ?><br />
+Prints little icons, linking the post to social bookmark sites.<br />
 <?php echo ( function_exists('sociable_html') ? 
-__('Customize the output at the <a title="If this link doesn\'t work, go to \'Settings\' (top right) -> \'Sociable\'" 
+'Customize the output at the <a title="If this link doesn\'t work, go to \'Settings\' (top right) -> \'Sociable\'" 
 href="options-general.php?page=Sociable">Sociable Options Page</a>.<br />
 <strong>Settings:</strong> <ul><li>"Tagline:" - Will be ignored</li><li>"Position:" - Uncheck all boxes</li><li>"Use CSS:" - Uncheck this</li>
-<li>"Open in new window:" - Check or uncheck, will be used</li><li>Click "Save Changes"</li></ul>','atahualpa') : 
-__('To use this item, you must first install (= upload) and activate the plugin "<a href="http://wordpress.org/extend/plugins/sociable/">Sociable</a>"','atahualpa') ); ?>
+<li>"Open in new window:" - Check or uncheck, will be used</li><li>Click "Save Changes"</li></ul>' : 
+'To use this item, you must first install (= upload) and activate the plugin "<a href="http://wordpress.org/extend/plugins/sociable/">Sociable</a>"' ); ?>
     </div>
 </div>
 <?php } 
@@ -410,9 +437,9 @@ if ($value['type'] == "text") { ?>
 			echo ( $value['editable'] == "yes" ? stripslashes(format_to_edit($value['std'])) : $value['std'] ); 
 		}
 		?>" />
-        <br /><?php _e('Default: ','atahualpa'); ?><strong>
+        <br />Default: <strong>
 		<?php if ($value['std'] == "") { 
-			echo __("blank","atahualpa"); 
+			echo "blank"; 
 		} else { 
 			echo ( $value['editable'] == "yes" ? stripslashes(format_to_edit($value['std'])) : $value['std'] ); } ?></strong>
     </div>
@@ -439,10 +466,10 @@ $current_options = get_option( $value['id']);
 <br />
 <table class="bfa-optiontable" border="0" cellspacing="0">
 	<thead>
-		<tr><td colspan="8"><?php _e('List items and links inside','atahualpa'); ?></td></tr>
+		<tr><td colspan="8">List items and links inside</td></tr>
 		</thead>
 <tbody>
-	<tr><td><?php _e('Left Margin for whole Item','atahualpa'); ?></td><td><?php _e('Left Border Width for Links','atahualpa'); ?></td><td><?php _e('Left Border Color for Links','atahualpa'); ?></td><td><?php _e('Left Border Hover Color for Links','atahualpa'); ?></td><td><?php _e('Left Padding for Links','atahualpa'); ?></td><td><?php _e('Link Text Weight','atahualpa'); ?></td><td><?php _e('Link Text Color','atahualpa'); ?></td><td><?php _e('Link Text Hover Color','atahualpa'); ?></td></tr>
+	<tr><td>Left Margin for whole Item</td><td>Left Border Width for Links</td><td>Left Border Color for Links</td><td>Left Border Hover Color for Links</td><td>Left Padding for Links</td><td>Link Text Weight</td><td>Link Text Color</td><td>Link Text Hover Color</td></tr>
   <tr>
   	<td>
   			<select name="<?php echo $value['id'] . '[li-margin-left]'; ?>" id="<?php echo $value['id'] . '[li-margin-left]'; ?>">
@@ -502,19 +529,19 @@ echo '<div class="bfa-container">
 <div class="bfa-container-left"><label for="' . $value['name'] . '">' . $value['name'] . '</label><br /><br />
 <table align="right" class="bfa-optiontable" border="0" cellspacing="0" cellpadding="2">
 <tbody><tr><td>
-<input type="checkbox" name="' . $value['id'] . '[homepage]" ' . ($current_options['homepage'] ? 'checked="checked"' : '' ) . ' /> ' . __('Homepage','atahualpa') . '<br /> 
-<input type="checkbox" name="' . $value['id'] . '[frontpage]" ' . ($current_options['frontpage'] ? 'checked="checked"' : '' ) . ' /> ' . __('Front Page (*)','atahualpa') . '<br /> 
-<input type="checkbox" name="' . $value['id'] . '[single]" ' . ($current_options['single'] ? 'checked="checked"' : '' ) . ' /> ' . __('Single Posts','atahualpa') . '<br /> 
-<input type="checkbox" name="' . $value['id'] . '[page]" ' . ($current_options['page'] ? 'checked="checked"' : '' ) . ' /> ' . __('"Page" pages','atahualpa') . '<br /> 
+<input type="checkbox" name="' . $value['id'] . '[homepage]" ' . ($current_options['homepage'] ? 'checked="checked"' : '' ) . ' /> Homepage<br /> 
+<input type="checkbox" name="' . $value['id'] . '[frontpage]" ' . ($current_options['frontpage'] ? 'checked="checked"' : '' ) . ' /> Front Page (*)<br /> 
+<input type="checkbox" name="' . $value['id'] . '[single]" ' . ($current_options['single'] ? 'checked="checked"' : '' ) . ' /> Single Posts<br /> 
+<input type="checkbox" name="' . $value['id'] . '[page]" ' . ($current_options['page'] ? 'checked="checked"' : '' ) . ' /> "Page" pages<br /> 
 </td><td>
-<input type="checkbox" name="' . $value['id'] . '[category]" ' . ($current_options['category'] ? 'checked="checked"' : '' ) . ' /> ' . __('Category Pages','atahualpa') . '<br /> 
-<input type="checkbox" name="' . $value['id'] . '[date]" ' . ($current_options['date'] ? 'checked="checked"' : '' ) . ' /> ' . __('Archive Pages','atahualpa') . '<br /> 
-<input type="checkbox" name="' . $value['id'] . '[tag]" ' . ($current_options['tag'] ? 'checked="checked"' : '' ) . ' /> ' . __('Tag Pages','atahualpa') . '<br /> 
-<input type="checkbox" name="' . $value['id'] . '[search]" ' . ($current_options['search'] ? 'checked="checked"' : '' ) . ' /> ' . __('Search Results','atahualpa') . '<br /> 
+<input type="checkbox" name="' . $value['id'] . '[category]" ' . ($current_options['category'] ? 'checked="checked"' : '' ) . ' /> Category Pages<br /> 
+<input type="checkbox" name="' . $value['id'] . '[date]" ' . ($current_options['date'] ? 'checked="checked"' : '' ) . ' /> Archive Pages<br /> 
+<input type="checkbox" name="' . $value['id'] . '[tag]" ' . ($current_options['tag'] ? 'checked="checked"' : '' ) . ' /> Tag Pages<br /> 
+<input type="checkbox" name="' . $value['id'] . '[search]" ' . ($current_options['search'] ? 'checked="checked"' : '' ) . ' /> Search Results<br /> 
 </td><td valign="top">
-<input type="checkbox" name="' . $value['id'] . '[author]" ' . ($current_options['author'] ? 'checked="checked"' : '' ) . ' /> ' . __('Author Pages','atahualpa') . '<br /> 
-<input type="checkbox" name="' . $value['id'] . '[404]" ' . ($current_options['404'] ? 'checked="checked"' : '' ) . ' /> ' . __('"Not Found"','atahualpa') . '<br /> 
-<input type="checkbox" name="' . $value['id'] . '[attachment]" ' . ($current_options['attachment'] ? 'checked="checked"' : '' ) . ' /> ' . __('Attachments','atahualpa') . '<br /> 
+<input type="checkbox" name="' . $value['id'] . '[author]" ' . ($current_options['author'] ? 'checked="checked"' : '' ) . ' /> Author Pages<br /> 
+<input type="checkbox" name="' . $value['id'] . '[404]" ' . ($current_options['404'] ? 'checked="checked"' : '' ) . ' /> "Not Found"<br /> 
+<input type="checkbox" name="' . $value['id'] . '[attachment]" ' . ($current_options['attachment'] ? 'checked="checked"' : '' ) . ' /> Attachments<br /> 
 <input type="hidden" name="' . $value['id'] . '[check-if-saved-once]" value="saved">
 </td></tr></tbody>
 </table>
@@ -528,7 +555,7 @@ elseif ($value['type'] == "textarea") { ?>
 <div class="bfa-container">
     <div class="bfa-container-left"><label for="<?php echo $value['name']; ?>"><?php echo $value['name']; ?></label><br />
         <textarea name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" cols="35" style="width: 95%" rows="6"><?php if ( get_option( $value['id'] ) !== FALSE) { echo ( $value['editable'] == "yes" ? stripslashes(format_to_edit(get_option( $value['id'] ))) : get_option( $value['id'] ) ) ; } else { echo ( $value['editable'] == "yes" ? stripslashes(format_to_edit($value['std'])) : $value['std'] ); } ?></textarea>
-        <br /><?php _e('Default: ','atahualpa'); ?><strong><?php if ($value['std'] == "") { _e("blank","atahualpa"); } else { echo "<br /><code>" . ( $value['editable'] == "yes" ? str_replace("\n", "<br />", htmlentities($value['std'], ENT_QUOTES)) : str_replace("\n", "<br />", $value['std']) ) . "</code>"; } ?></strong>
+        <br />Default: <strong><?php if ($value['std'] == "") { echo "blank"; } else { echo "<br /><code>" . ( $value['editable'] == "yes" ? str_replace("\n", "<br />", htmlentities($value['std'], ENT_QUOTES)) : str_replace("\n", "<br />", $value['std']) ) . "</code>"; } ?></strong>
     </div>
     <div class="bfa-container-right">
     <?php echo $value['info']; ?>
@@ -543,8 +570,8 @@ elseif ($value['type'] == "postinfos") { ?>
 <div class="bfa-container">
     <div class="bfa-container-full"><label for="<?php echo $value['name']; ?>"><?php echo $value['name']; ?></label><br />
 	    <?php echo $value['info']; ?><br />
-        <textarea name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" cols="110" rows="3"><?php if ( get_option( $value['id'] ) !== FALSE) { echo stripslashes(format_to_edit(get_option( $value['id'] ))); } else { echo stripslashes(format_to_edit($value['std'])); } ?></textarea>
-        <br /><?php _e('Default: ','atahualpa'); ?><strong><?php if ($value['std'] == "") { _e("blank","atahualpa"); } else { echo stripslashes(format_to_edit($value['std'])); } ?></strong>
+        <textarea name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" cols="110" rows="3"><?php if ( get_option( $value['id'] ) !== FALSE) { echo bfa_unescape_date_format_slashes(format_to_edit(get_option( $value['id'] ))); } else { echo bfa_unescape_date_format_slashes(format_to_edit($value['std'])); } ?></textarea>
+        <br />Default: <strong><?php if ($value['std'] == "") { echo "blank"; } else { echo bfa_unescape_date_format_slashes(format_to_edit($value['std'])); } ?></strong>
     </div>
 </div>
 <?php } 
@@ -569,7 +596,7 @@ elseif ($value['type'] == "select") { ?>
                 <option<?php if ( get_option( $value['id'] ) == $option) { echo ' selected="selected"'; } elseif ( get_option( $value['id']) === FALSE AND $option == $value['std']) { echo ' selected="selected"'; } ?>><?php echo $option; ?></option>
                 <?php } ?>
         </select>
-        <br /><?php _e('Default: ','atahualpa'); ?><strong><?php if ($value['std'] == "") { _e("blank","atahualpa"); } else { echo $value['std']; } ?></strong>
+        <br />Default: <strong><?php if ($value['std'] == "") { echo "blank"; } else { echo $value['std']; } ?></strong>
      </div>
      <div class="bfa-container-right">
         <?php echo $value['info']; ?>
@@ -578,7 +605,27 @@ elseif ($value['type'] == "select") { ?>
 </div>
 <?php
 }
-}
+
+	// all categories except first category "start-here" get closing form tags and buttons
+	if ( $value['category'] != "start-here" AND $value['lastoption'] == "yes" ) {   ?>
+		<div class="bfa-container">	
+		<p class="submit">
+		<input name="save" type="submit" value="Save changes" />    
+		<input type="hidden" name="action" value="save" />
+		<input type="hidden" name="category" value="<?php echo $value['category']; ?>" />
+		</p>
+		</form>
+		<form method="post">
+		<p class="submit">
+		<input name="reset" type="submit" value="Reset" />
+		<input type="hidden" name="action" value="reset" />
+		<input type="hidden" name="category" value="<?php echo $value['category']; ?>" />
+		</p>
+		</form>
+		</div>
+	<?php }
+
+} // options loop END
 ?>
 </div> <!-- closing the last tab content div //-->
 <script type="text/javascript">
@@ -587,17 +634,16 @@ myflowers.setpersist(true) //toogle persistence of the tabs' state
 myflowers.setselectedClassTarget("link") //"link" or "linkparent"
 myflowers.init()
 </script>
-<p class="submit">
-<input name="save" type="submit" value="<?php _e('Save changes','atahualpa'); ?>" />    
-<input type="hidden" name="action" value="save" />
-</p>
-</form>
-<form method="post">
-<p class="submit">
-<input name="reset" type="submit" value="<?php _e('Reset','atahualpa'); ?>" />
-<input type="hidden" name="action" value="reset" />
-</p>
-</form>
+<!-- "reset all" button -->
+			<form method="post">
+			<p class="submit">
+			<input name="reset" type="submit" value="RESET EVERYTHING" />
+			<input type="hidden" name="action" value="reset" />
+			<input type="hidden" name="category" value="reset-all" />
+			WARNING - this will reset ALL 200+ theme options!
+			</p>
+
+			</form>
 </div><!-- / class=wrap -->
 <?php
 }
@@ -605,8 +651,7 @@ add_action('admin_menu', 'mytheme_add_admin');
 ?>
 <?php
 function footer_output($footer_content) {
-$footer_content .= sprintf(__('<br />Powered by %1$sWordPress</a> &middot; %2$sWP Themes</a> by BFA','atahualpa'), '<a href="http://www.wordpress.org/">', '<a href="http://wordpress.bytesforall.com/">');
-if (get_option('bfa_ata_show_2nd_footer_link') != "No") { $footer_content .= ' <a href="http://bytesforall.com/">' . __('Web Hosting','atahualpa') . '</a>'; }
+$footer_content .= sprintf(__('<br />Powered by %1$sWordPress</a> &middot; %2$sWordPress Themes</a> by BFA','atahualpa'), '<a href="http://www.wordpress.org/">', '<a href="http://wordpress.bytesforall.com/">');
 return $footer_content;
 }
 ?>
