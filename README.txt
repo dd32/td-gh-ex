@@ -1,5 +1,21 @@
-Wordpress Theme "Atahualpa" version 3.1.3
+Wordpress Theme "Atahualpa" version 3.1.4
 
+
+ATTENTION - ATTENTION - ATTENTION:
+
+Before uploading the theme, enable the theme options by editing
+
+atahualpa3/header.php
+
+Change 
+
+<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
+
+to NEW:
+
+<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>.php" type="text/css" /> 
+
+NOTE the added ".php" part.
 
 #####################################################################
 
@@ -9,6 +25,10 @@ INSTALLATION:
 
 1. Extract the file "atahualpa3.zip" on your desktop computer,
 i.e. with WinZip or 7-zip
+
+#####################################################################
+
+1b. See top of this file: Edit header.php
 
 
 #####################################################################
