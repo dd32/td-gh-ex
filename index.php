@@ -7,12 +7,9 @@ foreach ($options as $value) {
 		$$value['id'] = get_option( $value['id'] ); 
 	} 
 }
+$current_page_id = $wp_query->get_queried_object_id();
 ?>
-
-
 <?php get_header(); ?>
-
-
 <?php // If there are any posts:
 if (have_posts()) : 
 ?>

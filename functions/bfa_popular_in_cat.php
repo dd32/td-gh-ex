@@ -122,7 +122,7 @@ and the modification Last X days by DJ Chuang www.djchuang.com
    	    <input style="width: 20px;" id="bfa_pic_min_amount_comments" name="bfa_pic_min_amount_comments" type="text" value="<?php echo $bfa_pic_min_amount_comments; ?>" /> days and with at least
    	    </p>
             <div style="clear:left"></div>
-  	    <input type="hidden" id="bfa_pic_src-submit" name="bfa_pic_src-submit" value="1" />     
+  	    <input type="hidden" id="bfa_pic_src-submit" name="bfa_pic_src-submit" value="1" />
 <?php
 	 }
 	

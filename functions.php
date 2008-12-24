@@ -193,7 +193,7 @@ function mytheme_admin() {
 <?php 
 #
 $theme_name = "Atahualpa";
-$theme_version = "3.1.2";
+$theme_version = "3.1.3";
 #
 $border_styles = array("solid", "dotted", "dashed", "double", "groove", "ridge", "inset", "outset");
 $background_repeat = array("vertic. and horiz.", "vertically", "horizontally", "don't repeat");
@@ -211,7 +211,7 @@ $text_transform = array("none", "capitalize", "uppercase", "lowercase");
 $text_decoration = array("none", "underline", "overline", "line-through");
 $url_base = get_bloginfo('template_directory');
 ?>
-<table width="100%" cellpadding="2" cellspacing="0"><tr><td valign="middle" width="380"><h2 style="margin:0 30px 0 0; padding: 5px 0 5px 0;"><?php echo $theme_name . " " . $theme_version; ?> Theme Options</h2></td><td valign="middle"><iframe src="http://wordpress.bytesforall.com/update.php?theme=<?php echo $theme_name; ?>&version=<?php echo $theme_version; ?>" width="98%" height="40" scrolling="no" frameborder="0"></iframe></td>
+<table width="100%" cellpadding="2" cellspacing="0"><tr><td valign="middle" width="380"><h2 style="margin:0 30px 0 0; padding: 5px 0 5px 0;"><?php echo $theme_name; ?> Theme Options</h2></td><td valign="middle"><iframe src="http://wordpress.bytesforall.com/update.php?theme=<?php echo $theme_name; ?>&version=<?php echo $theme_version; ?>" width="98%" height="40" scrolling="no" frameborder="0"></iframe></td>
 </tr></table>
 <div class="wrap">
 <ul id="bfaoptiontabs" class="shadetabs">

@@ -325,7 +325,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
             <p style="float: left; width: 160px; text-align: left;"><input id="bfa_rc_display_search" name="bfa_rc_display_search" type="checkbox" <?php if($bfa_rc_display_search == "on"){echo " CHECKED";}?> /> Search Result Pages</p>
             <p style="float: left; width: 160px; text-align: left;"><input id="bfa_rc_display_author" name="bfa_rc_display_author" type="checkbox" <?php if($bfa_rc_display_author == "on"){echo " CHECKED";}?> /> Author Pages</p>
             <p style="float: left; width: 160px; text-align: left;"><input id="bfa_rc_display_404" name="bfa_rc_display_404" type="checkbox" <?php if($bfa_rc_display_404 == "on"){echo " CHECKED";}?> /> 404 Not Found Pages</p>
-  	    <input type="hidden" id="bfa_rc_src-submit" name="bfa_rc_src-submit" value="1" />     
+  	    <input type="hidden" id="bfa_rc_src-submit" name="bfa_rc_src-submit" value="1" />
 <?php
 	 }
 	

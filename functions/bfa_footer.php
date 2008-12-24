@@ -1,5 +1,4 @@
 <?php
-
 function footer_page_links($matches) {
 	$page_id = $matches[1];
 	$page_data = get_page($page_id, ARRAY_A);

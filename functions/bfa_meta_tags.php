@@ -23,7 +23,6 @@ $bfa_ata_use_bfa_seo == "No") { // if the option "Use Bytes For All SEO options?
 <title><?php 
 if ( is_home() ) {
 	bloginfo('name');} else {
-
 	if ( is_single() OR is_page() ) { 
 #		$bfa_ata_page_title = htmlentities(single_post_title('', false),ENT_QUOTES); } 
 		$bfa_ata_page_title = single_post_title('', false); } // post and page titles get their own filter from WP

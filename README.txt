@@ -1,4 +1,4 @@
-Wordpress Theme "Atahualpa" version 3.0 
+Wordpress Theme "Atahualpa" version 3.1.3
 
 
 #####################################################################
@@ -9,6 +9,7 @@ INSTALLATION:
 
 1. Extract the file "atahualpa3.zip" on your desktop computer,
 i.e. with WinZip or 7-zip
+
 
 #####################################################################
 

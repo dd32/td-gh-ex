@@ -137,7 +137,7 @@ and the modification Last X days by DJ Chuang www.djchuang.com
             <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_author" name="bfa_pp_display_author" type="checkbox" <?php if($bfa_pp_display_author == "on"){echo " CHECKED";}?> /> Author Pages</p>
             <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_404" name="bfa_pp_display_404" type="checkbox" <?php if($bfa_pp_display_404 == "on"){echo " CHECKED";}?> /> 404 Not Found Pages</p>
             <div style="clear:left"></div>
-  	    <input type="hidden" id="bfa_pp_src-submit" name="bfa_pp_src-submit" value="1" />     
+  	    <input type="hidden" id="bfa_pp_src-submit" name="bfa_pp_src-submit" value="1" />
 <?php
 	 }
 	
