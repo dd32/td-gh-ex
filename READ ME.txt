@@ -1,3 +1,0 @@
-This won't work for everyone, but if your blog has a simple name, you may be able to easily insert your header graphic by putting an image file named yourblogname.png (capitalization is important!) into the \images\ directory of this theme.  This logo graphic will act as a link back to the home page.  The width of the image should be 760px or less.
-
-For example, my blog name is "Ardamis.com" and so I've created an image file named "Ardamis.com.png" and put it into the \images\ folder of theme.

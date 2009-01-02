@@ -1,11 +1,11 @@
 /*  
 Theme Name: Apricot
 Theme URI: http://www.ardamis.com/2007/06/03/apricot/
-Description: A minimalist, text-based layout with support for widgets.
-Version: 1.1
+Description: A minimalist, text-based layout with support for widgets and avatars.  Apricot is tested and proven SEO friendly.  All pages validate as XHTML 1.0 Strict.
+Version: 1.2
 Author: Oliver Baty
 Author URI: http://www.ardamis.com/
-Tags: blank slate, custom header, fixed width, minimalist, orange, search engine optimized, SEO friendly, sidebar left, sidebar widgets, simple, starter theme, valid css, valid xhtml, two columns, white, widgets
+Tags: fixed-width, left-sidebar, two-columns, black, orange, white, light
 */
 
 					/* Body and Major Structural Elements */
@@ -53,6 +53,7 @@ body {
 .entry {
 	margin: 0;
 	padding: 0;
+	font: 1.3em/1.6 "Lucida Grande", Verdana, Arial, sans-serif;
 }
 .navigation {
 	padding: 10px 0 60px;
@@ -223,8 +224,6 @@ p.postdate {
 }
 .entry p {
 	margin: 0 0 10px 0;
-	font: 1.3em/1.6 "Lucida Grande", Verdana, Arial, sans-serif;
-	/* layout for paragraphs across all pages */
 }
 .bookmarks {
 	margin: 40px 0 0 0;
@@ -433,7 +432,6 @@ li.tagcloudtags a {
 .entry ol, .entry ul {
 	margin: 0 0 0 4px;
 	padding: 0 0 8px 0;
-	font: 1.3em/1.2 "Lucida Grande", Verdana, Arial, sans-serif;
 	/* keep the same as .entry p */
 }
 .entry ol {

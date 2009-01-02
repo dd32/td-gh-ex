@@ -1,12 +1,17 @@
-<?php get_header(); ?>
+<?php
+/**
+ * @package WordPress
+ * @subpackage Apricot
+ */
+
+get_header();
+?>
 
 	<div id="content" class="narrowcolumn">
 
     	<div class="post">
             <h2>404 Error &#8212; Page Not Found</h2>
     		<div class="entry">
-      			<h6>Did you hear something?</h6>
-
       			<p>The file you are attempting to access does not exist.  Why not try using the links or the search box?</p>
 				
 				<h3>Last 5 blog posts:</h3>
