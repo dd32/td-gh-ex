@@ -1,0 +1,254 @@
+/*
+Theme Name: Master 
+Theme URI: http://www.wplancer.com/master-premium-gpl-wordpress-theme/
+Description: Master WordPress theme is designed and developed by <a href="http://www.wplancer.com/" title="WPlancer">Baki Goxhaj</a> at WPlancer.com. This is a GPL theme that has commercial <a href="http://www.wplancer.com/master-premium-gpl-wordpress-theme/">support and customization</a> available for it. 
+Version: 1.0
+Author: Baki Goxhaj
+Author URI: http://www.wplancer.com/
+Tags: orange, dark, green, white, two-columns, fixed-width, right-sidebar
+
+The CSS, XHTML and design is released under GPL:
+http://www.opensource.org/licenses/gpl-license.php
+
+*/
+
+*{
+	padding: 0;
+	margin: 0;
+	}
+a {
+		color: #d45500;
+		text-decoration: none;
+		}
+a:hover {
+		color: #88aa00;
+		}
+p 		{
+		margin: 15px 0;
+		}
+body {
+		font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif;;
+		font-size: 12px;
+		background: #f4e3d7 repeat-x url('img/bg.png') top center;
+		color: #474747;
+		}
+.clear{
+		clear: both;
+		}
+.aligncenter, div.aligncenter {
+   	display: block;
+   	margin-left: auto;
+	   margin-right: auto;
+}
+.alignleft {
+   	float: left;
+}
+.alignright {
+   	float: right;
+}
+.wp-caption {
+   	border: 1px solid #d45500;
+   	text-align: center;
+   	background-color: #f4e3d7;
+   	padding-top: 4px;
+  		margin: 10px;
+   	/* optional rounded corners for browsers that support it */
+   	-moz-border-radius: 3px;
+	   -khtml-border-radius: 3px;
+   	-webkit-border-radius: 3px;
+   	border-radius: 3px;
+}
+.wp-caption img {
+   	border: 0 none;
+}
+.wp-caption p.wp-caption-text {
+   font-size: 11px;
+   line-height: 17px;
+   padding: 0 4px 5px;
+   margin: 0;
+}
+/*----------[WRAPER]----------*/
+#wraper{
+		width: 960px;
+		margin: 0 auto;
+		}
+#header{
+		overflow: hidden;
+		height: 100px;
+		}
+#logo {
+		border: 0;
+		float: left;
+		margin-top: 20px;
+		}
+#logo h1 a{
+		font: bold 47px 'Times New Roman', Times, serif;
+		color: white;
+		text-transform: uppercase;
+		}
+#logo h2{
+		font: bold 13px Tahoma, Verdana;
+		color: white;
+		}
+/*----------[MENU]----------*/
+#menu {
+		float: right;
+		height: 40px;
+		line-height:40px;
+		margin-top: 60px;
+		}
+#menu ul{
+		display: inline;
+		padding: 0;
+		margin: 0;
+		}
+#menu ul li{
+		float: left;
+		list-style-type: none;
+		text-align: center;
+		padding: 0 15px;
+		background: no-repeat url('img/divider.png') right center;
+		}
+#menu a{
+		color: white;
+		text-decoration: none;
+		}
+#menu a:hover{
+		color: white;
+		text-decoration: underline;
+		}
+		
+/*----------[CONTENT]----------*/
+#content{
+		overflow: hidden;
+		margin: 15px 0;
+		}
+#posts{
+		width: 640px;
+		text-align: justify;
+		line-height: 18px;
+		border: 1px solid #d45500;
+		background: #fff;
+		}
+.post {
+		border-bottom: 1px dotted #d45500;
+		margin: 15px auto;
+		width: 610px;
+		overflow: hidden;
+		}
+.post ul, .post ol{
+		margin-left:30px;
+		}
+.post img{
+		padding: 6px;
+		border: 1px solid #d45500;
+		}
+.titull {
+		width: 615px;
+		font: lighter 22px 'Arial';
+		}
+.meta {
+		font-size: 11px;
+		margin-top: 5px;
+		line-height: 20px;
+		background-color: #d45500;
+		padding: 0 5px;
+		color: #fff;
+		}
+.meta a{
+		color: #fff;
+		font-weight: bold;
+		}
+.tags{
+		font-style: italic;
+		}
+.navigation{
+		overflow: hidden;
+		margin: 15px auto;
+		width: 610px;
+		}
+/*----------[SIDEBAR]----------*/
+#sidebar {
+		width: 300px;
+		float: right;
+		overflow: hidden;
+		border: 1px solid #d45500;
+		background: #fff;
+		padding: 15px 0;
+		}
+#sidebar a {
+		color: #88aa00;
+		text-decoration: none;
+		}
+#sidebar a:hover {
+		color: #d45500;
+		}		
+.widget{
+		margin: 0 15px 15px 15px;
+				}
+.textwidget{
+		}
+.header {
+		border-bottom: 1px solid #d45500;
+		font: bold 16px Arial;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		margin-bottom: 10px;
+		}
+.widget ul {
+		list-style-image: url('img/li.png');
+		margin-left: 22px;
+		}
+.widget ul li{
+		margin-bottom: 5px;
+		}
+		
+/*----------[COMMENTS]----------*/
+#comments{
+		margin: 15px auto;
+		width: 610px;
+		}
+.comments, .commens ul{
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		}
+.comment{
+		overflow: hidden;
+		}
+.avatar{
+		margin: 8px 0 8px 8px;
+		}		
+#postcomment {
+		border-bottom: 1px solid #d45500;
+		font-size: 18px;
+		font-weight: normal;
+		padding: 3px 0;
+		letter-spacing: 2px;
+		}
+#nocomments{
+		border: 1px solid #d45500;
+		padding: 5px;
+		margin: 5px 0;	
+		}
+
+/*----------[FOOTER]----------*/		
+#footer {
+		clear: both;
+		font-size: 11px;
+		height: 50px;
+		line-height: 24px;
+		color: #fff;
+		background: repeat-x url('img/footer.png') top center;
+		}
+#credits{
+		width: 960px;
+		margin: 0 auto;
+		}
+#footer a{
+		color: #fff;
+		font-weight: bold;
+		}
+
+		
+		
