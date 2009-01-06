@@ -31,7 +31,7 @@ $oddcomment = 'alt';
 			<div class="commentmetadata">
 				
 				<div class="avatar">
-					<?php echo get_avatar( $id_or_email, $size = '38', $default = '' ); ?>
+					<?php echo get_avatar( $comment, $size = '38', $default = '' ); ?>
 				</div>
 				
 				<strong><?php comment_author_link() ?></strong><br />

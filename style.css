@@ -1,8 +1,8 @@
 /*
 Theme Name: Azul
 Theme URI: http://www.switchroyale.com/?page_id=21
-Description: Azul is a clean and modern theme with a slightly techy/corporate feel. 
-Version: 1.0
+Description: Azul is a clean and modern theme with a techy/corporate feel. This theme is meant to be easy to edit and completely standards compliant. Free to use for whatever you want.
+Version: 1.1
 Author: Switchroyale
 Author URI: http://www.switchroyale.com
 Tags: blue, white, silver, light, two-columns, fixed-width, right-sidebar
@@ -120,6 +120,7 @@ body {
 #posts {
 	width: 600px;
 	padding: 0 0 0 50px;
+	margin: 0 0 20px 0;
 	float: left;
 }
 
@@ -132,6 +133,7 @@ body {
 	height: 30px;
 	text-align: center;
 	font-size: 10px;
+	margin: 0 5px 0 0;
 }
 
 .date {
@@ -147,6 +149,7 @@ body {
 .tags {
 	font-size: 10px;
 	line-height: 1.5em;
+	color: #999999;
 }
 
 .post h2 {
@@ -161,19 +164,22 @@ body {
 	
 }
 
-.post a {
+.post a, .navigation a {
 	color: #0195c5;
 	text-decoration: none;
 }
 
-.post a:hover {
+.post a:hover, .navigation a:hover {
 	color: #333333;
+}
+
+.post a img {
+	border: none;
 }
 
 .postmetadata {
 	font-size: 10px;
 	line-height: 1.5em;
-	margin: 0 0 0 35px;
 }
 
 .post img.alignleft {
@@ -188,6 +194,18 @@ body {
 
 .post img.aligncenter {
 	text-align: center;
+}
+
+.post .wp-caption {
+	border: 1px solid #cccccc;
+	background: #ebebeb;
+	text-align: center;
+	padding: 10px 5px 0 5px;
+}
+
+.post .wp-caption-text {
+	margin: 0;
+	font-size: 12px;
 }
 
 #commentform #author, #commentform #email, #commentform #url, #commentform #comment {
@@ -262,4 +280,31 @@ body {
 
 #footer a:hover {
 	color: #333333;
+}
+
+#wp-calendar {
+	width: 210px;
+	background: #ebebeb;
+	border: 1px solid #cccccc;
+	margin: 0 0 30px 0;
+	font-size: 12px;
+	text-align: center;
+}
+
+#wp-calendar caption {
+	text-align: left;
+}
+
+#wp-calendar #today {
+	background: #cccccc;
+}
+
+#wp-calendar a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+#wp-calendar a:hover {
+	background: #cccccc;
 }
