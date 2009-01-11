@@ -1,0 +1,134 @@
+/*  
+Theme Name: Anonymous Elegance
+Theme URI: http://the-cloisters.net/themedemos/?SelectedTheme=Anonymous+Elegance
+Description: 2 Column, widget-ready fixed width theme sporting a basic elegance.  Featuring an author info page, gravatars and author box along with Custom Archives, Sitemap and full width No Sidebars page templates.  Tested in Firefox, Opera, Safari, IE6 and IE7.  Compatible up to Wordpress 2.7.
+Version: 1.0
+Author: Mina
+Author URI: http://www.the-cloisters.net/
+Tags: two-columns, fixed-width, left-sidebar, custom-colors, pink, threaded-comments
+
+*/
+
+
+/***** TYPOGRAPHY AND LINKS *****/
+body, address, dd, dl, hr, p, form { font-family: "Trebuchet MS", Verdana, Tahoma, Arial, Sans-serif; margin: 0; padding: 0; }
+
+h1, h2, h3, h4, h5, h6 { color: #333; font-family: Helvetica, Georgia, "Trebuchet MS", Times, Verdana, Tahoma, Arial, Sans-serif; margin: 0; padding: 0 0 20px 5px; }
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.4em; }
+h4 { font-size: 1.3em; }
+h5 { font-size: 1.2em; }
+h6 { font-size: 1.1em; }
+
+a:link, a:visited { text-decoration: none; color: #d4be87; }
+a:hover { text-decoration: none; color: #e4d6b4; }
+p { padding: 10px; }
+blockquote { color: #d4be87; margin: 15px 40px 10px 30px; padding: 0 10px 10px 20px; font-style: italic; border-left: 1px solid #574f4b; border-right: 1px solid #574f4b; }
+
+/***** MAIN CONTENT *****/
+body { margin: 0; font-size: 77%; text-align: left; vertical-align: top; background: #574f4b url(images/body-bg.jpg) repeat; color: #e4d6b4; }
+
+#wrapper { margin: 0 auto 0 auto; width: 1000px; text-align: left; }
+
+#main_content { background: #92857c; float: left; margin: 0 auto 0 auto; padding: 0; width: 1000px; border: #b19787 1px solid; }
+#container { background: transparent; float: left; width: 675px; margin: 0 10px 0 50px; padding: 0 10px 10px 10px; }
+#container_wide { background: transparent; float: left; width: 900px; margin: 0 0 0 35px; padding: 5px 5px 0 7px; }
+
+.post { padding: 10px 0 5px 0; text-align: justify; }
+.post h2 { font-weight: normal; font-size: 1.7em; margin: 0 0 0 5px; padding-top: 5px; }
+.entry { font-size: 1.02em; line-height: 1.42em; padding: 0 0 40px 0; }
+.postmetadata { margin: 0; font-size: 9px; }
+.date {	font-size: .9em; margin-top: -30px; }
+
+#author-box { color: #e4d6b4; width: 90%; min-height: 115px; margin: 10px 10px 20px 10px; padding: 10px; background: #574f4b; border: #b19787 1px solid; }
+#author-box .avatar { float: left; width: 80px; height: 80px; }
+#author-box h2, #author-box h4 { color: #d4be87; background: none; border: none; padding-bottom: 5px;}
+
+/***** HEADER *****/
+#header-wrap { width: 1000px; height: 200px; background: #92857c; padding: 0; margin: 0 auto 0 auto; }
+.header { background: #000 url(images/header.jpg) no-repeat; width: 980px; height: 200px; margin: 10px 10px 0 10px; padding: 0; }
+.header h1 { width: 500px; padding: 0; margin: 0 0 0 20px; font-family: Times New Roman, Arial, "Trebuchet MS", Georgia, Sans-serif; font-size: 3.5em; line-height: 40px; text-align: left; }
+.header h1 a { text-decoration: none; font-variant: small-caps; color: #000; }
+.header h1 a:hover { text-decoration: none; color: #574f4b; }
+.header .description { width: 500px; margin: 0 0 0 60px; padding: 0; font-size: 1.5em; font-weight: normal; font-family: Georgia; color: #000; text-align: left; text-transform: lowercase; font-style: italic; }
+
+/***** HORIZONTAL MENU *****/
+.menu  { width: 960px; margin: 0; padding: 0; display: inline; }
+.menu ul { margin: 100px 15px 0 0; padding: 3px 0 3px 0; list-style: none; text-align: right; }
+.menu ul li { display: inline; margin: 0; }
+.menu ul li a { margin-left: 15px; padding: 0; text-decoration: none; font-variant: small-caps; font-size: 1.4em; color: #000; }
+
+#nav-menu  { float: left; width: 980px; height: 30px; margin: 0 0 15px 10px; padding: 0; display: inline; background: #574f4b; }
+#nav-menu ul { margin: 0 15px 7px 0; padding: 5px 0; list-style: none; text-align: right; }
+#nav-menu ul li { display: inline; margin: 0; }
+#nav-menu ul li a { width: 100%; margin-left: 15px; padding: 0; text-decoration: none; font-variant: small-caps; font-size: 1.2em; color: #e6dfb3; }
+
+/***** IMAGES *****/
+p img { border: #574f4b 7px solid; padding: 0; max-width: 100%; }
+a img { border: #574f4b 7px solid; padding: 0; }
+
+img.avatar { float: left; margin: 5px; border: #574f4b 1px solid; }
+img.centered, .aligncenter, div.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+img.alignright, .alignright { float: right; padding: 0; margin: 0 0 0 7px; display: inline; }
+img.alignleft, .alignleft { float: left; padding: 0; margin: 0 7px 0 0; display: inline; }
+
+.wp-caption { border: 1px solid #ddd; text-align: center; background-color: #574f4b; padding-top: 4px; margin: 10px; }
+.wp-caption img { margin: 0; padding: 0; border: 0 none; }
+.wp-caption p.wp-caption-text { font-size: 11px; line-height: 17px; padding: 0 4px 5px; margin: 0; }
+
+#flickrrss img { border: 1px solid #574f4b; float: left; margin: 0 0 3px 3px; }
+
+/***** NAVIGATION *****/
+.navigation { padding: 5px 0 5px 10px; font-size: 9px; font-weight: bold; line-height: 18px; }
+
+/***** FOOTER *****/
+#footer { width: 1000px; float: left; text-align: right; color: #ceb87f; font-size: 95%; line-height: 130%; }
+#footer a, #footer a:visited { color: #ebe1c8; }
+#footer p { margin-right: 20px; }
+
+/***** SIDEBAR *****/
+#sidebar { background: transparent; width: 180px; float: left; margin: 0 5px 50px 20px; padding: 0; }
+#sidebar ul li a:hover { color: #660000; }
+#sidebar ul li a { font-size: 1.08em; display: inline; margin: 0 0 0 10px; padding: 0; }
+#sidebar ul li { background: transparent; display: block; padding: 0 0 3px 0; margin: 0; list-style: none; }
+#sidebar ul ul { margin: 0 0 0 10px; }
+#sidebar ul ul ul { margin: 0 0 0 10px; }
+#sidebar ul { margin: 0 0 5px 0; padding: 0; }
+#sidebar h2, #commentblock h2 { background: url(images/dot.gif) repeat-x scroll 0pt 100% !important; font-size: 1.3em; font-weight: normal; font-variant: small-caps; margin: 15px auto 5px auto; padding: 3px 3px 3px 0px; text-align: left; } 
+
+/***** SUBSCRIPTION *****/
+.subscribe  { float: right; margin: 10px 10px 0 0; padding: 0; text-decoration: none; }
+.subscribe img { border: none; }
+
+/***** SEARCH *****/
+.search { float: left; width: 210px; margin: 0 0 10px 0; padding: 0; }
+.search form { float: left; margin: .5em 10px 0 0; padding: 0; }
+.search input#s { background: #e3d7b5; color: #544b40; width: 160px; margin: 0 10px 0 0; padding: 3px 5px; border: 1px solid #b3a381; }
+.search .search-submit { display: none; }
+
+/***** Calendar *****/
+#wp-calendar { text-align: center; background: #b19787; margin: 0 0 10px 20px; padding: 0; width: 80%; border: #3f3013 3px double; font-variant: small-caps; font-family: Times, Verdana, Sans-Serif; }
+#wp-calendar td { line-height: 10px; font-size: 10px; color: #544b40; font-variant: small-caps; }
+#wp-calendar td a { display: block; color: #544b40; text-decoration: none; line-height: 10px;
+font-weight: bold; font-variant: small-caps; font-size: 10px; }
+#wp-calendar #prev a { width: 30px; font-variant: small-caps; }
+#wp-calendar #next a { width: 30px; margin: 0 0 0 30px; font-variant: small-caps; }
+#wp-calendar #today { background: #600000; color: #e6ddbc; font-variant: small-caps; }
+#wp-calendar #today a { color: #544b40; font-weight: 700; font-variant: small-caps; }
+#wp-calendar caption { color: #533419; text-align: center; width: 80%; margin: 5px 0 5px 20px; font-family: Times, Verdana,Sans-Serif; font-size: 14px; }
+
+/***** COMMENTS *****/
+.comments-template { margin: 0 10px; border-top: 1px solid #7c7953; padding: 0 10px; }
+.comments-template ol { margin: 0; padding: 0 0 15px; list-style: none; }
+.comments-template ol li { margin: 0; line-height: 14px; padding: 10px 0 10px 5px; }
+.comments-template h2, .comments-template h3 { font-family: Georgia, Sans-serif; font-size: 12px; margin: 10px 0 0 0; }
+.commentmetadata { font-size: 9px; }
+.comments-template p.nocomments { padding: 0; }
+.comments-template textarea { width: 95%; max-width: 500px; font-family: Arial, Helvetica, Georgia, Sans-serif; font-size: 11px; background: #b3a381; }
+.authorcomment { background: #b3a381; }
+
+/***** IE HACKS *****/
+* html #sidebar { margin: 0 -10px 50px 10px; padding: 0; }
+* html #container_wide { margin: 0 0 0 20px; }
