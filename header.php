@@ -31,12 +31,13 @@
 <!-- Comment this section to turn off the header menu bar or uncomment to use -->
 <?php if(function_exists('wp_page_menu')) : ?>
             <?php wp_page_menu ('show_home=1&depth=1&title_li='); ?>
-          <?php else : ?>
-
-	<ul>
+          <?php else : ?> 
+   <div class="menu">    
+	     <ul>
             <li><a href="<?php echo get_settings('home'); ?>">Home</a></li>
             <?php wp_list_pages('depth=1&title_li='); ?>                        
         </ul>  
+   </div>     
 <?php endif; ?> 
 
 </div>
