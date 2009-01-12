@@ -1,8 +1,8 @@
 /*
 Theme Name: Azul
 Theme URI: http://www.switchroyale.com/?page_id=21
-Description: Azul is a clean and modern theme with a techy/corporate feel. This theme is meant to be easy to edit and completely standards compliant. Free to use for whatever you want.
-Version: 1.1
+Description: Azul is a clean and modern theme with a techy/corporate feel. This theme is meant to be easy to edit and completely standards compliant. The Azul Photoshop template is also available for free at www.switchroyale.com. Free to use for whatever you want.
+Version: 1.2
 Author: Switchroyale
 Author URI: http://www.switchroyale.com
 Tags: blue, white, silver, light, two-columns, fixed-width, right-sidebar
@@ -201,6 +201,7 @@ body {
 	background: #ebebeb;
 	text-align: center;
 	padding: 10px 5px 0 5px;
+	margin: 10px 0;
 }
 
 .post .wp-caption-text {
