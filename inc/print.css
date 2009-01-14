@@ -1,0 +1,123 @@
+/*  
+
+Theme Name: 99 Printer style
+Theme URI: http://3oneseven.com/
+Description: This is the printer style
+Version: 3.17
+Author: miloIIIIVII
+Author URI: http://3oneseven.com/
+
+*/
+
+body{font:normal 16px Arial, Helvetica, sans-serif;color:#333;
+text-align:left;margin:0;padding:0;background:#fff;border:0;}
+
+#wrap{background:transparent;text-align:left;width:100%;margin:0 auto;padding:0;}
+
+#page{background:transparent;text-align:left;width:80%;margin:0 auto;padding:0;}
+
+#header{background:transparent;height:370px;width:80%;margin:0 auto;padding: 0;}
+
+#header h1,#header h1 a,#header h1 a:hover{color:#000;font:normal 98px georgia, times new roman, serif;margin:0;padding:35px 20px 0 0;font-variant:small-caps;float:right;}
+
+.description{text-align:left;padding-left:20px;font-size:12px;font-weight:bold;color:#333;}
+.alt{background-color:#ccc;border-top:1px solid #881414;border-bottom:1px solid #881414;}
+small{display:none;}
+
+#navbar{display:none;}
+
+h2, h3{font-family:Georgia, times new roman, Arial, Helvetica, sans-serif;}
+h2{font-size: 1.9em;margin:10px 0 0 0;}
+h2, h2 a, h2 a:hover, h2 a:visited, h3, h3 a, h3 a:hover, h3 a:visited{font-variant:small-caps;border-bottom:1px solid #ccc;font-weight:400;}
+h2.pagetitle{margin:0 0 10px 0;text-align:center;font-size:1.9em;font-weight:400;}
+h3{padding:0;margin:30px 0 0;font-size:1.3em;}
+h3.comments{padding:0;margin:10px auto 10px;}
+#s_footer h2, #leftsidebar h2, #rightsidebar h2{display:none;}
+a, h2 a:hover, h3 a:hover{color:#881414;text-decoration:none;}
+a:hover{color:#ccc;text-decoration:none;}
+a img{border:none;}
+
+small, #page ul ul li, #s_footer ul ul li, #page ul ol li, .nocomments, .postmetadata, blockquote, strike{color: #333;}
+code{font:1.1em 'Courier New', Courier,Fixed;}
+acronym, abbr, span.caps{font-size:0.9em;letter-spacing:.07em;}
+acronym, abbr, span.caps{cursor:help;}
+acronym, abbr{border-bottom:1px dashed #881414;}
+blockquote{margin:15px 30px 0 10px;padding-left:25px;font-family:Geneva, Arial, Helvetica, sans-serif;
+background:url(images/quote.gif) no-repeat left top;}
+blockquote cite{margin: 5px 0 0;display:block;}
+
+.narrowcolumn{float:right;padding:0 0 20px 20px; margin:0;width:50%;overflow:hidden;}
+.widecolumn{padding:0;margin:0 0 0 10px;width:50%;overflow:hidden;}
+
+#leftsidebar{display:none;}
+#rightsidebar{display:none;}
+
+.post{margin:12px 0 12px 0;text-align:justify;}
+.widecolumn .post{margin:0;}
+.narrowcolumn .postmetadata,#leftsidebar .postmetadata,#rightsidebar .postmetadata{display:none;}
+.widecolumn .postmetadata{display:none;}
+.entry p a:visited{color:#ccc;}
+#content p img{float:right;border:none;margin-left:5px;margin-bottom:5px;padding:0;max-width:100%;}
+.alignright{float:right;}
+.alignleft{float:left;}
+html>body .entry ul{margin-left:0;} 
+html>body .entry li{margin:7px 0 8px 10px;list-style-type:square;padding:0;}
+.entry ol{padding:0 0 0 10px;margin:0;}
+.entry ol li{margin:0;padding:0;}
+.entry form{ /* This is mainly for password protected posts, makes them look better. */text-align:center;}
+select{width:130px;}
+.postmetadata ul, .postmetadata li{display:inline;list-style:none;list-style-image:none;}
+
+#page ul ul li, #page ul ol li{margin:3px 0 0;padding:0;}
+#page ul, #page ul ol{margin:0;padding:0;}
+#page ul li{list-style-type:none;margin-bottom:5px;}
+#page ul p, #page ul select{margin:5px 08px;}
+#page ul ul, #page ul ol{margin:5px 0 0 5px;}
+#page ul ul ul, #page ul ol{margin:0 0 0 10px;}
+ol li, #page ul ol li{list-style:none;}
+#page ul ul li, #page ul ol li{margin:3px 0 0;padding:0;}
+
+#footer{padding:20px 0 0 0;margin:0;width:100%;height:120px;background:#fff;clear:both;border:0;}
+#footer p{margin:0;padding:20px 0;text-align:center;}
+#footer a{color:#333;}
+
+#s_footer{display:none;}
+
+#s_footer li a, #leftsidebar li a, #rightsidebar li a{display:none;}
+#s_footer li a:hover,  #leftsidebar li a:hover, #rightsidebar li a:hover{display:none;}
+
+#searchform{display:none;}
+#searchform #s{display:none;}
+
+.commentlist li, #commentform input, #commentform textarea{display:none;}
+.commentlist li{display:none;}
+.commentlist cite, .commentlist cite a{display:none;}
+.commentlist p{display:none;}
+#commentform p{display:none;}
+.commentmetadata{display:none;}
+#commentform input{display:none;}
+#commentform textarea{display:none;}
+#commentform #submit{display:none;}
+.alt{margin:0;padding:10px;}
+.commentlist{display:none;}
+.commentlist li{display:none;}
+.commentlist p{display:none;}
+#commentform p{display:none;}
+.nocomments{display:none;}
+.commentmetadata{margin:0;display:block;}
+.count{float:right;font-size:26px;line-height:22px;color:#333;}
+
+.center{text-align:center;}
+hr{display:none;}
+
+.navigation{display:none;}
+
+#wp-calendar{display:none;}
+
+.pagenumber{display:none;}
+.spacer{clear:both;}
+
+body div#toolTip{display:none;}
+
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;} .clearfix{display:inline-block;}* html .clearfix{height:1%;}.clearfix{display:block;}
+hr.clear{clear:both;visibility:hidden;margin:0;padding:0;}

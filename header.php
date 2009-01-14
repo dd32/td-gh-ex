@@ -6,7 +6,7 @@
 <meta http-equiv="content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
-<link rel="shortcut icon" type="image/ico" href="<?php bloginfo('template_url'); ?>/favicon.ico" />
+<link rel="shortcut icon" type="image/ico" href="<?php bloginfo('template_url'); ?>/images/favicon.ico" />
 <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
 <link rel="alternate" type="text/xml" title="RSS .92" href="<?php bloginfo('rss_url'); ?>" />
 <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?php bloginfo('atom_url'); ?>" />
@@ -20,12 +20,10 @@
 <div id="row">
 <h1><a title="get back to the frontpage" href="<?php echo get_settings('home'); ?>/"><?php bloginfo('name'); ?></a></h1>	
 
-<?php include (TEMPLATEPATH . '/nav.php'); ?>
+<?php include (TEMPLATEPATH . '/inc/nav.php'); ?>
 </div>
 
 <div id="header">
-<div class="row2">
-<div class="log"><?php bloginfo('description'); ?></div>
-</div>
+<div class="row2"></div>
 </div>
 <hr />
