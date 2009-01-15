@@ -1,0 +1,687 @@
+/* 
+Template: 76-digital-ora
+Theme Name: 76 digital orange
+Description: Orange version of the 76 digital theme by 76 creative. Features an animated Flash header.
+Version: 1.1
+Author: Sam Burdge for 76 Creative
+Author URI: http://www.samburdge.co.uk
+Tags: black, orange, flexible-width
+
+*/
+
+a {
+	color: #ff6600; text-decoration: none; outline: 0;
+}
+
+a img {
+	border: none;
+}
+a:hover img {
+	background: #000000;
+}
+
+#content a img {
+	border: 1px solid #ff6600;
+	padding: 4px;
+	margin: 2px;
+}
+
+/* you can specifically turn off image borders with the no-bord class */
+.no-bord, .no-bord a img {
+	border: none !important;
+}
+
+a:visited {
+	color: #ff6600;
+}
+
+a:hover {
+	color: #000000; background: #ff6600; 
+}
+
+acronym, abbr {
+	border-bottom: 1px dashed #333;
+}
+
+acronym, abbr, span.caps {
+	cursor: help;
+	font-size: 11px;
+	letter-spacing: .07em;
+}
+
+blockquote {
+	border-left: 5px solid #ff6600;
+	margin-left: 1.5em;
+	padding-left: 5px;
+	color: #999;
+	background: #000;
+}
+#content blockquote p {width: 46em; text-align: justify;}
+body {
+	background: #000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #999;
+	margin: 0;
+	padding: 0;
+	text-align: center; /* IE 5.5 hack */
+}
+
+cite {
+	font-size: 12px;
+	font-style: normal;
+}
+
+dl dt {
+	font-size: 12px;
+	font-weight: bold;
+	color: #999;
+	margin: 0;
+}
+
+dd {
+	font-size: 12px;
+	font-weight: normal;
+	color: #999;
+	margin: 2px 0 0 2px;
+	padding: 0 5px 2px 5px;
+}
+
+h1 {
+	margin: 20px 10px 20px 0px;
+	padding: 0px;
+	text-align: left;
+}
+
+h2 {
+	font-size: 18px;
+	font-weight: normal;
+	margin: 15px 20px 0 25px;
+	padding-bottom: 2px;
+}
+
+h3 {
+	font-size: 14px;
+	font-weight: normal;
+	margin-top: 0;
+	padding-bottom: 0;
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover {
+	color: #000000; background: #ff6600;
+}
+
+ol#comments li p {
+	font-size: 100%;
+}
+
+p {
+	font-size: 12px;
+}
+
+input, select, option {
+	width: auto;
+	background: #000000;
+	color: #ff6600;
+	border: 1px solid #ff6600;
+}
+
+li, .feedback {
+	font-size: 12px;
+}
+
+ul.post {
+	list-style: square;
+}
+
+ul.post-meta {
+	list-style: none;
+}
+
+ul.post-meta span.post-meta-key {
+	font-weight: bold;
+}
+
+.date {
+	font-size: 12px; color: #999999;
+}
+
+.credit {
+	background: #000;
+	color: #999999;
+	font-size: 12px;
+	margin: 10px 0 0 0;
+	padding: 3px;
+	text-align: center;
+}
+
+.credit a, .credit a:link {
+	color: #ff6600;
+	text-decoration: none;
+}
+
+.credit a:hover {
+	color: #000000; #ff6600;
+	text-decoration: none;
+}
+
+.feedback {
+	color: #999;
+	text-align: left;
+	clear: both;
+	font-size: 90%;
+}
+
+.meta {
+	font-size: 95%; color: #999999; font-weight: normal;
+	letter-spacing: 0;
+}
+
+.meta li, ul.post-meta li {
+	display: inline;
+}
+
+.meta ul {
+	display: inline;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ .meta a, meta a:link {
+	color: #ff6600;
+	font-weight: normal;
+	letter-spacing: 0;
+}
+
+.meta a:hover {
+	color: #000000; background: #ff6600;
+	font-weight: normal;
+	letter-spacing: 0;
+}
+
+.post, .comments-post, .page_post {
+	margin-top: 5px;
+	margin-right: 25px;
+	margin-left: 25px;
+	margin-bottom: 20px;
+}
+
+.storytitle {
+	color: #999;
+	background: #000;
+	margin-top: 5px;
+	margin-bottom: 2px;
+font-weight: bold; font-size: 20px;
+text-transform: uppercase;
+}
+
+.storytitle a {
+	text-decoration: none;
+}
+
+.textarea, textarea {
+	width: 200px;
+	margin: 0;
+	background: #000000;
+	color: #ff6600;
+}
+
+.clearer {
+	clear: both;
+	margin: 0;
+	padding: 0;
+}
+
+#commentform  #comment{
+	width: 400px;
+	margin: 0;
+	padding: 5px;
+}
+
+#commentform #author, #commentform #email, #commentform #url, #commentform textarea {
+	background: #111;
+	color: #ff6600;
+	border: 1px solid #ff6600;
+	padding: .2em;
+}
+
+#commentform textarea {
+	width: 95%;
+}
+#content .commentlist p {width: 400px;}
+#commentlist li ul {
+	border-left: 3px solid #777;
+	font-size: 12px;
+	list-style-type: none;
+}
+#content {
+	float: left;
+	width: 55em;
+font-size: 12px;
+	border: 1px solid #ff6600;
+	margin: 0px;
+	padding: 15px 0px 0px 0px;
+	background-color: #000;
+	color: #999999;
+}
+#content p {text-align: justify;}
+
+#content ul li p {width: 45em; text-align: justify;}
+
+#footer {
+	text-align: center;
+	border-top: 1px solid #ff6600;
+	width: 88em; 
+	margin: 0px;
+color: #999999;
+}
+
+#footer p {font-size: 10px;}
+
+#main {
+}
+
+#header, #header a:link {
+	font-size: 20px;
+	font-weight: normal;
+	color: #ffffff;
+	text-decoration: none;
+}
+
+#header a:hover {
+	color: #000000; background: #ff6600;
+	text-decoration: none;
+}
+
+#menu {
+	float: left;
+	width: 20em;
+	border: 1px solid #ff6600;
+	margin: 0px 0px 0px 14px;
+	padding: 0px;
+}
+
+#nav {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#nav h3 {padding: 0px; margin: 0px 0px 3px 0px; font-weight: bold; text-align: left;
+color: #ffffff; display: block; text-transform: uppercase;}
+
+
+#nav form {
+	margin: 0 0 0 0px;
+}
+
+#nav input #s {
+	
+	background: #000000;
+	border: 1px solid #ff6600;
+	color: #ff6600;
+}
+
+#nav ul {
+	
+	color: #ff6600;
+	font-weight: normal;
+	font-size: 14px;
+	list-style-type: none;
+	margin: 0;
+	padding-left: 3px;
+
+}
+
+/* this is a fix for the way WP handles styling for link and theme switcher */
+#nav li h2 {
+	
+	color: #ff6600;
+	font-weight: normal;
+	font-size: 18px;
+	list-style-type: none;
+	margin: 0;
+	padding-left: 2px;
+}
+
+#nav ul li {
+	
+	color: #ff6600;
+	font-size: 14px;
+	margin-top: 10px;
+	padding-bottom: 2px; 
+
+}
+
+#nav ul ul {
+	
+	color: #ff6600;
+	font-size: 12px;
+	font-weight: normal;
+	line-height: normal;
+	list-style-type: none;
+	margin: 0px 0px 0px 0px;
+	padding: 0px;
+	text-align: left;
+}
+
+#nav ul ul li, #nav ul li ul li {
+	
+	color: #888;
+	font-size: 12px;
+	font-weight: normal;
+	border: 0;
+	letter-spacing: 0;
+	margin-top: 0px;
+	padding: 0px;
+}
+
+#nav ul ul li a {
+	
+	color: #ff6600;
+	text-decoration: none;
+}
+
+#nav ul ul li a:hover {
+	background: #ff6600;
+	color: #000000;
+	text-decoration: none;
+}
+
+#nav ul ul ul.children {
+	
+	color: #888;
+	font-size: 12px;
+	padding-left: 4px;
+}
+
+#rap {
+	width: 90%;
+	background: #000;
+	color: #ff6600;
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: left; /* IE 5.5 hack part II */
+}
+
+/* tabbed navigation code */
+
+#pagetab {
+	background: #000;
+	color: #ff6600;
+	padding: 5px 0px 3px 0px;
+	margin: 10px 0px 0px 1px;
+	font-weight: bold;
+	font-size: 11px;
+	font-family: arial, sans-serif;
+}
+
+#pagetab ul {
+	background: #000;
+	color: #ff6600;
+	list-style: none;
+	margin: 0; padding: 0px 0px 0px 23px;
+	display: inline;
+}
+
+#pagetab li {
+	background: #000;
+	color: #ff6600;
+	list-style: none;
+	margin: 0;
+	display: inline;
+
+}
+
+
+#pagetab li a {
+	background: #000000;
+	color: #ff6600;
+	padding: 3px 0.5em;
+	margin-left: 1px;
+	border: 1px solid #ff6600;
+	border-bottom: 1px solid #ff6600;
+	text-decoration: none;
+}
+#pagetab li .home {
+	background: #000000;
+	color: #ff6600;
+	padding: 3px 0.5em;
+	margin-left: 1px;
+	border: 1px solid #ff6600;
+	border-bottom: 1px solid #000000;
+	text-decoration: none;
+}
+#pagetab li a:link { color: #ff6600; }
+
+#pagetab li a:visited { color: #ff6600; }
+
+
+#pagetab li a:hover { 
+	color: #000; 
+	background: #ff6600;
+	border-top: 1px solid #ff6600;
+	border-right: 1px solid #ff6600;
+	border-bottom: 1px solid #ff6600 !important;
+	border-left: 1px solid #ff6600;
+}
+
+#pagetab li a#current {
+	background: #999999;
+	border-bottom: 1px solid #000 !important;
+}
+
+.page_item {
+	margin: 0;
+	padding: 0;
+}
+
+
+/* gravatar styling */
+.gravatar {
+        float:left;
+        padding: 3px;
+        border: 1px solid #777;
+        background: #ddd;
+}
+
+.postgrav {
+	float: left;
+	padding: 3px;
+	margin-right: 5px;
+	margin-left: 5px;
+	border: 1px solid #999999;
+	background: #000;
+}
+
+/* style for clean archives page */
+.postspermonth {
+	margin: 5px 0 10px 0;
+	list-style: none;
+	padding-left: 25px;
+	color: #888;
+}
+
+.page-title	{
+	background: transparent;
+	color: #888;
+	font: bold 14px arial, verdana, helvetica, sans-serif;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+#page-info {
+	background: transparent;
+	color: #888;
+	font: 12px arial, verdana, helvetica, sans-serif;
+	border-bottom: 1px solid #777;
+	margin: 10px 30px 20px 30px;
+	padding: 5px;
+	text-align: center;
+}
+
+img.alignleft, .post img.alignleft {
+	border: 1px solid #777;
+	display: inline;
+	float: left;
+	margin: 0 7px 2px 0;
+	padding: 4px;
+}
+
+img.alignright, .post img.alignright {
+	border: 1px solid #777;
+	display: inline;
+	float: right;
+	margin: 0 0 2px 7px;
+	padding: 4px;
+}
+
+
+#page_nav_righty {float: left; display: block;
+text-align: left; height: 30px; padding-left: 20px;}
+
+
+.post {border-bottom: 1px solid #ff6600; padding-bottom: 60px;}
+
+.page_post ul, .post ul {list-style-type: square;}
+
+.page_post ul ul, .post ul ul {list-style-type: none;}
+
+#respond {color: #ff6600; font-size: 14px;}
+
+.dotted_line {
+background: url('/wp-content/themes/76-digital-ora/images/dot2.jpg') repeat-x; font-size: 1px; line-height: 1px; padding: 0px; margin: 0px;}
+
+li#search ul li, #searchform, form {margin-left: 0px; padding-left: 0px;}
+
+.post p, .post li {color: #ffffff;}
+
+#pagetab li.current_page_item a {
+color: #ffffff;
+}
+
+#pagetab li.current_page_item a:hover {
+color: #ffffff;
+} 
+
+
+/* Advanced Search form */
+
+#ctas_form {
+	text-align: left;
+}
+
+#ctas_form fieldset ul {
+	list-style: none;
+	margin: 5px 15px;
+	padding: 0;
+}
+
+#ctas_form fieldset {
+	border: 1px solid #ff6600;
+	margin: 15px;
+	padding: 15px;
+width: 45em;
+}
+#ctas_form fieldset p {width: 30em;}
+#ctas_form legend {
+	font-size: 1.1em;
+	font-weight: bold; text-transform: uppercase;
+ color: #ffffff;
+
+}
+
+#ctas_form fieldset li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#ctas_form fieldset li:before { /* for the default theme */
+	content: '';
+} 
+
+#ctas_form input {
+	border: 1px solid #ff6600;
+	background-color: #000000;
+	color: #ff6600;
+}
+
+#ctas_form input:focus {
+	background-color: #000000;
+	color: #ffffff;
+}
+input:focus {
+	background-color: #000000;
+	color: #ffffff;
+}
+#ctas_footer p {
+	font-size: 0.9em;
+	text-align: center;
+	margin-top: 25px;
+	border-top: 1px solid #ff6600;
+}
+
+#ctas_month1, #ctas_month2, #ctas_year1, #ctas_year2 {
+	text-align: center;
+}
+
+/* End Advanced Search form */
+
+
+#plugin_link {background-color: #ff6600; margin: 0px 25px 15px 25px; color: #000000; padding: 5px 0px 5px 0px; text-align: center;}
+#plugin_link a {background-color: #ff6600; color: #ffffff;}
+#plugin_link a:hover {background-color: #ffffff; color: #ff6600;}
+
+#commentform #author:focus, #commentform #email:focus, #commentform #url:focus, #commentform textarea:focus {
+background:#111111 none repeat scroll 0%;
+color:#ffffff;
+padding:0.2em;
+}
+
+
+/* WORDPRESS GENERATED CLASSES */
+
+
+.aligncenter,
+div.aligncenter {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.alignleft {
+   float: left;
+}
+
+.alignright {
+   float: right;
+}
+
+.wp-caption {
+   border: 1px solid #ddd;
+   text-align: center;
+   background-color: #f3f3f3;
+   padding-top: 4px;
+   margin: 10px;
+   /* optional rounded corners for browsers that support it */
+   -moz-border-radius: 3px;
+   -khtml-border-radius: 3px;
+   -webkit-border-radius: 3px;
+   border-radius: 3px;
+}
+
+.wp-caption img {
+   margin: 0;
+   padding: 0;
+   border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+   font-size: 11px;
+   line-height: 17px;
+   padding: 0 4px 5px;
+   margin: 0;
+}
