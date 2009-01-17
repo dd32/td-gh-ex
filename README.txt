@@ -2,7 +2,7 @@ Theme Name: Anonymous Elegance
 Theme URI: http://the-cloisters.net/themedemos/?SelectedTheme=Anonymous+Elegance
 Author: Mina (I'm Raimy at Wordpress.org)
 Author URI: http://the-cloisters.net
-Version: 1.1
+Version: 1.2
 
 This theme is under GPL License. (http://www.opensource.org/licenses/gpl-license.php).  There are no restrictions to the use of this theme.  I'd appreciate it if you left my link in the footer but I won't send the Theme Police 'round to your house if you don't.
 

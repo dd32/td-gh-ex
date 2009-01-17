@@ -2,10 +2,10 @@
 Theme Name: Anonymous Elegance
 Theme URI: http://the-cloisters.net/themedemos/?SelectedTheme=Anonymous+Elegance
 Description: 2 Column, widget-ready fixed width theme sporting a basic elegance.  Featuring an author info page, gravatars and author box along with Custom Archives, Sitemap and full width No Sidebars page templates.  Tested in Firefox, Opera, Safari, IE6 and IE7.  Compatible up to Wordpress 2.7.
-Version: 1.1
+Version: 1.2
 Author: Mina
 Author URI: http://www.the-cloisters.net/
-Tags: two-columns, fixed-width, left-sidebar, custom-colors, pink, threaded-comments
+Tags: two-columns, fixed-width, left-sidebar, threaded-comments
 
 */
 
@@ -120,7 +120,7 @@ font-weight: bold; font-variant: small-caps; font-size: 10px; }
 #wp-calendar caption { color: #533419; text-align: center; width: 80%; margin: 5px 0 5px 20px; font-family: Times, Verdana,Sans-Serif; font-size: 14px; }
 
 /***** COMMENTS *****/
-.comments-template { margin: 0 10px; border-top: 1px solid #7c7953; padding: 0 10px; }
+.comments-template { background: #574f4b; margin: 0 10px; border: 1px solid #b19787; padding: 0 10px; }
 .comments-template ol { margin: 0; padding: 0 0 15px; list-style: none; }
 .comments-template ol li { margin: 0; line-height: 14px; padding: 10px 0 10px 5px; }
 .comments-template h2, .comments-template h3 { font-family: Georgia, Sans-serif; font-size: 12px; margin: 10px 0 0 0; }
