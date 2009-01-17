@@ -45,7 +45,7 @@
 			<?php else : ?>
 
 				<div class="post" id="post-<?php the_ID(); ?>">
-					<h2><?php_e('Not Found'); ?></h2>
+					<h2><?php _e('Not Found'); ?></h2>
 				</div>
 
 			<?php endif; ?>
