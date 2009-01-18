@@ -32,9 +32,9 @@
 		</div>
 <span class="count">
 <?php echo $i; ?>
-</span>
+</span>
 <div class="alignright">
-<?php echo get_avatar( $id_or_email, $size = '40', $default = '' ); ?>
+<?php echo get_avatar( $comment, 40 ); ?>
 </div>
 		<div class="comment_text">
 			<?php if ($comment->comment_approved == '0') : ?>
