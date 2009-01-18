@@ -16,7 +16,11 @@ get_header(); ?>
 
 		<?php while (have_posts()) : the_post(); ?>
 
-			<div <?php post_class() ?>>
+<?php if (function_exists("post_class")) { ?>
+  <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<?php } else { ?>
+  <div id="post-<?php the_ID(); ?>">
+<?php } ?> 
 				<h3 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 				<small><?php the_time('l, F jS, Y') ?></small>
 
