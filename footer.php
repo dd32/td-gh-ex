@@ -1,15 +1,19 @@
-<div class="clearboth"></div>
 
-</div><!-- #wrapper .hfeed -->
 
-<!-- This Wordpress theme is provided free of charge, much like Wordpress itself. Please help us by leaving in the Wordpress and MB Web Design links on the footer of your website. It costs you nothing, but this token of appreciation means a lot. -->
 <div id="footer">
-	<span id="generator-link"><a href="http://wordpress.org/" title="<?php _e('WordPress', 'sandbox'); ?>" rel="generator"><?php _e('WordPress', 'sandbox'); ?></a></span>
-	<span class="meta-sep">|</span>
-	<span><a href="http://www.mbwebdesign.co.uk/templates/wordpress" title="Free Wordpress template">Free Wordpress template</a>: <a href="http://www.mbwebdesign.co.uk" title="MB Web Design is a UK Web Designer">MB Web Design</a></span>
-	</div><!-- #footer -->
+<!-- If you'd like to support WordPress, having the "powered by" link somewhere on your blog is the best way; it's our only promotion or advertising. -->
+	<p>Powered by <a href="http://wordpress.org/">WordPress</a> | 
+    <a href="<?php bloginfo('rss2_url'); ?>">Entries (RSS)</a> | 
+    <a href="<?php bloginfo('comments_rss2_url'); ?>">Comments (RSS)</a> |
+    <a href="http://www.mbwebdesign.co.uk/templates/wordpress">Template</a> by <a href="http://www.mbwebdesign.co.uk">MB Web Design</a>
+		<!-- <?php echo get_num_queries(); ?> queries. <?php timer_stop(1); ?> seconds. -->
+	</p>
+</div>
 
-<?php wp_footer() ?>
+</div>
 
+<?php wp_footer(); ?>
+
+</div><!-- End of Wrapper -->
 </body>
 </html>

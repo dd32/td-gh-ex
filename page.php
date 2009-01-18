@@ -1,25 +1,24 @@
-<?php get_header() ?>
+<?php
 
-	<div id="container">
-		<div id="content">
 
-<?php the_post() ?>
-			<div id="post-<?php the_ID(); ?>" class="<?php sandbox_post_class() ?>">
-				<h1 class="entry-title"><?php the_title(); ?></h1>
-				<div class="entry-content">
-<?php the_content() ?>
+get_header(); ?>
 
-<?php wp_link_pages("\t\t\t\t\t<div class='page-link'>".__('Pages: ', 'sandbox'), "</div>\n", 'number'); ?>
+	<div id="content">
 
-<?php edit_post_link(__('Edit', 'sandbox'),'<span class="edit-link">','</span>') ?>
+		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+		<div class="post" id="post-<?php the_ID(); ?>">
+		<h2><?php the_title(); ?></h2>
+			<div class="entry">
+				<?php the_content('<p class="serif">Read the rest of this page &raquo;</p>'); ?>
 
-				</div>
-			</div><!-- .post -->
+				<?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
 
-<?php if ( get_post_custom_values('comments') ) comments_template() // Add a key+value of "comments" to enable comments on this page ?>
+			</div>
+		</div>
+		<?php endwhile; endif; ?>
+	<?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
+	</div>
 
-		</div><!-- #content -->
-	</div><!-- #container -->
+<?php get_sidebar(); ?>
 
-<?php get_sidebar() ?>
-<?php get_footer() ?>
+<?php get_footer(); ?>

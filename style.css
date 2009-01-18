@@ -1,12 +1,12 @@
 /*
 Theme Name: Aurora
 Theme URI: http://www.mbwebdesign.co.uk/templates/wordpress
-Description: This is a theme by Mathew Browne of <a href="http://www.mbwebdesign.co.uk">MB Web Design</a>. The stunning photograph is courtesy of Nick Russill. <a href="http://www.flickr.com/photos/nickrussill/150410999/in/set-72157594268277630/">Click here</a> to view the photo in its full glory. Theme is widget- and Gravatar- ready, compatible with Wordpress 2.3 to 2.6
-Version: 2.0.1
-Tags: dark, green, sandbox, aurora, fixed width, two columns, widget ready, clean, 2 column, 2 columns, 1024, 1024px, black
+Description: This is a theme by Mathew Browne of <a href="http://www.mbwebdesign.co.uk">MB Web Design</a>. The stunning photograph is courtesy of Nick Russill. <a href="http://www.flickr.com/photos/nickrussill/150410999/in/set-72157594268277630/">Click here</a> to view the photo in its full glory. Theme is widget- and Gravatar- ready, revamped for WP 2.7 but also backward compatible with Wordpress 2.3 to 2.6
+Version: 3.0
+Tags: dark, black, green, fixed-width, two-columns
 Author: Mathew Browne, MB Web Design
 Author URI: http://www.mbwebdesign.co.uk
-Latest updated: October 1, 2008
+Latest updated: January 18 2009
 */
 
 /* CSS RESET */
@@ -58,19 +58,18 @@ html{ background-color:#262927; font-family:Tahoma, Arial, Helvetica, sans-serif
 font-family: 'Trebuchet MS', Tahoma, Arial, Helvetica, sans-serif;
 font-size:0.7em;
 line-height:1.4em;}
-
+.cb{clear:both;}
 #header{background-image:url('aurora.jpg'); width:920px; height:250px; background-repeat:no-repeat;margin:20px auto;padding-top:10px;}
-#blog-title,#blog-description{margin-top:10px;margin-left:10px;}
-#blog-title *{color:white; text-decoration:none}
-#blog-description *,#blog-description{color:#DDDCD2;}
+#header h1,.description{margin-top:10px;margin-left:10px; color:white;}
 
 .sidebar{float:right; width:300px;margin-right:20px;margin-bottom:19px; color:#C1BCAC; background-color:#1f2320; border:1px solid #262927;padding:10px 0px 10px 0px;}
+.wp-caption{background-color:#1f2320; border:1px solid #262927; text-align:center;padding:5px;}
 #container{float:left; width:580px; margin-left:20px;  color:#C1BCAC; font-size:1.1em;margin-bottom:19px;}
 
 #container blockquote{margin:0;padding:5px;background-color:#1f2320; border-top:1px solid #262927;border-bottom:1px solid #262927;}
 #container blockquote blockquote{margin:0px 10px;padding:5px;background-color:#1f2320; border-top:1px solid #262927;border-bottom:1px solid #262927;}
 
-.post {padding-bottom:30px;}
+.post, .page {padding-bottom:20px;}
 
 .clearboth{clear:both;}
 .page-link{clear:both;width:100%;}
@@ -108,8 +107,9 @@ h2,h3,h4,h5,h6{color:#CADE58;}
 .entry-date *{text-align:center;}
 
 .sidebar ul, .sidebar ul li{list-style-type:none; padding:0;margin:0}
-.sidebar ul{margin:0px 20px 0px 20px;}
-.sidebar ul ul{margin:0px;}
+.sidebar ul{margin:0px 0px 0px 20px;}
+.sidebar ul ul{margin-left:0px;}
+.sidebar ul ul ul{padding-left:10px;}
 .sidebar ul li{margin-bottom:15px;margin-top:15px;}
 .sidebar ul li ul li{margin-bottom:5px;margin-top:5px;}
 
@@ -120,7 +120,7 @@ h2,h3,h4,h5,h6{color:#CADE58;}
 #wp-calendar a{color:#CADE58; background-color:#181B19; border:1px solid #262927; display:block; text-align:center}
 #wp-calendar a:hover{color:#CADE58; background-color:#262927; display:block; border:1px solid #262927;text-decoration:none;}
 
-#footer{margin:10px auto; font-size:0.7em; padding:5px 0px 5px 0px; width:920px; color:#666666; text-align:right}
+#footer{margin:10px auto; font-size:0.9em; padding:5px 0px 5px 0px; width:920px; color:#666666; text-align:right}
 #footer a{color:#666666;}
 .meta-sep{color:#333333;}
 
@@ -131,7 +131,7 @@ h2,h3,h4,h5,h6{color:#CADE58;}
 .navigation{margin-bottom:20px;margin-top:20px;}
 
 .entry-meta{border-top:1px solid #262927;margin-top:20px;padding-top:10px;}
-
+.makesep{clear:both; height:15px;}
 abbr{border:none;}
 
 #s{border:1px solid #262927; background:#181B19; width:180px; color: #C1BCAC;padding:3px;}

@@ -1,59 +1,77 @@
-	<div id="primary" class="sidebar">
-		<ul class="xoxo">
-<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar(1) ) : // begin primary sidebar widgets ?>
+</div>
 
-			<li id="pages">
-				<h3><?php _e('Pages', 'sandbox') ?></h3>
+	<div class="sidebar">
+		<ul>
+			<?php 	/* Widgetized sidebar, if you have the plugin installed. */
+					if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : ?>
+			<li>
+				<?php get_search_form(); ?>
+			</li>
+
+			<!-- Author information is disabled per default. Uncomment and fill in your details if you want to use it.
+			<li><h2>Author</h2>
+			<p>A little something about you, the author. Nothing lengthy, just an overview.</p>
+			</li>
+			-->
+
+			<?php if ( is_404() || is_category() || is_day() || is_month() ||
+						is_year() || is_search() || is_paged() ) {
+			?> <li>
+
+			<?php /* If this is a 404 page */ if (is_404()) { ?>
+			<?php /* If this is a category archive */ } elseif (is_category()) { ?>
+			<p>You are currently browsing the archives for the <?php single_cat_title(''); ?> category.</p>
+
+			<?php /* If this is a yearly archive */ } elseif (is_day()) { ?>
+			<p>You are currently browsing the <a href="<?php bloginfo('url'); ?>/"><?php echo bloginfo('name'); ?></a> blog archives
+			for the day <?php the_time('l, F jS, Y'); ?>.</p>
+
+			<?php /* If this is a monthly archive */ } elseif (is_month()) { ?>
+			<p>You are currently browsing the <a href="<?php bloginfo('url'); ?>/"><?php echo bloginfo('name'); ?></a> blog archives
+			for <?php the_time('F, Y'); ?>.</p>
+
+			<?php /* If this is a yearly archive */ } elseif (is_year()) { ?>
+			<p>You are currently browsing the <a href="<?php bloginfo('url'); ?>/"><?php echo bloginfo('name'); ?></a> blog archives
+			for the year <?php the_time('Y'); ?>.</p>
+
+			<?php /* If this is a monthly archive */ } elseif (is_search()) { ?>
+			<p>You have searched the <a href="<?php echo bloginfo('url'); ?>/"><?php echo bloginfo('name'); ?></a> blog archives
+			for <strong>'<?php the_search_query(); ?>'</strong>. If you are unable to find anything in these search results, you can try one of these links.</p>
+
+			<?php /* If this is a monthly archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
+			<p>You are currently browsing the <a href="<?php echo bloginfo('url'); ?>/"><?php echo bloginfo('name'); ?></a> blog archives.</p>
+
+			<?php } ?>
+
+			</li> <?php }?>
+
+			<?php wp_list_pages('title_li=<h2>Pages</h2>' ); ?>
+
+			<li><h2>Archives</h2>
 				<ul>
-<?php wp_list_pages('title_li=&sort_column=post_title' ) ?>
+				<?php wp_get_archives('type=monthly'); ?>
 				</ul>
 			</li>
 
-			<li id="categories">
-				<h3><?php _e('Categories', 'sandbox'); ?></h3>
+			<?php wp_list_categories('show_count=1&title_li=<h2>Categories</h2>'); ?>
+
+			<?php /* If this is the frontpage */ if ( is_home() || is_page() ) { ?>
+				<?php wp_list_bookmarks(); ?>
+
+				<li><h2>Meta</h2>
 				<ul>
-<?php wp_list_categories('title_li=&show_count=0&hierarchical=1') ?> 
-
+					<?php wp_register(); ?>
+					<li><?php wp_loginout(); ?></li>
+					<li><a href="http://validator.w3.org/check/referer" title="This page validates as XHTML 1.0 Transitional">Valid <abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a></li>
+					<li><a href="http://gmpg.org/xfn/"><abbr title="XHTML Friends Network">XFN</abbr></a></li>
+					<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress</a></li>
+					<?php wp_meta(); ?>
 				</ul>
-			</li>
+				</li>
+			<?php } ?>
 
-			<li id="archives">
-				<h3><?php _e('Archives', 'sandbox') ?></h3>
-				<ul>
-<?php wp_get_archives('type=monthly') ?>
-
-				</ul>
-			</li>
-			<li id="search">
-				<h3><label for="s"><?php _e('Search', 'sandbox') ?></label></h3>
-				<form id="searchform" method="get" action="<?php bloginfo('home') ?>">
-					<div>
-						<input id="s" name="s" class="text-input" type="text" value="<?php the_search_query() ?>" size="10" tabindex="1" accesskey="S" />
-						<input id="searchsubmit" class="submit-button" name="searchsubmit" type="submit" value="<?php _e('Find', 'sandbox') ?>" tabindex="2" />
-					</div>
-				</form>
-			</li>
-
-<?php wp_list_bookmarks('title_before=<h3>&title_after=</h3>&show_images=1') ?>
-
-			<li id="rss-links">
-				<h3><?php _e('RSS Feeds', 'sandbox') ?></h3>
-				<ul>
-					<li><a href="<?php bloginfo('rss2_url') ?>" title="<?php echo wp_specialchars(bloginfo('name'), 1) ?> <?php _e('Posts RSS feed', 'sandbox'); ?>" rel="alternate" type="application/rss+xml"><?php _e('All posts', 'sandbox') ?></a></li>
-					<li><a href="<?php bloginfo('comments_rss2_url') ?>" title="<?php echo wp_specialchars(bloginfo('name'), 1) ?> <?php _e('Comments RSS feed', 'sandbox'); ?>" rel="alternate" type="application/rss+xml"><?php _e('All comments', 'sandbox') ?></a></li>
-				</ul>
-			</li>
-
-			<li id="meta">
-				<h3><?php _e('Meta', 'sandbox') ?></h3>
-				<ul>
-					<?php wp_register() ?>
-
-					<li><?php wp_loginout() ?></li>
-					<?php wp_meta() ?>
-
-				</ul>
-			</li>
-<?php endif; // end secondary sidebar widgets  ?>
+			<?php endif; ?>
 		</ul>
-	</div><!-- #secondary .sidebar -->
+	</div>
+
+<div class="cb"></div>

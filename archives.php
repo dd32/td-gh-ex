@@ -1,43 +1,26 @@
 <?php
 /*
-Template Name: Archives Page
+Template Name: Archives
 */
 ?>
-<?php get_header() ?>
-	
-	<div id="container">
-		<div id="content">
 
-<?php the_post() ?>
+<?php get_header(); ?>
 
-			<div id="post-<?php the_ID() ?>" class="<?php sandbox_post_class() ?>">
-				<h1 class="entry-title"><?php the_title() ?></h1>
-				<div class="entry-content">
-<?php the_content(); ?>
+<div id="content">
 
-					<ul id="archives-page" class="xoxo">
-						<li id="category-archives">
-							<h3><?php _e('Archives by Category', 'sandbox') ?></h3>
-							<ul>
-								<?php wp_list_categories('optioncount=1&feed=RSS&title_li=&show_count=1') ?> 
-							</ul>
-						</li>
-						<li id="monthly-archives">
-							<h3><?php _e('Archives by Month', 'sandbox') ?></h3>
-							<ul>
-								<?php wp_get_archives('type=monthly&show_post_count=1') ?>
-							</ul>
-						</li>
-					</ul>
-<?php edit_post_link(__('Edit', 'sandbox'),'<span class="edit-link">','</span>') ?>
+<?php get_search_form(); ?>
 
-				</div>
-			</div><!-- .post -->
+<h2>Archives by Month:</h2>
+	<ul>
+		<?php wp_get_archives('type=monthly'); ?>
+	</ul>
 
-<?php if ( get_post_custom_values('comments') ) comments_template() // Add a key/value of "comments" to enable comments on pages! ?>
+<h2>Archives by Subject:</h2>
+	<ul>
+		 <?php wp_list_categories(); ?>
+	</ul>
 
-		</div><!-- #content -->
-	</div><!-- #container -->
+</div>
+<?php get_sidebar(); ?>
 
-<?php get_sidebar() ?>
-<?php get_footer() ?>
+<?php get_footer(); ?>

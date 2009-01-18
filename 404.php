@@ -1,23 +1,11 @@
-<?php get_header() ?>
+<?php get_header(); ?>
 
-	<div id="container">
-		<div id="content">
+	<div id="content" class="narrowcolumn">
 
-			<div id="post-0" class="post error404">
-				<h1 class="entry-title"><?php _e('Not Found', 'sandbox') ?></h1>
-				<div class="entry-content">
-					<p><?php _e('Apologies, but we were unable to find what you were looking for. Perhaps  searching will help.', 'sandbox') ?></p>
-				</div>
-				<form id="error404-searchform" method="get" action="<?php bloginfo('home') ?>">
-					<div>
-						<input id="error404-s" class="text-input" name="s" type="text" value="<?php the_search_query() ?>" size="40" />
-						<input id="error404-searchsubmit" class="submit-button" name="searchsubmit" type="submit" value="<?php _e('Find', 'sandbox') ?>" />
-					</div>
-				</form>
-			</div><!-- .post -->
+		<h2 class="center">Error 404 - Not Found</h2>
 
-		</div><!-- #content -->
-	</div><!-- #container -->
+	</div>
 
-<?php get_sidebar() ?>
-<?php get_footer() ?>
+<?php get_sidebar(); ?>
+
+<?php get_footer(); ?>
