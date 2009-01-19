@@ -1,0 +1,1 @@
+It's best not to remove the images located in this folder.
