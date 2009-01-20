@@ -24,7 +24,11 @@ To view a full list of plugins currently installed on this site: <a href="'.get_
 	<div class="feedback" style="padding-top: 30px;">
             <?php comments_popup_link(__('Comments [0]'), __('Comments [1]'), __('Comments [%]')); ?>
 <?php if(function_exists('the_post_keytags')) { ?><br />Tags: <?php the_post_keytags('','search',''); ?><?php } else {the_tags('Tags: ', ', ', '<br />');} ?>
-<div style="float: right; text-align: right; position: relative; top: -45px;"><?php print sociable_html(); ?></div>
+<div style="float: right; text-align: right; position: relative; top: -45px;"><?php 
+if(function_exists(sociable_html)){
+print sociable_html();
+}
+ ?></div>
 	</div><!-- end FEEDBACK -->
 	
 	<!--
