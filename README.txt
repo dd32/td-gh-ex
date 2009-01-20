@@ -1,21 +1,5 @@
-Wordpress Theme "Atahualpa" version 3.1.4
+Wordpress Theme "Atahualpa" version 3.1.8
 
-
-ATTENTION - ATTENTION - ATTENTION:
-
-Before uploading the theme, enable the theme options by editing
-
-atahualpa3/header.php
-
-Change 
-
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
-
-to NEW:
-
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>.php" type="text/css" /> 
-
-NOTE the added ".php" part.
 
 #####################################################################
 
@@ -26,10 +10,6 @@ INSTALLATION:
 1. Extract the file "atahualpa3.zip" on your desktop computer,
 i.e. with WinZip or 7-zip
 
-#####################################################################
-
-1b. See top of this file: Edit header.php
-
 
 #####################################################################
 
@@ -38,12 +18,9 @@ your web hosting account to the directory
 /your wordpress-install/wp-content/themes/
 so the final destination of the "atahualpa3" folder becomes:
 /your wordpress-install/wp-content/themes/atahualpa3/
-You will need a "FTP Client" Software for this, see "Requirements".
+You will need a "FTP Client" Software for this
 
 #####################################################################
-
-NOTE: In the next step, Atahualpa may look broken/without CSS in the 
-preview window. It'll be fine "on air" though
 
 3. Activate Atahualpa3 by clicking on its name or screenshot at:
 
@@ -58,7 +35,7 @@ Your Blog -> Site Admin -> Appearance -> Themes
 
 From WP 2.5 on you'll have to click on "Activate [Theme Name]" 
 after you selected the theme. In older version the theme will be
-activated without that step.
+activated without this step.
 
 If you have no "Site Admin" link anywhere on your blog, try
 http://www.your-domain.com/wp-admin/
@@ -88,17 +65,16 @@ Your Blog -> Site Admin -> Appearance -> Atahualpa Theme Options
 
 #####################################################################
 
-6. The theme will automatically install 4 additional widgets:
+6. The theme will automatically add 4 additional widgets to the list of available widgets:
 
 BFA Recent Comments
 An alternative to the default "Recent Comments" widget
-(This is not updated to WP 2.7 yet. Works but may link to single comments instead of comment pages)
 
 BFA Popular Posts
 Lists the posts with the most comments
 
 BFA Popular in Cat
-Lists the posts with the most comments in the given category
+Lists the posts with the most comments, in the given category. Will only appear on category pages.
 
 BFA Subscribe
 Provides a Feedburner "Subscribe by Email" form, plus Posts and
@@ -136,6 +112,9 @@ http://wordpress.org/extend/plugins/wp-email/
 WP-PostViews
 http://wordpress.org/extend/plugins/wp-postviews/
 
+WP-PostRatings
+http://wordpress.org/extend/plugins/wp-postratings/
+
 Sociable
 http://wordpress.org/extend/plugins/sociable/
 Go to the settings page at Settings -> Sociable and 
@@ -155,12 +134,17 @@ to
 Subscribe to Comments
 http://wordpress.org/extend/plugins/subscribe-to-comments/
 
-Paged Comments
+Paged Comments (not required in WP 2.7+ because paged comments are a core Wordpress feature now)
 http://wordpress.org/extend/plugins/paged-comments/
 
+CommentLuv
+http://wordpress.org/extend/plugins/commentluv/
+
+Get Recent Comments
+http://wordpress.org/extend/plugins/get-recent-comments/
 
 
-Atahualpa3 has been tested with
+Additionally, Atahualpa3 has been tested with
 
 Akismet
 http://wordpress.org/extend/plugins/akismet/
@@ -178,17 +162,39 @@ This requires that you use Permalinks
 WP-Syntax
 http://wordpress.org/extend/plugins/wp-syntax/
 
+WPG2
+http://wordpress.org/extend/plugins/wpg2/
+
+Nextgen Gallery
+http://wordpress.org/extend/plugins/nextgen-gallery/
+
+Feedburner Feedsmith
+http://www.google.com/support/feedburner/bin/answer.py?answer=78483&topic=13252
+
+Should also work with
+All in one SEO (many Atahualpa users are using it)
+and other SEO plugins
+
+
 #####################################################################
 
 - Atahualpa3 has no page.php, single.php, archive.php, archives.php
 This may confuse a plugin that expects to put something into one of 
 these files
 
-- The actual CSS styles for Atahualpa3 are located in style.css.php.
-style.css is an empty file for providing
-standard theme information to theme repositories that rely on an 
-existing file named style.css. You can delete style.css and save
-1 hit to the server. 
+- The actual CSS styles for Atahualpa3 are located in style.css and header.php
+After you're totally done with all your customizations, you could view the source
+code of your site, cut the CSS rules from the header section, and paste them at the 
+bottom of style.css. That would save around 8-12 kbyte per pageview.
+
+Please note that images in CSS (i.e. background images) must be referenced like this 
+- in style.css: url(images/myimage.gif) works
+- in header.php: must be url(/wp-content/themes/atahualpa3/images/myimage.gif) or
+url(http://www.yoursite.com/wp-content/themes/atahualpa3/images/myimage.gif).
+url(images/myimage.gif) will NOT work in header.php. Whenever you reference an image via the 
+theme options (by putting CSS rules into one of the many textareas in the theme options area)
+you must reference the image as shown in the examples for header.php (because dynamic CSS
+will appear in header.php).
 
 #####################################################################
 
@@ -196,7 +202,7 @@ existing file named style.css. You can delete style.css and save
 LICENSE:
 
     "Atahualpa" is a WordPress theme
-    Copyright (C) 2008  BFA Webdesign, BytesForAll.com
+    Copyright (C) 2008  BFA Webdesign, www.BytesForAll.com
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by

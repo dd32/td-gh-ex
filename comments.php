@@ -33,9 +33,7 @@ if ( have_comments() ) : ?>
 				// if navigation above comments is set
 				if ( strpos($bfa_ata_location_comments_next_prev,'Above')!==false ) {
 				// if any navigation links exist, paginated or next/previous:
-				$number_of_comment_pages = get_query_var('cpage'); 
-				if ( !$number_of_comment_pages ) $number_of_comment_pages = 1;
-				if ( $number_of_comment_pages > 1 ) {
+				if ( get_comment_pages_count() > 1 ) {
 					// Overall navigation container
 					echo '<div class="navigation-comments-above">';
 						// paginated links
@@ -124,9 +122,7 @@ if ( have_comments() ) : ?>
 				// if navigation below comments is set
 				if ( strpos($bfa_ata_location_comments_next_prev,'Below')!==false ) {
 				// if any navigation links exist, paginated or next/previous:
-				$number_of_comment_pages = get_query_var('cpage'); 
-				if ( !$number_of_comment_pages ) $number_of_comment_pages = 1;
-				if ( $number_of_comment_pages > 1 ) {
+				if ( get_comment_pages_count() > 1 ) {
 					// Overall navigation container				
 					echo '<div class="navigation-comments-below">';
 						// paginated links
@@ -192,7 +188,7 @@ if ('open' == $post->comment_status) : ?>
 		<!-- Comment Form -->
 		<div id="respond">
 		
-		<h3><?php comment_form_title(  $noreplytext = __('Leave a Reply','atahualpa'), $replytext = __('Leave a Reply to %s','atahualpa'), $linktoparent = TRUE  ); ?></h3>
+		<h3 class="reply"><?php comment_form_title(  $noreplytext = __('Leave a Reply','atahualpa'), $replytext = __('Leave a Reply to %s','atahualpa'), $linktoparent = TRUE  ); ?></h3>
 	
 		<div id="cancel-comment-reply">
 		<?php cancel_comment_reply_link(__('Cancel','atahualpa')) ?>
@@ -204,42 +200,47 @@ if ('open' == $post->comment_status) : ?>
 			if ( $user_ID ) : ?>
 			<p>
 			<?php printf(__('Logged in as %s.', 'atahualpa'), '<a href="' . get_option('siteurl') . '/wp-admin/profile.php">' . $user_identity . '</a>')?>			
-			<a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="<?php _e('Log out of this account','atahualpa'); ?>"><?php _e('Logout &raquo;','atahualpa'); ?></a>
+			<a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php _e('Log out of this account','atahualpa'); ?>"><?php _e('Logout &raquo;','atahualpa'); ?></a>
 			</p>
 
 			<?php // If User is not logged in: Display the form fields "Name", "Email", "URL"
 			else : ?>
 			<p>
-			<input class="text author" type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="30" tabindex="1" />
-			<label for="<?php _e('author','atahualpa'); ?>"><?php _e('Name ','atahualpa'); if ($req) _e('(required)','atahualpa'); ?></label>
+			<input class="text author" type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="30" tabindex="1" />&nbsp;
+			<label for="<?php _e('author','atahualpa'); ?>"> <strong><?php _e('Name ','atahualpa'); echo "</strong>"; if ($req) _e('(required)','atahualpa'); ?></label>
 			</p>
 			<p>
-			<input class="text email" type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="30" tabindex="2" />
-			<label for="<?php _e('email','atahualpa'); ?>"><?php _e('Mail (will not be published) ','atahualpa'); if ($req) _e('(required)','atahualpa'); ?></label>
+			<input class="text email" type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="30" tabindex="2" />&nbsp;
+			<label for="<?php _e('email','atahualpa'); ?>"> <strong><?php _e('Mail</strong> (will not be published) ','atahualpa'); if ($req) _e('(required)','atahualpa'); ?></label>
 			</p>
 			<p>
-			<input class="text url" type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="30" tabindex="3" />
-			<label for="<?php _e('url','atahualpa'); ?>"><?php _e('Website','atahualpa'); ?></label>
+			<input class="text url" type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="30" tabindex="3" />&nbsp;
+			<label for="<?php _e('url','atahualpa'); ?>"> <?php _e('Website','atahualpa'); ?></label>
 			</p>
 			<?php endif; ?>
 	
 		<!-- Display Quicktags or allowed XHTML Tags -->
 		<?php if (function_exists('lmbbox_comment_quicktags_display')) { echo "<p>"; lmbbox_comment_quicktags_display(); echo "</p>"; } 
-		else { ?>
-		<p><?php _e('<strong>XHTML:</strong> You can use these tags:','atahualpa'); ?></p>
-		<p><code><?php echo allowed_tags(); ?></code></p>
-		<?php } ?>
+		else { 
+			if ($bfa_ata_show_xhtml_tags == "Yes") {
+		?>
+		<p class="thesetags clearfix"><?php printf(__('You can use %1$sthese HTML tags</a>','atahualpa'), '<a class="xhtmltags" href="#" onclick="return false;">'); ?></p>
+		<div class="xhtml-tags"><p><code><?php echo allowed_tags(); ?></code></p></div>
+		<?php 
+			}
+		} ?>
 	
 		<!-- Comment Textarea -->
 		<p><textarea name="comment" id="comment" rows="10" cols="10" tabindex="4"></textarea></p>
-
+	
+		<?php do_action('comment_form', $post->ID); ?>
+		
 		<!-- Submit -->
 		<p>
 		<input name="submit" type="submit" class="button" id="submit" tabindex="5" value="<?php _e('Submit Comment','atahualpa'); ?>" />
 		<?php comment_id_fields(); ?>
 		</p>
-	
-		<?php do_action('comment_form', $post->ID); ?>
+		
 		</form>
 		</div><!-- / respond -->
 		<!-- / Comment Form -->

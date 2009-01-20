@@ -1,8 +1,8 @@
 /*  
 Theme Name: Atahualpa
 Theme URI: http://wordpress.bytesforall.com/
-Description: Build your own unique and professional WordPress theme with 180 theme options, drop down menus, integrated feedburner, auto image resizing, 4 extra widgets and many other features. For WP 2.2-2.7 and WPMU.
-Version: 3.1.6
+Description: Build your own unique and professional WordPress theme: Over 200 theme options on 25 admin pages, drop down / fly out menus, fluid, fixed or hybrid width, turn sidebars on /off per page type, auto image resizing, 4 extra widgets and MANY other features. For WP 2.2-2.7 and WPMU. English, German, Hungarian, Portuguese and Czech.
+Version: 3.1.8
 Author: BFA WebDesign
 Author URI: http://www.bytesforall.com/
 Tags: white, one-column, two-columns, three-columns, fixed-width, flexible-width,  custom-colors, custom-header, theme-options, left-sidebar, right-sidebar, threaded-comments, sticky-post
@@ -22,9 +22,10 @@ Tags: white, one-column, two-columns, three-columns, fixed-width, flexible-width
 	float: right;
 	}
 	
-/* v  v  v  to create a static CSS file DELETE everything below this line and paste the new output of 
-yousite.com/.../style.css.php below this line:  v  v  v */
+/* v  v  v  to create a static CSS  paste the output of 
+yoursite.com/.../style.css.php below this line:  v  v  v */
 
+/* more ... means additional styles are in header.php */
 
 
 /* ------------------------------------------------------------------
@@ -36,21 +37,15 @@ body {
 							inside the container */
 	margin: 0;
 	padding: 0;
-	font-family: tahoma, arial, sans-serif;
-font-size: 0.8em;
-color: #000000;
-background: #ffffff;	}
+	/* more  ... */
+	}
 
 a:link, a:visited, a:active {
-	color: #666666; 
-	font-weight: bold; 
-	text-decoration: none; 
+	/* more  ... */
 	}
 	
 a:hover {
-	color: #cc0000;
-	font-weight: bold; 
-	text-decoration: underline; 
+	/* more  ... */
 	}
 		
 ul, ol, dl, p, h1, h2, h3, h4, h5, h6 {
@@ -61,7 +56,7 @@ ul, ol, dl, p, h1, h2, h3, h4, h5, h6 {
 	}
 
 ul ul, ul ol, ol ul, ol ol {
-	/* kill margins on sub-lists */
+	/* remove margins on sub-lists */
 	margin-top: 0;
 	margin-bottom: 0;
 	}
@@ -102,7 +97,7 @@ hr {
 	}
 
 table {
-	font-size: 100%; /* use the body's font size in tables, too */
+	font-size: 1em; /* use the body's font size in tables, too */
 	}	
 
 
@@ -126,21 +121,19 @@ pre, .wp_syntax {
 
 /*-------------------- WRAPPER for MIN / MAX width --------*/
 
-
 div#wrapper {
 	text-align: center;  
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
-	width: 99%;
-		}
-
-
+	/* more  ... */
+	}
 
 /*-------------------- CONTAINER for VISUAL styles --------*/
 
 div#container {
-	padding: 0;		width: auto;
+	/* more  ... */
+	width: auto;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: left; /* resetting the "text-align: center" of "wrapper" */
@@ -156,9 +149,9 @@ table#layout {
 	table-layout: fixed;
 	}
 
-.colone {width: 200px;}
+.colone {	/* more  ... */}
 .coltwo {width: 100%; min-width:200px;}
-.colthree {width: 200px;}
+.colthree {	/* more  ... */}
 	
 	
 /* ------------------------------------------------------------------
@@ -188,14 +181,16 @@ table#logoarea td {
 table#logoarea {
 	width: 100%;
 	max-width: 100%;
-		}
+	/* more  ... */
+	}
 	
 
 /*-------------------- LOGO -------------------------------*/
 
 .logo {
 	display: block;
-	margin: 0 10px 0 0;	}
+	/* more  ... */
+	}
 
 td.logoarea-logo {
 	width: 1%;
@@ -206,35 +201,27 @@ td.logoarea-logo {
 
 h1.blogtitle {
 	display: block;
-	/*white-space: nowrap;*/
-	margin: 0;
-padding:0;
-letter-spacing:-1px;
-line-height: 1.0em;
-font-family: tahoma, arial, sans-serif;
-font-size: 240%;	}
+	/* more  ... */
+	}
 	
 h1.blogtitle a:link, 
 h1.blogtitle a:visited, 
 h1.blogtitle a:active {
 	text-decoration: none;
-	color: #666666;
+	/* more  ... */
 	}
 	
 h1.blogtitle a:hover {
 	text-decoration: none;
-	color: #000000;
+	/* more  ... */
 	}
 
 
 /*-------------------- BLOG TAGLINE -----------------------*/
 
 p.tagline { 
-	margin: 0;
-padding: 0;
-font-size:1.2em;
-font-weight: bold;
-color: #666666;	}
+	/* more  ... */
+	}
 
 	
 td.feed-icons {
@@ -246,7 +233,7 @@ div.rss-box {
 	display: block; 
 	padding: 10px 0 10px 10px; 
 	margin: 0;
-	width: 280px;
+	/* more  ... */
 	}
 	
 /*-------------------- COMMENTS FEED ICON -----------------*/
@@ -281,6 +268,20 @@ div.rss-box {
 	}
 
 
+/*-------------------- EMAIL SUBSCRIBE ICON ---------------*/
+
+.email-icon {
+	background: transparent url(images/email-feed-small.gif) no-repeat scroll 0;
+	height: 22px;
+	line-height: 22px;
+	margin: 0 10px 0 0;
+	padding-left: 28px;
+	/*display: inline-block;*/
+	display: block;
+	text-decoration: none;
+	float: right;
+	white-space: nowrap;
+	}
 	
 	
 /*-------------------- SEARCH BOX IN HEADER ---------------*/	
@@ -290,13 +291,8 @@ td.search-box {
 	}
 	
 .searchbox {
-	border-top: 1px dashed #ccc;
-border-right: 1px dashed #ccc;
-border-bottom: 0;
-border-left: 1px dashed #ccc;
-width: 200px;
-margin: 0;
-padding: 0;	}
+	/* more  ... */
+	}
 
 .searchbox-form {
 	margin: 5px 10px 5px 10px;
@@ -318,57 +314,77 @@ padding: 0;	}
 	}
 
 .horbar1 {
-	height: 5px;
-background: #ffffff;
-border-top: dashed 1px #cccccc;	}
+	/* more  ... */
+	}
 	
 .horbar2 { 
-	height: 5px;
-background: #ffffff;
-border-bottom: dashed 1px #cccccc;	}	
+	/* more  ... */
+	}	
+
 
 
 .header-image-container {
 	position: relative; 
 	margin: 0; 
 	padding: 0; 
-	height: 150px; 
+	/* more  ... */
 	/* background: (= header image) will be added in bfa_header_config.php */
-		}
+	}
 
 	
+.titleoverlay {
+	z-index: 4;
+	position: relative;
+	float: left;
+	width: auto;
+	/* more  ... */
+	}
 
 
 /*-------------------- OPACITY LEFT -----------------------*/
 
 .opacityleft {
-	background-color: #ffffff; 
+	/* more  ... */
 	position: absolute; 
 	z-index: 2; 
 	top: 0; 
 	left: 0; 
-	height: 150px;
-	width: 200px; 
-	filter: alpha(opacity=40);
-	-moz-opacity:.40;
-	opacity:.40;
+	/* more  ... */
 	}
 
 
 /*-------------------- OPACITY RIGHT ----------------------*/	
 .opacityright {
-	background-color: #ffffff; 
+	/* more  ... */
 	position: absolute; 
 	z-index: 2; 
 	top: 0; 
 	right: 0; 
-	height: 150px;
-	width: 200px; 
-	filter: alpha(opacity=40);
-	-moz-opacity:.40;
-	opacity:.40;
+	/* more  ... */
 	}
 
+
+/*-------------------- CLICKABLE HEADER IMAGE -------------*/
+div.clickable {
+	position:absolute; 
+	top:0; 
+	left:0; 
+	z-index:3; 
+	margin: 0; 
+	padding: 0; 
+	/* more  ... */
+	width: 100%;
+	}
+ 
+a.divclick:link, 
+a.divclick:visited, 
+a.divclick:active, 
+a.divclick:hover {
+	width: 100%; 
+	height: 100%; 
+	display: block;
+	text-decoration: none;
+	}
 
 		
 /* ------------------------------------------------------------------
@@ -377,9 +393,8 @@ border-bottom: dashed 1px #cccccc;	}
 
 td#left {
 	vertical-align: top;
-	border-right: dashed 1px #CCCCCC;
-padding: 10px 10px 10px 10px;
-background: #ffffff;	}
+	/* more  ... */
+	}
 
 	
 /* ------------------------------------------------------------------
@@ -388,9 +403,8 @@ background: #ffffff;	}
 
 td#right {
 	vertical-align: top;
-	border-left: dashed 1px #CCCCCC;
-padding: 10px 10px 10px 10px;
-background: #ffffff;	}
+	/* more  ... */
+	}
 
 	
 /* ------------------------------------------------------------------
@@ -403,7 +417,8 @@ td#middle {
 	max-width: 100%;		
 	overflow: auto;
 	background-color: #fff;
-	padding: 10px 15px;	}
+	/* more  ... */
+	}
 
 	
 /* ------------------------------------------------------------------
@@ -412,22 +427,16 @@ td#middle {
 
 td#footer {
 	width: auto;
-	background-color: #ffffff;
-border-top: dashed 1px #cccccc;
-padding: 10px;
-text-align: center;
-color: #777777;
-font-size: 95%;	}
+	/* more  ... */
+	}
 
 td#footer a:link, td#footer a:visited, td#footer a:active {
-	text-decoration: none;
-color: #777777;
-font-weight: normal;	}
+	/* more  ... */
+	}
 
 td#footer a:hover {
-	text-decoration: none;
-color: #777777;
-font-weight: normal;	}
+	/* more  ... */
+	}
 	
 /* ------------------------------------------------------------------
 ---------- WIDGETS --------------------------------------------------
@@ -439,22 +448,26 @@ div.widget {
 					menus but not the other widgets. With 100% IE
 					will remove sidebar borders if select menu is
 					too wide */
-	margin: 0 0 15px 0;	}
+	/* more  ... */
+	}
 
 div.widget-title {
 	display: block;
 	width: auto;
-		}
+	/* more  ... */
+	}
 
 div.widget-title h3 {
 	padding:0;
 	margin:0;
-		}	
+	/* more  ... */
+	}	
 	
 div.widget-content {
 	display: block;
 	width: auto;
-		}
+	/* more  ... */
+	}
 
 	
 /* ------------------------------------------------------------------
@@ -466,7 +479,7 @@ div.widget-content {
  in IE 6 & 7 */
 
 div.widget select { 
-	 
+	/* more  ... */
 	width: 98%; 		/* auto won't work in Safari */
 	margin-top: 5px;
 }	
@@ -477,9 +490,9 @@ div.widget select {
 ------------------------------------------------------------------ */
 
 .widget ul {
-	list-style-type: none; 
+	list-style-type: none;
 	margin: 0; 
-	padding: 0; 
+	padding: 0;
 	width: auto;
 	}
 
@@ -488,15 +501,15 @@ div.widget select {
 .widget ul li {
 	margin: 2px 0 2px 0;  
 	display: block;
-	margin: 2px 0 2px 0px;
+	/* more  ... */
 	}
 
 .widget ul li ul li {
-	margin: 2px 0 2px 5px;  
+	/* more  ... */ 
 	}
 
 .widget ul li ul li ul li {
-	margin: 2px 0 2px 5px;  
+	/* more  ... */ 
 	}
 	
 .widget ul li a:link, 
@@ -504,60 +517,57 @@ div.widget select {
 .widget ul li a:active {
 	text-decoration: none; 
 	font-weight: normal; 
-	padding: 0 0 0 5px; 
-	color: #666666; 
-	border-left: solid 7px #cccccc; 
+	/* more  ... */
 	}
 
 .widget ul li ul li a:link, 
 .widget ul li ul li a:visited, 
 .widget ul li ul li a:active {
-	padding: 0 0 0 5px; 
-	color: #666666; 
-	border-left: solid 7px #cccccc; 
+	/* more  ... */
 	}
 
 .widget ul li ul li ul li a:link, 
 .widget ul li ul li ul li a:visited, 
 .widget ul li ul li ul li a:active {
-	padding: 0 0 0 5px; 
-	color: #666666; 
-	border-left: solid 7px #cccccc; 
+	/* more  ... */
 	}
 
 	
 .widget ul li a:hover {
-	color: #000000; 
-	border-left: solid 7px #000000; 
+	/* more  ... */
 	}
 
 .widget ul li ul li a:hover {
-	color: #000000; 
-	border-left: solid 7px #000000; 
+	/* more  ... */
 	}
 
 .widget ul li ul li ul li a:hover {
-	color: #000000; 
-	border-left: solid 7px #000000; 
+	/* more  ... */
 	}
 	
 .widget ul li a:link, 
 .widget ul li a:visited, 
 .widget ul li a:active,
 .widget ul li a:hover {
-	display: block;   /* if we set this to inline-block, we cannot
-						overwrite it to "inline" for the comments widgets, for IE */
-	height: 1%;   /* IE needs this */
+	display: block;	   /* default=block. If set to "inline-block", the comments widget 
+						cannot be overwritten to "inline" for IE */
 	}
 
+* html .widget ul li a:link, 
+* html .widget ul li a:visited, 
+* html .widget ul li a:active,
+* html .widget ul li a:hover {
+	height: 1%;   /* IE6 needs this */
+	}
+	
 /* the archive widgets get inline-blick so post counts won't wrap
 into the next line. In FF2 items that don't fit into a single line 
 will overflow the sidebar but that is unlikely as the longest item 
 would be "[month name] (post count)" */
-.widget_categories ul li a:link, 
+/*.widget_categories ul li a:link, 
 .widget_categories ul li a:visited, 
 .widget_categories ul li a:active,
-.widget_categories ul li a:hover,
+.widget_categories ul li a:hover, */
 .widget_archive ul li a:link, 
 .widget_archive ul li a:visited, 
 .widget_archive ul li a:active,
@@ -566,16 +576,13 @@ would be "[month name] (post count)" */
 	display: inline-block !important;  
 	}
 
-/* We cannot use inline-block for the category widget because unlike the archive 
-widget the category widget items may need to wrap on top of (possibly) being 
-displayed hierarchically. If "post count" is not displayed then it's easy: use "block". 
-With post count turned on we'll display it inline, because inline-block
-will cause it to overflow in FF2 and look bad in IE, too, if the item needs to wrap*/
+/* The category widget gets "block" or "inline" depending on whether "post count" is being
+used or not. */
 .widget_categories ul li a:link, 
 .widget_categories ul li a:visited, 
 .widget_categories ul li a:active,
 .widget_categories ul li a:hover {
-	display: inline !important;  
+	/* more  ... */
 	}
 	
 /*------------- list items with 2 links or link & text ----*/
@@ -598,23 +605,21 @@ div#get_recent_comments_wrap ul li ul li {
 div#get_recent_comments_wrap ul li ul li,
 .widget_recent_comments ul li, 
 .widget_simple_recent_comments ul li {
-	padding: 0 0 0 5px; 
+	/* more  ... */
 	display: block; 
-	border-left: solid 7px #cccccc; 
+	/* more  ... */
 	}
 
 /* Get Recent comments 3rd level, others 2nd level: */	
 div#get_recent_comments_wrap ul li ul li ul li, 
 .widget_recent_comments ul li ul li, 
 .widget_simple_recent_comments ul li ul li {
-	padding: 0 0 0 5px; 
-	border-left: solid 7px #cccccc; 
+	/* more  ... */
 	}
 
 .widget_recent_comments ul li ul li ul li, 
 .widget_simple_recent_comments ul li ul li ul li {
-	padding: 0 0 0 5px; 
-	border-left: solid 7px #cccccc; 
+	/* more  ... */
 	}	
 	
 /*- with sfhover for IE6 because it doesn't know li:hover -*/
@@ -625,7 +630,7 @@ div#get_recent_comments_wrap ul li ul li:hover,
 div#get_recent_comments_wrap ul li ul li.sfhover, 	
 .widget_recent_comments ul li.sfhover, 
 .widget_simple_recent_comments ul li.sfhover {	
-	border-left: solid 7px #000000; 
+	/* more  ... */
 	}
 
 div#get_recent_comments_wrap ul li ul li ul li:hover, 
@@ -634,14 +639,14 @@ div#get_recent_comments_wrap ul li ul li ul li:hover,
 div#get_recent_comments_wrap ul li ul li ul li.sfhover, 
 .widget_recent_comments ul li ul li.sfhover, 
 .widget_simple_recent_comments ul li ul li.sfhover {	
-	border-left: solid 7px #000000; 
+	/* more  ... */
 	}
 
 .widget_recent_comments ul li ul li ul li:hover, 
 .widget_simple_recent_comments ul li ul li ul li:hover, 	
 .widget_recent_comments ul li ul li ul li.sfhover, 
 .widget_simple_recent_comments ul li ul li ul li.sfhover {	
-	border-left: solid 7px #000000; 
+	/* more  ... */ 
 	}
 	
 /*--- comments get the border on the li instead of the a --*/
@@ -707,73 +712,76 @@ table.subscribe td.comment-text {
 
 div.post {
 	display: block;
-	margin: 0 0 30px 0;
+	/* more  ... */
 	}
 
 /* additonal styles for sticky posts */
 .sticky {
-		}
+	/* more  ... */
+	}
 
 /*-------------------- POST KICKER ------------------------*/
 
 div.post-kicker {
-	margin: 0 0 5px 0;
+	/* more  ... */
 	}
 
 div.post-kicker a:link, 
 div.post-kicker a:visited, 
 div.post-kicker a:active {
-	color: #000000;
-text-decoration: none;
-text-transform: uppercase;	}
+	/* more  ... */
+	}
 
 div.post-kicker a:hover {
-	color: #cc0000;	}
+	/* more  ... */
+	}
 
 	
 /*-------------------- POST HEADLINE ----------------------*/
 
 div.post-headline {
-		}
+	/* more  ... */
+	}
 
 div.post-headline h2 {
 	margin: 0;
 	padding: 0;
-	padding: 0;
-margin: 0;
+	/* more  ... */
 	}
 
 div.post-headline h2 a:link, 
 div.post-headline h2 a:visited, 
 div.post-headline h2 a:active {
-	color: #666666;
-text-decoration: none;
+	/* more  ... */
 	}
 
 div.post-headline h2 a:hover {
-	color: #000000;
-text-decoration: none;
+	/* more  ... */
 	}
 
 	
 /*-------------------- POST BYLINE ------------------------*/
 	
 div.post-byline {
-	margin: 5px 0 10px 0;	}
+	/* more  ... */
+	}
 
 div.post-byline a:link, 
 div.post-byline a:visited, 
 div.post-byline a:active {
-		}
+	/* more  ... */
+	}
 
 div.post-byline a:hover {
-		}
+	/* more  ... */
+	}
 
 	
 /*-------------------- POST BODY COPY ---------------------*/
 	
 div.post-bodycopy {
-		}
+	/* more  ... */
+	}
 	
 div.post-bodycopy p {
 	margin: 1em 0;
@@ -798,23 +806,18 @@ div.post-pagination {
 div.post-footer {
 	clear:both; 
 	display: block;
-	margin: 0;
-padding: 5px;
-background: #eeeeee;
-color: #666;
-line-height: 18px;	}
+	/* more  ... */
+	}
 
 div.post-footer a:link, 
 div.post-footer a:visited, 
 div.post-footer a:active {
-	color: #333;
-font-weight: normal;
-text-decoration: none;	}	
+	/* more  ... */
+	}	
 
 div.post-footer a:hover {
-	color: #333;
-font-weight: normal;
-text-decoration: underline;	}
+	/* more  ... */
+	}
 
 	
 /*-------------------- ICONS in KICKER, BYLINE & FOOTER ---*/
@@ -846,36 +849,32 @@ span.post-ratings {
 .navigation-top {
 	display: block; 
 	width: 100%; 
-	margin: 0 0 10px 0;
-padding: 10px 0 10px 0;
-border-bottom: dashed 1px #ccc;	}
+	/* more  ... */
+	}
 
 .navigation-middle {
 	display: block; 
 	width: 100%; 
-	margin: 10px 0 20px 0;
-padding: 10px 0 10px 0;
-border-top: dashed 1px #ccc;
-border-bottom: dashed 1px #ccc;	}
+	/* more  ... */
+	}
 	
 .navigation-bottom {
 	display: block; 
 	width: 100%; 
-	margin: 20px 0 0 0;
-padding: 10px 0 10px 0;
-border-top: dashed 1px #ccc;	}
+	/* more  ... */
+	}
 
 .navigation-comments-above {
 	display: block; 
 	width: 100%; 
-	margin: 0 0 10px 0;
-padding: 10px 0 10px 0;	}
+	/* more  ... */
+	}
 	
 .navigation-comments-below {
 	display: block; 
 	width: 100%; 
-	margin: 0 0 10px 0;
-padding: 10px 0 10px 0;	}
+	/* more  ... */
+	}
 	
 .older {
 	float: left; 
@@ -960,12 +959,8 @@ input.file,
 input.TextField, 
 textarea {
 	padding: 3px;
-	color: #000000;
-border-top: solid 1px #333333;
-border-left: solid 1px #333333;
-border-right: solid 1px #999999;
-border-bottom: solid 1px #cccccc;
-background: url(images/inputbackgr.gif) no-repeat top left;		}
+	/* more  ... */
+	}
 
 textarea {
 	width: 96%; 
@@ -983,26 +978,27 @@ input.inputfocus {
 	}	
 	
 input.highlight, textarea.highlight {
-	background: #e8eff7;
-border-color: #37699f;	}
+	/* more  ... */
+	}
 
 /* .Button for WP-Email */
 .button, .Button {
 	padding: 0 2px;
 	height: 24px;
 	line-height: 16px;
-	background-color: #777777;
-color: #ffffff;
-border: solid 2px #555555;
-font-weight: bold;	}
+	/* more  ... */
+	}
 	
 .buttonhover {
 	padding: 0 2px;
 	cursor: pointer;
-	background-color: #6b9c6b;
-color: #ffffff;
-border: solid 2px #496d49;	}
-	
+	/* more  ... */
+	}
+
+/* comment submit button */
+form#commentform input#submit	{
+	/* more  ... */
+	}
 	
 /* ------------------------------------------------------------------
 ---------- SEARCH FORM ----------------------------------------------
@@ -1030,20 +1026,15 @@ blockquote {
 	height: 1%;
 	display: block;
 	clear: both;
-	color: #555555;
-padding: 1em 1em;
-background: #f4f4f4;
-border: solid 1px #e1e1e1;	
+	/* more  ... */	
 	}
 	
 blockquote blockquote {
 	height: 1%;
 	display: block;
 	clear: both;
-	color: #444444;
-padding: 1em 1em;
-background: #e1e1e1;
-border: solid 1px #d3d3d3;	}
+	/* more  ... */
+	}
 
 
 /* ------------------------------------------------------------------
@@ -1061,34 +1052,28 @@ border: solid 1px #d3d3d3;	}
 .post table caption {
 	width: auto;
 	margin: 0 auto;
-	background: #eeeeee;
-border: #999999;
-padding: 4px 8px;
-color: #666666;	}
+	/* more  ... */
+	}
 	
 .post table th {
-	background: #888888;
-color: #ffffff;
-font-weight: bold;
-font-size: 90%;
-padding: 4px 8px;
-border: solid 1px #ffffff;
-text-align: left;	}
+	/* more  ... */
+	}
 	
 .post table td {
-	padding: 4px 8px;
-background-color: #ffffff;
-border-bottom: 1px solid #dddddd;
-text-align: left;	}
+	/* more  ... */
+	}
 
 .post table tfoot td {
-		}
+	/* more  ... */
+	}
 	
 .post table tr.alt td {
-	background: #f4f4f4;	}
+	/* more  ... */
+	}
 
 .post table tr.over td {
-	background: #e2e2e2;	}
+	/* more  ... */
+	}
 
 
 /*-------------------- CALENDAR WIDGET --------------------*/
@@ -1150,17 +1135,36 @@ table#wp-calendar td a {
 ---------- COMMENTS -------------------------------------------------
 ------------------------------------------------------------------ */
 
+/* whole respond area */
+div#respond {
+	margin: 25px 0;
+	padding: 25px;
+	background: #eee;
+	-moz-border-radius: 8px;
+	-khtml-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	}
+
+p.thesetags {
+	margin: 10px 0;
+	}
+	
+h3.reply {
+	margin: 0;
+	padding: 0 0 10px 0;
+	}
+	
 ol.commentlist {
 	margin: 15px 0 25px 0;
 	list-style-type: none;
 	padding: 0;
-	border-top: dotted 1px #cccccc;
+	/* more  ... */
 	display:block;
 	}
 	
 ol.commentlist li {
-	background-color: #ffffff;
-	border-bottom: dotted 1px #cccccc;
+	/* more  ... */
 	padding: 15px 10px;
 	display: block;
 	height: 1%; /* for IE6 */
@@ -1168,20 +1172,19 @@ ol.commentlist li {
 	}
 
 ol.commentlist li.alt {
-	background-color: #f6f6f6;
-	border-bottom: dotted 1px #cccccc;
+	/* more  ... */
 	display: block;
 	height: 1%; /* for IE6 */
 	}
 
 ol.commentlist li.authorcomment {
-	background-color: #ffecec;
+	/* more  ... */
 	display: block;
 	height: 1%;
 	}
 
 ol.commentlist span.authorname {
-	font-size: 110%;
+	/* more  ... */
 	font-weight: bold;
 	}
 
@@ -1218,9 +1221,10 @@ div.comment-number a:active {
 	color: #ccc;
 	}
 
-textarea.comment {
-	width: 96%; 
-	margin: 0; 
+textarea#comment {
+	width: 98%; 
+	margin: 10px 0; 
+	display: block;
 	}
 
 
@@ -1232,7 +1236,7 @@ ul.commentlist {
 	margin: 15px 0 15px 0;
 	list-style-type: none;
 	padding: 0;
-	border-top: dotted 1px #cccccc;
+	/* more  ... */
 	display:block;
 	}
 
@@ -1245,8 +1249,7 @@ ul.commentlist ul {
 	}
 
 ul.commentlist li.thread-even {
-	background-color: #ffffff;
-	border-bottom: dotted 1px #cccccc;
+	/* more  ... */
 	padding: 15px 10px;
 	display: block;
 	clear: both;
@@ -1255,8 +1258,7 @@ ul.commentlist li.thread-even {
 	}
 
 ul.commentlist li.thread-odd {
-	background-color: #f6f6f6;
-	border-bottom: dotted 1px #cccccc;
+	/* more  ... */
 	padding: 15px 10px;
 	display: block;
 	clear: both;
@@ -1265,7 +1267,7 @@ ul.commentlist li.thread-odd {
 	}
 
 ul.commentlist li.bypostauthor {
-	background-color: #ffecec;
+	/* more  ... */
 	}
 	
 /* reset children */
@@ -1312,7 +1314,7 @@ ul.commentlist li p {
 	}
 
 ul.commentlist span.authorname {
-	font-size: 110%;
+	/* more  ... */
 	}
 
 div.comment-meta a:link, 
@@ -1344,7 +1346,66 @@ div.comment-number a:active {
 	color: #ccc;
 	}
 
+/* paged comments navigation */
+.page-numbers {
+	padding: 2px 6px;
+	border: solid 1px #000000;
+	-moz-border-radius: 6px;
+	-khtml-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	}
 
+/* current page number */
+span.current {
+	background: #ddd;
+	}
+	
+a.prev, a.next {
+	border: none;
+	}
+	
+a.page-numbers:link, 
+a.page-numbers:visited, 
+a.page-numbers:active {
+	text-decoration: none;
+	/* more  ... */
+	}
+
+a.page-numbers:hover {
+	text-decoration: none;
+	/* more  ... */
+	}
+
+/* "you can use these xhtml tags" initially closed */
+div.xhtml-tags {
+	display: none;
+	}
+
+	
+/* ------------------------------------------------------------------
+---------- For CommentLuv ----------------------------------------
+------------------------------------------------------------------ */
+
+abbr em {
+	border: none !important;
+	border-top: dashed 1px #aaa !important;
+	display: -moz-inline-box !important; /* Firefox 2 doesn't know default "inline-block" */
+	display: inline-block !important;
+	background: url(images/commentluv.gif) 0% 90% no-repeat;
+	margin-top: 8px;
+	padding:  5px 5px 2px 20px !important;
+	font-style: normal;
+	}
+
+/* ------------------------------------------------------------------
+---------- Subscribe to comments -----------------------------------
+------------------------------------------------------------------ */
+
+p.subscribe-to-comments {
+	margin-bottom: 10px;
+	}
+	
 /* ------------------------------------------------------------------
 ---------- IMAGES ---------------------------------------------------
 ------------------------------------------------------------------ */
@@ -1353,7 +1414,11 @@ img {
 	border: 0;
 	}
 
-.post img {
+	
+
+	
+.post img.size-full {
+	/*max-width: 100% auto;*/
 	max-width: 96%;		/* 	resize images in the main column if needed.
 							97% so images with padding and border don't touch
 							the right sidebar while being resized. Change this 
@@ -1362,13 +1427,10 @@ img {
 	width: auto 100%;
 	margin: 5px 0 5px 0;
 	/*overflow-x: auto;*/
-	padding: 5px;
-border: solid 1px #dddddd;
-background-color: #f3f3f3;
--moz-border-radius: 3px;
--khtml-border-radius: 3px;
--webkit-border-radius: 3px;
-border-radius: 3px;	}
+	/* more  ... */
+	}
+
+
 
 /* hiding from IE6 which would stretch the image vertically. 
 IE6 will get width and height via jQuery */
@@ -1376,17 +1438,17 @@ div[class~=post] img {
 	height: auto; /* FF & Safari need auto */
 	}	
 
-img.alignleft {
+.post img.alignleft {
 	float: left; 
 	margin: 10px 10px 5px 0; 
 	}
 	
-img.alignright {
+.post img.alignright {
 	float: right; 
 	margin: 10px 0 5px 10px; 
 	}
 
-img.aligncenter {
+.post img.aligncenter {
 	display: block;
 	margin: 10px auto;
 	}
@@ -1425,6 +1487,7 @@ div.archives-page img {
 ------------------------------------------------------------------ */
 
 .wp-caption {
+	/*max-width: 100% auto;*/
 	max-width: 96%;		/* FF2, IE7, Opera9, Safari 3.0/3.1 will 
 							resize images in the main column if needed.
 							97% so images with padding and border don't touch
@@ -1433,15 +1496,9 @@ div.archives-page img {
 							don't have padding and a border */
 	width: auto 100%;
 	height: auto;  /* FF3 needs "auto", IE6 needs "100%", see next style*/
-	border: 1px solid #dddddd;
-text-align: center;
-background-color: #f3f3f3;
-padding-top: 4px;
-margin: 10px 0 0 0;
--moz-border-radius: 3px;
--khtml-border-radius: 3px;
--webkit-border-radius: 3px;
-border-radius: 3px;	}
+	display: block;
+	/* more  ... */
+	}
 
 /* for imges inside a caption container IE6 does not
 stretch images vertically as it does with images without
@@ -1452,17 +1509,14 @@ required as jQuery sets the height for caption'ed images too */
 	}
 	
 .wp-caption img {
-   	margin: 0;
-   	padding: 0;
-   	border: 0 none;
+   	margin: 0 !important;
+   	padding: 0 !important;
+   	border: 0 none !important;
 	}
 	
 .wp-caption p.wp-caption-text {
-	font-size: 0.8em;
-line-height: 13px;
-padding: 2px 4px 5px;
-margin: 0;
-color: #666666;	}
+	/* more  ... */
+	}
 
 
 /* ------------------------------------------------------------------
@@ -1471,10 +1525,10 @@ color: #666666;	}
 
 img.wp-smiley {
     float: none;  
-    border: none; 
+    border: none !important; 
 	margin: 0 1px -1px 1px; 
-	padding: 0;
-	background: none;
+	padding: 0 !important;
+	background: none !important;
 	}
 
 
@@ -1485,17 +1539,119 @@ img.wp-smiley {
 img.avatar {
 	float: left; 
 	display: block;
-	margin: 0 8px 1px 0;
-padding: 3px;
-border: solid 1px #ddd;
-background-color: #f3f3f3;
--moz-border-radius: 3px;
--khtml-border-radius: 3px;
--webkit-border-radius: 3px;
-border-radius: 3px;	}
+	/* more  ... */
+	}
 
+
+
+/* ------------------------------------------------------------------
+---------- FOR THE QUICKTAGS PLUGIN ---------------------------------
+------------------------------------------------------------------ */	
+
+/*--------------------COMMENTS QUCIKTAGS ------------------*/
+
+/* Main Span */
+#comment_quicktags {
+	text-align: left;
+	padding: 10px 0 2px 0;
+	display: block;
+	}
+
+/* Button Style */
+#comment_quicktags input.ed_button {
+	background: #f4f4f4;
+	border: 2px solid #cccccc;
+	color: #444444;
+	margin: 2px 4px 2px 0;
+	width: auto;
+	padding: 0 4px;
+	height: 24px;
+	line-height: 16px;
+	}
+	
+/* Button Style on focus/click */
+#comment_quicktags input.ed_button_hover {
+	background: #dddddd;
+	border: 2px solid #666666;
+	color: #000000;
+	margin: 2px 4px 2px 0;
+	width: auto;
+	padding: 0 4px;
+	height: 24px;
+	line-height: 16px;
+	cursor: pointer;
+	}
+
+/* Button Lable style */
+#comment_quicktags #ed_strong {
+	font-weight: bold;
+	}
+	
+/* Button Lable style */
+#comment_quicktags #ed_em {
+	font-style: italic;
+	}
 
 	
+
+
+/* ------------------------------------------------------------------
+---------- FOR THE SOCIABLE PLUGIN ----------------------------------
+------------------------------------------------------------------ */
+
+div.sociable { 
+	margin: 0; 
+	width: 200px;
+	display:inline;
+	}
+
+div.sociable-tagline {
+	display: none;
+	}
+	
+.sociable span {
+	display: inline-block;
+	}
+	
+.sociable ul {
+	display: inline;
+	margin: 0 !important;
+	padding: 0 !important;
+	}
+	
+.sociable ul li {
+	background: none;
+	display: inline;
+	list-style-type: none;
+	margin: 0;
+	padding: 1px;
+	}
+	
+.sociable ul li:before { 
+	content: ""; 
+	}
+	
+.sociable img {
+	float: none;
+	width: 16px;
+	height: 16px;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	}
+
+.sociable-hovers {
+	opacity: .4;
+	-moz-opacity: .4;
+	filter: alpha(opacity=40);
+	vertical-align: text-bottom;
+	}
+	
+.sociable-hovers:hover {
+	opacity: 1;
+	-moz-opacity: 1;
+	filter: alpha(opacity=100);
+	}
 
 
 
@@ -1649,13 +1805,13 @@ ul.rMenu-ver li
 	
 div#menu1 ul.rMenu-ver, div#menu1 ul.rMenu-ver ul
 	{
-	width: 11em;		/* sub-menus need a defined width, especially
+		/* more  ... */		/* sub-menus need a defined width, especially
 				   vertical sub-menus. salt to taste. */
 	}
 
 div#menu2 ul.rMenu-ver, div#menu2 ul.rMenu-ver ul
 	{
-	width: 11em;		/* sub-menus need a defined width, especially
+		/* more  ... */		/* sub-menus need a defined width, especially
 				   vertical sub-menus. salt to taste. */
 	}
 	
@@ -1783,15 +1939,13 @@ ul.rMenu-hRight ul
 
 ul.rMenu
 	{
-	background: #ffffff;
-	border: dashed 1px #cccccc;
+	/* more  ... */
 	border-left: none;
 	}
 /*added for darkmenu*/
 ul#rmenu
 	{
-	background: #777777;
-	border: solid 1px #000000;
+	/* more  ... */
 	border-left: none;
 	}
 
@@ -1799,12 +1953,12 @@ ul#rmenu
 
 ul.rMenu li a
 	{
-	border: dashed 1px #cccccc;	/* border around all anchor tags */
+		/* more  ... */	/* border around all anchor tags */
 	}
 /*added*/
 ul#rmenu li a
 	{
-	border: solid 1px #000000;	/* border around all anchor tags */
+		/* more  ... */	/* border around all anchor tags */
 	}
 
 
@@ -1858,12 +2012,12 @@ ul.rMenu-ver li
 	
 div#menu1 ul.rMenu-ver
 	{
-	border-top: dashed 1px #cccccc;	/* ditto */
+		/* more  ... */	/* ditto */
 	}
 
 div#menu2 ul.rMenu-ver
 	{
-	border-top: solid 1px #000000;	/* ditto */
+		/* more  ... */	/* ditto */
 	}
 	
 	
@@ -1883,9 +2037,7 @@ ul#rmenu li a
 ul.rMenu li a:link, ul.rMenu li a:hover, ul.rMenu li a:visited, ul.rMenu li a:active
 	{
 	text-decoration: none;
-	color: #777777;
-	text-transform: uppercase;
-	font: 11px Arial, Verdana, sans-serif;  
+	/* more  ... */
 	margin:0;
 	padding: 4px 5px;	
 	}
@@ -1894,9 +2046,7 @@ ul.rMenu li a:link, ul.rMenu li a:hover, ul.rMenu li a:visited, ul.rMenu li a:ac
 ul#rmenu li a:link, ul#rmenu li a:hover, ul#rmenu li a:visited, ul#rmenu li a:active
 	{
 	text-decoration: none;
-	color: #ffffff;
-	text-transform: uppercase;
-	font: 11px Arial, Verdana, sans-serif; 
+	/* more  ... */
 	margin:0;
 	padding: 4px 5px;	
 	}
@@ -1914,15 +2064,13 @@ ul.rMenu li:hover a:active
 	
 ul.rMenu li
 	{
-	background-color: #ffffff;	/* default background color of menu items */
-	/*background: url(images/dropbackgr.gif) repeat-x top left;*/
+	/* more  ... */
 	}
 
 /*added*/
 ul#rmenu li
 	{
-	background-color: #777777;	/* default background color of menu items */
-	/*background: #777 url(images/dropbackgr.gif) repeat-x top left;*/
+	/* more  ... */
 	}
 
 
@@ -1931,7 +2079,7 @@ ul#rmenu li
 ul.rMenu li:hover,
 ul.rMenu li.sfhover
 	{
-	background-color: #dddddd;	/* background color for parent menu items of
+		/* more  ... */	/* background color for parent menu items of
 				   the current sub-menu. includes the sfhover
 				   class which is used in the suckerfish hack
 				   detailed later in this stylesheet. */
@@ -1942,7 +2090,7 @@ ul.rMenu li.sfhover
 ul#rmenu li:hover,
 ul#rmenu li.sfhover
 	{
-	background-color: #000000;	/* background color for parent menu items of
+		/* more  ... */	/* background color for parent menu items of
 				   the current sub-menu. includes the sfhover
 				   class which is used in the suckerfish hack
 				   detailed later in this stylesheet. */
@@ -1952,19 +2100,23 @@ ul#rmenu li.sfhover
 
 
 /* "current" page and hover */
-ul.rMenu li.current_page_item, 
+ul.rMenu li.current_page_item a:link, 
+ul.rMenu li.current_page_item a:active, 
+ul.rMenu li.current_page_item a:hover, 
+ul.rMenu li.current_page_item a:visited, 
 ul.rMenu li a:hover
 	{
-	background-color: #eeeeee;
-	color: #000000;
+	/* more  ... */
 	}
 /*added*/
 /* "current" category and hover */
-ul#rmenu li.current-cat,
+ul#rmenu li.current-cat a:link, 
+ul#rmenu li.current-cat a:active, 
+ul#rmenu li.current-cat a:hover, 
+ul#rmenu li.current-cat a:visited, 
 ul#rmenu li a:hover
 	{
-	background-color: #cc0000;
-	color: #ffffff;
+	/* more  ... */
 	}
 
 
@@ -1976,16 +2128,11 @@ div#menu1 ul.rMenu li.rMenu-expand a,
 div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand a,
 div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand a,
 div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,
-div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,
-div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,
-div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,
-div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,
-div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,
-div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a
+div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a 
 	{
 	padding-right: 15px;
 	padding-left: 5px;
-	background-image: url(images/expand-right.gif);
+	/* more  ... */
 	background-repeat: no-repeat;
 	background-position: 100% 50%;
 	}
@@ -1994,16 +2141,11 @@ div#menu2 ul.rMenu li.rMenu-expand a,
 div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand a,
 div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand a,
 div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,
-div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,
-div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,
-div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,
-div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,
-div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,
-div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a
+div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a 
 	{
 	padding-right: 15px;
 	padding-left: 5px;
-	background-image: url(images/expand-right-white.gif);
+	/* more  ... */
 	background-repeat: no-repeat;
 	background-position: 100% 50%;
 	}
@@ -2015,21 +2157,11 @@ ul.rMenu-vRight li.rMenu-expand li.rMenu-expand a,
 ul.rMenu-vRight li.rMenu-expand li.rMenu-expand li.rMenu-expand a,
 ul.rMenu-vRight li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,
 ul.rMenu-vRight li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,
-ul.rMenu-vRight li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,
-ul.rMenu-vRight li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,
-ul.rMenu-vRight li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,
-ul.rMenu-vRight li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,
-ul.rMenu-vRight li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,
 ul.rMenu-hRight li.rMenu-expand a,
 ul.rMenu-hRight li.rMenu-expand li.rMenu-expand a,
 ul.rMenu-hRight li.rMenu-expand li.rMenu-expand li.rMenu-expand a,
 ul.rMenu-hRight li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,
-ul.rMenu-hRight li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,
-ul.rMenu-hRight li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,
-ul.rMenu-hRight li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,
-ul.rMenu-hRight li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,
-ul.rMenu-hRight li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a,
-ul.rMenu-hRight li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a
+ul.rMenu-hRight li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand a 
 	{
 	padding-right: 5px;
 	padding-left: 20px;
@@ -2043,7 +2175,7 @@ div#menu1 ul.rMenu-hor li.rMenu-expand a
 	{
 	padding-left: 5px;	/* reset padding */
 	padding-right: 15px;
-	background-image: url(images/expand-down.gif);
+	/* more  ... */
 	background-position: 100% 50%;
 	}
 /*added for dark menu*/
@@ -2051,7 +2183,7 @@ div#menu2 ul.rMenu-hor li.rMenu-expand a
 	{
 	padding-left: 5px;	/* reset padding */
 	padding-right: 15px;
-	background-image: url(images/expand-down-white.gif);
+	/* more  ... */
 	background-position: 100% 50%;
 	}
 
@@ -2061,12 +2193,7 @@ div#menu1 ul.rMenu li.rMenu-expand li a,
 div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand li a,
 div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li a,
 div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li a,
-div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li a,
-div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li a,
-div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li a,
-div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li a,
-div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li a,
-div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li a
+div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li a 
 	{
 	background-image: none;
 	padding-right: 5px;	/* reset padding */
@@ -2078,12 +2205,7 @@ div#menu2 ul.rMenu li.rMenu-expand li a,
 div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand li a,
 div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li a,
 div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li a,
-div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li a,
-div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li a,
-div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li a,
-div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li a,
-div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li a,
-div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li a
+div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand li a 
 	{
 	background-image: none;
 	padding-right: 5px;	/* reset padding */
@@ -2227,11 +2349,7 @@ ul.rMenu li a
 * html ul.rMenu li.sfhover ul ul ul,
 * html ul.rMenu li.sfhover ul ul ul ul,
 * html ul.rMenu li.sfhover ul ul ul ul ul,
-* html ul.rMenu li.sfhover ul ul ul ul ul ul,
-* html ul.rMenu li.sfhover ul ul ul ul ul ul ul,
-* html ul.rMenu li.sfhover ul ul ul ul ul ul ul ul,
-* html ul.rMenu li.sfhover ul ul ul ul ul ul ul ul ul,
-* html ul.rMenu li.sfhover ul ul ul ul ul ul ul ul ul ul
+* html ul.rMenu li.sfhover ul ul ul ul ul ul
 	{ 
 	display: none;		/* IE/Suckerfish alternative for browsers that
 				   don't support :hover state on LI elements */
@@ -2241,12 +2359,7 @@ ul.rMenu li a
 * html ul.rMenu li li.sfhover ul, 
 * html ul.rMenu li li li.sfhover ul,
 * html ul.rMenu li li li li.sfhover ul,
-* html ul.rMenu li li li li li.sfhover ul,
-* html ul.rMenu li li li li li li.sfhover ul,
-* html ul.rMenu li li li li li li li.sfhover ul,
-* html ul.rMenu li li li li li li li li.sfhover ul,
-* html ul.rMenu li li li li li li li li li.sfhover ul,
-* html ul.rMenu li li li li li li li li li li.sfhover ul
+* html ul.rMenu li li li li li.sfhover ul
 	{
 	display: block;		/* ^ ditto ^ */
 	}
@@ -2307,6 +2420,7 @@ ul.rMenu li a
 }
 
 
+
 /* ------------------------------------------------------------------
 ---------- HACKS: Clearfix & others ---------------------------------
 ------------------------------------------------------------------ */
@@ -2345,8 +2459,3 @@ Also, adding height and font-size for IE6 */
 	}
 
 	
-	
-/* ------------------------------------------------------------------
----------- CUSTOM STYLES: -------------------------------------------
------------------------------------------------------------------- */
-

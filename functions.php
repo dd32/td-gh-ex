@@ -54,11 +54,11 @@ function bfa_add_stuff_admin_head() {
 	echo ".bfa-container input, .bfa-container-left textarea, .bfa-container-left select { margin: 7px 0 4px 7px}\n";
 	echo "ul#bfaoptiontabs {text-align: left;list-style-type: none; margin: 10px 0 0 0; padding: 0; -moz-padding-start: 0}\n";
 	echo "ul#bfaoptiontabs li {display: inline; list-style-type: none; padding-top: 5px; }\n";
-	echo "ul#bfaoptiontabs li a:link, ul#bfaoptiontabs li a:visited, ul#bfaoptiontabs li a:active {display: -moz-inline-box; display: inline-block; white-space: nowrap; outline: 0; text-decoration: none; position: relative; z-index: 1; padding: 3px 6px; \n";
-	echo "margin-right: 1px; margin-top: 5px; border: 1px solid #C6D9E9; color: #1e698a; background-color: #E4F2FD; /*line-height: 22px; height: 22px;*/\n";
+	echo "ul#bfaoptiontabs li a:link, ul#bfaoptiontabs li a:visited, ul#bfaoptiontabs li a:active {display: -moz-inline-box; display: inline-block; white-space: nowrap; outline: 0; text-decoration: none; position: relative; z-index: 1; padding: 2px 6px; \n";
+	echo "margin-right: 0px; margin-top: 3px; border: 2px solid #C6D9E9; font-size: 1.1em; color: #2582a9; background-color: #E4F2FD; /*line-height: 22px; height: 22px;*/\n";
 	echo "-moz-border-radius: 3px; -khtml-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px;}\n";
-	echo "ul#bfaoptiontabs li a:hover {background-color: #ffffff; color: #D54E21; }\n";
-	echo "ul#bfaoptiontabs li a.selected {border: 1px solid #883215; background-color: #D54E21; color: #ffffff !important; outline: 0}\n";
+	echo "ul#bfaoptiontabs li a:hover {border: 2px solid #D54E21; background-color: #ffffff; color: #D54E21; }\n";
+	echo "ul#bfaoptiontabs li a.selected {border: 2px solid #883215; background-color: #D54E21; color: #ffffff !important; outline: 0}\n";
 	echo "table.bfa-optiontable-layout {width: 100%; }\n";
 	echo "table.bfa-optiontable {text-align: left; white-space: wrap; background-color: #f1f9fe; border-collapse: collapse; border: solid 1px #c4e2fb }\n";
 	echo "table.bfa-optiontable input {margin: 0 2px 0 2px; padding: 2px; text-align: left }\n";
@@ -72,7 +72,24 @@ function bfa_add_stuff_admin_head() {
 	echo "h4 {font-size: 18px; font-family:\"Courier New\", Courier, monospace; margin-bottom: 5px}\n";
 	echo "code {background: #ffffff; padding-left: 5px; padding-right: 5px;}\n";
 	echo "i {color: red; font-style: normal; font-weight: bold;}\n";
+	echo "input.save-tab { line-height: normal !important; font-size: 5em !important; padding: 5px 20px 10px 75px; border: solid 5px #063; background: #009d4f url('" . get_bloginfo('template_directory') . "/options/images/save.png') no-repeat 5% 50% !important; color: #fff; text-align: center; font-weight: bold;}\n";
+	echo "input.save-tab:hover { border: solid 5px #88d87a; background: #063 url('" . get_bloginfo('template_directory') . "/options/images/save.png') 5% 50% no-repeat !important; color: #fff; }\n";
+	echo "input.reset-tab { line-height: normal !important; font-size: 2em !important; padding: 5px 10px 5px 45px; border: solid 3px #800; background: #c30 url('" . get_bloginfo('template_directory') . "/options/images/reset.png') no-repeat 5% 50% !important; background-image: none; color: #fff; text-align: center; font-weight: bold;}\n";
+	echo "input.reset-tab:hover { border: solid 3px #ff9393; background: #800 url('" . get_bloginfo('template_directory') . "/options/images/reset.png') 5% 50% no-repeat !important; color: #fff; }\n";
+	echo "input.reset-all { line-height: normal !important; font-size: 1.5em !important; padding: 5px 10px 5px 45px; border: solid 3px #555; background: #777 url('" . get_bloginfo('template_directory') . "/options/images/reset-all-gray.png') no-repeat 5% 50% !important; background-image: none; color: #ddd; text-align: center; font-weight: bold;}\n";
+	echo "input.reset-all:hover { border: solid 3px #ff9393; background: #800 url('" . get_bloginfo('template_directory') . "/options/images/reset-all.png') 5% 50% no-repeat !important; color: #fff; }\n";
+	echo "p.submit { text-align: center; }\n";
 	echo "</style>\n";
+	echo "<script LANGUAGE=\"JavaScript\">\n";
+	echo "<!--\n";
+	echo "function confirmSubmit()\n";
+	echo "{\n";
+	echo "var agree=confirm(\"Are you sure? This will reset ALL theme options.\");\n";
+	echo "if (agree) return true ;\n";
+	echo "else return false ;\n";
+	echo "}\n";
+	echo "// -->\n";
+	echo "</script>\n";
 	// add jquery to WP 2.3 and older
 	if ( substr(get_bloginfo('version'), 0, 3) < 2.5 ) {   
 	echo "<script type=\"text/javascript\" src=\"$url_base/js/jquery-1.2.6.min.js\"></script>\n";
@@ -106,14 +123,6 @@ function bfa_escapelt($string) {
 	$string = str_replace('>', '&gt;', $string);
 	return $string;
 }
-function bfa_escape_date_format_slashes($string) {
-	$string = str_replace('\\', 'xxxdateslashxxx', $string);
-	return $string;
-}
-function bfa_unescape_date_format_slashes($string) {
-	$string = str_replace('xxxdateslashxxx', '\\', $string);
-	return $string;
-}
 ?>
 <?php
 // get the theme options
@@ -129,8 +138,6 @@ function mytheme_add_admin() {
 				if ( $value['category'] == $_REQUEST['category'] ) {
 					if ( $value['escape'] == "yes" ) {  
 						update_option( $value['id'], stripslashes(bfa_escape($_REQUEST[ $value['id'] ] )));  
-					} elseif ( $value['type'] == "postinfos" ) {   
-						update_option( $value['id'], bfa_escape_date_format_slashes($_REQUEST[ $value['id'] ] )); 
 					} elseif ( $value['stripslashes'] == "no" ) {   
 						update_option( $value['id'], $_REQUEST[ $value['id'] ] ); 
 					} else {
@@ -144,12 +151,6 @@ function mytheme_add_admin() {
 					if ( $value['escape'] == "yes" ) {
 						if( isset( $_REQUEST[ $value['id'] ] ) ) { 
 							update_option( $value['id'], stripslashes(bfa_escape($_REQUEST[ $value['id'] ]  ))); 
-						} else { 
-							delete_option( $value['id'] ); 
-						} 
-					} elseif ($value['type'] == "postinfos") { 
-						if( isset( $_REQUEST[ $value['id'] ] ) ) { 
-							update_option( $value['id'], bfa_escape_date_format_slashes($_REQUEST[ $value['id'] ]  )); 
 						} else { 
 							delete_option( $value['id'] ); 
 						} 
@@ -193,7 +194,7 @@ function mytheme_admin() {
 <?php 
 #
 $theme_name = "Atahualpa";
-$theme_version = "3.1.3";
+$theme_version = "3.1.8";
 #
 $border_styles = array("solid", "dotted", "dashed", "double", "groove", "ridge", "inset", "outset");
 $background_repeat = array("vertic. and horiz.", "vertically", "horizontally", "don't repeat");
@@ -298,7 +299,7 @@ Examples for <strong>Post Bylines</strong>:
 <ul>
 	<li><code>By %author%, on %date('<i>F jS, Y</i>')%</code></li>
 	<li><code>&lt;strong&gt;%author-linked%&lt;/strong&gt; posted this in &lt;strong&gt;%categories-linked('<i>, </i>')%&lt;/strong&gt; on &lt;em&gt;%date('<i>F jS, Y</i>')%&lt;/em&gt;</code></li>
-	<li><code>&lt;image(user.gif)&gt; %author-linked% &lt;image(date.gif)&gt; %date('<i>l, jS \of F Y \a\t h:i:s A</i>')%</code></li>
+	<li><code>&lt;image(user.gif)&gt; %author-linked% &lt;image(date.gif)&gt; %date('<i>l, jS #of F Y #a#t h:i:s A</i>')%</code></li>
 	</ul>
 Examples for <strong>Post Footers</strong>:
 	<ul>
@@ -315,20 +316,21 @@ Prints the name of the author of the post, and links it to a page listing all po
 <br /><h4>%date('F jS, Y')%</h4>
 Prints the date and/or time the post was published at. Many configuration options at <a href='http://www.php.net/date'>PHP Date</a>. 
 Because most letters of the alphabet represent a certain date/time output function, you will have to <strong>escape</strong> each letter that you want to display LITERALLY, for instance, to 
-include words like <strong>at</strong>, <strong>on</strong>, or <strong>the</strong> somewhere <strong>inside</strong> the date output. <strong>Escaping</strong> a letter means to put a backslash <strong>\</strong> right before that letter. 
-That will tell PHP that you mean the actual letter and not the corresponding date function.<br /><br />
+include words like <strong>at</strong>, <strong>on</strong>, or <strong>the</strong> somewhere <strong>inside</strong> the date output. To <strong>escape</strong> a letter put a hash sign 
+<strong>#</strong> right before that letter. (Please note that this is different from the original "PHP way" of escaping with backslashes <code>\</code>. The theme needs the hash sign <code>#</code>).
+That will tell the theme that you mean the actual letter and not the corresponding PHP date function.<br /><br />
 <strong>How to escape literal strings</strong>
-<ul><li>on -> <code>&#092;o&#092;n</code></li>
-<li>of -> <code>&#092;of</code> &nbsp;&nbsp;<em>(Note how the the lowercase <strong>f</strong> didn't get a backslash. That's because <strong>f</strong> is one of the letters of the alphabet that does not represent a PHP date function)</em></li>
-<li>at -> <code>&#092;a&#092;t</code></li>
-<li>the -> <code>&#092;t&#092;h&#092;e</code></li>
+<ul><li>on -> <code>#o#n</code></li>
+<li>of -> <code>#of</code> &nbsp;&nbsp;(Note how the the lowercase <strong>f</strong> didn't get a <code>#</code>. That's because <strong>f</strong> is one of the letters of the alphabet that does not represent a PHP date function)</li>
+<li>at -> <code>#a#t</code></li>
+<li>the -> <code>#t#h#e</code></li>
 <li>The arrows just illustrate how to change a word to display it literally inside a date function, don't use them</li>
 </ul>
 <strong>Examples:</strong>
 	<ul>
-	<li><code>%date('<i>F j, Y, &#092;a&#092;t g:i a</i>')%</code> displays: December 10, 2008, at 5:16 pm <br />
-	<em>Note how the letters <strong>a</strong> and <strong>t</strong> of the word <strong>at</strong> are <strong>escaped</strong> with backslashes 
-	to display them literally instead of being interpreted as a PHP date function.</em>
+	<li><code>%date('<i>F j, Y, #a#t g:i a</i>')%</code> displays: December 10, 2008, at 5:16 pm <br />
+	Note how the letters <strong>a</strong> and <strong>t</strong> of the word <strong>at</strong> are <strong>escaped</strong> with <code>#</code> 
+	to display them literally instead of interpreting them as PHP date functions.
 	</li>
 	<li><code>%date('<i>F j, Y, g:i a</i>')%</code> displays: December 10, 2008, 5:16 pm
 	</li>
@@ -399,18 +401,16 @@ href="options-general.php?page=wp-postviews/postviews-options.php">WP-PostViews 
 <li>Make other changes as you see fit</li>
 <li>Click "Save Changes"</li></ul>' : 
 'To use this item, you must first install (= upload) and activate the plugin "<a href="http://wordpress.org/extend/plugins/wp-postviews/">WP-PostViews</a>"' ); ?>
-<!-- used to work but currently messes up style.css.php
 <br /><h4>%wp-postratings%</h4>
 Prints stars or other graphics showing the vote/rating of a post, and lets visitors rate the post.<br />
 <?php echo ( function_exists('the_ratings') ? 
 'Customize the output at the <a title="If this link doesn\'t work, click on \'Ratings\' at the top of the current page" 
-href="admin.php?page=wp-postratings/postratings-manager.php">WP-PostRatings Options Page</a>.<br />
+href="admin.php?page=wp-postratings/postratings-templates.php">WP-PostRatings Options Page</a>.<br />
 <strong>Settings:</strong> <ul><li>Delete <code>%RATINGS_TEXT%</code> from the bottom of the textarea named "Ratings Vote Text:"</li>
 <li>Delete <code>%RATINGS_TEXT%</code> from the bottom of the textarea named "Ratings None:"</li>
 <li>Make other changes as you see fit</li>
 <li>Click "Save Changes"</li></ul>' : 
 'To use this item, you must first install (= upload) and activate the plugin "<a href="http://wordpress.org/extend/plugins/wp-postratings/">WP-PostRatings</a>"' ); ?>
--->
 <br /><h4>%sociable%</h4>
 Prints little icons, linking the post to social bookmark sites.<br />
 <?php echo ( function_exists('sociable_html') ? 
@@ -570,8 +570,8 @@ elseif ($value['type'] == "postinfos") { ?>
 <div class="bfa-container">
     <div class="bfa-container-full"><label for="<?php echo $value['name']; ?>"><?php echo $value['name']; ?></label><br />
 	    <?php echo $value['info']; ?><br />
-        <textarea name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" cols="110" rows="3"><?php if ( get_option( $value['id'] ) !== FALSE) { echo bfa_unescape_date_format_slashes(format_to_edit(get_option( $value['id'] ))); } else { echo bfa_unescape_date_format_slashes(format_to_edit($value['std'])); } ?></textarea>
-        <br />Default: <strong><?php if ($value['std'] == "") { echo "blank"; } else { echo bfa_unescape_date_format_slashes(format_to_edit($value['std'])); } ?></strong>
+        <textarea name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" cols="110" rows="3"><?php if ( get_option( $value['id'] ) !== FALSE) { echo format_to_edit(get_option( $value['id'] )); } else { echo format_to_edit($value['std']); } ?></textarea>
+        <br />Default: <strong><?php if ($value['std'] == "") { echo "blank"; } else { echo format_to_edit($value['std']); } ?></strong>
     </div>
 </div>
 <?php } 
@@ -610,16 +610,18 @@ elseif ($value['type'] == "select") { ?>
 	if ( $value['category'] != "start-here" AND $value['lastoption'] == "yes" ) {   ?>
 		<div class="bfa-container">	
 		<p class="submit">
-		<input name="save" type="submit" value="Save changes" />    
+		<input class="save-tab" name="save" type="submit" value="Save changes" />    
 		<input type="hidden" name="action" value="save" />
 		<input type="hidden" name="category" value="<?php echo $value['category']; ?>" />
-		</p>
+		<br /><strong>Save settings of current page</strong>
+		</p><br />
 		</form>
 		<form method="post">
 		<p class="submit">
-		<input name="reset" type="submit" value="Reset" />
+		<input class="reset-tab" name="reset" type="submit" value="Reset settings" />
 		<input type="hidden" name="action" value="reset" />
 		<input type="hidden" name="category" value="<?php echo $value['category']; ?>" />
+		<br /><strong>Reset settings of current page</strong>
 		</p>
 		</form>
 		</div>
@@ -635,12 +637,16 @@ myflowers.setselectedClassTarget("link") //"link" or "linkparent"
 myflowers.init()
 </script>
 <!-- "reset all" button -->
+<br /><br />
 			<form method="post">
 			<p class="submit">
-			<input name="reset" type="submit" value="RESET EVERYTHING" />
+			<input class="reset-all" name="reset" type="submit" value="Reset ALL theme options" onClick="return confirmSubmit()"/>
 			<input type="hidden" name="action" value="reset" />
-			<input type="hidden" name="category" value="reset-all" />
-			WARNING - this will reset ALL 200+ theme options!
+			<input type="hidden" name="category" value="reset-all" /><br />
+			<span style="color: #c00;"><strong>WARNING</strong> - this will reset ALL 200+ theme options!</span><br />Clicking this button will...<br />
+			(1) remove all Atahualpa options from the WordPress options table<br />
+			(2) reset all Atahualpa options to the default values<br />
+			
 			</p>
 
 			</form>
@@ -651,7 +657,7 @@ add_action('admin_menu', 'mytheme_add_admin');
 ?>
 <?php
 function footer_output($footer_content) {
-$footer_content .= sprintf(__('<br />Powered by %1$sWordPress</a> &middot; %2$sWordPress Themes</a> by BFA','atahualpa'), '<a href="http://www.wordpress.org/">', '<a href="http://wordpress.bytesforall.com/">');
+$footer_content .= '<br />Powered by <a href="http://www.wordpress.org/">WordPress</a> &middot; <a href="http://wordpress.bytesforall.com/">Atahualpa Theme</a> by <a href="http://www.bytesforall.com/">BytesForAll</a>';
 return $footer_content;
 }
 ?>

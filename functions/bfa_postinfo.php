@@ -5,8 +5,10 @@ return '<img src="' . get_bloginfo('template_directory') . '/images/icons/' . $m
 
 function postinfo($postinfo_string) {
 
-# put date format escape backslashes back in
-$postinfo_string = bfa_unescape_date_format_slashes($postinfo_string);
+// replace put date format escape character (#) with backslashes
+// This is needed because we remove all backslashes to avoid issues with hosts that have magic_quotes_gpc ON 
+// but we want to keep (only) the backslashes inside date items that used to escape literal strings inside dates
+$postinfo_string = str_replace("#", "\\", $postinfo_string);
 
 # get all the data for the current post
 //$post_id = $wp_query->get_queried_object_id();
@@ -147,6 +149,11 @@ if (strpos($postinfo_string,'%wp-postviews')!==false) {
 $wp_postviews = ( function_exists('the_views') ? the_views($display = false) : "" );
 }
 
+if (strpos($postinfo_string,'%wp-postratings')!==false) {
+######## WP-POSTRATINGS ########
+$wp_postratings = ( function_exists('the_ratings') ? the_ratings($start_tag = 'span', $custom_id = 0, $display = false) : "" );
+}
+
 if (strpos($postinfo_string,'%sociable')!==false) {
 ######## SOCIABLE ########
 $sociable = ( (function_exists('sociable_html2') AND function_exists('sociable_html'))? $sociable = sociable_html2() : "" );
@@ -174,6 +181,7 @@ $postinfo = preg_replace("/(.*)%print\((.*?)\)%(.*)/i", "\${1}" .$print_link. "\
 $postinfo = str_replace("%wp-print%", $wp_print, $postinfo);
 $postinfo = str_replace("%wp-email%", $wp_email, $postinfo);
 $postinfo = str_replace("%wp-postviews%", $wp_postviews, $postinfo);
+$postinfo = str_replace("%wp-postratings%", $wp_postratings, $postinfo);
 $postinfo = str_replace("%sociable%", $sociable, $postinfo);
 
 if (strpos($postinfo_string,'<image(')!==false) {

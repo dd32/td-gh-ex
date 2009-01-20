@@ -1,12 +1,15 @@
+# This file is distributed under the same license as the Atahualpa package.
+#
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Atahualpa 3.1.2\n"
-"Report-Msgid-Bugs-To: forum.bytesforall.com\n"
-"POT-Creation-Date: 2008-12-23 20:07+0100\n"
+"Project-Id-Version: Atahualpa 3\n"
+"Report-Msgid-Bugs-To: lmmmuc@gmail.com\n"
+"POT-Creation-Date: 2008-12-27 11:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n""
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: comments-paged.php:3
@@ -42,7 +45,7 @@ msgstr ""
 
 #: comments-paged.php:35
 #: comments-paged.php:141
-#: index.php:153
+#: index.php:150
 msgid "Pages:"
 msgstr ""
 
@@ -82,118 +85,118 @@ msgid "Edit"
 msgstr ""
 
 #: comments-paged.php:162
-#: comments.php:173
+#: comments.php:169
 #: legacy.comments.php:164
 msgid "Comments are closed."
 msgstr ""
 
 #: comments-paged.php:173
-#: comments.php:195
+#: comments.php:191
 #: legacy.comments.php:175
 msgid "Leave a Reply"
 msgstr ""
 
 #: comments-paged.php:177
-#: comments.php:187
+#: comments.php:183
 #: legacy.comments.php:179
 #, php-format
 msgid "You must be %slogged in</a> to post a comment."
 msgstr ""
 
 #: comments-paged.php:188
-#: comments.php:206
+#: comments.php:202
 #: legacy.comments.php:190
 #, php-format
 msgid "Logged in as %s."
 msgstr ""
 
 #: comments-paged.php:189
-#: comments.php:207
+#: comments.php:203
 #: legacy.comments.php:191
 msgid "Log out of this account"
 msgstr ""
 
 #: comments-paged.php:189
-#: comments.php:207
+#: comments.php:203
 #: legacy.comments.php:191
 msgid "Logout &raquo;"
 msgstr ""
 
 #: comments-paged.php:196
-#: comments.php:214
+#: comments.php:210
 #: legacy.comments.php:198
 msgid "author"
 msgstr ""
 
 #: comments-paged.php:196
-#: comments.php:214
+#: comments.php:210
 #: legacy.comments.php:198
 msgid "Name "
 msgstr ""
 
 #: comments-paged.php:196
 #: comments-paged.php:200
+#: comments.php:210
 #: comments.php:214
-#: comments.php:218
 #: legacy.comments.php:198
 #: legacy.comments.php:202
 msgid "(required)"
 msgstr ""
 
 #: comments-paged.php:200
-#: comments.php:218
+#: comments.php:214
 #: legacy.comments.php:202
 msgid "email"
 msgstr ""
 
 #: comments-paged.php:200
-#: comments.php:218
+#: comments.php:214
 #: legacy.comments.php:202
 msgid "Mail (will not be published) "
 msgstr ""
 
 #: comments-paged.php:204
-#: comments.php:222
+#: comments.php:218
 #: legacy.comments.php:206
 msgid "url"
 msgstr ""
 
 #: comments-paged.php:204
-#: comments.php:222
+#: comments.php:218
 #: legacy.comments.php:206
 msgid "Website"
 msgstr ""
 
 #: comments-paged.php:211
-#: comments.php:229
+#: comments.php:225
 #: legacy.comments.php:213
 msgid "<strong>XHTML:</strong> You can use these tags:"
 msgstr ""
 
 #: comments-paged.php:220
-#: comments.php:238
+#: comments.php:234
 #: legacy.comments.php:222
 msgid "Submit Comment"
 msgstr ""
 
-#: comments.php:71
-#: comments.php:86
-#: comments.php:102
+#: comments.php:69
+#: comments.php:84
+#: comments.php:100
 msgid " &middot; Reply"
 msgstr ""
 
-#: comments.php:72
-#: comments.php:87
-#: comments.php:103
+#: comments.php:70
+#: comments.php:85
+#: comments.php:101
 msgid "Log in to Reply"
 msgstr ""
 
-#: comments.php:195
+#: comments.php:191
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr ""
 
-#: comments.php:198
+#: comments.php:194
 msgid "Cancel"
 msgstr ""
 
@@ -207,16 +210,20 @@ msgstr ""
 msgid " seconds."
 msgstr ""
 
-#: functions.php:654
+#: functions.php:637
 #, php-format
 msgid "<br />Powered by %1$sWordPress</a> &middot; %2$sWordPress Themes</a> by BFA"
 msgstr ""
 
-#: index.php:285
+#: functions.php:638
+msgid "Webdesign"
+msgstr ""
+
+#: index.php:282
 msgid "Not Found"
 msgstr ""
 
-#: index.php:286
+#: index.php:283
 msgid "Sorry, but you are looking for something that isn't here."
 msgstr ""
 
@@ -238,31 +245,31 @@ msgstr ""
 msgid " &middot; Edit"
 msgstr ""
 
-#: functions/bfa_footer.php:15
+#: functions/bfa_footer.php:14
 msgid "Login"
 msgstr ""
 
-#: functions/bfa_footer.php:17
+#: functions/bfa_footer.php:16
 msgid "Logout"
 msgstr ""
 
-#: functions/bfa_footer.php:26
+#: functions/bfa_footer.php:25
 msgid "Register"
 msgstr ""
 
-#: functions/bfa_footer.php:36
+#: functions/bfa_footer.php:35
 msgid "Site Admin"
 msgstr ""
 
-#: functions/bfa_meta_tags.php:38
+#: functions/bfa_meta_tags.php:37
 msgid "l, F jS, Y"
 msgstr ""
 
-#: functions/bfa_meta_tags.php:40
+#: functions/bfa_meta_tags.php:39
 msgid "F Y"
 msgstr ""
 
-#: functions/bfa_meta_tags.php:46
+#: functions/bfa_meta_tags.php:45
 msgid "404 - Page not found"
 msgstr ""
 

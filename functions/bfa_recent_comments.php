@@ -129,9 +129,9 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 	      elseif ($limit_by == "words") {
 	      if ( $bfa_rc_src_length <= count(explode(" ", strip_tags($comment->comment_content))) ) {$dots = "...";}
 	      }
-
-
-	      $comment_link = get_permalink($comment->ID) . "#comment-" . $comment->comment_ID;
+		// different comment link for WP 2.7 and newer / WP 2.6 and older
+		 if (function_exists('wp_list_comments')) { $comment_link = get_comment_link($comment->comment_ID); } else {
+	      $comment_link = get_permalink($comment->ID) . "#comment-" . $comment->comment_ID; }
 	      $post_link = get_permalink($comment->ID);
 	      $author_link = $comment->comment_author_url;
 	      if ($author_nofollow == "on") {$author_link = $author_link . '" rel="nofollow'; }

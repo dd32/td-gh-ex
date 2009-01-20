@@ -172,7 +172,7 @@ endif;
 <?php // If comments are open
 if ('open' == $post->comment_status) : ?>
 
-	<h3><?php _e('Leave a Reply','atahualpa'); ?></h3>
+	<h3 class="reply"><?php _e('Leave a Reply','atahualpa'); ?></h3>
 		
 	<?php // If Login is required and User is not logged in 
 	if ( get_option('comment_registration') && !$user_ID ) : ?>
@@ -209,22 +209,28 @@ if ('open' == $post->comment_status) : ?>
 	
 		<!-- Display Quicktags or allowed XHTML Tags -->
 		<?php if (function_exists('lmbbox_comment_quicktags_display')) { echo "<p>"; lmbbox_comment_quicktags_display(); echo "</p>"; } 
-		else { ?>
-		<p><?php _e('<strong>XHTML:</strong> You can use these tags:','atahualpa'); ?></p>
-		<p><code><?php echo allowed_tags(); ?></code></p>
-		<?php } ?>
+		else { 
+			if ($bfa_ata_show_xhtml_tags == "Yes") {
+		?>
+		<p class="thesetags clearfix"><?php printf(__('You can use %1$sthese HTML tags</a>','atahualpa'), '<a class="xhtmltags" href="#" onclick="return false;">'); ?></p>
+		<div class="xhtml-tags"><p><code><?php echo allowed_tags(); ?></code></p></div>
+		<?php 
+			}
+		} ?>
 	
 		<!-- Comment Textarea -->
 		<p><textarea name="comment" id="comment" rows="10" cols="10" tabindex="4"></textarea></p>
 
+		<?php do_action('comment_form', $post->ID); ?>
+		
 		<!-- Submit -->
 		<p>
 		<input name="submit" type="submit" class="button" id="submit" tabindex="5" value="<?php _e('Submit Comment','atahualpa'); ?>" />
 		<input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
 		</p>
-	
-		<?php do_action('comment_form', $post->ID); ?>
+		
 		</form>
+		</div><!-- / respond -->
 		<!-- / Comment Form -->
 
 	<?php endif; ?>
