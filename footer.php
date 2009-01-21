@@ -5,7 +5,7 @@
 	<p>Powered by <a href="http://wordpress.org/">WordPress</a> | 
     <a href="<?php bloginfo('rss2_url'); ?>">Entries (RSS)</a> | 
     <a href="<?php bloginfo('comments_rss2_url'); ?>">Comments (RSS)</a> |
-    <a href="http://www.mbwebdesign.co.uk/templates/wordpress">Template</a> by <a href="http://www.mbwebdesign.co.uk">MB Web Design</a>
+    Template by <a href="http://www.mbwebdesign.co.uk">MB Web Design</a>
 		<!-- <?php echo get_num_queries(); ?> queries. <?php timer_stop(1); ?> seconds. -->
 	</p>
 </div>
