@@ -1600,7 +1600,7 @@ $options3 = array(
     array(    "name" => "POST Container: STICKY",
     	    "category" => "posts",
             "id" => $shortname."_post_container_sticky_style",
-            "std" => "",
+            "std" => "background: #eee url(" . $stylesheet_directory . "/images/sticky.gif) 99% 5% no-repeat;\nborder: dashed 1px #ccc;\padding: 10px",
             "type" => "textarea",
             "info" => "<img src=\"" . $stylesheet_directory . "/options/images/post-container.gif\" 
 			style=\"float: right; margin: 0 0 10px 10px;\">" . "Additional styles for <strong>the container
