@@ -26,7 +26,7 @@
 	<input type="text" name="s" id="s" size="15" style="padding-left:0px; margin-left: 0px;" /> <input style="cursor: pointer; padding: 0px; margin: 0px;" type="submit" value="<?php _e('Go &raquo;'); ?>" />
 	</div>
 	</form>
-	</li><li style="margin-top: 5px; font-size: 0.8em;"><a href="<?php bloginfo('home'); ?>/advanced-search/">Advanced Search &raquo;</a></li>
+	</li>
 	</ul>
 </li><li class="dotted_line">&nbsp;</li>
 
