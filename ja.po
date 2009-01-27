@@ -1,0 +1,286 @@
+# WordPress Auroral Theme用日本語リソース (UTF-8) 
+# Japanese (UTF-8) translation for WordPress
+#
+# Copyright (c) 2009 Prime Strategy Co.,Ltd.
+#msgid ""
+msgid ""
+msgstr ""
+"Project-Id-Version: Auroral\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-01-23 22:32+0900\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Yuji <yuji@prime-strategy.co.jp>\n"
+"Language-Team: Prime Strategy\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __\n"
+
+#: header.php:10
+#, php-format
+msgid "%s RSS Feed"
+msgstr "%s RSSフィード"
+
+#: header.php:11
+#, php-format
+msgid "%s Atom Feed"
+msgstr "%s Atomフィード"
+
+#: single.php:8
+#: index.php:31
+#: archive.php:33
+#: page.php:8
+#: search.php:14
+#, php-format
+msgid "Permanent Link to %s"
+msgstr "%sのパーマリンク"
+
+#: single.php:11
+#: index.php:34
+#: archive.php:36
+msgid "M"
+msgstr "n"
+
+#: single.php:12
+#: index.php:35
+#: archive.php:37
+msgid "d"
+msgstr "d"
+
+#: single.php:13
+#: index.php:18
+#: index.php:36
+#: archive.php:19
+#: archive.php:38
+msgid "Y"
+msgstr "Y"
+
+#: single.php:18
+#: index.php:41
+#: archive.php:43
+#: page.php:11
+msgid "Read the rest of this entry &raquo;"
+msgstr "この投稿の続きを読む &raquo;"
+
+#: single.php:19
+#: index.php:42
+#: archive.php:45
+#: page.php:14
+#: search.php:20
+msgid "Tags:"
+msgstr "タグ:"
+
+#: single.php:22
+msgid "Comments Off"
+msgstr "コメントOFF"
+
+#: single.php:32
+#: page.php:16
+msgid "Edit this entry"
+msgstr "このエントリーを編集する"
+
+#: index.php:10
+#: archive.php:11
+#, php-format
+msgid "Archive for the &#8216;%s&#8217; Category"
+msgstr "&#8216;%s&#8217; カテゴリーのアーカイブ"
+
+#: index.php:12
+#: archive.php:13
+#, php-format
+msgid "Posts Tagged &#8216;%s&#8217;"
+msgstr "&#8216;%s&#8217; タグのついている投稿"
+
+#: index.php:14
+#: archive.php:15
+msgid "F jS, Y"
+msgstr "Y年n月j日"
+
+#: index.php:16
+#: sidebar.php:35
+#: archive.php:17
+msgid "F, Y"
+msgstr "Y年n月"
+
+#: index.php:43
+#: archive.php:46
+#: search.php:21
+msgid "Edit"
+msgstr "編集"
+
+#: index.php:43
+#: archive.php:46
+#: search.php:21
+msgid "No Comments &#187;"
+msgstr "コメントはまだありません &#187;"
+
+#: index.php:43
+#: archive.php:46
+#: search.php:21
+msgid "1 Comment &#187;"
+msgstr "1 件のコメント &#187;"
+
+#: index.php:43
+#: archive.php:46
+#: search.php:21
+msgid "% Comments &#187;"
+msgstr "% 件のコメント &#187;"
+
+#: index.php:43
+#: archive.php:46
+#: search.php:21
+msgid "Comments Closed"
+msgstr "コメントは受け付けていません。"
+
+#: comments.php:16
+msgid "No Responses"
+msgstr "（0件）"
+
+#: comments.php:16
+msgid "One Response"
+msgstr "（1件）"
+
+#: comments.php:16
+msgid "% Responses"
+msgstr "（%件）"
+
+#: comments.php:53
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "コメントを投稿するには<a href=\"%s\">ログイン</a>してください。"
+
+#: comments.php:60
+#, php-format
+msgid "Logged in as <a href=\"%1$s\">%2$s</a>."
+msgstr "<a href=\"%1$s\">%2$s</a> としてログイン中。"
+
+#: comments.php:75
+#, php-format
+msgid "<strong>XHTML:</strong> You can use these tags: <code>%s</code>"
+msgstr "<strong>XHTML:</strong> 次のタグを使用できます: <code>%s</code>"
+
+#: sidebar.php:29
+#, php-format
+msgid "You are currently browsing the archives for the %s category."
+msgstr "%s カテゴリーのアーカイブを表示しています。"
+
+#: sidebar.php:32
+#, php-format
+msgid "You are currently browsing the <a href=\"%1$s/\">%2$s</a> blog archives for the day %3$s."
+msgstr "<a href=\"%1$s\">%2$s</a> ブログの %3$s のアーカイブを表示しています。"
+
+#: sidebar.php:32
+msgid "l, F jS, Y"
+msgstr "Y年n月j日l"
+
+#: sidebar.php:35
+#, php-format
+msgid "You are currently browsing the <a href=\"%1$s/\">%2$s</a> blog archives for %3$s."
+msgstr "<a href=\"%1$s/\">%2$s</a> の %3$s のアーカイブを閲覧中です。"
+
+#: sidebar.php:38
+#, php-format
+msgid "You are currently browsing the <a href=\"%1$s/\">%2$s</a> blog archives for the year %3$s."
+msgstr "<a href=\"%1$s\">%2$s</a> ブログの %3$s 年のアーカイブを表示しています。"
+
+#: sidebar.php:41
+#, php-format
+msgid "You have searched the <a href=\"%1$s/\">%2$s</a> blog archives for <strong>&#8216;%3$s&#8217;</strong>. If you are unable to find anything in these search results, you can try one of these links."
+msgstr "<a href=\"%1$s/\">%2$s</a> のアーカイブ内で<strong>&#8216;%3$s&#8217;</strong>を探しました。お探しのものが見つからない場合は他のリンクを試してみてください。"
+
+#: sidebar.php:44
+#, php-format
+msgid "You are currently browsing the <a href=\"%1$s/\">%2$s</a> blog archives."
+msgstr "<a href=\"%1$s/\">%2$s</a> ブログのアーカイブを閲覧中です。"
+
+#: sidebar.php:50
+msgid "Pages"
+msgstr "ページ"
+
+#: sidebar.php:58
+msgid "Categories"
+msgstr "カテゴリー"
+
+#: archive.php:55
+msgid "Older Entries</li>"
+msgstr "以前の投稿</li>"
+
+#: archive.php:56
+msgid "Newer Entries</li>"
+msgstr "新しい投稿</li>"
+
+#: archive.php:64
+#, php-format
+msgid "Sorry, but there aren't any posts in the %s category yet."
+msgstr "まだ%s カテゴリーには投稿がありません。"
+
+#: archive.php:66
+msgid "Sorry, but there aren't any posts with this date."
+msgstr "この日付に投稿はありません。"
+
+#: archive.php:69
+#, php-format
+msgid "Sorry, but there aren't any posts by %s yet."
+msgstr "%s からの投稿はまだありません。"
+
+#: archive.php:71
+msgid "No posts found."
+msgstr "投稿は見つかりませんでした。"
+
+#: page.php:13
+msgid "Pages:"
+msgstr "ページ:"
+
+#: comments-popup.php:6
+#, php-format
+msgid "%1$s - Comments on %2$s"
+msgstr "%1$s - %2$s へのコメント"
+
+#: comments-popup.php:31
+#, php-format
+msgid "The <abbr title=\"Universal Resource Locator\">URL</abbr> to TrackBack this entry is: <em>%s</em>"
+msgstr "この投稿へのトラックバック <acronym title=\"Universal Resource Locator\">URL</acronym>: <em>%s</em>"
+
+#: comments-popup.php:49
+msgid "Comment"
+msgstr "コメント"
+
+#: comments-popup.php:49
+msgid "Trackback"
+msgstr "トラックバック"
+
+#: comments-popup.php:49
+msgid "Pingback"
+msgstr "ピンバック"
+
+#: comments-popup.php:49
+#, php-format
+msgid "by %1$s &#8212; %2$s @ <a href=\"#comment-%3$s\">%4$s</a>"
+msgstr "&#8212; %2$s @ <a href=\"#comment-%3$s\">%4$s</a>: %1$s より"
+
+#: comments-popup.php:60
+#, php-format
+msgid "Line and paragraph breaks automatic, e-mail address never displayed, <acronym title=\"Hypertext Markup Language\">HTML</acronym> allowed: <code>%s</code>"
+msgstr "改行と段落タグは自動で挿入されます。メールアドレスは表示されません。利用可能な <acronym title=\"Hypertext Markup Language\">HTML</acronym> タグ: <code>%s</code>"
+
+#: comments-popup.php:64
+#, php-format
+msgid "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of this account\">Log out &raquo;</a>"
+msgstr "<a href=\"%1$s\">%2$s</a> としてログイン中。<a href=\"%3$s\" title=\"このアカウントからログアウトする\">ログアウト &raquo;</a>"
+
+#: comments-popup.php:111
+#, php-format
+msgid "Powered by <a href=\"%s\" title=\"Powered by WordPress, state-of-the-art semantic personal publishing platform\"><strong>WordPress</strong></a>"
+msgstr "Powered by <a href=\"%s\" title=\"Powered by WordPress, state-of-the-art semantic personal publishing platform\"><strong>WordPress</strong></a>"
+
+#: search.php:27
+msgid "&laquo; Older Entries"
+msgstr "&laquo; 以前の投稿"
+
+#: search.php:28
+msgid "Newer Entries &raquo;"
+msgstr "新しい投稿 &raquo;"
+

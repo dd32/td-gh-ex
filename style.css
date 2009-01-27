@@ -1,0 +1,964 @@
+@charset "utf-8";
+
+/*
+Theme Name: Auroral Theme
+Theme URI: http://www.web-strategy.jp/wp_theme/auroral_theme/
+Description: A high quality theme inspired from northern sky. 2 columns, widget available.W3C XHTML valid. Tested in Firefox, Opera, Safari, IE6 and IE7. 
+Version: 1.01
+Author: Prime Strategy Co.,Ltd.
+Author URI: http://www.web-strategy.jp/
+Tags: black, blue, two-columns, fixed-width, right-sidebar
+
+*/
+
+
+/* Colors and General settings */
+* {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Courier', Verdana, Arial, Sans-Serif;
+	background: #555555;
+	color: #333333;
+ }
+a {
+	color: #0136A3;
+	text-decoration: none;
+}
+a:hover {
+	color: #0136A3;
+	text-decoration: underline;
+}
+a:visited {
+	color: #5170B0;
+	text-decoration: none;
+}
+
+#outside {
+	background: #555555 url(images/bg_outside.jpg) repeat-x;
+	margin: 0px;
+	padding: 0px;
+
+ }
+
+#header {
+	font-family: "Times New Roman", Times, serif;
+ }
+#header, #header a {
+	color: #FFFFFF;
+}
+
+
+#footer {
+	font-family: "Times New Roman", Times, serif;
+ }
+
+
+.commentlist li, #commentform input, #commentform textarea {
+	font: 0.9em 'Lucida Grande', Verdana, Arial, Sans-Serif;
+ }
+.commentlist li ul li {
+	font-size: 1em;
+}
+
+.commentlist li {
+}
+
+.commentlist li .avatar {
+	float: left;
+	border: 1px solid #eee;
+	padding: 2px;
+	background: #fff;
+	margin-right: 10px;
+	margin-bottom: 5px;
+ }
+
+.commentlist cite, .commentlist cite a {
+	font-weight: bold;
+	font-style: normal;
+	font-size: 1.1em;
+ }
+
+.commentlist p {
+	font-weight: normal;
+	line-height: 1.5em;
+	text-transform: none;
+ }
+
+#commentform p {
+	font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif;
+ }
+
+.commentmetadata {
+	font-weight: normal;
+ }
+
+
+code {
+	font: 1.1em 'Courier New', Courier, Fixed;
+ }
+
+pre {
+	font: 1.1em 'Courier New', Courier, Fixed;
+ }
+
+acronym, abbr, span.caps
+{
+ }
+
+
+/* Details */
+
+
+#header {
+	background: url(images/header_img.jpg) no-repeat;
+	display: block;
+	height: 241px;
+	width: 1020px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: 25px;
+	padding-left: 25px;
+ }
+#header  #header_inside {
+	padding-top: 67px;
+	padding-left: 70px;
+	display: block;
+	height: 47px;
+}
+#header_inside #site_title, #header_inside #site_title a {
+	font-size: 24px;
+	font-weight: normal;
+	text-decoration: none;
+}
+#header_inside .description {
+	display: inline;
+	border-top: 1px solid #FFFFFF;
+	font-size: 0.8em;
+}
+#header #page_list {
+	display: block;
+	height: 37px;
+	margin-top: 51px;
+	font-size: 0.8em;
+}
+#header #page_list ul {
+	list-style: none;
+	margin-right: 63px;
+	margin-left: 63px;
+}
+#header #page_list li {
+	line-height: 37px;
+	display: inline;
+	height: 37px;
+	padding-right: 20px;
+	padding-left: 20px;
+	background: url(images/pagelist_divide.gif) no-repeat left center;
+}
+#header #page_list .page-item-1 {
+	background: url(none);
+}
+#page_list li a {
+	color: #8292A0;
+}
+#page_list .current_page_item a {
+	color: #FFFFFF;
+}
+#wrapper-main {
+	background: url(images/content_bg_repeat.gif) repeat-y 70px 0px;
+	display: block;
+	width: 928px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: 70px;
+	padding-left: 70px;
+}
+#content {
+	float: left;
+	width: 640px;
+	background: url(images/content_bg.gif) no-repeat;
+	min-height: 860px;
+}
+
+
+.post {
+	margin-left: 35px;
+	margin-top: 25px;
+	line-height: 1.5em;
+	color: #333333;
+	width: 598px;
+	font-size: 0.8em;
+}
+
+#footer {
+	background: url(images/footer.gif) center bottom;
+	display: block;
+	clear: both;
+	width: 928px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 30px;
+	padding-bottom: 28px;
+	color: #FFFFFF;
+	font-size: 0.8em;
+	padding-right: 70px;
+	padding-left: 70px;
+ }
+#fotter-inside {
+	background: #324A61;
+	width: 897px;
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+	min-height: 40px;
+}
+#fotter-inside div {
+	padding: 20px 10px 5px;
+}
+
+#footer p {
+ }
+#footer a {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+h2.archivetitle {
+	background: url(images/archive_title.gif);
+	height: 41px;
+	width: 569px;
+	margin-left: 35px;
+	padding-top: 20px;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-top: 24px;
+	font-weight: bold;
+}
+/* End Structure */
+
+
+
+/*	Begin Post Headers */
+
+
+.post-head {
+	position: relative;
+	padding-bottom: 20px;
+}
+h2.post-title {
+	color: #FFFFFF;
+	background: url(images/h_pagetitle.gif);
+	font-size: 1.1em;
+	padding: 9px;
+}
+.post-title-meta {
+	text-align: right;
+}
+.post-title-meta .author {
+	margin-right: 78px;
+}
+.post-title-meta .meta-date {
+	background: url(images/day_calendar.png) no-repeat;
+	height: 57px;
+	width: 63px;
+	position: absolute;
+	left: 528px;
+	top: 5px;
+	color: #FFFFFF;
+	text-align: center;
+}
+* html .post-title-meta .meta-date {
+	left: 520px;
+	top: 2px;
+	background: url(none);
+}
+
+.meta-date .month {
+	font-size: 16px;
+	display: block;
+	padding-top: 7px;
+	font-weight: bold;
+	line-height: 19px;
+}
+.meta-date .date {
+	font-size: 16px;
+	font-weight: bold;
+	display: block;
+	line-height: 16px;
+}
+.meta-date .year {
+	font-size: 9px;
+	display: block;
+	line-height: 7px;
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	letter-spacing: 1px;
+}
+.post-title a,.post-title a:visited {
+	color: #FFFFFF;
+}
+.post-title a:hover {
+	color: #B2B2B2;
+	text-decoration: underline;
+}
+.entry {
+	padding-left: 28px;
+	margin-right: 15px;
+}
+.entry-fotter {
+	margin-right: 15px;
+	padding-left: 28px;
+}
+.entry p {
+	margin-bottom: 10px;
+}
+.entry h1 {
+	left: 0px;
+	margin: 10px 0px 15px -20px;
+	font-size: 1.4em;
+}
+.entry h2 {
+	background: url(images/h_pagetitle.gif);
+	font-size: 1.1em;
+	padding: 9px;
+	color: #FFFFFF;
+	width: 577px;
+	margin: 15px 0px 15px -28px;
+}
+.entry h3 {
+	margin: 10px 0px 10px -20px;
+	font-size: 1.1em;
+}
+.entry h4 {
+	color: #FE1C76;
+	margin: 10px 0px 10px -20px;
+	font-size: 1.1em;
+}
+
+.entry h5 {
+	margin: 10px 0px 10px -20px;
+	font-size: 1em;
+}
+
+.entry h6 {
+	margin: 10px 0px 10px -20px;
+	font-size: 0.9em;
+}
+.entry img {
+	margin-right: 0px;
+	margin-left: 0px;
+}
+.entry table {
+	border: 1px solid #929292;
+	border-collapse: collapse;
+}
+.entry th {
+	background: #929292;
+	border: 1px solid #929292;
+	padding: 3px 10px;
+	color: #FFFFFF;
+	text-align: left;
+}
+.entry td {
+	background: #D6D6D6;
+	border: 1px solid #929292;
+	padding: 1px 10px;
+}
+.entry blockquote {
+	background: #D6D6D6 url(images/blockquote.jpg) no-repeat 6px 6px;
+	border: 1px solid #929292;
+	min-height: 40px;
+	padding: 30px 43px 20px 50px;
+	margin-bottom: 30px;
+}
+.entry pre {
+	background-color: #fafafa;
+	border: solid 1px #bbbbbb;
+	margin: 0px 0px 30px;
+	padding: 10px;
+	overflow-x: auto;
+	overflow-y: auto;
+}
+* html .entry pre {
+	  width: 532px;
+	  overflow: scroll;
+}
+
+
+.entry hr {
+	color: #999999;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+.entry fieldset {
+	margin: 0px 10px 0px 0px;
+	padding: 10px;
+	border-style: none;
+}
+.entry fieldset h1, .entry fieldset h2, .entry fieldset h3, .entry fieldset h4, .entry fieldset h5, .entry fieldset h6 {
+	margin-left: 0px;
+	padding: 0px;
+}
+.entry fieldset h2 {
+	color: #333333;
+	background: url(none);
+	margin-left: 0px;
+	width: 90%;
+}
+.entry legend {
+	font-size: 1.1em;
+	font-weight: bold;
+	color: #333333;
+	padding-right: 3px;
+	padding-left: 3px;
+}
+/* End Headers */
+
+
+
+/* Begin Images */
+p img {
+	padding: 0;
+	max-width: 100%;
+ }
+
+/*	Using 'class="alignright"' on an image will (who would've
+	thought?!) align the image to the right. And using 'class="centered',
+	will of course center the image. This is much better than using
+	align="center", being much more futureproof (and valid) */
+
+img.centered {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+ }
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+ }
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+ }
+
+.alignright {
+	float: right;
+ }
+
+.alignleft {
+	float: left
+ }
+/* End Images */
+
+
+
+/* Begin Lists
+
+	Special stylized non-IE bullets
+	Do not work in Internet Explorer, which merely default to normal bullets. */
+
+
+
+
+.entry ul li:before, #sidebar ul ul li:before {
+
+
+ }
+.entry ul {
+	padding-left: 20px;
+}
+
+.entry ol {
+	padding: 0 0 0 20px;
+	margin: 0;
+ }
+
+.entry ol li {
+	margin: 0;
+	padding: 0;
+ }
+
+.postmetadata ul, .postmetadata li {
+	display: inline;
+	list-style-type: none;
+	list-style-image: none;
+ }
+.postfooter {
+	margin-bottom: 24px;
+}
+#new-old-navigation {
+	margin-bottom: 30px;
+}
+#sidebar {
+}
+#new-old-navigation ul {
+	list-style: none;
+}
+#new-old-navigation  p {
+	background: #E3E3E3 url(images/new_navigation_limark.gif) no-repeat 14px center;
+	padding: 10px 10px 10px 35px;
+	margin-bottom: 1px;
+}
+#new-old-navigation  p.newer {
+	background: #E3E3E3 url(images/new_navigation_limark.gif) no-repeat 14px center;
+}
+#new-old-navigation  p.older {
+	background: #E3E3E3 url(images/new_navigation_limark_old.gif) no-repeat 14px center;
+}
+#sidebar-body {
+	width: 237px;
+	padding-left: 13px;
+	margin-top: 11px;
+}
+
+#sidebar h2 {
+	color: #FFFFFF;
+	background: #606060;
+	font-size: 1.1em;
+	padding: 9px 9px 8px;
+	margin-bottom: 15px;
+ }
+
+#sidebar ul, #sidebar ul ol {
+	margin: 0;
+	padding: 0;
+ }
+
+#sidebar ul li {
+	list-style-type: none;
+	list-style-image: none;
+	margin-bottom: 15px;
+ }
+
+#sidebar ul p, #sidebar ul select {
+	margin: 5px 0 8px;
+ }
+
+#sidebar ul ul, #sidebar ul ol {
+	margin: 5px 0 0 0px;
+	background: url(images/sidebar_ul_ul_div.gif) no-repeat 0px bottom;
+	padding-bottom: 10px;
+	padding-right: 15px;
+	padding-left: 20px;
+ }
+
+#sidebar ul ul ul, #sidebar ul ol {
+	margin: 0 0 0 10px;
+	background: url(none);
+ }
+
+ol li, #sidebar ul ol li {
+	list-style: decimal outside;
+ }
+
+#sidebar ul ul li, #sidebar ul ol li {
+	margin: 0 0 10px;
+	padding: 0 0 0 10px;
+	background: url(images/li_mark.gif) no-repeat left 4px;
+	text-indent: 10px;
+ }
+/* End Entry Lists */
+
+
+
+/* Begin Form Elements */
+#searchform {
+	margin: 10px auto;
+	padding: 5px 3px;
+	text-align: center;
+ }
+
+#sidebar #searchform #s {
+	width: 108px;
+	padding: 2px;
+ }
+
+#sidebar #searchsubmit {
+	padding: 1px;
+ }
+.st-tag-cloud {
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
+.entry form { /* This is mainly for password protected posts, makes them look better. */
+ }
+
+select {
+	width: 130px;
+ }
+h3.comments {
+	font-weight: normal;
+	border-left: 5px solid #2A2A2A;
+	line-height: 30px;
+	height: 30px;
+	text-indent: 15px;
+	font-size: 0.9em;
+	margin-left: 0px;
+}
+form#commentform {
+	background: url(images/comment_form_bg.gif);
+	border: 1px solid #B5B5B5;
+	padding: 20px 25px 10px;
+	margin-bottom: 50px;
+}
+
+#commentform input {
+	width: 170px;
+	padding: 2px;
+	margin: 5px 5px 1px 0;
+	border: 1px solid #D4D4D4;
+ }
+
+#commentform {
+	margin: 5px 10px 0 0;
+ }
+#commentform textarea {
+	width: 100%;
+	padding: 2px;
+	margin-top: 20px;
+	border: 1px solid #D4D4D4;
+ }
+#respond:after {
+		content: "."; 
+	    display: block; 
+	    height: 0; 
+	    clear: both; 
+	    visibility: hidden;
+ }
+#commentform #submit {
+	text-align: center;
+	background: url(images/submit_post.gif);
+	display: block;
+	height: 22px;
+	width: 58px;
+	border-width: 0px;
+	border-style: none;
+	text-indent: -9999px;
+	margin-right: auto;
+	margin-left: auto;
+ }
+/* End Form Elements */
+
+
+
+/* Begin Comments*/
+.alt {
+	margin: 0;
+	padding: 10px;
+ }
+
+.commentlist {
+	padding: 0;
+/*	text-align: justify; */
+ }
+ol.commentlist {
+	margin-bottom: 20px;
+}
+
+.commentlist li {
+	margin: 15px 0 10px;
+	padding: 5px 5px 10px 10px;
+	list-style: none;
+	clear: left;
+ }
+.commentlist li ul li { 
+	margin-right: -5px;
+	margin-left: 10px;
+}
+
+.commentlist p {
+	margin: 0px 5px 10px 0;
+}
+.children { padding: 0; }
+
+#commentform p {
+	margin: 5px 0;
+ }
+#commentform h4 {
+	color: #333333;
+	margin-left: 0px;
+	font-size: 0.9em;
+}
+#commentform label {
+	display: block;
+}
+
+.nocomments {
+	text-align: center;
+	margin: 0;
+	padding: 0;
+ }
+
+.commentmetadata {
+	margin: 0;
+	display: block;
+ }
+.commentedby a {
+	color: #686868;
+	text-decoration: none;
+	font-weight: normal;
+}
+#trackbackbox {
+	background: url(images/comment_form_bg.gif);
+	padding: 15px 20px 20px;
+	border: 1px solid #BCBCBC;
+	margin-right: 10px;
+	margin-bottom: 30px;
+}
+input#trackback_url {
+	width: 100%;
+	padding: 3px;
+	border: 1px solid #D4D4D4;
+}
+/* End Comments */
+
+
+
+/* Begin Sidebar */
+#sidebar
+{
+	float: right;
+	width: 277px;
+	font-size: 0.8em;
+	background: url(images/content_bg.gif) no-repeat right top;
+	min-height: 860px;
+ }
+#siedebar-header {
+	background: url(images/side_head.gif);
+	display: block;
+	height: 56px;
+	width: 244px;
+	margin-top: 5px;
+	padding-left: 18px;
+}
+#side-head-search {
+	background: url(images/search_form.gif);
+	height: 25px;
+	width: 164px;
+	float: left;
+	margin-top: 15px;
+}
+#side-head-search #searchform {
+	margin: 0px;
+	padding: 0px;
+}
+#side-head-search input#search {
+	width: 110px;
+	border-width: 0px;
+	border-style: none;
+	float: left;
+	padding-top: 2px;
+	padding-left: 2px;
+	margin-top: 2px;
+	margin-left: 2px;
+}
+#searchform #searchsubmit-head {
+	background: url(images/search_submit_btn.gif) no-repeat;
+	height: 19px;
+	width: 45px;
+	text-indent: -9999px;
+	display: block;
+	float: left;
+	border-width: 0px;
+	border-style: none;
+	margin-top: 3px;
+}
+#siedebar-header #rss-button {
+	background: url(images/rss_btn.gif) no-repeat;
+	display: block;
+	float: right;
+	height: 51px;
+	width: 61px;
+	margin-top: 2px;
+	padding-right: 2px;
+}
+
+
+#siedebar-header #rss-button a {
+	display: block;
+	height: 51px;
+	width: 61px;
+	text-indent: -9999px;
+}
+
+#sidebar form {
+ }
+/* End Sidebar */
+
+
+
+/* Begin Calendar */
+#wp-calendar {
+	empty-cells: show;
+	margin: 10px auto 0;
+	width: 211px;
+	background: url(images/calendar_table.gif) no-repeat;
+	padding: 0px;
+	border-collapse: collapse;
+	color: #666666;
+ }
+#wp-calendar th {
+	margin: 0px!important;
+	padding: 0px!important;
+	border: 1px solid #999999;
+}
+#wp-calendar   thead tr  {
+	height: 29px;
+}
+
+#wp-calendar #next a {
+	text-align: right;
+ }
+
+#wp-calendar #prev a {
+	text-align: left;
+ }
+
+#wp-calendar a {
+	display: block;
+ }
+
+#wp-calendar caption {
+	text-align: center;
+	width: 100%;
+	color: #666666;
+ }
+
+#wp-calendar td {
+	text-align: center;
+	border: 1px solid #999999;
+	height: 28px;
+	margin: 0px;
+	padding: 0px;
+	width: 29px;
+ }
+#wp-calendar #prev{
+	width: auto;
+	border-width: 0px;
+	border-style: none;
+	background: #B5B5B5;
+}
+#wp-calendar #next {
+	width: auto;
+	background: #B5B5B5;
+	border-width: 0px;
+	border-style: none;
+}
+#wp-calendar  tfoot .pad {
+	background: #B5B5B5;
+	border-width: 0px;
+	border-style: none;
+}
+#wp-calendar #today {
+	color: #FFFFFF;
+	background: #929292;
+}
+
+#wp-calendar td.pad:hover { /* Doesn't work in IE */
+}
+/* End Calendar */
+
+
+
+/* Begin Various Tags & Classes */
+acronym, abbr, span.caps {
+	cursor: help;
+ }
+
+acronym, abbr {
+	border-bottom: 1px dashed #999;
+ }
+
+blockquote {
+ }
+
+blockquote cite {
+ }
+
+.center {
+	text-align: center;
+ }
+
+.hidden {
+	display: none;
+ }
+
+
+a img {
+	border: none;
+ }
+
+.navigation {
+	display: block;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 15px;
+ }
+/* End Various Tags & Classes*/
+
+
+
+/* Captions */
+.aligncenter,
+div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
+/* End captions */
+
+
+
+
+.clearfix:after {
+  content: ".";  /* make a new element */
+  display: block;  /* to block element */
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}
+
+.clearfix {
+  min-height: 1px;
+}
+
+* html .clearfix {
+  height: 1px;
+  /*促*//*/
+  height: auto;
+  overflow: hidden;
+  /**/
+}
+
+.clear {
+clear:both;
+}
