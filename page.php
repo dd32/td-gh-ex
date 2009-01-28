@@ -6,14 +6,7 @@
 
 				<div class="post" id="post-<?php the_ID(); ?>">
 
-					<h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
-					
-					<div class="date">
-						
-						<?php the_time('F j, Y'); ?>
-						<?php edit_post_link('Edit', ' &#124; ', ''); ?>
-					
-					</div>
+					<h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a><?php edit_post_link('Edit', ' &#124; ', ''); ?></h2>
 					
 					<div class="tags">
 						<?php the_tags('Tags: ', ', ', ''); ?>
@@ -24,7 +17,6 @@
 						<?php the_content(); ?>
 
 						<?php link_pages('<p><strong>Pages:</strong>','</p>','number'); ?>
-						<?php edit_post_link('Edit','<p>','</p>'); ?>
 
 					</div>
 

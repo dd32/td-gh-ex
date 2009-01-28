@@ -39,7 +39,7 @@
 			<?php endwhile; ?>
 
 				<div class="navigation">
-					<?php posts_nav_link('|','Previous Page','Next Page'); ?>
+					<?php posts_nav_link(' | ','&laquo; Previous Page','Next Page &raquo;'); ?>
 				</div>
 
 			<?php else : ?>

@@ -30,7 +30,7 @@ $oddcomment = 'alt';
 
 			<div class="commentmetadata">
 				
-				<div class="avatar">
+				<div class="avatarcontainer">
 					<?php echo get_avatar( $comment, $size = '38', $default = '' ); ?>
 				</div>
 				
@@ -92,7 +92,7 @@ $oddcomment = 'alt';
 <label for="author"><small>Name <?php if ($req) echo "(required)"; ?></small></label></p>
 
 <p><input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="40" tabindex="2" />
-<label for="email"><small>Mail (will not be published) <?php if ($req) echo "(required)"; ?></small></label></p>
+<label for="email"><small>Email (will not be published) <?php if ($req) echo "(required)"; ?></small></label></p>
 
 <p><input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="40" tabindex="3" />
 <label for="url"><small>Website</small></label></p>
