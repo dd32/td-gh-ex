@@ -4,7 +4,7 @@
 Theme Name: Auroral Theme
 Theme URI: http://www.web-strategy.jp/wp_theme/auroral_theme/
 Description: A high quality theme inspired from northern sky. 2 columns, widget available.Tested in Firefox2 and 3, Opera, Safari, IE6 and IE7. W3C XHTML valid. If you want to be your blog completely valid including post areas, plugin <a href="http://wordpress.org/extend/plugins/ps-disable-auto-formatting/">PS Disable Auto Formatting</a> might be your help.
-Version: 1.02
+Version: 1.05
 Author: Prime Strategy Co.,Ltd.
 Author URI: http://www.web-strategy.jp/
 Tags: black, blue, two-columns, fixed-width, right-sidebar
@@ -255,9 +255,9 @@ h2.post-title {
 }
 .post-title-meta {
 	text-align: right;
+	padding-right: 78px;
 }
 .post-title-meta .author {
-	margin-right: 78px;
 }
 .post-title-meta .meta-date {
 	background: url(images/day_calendar.png) no-repeat;
@@ -306,7 +306,7 @@ h2.post-title {
 	padding-left: 28px;
 	margin-right: 15px;
 }
-.entry-fotter {
+.entry-footer {
 	margin-right: 15px;
 	padding-left: 28px;
 }
