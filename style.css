@@ -1,0 +1,569 @@
+/*
+Theme Name: Aestival
+Theme URI: http://www.koordinante.de/blog/index.php?wptheme=Aestival
+Description: Oldfashioned Fruits.<br />German Version under <a href="http://www.koordinante.de/blog" target="_blank">koordinante.de/blog</a>.
+Author: heike elsen
+Author URI: http://www.koordinante.com/
+License: GPL http://www.gnu.org/licenses/gpl.txt
+Version: 2.0
+Tags: yellow, orange, green, two-columns, fixed-width, right-sidebar
+*/
+
+body {
+background-color:#fff;
+font-family: arial, "Trebuchet MS", monospace, sans_serif;
+font-size:1em;
+margin:0;
+}
+
+h3 {
+font-size:1.2em;
+color:#ccc;
+}
+
+
+.blend {
+display:none;
+}
+
+/**/.imgleft {
+float:left;
+margin:0px 18px 5px 0px;
+padding:3px;
+border:1px solid #f2f4fd;
+}
+
+.imgright {
+float:right;
+margin:0px 0px 5px 18px;
+padding:3px;
+border:1px solid #f2f4fd;
+}
+
+.imgmiddle {
+padding:3px;
+margin:0 auto;
+border:1px solid #f2f4fd;
+}
+
+.aligncenter,
+div.aligncenter {
+display: block;
+margin-left: auto;
+margin-right: auto;
+padding:3px;
+border:1px solid #f2f4fd;
+}
+
+.alignleft {
+float: left;
+margin:0px 18px 5px 0px;
+padding:3px;
+border:1px solid #f2f4fd;
+}
+
+.alignright {
+float: right;
+margin:0px 0px 5px 18px;
+padding:3px;
+border:1px solid #f2f4fd;
+}
+
+.wp-caption {
+   border: 1px solid #ddd;
+   text-align: center;
+   background-color: #f3f3f3;
+   padding-top: 4px;
+   margin: 10px;
+   /* optional rounded corners for browsers that support it */
+   -moz-border-radius: 3px;
+   -khtml-border-radius: 3px;
+   -webkit-border-radius: 3px;
+   border-radius: 3px;
+}
+
+.wp-caption img {
+   margin: 0;
+   padding: 0;
+   border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+   font-size: 11px;
+   line-height: 17px;
+   padding: 0 4px 5px;
+   margin: 0;
+}
+
+#container {
+width:1000px;
+margin:0px auto;
+background:url(containerkachel.jpg)top left repeat-y;
+}
+
+
+/**************************************************************************************************header*/
+
+#header {
+height:163px;
+background:url(header4.jpg)top right repeat-y;
+background-color:#ffffff;
+}
+
+#headerinnen {
+padding:45px 25px 0 25px;
+}
+
+#headerinnen h1 {
+font-size:2.6em;
+margin-bottom:0;
+}
+
+#headerinnen h1 a:link, #headerinnen h1 a:visited {
+color:#99B735;
+text-decoration:none;
+text-transform:uppercase;
+}
+
+#headerinnen h1 a:hover, #headerinnen h1 a:active {
+text-decoration:underline;
+}
+
+#headerinnen .description {
+text-transform:uppercase;
+font-size:1.5em;
+}
+
+#platzoben {
+height:30px;
+background-color:#fff;
+background:url(platzoben.jpg) top right no-repeat;
+}
+
+/**************************************************************************************************content*/
+
+#content {
+float:left;
+width:770px;
+}
+
+#contentinnen {
+margin:0px 35px 15px 35px;
+}
+
+#contentinnen h2 {
+margin-top:0px;
+}
+
+#contentinnen h2 a:link, #contentinnen h2 a:visited {
+font-size:1.2em;
+letter-spacing:-0.01em;
+color:#990000;
+text-decoration:none;
+text-transform:uppercase;
+padding-bottom:-1px;
+}
+
+#contentinnen h2 a:hover, #contentinnen h2 a:active {
+text-decoration:underline;
+}
+
+.contentdeko {
+background:url(contentdeko1a.jpg) bottom right no-repeat;
+}
+
+#contentinnen blockquote {
+color:#ff9900;
+padding:0px 30px 3px 40px;
+background:url(blockquote.jpg) top left no-repeat;
+}
+
+
+.contenttext a:link, .contenttext a:visited {
+color:#990000;
+text-decoration:none;
+}
+
+.contenttext a:active, .contenttext a:hover {
+text-decoration:underline;
+}
+
+.infos {
+font-size:0.8em;
+border-bottom:2px solid #F6E37A;
+margin-top:20px;
+margin-bottom:45px;
+}
+
+.infos a:link, .infos a:visited {
+color:#717664;
+text-decoration:none;
+}
+
+.infos a:hover, .infos a:active {
+text-decoration:underline;
+color:#990000;
+}
+
+/**************************************************************************************************comments*/
+
+#comments {
+margin-top:30px;
+}
+
+#comments h5 {
+margin-top:40px;
+font-size:1em;
+color:#666159;
+}
+
+#comments h5 a:link, #comments h5 a:visited {
+font-size:1em;
+color:#990000;
+text-decoration:none;
+border:none;
+}
+
+#comments h5 a:hover, #comments h5 a:active {
+text-decoration:underline;
+}
+
+#comments ul li {
+margin-left:-2em;
+list-style-type:none;
+}
+
+#comments blockquote {
+color:#ff9900;
+padding:0px 30px 3px 25px;
+background:url(blockquote_kl.jpg) top left no-repeat;
+}
+
+
+#comments fieldset {
+border:none;
+background:url(kommentardeko1.jpg) bottom right no-repeat;
+}
+
+#comments input {
+border:1px solid #B1BA9F;
+padding:3px;
+color:#ff9900;
+background-color:#fff;
+}
+
+
+#comments textarea {
+border:1px solid #B1BA9F;
+background-color:#fff;
+padding:3px;
+color:#ff9900;
+font-family: arial;
+}
+
+
+.wer {
+border-bottom:1px dotted #F4EFAB;
+font-size:0.9em;
+}
+
+.wer a:link, .wer a:visited {
+color:#990000;
+text-decoration:none;
+}
+
+.wer a:hover, .wer a:active {
+text-decoration:underline;
+}
+
+.was {
+margin-bottom:30px;
+font-size:0.9em;
+color:#666;
+width:650px;
+}
+
+.erlaubtetags {
+color:#333;
+font-size:0.9em;
+width:500px;
+}
+
+#commentPreview {
+font-size:0.9em;
+width:500px;
+}
+
+
+.angemeldetals  {
+color:#555;
+}
+
+.angemeldetals a:link, .angemeldetals a:visited {
+color:#555;
+text-decoration:none;
+}
+
+.angemeldetals a:hover, .angemeldetals a:active {
+text-decoration:underline;
+}
+
+.trackback  {
+text-align:center;
+}
+
+.trackback a:link, .trackback a:visited {
+color:#555;
+text-decoration:none;
+}
+
+.trackback a:hover, .trackback a:active {
+text-decoration:underline;
+}
+
+/**************************************************************************************************sidebar*/
+
+#sidebarright {
+float:right;
+width:218px;
+}
+
+#sidebarrightinnen {
+margin-top:20px;
+font-size:0.9em;
+}
+
+#sidebarrightinnen fieldset {
+border:0;
+padding:0;
+padding-left:0px;
+margin-top:15px;
+margin-bottom:20px;
+}
+
+#sidebarrightinnen input, #sidebarrightinnen br {
+display:none;
+}
+
+#sidebarrightinnen #s {
+display:block !important;
+padding-left:2px;
+width:80%;
+height:1.4em;
+border-left:1px solid #B1BA9F;
+border-top:1px solid #B1BA9F; /**/
+border-bottom: 1px solid  #B1BA9F;
+border-right:1px solid #B1BA9F;
+background-color:#fff;
+}
+
+
+
+#sidebarright ul {
+margin:10px 0 15px 10px;
+padding:0px;
+}
+
+#sidebarright li {
+list-style-type:none;
+margin-right:10px;
+}
+
+#sidebarright h4 {
+margin:10px 0 -8px 0;
+padding:3px -2px 1px 3px;
+text-indent:2px;
+text-transform:uppercase;
+font-size:1.2em;
+color:#666159;
+border-bottom:2px solid #F6E37A;
+background:url(contentdeko1.jpg) bottom left no-repeat;
+}
+
+#sidebarright li li {
+list-style-type:none;
+margin:0 0 5px -5px;
+padding:0px;
+border-bottom:1px dotted #F4EFAB;
+}
+
+#sidebarright li li a:link, #sidebarright li li a:visited {
+color:#717664;
+text-decoration:none;
+}
+
+#sidebarright li li a:hover, #sidebarright li li a:active {
+text-decoration:underline;
+}
+
+#sidebarright ul li ul li ul li{
+margin-top:-3px;
+font-size:0.85em;
+}
+
+#sidebarright .widget_tag_cloud {
+padding-bottom:20px;
+}
+
+#sidebarright .widget_tag_cloud a {
+margin-left: 0.25em;
+line-height:1.3em;
+color:#aaa;
+text-decoration:none;
+}
+
+#tagliste {
+text-align:right;
+color:#666159;
+}
+
+#tagliste a:link, #tagliste a:visited {
+color:#717664;
+text-decoration:none;
+}
+
+#tagliste a:hover, #tagliste a:active {
+text-decoration:underline;
+}
+
+#sidebarright select {
+margin-top:20px;
+border:none;
+font-size:1em;
+font-family:arial;
+height:1.4em;
+background-color:#F2F5F7;
+width:100%;
+}
+
+#platzunten {
+clear:both;
+height:36px;
+background:url(platzunten.jpg) bottom right no-repeat; /**/
+}
+
+#altneuebeitraege {
+margin:5px auto;
+width:690px;
+text-align:center;
+}
+
+#altneuebeitraege a:link,  #altneuebeitraege a:visited {
+color:#99B735;
+text-decoration:none;
+font-weight:bold;
+}
+
+#altneuebeitraege a:hover,  #altneuebeitraege a:active {
+text-decoration:underline;
+}
+
+/**************************************************************************************************footer*/
+
+#footer {
+clear:both;
+width:1000px;
+height:35px;
+background:url(footer.jpg) top left no-repeat;
+text-align:center;
+}
+
+#footerinnen {
+padding-top:10px;
+font-size:0.8em;
+text-transform:uppercase;
+}
+
+#footerinnen a:link, #footerinnen a:visited {
+color:#333;
+text-decoration:none;
+}
+
+#footerinnen a:hover, #footerinnen a:active {
+text-decoration:underline;
+}
+
+/**************************************************************************************************calendar*/
+
+#calendar_wrap {
+margin-top:15px;
+margin-bottom:20px;
+}
+
+#wp-calendar {
+width:100%;
+}
+
+#wp-calendar thead tr, #wp-calendar tfoot tr { border-bottom:1px solid #F6E37A;}
+#wp-calendar tbody a { background: #fff; color: #F6E37A; font-weight: bold; text-decoration:none; }
+#prev a , #next a{ color:#999; text-decoration:none;font-weight:bold; }
+#prev a:active, #prev a:focus, #prev a:hover,
+#next a:active, #next a:focus, #next a:hover { text-decoration:underline; }
+#today { font-weight: bold; }
+
+
+.mitte {
+text-align:center;
+padding:20px 0 10px 0;
+}
+
+/**************************************************************************************************pagebar*/
+
+.pagebar
+{
+   padding: 0.1em 0.5em;
+   margin-right: 0.1em;
+   border: 1px solid #fff;
+   background: #fff;
+   text-decoration: none;
+   font-size:1.2em;
+   font-weight: bold;
+}
+
+.pagebar a, .pageList .this-page
+{
+   border: 1px solid #fff;
+   text-decoration: none;
+   padding: 0.1em 0.1em;
+   color:#717664;
+}
+
+.pagebar a:visited
+{
+   border: 1px solid #fff;
+   text-decoration: none;
+   padding: 0.1em 0.1em;
+   color:#717664;
+}
+
+.pagebar a:hover {
+    text-decoration: underline;
+}
+
+.pagebar .break
+{
+   padding: 2px 6px;
+   border: none;
+   background: #fff;
+   text-decoration: none;
+}
+
+.pagebar .this-page
+{
+   border: 1px solid #fff;
+   padding: 0.1em 0.1em;
+   background: #fff;
+   color: #F6E37A;
+}
+
+.pagebar a:hover
+{
+   border-color: #fff;
+}
+
+/**************************************************************************************************textwidget*/
+
+.textwidget {
+margin-top:15px;
+margin-bottom:20px;
+}
