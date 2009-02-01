@@ -28,18 +28,15 @@
 </div>
 
 <script type="text/javascript">
-   var so = new SWFObject("<?php bloginfo('template_directory'); ?>/flash/sonix_header.swf?thetitle=SAMBURdGE.CO.UK&thestrap=<?php bloginfo('description'); ?>", "mymovie", "900", "50", "8", "#000000");  
-so.write("masthead");
+swfobject.embedSWF("<?php bloginfo('template_directory'); ?>/flash/sonix_header.swf?thetitle=<?php bloginfo('title'); ?>&thestrap=<?php bloginfo('description'); ?>", "masthead", "900", "50", "8", "#000000");  
 </script>
-
-<div id="pagetab">
 
 <?php 
 if (function_exists('navt_getlist')) {
-navt_getlist($sNavGroupName='tabs', $bEcho=true, $sTitle='', $sBefore='ul', $sAfter='/ul', $sBeforeItem='li', $sAfterItem='/li');}
-else {echo'<ul>'; wp_list_pages('exclude=11&title_li=','title_li= '); echo '</ul>';}
+navt_getlist($sNavGroupName='tabs', $bEcho=true, $sTitle='', $sBefore='ul id="dropnav" class="clearfix"', $sAfter='/ul', $sBeforeItem='li', $sAfterItem='/li');}
+else {echo'<ul id="dropnav" class="clearfix">'; wp_list_pages('exclude=11&title_li=','title_li= '); echo '</ul>';}
  ?>
-</div><!-- end PAGETAB -->
+
 
 <div id="main">
 

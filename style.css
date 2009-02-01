@@ -2,8 +2,8 @@
 
 Theme Name: 76 digital orange
 Description: Orange version of the 76 digital theme by 76 creative. Features an animated Flash header.
-Version: 1.6
-Author: Sam Burdge for 76 Creative
+Version: 1.7
+Author: Sam Burdge
 Author URI: http://www.samburdge.co.uk
 Tags: black, orange, flexible-width
 
@@ -641,8 +641,169 @@ color:#ffffff;
 padding:0.2em;
 }
 
+/* 
+dropnavIGATION --------------------- */
+ 
+ul#dropnav {
+	margin: 0 0 0 25px;
+	padding: 20px 0px 0px 0px;
+	list-style: none;
+	font-size: 12px;
+	color: #ff6600;
+	font-weight:bold;
+	background:#000;
+	height:100%;
+text-transform: uppercase;
+font-family: arial,sans-serif;
+	}
+	
+#dropnav li {
+	display: block; 
+	float: left;
+	margin: 0px 10px 0px 0px;
+	height:auto;
+ 	}
 
-/* WORDPRESS GENERATED CLASSES */
+
+#dropnav li a {
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	padding: 5px;
+	margin: 0px;
+border: 1px solid #ff6600;
+	border-bottom: 0;
+	}
+#dropnav li a:hover{
+ 	color: #ff6600;
+	background:#000;
+ 	}
+	
+#dropnav li ul li a {
+	display: block;
+	color: #ffffff;
+	text-decoration: none;
+	margin:0;
+	line-height:18px;
+	overflow:hidden;
+	border: 0;
+
+	}
+#dropnav li ul li a:hover{
+ 	color: #ff6600;
+	background:none;
+ 	}
+
+
+
+/*
+SON OF SUCKERFISH DROPDOWNS
+See http://www.htmldog.com/articles/suckerfish/dropdowns/
+--------------------- */
+
+/* 2nd and 3rd level menus */
+#dropnav li ul {
+	position: absolute;
+	z-index: 99;
+	left: -999em;
+	width:160px;
+	overflow:hidden;
+	margin: 0px 0 0 0px;
+	padding: 0;
+	height: auto;
+	border: solid #ff6600;
+	border-width: 1px 1px;
+	background: #000;
+	font-weight:normal;
+	
+}
+
+/* 3rd level menus only */
+#dropnav ul ul {
+	margin: -2em 0 0 150px;
+}
+
+/* 2nd and 3rd level menus */
+#dropnav li li {
+	width: 160px;
+	clear:both;
+	overflow:hidden;
+	border-bottom: 1px solid #ff6600;
+	
+}
+
+#dropnav li li a{
+	 padding:5px 5px 0 5px;
+	 margin:0;
+}
+
+/* 2nd and 3rd level menus */
+#dropnav ul a {
+	border-right: 0;
+}
+
+#dropnav li:hover ul ul, #dropnav li:hover ul ul ul, #dropnav li.sfhover ul ul, #dropnav li.sfhover ul ul ul {
+	left: -999em;
+	overflow:hidden;
+}
+
+/* This "unhides" the sub-menus (left: -999em is what hides them) */
+#dropnav li:hover ul, #dropnav li li:hover ul, #dropnav li li li:hover ul, #dropnav li.sfhover ul, #dropnav li li.sfhover ul, #dropnav li li li.sfhover ul {
+	left: auto;
+}
+
+#dropnav li:hover, #dropnav li.sfhover {
+	background: #000;
+	color:#ff6600;
+}
+
+/* 2nd and 3rd level menus */
+#dropnav ul li:hover, #dropnav ul ul li:hover, #dropnav ul li.sfhover, #dropnav ul ul li.sfhover {
+	background: #000;
+}
+
+/* 2nd and 3rd level menus */
+#dropnav ul li a, #dropnav ul ul li a {
+	background: none;
+	}
+
+/* 2nd level menus only */
+#dropnav a.sub {
+	background: url(../images/arrow-right.gif) right no-repeat; 
+	background-position:190px 12px;
+}
+.clearfix:after{
+content:".";clear:both;height:0;visibility:hidden;display:block}
+* html .clearfix{height:1%}
+.clearfix{display:block}
+
+
+
+
+
+/* $Id: example.css,v 1.5 2006/03/27 02:44:36 pat Exp $ */
+
+/*--------------------------------------------------
+  REQUIRED to hide the non-active tab content.
+  But do not hide them in the print stylesheet!
+  --------------------------------------------------*/
+.tabberlive .tabbertabhide {
+ display:none;
+}
+
+/*--------------------------------------------------
+  .tabber = before the tabber interface is set up
+  .tabberlive = after the tabber interface is set up
+  --------------------------------------------------*/
+.tabber {
+	
+}
+.tabberlive {
+ margin-top:1em;
+}
+
+
+/* WORDPRESS REQUIRED CLASSES */
 
 
 .aligncenter,
