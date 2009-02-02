@@ -10,7 +10,7 @@
 
 		<?php while (have_posts()) : the_post(); ?>
 
-			<div <?php post_class(); ?>>
+			<div <?php if (function_exists('post_class')){post_class();}else{echo 'class="post" ';} ?>>
 				<h3 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h3>
 				<small><?php the_time('l, F jS, Y') ?></small>
 				
