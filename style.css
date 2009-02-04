@@ -5,7 +5,7 @@ Description: Oldfashioned Fruits.<br />German Version under <a href="http://www.
 Author: heike elsen
 Author URI: http://www.koordinante.com/
 License: GPL http://www.gnu.org/licenses/gpl.txt
-Version: 2.0
+Version: 2.1
 Tags: yellow, orange, green, two-columns, fixed-width, right-sidebar
 */
 
@@ -98,7 +98,7 @@ border:1px solid #f2f4fd;
 #container {
 width:1000px;
 margin:0px auto;
-background:url(containerkachel.jpg)top left repeat-y;
+background:url(containerkachel.jpg) top left repeat-y;
 }
 
 
@@ -106,8 +106,7 @@ background:url(containerkachel.jpg)top left repeat-y;
 
 #header {
 height:163px;
-background:url(header4.jpg)top right repeat-y;
-background-color:#ffffff;
+background:url(header4.jpg) top right no-repeat;
 }
 
 #headerinnen {
@@ -330,6 +329,7 @@ width:218px;
 
 #sidebarrightinnen {
 margin-top:20px;
+margin-right:5px;
 font-size:0.9em;
 }
 
