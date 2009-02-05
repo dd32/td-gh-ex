@@ -1,4 +1,4 @@
-Wordpress Theme "Atahualpa" version 3.1.8
+Wordpress Theme "Atahualpa" version 3.2
 
 
 #####################################################################
@@ -184,8 +184,8 @@ these files
 
 - The actual CSS styles for Atahualpa3 are located in style.css and header.php
 After you're totally done with all your customizations, you could view the source
-code of your site, cut the CSS rules from the header section, and paste them at the 
-bottom of style.css. That would save around 8-12 kbyte per pageview.
+code of your site in the browser, cut the CSS rules from the header section, and paste them at the 
+bottom of style.css. Then remove the dynamic CSS part from header.php. That would save around 8-12 kbyte per pageview.
 
 Please note that images in CSS (i.e. background images) must be referenced like this 
 - in style.css: url(images/myimage.gif) works

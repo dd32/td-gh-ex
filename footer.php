@@ -66,7 +66,7 @@ if ( (is_home() && $bfa_ata_rightcol_on['homepage']) || ( is_front_page() && $bf
 		<td id="right">
 
 			<?php // Widgetize the Right Sidebar 
-			if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar(2) ) : 	
+			if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar(2) ) : echo "To put some content here, go to Site Admin -> Appearance/Presentation -> Widgets -> Select \"Right Sidebar\" -> Click \"Show\" -> Click on \"Add\" on one of the widgets on the left side -> Click \"Save changes\" -> Done";
 			endif; ?>
 
 		</td>

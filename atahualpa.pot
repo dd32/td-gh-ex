@@ -170,7 +170,7 @@ msgstr ""
 #: comments-paged.php:211
 #: comments.php:225
 #: legacy.comments.php:213
-msgid "<strong>XHTML:</strong> You can use these tags:"
+msgid "You can use %1$sthese HTML tags</a>"
 msgstr ""
 
 #: comments-paged.php:220
@@ -208,15 +208,6 @@ msgstr ""
 #: footer.php:89
 #: footer.php:95
 msgid " seconds."
-msgstr ""
-
-#: functions.php:637
-#, php-format
-msgid "<br />Powered by %1$sWordPress</a> &middot; %2$sWordPress Themes</a> by BFA"
-msgstr ""
-
-#: functions.php:638
-msgid "Webdesign"
 msgstr ""
 
 #: index.php:282

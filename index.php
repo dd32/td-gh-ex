@@ -7,12 +7,12 @@ foreach ($options as $value) {
 		$$value['id'] = get_option( $value['id'] ); 
 	} 
 }
-if ( is_page() ) { $current_page_id = $wp_query->get_queried_object_id(); }
+if ( is_page() ) { global $wp_query; $current_page_id = $wp_query->get_queried_object_id(); }
 ?>
 <?php get_header(); ?>
 <?php // If there are any posts:
-if (have_posts()) : 
-?>
+if (have_posts()) : $postcount == 0; ?>
+<?php if( is_archive() AND function_exists('page2cat_output')) { page2cat_output($cat); } // This is for the plugin Page2Cat http://wordpress.org/extend/plugins/page2cat/ ?>
 
 	<?php		
 	// Next/Previous PAGE Links (on multi post pages) 
@@ -39,7 +39,7 @@ if (have_posts()) :
 			
 	
 	<?php // Do this for all posts:
-	while (have_posts()) : the_post(); ?> 
+	while (have_posts()) : the_post(); $postcount++; ?> 
 
 		<?php
 		// Next/Previous POST Links (on single post pages) 
@@ -128,7 +128,7 @@ if (have_posts()) :
 		(is_search() && $bfa_ata_excerpts_search == "Full Posts") OR 
 		(is_author() && $bfa_ata_excerpts_author == "Full Posts") OR 
 		is_single() OR 
-		is_page() ) { 
+		is_page() OR (is_home() AND !is_paged() AND $postcount <= $bfa_ata_full_posts_homepage) ) { 
 			$bfa_ata_more_tag_final = str_replace("%post-title%", the_title('', '', false), $bfa_ata_more_tag);
 			the_content(bfa_escape($bfa_ata_more_tag_final)); 
 		} else { 

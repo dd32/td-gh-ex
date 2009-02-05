@@ -194,7 +194,7 @@ function mytheme_admin() {
 <?php 
 #
 $theme_name = "Atahualpa";
-$theme_version = "3.1.8";
+$theme_version = "3.2";
 #
 $border_styles = array("solid", "dotted", "dashed", "double", "groove", "ridge", "inset", "outset");
 $background_repeat = array("vertic. and horiz.", "vertically", "horizontally", "don't repeat");
@@ -657,7 +657,7 @@ add_action('admin_menu', 'mytheme_add_admin');
 ?>
 <?php
 function footer_output($footer_content) {
-$footer_content .= '<br />Powered by <a href="http://www.wordpress.org/">WordPress</a> &middot; <a href="http://wordpress.bytesforall.com/">Atahualpa Theme</a> by <a href="http://www.bytesforall.com/">BytesForAll</a>';
+$footer_content .= '<br />Powered by <a href="http://www.wordpress.org/">WordPress</a> &middot; <a href="http://wordpress.bytesforall.com/" title="WP Themes">Atahualpa Theme</a> by <a href="http://www.bytesforall.com/" title="Custom WordPress Themes &amp; Web Design">BytesForAll</a>';
 return $footer_content;
 }
 ?>

@@ -10,6 +10,7 @@ foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$val
 <?php include (TEMPLATEPATH . '/functions/bfa_meta_tags.php'); ?>
 <?php if ($bfa_ata_favicon_file != "") { ?><link rel="shortcut icon" href="<?php echo get_bloginfo('template_directory'); ?>/images/favicon/<?php echo $bfa_ata_favicon_file; ?>" /><?php } ?>
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
+<link rel="alternate" type="application/atom+xml" title="<?php bloginfo('name'); ?> Atom Feed" href="<?php bloginfo('atom_url'); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <script type="text/javascript" src="<?php echo get_bloginfo('template_directory'); ?>/js/ruthsarian_utilities.js"></script>
 <script type="text/javascript">
@@ -513,6 +514,10 @@ blockquote blockquote {
 	<?php echo $bfa_ata_blockquote_style_2nd_level; ?>
 	}
 
+.post table {
+	<?php echo $bfa_ata_table; ?>
+	}
+	
 .post table caption {
 	<?php echo $bfa_ata_table_caption; ?>
 	}
@@ -608,22 +613,22 @@ a.page-numbers:hover {
 	border-color: #<?php echo $bfa_ata_link_hover_color; ?>;
 	}
 
-.post img {
-	<?php echo $bfa_ata_post_image_style; ?>
-	}
+.post img { <?php echo $bfa_ata_post_image_style; ?> }
 
-.wp-caption {
-	<?php echo $bfa_ata_post_image_caption_style; ?>
-	}
+.wp-caption { <?php echo $bfa_ata_post_image_caption_style; ?> }
 
 .wp-caption p.wp-caption-text {
 	<?php echo $bfa_ata_image_caption_text; ?>
 	}
 
-img.avatar {
-	<?php echo $bfa_ata_avatar_style; ?>
+img.avatar { 
+	<?php echo $bfa_ata_avatar_style; ?> 
 	}
-
+	
+div#respond {
+	<?php echo $bfa_ata_comment_form_style; ?> 
+	}
+	
 <?php if (strpos($bfa_ata_configure_header,'%pages')!==false OR strpos($bfa_ata_configure_header,'%cats')!==false) { ?>
 div#menu1 ul.rMenu-ver, div#menu1 ul.rMenu-ver ul
 	{
@@ -891,7 +896,7 @@ if ( (is_home() && $bfa_ata_rightcol_on['homepage']) || ( is_front_page() && $bf
 		<td id="left">
 
 			<?php // Widgetize the Left Sidebar 
-			if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar(1) ) : 	
+			if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar(1) ) : echo "To put some content here, go to Site Admin -> Appearance/Presentation -> Widgets -> Select \"Left Sidebar\" -> Click \"Show\" -> Click on \"Add\" on one of the widgets on the left side -> Click \"Save changes\" -> Done";
 			endif; ?>
 
 		</td>

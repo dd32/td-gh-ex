@@ -627,12 +627,16 @@ $options1 = array(
 			Move that container around by changing the <code>margin-top</code> and <code>margin-left</code> values. 
 			To right-align the overlayed container, add <code>float: right;</code> and replace <code>margin-left</code> 
 			with <code>margin-right</code>. To center it, add <code>float:none; margin-left:auto; margin-right:auto; 
-			margin-top: 30px; text-align:center;</code><br /><br />You can add background color, borders and padding, too.
-			<br /><br /><strong>Example:</strong><br /><br /><code>margin-top: 30px;<br />margin-left: 30px;<br />
+			text-align:center;</code> and, instead of adding margin-top here, add padding-top to 
+			the parent container, via HTML/CSS Inserts -> CSS Inserts: 
+			<code>div.header-image-container { padding-top: 30px; height: XXXpx; }</code> with XXX = desired image height - 
+			padding-top value.<br />
+			<br />You can add background color, borders and padding, too.
+			<br /><br /><strong>Example (as shown in the image):</strong><br /><br /><code>margin-top: 30px;<br />margin-left: 30px;<br />
 			width: 300px;<br />padding: 7px;<br />background: #ffffff;<br />border: solid 2px #000000;<br />
 			filter: alpha(opacity=60);<br />-moz-opacity:.60;<br />opacity:.60;<br />-moz-border-radius: 7px;<br />
 			-khtml-border-radius: 7px;<br />-webkit-border-radius: 7px;<br />border-radius: 7px;</code><br /><br />
-			Leave <code>width: ...;</code> out to let the box adjust to the width of the blog title or tagline.<br />
+			Leave <code>width: ...;</code> out to let the box adjust to the width of the blog title or tagline, whichever is longer.<br />
 			<br />To change the styles of the blog title or the blog tagline individually, see the menu tab \"Header\"."),        
 
 // New category: feed-links
@@ -756,15 +760,33 @@ $options1 = array(
             "id" => $shortname."_feedburner_email_id",
             "type" => "text",
             "std" => "",
-			"size" => "10", 
-			"lastoption" => "yes", 
+			"size" => "25", 
             "info" => "If you chose to show the Feedburner \"Subscribe by Email\" link, put the ID of the Feedburner feed for this site here. 
-			<br /><br /><strong>How to find the feed ID for this site at Feedburner:</strong><br /><br />You must have a Feedburner account, 
-			and you must have created a feed for this site (\"My Feeds\" -> \"Burn a feed right this instant\")<ul><li>Login to your 
-			<a href=\"http://www.feedburner.com\">Feedburner</a> account</li><li>Click \"My Feeds\" -> \"[Title of the feed/site in question]\" 
-			-> \"Publicize\" -> \"Email Subscriptions\"</li><li>Check out the two textareas. Both contain the ID somewhere in the text. 
-			In the bigger textarea it appears as <code>...?ffid=<i>xxxxxxx</i>...</code>, in the smaller one as 
-			<code>...?feedId=<i>xxxxxxx</i>...</code></li><li><code><i>xxxxxxx</i></code> is the number that you need to put here</li></ul>"),
+			<br /><br />The ID will be a number (around 7 digits) if you have an OLD account at feedburner.com. If you have a NEW account 
+			at feedburner.google.com, the ID will not be a number but a string that probably resembles your site name but without spaces.
+			<br /><br />Log in your Feedburner account, click \"My Feeds\" -> \"[Title of the feed/site in question]\" 
+			-> \"Publicize\" -> \"Email Subscriptions\". (If you have not activated the Email subscription yet do it now and proceed with the 
+			next step afterwards). Now check out the two textareas.<br /><br /><strong>If you have a feedburner.google.com account:</strong> 
+			The smaller one of the two textareas, the one at the bottom, will contain something like this:  
+			<code>feedburner.google.com/fb/a/mailverify?uri=<i>bytesforall/lzoG</i>&amp;loc=en_US</code> The highlighted 
+			text is your Google/Feedburner ID. Note: <strong>bytesforall/lzoG</strong> will NOT be your ID. This is just a sample to show you where the 
+			ID starts and where it ends. It starts after <code>?uri=</code> and it ends before <code>&amp;loc=</code><br /><br /><strong>
+			If you have an (old, original) feedburner.com account:</strong> With an old feedburner account, that is not transferred to google yet, 
+			the smaller one of the two textareas, the one at the bottom, will contain something like this: 
+			<code>www.feedburner.com/fb/a/emailverifySubmit?feedId=<i>1234567</i>&amp;loc=en_US</code> The highlighted number is 
+			your (old, original) Feedburner.com ID. Note: <strong>1234567</strong> will NOT be your ID. This is just a sample to show you where the 
+			ID starts and where it ends. It starts after <code>?feedId=</code> and it ends before <code>&amp;loc=</code><br /><br />	
+			Now that you got your (new Google/Feedburner OR old Feedburner.com) ID put it into this field here"),
+
+    array(    "name" => "OLD or NEW Feedburner account?",
+    	    "category" => "feed-links",
+            "id" => $shortname."_feedburner_old_new",
+            "type" => "select",
+            "std" => "New - at feedburner.google.com",
+			"lastoption" => "yes", 
+            "options" => array("New - at feedburner.google.com", "Old - at feedburner.com"),
+            "info" => "Whether your account qualifies as old or new does not depend on whether you log in at feedburner.com or at feedburner.google.com. 
+			See one option above to determine whether your account is OLD or NEW."),
 
 // New category: page-menu-bar
 
@@ -1600,7 +1622,7 @@ $options3 = array(
     array(    "name" => "POST Container: STICKY",
     	    "category" => "posts",
             "id" => $shortname."_post_container_sticky_style",
-            "std" => "background: #eee url(" . $stylesheet_directory . "/images/sticky.gif) 99% 5% no-repeat;\nborder: dashed 1px #ccc;\padding: 10px",
+            "std" => "background: #eee url(" . $stylesheet_directory . "/images/sticky.gif) 99% 5% no-repeat;\nborder: dashed 1px #ccc;\npadding: 10px;",
             "type" => "textarea",
             "info" => "<img src=\"" . $stylesheet_directory . "/options/images/post-container.gif\" 
 			style=\"float: right; margin: 0 0 10px 10px;\">" . "Additional styles for <strong>the container
@@ -1746,7 +1768,16 @@ $options3 = array(
             "std" => "Full Posts",
             "options" => array("Only Excerpts", "Full Posts"),
             "info" => "Show full posts or only excerpts, on the Homepage?"),
-            
+
+    array(    "name" => "Show the first X posts on HOME page as full posts?",
+    	    "category" => "posts-or-excerpts",
+            "id" => $shortname."_full_posts_homepage",
+            "type" => "select",
+            "std" => 0,
+            "options" => array(0,1,2,3,4,5,6,7,8,9,10),
+            "info" => "By setting a number here and setting the option above (Posts or excerpts on HOME page?) to 
+			\"Only Excerpts\" you can show X full posts on top of the Homepage, followed by excerpts."),
+			
     array(    "name" => "Posts or excerpts on CATEGORY pages?",
     	    "category" => "posts-or-excerpts",
             "id" => $shortname."_excerpts_category",
@@ -1911,8 +1942,15 @@ $options3 = array(
             "type" => "select",
             "std" => "Yes",
             "options" => array("Yes", "No"),
-            "info" => "Show the \"XHTML: You can use these tags...\" info above the comment form?"),			
+            "info" => "Show the \"You can use these HTML tags\" info above the comment form?"),			
 
+    array(    "name" => "Comment Form Style",
+    	    "category" => "comments",
+           "id" => $shortname."_comment_form_style",
+            "std" => "margin: 25px 0;\npadding: 25px;\nbackground: #eee;\n-moz-border-radius: 8px;\n-khtml-border-radius: 8px;\n-webkit-border-radius: 8px;\nborder-radius: 8px;",
+            "type" => "textarea",
+            "info" => "Style the comment form area = Box that contains the Name, Email, Website input fields, the comment textarea and the submit button."), 
+			
     array(    "name" => "Submit Button Style",
     	    "category" => "comments",
            "id" => $shortname."_submit_button_style",
@@ -1993,9 +2031,16 @@ $options3 = array(
 
 // New category: tables
 
-    array(    "name" => "Table Caption Style",
+    array(    "name" => "Table Style",
     	    "category" => "tables",
 			"switch" => "yes",
+            "id" => $shortname."_table",
+            "std" => "border-collapse: collapse;\nmargin: 10px 0;",
+            "type" => "textarea",
+            "info" => "Style the table as a whole <code>&lt;table&gt;</code> ... <code>&lt;/table&gt;</code>"),
+			
+    array(    "name" => "Table Caption Style",
+    	    "category" => "tables",
             "id" => $shortname."_table_caption",
             "std" => "background: #eeeeee;\nborder: #999999;\npadding: 4px 8px;\ncolor: #666666;",
             "type" => "textarea",

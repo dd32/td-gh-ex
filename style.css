@@ -1,8 +1,8 @@
 /*  
 Theme Name: Atahualpa
 Theme URI: http://wordpress.bytesforall.com/
-Description: Build your own unique and professional WordPress theme: Over 200 theme options on 25 admin pages, drop down / fly out menus, fluid, fixed or hybrid width, turn sidebars on /off per page type, auto image resizing, 4 extra widgets and MANY other features. For WP 2.2-2.7 and WPMU. English, German, Hungarian, Portuguese and Czech.
-Version: 3.1.9
+Description: Build your own unique, professional and browser-safe WordPress theme: Over 200 theme options, drop down menus for pages and categories, fluid or fixed width layout, 1, 2 or 3 columns, rotating header images, auto image resizing, integrated Feedburner form, 4 extra widgets and more. WP 2.2-2.7 and WPMU. English plus DE, HU, PT, CZ, SI, TR, FR, PL, NL, BG, IT, VN, JP, ES. Support at the <a href="http://forum.bytesforall.com/">BFA WP Forum</a>
+Version: 3.2
 Author: BFA WebDesign
 Author URI: http://www.bytesforall.com/
 Tags: white, one-column, two-columns, three-columns, fixed-width, flexible-width,  custom-colors, custom-header, theme-options, left-sidebar, right-sidebar, threaded-comments, sticky-post
@@ -416,10 +416,10 @@ td#middle {
 	width: 100%;
 	max-width: 100%;		
 	overflow: auto;
-	background-color: #fff;
 	/* more  ... */
 	}
 
+	
 	
 /* ------------------------------------------------------------------
 ---------- FOOTER ---------------------------------------------------
@@ -1017,6 +1017,9 @@ table.searchform td.searchbutton {
 	padding: 0 0 0 5px;
 	}
 
+table.searchform td.searchbutton input{
+	padding: 0 0 0 5px;
+	}
 	
 /* ------------------------------------------------------------------
 ---------- BLOCKQUOTES ----------------------------------------------
@@ -1044,9 +1047,7 @@ blockquote blockquote {
 /*-------------------- TABLES IN POSTS --------------------*/
 
 .post table {
-	border-collapse: collapse;
-	background-color: #ffffff;
-	margin: 10px 0;
+	/* more ... */
 	}
 	
 .post table caption {
@@ -1131,19 +1132,19 @@ table#wp-calendar td a {
 	}
 
 
+	
+
+
+	
 /* ------------------------------------------------------------------
 ---------- COMMENTS -------------------------------------------------
 ------------------------------------------------------------------ */
 
+
+
 /* whole respond area */
 div#respond {
-	margin: 25px 0;
-	padding: 25px;
-	background: #eee;
-	-moz-border-radius: 8px;
-	-khtml-border-radius: 8px;
-	-webkit-border-radius: 8px;
-	border-radius: 8px;
+	/* more ... */
 	}
 
 p.thesetags {

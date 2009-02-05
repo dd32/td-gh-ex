@@ -3,6 +3,8 @@ global $options;
 foreach ($options as $value) {
 if (get_settings( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_settings( $value['id'] ); } }
 
+$selected_header_image = "";
+
 if (file_exists(ABSPATH."/wpmu-settings.php")) {
 
 	################### images in WP upload folder (on WPMU)
@@ -17,7 +19,12 @@ if (file_exists(ABSPATH."/wpmu-settings.php")) {
 		get_option('fileupload_url'), $selected_header_image); 
 		}
 
-} else {
+}
+
+# If no user uploaded header image files were found, or this is not WPMU
+
+if (!file_exists(ABSPATH."/wpmu-settings.php") OR $selected_header_image == "" ) {
+
 		
 	################### images in /images/header/ (on regular WordPress)
 

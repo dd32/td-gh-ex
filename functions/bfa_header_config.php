@@ -53,10 +53,10 @@ $header_rowspan = 'rowspan="2" '; } else { $header_rowspan = ''; }
 		$logo_area .= '<td ' . $header_rowspan . 'valign="middle" class="logoarea-logo"><a href="' . get_option('home') . '/"><img class="logo" src="';
 			// if this is WordPress MU 
 			if (file_exists(ABSPATH."/wpmu-settings.php")) {
-				// two ways to figure out the upload path on WPMU, version 1:
+				// two ways to figure out the upload path on WPMU, first try easy version 1, :
 				$upload_path1 = ABSPATH . get_option('upload_path');
-				// Version 2: You will have to change "atahualpa3" if you changed the theme's directory name
-				$upload_path2 = str_replace('themes/atahualpa3/functions', '', $_SERVER['DOCUMENT_ROOT']) . 
+				// Try the hard way, version 2: 
+				$upload_path2 = str_replace('themes/' . get_option('stylesheet') . '/functions', '', $_SERVER['DOCUMENT_ROOT']) . 
 				'/wp-content/blogs.dir/' . $wpdb->blogid . '/files';
 				// see if user has uploaded his own "logosymbol.gif" somewhere into his upload folder, version 1:
 				$wpmu_logosymbol = m_find_in_dir($upload_path1,$bfa_ata_logo); $upload_path = $upload_path1;
@@ -112,8 +112,9 @@ $header_rowspan = 'rowspan="2" '; } else { $header_rowspan = ''; }
 	if ($bfa_ata_show_email_icon == "Yes" ) { 
 	$logo_area .= '<a class="email-icon" '; 
 	if ($bfa_ata_nofollow == "Yes") { $logo_area .= 'rel="nofollow" '; } 
-	$logo_area .= 'href="http://www.feedburner.com/fb/a/emailverifySubmit?feedId=' . 
-	$bfa_ata_feedburner_email_id . '&amp;loc=' . get_bloginfo('language') . '" title="' . $bfa_ata_email_subscribe_link_title . '">' . $bfa_ata_email_subscribe_link . '</a>';
+	$logo_area .= 'href="http://' . ($bfa_ata_feedburner_old_new == 'New - at feedburner.google.com' ? 
+	'feedburner.google.com/fb/a/mailverify?uri=' : 'www.feedburner.com/fb/a/emailverifySubmit?feedId=') . 
+	$bfa_ata_feedburner_email_id . '&amp;loc=' . get_locale() . '" title="' . $bfa_ata_email_subscribe_link_title . '">' . $bfa_ata_email_subscribe_link . '</a>';
 	} 
 	// END: of Feedburner Email link 
 	

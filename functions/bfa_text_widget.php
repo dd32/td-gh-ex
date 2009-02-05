@@ -87,9 +87,9 @@ function widget_text_control($widget_args = 1) {
 function widget_text_un_re_register() {
 	if ( !$options = get_option('widget_text') )
 		$options = array();
-	$widget_ops = array('classname' => 'widget_text', 'description' => __('Arbitrary text or HTML'));
+	$widget_ops = array('classname' => 'widget_text', 'description' => __('Arbitrary text or HTML','atahualpa'));
 	$control_ops = array('width' => 400, 'height' => 350, 'id_base' => 'text');
-	$name = __('Text');
+	$name = __('Text','atahualpa');
 
 	$id = false;
 	foreach ( array_keys($options) as $o ) {

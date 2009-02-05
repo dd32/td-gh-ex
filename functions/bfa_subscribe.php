@@ -9,27 +9,42 @@ function widget_bfa_subscribe($args) {
 	$posts_text = apply_filters('widget_text', $options['posts-text']);
 	$comments_text = apply_filters('widget_text', $options['comments-text']);
 	$id = apply_filters('widget_title', $options['id']);
+	$google_or_feedburner = apply_filters('widget_title', $options['google-or-feedburner']);
 	echo $before_widget;
 	if ( !empty($title) ) { echo $before_title . $title . $after_title; }
+	// feedburner or google:
+	if ( $google_or_feedburner == "feedburner" ) {
+		$action_url = "www.feedburner.com/fb/a/emailverify";
+		$window_url = "www.feedburner.com/fb/a/emailverifySubmit?feedId=";
+		$hidden_value_url = "http://feeds.feedburner.com/~e?ffid=";
+		$hidden_uri = "url";
+		$hidden_input = '<input type="hidden" value="' . get_bloginfo('name') . '" name="title"/>';
+	} else {
+		$action_url = "feedburner.google.com/fb/a/mailverify";
+		$window_url = "feedburner.google.com/fb/a/mailverify?uri=";
+		$hidden_value_url = "";
+		$hidden_uri = "uri";
+		$hidden_input = "";
+	}
 	// replace URL placeholders:
-	$email_text = str_replace("%email-url", "http://www.feedburner.com/fb/a/emailverifySubmit?feedId=" . $id . "&amp;loc=" . get_bloginfo('language'), $email_text);
+	$email_text = str_replace("%email-url", "http://" . $window_url . $id . "&amp;loc=" . get_locale(), $email_text);
 	$posts_text = str_replace("%posts-url",  get_bloginfo('rss2_url'), $posts_text);
 	$comments_text = str_replace("%comments-url",  get_bloginfo('comments_rss2_url'), $comments_text);
 ?>
-<form class="feedburner-email-form"  
-action="http://www.feedburner.com/fb/a/emailverify" method="post" 
-onsubmit="window.open('http://www.feedburner.com/fb/a/emailverifySubmit?feedId=<?php echo $id; ?>', 
+<form class="feedburner-email-form" 
+action="http://<?php echo $action_url; ?>" method="post" target="popupwindow" 
+onsubmit="window.open('http://<?php echo $window_url . $id; ?>', 
 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
 <table class="subscribe" cellpadding="0" cellspacing="0" border="0"><tr>
 <td class="email-text" colspan="2"><p>
-<a href="http://www.feedburner.com/fb/a/emailverifySubmit?feedId=<?php echo $id; ?>&amp;loc=<?php echo get_bloginfo('language'); ?>"
-<?php if ($bfa_ata_nofollow == "Yes") { ?> rel="nofollow"<?php } ?>>
+<a href="http://<?php echo $window_url . $id; ?>&amp;loc=<?php echo get_locale() . 
+($bfa_ata_nofollow == "Yes" ? ' rel="nofollow"' : ''); ?>">
 <img src="<?php echo get_bloginfo('template_directory'); ?>/images/feedburner-email.gif" style="float:left; margin: 0 7px 3px 0" alt="" /></a><?php echo $email_text; ?></p>
 </td></tr><tr><td class="email-field"><input type="text" name="email" class="text inputblur" value="<?php echo $field_text; ?>" 
-onfocus="this.value='';" onblur="this.value='<?php echo $field_text; ?>';" />
-<input type="hidden" value="http://feeds.feedburner.com/~e?ffid=<?php echo $id; ?>" name="url"/>
-<input type="hidden" value="<?php echo get_bloginfo('name'); ?>" name="title"/>
-<input type="hidden" name="loc" value="<?php echo get_bloginfo('language'); ?>"/>
+onfocus="this.value='';" />
+<input type="hidden" value="<?php echo $hidden_value_url . $id; ?>" name="<?php echo $hidden_uri; ?>"/>
+<?php echo $hidden_input ?>
+<input type="hidden" name="loc" value="<?php echo get_locale(); ?>"/>
 </td><td class="email-button">
 <input type="submit" class="button"  value="<?php echo $submit_text; ?>" />
 </td></tr>
@@ -69,6 +84,7 @@ function widget_bfa_subscribe_control() {
 		}
 		
 		$newoptions['id'] = strip_tags(stripslashes($_POST["feedburner-email-id"]));
+		$newoptions['google-or-feedburner'] = strip_tags(stripslashes($_POST["google-or-feedburner"]));
 	}
 	if ( $options != $newoptions ) {
 		$options = $newoptions;
@@ -81,8 +97,10 @@ function widget_bfa_subscribe_control() {
 	$posts_text = format_to_edit($options['posts-text']);
 	$comments_text = format_to_edit($options['comments-text']);
 	$id = attribute_escape($options['id']);
+	$google_or_feedburner = attribute_escape($options['google-or-feedburner']);
+	if ( $google_or_feedburner == "" ) { $google_or_feedburner = "google"; }
 ?>
-You may have to save this widget once (Click "Done" and "Save Changes") before you can edit the text fields bewow...<br /><br />
+You may have to <span style="font-weight: bold; color: #c00">save this widget once</span> first (Click "Done" and "Save Changes") before you can edit the text fields below...<br /><br />
 <p><label for="subscribe-title">Optional: Title: 
 <input class="widefat" id="subscribe-title" name="subscribe-title" type="text" value="<?php echo $title; ?>" /></label></p>
 
@@ -115,11 +133,19 @@ Feedburner Email ID:
 <input class="widefat" id="feedburner-email-id" name="feedburner-email-id" type="text" value="<?php echo $id; ?>" /></label></p>
 
 <p><strong>How to find the feed ID for this site at Feedburner:</strong><br />
-You must have a Feedburner account, and you must have created a feed for this site ("My Feeds" -> "Burn a feed right this instant"). 
 Login to your Feedburner account, click "My Feeds" -> Title of the feed in question -> Publicize -> Email Subscriptions -> Check out the two textareas. 
-Both contain the ID somewhere in the text. In the bigger textarea it appears as "...?ffid=<strong>XXXXXXX</strong>", 
-in the smaller one as "?feedId=<strong>XXXXXXX</strong>". <strong>XXXXXXX</strong> is the number that you need to put here.</p>
+In the bigger one of the two textareas your ID appears as: <br />1) If you have an <strong>old feedburner.com</strong> account:  
+www.feedburner.com/fb/a/emailverifySubmit?feedId=<strong>1234567</strong>&amp;loc=en_US<br />2) if you have a <strong>new feedburner.google.com</strong> account: 
+feedburner.google.com/fb/a/mailverify?uri=<strong>bytesforall/lzoG</strong>&amp;loc=en_US<br />The bold part is the ID that you need to put here.</p>
+
+<p>Is this a feedburner.google.com account or an old feedburner.com account?		
+<p><input id="google-or-feedburner" name="google-or-feedburner" type="radio" value="google" <?php 
+if($google_or_feedburner == "google"){echo " CHECKED";}?> /> New feedburner.google.com account</p>
+<p><input id="google-or-feedburner" name="google-or-feedburner" type="radio" value="feedburner" <?php 
+if($google_or_feedburner == "feedburner"){echo " CHECKED";}?> /> Old feedburner.com account</p>
+
 			<input type="hidden" id="subscribe-submit" name="subscribe-submit" value="1" />
+
 <?php
 }
 // register feedburner email widget
