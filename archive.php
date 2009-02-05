@@ -51,8 +51,8 @@
 
 	<div class="entry-footer">
 		<div id="new-old-navigation">
-			<?php if(next_posts_link('<p class="older">Older Entries </p>')) : ?><?php endif ; ?>
-			<?php if(previous_posts_link('<p class="newer">Newer Entries </p>')) : ?><?php endif ; ?>
+			<?php if(next_posts_link('<p class="older">'.__('Older Entries').' </p>')) : ?><?php endif ; ?>
+			<?php if(previous_posts_link('<p class="newer">'.__('Newer Entries').' </p>')) : ?><?php endif ; ?>
 		</div>
 	</div>
 

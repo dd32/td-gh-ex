@@ -4,10 +4,10 @@
 Theme Name: Auroral Theme
 Theme URI: http://www.web-strategy.jp/wp_theme/auroral_theme/
 Description: A high quality theme inspired from northern sky. 2 columns, widget available.Tested in Firefox2 and 3, Opera, Safari, IE6 and IE7. W3C XHTML valid. If you want to be your blog completely valid including post areas, plugin <a href="http://wordpress.org/extend/plugins/ps-disable-auto-formatting/">PS Disable Auto Formatting</a> might be your help. Available for version WorePress2.3 and after.
-Version: 1.11
+Version: 1.16
 Author: Prime Strategy Co.,Ltd.
 Author URI: http://www.web-strategy.jp/
-Tags: black, blue, two-columns, fixed-width, right-sidebar
+Tags: two-columns, black, fixed-width, blue, right-sidebar
 
 */
 
@@ -20,7 +20,7 @@ Tags: black, blue, two-columns, fixed-width, right-sidebar
 body {
 	margin: 0px;
 	padding: 0px;
-	font-family: 'Courier', Verdana, Arial, Sans-Serif;
+	font-family: "Courier New", Courier, mono, Fixed;
 	background: #555555;
 	color: #333333;
  }
@@ -225,6 +225,10 @@ acronym, abbr, span.caps
 	color: #FFFFFF;
 	text-decoration: none;
 }
+#footer #copyrights ,#footer #copyrights a{
+	color: #88A6C4;
+}
+
 h2.archivetitle {
 	background: url(images/archive_title.gif);
 	height: 41px;
@@ -251,7 +255,7 @@ h2.post-title {
 	color: #FFFFFF;
 	background: url(images/h_pagetitle.gif);
 	font-size: 1.1em;
-	padding: 9px;
+	padding: 9px 80px 9px 9px;
 }
 .post-title-meta {
 	text-align: right;
@@ -371,6 +375,17 @@ h2.post-title {
 	min-height: 40px;
 	padding: 30px 43px 20px 50px;
 	margin-bottom: 30px;
+}
+.entry blockquote cite {
+	background: #B5B5B5;
+	font-style: normal;
+	display: block;
+	padding: 3px 5px;
+	text-align: right;
+	margin-top: 10px;
+}
+.entry blockquote cite a {
+	text-decoration: underline;
 }
 .entry pre {
 	background-color: #fafafa;
@@ -545,12 +560,13 @@ img.alignleft {
 	background: url(images/sidebar_ul_ul_div.gif) no-repeat 0px bottom;
 	padding-bottom: 10px;
 	padding-right: 15px;
-	padding-left: 20px;
+	padding-left: 10px;
  }
 
 #sidebar ul ul ul, #sidebar ul ol {
 	margin: 0 0 0 10px;
 	background: url(none);
+	padding: 0px;
  }
 
 ol li, #sidebar ul ol li {

@@ -7,8 +7,8 @@
 <title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
 
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
-<link rel="alternate" type="application/rss+xml" title="<?php printf(__('%s RSS Feed', 'kubrick'), get_bloginfo('name')); ?>" href="<?php bloginfo('rss2_url'); ?>" />
-<link rel="alternate" type="application/atom+xml" title="<?php printf(__('%s Atom Feed', 'kubrick'), get_bloginfo('name')); ?>" href="<?php bloginfo('atom_url'); ?>" /> 
+<link rel="alternate" type="application/rss+xml" title="<?php printf(__('%s RSS Feed'), get_bloginfo('name')); ?>" href="<?php bloginfo('rss2_url'); ?>" />
+<link rel="alternate" type="application/atom+xml" title="<?php printf(__('%s Atom Feed'), get_bloginfo('name')); ?>" href="<?php bloginfo('atom_url'); ?>" /> 
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <link rev="made" href="http://www.web-strategy.jp/" />
 

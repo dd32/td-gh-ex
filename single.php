@@ -23,25 +23,25 @@
 
 						<?php } elseif (('open' == $post-> comment_status) && !('open' == $post->ping_status)) {
 							// Comments are open, Pings are not ?>
-							<?php _e('Pings Off.', 'kubrick'); ?>
+							<?php _e('Pings Off.', 'auroral'); ?>
 
 						<?php } elseif (!('open' == $post-> comment_status) && !('open' == $post->ping_status)) {
 							// Neither Comments, nor Pings are open ?>
-							<?php _e('Comments Off , Pings Off.', 'kubrick'); ?>
+							<?php _e('Comments Off , Pings Off.', 'auroral'); ?>
 
 						<?php } edit_post_link(__('Edit this entry', 'kubrick'),'','.'); ?></p>
 					</div>
 		<?php if(get_next_post() || get_previous_post()) : ?>
 					<div id="new-old-navigation">
-						<?php if(next_post_link('<p class="newer">Newer : %link </p>')) : ?><?php endif ; ?>
-						<?php if(previous_post_link('<p class="older">Older : %link </p>')) : ?><?php endif ; ?>
+						<?php if(next_post_link('<p class="newer">'.__('Newer :').' %link </p>')) : ?><?php endif ; ?>
+						<?php if(previous_post_link('<p class="older">'.__('Older :').' %link </p>')) : ?><?php endif ; ?>
 					</div>
 		<?php endif; ?>
 	<?php comments_template(); ?>
 
 	<?php endwhile; else: ?>
 
-		<p><?php _e('Sorry, no posts matched your criteria.', 'kubrick'); ?></p>
+		<p><?php _e('Sorry, no posts matched your criteria.', 'auroral'); ?></p>
 
 	<?php endif; ?>
 

@@ -1,286 +1,530 @@
-# WordPress Auroral Theme用日本語リソース (UTF-8) 
-# Japanese (UTF-8) translation for WordPress
-#
-# Copyright (c) 2009 Prime Strategy Co.,Ltd.
-#msgid ""
 msgid ""
 msgstr ""
-"Project-Id-Version: Auroral\n"
+"Project-Id-Version: Auroral Theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-23 22:32+0900\n"
+"POT-Creation-Date: 2009-02-05 11:18+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Yuji <yuji@prime-strategy.co.jp>\n"
-"Language-Team: Prime Strategy\n"
+"Language-Team: wp-ja <staff@prime-strategy.co.jp>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-KeywordsList: __\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: C:\\Users\\Public\\workspace\\kkkw\\experiment\\wordpress2\\wp-content\\themes\\auroral-theme\n"
+"X-Poedit-SearchPath-0: .\n"
 
-#: header.php:10
-#, php-format
-msgid "%s RSS Feed"
-msgstr "%s RSSフィード"
-
-#: header.php:11
-#, php-format
-msgid "%s Atom Feed"
-msgstr "%s Atomフィード"
-
-#: single.php:8
-#: index.php:31
-#: archive.php:33
-#: page.php:8
-#: search.php:14
-#, php-format
-msgid "Permanent Link to %s"
-msgstr "%sのパーマリンク"
-
-#: single.php:11
-#: index.php:34
-#: archive.php:36
-msgid "M"
-msgstr "n"
-
-#: single.php:12
-#: index.php:35
-#: archive.php:37
-msgid "d"
-msgstr "d"
-
-#: single.php:13
-#: index.php:18
-#: index.php:36
-#: archive.php:19
-#: archive.php:38
-msgid "Y"
-msgstr "Y"
-
-#: single.php:18
-#: index.php:41
-#: archive.php:43
-#: page.php:11
-msgid "Read the rest of this entry &raquo;"
-msgstr "この投稿の続きを読む &raquo;"
-
-#: single.php:19
-#: index.php:42
-#: archive.php:45
-#: page.php:14
-#: search.php:20
-msgid "Tags:"
-msgstr "タグ:"
-
-#: single.php:22
-msgid "Comments Off"
-msgstr "コメントOFF"
-
-#: single.php:32
-#: page.php:16
-msgid "Edit this entry"
-msgstr "このエントリーを編集する"
-
-#: index.php:10
 #: archive.php:11
-#, php-format
+#: index.php:10
+#, fuzzy, php-format
 msgid "Archive for the &#8216;%s&#8217; Category"
 msgstr "&#8216;%s&#8217; カテゴリーのアーカイブ"
 
-#: index.php:12
 #: archive.php:13
-#, php-format
+#: index.php:12
+#, fuzzy, php-format
 msgid "Posts Tagged &#8216;%s&#8217;"
 msgstr "&#8216;%s&#8217; タグのついている投稿"
 
-#: index.php:14
 #: archive.php:15
+#: index.php:14
+#, fuzzy
 msgid "F jS, Y"
-msgstr "Y年n月j日"
+msgstr "Y 年 n 月 j 日"
 
+#: archive.php:17
 #: index.php:16
 #: sidebar.php:35
-#: archive.php:17
+#, fuzzy
 msgid "F, Y"
-msgstr "Y年n月"
+msgstr "Y 年 n 月"
 
-#: index.php:43
+#: archive.php:19
+#: archive.php:38
+#: index.php:18
+#: index.php:36
+#: single.php:13
+#, fuzzy
+msgid "Y"
+msgstr "Y 年"
+
+#: archive.php:21
+#: index.php:20
+#, fuzzy
+msgid "Author Archive"
+msgstr "投稿者のアーカイブ"
+
+#: archive.php:23
+#: index.php:22
+#, fuzzy
+msgid "Blog Archives"
+msgstr "ブログアーカイブ"
+
+#: archive.php:33
+#: index.php:31
+#: links.php:14
+#: page.php:8
+#: search.php:14
+#: single.php:8
+#, fuzzy, php-format
+msgid "Permanent Link to %s"
+msgstr "%s のパーマリンク"
+
+#: archive.php:36
+#: index.php:34
+#: single.php:11
+msgid "M"
+msgstr ""
+
+#: archive.php:37
+#: index.php:35
+#: single.php:12
+msgid "d"
+msgstr ""
+
+#: archive.php:43
+#: index.php:41
+#: links.php:17
+#: page.php:11
+#: single.php:18
+#, fuzzy
+msgid "Read the rest of this entry &raquo;"
+msgstr "この投稿の続きを読む &raquo;"
+
+#: archive.php:45
+#: index.php:42
+#: links.php:24
+#: page.php:14
+#: search.php:20
+#: single.php:19
+#, fuzzy
+msgid "Tags:"
+msgstr "タグ:"
+
 #: archive.php:46
+#: index.php:43
 #: search.php:21
+#, fuzzy
 msgid "Edit"
 msgstr "編集"
 
-#: index.php:43
 #: archive.php:46
+#: index.php:43
 #: search.php:21
+#, fuzzy
 msgid "No Comments &#187;"
 msgstr "コメントはまだありません &#187;"
 
-#: index.php:43
 #: archive.php:46
+#: index.php:43
 #: search.php:21
+#, fuzzy
 msgid "1 Comment &#187;"
 msgstr "1 件のコメント &#187;"
 
-#: index.php:43
 #: archive.php:46
+#: index.php:43
 #: search.php:21
+#, fuzzy
 msgid "% Comments &#187;"
 msgstr "% 件のコメント &#187;"
 
-#: index.php:43
 #: archive.php:46
+#: index.php:43
 #: search.php:21
+#, fuzzy
 msgid "Comments Closed"
 msgstr "コメントは受け付けていません。"
 
-#: comments.php:16
-msgid "No Responses"
-msgstr "（0件）"
-
-#: comments.php:16
-msgid "One Response"
-msgstr "（1件）"
-
-#: comments.php:16
-msgid "% Responses"
-msgstr "（%件）"
-
-#: comments.php:53
-#, php-format
-msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
-msgstr "コメントを投稿するには<a href=\"%s\">ログイン</a>してください。"
-
-#: comments.php:60
-#, php-format
-msgid "Logged in as <a href=\"%1$s\">%2$s</a>."
-msgstr "<a href=\"%1$s\">%2$s</a> としてログイン中。"
-
-#: comments.php:75
-#, php-format
-msgid "<strong>XHTML:</strong> You can use these tags: <code>%s</code>"
-msgstr "<strong>XHTML:</strong> 次のタグを使用できます: <code>%s</code>"
-
-#: sidebar.php:29
-#, php-format
-msgid "You are currently browsing the archives for the %s category."
-msgstr "%s カテゴリーのアーカイブを表示しています。"
-
-#: sidebar.php:32
-#, php-format
-msgid "You are currently browsing the <a href=\"%1$s/\">%2$s</a> blog archives for the day %3$s."
-msgstr "<a href=\"%1$s\">%2$s</a> ブログの %3$s のアーカイブを表示しています。"
-
-#: sidebar.php:32
-msgid "l, F jS, Y"
-msgstr "Y年n月j日l"
-
-#: sidebar.php:35
-#, php-format
-msgid "You are currently browsing the <a href=\"%1$s/\">%2$s</a> blog archives for %3$s."
-msgstr "<a href=\"%1$s/\">%2$s</a> の %3$s のアーカイブを閲覧中です。"
-
-#: sidebar.php:38
-#, php-format
-msgid "You are currently browsing the <a href=\"%1$s/\">%2$s</a> blog archives for the year %3$s."
-msgstr "<a href=\"%1$s\">%2$s</a> ブログの %3$s 年のアーカイブを表示しています。"
-
-#: sidebar.php:41
-#, php-format
-msgid "You have searched the <a href=\"%1$s/\">%2$s</a> blog archives for <strong>&#8216;%3$s&#8217;</strong>. If you are unable to find anything in these search results, you can try one of these links."
-msgstr "<a href=\"%1$s/\">%2$s</a> のアーカイブ内で<strong>&#8216;%3$s&#8217;</strong>を探しました。お探しのものが見つからない場合は他のリンクを試してみてください。"
-
-#: sidebar.php:44
-#, php-format
-msgid "You are currently browsing the <a href=\"%1$s/\">%2$s</a> blog archives."
-msgstr "<a href=\"%1$s/\">%2$s</a> ブログのアーカイブを閲覧中です。"
-
-#: sidebar.php:50
-msgid "Pages"
-msgstr "ページ"
-
-#: sidebar.php:58
-msgid "Categories"
-msgstr "カテゴリー"
+#: archive.php:54
+#: index.php:51
+#, fuzzy
+msgid "Older Entries"
+msgstr "&laquo; 前ページへ"
 
 #: archive.php:55
-msgid "Older Entries</li>"
-msgstr "以前の投稿</li>"
+#: index.php:52
+#, fuzzy
+msgid "Newer Entries"
+msgstr "次ページへ &raquo;"
 
-#: archive.php:56
-msgid "Newer Entries</li>"
-msgstr "新しい投稿</li>"
-
-#: archive.php:64
-#, php-format
+#: archive.php:63
+#, fuzzy, php-format
 msgid "Sorry, but there aren't any posts in the %s category yet."
-msgstr "まだ%s カテゴリーには投稿がありません。"
+msgstr "%s カテゴリーに投稿はありません。"
 
-#: archive.php:66
+#: archive.php:65
+#, fuzzy
 msgid "Sorry, but there aren't any posts with this date."
 msgstr "この日付に投稿はありません。"
 
-#: archive.php:69
-#, php-format
+#: archive.php:68
+#, fuzzy, php-format
 msgid "Sorry, but there aren't any posts by %s yet."
-msgstr "%s からの投稿はまだありません。"
+msgstr "%s からの投稿はありません。"
 
-#: archive.php:71
+#: archive.php:70
+#, fuzzy
 msgid "No posts found."
 msgstr "投稿は見つかりませんでした。"
 
-#: page.php:13
-msgid "Pages:"
-msgstr "ページ:"
-
 #: comments-popup.php:6
-#, php-format
+#, fuzzy, php-format
 msgid "%1$s - Comments on %2$s"
 msgstr "%1$s - %2$s へのコメント"
 
+#: comments-popup.php:26
+#, fuzzy
+msgid "Comments"
+msgstr "コメント"
+
+#: comments-popup.php:28
+#, fuzzy
+msgid "<abbr title=\"Really Simple Syndication\">RSS</abbr> feed for comments on this post."
+msgstr "このコメント欄の <abbr title=\"Really Simple Syndication\">RSS</abbr> フィード"
+
 #: comments-popup.php:31
-#, php-format
+#, fuzzy, php-format
 msgid "The <abbr title=\"Universal Resource Locator\">URL</abbr> to TrackBack this entry is: <em>%s</em>"
 msgstr "この投稿へのトラックバック <acronym title=\"Universal Resource Locator\">URL</acronym>: <em>%s</em>"
 
 #: comments-popup.php:49
+#, fuzzy
 msgid "Comment"
 msgstr "コメント"
 
 #: comments-popup.php:49
+#, fuzzy
 msgid "Trackback"
 msgstr "トラックバック"
 
 #: comments-popup.php:49
+#, fuzzy
 msgid "Pingback"
 msgstr "ピンバック"
 
 #: comments-popup.php:49
-#, php-format
+#, fuzzy, php-format
 msgid "by %1$s &#8212; %2$s @ <a href=\"#comment-%3$s\">%4$s</a>"
 msgstr "&#8212; %2$s @ <a href=\"#comment-%3$s\">%4$s</a>: %1$s より"
 
+#: comments-popup.php:55
+#, fuzzy
+msgid "No comments yet."
+msgstr "コメントはまだありません。"
+
+#: comments-popup.php:59
+#, fuzzy
+msgid "Leave a comment"
+msgstr "コメントをどうぞ"
+
 #: comments-popup.php:60
-#, php-format
+#, fuzzy, php-format
 msgid "Line and paragraph breaks automatic, e-mail address never displayed, <acronym title=\"Hypertext Markup Language\">HTML</acronym> allowed: <code>%s</code>"
 msgstr "改行と段落タグは自動で挿入されます。メールアドレスは表示されません。利用可能な <acronym title=\"Hypertext Markup Language\">HTML</acronym> タグ: <code>%s</code>"
 
 #: comments-popup.php:64
-#, php-format
+#, fuzzy, php-format
 msgid "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of this account\">Log out &raquo;</a>"
 msgstr "<a href=\"%1$s\">%2$s</a> としてログイン中。<a href=\"%3$s\" title=\"このアカウントからログアウトする\">ログアウト &raquo;</a>"
 
+#: comments-popup.php:68
+#: comments.php:65
+#, fuzzy
+msgid "Name"
+msgstr "お名前"
+
+#: comments-popup.php:73
+#, fuzzy
+msgid "E-mail"
+msgstr "メールアドレス"
+
+#: comments-popup.php:78
+#, fuzzy
+msgid "<abbr title=\"Universal Resource Locator\">URL</abbr>"
+msgstr "<abbr title=\"Universal Resource Locator\">URL</abbr>"
+
+#: comments-popup.php:83
+#, fuzzy
+msgid "Your Comment"
+msgstr "コメント"
+
+#: comments-popup.php:91
+#, fuzzy
+msgid "Say It!"
+msgstr "送信する !"
+
+#: comments-popup.php:96
+#, fuzzy
+msgid "Sorry, the comment form is closed at this time."
+msgstr "コメントフォームは現在閉鎖中です。"
+
+#: comments-popup.php:101
+#, fuzzy
+msgid "Close this window."
+msgstr "このウインドウを閉じる。"
+
+#: comments-popup.php:107
+#: single.php:44
+#, fuzzy
+msgid "Sorry, no posts matched your criteria."
+msgstr "該当する投稿は見つかりませんでした。"
+
 #: comments-popup.php:111
-#, php-format
+#, fuzzy, php-format
 msgid "Powered by <a href=\"%s\" title=\"Powered by WordPress, state-of-the-art semantic personal publishing platform\"><strong>WordPress</strong></a>"
 msgstr "Powered by <a href=\"%s\" title=\"Powered by WordPress, state-of-the-art semantic personal publishing platform\"><strong>WordPress</strong></a>"
 
+#: comments.php:6
+#, fuzzy
+msgid "This post is password protected. Enter the password to view comments."
+msgstr "この投稿はパスワードで保護されています。コメントを閲覧するにはパスワードを入力してください。"
+
+#: comments.php:16
+#, fuzzy
+msgid "No Responses"
+msgstr "コメント / トラックバックはありません"
+
+#: comments.php:16
+#, fuzzy
+msgid "One Response"
+msgstr "コメント / トラックバック 1 件"
+
+#: comments.php:16
+#, fuzzy
+msgid "% Responses"
+msgstr "コメント / トラックバック % 件"
+
+#: comments.php:39
+#, fuzzy
+msgid "Comments are closed."
+msgstr "コメントは受け付けていません。"
+
+#: comments.php:53
+#, fuzzy, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "コメントを投稿するには<a href=\"%s\">ログイン</a>してください。"
+
+#: comments.php:60
+#, fuzzy, php-format
+msgid "Logged in as <a href=\"%1$s\">%2$s</a>."
+msgstr "<a href=\"%1$s\">%2$s</a> としてログイン中。"
+
+#: comments.php:60
+#, fuzzy
+msgid "Log out of this account"
+msgstr "このアカウントからログアウト"
+
+#: comments.php:60
+#, fuzzy
+msgid "Log out &raquo;"
+msgstr "ログアウト &raquo;"
+
+#: comments.php:65
+#: comments.php:68
+#, fuzzy
+msgid "(required)"
+msgstr " (必須)"
+
+#: comments.php:68
+#, fuzzy
+msgid "Mail (will not be published)"
+msgstr "メールアドレス (公開されません)"
+
+#: comments.php:71
+#, fuzzy
+msgid "Website"
+msgstr "ウェブサイト"
+
+#: comments.php:75
+#, fuzzy, php-format
+msgid "<strong>XHTML:</strong> You can use these tags: <code>%s</code>"
+msgstr "<strong>XHTML:</strong> 次のタグを使用できます: <code>%s</code>"
+
+#: footer.php:9
+msgid "CMS Developer Web"
+msgstr "CMSホームページ制作Web!"
+
+#: footer.php:12
+#, fuzzy
+msgid "Return to pagetop."
+msgstr "%s のパーマリンク"
+
+#: header.php:10
+#, fuzzy, php-format
+msgid "%s RSS Feed"
+msgstr "%s RSS フィード"
+
+#: header.php:11
+#, fuzzy, php-format
+msgid "%s Atom Feed"
+msgstr "%s Atom フィード"
+
+#: index.php:59
+#, fuzzy
+msgid "Not Found"
+msgstr "見つかりませんでした。"
+
+#: index.php:62
+msgid "Sorry, but you are looking for something that isn&#8217;t here.<br />Please try search or look inside categories."
+msgstr "お探しのページ/ファイルがありませんでした。<br />カテゴリー一覧か、検索フォームから探してみてください。"
+
+#: links.php:18
+#, fuzzy
+msgid "Links:"
+msgstr "リンク:"
+
+#: links.php:23
+#: page.php:13
+#, fuzzy
+msgid "Pages:"
+msgstr "ページ:"
+
+#: links.php:26
+#: page.php:16
+#: single.php:32
+#, fuzzy
+msgid "Edit this entry"
+msgstr "この投稿を編集 "
+
+#: search.php:7
+#, fuzzy
+msgid "Search Results"
+msgstr "検索結果"
+
 #: search.php:27
+#, fuzzy
 msgid "&laquo; Older Entries"
-msgstr "&laquo; 以前の投稿"
+msgstr "&laquo; 前ページへ"
 
 #: search.php:28
+#, fuzzy
 msgid "Newer Entries &raquo;"
-msgstr "新しい投稿 &raquo;"
+msgstr "次ページへ &raquo;"
+
+#: search.php:33
+#, fuzzy
+msgid "No posts found. Try a different search?"
+msgstr "見つかりませんでした。別の検索をしますか ?"
+
+#: searchform.php:2
+#, fuzzy
+msgid "Search for:"
+msgstr "検索:"
+
+#: searchform.php:4
+#, fuzzy
+msgid "Search"
+msgstr "検索"
+
+#: sidebar.php:18
+#, fuzzy
+msgid "Author"
+msgstr "作成者"
+
+#: sidebar.php:29
+#, fuzzy, php-format
+msgid "You are currently browsing the archives for the %s category."
+msgstr "%s カテゴリーのアーカイブを表示しています。"
+
+#: sidebar.php:32
+#, fuzzy, php-format
+msgid "You are currently browsing the <a href=\"%1$s/\">%2$s</a> blog archives for the day %3$s."
+msgstr "<a href=\"%1$s\">%2$s</a> ブログの %3$s のアーカイブを表示しています。"
+
+#: sidebar.php:32
+#, fuzzy
+msgid "l, F jS, Y"
+msgstr "Y 年 n 月 j 日 l"
+
+#: sidebar.php:35
+#, fuzzy, php-format
+msgid "You are currently browsing the <a href=\"%1$s/\">%2$s</a> blog archives for %3$s."
+msgstr "<a href=\"%1$s/\">%2$s</a> の %3$s のアーカイブを閲覧中です。"
+
+#: sidebar.php:38
+#, fuzzy, php-format
+msgid "You are currently browsing the <a href=\"%1$s/\">%2$s</a> blog archives for the year %3$s."
+msgstr "<a href=\"%1$s\">%2$s</a> ブログの %3$s 年のアーカイブを表示しています。"
+
+#: sidebar.php:41
+#, fuzzy, php-format
+msgid "You have searched the <a href=\"%1$s/\">%2$s</a> blog archives for <strong>&#8216;%3$s&#8217;</strong>. If you are unable to find anything in these search results, you can try one of these links."
+msgstr "<a href=\"%1$s/\">%2$s</a> のアーカイブ内で<strong>&#8216;%3$s&#8217;</strong>を探しました。お探しのものが見つからない場合は他のリンクを試してみてください。"
+
+#: sidebar.php:44
+#, fuzzy, php-format
+msgid "You are currently browsing the <a href=\"%1$s/\">%2$s</a> blog archives."
+msgstr "<a href=\"%1$s/\">%2$s</a> ブログのアーカイブを閲覧中です。"
+
+#: sidebar.php:50
+#, fuzzy
+msgid "Pages"
+msgstr "ページ"
+
+#: sidebar.php:52
+#, fuzzy
+msgid "Archives"
+msgstr "アーカイブ"
+
+#: sidebar.php:58
+#, fuzzy
+msgid "Categories"
+msgstr "カテゴリー"
+
+#: sidebar.php:63
+#, fuzzy
+msgid "Meta"
+msgstr "メタ情報"
+
+#: sidebar.php:67
+#, fuzzy
+msgid "This page validates as XHTML 1.0 Transitional"
+msgstr "このページが XHTML 1.0 Transitional に準拠しているか確認する"
+
+#: sidebar.php:67
+#, fuzzy
+msgid "Valid <abbr title=\"eXtensible HyperText Markup Language\">XHTML</abbr>"
+msgstr "Valid <abbr title=\"eXtensible HyperText Markup Language\">XHTML</abbr>"
+
+#: sidebar.php:68
+#, fuzzy
+msgid "XHTML Friends Network"
+msgstr "XHTML Friends Network"
+
+#: sidebar.php:68
+#, fuzzy
+msgid "XFN"
+msgstr "XFN"
+
+#: sidebar.php:69
+#, fuzzy
+msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
+msgstr "Powered by WordPress, state-of-the-art semantic personal publishing platform."
+
+#: single.php:22
+#, fuzzy
+msgid "Comments Off"
+msgstr "% 件のコメント &#187;"
+
+#: single.php:26
+msgid "Pings Off."
+msgstr "ピンの受け付け停止"
+
+#: single.php:30
+#, fuzzy
+msgid "Comments Off , Pings Off."
+msgstr "コメントはまだありません &#187;"
+
+#: single.php:36
+#, fuzzy
+msgid "Newer :"
+msgstr "次ページへ &raquo;"
+
+#: single.php:37
+#, fuzzy
+msgid "Older :"
+msgstr "&laquo; 前ページへ"
 
