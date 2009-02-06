@@ -2,10 +2,22 @@
 			<ul>
 			<?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar(1) ) : else : ?>
 				<li id="search" class="search">
-				<?php include(TEMPLATEPATH . '/searchform.php'); ?>
+				<?php get_search_form(); ?>
 				</li>
-
-				<?php wp_list_pages('title_li=<h2 class="sidebar-title">' . __( 'Pages', 'simplish' ) . '</h2>' ); ?>
+				
+				<li><h2 class="sidebar-title"><?php _e( 'Pages', 'simplish' ) ?></h2>
+				<?php
+				$args = array(
+						'echo' => true,
+						'link_before' => '',
+						'link_after' => '',
+						'menu_class' => 'pagenav',
+						'show_home' => '0',
+						'sort_column' => 'post_title',
+						);
+				wp_page_menu($args);
+				?>
+				</li>
 
 				<li id="categories"><h2 class="sidebar-title"><?php _e( 'Categories', 'simplish' ) ?></h2>
 					<ul>

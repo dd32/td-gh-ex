@@ -12,7 +12,7 @@
 			 * hentry^(head,meta)^.php, because it's a different layout.
 			 */
 			?>
-			<div id="article-<?php the_ID(); ?>" class="hentry">
+			<div id="article-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<h2 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 				<div class="entry-content">
 					<?php the_excerpt() ?>
@@ -29,7 +29,7 @@
 		<?php else : ?>
 
 			<h1 class="archive-title">No results for <span class="archive-subtitle"><?php the_search_query() ?></span></h1>
-			<?php include(TEMPLATEPATH . '/searchform.php'); ?>
+			<?php get_search_form(); ?>
 
 		<?php endif; ?>
 		

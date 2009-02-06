@@ -18,7 +18,17 @@ Template Name: Sitemap
 						<li id="all-pages">
 							<h3><?php _e( 'All Pages', 'simplish' ) ?></h3>
 							<ul>
-<?php wp_list_pages('title_li='); ?>
+<?php
+	$args = array(
+			'echo' => true,
+			'link_before' => '',
+			'link_after' => '',
+			'menu_class' => 'pagenav',
+			'show_home' => '1',
+			'sort_column' => 'post_title',
+			);
+	wp_page_menu($args);
+?>
 							</ul>
 						</li>
 						<li id="all-posts">
@@ -26,7 +36,7 @@ Template Name: Sitemap
 							<ul>
 <?php $post_archives = new wp_query('showposts=1000'); 
 while ( $post_archives->have_posts() ) : $post_archives->the_post(); ?>
-								<li class="hentry">
+								<li <?php post_class(); ?>>
 									<span class="entry-title"><a href="<?php the_permalink() ?>" title="<?php printf(__( 'Permalink to %s', 'simplish' ), wp_specialchars( get_the_title(), 1 ) ) ?>" rel="bookmark"><?php the_title(); ?></a></span>
 								</li>
 <?php endwhile; ?>

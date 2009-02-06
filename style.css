@@ -2,8 +2,8 @@
 THEME NAME: Simplish
 THEME URI: http://labs.utopian.net/blogs/simplish/
 DESCRIPTION: Simplish is a WordPress variant of the Scribbish theme for blogs.
-TAGS: two-columns, fixed-width, right-sidebar, threaded-comments, microformats, white, light
-VERSION: 2.1.4
+TAGS: two-columns, fixed-width, right-sidebar, threaded-comments, sticky-post, microformats, white, light
+VERSION: 2.1.5
 AUTHOR: <a href="http://labs.utopian.net">Utopian.net Labs</a>, <a href="http://pittcrew.net/geekblog/">K. Pitt</a>, <a href="http://quotedprintable.com">J. Hardy</a>
 AUTHOR URI:
 */
@@ -143,14 +143,14 @@ body{
 	margin: 1.2em 0;
 }
 #content ul, #content ol{
-	margin: 1em;
+	margin-left: 1em;
 	padding:0;
 }
 #content ul{
 	list-style-type: square;
 }
 #content li{
-	margin: 0 0 0 1em;
+	margin-left: 1em;
 	padding: 0;
 }
 #content dl dt{
@@ -180,35 +180,17 @@ body{
 	overflow: auto;
 	padding: 8px;
 }
-/* Tables - derived from http://blueprintcss.org. */
-table,tbody,tfoot,thead.tr,th,td{
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-weight: inherit;
-  font-style: inherit;
-  font-size: 100%;
-  font-family: inherit;
-  vertical-align: baseline;
-}
-#content table{
-	margin-bottom: 1.4em;
-	width: 85%;
-}
+/*
+ * Tables. From	Gesso, after Boilerplate.
+ */
+table { border-collapse: separate; border-spacing: 0; }
+table { margin-bottom: 1.4em; }
+th { border-bottom: 2px solid #ddd; font-weight: bold; }
+td { border-bottom: 1px solid #ddd; }
+th,td { padding: 4px 10px 4px 0; }
+tfoot { font-style: italic; }
+caption { background: #ffc; }
 #content th{
-	font-weight: bold;
-	background: #eee;
-}
-#content th,td{
-	padding: 4px 10px 4px 5px;
-}
-#content tr.even td{
-	background: #E5ECF9;
-}
-#content tfoot{
-	font-style: italic;
-}
-#content caption{
 	background: #eee;
 }
 #content .hentry{
@@ -256,7 +238,7 @@ table,tbody,tfoot,thead.tr,th,td{
 	clear: both;
 	font-size: .85em;
 	list-style-type: none;
-	margin: 0;
+	margin-left: 0;
 	padding: 5px;
 }
 #content .hentry ul.meta li{
@@ -351,10 +333,6 @@ table,tbody,tfoot,thead.tr,th,td{
 	padding: 3px;
 	width: 90%;
 }
-#content .comments li ul li {
-	margin-right: -12px;
-	margin-left: 10px;
-}
 #content .readmore{
 	font-style: italic;
 }
@@ -398,11 +376,11 @@ table,tbody,tfoot,thead.tr,th,td{
 }
 #sidebar ul li li li{
 	list-style-type: square;
-	margin:0px 0px 0px 1.5em;
+	margin-left: 1.5em;
 }
 #sidebar ul li li li li{
 	list-style-type: disc;
-	margin:0px 0px 0px 1.5em;
+	margin-left : 1.5em;
 }
 #sidebar em{
 	font-style: normal;
@@ -434,8 +412,6 @@ table,tbody,tfoot,thead.tr,th,td{
 #footer ul{
 	float: right;
 	list-style-type: none;
-	margin: 0;
-	padding: 0;
 	text-align: right;
 	width: 40%;
 }
@@ -571,9 +547,6 @@ div.entry-content div.gallery *{
 	letter-spacing: normal;
 	line-height: normal;
 }
-#sitemap-list ul ul, #sitemap-list ol ol{
-	margin: 0;
-}
 #sitemap-list #all-posts .hentry .entry-title a:link,
 #sitemap-list #all-posts .hentry .entry-title a:visited{
 	text-decoration: underline;
@@ -582,6 +555,9 @@ div.entry-content div.gallery *{
 #sitemap-list #all-posts .hentry .entry-title a:active{
 	background: #000 none repeat scroll 0 0;
 	color: #fff;
+}
+#sitemap-list ul ul, #sitemap-list ol ol{
+    margin-left:0;
 }
 
 /* Search template specifics. */
