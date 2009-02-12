@@ -2,7 +2,7 @@
 Theme Name: Baughxie
 Theme URI: http://www.switchroyale.com/?page_id=21
 Description: Baughxie is a glossy theme with a boxy feel and centered navigation. The theme is lightweight in size but still makes a visual impact on your WordPress blog.  Clean and simple would be a good description, yet it shows a little flair with glossy highlights. Baughxie is easy to customize with CSS and the Photoshop template is also available on www.switchroyale.com for download.
-Version: 1.0
+Version: 1.1
 Author: Switchroyale
 Author URI: http://www.switchroyale.com
 Tags: green, white, silver, light, two-columns, fixed-width, right-sidebar
@@ -65,16 +65,6 @@ body {
 	font-size: 12px;
 	color: #999999;
 	padding: 2px;
-}
-
-#header #searchsubmit {
-	height: 20px;
-	width: 20px;
-	border: none;
-	cursor: pointer;
-	background: url(images/searchsubmit.gif);
-	background-repeat: no-repeat;
-	display: none;
 }
 
 #navbar {
