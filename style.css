@@ -3,15 +3,8 @@
 /*
 Theme Name: Auroral Theme
 Theme URI: http://www.web-strategy.jp/wp_theme/auroral_theme/
-Description: A high quality theme inspired from northern sky. Perfect cross browser, support IE6 and IE7,Firefox2 and 3, Opera, Safari. W3C XHTML valid and SEO friendly. Available for version WorePress2.3 and higher.<br />
-Feature of the newest version 1.17 is..
-<ul>
-<li>Template for links(Bookmarks) page.</li>
-<li>Body background improved.</li>
-<li>Language file updated.</li>
-</ul>
-Version histories are <a href="http://www.web-strategy.jp/wp_theme/auroral_theme/#history">here</a>.
-Version: 1.17
+Description: A high quality FLASH theme inspired from northern sky. Perfect cross browser, support IE6 and IE7,Firefox2 and 3, Opera, Safari. W3C XHTML valid and SEO friendly. Available for version WorePress2.3 and higher. Contains beautiful auroral FLASH. Version histories are <a href="http://www.web-strategy.jp/wp_theme/auroral_theme/#history">here</a>.
+Version: 2.0
 Author: Prime Strategy Co.,Ltd.
 Author URI: http://www.web-strategy.jp/
 Tags: two-columns, black, fixed-width, blue, right-sidebar, dark
@@ -124,17 +117,29 @@ acronym, abbr, span.caps
 	background: url(images/header_img.jpg) no-repeat;
 	display: block;
 	height: 241px;
-	width: 1020px;
+	width: 1071px;
 	margin-right: auto;
 	margin-left: auto;
-	padding-right: 25px;
-	padding-left: 25px;
+	padding-right: 0px;
+	padding-left: 0px;
+	position: relative;
+	background-repeat: no-repeat;
  }
+
+#header object {
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:0;
+} 
+
 #header  #header_inside {
 	padding-top: 67px;
-	padding-left: 70px;
+	padding-left: 100px;
 	display: block;
 	height: 47px;
+	position:absolute;
+	z-index:5
 }
 #header_inside #site_title, #header_inside #site_title a {
 	font-size: 24px;
@@ -149,8 +154,10 @@ acronym, abbr, span.caps
 #header #page_list {
 	display: block;
 	height: 37px;
-	margin-top: 51px;
+	margin-top: 165px;
 	font-size: 0.8em;
+	position:absolute;
+	z-index:5;
 }
 #header #page_list ul {
 	list-style: none;

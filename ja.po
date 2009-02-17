@@ -13,8 +13,7 @@ msgstr ""
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-KeywordsList: __;_e\n"
-"X-Poedit-Basepath: C:\\Users\\Public\\workspace\\kkkw\\experiment\\wordpress2\\wp-content\\themes\\auroral-theme\n"
-"X-Poedit-SearchPath-0: .\n"
+
 
 #: archive.php:11
 #: index.php:10

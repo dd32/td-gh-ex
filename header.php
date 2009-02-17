@@ -30,6 +30,32 @@
 <div id="outside">
 	<div id="wrapper_page">
 		<div id="header" class="clearfix">
+			<object id="FlashID" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="1071" height="241">
+		  <param name="movie" value="<?php bloginfo('template_directory'); ?>/swf/auroral.swf" />
+		  <param name="quality" value="high" />
+		  <param name="wmode" value="opaque" />
+		  <param name="swfversion" value="6.0.65.0" />
+          <param name="wmode" value="transparent" />
+		  <!-- This message will display to download the latest version of Flash Player by using since Flash Player 6.0 or 6.5 with this parameter tag.If you do not want to display the message to users, delete the parameter tag. -->
+		  <param name="expressinstall" value="<?php bloginfo('template_directory'); ?>/Scripts/expressInstall.swf" />
+		  <!-- This object tag is only for browsers except IE. -->
+		  <!--[if !IE]>-->
+		  <object type="application/x-shockwave-flash" data="<?php bloginfo('template_directory'); ?>/swf/auroral.swf" width="1071" height="241">
+		    <!--<![endif]-->
+		    <param name="quality" value="high" />
+		    <param name="wmode" value="opaque" />
+		    <param name="swfversion" value="6.0.65.0" />
+		    <param name="expressinstall" value="<?php bloginfo('template_directory'); ?>/Scripts/expressInstall.swf" />
+            <param name="wmode" value="transparent" />
+		    <!-- Aalternative contents for using the version before Flash Player 6.0.  -->
+		    <div>
+		      <h4>This contents needs latest version of Flash Player.</h4>
+		      <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Adobe Flash Player ‚ðŽæ“¾" width="112" height="33" /></a></p>
+	        </div>
+		    <!--[if !IE]>-->
+	      </object>
+		  <!--<![endif]-->
+		  </object>
 			<div id="header_inside">
 				<h1 id="site_title"><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
 				<p class="description"><?php bloginfo('description'); ?></p>
