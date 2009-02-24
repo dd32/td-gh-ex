@@ -3,7 +3,7 @@
 		die ('Please do not load this page directly. Thanks!');
 	
 	if ( post_password_required() ) { ?>
-		<p class="nocomments"><?php _e('This post is password protected. Enter the password to view comments.'); ?></p> 
+		<p class="nocomments"><?php _e('This post is password protected. Enter the password to view comments.', 'auroral'); ?></p> 
 	<?php
 		return;
 	}
@@ -13,7 +13,7 @@
 
 
 <?php if ( have_comments() ) : ?>
-	<h3 class="comments"><?php comments_number(__('No Responses'), __('One Response'), __('% Responses'));?></h3>
+	<h3 class="comments"><?php comments_number(__('No Responses', 'auroral'), __('One Response', 'auroral'), __('% Responses', 'auroral'));?></h3>
 
 	<div class="navigation">
 		<div class="alignleft"><?php previous_comments_link() ?></div>
@@ -36,7 +36,7 @@
 
 	 <?php else : // comments are closed ?>
 		<!-- If comments are closed. -->
-		<p class="nocomments"><?php _e('Comments are closed.'); ?></p>
+		<p class="nocomments"><?php _e('Comments are closed.', 'auroral'); ?></p>
 
 	<?php endif; ?>
 <?php endif; ?>
@@ -50,29 +50,29 @@
 </div> 
 
 <?php if ( get_option('comment_registration') && !$user_ID ) : ?>
-<p><?php printf(__('You must be <a href="%s">logged in</a> to post a comment.'), get_option('siteurl') . '/wp-login.php?redirect_to=' . urlencode(get_permalink())); ?></p>
+<p><?php printf(__('You must be <a href="%s">logged in</a> to post a comment.', 'auroral'), get_option('siteurl') . '/wp-login.php?redirect_to=' . urlencode(get_permalink())); ?></p>
 <?php else : ?>
 
 <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
 
 <?php if ( $user_ID ) : ?>
 
-<p><?php printf(__('Logged in as <a href="%1$s">%2$s</a>.'), get_option('siteurl') . '/wp-admin/profile.php', $user_identity); ?> <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php _e('Log out of this account'); ?>"><?php _e('Log out &raquo;'); ?></a></p>
+<p><?php printf(__('Logged in as <a href="%1$s">%2$s</a>.', 'auroral'), get_option('siteurl') . '/wp-admin/profile.php', $user_identity); ?> <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php _e('Log out of this account', 'auroral'); ?>"><?php _e('Log out &raquo;', 'auroral'); ?></a></p>
 
 <?php else : ?>
 
 <p><input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" tabindex="1" <?php /* if ($req) echo "aria-required='true'"; */?> />
-<label for="author"><small><?php _e('Name'); ?> <?php if ($req) _e("(required)", "auroral"); ?></small></label></p>
+<label for="author"><small><?php _e('Name', 'auroral'); ?> <?php if ($req) _e("(required)", "auroral"); ?></small></label></p>
 
 <p><input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="22" tabindex="2" <?php /* if ($req) echo "aria-required='true'"; */?> />
-<label for="email"><small><?php _e('Mail (will not be published)'); ?> <?php if ($req) _e("(required)", "auroral"); ?></small></label></p>
+<label for="email"><small><?php _e('Mail (will not be published)', 'auroral'); ?> <?php if ($req) _e("(required)", "auroral"); ?></small></label></p>
 
 <p><input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="22" tabindex="3" />
-<label for="url"><small><?php _e('Website'); ?></small></label></p>
+<label for="url"><small><?php _e('Website', 'auroral'); ?></small></label></p>
 
 <?php endif; ?>
 
-<!--<p><small><?php printf(__('<strong>XHTML:</strong> You can use these tags: <code>%s</code>'), allowed_tags()); ?></small></p>-->
+<!--<p><small><?php printf(__('<strong>XHTML:</strong> You can use these tags: <code>%s</code>', 'auroral'), allowed_tags()); ?></small></p>-->
 
 <p><textarea name="comment" id="comment" cols="100%" rows="10" tabindex="4"></textarea></p>
 
@@ -92,7 +92,7 @@
 						<?php if ('open' == $post->ping_status) :
 							// Pings are Open ?>
 <div id="trackbackbox">
-<p>Trackback URL for this entry</p>
+<p><?php _e('Trackback URL for this entry', 'auroral'); ?></p>
 <input name="trackback_url" value="<?php trackback_url(true); ?>" readonly="readonly" id="trackback_url" onfocus="this.select()" type="text" />
 
 </div>

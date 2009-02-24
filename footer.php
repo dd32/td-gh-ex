@@ -9,7 +9,7 @@
 			<a href="http://www.web-strategy.jp/wp_theme/auroral_theme/">Auroral Theme</a> by <a href="http://www.web-strategy.jp/"><?php echo(__('CMS Developer Web','auroral')); ?></a>. | Powered by <a href="http://wordpress.org/">Wordress</a>.
 			</div>
 			
-			<div id="page-top-link" class="alignright"><a href="#outside" onclick="scrollup(); return false;"><?php _e('Return to pagetop.'); ?></a></div>
+			<div id="page-top-link" class="alignright"><a href="#outside" onclick="scrollup(); return false;"><?php _e('Return to pagetop.', 'auroral'); ?></a></div>
 		</div>
 	</div>
 </div>

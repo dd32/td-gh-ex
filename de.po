@@ -4,38 +4,38 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-02-24 19:35+0900\n"
 "PO-Revision-Date: \n"
-"Last-Translator: Yuji <staff@prime-strategy.co.jp>\n"
-"Language-Team: Prime Strategy <staff@prime-strategy.co.jp>\n"
+"Last-Translator: Yuji <yuji@prime-strategy.co.jp>\n"
+"Language-Team: prime strategy <staff@prime-strategy.co.jp>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Country: JAPAN\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-KeywordsList: __;_e\n"
-
+"X-Poedit-Language: German\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
 
 #: archive.php:11
 #: index.php:10
 #, php-format
 msgid "Archive for the &#8216;%s&#8217; Category"
-msgstr ""
+msgstr "Archiv f&uuml;r die Kategorie &#8222;%s&#8220;"
 
 #: archive.php:13
 #: index.php:12
 #, php-format
 msgid "Posts Tagged &#8216;%s&#8217;"
-msgstr ""
+msgstr "Artikel-Schlagworte: &#8222;%s&#8220;"
 
 #: archive.php:15
 #: index.php:14
 msgid "F jS, Y"
-msgstr ""
+msgstr "j. F Y"
 
 #: archive.php:17
 #: index.php:16
 #: sidebar.php:35
 msgid "F, Y"
-msgstr ""
+msgstr "F Y"
 
 #: archive.php:19
 #: archive.php:38
@@ -43,17 +43,17 @@ msgstr ""
 #: index.php:36
 #: single.php:13
 msgid "Y"
-msgstr ""
+msgstr "Y"
 
 #: archive.php:21
 #: index.php:20
 msgid "Author Archive"
-msgstr ""
+msgstr "Autorenarchiv"
 
 #: archive.php:23
 #: index.php:22
 msgid "Blog Archives"
-msgstr ""
+msgstr "Blogarchiv"
 
 #: archive.php:33
 #: index.php:31
@@ -63,13 +63,13 @@ msgstr ""
 #: single.php:8
 #, php-format
 msgid "Permanent Link to %s"
-msgstr ""
+msgstr "Permanent-Link zu %s"
 
 #: archive.php:34
 #: index.php:32
 #: single.php:9
 msgid "Posted by"
-msgstr ""
+msgstr "Ver&ouml;ffentlicht in %s"
 
 #: archive.php:36
 #: index.php:34
@@ -89,7 +89,7 @@ msgstr ""
 #: page.php:11
 #: single.php:18
 msgid "Read the rest of this entry &raquo;"
-msgstr ""
+msgstr "Diesen Beitrag weiterlesen &raquo;"
 
 #: archive.php:45
 #: index.php:42
@@ -98,217 +98,217 @@ msgstr ""
 #: search.php:20
 #: single.php:19
 msgid "Tags:"
-msgstr ""
+msgstr "Schlagworte:"
 
 #: archive.php:46
 #: index.php:43
 #: search.php:21
 msgid "Edit"
-msgstr ""
+msgstr "Bearbeiten"
 
 #: archive.php:46
 #: index.php:43
 #: search.php:21
 msgid "No Comments &#187;"
-msgstr ""
+msgstr "Keine Kommentare &#187;"
 
 #: archive.php:46
 #: index.php:43
 #: search.php:21
 msgid "1 Comment &#187;"
-msgstr ""
+msgstr "1 Kommentar &#187;"
 
 #: archive.php:46
 #: index.php:43
 #: search.php:21
 msgid "% Comments &#187;"
-msgstr ""
+msgstr "% Kommentare &#187;"
 
 #: archive.php:46
 #: index.php:43
 #: search.php:21
 msgid "Comments Closed"
-msgstr ""
+msgstr "Kommentare geschlossen"
 
 #: archive.php:54
 #: index.php:51
 msgid "Older Entries"
-msgstr ""
+msgstr "&laquo; &Auml;ltere Eintr&auml;ge"
 
 #: archive.php:55
 #: index.php:52
 msgid "Newer Entries"
-msgstr ""
+msgstr "Neuere Eintr&auml;ge &raquo;"
 
 #: archive.php:63
 #, php-format
 msgid "Sorry, but there aren't any posts in the %s category yet."
-msgstr ""
+msgstr "Es gibt noch keine Artikel in der Kategorie %s."
 
 #: archive.php:65
 msgid "Sorry, but there aren't any posts with this date."
-msgstr ""
+msgstr "Es gibt keine Artikel mit diesem Datum."
 
 #: archive.php:68
 #, php-format
 msgid "Sorry, but there aren't any posts by %s yet."
-msgstr ""
+msgstr "Es gibt noch keine Artikel von %s."
 
 #: archive.php:70
 msgid "No posts found."
-msgstr ""
+msgstr "Keine Artikel gefunden."
 
 #: comments-popup.php:6
 #, php-format
 msgid "%1$s - Comments on %2$s"
-msgstr ""
+msgstr "%1$s - Kommentare zu %2$s"
 
 #: comments-popup.php:26
 msgid "Comments"
-msgstr ""
+msgstr "Kommentare"
 
 #: comments-popup.php:28
 msgid "<abbr title=\"Really Simple Syndication\">RSS</abbr> feed for comments on this post."
-msgstr ""
+msgstr "<abbr title=\"Really Simple Syndication\">RSS</abbr>-Feed f&uuml;r Kommentare zu diesem Artikel."
 
 #: comments-popup.php:31
 #, php-format
 msgid "The <abbr title=\"Universal Resource Locator\">URL</abbr> to TrackBack this entry is: <em>%s</em>"
-msgstr ""
+msgstr "Die Trackback-<abbr title=\"Universal Resource Locator\">URL</abbr> zu diesem Artikel ist: <em>%s</em>"
 
 #: comments-popup.php:49
 msgid "Comment"
-msgstr ""
+msgstr "Kommentar"
 
 #: comments-popup.php:49
 msgid "Trackback"
-msgstr ""
+msgstr "Trackback"
 
 #: comments-popup.php:49
 msgid "Pingback"
-msgstr ""
+msgstr "Pingback"
 
 #: comments-popup.php:49
 #, php-format
 msgid "by %1$s &#8212; %2$s @ <a href=\"#comment-%3$s\">%4$s</a>"
-msgstr ""
+msgstr "von %1$s &#8212; %2$s um <a href=\"#comment-%3$s\">%4$s Uhr</a>"
 
 #: comments-popup.php:55
 msgid "No comments yet."
-msgstr ""
+msgstr "Noch keine Kommentare."
 
 #: comments-popup.php:59
 msgid "Leave a comment"
-msgstr ""
+msgstr "Kommentieren"
 
 #: comments-popup.php:60
 #, php-format
 msgid "Line and paragraph breaks automatic, e-mail address never displayed, <acronym title=\"Hypertext Markup Language\">HTML</acronym> allowed: <code>%s</code>"
-msgstr ""
+msgstr "Zeilen- und Absatzumbr&uuml;che werden automatisch eingef&uuml;gt, Ihre E-Mail wird nicht angezeigt.Erlaubtes <acronym title=\"Hypertext Markup Language\">HTML</acronym>:"
 
 #: comments-popup.php:64
 #, php-format
 msgid "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of this account\">Log out &raquo;</a>"
-msgstr ""
+msgstr "Angemeldet als <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\">Abmelden &raquo;</a>"
 
 #: comments-popup.php:68
 #: comments.php:65
 msgid "Name"
-msgstr ""
+msgstr "Name"
 
 #: comments-popup.php:73
 msgid "E-mail"
-msgstr ""
+msgstr "E-Mail"
 
 #: comments-popup.php:78
 msgid "<abbr title=\"Universal Resource Locator\">URL</abbr>"
-msgstr ""
+msgstr "<abbr title=\"Universal Resource Locator\">URL</abbr>"
 
 #: comments-popup.php:83
 msgid "Your Comment"
-msgstr ""
+msgstr "Ihr Kommentar"
 
 #: comments-popup.php:91
 msgid "Say It!"
-msgstr ""
+msgstr "Senden"
 
 #: comments-popup.php:96
 msgid "Sorry, the comment form is closed at this time."
-msgstr ""
+msgstr "Kommentieren ist momentan leider nicht m&ouml;glich."
 
 #: comments-popup.php:101
 msgid "Close this window."
-msgstr ""
+msgstr "Fenster schlie&szlig;en."
 
 #: comments-popup.php:107
 #: single.php:44
 msgid "Sorry, no posts matched your criteria."
-msgstr ""
+msgstr "Leider wurden keine Artikel gefunden, die Ihren Kriterien entsprechen."
 
 #: comments-popup.php:111
 #, php-format
 msgid "Powered by <a href=\"%s\" title=\"Powered by WordPress, state-of-the-art semantic personal publishing platform\"><strong>WordPress</strong></a>"
-msgstr ""
+msgstr "<a href=\"%s\" title=\"WordPress, die f&uuml;hrende Weblog-Anwendung\"><strong>WordPress</strong></a>"
 
 #: comments.php:6
 msgid "This post is password protected. Enter the password to view comments."
-msgstr ""
+msgstr "Dieser Beitrag ist passwortgesch&uuml;tzt. Bitte geben Sie das Passwort ein, um Kommentare lesen zu k&ouml;nnen."
 
 #: comments.php:16
 msgid "No Responses"
-msgstr ""
+msgstr "Keine Kommentare"
 
 #: comments.php:16
 msgid "One Response"
-msgstr ""
+msgstr "1 Kommentar"
 
 #: comments.php:16
 msgid "% Responses"
-msgstr ""
+msgstr "% Kommentare"
 
 #: comments.php:39
 msgid "Comments are closed."
-msgstr ""
+msgstr "Kommentieren ist momentan nicht m&ouml;glich."
 
 #: comments.php:53
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
-msgstr ""
+msgstr "Sie m&uuml;ssen <a href=\"%s\">angemeldet</a> sein, um kommentieren zu k&ouml;nnen."
 
 #: comments.php:60
 #, php-format
 msgid "Logged in as <a href=\"%1$s\">%2$s</a>."
-msgstr ""
+msgstr "Angemeldet als <a href=\"%1$s\">%2$s</a>."
 
 #: comments.php:60
 msgid "Log out of this account"
-msgstr ""
+msgstr "Jetzt abmelden"
 
 #: comments.php:60
 msgid "Log out &raquo;"
-msgstr ""
+msgstr "Abmelden &raquo;"
 
 #: comments.php:65
 #: comments.php:68
 msgid "(required)"
-msgstr ""
+msgstr "(ben&ouml;tigt)"
 
 #: comments.php:68
 msgid "Mail (will not be published)"
-msgstr ""
+msgstr "E-Mail (wird nicht ver&ouml;ffentlicht)"
 
 #: comments.php:71
 msgid "Website"
-msgstr ""
+msgstr "Website"
 
 #: comments.php:75
 #, php-format
 msgid "<strong>XHTML:</strong> You can use these tags: <code>%s</code>"
-msgstr ""
+msgstr "<strong>XHTML:</strong> Sie k&ouml;nnen folgende Elemente nutzen: <code>%s</code>"
 
 #: comments.php:95
 msgid "Trackback URL for this entry"
-msgstr ""
+msgstr "Die Trackback-<abbr title=\"Universal Resource Locator\">URL</abbr> zu diesem Artikel"
 
 #: footer.php:9
 msgid "CMS Developer Web"
@@ -316,156 +316,156 @@ msgstr ""
 
 #: footer.php:12
 msgid "Return to pagetop."
-msgstr ""
+msgstr "Return to pagetop."
 
 #: header.php:10
 #, php-format
 msgid "%s RSS Feed"
-msgstr ""
+msgstr "RSS-Feed f&uuml;r %s"
 
 #: header.php:11
 #, php-format
 msgid "%s Atom Feed"
-msgstr ""
+msgstr "%s Atom-Feed"
 
 #: index.php:59
 msgid "Not Found"
-msgstr ""
+msgstr "Nicht gefunden"
 
 #: index.php:62
 msgid "Sorry, but you are looking for something that isn&#8217;t here."
-msgstr ""
+msgstr "Es konnten leider keine passenden Inhalte gefunden werden."
 
 #: links.php:18
 msgid "Links:"
-msgstr ""
+msgstr "Links:"
 
 #: links.php:23
 #: page.php:13
 msgid "Pages:"
-msgstr ""
+msgstr "Seiten:"
 
 #: links.php:26
 #: page.php:16
 #: single.php:32
 msgid "Edit this entry"
-msgstr ""
+msgstr "Diesen Eintrag bearbeiten"
 
 #: search.php:7
 msgid "Search Results"
-msgstr ""
+msgstr "Suchergebnisse"
 
 #: search.php:27
 msgid "&laquo; Older Entries"
-msgstr ""
+msgstr "&laquo; &Auml;ltere Eintr&auml;ge"
 
 #: search.php:28
 msgid "Newer Entries &raquo;"
-msgstr ""
+msgstr "Neuere Eintr&auml;ge &raquo;"
 
 #: search.php:33
 msgid "No posts found. Try a different search?"
-msgstr ""
+msgstr "Ihre Suche ergab keine Treffer. M&ouml;chten Sie eine neue Suche starten?"
 
 #: searchform.php:2
 msgid "Search for:"
-msgstr ""
+msgstr "Suchen nach:"
 
 #: searchform.php:4
 msgid "Search"
-msgstr ""
+msgstr "Suchen"
 
 #: sidebar.php:18
 msgid "Author"
-msgstr ""
+msgstr "Autor"
 
 #: sidebar.php:29
 #, php-format
 msgid "You are currently browsing the archives for the %s category."
-msgstr ""
+msgstr "Sie sind momentan im Archiv der Kategorie %s."
 
 #: sidebar.php:32
 #, php-format
 msgid "You are currently browsing the <a href=\"%1$s/\">%2$s</a> blog archives for the day %3$s."
-msgstr ""
+msgstr "Sie sind momentan im Blogarchiv f&uuml;r den %3$s von <a href=\"%1$s/\">%2$s</a>."
 
 #: sidebar.php:32
 msgid "l, F jS, Y"
-msgstr ""
+msgstr "l, j. F Y"
 
 #: sidebar.php:35
 #, php-format
 msgid "You are currently browsing the <a href=\"%1$s/\">%2$s</a> blog archives for %3$s."
-msgstr ""
+msgstr "Sie sind momentan im Blogarchiv f&uuml;r %3$s von <a href=\"%1$s/\">%2$s</a>."
 
 #: sidebar.php:38
 #, php-format
 msgid "You are currently browsing the <a href=\"%1$s/\">%2$s</a> blog archives for the year %3$s."
-msgstr ""
+msgstr "Sie sind momentan im Blogarchiv f&uuml;r das Jahr %3$s von <a href=\"%1$s/\">%2$s</a>."
 
 #: sidebar.php:41
 #, php-format
 msgid "You have searched the <a href=\"%1$s/\">%2$s</a> blog archives for <strong>&#8216;%3$s&#8217;</strong>. If you are unable to find anything in these search results, you can try one of these links."
-msgstr ""
+msgstr "Sie haben im Blogarchiv von <a href=\"%1$s/\">%2$s</a> nach <strong>&#8222;%3$s&#8220;</strong> gesucht. Falls Sie in den Suchergebnissen nicht f&uuml;ndig werden, helfen Ihnen m&ouml;glicherweise die folgenden Links."
 
 #: sidebar.php:44
 #, php-format
 msgid "You are currently browsing the <a href=\"%1$s/\">%2$s</a> blog archives."
-msgstr ""
+msgstr "Sie sind momentan im Blogarchiv von <a href=\"%1$s/\">%2$s</a>."
 
 #: sidebar.php:50
 msgid "Pages"
-msgstr ""
+msgstr "Seiten"
 
 #: sidebar.php:52
 msgid "Archives"
-msgstr ""
+msgstr "Archive"
 
 #: sidebar.php:58
 msgid "Categories"
-msgstr ""
+msgstr "Kategorien"
 
 #: sidebar.php:63
 msgid "Meta"
-msgstr ""
+msgstr "Meta"
 
 #: sidebar.php:67
 msgid "This page validates as XHTML 1.0 Transitional"
-msgstr ""
+msgstr "Diese Seite ist valides XHTML 1.0 Transitional"
 
 #: sidebar.php:67
 msgid "Valid <abbr title=\"eXtensible HyperText Markup Language\">XHTML</abbr>"
-msgstr ""
+msgstr "Valides <abbr title=\"eXtensible HyperText Markup Language\">XHTML</abbr>"
 
 #: sidebar.php:68
 msgid "XHTML Friends Network"
-msgstr ""
+msgstr "XHTML Friends Network"
 
 #: sidebar.php:68
 msgid "XFN"
-msgstr ""
+msgstr "XFN"
 
 #: sidebar.php:69
 msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
-msgstr ""
+msgstr "L&auml;uft mit WordPress, der f&uuml;hrenden Weblog-Anwendung."
 
 #: single.php:22
 msgid "Comments Off"
-msgstr ""
+msgstr "% Kommentare &#187;"
 
 #: single.php:26
 msgid "You can skip to the end and leave a response. Pinging is currently not allowed."
-msgstr ""
+msgstr "Sie k&ouml;nnen einen <a href=\"#respond\">Kommentar hinterlassen</a>, Pingbacks/Trackbacks sind momentan deaktiviert."
 
 #: single.php:30
 msgid "Comments Off , Pings Off."
-msgstr ""
+msgstr "Keine Kommentare &#187;"
 
 #: single.php:36
 msgid "Newer :"
-msgstr ""
+msgstr "Neuere Eintr&auml;ge &raquo;"
 
 #: single.php:37
 msgid "Older :"
-msgstr ""
+msgstr "&laquo; &Auml;ltere Eintr&auml;ge"
 
