@@ -1,0 +1,348 @@
+# translation of sr_RS.po to Serbian
+# Aleksandar Urošević <urke@users.sourceforge.net>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: sr_RS\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-03 18:03+0100\n"
+"PO-Revision-Date: 2009-03-03 18:06+0100\n"
+"Last-Translator: Aleksandar Urošević <urke@users.sourceforge.net>\n"
+"Language-Team: Serbian <gnom@prevod.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-Language: Serbian\n"
+"X-Poedit-Country: SERBIA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;__ngettext_noop:1,2;_c\n"
+"X-Poedit-Basepath: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: search.php:16 archive.php:38 comments.php:20 functions.php:46
+#, php-format
+msgid "% comments"
+msgstr "% коментара"
+
+#: functions.php:91
+msgid "%B %d, %Y"
+msgstr "%d.%m.%Y."
+
+#: header.php:12
+#, php-format
+msgid "%s Atom Feed"
+msgstr "%s Atom"
+
+#: header.php:11
+#, php-format
+msgid "%s RSS 2.0"
+msgstr "%s RSS 2.0"
+
+#: comments.php:66 comments.php:69
+msgid "(required)"
+msgstr "(обавезно)"
+
+#: search.php:16 archive.php:38 functions.php:46
+msgid "1 comment"
+msgstr "један коментар"
+
+#: page.php:23 single.php:19
+msgid "<strong>Tags:</strong> "
+msgstr "<strong>Ознаке:</strong> "
+
+#: comments.php:76
+#, php-format
+msgid "<strong>XHTML:</strong> You can use these tags:<br /> <code>%s</code>"
+msgstr ""
+"<strong>XHTML:</strong> Приликом писања коментара можете користити следеће "
+"тагове за форматирање текста: <br /><code>%s</code>"
+
+#: footer.php:10
+msgid "Aleksandar Urosevic"
+msgstr "Урошевић Александра"
+
+#: sidebar.php:10
+msgid "Archive"
+msgstr "Архива"
+
+#: archive.php:11
+#, php-format
+msgid "Archive for the &#8216;%s&#8217; Category"
+msgstr "Архива категорије „%s“"
+
+#: archives.php:20
+msgid "Archives by Categories:"
+msgstr "Архива по категоријама:"
+
+#: archives.php:13
+msgid "Archives by Month:"
+msgstr "Архива по месецима:"
+
+#: archive.php:26
+msgid "Author Archive"
+msgstr "Архива аутора"
+
+#: archive.php:29
+msgid "Blog Archives"
+msgstr "Архива блога"
+
+#: functions.php:29
+msgid "Bloggers"
+msgstr "Блогери"
+
+#: sidebar.php:17
+msgid "Categories"
+msgstr "Категорије"
+
+#: page.php:22 single.php:18
+msgid "Categories:"
+msgstr "Категорије:"
+
+#: footer.php:9
+msgid "Comments (RSS)"
+msgstr "Коментари (РСС)"
+
+#: functions.php:48
+msgid "Comments Off"
+msgstr "Забрањено коментарисање"
+
+#: search.php:22 index.php:18 index.php:33 archive.php:44
+msgid "Continue reading..."
+msgstr "Даље..."
+
+#: searchform.php:1
+msgid "Enter text to search for..."
+msgstr "Унесите текст за претрагу..."
+
+#: footer.php:9
+msgid "Entries (RSS)"
+msgstr "Уноси (РСС)"
+
+#: index.php:53
+msgid "Error: 404"
+msgstr "Грешка: Непостојећа страна (404)"
+
+#: index.php:11 index.php:26 page.php:21 archive.php:17 single.php:17
+#: comments.php:30
+msgid "F jS, Y"
+msgstr "j. F Y."
+
+#: archive.php:20
+msgid "F, Y"
+msgstr "F Y."
+
+#: functions.php:36
+msgid "Friends"
+msgstr "Пријатељи"
+
+#: page.php:21 single.php:17
+msgid "G:i"
+msgstr "G:i"
+
+#: single.php:28
+msgid "Go to next post"
+msgstr "Прелазак на следећи запис"
+
+#: single.php:28
+msgid "Go to previous post"
+msgstr "Прелазак на претходни запис"
+
+#: header.php:39
+msgid "Home"
+msgstr "Насловна"
+
+#: comments.php:55
+msgid "Leave a comment"
+msgstr "Изразите своје мишљење поводом овог записа"
+
+#: search.php:29 index.php:47 archive.php:52
+msgid "List older posts"
+msgstr "Погледајте списак старијих записа"
+
+#: search.php:29 index.php:47 archive.php:52
+msgid "List recent posts"
+msgstr "Погледајте списак новијих записа"
+
+#: comments.php:63
+msgid "Log out"
+msgstr "Одјава"
+
+#: comments.php:63
+msgid "Log out of this account"
+msgstr "Одјавите се са овог налога"
+
+#: comments.php:63
+msgid "Logged in as"
+msgstr "Пријављени сте као"
+
+#: comments.php:69
+msgid "Mail (will not be published)"
+msgstr "Е-пошта (неће бити објављена)"
+
+#: sidebar.php:26
+msgid "Meta"
+msgstr "Мета"
+
+#: comments.php:66
+msgid "Name"
+msgstr "Име"
+
+#: search.php:29 index.php:47 archive.php:52
+msgid "Newer posts"
+msgstr "Новији записи"
+
+#: search.php:16 archive.php:38 comments.php:20 functions.php:46
+msgid "No comments"
+msgstr "без коментара"
+
+#: archive.php:64
+msgid "No posts found."
+msgstr "Записи нису пронађени."
+
+#: search.php:35
+msgid "No posts found. Try a different search?"
+msgstr "Није пронађен ни један запис. Покушајте да преформулишете кључне речи."
+
+#: search.php:29 index.php:47 archive.php:52
+msgid "Older posts"
+msgstr "Претходни записи"
+
+#: comments.php:20
+msgid "One comment"
+msgstr "један коментар"
+
+#: sidebar.php:6
+msgid "Pages"
+msgstr "Стране"
+
+#: single.php:13
+msgid "Pages:"
+msgstr "Стране:"
+
+#: search.php:18 search.php:22 index.php:14 index.php:18 index.php:29
+#: index.php:33 archive.php:40 archive.php:44
+msgid "Permanent link to "
+msgstr "Директна веза на "
+
+#: archive.php:14
+#, php-format
+msgid "Posts Tagged &#8216;%s&#8217;"
+msgstr "Чланци са ознаком „%s“"
+
+#: functions.php:15
+msgid "Projects"
+msgstr "Пројекти"
+
+#: footer.php:10
+msgid "Proudly powered by"
+msgstr "Са поносом покреће"
+
+#: page.php:21 single.php:17
+msgid "Published:"
+msgstr "Објављено:"
+
+#: searchform.php:1
+msgid "Search"
+msgstr "Тражи"
+
+#: search.php:9
+msgid "Search Results:"
+msgstr "Резултати претраге:"
+
+#: functions.php:91
+#, php-format
+msgid "Since %s published %s posts and received %s comments."
+msgstr "Од %s објављено %s записа и %s коментара."
+
+#: functions.php:22
+msgid "Social Networks"
+msgstr "Друштвене мреже"
+
+#: archive.php:62
+#, php-format
+msgid "Sorry, but there aren't any posts by %s yet."
+msgstr "Опростите, %s још увек није објавио ни један запис."
+
+#: archive.php:57
+#, php-format
+msgid "Sorry, but there aren't any posts in the %s category yet."
+msgstr "Опростите, у категорији „%s“ још увек нема записа."
+
+#: archive.php:59
+msgid "Sorry, but there aren't any posts with this date."
+msgstr "Опростите, траженог дана није објављен ни један запис."
+
+#: index.php:54 page.php:35 single.php:38
+msgid "Sorry, no posts matched your criteria."
+msgstr "Опростите, задатом критеријуму не одговара ни један запис."
+
+#: comments.php:80
+msgid "Submit Comment"
+msgstr "Сачувај коментар!"
+
+#: page.php:14
+msgid "Subpages"
+msgstr "Подстране које припадају овој страни"
+
+#: comments.php:9
+msgid "This post is password protected. Enter the password to view comments."
+msgstr "Овај запис је заштићен лозинком. Унесите лозинку да би видели коментаре."
+
+#: footer.php:10
+msgid "Valid"
+msgstr "Валидан"
+
+#: comments.php:72
+msgid "Website"
+msgstr "Веб страна"
+
+#: archive.php:23
+msgid "Y"
+msgstr "Y"
+
+#: comments.php:58
+msgid "You must be "
+msgstr "Морате бити"
+
+#: comments.php:74
+msgid "Your comment"
+msgstr "Ваш коментар"
+
+#: comments.php:33
+msgid "Your comment is awaiting moderation."
+msgstr "Ваш коментар је задржан за проверу."
+
+#: page.php:26 single.php:22
+msgid "[ Edit this entry ]"
+msgstr "[ уреди ]"
+
+#: footer.php:9 footer.php:10
+msgid "and"
+msgstr "и"
+
+#: footer.php:10
+msgid "and theme"
+msgstr "са темом"
+
+#: page.php:21 single.php:17 comments.php:30
+msgid "at"
+msgstr "у"
+
+#: footer.php:10
+msgid "by"
+msgstr "аутора"
+
+#: comments.php:30
+msgid "edit"
+msgstr "уреди"
+
+#: comments.php:58
+msgid "logged in</a> to post a comment."
+msgstr "пријављени</a> како би оставили коментар."
+
+#: comments.php:20
+#, php-format
+msgid "to &#8220;%s&#8221;"
+msgstr "на „%s“"
+
