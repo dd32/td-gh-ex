@@ -12,7 +12,7 @@
 
 <?php if ( have_comments() ) : ?>
 <?php if ( ! empty($comments_by_type['comment']) ) : ?>
-	<h3 id="comments"><?php comments_number('No Responses', 'One Response', '% Responses' );?> to &#8220;<?php the_title(); ?>&#8221;</h3>
+	<h3 id="comments"><?php echo fb_comment_type_count('comment'); ?> to &#8220;<?php the_title(); ?>&#8221;</h3>
 
 	<div class="navigation">
 		<div class="alignleft"><?php previous_comments_link() ?></div>
@@ -31,7 +31,7 @@
 <?php endif; ?>
 
 <?php if ( ! empty($comments_by_type['pings']) ) : ?>
-<h3 id="pings"><?php _e('Trackbacks/Pingbacks' );?></h3>
+<h3 id="pings"><?php echo fb_comment_type_count('pings'); ?> <?php _e('Trackbacks/Pingbacks' );?></h3>
 
 <ol class="trackbacklist">
 <?php wp_list_comments('type=pings&callback=list_pings'); ?>

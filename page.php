@@ -15,6 +15,9 @@
   <?php endwhile; endif; ?>
   <?php edit_post_link(__('Edit this entry.','ayumi'), '<p>', '</p>'); ?>
 
+	<?php comments_template('', true); ?>
+
+
 </div>
 </div>
 </div>
