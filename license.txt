@@ -1,9 +1,15 @@
-WPThemerz.com License and Terms
+WordPress Theme provided by WPThemerz.com
+    Copyright (C) 2009  WPThemerz.com. email: suport@wpthemerz.com
 
-1. By purchasing or downloading anything from WPThemerz.com you agree to not hold WPThemerz.com, it's owner or employees responsible for any damages resulting from your purchase or download. 
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
-2. Downloaded free/paid content from WPThemerz.com is non-refundable/non-returnable.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
 
-3. By downloading any free themes from WPThemerz.com you agree to NOT alter the link back to WPThemerz.com found in the footer of every theme. Footers must be kept as-is. Failure to comply with this demand is a copyright violation and violators be prosecuted. 
-
-copyright 2009. WPThemerz.com
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
