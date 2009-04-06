@@ -21,8 +21,7 @@
 				?>
 			</div>
       <div class="credits">
-				<p>This theme was designed by <a href="http://www.chris-wallace.com">Chris Wallace</a> and is licensed under the <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a>.</p>
-				<p>Check out his cool <a href="http://www.chris-wallace.com/category/wordpress-themes/">WordPress Themes</a>. Released by <a href="http://www.sixrevisions.com">Six Revisions</a> in the year of the rat.</p>
+				<p>WordPress Theme designed by <a href="http://www.chris-wallace.com">Chris Wallace</a>.</p>
 				<p>
     			<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10-blue" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
   			</p>
