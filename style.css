@@ -3,7 +3,7 @@ THEME NAME: Simplish
 THEME URI: http://labs.utopian.net/blogs/simplish/
 DESCRIPTION: Simplish is a WordPress variant of the Scribbish theme for blogs.
 TAGS: two-columns, fixed-width, right-sidebar, threaded-comments, sticky-post, microformats, white, light
-VERSION: 2.1.6
+VERSION: 2.1.7
 AUTHOR: <a href="http://labs.utopian.net">Utopian.net Labs</a>, <a href="http://pittcrew.net/geekblog/">K. Pitt</a>, <a href="http://quotedprintable.com">J. Hardy</a>
 AUTHOR URI:
 */
@@ -113,11 +113,9 @@ body{
 	color: #a9a9a9;
 	font-size: 2.3em;
 	margin: 0 0 0.3em;
-	text-transform: uppercase;
 }
 #content h1.archive-title span.archive-subtitle{
 	font-weight: bold;
-	text-transform: none;
 }
 #content .archive-meta{
 	color: #a9a9a9;
@@ -505,7 +503,7 @@ span.caps{
 	padding: 1em 4px 0 5px;
 }
 
-/* sp_vallery() Galleries. */
+/* Galleries. */
 div.entry-content div.gallery{
 	clear: both;
 	float: left;
@@ -515,7 +513,7 @@ div.entry-content div.gallery{
 }
 div.entry-content div.gallery dl{
 	float: left;
-	margin: 0 auto;
+	margin: 0.5em auto;
 	text-align: center;
 }
 div.entry-content div.gallery dl.gallery-columns-2{
@@ -535,11 +533,7 @@ div.entry-content div.gallery dd{
 	margin: 0 auto 1em auto;
 	text-align: center;
 }
-div.entry-content div.gallery *{
-	margin: 0;
-	padding: 0;
-}
-
+ 
 /* Sitemap template uses .hentry .entry-title as list item. */
 #sitemap-list .hentry{
 	margin: 0 0 0 1em;
