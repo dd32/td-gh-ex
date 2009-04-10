@@ -7,7 +7,7 @@
 			<?php edit_post_link(); ?>
 			<div align="center" class="entrywhole">
 				<div align="left" class="entry">
-					<?php the_content('Read the rest of this page'); ?>
+					<?php the_content(''); ?>
 				</div>
 			</div>
 		</div>
@@ -15,11 +15,7 @@
 		<?php endwhile; ?>
 		<?php endif; ?>
 	</div>
-	<div id="navigationwrap1">
-		<?php include (TEMPLATEPATH . '/sidebar1.php'); ?>
-	</div>
-	<div id="navigationwrap2">
-		<?php include (TEMPLATEPATH . '/sidebar2.php'); ?>
-	</div>
+	<?php include ('sidebar1.php'); ?>
+	<?php include ('sidebar2.php'); ?>
 </div>
 <?php get_footer();?>

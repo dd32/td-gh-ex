@@ -4,30 +4,23 @@
 		<?php while (have_posts()) : the_post(); ?>
 		<div class="post" id="post-<?php the_ID(); ?>">
 			<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-			<div align="center" class="entrywhole">
-				<div class="postmetadata-top">
-					<div align="left"><small>Categories: <?php the_category(', '); ?><br />Posted on <?php the_time('F j, Y') ?> <?php edit_post_link(); ?></small></div>
-				</div>
-				<div align="left" class="entry">
-					<?php the_content('Read more &raquo;'); ?>
-				</div>
-				<div>
-					<?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?>
-				</div>
-				<div class="postmetadata-bottom" align="left">
-					Tags: <?php the_tags('',' / '); ?>
+			<div class="postmetadata-top"><small><?php the_date('M d Y'); ?> <?php edit_post_link(); ?></small></div>
+			<div class="entrywhole">
+				<div class="entry">
+					<?php the_content('Read more &rsaquo;'); ?>
+					<br />
+					<div align="center"><a href="#top">Back to Top</a> | <?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?></div>
+					<div class="postmetadata-bottom"><small><br />Filed In: <?php the_category(', '); ?><br />Tags: <?php the_tags('', ', '); ?></small></div>
 				</div>
 			</div>
 		</div>
 		<?php endwhile; ?>
 		<?php endif; ?>
-		<div align="center" id="navlink"><?php posts_nav_link(); ?></div>
+		<div align="center" id="navlink">
+			<?php posts_nav_link(' <font color="#a5a5a5">&mdash;</font> ', '&lsaquo; Newer Posts', 'Older Posts <font color="#a5a5a5">&rsaquo;</font>'); ?>
+		</div>
 	</div>
-	<div id="navigationwrap1">
-		<?php include (TEMPLATEPATH . '/sidebar1.php'); ?>
-	</div>
-	<div id="navigationwrap2">
-		<?php include (TEMPLATEPATH . '/sidebar2.php'); ?>
-	</div>
+	<?php include ('sidebar1.php'); ?>
+	<?php include ('sidebar2.php'); ?>
 </div>
 <?php get_footer();?>

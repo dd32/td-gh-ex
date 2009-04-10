@@ -1,236 +1,377 @@
 /*
 Theme Name: 3COL-RDMBAN RR
-Theme URI: http://takteekmedia.com/
-Version: 1.4
-Description: Black 3 column theme with 10 rotating banners.
-Author: TAKTEEK
-Author URI: http://takteekmedia.com/
-Tags: three columns, right sidebar, widget ready, fixed width, rising sun, simple, black, gray, orange
+Version: 1.5
+Description: 3COL-RDMBAN RR is a 3 column theme based on the TAKTEEK01 theme. It features 8 banners that rotate and 2 right sidebars. It is compatible with IE7+, FF, Opera, and Safari. It is XHTML & CSS validated and is widget ready. Please go to <a href="http://www.ericcrooks.com/themes#3col_rdmban_rr">http://www.ericcrooks.com/themes</a> to view the changelog.
+Author: Eric Crooks
+Author URI: http://www.ericcrooks.com/
+Tags: black, orange, white, dark, three-columns, right-sidebar, fixed-width, theme-options
 */
 
 /* -standards- */
 
+* {
+	margin: 0 auto;
+	}
 body {
-	background: #000000;
-	color: #ffffff;
+	background: #2b2b2b;
+	color: #a5a5a5;
 	font-family: "Arial";
 	font-size: .75em;
-	display: block;
 	}
-p {
-	text-align: justify;
+a {
+	color: #ff9000;
+	text-decoration: none;
+	}
+cite {
+	font-style: normal;
+	}
+cite a {
+	color: #ff9000;
+	font-style: normal;
+	}
+h1 {
+	font-size: 2em;
+	font-weight: normal;
 	}
 h2 {
-	color: #ffffff;
 	font-size: 1.5em;
 	font-weight: normal;
 	}
-a {
-	color: #ffffff;
-	text-decoration: none;
+img, object {
+	border: 4px solid #2b2b2b;
 	}
-a:hover {
-	color: #ffa20f;
+p {
+	line-height: 1.5em;
+	margin: 1.2em auto;
+	text-align: left;
 	}
-#navlink {
-	margin-bottom: 40px;
+textarea {
+	font-family: "Arial";
+	font-size: 1em;
 	}
 
 /* -header- */
 
+#banners {
+	border-bottom: 4px solid #3a3a3a;
+	border-top: 4px solid #3a3a3a;
+	height: 215px;
+	margin-bottom: 4px;
+	padding: 4px 0 4px 0;
+	width: 937px;
+	}
+#banner-1, #banner-2, #banner-3 {
+	border-right: 4px solid #3a3a3a;
+	float: left;
+	height: 215px;
+	margin-right: 4px;
+	padding-right: 4px;
+	width: 225px;
+	}
+#banner-4 {
+	float: left;
+	height: 215px;
+	width: 225px;
+	}
 #topbar {
-	padding: 30px 0 10px 0;
-	width: 860px;
+	color: #a5a5a5;
+	padding: 20px 0 20px 0;
+	width: 937px;
 	}
-#topbar .title a {
-	color: #ffa20f;
-	}
-#topbar .title a:hover {
-	color: #ffffff;
-	}
-#banner {
-	background: url("banners/rotator.php") no-repeat top left;
-	border-top: 1px solid #252525;
-	border-bottom: 1px solid #252525;
-	height: 296px;
-	width: 860px;
-	}
-#banner img {
-	height: 296px;
-	width: 860px;
+#topbar a {
+	color: #ff9000;
 	}
 
 /* -content- */
 
-#contentwrap {
-	margin-top: 20px;
-	width: 860px;
-	}
 #content {
 	float: left;
-	margin-right: 30px;
-	width: 500px;
+	margin-right: 4px;
+	width: 569px;
+	}
+#contentwrap {
+	display: block;
+	width: 937px;
 	}
 
-/* -navigation- */
+/* -post and entries- */
 
-#navigationwrap1 {
-	margin-right: 30px;
+.post {
+	background: #3a3a3a;
+	margin-bottom: 4px;
+	padding: 10px;
 	}
-#navigationwrap1, #navigationwrap2 {
-	float: left;
-	margin-bottom: 40px;
+.post a {
+	color: #ff9000;
+	text-decoration: none;
 	}
-#navigation1, #navigation2 {
-	float: left;
-	width: 150px;
+.post a:hover {
+	color: #a5a5a5;
+	text-decoration: none;
 	}
-#navigation1 h2 {
-	font-weight: normal;
+.post blockquote {
+	background: #2b2b2b;
+	border: 1px solid #4b4b4b;
+	margin: 1.2em auto;
+	padding: 0.1em 1em;
+	}
+.post embed, .post img, .post object {
+	display: block;
+	margin: 1.2em auto;
+	}
+.post h2, .post h2 a {
+	color: #ffffff;
+	}
+.post h2 a:hover {
+	color: #ff9000;
+	}
+.post ul, .post ol {
+	line-height: 1.5em;
+	margin: 1.2em auto;
+	}
+.post .wp-smiley {
+	border: none;
+	display: inline;
+	margin: 0;
+	}
+.postmetadata-top {
+	border-bottom: 1px dotted #5b5b5b;
+	padding-bottom: 10px;
 	text-transform: uppercase;
 	}
-#navigation1 h2.small, #navigation2 h2.small, #navigation1 h2.widgettitle, #navigation2 h2.widgettitle {
-	border-bottom: 1px dotted #404040;
-	color: #404040;
+.postmetadata-bottom{
+	text-transform: uppercase;
+	}
+
+/* -sidebar- */
+
+#sidebar1wrap {
+	margin-right: 4px;
+	}
+#sidebar1wrap, #sidebar2wrap {
+	background: #3a3a3a;
+	float: left;
+	margin-bottom: 4px;
+	padding: 10px;
+	}
+#sidebar1, #sidebar2 {
+	float: left;
+	width: 160px;
+	}
+#sidebar1 a, #sidebar2 a, #sidebar1 li.recentcomments, #sidebar2 li.recentcomments, #sidebar1 .textwidget, #sidebar2 .textwidget {
+	border-bottom: 1px dotted #000000;
+	color: #a5a5a5;
+	display: block;
+	padding: 3px 3px 3px 10px;
+	}
+#sidebar1 a small, #sidebar2 a small {
+	color: #000000;
+	}
+#sidebar1 a:hover, #sidebar2 a:hover {
+	background: #5b5b5b;
+	color: #ffffff;
+	}
+#sidebar1 h2, #sidebar2 h2 {
+	color: #ffffff;
+	}
+#sidebar1 h2.small, #sidebar2 h2.small {
+	border-bottom: 1px dotted #5b5b5b;
+	color: #ffffff;
 	font-size: 1em;
 	font-weight: bold;
 	margin-top: 20px;
 	text-transform: none;
 	}
-#navigation1 ul, #navigation2 ul {
+#sidebar1 li, #sidebar2 li {
 	list-style: none;
+	margin-top: 3px;
+	}
+#sidebar1 li.recentcomments a, #sidebar2 li.recentcomments a {
+	border: none;
+	}
+#sidebar1 select, #sidebar2 select {
+	margin: 3px 0 3px 0;
+	width: 160px;
+	}
+#sidebar1 small, #sidebar2 small {
+	text-transform: uppercase;
+	}
+#sidebar1 ul, #sidebar2 ul {
 	margin: 0;
 	padding: 0;
 	}
-#navigation1 li, #navigation2 li {
-	list-style: none;
+#sidebar1 ul.children a, #sidebar2 ul.children a {
+	padding-left: 20px;
 	}
-#navigation1 ul li:hover , #navigation2 ul li:hover {
-	background: #252525;
-	}
-#navigation1 ul li, #navigation2 ul li {
-	border-bottom: 1px dotted #252525;
-	padding: 3px 3px 3px 10px;
-	}
-#navigation1 ul li ul li, #navigation2 ul li ul li {
-	border: none;
-	padding: 3px 3px 3px 10px;
-	}
-
-/* -post and entries- */
-
-.post h2, .post h2 a {
-	color: #ffa20f;
-	text-transform: uppercase;
-	}
-.post h2 a:hover {
-	color: #ffffff;
-	}
-.post img, .post object, .post embed {
-	display: block;
-	margin: 0 auto;
-	}
-.post blockquote {
-	background: url("images/blockquote.jpg") no-repeat top left;
-	font-style: italic;
+#sidebar1 ul.children ul.children a, #sidebar2 ul.children ul.children a {
 	padding-left: 30px;
 	}
-.postmetadata-top {
-	clear: both;
-	margin-top: -15px;
-	padding-bottom: 10px;
+
+/* -sidebar calender- */
+
+#sidebar1 table a, #sidebar2 table a {
+	border: none;
+	background: #2b2b2b;
+	color: #ffffff;
+	display: block;
+	padding: 0;
 	}
-.postmetadata-bottom {
-	background: #252525;
-	font-size: .9em;
-	margin: 20px 0 40px 0;
+#sidebar1 table a:hover, #sidebar2 table a:hover {
+	background: #5b5b5b;
+	}
+#sidebar1 table caption, #sidebar2 table caption {
+	font-weight: bold;
+	margin-top: 10px;
+	}
+#sidebar1 table td, #sidebar2 table td {
+	color: #000000;
+	}
+#sidebar1 table td, #sidebar1 table th, #sidebar2 table td, #sidebar2 table th {
+	border: none;
+	padding: 0;
+	text-align: center;
+	}
+
+/* -tables- */
+
+table {
+	border: 1px solid #2b2b2b;
+	line-height: 1.5em;
+	margin: 1.2em auto;
+	width: 100%;
+	}
+th, td {
+	border: 1px solid #2b2b2b;
+	padding: 5px;
+	}
+
+/* -comments- */
+
+#commentbox {
+	height: 100px;
+	width: 541px;
+	}
+#commentform {
+	background: #3a3a3a;
+	padding: 10px;
+	margin-bottom: 4px;
+	width: 549px;
+	}
+#commentform a {
+	color: #ff9000;
+	}
+#commentform input, #commentform textarea {
+	background: #2b2b2b;
+	border: 1px solid #5b5b5b;
+	color: #a5a5a5;
 	padding: 3px;
 	}
-.postmetadata-bottom a {
-	color: #dadada;
+#commentlist {
+	margin-bottom: 4px;
 	}
-.postmetadata-bottom a:hover {
-	color: #ffffff;
-	}
-.entry {
+#comments {
+	background: #3a3a3a;
 	clear: both;
-	}
-.entry a {
-	color: #ffa20f;
-	text-decoration: none;
-	}
-.entry a:hover {
 	color: #ffffff;
-	text-decoration: none;
+	margin-bottom: 4px;
+	padding: 10px;
+	}
+#commentlist div {
+	background: #3a3a3a;
+	margin-bottom: 4px;
+	padding: 10px;
+	}
+#commentlist div.alt {
+	background: #3a3a3a;
+	color: #a5a5a5;
+	margin-bottom: 4px;
+	padding: 10px;
+	}
+#commentlist div.alt blockquote {
+	background: #2b2b2b;
+	border: 1px solid #4b4b4b;
+	margin: 1.2em auto;
+	padding: 0.1em 1em;
+	}
+#commentlist div blockquote {
+	background: #2b2b2b;
+	border: 1px solid #4b4b4b;
+	margin: 1.2em auto;
+	padding: 0.1em 1em;
+	}
+#commentlist small {
+	text-transform: uppercase;
+	}
+.gravatar {
+	float: left;
+	margin: 0 10px 10px 0;
+	}
+#respond {
+	background: #3a3a3a;
+	clear: both;
+	color: #ffffff;
+	margin-bottom: 4px;
+	padding: 10px;
+	}
+small a.comment-edit-link {
+	color: #a5a5a5;
+	text-transform: uppercase;
 	}
 
 /* -search form- */
 
+#s {
+	background: #252525;
+	border: 1px solid #303030;
+	color: #a5a5a5;
+	padding: 3px;
+	width: 152px;
+	}
 #searchsubmit {
 	display: none;
-	}
-#s {
-	background: #ffffff url("images/magnifier.png") no-repeat top left;
-	border: none;
-	padding: 1px 2px 1px 17px;
-	width: 250px;
 	}
 
 /* -footer- */
 
 #footer {
-	border-top: 1px solid #252525;
+	background: #3a3a3a;
 	clear: both;
-	color: #404040;
-	padding: 10px 0 30px 0;
-	width: 860px;
+	color: #a5a5a5;
+	padding: 10px;
+	text-align: right;
+	width: 917px;
 	}
-#footer a {
-	color: #404040;
+#footer a{
+	color: #a5a5a5;
 	}
-
-/* -comments- */
-
-#comments {
-	clear: both;
-	}
-#respond {
-	border-top: #252525 1px solid;
-	clear: both;
-	padding-top: 30px;
-	}
-.commentmetadata {
+#footer small {
 	text-transform: uppercase;
 	}
-.commentlist div.alt {
-	background: #252525;
-	color: #ffffff;
+
+/* -misc and universal- */
+
+#navlink {
+	background: #3a3a3a;
+	color: #a5a5a5;
+	margin-bottom: 4px;
 	padding: 10px;
+	text-align: center;
 	}
-.commentlist div {
-	padding: 10px;
+#navlink a:hover {
+	color: #a5a5a5;
 	}
-.commentlist div blockquote {
-	background: #252525;
-	border: 1px solid #404040;
-	margin: 10px 0 0 0;
-	padding: 10px 10px 10px;
-}
-.commentlist div.alt blockquote {
-	background: #000000;
-	border: 1px solid #404040;
-	margin: 10px 0 0 0;
-	padding: 10px 10px 10px;
-}
-#comment {
-	height: 200px;
-	width: 500px;
+.uppercase {
+	text-transform: uppercase;
+	}
+.wp-smiley {
+	border: none;
+	display: inline;
+	margin: 0;
 	}
 
-/* -floats -*/
+/* -floats - */
 
-.aligncenter,
-div.aligncenter {
+.aligncenter, div.aligncenter {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;

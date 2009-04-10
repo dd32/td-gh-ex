@@ -22,27 +22,21 @@
 <?php if ($comments) : ?>
 	<h2 id="comments">There are <?php comments_number('No Comments', '1 Comments', '% Comments' );?> to this article</h2>
 
-	<div class="commentlist">
+	<div id="commentlist">
 
 	<?php foreach ($comments as $comment) : ?>
 
 		<div <?php echo $oddcomment; ?>id="comment-<?php comment_ID() ?>">
-		<table width="100%" border="0" cellpadding="2" cellspacing="2">
-			<tbody>
-				<tr>
-					<td width="10%" valign="top"><div align="center"><?php echo get_avatar( $comment, 32 ); ?></div></td>
-					<td width="90%" valign="top"><cite><?php comment_author_link() ?></cite> says:
-						<br />
-						<small><?php comment_date('m/d/Y') ?> <?php edit_comment_link('Edit Comment'); ?></small>
-						<br />
-						<?php if ($comment->comment_approved == '0') : ?>
-						<em>Your comment is awaiting moderation.</em>
-						<?php endif; ?>
-
-						<?php comment_text() ?></td>
-				</tr>
-			</tbody>
-		</table>
+		<div class="gravatar"><?php echo get_avatar( $comment, 48 ); ?></div>
+			<div><cite><?php comment_author_link() ?></cite> says:
+			<br />
+			<small><?php comment_date('M d Y') ?> <?php edit_comment_link('Edit Comment'); ?></small>
+			<br />
+			<?php if ($comment->comment_approved == '0') : ?>
+			<em>Your comment is awaiting moderation.</em>
+			<?php endif; ?>
+			<?php comment_text() ?>
+			</div>
 		</div>
 
 	<?php
@@ -79,28 +73,28 @@
 
 <?php if ( $user_ID ) : ?>
 
-<p>Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a> | <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="Log out of this account">Log out</a></p>
+Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a> (<a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="Log out of this account">Log out</a>)
 
 <?php else : ?>
 
-<p><input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" tabindex="1" />
-<label for="author">Name <?php if ($req) echo "*"; ?></label></p>
+<input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" tabindex="1" />
+<label for="author">Name <?php if ($req) echo "*"; ?></label>
 
 <p><input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="22" tabindex="2" />
-<label for="email">E-Mail <?php if ($req) echo "*"; ?> (Will not be shown)</label></p>
+<label for="email">E-Mail <?php if ($req) echo "*"; ?> (will not be shown)</label></p>
 
 <p><input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="22" tabindex="3" />
 <label for="url">Website URL</label></p>
 
 <?php endif; ?>
 
-<!--<p><small><strong>XHTML:</strong> You can use these tags: <code><?php echo allowed_tags(); ?></code></small></p>-->
+<p><small><strong>XHTML:</strong> You can use these tags: <code><?php echo allowed_tags(); ?></code></small></p>
 
-<p><textarea name="comment" id="comment" rows="" cols="" tabindex="4"></textarea></p>
+<p><textarea name="comment" id="commentbox" rows="" cols="" tabindex="4"></textarea></p>
 
-<p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
+<input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
 <input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
-</p>
+
 <?php do_action('comment_form', $post->ID); ?>
 
 </form>

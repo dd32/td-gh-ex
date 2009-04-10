@@ -4,19 +4,27 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title><?php bloginfo('name'); ?> | <?php bloginfo('description'); ?></title>
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
+	<link rel="shortcut icon" href="" type="image" />
 	<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+	<?php 
+	global $options;
+	foreach ($options as $value) {
+		if (get_settings( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } 
+		else { $$value['id'] = get_settings( $value['id'] ); } 
+	} ?>
+	<?php include ('random.php');?>
 	<?php wp_head();?>
 </head>
 <body>
-<div align="center">
-<table border="0" cellspacing="0" cellpadding="0" id="topbar">
-	<tbody>
-		<tr>
-			<td width="50%" valign="top"><div align="left"><span class="title"><strong><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></strong></span> | <?php bloginfo('description'); ?></div></td>
-			<td width="50%" valign="top"><div align="right"><?php include (TEMPLATEPATH . '/searchform.php'); ?></div></td>
-		</tr>
-	</tbody>
-</table>
-<div id="banner"></div>
-<div align="left" id="contentwrap">
+<a name="top"></a>
+<div id="headerwrap">
+	<div id="topbar"><strong><a href="<?php bloginfo('url'); ?>" class="title"><?php bloginfo('name'); ?></a></strong> | <?php bloginfo('description'); ?></div>
+	<div id="banners">
+		<div id="banner-1"></div>
+		<div id="banner-2"></div>
+		<div id="banner-3"></div>
+		<div id="banner-4"></div>
+	</div>
+</div>
+<div id="contentwrap">
