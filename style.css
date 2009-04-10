@@ -1,9 +1,10 @@
 /*
 Theme Name: Bad Mojo
-Theme URI: http://wpthemerz.com/
+Theme URI: http://wpthemerz.com/?p=17
 Description: This is 2 column WordPress theme created by <a href="http://www.wpthemerz.com/">WPThemerz</a>.
-Version: 1.1
+Version: 1.2
 Author: WPThemerz.com
+Author URI: http://wpthemerz.com/
 Tags: two-columns, fixed-width, right-sidebar, red, black
 
 */
@@ -284,11 +285,13 @@ body {
 }
 .alignleft{
 	float:left;
-	width:150px;
+	width:auto;
+	border:none;
 }
 .alignright{
 	float:right;
-	width:200px;
+	width:auto;
+	border:none;
 }
 .alignleft .backnext{
 	float:left;
@@ -307,7 +310,6 @@ body {
 	color:#a10000;
 }
 .back, .next{
-	background-image:url(images/back_next.png);
 	cursor:pointer;
 	display:block;
 }
@@ -361,11 +363,11 @@ body {
 	
 }
 .alignleft-single{
-	border-bottom:1px solid #7c775e;
+	border-bottom:0px solid #7c775e;
 	padding-bottom:5px;
 }
 .alignright-single{
-	border-top:1px solid #cdcabb;
+	border-top:0px solid #cdcabb;
 	padding-top:5px;
 }
 #sidebar{
@@ -513,10 +515,10 @@ a{
 }
 a img{
 	background-color:#f8f7f3;
-	border-top: 1px #FFFFFF solid;
-	border-right: 1px #a29c7d solid;
-	border-bottom: 1px #a29c7d solid;
-	border-left: 1px #FFFFFF solid;
+	border-top: 0px #FFFFFF solid;
+	border-right: 0px #a29c7d solid;
+	border-bottom: 0px #a29c7d solid;
+	border-left: 0px #FFFFFF solid;
 	margin-bottom:5px;
 	padding:5px;
 }
