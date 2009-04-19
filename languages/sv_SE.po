@@ -3,298 +3,319 @@
 # This file is distributed under the same license as the SIMPLISH package.
 # JOSH WOOD <JOSH@UTOPIAN.NET>, 2009.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Simplish\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-04-17 20:38-0700\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2009-04-19 15:22+0100\n"
+"Last-Translator: Clement Durand <clement@durand.se>\n"
+"Language-Team: http://clement.durand.se <clement@durand.se>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Swedish\n"
+"X-Poedit-Country: SWEDEN\n"
 
 #: 404.php:4
 msgid "Error 404 &ndash; Not Found"
-msgstr ""
+msgstr "Fel 404 &ndash; Hittades ej"
 
 #: archive.php:7
 msgid "Day:"
-msgstr ""
+msgstr "Dag:"
 
 #: archive.php:7
 msgid "l, F j\\, Y"
-msgstr ""
+msgstr "l, F j\\, Y"
 
 #: archive.php:9
 msgid "Month:"
-msgstr ""
+msgstr "Månad:"
 
 #: archive.php:9
 msgid "F Y"
-msgstr ""
+msgstr "F Y"
 
 #: archive.php:11
 msgid "Year:"
-msgstr ""
+msgstr "År:"
 
 #: archive.php:11
 msgid "Y"
-msgstr ""
+msgstr "Y"
 
 #: archive.php:13
 msgid "Author:"
-msgstr ""
+msgstr "Författare:"
 
-#: archive.php:17 hentrymeta.php:3
+#: archive.php:17
+#: hentrymeta.php:3
 msgid "Category:"
-msgstr ""
+msgstr "Kategori:"
 
 #: archive.php:19
 msgid "Tag:"
-msgstr ""
+msgstr "Etikett:"
 
-#: archive.php:21 sidebar.php:28
+#: archive.php:21
+#: sidebar.php:28
 msgid "Archives"
-msgstr ""
+msgstr "Arkiv"
 
 #: archive.php:21
 #, php-format
 msgid "%1$s Archives"
-msgstr ""
+msgstr "%1$s Arkiv"
 
-#: archive.php:32 index.php:12
+#: archive.php:32
+#: index.php:12
 msgid "More&hellip;"
-msgstr ""
+msgstr "Mer&hellip;"
 
-#: archive.php:43 index.php:23
+#: archive.php:43
+#: index.php:23
 msgid "Not Found"
-msgstr ""
+msgstr "Hittades ej"
 
-#: archives.php:14 sitemap.php:52
+#: archives.php:14
+#: sitemap.php:52
 msgid "Archives by Category"
-msgstr ""
+msgstr "Arkiv efter kategori"
 
-#: archives.php:20 sitemap.php:46
+#: archives.php:20
+#: sitemap.php:46
 msgid "Archives by Month"
-msgstr ""
+msgstr "Arkiv efter månad"
 
-#: archives.php:26 sitemap.php:58
+#: archives.php:26
+#: sitemap.php:58
 msgid "Archives by Tag"
-msgstr ""
+msgstr "Arkiv efter etitkett"
 
-#: archives.php:31 links.php:17 page.php:17 single.php:14
+#: archives.php:31
+#: links.php:17
+#: page.php:17
+#: single.php:14
 msgid "Edit&hellip;"
-msgstr ""
+msgstr "Redigera&hellip;"
 
 #: comments.php:3
 msgid "Not labeled for individual sale."
-msgstr ""
+msgstr "Ej märkt för enskild försäljning."
 
-#: comments.php:12 hentrymeta.php:8
+#: comments.php:12
+#: hentrymeta.php:8
 msgid "0 Comments"
-msgstr ""
+msgstr "0 kommentarer"
 
-#: comments.php:12 hentrymeta.php:8
+#: comments.php:12
+#: hentrymeta.php:8
 msgid "1 Comment"
-msgstr ""
+msgstr "1 kommentar"
 
-#: comments.php:12 hentrymeta.php:8
+#: comments.php:12
+#: hentrymeta.php:8
 msgid "% Comments"
-msgstr ""
+msgstr "% kommentarer"
 
 #: comments.php:12
 msgid "on"
-msgstr ""
+msgstr "till"
 
 #: comments.php:15
 msgid "Log in"
-msgstr ""
+msgstr "Logga in"
 
 #: comments.php:15
 msgid "to respond"
-msgstr ""
+msgstr "för att kommentera"
 
-#: comments.php:17 comments.php:23
+#: comments.php:17
+#: comments.php:23
 msgid "Trackback"
-msgstr ""
+msgstr "Trackback"
 
-#: comments.php:21 comments.php:49
+#: comments.php:21
+#: comments.php:49
 msgid "Respond"
-msgstr ""
+msgstr "Kommentera"
 
 #: comments.php:29
 msgid "Closed"
-msgstr ""
+msgstr "Stängd"
 
 #: comments.php:37
 msgid "&laquo; Older Comments"
-msgstr ""
+msgstr "&laquo; Äldre kommentarer"
 
 #: comments.php:38
 msgid "Newer Comments &raquo;"
-msgstr ""
+msgstr "Nyare kommentarer &raquo;"
 
 #: comments.php:49
 #, php-format
 msgid "Respond to %s"
-msgstr ""
+msgstr "Svara %s"
 
-#: comments.php:58 comments.php:92
+#: comments.php:58
+#: comments.php:92
 msgid "Comments"
-msgstr ""
+msgstr "Kommentarer"
 
 #: comments.php:62
 msgid "Logged in as"
-msgstr ""
+msgstr "Inloggad som"
 
 #: comments.php:63
 msgid "Log out of this account"
-msgstr ""
+msgstr "Logga ut från detta konto"
 
 #: comments.php:63
 msgid "Log out"
-msgstr ""
+msgstr "Logga ut"
 
 #: comments.php:69
 msgid "Name:"
-msgstr ""
+msgstr "Namn:"
 
-#: comments.php:69 comments.php:75
+#: comments.php:69
+#: comments.php:75
 msgid "(required)"
-msgstr ""
+msgstr "(obligatorisk)"
 
 #: comments.php:75
 msgid "Email:"
-msgstr ""
+msgstr "Epost:"
 
 #: comments.php:77
 msgid "(will not be published)"
-msgstr ""
+msgstr "(kommer inte publiceras)"
 
 #: comments.php:82
 msgid "URL:"
-msgstr ""
+msgstr "Länk:"
 
 #: comments.php:89
 msgid "You can use these tags:"
-msgstr ""
+msgstr "Du kan använda dessa etiketter:"
 
 #: comments.php:95
 msgid "Submit"
-msgstr ""
+msgstr "Skicka"
 
 #: footer.php:8
 msgid "WordPress Engine"
-msgstr ""
+msgstr "WordPress-motor"
 
 #: footer.php:10
 msgid "Simplish Style"
-msgstr ""
+msgstr "Simplish-stil"
 
 #: footer.php:11
 msgid "from"
-msgstr ""
+msgstr "från"
 
 #: functions.php:50
 msgid "More posts by"
-msgstr ""
+msgstr "Flera inlägg av"
 
 #: functions.php:77
 msgid "home page"
-msgstr ""
+msgstr "hemsida"
 
 #: header.php:6
 msgid "Error 404 - Not Found"
-msgstr ""
+msgstr "Fel 404 - Hittades ej"
 
 #: header.php:6
 msgid "Search"
-msgstr ""
+msgstr "Sök"
 
-#: hentryhead.php:9 image.php:11
+#: hentryhead.php:9
+#: image.php:11
 msgid "Posted by"
-msgstr ""
+msgstr "Skriven av"
 
 #: hentrymeta.php:6
 msgid "Tags: "
-msgstr ""
+msgstr "Etiketter:"
 
 #: hentrymeta.php:8
 msgid "Feed"
-msgstr ""
+msgstr "Prenumerera"
 
 #: image.php:35
 msgid "Sorry, no attachments matched your criteria."
-msgstr ""
+msgstr "Tyvärr, inga bilagor stämde med dina kriterier..."
 
-#: page.php:11 single.php:12
+#: page.php:11
+#: single.php:12
 msgid "Pages:"
-msgstr ""
+msgstr "Sidor:"
 
 #: prevnextnav.php:2
 msgid "&laquo; Previous"
-msgstr ""
+msgstr "&laquo; Tidigare"
 
 #: prevnextnav.php:3
 msgid "Next &raquo;"
-msgstr ""
+msgstr "Senare &raquo;"
 
 #: search.php:7
 msgid "Results for"
-msgstr ""
+msgstr "Resultat för"
 
 #: search.php:28
 msgid "No results for"
-msgstr ""
+msgstr "Inga resultat för"
 
 #: sidebar.php:8
 msgid "Pages"
-msgstr ""
+msgstr "Sidor"
 
 #: sidebar.php:22
 msgid "Categories"
-msgstr ""
+msgstr "Kategorier"
 
 #: sidebar.php:36
 msgid "Syndicate"
-msgstr ""
+msgstr "Distribuera"
 
 #: sidebar.php:39
 msgid "Articles RSS"
-msgstr ""
+msgstr "Artikel RSS"
 
 #: sidebar.php:39
 msgid "Articles Feed"
-msgstr ""
+msgstr "Artikelprenumeration"
 
 #: sidebar.php:41
 msgid "Comments RSS"
-msgstr ""
+msgstr "Kommentars RSS"
 
 #: sidebar.php:41
 msgid "Comments Feed"
-msgstr ""
+msgstr "Kommentarsprenumeration"
 
 #: sidebar.php:45
 msgid "Meta"
-msgstr ""
+msgstr "Meta"
 
 #: sitemap.php:19
 msgid "All Pages"
-msgstr ""
+msgstr "Alla sidor"
 
 #: sitemap.php:35
 msgid "All Posts"
-msgstr ""
+msgstr "Alla inlägg"
 
 #: sitemap.php:40
 #, php-format
 msgid "Permalink to %s"
-msgstr ""
+msgstr "Länka permanent till %s"
 
 #: sitemap.php:63
 msgid "Pages: "
-msgstr ""
+msgstr "Sidor:"
+

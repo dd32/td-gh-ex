@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simplish\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-04 21:22-0700\n"
+"POT-Creation-Date: 2009-04-17 20:38-0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Demetris Kikizas <op111.net@gmail.com>\n"
 "Language-Team: op111.net <op111.net@gmail.com>\n"
@@ -14,8 +14,8 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 
 #: 404.php:4
-msgid "Error 404 - Not Found"
-msgstr "Σφάλμα 404:  Η σελίδα δεν βρέθηκε."
+msgid "Error 404 &ndash; Not Found"
+msgstr "Σφάλμα 404: H σελίδα δεν βρέθηκε!"
 
 #: archive.php:7
 msgid "Day:"
@@ -184,6 +184,10 @@ msgstr "(υποχρεωτικό)"
 msgid "Email:"
 msgstr "E-mail:"
 
+#: comments.php:77
+msgid "(will not be published)"
+msgstr "(δεν δημοσιεύεται)"
+
 #: comments.php:82
 msgid "URL:"
 msgstr "URL:"
@@ -191,6 +195,10 @@ msgstr "URL:"
 #: comments.php:89
 msgid "You can use these tags:"
 msgstr "Επιτρέπονται οι εξής ετικέτες:"
+
+#: comments.php:95
+msgid "Submit"
+msgstr "Υποβολή"
 
 #: footer.php:8
 msgid "WordPress Engine"
@@ -200,6 +208,10 @@ msgstr "Μηχανή WordPress"
 msgid "Simplish Style"
 msgstr "Θέμα Simplish"
 
+#: footer.php:11
+msgid "from"
+msgstr "από"
+
 #: functions.php:50
 msgid "More posts by"
 msgstr "Περισσότερα άρθρα της/του"
@@ -208,10 +220,18 @@ msgstr "Περισσότερα άρθρα της/του"
 msgid "home page"
 msgstr "Αρχική σελίδα"
 
+#: header.php:6
+msgid "Error 404 - Not Found"
+msgstr "Σφάλμα 404:  Η σελίδα δεν βρέθηκε."
+
+#: header.php:6
+msgid "Search"
+msgstr "Αναζήτηση"
+
 #: hentryhead.php:9
 #: image.php:11
 msgid "Posted by"
-msgstr "Καταχώρηση της/του:"
+msgstr "Συντάκτης:"
 
 #: hentrymeta.php:6
 msgid "Tags: "
@@ -219,7 +239,7 @@ msgstr "Ετικέτες: "
 
 #: hentrymeta.php:8
 msgid "Feed"
-msgstr "Κανάλι"
+msgstr "Κανάλι σχολίων"
 
 #: image.php:35
 msgid "Sorry, no attachments matched your criteria."
@@ -232,11 +252,11 @@ msgstr "Σελίδες:"
 
 #: prevnextnav.php:2
 msgid "&laquo; Previous"
-msgstr "&laquo; Προηγούμενο"
+msgstr "« Προηγούμενα"
 
 #: prevnextnav.php:3
 msgid "Next &raquo;"
-msgstr "Επόμενο &raquo;"
+msgstr "Επόμενα »"
 
 #: search.php:7
 msgid "Results for"
@@ -256,11 +276,11 @@ msgstr "Κατηγορίες"
 
 #: sidebar.php:36
 msgid "Syndicate"
-msgstr "Κανάλια"
+msgstr "RSS"
 
 #: sidebar.php:39
 msgid "Articles RSS"
-msgstr "Κανάλι RSS άρθρων"
+msgstr "– Όλα τα άρθρα μέσω RSS"
 
 #: sidebar.php:39
 msgid "Articles Feed"
@@ -268,7 +288,7 @@ msgstr "Κανάλι άρθρων"
 
 #: sidebar.php:41
 msgid "Comments RSS"
-msgstr "Κανάλι RSS σχολίων"
+msgstr "– Όλα τα σχόλια μέσω RSS"
 
 #: sidebar.php:41
 msgid "Comments Feed"
