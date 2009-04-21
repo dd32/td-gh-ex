@@ -21,7 +21,7 @@
 
 <div id="nav">
             <ul class="menu">
-                 <li><a href="<?php bloginfo('url'); ?>">Domov</a></li>
+                 <li><a href="<?php bloginfo('url'); ?>">Home</a></li>
                 <?php wp_list_pages('title_li=&depth=1'); ?>
             </ul>
            

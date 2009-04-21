@@ -2,7 +2,7 @@
 Theme Name: Bering
 Theme URI: http://preuro.eu/bering-theme/
 Description: Clean, simple, widget-ready theme, right for ya!
-Version: 1.0
+Version: 1.0.1
 Author: Stratus
 Author URI: http://preuro.eu/
 Tags: fixed-width, three-columns, white
@@ -104,15 +104,15 @@ border: 1px #999999 solid
 	}
 
 .alt {
-background-color: #1c1c1c;
-border: 1px solid #3a3a3a;
+background-color: #fff;
+border-top: 1px solid #cccccc;
 }
 
 small {
 font-family: Trebuchet MS, Arial, Helvetica, Sans-Serif;
 font-size: 10px;
 line-height: 1.5em;
-border-bottom: 1px dotted #669900;
+
 }
 
 small a{
@@ -162,7 +162,7 @@ small, #leftsidebar ul ul li, #leftsidebar ul ol li, #rightsidebar ul ul li, #ri
 code {font: 1.1em 'Courier New', Courier, Fixed;}
 acronym, abbr, span.caps{ font-size: 0.9em;letter-spacing: .07em;}
 
-a, h2 a:hover, h3 a:hover {color: #666666;text-decoration: none;}
+a, h2 a:hover, h3 a:hover {color: #003366;text-decoration: none;}
 a:hover {color: #003366;text-decoration: underline;}
 
 .narrowcolumn {float: left;padding: 0 16px 20px 31px;margin: 0;width: 533px;overflow: hidden;}
@@ -236,9 +236,9 @@ ol li, #leftsidebar ul ol li { list-style: decimal outside; color: #999999;}
 .entry form {text-align:left;}
 select {width: 130px;}
 
-#commentform input {font-size: 11px; color: #999999; width: 170px;padding: 2px;margin: 5px 5px 1px 0;background-color: #3a3a3a;border: 1px solid #3a3a3a;}
-#commentform textarea {font-size: 11px; color: #999999; width: 99%;padding: 2px;background-color: #3a3a3a;border: 1px solid #3a3a3a;}
-#commentform #submit {background: #525252; color: #000000; margin: 0;float: right; width: 130px; border: 1px solid #525252;}
+#commentform input {font-size: 11px; color: #999999; width: 170px;padding: 2px;margin: 5px 5px 1px 0;background-color: #fff;border: 1px solid #ccc;}
+#commentform textarea {font-size: 11px; color: #999999; width: 99%;padding: 2px;background-color: #fff;border: 1px solid #ccc;}
+#commentform #submit {background: #f2f2f2; color: #000000; margin: 0;float: right; width: 130px; border: 1px solid #525252;}
 
 .alt {margin: 0;padding: 10px;}
 .commentlist {padding: 0;text-align: justify; margin: 0;}
