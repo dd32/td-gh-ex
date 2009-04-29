@@ -1,0 +1,14 @@
+
+/* sidebar to the left */
+
+.mask-main .mask-left {
+  left: 0%;		  
+}
+
+.mask-main .col1 {
+  left:30%;
+}
+
+.mask-main .col2 {
+  left:-70%;
+}

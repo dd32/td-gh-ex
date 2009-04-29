@@ -1,0 +1,71 @@
+
+
+/*
+
+  Internet Explorer 5.5 and 6.0 bug-fixes (still incomplete)
+
+*/
+
+body{ text-align: center; }  /* center main div in IE 5.5 */
+#page{ text-align: left; }
+
+.comment-mask{
+  background: none;
+}
+
+.box{
+  background: none;
+  position: relative;
+}
+
+.post p.post-author{
+  background: #e0d9c4;
+}
+
+#nav-wrap2 ul#nav .fadeThis span.hover {
+  background: #5798c2;
+}
+
+#nav-wrap1{
+  background: none;
+  height: 32px;
+  padding: 0;
+}
+
+#nav-wrap2{
+  border: 1px solid #151408;
+  background: #2c76ad;
+  height: 32px;
+  padding: 0;
+}
+
+#nav-wrap2 ul#nav li a{
+  height: 32px;
+  margin: 0;
+}
+
+#nav-wrap2 ul#nav li a span{
+  margin-top: 6px;
+  padding: 0 8px;
+}
+
+#nav-wrap2 ul#nav .fadeThis span.hover {
+  height: 32px;
+}
+
+#nav-wrap2 ul#nav ul {
+  top: 32px;
+}
+
+
+ul.menu .fadeThis {
+  position: static;
+}
+
+ul.menu .fadeThis span.hover {
+  display: none;
+}
+
+ul.menu li a:hover{
+  background: #f7f5ef url(images/side-menu-active.png) repeat-x left bottom;
+}
