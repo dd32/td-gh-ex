@@ -1,7 +1,7 @@
 
 /*
 
- ARCLITE IMAGELESS DESIGN
+ no images here :)
 
 */
 
@@ -381,6 +381,7 @@ blockquote p{
   position: absolute;
   right: 2em;
   bottom: 1em;
+  border: 1px solid #645952;
 }
 
 .search-block .searchform-wrap{
@@ -418,15 +419,11 @@ blockquote p{
 #nav-wrap1{
   position: absolute;
   z-index: 100;
-  top: 170px;
+  bottom: 0;
   left: 1em;
-  height: 35px;
-  border: 1px solid #000;
 }
 
 #nav-wrap2{
-  background: #196cac;
-  height: 35px;
   float: left;
 }
 
@@ -440,26 +437,32 @@ blockquote p{
   display:inline;
   float: left;
   position: relative;
+  margin-right: 3px;
 }
 
 #nav-wrap2 ul#nav li a{
   display: block;
-  margin-top: 1px;
   height: 35px;
   float: left;
-  color: #b5d1e6;
+  color: #d8ceb6;
   text-decoration: none;
   font-size: 120%;
+  background: #584d43;
 }
 
+#nav-wrap2 ul#nav li.current_page_item a{
+  background: #f0ecde;
+  color: #291f15;
+}
+
+
 #nav-wrap2 ul#nav li a:hover{
-  color: #fff;
+  color: #000;
 }
 
 #nav-wrap2 ul#nav .fadeThis {
   position:relative;
   z-index: 1;
-  background: none;
 }
 
 #nav-wrap2 ul#nav .fadeThis span.hover {
@@ -469,7 +472,7 @@ blockquote p{
   display: block;
   height: 100%;
   width: 100%;
-  background: #599bc4;
+  background: #f0ecde;
   z-index: -1;
   margin: 0;
   padding: 0;
@@ -489,7 +492,7 @@ blockquote p{
   background: #f7f5ef;
   display: none;
   width:200px;
-  top: 36px;
+  top: 35px;
   left: 0;
   margin: 0;
   font-style: italic;
@@ -960,6 +963,15 @@ ul.menu li li .fadeThis span.hover {
   padding-left: 10px;
 }
 
+.box .titlewrap h4 a{
+  color: #fff;
+  text-decoration: none;
+}
+
+.box.titlewrap h4 a{
+  color: #ffc000;
+  text-decoration: none;
+}
 
 .box .titlewrap h4{
   font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Sans, FreeSans, Jamrul, Garuda, Kalimati;
@@ -1008,6 +1020,10 @@ ul.menu li li .fadeThis span.hover {
   text-align: center;
 }
 
+#footer .add-content{
+  text-align: center;
+  margin: .6em 0;
+}
 
 
 

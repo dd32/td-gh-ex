@@ -3,7 +3,7 @@
 Theme Name: Arclite
 Theme URI: http://digitalnature.ro/projects/arclite
 Description: Clean design, light and warm colors, mainly focused on typography. Theme options include the ability to switch to a imageless type of layout. Designed by <a href="http://digitalnature.ro/">digitalnature</a>. <br />Localization supported, contact me if you wish to contribute with translations :)
-Version: 1.0
+Version: 1.1
 Author: digitalnature
 Author URI: http://digitalnature.ro
 Tags: light, two-columns, fixed-width, flexible-width, right-sidebar, theme-options, threaded-comments
@@ -366,7 +366,7 @@ blockquote p{
 
 #header-wrap{
   width: 100%;
-  background: #261c13;  
+  background: #261c13;
 }
 
 #pagetitle{
@@ -1008,6 +1008,16 @@ ul.menu li li .fadeThis span.hover {
   letter-spacing: -0.04em;
 }
 
+.box .titlewrap h4 a{
+  color: #fff;
+  text-decoration: none;
+}
+
+.box.titlewrap h4 a{
+  color: #ffc000;
+  text-decoration: none;
+}
+
 .box .titlewrap span{
   padding: 6px 0;
   display: block;
@@ -1042,6 +1052,25 @@ ul.menu li li .fadeThis span.hover {
   text-align: center;
 }
 
+#footer .add-content{
+  text-align: center;
+  margin: .6em 0;
+}
+
+#footer ul.footer-links{
+  margin: 0;
+  padding: 0;
+}
+
+#footer ul#footer-links li.widget{
+  float: left;
+  padding: 0 1em;
+}
+
+#footer ul#footer-links h4.title{
+  border-bottom: 1px solid #ccc;
+  padding: .2em 0;
+}
 
 
 

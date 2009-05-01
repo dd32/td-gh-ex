@@ -1,6 +1,8 @@
 <?php
 /* Arclite/digitalnature */
 
+
+// xili-language plugin check
 function init_language(){
 	if (class_exists('xili_language')) {
 		define('THEME_TEXTDOMAIN','arclite');
@@ -13,162 +15,450 @@ add_action ('init', 'init_language');
 
 
 // theme options
-class ArcliteOptions {
-	function getOptions() {
-		$options = get_option('arclite_options');
-		if (!is_array($options)) {
-			$options['metakeywords'] = '';
-			$options['header'] = 'default';
-			$options['imageless'] = false;
-			$options['hidehometab'] = false;
-			$options['hidecategories'] = false;
-			$options['hidesearch'] = false;
-			$options['categorytabs'] = false;
-			$options['sidebarpos'] = 'right';
-			$options['nojquery'] = false;
-			$options['customcss'] = '';
-			update_option('arclite_options', $options);
-		}
-		return $options;
-	}
+$options = array (
+  array(	"type" => "open"),
 
-	function add() {
-		if(isset($_POST['arclite_save'])) {
-			$options = ArcliteOptions::getOptions();
+  array(  "name" => __("Disable all design-related images","arclite"),
+  	"desc" => __("(Full CSS layout, no background images)","arclite"),
+            "id" => "arclite_imageless",
+  	"default" => "no",
+            "type" => "arclite_imageless"),
 
-			// meta keywords
-			$options['metakeywords'] = stripslashes($_POST['metakeywords']);
+  array(  "name" => __("Use jQuery effects","arclite"),
+  	"desc" => __("(for testing purposes only, you shouldnt change this)","arclite"),
+            "id" => "arclite_jquery",
+  	"default" => "yes",
+            "type" => "arclite_jquery"),
 
-			// no images?
-			if ($_POST['imageless']) {  $options['imageless'] = (bool)true;	} else { $options['imageless'] = (bool)false; }
-			$options['imageless'] = stripslashes($_POST['imageless']);
+  array(  "name" => __("Homepage meta keywords","arclite"),
+  	"desc" => __("(Separate with commas. Tags are used as keywords on other pages. Leave empty if you are using a SEO plugin)","arclite"),
+            "id" => "arclite_meta",
+  	"default" => "",
+            "type" => "arclite_meta"),
 
-			// header bg
-			$options['header'] = stripslashes($_POST['header']);
+  array(  "name" => __("Header background","arclite"),
+            "id" => "arclite_header",
+  	"default" => "default",
+            "type" => "arclite_header"),
 
-			// hide home tab
-			if ($_POST['hidehometab']) {  $options['hidehometab'] = (bool)true;	} else { $options['hidehometab'] = (bool)false; }
-			$options['hidehometab'] = stripslashes($_POST['hidehometab']);
+  array(  "name" => __("Logo image","arclite"),
+  	"desc" => __("Upload a custom logo image","arclite"),
+            "id" => "arclite_logo",
+  	"default" => "no",
+            "type" => "arclite_logo"),
 
-			// hide categories
-			if ($_POST['hidecategories']) {  $options['hidecategories'] = (bool)true;	} else { $options['hidecategories'] = (bool)false; }
-			$options['hidecategories'] = stripslashes($_POST['hidecategories']);
+  array(  "name" => __("Sidebar position","arclite"),
+            "id" => "arclite_sidebarpos",
+  	"default" => "right",
+            "type" => "arclite_sidebarpos"),
 
-			// hide search
-			if ($_POST['hidesearch']) {  $options['hidesearch'] = (bool)true;	} else { $options['hidesearch'] = (bool)false; }
-			$options['hidesearch'] = stripslashes($_POST['hidesearch']);
+  array(  "name" => __("Show theme-default category block","arclite"),
+            "id" => "arclite_sidebarcat",
+  	"default" => "yes",
+            "type" => "arclite_sidebarcat"),
 
-			// show category tabs instead of page tabs
-			if ($_POST['categorytabs']) {  $options['categorytabs'] = (bool)true;	} else { $options['categorytabs'] = (bool)false; }
-			$options['categorytabs'] = stripslashes($_POST['categorytabs']);
+  array(  "name" => __("Top navigation shows","arclite"),
+            "id" => "arclite_topnav",
+  	"default" => "pages",
+            "type" => "arclite_topnav"),
 
+  array(  "name" => __("Show search","arclite"),
+            "id" => "arclite_search",
+  	"default" => "yes",
+            "type" => "arclite_search"),
 
-            // page width
-			$options['sidebarpos'] = stripslashes($_POST['sidebarpos']);
+  array(  "name" => __("Hide Home navigation link","arclite"),
+            "desc" => __("(Select YES if you're using a static page as your hompage)","arclite"),
+            "id" => "arclite_hidehome",
+  	"default" => "no",
+            "type" => "arclite_hidehome"),
 
+  array(  "name" => __("Add content","arclite"),
+            "desc" => __("(HTML allowed)","arclite"),
+            "id" => "arclite_footer",
+  	"default" => "",
+            "type" => "arclite_footer"),
 
-			// disable jquery
-			if ($_POST['nojquery']) {  $options['nojquery'] = (bool)true;	} else { $options['nojquery'] = (bool)false; }
-			$options['nojquery'] = stripslashes($_POST['nojquery']);
+  array(  "name" => __("Modify anything related to design using simple CSS","arclite"),
+            "desc" => __("(Avoid modifying theme files and use this option to preserve changes after update)","arclite"),
+            "id" => "arclite_css",
+  	"default" => "",
+            "type" => "arclite_css"),
 
-			// meta keywords
-			$options['customcss'] = stripslashes($_POST['customcss']);
+  array(	"type" => "close")
+);
 
-			update_option('arclite_options', $options);
+function arclite_options() {
+  global $options;
 
-		} else {
-			ArcliteOptions::getOptions();
-		}
+  if ( 'save' == $_REQUEST['action'] ) {
 
-		add_theme_page(__("Arclite Theme Options","arclite"), __("Arclite Theme Options","arclite"), 'edit_themes', basename(__FILE__), array('ArcliteOptions', 'display'));
-	}
+    foreach ($options as $value) {
+     if( !isset( $_REQUEST[ $value['id'] ] ) ) {  } else { update_option( $value['id'], $_REQUEST[ $value['id'] ]  ); } }
+     if(stristr($_SERVER['REQUEST_URI'],'&saved=true')) {
+     $location = $_SERVER['REQUEST_URI'];
+    } else {
+     $location = $_SERVER['REQUEST_URI'] . "&saved=true";
+    }
 
-   function display() {
-   $options = ArcliteOptions::getOptions();
-    ?>
-      <form action="#" method="post" enctype="multipart/form-data" name="arclite_form" id="arclite_form">
-      <div class="wrap">
-            <h2><?php _e('Arclite Theme Options','arclite'); ?></h2>
-            <br />
-            <p style="color: #ed1f24">Note that Arclite is still under development; some options may change, others might be implemented. Make sure you backup your settings (especially the Custom CSS code part)</p>
-            <label><?php _e('Meta keywords:','arclite'); ?></label><br />
-            <input type="text" name="metakeywords" id="metakeywords" class="code" value="<?php echo($options['metakeywords']); ?>" /><br /><em><?php _e('Separate with commas. Leave empty if you are using a SEO plugin','arclite'); ?></em>
-            </p>
-            <br />
-            <p>
-            <input name="imageless" type="checkbox" value="checkbox" <?php if($options['imageless']) echo "checked='checked'"; ?> />
-            <?php _e('Disable all design-related images ','arclite'); ?><em style="color: #ed1f24">(Testing)</em><br /><em><?php _e('(Full CSS layout)','arclite'); ?></em>
-            </p>
-            <br />
-            <p>
-            <label><?php _e('Header background:','arclite'); ?></label><br />
-            <select name="header" id="header" class="code">
-              <option <?php if ($options['header']=='default') {?> selected="selected" <?php } ?> value="default">Default (Dark brown noise)</option>
-              <option <?php if ($options['header']=='wall') {?> selected="selected" <?php } ?> value="wall">Dirty Wall</option>
-              <option <?php if ($options['header']=='wood') {?> selected="selected" <?php } ?> value="wood">Wood</option>
-            </select>
-            </p>
-            <p>
-            <input name="hidehometab" type="checkbox" value="checkbox" <?php if($options['hidehometab']) echo "checked='checked'"; ?> />
-            <?php _e('Disable homepage navigation link','arclite'); ?><br /><em><?php _e('Check this if you are using a static page as the homepage','arclite'); ?></em>
-            </p>
-            <br />
-            <p>
-            <input name="categorytabs" type="checkbox" value="checkbox" <?php if($options['categorytabs']) echo "checked='checked'"; ?> />
-            <?php _e('Show the categories as main navigation','arclite'); ?><br /><em><?php _e('(instead of pages)','arclite'); ?></em>
-            </p>
-            <br />
-            <p>
-            <input name="hidecategories" type="checkbox" value="checkbox" <?php if($options['hidecategories']) echo "checked='checked'"; ?> />
-            <?php _e('Disable the default category block in the sidebar','arclite'); ?><br /><em><?php _e('Check if you prefer the widgetized category display or just want to hide the categories','arclite'); ?></em>
-            </p>
-            <br />
-            <p>
-            <input name="hidesearch" type="checkbox" value="checkbox" <?php if($options['hidesearch']) echo "checked='checked'"; ?> />
-            <?php _e('Disable the default search block from the header','arclite'); ?><br /><em><?php _e('Check if you don\'t like the theme-default search look','arclite'); ?></em>
-            </p>
-            <br />
-            <br />
-            <p>
-            <?php _e('Sidebar position:','arclite'); ?>
-            <label>
-            <input name="sidebarpos" type="radio" value="right" <?php if($options['sidebarpos'] != 'left') echo "checked='checked'"; ?> />
-            <?php _e('Right (default)','arclite'); ?>
-            </label>
-            <label style="padding-left: 15px;">
-            <input name="sidebarpos" type="radio" value="left" <?php if($options['sidebarpos'] == 'left') echo "checked='checked'"; ?> />
-            <?php _e('Left','arclite'); ?>
-            </label>
-            </p>
-            <br />
-            <p>
-            <input name="nojquery" type="checkbox" value="checkbox" <?php if($options['nojquery']) echo "checked='checked'"; ?> />
-            <?php _e('Disable jQuery and the associated code','arclite'); ?><br /><em><?php _e('This will reduce the page load with ~70 KB, but will also disable some features and effects.<br />You shouldn\'t change this unless you have problems with your host regarding bandwidth','arclite'); ?></em>
-            </p>
-            <br />
-            <h2><?php _e('Custom CSS code','arclite'); ?></h2>
-            <p><em><?php printf(__('Here you can add or change anything related to design if you have some basic CSS knowledge. Check %s to see existing styles, which you can redefine here.','arclite'),'<a href="'.get_bloginfo('template_url').'/style.css">style.css</a>'); ?></em> <?php echo'<br /><br /><em style="color: #ed1f24">';_e('Don\'t modify style.css if you wish to preserve your changes after theme update! Use this option instead.','arclite');echo '</em><br /><br />'?>
-            <textarea name="customcss" id="customcss" class="code" style='float: left' rows="18" cols="38"><?php echo($options['customcss']); ?></textarea>
-            </p>
-            <br clear="left" />
+    if ($_FILES["file-logo"]["type"]){
+     $directory = dirname(__FILE__) . "/upload/";
+     move_uploaded_file($_FILES["file-logo"]["tmp_name"],
+     $directory . $_FILES["file-logo"]["name"]);
+     update_option('arclite_logoimage', get_settings('siteurl'). "/wp-content/themes/". get_settings('template')."/upload/". $_FILES["file-logo"]["name"]);
+    }
 
+    if ($_FILES["file-header"]["type"]){
+     $directory = dirname(__FILE__) . "/upload/";
+     move_uploaded_file($_FILES["file-header"]["tmp_name"],
+     $directory . $_FILES["file-header"]["name"]);
+     update_option('arclite_headerimage', get_settings('siteurl'). "/wp-content/themes/". get_settings('template')."/upload/". $_FILES["file-header"]["name"]);
+    }
 
+    if ($_FILES["file-header2"]["type"]){
+     $directory = dirname(__FILE__) . "/upload/";
+     move_uploaded_file($_FILES["file-header2"]["tmp_name"],
+     $directory . $_FILES["file-header2"]["name"]);
+     update_option('arclite_headerimage2', get_settings('siteurl'). "/wp-content/themes/". get_settings('template')."/upload/". $_FILES["file-header2"]["name"]);
+    }
 
-            <p class="submit">
-            <input class="button-primary" type="submit" name="arclite_save" value="<?php _e('Save Changes','arclite'); ?>" />
-            </p>
-
-      </div>
-      </form>
-   <?php
+    header("Location: $location");
+    die;
   }
+
+  // set default options
+  foreach ($options as $default) {
+  if(get_option($default['id'])=="") {
+  	update_option($default['id'],$default['default']);
+  }
+  }
+
+    /*
+  // delete all options
+  foreach ($options as $default) {
+  delete_option($default['id'],$default['default']);
+  }
+  */
+
+  // add_menu_page('Arclite', __('Arclite theme','arclite'), 10, 'arclite-settings', 'arclite_admin');
+  add_theme_page(__('Arclite settings','arclite'), __('Arclite settings','arclite'), 10, 'arclite-settings', 'arclite_admin');
 }
 
+function arclite_admin() {
+    global $options;
+?>
+<div class="wrap">
+  <h2 class="alignleft"><?php _e("Arclite theme settings","arclite");?></h2><a class="alignright" style="margin: 20px;" href="http://digitalnature.ro/projects/arclite">Arclite homepage</a>
+  <br clear="all" />
+  <?php if ( $_REQUEST['saved'] ) { ?><div id="message" class="updated fade"><p><strong><?php _e('Settings saved.','arclite'); ?></strong></p></div><?php } ?>
+
+  <script type="text/javascript">
+
+   // disable the ability to change options based on what the user previously selected
+   function checkoptions(){
+    if (document.getElementById('arclite_imageless-yes').checked){
+      document.getElementById('arclite_header').disabled=true;
+      document.getElementById("userheader").style.display = "none";
+    }
+    else {
+      document.getElementById('arclite_header').disabled=false;
+      var headervalue = document.getElementById("arclite_header").value;
+      if(headervalue == "user") { document.getElementById("userheader").style.display = "block"; }
+      else { document.getElementById("userheader").style.display = "none"; }
+    };
+
+    if (document.getElementById('arclite_logo-yes').checked){
+      document.getElementById("userlogo").style.display = "block";
+    }
+    else { document.getElementById("userlogo").style.display = "none"; }
+
+
+   }
+
+   // run at first start
+   jQuery(document).ready(function() {
+    checkoptions();
+   });
+
+  </script>
+
+<form method="post" id="myForm" enctype="multipart/form-data" onclick="checkoptions();">
+
+ <div id="poststuff" class="metabox-holder">
+
+  <div class="stuffbox">
+   <h3><label for="link_url"><?php _e("General","arclite"); ?></label></h3>
+    <div class="inside">
+        <table class="form-table" style="width: auto">
+    <?php
+     foreach ($options as $value) {
+      switch ( $value['type'] ) {
+        case "arclite_imageless": ?>
+        <tr>
+        <th scope="row"><?php echo $value['name']; ?><br /><?php echo $value['desc']; ?></th>
+        <td>
+         <label><input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>-yes" type="radio" value="yes"<?php if ( get_settings( $value['id'] ) == "yes") { echo " checked"; } ?> /><?php _e("Yes","arclite"); ?></label>
+         &nbsp;&nbsp;
+         <label><input  name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>-no" type="radio" value="no"<?php if ( get_settings( $value['id'] ) == "no") { echo " checked"; } ?> /><?php _e("No","arclite"); ?></label>
+        </td>
+        </tr>
+
+      <?php break;
+        case "arclite_jquery": ?>
+
+        <tr>
+        <th scope="row"><?php echo $value['name']; ?><br /><?php echo $value['desc']; ?></th>
+        <td>
+         <label><input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>-yes" type="radio" value="yes"<?php if ( get_settings( $value['id'] ) == "yes") { echo " checked"; } ?> /><?php _e("Yes","arclite"); ?></label>
+         &nbsp;&nbsp;
+         <label><input  name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>-no" type="radio" value="no"<?php if ( get_settings( $value['id'] ) == "no") { echo " checked"; } ?> /><?php _e("No","arclite"); ?></label>
+        </td>
+        </tr>
+
+      <?php break;
+      case "arclite_meta": ?>
+        <tr>
+        <th scope="row"><?php echo $value['name']; ?><br /><?php echo $value['desc']; ?></th>
+        <td>
+         <label>
+          <input type="text" size="60" name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" value="<?php print get_option($value['id']); ?>" />
+         </label>
+        </td>
+        </tr>
+
+      <?php break;
+	}
+	}
+	?>
+        </table>
+       </div>
+     </div>
+   </div>
+
+
+ <div id="poststuff" class="metabox-holder">
+
+  <div class="stuffbox">
+   <h3><label for="link_url"><?php _e("Header","arclite"); ?></label></h3>
+    <div class="inside">
+        <table class="form-table" style="width: auto">
+    <?php
+     foreach ($options as $value) {
+      switch ( $value['type'] ) {
+        case "arclite_topnav": ?>
+        <tr>
+        <th scope="row"><?php echo $value['name']; ?></th>
+        <td>
+         <label><input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>-pages" type="radio" value="pages"<?php if ( get_settings( $value['id'] ) == "pages") { echo " checked"; } ?> /><?php _e("Pages","arclite"); ?></label>
+         &nbsp;&nbsp;
+         <label><input  name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>-categories" type="radio" value="categories"<?php if ( get_settings( $value['id'] ) == "categories") { echo " checked"; } ?> /><?php _e("Categories","arclite"); ?></label>
+        </td>
+        </tr>
+
+      <?php break;
+        case "arclite_hidehome": ?>
+        <tr>
+        <th scope="row"><?php echo $value['name']; ?><br /><?php echo $value['desc']; ?></th>
+        <td>
+         <label><input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>-yes" type="radio" value="yes"<?php if ( get_settings( $value['id'] ) == "yes") { echo " checked"; } ?> /><?php _e("Yes","arclite"); ?></label>
+         &nbsp;&nbsp;
+         <label><input  name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>-no" type="radio" value="no"<?php if ( get_settings( $value['id'] ) == "no") { echo " checked"; } ?> /><?php _e("No","arclite"); ?></label>
+        </td>
+        </tr>
+
+      <?php break;
+        case "arclite_search": ?>
+        <tr>
+        <th scope="row"><?php echo $value['name']; ?></th>
+        <td>
+         <label><input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>-yes" type="radio" value="yes"<?php if ( get_settings( $value['id'] ) == "yes") { echo " checked"; } ?> /><?php _e("Yes","arclite"); ?></label>
+         &nbsp;&nbsp;
+         <label><input  name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>-no" type="radio" value="no"<?php if ( get_settings( $value['id'] ) == "no") { echo " checked"; } ?> /><?php _e("No","arclite"); ?></label>
+        </td>
+        </tr>
+
+      <?php break;
+        case "arclite_header": ?>
+
+        <tr>
+        <th scope="row"><?php echo $value['name']; ?></th>
+        <td>
+         <label>
+            <select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" class="code">
+              <option <?php if (get_settings($value['id'])=='default') {?> selected="selected" <?php } ?> value="default">Light Noise: brown (default)</option>
+              <option <?php if (get_settings($value['id'])=='green') {?> selected="selected" <?php } ?> value="green">Light Noise: green</option>
+              <option <?php if (get_settings($value['id'])=='red') {?> selected="selected" <?php } ?> value="red">Light Noise: red</option>
+              <option <?php if (get_settings($value['id'])=='blue') {?> selected="selected" <?php } ?> value="blue">Light Noise: blue</option>
+              <option <?php if (get_settings($value['id'])=='wall') {?> selected="selected" <?php } ?> value="wall">Dirty Wall</option>
+              <option <?php if (get_settings($value['id'])=='wood') {?> selected="selected" <?php } ?> value="wood">Wood</option>
+              <option style="color: #ed1f24" <?php if (get_settings($value['id'])=='user') {?> selected="selected" <?php } ?> value="user">User defined (upload)</option>
+            </select>
+         </label>
+
+         <div id="userheader" style="display: none;">
+          <?php _e('Upload a 960x190 image for best fit:','arclite'); ?><br />
+          <input type="file" name="file-header" id="file-header" />
+          <?php if(get_option('arclite_headerimage')) { echo '<div><img src="'; echo get_option('arclite_headerimage'); echo '"  style="margin-top:10px;" /></div>'; } ?>
+          <?php _e('Repeat background (same size, optional):','arclite'); ?><br />
+          <input type="file" name="file-header2" id="file-header2" />
+          <?php if(get_option('arclite_headerimage2')) { echo '<div><img src="'; echo get_option('arclite_headerimage2'); echo '"  style="margin-top:10px;" /></div>'; } ?>
+         </div>
+
+        </td>
+        </tr>
+
+      <?php break;
+      case "arclite_logo": ?>
+
+        <tr>
+        <th scope="row"><?php echo $value['name']; ?></th>
+        <td>
+         <label><input  name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>-yes" type="radio" value="yes"<?php if ( get_settings( $value['id'] ) == "yes") { echo " checked"; } ?> /><?php _e("Yes","arclite"); ?></label>
+
+         &nbsp;&nbsp;
+        <label><input  name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>-no" type="radio" value="no"<?php if ( get_settings( $value['id'] ) == "no") { echo " checked"; } ?> /><?php _e("No","arclite"); ?></label>
+
+        <div id="userlogo">
+        <?php echo $value['desc']; ?><br />
+         <input type="file" name="file-logo" id="file-logo" />
+         <?php if(get_option('arclite_logoimage')) { echo '<div><img src="'; echo get_option('arclite_logoimage'); echo '"  style="margin-top:10px;border:1px solid #aaa;padding:10px;" /></div>'; } ?>
+        </div>
+
+        </td>
+        </tr>
 
 
 
-// register functions
-add_action('admin_menu', array('ArcliteOptions', 'add'));
+
+	<?php break;
+    	}
+      }
+	?>
+        </table>
+       </div>
+     </div>
+
+
+	 <div class="stuffbox">
+      <h3><label for="link_url"><?php _e("Sidebar","arclite"); ?></label></h3>
+      <div class="inside">
+        <table class="form-table" style="width: auto">
+<?php
+ foreach ($options as $value) {
+  switch ( $value['type'] ) {
+	case "arclite_sidebarpos": ?>
+
+        <tr>
+        <th scope="row"><?php echo $value['name']; ?></th>
+        <td>
+         <label><input  name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="radio" value="left"<?php if ( get_settings( $value['id'] ) == "left") { echo " checked"; } ?> /><?php _e("Left","arclite"); ?></label>
+
+         &nbsp;&nbsp;
+        <label><input  name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="radio" value="right"<?php if ( get_settings( $value['id'] ) == "right") { echo " checked"; } ?> /><?php _e("Right","arclite"); ?></label>
+        </td>
+        </tr>
+	<?php break;
+	case "arclite_sidebarcat": ?>
+        <tr>
+        <th scope="row"><?php echo $value['name']; ?></th>
+        <td>
+         <label><input  name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="radio" value="yes"<?php if ( get_settings( $value['id'] ) == "yes") { echo " checked"; } ?> /><?php _e("Yes","arclite"); ?></label>
+
+         &nbsp;&nbsp;
+        <label><input  name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="radio" value="no"<?php if ( get_settings( $value['id'] ) == "no") { echo " checked"; } ?> /><?php _e("No","arclite"); ?></label>
+        </td>
+        </tr>
+    <?php
+    	}
+     	}
+	?>
+        </table>
+      </div>
+     </div>
+
+
+     	 <div class="stuffbox">
+      <h3><label for="link_url"><?php _e("Footer","arclite"); ?></label></h3>
+      <div class="inside">
+        <table class="form-table" style="width: auto">
+<?php
+ foreach ($options as $value) {
+  switch ( $value['type'] ) {
+	case "arclite_footer": ?>
+
+        <tr>
+        <th scope="row"><?php echo $value['name']; ?><br /><?php echo $value['desc']; ?></th>
+        <td>
+         <label>
+          <textarea rows="4" cols="60" name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>"><?php print get_option($value['id']); ?></textarea>
+         </label>
+        </td>
+        </tr>
+
+    <?php
+    	}
+    	}
+	?>
+        </table>
+      </div>
+     </div>
+
+
+
+     	 <div class="stuffbox">
+      <h3><label for="link_url"><?php _e("User CSS code","arclite"); ?></label></h3>
+      <div class="inside">
+        <table class="form-table" style="width: auto">
+<?php
+ foreach ($options as $value) {
+  switch ( $value['type'] ) {
+	case "arclite_css": ?>
+
+        <tr>
+        <th scope="row"><?php echo $value['name']; ?><br /><?php echo $value['desc']; ?></th>
+        <td valign="top">
+         <label>
+          <textarea rows="12" cols="60" name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>"><?php print get_option($value['id']); ?></textarea>
+         </label>
+        </td>
+        <td valign="top">
+        Examples:
+        <p><em style="color: #5db408">/* Set a fixed page width (960px) */</em><br /><code>.block-content{ width: 960px; max-width: 960px; }</code></p>
+        <p><em style="color: #5db408">/* Set fluid page width (not recommended) */</em><br /><code>.block-content{ width: 95%; max-width: 95%; }</code></p>
+
+        <p><em style="color: #5db408">/* Hide post information bar */</em><br /><code>.post p.post-date, .post p.post-author{ display: none; }</code></p>
+        <p><em style="color: #5db408">/* Use Windows Arial style fonts, instead of Mac's Lucida */</em><br /><code>body, input, textarea, select, h1, h2, h6,<br />.post h3, .box .titlewrap h4{ font-family: Arial, Helvetica; }</code></p>
+
+        </td>
+        </tr>
+
+    <?php
+    	}
+    	}
+	?>
+        </table>
+      </div>
+     </div>
+
+
+</div>
+    <input name="save" type="submit" class="button-primary" value="Save changes" />
+	<input type="hidden" name="action" value="save" />
+
+
+<?php
+
+?>
+
+
+
+</form>
+</div>
+<?php
+}
+
+add_action('admin_menu', 'arclite_options');
+
 
 if ( function_exists('register_sidebar')) {
     register_sidebar(array(
@@ -181,10 +471,10 @@ if ( function_exists('register_sidebar')) {
 
     register_sidebar(array(
         'name' => 'Footer',
-		'before_widget' => '<li><div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div></li>',
-		'before_title' => '<h2 class="title">',
-		'after_title' => '</h2>'
+		'before_widget' => '<li class="block widget %2$s" id="%1$s">',
+		'after_widget' => '</li>',
+		'before_title' => '<h4 class="title">',
+		'after_title' => '</h4>'
     ));
 }
 

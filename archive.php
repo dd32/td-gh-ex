@@ -53,7 +53,7 @@
                 <?php
          $posttags = get_the_tags();
          if ($posttags) { ?>
-          <p class="tags"><?php the_tags(_('Tags: ','arclite')); ?></p>
+          <p class="tags"><?php the_tags(); ?></p>
         <?php } ?>
 
              </div>

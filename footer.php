@@ -1,9 +1,13 @@
-<?php /* Arclite/digitalnature */
-  $options = get_option('arclite_options');
-?>
+<?php /* Arclite/digitalnature */ ?>
   <!-- footer -->
  <div id="footer">
   <div class="block-content">
+     <?php include(TEMPLATEPATH . '/footer-widgets.php'); ?>
+     <?php if(get_option('arclite_footer')<>'') { ?>
+     <div class="add-content">
+       <?php print get_option('arclite_footer'); ?>
+     </div>
+     <?php } ?>
      <div class="copyright">
      <!-- please do not remove this. respect the authors :) -->
      <?php
@@ -15,7 +19,6 @@
      <a class="rss" href="<?php bloginfo('rss2_url'); ?>"><?php _e('Entries (RSS)','arclite'); ?></a> <?php _e('and','arclite');?> <a href="<?php bloginfo('comments_rss2_url'); ?>"><?php _e('Comments (RSS)','arclite'); ?></a> <a href="#" id="toplink">^</a>
      <!-- <?php echo get_num_queries(); ?> queries. <?php timer_stop(1); ?> seconds. -->
      </div>
-
   </div>
  </div>
  <!-- /footer -->

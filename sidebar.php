@@ -1,6 +1,4 @@
-<?php /* Arclite/digitalnature */
-  $options = get_option('arclite_options');
-?>
+<?php /* Arclite/digitalnature */ ?>
     	<div class="col2">
 
           <ul id="sidebar">
@@ -28,15 +26,15 @@
 			<?php /* If this is a monthly archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
 			  <p><?php _e('You are currently browsing the archives.','arclite'); ?></p>
 			<?php } ?>
-          </div>  
+          </div>
 	 	</li>
         <?php }?>
 
-        <?php if(!$options['hidecategories'])  { ?>
+        <?php if(get_option('arclite_sidebarcat')<>'no')  { ?>
         <li class="block">
           <!-- sidebar menu (categories) -->
           <ul class="menu">
-            <?php if($options['nojquery']) {
+            <?php if(get_option('arclite_jquery')<>'yes') {
               echo preg_replace('@\<li([^>]*)>\<a([^>]*)>(.*?)\<\/a>@i', '<li$1><a class="fadeThis"$2>$3</a>', wp_list_categories('show_count=0&echo=0&title_li='));
             } else {
               echo preg_replace('@\<li([^>]*)>\<a([^>]*)>(.*?)\<\/a> \(\<a ([^>]*) ([^>]*)>(.*?)\<\/a>\)@i', '<li $1><a class="fadeThis"$2>$3</a><a class="rss" $4></a>', wp_list_categories('show_count=0&echo=0&title_li=&feed=XML')); } ?>

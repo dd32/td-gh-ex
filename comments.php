@@ -1,6 +1,4 @@
-<?php /* Arclite/digitalnature */
-  $options = get_option('arclite_options');
-?>
+<?php /* Arclite/digitalnature */ ?>
 <?php if ( !empty($post->post_password) && $_COOKIE['wp-postpass_' . COOKIEHASH] != $post->post_password) : ?>
 <p class="error"><?php _e('Enter your password to view comments','arclite'); ?></p>
 <?php return; endif; ?>
