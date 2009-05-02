@@ -1,5 +1,7 @@
-<?php
- /* Arclite/digitalnature */
+<?php /* Arclite/digitalnature
+
+ Template Name: Page without sidebar
+ */
  get_header();
 ?>
 
@@ -9,10 +11,8 @@
 
   <!-- main page block -->
   <div id="main" class="block-content">
-   <div class="mask-main rightdiv">
-    <div class="mask-left">
 
-     <!-- first column -->
+     <!-- first and only column -->
      <div class="col1">
       <div id="main-content">
 
@@ -28,15 +28,11 @@
        <?php endwhile; endif; ?>
 
        <?php comments_template(); ?>
-       
+
       </div>
      </div>
-     <!-- /first column -->
-     <?php get_sidebar(); ?>
+     <!-- /first and only column -->
 
-    </div>
-   </div>
-   <div class="clear-content"></div>
   </div>
   <!-- /main page block -->
 

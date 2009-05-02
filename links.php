@@ -1,5 +1,7 @@
-<?php
- /* Arclite/digitalnature */
+<?php /* Arclite/digitalnature
+
+ Template Name: Links
+ */
  get_header();
 ?>
 
@@ -16,7 +18,11 @@
      <div class="col1">
       <div id="main-content">
 
-       <h2><?php _e('Page not found (404)','arclite'); ?></h2>
+      <h2><?php _e("Links:","arclite"); ?></h2>
+
+       <ul>
+        <?php wp_list_bookmarks(); ?>
+       </ul>
 
       </div>
      </div>

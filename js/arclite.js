@@ -1,5 +1,6 @@
-(function($) {
 
+// ie 6 png fix
+(function($) {
 	$.fn.pngfix = function(options) {
 
 		// Review the Microsoft IE developer library for AlphaImageLoader reference
@@ -119,7 +120,8 @@ jQuery.fn.fadeTo = function(speed,to,callback) {
  });
 };
 
-function tabmenudropdowns(){
+// simple nav. fade
+function navigationeffects(){
 jQuery(" ul#nav ul ").css({display: "none"}); 
 jQuery("ul#nav li").hover(function(){
   jQuery(this).find('ul:first').css({visibility: "visible",display: "none"}).fadeIn(333);
@@ -190,3 +192,51 @@ jQuery("ul#nav li").hover(function(){
   window['MGJS_CMT']['quote'] = quote;
 
 })();
+
+
+// init.
+
+jQuery(document).ready(function(){
+  jQuery(".comment .avatar").pngfix();
+
+
+  // rss popup link
+  jQuery("ul.menu li.cat-item").hover(function() {
+		jQuery(this).find("a.rss").animate({opacity: "show", top: "1", right: "6"}, "333");
+	}, function() {
+		jQuery(this).find("a.rss").animate({opacity: "hide", top: "-15", right: "6"}, "333");
+	});
+
+  // reply/quote links
+  jQuery(".comment-head").hover(function() {
+		jQuery(this).find("p.controls").animate({opacity: "show", top: "4", right: "6"}, "333");
+	}, function() {
+		jQuery(this).find("p.controls").animate({opacity: "hide", top: "-15", right: "6"}, "333");
+	});
+
+  // fade span
+  jQuery('.fadeThis, ul#footer-widgets li.widget li').append('<span class="hover"></span>').each(function () {
+    var jQueryspan = jQuery('> span.hover', this).css('opacity', 0);
+	  jQuery(this).hover(function () {
+	    jQueryspan.stop().fadeTo(333, 1);
+	  }, function () {
+	    jQueryspan.stop().fadeTo(333, 0);
+	  });
+	});
+
+
+  jQuery('#sidebar ul.menu li li a').mouseover(function () {
+   	jQuery(this).animate({ marginLeft: "5px" }, 100 );
+  });
+  jQuery('#sidebar ul.menu li li a').mouseout(function () {
+    jQuery(this).animate({ marginLeft: "0px" }, 100 );
+  });
+
+
+  jQuery('a.toplink').click(function(){
+    jQuery('html').animate({scrollTop:0}, 'slow');
+  });
+
+  navigationeffects();
+
+ });

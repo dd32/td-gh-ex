@@ -24,7 +24,14 @@ If you wish to contribute by translating the theme please write me a email to he
 Change log:
 -----------
 
-1.1  - 30-may-2009: Fixed small bug in tags
+1.2  -  2-may-2009: Removed "hide home link" option (found a better way to check if homepage is static)
+                    Added user header background-color option
+                    Added a 2nd widgetized area in footer
+                    Many CSS adjustments
+                    Better IE 6 support (still needs some work)
+                    Added page templates: Links, Page without sidebar
+
+1.1  - 30-apr-2009: Fixed small bug in tags
                     Added 3 more header color variations
                     Heavy changes to theme options
                     Changed navigation on imageless style

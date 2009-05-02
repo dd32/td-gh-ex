@@ -37,7 +37,7 @@
   	  <li><?php _e('No comments yet.','arclite'); ?></li>
   	<?php }	?>
     </ul>
-
+            <div class="clear"></div>
     <?php if ($numPingbacks > 0) { ?>
     <!-- trackbacks -->
    <h3><?php _e('Trackbacks','arclite'); echo ' ('.$numPingBacks.')'; ?></h3>
@@ -123,7 +123,6 @@
 
          <input type="hidden" name="formInput" />
         </div>
-        <div class="clear"></div>
       </form>
     </div>
     <?php } ?>

@@ -2,11 +2,11 @@
 /*
 Theme Name: Arclite
 Theme URI: http://digitalnature.ro/projects/arclite
-Description: Clean design, light and warm colors, mainly focused on typography. Theme options include the ability to switch to a imageless type of layout. Designed by <a href="http://digitalnature.ro/">digitalnature</a>. <br />Localization supported, contact me if you wish to contribute with translations :)
-Version: 1.1
+Description: Simple but elegant theme with lots of theme options. Designed by <a href="http://digitalnature.ro/">digitalnature</a>.
+Version: 1.2
 Author: digitalnature
 Author URI: http://digitalnature.ro
-Tags: light, two-columns, fixed-width, flexible-width, right-sidebar, theme-options, threaded-comments
+Tags: light, two-columns, flexible-width, right-sidebar, theme-options, threaded-comments
 
   Arclite Wordpress theme
     http://digitalnature.ro/projects/arclite
@@ -53,7 +53,7 @@ body{
   font-size: .8em;
   font-style: normal;
   color: #000;
-  background: #fff;
+  background: #261c13;
   min-height:100%;
   height:auto !important; /* ie6 ignores it */
   height:100%; /* fix */
@@ -100,6 +100,7 @@ h3{
   letter-spacing: -0.04em;
   line-height: 110%;
   margin: .5em 0 .2em;
+  text-shadow: #fff 1px 1px 1px;
 }
 
 h4{
@@ -329,16 +330,16 @@ blockquote p{
 
 }
 
-.mask-main .mask-left {
+#page.with-sidebar .mask-main .mask-left {
   right:30%;			/* right column width */
 }
 
-.mask-main .col1 {
+#page.with-sidebar .mask-main .col1 {
   width:70%;			/* left column width */
   left:30%;			    /* right column width */
 }
 
-.mask-main .col2 {
+#page.with-sidebar .mask-main .col2 {
   width:30%;			/* right column width */
   left:30%;			    /* right column width */
 }
@@ -629,6 +630,9 @@ blockquote p{
 
 
 /* post */
+.post{
+  margin: 1em 0;
+}
 
 .post h3{
   font-family: "Union", "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Sans, FreeSans, Jamrul, Garuda, Kalimati;
@@ -637,6 +641,7 @@ blockquote p{
   font-size: 180%;
   font-weight: bold;
   letter-spacing: -0.04em;
+  text-shadow: #fff 1px 1px 1px;
 }
 
 .post h3 a{
@@ -723,8 +728,10 @@ blockquote p{
 .post p.post-metadata{
   font-size: 80%;
   margin: 2em 0;
-  padding: 0;
+  padding: .6em 1em;
   color: #a8937b;
+  background: #f4f1e9;
+  border: 1px solid #fff;
 }
 
 .post p.post-metadata a{
@@ -800,6 +807,10 @@ ul#comments ul{
   position: relative;
 }
 
+.admincomment .comment-head{
+  background: #125f9f url(images/comment-head-admin.png) repeat-x left bottom;
+}
+
 .comment-head p{
   padding: .5em 1em 1.5em 1em;
   margin: 0;
@@ -820,7 +831,6 @@ ul#comments ul{
   z-index: 10;
   padding: 0 1em 0 0;
   margin: 0;
-  min-height: none;
 }
 
 .comment-body{
@@ -866,7 +876,6 @@ li.comment #respond{
   padding: 0;
 }
 
-
 /* sidebar menu */
 
 ul.menu, ul.menu li{
@@ -889,7 +898,7 @@ ul.menu li a{
   display: block;
   text-decoration: none;
   text-transform: uppercase;
-  padding: 6px 30px 6px 12px;
+  padding: 3px 30px 3px 12px;
   color: #000;
   font-size: 120%;
 }
@@ -916,11 +925,6 @@ ul.menu .fadeThis span.hover {
 }
 
 /* sub menus */
-
-ul.menu ul{
-  padding-bottom: .4em;
-}
-
 
 ul.menu li li{
   margin-left: 1.8em;
@@ -1033,7 +1037,7 @@ ul.menu li li .fadeThis span.hover {
 .box .tr{ background: transparent url(images/box-tr.png) no-repeat top right; }
 
 .box .the-content{
-  padding: .2em 1em .6em 1em;
+  padding: .4em 1em .6em 1em;
   min-height:64px;
   height:auto !important;
   height:64px;            /* ie 6 fix */
@@ -1044,8 +1048,27 @@ ul.menu li li .fadeThis span.hover {
 /*** FOOTER ***/
 
 #footer{
-  background: #fff;
   padding: 1em 0;
+  color: #e7e0c7;
+  border-top: 1px solid #fff;
+}
+
+#footer a{
+  color: #f44365;
+}
+
+#footer a.rss{
+  background: transparent url(images/rss.png) no-repeat left 1px;
+  padding-left: 20px;
+}
+
+#footer a.toplink{
+  padding: 1px 6px;
+  background: #584d43;
+  color: #eae3ca;
+  font-size: 50%;
+  text-decoration: none;
+  margin-left: 4px;
 }
 
 #footer .copyright{
@@ -1057,25 +1080,82 @@ ul.menu li li .fadeThis span.hover {
   margin: .6em 0;
 }
 
-#footer ul.footer-links{
+
+/* footer links/widgets */
+ul#footer-widgets{
   margin: 0;
+  padding: 0;
+  color: #cec2ab;
+}
+
+ul#footer-widgets li.widget{
+  float: left;
+  padding: 0;
+  margin: 0;
+  width: 25%; /* no more than 4 blocks */
+  list-style-type: none;
+}
+
+ul#footer-widgets h6.title{
+  border-bottom: 1px solid #a59079;
+  padding: .1em 0;
+  text-align: right;
+  font-style: italic;
+}
+
+ul#footer-widgets .the-content{
+  margin: 0 1em;
+  padding: .4em 0;
+}
+
+ul#footer-widgets li.widget ul{
   padding: 0;
 }
 
-#footer ul#footer-links li.widget{
-  float: left;
-  padding: 0 1em;
+ul#footer-widgets li.widget li{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  padding: .2em .6em;
+  display: block;
+  border-bottom: 1px solid #4f3b26;
+  position: relative;
 }
 
-#footer ul#footer-links h4.title{
-  border-bottom: 1px solid #ccc;
-  padding: .2em 0;
+ul#footer-widgets li.widget li li{
+  padding-left: 1em;
+  border: 0;
+}
+
+ul#footer-widgets li.widget li a{
+  text-decoration: none;
+  color: #a59079;
+}
+
+ul#footer-widgets li.widget li a:hover{
+  color: #fff;
+}
+
+ul#footer-widgets li.widget li:hover{
+  color: #fff;
+}
+
+ul#footer-widgets li.widget li span.hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: #4f3b26;
+  z-index: -1;
+  margin: 0;
+  padding: 0;
 }
 
 
 
 /*** MISC ***/
-/* misc... */
 
 .left{ float: left; }
 .right{ float: right; }
@@ -1150,6 +1230,7 @@ div.clear{ clear: both;height:1px;  }
 .navigation{
   font-size: 80%;
   color: #a8937b;
+  margin: 2em 0 1em 0;
 }
 
 .navigation a{
@@ -1241,11 +1322,24 @@ img.wp-smiley, .post .post-content img.wp-smiley, .attachment img.wp-smiley{
   text-align: justify;
 }
 
+.widget_tag_cloud .the-content{
+  padding: .4em 1em 1em 1em;
+  line-height: 125%;
+}
+
 .widget_tag_cloud a{
   text-decoration: none;
   vertical-align: middle;
   letter-spacing: -0.04em;
+  color: #000;
+  line-height: 100%;
 }
+
+.widget_tag_cloud a:hover{
+  background: #f44365;
+  color: #fff;
+}
+
 
 /* no .box style on calendar */
 .widget_calendar .box,
