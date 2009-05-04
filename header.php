@@ -4,18 +4,22 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title><?php bloginfo('name'); ?> | <?php bloginfo('description'); ?></title>
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
+	<link rel="shortcut icon" href="" type="image" />
 	<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 	<?php wp_head();?>
 </head>
 <body>
-<div align="center">
-<table border="0" cellspacing="0" cellpadding="0" id="topbar">
-	<tbody>
-		<tr>
-			<td width="50%" valign="middle"><div align="left"><span class="blogtitle"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></span> <span class="blogdescription"><?php bloginfo('description'); ?></span></div></td>
-			<td width="50%" valign="middle"><div align="right"><?php include (TEMPLATEPATH . '/searchform.php'); ?></div></td>
-		</tr>
-	</tbody>
-</table>
-<div align="left" id="contentwrap">
+<div id="headerwrap">
+	<table border="0" cellpadding="0" cellspacing="0" id="header">
+		<tbody>
+			<tr>
+				<td class="bloginfo"><strong><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></strong> | <?php bloginfo('description'); ?></td>
+				<td class="searchform"><?php include ('searchform.php'); ?></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div id="contentwrap">
+	<div id="content">
+		<div id="banner"></div>

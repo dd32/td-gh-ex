@@ -1,11 +1,13 @@
 <?php get_header();?>
-	<div id="content">
-		<div id="banner"></div>
-		<div class="pagetitle">Error 404</div>
-		<p>Dot dot dot...</p>
+		<div class="post">
+			<h2>Error 404</h2>
+			<div class="entrywhole">
+				<div class="entry">
+					<p>Nothing found.</p>
+				</div>
+			</div>
+		</div>
 	</div>
-	<div id="navigationwrap">
-		<?php get_sidebar();?>
-	</div>
+	<?php include ('sidebar1.php'); ?>
 </div>
 <?php get_footer();?>
