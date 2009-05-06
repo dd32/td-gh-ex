@@ -3,10 +3,10 @@
 Theme Name: Arclite
 Theme URI: http://digitalnature.ro/projects/arclite
 Description: Simple but elegant theme with lots of theme options. Designed by <a href="http://digitalnature.ro/">digitalnature</a>.
-Version: 1.2
+Version: 1.3
 Author: digitalnature
 Author URI: http://digitalnature.ro
-Tags: light, two-columns, flexible-width, right-sidebar, theme-options, threaded-comments
+Tags: light, brown, two-columns, flexible-width, right-sidebar, theme-options, threaded-comments, custom-header
 
   Arclite Wordpress theme
     http://digitalnature.ro/projects/arclite
@@ -104,14 +104,14 @@ h3{
 }
 
 h4{
-  font-family: "Share", Arial Narrow, Arial, Sans;
+  font-family: "Share", "Arial Narrow", Arial, Sans;
   font-size: 200%;
   font-weight: normal;
   margin: .5em 0 .2em;
 }
 
 h5{
-  font-family: Palatino Linotype, Georgia, Serif;
+  font-family: "Palatino Linotype", Georgia, Serif;
   font-size: 150%;
   font-weight: bold;
   margin: .5em 0 .2em;
@@ -253,7 +253,7 @@ pre{
   white-space: -moz-pre-wrap;  /* ff */
   word-wrap: break-word;       /* ie */
   font-size: 12px;
-  font-family: Courier New, Courier, Lucida Console, Monaco, DejaVu Sans Mono, Nimbus Mono L, Bitstream Vera Sans Mono;
+  font-family: "Courier New", Courier, "Lucida Console", Monaco, "DejaVu Sans Mono", "Nimbus Mono L", "Bitstream Vera Sans Mono";
   background: #fff;
   padding: .4em;
   margin: 1em 0;
@@ -634,7 +634,7 @@ blockquote p{
   margin: 1em 0;
 }
 
-.post h3{
+.post h3, .post h2{
   font-family: "Union", "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Sans, FreeSans, Jamrul, Garuda, Kalimati;
   margin: 0;
   padding: .8em 0 .1em 0;
@@ -644,15 +644,20 @@ blockquote p{
   text-shadow: #fff 1px 1px 1px;
 }
 
-.post h3 a{
+.post h3 a, .post h2 a{
   text-decoration: none;
   color: #000;
 }
 
-.post h3 a:hover{
+.post h3 a:hover, .post h2 a:hover{
   color: #df2e56;
 }
 
+/* large title on single page */
+.post h2{
+  font-size: 250%;
+  font-weight: normal;
+}
 
 .post p.post-date{
   background: #fff;
@@ -723,6 +728,25 @@ blockquote p{
   background: transparent url(images/comment.png) no-repeat left 1px;
   padding-left: 18px;
   font-weight: bold;
+}
+
+/* tags */
+.post p.tags{
+  background: transparent url(images/tag.gif) no-repeat left top;
+  font-size: 80%;
+  color: #a8937b;
+  padding: 0 0 0 13px;
+  margin: 1em 0;
+}
+
+.post p.tags a{
+  color: #6b5e50;
+  text-decoration: underline;
+}
+
+.post p.tags a:hover{
+  color: #f44365;
+  text-decoration: underline;
 }
 
 .post p.post-metadata{
@@ -815,7 +839,7 @@ ul#comments ul{
   padding: .5em 1em 1.5em 1em;
   margin: 0;
   font-style: italic;
-  font-size: 85%;
+  font-size: 90%;
 }
 
 .comment-head p a, .comment-head p a:visited{
@@ -838,7 +862,7 @@ ul#comments ul{
   height: 60px;
   min-height:60px;
   height:auto !important; /* ie6 fix */
-  font-size: 85%;
+  font-size: 90%;
 }
 
 .comment-body p{
@@ -1058,7 +1082,7 @@ ul.menu li li .fadeThis span.hover {
 }
 
 #footer a.rss{
-  background: transparent url(images/rss.png) no-repeat left 1px;
+  background: transparent url(images/rss.png) no-repeat left top;
   padding-left: 20px;
 }
 
@@ -1073,6 +1097,7 @@ ul.menu li li .fadeThis span.hover {
 
 #footer .copyright{
   text-align: center;
+  font-size: 85%;
 }
 
 #footer .add-content{
@@ -1386,3 +1411,10 @@ img.wp-smiley, .post .post-content img.wp-smiley, .attachment img.wp-smiley{
   padding-left: 160px;
 }
 
+/* no border on smilies */
+img.wp-smiley, .post .postbody img.wp-smiley, .attachment img.wp-smiley{
+  padding: 0;
+  margin: 0;
+  border: 0;
+  vertical-align: -20%;
+}

@@ -76,7 +76,7 @@
 
       <div id="respond">
       <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform" name="tcommentform">
-        <div class="cancel-comment-reply"><?php cancel_comment_reply_link(__('Cancel Reply','arclite')); ?></div>
+        <?php if (function_exists('cancel_comment_reply_link')) { ?><div class="cancel-comment-reply"><?php cancel_comment_reply_link(__('Cancel Reply','arclite')); ?></div><?php } ?>
         <?php if ($user_ID) : ?>
           <?php if (function_exists('wp_logout_url')) $logout_link = wp_logout_url(); else $logout_link = get_option('siteurl') . '/wp-login.php?action=logout';	?>
       	  <p>
@@ -113,7 +113,7 @@
         <div class="row">
         	<textarea name="comment" id="comment" tabindex="4" rows="8" cols="50"></textarea>
         	<?php if (function_exists('highslide_emoticons')) : ?><div id="emoticon"><?php highslide_emoticons(); ?></div><?php endif; ?>
-        	<?php comment_id_fields();do_action('comment_form', $post->ID); ?>
+        	<?php if (function_exists('comment_id_fields')) : comment_id_fields(); endif; do_action('comment_form', $post->ID); ?>
         </div>
         <!-- /comment input -->
 

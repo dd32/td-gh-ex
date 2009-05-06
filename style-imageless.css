@@ -78,14 +78,14 @@ h3{
 }
 
 h4{
-  font-family: "Share", Arial Narrow, Arial, Sans;
+  font-family: "Share", "Arial Narrow", Arial, Sans;
   font-size: 200%;
   font-weight: normal;
   margin: .5em 0 .2em;
 }
 
 h5{
-  font-family: Palatino Linotype, Georgia, Serif;
+  font-family: "Palatino Linotype", Georgia, Serif;
   font-size: 150%;
   font-weight: bold;
   margin: .5em 0 .2em;
@@ -227,7 +227,7 @@ pre{
   white-space: -moz-pre-wrap;  /* ff */
   word-wrap: break-word;       /* ie */
   font-size: 12px;
-  font-family: Courier New, Courier, Lucida Console, Monaco, DejaVu Sans Mono, Nimbus Mono L, Bitstream Vera Sans Mono;
+  font-family: "Courier New", Courier, "Lucida Console", Monaco, "DejaVu Sans Mono", "Nimbus Mono L", "Bitstream Vera Sans Mono";
   background: #fff;
   padding: .4em;
   margin: 1em 0;
@@ -607,7 +607,7 @@ blockquote p{
   margin: 1em 0;
 }
 
-.post h3{
+.post h3, .post h2{
   font-family: "Union", "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Sans, FreeSans, Jamrul, Garuda, Kalimati;
   margin: 0;
   padding: .8em 0 .1em 0;
@@ -617,15 +617,20 @@ blockquote p{
   text-shadow: #fff 1px 1px 1px;
 }
 
-.post h3 a{
+.post h3 a, .post h2 a{
   text-decoration: none;
   color: #000;
 }
 
-.post h3 a:hover{
+.post h3 a:hover, .post h2 a:hover{
   color: #df2e56;
 }
 
+/* large title on single page */
+.post h2{
+  font-size: 250%;
+  font-weight: normal;
+}
 
 .post p.post-date{
   background: #fff;
@@ -695,6 +700,25 @@ blockquote p{
 .post-links a.comments{
   font-weight: bold;
 }
+
+/* tags */
+.post p.tags{
+  font-size: 80%;
+  color: #a8937b;
+  padding: 0;
+  margin: 1em 0;
+}
+
+.post p.tags a{
+  color: #6b5e50;
+  text-decoration: underline;
+}
+
+.post p.tags a:hover{
+  color: #f44365;
+  text-decoration: underline;
+}
+
 
 .post p.post-metadata{
   font-size: 80%;
@@ -782,7 +806,7 @@ ul#comments ul{
   padding: .5em 1em .5em 1em;
   margin: 0;
   font-style: italic;
-  font-size: 85%;
+  font-size: 90%;
 }
 
 .comment-head p a, .comment-head p a:visited{
@@ -805,7 +829,7 @@ ul#comments ul{
   height: 60px;
   min-height:60px;
   height:auto !important; /* ie6 fix */
-  font-size: 85%;
+  font-size: 90%;
 }
 
 .comment-body p{
@@ -1038,6 +1062,7 @@ ul.menu li li .fadeThis span.hover {
 
 #footer .copyright{
   text-align: center;
+  font-size: 85%;
 }
 
 #footer .add-content{
@@ -1084,6 +1109,7 @@ ul#footer-widgets li.widget li{
   padding: .2em .6em;
   display: block;
   border-bottom: 1px solid #4f3b26;
+  position: relative;
 }
 
 ul#footer-widgets li.widget li li{
@@ -1116,7 +1142,6 @@ ul#footer-widgets li.widget li span.hover {
   margin: 0;
   padding: 0;
 }
-
 
 
 /*** MISC ***/
@@ -1349,3 +1374,10 @@ img.wp-smiley, .post .post-content img.wp-smiley, .attachment img.wp-smiley{
   padding-left: 160px;
 }
 
+/* no border on smilies */
+img.wp-smiley, .post .postbody img.wp-smiley, .attachment img.wp-smiley{
+  padding: 0;
+  margin: 0;
+  border: 0;
+  vertical-align: -20%;
+}

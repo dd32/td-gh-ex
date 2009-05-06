@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arclite 1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-02 05:30+0200\n"
+"POT-Creation-Date: 2009-05-02 17:43+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: digitalnature <hello@digitalnature.ro>\n"
 "Language-Team: digitalnature.ro <hello@digitalnature.ro>\n"
@@ -39,7 +39,7 @@ msgid "Archive for %s"
 msgstr ""
 
 #: c:\wamp\www\wordpress\wp-content\themes\arclite/archive.php:26
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:544
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:537
 msgid "F jS, Y"
 msgstr ""
 
@@ -307,176 +307,176 @@ msgstr ""
 msgid "Comments (RSS)"
 msgstr ""
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:20
-msgid "Disable all design-related images"
-msgstr ""
-
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:21
-msgid "(Full CSS layout, no background images)"
-msgstr ""
-
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:26
-msgid "Use jQuery effects"
-msgstr ""
-
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:27
-msgid "(for testing purposes only, you shouldnt change this)"
-msgstr ""
-
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:32
-msgid "Homepage meta keywords"
-msgstr ""
-
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:33
-msgid "(Separate with commas. Tags are used as keywords on other pages. Leave empty if you are using a SEO plugin)"
-msgstr ""
-
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:38
-msgid "Header background"
-msgstr ""
-
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:43
-msgid "Logo image"
-msgstr ""
-
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:44
-msgid "Upload a custom logo image"
-msgstr ""
-
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:49
-msgid "Sidebar position"
-msgstr ""
-
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:54
-msgid "Show theme-default category block"
-msgstr ""
-
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:59
-msgid "Top navigation shows"
-msgstr ""
-
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:64
-msgid "Show search"
-msgstr ""
-
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:71
-msgid "Add content"
-msgstr ""
-
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:72
-msgid "(HTML allowed)"
-msgstr ""
-
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:77
-msgid "Modify anything related to design using simple CSS"
-msgstr ""
-
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:78
-msgid "Avoid modifying theme files and use this option instead to preserve changes after update"
-msgstr ""
-
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:143
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:136
 msgid "Arclite settings"
 msgstr ""
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:150
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:143
 msgid "Arclite theme settings"
 msgstr ""
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:152
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:145
 msgid "Settings saved."
 msgstr ""
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:211
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:204
 msgid "General"
 msgstr ""
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:221
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:233
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:284
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:331
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:380
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:212
+msgid "Disable all design-related images"
+msgstr ""
+
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:212
+msgid "(Full CSS layout, no background images)"
+msgstr ""
+
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:214
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:226
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:277
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:324
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:373
 msgid "Yes"
 msgstr ""
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:223
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:235
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:286
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:334
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:383
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:216
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:228
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:279
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:327
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:376
 msgid "No"
 msgstr ""
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:263
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:224
+msgid "Use jQuery effects"
+msgstr ""
+
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:224
+msgid "(for testing purposes only, you shouldnt change this)"
+msgstr ""
+
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:235
+msgid "Homepage meta keywords"
+msgstr ""
+
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:235
+msgid "(Separate with commas. Tags are used as keywords on other pages. Leave empty if you are using a SEO plugin)"
+msgstr ""
+
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:256
 msgid "Header"
 msgstr ""
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:273
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:264
+msgid "Top navigation shows"
+msgstr ""
+
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:266
 msgid "Pages"
 msgstr ""
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:275
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:268
 msgid "Categories"
 msgstr ""
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:304
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:275
+msgid "Show search"
+msgstr ""
+
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:287
+msgid "Header background"
+msgstr ""
+
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:297
 msgid "User defined image (upload)"
 msgstr ""
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:305
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:298
 msgid "User defined color"
 msgstr ""
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:310
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:303
 msgid "Upload a 960x190 image for best fit:"
 msgstr ""
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:313
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:306
 msgid "Repeat background (same size, optional):"
 msgstr ""
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:319
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:312
 msgid "Pick a color"
 msgstr ""
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:358
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:322
+msgid "Logo image"
+msgstr ""
+
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:330
+msgid "Upload a custom logo image"
+msgstr ""
+
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:351
 msgid "Sidebar"
 msgstr ""
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:369
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:360
+msgid "Sidebar position"
+msgstr ""
+
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:362
 msgid "Left"
 msgstr ""
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:372
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:365
 msgid "Right"
 msgstr ""
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:396
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:371
+msgid "Show theme-default category block"
+msgstr ""
+
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:389
 msgid "Footer"
 msgstr ""
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:424
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:398
+msgid "Add content"
+msgstr ""
+
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:398
+msgid "(HTML allowed)"
+msgstr ""
+
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:417
 msgid "User CSS code"
 msgstr ""
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:544
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:426
+msgid "Modify anything related to design using simple CSS"
+msgstr ""
+
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:426
+msgid "Avoid modifying theme files and use this option instead to preserve changes after update"
+msgstr ""
+
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:537
 #, php-format
 msgid "%s by %s at %s"
 msgstr ""
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:544
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:537
 msgid "H:i"
 msgstr ""
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:551
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:544
 msgid "Reply"
 msgstr ""
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:551
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:544
 msgid "Quote"
 msgstr ""
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:565
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:558
 msgid "Your comment is awaiting moderation."
 msgstr ""
 

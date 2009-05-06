@@ -17,7 +17,7 @@
       <div id="main-content">
 
        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        <div id="post-<?php the_ID(); ?>" <?php if (function_exists("post_class")) post_class(); else print 'class="post"'; ?>>
          <?php if (!get_post_meta($post->ID, 'hide_title', true)): ?><h2><?php the_title(); ?></h2><?php endif; ?>
         <div class="entry clearfix">
          <?php the_content(__('Read the rest of this page &raquo;', 'arclite')); ?>

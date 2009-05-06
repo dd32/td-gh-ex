@@ -24,8 +24,8 @@
 
 
         <!-- post -->
-        <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-           <?php if (!get_post_meta($post->ID, 'hide_title', true)): ?><h3><?php the_title(); ?></h3><?php endif; ?>
+        <div id="post-<?php the_ID(); ?>" <?php if (function_exists("post_class")) post_class(); else print 'class="post"'; ?>>
+           <?php if (!get_post_meta($post->ID, 'hide_title', true)): ?><h2><?php the_title(); ?></h2><?php endif; ?>
 
               <div class="post-content clearfix">
     	       <?php the_content(__('Read the rest of this entry &raquo;', 'arclite')); ?>

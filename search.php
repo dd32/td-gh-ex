@@ -30,7 +30,7 @@
 	    </div>
 
         <?php while (have_posts()) : the_post(); ?>
-        <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        <div id="post-<?php the_ID(); ?>" <?php if (function_exists("post_class")) post_class(); else print 'class="post"'; ?>>
 
   	  	 <h4 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h4>
 
@@ -50,7 +50,7 @@
         </div>
 	   <?php else : ?>
   	    <h2 class="center"><?php _e('No posts found. Try a different search?','arclite'); ?></h2>
-        <?php get_search_form(); ?>
+        <?php if (function_exists("get_search_form")) get_search_form(); ?>
        <?php endif; ?>
 
       </div>

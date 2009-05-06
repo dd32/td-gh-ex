@@ -17,72 +17,65 @@ add_action ('init', 'init_language');
 $options = array (
   array(	"type" => "open"),
 
-  array(  "name" => __("Disable all design-related images","arclite"),
-  	"desc" => __("(Full CSS layout, no background images)","arclite"),
-            "id" => "arclite_imageless",
-  	"default" => "no",
-            "type" => "arclite_imageless"),
+  array(
+   "id" => "arclite_imageless",
+   "default" => "no",
+   "type" => "arclite_imageless"),
 
-  array(  "name" => __("Use jQuery effects","arclite"),
-  	"desc" => __("(for testing purposes only, you shouldnt change this)","arclite"),
-            "id" => "arclite_jquery",
-  	"default" => "yes",
-            "type" => "arclite_jquery"),
+  array(
+   "id" => "arclite_jquery",
+   "default" => "yes",
+   "type" => "arclite_jquery"),
 
-  array(  "name" => __("Homepage meta keywords","arclite"),
-  	"desc" => __("(Separate with commas. Tags are used as keywords on other pages. Leave empty if you are using a SEO plugin)","arclite"),
-            "id" => "arclite_meta",
-  	"default" => "",
-            "type" => "arclite_meta"),
+  array(
+   "id" => "arclite_meta",
+   "default" => "",
+   "type" => "arclite_meta"),
 
-  array(  "name" => __("Header background","arclite"),
-            "id" => "arclite_header",
-  	"default" => "default",
-            "type" => "arclite_header"),
+  array(
+   "id" => "arclite_header",
+   "default" => "default",
+   "type" => "arclite_header"),
 
-  array(  "name" => __("Logo image","arclite"),
-            "desc" => __("Upload a custom logo image","arclite"),
-            "id" => "arclite_logo",
-  	        "default" => "no",
-            "type" => "arclite_logo"),
+  array(
+   "id" => "arclite_logo",
+   "default" => "no",
+   "type" => "arclite_logo"),
 
-  array(  "name" => __("Sidebar position","arclite"),
-            "id" => "arclite_sidebarpos",
-  	        "default" => "right",
-            "type" => "arclite_sidebarpos"),
+  array(
+   "id" => "arclite_sidebarpos",
+   "default" => "right",
+   "type" => "arclite_sidebarpos"),
 
-  array(  "name" => __("Show theme-default category block","arclite"),
-            "id" => "arclite_sidebarcat",
-  	        "default" => "yes",
-            "type" => "arclite_sidebarcat"),
+  array(
+   "id" => "arclite_sidebarcat",
+   "default" => "yes",
+   "type" => "arclite_sidebarcat"),
 
-  array(  "name" => __("Top navigation shows","arclite"),
-            "id" => "arclite_topnav",
-  	        "default" => "pages",
-            "type" => "arclite_topnav"),
+  array(
+   "id" => "arclite_topnav",
+   "default" => "pages",
+   "type" => "arclite_topnav"),
 
-  array(  "name" => __("Show search","arclite"),
-            "id" => "arclite_search",
-  	        "default" => "yes",
-            "type" => "arclite_search"),
+  array(
+   "id" => "arclite_search",
+   "default" => "yes",
+   "type" => "arclite_search"),
 
+  array(
+   "id" => "arclite_footer",
+   "default" => "",
+   "type" => "arclite_footer"),
 
+  array(
+   "id" => "arclite_css",
+   "default" => "",
+   "type" => "arclite_css"),
 
-  array(  "name" => __("Add content","arclite"),
-            "desc" => __("(HTML allowed)","arclite"),
-            "id" => "arclite_footer",
-  	"default" => "",
-            "type" => "arclite_footer"),
-
-  array(  "name" => __("Modify anything related to design using simple CSS","arclite"),
-            "desc" => __("Avoid modifying theme files and use this option instead to preserve changes after update","arclite"),
-            "id" => "arclite_css",
-  	"default" => "",
-            "type" => "arclite_css"),
-
-  array(  "id" => "arclite_headercolor",
-          "default" => "261c13",
-          "type" => "arclite_headercolor"),
+  array(
+   "id" => "arclite_headercolor",
+   "default" => "261c13",
+   "type" => "arclite_headercolor"),
 
   array(  "type" => "close")
 );
@@ -216,7 +209,7 @@ function arclite_admin() {
       switch ( $value['type'] ) {
         case "arclite_imageless": ?>
         <tr>
-        <th scope="row"><?php echo $value['name']; ?><br /><?php echo $value['desc']; ?></th>
+        <th scope="row"><?php _e("Disable all design-related images","arclite") ?><br /><?php _e("(Full CSS layout, no background images)","arclite"); ?></th>
         <td>
          <label><input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>-yes" type="radio" value="yes"<?php if ( get_option( $value['id'] ) == "yes") { echo " checked"; } ?> /><?php _e("Yes","arclite"); ?></label>
          &nbsp;&nbsp;
@@ -228,7 +221,7 @@ function arclite_admin() {
         case "arclite_jquery": ?>
 
         <tr>
-        <th scope="row"><?php echo $value['name']; ?><br /><?php echo $value['desc']; ?></th>
+        <th scope="row"><?php _e("Use jQuery effects","arclite"); ?><br /><?php _e("(for testing purposes only, you shouldnt change this)","arclite"); ?></th>
         <td>
          <label><input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>-yes" type="radio" value="yes"<?php if ( get_option( $value['id'] ) == "yes") { echo " checked"; } ?> /><?php _e("Yes","arclite"); ?></label>
          &nbsp;&nbsp;
@@ -239,7 +232,7 @@ function arclite_admin() {
       <?php break;
       case "arclite_meta": ?>
         <tr>
-        <th scope="row"><?php echo $value['name']; ?><br /><?php echo $value['desc']; ?></th>
+        <th scope="row"><?php _e("Homepage meta keywords","arclite"); ?><br><?php _e("(Separate with commas. Tags are used as keywords on other pages. Leave empty if you are using a SEO plugin)","arclite"); ?></th>
         <td>
          <label>
           <input type="text" size="60" name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" value="<?php print get_option($value['id']); ?>" />
@@ -268,7 +261,7 @@ function arclite_admin() {
       switch ( $value['type'] ) {
         case "arclite_topnav": ?>
         <tr>
-        <th scope="row"><?php echo $value['name']; ?></th>
+        <th scope="row"><?php _e("Top navigation shows","arclite"); ?></th>
         <td>
          <label><input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>-pages" type="radio" value="pages"<?php if ( get_option( $value['id'] ) == "pages") { echo " checked"; } ?> /><?php _e("Pages","arclite"); ?></label>
          &nbsp;&nbsp;
@@ -279,7 +272,7 @@ function arclite_admin() {
       <?php break;
         case "arclite_search": ?>
         <tr>
-        <th scope="row"><?php echo $value['name']; ?></th>
+        <th scope="row"><?php _e("Show search","arclite"); ?></th>
         <td>
          <label><input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>-yes" type="radio" value="yes"<?php if ( get_option( $value['id'] ) == "yes") { echo " checked"; } ?> /><?php _e("Yes","arclite"); ?></label>
          &nbsp;&nbsp;
@@ -291,7 +284,7 @@ function arclite_admin() {
         case "arclite_header": ?>
 
         <tr>
-        <th scope="row"><?php echo $value['name']; ?></th>
+        <th scope="row"><?php _e("Header background","arclite"); ?></th>
         <td>
          <label>
             <select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" class="code">
@@ -326,7 +319,7 @@ function arclite_admin() {
       case "arclite_logo": ?>
 
         <tr>
-        <th scope="row"><?php echo $value['name']; ?></th>
+        <th scope="row"><?php _e("Logo image","arclite"); ?></th>
         <td>
          <label><input  name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>-yes" type="radio" value="yes"<?php if ( get_option( $value['id'] ) == "yes") { echo " checked"; } ?> /><?php _e("Yes","arclite"); ?></label>
 
@@ -334,7 +327,7 @@ function arclite_admin() {
         <label><input  name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>-no" type="radio" value="no"<?php if ( get_option( $value['id'] ) == "no") { echo " checked"; } ?> /><?php _e("No","arclite"); ?></label>
 
         <div id="userlogo">
-        <?php echo $value['desc']; ?><br />
+        <?php _e("Upload a custom logo image","arclite"); ?><br />
          <input type="file" name="file-logo" id="file-logo" />
          <?php if(get_option('arclite_logoimage')) { echo '<div><img src="'; echo get_option('arclite_logoimage'); echo '"  style="margin-top:10px;border:1px solid #aaa;padding:10px;" /></div>'; } ?>
         </div>
@@ -364,7 +357,7 @@ function arclite_admin() {
 	case "arclite_sidebarpos": ?>
 
         <tr>
-        <th scope="row"><?php echo $value['name']; ?></th>
+        <th scope="row"><?php _e("Sidebar position","arclite"); ?></th>
         <td>
          <label><input  name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="radio" value="left"<?php if ( get_option( $value['id'] ) == "left") { echo " checked"; } ?> /><?php _e("Left","arclite"); ?></label>
 
@@ -375,7 +368,7 @@ function arclite_admin() {
 	<?php break;
 	case "arclite_sidebarcat": ?>
         <tr>
-        <th scope="row"><?php echo $value['name']; ?></th>
+        <th scope="row"><?php _e("Show theme-default category block","arclite"); ?></th>
         <td>
          <label><input  name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="radio" value="yes"<?php if ( get_option( $value['id'] ) == "yes") { echo " checked"; } ?> /><?php _e("Yes","arclite"); ?></label>
 
@@ -402,7 +395,7 @@ function arclite_admin() {
 	case "arclite_footer": ?>
 
         <tr>
-        <th scope="row"><?php echo $value['name']; ?><br /><?php echo $value['desc']; ?></th>
+        <th scope="row"><?php _e("Add content","arclite"); ?><br /><?php _e("(HTML allowed)","arclite"); ?></th>
         <td>
          <label>
           <textarea rows="4" cols="60" name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>"><?php print get_option($value['id']); ?></textarea>
@@ -430,7 +423,7 @@ function arclite_admin() {
 	case "arclite_css": ?>
 
         <tr>
-        <th scope="row"><?php echo $value['name']; ?><br /><br /><span style="color: #ed1f24"><?php echo $value['desc']; ?></span></th>
+        <th scope="row"><?php _e("Modify anything related to design using simple CSS","arclite"); ?><br /><br /><span style="color: #ed1f24"><?php _e("Avoid modifying theme files and use this option instead to preserve changes after update","arclite"); ?></span></th>
         <td valign="top">
          <label>
           <textarea rows="12" cols="60" name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>"><?php print get_option($value['id']); ?></textarea>
@@ -514,6 +507,7 @@ if ( function_exists('register_sidebar')) {
     ));
 }
 
+
 function list_pings($comment, $args, $depth) {
  $GLOBALS['comment'] = $comment;
  ?>
@@ -528,7 +522,7 @@ function list_comments($comment, $args, $depth) {
  if(!$commentcount) { $commentcount = 0; }
  ?>
   <!-- comment entry -->
-  <li <?php if (function_exists('get_avatar') && get_option('show_avatars')) echo comment_class('with-avatar'); else comment_class(); ?> id="comment-<?php comment_ID() ?>">
+  <li <?php if (function_exists('comment_class')) { if (function_exists('get_avatar') && get_option('show_avatars')) echo comment_class('with-avatar'); else comment_class(); } else { print 'class="comment';if (function_exists('get_avatar') && get_option('show_avatars')) print ' with-avatar'; print '"';  } ?> id="comment-<?php comment_ID() ?>">
    <div class="comment-mask<?php if($comment->comment_author_email == get_the_author_email()) echo ' admincomment'; else echo ' regularcomment'; ?>">
     <div class="comment-main">
      <div class="comment-wrap1">
@@ -548,7 +542,11 @@ function list_comments($comment, $args, $depth) {
          <?php if(comments_open()) { ?>
          <p class="controls">
 
-             <?php comment_reply_link(array_merge( $args, array('add_below' => 'comment-reply', 'depth' => $depth, 'max_depth' => $args['max_depth'], 'reply_text' => '<span>'.__('Reply','arclite').'</span>'.$my_comment_count))) ?> | <a title="<?php _e('Quote','arclite'); ?>" href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-<?php comment_ID() ?>', 'comment-<?php comment_ID() ?>', 'comment-body-<?php comment_ID() ?>', 'comment');"><span><?php _e('Quote','arclite'); ?></span></a> <?php edit_comment_link('| Edit'); ?>
+             <?php
+              if (function_exists('comment_reply_link')) {
+               comment_reply_link(array_merge( $args, array('add_below' => 'comment-reply', 'depth' => $depth, 'max_depth' => $args['max_depth'], 'reply_text' => '<span>'.__('Reply','arclite').'</span>'.$my_comment_count)));
+              } ?>
+              | <a title="<?php _e('Quote','arclite'); ?>" href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-<?php comment_ID() ?>', 'comment-<?php comment_ID() ?>', 'comment-body-<?php comment_ID() ?>', 'comment');"><span><?php _e('Quote','arclite'); ?></span></a> <?php edit_comment_link('| Edit'); ?>
 
 
          </p>
@@ -578,3 +576,6 @@ function list_comments($comment, $args, $depth) {
 <?php
   }
 ?>
+
+
+ 
