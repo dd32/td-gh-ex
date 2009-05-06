@@ -25,6 +25,8 @@ If you wish to contribute by translating the theme please write me a email to he
 Change log:
 -----------
 
+1.31 -  6-may-2009: Small php bug fix
+
 1.3  -  6-may-2009: Added Spanish translation (thanks Ignacio)
                     Added support for older WP versions (I only tested wp 2.6.0)
                     Removed border on smilies

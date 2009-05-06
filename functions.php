@@ -571,11 +571,6 @@ function list_comments($comment, $args, $depth) {
                 </div>
                </div>
               </div>
-
-
 <?php
   }
 ?>
-
-
- 
