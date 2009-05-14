@@ -3,8 +3,8 @@
 <div id="adbox"><!-- Remove this box for pure 3-columns --> 
 
 <!-- Insert large 336x280 Adsense unit here --> 
-<img src="http://farm4.static.flickr.com/3225/2684819307_11eae8f46e_o.jpg" width="336" height="252" alt="Color Bottles" />
 
+ <a href="http://www.flickr.com/photos/pchere/2684819307/" title="Color Bottles by pchere, on Flickr"><img src="http://farm4.static.flickr.com/3225/2684819307_5861c37892.jpg" width="336" height="252" alt="Color Bottles" />
 </div><!-- /Remove this box for pure 3-columns --> 
  
  
@@ -23,24 +23,7 @@
   </li>
 </ul>
 
-
-<!-- Subscribe Links --> 
-<ul>
-  <li><h4>Subscribe Feed</h4> 
-    <ul>
-<li>
-<a href="http://fusion.google.com/add?feedurl=<?php bloginfo('rss2_url'); ?>"><img src="http://buttons.googlesyndication.com/fusion/add.gif" width="104" height="17" border="0" alt="Add to Google" /></a></li>
-  
-<li>
-<a href="http://www.netvibes.com/subscribe.php?url=<?php bloginfo('rss2_url'); ?>"><img src="http://www.netvibes.com/img/add2netvibes.gif" width="91" height="17" alt="Add to netvibes" style="border:0" /></a></li>
-
-<li>
-<a href="http://www.bloglines.com/sub/<?php bloginfo('rss2_url'); ?>">
-<img src="http://static.bloglines.com/images/sub_modern11.gif" border="0" alt="Subscribe with Bloglines" /></a></li>
-
-    </ul>
- </li>
-</ul>
+ 
 
 <!-- Blogroll --> 
 <ul>
@@ -61,9 +44,7 @@
  
 
 <div id="r_sidebar">
-
-<!-- Insert 160x90 Adsense Link Unit Here --> 
-<!-- Insert 160x600 WideScrapper Ad Here --> 
+ 
 
 <!-- Author Info --> 
 <ul>

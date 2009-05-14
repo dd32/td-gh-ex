@@ -4,7 +4,8 @@
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-			<div class="post" id="post-<?php the_ID(); ?>">
+                        <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
 			<h1><a href="<?php echo get_permalink() ?>" rel="bookmark" title="Permanent Link: <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
 <small><?php the_time('F jS, Y') ?>  by <?php the_author() ?> | Filed under <?php the_category(', ') ?>. <?php edit_post_link('Edit'); ?>  </small>
 

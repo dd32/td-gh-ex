@@ -11,10 +11,13 @@
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
+<link rel="alternate" type="application/atom+xml" title="<?php bloginfo('name'); ?> Atom Feed" href="<?php bloginfo('atom_url'); ?>" />
 
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
  
 <meta name="robots" content="index,follow" />
+
+<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 
 <?php wp_head(); ?>
 
@@ -22,6 +25,9 @@
 
 <body>
 
+<div id="topleft">
+<a href="<?php bloginfo('rss2_url'); ?>" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon32x32.png" alt="Subscribe RSS"></a>
+</div>
 
 <div id="page">
 
@@ -43,7 +49,7 @@
 </form>
 
 
-<a   href="<?php bloginfo('rss2_url'); ?>" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="XML, RSS"  style="vertical-align:middle;border:0;" /> Subscribe Feed (RSS)</a>
+<a href="<?php bloginfo('rss2_url'); ?>" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="XML, RSS"  style="vertical-align:middle;border:0;" /> Subscribe Feed (RSS)</a>
 
 &nbsp;
 
@@ -53,3 +59,12 @@
 </tr></table>
 	 
 	</div>
+
+<div id="navbar">
+<a href="<?php echo get_option('home'); ?>/">Home</a>
+
+&nbsp;
+ &nbsp; 
+<a href="<?php bloginfo('rss2_url'); ?>" rel="alternate" type="application/rss+xml">RSS</a>
+
+</div>
