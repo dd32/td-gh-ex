@@ -99,8 +99,6 @@
 <?php endif; ?>
   </li>
 </ul>
-
- 
  
 </div>
 </td></tr></table>
@@ -108,34 +106,21 @@
 
 </div><!-- /Bottom Box --> 
 
-
-
-
 <div id="footer"> 
-	
-
-
 <p>
 
-		Copyright 2008. <?php bloginfo('name'); ?>. All Rights Reserved.
- 
+Copyright <?php echo date('Y'); ?>. <?php bloginfo('name'); ?>. All Rights Reserved.
+
 <br />
-
-
 <!-- Released under GPL compatible license --> 
 <a href="http://www.quickonlinetips.com/archives/quickpic/" title="QuickPic">QuickPic</a> theme by <a href="http://www.quickonlinetips.com/" title="Quick Online Tips">Quick Online Tips</a>
-<!-- Released under GPL compatible license --> 
-
-
+ 
 </p>
 </div>
 </div>
- 
+
 		<?php wp_footer(); ?>
 
 <!-- QuickPic Wordpress Theme by Quick Online Tips. http://www.quickonlinetips.com/ --> 
-
 </body>
 </html>
-
-
