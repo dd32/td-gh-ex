@@ -4,7 +4,8 @@
 
 <!-- Insert large 336x280 Adsense unit here --> 
 
- <a href="http://www.flickr.com/photos/pchere/2684819307/" title="Color Bottles by pchere, on Flickr"><img src="http://farm4.static.flickr.com/3225/2684819307_5861c37892.jpg" width="336" height="252" alt="Color Bottles" />
+<img src="http://farm4.static.flickr.com/3225/2684819307_5861c37892.jpg" width="336" height="252" alt="Color Bottles" />
+
 </div><!-- /Remove this box for pure 3-columns --> 
  
  
