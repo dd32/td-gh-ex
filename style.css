@@ -1,10 +1,10 @@
 /*
 Theme Name: 10PAD2-Rising Sun
-Version: 1.4
-Description: 10PAD2-Rising Sun is a 2 column theme that features a rising sun banner and a right sidebar. It is XHTML & CSS validated, and is widget ready.
+Version: 1.5
+Description: 10PAD2-Rising Sun is a light 2-column theme that features a rising sun banner and a right sidebar. You can choose to use a custom banner or hide the banner in the theme options.
 Author: Eric Crooks
 Author URI: http://www.ericcrooks.com/
-Tags: black, orange, white, light, two-columns, right-sidebar, fixed-width
+Tags: black, orange, white, light, two-columns, right-sidebar, fixed-width, custom-header, theme-options
 */
 
 * {
@@ -38,11 +38,6 @@ code {
 h2 {
 	font-size: 1.5em;
 	font-weight: normal;
-	}
-img, object {
-	background: #efefef;
-	border: 1px solid #dfdfdf;
-	padding: 3px;
 	}
 p {
 	line-height: 1.5em;
@@ -87,10 +82,18 @@ textarea {
 
 /* -content- */
 
-#banner {
+#banner-default {
 	background: url("images/risingsun.png") center center no-repeat;
 	border: 10px solid #000000;
 	height: 230px;
+	margin-bottom: 20px;
+	width: 530px;
+	}
+#banner-custom {
+	background: url("images/banners/banner-custom.php") center center no-repeat;
+	border: 10px solid #000000;
+	height: 230px;
+	margin-bottom: 20px;
 	width: 530px;
 	}
 #content {
@@ -105,7 +108,7 @@ textarea {
 /* -post and entries- */
 
 .post {
-	margin: 20px 0 20px 0;
+	margin-bottom: 20px;
 	}
 .post a {
 	color: #ff7700;
@@ -125,6 +128,11 @@ textarea {
 	display: block;
 	margin: 1.2em auto;
 	max-width: 522px;
+	}
+.post img, .post object {
+	background: #efefef;
+	border: 1px solid #dfdfdf;
+	padding: 3px;
 	}
 .post h2 {
 	background: #000000;

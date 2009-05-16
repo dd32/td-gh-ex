@@ -7,6 +7,12 @@
 	<link rel="shortcut icon" href="" type="image" />
 	<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+	<?php 
+	global $options;
+	foreach ($options as $value) {
+		if (get_settings( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } 
+		else { $$value['id'] = get_settings( $value['id'] ); } 
+	} ?>
 	<?php wp_head();?>
 </head>
 <body>
@@ -22,4 +28,10 @@
 </div>
 <div id="contentwrap">
 	<div id="content">
-		<div id="banner"></div>
+			<?php if ($themetwo_bannerimage_toggle=="Use Default") { ?>
+				<div id="banner-default">
+			<?php } elseif($themetwo_bannerimage_toggle=="Use Custom") { ?>
+				<div id="banner-custom">
+			<?php } elseif($themetwo_bannerimage_toggle=="Use None") { ?>
+				<div id="banner-none">
+			<?php } ?></div>
