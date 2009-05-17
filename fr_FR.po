@@ -1,0 +1,226 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-05-16 20:27+0300\n"
+"PO-Revision-Date: 2009-05-16 20:45+0300\n"
+"Last-Translator: ART SAVELIEV <artsav@artsav.com>\n"
+"Language-Team: Artsav <artsav@artsav.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-Country: FRANCE\n"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/single.php:13
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/index.php:13
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/archive.php:33
+msgid "0"
+msgstr "0"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/single.php:13
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/index.php:13
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/archive.php:33
+msgid "1"
+msgstr "1"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/single.php:13
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/index.php:13
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/archive.php:33
+msgid "%"
+msgstr "%"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/single.php:16
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/index.php:16
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/archive.php:36
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/page.php:14
+msgid "Read more..."
+msgstr "Lire la suite..."
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/single.php:19
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/index.php:19
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/archive.php:39
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/page.php:17
+msgid "Edit This"
+msgstr "Modifier"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/single.php:27
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/index.php:27
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/archive.php:47
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/page.php:22
+msgid "Sorry, no posts matched your criteria."
+msgstr "Désolé, aucun article ne correspond à vos critères."
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/comments.php:6
+msgid "This post is password protected. Enter the password to view comments."
+msgstr "Cet article est protégé par mot de passe. Saisissez votre mot de passe pour accéder aux commentaires."
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/comments.php:15
+msgid "No Comments"
+msgstr "Pas de commentaires"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/comments.php:15
+msgid "1 Comment"
+msgstr "Un commentaire"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/comments.php:15
+msgid "% Comments"
+msgstr "% commentaires"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/comments.php:33
+msgid "Comments are closed."
+msgstr "Désolé, les commentaires sont fermés pour le moment."
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/comments.php:43
+msgid "Leave a Reply"
+msgstr "Répondre"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/comments.php:43
+#, php-format
+msgid "Leave a Reply for %s"
+msgstr "Répondre à %s"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/comments.php:50
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "Vous devez être <a href=\"%s\">connecté(e)</a> pour laisser un commentaire"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/comments.php:57
+#, php-format
+msgid "Logged in as <a href=\"%1$s\">%2$s</a>."
+msgstr "Connecté(e) en tant que <a href=\"%1$s\">%2$s</a>."
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/comments.php:57
+msgid "Log out of this account"
+msgstr "Se déconnecter"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/comments.php:57
+msgid "Log out &raquo;"
+msgstr "Déconnexion &raquo;"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/comments.php:62
+msgid "Name"
+msgstr "Nom"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/comments.php:62
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/comments.php:65
+msgid "(required)"
+msgstr "(obligatoire)"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/comments.php:65
+msgid "Mail (will not be published)"
+msgstr "Adresse e-mail (ne sera pas publiée) (obligatoire)"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/comments.php:68
+msgid "Website"
+msgstr "Site web"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/comments.php:72
+#, php-format
+msgid "<strong>XHTML:</strong> You can use these tags: <code>%s</code>"
+msgstr "<strong>XHTML:</strong> Vous pouvez utiliser les balises suivantes: <code>%s</code>"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/comments.php:76
+msgid "Submit Comment"
+msgstr "Soumettre le commentaire  "
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/footer.php:28
+#, php-format
+msgid "Powered by %1$s and %2$s"
+msgstr "Propulsé par %1$s et %2$s"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/footer.php:29
+msgid "Entries (RSS)"
+msgstr "Articles (RSS)"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/footer.php:29
+msgid "Comments (RSS)"
+msgstr "Commentaires (RSS)"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/index.php:30
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/archive.php:50
+msgid "&laquo; Older Entries"
+msgstr "&laquo; Articles plus anciens"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/index.php:31
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/archive.php:51
+msgid "Newer Entries &raquo;"
+msgstr "Articles plus récents &raquo;"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/sidebar.php:4
+msgid "Categories"
+msgstr "Catégories"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/sidebar.php:8
+msgid "Tags"
+msgstr "Mots-clefs"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/sidebar-right.php:7
+msgid "Recent Posts"
+msgstr "Articles récents"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/sidebar-right.php:10
+msgid "Calendar"
+msgstr "Calendrier"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/sidebar-right.php:15
+msgid "Archives"
+msgstr "Archives"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/sidebar-right.php:17
+msgid "Select Month"
+msgstr "Choisissez le mois"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/searchform.php:1
+msgid "Search"
+msgstr "Recherche"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/searchform.php:4
+msgid "Find"
+msgstr "Chercher"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/archive.php:13
+#, php-format
+msgid "Archive for the &#8216;%s&#8217; Category"
+msgstr "Archive pour la catégorie ‘%s’"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/archive.php:15
+#, php-format
+msgid "Posts Tagged &#8216;%s&#8217;"
+msgstr "Archive pour le mot-clef ‘%s’"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/archive.php:17
+#, php-format
+msgid "Archive for %s|Daily archive page"
+msgstr "Archive pour %s|Daily archive page"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/archive.php:17
+msgid "F jS, Y"
+msgstr "F jS, Y"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/archive.php:19
+#, php-format
+msgid "Archive for %s|Monthly archive page"
+msgstr "Archive pour %s|Monthly archive page"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/archive.php:19
+msgid "F, Y"
+msgstr "F, Y"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/archive.php:21
+#, php-format
+msgid "Archive for %s|Yearly archive page"
+msgstr "Archive pour %s|Yearly archive page"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/archive.php:21
+msgid "Y"
+msgstr "Y"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/archive.php:23
+msgid "Author Archive"
+msgstr "Archive d'auteur"
+
+#: /home/artsav/Travail/Work/Sites/wordpress_test/wp-content/themes/artsavius/archive.php:25
+msgid "Blog Archives"
+msgstr "Archive du blog"
+
