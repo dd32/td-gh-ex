@@ -30,7 +30,7 @@ foreach ($options as $value) {
 ?>
 <table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%">
 <tr>
-<td id="top_line" colspan="<?php if ($artsavius_sidebar_position == "both sidebars on the right") { ?>3<?php } elseif ($artsavius_sidebar_position == "both sidebars on the left") { ?>3<?php } elseif ($artsavius_sidebar_position == "content between two sidebars") { ?>3<?php } elseif ($artsavius_sidebar_position == "one sidebar on the right") { ?>2<?php } elseif ($artsavius_sidebar_position == "one sidebar on the left") { ?>2<?php } else { ?>3<?php } ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/top_line.jpg" width="1000" height="2"></td>
+<td id="top_line" colspan="<?php if ($artsavius_sidebar_position == "both sidebars on the right") { ?>3<?php } elseif ($artsavius_sidebar_position == "both sidebars on the left") { ?>3<?php } elseif ($artsavius_sidebar_position == "content between two sidebars") { ?>3<?php } elseif ($artsavius_sidebar_position == "one sidebar on the right") { ?>2<?php } elseif ($artsavius_sidebar_position == "one sidebar on the left") { ?>2<?php } else { ?>3<?php } ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/top_line.jpg" width="1000" height="2" /></td>
 </tr>
   <tr>
     <td colspan="<?php if ($artsavius_sidebar_position == "both sidebars on the right") { ?>3<?php } elseif ($artsavius_sidebar_position == "both sidebars on the left") { ?>3<?php } elseif ($artsavius_sidebar_position == "content between two sidebars") { ?>3<?php } elseif ($artsavius_sidebar_position == "one sidebar on the right") { ?>2<?php } elseif ($artsavius_sidebar_position == "one sidebar on the left") { ?>2<?php } else { ?>3<?php } ?>" id="top" valign="top" align="left">
@@ -38,7 +38,7 @@ foreach ($options as $value) {
 	<div id="header">
 	<div class="left"></div>
 	<div class="center" <?php if ($artsavius_header_showavatar == "No") { ?>style="padding-left:20px;"<?php } ?>><?php if ($artsavius_header_showavatar == "Yes") {
- $dir=WP_CONTENT_DIR.'/themes/artsavius/logo';
+ $dir=TEMPLATEPATH.'/logo';
 $openthisdir=opendir($dir);
 while ($k=readdir($openthisdir))
 {
@@ -47,7 +47,7 @@ if ($m=='.jpg' or $m=='.png' or $m=='.gif') $array[]=$k;
 }
 closedir($openthisdir);
 $number=rand(0,count($array)-1);
-echo "<img src='".WP_CONTENT_URL."/themes/artsavius/logo/".$array[$number]."' WIDTH='43' HEIGHT='43'>\n";
+echo "<img src='".get_bloginfo('stylesheet_directory')."/logo/".$array[$number]."' width='43' height='43' />\n";
 
  } ?><div id="blog_title"><h1><?php if (is_home()) { ?><? if ($artsavius_header_title) { echo $artsavius_header_title; } else { bloginfo('name'); }?><?php } else { ?><a href="<?php bloginfo('url'); ?>/"><? if ($artsavius_header_title) { echo $artsavius_header_title; } else { bloginfo('name'); }?></a><?php } ?></h1><div id="desc"><? if ($artsavius_header_description) { echo $artsavius_header_description; } else { bloginfo('description'); }?></div></div></div>
 	<div class="right"></div>

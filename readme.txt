@@ -2,6 +2,7 @@ Thanks for downloading Artsavius Blog Theme.
 
 CHANGELOG
 ==================================================================================
+1.1 - Fixed random avatar path. Now You can rename 'artsavius' folder which whatever you like (artsavius-blog, myblog, template etc.)
 1.0 - Started
 ==================================================================================
 
