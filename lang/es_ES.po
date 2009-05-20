@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arclite 1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-03 03:56+0200\n"
+"POT-Creation-Date: 2009-05-08 23:20+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: digitalnature <hello@digitalnature.ro>\n"
 "Language-Team: digitalnature.ro <hello@digitalnature.ro>\n"
@@ -40,7 +40,7 @@ msgid "Archive for %s"
 msgstr "Archivo del %s"
 
 #: c:\wamp\www\wordpress\wp-content\themes\arclite/archive.php:26
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:537
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:538
 msgid "F jS, Y"
 msgstr "j \\d\\e F \\d\\e Y"
 
@@ -460,24 +460,24 @@ msgstr "Modifica cualquier cosa relacionada con el diseño simplemente utilizand
 msgid "Avoid modifying theme files and use this option instead to preserve changes after update"
 msgstr "Abstente de modificar los ficheros del tema y utiliza esta opción para preservar los cambios tras una actualización"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:537
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:538
 #, php-format
 msgid "%s by %s at %s"
 msgstr "%s por %s el %s"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:537
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:538
 msgid "H:i"
 msgstr "H:i"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:544
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:547
 msgid "Reply"
 msgstr "Responder"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:544
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:549
 msgid "Quote"
 msgstr "Citar"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:558
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:563
 msgid "Your comment is awaiting moderation."
 msgstr "Tu comentario está pendiente de ser aprobado."
 

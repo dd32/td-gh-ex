@@ -26,6 +26,7 @@
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 <link rel="alternate" type="application/atom+xml" title="<?php bloginfo('name'); ?> Atom Feed" href="<?php bloginfo('atom_url'); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/favicon.ico" />
 
 <?php if(get_option('arclite_imageless')=='yes') { ?>
 <style type="text/css" media="all">@import "<?php bloginfo('template_url'); ?>/style-imageless.css";</style>
@@ -50,8 +51,18 @@
  <?php } else { ?>
   <style type="text/css" media="all">@import "<?php bloginfo('template_url'); ?>/options/header-<?php print get_option('arclite_header'); ?>.css";</style>
  <?php } ?>
-<?php } ?>
 
+ <?php if(get_option('arclite_widgetbg')<>'') { ?>
+  <style type="text/css" media="all">@import "<?php bloginfo('template_url'); ?>/options/side-<?php print get_option('arclite_widgetbg'); ?>.css";</style>
+ <?php } ?>
+
+ <?php if(get_option('arclite_contentbg')<>'') { ?>
+  <style type="text/css" media="all">@import "<?php bloginfo('template_url'); ?>/options/content-<?php print get_option('arclite_contentbg'); ?>.css";</style>
+ <?php } else { ?>
+  <style type="text/css" media="all">@import "<?php bloginfo('template_url'); ?>/options/content-default.css";</style>
+ <?php } ?>
+
+<?php } ?>
 <?php if(get_option('arclite_header')=='user2') { ?>
    <style type="text/css" media="all">
     #header, #header-wrap{ background: #<?php print get_option('arclite_headercolor'); ?>; }
@@ -73,6 +84,8 @@
  <?php wp_enqueue_script('jquery'); ?>
  <?php wp_enqueue_script('arclite',get_bloginfo('template_url').'/js/arclite.js'); ?>
 <?php } ?>
+
+<style type="text/css" media="all">@import "<?php bloginfo('template_url'); ?>/options/content-2.css";</style>
 
 <?php wp_head(); ?>
 

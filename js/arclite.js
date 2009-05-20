@@ -239,4 +239,6 @@ jQuery(document).ready(function(){
 
   navigationeffects();
 
+  // widget title adjustments
+  jQuery('.titlewrap').each(function(){ jQuery(this).prependTo(this.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode);  });
  });

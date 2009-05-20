@@ -46,12 +46,12 @@
             <span class="day"><?php the_time(__('j','arclite')); ?></span>
            </p>
            <p class="post-author">
-            <span><?php printf(__('Posted by %s in %s','arclite'),'<a href="'. get_author_posts_url(get_the_author_ID()) .'" title="'. sprintf(__("Posts by %s","arclite"), attribute_escape(get_the_author())).' ">'. get_the_author() .'</a>',get_the_category_list(', ')); ?> <?php edit_post_link(''); ?></span>
+            <span><?php printf(__('Posted by %s in %s','arclite'),'<a href="'. get_author_posts_url(get_the_author_ID()) .'" title="'. sprintf(__("Posts by %s","arclite"), attribute_escape(get_the_author())).' ">'. get_the_author() .'</a>',get_the_category_list(', ')); ?> <?php edit_post_link(__('Edit','arclite'),' | '); ?></span>
            </p>
           </div>
 
           <div class="post-content clearfix">
-          <?php the_content(__('Read the rest of this entry &raquo;', 'arclite')); ?>
+          <?php if(get_option('arclite_indexposts')=='excerpt') the_excerpt(); else the_content(__('Read the rest of this entry &raquo;', 'arclite')); ?>
 
           <?php
            $posttags = get_the_tags();

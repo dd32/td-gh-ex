@@ -53,6 +53,21 @@ $options = array (
    "type" => "arclite_sidebarcat"),
 
   array(
+   "id" => "arclite_widgetbg",
+   "default" => "",
+   "type" => "arclite_widgetbg"),
+
+  array(
+   "id" => "arclite_contentbg",
+   "default" => "",
+   "type" => "arclite_contentbg"),
+
+  array(
+   "id" => "arclite_indexposts",
+   "default" => "full",
+   "type" => "arclite_indexposts"),
+
+  array(
    "id" => "arclite_topnav",
    "default" => "pages",
    "type" => "arclite_topnav"),
@@ -151,11 +166,15 @@ function arclite_admin() {
    function checkoptions(){
     if (document.getElementById('arclite_imageless-yes').checked){
       document.getElementById('arclite_header').disabled=true;
+      document.getElementById('arclite_widgetbg').disabled=true;
+      document.getElementById('arclite_contentbg').disabled=true;
       document.getElementById("userheader").style.display = "none";
       document.getElementById("usercolor").style.display = "none";
     }
     else {
       document.getElementById('arclite_header').disabled=false;
+      document.getElementById('arclite_widgetbg').disabled=false;
+      document.getElementById('arclite_contentbg').disabled=false;
       var headervalue = document.getElementById("arclite_header").value;
       if(headervalue == "user") { document.getElementById("userheader").style.display = "block"; } else { document.getElementById("userheader").style.display = "none"; }
       if(headervalue == "user2") { document.getElementById("usercolor").style.display = "block"; } else { document.getElementById("usercolor").style.display = "none"; }
@@ -209,7 +228,7 @@ function arclite_admin() {
       switch ( $value['type'] ) {
         case "arclite_imageless": ?>
         <tr>
-        <th scope="row"><?php _e("Disable all design-related images","arclite") ?><br /><?php _e("(Full CSS layout, no background images)","arclite"); ?></th>
+        <th scope="row"><?php _e("Imageless layout","arclite") ?><br /><?php _e("(no background images; reduces pages to just a few KB, with the cost of less graphic details)","arclite"); ?></th>
         <td>
          <label><input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>-yes" type="radio" value="yes"<?php if ( get_option( $value['id'] ) == "yes") { echo " checked"; } ?> /><?php _e("Yes","arclite"); ?></label>
          &nbsp;&nbsp;
@@ -221,7 +240,7 @@ function arclite_admin() {
         case "arclite_jquery": ?>
 
         <tr>
-        <th scope="row"><?php _e("Use jQuery effects","arclite"); ?><br /><?php _e("(for testing purposes only, you shouldnt change this)","arclite"); ?></th>
+        <th scope="row"><?php _e("Use jQuery","arclite"); ?><br /><?php _e("(for testing purposes only, you shouldnt change this)","arclite"); ?></th>
         <td>
          <label><input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>-yes" type="radio" value="yes"<?php if ( get_option( $value['id'] ) == "yes") { echo " checked"; } ?> /><?php _e("Yes","arclite"); ?></label>
          &nbsp;&nbsp;
@@ -237,6 +256,34 @@ function arclite_admin() {
          <label>
           <input type="text" size="60" name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" value="<?php print get_option($value['id']); ?>" />
          </label>
+        </td>
+        </tr>
+
+      <?php break;
+        case "arclite_contentbg": ?>
+
+        <tr>
+        <th scope="row"><?php _e("Content background","arclite"); ?></th>
+        <td>
+         <label>
+            <select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" class="code">
+              <option <?php if (get_option($value['id'])=='') {?> selected="selected" <?php } ?> value="">Texture: Light brown + noise (default)</option>
+              <option <?php if (get_option($value['id'])=='grunge') {?> selected="selected" <?php } ?> value="grunge">Texture: Grunge</option>
+              <option <?php if (get_option($value['id'])=='white') {?> selected="selected" <?php } ?> value="white">White color</option>
+            </select>
+         </label>
+        </td>
+        </tr>
+
+
+      <?php break;
+        case "arclite_indexposts": ?>
+        <tr>
+        <th scope="row"><?php _e("Index page/Archives show:","arclite"); ?></th>
+        <td>
+         <label><input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>-full" type="radio" value="full"<?php if ( get_option( $value['id'] ) == "full") { echo " checked"; } ?> /><?php _e("Full posts","arclite"); ?></label>
+         &nbsp;&nbsp;
+         <label><input  name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>-excerpt" type="radio" value="excerpt"<?php if ( get_option( $value['id'] ) == "excerpt") { echo " checked"; } ?> /><?php _e("Excerpts only","arclite"); ?></label>
         </td>
         </tr>
 
@@ -288,22 +335,22 @@ function arclite_admin() {
         <td>
          <label>
             <select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" class="code">
-              <option <?php if (get_option($value['id'])=='default') {?> selected="selected" <?php } ?> value="default">Light Noise: brown (default)</option>
-              <option <?php if (get_option($value['id'])=='green') {?> selected="selected" <?php } ?> value="green">Light Noise: green</option>
-              <option <?php if (get_option($value['id'])=='red') {?> selected="selected" <?php } ?> value="red">Light Noise: red</option>
-              <option <?php if (get_option($value['id'])=='blue') {?> selected="selected" <?php } ?> value="blue">Light Noise: blue</option>
-              <option <?php if (get_option($value['id'])=='wall') {?> selected="selected" <?php } ?> value="wall">Dirty Wall</option>
-              <option <?php if (get_option($value['id'])=='wood') {?> selected="selected" <?php } ?> value="wood">Wood</option>
+              <option <?php if (get_option($value['id'])=='default') {?> selected="selected" <?php } ?> value="default">Texture: Dark brown (default)</option>
+              <option <?php if (get_option($value['id'])=='green') {?> selected="selected" <?php } ?> value="green">Texture: Dark green</option>
+              <option <?php if (get_option($value['id'])=='red') {?> selected="selected" <?php } ?> value="red">Texture: Dark red</option>
+              <option <?php if (get_option($value['id'])=='blue') {?> selected="selected" <?php } ?> value="blue">Texture: Dark blue</option>
+              <option <?php if (get_option($value['id'])=='wall') {?> selected="selected" <?php } ?> value="wall">Texture: Dirty Wall</option>
+              <option <?php if (get_option($value['id'])=='wood') {?> selected="selected" <?php } ?> value="wood">Texture: Wood</option>
               <option style="color: #ed1f24" <?php if (get_option($value['id'])=='user') {?> selected="selected" <?php } ?> value="user"><?php _e('User defined image (upload)','arclite'); ?></option>
               <option style="color: #ed1f24" <?php if (get_option($value['id'])=='user2') {?> selected="selected" <?php } ?> value="user2"><?php _e('User defined color','arclite'); ?></option>
             </select>
          </label>
 
          <div id="userheader" style="display: none;">
-          <?php _e('Upload a 960x190 image for best fit:','arclite'); ?><br />
+          <?php _e('Centered image (upload a 960x190 image for best fit):','arclite'); ?><br />
           <input type="file" name="file-header" id="file-header" />
           <?php if(get_option('arclite_headerimage')) { echo '<div><img src="'; echo get_option('arclite_headerimage'); echo '"  style="margin-top:10px;" /></div>'; } ?>
-          <?php _e('Repeat background (same size, optional):','arclite'); ?><br />
+          <?php _e('Tiled image, repeats itself across the entire header (centered image will show on top of it, if specified):','arclite'); ?><br />
           <input type="file" name="file-header2" id="file-header2" />
           <?php if(get_option('arclite_headerimage2')) { echo '<div><img src="'; echo get_option('arclite_headerimage2'); echo '"  style="margin-top:10px;" /></div>'; } ?>
          </div>
@@ -346,7 +393,6 @@ function arclite_admin() {
        </div>
      </div>
 
-
 	 <div class="stuffbox">
       <h3><label for="link_url"><?php _e("Sidebar","arclite"); ?></label></h3>
       <div class="inside">
@@ -376,7 +422,24 @@ function arclite_admin() {
         <label><input  name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="radio" value="no"<?php if ( get_option( $value['id'] ) == "no") { echo " checked"; } ?> /><?php _e("No","arclite"); ?></label>
         </td>
         </tr>
-    <?php
+    <?php break;
+        case "arclite_widgetbg": ?>
+
+        <tr>
+        <th scope="row"><?php _e("Widget title background","arclite"); ?></th>
+        <td>
+         <label>
+            <select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" class="code">
+              <option <?php if (get_option($value['id'])=='') {?> selected="selected" <?php } ?> value="" style="background: #ef3e60; color: #fff;">Pink (default)</option>
+              <option <?php if (get_option($value['id'])=='green') {?> selected="selected" <?php } ?> value="green" style="background: #77bc34; color: #fff">Green</option>
+              <option <?php if (get_option($value['id'])=='blue') {?> selected="selected" <?php } ?> value="blue" style="background: #3283b4; color: #fff">Blue</option>
+              <option <?php if (get_option($value['id'])=='gray') {?> selected="selected" <?php } ?> value="gray" style="background: #939394; color: #fff">Gray</option>
+            </select>
+         </label>
+        </td>
+        </tr>
+
+     <?php
     	}
      	}
 	?>
@@ -385,7 +448,7 @@ function arclite_admin() {
      </div>
 
 
-     	 <div class="stuffbox">
+     <div class="stuffbox">
       <h3><label for="link_url"><?php _e("Footer","arclite"); ?></label></h3>
       <div class="inside">
         <table class="form-table" style="width: auto">
@@ -398,7 +461,7 @@ function arclite_admin() {
         <th scope="row"><?php _e("Add content","arclite"); ?><br /><?php _e("(HTML allowed)","arclite"); ?></th>
         <td>
          <label>
-          <textarea rows="4" cols="60" name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>"><?php print get_option($value['id']); ?></textarea>
+          <textarea class="code" rows="4" cols="60" name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>"><?php print get_option($value['id']); ?></textarea>
          </label>
         </td>
         </tr>
@@ -426,7 +489,7 @@ function arclite_admin() {
         <th scope="row"><?php _e("Modify anything related to design using simple CSS","arclite"); ?><br /><br /><span style="color: #ed1f24"><?php _e("Avoid modifying theme files and use this option instead to preserve changes after update","arclite"); ?></span></th>
         <td valign="top">
          <label>
-          <textarea rows="12" cols="60" name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>"><?php print get_option($value['id']); ?></textarea>
+          <textarea class="code" rows="12" cols="60" name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>"><?php print get_option($value['id']); ?></textarea>
          </label>
         </td>
         <td valign="top">
@@ -436,6 +499,8 @@ function arclite_admin() {
 
         <p><em style="color: #5db408">/* Hide post information bar */</em><br /><code>.post p.post-date, .post p.post-author{ display: none; }</code></p>
         <p><em style="color: #5db408">/* Use Windows Arial style fonts, instead of Mac's Lucida */</em><br /><code>body, input, textarea, select, h1, h2, h6,<br />.post h3, .box .titlewrap h4{ font-family: Arial, Helvetica; }</code></p>
+
+        <p><em style="color: #5db408">/* Set footer to fit 3 widgets (instead of 4) */</em><br /><code>ul#footer-widgets li.widget{ width: 33%; }</code></p>
 
         </td>
         </tr>
@@ -492,10 +557,10 @@ function is_sidebar_active($index = 1) {
 if ( function_exists('register_sidebar')) {
     register_sidebar(array(
         'name' => 'Default sidebar',
-		'before_widget' => '<li class="block widget %2$s" id="%1$s"><div class="box">',
+		'before_widget' => '<li class="block widget %2$s" id="%1$s"><div class="box" id="boxcontent-%1$s"> <div class="wrapleft"><div class="wrapright"><div class="tr"><div class="bl"><div class="tl"><div class="br the-content">',
 		'after_widget' => '</div></div></div></div></div></div> </div></li>',
-		'before_title' => '<div class="titlewrap"><h4><span>',
-		'after_title' => '</span></h4></div> <div class="wrapleft"><div class="wrapright"><div class="tr"><div class="bl"><div class="tl"><div class="br the-content">'
+		'before_title' => '<div class="titlewrap" id="titlecontent-%1$s"><h4><span>',
+		'after_title' => '</span></h4></div>'
     ));
 
     register_sidebar(array(
