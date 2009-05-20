@@ -25,6 +25,8 @@ If you wish to contribute by translating the theme please write me a email to he
 Change log:
 -----------
 
+1.42 - 20-may-2009: Fixed widget title bug when there are no widgets active
+
 1.4  - 20-may-2009: Added more options/background choices for widget titles and page content
                     Fixed the widget title limitation thing (needs javascript/jQuery enabled)
                     Small graphic and CSS adjustments

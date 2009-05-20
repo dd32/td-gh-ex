@@ -85,8 +85,6 @@
  <?php wp_enqueue_script('arclite',get_bloginfo('template_url').'/js/arclite.js'); ?>
 <?php } ?>
 
-<style type="text/css" media="all">@import "<?php bloginfo('template_url'); ?>/options/content-2.css";</style>
-
 <?php wp_head(); ?>
 
 </head>

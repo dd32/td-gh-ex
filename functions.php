@@ -101,7 +101,7 @@ function arclite_options() {
   if ( 'save' == $_REQUEST['action'] ) {
 
     foreach ($options as $value) {
-     if( !isset( $_REQUEST[ $value['id'] ] ) ) {  } else { update_option( $value['id'], $_REQUEST[ $value['id'] ]  ); } }
+     if( !isset( $_REQUEST[ $value['id'] ] ) ) {  } else { update_option( $value['id'], stripslashes($_REQUEST[ $value['id']])); } }
      if(stristr($_SERVER['REQUEST_URI'],'&saved=true')) {
      $location = $_SERVER['REQUEST_URI'];
     } else {
