@@ -1,0 +1,318 @@
+/*   
+Theme Name: Basic Simplicity
+Theme URI: http://www.michaeljanzen.com/wordpress-theme/
+Description: A simple WordPress theme with a basic minimalist style.
+Tags: blue, white, light, two-columns, right-sidebar, fixed-width, custom-colors, custom-header, theme-options
+Author: Michael Janzen
+Author URI: http://www.michaeljanzen.com/
+Version: 1.2
+.
+Before editing this stylesheet be sure to take a look at the control panel
+Appearance -> Edit Basic Simplicity
+The control panel allows you to change basic color settings. 
+Values set in the control panel will override some styles in this stylesheet.
+.
+The CSS, XHTML and design is released under GPL:
+http://www.opensource.org/licenses/gpl-license.php
+.
+*/
+
+
+body {
+	font-family: Arial, Verdana, sens-serif;
+	font-size: 100%;
+	line-height: 1.125em;
+	background: #fff;
+}
+
+
+#wrap {
+	margin: 5px auto;
+	padding: 0;
+	width: 980px;
+	border: 1px solid #ccc;
+	background: #fff; 
+}
+
+#header {
+	padding: 20px;
+	background: #eee url('images/header.gif') left no-repeat;
+}
+
+#navbar {
+	background: #ccc;
+	margin: 0;
+	padding: 10px 20px;
+}
+
+#navbar a {
+	color: #444;
+}
+
+#navbar ul {
+	margin-left: 0;
+	padding-left: 0;
+	display: inline;
+	} 
+
+#navbar ul li {
+	margin-left: 0;
+	padding: 10px;
+	list-style: none;
+	display: inline;
+	}
+
+
+#content {
+	margin: 0;
+	padding: 20px 0 20px 20px;
+	float: left;
+	width: 620px;
+}
+
+.column-top, .home-top {
+	margin: 0 0 3.0em 0;
+	font-size: 0.875em;
+	line-height: 1.75em;
+	color:#222;
+}
+
+#prevnext {
+	text-align: center;
+	font-weight: bold;
+	margin-bottom: 3.0em;
+}
+
+#sidebar {
+	padding: 20px 9px 0 20px;
+	float: right;
+	font-size: 0.75em;
+	color: #444;
+	width: 310px;
+}
+
+#sidebar ul, #bottom ul {
+	list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+	text-indent: 0;
+}
+
+#sidebar li, #bottom li {
+	list-style: none;
+	padding-bottom: 1.0em;
+}
+
+.sidebar-widget {
+	margin: 0 0 20px 0;
+	padding: 0;
+}
+
+
+#bottom {
+	clear: both; 
+	margin: 0;
+	padding: 0;
+	font-size: 0.75em;
+	text-align: center;
+}
+
+.bottom-left {
+	float: left;
+	width: 306px;
+	margin: 0;
+	padding: 10px;
+	text-align: left;
+	background: #eee;
+}
+
+.bottom-right {
+	float: right;
+	width: 306px;
+	margin: 0;
+	padding: 10px;
+	text-align: left;
+	border-left: 1px solid #fff;
+	background: #eee;
+
+}
+
+.bottom-middle { 
+	float: left;
+	width: 306px;
+	margin: 0;
+	padding: 10px;
+	text-align: left;
+	border-left: 1px solid #fff;
+	background: #ddd;
+}
+
+.post-top-right-home {
+	float: right;
+	width: 300px;
+	margin: 0 0 10px 10px;
+	padding: 0;
+}
+
+.post-top-right-single {
+	float: right;
+	width: 300px;
+	margin: 0 0 10px 10px;
+	padding: 0;
+}
+
+.post-bottom-home {
+	margin: 10px 0;
+	padding: 0;
+	clear: right;
+}
+
+.post-bottom-single {
+	margin: 10px 0;
+	padding: 0;
+	clear: right;
+}
+
+.bottom-widget {
+	margin: 0 0 20px 0;
+	padding: 0;
+}
+
+
+#footer {
+	clear: both; 
+	margin: 0;
+	padding: 20px;
+	font-size: 0.75em;
+	text-align: center;
+	color: #666;
+}
+
+a {
+	color: #339;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #33f;
+	text-decoration: underline;
+}
+
+img {
+	border: 0;
+}
+
+h1, h2, h3, h4, h1 a, h2 a, h3 a, h4 a {
+	font-family: Georgia, serif;
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+	line-height: 1.5em;
+	color: #111;
+}
+
+#sidebar h4, #bottom h4 {
+	font-size: 1.2em;
+}
+
+#header h1, #header .description {
+	visibility: hidden;
+	font-size: 1.2em;
+}
+
+
+p {
+	margin: 0 0 1.0em 0;
+	padding: 0;
+}
+
+blockquote {
+	background: #eee;
+	margin: 0.5em 0;
+	padding: 1.0em;
+}
+
+.the_content {
+	font-size: 0.875em;
+	line-height: 1.75em;
+	color:#222;
+}
+
+.entry {
+	margin: 0 0 3.0em 0;
+}
+
+.comments {
+	font-size: 0.875em;
+	line-height: 1.5em;
+	color:#333;
+}
+
+.meta {
+	font-size: 0.75em;
+	color:#666;
+	margin: 0 0 1.0em 0;
+}
+
+ol.commentlist, li.commentlist {
+	margin: 0;
+	padding: 0;
+	list-style:none;
+}
+
+.odd {
+	background: #eee;
+	margin: 0.5em 0 0.5em 0;
+	padding: 0.5em;
+}
+
+.even {
+	background: #ddd;
+	margin: 0.5em 0 0.5em 0;
+	padding: 0.5em;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+li.categories {
+	list-style: none;
+}
+
+img.alignright {
+	float:right; 
+	margin:0 0 1em 1em;
+	}
+	
+img.alignleft {
+	float:left; 
+	margin:0 1em 1em 0;
+}
+
+img.aligncenter {
+	display: block; 
+	margin-left: auto; 
+	margin-right: auto;
+}
+
+a img.alignright {
+	float:right; 
+	margin:0 0 1em 1em;
+}
+
+a img.alignleft {
+	float:left; 
+	margin:0 1em 1em 0;
+}
+
+a img.aligncenter {
+	display: block; 
+	margin-left: auto; 
+	margin-right: auto;
+}
+
+.more-link {
+	font-weight: bold;
+	text-decoration: underline;
+}
