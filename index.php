@@ -29,6 +29,14 @@
 		<?php the_content('Continue Reading &raquo;'); ?>
 		<?php if(is_home()) { ?><?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Post-Bottom-Home') ) : ?><?php endif; ?> <?php } ?>
 		<?php if(is_single() || is_page()) { ?><?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Post-Bottom-Single') ) : ?><?php endif; ?> <?php } ?>
+		<?php if(is_page()) { ?>
+		<ul>
+  		<?php
+		global $id;
+		wp_list_pages("title_li=&child_of=$id"); ?>
+		</ul>
+		<?php } ?>
+
 		</div><!--end the_content-->
 		
 		<div class="comments">

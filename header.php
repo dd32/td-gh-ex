@@ -38,6 +38,9 @@ body { background: <?php echo $bs_theme_body_background; ?>; }
 h1, h2, h3, h4, h1 a, h2 a, h3 a, h4 a { color: <?php echo $bs_theme_title_color; ?>; }
 a { color: <?php echo $bs_theme_link_color; ?>; } 
 .the_content { color: <?php echo $bs_theme_text_color; ?>; }
+<?php if($bs_theme_header_show_hide_text=="hide"){ ?>
+#header h1, #header .description { visibility:hidden; }
+<?php } ?>
 <?php echo $bs_theme_custom_css; ?>
 </style>
 <?php echo stripslashes($bs_theme_google_verify_code); ?>

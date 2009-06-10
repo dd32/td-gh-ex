@@ -110,6 +110,14 @@ array(
 	),
 	
 array(  
+	"name" => "Hide Header Title & Description",
+	"desc" => "#header h1, #header .description",
+	"id" => "bs_theme_header_show_hide_text",
+	"type" => "radioshowhide",
+	"std" => "show"
+	),
+	
+array(  
 	"name" => "Navigation Bar Background Color",
 	"desc" => "#navbar",
 	"id" => "bs_theme_navbar_background",
@@ -244,7 +252,7 @@ function basic_simplicity_theme_page() {
 	_e('<tr><th>Style</th><th>Value</th><th>CSS value</th></tr>');		
 	foreach ($options as $value) {
 
-	_e('<tr><td>');
+	_e('<tr><td nowrap>');
 	echo $value['name'];
 	_e('</td><td>');
 	
@@ -256,6 +264,22 @@ function basic_simplicity_theme_page() {
 			echo stripslashes($value['std']); 
 		}
 	echo "</textarea>";
+	}elseif($value['type']=="radioshowhide"){
+	echo "<input name=\"".$value['id']."\" id=\"".$value['id']."\" type=\"radio\" value=\"hide\" ";
+	if ( get_settings($value['id'])=="hide") { 
+			echo "checked"; 
+		} else { 
+			echo "";
+		}
+	echo " /> Hide Text";
+	echo " &nbsp;&nbsp;&nbsp; ";
+	echo "<input name=\"".$value['id']."\" id=\"".$value['id']."\" type=\"radio\" value=\"show\" ";
+	if ( get_settings($value['id'])=="show") { 
+			echo "checked"; 
+		} else { 
+			echo "";
+		}
+	echo " /> Show Text";
 	}else{
 	echo "<input name=\"".$value['id']."\" id=\"".$value['id']."\" type=\"text\" value=\"";
 	if ( get_settings( $value['id'] ) != "") { 
