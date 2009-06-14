@@ -50,7 +50,7 @@ a { color: <?php echo $bs_theme_link_color; ?>; }
 <div id="wrap">
 
 <div id="header">
-	<h1><a href="<?php echo get_settings('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
+	<h1><a href="<?php echo get_settings('home'); ?>"><?php bloginfo('name'); ?></a></h1>
 	<p class="description"><?php bloginfo('description'); ?></p>
 </div><!--end header-->
 
