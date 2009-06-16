@@ -1,6 +1,6 @@
 /*
 Theme Name: 3COL-RDMBAN RR
-Version: 1.5.2
+Version: 1.5.3
 Description: 3COL-RDMBAN RR is a 3 column theme based on the TAKTEEK01 theme. It features 8 banners divided into 4 images that rotate and 2 right sidebars.
 Author: Eric Crooks
 Author URI: http://www.ericcrooks.com/
@@ -258,7 +258,7 @@ textarea {
 #sidebar1 select,
 #sidebar2 select {
 	margin: 3px 0 3px 0;
-	width: 220px;
+	width: 160px;
 }
 #sidebar1 small,
 #sidebar2 small {
