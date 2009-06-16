@@ -74,6 +74,9 @@ function mytheme_admin() {
 			<input type="hidden" name="action" value="reset" />
 		</div>
 	</form>
+	<div class="button-donate">
+			<a class="donate" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=4684931" target="_blank">Donate</a>
+	</div>
 	<div class="previewframe">
 		<h2 class="main">Preview (updated when options are saved)</h2>
 		<iframe src="../?preview=true" width="100%" height="400" ></iframe>
@@ -92,6 +95,26 @@ function mytheme_admin() {
 	padding: 3px;
 	text-align: center;
 	width: 150px;
+}
+.wrap div.button-donate {
+	border-width: 1px;
+	border-style: solid;
+	-moz-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	float: left;
+	margin-bottom: 1em;
+	width: 150px;
+}
+a.donate {
+	background: #000000;
+	color: #ffffff;
+	display: block;
+	font-weight: bold;
+	padding: 3px;
+	text-align: center;
+	text-decoration: none;
 }
 .previewframe {
 	clear: both;

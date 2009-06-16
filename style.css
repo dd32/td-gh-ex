@@ -1,6 +1,6 @@
 /*
 Theme Name: 10PAD2-Rising Sun
-Version: 1.5.1
+Version: 1.5.2
 Description: 10PAD2-Rising Sun is a light 2-column theme that features a rising sun banner and a right sidebar. You can choose to use a custom banner or hide the banner in the theme options.
 Author: Eric Crooks
 Author URI: http://www.ericcrooks.com/
@@ -343,32 +343,10 @@ textarea {
 
 /* -sidebar calendar- */
 
-#sidebar1 table {
-	border: 1px dotted #dfdfdf;
-	width: 100%;
-}
-#sidebar1 table a {
-	border: none;
-	color: #000000;
-	display: block;
-	padding: 3px;
-}
-#sidebar1 table a:hover {
-	background: #000000;
-	color: #ffffff;
-}
-#sidebar1 table td {
-	color: #dfdfdf;
-	text-align: center;
-}
-#sidebar1 table th {
-	color: #000000;
-	text-align: center;
-}
-#sidebar1 #calendar h2 {
+#sidebar1 .widget_calendar h2 {
 	display: none;
 }
-#sidebar1 caption {
+#sidebar1 .widget_calendar caption {
 	background: #000000;
 	color: #ffffff;
 	font-size: 1em;
@@ -376,6 +354,28 @@ textarea {
 	margin: 20px 0 10px 0;
 	padding: 10px;
 	text-align: left;
+}
+#sidebar1 .widget_calendar table {
+	border: 1px dotted #dfdfdf;
+	width: 100%;
+}
+#sidebar1 .widget_calendar table a {
+	border: none;
+	color: #000000;
+	display: block;
+	padding: 3px;
+}
+#sidebar1 .widget_calendar table a:hover {
+	background: #000000;
+	color: #ffffff;
+}
+#sidebar1 .widget_calendar table td {
+	color: #dfdfdf;
+	text-align: center;
+}
+#sidebar1 .widget_calendar table th {
+	color: #000000;
+	text-align: center;
 }
 
 /* -comments- */
