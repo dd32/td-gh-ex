@@ -15,6 +15,8 @@
 		<ul>
 			<?php wp_list_categories('title_li=&orderby=name'); ?>
 		</ul>
-		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar1') ) : ?><?php endif; ?>
+		<ul>
+			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar1') ) : ?><?php endif; ?>
+		</ul>
 	</div>
 </div>

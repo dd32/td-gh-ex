@@ -4,7 +4,7 @@
 		if (get_settings( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } 
 		else { $$value['id'] = get_settings( $value['id'] ); } 
 	}
-	$random=round(rand(1,$themebanners)); // edit second digit for number of left/rightbanner pictures
+	$random=round(rand(1,$threecol_banner_number));
 ?>
 <style type="text/css">
 	#banner-1 {

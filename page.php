@@ -5,13 +5,10 @@
 		<div class="post" id="post-<?php the_ID(); ?>">
 			<h2><?php the_title(); ?></h2>
 			<?php edit_post_link(); ?>
-			<div align="center" class="entrywhole">
-				<div align="left" class="entry">
-					<?php the_content(''); ?>
-				</div>
-			</div>
+			<?php the_content(); ?>
+			<div align="center"><a href="#top">Back to Top</a></div>
 		</div>
-		<div><?php comments_template(); ?></div>
+		<?php comments_template(); ?>
 		<?php endwhile; ?>
 		<?php endif; ?>
 	</div>

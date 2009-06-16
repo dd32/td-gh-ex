@@ -6,14 +6,10 @@
 		<div class="post" id="post-<?php the_ID(); ?>">
 			<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 			<div class="postmetadata-top"><small><?php the_date('M d Y'); ?> <?php edit_post_link(); ?></small></div>
-			<div align="center" class="entrywhole">
-				<div align="left" class="entry">
-					<?php the_excerpt(); ?>
-					<br />
-					<div align="center"><a href="#top">Back to Top</a> | <?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?></div>
-					<div class="postmetadata-bottom"><small><br />Filed In: <?php the_category(', '); ?><br />Tags: <?php the_tags('', ', '); ?></small></div>
-				</div>
-			</div>
+			<?php the_excerpt(); ?>
+			<br />
+			<div align="center"><a href="#top">Back to Top</a> | <?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?></div>
+			<div class="postmetadata-bottom"><small><br />Filed In: <?php the_category(', '); ?><br />Tags: <?php the_tags('', ', '); ?></small></div>
 		</div>
 		<?php endwhile; ?>
 		<?php else : ?>

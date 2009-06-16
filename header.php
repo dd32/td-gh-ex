@@ -14,6 +14,7 @@
 		else { $$value['id'] = get_settings( $value['id'] ); } 
 	} ?>
 	<?php include ('random.php');?>
+    <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 	<?php wp_head();?>
 </head>
 <body>

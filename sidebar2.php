@@ -7,13 +7,16 @@
 		</ul>
 		<h2 class="small">Latest Posts</h2>
 		<ul>
-			<?php
-			$lastposts = get_posts('numberposts=5');
-			foreach($lastposts as $post) :
-			   setup_postdata($post);
-			?>
-			<li><a href="<?php the_permalink(); ?>"><small><?php the_date('M d Y'); ?></small><br /><?php the_title(); ?></a></li>
-			<?php endforeach; ?>
+		<?php
+		$args=array(
+		'showposts'=>5,
+		'caller_get_posts'=>1
+		);
+		$my_query = new WP_Query($args);
+		if( $my_query->have_posts() ) {
+		while ($my_query->have_posts()) : $my_query->the_post(); ?>
+			<li><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><small><?php the_time('M d Y') ?></small><br /><?php the_title(); ?></a></li>
+		<?php endwhile; } ?>
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar2') ) : ?><?php endif; ?>
 		</ul>
 	</div>
