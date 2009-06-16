@@ -13,6 +13,7 @@
 		if (get_settings( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } 
 		else { $$value['id'] = get_settings( $value['id'] ); } 
 	} ?>
+	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 	<?php wp_head();?>
 </head>
 <body>
@@ -28,10 +29,10 @@
 </div>
 <div id="contentwrap">
 	<div id="content">
-			<?php if ($themetwo_bannerimage_toggle=="Use Default") { ?>
+			<?php if ($tenpad_bannerimage_toggle=="Use Default") { ?>
 				<div id="banner-default">
-			<?php } elseif($themetwo_bannerimage_toggle=="Use Custom") { ?>
+			<?php } elseif($tenpad_bannerimage_toggle=="Use Custom") { ?>
 				<div id="banner-custom">
-			<?php } elseif($themetwo_bannerimage_toggle=="Use None") { ?>
+			<?php } elseif($tenpad_bannerimage_toggle=="Use None") { ?>
 				<div id="banner-none">
 			<?php } ?></div>

@@ -1,104 +1,84 @@
 <?php // Do not delete these lines
 	if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
 		die ('Please do not load this page directly. Thanks!');
-
-	if (!empty($post->post_password)) { // if there's a password
-		if ($_COOKIE['wp-postpass_' . COOKIEHASH] != $post->post_password) {  // and it doesn't match the cookie
-			?>
-
-			<p class="nocomments">This post is password protected. Enter the password to view comments.</p>
-
-			<?php
-			return;
-		}
-	}
-
-	/* This variable is for alternating comment background */
-	$oddcomment = 'class="alt" ';
+	if ( post_password_required() ) {
 ?>
-
-<!-- You can start editing here. -->
-
-<?php if ($comments) : ?>
-	<h2 id="comments"><?php comments_number('No Comments', '1 Comments', '% Comments' );?></h2>
-
-	<div id="commentlist">
-
-	<?php foreach ($comments as $comment) : ?>
-
-		<div <?php echo $oddcomment; ?>id="comment-<?php comment_ID() ?>">
-		<div class="gravatar"><?php echo get_avatar( $comment, 48 ); ?></div>
-			<div><cite><?php comment_author_link() ?></cite> says:
-			<br />
-			<small><?php comment_date('d.M.Y') ?> <?php edit_comment_link('Edit Comment'); ?></small>
-			<br />
-			<?php if ($comment->comment_approved == '0') : ?>
-			<em>Your comment is awaiting moderation.</em>
-			<?php endif; ?>
-			<?php comment_text() ?>
-			</div>
-		</div>
-
-	<?php
-		/* Changes every other comment to a different class */
-		$oddcomment = ( empty( $oddcomment ) ) ? 'class="alt" ' : '';
-	?>
-
-	<?php endforeach; /* end for each comment */ ?>
-
-	</div>
-
- <?php else : // this is displayed if there are no comments so far ?>
-
-	<?php if ('open' == $post->comment_status) : ?>
-		<!-- If comments are open, but there are no comments. -->
-
-
- <?php else : // comments are closed ?>
-		<!-- If comments are closed. -->
-		<p class="nocomments"></p>
-
-	<?php endif; ?>
+<p class="nocomments">This post is password protected. Enter the password to view comments.</p>
+<?php
+	return;
+	}
+	// add a microid to all the comments
+	function comment_add_microid($classes) {
+		$c_email=get_comment_author_email();
+		$c_url=get_comment_author_url();
+		if (!empty($c_email) && !empty($c_url)) {
+		$microid = 'microid-mailto+http:sha1:' . sha1(sha1('mailto:'.$c_email).sha1($c_url));
+		$classes[] = $microid;
+	}
+	return $classes;	
+	}
+	add_filter('comment_class','comment_add_microid');
+	// show the comments
+	if ( have_comments() ) :
+?>
+<?php if ( get_option( 'page_comments' ) ) : ?>
+<div id="commentpages">
+	<h2 class="commentpages">Comment Pages</h2>
+	<div class="commentlinks"><?php paginate_comments_links(); ?></div>
+</div>
 <?php endif; ?>
-
-<?php if ('open' == $post->comment_status) : ?>
-
-<h2 id="respond">Write a Comment</h2>
-
+<div id="comments">
+<h2 class="comments">There are <font color="#ffffff"><?php comments_number('0 Comments', '1 Comments', '% Comments' );?></font> to "<font color="#ffffff"><?php the_title(); ?></font>"</h2>
+<ul class="singlecomments" id="commentlist">
+	<?php wp_list_comments(
+		array(
+			'avatar_size'=>48,
+			'reply_text'=>'Reply'
+		)
+	); ?>
+</ul>
+</div>
+<?php else : // this is displayed if there are no comments so far ?>
+<?php if ('open' == $post->comment_status) :
+	// If comments are open, but there are no comments.
+	else : 
+	// comments are closed 
+	endif;
+	endif; 
+	if ('open' == $post-> comment_status) : 
+	// show the form
+?>
+<?php if ( get_option( 'page_comments' ) ) : ?>
+<?php endif; ?>
+<div id="respond">
+<?php cancel_comment_reply_link('Cancel Reply'); ?>
+<h2 class="respond">Write a Comment</h2>
 <?php if ( get_option('comment_registration') && !$user_ID ) : ?>
 <p>You must be <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>">logged in</a> to post a comment.</p>
 <?php else : ?>
-
 <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
-
-<?php if ( $user_ID ) : ?>
-
-Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a> (<?php wp_loginout(); ?>)
-
-<?php else : ?>
-
-<input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" tabindex="1" />
-<label for="author">Name <?php if ($req) echo "*"; ?></label>
-
-<p><input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="22" tabindex="2" />
-<label for="email">E-Mail <?php if ($req) echo "*"; ?> (will not be shown)</label></p>
-
-<p><input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="22" tabindex="3" />
-<label for="url">Website URL</label></p>
-
-<?php endif; ?>
-
-<p><small><strong>XHTML:</strong> You can use these tags: <code><?php echo allowed_tags(); ?></code></small></p>
-
-<p><textarea name="comment" id="commentbox" rows="" cols="" tabindex="4"></textarea></p>
-
-<input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
-<input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
-
-<?php do_action('comment_form', $post->ID); ?>
-
+	<?php if ( $user_ID ) : ?>
+	Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a> (<?php wp_loginout(); ?>)
+	<?php else : ?>
+	<input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" tabindex="1" />
+	<label for="author">Name <?php if ($req) echo "(required)"; ?></label>
+	<p><input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="22" tabindex="2" />
+	<label for="email">Email <?php if ($req) echo "(required)"; ?></label></p>
+	<p><input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="22" tabindex="3" />
+	<label for="url">Website</label></p>
+	<?php endif; ?>
+	<div>
+		<?php comment_id_fields(); ?>
+		<input type="hidden" name="redirect_to" value="<?php echo htmlspecialchars($_SERVER["REQUEST_URI"]); ?>" />
+	</div>
+	<p><small><strong>XHTML:</strong> You can use these tags: <?php echo allowed_tags(); ?></small></p>
+	<p><textarea name="comment" id="commentbox" cols="10" rows="10" tabindex="4"></textarea></p>
+	<?php if (get_option("comment_moderation") == "1") { ?>
+	<p><small><strong>Please note:</strong> Comment moderation is enabled and may delay your comment. There is no need to resubmit your comment.</small></p>
+	<?php } ?>
+	<input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
+	<?php do_action('comment_form', $post->ID); ?>
 </form>
-
-<?php endif; // If registration required and not logged in ?>
-
-<?php endif; // if you delete this the sky will fall on your head ?>
+<?php endif; ?>
+</div>
+<?php endif; ?>

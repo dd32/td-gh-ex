@@ -1,6 +1,6 @@
 /*
 Theme Name: 10PAD2-Rising Sun
-Version: 1.5
+Version: 1.5.1
 Description: 10PAD2-Rising Sun is a light 2-column theme that features a rising sun banner and a right sidebar. You can choose to use a custom banner or hide the banner in the theme options.
 Author: Eric Crooks
 Author URI: http://www.ericcrooks.com/
@@ -9,24 +9,24 @@ Tags: black, orange, white, light, two-columns, right-sidebar, fixed-width, cust
 
 * {
 	margin: 0 auto;
-	}
+}
 body {
 	background: #ffffff;
 	color: #000000;
 	font-family: "Arial";
 	font-size: .75em;
-	}
+}
 a {
 	color: #ff7700;
 	text-decoration: none;
-	}
+}
 cite {
 	font-style: normal;
-	}
+}
 cite a {
 	color: #ff7700;
 	font-style: normal;
-	}
+}
 code {
 	background: #efefef;
 	border: 1px solid #dfdfdf;
@@ -34,16 +34,16 @@ code {
 	font-size: 1.1em;
 	line-height: 1.3em;
 	padding: 10px;
-	}
+}
 h2 {
 	font-size: 1.5em;
 	font-weight: normal;
-	}
+}
 p {
 	line-height: 1.5em;
 	margin: 1.2em auto;
 	text-align: left;
-	}
+}
 pre {
 	background: #efefef;
 	border: 1px solid #dfdfdf;
@@ -52,33 +52,33 @@ pre {
 	line-height: 1.3em;
 	overflow: auto;
 	padding: 10px;
-	}
+}
 textarea {
 	font-family: "Arial";
 	font-size: 1em;
-	}
+}
 
 /* -header- */
 
 #headerwrap {
 	margin: 20px 0 20px 0;
 	width: 100%;
-	}
+}
 #header {
 	border-bottom: 1px solid #000000;
 	clear: both;
 	padding-bottom: 20px;
 	width: 790px;
-	}
+}
 .bloginfo {
 	width: 770px;
-	}
+}
 .bloginfo a {
 	color: #ff7700;
-	}
+}
 .searchform {
 	width: 220px;
-	}
+}
 
 /* -content- */
 
@@ -88,52 +88,58 @@ textarea {
 	height: 230px;
 	margin-bottom: 20px;
 	width: 530px;
-	}
+}
 #banner-custom {
 	background: url("images/banners/banner-custom.php") center center no-repeat;
 	border: 10px solid #000000;
 	height: 230px;
 	margin-bottom: 20px;
 	width: 530px;
-	}
+}
 #content {
 	float: left;
 	margin-right: 20px;
 	width: 550px;
-	}
+}
 #contentwrap {
 	width: 790px;
-	}
+}
 
 /* -post and entries- */
 
 .post {
 	margin-bottom: 20px;
-	}
+}
 .post a {
 	color: #ff7700;
 	text-decoration: none;
-	}
+}
 .post a:hover {
 	color: #000000;
 	text-decoration: none;
-	}
+}
 .post blockquote {
 	background: #efefef;
 	border: 1px solid #dfdfdf;
 	margin: 1.2em auto;
 	padding: 0.1em 1em;
-	}
+}
 .post embed, .post img, .post object {
 	display: block;
 	margin: 1.2em auto;
 	max-width: 522px;
-	}
+}
 .post img, .post object {
 	background: #efefef;
 	border: 1px solid #dfdfdf;
 	padding: 3px;
-	}
+}
+.post embed.alignleft, .post img.alignleft, .post object.alignleft {
+	margin: 0 10px 10px 0;
+}
+.post embed.alignright, .post img.alignright, .post object.alignright{
+	margin: 0 0 10px 10px;
+}
 .post h2 {
 	background: #000000;
 	color: #ff7700;
@@ -142,44 +148,44 @@ textarea {
 	font-weight: bold;
 	padding: 10px;
 	text-transform: uppercase;
-	}
+}
 .post h2 a {
 	color: #ffffff;
-	}
+}
 .post h2 a:hover {
 	color: #ff7700;
-	}
+}
 .post ul, .post ol {
 	line-height: 1.5em;
 	margin: 1.2em auto;
-	}
+}
 .post .wp-smiley {
 	border: none;
 	display: inline;
 	margin: 0;
-	}
+}
 .postmetadata-top {
 	border-bottom: 1px dotted #dfdfdf;
 	margin-top: 1.2em;
 	padding-bottom: 1.2em;
 	text-transform: uppercase;
-	}
+}
 .postmetadata-bottom {
 	margin: 1.2em auto;
 	text-transform: uppercase;
-	}
+}
 .post .comment-button {
 	margin: 1.2em 0 1.2em 0;
 	text-transform: uppercase;
-	}
+}
 .post .comment-button a {
 	background: #ff7700;
 	color: #ffffff;
 	padding: 3px 10px 3px 10px;
-	}
+}
 .post .comment-button a:hover {
 	color: #000000;
-	}
+}
 
 /* -post tables- */
 
@@ -190,32 +196,32 @@ textarea {
 	line-height: 1.5em;
 	margin: 1em auto;
 	width: 100%;
-	}
+}
 .post th, .post td {
 	background: #efefef;
 	border: 1px solid #dfdfdf;
 	padding: 5px;
-	}
+}
 
 /* -sidebar- */
 
 #sidebar1wrap {
 	float: left;
 	margin-bottom: 20px;
-	}
+}
 #sidebar1 {
 	width: 220px;
-	}
+}
 #sidebar1 a, #sidebar1 li.recentcomments, #sidebar1 .textwidget {
 	border-bottom: 1px dotted #dfdfdf;
 	color: #000000;
 	display: block;
 	padding: 3px 3px 3px 10px;
-	}
+}
 #sidebar1 a:hover {
 	background: #000000;
 	color: #ffffff;
-	}
+}
 #sidebar1 h2 {
 	background: #000000;
 	color: #ffffff;
@@ -224,66 +230,144 @@ textarea {
 	font-weight: bold;
 	padding: 10px;
 	text-transform: none;
-	}
+}
 #sidebar1 h2.small {
 	margin: 20px 0 10px 0;
-	}
+}
 #sidebar1 li {
 	list-style: none;
-	}
+}
+#sidebar1 li.recentcomments:hover {
+	background: #000000;
+	color: #ffffff;
+}
+#sidebar1 li.recentcomments:hover a {
+	color: #ffffff;
+}
 #sidebar1 li.recentcomments a {
 	border: none;
-	}
+}
+#sidebar1 li.widget_categories ul li {
+	border-bottom: 1px dotted #dfdfdf;
+	display: block;
+	padding: 3px 3px 3px 10px;
+}
+#sidebar1 li.widget_categories ul li a {
+	border-bottom: none;
+	display: inline;
+	padding: 0;
+}
+#sidebar1 li.widget_categories ul li:hover, #sidebar1 li.widget_categories ul li:hover a {
+	background: #000000;
+	color: #ffffff;
+}
 #sidebar1 select {
 	margin: 3px 0 3px 0;
 	width: 220px;
-	}
+}
 #sidebar1 small {
 	text-transform: uppercase;
-	}
+}
+#sidebar1 .textwidget {
+	padding: 3px 0 3px 0;
+}
+#sidebar1 .textwidget img {
+	display: block;
+}
+#sidebar1 .textwidget a {
+	display: inline;
+}
 #sidebar1 ul {
 	margin: 0;
 	padding: 0;
-	}
-#sidebar1 ul.children a {
+}
+#sidebar1 ul.children a, #sidebar1 li.page_item ul li.page_item a {
 	padding-left: 20px;
-	}
-#sidebar1 ul.children ul.children a {
+}
+#sidebar1 ul.children ul.children a, #sidebar1 li.page_item ul li.page_item ul li.page_item a {
 	padding-left: 30px;
-	}
-#sidebar1 #tag_cloud h2 {
+}
+#sidebar1 ul.children ul.children ul.children a, #sidebar1 li.page_item ul li.page_item ul li.page_item ul li.page_item a {
+	padding-left: 40px;
+}
+#sidebar1 .widget_text a, #sidebar1 .widget_text a img {
+	border: none;
+	padding: 0;
+}
+#sidebar1 .widget_tag_cloud {
+	border-bottom: 1px dotted #dfdfdf;
 	margin-bottom: 10px;
-	}
-#sidebar1 #tag_cloud a {
+	padding-bottom: 3px;
+}
+#sidebar1 .widget_tag_cloud a {
 	border: none;
 	display: inline;
 	padding: 0 3px 0 3px;
-	}
+}
+#sidebar1 .widget_tag_cloud h2 {
+	margin-bottom: 10px;
+}
+#sidebar1 .widget_rss h2.small a {
+	border: none;
+	display: inline;
+	color: #ffffff;
+	padding: 0;
+}
+#sidebar1 .widget_rss h2.small a img {
+	display: none;
+}
+#sidebar1 .widget_rss ul li {
+	border-bottom: 1px dotted #dfdfdf;
+	display: block;
+}
+#sidebar1 .widget_rss ul li a.rsswidget {
+	border: none;
+	display: block;
+	padding: 3px 3px 3px 10px;
+}
+#sidebar1 .widget_rss ul li cite {
+	color: #ff7700;
+	font-size: .75em;
+	text-transform: uppercase;
+	padding-bottom: 3px;
+}
+#sidebar1 .widget_rss ul li .rss-date {
+	color: #ff7700;
+	display: block;
+	font-size: .75em;
+	text-transform: uppercase;
+}
+#sidebar1 .widget_rss ul li .rssSummary {
+	padding-bottom: 3px;
+}
 
-/* -sidebar calender- */
+/* -sidebar calendar- */
 
 #sidebar1 table {
 	border: 1px dotted #dfdfdf;
 	width: 100%;
-	}
+}
 #sidebar1 table a {
-	background: #000000;
 	border: none;
-	color: #ffffff;
+	color: #000000;
 	display: block;
 	padding: 3px;
-	}
-#sidebar1 table th {
-	color: #000000;
-	text-align: center;
-	}
+}
+#sidebar1 table a:hover {
+	background: #000000;
+	color: #ffffff;
+}
 #sidebar1 table td {
 	color: #dfdfdf;
 	text-align: center;
-	}
+}
+#sidebar1 table th {
+	color: #000000;
+	text-align: center;
+}
 #sidebar1 #calendar h2 {
 	display: none;
-	}
+}
 #sidebar1 caption {
 	background: #000000;
 	color: #ffffff;
@@ -292,91 +376,155 @@ textarea {
 	margin: 20px 0 10px 0;
 	padding: 10px;
 	text-align: left;
-	}
+}
 
 /* -comments- */
 
-#commentbox {
-	height: 100px;
-	width: 541px;
-	}
-#commentform {
+#comments, #respond {
+	background: #ffffff;
+	width: 550px;
+}
+#commentpages {
 	margin-bottom: 20px;
-	width: 549px;
-	}
-#commentform code {
-	background: none;
-	border: none;
-	display: inline;
-	font-size: 1.1em;
-	line-height: 1.3em;
+}
+ul#commentlist {
+	list-style: none;
+	margin-bottom: 20px;
 	padding: 0;
-	}
+}
+ul#commentlist li.comment {
+	border-top: 1px dotted #dfdfdf;
+	padding: 20px 0 20px 0;
+}
+ul#commentlist ul.children {
+	list-style: none;
+	padding: 0 0 0 20px;
+}
+ul#commentlist ul.children li {
+	border-top: 1px dotted #dfdfdf;
+	margin: 10px 0 0 0;
+	padding: 10px 0 0 0;
+}
+ul#commentlist li blockquote {
+	background: #efefef;
+	border: 1px solid #dfdfdf;
+	margin: 1.2em auto;
+	padding: 0.1em 1em;
+}
+/*ul#commentlist a {
+	color: #ff7700;
+}*/
+h2.comments {
+	background: #000000;
+	color: #ff7700;
+	display: block;
+	font-size: 1em;
+	font-weight: bold;
+	margin-bottom: 20px;
+	padding: 10px;
+	text-transform: uppercase;
+}
+h2.respond {
+	background: #000000;
+	color: #ffffff;
+	display: block;
+	font-size: 1em;
+	font-weight: bold;
+	margin-bottom: 20px;
+	padding: 10px;
+	text-transform: uppercase;
+}
+h2.commentpages {
+	background: #000000;
+	color: #ffffff;
+	display: block;
+	font-size: 1em;
+	font-weight: bold;
+	margin-bottom: 20px;
+	padding: 10px;
+	text-transform: uppercase;
+}
+small a.comment-edit-link {
+	color: #ff7700;
+	text-transform: uppercase;
+}
+#commentlist div .avatar {
+	background: #efefef;
+	border: 1px solid #dfdfdf;
+	float: left;
+	margin: 0 10px 10px 0;
+	padding: 3px;
+}
+.vcard .fn, .vcard .says {
+	font-weight: bold;
+}
+.comment-meta {
+	font-size: .8em;
+	margin-bottom: 40px;
+	text-transform: uppercase;
+}
+.comment-meta a {
+	color: #000000;
+}
+.comment-meta a.comment-edit-link {
+	color: #ff7700;
+}
+.reply {
+	margin-top: 20px;
+	text-align: left;
+}
+li.depth-1 #respond {
+	margin: 0 0 -20px 0;
+}
+li.depth-2 #respond {
+	margin: 0 0 -20px -20px;
+}
+li.depth-3 #respond {
+	margin: 0 0 -20px -40px;
+}
+li.depth-4 #respond {
+	margin: 0 0 -20px -60px;
+}
+li.depth-5 #respond {
+	margin: 0 0 -20px -80px;
+}
+#commentform {
+	padding-bottom: 20px;
+	width: 550px;
+}
 #commentform a {
 	color: #ff7700;
-	}
+}
 #commentform input, #commentform textarea {
 	background: #efefef;
 	border: 1px solid #dfdfdf;
 	color: #000000;
 	padding: 3px;
-	}
-#commentlist {
-	margin-bottom: 20px;
-	}
-#comments {
+}
+#commentform #commentbox {
+	height: 100px;
+	width: 542px;
+}
+#commentform #submit {
+	color: #000000;
+	margin-top: 20px;
+}
+#commentform small {
+	text-transform: normal;
+}
+.commentlinks a {
+	color: #000000;
+	padding: 5px 10px 5px 10px;
+}
+.commentlinks a:hover {
 	background: #000000;
 	color: #ffffff;
-	display: block;
-	font-size: 1em;
-	font-weight: bold;
-	margin-bottom: 20px;
-	padding: 10px;
-	text-transform: uppercase;
-	}
-#commentlist div {
-	margin-bottom: 20px;
-	}
-#commentlist div.alt {
-	border-bottom: 1px dotted #000000;
-	border-top: 1px dotted #000000;
-	color: #000000;
-	margin-bottom: 20px;
-	padding: 20px 0 20px 0;
-	}
-#commentlist div.alt blockquote {
-	background: #efefef;
-	border: 1px solid #dfdfdf;
-	margin: 1.2em auto;
-	padding: 0.1em 1em;
-	}
-#commentlist div blockquote {
-	background: #efefef;
-	border: 1px solid #dfdfdf;
-	margin: 1.2em auto;
-	padding: 0.1em 1em;
-	}
-#commentlist small {
-	text-transform: uppercase;
-	}
-.gravatar {
-	float: left;
-	margin: 0 10px 10px 0;
-	}
-#respond {
+}
+.commentlinks .current {
 	background: #000000;
 	color: #ffffff;
-	display: block;
-	font-size: 1em;
-	font-weight: bold;
-	margin-bottom: 20px;
-	padding: 10px;
-	text-transform: uppercase;
-	}
-small a.comment-edit-link {
-	color: #000000;
-	text-transform: uppercase;
-	}
+	padding: 5px 10px 5px 10px;
+}
 
 /* -search form- */
 
@@ -386,10 +534,10 @@ small a.comment-edit-link {
 	color: #ffffff;
 	padding: 3px 3px 3px 22px;
 	width: 195px;
-	}
+}
 #searchsubmit {
 	display: none;
-	}
+}
 
 /* -footer- */
 
@@ -399,13 +547,13 @@ small a.comment-edit-link {
 	padding: 20px 0 20px 0;
 	text-align: right;
 	width: 790px;
-	}
+}
 #footer a {
 	color: #000000;
-	}
+}
 #footer small {
 	text-transform: uppercase;
-	}
+}
 
 /* -misc and universal- */
 
@@ -416,18 +564,18 @@ small a.comment-edit-link {
 	margin: 20px 0 20px 0;
 	padding: 10px;
 	text-align: center;
-	}
+}
 .navlink a:hover {
 	color: #ffffff;
-	}
+}
 .uppercase {
 	text-transform: uppercase;
-	}
+}
 .wp-smiley {
 	border: none;
 	display: inline;
 	margin: 0;
-	}
+}
 
 /* -floats - */
 
@@ -435,10 +583,10 @@ small a.comment-edit-link {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	}
+}
 .alignleft {
 	float: left;
-	}
+}
 .alignright {
 	float: right;
-	}
+}

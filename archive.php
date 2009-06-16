@@ -1,19 +1,19 @@
 <?php get_header();?>
 		<div class="post">
 			<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
-			<?php /* If this is a category archive */ if (is_category()) { ?>
+			<?php if (is_category()) { ?>
 				<h2>Archive for the "<font color="#ffffff"><?php single_cat_title(); ?></font>" Category</h2>
-			<?php /* If this is a tag archive */ } elseif( is_tag() ) { ?>
+			<?php } elseif( is_tag() ) { ?>
 				<h2>Posts Tagged "<font color="#ffffff"><?php single_tag_title(); ?></font>"</h2>
-			<?php /* If this is a daily archive */ } elseif (is_day()) { ?>
+			<?php } elseif (is_day()) { ?>
 				<h2>Archive for "<font color="#ffffff"><span class="uppercase"><?php the_time('M d Y'); ?></span></font>"</h2>
-			<?php /* If this is a monthly archive */ } elseif (is_month()) { ?>
+			<?php } elseif (is_month()) { ?>
 				<h2>Archive for "<font color="#ffffff"><span class="uppercase"><?php the_time('M Y'); ?></span></font>"</h2>
-			<?php /* If this is a yearly archive */ } elseif (is_year()) { ?>
+			<?php } elseif (is_year()) { ?>
 				<h2>Archive for "<font color="#ffffff"><?php the_time('Y'); ?></font>"</h2>
-			<?php /* If this is an author archive */ } elseif (is_author()) { ?>
+			<?php } elseif (is_author()) { ?>
 				<h2>Author Archive</h2>
-			<?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
+			<?php } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
 				<h2>Blog Archives</h2>
 			<?php } ?>
 		</div>
@@ -21,29 +21,22 @@
 		<?php while (have_posts()) : the_post(); ?>
 		<div class="post" id="post-<?php the_ID(); ?>">
 			<h2><?php the_date('d.M.Y'); ?> <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a> <?php edit_post_link('- Edit Post'); ?></h2>
-			<div class="entrywhole">
-				<div class="entry">
-					<div class="postmetadata-top"><small>Filed In: <?php the_category(', '); ?></small></div>
-					<?php $post = $posts[0]; ?>
-					<?php if (is_category()) { ?>
-						<?php the_excerpt(); ?>
-					<?php } elseif( is_tag() ) { ?>
-						<?php the_excerpt(); ?>
-					<?php } elseif (is_day()) { ?>
-						<?php the_content('Read More &rsaquo;'); ?>
-					<?php } elseif (is_month()) { ?>
-						<?php the_excerpt(); ?>
-					<?php } elseif (is_year()) { ?>
-						<?php the_excerpt(); ?>
-					<?php } elseif (is_author()) { ?>
-						<?php the_excerpt(); ?>
-					<?php } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
-						<?php the_excerpt(); ?>
-					<?php } ?>
-					<div align="right" class="comment-button"><small><?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?></small></div>
-					<div class="postmetadata-bottom"><small>Tags: <?php the_tags('', ', '); ?></small></div>
-				</div>
-			</div>
+			<div class="postmetadata-top"><small>Filed In: <?php the_category(', '); ?></small></div>
+			<?php if (is_category()) { ?>
+				<?php the_excerpt(); ?>
+			<?php } elseif( is_tag() ) { ?>
+				<?php the_excerpt(); ?>
+			<?php } elseif (is_day()) { ?>
+				<?php the_content('Read More &rsaquo;'); ?>
+			<?php } elseif (is_month()) { ?>
+				<?php the_excerpt(); ?>
+			<?php } elseif (is_year()) { ?>
+				<?php the_excerpt(); ?>
+			<?php } elseif (is_author()) { ?>
+				<?php the_excerpt(); ?>
+			<?php } ?>
+			<div align="right" class="comment-button"><small><?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?></small></div>
+			<div class="postmetadata-bottom"><small>Tags: <?php the_tags('', ', '); ?></small></div>
 		</div>
 		<?php endwhile; ?>
 		<?php endif; ?>
