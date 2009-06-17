@@ -53,13 +53,13 @@
     <li class="block">
       <!-- box -->
       <div class="box">
+       <div class="titlewrap"><h4><span><?php _e('Archives','arclite'); ?></span></h4></div>      
        <div class="wrapleft">
         <div class="wrapright">
          <div class="tr">
           <div class="bl">
            <div class="tl">
             <div class="br the-content">
-            <div class="titlewrap"><h4><span><?php _e('Archives','arclite'); ?></span></h4></div>
              <ul>
               <?php wp_get_archives('type=monthly&show_post_count=1'); ?>
              </ul>
@@ -76,13 +76,13 @@
     <li class="block">
       <!-- box -->
       <div class="box">
+       <div class="titlewrap"><h4><span><?php _e('Meta','arclite'); ?></span></h4></div>
        <div class="wrapleft">
         <div class="wrapright">
          <div class="tr">
           <div class="bl">
            <div class="tl">
             <div class="br the-content">
-             <div class="titlewrap"><h4><span><?php _e('Meta','arclite'); ?></span></h4></div>
              <ul>
               <?php wp_register(); ?>
               <li><?php wp_loginout(); ?></li>

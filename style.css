@@ -1,9 +1,8 @@
-
 /*
 Theme Name: Arclite
 Theme URI: http://digitalnature.ro/projects/arclite
 Description: Simple but elegant theme with lots of theme options. Designed by <a href="http://digitalnature.ro/">digitalnature</a>.
-Version: 1.4.2
+Version: 1.5
 Author: digitalnature
 Author URI: http://digitalnature.ro
 Tags: light, brown, two-columns, flexible-width, right-sidebar, theme-options, threaded-comments, custom-header
@@ -179,8 +178,7 @@ input.radio, input.checkbox{
 }
 
 form label{
-  font-weight: bold;
-  display: block;
+  font-weight: normal;
 }
 
 fieldset{
@@ -261,16 +259,16 @@ pre{
 
 blockquote{
   margin: 1em 25% 1em 0;
-  padding: 2px;
+  padding: .2em .2em .2em 5em;
   border: 1px dotted #937d68;
   font-style: italic;
   color: #937d68;
+  background: #fff url(images/blockquote.png) no-repeat 4px top;
 }
 
 blockquote p{
   padding: 8px;
   margin: 2px;
-  background: #f6f5f0;
 }
 
 /*** BASIC LAYOUT ***/
@@ -430,6 +428,11 @@ blockquote p{
   padding: 5px 0 0 8px;
 }
 
+.search-block fieldset{
+  border: 0;
+  padding: 0;
+}
+
 .search-block input.go{
   width: 36px;
   height: 30px;
@@ -464,6 +467,15 @@ blockquote p{
   margin: 0;
   list-style-type: none;
 }
+
+#nav-wrap2 ul#nav{
+    background: transparent url(images/nav-div.png) no-repeat right top;
+    padding-right: 2px;
+    display: block;
+    height: 64px;
+
+}
+
 
 #nav-wrap2 ul#nav li{
   display:inline;
@@ -680,7 +692,7 @@ blockquote p{
 }
 
 .post .post-date span.month{
-  background: #f44365 url(images/date-top.gif) repeat-x left top;
+  background: #f44365;
   border-bottom: 1px solid #fff;
   width: 100%;
   position: absolute;
@@ -722,17 +734,6 @@ blockquote p{
 .post .post-content{
   clear: left;
   padding-bottom: .4em;
-}
-
-.post .post-links{
-  text-align: right;
-  display: block;
-}
-
-.post-links a.comments{
-  background: transparent url(images/comment.png) no-repeat left 1px;
-  padding-left: 18px;
-  font-weight: bold;
 }
 
 /* tags */
@@ -777,25 +778,33 @@ blockquote p{
 
 /* comments */
 
-ul#comments, ul#comments li.comment, ul#comments ul, ul#trackbacks, ul#trackbacks li{
-  list-style-type: none;
-  margin: 0;
+h3.comments{
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Sans, FreeSans, Jamrul, Garuda, Kalimati;
   padding: 0;
+  margin: 2em 0 0 1em;
+  font-size: 150%;
 }
 
 ul#comments{
   margin: .6em 0 1em 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 ul#comments ul{
-  margin-left: 4em;
+  margin-left: 2em;
+  list-style-type: none;
 }
 
 .comment-mask{
   display: block;
   background: transparent url(images/comment-shadow.png) no-repeat right bottom;
-  padding: 12px 6px 6px 18px;
+  padding: 12px 6px 6px 0px;
   position: relative;
+}
+
+.trackback .comment-mask{
+  background: none;
 }
 
 .comment-mask .avatar{
@@ -829,11 +838,12 @@ ul#comments ul{
 
 .comment-head{
   background: #96816d url(images/comment-head.png) repeat-x left bottom;
-  height: 36px;
-  min-height:36px;
-  height:auto !important; /* ie6 fix */
   color: #fff;
   position: relative;
+}
+
+.trackback .comment-head{
+  background: #7c7c7d;
 }
 
 .admincomment .comment-head{
@@ -845,6 +855,11 @@ ul#comments ul{
   margin: 0;
   font-style: italic;
   font-size: 90%;
+}
+
+.trackback .comment-head p{
+  padding: .5em 1em;
+  margin: 0;
 }
 
 .comment-head p a, .comment-head p a:visited{
@@ -885,6 +900,7 @@ ul#comments ul{
 
 #respond{
   display: block;
+  margin: 1em 0;
 }
 
 li.comment #respond{
@@ -915,12 +931,15 @@ ul.menu, ul.menu li{
 
 ul.menu{
   padding: 0 12px;
+  margin: 0 0 10px 0;
+  display: block;
 }
 
 ul.menu li{
   background: transparent url(images/div-h.png) repeat-x left bottom;
   display: block;
-  padding-bottom: 2px;
+  padding: 0 0 3px 0;
+  width: 100%;
 }
 
 ul.menu li a{
@@ -958,7 +977,9 @@ ul.menu .fadeThis span.hover {
 ul.menu li li{
   margin-left: 1.8em;
   padding: 0;
+  float: none;
   background: none;
+  width: auto;
 }
 
 ul.menu li li li{
@@ -981,7 +1002,6 @@ ul.menu li li a:hover{
 
 ul.menu li.cat-item {
  position: relative;
- width: 100%; /* ie7 bug-fix */
 }
 
 ul.menu li.cat-item a.rss{
@@ -1122,9 +1142,17 @@ ul#footer-widgets li.widget{
   float: left;
   padding: 0;
   margin: 0;
-  width: 25%; /* no more than 4 blocks */
+  width: 50%; /* default  */
   list-style-type: none;
 }
+
+ul#footer-widgets.widgetcount-1 li.widget{ width: 50%; }
+ul#footer-widgets.widgetcount-2 li.widget{ width: 50%; }
+ul#footer-widgets.widgetcount-3 li.widget{ width: 33%; }
+ul#footer-widgets.widgetcount-4 li.widget{ width: 25%; }
+ul#footer-widgets.widgetcount-5 li.widget{ width: 20%; }
+ul#footer-widgets.widgetcount-6 li.widget{ width: 16%; }
+/* no point to add more than 6 widgets, unreadable */
 
 ul#footer-widgets h6.title{
   background: transparent url(images/div-h2.gif) repeat-x left bottom;
@@ -1182,6 +1210,25 @@ ul#footer-widgets li.widget li span.hover {
 
 /*** MISC ***/
 
+.with-tooltip{ }
+
+div.tooltip{
+  position:absolute;
+  left:-20000px;
+  background-color:#dedede;
+  padding:5px;
+  border:1px solid #fff;
+  width:250px;
+}
+
+div.tooltip p{
+  margin:0;
+  padding:0;
+  color:#fff;
+  background-color:#222;
+  padding:2px 7px;
+}
+
 .left{ float: left; }
 .right{ float: right; }
 div.clear{ clear: both;height:1px;  }
@@ -1222,6 +1269,7 @@ div.clear{ clear: both;height:1px;  }
   border: 1px solid #a9947c !important;
   background: #f2eedf !important;
   margin:0;
+  text-decoration: none;
 }
 
 #pagenavi a, #pagenavi span.pages, #pagenavi span.extend{
@@ -1307,6 +1355,9 @@ img.wp-smiley, .post .post-content img.wp-smiley, .attachment img.wp-smiley{
   border: 0;
 }
 
+/* Sociable plugin adjustment */
+.post .post-content .sociable img{ margin: 0; }
+
 .wp-caption {
   background:#F7F7F7;
   border-radius: 4px;
@@ -1370,23 +1421,25 @@ img.wp-smiley, .post .post-content img.wp-smiley, .attachment img.wp-smiley{
 .widget_calendar .box,
 .widget_calendar .box .wrapleft,
 .widget_calendar .box .wrapright,
-.widget_calendar .box .tr, .widget_calendar .box .bl, .widget_calendar .box .tl, .widget_calendar .box .br{
+.widget_calendar .box .tr, .widget_calendar .box .bl, .widget_calendar .box .tl, .widget_calendar .box .br,
+.widget_calendar .box .the-content{
   background: none;
   padding: 0;
   margin: 0;
+  width: auto;
+  border: 0;
+  height:auto !important;
+  min-height: none !important;
+  min-width: none !important;
 }
 
-.widget_calendar .box{
-  margin: 0 1em;
-}
+.widget_calendar .box{ margin: 0 1em; }
+.widget_calendar .box .titlewrap{ display: none; }
+.widget_calendar .box table{ width: 100%; }
 
-
-.widget_calendar .box .titlewrap{
-  display: none;
-}
-
-.widget_calendar .box table{
-  width: 100%;
+.widget_calendar .box table td, .widget_calendar .box table th{
+  text-align: center;
+  padding: .1em .3em;
 }
 
 .widget_calendar .box caption{
@@ -1394,7 +1447,6 @@ img.wp-smiley, .post .post-content img.wp-smiley, .attachment img.wp-smiley{
   font-style: italic;
   padding-right: .4em;
 }
-
 
 #sidebar li.block .info-text{
   margin: 1em;

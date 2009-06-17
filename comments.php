@@ -9,62 +9,48 @@
   $numComments  = 0;
 
   /* Loop throught comments to count these totals */
-  foreach ($comments as $comment)
-    if (get_comment_type() != "comment") $numPingBacks++; else $numComments++;
-?>
+  foreach ($comments as $comment) if (get_comment_type() != "comment") $numPingBacks++; else $numComments++; ?>
 
+  <?php if (($numComments > 0) || ($numPingbacks > 0)) {  ?>
 
-    <!-- comments and trackback tabs -->
-   <h3><?php _e('Comments','arclite'); echo ' ('.$numComments.')'; ?></h3>
-   <!--<h3><?php _e('Trackbacks','arclite'); echo ' ('.$numPingBacks.')';?></h3>-->
-    <!-- /comments and trackback tabs -->
+  <h3 class="comments">
+    <?php
+      printf(__('%s Comments', 'arclite'), $numComments);
+      if ($numPingBacks == 1) printf(' ('.__('and one trackback', 'arclite').') ', $numPingBacks);
+      else if ($numPingBacks > 1) printf(' ('.__('and %s trackbacks', 'arclite').') ', $numPingBacks);
+    ?>
+  </h3>
 
   <!-- comments -->
-
-   <ul id="comments">
+  <ul id="comments">
     <?php
-      if ($numComments > 0) {
-
       // for WordPress 2.7 or higher
-  	if (function_exists('wp_list_comments')) { wp_list_comments('type=comment&callback=list_comments');	}
-      else
-        { // for WordPress 2.6.3 or lower
+  	 if (function_exists('wp_list_comments')) { wp_list_comments('callback=list_comments');	}
+      else { // for WordPress 2.6.3 or lower
   	    foreach ($comments as $comment)
-    		  if($comment->comment_type != 'pingback' && $comment->comment_type != 'trackback') list_comments($comment, null, null);
+    		  //if($comment->comment_type != 'pingback' && $comment->comment_type != 'trackback')
+              list_comments($comment, null, null);
         }
-  	}
-      else { ?>
-  	  <li><?php _e('No comments yet.','arclite'); ?></li>
-  	<?php }	?>
-    </ul>
-            <div class="clear"></div>
-    <?php if ($numPingbacks > 0) { ?>
-    <!-- trackbacks -->
-   <h3><?php _e('Trackbacks','arclite'); echo ' ('.$numPingBacks.')'; ?></h3>
-    <ul id="trackbacks">
-     <?php
-      if ($numPingBacks > 0) wp_list_comments('type=pings&callback=list_pings'); else { ?>
-       <li><?php _e("No trackbacks yet.","arclite"); ?></li>
-     <?php } ?>
-    </ul>
-    <!-- /trackbacks -->
-    <?php } ?>
+    ?>
+   </ul>
+   <div class="clear"></div>
+   <?php } else { ?><h3 class="comments"><?php _e('No comments yet.','arclite'); ?></h3><?php }	?>
 
-
-    <?php
+   <?php
       if (get_option('page_comments')) {
        $comment_pages = paginate_comments_links('echo=0');
-      if ($comment_pages) { ?>
-       <div class="commentnavi">
-  	    <div class="commentpager">
+       if ($comment_pages) { ?>
+        <div class="commentnavi">
+  	      <div class="commentpager">
   	    	<?php echo $comment_pages; ?>
-  	    </div>
-       </div>
-      <?php
+  	      </div>
+        </div>
+       <?php
+  	   }
   	  }
-  	 }
-      ?>
-    <?php
+   ?>
+
+   <?php
     if (comments_open()) :
      if (get_option('comment_registration') && !$user_ID ) { // If registration required and not logged in. ?>
   	<div id="comment_login" class="messagebox">
@@ -75,7 +61,27 @@
      <?php } else { ?>
 
       <div id="respond">
-      <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform" name="tcommentform">
+      <script type="text/javascript">
+       function validatecomment(form){
+         if(form.author.value == ('' || '<?php _e("Your name (required)","arclite"); ?>')){
+           alert('<?php _e("Please enter your name","arclite"); ?>');
+           return false;
+         }
+         if(form.email.value == ('' || '<?php _e("Your e-mail (required, will not be published)","arclite"); ?>')){
+           alert('<?php _e("Please enter your email address","arclite"); ?>');
+           return false;
+         }
+         if(form.comment.value == ('' || '<?php _e("Type your comment here","arclite"); ?>')){
+           alert('<?php _e("Please type a comment","arclite"); ?>');
+           return false;
+         }
+         if(form.url.value == ('' || '<?php _e("Your website","arclite"); ?>')){
+           form.url.value = '';
+           return true;
+         }
+       }
+      </script>
+      <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform" onsubmit="return validatecomment(this);">
         <?php if (function_exists('cancel_comment_reply_link')) { ?><div class="cancel-comment-reply"><?php cancel_comment_reply_link(__('Cancel Reply','arclite')); ?></div><?php } ?>
         <?php if ($user_ID) : ?>
           <?php if (function_exists('wp_logout_url')) $logout_link = wp_logout_url(); else $logout_link = get_option('siteurl') . '/wp-login.php?action=logout';	?>
@@ -92,17 +98,15 @@
           <?php endif; ?>
           <div id="author_info">
             <div class="row">
-              <label for="author" class="small"><?php _e("Name","arclite"); ?> <?php if ($req) _e("(required)","arclite"); ?></label>
-              <input type="text" name="author" id="author" class="textfield" value="<?php echo $comment_author; ?>" size="24" tabindex="1" />
+              <input type="text" name="author" id="author" class="textfield required" size="34" tabindex="1" value="<?php if($comment_author<>'') echo $comment_author; else _e("Your name (required)","arclite"); ?>" onfocus="if( this.value == '<?php _e("Your name (required)","arclite"); ?>') {this.value = '';}"  onblur="if (this.value == '') { this.value = '<?php _e("Your name (required)","arclite"); ?>';}" />
             </div>
             <div class="row">
-              <label for="email" class="small"><?php _e("E-Mail","arclite"); ?> <?php if ($req) _e("(required)","arclite"); ?> <em><?php _e("(will not be published)","arclite"); ?></em></label>
-              <input type="text" name="email" id="email" class="textfield" value="<?php echo $comment_author_email; ?>" size="24" tabindex="2" />
+              <input type="text" name="email" id="email" class="textfield required" value="<?php if($comment_author_email<>'') echo $comment_author_email; else _e("Your e-mail (required, will not be published)","arclite"); ?>" onfocus="if(this.value == '<?php _e("Your e-mail (required, will not be published)","arclite"); ?>') { this.value = '';}"  onblur="if (this.value == '') { this.value = '<?php _e("Your e-mail (required, will not be published)","arclite"); ?>';}" size="60" tabindex="2" />
             </div>
             <div class="row">
-              <label for="url" class="small"><?php _e("Website","arclite"); ?></label>
-              <input type="text" name="url" id="url" class="textfield" value="<?php echo $comment_author_url; ?>" size="24" tabindex="3" />
+              <input type="text" name="url" id="url" class="textfield" value="<?php if($comment_author_url<>'') echo $comment_author_url; else _e("Your website","arclite"); ?>" onfocus="if(this.value == '<?php _e("Your website","arclite"); ?>') { this.value = 'http://';}" onblur="if ((this.value == 'http://') || (this.value == '')) { this.value = '<?php _e("Your website","arclite"); ?>';}" size="60" tabindex="3" />
             </div>
+
   		  </div>
           <?php if ( $comment_author != "" ) : ?>
   	   	  <script type="text/javascript">MGJS.setStyleDisplay('hide_author_info','none');MGJS.setStyleDisplay('author_info','none');</script>
@@ -111,8 +115,20 @@
 
         <!-- comment input -->
         <div class="row">
-        	<textarea name="comment" id="comment" tabindex="4" rows="8" cols="50"></textarea>
+        	<textarea name="comment" id="comment" class="required" tabindex="4" rows="8" cols="60" onfocus="if(this.value == '<?php _e("Type your comment here","arclite"); ?>') {this.value = '';}" onblur="if(this.value == '') {this.value = '<?php _e("Type your comment here","arclite"); ?>';}"><?php _e("Type your comment here","arclite"); ?></textarea>
         	<?php if (function_exists('highslide_emoticons')) : ?><div id="emoticon"><?php highslide_emoticons(); ?></div><?php endif; ?>
+            <?php
+             // Math Comment Spam Protection Plugin
+             if ( function_exists('math_comment_spam_protection') ) {
+       	      $mcsp_info = math_comment_spam_protection();  ?>
+              <p>
+  	           <label for="mcspvalue"><?php  printf(__('Spam protection: Sum of %s+%s = ?', 'arclite'), $mcsp_info['operand1'],$mcsp_info['operand2']); ?></label>
+               <br />
+               <input type="text" name="mcspvalue" id="mcspvalue" size="12" tabindex="4" value="" />
+	           <input type="hidden" name="mcspinfo" value="<?php echo $mcsp_info['result']; ?>" />
+              </p>
+            <?php } ?>
+
         	<?php if (function_exists('comment_id_fields')) : comment_id_fields(); endif; do_action('comment_form', $post->ID); ?>
         </div>
         <!-- /comment input -->
@@ -120,7 +136,6 @@
         <!-- comment submit and rss -->
         <div id="submitbox" class="left">
 		<input name="submit" type="submit" id="submit" class="button" tabindex="5" value="<?php _e('Submit Comment', 'arclite'); ?>" />
-
          <input type="hidden" name="formInput" />
         </div>
       </form>
@@ -135,6 +150,6 @@
 <?php if (!comments_open()): // If comments are closed. ?>
  <?php if (is_page() && (!$comments)):
   else: ?>
- <p><?php _e("Comments are closed.","arclite"); ?></p>
+ <h3 class="comments"><?php _e("Comments are closed.","arclite"); ?></h3>
  <?php endif; ?>
 <?php endif; ?>

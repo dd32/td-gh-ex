@@ -1,4 +1,5 @@
 <?php /* Arclite/digitalnature */ ?>
+
  <!-- footer -->
  <div id="footer">
 

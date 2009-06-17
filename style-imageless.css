@@ -153,8 +153,7 @@ input.radio, input.checkbox{
 }
 
 form label{
-  font-weight: bold;
-  display: block;
+  font-weight: normal;
 }
 
 fieldset{
@@ -239,13 +238,14 @@ blockquote{
   border: 1px dotted #937d68;
   font-style: italic;
   color: #937d68;
+  background: #fff;
 }
 
 blockquote p{
   padding: 8px;
   margin: 2px;
-  background: #f6f5f0;
 }
+
 
 /*** BASIC LAYOUT ***/
 
@@ -402,6 +402,11 @@ blockquote p{
 
 .search-block input.searchfield{
   padding: 5px 0 0 8px;
+}
+
+.search-block fieldset{
+  border: 0;
+  padding: 0;
 }
 
 .search-block input.go{
@@ -692,15 +697,6 @@ blockquote p{
   padding-bottom: .4em;
 }
 
-.post .post-links{
-  text-align: right;
-  display: block;
-}
-
-.post-links a.comments{
-  font-weight: bold;
-}
-
 /* tags */
 .post p.tags{
   font-size: 80%;
@@ -743,6 +739,13 @@ blockquote p{
 
 /* comments */
 
+h3.comments{
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Sans, FreeSans, Jamrul, Garuda, Kalimati;
+  padding: 0;
+  margin: 2em 0 0 1em;
+  font-size: 150%;
+}
+
 ul#comments, ul#comments li.comment, ul#comments ul, ul#trackbacks, ul#trackbacks li{
   list-style-type: none;
   margin: 0;
@@ -754,13 +757,17 @@ ul#comments{
 }
 
 ul#comments ul{
-  margin-left: 4em;
+  margin-left: 2em;
 }
 
 .comment-mask{
   display: block;
-  padding: 12px 6px 6px 18px;
+  padding: 12px 6px 6px 0px;
   position: relative;
+}
+
+.trackback .comment-mask{
+  background: none;
 }
 
 .comment-mask .avatar{
@@ -798,6 +805,10 @@ ul#comments ul{
   position: relative;
 }
 
+.trackback .comment-head{
+  background: #7c7c7d;
+}
+
 .admincomment .comment-head{
   background: #125f9f;
 }
@@ -807,6 +818,11 @@ ul#comments ul{
   margin: 0;
   font-style: italic;
   font-size: 90%;
+}
+
+.trackback .comment-head p{
+  padding: .5em 1em;
+  margin: 0;
 }
 
 .comment-head p a, .comment-head p a:visited{
@@ -878,12 +894,15 @@ ul.menu, ul.menu li{
 
 ul.menu{
   padding: 0 12px;
+  margin: 0 0 10px 0;
+  display: block;
 }
 
 ul.menu li{
   border-bottom: 1px dotted #b3ac9f;
   display: block;
-  padding-bottom: 2px;
+  padding: 0 0 3px 0;
+  width: 100%;
 }
 
 ul.menu li a{
@@ -921,8 +940,9 @@ ul.menu .fadeThis span.hover {
 ul.menu li li{
   margin-left: 1.8em;
   padding: 0;
+  float: none;
   background: none;
-  border: 0;
+  width: auto;
 }
 
 ul.menu li li li{
@@ -1082,9 +1102,17 @@ ul#footer-widgets li.widget{
   float: left;
   padding: 0;
   margin: 0;
-  width: 25%; /* no more than 4 blocks */
+  width: 50%; /* default  */
   list-style-type: none;
 }
+
+ul#footer-widgets.widgetcount-1 li.widget{ width: 50%; }
+ul#footer-widgets.widgetcount-2 li.widget{ width: 50%; }
+ul#footer-widgets.widgetcount-3 li.widget{ width: 33%; }
+ul#footer-widgets.widgetcount-4 li.widget{ width: 25%; }
+ul#footer-widgets.widgetcount-5 li.widget{ width: 20%; }
+ul#footer-widgets.widgetcount-6 li.widget{ width: 16%; }
+/* no point to add more than 6 widgets, unreadable */
 
 ul#footer-widgets h6.title{
   border-bottom: 1px solid #493b2c;
@@ -1140,6 +1168,25 @@ ul#footer-widgets li.widget li span.hover {
 
 /*** MISC ***/
 
+.with-tooltip{ }   
+
+div.tooltip{
+  position:absolute;
+  left:-20000px;
+  background-color:#dedede;
+  padding:5px;
+  border:1px solid #fff;
+  width:250px;
+}
+
+div.tooltip p{
+  margin:0;
+  padding:0;
+  color:#fff;
+  background-color:#222;
+  padding:2px 7px;
+}
+
 .left{ float: left; }
 .right{ float: right; }
 div.clear{ clear: both;height:1px;  }
@@ -1180,6 +1227,7 @@ div.clear{ clear: both;height:1px;  }
   border: 1px solid #a9947c !important;
   background: #f2eedf !important;
   margin:0;
+  text-decoration: none;
 }
 
 #pagenavi a, #pagenavi span.pages, #pagenavi span.extend{
@@ -1265,6 +1313,9 @@ img.wp-smiley, .post .post-content img.wp-smiley, .attachment img.wp-smiley{
   border: 0;
 }
 
+/* Sociable plugin adjustment */
+.post .post-content .sociable img{ margin: 0; }
+
 .wp-caption {
   background:#F7F7F7;
   border-radius: 4px;
@@ -1327,23 +1378,26 @@ img.wp-smiley, .post .post-content img.wp-smiley, .attachment img.wp-smiley{
 .widget_calendar .box,
 .widget_calendar .box .wrapleft,
 .widget_calendar .box .wrapright,
-.widget_calendar .box .tr, .widget_calendar .box .bl, .widget_calendar .box .tl, .widget_calendar .box .br{
+.widget_calendar .box .tr, .widget_calendar .box .bl, .widget_calendar .box .tl, .widget_calendar .box .br,
+.widget_calendar .box .the-content{
   background: none;
   padding: 0;
   margin: 0;
+  padding: 0;
+  width: auto;
+  border: 0;
+  height:auto !important;
+  min-height: none !important;
+  min-width: none !important;
 }
 
-.widget_calendar .box{
-  margin: 0 1em;
-}
+.widget_calendar .box{ margin: 0 1em; }
+.widget_calendar .box .titlewrap{ display: none; }
+.widget_calendar .box table{ width: 100%; }
 
-
-.widget_calendar .box .titlewrap{
-  display: none;
-}
-
-.widget_calendar .box table{
-  width: 100%;
+.widget_calendar .box table td, .widget_calendar .box table th{
+  text-align: center;
+  padding: .1em .3em;
 }
 
 .widget_calendar .box caption{

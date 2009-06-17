@@ -130,6 +130,22 @@ jQuery("ul#nav li").hover(function(){
    });
 }
 
+// simple tooltips
+function webshot(target_items, name){
+ jQuery(target_items).each(function(i){
+		jQuery("body").append("<div class='"+name+"' id='"+name+i+"'><p><img src='http://images.websnapr.com/?size=s&amp;url="+jQuery(this).attr('href')+"' /></p></div>");
+		var my_tooltip = jQuery("#"+name+i);
+
+		jQuery(this).mouseover(function(){
+				my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);
+		}).mousemove(function(kmouse){
+				my_tooltip.css({left:kmouse.pageX+15, top:kmouse.pageY+15});
+		}).mouseout(function(){
+				my_tooltip.fadeOut(400);
+		});
+	});
+}
+
 // comment.js by mg12 - http://www.neoease.com/
 (function() {
     function $$$(id) { return document.getElementById(id); }
@@ -239,6 +255,9 @@ jQuery(document).ready(function(){
 
   navigationeffects();
 
+  webshot(".with-tooltip a","tooltip");
+
   // widget title adjustments
-  jQuery('.titlewrap').each(function(){ jQuery(this).prependTo(this.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode);  });
+  jQuery('.widget .titlewrap').each(function(){ jQuery(this).prependTo(this.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode);  });
+
  });

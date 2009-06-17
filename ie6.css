@@ -48,6 +48,12 @@ body{ text-align: center; }  /* center main div in IE 5.5 */
   top: 35px;
 }
 
+/* search */
+.search-block{ background: transparent url(images/search-bg-ie6.png) no-repeat left top; }
+
+.search-block .searchform-wrap{
+  background: transparent url(images/search-go-ie6.png) no-repeat right top; }
+
 ul.menu .fadeThis {
   position: static;
 }
@@ -67,5 +73,11 @@ ul.menu li a:hover{
 
 #main-wrap1{
   position: relative;
+}
+
+
+span.hover, ul.menu li.cat-item a.rss{
+  display: none;
+  visibility: hidden;
 }
 

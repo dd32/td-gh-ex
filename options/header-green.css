@@ -1,10 +1,7 @@
 
 /* green header */
 
-#header{
-  background: transparent url(../images/header-noise-green-center.jpg) no-repeat center top;
-}
+#header{ background: transparent url(../images/options/header-noise-green-center.jpg) no-repeat center top; }
+#header-wrap{ background: transparent url(../images/options/header-noise-green.jpg) repeat center top; }
 
-#header-wrap{
-  background: transparent url(../images/header-noise-green.jpg) repeat center top;
-}
+#pagetitle h4{ border-left: 1px solid #87b298; }
