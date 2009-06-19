@@ -1,0 +1,156 @@
+
+#myslides{
+
+background:#fff;
+width: 850px;
+height:165px;
+margin-bottom:0px;
+}
+
+.stepcarousel{
+position: relative; /*leave this value alone*/
+overflow: scroll; /*leave this value alone*/
+width: 810px; /*Width of Carousel Viewer itself*/
+height: 285px; /*Height should enough to fit largest content's height*/
+margin: 0px 20px 0px 20px;
+}
+
+.stepcarousel .belt{
+position: absolute; /*leave this value alone*/
+left: 0;
+top: 0;
+}
+
+.stepcarousel .panel{
+float: left; /*leave this value alone*/
+overflow: hidden; /*clip content that go outside dimensions of holding panel DIV*/
+margin: 0px 0px ; /*margin around each panel*/
+width:810px; /*Width of each panel holding each content. If removed, widths should be individually defined on each content DIV then. */
+background:#fff;
+height:285px;
+border:none;
+}
+
+
+.stepcarousel .panel p{
+text-align: left; /*leave this value alone*/
+overflow: hidden; /*clip content that go outside dimensions of holding panel DIV*/
+margin: 5px 5px ; /*margin around each panel*/
+
+}
+
+.stepcarousel .panel h2{
+text-align: left; /*leave this value alone*/
+height:20px;
+
+margin: 20px 10px ; /*margin around each panel*/
+font-size: 1.5em;
+text-align:left;
+font-family: Verdana, Arial, Georgia, century gothic, sans-serif;
+}
+
+.stepcarousel .panel img{
+float: left; /*leave this value alone*/
+background:#0E1829; /*clip content that go outside dimensions of holding panel DIV*/
+margin: 5px 20px 5px 5px; /*margin around each panel*/
+padding:0px 0px;
+border:11px solid #f2f2f2;
+}
+
+.slideex{
+margin:10px;
+padding:15px;}
+
+
+.single{
+	width: 650px;
+	margin: 0px 3px 5px 0px;
+	padding:0px 0 0 0;
+	background:url(images/vanila.jpg);
+	color:#222;
+	font-family:Arial,Century gothic,verdana, sans-serif;
+
+}
+
+
+.single h2 {
+	margin: 0px 0 0px 0;
+	padding: 7px 0px 0px 10px;
+	text-align: left;
+	font-size: 18px;
+	overflow:hidden;
+	text-transform: uppercase;
+	font-weight:normal;
+	}
+
+.single h2 a, .single h2 a:link, .single h2 a:visited  {
+	color: #fff;
+	overflow:hidden;
+	background-color: transparent;
+	}
+.single h2 a:hover  {
+	color: #306074;
+	background-color: transparent;
+	}
+
+.data{
+	margin: 0px 0 0px 0;
+	padding: 5px 0px 5px 10px;
+	text-align: left;
+	font-size: 12px;
+	overflow:hidden;
+	line-height:14px;
+	color:#A06933;
+}
+
+	
+.sentry a:link,
+.sentry a:visited {
+	color: #fbb100;
+	background-color: transparent;
+}
+
+.sentry a:hover {
+	color: #fff;
+	background-color: transparent;
+	text-decoration: none;
+}
+.sentry{
+	margin: 0 0;
+	padding: 0px 0px;
+}
+.sentry p{
+	margin: 0px 0;
+	padding: 0px 10px;
+	font-size:13px;
+	color:#668790;
+
+	}
+.single img{
+	float:left;
+	margin: 5px 5px 5px 0px;
+	padding: 5px 5px;
+	border:1px solid #222;
+	background:#0E1829;
+
+}
+.cover{
+	margin: 0 0;
+
+	}
+.spostinfo{
+	
+	padding:5px 5px 10px 10px;
+	margin:5px 0;
+}	
+
+.category{
+	padding:2px 5px 0px 25px;
+	margin:0px 0px;
+	background:url(images/cat.png) no-repeat;
+}
+
+.category a:link,.category a:visited{
+	color:#A06933;
+
+}

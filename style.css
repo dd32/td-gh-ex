@@ -1,0 +1,409 @@
+/*  
+Theme Name: Abov
+Theme URI: http://dannci.com/abov/
+Description: A clean, minimalist theme. Contains these feaures: Fixed Width, 2 Columns, 3 Sidebars, Featured Posts Slideshow, Pagination, Theme Admin Menu, About Text and Foto Feature.
+Version: 1.1
+Author: Dannci
+Author URI: http://dannci.com/
+Tags: light, white, fixed-width, two-columns, fixed-width, theme-options
+*/
+
+/*************************************
+ +Containers
+ *************************************/
+body{
+	background:#fff url(./images/bg.png) repeat-x;
+	border-top:5px solid #333;
+	color:#333;
+	font-family:  Verdana, Arial, Georgia, "Times New Roman", Times, serif;
+	font-size:12px;
+	line-height:1.5;
+	margin:0;
+	padding:0;
+	text-align:center;
+}
+#wrap{
+	margin:0 auto;
+	text-align:left;
+	width:850px;	
+}
+#content{
+	font-size:14px;
+	float:left;
+	padding:1em;
+	width:500px;
+}
+#sidebar{
+	font-size:1.1em;
+	float:right;
+	padding-top:2em;
+	width:310px;
+}
+
+#header{
+	padding:2em 1em;
+}
+#footer{
+	background:#ccc;
+	border-top:1px solid #777;
+	color:#888;
+	clear:both;
+	font-size:0.9em;
+	padding:0.5em;
+}
+/*************************************
+ +Hn and p
+ *************************************/
+h1, h2, h3{
+	font-family: Arial, Verdana, Tahoma, Helvetica, sans-serif;
+	font-weight:normal;
+	letter-spacing: -1px;
+	margin:0;
+}
+#header h1{
+	font-family: Arial, Georgia, "Times New Roman", Times, serif;
+	font-size:2.2em;
+	margin:0;
+	margin-left:0px;
+	padding-left: 50px;
+	background: url(images/logo.png) no-repeat 0px 0px;
+}
+
+#header p{
+	color:#aaa;
+	font-size:1.1em;
+	margin:0;
+	margin-top:-0.5em;
+}
+.entrytitle h2{
+	font-size:2.0em;
+}
+.entrytitle h2 a
+{
+	color:#A62F03;
+}
+.entrytitle h2 a:hover{
+	color:#590202;
+}
+.entrytitle h3{
+	font-family: Verdana, Arial, Tahoma, Helvetica, sans-serif;
+	font-size:0.8em;
+	color:#999;
+}
+#sidebar h3{
+	color:#590202;
+	font-size:1.5em;
+	margin:1em 0;
+}
+/*************************************
+ +Entry
+ *************************************/
+.entry{
+	margin-bottom:3em;
+}
+
+.entrymeta{
+	font-size:0.9em;
+}
+.postedby{
+	padding:3px;
+	padding-left:0px;
+}
+.filedto{
+	padding:3px;
+	padding-left:5px;
+}
+.commentslink{
+	padding:3px;
+	padding-left:5px;
+}
+.navigation{
+float:right;
+}
+/*************************************
+ +Sidebar
+ *************************************/
+#sidebar ul{list-style-type:none;margin:0;padding:0;}
+#sidebar li {list-style: none; padding-bottom:2px;;display: inline;}
+#sidebar li a {display: block; border:1px solid #f2f2f2; padding:8px 10px 8px 15px}
+
+
+#sidebar_top li a {display: block; border:1px solid #f2f2f2; padding:8px 20px 8px 35px;}
+#sidebar_top a { padding: 20px 50px; text-decoration:  none; font-size: 1.5em; color:#A62F03;}
+#sidebar_top a:hover {color:#590202;}
+#sidebar_left {float: left; width: 150px; margin-bottom: 10px; border-right:2px solid #fff; }
+#sidebar_right {float: right; width: 150px; margin-bottom: 10px;}
+#sidebar_top a {background: url(images/bullet.gif) no-repeat 15px 20px;}
+
+
+
+/*************************************
+ +About
+ *************************************/
+
+#about{
+width:320px;
+height:150px;
+padding: 0 0 5px 0;
+}
+
+#about a{
+	color: #A62F03;
+}
+
+#about p.text{
+	padding: 5px 5px ;
+	font-family: Trebuchet MS, Arial, Verdana,  sans-serif;
+	font-weight:bold;
+	font-size: 14px;
+	line-height: 20px;
+	color: #555;
+	margin:0px 0px;
+}
+
+#about img.avatar{
+	float: left;
+	margin: 0px 10px 10px 0;
+	padding:5px 5px;
+}
+/*************************************
+ +Comments
+ *************************************/
+.commentsblock{
+	margin:0.5em;
+	padding:1em;
+
+}
+.commentsblock textarea{
+	width:35em;
+}
+.commentsblock input, .commentsblock textarea{
+	border:1px solid #d1d1d1;
+}
+.commentsblock textarea:focus{
+	background:#eee;
+	border:1px solid #a1a1a1;
+}
+.commentsblock textarea:focus, .commentsblock input:focus{
+	background:#eee;
+	border:1px solid #a1a1a1;
+}
+.commentauthor{
+	display:block;
+	font-size:1.5em;
+}
+ol.commentlist{
+	color:#777;
+	font-size:0.9em;
+	list-style-type:none;
+	margin:0;
+	margin-top:1.5em;
+	padding:0;
+}
+.commentlist li{
+	margin-bottom:0.5em;
+	padding:0.5em 1em;
+}
+.alt{
+	background:#f3f5e9;
+	border:1px dotted #d1d1d1;
+	padding:0.5em;
+}
+h3#comments{
+font-size:1.6em;
+}
+
+
+/*************************************
+ +Search
+ *************************************/
+
+.searchform {
+	margin:0 0 20px 0;
+}
+
+#searchform{
+border:1px solid #CCCCCC;
+}
+
+fieldset{
+border:0px;	
+margin:0px;	
+padding:3px 0 0px 0;
+}
+#search{border:none;}
+.search{border:0px;}
+#srcinput {
+	font-size:16px;
+	width:240px;	
+	margin: 1px 0px;	
+	border: 1px;	
+	background:#f2f2f2;	
+	padding: 2px;	
+	border-color:#ccc;	
+	border-style:solid;
+}
+#srcbutton{
+	font-size:16px;
+	margin: auto 0px;	
+	border-width:1px;	
+	background: #f2f2f2;	
+	padding: 1px 8px;	
+	border:solid 1px #CCCCCC;
+}
+
+.srcform{
+border:no;}
+.srcinput {
+	font-size:9px;
+	width:140px;	
+	margin: 1px 0px;	
+	border: 1px;	
+	background:#eeeeee;	
+	padding: 2px;	
+	border-color:#eeeeee;	
+	border-style:solid;
+}
+.srcbutton{
+	font-size:9px;
+	margin: auto 0px;	
+	border:1px solid #FFFFFF;	
+	background: #f2f2f2;	
+	padding: 1px 2px;	
+	
+}
+
+
+/*************************************
+ +ads
+ *************************************/
+
+.ads{
+	margin: 0px 0 0 0;
+	padding: 0 0 0 0px;
+	width:320px;
+	float:left;
+	background:#f2f2f2;
+}
+
+.ads a, .ads img, .ads img a{
+border:none;
+}
+
+.ads ul {
+   	 margin: 0px 0px;
+	 padding: 0px 9px;
+	 overflow: auto;
+	 list-style:none;
+}
+	 
+.ads ul li{
+	margin: 0px 0px 0 0;
+	padding:13px;
+	list-style:none;
+	display : block;
+	float:left;
+}
+
+.ads li a:link, .ads li a:visited {
+	text-decoration: none;
+}
+
+
+
+/*************************************
+ +pagination
+ *************************************/
+
+.wp-pagenavi a, .wp-pagenavi a:link {
+	padding: 2px 4px 2px 4px; 
+	margin: 2px;
+	text-decoration: none;
+	border: 1px solid #ccc;
+	color: #A62F03;
+	background-color: #FFFFFF;	
+}
+.wp-pagenavi a:visited {
+	padding: 2px 4px 2px 4px; 
+	margin: 2px;
+	text-decoration: none;
+	border: 1px solid #ccc;
+	color: #A62F03;
+	background-color: #FFFFFF;	
+}
+.wp-pagenavi a:hover {	
+	border: 1px solid #CC0000;
+	color: #CC0000;
+	background-color: #FFFFFF;
+}
+.wp-pagenavi a:active {
+	padding: 2px 4px 2px 4px; 
+	margin: 2px;
+	text-decoration: none;
+	border: 1px solid #A62F03;
+	color: #4A7CAD;
+	background-color: #4A7CAD;	
+}
+.wp-pagenavi span.pages {
+	padding: 2px 4px 2px 4px; 
+	margin: 2px 2px 2px 2px;
+	color: #999;
+	border: 1px solid #999;
+	background-color: #FFFFFF;
+}
+.wp-pagenavi span.current {
+	padding: 2px 4px 2px 4px; 
+	margin: 2px;
+	font-weight: bold;
+	border: 1px solid #590202;
+	color: #590202;
+	background-color: #FFFFFF;
+}
+.wp-pagenavi span.extend {
+	padding: 2px 4px 2px 4px; 
+	margin: 2px;	
+	border: 1px solid #3366CC;
+	color: #000000;
+	background-color: #FFFFFF;
+}
+
+/*************************************
+ +Misc
+ *************************************/
+a{
+	color: #590202;
+	text-decoration:none;
+}
+a:hover{
+	color:#A62F03;
+}
+
+pre {
+overflow-x: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
+white-space: pre-wrap; /* css-3 */
+white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+white-space: -pre-wrap; /* Opera 4-6 */
+white-space: -o-pre-wrap; /* Opera 7 */
+ /* width: 99%; */
+word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+hr {
+color:#f2f2f2;}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.alignleft {
+	float: left;
+}
+
+.alignright {
+	float: right;
+}
+
+		
+		
