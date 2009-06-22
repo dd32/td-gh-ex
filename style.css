@@ -1,0 +1,774 @@
+/*
+Theme Name: bbv1
+Theme URI: http://aaron.collectedvisuals.com/
+Description: bbv1 is a two column theme. Tested on Opera 9.64, Safari 4 and Firefox 3.0.1. Very simple. Helvetica Typeface. The CSS, XHTML and design is released under GPL. Please feel free to change the style to fit your needs.
+Version: 1.0
+Tags: blue, white, dark, two-columns, left-sidebar, fixed-width
+Author: Aaron Adams
+Date: June 2009
+
+	The CSS, XHTML and design is released under GPL:
+	http://www.gnu.org/copyleft/gpl.html
+
+*/
+a {
+	text-decoration: none; 
+	color: #242424;
+
+}
+
+a:active {
+	text-decoration: none;
+	color: #242424;
+}
+
+a:visited {
+	text-decoration: none;
+	color: #242424;
+}
+
+a:hover {
+	text-decoration: none;
+        color: #80CFFF;
+}
+
+a img {
+	border: none;
+}
+
+
+
+acronym, abbr {
+
+}
+
+acronym, abbr, span.caps {
+	font-size: 11px;
+
+}
+
+acronym, abbr {
+	cursor: help;
+	border:none;
+}
+
+blockquote {
+        color:#666;
+        background-image:url("tile2.gif");
+	border-left: 2px solid #666;
+	padding-left: 5px;
+	margin-left: 18px
+}
+
+#topper {
+        font-family: helvetica, arial, verdana;
+        font-size:11px;
+        background: #666;
+        color:#fff;
+        padding: 5px 5px 5px 5px;
+        margin-bottom: 5px;
+}
+
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.alignleft {
+   float: left;
+}
+
+.alignright {
+   float: right;
+}
+
+.wp-caption {
+   border: 1px solid #ddd;
+   text-align: center;
+   background-color: #f3f3f3;
+   padding-top: 4px;
+   margin: 10px;
+   /* optional rounded corners for browsers that support it */
+   -moz-border-radius: 3px;
+   -khtml-border-radius: 3px;
+   -webkit-border-radius: 3px;
+   border-radius: 3px;
+}
+
+.wp-caption img {
+   margin: 0;
+   padding: 0;
+   border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+   font-size: 11px;
+   line-height: 17px;
+   padding: 0 4px 5px;
+   margin: 0;
+}
+
+body {
+        background-color: #e8e8e8;
+        color: #555;
+	font-family:  Verdana, Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+	font-size: 11px;
+        position:relative;
+}
+
+#rap {
+	background-color: #fff;
+	width: 880px;
+	height: 100%;
+	padding: 5px;
+        float: left;
+        position:relative;
+}
+
+#postinfo {
+ width:650px;
+ background-image:url("tile.gif");
+ font-family: helvetica, arial, verdana;
+ color:#555;
+ padding:5px 5px 5px 5px;
+ margin-top: 10px;
+ margin-bottom: 20px;
+}
+
+#postinfo a {
+ text-decoration: underline;
+}
+
+#postinfo a:hover {
+ text-decoration: underline;
+ color:#242424;
+}
+
+
+
+cite {
+	font-size: 11px;
+	font-style: normal;
+	color:#3a3a3a;
+}
+
+.title {
+        font-family: verdana, Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        color:#3a3a3a;
+
+}
+
+.title a {
+        font-family: verdana, Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        color:#3a3a3a;
+        text-decoration:none;
+
+}
+
+
+h2page {
+	font-family: verdana, Arial, Helvetica, sans-serif;
+        font-size: 15px;
+	margin-top: 0;
+	border-top: 1px solid #666;
+}
+
+h2 {
+	font-family: verdana, Arial, Helvetica, sans-serif;
+        font-size: 15px;
+	margin-top: 0;
+}
+
+h3 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	margin-top: 0;
+	font-size: 12px;
+}
+
+title {
+        font-family: verdana, Arial, Helvetica, sans-serif;
+	margin: 15px 0 2px 0;
+	padding-bottom: 2px;
+        font-size: 12px;
+}
+#commentlist {
+        color:#242424;
+        font-weight:bold;
+}
+
+#commentlist ul {
+	margin-left:0px;
+	list-style-type: none;
+        background-image:url("tile2.gif");
+
+}
+
+#commentlist li{
+	list-style-type: none;
+	margin-left:0px;
+        background-image:url("tile2.gif");
+
+#commentlist a {
+ text-decoration: underline;
+ color:#555;
+}
+
+#commentlist a:hover {
+ text-decoration: underline;
+ color:#242424;
+}
+
+.commentby a:hover {
+ text-decoration: underline;
+ color:#242424;
+}
+}
+
+p, li, .feedback {
+	font: 11px Verdana, Arial, Helvetica, sans-serif;
+	
+}
+
+/* classes used by the_meta() */
+ul.post-meta {
+	list-style: none;
+}
+
+ul.post-meta span.post-meta-key {
+	font-weight: bold;
+}
+
+#credit {
+        position:absolute;
+        left:15px;
+        bottom:5px;
+        float:left;
+        font-size:9px;
+        color:#666;
+}
+
+#credit a {
+	color: #242424;
+        font-size:9px;
+}
+
+.feedback {
+	color: #666;
+	text-align: right;
+	font-size:11px;
+	clear: both;
+}
+
+.meta {
+	font-size: 10px;
+}
+
+.meta2 {
+	font-size: 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #000000;
+	font-weight: normal;
+	letter-spacing: -1.5px;
+}
+
+.meta2 a {
+	font-size: 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #000000;
+	font-weight: normal;
+	letter-spacing: -1.5px;
+}
+
+.meta li, ul.post-meta li {
+	display: inline;
+}
+
+.meta ul {
+	display: inline;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.entry {
+ font-family: helvetica, arial, verdana;
+ color:#242424;
+}
+
+.entry img {
+	max-width:650px;
+}
+
+.entry a {
+ text-decoration: underline;
+ color:#555;
+}
+
+.entry a:hover {
+        color: #80CFFF;
+ text-decoration:underline;
+}
+
+#comments{
+	margin-left:0px;
+	list-style-type: none;
+	padding-top:18px;
+
+}
+
+.commentby {
+	margin-left:0px;
+	list-style-type: none;
+	padding-bottom:8px;
+        background-image:url("tile2.gif");
+        color:#555;
+	border-top: 1px solid #666;
+        margin-top:10px;
+}
+
+.commentby a {
+ text-decoration: underline;
+ color:#555;
+}
+
+.commentby a:hover {
+ text-decoration: underline;
+ color:#242424;
+}
+
+#postcomment{
+	margin-left:0px;
+	margin-top:24px;
+        background-image:url("tile2.gif");
+
+}
+
+.meta, .meta a {
+	color: #808080;
+	font-weight: normal;
+	letter-spacing: 0;
+}
+
+.meta2, .meta2 a {
+	color: #3a3a3a;
+	font-weight: normal;
+	letter-spacing: 0;
+}
+
+.storytitle {
+	margin: 0;
+}
+
+.storytitle a {
+	text-decoration: none;
+}
+
+.storycontent a {
+	text-decoration: none;
+        color: #ffffff;
+        font-background: #626262;
+        background: #626262;
+}
+
+.storycontent a:hover {
+	text-decoration: none;
+
+}
+
+.storycontent {
+	margin-bottom:10px;
+        margin-top:10px;
+}
+
+#commentform #author, #commentform #email, #commentform #url, #commentform textarea {
+	background: #fff;
+	border: 1px solid #ccc;
+	padding: 3px;
+}
+
+#commentform textarea {
+	width: 99%;
+        font-family: helvetica, arial, verdana;
+        color:#555;
+        font-size:10px;
+}
+
+#commentlist li ul {
+	list-style-type: none;
+	margin-left:0px;
+	font-size: 11px;
+        color:#242424;
+        font-weight:bold;
+}
+
+#content {
+	float: right;
+	width:660px;
+        margin-top: 10px;
+        margin-right: 10px;
+
+}
+
+
+.columntitles {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	letter-spacing: -1.5px;
+	font-weight: bold;
+        font-size: 14px;
+}
+
+#headwrap {
+        background-color:#80CFFF;
+	padding: 10px 5px 5px 10px;
+        height: 130px;
+        width: 170px;
+        float: left;
+        margin-left: 10px;
+        margin-top: 10px;
+}
+
+
+#header {
+	font-family: helvetica, arial;
+	font-size: 20px;
+	color:#242424;
+	font-weight: bold;
+        line-height: 80%;
+}
+
+
+#simpost {
+	font-family: helvetica, arial;
+	font-size: 12px;
+	color: black;
+	font-weight: normal;
+        float: left;
+	background: #fff;
+	padding:5px 0 5px 0;
+	margin:0px 0 5px 0;
+	
+}
+
+#simpost a {
+	font-family: helvetica, arial;
+	font-size: 9px;
+	color: #ffffff;
+	font-weight: normal;
+        font-background: #F48282;
+        background: #F48282;
+}
+
+
+
+#header a {
+	color: #242424;
+	text-decoration: none;
+}
+
+#header a:hover {
+	text-decoration: none;
+}
+
+
+#header input#s {
+	width: 60%;
+	background: #3a3a3a;
+	border: 1px solid #999;
+	color: #000;
+	
+}
+
+#header ul {
+	color: #ccc;
+	list-style-type: none;
+	margin: 0;
+	padding-left: 3px;
+	text-transform: lowercase;
+        weight: bold;
+}
+
+
+#header h2 {
+	font-weight: normal;
+	margin:0;
+	padding:0;
+	font-size: 11px;
+	
+}
+
+#header ul li {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	margin-top: 10px;
+}
+
+#header ul ul {
+	font-variant: normal;
+	font-weight: normal;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+
+#header ul ul li {
+	border: 0;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	margin-top: 0;
+	padding: 0;
+	padding-left: 3px;
+}
+
+#header ul ul li a {
+	color: #3a3a3a;
+	text-decoration: none;
+}
+
+#header ul ul li a:hover {
+	border-bottom: 1px solid #809080;
+}
+
+#header ul ul ul.children {
+	font-size: 16px;
+	padding-left: 3px;
+}
+
+.navigation {
+        background-image:url("tile2.gif");
+        color:#666;
+        padding: 5px 5px 5px 5px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        font-size: 10px;
+}
+
+.navigation a {
+        color:#666;
+        text-decoration:underline;
+}
+
+
+
+#searchbox {
+        background-image:url("tile3.gif");
+        width: 170px;
+        color:#666;
+        float: left;
+        padding: 10px 5px 10px 10px;
+        margin-left: 10px;
+        margin-top: 15px;
+}
+
+#searchbox form {
+        margin: 0 0 0 0px;
+	text-decoration: none;
+        color: #666;
+        font-weight: bold;
+        font-size: 9px;
+}
+        
+#searchbox input#s {
+	width: 160px;
+	background: #fff;
+	border: 1px solid #ccc;
+	color: #666;
+        font-size: 9px;
+	
+}
+
+
+#sidebar {
+        background:#666;
+        color:#ffffff;
+	padding: 10px 5px 5px 12px;
+	float: left;
+	width: 170px;
+        margin-left: 10px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        font-size:10px;
+}
+
+#sidebar a {
+	text-decoration: none;
+        color: #fff;
+        font-weight: normal;
+        font-size: 10px;
+	padding-left: 0px;
+}
+
+#sidebar a:hover {
+	text-decoration: none;
+        color: #80CFFF;
+        font-size: 10px;
+}
+
+#sidebar form {
+	margin: 0 0 0 0px;
+	text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        font-size: 10px;
+}
+
+#sidebar input#s {
+	margin: 0 0 0 0px;
+	width: 70%;
+	background: #fff;
+	border: 1px solid #ccc;
+	color: #666;
+        font-size: 10px;
+	
+}
+
+#sidebar ul {
+	color: #80CFFF;
+        font-weight: normal;
+        font-size: 10px;
+	list-style-type: none;
+	margin: 0;
+	padding-left: 0px;
+
+}
+
+
+#sidebar h2 {
+	font-weight: normal;
+	margin-bottom:5px;
+	margin-top:5px;
+	padding-left: 0px;
+	font-size: 11px;
+        color: #80CFFF;
+	
+}
+
+#sidebar img {
+	margin:0;
+	padding-left: 0px;
+}
+
+#sidebar ul li {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	margin-top: 0px;
+	padding-bottom: 0px;
+	font-weight: normal;
+        font-size: 10px;
+        width: 160px;
+	list-style-type: none;
+        color:#fff;
+}
+
+
+#sidebar ul ul li {
+	border-bottom: 1px solid #ccc;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	padding-bottom: 0px;
+        font-size: 10px;
+	font-weight: normal;
+	list-style-type: none;
+        color:#fff;
+}
+
+#sidebar ul ul li a:hover {
+        color: #80cfff;
+        font-size:10px;
+}
+
+#wp-calendar {
+	empty-cells: show;
+	font-size: 10px;
+	margin: 0;
+	width: 90%;	
+}
+
+#wp-calendar #next a {
+	padding-right: 10px;
+	text-align: right;
+}
+
+#wp-calendar #prev a {
+	padding-left: 10px;
+	text-align: left;
+}
+
+#wp-calendar a {
+	display: block;
+	text-decoration: none;
+}
+
+#wp-calendar a:hover {
+	color: #80CFFF;
+}
+
+#wp-calendar caption {
+	color: #80CFFF;
+	text-align: left;
+	font-weight: normal;
+	padding-left: 0px;
+        font-size:11px;
+
+}
+
+#wp-calendar td {
+	color: #FFF;
+	padding: 2px 0;
+	text-align: center;
+	padding-left: 0px;
+	font-weight: normal;
+        font-size:10px;
+}
+
+#wp-calendar td:hover, #wp-calendar #today {
+        background:#555;
+	color: #80CFFF;
+}
+
+#wp-calendar th {
+	font-weight: normal;
+	text-transform: capitalize;
+	color: #fff;
+	padding-left: 5px;
+		
+}
+
+#wp-calendar td.pad:hover {
+	background: #666;
+        color:#fff;
+}
+
+
+#desc {
+        color:#3a3a3a;
+        font-family: georgia, sans-serif;
+        font-style: italic;
+	float: left;
+	font-size: 11px;
+	margin-top:10px;
+	margin-bottom:20px;	
+
+}
+#desc a:link, #desc a:visited  {
+	display: inline;
+	background-color: #fff;
+	color: #3a3a3a;
+	text-decoration: none;
+}
+#desc a:hover {
+	background-color: #eee;
+	color: #3a3a3a;
+	text-decoration: none;
+}
+#desc a:active {
+	background-color: #fff;
+}
+
+ib {
+        font-family: georgia, sans-serif;
+        font-style: italic;
+	font-size: 12px;	
+}
