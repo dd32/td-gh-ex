@@ -9,8 +9,11 @@
 </h2>
 
 <?php if ( $comments ) : ?>
+
+<div id="grav">
+<?php foreach ($comments as $comment) : ?><?php echo get_avatar( get_comment_author_email(), '40' ) ?>
+</div>
 	<div id="commentlist">
-		<?php foreach ($comments as $comment) : ?>
 <div class="commentby"><cite><?php comment_type(__('Comment'), __('Trackback'), __('Pingback')); ?> <?php _e('by'); ?> <?php comment_author_link() ?><br>
 			<li id="comment-<?php comment_ID() ?>">
 			<?php comment_text() ?>
@@ -35,7 +38,8 @@
 	<?php else : ?>
 		<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
 		<?php if ( $user_ID ) : ?><?php if(function_exists(�get_avatar�)){ echo get_avatar($comment, �50�);} ?>
-			<p>Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="<?php _e('Log out of this account') ?>">Logout &raquo;</a></p>
+			<p>Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url(); ?>">Logout &raquo;</a></p>
+
 		<?php else : ?>
 			<p><input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" tabindex="1" />
 			<label for="author"><small>Name <?php if ($req) _e('(required)'); ?></small></label></p>
@@ -54,3 +58,4 @@
 <?php else : // Comments are closed ?>
 	<p><?php _e('Sorry, the comment form is closed at this time.'); ?></p>
 <?php endif; ?>
+

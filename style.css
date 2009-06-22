@@ -2,7 +2,7 @@
 Theme Name: bbv1
 Theme URI: http://aaron.collectedvisuals.com/
 Description: bbv1 is a two column theme. Tested on Opera 9.64, Safari 4 and Firefox 3.0.1. Very simple. Helvetica Typeface. The CSS, XHTML and design is released under GPL. Please feel free to change the style to fit your needs.
-Version: 1.0
+Version: 1.0.1
 Tags: blue, white, dark, two-columns, left-sidebar, fixed-width
 Author: Aaron Adams
 Date: June 2009
@@ -197,6 +197,31 @@ title {
 	padding-bottom: 2px;
         font-size: 12px;
 }
+
+.grav {
+        float:left;
+        margin-top:10px;
+        padding-bottom:20px;
+}
+
+
+#comments{
+	margin-left:0px;
+	list-style-type: none;
+	padding-top:18px;
+
+}
+
+.commentby {
+	margin-left:60px;
+	list-style-type: none;
+	padding-bottom:8px;
+        background-image:url("tile2.gif");
+        color:#555;
+	border-top: 1px solid #666;
+        margin-top:10px;
+}
+
 #commentlist {
         color:#242424;
         font-weight:bold;
@@ -313,23 +338,6 @@ ul.post-meta span.post-meta-key {
 .entry a:hover {
         color: #80CFFF;
  text-decoration:underline;
-}
-
-#comments{
-	margin-left:0px;
-	list-style-type: none;
-	padding-top:18px;
-
-}
-
-.commentby {
-	margin-left:0px;
-	list-style-type: none;
-	padding-bottom:8px;
-        background-image:url("tile2.gif");
-        color:#555;
-	border-top: 1px solid #666;
-        margin-top:10px;
 }
 
 .commentby a {
