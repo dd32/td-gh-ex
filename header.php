@@ -12,8 +12,7 @@
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/slide.css" media="screen" />	
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/tabs.css" media="screen" />	
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/slide.css" media="screen" />		
 <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery-1.2.6.min.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/superfish.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/hoverIntent.js"></script>
