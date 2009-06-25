@@ -10,7 +10,7 @@
 
 <h3>Categories</h3>
 <ul>
-<?php wp_list_cats('sort_column=menu_order&depth=1&title_li=&show_count=1');?>
+<?php wp_list_categories('title_li=');?>
 </ul>
 
 <h3>Blogroll</h3>
