@@ -1,0 +1,411 @@
+/*
+Theme Name:Basal
+Theme URI:http://ryanmcnair.co.uk/blog/wp-content/theme/basal/
+Description:This WordPress theme is minimal and cleanly styled. Special thanks to <a href="http://ryanmcnair.co.uk/">Ryan McNair</a>.
+Version:1.0
+Author:Ryan McNair
+Author URI:http://ryanmcnair.co.uk/
+Tags:white, light, fixed-width, two-columns, right-sidebar
+
+	"Basal" by http://ryanmcnair.co.uk/
+
+	This theme was designed and built by Ryan McNair - http://ryanmcnair.co.uk.
+
+	The CSS, XHTML and design is released under the GPL.
+
+*/
+
+body {
+margin:0;padding:0;
+font-family:"Verdana", "Tahoma", Sans-serif;
+font-size:small;
+color:#4b4b4b;
+margin-left:3px;
+
+}
+a:link {color: #808080;}
+a:visited {color: #808080;}
+a:hover {color: #c9c9c9}
+a:active {color: #c9c9c9;}
+
+
+hr{
+margin-top:40px;
+border:0;
+border-bottom:1px solid #b0b0b0;
+clear:both;
+}
+#wrapper {
+width:960px;
+margin:auto;
+border-top:5px solid #4b4b4b;
+border-bottom: 10px solid #4b4b4b;
+margin-bottom:6px;
+}
+
+
+#logo {
+float:left;
+margin-top:62px;
+margin-bottom:20px;
+}
+#logo h1 {
+margin:0; padding:0;
+font-family:"Arial", "Helvetica", Sans-serif;
+font-weight:100;
+letter-spacing:-3px; word-spacing:4px;
+text-transform:uppercase;
+color:#4b4b4b;
+}
+#logo h2{
+margin:0; padding:0;
+
+margin-left:80px;
+font-weight:bold;
+color:#808080;text-transform:uppercase;
+font-family:"Arial", "Helvetica", Sans-serif;
+font-weight:100;
+letter-spacing:-1px; word-spacing:4px;
+font-size:1.0em;
+}
+.bold {font-weight:bold;letter-spacing:-2px;}
+
+#nav {
+height:90px;
+width:400px;
+float:right;
+margin-top:62px;
+margin-bottom:-10px;
+font-family:"Arial", "Helvetica", Sans-serif;
+text-transform:uppercase;
+font-size:1.0em; 
+font-weight:bold; 
+color:#808080; 
+letter-spacing:-1px; 
+word-spacing:4px;
+}
+#nav ul {position:relative;margin:0;padding:0;}
+#nav ul li {list-style:none;float:right;padding-left:15px;top:0px;}
+#nav ul li a {text-decoration:none; outline:none; cursor:pointer;}
+#nav a:link {color: #808080;}
+#nav a:visited {color: #808080;}
+#nav a:hover {color: #c9c9c9}
+#nav a:active {color: #c9c9c9;}
+
+
+#line {
+border-top: 1px solid #b0b0b0;
+padding-top: 25px;
+padding-bottom:10px;
+clear:both;
+width:100%;
+height:auto;
+}
+
+#l-side {
+margin-left :4px; 
+width: 62%;
+float:left;
+margin-bottom:12px;
+}
+
+#l-side h3 {
+font-family: "Arial", "Helvetica", Sans-serif;
+font-size:2em;
+text-transform: uppercase;
+text-align:left;
+letter-spacing: -3px;
+color:#4b4b4b;
+word-spacing:3px;
+font-weight:100;
+}
+
+
+
+
+.post em{
+font-style:italic;
+}
+
+.post h1:hover, .post h2:hover, .post h3:hover, .post h4:hover {
+color:#c9c9c9;
+}
+.post .indent {
+padding-left:10px;
+}
+.post .indent p {
+padding-left:10px;
+}
+.post small {
+font-size:smaller;
+}
+.post small a {
+font-weight:normal;
+}
+.post .navigation {font-size:small;}
+.post .alignright {
+float:right;
+margin-left:10px;
+}
+.post .alignleft {
+float:left;
+margin-right:10px;
+}
+.post .aligncenter {
+margin:0 auto;
+display:block;
+}
+.post abbr {
+font-weight:normal;
+}
+.post ul{
+list-style:circle;
+margin:0 0 0 25px;
+}
+.post ol{
+list-style:decimal;
+margin:0 0 0 30px;
+}
+.post .wp-caption {
+background:#f1f1f1;
+margin:10px;
+text-align:center;
+}
+.post .wp-caption-text {
+margin:0;
+}
+.post .wp-caption a, .post .wp-caption a:hover {
+border-bottom:0;
+}
+.post blockquote {
+color:#5c6368;
+border-left:5px solid #c9c9c9;
+margin:15px 30px 0 10px;
+padding-left:20px;
+}
+.post pre {
+font-family:courier;
+font-size:small;
+letter-spacing:-1px;
+margin:14px 0 14px 0;
+}
+.post .message ul {
+margin:12px 0 0;
+}
+.post .message {
+display:none;
+background:#4b4b4b;
+margin-top:10px;
+padding:20px;
+color:#fff;
+}
+#comments h3{
+font-weight:bold;
+color:#c9c9c9;
+text-transform:uppercase;
+font-family:"Arial", "Helvetica", Sans-serif;
+font-weight:100;
+letter-spacing:-1px; word-spacing:4px;
+font-size:1.2em;
+margin:35px 0 5px;
+
+}
+#postcomment h4{
+font-weight:bold;
+color:#c9c9c9;
+text-transform:uppercase;
+font-family:"Arial", "Helvetica", Sans-serif;
+font-weight:100;
+letter-spacing:-1px; word-spacing:4px;
+font-size:0.9em;
+margin:35px 0 5px;
+}
+#comments cite{
+color:#c9c9c9;
+font-family:"Arial", "Helvetica", Sans-serif;
+font-size:0.8em;
+font-weight:normal;
+}
+#comments em {
+font-style:italic;
+text-align:right;
+}
+#comments ol.commentlist li {
+margin-top:20px;
+border:1px dotted #c9c9c9;
+border-right:0;
+padding:10px 5px 20px 10px;
+min-height:110px;
+}
+#comments p {
+margin:10px 0 0 10px;
+font-family:"Arial", "Helvetica", Sans-serif;
+}
+#comments span {
+display:block;
+color:#eee;
+font-family:"Arial", "Helvetica", Sans-serif;
+font-size:120px;
+font-weight:normal;
+float:right;
+padding-top:25px;
+}
+#comments ul.formlist {
+margin:20px auto;
+width:375px;
+}
+#comments ul.formlist li {
+display:block;
+margin:10px 0 0;
+}
+#comments ul.formlist p{
+margin:10px 0 0;
+text-align:center;
+}
+#comments input {
+font-family:"Arial", "Helvetica", Sans-serif;
+width:370px;
+font-size:18px;
+font-weight:normal;
+}
+#comments textarea {
+font-family:"Arial", "Helvetica", Sans-serif;;
+max-width:270px;
+font-size:18px;
+font-weight:normal;
+}
+#comments li.submitbutton input {
+font-weight:normal;
+font-size:20px;
+width:374px;
+}
+#comments .center {
+text-align:center;
+}
+
+#r-side {
+margin :2px; 
+width: 35%;
+float:right;
+border-left:1px solid #b0b0b0;
+margin-bottom:12px;
+margin-top:0px;
+}
+#r-side a:link {color: #494949;text-decoration:none;border-bottom:1px dotted #4b4b4b;}
+#r-side a:visited {color: #808080;}
+#r-side a:hover {color: #ffffff;background:#4b4b4b;}
+#r-side a:active {color: #808080; text-decoration:underline;}
+
+#r-side p { 
+margin-left:40px;
+}
+#r-side h3 {
+margin-left:40px;
+font-family:"Arial", "Helvetica", Sans-serif;
+text-transform: uppercase;
+color:#4b4b4b;
+letter-spacing:-3px;
+word-spacing:3px;
+font-weight:100;
+font-size:2em;
+
+}
+
+#r-side ul {
+list-style:none;
+margin:0;
+padding:0;
+margin-left:40px;
+}
+
+#r-side li {font-size:80%;}
+
+#copy {
+clear:both;
+padding-top:5px;
+padding-bottom:5px;
+
+}
+#copy p{
+font-family:"Arial", "Helvetica", Sans-serif;
+text-transform:uppercase;
+font-size:0.8em;
+color:#4b4b4b;
+line-height:0.3em;
+letter-spacing:-1px;
+word-spacing:3px;
+font-weight:bold;
+}
+#copy p .thin{
+font-weight:normal;
+}
+.tsearch {
+margin-left:40px;
+font-family:"Arial", "Helvetica", Sans-serif;
+color:#4b4b4b;
+font-size:0.8em;
+line-height:0.3em;
+letter-spacing:-1px;
+word-spacing:3px;
+font-weight:bold;
+}
+
+#sidebar .block ul {
+border-bottom:1px dotted #ccc;
+}
+#sidebar .block ul .children{
+border:0;
+padding: 0 0 0 8px;
+}
+#sidebar .block li {
+border-top:1px dotted #ccc;
+}
+#sidebar .block li a {
+background:transparent url(images/bullet_black.gif) no-repeat scroll 6px 52%;
+font-size:13px;
+font-weight:normal;
+padding:2px 0 2px 15px;
+display:block;
+border-bottom:none;
+}
+#sidebar .block li a:hover {
+background:#f1f1f1;
+}
+#sidebar .widget_search label {
+display:block;
+padding:25px 0 3px 0;
+font-size:18px;
+margin:0 0 5px;
+}
+#sidebar .widget_recent_comments li {
+padding:2px 0 2px 15px;
+}
+#sidebar .widget_recent_comments li a,#sidebar .widget_recent_comments li a:hover{
+background:none;
+text-decoration:none;
+color:#000;
+font-weight:600;
+}
+#sidebar .calendar h3{
+display:none;
+}
+#sidebar #wp-calendar {
+width:95%;
+text-align:center;
+}
+#sidebar #wp-calendar caption, #sidebar #wp-calendar td, #sidebar #wp-calendar th{
+text-align:center;
+}
+#sidebar #wp-calendar caption {
+font-size:18px;
+padding:25px 0 3px 0;
+}
+#sidebar #wp-calendar th {
+font-weight: bold; 
+
+}
+#respond{width:300px;}
+
+/*widget css */
+h2.widgettitle {margin-left:0px;}
+
