@@ -1,5 +1,5 @@
 <div id="copy"><p>Copyright &copy; Your Name <?php
-echo date("Y")?>, <span class="thin">All rights Reserved</span> | Theme by <a href="http://ryanmcnair.co.uk/"></p>
+echo date("Y")?>, <span class="thin">All rights Reserved</span> | Theme by <a href="http://ryanmcnair.co.uk/">Ryan McNair</a></p>
 	<p><?php wp_footer() ?></p>
 </div>
 </div>

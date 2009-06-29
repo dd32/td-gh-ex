@@ -2,7 +2,7 @@
 Theme Name:Basal
 Theme URI:http://ryanmcnair.co.uk/blog/wp-content/theme/basal/
 Description:This WordPress theme is minimal and cleanly styled. Special thanks to <a href="http://ryanmcnair.co.uk/">Ryan McNair</a>.
-Version:1.0.1
+Version:1.0.2
 Author:Ryan McNair
 Author URI:http://ryanmcnair.co.uk/
 Tags:white, light, fixed-width, two-columns, right-sidebar
@@ -53,21 +53,25 @@ margin-bottom:20px;
 margin:0; padding:0;
 font-family:"Arial", "Helvetica", Sans-serif;
 font-weight:100;
-letter-spacing:-3px; word-spacing:4px;
+font-size:1.2em;
+letter-spacing:-2px; word-spacing:6px;
 text-transform:uppercase;
 color:#4b4b4b;
 }
+
+
 #logo h2{
 margin:0; padding:0;
-
 margin-left:80px;
 font-weight:bold;
-color:#808080;text-transform:uppercase;
+color:#808080;
+text-transform:uppercase;
 font-family:"Arial", "Helvetica", Sans-serif;
 font-weight:100;
 letter-spacing:-1px; word-spacing:4px;
 font-size:1.0em;
 }
+
 .bold {font-weight:bold;letter-spacing:-2px;}
 
 #nav {
@@ -120,8 +124,8 @@ word-spacing:3px;
 font-weight:100;
 }
 
-
-
+.post h3{margin-bottom:6px;}
+.post p{margin-top:12px; margin-bottom:16px;}
 
 .post em{
 font-style:italic;
@@ -138,6 +142,7 @@ padding-left:10px;
 }
 .post small {
 font-size:smaller;
+margin-bottom:4px;
 }
 .post small a {
 font-weight:normal;
@@ -289,7 +294,7 @@ width: 35%;
 float:right;
 border-left:1px solid #b0b0b0;
 margin-bottom:12px;
-margin-top:0px;
+margin-top:-5px;
 }
 #r-side a:link {color: #494949;text-decoration:none;border-bottom:1px dotted #4b4b4b;}
 #r-side a:visited {color: #808080;}
@@ -300,6 +305,8 @@ margin-top:0px;
 margin-left:40px;
 }
 #r-side h3 {
+margin-top:5px;
+margin-bottom:10px;
 margin-left:40px;
 font-family:"Arial", "Helvetica", Sans-serif;
 text-transform: uppercase;
@@ -316,6 +323,7 @@ list-style:none;
 margin:0;
 padding:0;
 margin-left:40px;
+margin-bottom:18px;
 }
 
 #r-side li {font-size:80%;}
