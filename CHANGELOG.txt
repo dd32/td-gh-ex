@@ -1,0 +1,5 @@
+version 1.0.1 (released 30/06/2009)
+   * If you forget to create a custom field "picture" in a featured post, it would warn you by showing a picture with instructions.
+
+version 1.0.0 (released 26/06/2009)
+   * Initial version released.

@@ -7,4 +7,4 @@ Select a post & click edit through your admin panel. Scroll down to the section 
 
 
 === About the theme ===
-The featured posts area is based on "SmoothGallery". This theme is built using CSS framework "Blueprint". 
+The featured posts is based on "SmoothGallery". This theme is built using CSS framework "Blueprint". 

@@ -24,9 +24,6 @@ if ($smoothgallery_posts->have_posts()) {
 		#RETRIEVE THE SMOOTH GALLERY URL
 		$url = get_post_meta($post->ID, 'url', true);
 	 
-		#SMOOTH GALLERY IMAGE URL EXISTS
-		if(!empty($picture))
-		{
 		?>
 			<!-- SMOOTH GALLERY ELEMENT - START -->
 			<div class="imageElement">
@@ -48,15 +45,32 @@ if ($smoothgallery_posts->have_posts()) {
 				<a href="<?php the_permalink(); ?>" title="Read more" class="open"></a>
 				<?php
 				}
+				
+				#SMOOTH GALLERY IMAGE URL EXISTS
+				if (!empty($picture))
+				{
 				?>
 				
 				<img src="<?php echo $picture; ?>" class="full" alt="<?php the_title(); ?>"/>
 				<img src="<?php echo $picture; ?>" class="thumbnail" alt="<?php the_title(); ?>"/>
+				
+				<?php
+				}
+				else
+				{
+				?>
+				
+				<img src="<?php echo bloginfo('template_directory'); ?>/images/photo/set-picture.gif" class="full" alt="Set the picture" />
+				<img src="<?php echo bloginfo('template_directory'); ?>/images/photo/set-picture.gif" class="thumbnail" alt="Set the picture" />
+				
+				<?php
+				}
+				?>
+				
 			</div>
 			<!-- SMOOTH GALLERY ELEMENT - END -->
 
 		<?php
-		}
 	}
 } else {
 ?>
