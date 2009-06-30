@@ -5,19 +5,19 @@
 <?php if ($comments || comments_open()) : ?>
 <?php
   /* Count the totals */
-  $numPingBacks = 0;
+  $numPingbacks = 0;
   $numComments  = 0;
 
   /* Loop throught comments to count these totals */
-  foreach ($comments as $comment) if (get_comment_type() != "comment") $numPingBacks++; else $numComments++; ?>
+  foreach ($comments as $comment) if (get_comment_type() != "comment") $numPingbacks++; else $numComments++; ?>
 
   <?php if (($numComments > 0) || ($numPingbacks > 0)) {  ?>
 
   <h3 class="comments">
     <?php
-      printf(__('%s Comments', 'arclite'), $numComments);
-      if ($numPingBacks == 1) printf(' ('.__('and one trackback', 'arclite').') ', $numPingBacks);
-      else if ($numPingBacks > 1) printf(' ('.__('and %s trackbacks', 'arclite').') ', $numPingBacks);
+      if ($numComments == 1) printf(__('%s Comment', 'arclite'), $numComments); else printf(__('%s Comments', 'arclite'), $numComments);
+      if ($numPingbacks == 1) printf(' ('.__('and one trackback', 'arclite').') ', $numPingbacks);
+      else if ($numPingbacks > 1) printf(' ('.__('and %s trackbacks', 'arclite').') ', $numPingbacks);
     ?>
   </h3>
 

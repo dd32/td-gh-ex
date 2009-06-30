@@ -12,12 +12,19 @@ Credits:
 - German translation by Pascal Lehner, http://www.forall.ch
 - Danish translation by Henrik Boegh, http://29.5cm.dk
 - French translation by Nathalie Fortin <fortin.nathalie@gmail.com>
+- Dutch translation by Robert, http://www.on4ya.be
+- Swahili translation by Muhsin, http://www.mzalendo.net
+- Italian translation by Gianni Diurno, http://gidibao.net
 - javascript quote functions by mg12, http://www.neoease.com
 - "Union" font by the Danish Ministry of Education, http://praegnanz.de/essays/391/union
 - "Share" font by the Typo3 design team, http://typo3.org/teams/design/style-guide/downloads/
 
 
 Change log:
+
+1.5.2   Added Dutch, Swahili and Italian translations
+        Added secondary sidebar (3 column option)
+        Better tooltips
 
 1.5     Added German, Danish and French translations (for 1.4)
         Made footer widgets automatically change their width based on the active widget count
@@ -30,27 +37,7 @@ Change log:
         better IE6 support
         Added 2 new header variations
 
-1.4     Added more options/background choices for widget titles and page content
-        Fixed the widget title limitation thing (needs javascript/jQuery enabled)
-        Small graphic and CSS adjustments
-
-1.3.1   Small php bug fix
-
-1.3     Added Spanish translation (thanks Ignacio)
-        Added support for older WP versions (I only tested wp 2.6.0)
-        Removed border on smilies
-
-1.2     Removed "hide home link" option (found a better way to check if homepage is static)
-        Added user header background-color option
-        Added a 2nd widgetized area in footer
-        Many CSS adjustments
-        Better IE 6 support (still needs some work)
-        Added page templates: Links, Page without sidebar
-
-1.1     Fixed small bug in tags
-        Added 3 more header color variations
-        Heavy changes to theme options
-        Changed navigation on imageless style
+...
 
 29-apr-2009: First release (1.0)
 

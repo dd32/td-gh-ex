@@ -22,18 +22,10 @@ body{ text-align: center; }  /* center main div in IE 5.5 */
   background: #e0d9c4;
 }
 
-#nav-wrap2 ul#nav .fadeThis span.hover {
-  background: #5798c2;
-}
-
-
-#nav-wrap1{
-  background: transparent url(images/nav-left-ie6.png) no-repeat left top;
-}
-
-#nav-wrap2{
-  background: transparent url(images/nav-bg-ie6.png) no-repeat right top;
-}
+#nav-wrap2 ul#nav .fadeThis span.hover { background: #5798c2; }
+#nav-wrap1{ background: transparent url(images/nav-left-ie6.png) no-repeat left top; }
+#nav-wrap2{ background: transparent url(images/nav-bg-ie6.png) no-repeat right top; }
+#nav-wrap2 ul#nav{ float:left; }
 
 #nav-wrap2 ul#nav li a{
   height: 35px;

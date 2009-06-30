@@ -302,6 +302,8 @@ blockquote p{
 
 }
 
+/*** 2 column layout ***/
+
 #page.with-sidebar .mask-main .mask-left {
   right:30%;			/* right column width */
 }
@@ -314,6 +316,28 @@ blockquote p{
 #page.with-sidebar .mask-main .col2 {
   width:30%;			/* right column width */
   left:30%;			    /* right column width */
+}
+
+
+/*** 3 column layout ***/
+
+#page.with-sidebar.and-secondary .mask-main .mask-left {
+  right:25%;			/* right column width */
+}
+
+#page.with-sidebar.and-secondary .mask-main .col1 {
+  width:50%;			/* left column width */
+  left:25%;			    /* right column width */
+}
+
+#page.with-sidebar.and-secondary .mask-main .col2 {
+  width:25%;			/* right column width */
+  left:25%;			    /* right column width */
+}
+
+#page.with-sidebar.and-secondary .mask-main .col3 {
+  width: 25%;
+  left: 25%;
 }
 
 .clear-content{
@@ -401,7 +425,7 @@ blockquote p{
 }
 
 .search-block input.searchfield{
-  padding: 5px 0 0 8px;
+  margin: 5px 0 0 8px;
 }
 
 .search-block fieldset{
@@ -711,7 +735,7 @@ blockquote p{
 }
 
 .post p.tags a:hover{
-  color: #f44365;
+  color: #0071bb;
   text-decoration: underline;
 }
 
@@ -732,7 +756,7 @@ blockquote p{
 }
 
 .post p.post-metadata a:hover{
-  color: #f44365;
+  color: #0071bb;
   text-decoration: underline;
 }
 
@@ -742,7 +766,7 @@ blockquote p{
 h3.comments{
   font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Sans, FreeSans, Jamrul, Garuda, Kalimati;
   padding: 0;
-  margin: 2em 0 0 1em;
+  margin: 2em 0 0 0;
   font-size: 150%;
 }
 
@@ -758,6 +782,16 @@ ul#comments{
 
 ul#comments ul{
   margin-left: 2em;
+}
+
+ul#comments li.comment{
+  width: 85%;
+  margin: 0;
+  padding: 0;
+}
+
+ul#comments li.comment li.comment{
+  width: 100%;
 }
 
 .comment-mask{
@@ -833,11 +867,34 @@ ul#comments ul{
   position: absolute;
   padding:0;
   display: none;
-  top: -15px;
+  top: 0;
   right: 6px;
   z-index: 10;
+  font-style: normal;
+  text-transform: uppercase;
   padding: 0 1em 0 0;
-  margin: 0;
+  margin: 22px 0 0 0;
+}
+
+.comment-head p.controls a{
+  display: block;
+  float: left;
+  text-decoration: none;
+  color: #0071bb;
+  background: #fff;
+  padding: 3px 6px;
+  margin-right: 3px;
+  border: 1px solid #96816d;
+}
+
+.comment-head p.controls a:hover{
+  background: #96816d;
+  color: #fff;
+  border: 1px solid #eeebe3;
+}
+
+.admincomment .comment-head p.controls a:hover {
+  background: #0071bb;
 }
 
 .comment-body{
@@ -872,12 +929,12 @@ li.comment #respond{
 
 /*** SIDEBAR ***/
 
-#sidebar{
+#sidebar, #sidebar-secondary{
   padding: 2em 1em;
   margin: 0;
 }
 
-#sidebar li.block{
+#sidebar li.block, #sidebar-secondary li.block{
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -1168,7 +1225,7 @@ ul#footer-widgets li.widget li span.hover {
 
 /*** MISC ***/
 
-.with-tooltip{ }   
+.with-tooltip{ }
 
 div.tooltip{
   position:absolute;
@@ -1176,7 +1233,6 @@ div.tooltip{
   background-color:#dedede;
   padding:5px;
   border:1px solid #fff;
-  width:250px;
 }
 
 div.tooltip p{
@@ -1407,7 +1463,7 @@ img.wp-smiley, .post .post-content img.wp-smiley, .attachment img.wp-smiley{
 }
 
 
-#sidebar li.block .info-text{
+#sidebar li.block .info-text, #sidebar-secondary li.block .info-text{
   margin: 1em;
   text-align: center;
   font-style: italic;

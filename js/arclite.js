@@ -130,6 +130,49 @@ jQuery("ul#nav li").hover(function(){
    });
 }
 
+// time based tooltips
+function initTooltips(o) {
+  var showTip = function() {
+  	var el = jQuery('.tip', this).css('display', 'block')[0];
+  	var ttHeight = jQuery(el).height();
+    var ttOffset =  el.offsetHeight;
+	var ttTop = ttOffset + ttHeight;
+    jQuery('.tip', this)
+	  .stop()
+	  .css({'opacity': 0, 'top': 2 - ttOffset})
+  	  .animate({'opacity': 1, 'top': 18 - ttOffset}, 250);
+	};
+	var hideTip = function() {
+  	  var self = this;
+	  var el = jQuery('.tip', this).css('display', 'block')[0];
+      var ttHeight = jQuery(el).height();
+	  var ttOffset =  el.offsetHeight;
+	  var ttTop = ttOffset + ttHeight;
+      jQuery('.tip', this)
+	  	.stop()
+	  	.animate({'opacity': 0,'top': 10 - ttOffset}, 250, function() {
+		   el.hiding = false;
+		   jQuery(this).css('display', 'none');
+		}
+      );
+	};
+	jQuery('.tip').hover(
+	  function() { return false; },
+	  function() { return true; }
+	);
+	jQuery('.tiptrigger, .cat-item').hover(
+	  function(){
+	  	var self = this;
+	  	showTip.apply(this);
+	  	if (o.timeout) this.tttimeout = setTimeout(function() { hideTip.apply(self) } , o.timeout);
+	  },
+	  function() {
+	  	clearTimeout(this.tttimeout);
+	  	hideTip.apply(this);
+	  }
+	);
+}
+
 // simple tooltips
 function webshot(target_items, name){
  jQuery(target_items).each(function(i){
@@ -214,21 +257,7 @@ function webshot(target_items, name){
 
 jQuery(document).ready(function(){
   jQuery(".comment .avatar").pngfix();
-
-
-  // rss popup link
-  jQuery("ul.menu li.cat-item").hover(function() {
-		jQuery(this).find("a.rss").animate({opacity: "show", top: "1", right: "6"}, "333");
-	}, function() {
-		jQuery(this).find("a.rss").animate({opacity: "hide", top: "-15", right: "6"}, "333");
-	});
-
-  // reply/quote links
-  jQuery(".comment-head").hover(function() {
-		jQuery(this).find("p.controls").animate({opacity: "show", top: "4", right: "6"}, "333");
-	}, function() {
-		jQuery(this).find("p.controls").animate({opacity: "hide", top: "-15", right: "6"}, "333");
-	});
+  jQuery("h1.logo a img").pngfix();
 
   // fade span
   jQuery('.fadeThis, ul#footer-widgets li.widget li').append('<span class="hover"></span>').each(function () {
@@ -254,6 +283,15 @@ jQuery(document).ready(function(){
   });
 
   navigationeffects();
+
+  if (document.all && !window.opera && !window.XMLHttpRequest && jQuery.browser.msie) { var isIE6 = true; }
+  else { var isIE6 = false;} ;
+  jQuery.browser.msie6 = isIE6;
+  if (!isIE6) {
+    initTooltips({
+		timeout: 6000
+   });
+  }
 
   webshot(".with-tooltip a","tooltip");
 

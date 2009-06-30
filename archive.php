@@ -46,10 +46,8 @@
             <span class="day"><?php the_time(__('j','arclite')); ?></span>
            </p>
            <p class="post-author">
-            <span><?php printf(__('Posted by %s in %s','arclite'),'<a href="'. get_author_posts_url(get_the_author_ID()) .'" title="'. sprintf(__("Posts by %s","arclite"), attribute_escape(get_the_author())).' ">'. get_the_author() .'</a>',get_the_category_list(', '));
-           global $id, $comment;
-            $number = get_comments_number( $id );
-           ?> | <a class="<?php if($number<1) { echo 'no '; }?>comments" href="<?php comments_link(); ?>"><?php comments_number(__('No Comments','arclite'), __('1 Comment','arclite'), __('% Comments','arclite')); ?></a> <?php edit_post_link(__('Edit','arclite'),' | '); ?>
+            <span class="info"><?php printf(__('Posted by %s in %s','arclite'),'<a href="'. get_author_posts_url(get_the_author_ID()) .'" title="'. sprintf(__("Posts by %s","arclite"), attribute_escape(get_the_author())).' ">'. get_the_author() .'</a>',get_the_category_list(', '));
+            ?> | <?php comments_popup_link(__('No Comments', 'arclite'), __('1 Comment', 'arclite'), __('% Comments', 'arclite'), 'comments', __('Comments off', 'arclite')); ?>  <?php edit_post_link(__('Edit','arclite'),' | '); ?>
             </span>
            </p>
           </div>
@@ -95,6 +93,7 @@
      </div>
      <!-- /first column -->
      <?php get_sidebar(); ?>
+     <?php include(TEMPLATEPATH . '/sidebar-secondary.php'); ?>
 
     </div>
    </div>

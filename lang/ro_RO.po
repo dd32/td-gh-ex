@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Arclite 1.4\n"
+"Project-Id-Version: Arclite 1.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-19 04:27+0200\n"
+"POT-Creation-Date: 2009-06-24 15:35+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: digitalnature <hello@digitalnature.ro>\n"
 "Language-Team: digitalnature.ro <hello@digitalnature.ro>\n"
@@ -18,6 +18,10 @@ msgstr ""
 #: c:\wamp\www\wordpress\wp-content\themes\arclite/404.php:19
 msgid "Page not found (404)"
 msgstr "Pagina nu a fost gasită (404)"
+
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/404.php:22
+msgid "Try one of these links:"
+msgstr ""
 
 #: c:\wamp\www\wordpress\wp-content\themes\arclite/archive.php:22
 #, php-format
@@ -37,7 +41,7 @@ msgid "Archive for %s"
 msgstr "Arhivă pentru %s"
 
 #: c:\wamp\www\wordpress\wp-content\themes\arclite/archive.php:26
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:603
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:622
 msgid "F jS, Y"
 msgstr "j F Y"
 
@@ -87,79 +91,85 @@ msgstr "Publicat de %s în %s"
 msgid "Posts by %s"
 msgstr "Articole scrise de %s"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/archive.php:49
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/archive.php:50
 #: c:\wamp\www\wordpress\wp-content\themes\arclite/author.php:56
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/index.php:32
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/index.php:33
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/search.php:38
+msgid "No Comments"
+msgstr "Nu există comentarii"
+
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/archive.php:50
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/author.php:56
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/index.php:33
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/search.php:38
+msgid "1 Comment"
+msgstr "Un comentariu"
+
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/archive.php:50
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/author.php:56
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/index.php:33
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/search.php:38
+msgid "% Comments"
+msgstr "% Comentarii"
+
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/archive.php:50
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/index.php:33
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/search.php:38
+msgid "Comments off"
+msgstr "Comentariile dezactivate"
+
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/archive.php:50
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/author.php:56
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/index.php:33
 #: c:\wamp\www\wordpress\wp-content\themes\arclite/search.php:38
 msgid "Edit"
 msgstr "Modifică"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/archive.php:54
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/index.php:37
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/archive.php:56
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/index.php:39
 #: c:\wamp\www\wordpress\wp-content\themes\arclite/single.php:31
 msgid "Read the rest of this entry &raquo;"
 msgstr "Citeşte restul acestui articol &raquo;"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/archive.php:59
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/archive.php:61
 #: c:\wamp\www\wordpress\wp-content\themes\arclite/author.php:56
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/index.php:42
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/index.php:44
 #: c:\wamp\www\wordpress\wp-content\themes\arclite/search.php:38
 #: c:\wamp\www\wordpress\wp-content\themes\arclite/single.php:37
 msgid "Tags:"
 msgstr "Etichete:"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/archive.php:68
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/author.php:56
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/index.php:51
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/search.php:38
-msgid "No Comments"
-msgstr "Nu există comentarii"
-
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/archive.php:68
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/author.php:56
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/index.php:51
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/search.php:38
-msgid "1 Comment"
-msgstr "Un comentariu"
-
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/archive.php:68
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/author.php:56
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/index.php:51
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/search.php:38
-msgid "% Comments"
-msgstr "% Comentarii"
-
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/archive.php:79
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/archive.php:72
 #: c:\wamp\www\wordpress\wp-content\themes\arclite/author.php:64
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/index.php:64
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/index.php:58
 #: c:\wamp\www\wordpress\wp-content\themes\arclite/search.php:26
 #: c:\wamp\www\wordpress\wp-content\themes\arclite/search.php:46
 msgid "&laquo; Older Entries"
 msgstr "&laquo; Articole mai vechi"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/archive.php:80
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/archive.php:73
 #: c:\wamp\www\wordpress\wp-content\themes\arclite/author.php:65
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/index.php:65
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/index.php:59
 #: c:\wamp\www\wordpress\wp-content\themes\arclite/search.php:27
 #: c:\wamp\www\wordpress\wp-content\themes\arclite/search.php:47
 msgid "Newer Entries &raquo;"
 msgstr "Articole mai noi &raquo;"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/archive.php:86
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/archive.php:79
 #, php-format
 msgid "Sorry, but there aren't any posts in the %s category yet."
 msgstr "Îmi pare rău, incă nu exista nici un articol in categoria %s."
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/archive.php:88
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/archive.php:81
 msgid "Sorry, but there aren't any posts with this date."
 msgstr "Îmi pare rău, nu există nici un articol scris la această dată."
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/archive.php:91
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/archive.php:84
 #, php-format
 msgid "Sorry, but there aren't any posts by %s yet."
 msgstr "Îmi pare rău, încă nu există nici un articol scris de %s."
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/archive.php:93
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/archive.php:86
 msgid "No posts found."
 msgstr "Nu a fost găsit nici un articol."
 
@@ -205,105 +215,122 @@ msgid "Enter your password to view comments"
 msgstr "Introduceti parola pentru a vizualiza comentariile"
 
 #: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:18
-msgid "Comments"
-msgstr "Comentarii"
+#, php-format
+msgid "%s Comments"
+msgstr "%s comentarii"
 
 #: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:19
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:43
-msgid "Trackbacks"
-msgstr "Trackback-uri"
+msgid "and one trackback"
+msgstr "şi un trackback"
+
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:20
+#, php-format
+msgid "and %s trackbacks"
+msgstr "şi %s trackback-uri"
 
 #: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:37
 msgid "No comments yet."
 msgstr "Nu sunt comentarii."
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:47
-msgid "No trackbacks yet."
-msgstr "Încă nu există trackback-uri."
-
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:72
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:58
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr "Trebuie să fii <a href=\"%s\">autentificat</a> pentru a scrie comentarii."
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:79
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:66
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:101
+msgid "Your name (required)"
+msgstr "Numele dvs. (necesar)"
+
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:67
+msgid "Please enter your name"
+msgstr "Completaţi numele"
+
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:70
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:104
+msgid "Your e-mail (required, will not be published)"
+msgstr "Adresa dvs. de email (obligatorie, nu va fi publicată)"
+
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:71
+msgid "Please enter your email address"
+msgstr "Completaţi adresa de email"
+
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:74
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:118
+msgid "Type your comment here"
+msgstr "Scrieţi comentariul dvs. aici"
+
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:75
+msgid "Please type a comment"
+msgstr "Scrieţi comentariul dvs."
+
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:78
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:107
+msgid "Your website"
+msgstr "Site web"
+
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:85
 msgid "Cancel Reply"
 msgstr "Renunţă la răspuns"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:85
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:91
 #, php-format
 msgid "Logged in as %s."
 msgstr "Sunteţi autentificat ca şi %s."
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:87
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:93
 msgid "Log out of this account"
 msgstr "Log out"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:87
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:93
 msgid "Logout &raquo;"
 msgstr "Logout &raquo;"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:91
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:97
 #, php-format
 msgid "Welcome back <strong>%s</strong>."
 msgstr "Bun venit <strong>%s</strong>."
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:91
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:97
 msgid "Change &raquo;"
 msgstr "Schimbă &raquo;"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:91
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:97
 msgid "Close &raquo;"
 msgstr "Închide &raquo;"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:95
-msgid "Name"
-msgstr "Nume"
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:125
+#, php-format
+msgid "Spam protection: Sum of %s+%s = ?"
+msgstr "Protecţie Spam: Suma %s+%s = ?"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:95
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:99
-msgid "(required)"
-msgstr "(necesar)"
-
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:99
-msgid "E-Mail"
-msgstr "E-Mail"
-
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:99
-msgid "(will not be published)"
-msgstr "(nu va fi publicat)"
-
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:103
-msgid "Website"
-msgstr "Site web"
-
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:122
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:138
 msgid "Submit Comment"
 msgstr "Postează comentariul"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:138
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/comments.php:153
 msgid "Comments are closed."
 msgstr "Comentariile sunt dezactivate."
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/footer.php:20
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/footer.php:21
 #, php-format
 msgid "Arclite theme by %s"
 msgstr "Tema Arclite creată de %s"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/footer.php:22
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/footer.php:23
 #, php-format
 msgid "powered by %s"
 msgstr "susţinut de %s"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/footer.php:26
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/footer.php:27
 msgid "Entries (RSS)"
 msgstr "Articole (RSS)"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/footer.php:26
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/footer.php:27
 msgid "and"
 msgstr "şi"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/footer.php:26
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/footer.php:27
 msgid "Comments (RSS)"
 msgstr "Comentarii (RSS)"
 
@@ -325,25 +352,25 @@ msgstr "Setări generale"
 
 #: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:231
 msgid "Imageless layout"
-msgstr ""
+msgstr "Şablon fără imagini"
 
 #: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:231
 msgid "(no background images; reduces pages to just a few KB, with the cost of less graphic details)"
-msgstr ""
+msgstr "(reduce pagina la doar câţiva KB, mai puţine detalii grafice)"
 
 #: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:233
 #: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:245
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:324
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:371
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:419
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:320
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:377
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:426
 msgid "Yes"
 msgstr "Da"
 
 #: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:235
 #: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:247
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:326
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:374
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:422
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:322
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:380
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:429
 msgid "No"
 msgstr "Nu"
 
@@ -379,39 +406,39 @@ msgstr "Conţinutul complet al articolelor"
 msgid "Excerpts only"
 msgstr "Doar intruducerea articolelor"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:303
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:299
 msgid "Header"
 msgstr "Antet"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:311
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:307
 msgid "Top navigation shows"
 msgstr "Meniul din antent afişează"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:313
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:309
 msgid "Pages"
 msgstr "Pagini"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:315
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:311
 msgid "Categories"
 msgstr "Categorii"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:322
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:318
 msgid "Show search"
 msgstr "Activează formularul de căutare"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:334
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:330
 msgid "Header background"
 msgstr "Fundal antet"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:344
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:342
 msgid "User defined image (upload)"
 msgstr "Imagine predefinită (upload)"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:345
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:343
 msgid "User defined color"
 msgstr "Culoare predefinită"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:350
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:349
 msgid "Centered image (upload a 960x190 image for best fit):"
 msgstr "Imagine centru (preferabil de mărimea 960x190, pt. o potrivire cât mai bună) "
 
@@ -419,110 +446,130 @@ msgstr "Imagine centru (preferabil de mărimea 960x190, pt. o potrivire cât mai
 msgid "Tiled image, repeats itself across the entire header (centered image will show on top of it, if specified):"
 msgstr "Fundal repetitiv, pe întreaga porţiune a antetului (imaginea centrată va afişată peste acesta)"
 
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:357
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:387
+#, php-format
+msgid "Files are uploaded to %s"
+msgstr "Fişierele sunt copiate în %s"
+
 #: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:359
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:389
+#, php-format
+msgid "Can't upload! Directory %s is not writable!<br />Change write permissions with CHMOD 755 or 777"
+msgstr "Nu pot scrie în directorul %s!<br />Verificaţi dacă aveţi setate permisiunile de scriere (755 sau 777)"
+
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:365
 msgid "Pick a color"
 msgstr "Alegeţi o culoare"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:369
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:375
 msgid "Logo image"
 msgstr "Imagine siglă"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:377
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:384
 msgid "Upload a custom logo image"
 msgstr "Uploadează imaginea"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:397
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:404
 msgid "Sidebar"
 msgstr "Bara laterală"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:406
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:413
 msgid "Sidebar position"
 msgstr "Poziţia barei laterale"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:408
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:415
 msgid "Left"
 msgstr "Stânga"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:411
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:418
 msgid "Right"
 msgstr "Dreapta"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:417
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:424
 msgid "Show theme-default category block"
 msgstr "Arată categoriile în bara laterală sub formă de meniu"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:429
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:436
 msgid "Widget title background"
 msgstr "Fundal titlu widget"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:452
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:459
 msgid "Footer"
 msgstr "Subsolul paginii"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:461
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:468
 msgid "Add content"
 msgstr "Adaugă conţinut"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:461
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:468
 msgid "(HTML allowed)"
 msgstr "(HTML permis)"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:480
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:485
 msgid "User CSS code"
 msgstr "Cod CSS personalizat"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:489
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:494
 msgid "Modify anything related to design using simple CSS"
-msgstr ""
+msgstr "Schimbaţi orice legat de design folosind CSS"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:489
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:494
 msgid "Avoid modifying theme files and use this option instead to preserve changes after update"
-msgstr ""
+msgstr "Evitaţi modificări ale codului temei. Folosiţi această opţiune pt. a face asta"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:603
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:596
+msgid "Trackback:"
+msgstr "Trackback:"
+
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:596
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:622
 #, php-format
-msgid "%s by %s at %s"
+msgid "%s by %s on %s"
 msgstr "%s scris de %s - %s"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:603
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:622
 msgid "H:i"
 msgstr "H:i"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:612
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:630
 msgid "Reply"
 msgstr "Răspunde"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:614
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:633
 msgid "Quote"
 msgstr "Citează"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:628
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:644
 msgid "Your comment is awaiting moderation."
 msgstr "Comentariul dvs. va fi moderat."
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/header.php:120
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/header.php:113
 #: c:\wamp\www\wordpress\wp-content\themes\arclite/searchform.php:6
 msgid "Search"
 msgstr "Caută"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/header.php:137
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/header.php:131
 msgid "You are Home"
 msgstr "Sunteţi pe pagina principală"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/header.php:137
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/header.php:139
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/header.php:131
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/header.php:133
 msgid "Home"
 msgstr "Acasă"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/header.php:139
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/header.php:133
 msgid "Click for Home"
 msgstr "Click pt. pagina principală"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/index.php:70
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/index.php:64
 msgid "Not Found"
 msgstr "Nu a fost găsit"
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/index.php:71
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/index.php:65
 msgid "Sorry, but you are looking for something that isn't here."
 msgstr "Îmi pare rău, dar căutaţi ceva ce nu se găseşte aici."
 
@@ -609,6 +656,10 @@ msgstr "Comentariile şi trackback-urile sunt dezactivate."
 msgid "Sorry, no posts matched your criteria."
 msgstr "Îmi pare rău, nici un articol nu s-a încadrat în criteriul de căutare."
 
+#~ msgid "Name"
+#~ msgstr "Nume"
+#~ msgid "E-Mail"
+#~ msgstr "E-Mail"
 #~ msgid "Disable all design-related images"
 #~ msgstr "Dezactivează toate imaginile de fundal"
 #~ msgid "(Full CSS layout, no background images)"
@@ -719,8 +770,6 @@ msgstr "Îmi pare rău, nici un articol nu s-a încadrat în criteriul de căuta
 #~ msgstr "Arhivă pentru"
 #~ msgid "Subscribe to comments feed"
 #~ msgstr "Vreau să fiu notificat prin RSS dacă apar comentarii noi"
-#~ msgid "Leave a comment"
-#~ msgstr "Lasă un comentariu"
 #~ msgid "Sorry, the comment form is closed at this time."
 #~ msgstr "Îmi pare rău, formularul pentru comentarii este închis momentan."
 #~ msgid "Close this window."

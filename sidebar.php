@@ -37,7 +37,7 @@
         <?php if(get_option('arclite_jquery')=='no') {
           echo preg_replace('@\<li([^>]*)>\<a([^>]*)>(.*?)\<\/a>@i', '<li$1><a class="fadeThis"$2>$3</a>', wp_list_categories('show_count=0&echo=0&title_li='));
         } else {
-          echo preg_replace('@\<li([^>]*)>\<a([^>]*)>(.*?)\<\/a> \(\<a ([^>]*) ([^>]*)>(.*?)\<\/a>\)@i', '<li $1><a class="fadeThis"$2>$3</a><a class="rss" $4></a>', wp_list_categories('show_count=0&echo=0&title_li=&feed=XML')); } ?>
+          echo preg_replace('@\<li([^>]*)>\<a([^>]*)>(.*?)\<\/a> \(\<a ([^>]*) ([^>]*)>(.*?)\<\/a>\)@i', '<li $1><a class="fadeThis"$2>$3</a><a class="rss tip" $4></a>', wp_list_categories('show_count=0&echo=0&title_li=&feed=XML')); } ?>
 
         <?php if (function_exists('xili_language_list')) { xili_language_list(); } ?>
 

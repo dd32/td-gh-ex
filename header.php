@@ -54,9 +54,9 @@
 
    if(get_option('arclite_header')=='user') {
     if(get_option('arclite_headerimage')<>'')
-       print '#header{ background: transparent url('.get_option('arclite_headerimage').') no-repeat center top; }'.PHP_EOL;
+       print '#header{ background: transparent url("'.get_option('arclite_headerimage').'") no-repeat center top; }'.PHP_EOL;
     if(get_option('arclite_headerimage2')<>'')
-        print '#header-wrap{ background: transparent url('.get_option('arclite_headerimage2').') repeat center top; }'.PHP_EOL;
+        print '#header-wrap{ background: transparent url("'.get_option('arclite_headerimage2').'") repeat center top; }'.PHP_EOL;
    }
    else if(get_option('arclite_header')=='user2')
     print '#header, #header-wrap{ background: #'.get_option('arclite_headercolor').'; }'.PHP_EOL;
@@ -85,7 +85,7 @@
 </head>
 <body <?php if (is_home()) { ?>class="home"<?php } else { ?>class="inner"<?php } ?>>
  <!-- page wrap -->
- <div id="page"<?php if(!is_page_template('page-nosidebar.php')) { ?> class="with-sidebar"<?php } ?>>
+ <div id="page"<?php if(!is_page_template('page-nosidebar.php')) { print ' class="with-sidebar'; if((get_option('arclite_3col')=='yes') || (is_page_template('page-3col.php'))) print ' and-secondary'; print '"';  } ?>>
 
   <!-- header -->
   <div id="header-wrap">

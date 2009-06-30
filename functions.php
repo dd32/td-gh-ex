@@ -23,6 +23,11 @@ $options = array (
    "type" => "arclite_imageless"),
 
   array(
+   "id" => "arclite_3col",
+   "default" => "no",
+   "type" => "arclite_3col"),
+
+  array(
    "id" => "arclite_jquery",
    "default" => "yes",
    "type" => "arclite_jquery"),
@@ -288,6 +293,17 @@ function arclite_admin() {
         </tr>
 
       <?php break;
+        case "arclite_3col": ?>
+        <tr>
+        <th scope="row"><?php _e("Enable 3rd column on all pages","arclite"); ?><br /><?php _e("(apply the 3-column template if you only want it on certain pages)","arclite"); ?></th>
+        <td>
+         <label><input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>-yes" type="radio" value="yes"<?php if ( get_option( $value['id'] ) == "yes") { echo " checked"; } ?> /><?php _e("Yes","arclite"); ?></label>
+         &nbsp;&nbsp;
+         <label><input  name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>-no" type="radio" value="no"<?php if ( get_option( $value['id'] ) == "no") { echo " checked"; } ?> /><?php _e("No","arclite"); ?></label>
+        </td>
+        </tr>
+
+      <?php break;
 	}
 	}
 	?>
@@ -349,6 +365,7 @@ function arclite_admin() {
           _e('Centered image (upload a 960x190 image for best fit):','arclite'); ?><br />
           <input type="file" name="file-header" id="file-header" />
           <?php if(get_option('arclite_headerimage')) { echo '<div><img src="'; echo get_option('arclite_headerimage'); echo '"  style="margin-top:10px;" /></div>'; } ?>
+          <br />
           <?php _e('Tiled image, repeats itself across the entire header (centered image will show on top of it, if specified):','arclite'); ?><br />
           <input type="file" name="file-header2" id="file-header2" />
           <?php if(get_option('arclite_headerimage2')) { echo '<div><img src="'; echo get_option('arclite_headerimage2'); echo '"  style="margin-top:10px;" /></div>'; } ?>
@@ -568,8 +585,16 @@ if ( function_exists('register_sidebar')) {
 		'before_title' => '<h6 class="title">',
 		'after_title' => '</h6>'
     ));
-}
 
+    register_sidebar(array(
+        'name' => 'Secondary sidebar',
+        'id' => 'sidebar-3',
+		'before_widget' => '<li class="block widget %2$s" id="%1$s"><div class="box"> <div class="wrapleft"><div class="wrapright"><div class="tr"><div class="bl"><div class="tl"><div class="br the-content">',
+		'after_widget' => '</div></div></div></div></div></div> </div></li>',
+		'before_title' => '<div class="titlewrap"><h4><span>',
+		'after_title' => '</span></h4></div>'
+    ));
+}
 
 // list pings
 function list_pings($comment, $args, $depth) {
@@ -606,8 +631,8 @@ function list_comments($comment, $args, $depth) {
 
   <!-- comment entry -->
   <li <?php if (function_exists('comment_class')) { if (function_exists('get_avatar') && get_option('show_avatars')) echo comment_class('with-avatar'); else comment_class(); } else { print 'class="comment';if (function_exists('get_avatar') && get_option('show_avatars')) print ' with-avatar'; print '"';  } ?> id="comment-<?php comment_ID() ?>">
-   <div class="comment-mask<?php if($comment->comment_author_email == get_the_author_email()) echo ' admincomment'; else echo ' regularcomment'; ?>">
-    <div class="comment-main">
+   <div class="comment-mask<?php if($comment->user_id == 1) echo ' admincomment'; else echo ' regularcomment'; // <- thanks to Jiri! ?>">
+    <div class="comment-main tiptrigger">
      <div class="comment-wrap1">
       <div class="comment-wrap2">
        <div class="comment-head">
@@ -623,13 +648,12 @@ function list_comments($comment, $args, $depth) {
         </p>
 
         <?php if(comments_open()) { ?>
-        <p class="controls">
+        <p class="controls tip">
              <?php
               if (function_exists('comment_reply_link')) {
                comment_reply_link(array_merge( $args, array('add_below' => 'comment-reply', 'depth' => $depth, 'max_depth' => $args['max_depth'], 'reply_text' => '<span>'.__('Reply','arclite').'</span>'.$my_comment_count)));
-              print ' | ';
               } ?>
-              <a title="<?php _e('Quote','arclite'); ?>" href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-<?php comment_ID() ?>', 'comment-<?php comment_ID() ?>', 'comment-body-<?php comment_ID() ?>', 'comment');"><span><?php _e('Quote','arclite'); ?></span></a> <?php edit_comment_link('Edit','| ',''); ?>
+              <a class="quote" title="<?php _e('Quote','arclite'); ?>" href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-<?php comment_ID() ?>', 'comment-<?php comment_ID() ?>', 'comment-body-<?php comment_ID() ?>', 'comment');"><span><?php _e('Quote','arclite'); ?></span></a> <?php edit_comment_link('Edit','',''); ?>
 
         </p>
         <?php } ?>

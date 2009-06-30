@@ -71,6 +71,7 @@
      </div>
      <!-- /first column -->
      <?php get_sidebar(); ?>
+     <?php include(TEMPLATEPATH . '/sidebar-secondary.php'); ?>
 
     </div>
    </div>
