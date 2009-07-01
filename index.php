@@ -6,9 +6,9 @@
 		<?php while (have_posts()) : the_post(); ?>
 		
 		<div class="post">
-			<h3><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
+			<h3><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3><br />
 			<small><b>Posted:</b> <?php the_time('F jS, Y') ?> | <b>Author:</b> <?php the_author_posts_link(); ?> | <b>Filed under:</b> <?php the_category(', ') ?> <?php the_tags(' | <b>Tags:</b> ', ', ', ''); ?> <?php if ( $user_ID ) : 
-			?> | <b>Modify:</b> <?php edit_post_link(); ?> <?php endif; ?>| <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?></small>
+			?> | <b>Modify:</b> <?php edit_post_link(); ?> <?php endif; ?>| <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?></small><br /><br/><br />
 			<?php the_content('Read the rest of this entry &raquo;'); ?>
 			 <hr />
 		</div>

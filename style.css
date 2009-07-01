@@ -2,7 +2,7 @@
 Theme Name:Basal
 Theme URI:http://ryanmcnair.co.uk/blog/wp-content/theme/basal/
 Description:This WordPress theme is minimal and cleanly styled. Special thanks to <a href="http://ryanmcnair.co.uk/">Ryan McNair</a>.
-Version:1.0.2
+Version:1.0.3
 Author:Ryan McNair
 Author URI:http://ryanmcnair.co.uk/
 Tags:white, light, fixed-width, two-columns, right-sidebar
@@ -53,7 +53,7 @@ margin-bottom:20px;
 margin:0; padding:0;
 font-family:"Arial", "Helvetica", Sans-serif;
 font-weight:100;
-font-size:1.2em;
+font-size:2.2em;
 letter-spacing:-2px; word-spacing:6px;
 text-transform:uppercase;
 color:#4b4b4b;
@@ -69,7 +69,7 @@ text-transform:uppercase;
 font-family:"Arial", "Helvetica", Sans-serif;
 font-weight:100;
 letter-spacing:-1px; word-spacing:4px;
-font-size:1.0em;
+font-size:2.0em;
 }
 
 .bold {font-weight:bold;letter-spacing:-2px;}
@@ -122,10 +122,17 @@ letter-spacing: -3px;
 color:#4b4b4b;
 word-spacing:3px;
 font-weight:100;
+margin-bottom:6px;
 }
 
-.post h3{margin-bottom:6px;}
-.post p{margin-top:12px; margin-bottom:16px;}
+.post h3{
+padding-top:14px;
+padding-bottom:14px;
+}
+.post p{
+margin-top:12px; 
+margin-bottom:16px;
+}
 
 .post em{
 font-style:italic;
@@ -142,7 +149,7 @@ padding-left:10px;
 }
 .post small {
 font-size:smaller;
-margin-bottom:4px;
+padding-bottom:20px;
 }
 .post small a {
 font-weight:normal;
@@ -204,8 +211,9 @@ margin-top:10px;
 padding:20px;
 color:#fff;
 }
+
+
 #comments h3{
-font-weight:bold;
 color:#c9c9c9;
 text-transform:uppercase;
 font-family:"Arial", "Helvetica", Sans-serif;
@@ -213,10 +221,9 @@ font-weight:100;
 letter-spacing:-1px; word-spacing:4px;
 font-size:1.2em;
 margin:35px 0 5px;
-
 }
+
 #postcomment h4{
-font-weight:bold;
 color:#c9c9c9;
 text-transform:uppercase;
 font-family:"Arial", "Helvetica", Sans-serif;
@@ -225,16 +232,19 @@ letter-spacing:-1px; word-spacing:4px;
 font-size:0.9em;
 margin:35px 0 5px;
 }
+
 #comments cite{
 color:#c9c9c9;
 font-family:"Arial", "Helvetica", Sans-serif;
 font-size:0.8em;
 font-weight:normal;
 }
+
 #comments em {
 font-style:italic;
 text-align:right;
 }
+
 #comments ol.commentlist li {
 margin-top:20px;
 border:1px dotted #c9c9c9;
@@ -242,10 +252,12 @@ border-right:0;
 padding:10px 5px 20px 10px;
 min-height:110px;
 }
+
 #comments p {
 margin:10px 0 0 10px;
 font-family:"Arial", "Helvetica", Sans-serif;
 }
+
 #comments span {
 display:block;
 color:#eee;
@@ -255,6 +267,7 @@ font-weight:normal;
 float:right;
 padding-top:25px;
 }
+
 #comments ul.formlist {
 margin:20px auto;
 width:375px;
@@ -270,23 +283,23 @@ text-align:center;
 #comments input {
 font-family:"Arial", "Helvetica", Sans-serif;
 width:370px;
-font-size:18px;
 font-weight:normal;
 }
 #comments textarea {
 font-family:"Arial", "Helvetica", Sans-serif;;
-max-width:270px;
+max-width:374px;
 font-size:18px;
 font-weight:normal;
 }
 #comments li.submitbutton input {
 font-weight:normal;
-font-size:20px;
 width:374px;
 }
 #comments .center {
 text-align:center;
 }
+
+
 
 #r-side {
 margin :2px; 
@@ -315,7 +328,7 @@ letter-spacing:-3px;
 word-spacing:3px;
 font-weight:100;
 font-size:2em;
-
+padding-top:14px;
 }
 
 #r-side ul {
