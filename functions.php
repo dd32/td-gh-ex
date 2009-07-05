@@ -147,9 +147,6 @@ if ( !function_exists('paged_comments') ) {
 }
 
 
-// Javascript packer
-include_once (TEMPLATEPATH . '/functions/JavaScriptPacker.phpp');
-
 // remove WP default inline CSS for ".recentcomments a" from header
 function remove_wp_widget_recent_comments_style() {
    if ( has_filter('wp_head', 'wp_widget_recent_comments_style') ) {
