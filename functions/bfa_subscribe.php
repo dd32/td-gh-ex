@@ -56,7 +56,7 @@ onfocus="this.value='';" />
 </tr>
 <tr>
 <td class="comment-text" colspan="2"><p>
-<a href="<?php echo get_bloginfo('comments_rss2_url'); ?>"<?php if ($bfa_ata_nofollow == "Yes") { ?> rel="nofollow"<?php } ?>>
+<a href="<?php echo get_bloginfo('comments_rss2_url'); ?>"<?php if ($cur_opt['bfa_ata_nofollow'] == "Yes") { ?> rel="nofollow"<?php } ?>>
 <img src="<?php echo get_bloginfo('template_directory'); ?>/images/comment-feed.gif" style="float:left; margin: 0 7px 3px 0" alt="" /></a><?php echo $comments_text; ?></p>
 </td>
 </tr>

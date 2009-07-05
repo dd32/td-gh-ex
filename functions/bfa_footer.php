@@ -1,65 +1,123 @@
 <?php
+
 function footer_page_links($matches) {
 	$page_id = $matches[1];
 	$page_data = get_page($page_id, ARRAY_A);
 	$page_title = $page_data['post_title'];
 	$page_url = get_permalink($page_id);
-
 	return '<a href="' . $page_url . '">' . $page_title . '</a>'; 
 }
 
 
-function loginout_link() {
-      if ( ! is_user_logged_in() )
-      $link = '<a href="' . get_settings('siteurl') . '/wp-login.php"' . ($bfa_ata_nofollow == "Yes" ? ' rel="nofollow"' : '') . '>' . __('Login','atahualpa') . '</a>';
-      else
-      $link = '<a href="' . get_settings('siteurl') . '/wp-login.php?action=logout">' . __('Logout','atahualpa') . '</a>';
-  
-      return apply_filters('loginout', $link);
-}
-  
-  
-function register_link() {
-      if ( ! is_user_logged_in() ) {
-      if ( get_settings('users_can_register') )
-           $link = '<a href="' . get_settings('siteurl') . '/wp-register.php"' . ($bfa_ata_nofollow == "Yes" ? ' rel="nofollow"' : '') . '>' . __('Register','atahualpa') . '</a>';
-          else
-              $link = '';
-      } 
-  
-      return apply_filters('register', $link);
-}
-
-function admin_link() {
-      if ( is_user_logged_in() ) {
-          $link = '<a href="' . get_settings('siteurl') . '/wp-admin/">' . __('Site Admin','atahualpa') . '</a>';
-      }
-  
-      return apply_filters('register', $link);
-}
-			
-
 function bfa_footer($footer_content) {
 
-if (strpos($footer_content,'%page')!==false) {
+global $bfa_ata;
+
+
+
 // page links
-$footer_content = preg_replace_callback("|%page-(.*?)%|","footer_page_links",$footer_content);
+if ( strpos($footer_content,'%page') !== FALSE ) {
+	$footer_content = preg_replace_callback("|%page-(.*?)%|","footer_page_links",$footer_content);
 }
 
+
+
 // home link
-$footer_content = str_replace("%home%",  '<a href="' . get_option('home') . '/">' . get_option('blogname') . '</a>', $footer_content);
+if ( strpos($footer_content,'%home%') !== FALSE ) {
+	$footer_content = str_replace("%home%",  '<a href="' . $bfa_ata['get_option_home'] . '/">' . 
+	$bfa_ata['bloginfo_name'] . '</a>', $footer_content);
+}
+
+
+
 // login/logout link
-$footer_content = str_replace("%loginout%",  loginout_link(), $footer_content);
-// admin link
-$footer_content = str_replace("%admin%",  admin_link(), $footer_content);
+if ( strpos($footer_content,'%loginout%') !== FALSE ) {
+	
+	ob_start(); 
+		wp_loginout(); 
+		$loginout_link = ob_get_contents(); 
+	ob_end_clean();
+	
+	if ( $bfa_ata['nofollow'] == "Yes" ) { 
+		$loginout_link = str_replace(' href=', ' rel="nofollow" href=', $loginout_link); 
+	}
+	
+	$footer_content = str_replace("%loginout%",  $loginout_link, $footer_content);
+}
+
+
+
 // register link
-$footer_content = str_replace("%register%",  register_link(), $footer_content);
+if ( strpos($footer_content,'%register%') !== FALSE ) {
+	
+	ob_start(); 
+		wp_register(); 
+		$register_link = ob_get_contents(); 
+	ob_end_clean();
+	
+	$register_link = str_replace( array('<li>', '</li>'), '', $register_link);
+	
+	if ( $bfa_ata['nofollow'] == "Yes" ) { 
+		$register_link = str_replace(' href=', ' rel="nofollow" href=', $register_link); 
+	}
+	
+	$footer_content = str_replace("%register%",  $register_link, $footer_content);
+	
+}
+
+
+
+/* LEGACY up to Atahualpa 3.2 admin link and register link were two different tags, 
+now they're combined into one tag %register% mimicking the wp_register() function */
+if ( strpos($footer_content,'%admin%') !== FALSE ) {
+	
+	ob_start(); 
+		wp_register(); 
+		$admin_link = ob_get_contents(); 
+	ob_end_clean();
+	
+	$admin_link = str_replace( array('<li>', '</li>'), '', $admin_link);
+	
+	if ( $bfa_ata['nofollow'] == "Yes" ) { 
+		$admin_link = str_replace(' href=', ' rel="nofollow" href=', $admin_link); 
+	}
+	
+	$footer_content = str_replace("%admin%",  $admin_link, $footer_content);
+	
+}
+
+
+
 // RSS link
-$footer_content = str_replace("%rss%",  get_bloginfo('rss2_url'), $footer_content);
+if ( strpos($footer_content,'%rss%') !== FALSE ) {
+	$footer_content = str_replace("%rss%",  $bfa_ata['bloginfo_rss2_url'], $footer_content);
+}
+
+
+
 // Comments RSS link
-$footer_content = str_replace("%comments-rss%",  get_bloginfo('comments_rss2_url'), $footer_content);
+if ( strpos($footer_content,'%comments-rss%') !== FALSE ) {
+	$footer_content = str_replace("%comments-rss%",  $bfa_ata['bloginfo_comments_rss2_url'], $footer_content);
+}
+
+
+
 // Current Year
 $footer_content = str_replace("%current-year%",  date('Y'), $footer_content);
+
+
+// PHP 
+// not for WPMU
+if ( !file_exists(ABSPATH."/wpmu-settings.php") ) {
+	
+	if ( strpos($footer_content,'<?php ') !== FALSE ) {
+		ob_start(); 
+			eval('?>'.$footer_content); 
+			$footer_content = ob_get_contents(); 
+		ob_end_clean();
+	}
+	
+}
 
 
 return footer_output($footer_content);

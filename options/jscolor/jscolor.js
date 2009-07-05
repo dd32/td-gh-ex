@@ -40,14 +40,16 @@ function jscolor_init() {
 	var allowEmpty = false
 
 	// spectrum's width and height
-	var HVSize = [ 180, 101 ] // normal
-	//var HVSize = [ 120, 69 ] // small
-	//var HVSize = [ 102, 61 ] // tiny
+	// var HVSize = [ 720, 404 ] // huge
+	var HVSize = [ 540, 303 ] // large
+	//var HVSize = [ 360, 202 ] // normal
+	//var HVSize = [ 180, 101 ] // small
+
 
 	var padding = 10
 	var borderWidth = 1
 	var HVCrossSize = [ 15, 15 ]
-	var SSize = 22
+	var SSize = 66
 	var SArrowSize = [ 7, 11 ]
 	var SSampleSize = 4
 	var ClientSliderSize = 18

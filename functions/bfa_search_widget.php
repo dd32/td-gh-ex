@@ -8,6 +8,7 @@ function widget_search($args) {
 	// Use current theme search form if it exists
 	if ( file_exists($searchform_template) ) {
 		include_once($searchform_template);
+        
 	} else { ?>
 		<form id="searchform" method="get" action="<?php bloginfo('url'); ?>/"><div>
 			<label class="hidden" for="s"><?php _e('Search for:','atahualpa'); ?></label>

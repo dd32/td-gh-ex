@@ -1,5 +1,6 @@
-Wordpress Theme "Atahualpa" version 3.2
+Wordpress Theme "Atahualpa" version 3.4
 
+VISIT THE SUPPORT FORUMS AT http://forum.bytesforall.com/
 
 #####################################################################
 
@@ -7,17 +8,22 @@ INSTALLATION:
 
 #####################################################################
 
-1. Extract the file "atahualpa3.zip" on your desktop computer,
-i.e. with WinZip or 7-zip
+1. Extract the file "atahualpa34.zip", "atahualpa.zip" or similar 
+on your desktop computer, i.e. with WinZip or 7-zip
 
+This will create a directory named atahualpa (or atahualpaXX) with many 
+files and subdirectories. 
+
+From now on we'll call this directory "atahualpa" although it might be 
+"atahualpa34" or whatever for you. 
 
 #####################################################################
 
-2. Upload the complete folder "atahualpa3" with its contents to
+2. Upload the complete folder "atahualpa" with all its contents to
 your web hosting account to the directory
 /your wordpress-install/wp-content/themes/
-so the final destination of the "atahualpa3" folder becomes:
-/your wordpress-install/wp-content/themes/atahualpa3/
+so the final destination of the "atahualpa" folder becomes:
+/your wordpress-install/wp-content/themes/atahualpa/
 You will need a "FTP Client" Software for this
 
 #####################################################################
@@ -44,7 +50,7 @@ be http://www.your-domain.com/blog/wp-admin/
 
 #####################################################################
 
-4. Reload you blog homepage and see if the theme is active. If not, 
+4. Reload your blog homepage and see if the theme is active. If not, 
 repeat the steps above or post at http://forum.bytesforall.com/
 
 If it looks broken, it may be a matter of setting the theme options.
@@ -176,25 +182,9 @@ All in one SEO (many Atahualpa users are using it)
 and other SEO plugins
 
 
-#####################################################################
-
-- Atahualpa3 has no page.php, single.php, archive.php, archives.php
-This may confuse a plugin that expects to put something into one of 
-these files
-
-- The actual CSS styles for Atahualpa3 are located in style.css and header.php
-After you're totally done with all your customizations, you could view the source
-code of your site in the browser, cut the CSS rules from the header section, and paste them at the 
-bottom of style.css. Then remove the dynamic CSS part from header.php. That would save around 8-12 kbyte per pageview.
-
-Please note that images in CSS (i.e. background images) must be referenced like this 
-- in style.css: url(images/myimage.gif) works
-- in header.php: must be url(/wp-content/themes/atahualpa3/images/myimage.gif) or
-url(http://www.yoursite.com/wp-content/themes/atahualpa3/images/myimage.gif).
-url(images/myimage.gif) will NOT work in header.php. Whenever you reference an image via the 
-theme options (by putting CSS rules into one of the many textareas in the theme options area)
-you must reference the image as shown in the examples for header.php (because dynamic CSS
-will appear in header.php).
+- When you add CSS through "CSS Inserts" or other theme options: Absolute paths must be used, such as 
+url(http://www.yoursite.com/wp-content/themes/atahualpa/images/myimage.gif).
+A relative path such as url(images/myimage.gif) will NOT work in the theme options. 
 
 #####################################################################
 
@@ -202,7 +192,7 @@ will appear in header.php).
 LICENSE:
 
     "Atahualpa" is a WordPress theme
-    Copyright (C) 2008  BFA Webdesign, www.BytesForAll.com
+    Copyright (C) 2008-2009 Lmm Muenchen, BFA Webdesign (www.BytesForAll.com)
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by

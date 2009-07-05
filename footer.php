@@ -1,109 +1,104 @@
-<?php
-global $options;
-foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_option( $value['id'] ); } }
-// figure out sidebars
-global $cols;
-$cols = 1;
-if ( is_page() ) {
-#$current_page_id = $wp_query->get('page_id');
-$current_page_id = $wp_query->get_queried_object_id();
-	if ($bfa_ata_left_col_pages_exclude != "") { 
-	$pages_exlude_left = explode(",", str_replace(" ", "", $bfa_ata_left_col_pages_exclude));
-		if ( $bfa_ata_leftcol_on['page'] && !in_array($current_page_id, $pages_exlude_left) ) {
-		$cols++; $left_col = "on"; }
-	} else {
-		if ( $bfa_ata_leftcol_on['page'] ) {
-		$cols++; $left_col = "on"; }
-	}
-	if ($bfa_ata_right_col_pages_exclude != "") { 
-	$pages_exlude_right = explode(",", str_replace(" ", "", $bfa_ata_right_col_pages_exclude));
-		if ( $bfa_ata_rightcol_on['page'] && !in_array($current_page_id, $pages_exlude_right) ) {
-		$cols++; $right_col = "on"; }
-	} else {
-		if ( $bfa_ata_rightcol_on['page'] ) {
-		$cols++; $right_col = "on"; }
-	}
-} elseif ( is_category() ) {
-$current_cat_id = get_query_var('cat');
-	if ($bfa_ata_left_col_cats_exclude != "") {
-	$cats_exlude_left = explode(",", str_replace(" ", "", $bfa_ata_left_col_cats_exclude));
-		if ( $bfa_ata_leftcol_on['category'] && !in_array($current_cat_id, $cats_exlude_left) ) {
-		$cols++; $left_col = "on"; }
-	} else {
-		if ( $bfa_ata_leftcol_on['category'] ) {
-		$cols++; $left_col = "on"; }
-	}
-	if ($bfa_ata_right_col_cats_exclude != "") {
-	$cats_exlude_right = explode(",", str_replace(" ", "", $bfa_ata_right_col_cats_exclude));
-		if ( $bfa_ata_rightcol_on['category'] && !in_array($current_cat_id, $cats_exlude_right) ) {
-		$cols++; $right_col = "on"; }
-	} else {
-		if ( $bfa_ata_rightcol_on['category'] ) {
-		$cols++; $right_col = "on"; }
-	}
-} else {
-if ( (is_home() && $bfa_ata_leftcol_on['homepage']) || ( is_front_page() && $bfa_ata_leftcol_on['frontpage']) || 
-( is_single() && $bfa_ata_leftcol_on['single']) || ( is_date() && $bfa_ata_leftcol_on['date']) || 
-( is_tag() && $bfa_ata_leftcol_on['tag']) || ( is_search() && $bfa_ata_leftcol_on['search']) || 
-( is_author() && $bfa_ata_leftcol_on['author']) || ( is_404() && $bfa_ata_leftcol_on['404']) || 
-( is_attachment() && $bfa_ata_leftcol_on['attachment']) ) {
-	$cols++; $left_col = "on"; 
-	}
-if ( (is_home() && $bfa_ata_rightcol_on['homepage']) || ( is_front_page() && $bfa_ata_rightcol_on['frontpage']) || 
-( is_single() && $bfa_ata_rightcol_on['single']) || ( is_date() && $bfa_ata_rightcol_on['date']) || 
-( is_tag() && $bfa_ata_rightcol_on['tag']) || ( is_search() && $bfa_ata_rightcol_on['search']) || 
-( is_author() && $bfa_ata_rightcol_on['author']) || ( is_404() && $bfa_ata_rightcol_on['404']) || 
-( is_attachment() && $bfa_ata_rightcol_on['attachment']) ) {
-	$cols++; $right_col = "on"; 
-	}
-}
-?>
-		</td>
-		<!-- / Main Column -->	
+<?php /* if index.php or another page template (copied from index.php) was not used
+(i.e. by a plugin such as WPG2), the global $bfa_ata will be empty */
+global $bfa_ata; if ($bfa_ata == "")
+	include_once (TEMPLATEPATH . '/functions/bfa_get_options.php'); ?>
+</td>
+<!-- / Main Column -->
 
-		<?php if ( $right_col == "on" ) { ?>
-		<!-- Right Sidebar -->
-		<td id="right">
+<?php if ( $bfa_ata['right_col2'] == "on" ) { ?>
+<!-- Right Inner Sidebar -->
+<td id="right-inner">
 
-			<?php // Widgetize the Right Sidebar 
-			if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar(2) ) : echo "To put some content here, go to Site Admin -> Appearance/Presentation -> Widgets -> Select \"Right Sidebar\" -> Click \"Show\" -> Click on \"Add\" on one of the widgets on the left side -> Click \"Save changes\" -> Done";
-			endif; ?>
+	<?php // Widgetize the Right Inner Sidebar
+	if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Right Inner Sidebar') ) : ?>
 
-		</td>
-		<!-- / Right Sidebar -->
-		<?php } ?>
+		<!-- No default content for the RIGHT INNER sidebar -->
 
-	</tr>
-	<!-- / Main Body -->
+	<?php endif; ?>
 
-	<tr>
+</td>
+<!-- / Right Inner Sidebar -->
+<?php } ?>
 
-		<!-- Footer -->
-		<td id="footer" colspan="<?php echo $cols; ?>">	
+<?php if ( $bfa_ata['right_col'] == "on" ) { ?>
+<!-- Right Sidebar -->
+<td id="right">
 
-		<p>
-		<?php echo bfa_footer($bfa_ata_footer_style_content); ?>
-		</p>
-		<?php if ($bfa_ata_footer_show_queries == "Yes - visible") { ?>
-		<p>
-		<?php echo $wpdb->num_queries; ?><?php _e(' queries. ','atahualpa'); ?><?php timer_stop(1); ?><?php _e(' seconds.','atahualpa'); ?>
-		</p>
-		<?php } ?>
-		
-		<?php if ($bfa_ata_footer_show_queries == "Yes - in source code") { ?>
-		<!--
-		<?php echo $wpdb->num_queries; ?><?php _e(' queries. ','atahualpa'); ?><?php timer_stop(1); ?><?php _e(' seconds.','atahualpa'); ?>
-		-->
-		<?php } ?>		
-	
-		<?php wp_footer(); ?>
-		</td>
-		<!-- / Footer -->
-		
-	</tr>
+	<?php // Widgetize the Right Sidebar
+	if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Right Sidebar') ) : ?>
+
+    	<div class="widget"><div class="widget-title">
+    	<h3>Recent Posts</h3></div><div class="widget-content">
+    	<?php $r = new WP_Query(array(
+    		'showposts' => 20,
+    		'what_to_show' => 'posts',
+    		'nopaging' => 0,
+    		'post_status' => 'publish',
+    		'caller_get_posts' => 1));
+    	if ($r->have_posts()) : ?>
+    	<ul>
+    	<?php  while ($r->have_posts()) : $r->the_post(); ?>
+    	<li><a href="<?php the_permalink() ?>"><?php if ( get_the_title() ) the_title(); else the_ID(); ?> </a></li>
+    	<?php endwhile; ?>
+    	</ul>
+    	<?php wp_reset_query();  // Restore global post data stomped by the_post().
+    	endif; ?>
+    	</div></div>
+
+    	<div class="widget"><div class="widget-title">
+    	<?php wp_list_bookmarks('category_before=&category_after=&title_before=<h3>&title_after=</h3></div><div class="widget-content">'); ?>
+    	</div></div>
+
+    	<div class="widget"><div class="widget-title">
+    	<h3><?php _e('Meta','atahualpa'); ?></h3>
+    	</div><div class="widget-content">
+    	<ul>
+    		<?php wp_register(); ?>
+    		<li><?php wp_loginout(); ?></li>
+    		<li><a href="http://wordpress.org/" title="
+    		<?php _e('Powered by WordPress, state-of-the-art semantic personal publishing platform.','atahualpa'); ?>">
+    		<?php _e('WordPress','atahualpa'); ?></a></li>
+    		<?php wp_meta(); ?>
+    	</ul>
+    	</div></div>
+
+	<?php endif; ?>
+
+</td>
+<!-- / Right Sidebar -->
+<?php } ?>
+
+</tr>
+<!-- / Main Body -->
+<tr>
+
+<!-- Footer -->
+<td id="footer" colspan="<?php echo $bfa_ata['cols']; ?>">
+
+    <p>
+    <?php echo bfa_footer($bfa_ata['footer_style_content']); ?>
+    </p>
+    <?php if ($bfa_ata['footer_show_queries'] == "Yes - visible") { ?>
+    <p>
+    <?php echo $wpdb->num_queries; ?><?php _e(' queries. ','atahualpa'); ?><?php timer_stop(1); ?><?php _e(' seconds.','atahualpa'); ?>
+    </p>
+    <?php } ?>
+
+    <?php if ($bfa_ata['footer_show_queries'] == "Yes - in source code") { ?>
+    <!--
+    <?php echo $wpdb->num_queries; ?><?php _e(' queries. ','atahualpa'); ?><?php timer_stop(1); ?><?php _e(' seconds.','atahualpa'); ?>
+    -->
+    <?php } ?>
+
+    <?php wp_footer(); ?>
+
+</td>
+<!-- / Footer -->
+
+</tr>
 </table><!-- / layout -->
 </div><!-- / container -->
 </div><!-- / wrapper -->
-<?php echo ($bfa_ata_html_inserts_body_bottom != "" ? apply_filters(widget_text, $bfa_ata_html_inserts_body_bottom) : ''); ?>
+<?php echo ($bfa_ata['html_inserts_body_bottom'] != "" ? apply_filters(widget_text, $bfa_ata['html_inserts_body_bottom']) : ''); ?>
 </body>
 </html>
