@@ -127,7 +127,7 @@ if ( !empty($withcomments) && !is_single() ) {
 
 
 
-<body onload="slideMenu.build('sm',340,10,10,0)">
+<body>
 
 
 
@@ -145,7 +145,7 @@ if ( !empty($withcomments) && !is_single() ) {
 		 <div class="intro"><h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1> <div class="description"><?php bloginfo('description'); ?></div></div>
 
 
-  <div id="ad-box"><?php if (file_exists(TEMPLATEPATH . '/' . 'ad.html')) : ?><?php readintro('ad.html'); ?><?php endif; ?></div></div>
+  <div id="ad-box"><?php if (file_exists(TEMPLATEPATH . '/' . 'topbar.php')) : ?><?php include (TEMPLATEPATH . '/topbar.php'); ?><?php endif; ?></div></div>
 
 
 

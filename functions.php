@@ -3,6 +3,8 @@
  * @package WordPress
  * @subpackage Default_Theme
  */
+if ( function_exists('register_sidebars') )
+register_sidebars(2);
 
 function readintro($filename)
 {		
@@ -25,11 +27,11 @@ function the_breadcrumb() {
 		echo get_option('home');
 		echo '">';
 		bloginfo('name');
-		echo '</a><img src="http://www.ieub.org/wp-content/themes/ieubistique/images/background.png" alt="in"></img>&nbsp;';
+		echo "</a> | ";
 		if (is_category() || is_single()) {
 			the_category('title_li=');
 			if (is_single()) {
-				echo '<img src="http://www.ieub.org/wp-content/themes/ieubistique/images/background.png" alt="in"></img>&nbsp;&nbsp;&nbsp;';
+				echo " | ";
 				the_title();
 			}
 		} elseif (is_page()) {

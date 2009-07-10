@@ -1,7 +1,7 @@
 /*
 Theme Name: B-side
-Description: Bright clean and elegant theme with two columns, right sidebar and widget-ready.Based off <a href="http://www.arterror.nl/">MMistique</a>. WordPress theme which is also based on the famous <a href="http://binarybonsai.com/kubrick/">Kubrick</a>.
-Version: 1.0
+Description:My very first theme for Wordpress with two columns, right sidebar and widget-ready.Based off <a href="http://www.arterror.nl/">MMistique</a> WordPress theme which was also based on the famous <a href="http://binarybonsai.com/kubrick/">Kubrick</a>.
+Version: 1.1
 Author: Brieuc de la Fourniere - ieub
 Author URI: http://www.ieub.org
 Tags: two-columns, fixed-width, light, blue, green
@@ -293,19 +293,25 @@ text-decoration: none;
 
 #wp-calendar #prev a, #wp-calendar #next a {
 	font-size: 9pt;
+	color: #ffffff;
 	}
 
 #wp-calendar a {
 	text-decoration: none;
+		color: #ffffff;
+
 	}
 
 #wp-calendar caption {
 	font: bold 1.3em Verdana;
+		color: #ffffff;
+
 	text-align: center;
 	}
 
 #wp-calendar th {
 	font-style: normal;
+		color: #ffffff;
 	text-transform: capitalize;
 	}
 	
@@ -708,6 +714,7 @@ text-decoration: none;
 	empty-cells: show;
 	margin: 10px auto 0;
 	width: 155px;
+	color: #96c147;
 	}
 
 #wp-calendar #next a {
@@ -920,12 +927,20 @@ text-decoration: none;
 	}
 
 #ad-box {
-	background-color: #96c147;
+	background: #96c147 ;
 	width: 380px;
 	height: 120px;
-	padding:4px 4px 4px 4px;
-	margin: 2px 30px 0 0px;
+	padding:0 0 0 0;
+	margin: 10px 20px 0 0;
     float: right;
+	}
+	
+#topbar {
+	margin: 8px 0 0 20px;
+	text-decoration: none;
+	list-style-image: none;
+	margin-bottom: 15px;
+	list-style-type:none;
 	}
 
 #search-text {
