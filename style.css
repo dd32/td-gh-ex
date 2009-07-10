@@ -1,7 +1,7 @@
 /*
 Theme Name: B-side
 Description:My very first theme for Wordpress with two columns, right sidebar and widget-ready.Based off <a href="http://www.arterror.nl/">MMistique</a> WordPress theme which was also based on the famous <a href="http://binarybonsai.com/kubrick/">Kubrick</a>.
-Version: 1.1
+Version: 1.2
 Author: Brieuc de la Fourniere - ieub
 Author URI: http://www.ieub.org
 Tags: two-columns, fixed-width, light, blue, green
@@ -39,23 +39,28 @@ text-decoration: none;
 	}
 	
 #content a:visited {
-    color: #96c147;
+	color: #007dc1;
 text-decoration: none;
 	}
 
 #content h1 {
     color: #007dc1;
     font-size: 24px;
+		margin-bottom: 20px;
+
 	}
 
 #content h2 {
-    color: #96c147;
+    color: #53a1d1;
     font-size: 18px;
+	margin-bottom: 16px;
 	}
 
 #content h3 {
     color: #53a1d1;
     font-size: 16px;
+		margin-bottom: 8px;
+
 	}
 
 #content h4 {
@@ -145,6 +150,7 @@ padding-left: 20px;
 	}
 h2.posttitle {
 	font-size: 1.6em;
+		color: #53a1d1;
 padding-left: 20px;	
 	}
 
@@ -153,7 +159,7 @@ padding-left: 20px;
 	font-weight:normal;
 	font-size: 18px;
 	color: #53a1d1;
-	width: 210px;
+	width: 190px;
 	height: 64px;
     background: transparent url(images/sidebar_top.png) no-repeat scroll 0 0;
 	}
@@ -195,7 +201,7 @@ h3 {
 	}
 
 h2, h2 a, h2 a:visited, h3, h3 a, h3 a:visited {
-	color: #0073b4;
+	color: #53a1d1;
 	    text-align: left;
 text-decoration: none;
 
@@ -204,7 +210,7 @@ text-decoration: none;
 
 h2, h2 a, h2 a:hover, h2 a:visited, h3, h3 a, h3 a:hover, h3 a:visited, #sidebar h2, #wp-calendar caption, cite {
 	text-decoration: none;
-	color: #0073b4;
+	color: #53a1d1;
 
 	}
 
@@ -285,7 +291,7 @@ acronym, abbr, span.caps {
 	}
 
 a:hover {
-	color: #96c147;
+	color: #53a1d1;
 border-bottom:1px dashed #96c147;
 text-decoration: none;
 
@@ -453,8 +459,8 @@ h3 {
 	}
 
 h3.comments {
-	padding: 0 0 0 30px;
-	margin: 40px auto 20px ;
+	padding: 0 0 0 10px;
+	margin: 20px auto 20px ;
 	}
 
 /* End Headers */
@@ -640,17 +646,17 @@ select {
 
 .alt {
 	margin: 0;
-	padding:0 0 0 20px;
+	padding:0 0 0 0px;
 	}
 
 .commentlist {
-	padding: 0 0 0 30px;
+	padding: 0 0 0 10px;
 	text-align: justify;
 	}
 
 .commentlist li {
-	margin: 15px 0 10px;
-	padding: 5px 5px 10px 30px;
+	margin: 15px 0 0 0px;
+	padding: 5px 5px 10px 10px;
 	list-style: none;
 	}
 
@@ -661,7 +667,7 @@ select {
 
 .commentlist p {
 	margin: 10px 5px 10px 0;
-	padding: 0 0 0 30px;
+	padding: 0 0 0 0px;
 
 	}
 
