@@ -35,9 +35,19 @@
 		</div>
 </div>
 	<div id="wrap">
-	<div id="pagetop"><ul>
+	<div id="pagetop" class="menulist"><ul>
  <li><a href="<?php echo get_settings('home'); ?>">Home</a></li>
-<?php wp_list_pages('orderby=name&title_li='); ?>
+ <?php
+ //Change the $howmany variable to however many pages you want to display on the Navigation bar. Keep in mind if you go too high and have long page names, it will go over to a new line and look ugly. 8 should be fine for most users.
+$howmany = 8;
+$pages = wp_list_pages("orderby=name&title_li=&depth=1&echo=0");
+$pages_arr = explode("\n", $pages);
+for($i=0;$i<$howmany;$i++){
+echo $pages_arr[$i];
+}
+
+?>
+<?php //wp_list_pages('orderby=name&title_li=&depth=1&offset=2'); ?>
 </ul></div>
 	<div id="page">
 <hr />

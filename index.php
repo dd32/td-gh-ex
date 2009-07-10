@@ -11,8 +11,7 @@ get_header(); ?>
 	<?php if (have_posts()) : ?>
 
 		<?php while (have_posts()) : the_post(); ?>
-
-			<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
+		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 				<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 				<small>By <span class="authorz"><?php the_author() ?></span> <?php the_time('F jS, Y') ?>, under  <span class="authorz"><?php the_category(', ') ?></span></small>
 
