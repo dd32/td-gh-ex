@@ -28,7 +28,6 @@
 
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/slidemenu/slidemenu.css" />
 
 
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
@@ -88,12 +87,10 @@ if ( !empty($withcomments) && !is_single() ) {
 
 
 <?php wp_head(); ?>
-<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/slidemenu/slidemenu.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery-1.2.3.min.js"></script>
     <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.easing.min.js"></script>
     <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.lavalamp.min.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/smoothscroll.js"></script>
-	<script src="Scripts/swfobject_modified.js" type="text/javascript"></script>
 <script type="text/javascript">
         $(function() {
             $("#lmenu").lavaLamp({

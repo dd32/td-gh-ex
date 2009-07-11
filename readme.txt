@@ -26,15 +26,6 @@ Installation
 	* Activate the theme.
 	* Your selection should now become active.
 
-Editing the intro text
-------------------------------------------------------------------------
-
-In order to edit the text that is showed on the main intro you need to open the file ad.html that is in this themes folder.
-This file can contain any text and html tags, so once you open it, you can edit it as you would like and the text you entered will appear in the intro.
-For best practice, use the <h3> tag for the header and the <p> tag for the paragraph. If you want to drop down a line use the <br/> tag.
-
-If you do not want the intro to appear at all, just delete the ad.html file and the intro section will not be shown in your site.
-
 License
 ------------------------------------------------------------------------
 	

@@ -1,7 +1,7 @@
 /*
 Theme Name: B-side
 Description:My very first theme for Wordpress with two columns, right sidebar and widget-ready.Based off <a href="http://www.arterror.nl/">MMistique</a> WordPress theme which was also based on the famous <a href="http://binarybonsai.com/kubrick/">Kubrick</a>.
-Version: 1.2
+Version: 1.2.1
 Author: Brieuc de la Fourniere - ieub
 Author URI: http://www.ieub.org
 Tags: two-columns, fixed-width, light, blue, green
@@ -197,7 +197,7 @@ h3 {
 	color: #ffffff;
     text-align: left;
     float: left;
-    margin: 17px 0px 0 18px;
+    margin: 16px 0px 0 18px;
 	}
 
 h2, h2 a, h2 a:visited, h3, h3 a, h3 a:visited {
