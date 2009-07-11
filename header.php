@@ -1,11 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
+<head><meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 <?php /* if index.php or another page template (copied from index.php) was not used
 (i.e. by a plugin such as WPG2), the global $bfa_ata would be empty */
 global $bfa_ata; if ($bfa_ata == "") include_once (TEMPLATEPATH . '/functions/bfa_get_options.php'); ?>
-<link rel="stylesheet" href="<?php echo $bfa_ata['siteurl']; ?>/?bfa_ata_file=css" type="text/css" media="screen" />
+<?php if ( get_query_var('preview') != 1 AND $bfa_ata['css_external'] == "External" ) { ?>
+<link rel="stylesheet" href="<?php echo $bfa_ata['get_option_home']; ?>/?bfa_ata_file=css" type="text/css" />
+<?php } ?>
 <?php include (TEMPLATEPATH . '/functions/bfa_meta_tags.php'); ?>
 <?php if ($bfa_ata['favicon_file'] != "") { ?>
 <link rel="shortcut icon" href="<?php echo $bfa_ata['template_directory']; ?>/images/favicon/<?php echo $bfa_ata['favicon_file']; ?>" />
@@ -16,8 +18,10 @@ global $bfa_ata; if ($bfa_ata == "") include_once (TEMPLATEPATH . '/functions/bf
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 <link rel="alternate" type="application/atom+xml" title="<?php bloginfo('name'); ?> Atom Feed" href="<?php bloginfo('atom_url'); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-<script type="text/javascript" src="<?php echo $bfa_ata['siteurl']; ?>/wp-includes/js/jquery/jquery.js?ver=1.2.6"></script>
-<script type="text/javascript" src="<?php echo $bfa_ata['siteurl']; ?>/?bfa_ata_file=js"></script>
+<script type="text/javascript" src="<?php echo $bfa_ata['get_option_home']; ?>/wp-includes/js/jquery/jquery.js?ver=1.2.6"></script>
+<?php if ( get_query_var('preview') != 1 AND $bfa_ata['javascript_external'] == "External" ) { ?>
+<script type="text/javascript" src="<?php echo $bfa_ata['get_option_home']; ?>/?bfa_ata_file=js"></script>
+<?php } ?>
 <?php if ( function_exists('wp_list_comments') AND is_singular() 
 # AND $bfa_ata['include_wp_comment_reply_js'] == "No" 
 ) { 

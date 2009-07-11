@@ -6,7 +6,7 @@ function bfa_ata_admin() {
     if ( $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings reset.</strong></p></div>';
 
 $theme_name = "Atahualpa";
-$theme_version = "3.4";
+$theme_version = "3.4.1";
 $url_base = get_bloginfo('template_directory');
 
 $border_styles = array("solid", "dotted", "dashed", "double", "groove", "ridge", "inset", "outset");

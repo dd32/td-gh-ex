@@ -1,13 +1,13 @@
 <?php 
+#global $bfa_ata; if ($bfa_ata == "") include_once (TEMPLATEPATH . '/functions/bfa_get_options.php'); 
 if ( $bfa_ata['javascript_external'] == "Inline" ) {
-	#global $bfa_ata; if ($bfa_ata == "") include_once (TEMPLATEPATH . '/functions/bfa_get_options.php'); 
 	echo '<script type="text/javascript">'; 
 } else { 
 	header("Content-type: application/x-javascript"); 
 }
-if ( $bfa_ata['javascript_compress'] == "Yes" ) ob_start("compress");
+if ( $bfa_ata['javascript_compress'] == "Yes" ) ob_start("bfa_compress_js");
 
-function compress($buffer) {
+function bfa_compress_js($buffer) {
 	/* remove comments */
 	$buffer = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $buffer);
 	/* remove tabs, spaces, newlines, etc. */

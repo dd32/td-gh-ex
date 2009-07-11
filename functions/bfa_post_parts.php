@@ -74,8 +74,10 @@ function bfa_post_headline($before = '<div class="post-headline">', $after = '</
 
 	if ( is_single() OR is_page() ) {
 		global $post;
-		$bfa_ata_body_title =get_post_meta($post->ID, 'bfa_ata_body_title', true);
-		$bfa_ata_body_title_saved =get_post_meta($post->ID, 'bfa_ata_body_title_saved', true);
+		$bfa_ata_body_title = get_post_meta($post->ID, 'bfa_ata_body_title', true);
+		if (!$bfa_ata_body_title == '') {
+			$bfa_ata_body_title_saved = get_post_meta($post->ID, 'bfa_ata_body_title_saved', true);
+		}
 	}
 	
 	if ( (!is_single() AND !is_page()) OR !($bfa_ata_body_title_saved == 1 AND $bfa_ata_body_title == '' ) ) {

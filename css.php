@@ -1,14 +1,13 @@
 <?php 
+#global $bfa_ata; if ($bfa_ata == "") include_once (TEMPLATEPATH . '/functions/bfa_get_options.php'); 
 if ( $bfa_ata_preview == 1 OR $bfa_ata['css_external'] == "Inline" ) {
-	/* needed if preview and options not saved yet */
-	global $bfa_ata; if ($bfa_ata == "") include_once (TEMPLATEPATH . '/functions/bfa_get_options.php'); 
 	echo '<style type="text/css">'; 
 } else { 
 	header("Content-type: text/css"); 
 }
-if ( $bfa_ata['css_compress'] == "Yes" ) ob_start("compress");
+if ( $bfa_ata['css_compress'] == "Yes" ) ob_start("bfa_compress_css");
 
-function compress($buffer) {
+function bfa_compress_css($buffer) {
 	
 	/* remove comments */
 	$buffer = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $buffer);
@@ -665,11 +664,12 @@ and the left border of their parent (since the parent contains the sub item).
 You may actually like that, it looks interesting. To try it out, comment all the next 
 rules up to "BFA SUBSCRIBE WIDGET" */
  
-/* First, remove the left border and padding from the <LI> */
+/* First, remove the left border and padding from the <LI>. The margin stays on the <LI>'s 
+because if the <A>'s of the cateories widget were set to display:inline (default setting) 
+then margin would work there */
 div.widget_pages ul li, 
 div.widget_categories ul li {
 	border-left: 0 !important;
-	margin: 0 !important;
 	padding: 0 !important;
 }
 
@@ -680,15 +680,12 @@ div.widget_pages ul li a:active,
 div.widget_categories ul li a:link,
 div.widget_categories ul li a:visited, 
 div.widget_categories ul li a:active {
-	display: block !important;
-	margin: 2px 0 2px <?php echo $bfa_ata['widget_lists']['li-margin-left']; ?>px;
 	padding: 0 0 0 <?php echo $bfa_ata['widget_lists']['link-padding-left']; ?>px; 
 	border-left: solid <?php echo $bfa_ata['widget_lists']['link-border-left-width']; ?>px #<?php echo $bfa_ata['widget_lists']['link-border-left-color']; ?>;
 	}
 
 div.widget_pages ul li a:hover,
 div.widget_categories ul li a:hover {
-	display: block !important;
 	border-left: solid <?php echo $bfa_ata['widget_lists']['link-border-left-width']; ?>px #<?php echo $bfa_ata['widget_lists']['link-border-left-hover-color']; ?>; 
 }
 
@@ -698,15 +695,12 @@ div.widget_pages ul li ul li a:active,
 div.widget_categories ul li ul li a:link,
 div.widget_categories ul li ul li a:visited, 
 div.widget_categories ul li ul li a:active {
-	display: block !important;
-	margin: 2px 0 2px <?php echo $bfa_ata['widget_lists2']['li-margin-left']; ?>px;
 	padding: 0 0 0 <?php echo $bfa_ata['widget_lists2']['link-padding-left']; ?>px; 
 	border-left: solid <?php echo $bfa_ata['widget_lists2']['link-border-left-width']; ?>px #<?php echo $bfa_ata['widget_lists']['link-border-left-color']; ?>;
 	}
 
 div.widget_pages ul li ul li a:hover,
 div.widget_categories ul li ul li a:hover {
-	display: block !important;
 	border-left: solid <?php echo $bfa_ata['widget_lists2']['link-border-left-width']; ?>px #<?php echo $bfa_ata['widget_lists']['link-border-left-hover-color']; ?>; 
 }
 
@@ -716,16 +710,34 @@ div.widget_pages ul li ul li ul li a:active,
 div.widget_categories ul li ul li ul li a:link,
 div.widget_categories ul li ul li ul li a:visited, 
 div.widget_categories ul li ul li ul li a:active {
-	display: block !important;
-	margin: 2px 0 2px <?php echo $bfa_ata['widget_lists3']['li-margin-left']; ?>px;
 	padding: 0 0 0 <?php echo $bfa_ata['widget_lists3']['link-padding-left']; ?>px; 
 	border-left: solid <?php echo $bfa_ata['widget_lists3']['link-border-left-width']; ?>px #<?php echo $bfa_ata['widget_lists']['link-border-left-color']; ?>;
 	}
 
 div.widget_pages ul li ul li ul li a:hover,
 div.widget_categories ul li ul li ul li a:hover {
-	display: block !important;
 	border-left: solid <?php echo $bfa_ata['widget_lists3']['link-border-left-width']; ?>px #<?php echo $bfa_ata['widget_lists']['link-border-left-hover-color']; ?>; 
+}
+
+/* The pages widget gets "block" because it usually has only 
+one link per <LI> and no text */
+div.widget_pages ul li a:link,
+div.widget_pages ul li a:active,
+div.widget_pages ul li a:visited,
+div.widget_pages ul li a:hover {
+	display: block !important;
+}
+
+/* The category widget gets "inline" per default or otherwise the 
+post count would wrap into the next line. If no post count is displayed,
+can be chosen at Theme Options -> Style Widgets -> Category Widget Display Type. 
+With "block", links that don't fit into one line will align properly (as a block) 
+on the left side. */
+div.widget_categories ul li a:link,
+div.widget_categories ul li a:active,
+div.widget_categories ul li a:visited,
+div.widget_categories ul li a:hover {
+	display: <?php echo $bfa_ata['category_widget_display_type']; ?> !important;
 }
 
 
@@ -1659,22 +1671,26 @@ img {
 	}
 
 .post img.size-full {
+<?php if(strpos($bfa_ata['layout_width'], 'px') === FALSE) { ?>
 	max-width: 96%;		/* 	resize images in the main column if needed.
 							97% so images with padding and border don't touch
 							the right sidebar while being resized. Change this 
 							to 100% if you want, if your images
 							don't have padding and a border */
 	width: auto 100%;
+<?php } ?>
 	margin: 5px 0 5px 0;
 	}
 
 
 
+<?php if(strpos($bfa_ata['layout_width'], 'px') === FALSE) { ?>
 /* hiding from IE6 which would stretch the image vertically. 
 IE6 will get width and height via jQuery */
-div[class~=post] img { 
+div.post img[class~=size-full] { 
 	height: auto; /* FF & Safari need auto */
 	}	
+<?php } ?>
 
 .post img.alignleft {
 	float: left; 

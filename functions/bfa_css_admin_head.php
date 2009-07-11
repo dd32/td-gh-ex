@@ -98,7 +98,13 @@ if ( $_GET['page'] == "functions.php" ) {
 			} 
 			table.bfa-optiontable thead td {
 				text-align: center; background-color: #c4e2fb; font-weight: bold; padding: 5px; 
-			} 
+			}
+			/* For widget area parameters table */ 
+			td.bfa-td {
+				vertical-align: top;
+				padding: 15px 5px 5px 5px;
+				border-top: dashed 1px black;
+			}
 			div.more_blog_title_font {
 				display: none;
 			} 

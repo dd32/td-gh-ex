@@ -16,6 +16,14 @@ if ( function_exists('register_sidebar') ) {
 	));
 
 	register_sidebar(array(
+		'name'=>'Right Sidebar',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<div class="widget-title"><h3>',
+		'after_title' => '</h3></div>',
+	));
+	
+	register_sidebar(array(
 		'name'=>'Left Inner Sidebar',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
@@ -31,13 +39,7 @@ if ( function_exists('register_sidebar') ) {
 		'after_title' => '</h3></div>',
 	));
 			
-	register_sidebar(array(
-		'name'=>'Right Sidebar',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<div class="widget-title"><h3>',
-		'after_title' => '</h3></div>',
-	));
+
 	
 	// Register additional extra widget areas:
 	$bfa_ata_extra_widget_areas = maybe_unserialize(get_option('bfa_widget_areas'));
@@ -53,6 +55,8 @@ if ( function_exists('register_sidebar') ) {
 	}
 
 } 
+
+
 
 
 // Load functions
@@ -86,9 +90,11 @@ if (function_exists('sociable_html'))
 if (file_exists(ABSPATH."/wpmu-settings.php")) 
 	include_once (TEMPLATEPATH . '/functions/bfa_m_find_in_dir.php');
 
-// get the theme options
+// get default theme options
 include_once (TEMPLATEPATH . '/functions/bfa_theme_options.php');
-
+// Load options
+include_once (TEMPLATEPATH . '/functions/bfa_get_options.php');
+global $bfa_ata;
 
 // add jquery function only to theme page or widgets won't work in 2.3 and older
 #if ( $_GET['page'] == basename(__FILE__) ) { 
@@ -194,25 +200,44 @@ normal page but do whatever we define below. In this
 case "get the saved options and display the CSS file" */
 add_action('template_redirect', 'bfa_css_js_redirect');
 function bfa_css_js_redirect() {
+	global $bfa_ata;
 	$bfa_ata_file_value = get_query_var('bfa_ata_file');
 	$bfa_ata_preview = get_query_var('preview');
 	if ( $bfa_ata_file_value == "css" OR $bfa_ata_file_value == "js" ) {
-		include_once (TEMPLATEPATH . '/functions/bfa_get_options.php');
+		#include_once (TEMPLATEPATH . '/functions/bfa_get_options.php');
 		include_once (TEMPLATEPATH . '/' . $bfa_ata_file_value . '.php');
 		exit; // this stops WordPress entirely
 	}
-	/* The above code doesn't work if the theme is being previewed.
-	In this case we're just including the css.php inline in the header. Otherwise
-	the theme would look broken in the preview due to the missing CSS */
-	if ( $bfa_ata_preview == 1 ) { 
-		add_action('wp_head', 'bfa_inline_css');
-		function bfa_inline_css() {
-			$bfa_ata_preview = 1;
-			include_once (TEMPLATEPATH . '/' . 'css.php');
-		}
-	}
-	
 }
+
+/* The above code doesn't work if the theme is being previewed.
+In this case we're just including the css.php inline in the header. Otherwise
+the theme would look broken in the preview due to the missing CSS */
+if ( get_query_var('preview') == 1 ) { 
+	$bfa_ata['css_external'] == "Inline";
+	$bfa_ata['javascript_external'] == "Inline";
+}
+
+/* If this is a preview, CSS was set to be displayed Inline at Theme Options: */
+if ( $bfa_ata['css_external'] == "Inline" ) { 
+	add_action('wp_head', 'bfa_inline_css');
+}
+	
+function bfa_inline_css() {
+	global $bfa_ata;
+	include_once (TEMPLATEPATH . '/' . 'css.php');
+}
+
+if ( $bfa_ata['javascript_external'] == "Inline" ) { 
+	add_action('wp_head', 'bfa_inline_javascript');
+}
+	
+function bfa_inline_javascript() {
+	global $bfa_ata;
+	include_once (TEMPLATEPATH . '/' . 'js.php');
+}
+
+
 
 
 // Custom Excerpts 
@@ -230,7 +255,7 @@ function bfa_wp_trim_excerpt($text) { // Fakes an excerpt if needed
 		if (count($words) > $excerpt_length) {
 			array_pop($words);	
 			$custom_read_more = str_replace('%permalink%', get_permalink(), $bfa_ata['custom_read_more']);
-			$custom_read_more = str_replace('%title%', the_title('','',FALSE), $bfa_ata['custom_read_more']);
+			$custom_read_more = str_replace('%title%', the_title('','',FALSE), $custom_read_more);
 			array_push($words, $custom_read_more);
 			$text = implode(' ', $words);
 		}

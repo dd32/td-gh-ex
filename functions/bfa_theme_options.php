@@ -426,10 +426,18 @@ $options1 = array(
             "editable" => "yes",
 			"size" => "30",
             "std" => "%pages %logo %bar1 %image %bar2",
-            "info" => "Choose from 6 header items to arrange a custom header area:
+            "info" => "Choose from 10 header items to arrange a custom header area:
             <ul><li><code>%pages</code> - The horizontal drop down menu bar for
-            \"Page\" pages</li><li><code>%cats</code> - The horizontal drop down
-            menu bar for categories</li><li><code>%logo</code> - The logo area,
+            \"Page\" pages</li><li><code>%page-center</code> - Like above but centered. 
+			Note: There's no S in this tag. It's <strong>not</strong> %page<strong>S</strong>-center</li>
+			<li><code>%page-right</code> - Like above but right-aligned. 
+			Note: There's no S in this tag. It's <strong>not</strong> %page<strong>S</strong>-right</li>
+			<li><code>%cats</code> - The horizontal drop down
+            menu bar for categories</li><li><code>%cat-center</code> - Like above but centered. 
+			Note: There's no S in this tag. It's <strong>not</strong> %cat<strong>S</strong>-center</li>
+			<li><code>%cat-right</code> - Like above but right-aligned. 
+			Note: There's no S in this tag. It's <strong>not</strong> %cat<strong>S</strong>-right</li>
+			<li><code>%logo</code> - The logo area,
             including the logo icon, the blog title & description, the search
             box and the RSS/Email icons</li><li><code>%image</code> -
 			The rotating (or static) header image with the (optional) opacity
@@ -1859,55 +1867,68 @@ This is the shortest and most basic way you can create a widget area.<br />
 <code>&lt;?php bfa_widget_area('name=My new widget area'); ?&gt;</code>
 
 <h3>Example:</h3>
-This example uses more parameters. It creates a widget area spanning the whole available width, with 4 cells, each of which is a widget area in its own right. You can 
-specify an alignment and a width for all or particular widget area cells. Finally, you can specify opening and closing HTML tags for widgets as a whole and the widget titles.<br />
+This example uses more parameters. It creates a widget area spanning the whole available width (like all widget areas), with 4 widget area cells (default: 1). Each widget area cell is a widget area in its own right. You can 
+specify an alignment and a width for all or particular widget area cells. Finally, you can specify opening and closing HTML tags for the widgets that will be placed in 
+these new widget area cells.<br />
 <code>&lt;?php bfa_widget_area('name=My widget area&cells=4&align=1&align_2=9&align_3=7&width_4=700&before_widget=&lt;div id=\"%1$s\" class=\"header-widget %2$s\"&gt;&after_widget=&lt;/div&gt;'); ?&gt;</code>
 
 
 
-<h3>Available paramaters:</h3>
+<h3>Available parameters:</h3>
 <table>
 <tr>
-<td colspan='2'>
+<td class='bfa-td' colspan='2' style='border-top-style: solid'>
 <strong>Mandatory:</strong>
 </td>
 </tr><tr>
-<td><code>name</code></td>
-<td>Name under which all cells of this widget area will be listed at Site Admin -> Appearance -> Widgets
-							A widget area with 3 cells and a name of \"My widget area\" creates 3 widget cells which will be listed as
+<td class='bfa-td'><code>name</code></td>
+<td class='bfa-td'>Name under which all cells of this widget area will be listed at Site Admin -> Appearance -> <a href='widgets.php'>Widgets</a> (see drop down select menu at top right).<br /><br />
+							<em>A widget area with 3 cells and a name of \"My widget area\" creates 3 widget cells which will be listed as
 							\"My widget area 1\", \"My widget area 2\" and \"My widget area 3\" at Site Admin -> Appearance -> Widgets, 
-							with the CSS ID's \"my_widget_area_1\", \"my_widget_area_2\" and \"my_widget_area_3\". 
+							with the CSS ID's \"my_widget_area_1\", \"my_widget_area_2\" and \"my_widget_area_3\". </em>
 </td>
 </tr><tr>
-<td colspan='2'>		
+<td class='bfa-td' colspan='2' style='border-top-style: solid'>		
 <strong>Optional:</strong>
 </td>
 </tr><tr>
-<td><code>cells</code></td>
-<td>Amount of (table) cells. Each cell is a new widget area. Default: 1</td>
+<td class='bfa-td'><code>cells</code></td>
+<td class='bfa-td'>Amount of (table) cells. Each cell is a new widget area. Default: 1</td>
 </tr><tr>
-<td><code>align</code></td>
-<td>Default alignment for all cells.<br />Default: <code>2</code> (= center top). <code>1</code> = center middle, <code>2</code> = center top, 
+<td class='bfa-td'><code>align</code></td>
+<td class='bfa-td'>Default alignment for all cells.<br />Default: <code>2</code> (= center top). <code>1</code> = center middle, <code>2</code> = center top, 
 <code>3</code> = right top, <code>4</code> = right middle, <code>5</code> = right bottom, <code>6</code> = center bottom, 
 <code>7</code> = left bottom, <code>8</code> = left middle, <code>9</code> = left top.</td>
 </tr><tr>
-<td><code>align_1</code></td>
-<td>Alignment for cell 1: align_2, align_3 ... Non-specified cells get the default value of \"align\", which, if not defined, is 2 (= center top).</td>
+<td class='bfa-td'><code>align_1</code>, <code>align_2</code>, <code>align_3</code> etc.</td>
+<td class='bfa-td'>Alignment for widget area cell 1, 2, 3, etc.. Non-specified widget area cells get the default value of the parameter \"align\", which, if not defined, is 2 (= center top).</td>
 </tr><tr>
-<td><code>width_1</code></td>	
-<td>Width of cell 1: width_1, width_2, width_3 ... Non-specified cells get a equal share of the remaining width of the whole table 
+<td class='bfa-td'><code>width_1</code>, <code>width_2</code>, <code>width_3</code> etc.</td>	
+<td class='bfa-td'>Width of widget area cells 1, 2, 3, etc.. Non-specified widget area cells get a equal share of the remaining width of the whole widget area table 
 containing all the widget area cells.</td>
+</tr>
+<tr>
+<td class='bfa-td' colspan='2' style='border-top-style: solid'>		
+<strong>Very Optional:</strong><br />Use these only if you want to apply different opening and closing HTML tags to the widgets that you 
+put into the new widget areas. By default the widgets will get the same opening/closing tags as the widgets in the sidebars. The default tags 
+are shown below. <br /><br /><em>Note: These are the tags that will be wrapped around the widgets (itself) that you put into the new widget areas. These tags 
+won't be wrapped around your new widget area as a whole, or around single widget area cells, but around the widgets (as such) that you place inside those widget area cells. 
+That means that the same widget can be wrapped into different HTML tags depending on the widget area cell it was placed in. If you just want different styling for 
+the widgets then you could usually achieve this with CSS alone, by adressing the widgets through the ID or class of their widget area cell. Use these opening/closing tag 
+parameters if CSS alone is not enough, because you need different HTML tags before or after the widgets or widget titles.</em>
+</td>
 </tr><tr>
-<td><code>before_widget</code></td>
-<td>HTML before each widget in any cell of this widget area. <br />Default:  <code>&lt;div id=\"%1$s\" class=\"widget %2$s\"&gt;</code></td>
+<td class='bfa-td'><code>before_widget</code></td>
+<td class='bfa-td'>HTML before each widget in any cell of this widget area. <br />Default:  <code>&lt;div id=\"%1$s\" class=\"widget %2$s\"&gt;</code></td>
 </tr><tr>
-<td><code>after_widget</code></td>
-<td>HMTL after each widget ... <br />Default: <code>&lt;/div&gt;</code></td>
+<td class='bfa-td'><code>after_widget</code></td>
+<td class='bfa-td'>HMTL after each widget ... <br />Default: <code>&lt;/div&gt;</code></td>
 </tr><tr>
-<td><code>before_title</code></td>
-<td>HTML before the title of each widget in any cell of this widget area: <br />Default: <code>&lt;div class=\"widget-title\"&gt;&lt;h3&gt;</code></td>
+<td class='bfa-td'><code>before_title</code></td>
+<td class='bfa-td'>HTML before the title of each widget in any cell of this widget area: <br />Default: <code>&lt;div class=\"widget-title\"&gt;&lt;h3&gt;</code></td>
 </tr><tr>
-<td><code>after_title</code></td><td>HMTL after the title ... <br />Default: <code>&lt;/h3&gt;&lt;/div&gt;</code></td>
+<td class='bfa-td'><code>after_title</code></td>
+<td class='bfa-td'>HMTL after the title ... <br />Default: <code>&lt;/h3&gt;&lt;/div&gt;</code></td>
 </tr>
 </table>
 "),
@@ -2881,7 +2902,7 @@ text-align: center;\ncolor: #777777;\nfont-size: 95%;",
 			"switch" => "yes",
            "id" => $shortname."_css_external",
             "type" => "select",
-            "std" => "External",
+            "std" => "Inline",
             "options" => array("External", "Inline"),
             "info" => "Should the CSS code be in an external file, or inline in the header of each page?<br /><br /> 
             You might want to choose inline if your average page view per visitor is close to 1. In that case 
@@ -2891,7 +2912,7 @@ text-align: center;\ncolor: #777777;\nfont-size: 95%;",
     	    "category" => "css-javascript",
            "id" => $shortname."_javascript_external",
             "type" => "select",
-            "std" => "External",
+            "std" => "Inline",
             "options" => array("External", "Inline"),
             "info" => "Should the Javascript code be in an external file, or inline in the header of each page? 
             Same considerations apply as above."),
