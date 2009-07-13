@@ -1,4 +1,4 @@
-B-Side Wordpress Theme version 1.0 by Brieuc de la Fournière - ieub
+B-Side Wordpress Theme version 1.3 by Brieuc de la Fournière - ieub
 
 Visit http://www.ieub.org/ for updates
 
@@ -11,8 +11,6 @@ Features
 	* Coloured -- Clean -- Plain -- Elegant
 	* Supports comments threading (WP 2.7), comments paging (WP 2.7), gravatars in comments, post tags and sidebar widgets.
 	* The theme is not tested with older versions, still, there is no reason why it shouldn't work in older WP versions.
-	* Breadcrumb navigation
-	*Java Menu for pages
 
 
 Installation

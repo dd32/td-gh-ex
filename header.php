@@ -155,7 +155,7 @@ if ( !empty($withcomments) && !is_single() ) {
 <div id="menu">
 		<ul class="lavalamp" id="lmenu">
 				
-	   	 		<li><a href="<?php echo get_settings('home'); ?>" title="Home"><?php bloginfo('name'); ?></a></li><?php wp_list_pages('title_li=&depth=1&sort_column=menu_order');?>
+	   	 		<li><a href="<?php echo get_settings('home'); ?>" title="Home"><?php bloginfo('name'); ?></a><?php wp_list_pages('title_li=&depth=1&sort_column=menu_order');?></li>
 		</ul>
 		<div class="clear"></div>
 </div>
