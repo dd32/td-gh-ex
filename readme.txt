@@ -44,4 +44,8 @@ License
 	along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 
+History
+------------------------------------------------------------------------
 
+v 1.3 : release
+v 1.4 : corrected the sidebar ie7 bug, tweaked the top ad box and misc corrections on the header.

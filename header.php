@@ -101,23 +101,7 @@ if ( !empty($withcomments) && !is_single() ) {
             });
         });
     </script>
-<script type="text/javascript">
-	  // When the document loads do everything inside here ...
-	  $(document).ready(function(){	
-		// When a link is clicked
-		$("a.tab").click(function () {
-			// switch all tabs off
-			$(".active").removeClass("active");	
-			// switch this tab on
-			$(this).addClass("active");
-			// slide all content up
-			$(".contentlist").slideUp();
-			// slide this content up
-			var content_show = $(this).attr("title");
-			$("#"+content_show).slideDown();
-		});
-	  });
-</script>	
+	
 
 
 </head>
@@ -139,10 +123,10 @@ if ( !empty($withcomments) && !is_single() ) {
 
 <div id="header">
 
-		 <div class="intro"><h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1> <div class="description"><?php bloginfo('description'); ?></div></div>
+		 <div id="intro"><h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1></div> 
 
+  <div id="ad-box"><?php if (file_exists(TEMPLATEPATH . '/' . 'topbar.php')) : ?><?php include (TEMPLATEPATH . '/topbar.php'); ?><?php endif; ?></div><div id="description"><?php bloginfo('description'); ?></div></div>
 
-  <div id="ad-box"><?php if (file_exists(TEMPLATEPATH . '/' . 'topbar.php')) : ?><?php include (TEMPLATEPATH . '/topbar.php'); ?><?php endif; ?></div></div>
 
 
 
