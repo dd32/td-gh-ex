@@ -31,15 +31,13 @@
 <link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/favicon.ico" />
 
 <?php
+  if(!defined("PHP_EOL")) define("PHP_EOL", strtoupper(substr(PHP_OS,0,3) == "WIN") ? "\r\n" : "\n"); 
+
   print '<style type="text/css" media="all">'.PHP_EOL;
 
   if(get_option('arclite_imageless')=='yes') print '@import "'.get_bloginfo('template_url').'/style-imageless.css";'.PHP_EOL;
   else {
    print '@import "'.get_bloginfo('stylesheet_url').'";'.PHP_EOL;
-   if((get_option('arclite_header')=='default') || (get_option('arclite_header')==''))
-    print '@import "'.get_bloginfo('template_url').'/options/header-default.css";'.PHP_EOL;
-   else
-    print '@import "'.get_bloginfo('template_url').'/options/header-'.get_option('arclite_header').'.css";'.PHP_EOL;
 
    if(get_option('arclite_widgetbg')<>'')
     print '@import "'.get_bloginfo('template_url').'/options/side-'.get_option('arclite_widgetbg').'.css";'.PHP_EOL;
@@ -52,14 +50,19 @@
   if(get_option('arclite_sidebarpos')=='left')
     print '@import "'.get_bloginfo('template_url').'/options/leftsidebar.css";'.PHP_EOL;
 
-   if(get_option('arclite_header')=='user') {
+   if((get_option('arclite_header')=='default') || (get_option('arclite_header')==''))
+    print '@import "'.get_bloginfo('template_url').'/options/header-default.css";'.PHP_EOL;
+
+   else if(get_option('arclite_header')=='user') {
     if(get_option('arclite_headerimage')<>'')
        print '#header{ background: transparent url("'.get_option('arclite_headerimage').'") no-repeat center top; }'.PHP_EOL;
-    if(get_option('arclite_headerimage2')<>'')
+    else if(get_option('arclite_headerimage2')<>'')
         print '#header-wrap{ background: transparent url("'.get_option('arclite_headerimage2').'") repeat center top; }'.PHP_EOL;
-   }
+    }
    else if(get_option('arclite_header')=='user2')
     print '#header, #header-wrap{ background: #'.get_option('arclite_headercolor').'; }'.PHP_EOL;
+   else
+    print '@import "'.get_bloginfo('template_url').'/options/header-'.get_option('arclite_header').'.css";'.PHP_EOL;
   }
 
   $usercss = get_option('arclite_css');

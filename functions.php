@@ -632,10 +632,10 @@ function list_comments($comment, $args, $depth) {
   <!-- comment entry -->
   <li <?php if (function_exists('comment_class')) { if (function_exists('get_avatar') && get_option('show_avatars')) echo comment_class('with-avatar'); else comment_class(); } else { print 'class="comment';if (function_exists('get_avatar') && get_option('show_avatars')) print ' with-avatar'; print '"';  } ?> id="comment-<?php comment_ID() ?>">
    <div class="comment-mask<?php if($comment->user_id == 1) echo ' admincomment'; else echo ' regularcomment'; // <- thanks to Jiri! ?>">
-    <div class="comment-main tiptrigger">
+    <div class="comment-main">
      <div class="comment-wrap1">
       <div class="comment-wrap2">
-       <div class="comment-head">
+       <div class="comment-head tiptrigger">
         <p>
           <?php
            if (get_comment_author_url()):

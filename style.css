@@ -2,7 +2,7 @@
 Theme Name: Arclite
 Theme URI: http://digitalnature.ro/projects/arclite
 Description: Simple but elegant theme with lots of theme options. Designed by <a href="http://digitalnature.ro/">digitalnature</a>.
-Version: 1.5.2
+Version: 1.5.4
 Author: digitalnature
 Author URI: http://digitalnature.ro
 Tags: light, brown, two-columns, flexible-width, right-sidebar, theme-options, threaded-comments, custom-header
@@ -25,15 +25,15 @@ Tags: light, brown, two-columns, flexible-width, right-sidebar, theme-options, t
   padding: 0;
 }
 
-/* try to use custom fonts trough css3 (opera 10, safari 3.1 and ff 3.1 only) */
+/* try to use custom fonts trough css3 (opera 10+, safari 3.1+ and ff 3.5+) */
 @font-face {
   font-family: "Union";
-  src: url(fonts/union.ttf) format("truetype");
+  src: url("fonts/union.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Share";
-  src: url(fonts/share.ttf) format("truetype");
+  src: url("fonts/share.ttf") format("truetype");
 }
 
 
@@ -672,11 +672,11 @@ blockquote p{
 
 
 /* post */
-.post{
+.post, .page{
   margin: 1em 0;
 }
 
-.post h3, .post h2{
+h3.post-title, h2.post-title{
   font-family: "Union", "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Sans, FreeSans, Jamrul, Garuda, Kalimati;
   margin: 0;
   padding: .8em 0 .1em 0;
@@ -686,17 +686,17 @@ blockquote p{
   text-shadow: #fff 1px 1px 1px;
 }
 
-.post h3 a, .post h2 a{
+h3.post-title a, h2.post-title a{
   text-decoration: none;
   color: #000;
 }
 
-.post h3 a:hover, .post h2 a:hover{
+h3.post-title a:hover, h2.post-title a:hover{
   color: #df2e56;
 }
 
 /* large title on single page */
-.post h2{
+h2.post-title{
   font-size: 250%;
   font-weight: normal;
 }
@@ -780,7 +780,7 @@ blockquote p{
   text-decoration: underline;
 }
 
-.post p.post-metadata{
+p.post-metadata{
   font-size: 80%;
   margin: 2em 0;
   padding: .6em 1em;
@@ -789,13 +789,13 @@ blockquote p{
   border: 1px solid #fff;
 }
 
-.post p.post-metadata a{
+p.post-metadata a{
   color: #6b5e50;
   text-decoration: underline;
   line-height: 150%;
 }
 
-.post p.post-metadata a:hover{
+p.post-metadata a:hover{
   color: #0071bb;
   text-decoration: underline;
 }
@@ -821,7 +821,7 @@ ul#comments ul{
   list-style-type: none;
 }
 
-ul#comments li.comment{
+ul#comments li.comment, ul#comments li.trackback{
   width: 85%;
   margin: 0;
   padding: 0;
@@ -874,6 +874,8 @@ ul#comments li.comment li.comment{
 .comment-head{
   background: #96816d url(images/comment-head.png) repeat-x left bottom;
   color: #fff;
+  display: block;
+  width: 100%; /* IE 7 fix */
   position: relative;
 }
 
@@ -931,7 +933,7 @@ ul#comments li.comment li.comment{
   border: 1px solid #eeebe3;
 }
 
-.admincomment .comment-head p.controls a:hover {
+.admincomment .comment-head p.controls a:hover{
   background: #0071bb;
 }
 
@@ -1311,6 +1313,7 @@ div.clear{ clear: both;height:1px;  }
 }
 
 .error, .red{ color:#ed1f24; }
+.center{ text-align: center; }
 
 
 /*** WORDPRESS SPECIFIC STYLES ***/
@@ -1378,7 +1381,7 @@ div.clear{ clear: both;height:1px;  }
 
 /* captions, thumbnail images in posts */
 
-.post .post-content img, .attachment img, .navigation .alignleft img, .navigation .alignright img{
+.post-content img, .attachment img, .navigation .alignleft img, .navigation .alignright img{
   padding: 3px;
   margin: 4px 10px;
   border: 1px solid #b7a99a;
@@ -1386,37 +1389,33 @@ div.clear{ clear: both;height:1px;  }
   -moz-border-radius: 4px;
 }
 
-.post .post-content img.alignleft, .attachment img.alignleft{ margin-left: 0; }
-.post .post-content img.alignright, .attachment img.alignright{ margin-right: 0; }
-.post .post-content img.aligncenter, .attachment img.aligncenter{ margin: 0 auto; text-align: center; }
+.post-content img.alignleft, .attachment img.alignleft{ margin-left: 0; }
+.post-content img.alignright, .attachment img.alignright{ margin-right: 0; }
+.post-content img.aligncenter, .attachment img.aligncenter{ margin: 0 auto; text-align: center; }
 
 
-.attachment-entry{
-  text-align: center;
-}
-
-.attachment div.caption{
+.post-content div.caption{
   background:#F7F7F7;
   border-radius: 4px;
   -moz-border-radius: 4px;
-  padding-top:5px;
-  margin:4px 10px;
+  padding: .2em .6em;
+  margin:.6em 0;
   text-align:center;
   color: #8d8b8b;
   min-width: 0; /* ie7 peakaboo fix */
 }
 
 /* no border on smilies */
-img.wp-smiley, .post .post-content img.wp-smiley, .attachment img.wp-smiley{
+.post-content img.wp-smiley{
   padding: 0;
   margin: 0;
   border: 0;
 }
 
 /* Sociable plugin adjustment */
-.post .post-content .sociable img{ margin: 0; }
+.post-content .sociable img{ margin: 0; }
 
-.wp-caption {
+.post-content .wp-caption {
   background:#F7F7F7;
   border-radius: 4px;
   -moz-border-radius: 4px;
@@ -1427,14 +1426,14 @@ img.wp-smiley, .post .post-content img.wp-smiley, .attachment img.wp-smiley{
   color: #928a85;
 }
 
-.wp-caption img, .post .post-content .wp-caption img, .attachment .wp-caption img{
+.post-content .wp-caption img{
   margin: 0;
   border: 0;
   padding: 0;
 }
 
-.wp-caption.alignleft{ margin-left: 0; }
-.wp-caption.alignright{ margin-right: 0; }
+.post-content .wp-caption.alignleft{ margin-left: 0; }
+.post-content .wp-caption.alignright{ margin-right: 0; }
 
 
 .aligncenter {

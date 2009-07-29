@@ -18,7 +18,7 @@
      <div class="col1">
       <div id="main-content">
 
-      <h2><?php _e("Links:","arclite"); ?></h2>
+      <h2 class="post-title"><?php _e("Links:","arclite"); ?></h2>
 
        <ul>
         <?php wp_list_bookmarks(); ?>

@@ -6,4 +6,6 @@
 
 .post .post-date span.month{ background: #4086bb; }
 
-a:hover{ color: #4ca3db; }
+a:hover,
+h3.post-title a:hover, h2.post-title a:hover{ color: #4ca3db; }
+

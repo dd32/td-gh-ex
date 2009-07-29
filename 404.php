@@ -16,7 +16,7 @@
      <div class="col1">
       <div id="main-content">
 
-       <h2><?php _e('Page not found (404)','arclite'); ?></h2>
+       <h2 class="post-title"><?php _e('Page not found (404)','arclite'); ?></h2>
 
        <br />
        <h6><?php _e('Try one of these links:','arclite'); ?></h6>

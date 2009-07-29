@@ -22,6 +22,11 @@ Credits:
 
 Change log:
 
+1.5.4   a few CSS adjustments
+        "php_eol" fix
+
+1.5.3   small IE 7 bug fix (comments were visible only on mouse over)
+
 1.5.2   Added Dutch, Swahili and Italian translations
         Added secondary sidebar (3 column option)
         Better tooltips

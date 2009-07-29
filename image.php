@@ -1,5 +1,7 @@
-<?php /* Arclite/digitalnature */ ?>
-<?php get_header(); ?>
+<?php
+ /* Arclite/digitalnature */
+ get_header();
+?>
 
 <!-- main wrappers -->
 <div id="main-wrap1">
@@ -14,30 +16,17 @@
      <div class="col1">
       <div id="main-content">
 
+       <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+        <div id="post-<?php the_ID(); ?>" <?php if (function_exists("post_class")) post_class(); else print 'class="post"'; ?>>
+         <?php if (!get_post_meta($post->ID, 'hide_title', true)): ?><h2 class="post-title"><?php the_title(); ?></h2><?php endif; ?>
+        <div class="post-content clearfix">
 
-      <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <div class="navigation">
-          <div class="alignleft"><?php previous_post_link('&laquo; %link') ?></div>
-          <div class="alignright"><?php next_post_link('%link &raquo;') ?></div>
-          <div class="clear"></div>
+                 <p class="center"><a href="<?php echo wp_get_attachment_url($post->ID); ?>"><?php echo wp_get_attachment_image( $post->ID, 'medium' ); ?></a></p>
+  				 <?php if (!empty($post->post_excerpt)) { print '<div class="caption">'; the_excerpt(); print '</div>'; }  ?>
+                 <?php the_content(__('Read the rest of this entry &raquo;', 'arclite')); ?>
         </div>
 
-
-        <!-- post -->
-        <div id="post-<?php the_ID(); ?>" <?php if (function_exists("post_class")) post_class(); else print 'class="post"'; ?>>
-           <?php if (!get_post_meta($post->ID, 'hide_title', true)): ?><h2 class="post-title"><?php the_title(); ?></h2><?php endif; ?>
-
-              <div class="post-content clearfix">
-    	       <?php the_content(__('Read the rest of this entry &raquo;', 'arclite')); ?>
-              </div>
-              <?php wp_link_pages(array('before' => '<p><strong>Pages: </strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
-              <?php
-              $posttags = get_the_tags();
-              if ($posttags) { ?>
-              <p class="tags"> <?php the_tags(__('Tags:','arclite').' ', ', ', ''); ?></p>
-              <div class="clear"></div>
-              <?php } ?>
-              <p class="post-metadata">
+             <p class="post-metadata">
                     <?php
                       printf(__('This entry was posted on %s and is filed under %s. You can follow any responses to this entry through %s.', 'arclite'), get_the_time(__('l, F jS, Y','arclite')), get_the_category_list(', '), '<a href="'.get_post_comments_feed_link($post->ID).'" title="RSS 2.0">RSS 2.0</a>');  ?>
 
@@ -60,13 +49,19 @@
                     <?php edit_post_link(__('Edit this entry', 'arclite')); ?>
     		  </p>
 
-        </div>
-        <!-- /post -->
+        <div class="navigation">
+		  <div class="alignleft"><?php previous_image_link() ?></div>
+		  <div class="alignright"><?php next_image_link() ?></div>
+          <div class="clear"></div>
+		</div>
 
-    	<?php comments_template(); ?>
-      <?php endwhile; else: ?>
-        <p><?php _e("Sorry, no posts matched your criteria.","arclite"); ?></p>
-      <?php endif; ?>
+        </div>
+  	   <?php endwhile; else: ?>
+  	    <p><?php _e('Sorry, no attachments matched your criteria.','fusion'); ?></p>
+       <?php endif; ?>
+
+       <?php comments_template(); ?>
+
       </div>
      </div>
      <!-- /first column -->
@@ -84,3 +79,11 @@
 <!-- /main wrappers -->
 
 <?php get_footer(); ?>
+
+
+
+
+
+
+
+

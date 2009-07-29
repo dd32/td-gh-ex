@@ -133,12 +133,12 @@
         </div>
         <!-- /comment input -->
 
-        <!-- comment submit and rss -->
         <div id="submitbox" class="left">
 		<input name="submit" type="submit" id="submit" class="button" tabindex="5" value="<?php _e('Submit Comment', 'arclite'); ?>" />
          <input type="hidden" name="formInput" />
         </div>
       </form>
+
     </div>
     <?php } ?>
     <?php endif;  ?>

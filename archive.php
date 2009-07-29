@@ -40,7 +40,7 @@
         <div id="post-<?php the_ID(); ?>" <?php if (function_exists("post_class")) post_class(); else print 'class="post"'; ?>>
 
           <div class="post-header">
-           <h3><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e('Permanent Link:','arclite'); echo ' '; the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+           <h3 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e('Permanent Link:','arclite'); echo ' '; the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
            <p class="post-date">
             <span class="month"><?php the_time(__('M','arclite')); ?></span>
             <span class="day"><?php the_time(__('j','arclite')); ?></span>

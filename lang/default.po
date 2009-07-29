@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arclite 1.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-29 18:41+0200\n"
+"POT-Creation-Date: 2009-06-30 03:50+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: digitalnature <hello@digitalnature.ro>\n"
 "Language-Team: digitalnature.ro <hello@digitalnature.ro>\n"
@@ -550,11 +550,11 @@ msgstr ""
 msgid "Reply"
 msgstr ""
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:657
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:656
 msgid "Quote"
 msgstr ""
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:668
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/functions.php:667
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
@@ -606,7 +606,7 @@ msgstr ""
 msgid "No posts found. Try a different search?"
 msgstr ""
 
-#: c:\wamp\www\wordpress\wp-content\themes\arclite/sidebar-secondary.php:9
+#: c:\wamp\www\wordpress\wp-content\themes\arclite/sidebar-secondary.php:12
 msgid "You enabled the secondary sidebar. Add widgets here from the Dashboard"
 msgstr ""
 

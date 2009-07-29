@@ -32,7 +32,7 @@
         <?php while (have_posts()) : the_post(); ?>
         <div id="post-<?php the_ID(); ?>" <?php if (function_exists("post_class")) post_class(); else print 'class="post"'; ?>>
 
-  	  	 <h3 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+  	  	 <h3 id="post-<?php the_ID(); ?>" class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 
      	 <small><?php the_time(__('l, F jS, Y','arclite')) ?></small>
      	 <p class="postmetadata"><?php the_tags(__('Tags:','arclite').' ', ', ', '<br />'); ?> <?php printf(__('Posted in %s','arclite'), get_the_category_list(', '));?> | <?php edit_post_link(__('Edit','arclite'), '', ' | '); ?>  <?php comments_popup_link(__('No Comments','arclite'), __('1 Comment','arclite'), __('% Comments','arclite'), 'comments', __('Comments off', 'arclite')); ?></p>
