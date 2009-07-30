@@ -1,0 +1,1 @@
+<script type="text/javascript" src="http://w.sharethis.com/widget/?tabs=web%2Cpost%2Cemail&amp;charset=utf-8&amp;style=rotate&amp;publisher=26734290-20cf-468a-87a6-3d68d33979be&amp;headerbg=%23008000&amp;linkfg=%23001000"></script>
