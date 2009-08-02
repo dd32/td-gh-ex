@@ -4,13 +4,24 @@ Theme URI: http://jakespurlock.com/inspiration
 Description: A left sidebar theme basked with simplicity.
 Author: whyisjake
 Author URI: http://jakespurlock.com
-version: 0.5.2
+version: 0.5.4
 Tags: two-columns, sticky-post, dark
 
 Based on the blank theme by Refuled.net
 */
 
+/* Changelog */
 
+/*
+
+0.5.0 Initial Release
+0.5.1 Added screenshot.png
+0.5.2 Fixed tags, uploaded to WordPress.org
+0.5.3 Added comments to pages, and some letter-spacing to the sidebar.
+0.5.4 Changed the way the authors name was pulled into the sidebar, making it dynamic to the author of the last post. Changed some the headers in the sidebar, and fixed a rogue span.says issue. Also added the GPL to the theme. Also added some letter-spacing to the header.
+
+
+*/
 
 
 /* basics */
@@ -66,6 +77,10 @@ code{
 	font-family:"Courier New", Courier, monospace;
 	}
 
+p {
+	color:#ddd;
+	}
+
 
 /* links */
 
@@ -105,15 +120,24 @@ a:hover{
 #header h1{
 	font:normal 20pt Gill Sans, Helvetica, Verdana, sans serif;
 	padding:50px 0 0 25px;
+	letter-spacing:2px;
 	margin:0;	
 	}
 	
-#header h1 a{color: #dddddd; text-decoration: none;}
-#header h1 a:hover{color: #fff; text-decoration: none;}
+#header h1 a{
+	color: #dddddd;
+	text-decoration: none;
+	}
+	
+#header h1 a:hover{
+	color: #fff;
+	text-decoration: none;
+	}
 
 
 #header h2{
 	font:normal 10pt Gill Sans, Helvetica, Verdana, sans serif;
+	letter-spacing:2px;
 	color:#dddddd;
 	padding: 0 0 0 25px;
 	margin:0;	
@@ -298,19 +322,18 @@ small{
 	float:left;
 	margin:0;
 	padding: 0;
-	/*border-right: 1px dotted #ddd;*/
+	letter-spacing:	2px;
 	text-align:right;
 	color: #ddd;	
 	}
 
 #sidebar h2{
-	font:normal 9pt Gill Sans, Helvetica, arial, georgia, times;
-	color: #ddd;	
+	font:normal 11pt Gill Sans, Helvetica, arial;
+	color: #fff;	
 	margin: 0;
-	padding-top: 0;
-	text-align:left;
+	padding-bottom: 5px;
+	text-align:right;
 	text-transform:uppercase;
-	border-bottom: 1px solid #ddd;
 }
 
 
@@ -325,14 +348,13 @@ small{
 	}
 
 #sidebar label{
-	font:normal 11pt Gill Sans, Helvetica, arial, georgia, times;
+	font:normal 11pt Gill Sans, Helvetica, arial;
 	color: #ddd;	
 	margin: 0;
 	padding: 0;
 }
 
 #sidebar p {
-	margin-right:10px;
 	padding:0 0 40px 0;
 	color: #ddd;
 	font-size:1.2em;
@@ -362,10 +384,18 @@ small{
 	text-transform:uppercase;
 	}
 
-#sidebar img {padding: 0; margin: 0;}
+#sidebar img {
+	padding: 0;
+	margin: 0;
+	}
+
+.profilepic {
+	text-align:right;
+	clear:both;
+	}
 
 #sidebar ul {
-	margin:12px;
+	margin:0px, 12px, 12px, 12px;
 	padding:0;
 	color: #ddd;
 	}
@@ -516,6 +546,9 @@ cite {
 cite a{color: #000; text-decoration: none; border-bottom: 1px dotted #465D71;}
 
 
+span.says {
+	color:#ddd;
+	}
 
 /* search */
 

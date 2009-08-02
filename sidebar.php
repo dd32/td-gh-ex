@@ -1,6 +1,12 @@
 	<div id="sidebar">
 		
-		<p class="byline">By <span class="uppercase">Jake Spurlock</span></p>
+		<ul>
+			<li class="profilebox">
+      			<?php query_posts('showposts=1'); ?>
+			    <?php while (have_posts()) : the_post(); ?>
+					<p class="byline">By <span class="uppercase"><?php the_author_meta('first_name');Ê?> <?php the_author_meta('last_name');Ê?></span></p>
+	            <?php endwhile; ?>
+		    </li>
 		
 		<ul>			
 			
@@ -21,14 +27,6 @@
 				<p>This is just some text that I wanted to add. Talking about <a href="<?php echo get_settings('home'); ?>/">an ad</a>.</p>
 				
 			</div>
-			
-			<!-- IF YOU WANT ARCHIVES AND CATEGORIES, FEEL FREE TO UNCOMMENT THIS, OR USE THE WIDGETS-->
-			
-			<!--<ul>
-				<?php wp_get_archives('type=monthly'); ?>
-			</ul>
-
-			<?php wp_list_categories('title_li='); ?>-->
 
 			<?php endif; ?>
 		</ul>
