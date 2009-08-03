@@ -4,7 +4,7 @@ Theme URI: http://johnnye.net/airmail-paravion.html
 Description: A travel or holiday orientated blog template, 2 columns, flexible width, based on old fashioned airmail envolopes. 
 Author: John Nye
 Author URI:http://johnnye.net
-Version: 0.5
+Version: 0.5.1
 Tags: tan, blue, red, light, two-columns, flexible-width, microformats, holiday
 
 Theme is copyright 2009 John Nye
@@ -44,10 +44,9 @@ DESCRIPTION: Two-column fluid layout with one sidebars right of content
 	clear: both;
 	width: 100%;
 }
-//Styles//
 body {
 	//margin: 1.5em 15%;
-	background: #f7f7f0;
+	background: #f7f7f0 url(images/bg.png);
 }
 
 #wrapper{
