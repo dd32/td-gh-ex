@@ -7,11 +7,7 @@ get_header();
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-		<div class="navigation">
-			<div class="alignleft"><?php previous_post_link('&laquo; %link') ?></div>
-			<div class="alignright"><?php next_post_link('%link &raquo;') ?></div>
-            <div class="cb"></div>
-		</div>
+
 
 <?php if (function_exists("post_class")) { ?>
   <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -24,6 +20,7 @@ get_header();
 <div class="day"><?php the_time('d'); ?></div>
 <div class="year"><?php the_time('Y'); ?></div>
 </div>
+
 <h1 class="post-title"><?php the_title(); ?></h1>
 
 
@@ -68,6 +65,12 @@ get_header();
 			</div>
 		</div>
 
+		<div class="navigation">
+			<div class="alignleft"><?php previous_post_link('&laquo; %link') ?></div>
+			<div class="alignright"><?php next_post_link('%link &raquo;') ?></div>
+            <div class="cb"></div>
+		</div>
+        
 	<?php comments_template(); ?>
 
 	<?php endwhile; else: ?>
