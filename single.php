@@ -10,7 +10,8 @@
 		</div>
 
 		<div class="post" id="post-<?php the_ID(); ?>">
-			<h2><?php the_title(); ?></h2>
+                        <h2><?php the_title(); ?></h2>
+                        <small><?php printf(__('%1$s at %2$s', 'rcg-forest'), get_the_time(__('F jS, Y', 'rcg-forest')), get_the_time('G:i')); ?></small>
 
 			<div class="entry">
 				<?php the_content('<p class="serif">' . __('Read the rest of this entry &raquo;', 'rcg-forest') . '</p>'); ?>

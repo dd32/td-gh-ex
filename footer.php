@@ -4,7 +4,7 @@
 		<?php printf(__('%1$s is proudly powered by %2$s', 'rcg-forest'), get_bloginfo('name'),
 		'<a href="http://wordpress.org/">WordPress</a>'); ?>
                 <br/>
-                <?php _e('Theme:','rcg-forest'); ?> <a href="http://rcg-pt.net/programacao/rcg-forest.tar.gz">RCG Forest</a>,
+                <?php _e('Theme:','rcg-forest'); ?> RCG Forest,
                 <?php _e('by','rcg-forest'); ?> <a href="http://rcg-pt.net">Rui Carlos A. Gonçalves</a>
 	</p>
 </div>
