@@ -9,13 +9,14 @@
 	<div class="entry entry-<?php echo $postCount ;?>">
 		<div class="entrytitle">
 			<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h2> 
-			<h3><span class="postedby">By <?php the_author() ?></span>, <?php the_time('F jS, Y') ?>,<span class="filedto">in <?php the_category(', ') ?> <?php edit_post_link('Edit', ' | ', ''); ?></span>| <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;', 'commentslink'); ?></h3>
+			<h3><span class="postedby"><?php the_author() ?></span> | <?php the_time('F jS, Y') ?> | <span class="filedto"><?php the_category(', ') ?> <?php edit_post_link('Edit', ' | ', ''); ?></span> | <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;', 'commentslink'); ?></h3>
 		</div>
 		<div class="entrybody">
 			<?php the_content(); ?>
 		</div>
 		
 		<div class="entrymeta">
+        <p><?php the_tags(); ?></p>
 		<div class="postinfo">
 			
 			

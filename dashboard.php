@@ -32,6 +32,23 @@ $options = array (
 			"std" => "1",
 			"type" => "select",
 			"options" => $number_entries),
+	
+	array(  "name" => "Popular section",
+            "type" => "heading",
+			"desc" => "This section customizes the Popular area on the top of the sidebar and the number of stories displayed there.",
+       ),		
+	array( 	"name" => "Popular section category",
+			"desc" => "Select the category that you would like to have displayed in Popular list on your homepage.",
+			"id" => $shortname."_story_category",
+			"std" => "Uncategorized",
+			"type" => "select",
+			"options" => $mx_categories),
+	array(	"name" => "Number of highlight reel posts",
+			"desc" => "Select the number of posts to display ( Upto 5 is good).",
+			"id" => $shortname."_story_count",
+			"std" => "1",
+			"type" => "select",
+			"options" => $number_entries),
 			
 			
 	array(  "name" => "About Me Settings",
@@ -48,7 +65,7 @@ $options = array (
 	array("name" => "About me text",
 			"desc" => "Enter some descriptive text about you, or your site.",
             "id" => $shortname."_about",
-            "std" => "There is something about me..",
+            "std" => "Here comes some important information about me..",
             "type" => "textarea"),     
 	   
 	

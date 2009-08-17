@@ -27,9 +27,21 @@
 <?php wp_head(); ?>
 </head>
 <body>
-
+<div id="arcload"><a href="<?php bloginfo('rss2_url'); ?>">RSS</a></div>
 <div id="wrap">
-<div id="header"><h1><a href="<?php echo get_settings('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
-<p class="description"><?php bloginfo('description'); ?></p>
+<div id="header">
+
+<div id="headerleft">
+
+		<h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
+		
 </div>
-<hr/>
+<div id="headerright">
+     
+      <?php include (TEMPLATEPATH . '/searchform.php'); ?>  
+</div>
+
+
+</div>
+
+<div id="menu"><ul><?php wp_list_pages('title_li=&depth=1'); ?></ul></div>

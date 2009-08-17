@@ -1,5 +1,7 @@
 <?php get_header(); ?>
+<div id="pann">
 <?php include (TEMPLATEPATH . "/feat.php"); ?>
+</div>
 <div id="content">
 
 	<?php if (have_posts()) :?>
@@ -8,11 +10,15 @@
 			<?php $postCount++;?>
 	<div class="entry entry-<?php echo $postCount ;?>">
 		<div class="entrytitle">
+        <div class="thumb">
+			<?php $screen = get_post_meta($post->ID,'screen', true); ?>
+			<img src="<?php echo ($screen); ?>" width="181" height="100" alt=""  />
+            </div>
 			<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h2> 
-			<h3><span class="postedby">By <?php the_author() ?></span>, <?php the_time('F jS, Y') ?>,<span class="filedto">in <?php the_category(', ') ?> &raquo;<?php the_tags(); ?> <?php edit_post_link('Edit', ' | ', ''); ?></span>| <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;', 'commentslink'); ?></h3>
+			<h3><span class="postedby"><?php the_author() ?></span> | <?php the_time('F jS, Y') ?> | <span class="filedto"><?php the_category(', ') ?> | <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;', 'commentslink'); ?></h3>
 		</div>
 		<div class="entrybody">
-			<?php the_content('Read more &raquo;'); ?>
+			<?php the_excerpt('Read more &raquo;'); ?>
 		</div>
 		
 		<div class="entrymeta">

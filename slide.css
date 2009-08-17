@@ -2,7 +2,7 @@
 #myslides{
 
 background:#fff;
-width: 850px;
+width: 600px;
 height:165px;
 margin-bottom:0px;
 }
@@ -10,9 +10,9 @@ margin-bottom:0px;
 .stepcarousel{
 position: relative; /*leave this value alone*/
 overflow: scroll; /*leave this value alone*/
-width: 810px; /*Width of Carousel Viewer itself*/
-height: 285px; /*Height should enough to fit largest content's height*/
-margin: 0px 20px 0px 20px;
+width: 610px; /*Width of Carousel Viewer itself*/
+height: 255px; /*Height should enough to fit largest content's height*/
+margin: 0px 5px 0px 20px;
 }
 
 .stepcarousel .belt{
@@ -24,18 +24,20 @@ top: 0;
 .stepcarousel .panel{
 float: left; /*leave this value alone*/
 overflow: hidden; /*clip content that go outside dimensions of holding panel DIV*/
-margin: 0px 0px ; /*margin around each panel*/
-width:810px; /*Width of each panel holding each content. If removed, widths should be individually defined on each content DIV then. */
+margin: 0 0 20px 0; /*margin around each panel*/
+width:610px; /*Width of each panel holding each content. If removed, widths should be individually defined on each content DIV then. */
 background:#fff;
-height:285px;
+height:245px;
 border:none;
 }
 
 
 .stepcarousel .panel p{
-text-align: left; /*leave this value alone*/
+text-align: justify; /*leave this value alone*/
 overflow: hidden; /*clip content that go outside dimensions of holding panel DIV*/
 margin: 5px 5px ; /*margin around each panel*/
+font-size:8pt;
+color:#999999;
 
 }
 
@@ -43,7 +45,7 @@ margin: 5px 5px ; /*margin around each panel*/
 text-align: left; /*leave this value alone*/
 height:20px;
 
-margin: 20px 10px ; /*margin around each panel*/
+margin: 10px 5px ; /*margin around each panel*/
 font-size: 1.5em;
 text-align:left;
 font-family: Verdana, Arial, Georgia, century gothic, sans-serif;
@@ -52,14 +54,15 @@ font-family: Verdana, Arial, Georgia, century gothic, sans-serif;
 .stepcarousel .panel img{
 float: left; /*leave this value alone*/
 background:#0E1829; /*clip content that go outside dimensions of holding panel DIV*/
-margin: 5px 20px 5px 5px; /*margin around each panel*/
+margin: 5px 15px 5px 5px; /*margin around each panel*/
 padding:0px 0px;
-border:11px solid #f2f2f2;
+border:5px solid #f2f2f2;
 }
 
 .slideex{
-margin:10px;
-padding:15px;}
+
+margin:5px;
+padding:5px;}
 
 
 .single{
