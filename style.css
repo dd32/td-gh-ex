@@ -1,0 +1,155 @@
+@charset "UTF-8";
+/* CSS Document */
+/*
+Theme Name: AdStyle
+Theme URI: http://gordonfrench.com/themes/AdStyle.zip
+Description: AdStyle is a designed for adsense placement and has a modern scroll work and broken boundries for added flair. Adsense block needs to be edited in the header.php. Please place ads inside topAds, see README for colors.  Sample can be scene at <a href="http://csshowto.us"CSS How To</a>.
+Version: 1.0
+Author: Gordon French
+Author URI: http://gordonfrench.com/
+Tags:orange,right-sidebar,fixed-width,two-columns
+
+	French v1.0
+	 http://gordonfrench.com/
+
+	This theme was designed by Gordon French,
+	whose portfolio can be found at http://gordonfrench.com/
+
+	The CSS, XHTML and design is released under GPL:
+	http://www.opensource.org/licenses/gpl-license.php
+
+*/
+
+/* COLORS
+background color = fcc735
+blue accent = aec2e1
+body content BG color = fdf0d7
+dark orange = da944a
+brown = 54340d
+yellow = ffd781
+highlight = fef9ed
+
+*/
+
+
+
+body  {font: 100% Arial, Verdana, Helvetica, sans-serif; background: url(images/upperBG.jpg) repeat-x #fcc735; margin: 0; padding: 0; color: #000000;}
+#container { width: 952px; margin: 0 auto; position:relative; z-index:5; } 
+
+/* background componets */
+#topDecor{ position:fixed; top:0px; left:0px; background:url(images/topDecor.png) no-repeat; width:463px; height:542px; z-index:1;}
+#bottomDecor { position:fixed; bottom:0px; right:0px; background:url(images/baseDecor.png) no-repeat; height:414px; width:363px; z-index:1}
+#bottomGradient{ background:url(images/lowerBG.jpg) repeat-x; width:100%; height:665px; margin-top:-665px;}
+
+
+/* basics */
+a { text-decoration:none}
+.aligncenter { display:block; margin-left:auto; margin-right:auto}
+.alignleft { float: left; width:100%}
+.alignright {float: right;  width:100%}
+#recent-posts-3 { font-size:80%;}
+
+.clearfloat { clear:both; height:0; font-size: 1px; line-height: 0px;}
+
+
+
+/* header */
+#header { position:relative; background: url(images/header.png) no-repeat; height:230px; margin-left:10px; margin-top:70px; margin-bottom:8px; z-index:3} 
+	/* h1 header text */
+	#header h1 { position: relative; margin-bottom:-50px; z-index:20; left:10px; top:-10px; font-size:250%;  }
+	#header h1 a {color:#54340d}
+	#header h1 a:hover {color:#da944a}
+	/* Blog Description */
+	#description { position:relative; z-index:15; margin-bottom:-20px; top:35px; left:10px; }
+	
+	
+	/* logo */
+	#logo { position:relative; background:url(images/logoGeneric.png) no-repeat; height:155px; top:-50px; left:-30px; width:500px; }
+	/* Search box in header */
+	#search { position:relative;  width:350px; height:25px; top:-100px; left:630px}
+	/* adsense in header */
+	#topAds { position:relative;  width:728px; height:90px; margin:-60px 0 0 90px; }
+	
+
+	/* top nav */
+	#header ul {  position:relative; padding-left:0; list-style-type:none; float:left; width:97%; margin-top:-45px; z-index:10;  margin-left:290px;}
+	#header ul li { display:inline;}
+	#header ul a, .home a { display:block; float:left; padding:0px 9px; font-size:100%; text-decoration:none; color:#54340d; width:auto}
+	#header ul a:hover, .home a:hover  { color:#aec2e1;}
+	.pagenav { position:relative; left:20px; top:50px; color:#fdf0d7; list-style-type:none}
+	.home { position:relative; top:24px; left:250px; margin-bottom:-20px; width:50px; z-index:20; }
+
+
+
+
+
+/* Sidebar */
+#sidebar {float: right; width: 280px; padding: 0px 0px 10px 0px; margin-right:10px; margin-top:-7px}
+	#sidebarContentTop {background: url(images/sidebarTop.png) no-repeat; height:33px; margin-bottom:-18px }
+	#sidebarContent {background: url(images/sidebarBG.png) repeat-y; padding:0px 35px 0px 20px; }
+	#sidebarContentBottom { background: url(images/sidebarBase.png) no-repeat; height:30px; }
+	
+	/* sidebar heard title box */
+	#sidebarContent h2 { position:relative; top:-7px; background:url(images/sidebarTitleBox.png) no-repeat; height:44px; padding:15px 10px 10px 40px;  width:298px; margin:2px 0px -30px -45px; font-size:110%; }
+	
+	/* sidebar links */
+	#sidebarContent li { position:relative; z-index:10}
+	#sidebarContent li a { color:#54340d;}
+	#sidebarContent li a:hover { color:#da944a;}
+	#sidebarContent ul { padding:10px 0 10px 10px; margin:0 0 0 0; list-style-type:none}
+	#sidebarContent caption {padding-top:10px}
+	
+
+
+
+
+
+
+/* main content */
+#mainContentTop{ position:relative; background: url(images/contentTop.png) no-repeat; height:25px; margin-left:10px; margin-bottom:-18px; z-index:3}
+#mainContentBottom{background: url(images/contentBottom.png) no-repeat; height:25px; margin:-18px 0px 5px 10px}
+#mainContent { margin: 0 300px 0 0; padding:0px 40px 0 50px; background:url(images/contentBG.png) repeat-y;  margin-left:10px;}
+	#mainContent #text { position:relative; z-index:3;}/* lifts text above the decor element */
+	
+	/* links in post */
+	#mainContent #text p a {color:#da944a}
+	#mainContent #text p a:hover {color:#aec2e1}
+	
+	/* Tags */
+	#tags a, #text a {color:#54340d}
+	#tags a:hover, #text a:hover {color:#aec2e1}
+	
+	/* sets the tile box for h1 and h2 tags */
+	#mainContent h1 { position:relative; top:-10px; background:url(images/contentTitleBox.png) no-repeat; height:60px; padding:35px 10px 0px 70px;  width:592px; margin:0px 0px -25px -80px }
+	#mainContent h2 { position:relative; top:-10px; background:url(images/contentTitleBox.png) no-repeat; height:55px; padding:38px 10px 0px 70px;  width:592px; margin:0px 0px -25px -80px; font-size:130% }
+	
+	/* image on bottom of content box */
+	#mainContentDecor{ position:relative; bottom:343px; left:150px; background:url(images/contentSwirl.png) no-repeat; width:353px; height:368px; margin-bottom:-368px;}
+	/* Post tile link color */
+	#mainContent h2 a { color:#54340d;}
+	#mainContent h2 a:hover { color:#da944a;}
+	
+	/* time */
+	.time { text-align:right; margin-top:-10px}
+	
+	/* Div added for code styleing */
+	#code { background:url(images/codeBG.png) repeat; padding:10px; border:solid thin #000}
+
+
+
+
+/* Footer */
+#footer { padding: 0 10px 0 70px; margin-top:-15px; font-size:90%;} 
+	#footer p { margin: 0; padding: 10px 0; color:#ffd781}
+	#footer a {color:#fdf0d7 }
+	#footer a:hover {color:#aec2e1}
+
+#hidden { display:none}
+
+/* Safari Fixes */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+/* Safari 3.0 and Chrome rules here */
+#footer {margin-top:-30px; }
+.home { position:relative; top:23px; left:250px; margin-bottom:-20px; width:50px; z-index:20; }
+}
+
