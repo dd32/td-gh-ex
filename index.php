@@ -7,8 +7,6 @@
 
 <?php get_header(); ?>
 
-<?php get_sidebar(); ?>
-
   <div id="mainContentTop"></div>
   <div id="mainContent">
   	<div id="text">
@@ -58,7 +56,7 @@
 	</div><!-- end #mainContent -->
     <div id="mainContentBottom"><div id="mainContentDecor"></div></div>
     
-
+<?php get_sidebar(); ?>
 
 
 <?php get_footer(); ?>

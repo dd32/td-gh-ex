@@ -13,7 +13,7 @@
 <meta name="author" content="Gordon French">
 <meta name="copyright" content="2009 FrenchSquared">
 
-<title><?php wp_title(); ?></title>
+<title><?php bloginfo('name'); ?> <?php wp_title(); ?></title>
 
 <!-- Wordpress Theme by Gordon French -->
 
@@ -45,7 +45,9 @@
  
     <div id="topAds">
         
-        <!-- place you adsense code below here -->   
+        <!-- place you adsense code below here --> 
+        
+        
         
       
         <!-- place you adsense code above here -->  

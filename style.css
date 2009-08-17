@@ -4,12 +4,12 @@
 Theme Name: AdStyle
 Theme URI: http://gordonfrench.com/themes/AdStyle.zip
 Description: AdStyle is a designed for adsense placement and has a modern scroll work and broken boundries for added flair. Adsense block needs to be edited in the header.php. Please place ads inside topAds, see README for colors.  Sample can be scene at <a href="http://csshowto.us"CSS How To</a>.
-Version: 1.0
+Version: 1.1
 Author: Gordon French
 Author URI: http://gordonfrench.com/
 Tags:orange,right-sidebar,fixed-width,two-columns
 
-	French v1.0
+	French v1.1
 	 http://gordonfrench.com/
 
 	This theme was designed by Gordon French,
@@ -50,6 +50,13 @@ a { text-decoration:none}
 #recent-posts-3 { font-size:80%;}
 
 .clearfloat { clear:both; height:0; font-size: 1px; line-height: 0px;}
+.clear {clear: both;}
+
+.post {
+	margin: 0;
+	
+	
+	}
 
 
 
@@ -84,7 +91,7 @@ a { text-decoration:none}
 
 
 /* Sidebar */
-#sidebar {float: right; width: 280px; padding: 0px 0px 10px 0px; margin-right:10px; margin-top:-7px}
+#sidebar { position:absolute; top:238px; left:660px; width: 280px; padding: 0px 0px 10px 0px; margin-right:10px; margin-top:-7px}
 	#sidebarContentTop {background: url(images/sidebarTop.png) no-repeat; height:33px; margin-bottom:-18px }
 	#sidebarContent {background: url(images/sidebarBG.png) repeat-y; padding:0px 35px 0px 20px; }
 	#sidebarContentBottom { background: url(images/sidebarBase.png) no-repeat; height:30px; }
