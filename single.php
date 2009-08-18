@@ -17,13 +17,18 @@
             
             <div class="entry">
             	<?php the_content('Read more »'); ?>
+                
+                <?php wp_link_pages('before=<div class="nav_link">&after=</div>&next_or_number=number&pagelink=<span class="page_number">%</span>'); ?>
+                
             	<?php the_tags('<div id="tags">Tags: ', ', ', '.</div>'); ?> 
             </div>
             
+            
+            
             <p class="postmetadata">Posted in <?php the_category(', ') ?> by <?php the_author() ?></p>
             
-         
-         
+            
+             
             <?php comments_template(); ?>
             <?php endwhile; ?>
             
