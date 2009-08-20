@@ -46,7 +46,7 @@
     <div id="topAds">
         
         <!-- place you adsense code below here --> 
-        <?
+        <?php
 		
 		$options = get_option("adStyleOptions"); 
 	
