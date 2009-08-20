@@ -46,9 +46,18 @@
     <div id="topAds">
         
         <!-- place you adsense code below here --> 
-        
-        
-        
+        <?
+		
+		$options = get_option("adStyleOptions"); 
+	
+		 if (!is_array( $options )){
+			$options = array( 'ads' => 'sample ads go here' ); 
+		  }     
+		  
+		 echo stripslashes($options['ads']);
+		
+		
+		?>
       
         <!-- place you adsense code above here -->  
     
