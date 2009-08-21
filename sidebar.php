@@ -1,3 +1,5 @@
+<?php //Theme by Gordon French ?>
+<!-- ......................... SIDE BAR .............................-->
 <div id="sidebar"><!-- sidebar.php -->
       <div id="sidebarContentTop"></div>
       <div id="sidebarContent">

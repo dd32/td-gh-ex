@@ -2,14 +2,14 @@
 /* CSS Document */
 /*
 Theme Name: AdStyle
-Theme URI: http://gordonfrench.com/themes
+Theme URI: http://wordpress.gordonfrench.com/
 Description: AdStyle is designed for adsense placement, has  modern scroll work and broken boundries for added flair. Your adsense code needs to be added in the wp-admin panel. Recommended Colors are shown in wp-admin can be seen at CSSHowTo.us.
-Version: 1.3.2
+Version: 1.3.3
 Author: Gordon French
 Author URI: http://gordonfrench.com/
 Tags:light,right-sidebar,fixed-width,two-columns,orange 
 
-	French v1.3.2
+	French v1.3.3
 	 http://gordonfrench.com/
 
 	This theme was designed by Gordon French,
@@ -52,11 +52,7 @@ a { text-decoration:none}
 .clearfloat { clear:both; height:0; font-size: 1px; line-height: 0px;}
 .clear {clear: both;}
 
-.post {
-	margin: 0;
-	
-	
-	}
+.post {margin: 0;}
 
 
 
@@ -68,6 +64,8 @@ a { text-decoration:none}
 	#header h1 a:hover {color:#da944a}
 	/* Blog Description */
 	#description { position:relative; z-index:15; margin-bottom:-20px; top:35px; left:10px; }
+	
+	#rss { position:relative; top:-150; left:500px;}
 	
 	
 	/* logo */

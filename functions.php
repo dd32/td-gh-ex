@@ -18,16 +18,14 @@ if ( function_exists('register_sidebar') ) register_sidebar();
 
 
 //Determine the location
-$SMPath = get_theme_root().'/plugins/'.plugin_basename(dirname(__FILE__)).'/';
-//echo $SMPath;
-
+$path =  get_bloginfo( 'stylesheet_directory' );
 
 
 //Add the menu to the Settings sidenav in wp-admin
 function adStyle_admin_menu() {
 	//add_menu_page(page_title, menu_title, access_level/capability, file, [function], [icon_url]);
 	
-	add_menu_page('adStyle', 'adStyle', 8, __FILE__, 'adStyle_panel_setting', '../wp-content/themes/adStyle/images/dollar-sign.png');
+	add_menu_page('adStyle', 'adStyle', 8, __FILE__, 'adStyle_panel_setting', get_bloginfo( 'stylesheet_directory' ).'/images/dollar-sign.png');
 	//add_submenu_page(__FILE__, 'Page title', 'Gordon\'s subLink1', 8, __FILE__, 'my_magic_function');
 	//add_submenu_page(__FILE__, 'Page title', 'Gordon\'s subLink2', 8, __FILE__, 'my_magic_function');
 	
@@ -90,7 +88,7 @@ function adStyle_panel_setting() {
   <p style="margin-top:-15px;">Please input complete adsense code</p>
   <div style="margin-left:25px; margin-bottom:20px; margin-top:-5px;">
         <form name="adstyle" method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>"/>
-        <textarea name="adStyle-ads" id="adStyle-ads" cols="40" rows="15"><? echo  stripslashes($options['ads']); ?></textarea><br />
+        <textarea name="adStyle-ads" id="adStyle-ads" cols="40" rows="15"><?php echo  stripslashes($options['ads']); ?></textarea><br />
         <input type="hidden" id="adStyle-Submit" name="adStyle-Submit" value="1" />
         <input name="save" value="Save" type="submit" />
         </form>
