@@ -1,12 +1,12 @@
-<?php
-/**
- * @package WordPress
- * @subpackage AdStyle
- */
-?>
-
+<?php //Theme by Gordon French ?>
 <?php get_header(); ?>
 
+
+
+
+<!-- ......................... MAIN CONTENT .............................-->
+
+<div id="mainWrap">
   <div id="mainContentTop"></div>
   <div id="mainContent">
   	<div id="text">
@@ -54,9 +54,20 @@
         
         </div><!-- close #text -->
 	</div><!-- end #mainContent -->
-    <div id="mainContentBottom"><div id="mainContentDecor"></div></div>
-    
+    <div id="mainContentBottom"><div id="mainContentDecor"></div></div></div>
+  
+  
+  <!-- ......................... SIDEBAR .............................-->
+
+
+
 <?php get_sidebar(); ?>
 
 
+<!-- ......................... FOOTER .............................-->
+
+
+
 <?php get_footer(); ?>
+
+

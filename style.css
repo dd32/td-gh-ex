@@ -3,13 +3,13 @@
 /*
 Theme Name: AdStyle
 Theme URI: http://wordpress.gordonfrench.com/
-Description: AdStyle is designed for adsense placement, has  modern scroll work and broken boundries for added flair. Your adsense code needs to be added in the wp-admin panel. Recommended Colors are shown in wp-admin can be seen at CSSHowTo.us.
-Version: 1.3.3
+Description: AdStyle is designed for adsense placement, has  modern scroll work and broken boundries for added flair. Your adsense code needs to be added in the wp-admin panel. Current update fixes firefox issue.
+Version: 1.3.4
 Author: Gordon French
 Author URI: http://gordonfrench.com/
 Tags:light,right-sidebar,fixed-width,two-columns,orange 
 
-	French v1.3.3
+	French v1.3.4
 	 http://gordonfrench.com/
 
 	This theme was designed by Gordon French,
@@ -34,12 +34,12 @@ highlight = fef9ed
 
 
 body  {font: 100% Arial, Verdana, Helvetica, sans-serif; background: url(images/upperBG.jpg) repeat-x #fcc735; margin: 0; padding: 0; color: #000000;}
-#container { width: 952px; margin: 0 auto; position:relative; z-index:5; } 
+#container { width: 954px; margin: 0 auto; position:relative; z-index:5; } 
 
 /* background componets */
 #topDecor{ position:fixed; top:0px; left:0px; background:url(images/topDecor.png) no-repeat; width:463px; height:542px; z-index:1;}
 #bottomDecor { position:fixed; bottom:0px; right:0px; background:url(images/baseDecor.png) no-repeat; height:414px; width:363px; z-index:1}
-#bottomGradient{ background:url(images/lowerBG.jpg) repeat-x; width:100%; height:665px; margin-top:-660px;}
+#bottomGradient{ background:url(images/lowerBG.jpg) repeat-x; width:100%; height:665px; margin-top:-640px;}
 
 
 /* basics */
@@ -89,7 +89,7 @@ a { text-decoration:none}
 
 
 /* Sidebar */
-#sidebar { position:absolute; top:238px; left:660px; width: 280px; padding: 0px 0px 10px 0px; margin-right:10px; margin-top:-7px}
+#sidebar {  position:relative; float:right; top:0px; width:285px; padding: 0px 0px 10px 0px; margin-right:10px; margin-top:-7px}
 	#sidebarContentTop {background: url(images/sidebarTop.png) no-repeat; height:33px; margin-bottom:-18px }
 	#sidebarContent {background: url(images/sidebarBG.png) repeat-y; padding:0px 35px 0px 20px; }
 	#sidebarContentBottom { background: url(images/sidebarBase.png) no-repeat; height:30px; }
@@ -111,10 +111,11 @@ a { text-decoration:none}
 
 
 /* main content */
-#mainContentTop{ position:relative; background: url(images/contentTop.png) no-repeat; height:25px; margin-left:10px; margin-bottom:-18px; z-index:3}
-#mainContentBottom{background: url(images/contentBottom.png) no-repeat; height:25px; margin:-18px 0px 5px 10px}
-#mainContent { margin: 0 300px 0 0; padding:0px 40px 0 50px; background:url(images/contentBG.png) repeat-y;  margin-left:10px;}
-	#mainContent #text { position:relative; z-index:3;}/* lifts text above the decor element */
+#mainWrap { position:relative; top:0px; float:left; width:654px;}
+#mainContentTop{ position:relative; width:654px; background: url(images/contentTop.png) no-repeat; height:25px; margin-left:10px; margin-bottom:-18px; z-index:3}
+#mainContentBottom{background: url(images/contentBottom.png) no-repeat;width:654px; height:25px; margin:-18px 0px 5px 10px}
+#mainContent { margin: 0 0px 0 0; padding:0px 40px 0 50px; width:570px; background:url(images/contentBG.png) repeat-y;  margin-left:10px;}
+	#mainContent #text { position:relative; z-index:3; }/* lifts text above the decor element */
 	
 	/* links in post */
 	#mainContent #text p a {color:#da944a}
@@ -144,7 +145,7 @@ a { text-decoration:none}
 
 
 /* Footer */
-#footer { padding: 0 10px 0 70px; margin-top:-15px; font-size:90%;} 
+#footer { position:relative; top:-10px; padding: 0 10px 0 70px; margin-top:0px; font-size:90%;} 
 	#footer p { margin: 0; padding: 10px 0; color:#ffd781}
 	#footer a {color:#fdf0d7 }
 	#footer a:hover {color:#aec2e1}
@@ -154,7 +155,7 @@ a { text-decoration:none}
 /* Safari Fixes */
 @media screen and (-webkit-min-device-pixel-ratio:0) {
 /* Safari 3.0 and Chrome rules here */
-#footer {margin-top:-30px; }
+#footer {top:-10px; }
 .home { position:relative; top:23px; left:250px; margin-bottom:-20px; width:50px; z-index:20; }
 }
 

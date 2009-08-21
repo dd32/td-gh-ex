@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
-<?php get_sidebar(); ?>
 
+<div id="mainWrap">
   <div id="mainContentTop"></div>
   <div id="mainContent">
   	<div id="text">
@@ -50,9 +50,16 @@
         
         </div><!-- close #text -->
 	</div><!-- end #mainContent -->
-    <div id="mainContentBottom"><div id="mainContentDecor"></div></div>
+    <div id="mainContentBottom"><div id="mainContentDecor"></div></div></div>
     
 
+
+
+<!-- ......................... SIDEBAR .............................-->
+
+
+
+<?php get_sidebar(); ?>  
 
 
 <?php get_footer(); ?>
