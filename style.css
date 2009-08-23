@@ -4,8 +4,8 @@ Theme URI: http://blog.rcg-pt.net/rcg-forest/
 Description: A simple green theme.
 Author: Rui Carlos A. Gonçalves <rcgoncalves.pt@gmail.com>
 Author URI: http://rcg-pt.net
-Version: 1.2.2
-Tags: green, fixed-width, two-columns, right-sidebar, translation-ready
+Version: 1.3.0
+Tags: green, fixed-width, two-columns, right-sidebar, translation-ready, custom-header
 
 License: This theme is released under GNU GPL.
 */
@@ -145,11 +145,6 @@ body {
 
 /*========================================================*/
 
-h2 a:hover, h3 a:hover {
-  color: #06c;
-  text-decoration: none;
-}
-
 a {
   color: #589000;
   text-decoration: none;
@@ -244,7 +239,7 @@ div.aligncenter {
    margin: 0;
    padding: 0;
    border: 0 none;
-   max-width: 96%;
+   max-width: 100%;
    height: auto;
 }
 
