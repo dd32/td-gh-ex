@@ -88,14 +88,20 @@ $oddcomment = 'alt';
 
 <?php else : ?>
 
-<p><input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="40" tabindex="1" />
-<label for="author"><small>Name <?php if ($req) echo "(required)"; ?></small></label></p>
+<p>
+	<label for="author"><small>Name <?php if ($req) echo "(required)"; ?></small></label>
+	<br><input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="40" tabindex="1" />
+</p>
 
-<p><input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="40" tabindex="2" />
-<label for="email"><small>Email (will not be published) <?php if ($req) echo "(required)"; ?></small></label></p>
+<p>
+	<label for="email"><small>Email (will not be published) <?php if ($req) echo "(required)"; ?></small></label>
+	<br><input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="40" tabindex="2" />
+</p>
 
-<p><input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="40" tabindex="3" />
-<label for="url"><small>Website</small></label></p>
+<p>
+	<label for="url"><small>Website</small></label>
+	<br><input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="40" tabindex="3" />
+</p>
 
 <?php endif; ?>
 

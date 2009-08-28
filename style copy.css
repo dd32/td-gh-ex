@@ -1,7 +1,7 @@
 /*
 Theme Name: Azul
 Theme URI: http://www.switchroyale.com/?page_id=21
-Description: Azul is a clean and modern theme with a techy/corporate feel. This theme is meant to be easy to edit and modify. Now includes 1 level deep subnavigation in the navigation menu. Just assign a parent page to any page on your blog for an instant submenu (submenu not compatible with IE6). The Azul Photoshop template is also available for free at www.switchroyale.com. Free to use for whatever you want.
+Description: Azul is a clean and modern theme with a techy/corporate feel. This theme is meant to be easy to edit and completely standards compliant. The Azul Photoshop template is also available for free at www.switchroyale.com. Free to use for whatever you want.
 Version: 1.5
 Author: Switchroyale
 Author URI: http://www.switchroyale.com
@@ -18,13 +18,12 @@ body {
 	line-height: 1.5em;
 	color: #666666;
 	text-align: justify;
-	z-index: 0;
 }
 
 #container {
 	width: 960px;
 	margin: 0 auto;
-	background: url(images/containerbg.jpg) #ffffff;
+	background: url(images/containerbg.jpg);
 	background-repeat: repeat-y;
 }
 
@@ -83,8 +82,7 @@ body {
 }
 
 #navbar li {
-	display: block;
-	float: left;
+	display: inline;
 }
 
 #navbar a {
@@ -92,8 +90,7 @@ body {
 	float: left;
 	height: 30px;
 	padding: 0 30px 0 20px;
-	text-transform: uppercase;
-	font-size: 11px;
+	font-size: 12px;
 	color: #999999;
 	text-decoration: none;
 	line-height: 30px;
@@ -105,38 +102,6 @@ body {
 	color: #666666;
 	background: url(images/navbuttonbg-hover.gif);
 	background-position: right 50%;
-}
-
-#navbar ul li ul {
-	margin: 0;
-	border: 1px solid #cccccc;
-	width: 150px;
-	clear: both;
-	position: absolute;
-	top: 180px;
-	left: -999px;
-}
-
-#navbar ul li:hover ul, #navbar ul li.sfhover ul {
-	left: auto;
-}
-
-#navbar ul li ul li {
-	width: 150px;
-}
-
-#navbar ul li.current_page_item ul li a, #navbar ul li ul li.current_page_item a {
-	background: url(images/subnav1bg.png);
-}
-
-#navbar ul li ul li a {
-	background: url(images/subnav1bg.png);
-	padding: 0 0 0 5px;
-	float: none;
-}
-
-#navbar ul li ul li a:hover {
-	background: none #cccccc;
 }
 
 #posts {
@@ -203,14 +168,13 @@ body {
 .post h2 {
 	font-size: 16px;
 	font-weight: bold;
-	margin: 0 0 5px 0;
-	border-bottom: 1px solid #cccccc;
+	margin: 0;
 }
 
 .post h3 {
 	font-size: 14px;
 	font-weight: bold;
-	padding: 10px 0;
+	
 }
 
 .post a, .navigation a {
@@ -224,13 +188,6 @@ body {
 
 .post a img {
 	border: none;
-}
-
-.post blockquote {
-	background: url(images/blockquotebg.gif) no-repeat left top;
-	color: #777777;
-	font-style: italic;
-	padding: 10px 5px 5px 36px;
 }
 
 .postmetadata {
@@ -292,8 +249,6 @@ body {
 	background: #ffffff;
 	border: 1px solid #cccccc;
 	color: #666666;
-	margin: 0 0 10px 0;
-	padding: 5px;
 }
 
 .commentlist {
@@ -304,19 +259,14 @@ body {
 
 .commentlist li {
 	background: #ebebeb;
-	padding: 20px 20px 0 20px;
+	padding: 20px;
 	border: 1px solid #cccccc;
-	margin: 0 0 20px 0;
-}
-
-.commentlist p {
-	clear: both;
 	margin: 0 0 20px 0;
 }
 
 .avatarcontainer {
 	float: left;
-	margin: 0 5px 10px 0;
+	margin: 0 5px 0 0;
 }
 
 .avatar {
@@ -326,19 +276,16 @@ body {
 .sidebar {
 	margin-left: 700px;
 	width: 210px;
-	position: relative;
-	top: -30px;
 }
 
 .sidebar ul {
 	list-style-type: none;
-	margin: 0;
+	margin: 0 0 30px 0;
 	padding: 0;
 }
 
 .sidebar h2 {
 	margin: 0 0 5px 0;
-	padding: 30px 0 0 0;
 	font-size: 16px;
 	color: #666666;
 	width: 210px;
@@ -346,25 +293,12 @@ body {
 }
 
 .sidebar a {
-	display: block;
 	color: #0195c5;
 	text-decoration: none;
-	padding: 0 10px 0 10px;
-	border-bottom: 1px dotted #cccccc;
 }
 
 .sidebar a:hover {
 	color: #333333;
-	background: #ebebeb;
-}
-
-.sidebar ul li ul li {
-	_height: 20px; /*IE 6 Hack, the sidebar links won't display properly without this*/
-}
-
-.sidebar ul li ul li ul li a {
-	font-size: 12px;
-	padding: 0 10px 0 20px;
 }
 
 #footer {
@@ -394,7 +328,7 @@ body {
 	width: 210px;
 	background: #ebebeb;
 	border: 1px solid #cccccc;
-	margin: 0;
+	margin: 0 0 30px 0;
 	font-size: 12px;
 	text-align: center;
 }
@@ -411,8 +345,6 @@ body {
 	display: block;
 	width: 100%;
 	height: 100%;
-	border: none;
-	padding: 0;
 }
 
 #wp-calendar a:hover {
