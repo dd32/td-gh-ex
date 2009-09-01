@@ -14,6 +14,7 @@ if( ! isset($options['defhidesbpages'   ]) ) $options['defhidesbpages'  ] = 1;
 if( ! isset($options['sectprefix'       ]) ) $options['sectprefix'      ] = 1;
 if( ! isset($options['idxfadepmeta'     ]) ) $options['idxfadepmeta'    ] = 0;
 if( ! isset($options['showpagemeta'     ]) ) $options['showpagemeta'    ] = 1;
+if( ! isset($options['iecorners'        ]) ) $options['iecorners'       ] = 0;
 if( ! isset($options['showdelic'        ]) ) $options['showdelic'       ] = 0;
 if( ! isset($options['delicid'          ]) ) $options['delicid'         ] = "";
 if( ! isset($options['delictitle'       ]) ) $options['delictitle'      ] = "Recent News and Links";
@@ -54,8 +55,7 @@ function ahimsa_options()
                 '
                     clear: right;
                     float: right;
-                    margin-top: 10px;
-                    margin-right: 10px;
+                    margin: 10px 10px 10px 30px;
                     background-color: #fff3cc;
                     color: #000000;
                     padding: 10px;
@@ -64,19 +64,15 @@ function ahimsa_options()
         >
             <h3>Keep up with Ahimsa For WordPress</h3>
 
-            <p>Follow on Tumblr or Twitter, or join the Facebook Page or the mailing list.
-            The mailing list will be very low volume. The other forums will have at most
-            a post or two a day.</p>
+            <p>
+                Follow on Twitter, or join the Facebook Page. Subscribe to the blog.
+                Create bug/feature requests, download the latest code, and more!
+            </p>
 
             <ul>
             <li style='list-style-type: circle; margin-left: 10px;'>
-                Tumblr:
-                <a href='http://ahrencode.tumblr.com/tagged/ahimsa-wp'>Ahimsa for WP</a> |
-                <a href='http://ahrencode.tumblr.com'>Ahren Code</a>
-            </li>
-            <li style='list-style-type: circle; margin-left: 10px;'>
                 Twitter:
-                <a href='http://search.twitter.com/search?q=%23ahimsa-wp'>Ahimsa for WP</a> |
+                <a href='http://search.twitter.com/search?q=%23ahimsa-wp'>Ahimsa</a> |
                 <a href='http://twitter.com/ahrencode/'>Ahren Code</a>
             </li>
             <li style='list-style-type: circle;  margin-left: 10px;'>
@@ -87,14 +83,30 @@ function ahimsa_options()
                 <a href='http://ahren.org/code/tag/ahimsa'>Blog</a>
             </li>
             <li style='list-style-type: circle;  margin-left: 10px;'>
-                <a href='http://ahren.org/mailman/listinfo/ac-ahimsa-wp_ahren.org'>Mailing list</a>
-            </li>
-            <li style='list-style-type: circle;  margin-left: 10px;'>
-                <a href='http://ahrencode.16bugs.com/projects/3703'>Bugs and Features</a>
+                GitHub:
+                <a href='http://github.com/ahrencode/Ahimsa-for-WP/'>Home</a> |
+                <a href='http://github.com/ahrencode/Ahimsa-for-WP/issues'>Issues</a>
             </li>
             </ul>
         </div>
 
+        <div style=
+                '
+                    clear: right;
+                    float: right;
+                    margin: 10px 10px 10px 30px;
+                    background-color: #fff3cc;
+                    color: #000000;
+                    padding: 10px;
+                    border: 1px solid #ddc055; width: 25%;
+                '
+        >
+            Want to add your own funky JavaScript or some such in the footer?
+            Create a file called <code>footer-custom.php</code> in the Ahimsa
+            theme directory and put your code in there. Note that once you
+            create the file, you can edit it using the WordPress theme editor.
+        </div>
+ 
         <form id='settings' action='' method='post' class='themeform'
             style='margin: 20px;'>
 
@@ -132,11 +144,17 @@ function ahimsa_options()
                 In index/home page, fade category, tag, comment links
                 unless hovered over</label> (does not work in IE)</label><br />
 
-
             <input type='checkbox' name='showpagemeta' id='showpagemeta'" .
                 ($options['showpagemeta'] == 1 ? ' checked' : '') .  " />
             <label style='margin-left: 5px;' for='showpagemeta'>
                 Show author and date information for pages</label><br />
+
+            <input type='checkbox' name='iecorners' id='iecorners'" .
+                ($options['iecorners'] == 1 ? ' checked' : '') .  " />
+            <label style='margin-left: 5px;' for='iecorners'>
+                Turn on <b>experimental</b> and <b>partial</b> support for
+                rounded corners in IE
+            </label><br />
 
             <br />
 
@@ -171,15 +189,47 @@ function ahimsa_options()
                     <br/>
                 </dd>
 
-            <br/>
-            <hr size='1'/>
+            <br clear='all' />
+            <hr size='1' />
 
             <h3>Ahimsa Skins</h3>
 
+            <div style='
+                    background-color: #fff3cc;
+                    color: #000000;
+                    padding: 10px;
+                    border: 1px solid #ddc055;
+                    margin: 0px 5px 15px 30px;
+                    width: 30%;
+                    float: right;
+                    clear: right;
+                    '>
+                Know your CSS and want to do more detailed customisations? That's easy!
+                Just create a file called <code>custom.css</code> in the theme directory,
+                and add your custom styling in there. That's it! All customisations in
+                this file are retained even if you upgrade the theme.
+
+                <br />
+                <br />
+                <hr size='1' />
+                <br />
+
+                Want to share your skin with others? Look up the instructions on the
+                <a href='http://ahren.org/code/ahimsa/'>Ahimsa Page</a>.
+
+            </div>
+
+            <input type='checkbox' name='skinupdate' id='skinupdate' />
+            <label style='margin-left: 5px;' for='skinupdate'>Update Skins</label>
+            (PLEASE backup your skin before you attempt this)
+
+            <br />
+            <br />
+
             " . skins_menu() . "
 
-            <br/>
-            <br/>
+            <br />
+            <br clear='all' />
             <hr size='1'/>
 
             <p class='submit'><input type='submit' value='Save Changes' name='save'/></p>
@@ -229,8 +279,8 @@ array
     array
     (
         name    => "skincapsulefg",
-        desc    => "Default Bubble Text/Link Colour",
-        csssel  => ".capsule, .capsule a",
+        desc    => "Default Bubble Text Colour",
+        csssel  => ".capsule",
         attr    => "color"
     ),
     array
@@ -251,7 +301,7 @@ array
     (
         name    => "skinheadersepcolour",
         desc    => "Colour of Separator Bar in Header",
-        csssel  => "#header #title",
+        csssel  => "#title",
         attr    => "border-right-color"
     ),
     array
@@ -265,35 +315,35 @@ array
     (
         name    => "skinsbwidgetbg",
         desc    => "Sidebar Widgets Background",
-        csssel  => "#sidebar fieldset.sidebarlist",
+        csssel  => ".sidebarlist",
         attr    => "background-color"
     ),
     array
     (
         name    => "skinsbwidgetfg",
         desc    => "Sidebar Widgets Text Colour",
-        csssel  => "#sidebar fieldset.sidebarlist",
+        csssel  => ".sidebarlist",
         attr    => "color"
     ),
     array
     (
         name    => "skinsblegendbg",
         desc    => "Sidebar Widget Title Background",
-        csssel  => "#sidebar legend",
+        csssel  => ".sidebarlist > legend",
         attr    => "background-color"
     ),
     array
     (
         name    => "skinsblegendfg",
         desc    => "Sidebar Widget Title Text Colour",
-        csssel  => "#sidebar legend",
+        csssel  => ".sidebarlist > legend",
         attr    => "color"
     ),
     array
     (
         name    => "skinsblistdiv",
         desc    => "Sidebar/Action Lists Divider Colour",
-        csssel  => "#sidebar .sidebarlist li, #postaction li",
+        csssel  => ".sidebarlist li, #postaction li",
         attr    => "border-top-color"
     ),
     array
@@ -307,50 +357,49 @@ array
     (
         name    => "skincalcaption",
         desc    => "Sidebar Calendar Caption Colour",
-        csssel  => "#sidebar #wp-calendar caption",
+        csssel  => "#wp-calendar caption",
         attr    => "color"
     ),
     array
     (
         name    => "skincalheaderbg",
         desc    => "Sidebar Calendar Column Header Background",
-        csssel  => "#sidebar #wp-calendar thead th, #sidebar #wp-calendar tfoot td.pad",
+        csssel  => "#wp-calendar thead th, #wp-calendar tfoot td.pad",
         attr    => "background-color"
     ),
     array
     (
         name    => "skincalheaderfg",
         desc    => "Sidebar Calendar Column Header Text Colour",
-        csssel  => "#sidebar #wp-calendar thead th",
+        csssel  => "#wp-calendar thead th",
         attr    => "color"
     ),
     array
     (
         name    => "skincalcellfg",
         desc    => "Sidebar Calendar Entries Text Colour",
-        csssel  => "#sidebar #wp-calendar tbody td",
+        csssel  => "#wp-calendar tbody td",
         attr    => "color"
     ),
     array
     (
         name    => "skincalnpbg",
         desc    => "Sidebar Calendar Next/Prev Links Background",
-        csssel  => "#sidebar #wp-calendar tfoot td#next, #sidebar #wp-calendar tfoot td#prev",
+        csssel  => "#wp-calendar #next, #wp-calendar #prev",
         attr    => "background-color"
     ),
     array
     (
         name    => "skincalnpfg",
         desc    => "Sidebar Calendar Next/Prev Links Text Colour",
-        csssel  => "#sidebar #wp-calendar tfoot td#next, #sidebar #wp-calendar tfoot td#prev, " .
-                    "#sidebar #wp-calendar tfoot a",
+        csssel  => "#wp-calendar #next, #wp-calendar #prev, #wp-calendar tfoot a",
         attr    => "color"
     ),
     array
     (
         name    => "skintextwdgtfg",
         desc    => "Sidebar Text Widget Text Colour",
-        csssel  => "#sidebar .textwidget",
+        csssel  => ".textwidget",
         attr    => "color"
     ),
     array
@@ -364,7 +413,7 @@ array
     (
         name    => "skinpostpagebg",
         desc    => "Post or Page Entry Background",
-        csssel  => ".post fieldset",
+        csssel  => ".post > fieldset",
         attr    => "background-color"
     ),
     array
@@ -378,31 +427,15 @@ array
     (
         name    => "skinpptitlebg",
         desc    => "Post, Page, Comments Title Background",
-        csssel  => ".post fieldset legend.title, fieldset#comments legend, " .
-                    "fieldset.comment legend, fieldset#responsebox legend",
+        csssel  => ".post .title, #comments > legend, .comment > legend, #responsebox > legend",
         attr    => "background-color"
     ),
     array
     (
         name    => "skinpptitlefg",
         desc    => "Post, Page, Comments Title Text Colour",
-        csssel  => ".post fieldset legend.title, .post fieldset legend.title a, " .
-                    "fieldset#comments legend, fieldset.comment legend, " .
-                    "fieldset#responsebox legend",
-        attr    => "color"
-    ),
-    array
-    (
-        name    => "skindatebg",
-        desc    => "Post/Page/Comment Date Bubble Background",
-        csssel  => ".dateauthor .capsule, .nocomments .capsule",
-        attr    => "background-color"
-    ),
-    array
-    (
-        name    => "skindatefg",
-        desc    => "Post/Page/Comment Date Bubble Text Colour",
-        csssel  => ".dateauthor .capsule, .nocomments .capsule",
+        csssel  => ".post .title, .post .title a, " .
+                    "#comments > legend, .comment > legend, #responsebox > legend",
         attr    => "color"
     ),
     array
@@ -479,23 +512,21 @@ array
     (
         name    => "skinactionbg",
         desc    => "Action Bubbles (Edit, Reply, etc) Background",
-        csssel  => "#postaction, .postmetadata #commentlink, .postmetadata .cattrigger, " .
-                    ".replybuttonbox .capsule, #respond INPUT#submit",
+        csssel  => ".actbubble",
         attr    => "background-color"
     ),
     array
     (
         name    => "skinactionfg",
         desc    => "Action Bubbles (Edit, Reply, etc) Text Colour",
-        csssel  => "#postaction, .postmetadata #commentlink, .postmetadata .cattrigger, " .
-                    "#postaction a, replybuttonbox .capsule, #respond INPUT#submit",
+        csssel  => ".actbubble, .actbubble a",
         attr    => "color"
     ),
     array
     (
         name    => "skincommentsbg",
         desc    => "Comments Block Background",
-        csssel  => "fieldset#comments",
+        csssel  => "#comments",
         attr    => "background-color"
     ),
     array
@@ -516,7 +547,7 @@ array
     (
         name    => "skinresponsebg",
         desc    => "Response Box Background",
-        csssel  => "fieldset#responsebox",
+        csssel  => "#responsebox",
         attr    => "background-color"
     )
 );
@@ -537,16 +568,15 @@ function skins_menu()
         return($html);
     }
 
-    if( ! $skindir = opendir($skindir) )
+    if( ! $skinfd = opendir($skindir) )
     {
         $html .= "Unable to read skins from $skindir. <br/>";
         return($html);
     }
 
-
     $checked = ($options['skin'] == 'none') ? 'checked' : "";
     $html .= "<input type=radio name=skin value=none $checked> None <br/>\n";
-    while ( ($skinfile = readdir($skindir)) !== false )
+    while ( ($skinfile = readdir($skinfd)) !== false )
     {
         if( ! preg_match("/^skin_(.+)\.css$/", $skinfile, $matches) )
             continue;
@@ -559,7 +589,12 @@ function skins_menu()
         ";
     }
 
-    closedir($skindir);
+    closedir($skinfd);
+
+    if( $options['skin'] != 'none' )
+        $skinfile_array = read_skin_file("$skindir/skin_$options[skin].css");
+    else
+        $skinfile_array = array();
 
     $html .=
     "
@@ -572,13 +607,14 @@ function skins_menu()
                     document.getElementById(\"skindo\").value = \"1\";
                     exit;
                     '>
-        Create New Ahimsa Skin</a>
+        Edit Current or Create New Skin</a>
 
         <div id='skinedit' style='display: none;'>
 
         <h4>Enter Skin Details</h4>
 
-        Skin name: <input type=text name=skinname size=20>
+        <p>(hint: change the name below to create a new skin)</p>
+        Skin name: <input type=text name=skinname size=20 value='" . $options['skin'] . "'>
         &nbsp;&nbsp;&nbsp;
         <a href='javascript:
                     document.getElementById(\"skinedit\").style.display = \"none\";
@@ -592,31 +628,36 @@ function skins_menu()
 
     ";
 
-    foreach( $skin_fields as $field )
-        $html .= get_skin_field($field['name'], $field['desc']);
+    foreach( $skin_fields as $style )
+        $html .= get_skin_field_html($style, $skinfile_array);
 
     $html .= "</table>\n</div>\n";
 
     return($html);
 }
 
-function get_skin_field($name, $title)
+function get_skin_field_html($style, $skinfile_array)
 {
+    if( isset($skinfile_array[$style['csssel']][$style['attr']]) )
+        $value = $skinfile_array[$style['csssel']][$style['attr']];
+    else
+        $value = "";
+
     return
     ("
         <tr>
         <td style='text-align: right; padding: 1px 4px;'>
-        $title:
+        $style[desc]:
         </td>
         <td style='padding: 1px 4px;'>
-        <input id='$name' size='7'  name='$name'
-            onBlur='document.getElementById(\"".$name."clr\").style.backgroundColor = this.value;'>
+        <input id='$style[name]' size='7'  name='$style[name]' value='$value'
+            onBlur='document.getElementById(\"".$style['name']."clr\").style.backgroundColor = this.value;'>
         </td>
         <td>
-        <span id='".$name."clr' style='border: 1px solid #777777;'>&nbsp;&nbsp;&nbsp;</span>
+        <span id='".$style['name']."clr' style='border: 1px solid #777777;'>&nbsp;&nbsp;&nbsp;</span>
         <script language='JavaScript'>
-            document.getElementById(\"".$name."clr\").style.backgroundColor =
-                document.getElementById(\"$name\").value;
+            document.getElementById(\"".$style['name']."clr\").style.backgroundColor =
+                document.getElementById(\"$style[name]\").value;
         </script>
         </td>
         </tr>
@@ -626,6 +667,10 @@ function get_skin_field($name, $title)
 function save_options()
 {
     global $_POST, $options;
+
+    if( $_POST['skinupdate'] == 'on' )
+        if( ! update_skins() )
+            return;
 
     if( $_POST['skindo'] == '1' )
         if( ! save_skin() )
@@ -638,6 +683,7 @@ function save_options()
     $options['sectprefix']      = ( isset($_POST['sectprefix']) ) ? 1 : 0;
     $options['idxfadepmeta']    = ( isset($_POST['idxfadepmeta']) ) ? 1 : 0;
     $options['showpagemeta']    = ( isset($_POST['showpagemeta']) ) ? 1 : 0;
+    $options['iecorners']       = ( isset($_POST['iecorners']) ) ? 1 : 0;
     $options['showdelic']       = ( isset($_POST['showdelic']) ) ? 1 : 0;
     $options['delicid']         = ( isset($_POST['delicid']) ) ? $_POST['delicid'] : "";
     $options['delictitle']      = ( isset($_POST['delictitle']) ) ? $_POST['delictitle']
@@ -695,23 +741,167 @@ function save_skin()
         ";
     }
 
-    if( !$skinfile = fopen(TEMPLATEPATH . "/skins/skin_$skinname.css", 'w') )
+    return(write_skin_file(TEMPLATEPATH . "/skins/skin_$skinname.css", $skincss));
+}
+
+//------------------------------------------------------------------------------
+function read_skin_file($skinfile)
+{
+    if( ! ($styles = @file("$skindir/$skinfile", FILE_IGNORE_NEW_LINES|FILE_SKIP_EMPTY_LINES)) )
     {
-         ah_admin_error("Could not create skin file: " .
-                        TEMPLATEPATH . "/skins/skin_$skinname.css.");
+        ah_admin_error("Unable to read skin file: $skinfile");
+        return(false);
+    }
+
+    $cssarray = array();
+    $state = "ENDBLOCK";
+    $newskin = "";
+    $ignore = 0;
+    $cursel = "";
+    foreach( $styles as $style )
+    {
+        if( preg_match("/^\s*$/", $style) )
+            continue;
+
+        $style = trim($style);
+
+        if( $state == "ENDBLOCK" )
+        {
+            $cursel = $style;
+            if( ! is_array($cssarray[$cursel]) )
+                $cssarray[$cursel] = array();
+            $state = "STARTBLOCK";
+            continue;
+        }
+
+        if( $state == "STARTBLOCK" && preg_match("/^\{$/", $style) )
+        {
+            $state = "INBLOCK";
+            continue;
+        }
+
+        if( $state == "INBLOCK" && preg_match("/^\}$/", $style) )
+        {
+            $state = "ENDBLOCK";
+            continue;
+        }
+
+        if( $state == "INBLOCK" && preg_match("/^([^:]+):\s*([^;]+);$/", $style, $matches) )
+            $cssarray[$cursel][$matches[1]] = $matches[2];
+    }
+
+    return($cssarray);
+}
+
+//------------------------------------------------------------------------------
+function write_skin_file($filepath, $skincss)
+{
+    if( !$skinfile = fopen($filepath, 'w') )
+    {
+         ah_admin_error("Could not create skin file: $filepath");
          return(false);
     }
 
     if( fwrite($skinfile, $skincss) === FALSE )
     {
-        ah_admin_error("Cannot write to skin file: " .
-                        TEMPLATEPATH . "/skins/skin_$skinname.css.");
+        ah_admin_error("Cannot write to skin file: $filepath");
         return(false);
     }
 
     fclose($skinfile);
 
     return(true);
+}
+
+//------------------------------------------------------------------------------
+function update_skins()
+{
+    $sel_update_map = array
+    (
+        ".capsule, .capsule a"                      => ".capsule",
+        "#header #title"                            => "#title",
+        "#sidebar fieldset.sidebarlist"             => ".sidebarlist",
+        "#sidebar fieldset.sidebarlist"             => ".sidebarlist",
+        "#sidebar legend"                           => ".sidebarlist > legend",
+        "#sidebar legend"                           => ".sidebarlist > legend",
+        "#sidebar .sidebarlist li, #postaction li"  => ".sidebarlist li, #postaction li",
+        "#sidebar #wp-calendar caption"             => "#wp-calendar caption",
+        "#sidebar #wp-calendar thead th, #sidebar #wp-calendar tfoot td.pad"
+            => "#wp-calendar thead th, #wp-calendar tfoot td.pad",
+        "#sidebar #wp-calendar thead th"            => "#wp-calendar thead th",
+        "#sidebar #wp-calendar tbody td"            => "#wp-calendar tbody td",
+        "#sidebar #wp-calendar tfoot td#next, #sidebar #wp-calendar tfoot td#prev"
+            => "#wp-calendar #next, #wp-calendar #prev",
+        "#sidebar #wp-calendar tfoot td#next, #sidebar #wp-calendar tfoot td#prev, " .
+            "#sidebar #wp-calendar tfoot a"
+            => "#wp-calendar #next, #wp-calendar #prev, #wp-calendar tfoot a",
+        "#sidebar .textwidget"                      => ".textwidget",
+        ".post fieldset"                            => ".post > fieldset",
+        ".post fieldset legend.title, fieldset#comments legend, " .
+            "fieldset.comment legend, fieldset#responsebox legend"
+            => ".post .title, #comments > legend, .comment > legend, #responsebox > legend",
+        ".post fieldset legend.title, .post fieldset legend.title a, " .
+            "fieldset#comments legend, fieldset.comment legend, " .
+            "fieldset#responsebox legend"
+            => ".post .title, .post .title a, " .
+                "#comments > legend, .comment > legend, #responsebox > legend",
+        ".dateauthor .capsule, .nocomments .capsule" => "REMOVE",
+        "#postaction, .postmetadata .commentlink, .postmetadata .cattrigger, " .
+            ".replybuttonbox .capsule, #respond INPUT#submit"
+            => ".actbubble",
+        "#postaction, .postmetadata .commentlink, .postmetadata .cattrigger, " .
+            "#postaction a, replybuttonbox .capsule, #respond INPUT#submit"
+            => ".actbubble, .actbubble a",
+        "fieldset#comments"                         => "#comments",
+        "fieldset#responsebox"                      => "#responsebox"
+    );
+
+    // TODO: some of this code is common to skins_menu() and should be
+    // abstracted rather than duplicated.
+
+    $skindir = TEMPLATEPATH . "/skins";
+
+    if( ! is_dir($skindir) )
+    {
+        ah_admin_error("No skins!");
+        return(false);
+    }
+
+    if( ! $skinfd = opendir($skindir) )
+    {
+        ah_admin_error("Unable to read skins from $skindir");
+        return(false);
+    }
+
+    while( ($skinfile = readdir($skinfd)) !== false )
+    {
+        if( ! preg_match("/^skin_(.+)\.css$/", $skinfile, $matches) )
+            continue;
+
+        if( ($skinfile_array = read_skin_file("$skindir/$skinfile")) == false )
+            return(false);
+
+        $newskin = "";
+        while( list($sel, $props) = each($skinfile_array) )
+        {
+            if( isset($sel_update_map[$sel]) )
+                if( $sel_update_map[$sel] == "REMOVE" )
+                    continue;
+                else
+                    $sel = $sel_update_map[$sel];
+
+            $newskin .= "$sel\n{\n";
+            while( list($prop, $val) = each($props) )
+                $newskin .= "$prop: $val;\n";
+            $newskin .= "}\n";
+        }
+
+        if( ! write_skin_file("$skindir/$skinfile", $newskin) )
+            return(false);
+    }
+
+    closedir($skinfd);
+ 
 }
 
 //------------------------------------------------------------------------------
@@ -739,20 +929,15 @@ function custom_comment($comment, $args, $depth)
 
     ?>
 
+    <!-- WP automatically closes this tag below in wp_list_comments -->
+    <li  <?php comment_class(empty( $args['has_children'] ) ? '' : 'parent') ?> id="comment-<?php comment_ID() ?>">
+
     <fieldset class='comment'>
 
         <legend> <?php comment_author_link() ?> writes: </legend>
 
-        <div class="dateauthor">
-            <small class='capsule'>
-            <?php comment_date('F jS, Y') ?> at <?php comment_time() ?>
-            </small>
-            <?php if( $user_ID ) : ?>
-            &nbsp;&nbsp;
-            <small class='capsule'>
-            <?php edit_comment_link('edit','&nbsp;',''); ?>
-            </small>
-            <?php endif; ?>
+        <div class="capsule dateauthor">
+            <small><?php comment_date('F jS, Y') ?> at <?php comment_time() ?></small>
         </div>
 
         <?php
@@ -771,17 +956,32 @@ function custom_comment($comment, $args, $depth)
 
         </div>
 
-        <?php if( get_option('thread_comments') ) : ?>
-        <div class='postmetadata replybuttonbox'>
-        <span class="capsule">
-            <!-- spaces needed for Safari to render rounded corners! -->
-            &nbsp;
-            <?php comment_reply_link(
-                    array_merge( $args, array('depth' => $depth,
-                                'max_depth' => $args['max_depth']))) ?>
-            &nbsp;
-        </span>
-        </div>
+        <?php global $user_ID; if( $user_ID || get_option('thread_comments') ) : ?>
+
+            <div class='postmetadata replybuttonbox'>
+
+                <?php global $user_ID; if( $user_ID ) : ?>
+                    &nbsp;&nbsp;
+                    <span class='capsule actbubble'>
+                        <?php edit_comment_link('Edit','&nbsp;',''); ?>
+                    </span>
+                <?php endif; ?>
+
+                &nbsp; &nbsp;
+
+               <?php if( get_option('thread_comments') ) : ?>
+                    <span class="capsule actbubble">
+                        <!-- spaces needed for Safari to render rounded corners! -->
+                        &nbsp;
+                        <?php comment_reply_link(
+                                array_merge( $args, array('depth' => $depth,
+                                            'max_depth' => $args['max_depth']))) ?>
+                        &nbsp;
+                    </span>
+                <?php endif; ?>
+
+            </div>
+
         <?php endif; ?>
 
     </fieldset>

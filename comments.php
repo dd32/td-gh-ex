@@ -32,13 +32,17 @@ if ( function_exists('wp_list_comments') ) :
             -->
             &nbsp;
 
-            <?php wp_list_comments('type=all&callback=custom_comment'); ?>
+            <ul>
+                <?php wp_list_comments('type=all&style=ul&callback=custom_comment'); ?>
+            </ul>
+
+            <br clear='all' />
 
             <div class="postmetadata">
                 <?php
-                    previous_comments_link('<span class="capsule" style="float: left;">' .
+                    previous_comments_link('<span class="capsule actbubble" style="float: left;">' .
                                             '&laquo; previous</span>');
-                    next_comments_link('<span class="capsule" style="float: right;">' .
+                    next_comments_link('<span class="capsule actbubble" style="float: right;">' .
                                             'next &raquo;</span>');
                 ?>
                 <br clear='all'/>
@@ -53,11 +57,9 @@ if ( function_exists('wp_list_comments') ) :
 
         else : // comments are closed ?>
             <!-- If comments are closed. -->
-            <div class='nocomments'>
-            <span class="capsule">Comments are closed</span>
+            <span class='capsule nocomments'>Comments are closed</span>
             <br/>
             <br/>
-            </div>
 
         <?php endif;
 
@@ -65,99 +67,17 @@ if ( function_exists('wp_list_comments') ) :
 
 else : // old WP < 2.7
 
-    // Do not delete these lines
-    if('comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
-        die ('Please do not load this page directly. Thanks!');
+    include_once("comments-old.php");
 
-    if(!empty($post->post_password)) // if there's a password
-    {
-        if($_COOKIE['wp-postpass_' . COOKIEHASH] != $post->post_password)  // and it doesn't match the cookie
-        {
-            ?>
-            <p class="nocomments">This post is password protected. Enter the password to view comments.</p>
-            <?php
-            return;
-        }
-    }
-
-    if($comments) :
-
-    ?>
-
-    <div id='comments'>
-
-        <h3 id="commentheader">
-        <?php comments_number('No Responses', 'One Response', '% Responses' );?>
-        </h3>
-
-        <?php foreach ($comments as $comment) : ?>
-
-            <fieldset class='comment'>
-
-                <legend> <?php comment_author_link() ?> writes: </legend>
-
-                <div class="commentmeta">
-                    <small class='capsule'>
-                    <?php comment_date('F jS, Y') ?> at <?php comment_time() ?>
-                    </small>
-                    <?php if( $user_ID ) : ?>
-                    &nbsp;&nbsp;
-                    <small class='capsule'>
-                    <?php edit_comment_link('edit','&nbsp;',''); ?>
-                    </small>
-                    <?php endif; ?>
-                </div>
-
-                <?php
-                    if(function_exists('get_avatar'))
-                        echo get_avatar(get_comment_author_email(), '50');
-                ?>
-
-                <div class='commenttext'>
-
-                <?php if($comment->comment_approved == '0') : ?>
-                    <span class='capsule'>Your comment is awaiting moderation.</span>
-                    <br />
-                <?php endif; ?>
-
-                <?php comment_text() ?>
-
-                </div>
-
-            </fieldset>
-
-        <?php endforeach; /* end for each comment */ ?>
-
-    <?php else : // this is displayed if there are no comments so far ?>
-
-        <?php if('open' == $post->comment_status) : ?>
-            <!-- If comments are open, but there are no comments. -->
-
-         <?php else : // comments are closed ?>
-            <!-- If comments are closed. -->
-            <div class='nocomments'>
-            <span class="capsule">Comments are closed</span>
-            <br/>
-            <br/>
-            </div>
-
-        <?php endif; ?>
-
-    <?php endif; ?>
-
-    <?php if($comments) : ?>
-    </div>
-    <?php endif; ?>
-
-<?php endif; // WP 2.7 check (old vs new style of comments) ?>
+endif; // WP 2.7 check (old vs new style of comments) ?>
 
 <?php if('open' == $post->comment_status) : ?>
+
+    <div id='respond'>
 
     <fieldset id='responsebox'>
 
     <legend>Leave a Reply</legend>
-
-    <div id='respond'>
 
     <?php if( get_option('comment_registration') && !$user_ID ) : ?>
 
@@ -201,9 +121,7 @@ else : // old WP < 2.7
 
         <p><textarea name="comment" id="comment" cols="60%" rows="10" tabindex="4"></textarea></p>
 
-        <p>
-
-        <input name="submit" type="submit" id="submit" class='capsule'
+        <input name="submit" type="submit" id="submit" class='capsule actbubble'
              tabindex="5" value="Submit Comment" />
             
         <?php
@@ -213,7 +131,8 @@ else : // old WP < 2.7
                 comment_id_fields();
             ?>
                 <div id="cancel-comment-reply">
-	            <small><?php cancel_comment_reply_link() ?></small></div>
+	                <small><?php cancel_comment_reply_link() ?></small>
+                </div>
 
             <?php else : ?>
 
@@ -227,9 +146,9 @@ else : // old WP < 2.7
 
     <?php endif; // If registration required and not logged in ?>
 
-    </div>
-
     </fieldset>
+
+    </div>
 
 <?php endif; // if you delete this the sky will fall on your head ?>
 
