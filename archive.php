@@ -4,7 +4,7 @@
 
 <?php the_post() ?>
 <?php if(is_day()): ?>
-				<h1 class="archive-title"><?php _e('Day:', 'simplish') ?> <span class="archive-subtitle"><?php the_time(__('l, F d\, Y', 'simplish')) ?></span></h1>
+				<h1 class="archive-title"><?php _e('Day:', 'simplish') ?> <span class="archive-subtitle"><?php the_time(__('l, F j\, Y', 'simplish')) ?></span></h1>
 <?php elseif(is_month()): ?>
 				<h1 class="archive-title"><?php _e('Month:', 'simplish') ?> <span class="archive-subtitle"><?php the_time(__('F Y', 'simplish')) ?></span></h1>
 <?php elseif(is_year()): ?>
@@ -25,7 +25,7 @@
 <?php if(have_posts()): ?>
 	<?php while(have_posts()): the_post(); ?>
 
-		<div id="article-<?php the_ID(); ?>" class="hentry">
+		<div id="article-<?php the_ID(); ?>" <?php post_class(); ?>>
 <?php include(TEMPLATEPATH . '/hentryhead.php'); ?>
 			<br class="clear" />	
 			<div class="entry-content">
@@ -36,15 +36,12 @@
 
 	<?php endwhile; ?>
 
-		<div id="archivenav" class="navigation">
-			<div class="prevlink"><?php next_posts_link('&laquo; Previous') ?></div>
-			<div class="nextlink"><?php previous_posts_link('Next &raquo;') ?></div>
-		</div>
+<?php include(TEMPLATEPATH . '/prevnextnav.php'); ?>
 	
 <?php else: ?>
 
-		<h2 class="center">Not Found</h2>
-		<?php include(TEMPLATEPATH . '/searchform.php'); ?>
+		<h2 class="center"><?php _e('Not Found', 'simplish'); ?></h2>
+		<?php get_search_form(); ?>
 
 <?php endif; ?>
 		

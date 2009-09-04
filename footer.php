@@ -5,12 +5,10 @@
 	<hr />
 	<p><a href="<?php bloginfo('url'); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
 	<ul>
-		<li><a href="http://wordpress.org" title="WordPress Engine">WordPress</a> | 
+		<li><a href="http://wordpress.org" title="<?php _e('WordPress Engine', 'simplish'); ?>">WordPress</a> | 
 			<span class="vcard">
-				<a class="url fn n" rel="follow designer" title="Simplish Style" href="http://labs.utopian.net/blogs/simplish/">
-					<span class="given-name">Simplish</span>
-					<span class="additional-name hidden"> from <span class="org">Utopian.net Labs</span></span>
-				</a>
+				<a class="url fn" rel="follow designer" title="<?php _e('Simplish Style', 'simplish'); ?>" href="http://labs.utopian.net/blogs/simplish/">Simplish</a> 
+<span class="hidden"><?php _e('from', 'simplish'); ?> <span class="org">Utopian.net Labs</span></span>
 			</span>
 		</li>
 	</ul>

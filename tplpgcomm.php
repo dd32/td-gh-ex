@@ -1,3 +1,9 @@
+<?php
+/*
+Template Name: Page with Comments
+*/
+?>
+
 <?php get_header(); ?>
 
 		<div id="content" class="hfeed">
@@ -15,6 +21,8 @@
 			<?php endwhile; endif; ?>
 
 			<?php edit_post_link(__('Edit&hellip;', 'simplish'),'<p class="admin-edit">&#91; ',' &#93;</p>') ?>
+
+			<?php comments_template(); ?>
 
 		</div>
 

@@ -2,8 +2,8 @@
 THEME NAME: Simplish
 THEME URI: http://labs.utopian.net/blogs/simplish/
 DESCRIPTION: Simplish is a WordPress variant of the Scribbish theme for blogs.
-TAGS: two columns, fixed width, right sidebar, galleries, gravatars, captions, widgets, microformats, hatom, hcard, valid CSS, valid XHTML
-VERSION: 2.1.1
+TAGS: two-columns, fixed-width, right-sidebar, threaded-comments, sticky-post, microformats, white, light
+VERSION: 2.1.10
 AUTHOR: <a href="http://labs.utopian.net">Utopian.net Labs</a>, <a href="http://pittcrew.net/geekblog/">K. Pitt</a>, <a href="http://quotedprintable.com">J. Hardy</a>
 AUTHOR URI:
 */
@@ -23,8 +23,8 @@ AUTHOR URI:
  */
 
 body{
-	background: url(img/background.gif) repeat-x left top;
-	font: normal 12px "lucida grande", calibri, "liberation sans", verdana, arial, helvetica, sans-serif;
+	background: #fff url(img/background.png) repeat-x left top;
+	font: normal .75em "lucida grande", calibri, "liberation sans", verdana, arial, helvetica, sans-serif;
 	margin: 0;
 	padding: 0.6em 1em 1em;
 	text-align: center;
@@ -51,20 +51,19 @@ body{
 #sidebar{
 	border-left: 1px dotted #ddd;
 	float: right;
-	font-size: 11px; 
+	font-size: .9em;
 	padding-left: 15px;
 	text-align: left;
 	width: 200px;
 }
 #footer{
-	border-top: 1px solid #ccc; 
-	clear: both; 
+	border-top: 1px solid #ccc;
+	clear: both;
 	font-size: 90%;
-	height: 40px; 
+	height: 40px;
 	margin: 10px 0 0;
 	padding: 10px 0 0;
 }
-
 #header a:link, #header a:visited{
 	color:#000;
 	text-decoration: none;
@@ -76,60 +75,57 @@ body{
 }
 #header h1{
 	float: left;
-	font: bold 410% georgia, serif;
+	font: bold 410% georgia, constantia, times, serif;
 	letter-spacing: -1px;
 	margin: 0;
 }
 #header h2{
 	float: right;
-	font: normal 12px verdana, arial, sans-serif;
+	font: normal 1em verdana, calibri, "liberation sans", arial, sans-serif;
 	margin: 2.35em 0.2em 0 0;
 }
 
 #content h1, #content h2, #content h3, #content h4, #content h5{
-	font-family: georgia, times, serif;
+	font-family: georgia, constantia, times, serif;
 	font-weight: normal;
 	letter-spacing: -1px;
 }
 #content h2{
-	font-size: 24px;
+	font-size: 2em;
 	margin: 0 0 0.3em;
 }
 #content h3{
-	font-size: 22px;
+	font-size: 1.6em;
 	margin: 1.2em 0 0.3em;
 }
 #content h4{
 	border-bottom: 1px dotted #bbb;
-	font-size: 20px;
+	font-size: 1.6em;
 	margin: 1.2em 0 0.3em;
 }
 #content h5{
 	background: #ffd;
 	border-bottom: 1px dotted #aaa;
-	font-size: 20px;
+	font-size: 1.4em;
 	margin: 1.2em 0 0.3em;
 }
 #content h1.archive-title{
 	color: #a9a9a9;
-	font-size: 28px;
+	font-size: 2.3em;
 	margin: 0 0 0.3em;
-	text-transform: uppercase;
 }
 #content h1.archive-title span.archive-subtitle{
-	font-size: 26px;
 	font-weight: bold;
-	text-transform: none;
 }
 #content .archive-meta{
 	color: #a9a9a9;
-	font-size: 16px;
+	font-size: 1.4em;
 	margin: 0 6em;
 	text-align: justify;
 }
 #content .archive-meta .vcard .fn{
 	font-family: georgia, times, serif;
-	font-size: 26px;
+	font-size: 1.6em;
 	letter-spacing: -1px;
 }
 #content .archive-meta .vcard img.avatar{
@@ -142,17 +138,17 @@ body{
 	margin: 0 0 0 8px;
 }
 #content p{
-	margin: 0 0 1.2em;
+	margin: 1.2em 0;
 }
 #content ul, #content ol{
-	margin: 1em;
+	margin-left: 1em;
 	padding:0;
 }
 #content ul{
 	list-style-type: square;
 }
 #content li{
-	margin: 0 0 0 1em;
+	margin-left: 1em;
 	padding: 0;
 }
 #content dl dt{
@@ -171,54 +167,35 @@ body{
 	padding: 0 1em;
 }
 #content code{
-	font: normal 12px "bitstream vera sans mono", monaco, "lucida console", "courier new", courier, serif;
+	font: normal 1em "bitstream vera sans mono", monaco, "lucida console", "courier new", courier, serif;
 }
 #content pre{
 	background: #FFFFFF;
-	border: 1px solid #EEEEEE;
 	color: #000000;
-	font: normal 12px "bitstream vera sans mono", monaco, "lucida console", "courier new", courier, serif;
-	margin: 0.9em 0;
+	font: normal 1em "bitstream vera sans mono", monaco, "lucida console", "courier new", courier, serif;
+	margin: 0.9em 2em;
 	overflow: auto;
 	padding: 8px;
 }
-/* Tables - derived from http://blueprintcss.org. */
-table,tbody,tfoot,thead.tr,th,td{
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-weight: inherit;
-  font-style: inherit;
-  font-size: 100%;
-  font-family: inherit;
-  vertical-align: baseline;
-}
-#content table{
-	margin-bottom: 1.4em;
-	width: 85%;
-}
+/*
+ * Tables. From	Gesso, after Boilerplate.
+ */
+table { border-collapse: separate; border-spacing: 0; }
+table { margin-bottom: 1.4em; }
+th { border-bottom: 2px solid #ddd; font-weight: bold; }
+td { border-bottom: 1px solid #ddd; }
+th,td { padding: 4px 10px 4px 0; }
+tfoot { font-style: italic; }
+caption { background: #ffc; }
 #content th{
-	font-weight: bold;
-	background: #eee;
-}
-#content th,td{
-	padding: 4px 10px 4px 5px;
-}
-#content tr.even td{
-	background: #E5ECF9;
-}
-#content tfoot{
-	font-style: italic;
-}
-#content caption{
 	background: #eee;
 }
 #content .hentry{
 	margin: 0 0 3em 0;
 }
 #content .hentry .entry-title{
-	font-size: 30px;
-	letter-spacing: -1.5px; 
+	font-size: 2.5em;
+	letter-spacing: -1.5px;
 	line-height: 99%;
 	margin: 0;
 }
@@ -237,7 +214,7 @@ table,tbody,tfoot,thead.tr,th,td{
 #content .hentry .posted{
 	color: #a9a9a9;
 	float: left;
-	font: normal 14px/14px helvetica, arial, verdana, sans-serif;
+	font: normal 1.15em helvetica, arial, verdana, sans-serif;
 	letter-spacing: -1px;
 	margin: 1px 0 0.6em 2px;
 }
@@ -256,9 +233,9 @@ table,tbody,tfoot,thead.tr,th,td{
 	background: #eee;
 	border: 1px solid #ddd;
 	clear: both;
-	font-size: 10px;
+	font-size: .85em;
 	list-style-type: none;
-	margin: 0;
+	margin-left: 0;
 	padding: 5px;
 }
 #content .hentry ul.meta li{
@@ -274,31 +251,48 @@ table,tbody,tfoot,thead.tr,th,td{
 #content .hentry .meta a:hover, #content .hentry .meta a:active{
 	color: #fff;
 }
-#content ol.comments, #content ol.trackbacks{
+#content ol.comments{
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 }
-#content li.comment, #content li.trackback{
-	border: 2px solid #ddd;
-	margin: 0 0 1.5em;
-	padding: 1em;
+#content li.comment, #content li.trackback, #content li.pingback{
+	border-left: 1px dashed #bbb;
+	list-style-type: none;
+	margin-bottom: 1.5em;
+	padding-bottom: 1em;
+	padding-left: 1em;
+	padding-top: 0.5em;
+}
+#content #commentslist li.depth-1{
+	border: 1px solid #ddd;
+	margin: 1.5em 0;
 }
 #content li.comment.preview{
 	background: #ffc;
 	border: 3px solid #fab444;
-	margin: 0 0 1.5em;
+	list-style-type: none;
 	padding: 1em;
 }
+/* Even-Odd Thread Shading - disabled.
+#content li.comment.thread-even{
+	background: #fff;
+}
+#content li.comment.thread-odd{
+	background: #eee;
+}
+ */
 #content li.comment .comment-head,
 #content li.trackback .comment-head{
 	font-weight: bold;
 	margin-bottom: 1em;
 }
-#content li.comment .comment-author,
-#content li.trackback .comment-author{
-	font-size: 16px;
+#content #commentslist li .comment-author{
+	font-size: 1.3em;
 	letter-spacing: -1px;
+}
+#content #commentslist li span.says{
+	display: none;
 }
 #content li.comment .comment-head abbr,
 #content li.trackback .comment-head abbr{
@@ -308,18 +302,14 @@ table,tbody,tfoot,thead.tr,th,td{
 #content li.trackback .comment-head a.comment-permalink{
 	text-decoration: none;
 }
-#content li.comment .comment-author{
-	height:36px;
-}
 #content li.comment .comment-author img.avatar{
 	background: #fff;
 	clear:both;
 	float: right;
-	margin: 0 0 0.5em 0.5em;
+	margin: 0.5em;
 }
 #content li.comment p{
-	padding-left:24px;
-	padding-right:48px;
+	margin-right: 2em;
 }
 #content form.comments{
 	background: #f2f2f2;
@@ -345,7 +335,7 @@ table,tbody,tfoot,thead.tr,th,td{
 }
 #content .navigation{
 	display: block;
-	font-size: 10px;
+	font-size: .9em;
 	margin-bottom: 60px;
 	margin-top: 24px;
 	text-align: center;
@@ -353,13 +343,11 @@ table,tbody,tfoot,thead.tr,th,td{
 #content .navigation .prevlink{
 	float: left;
 }
-
 #content .navigation .nextlink{
 	float:right;
 }
-
 #sidebar h2{
-	font: bold 14px "lucida grande", calibri, "liberation sans", verdana, arial, helvetica, sans-serif;
+	font: bold 1.3em "lucida grande", calibri, "liberation sans", verdana, arial, helvetica, sans-serif;
 	margin: 0 0 0.5em;
 }
 #sidebar h2 a:link, #sidebar h2 a:visited{
@@ -385,17 +373,17 @@ table,tbody,tfoot,thead.tr,th,td{
 }
 #sidebar ul li li li{
 	list-style-type: square;
-	margin:0px 0px 0px 1.5em;
+	margin-left: 1.5em;
 }
 #sidebar ul li li li li{
 	list-style-type: disc;
-	margin:0px 0px 0px 1.5em;
+	margin-left : 1.5em;
 }
 #sidebar em{
 	font-style: normal;
 }
 #sidebar .search p input{
-	font-size: 11px;
+	font-size: .9em;
 	width: 92%;
 }
 #sidebar #search, #sidebar #tag_cloud{
@@ -413,28 +401,28 @@ table,tbody,tfoot,thead.tr,th,td{
 	display: none;
 }
 #footer p{
-	float: left; 
+	float: left;
 	margin: 0;
-	padding: 0; 
+	padding: 0;
 	width: 40%;
 }
 #footer ul{
 	float: right;
-	list-style-type: none; 
+	list-style-type: none;
 	margin: 0;
 	padding: 0;
-	text-align: right; 
+	text-align: right;
 	width: 40%;
 }
 #footer li{
-	display: inline; 
+	display: inline;
 	margin: 0;
 	padding: 0 0 0 1em;
 }
 
 /* Applied-last Element Treatments */
 input, textarea{
-	font: normal 12px "bitstream vera sans", verdana, sans-serif;
+	font: normal 1em "bitstream vera sans", verdana, sans-serif;
 }
 abbr{
 	border: none;
@@ -514,7 +502,7 @@ span.caps{
 	padding: 1em 4px 0 5px;
 }
 
-/* sp_vallery() Galleries. */
+/* Galleries. */
 div.entry-content div.gallery{
 	clear: both;
 	float: left;
@@ -524,7 +512,7 @@ div.entry-content div.gallery{
 }
 div.entry-content div.gallery dl{
 	float: left;
-	margin: 0 auto;
+	margin: 0.5em auto;
 	text-align: center;
 }
 div.entry-content div.gallery dl.gallery-columns-2{
@@ -544,22 +532,15 @@ div.entry-content div.gallery dd{
 	margin: 0 auto 1em auto;
 	text-align: center;
 }
-div.entry-content div.gallery *{
-	margin: 0;
-	padding: 0;
-}
-
+ 
 /* Sitemap template uses .hentry .entry-title as list item. */
 #sitemap-list .hentry{
 	margin: 0 0 0 1em;
 }
 #sitemap-list #all-posts span.entry-title{
-	font-size: 12px;
+	font-size: 1em;
 	letter-spacing: normal;
 	line-height: normal;
-}
-#sitemap-list ul ul, #sitemap-list ol ol{
-	margin: 0;
 }
 #sitemap-list #all-posts .hentry .entry-title a:link,
 #sitemap-list #all-posts .hentry .entry-title a:visited{
@@ -570,13 +551,16 @@ div.entry-content div.gallery *{
 	background: #000 none repeat scroll 0 0;
 	color: #fff;
 }
+#sitemap-list ul ul, #sitemap-list ol ol{
+    margin-left:0;
+}
 
 /* Search template specifics. */
 #content.search-results .hentry{
 	margin: 0;
 }
 #content.search-results .hentry h2.entry-title{
-	font-size: 20px;
+	font-size: 1.7em;
 	letter-spacing: -1px;
 }
 #content.search-results .hentry .entry-title a:link,
