@@ -1,4 +1,4 @@
-<?php if ( is_sidebar_active('primary_widget_area') ) : ?>
+<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : ?>		
 		<div id="primary" class="widget-area">
 		<img src="<?php bloginfo('template_url')?>/images/logo.png">
 		<div class="spacer"></div>
@@ -8,7 +8,7 @@
 		</div><!-- #primary .widget-area -->
 <?php endif; ?>		
 		
-<?php if ( is_sidebar_active('secondary_widget_area') ) : ?>
+<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : ?>
 		<div id="secondary" class="widget-area">
 			<ul class="xoxo">
 				<?php dynamic_sidebar('secondary_widget_area'); ?>

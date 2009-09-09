@@ -44,14 +44,19 @@
 				
 				<div id="rss-search">
 					<a  href="<?php bloginfo('rss2_url'); ?>"><img src="<?php bloginfo('template_url')?>/images/subscribe.png"></a>
-					<form method="get" id="searchform" action="<?php bloginfo('home'); ?>/">							<input type="text" value="<?php echo wp_specialchars($s, 1); ?>" name="s" id="s" size="15" />							<input type="button" src="<?php bloginfo('template_url')?>/images/search.png" alt="Search" value="Search"/>					</form>
+					<form method="get" id="searchform" action="<?php bloginfo('home'); ?>/">
+							<input type="text" value="<?php echo wp_specialchars($s, 1); ?>" name="s" id="s" size="15" />
+							<input type="button" src="<?php bloginfo('template_url')?>/images/search.png" alt="Search" value="Search"/>
+					</form>
 				</div><!--rss-search-->
 
 			</div><!-- #branding -->
 			
 			<div id="access">
 				<div class="skip-link"><a href="#content" title="<?php _e( 'Skip to content', 'your-theme' ) ?>"><?php _e( 'Skip to content', 'your-theme' ) ?></a></div>
-				<?php wp_page_menu( 'sort_column=menu_order' ); ?>			
+				<?php wp_page_menu(); ?>		
+				<?php //wp_list_pages('title_li=&sort_column=menu_order&depth=1'); ?>
+
 			</div><!-- #access -->
 			
 		</div><!-- #masthead -->	

@@ -1,10 +1,10 @@
 /*   
 Theme Name: Airmail - par Avion
 Theme URI: http://johnnye.net/airmail-paravion.html
-Description: A travel or holiday orientated blog template, 2 columns, flexible width, based on old fashioned airmail envolopes. 
+Description: A travel or holiday orientated blog template, 2 columns, flexible width, based on old fashioned airmail envolopes. 0.6 fixes some CSS and Menu bugs
 Author: John Nye
 Author URI:http://johnnye.net
-Version: 0.5.1
+Version: 0.6
 Tags: tan, blue, red, light, two-columns, flexible-width, microformats, holiday
 
 Theme is copyright 2009 John Nye
@@ -103,7 +103,8 @@ body {
 	display: none;
 }
 .menu li {
-	display: inline;
+	/*display: inline;*/
+	float: left;
 	
 }
 .menu a {
@@ -142,7 +143,17 @@ body {
 	line-height: 1.25em;
 	font-family: "Lucida Grande", Verdana, Arial, sans-serif;
 }
-a{	border-bottom-width: 1px;	border-bottom-color: #d9e0ed;	border-bottom-style: inset;	text-decoration: none;	color: #002147;	}a:hover, a:active{	background-color: #d9e0ed;}
+a{
+	border-bottom-width: 1px;
+	border-bottom-color: #d9e0ed;
+	border-bottom-style: inset;
+	text-decoration: none;
+	color: #002147;
+	
+}
+a:hover, a:active{
+	background-color: #d9e0ed;
+}
 
 /* =Navigation
 -------------------------------------------------------------- */

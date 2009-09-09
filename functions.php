@@ -54,46 +54,8 @@ function tag_ur_it($glue) {
 	return trim(join( $glue, $tags ));
 } // end tag_ur_it
 
-
-// Register widgetized areas
-function theme_widgets_init() {
-	// Area 1
-  register_sidebar( array (
-  'name' => 'Primary Widget Area',
-  'id' => 'primary_widget_area',
-  'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-  'after_widget' => "</li>",
-	'before_title' => '<h3 class="widget-title">',
-	'after_title' => '</h3>',
-  ) );
-
-	// Area 2
-  register_sidebar( array (
-  'name' => 'Secondary Widget Area',
-  'id' => 'secondary_widget_area', 
-  'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-  'after_widget' => "</li>",
-	'before_title' => '<h3 class="widget-title">',
-	'after_title' => '</h3>',
-  ) );
-} // end theme_widgets_init
-
-add_action( 'init', 'theme_widgets_init' );
-
-
-
-
-
-// Check for static widgets in widget-ready areas
-function is_sidebar_active( $index ){
-  global $wp_registered_sidebars;
-
-  $widgetcolums = wp_get_sidebars_widgets();
-		 
-  if ($widgetcolums[$index]) return true;
-  
-	return false;
-} // end is_sidebar_active
+if ( function_exists('register_sidebar') ){    register_sidebar( array (  'name' => 'Primary Widget Area',  'id' => 'primary_widget_area',  'before_widget' => '<li id="%1$s" class="widget-container %2$s">',  'after_widget' => "</li>",	'before_title' => '<h3 class="widget-title">',	'after_title' => '</h3>',  ) );	// Area 2  register_sidebar( array (  'name' => 'Secondary Widget Area',  'id' => 'secondary_widget_area',   'before_widget' => '<li id="%1$s" class="widget-container %2$s">',  'after_widget' => "</li>",	'before_title' => '<h3 class="widget-title">',	'after_title' => '</h3>',  ) );}
+    
 
 
 // Produces an avatar image with the hCard-compliant photo class
