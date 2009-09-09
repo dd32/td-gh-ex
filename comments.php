@@ -9,27 +9,31 @@
 	}
 ?>
 
-<!-- You can start editing here. -->
-
 <?php if ( have_comments() ) : ?>
 	<h3 id="comments"><?php comments_number('No Responses', 'One Response', '% Responses');?> <?php printf('to &#8220;%s&#8221;', the_title('', '', false)); ?></h3>
 
+	<div class="navigation com first">
+		<?php previous_comments_link('&laquo;'); ?>
+		<?php paginate_comments_links(array('type' => '', 'prev_next' => false)); ?>
+		<?php next_comments_link('&raquo;'); ?>
+	</div>
+
 	<ol class="commentlist">
-		<?php wp_list_comments();?>
+		<?php wp_list_comments('callback=mytheme_comment');?>
 	</ol>
 
-	<div class="navigation">
-		<div class="alignleft"><?php previous_comments_link() ?></div>
-		<div class="alignright"><?php next_comments_link() ?></div>
+	<div class="navigation com">
+		<?php previous_comments_link('&laquo;'); ?>
+		<?php paginate_comments_links(array('type' => '', 'prev_next' => false)); ?>
+		<?php next_comments_link('&raquo;'); ?>
 	</div>
 
  <?php else : // this is displayed if there are no comments so far ?>
 
 	<?php if ('open' == $post->comment_status) : ?>
-		<!-- If comments are open, but there are no comments. -->
 
 	 <?php else : // comments are closed ?>
-		<!-- If comments are closed. -->
+
 		<p class="nocomments">Comments are closed</p>
 
 	<?php endif; ?>
@@ -79,12 +83,12 @@
 
 		<p><textarea name="comment" id="comment" cols="100%" rows="10" tabindex="4"></textarea></p>
 
+		<?php do_action('comment_form', $post->ID); ?>
+
 		<p>
 			<input name="submit" type="submit" id="submit" tabindex="5" value="<?php _e('Submit Comment', 'kubrick'); ?>" />
 			<?php comment_id_fields(); ?>
 		</p>
-
-		<?php do_action('comment_form', $post->ID); ?>
 
 	</form>
 

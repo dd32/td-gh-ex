@@ -17,8 +17,6 @@
 	$oddcomment = 'class="alt" ';
 ?>
 
-<!-- You can start editing here. -->
-
 <?php if ($comments) : ?>
 	<h3 id="comments"><?php comments_number('No Responses', 'One Response', '% Responses' );?> to "<?php the_title(); ?>"</h3>
 
@@ -27,15 +25,19 @@
 	<?php foreach ($comments as $comment) : ?>
 
 		<li <?php echo $oddcomment; ?>id="comment-<?php comment_ID() ?>">
-			<div class="comment-author vcard">
-				<?php echo get_avatar( $comment, 32 ); ?>
-				<cite class="fn"><?php comment_author_link() ?>:</cite>
-				<div class="comment-meta commentmetadata"><a href="#comment-<?php comment_ID() ?>" title=""><?php comment_date('F jS, Y') ?> at <?php comment_time() ?></a> <?php edit_comment_link('[ edit ]','',''); ?></div>
- 			</div>
-			<?php if ($comment->comment_approved == '0') : ?>
-			<em>Your comment is awaiting moderation.</em>
-			<?php endif; ?>
-			<?php comment_text() ?>
+			<div class="commentdiv">
+				<div class="comment-author vcard">
+					<?php echo get_avatar( $comment, 32 ); ?>
+					<cite class="fn"><?php comment_author_link() ?>:</cite>
+					<div class="comment-meta commentmetadata"><a href="#comment-<?php comment_ID() ?>" title=""><?php comment_date('F jS, Y') ?> at <?php comment_time() ?></a> <?php edit_comment_link('[ edit ]','',''); ?></div>
+	 			</div>
+				<div class="ctext">
+					<?php if ($comment->comment_approved == '0') : ?>
+					<em>Your comment is awaiting moderation.</em>
+					<?php endif; ?>
+					<?php comment_text() ?>
+				</div>
+			</div>
 		</li>
 
 	<?php
@@ -50,10 +52,9 @@
  <?php else : // this is displayed if there are no comments so far ?>
 
 	<?php if ('open' == $post->comment_status) : ?>
-		<!-- If comments are open, but there are no comments. -->
 
 	 <?php else : // comments are closed ?>
-		<!-- If comments are closed. -->
+
 		<p class="nocomments">Comments are closed.</p>
 
 	<?php endif; ?>
@@ -91,10 +92,12 @@
 
 <p><textarea name="comment" id="comment" cols="100%" rows="10" tabindex="4"></textarea></p>
 
-<p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
+<?php do_action('comment_form', $post->ID); ?>
+
+<p>
+<input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
 <input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
 </p>
-<?php do_action('comment_form', $post->ID); ?>
 
 </form>
 

@@ -3,22 +3,18 @@
 	<?php if (have_posts()) : ?>
 		<?php while (have_posts()) : the_post(); ?>
 
-		<div class="post">
+		<article class="post">
 			<h2><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-			<div class="postmetadata"><?php the_time('m.d.Y') ?> | Posted in <?php the_category(', ') ?> | Author: <a href="<?php bloginfo('url'); ?>/author/"><?php the_author() ?></a> | <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?><?php the_tags('<br />Tags: ', ', ', ''); ?></div>
+			<div class="pmeta"><?php the_time('m.d.Y') ?> <span>&middot;</span> Posted in <?php the_category(', ') ?><?php edit_post_link('Edit', ' <span>&middot;</span> ', ''); ?></div>
 			<div class="entry">
-				<?php the_content(); ?>
+				<p><?php print do_excerpt(get_the_excerpt(), 55); ?></p>
 			</div>
-		</div>
+			<div class="ptags"><span class="comments"><?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?></span> <?php the_tags('Tags: ', ', ', ''); ?></div>
+		</article>
 
 		<?php endwhile; ?>
 
-  	<div class="navigation">
-			<?php if(function_exists('wp_pagenavi')) { wp_pagenavi(); } else { ?>
-			<div class="alignleft"><?php next_posts_link('&laquo; Older Entries') ?></div>
-			<div class="alignright"><?php previous_posts_link('Newer Entries &raquo;') ?></div>
-			<?php } ?>
-		</div>
+  	<?php navi(); ?>
 
 	<?php else : ?>
 

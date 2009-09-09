@@ -2,14 +2,14 @@
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-			<div class="post">
-				<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
-				<div class="postmetadata"><?php the_time('m.d.Y') ?> | Author: <a href="<?php bloginfo('url'); ?>/author/<?php the_author_login(); ?>/"><?php the_author() ?></a> | Posted in <?php the_category(', ') ?></div>
-				<div class="entry">
-				  <?php the_content(); ?>
-				</div>
-				<?php edit_post_link('Edit', '<p>', '</p>'); ?>
+		<article class="post">
+			<h2><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+			<div class="pmeta"><?php the_time('m.d.Y') ?> <span>&middot;</span> Posted in <?php the_category(', ') ?><?php edit_post_link('Edit', ' <span>&middot;</span> ', ''); ?></div>
+			<div class="entry">
+			  <?php the_content(); ?>
 			</div>
+			<div class="ptags"><?php the_tags('Tags: ', ', ', ''); ?></div>
+		</article>
 
 	<?php comments_template(); ?>
 

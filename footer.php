@@ -1,11 +1,11 @@
-	</div><!-- end #container -->
+	</section>
 
-	<div id="footer">
-		Copyright &copy; 2008 <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a><br />
-		Powered by <a href="http://wordpress.org/" target="_blank">WordPress</a> &middot; Theme by <a href="http://dimox.name/" target="_blank">Dimox</a>
-	</div>
+	<footer>
+		&copy; 2009 <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a><br />
+		Theme by <a href="http://dimox.name/" target="_blank">Dimox</a>
+	</footer>
 
-</div><!-- end #wrapper -->
+</div><!-- #wrapper -->
 
 <?php wp_footer(); ?>
 </body>
