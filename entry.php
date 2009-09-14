@@ -11,13 +11,18 @@
                     <?php the_time('M jS, Y') ?> by <?php the_author() ?>
                 </div>
 
-                <div class='posttitle'><?php the_title(); ?></div>
+                <div class='heading'><?php the_title(); ?></div>
 
             </div>
 
+            <?php
+                if(function_exists('get_avatar'))
+                    echo get_avatar(get_the_author_id(), '50');
+            ?>
+
             <div class='postmetabox'>
 
-                <div class='showpostmeta'>
+                <div class='postmetabutton'>
                     <img
                         src='<?php print get_bloginfo('template_url') . "/images/info.png"; ?>'
                         alt='Info'
@@ -26,13 +31,18 @@
 
                 <div class='postmetadata'>
 
-                    <div><a href="<?php the_permalink() ?>" rel="bookmark"
-                            title="Permanent Link to <?php the_title(); ?>"><li>Permalink</li></a>
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="<?php the_permalink() ?>" rel="bookmark"
+                                    title="Permanent Link to <?php the_title(); ?>">Permalink</a>
+                            </li>
+                        </ul>
                     </div>
 
-                    <?php edit_post_link('Edit Entry', '<div><li>', '</li></div>'); ?>
+                    <?php edit_post_link('Edit Entry', '<div><ul><li>', '</li></ul></div>'); ?>
 
-                    <?php if( is_home() ): ?>
+                    <?php if( ! is_single() ): ?>
                     <div>
                         <li>
                             <?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?>
@@ -73,25 +83,16 @@
 
             <div class='entry'>
 
-                <?php
-                    if(function_exists('get_avatar'))
-                        echo get_avatar(get_the_author_id(), '50');
-                ?>
+                <?php the_content('', FALSE, ''); ?>
 
-                <?php the_content('Read the rest of this entry &raquo;'); ?>
+                <a
+                        class='morelink'
+                        title='Click to view post and comments'
+                        href='<?php the_permalink(); ?>'>Read the full post and comments &raquo;</a>
 
-            </div>
+                <br clear='all' />
 
-            <!--
-                this below is a hack to prevent the postmeta box, which floats right, from
-                overlapping the next post title, etc. Even though the next post specifies
-                clear: both, that doesn't seem to help in Safari. So we use this DIV below
-                to clear the float, and show/hide this DIV as and when the postmeta is
-                shown or hidden.
-            -->
-            <div class='clearpostmetafloat'>
-                &nbsp;
-            </div>
+            </div> <!-- entry -->
 
         </div> <!-- post -->
 
@@ -100,7 +101,7 @@
 <?php else : ?>
 
     <div class="post">
-        <div class='posttitle'>Not Found</div>
+        <div class='heading'>Not Found</div>
             <br/>
             <div class='entry'>
                 Sorry, but you are looking for something that isn't here.
