@@ -1,0 +1,448 @@
+/*
+Theme Name: Artistic
+Description: A Great looking Artistic Wordpress theme. Designed for blogs with great content and blog owners with style.
+Version: 1.0
+Author: Diamonds Designers
+Author URI: http://www.diamondsdesigners.com/
+Tags: black, yellow ,red, dark, fixed-width, two-columns
+License: General Public License
+*/
+
+body {
+	margin: 0;
+	background: #211f1e center top no-repeat url(images/bck.jpg);
+	font-family: Arial, Helvetica, sans-serif; font-size: 11px;
+	color: #736357;
+}
+#container:after, #content .post .entry:after, #content .navigation:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+#wrapper {
+	background: center bottom no-repeat url(images/bckwrapper.png);
+}
+#page {
+	margin: 0 auto;
+	width: 950px;
+}
+#header {
+	position: relative;
+	padding: 115px 0 0 0;
+	height: 115px;
+}
+#header h1 {
+	margin: 0 0 0 15px;
+	font-family: Tahoma, Geneva, sans-serif; font-size: 36px; font-weight: normal;
+}
+#header h1 a {
+	color: #f1a73b;
+	text-decoration: none;
+}
+#header p {
+	margin: 0 0 0 75px;
+	font-family: "Myriad Pro"; font-size: 24px;
+	color: #b64926;
+}
+#header ul {
+	position: absolute;
+	left: 0;
+	margin: 0; padding: 0;
+	list-style-type: none;
+}
+#header li {
+	float: left;
+}
+#header .menu {
+	top: 0;
+	height: 50px;
+	overflow: hidden;
+}
+#header .menu li {
+	margin: 0 25px 0 0;
+	line-height: 50px;
+	background: right top no-repeat url(images/bckheadermenuli.png);
+	font-size: 18px;
+}
+#header .menu li a {
+	float: left;
+	padding: 0 25px 0 0;
+	color: #736357;
+	text-decoration: none;
+}
+#header .menu li a:hover, #header .menu .current_page_item a {
+	background: no-repeat url(images/bckheadermenuliahover.png);
+	color: #fff;
+}
+#header .rss {
+	top: 70px;
+}
+#header .rss li {
+	margin: 0 15px 0 0; padding: 0 0 0 25px;
+	background: no-repeat url(images/bckheaderrssli.png);
+	font-family: Tahoma, Geneva, sans-serif; font-size: 12px; font-weight: bold;
+	text-transform: uppercase;
+}
+#header .rss li a {
+	color: #fff;
+	text-decoration: none;
+}
+#container {
+	width: 100%;
+}
+#content {
+	float: left;
+	margin: 0 30px 0 0; padding: 0 50px 0 105px;
+	width: 500px;
+}
+#content a {
+	color: #ffb03b;
+}
+#content .post {
+	position: relative;
+	margin: 0 0 30px 0;
+	width: 100%;
+}
+#content .post a {
+	text-decoration: none;
+}
+#content .post .title {
+	position: relative;
+	margin: 0 -50px 0 -105px; padding: 40px 0 0 110px;
+	height: 60px;
+	background: no-repeat url(images/bckcontentposttitle.png);
+	font-size: 12px;
+}
+#content .post .title a {
+	color: #fff;
+}
+#content .post .entry {
+	width: 100%;
+}
+#content .post .meta {
+	position: relative;
+	margin: 20px 0 0 10px;
+	background: repeat-y url(images/bckcontentpostmeta.png);
+	color: #8e2800;
+}
+#content .post .meta .bottom {
+	background: left bottom no-repeat url(images/bckcontentpostmetabottom.png);
+}
+#content .post .meta .top {
+	padding: 40px 0 40px 25px;
+	width: 465px;
+	background: no-repeat url(images/bckcontentpostmetatop.png);
+}
+#content .post .meta a {
+	color: #fff;
+}
+#content .post .meta .comments {
+	position: absolute;
+	top: 12px; left: 375px;
+	font-size: 12px; font-weight: bold;
+}
+#content .post .comments a {
+	color: #fff;
+}
+#content .post .more {
+	position: absolute;
+	right: 30px; bottom: 10px;
+	font-size: 12px; font-weight: bold;
+	color: #8e2800;
+}
+
+#content .moresearch {
+	position: absolute;
+	right: 30px; bottom: 24px;
+	font-size: 12px; font-weight: bold;
+	color: #8e2800;
+}
+
+
+#content .post .date {
+	position: absolute;
+	top: 20px; left: -90px;
+	width: 70px;
+	text-align: center;
+	font-family: Tahoma, Geneva, sans-serif;
+}
+#content .post .date span {
+	display: block;
+}
+#content .post .date .d {
+	font-size: 24px;
+	color: #fff;
+}
+#content .post .date .m {
+	font-size: 14px;
+	color: #ffb03b;
+}
+#sidebar {
+	float: left;
+	margin: 0; padding: 0;
+	list-style-type: none;
+	width: 265px;
+}
+#sidebar li {
+	margin: 0 0 15px 0;
+	background: repeat-y url(images/bcksidebarli.png);
+	color: #fff;
+}
+#sidebar li .bottom {
+	background: left bottom no-repeat url(images/bcksidebarlibottom.png);
+}
+#sidebar li .top {
+	padding: 0 0 30px 0;
+	min-height: 150px;
+	background: no-repeat url(images/bcksidebarlitop.png);
+}
+* html #sidebar li .top {
+	height: 150px;
+}
+#sidebar ul, #sidebar .textwidget, #sidebar .search form, #sidebar #calendar_wrap, #sidebar .widget_tag_cloud div div div {
+	margin: 0 50px; padding: 0;
+	list-style-type: none;
+}
+#sidebar ul ul {
+	margin: 5px 0 0 15px;
+}
+#sidebar li li {
+	margin: 0 0 5px 0;
+	background: no-repeat;
+}
+#sidebar li li li a {
+	color: #736357;
+}
+#sidebar a {
+	color: #ffb03b;
+	text-decoration: none;
+}
+#sidebar h3 {
+	margin: 0; padding: 35px 0 0 30px;
+	height: 55px;
+	font-size: 18px; font-weight: normal;
+}
+#sidebar .search input {
+	vertical-align: middle;
+}
+#sidebar .search .text {
+	margin: 0 5px 0 0; padding: 0 5px;
+	width: 80px;
+	background-color: transparent !important;
+	border: 0;
+	border-top: #8e2800 1px dashed; border-left: #8e2800 1px dashed;
+	color: #fff;
+}
+#sidebar .search .submit {
+	padding: 0;
+	background-color: transparent !important;
+	border: 0;
+	font-size: 14px;
+	color: #ffb03b;
+	cursor: pointer;
+}
+#footer {
+	margin: 25px 0 0 0; padding: 40px 0 0 0;
+	height: 25px;
+}
+#footer a {
+	color: #ffb03b;
+	text-decoration: none;
+}
+#footer ul {
+	float: right;
+	margin: -10px 0 0 0; padding: 0 100px 0 0;
+	list-style-type: none;
+}
+#footer li {
+	display: inline;
+	margin: 0 0 0 15px;
+	font-weight: bold;
+}
+#footer li a {
+	color: #fff;
+	text-decoration: none;
+}
+#footer li a:hover {
+	color: #ffb03b;
+}
+
+#content .navigation {
+	margin: 15px 0;
+	width: 100%;
+	font-weight: bold;
+}
+#content .navigation a {
+	text-decoration: none;
+}
+#content .postnavigation {
+	margin: 15px 0 0 0;
+}
+#content .postnavigation a {
+	float: left;
+	width: 150px; height: 45px;
+	text-align: center; line-height: 45px;
+	background: no-repeat url(images/bckcontentnavigationa.png);
+}
+#content .postnavigation span {
+	color: #8e2800;
+}
+
+.commentlist, .children {
+	margin: 0; padding: 0;
+	list-style-type: none;
+}
+.children {
+	margin: 10px 0 0 10px;
+}
+.commentlist .comment {
+	margin: 0 0 15px 0; padding: 5px;
+	background-color: #fff;
+	border: #8e2800 1px solid;
+}
+.commentlist .avatar {
+	float: right;
+	margin: 0 0 5px 5px;
+	border: #8e2800 1px solid;
+}
+#author, #email, #url, #comment {
+	margin: 0 5px 0 0; padding: 2px;
+	background-color: #fff !important;
+	border: #8e2800 1px solid;
+}
+#comment {
+	width: 300px;
+}
+#comments, #respond h3 {
+	font-size: 15px;
+}
+a#cancel-comment-reply-link {
+	font-weight: bold;
+}
+
+/* A few generic styles used across the site */
+
+a img {
+	border: 0;
+}
+
+td {
+	vertical-align: top;
+}
+
+input, textarea, select {
+	vertical-align: middle;
+	font-family: Arial, Helvetica, sans-serif; font-size: 11px;
+	color: #736357;
+}
+input[type="text"], input[type="password"] {
+	padding: 2px;
+	background-color: #fff !important;
+	border: #8e2800 1px solid;
+}
+textarea, select {
+	padding: 2px;
+	background-color: #fff !important;
+	border: #8e2800 1px solid;
+}
+
+acronym, abbr, span.caps {
+	cursor: help;
+}
+
+acronym, abbr {
+	border-bottom: 1px dashed #8e2800;
+}
+
+blockquote {
+	margin: 15px 30px 0 10px;
+	padding-left: 20px;
+	border-left: 5px solid #8e2800;
+}
+
+blockquote cite {
+	margin: 5px 0 0;
+	display: block;
+}
+
+.nocomments {
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+.center {
+	text-align: center;
+}
+
+.hidden {
+	display: none;
+}
+
+.screen-reader-text {
+     position: absolute;
+     left: -1000em;
+}
+
+img.centered {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+	}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+	}
+
+img.middle {
+	vertical-align: middle;
+}
+
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
+}
+.aligncenter,
+div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	color: #000;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
