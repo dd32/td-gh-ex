@@ -298,4 +298,10 @@ jQuery(document).ready(function(){
   // widget title adjustments
   jQuery('.widget .titlewrap').each(function(){ jQuery(this).prependTo(this.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode);  });
 
+  // set roles on some elements (for accessibility)
+  jQuery("#nav").attr("role","navigation");
+  jQuery("#main-content").attr("role","main");
+  jQuery("#sidebar").attr("role","complementary");
+  jQuery("#searchform").attr("role","search");
+
  });

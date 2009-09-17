@@ -15,7 +15,7 @@
 
   <h3 class="comments">
     <?php
-      if ($numComments == 1) printf(__('%s Comment', 'arclite'), $numComments); else printf(__('%s Comments', 'arclite'), $numComments);
+      if ($numComments == 1) printf(__('1 Comment', 'arclite'), $numComments); else printf(__('%s Comments', 'arclite'), $numComments);
       if ($numPingbacks == 1) printf(' ('.__('and one trackback', 'arclite').') ', $numPingbacks);
       else if ($numPingbacks > 1) printf(' ('.__('and %s trackbacks', 'arclite').') ', $numPingbacks);
     ?>
@@ -129,13 +129,14 @@
               </p>
             <?php } ?>
 
-        	<?php if (function_exists('comment_id_fields')) : comment_id_fields(); endif; do_action('comment_form', $post->ID); ?>
+        	<?php if (function_exists('comment_id_fields')) : comment_id_fields(); endif; ?>
         </div>
         <!-- /comment input -->
 
         <div id="submitbox" class="left">
 		<input name="submit" type="submit" id="submit" class="button" tabindex="5" value="<?php _e('Submit Comment', 'arclite'); ?>" />
          <input type="hidden" name="formInput" />
+        <?php do_action('comment_form', $post->ID); ?>
         </div>
       </form>
 

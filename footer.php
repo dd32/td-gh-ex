@@ -18,7 +18,7 @@
      <p>
      <!-- please do not remove this. respect the authors :) -->
      <?php
-      printf(__('Arclite theme by %s', 'arclite'), '<a href="http://digitalnature.ro/projects/arclite">digitalnature</a>');
+      printf(__('Arclite theme by %s', 'arclite'), '<a href="http://digitalnature.ro">digitalnature</a>');
       print ' | ';
       printf(__('powered by %s', 'arclite'), '<a href="http://wordpress.org/">WordPress</a>');
      ?>

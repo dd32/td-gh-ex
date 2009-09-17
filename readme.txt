@@ -15,12 +15,22 @@ Credits:
 - Dutch translation by Robert, http://www.on4ya.be
 - Swahili translation by Muhsin, http://www.mzalendo.net
 - Italian translation by Gianni Diurno, http://gidibao.net
+- Ukrainian translation by Oleksandr Natalenko <pfactum@gmail.com>
 - javascript quote functions by mg12, http://www.neoease.com
 - "Union" font by the Danish Ministry of Education, http://praegnanz.de/essays/391/union
 - "Share" font by the Typo3 design team, http://typo3.org/teams/design/style-guide/downloads/
 
 
 Change log:
+
+1.6     some accessibility tweaks
+        added Ukrainian transl.
+        Flickr Photo Album plugin support
+        changed time strings to use WP date/time setting
+        added exclude page option      
+        added custom fields: show_posts_from_category, show_posts_with_tags, post_count  
+
+1.5.5   wpmu bugfix
 
 1.5.4   a few CSS adjustments
         "php_eol" fix

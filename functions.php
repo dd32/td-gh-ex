@@ -15,7 +15,6 @@ add_action ('init', 'init_language');
 
 // theme options
 $options = array (
-  array("type" => "open"),
 
   array(
    "id" => "arclite_imageless",
@@ -78,6 +77,12 @@ $options = array (
    "type" => "arclite_topnav"),
 
   array(
+   "id" => "arclite_excludenav",
+   "default" => "",
+   "type" => "arclite_excludenav"),
+
+
+  array(
    "id" => "arclite_search",
    "default" => "yes",
    "type" => "arclite_search"),
@@ -95,9 +100,7 @@ $options = array (
   array(
    "id" => "arclite_headercolor",
    "default" => "261c13",
-   "type" => "arclite_headercolor"),
-
-  array("type" => "close")
+   "type" => "arclite_headercolor")
 );
 $uploadpath = wp_upload_dir();
 if ($uploadpath['baseurl']=='') $uploadpath['baseurl'] = get_bloginfo('siteurl').'/wp-content/uploads';
@@ -329,6 +332,20 @@ function arclite_admin() {
         </tr>
 
       <?php break;
+
+        case "arclite_excludenav": ?>
+        <tr>
+        <th scope="row"><?php _e("Exclude from main navigation","arclite"); ?><br><?php _e("(Type page or category IDs. Separate with commas","arclite"); ?></th>
+        <td>
+         <label>
+          <input type="text" size="60" name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" value="<?php print get_option($value['id']); ?>" />
+         </label>
+        </td>
+        </tr>
+
+      <?php break;
+
+
         case "arclite_search": ?>
         <tr>
         <th scope="row"><?php _e("Show search","arclite"); ?></th>
@@ -643,7 +660,7 @@ function list_comments($comment, $args, $depth) {
            else:
             $authorlink='<b id="commentauthor-'.get_comment_ID().'">'.get_comment_author().'</b>';
            endif;
-           printf(__('%s by %s on %s', 'arclite'), '<a href="#comment-'.get_comment_ID().'">#'.++$commentcount.'</a>', $authorlink, get_comment_time(__('F jS, Y', 'arclite')), get_comment_time(__('H:i', 'arclite')));
+           printf(__('%s by %s on %s', 'arclite'), '<a href="#comment-'.get_comment_ID().'">#'.++$commentcount.'</a>', $authorlink, get_comment_time(get_option('date_format')).' - '.get_comment_time(get_option('time_format')));
           ?>
         </p>
 
