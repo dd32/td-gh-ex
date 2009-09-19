@@ -8,10 +8,11 @@
 			<div class="entry">
 			  <?php the_content(); ?>
 			</div>
+			<?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
 			<div class="ptags"><?php the_tags('Tags: ', ', ', ''); ?></div>
 		</article>
 
-	<?php comments_template(); ?>
+		<?php comments_template(); ?>
 
 	<?php endwhile; else: ?>
 

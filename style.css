@@ -1,11 +1,14 @@
 /*
 Theme Name: ADSimple
-Theme URI: http://wordpress.org/extend/themes/
+Theme URI:
 Description: Simple Wordpress theme based on HTML5 using red, black & white colors.
-Version: 1.2
+Version: 1.2.1
 Author: Dimox
 Author URI: http://dimox.name/
 Tags: red, brown, white, black, silver, three-columns, right-sidebar, fixed-width, threaded-comments
+.
+Released under the <a href="http://www.opensource.org/licenses/gpl-license.php">GPL</a>.
+.
 */
 
 * {margin: 0; padding: 0}
@@ -28,7 +31,7 @@ blockquote {
 	margin: 0 0 18px 20px;
 	padding: 1px 12px;
 	border-left: 3px solid #DE8D8D;
-	background: #EFEFEF;
+	background: #F2F2F2;
 	height: 1%;
 }
 blockquote p {
@@ -305,11 +308,13 @@ section {
 	background: url(i/arrow.gif) 0 11px no-repeat;
 	padding: 3px 0 4px 12px;
 }
-.post li ul, .post li ol {
-	margin: 0;
+.post li ul {
+	margin: 4px 0 -5px;
+  border-top: 1px solid #EEE;
 }
-.post li li {
-	padding-left: 18px;
+.post li ol {
+	margin: 4px 0 -5px 18px;
+  border-top: 1px solid #EEE;
 }
 
 div.pagetitle {
@@ -343,6 +348,8 @@ li.bypostauthor .commentdiv {
 	background: #F2F2F2;
 	border: 1px solid #E9E9E9;
 	padding: 4px 4px 3px 4px;
+	min-height: 39px;
+	height: auto !important;
 	height: 39px;
 }
 .fn {
