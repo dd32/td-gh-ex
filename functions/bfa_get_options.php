@@ -149,7 +149,8 @@ if ( is_page() AND (function_exists('is_front_page') ? !is_front_page() : '') AN
 	if ( (is_home() && $bfa_ata['leftcol_on']['homepage']) OR 
 	( function_exists('is_front_page') ? is_front_page() AND $bfa_ata['leftcol_on']['frontpage'] : '') OR 
 	( is_single() && $bfa_ata['leftcol_on']['single']) OR ( is_date() AND $bfa_ata['leftcol_on']['date']) OR 
-	( is_tag() && $bfa_ata['leftcol_on']['tag']) OR ( is_search() AND $bfa_ata['leftcol_on']['search']) OR 
+	( is_tag() && $bfa_ata['leftcol_on']['tag']) OR ( is_archive() AND !( is_tag() OR is_author() OR is_date() OR is_category()) && $bfa_ata['leftcol_on']['taxonomy']) 
+	OR ( is_search() AND $bfa_ata['leftcol_on']['search']) OR 
 	( is_author() && $bfa_ata['leftcol_on']['author']) OR ( is_404() AND $bfa_ata['leftcol_on']['404']) OR 
 	( is_attachment() && $bfa_ata['leftcol_on']['attachment']) ) {
 		$cols++; $left_col = "on"; 
@@ -158,7 +159,8 @@ if ( is_page() AND (function_exists('is_front_page') ? !is_front_page() : '') AN
 	if ( (is_home() && $bfa_ata['leftcol2_on']['homepage']) OR 
 	( function_exists('is_front_page') ? is_front_page() AND $bfa_ata['leftcol2_on']['frontpage'] : '') OR 
 	( is_single() && $bfa_ata['leftcol2_on']['single']) OR ( is_date() AND $bfa_ata['leftcol2_on']['date']) OR 
-	( is_tag() && $bfa_ata['leftcol2_on']['tag']) OR ( is_search() AND $bfa_ata['leftcol2_on']['search']) OR 
+	( is_tag() && $bfa_ata['leftcol2_on']['tag']) OR ( is_archive() AND !( is_tag() OR is_author() OR is_date() OR is_category()) && $bfa_ata['leftcol2_on']['taxonomy']) 
+	OR ( is_search() AND $bfa_ata['leftcol2_on']['search']) OR 
 	( is_author() && $bfa_ata['leftcol2_on']['author']) OR ( is_404() AND $bfa_ata['leftcol2_on']['404']) OR 
 	( is_attachment() && $bfa_ata['leftcol2_on']['attachment']) ) {
 		$cols++; $left_col2 = "on"; 
@@ -167,7 +169,8 @@ if ( is_page() AND (function_exists('is_front_page') ? !is_front_page() : '') AN
 	if ( (is_home() && $bfa_ata['rightcol_on']['homepage']) OR 
 	( function_exists('is_front_page') ? is_front_page() AND $bfa_ata['rightcol_on']['frontpage'] : '') OR 
 	( is_single() && $bfa_ata['rightcol_on']['single']) OR ( is_date() AND $bfa_ata['rightcol_on']['date']) OR 
-	( is_tag() && $bfa_ata['rightcol_on']['tag']) OR ( is_search() AND $bfa_ata['rightcol_on']['search']) OR 
+	( is_tag() && $bfa_ata['rightcol_on']['tag']) OR ( is_archive() AND !( is_tag() OR is_author() OR is_date() OR is_category()) && $bfa_ata['rightcol_on']['taxonomy']) 
+	OR ( is_search() AND $bfa_ata['rightcol_on']['search']) OR 
 	( is_author() && $bfa_ata['rightcol_on']['author']) OR ( is_404() AND $bfa_ata['rightcol_on']['404']) OR 
 	( is_attachment() && $bfa_ata['rightcol_on']['attachment']) ) {
 		$cols++; $right_col = "on"; 
@@ -176,7 +179,8 @@ if ( is_page() AND (function_exists('is_front_page') ? !is_front_page() : '') AN
 	if ( (is_home() && $bfa_ata['rightcol2_on']['homepage']) OR 
 	( function_exists('is_front_page') ? is_front_page() AND $bfa_ata['rightcol2_on']['frontpage'] : '') OR 
 	( is_single() && $bfa_ata['rightcol2_on']['single']) OR ( is_date() AND $bfa_ata['rightcol2_on']['date']) OR 
-	( is_tag() && $bfa_ata['rightcol2_on']['tag']) OR ( is_search() AND $bfa_ata['rightcol2_on']['search']) OR 
+	( is_tag() && $bfa_ata['rightcol2_on']['tag']) OR ( is_archive() AND !( is_tag() OR is_author() OR is_date() OR is_category()) && $bfa_ata['rightcol2_on']['taxonomy']) 
+	OR ( is_search() AND $bfa_ata['rightcol2_on']['search']) OR 
 	( is_author() && $bfa_ata['rightcol2_on']['author']) OR ( is_404() AND $bfa_ata['rightcol2_on']['404']) OR 
 	( is_attachment() && $bfa_ata['rightcol2_on']['attachment']) ) {
 		$cols++; $right_col2 = "on"; 

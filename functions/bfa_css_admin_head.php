@@ -4,12 +4,37 @@ function bfa_add_stuff_admin_head() {
 if ( $_GET['page'] == "functions.php" ) {
     $url_base = get_bloginfo('template_directory');
 
+		// Create a WP nonce for the Ajax action later on
+		$nonce = wp_create_nonce( 'reset_widget_areas' );
+
 		echo '
 		<script src="'.$url_base.'/options/jscolor/jscolor.js" type="text/javascript"></script>
 		<script type="text/javascript">
 		/* <![CDATA[ */
 		jQuery.noConflict();
-		jQuery(document).ready(function(){    
+		jQuery(document).ready(function(){   
+
+			/*since 3.4.3:*/
+			jQuery("a#reset_widget_areas").bind("click", function() { 
+				var delWidgetAreas = "";
+				jQuery("input[type=\'checkbox\'][name=\'delete_widget_areas\']").each(function(){
+        		if(this.checked){
+           		delWidgetAreas += "&delete_areas[]=" + this.value;
+        		}
+  				});
+				jQuery.ajax({
+					type: "post", 
+					url: "admin-ajax.php",
+					data: "action=reset_bfa_ata_widget_areas" + delWidgetAreas + "&_ajax_nonce=' . $nonce . '",
+					success: function(html){ 
+						jQuery("#formstatus").html( html ).fadeIn("fast").fadeOut(3000); 
+					}
+				}); 
+				// prevent form or link from being processed the traditional way:
+				return false;
+			});
+
+		
 			var textareawidth = jQuery(document).width() - 430; 		
 			jQuery("div.mooarea, textarea.growing").css({width: textareawidth}); 
 		});
@@ -48,6 +73,9 @@ if ( $_GET['page'] == "functions.php" ) {
 			}
 			.bfa-container-left label {
             margin-bottom: 0;
+			}
+			.bfa-container label.widget_area_label {
+			font-size: 12px; color: black; display: inline; margin: 0 0 5px 5px;
 			}
 			.bfa-container input, 
 			.bfa-container-left textarea, 

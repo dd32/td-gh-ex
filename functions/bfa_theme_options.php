@@ -18,10 +18,17 @@ $wordpress_dir = str_replace($_SERVER['SERVER_NAME'], '', $server_name_incl_wp_d
 // /home/wp-content/themes/atahualpa/
 $css_img_path = $wordpress_dir . $template_path;
 
-
+$bfa_ata_widget_areas = get_option('bfa_widget_areas');
+if (is_array($bfa_ata_widget_areas)) {
+	foreach ($bfa_ata_widget_areas as $widget_area) {
+		$widget_form_string .= '
+		<input type="checkbox" name="delete_widget_areas" id="' . 
+		$widget_area['name'] . '" value="' . $widget_area['name'] . '" /><label class="widget_area_label" for="' . $widget_area['name'] . 
+		'">' . $widget_area['name'] . '</label><br />';
+	}
+}
 
 // different options text for WP and WPMU, because image upload works differently
-
 $header_image_text_wp = "To add your own header image(s), upload one or several
 images with any file names <code>anything.[jpg|gif|png]</code> i.e.
 <code>hfk7wdfw8.gif</code>, <code>IMAGE_1475.jpg</code>, <code>bla.png</code>
@@ -390,7 +397,7 @@ $options1 = array(
     	    "category" => "favicon",
 			"switch" => "yes",
             "id" => $shortname."_favicon_file",
-            "std" => "20-favicon.ico",
+            "std" => "new-favicon.ico",
             "type" => "text",
 			"size" => "30",
 			"lastoption" => "yes", 
@@ -472,7 +479,7 @@ $options1 = array(
     	    "category" => "header",
             "id" => $shortname."_logo",
             "type" => "text",
-            "std" => "logo.gif",
+            "std" => "logo.png",
             "info" => "Show a logo in the logo area? Leave blank to show no logo. To test this, put <code>huge-logo.gif</code> 
 			here and set both \"Show Blog Title\" and \"Show Blog Tagline\" to \"No\" below. <br /><br />" . $logo_icon_text),
 
@@ -983,14 +990,14 @@ $options1 = array(
             "id" => $shortname."_page_menu_bar_background_color_hover",
             "std" => "eeeeee",
             "type" => "text",
-            "info" => "Background color for menu items in hover state."),
+            "info" => "Background color for menu items in hover and current state. <strong>Use fffffe instead of ffffff</strong> due to a \"White Background Hover Bug\" in IE7/IE8. http://haslayout.net/css/Hover-White-Background-Ignore-Bug. "),
 
     array(    "name" => "Background color: Parent",
     	    "category" => "page-menu-bar",
             "id" => $shortname."_page_menu_bar_background_color_parent",
             "std" => "dddddd",
             "type" => "text",
-            "info" => "Background color for parent menu item while hovering over its sub menu."),
+            "info" => "Background color for parent menu item while hovering over its sub menu. <strong>Use fffffe instead of ffffff</strong> due to a \"White Background Hover Bug\" in IE7/IE8. http://haslayout.net/css/Hover-White-Background-Ignore-Bug."),
 
     array(    "name" => "Font Size &amp; Face",
     	    "category" => "page-menu-bar",
@@ -1152,14 +1159,14 @@ $options1 = array(
             "id" => $shortname."_cat_menu_bar_background_color_hover",
             "std" => "cc0000",
             "type" => "text",
-            "info" => "Background color for menu items in hover state."),
+            "info" => "Background color for menu items in hover and current state. <strong>Use fffffe instead of ffffff</strong> due to a \"White Background Hover Bug\" in IE7/IE8. http://haslayout.net/css/Hover-White-Background-Ignore-Bug."),
 
     array(    "name" => "Background color: Parent",
     	    "category" => "cat-menu-bar",
             "id" => $shortname."_cat_menu_bar_background_color_parent",
             "std" => "000000",
             "type" => "text",
-            "info" => "Background color for parent menu item while hovering over its sub menu."),
+            "info" => "Background color for parent menu item while hovering over its sub menu. <strong>Use fffffe instead of ffffff</strong> due to a \"White Background Hover Bug\" in IE7/IE8. http://haslayout.net/css/Hover-White-Background-Ignore-Bug."),
 			
     array(    "name" => "Font for Category Menu Bar",
     	    "category" => "cat-menu-bar",
@@ -1232,9 +1239,6 @@ $options1 = array(
             "std" => "<?php /* For MULTI post pages if activated at ATO -> Next/Previous Navigation: */
 bfa_next_previous_page_links('Top'); ?>
 
-<?php /* For SINGLE post pages if activated at ATO -> Next/Previous Navigation: */
-bfa_next_previous_post_links('Top'); ?>
-	
 <?php /* For the plugin Page2Cat http://wordpress.org/extend/plugins/page2cat/ */
 if( is_category() AND function_exists('page2cat_output')) { page2cat_output(\$cat); } ?>",
             "type" => "textarea-large",
@@ -1245,7 +1249,10 @@ post, or a static page. In the 2 latter cases it isn't really a \"loop\" anymore
 	array(    "name" => "The LOOP",
     	    "category" => "center",
             "id" => $shortname."_content_inside_loop",
-            "std" => "<?php /* Post Container starts here */
+            "std" => "<?php /* For SINGLE post pages if activated at ATO -> Next/Previous Navigation: */
+bfa_next_previous_post_links('Top'); ?>
+
+<?php /* Post Container starts here */
 if ( function_exists('post_class') ) { ?>
 <div <?php if ( is_page() ) { post_class('post'); } else { post_class(\"\$odd_or_even\"); } ?> id=\"post-<?php the_ID(); ?>\">
 <?php } else { ?>
@@ -1498,6 +1505,7 @@ $options3 = array(
 								"category" => "on", 
 								"date" => "on", 
 								"tag" => "on", 
+								"taxonomy" => "on",
 								"search" => "on", 
 								"author" => "on", 
 								"404" => "on", 
@@ -1508,7 +1516,8 @@ $options3 = array(
             "info" => "(*) \"Front Page\" will only affect WP 2.5 and newer: For those newer WP versions, 
 			IF you select a static \"Page\" page as the home page, then \"Front Page\" becomes the actual homepage, 
 			while the \"Homepage\" will be the home page for Posts (but not the whole blog). If no static front page 
-			is selected, Homepage and Front Page will be the same."),
+			is selected, Homepage and Front Page will be the same.<br />(**) Custom Taxonomy pages. Custom taxonomies don't exist by default. 
+			You'd have to create them manually or with a plugin such as http://wordpress.org/extend/plugins/custom-taxonomies/"),
 
     array(    "name" => "LEFT sidebar: Don't display on Pages:",
     	    "category" => "sidebars",
@@ -1544,7 +1553,8 @@ $options3 = array(
             "info" => "(*) \"Front Page\" will only affect WP 2.5 and newer: For those newer WP versions, 
 			IF you select a static \"Page\" page as the home page, then \"Front Page\" becomes the actual homepage, 
 			while the \"Homepage\" will be the home page for Posts (but not the whole blog). If no static front page 
-			is selected, Homepage and Front Page will be the same."),
+			is selected, Homepage and Front Page will be the same.<br />(**) Custom Taxonomy pages. Custom taxonomies don't exist by default. 
+			You'd have to create them manually or with a plugin such as http://wordpress.org/extend/plugins/custom-taxonomies/"),
 
     array(    "name" => "LEFT INNER sidebar: Don't display on Pages:",
     	    "category" => "sidebars",
@@ -1581,6 +1591,7 @@ $options3 = array(
 								"category" => "on", 
 								"date" => "on", 
 								"tag" => "on", 
+								"taxonomy" => "on",
 								"search" => "on", 
 								"author" => "on", 
 								"404" => "on", 
@@ -1591,7 +1602,8 @@ $options3 = array(
             "info" => "(*) \"Front Page\" will only affect WP 2.5 and newer: For those newer WP versions, IF you 
 			select a static \"Page\" page as the home page, then \"Front Page\" becomes the actual homepage, while the 
 			\"Homepage\" will be the home page for Posts (but not the whole blog). If no static front page is selected, 
-			Homepage and Front Page will be the same."),
+			Homepage and Front Page will be the same.<br />(**) Custom Taxonomy pages. Custom taxonomies don't exist by default. 
+			You'd have to create them manually or with a plugin such as http://wordpress.org/extend/plugins/custom-taxonomies/"),
 
     array(    "name" => "RIGHT sidebar: Don't display on Pages:",
     	    "category" => "sidebars",
@@ -1627,7 +1639,8 @@ $options3 = array(
             "info" => "(*) \"Front Page\" will only affect WP 2.5 and newer: For those newer WP versions, IF you 
 			select a static \"Page\" page as the home page, then \"Front Page\" becomes the actual homepage, while the 
 			\"Homepage\" will be the home page for Posts (but not the whole blog). If no static front page is selected, 
-			Homepage and Front Page will be the same."),
+			Homepage and Front Page will be the same.<br />(**) Custom Taxonomy pages. Custom taxonomies don't exist by default. 
+			You'd have to create them manually or with a plugin such as http://wordpress.org/extend/plugins/custom-taxonomies/"),
 
     array(    "name" => "RIGHT INNER sidebar: Don't display on Pages:",
     	    "category" => "sidebars",
@@ -1756,10 +1769,14 @@ $options3 = array(
             "std" => "",
             "type" => "textarea-large",
             "info" => "<img src=\"" . $url_base . "/options/images/widget-content.gif\" 
-			style=\"float: right; margin: 0 0 10px 10px;\">" . "The widget Content box contains all the widget 
-			content except the title. If you use the Tabbed Widgets Plugin, this area div.widget-content will not exist. 
-			The content will be there but the styling will not be applied due to the missing div.widget-content container. 
-			Instead, the widget content will get the styling of the parent container, div.widget."),
+			style=\"float: right; margin: 0 0 10px 10px;\">" . "The Widget Content Box is gone since Atahualpa 3.4. for better 
+			plugin compatibility. It was a propretiary Atahualpa feature that provided extra styling possibilites but didn't play well with 
+			all plugins because some of them rely heavily on widgets having the same structure as in the \"Default\" theme (which does 
+			not have this extra DIV inside each widget).  			
+			Instead of \"div.widget-container\" the styles that you put here will be applied on \"div.widget ul, div.textwidget\". 
+			That will cover all text widgets and all widgets that consists of unordered lists, which should be the majority of all widgets.  
+			Otherwise look into the source code of a browser rendered page of your site to see which DIV or other HTML element wraps around 
+			the body content of the widget that was not covered by this, and add a CSS Insert such as: <code>div.some-class { margin: 10px }</code>."),
 
     array(    "name" => "Widget List Items",
     	    "category" => "widgets",
@@ -1841,13 +1858,24 @@ $options3 = array(
 			
 // New category: widget-areas
 
-    array(    "name" => "Add new Widget Areas",
+    array(    "name" => "Delete custom Widget Areas",
     	    	"category" => "widget-areas",
 				"switch" => "yes",
+            "id" => $shortname."_widget_areas_reset",
+            "type" => "info",
+            "info" => "1) Delete the <code>&lt;?php bfa_widget_area(...) ?&gt;</code> code from whichever text area here in the theme options you placed it in.
+            <br />2) Select the widget areas that you want to delete and click the link below. <br />Note: The widget areas will be re-created until you deleted its associated code (see step 1). <br />
+<form action=\"\" method=\"\" id=\"widgetarea-form\">" . $widget_form_string . "</form>
+<a style='display:block; background:#C6D9E9;width:250px;margin-top:10px; padding:5px 10px;' id='reset_widget_areas' href='#'>Delete checked Widget Areas</a><span style='color:green;font-weight:bold;float:left;padding-left:30px' id='formstatus'></span><br />"),
+
+    array(    "name" => "Add new Widget Areas",
+    	    	"category" => "widget-areas",
             "id" => $shortname."_widget_areas_info",
             "type" => "info",
 				"lastoption" => "yes", 
-            "info" => "<br />In addition to the existing widget areas (the sidebars) you can add additional widget areas, i.e. in the header 
+            "info" => "<strong>Note: After you've added new widget areas, you'll need to <span style='color:red'>reload a front end page</span> 
+            1-2 times before they get created and start appearing on the front end. And you'll need to <span style='color:red'>reload WP->Presentation->Widgets</span> 
+            1-2 times before you can see the new widget areas there and start adding widgets.</strong><br /><br />In addition to the existing widget areas (the sidebars) you can add additional widget areas, i.e. in the header 
 area, the center column or the footer area. This page here only explains how to use this feature. To actually add a new widget area 
 you'll have to go to one of the following menu tabs:
 <ul><li><a href=\"javascript: myflowers.expandit('header-tab')\">Style & edit HEADER AREA</a>: Put the code into the text area named \"Configure Header Area\".</li>
@@ -1864,14 +1892,18 @@ The code to create new widget areas is a PHP function with parameters:<br />
 
 <h3>Min. required paramaters</h3>
 This is the shortest and most basic way you can create a widget area.<br />
-<code>&lt;?php bfa_widget_area('name=My new widget area'); ?&gt;</code>
+<code>&lt;?php bfa_widget_area('name=My new widget area'); ?&gt;</code><br /><br />
+In this case a simple DIV container will be created. In the source code of your site, it will look like this:<br />
+<code>&lt;div id=\"my_new_widget_area\" class=\"bfa_widget_area\"&gt; Widgets will go here &lt;/div&gt;</code><br />
+(If you choose several cells, a table will be created instead, see below).
 
 <h3>Example:</h3>
 This example uses more parameters. It creates a widget area spanning the whole available width (like all widget areas), with 4 widget area cells (default: 1). Each widget area cell is a widget area in its own right. You can 
 specify an alignment and a width for all or particular widget area cells. Finally, you can specify opening and closing HTML tags for the widgets that will be placed in 
 these new widget area cells.<br />
-<code>&lt;?php bfa_widget_area('name=My widget area&cells=4&align=1&align_2=9&align_3=7&width_4=700&before_widget=&lt;div id=\"%1$s\" class=\"header-widget %2$s\"&gt;&after_widget=&lt;/div&gt;'); ?&gt;</code>
-
+<code>&lt;?php bfa_widget_area('name=My widget area&cells=4&align=1&align_2=9&align_3=7&width_4=700&before_widget=&lt;div id=\"%1\$s\" class=\"header-widget %2\$s\"&gt;&after_widget=&lt;/div&gt;'); ?&gt;</code><br /><br />
+Because these are multiple cells side by side, it will create a table instead of a DIV. Doing this with floating DIV's would not only be very fragile, it would also require more code 
+than the table consists of. 
 
 
 <h3>Available parameters:</h3>
@@ -1896,30 +1928,32 @@ these new widget area cells.<br />
 <td class='bfa-td'>Amount of (table) cells. Each cell is a new widget area. Default: 1</td>
 </tr><tr>
 <td class='bfa-td'><code>align</code></td>
-<td class='bfa-td'>Default alignment for all cells.<br />Default: <code>2</code> (= center top). <code>1</code> = center middle, <code>2</code> = center top, 
+<td class='bfa-td'><img src=\"" . $url_base . "/options/images/widget-area-alignment.gif\" 
+			style=\"float: left; margin: 0 10px 10px 0;\">Default alignment for all cells.<br />Default: <code>2</code> (= center top). <code>1</code> = center middle, <code>2</code> = center top, 
 <code>3</code> = right top, <code>4</code> = right middle, <code>5</code> = right bottom, <code>6</code> = center bottom, 
 <code>7</code> = left bottom, <code>8</code> = left middle, <code>9</code> = left top.</td>
 </tr><tr>
 <td class='bfa-td'><code>align_1</code>, <code>align_2</code>, <code>align_3</code> etc.</td>
-<td class='bfa-td'>Alignment for widget area cell 1, 2, 3, etc.. Non-specified widget area cells get the default value of the parameter \"align\", which, if not defined, is 2 (= center top).</td>
+<td class='bfa-td'><img src=\"" . $url_base . "/options/images/widget-area-alignment.gif\" 
+			style=\"float: left; margin: 0 10px 10px 0;\">Alignment for a particular widget area cell. If not defined, widget area cells get the default value of the global parameter <code>align</code>, which, if not defined, is <code>2</code> (= center top).</td>
 </tr><tr>
 <td class='bfa-td'><code>width_1</code>, <code>width_2</code>, <code>width_3</code> etc.</td>	
-<td class='bfa-td'>Width of widget area cells 1, 2, 3, etc.. Non-specified widget area cells get a equal share of the remaining width of the whole widget area table 
-containing all the widget area cells.</td>
+<td class='bfa-td'>Width of a particular widget area cell. If not defined, widget area cells get an equal share of the remaining width of the whole widget area table.</td>
 </tr>
 <tr>
 <td class='bfa-td' colspan='2' style='border-top-style: solid'>		
 <strong>Very Optional:</strong><br />Use these only if you want to apply different opening and closing HTML tags to the widgets that you 
 put into the new widget areas. By default the widgets will get the same opening/closing tags as the widgets in the sidebars. The default tags 
-are shown below. <br /><br /><em>Note: These are the tags that will be wrapped around the widgets (itself) that you put into the new widget areas. These tags 
-won't be wrapped around your new widget area as a whole, or around single widget area cells, but around the widgets (as such) that you place inside those widget area cells. 
-That means that the same widget can be wrapped into different HTML tags depending on the widget area cell it was placed in. If you just want different styling for 
-the widgets then you could usually achieve this with CSS alone, by adressing the widgets through the ID or class of their widget area cell. Use these opening/closing tag 
-parameters if CSS alone is not enough, because you need different HTML tags before or after the widgets or widget titles.</em>
+are shown below. <br /><br /><em>Note: These are the HTML tags that will be wrapped around each single widget in this particular widget area. 
+The purpose is to be able to wrap a widget into different HTML tags depending on the widget area it was placed in. If you just want different styling for 
+a widget based on the widget area it was placed in, then you could usually achieve this with CSS alone, by adressing the widget through the ID or class of its parent (= widget area it was placed in):<br />
+</em><code>div#my_widget_area div.widget { border: solid 1px black}</code><br /><em>Use these opening/closing HTML tags only  
+if CSS alone is not enough, because you need different HTML tags before or after the widget or widget title, in a particular widget area.</em>
 </td>
 </tr><tr>
 <td class='bfa-td'><code>before_widget</code></td>
-<td class='bfa-td'>HTML before each widget in any cell of this widget area. <br />Default:  <code>&lt;div id=\"%1$s\" class=\"widget %2$s\"&gt;</code></td>
+<td class='bfa-td'>HTML before each widget in any cell of this widget area. <br />Default:  <code>&lt;div id=\"%1\$s\" class=\"widget %2\$s\"&gt;</code><br />
+<code>%1\$s</code> and <code>%2\$s</code> will be replaced with individual names, which the widget will provide.</td>
 </tr><tr>
 <td class='bfa-td'><code>after_widget</code></td>
 <td class='bfa-td'>HMTL after each widget ... <br />Default: <code>&lt;/div&gt;</code></td>
@@ -2530,6 +2564,14 @@ text-align: center;\ncolor: #777777;\nfont-size: 95%;",
 			<li>In HTML, <span style=\"font-size:24px\">&copy;</span> can be displayed with <code>&amp;copy;</code>, 
 			<span style=\"font-size:24px\">&trade;</span> with <code>&amp;trade;</code> and 
 			<span style=\"font-size:24px\">&reg;</span> with <code>&amp;reg;</code></li></ul>"), 
+
+	array(    "name" => "Sticky footer on short pages?",
+    	    "category" => "footer-style",
+            "id" => $shortname."_sticky_layout_footer",
+            "type" => "select",
+            "std" => "No",
+            "options" => array("No", "Yes"),
+            "info" => "Make the layout footer \"stick\" at the bottom if the page is shorter than the browser viewport?"),
 			
     array(    "name" => "Show number of queries &amp; timer?",
     	    "category" => "footer-style",
@@ -2916,20 +2958,37 @@ text-align: center;\ncolor: #777777;\nfont-size: 95%;",
             "options" => array("External", "Inline"),
             "info" => "Should the Javascript code be in an external file, or inline in the header of each page? 
             Same considerations apply as above."),
-            
+
+    array(    "name" => "IE6 PNG Fix CSS Selectors",
+    	    "category" => "css-javascript",
+           "id" => $shortname."_pngfix_selectors",
+            "type" => "textarea-large",
+            "std" => "a.posts-icon, a.comments-icon, a.email-icon, img.logo",
+            "info" => "If you're using transparent PNG images, put the CSS selectors here that contain tranparent PNG images, so 
+			a IE6 PNG tranparency fix can be applied on those elements. Separate selectors with commas."),
+			
     array(    "name" => "CSS: Compress?",
     	    "category" => "css-javascript",
            "id" => $shortname."_css_compress",
             "type" => "select",
             "std" => "Yes",
-            "lastoption" => "yes",
             "options" => array("Yes", "No"),
-            "info" => "Turn this off whenever you want someone to have a look at the CSS code of your site. The compressed CSS will be almost 
-            unreadable.<br /><br />By choosing to compress the CSS (see option below) 
+            "info" => "By choosing to compress the CSS  
             you'll end up with an additional file size of ~7 Kbyte IF you have mod_deflate or gzip running on your server. 
             CSS file sizes: No Atahualpa Compression / No Gzip: ~ 60-70 KByte. With Atahualpa Compression: ~ 35 KByte. With Atahualpa 
             Compression plus Gzip/mod_defalte: ~ 7 KByte."),
 
+    array(    "name" => "Allow debugging?",
+    	    "category" => "css-javascript",
+           "id" => $shortname."_allow_debug",
+            "type" => "select",
+            "std" => "Yes",
+            "lastoption" => "yes",
+            "options" => array("Yes", "No"),
+            "info" => "Setting this to <strong>Yes</strong> will show inline, uncompressed 
+			CSS and Javascript in the source code of your site, regardless of your settings above, <strong>IF</strong> <code>?bfa_debug=1</code> was added to the URL. Additionally, the Wordpress and Atahualpa versions will be displayed as meta tags, and a meta robots tag \"noindex,follow\" will be inserted, to avoid duplicate content 
+			issues in search engines.<br /><br /><strong>Set this to <code>YES</code> before you ask someone at i.e. forum.bytesforall.com to have a look at the code of your site</strong>."),
+			
 /*                                
     array(    "name" => "Javascript: Compress?",
     	    "category" => "css-javascript",

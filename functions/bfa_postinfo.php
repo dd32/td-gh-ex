@@ -2,7 +2,7 @@
 
 
 // Callback function for image replacement
-function image_files($matches) {
+function bfa_image_files($matches) {
 	return '<img src="' . get_bloginfo('template_directory') . 
 	'/images/icons/' . $matches[1] . '" alt="" />';
 }
@@ -10,11 +10,9 @@ function image_files($matches) {
 
 
 // Callback function for post meta replacement
-function meta_values($matches) {
-	$meta_key = $matches[1];
-	// "get_post_custom_values" returns an array. Turn it into a string, separated by commata
-	$meta_values = implode(", ", get_post_custom_values($meta_key));
-	return $meta_values;
+function bfa_meta_value($matches) {
+	global $post;
+	return get_post_meta($post->ID, $matches[1], true);
 }
 
 
@@ -244,15 +242,14 @@ function postinfo($postinfo_string) {
 	}
 
 
-
 	// Tags, linked - since WP 2.3
 	if ( strpos($postinfo_string,'%tags-linked') !== FALSE ) {
 		$tag_link_options = preg_match("/(.*)%tags-linked\('(.*?)'(.*?)'(.*?)'(.*?)'(.*?)'(.*)/i",
-        $postinfo_string,$tag_link_matches);
+		$postinfo_string,$tag_link_matches);
 		$tags_linked = get_the_tag_list($tag_link_matches[2], $tag_link_matches[4],
-        $tag_link_matches[6]);
+		$tag_link_matches[6]);
 		$postinfo = preg_replace("/(.*)%tags-linked\((.*?)\)%(.*)/i", "\${1}" .
-        $tags_linked. "\${3}", $postinfo);
+		$tags_linked. "\${3}", $postinfo);
 	}
 
 
@@ -260,13 +257,13 @@ function postinfo($postinfo_string) {
 	// Tags, linked. If post has no tags, categories are displayed instead -  since WP 2.3
 	if ( strpos($postinfo_string,'%tags-cats-linked') !== FALSE ) {
 		$tag_link_options = preg_match("/(.*)%tags-cats-linked\('(.*?)'(.*?)'(.*?)'(.*?)'(.*?)'(.*)/i",
-        $postinfo_string,$tag_link_matches);
+		$postinfo_string,$tag_link_matches);
 		ob_start(); 
 			the_tags($tag_link_matches[2], $tag_link_matches[4], $tag_link_matches[6]); 
 			$tags_cats_linked = ob_get_contents(); 
 		ob_end_clean();
 		$postinfo = preg_replace("/(.*)%tags-cats-linked\((.*?)\)%(.*)/i", "\${1}" .
-        $tags_cats_linked. "\${3}", $postinfo);
+		$tags_cats_linked. "\${3}", $postinfo);
 	}
 
 
@@ -275,7 +272,7 @@ function postinfo($postinfo_string) {
 	if ( strpos($postinfo_string,'%tags(') !== FALSE ) {
 		
 		$tag_options = preg_match("/(.*)%tags\('(.*?)'(.*?)'(.*?)'(.*?)'(.*?)'(.*)/i",
-        $postinfo_string,$tag_matches);
+		$postinfo_string,$tag_matches);
 		$posttags = get_the_tags();
 		
 		if ($posttags) { 
@@ -290,10 +287,9 @@ function postinfo($postinfo_string) {
 		}
 		
 		$postinfo = preg_replace("/(.*)%tags\((.*?)\)%(.*)/i", "\${1}" .$tags.
-        "\${3}", $postinfo);
-        
+		"\${3}", $postinfo);
+		
 	}
-
 
 
 	// 1st category
@@ -551,7 +547,7 @@ function postinfo($postinfo_string) {
 
 	// Images
 	if ( strpos($postinfo_string,'<image(') !== FALSE ) {
-		$postinfo = preg_replace_callback("|<image\((.*?)\)>|","image_files",$postinfo);
+		$postinfo = preg_replace_callback("|<image\((.*?)\)>|","bfa_image_files",$postinfo);
 	}
 
 
@@ -563,6 +559,8 @@ function postinfo($postinfo_string) {
 			the_meta(); 
 			$the_meta = ob_get_contents(); 
 		ob_end_clean();
+		// 3.4.3.: remove bfa_ata metas */
+		$the_meta = preg_replace("/<li>(.*)bfa_ata(.*)<\/li>/i", "", $the_meta);
 		$postinfo = str_replace("%meta%", $the_meta, $postinfo);
 	}
 
@@ -570,21 +568,21 @@ function postinfo($postinfo_string) {
 
 	// Single post meta values, not formatted
 	if ( strpos($postinfo_string,'%meta(') !== FALSE ) {
-		$postinfo = preg_replace_callback("|%meta\('(.*?)'\)%|","meta_values",$postinfo);
+		$postinfo = preg_replace_callback("|%meta\('(.*?)'\)%|","bfa_meta_value",$postinfo);
 	}
 
 
 
 	/* PHP code in Post Info Items.
 	But not for WPMU */
-	if ( !file_exists(ABSPATH."/wpmu-settings.php") ) {
-		if ( strpos($postinfo_string,'<?php ') !== FALSE ) {
+	/*removed in 3.4.3. - PHP code works in WPMU too */
+	if ( strpos($postinfo_string,'<?php ') !== FALSE ) {
 			ob_start(); 
 				eval('?>'.$postinfo); 
 				$postinfo = ob_get_contents(); 
 			ob_end_clean();
-		}
 	}
+
 
 
 

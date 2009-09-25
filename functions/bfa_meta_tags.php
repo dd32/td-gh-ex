@@ -65,31 +65,32 @@ if ( is_home() ) {
 	    // post and page titles get their own filter from WP
 		$bfa_meta_title = get_post_meta($post->ID, 'bfa_ata_meta_title', true);
 		if ( $bfa_meta_title != '' ) {
-			$bfa_ata_page_title = $bfa_meta_title; 
+			#$bfa_ata_page_title = $bfa_meta_title; 
+			$bfa_ata_page_title = htmlentities($bfa_meta_title,ENT_QUOTES,'UTF-8');
 		} else {
-			$bfa_ata_page_title = single_post_title('', false);
+			$bfa_ata_page_title = htmlentities(single_post_title('', false),ENT_QUOTES,'UTF-8');
 		}
 		
     } elseif ( is_category() ) {
         // cat titles don't get a filter, so htmlentities is required
-		$bfa_ata_page_title = htmlentities(single_cat_title('', false),ENT_QUOTES);
+		$bfa_ata_page_title = htmlentities(single_cat_title('', false),ENT_QUOTES,'UTF-8');
 
     } elseif ( function_exists('is_tag') AND is_tag() ) {
         // tag titles get their own filter from WP
-		$bfa_ata_page_title = single_tag_title('', false);
+		$bfa_ata_page_title = htmlentities(single_tag_title('', false),ENT_QUOTES,'UTF-8');
 
     } elseif ( is_search() ) {
         // no WP filter, htmlentities required
-		$bfa_ata_page_title = htmlentities(wp_specialchars($s),ENT_QUOTES);
+		$bfa_ata_page_title = htmlentities(wp_specialchars($s),ENT_QUOTES,'UTF-8');
 
     } elseif ( is_day() ) {
-		$bfa_ata_page_title = get_the_time(__('l, F jS, Y','atahualpa'));
+		$bfa_ata_page_title = htmlentities(get_the_time(__('l, F jS, Y','atahualpa')),ENT_QUOTES,'UTF-8');
 
     } elseif ( is_month() ) {
-		$bfa_ata_page_title = get_the_time(__('F Y','atahualpa'));
+		$bfa_ata_page_title = htmlentities(get_the_time(__('F Y','atahualpa')),ENT_QUOTES,'UTF-8');
 
     } elseif ( is_year() ) {
-		$bfa_ata_page_title = get_the_time('Y');
+		$bfa_ata_page_title = htmlentities(get_the_time('Y'),ENT_QUOTES,'UTF-8');
     }
 #	elseif ( is_author() ) { 
 #		$bfa_ata_page_title = htmlentities(the_author(),ENT_QUOTES); }   // this won't work
@@ -98,7 +99,7 @@ if ( is_home() ) {
 		$bfa_ata_page_title = __('404 - Page not found','atahualpa');
 
     } else {
-		$bfa_ata_page_title = wp_title('', false);
+		$bfa_ata_page_title = htmlentities(wp_title('', false),ENT_QUOTES,'UTF-8');
 
     }
 
@@ -142,11 +143,11 @@ if ( function_exists('is_front_page') ? is_front_page() : is_home() ) {
 #if ( is_home() ) {
  	if ( trim($bfa_ata['homepage_meta_description'] ) != "" ) {
 		echo "<meta name=\"description\" content=\"" .
-		htmlentities($bfa_ata['homepage_meta_description'],ENT_QUOTES) . "\" />\n";
+		htmlentities($bfa_ata['homepage_meta_description'],ENT_QUOTES,'UTF-8') . "\" />\n";
 	}
 	if ( trim($bfa_ata['homepage_meta_keywords'] ) != "" ) {
 		echo "<meta name=\"keywords\" content=\"" .
-		htmlentities($bfa_ata['homepage_meta_keywords'],ENT_QUOTES) . "\" />\n";
+		htmlentities($bfa_ata['homepage_meta_keywords'],ENT_QUOTES,'UTF-8') . "\" />\n";
 	}
 }
 
@@ -156,11 +157,11 @@ if ( is_single() OR is_page() ) {
 	$bfa_meta_keywords = get_post_meta($post->ID, 'bfa_ata_meta_keywords', true);
 	if ( $bfa_meta_description != '' ) {
 		echo "<meta name=\"description\" content=\"" .
-    	htmlentities($bfa_meta_description,ENT_QUOTES) . "\" />\n";
+    	htmlentities($bfa_meta_description,ENT_QUOTES,'UTF-8') . "\" />\n";
 	}
 	if ( $bfa_meta_keywords != '' ) {
 		echo "<meta name=\"keywords\" content=\"" .
-    	htmlentities($bfa_meta_keywords,ENT_QUOTES) . "\" />\n";
+    	htmlentities($bfa_meta_keywords,ENT_QUOTES,'UTF-8') . "\" />\n";
 	}  
 }
 
@@ -169,7 +170,7 @@ if ( is_category() AND strip_tags(trim(category_description())) != "" ) {
 	/* the category description gets its own ASCII code filter from WP,
 	   but <p> ... </p> tags will be included by WP, so we remove them here: */
 	echo "<meta name=\"description\" content=\"" .
-	strip_tags(trim(category_description())) . "\" />\n";
+	htmlentities(strip_tags(trim(category_description())),ENT_QUOTES,'UTF-8') . "\" />\n";
 }
 
 

@@ -28,30 +28,29 @@ global $bfa_ata; if ($bfa_ata == "")
 	if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Right Sidebar') ) : ?>
 
     	<div class="widget"><div class="widget-title">
-    	<h3>Recent Posts</h3></div><div class="widget-content">
-    	<?php $r = new WP_Query(array(
-    		'showposts' => 20,
-    		'what_to_show' => 'posts',
-    		'nopaging' => 0,
-    		'post_status' => 'publish',
-    		'caller_get_posts' => 1));
-    	if ($r->have_posts()) : ?>
-    	<ul>
-    	<?php  while ($r->have_posts()) : $r->the_post(); ?>
-    	<li><a href="<?php the_permalink() ?>"><?php if ( get_the_title() ) the_title(); else the_ID(); ?> </a></li>
+    	<h3>Recent Posts</h3></div>
+<?php $r = new WP_Query(array(
+	'showposts' => 20,
+	'what_to_show' => 'posts',
+	'nopaging' => 0,
+	'post_status' => 'publish',
+	'caller_get_posts' => 1));
+if ($r->have_posts()) : ?>
+<ul><?php  while ($r->have_posts()) : $r->the_post(); ?>
+<li><a href="<?php the_permalink() ?>"><?php if ( get_the_title() ) the_title(); else the_ID(); ?></a></li>
     	<?php endwhile; ?>
     	</ul>
     	<?php wp_reset_query();  // Restore global post data stomped by the_post().
     	endif; ?>
-    	</div></div>
+    </div>
 
-    	<div class="widget"><div class="widget-title">
-    	<?php wp_list_bookmarks('category_before=&category_after=&title_before=<h3>&title_after=</h3></div><div class="widget-content">'); ?>
-    	</div></div>
+    	<div id="linkcat-99" class="widget widget_links"><div class="widget-title">
+    	<?php wp_list_bookmarks('category_before=&category_after=&title_before=<h3>&title_after=</h3></div>'); ?>
+    	</div>
 
     	<div class="widget"><div class="widget-title">
     	<h3><?php _e('Meta','atahualpa'); ?></h3>
-    	</div><div class="widget-content">
+    	</div>
     	<ul>
     		<?php wp_register(); ?>
     		<li><?php wp_loginout(); ?></li>
@@ -60,9 +59,24 @@ global $bfa_ata; if ($bfa_ata == "")
     		<?php _e('WordPress','atahualpa'); ?></a></li>
     		<?php wp_meta(); ?>
     	</ul>
-    	</div></div>
+    	</div>
 
 	<?php endif; ?>
+
+<div id="linkcat-12" class="widget widget_links"><div class="widget-title"><h3>Blogroll</h3></div>
+	<ul class='xoxo blogroll'>
+<li><a href="http://wordpress.org/development/">Development Blog</a></li>
+<li><a href="http://codex.wordpress.org/">Documentation</a></li>
+
+<li><a href="http://wordpress.org/extend/plugins/">Plugins</a></li>
+<li><a href="http://wordpress.org/extend/ideas/">Suggest Ideas</a></li>
+<li><a href="http://wordpress.org/support/">Support Forum</a></li>
+<li><a href="http://wordpress.org/extend/themes/">Themes</a></li>
+<li><a href="http://planet.wordpress.org/">WordPress Planet</a></li>
+
+	</ul>
+</div>
+
 
 </td>
 <!-- / Right Sidebar -->

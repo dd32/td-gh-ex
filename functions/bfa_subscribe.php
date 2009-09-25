@@ -100,43 +100,41 @@ function widget_bfa_subscribe_control() {
 	$google_or_feedburner = attribute_escape($options['google-or-feedburner']);
 	if ( $google_or_feedburner == "" ) { $google_or_feedburner = "google"; }
 ?>
-You may have to <span style="font-weight: bold; color: #c00">save this widget once</span> first (Click "Done" and "Save Changes") before you can edit the text fields below...<br /><br />
-<p><label for="subscribe-title">Optional: Title: 
-<input class="widefat" id="subscribe-title" name="subscribe-title" type="text" value="<?php echo $title; ?>" /></label></p>
+<p><label for="subscribe-title">Optional: Title:</label>
+<input class="widefat" id="subscribe-title" name="subscribe-title" type="text" value="<?php echo $title; ?>" /></p>
 
-<p><label for="subscribe-email-text">
+<p><label for="subscribe-email-text"></label>
 Text for Email section. <?php if ( current_user_can('unfiltered_html')) echo' (HTML allowed. Email subscribe URL = %email-url)'; ?>
 <textarea class="widefat" style="width: 98%" rows="3" cols="20" id="subscribe-email-text" name="subscribe-email-text">
-<?php echo $email_text; ?></textarea></label></p>
+<?php echo $email_text; ?></textarea></p>
 
 <p style="float: left; width: 69%; display: block">
-<label for="feedburner-email-field-text">Optional: Text inside Email input field: 
-<input class="widefat" id="feedburner-email-field-text" name="feedburner-email-field-text" type="text" value="<?php echo $field_text; ?>" /></label></p>
+<label for="feedburner-email-field-text">Optional: Text inside Email input field:</label> 
+<input class="widefat" id="feedburner-email-field-text" name="feedburner-email-field-text" type="text" value="<?php echo $field_text; ?>" /></p>
 
 <p style="float: right; width: 29%; display: block">
-<label for="feedburner-email-submit-text">Text for Email submit button: 
-<input class="widefat" id="feedburner-email-submit-text" name="feedburner-email-submit-text" type="text" value="<?php echo $submit_text; ?>" /></label></p>
+<label for="feedburner-email-submit-text">Text for Email submit button:</label>
+<input class="widefat" id="feedburner-email-submit-text" name="feedburner-email-submit-text" type="text" value="<?php echo $submit_text; ?>" /></p>
 <div style="clear: both"></div>
 
-<p><label for="subscribe-posts-text">
+<p><label for="subscribe-posts-text"></label>
 Text for Posts RSS section <?php if ( current_user_can('unfiltered_html')) echo ' (HTML allowed. Posts feed URL = %posts-url)'; ?>
 <textarea class="widefat" style="width: 98%" rows="3" cols="20" id="subscribe-posts-text" name="subscribe-posts-text">
-<?php echo $posts_text; ?></textarea></label></p>
+<?php echo $posts_text; ?></textarea></p>
 
-<p><label for="subscribe-comments-text">
+<p><label for="subscribe-comments-text"></label>
 Text for Comments RSS section <?php if ( current_user_can('unfiltered_html')) echo ' (HTML allowed. Comments feed URL = %comments-url)'; ?>
 <textarea class="widefat" style="width: 98%" rows="3" cols="20" id="subscribe-comments-text" name="subscribe-comments-text">
-<?php echo $comments_text; ?></textarea></label></p>
+<?php echo $comments_text; ?></textarea></p>
 
-<p><label for="feedburner-email-id">
-Feedburner Email ID:
-<input class="widefat" id="feedburner-email-id" name="feedburner-email-id" type="text" value="<?php echo $id; ?>" /></label></p>
+<p><label for="feedburner-email-id">Feedburner Email ID:</label>
+<input class="widefat" id="feedburner-email-id" name="feedburner-email-id" type="text" value="<?php echo $id; ?>" /></p>
 
 <p><strong>How to find the feed ID for this site at Feedburner:</strong><br />
 Login to your Feedburner account, click "My Feeds" -> Title of the feed in question -> Publicize -> Email Subscriptions -> Check out the two textareas. 
 In the bigger one of the two textareas your ID appears as: <br />1) If you have an <strong>old feedburner.com</strong> account:  
-www.feedburner.com/fb/a/emailverifySubmit?feedId=<strong>1234567</strong>&amp;loc=en_US<br />2) if you have a <strong>new feedburner.google.com</strong> account: 
-feedburner.google.com/fb/a/mailverify?uri=<strong>bytesforall/lzoG</strong>&amp;loc=en_US<br />The bold part is the ID that you need to put here.</p>
+www.feedburner.com/fb/a/emailverifySubmit?feedId=<strong style="color:green">1234567</strong>&amp;loc=en_US<br />2) if you have a <strong>new feedburner.google.com</strong> account: 
+feedburner.google.com/fb/a/mailverify?uri=<strong style="color:green">bytesforall/lzoG</strong>&amp;loc=en_US<br />The green part is the ID that you need to put here.</p>
 
 <p>Is this a feedburner.google.com account or an old feedburner.com account?		
 <p><input id="google-or-feedburner" name="google-or-feedburner" type="radio" value="google" <?php 

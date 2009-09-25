@@ -1,40 +1,5 @@
 <?php
 
-
-function bfa_the_loop() {
-	
-	// The LOOP. Do this for all posts:
-	while (have_posts()) : the_post(); $bfa_ata['postcount']++; ?>
-	
-		<?php // Odd or even post
-		$odd_or_even = (($bfa_ata['postcount'] % 2) ? 'odd-post' : 'even-post' ); ?> 
-
-		<?php // Post Container starts here
-		if ( function_exists('post_class') ) { ?>
-		<div <?php if ( is_page() ) { post_class('post'); } else { post_class("$odd_or_even"); } ?> id="post-<?php the_ID(); ?>">
-		<?php } else { ?>
-		<div class="<?php echo ( is_page() ? 'page ' : '' ) . $odd_or_even . ' post" id="post-'; the_ID(); ?>">
-		<?php } ?>
-
-			<?php bfa_post_kicker('<div class="post-kicker">','</div>'); ?>
-
-			<?php bfa_post_headline('<div class="post-headline">','</div>'); ?>
-
-			<?php bfa_post_byline('<div class="post-byline">','</div>'); ?>
-
-			<?php bfa_post_bodycopy('<div class="post-bodycopy clearfix">','</div>'); ?>
-
-			<?php bfa_post_pagination('<p class="post-pagination"><strong>'.__('Pages:','atahualpa').'</strong>','</p>'); ?>
-
-			<?php bfa_post_footer('<div class="post-footer">','</div>'); ?>
-
-		</div><!-- / Post -->
-
-	<?php // END of the LOOP
-	endwhile; 
-	
-}
-	
 function bfa_post_kicker($before = '<div class="post-kicker">', $after = '</div>') {
 	
 	global $bfa_ata;
@@ -69,18 +34,17 @@ function bfa_post_kicker($before = '<div class="post-kicker">', $after = '</div>
 
 
 function bfa_post_headline($before = '<div class="post-headline">', $after = '</div>') {
-	
-	global $bfa_ata;
+
+	global $bfa_ata, $post;
 
 	if ( is_single() OR is_page() ) {
-		global $post;
 		$bfa_ata_body_title = get_post_meta($post->ID, 'bfa_ata_body_title', true);
-		if (!$bfa_ata_body_title == '') {
-			$bfa_ata_body_title_saved = get_post_meta($post->ID, 'bfa_ata_body_title_saved', true);
-		}
+		$bfa_ata_display_body_title = get_post_meta($post->ID, 'bfa_ata_display_body_title', true);
+	} else {
+		$bfa_ata_body_title_multi = get_post_meta($post->ID, 'bfa_ata_body_title_multi', true);
 	}
 	
-	if ( (!is_single() AND !is_page()) OR !($bfa_ata_body_title_saved == 1 AND $bfa_ata_body_title == '' ) ) {
+	if ( (!is_single() AND !is_page()) OR $bfa_ata_display_body_title == '' ) {
 		
 		
 		echo $before; ?>
@@ -88,26 +52,17 @@ function bfa_post_headline($before = '<div class="post-headline">', $after = '</
 			
 		if( !is_single() AND !is_page() ) { ?>
 			
-			<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php 
-			if ( function_exists('the_title_attribute') ) { 
-				the_title_attribute();
-			} 
-			elseif ( function_exists('the_title') ) { 
-				the_title();
-			} ?>"><?php 
+			<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php 
 		} 
-		
-		if ( (is_single() OR is_page()) AND $bfa_ata_body_title_saved == 1 ) {
-			echo $bfa_ata_body_title;
+
+		if ( (is_single() OR is_page()) AND $bfa_ata_body_title != "" ) {
+			echo htmlentities($bfa_ata_body_title,ENT_QUOTES,'UTF-8');
 		} else {
-			the_title(); 
+			if ( $bfa_ata_body_title_multi != '' ) echo htmlentities($bfa_ata_body_title_multi,ENT_QUOTES,'UTF-8');  
+			else the_title(); 
 		}
-		
-		if( !is_single() AND !is_page() ) { ?>
-			</a><?php 
-			
-		} ?>
-		</h<?php echo $bfa_ata['h_posttitle']; ?>>
+
+		if ( !is_single() AND !is_page() ) { ?></a><?php } ?></h<?php echo $bfa_ata['h_posttitle']; ?>>
 		<?php echo $after;
 	
 	}
@@ -119,7 +74,7 @@ function bfa_post_headline($before = '<div class="post-headline">', $after = '</
 
 function bfa_post_byline($before = '<div class="post-byline">', $after = '</div>') {
 	
-	global $bfa_ata;
+	global $bfa_ata, $post;
 	
     // don't display on WP Email pages
     if(intval(get_query_var('email')) != 1) {
@@ -152,7 +107,7 @@ function bfa_post_byline($before = '<div class="post-byline">', $after = '</div>
 						
 function bfa_post_bodycopy($before = '<div class="post-bodycopy clearfix">', $after = '</div>') {
 	
-	global $bfa_ata;
+	global $bfa_ata, $post;
 	
 	echo $before; 
 	if ( (is_home() AND $bfa_ata['excerpts_home'] == "Full Posts") OR 

@@ -2,7 +2,7 @@
 function bfa_hor_cats($sort_order = "ID", $order = "ASC", $levels = "", $titles = "No", $exclude = "") { 
 	
 	// allow option "order" only if Plugin "My category Order" is activated:
-	if ( !function_exists('mycategoryorder') ) { 
+	if ( !function_exists('mycategoryorder') AND $sort_order == 'order' ) { 
 		$sort_order = "ID"; 
 	}
 	

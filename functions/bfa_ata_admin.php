@@ -1,13 +1,12 @@
 <?php
 
 function bfa_ata_admin() {
-    global $themename, $shortname, $options;
+    global $bfa_ata, $themename, $shortname, $options;
     if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings saved.</strong></p></div>';
     if ( $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings reset.</strong></p></div>';
 
-$theme_name = "Atahualpa";
-$theme_version = "3.4.1";
-$url_base = get_bloginfo('template_directory');
+
+$url_base = $bfa_ata['template_directory'];
 
 $border_styles = array("solid", "dotted", "dashed", "double", "groove", "ridge", "inset", "outset");
 $background_repeat = array("vertic. and horiz.", "vertically", "horizontally", "don't repeat");
@@ -25,7 +24,7 @@ $text_transform = array("none", "capitalize", "uppercase", "lowercase");
 $text_decoration = array("none", "underline", "overline", "line-through");
 ?>
 <table width="100%" cellpadding="2" cellspacing="0"><tr><td valign="middle" width="380"><h2 style="margin:0 30px 0 0; padding: 5px 0 5px 0;">
-<?php echo $theme_name . ' ' . $theme_version; ?></h2></td><td valign="middle"><iframe src="http://wordpress.bytesforall.com/update.php?theme=<?php echo $theme_name; ?>&version=<?php echo $theme_version; ?>" width="98%" height="40" scrolling="no" frameborder="0"></iframe></td>
+<?php echo $bfa_ata['name'] . ' ' . $bfa_ata['version']; ?></h2></td><td valign="middle"><iframe src="http://wordpress.bytesforall.com/update.php?theme=<?php echo $theme_name; ?>&version=<?php echo $theme_version; ?>" width="98%" height="40" scrolling="no" frameborder="0"></iframe></td>
 </tr></table>
 
 
@@ -531,6 +530,8 @@ elseif ($value['type'] == "displayon") {
 	</td><td style="vertical-align: top"> 
 	<input type="checkbox" name="' . $value['id'] . '[tag]" ' . 
 	($current_options['tag'] ? 'checked="checked"' : '' ) . ' /> Tag Pages<br /> 
+	<input type="checkbox" name="' . $value['id'] . '[taxonomy]" ' . 
+	($current_options['taxonomy'] ? 'checked="checked"' : '' ) . ' /> Cust.Tax. (**)<br /> 
 	<input type="checkbox" name="' . $value['id'] . '[search]" ' . 
 	($current_options['search'] ? 'checked="checked"' : '' ) . ' /> Search Results<br /> 
 	<input type="checkbox" name="' . $value['id'] . '[author]" ' . 

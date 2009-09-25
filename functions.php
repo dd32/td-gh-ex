@@ -3,6 +3,11 @@
 // Load translation file 
 load_theme_textdomain('atahualpa');
 
+// disable wp texturize, remove hashes to enable
+#remove_filter('the_content', 'wptexturize');
+#remove_filter('the_excerpt', 'wptexturize');
+#remove_filter('comment_text', 'wptexturize');
+#remove_filter('the_title', 'wptexturize');
 
 // Sidebars:
 if ( function_exists('register_sidebar') ) {
@@ -39,25 +44,30 @@ if ( function_exists('register_sidebar') ) {
 		'after_title' => '</h3></div>',
 	));
 			
-
 	
 	// Register additional extra widget areas:
-	$bfa_ata_extra_widget_areas = maybe_unserialize(get_option('bfa_widget_areas'));
+	$bfa_ata_extra_widget_areas = get_option('bfa_widget_areas');
 	
-	for ($i =0; $i < count($bfa_ata_extra_widget_areas); $i++) { 
-		register_sidebar(array(
-			'name' => $bfa_ata_extra_widget_areas[$i]['name'],
-			'before_widget' => $bfa_ata_extra_widget_areas[$i]['before_widget'],
-			'after_widget' => $bfa_ata_extra_widget_areas[$i]['after_widget'],
-			'before_title' => $bfa_ata_extra_widget_areas[$i]['before_title'],
-			'after_title' => $bfa_ata_extra_widget_areas[$i]['after_title']
-		));
+	if ($bfa_ata_extra_widget_areas != '') {
+		foreach ($bfa_ata_extra_widget_areas as $widget_area) { 
+			register_sidebar(array(
+				'name' => $widget_area['name'],
+				'before_widget' => $widget_area['before_widget'],
+				'after_widget' => $widget_area['after_widget'],
+				'before_title' => $widget_area['before_title'],
+				'after_title' => $widget_area['after_title']
+			));
+		}
 	}
-
 } 
 
-
-
+// get default theme options
+include_once (TEMPLATEPATH . '/functions/bfa_theme_options.php');
+// Load options
+include_once (TEMPLATEPATH . '/functions/bfa_get_options.php');
+global $bfa_ata;
+$bfa_ata['name'] = "Atahualpa";
+$bfa_ata['version'] = "3.4.3";
 
 // Load functions
 include_once (TEMPLATEPATH . '/functions/bfa_header_config.php');
@@ -78,7 +88,7 @@ if (!function_exists('paged_comments'))
 // old, propretiary bodyclasses() of Atahualpa. Usage: bodyclasses()
 // include_once (TEMPLATEPATH . '/functions/bfa_bodyclasses.php');
 // new, default Wordpress body_class(). usage: body_class()
-// include only in WP 2.7 and older. From WP 2.8 it's a core Wordpress function:
+// include only in WP 2.3 - WP 2.7 . From WP 2.8 on it is a core Wordpress function:
 if (!function_exists('body_class'))
 	include_once (TEMPLATEPATH . '/functions/bfa_body_class.php');
 
@@ -89,12 +99,6 @@ if (function_exists('sociable_html'))
 // "Find in directory" function, needed for finding header images on WPMU
 if (file_exists(ABSPATH."/wpmu-settings.php")) 
 	include_once (TEMPLATEPATH . '/functions/bfa_m_find_in_dir.php');
-
-// get default theme options
-include_once (TEMPLATEPATH . '/functions/bfa_theme_options.php');
-// Load options
-include_once (TEMPLATEPATH . '/functions/bfa_get_options.php');
-global $bfa_ata;
 
 // add jquery function only to theme page or widgets won't work in 2.3 and older
 #if ( $_GET['page'] == basename(__FILE__) ) { 
@@ -110,14 +114,12 @@ add_action('admin_menu', 'bfa_ata_add_admin');
 
 #}
 
-
 // Escape single & double quotes
 function bfa_escape($string) {
 	$string = str_replace('"', '&#34;', $string);
 	$string = str_replace("'", '&#39;', $string);
 	return $string;
 }
-
 
 // change them back
 function bfa_unescape($string) {
@@ -133,11 +135,21 @@ function bfa_escapelt($string) {
 }
 
 
-
 function footer_output($footer_content) {
-	$footer_content .= '<br />Powered by <a href="http://wordpress.org/">WordPress</a> &amp; the <a href="http://wordpress.bytesforall.com/" title="Customizable WordPress themes">Atahualpa WP Theme</a> by <a href="http://www.bytesforall.com/" title="BFA Webdesign">BytesForAll</a>. Now with <a href="http://forum.bytesforall.com/" title="Discuss Atahualpa &amp; WordPress">Tutorials &amp; Support</a>';
+	$footer_content .= '<br />Powered by <a href="http://wordpress.org/">WordPress</a> &amp; the <a href="http://wordpress.bytesforall.com/" title="Customizable WordPress themes">Atahualpa Theme</a> by <a href="http://www.bytesforall.com/" title="BFA Webdesign">BytesForAll</a>. Discuss on our <a href="http://forum.bytesforall.com/" title="Atahualpa &amp; WordPress">WP Forum</a>';
 	return $footer_content;
 }
+
+// Move Featured Content Gallery down in script order in wp_head(), so that jQuery can finish before mootools
+function remove_featured_gallery_scripts() {
+       remove_action('wp_head', 'gallery_styles');
+}
+add_action('init','remove_featured_gallery_scripts', 1);
+function addscripts_featured_gallery() {
+	if(!function_exists(gallery_styles)) return;
+	gallery_styles();
+}
+add_action('wp_head', 'addscripts_featured_gallery', 12);
 
 
 // new comment template for WP 2.7+, legacy template for old WP 2.6 and older
@@ -152,12 +164,11 @@ if ( !function_exists('paged_comments') ) {
 	add_filter('comments_template', 'legacy_comments');
 }
 
-
 // remove WP default inline CSS for ".recentcomments a" from header
 function remove_wp_widget_recent_comments_style() {
-   if ( has_filter('wp_head', 'wp_widget_recent_comments_style') ) {
+   #if ( has_filter('wp_head', 'wp_widget_recent_comments_style') ) {
       remove_filter('wp_head', 'wp_widget_recent_comments_style' );
-   }
+   #}
 }
 add_filter( 'wp_head', 'remove_wp_widget_recent_comments_style', 1 );
 
@@ -176,9 +187,6 @@ remove_action('wp_head', 'pagenavi_css');
 # }
 
 
-// uncomment to remove meta tag <meta name="generator" content="WordPress x.x.x" /> from header
-# remove_action('wp_head', 'wp_generator');
-
 // If the plugin Share This is activated, disable its auto-output so we can control it 
 // through the Atahualpa Theme Options
 if ( function_exists('akst_share_link') ) {
@@ -186,55 +194,72 @@ if ( function_exists('akst_share_link') ) {
 @define('AKST_ADDTOFOOTER', false);
 }
 
-// Register new query variable "bfa_ata_file" with Wordpress
+
+/* EXTERNAL OR INTERNAL CSS & JS, PLUS COMPRESSION & DEBUG */
+
+// Register new query variables "bfa_ata_file" and "bfa_debug" with Wordpress
 add_filter('query_vars', 'add_new_var_to_wp');
 function add_new_var_to_wp($public_query_vars) {
 	$public_query_vars[] = 'bfa_ata_file';
+	$public_query_vars[] = 'bfa_debug';
 	return $public_query_vars;
 }
 
-/* redirect the template if new var "bfa_ata_file" exists in URL
-and is "css" or "js". That means that a request for 
+// if debug add/remove info
+if ( function_exists('wp_generator') ) {
+	remove_action('wp_head', 'wp_generator');
+}
+add_action('wp_head', 'bfa_debug');
+function bfa_debug() {
+	global $bfa_ata;
+	$debug = get_query_var('bfa_debug');
+	if ( $debug == 1 ) {
+		echo '<meta name="theme" content="' . $bfa_ata['name'] . ' ' . $bfa_ata['version'] . '" />' . "\n";
+		if ( function_exists('the_generator') ) { 
+			the_generator( apply_filters( 'wp_generator_type', 'xhtml' ) );
+		}
+		echo '<meta name="robots" content="noindex, follow" />'."\n";
+	}
+}	
+
+/* redirect the template if new var "bfa_ata_file" or "bfa_debug" exists in URL
+and is "css" or "js", or "yes" for debug. That means that a request for 
 mydomain.com/?bfa_ata_file=css would not try to display a
 normal page but do whatever we define below. In this
 case "get the saved options and display the CSS file" */
 add_action('template_redirect', 'bfa_css_js_redirect');
-function bfa_css_js_redirect() {
+add_action('wp_head', 'bfa_inline_css_js');
+
+/* since 3.4.3 */
+function add_js_link() {
 	global $bfa_ata;
-	$bfa_ata_file_value = get_query_var('bfa_ata_file');
-	$bfa_ata_preview = get_query_var('preview');
-	if ( $bfa_ata_file_value == "css" OR $bfa_ata_file_value == "js" ) {
-		#include_once (TEMPLATEPATH . '/functions/bfa_get_options.php');
-		include_once (TEMPLATEPATH . '/' . $bfa_ata_file_value . '.php');
-		exit; // this stops WordPress entirely
+	if ( $bfa_ata['javascript_external'] == "External" ) { ?>
+	<script type="text/javascript" src="<?php echo $bfa_ata['get_option_home']; ?>/?bfa_ata_file=js"></script>
+	<?php } 
+}
+add_action('wp_head', 'add_js_link');
+
+function bfa_css_js_redirect() {
+	$bfa_ata_query_var_file = get_query_var('bfa_ata_file');
+	if ( $bfa_ata_query_var_file == "css" OR $bfa_ata_query_var_file == "js" ) {
+			global $bfa_ata;
+			include_once (TEMPLATEPATH . '/' . $bfa_ata_query_var_file . '.php');
+			exit; // this stops WordPress entirely
 	}
 }
-
-/* The above code doesn't work if the theme is being previewed.
-In this case we're just including the css.php inline in the header. Otherwise
-the theme would look broken in the preview due to the missing CSS */
-if ( get_query_var('preview') == 1 ) { 
-	$bfa_ata['css_external'] == "Inline";
-	$bfa_ata['javascript_external'] == "Inline";
-}
-
-/* If this is a preview, CSS was set to be displayed Inline at Theme Options: */
-if ( $bfa_ata['css_external'] == "Inline" ) { 
-	add_action('wp_head', 'bfa_inline_css');
-}
 	
-function bfa_inline_css() {
+function bfa_inline_css_js() {
 	global $bfa_ata;
-	include_once (TEMPLATEPATH . '/' . 'css.php');
-}
-
-if ( $bfa_ata['javascript_external'] == "Inline" ) { 
-	add_action('wp_head', 'bfa_inline_javascript');
-}
-	
-function bfa_inline_javascript() {
-	global $bfa_ata;
-	include_once (TEMPLATEPATH . '/' . 'js.php');
+	$bfa_ata_preview = get_query_var('preview');
+	$bfa_ata_debug = get_query_var('bfa_debug');
+	if ( $bfa_ata_preview == 1 OR $bfa_ata['css_external'] == "Inline" OR 
+	( $bfa_ata_debug == 1 AND $bfa_ata['allow_debug'] == "Yes" ) ) {
+		include_once (TEMPLATEPATH . '/css.php');
+	}
+	if ( $bfa_ata_preview == 1 OR $bfa_ata['javascript_external'] == "Inline" OR 
+	( $bfa_ata_debug == 1 AND $bfa_ata['allow_debug'] == "Yes" ) ) {
+		include_once (TEMPLATEPATH . '/js.php');
+	}
 }
 
 
@@ -244,7 +269,7 @@ function bfa_inline_javascript() {
 function bfa_wp_trim_excerpt($text) { // Fakes an excerpt if needed
 	
 	global $bfa_ata;
-	
+
 	if ( '' == $text ) {
 		$text = get_the_content('');
 		$text = apply_filters('the_content', $text);
@@ -252,14 +277,18 @@ function bfa_wp_trim_excerpt($text) { // Fakes an excerpt if needed
 		$text = strip_tags($text, $bfa_ata['dont_strip_excerpts']);
 		$excerpt_length = $bfa_ata['excerpt_length'];
 		$words = explode(' ', $text, $excerpt_length + 1);
-		if (count($words) > $excerpt_length) {
-			array_pop($words);	
-			$custom_read_more = str_replace('%permalink%', get_permalink(), $bfa_ata['custom_read_more']);
-			$custom_read_more = str_replace('%title%', the_title('','',FALSE), $custom_read_more);
-			array_push($words, $custom_read_more);
-			$text = implode(' ', $words);
-		}
+	} else {
+		$words = explode(' ', $text);
 	}
+
+	if (count($words) > $excerpt_length) {	
+		array_pop($words);	
+		$custom_read_more = str_replace('%permalink%', get_permalink(), $bfa_ata['custom_read_more']);
+		$custom_read_more = str_replace('%title%', the_title('','',FALSE), $custom_read_more);
+		array_push($words, $custom_read_more);
+		$text = implode(' ', $words);
+	}
+
 	return $text;
 }
 remove_filter('get_the_excerpt', 'wp_trim_excerpt');
@@ -300,7 +329,7 @@ after_title			HMTL after the title ... Default: </h3></div>
 */
 function bfa_widget_area($args = '') {
 	$defaults = array(
-		'cells' => 3,
+		'cells' => 1,
 		'align' => 2,
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
@@ -311,46 +340,91 @@ function bfa_widget_area($args = '') {
 	$r = wp_parse_args( $args, $defaults );
 	extract( $r, EXTR_SKIP );
 
-	$area_id = strtolower(str_ireplace(" ", "_", $r['name']));
+	$area_id = strtolower(str_replace(" ", "_", $r['name']));
 	
-	echo '<table id="' . $area_id . '" class="bfa_widget_area" style="table-layout:fixed; width: 100%" cellpadding="0" cellspacing="0" border="0">';
+	$bfa_widget_areas = get_option('bfa_widget_areas');
 	
-	for ( $i = 1; $i <= $r['cells']; $i++ ) {
-		
-			$current_name = $r['name'] . ' ' . $i;
-			$current_id = $area_id . '_' . $i;
-			$current_align = "align_" . $i;
-			
-			echo "\n" . '<td id="' . $current_id .'" ';
-			
-			if ( $r[$current_align] ) { 
-				$align_type = $r["$current_align"];
-			} else {
-				$align_type = $r['align'];
+	// If there are more than 1 cell, use a table, otherwise just a DIV:
+	if ( $r['cells'] > 1 ) {
+	
+		echo '<table id="' . $area_id . '" class="bfa_widget_area" style="table-layout:fixed;width:100%" cellpadding="0" cellspacing="0" border="0">';
+
+		// If a width was set for any of the widget area cells:
+		if ( strpos($args,'width_') !== FALSE ) {
+			echo "\n<colgroup>";
+			for ( $i = 1; $i <= $r['cells']; $i++ ) {
+				echo '<col';
+				$current_width = "width_" . $i;
+				if ( $r[$current_width] ) {
+					echo ' style="width:' . $r[$current_width] . 'px"';
+				}
+				echo ' />';
 			}
+			echo "</colgroup>";
+		}
+		
+		echo "<tr>";
+		
+		for ( $i = 1; $i <= $r['cells']; $i++ ) {
 			
-			echo bfa_table_cell_align($align_type) . ">";
-			
-			// Register widget area
-			#$bfa_ata_widget_areas[] = $current_name; 
-	  		$bfa_ata_widget_areas[] = array(
-	  			"name" => $current_name,
-	  			"before_widget" => $r['before_widget'],
-	  			"after_widget" => $r['after_widget'],
-	  			"before_title" => $r['before_title'],
-	  			"after_title" => $r['after_title']
-	  			);
-	  
-	   		// Display widget area
-			dynamic_sidebar("$current_name"); 
-			
-			echo "\n</td>";
-	    
+				$current_name = $r['name'] . ' ' . $i;
+				$current_id = $area_id . '_' . $i;
+				$current_align = "align_" . $i;
+				
+				echo "\n" . '<td id="' . $current_id .'" ';
+				
+				if ( $r[$current_align] ) { 
+					$align_type = $r["$current_align"];
+				} else {
+					$align_type = $r['align'];
+				}
+				
+				echo bfa_table_cell_align($align_type) . ">";
+				
+				// Register widget area
+		  		$this_widget_area = array(
+		  			"name" => $current_name,
+		  			"before_widget" => $r['before_widget'],
+		  			"after_widget" => $r['after_widget'],
+		  			"before_title" => $r['before_title'],
+		  			"after_title" => $r['after_title']
+		  			);
+		  
+		   		// Display widget area
+				dynamic_sidebar("$current_name"); 
+				
+				echo "\n</td>";
+				
+				$bfa_widget_areas[$current_name] = $this_widget_area;
+		}
+		
+		echo "\n</tr></table>";     
+	
+	} else {
+	
+		// If only 1 widget cell, use a DIV instead of a table
+		echo '<div id="' . $area_id . '" class="bfa_widget_area">';
+		
+		// Add new widget area to existing ones
+		$this_widget_area = array(
+			"name" => $r['name'],
+			"before_widget" => $r['before_widget'],
+			"after_widget" => $r['after_widget'],
+			"before_title" => $r['before_title'],
+			"after_title" => $r['after_title']
+			);
+
+		// Display widget area
+		dynamic_sidebar($r['name']); 	
+
+		echo '</div>';
+		
+		$current_name = $r['name'];
+		$bfa_widget_areas[$current_name] = $this_widget_area;
+	
 	}
-	
-	echo '</table>';     
-	
-	update_option("bfa_widget_areas", $bfa_ata_widget_areas);
+
+	update_option("bfa_widget_areas", $bfa_widget_areas);
 
 }
 
@@ -374,15 +448,30 @@ function bfa_table_cell_align($align_type) {
 }
 	
 
+// Since 3.4.3: Delete Widget Areas
+function bfa_ata_reset_widget_areas() {
+	check_ajax_referer( "reset_widget_areas" );
+	$delete_areas = $_POST['delete_areas'];
+	$current_areas = get_option('bfa_widget_areas');
+	foreach ($delete_areas as $area_name) {
+		unset($current_areas[$area_name]);
+	}
+	update_option('bfa_widget_areas', $current_areas);
+	echo 'Custom widget areas deleted...'; 
+	die();
+}
+// add_action ( 'wp_ajax_' + [name of "action" in jQuery.ajax, see functions/bfa_css_admin_head.php], [name of function])
+add_action( 'wp_ajax_reset_bfa_ata_widget_areas', 'bfa_ata_reset_widget_areas' );
+
+
 
 // This adds arbitrary content at various places in the center (= content) column:
 function bfa_center_content($center_content) {
-
-	global $bfa_ata;
+	global $bfa_ata; 
 	
 	// PHP 
-	// not for WPMU
-	if ( !file_exists(ABSPATH."/wpmu-settings.php") ) {
+	// not for WPMU - enabled again since 3.4.3 until alternative for WPMU is available
+	# if ( !file_exists(ABSPATH."/wpmu-settings.php") ) {
 		
 		if ( strpos($center_content,'<?php ') !== FALSE ) {
 			ob_start(); 
@@ -391,9 +480,9 @@ function bfa_center_content($center_content) {
 			ob_end_clean();
 		}
 		
-	}
+	# }
 	
-	echo $center_content;
+	echo $center_content; 
 
 }
 
@@ -401,19 +490,26 @@ function bfa_center_content($center_content) {
 
 /* CUSTOM BODY TITLE and meta title, meta keywords, meta description */
 
+
 /* Use the admin_menu action to define the custom boxes */
+if (is_admin())
 add_action('admin_menu', 'bfa_ata_add_custom_box');
 
 /* Use the save_post action to do something with the data entered */
 add_action('save_post', 'bfa_ata_save_postdata');
 
+/* Use the publish_post action to do something with the data entered */
+#add_action('publish_post', 'bfa_ata_save_postdata');
+
+#add_action('pre_post_update', 'bfa_ata_save_postdata');
+
 /* Adds a custom section to the "advanced" Post and Page edit screens */
 function bfa_ata_add_custom_box() {
 
   if( function_exists( 'add_meta_box' )) {
-    add_meta_box( 'bfa_ata_sectionid', __( 'Atahualpa Post Options', 'myplugin_textdomain' ), 
+    add_meta_box( 'bfa_ata_sectionid', __( 'Atahualpa Post Options', 'atahualpa' ), 
                 'bfa_ata_inner_custom_box', 'post', 'normal', 'high' );
-    add_meta_box( 'bfa_ata_sectionid', __( 'Atahualpa Page Options', 'myplugin_textdomain' ), 
+    add_meta_box( 'bfa_ata_sectionid', __( 'Atahualpa Page Options', 'atahualpa' ), 
                 'bfa_ata_inner_custom_box', 'page', 'normal', 'high' );
    } else {
     add_action('dbx_post_advanced', 'bfa_ata_old_custom_box' );
@@ -436,24 +532,30 @@ function bfa_ata_inner_custom_box() {
   	$thePostID = $post->ID;
 	$post_id = get_post($thePostID);
 	$title = $post_id->post_title;
-	
+
+	$body_title = get_post_meta($post->ID, 'bfa_ata_body_title', true);
+	if ( $body_title == '' ) {
+		$body_title = $title;
+	}
+	$display_body_title = get_post_meta($post->ID, 'bfa_ata_display_body_title', true);
+	$body_title_multi = get_post_meta($post->ID, 'bfa_ata_body_title_multi', true);
+	if ( $body_title_multi == '' ) {
+		$body_title_multi = $title;
+	}
 	$meta_title = get_post_meta($post->ID, 'bfa_ata_meta_title', true);
 	$meta_keywords = get_post_meta($post->ID, 'bfa_ata_meta_keywords', true);
 	$meta_description = get_post_meta($post->ID, 'bfa_ata_meta_description', true);	
-	$body_title = get_post_meta($post->ID, 'bfa_ata_body_title', true);
-  	if ( get_post_meta($post->ID, 'bfa_ata_body_title_saved', true) != 1 ) { 
-  		$body_title = $title; 
-  	}
 
+	
 
 	echo '<table cellpadding="5" cellspacing="0" border="0" style="table-layout:fixed;width:100%">';
-
-	echo '<tr><td style="text-align:right;padding:2px 5px 2px 2px"><label for="bfa_ata_body_title">' . __("Body Title", 'atahualpa' ) . '</label></td>';
-	echo '<td><input type="text" name="bfa_ata_body_title" value="' . 
-	$body_title . '" size="70" style="width:97%" />';
-	echo '<input type="hidden" name="bfa_ata_body_title_saved" value="1" /></td></tr>';
+	echo '<tr><td style="text-align:right;padding:2px 5px 2px 2px"><input id="bfa_ata_display_body_title" name="bfa_ata_display_body_title" type="checkbox" '. ($display_body_title == 'on' ? ' CHECKED' : '') .' /></td><td>Check to <strong>NOT</strong> display the Body Title on Single Post or Static Pages</td></tr>';
+	echo '<tr><td style="text-align:right;padding:2px 5px 2px 2px"><label for="bfa_ata_body_title">' . __("Body Title Single Pages", 'atahualpa' ) . '</label></td>';
+	echo '<td><input type="text" name="bfa_ata_body_title" value="' . $body_title . '" size="70" style="width:97%" /></td></tr>';
+	echo '<tr><td style="text-align:right;padding:2px 5px 2px 2px"><label for="bfa_ata_body_title_multi">' . __("Body Title Multi Post Pages", 'atahualpa' ) . '</label></td>';
+	echo '<td><input type="text" name="bfa_ata_body_title_multi" value="' . $body_title_multi . '" size="70" style="width:97%" /></td></tr>';
 		
-	echo '<colgroup><col style="width:140px"><col></colgroup>';
+	echo '<colgroup><col style="width:200px"><col></colgroup>';
 	echo '<tr><td style="text-align:right;padding:2px 5px 2px 2px"><label for="bfa_ata_meta_title">' . __("Meta Title", 'atahualpa' ) . '</label></td>';
 	echo '<td><input type="text" name="bfa_ata_meta_title" value="' . 
 	$meta_title . '" size="70" style="width:97%" /></td></tr>';
@@ -488,6 +590,8 @@ function bfa_ata_old_custom_box() {
   echo "</div></div></fieldset></div>\n";
 }
 
+
+
 /* When the post is saved, save our custom data */
 function bfa_ata_save_postdata( $post_id ) {
 
@@ -509,21 +613,29 @@ function bfa_ata_save_postdata( $post_id ) {
 	// Save the data
 	
 	$new_body_title = $_POST['bfa_ata_body_title'];
-	$new_body_title_saved = $_POST['bfa_ata_body_title_saved'];
+	$new_display_body_title = !isset($_POST["bfa_ata_display_body_title"]) ? NULL : $_POST["bfa_ata_display_body_title"];
+	$new_body_title_multi = $_POST['bfa_ata_body_title_multi'];
 	$new_meta_title = $_POST['bfa_ata_meta_title'];
 	$new_meta_keywords = $_POST['bfa_ata_meta_keywords'];
 	$new_meta_description = $_POST['bfa_ata_meta_description'];
-	
-	add_post_meta($post_id, 'bfa_ata_body_title_saved', $new_body_title_saved, true) 
-	OR update_post_meta($post_id, 'bfa_ata_body_title_saved', $new_body_title_saved);
-	add_post_meta($post_id, 'bfa_ata_meta_title', $new_meta_title, true) 
-	OR update_post_meta($post_id, 'bfa_ata_meta_title', $new_meta_title);
-	add_post_meta($post_id, 'bfa_ata_meta_keywords', $new_meta_keywords, true) 
-	OR update_post_meta($post_id, 'bfa_ata_meta_keywords', $new_meta_keywords);
-	add_post_meta($post_id, 'bfa_ata_meta_description', $new_meta_description, true) 
-	OR update_post_meta($post_id, 'bfa_ata_meta_description', $new_meta_description);
-	add_post_meta($post_id, 'bfa_ata_body_title', $new_body_title, true) 
-	OR update_post_meta($post_id, 'bfa_ata_body_title', $new_body_title);
+
+	update_post_meta($post_id, 'bfa_ata_body_title', $new_body_title);
+	update_post_meta($post_id, 'bfa_ata_display_body_title', $new_display_body_title);
+	update_post_meta($post_id, 'bfa_ata_body_title_multi', $new_body_title_multi);
+	update_post_meta($post_id, 'bfa_ata_meta_title', $new_meta_title);
+	update_post_meta($post_id, 'bfa_ata_meta_keywords', $new_meta_keywords);
+	update_post_meta($post_id, 'bfa_ata_meta_description', $new_meta_description);
+
 
 }
+
+
+// Since 3.4.3: Add Spam and Delete links to comments
+function delete_comment_link($id) {  
+	if (current_user_can('edit_post')) {  
+		echo '| <a href="'.admin_url("comment.php?action=cdc&c=$id").'">Delete</a> ';  
+		echo '| <a href="'.admin_url("comment.php?action=cdc&dt=spam&c=$id").'">Spam</a>';  
+	}  
+}  
+
 ?>

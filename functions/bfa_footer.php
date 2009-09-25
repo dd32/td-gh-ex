@@ -11,7 +11,7 @@ function footer_page_links($matches) {
 
 function bfa_footer($footer_content) {
 
-global $bfa_ata;
+global $bfa_ata, $post;
 
 
 

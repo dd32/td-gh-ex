@@ -28,8 +28,13 @@ function get_body_class( $class = '' ) {
 	if ( 'rtl' == get_bloginfo('text_direction') )
 		$classes[] = 'rtl';
 
-	if ( is_front_page() )
-		$classes[] = 'home';
+	// For WP 2.3 and older:
+	if ( function_exists('is_front_page') ) {
+		if ( is_front_page() ) $classes[] = 'home';
+	} elseif ( is_home() AND !is_paged() ) {
+			$classes[] = 'home';
+	}
+	
 	if ( is_home() )
 		$classes[] = 'blog';
 	if ( is_archive() )

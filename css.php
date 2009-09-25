@@ -1,11 +1,16 @@
 <?php 
-#global $bfa_ata; if ($bfa_ata == "") include_once (TEMPLATEPATH . '/functions/bfa_get_options.php'); 
-if ( $bfa_ata_preview == 1 OR $bfa_ata['css_external'] == "Inline" ) {
+global $bfa_ata; 
+if ($bfa_ata == "") include_once (TEMPLATEPATH . '/functions/bfa_get_options.php'); 
+if ( $bfa_ata_preview == 1 OR $bfa_ata['css_external'] == "Inline" OR 
+( $bfa_ata_debug == 1 AND $bfa_ata['allow_debug'] == "Yes" ) ) {
 	echo '<style type="text/css">'; 
 } else { 
 	header("Content-type: text/css"); 
 }
-if ( $bfa_ata['css_compress'] == "Yes" ) ob_start("bfa_compress_css");
+if ( $bfa_ata['css_compress'] == "Yes" AND 
+!( $bfa_ata_debug == 1 AND $bfa_ata['allow_debug'] == "Yes" ) ) {
+	ob_start("bfa_compress_css");
+}
 
 function bfa_compress_css($buffer) {
 	
@@ -13,7 +18,8 @@ function bfa_compress_css($buffer) {
 	$buffer = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $buffer);
 	
 	/* remove tabs, spaces, newlines, etc. */
-	$buffer = str_replace(array("\r\n", "\r", "\n", "\t", '  ', '   ', '    '), '', $buffer);
+	$buffer = str_replace(array("\r\n", "\r", "\n", "\t"), '', $buffer);
+	$buffer = str_replace(array('  ', '   ', '    ', '     '), ' ', $buffer);
 	$buffer = str_replace(array(": ", " :"), ':', $buffer);
 	$buffer = str_replace(array(" {", "{ "), '{', $buffer);
 	$buffer = str_replace(';}','}', $buffer);
@@ -46,14 +52,14 @@ a:link, a:visited, a:active {
 a:hover {
 	color: #<?php echo $bfa_ata['link_hover_color']; ?>;
 	font-weight: <?php echo $bfa_ata['link_weight']; ?>; 
-	text-decoration: <?php echo $bfa_ata['link_hover_decoration']; ?>; 
+	text-decoration: <?php echo $bfa_ata['link_hover_decoration']; ?>;
 	}
 
 ul, ol, dl, p, h1, h2, h3, h4, h5, h6 {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	padding-top: 0;
-	padding-bottom: 0;
+	padding-bottom: 0; 	
 	}
 
 /* remove margins on sub-lists */
@@ -62,12 +68,33 @@ ul ul, ul ol, ol ul, ol ol {
 	margin-bottom: 0;
 	}
 
+/*
 h1 {font-size: 2.15em; font-weight: bold;}
 h2 {font-size: 1.85em; font-weight: bold;}
 h3 {font-size: 1.6em; font-weight: bold; }
 h4 {font-size: 1.4em;}
 h5 {font-size: 1.2em;}
 h6 {font-size: 1em;}
+*/
+
+h1, h2, h3, h4, h5, h6 {
+  color: #000;
+  display: block;
+  /* fixed for Non-PCs without Photoshop CS2+ */
+	font-smooth: always;
+}
+
+h1 { font-size: 34px; line-height: 1.2; margin: 0.3em 0 10px; }
+h2 { font-size: 28px; line-height: 1.3; margin: 1em 0 .2em; }
+h3 { font-size: 24px; line-height: 1.3; margin: 1em 0 .2em; }
+h4 { font-size: 19px; margin: 1.33em 0 .2em; }
+h5 { font-size: 1.3em; margin: 1.67em 0; font-weight: bold; }
+h6 { font-size: 1.15em; margin: 1.67em 0; font-weight: bold; }
+
+h1 a, h2 a, h1 a:link, h2 a:link, h1 a:visited, h2 a:visited { color: #000; }
+h1 a:active, h2 a:active, h1 a:focus, h2 a:focus, h1 a:hover, h2 a:hover { color: #669900; }
+
+
 
 code, pre {
 	font-family: "Courier New", Courier, monospace;
@@ -246,6 +273,7 @@ h1.blogtitle,
 h2.blogtitle {
     display: block;
 	<?php echo $bfa_ata['blog_title_style']; ?>
+	font-smooth: always;
 	}
 	
 h1.blogtitle a:link, 
@@ -257,6 +285,7 @@ h2.blogtitle a:active {
     text-decoration: none;
 	color: #<?php echo $bfa_ata['blog_title_color']; ?>;
 	font-weight: <?php echo $bfa_ata['blog_title_weight']; ?>;
+	font-smooth: always;
 	}
 	
 h1.blogtitle a:hover,
@@ -287,47 +316,72 @@ div.rss-box {
 /*-------------------- COMMENTS FEED ICON -----------------*/
 
 a.comments-icon {
-	background: transparent url(<?php echo $bfa_ata['template_directory']; ?>/images/comment-feed-small.gif) no-repeat scroll 0;
 	height: 22px;
 	line-height: 22px;
-	margin: 0 10px 0 0;
-	padding-left: 27px;
+	margin: 0 5px 0 5px;
+	padding-left: 22px;
 	display: block;
 	text-decoration: none;
 	float: right;
 	white-space: nowrap;
 	}
+
+a.comments-icon:link,
+a.commentss-icon:active,
+a.comments-icon:visited {
+	background: transparent url(<?php echo $bfa_ata['template_directory']; ?>/images/comment-gray.png) no-repeat scroll center left;
+}
+
+a.comments-icon:hover {
+	background: transparent url(<?php echo $bfa_ata['template_directory']; ?>/images/comment.png) no-repeat scroll center left;
+}
 
 
 /*-------------------- POSTS FEED ICON --------------------*/
 
 a.posts-icon {
-	background: transparent url(<?php echo $bfa_ata['template_directory']; ?>/images/post-feed-small.gif) no-repeat scroll 0;
 	height: 22px;
 	line-height: 22px;
-	margin: 0 10px 0 0;
-	padding-left: 25px;
+	margin: 0 5px 0 0;
+	padding-left: 20px;
 	display: block;
 	text-decoration: none;
 	float: right;
 	white-space: nowrap;
 	}
 
+a.posts-icon:link,
+a.posts-icon:active,
+a.posts-icon:visited {
+	background: transparent url(<?php echo $bfa_ata['template_directory']; ?>/images/rss-gray.png) no-repeat center left;
+}
+
+a.posts-icon:hover {
+	background: transparent url(<?php echo $bfa_ata['template_directory']; ?>/images/rss.png) no-repeat center left;
+}
 
 /*-------------------- EMAIL SUBSCRIBE ICON ---------------*/
 
 a.email-icon {
-	background: transparent url(<?php echo $bfa_ata['template_directory']; ?>/images/email-feed-small.gif) no-repeat scroll 0;
 	height: 22px;
 	line-height: 22px;
-	margin: 0 10px 0 0;
-	padding-left: 28px;
+	margin: 0 5px 0 5px;
+	padding-left: 24px;
 	display: block;
 	text-decoration: none;
 	float: right;
 	white-space: nowrap;
 	}
 	
+a.email-icon:link,
+a.email-icon:active,
+a.email-icon:visited {
+	background: transparent url(<?php echo $bfa_ata['template_directory']; ?>/images/email-gray.png) no-repeat scroll center left;
+}
+
+a.email-icon:hover {
+	background: transparent url(<?php echo $bfa_ata['template_directory']; ?>/images/email.png) no-repeat scroll center left;
+}
 	
 /*-------------------- SEARCH BOX IN HEADER ---------------*/	
 
@@ -532,8 +586,12 @@ td#right ul.tw-nav-list {
 	margin:0;
 	<?php echo $bfa_ata['widget_title']; ?>
 	}
-	
-div.widget-content {
+
+/* Since 3.4 "div-widget-content" is gone for better plugin compatibility. 
+Instead we'll try to mimick the feature by putting the styles on the following 
+containers: */
+div.widget ul,
+div.textwidget {
 	display: block;
 	width: auto;
 	<?php echo $bfa_ata['widget_content']; ?>
@@ -696,12 +754,12 @@ div.widget_categories ul li ul li a:link,
 div.widget_categories ul li ul li a:visited, 
 div.widget_categories ul li ul li a:active {
 	padding: 0 0 0 <?php echo $bfa_ata['widget_lists2']['link-padding-left']; ?>px; 
-	border-left: solid <?php echo $bfa_ata['widget_lists2']['link-border-left-width']; ?>px #<?php echo $bfa_ata['widget_lists']['link-border-left-color']; ?>;
+	border-left: solid <?php echo $bfa_ata['widget_lists2']['link-border-left-width']; ?>px #<?php echo $bfa_ata['widget_lists2']['link-border-left-color']; ?>;
 	}
 
 div.widget_pages ul li ul li a:hover,
 div.widget_categories ul li ul li a:hover {
-	border-left: solid <?php echo $bfa_ata['widget_lists2']['link-border-left-width']; ?>px #<?php echo $bfa_ata['widget_lists']['link-border-left-hover-color']; ?>; 
+	border-left: solid <?php echo $bfa_ata['widget_lists2']['link-border-left-width']; ?>px #<?php echo $bfa_ata['widget_lists2']['link-border-left-hover-color']; ?>; 
 }
 
 div.widget_pages ul li ul li ul li a:link, 
@@ -711,12 +769,12 @@ div.widget_categories ul li ul li ul li a:link,
 div.widget_categories ul li ul li ul li a:visited, 
 div.widget_categories ul li ul li ul li a:active {
 	padding: 0 0 0 <?php echo $bfa_ata['widget_lists3']['link-padding-left']; ?>px; 
-	border-left: solid <?php echo $bfa_ata['widget_lists3']['link-border-left-width']; ?>px #<?php echo $bfa_ata['widget_lists']['link-border-left-color']; ?>;
+	border-left: solid <?php echo $bfa_ata['widget_lists3']['link-border-left-width']; ?>px #<?php echo $bfa_ata['widget_lists3']['link-border-left-color']; ?>;
 	}
 
 div.widget_pages ul li ul li ul li a:hover,
 div.widget_categories ul li ul li ul li a:hover {
-	border-left: solid <?php echo $bfa_ata['widget_lists3']['link-border-left-width']; ?>px #<?php echo $bfa_ata['widget_lists']['link-border-left-hover-color']; ?>; 
+	border-left: solid <?php echo $bfa_ata['widget_lists3']['link-border-left-width']; ?>px #<?php echo $bfa_ata['widget_lists3']['link-border-left-hover-color']; ?>; 
 }
 
 /* The pages widget gets "block" because it usually has only 
@@ -730,7 +788,7 @@ div.widget_pages ul li a:hover {
 
 /* The category widget gets "inline" per default or otherwise the 
 post count would wrap into the next line. If no post count is displayed,
-can be chosen at Theme Options -> Style Widgets -> Category Widget Display Type. 
+"block" can be chosen at Theme Options -> Style Widgets -> Category Widget Display Type. 
 With "block", links that don't fit into one line will align properly (as a block) 
 on the left side. */
 div.widget_categories ul li a:link,
@@ -1989,7 +2047,7 @@ include (WP_PLUGIN_DIR.'/wp-pagenavi/pagenavi-css.css');
 		display: none;
 		}
 
-	td#left, td#right {
+	td#left, td#right, td#left-inner, td#right-inner {
 		width: 0;
 		}
 
@@ -1997,16 +2055,24 @@ include (WP_PLUGIN_DIR.'/wp-pagenavi/pagenavi-css.css');
 		width: 100%;
 		}
 
-	/* 4 hacks for display:none for td#left and td#right for all all browsers except IE. */
+	/* 8 hacks for display:none for all sidebars for all browsers except IE. */
 
-	*:lang(en) td#left{
+	*:lang(en) td#left {
 	    display: none;
 		}
 		
-	*:lang(en) td#right{
+	*:lang(en) td#right {
 	    display: none;
 		}
 
+	*:lang(en) td#left-inner {
+	    display: none;
+		}
+		
+	*:lang(en) td#right-inner {
+	    display: none;
+		}
+		
 	td#left:empty {
 	    display: none;
 		}
@@ -2015,6 +2081,14 @@ include (WP_PLUGIN_DIR.'/wp-pagenavi/pagenavi-css.css');
 	    display: none;
 		}
 
+	td#left-inner:empty {
+	    display: none;
+		}
+
+	td#right-inner:empty {
+	    display: none;
+		}
+		
 }	
 
 
@@ -2225,12 +2299,10 @@ ul.rMenu-hRight ul {
 div#menu1 ul.rMenu {
 	background: #<?php echo $bfa_ata['page_menu_bar_background_color']; ?>;
 	border: <?php echo $bfa_ata['anchor_border_page_menu_bar']; ?>;
-	border-left: none;
 	}
 div#menu2 ul.rMenu {
 	background: #<?php echo $bfa_ata['cat_menu_bar_background_color']; ?>;
 	border: <?php echo $bfa_ata['anchor_border_cat_menu_bar']; ?>;
-	border-left: none;
 	}
 
 div#menu1 ul.rMenu li a {
@@ -2273,6 +2345,7 @@ ul.rMenu-ver li {
 	margin-left: 0;
 	margin-top: -1px;	/* same thing above except for vertical
 				   menus */
+				   
 	}
 	
 div#menu1 ul.rMenu-ver {
@@ -2281,7 +2354,8 @@ div#menu1 ul.rMenu-ver {
 div#menu2 ul.rMenu-ver {
 	border-top: <?php echo $bfa_ata['anchor_border_cat_menu_bar']; ?>;	
 	}
-	
+
+				
 div#menu1 ul.rMenu li a {
 	padding: 4px 5px;	
 	}
@@ -2335,7 +2409,7 @@ div#menu1 ul.rMenu li.sfhover {
 	the current sub-menu. includes the sfhover
 	class which is used in the suckerfish hack
 	detailed later in this stylesheet. */
-	background-color: #<?php echo $bfa_ata['page_menu_bar_background_color_parent']; ?>;	
+	background: #<?php echo $bfa_ata['page_menu_bar_background_color_parent']; ?>;	
 	}
 div#menu2 ul.rMenu li:hover,
 div#menu2 ul.rMenu li.sfhover {
@@ -2343,35 +2417,42 @@ div#menu2 ul.rMenu li.sfhover {
 	the current sub-menu. includes the sfhover
 	class which is used in the suckerfish hack
 	detailed later in this stylesheet. */
-	background-color: #<?php echo $bfa_ata['cat_menu_bar_background_color_parent']; ?>;	
+	background: #<?php echo $bfa_ata['cat_menu_bar_background_color_parent']; ?>;	
 	}
 
 /* "current" page and hover, first part old version */
+div#menu1 ul.rMenu li.current_page_item > a:link, 
+div#menu1 ul.rMenu li.current_page_item > a:active, 
+div#menu1 ul.rMenu li.current_page_item > a:hover, 
+div#menu1 ul.rMenu li.current_page_item > a:visited {
+	background-color: #<?php echo $bfa_ata['page_menu_bar_background_color_hover']; ?>;
+	color: #<?php echo $bfa_ata['page_menu_bar_link_color_hover']; ?>;
+	}
+/* First 4 lines For IE6:*/
 div#menu1 ul.rMenu li.current_page_item a:link, 
 div#menu1 ul.rMenu li.current_page_item a:active, 
 div#menu1 ul.rMenu li.current_page_item a:hover, 
 div#menu1 ul.rMenu li.current_page_item a:visited, 
-div#menu1 ul.rMenu li.current_page_item > a:link, 
-div#menu1 ul.rMenu li.current_page_item > a:active, 
-div#menu1 ul.rMenu li.current_page_item > a:hover, 
-div#menu1 ul.rMenu li.current_page_item > a:visited, 
 div#menu1 ul.rMenu li a:hover {
 	background-color: #<?php echo $bfa_ata['page_menu_bar_background_color_hover']; ?>;
 	color: #<?php echo $bfa_ata['page_menu_bar_link_color_hover']; ?>;
 	}
-div#menu2 ul.rMenu li.current_page_item a:link, 
-div#menu2 ul.rMenu li.current_page_item a:active, 
-div#menu2 ul.rMenu li.current_page_item a:hover, 
-div#menu2 ul.rMenu li.current_page_item a:visited, 
-div#menu2 ul.rMenu li.current_page_item > a:link, 
-div#menu2 ul.rMenu li.current_page_item > a:active, 
-div#menu2 ul.rMenu li.current_page_item > a:hover, 
-div#menu2 ul.rMenu li.current_page_item > a:visited, 
+div#menu2 ul.rMenu li.current-cat > a:link, 
+div#menu2 ul.rMenu li.current-cat > a:active, 
+div#menu2 ul.rMenu li.current-cat > a:hover, 
+div#menu2 ul.rMenu li.current-cat > a:visited {
+	background-color: #<?php echo $bfa_ata['cat_menu_bar_background_color_hover']; ?>;
+	color: #<?php echo $bfa_ata['cat_menu_bar_link_color_hover']; ?>;
+	}
+/* First 4 lines For IE6:*/
+div#menu2 ul.rMenu li.current-cat a:link, 
+div#menu2 ul.rMenu li.current-cat a:active, 
+div#menu2 ul.rMenu li.current-cat a:hover, 
+div#menu2 ul.rMenu li.current-cat a:visited, 
 div#menu2 ul.rMenu li a:hover {
 	background-color: #<?php echo $bfa_ata['cat_menu_bar_background_color_hover']; ?>;
 	color: #<?php echo $bfa_ata['cat_menu_bar_link_color_hover']; ?>;
 	}
-
 
 /* ------------------------------------------------------------------
 ---------- PRESENTATION: Expand -------------------------------------
@@ -2540,6 +2621,7 @@ div#menu2 ul.rMenu {
 	}
 <?php } ?>
 	
+
 /* ------------------------------------------------------------------
 ---------- HACKS: General -------------------------------------------
 ------------------------------------------------------------------ */
@@ -2565,7 +2647,7 @@ div#menu2 ul.rMenu {
 	}
 	
 ul.rMenu ul {
-	/*background-color: #fff;*/	/* IE/Win (including 7) needs this on an object 
+	/*background-color: #fff;*/ 	/* IE/Win (including 7) needs this on an object 
 				   that hasLayout so that it doesn't "look through"
 				   the menu and let any object (text) below the 
 				   menu to gain focus, causing the menu to 
@@ -2737,6 +2819,22 @@ ul.rMenu li a {
 	margin-left: 0;
 	}
 <?php } ?>	
+
+
+
+
+
+<?php if ( $bfa_ata['pngfix_selectors'] != '' ) { ?>
+/* ------------------------------------------------------------------
+---------- IE6 PNG FIX ----------------------------------------------
+------------------------------------------------------------------ */
+	
+* html <?php echo $bfa_ata['pngfix_selectors']; ?> { 
+	behavior: url("<?php echo $bfa_ata['template_directory']; ?>/js/iepngfix.php") 
+}
+<?php } ?>
+
+
 /* ------------------------------------------------------------------
 ---------- HACKS: Clearfix & others ---------------------------------
 ------------------------------------------------------------------ */
@@ -2771,10 +2869,16 @@ Also, adding height and font-size for IE6 */
 	margin: 0;
 	}
 
+
+
 <?php 
 echo $bfa_ata['html_inserts_css']; 
-if ( $bfa_ata['css_compress'] == "Yes" ) ob_end_flush(); 
-if ( $bfa_ata_preview == 1 OR $bfa_ata['css_external'] == "Inline" ) {
-	echo '</style>'; 
+if ( $bfa_ata['css_compress'] == "Yes" AND 
+!( $bfa_ata_debug == 1 AND $bfa_ata['allow_debug'] == "Yes" ) ) {
+	ob_end_flush();
+}	
+if ( $bfa_ata_preview == 1 OR $bfa_ata['css_external'] == "Inline" OR 
+( $bfa_ata_debug == 1 AND $bfa_ata['allow_debug'] == "Yes" ) ) {
+	echo "</style>\n"; 
 }
 ?>

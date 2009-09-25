@@ -1,7 +1,7 @@
 <?php
 function bfa_header_config($header_items) {
 
-global $bfa_ata;
+global $bfa_ata, $post;
 
 
 // Page Menu Bar

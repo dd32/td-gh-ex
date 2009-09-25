@@ -22,7 +22,7 @@ global $bfa_ata;
 		<a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
 		<?php printf(__('%1$s at %2$s','atahualpa'), get_comment_date(__('F jS, Y','atahualpa')),  get_comment_time()) ?></a>
         <?php echo comment_reply_link(array('before' => '<span class="comment-reply-link">', 'after' => '</span>', 'reply_text' => $bfa_ata['comment_reply_link_text'], 'depth' => $depth, 'max_depth' => $args['max_depth'] ));  ?>
-		<?php edit_comment_link($bfa_ata['comment_edit_link_text'],'<span class="comment-edit-link">','</span>') ?>
+		<?php edit_comment_link($bfa_ata['comment_edit_link_text'],'<span class="comment-edit-link">','</span>') ?> <?php delete_comment_link(get_comment_ID()); ?>
 		</div>
 		<?php comment_text() ?>
 		</div>
