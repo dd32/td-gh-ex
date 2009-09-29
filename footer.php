@@ -63,21 +63,6 @@ if ($r->have_posts()) : ?>
 
 	<?php endif; ?>
 
-<div id="linkcat-12" class="widget widget_links"><div class="widget-title"><h3>Blogroll</h3></div>
-	<ul class='xoxo blogroll'>
-<li><a href="http://wordpress.org/development/">Development Blog</a></li>
-<li><a href="http://codex.wordpress.org/">Documentation</a></li>
-
-<li><a href="http://wordpress.org/extend/plugins/">Plugins</a></li>
-<li><a href="http://wordpress.org/extend/ideas/">Suggest Ideas</a></li>
-<li><a href="http://wordpress.org/support/">Support Forum</a></li>
-<li><a href="http://wordpress.org/extend/themes/">Themes</a></li>
-<li><a href="http://planet.wordpress.org/">WordPress Planet</a></li>
-
-	</ul>
-</div>
-
-
 </td>
 <!-- / Right Sidebar -->
 <?php } ?>

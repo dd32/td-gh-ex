@@ -353,11 +353,11 @@ a.posts-icon {
 a.posts-icon:link,
 a.posts-icon:active,
 a.posts-icon:visited {
-	background: transparent url(<?php echo $bfa_ata['template_directory']; ?>/images/rss-gray.png) no-repeat center left;
+	background: transparent url(<?php echo $bfa_ata['template_directory']; ?>/images/rss-gray.png) no-repeat scroll center left;
 }
 
 a.posts-icon:hover {
-	background: transparent url(<?php echo $bfa_ata['template_directory']; ?>/images/rss.png) no-repeat center left;
+	background: transparent url(<?php echo $bfa_ata['template_directory']; ?>/images/rss.png) no-repeat scroll center left;
 }
 
 /*-------------------- EMAIL SUBSCRIBE ICON ---------------*/

@@ -67,7 +67,7 @@ include_once (TEMPLATEPATH . '/functions/bfa_theme_options.php');
 include_once (TEMPLATEPATH . '/functions/bfa_get_options.php');
 global $bfa_ata;
 $bfa_ata['name'] = "Atahualpa";
-$bfa_ata['version'] = "3.4.3";
+$bfa_ata['version'] = "3.4.4";
 
 // Load functions
 include_once (TEMPLATEPATH . '/functions/bfa_header_config.php');
@@ -638,4 +638,18 @@ function delete_comment_link($id) {
 	}  
 }  
 
+// Add "in-cat-catname" to body_class of single post pages
+/*
+function add_cats_to_body_class($classes='') {
+	if (is_single()) {
+		global $post;
+		$categories = get_the_category($post->ID);
+		foreach ($categories as $category) {
+			$classes[] = 'in-cat-' . $category->category_nicename;
+		}
+	}
+	return $classes;
+}
+add_filter('body_class', 'add_cats_to_body_class');
+*/
 ?>

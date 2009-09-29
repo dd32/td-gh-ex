@@ -20,7 +20,7 @@ function bfa_meta_value($matches) {
 function postinfo($postinfo_string) {
 
 	// one theme option needed below for nofollow trackback / RSS links yes/no
-	global $bfa_ata;
+	global $bfa_ata, $post;
 
 	/* replace date format escape placeholders(#) with the actual escpae
 	character (=backslashes). This function removes all backslashes from
@@ -348,6 +348,7 @@ function postinfo($postinfo_string) {
 		
 		$comment_options = preg_match("/(.*)%comments\('(.*?)'(.*?)'(.*?)'(.*?)'(.*?)'(.*?)'(.*?)'(.*)/i",
         $postinfo_string,$comment_matches);
+        
 		if ( !comments_open() AND $comment_matches[8] == "dontshow" ) { 
 			$comment_link = ''; 
 		} else { 
@@ -357,6 +358,18 @@ function postinfo($postinfo_string) {
 				$comment_link = ob_get_contents(); 
 			ob_end_clean(); 
 		}
+
+		if (!comments_open() ) {
+			if ($post->comment_count == 0) {
+				$comment_link = '<strong>' . $comment_matches[8] . '</strong>';
+			} else {
+				$comment_link = $comment_link . ' - <strong>(' . $comment_matches[8] . ')</strong>';
+				}
+		}
+		if ( !comments_open() AND $comment_matches[8] == "dontshow" ) { 
+			$comment_link = ''; 
+		}
+		
 		$postinfo = preg_replace("/(.*)%comments\((.*?)\)%(.*)/i", "\${1}" .
         $comment_link. "\${3}", $postinfo);
         

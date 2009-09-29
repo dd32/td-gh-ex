@@ -107,18 +107,12 @@ $options1 = array(
             "info" => "<br />Atahualpa is a <strong>mature, browser-safe WordPress/PHP/CSS Framework</strong> released under GPL.<br />
           <h3>Support</h3>
 			Get support, discuss Atahualpa, get language files and more at the <a href=\"http://forum.bytesforall.com/\">Bytes For All Forum</a>.<br />
-			<h3>PLEASE donate</h3>Close to 2,000 hours have gone into the development of Atahualpa and counting. <strong>Please donate, no matter 
-			how small the amount may be.</strong> See the \"Donate\" links at <a href=\"http://wordpress.bytesforall.com/\">
+			<h3>PLEASE donate</h3>Endless hours have gone into the development of Atahualpa and counting. See the \"Donate\" links at <a href=\"http://wordpress.bytesforall.com/\">
 			wordpress.bytesforall.com</a> and <a href=\"http://forum.bytesforall.com/\">forum.bytesforall.com</a>. Become a 
 			<a href=\"http://forum.bytesforall.com/awc_ds.php?do=donation\">donating member</a> at 
-			forum.bytesforall.com for <strong>additonal benefits</strong> such as HTML & Video tutorials, additional downloads and preferred attention from developers and 
+			forum.bytesforall.com for <strong>additonal benefits</strong> such as preferred attention from developers and 
 			moderators. Ideally, subscribe to the forum first and donate then, this way your donations will be automatically added to your forum user name. 
-			Otherwise, simply send a Private Message (PM) to user Flynn to have your PayPal donation added to your forum user name.<br /><br />
-			<strong>You don't need a PayPal account</strong> to donate, a credit card will do.<br /><br /> 
-			Additional ways to support us: Answer questions about Atahualpa at the 
-			<a href=\"http://forum.bytesforall.com/\">BFA Forum</a> and the <a href=\"http://wordpress.org/search/atahualpa?forums=1\">
-			WordPress.org Forum</a>, vote for Atahualpa over at <a href=\"http://wordpress.org/extend/themes/atahualpa\">
-			WordPress Themes</a> and write something about Atahualpa on your web site.<br />
+<br />
 			<h3>Customizing with CSS</h3>For greater flexibility many site elements can be styled with raw CSS rather than 
 			color pickers and select menus. But don't be afraid, Atahualpa takes care of the hard, layout and cross-browser related issues and leaves 
 			only the fun part of CSS for you: borders, colors, fonts, padding (inner spacing) and margin (outer spacing).
