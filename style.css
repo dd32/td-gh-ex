@@ -2,12 +2,12 @@
 Theme Name: Audacity of Tanish
 Theme URI: http://ahren.org/code/tanish-wp
 Description: Dark configurable theme with JavaScript effects ;-), bottom bars, costumisable background image, dynamic content show/hide capabilities. Needs WP >= 2.7 for full functionality. SCREENSHOT DOESN'T DO JUSTICE ;-), CHECK THE DEMO/PREVIEW and the Dashboard/Admin options! New in this release: option to display latest post expanded in front page, background tile, other styling, extensive fixes, more complete IE (7,8) support, and a lot more. See <a href='http://ahren.org/code/bit/tanish-wp-1dot0'>http://ahren.org/code/bit/tanish-wp-1dot0</a> for full list of changes and <a href='http://ahren.org/code/tanish-wp'>http://ahren.org/code/tanish-wp</a> for features and screenshots.
-Version: 1.0
+Version: 1.0.1
 Author: Ravi Sarma
 Author URI: http://ahren.org/code/
 Tags: two-columns, flexible-width, theme-options, threaded-comments, black, dark
 
-	 Audacity of Tanish 1.0
+	 Audacity of Tanish 1.0.1
 	 http://ahren.org/code/tanish-wp
 
 	The CSS, XHTML and design are released under the
@@ -128,7 +128,7 @@ H6
     font-size:  24pt;
     margin-left: 30px;
     margin-right: 15px;
-    padding: 4px 16px;
+    padding: 6px 16px;
     background-color: #bb2200;
 }
 
@@ -164,6 +164,12 @@ H6
     margin-right: auto;
     margin-bottom: 20px;
     width: 900px;
+    -webkit-border-bottom-left-radius: 15px;
+    -webkit-border-bottom-right-radius: 15px;
+    -khtml-border-bottom-left-radius: 15px;
+    -khtml-border-bottom-right-radius: 15px;
+    -moz-border-radius-bottomleft: 15px;
+    -moz-border-radius-bottomright: 15px;
 }
 
 .bottombar
@@ -245,8 +251,8 @@ H6
     border-left: 25px solid;
     background-color: #181818;
     padding: 30px;
-    opacity: 0.94;
-    filter: alpha(opacity = 94);
+    opacity: 0.96;
+    filter: alpha(opacity = 96);
 }
 
 #single,
@@ -426,6 +432,7 @@ H6
     line-height: 160%;
     padding: 7px 15px;
     border: 1px solid #666666;
+    background-color: #222222;
     text-shadow: #000000 -2px -2px 4px;
 }
 
@@ -433,7 +440,6 @@ H6
 {
     display: block;
     margin-top: 30px;
-    background-color: #222222;
 }
 
 .postmetadata a
@@ -553,11 +559,27 @@ H6
      * without the !important, which AFAIK is really not needed, IE does strange things
      * for top margin (possibly because we set margins for #comments above as well.
      */
-    margin: 0px 12% 40px 12% !important;
-    border-top: 0px none;
+    margin: 0px 14% 40px 14% !important;
     padding: 20px 30px;
     border-left-color: #666666;
+    border-top: 0px none;
+    /*
+    border: none;
+    -webkit-border-bottom-left-radius: 20px;
+    -webkit-border-bottom-right-radius: 20px;
+    */
 }
+
+/*
+#commentsbotbar
+{
+    height: 25px;
+    margin: 0px -30px -20px -30px;
+    background-color: #bb2200;
+    -webkit-border-bottom-left-radius: 20px;
+    -webkit-border-bottom-right-radius: 20px;
+}
+*/
 
 .nocomments
 {
@@ -675,8 +697,8 @@ H6
     margin-top: 20px;
     padding: 30px 10px;
     border-top: 2px solid #bb2200;
-    background: url(images/Pen2.png?v=001) no-repeat center right;
-    /* add below attributes to prevent .bypostauthor class from applying, if any */
+    background: url(images/bgimage/pen1.png?v=001) no-repeat center right;
+    /* add below, attributes to prevent .bypostauthor class from applying, if any */
 }
 
 #respond .heading
