@@ -66,18 +66,7 @@
 			<p><label for="author">Name</label><br /><input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" tabindex="1" /> <?php if ($req) echo "<em>required</em>"; ?></p>
 			<p><label for="email">Email</label><br /><input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" tabindex="2" /> <em><?php if ($req) echo "required, "; ?> (won't be showed)</em></p>
 			<p><label for="url">Url</label><br /><input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" tabindex="3" /></p>
-			
-			<?php 
-/****** Math Comment Spam Protection Plugin ******/
-if ( function_exists('math_comment_spam_protection') ) { 
-	$mcsp_info = math_comment_spam_protection();
-?> 	<p><label for="mcspvalue"><strong> Spamschutz:<br />Summe aus <?php echo $mcsp_info['operand1'] . ' + ' . $mcsp_info['operand2'] . ' ?' ?></strong></label><br /><input type="text" name="mcspvalue" id="mcspvalue" value="" size="20" tabindex="4" />
-	
-	<input type="hidden" name="mcspinfo" value="<?php echo $mcsp_info['result']; ?>" />
-</p>
-<?php } /* if function_exists...*/ ?>
-
-<?php endif; ?>
+			<?php endif; ?>
 
 			<p><label for="comment">Comment</label><br /><textarea name="comment" id="comment" cols="45" rows="10" tabindex="4"></textarea></p>
 			<p><input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
