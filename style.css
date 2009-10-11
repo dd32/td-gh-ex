@@ -1,0 +1,297 @@
+/*
+Theme Name: Aquasunny
+Theme URI: http://riseofdesign.de/blog/stuff
+Description: A darker blue Two Column Wordpress Theme with blue background or an alternative gradiant blue to light blue. The Theme includes some iPhone UI elements  
+Tags: blue, two-columns
+Author: Mladen
+Author URI: http://riseofdesign.de
+Version: 1.0
+*/
+body {
+	font-size: 62.5%; /* Resets 1em to 10px */
+	font-family: 'Helvetica', Verdana, Arial, Sans-Serif;
+	min-width: 1150px;
+	background: #1A3877 /*url(images/background.png) repeat-x fixed*/;
+	color: #111;
+	text-align: left;
+}
+img.centered {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+.alignright {
+	float: right;
+}
+.alignleft {
+	float: left
+}
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+/*begin Header*/
+#header {
+	margin: 10px 0 0 50px;
+	padding: 50px 0 0 0;
+	height: 150px;
+	width: 720px;
+}
+#header h1 a{
+	font-size: 1.5em;
+	color: #fff;
+	padding: 0 0 0 400px;
+	text-align: right;
+	text-shadow: #555 1px 1px 1px;
+	text-decoration: none;
+}
+#header h1 a:hover{
+	color: #fff;
+	text-shadow: #555 1px 1px 1px;
+	text-decoration: underline;	
+}
+#header .description{
+	padding: 0px 50px 0 0;
+	color: #fff;
+	text-align: right;
+	text-shadow: #444 1px 1px 1px;
+}
+#page {
+	text-align: left;
+	color: #111;
+}
+/*Posts*/
+#content{
+	font-family: 'Helvetica';
+	color: #fff;
+	width: 680px;
+	padding: 20px;
+	margin: 0 0 0 50px;
+	text-shadow: #eee 1px 1px 1px;
+}
+#content h2{
+	text-shadow: none;
+}
+.one{
+	font-size: 1.2em;
+	color: #111;
+	margin-top: 30px;
+	padding: 10px;
+	border: 2px solid #fff;
+	background: url('images/Sidebarbackground.png');
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+}
+.one h2{
+	color: #fff;
+	font-size: 1.75em;
+}
+.one h2 a{
+	padding: 5px;
+	color: #ddd;
+	background: #333 url('images/credit.png') repeat-x;
+	text-shadow: #555 1px 1px 1px;
+	text-decoration: none;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+.one h2 a:hover{
+	color: #fff;
+	text-shadow: #777 1px 1px 1px;
+	text-decoration: underline;
+}
+.one a{
+	color: #111;
+}
+.one a:hover{
+	color: #555;
+	text-decoration: none;
+}
+.postmetadata{
+	color: #aaa;
+	margin: 0 0 0 -12px;
+	padding: 0 5px 0 5px;
+	width: 670px;
+	text-shadow: none;
+	background: #333 url('images/credit.png') repeat-x;
+}
+.postmetadata a{
+	color: #fff;
+	text-decoration: underline;
+	text-shadow: none;
+}
+.postmetadata a:hover{
+	color: #ccc;
+	text-decoration: none;
+}
+.navigation{
+	padding-top: 10px;
+}
+.navigation a{
+	padding: 5px;
+	background: #444;
+	color: #fff;
+	text-shadow: #444 1px 1px 1px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+.navigation a:hover{
+	text-decoration: none;
+}
+/*Comments*/
+#comments{
+	margin-left: 20px;
+	font-size: 1.5em;
+	color: #111;
+}
+#commentstitle{
+	margin-left: 40px;
+}
+.commentlist{
+	font-size: 0.65em;
+	width: 500px;
+}
+.commentlist li{
+	margin-top: 5px;
+	padding: 15px;
+	background: #ddd;
+	border: 2px solid #fff;
+	list-style-type: none;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+#commentform textarea{
+	width: 500px;
+}
+.Comment .commenttext a{
+	color: #111;
+	text-decoration: underline;
+	text-shadow: #fff 1px 1px 1px;
+} 
+.Comment .commenttext a:hover{
+	color: #444;
+}
+.Comment .commentmetadata{
+	color: #fff;
+	width: 490px;
+	height: 20px;
+	margin-left: -17px;
+	background: #333 url('images/credit.png') repeat-x;
+	padding: 15px 5px 5px 5px;
+	text-shadow: #666 1px 1px 1px;
+}
+.Comment .commentmetadata a{
+	padding: 5px;
+	color: #aaa;
+	background: #444;
+	text-shadow: #333 1px 1px;
+	text-decoration: none;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+.Comment .commentmetadata a:hover{
+	color: #fff;
+	text-decoration: none;
+}
+.Comment .commentmetadata img{
+	margin-top: -10px;
+	float: right;
+	border: 1px solid #aaa;
+}
+#respond{
+	margin-left: 60px;
+}
+#commentform #submit{
+	background:#333;
+	color:#ccc;
+	text-shadow: #333 1px 1px 0px;
+	border:1px solid #222;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+#commentform #submit:hover{
+	color:#fff;
+	background: #000;
+}
+/*Sidebar*/
+#sidebar{
+	float: left;
+	top: 0;
+	position: absolute;
+	margin: 50px 0px 0 800px;
+	width: 350px;
+	background: url('images/Sidebarbackground.png');
+	-moz-border-radius: 115px;
+	-webkit-border-radius: 15px;
+	border: 2px solid #fff;
+}
+#sidebar h2{
+	color: #111;
+	text-shadow: #fff 1px 1px 1px;
+}
+input#s {
+	width: 285px;
+	margin: 10px 0 0 30px;
+	border: 1px solid #A7A6AA;
+	background: #fff;
+	padding: 4px 0;
+	color: #666;
+	text-align: center;
+}
+#sidebar .widget{
+	width: 280px;
+	list-style-type: none;
+	color: #111;
+	text-shadow: #fff 1px 1px 1px;
+}
+#sidebar .widget a{
+	color: #111;
+}
+#sidebar .widget a:hover{
+	color: #444;
+	text-shadow: #ccc 1px 1px 1px;
+	text-decoration: none;
+}
+#sidebar ul li{
+	list-style-type: none;
+}
+#sidebar ul li a{
+	color: #111;
+	text-shadow: #fff 1px 1px 1px;
+}
+#sidebar ul li a:hover{
+	color: #444;
+	text-shadow: #ccc 1px 1px 1px;
+	text-decoration: none;
+}
+.footer{
+	margin: 0 0 0 -40px;
+	width: 330px;
+	height: 36px;
+	padding: 2px 10px 0 10px;
+	color: #fff;
+	background: url('images/credit.png');
+	text-shadow: #444 1px 1px 1px;
+}
+.footer a{
+	padding: 5px;
+	background: #444;
+	color: #fff;
+	text-shadow: #444 1px 1px 1px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+.footer a:hover{
+	text-decoration: none;
+}
