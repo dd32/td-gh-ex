@@ -30,8 +30,12 @@
 							<?php endif; ?>
 							<li>
 								<div class="navigation">
+			            			<?php if (function_exists('wp_link_pages()')): echo "exists"; ?>
+			            			<?php	wp_link_pages(); ?>
+									<?php else: ?>
 									<div class="fl"><?php next_posts_link(__('&laquo; Older Entries', 'default')) ?></div>
 			                        <div class="fr"><?php previous_posts_link(__('Newer Entries &raquo;', 'default')) ?></div>
+									<?php endif; ?>
 			                    	<div class="clear"></div>
 		                        </div>
 		                    </li>
