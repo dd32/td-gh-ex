@@ -10,13 +10,12 @@
 		<p><input type="text" value="search" name="s" id="s" onclick="javascript:document.getElementById('s').value = '';" /></p>
 		</form>
 		</p>	
-		
-		<ul role="navigation">
-		
-		<span class="widget">
+			<span class="widget" style="padding-left:40px;">
 			<?php 	/* Widgetized sidebar, if you have the plugin installed. */
 					if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : ?>
-			</span>
+			</span>		
+		<ul role="navigation">
+
 	
 
 			<!-- Author information is disabled per default. Uncomment and fill in your details if you want to use it.
@@ -57,7 +56,6 @@
 			</li>
 		<?php }?>
 		</ul>
-		<?php endif; ?>
 
 		<h2>Pages</h2>
 			<?php wp_list_pages('title_li=' ); ?>
@@ -73,20 +71,19 @@
 			<?php /* If this is the frontpage */ if ( is_home() || is_page() ) { ?>
 			
 			
-			<h2 style="padding-left:40px;">Blogroll</h2>
-				<ul>
+			<h2>Blogroll</h2>
 					<?php get_links(-1, '<li>', '</li>', ' - '); ?>
-				</ul>
-			<h2 style="padding-left:40px;">Meta</h2>
-				<ul>
+					<!--<?php wp_link_pages( $args ); ?> -->
+			<h2>Meta</h2>
+
 					<?php wp_register(); ?>
-					<?php wp_meta(); ?>
-				</ul>
-				
+					<?php wp_meta(); ?>				
 			<?php } ?>
 
+
+		<?php endif; ?>
+
 <ul>		
-			
 			
 <?php get_footer(); ?>
 	</div>
