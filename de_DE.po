@@ -1,0 +1,723 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Theme\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-11-01 15:09+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Dennis Hoppe\n"
+"Language-Team: Dennis Hoppe\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Deutsch (Sie)\n"
+"X-Poedit-Country: Deutschland\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;_c\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: author.php:6
+#, php-format
+msgid "About %s"
+msgstr "Über %s"
+
+#: author.php:15
+#, php-format
+msgid "Website: <a href=\"%1$s\">%1$s</a>"
+msgstr "Webseite <a href=\"%1$s\">%1$s</a>"
+
+#: author.php:19
+#, php-format
+msgid "Jabber: %s"
+msgstr "Jabber: %s"
+
+#: author.php:23
+#, php-format
+msgid "AIM: %s"
+msgstr "AIM: %s"
+
+#: author.php:27
+#, php-format
+msgid "Yahoo: %s"
+msgstr "Yahoo: %s"
+
+#: comments.php:3
+msgid "No Responses"
+msgstr "Keine Antworten"
+
+#: comments.php:3
+msgid "One Response"
+msgstr "Eine Antwort"
+
+#: comments.php:3
+msgid "% Responses"
+msgstr "% Antworten"
+
+#: comments.php:5
+#, php-format
+msgid "You can follow any responses to this entry through the <a href='%s'>RSS 2.0</a> feed."
+msgstr "Sie können der Diskussion zu diesem Beitrag über den <a href='%s'>RSS 2.0 Feed</a> folgen."
+
+#: comments.php:9
+#, php-format
+msgid "You can <a href=\"#respond\">leave a response</a>, or <a href=\"%s\" rel=\"trackback\">trackback</a> from your own site."
+msgstr "Sie können zu diesem Artikel <a href=\"#respond\">einen Kommentar schreiben</a> oder <a href=\"%s\" rel=\"trackback\">einen Trackback</a> von Ihrer eigenen Seite setzen."
+
+#: comments.php:12
+#, php-format
+msgid "Responses are currently closed, but you can <a href=\"%s\" rel=\"trackback\">trackback</a> from your own site."
+msgstr "Die Diskussion zu diesem Artikel wurde beendet aber Sie können einen <a href=\"%s\" rel=\"trackback\">Trackback</a> von Ihrer Seite senden."
+
+#: comments.php:15
+msgid "You can skip to the end and leave a response. Pinging is currently not allowed."
+msgstr "Sie können zu diesem Artikel <a href=\"#respond\">einen Kommentar schreiben</a>. Trackbacks zum Artikel sind nicht möglich."
+
+#: comments.php:18
+msgid "Both comments and pings are currently closed."
+msgstr "Zu diesem Artikel besteht keine Diskussionsmöglichkeit."
+
+#: comments.php:44
+msgid "Comments are closed."
+msgstr "Dieser Beitrag kann nicht kommentiert werden."
+
+#: comments.php:53
+msgid "Leave a Reply"
+msgstr "Hinterlassen Sie eine Antwort"
+
+#: comments.php:53
+#, php-format
+msgid "Leave a Reply for %s"
+msgstr "Schreiben Sie %s eine Antwort"
+
+#: comments.php:59
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "Sie müssen <a href=\"%s\">eingeloggt</a> sein um einen Kommentar zu schreiben."
+
+#: comments.php:64
+#, php-format
+msgid "Logged in as <a href=\"%1$s\">%2$s</a>."
+msgstr "Sie sind als <a href=\"%1$s\">%2$s</a> eingeloggt."
+
+#: comments.php:64
+msgid "Log out of this account"
+msgstr "Ausloggen."
+
+#: comments.php:64
+msgid "Log out &raquo;"
+msgstr "Ausloggen &raquo;"
+
+#: comments.php:68
+msgid "Name"
+msgstr "Name"
+
+#: comments.php:68
+#: comments.php:72
+msgid "(required)"
+msgstr "(notwendig)"
+
+#: comments.php:72
+msgid "Mail (will not be published)"
+msgstr "E-Mail (wird <b>niemals</b> veröffentlicht!)"
+
+#: comments.php:76
+msgid "Website"
+msgstr "Webseite"
+
+#: comments.php:82
+msgid "Submit Comment"
+msgstr "Antwort senden"
+
+#: footer.php:10
+#, php-format
+msgid "Be-Berlin-Theme by <a href=\"%s\" target=\"_blank\">%s</a>"
+msgstr "Be-Berlin-Theme von <a href=\"%s\" target=\"_blank\">%s</a>"
+
+#: footer.php:11
+#, php-format
+msgid "Powered by <a href=\"%s\" target=\"_blank\">%s</a>"
+msgstr "Angetrieben durch <a href=\"%s\" target=\"_blank\">%s</a>"
+
+#: header.php:39
+msgid "Home"
+msgstr "Startseite"
+
+#: header.php:63
+msgid "Welcome to <i>%1$s</i> - <i>%2$s</i>| %1 = blog name, %2 = blog description"
+msgstr "Willkommen bei <i>%1$s</i> - <i>%2$s</i>| %1 = blog name, %2 = blog description"
+
+#: header.php:68
+#, php-format
+msgid "Archive for the \"%s\" Category"
+msgstr "Beiträge aus der Kategorie \"%s\""
+
+#: header.php:73
+#: header.php:78
+#, php-format
+msgid "You are here: %s"
+msgstr "Sie sind hier: %s"
+
+#: header.php:73
+msgid "Posts"
+msgstr "Artikel"
+
+#: header.php:83
+#, php-format
+msgid "Posts Tagged \"%s\""
+msgstr "Beiträge mit dem Schlagwort \"%s\""
+
+#: header.php:88
+#, php-format
+msgid "Archive for %s|Daily archive page"
+msgstr "Beiträge vom %s|Daily archive page"
+
+#: header.php:88
+msgid "F jS, Y|Daily archive page"
+msgstr "Beiträge von l, \\d\\e\\m d. F Y"
+
+#: header.php:93
+#, php-format
+msgid "Archive for %s|Monthly archive page"
+msgstr "Beiträge aus %s|Monthly archive page"
+
+#: header.php:93
+msgid "F, Y|Monthly archive page"
+msgstr "F Y"
+
+#: header.php:98
+#, php-format
+msgid "Archive for %s|Yearly archive page"
+msgstr "Beiträge aus %s|Yearly archive page"
+
+#: header.php:98
+msgid "Y|Yearly archive page"
+msgstr "Y"
+
+#: header.php:103
+#, php-format
+msgid "Author Archive for %s|Author archive page"
+msgstr "Beiträge von %s"
+
+#: header.php:108
+msgid "Blog Archives"
+msgstr "Artikelübersicht"
+
+#: header.php:113
+#, php-format
+msgid "Search results for \"%s\""
+msgstr "Suchanfrage nach \"%s\""
+
+#: index.php:11
+msgid "Not Found"
+msgstr "Nichts gefunden"
+
+#: index.php:12
+msgid "Sorry, but you are looking for something that isn&#8217;t here."
+msgstr "Es tut uns leid aber wir konnten nichts finden was Ihren Suchkriterien entsprach."
+
+#: page.php:23
+msgid "Associated Posts"
+msgstr "Angehängte Artikel"
+
+#: page.php:42
+msgid "Edit this entry"
+msgstr "Eintrag bearbeiten"
+
+#: page.php:44
+msgid "No Comments"
+msgstr "Keine Kommentare"
+
+#: page.php:44
+msgid "One Comment"
+msgstr "Ein Kommentar"
+
+#: page.php:44
+msgid "% Comments"
+msgstr "% Kommentare"
+
+#: page.php:44
+msgid "Comments Closed"
+msgstr "Diskussion geschlossen"
+
+#: searchform.php:2
+msgid "Search for:"
+msgstr "Suche:"
+
+#: searchform.php:3
+#: searchform.php:4
+msgid "Search"
+msgstr "Suchen"
+
+#: sidebar-archive-date.php:5
+msgid "Calendar"
+msgstr "Kalender"
+
+#: single.php:9
+#: the-loop.php:9
+msgid "F jS, Y|Date format of a post"
+msgstr "l \\d\\e\\r j. F Y"
+
+#: single.php:21
+#, php-format
+msgid "Posted in %s"
+msgstr "Kategorie: %s"
+
+#: single.php:22
+msgid "Tags:"
+msgstr "Schlagworte:"
+
+#: single.php:33
+msgid "Related Posts"
+msgstr "Ähnliche Artikel"
+
+#: single.php:41
+msgid "Featured Posts"
+msgstr "Featured Artikel"
+
+#: single.php:49
+msgid "Other Posts"
+msgstr "Weitere Artikel"
+
+#: single.php:66
+msgid "Read next post"
+msgstr "Zum nächsten Artikel"
+
+#: single.php:71
+msgid "Read previous post"
+msgstr "Zum vorherigen Artikel"
+
+#: single.php:74
+msgid "Exclusive Post"
+msgstr "Einziger Artikel"
+
+#: single.php:75
+msgid "It seems this is the only post in this blog."
+msgstr "Es scheint als wäre dieser Artikel der einzige in diesem Blog."
+
+#: the-loop.php:4
+#, php-format
+msgid "Permanent Link to %s"
+msgstr "Link zu %s"
+
+#: the-loop.php:22
+#: the-loop.php:24
+msgid "Read the rest of this entry"
+msgstr "Weiterlesen"
+
+#: the-loop.php:35
+msgid "&laquo; Older Entries"
+msgstr "&laquo; Ältere Einträge"
+
+#: the-loop.php:36
+msgid "Newer Entries &raquo;"
+msgstr "Neuere Einträge &raquo;"
+
+#: plugin_associate_posts_and_pages/plugin_associate_posts_and_pages.php:25
+msgid "Associate posts with this page"
+msgstr "Artikel mit dieser Seite verknüpfen"
+
+#: plugin_associate_posts_and_pages/plugin_associate_posts_and_pages.php:37
+msgid "Please choose a category which contains posts you want to associate with this page."
+msgstr "Bitte wählen Sie eine Kategorie deren Artikel mit der Seite verknüpft werden sollen."
+
+#: plugin_associate_posts_and_pages/plugin_associate_posts_and_pages.php:39
+msgid "Please choose a category:"
+msgstr "Bitte wählen Sie eine Kategorie:"
+
+#: plugin_associate_posts_and_pages/plugin_associate_posts_and_pages.php:40
+#: theme_options/form.php:21
+msgid "Please choose a category"
+msgstr "Bitte wählen Sie eine Kategorie"
+
+#: plugin_associate_posts_and_pages/plugin_associate_posts_and_pages.php:49
+msgid "How much posts should be shown?"
+msgstr "Wie viele Artikel sollen gezeigt werden?"
+
+#: plugin_associate_posts_and_pages/plugin_associate_posts_and_pages.php:49
+msgid "Leave blank to show all."
+msgstr "Leer lassen um alle zu zeigen."
+
+#: plugin_contact_page/plugin_contact_page.php:48
+#, php-format
+msgid "Mail from %1$s via %2$s"
+msgstr "Nachricht von %1$s über %2$s"
+
+#: plugin_contact_page/plugin_contact_page.php:58
+#, php-format
+msgid "Company: %s"
+msgstr "Firma: %s"
+
+#: plugin_contact_page/plugin_contact_page.php:61
+#, php-format
+msgid "Fon: %s"
+msgstr "Telefon: %s"
+
+#: plugin_contact_page/plugin_contact_page.php:63
+#, php-format
+msgid "Remote-IP: %s"
+msgstr "Absender-IP: %s"
+
+#: plugin_contact_page/plugin_contact_page.php:64
+#, php-format
+msgid "Date time: %s"
+msgstr "Datum und Zeit: %s"
+
+#: plugin_contact_page/plugin_contact_page.php:64
+msgid "m/d/Y h:i a|Date in contact form"
+msgstr "d.m.Y H:i:s"
+
+#: plugin_contact_page/plugin_contact_page.php:82
+msgid "Plase fill out all required fields."
+msgstr "Bitte füllen Sie alle erforderlichen Felder aus."
+
+#: plugin_contact_page/plugin_contact_page.php:84
+msgid "Your mail adress is not valid."
+msgstr "Ihre E-Mailadresse ist nicht valid."
+
+#: plugin_contact_page/plugin_contact_page.php:86
+msgid "There was some technical error."
+msgstr "Es ist ein technischer Fehler aufgetreten."
+
+#: plugin_contact_page/plugin_contact_page.php:104
+msgid "Contact the author"
+msgstr "Kontakt zum Autor"
+
+#: plugin_contact_page/plugin_contact_page.php:112
+msgid "To:"
+msgstr "An:"
+
+#: plugin_contact_page/plugin_contact_page.php:113
+msgid "Name:"
+msgstr "Name:"
+
+#: plugin_contact_page/plugin_contact_page.php:114
+msgid "Company:"
+msgstr "Firma:"
+
+#: plugin_contact_page/plugin_contact_page.php:115
+msgid "E-Mail:"
+msgstr "E-Mail:"
+
+#: plugin_contact_page/plugin_contact_page.php:116
+msgid "Fon:"
+msgstr "Telefon:"
+
+#: plugin_contact_page/plugin_contact_page.php:118
+msgid "Submit"
+msgstr "Senden"
+
+#: plugin_contact_page/plugin_contact_page.php:119
+msgid "Required fields"
+msgstr "Erforderliche Felder"
+
+#: plugin_contact_page/plugin_contact_page.php:123
+msgid "The Mail was sent."
+msgstr "Die Nachricht wurde gesendet."
+
+#: theme_functions/register_sidebars.php:4
+msgid "Archives"
+msgstr "Artikelübersicht"
+
+#: theme_functions/register_sidebars.php:4
+msgid "Date"
+msgstr "Datum"
+
+#: theme_functions/register_sidebars.php:5
+msgid "Author"
+msgstr "Autorseite"
+
+#: theme_functions/register_sidebars.php:6
+msgid "Categories"
+msgstr "Kategorien"
+
+#: theme_functions/register_sidebars.php:6
+msgid "Tags"
+msgstr "Schlagwörter"
+
+#: theme_functions/register_sidebars.php:8
+msgid "Pages"
+msgstr "Seiten"
+
+#: theme_functions/register_sidebars.php:10
+msgid "404"
+msgstr "404-Seite"
+
+#: theme_functions/register_sidebars.php:10
+msgid "Others"
+msgstr "Andere"
+
+#: theme_functions/theme_functions.php:117
+msgid "There is no excerpt because this is a protected post."
+msgstr ""
+
+#: theme_options/options.php:33
+#: theme_options/options.php:50
+msgid "Theme Settings"
+msgstr "Einstellungen &rsaquo; Theme"
+
+#: theme_options/options.php:34
+msgid "Theme"
+msgstr "Theme"
+
+#: theme_options/options.php:41
+#: theme_options/form.php:7
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: theme_options/options.php:54
+msgid "Settings saved."
+msgstr "Änderungen speichern."
+
+#: theme_options/options.php:60
+msgid "Save Changes"
+msgstr "Änderungen speichern"
+
+#: theme_options/options.php:64
+msgid "Like this theme?"
+msgstr "Sie mögen dieses Theme?"
+
+#: theme_options/options.php:65
+msgid "Why not do any of the following:"
+msgstr "Warum nicht einige der folgenden Dinge tun!?"
+
+#: theme_options/options.php:67
+#, php-format
+msgid "<a href=\"%s\">Link to it</a> so other folks can find out about it."
+msgstr "<a href=\"%s\">Verlinken Sie es</a> damit auch andere davon erfahren."
+
+#: theme_options/options.php:68
+msgid "Give it a good rating on Theme directories, so others will find it more easily too!"
+msgstr "Bewerten Sie es in Theme-Katalogen damit andere es einfacher finden."
+
+#: theme_options/options.php:69
+msgid "Donate a token of your appreciation:"
+msgstr "Spenden Sie eine Kleinigkeit als Wertschätzung für meine gute Arbeit:"
+
+#: theme_options/options.php:71
+msgid "Per Paypal."
+msgstr "Per Paypal."
+
+#: theme_options/options.php:72
+msgid "My Amazon Wish-List."
+msgstr "Mein Amazon-Wunschzettel."
+
+#: theme_options/form.php:1
+msgid "RSS Feed Icon"
+msgstr "RSS Symbol"
+
+#: theme_options/form.php:2
+msgid "Please notice that the configuration of the feed icon can be found in Design -> Widgets -> Feed Link."
+msgstr "Wenn Sie das Symbol für Ihren RSS Feed ändern möchten, können Sie dies im Widgetmenü unter Design -> Widgets -> Feed Link tun."
+
+#: theme_options/form.php:4
+msgid "Contact form"
+msgstr "Kontaktformular"
+
+#: theme_options/form.php:5
+msgid "Some words to the contact form: When an user use the form the mail will be send to the mail adress which is deposited in wordpress for the author of this page."
+msgstr "Ein paar Worte zum Kontaktformular: Die Nachricht wird an die E-Mailadresse gesendet welche für den Autor der Seite in Wordpress hinterlegt wurde."
+
+#: theme_options/form.php:10
+msgid "Sidebar Adjustment:"
+msgstr "Ausrichtung der Sidebar:"
+
+#: theme_options/form.php:13
+msgid "Left"
+msgstr "Links"
+
+#: theme_options/form.php:14
+msgid "Right"
+msgstr "Rechts"
+
+#: theme_options/form.php:19
+msgid "Featured posts:"
+msgstr "Featured Artikel:"
+
+#: theme_options/form.php:37
+msgid "On pages which list articles show only an excerpt. (Default is to show the whole article content.)"
+msgstr "Auf Seiten die Artikel auflisten nur einen Auszug der Artikel zeigen. (Standard ist es, den ganzen Artikel zu zeigen.)"
+
+#: theme_options/form.php:42
+msgid "Open external links in a new window."
+msgstr "Externe Links in neuem Fenster öffnen."
+
+#: theme_options/form.php:47
+#, php-format
+msgid "Open linked images in the <a href=\"%s\">FancyImageBox</a>."
+msgstr "Verlinkte Bilder in der <a href=\"%s\">FancyImageBox</a> öffnen."
+
+#: theme_options/form.php:52
+msgid "Remove the <i>&lt;meta name=\"generator\" ... /&gt;</i> tag from the header of your wordpress pages."
+msgstr "Den <i>&lt;meta name=\"generator\" ... /&gt;</i> tag aus dem Kopf der Wordpress-Seiten entfernen."
+
+#: theme_options/form.php:57
+msgid "Avoid printing the website."
+msgstr "Ausdrucken der Webseite verhindern."
+
+#: theme_options/form.php:61
+msgid "Handle with care"
+msgstr "Mit Vorsicht zu behandeln"
+
+#: theme_options/form.php:62
+msgid "You should <b>not touch the following settings</b> if you not really know what you are doing. If you change these settings <b>your design can break</b> in certain cases. Check the fields below only if you want to use your own plugins which are better then the embedded ones."
+msgstr "Sie sollten die folgenden <b>Einstellungen nicht verändern</b> wenn Sie nicht ganz genau wissen was sie tun. Wenn Sie diese Einstellungen verändern kann dies zu unerwünschten Ergebnissen in der Darstellung Ihrer Seite führen. Klicken Sie die Checkboxen nur an wenn Sie für diese Aufgaben andere Plugins verwenden möchten."
+
+#: theme_options/form.php:67
+msgid "<b>Do not</b> rewrite the wordpress gallery function with a valid one."
+msgstr "<b>Nicht</b> die Wordpress-Galerie-Funktion mit einer valien Variante ersetzen."
+
+#: theme_options/form.php:72
+msgid "<b>Do not</b> fix the \"Next-Page-Tag\"-Bug in the wordpress TinyMCE Editor."
+msgstr "<b>Nicht</b> den \"Next-Page-Tag\"-Bug im TinyMCE Editor beheben."
+
+#: theme_options/form.php:78
+msgid "<b>Do not</b> show the \"theme by\" part in the footer."
+msgstr "<b>Nicht</b> den \"theme von ...\" Teil im Fußbereich zeigen."
+
+#: widget_theme_author_info/widget_theme_author_info.php:17
+msgid "Author Info"
+msgstr "Authorinformationen"
+
+#: widget_theme_author_info/widget_theme_author_info.php:18
+msgid "You can add this widget to sidebars on author relevant sections, i.e. pages, posts or author archives."
+msgstr "Sie können dieses Widget in Sidebars integrieren welche Authorbezogen sind. Z.B.: Seiten, Artikel oder die Profilseite des Autors."
+
+#: widget_theme_author_info/widget_theme_author_info.php:35
+msgid "About the author"
+msgstr "Über den Autor"
+
+#: widget_theme_author_info/widget_theme_author_info.php:53
+#, php-format
+msgid "Author: <b>%s</b>"
+msgstr "Autor: <b>%s</b>"
+
+#: widget_theme_author_info/widget_theme_author_info.php:81
+#, php-format
+msgid "All posts by %s"
+msgstr "Alle Artikel von %s"
+
+#: widget_theme_author_info/widget_theme_author_info.php:90
+#: widget_theme_featured_posts/widget_theme_featured_posts.php:62
+msgid "Title"
+msgstr "Titel"
+
+#: widget_theme_author_info/widget_theme_author_info.php:91
+msgid "Show the authors avatar"
+msgstr "Den (Gr)Avatar des Autors anzeigen"
+
+#: widget_theme_author_info/widget_theme_author_info.php:92
+msgid "Show the authors url link"
+msgstr "Website verlinken"
+
+#: widget_theme_author_info/widget_theme_author_info.php:93
+msgid "Show the authors jabber name"
+msgstr "Jabbername zeigen"
+
+#: widget_theme_author_info/widget_theme_author_info.php:94
+msgid "Show the authors AIM name"
+msgstr "AIM-Name zeigen"
+
+#: widget_theme_author_info/widget_theme_author_info.php:95
+msgid "Show the authors YIM name"
+msgstr "Yahoo-Name zeigen"
+
+#: widget_theme_featured_posts/widget_theme_featured_posts.php:17
+#: widget_theme_featured_posts/widget_theme_featured_posts.php:35
+msgid "Featured posts"
+msgstr "Featured Artikel"
+
+#: widget_theme_featured_posts/widget_theme_featured_posts.php:18
+msgid "Shows featured posts in your sidebar."
+msgstr "Zeigt die featured Artikel in der Sidebar."
+
+#: widget_theme_featured_posts/widget_theme_featured_posts.php:63
+msgid "Number of posts"
+msgstr "Anzahl der Artikel"
+
+#: widget_theme_feed_link/widget_theme_feed_link.php:18
+msgid "Feed Link"
+msgstr "Theme FeedIcon"
+
+#: widget_theme_feed_link/widget_theme_feed_link.php:41
+msgid "RSS 2.0 Feed"
+msgstr "RSS 2.0 Feed"
+
+#: widget_theme_feed_link/widget_theme_feed_link.php:52
+msgid "Choose an icon"
+msgstr "Wählen Sie ein Icon"
+
+#: widget_theme_feed_link/widget_theme_feed_link.php:57
+msgid "Random RSS Icon"
+msgstr "Zufälliges RSS Icon"
+
+#~ msgid "Authors"
+#~ msgstr "Autoren"
+#~ msgid "Browse featured posts &raquo;"
+#~ msgstr "Featured Artikel durchsuchen &raquo;"
+#~ msgid "No sidebar"
+#~ msgstr "Keine Sidebar"
+#~ msgid "Aqua"
+#~ msgstr "Aqua"
+#~ msgid "Blue (default)"
+#~ msgstr "Blau (standard)"
+#~ msgid "Brown"
+#~ msgstr "Braun"
+#~ msgid "Dark red"
+#~ msgstr "Dunkelrot"
+#~ msgid "Green"
+#~ msgstr "Grün"
+#~ msgid "Light red"
+#~ msgstr "Hellrot"
+#~ msgid "Orange"
+#~ msgstr "Orange"
+#~ msgid "Pink"
+#~ msgstr "Pink"
+#~ msgid "Profile"
+#~ msgstr "Profil"
+#~ msgid "<span class=\"postcategorie\">Posted in %s</span>"
+#~ msgstr "<span class=\"postcategorie\">Kategorisiert in %s</span>"
+#~ msgid "<span class=\"posttags\">Tags:"
+#~ msgstr "<span class=\"posttags\">Schlagwörter:"
+#~ msgid "<span class=\"postedit\">Edit this entry</span>"
+#~ msgstr "<span class=\"postedit\">Diesen Eintrag bearbeiten</span>"
+#~ msgid "Color theme:"
+#~ msgstr "Farbschema:"
+#~ msgid "F jS, Y"
+#~ msgstr "d. F Y"
+#~ msgid "F, Y"
+#~ msgstr "F Y"
+#~ msgid "Y"
+#~ msgstr "Y"
+#~ msgid "Sidebar %s"
+#~ msgstr "Sidebar %s"
+#~ msgid "Attention"
+#~ msgstr "Achtung"
+#~ msgid "Please configure your sidebar widgets. Thx."
+#~ msgstr ""
+#~ "Bitte konfigurieren Sie Ihre Sidebars. An diese Stelle sollten Sie Ihre "
+#~ "eigenen Widgets einstellen."
+#~ msgid "Mail from %s per contact form"
+#~ msgstr "Nachricht von %s über Ihr Kontaktformular"
+#~ msgid "One left"
+#~ msgstr "Eine links"
+#~ msgid "One right"
+#~ msgstr "Eine rechts"
+#~ msgid "One left, one right (default)"
+#~ msgstr "Eine links, eine rechts (standard)"
+#~ msgid "Both left"
+#~ msgstr "Beide links"
+#~ msgid "Both right"
+#~ msgstr "Beide rechts"
+#~ msgid "Message:"
+#~ msgstr "Nachricht:"
+#~ msgid "Submit the Message"
+#~ msgstr "Nachricht senden"
+#~ msgid "Current Theme"
+#~ msgstr "Aktuelles Design"
+#~ msgid "Header"
+#~ msgstr "Kopfbereich"
+#~ msgid "Miscellaneous"
+#~ msgstr "Sonstiges"
+#~ msgid "Open linked images in an new layer which shows the image."
+#~ msgstr "Verlinkte Bilder mit der FancyImageBox verknüpfen."
+
