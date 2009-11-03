@@ -51,7 +51,7 @@
             </div>
 
             <div class="post-content clearfix">
-            <?php if(get_option('arclite_indexposts')=='excerpt') the_excerpt(); else the_content(__('Read the rest of this entry &raquo;', 'arclite')); ?>
+            <?php if(get_arclite_option('post_preview')=='excerpt') the_excerpt(); else the_content(__('Read the rest of this entry &raquo;', 'arclite')); ?>
 
             <?php
              $posttags = get_the_tags();

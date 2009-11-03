@@ -1,6 +1,6 @@
 
 <?php 
- if((get_option('arclite_3col')=='yes') || (is_page_template('page-3col.php'))) {
+ if((get_arclite_option('threecol')) || (is_page_template('page-3col.php'))) {
 ?>
 <!-- secondary sidebar -->
 <div class="col3">

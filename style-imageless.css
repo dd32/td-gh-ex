@@ -457,45 +457,49 @@ blockquote p{
   float: left;
 }
 
-#nav-wrap2 ul#nav, #nav-wrap2 ul#nav li{
+ul#nav, ul#nav li{
   padding: 0;
   margin: 0;
   list-style-type: none;
 }
 
-#nav-wrap2 ul#nav li{
+ul#nav li{
   display:inline;
   float: left;
   position: relative;
   margin-right: 3px;
 }
 
-#nav-wrap2 ul#nav li a{
+ul#nav li a{
   display: block;
   height: 35px;
   float: left;
   color: #d8ceb6;
   text-decoration: none;
-  font-size: 120%;
   background: #584d43;
+  font-size: 115%;
+  font-weight: bold;
+  text-shadow: rgba(0,0,0,0.3) 1px 1px 1px;
 }
 
-#nav-wrap2 ul#nav li.current_page_item a{
+ul#nav li a span.arrow{display:none;}
+
+ul#nav li.current_page_item a{
   background: #f0ecde;
   color: #291f15;
 }
 
 
-#nav-wrap2 ul#nav li a:hover{
+ul#nav li a:hover{
   color: #000;
 }
 
-#nav-wrap2 ul#nav .fadeThis {
+ul#nav .fadeThis {
   position:relative;
   z-index: 1;
 }
 
-#nav-wrap2 ul#nav .fadeThis span.hover {
+ul#nav .fadeThis span.hover {
   position: absolute;
   top: 0;
   left: 0;
@@ -508,7 +512,7 @@ blockquote p{
   padding: 0;
 }
 
-#nav-wrap2 ul#nav li a span{
+ul#nav li a span{
   display: block;
   margin-top: 6px;
   padding: 0 8px;
@@ -517,7 +521,7 @@ blockquote p{
 
 /* sub-menus */
 
-#nav-wrap2 ul#nav ul {
+ul#nav ul {
   position: absolute;
   background: #f7f5ef;
   display: none;
@@ -525,30 +529,31 @@ blockquote p{
   top: 35px;
   left: 0;
   margin: 0;
-  font-style: italic;
   font-size: 100%;
   line-height: 100%;
-  z-index: 99;
   border: 1px solid #fff;
+  -moz-box-shadow:0px 8px 14px rgba(0,0,0,0.3);
+  -webkit-box-shadow:0px 8px 14px rgba(0,0,0,0.3);
+  box-shadow:0px 8px 14px rgba(0,0,0,0.3);
 }
 
-#nav-wrap2 ul#nav ul ul{
+ul#nav ul ul{
 }
 
-#nav-wrap2 ul#nav a.active ul,
-#nav-wrap2 ul#nav li.current_page_item ul,
-#nav-wrap2 ul#nav li.current_page_ancestor ul,
-#nav-wrap2 ul#nav li.current-cat ul{
+ul#nav a.active ul,
+ul#nav li.current_page_item ul,
+ul#nav li.current_page_ancestor ul,
+ul#nav li.current-cat ul{
   background: #fff;
 }
 
-#nav-wrap2 ul#nav li.current_page_item ul ul,
-#nav-wrap2 ul#nav li.current_page_ancestor ul ul,
-#nav-wrap2 ul#nav li.current-cat ul ul{
+ul#nav li.current_page_item ul ul,
+ul#nav li.current_page_ancestor ul ul,
+ul#nav li.current-cat ul ul{
   border: 1px solid #fff !important;
 }
 
-#nav-wrap2 ul#nav li ul a{
+ul#nav li ul a{
   width:180px;
   float:left;
   background: none;
@@ -558,70 +563,73 @@ blockquote p{
   color: #000;
   font-weight: normal;
   line-height: 125%;
+  text-shadow: none;
+  position: relative;
 }
 
-#nav-wrap2 ul#nav li ul a span, #nav-wrap2 ul#nav li ul a span span{
+ul#nav li ul a span.arrow{display:block;position:absolute;right:8px;top:0;line-height:32px;}
+
+ul#nav li ul a span, ul#nav li ul a span span{
   margin: 0;
   padding: 0;
   height: auto;
   float: none;
 }
 
-#nav-wrap2 ul#nav ul .fadeThis span.hover {
+ul#nav ul .fadeThis span.hover {
   background: #3b88b7;
 }
 
-#nav-wrap2 ul#nav li ul a:hover, #nav-wrap2 li ul#nav ul a:hover,
-#nav-wrap2 ul#nav a.active ul a:hover,
-#nav-wrap2 ul#nav li.current_page_item ul a:hover,
-#nav-wrap2 ul#nav li.current_page_ancestor ul a:hover{
+ul#nav li ul a:hover, li ul#nav ul a:hover,
+ul#nav a.active ul a:hover,
+ul#nav li.current_page_item ul a:hover,
+ul#nav li.current_page_ancestor ul a:hover{
   color: #fff;
 }
 
-#nav-wrap2 ul#nav ul a:hover, #nav-wrap2 ul#nav ul a:hover span,
-#nav-wrap2 ul#nav a.active ul a:hover span,
-#nav-wrap2 ul#nav li.current_page_item ul a:hover span,
-#nav-wrap2 ul#nav li.current_page_ancestor ul a:hover span,
-#nav-wrap2 ul#nav ul li.current_page_parent a:hover span,
-#nav-wrap2 ul#nav ul li.current_page_item a:hover span,
-#nav-wrap2 ul#nav ul li.current_page_parent li.current_page_item a:hover span{
+ul#nav ul a:hover, ul#nav ul a:hover span,
+ul#nav a.active ul a:hover span,
+ul#nav li.current_page_item ul a:hover span,
+ul#nav li.current_page_ancestor ul a:hover span,
+ul#nav ul li.current_page_parent a:hover span,
+ul#nav ul li.current_page_item a:hover span,
+ul#nav ul li.current_page_parent li.current_page_item a:hover span{
   color:#fff;
 }
 
-#nav-wrap2 ul#nav li ul a span, #nav-wrap2 ul#nav li ul a span{
+ul#nav li ul a span, ul#nav li ul a span{
   background: none;
 }
 
-#nav-wrap2 ul#nav ul ul{
+ul#nav ul ul{
   top:auto;
 }
 
-#nav-wrap2 ul#nav li ul ul {
+ul#nav li ul ul {
   left:195px;
   top: 4px;
 }
 
-#nav-wrap2 ul#nav li:hover ul ul, #nav-wrap2 ul#nav li:hover ul ul ul, #nav-wrap2 ul#nav li:hover ul ul ul ul{
+ul#nav li:hover ul ul, ul#nav li:hover ul ul ul, ul#nav li:hover ul ul ul ul{
   display:none;
 }
-#nav-wrap2 ul#nav li:hover ul, #nav-wrap2 ul#nav li li:hover ul, #nav-wrap2 ul#nav li li li:hover ul, #nav-wrap2 ul#nav li li li li:hover ul{
+ul#nav li:hover ul, ul#nav li li:hover ul, ul#nav li li li:hover ul, ul#nav li li li li:hover ul{
   display:block;
 }
 
 /* active submenus */
-#nav-wrap2 ul#nav ul li.current_page_parent a span,
-#nav-wrap2 ul#nav ul li.current_page_item a span,
-#nav-wrap2 ul#nav ul li.current_page_parent li.current_page_item a span{
+ul#nav ul li.current_page_parent a span,
+ul#nav ul li.current_page_item a span,
+ul#nav ul li.current_page_parent li.current_page_item a span{
   color: #2d83d5;
 }
 
-#nav-wrap2 ul#nav ul li.current_page_item li a span, #nav-wrap2 ul#nav ul li.current_page_parent li a span{
+ul#nav ul li.current_page_item li a span, ul#nav ul li.current_page_parent li a span{
   color: #000;
 }
 
 /* IE 7 bug-fixes */
-#nav-wrap2 ul#nav li:hover { z-index: 100; }
-#nav-wrap2 ul#nav * li:hover { visibility: inherit; }
+ul#nav * li:hover { visibility: inherit; }
 
 
 /*** MAIN CONTENT ***/

@@ -4,7 +4,7 @@
 <div class="col2">
  <ul id="sidebar">
 
-    <?php if ( is_404() || is_category() || is_day() || is_month() || is_year() || is_search() || is_paged() ) { ?>
+    <?php if ( is_404() || is_category() || is_day() || is_month() || is_year() || is_search() || is_paged() ): ?>
     <li class="block">
      <div class="info-text">
       <?php /* If this is a 404 page */ if (is_404()) { ?>
@@ -28,19 +28,18 @@
       <?php } ?>
      </div>
     </li>
-    <?php }?>
+    <?php endif;?>
 
-    <?php if(get_option('arclite_sidebarcat')<>'no')  { ?>
+    <?php if(get_arclite_option('sidebar_categories'))  { ?>
     <li class="block">
       <!-- sidebar menu (categories) -->
       <ul class="menu">
-        <?php if(get_option('arclite_jquery')=='no') {
+        <?php if(!get_arclite_option('jquery')):
           echo preg_replace('@\<li([^>]*)>\<a([^>]*)>(.*?)\<\/a>@i', '<li$1><a class="fadeThis"$2>$3</a>', wp_list_categories('show_count=0&echo=0&title_li='));
-        } else {
-          echo preg_replace('@\<li([^>]*)>\<a([^>]*)>(.*?)\<\/a> \(\<a ([^>]*) ([^>]*)>(.*?)\<\/a>\)@i', '<li $1><a class="fadeThis"$2>$3</a><a class="rss tip" $4></a>', wp_list_categories('show_count=0&echo=0&title_li=&feed=XML')); } ?>
-
-        <?php if (function_exists('xili_language_list')) { xili_language_list(); } ?>
-
+         else:
+          echo preg_replace('@\<li([^>]*)>\<a([^>]*)>(.*?)\<\/a> \(\<a ([^>]*) ([^>]*)>(.*?)\<\/a>\)@i', '<li $1><a class="fadeThis"$2>$3</a><a class="rss tip" $4></a>', wp_list_categories('show_count=0&echo=0&title_li=&feed=XML'));
+         endif;
+         if (function_exists('xili_language_list')) xili_language_list(); ?>
       </ul>
       <!-- /sidebar menu -->
     </li>

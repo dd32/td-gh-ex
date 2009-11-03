@@ -21,7 +21,7 @@
          <?php if (!get_post_meta($post->ID, 'hide_title', true)): ?><h2 class="post-title"><?php the_title(); ?></h2><?php endif; ?>
         <div class="post-content clearfix">
 
-                 <p class="center"><a href="<?php echo wp_get_attachment_url($post->ID); ?>"><?php echo wp_get_attachment_image( $post->ID, 'medium' ); ?></a></p>
+                 <p class="aligncenter"><a href="<?php echo wp_get_attachment_url($post->ID); ?>"><?php echo wp_get_attachment_image( $post->ID, 'medium' ); ?></a></p>
   				 <?php if (!empty($post->post_excerpt)) { print '<div class="caption">'; the_excerpt(); print '</div>'; }  ?>
                  <?php the_content(__('Read the rest of this entry &raquo;', 'arclite')); ?>
         </div>

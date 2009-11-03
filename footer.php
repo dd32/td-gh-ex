@@ -8,11 +8,14 @@
 
     <?php include(TEMPLATEPATH . '/footer-widgets.php'); ?>
 
-    <?php if(get_option('arclite_footer')<>'') { ?>
+    <?php
+     $footer = get_arclite_option('footer_content');
+     if ($footer):
+     ?>
     <div class="add-content">
-      <?php print get_option('arclite_footer'); ?>
+      <?php echo $footer ?>
     </div>
-     <?php } ?>
+     <?php endif; ?>
 
     <div class="copyright">
      <p>
@@ -37,6 +40,18 @@
 
 </div>
 <!-- /page -->
+
+  <script type="text/javascript">
+  /* <![CDATA[ */
+    var isIE6 = false; /* <- do not change! */
+    var isIE = false; /* <- do not change! */
+    var lightbox = <?php $lt = get_arclite_option('lightbox'); if(lt=='1') echo '1'; else echo '0'; ?>;/* <- do not change! */
+  /* ]]> */
+  </script>
+  <!--[if lte IE 6]> <script type="text/javascript"> isIE6 = true; isIE = true; </script> <![endif]-->
+  <!--[if gte IE 7]> <script type="text/javascript"> isIE = true; </script> <![endif]-->
+
+
 <?php wp_footer(); ?>
 </body>
 </html>

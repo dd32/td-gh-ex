@@ -11,17 +11,30 @@ Credits:
 - Spanish translation by Ignacio de Tomás Andrés <driews@gmail.com>
 - German translation by Pascal Lehner, http://www.forall.ch
 - Danish translation by Henrik Boegh, http://29.5cm.dk
-- French translation by Nathalie Fortin <fortin.nathalie@gmail.com>
+- French translation by Nathalie Fortin <fortin.nathalie@gmail.com>, updated by Sebastien Revollon <sebastien.revollon@gmail.com>
 - Dutch translation by Robert, http://www.on4ya.be
 - Swahili translation by Muhsin, http://www.mzalendo.net
 - Italian translation by Gianni Diurno, http://gidibao.net
 - Ukrainian translation by Oleksandr Natalenko <pfactum@gmail.com>
-- javascript quote functions by mg12, http://www.neoease.com
+- Slovak translation by Marian Hamracek <majoham@post.sk>
+- Greek translation by Manthos H. http://xmanthos.gr
+- Brazilian Portugues translation by Ludy Amano <ludy.amano@gmail.com>
 - "Union" font by the Danish Ministry of Education, http://praegnanz.de/essays/391/union
 - "Share" font by the Typo3 design team, http://typo3.org/teams/design/style-guide/downloads/
+- FancyBox by Janis Skarnelis
 
 
 Change log:
+
+2.0     navigation menu improvements
+        rewritten old quote function with jQuery
+        added the fancy lightbox plugin
+        translation updates
+
+1.99    many back-end optimizations to theme options
+        removed meta keywords option, useless
+
+1.7     translation updates
 
 1.6     some accessibility tweaks
         added Ukrainian transl.

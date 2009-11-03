@@ -2,7 +2,7 @@
 Theme Name: Arclite
 Theme URI: http://digitalnature.ro/projects/arclite
 Description: Simple but elegant theme with lots of theme options. Designed by <a href="http://digitalnature.ro/">digitalnature</a>.
-Version: 1.6
+Version: 2.0
 Author: digitalnature
 Author URI: http://digitalnature.ro
 Tags: light, brown, two-columns, flexible-width, right-sidebar, theme-options, threaded-comments, custom-header, translation-ready
@@ -49,7 +49,7 @@ html{
 
 body{
   font-family: "Lucida Grande", "Lucida Sans Unicode", Calibri, Arial, Helvetica, Sans, FreeSans, Jamrul, Garuda, Kalimati;
-  font-size: .8em;
+  font-size: 13px;
   font-style: normal;
   color: #000;
   background: #261c13;
@@ -377,7 +377,7 @@ blockquote p{
 #header{
   height: 190px;
   position: relative;
-  z-index: 1000;
+  z-index: 10;
   color: #fff;
 }
 
@@ -474,7 +474,7 @@ blockquote p{
   background: transparent url(images/nav-left.png) no-repeat left top;
   padding-left: 25px;
   position: absolute;
-  z-index: 100;
+  z-index: 3;
   top: 170px;
   left: 1em;
   height: 64px;
@@ -487,22 +487,21 @@ blockquote p{
   float: left;
 }
 
-#nav-wrap2 ul#nav, #nav-wrap2 ul#nav li{
+ul#nav, ul#nav li{
   padding: 0;
   margin: 0;
   list-style-type: none;
 }
 
-#nav-wrap2 ul#nav{
-    background: transparent url(images/nav-div.png) no-repeat right top;
-    padding-right: 2px;
-    display: block;
-    height: 64px;
-
+ul#nav{
+  background: transparent url(images/nav-div.png) no-repeat right top;
+  padding-right: 2px;
+  display: block;
+  height: 64px;
 }
 
 
-#nav-wrap2 ul#nav li{
+ul#nav li{
   display:inline;
   float: left;
   position: relative;
@@ -510,27 +509,31 @@ blockquote p{
   padding-left: 2px;
 }
 
-#nav-wrap2 ul#nav li a{
+ul#nav li a{
   display: block;
   margin-top: 1px;
   height: 35px;
   float: left;
   color: #b5d1e6;
   text-decoration: none;
-  font-size: 120%;
+  font-size: 115%;
+  font-weight: bold;
+  text-shadow: rgba(0,0,0,0.3) 1px 1px 1px;
 }
 
-#nav-wrap2 ul#nav li a:hover{
+ul#nav li a span.arrow{display:none;}
+
+ul#nav li a:hover{
   color: #fff;
 }
 
-#nav-wrap2 ul#nav .fadeThis {
+ul#nav .fadeThis {
   position:relative;
   z-index: 1;
   background: none;
 }
 
-#nav-wrap2 ul#nav .fadeThis span.hover {
+ul#nav .fadeThis span.hover {
   position: absolute;
   top: 0;
   left: 0;
@@ -543,7 +546,7 @@ blockquote p{
   padding: 0;
 }
 
-#nav-wrap2 ul#nav li a span{
+ul#nav li a span{
   display: block;
   margin-top: 6px;
   padding: 0 8px;
@@ -552,116 +555,123 @@ blockquote p{
 
 /* sub-menus */
 
-#nav-wrap2 ul#nav ul {
+ul#nav ul {
   position: absolute;
   background: #f7f5ef url(images/side-menu-active.png) repeat-x left bottom;
   display: none;
-  width:200px;
+  width:255px;
   top: 36px;
   left: 0;
   margin: 0;
-  font-style: italic;
+  padding: 1em 0;
   font-size: 100%;
   line-height: 100%;
-  z-index: 99;
+  z-index: 5;
   border: 1px solid #fff;
+  -moz-box-shadow:0px 8px 14px rgba(0,0,0,0.3);
+  -webkit-box-shadow:0px 8px 14px rgba(0,0,0,0.3);
+  box-shadow:0px 8px 14px rgba(0,0,0,0.3);
 }
 
-#nav-wrap2 ul#nav ul ul{
+ul#nav ul ul{
 }
 
-#nav-wrap2 ul#nav li ul li{
+ul#nav li ul li{
   background: none;
   padding: 0;
 }
 
-#nav-wrap2 ul#nav a.active ul,
-#nav-wrap2 ul#nav li.current_page_item ul,
-#nav-wrap2 ul#nav li.current_page_ancestor ul,
-#nav-wrap2 ul#nav li.current-cat ul{
+ul#nav a.active ul,
+ul#nav li.current_page_item ul,
+ul#nav li.current_page_ancestor ul,
+ul#nav li.current-cat ul{
   background: #fff;
 }
 
-#nav-wrap2 ul#nav li.current_page_item ul ul,
-#nav-wrap2 ul#nav li.current_page_ancestor ul ul,
-#nav-wrap2 ul#nav li.current-cat ul ul{
+ul#nav li.current_page_item ul ul,
+ul#nav li.current_page_ancestor ul ul,
+ul#nav li.current-cat ul ul{
   border: 1px solid #fff !important;
 }
 
-#nav-wrap2 ul#nav li ul a{
-  width:180px;
+ul#nav li ul a{
+  width:230px;
   float:left;
   background: none;
   margin: 0;
-  padding: 4px 10px;
+  padding: 8px 15px 8px 10px;
   height: auto;
   color: #000;
   font-weight: normal;
   line-height: 125%;
+  text-shadow: none;
+  position: relative;
 }
 
-#nav-wrap2 ul#nav li ul a span, #nav-wrap2 ul#nav li ul a span span{
+ul#nav li ul a span.arrow{display:block;position:absolute;right:8px;top:0;line-height:32px;}
+
+ul#nav li ul a span, ul#nav li ul a span span{
   margin: 0;
   padding: 0;
   height: auto;
   float: none;
 }
 
-#nav-wrap2 ul#nav ul .fadeThis span.hover {
+ul#nav ul .fadeThis span.hover {
   background: #3b88b7;
 }
 
-#nav-wrap2 ul#nav li ul a:hover, #nav-wrap2 li ul#nav ul a:hover,
-#nav-wrap2 ul#nav a.active ul a:hover,
-#nav-wrap2 ul#nav li.current_page_item ul a:hover,
-#nav-wrap2 ul#nav li.current_page_ancestor ul a:hover{
+ul#nav li ul a:hover, li ul#nav ul a:hover,
+ul#nav a.active ul a:hover,
+ul#nav li.current_page_item ul a:hover,
+ul#nav li.current_page_ancestor ul a:hover{
   color: #fff;
 }
 
-#nav-wrap2 ul#nav ul a:hover, #nav-wrap2 ul#nav ul a:hover span,
-#nav-wrap2 ul#nav a.active ul a:hover span,
-#nav-wrap2 ul#nav li.current_page_item ul a:hover span,
-#nav-wrap2 ul#nav li.current_page_ancestor ul a:hover span,
-#nav-wrap2 ul#nav ul li.current_page_parent a:hover span,
-#nav-wrap2 ul#nav ul li.current_page_item a:hover span,
-#nav-wrap2 ul#nav ul li.current_page_parent li.current_page_item a:hover span{
+ul#nav ul a:hover, ul#nav ul a:hover span,
+ul#nav a.active ul a:hover span,
+ul#nav li.current_page_item ul a:hover span,
+ul#nav li.current_page_ancestor ul a:hover span,
+ul#nav ul li.current_page_parent a:hover span,
+ul#nav ul li.current_page_item a:hover span,
+ul#nav ul li.current_page_parent li.current_page_item a:hover span{
   color:#fff;
 }
 
-#nav-wrap2 ul#nav li ul a span, #nav-wrap2 ul#nav li ul a span{
+ul#nav li ul a span, ul#nav li ul a span{
   background: none;
 }
 
-#nav-wrap2 ul#nav ul ul{
+ul#nav ul ul{
   top:auto;
 }
 
-#nav-wrap2 ul#nav li ul ul {
-  left:195px;
+ul#nav li ul ul {
+  left:230px;
   top: 4px;
 }
 
-#nav-wrap2 ul#nav li:hover ul ul, #nav-wrap2 ul#nav li:hover ul ul ul, #nav-wrap2 ul#nav li:hover ul ul ul ul{
+ul#nav li:hover ul ul, ul#nav li:hover ul ul ul, ul#nav li:hover ul ul ul ul{
   display:none;
 }
-#nav-wrap2 ul#nav li:hover ul, #nav-wrap2 ul#nav li li:hover ul, #nav-wrap2 ul#nav li li li:hover ul, #nav-wrap2 ul#nav li li li li:hover ul{
+ul#nav li:hover ul, ul#nav li li:hover ul, ul#nav li li li:hover ul, ul#nav li li li li:hover ul{
   display:block;
 }
 
 /* active submenus */
-#nav-wrap2 ul#nav ul li.current_page_parent a span,
-#nav-wrap2 ul#nav ul li.current_page_item a span,
-#nav-wrap2 ul#nav ul li.current_page_parent li.current_page_item a span{
+ul#nav ul li.current_page_parent a span,
+ul#nav ul li.current_page_item a span,
+ul#nav ul li.current_page_parent li.current_page_item a span{
   color: #2d83d5;
 }
 
-#nav-wrap2 ul#nav ul li.current_page_item li a span, #nav-wrap2 ul#nav ul li.current_page_parent li a span{
+ul#nav ul li.current_page_item li a span, ul#nav ul li.current_page_parent li a span{
   color: #000;
 }
 
 /* IE 7 bug-fixes */
-#nav-wrap2 ul#nav li:hover { z-index: 100; }
-#nav-wrap2 ul#nav * li:hover { visibility: inherit; }
+ul#nav li:hover { z-index: 5; }
+ul#nav * li:hover { visibility: inherit; }
 
 
 /*** MAIN CONTENT ***/
@@ -909,7 +919,7 @@ ul#comments li.comment li.comment{
   display: none;
   top: 0;
   right: 6px;
-  z-index: 10;
+  z-index: 6;
   font-style: normal;
   text-transform: uppercase;
   padding: 0 1em 0 0;
@@ -1103,7 +1113,6 @@ ul.menu li li .fadeThis span.hover {
 }
 
 .box .titlewrap{
-  background: transparent url(images/box-title-left.png) no-repeat top left;
   padding-left: 35px;
 }
 
@@ -1112,7 +1121,6 @@ ul.menu li li .fadeThis span.hover {
   font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Sans, FreeSans, Jamrul, Garuda, Kalimati;
   font-weight: normal;
   letter-spacing: -0.04em;
-  background: transparent url(images/box-title-bg.png) no-repeat top right;
   display: block;
   padding: 0;
   margin: 0;
@@ -1279,6 +1287,7 @@ div.tooltip{
   background-color:#dedede;
   padding:5px;
   border:1px solid #fff;
+  display:none;
 }
 
 div.tooltip p{
@@ -1527,3 +1536,33 @@ img.wp-smiley, .post .postbody img.wp-smiley, .attachment img.wp-smiley{
   border: 0;
   vertical-align: -20%;
 }
+
+
+
+
+
+/* lightbox */
+div#fancyoverlay{position:fixed;top:0;left:0;width:100%;height:100%;background-color:#000;display:none;z-index:30;}
+div#fancywrap{text-align:left;}
+div#fancyloading{position:absolute;height:40px;width:40px;cursor:pointer;display:none;overflow:hidden;background:transparent;z-index:100;}
+div#fancyloading div{position:absolute;top:0;left:0;width:40px;height:480px;background:transparent url(images/loader.gif) no-repeat;}
+div#fancyloadingoverlay{position:absolute;background-color:#FFF;z-index:30;}
+div#fancyouter{position:absolute;top:0;left:0;z-index:90;padding:18px 18px 33px;margin:0;overflow:hidden;background:transparent;display:none;}
+div#fancyinner{position:relative;width:100%;height:100%;background-color:#eee;}
+div#fancycontent{margin:0;z-index:100;position:absolute;}
+div#fancydiv{background-color:#000;color:#FFF;height:100%;width:100%;z-index:100;}
+img#fancyimg{position:absolute;top:0;left:0;border:0;padding:0;margin:0;z-index:100;width:100%;height:100%;}
+#fancyframe{position:relative;width:100%;height:100%;display:none;}
+#fancyajax{width:100%;height:100%;overflow:auto;}
+a#fancyleft,a#fancyright{position:absolute;bottom:0;height:100%;width:35%;cursor:pointer;z-index:111;display:none;outline:none;}
+a#fancyleft{left:0;}
+a#fancyright{right:0;}
+span.fancyico{position:absolute;top:50%;margin-top:-15px;width:30px;height:42px;z-index:112;cursor:pointer;display:block;opacity:0.5;}
+span#fancyleftico{left:-9999px;background:transparent url(images/block-nav.png) no-repeat left top;}
+span#fancyrightico{right:-9999px;background:transparent url(images/block-nav.png) no-repeat right top;}
+a#fancyleft:hover{visibility:visible;}
+a#fancyright:hover{visibility:visible;}
+a#fancyleft:hover span{left:20px;}
+a#fancyright:hover span{right:20px;}
+.fancybigIframe{position:absolute;top:0;left:0;width:100%;height:100%;background:transparent;}
+div#fancytitle{width:100%;z-index:100;display:none;background-color:#4e4e4e;color:#fff;text-align:center;font-weight:bold;font-size:150%;padding:.2em 0;}
