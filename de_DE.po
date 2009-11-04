@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-01 15:09+0100\n"
+"POT-Creation-Date: 2009-11-04 12:48+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Dennis Hoppe\n"
 "Language-Team: Dennis Hoppe\n"
@@ -138,71 +138,71 @@ msgstr "Be-Berlin-Theme von <a href=\"%s\" target=\"_blank\">%s</a>"
 msgid "Powered by <a href=\"%s\" target=\"_blank\">%s</a>"
 msgstr "Angetrieben durch <a href=\"%s\" target=\"_blank\">%s</a>"
 
-#: header.php:39
+#: header.php:43
 msgid "Home"
 msgstr "Startseite"
 
-#: header.php:63
+#: header.php:67
 msgid "Welcome to <i>%1$s</i> - <i>%2$s</i>| %1 = blog name, %2 = blog description"
 msgstr "Willkommen bei <i>%1$s</i> - <i>%2$s</i>| %1 = blog name, %2 = blog description"
 
-#: header.php:68
+#: header.php:72
 #, php-format
 msgid "Archive for the \"%s\" Category"
 msgstr "Beiträge aus der Kategorie \"%s\""
 
-#: header.php:73
-#: header.php:78
+#: header.php:77
+#: header.php:82
 #, php-format
 msgid "You are here: %s"
 msgstr "Sie sind hier: %s"
 
-#: header.php:73
+#: header.php:77
 msgid "Posts"
 msgstr "Artikel"
 
-#: header.php:83
+#: header.php:87
 #, php-format
 msgid "Posts Tagged \"%s\""
 msgstr "Beiträge mit dem Schlagwort \"%s\""
 
-#: header.php:88
+#: header.php:92
 #, php-format
 msgid "Archive for %s|Daily archive page"
 msgstr "Beiträge vom %s|Daily archive page"
 
-#: header.php:88
+#: header.php:92
 msgid "F jS, Y|Daily archive page"
 msgstr "Beiträge von l, \\d\\e\\m d. F Y"
 
-#: header.php:93
+#: header.php:97
 #, php-format
 msgid "Archive for %s|Monthly archive page"
 msgstr "Beiträge aus %s|Monthly archive page"
 
-#: header.php:93
+#: header.php:97
 msgid "F, Y|Monthly archive page"
 msgstr "F Y"
 
-#: header.php:98
+#: header.php:102
 #, php-format
 msgid "Archive for %s|Yearly archive page"
 msgstr "Beiträge aus %s|Yearly archive page"
 
-#: header.php:98
+#: header.php:102
 msgid "Y|Yearly archive page"
 msgstr "Y"
 
-#: header.php:103
+#: header.php:107
 #, php-format
 msgid "Author Archive for %s|Author archive page"
 msgstr "Beiträge von %s"
 
-#: header.php:108
+#: header.php:112
 msgid "Blog Archives"
 msgstr "Artikelübersicht"
 
-#: header.php:113
+#: header.php:117
 #, php-format
 msgid "Search results for \"%s\""
 msgstr "Suchanfrage nach \"%s\""
@@ -215,27 +215,27 @@ msgstr "Nichts gefunden"
 msgid "Sorry, but you are looking for something that isn&#8217;t here."
 msgstr "Es tut uns leid aber wir konnten nichts finden was Ihren Suchkriterien entsprach."
 
-#: page.php:23
+#: page.php:25
 msgid "Associated Posts"
 msgstr "Angehängte Artikel"
 
-#: page.php:42
+#: page.php:45
 msgid "Edit this entry"
 msgstr "Eintrag bearbeiten"
 
-#: page.php:44
+#: page.php:47
 msgid "No Comments"
 msgstr "Keine Kommentare"
 
-#: page.php:44
+#: page.php:47
 msgid "One Comment"
 msgstr "Ein Kommentar"
 
-#: page.php:44
+#: page.php:47
 msgid "% Comments"
 msgstr "% Kommentare"
 
-#: page.php:44
+#: page.php:47
 msgid "Comments Closed"
 msgstr "Diskussion geschlossen"
 
@@ -337,80 +337,80 @@ msgstr "Wie viele Artikel sollen gezeigt werden?"
 msgid "Leave blank to show all."
 msgstr "Leer lassen um alle zu zeigen."
 
-#: plugin_contact_page/plugin_contact_page.php:48
+#: plugin_contact_page/plugin_contact_page.php:58
 #, php-format
 msgid "Mail from %1$s via %2$s"
 msgstr "Nachricht von %1$s über %2$s"
 
-#: plugin_contact_page/plugin_contact_page.php:58
+#: plugin_contact_page/plugin_contact_page.php:68
 #, php-format
 msgid "Company: %s"
 msgstr "Firma: %s"
 
-#: plugin_contact_page/plugin_contact_page.php:61
+#: plugin_contact_page/plugin_contact_page.php:71
 #, php-format
 msgid "Fon: %s"
 msgstr "Telefon: %s"
 
-#: plugin_contact_page/plugin_contact_page.php:63
+#: plugin_contact_page/plugin_contact_page.php:73
 #, php-format
 msgid "Remote-IP: %s"
 msgstr "Absender-IP: %s"
 
-#: plugin_contact_page/plugin_contact_page.php:64
+#: plugin_contact_page/plugin_contact_page.php:74
 #, php-format
 msgid "Date time: %s"
 msgstr "Datum und Zeit: %s"
 
-#: plugin_contact_page/plugin_contact_page.php:64
+#: plugin_contact_page/plugin_contact_page.php:74
 msgid "m/d/Y h:i a|Date in contact form"
 msgstr "d.m.Y H:i:s"
 
-#: plugin_contact_page/plugin_contact_page.php:82
+#: plugin_contact_page/plugin_contact_page.php:92
 msgid "Plase fill out all required fields."
 msgstr "Bitte füllen Sie alle erforderlichen Felder aus."
 
-#: plugin_contact_page/plugin_contact_page.php:84
+#: plugin_contact_page/plugin_contact_page.php:94
 msgid "Your mail adress is not valid."
 msgstr "Ihre E-Mailadresse ist nicht valid."
 
-#: plugin_contact_page/plugin_contact_page.php:86
+#: plugin_contact_page/plugin_contact_page.php:96
 msgid "There was some technical error."
 msgstr "Es ist ein technischer Fehler aufgetreten."
 
-#: plugin_contact_page/plugin_contact_page.php:104
+#: plugin_contact_page/plugin_contact_page.php:114
 msgid "Contact the author"
 msgstr "Kontakt zum Autor"
 
-#: plugin_contact_page/plugin_contact_page.php:112
+#: plugin_contact_page/plugin_contact_page.php:122
 msgid "To:"
 msgstr "An:"
 
-#: plugin_contact_page/plugin_contact_page.php:113
+#: plugin_contact_page/plugin_contact_page.php:123
 msgid "Name:"
 msgstr "Name:"
 
-#: plugin_contact_page/plugin_contact_page.php:114
+#: plugin_contact_page/plugin_contact_page.php:124
 msgid "Company:"
 msgstr "Firma:"
 
-#: plugin_contact_page/plugin_contact_page.php:115
+#: plugin_contact_page/plugin_contact_page.php:125
 msgid "E-Mail:"
 msgstr "E-Mail:"
 
-#: plugin_contact_page/plugin_contact_page.php:116
+#: plugin_contact_page/plugin_contact_page.php:126
 msgid "Fon:"
 msgstr "Telefon:"
 
-#: plugin_contact_page/plugin_contact_page.php:118
+#: plugin_contact_page/plugin_contact_page.php:128
 msgid "Submit"
 msgstr "Senden"
 
-#: plugin_contact_page/plugin_contact_page.php:119
+#: plugin_contact_page/plugin_contact_page.php:129
 msgid "Required fields"
 msgstr "Erforderliche Felder"
 
-#: plugin_contact_page/plugin_contact_page.php:123
+#: plugin_contact_page/plugin_contact_page.php:133
 msgid "The Mail was sent."
 msgstr "Die Nachricht wurde gesendet."
 
@@ -522,12 +522,12 @@ msgid "Sidebar Adjustment:"
 msgstr "Ausrichtung der Sidebar:"
 
 #: theme_options/form.php:13
-msgid "Left"
-msgstr "Links"
-
-#: theme_options/form.php:14
 msgid "Right"
 msgstr "Rechts"
+
+#: theme_options/form.php:14
+msgid "Left"
+msgstr "Links"
 
 #: theme_options/form.php:19
 msgid "Featured posts:"
@@ -554,23 +554,27 @@ msgstr "Den <i>&lt;meta name=\"generator\" ... /&gt;</i> tag aus dem Kopf der Wo
 msgid "Avoid printing the website."
 msgstr "Ausdrucken der Webseite verhindern."
 
-#: theme_options/form.php:61
+#: theme_options/form.php:62
+msgid "Hide the Be-Berlin Logo in the header."
+msgstr "Das Be-Berlin Logo im Kopfbereich der Seite verstecken."
+
+#: theme_options/form.php:66
 msgid "Handle with care"
 msgstr "Mit Vorsicht zu behandeln"
 
-#: theme_options/form.php:62
+#: theme_options/form.php:67
 msgid "You should <b>not touch the following settings</b> if you not really know what you are doing. If you change these settings <b>your design can break</b> in certain cases. Check the fields below only if you want to use your own plugins which are better then the embedded ones."
 msgstr "Sie sollten die folgenden <b>Einstellungen nicht verändern</b> wenn Sie nicht ganz genau wissen was sie tun. Wenn Sie diese Einstellungen verändern kann dies zu unerwünschten Ergebnissen in der Darstellung Ihrer Seite führen. Klicken Sie die Checkboxen nur an wenn Sie für diese Aufgaben andere Plugins verwenden möchten."
 
-#: theme_options/form.php:67
+#: theme_options/form.php:72
 msgid "<b>Do not</b> rewrite the wordpress gallery function with a valid one."
 msgstr "<b>Nicht</b> die Wordpress-Galerie-Funktion mit einer valien Variante ersetzen."
 
-#: theme_options/form.php:72
+#: theme_options/form.php:77
 msgid "<b>Do not</b> fix the \"Next-Page-Tag\"-Bug in the wordpress TinyMCE Editor."
 msgstr "<b>Nicht</b> den \"Next-Page-Tag\"-Bug im TinyMCE Editor beheben."
 
-#: theme_options/form.php:78
+#: theme_options/form.php:83
 msgid "<b>Do not</b> show the \"theme by\" part in the footer."
 msgstr "<b>Nicht</b> den \"theme von ...\" Teil im Fußbereich zeigen."
 

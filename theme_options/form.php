@@ -56,6 +56,11 @@
     <input type="checkbox" name="no-print" value="yes" <?php echo ($this->LoadSetting('no-print')) ? 'checked="checked" ' : ''?>/>
     <?php _e('Avoid printing the website.', 'theme') ?></th>
 </tr>
+<tr valign="top">
+  <th scope="row">
+    <input type="checkbox" name="hide-be-berlin-logo" value="yes" <?php echo ($this->LoadSetting('hide-be-berlin-logo')) ? 'checked="checked" ' : ''?>/>
+    <?php _e('Hide the Be-Berlin Logo in the header.', 'theme') ?></th>
+</tr>
 </table>
 
 <h3><?php _e ('Handle with care', 'theme') ?></h3>

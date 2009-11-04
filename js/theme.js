@@ -16,5 +16,19 @@ jQuery(function(){
     .blur(function(){
       jQuery(this).removeClass('focus');
     });
+  
+  // Make the text in the searchbar disappear
+  jQuery('input#s').focus(function(){
+    if (jQuery(this).val() != ''){
+      jQuery(this).attr('rel', jQuery(this).val() );
+      jQuery(this).val('');
+    }
+  });
+  
+  jQuery('input#s').blur(function(){
+    if (jQuery(this).val() == ''){
+      jQuery(this).val(jQuery(this).attr('rel'));
+    }
+  });
     
 });

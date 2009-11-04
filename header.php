@@ -31,12 +31,16 @@
 <div class="container_16 container">
 
   <div class="header">
-    <div class="grid_3 alpha">
-      <a href="<?php bloginfo('home') ?>" class="logo"></a>
-    </div>
+    <?php If(!Get_Theme_Setting('hide-be-berlin-logo')) : ?>
+      <div class="grid_3 alpha">
+        <a href="<?php bloginfo('home') ?>" class="logo"></a>
+      </div>
     <div class="grid_10">
+    <?php Else : ?>
+    <div class="grid_13 push_1 alpha">
+    <?php EndIf; ?>
       <ul class="top-menu">
-        <li class="page_item <?php If(is_home()) Echo 'current_page_item' ?>"><a href="<?php bloginfo('home') ?>" title="<?php _e('Home', 'theme') ?>"><span class="left">&nbsp;</span><span class="middle"><?php _e('Home', 'theme') ?></span><span class="right">&nbsp;</span></a></li>
+        <li class="page_item <?php If(is_home()) Echo 'current_page_item' ?>"><a href="<?php bloginfo('url') ?>" title="<?php _e('Home', 'theme') ?>"><span class="left">&nbsp;</span><span class="middle"><?php _e('Home', 'theme') ?></span><span class="right">&nbsp;</span></a></li>
         <?php wp_list_pages(Array( 'depth' => 1, 'title_li' => '', 'link_before' => '<span class="left">&nbsp;</span><span class="middle">', 'link_after' => '</span><span class="right">&nbsp;</span>' )); ?>
       </ul>
       

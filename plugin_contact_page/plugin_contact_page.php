@@ -37,9 +37,22 @@ Class plugin_contact_page {
       // Read from _POST
       $arr_form = $_POST['contact_form'];
       
-      // Strips Slashes
+      // Clean Input string
       ForEach ($arr_form AS $key => $value){
-        $arr_form[$key] = Trim (StripSlashes($value));
+        // Strips Slashes
+        $value = StripSlashes($value);
+        
+        // Strip Tags
+        $value = Strip_Tags($value);
+        
+        // Sanitize string
+        $value = $this->sanitize_string($value);
+        
+        // Trim
+        $value = Trim ($value);
+        
+        // put back to the array:
+        $arr_form[$key] = $value;
       }
       
       // Send the mail
@@ -128,6 +141,13 @@ Class plugin_contact_page {
     // Ready for TakeOff
     return $content;
   }
+  
+  Function sanitize_string($string){
+    $string = preg_replace("/ +/", ' ', trim($string));
+    $string = preg_replace("/[<>]/", '_', $string);
+    
+    return $string;
+  }
+  
 }
-
 /* End of File */
