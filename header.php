@@ -12,7 +12,7 @@
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/favicon.ico" />
 
-<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
+<?php if (is_singular() && get_option('thread_comments')) wp_enqueue_script( 'comment-reply' ); ?>
 <?php if(get_arclite_option('jquery')): ?>
  <?php wp_enqueue_script('jquery'); ?>
  <?php wp_enqueue_script('arclite',get_bloginfo('template_url').'/js/jquery.arclite.min.js',array(),false,true); ?>

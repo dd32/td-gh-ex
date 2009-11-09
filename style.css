@@ -2,7 +2,7 @@
 Theme Name: Arclite
 Theme URI: http://digitalnature.ro/projects/arclite
 Description: Simple but elegant theme with lots of theme options. Designed by <a href="http://digitalnature.ro/">digitalnature</a>.
-Version: 2.0
+Version: 2.02
 Author: digitalnature
 Author URI: http://digitalnature.ro
 Tags: light, brown, two-columns, flexible-width, right-sidebar, theme-options, threaded-comments, custom-header, translation-ready
@@ -1324,6 +1324,33 @@ div.clear{ clear: both;height:1px;  }
 .error, .red{ color:#ed1f24; }
 .center{ text-align: center; }
 
+/* lightbox */
+div#fancyoverlay{position:fixed;top:0;left:0;width:100%;height:100%;background-color:#000;display:none;z-index:30;}
+div#fancywrap{text-align:left;}
+div#fancyloading{position:absolute;height:40px;width:40px;cursor:pointer;display:none;overflow:hidden;background:transparent;z-index:100;}
+div#fancyloading div{position:absolute;top:0;left:0;width:40px;height:480px;background:transparent url(images/loader.gif) no-repeat;}
+div#fancyloadingoverlay{position:absolute;background-color:#FFF;z-index:30;}
+div#fancyouter{position:absolute;top:0;left:0;z-index:90;padding:18px 18px 33px;margin:0;overflow:hidden;background:transparent;display:none;}
+div#fancyinner{position:relative;width:100%;height:100%;background-color:#eee;}
+div#fancycontent{margin:0;z-index:100;position:absolute;}
+div#fancydiv{background-color:#000;color:#FFF;height:100%;width:100%;z-index:100;}
+img#fancyimg{position:absolute;top:0;left:0;border:0;padding:0;margin:0;z-index:100;width:100%;height:100%;}
+#fancyframe{position:relative;width:100%;height:100%;display:none;}
+#fancyajax{width:100%;height:100%;overflow:auto;}
+a#fancyleft,a#fancyright{position:absolute;bottom:0;height:100%;width:35%;cursor:pointer;z-index:111;display:none;outline:none;}
+a#fancyleft{left:0;}
+a#fancyright{right:0;}
+span.fancyico{position:absolute;top:50%;margin-top:-15px;width:30px;height:42px;z-index:112;cursor:pointer;display:block;opacity:0.5;}
+span#fancyleftico{left:-9999px;background:transparent url(images/block-nav.png) no-repeat left top;}
+span#fancyrightico{right:-9999px;background:transparent url(images/block-nav.png) no-repeat right top;}
+a#fancyleft:hover{visibility:visible;}
+a#fancyright:hover{visibility:visible;}
+a#fancyleft:hover span{left:20px;}
+a#fancyright:hover span{right:20px;}
+.fancybigIframe{position:absolute;top:0;left:0;width:100%;height:100%;background:transparent;}
+div#fancytitle{width:100%;z-index:100;display:none;background-color:#4e4e4e;color:#fff;text-align:center;font-weight:bold;font-size:150%;padding:.2em 0;}
+
+
 
 /*** WORDPRESS SPECIFIC STYLES ***/
 
@@ -1537,32 +1564,3 @@ img.wp-smiley, .post .postbody img.wp-smiley, .attachment img.wp-smiley{
   vertical-align: -20%;
 }
 
-
-
-
-
-/* lightbox */
-div#fancyoverlay{position:fixed;top:0;left:0;width:100%;height:100%;background-color:#000;display:none;z-index:30;}
-div#fancywrap{text-align:left;}
-div#fancyloading{position:absolute;height:40px;width:40px;cursor:pointer;display:none;overflow:hidden;background:transparent;z-index:100;}
-div#fancyloading div{position:absolute;top:0;left:0;width:40px;height:480px;background:transparent url(images/loader.gif) no-repeat;}
-div#fancyloadingoverlay{position:absolute;background-color:#FFF;z-index:30;}
-div#fancyouter{position:absolute;top:0;left:0;z-index:90;padding:18px 18px 33px;margin:0;overflow:hidden;background:transparent;display:none;}
-div#fancyinner{position:relative;width:100%;height:100%;background-color:#eee;}
-div#fancycontent{margin:0;z-index:100;position:absolute;}
-div#fancydiv{background-color:#000;color:#FFF;height:100%;width:100%;z-index:100;}
-img#fancyimg{position:absolute;top:0;left:0;border:0;padding:0;margin:0;z-index:100;width:100%;height:100%;}
-#fancyframe{position:relative;width:100%;height:100%;display:none;}
-#fancyajax{width:100%;height:100%;overflow:auto;}
-a#fancyleft,a#fancyright{position:absolute;bottom:0;height:100%;width:35%;cursor:pointer;z-index:111;display:none;outline:none;}
-a#fancyleft{left:0;}
-a#fancyright{right:0;}
-span.fancyico{position:absolute;top:50%;margin-top:-15px;width:30px;height:42px;z-index:112;cursor:pointer;display:block;opacity:0.5;}
-span#fancyleftico{left:-9999px;background:transparent url(images/block-nav.png) no-repeat left top;}
-span#fancyrightico{right:-9999px;background:transparent url(images/block-nav.png) no-repeat right top;}
-a#fancyleft:hover{visibility:visible;}
-a#fancyright:hover{visibility:visible;}
-a#fancyleft:hover span{left:20px;}
-a#fancyright:hover span{right:20px;}
-.fancybigIframe{position:absolute;top:0;left:0;width:100%;height:100%;background:transparent;}
-div#fancytitle{width:100%;z-index:100;display:none;background-color:#4e4e4e;color:#fff;text-align:center;font-weight:bold;font-size:150%;padding:.2em 0;}

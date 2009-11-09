@@ -12,57 +12,17 @@ if(!defined("PHP_EOL")) define("PHP_EOL", strtoupper(substr(PHP_OS,0,3) == "WIN"
 function setup_options() {
   remove_options();
 
-  // check for settings from older arclite versions, update the new options if they exist, then remove the old settings from the database
-  // this code will be removed in the next theme update
-  if(get_option('arclite_imageless')=='yes') $imageless = '1'; else $imageless = '0';
-  if(get_option('arclite_3col')=='yes') $threecol = '1'; else $threecol = '0';
-  if(get_option('arclite_jquery')=='no') $jquery = '0'; else $jquery = '1';
-  if(get_option('arclite_logo')<>'') $logo = (get_option('arclite_logo')); else $logo='';
-  if(get_option('arclite_header')<>'') $header = (get_option('arclite_header')); else $header='default';
-  if(get_option('arclite_headerimage')<>'') $header1 = (get_option('arclite_headerimage')); else $header1='';
-  if(get_option('arclite_headerimage2')<>'') $header2 = (get_option('arclite_headerimage2')); else $header2='';
-  if(get_option('arclite_headercolor')<>'') $header_color = (get_option('arclite_headercolor')); else $header_color='#261c13';
-  if(get_option('arclite_logoimage')<>'') $logo = (get_option('arclite_logoimage')); else $logo='';
-  if(get_option('arclite_sidebarpos')<>'') $sidebar = (get_option('arclite_sidebarpos')); else $sidebar='right';
-  if(get_option('arclite_widgetbg')<>'') $widget_background = (get_option('arclite_widgetbg')); else $widget_background='default';
-  if(get_option('arclite_contentbg')<>'') $content_background = (get_option('arclite_contentbg')); else $content_background='default';
-  if(get_option('arclite_indexposts')<>'') $post_preview = (get_option('arclite_indexposts')); else $post_preview='full';
-  if(get_option('arclite_topnav')<>'') $navigation = (get_option('arclite_topnav')); else $navigation='pages';
-  if(get_option('arclite_excludenav')<>'') $navigation_exclude = (get_option('arclite_excludenav')); else $navigation_exclude='';
-  if(get_option('arclite_search')=='no') $search = '0'; else $search='1';
-  if(get_option('arclite_sidebarcat')=='no') $sidebar_categories = '0'; else $sidebar_categories='1';
-  delete_option('arclite_imageless');
-  delete_option('arclite_3col');
-  delete_option('arclite_jquery');
-  delete_option('arclite_logo');
-  delete_option('arclite_header');
-  delete_option('arclite_headerimage');
-  delete_option('arclite_headerimage2');
-  delete_option('arclite_headercolor');
-  delete_option('arclite_logoimage');
-  delete_option('arclite_sidebarpos');
-  delete_option('arclite_widgetbg');
-  delete_option('arclite_contentbg');
-  delete_option('arclite_indexposts');
-  delete_option('arclite_topnav');
-  delete_option('arclite_excludenav');
-  delete_option('arclite_search');
-  delete_option('arclite_sidebarcat');
-  delete_option('arclite_footer');
-  delete_option('arclite_css');
-
-
   update_option( 'arclite' , apply_filters('theme_default_settings', array(
     'theme_version' => THEME_VERSION,
     'imageless' => $imageless,
     'threecol' => $threecol,
+    'left_sidebar' => '1',
     'jquery' => $jquery,
     'logo' => $logo,
     'header' => $header,
     'header1' => $header1,
     'header2' => $header2,
     'header_color' => $header_color,
-    'sidebar' => $sidebar,
     'widget_background' => $widget_background,
     'content_background' => $content_background,
     'post_preview' => $post_preview,
@@ -104,6 +64,7 @@ function arclite_update_options() {
   $options = get_option('arclite');
   if (isset($_POST['imageless'])) $options['imageless'] = 1; else $options['imageless'] = 0;
   if (isset($_POST['threecol'])) $options['threecol'] = 1; else $options['threecol'] = 0;
+  if (isset($_POST['left_sidebar'])) $options['left_sidebar'] = $_POST['left_sidebar'];
   if (isset($_POST['jquery'])) $options['jquery'] = 1; else $options['jquery'] = 0;
   if (isset($_POST['lightbox'])) $options['lightbox'] = 1; else $options['lightbox'] = 0;
   if (isset($_POST['header'])) $options['header'] = $_POST['header'];
@@ -260,6 +221,16 @@ function arclite_theme_settings() {
        </tr>
 
        <tr>
+        <th scope="row"><p><?php _e("Sidebar position","arclite"); ?></p></th>
+        <td>
+         <select name="left_sidebar" id="opt-left_sidebar">
+          <option value="1" <?php if(get_arclite_option('left_sidebar')==1) echo 'selected="selected" '; ?>><?php _e('Left', 'arclite'); ?></option>
+          <option value="0" <?php if(get_arclite_option('left_sidebar')!=1) echo 'selected="selected" '; ?>><?php _e('Right', 'arclite'); ?></option>
+         </select>
+        </td>
+       </tr>
+
+       <tr>
         <th scope="row"><p><?php _e("Top navigation shows","arclite"); ?></p></th>
         <td>
          <select name="navigation" id="opt-navigation">
@@ -272,8 +243,7 @@ function arclite_theme_settings() {
        <tr>
         <th scope="row"><p><?php _e("Exclude from main navigation","arclite"); ?><span><?php _e("(Type page or category IDs. Separate with commas)","arclite"); ?></span></p></th>
         <td>
-         <input type="hidden" name="exclude_from_nav" value="" />
-         <input class="text" type="text" size="40" name="exclude_from_nav" value="<?php esc_attr(print_arclite_option('exclude_from_nav')) ?>" />
+         <input class="text" type="text" size="40" name="navigation_exclude" value="<?php esc_attr(print_arclite_option('navigation_exclude')) ?>" />
         </td>
         </tr>
 
@@ -480,17 +450,17 @@ function setup_css() {
 
  if($arclite_options['imageless']):
   echo '@import "'.get_bloginfo('template_url').'/style-imageless.css";'.PHP_EOL;
-  if($arclite_options['sidebar']=='left'): echo '@import "'.get_bloginfo('template_url').'/options/leftsidebar.css";'.PHP_EOL;endif;
+  if($arclite_options['left_sidebar']): echo '@import "'.get_bloginfo('template_url').'/options/leftsidebar.css";'.PHP_EOL;endif;
  else:
   echo '@import "'.get_bloginfo('stylesheet_url').'";'.PHP_EOL;
   echo '@import "'.get_bloginfo('template_url').'/options/side-'.$arclite_options['widget_background'].'.css";'.PHP_EOL;
   echo '@import "'.get_bloginfo('template_url').'/options/content-'.$arclite_options['content_background'].'.css";'.PHP_EOL;
-  if($arclite_options['sidebar']=='left') echo '@import "'.get_bloginfo('template_url').'/options/leftsidebar.css";'.PHP_EOL;
+  if($arclite_options['left_sidebar']) echo '@import "'.get_bloginfo('template_url').'/options/leftsidebar.css";'.PHP_EOL;
   switch($arclite_options['header']):
    case 'user-image':
-    if($arclite_options('header1')<>'')
+    if($arclite_options['header1']<>'')
        echo '#header{ background: transparent url("'.$arclite_options['header1'].'") no-repeat center top; }'.PHP_EOL;
-    if($arclite_options('header2')<>'')
+    if($arclite_options['header2']<>'')
        echo '#header-wrap{ background: transparent url("'.$arclite_options['header2'].'") repeat center top; }'.PHP_EOL;
     break;
    case 'user-color': echo '#header, #header-wrap{ background-color: '.$arclite_options['header_color'].'; }'.PHP_EOL;break;
@@ -513,6 +483,82 @@ add_action('wp_head', 'setup_css',2);
 //if (version_compare(get_arclite_option('theme_version'), THEME_VERSION, '!=')) setup_options();
 if (!get_option('arclite')) setup_options();
 
+
+function queryposts($atts){
+  extract( shortcode_atts( array(
+   'category_id' => '',
+   'category_name' => '',
+   'tag' => '',
+   'day' => '',
+   'month' => '',
+   'year' => '',
+   'count' => '5',
+   'author_id' => '',
+   'author_name' => '',
+   'order_by' => 'date',
+  ), $atts) );
+
+  $output = '';
+  $query = array();
+
+  if ($category_id != '') $query[] = 'cat=' .$category_id;
+  if ($category_name != '') $query[] = 'category_name=' .$category_name;
+  if ($tag != '') $query[] = 'tag=' . $tag;
+  if ($day != '') $query[] = 'day=' . $day;
+  if ($month != '') $query[] = 'monthnum=' . $month;
+  if ($year != '') $query[] = 'year=' . $year;
+  if ($count) $query[] = 'posts_per_page=' .$count;
+  if ($author_id != '') $query[] = 'author=' . $author_id;
+  if ($author_name != '') $query[] = 'author_name=' . $author_name;
+  if ($order_by) $query[] = 'orderby=' . $order_by;
+
+  $posts = new WP_Query(implode('&',$query));
+  while ($posts->have_posts()): $posts->the_post();
+
+    $output .= '<div class="post">';
+    $output .= '<div class="post-header"><h3 class="post-title"><a href="'.get_permalink().'" rel="bookmark" title="'.__('Permanent Link:','arclite').' '.get_the_title().'">'.get_the_title().'</a></h3>';
+    $output .= '<p class="post-date"><span class="month">'.get_the_time(__('M','arclite')).'</span><span class="day">'.get_the_time(__('j','arclite')).'</span></p>';
+    $output .= '<p class="post-author"><span class="info">'.sprintf(__('Posted by %s in %s','arclite'),'<a href="'. get_author_posts_url(get_the_author_ID()) .'" title="'. sprintf(__("Posts by %s","arclite"), attribute_escape(get_the_author())).' ">'. get_the_author() .'</a>',get_the_category_list(', ')).' | ';
+
+    if (comments_open()):
+    // global $id, $comment;
+     $comments_number = get_comments_number();
+     $output .= '<a href="'.get_permalink().'#comments" class="';
+     if(($comments_number)==0) $output .= 'no ';
+     $output .= 'comments">';
+     if ($comments_number>1) $output .= sprintf(__('%s comments'),$comments_number);
+     else if ($comments_number==1) $output .= __('1 comment');
+     else  $output .= __('No comments');
+     $output .= '</a>';
+    else: $output .= __("Comments Off","arclite");
+    endif;
+
+    $output .= '</span></p></div>';
+
+    $output .= '<div class="post-content clearfix">';
+    $post_preview = get_arclite_option('post_preview');
+    if($post_preview=='excerpt') $output .= get_the_excerpt(); else $output .= get_the_content(__('Read the rest of this entry &raquo;', 'arclite'));
+    $output .= '</div>';
+
+    $post_tags = get_the_tags();
+    if ($post_tags):
+        $output .= '<p class="tags">';
+        $tags = array();
+        $i = 0;
+        foreach($post_tags as $tag):
+         $tags[$i] .=  '<a href="'.get_tag_link($tag->term_id).'" rel="tag" title="'.sprintf(__('%s (%s topics)'),$tag->name,$tag->count).'">'.$tag->name.'</a>';
+         $i++;
+        endforeach;
+        $output .= implode(', ',$tags);
+        $output .= '</p>';
+    endif;
+    $output .= '</div>';
+  endwhile;
+  return $output;
+}
+add_shortcode('query', 'queryposts');
+
+add_filter( 'widget_text', 'do_shortcode' ); // Allow [SHORTCODES] in Widgets
 
 // xili-language plugin check
 function init_language(){

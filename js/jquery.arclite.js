@@ -1095,6 +1095,7 @@ jQuery(document).ready(function(){
 
   jQuery("a.quote").quoteComment({comment:'li.comment',comment_id: '.comment-id',author:'.comment-author',source:'.comment-text',target:'#comment'});
 
+  if(lightbox){
   // enable fancyBox for any link with rel="lightbox" and on links which references end in image extensions (jpg, gif, png)
   jQuery("a[rel='lightbox'], a[href$='.jpg'], a[href$='.jpeg'], a[href$='.gif'], a[href$='.png'], a[href$='.JPG'], a[href$='.JPEG'], a[href$='.GIF'], a[href$='.PNG']").fancybox({
     'zoomSpeedIn': 333,
@@ -1105,7 +1106,7 @@ jQuery(document).ready(function(){
     'overlayShow': true,
     'overlayOpacity': 0.75
   });
-
+  }
 
   if (document.all && !window.opera && !window.XMLHttpRequest && jQuery.browser.msie) { var isIE6 = true; }
   else { var isIE6 = false;} ;

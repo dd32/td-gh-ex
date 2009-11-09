@@ -26,6 +26,11 @@ Credits:
 
 Change log:
 
+2.0.2   replaced old custom fields with the [query] shortcode, eg. [query category_id="1,2,3" count="7" order_by="date"]
+        added back the "left sidebar" option
+
+2.0.1   a few bug fixes to the new theme options
+
 2.0     navigation menu improvements
         rewritten old quote function with jQuery
         added the fancy lightbox plugin

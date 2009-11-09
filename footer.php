@@ -45,7 +45,7 @@
   /* <![CDATA[ */
     var isIE6 = false; /* <- do not change! */
     var isIE = false; /* <- do not change! */
-    var lightbox = <?php $lt = get_arclite_option('lightbox'); if(lt=='1') echo '1'; else echo '0'; ?>;/* <- do not change! */
+    var lightbox = <?php echo get_arclite_option('lightbox'); ?>;/* <- do not change! */
   /* ]]> */
   </script>
   <!--[if lte IE 6]> <script type="text/javascript"> isIE6 = true; isIE = true; </script> <![endif]-->
@@ -55,6 +55,4 @@
 <?php wp_footer(); ?>
 </body>
 </html>
-
-
 
