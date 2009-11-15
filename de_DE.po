@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-04 12:48+0100\n"
+"POT-Creation-Date: 2009-11-15 09:36+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Dennis Hoppe\n"
 "Language-Team: Dennis Hoppe\n"
@@ -253,7 +253,7 @@ msgid "Calendar"
 msgstr "Kalender"
 
 #: single.php:9
-#: the-loop.php:9
+#: the-loop.php:8
 msgid "F jS, Y|Date format of a post"
 msgstr "l \\d\\e\\r j. F Y"
 
@@ -299,16 +299,16 @@ msgstr "Es scheint als wäre dieser Artikel der einzige in diesem Blog."
 msgid "Permanent Link to %s"
 msgstr "Link zu %s"
 
-#: the-loop.php:22
-#: the-loop.php:24
+#: the-loop.php:19
+#: the-loop.php:21
 msgid "Read the rest of this entry"
 msgstr "Weiterlesen"
 
-#: the-loop.php:35
+#: the-loop.php:32
 msgid "&laquo; Older Entries"
 msgstr "&laquo; Ältere Einträge"
 
-#: the-loop.php:36
+#: the-loop.php:33
 msgid "Newer Entries &raquo;"
 msgstr "Neuere Einträge &raquo;"
 
@@ -337,80 +337,80 @@ msgstr "Wie viele Artikel sollen gezeigt werden?"
 msgid "Leave blank to show all."
 msgstr "Leer lassen um alle zu zeigen."
 
-#: plugin_contact_page/plugin_contact_page.php:58
+#: plugin_contact_page/plugin_contact_page.php:61
 #, php-format
 msgid "Mail from %1$s via %2$s"
 msgstr "Nachricht von %1$s über %2$s"
 
-#: plugin_contact_page/plugin_contact_page.php:68
+#: plugin_contact_page/plugin_contact_page.php:71
 #, php-format
 msgid "Company: %s"
 msgstr "Firma: %s"
 
-#: plugin_contact_page/plugin_contact_page.php:71
+#: plugin_contact_page/plugin_contact_page.php:74
 #, php-format
 msgid "Fon: %s"
 msgstr "Telefon: %s"
 
-#: plugin_contact_page/plugin_contact_page.php:73
+#: plugin_contact_page/plugin_contact_page.php:76
 #, php-format
 msgid "Remote-IP: %s"
 msgstr "Absender-IP: %s"
 
-#: plugin_contact_page/plugin_contact_page.php:74
+#: plugin_contact_page/plugin_contact_page.php:77
 #, php-format
 msgid "Date time: %s"
 msgstr "Datum und Zeit: %s"
 
-#: plugin_contact_page/plugin_contact_page.php:74
+#: plugin_contact_page/plugin_contact_page.php:77
 msgid "m/d/Y h:i a|Date in contact form"
 msgstr "d.m.Y H:i:s"
 
-#: plugin_contact_page/plugin_contact_page.php:92
+#: plugin_contact_page/plugin_contact_page.php:95
 msgid "Plase fill out all required fields."
 msgstr "Bitte füllen Sie alle erforderlichen Felder aus."
 
-#: plugin_contact_page/plugin_contact_page.php:94
+#: plugin_contact_page/plugin_contact_page.php:97
 msgid "Your mail adress is not valid."
 msgstr "Ihre E-Mailadresse ist nicht valid."
 
-#: plugin_contact_page/plugin_contact_page.php:96
+#: plugin_contact_page/plugin_contact_page.php:99
 msgid "There was some technical error."
 msgstr "Es ist ein technischer Fehler aufgetreten."
 
-#: plugin_contact_page/plugin_contact_page.php:114
+#: plugin_contact_page/plugin_contact_page.php:117
 msgid "Contact the author"
 msgstr "Kontakt zum Autor"
 
-#: plugin_contact_page/plugin_contact_page.php:122
+#: plugin_contact_page/plugin_contact_page.php:125
 msgid "To:"
 msgstr "An:"
 
-#: plugin_contact_page/plugin_contact_page.php:123
+#: plugin_contact_page/plugin_contact_page.php:126
 msgid "Name:"
 msgstr "Name:"
 
-#: plugin_contact_page/plugin_contact_page.php:124
+#: plugin_contact_page/plugin_contact_page.php:127
 msgid "Company:"
 msgstr "Firma:"
 
-#: plugin_contact_page/plugin_contact_page.php:125
+#: plugin_contact_page/plugin_contact_page.php:128
 msgid "E-Mail:"
 msgstr "E-Mail:"
 
-#: plugin_contact_page/plugin_contact_page.php:126
+#: plugin_contact_page/plugin_contact_page.php:129
 msgid "Fon:"
 msgstr "Telefon:"
 
-#: plugin_contact_page/plugin_contact_page.php:128
+#: plugin_contact_page/plugin_contact_page.php:131
 msgid "Submit"
 msgstr "Senden"
 
-#: plugin_contact_page/plugin_contact_page.php:129
+#: plugin_contact_page/plugin_contact_page.php:132
 msgid "Required fields"
 msgstr "Erforderliche Felder"
 
-#: plugin_contact_page/plugin_contact_page.php:133
+#: plugin_contact_page/plugin_contact_page.php:136
 msgid "The Mail was sent."
 msgstr "Die Nachricht wurde gesendet."
 

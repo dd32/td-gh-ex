@@ -3,16 +3,13 @@
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
 	<h2 class="title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s', 'theme'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h2>
 	
-	
   <?php If ($post->post_type == 'post') : ?>
     <div class="postmetadata top">
       <div class="postdate"><?php the_time(_c('F jS, Y|Date format of a post', 'theme')) ?></div>
       <div class="postauthor"><?php the_author_posts_link() ?></div>
     </div>
   <?php EndIf; ?>
-  
-  
-  
+
   <div class="entry">
     <?php If ( !is_singular() && Get_Theme_Setting('use_excerpts') ) : ?>
       <?php If (List($attachment) = theme_functions::get_post_preview_image()) : ?>

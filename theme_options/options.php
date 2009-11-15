@@ -64,7 +64,7 @@ Class Theme_Settings {
         <h2><?php _e('Like this theme?', 'theme') ?></h2>
 				<p><?php _e('Why not do any of the following:', 'theme') ?></p>
 				<ol>
-          <li><?php PrintF(__('<a href="%s">Link to it</a> so other folks can find out about it.', 'theme'), 'http://be-berlin.wpthemedemo.mediaconceptgroup.com') ?></li>
+          <li><?php PrintF(__('<a href="%s">Link to it</a> so other folks can find out about it.', 'theme'), 'http://dennishoppe.de/artikel/126/wordpress-theme-be-berlin') ?></li>
           <li><?php _e('Give it a good rating on Theme directories, so others will find it more easily too!', 'theme') ?></li>
           <li><?php _e('Donate a token of your appreciation:', 'theme') ?>
             <ol>
