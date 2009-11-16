@@ -1,0 +1,389 @@
+/*
+Theme Name: Beardsley
+Theme URI: http://wordpress.org/
+Description: Black and white art nouveau theme borrowing graphics from the work of Aubrey Beardsley, with a rotating bottom corner background.
+Version: 1.0
+Author: Sash Lewis
+Author URI: http://sashlewis.blogspot.com/
+Tags: black, white, fixed-width, two-columns
+
+	The CSS, XHTML and design is released under GPL:
+	http://www.opensource.org/licenses/gpl-license.php
+	
+	The Parisian font embedded in this theme is by George Wilson, and is distributed under OFL (the Open Font License).
+	Download Parisian here:
+	http://www.fontspace.com/george-williams/parisian
+	Read the Open Font License here:
+	http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
+	
+
+*/
+
+/* Code to embed Parisian font for Internet Explorer and other browsers. */
+@font-face {
+font-family: Parisian;
+src: url(fonts/Parisian.eot); /* IE */
+src: local(Parisian), url(fonts/Parisian.ttf); /* Non-IE */
+}
+
+body {
+font-size: 10px;
+background: #000;
+color: #000;
+font-family: arial, sans-serif;
+}
+
+body a, a:visited {
+text-decoration: underline;
+color: #000;
+}
+
+body a:hover {
+text-decoration: none;
+}
+
+div.wrapper {
+background: #000 url("images/corners/corner.php");
+background-repeat: no-repeat;
+background-position: bottom left;
+margin: auto;
+width: 110em;
+padding-bottom: 13em;
+}
+
+div.header {
+min-height: 10em;
+padding-top: 10em;
+background: #000 url("images/header.png");
+background-repeat: no-repeat;
+background-position: top center;
+color: #FFF;
+text-align: center;
+}
+
+div.pagetop {
+min-height: 8em;
+width: 95em;
+margin: auto;
+background: #000 url("images/pagetop.png");
+background-repeat: no-repeat;
+background position: top center;
+}
+
+
+
+div.header a, div.header a:visited, div.header a:hover {
+color: #FFF;
+text-decoration: none;
+}
+
+div.page {
+margin: auto;
+width: 75em;
+min-height: 80em;
+background: url("images/sides.png");
+background-repeat: repeat-y;
+background-position: center;
+}
+
+
+div.narrowcolumn {
+width: 49em;
+float: left;
+padding-top: 1.5em;
+padding-left: 4.5em;
+padding-right: 1.5em;
+}
+
+div.widecolumn {
+width: 66em;
+float: left;
+padding-top: 1.5em;
+padding-left: 4.5em;
+padding-right: 1.5em;
+}
+
+
+div.sidebar {
+padding-right: 4em;
+padding-left: 2em;
+margin-top: 2em;
+padding-bottom: 12em;
+float: right;
+width: 13.5em;
+background: url("images/sidebarflower.png") bottom left;
+background-repeat: no-repeat;
+color: #000;
+min-height: 16em;
+}
+
+div.sidebar ul li {
+list-style-image: none;
+}
+
+
+div.sidebar ul {
+margin: 0em;
+padding: 0em;
+list-style-type: none;
+}
+
+div.sidebar ul ul li {
+margin-left: 1em;
+padding: 0em;
+}
+
+div.bottom {
+width: 75em;
+height: 1.5em;
+background: #000 url("images/bottom.png");
+background-repeat: no-repeat;
+margin: auto;
+color: #FFF;
+padding-top: 4em;
+text-align: right;
+}
+
+div.bottom a:link, div.bottom a:visited {
+color: #FFF;
+text-decoration: underline;
+}
+
+div.bottom a:hover {
+text-decoration: none;
+}
+
+
+div.entry {
+padding-bottom: 1.5em;
+width: 47em;
+min-height: 15em;
+}
+
+div.singleentry {
+width: 52em;
+margin: auto;
+background: url("images/signature.png");
+background-position: top left;
+background-repeat: no-repeat;
+padding-left: 10em;
+padding-right: 3em;
+padding-bottom: 1em;
+padding-top: 3em;
+min-height: 40em;
+}
+
+div.singleentrybottom {
+width: 52em;
+background: url("images/signature.png");
+background-position: bottom left;
+background-repeat: no-repeat;
+height: 20em;
+padding-left: 10em;
+padding-right: 3em;
+margin: auto;
+}
+
+div.lost {
+width: 60em;
+margin: auto;
+min-height: 80em;
+text-align: center;
+}
+
+div.expander {
+clear: both;
+height: 3em;
+}
+
+div.singlenavigation {
+width: 52em;
+padding-left: 10em;
+padding-right: 3em;
+margin: auto;
+}
+
+div.navigation {
+width: 100%;
+}
+
+div.postmetadata {
+border-top: 0.1em dotted #666;
+margin-top: 2.5em;
+}
+
+.alignleft {
+float: left;
+}
+
+.alignright {
+float: right;
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+h1 {
+font-family: Parisian, Times New Roman, serif;
+font-size: 50px;
+color: #000;
+}
+
+h2, h3, h4, h5, h6 {
+font-family: Georgia, Cambria, Times New Roman, serif;
+}
+
+.headtitle {
+font-family: Parisian, Times New Roman, serif;
+font-size: 80px;
+color: #FFF;
+}
+
+h2 {
+font-size: 20px;
+line-height: 24px;
+}
+
+h3 {
+font-size: 14px;
+line-height: 16px;
+}
+
+h4 {
+font-size: 1.2em;
+padding-top: 10px;
+padding-bottom: 10px;
+font-style: italic;
+}
+
+p {
+font-size: 12px;
+line-height: 20px;
+}
+
+small {
+font-size: 10px;
+line-height: 16px;
+color: #444;
+}
+
+small a, small a:link, small a:visited, small a:hover {
+color: #444;
+}
+
+
+ul {
+list-style-type: disc;
+list-style-image: url("images/bullet.png");
+}
+
+li {
+font-size: 12px;
+line-height: 19px;
+}
+
+
+.wp-caption {
+background: #000;
+margin: 1em;
+border: 0.1em solid #000;
+padding: 0.5em;
+text-align: center;
+}
+
+.wp-caption-text {
+color: #FFF;
+padding: 0.5em;
+font-size: 10px;
+line-height: 12px;
+text-align: left;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption-dd {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
+
+.gallery-caption {
+color: #000;
+padding-top: 1em;
+}
+
+
+div.hr {
+display: block;
+height: 2.6em;
+background: url("images/hr.png");
+background-position: center;
+width: 100%;
+margin: auto;
+background-repeat: repeat-x;
+background-position: center;
+}
+
+
+div.commentswrapper {
+width: 52em;
+margin: auto;
+background: url("images/commentsside.png");
+background-position: left;
+background-repeat: repeat-y;
+padding-left: 10em;
+padding-right: 3em;
+padding-bottom: 1em;
+padding-top: 3em;
+overflow: hidden;
+}
+
+div.comments {
+padding: 1em;
+}
+
+
+img {
+max-width: 100%;
+}
+
+blockquote {
+background: url("images/blockquote.png");
+background-position: bottom left;
+background-repeat: no-repeat;
+padding-left: 1.5em;
+margin-left: 1.5em;
+}
+
+#searchform {
+font-family: Georgia, Cambria, Times New Roman, serif;
+margin-top: 1em;
+}
+
+#s {
+width: 12em;
+margin-bottom: 0.5em;
+border: 0.1em solid #555;
+}
+
+#comment {
+
+width: 40em;
+border: 0.1em solid #666;
+}
+
+#author, #email, #url {
+padding-left: 0.3em;
+font-family: Georgia, Cambria, Times New Roman, serif;
+width: 15em;
+border: 0.1em solid #666;
+}
