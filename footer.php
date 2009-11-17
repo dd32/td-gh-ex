@@ -9,7 +9,7 @@
 </div>
 
 <div class="bottom">
-Powered by <a href="http://wordpress.org/">Wordpress</a>. Theme by <a href="http://sashlewis.blogspot.com/">Sash Lewis</a>.
+Powered by <a href="http://wordpress.org/">WordPress</a>. Theme by <a href="http://sashlewis.blogspot.com/">Sash Lewis</a>.
 </div>
 
 
