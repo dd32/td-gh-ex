@@ -1,8 +1,8 @@
 /*
 
 Theme Name: Beardsley
-Description: Black and white art nouveau theme borrowing graphics from the work of Aubrey Beardsley, with a rotating bottom corner background.
-Version: 1.1
+Description: A black and white art nouveau theme. Graphics are taken from the work of Aubrey Beardsley, the famous British illustrator associated with Oscar Wilde, among others. Try reloading the page to see a new border in the bottom corner of the page, from Beardsley’s illuminations for the 1893 Dent edition of Mallory’s 'King Arthur'.
+Version: 1.1.1
 Author: Sash Lewis
 Author URI: http://sashlewis.blogspot.com/
 Tags: black, white, fixed-width, two-columns
@@ -316,6 +316,16 @@ text-align: left;
 	line-height: 17px;
 	padding: 0 4px 5px;
 	margin: 0;
+}
+
+.gallery img {
+padding: 1px;
+background: #000;
+}
+
+img {
+     padding: 3px;
+     background: #000;
 }
 
 .gallery-caption {
