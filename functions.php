@@ -46,7 +46,7 @@ function sp_byline_hcard()
 	global $wpdb, $authordata;
 
 	echo '<span class="entry-author author vcard"><a class="url fn" href="' .
-		get_author_link(false, $authordata->ID, $authordata->user_nicename) .
+		get_author_posts_url($authordata->ID, $authordata->user_nicename) .
 		'" title="' . __('More posts by', 'simplish') . ' ' .
 		$authordata->display_name .
 		'">' .
@@ -64,9 +64,10 @@ function sp_author_hcard($size)
 {
 	global $wpdb, $authordata;
 
-	$email = get_the_author_email();
+	$email = get_the_author_meta('email');
 	$avatar = str_replace( "class='avatar", "class='photo avatar", get_avatar($email, $size) );
-	if($authordata->user_description !=''){
+	$note = '';
+	if(isset($authordata->user_description)){
 		$note = '<span class="note">' .
 		apply_filters('archive_meta', $authordata->user_description) .
 		'</span>';
@@ -74,7 +75,7 @@ function sp_author_hcard($size)
 	echo '<span class="author vcard">' .
 		$avatar .
 		'<a class="url fn" rel="me" title="' .
-		get_the_author() . ' ' . __('home page', 'simplish') . '" href="' . get_the_author_url() . '">'
+		get_the_author() . ' ' . __('home page', 'simplish') . '" href="' . get_the_author_meta('url') . '">'
 		. get_the_author() .
 		'</a>' .
 		$note .
