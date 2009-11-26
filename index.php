@@ -30,7 +30,7 @@
 							<?php endif; ?>
 							<li>
 								<div class="navigation">
-			            			<?php if (function_exists('wp_link_pages()')): echo "exists"; ?>
+			            			<?php if (function_exists('wp_link_pages()')): ?>
 			            			<?php	wp_link_pages(); ?>
 									<?php else: ?>
 									<div class="fl"><?php next_posts_link(__('&laquo; Older Entries', 'default')) ?></div>
