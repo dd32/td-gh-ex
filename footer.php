@@ -32,7 +32,6 @@
 		</ul>
 
 		<div id="footer-info">
-			<?php /* don't remove the credits please */ ?>
 			<?php bloginfo('name'); ?> is powered by <a href="http://www.wordpress.org/" target="_blank">WordPress</a> using theme <a href="http://frostpress.com/themes/artemis/" target="_blank">Artemis</a><?php wp_footer(); ?>
 		</div>
 
