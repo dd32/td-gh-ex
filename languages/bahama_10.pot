@@ -1,0 +1,401 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR MommyPress
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/bahama_10\n"
+"POT-Creation-Date: 2009-10-30 19:58-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: 404.php:15
+msgid "Not Found, Error 404"
+msgstr ""
+
+#: 404.php:16
+msgid ""
+"The page you are looking for no longer exists. Perhaps you can return back "
+"to the site's"
+msgstr ""
+
+#: 404.php:16
+msgid "homepage"
+msgstr ""
+
+#: 404.php:16
+msgid "and see if you can find what you are looking for."
+msgstr ""
+
+#: archive.php:24 author.php:24 index.php:24 search.php:24 single.php:24
+#: tag.php:24
+msgid "Posted by"
+msgstr ""
+
+#: archive.php:24 author.php:24 comments.php:22 index.php:24 search.php:24
+#: single.php:24 tag.php:24
+msgid "Leave a Comment"
+msgstr ""
+
+#: archive.php:24 author.php:24 index.php:24 search.php:24 single.php:24
+#: tag.php:24
+msgid "1 Comment"
+msgstr ""
+
+#: archive.php:24 author.php:24 index.php:24 search.php:24 single.php:24
+#: tag.php:24
+msgid "% Comments"
+msgstr ""
+
+#: archive.php:24 author.php:24 index.php:24 page.php:19 page_full.php:21
+#: search.php:24 single.php:24 tag.php:24
+msgid "(Edit)"
+msgstr ""
+
+#: archive.php:27 author.php:27 index.php:27 search.php:27 tag.php:27
+msgid "Read more of this post"
+msgstr ""
+
+#: archive.php:32 author.php:32 index.php:32 search.php:32 single.php:37
+#: tag.php:32
+msgid "Tagged with"
+msgstr ""
+
+#: archive.php:39 author.php:39 index.php:39 page.php:26 page_full.php:25
+#: search.php:39 single.php:49 tag.php:39
+msgid "Sorry, no posts matched your criteria."
+msgstr ""
+
+#: archive.php:42 author.php:42 index.php:42 search.php:42 single.php:50
+#: tag.php:42
+msgid "&laquo; Previous Page"
+msgstr ""
+
+#: archive.php:42 author.php:42 index.php:42 search.php:42 single.php:50
+#: tag.php:42
+msgid "Next Page &raquo;"
+msgstr ""
+
+#: breadcrumb.php:1 header.php:46
+msgid "Home"
+msgstr ""
+
+#: comments.php:12
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#: comments.php:23
+msgid "No Responses"
+msgstr ""
+
+#: comments.php:23
+msgid "One Response"
+msgstr ""
+
+#: comments.php:23
+msgid "% Responses"
+msgstr ""
+
+#: comments.php:23
+msgid "to"
+msgstr ""
+
+#: comments.php:32
+msgid "Trackbacks"
+msgstr ""
+
+#: comments.php:33
+msgid "Check out what others are saying about this post..."
+msgstr ""
+
+#: comments.php:46
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:57
+msgid "Speak Your Mind"
+msgstr ""
+
+#: comments.php:58
+msgid "Tell us what you're thinking..."
+msgstr ""
+
+#: comments.php:58
+msgid ""
+"and oh, if you want a pic to show with your comment, go get a <a rel="
+"\"nofollow\" href=\"http://en.gravatar.com\" >gravatar</a>!"
+msgstr ""
+
+#: comments.php:65
+msgid "You must be"
+msgstr ""
+
+#: comments.php:65
+msgid "logged in"
+msgstr ""
+
+#: comments.php:65
+msgid "to post a comment"
+msgstr ""
+
+#: comments.php:72
+msgid "Logged in as"
+msgstr ""
+
+#: comments.php:72
+msgid "Log out of this account"
+msgstr ""
+
+#: comments.php:72
+msgid "Log out &raquo;"
+msgstr ""
+
+#: comments.php:77
+msgid "Name"
+msgstr ""
+
+#: comments.php:77 comments.php:80
+msgid "(required)"
+msgstr ""
+
+#: comments.php:80
+msgid "Mail (will not be published)"
+msgstr ""
+
+#: comments.php:83
+msgid "Website"
+msgstr ""
+
+#: comments.php:91
+msgid "Submit Comment"
+msgstr ""
+
+#: footer.php:8
+msgid "Return to top of page"
+msgstr ""
+
+#: footer.php:11 header.php:61
+msgid "Posts"
+msgstr ""
+
+#: footer.php:12 header.php:62 single.php:54
+msgid "Comments"
+msgstr ""
+
+#: footer.php:12
+msgid "Powered by"
+msgstr ""
+
+#: footer.php:12
+msgid "Copyright"
+msgstr ""
+
+#: footer.php:12
+msgid "All Rights Reserved"
+msgstr ""
+
+#: functions.php:86
+msgid "Read More"
+msgstr ""
+
+#: page.php:18 page_full.php:20 single.php:27
+msgid "Read more"
+msgstr ""
+
+#: page_archive.php:21
+msgid "Site Archives"
+msgstr ""
+
+#: page_archive.php:25
+msgid "by page:"
+msgstr ""
+
+#: page_archive.php:30
+msgid "by month:"
+msgstr ""
+
+#: page_archive.php:35
+msgid "by category:"
+msgstr ""
+
+#: page_archive.php:44
+msgid "by author:"
+msgstr ""
+
+#: page_archive.php:49
+msgid "by post:"
+msgstr ""
+
+#: sidebar.php:13
+msgid "Search for:"
+msgstr ""
+
+#: sidebar.php:21
+msgid "Categories"
+msgstr ""
+
+#: sidebar.php:36
+msgid "Recent Posts"
+msgstr ""
+
+#: sidebar.php:43 sidebar_alt.php:8
+msgid "Archives"
+msgstr ""
+
+#: sidebar.php:50 sidebar_alt.php:15
+msgid "Blogroll"
+msgstr ""
+
+#: sidebar.php:57 sidebar_alt.php:22
+msgid "Meta"
+msgstr ""
+
+#: single.php:43
+msgid "About"
+msgstr ""
+
+#: tools/breadcrumbs.php:10
+msgid "You are here:"
+msgstr ""
+
+#: tools/breadcrumbs.php:11
+msgid "Archives for"
+msgstr ""
+
+#: tools/breadcrumbs.php:12
+msgid "Search for"
+msgstr ""
+
+#: tools/enews.php:42 tools/twitter.php:40
+msgid "Title"
+msgstr ""
+
+#: tools/enews.php:47
+msgid "Text To Show"
+msgstr ""
+
+#: tools/enews.php:52
+msgid "Google/Feedburner ID"
+msgstr ""
+
+#: tools/theme-options.php:37 tools/theme-options.php:53
+#: tools/theme-options.php:56 tools/theme-options.php:61
+msgid "Theme Options"
+msgstr ""
+
+#: tools/theme-options.php:53
+msgid "RESET TO DEFAULTS"
+msgstr ""
+
+#: tools/theme-options.php:56
+msgid "SAVED"
+msgstr ""
+
+#: tools/theme-options.php:70
+msgid "Bahama Theme Style"
+msgstr ""
+
+#: tools/theme-options.php:72
+msgid "Select the stylesheet you want to use:"
+msgstr ""
+
+#: tools/theme-options.php:78
+msgid "Blog Layout"
+msgstr ""
+
+#: tools/theme-options.php:80
+msgid "Select from the following:"
+msgstr ""
+
+#: tools/theme-options.php:82
+msgid "Sidebar/Content"
+msgstr ""
+
+#: tools/theme-options.php:83
+msgid "Content/Sidebar"
+msgstr ""
+
+#: tools/theme-options.php:84
+msgid "Sidebar/Content/Sidebar"
+msgstr ""
+
+#: tools/theme-options.php:90
+msgid "Analytics/Stat Tracker Code"
+msgstr ""
+
+#: tools/theme-options.php:92
+msgid "Do you want to include analytics/stat tracker code?"
+msgstr ""
+
+#: tools/theme-options.php:98
+msgid "Enter your analytics/stat tracker code:"
+msgstr ""
+
+#: tools/theme-options.php:104
+msgid "Save Settings"
+msgstr ""
+
+#: tools/theme-options.php:105
+msgid "Reset Settings"
+msgstr ""
+
+#: tools/twitter.php:45
+msgid "Twitter Username"
+msgstr ""
+
+#: tools/twitter.php:50
+msgid "Number of Tweets to Show"
+msgstr ""
+
+#: tools/write-panel.php:23 tools/write-panel.php:24
+msgid "SEO Options"
+msgstr ""
+
+#: tools/write-panel.php:37
+msgid ""
+"<strong>Enter a custom title tag:<br /></strong> (The title of your post "
+"will be shown in the <code>&lt;title&gt;</code> tag if you leave this blank)"
+msgstr ""
+
+#: tools/write-panel.php:40
+msgid ""
+"<strong>Enter keywords that describe your post: (separate by a comma)<br /></"
+"strong> (The keywords you enter will be shown in the <code>&lt;meta&gt;</"
+"code> section of the site's header)"
+msgstr ""
+
+#: tools/write-panel.php:43
+msgid ""
+"<strong>Enter your post description:<br /></strong> (Here's a great way to "
+"use <code>&lt;meta&gt;</code> tag to show the search engines what your post "
+"is all about)"
+msgstr ""
+
+#. Theme Name of an extension
+msgid "Bahama"
+msgstr ""
+
+#. Description of an extension
+msgid "Bahama is a 2 or 3-column Widget-ready theme created for WordPress."
+msgstr ""
+
+#. Author of an extension
+msgid "MommyPress"
+msgstr ""
+
+#. Author URI of an extension
+msgid "http://mommypress.com"
+msgstr ""
+
+#. Tags of an extension
+msgid ""
+"blue, white, two-columns, three-columns, left-sidebar, right-sidebar, fixed-"
+"width, theme-options, threaded-comments, sticky-post, translation-ready"
+msgstr ""

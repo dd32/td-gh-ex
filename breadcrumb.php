@@ -1,0 +1,1 @@
+<?php sp_breadcrumb(__('Home', 'studiopress'), '/','<div class="breadcrumb">','</div>'); ?>
