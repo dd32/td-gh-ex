@@ -5,15 +5,11 @@
 		<li class="widget recent">
 			<ul class="tabs">
 				<li><a class="active" href="#tab-comments">Comments</a></li>
-				<li><a href="#tab-popular">Popular</a></li>
 				<li><a href="#tab-categories">Categories</a></li>
 				<li><a href="#tab-tags">Tags</a></li>
 			</ul>
 			<ul id="tab-comments">
-				<?php dp_recent_comments(6); ?>
-			</ul>
-			<ul id="tab-popular">
-				<?php mdv_most_commented('10'); ?>
+				<?php dp_recent_comments(); ?>
 			</ul>
 			<ul id="tab-categories">
 				<?php wp_list_categories('sort_column=name&title_li=&show_count=1&hierarchical=0'); ?>

@@ -79,77 +79,41 @@ function wp_pagenavi($before = '', $after = '', $prelabel = '', $nxtlabel = '', 
 /* 
 Plugin Name: Recent Comments 
 Plugin URI: http://mtdewvirus.com/code/wordpress-plugins/ 
+
+Modified by Frostpress using WP's get_comments
 */ 
 
-function dp_recent_comments($no_comments = 10, $comment_len = 43) { 
-    global $wpdb; 
-	
-	$request = "SELECT * FROM $wpdb->comments";
-	$request .= " JOIN $wpdb->posts ON ID = comment_post_ID";
-	$request .= " WHERE comment_approved = '1' AND post_status = 'publish' AND post_password ='' AND comment_type = ''"; 
-	$request .= " ORDER BY comment_date DESC LIMIT $no_comments"; 
+function dp_recent_comments() { 
+
+	$comment_len = 43;
 		
-	$comments = $wpdb->get_results($request);
-		
+	$comments = get_comments('number=6');
+
 	if ($comments) { 
 		foreach ($comments as $comment) { 
-			ob_start();
+			//ob_start();
 			?>
 				<li>
 					<div class="tab-comments-avatar"><?php echo get_avatar($comment,$size='40' ); ?></div>
 					<div class="tab-comments-text">
-						<a href="<?php echo get_permalink( $comment->comment_post_ID ) . '#comment-' . $comment->comment_ID; ?>"><?php echo dp_get_author($comment); ?>:</a>
+						<a href="<?php echo get_permalink( $comment->comment_post_ID ) . '#comment-' . $comment->comment_ID; ?>"><?php echo $comment->comment_author; ?>:</a>
 						<?php echo strip_tags(substr(apply_filters('get_comment_text', $comment->comment_content), 0, $comment_len)); ?>...
 					</div>
 				</li>
 			<?php
-			ob_end_flush();
+			//ob_end_flush();
 		} 
 	} else { 
 		echo "<li>No comments</li>";
 	}
 }
 
-function dp_get_author($comment) {
-	$author = "";
-
-	if ( empty($comment->comment_author) )
-		$author = __('Anonymous');
-	else
-		$author = $comment->comment_author;
-		
-	return $author;
-}
 
 
-/* 
-Plugin Name: Most Commented 
-Plugin URI: http://mtdewvirus.com/code/wordpress-plugins/ 
-*/ 
+/*
+custom comment design
+*/
 
-function mdv_most_commented($no_posts = 10, $before = '<li>', $after = '</li>', $show_pass_post = false) { 
-    global $wpdb; 
-        $request = "SELECT ID, post_title, COUNT($wpdb->comments.comment_post_ID) AS 'comment_count' FROM $wpdb->posts, $wpdb->comments"; 
-        $request .= " WHERE comment_approved = '1' AND $wpdb->posts.ID=$wpdb->comments.comment_post_ID AND post_status = 'publish' AND post_type = 'post'"; 
-        if(!$show_pass_post) $request .= " AND post_password =''"; 
-        $request .= " GROUP BY $wpdb->comments.comment_post_ID ORDER BY comment_count DESC LIMIT $no_posts"; 
-    $posts = $wpdb->get_results($request); 
-    $output = ''; 
-        if ($posts) { 
-                foreach ($posts as $post) { 
-                        $post_title = stripslashes($post->post_title); 
-                        $comment_count = $post->comment_count; 
-                        $permalink = get_permalink($post->ID); 
-                        $output .= $before . '<a href="' . $permalink . '" title="' . $post_title.'">' . $post_title . '</a>' /*. $comment_count */.'' . $after; 
-                } 
-        } else { 
-                $output .= $before . "None found" . $after; 
-        } 
-    echo $output; 
-} 
-
-
-/* custom comment design */
 function sepcomments($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
 

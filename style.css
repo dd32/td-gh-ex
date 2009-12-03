@@ -2,7 +2,7 @@
 Theme Name: Artemis
 Theme URI: http://frostpress.com/themes/artemis/
 Description: Two-column theme with widget placement in both in a sidebar and at the bottom, with a soft blend of blue, white and sand colors. Widget in the sidebar with tabbed lists of recent comments, popular posts, categories and tags saves a lot of space.
-Version: 1.1.1
+Version: 1.1.2
 Author: Frostpress
 Author URI: http://frostpress.com
 Tags: light, white, blue, two-columns, right-sidebar, fixed-width, threaded-comments, sticky-post
@@ -16,7 +16,7 @@ This theme is released under GPL (http://www.opensource.org/licenses/gpl-3.0.htm
 	body { margin:0px; padding:0px; background-color:#364252; font-size:13px; line-height:170%; color:#444444; font-family:Verdana, Arial, Helvetica, sans-serif; }
 	a { color:#BE4B29; text-decoration:none; outline:none; }
 	a:hover { text-decoration:none; color:#E19179; }
-	blockquote { padding:1px 10px 1px 10px; margin:10px 0px 10px 0px; background-color:#EFEFEF; }
+	blockquote { padding:1px 10px 1px 10px; margin:10px 0px 10px 10px; background-color:#EFEFEF; }
 	blockquote blockquote { background-color:#E1E1E1; display:inline-block; }
 	pre { padding:5px 10px 5px 10px; margin:10px 0px 10px 0px; background-color:#F2F2F2; line-height:160%; overflow:auto; }
 	input, select, textarea { padding:6px; background:#FFFFFF url('images/search-box.gif') left top repeat-x; border:solid 1px #CCCCCC; font:normal 13px/100% Verdana, Arial, Helvetica, sans-serif; color:#666666; }
@@ -62,7 +62,7 @@ This theme is released under GPL (http://www.opensource.org/licenses/gpl-3.0.htm
 		.post-title h1 span { color:#BFBFBF; font-size:20px; text-transform:uppercase; }
 		.post-date { display:inline-block; background-color:#F1EEEB; padding:1px 6px 1px 6px; }
 		.post-categories { }
-		.post-author { display:none; }
+		.post-author { /*display:none;*/ }
 
 	.post-text { overflow:hidden; }
 		.post-text img { border:solid 4px #E9E4E0; }
@@ -121,11 +121,11 @@ This theme is released under GPL (http://www.opensource.org/licenses/gpl-3.0.htm
 	.recent ul { list-style:none; margin:0px; padding:0px; }
 	.recent ul li { margin-bottom:4px; background-color:#E7E4E2; width:100%; padding:5px 10px 5px 10px; overflow:hidden; }
 
-	#tab-comments li { overflow:hidden; }
 	#tab-comments { margin:0px; padding:0px; }
 	.tab-comments-avatar { float:left; overflow:hidden; margin:3px 10px 3px 0px; }
 	.tab-comments-text { float:left; overflow:hidden; width:230px; }
-	#tab-popular li a, #tab-categories li a { background:url('images/dot.gif') left 5px no-repeat; padding-left:17px; }
+	#tab-comments li { overflow:hidden; }
+	#tab-categories li a { background:url('images/dot.gif') left 5px no-repeat; padding-left:17px; }
 
 /* navigation + search */
 	.navigation { overflow:hidden; background-color:#E8E4E1; }

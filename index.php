@@ -13,6 +13,7 @@
 					<?php edit_post_link('Edit Post', '<span class="alignright">', '</span>'); ?>
 					<span class="post-date"><?php the_time('j M, Y'); ?></span>
 					<span class="post-categories">in <?php the_category(', ') ?></span>
+					<span class="post-author">by <?php the_author_posts_link() ?></span>
 				</div>
 				<?php the_excerpt(); ?>
 			</div>
