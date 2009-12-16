@@ -11,7 +11,7 @@
 
 		
 		<div class="lost">
-        <img src="<?php bloginfo('stylesheet_directory'); ?>/images/bertholdy.png" />
+        <img src="<?php bloginfo('stylesheet_directory'); ?>/images/bertholdy.png" style="background: #FFF;"/>
         <div class="expander"></div>
         Sorry, but you are looking for something that isn't here.
 		<?php get_search_form(); ?>
