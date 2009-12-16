@@ -40,7 +40,7 @@ function wp_pagenavi($before = '', $after = '', $prelabel = '', $nxtlabel = '', 
 	}
 	$half_pages_to_show = round($pages_to_show/2);
 	if (!is_single()) {
-		if(!is_category()) {
+		if(!is_category() && !is_tag()) {
 			preg_match('#FROM\s(.*)\sORDER BY#siU', $request, $matches);		
 		} else {
 			preg_match('#FROM\s(.*)\sGROUP BY#siU', $request, $matches);		

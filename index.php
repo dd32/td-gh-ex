@@ -37,7 +37,7 @@
 					<span class="post-author">by <?php the_author_posts_link() ?></span>
 				</div>
 				<?php the_content('<p><b>Continue Reading &raquo;</b></p>'); ?>
-				<b><?php wp_link_pages(); ?></b>
+				<div class="post-pages"><?php wp_link_pages('before=<div class="post-pages">Pages:&after=</div>&next_or_number=number&pagelink=<span>%</span>'); ?></div>
 			</div>
 			<div class="post-foot">
 				<?php comments_popup_link('0&nbsp;Comments', '1&nbsp;Comment', '%&nbsp;Comments','comments-link',''); ?>

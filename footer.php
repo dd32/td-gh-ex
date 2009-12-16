@@ -15,8 +15,7 @@
 		<div id="search">
 			<?php include (TEMPLATEPATH . '/searchform.php'); ?>
 		</div>
-		<div class="alignleft"><h4><?php next_posts_link('&laquo; Older Posts') ?></h4></div>
-		<div class="alignright"><h4><?php previous_posts_link('Newer Posts &raquo;') ?></h4></div>
+		<?php if (function_exists('wp_pagenavi')) { ?><?php wp_pagenavi(); ?><?php } ?>
 	</div>
 </div>
 
