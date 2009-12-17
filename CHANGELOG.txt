@@ -1,3 +1,6 @@
+version 1.0.9 (released 17/12/2009)
+   * Added Dutch language.
+
 version 1.0.8 (released 08/12/2009)
    * Added Turkish language.
 
