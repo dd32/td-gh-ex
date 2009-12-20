@@ -89,7 +89,7 @@
         <?php printf(__('You can use these tags: %s'),allowed_tags())?></small>   
     </p>     
     <p> 
-      <input type="submit" id="submit" tabindex="5" value="<?php echo esc_attr_e('Submit Comment'); ?>" />      
+      <input type="submit" id="submit" tabindex="5" value="<?php esc_attr_e('Submit Comment'); ?>" />      
       <input type="hidden" name="comment_post_ID" value="<?php echo $id?>" />  
     </p>  
     <?php do_action('comment_form',$post->ID)?>
