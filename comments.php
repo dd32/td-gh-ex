@@ -1,4 +1,9 @@
-<?php if (!empty($_SERVER['SCRIPT_FILENAME'])&& 'comments.php'==basename($_SERVER['SCRIPT_FILENAME']) )
+<?php
+/**
+ * @package WordPress
+ * @subpackage Classic_Theme
+ */
+ if (!empty($_SERVER['SCRIPT_FILENAME'])&& 'comments.php'==basename($_SERVER['SCRIPT_FILENAME']) )
             die('Please do not load this page directly. Thanks!');
     if(!empty($post->post_password)){
         if($_COOKIE['wp-postpass_'.COOKIEHASH]!=$post->post_password ){?>
@@ -11,7 +16,7 @@
 <?php if(get_comments_number()>0): ?>
 <h3 class="commentstitle">
   <?php _e('Comments')?></h3>
-<?php endif;if($comments):?>
+<?php endif;if(comments_open()):?>
 <ol class="comment-list">  
   <?php foreach($comments as $comment): ?>  
   <?php  $ctype=get_comment_type(); if ($ctype=='comment'){ ?>  
@@ -62,19 +67,19 @@
       <div class="formbox">        <small>
           <?php _e('Name');if($req) _e('(required)')?></small><br />        
         <label for="author">
-          <input type="text" name="author" id="author" value="<?php echo $comment_author?>" size="24" tabindex="1" />
+          <input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author);?>" size="24" tabindex="1" />
         </label>    
       </div>    
       <div class="formbox">        <small>
           <?php _e('Mail (will not be published)');if($req) _e('(required)')?></small><br />        
         <label for="email">
-          <input type="text" name="email" id="email" value="<?php echo $comment_author_email?>" size="24" tabindex="2" />
+          <input type="text" name="email" id="email" value="<?php echo esc_attr($comment_author_email)?>" size="24" tabindex="2" />
         </label>    
       </div>    
       <div class="formbox">        <small>
           <?php _e('Website')?></small><br />        
         <label for="url">
-          <input type="text" name="url" id="url" value="<?php echo $comment_author_url?>" size="24" tabindex="3" />
+          <input type="text" name="url" id="url" value="<?php echo esc_attr($comment_author_url)?>" size="24" tabindex="3" />
         </label>    
       </div>   
     </div>
@@ -84,7 +89,7 @@
         <?php printf(__('You can use these tags: %s'),allowed_tags())?></small>   
     </p>     
     <p> 
-      <input type="submit" id="submit" tabindex="5" value="<?php echo attribute_escape(__('Submit Comment') )?>" />      
+      <input type="submit" id="submit" tabindex="5" value="<?php echo esc_attr_e('Submit Comment'); ?>" />      
       <input type="hidden" name="comment_post_ID" value="<?php echo $id?>" />  
     </p>  
     <?php do_action('comment_form',$post->ID)?>

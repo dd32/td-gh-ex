@@ -1,4 +1,9 @@
-<?php /* Template Name: Free Template
+<?php 
+/**
+  * @package WordPress
+  * @subpackage A_Theme
+*/
+/* Template Name: Free Template
 */ get_header()?>
 <div  class="post">    
   <?php if(have_posts()):while(have_posts()):the_post() ?>              

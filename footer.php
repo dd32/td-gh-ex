@@ -1,4 +1,9 @@
-</div><!-- center -->
+<?php
+/**
+  * @package WordPress
+  * @subpackage A_Theme
+*/
+?></div><!-- center -->
 <div id="footer">
       <a href="<?php bloginfo('url')?>"><?php echo get_the_time('Y')?> &copy; <?php bloginfo('name')?></a>
       <a href="http://wordpress.org/" title="<?php _e('Powered by Wordpress, state-of-the-art semantic personal publishing platform.')?>">WP</a>

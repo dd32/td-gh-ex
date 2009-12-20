@@ -1,4 +1,9 @@
-<?php /* Template Name: Tag Cloud
+<?php 
+/**
+  * @package WordPress
+  * @subpackage A_Theme
+*/
+/* Template Name: Tag Cloud
 */ get_header()?>
 <div id="content" class="post">
   <h2 class="post-title"><?php _e('Tags:')?></h2>

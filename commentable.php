@@ -1,4 +1,9 @@
-<?php /* Template Name: Commentable
+<?php 
+/**
+ * @package WordPress
+ * @subpackage Classic_Theme
+ */
+/* Template Name: Commentable
 */ get_header()?>
 <div id="content">
     <?php if(have_posts()):while(have_posts()):the_post() ?>

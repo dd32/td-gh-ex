@@ -1,4 +1,9 @@
-<?php /* Template Name: Sitemap
+<?php
+/**
+  * @package WordPress
+  * @subpackage A_Theme
+*/
+ /* Template Name: Sitemap
 */ get_header()?>
 <div id="content"><div class="post">
     <ul id="mapc"><?php wp_list_categories('title_li=<h2 class="widgettitle">'.__('Categories'). '</h2>')?></ul>

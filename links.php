@@ -1,4 +1,9 @@
-<?php /* Template Name: Links
+<?php 
+/**
+  * @package WordPress
+  * @subpackage A_Theme
+*/
+/* Template Name: Links
 */ get_header()?>
 <div id="content">
   <h2 class="post-title"><?php _e('Links')?></h2>

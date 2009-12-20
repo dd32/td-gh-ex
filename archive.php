@@ -1,4 +1,9 @@
-<?php get_header()?>
+<?php
+/**
+ * @package WordPress
+ * @subpackage Classic_Theme
+ */
+ get_header()?>
 <div id="content">  
   <div class="widgettitle">    
     <?php if(have_posts()) :$post=$posts[0]; ?>    

@@ -1,4 +1,9 @@
-<?php /* Template Name: Archives
+<?php 
+/**
+ * @package WordPress
+ * @subpackage Classic_Theme
+ */
+/* Template Name: Archives
 */ get_header()?>
 <div id="content">
   <ul class="arch"><li>

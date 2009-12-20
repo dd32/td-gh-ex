@@ -1,4 +1,9 @@
-<div id="side">     
+<?php
+/**
+  * @package WordPress
+  * @subpackage A_Theme
+*/
+?><div id="side">     
   <ul>             
     <?php if(!function_exists('dynamic_sidebar')|| !dynamic_sidebar() ): ?>                   
     <li class="widget">      

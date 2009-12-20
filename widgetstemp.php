@@ -1,4 +1,9 @@
-<?php /* Template Name: Widgets Page
+<?php 
+/**
+  * @package WordPress
+  * @subpackage A_Theme
+*/
+/* Template Name: Widgets Page
 */ get_header();?>
 <div id="content">
     <h2 class="post-title"><?php _e('Widgets')?></h2>
