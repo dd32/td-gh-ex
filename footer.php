@@ -113,7 +113,8 @@ Copyright <?php echo date('Y'); ?>. <?php bloginfo('name'); ?>. All Rights Reser
 
 <br />
 <!-- Released under GPL compatible license --> 
-<a href="http://www.quickonlinetips.com/archives/quickpic/" title="QuickPic">QuickPic</a> theme by <a href="http://www.quickonlinetips.com/" title="Quick Online Tips">Quick Online Tips</a>
+Powered by <a href="http://www.quickonlinetips.com/archives/quickpic/" title="QuickPic">QuickPic Theme</a>
+ 
  
 </p>
 </div>
