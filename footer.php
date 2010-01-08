@@ -5,7 +5,7 @@
 
 
 <!-- Released under GPL License --> 
-<a href="http://www.quickonlinetips.com/archives/quickchic/" title="QuickChic">QuickChic</a> theme by <a href="http://www.quickonlinetips.com/" title="Quick Online Tips">Quick Online Tips</a>
+Powered by <a href="http://www.quickonlinetips.com/archives/quickchic/" title="QuickChic">QuickChic Theme</a>
 <!-- Released under GPL License --> 
  
 </p>

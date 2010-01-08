@@ -15,11 +15,11 @@
 
 <br />
 
-<a   href="<?php bloginfo('rss2_url'); ?>" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="XML, RSS"  style="vertical-align:middle;border:0;" /> Subscribe Feed (RSS)</a>
+<a href="<?php bloginfo('rss2_url'); ?>" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="XML, RSS"  style="vertical-align:middle;border:0;" /> Subscribe Feed (RSS)</a>
 
 &nbsp;
 
-<a  href="<?php bloginfo('comments_rss2_url'); ?>" rel="alternate" type="application/rss+xml" ><img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="XML, RSS" style="vertical-align:middle;border:0;" /> Comments Feed</a>
+<a href="<?php bloginfo('comments_rss2_url'); ?>" rel="alternate" type="application/rss+xml" ><img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="XML, RSS" style="vertical-align:middle;border:0;" /> Comments Feed</a>
 
 <br />
 <br />

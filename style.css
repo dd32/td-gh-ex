@@ -2,7 +2,7 @@
 Theme Name: QuickChic
 Theme URI: http://www.quickonlinetips.com/archives/quickchic/
 Description: 2-columns white, widget ready, SEO optimized, fast loading, free support wordpress theme by <a href="http://www.quickonlinetips.com/">Quick Online Tips</a>.
-Version: 1.1
+Version: 1.2
 Author: Quick Online Tips
 Author URI: http://www.quickonlinetips.com/
 Tags: white, pink, fixed-width, two-columns, right-sidebar, photoblogging, threaded-comments, sticky-post
@@ -78,7 +78,7 @@ h1, h2, h3, h4 {
 	}
 
 .blogtitle {
-	font-size: 2.5em !important; 
+	font-size: 1.9em !important; 
 	text-align: left; 
   	font-weight: bold; 
         margin: 10px 0 0 0;
@@ -572,21 +572,21 @@ ol.commentlist { list-style:none; margin:0 0 1em; padding:0; text-indent:0; }
 ol.commentlist li.comment { border:1px solid #d5d5d5; padding:1em; }
 ol.commentlist li.even { background:#fff; }
 ol.commentlist li.odd { background:#f6f6f6; }
-ol.commentlist li ul.children li.depth-2 { border-left:5px solid #999; margin:0 0 .25em .25em; }
-ol.commentlist li ul.children li.depth-3 { border-left:5px solid #999; margin:0 0 .25em .25em; }
-ol.commentlist li ul.children li.depth-4 { border-left:5px solid #999; margin:0 0 .25em .25em; }
+ol.commentlist li ul.children li.depth-2 { border-left:3px solid #999; margin:0 0 .25em .25em; }
+ol.commentlist li ul.children li.depth-3 { border-left:3px solid #999; margin:0 0 .25em .25em; }
+ol.commentlist li ul.children li.depth-4 { border-left:3px solid #999; margin:0 0 .25em .25em; }
 
 
 /* Begin Sidebar 
 ------------------------------------- */
 #sidebar {
 	font-family: Arial, Helvetica, Sans-Serif;
-	padding: 5px 0 10px 10px;
+	padding: 25px 0 10px 20px;
         margin: 0px 0 10px 565px;
 	width: 370px;
         background: #fff;
 	font-size: 1.1em; 
-        border-left: 5px dotted #ddd;          
+        border-left: 3px dotted #ddd;          
         }
 
 #adbox { 
@@ -672,7 +672,7 @@ a img {
 	text-align: center;
 	margin-top: 10px;
 	margin-bottom: 60px;
-	} 
+        font-size: 1.3em; 	} 
 
 /* Captions 
 ------------------------------------- */
