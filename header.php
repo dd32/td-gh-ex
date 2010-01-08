@@ -24,11 +24,7 @@
 </head>
 
 <body>
-
-<div id="topleft">
-<a href="<?php bloginfo('rss2_url'); ?>" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon32x32.png" alt="Subscribe RSS"></a>
-</div>
-
+ 
 <div id="page">
 
 <div id="header">
@@ -49,7 +45,7 @@
 </form>
 
 
-<a href="<?php bloginfo('rss2_url'); ?>" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="XML, RSS"  style="vertical-align:middle;border:0;" /> Subscribe Feed (RSS)</a>
+<a href="<?php bloginfo('rss2_url'); ?>" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="XML, RSS"  style="vertical-align:middle;border:0;" /> Subscribe RSS Feed</a>
 
 &nbsp;
 

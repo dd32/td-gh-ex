@@ -2,10 +2,10 @@
 Theme Name: QuickPress 
 Theme URI: http://www.quickonlinetips.com/archives/quickpress/
 Description: 2-3 columns, widget ready, SEO optimized, fast loading, easy to customize wordpress theme by <a href="http://www.quickonlinetips.com/">Quick Online Tips</a>.
-Version: 1.5.1
+Version: 1.6
 Author: Quick Online Tips
 Author URI: http://www.quickonlinetips.com/
-Tags: blue, green, fixed-width, right-sidebar, three-columns, threaded-comments, sticky-post
+Tags: blue, fixed-width, right-sidebar, two-columns, three-columns, threaded-comments, sticky-post
 .
 Released under the <a href="http://www.opensource.org/licenses/gpl-license.php">GPL</a>.
 .
@@ -16,8 +16,8 @@ Released under the <a href="http://www.opensource.org/licenses/gpl-license.php">
 ------------------------------------- */
 body {
 	font-size: 70%;  
-	font-family: Arial, Helvetica, Sans-Serif; 
-	background: #666;
+	font-family: Georgia, Arial, Helvetica, Sans-Serif; 
+	background: #333;
 	color: #111;
 	text-align: center;  
 	}
@@ -75,8 +75,7 @@ h1, h2, h3, h4 {
 
 #content h1 {
 	font-size: 1.7em; 
-	text-align: left;
-        font-family: Georgia, Arial, Helvetica, sans-serif;
+	text-align: left; 
 	}
 
 #header td { 
@@ -86,14 +85,12 @@ h1, h2, h3, h4 {
 #header h1 { 
 	font-size: 1em; 
         margin: 0px 0;
-        padding:0;
-        font-family: Arial, Helvetica, Sans-Serif;
+        padding:0; 
 	}
 
 .blogtitle {
 	font-size: 2.5em !important; 
-	text-align: left;
-        font-family: Arial, Helvetica, Sans-Serif; 
+	text-align: left; 
   	font-weight: bold; 
         margin: 10px 0 0 0;
         padding: 0;
@@ -102,14 +99,13 @@ h1, h2, h3, h4 {
 .description {
         padding: 5px;
         color: #ccc;
-	font-size: 1.1em;
+	font-size: 1.1em;Helvetica
 	text-align: left;
 	}
  
 h2 {
 	font-size: 1.7em;
-	text-align: left;
-        font-family: Georgia, Arial, Helvetica, sans-serif;
+	text-align: left; 
 	}
 
 h2.pagetitle {
@@ -252,7 +248,7 @@ a:hover {
 ------------------------------------- */
 body {
 	margin: 0 0;
-	padding: 20px 0 0 0; 
+	padding: 0 0 0 0; 
 	}
 
 #page {
@@ -260,6 +256,8 @@ body {
 	margin:  0px auto 0px auto;
 	padding: 0;
 	width: 950px; 
+        border-left:30px solid #14568A; 
+        border-right: 30px solid #14568A; 
 	}
 
 #header {
@@ -279,25 +277,19 @@ body {
 	color: #ccc;
 	}
 
-#topleft { 
-       position: fixed;
-       left: 5px;
-       top: 5px;
-}  
-
-#navbar { 
-        font-family: Arial, Helvetica, Sans-Serif;
+#navbar {  
 	font-size: 1.2em;
 	line-height: 2em;
         font-weight:bold;
-        background: #C5E093; 
+        background: #DDD; 
         padding: 10px 10px 10px 30px;
         margin: 0 0 20px 0;
         color: #333; 
+        text-transform:uppercase;  
         }
 
 #navbar a {
-	color: #333;
+	color: #06c;
         text-decoration:none;
         }
 
@@ -318,7 +310,7 @@ body {
 .post {
 	margin: 0 0 40px;
 	text-align: justify;
-        background: #f9f9f9; 
+        background: #ffffff; 
         padding: 5px 10px;
 	}
 
@@ -390,8 +382,8 @@ h2.pagetitle, h2.pagetitle {
 	font-family: Georgia, "Times New Roman", Times, serif;  
 	margin: 0px 0 10px 0;
 	padding: 5px;
-        background: #f3f3f3;
-        border-bottom: 2px solid #C5E093;
+        background: #DDD;
+        border-bottom: 0px solid #C5E093;
         text-transform:uppercase;  
 	}
 
@@ -636,15 +628,14 @@ ol.commentlist { list-style:none; margin:0 0 1em; padding:0; text-indent:0; }
 ol.commentlist li.comment { border:1px solid #d5d5d5; padding:1em; }
 ol.commentlist li.even { background:#fff; }
 ol.commentlist li.odd { background:#f6f6f6; }
-ol.commentlist li ul.children li.depth-2 { border-left:5px solid #999; margin:0 0 .25em .25em; }
-ol.commentlist li ul.children li.depth-3 { border-left:5px solid #999; margin:0 0 .25em .25em; }
-ol.commentlist li ul.children li.depth-4 { border-left:5px solid #999; margin:0 0 .25em .25em; }
+ol.commentlist li ul.children li.depth-2 { border-left:2px solid #999; margin:0 0 .25em .25em; }
+ol.commentlist li ul.children li.depth-3 { border-left:2px solid #999; margin:0 0 .25em .25em; }
+ol.commentlist li ul.children li.depth-4 { border-left:2px solid #999; margin:0 0 .25em .25em; }
 
 
 /* Begin Sidebar 
 ------------------------------------- */
-#sidebar {
-	font-family: Arial, Helvetica, Sans-Serif;
+#sidebar { 
 	padding: 0px 0 10px 0;
         margin-left: 565px;
 	width: 360px;
@@ -732,6 +723,8 @@ a img {
 	text-align: center;
 	margin-top: 10px;
 	margin-bottom: 60px;
+        font weight: bold;
+        font-size: 1.4em; 
 	} 
 
 /* Captions 

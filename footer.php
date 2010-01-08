@@ -6,9 +6,9 @@
 
 
 <!-- Released under GPL compatible license --> 
-<a href="http://www.quickonlinetips.com/archives/quickpress/" title="QuickPress">QuickPress</a> theme by <a href="http://www.quickonlinetips.com/" title="Quick Online Tips">Quick Online Tips</a>
+Powered by <a href="http://www.quickonlinetips.com/archives/quickpress/" title="QuickPress">QuickPress Theme</a>
+<!-- Released under GPL compatible license --> 
  
-
 </p>
 </div>
 </div>
