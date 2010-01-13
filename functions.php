@@ -67,7 +67,7 @@ include_once (TEMPLATEPATH . '/functions/bfa_theme_options.php');
 include_once (TEMPLATEPATH . '/functions/bfa_get_options.php');
 global $bfa_ata;
 $bfa_ata['name'] = "Atahualpa";
-$bfa_ata['version'] = "3.4.4";
+$bfa_ata['version'] = "3.4.5";
 
 // Load functions
 include_once (TEMPLATEPATH . '/functions/bfa_header_config.php');
@@ -652,4 +652,15 @@ function add_cats_to_body_class($classes='') {
 }
 add_filter('body_class', 'add_cats_to_body_class');
 */
+
+
+// Since 3.4.5: WP 2.9 thumbnails support:
+if ( function_exists( 'add_theme_support' ) ) { // Added in 2.9
+	add_theme_support( 'post-thumbnails' );
+	if ($bfa_ata['post_thumbnail_crop'] == "Yes") 
+		set_post_thumbnail_size( $bfa_ata['post_thumbnail_width'], $bfa_ata['post_thumbnail_height'], true );
+	else set_post_thumbnail_size( $bfa_ata['post_thumbnail_width'], $bfa_ata['post_thumbnail_height'] );
+	add_image_size( 'single-post-thumbnail', 400, 9999 ); // Permalink thumbnail size
+}
+
 ?>

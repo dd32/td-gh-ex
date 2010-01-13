@@ -56,6 +56,7 @@ $text_decoration = array("none", "underline", "overline", "line-through");
 <li><a href="#" id="postinfos-tab" rel="postinfos">Edit POST/PAGE INFO ITEMS</a></li>
 <li><a href="#" id="posts-tab" rel="posts">Style POSTS & PAGES</a></li>
 <li><a href="#" id="posts-or-excerpts-tab" rel="posts-or-excerpts">Configure EXCERPTS</a></li>
+<li><a href="#" id="post-thumbnails-tab" rel="post-thumbnails"><span style="background:white;color:red">NEW</span> Post THUMBNAILS</a></li>
 <li><a href="#" id="more-tag-tab" rel="more-tag">"Read More" tag</a></li>
 <strong>Comments</strong>
 <li><a href="#" id="comments-tab" rel="comments">Style & configure COMMENTS</a></li>

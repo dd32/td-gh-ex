@@ -1,6 +1,5 @@
 <?php
 
-
 // Callback function for image replacement
 function bfa_image_files($matches) {
 	return '<img src="' . get_bloginfo('template_directory') . 

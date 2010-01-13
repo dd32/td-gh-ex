@@ -2318,6 +2318,47 @@ __('Category:','atahualpa') . " %categories-linked(', ')% %edit(' | ', '" . __('
 			"lastoption" => "yes", 
             "info" => "Show full posts or only excerpts, on Author pages?"),
 
+// New category: posts-or-excerpts
+
+    array(    "name" => "Post Thumbnail Width",
+    	    "category" => "post-thumbnails",
+			"switch" => "yes",
+            "id" => $shortname."_post_thumbnail_width",
+            "type" => "text",
+            "size" => 6,
+            "std" => 150,
+            "info" => "Width of Post Thumbnails in pixels.<br><br><span style='color:red'>Note: Post Thumbnails are only displayed on multi post pages, which 
+			have been set to display 'Only Excerpts'. See menu tab 'Configure Excerpts'.</span>"),
+
+    array(    "name" => "Post Thumbnail Height",
+    	    "category" => "post-thumbnails",
+            "id" => $shortname."_post_thumbnail_height",
+            "type" => "text",
+            "size" => 6,
+            "std" => 150,
+            "info" => "Height of Post Thumbnails in pixels."),
+
+    array(    "name" => "Crop Post Thumbnails?",
+    	    "category" => "posts-or-excerpts",
+            "id" => $shortname."_post_thumbnail_crop",
+            "type" => "select",
+            "std" => "No",
+            "options" => array("Yes", "No"),
+            "info" => "Example: Original image is 600x400. The settings above are at 150/150. Then the post thumbnail has a size of...<ul><li>150x150 if 'Yes' (Crop)</li>
+			<li>150x100 if 'No' (Don't Crop')</li></ul>
+			With cropping you get the same size for all post thumbnails, but something will be cut off from the image (unless the image is square sized). "),
+
+    array(    "name" => "Post Thumbnail CSS",
+    	    "category" => "posts-or-excerpts",
+            "id" => $shortname."_post_thumbnail_css",
+            "type" => "textarea-large",
+            "std" => "float: left;\nborder: 0;\npadding: 0;\nbackground: none;\nmargin: 0 10px 5px 0;\n",
+			"lastoption" => "yes", 
+            "info" => "Style the Post Thumbnail. It is placed inside the 
+			'bodycopy' of a post, right before the first paragraph of the excerpt:<br />
+			&lt;div class='post-bodycopy'&gt;<br />&nbsp;&nbsp;&nbsp;<strong>&lt;img POST THUMBNAIL HERE class='wp-post-image' /&gt;</strong><br />&nbsp;&nbsp;&nbsp;&lt;p&gt;Post Excerpt starts here...&lt;/p&gt;<br />&lt;/div&gt;"),
+
+			
 // New category: more-tag
 
     array(    "name" => "Read More",

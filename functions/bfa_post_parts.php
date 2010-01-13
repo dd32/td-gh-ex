@@ -121,6 +121,7 @@ function bfa_post_bodycopy($before = '<div class="post-bodycopy clearfix">', $af
 		$bfa_ata_more_tag_final = str_replace("%post-title%", the_title('', '', false), $bfa_ata['more_tag']);
 		the_content($bfa_ata_more_tag_final); 
 	} else { 
+	the_post_thumbnail();
 		the_excerpt(); 
 	} 
 	echo $after;
