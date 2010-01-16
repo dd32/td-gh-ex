@@ -1,0 +1,5 @@
+<div class="slak"><H3 class="slak-h3">Download <strong>FREE</strong> PSDs for this theme</H3></div>
+<p class="tenip">The full background PSD is avaliable for <strong>FREE </strong> for this Wordpress theme and can be downloaded instantly.</p>
+<p class="tenip">The theme PSD comes in <strong>three</strong> different color schemes. Each of them layered and sliced ready for export.</p>
+<p class="tenip">The file is layered and sliced ready for you to change what ever you need and redesign your site. The theme comes with the PSD for the Favicon as well, allowing you to easily change that.</p>
+<p class="tenip">To download the Free PSD now, please see <a href="http://factory42.co.uk/free-psd-for-42k-wordpress-theme/"> this page for more information</a></p><img class="masthead-img" src="<?php bloginfo("template_directory"); ?>/images/masthead-42k.jpg" alt="Sample of 42k Background PSD" title="Sample of 42k Background PSD" /><div class="space-boy-space"></div><div class="space-boy-space"></div>

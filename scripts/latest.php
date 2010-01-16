@@ -1,0 +1,4 @@
+<div class="slak"><H3 class="slak-h3">Latest 42k Wordpress Theme Tutorials</H3></div>
+<p class="tenip">Below are some of the latest tutorials we have written about 42k Wordpress theme. Were constantly writing more, so keep checking back. For a full list of all the tutorials please see our <a href="http://factory42.co.uk/category/42k/">list of 42k Wordpress tutorials.</a>If you have a question or an idea for a tutorial you would like to see, then please contact us via our <a href="http://factory42.co.uk/help/">support page.</a><br>To subscribe to our RSS feed of support matirial please click this <a href="http://feeds.feedburner.com/Factory42-42k">RSS Link.</a> </p><div class="greenone">
+<script src="http://feeds.feedburner.com/Factory42-42k?format=sigpro" type="text/javascript" ></script><noscript><p>Subscribe to RSS headline updates from: <a href="http://feeds.feedburner.com/Factory42-42k"></a>
+<br/>Powered by FeedBurner</p> </noscript></div>

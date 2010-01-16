@@ -1,0 +1,1 @@
+<div class="advert-x"><?php echo stripslashes ($bxx_advert_one); ?></div>
