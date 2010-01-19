@@ -29,11 +29,23 @@ $shortname."_container_margin_top", "std" => "10", "type" => "text-mp"), array( 
 $shortname."_container_margin_bottom", "std" => "50", "type" => "text-mp"), array("type" => "box-close"), array( "type" =>
 "deus","name" => "Note: Left and Right margins for the container are hard coded to Auto so the container stays in the middle of
 the page, no matter what the screen size. If you do wish to change this, you will have to change the actuall CSS file.",),
-array( "type" => "an-ending"), array( "type" => "z-c"), array( "name" => "Index/Front Page", "type" => "title"), array( "type"
-=> "line-break"),array( "type" => "tin-tin"), array( "type" => "deus", "name" => "The images below are representations of
+array( "type" => "an-ending"), array( "type" => "z-c"), array( "name" => "Index/Front Page", "type" => "title"), 
+array( "type"
+=> "line-break"),
+
+
+array( "type" => "tin-tin"), array( "type" => "deus", "name" => "The images below are representations of
 different layouts available for your front page. Please choose one and select that name from the drop down box below the images.
-",), array("id" => $shortname."_index_file", "folder" => "homepage", "ifolder" => "homepage-images", "std" => "a-normal.php",
-"type" => "select-list"), array( "type" => "line-break"), array( "type" => "box-close"), array( "name" => "Full Posts or
+",), 
+
+
+array("id" => $shortname."_index_file", "folder" => "homepage", "ifolder" => "homepage-images", "std" => "a-normal.php",
+"type" => "select-list"), 
+
+
+
+
+array( "type" => "line-break"), array( "type" => "box-close"), array( "name" => "Full Posts or
 Excerpts", "type" => "subtitle"), array( "type" => "tin-tin"), array( "name" => "<strong> aaa-default-front-aaa;</strong> can be
 set to either show posts or excerpts though the Front Page Options below. <br> <strong>Mullet:</strong> displays the newest post
 (plus sticky) at the top with full content and the rest of the posts below with excerpts. <br> This cannot be changed via the
@@ -503,12 +515,12 @@ you will see code boxes for adverts on the theme. </br> We do not provide back e
 get into trouble clicking your on adverts!",), array( "name" => "Advert One", "type" => "subtitle"), array( "type" =>
 "deus","name" => "Advert One is positioned on the front page, page, archive, and single post pages. The advert should be a
 maximum of about 700px wide so it doesnt stick into anything else.",), array("type" => "left-empty"), array( "name" => "Display
-Advert One ", "id" => $shortname."_show_advert_one", "type" => "select", "std" => "yes", "options" => array( "yes", "no"),),
+Advert One ", "id" => $shortname."_show_advert_one", "type" => "select", "std" => "no", "options" => array( "yes", "no"),),
 array( "type" => "box-close"), array( "desc" => "Enter your advert code in the box above. ", "id" => $shortname."_advert_one",
 "std" => "", "type" => "advert"), array( "name" => "Advert Two", "type" => "subtitle"), array( "type" => "deus", "name" =>
 "Advert Two is a full sidebar width advert and should be about 250px wide. This can be set up, as we have demoed, to be a block
 of 125x125px square adverts or one large advert. Just enter the code acordingly.",), array("type" => "left-empty"), array(
-"name" => "Display Advert Two; ", "id" => $shortname."_show_advert_two", "type" => "select", "std" => "yes", "options" => array(
+"name" => "Display Advert Two; ", "id" => $shortname."_show_advert_two", "type" => "select", "std" => "no", "options" => array(
 "yes", "no"), ), array( "type" => "box-close"), array( "desc" => "Enter your advert code in the box above.", "id" =>
 $shortname."_advert_two", "std" => "", "type" => "advert"), array( "type" => "an-ending"), array( "type" => "z-p"), array(
 "name" => "Google Anayltics", "type" => "title"), array( "type" => "deus", "name" => "Google Anayltics is a great way of keeping

@@ -4,14 +4,13 @@ By Factory42
 
 VERSIONS AND FIXES
 
-
-
-
-
-
-
-
-
+1.1
+	-Fixed spacing issue around comment reply link.
+	-Fixed mistake in file calls with homepage images.
+	-Changed call for total comments.
+	-Fixed search box ajax issue.
+	-Changed adverts to off by default.
+	-Added back in Masthead PSD Image as I forgot it last time!
 
 1.0
-A new theme!
+	-A new theme!

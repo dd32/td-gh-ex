@@ -2,10 +2,10 @@
 Theme Name: 42k
 Theme URI: http://www.factory42.co.uk
 Description: Theme with many, many options. Most things are changable. Also has the ablity to accept various layout files to change the layout of the page. Also has ajax search box, 6 Widget Areas, Threaded color comments (user changable) sticky posts, tag area, areas set out for adverts, favicon and custom error messages. Features a Admin Control Panel to change things on the theme. Highy customizable theme framework, ready to go out of the box, or ready to be changed by you!
-Version: 1.0
+Version: 1.1
 Author: Factory42
 Author URI: http://factory42.co.uk/42k-wordpress-theme/
-Tags: light, black, two-columns, right-sidebar, fixed-width, flexible-width, custom-colors, custom-header, theme-options, sticky-post, microformats
+Tags: light, black, two-columns, right-sidebar, fixed-width, custom-colors, custom-header, theme-options, sticky-post, microformats
 */
 .advert { margin: 15px; } .top-sidebar-holder { clear: both; } html, body, dl, dt, dd, p, blockquote, pre, form, fieldset,
 table, th, td { list-style-image: none; list-style-type: none; } input:focus, input:active{ outline: none; } .navigation {
@@ -21,14 +21,11 @@ none; width: 670px; padding: 0px; }
 ul .commentlist #comment-land ul li{ list-style-type: none; } #comment-land ul.commentlist li.depth-1 { width:650px;
 margin-bottom: 15px; margin-left: 0px; margin-top: 10px; padding: 5px; list-style-type: none; } ul.commentlist li.comment
 ul.children li.depth-2 { border:1px dotted black; width:97%; list-style-type: none;fi padding-bottom: 10px; margin-bottom: 15px;
-margin-top: 10px; }
-
+margin-top: 10px; } .chase {height: 10px; width: 100%; clear: both;}
 ul.commentlist li.comment ul.children li.depth-3 { border:1px dotted black; width:97%; margin-top: 5px; list-style-type: none;
 padding-bottom: 10px; margin-top: 10px; padding:3px; margin:2px; margin-bottom: 15px; }
-
 ul.commentlist li.comment ul.children li.depth-4 { border:1px dotted black; width:97%; margin-top: 5px; list-style-type: none;
 padding:3px; margin-top: 10px; padding-bottom: 10px; margin:2px; margin-bottom: 15px; }
-
 .commentlist li.comment ul.children li.depth-5 { border:1px dotted black; width:97%; margin-top: 5px; list-style-type: none;
 margin-top: 10px; padding:3px; margin:2px; padding-bottom: 10px; margin-bottom: 15px; } .cancel-comment-reply { padding-left:
 10px; } .commentlist li.comment ul.children li.depth-6 { border:1px dotted black; width:97%; margin-top: 5px; list-style-type:
@@ -43,5 +40,4 @@ li.comment ul.children li.depth-10 { border:1px dotted black; width:97%; margin-
 border:0px; } .advert-two { background-image: url(images/advert-two.png); background-repeat: no-repeat; width: 260px; height:
 400px; } .advert-one { background-image: url(images/advert-three.jpg); width: 468px; height: 60px; margin-top: 10px;
 margin-bottom: 10px; } .head-image { width: 250px; height: 120px; } .left-part-top { height: 100%; width: 260px; float: left; }
-
 #break { width: 100%; height: 1px; clear: both; }

@@ -343,7 +343,7 @@ $bxx_comment_author_border_width;?>px <?php echo $bxx_comment_author_border_type
 $bxx_comment_author_border_color;?>; margin-left:0px; margin:0px; padding:0px; float:left; }
 ul.commentlist li.thread-even p { color:#<?php echo $bxx_comment_even_p_color;?>; padding: 2px; }
 ul.commentlist li.thread-odd p { color:#<?php echo $bxx_comment_odd_p_color;?>; padding: 2px; }
-ul.commentlist li.thread-even .comment-reply-link { padding:5px; border:1px solid; margin: 5px; color:#<?php echo
+ul.commentlist li.thread-even .comment-reply-link { padding:5px; border:1px solid; margin: 5px;  color:#<?php echo
 $bxx_comment_even_p_color;?>; }
 ul.commentlist li.thread-odd .comment-reply-link { padding:5px; border:1px solid; margin: 5px;
 color:#<?php echo $bxx_comment_odd_p_color;?>; }

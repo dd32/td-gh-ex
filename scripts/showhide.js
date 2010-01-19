@@ -13,3 +13,7 @@ function toggleLayer( whichLayer )
     vis.display = (elem.offsetWidth!=0&&elem.offsetHeight!=0)?'block':'none';
   vis.display = (vis.display==''||vis.display=='block')?'none':'block';
 }
+function clearText(thefield){
+if (thefield.defaultValue==thefield.value)
+thefield.value = ""
+} 

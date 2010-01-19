@@ -57,7 +57,12 @@ function mytheme_comment($comment, $args, $depth) {
 <?php comment_text() ?>&nbsp; 
       <div class="reply">
          <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-      </div></p></div></div>
+      </div></p>
+      <div class="chase">
+      	
+      </div>
+      
+      </div></div>
 <?php
         }
 ?>

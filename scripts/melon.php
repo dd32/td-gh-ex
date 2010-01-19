@@ -162,15 +162,45 @@ $value['name']; ?></span> <textarea name="<?php echo $value['id']; ?>" id="<?php
 cols="100" rows="3"><?php if ( get_settings( $value['id'] ) != "") { echo stripslashes(get_settings( $value['id'] )); } else { echo stripslashes($value['std']); }
 ?></textarea><span style="font-family:Arial, sans-serif; font-size:12px; color:#444; display:block;"> <?php echo $value['desc']; ?></span> </div> <?php break;
 
-case 'select-list': ?> <div style="width:850px; float:left; overflow:hidden;"> <?php global $melon; $melon = get_bloginfo('template_url'); ?> <?php $string="";
-$fileCount=0; $filePath=$PATH.(TEMPLATEPATH . '/bricks/'.$value['ifolder'].'/'); # Specify the path you want to look in. $dir = opendir($filePath); # Open the path
-while ($file = readdir($dir)) { if (eregi("\.png",$file)) { $dig = basename($file, ".png"); $string .= "<div style='width:380px; padding:10px; float:left;
-margin:10px;'> <img src='$melon/bricks/".$value['ifolder']."/$file'/></div>"; $fileCount++; } } if ($fileCount > 0) { echo sprintf("$string"); } $handler =
-opendir(TEMPLATEPATH . '/bricks/'.$value['folder'].'/'); while ($file = readdir($handler)) { if ($file != '.' && $file != '..') $results[] = $file; }
-closedir($handler); echo '<div style="width:800px; clear:both;"> </div><select style="width:550px; margin:10px 0px 10px 50px; border:1px solid #98AFC7;"
-name="'.$value['id'].'" id="'. $value['id'].'">'; foreach ($results as $option) { echo "<option "; if (get_settings ($value['id']) == $option) { echo '
-selected="selected"'; } elseif ($option == $value['std']) { echo ' selected="selected"'; } echo ">".$option."</option>"; } echo "</select>"; $results=array(); ?>
-</div> <?php break;
+case 'select-list':  ?>
+<div style="width:850px; float:left; overflow:hidden;">
+ <?php global $melon;
+$melon = get_bloginfo('template_url'); ?>
+<?php $string="";
+$fileCount=0;
+$filePath=$PATH.(TEMPLATEPATH . '/bricks/'.$value['ifolder'].'/'); # Specify the path you want to look in. 
+$dir = opendir($filePath); # Open the path
+while ($file = readdir($dir)) { 
+if (eregi("\.png",$file)) { 
+$dig = basename($file, ".png");
+$string .= "<div style='width:380px; padding:10px; float:left; margin:10px;'> <img 
+src='$melon/bricks/".$value['ifolder']."/$file'/></div>";
+$fileCount++;
+}
+}
+if ($fileCount > 0) {
+echo sprintf("$string");
+}
+$handler = opendir(TEMPLATEPATH . '/bricks/'.$value['folder'].'/');
+while ($file = readdir($handler)) {
+if ($file != '.' && $file != '..')
+$results[] = $file;
+}
+closedir($handler);
+echo '<div style="width:800px; clear:both;"> </div><select style="width:550px; margin:10px 0px 10px 50px; border:1px solid #98AFC7;"  name="'.$value['id'].'" id="'. $value['id'].'">';
+foreach ($results as $option) 
+{ 
+echo "<option ";
+if (get_settings ($value['id']) == $option) { 
+echo ' selected="selected"';  } 
+elseif ($option == $value['std'])  {
+echo ' selected="selected"'; } 
+echo ">".$option."</option>"; }
+echo "</select>";
+$results=array(); ?>
+</div>
+<?php break;
+
 
 case 'select': ?> <div style="width:110px; padding:5px; float:left; overflow:hidden;"> <span style="font-family:Arial, sans-serif; font-size:12px; color:#444;
 display:block; padding-top:5px;"> <?php echo $value['name']; ?></span><select style="width:105px; background-color:#eee; border:1px solid #98AFC7;" name="<?php echo
