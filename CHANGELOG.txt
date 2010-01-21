@@ -1,3 +1,6 @@
+version 1.1.2 (released 21/01/2010)
+   * Added Portuguese language.
+
 version 1.1.1 (released 29/12/2009)
    * Added Romanian language.
 
