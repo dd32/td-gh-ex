@@ -1,0 +1,247 @@
+/*ul.headerMenu2 li li {
+	zoom:1;
+}*/
+
+body {
+	background:#d9d9d9 url(./images/ie6/pageBG.png) repeat-x 0 0;
+}
+
+blockquote,
+pre {
+	background-image:url(./images/ie6/blockquote.png);
+}
+
+.headerBG div {
+	width:1000px;
+	height:140px;
+	background:url(./images/ie6/headerOverlay.png) no-repeat 0 0;
+}
+
+.hideHeaderMenu1 {
+	background-position:0 -27px;
+}
+.hideHeaderMenu1 .headerBG div {
+	height:113px;
+	background:url(./images/ie6/headerOverlay.png) no-repeat 0 -27px;
+}
+
+ul.headerMenu2 li a,
+ul.headerMenu1 li a {
+	float:left;
+}
+
+ul.headerMenu2 li li,
+ul.headerMenu1 li li{
+	display:inline;
+}
+ul.headerMenu2 li a,
+ul.headerMenu2 li a:visited,
+ul.headerMenu1 li a,
+ul.headerMenu1 li a:visited {
+	display:block;
+}
+ul.headerMenu2 li li a,
+ul.headerMenu2 li li a:visited,
+ul.headerMenu1 li li a,
+ul.headerMenu1 li li a:visited {
+	display:block;
+	float:none;
+}
+
+.contentWrapper {
+	height:350px;
+}
+
+.postHeader h2 {
+	background-image:url(./images/ie6/heading.png);
+}
+.postHeader h2 span {
+	position:relative;
+	background-image:url(./images/ie6/heading.png);
+}
+.postHeader .bottom {
+	background-image:url(./images/ie6/heading.png);
+}
+.postHeader .bottom div {
+	background-image:url(./images/ie6/heading.png);
+	z-index:1;
+}
+.postDate {
+	background-image:url(./images/ie6/heading.png);
+}
+
+.postContent {
+	zoom:1;
+}
+
+.postCategories,
+.postTags,
+.postReadMore,
+.postReadMore span,
+a.postReadMore:hover,
+.postCommentLabel,
+.postCommentLabel span,
+.commentHeader,
+.btnReply,
+.btnTrackback,
+a.btnReply:hover,
+.btnReply span,
+.btnTrackback span,
+.commentReply .replyHeader
+{
+	background-image:url(./images/ie6/icons.png);
+}
+
+a.btn,
+a.btn:hover,
+a.btn span {
+	background-image:url(./images/ie6/icons.png);
+	vertical-align:middle;
+}
+a.btn span {
+	display:inline;
+	float:left;
+}
+
+.replySubmitArea {
+	zoom:1;
+}
+.btnSubscribe {
+	float:left;
+}
+.inputBtn {
+	float:right;
+}
+
+
+.postFooter,
+.postFooter .r {
+	background-image:url(./images/ie6/postFooter.png);
+}
+.postFooter .left {
+	zoom:1;
+	position:relative;
+}
+.postFooter {
+	height:33px;
+	zoom:1;
+}
+
+.postReadMore span {
+	float:left;
+	display:inline;
+	zoom:1;
+}
+
+.postCommentLabel span {
+	float:left;
+	display:inline;
+}
+
+.comment .message .t,
+.comment .message .t div,
+.comment .message .b,
+.comment .message .b div {
+	background-image:url(./images/ie6/comment.png);
+}
+.comment .message .i,
+.comment .message .i div,
+.sidebars .i {
+	zoom:1;
+	position:relative;
+}
+.comment .message .b {
+	font-size:0;
+}
+.comment .message .b div,
+.comment .message .t div{
+	position:relative;
+}
+
+.comment,
+.comment .message {
+	zoom:1;
+}
+
+.commentReply .replyLoggedIn a {
+	zoom:1;
+}
+
+.pagination div {
+	background-image:url(./images/ie6/pagination.png);
+	position:relative;
+}
+.pagination a {
+	position:relative;
+}
+.pagination a span {
+	float:left;
+	display:inline;
+}
+.pagination,
+.pagination a span,
+.pagination li.active a span,
+.pagination .info {
+	background-image:url(./images/ie6/pagination.png);
+}
+
+.commentNavigation div {
+	background-image:url(./images/ie6/pagination.png);
+	position:relative;
+}
+.commentNavigation a {
+	position:relative;
+}
+.commentNavigation a span {
+	float:left;
+	display:inline;
+}
+.commentNavigation,
+.commentNavigation a span,
+.commentNavigation li.active a span,
+.commentNavigation .info {
+	background-image:url(./images/ie6/pagination.png);
+}
+
+.footer {
+	background-image:url(./images/ie6/footer.png);
+}
+.footer .icon1 {
+	background:url(./images/ie6/wordpressIcon.png);
+}
+.footer .icon2 {
+	background:url(./images/ie6/srsIcon.png);
+}
+.footer .icon1 img,
+.footer .icon2 img{
+	visibility:hidden;
+}
+
+.sidebars .t div,
+.sidebars .b div,
+.sidebars .i .i2 {
+	position:relative;
+}
+.sidebars .t,
+.sidebars .t div,
+.sidebars .i,
+.sidebars .i .i2,
+.sidebars .b,
+.sidebars .b div,
+.sidebars a.rssBtn {
+	background-image:url(./images/ie6/sidebars.png);
+}
+.sidebars h4,
+.sidebars h4 span {
+	position:relative;
+}
+
+.sidebars li {
+	zoom:1;
+	background-image:url(./images/ie6/sidebars.png);
+}
+
+#wp-calendar td a,
+#wp-calendar td a:visited {
+	zoom:1;
+}
