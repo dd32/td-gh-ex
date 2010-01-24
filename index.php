@@ -2,7 +2,7 @@
 
 <div id="content">
 
-<?php if(is_home()) { ?><?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Home-Top') ) : ?><?php endif; ?><?php } ?>
+<?php if(is_front_page()) { ?><?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Home-Top') ) : ?><?php endif; ?><?php } ?>
 
 <?php if(is_single() || is_page()) { ?><?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Column-Top') ) : ?><?php endif; ?><?php } ?>
 
@@ -24,10 +24,10 @@
 		</div><!--end meta-->
 	
 		<div class="the_content">
-		<?php if(is_home()) { ?><?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Post-Top-Right-Home') ) : ?><?php endif; ?><?php } ?>
+		<?php if(is_front_page()) { ?><?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Post-Top-Right-Home') ) : ?><?php endif; ?><?php } ?>
 		<?php if(is_single() || is_page()) { ?><?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Post-Top-Right-Single') ) : ?><?php endif; ?><?php } ?>
 		<?php the_content('Continue Reading &raquo;'); ?>
-		<?php if(is_home()) { ?><?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Post-Bottom-Home') ) : ?><?php endif; ?> <?php } ?>
+		<?php if(is_front_page()) { ?><?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Post-Bottom-Home') ) : ?><?php endif; ?> <?php } ?>
 		<?php if(is_single() || is_page()) { ?><?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Post-Bottom-Single') ) : ?><?php endif; ?> <?php } ?>
 		<?php if(is_page()) { ?>
 		<ul>
@@ -37,6 +37,8 @@
 		</ul>
 		<?php } ?>
 
+		<div class="link_pages"><?php wp_link_pages(); ?></div>
+		
 		</div><!--end the_content-->
 		
 		<div class="comments">
@@ -58,9 +60,9 @@
 		<div class="the_content">
 		<p>Sorry we can't find what anything that matches your search.</p>
 		<p>You could try another search or browse our categories.</p>
-		<form method="get" id="searchform" action="http://www.mikejanzen.com/" >
+		<form method="get" id="searchform" action="<?php echo get_settings('home'); ?>" >
 		<label class="hidden" for="s">Search for:</label>
-		<div><input type="text" value="sdfghj" name="s" id="s" />
+		<div><input type="text" value="" name="s" id="s" />
 		<input type="submit" id="searchsubmit" value="Search" />
 		</div>
 		</form>

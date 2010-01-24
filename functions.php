@@ -245,6 +245,7 @@ function basic_simplicity_theme_page() {
 	_e('<h3>Edit Basic Simplicity</h3>');
 	_e('<p>Below you can make simple style changes to Basic Simplicity as well as enter your Google tracking code.</p>');
 	_e('<p>You are using Basic Simplicity v.1.2, learn more about <a href="http://www.michaeljanzen.com/wordpress-theme/" target="_blank">Basic Simplicity</a>.</p>');
+	_e('<p>FAQ: How do I change the header? Answer: Upload your header image to <b>wp-content/themes/basic-simplicity/images/</b>.</p>');
 	_e('<div id="current-theme">');
 	_e('<form method="post">');
 	_e('<fieldset>');	

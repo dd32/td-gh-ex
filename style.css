@@ -1,11 +1,11 @@
 /*   
 Theme Name: Basic Simplicity
 Theme URI: http://www.michaeljanzen.com/wordpress-theme/
-Description: A simple WordPress theme with a basic minimalist style.
+Description: A simple WordPress theme with a basic minimalist style that includes an administration control panel for editing look & feel.  More customization is possible through the many widget-enabled areas in the sidebar, posts, footer, and header. If you like this theme please vote for it to help spread the word. 
 Tags: blue, white, light, two-columns, right-sidebar, fixed-width, custom-colors, custom-header, theme-options
 Author: Michael Janzen
 Author URI: http://www.michaeljanzen.com/
-Version: 1.3.1
+Version: 1.4
 .
 Before editing this stylesheet be sure to take a look at the control panel
 Appearance -> Edit Basic Simplicity
@@ -15,6 +15,11 @@ Values set in the control panel will override some styles in this stylesheet.
 The CSS, XHTML and design is released under GPL:
 http://www.opensource.org/licenses/gpl-license.php
 .
+update note for v. 1.4
+- fixed bug - fixed the search form on 404 page
+- changed is_home() to is_front_page()
+- fixed bug - added stripslashes to the custom css
+
 */
 
 

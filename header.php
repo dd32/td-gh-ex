@@ -41,7 +41,7 @@ a { color: <?php echo $bs_theme_link_color; ?>; }
 <?php if($bs_theme_header_show_hide_text=="hide"){ ?>
 #header h1, #header .description { visibility:hidden; }
 <?php } ?>
-<?php echo $bs_theme_custom_css; ?>
+<?php echo stripslashes($bs_theme_custom_css); ?>
 </style>
 <?php echo stripslashes($bs_theme_google_verify_code); ?>
 </head>
