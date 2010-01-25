@@ -6,39 +6,18 @@ $do_not_duplicate = $post->ID; ?>
 
 <div id="main-right">
 <h3 class="post-title"> <a href="<?php the_permalink() ?>" rel="bookmark" class="title"><?php the_title(); ?></a></h3>  
-<div class="metabox">Posted by <?php the_author_posts_link () ?> | 
-Filed under <?php the_category(', ') ?> | 
-<?php the_time('M j, Y') ?> | 
-<?php the_tags('Tags: ', ', ', '<br/>'); ?>
-<?php edit_post_link('Edit', '', ' | '); ?>
-<?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>	
-</div>
+<div class="metabox">Posted by <?php the_author_posts_link () ?> | <?php the_time('M j, Y') ?> | <?php the_tags('Tags: ', ', ', '<br/>'); ?><?php comments_popup_link('No Comments', '1 Comment', '% Comments '); ?></div>
 <?php the_content(); wp_link_pages('<p><strong>Pages:</strong>', '</p>', 'number'); ?>
 <?php endwhile; ?>
-<?php if ($bxx_show_advert_one == "yes") {?>
-<div align="center">
-<?php $my_name = "$bxx_main_post_type";
-if ( $bxx_advert_one == "" ) {
-echo 	'<div  class="advert-one" > 
-</div>'; 
-} else {
- include (TEMPLATEPATH . '/scripts/advert-one.php'); 
-}
-?>
-</div>
-<?php }?>
+<?php  include (TEMPLATEPATH . '/scripts/advert-one.php'); ?>
+
+
+
 <?php query_posts('caller_get_posts=1'); ?>
 <?php if (have_posts()) : while (have_posts()) : the_post();
 if( $post->ID == $do_not_duplicate ) continue; update_post_caches($posts); ?>
 <h3 class="post-title"> <a href="<?php the_permalink() ?>" rel="bookmark" class="title"><?php the_title(); ?></a></h3>  
-<div class="metabox">Posted by <?php the_author_posts_link () ?> | 
-Filed under <?php the_category(', ') ?> | 
-<?php the_time('M j, Y') ?> | 
-<?php the_tags('Tags: ', ', ', '<br/>'); ?>
-<?php edit_post_link('Edit', '', ' | '); ?>
-<?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>	
-</div>
-<?php the_excerpt(); ?>
+<div class="metabox">Posted by <?php the_author_posts_link () ?> | <?php the_time('M j, Y') ?> | <?php the_tags('Tags: ', ', ', '<br/>'); ?><?php comments_popup_link('No Comments', '1 Comment', '% Comments '); ?></div><?php the_excerpt(); ?>
 <?php trackback_rdf(); ?>
 <br style="clear:both" />&nbsp; 
 <?php endwhile; endif; ?>
@@ -51,13 +30,7 @@ Filed under <?php the_category(', ') ?> |
 <?php if (have_posts()) : while (have_posts()) : the_post();
 if( $post->ID == $do_not_duplicate ) continue; update_post_caches($posts); ?>
 <h3 class="post-title"> <a href="<?php the_permalink() ?>" rel="bookmark" class="title"><?php the_title(); ?></a></h3>  
-<div class="metabox">Posted by <?php the_author_posts_link () ?> | 
-Filed under <?php the_category(', ') ?> | 
-<?php the_time('M j, Y') ?> | 
-<?php the_tags('Tags: ', ', ', '<br/>'); ?>
-<?php edit_post_link('Edit', '', ' | '); ?>
-<?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>	
-</div>
+<div class="metabox">Posted by <?php the_author_posts_link () ?> | <?php the_time('M j, Y') ?> | <?php the_tags('Tags: ', ', ', '<br/>'); ?><?php comments_popup_link('No Comments', '1 Comment', '% Comments '); ?></div>
 <?php the_excerpt(); ?>
 <?php endwhile; endif; ?>
 <div class="navigation">

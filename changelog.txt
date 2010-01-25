@@ -4,13 +4,22 @@ By Factory42
 
 VERSIONS AND FIXES
 
-1.1
-	-Fixed spacing issue around comment reply link.
-	-Fixed mistake in file calls with homepage images.
-	-Changed call for total comments.
-	-Fixed search box ajax issue.
-	-Changed adverts to off by default.
-	-Added back in Masthead PSD Image as I forgot it last time!
 
-1.0
-	-A new theme!
+1.2 24th Jan 2010
+		-Removed dummy default adverts.
+		-Made the whole thing snappier by removing some PHP checking calls. Now a lot faster!
+		-Removed the ablity to switch adverts on or off. Now you either have an advert, or an empty (sizeless) call.
+		-Changed switch on Sidebar widgets, so they now go off when a user adds a new widget. Before there were on/off calls for each.
+		-Tidied up meta display.
+		-Removed some extra features to improve speed.
+
+1.1 15th Jan 2010
+		-Fixed spacing issue around comment reply link.
+		-Fixed mistake in file calls with homepage images.
+		-Changed call for total comments.
+		-Fixed search box ajax issue.
+		-Changed adverts to off by default.
+		-Added back in Masthead PSD Image as I forgot it last time!
+
+1.0 Dec 2009
+		-A new theme!

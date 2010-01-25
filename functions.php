@@ -1,44 +1,4 @@
-<?php function recent_comments($g_size = 50, $no_comments = '<?php echo $bxx_com_number ?>', $comment_lenth = 200, $show_pass_post = false) {
-global $wpdb, $tablecomments, $tableposts;
-$request = "SELECT ID, comment_ID, comment_content, comment_author, comment_author_email FROM $tableposts, $tablecomments WHERE $tableposts.ID=$tablecomments.comment_post_ID AND post_status = 'publish' ";
-if(!$show_pass_post) { $request .= "AND post_password ='' "; }
-$request .= "AND comment_approved = '1' ORDER BY $tablecomments.comment_date DESC LIMIT $no_comments";
-$comments = $wpdb->get_results($request);
-foreach ($comments as $comment) {
-		$comment_id = $comment->comment_ID;
-		$comment_content = strip_tags($comment->comment_content);
-		$comment_excerpt = mb_substr($comment_content, 0, $comment_lenth)."";
-		$permalink = get_permalink($comment->ID)."#comment-".$comment->comment_ID;
-		$mal = get_the_title($comment->ID);
-		$comment_author_email = $comment->comment_author_email;
-echo '<div class="mini">';
-     if (function_exists('get_avatar')) {
-					  if ('' == $comment->comment_type) {
-						 echo get_avatar($comment->comment_author_email, 40);
-					  } elseif ( ('trackback' == $comment->comment_type) || ('pingback' == $comment->comment_type) ) {
-						 echo get_avatar($comment->comment_author_url, 40);
-					  }
-				   } elseif (function_exists('gravatar')) {
-					  echo "<img src=\"";
-					  if ('' == $comment->comment_type) {
-						 echo gravatar($comment->comment_author_email);
-					  } elseif ( ('trackback' == $comment->comment_type) || ('pingback' == $comment->comment_type) ) {
-						 echo gravatar($comment->comment_author_url);
-					  }
-					  echo "\" alt=\"\" />";
-				   }
-       echo '<div class="maxi">';
-			echo " <p  class=\"xcom\">";
-					echo '<span class="conbreak"></span>On  ' . $mal . '<br>' ;
-			echo " <a class=\"xlink\"  href=\"" . $permalink . "\" title=\"$mal\">";		
-			echo $comment_excerpt;
-			
-			echo "</a>";   echo '</div>' ;  echo '</div>' ;  			
-         echo '<div class="xclear"></div>';
-	            }
-}
-?><?php 
-function excerpt_ellipse($text) {
+<?php  function excerpt_ellipse($text) {
    return str_replace('[...]', ' <a href="'.get_permalink().'">...Read more.</a>', $text); }
 add_filter('the_excerpt', 'excerpt_ellipse');
 function mytheme_comment($comment, $args, $depth) {
@@ -58,9 +18,8 @@ function mytheme_comment($comment, $args, $depth) {
       <div class="reply">
          <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
       </div></p>
-      <div class="chase">
-      	
-      </div>
+<div class="chase">
+    </div>
       
       </div></div>
 <?php
@@ -129,35 +88,20 @@ function mytheme_admin() {
 * Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
 ***********************************************/
 </script>
-<div id="flowertabs" class="modernbricksmenu2"><ul>
-<li><a href="EM" rel="x1x"  rev="z-a">Home</a></li>
-<li><a href="1" rel="x1x" rev="z-b">Page and Container</a></li>
-<li><a href="6" rel="x1x" rev="z-g">Head</a></li>
-<li><a href="18" rel="x1x" rev="z-s">Navigation</a></li>
-<li><a href="2" rel="x1x"rev="z-c">Front Page</a></li>
-<li><a href="3" rel="x1x" rev="z-d">Post Title & Meta</a></li>
-<li><a href="4" rel="x1x" rev="z-e">Comments</a></li>
-<li><a href="5" rel="x1x" rev="z-f">Images</a></li>
-<li><a href="7" rel="x1x" rev="z-h">Footer</a></li>
-<li><a href="8" rel="x1x" rev="z-i">P Text</a></li>
-<li><a href="9" rel="x1x" rev="z-j">Sidebar</a></li>
-<li><a href="30" rel="x1x" rev="z-aa">Footer Widget Areas</a></li>
-<li><a href="10" rel="x1x" rev="z-k">Headings</a></li>
-<li><a href="11" rel="x1x" rev="z-l">Sticky Posts</a></li>
-<li><a href="12" rel="x1x" rev="z-m">Tag Cloud </a></li>
-<li><a href="13" rel="x1x" rev="z-n">Block Quotes</a></li>
-<li><a href="14" rel="x1x" rev="z-o">Adverts</a></li>
-<li><a href="15" rel="x1x" rev="z-p">Google Anayltics</a></li>
-<li><a href="19" rel="x1x" rev="z-t">Error Pages</a></li>
-<li><a href="20" rel="x1x" rev="z-u">Tables</a></li>
-<li><a href="21" rel="x1x" rev="z-v">Lists</a></li>
-<li><a href="22" rel="x1x" rev="z-w">Links</a></li>
-<li><a href="24" rel="x1x" rev="z-xx">Favicon</a></li>
-<li><a href="26" rel="x1x" rev="z-xb">Loaded Widgets</a></li>
-<li><a href="25" rel="x1x" rev="z-xa">Tutorials</a></li>
-<li><a href="16" rel="x1x" rev="z-q">Help</a></li>
-<li><a href="17" rel="x1x" rev="z-r">FREE PSD</a></li>
-<li><a href="23" rel="x1x" rev="z-x">Reset Options</a></li>
+<div id="flowertabs" class="modernbricksmenu2"><ul><li><a href="EM" rel="x1x"  rev="z-a">Home</a></li>
+<li><a href="1" rel="x1x" rev="z-b">Page and Container</a></li><li><a href="6" rel="x1x" rev="z-g">Head</a></li>
+<li><a href="18" rel="x1x" rev="z-s">Navigation</a></li><li><a href="2" rel="x1x"rev="z-c">Front Page</a></li>
+<li><a href="3" rel="x1x" rev="z-d">Post Title & Meta</a></li><li><a href="4" rel="x1x" rev="z-e">Comments</a></li>
+<li><a href="5" rel="x1x" rev="z-f">Images</a></li><li><a href="7" rel="x1x" rev="z-h">Footer</a></li>
+<li><a href="8" rel="x1x" rev="z-i">P Text</a></li><li><a href="9" rel="x1x" rev="z-j">Sidebar</a></li>
+<li><a href="30" rel="x1x" rev="z-aa">Footer Widget Areas</a></li><li><a href="10" rel="x1x" rev="z-k">Headings</a></li>
+<li><a href="11" rel="x1x" rev="z-l">Sticky Posts</a></li><li><a href="12" rel="x1x" rev="z-m">Tag Cloud </a></li>
+<li><a href="13" rel="x1x" rev="z-n">Block Quotes</a></li><li><a href="14" rel="x1x" rev="z-o">Adverts</a></li>
+<li><a href="22" rel="x1x" rev="z-w">Links</a></li><li><a href="21" rel="x1x" rev="z-v">Lists</a></li>
+<li><a href="20" rel="x1x" rev="z-u">Tables</a></li><li><a href="19" rel="x1x" rev="z-t">Error Pages</a></li>
+<li><a href="15" rel="x1x" rev="z-p">Google Anayltics</a></li><li><a href="24" rel="x1x" rev="z-xx">Favicon</a></li>
+<li><a href="25" rel="x1x" rev="z-xa">Tutorials</a></li><li><a href="16" rel="x1x" rev="z-q">Help</a></li>
+<li><a href="17" rel="x1x" rev="z-r">FREE PSD</a></li><li><a href="23" rel="x1x" rev="z-x">Reset Options</a></li>
 </ul><div class="clearbox"></div></div>
 <div class="clearbox"></div>
  <?php

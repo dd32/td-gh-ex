@@ -22,7 +22,7 @@ $shortname."_container_border_type", "type" => "select", "std" => "solid", "opti
 "dotted", "dashed", "inset", "outset", "ridge" ),), array( "type" => "box-close"), array( "type" => "line-break"), array( "name"
 => "Container Paddings", "type" => "left-half"), array( "name" => "Top:", "id" => $shortname."_container_padding_top", "std" =>
 "5", "type" => "text-mp"), array( "name" => "Right:", "id" => $shortname."_container_padding_right", "std" => "5", "type" =>
-"text-mp"), array( "name" => "Bottom:", "id" => $shortname."_container_padding_bottom", "std" => "5", "type" => "text-mp"),
+"text-mp"), array( "name" => "Bottom:", "id" => $shortname."_container_padding_bottom", "std" => "15", "type" => "text-mp"),
 array( "name" => "Left:", "id" => $shortname."_container_padding_left", "std" => "5", "type" => "text-mp"), array( "type" =>
 "box-close"), array( "name" => "Conatiner Margins", "type" => "right-half"), array( "name" => "Top:", "id" =>
 $shortname."_container_margin_top", "std" => "10", "type" => "text-mp"), array( "name" => "Bottom:", "id" =>
@@ -32,22 +32,16 @@ the page, no matter what the screen size. If you do wish to change this, you wil
 array( "type" => "an-ending"), array( "type" => "z-c"), array( "name" => "Index/Front Page", "type" => "title"), 
 array( "type"
 => "line-break"),
-
-
 array( "type" => "tin-tin"), array( "type" => "deus", "name" => "The images below are representations of
 different layouts available for your front page. Please choose one and select that name from the drop down box below the images.
 ",), 
-
-
-array("id" => $shortname."_index_file", "folder" => "homepage", "ifolder" => "homepage-images", "std" => "a-normal.php",
-"type" => "select-list"), 
-
-
-
-
+array( "type"
+=> "sugercube"),
+array( "name" => "Front Page:", "id" =>
+$shortname."_index_file", "type" => "select-super", "std" => "a-normal.php", "options" => array("a-normal.php", "mullet-left-sidebar.php", "mullet.php", "normal-left-sidebar.php" ),),
 array( "type" => "line-break"), array( "type" => "box-close"), array( "name" => "Full Posts or
-Excerpts", "type" => "subtitle"), array( "type" => "tin-tin"), array( "name" => "<strong> aaa-default-front-aaa;</strong> can be
-set to either show posts or excerpts though the Front Page Options below. <br> <strong>Mullet:</strong> displays the newest post
+Excerpts", "type" => "subtitle"), array( "type" => "tin-tin"), array( "name" => "<strong> a-normal and normal-left-sidebar</strong> can be
+set to either show posts or excerpts though the Front Page Options below. <br> <strong>Mullet and Mullet-left-side:</strong> displays the newest post
 (plus sticky) at the top with full content and the rest of the posts below with excerpts. <br> This cannot be changed via the
 control panel.", "type" => "advice"), array( "name" => " ", "id" => $shortname."_main_post_type", "type" => "select", "std" =>
 "content", "options" => array( "content", "excerpt"), ), array( "type" => "box-close"), array( "type" => "an-ending"), array(
@@ -88,14 +82,14 @@ $shortname."_post_title_link_style_hover", "type" => "select", "std" => "normal"
 $shortname."_post_title_link_weight_visited", "type" => "select", "std" => "normal", "options" => array( "normal", "bold"), ),
 array( "name" => "Hover:", "id" => $shortname."_post_title_link_weight_hover", "type" => "select", "std" => "normal", "options"
 => array( "normal", "bold"), ), array( "type" => "box-close"), array( "name" => "Post Title Line Height", "type" =>
-"right-half"), array( "name" => "Line Height:", "id" => $shortname."_post_title_line_height", "std" => "170", "type" =>
+"right-half"), array( "name" => "Line Height:", "id" => $shortname."_post_title_line_height", "std" => "110", "type" =>
 "text-wide"), array( "type" => "box-close"), array("type" => "line-break"), array( "name" => "Post Title Padding (px)", "type"
 => "left-half"), array( "name" => "Top:", "id" => $shortname."_post_title_padding_top", "std" => "2", "type" => "text-mp"),
 array( "name" => "Right:", "id" => $shortname."_post_title_padding_right", "std" => "1", "type" => "text-mp"), array( "name" =>
 "Bottom:", "id" => $shortname."_post_title_padding_bottom", "std" => "2", "type" => "text-mp"), array( "name" => "Left:", "id"
 => $shortname."_post_title_padding_left", "std" => "0", "type" => "text-mp"), array( "type" => "box-close"), array( "name" =>
 "Post Title Margins (px)", "type" => "right-half"), array( "name" => "Top:", "id" => $shortname."_post_title_margin_top", "std"
-=> "15", "type" => "text-mp"), array( "name" => "Right:", "id" => $shortname."_post_title_margin_right", "std" => "1", "type" =>
+=> "5", "type" => "text-mp"), array( "name" => "Right:", "id" => $shortname."_post_title_margin_right", "std" => "1", "type" =>
 "text-mp"), array( "name" => "Bottom:", "id" => $shortname."_post_title_margin_bottom", "std" => "1", "type" => "text-mp"),
 array( "name" => "Left:", "id" => $shortname."_post_title_margin_left", "std" => "1", "type" => "text-mp"), array("type" =>
 "box-close"), array("type" => "line-break"), array( "name" => "Post Meta Information", "type" => "subtitle"), array( "name" =>
@@ -232,9 +226,9 @@ Roman", "Verdana", "Trebuchet MS", "Lucida Sans"), ), array( "name" => "P Color:
 array("type" => "right-empty"), array( "name" => "P Font Weight:", "id" => $shortname."_p_weight", "type" => "select", "std" =>
 "normal", "options" => array( "normal", "bold"), ), array( "name" => "P Font Style:", "id" => $shortname."_p_style", "type" =>
 "select", "std" => "normal", "options" => array( "normal", "italic", "oblique"), ), array( "name" => "P Line height (%)", "id"
-=> $shortname."_p_line_size", "std" => "200", "type" =>"text-left"), array("type" => "box-close"), array("type" =>
+=> $shortname."_p_line_size", "std" => "150", "type" =>"text-left"), array("type" => "box-close"), array("type" =>
 "line-break"), array( "name" => "P Padding Options", "type" => "left-half"), array( "name" => "Top:", "id" =>
-$shortname."_p_padding_top", "std" => "5", "type" => "text-mp"), array( "name" => "Right:", "id" =>
+$shortname."_p_padding_top", "std" => "2", "type" => "text-mp"), array( "name" => "Right:", "id" =>
 $shortname."_p_padding_right", "std" => "1", "type" => "text-mp"), array( "name" => "Bottom:", "id" =>
 $shortname."_p_padding_bottom", "std" => "3", "type" => "text-mp"), array( "name" => "Left:", "id" =>
 $shortname."_p_padding_left", "std" => "1", "type" => "text-mp"), array("type" => "box-close"), array( "name" => "P Margin
@@ -252,7 +246,7 @@ array( "name" => "Footer P Options", "type" => "subtitle"), array( "type" => "du
 "right-empty"), array( "name" => "P Font Weight: ", "id" => $shortname."_p_footer_weight", "type" => "select", "std" =>
 "normal", "options" => array( "normal", "bold"), ), array( "name" => "P Font Style:", "id" => $shortname."_p_footer_style",
 "type" => "select", "std" => "normal", "options" => array( "normal", "italic", "oblique"),), array( "name" => "P Line height
-(%)", "id" => $shortname."_p_footer_line_size", "std" => "200", "type" =>"text-wide"), array("type" => "box-close"), array(
+(%)", "id" => $shortname."_p_footer_line_size", "std" => "150", "type" =>"text-wide"), array("type" => "box-close"), array(
 "name" => "P Padding Options", "type" => "left-half"), array( "name" => "Top:", "id" => $shortname."_p_footer_padding_top",
 "std" => "1", "type" => "text-mp"), array( "name" => "Right:", "id" => $shortname."_p_footer_padding_right", "std" => "1",
 "type" => "text-mp"), array( "name" => "Bottom:", "id" => $shortname."_p_footer_padding_bottom", "std" => "3", "type" =>
@@ -283,15 +277,15 @@ array( "type" => "right-empty"), array( "name" => "Background Color:", "id" => $
 $shortname."_h3_widget_style", "type" => "select", "std" => "normal", "options" => array( "normal", "italic", "oblique"), ),
 array( "name" => "Font Transform:", "id" => $shortname."_h3_widget_font_trans", "type" => "select", "std" => "uppercase",
 "options" => array( "uppercase","capitalize", "none", "lowercase",), ), array( "name" => "Line Height (%)", "id" =>
-$shortname."_h3_widget_line_height", "std" => "150", "type" => "text-left"), array( "type" => "box-close"), array( "type" =>
+$shortname."_h3_widget_line_height", "std" => "120", "type" => "text-left"), array( "type" => "box-close"), array( "type" =>
 "full-empty"), array( "type" => "box-close"), array( "name" => "Widget Headers Paddings:", "type" => "left-half"), array( "name"
 => "Top:", "id" => $shortname."_h3_widget_padding_top","std" => "1", "type" => "text-mp"), array( "name" => "Right:", "id" =>
 $shortname."_h3_widget_padding_right", "std" => "0", "type" => "text-mp"), array( "name" => "Bottom:", "id" =>
 $shortname."_h3_widget_padding_bottom", "std" => "1", "type" => "text-mp"), array( "name" => "Left:", "id" =>
 $shortname."_h3_widget_padding_left", "std" => "0", "type" => "text-mp"), array( "type" => "box-close"), array( "name" =>
 "Widget Headers Margins:", "type" => "right-half"), array( "name" => "Top:", "id" => $shortname."_h3_widget_margin_top", "std"
-=> "15", "type" => "text-mp"), array( "name" => "Right:", "id" => $shortname."_h3_widget_margin_right", "std" => "0", "type" =>
-"text-mp"), array( "name" => "Bottom:", "id" => $shortname."_h3_widget_margin_bottom", "std" => "7", "type" => "text-mp"),
+=> "5", "type" => "text-mp"), array( "name" => "Right:", "id" => $shortname."_h3_widget_margin_right", "std" => "0", "type" =>
+"text-mp"), array( "name" => "Bottom:", "id" => $shortname."_h3_widget_margin_bottom", "std" => "3", "type" => "text-mp"),
 array( "name" => "Left:", "id" => $shortname."_h3_widget_margin_left", "std" => "0", "type" => "text-mp"), array( "type" =>
 "box-close"), array( "type" => "an-ending"), array( "type" => "z-aa"), array( "name" => "Footer Widget Options", "type" =>
 "title"), array( "type" => "dummy-space"), array( "type" => "dummy-f1"), array( "type" => "dummy-space"), array( "name" =>
@@ -473,7 +467,7 @@ array( "name" => "Bottom:", "id" => $shortname."_sticky_padding_bottom", "std" =
 "dummy-space"), array( "type" => "dummy-tag-cloud"), array( "type" => "dummy-space"), array( "type" => "left-empty"), array(
 "name" => "Display the footer tag cloud box? ", "id" => $shortname."_footer_tags", "type" => "select-wide", "std" => "yes",
 "options" => array( "yes", "no"),), array( "name" => "Background Color:", "id" => $shortname."_tag_area_background_color", "std"
-=> "", "type" => "text-color"), array( "type" => "box-close"), array( "type" => "right-empty"), array( "name" => "Normal Link
+=> "181717", "type" => "text-color"), array( "type" => "box-close"), array( "type" => "right-empty"), array( "name" => "Normal Link
 Color:", "id" => $shortname."_tag_area_font_color", "std" => "ccc", "type" => "text-color"), array( "name" => "Hover Link
 Color:", "id" => $shortname."_tag_area_font_color_hover", "std" => "fff", "type" => "text-color"), array( "name" => "Visited
 Link Color:", "id" => $shortname."_tag_area_font_color_visited", "std" => "ccc", "type" => "text-color"), array( "type" =>
@@ -510,19 +504,13 @@ $shortname."_bloc_border_type", "type" => "select", "std" => "solid", "options" 
 "text-mp"), array( "name" => "Right:", "id" => $shortname."_bloc_margin_right", "std" => "10", "type" => "text-mp"), array(
 "name" => "Bottom:", "id" => $shortname."_bloc_margin_bottom", "std" => "10", "type" => "text-mp"), array( "name" => "Left:",
 "id" => $shortname."_bloc_margin_left", "std" => "10", "type" => "text-mp"), array("type" => "box-close"), array( "type" =>
-"an-ending"), array( "type" => "z-o"), array( "name" => "Adverts", "type" => "title"), array( "type" => "deus","name" => "Below
-you will see code boxes for adverts on the theme. </br> We do not provide back end previews of the adverts to make sure you dont
-get into trouble clicking your on adverts!",), array( "name" => "Advert One", "type" => "subtitle"), array( "type" =>
+"an-ending"), array( "type" => "z-o"), 
+array( "name" => "Adverts", "type" => "title"), array( "type" => "deus","name" => "To insert adverts into your theme, please open advert-one.php and advert-two.php in either the Wordpress Admin Theme Editor or via your own text editor and place your advert code between the start and stop advert tags. There is no need to change anything else in the files. Once these are filled in and saved, your adverts will appear correctly. ",), array( "name" => "Advert One", "type" => "subtitle"), array( "type" =>
 "deus","name" => "Advert One is positioned on the front page, page, archive, and single post pages. The advert should be a
-maximum of about 700px wide so it doesnt stick into anything else.",), array("type" => "left-empty"), array( "name" => "Display
-Advert One ", "id" => $shortname."_show_advert_one", "type" => "select", "std" => "no", "options" => array( "yes", "no"),),
-array( "type" => "box-close"), array( "desc" => "Enter your advert code in the box above. ", "id" => $shortname."_advert_one",
-"std" => "", "type" => "advert"), array( "name" => "Advert Two", "type" => "subtitle"), array( "type" => "deus", "name" =>
+maximum of about 700px wide so it doesnt stick into anything else.",),  array( "name" => "Advert Two", "type" => "subtitle"), array( "type" => "deus", "name" =>
 "Advert Two is a full sidebar width advert and should be about 250px wide. This can be set up, as we have demoed, to be a block
-of 125x125px square adverts or one large advert. Just enter the code acordingly.",), array("type" => "left-empty"), array(
-"name" => "Display Advert Two; ", "id" => $shortname."_show_advert_two", "type" => "select", "std" => "no", "options" => array(
-"yes", "no"), ), array( "type" => "box-close"), array( "desc" => "Enter your advert code in the box above.", "id" =>
-$shortname."_advert_two", "std" => "", "type" => "advert"), array( "type" => "an-ending"), array( "type" => "z-p"), array(
+of 125x125px square adverts or one large advert. Just enter the code acordingly.",), array( "type" => "space-space"), array( "type" => "an-ending"), 
+array( "type" => "z-p"), array(
 "name" => "Google Anayltics", "type" => "title"), array( "type" => "deus", "name" => "Google Anayltics is a great way of keeping
 a watch on your visitors and how they got there. Its built right in to the 42k theme, so all you need to do is enter your Google
 Anayltics tracker code in the box below and your ready to go.",), array( "desc" => "Enter your Google Anaylitics code in the box
@@ -589,7 +577,7 @@ $shortname."_404_text", "std" => "We cant find what your looking for.", "type" =
 array( "type" => "z-u"), array( "name" => "Table Options", "type" => "title"), array( "type" => "dummy-space"), array( "type" =>
 "dummy-table"), array( "type" => "dummy-space"), array( "name" => " Table Options","type" => "subtitle"), array( "name" =>
 "Table Background & Border:", "type" => "left-half"), array( "name" => "Background Color:", "id" =>
-$shortname."_table_background_color", "std" => "eee", "type" => "text-color-wide"), array( "name" => "Border Color:", "id" =>
+$shortname."_table_background_color", "std" => "", "type" => "text-color-wide"), array( "name" => "Border Color:", "id" =>
 $shortname."_table_border_color", "std" => "666", "type" => "text-color"), array( "name" => "Width:", "id" =>
 $shortname."_table_border_width", "std" => "1", "type" => "text-mp"), array( "name" => "Border Type:", "id" =>
 $shortname."_table_border_type", "type" => "select", "std" => "solid", "options" => array("solid", "double", "groove", "dotted",
@@ -603,7 +591,7 @@ Margins", "type" => "text-four"), array( "name" => "Top:", "id" => $shortname."_
 "name" => "Bottom:", "id" => $shortname."_table_margin_bottom", "std" => "3", "type" => "text-mp"), array( "name" => "Left:",
 "id" => $shortname."_table_margin_left", "std" => "3", "type" => "text-mp"), array( "type" => "box-close"), array( "type" =>
 "line-break"), array( "name" => " Table Heading Options","type" => "subtitle"), array( "name" => "Heading Background & Border",
-"type" => "left-half"), array( "name" => "Background Color:", "id" => $shortname."_th_background_color", "std" => "eee", "type"
+"type" => "left-half"), array( "name" => "Background Color:", "id" => $shortname."_th_background_color", "std" => "", "type"
 => "text-color-wide"), array( "name" => "Border Color:", "id" => $shortname."_th_border_color", "std" => "666", "type"=>
 "text-color"), array( "name" => "Width:", "id" => $shortname."_th_border_width", "std" => "1", "type" => "text-mp"), array(
 "name" => "Border Type:", "id" => $shortname."_th_border_type", "type" => "select", "std" => "solid", "options" =>
@@ -623,7 +611,7 @@ $shortname."_th_weight", "type" => "select", "std" => "normal", "options" => arr
 Transform:", "id" => $shortname."_th_trans", "type" => "select", "std" => "uppercase", "options" => array(
 "uppercase","capitalize", "none", "lowercase",), ), array( "type" => "box-close"), array( "type" => "line-break"), array( "name"
 => " Table Data Options","type" => "subtitle"), array( "name" => "Data Background & Border", "type" => "left-half"), array(
-"name" => "Background Color:", "id" => $shortname."_td_background_color", "std" => "eee", "type" => "text-color-wide"), array(
+"name" => "Background Color:", "id" => $shortname."_td_background_color", "std" => "", "type" => "text-color-wide"), array(
 "name" => "Border Color:", "id" => $shortname."_td_border_color", "std" => "666", "type"=> "text-color"), array( "name" =>
 "Width:", "id" => $shortname."_td_border_width", "std" => "1", "type" => "text-mp"), array( "name" => "Border Type:", "id" =>
 $shortname."_td_border_type", "type" => "select", "std" => "solid", "options" => array("solid", "double", "groove", "dotted",
@@ -759,39 +747,6 @@ array( "name" => "Normal:", "id" => $shortname."_footerlink_trans_normal", "type
 array( "name" => "Visited:", "id" => $shortname."_footerlink_trans_visited", "type" => "select", "std" => "none", "options" => array( "none","capitalize", "uppercase", "lowercase",), ),
 array( "name" => "Hover:", "id" => $shortname."_footerlink_trans_hover", "type" => "select", "std" => "none", "options" => array( "none","capitalize", "uppercase", "lowercase",), ),
  array( "type" => "box-close"),
-array( "type" => "an-ending"),
-array( "type" => "z-xb"), array( "name" => "Loaded Widgets", "type" => "title"), array( "name" => "Meta", "type" => "subtitle"),
-array( "type" => "deus", "name" => "In the sidebar there is an area for meta (log in, out etc) do you wish to show this on your site?",),
- array( "name" => "Display Meta in the sidebar? ", "id" => $shortname."_sidebar_meta", "type" => "select-four", "std" => "yes", "options" => array( "yes", "no"),),
-array( "name" => "Show Sidebar Categories List?", "type" => "subtitle"),
-array( "type" => "deus", "name" => "Sidebar list of categories, do you wish to display this?"),
- array( "name" => "Display the categories list in the sidebar? ", "id" => $shortname."_sidebar_catz", "type" => "select-four", "std" => "yes", "options" => array( "yes", "no"), ),
-array( "name" => "Sidebar Links List", "type" => "subtitle"),
-array( "type" => "deus", "name" => "Displays a list of your links in the sidebar.",),
- array( "name" => "Display links list in the sidebar? ", "id" => $shortname."_sidebar_links", "type" => "select-four", "std" => "yes", "options" => array( "yes", "no"), ),
-array( "name" => "Featured Widget", "type" => "subtitle"),
-array( "type" => "deus", "name" => "Featured Widget shows featured posts in the left hand footer widget area.",),
-array( "name" => "Display the feature section? ", "id" => $shortname."_feature_value", "type" => "select-four", "std" => "yes", "options" => array( "yes", "no"), ),
-array( "name" => "Title:", "id" => $shortname."_featured_title", "std" => "Featured Posts", "type" => "text-wide"),
-array( "name" => "Category Number", "id" => $shortname."_featured_cat", "std" => "0", "type" => "text-wide"),
-array( "name" => "Amount of posts", "id" => $shortname."_featured_number", "std" => "3", "type" => "text-wide"),
-array( "type" => "deus", "name" => "The value for the custom field image is <cite> feature image</cite><br> To learn more about how to use these custom field images in the Featured Widget please see <a target=\"_blank\" href=\"http://factory42.co.uk/how-to-feature-widget-area\">this tutorial</a> which covers everything you need to know about this widget.
-",), array( "type" => "left-empty"), array( "name" => "Image Height", "id" => $shortname."_foot_img_height", "std" => "60", "type" => "text-wide"),
-array( "name" => "Image Width", "id" => $shortname."_foot_img_width", "std" => "300", "type" => "text-wide"), array( "type" => "box-close"),
-array( "name" => "Comment Widget", "type" => "subtitle"),
-array( "type" => "deus", "name" => "Details about the recent comments Widget. Avatar options and values are the same as those you selected in the comments tab",),
-array( "name" => "Display the recent comments section? ", "id" => $shortname."_com_value", "type" => "select-four", "std" => "yes", "options" => array( "yes", "no"), ),
-array( "name" => "Main Title for Comment Widget:", "id" => $shortname."_com_title", "std" => "Recent Comments", "type" => "text-wide"),
-array( "name" => "How many comments to show:", "id" => $shortname."_com_number", "std" => "3", "type" => "text-wide"),
-array( "name" => "Amount of characters per comment:", "id" => $shortname."_com_siz", "std" => "250", "type" => "text-wide"),
-array( "name" => "About Widget", "type" => "subtitle"),
-array( "type" => "deus", "name" => "In the right hand footer widget area there is an about section, which can be used for anything you like.",),
-array( "name" => "Display the about section? ", "id" => $shortname."_about", "type" => "select-four", "std" => "yes", "options" => array( "yes", "no"), ),
-array( "desc" => "Enter your text for the title of the about section.", "id" => $shortname."_about_title", "std" => "About section of text", "type" => "advert"),
-array( "desc" => "Enter the text for the about section (HTML is ok)", "id" => $shortname."_about_body", "std" => "
-This is some text that you can change through the admin panel, this can be anything you wish, from details about the site to some of your favorite quotes about life. Its HTML ready as well, so you can add tags and even as we have here.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum commodo lacinia. Maecenas venenatis rutrum libero, ut vehicula quam ornare in. In ut ornare orci. Suspendisse faucibus fringilla dolor, non volutpat ligula dignissim sit amet. Nam lacinia est sit amet mi bibendum mollis. Vestibulum dictum feugiat semper. Integer sapien dui, ullamcorper a rutrum ut, consequat sit amet felis. Sed a semper dui. Sed dapibus, nisl eu posuere condimentum, elit massa ornare tortor, id auctor risus est eget metus. Sed gravida nibh in diam venenatis porttitor.
-", "type" => "advert"),
 array( "type" => "an-ending"),
 array( "type" => "z-x"), array( "name" => "Reset", "type" => "title"), array("type" => "reset-reset"), array( "type" => "an-ending"),
 array( "type" => "space-space"),

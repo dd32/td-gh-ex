@@ -1,20 +1,20 @@
 <?php global $options; foreach ($options as $value) { if (get_settings( $value['id'] ) === FALSE) { $$value['id'] =
 $value['std']; } else { $$value['id'] = get_settings( $value['id'] ); } } ?> <style type="text/css">
 .logo-text { background-color: #<?php echo $bxx_logo_background_color;?>; font-size: <?php echo $bxx_logo_size;?>px; float:
-<?php echo $bxx_logo_float;?>; margin-left: 0px; margin-right: 15px; margin-top: 20px; margin-bottom: 0xp; margin-bottom: 0px;
-line-height: 100%; color: #<?php echo $bxx_logo_color;?>; text-transform: <?php echo $bxx_title_trans;?>; text-decoration: <?php
-echo $bxx_name_decoration;?>; font-weight: <?php echo $bxx_logo_weight;?>; } .logo-text a:visited, a:link a:hover {
+<?php echo $bxx_logo_float;?>; margin-left: 0px; margin-right: 15px; margin-top: 10px; margin-bottom: 0xp; margin-bottom: 0px;
+line-height: 100%; color: #<?php echo $bxx_logo_color;?>; text-transform: <?php echo $bxx_title_trans;?>; text-decoration: <?php echo $bxx_name_decoration;?>;  font-weight: <?php echo $bxx_logo_weight;?>; } 
+.logo-text a:link, .logo-text a:visited, .logo-text a:hover {
 background-color: #<?php echo $bxx_logo_background_color;?>; color: #<?php echo $bxx_logo_color;?>; font-size: <?php echo
 $bxx_logo_size;?>px; text-decoration: <?php echo $bxx_name_decoration;?>; font-style: <?php echo $bxx_logo_style;?>;
 font-weight: <?php echo $bxx_logo_weight;?>; font-family: <?php echo $bxx_logo_font_family;?>, <?php echo $bxx_p_font;?>;
 text-transform: <?php echo $bxx_title_trans;?>; text-decoration: <?php echo $bxx_name_decoration;?>; font-weight: <?php echo
-$bxx_logo_weight;?>; padding: 0px; margin-bottom: 0px; line-height: 100%; } .icon-holder { width: 1000px; } .icon { float:<?php
+$bxx_logo_weight;?>; padding: 0px; margin-bottom: 0px; line-height: 100%; } 
+.icon-holder { width: 1000px; } .icon { float:<?php
 echo $bxx_icon_float;?>; border: 0px; width: 21px; height: 21px; padding-left: 5px; padding-right: 5px; margin-bottom: 3px;
 margin-top: 3px; } #showhide { margin-left: auto; margin-right: auto; display: none; width: 1000px; padding-top: 15px;
 padding-bottom: 15px; } .search-input{ width: 350px; height: 14px; color: #<?php echo $bxx_p_color;?>; float:left; border: 1px
 solid #ccc; background:#fff; font-size: 11px; padding: 3px 5px; }
-.foot-latest { width: <?php echo $bxx_foot_img_width;?>px; height: <?php echo $bxx_foot_img_height;?>px;
- } .maxi { width: 230px; float: right; } .mini .avatar { border:<?php echo $bxx_avatar_border_size;?>px <?php echo
+.maxi { width: 230px; float: right; } .mini .avatar { border:<?php echo $bxx_avatar_border_size;?>px <?php echo
 $bxx_avatar_border_type;?> #<?php echo $bxx_avatar_border_color;?>; float:<?php echo $bxx_avatar_float;?>; height:<?php echo
 $bxx_avatar_size;?>px; width:<?php echo $bxx_avatar_size;?>px; margin:5px 10px 5px 5px; padding:0px;
  } .conbreak { clear: both; height: 10px; } .xclear { height: 20px; clear: both; } .ff-link { line-height: 150%; }
@@ -60,14 +60,14 @@ body{ background: #<?php echo $bxx_page_background_color;?>; background-image: u
 bloginfo('template_url');?>/images/<?php echo $bxx_page_background_image;?>); background-repeat: <?php echo
 $bxx_page_background_image_repeat;?>; background-position: <?php echo $bxx_page_background_image_align;?>; text-align: center;
 font-family: <?php echo $bxx_p_font;?>; font-size: <?php echo $bxx_p_size;?>px; padding: 0px; margin: 0px; }
-p, .textwidget { color: #<?php echo $bxx_p_color;?>; font-family: <?php echo $bxx_p_font;?>, <?php echo $bxx_p_font;?>;
+p, .textwidget, caption { color: #<?php echo $bxx_p_color;?>; font-family: <?php echo $bxx_p_font;?>, <?php echo $bxx_p_font;?>;
 font-size: <?php echo $bxx_p_size;?>px; text-decoration: <?php echo $bxx_p_decoration;?>; font-style: <?php echo
 $bxx_p_style;?>; font-weight: <?php echo $bxx_p_weight;?>; padding-left: <?php echo $bxx_p_padding_left;?>px; padding-right:
 <?php echo $bxx_p_padding_right;?>px; padding-top: <?php echo $bxx_p_padding_top;?>px; padding-bottom: <?php echo
 $bxx_p_padding_bottom;?>px; margin-left: <?php echo $bxx_p_margin_left;?>px; margin-right: <?php echo $bxx_p_margin_right;?>px;
 margin-top: <?php echo $bxx_p_margin_top;?>px; margin-bottom: <?php echo $bxx_p_margin_bottom;?>px; line-height: <?php echo
 $bxx_p_line_size;?>%; }
-.footcon p, .footcon .textwidget { color: #<?php echo $bxx_p_footer_color;?>; font-family: <?php echo $bxx_p_footer_font;?>,
+.footcon p, .footcon .textwidget, .footcon caption { color: #<?php echo $bxx_p_footer_color;?>; font-family: <?php echo $bxx_p_footer_font;?>,
 <?php echo $bxx_p_footer_font;?>; font-size: <?php echo $bxx_p_footer_size;?>px; text-decoration: <?php echo
 $bxx_p_footer_decoration;?>; font-style: <?php echo $bxx_p_footer_style;?>; font-weight: <?php echo $bxx_p_footer_weight;?>;
 padding-left: <?php echo $bxx_p_footer_padding_left;?>px; padding-right: <?php echo $bxx_p_footer_padding_right;?>px;
@@ -124,8 +124,8 @@ font-family: <?php echo $bxx_button_font_family;?>, <?php echo $bxx_p_font;?>;
 $bxx_button_background_hover;?>; color: #<?php echo $bxx_button_font_color_hover;?>; font-family: <?php echo
 $bxx_button_font_family;?>, <?php echo $bxx_p_font;?>; text-decoration: none;
 }
-#sidebar-left-one { width: 200px; background-color: blue; float: left; overflow: hidden; width: 260px; }
-#main-right{ background-color: #009900; float: right; width: 700px;
+#sidebar-left-one { width: 200px; float: left; overflow: hidden; width: 260px; }
+#main-right{ float: right; width: 700px;
 }
 #main{ background-color: #<?php echo $bxx_main_background_color;?>; float: left; clear: left; overflow: hidden; width: 70%; }
 #sidebar{ background-image: url(<?php bloginfo('template_url');?>/images/<?php echo $bxx_main_sidebar_background_image;?>);
@@ -137,6 +137,8 @@ bloginfo('template_url');?>/images/<?php echo $bxx_footer_left_sidebar_backgroun
 $bxx_footer_left_align?>; background-repeat: <?php echo $bxx_footer_left_sidebar_background_image_repeat;?>; float: left; clear:
 none; padding: 4px; margin: 4px; border: 0px; margin-top: 10px; text-align: left; } #submit { background: none;?>; color: #<?php
 echo $bxx_a_link_color;?>; border: 1px solid #<?php echo $bxx_a_link_color;?>; padding:3px; }
+.search-box-small .search-button{ width: 55px; height: 20px; padding-top: 3px; float: right; background:none; font-size: 10px; text-transform:
+uppercase; font-weight: bold; color: #<?php echo $bxx_a_link_color;?>; margin-top:11px; border: 1px solid #<?php echo $bxx_a_link_color;?>; }
 .search-button{ width: 55px; height: 20px; padding-top: 3px; float: right; background:none; font-size: 10px; text-transform:
 uppercase; font-weight: bold; color: #<?php echo $bxx_a_link_color;?>; border: 1px solid #<?php echo $bxx_a_link_color;?>; }
 table.authorbox { background-color:transparent; width: 300px; border: 0px; padding: 0px; } table.authorbox td, th {
@@ -204,8 +206,7 @@ echo $bxx_h2_padding_left;?>px; padding-right: <?php echo $bxx_h2_padding_right;
 $bxx_h2_padding_top;?>px; padding-bottom: <?php echo $bxx_h2_padding_bottom;?>px; margin-left: <?php echo
 $bxx_h2_margin_left;?>px; margin-right: <?php echo $bxx_h2_margin_right;?>px; margin-top: <?php echo $bxx_h2_margin_top;?>px;
 margin-bottom: <?php echo $bxx_h2_margin_bottom;?>px; text-transform: <?php echo $bxx_h2_font_trans;?>; line-height: <?php echo
-$bxx_h2_line_height;?>%;
-}
+$bxx_h2_line_height;?>%;}
 h3 { color: #<?php echo $bxx_h3_color;?>; background-color:#<?php echo $bxx_h3_background;?>; font-family: <?php echo
 $bxx_h3_font;?>, <?php echo $bxx_p_font;?>; font-size: <?php echo $bxx_h3_size;?>px; text-decoration: <?php echo
 $bxx_h3_decoration;?>; font-style: <?php echo $bxx_h3_style;?>; font-weight: <?php echo $bxx_h3_weight;?>; padding-left: <?php
@@ -213,8 +214,7 @@ echo $bxx_h3_padding_left;?>px; padding-right: <?php echo $bxx_h3_padding_right;
 $bxx_h3_padding_top;?>px; padding-bottom: <?php echo $bxx_h3_padding_bottom;?>px; margin-left: <?php echo
 $bxx_h3_margin_left;?>px; margin-right: <?php echo $bxx_h3_margin_right;?>px; margin-top: <?php echo $bxx_h3_margin_top;?>px;
 margin-bottom: <?php echo $bxx_h3_margin_bottom;?>px; text-transform: <?php echo $bxx_h3_font_trans;?>; line-height: <?php echo
-$bxx_h3_line_height;?>%;
-}
+$bxx_h3_line_height;?>%;}
 h4 { color: #<?php echo $bxx_h4_color;?>; background-color:#<?php echo $bxx_h4_background;?>; font-family: <?php echo
 $bxx_h4_font;?>, <?php echo $bxx_p_font;?>; font-size: <?php echo $bxx_h4_size;?>px; text-decoration: <?php echo
 $bxx_h4_decoration;?>; font-style: <?php echo $bxx_h4_style;?>; font-weight: <?php echo $bxx_h4_weight;?>; padding-left: <?php
@@ -222,8 +222,7 @@ echo $bxx_h4_padding_left;?>px; padding-right: <?php echo $bxx_h4_padding_right;
 $bxx_h4_padding_top;?>px; padding-bottom: <?php echo $bxx_h4_padding_bottom;?>px; margin-left: <?php echo
 $bxx_h4_margin_left;?>px; margin-right: <?php echo $bxx_h4_margin_right;?>px; margin-top: <?php echo $bxx_h4_margin_top;?>px;
 margin-bottom: <?php echo $bxx_h4_margin_bottom;?>px;
-text-transform: <?php echo $bxx_h4_font_trans;?>; line-height: <?php echo $bxx_h4_line_height;?>%;
-}
+text-transform: <?php echo $bxx_h4_font_trans;?>; line-height: <?php echo $bxx_h4_line_height;?>%;}
  h5 { color: #<?php echo $bxx_h5_color;?>; background-color:#<?php echo $bxx_h5_background;?>; font-family: <?php echo
 $bxx_h5_font;?>, <?php echo $bxx_p_font;?>; font-size: <?php echo $bxx_h5_size;?>px; text-decoration: <?php echo
 $bxx_h5_decoration;?>; font-style: <?php echo $bxx_h5_style;?>; font-weight: <?php echo $bxx_h5_weight;?>; padding-left: <?php
@@ -231,8 +230,7 @@ echo $bxx_h5_padding_left;?>px; padding-right: <?php echo $bxx_h5_padding_right;
 $bxx_h5_padding_top;?>px; padding-bottom: <?php echo $bxx_h5_padding_bottom;?>px; margin-left: <?php echo
 $bxx_h5_margin_left;?>px; margin-right: <?php echo $bxx_h5_margin_right;?>px; margin-top: <?php echo $bxx_h5_margin_top;?>px;
 margin-bottom: <?php echo $bxx_h5_margin_bottom;?>px; text-transform: <?php echo $bxx_h5_font_trans;?>; line-height: <?php echo
-$bxx_h5_line_height;?>%;
-}
+$bxx_h5_line_height;?>%;}
 h6 { color: #<?php echo $bxx_h6_color;?>; background-color:#<?php echo $bxx_h6_background;?>; font-family: <?php echo
 $bxx_h6_font;?>, <?php echo $bxx_p_font;?>; font-size: <?php echo $bxx_h6_size;?>px; text-decoration: <?php echo
 $bxx_h6_decoration;?>; font-style: <?php echo $bxx_h6_style;?>; font-weight: <?php echo $bxx_h6_weight;?>; padding-left: <?php
@@ -240,8 +238,7 @@ echo $bxx_h6_padding_left;?>px; padding-right: <?php echo $bxx_h6_padding_right;
 $bxx_h6_padding_top;?>px; padding-bottom: <?php echo $bxx_h6_padding_bottom;?>px; margin-left: <?php echo
 $bxx_h6_margin_left;?>px; margin-right: <?php echo $bxx_h6_margin_right;?>px; margin-top: <?php echo $bxx_h6_margin_top;?>px;
 margin-bottom: <?php echo $bxx_h6_margin_bottom;?>px; text-transform: <?php echo $bxx_h6_font_trans;?>; line-height: <?php echo
-$bxx_h6_line_height;?>%;
-}
+$bxx_h6_line_height;?>%;}
 h3.widget { color: #<?php echo $bxx_h3_widget_color;?>; background-color:#<?php echo $bxx_h3_widget_background;?>; font-family:
 <?php echo $bxx_h3_widget_font;?>, <?php echo $bxx_p_font;?>; font-size: <?php echo $bxx_h3_widget_size;?>px; text-decoration:
 <?php echo $bxx_h3_widget_decoration;?>; font-style: <?php echo $bxx_h3_widget_style;?>; font-weight: <?php echo
@@ -271,13 +268,14 @@ font-style: <?php echo $bxx_h3_hw2_style;?>; font-weight: <?php echo $bxx_h3_hw2
 $bxx_h3_hw2_padding_left;?>px; padding-right: <?php echo $bxx_h3_hw2_padding_right;?>px; padding-top: <?php echo
 $bxx_h3_hw2_padding_top;?>px; padding-bottom: <?php echo $bxx_h3_hw2_padding_bottom;?>px; margin-left: <?php echo
 $bxx_h3_hw2_margin_left;?>px; margin-right: <?php echo $bxx_h3_hw2_margin_right;?>px; margin-top: <?php echo
-$bxx_h3_hw2_margin_top;?>px; margin-bottom: <?php echo $bxx_hw2_widget_margin_bottom;?>px; } .metabox { background-color: #<?php
-echo $bxx_meta_background;?>; color: #<?php echo $bxx_meta_text_color;?>; float: left; padding-left: <?php echo
+$bxx_h3_hw2_margin_top;?>px; margin-bottom: <?php echo $bxx_hw2_widget_margin_bottom;?>px; } 
+.metabox { background-color: #<?php
+echo $bxx_meta_background;?>; color: #<?php echo $bxx_meta_text_color;?>; padding-left: <?php echo
 $bxx_meta_padding_left;?>px; padding-right: <?php echo $bxx_meta_padding_right;?>px; padding-top: <?php echo
-$bxx_meta_padding_top;?>px; padding-bottom: <?php echo $bxx_meta_padding_bottom;?>px; margin-left: <?php echo
+$bxx_meta_padding_top;?>px; padding-bottom: <?php echo $bxx_meta_padding_bottom;?>px; clear:both; margin-left: <?php echo
 $bxx_meta_margin_left;?>px; margin-right: <?php echo $bxx_meta_margin_right;?>px; margin-top: <?php echo
-$bxx_meta_margin_top;?>px; margin-bottom: <?php echo $bxx_meta_margin_bottom;?>px; width: 100%; line-height: 100%; } h5#slogan {
-color: #<?php echo $bxx_slogan_color;?>; font-size: <?php echo $bxx_slogan_size;?>px; text-decoration: <?php echo
+$bxx_meta_margin_top;?>px; margin-bottom: <?php echo $bxx_meta_margin_bottom;?>px; width: 100%; line-height: 130%; } 
+h5#slogan {color: #<?php echo $bxx_slogan_color;?>; font-size: <?php echo $bxx_slogan_size;?>px; text-decoration: <?php echo
 $bxx_slogan_decoration;?>; line-height: 110%; font-weight: <?php echo $bxx_slogan_weight;?>; font-family: <?php echo
 $bxx_slogan_font_family;?>, <?php echo $bxx_p_font;?>; background-color: #<?php echo $bxx_slogan_background_color;?>; font-size:
 <?php echo $bxx_slogan_size;?>px; float: <?php echo $bxx_slogan_float;?>; margin-bottom: 0px; padding: 0px; margin-top: 0px;
@@ -303,7 +301,7 @@ $bxx_caption_border_color;?>; text-align: center; background-color:#<?php echo $
 .wp-caption p.wp-caption-text { font-size: <?php echo $bxx_caption_font_size;?>px; line-height: 17px; padding: 5px; margin: 0;
 color:#<?php echo $bxx_caption_font_color;?>; }
 .navigation a:link, .navigation a:hover, .navigation a:visited { background: none; color:#<?php echo $bxx_a_link_color;?>;
-border: 1px solid #<?php echo $bxx_a_link_color;?>; padding:3px; margin-top: 15px; }
+border: 1px solid #<?php echo $bxx_a_link_color;?>; padding:3px; margin-top: 15px; line-height: 200%; }
 #sidebar ul li, #footer ul li { list-style-type: <?php echo $bxx_widget_ul_li_pre;?>; background-color:#<?php echo
 $bxx_widget_ul_li_background_color;?>; color:#<?php echo $bxx_widget_ul_li_color;?>; font-family: <?php echo
 $bxx_widget_ul_li_font;?>; font-size: <?php echo $bxx_widget_ul_li_size;?>px; font-weight:<?php echo

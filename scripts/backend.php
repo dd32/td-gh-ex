@@ -148,7 +148,14 @@ echo $bxx_sticky_border_width;?>px <?php echo $bxx_sticky_border_type;?> #<?php 
 { background:#<?php echo $bxx_comment_odd_background;?>; border:<?php echo $bxx_comment_odd_border_width;?>px <?php echo
 $bxx_comment_odd_border_type;?> #<?php echo $bxx_comment_odd_border_color;?>; text-decoration: none; margin-bottom: 10px;
 padding:10px; width: 550px; } #thread-even { background:#<?php echo $bxx_comment_even_background;?>; border:<?php echo
-$bxx_comment_even_border_width;?>px <?php echo $bxx_comment_even_border_type;?> #<?php echo $bxx_comment_even_border_color;?>;
+$bxx_comment_even_border_width;?>px <?php echo $bxx_comment_even_border_type;?> #<?php echo $bxx_comment_even_border_color;?>; 
+
+.profile-left {
+	float: left;
+	}
+.profile-right {
+	float: right;
+	}
 text-decoration: none; margin-bottom: 10px; padding:10px; width: 550px; } #thread-author { background:#<?php echo
 $bxx_comment_author_background;?>; border:<?php echo $bxx_comment_author_border_width;?>px <?php echo
 $bxx_comment_author_border_type;?> #<?php echo $bxx_comment_author_border_color;?>; margin-bottom: 10px; padding:10px; width:
