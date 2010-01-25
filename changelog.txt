@@ -5,6 +5,9 @@ By Factory42
 VERSIONS AND FIXES
 
 
+1.3 24th Jan 2010
+		-Removed some dummy text mistakenly left in.
+
 1.2 24th Jan 2010
 		-Removed dummy default adverts.
 		-Made the whole thing snappier by removing some PHP checking calls. Now a lot faster!
