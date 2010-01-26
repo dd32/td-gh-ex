@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
-
+<script type='text/javascript' src='<?php echo get_option('home'); ?>/wp-includes/js/comment-reply.js?ver=20090102'></script> 
 
 <meta name="language" content="en" />
 
@@ -24,13 +24,13 @@
 <?php
 global $options;
 foreach ($options as $value) {
-    if (get_settings( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_settings( $value['id'] ); }
+    if (get_option( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_option( $value['id'] ); }
 }
 ?>
 <style type="text/css">
 body { background: <?php echo $bs_theme_body_background; ?>; }
 #wrap { background: <?php echo $bs_theme_wrap_background; ?>; border: 1px solid <?php echo $bs_theme_wrap_border; ?>; }
-#header { background: <?php echo $bs_theme_header_background; ?> url('<?php echo bloginfo('template_url'); ?>/images/<?php echo $bs_theme_header_background_image; ?>') left no-repeat; }
+#header { background: <?php echo $bs_theme_header_background; ?> url('<?php echo $bs_theme_header_background_image; ?>') left no-repeat; }
 #navbar { background: <?php echo $bs_theme_navbar_background; ?>; }
 #navbar a { color: <?php echo $bs_theme_navbar_link_color; ?>; }
 #sidebar { color: <?php echo $bs_theme_sidebar_text_color; ?>; }
@@ -41,8 +41,18 @@ a { color: <?php echo $bs_theme_link_color; ?>; }
 <?php if($bs_theme_header_show_hide_text=="hide"){ ?>
 #header h1, #header .description { visibility:hidden; }
 <?php } ?>
+<?php if($bs_theme_header_show_hide_postedby=="hide"){ ?>
+.meta-postedby { display: none; }
+<?php } ?>
+<?php if($bs_theme_header_show_hide_tags=="hide"){ ?>
+.meta-tags { display: none; }
+<?php } ?>
+<?php if($bs_theme_header_show_hide_addcomment=="hide"){ ?>
+.meta-addcomment { display: none; }
+<?php } ?>
 <?php echo stripslashes($bs_theme_custom_css); ?>
 </style>
+
 <?php echo stripslashes($bs_theme_google_verify_code); ?>
 </head>
 <body>
@@ -50,13 +60,13 @@ a { color: <?php echo $bs_theme_link_color; ?>; }
 <div id="wrap">
 
 <div id="header">
-	<h1><a href="<?php echo get_settings('home'); ?>"><?php bloginfo('name'); ?></a></h1>
+	<h1><a href="<?php echo get_option('home'); ?>"><?php bloginfo('name'); ?></a></h1>
 	<p class="description"><?php bloginfo('description'); ?></p>
 </div><!--end header-->
 
 <div id="navbar">
 	<ul>
-		<li><a href="<?php echo get_settings('home'); ?>"><?php _e("Home"); ?></a></li>
+		<li><a href="<?php echo get_option('home'); ?>"><?php _e("Home"); ?></a></li>
 		<?php wp_list_pages('title_li=&depth=1&sort_column=menu_order'); ?>
 	</ul>
 </div><!--end navbar-->

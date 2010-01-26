@@ -18,9 +18,10 @@
 	
 		<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h2> 
 		<div class="meta">
-		<div>Posted <?php the_time('F jS, Y') ?> by <?php the_author() ?> <?php if(is_page()) { ?><!--nothing--><?php }else{ ?>and filed in <?php the_category(', ') ?><?php } ?> <?php edit_post_link('Edit', ' | ', ''); ?></div>
-		<div><?php the_tags( 'Tags: ', ', ', ''); ?></div>
-		<div><?php comments_popup_link('Add a Comment', '1 Comment', '% Comments', 'commentslink'); ?></div>
+		<?php edit_post_link('Edit', '', ''); ?> 
+		<div class="meta-postedby">Posted <?php the_time('F jS, Y') ?> by <?php the_author() ?> <?php if(is_page()) { ?><!--nothing--><?php }else{ ?>and filed in <?php the_category(', ') ?><?php } ?> </div>
+		<div class="meta-tags"><?php the_tags( 'Tags: ', ', ', ''); ?></div>
+		<div class="meta-addcomment"><?php comments_popup_link('Add a Comment', '1 Comment', '% Comments', 'commentslink'); ?></div> 
 		</div><!--end meta-->
 	
 		<div class="the_content">
@@ -60,12 +61,7 @@
 		<div class="the_content">
 		<p>Sorry we can't find what anything that matches your search.</p>
 		<p>You could try another search or browse our categories.</p>
-		<form method="get" id="searchform" action="<?php echo get_settings('home'); ?>" >
-		<label class="hidden" for="s">Search for:</label>
-		<div><input type="text" value="" name="s" id="s" />
-		<input type="submit" id="searchsubmit" value="Search" />
-		</div>
-		</form>
+		<?php get_search_form(); ?>
 		</div><!--end the_content-->
 		<ul><?php wp_list_categories('title_li=<h2>Categories</h2>'); ?></ul>
 	</div><!--end entry-->

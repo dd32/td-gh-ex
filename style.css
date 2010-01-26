@@ -1,25 +1,33 @@
 /*   
 Theme Name: Basic Simplicity
-Theme URI: http://www.michaeljanzen.com/wordpress-theme/
+Theme URI: http://www.basicsimplicity.com/
 Description: A simple WordPress theme with a basic minimalist style that includes an administration control panel for editing look & feel.  More customization is possible through the many widget-enabled areas in the sidebar, posts, footer, and header. If you like this theme please vote for it to help spread the word. 
 Tags: blue, white, light, two-columns, right-sidebar, fixed-width, custom-colors, custom-header, theme-options
 Author: Michael Janzen
 Author URI: http://www.michaeljanzen.com/
-Version: 1.4
+Version: 1.4.1
 .
-Before editing this stylesheet be sure to take a look at the control panel
-Appearance -> Edit Basic Simplicity
-The control panel allows you to change basic color settings. 
-Values set in the control panel will override some styles in this stylesheet.
+AVOID EDITING THIS... See the control panel ---> Appearance > Edit Basic Simplicity 
 .
-The CSS, XHTML and design is released under GPL:
-http://www.opensource.org/licenses/gpl-license.php
+UPGRADE NOTE:
+The only thing you'll need to fix is the header image path. Please note that the FULL PATH
+is required in the header field on the Edit Basic Simplicity page. Now you can upload your
+header image (Media > Add New), and then grab the full path to that image and paste it into
+the header field.
 .
-update note for v. 1.4
+UPDATED CODE FOR v. 1.4.1
 - fixed bug - fixed the search form on 404 page
 - changed is_home() to is_front_page()
 - fixed bug - added stripslashes to the custom css
-
+- fixed bug in bottom widgets to allow multiple widgets
+- added javascript for nested comment reply form
+- improved nested comments formatting
+- added show/hide function to make it easier to hide the posted by, tags and add comment link.
+- housekeeping, changed get_settings to get_option
+- added full URL to header image
+.
+The CSS, XHTML and design is released under GPL:
+http://www.opensource.org/licenses/gpl-license.php
 */
 
 
@@ -257,6 +265,67 @@ blockquote {
 	color:#333;
 }
 
+
+
+
+
+.odd {
+	border-top: 1px solid #ccc;
+	border-right: 0;
+	border-bottom: 0;
+	border-left: 1px solid #ccc;
+	margin: 0.5em 0 0.5em 0;
+	padding: 0.5em;
+}
+
+.even {
+	border-top: 1px solid #ddd;
+	border-right: 0;
+	border-bottom: 0;
+	border-left: 1px solid #ddd;
+	margin: 0.5em 0 0.5em 0;
+	padding: 0.5em;
+}
+
+
+.commentlist {
+	padding: 0;
+	text-align: justify;
+	}
+
+.commentlist li {
+	margin: 15px 0 10px;
+	padding: 5px 5px 10px 10px;
+	list-style: none;
+
+	}
+.commentlist li ul li { 
+	margin-right: -5px;
+	margin-left: 10px;
+}
+
+.commentlist p {
+	margin: 10px 5px 10px 0;
+}
+
+.children { padding: 0; }
+
+#commentform p {
+	margin: 5px 0;
+	}
+
+.nocomments {
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	}
+
+.commentmetadata {
+	margin: 0;
+	display: block;
+	}
+
+
 .meta {
 	font-size: 0.75em;
 	color:#666;
@@ -267,18 +336,6 @@ ol.commentlist, li.commentlist {
 	margin: 0;
 	padding: 0;
 	list-style:none;
-}
-
-.odd {
-	background: #eee;
-	margin: 0.5em 0 0.5em 0;
-	padding: 0.5em;
-}
-
-.even {
-	background: #ddd;
-	margin: 0.5em 0 0.5em 0;
-	padding: 0.5em;
 }
 
 .hidden {

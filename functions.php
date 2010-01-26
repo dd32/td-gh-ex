@@ -8,19 +8,19 @@ register_sidebar(array('name'=>'Sidebar-Main',
         'after_title' => '</h4>',
     ));
 register_sidebar(array('name'=>'Bottom-Left',
-        'before_widget' => '<div class="bottom-left">',
+        'before_widget' => '<div class="sidebar-widget">',
         'after_widget' => '</div>',
         'before_title' => '<h4>',
         'after_title' => '</h4>',
     ));
 register_sidebar(array('name'=>'Bottom-Middle',
-        'before_widget' => '<div class="bottom-middle">',
+        'before_widget' => '<div class="sidebar-widget">',
         'after_widget' => '</div>',
         'before_title' => '<h4>',
         'after_title' => '</h4>',
     ));
 register_sidebar(array('name'=>'Bottom-Right',
-        'before_widget' => '<div class="bottom-right">',
+        'before_widget' => '<div class="sidebar-widget">',
         'after_widget' => '</div>',
         'before_title' => '<h4>',
         'after_title' => '</h4>',
@@ -67,6 +67,8 @@ register_sidebar(array('name'=>'Post-Bottom-Single',
 
 /* theme admin screen*/
 
+$fulltemplatepath=get_bloginfo('template_url');
+
 $options = array (
 
 array(  
@@ -103,16 +105,40 @@ array(
 	
 array(  
 	"name" => "Header Background Image",
-	"desc" => "#header optimal size: 1000x140",
+	"desc" => "#header (use full URL path to image) (approx size of image: 1000x140) ",
 	"id" => "bs_theme_header_background_image",
 	"type" => "text",
-	"std" => "header.gif"
+	"std" => $fulltemplatepath."/images/header.gif"
 	),
 	
 array(  
-	"name" => "Hide Header Title & Description",
+	"name" => "Show/Hide Header Title & Description",
 	"desc" => "#header h1, #header .description",
 	"id" => "bs_theme_header_show_hide_text",
+	"type" => "radioshowhide",
+	"std" => "show"
+	),
+
+array(  
+	"name" => "Show/Hide Posted By Line",
+	"desc" => ".meta-postedby",
+	"id" => "bs_theme_header_show_hide_postedby",
+	"type" => "radioshowhide",
+	"std" => "show"
+	),
+
+array(  
+	"name" => "Show/Hide Tags Line",
+	"desc" => ".meta-tags",
+	"id" => "bs_theme_header_show_hide_tags",
+	"type" => "radioshowhide",
+	"std" => "show"
+	),
+
+array(  
+	"name" => "Show/Hide Add Comment Line",
+	"desc" => ".meta-addcomment",
+	"id" => "bs_theme_header_show_hide_addcomment",
 	"type" => "radioshowhide",
 	"std" => "show"
 	),
@@ -150,7 +176,7 @@ array(
 	),
 	
 array(  
-	"name" => "Title Color",
+	"name" => "Post Title Color",
 	"desc" => "h1, h2, h3, h4",
 	"id" => "bs_theme_title_color",
 	"type" => "text",
@@ -183,7 +209,7 @@ array(
 	
 array(  
 	"name" => "Good Analytics Code",
-	"desc" => "Go to <a href=\"http://www.google.com/analytics\" target=\"_blank\">Google Analytics</a>, and grab your tracking code to paste into this box.",
+	"desc" => "Go to <a href=\"http://www.google.com/analytics\" target=\"_blank\">Google Analytics</a>, and grab your tracking code to paste into this box. You can also put your <a href=\"http://www.quantcast.com/\" target=\"_blank\">Quantcast</a> tracking code here.",
 	"id" => "bs_theme_google_analytics_code",
 	"type" => "textarea",
 	"std" => ""
@@ -191,7 +217,7 @@ array(
 	
 array(  
 	"name" => "Custom CSS",
-	"desc" => "You can add any css into this box and it will override any code in the stylesheet or above.",
+	"desc" => "You can add any css into this box and it will override any code in the stylesheet or from the info above.",
 	"id" => "bs_theme_custom_css",
 	"type" => "textarea",
 	"std" => ""
@@ -243,9 +269,8 @@ function basic_simplicity_theme_page() {
 	_e('<div id="icon-themes" class="icon32"><br /></div>');
 	_e('<h2>Manage Themes</h2>');
 	_e('<h3>Edit Basic Simplicity</h3>');
-	_e('<p>Below you can make simple style changes to Basic Simplicity as well as enter your Google tracking code.</p>');
-	_e('<p>You are using Basic Simplicity v.1.2, learn more about <a href="http://www.michaeljanzen.com/wordpress-theme/" target="_blank">Basic Simplicity</a>.</p>');
-	_e('<p>FAQ: How do I change the header? Answer: Upload your header image to <b>wp-content/themes/basic-simplicity/images/</b>.</p>');
+	_e('<p>Below you can make simple style changes to Basic Simplicity as well as enter things like your Google Analytics tracking code.</p>');
+	_e('<p>You are using Basic Simplicity v.1.4.1, learn more about <a href="http://www.basicsimplicity.com/" target="_blank">Basic Simplicity</a>.</p>');
 	_e('<div id="current-theme">');
 	_e('<form method="post">');
 	_e('<fieldset>');	
