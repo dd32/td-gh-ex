@@ -15,7 +15,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ---------------------------------------------------------------------
 
 
-Please respect that we have put a healthy amount of time in the development, testing and the maintenance of this theme. We ask you to use this theme free of charge on one condition: Please keep the credits in the footer of the theme in tact. We have intentionally made them small and not intrusive. It's a small favor for a project that, had you hired someone to design and develop this theme for you, cost several thousand dollars.
+Please respect that we have put a healthy amount of time in the development, testing and the maintenance of this theme. You can use this theme free of charge according to the GPL license. However, we ask a small, yet completely optional, favor of you: If you like the theme, we would appreciate if you keep the credits in the footer of the theme in tact. We have intentionally made them small and not intrusive. It's a small favor for a project that, had you hired someone to design and develop this theme for you, cost several thousand dollars. 
 
 
 Translation
