@@ -45,3 +45,11 @@ About IE6 Support:
 
 Obviously, the IE6 version of this theme looks a little different than the version displayed in modern browsers. We had tried to simulate the modern version as much as possible but due to the nature of the IE6 rendering engine, we had to make certain decisions to cut down on some visual elements (layout remains completely the same!). The only alternative that we considered for a short time was to use GIF transparency, however, the graphics looked jagged at many areas so we decided to create an IE6 only version of the theme with a simpler background than the original. We believe the result is more than acceptable. Remember the horribly designed websites that had been created back in the days where IE6 was launched? This is definitely not one of them.
 Nonetheless, we still hope that IE6 will rest in peace soon.
+
+
+Changelog:
+---------------------------------------------------
+
+1.0.2
+  - Fixed a small issue with the header bars where they would over run the header area if too many items were shown.
+
