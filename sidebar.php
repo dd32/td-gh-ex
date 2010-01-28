@@ -8,14 +8,14 @@ if ($arjunaOptions['sidebarDisplay']!='none') {
 		<div class="">
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar_full_top') ) : ?>
 			<div class="sidebarbox">
-			<h4><?php _e('Recent Posts', 'Arjuna'); ?></h4>
+			<h4><span><?php _e('Recent Posts', 'Arjuna'); ?></span></h4>
 			<ul>
 			<?php wp_get_archives('type=postbypost&limit=10'); ?>
 			</ul>
 			</div>
 			
 			<div class="sidebarbox">
-			<h4><?php _e('Browse by Tags', 'Arjuna'); ?></h4>
+			<h4><span><?php _e('Browse by Tags', 'Arjuna'); ?></span></h4>
 			<?php wp_tag_cloud('smallest=8&largest=17&number=30'); ?>
 			</div>
 			<?php endif; ?>
@@ -23,7 +23,7 @@ if ($arjunaOptions['sidebarDisplay']!='none') {
 		<div class="sidebarLeft">
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar_left') ) : ?>
 			<div class="sidebarbox">
-			<h2><?php _e('Categories', 'Arjuna'); ?></h2>
+			<h4><span><?php _e('Categories', 'Arjuna'); ?></span></h4>
 			<ul>
 				<?php wp_list_categories('show_count=0&title_li='); ?>
 			</ul>
@@ -33,7 +33,7 @@ if ($arjunaOptions['sidebarDisplay']!='none') {
 		<div class="sidebarRight">
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar_right') ) : ?>
 			<div class="sidebarbox">
-			<h2><?php _e('Meta', 'Arjuna'); ?></h2>
+			<h4><span><?php _e('Meta', 'Arjuna'); ?></span></h4>
 			<ul>
 				<?php wp_register(); ?>
 				<li><?php wp_loginout(); ?></li>

@@ -12,7 +12,7 @@ function arjuna_create_options() {
 		'headerMenu2_dropdown' => '3', // 1, 2, 3 (the depth of the menu, 1 being no dropdown)
 		'headerMenu2_display' => 'categories', // pages, categories
 		'headerMenu2_sortBy' => 'name', // [CATEGORIES]: name, ID, count, slug [PAGES]: post_title, ID, post_name (slug), menu_order (the page's Order value)
-		'headerMenu2_sortOrder' => 'ASC', // ASC, DESC
+		'headerMenu2_sortOrder' => 'asc', // asc, desc
 		'commentDisplay' => 'alt', // alt, left, right
 		'footerStyle' => 'style1', // style1, style2
 		'commentDateFormat' => 'timePassed', // timePassed, date
@@ -139,11 +139,7 @@ function arjuna_add_theme_options() {
 		else $options['appendToPageTitle'] = 'blogName';
 		
 		if ($_POST['appendToPageTitle']=='custom') {
-			if ($_POST['appendToPageTitleCustom']!=='') $options['appendToPageTitleCustom'] = $_POST['appendToPageTitleCustom'];
-			else {
-				$options['appendToPageTitle'] = 'blogName';
-				$options['appendToPageTitleCustom'] = '';
-			}
+			$options['appendToPageTitleCustom'] = $_POST['appendToPageTitleCustom'];
 		}
 
 		//Sidebar display
@@ -155,7 +151,12 @@ function arjuna_add_theme_options() {
 		$validOptions = array('normal', 'small', 'large');
 		if ( in_array($_POST['sidebarWidth'], $validOptions) ) $options['sidebarWidth'] = $_POST['sidebarWidth'];
 		else $options['sidebarWidth'] = $validOptions[0];
-
+		
+		// IE Optimization
+		if ($_POST['enableIE6optimization']) $options['enableIE6optimization'] = true;
+		else $options['enableIE6optimization'] = false;
+		
+		
 
 		update_option('arjuna_options', $options);
 		$optionsSaved = true;
@@ -676,11 +677,11 @@ function arjuna_get_next_page_link($label) {
 function arjuna_get_appendToPageTitle() {
 	$arjunaOptions = get_option('arjuna_options');
 	
-	echo " - ";
 	if ($arjunaOptions['appendToPageTitle']=='blogName') {
+		echo " - ";
 		bloginfo('name');
-	} elseif ($arjunaOptions['appendToPageTitle']=='custom') {
-		echo $arjunaOptions['appendToPageTitleCustom'];
+	} elseif ($arjunaOptions['appendToPageTitle']=='custom' && !empty($arjunaOptions['appendToPageTitleCustom'])) {
+		echo " - " . $arjunaOptions['appendToPageTitleCustom'];
 	}
 }
 

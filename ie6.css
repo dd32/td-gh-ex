@@ -25,6 +25,10 @@ pre {
 	background:url(./images/ie6/headerOverlay.png) no-repeat 0 -27px;
 }
 
+.hideHeaderMenu1 ul.headerMenu2 {
+	bottom:-1px;
+}
+
 ul.headerMenu2 li a,
 ul.headerMenu1 li a {
 	float:left;
@@ -236,10 +240,20 @@ a.btn span {
 	position:relative;
 }
 
+.sidebars .b {
+	font-size:0;
+	line-height:0;
+}
+
 .sidebars li {
 	zoom:1;
 	background-image:url(./images/ie6/sidebars.png);
 }
+.sidebars .sidebarBox {
+	overflow:hidden;
+	width:100%;
+}
+
 
 #wp-calendar td a,
 #wp-calendar td a:visited {

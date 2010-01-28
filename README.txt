@@ -50,6 +50,14 @@ Nonetheless, we still hope that IE6 will rest in peace soon.
 Changelog:
 ---------------------------------------------------
 
+1.0.3
+- Fixed issues with the sidebars when widget bars are deactivated.
+- Fixed bug in admin: When you select custom for "Append to page title" and leave the field empty, it would use the old value again. Arjuna now does not append anything.
+- Fixed display bug: When the first header menu had been disabled, the space between the header and the content would have been twice as large.
+- Fixed bug in admin: Disabling the IE6 optimization feature was not possible.
+- Fixed IE6 display bug: When the first header menu was displayed, the second header menu was slightly shifted upwards.
+- Fixed IE6 display bug: The bottom of the sidebar rendered a small part of the RSS icon.
+- Fixed IE6 display bug: If the content of a widget bar in the sidebar explicitly extended over the width of the sidebar, e.g. in the case of an image, the sidebar would break completely.
 1.0.2
-  - Fixed a small issue with the header bars where they would over run the header area if too many items were shown.
+- Fixed a small issue with the header bars where they would over run the header area if too many items were shown.
 

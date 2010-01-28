@@ -228,7 +228,14 @@ a#skipToPosts {
 	background-position:0 -27px;
 }
 .hideHeaderMenu1 .header {
-	top:-27px;	
+	top:0;	
+	height:113px;
+}
+.hideHeaderMenu1 .header h1 {
+	top:8px;
+}
+.hideHeaderMenu1 .header span {
+	top:51px;
 }
 
 /* Content Wrapper */
@@ -1372,6 +1379,9 @@ a span {
 	height:113px;
 	background:url(./images/ie6/headerOverlay.png) no-repeat 0 -27px;
 }
+.hideHeaderMenu1 ul.headerMenu2 {
+	bottom:-1px;
+}
 
 ul.headerMenu2 li a,
 ul.headerMenu1 li a {
@@ -1493,6 +1503,17 @@ a.btn span {
 .sidebars h4 span {
 	position:relative;
 }
+
+.sidebars .b {
+	font-size:0;
+	line-height:0;
+}
+
+.sidebars .sidebarBox {
+	overflow:hidden;
+	width:100%;
+}
+
 
 .commentNavigation div {
 	position:relative;
