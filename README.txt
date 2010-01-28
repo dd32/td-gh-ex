@@ -50,6 +50,8 @@ Nonetheless, we still hope that IE6 will rest in peace soon.
 Changelog:
 ---------------------------------------------------
 
+1.0.4
+- The bug from version 1.0.2 introduced another bug. We reverted the bug and would kindly refer you to the note in the README.txt file.
 1.0.3
 - Fixed issues with the sidebars when widget bars are deactivated.
 - Fixed bug in admin: When you select custom for "Append to page title" and leave the field empty, it would use the old value again. Arjuna now does not append anything.
