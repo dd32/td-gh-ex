@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Arjuna 1.0\n"
+"Project-Id-Version: Arjuna X 1.0.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-22 12:56+0100\n"
+"POT-Creation-Date: 2010-01-29 11:46+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: SRS Solutions <info@srssolutions.com>\n"
 "Language-Team: SRS Solutions <info@srssolutions.com>\n"
@@ -33,18 +33,6 @@ msgstr ""
 #: Arjuna/archive.php:11
 #, php-format
 msgid "Browsing Posts published on %s"
-msgstr ""
-
-#: Arjuna/archive.php:11
-#: Arjuna/archive.php:29
-#: Arjuna/comments_legacy.php:58
-#: Arjuna/functions.php:590
-#: Arjuna/index.php:10
-#: Arjuna/page.php:10
-#: Arjuna/page_fullwidth.php:15
-#: Arjuna/search.php:16
-#: Arjuna/single.php:10
-msgid "F jS, Y"
 msgstr ""
 
 #: Arjuna/archive.php:13
@@ -171,7 +159,7 @@ msgstr ""
 
 #: Arjuna/comments.php:21
 #: Arjuna/comments_legacy.php:18
-#: Arjuna/functions.php:402
+#: Arjuna/functions.php:403
 msgid "Comments"
 msgstr ""
 
@@ -298,383 +286,387 @@ msgid "H:i"
 msgstr ""
 
 #: Arjuna/comments_legacy.php:65
-#: Arjuna/functions.php:598
+#: Arjuna/functions.php:600
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: Arjuna/functions.php:164
+#: Arjuna/functions.php:165
 msgid "Arjuna Options"
 msgstr ""
 
-#: Arjuna/functions.php:173
+#: Arjuna/functions.php:174
 msgid "The Arjuna options have been saved."
 msgstr ""
 
-#: Arjuna/functions.php:177
+#: Arjuna/functions.php:178
 msgid "Arjuna Theme Options"
 msgstr ""
 
-#: Arjuna/functions.php:180
+#: Arjuna/functions.php:181
 #, php-format
 msgid "Thank you for downloading Arjuna, the free WordPress theme designed by %s."
 msgstr ""
 
-#: Arjuna/functions.php:183
+#: Arjuna/functions.php:184
 msgid "Report Bugs"
 msgstr ""
 
-#: Arjuna/functions.php:184
+#: Arjuna/functions.php:185
 msgid "Report a Bug"
 msgstr ""
 
-#: Arjuna/functions.php:184
+#: Arjuna/functions.php:185
 msgid "Please include your Wordpress version, browser details and a screenshot, if necessary."
 msgstr ""
 
-#: Arjuna/functions.php:187
+#: Arjuna/functions.php:188
 msgid "Useful Links"
 msgstr ""
 
-#: Arjuna/functions.php:188
+#: Arjuna/functions.php:189
 msgid "Changelog"
 msgstr ""
 
-#: Arjuna/functions.php:189
+#: Arjuna/functions.php:190
 msgid "FAQ"
 msgstr ""
 
-#: Arjuna/functions.php:190
+#: Arjuna/functions.php:191
 msgid "Leave Feedback"
 msgstr ""
 
-#: Arjuna/functions.php:191
+#: Arjuna/functions.php:192
 msgid "Upcoming Features"
 msgstr ""
 
-#: Arjuna/functions.php:194
+#: Arjuna/functions.php:195
 msgid "Support &amp; Sales"
 msgstr ""
 
-#: Arjuna/functions.php:195
+#: Arjuna/functions.php:196
 msgid "Contact Sales"
 msgstr ""
 
-#: Arjuna/functions.php:195
+#: Arjuna/functions.php:196
 msgid "Need installation or integration support? Need something customized or extended?"
 msgstr ""
 
-#: Arjuna/functions.php:200
+#: Arjuna/functions.php:201
 msgid "Header Menus"
 msgstr ""
 
-#: Arjuna/functions.php:204
+#: Arjuna/functions.php:205
 msgid "First Header Menu"
 msgstr ""
 
-#: Arjuna/functions.php:208
+#: Arjuna/functions.php:209
 msgid "Enabled"
 msgstr ""
 
-#: Arjuna/functions.php:210
+#: Arjuna/functions.php:211
 msgid "Enable this menu"
 msgstr ""
 
-#: Arjuna/functions.php:212
+#: Arjuna/functions.php:213
 msgid "If disabled, the menu will be hidden."
 msgstr ""
 
-#: Arjuna/functions.php:216
-#: Arjuna/functions.php:300
+#: Arjuna/functions.php:217
+#: Arjuna/functions.php:301
 msgid "Dropdown"
 msgstr ""
 
-#: Arjuna/functions.php:220
-#: Arjuna/functions.php:304
+#: Arjuna/functions.php:221
+#: Arjuna/functions.php:305
 msgid "No dropdown menu"
 msgstr ""
 
-#: Arjuna/functions.php:224
-#: Arjuna/functions.php:308
+#: Arjuna/functions.php:225
+#: Arjuna/functions.php:309
 msgid "One-level dropdown menu"
 msgstr ""
 
-#: Arjuna/functions.php:228
-#: Arjuna/functions.php:312
+#: Arjuna/functions.php:229
+#: Arjuna/functions.php:313
 msgid "Two-level dropdown menu"
 msgstr ""
 
-#: Arjuna/functions.php:233
+#: Arjuna/functions.php:234
 msgid "Alignment"
 msgstr ""
 
-#: Arjuna/functions.php:237
+#: Arjuna/functions.php:238
 msgid "Left"
 msgstr ""
 
-#: Arjuna/functions.php:241
+#: Arjuna/functions.php:242
 msgid "Right"
 msgstr ""
 
-#: Arjuna/functions.php:246
-#: Arjuna/functions.php:317
+#: Arjuna/functions.php:247
+#: Arjuna/functions.php:318
 msgid "Menu lists only"
 msgstr ""
 
-#: Arjuna/functions.php:250
-#: Arjuna/functions.php:321
+#: Arjuna/functions.php:251
+#: Arjuna/functions.php:322
 msgid "Pages"
 msgstr ""
 
-#: Arjuna/functions.php:254
-#: Arjuna/functions.php:325
+#: Arjuna/functions.php:255
+#: Arjuna/functions.php:326
 #: Arjuna/sidebar.php:26
 msgid "Categories"
 msgstr ""
 
-#: Arjuna/functions.php:259
-#: Arjuna/functions.php:330
+#: Arjuna/functions.php:260
+#: Arjuna/functions.php:331
 msgid "Sorting Order"
 msgstr ""
 
-#: Arjuna/functions.php:262
-#: Arjuna/functions.php:276
-#: Arjuna/functions.php:333
-#: Arjuna/functions.php:347
+#: Arjuna/functions.php:263
+#: Arjuna/functions.php:277
+#: Arjuna/functions.php:334
+#: Arjuna/functions.php:348
 msgid "Sort menu items in"
-msgstr ""
-
-#: Arjuna/functions.php:264
-#: Arjuna/functions.php:278
-#: Arjuna/functions.php:335
-#: Arjuna/functions.php:349
-msgid "ascending"
 msgstr ""
 
 #: Arjuna/functions.php:265
 #: Arjuna/functions.php:279
 #: Arjuna/functions.php:336
 #: Arjuna/functions.php:350
+msgid "ascending"
+msgstr ""
+
+#: Arjuna/functions.php:266
+#: Arjuna/functions.php:280
+#: Arjuna/functions.php:337
+#: Arjuna/functions.php:351
 msgid "descending"
 msgstr ""
 
-#: Arjuna/functions.php:267
-#: Arjuna/functions.php:281
-#: Arjuna/functions.php:338
-#: Arjuna/functions.php:352
+#: Arjuna/functions.php:268
+#: Arjuna/functions.php:282
+#: Arjuna/functions.php:339
+#: Arjuna/functions.php:353
 msgid "order by"
-msgstr ""
-
-#: Arjuna/functions.php:269
-#: Arjuna/functions.php:340
-msgid "Category Name"
 msgstr ""
 
 #: Arjuna/functions.php:270
 #: Arjuna/functions.php:341
-msgid "Category ID"
+msgid "Category Name"
 msgstr ""
 
 #: Arjuna/functions.php:271
 #: Arjuna/functions.php:342
-msgid "Post Count"
+msgid "Category ID"
 msgstr ""
 
 #: Arjuna/functions.php:272
 #: Arjuna/functions.php:343
-msgid "Category Slug"
+msgid "Post Count"
 msgstr ""
 
-#: Arjuna/functions.php:283
-#: Arjuna/functions.php:354
-msgid "Page Title"
+#: Arjuna/functions.php:273
+#: Arjuna/functions.php:344
+msgid "Category Slug"
 msgstr ""
 
 #: Arjuna/functions.php:284
 #: Arjuna/functions.php:355
-msgid "Page ID"
+msgid "Page Title"
 msgstr ""
 
 #: Arjuna/functions.php:285
 #: Arjuna/functions.php:356
-msgid "Page Slug"
+msgid "Page ID"
 msgstr ""
 
 #: Arjuna/functions.php:286
 #: Arjuna/functions.php:357
+msgid "Page Slug"
+msgstr ""
+
+#: Arjuna/functions.php:287
+#: Arjuna/functions.php:358
 msgid "Page Order"
 msgstr ""
 
-#: Arjuna/functions.php:296
+#: Arjuna/functions.php:297
 msgid "Second Header Menu"
 msgstr ""
 
-#: Arjuna/functions.php:366
+#: Arjuna/functions.php:367
 msgid "General Options"
 msgstr ""
 
-#: Arjuna/functions.php:367
+#: Arjuna/functions.php:368
 msgid "Sidebar"
 msgstr ""
 
-#: Arjuna/functions.php:371
+#: Arjuna/functions.php:372
 msgid "Sidebar Position"
 msgstr ""
 
-#: Arjuna/functions.php:376
+#: Arjuna/functions.php:377
 msgid "Right sidebar"
 msgstr ""
 
-#: Arjuna/functions.php:381
+#: Arjuna/functions.php:382
 msgid "Left sidebar"
 msgstr ""
 
-#: Arjuna/functions.php:386
+#: Arjuna/functions.php:387
 msgid "No sidebar"
 msgstr ""
 
-#: Arjuna/functions.php:391
+#: Arjuna/functions.php:392
 msgid "Sidebar Width"
 msgstr ""
 
-#: Arjuna/functions.php:393
+#: Arjuna/functions.php:394
 msgid "Small"
 msgstr ""
 
-#: Arjuna/functions.php:394
+#: Arjuna/functions.php:395
 msgid "Normal"
 msgstr ""
 
-#: Arjuna/functions.php:395
+#: Arjuna/functions.php:396
 msgid "Large"
 msgstr ""
 
-#: Arjuna/functions.php:396
+#: Arjuna/functions.php:397
 msgid "If you intend to use the two column sidebar, we recommend to choose either the normal or the large sidebar."
 msgstr ""
 
-#: Arjuna/functions.php:406
+#: Arjuna/functions.php:407
 msgid "Display comments as follows"
 msgstr ""
 
-#: Arjuna/functions.php:411
+#: Arjuna/functions.php:412
 msgid "Aligned to the left"
 msgstr ""
 
-#: Arjuna/functions.php:416
+#: Arjuna/functions.php:417
 msgid "Aligned to the right"
 msgstr ""
 
-#: Arjuna/functions.php:421
+#: Arjuna/functions.php:422
 msgid "Alternate between left and right alignment"
 msgstr ""
 
-#: Arjuna/functions.php:426
+#: Arjuna/functions.php:427
 msgid "Date Format"
 msgstr ""
 
-#: Arjuna/functions.php:428
+#: Arjuna/functions.php:429
 msgid "Passed Time (Example: <em>&quot;Written by admin about 3 days ago.&quot;</em>)"
 msgstr ""
 
-#: Arjuna/functions.php:429
+#: Arjuna/functions.php:430
 #, php-format
-msgid "Standard Date Format (Example: <em>&quot;Written by admin on %s&quot;</em>)"
+msgid "Default Date Format (Example: <em>&quot;Written by admin on %s&quot;</em>)"
 msgstr ""
 
-#: Arjuna/functions.php:435
+#: Arjuna/functions.php:431
+msgid "The default date format can be customized in Settings &gt; General."
+msgstr ""
+
+#: Arjuna/functions.php:437
 msgid "Miscellaneous"
 msgstr ""
 
-#: Arjuna/functions.php:439
+#: Arjuna/functions.php:441
 msgid "Append to page title"
 msgstr ""
 
-#: Arjuna/functions.php:441
+#: Arjuna/functions.php:443
 #, php-format
 msgid "Blog Name (&quot; - %s&quot;)"
 msgstr ""
 
-#: Arjuna/functions.php:442
+#: Arjuna/functions.php:444
 msgid "Custom:"
 msgstr ""
 
-#: Arjuna/functions.php:443
+#: Arjuna/functions.php:445
 msgid "This will be appended to the page title of every web page (posts, pages, categories, etc.)"
 msgstr ""
 
-#: Arjuna/functions.php:447
+#: Arjuna/functions.php:449
 msgid "Footer Style"
 msgstr ""
 
-#: Arjuna/functions.php:462
+#: Arjuna/functions.php:464
 msgid "Performance Optimization"
 msgstr ""
 
-#: Arjuna/functions.php:466
+#: Arjuna/functions.php:468
 msgid "Internet Explorer 6 Optimization"
 msgstr ""
 
-#: Arjuna/functions.php:468
+#: Arjuna/functions.php:470
 msgid "Enable IE6 performance optimization"
 msgstr ""
 
-#: Arjuna/functions.php:470
+#: Arjuna/functions.php:472
 msgid "If turned on, Arjuna will attempt to detect IE6 and serve a stand-alone CSS file specifically made for IE6."
 msgstr ""
 
-#: Arjuna/functions.php:470
+#: Arjuna/functions.php:472
 msgid "Note: IE6 will still work the same if this option is turned off, however, you and your IE6 users will save an estimated 28kb (11 image and 2 CSS files) in bandwidth for first-time visitors. IE6 also might render more rapidly if this is turned on."
 msgstr ""
 
-#: Arjuna/functions.php:477
+#: Arjuna/functions.php:479
 msgid "Save Changes"
 msgstr ""
 
-#: Arjuna/functions.php:586
+#: Arjuna/functions.php:588
 msgid "Written by"
 msgstr ""
 
-#: Arjuna/functions.php:588
+#: Arjuna/functions.php:590
 #, php-format
 msgid "about %s ago"
 msgstr ""
 
-#: Arjuna/functions.php:590
+#: Arjuna/functions.php:592
 msgid "on"
 msgstr ""
 
-#: Arjuna/functions.php:595
+#: Arjuna/functions.php:597
 #: Arjuna/page.php:27
 #: Arjuna/page_fullwidth.php:32
 #: Arjuna/single.php:35
 msgid "Edit"
 msgstr ""
 
-#: Arjuna/functions.php:622
+#: Arjuna/functions.php:624
 msgid "1 year"
 msgstr ""
 
-#: Arjuna/functions.php:626
+#: Arjuna/functions.php:628
 msgid "1 month"
 msgstr ""
 
-#: Arjuna/functions.php:630
+#: Arjuna/functions.php:632
 msgid "1 week"
 msgstr ""
 
-#: Arjuna/functions.php:634
+#: Arjuna/functions.php:636
 msgid "1 day"
 msgstr ""
 
-#: Arjuna/functions.php:638
+#: Arjuna/functions.php:640
 msgid "1 hour"
 msgstr ""
 
-#: Arjuna/functions.php:642
+#: Arjuna/functions.php:644
 msgid "1 minute"
 msgstr ""
 
-#: Arjuna/functions.php:645
+#: Arjuna/functions.php:647
 msgid "1 second"
 msgstr ""
 

@@ -3,6 +3,7 @@
 Template Name: Full Page (No Sidebar)
 */
 ?>
+<?php $arjunaOptions = get_option('arjuna_options'); ?>
 <?php get_header(); ?>
 
 <div class="contentArea contentAreaFull">
@@ -12,7 +13,10 @@ Template Name: Full Page (No Sidebar)
 		<div class="postHeader">
 			<h2 class="postTitle"><span><a href="<?php the_permalink() ?>" title="<?php _e('Permalink to', 'Arjuna'); ?> <?php the_title(); ?>"><?php the_title(); ?></a></span></h2>
 			<div class="bottom"><div>
-				<span class="postDate"><?php the_time(__('F jS, Y', 'Arjuna')); ?></span>
+				<span class="postDate"><?php the_time(get_option('date_format')); ?></span>
+				<?php if($arjunaOptions['postsShowAuthor']): ?>
+				<span class="postAuthor"><?php the_author_posts_link(); ?></span>
+				<?php endif; ?>
 				<a href="<?php comments_link(); ?>" class="postCommentLabel"><span><?php
 					if (function_exists('post_password_required') && post_password_required()) {
 						_e('Pass required', 'Arjuna');

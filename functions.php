@@ -20,7 +20,8 @@ function arjuna_create_options() {
 		'appendToPageTitleCustom' => '',
 		'sidebarDisplay' => 'right', // right, left, none
 		'sidebarWidth' => 'normal', // small, normal, large
-		'enableIE6optimization' => true
+		'enableIE6optimization' => true,
+		'postsShowAuthor' => true
 	);
 
 	// Overridden values
@@ -155,7 +156,12 @@ function arjuna_add_theme_options() {
 		// IE Optimization
 		if ($_POST['enableIE6optimization']) $options['enableIE6optimization'] = true;
 		else $options['enableIE6optimization'] = false;
+
 		
+		// Posts, Show Author
+		if ($_POST['postsShowAuthor']) $options['postsShowAuthor'] = true;
+		else $options['postsShowAuthor'] = false;
+
 		
 
 		update_option('arjuna_options', $options);
@@ -189,7 +195,7 @@ function arjuna_add_theme_page () {
 					<li><a href="http://www.srssolutions.com/en/downloads/arjuna_wordpress_theme#changelog"><?php _e('Changelog', 'Arjuna'); ?></a></li>
 					<li><a href="http://www.srssolutions.com/en/downloads/arjuna_wordpress_theme#faq"><?php _e('FAQ', 'Arjuna'); ?></a></li>
 					<li><a href="http://www.srssolutions.com/en/downloads/arjuna_wordpress_theme#comments"><?php _e('Leave Feedback', 'Arjuna'); ?></a></li>
-					<li><a href="http://www.srssolutions.com/en/downloads/arjuna_wordpress_theme#features"><?php _e('Upcoming Features', 'Arjuna'); ?></a></li>
+					<li><a href="http://www.srssolutions.com/en/downloads/arjuna_wordpress_theme#roadmap"><?php _e('Roadmap', 'Arjuna'); ?></a></li>
 				</ul>
 				<div class="tSupport">
 					<h5><?php _e('Support &amp; Sales', 'Arjuna'); ?></h5>
@@ -400,6 +406,18 @@ function arjuna_add_theme_page () {
 			</tbody>
 		</table>
 
+		<h4><?php _e('Posts', 'Arjuna'); ?></h4>
+		<table class="form-table">
+			<tbody>
+				<tr>
+					<th scope="row"><?php _e('Display Author', 'Arjuna'); ?></th>
+					<td>
+						<label><input name="postsShowAuthor" type="checkbox"<?php if($options['postsShowAuthor']) echo ' checked="checked"'; ?> /> <?php _e('Include the author of a post in the post header.', 'Arjuna'); ?></label><br />
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
 		<h4><?php _e('Comments', 'Arjuna'); ?></h4>
 		<table class="form-table">
 			<tbody>
@@ -427,7 +445,8 @@ function arjuna_add_theme_page () {
 					<th scope="row"><?php _e('Date Format', 'Arjuna'); ?></th>
 					<td>
 							<label><input name="commentDateFormat" type="radio" value="timePassed"<?php if($options['commentDateFormat']=='timePassed') echo ' checked="checked"'; ?> /> <?php _e('Passed Time (Example: <em>&quot;Written by admin about 3 days ago.&quot;</em>)', 'Arjuna'); ?></label><br />
-							<label><input name="commentDateFormat" type="radio" value="date"<?php if($options['commentDateFormat']=='date') echo ' checked="checked"'; ?> /> <?php printf(__('Standard Date Format (Example: <em>&quot;Written by admin on %s&quot;</em>)', 'Arjuna'), date('F jS, Y')); ?></label><br />
+							<label><input name="commentDateFormat" type="radio" value="date"<?php if($options['commentDateFormat']=='date') echo ' checked="checked"'; ?> /> <?php printf(__('Default Date Format (Example: <em>&quot;Written by admin on %s&quot;</em>)', 'Arjuna'), date(get_option('date_format'))); ?></label><br />
+							<span class="description"><?php _e('The default date format can be customized in Settings &gt; General.', 'Arjuna'); ?></span>
 					</td>
 				</tr>
 			</tbody>
@@ -588,7 +607,7 @@ function arjuna_get_comment($comment, $args, $depth) {
 					if($arjunaOptions['commentDateFormat'] == 'timePassed'){
 						printf(__('about %s ago'), arjuna_get_time_passed(strtotime($comment->comment_date)));
 					} else {
-						print __('on', 'Arjuna').' '.date(__('F jS, Y', 'Arjuna'), strtotime($comment->comment_date));
+						print __('on', 'Arjuna').' '.date(get_option('date_format'), strtotime($comment->comment_date));
 					}
 				?>.</span>
 				<span class="links">

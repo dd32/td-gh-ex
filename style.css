@@ -4,7 +4,7 @@ Theme URI: http://www.srssolutions.com/en/downloads/arjuna_wordpress_theme
 Description: Arjuna stands for elegance, accessibility, and attention to detail. We have put a great deal in optimizing its ins and outs. Translation ready, SEO focused, IE6-8, Firefox, Chrome, Safari and Opera compatibility, support for threaded comments, four widget bars, flexible sidebar, and more. It can be customized via the admin panel.
 Author: SRS Solutions
 Author URI: http://www.srssolutions.com
-Version: 1.0.4
+Version: 1.0.5
 Tags: white, silver, light, three-columns, two-columns, fixed-width, right-sidebar, left-sidebar, theme-options, translation-ready, threaded-comments, black
 
 
@@ -468,14 +468,26 @@ h3.contentHeader em {
 	position:relative;
 }
 .postDate {
-	position:absolute;
-	left:15px;
-	top:0;
+	display:block;
+	float:left;
 	font-size:11px;
 	color:#555;
 	line-height:22px;
 	background:url(./images/heading.png) no-repeat 0 -86px;
 	padding-left:20px;
+}
+.postAuthor {
+	display:block;
+	float:left;
+	font-size:11px;
+	color:#555;
+	line-height:22px;
+	background:url(./images/heading.png) no-repeat -200px -86px;
+	padding-left:15px;
+	margin-left:15px;
+}
+.postAuthor a {
+	color:#555;
 }
 
 .postCommentLabel {

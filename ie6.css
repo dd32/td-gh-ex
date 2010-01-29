@@ -70,7 +70,8 @@ ul.headerMenu1 li li a:visited {
 	background-image:url(./images/ie6/heading.png);
 	z-index:1;
 }
-.postDate {
+.postDate,
+.postAuthor {
 	background-image:url(./images/ie6/heading.png);
 }
 

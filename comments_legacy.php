@@ -55,14 +55,14 @@ if (!empty($post->post_password) && $_COOKIE['wp-postpass_' . COOKIEHASH] != $po
 			</div>
 			<div class="messageBox">
 				<div class="date">
-					<?php printf( __('%1$s at %2$s', 'Eos'), get_comment_time(__('F jS, Y', 'Eos')), get_comment_time(__('H:i', 'Eos')) ); ?>
+					<?php printf( __('%1$s at %2$s', 'Arjuna'), get_comment_time(get_option('date_format')), get_comment_time(__('H:i', 'Arjuna')) ); ?>
 				</div>
 				<div class="links">
 					<?php edit_comment_link('Edit','',''); ?>
 				</div>
 				<div class="content">
 					<?php if ($comment->comment_approved == '0') : ?>
-						<p><small><?php _e('Your comment is awaiting moderation.', 'Eos'); ?></small></p>
+						<p><small><?php _e('Your comment is awaiting moderation.', 'Arjuna'); ?></small></p>
 					<?php endif; ?>
 	
 					<div id="commentbody-<?php comment_ID() ?>">

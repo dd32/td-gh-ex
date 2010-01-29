@@ -24,6 +24,11 @@ Translation
 
 Help and how to translate Arjuna into your own language can be found here: http://192.168.2.100/srssolutions.com/en/downloads/arjuna_wordpress_theme#faq
 
+Currently available translations:
+
+- Italian (thanks to Gianni Diurno, http://gidibao.net)
+- Lithuanian (thanks to Vaidas Juknevicius aka SeniZ)
+
 
 More Information and Support
 ---------------------------------------------------
@@ -50,6 +55,11 @@ Nonetheless, we still hope that IE6 will rest in peace soon.
 Changelog:
 ---------------------------------------------------
 
+1.0.5
+- New feature: It's now possible to display the author of a post in the post header.
+- Changed the display of dates to use the default date format specified in Settings > General instead of using a theme-based, localized date format. This allows for grammatically correct date formats in languages other than English where there is no translation available for Arjuna yet.
+- New localization: Italian
+- New localization: Lithuanian
 1.0.4
 - The bug from version 1.0.2 introduced another bug. We reverted the bug and would kindly refer you to the note in the README.txt file.
 1.0.3
