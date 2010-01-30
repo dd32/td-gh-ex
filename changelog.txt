@@ -5,6 +5,10 @@ By Factory42
 VERSIONS AND FIXES
 
 
+1.4 29th Jan 2010
+		-Fixed page call error in the admin area.
+		-Changed Link color in the front to make them stand out better.
+
 1.3 24th Jan 2010
 		-Removed some dummy text mistakenly left in.
 

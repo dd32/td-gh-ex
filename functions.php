@@ -88,20 +88,34 @@ function mytheme_admin() {
 * Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
 ***********************************************/
 </script>
-<div id="flowertabs" class="modernbricksmenu2"><ul><li><a href="EM" rel="x1x"  rev="z-a">Home</a></li>
-<li><a href="1" rel="x1x" rev="z-b">Page and Container</a></li><li><a href="6" rel="x1x" rev="z-g">Head</a></li>
-<li><a href="18" rel="x1x" rev="z-s">Navigation</a></li><li><a href="2" rel="x1x"rev="z-c">Front Page</a></li>
-<li><a href="3" rel="x1x" rev="z-d">Post Title & Meta</a></li><li><a href="4" rel="x1x" rev="z-e">Comments</a></li>
-<li><a href="5" rel="x1x" rev="z-f">Images</a></li><li><a href="7" rel="x1x" rev="z-h">Footer</a></li>
-<li><a href="8" rel="x1x" rev="z-i">P Text</a></li><li><a href="9" rel="x1x" rev="z-j">Sidebar</a></li>
-<li><a href="30" rel="x1x" rev="z-aa">Footer Widget Areas</a></li><li><a href="10" rel="x1x" rev="z-k">Headings</a></li>
-<li><a href="11" rel="x1x" rev="z-l">Sticky Posts</a></li><li><a href="12" rel="x1x" rev="z-m">Tag Cloud </a></li>
-<li><a href="13" rel="x1x" rev="z-n">Block Quotes</a></li><li><a href="14" rel="x1x" rev="z-o">Adverts</a></li>
-<li><a href="22" rel="x1x" rev="z-w">Links</a></li><li><a href="21" rel="x1x" rev="z-v">Lists</a></li>
-<li><a href="20" rel="x1x" rev="z-u">Tables</a></li><li><a href="19" rel="x1x" rev="z-t">Error Pages</a></li>
-<li><a href="15" rel="x1x" rev="z-p">Google Anayltics</a></li><li><a href="24" rel="x1x" rev="z-xx">Favicon</a></li>
-<li><a href="25" rel="x1x" rev="z-xa">Tutorials</a></li><li><a href="16" rel="x1x" rev="z-q">Help</a></li>
-<li><a href="17" rel="x1x" rev="z-r">FREE PSD</a></li><li><a href="23" rel="x1x" rev="z-x">Reset Options</a></li>
+<div id="flowertabs" class="modernbricksmenu2"><ul>
+<li><a href="#1" rel="x1x"  rev="z-a">Home</a></li>
+<li><a href="#2" rel="x1x" rev="z-b">Page and Container</a></li>
+<li><a href="#3" rel="x1x" rev="z-g">Head</a></li>
+<li><a href="#4" rel="x1x" rev="z-s">Navigation</a></li>
+<li><a href="#5" rel="x1x"rev="z-c">Front Page</a></li>
+<li><a href="#6" rel="x1x" rev="z-d">Post Title & Meta</a></li>
+<li><a href="#7" rel="x1x" rev="z-e">Comments</a></li>
+<li><a href="#8" rel="x1x" rev="z-f">Images</a></li>
+<li><a href="#9" rel="x1x" rev="z-h">Footer</a></li>
+<li><a href="#10" rel="x1x" rev="z-i">P Text</a></li>
+<li><a href="#11" rel="x1x" rev="z-j">Sidebar</a></li>
+<li><a href="#12" rel="x1x" rev="z-aa">Footer Widget Areas</a></li>
+<li><a href="#13" rel="x1x" rev="z-k">Headings</a></li>
+<li><a href="#14" rel="x1x" rev="z-l">Sticky Posts</a></li>
+<li><a href="#15" rel="x1x" rev="z-m">Tag Cloud </a></li>
+<li><a href="#16" rel="x1x" rev="z-n">Block Quotes</a></li>
+<li><a href="#17" rel="x1x" rev="z-o">Adverts</a></li>
+<li><a href="#18" rel="x1x" rev="z-w">Links</a></li>
+<li><a href="#19" rel="x1x" rev="z-v">Lists</a></li>
+<li><a href="#20" rel="x1x" rev="z-u">Tables</a></li>
+<li><a href="#21" rel="x1x" rev="z-t">Error Pages</a></li>
+<li><a href="#22" rel="x1x" rev="z-p">Google Anayltics</a></li>
+<li><a href="#23" rel="x1x" rev="z-xx">Favicon</a></li>
+<li><a href="#24" rel="x1x" rev="z-xa">Tutorials</a></li>
+<li><a href="#25" rel="x1x" rev="z-q">Help</a></li>
+<li><a href="#26" rel="x1x" rev="z-r">FREE PSD</a></li>
+<li><a href="#27" rel="x1x" rev="z-x">Reset Options</a></li>
 </ul><div class="clearbox"></div></div>
 <div class="clearbox"></div>
  <?php

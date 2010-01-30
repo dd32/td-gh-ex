@@ -5,7 +5,7 @@
 <?php while (have_posts()) : the_post(); ?>
 <div <?php post_class(); ?>>
 <h3 class="post-title"> <a href="<?php the_permalink() ?>" rel="bookmark" class="title"><?php the_title(); ?></a></h3>  
-<div class="metabox">Posted by <?php the_author_posts_link () ?> | <?php the_time('M j, Y') ?> | <?php the_tags('Tags: ', ', ', '<br/>'); ?><?php comments_popup_link('No Comments', '1 Comment', '% Comments '); ?></div>
+<div class="metabox">Posted by <?php the_author_posts_link () ?> | Filed under <?php the_category(', ') ?> | <?php the_time('M j, Y') ?> | <?php the_tags('Tags: ', ', ', ' | '); ?><?php comments_popup_link(' No Comments', ' 1 Comment', ' % Comments'); ?></div>
 <?php $my_name = "$bxx_main_post_type";
 if ( $bxx_main_post_type == "content" ) {
 echo 	the_content(); wp_link_pages('<p><strong>Pages:</strong>', '</p>', 'number');

@@ -190,8 +190,10 @@ background-color: #eee; background-image: url(<?php bloginfo('template_url');?>/
 list-style: none; } .modernbricksmenu2 li{ display: inline; text-transform:uppercase; } .modernbricksmenu2 a{ float: left;
 display: block; font: bold 11px Arial; color: #666; text-decoration: none; line-height: 290%; margin-left: 0px; padding-left:
 10px; padding-right: 10px; margin-right: 0px; background-image: url(<?php bloginfo('template_url');?>/images/between.png);
-background-repeat: no-repeat; background-position: center right; } .modernbricksmenu2 a:hover{ color: #D25A0B; }
-.modernbricksmenu2 a.selected{ color: #D25A0B; } .backend-clear { width: 100%; height: 1px; clear: both; } .backend-box { width:
+background-repeat: no-repeat; background-position: center right; } .
+modernbricksmenu2 a:hover{ color: #D25A0B; }
+.modernbricksmenu2 a.selected{ color: #D25A0B; } .backend-clear { width: 100%; height: 1px; clear: both; } 
+.backend-box { width:
 900px; background-color: #eee; text-align: left; padding-left: 0px; padding-top: 0px; clear: both; margin-top: 0px; }
 #wpbody-content, #wpcontent { background-color: #fff; text-align: left; } #wphead h1 { text-transform: capitalize; } .slak {
 background-image: url(<?php bloginfo('template_url');?>/images/main-title.png); background-repeat: repeat-x; height: 45px;

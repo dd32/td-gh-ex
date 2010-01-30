@@ -1,9 +1,12 @@
 <?php global $options; foreach ($options as $value) { if (get_settings( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] =
 get_settings( $value['id'] ); } } ?> <?php $themename = "42k"; $shortname = "bxx"; ?> <form method="post"> <?php foreach ($options as $value) { switch (
 $value['type'] ) { case "z-a": ?><div id="z-a"class="backend-box" ><?php include (TEMPLATEPATH . '/scripts/gomez.php'); ?><?php break; case "z-b": ?><div
-id="z-b"class="backend-box" ><?php break; case "space-space": ?><div class="space-boy-space" ></div><?php break; case "z-c": ?><div id="z-c"class="backend-box"
-><?php break; case "z-d": ?><div id="z-d"class="backend-box" ><?php break; case "z-e": ?> <div id="z-e"class="backend-box" > <?php break; case "z-f": ?> <div
-id="z-f"class="backend-box" ><?php break; case "z-g": ?><div id="z-g"class="backend-box" ><?php break; case "z-h": ?><div id="z-h"class="backend-box" ><?php break;
+id="z-b"class="backend-box" ><?php break; case "space-space": ?><div class="space-boy-space" ></div><?php break; 
+case "z-c": ?><div id="z-c"class="backend-box"><?php break; 
+case "z-d": ?><div id="z-d"class="backend-box" ><?php break; 
+case "z-e": ?> <div id="z-e"class="backend-box" > <?php break; 
+case "z-f": ?> <div id="z-f"class="backend-box" ><?php break; 
+case "z-g": ?><div id="z-g"class="backend-box" ><?php break; case "z-h": ?><div id="z-h"class="backend-box" ><?php break;
 case "z-i": ?><div id="z-i"class="backend-box" ><?php break; case "z-j": ?><div id="z-j"class="backend-box" ><?php break; case "z-k": ?><div
 id="z-k"class="backend-box" ><?php break; case "z-l": ?> <div id="z-l"class="backend-box" ><?php break; case "z-m": ?> <div id="z-m"class="backend-box" ><?php
 break; case "z-n": ?><div id="z-n"class="backend-box" ><?php break; case "z-o": ?> <div id="z-o"class="backend-box" > <?php break; case "z-p": ?><div
@@ -162,11 +165,15 @@ $value['name']; ?></span> <textarea name="<?php echo $value['id']; ?>" id="<?php
 cols="100" rows="3"><?php if ( get_settings( $value['id'] ) != "") { echo stripslashes(get_settings( $value['id'] )); } else { echo stripslashes($value['std']); }
 ?></textarea><span style="font-family:Arial, sans-serif; font-size:12px; color:#444; display:block;"> <?php echo $value['desc']; ?></span> </div> <?php break;
 case 'sugercube': ?> <div style=" width:100%; clear:both;">
-<img class="profile-left" src="<?php bloginfo("template_directory"); ?>/bricks/homepage-images/42k-layout-normal.png" />
-<img class="profile-right" src="<?php bloginfo("template_directory"); ?>/bricks/homepage-images/42k-layout-mulletrightcontent.png" />
-<img class="profile-left" src="<?php bloginfo("template_directory"); ?>/bricks/homepage-images/42k-layout-mullet.png" />
-<img class="profile-right" src="<?php bloginfo("template_directory"); ?>/bricks/homepage-images/42l-layout-normal-right-content.png" />
+<img class="profile-left" src="<?php bloginfo("template_url");?>/bricks/homepage-images/42k-layout-normal.png" />
+<img class="profile-right" src="<?php bloginfo("template_url");?>/bricks/homepage-images/42k-layout-mulletrightcontent.png" />
+<img class="profile-left" src="<?php bloginfo("template_url");?>/bricks/homepage-images/42k-layout-mullet.png" />
+<img class="profile-right" src="<?php bloginfo("template_url");?>/bricks/homepage-images/42l-layout-normal-right-content.png" />
 </div> <?php break;
+
+
+
+
 case 'select-super': ?> <div style="width:760px; float:left; padding-top:5px; overflow:hidden;"> <span style="font-family:Arial, sans-serif; font-size:12px;
 color:#444; display:block; padding:5px;"> <?php echo $value['name']; ?></span><select style="width:700px;" name="<?php echo $value['id']; ?>" id="<?php echo
 $value['id']; ?>"> <?php foreach ($value['options'] as $option) { ?><option<?php if ( get_settings( $value['id'] ) == $option) { echo ' selected="selected"'; }
