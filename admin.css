@@ -12,6 +12,13 @@
 	float:left;
 	margin:12px 10px 0 0;
 }
+#icon-headerImage {
+	width:42px;
+	height:28px;
+	background:url(./images/admin/admin.png) no-repeat -100px -100px;
+	float:left;
+	margin:12px 10px 0 0;
+}
 
 .tALeft {
 	float:left;
@@ -32,6 +39,22 @@
 	display:block;
 	margin:10px 0 0 6px;
 }
+
+#icon-lightBlue {
+	width:300px;
+	height:28px;
+	background:url(./images/admin/headerImages.jpg) no-repeat 0 0;
+	float:left;
+	margin-top:6px;
+}
+#icon-darkBlue {
+	width:300px;
+	height:28px;
+	background:url(./images/admin/headerImages.jpg) no-repeat 0 -50px;
+	float:left;
+	margin-top:6px;
+}
+
 #icon-sidebarRight {
 	width:40px;
 	height:40px;

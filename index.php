@@ -43,9 +43,9 @@
 
 	<?php
 	if(function_exists('wp_paginate')) { ?>
-		<div class="pagination"><div><?php wp_paginate(); ?></div></div>
+		<div class="pagination"><?php wp_paginate(); ?></div>
 	<?php	} elseif(function_exists('wp_pagenavi')) { ?>
-		<div class="pagination"><div><?php wp_pagenavi(); ?></div></div>
+		<div class="pagination"><?php wp_pagenavi(); ?></div>
 	<?php } elseif(has_pages()) {	?>
 		<div class="pagination"><div>
 			<?php arjuna_get_previous_page_link(__('Newer Entries', 'Arjuna')); ?>

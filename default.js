@@ -53,70 +53,32 @@ SRS = {
 			}
 			
 			//Activate form functionality
-			var e1 = document.getElementById('replyName');
-			var e2 = document.getElementById('replyEmail');
-			var e3 = document.getElementById('replyURL');
-			var e4 = document.getElementById('replyMsg');
-			var e1d = document.getElementById('replyNameDefault')?document.getElementById('replyNameDefault').value:'';
-			var e2d = document.getElementById('replyEmailDefault')?document.getElementById('replyEmailDefault').value:'';
-			var e3d = document.getElementById('replyURLDefault')?document.getElementById('replyURLDefault').value:'';
-			var e4d = document.getElementById('replyMsgDefault')?document.getElementById('replyMsgDefault').value:'';
-			if (e1 != null) {
-				e1.onfocus = function() {
-					if (this.value == e1d) {
-						this.value = '';
-						this.className = this.className.replace(new RegExp(" inputIA\\b"), "");
-					}
-				};
-				e1.onblur = function() {
-					if (this.value == '') {
-						this.value = e1d;
-						this.className += " inputIA";
-					}
-				}
-			}
-			if (e2 != null) {
-				e2.onfocus = function() {
-					if (this.value == e2d) {
-						this.value = '';
-						this.className = this.className.replace(new RegExp(" inputIA\\b"), "");
-					}
-				};
-				e2.onblur = function() {
-					if (this.value == '') {
-						this.value = e2d;
-						this.className += " inputIA";
+			var els = [
+				{ID: 'replyName', defaultID: 'replyNameDefault'},
+				{ID: 'replyEmail', defaultID: 'replyEmailDefault'},
+				{ID: 'replyURL', defaultID: 'replyURLDefault'},
+				{ID: 'replyMsg', defaultID: 'replyMsgDefault'}
+			];
+			for (var i=0; i<els.length; i++) {
+				var e = document.getElementById(els[i].ID);
+				if (e != null) {
+					var dv = document.getElementById(els[i].defaultID).value;
+					e._dv = dv;
+					e.onfocus = function() {
+						if (this.value == this._dv) {
+							this.value = '';
+							this.className = this.className.replace(this.className.match(' inputIA')?' inputIA':'inputIA', '');
+						}
+					};
+					e.onblur = function() {
+						if (this.value == '') {
+							this.value = this._dv;
+							this.className += this.className==''?"inputIA":" inputIA";
+						}
 					}
 				}
 			}
-			if (e3 != null) {
-				e3.onfocus = function() {
-					if (this.value == e3d) {
-						this.value = '';
-						this.className = this.className.replace(new RegExp(" inputIA\\b"), "");
-					}
-				};
-				e3.onblur = function() {
-					if (this.value == '') {
-						this.value = e3d;
-						this.className += " inputIA";
-					}
-				}
-			}
-			if (e4 != null) {
-				e4.onfocus = function() {
-					if (this.value == e4d) {
-						this.value = '';
-						this.className = this.className.replace(this.className.match(' inputIA')?' inputIA':'inputIA', '');
-					}
-				};
-				e4.onblur = function() {
-					if (this.value == '') {
-						this.value = e4d;
-						this.className += " inputIA";
-					}
-				}
-			}
+			
 		}
 		
 	}

@@ -33,35 +33,44 @@ if (!$arjunaOptions['enableIE6optimization'] || !arjuna_isIE6()) { ?>
 
 <body class="<?php if(!$arjunaOptions['headerMenu1_show']): ?>hideHeaderMenu1<?php endif; ?>"><a name="top"></a><a id="skipToPosts" href="#content"><?php _e('Skip to posts', 'Arjuna'); ?></a>
 <div class="pageContainer">
-	<div class="headerBG"><div></div></div>
+	<div class="headerBG"></div>
 	<div class="header">
-		<h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
-		<span><?php bloginfo('description'); ?></span>
 		<?php if($arjunaOptions['headerMenu1_show']): ?>
-		<ul class="headerMenu1<?php if($arjunaOptions['headerMenu1_alignment']=='left'): ?> headerMenu1L<?php endif; ?>" id="headerMenu1"><?php
-			if ($arjunaOptions['headerMenu1_display']=='pages') {
-				wp_list_pages('sort_column='.$arjunaOptions['headerMenu1_sortBy'].'&sort_order='.$arjunaOptions['headerMenu1_sortOrder'].'&title_li=&depth='.$arjunaOptions['headerMenu1_dropdown']);
-			} elseif ($arjunaOptions['headerMenu1_display']=='categories') {
-				wp_list_categories('orderby='.$arjunaOptions['headerMenu1_sortBy'].'&order='.$arjunaOptions['headerMenu1_sortOrder'].'&title_li=&depth='.$arjunaOptions['headerMenu1_dropdown']);
-			}
-		?></ul>
-		<?php endif; ?>
-		<div class="searchBox">
-			<form method="get" action="<?php bloginfo('url'); ?>/">
-				<input type="text" class="searchQuery searchQueryIA" id="searchQuery" value="<?php _e('Search here...', 'Arjuna'); ?>" name="s" />
-				<input type="submit" class="searchButton" value="<?php _e('Find', 'Arjuna'); ?>" />
-			</form>
-		</div>
-		<ul class="headerMenu2" id="headerMenu2">
-			<li><a href="<?php bloginfo('url'); ?>"><?php _e('Home','Arjuna'); ?></a></li><?php
-				if ($arjunaOptions['headerMenu2_display']=='pages') {
-					wp_list_pages('sort_column='.$arjunaOptions['headerMenu2_sortBy'].'&sort_order='.$arjunaOptions['headerMenu2_sortOrder'].'&title_li=&depth='.$arjunaOptions['headerMenu2_dropdown']);
-				} elseif ($arjunaOptions['headerMenu2_display']=='categories') {
-					wp_list_categories('orderby='.$arjunaOptions['headerMenu2_sortBy'].'&order='.$arjunaOptions['headerMenu2_sortOrder'].'&title_li=&depth='.$arjunaOptions['headerMenu2_dropdown']);
+		<div class="headerMenu1<?php if($arjunaOptions['headerMenu1_alignment']=='left'): ?> headerMenu1L<?php endif; ?>">
+			<ul id="headerMenu1"><?php
+				if ($arjunaOptions['headerMenu1_display']=='pages') {
+					wp_list_pages('sort_column='.$arjunaOptions['headerMenu1_sortBy'].'&sort_order='.$arjunaOptions['headerMenu1_sortOrder'].'&title_li=&depth='.$arjunaOptions['headerMenu1_dropdown']);
+				} elseif ($arjunaOptions['headerMenu1_display']=='categories') {
+					wp_list_categories('orderby='.$arjunaOptions['headerMenu1_sortBy'].'&order='.$arjunaOptions['headerMenu1_sortOrder'].'&title_li=&depth='.$arjunaOptions['headerMenu1_dropdown']);
 				}
-			?>
-		</ul>
+			?></ul>
+			<span class="clear"></span>
+		</div>
+		<?php endif; ?>
+		<div class="headerMain header_<?php print $arjunaOptions['headerImage']; ?>">
+			<h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
+			<span><?php bloginfo('description'); ?></span>
+			<div class="headerSearch">
+				<form method="get" action="<?php bloginfo('url'); ?>/">
+					<input type="text" class="searchQuery searchQueryIA" id="searchQuery" value="<?php _e('Search here...', 'Arjuna'); ?>" name="s" />
+					<input type="submit" class="searchButton" value="<?php _e('Find', 'Arjuna'); ?>" />
+				</form>
+			</div>
+		</div>
+		<div class="headerMenu2<?php if($arjunaOptions['headerMenu2_displaySeparators']): ?> headerMenu2DS<?php endif; ?>"><span class="helper"></span>
+			<ul id="headerMenu2">
+				<?php if($arjunaOptions['headerMenu2_displayHomeButton']): ?><li><a href="<?php bloginfo('url'); ?>" class="homeIcon"><?php _e('Home','Arjuna'); ?></a></li><?php endif; ?><?php
+					if ($arjunaOptions['headerMenu2_display']=='pages') {
+						wp_list_pages('sort_column='.$arjunaOptions['headerMenu2_sortBy'].'&sort_order='.$arjunaOptions['headerMenu2_sortOrder'].'&title_li=&depth='.$arjunaOptions['headerMenu2_dropdown']);
+					} elseif ($arjunaOptions['headerMenu2_display']=='categories') {
+						wp_list_categories('orderby='.$arjunaOptions['headerMenu2_sortBy'].'&order='.$arjunaOptions['headerMenu2_sortOrder'].'&title_li=&depth='.$arjunaOptions['headerMenu2_dropdown']);
+					}
+				?>
+			</ul>
+			<span class="clear"></span>
+		</div>
 	</div>
+
 	<div class="contentWrapper<?php
 		//Sidebar
 		if ($arjunaOptions['sidebarDisplay']=='none') {

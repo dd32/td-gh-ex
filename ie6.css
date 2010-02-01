@@ -1,7 +1,3 @@
-/*ul.headerMenu2 li li {
-	zoom:1;
-}*/
-
 body {
 	background:#d9d9d9 url(./images/ie6/pageBG.png) repeat-x 0 0;
 }
@@ -11,43 +7,56 @@ pre {
 	background-image:url(./images/ie6/blockquote.png);
 }
 
-.headerBG div {
-	width:1000px;
-	height:140px;
+.headerBG {
 	background:url(./images/ie6/headerOverlay.png) no-repeat 0 0;
 }
 
-.hideHeaderMenu1 {
-	background-position:0 -27px;
-}
-.hideHeaderMenu1 .headerBG div {
-	height:113px;
-	background:url(./images/ie6/headerOverlay.png) no-repeat 0 -27px;
-}
-
-.hideHeaderMenu1 ul.headerMenu2 {
+.headerSearch {
+	background-image:url(./images/ie6/headerSearch.png);
 	bottom:-1px;
 }
 
-ul.headerMenu2 li a,
-ul.headerMenu1 li a {
+.headerMenu1 {
+	height:25px;
+	position:relative;
+}
+.headerMenu1 ul {
+	display:inline;
+}
+.headerMenu2 {
+	zoom:1;
+}
+.headerMenu2,
+.headerMenu2DS ul,
+.headerMenu2DS li,
+.headerMenu2 li a:hover,
+.headerMenu2 li a:visted,
+.headerMenu2 li a.homeIcon,
+.headerMenu2 li a.homeIcon:hover,
+.headerMenu2 li a.homeIcon:visited {
+	background-image:url(./images/ie6/headerMenu2.png);
+}
+
+
+.headerMenu2 li a,
+.headerMenu1 li a {
 	float:left;
 }
 
-ul.headerMenu2 li li,
-ul.headerMenu1 li li{
+.headerMenu2 li li,
+.headerMenu1 li li{
 	display:inline;
 }
-ul.headerMenu2 li a,
-ul.headerMenu2 li a:visited,
-ul.headerMenu1 li a,
-ul.headerMenu1 li a:visited {
+.headerMenu2 li a,
+.headerMenu2 li a:visited,
+.headerMenu1 li a,
+.headerMenu1 li a:visited {
 	display:block;
 }
-ul.headerMenu2 li li a,
-ul.headerMenu2 li li a:visited,
-ul.headerMenu1 li li a,
-ul.headerMenu1 li li a:visited {
+.headerMenu2 li li a,
+.headerMenu2 li li a:visited,
+.headerMenu1 li li a,
+.headerMenu1 li li a:visited {
 	display:block;
 	float:none;
 }
@@ -186,7 +195,13 @@ a.btn span {
 .pagination,
 .pagination a span,
 .pagination li.active a span,
-.pagination .info {
+.pagination .info,
+.wp-paginate .title,
+.wp-paginate span,
+.wp-paginate a,
+.wp-pagenavi span,
+.wp-pagenavi a,
+.wp-pagenavi .pages {
 	background-image:url(./images/ie6/pagination.png);
 }
 

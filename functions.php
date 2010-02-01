@@ -13,6 +13,9 @@ function arjuna_create_options() {
 		'headerMenu2_display' => 'categories', // pages, categories
 		'headerMenu2_sortBy' => 'name', // [CATEGORIES]: name, ID, count, slug [PAGES]: post_title, ID, post_name (slug), menu_order (the page's Order value)
 		'headerMenu2_sortOrder' => 'asc', // asc, desc
+		'headerMenu2_displayHomeButton' => true,
+		'headerMenu2_displaySeparators' => true,
+		'headerImage' => 'lightBlue', //lightBlue, darkBlue
 		'commentDisplay' => 'alt', // alt, left, right
 		'footerStyle' => 'style1', // style1, style2
 		'commentDateFormat' => 'timePassed', // timePassed, date
@@ -118,6 +121,19 @@ function arjuna_add_theme_options() {
 		if ( in_array($_POST['headerMenu2_sortOrder'], $validOptions) ) $options['headerMenu2_sortOrder'] = $_POST['headerMenu2_sortOrder'];
 		else $options['headerMenu2_sortOrder'] = 'asc';
 
+		//Menu 2 Home Icon
+		if ($_POST['headerMenu2_displayHomeButton']) $options['headerMenu2_displayHomeButton'] = true;
+		else $options['headerMenu2_displayHomeButton'] = false;
+
+		//Menu 2 Home Icon
+		if ($_POST['headerMenu2_displaySeparators']) $options['headerMenu2_displaySeparators'] = true;
+		else $options['headerMenu2_displaySeparators'] = false;
+
+		//Header Image
+		$validOptions = array('lightBlue', 'darkBlue');
+		if ( in_array($_POST['headerImage'], $validOptions) ) $options['headerImage'] = $_POST['headerImage'];
+		else $options['headerImage'] = $validOptions[0];
+
 
 		//Comment display
 		$validOptions = array('alt', 'left', 'right');
@@ -204,7 +220,7 @@ function arjuna_add_theme_page () {
 			</div>
 		</div>
 		
-		<h3><?php _e('Header Menus', 'Arjuna'); ?></h3>
+		<h3><?php _e('Header', 'Arjuna'); ?></h3>
 		<table width="100%"><tr>
 			<td width="50%">
 				<div class="tIcon" id="icon-firstMenu"></div>
@@ -303,6 +319,18 @@ function arjuna_add_theme_page () {
 				<h4><?php _e('Second Header Menu', 'Arjuna'); ?></h4>
 				<table class="form-table">
 					<tbody>
+						<tr>
+							<th scope="row"><?php _e('Home Button', 'Arjuna'); ?></th>
+							<td>
+								<label><input name="headerMenu2_displayHomeButton" type="checkbox"<?php if($options['headerMenu2_displayHomeButton']) echo ' checked="checked"'; ?> /> <?php _e('Display Home button', 'Arjuna'); ?></label>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><?php _e('Separators', 'Arjuna'); ?></th>
+							<td>
+								<label><input name="headerMenu2_displaySeparators" type="checkbox"<?php if($options['headerMenu2_displaySeparators']) echo ' checked="checked"'; ?> /> <?php _e('Visually separate the menu buttons', 'Arjuna'); ?></label>
+							</td>
+						</tr>
 						<tr valign="top">
 							<th scope="row"><?php _e('Dropdown', 'Arjuna'); ?></th>
 							<td>
@@ -370,6 +398,28 @@ function arjuna_add_theme_page () {
 				</table>
 			</td>
 		</tr></table>
+		<div class="tIcon" id="icon-headerImage"></div>
+		<h4><?php _e('Header Image', 'Arjuna'); ?></h4>
+				<table class="form-table">
+					<tbody>
+				<tr>
+					<th scope="row"><?php _e('Header Image', 'Arjuna'); ?></th>
+					<td>
+						<div class="tImageOptions" style="float:none">
+							<input name="headerImage" type="radio" id="headerImage_lightBlue" value="lightBlue"<?php if($options['headerImage']=='lightBlue') echo ' checked="checked"'; ?> />
+							<div class="tImage" id="icon-lightBlue"></div>
+							<span><label for="headerImage_lightBlue"><?php _e('Light Blue', 'Arjuna'); ?></label></span>
+						</div>
+						<div class="tImageOptions" style="float:none">
+							<input name="headerImage" type="radio" id="headerImage_darkBlue" value="darkBlue"<?php if($options['headerImage']=='darkBlue') echo ' checked="checked"'; ?> />
+							<div class="tImage" id="icon-darkBlue"></div>
+							<span><label for="headerImage_darkBlue"><?php _e('Dark Blue', 'Arjuna'); ?></label></span>
+						</div>
+					</td>
+				</tr>
+					</tbody>
+				</table>
+		
 		<h3><?php _e('General Options', 'Arjuna'); ?></h3>
 		<h4><?php _e('Sidebar', 'Arjuna'); ?></h4>
 		<table class="form-table">
@@ -605,7 +655,7 @@ function arjuna_get_comment($comment, $args, $depth) {
 			<div class="i"><div class="i2">
 				<span class="title"><?php _e('Written by', 'Arjuna'); ?> <?php if (get_comment_author_url()): print get_comment_author_link(); else: ?><a href="<?php comment_author_url(); ?>" class="authorLink"><?php comment_author(); ?></a><?php endif; ?> <?php
 					if($arjunaOptions['commentDateFormat'] == 'timePassed'){
-						printf(__('about %s ago'), arjuna_get_time_passed(strtotime($comment->comment_date)));
+						printf(__('about %s ago', 'Arjuna'), arjuna_get_time_passed(strtotime($comment->comment_date)));
 					} else {
 						print __('on', 'Arjuna').' '.date(get_option('date_format'), strtotime($comment->comment_date));
 					}
@@ -639,30 +689,30 @@ function arjuna_get_time_passed($pastTime) {
 	
 	if ($seconds > 28944000) { //older than 335 days
 		$years = round($seconds/31557600); //365.25 days
-		return sprintf(__($years==1?'1 year':'%d years', 'Arjuna'), $years);
+		return $years==1 ? __('1 year', 'Arjuna') : sprintf(__('%d years', 'Arjuna'), $years);
 	} 
 	if ($seconds > 2592000) { //older than 30 days
 		$months = round($seconds/2629800); //1 month (average)
-		return sprintf(__($months==1?'1 month':'%d months', 'Arjuna'), $months);
+		return $months==1 ? __('1 month', 'Arjuna') : sprintf(__('%d months', 'Arjuna'), $months);
 	} 
 	if ($seconds > 518400) { //older than 6 days
 		$weeks = round($seconds/604800); //1 week
-		return sprintf(__($weeks==1?'1 week':'%d weeks', 'Arjuna'), $weeks);
+		return $weeks==1 ? __('1 week', 'Arjuna') : sprintf(__('%d weeks', 'Arjuna'), $weeks);
 	} 
 	if ($seconds > 82800) { //older than 23 hours
 		$days = round($seconds/86400); //1 day
-		return sprintf(__($days==1?'1 day':'%d days', 'Arjuna'), $days);
+		return $days==1 ? __('1 day', 'Arjuna') : sprintf(__('%d days', 'Arjuna'), $days);
 	} 
 	if ($seconds > 3540) { //older than 59 minutes
 		$hours = round($seconds/3600); //1 hour
-		return sprintf(__($hours==1?'1 hour':'%d hours', 'Arjuna'), $hours);
+		return $hours==1 ? __('1 hour', 'Arjuna') : sprintf(__('%d hours', 'Arjuna'), $hours);
 	} 
 	if ($seconds > 59) { //older than 59 seconds
 		$minutes = round($seconds/60); //1 minute
-		return sprintf(__($minutes==1?'1 minute':'%d minutes', 'Arjuna'), $minutes);
+		return $minutes==1 ? __('1 minute', 'Arjuna') : sprintf(__('%d minutes', 'Arjuna'), $minutes);
 	}
 	
-	return sprintf(__($seconds==1?'1 second':'%d seconds', 'Arjuna'), $seconds);
+	return $seconds==1 ? __('1 second', 'Arjuna') : sprintf(__('%d seconds', 'Arjuna'), $seconds);
 }
 
 function has_pages() {

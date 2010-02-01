@@ -28,6 +28,7 @@ Currently available translations:
 
 - Italian (thanks to Gianni Diurno, http://gidibao.net)
 - Lithuanian (thanks to Vaidas Juknevicius aka SeniZ)
+- Chinese (thanks to Liuyue)
 
 
 More Information and Support
@@ -55,6 +56,19 @@ Nonetheless, we still hope that IE6 will rest in peace soon.
 Changelog:
 ---------------------------------------------------
 
+1.1
+- New feature: The first header menu can now be extended over two rows of links.
+- New feature: The buttons in the second header menu can now be visually separated.
+- New feature: You can now select between two different header images. More will become available in the future. NOTE: As of this version, the layout and structure of the header has undergone significant changes.
+- New feature: The Home button in the second header bar can now be disabled. In addition, the Home button shows an icon now.
+- New localization: Chinese
+- Localization updated: Italian
+- Optimized JavaScript and reduced its file size.
+- Fixed bug: There were some non-localized strings in functions.php as well as some that PoEdit could not parse properly.
+- Fixed bug: If pagination is provided by the plugin "WP-paginate", it did not work correctly on archive pages.
+- Fixed display bug: Bold text, italic text and lists (ordered and unordered) within a post did not display correctly.
+- Fixed display bug: A two-level dropdown menu in a left-aligned first header menu was displaying incorrectly.
+- Fixed IE6 display bug: IE6 displayed a considerably larger font size for widget bars that used the default font size, e.g. the WP calendar.
 1.0.5
 - New feature: It's now possible to display the author of a post in the post header.
 - Changed the display of dates to use the default date format specified in Settings > General instead of using a theme-based, localized date format. This allows for grammatically correct date formats in languages other than English where there is no translation available for Arjuna yet.
