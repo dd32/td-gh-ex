@@ -15,7 +15,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ---------------------------------------------------------------------
 
 
-Please respect that we have put a healthy amount of time in the development, testing and the maintenance of this theme. You can use this theme free of charge according to the GPL license. However, we ask a small, yet completely optional, favor of you: If you like the theme, we would appreciate if you keep the credits in the footer of the theme in tact. We have intentionally made them small and not intrusive. It's a small favor for a project that, had you hired someone to design and develop this theme for you, cost several thousand dollars. 
+Please respect that we have put a healthy amount of time in the development, testing and the maintenance of this theme. You can use this theme free of charge according to the GPL license. However, we ask a small, yet completely optional, favor of you: If you like the theme, we would appreciate if you keep the credits in the footer of the theme intact. We have intentionally made them small and not intrusive. It's a small favor for a project that, had you hired someone to design and develop this theme for you, cost several thousand dollars. 
 
 
 Translation
@@ -56,6 +56,11 @@ Nonetheless, we still hope that IE6 will rest in peace soon.
 Changelog:
 ---------------------------------------------------
 
+1.1.1
+- New feature: It's now possible to disable default widgets in the sidebar when the widget bars are empty. This allows for more flexibility in choosing which sidebars to use. For example, you can now disable default widgets and exclusively use the two-column or single-column sidebar, if you wish so.
+- Improved the backend and the way options are retrieved.
+- Added default styles for headings in posts (heading 2 to 4).
+- Fixed bug: When some IE7 browsers emulate IE6 for compatibility reasons and Arjuna was set to use IE6 optimization, the website's layout would have some issues. 
 1.1
 - New feature: The first header menu can now be extended over two rows of links.
 - New feature: The buttons in the second header menu can now be visually separated.

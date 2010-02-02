@@ -1,5 +1,5 @@
+<?php $arjunaOptions = arjuna_get_options(); ?>
 <?php
-$arjunaOptions = get_option('arjuna_options');
 // This is the comments file for Wordpress 2.7+
 
 // Forbid direct access

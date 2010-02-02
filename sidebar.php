@@ -1,12 +1,13 @@
+<?php $arjunaOptions = arjuna_get_options(); ?>
 <?php
-$arjunaOptions = get_option('arjuna_options');
 if ($arjunaOptions['sidebarDisplay']!='none') {
 ?><div class="sidebars">
 	<div class="t"><div></div></div>
 	<div class="i"><div class="i2"><div class="c">
 		<div class="sidebarIcons"><a class="rssBtn" href="<?php bloginfo('rss2_url'); ?>">RSS</a></div>
-		<div class="">
-			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar_full_top') ) : ?>
+		<div>
+		<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar_full_top')): ?>
+			<?php if($arjunaOptions['sidebar_showDefault']): ?>
 			<div class="sidebarbox">
 			<h4><span><?php _e('Recent Posts', 'Arjuna'); ?></span></h4>
 			<ul>
@@ -19,9 +20,11 @@ if ($arjunaOptions['sidebarDisplay']!='none') {
 			<?php wp_tag_cloud('smallest=8&largest=17&number=30'); ?>
 			</div>
 			<?php endif; ?>
+		<?php endif; ?>
 		</div>
 		<div class="sidebarLeft">
-			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar_left') ) : ?>
+		<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar_left')): ?>
+			<?php if($arjunaOptions['sidebar_showDefault']): ?>
 			<div class="sidebarbox">
 			<h4><span><?php _e('Categories', 'Arjuna'); ?></span></h4>
 			<ul>
@@ -29,9 +32,11 @@ if ($arjunaOptions['sidebarDisplay']!='none') {
 			</ul>
 			</div>
 			<?php endif; ?>
+		<?php endif; ?>
 		</div>
 		<div class="sidebarRight">
-			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar_right') ) : ?>
+		<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar_right')): ?>
+			<?php if($arjunaOptions['sidebar_showDefault']): ?>
 			<div class="sidebarbox">
 			<h4><span><?php _e('Meta', 'Arjuna'); ?></span></h4>
 			<ul>
@@ -42,6 +47,7 @@ if ($arjunaOptions['sidebarDisplay']!='none') {
 			</ul>
 			</div>
 			<?php endif; ?>
+		<?php endif; ?>
 		</div>
 		<div class="clear">
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar_full_bottom') ) : ?>

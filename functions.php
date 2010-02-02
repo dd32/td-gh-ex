@@ -1,32 +1,35 @@
 <?php
+$_arjunaDefaultOptions = array(
+	'headerMenu1_dropdown' => '3', // 1, 2, 3 (the depth of the menu, 1 being no dropdown)
+	'headerMenu1_display' => 'pages', // pages, categories
+	'headerMenu1_sortBy' => 'post_title', // [CATEGORIES]: name, ID, count, slug [PAGES]: post_title, ID, post_name (slug), menu_order (the page's Order value)
+	'headerMenu1_sortOrder' => 'asc', // asc, desc
+	'headerMenu1_alignment' => 'right', // right, left
+	'headerMenu1_show' => true,
+	'headerMenu2_dropdown' => '3', // 1, 2, 3 (the depth of the menu, 1 being no dropdown)
+	'headerMenu2_display' => 'categories', // pages, categories
+	'headerMenu2_sortBy' => 'name', // [CATEGORIES]: name, ID, count, slug [PAGES]: post_title, ID, post_name (slug), menu_order (the page's Order value)
+	'headerMenu2_sortOrder' => 'asc', // asc, desc
+	'headerMenu2_displayHomeButton' => true,
+	'headerMenu2_displaySeparators' => true,
+	'headerImage' => 'lightBlue', //lightBlue, darkBlue
+	'commentDisplay' => 'alt', // alt, left, right
+	'footerStyle' => 'style1', // style1, style2
+	'commentDateFormat' => 'timePassed', // timePassed, date
+	'appendToPageTitle' => 'blogName', // blogName, custom
+	'appendToPageTitleCustom' => '',
+	'sidebarDisplay' => 'right', // right, left, none
+	'sidebarWidth' => 'normal', // small, normal, large
+	'sidebar_showDefault' => true, 
+	'enableIE6optimization' => true,
+	'postsShowAuthor' => true
+);
+
 $optionsSaved = false;
 function arjuna_create_options() {
 	// Default values
-	$defaultOptions = array(
-		'headerMenu1_dropdown' => '3', // 1, 2, 3 (the depth of the menu, 1 being no dropdown)
-		'headerMenu1_display' => 'pages', // pages, categories
-		'headerMenu1_sortBy' => 'post_title', // [CATEGORIES]: name, ID, count, slug [PAGES]: post_title, ID, post_name (slug), menu_order (the page's Order value)
-		'headerMenu1_sortOrder' => 'asc', // asc, desc
-		'headerMenu1_alignment' => 'right', // right, left
-		'headerMenu1_show' => true,
-		'headerMenu2_dropdown' => '3', // 1, 2, 3 (the depth of the menu, 1 being no dropdown)
-		'headerMenu2_display' => 'categories', // pages, categories
-		'headerMenu2_sortBy' => 'name', // [CATEGORIES]: name, ID, count, slug [PAGES]: post_title, ID, post_name (slug), menu_order (the page's Order value)
-		'headerMenu2_sortOrder' => 'asc', // asc, desc
-		'headerMenu2_displayHomeButton' => true,
-		'headerMenu2_displaySeparators' => true,
-		'headerImage' => 'lightBlue', //lightBlue, darkBlue
-		'commentDisplay' => 'alt', // alt, left, right
-		'footerStyle' => 'style1', // style1, style2
-		'commentDateFormat' => 'timePassed', // timePassed, date
-		'appendToPageTitle' => 'blogName', // blogName, custom
-		'appendToPageTitleCustom' => '',
-		'sidebarDisplay' => 'right', // right, left, none
-		'sidebarWidth' => 'normal', // small, normal, large
-		'enableIE6optimization' => true,
-		'postsShowAuthor' => true
-	);
-
+	$defaultOptions = $GLOBALS['_arjunaDefaultOptions'];
+	
 	// Overridden values
 	$setOptions = get_option('arjuna_options');
 	if ( !is_array($setOptions) ) $setOptions = array();
@@ -38,6 +41,13 @@ function arjuna_create_options() {
 		update_option('arjuna_options', $options);
 	
 	return $options;
+}
+
+function arjuna_get_options() {
+	$options = get_option('arjuna_options');
+	if(!empty($options))
+		return $options;
+	return $GLOBALS['_arjunaDefaultOptions'];
 }
 
 function arjuna_add_theme_options() {
@@ -163,6 +173,10 @@ function arjuna_add_theme_options() {
 		$validOptions = array('right', 'left', 'none');
 		if ( in_array($_POST['sidebarDisplay'], $validOptions) ) $options['sidebarDisplay'] = $_POST['sidebarDisplay'];
 		else $options['sidebarDisplay'] = $validOptions[0];
+		
+		// Whether or not to show the default bars (if no widget bars are defined)
+		if ($_POST['sidebar_showDefault']) $options['sidebar_showDefault'] = true;
+		else $options['sidebar_showDefault'] = false;
 
 		//Sidebar Width
 		$validOptions = array('normal', 'small', 'large');
@@ -451,6 +465,13 @@ function arjuna_add_theme_page () {
 							<div class="tALeft"><label><input name="sidebarWidth" type="radio" id="sidebarWidth_normal" value="normal"<?php if($options['sidebarWidth']=='normal') echo ' checked="checked"'; ?> /> <?php _e('Normal', 'Arjuna'); ?></label></div>
 							<div class="tALeft"><label><input name="sidebarWidth" type="radio" id="sidebarWidth_large" value="large"<?php if($options['sidebarWidth']=='large') echo ' checked="checked"'; ?> /> <?php _e('Large', 'Arjuna'); ?></label></div>
 							<br /><span class="description"><?php _e('If you intend to use the two column sidebar, we recommend to choose either the normal or the large sidebar.', 'Arjuna'); ?></span>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><?php _e('Default Widgets', 'Arjuna'); ?></th>
+					<td>
+						<label><input name="sidebar_showDefault" type="checkbox"<?php if($options['sidebar_showDefault']) echo ' checked="checked"'; ?> /> <?php _e('Display default sidebar widgets if the widget bars are empty.', 'Arjuna'); ?></label><br />
+						<span class="description"><?php _e('If enabled, these widgets will be displayed if the widget bar is empty: <b>sidebar_full_top:</b> Recent Posts and Browse by Tags, <b>sidebar_left:</b> Categories, <b>sidebar_right:</b> Meta', 'Arjuna'); ?></span>
 					</td>
 				</tr>
 			</tbody>
@@ -757,7 +778,7 @@ function arjuna_get_appendToPageTitle() {
 //Try to detect if IE6 or below is the user's browser. This allows for Arjuna to optimize IE6 output and significantly reduce bandwidth for IE6 users.
 function arjuna_isIE6() {
 	$userAgent = strtolower($_SERVER['HTTP_USER_AGENT']);
-	if (( strpos($userAgent, 'msie 6') !== false || strpos($userAgent, 'msie 5') !== false ) && strpos($userAgent, 'opera') === false)
+	if (( strpos($userAgent, 'msie 6') !== false || strpos($userAgent, 'msie 5') !== false ) && strpos($userAgent, 'opera') === false && strpos($userAgent, 'msie 7') === false)
 		return true;
 	return false;
 }

@@ -1,4 +1,4 @@
-<?php $arjunaOptions = get_option('arjuna_options'); ?>
+<?php $arjunaOptions = arjuna_get_options(); ?>
 		<div class="clear"></div>
 	</div><!-- .contentWrapper -->
 	<div class="<?php if($arjunaOptions['footerStyle']=='style1'): ?>footer<?php else: ?>footer2<?php endif; ?>">

@@ -1,4 +1,4 @@
-<?php $arjunaOptions = get_option('arjuna_options'); ?>
+<?php $arjunaOptions = arjuna_get_options(); ?>
 <?php get_header(); ?>
 
 <div class="contentArea">

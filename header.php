@@ -1,4 +1,4 @@
-﻿<?php $arjunaOptions = get_option('arjuna_options'); ?>
+﻿<?php $arjunaOptions = arjuna_get_options(); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
 <head>
@@ -16,7 +16,7 @@ if (!$arjunaOptions['enableIE6optimization'] || !arjuna_isIE6()) { ?>
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' );?>
 <?php wp_head(); ?>
-<script src="<?php bloginfo('template_url'); ?>/default.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/default.js" type="text/javascript"></script>
 <!--[if lte IE 7]><link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/ie7.css" type="text/css" media="screen" /><![endif]-->
 <!--[if lte IE 6]>
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/ie6.css" type="text/css" media="screen" />
@@ -26,8 +26,8 @@ if (!$arjunaOptions['enableIE6optimization'] || !arjuna_isIE6()) { ?>
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/ie6_full.css" type="text/css" media="screen" />
 <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' );?>
 <?php wp_head(); ?>
-<script src="<?php bloginfo('template_url'); ?>/default.js"></script>
-<script src="<?php bloginfo('template_url'); ?>/ie6.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/default.js" type="text/javascript"></script>
+<script src="<?php bloginfo('template_url'); ?>/ie6.js" type="text/javascript"></script>
 <?php } ?>
 </head>
 
@@ -47,7 +47,12 @@ if (!$arjunaOptions['enableIE6optimization'] || !arjuna_isIE6()) { ?>
 			<span class="clear"></span>
 		</div>
 		<?php endif; ?>
-		<div class="headerMain header_<?php print $arjunaOptions['headerImage']; ?>">
+		<?php
+		if ($arjunaOptions['headerImage'])
+			$tmp = ' header_'.$arjunaOptions['headerImage'];
+		else $tmp = ' header_lightBlue';
+		?>
+		<div class="headerMain<?php print $tmp; ?>">
 			<h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
 			<span><?php bloginfo('description'); ?></span>
 			<div class="headerSearch">
