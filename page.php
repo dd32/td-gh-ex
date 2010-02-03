@@ -28,7 +28,7 @@
 		</div>
 		<div class="postLinkPages"><?php wp_link_pages('before=<strong>'.__('Pages:', 'Arjuna').'</strong>&pagelink=<span>'.__('Page %', 'Arjuna').'</span>'); ?></div>
 		<div class="postFooter"><div class="r"></div>
-			<?php edit_post_link(__('Edit', 'Arjuna'),'<span class="postEdit">','</span>'); ?>
+			<a href="<?php print get_edit_post_link( $post->ID ) ?>" class="postEdit"><span><?php _e('Edit in Admin', 'Arjuna'); ?></span></a>
 		</div>
 	</div>
 	<div class="postComments" id="comments">

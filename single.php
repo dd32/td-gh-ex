@@ -36,7 +36,7 @@
 				?></span>
 				<?php endif; ?>
 			</div>
-		<?php edit_post_link(__('Edit', 'Arjuna'),'<span class="postEdit">','</span>'); ?>
+			<a href="<?php print get_edit_post_link( $post->ID ) ?>" class="postEdit"><span><?php _e('Edit in Admin', 'Arjuna'); ?></span></a>
 		</div>
 	</div>
 	<div class="postComments" id="comments">

@@ -778,7 +778,11 @@ function arjuna_get_appendToPageTitle() {
 //Try to detect if IE6 or below is the user's browser. This allows for Arjuna to optimize IE6 output and significantly reduce bandwidth for IE6 users.
 function arjuna_isIE6() {
 	$userAgent = strtolower($_SERVER['HTTP_USER_AGENT']);
-	if (( strpos($userAgent, 'msie 6') !== false || strpos($userAgent, 'msie 5') !== false ) && strpos($userAgent, 'opera') === false && strpos($userAgent, 'msie 7') === false)
-		return true;
+	if (
+		( strpos($userAgent, 'msie 6') !== false || strpos($userAgent, 'msie 5') !== false )
+		&& strpos($userAgent, 'opera') === false
+		&& strpos($userAgent, 'msie 7') === false
+		&& strpos($userAgent, 'msie 8') === false
+	)	return true;
 	return false;
 }

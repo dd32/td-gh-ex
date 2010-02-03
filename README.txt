@@ -26,9 +26,10 @@ Help and how to translate Arjuna into your own language can be found here: http:
 
 Currently available translations:
 
-- Italian (thanks to Gianni Diurno, http://gidibao.net)
+- Italian (thanks to Gianni Diurno, gidibao.net)
 - Lithuanian (thanks to Vaidas Juknevicius aka SeniZ)
-- Chinese (thanks to Liuyue)
+- Chinese (thanks to Liuyue, liuyue.asia)
+- French (thanks to Laurent Measson)
 
 
 More Information and Support
@@ -56,11 +57,19 @@ Nonetheless, we still hope that IE6 will rest in peace soon.
 Changelog:
 ---------------------------------------------------
 
+1.1.2
+- Designed the Edit link to look similar to the other buttons.
+- Updated .POT file.
+- New localization: French
+- Localization updated: Italian
+- Fixed bug: When using Arjuna with WPML, the Home link would always link to the default language (the WordPress root). It now displays the localized home.
+- Fixed bug: When some IE8 browsers emulate IE6 for compatibility reasons and Arjuna was set to use IE6 optimization, the website's layout would have some issues. 
 1.1.1
 - New feature: It's now possible to disable default widgets in the sidebar when the widget bars are empty. This allows for more flexibility in choosing which sidebars to use. For example, you can now disable default widgets and exclusively use the two-column or single-column sidebar, if you wish so.
 - Improved the backend and the way options are retrieved.
 - Added default styles for headings in posts (heading 2 to 4).
-- Fixed bug: When some IE7 browsers emulate IE6 for compatibility reasons and Arjuna was set to use IE6 optimization, the website's layout would have some issues. 
+- Fixed bug: When some IE7 browsers emulate IE6 for compatibility reasons and Arjuna was set to use IE6 optimization, the website's layout would have some issues.
+- Fixed bug: Full-width pages did not work any longer for layouts other than the Arjuna default.
 1.1
 - New feature: The first header menu can now be extended over two rows of links.
 - New feature: The buttons in the second header menu can now be visually separated.

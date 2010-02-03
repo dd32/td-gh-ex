@@ -615,12 +615,33 @@ a.postCommentLabel:hover {
 .postTags i {
 	color:#777;
 }
-.postEdit {
+
+.postEdit,
+a.postEdit:hover {
 	position:absolute;
 	top:8px;
 	right:-20px;
 	height:18px;
+	background:url(./images/ie6/icons.png) no-repeat 0 -340px;
+	color:#5c7a99;
+	text-decoration:none;
 }
+a.postEdit:hover {
+	text-decoration:none;
+}
+.postEdit span {
+	display:block;
+	height:18px;
+	margin-left:21px;
+	background:url(./images/ie6/icons.png) no-repeat 100% -60px;
+	line-height:18px;
+	font-size:11px;
+	padding:0 15px 0 8px;
+}
+.postEdit:hover span {
+	background-position:100% -80px;
+}
+
 .postReadMore,
 a.postReadMore:hover {
 	position:absolute;

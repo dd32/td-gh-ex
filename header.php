@@ -64,7 +64,7 @@ if (!$arjunaOptions['enableIE6optimization'] || !arjuna_isIE6()) { ?>
 		</div>
 		<div class="headerMenu2<?php if($arjunaOptions['headerMenu2_displaySeparators']): ?> headerMenu2DS<?php endif; ?>"><span class="helper"></span>
 			<ul id="headerMenu2">
-				<?php if($arjunaOptions['headerMenu2_displayHomeButton']): ?><li><a href="<?php bloginfo('url'); ?>" class="homeIcon"><?php _e('Home','Arjuna'); ?></a></li><?php endif; ?><?php
+				<?php if($arjunaOptions['headerMenu2_displayHomeButton']): ?><li><a href="<?php (function_exists('icl_get_home_url'))?(print icl_get_home_url()):(bloginfo('url')) ?>" class="homeIcon"><?php _e('Home','Arjuna'); ?></a></li><?php endif; ?><?php
 					if ($arjunaOptions['headerMenu2_display']=='pages') {
 						wp_list_pages('sort_column='.$arjunaOptions['headerMenu2_sortBy'].'&sort_order='.$arjunaOptions['headerMenu2_sortOrder'].'&title_li=&depth='.$arjunaOptions['headerMenu2_dropdown']);
 					} elseif ($arjunaOptions['headerMenu2_display']=='categories') {
