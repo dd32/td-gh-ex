@@ -4,7 +4,7 @@ Theme URI: http://www.srssolutions.com/en/downloads/arjuna_wordpress_theme
 Description: Arjuna stands for elegance, accessibility, and attention to detail. We have put a great deal in optimizing its ins and outs. Translation ready, SEO focused, IE6-8, Firefox, Chrome, Safari and Opera compatibility, support for threaded comments, four widget bars, flexible sidebar, and more. It can be customized via the admin panel.
 Author: SRS Solutions
 Author URI: http://www.srssolutions.com
-Version: 1.1.2
+Version: 1.1.3
 Tags: white, silver, light, three-columns, two-columns, fixed-width, right-sidebar, left-sidebar, theme-options, translation-ready, threaded-comments, black
 
 
@@ -284,6 +284,7 @@ a#skipToPosts {
 
 .headerMenu1 {
 	z-index:960;
+	position:relative;
 	min-height:25px;
 	background:url(./images/headerMenu1.png) no-repeat 0 bottom;
 }
@@ -480,7 +481,7 @@ h3.contentHeader em {
 .postHeader {
 	
 }
-.postHeader h2 {
+.postTitle {
 	background:url(./images/heading.png) no-repeat 0 0;
 	font-weight:bold;
 	font-size:16px;
@@ -488,15 +489,15 @@ h3.contentHeader em {
 	padding-left:15px;
 	margin-right:15px;
 }
-.postHeader h2 span {
+.postTitle span {
 	display:block;
 	background:url(./images/heading.png) no-repeat right 0;
 	padding:8px 15px 7px;
 	margin-right:-15px;
 }
-.postHeader h2 a,
-.postHeader h2 a:visited,
-.postHeader h2 a:hover {
+.postTitle a,
+.postTitle a:visited,
+.postTitle a:hover {
 	text-decoration:none;
 	color:#000;
 }
@@ -601,6 +602,11 @@ a.postCommentLabel:hover {
 .postContent ol li {
 	list-style:decimal;
 	margin-left:30px;
+}
+.postContent h1 {
+	font-size:16px;
+	font-weight:bold;
+	margin-bottom:10px;
 }
 .postContent h2 {
 	font-size:15px;
@@ -1330,7 +1336,7 @@ a.btnLogout:hover {
 
 /* No sidebar */
 .contentAreaFull {
-	float:none;
+	float:none !important;
 	width:auto !important;
 }
 

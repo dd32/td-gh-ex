@@ -78,6 +78,25 @@ SRS = {
 					}
 				}
 			}
+			if(document.reply) {
+				document.reply.onsubmit = function() {
+					var els = [
+						{ID: 'replyName', defaultID: 'replyNameDefault'},
+						{ID: 'replyEmail', defaultID: 'replyEmailDefault'},
+						{ID: 'replyURL', defaultID: 'replyURLDefault'},
+						{ID: 'replyMsg', defaultID: 'replyMsgDefault'}
+					];
+					for (var i=0; i<els.length; i++) {
+						var e = document.getElementById(els[i].ID);
+						if (e != null) {
+							var dv = document.getElementById(els[i].defaultID).value;
+							if (e.value == dv)
+								e.value = '';
+						}
+					}
+				}
+				return true;
+			}
 			
 		}
 		

@@ -259,6 +259,7 @@ a#skipToPosts {
 
 .headerMenu1 {
 	z-index:960;
+	position:relative;
 	min-height:25px;
 	background:url(./images/headerMenu1.png) no-repeat 0 bottom;
 }
@@ -1290,8 +1291,8 @@ a.btnLogout:hover {
 
 /* No sidebar */
 .contentAreaFull {
-	float:none;
-	width:auto;
+	float:none !important;
+	width:auto !important;
 }
 
 

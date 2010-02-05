@@ -27,7 +27,11 @@
 		<div class="postHeader">
 			<h2 class="postTitle"><span><a href="<?php the_permalink() ?>" title="<?php _e('Permalink to', 'Arjuna'); ?> <?php the_title(); ?>"><?php the_title(); ?></a></span></h2>
 			<div class="bottom"><div>
-				<span class="postDate"><?php the_time(get_option('date_format')); ?></span>
+				<span class="postDate"><?php the_time(get_option('date_format')); ?><?php
+					//Time
+					if($arjunaOptions['postsShowTime'])
+						print _e(' at ', 'Arjuna'); the_time(get_option('time_format'));
+				?></span>
 				<?php if($arjunaOptions['postsShowAuthor']): ?>
 				<span class="postAuthor"><?php the_author_posts_link(); ?></span>
 				<?php endif; ?>

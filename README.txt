@@ -30,6 +30,9 @@ Currently available translations:
 - Lithuanian (thanks to Vaidas Juknevicius aka SeniZ)
 - Chinese (thanks to Liuyue, liuyue.asia)
 - French (thanks to Laurent Measson)
+- Brazilian (thanks to Pedro Spoladore)
+- Spanish (thanks to José Marín)
+- German (thanks to Frank Weichbrodt)
 
 
 More Information and Support
@@ -57,6 +60,20 @@ Nonetheless, we still hope that IE6 will rest in peace soon.
 Changelog:
 ---------------------------------------------------
 
+1.1.3
+- New feature: It's now possible to add your custom CSS rules via the admin. This will ensure that your custom CSS is not overwritten when you update Arjuna automatically.
+- New feature: Posts and pages can now show not only the date but also the time of when the post/page has been published.
+- Included support for H1 tags in posts.
+- Optimized Arjuna for SEO purposes. The titles of single pages/posts are now H1 tags, while the titles on archive pages remain in H2 elements.
+- New localization: Brazilian
+- New localization: German
+- Localization updated: French
+- Localization updated: Spanish
+- Updated .POT file.
+- Fixed bug: When someone submitted a comment and did not enter a website URL, the comment author would link to http://Yourwebsite.
+- Fixed bug: Full-width page templates still did not work properly on some setups.
+- Fixed display bug: If an item in the first header menu had a dropdown of more than four items, then the dropdown would get cut at the bottom.
+- Fixed some minor things in header.php to make it W3C compliant.
 1.1.2
 - Designed the Edit link to look similar to the other buttons.
 - Updated .POT file.

@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Arjuna X 1.0.5\n"
+"Project-Id-Version: Arjuna X 1.1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-29 11:46+0100\n"
+"POT-Creation-Date: 2010-02-05 15:59+0100\n"
 "PO-Revision-Date: \n"
-"Last-Translator: SRS Solutions <info@srssolutions.com>\n"
-"Language-Team: Laurent MEASSON <lmeass@free.fr>\n"
+"Last-Translator: sebos\n"
+"Language-Team: sebos\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,719 +13,814 @@ msgstr ""
 "X-Poedit-Language: French\n"
 "X-Poedit-Country: FRANCE\n"
 "X-Poedit-SourceCharset: iso-8859-1\n"
+"Plural-Forms: nplurals=2;plural=n != 1;\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
 
-#: Arjuna/404.php:4
+#: ../404.php:4
 msgid "Error 404 - Not Found"
 msgstr "Erreur 404 - Introuvable"
 
-#: Arjuna/404.php:5
+#: ../404.php:5
 msgid "Sorry, but you are looking for something that isn't here. "
 msgstr "Désolé, mais vous cherchez quelque chose qui n'est pas ici."
 
-#: Arjuna/archive.php:7
+#: ../archive.php:8
 #, php-format
 msgid "Browsing Posts in <em>%s</em>"
-msgstr "Affichage des posts dans <em>%s</em>"
+msgstr "Affichage des billets dans <em>%s</em>"
 
-#: Arjuna/archive.php:9
+#: ../archive.php:10
 #, php-format
 msgid "Browsing Posts tagged <em>%s</em>"
-msgstr "Affichage des posts marqués <em>%s</em>"
+msgstr "Affichage des billets marqués <em>%s</em>"
 
-#: Arjuna/archive.php:11
+#: ../archive.php:12
 #, php-format
 msgid "Browsing Posts published on %s"
-msgstr "Affichage des post publiés le %s"
+msgstr "Affichage des billets publiés le %s"
 
-#: Arjuna/archive.php:13
-#: Arjuna/archive.php:15
+#: ../archive.php:14
+#: ../archive.php:16
 #, php-format
 msgid "Browsing Posts published in %s"
-msgstr "Affichage des post publiés dans %s"
+msgstr "Affichage des billets publiés dans %s"
 
-#: Arjuna/archive.php:13
+#: ../archive.php:14
 msgid "F, Y"
 msgstr "F, Y"
 
-#: Arjuna/archive.php:15
+#: ../archive.php:16
 msgid "Y"
 msgstr "Y"
 
-#: Arjuna/archive.php:18
+#: ../archive.php:19
 #, php-format
 msgid "Browsing Posts published by <em>%s</em>"
-msgstr "Affichage des post publiés par <em>%s</em>"
+msgstr "Affichage des billets publiés par <em>%s</em>"
 
-#: Arjuna/archive.php:20
+#: ../archive.php:21
 msgid "Blog Archives"
 msgstr "Archives du blog"
 
-#: Arjuna/archive.php:27
-#: Arjuna/index.php:8
-#: Arjuna/page.php:8
-#: Arjuna/page_fullwidth.php:13
-#: Arjuna/search.php:14
-#: Arjuna/single.php:8
+#: ../archive.php:28
+#: ../index.php:9
+#: ../page.php:9
+#: ../page_fullwidth.php:14
+#: ../search.php:15
+#: ../single.php:9
 msgid "Permalink to"
 msgstr "Perma-lien vers"
 
-#: Arjuna/archive.php:32
-#: Arjuna/index.php:13
-#: Arjuna/page.php:13
-#: Arjuna/page_fullwidth.php:18
-#: Arjuna/search.php:19
-#: Arjuna/single.php:13
+#: ../archive.php:36
+#: ../index.php:17
+#: ../page.php:17
+#: ../page_fullwidth.php:22
+#: ../search.php:23
+#: ../single.php:17
 msgid "Pass required"
-msgstr "Mot de passe"
+msgstr "Mot de passe nécessaire"
 
-#: Arjuna/archive.php:34
-#: Arjuna/index.php:15
-#: Arjuna/page.php:15
-#: Arjuna/page_fullwidth.php:20
-#: Arjuna/search.php:21
-#: Arjuna/single.php:15
+#: ../archive.php:38
+#: ../index.php:19
+#: ../page.php:19
+#: ../page_fullwidth.php:24
+#: ../search.php:25
+#: ../single.php:19
 msgid "Comments off"
 msgstr "Commentaires désactivés"
 
-#: Arjuna/archive.php:36
-#: Arjuna/index.php:17
-#: Arjuna/page.php:17
-#: Arjuna/page_fullwidth.php:22
-#: Arjuna/search.php:23
-#: Arjuna/single.php:17
+#: ../archive.php:40
+#: ../index.php:21
+#: ../page.php:21
+#: ../page_fullwidth.php:26
+#: ../search.php:27
+#: ../single.php:21
 msgid "No comments"
 msgstr "Pas de commentaires"
 
-#: Arjuna/archive.php:36
-#: Arjuna/index.php:17
-#: Arjuna/page.php:17
-#: Arjuna/page_fullwidth.php:22
-#: Arjuna/search.php:23
-#: Arjuna/single.php:17
+#: ../archive.php:40
+#: ../index.php:21
+#: ../page.php:21
+#: ../page_fullwidth.php:26
+#: ../search.php:27
+#: ../single.php:21
 msgid "1 comment"
 msgstr "1 commentaire"
 
-#: Arjuna/archive.php:36
-#: Arjuna/index.php:17
-#: Arjuna/page.php:17
-#: Arjuna/page_fullwidth.php:22
-#: Arjuna/search.php:23
-#: Arjuna/single.php:17
+#: ../archive.php:40
+#: ../index.php:21
+#: ../page.php:21
+#: ../page_fullwidth.php:26
+#: ../search.php:27
+#: ../single.php:21
 #, php-format
 msgid "% comments"
 msgstr "% commentaires"
 
-#: Arjuna/archive.php:42
-#: Arjuna/index.php:23
-#: Arjuna/page.php:23
-#: Arjuna/page_fullwidth.php:28
-#: Arjuna/search.php:29
-#: Arjuna/single.php:23
+#: ../archive.php:46
+#: ../index.php:27
+#: ../page.php:27
+#: ../page_fullwidth.php:32
+#: ../search.php:33
+#: ../single.php:27
 msgid "continue reading..."
 msgstr "poursuivre la lecture..."
 
-#: Arjuna/archive.php:50
-#: Arjuna/index.php:31
-#: Arjuna/search.php:37
-#: Arjuna/single.php:31
+#: ../archive.php:54
+#: ../index.php:35
+#: ../search.php:41
+#: ../single.php:35
 msgid "<i>none</i>"
 msgstr "<i>rien</i>"
 
-#: Arjuna/archive.php:54
-#: Arjuna/index.php:35
-#: Arjuna/search.php:41
+#: ../archive.php:58
+#: ../index.php:39
+#: ../search.php:45
 msgid "Read more"
-msgstr "Plus d'infos..."
+msgstr "En savoir plus"
 
-#: Arjuna/archive.php:63
-#: Arjuna/index.php:47
-#: Arjuna/search.php:50
+#: ../archive.php:70
+#: ../index.php:51
+#: ../search.php:54
 msgid "Newer Entries"
 msgstr "Entrées récentes"
 
-#: Arjuna/archive.php:64
-#: Arjuna/index.php:48
-#: Arjuna/search.php:51
+#: ../archive.php:71
+#: ../index.php:52
+#: ../search.php:55
 msgid "Older Entries"
 msgstr "Entrées anciennes"
 
-#: Arjuna/archive.php:69
-#: Arjuna/index.php:53
+#: ../archive.php:76
+#: ../index.php:57
 msgid "There is nothing here (yet)."
-msgstr "Il n'y a rien (pour l'instant)."
+msgstr "Il n'y a rien ici (pour l'instant)."
 
-#: Arjuna/comments.php:13
-#: Arjuna/comments_legacy.php:11
+#: ../comments.php:13
+#: ../comments_legacy.php:11
 msgid "This post is password protected. Enter the password to view comments."
 msgstr "Cet article est protégé par mot de passe. Entrez le mot de passe pour afficher les commentaires."
 
-#: Arjuna/comments.php:21
-#: Arjuna/comments_legacy.php:18
-#: Arjuna/functions.php:403
+#: ../comments.php:21
+#: ../comments_legacy.php:18
+#: ../functions.php:492
 msgid "Comments"
 msgstr "Commentaires"
 
-#: Arjuna/comments.php:23
-#: Arjuna/comments_legacy.php:20
+#: ../comments.php:23
+#: ../comments_legacy.php:20
 msgid "Leave a comment"
 msgstr "Ecrire un commentaire"
 
-#: Arjuna/comments.php:26
-#: Arjuna/comments_legacy.php:23
+#: ../comments.php:26
+#: ../comments_legacy.php:23
 msgid "Trackback"
 msgstr "Trackback"
 
-#: Arjuna/comments.php:37
+#: ../comments.php:37
 msgid "Comment Pages:"
 msgstr "Pages de commentaires :"
 
-#: Arjuna/comments.php:38
-#: Arjuna/comments_legacy.php:81
+#: ../comments.php:38
+#: ../comments_legacy.php:81
 msgid "Previous"
 msgstr "Précédent"
 
-#: Arjuna/comments.php:38
-#: Arjuna/comments_legacy.php:81
+#: ../comments.php:38
+#: ../comments_legacy.php:81
 msgid "Next"
 msgstr "Suivant"
 
-#: Arjuna/comments.php:40
-#: Arjuna/comments_legacy.php:83
+#: ../comments.php:40
+#: ../comments_legacy.php:83
 msgid "Older Comments"
 msgstr "Anciens commentaires"
 
-#: Arjuna/comments.php:41
-#: Arjuna/comments_legacy.php:84
+#: ../comments.php:41
+#: ../comments_legacy.php:84
 msgid "Newer Comments"
 msgstr "Commentaires récents"
 
-#: Arjuna/comments.php:48
-#: Arjuna/comments_legacy.php:91
+#: ../comments.php:48
+#: ../comments_legacy.php:91
 msgid "No one has commented yet."
 msgstr "Pas encore de commentaire."
 
-#: Arjuna/comments.php:50
-#: Arjuna/comments_legacy.php:93
+#: ../comments.php:50
+#: ../comments_legacy.php:93
 msgid "Comments are closed."
 msgstr "Les commentaires sont fermés."
 
-#: Arjuna/comments.php:60
-#: Arjuna/comments_legacy.php:102
+#: ../comments.php:60
+#: ../comments_legacy.php:102
 msgid "Leave a Comment"
 msgstr "Déposer un commentaire"
 
-#: Arjuna/comments.php:62
+#: ../comments.php:62
 msgid "Cancel Reply"
 msgstr "Annuler la réponse"
 
-#: Arjuna/comments.php:66
-#: Arjuna/comments_legacy.php:104
+#: ../comments.php:66
+#: ../comments_legacy.php:104
 #, php-format
 msgid "You must be %slogged in%s to post a comment."
 msgstr "Vous devez être %sconnecté %s pour écrire un commentaire."
 
-#: Arjuna/comments.php:69
-#: Arjuna/comments.php:78
-#: Arjuna/comments_legacy.php:107
-#: Arjuna/comments_legacy.php:114
+#: ../comments.php:69
+#: ../comments.php:78
+#: ../comments_legacy.php:107
+#: ../comments_legacy.php:114
 msgid "Your name"
 msgstr "Votre nom"
 
-#: Arjuna/comments.php:70
-#: Arjuna/comments.php:79
-#: Arjuna/comments_legacy.php:108
-#: Arjuna/comments_legacy.php:115
+#: ../comments.php:70
+#: ../comments.php:79
+#: ../comments_legacy.php:108
+#: ../comments_legacy.php:115
 msgid "Your email"
 msgstr "Votre email"
 
-#: Arjuna/comments.php:71
-#: Arjuna/comments.php:80
-#: Arjuna/comments_legacy.php:109
-#: Arjuna/comments_legacy.php:116
+#: ../comments.php:71
+#: ../comments.php:80
+#: ../comments_legacy.php:109
+#: ../comments_legacy.php:116
 msgid "Your website"
 msgstr "Votre site Web"
 
-#: Arjuna/comments.php:72
-#: Arjuna/comments.php:89
-#: Arjuna/comments_legacy.php:110
-#: Arjuna/comments_legacy.php:119
+#: ../comments.php:72
+#: ../comments.php:89
+#: ../comments_legacy.php:110
+#: ../comments_legacy.php:119
 msgid "Your comment"
 msgstr "Votre commentaire"
 
-#: Arjuna/comments.php:75
-#: Arjuna/comments_legacy.php:112
+#: ../comments.php:75
+#: ../comments_legacy.php:112
 #, php-format
 msgid "Logged in as %s."
 msgstr "%s connecté."
 
-#: Arjuna/comments.php:75
-#: Arjuna/comments_legacy.php:112
+#: ../comments.php:75
+#: ../comments_legacy.php:112
 msgid "Log out of this account"
-msgstr "Se déconnecter du compte"
+msgstr "Se déconnecter de ce compte"
 
-#: Arjuna/comments.php:75
-#: Arjuna/comments_legacy.php:112
+#: ../comments.php:75
+#: ../comments_legacy.php:112
 msgid "Logout"
 msgstr "Déconnexion"
 
-#: Arjuna/comments.php:91
-#: Arjuna/comments_legacy.php:121
+#: ../comments.php:91
+#: ../comments_legacy.php:121
 msgid "Subscribe to comments"
 msgstr "S'inscrire aux commentaires"
 
-#: Arjuna/comments.php:92
-#: Arjuna/comments_legacy.php:122
+#: ../comments.php:92
+#: ../comments_legacy.php:122
 msgid "Leave comment"
 msgstr "Laisser un commentaire"
 
-#: Arjuna/comments_legacy.php:58
+#: ../comments_legacy.php:58
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s à %2$s"
 
-#: Arjuna/comments_legacy.php:58
+#: ../comments_legacy.php:58
 msgid "H:i"
 msgstr "H:i"
 
-#: Arjuna/comments_legacy.php:65
-#: Arjuna/functions.php:600
+#: ../comments_legacy.php:65
+#: ../functions.php:689
 msgid "Your comment is awaiting moderation."
-msgstr "Votre commentaire est en attente de la modération."
+msgstr "Votre commentaire est en attente de modération."
 
-#: Arjuna/functions.php:165
+#: ../functions.php:201
 msgid "Arjuna Options"
 msgstr "Options de Arjuna"
 
-#: Arjuna/functions.php:174
+#: ../functions.php:210
 msgid "The Arjuna options have been saved."
-msgstr "Les options de Arjuna sont sauvegardées."
+msgstr "Les options de Arjuna ont été sauvegardées."
 
-#: Arjuna/functions.php:178
+#: ../functions.php:214
 msgid "Arjuna Theme Options"
 msgstr "Options du Theme Arjuna "
 
-#: Arjuna/functions.php:181
+#: ../functions.php:217
 #, php-format
 msgid "Thank you for downloading Arjuna, the free WordPress theme designed by %s."
-msgstr "Merci d'avoir téléchargé Arjuna, le thème WordPress gratuit de %s."
+msgstr "Merci d'avoir téléchargé Arjuna, le thème WordPress gratuit conçu par %s."
 
-#: Arjuna/functions.php:184
+#: ../functions.php:220
 msgid "Report Bugs"
 msgstr "Soumettre des bugs"
 
-#: Arjuna/functions.php:185
+#: ../functions.php:221
 msgid "Report a Bug"
 msgstr "Soumettre un bug"
 
-#: Arjuna/functions.php:185
+#: ../functions.php:221
 msgid "Please include your Wordpress version, browser details and a screenshot, if necessary."
 msgstr "Merci de préciser votre version WordPress, votre navigateur Web, et éventuellement une copie d'écran."
 
-#: Arjuna/functions.php:188
+#: ../functions.php:224
 msgid "Useful Links"
 msgstr "Liens utiles"
 
-#: Arjuna/functions.php:189
+#: ../functions.php:225
 msgid "Changelog"
 msgstr "Changements"
 
-#: Arjuna/functions.php:190
+#: ../functions.php:226
 msgid "FAQ"
 msgstr "FAQ"
 
-#: Arjuna/functions.php:191
+#: ../functions.php:227
 msgid "Leave Feedback"
 msgstr "Laisser des suggestions"
 
-#: Arjuna/functions.php:192
-msgid "Upcoming Features"
-msgstr "Fonctionnalités à venir"
+#: ../functions.php:228
+msgid "Roadmap"
+msgstr "Feuille de route"
 
-#: Arjuna/functions.php:195
+#: ../functions.php:231
 msgid "Support &amp; Sales"
-msgstr "Support &amp; service commercial"
+msgstr "Support &amp; Service Commercial"
 
-#: Arjuna/functions.php:196
+#: ../functions.php:232
 msgid "Contact Sales"
-msgstr "Contacter le service commercial"
+msgstr "Contacter le Service Commercial"
 
-#: Arjuna/functions.php:196
+#: ../functions.php:232
 msgid "Need installation or integration support? Need something customized or extended?"
 msgstr "Vous avez besoin d'une aide à l'installation ou l'intégration ? Vous souhaitez une adaptation ou une évolution ?"
 
-#: Arjuna/functions.php:201
-msgid "Header Menus"
-msgstr "Menus d'en-tête"
+#: ../functions.php:237
+msgid "Header"
+msgstr "En-tête"
 
-#: Arjuna/functions.php:205
+#: ../functions.php:241
 msgid "First Header Menu"
 msgstr "Premier menu d'en-tête"
 
-#: Arjuna/functions.php:209
+#: ../functions.php:245
 msgid "Enabled"
 msgstr "Activé"
 
-#: Arjuna/functions.php:211
+#: ../functions.php:247
 msgid "Enable this menu"
 msgstr "Activer ce menu"
 
-#: Arjuna/functions.php:213
+#: ../functions.php:249
 msgid "If disabled, the menu will be hidden."
 msgstr "Si désactivé, le menu sera masqué."
 
-#: Arjuna/functions.php:217
-#: Arjuna/functions.php:301
+#: ../functions.php:253
+#: ../functions.php:349
 msgid "Dropdown"
-msgstr "Dropdown"
+msgstr "List déroulante"
 
-#: Arjuna/functions.php:221
-#: Arjuna/functions.php:305
+#: ../functions.php:257
+#: ../functions.php:353
 msgid "No dropdown menu"
-msgstr "Pas de menu dropdown"
+msgstr "Pas de menu en list déroulante"
 
-#: Arjuna/functions.php:225
-#: Arjuna/functions.php:309
+#: ../functions.php:261
+#: ../functions.php:357
 msgid "One-level dropdown menu"
 msgstr "Menu à 1 niveau"
 
-#: Arjuna/functions.php:229
-#: Arjuna/functions.php:313
+#: ../functions.php:265
+#: ../functions.php:361
 msgid "Two-level dropdown menu"
 msgstr "Menu à 2 niveaux"
 
-#: Arjuna/functions.php:234
+#: ../functions.php:270
 msgid "Alignment"
 msgstr "Alignement"
 
-#: Arjuna/functions.php:238
+#: ../functions.php:274
 msgid "Left"
 msgstr "Gauche"
 
-#: Arjuna/functions.php:242
+#: ../functions.php:278
 msgid "Right"
 msgstr "Droite"
 
-#: Arjuna/functions.php:247
-#: Arjuna/functions.php:318
+#: ../functions.php:283
+#: ../functions.php:366
 msgid "Menu lists only"
 msgstr "Seulement des menu listes"
 
-#: Arjuna/functions.php:251
-#: Arjuna/functions.php:322
+#: ../functions.php:287
+#: ../functions.php:370
 msgid "Pages"
 msgstr "Pages"
 
-#: Arjuna/functions.php:255
-#: Arjuna/functions.php:326
-#: Arjuna/sidebar.php:26
+#: ../functions.php:291
+#: ../functions.php:374
+#: ../sidebar.php:29
 msgid "Categories"
-msgstr "Categories"
+msgstr "Catégories"
 
-#: Arjuna/functions.php:260
-#: Arjuna/functions.php:331
+#: ../functions.php:296
+#: ../functions.php:379
 msgid "Sorting Order"
-msgstr "Tri par ordre"
+msgstr "Ordre de tri"
 
-#: Arjuna/functions.php:263
-#: Arjuna/functions.php:277
-#: Arjuna/functions.php:334
-#: Arjuna/functions.php:348
+#: ../functions.php:299
+#: ../functions.php:313
+#: ../functions.php:382
+#: ../functions.php:396
 msgid "Sort menu items in"
 msgstr "Classer les éléments du menu par ordre "
 
-#: Arjuna/functions.php:265
-#: Arjuna/functions.php:279
-#: Arjuna/functions.php:336
-#: Arjuna/functions.php:350
+#: ../functions.php:301
+#: ../functions.php:315
+#: ../functions.php:384
+#: ../functions.php:398
 msgid "ascending"
 msgstr "croissant"
 
-#: Arjuna/functions.php:266
-#: Arjuna/functions.php:280
-#: Arjuna/functions.php:337
-#: Arjuna/functions.php:351
+#: ../functions.php:302
+#: ../functions.php:316
+#: ../functions.php:385
+#: ../functions.php:399
 msgid "descending"
 msgstr "décroissant"
 
-#: Arjuna/functions.php:268
-#: Arjuna/functions.php:282
-#: Arjuna/functions.php:339
-#: Arjuna/functions.php:353
+#: ../functions.php:304
+#: ../functions.php:318
+#: ../functions.php:387
+#: ../functions.php:401
 msgid "order by"
 msgstr "classer par"
 
-#: Arjuna/functions.php:270
-#: Arjuna/functions.php:341
+#: ../functions.php:306
+#: ../functions.php:389
 msgid "Category Name"
-msgstr "Nom de Catégorie"
+msgstr "Nom de la catégorie"
 
-#: Arjuna/functions.php:271
-#: Arjuna/functions.php:342
+#: ../functions.php:307
+#: ../functions.php:390
 msgid "Category ID"
-msgstr "ID de Catégorie"
+msgstr "ID de la catégorie"
 
-#: Arjuna/functions.php:272
-#: Arjuna/functions.php:343
+#: ../functions.php:308
+#: ../functions.php:391
 msgid "Post Count"
-msgstr "Nombre de Posts"
+msgstr "Nombre de Billets"
 
-#: Arjuna/functions.php:273
-#: Arjuna/functions.php:344
+#: ../functions.php:309
+#: ../functions.php:392
 msgid "Category Slug"
 msgstr "Activité de la Catégorie"
 
-#: Arjuna/functions.php:284
-#: Arjuna/functions.php:355
+#: ../functions.php:320
+#: ../functions.php:403
 msgid "Page Title"
-msgstr "Titre de Page"
+msgstr "Titre de la Page"
 
-#: Arjuna/functions.php:285
-#: Arjuna/functions.php:356
+#: ../functions.php:321
+#: ../functions.php:404
 msgid "Page ID"
 msgstr "ID de Page"
 
-#: Arjuna/functions.php:286
-#: Arjuna/functions.php:357
+#: ../functions.php:322
+#: ../functions.php:405
 msgid "Page Slug"
-msgstr "Activité de Page"
+msgstr "Activité de la Page"
 
-#: Arjuna/functions.php:287
-#: Arjuna/functions.php:358
+#: ../functions.php:323
+#: ../functions.php:406
 msgid "Page Order"
 msgstr "Tri des Pages"
 
-#: Arjuna/functions.php:297
+#: ../functions.php:333
 msgid "Second Header Menu"
 msgstr "Second en-tête de Menu"
 
-#: Arjuna/functions.php:367
+#: ../functions.php:337
+msgid "Home Button"
+msgstr "Boutton de la page d'acceuil"
+
+#: ../functions.php:339
+msgid "Display Home button"
+msgstr "Afficher le bouton de la page d'acceuil"
+
+#: ../functions.php:343
+msgid "Separators"
+msgstr "Séparateurs"
+
+#: ../functions.php:345
+msgid "Visually separate the menu buttons"
+msgstr "Sépare visuellement les boutons du menu"
+
+#: ../functions.php:416
+#: ../functions.php:420
+msgid "Header Image"
+msgstr "En-tête de l'image"
+
+#: ../functions.php:425
+msgid "Light Blue"
+msgstr "Bleu Clair"
+
+#: ../functions.php:430
+msgid "Dark Blue"
+msgstr "Bleu Foncé"
+
+#: ../functions.php:437
 msgid "General Options"
 msgstr "Options générales"
 
-#: Arjuna/functions.php:368
+#: ../functions.php:438
 msgid "Sidebar"
 msgstr "Barre latérale"
 
-#: Arjuna/functions.php:372
+#: ../functions.php:442
 msgid "Sidebar Position"
 msgstr "Position de la Barre latérale"
 
-#: Arjuna/functions.php:377
+#: ../functions.php:447
 msgid "Right sidebar"
 msgstr "Barre latérale de droite"
 
-#: Arjuna/functions.php:382
+#: ../functions.php:452
 msgid "Left sidebar"
 msgstr "Barre latérale de gauche"
 
-#: Arjuna/functions.php:387
+#: ../functions.php:457
 msgid "No sidebar"
 msgstr "Pas de barre latérale"
 
-#: Arjuna/functions.php:392
+#: ../functions.php:462
 msgid "Sidebar Width"
 msgstr "Largeur de la barre latérale"
 
-#: Arjuna/functions.php:394
+#: ../functions.php:464
 msgid "Small"
 msgstr "Etroite"
 
-#: Arjuna/functions.php:395
+#: ../functions.php:465
 msgid "Normal"
 msgstr "Normale"
 
-#: Arjuna/functions.php:396
+#: ../functions.php:466
 msgid "Large"
 msgstr "Large"
 
-#: Arjuna/functions.php:397
+#: ../functions.php:467
 msgid "If you intend to use the two column sidebar, we recommend to choose either the normal or the large sidebar."
 msgstr "Si vous souhaitez utiliser la Barre latérale à 2 colonnes, choisissez plutôt la barre normale ou large."
 
-#: Arjuna/functions.php:407
+#: ../functions.php:471
+msgid "Default Widgets"
+msgstr "Widget par défaut"
+
+#: ../functions.php:473
+msgid "Display default sidebar widgets if the widget bars are empty."
+msgstr "Afficher la barre de widget par défaut si la barre latérale est vide."
+
+#: ../functions.php:474
+msgid "If enabled, these widgets will be displayed if the widget bar is empty: <b>sidebar_full_top:</b> Recent Posts and Browse by Tags, <b>sidebar_left:</b> Categories, <b>sidebar_right:</b> Meta"
+msgstr "Si activer, ces widgets seront affichées si la barre latérale est vide: <b>barre latérale supérieur:</b> Billets récents et affichage par Tags, <b>barre latérale de gauche:</b> Catégories, <b>barre latérale de droite:</b> Meta"
+
+#: ../functions.php:480
+msgid "Posts"
+msgstr "Billets"
+
+#: ../functions.php:484
+msgid "Display Author"
+msgstr "Afficher l'auteur"
+
+#: ../functions.php:486
+msgid "Include the author of a post in the post header."
+msgstr "Inclure l'auteur du billet dans l'en-tête du billet"
+
+#: ../functions.php:496
 msgid "Display comments as follows"
 msgstr "Afficher les commentaires comme ci-dessous :"
 
-#: Arjuna/functions.php:412
+#: ../functions.php:501
 msgid "Aligned to the left"
 msgstr "Alignés à gauche"
 
-#: Arjuna/functions.php:417
+#: ../functions.php:506
 msgid "Aligned to the right"
 msgstr "Alignés à droite"
 
-#: Arjuna/functions.php:422
+#: ../functions.php:511
 msgid "Alternate between left and right alignment"
 msgstr "Alignés successivement à gauche et à droite"
 
-#: Arjuna/functions.php:427
+#: ../functions.php:516
 msgid "Date Format"
-msgstr "Format de date"
+msgstr "Format de la date"
 
-#: Arjuna/functions.php:429
+#: ../functions.php:518
 msgid "Passed Time (Example: <em>&quot;Written by admin about 3 days ago.&quot;</em>)"
 msgstr "Temps écoulé (exemple : <em>&quot;Rédigé par admin il y a 3 jours.&quot;</em>)"
 
-#: Arjuna/functions.php:430
+#: ../functions.php:519
 #, php-format
 msgid "Default Date Format (Example: <em>&quot;Written by admin on %s&quot;</em>)"
 msgstr "Date par défaut (exemple : <em>&quot;Rédigé par admin le %s.&quot;</em>)"
 
-#: Arjuna/functions.php:431
+#: ../functions.php:520
 msgid "The default date format can be customized in Settings &gt; General."
 msgstr "Le format de date par défaut peut être défini dans les Réglages généraux."
 
-#: Arjuna/functions.php:437
+#: ../functions.php:526
 msgid "Miscellaneous"
 msgstr "Divers"
 
-#: Arjuna/functions.php:441
+#: ../functions.php:530
 msgid "Append to page title"
-msgstr "Ajouter à la page Titre"
+msgstr "Ajouter au titre de la page"
 
-#: Arjuna/functions.php:443
+#: ../functions.php:532
 #, php-format
 msgid "Blog Name (&quot; - %s&quot;)"
 msgstr "Nom du blog (&quot; - %s&quot;)"
 
-#: Arjuna/functions.php:444
+#: ../functions.php:533
 msgid "Custom:"
 msgstr "Autre :"
 
-#: Arjuna/functions.php:445
+#: ../functions.php:534
 msgid "This will be appended to the page title of every web page (posts, pages, categories, etc.)"
-msgstr "Ceci sera ajouté sur la page de titre de chaque page Web (posts, pages, categories, etc.)"
+msgstr "Ceci sera ajouté sur la page de titre de chaque page Web (billets, pages, catégories, etc.)"
 
-#: Arjuna/functions.php:449
+#: ../functions.php:538
 msgid "Footer Style"
 msgstr "Style de pied de page"
 
-#: Arjuna/functions.php:464
+#: ../functions.php:553
 msgid "Performance Optimization"
 msgstr "Optimisations de performances"
 
-#: Arjuna/functions.php:468
+#: ../functions.php:557
 msgid "Internet Explorer 6 Optimization"
 msgstr "Optimisations pour Internet Explorer 6"
 
-#: Arjuna/functions.php:470
+#: ../functions.php:559
 msgid "Enable IE6 performance optimization"
 msgstr "Activer les optimisations pour Internet Explorer 6"
 
-#: Arjuna/functions.php:472
+#: ../functions.php:561
 msgid "If turned on, Arjuna will attempt to detect IE6 and serve a stand-alone CSS file specifically made for IE6."
 msgstr "Si activé, Arjuna tentera de détecté IE6 et de fournir un fichier CSS autonome spécifique à IE6."
 
-#: Arjuna/functions.php:472
+#: ../functions.php:561
 msgid "Note: IE6 will still work the same if this option is turned off, however, you and your IE6 users will save an estimated 28kb (11 image and 2 CSS files) in bandwidth for first-time visitors. IE6 also might render more rapidly if this is turned on."
 msgstr "Remarque : IE6 continuera toujours de fonctionner normalement si l'option est désactivée, cependant, vous et les utilisateurs de IE6 économiseront environ 28kb (11 images et 2 fichiers CSS) en bande passante pour une première visite. IE6 peut également afficher plus rapidement si activé."
 
-#: Arjuna/functions.php:479
+#: ../functions.php:568
 msgid "Save Changes"
 msgstr "Enregistrer les changements"
 
-#: Arjuna/functions.php:588
+#: ../functions.php:677
 msgid "Written by"
 msgstr "Ecrit par"
 
-#: Arjuna/functions.php:590
+#: ../functions.php:679
 #, php-format
 msgid "about %s ago"
 msgstr "il y a %s jours"
 
-#: Arjuna/functions.php:592
+#: ../functions.php:681
 msgid "on"
 msgstr "on"
 
-#: Arjuna/functions.php:597
-#: Arjuna/page.php:27
-#: Arjuna/page_fullwidth.php:32
-#: Arjuna/single.php:35
+#: ../functions.php:686
 msgid "Edit"
 msgstr "Editer"
 
-#: Arjuna/functions.php:624
+#: ../functions.php:713
 msgid "1 year"
 msgstr "1 an"
 
-#: Arjuna/functions.php:628
+#: ../functions.php:713
+#, php-format
+msgid "%d years"
+msgstr "%d années"
+
+#: ../functions.php:717
 msgid "1 month"
 msgstr "1 mois"
 
-#: Arjuna/functions.php:632
+#: ../functions.php:717
+#, php-format
+msgid "%d months"
+msgstr "%d mois"
+
+#: ../functions.php:721
 msgid "1 week"
 msgstr "1 semaine"
 
-#: Arjuna/functions.php:636
+#: ../functions.php:721
+#, php-format
+msgid "%d weeks"
+msgstr "%d semaines"
+
+#: ../functions.php:725
 msgid "1 day"
 msgstr "1 jour"
 
-#: Arjuna/functions.php:640
+#: ../functions.php:725
+#, php-format
+msgid "%d days"
+msgstr "%d jours"
+
+#: ../functions.php:729
 msgid "1 hour"
 msgstr "1 heure"
 
-#: Arjuna/functions.php:644
+#: ../functions.php:729
+#, php-format
+msgid "%d hours"
+msgstr "%d heures"
+
+#: ../functions.php:733
 msgid "1 minute"
 msgstr "1 minute"
 
-#: Arjuna/functions.php:647
+#: ../functions.php:733
+#, php-format
+msgid "%d minutes"
+msgstr "%d minutes"
+
+#: ../functions.php:736
 msgid "1 second"
 msgstr "1 seconde"
 
-#: Arjuna/header.php:10
+#: ../functions.php:736
+#, php-format
+msgid "%d seconds"
+msgstr "%d secondes"
+
+#: ../header.php:10
 msgid "Search Results:"
-msgstr "Résultats :"
+msgstr "Résultats de la recherche:"
 
-#: Arjuna/header.php:34
+#: ../header.php:34
 msgid "Skip to posts"
-msgstr "Descendre aux posts"
+msgstr "Descendre aux billets"
 
-#: Arjuna/header.php:51
+#: ../header.php:60
 msgid "Search here..."
 msgstr "Rechercher..."
 
-#: Arjuna/header.php:52
+#: ../header.php:61
 msgid "Find"
-msgstr "Rechercher"
+msgstr "Trouver"
 
-#: Arjuna/header.php:56
+#: ../header.php:67
 msgid "Home"
 msgstr "Accueil"
 
-#: Arjuna/page.php:25
-#: Arjuna/page_fullwidth.php:30
+#: ../page.php:29
+#: ../page_fullwidth.php:34
 msgid "Pages:"
 msgstr "Pages:"
 
-#: Arjuna/page.php:25
-#: Arjuna/page_fullwidth.php:30
+#: ../page.php:29
+#: ../page_fullwidth.php:34
 msgid "Page %"
 msgstr "Page %"
 
-#: Arjuna/page.php:37
-#: Arjuna/page_fullwidth.php:42
-#: Arjuna/single.php:45
+#: ../page.php:31
+#: ../page_fullwidth.php:36
+#: ../single.php:39
+msgid "Edit in Admin"
+msgstr "Editer en tant qu'Admin"
+
+#: ../page.php:41
+#: ../page_fullwidth.php:46
+#: ../single.php:49
 msgid "There is nothing here."
 msgstr "Il n'y a rien ici."
 
-#: Arjuna/search.php:7
+#: ../search.php:8
 #, php-format
 msgid "Search Results on <em>%s</em>"
-msgstr "Résultats sur <em>%s</em>"
+msgstr "Résultats de la recherche sur <em>%s</em>"
 
-#: Arjuna/search.php:56
+#: ../search.php:60
 msgid "Your search returned no results."
 msgstr "Pas de résultat pour votre recherche."
 
-#: Arjuna/sidebar.php:11
+#: ../sidebar.php:12
 msgid "Recent Posts"
-msgstr "Posts récents"
+msgstr "Billets récents"
 
-#: Arjuna/sidebar.php:18
+#: ../sidebar.php:19
 msgid "Browse by Tags"
 msgstr "Afficher par Tags"
 
-#: Arjuna/sidebar.php:36
+#: ../sidebar.php:41
 msgid "Meta"
 msgstr "Meta"
 

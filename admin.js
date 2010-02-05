@@ -32,3 +32,9 @@ function headerMenu2_tD(o) {
 			document.getElementById('headerMenu2_sortBy_pages').style.display = 'none';
 		}
 }
+
+function customCSS_switch(o) {
+	if (o.checked)
+		document.getElementById('customCSS_input').style.display = 'block';
+	else document.getElementById('customCSS_input').style.display = 'none';
+}

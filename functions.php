@@ -22,7 +22,10 @@ $_arjunaDefaultOptions = array(
 	'sidebarWidth' => 'normal', // small, normal, large
 	'sidebar_showDefault' => true, 
 	'enableIE6optimization' => true,
-	'postsShowAuthor' => true
+	'postsShowAuthor' => true,
+	'postsShowTime' => false,
+	'customCSS' => false,
+	'customCSS_input' => ''
 );
 
 $optionsSaved = false;
@@ -191,7 +194,22 @@ function arjuna_add_theme_options() {
 		// Posts, Show Author
 		if ($_POST['postsShowAuthor']) $options['postsShowAuthor'] = true;
 		else $options['postsShowAuthor'] = false;
-
+		
+		// Posts, Show Time
+		if ($_POST['postsShowTime']) $options['postsShowTime'] = true;
+		else $options['postsShowTime'] = false;
+		
+		//Custom CSS
+		if ($_POST['customCSS']) {
+			if (trim($_POST['customCSS_input'])) {
+				$options['customCSS'] = true;
+				$input = trim($_POST['customCSS_input']);
+				//create a new CSS file
+				$handle = fopen(dirname(__FILE__).'/user-style.css', 'w');
+				fwrite($handle, $input);
+				fclose($handle);
+			}
+		} else $options['customCSS'] = false;
 		
 
 		update_option('arjuna_options', $options);
@@ -486,6 +504,12 @@ function arjuna_add_theme_page () {
 						<label><input name="postsShowAuthor" type="checkbox"<?php if($options['postsShowAuthor']) echo ' checked="checked"'; ?> /> <?php _e('Include the author of a post in the post header.', 'Arjuna'); ?></label><br />
 					</td>
 				</tr>
+				<tr>
+					<th scope="row"><?php _e('Display Time', 'Arjuna'); ?></th>
+					<td>
+						<label><input name="postsShowTime" type="checkbox"<?php if($options['postsShowTime']) echo ' checked="checked"'; ?> /> <?php _e('Include the time and date of when the post has been published, instead of only the date.', 'Arjuna'); ?></label><br />
+					</td>
+				</tr>
 			</tbody>
 		</table>
 
@@ -544,6 +568,21 @@ function arjuna_add_theme_page () {
 						<div class="tImageOptions" style="float:none">
 							<input name="footerStyle" style="margin-top:6px;" type="radio" value="style2"<?php if($options['footerStyle']=='style2') echo ' checked="checked"'; ?> />
 							<div class="tImage" id="icon-footerStyle2"></div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><?php _e('Custom CSS', 'Arjuna'); ?></th>
+					<td>
+						<label><input name="customCSS" onclick="customCSS_switch(this)" type="checkbox"<?php if($options['customCSS']) echo ' checked="checked"'; ?> /> <?php _e('Enable custom CSS rules', 'Arjuna'); ?></label><br />
+						<span class="description"><?php _e('If enabled, Arjuna will create a user stylesheet with your custom CSS rules. The user stylesheet will be included with every page call. If you intend to make some minor changes to the stylesheet, enabling this option ensures that you can safely upgrade Arjuna without losing your custom CSS.', 'Arjuna');?></span>
+						<div id="customCSS_input"<?php if(!$options['customCSS']) echo ' style="display:none;"'; ?>>
+							<textarea name="customCSS_input"><?php
+								//check if there is a user-style.css file
+								$path = dirname(__FILE__).'/user-style.css';
+								if(file_exists($path))
+									print file_get_contents($path);
+							?></textarea>
 						</div>
 					</td>
 				</tr>
@@ -674,7 +713,7 @@ function arjuna_get_comment($comment, $args, $depth) {
 		<div class="message">
 			<div class="t"><div></div></div>
 			<div class="i"><div class="i2">
-				<span class="title"><?php _e('Written by', 'Arjuna'); ?> <?php if (get_comment_author_url()): print get_comment_author_link(); else: ?><a href="<?php comment_author_url(); ?>" class="authorLink"><?php comment_author(); ?></a><?php endif; ?> <?php
+				<span class="title"><?php _e('Written by', 'Arjuna'); ?> <?php if (!get_comment_author_url()): print get_comment_author_link(); else: ?><a href="<?php comment_author_url(); ?>" class="authorLink"><?php comment_author(); ?></a><?php endif; ?> <?php
 					if($arjunaOptions['commentDateFormat'] == 'timePassed'){
 						printf(__('about %s ago', 'Arjuna'), arjuna_get_time_passed(strtotime($comment->comment_date)));
 					} else {
@@ -773,6 +812,13 @@ function arjuna_get_appendToPageTitle() {
 	} elseif ($arjunaOptions['appendToPageTitle']=='custom' && !empty($arjunaOptions['appendToPageTitleCustom'])) {
 		echo " - " . $arjunaOptions['appendToPageTitleCustom'];
 	}
+}
+
+function arjuna_get_custom_CSS() {
+	$arjunaOptions = get_option('arjuna_options');
+	if($arjunaOptions['customCSS'] && file_exists(dirname(__FILE__).'/user-style.css'))
+		return '<link rel="stylesheet" href="'.get_bloginfo('stylesheet_directory').'/user-style.css" type="text/css" media="screen" />';
+	return '';
 }
 
 //Try to detect if IE6 or below is the user's browser. This allows for Arjuna to optimize IE6 output and significantly reduce bandwidth for IE6 users.

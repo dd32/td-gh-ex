@@ -13,25 +13,27 @@ else { echo trim(wp_title(' ',false)); arjuna_get_appendToPageTitle(); }
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <?php
 if (!$arjunaOptions['enableIE6optimization'] || !arjuna_isIE6()) { ?>
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
-<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' );?>
-<?php wp_head(); ?>
-<script src="<?php bloginfo('template_url'); ?>/default.js" type="text/javascript"></script>
-<!--[if lte IE 7]><link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/ie7.css" type="text/css" media="screen" /><![endif]-->
-<!--[if lte IE 6]>
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/ie6.css" type="text/css" media="screen" />
-<script src="<?php bloginfo('template_url'); ?>/ie6.js"></script>
-<![endif]-->
+	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
+	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' );?>
+	<?php wp_head(); ?>
+	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/default.js"></script>
+	<!--[if lte IE 7]><link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/ie7.css" type="text/css" media="screen" /><![endif]-->
+	<!--[if lte IE 6]>
+	<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/ie6.css" type="text/css" media="screen" />
+	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/ie6.js"></script>
+	<![endif]-->
+	<?php print arjuna_get_custom_CSS(); ?>
 <?php } elseif(arjuna_isIE6()) { ?>
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/ie6_full.css" type="text/css" media="screen" />
-<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' );?>
-<?php wp_head(); ?>
-<script src="<?php bloginfo('template_url'); ?>/default.js" type="text/javascript"></script>
-<script src="<?php bloginfo('template_url'); ?>/ie6.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/ie6_full.css" type="text/css" media="screen" />
+	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' );?>
+	<?php wp_head(); ?>
+	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/default.js"></script>
+	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/ie6.js"></script>
+	<?php print arjuna_get_custom_CSS(); ?>
 <?php } ?>
 </head>
 
-<body class="<?php if(!$arjunaOptions['headerMenu1_show']): ?>hideHeaderMenu1<?php endif; ?>"><a name="top"></a><a id="skipToPosts" href="#content"><?php _e('Skip to posts', 'Arjuna'); ?></a>
+<body<?php if(!$arjunaOptions['headerMenu1_show']): ?> class="hideHeaderMenu1"<?php endif; ?>><a name="top"></a><a id="skipToPosts" href="#content"><?php _e('Skip to posts', 'Arjuna'); ?></a>
 <div class="pageContainer">
 	<div class="headerBG"></div>
 	<div class="header">
