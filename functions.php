@@ -574,6 +574,13 @@ function arjuna_add_theme_page () {
 				<tr>
 					<th scope="row"><?php _e('Custom CSS', 'Arjuna'); ?></th>
 					<td>
+						<?php
+						//first check for permissions
+						if (!is_writable(dirname(__FILE__).'/')):
+						?>
+						<span style="color:#C00;font-style:italic;"><?php printf(__('This feature is disabled because Arjuna does not have write permissions to %s.', 'Arjuna'), 'wp-content/themes/arjuna-x/');?></span><br />
+						<span class="description"><?php _e('Arjuna needs write permissions to create a new file "user-style.css", which will contain the custom CSS.'); ?></span>
+						<?php else: ?>
 						<label><input name="customCSS" onclick="customCSS_switch(this)" type="checkbox"<?php if($options['customCSS']) echo ' checked="checked"'; ?> /> <?php _e('Enable custom CSS rules', 'Arjuna'); ?></label><br />
 						<span class="description"><?php _e('If enabled, Arjuna will create a user stylesheet with your custom CSS rules. The user stylesheet will be included with every page call. If you intend to make some minor changes to the stylesheet, enabling this option ensures that you can safely upgrade Arjuna without losing your custom CSS.', 'Arjuna');?></span>
 						<div id="customCSS_input"<?php if(!$options['customCSS']) echo ' style="display:none;"'; ?>>
@@ -584,6 +591,7 @@ function arjuna_add_theme_page () {
 									print file_get_contents($path);
 							?></textarea>
 						</div>
+						<?php endif; ?>
 					</td>
 				</tr>
 			</tbody>
@@ -715,9 +723,9 @@ function arjuna_get_comment($comment, $args, $depth) {
 			<div class="i"><div class="i2">
 				<span class="title"><?php _e('Written by', 'Arjuna'); ?> <?php if (!get_comment_author_url()): print get_comment_author_link(); else: ?><a href="<?php comment_author_url(); ?>" class="authorLink"><?php comment_author(); ?></a><?php endif; ?> <?php
 					if($arjunaOptions['commentDateFormat'] == 'timePassed'){
-						printf(__('about %s ago', 'Arjuna'), arjuna_get_time_passed(strtotime($comment->comment_date)));
+						printf(__('about %s ago', 'Arjuna'), arjuna_get_time_passed(strtotime($comment->comment_date_gmt)));
 					} else {
-						print __('on', 'Arjuna').' '.date(get_option('date_format'), strtotime($comment->comment_date));
+						print __('on', 'Arjuna').' '.date(get_option('date_format'), strtotime($comment->comment_date_gmt));
 					}
 				?>.</span>
 				<span class="links">

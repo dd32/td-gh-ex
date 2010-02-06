@@ -60,6 +60,10 @@ Nonetheless, we still hope that IE6 will rest in peace soon.
 Changelog:
 ---------------------------------------------------
 
+1.1.4
+- Localization updated: Brazilian (1.1.3)
+- Fixed bug: When displaying the elapsed time of a comment, there was an error with handling time zones. That way, some comments showed a negative number of seconds.
+- Fixed bug: The feature to add custom CSS is now only enabled if the application has sufficient write permissions to create a user-style.css file.
 1.1.3
 - New feature: It's now possible to add your custom CSS rules via the admin. This will ensure that your custom CSS is not overwritten when you update Arjuna automatically.
 - New feature: Posts and pages can now show not only the date but also the time of when the post/page has been published.
@@ -69,7 +73,7 @@ Changelog:
 - New localization: German
 - Localization updated: French
 - Localization updated: Spanish
-- Updated .POT file.
+- Updated .POT localization file.
 - Fixed bug: When someone submitted a comment and did not enter a website URL, the comment author would link to http://Yourwebsite.
 - Fixed bug: Full-width page templates still did not work properly on some setups.
 - Fixed display bug: If an item in the first header menu had a dropdown of more than four items, then the dropdown would get cut at the bottom.
