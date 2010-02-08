@@ -63,7 +63,7 @@ if ('open' == $post->comment_status):
 		<?php } ?>
 	</div>
 	<?php if ( get_option('comment_registration') && !$user_ID ) : ?>
-		<p style="margin-bottom:40px;"><?php printf(__('You must be %slogged in%s to post a comment.', 'Arjuna'), '<a href="'.get_option('siteurl').'/wp-login.php?redirect_to='.get_permalink().'">', '</a>'); ?></p></div>
+		<p style="margin-bottom:40px;"><?php printf(__('You must be %slogged in%s to post a comment.', 'Arjuna'), '<a href="'.get_option('siteurl').'/wp-login.php?redirect_to='.get_permalink().'">', '</a>'); ?></p>
 	<?php else : ?>
 		<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" name="reply" method="post" id="commentform">
 			<input type="hidden" id="replyNameDefault" value="<?php _e('Your name', 'Arjuna'); ?>" />

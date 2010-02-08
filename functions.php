@@ -6,12 +6,14 @@ $_arjunaDefaultOptions = array(
 	'headerMenu1_sortOrder' => 'asc', // asc, desc
 	'headerMenu1_alignment' => 'right', // right, left
 	'headerMenu1_show' => true,
+	'headerMenu1_disableParentPageLink' => false,
 	'headerMenu2_dropdown' => '3', // 1, 2, 3 (the depth of the menu, 1 being no dropdown)
 	'headerMenu2_display' => 'categories', // pages, categories
 	'headerMenu2_sortBy' => 'name', // [CATEGORIES]: name, ID, count, slug [PAGES]: post_title, ID, post_name (slug), menu_order (the page's Order value)
 	'headerMenu2_sortOrder' => 'asc', // asc, desc
 	'headerMenu2_displayHomeButton' => true,
 	'headerMenu2_displaySeparators' => true,
+	'headerMenu2_disableParentPageLink' => false,
 	'headerImage' => 'lightBlue', //lightBlue, darkBlue
 	'commentDisplay' => 'alt', // alt, left, right
 	'footerStyle' => 'style1', // style1, style2
@@ -21,36 +23,54 @@ $_arjunaDefaultOptions = array(
 	'sidebarDisplay' => 'right', // right, left, none
 	'sidebarWidth' => 'normal', // small, normal, large
 	'sidebar_showDefault' => true, 
+	'sidebar_showRSSButton' => true, 
+	'sidebar_showTwitterButton' => false, 
+	'sidebar_twitterURL' => '', 
 	'enableIE6optimization' => true,
 	'postsShowAuthor' => true,
 	'postsShowTime' => false,
+	'posts_showTopPostLinks' => false,
+	'posts_showBottomPostLinks' => true,
 	'customCSS' => false,
-	'customCSS_input' => ''
+	'customCSS_input' => '',
+	'customCSS_useFilesystem' => false,
+	'pagination' => true,
+	'pagination_pageRange' => 3, //the number of page buttons to show before and after the current page button
+	'pagination_pageAnchors' => 1, //the number of buttons to always show at the beginning and end of the pagination bar
+	'pagination_pageGap' => 1 //the number of pages in a gap before an ellipsis is added
 );
 
 $optionsSaved = false;
 function arjuna_create_options() {
 	// Default values
-	$defaultOptions = $GLOBALS['_arjunaDefaultOptions'];
+	$options = $GLOBALS['_arjunaDefaultOptions'];
 	
 	// Overridden values
-	$setOptions = get_option('arjuna_options');
-	if ( !is_array($setOptions) ) $setOptions = array();
+	$DBOptions = get_option('arjuna_options');
+	if ( !is_array($DBOptions) ) $DBOptions = array();
 	
 	// Merge
-	$options = array_merge($defaultOptions, $setOptions);
+	// Change since Arjuna 1.2: Values that are not used anymore will be deleted
+	foreach ( $options as $key => $value )
+		if ( isset($DBOptions[$key]) )
+			$options[$key] = $DBOptions[$key];
 	
-	if ( $options != $setOptions )
-		update_option('arjuna_options', $options);
+	update_option('arjuna_options', $options);
 	
 	return $options;
 }
 
 function arjuna_get_options() {
+	static $return = false;
+	if($return !== false)
+		return $return;
+
 	$options = get_option('arjuna_options');
-	if(!empty($options))
-		return $options;
-	return $GLOBALS['_arjunaDefaultOptions'];
+	if(!empty($options) && count($options) == count($GLOBALS['_arjunaDefaultOptions']))
+		$return = $options;
+	else $return = $GLOBALS['_arjunaDefaultOptions'];
+	
+	return $return;
 }
 
 function arjuna_add_theme_options() {
@@ -89,7 +109,6 @@ function arjuna_add_theme_options() {
 			else $options['headerMenu1_sortOrder'] = $validOptions[0];
 		}
 
-
 		//Menu 1 show
 		if ($_POST['headerMenu1_show']) $options['headerMenu1_show'] = true;
 		else $options['headerMenu1_show'] = false;
@@ -98,6 +117,11 @@ function arjuna_add_theme_options() {
 		$validOptions = array('right', 'left');
 		if ( in_array($_POST['headerMenu1_alignment'], $validOptions) ) $options['headerMenu1_alignment'] = $_POST['headerMenu1_alignment'];
 		else $options['headerMenu1_alignment'] = $validOptions[0];
+		
+		// Menu 1 - Disable Parent Page Links in
+		if ($_POST['headerMenu1_disableParentPageLink']) $options['headerMenu1_disableParentPageLink'] = true;
+		else $options['headerMenu1_disableParentPageLink'] = false;
+
 
 		//Menu 2 dropdown
 		$validOptions = array('1', '2', '3');
@@ -128,7 +152,7 @@ function arjuna_add_theme_options() {
 			if ( in_array($_POST['headerMenu2_sortOrder_categories'], $validOptions) ) $options['headerMenu2_sortOrder'] = $_POST['headerMenu2_sortOrder_categories'];
 			else $options['headerMenu2_sortOrder'] = $validOptions[0];
 		}
-
+		
 		//Menu 2 sorting order
 		$validOptions = array('asc', 'desc');
 		if ( in_array($_POST['headerMenu2_sortOrder'], $validOptions) ) $options['headerMenu2_sortOrder'] = $_POST['headerMenu2_sortOrder'];
@@ -141,6 +165,11 @@ function arjuna_add_theme_options() {
 		//Menu 2 Home Icon
 		if ($_POST['headerMenu2_displaySeparators']) $options['headerMenu2_displaySeparators'] = true;
 		else $options['headerMenu2_displaySeparators'] = false;
+		
+		// Menu 2 - Disable Parent Page Links in
+		if ($_POST['headerMenu2_disableParentPageLink']) $options['headerMenu2_disableParentPageLink'] = true;
+		else $options['headerMenu2_disableParentPageLink'] = false;
+
 
 		//Header Image
 		$validOptions = array('lightBlue', 'darkBlue');
@@ -180,6 +209,20 @@ function arjuna_add_theme_options() {
 		// Whether or not to show the default bars (if no widget bars are defined)
 		if ($_POST['sidebar_showDefault']) $options['sidebar_showDefault'] = true;
 		else $options['sidebar_showDefault'] = false;
+		
+		// Sidebar: RSS Button
+		if ($_POST['sidebar_showRSSButton']) $options['sidebar_showRSSButton'] = true;
+		else $options['sidebar_showRSSButton'] = false;
+		
+		// Sidebar: Twitter Button
+		if ($_POST['sidebar_showTwitterButton']) {
+			$_POST['sidebar_twitterURL'] = trim($_POST['sidebar_twitterURL']);
+			if (!empty($_POST['sidebar_twitterURL'])) {
+				$options['sidebar_showTwitterButton'] = true;
+				$options['sidebar_twitterURL'] = $_POST['sidebar_twitterURL'];
+			} else $options['sidebar_showTwitterButton'] = false;
+		} else $options['sidebar_showTwitterButton'] = false;
+				
 
 		//Sidebar Width
 		$validOptions = array('normal', 'small', 'large');
@@ -189,7 +232,6 @@ function arjuna_add_theme_options() {
 		// IE Optimization
 		if ($_POST['enableIE6optimization']) $options['enableIE6optimization'] = true;
 		else $options['enableIE6optimization'] = false;
-
 		
 		// Posts, Show Author
 		if ($_POST['postsShowAuthor']) $options['postsShowAuthor'] = true;
@@ -199,19 +241,48 @@ function arjuna_add_theme_options() {
 		if ($_POST['postsShowTime']) $options['postsShowTime'] = true;
 		else $options['postsShowTime'] = false;
 		
+		//Navigation links to previous and next posts
+		if ($_POST['posts_showTopPostLinks']) $options['posts_showTopPostLinks'] = true;
+		else $options['posts_showTopPostLinks'] = false;
+		
+		if ($_POST['posts_showBottomPostLinks']) $options['posts_showBottomPostLinks'] = true;
+		else $options['posts_showBottomPostLinks'] = false;
+		
+		if ($_POST['pagination']=='1') {
+			$options['pagination'] = true;
+			
+			$validOptions = array(1,2,3,4,5,6,7);
+			if ( in_array($_POST['pagination_pageRange'], $validOptions) ) $options['pagination_pageRange'] = $_POST['pagination_pageRange'];
+			else $options['pagination_pageRange'] = 3;
+
+			$validOptions = array(1,2,3);
+			if ( in_array($_POST['pagination_pageAnchors'], $validOptions) ) $options['pagination_pageAnchors'] = $_POST['pagination_pageAnchors'];
+			else $options['pagination_pageAnchors'] = 1;
+			
+			$validOptions = array(1,2,3);
+			if ( in_array($_POST['pagination_pageGap'], $validOptions) ) $options['pagination_pageGap'] = $_POST['pagination_pageGap'];
+			else $options['pagination_pageGap'] = 1;
+			
+		} else $options['pagination'] = false;
+		
 		//Custom CSS
 		if ($_POST['customCSS']) {
 			if (trim($_POST['customCSS_input'])) {
 				$options['customCSS'] = true;
 				$input = trim($_POST['customCSS_input']);
-				//create a new CSS file
-				$handle = fopen(dirname(__FILE__).'/user-style.css', 'w');
-				fwrite($handle, $input);
-				fclose($handle);
+				if (is_writable(dirname(__FILE__).'/')) {
+					//create a new CSS file
+					$handle = fopen(dirname(__FILE__).'/user-style.css', 'w');
+					fwrite($handle, $input);
+					fclose($handle);
+					$options['customCSS_useFilesystem'] = true;
+				} else {
+					$options['customCSS_useFilesystem'] = false;
+					$options['customCSS_input'] = $input;
+				}
 			}
 		} else $options['customCSS'] = false;
 		
-
 		update_option('arjuna_options', $options);
 		$optionsSaved = true;
 	}
@@ -223,7 +294,7 @@ function arjuna_add_theme_options() {
 function arjuna_add_theme_page () {
 	global $optionsSaved;
 
-	$options = arjuna_create_options();
+	$options = arjuna_get_options();
 	if ( $optionsSaved )
 		echo '<div id="message" class="updated fade"><p><strong>'.__('The Arjuna options have been saved.', 'Arjuna').'</strong></p></div>';
 ?>
@@ -232,8 +303,10 @@ function arjuna_add_theme_page () {
 		<h2><?php _e('Arjuna Theme Options', 'Arjuna'); ?></h2>
 		
 		<div class="tSRSIntro">
-			<?php printf(__('Thank you for downloading Arjuna, the free WordPress theme designed by %s.', 'Arjuna'), '<a href="http://www.srssolutions.com/en/" class="tSRS">SRS Solutions</a>'); ?>
-			<div class="tRow">
+			<div class="tTop">
+			<?php printf(__('Thank you for using Arjuna, the free WordPress theme designed by %s.', 'Arjuna'), '<a href="http://www.srssolutions.com/en/" class="tSRS">SRS Solutions</a>'); ?> <a href="http://www.twitter.com/srssolutions" class="tTwitter">Follow Us</a>
+			</div>
+			<div class="tMid">
 				<div class="tReportBugs">
 					<h5><?php _e('Report Bugs', 'Arjuna'); ?></h5>
 					<a href="http://www.srssolutions.com/en/downloads/bug_report"><?php _e('Report a Bug', 'Arjuna'); ?></a> &mdash; <?php _e('Please include your Wordpress version, browser details and a screenshot, if necessary.', 'Arjuna'); ?>
@@ -242,13 +315,17 @@ function arjuna_add_theme_page () {
 					<h5><?php _e('Useful Links', 'Arjuna'); ?></h5>
 					<li><a href="http://www.srssolutions.com/en/downloads/arjuna_wordpress_theme#changelog"><?php _e('Changelog', 'Arjuna'); ?></a></li>
 					<li><a href="http://www.srssolutions.com/en/downloads/arjuna_wordpress_theme#faq"><?php _e('FAQ', 'Arjuna'); ?></a></li>
-					<li><a href="http://www.srssolutions.com/en/downloads/arjuna_wordpress_theme#comments"><?php _e('Leave Feedback', 'Arjuna'); ?></a></li>
 					<li><a href="http://www.srssolutions.com/en/downloads/arjuna_wordpress_theme#roadmap"><?php _e('Roadmap', 'Arjuna'); ?></a></li>
+					<li><a href="http://www.srssolutions.com/en/downloads/arjuna_wordpress_theme#comments"><?php _e('Leave Feedback', 'Arjuna'); ?></a></li>
 				</ul>
 				<div class="tSupport">
 					<h5><?php _e('Support &amp; Sales', 'Arjuna'); ?></h5>
 					<a href="http://www.srssolutions.com/en/contact/rfq"><?php _e('Contact Sales', 'Arjuna'); ?></a> &mdash; <?php _e('Need installation or integration support? Need something customized or extended?', 'Arjuna'); ?>
 				</div>
+			</div>
+			<div class="tBottom">
+				<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GV5N8DN6XR6PY"><img src="https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif" /></a>
+				<span><?php _e('Arjuna is completely free. If you like this project and want to support further development and maintenance, please', 'Arjuna'); ?></span>
 			</div>
 		</div>
 		
@@ -283,7 +360,6 @@ function arjuna_add_theme_page () {
 									 <?php _e('Two-level dropdown menu', 'Arjuna'); ?>
 								</label>
 							</td>
-						</tr>
 						<tr valign="top">
 							<th scope="row"><?php _e('Alignment', 'Arjuna'); ?></th>
 							<td>
@@ -343,6 +419,17 @@ function arjuna_add_theme_page () {
 								</div>
 							</td>
 						</tr>
+						</tr>
+						<?php /*
+						<tr id="headerMenu1_disableParentPageLink_pages"<?php if($options['headerMenu1_display']!='pages'): ?> style="display:none;"<?php endif; ?>>
+							<th scope="row"><?php _e('Parent Page Links', 'Arjuna'); ?></th>
+							<td>
+								<label><input name="headerMenu1_disableParentPageLink" type="checkbox"<?php if($options['headerMenu1_disableParentPageLink']) echo ' checked="checked"'; ?> /> <?php _e('Disable hyperlinking of parent page items.', 'Arjuna'); ?></label>
+								<br />
+								<span class="description"><?php _e('If checked, the menu\'s "zero level" items will not be linked to their respective permalinks. This is especially useful if you use a dropdown menu for each page item and you don\' want your users to be able to click on the parent page items.', 'Arjuna');?></span>
+							</td>
+						</tr>
+						*/ ?>
 					</tbody>
 				</table>
 			</td>
@@ -426,6 +513,16 @@ function arjuna_add_theme_page () {
 								</div>
 							</td>
 						</tr>
+						<?php /*
+						<tr id="headerMenu2_disableParentPageLink_pages"<?php if($options['headerMenu2_display']!='pages'): ?> style="display:none;"<?php endif; ?>>
+							<th scope="row"><?php _e('Parent Page Links', 'Arjuna'); ?></th>
+							<td>
+								<label><input name="headerMenu2_disableParentPageLink" type="checkbox"<?php if($options['headerMenu2_disableParentPageLink']) echo ' checked="checked"'; ?> /> <?php _e('Disable hyperlinking of parent page items.', 'Arjuna'); ?></label>
+								<br />
+								<span class="description"><?php _e('If checked, the menu\'s "zero level" items will not be linked to their respective permalinks. This is especially useful if you use a dropdown menu for each page item and you don\' want your users to be able to click on the parent page items.', 'Arjuna');?></span>
+							</td>
+						</tr>
+						*/ ?>
 					</tbody>
 				</table>
 			</td>
@@ -492,10 +589,25 @@ function arjuna_add_theme_page () {
 						<span class="description"><?php _e('If enabled, these widgets will be displayed if the widget bar is empty: <b>sidebar_full_top:</b> Recent Posts and Browse by Tags, <b>sidebar_left:</b> Categories, <b>sidebar_right:</b> Meta', 'Arjuna'); ?></span>
 					</td>
 				</tr>
+				<tr>
+					<th scope="row"><?php _e('RSS Button', 'Arjuna'); ?></th>
+					<td>
+						<label><input name="sidebar_showRSSButton" type="checkbox"<?php if($options['sidebar_showRSSButton']) echo ' checked="checked"'; ?> /> <?php _e('Display an RSS button on the very top of the sidebar.', 'Arjuna'); ?></label>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><?php _e('Twitter Button', 'Arjuna'); ?></th>
+					<td>
+						<label><input name="sidebar_showTwitterButton" onclick="sidebar_twitterURL_switch(this)" type="checkbox"<?php if($options['sidebar_showTwitterButton']) echo ' checked="checked"'; ?> /> <?php _e('Display a Twitter button on the very top of the sidebar.', 'Arjuna'); ?></label>
+						<div id="sidebar_twitterURL"<?php if(!$options['sidebar_showTwitterButton']) echo ' style="display:none;"'; ?>>
+							Your Twitter URL:<input type="text" class="regular-text" name="sidebar_twitterURL" value="<?php print $options['sidebar_twitterURL'] ?>" />
+						</div>
+					</td>
+				</tr>
 			</tbody>
 		</table>
 
-		<h4><?php _e('Posts', 'Arjuna'); ?></h4>
+		<h4><?php _e('Single Post Pages', 'Arjuna'); ?></h4>
 		<table class="form-table">
 			<tbody>
 				<tr>
@@ -508,6 +620,14 @@ function arjuna_add_theme_page () {
 					<th scope="row"><?php _e('Display Time', 'Arjuna'); ?></th>
 					<td>
 						<label><input name="postsShowTime" type="checkbox"<?php if($options['postsShowTime']) echo ' checked="checked"'; ?> /> <?php _e('Include the time and date of when the post has been published, instead of only the date.', 'Arjuna'); ?></label><br />
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><?php _e('Navigation Links', 'Arjuna'); ?></th>
+					<td>
+						<label><input name="posts_showTopPostLinks" type="checkbox"<?php if($options['posts_showTopPostLinks']) echo ' checked="checked"'; ?> /> <?php _e('Display links to the previous and next posts above each post.', 'Arjuna'); ?></label><br />
+						<label><input name="posts_showBottomPostLinks" type="checkbox"<?php if($options['posts_showBottomPostLinks']) echo ' checked="checked"'; ?> /> <?php _e('Display links to the previous and next posts below each post.', 'Arjuna'); ?></label><br />
+						<span class="description"><?php _e('Note: The links will only be shown on permalink pages, i.e. the URL where one single post/page is displayed.', 'Arjuna'); ?></span>
 					</td>
 				</tr>
 			</tbody>
@@ -547,6 +667,64 @@ function arjuna_add_theme_page () {
 			</tbody>
 		</table>
 
+		<h4><?php _e('Blog', 'Arjuna'); ?></h4>
+		<table class="form-table">
+			<tbody>
+				<tr>
+					<th scope="row"><?php _e('Pagination', 'Arjuna'); ?></th>
+					<td>
+						<label><input name="pagination" onclick="pagination_switch(this)" type="radio" value="1"<?php if($options['pagination']) echo ' checked="checked"'; ?> /> <?php _e('Use Arjuna pagination', 'Arjuna'); ?></label><br />
+						<span class="description"><?php _e('If enabled, Arjuna will use its own native pagination to allow your users to navigate the blog using pages.', 'Arjuna');?></span><br />
+						<div id="pagination_input"<?php if(!$options['pagination']) echo ' style="display:none;"'; ?> style="padding:5px 0 5px 20px;">
+							<table>
+							<tr>
+								<th scope="row"><?php _e('Page Range', 'Arjuna'); ?>:</th>
+								<td>
+								<select name="pagination_pageRange" style="width:50px;"><?php
+								$validValues = array(1, 2, 3, 4, 5, 6, 7);
+								foreach($validValues as $value) {
+									if ($options['pagination_pageRange'] == $value)
+										print '<option value="'.$value.'" selected="selected">'.$value.'</option>';
+									else print '<option value="'.$value.'">'.$value.'</option>';
+								}
+								?></select><span class="description"><?php _e('The number of page buttons that will appear before and after the current page button.', 'Arjuna'); ?></span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><?php _e('Page Anchors', 'Arjuna'); ?>:</th>
+								<td>
+								<select name="pagination_pageAnchors" style="width:50px;"><?php
+									$validValues = array(1, 2, 3);
+									foreach($validValues as $value) {
+										if ($options['pagination_pageAnchors'] == $value)
+											print '<option value="'.$value.'" selected="selected">'.$value.'</option>';
+										else print '<option value="'.$value.'">'.$value.'</option>';
+									}
+								?></select><span class="description"><?php _e('The number of page buttons that will always appear at the beginning and the end of the pagination.', 'Arjuna'); ?></span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><?php _e('Page Gap', 'Arjuna'); ?>:</th>
+								<td>
+								<select name="pagination_pageGap" style="width:50px;"><?php
+									$validValues = array(1, 2, 3);
+									foreach($validValues as $value) {
+										if ($options['pagination_pageGap'] == $value)
+											print '<option value="'.$value.'" selected="selected">'.$value.'</option>';
+										else print '<option value="'.$value.'">'.$value.'</option>';
+									}
+								?></select><span class="description"><?php _e('The number of page buttons in a gap before an ellipsis (...) is displayed.', 'Arjuna'); ?></span>
+								</td>
+							</tr>
+						</table>
+						</div>
+						<label><input name="pagination" onclick="pagination_switch(this)" type="radio" value="0"<?php if(!$options['pagination']) echo ' checked="checked"'; ?> /> <?php _e('Use WordPress default', 'Arjuna'); ?></label><br />
+						<span class="description"><?php _e('The default depends on your WordPress version and whether you have any pagination plugins activated. If the wp-paginate or wp-pagenavi plugin is activated, then Arjuna will use these plugins to create the pagination.', 'Arjuna');?></span><br />
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
 		<h4><?php _e('Miscellaneous', 'Arjuna'); ?></h4>
 		<table class="form-table">
 			<tbody>
@@ -578,7 +756,7 @@ function arjuna_add_theme_page () {
 						//first check for permissions
 						if (!is_writable(dirname(__FILE__).'/')):
 						?>
-						<span style="color:#C00;font-style:italic;"><?php printf(__('This feature is disabled because Arjuna does not have write permissions to %s.', 'Arjuna'), 'wp-content/themes/arjuna-x/');?></span><br />
+						<br />
 						<span class="description"><?php _e('Arjuna needs write permissions to create a new file "user-style.css", which will contain the custom CSS.'); ?></span>
 						<?php else: ?>
 						<label><input name="customCSS" onclick="customCSS_switch(this)" type="checkbox"<?php if($options['customCSS']) echo ' checked="checked"'; ?> /> <?php _e('Enable custom CSS rules', 'Arjuna'); ?></label><br />
@@ -590,6 +768,9 @@ function arjuna_add_theme_page () {
 								if(file_exists($path))
 									print file_get_contents($path);
 							?></textarea>
+							<?php if (is_writable(dirname(__FILE__).'/')): ?>
+							<br /><span style="color:#C00;font-style:italic;"><?php _e('Note:', 'Arjuna'); ?></span> <?php _e('Arjuna cannot write to the themes directory. The custom CSS rules will be included in the header of each page, between &lt;STYLE&gt; tags.');?>
+							<?php endif; ?>
 						</div>
 						<?php endif; ?>
 					</td>
@@ -725,7 +906,7 @@ function arjuna_get_comment($comment, $args, $depth) {
 					if($arjunaOptions['commentDateFormat'] == 'timePassed'){
 						printf(__('about %s ago', 'Arjuna'), arjuna_get_time_passed(strtotime($comment->comment_date_gmt)));
 					} else {
-						print __('on', 'Arjuna').' '.date(get_option('date_format'), strtotime($comment->comment_date_gmt));
+						print __('on', 'Arjuna').' '.get_comment_time(get_option('date_format'));
 					}
 				?>.</span>
 				<span class="links">
@@ -807,8 +988,29 @@ function arjuna_get_next_page_link($label) {
 	$nextpage = intval($paged) + 1;
 
 	if ( !is_single() && ( empty($paged) || $nextpage <= $max_page) ) {
-		echo '<a href="' . next_posts( $max_page, false ) . '"  class="older"><span>'. preg_replace('/&([^#])(?![a-z]{1,8};)/', '&#038;$1', $label) .'</span></a>';
+		echo '<a href="' . next_posts( $max_page, false ) . '" class="older"><span>'. preg_replace('/&([^#])(?![a-z]{1,8};)/', '&#038;$1', $label) .'</span></a>';
 	}
+}
+
+// Returns true if there is at least one other post than the one being viewed currently
+function arjuna_has_other_posts() {
+	if (get_adjacent_post(false, '', false))
+		return true;
+	if (get_adjacent_post(false, '', true))
+		return true;
+	return false;
+}
+
+function arjuna_get_next_post_link($label) {
+	$post = get_adjacent_post(false, '', false);
+	if (!$post) return;
+	echo '<a href="'.get_permalink($post).'" rel="next" class="older"><span>'.$label.'</span></a>';
+}
+
+function arjuna_get_previous_post_link($label) {
+	$post = get_adjacent_post(false, '', true);
+	if (!$post) return;
+	echo '<a href="'.get_permalink($post).'" rel="prev" class="newer"><span>'.$label.'</span></a>';
 }
 
 function arjuna_get_appendToPageTitle() {
@@ -823,10 +1025,84 @@ function arjuna_get_appendToPageTitle() {
 }
 
 function arjuna_get_custom_CSS() {
-	$arjunaOptions = get_option('arjuna_options');
-	if($arjunaOptions['customCSS'] && file_exists(dirname(__FILE__).'/user-style.css'))
+	$arjunaOptions = arjuna_get_options();
+	if($arjunaOptions['customCSS'] && $arjunaOptions['customCSS_useFilesystem'] && file_exists(dirname(__FILE__).'/user-style.css'))
 		return '<link rel="stylesheet" href="'.get_bloginfo('stylesheet_directory').'/user-style.css" type="text/css" media="screen" />';
+	if($arjunaOptions['customCSS'] && !$arjunaOptions['customCSS_useFilesystem'] && $arjunaOptions['customCSS_input'])
+		return '<style>'.$arjunaOptions['customCSS_input'].'</style>';
 	return '';
+}
+
+function arjuna_get_pagination($previousLabel, $nextLabel) {
+	$arjunaOptions = arjuna_get_options();
+	global $wp_query;	
+	
+	$currentPage = get_query_var('paged') ? intval(get_query_var('paged')) : 1;
+	$postsPerPage = intval(get_query_var('posts_per_page'));
+	$totalPages = intval(ceil($wp_query->found_posts/$postsPerPage));
+		
+	if ($totalPages > 1) {
+		$output = '';
+		$output .= '<div class="pagination"><div><ol>';
+		
+		
+		//display page info, e.g. "Page 2 of 7"
+		$output .= '<li class="info"><span>'.sprintf(__('Page %s of %s', 'Arjuna'), $currentPage, $totalPages).'</span></li>';
+		
+		//previous button
+		$previousPageURL = get_pagenum_link($currentPage - 1);
+		if ($currentPage > 1 && !empty($previousPageURL))
+			$output .= '<li class="prev"><a href="'.$previousPageURL.'"><span>'.$previousLabel.'</span></a></li>';
+		
+		//the pages to be included in the pagination
+		$include = array();
+
+		$startPaginationAt = $currentPage - $arjunaOptions['pagination_pageRange'];
+		if($startPaginationAt<1) $startPaginationAt = 1;
+		$endPaginationAt = $currentPage + $arjunaOptions['pagination_pageRange'];
+		if($endPaginationAt>$totalPages) $endPaginationAt = $totalPages;
+
+		for ($i=1; $i<=$arjunaOptions['pagination_pageAnchors']; $i++)
+			$include[$i] = true;
+		
+		if( $startPaginationAt - $arjunaOptions['pagination_pageGap'] > $arjunaOptions['pagination_pageAnchors'] )
+			$include['gap'] = 'gap';
+		
+		for ($i=$startPaginationAt; $i<=$endPaginationAt; $i++) {
+			$include[$i] = true;
+		}
+		
+		if( $endPaginationAt + $arjunaOptions['pagination_pageGap'] < $totalPages-$arjunaOptions['pagination_pageAnchors']+1 )
+			$include['gap'] = 'gap';
+
+
+		for ($i=$totalPages-$arjunaOptions['pagination_pageAnchors']+1; $i<=$totalPages; $i++)
+			$include[$i] = true;
+
+
+		//write to output string
+		foreach($include as $key => $value) {
+			if($key=='gap') {
+				$output .= '<li class="gap"><span>...</span></li>';
+			} elseif($key==$currentPage) {
+				$URL = get_pagenum_link($key);
+				$output .= '<li class="current"><a href="'.$URL.'" title="'.sprintf(__('Page %s', 'Arjuna'), $key).'"><span>'.$key.'</span></a></li>';
+			} else {
+				$URL = get_pagenum_link($key);
+				$output .= '<li><a href="'.$URL.'" title="'.sprintf(__('Page %s', 'Arjuna'), $key).'"><span>'.$key.'</span></a></li>';
+			}
+		}
+		
+		//next button
+		$nextPageURL = get_pagenum_link($currentPage + 1);
+		if ($currentPage < $totalPages && !empty($nextPageURL))
+			$output .= '<li class="next"><a href="'.$nextPageURL.'"><span>'.$nextLabel.'</span></a></li>';
+	
+		$output .= '</ol></div></div>';
+		
+		echo $output;
+	}
+	return;
 }
 
 //Try to detect if IE6 or below is the user's browser. This allows for Arjuna to optimize IE6 output and significantly reduce bandwidth for IE6 users.

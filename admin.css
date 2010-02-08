@@ -109,20 +109,55 @@
 .tSRSIntro {
 	border:1px solid #ccc;
 	background-color:#eee;
-	padding:10px;
+	width:780px;
+}
+.tSRSIntro .tTwitter {
+	background:url(./images/admin/admin.png) no-repeat 0 -240px;
+	margin-left:5px;
+	padding-left:22px;
+	display:-moz-inline-stack;
+	display:inline-block;
+	color:#056;
+	line-height:18px;
+	font-size:11px;
 }
 a.tSRS {
 	color:#666;
 }
-.tRow {
-	font-size:11px;
+.tTop {
+	border-bottom:1px solid #ccc;
+	padding:10px;
+	background-color:#f2f2f2;
+}
+.tBottom {
+	border-top:1px solid #ccc;
+	padding:5px 10px;
+	background-color:#f2f2f2;
+	text-align:right;
 	overflow:hidden;
 }
-.tRow h5 {
+.tBottom span {
+	font-size:11px;
+	color:#666;
+	display:block;
+	float:right;
+	width:670px;
+}
+.tBottom a {
+	display:block;
+	float:right;
+	width:86px;
+}
+.tMid {
+	font-size:11px;
+	overflow:hidden;
+	padding:10px;
+}
+.tMid h5 {
 	font-size:11px;
 	margin:0 -5px 3px;
 	padding:0 5px 1px;
-	border-bottom:1px solid #ccc;
+	border-bottom:1px dotted #ccc;
 }
 .tReportBugs {
 	float:left;
@@ -145,4 +180,12 @@ a.tSRS {
 	float:left;
 	padding:10px;
 	width:250px;
+}
+
+.form-table table th {
+	padding:0 10px 0 0;
+	width:auto;
+}
+.form-table table td {
+	padding:0;
 }

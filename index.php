@@ -10,8 +10,9 @@
 			<div class="bottom"><div>
 				<span class="postDate"><?php the_time(get_option('date_format')); ?><?php
 					//Time
-					if($arjunaOptions['postsShowTime'])
+					if($arjunaOptions['postsShowTime']) {
 						print _e(' at ', 'Arjuna'); the_time(get_option('time_format'));
+					}
 				?></span>
 				<?php if($arjunaOptions['postsShowAuthor']): ?>
 				<span class="postAuthor"><?php the_author_posts_link(); ?></span>
@@ -46,16 +47,23 @@
 	<?php endwhile; ?>
 
 	<?php
-	if(function_exists('wp_paginate')) { ?>
-		<div class="pagination"><?php wp_paginate(); ?></div>
-	<?php	} elseif(function_exists('wp_pagenavi')) { ?>
-		<div class="pagination"><?php wp_pagenavi(); ?></div>
-	<?php } elseif(has_pages()) {	?>
-		<div class="pagination"><div>
-			<?php arjuna_get_previous_page_link(__('Newer Entries', 'Arjuna')); ?>
-			<?php arjuna_get_next_page_link(__('Older Entries', 'Arjuna')); ?>
-		</div></div>
-	<?php } ?>
+	if($arjunaOptions['pagination']) {
+		arjuna_get_pagination(__('Previous Page', 'Arjuna'), __('Next Page', 'Arjuna'));
+	} elseif(function_exists('wp_paginate')) {
+		print '<div class="pagination">';
+		wp_paginate();
+		print '</div>';
+	} elseif(function_exists('wp_pagenavi')) {
+		print '<div class="pagination">';
+		wp_pagenavi();
+		print '</div>';
+	} elseif(has_pages()) {
+		print '<div class="pagination"><div>';
+		arjuna_get_previous_page_link(__('Newer Entries', 'Arjuna'));
+		arjuna_get_next_page_link(__('Older Entries', 'Arjuna'));
+		print '</div></div>';
+	}
+	?>
 
 	<?php else : ?>
   <p><?php _e('There is nothing here (yet).', 'Arjuna'); ?></p>

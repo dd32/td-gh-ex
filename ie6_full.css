@@ -456,7 +456,7 @@ h3.contentHeader em {
 .postHeader {
 	
 }
-.postHeader h2 {
+.postTitle {
 	background:url(./images/ie6/heading.png) no-repeat 0 0;
 	font-weight:bold;
 	font-size:16px;
@@ -464,15 +464,15 @@ h3.contentHeader em {
 	padding-left:15px;
 	margin-right:15px;
 }
-.postHeader h2 span {
+.postTitle span {
 	display:block;
 	background:url(./images/ie6/heading.png) no-repeat right 0;
 	padding:8px 15px 7px;
 	margin-right:-15px;
 }
-.postHeader h2 a,
-.postHeader h2 a:visited,
-.postHeader h2 a:hover {
+.postTitle a,
+.postTitle a:visited,
+.postTitle a:hover {
 	text-decoration:none;
 	color:#000;
 }
@@ -1012,25 +1012,68 @@ a.btnLogout:hover {
 
 .pagination {
 	height:24px;
-	background:url(./images/ie6/pagination.png) no-repeat 0 0;
+	background:url(./images/ie6/pagination.png) no-repeat 0 -30px;
 	margin:30px 10px 0 0;
+}
+.paginationTop {
+	margin:0 10px 30px 0;
+	background-position:0 0;
 }
 .pagination div {
 	height:24px;
-	background:url(./images/ie6/pagination.png) no-repeat right 0;
+	background:url(./images/ie6/pagination.png) no-repeat right -30px;
 	margin:0 -10px 0 10px;
 	padding:0 20px 0 10px;
 }
-.pagination ul {
+.paginationTop div {
+	background-position:right 0;
 }
+.pagination .info {
+	display:block;
+	float:left;
+	color:#808080;
+	height:22px;
+	line-height:22px;
+	padding:0 15px 0 25px;
+	font-size:11px;
+	background:url(./images/ie6/pagination.png) no-repeat 0 -61px;
+}
+
 .pagination li {
 	float:left;
 	margin:1px 1px 1px 0;
 }
-.pagination li.active {
+.pagination li.current {
 	float:left;
 	margin:-2px 1px -2px 0;
 	height:26px;
+}
+.pagination li.prev {
+	margin-right:10px;
+}
+.pagination li.prev a span {
+	background:url(./images/ie6/pagination.png) no-repeat 0 -100px;
+	padding:0 7px 0 20px;
+}
+.pagination li.prev a:hover span {
+	background-position:0 -125px;
+}
+.pagination li.next {
+	margin-left:10px;
+}
+.pagination li.next a span {
+	background:url(./images/ie6/pagination.png) no-repeat right -100px;
+	padding:0 20px 0 7px;
+}
+.pagination li.next a:hover span {
+	background-position:right -125px;
+}
+.pagination li.gap span {
+	line-height:22px;
+	display:block;
+	float:left;
+	padding:0 5px;
+	color:#808080;
 }
 .pagination a {
 	display:block;
@@ -1047,37 +1090,27 @@ a.btnLogout:hover {
 	font-size:11px;
 	line-height:18px;
 	padding:0 7px;
-	background:url(./images/ie6/pagination.png) no-repeat -15px -70px;
+	background:url(./images/ie6/pagination.png) no-repeat -15px -100px;
 }
 .pagination a:hover {
 	text-decoration:none;
 	border-color:#808080;
 }
 .pagination a:hover span {
-	background-position:-15px -95px;
+	background-position:-15px -125px;
 }
-.pagination li.active a {
+.pagination li.current a {
 	height:26px;
 }
-.pagination li.active a span {
+.pagination li.current a span {
 	height:24px;
 	line-height:24px;
-	background:url(./images/ie6/pagination.png) no-repeat 0 -120px;
+	background:url(./images/ie6/pagination.png) no-repeat 0 -150px;
 	padding:0 9px;
 	font-weight:bold;
 }
-.pagination li.active a:hover span {
-	background-position:0 -120px;
-}
-.pagination .info {
-	display:block;
-	float:left;
-	color:#808080;
-	height:22px;
-	line-height:22px;
-	padding:0 15px 0 25px;
-	font-size:11px;
-	background:url(./images/ie6/pagination.png) no-repeat 0 -31px;
+.pagination li.current a:hover span {
+	background-position:0 -150px;
 }
 
 .pagination .newer {
@@ -1349,12 +1382,22 @@ a.btnLogout:hover {
 	.sidebars a.rssBtn {
 		display:block;
 		height:26px;
-		padding:0 0 0 34px;
+		padding:0 10px 0 32px;
 		line-height:26px;
 		font-size:12px;
 		font-weight:bold;
 		color:#662700;
 		background:url(./images/ie6/sidebars.png) no-repeat 0 -190px;
+	}
+	.sidebars a.twitterBtn {
+		display:block;
+		height:26px;
+		padding:0 10px 0 32px;
+		line-height:26px;
+		font-size:12px;
+		font-weight:bold;
+		color:#056;
+		background:url(./images/ie6/sidebars.png) no-repeat -250px -190px;
 	}
 .sidebars .b {
 	height:15px;

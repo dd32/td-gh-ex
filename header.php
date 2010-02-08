@@ -10,6 +10,7 @@ elseif (is_single() || is_page()) {single_post_title(); arjuna_get_appendToPageT
 elseif (is_search()) {_e('Search Results:', 'Arjuna'); echo " ".wp_specialchars($s); arjuna_get_appendToPageTitle(); }
 else { echo trim(wp_title(' ',false)); arjuna_get_appendToPageTitle(); }
 ?></title>
+<?php if(is_home()): ?><link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" /><?php endif; ?>
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <?php
 if (!$arjunaOptions['enableIE6optimization'] || !arjuna_isIE6()) { ?>

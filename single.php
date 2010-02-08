@@ -4,14 +4,22 @@
 <div class="contentArea">
 	<?php if (have_posts()) : ?>
 	<?php while (have_posts()) : the_post(); ?>
+	<?php if($arjunaOptions['posts_showTopPostLinks'] && arjuna_has_other_posts()): ?>
+	<div class="pagination paginationTop"><div>
+		<?php arjuna_get_previous_post_link(__('Previous Post', 'Arjuna')); ?>
+		<?php arjuna_get_next_post_link(__('Next Post', 'Arjuna')); ?>
+	</div></div>
+	<?php endif; ?>
+	
 	<div class="post" id="post-<?php the_ID(); ?>">
 		<div class="postHeader">
 			<h1 class="postTitle"><span><a href="<?php the_permalink() ?>" title="<?php _e('Permalink to', 'Arjuna'); ?> <?php the_title(); ?>"><?php the_title(); ?></a></span></h1>
 			<div class="bottom"><div>
 				<span class="postDate"><?php the_time(get_option('date_format')); ?><?php
 					//Time
-					if($arjunaOptions['postsShowTime'])
+					if($arjunaOptions['postsShowTime']) {
 						print _e(' at ', 'Arjuna'); the_time(get_option('time_format'));
+					}
 				?></span>
 				<?php if($arjunaOptions['postsShowAuthor']): ?>
 				<span class="postAuthor"><?php the_author_posts_link(); ?></span>
@@ -46,7 +54,15 @@
 	<div class="postComments" id="comments">
 		<?php comments_template(); ?>
 	</div>
+
+	<?php if($arjunaOptions['posts_showBottomPostLinks'] && arjuna_has_other_posts()): ?>
+	<div class="pagination"><div>
+		<?php arjuna_get_previous_post_link(__('Previous Post', 'Arjuna')); ?>
+		<?php arjuna_get_next_post_link(__('Next Post', 'Arjuna')); ?>
+	</div></div>
+	<?php endif; ?>
 	<?php endwhile; ?>
+
 
 
 	<?php else : ?>

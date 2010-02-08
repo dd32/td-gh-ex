@@ -66,10 +66,10 @@ pre {
 	height:350px;
 }
 
-.postHeader h2 {
+.postTitle {
 	background-image:url(./images/ie6/heading.png);
 }
-.postHeader h2 span {
+.postTitle span {
 	position:relative;
 	background-image:url(./images/ie6/heading.png);
 }
@@ -185,9 +185,15 @@ a.btn span {
 	zoom:1;
 }
 
+.paginationTop {
+	background-position:0 -30px;
+}
 .pagination div {
 	background-image:url(./images/ie6/pagination.png);
 	position:relative;
+}
+.paginationTop div {
+	background-position:right -30px;
 }
 .pagination a {
 	position:relative;
@@ -198,7 +204,9 @@ a.btn span {
 }
 .pagination,
 .pagination a span,
-.pagination li.active a span,
+.pagination li.current a span,
+.pagination li.prev a span,
+.pagination li.next a span,
 .pagination .info,
 .wp-paginate .title,
 .wp-paginate span,
@@ -252,7 +260,8 @@ a.btn span {
 .sidebars .i .i2,
 .sidebars .b,
 .sidebars .b div,
-.sidebars a.rssBtn {
+.sidebars a.rssBtn,
+.sidebars a.twitterBtn {
 	background-image:url(./images/ie6/sidebars.png);
 }
 .sidebars h4,

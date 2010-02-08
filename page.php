@@ -10,8 +10,9 @@
 			<div class="bottom"><div>
 				<span class="postDate"><?php the_time(get_option('date_format')); ?><?php
 					//Time
-					if($arjunaOptions['postsShowTime'])
+					if($arjunaOptions['postsShowTime']) {
 						print _e(' at ', 'Arjuna'); the_time(get_option('time_format'));
+					}
 				?></span>
 				<?php if($arjunaOptions['postsShowAuthor']): ?>
 				<span class="postAuthor"><?php the_author_posts_link(); ?></span>
@@ -39,7 +40,6 @@
 		<?php comments_template(); ?>
 	</div>
 	<?php endwhile; ?>
-
 
 	<?php else : ?>
   <p><?php _e('There is nothing here.', 'Arjuna'); ?></p>

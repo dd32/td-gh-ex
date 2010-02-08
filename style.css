@@ -4,7 +4,7 @@ Theme URI: http://www.srssolutions.com/en/downloads/arjuna_wordpress_theme
 Description: Arjuna stands for elegance, accessibility, and attention to detail. We have put a great deal in optimizing its ins and outs. Translation ready, SEO focused, IE6-8, Firefox, Chrome, Safari and Opera compatibility, support for threaded comments, four widget bars, flexible sidebar, and more. It can be customized via the admin panel.
 Author: SRS Solutions
 Author URI: http://www.srssolutions.com
-Version: 1.1.4
+Version: 1.2
 Tags: white, silver, light, three-columns, two-columns, fixed-width, right-sidebar, left-sidebar, theme-options, translation-ready, threaded-comments, black
 
 
@@ -872,12 +872,12 @@ li.comment li {
 /* Comment pagination */
 .commentNavigation {
 	height:24px;
-	background:url(./images/pagination.png) no-repeat 0 0;
+	background:url(./images/pagination.png) no-repeat 0 -30px;
 	margin:30px 10px 0 0;
 }
 .commentNavigation div {
 	height:24px;
-	background:url(./images/pagination.png) no-repeat right 0;
+	background:url(./images/pagination.png) no-repeat right -30px;
 	margin:0 -10px 0 10px;
 	padding:0 20px 0 10px;
 }
@@ -893,10 +893,10 @@ li.comment li {
 	font-size:11px;
 	line-height:18px;
 	padding:1px 7px;
-	background:#fff url(./images/pagination.png) no-repeat -15px -69px;
+	background:#fff url(./images/pagination.png) no-repeat -15px -99px;
 }
 .commentNavigation a:hover {
-	background-position:-15px -94px;
+	background-position:-15px -124px;
 	text-decoration:none;
 }
 .commentNavigation .title {
@@ -908,7 +908,7 @@ li.comment li {
 	padding:0 15px 0 25px;
 	font-size:11px;
 	border:none;
-	background:url(./images/pagination.png) no-repeat 0 -31px;
+	background:url(./images/pagination.png) no-repeat 0 -61px;
 }
 .commentNavigation .gap {
 	color:#808080;
@@ -924,7 +924,7 @@ li.comment li {
 	margin:-2px 1px -2px 0;
 	height:24px;
 	line-height:24px;
-	background:#fff url(./images/pagination.png) no-repeat 0 -119px;
+	background:#fff url(./images/pagination.png) no-repeat 0 -149px;
 	padding:1px 9px;
 	font-weight:bold;
 	color:#808080;
@@ -939,21 +939,21 @@ li.comment li {
 	margin:0;
 }
 .commentNavigation .newer a {
-	background:#fff url(./images/pagination.png) no-repeat 0 -69px;
+	background:#fff url(./images/pagination.png) no-repeat 0 -99px;
 	padding-left:20px;
 }
 .commentNavigation .newer a:hover {
-	background-position:0 -94px;
+	background-position:0 -124px;
 }
 .commentNavigation .older {
 	float:right;
 }
 .commentNavigation .older a {
-	background:#fff url(./images/pagination.png) no-repeat right -69px;
+	background:#fff url(./images/pagination.png) no-repeat right -99px;
 	padding-right:20px;
 }
 .commentNavigation .older a:hover {
-	background-position:right -94px;
+	background-position:right -124px;
 }
 
 
@@ -1056,25 +1056,68 @@ a.btnLogout:hover {
 
 .pagination {
 	height:24px;
-	background:url(./images/pagination.png) no-repeat 0 0;
+	background:url(./images/pagination.png) no-repeat 0 -30px;
 	margin:30px 10px 0 0;
+}
+.paginationTop {
+	margin:0 10px 30px 0;
+	background-position:0 0;
 }
 .pagination div {
 	height:24px;
-	background:url(./images/pagination.png) no-repeat right 0;
+	background:url(./images/pagination.png) no-repeat right -30px;
 	margin:0 -10px 0 10px;
 	padding:0 20px 0 10px;
 }
-.pagination ul {
+.paginationTop div {
+	background-position:right 0;
 }
+.pagination .info {
+	display:block;
+	float:left;
+	color:#808080;
+	height:22px;
+	line-height:22px;
+	padding:0 15px 0 25px;
+	font-size:11px;
+	background:url(./images/pagination.png) no-repeat 0 -61px;
+}
+
 .pagination li {
 	float:left;
 	margin:1px 1px 1px 0;
 }
-.pagination li.active {
+.pagination li.current {
 	float:left;
 	margin:-2px 1px -2px 0;
 	height:26px;
+}
+.pagination li.prev {
+	margin-right:10px;
+}
+.pagination li.prev a span {
+	background:url(./images/pagination.png) no-repeat 0 -100px;
+	padding:0 7px 0 20px;
+}
+.pagination li.prev a:hover span {
+	background-position:0 -125px;
+}
+.pagination li.next {
+	margin-left:10px;
+}
+.pagination li.next a span {
+	background:url(./images/pagination.png) no-repeat right -100px;
+	padding:0 20px 0 7px;
+}
+.pagination li.next a:hover span {
+	background-position:right -125px;
+}
+.pagination li.gap span {
+	line-height:22px;
+	display:block;
+	float:left;
+	padding:0 5px;
+	color:#808080;
 }
 .pagination a {
 	display:block;
@@ -1091,37 +1134,27 @@ a.btnLogout:hover {
 	font-size:11px;
 	line-height:18px;
 	padding:0 7px;
-	background:url(./images/pagination.png) no-repeat -15px -70px;
+	background:url(./images/pagination.png) no-repeat -15px -100px;
 }
 .pagination a:hover {
 	text-decoration:none;
 	border-color:#808080;
 }
 .pagination a:hover span {
-	background-position:-15px -95px;
+	background-position:-15px -125px;
 }
-.pagination li.active a {
+.pagination li.current a {
 	height:26px;
 }
-.pagination li.active a span {
+.pagination li.current a span {
 	height:24px;
 	line-height:24px;
-	background:url(./images/pagination.png) no-repeat 0 -120px;
+	background:url(./images/pagination.png) no-repeat 0 -150px;
 	padding:0 9px;
 	font-weight:bold;
 }
-.pagination li.active a:hover span {
-	background-position:0 -120px;
-}
-.pagination .info {
-	display:block;
-	float:left;
-	color:#808080;
-	height:22px;
-	line-height:22px;
-	padding:0 15px 0 25px;
-	font-size:11px;
-	background:url(./images/pagination.png) no-repeat 0 -31px;
+.pagination li.current a:hover span {
+	background-position:0 -150px;
 }
 
 .pagination .newer {
@@ -1129,11 +1162,11 @@ a.btnLogout:hover {
 	margin-top:1px;
 }
 .pagination .newer span {
-	background:url(./images/pagination.png) no-repeat 0 -70px;
+	background:url(./images/pagination.png) no-repeat 0 -100px;
 	padding-left:20px;
 }
 .pagination a.newer:hover span {
-	background-position:0 -95px;
+	background-position:0 -125px;
 }
 .pagination .older {
 	display:block;
@@ -1141,11 +1174,11 @@ a.btnLogout:hover {
 	margin-top:1px;
 }
 .pagination .older span {
-	background:url(./images/pagination.png) no-repeat right -70px;
+	background:url(./images/pagination.png) no-repeat right -100px;
 	padding-right:20px;
 }
 .pagination a.older:hover span {
-	background-position:right -95px;
+	background-position:right -125px;
 }
 
 /* Footer */
@@ -1253,7 +1286,6 @@ a.btnLogout:hover {
 	clear:both;
 }
 .sidebarIcons {
-	height:26px;
 	overflow:hidden;
 }
 .sidebarIcons a {
@@ -1393,12 +1425,22 @@ a.btnLogout:hover {
 	.sidebars a.rssBtn {
 		display:block;
 		height:26px;
-		padding:0 0 0 34px;
+		padding:0 10px 0 32px;
 		line-height:26px;
 		font-size:12px;
 		font-weight:bold;
 		color:#662700;
 		background:url(./images/sidebars.png) no-repeat 0 -190px;
+	}
+	.sidebars a.twitterBtn {
+		display:block;
+		height:26px;
+		padding:0 10px 0 32px;
+		line-height:26px;
+		font-size:12px;
+		font-weight:bold;
+		color:#056;
+		background:url(./images/sidebars.png) no-repeat -250px -190px;
 	}
 .sidebars .b {
 	height:15px;

@@ -32,7 +32,8 @@ Currently available translations:
 - French (thanks to Laurent Measson)
 - Brazilian (thanks to Pedro Spoladore)
 - Spanish (thanks to José Marín)
-- German (thanks to Frank Weichbrodt)
+- German (thanks to Frank Weichbrodt and Markus Liebl)
+- Czech (thanks to Jirka Knapek and Ivan)
 
 
 More Information and Support
@@ -60,6 +61,19 @@ Nonetheless, we still hope that IE6 will rest in peace soon.
 Changelog:
 ---------------------------------------------------
 
+1.2
+- New feature: Native support for pagination has been added.
+- New feature: It's now possible to enable links to previous and next posts on permalink pages, i.e. the URL where one single post/page is displayed.
+- New feature: The RSS button in the sidebar can now be disabled.
+- New feature: Arjuna now integrates a simple Twitter icon, which will appear right next to the RSS icon in the sidebar.
+- Localization added: Czech (1.2)
+- Localizations updated: Lithuanian, Spanish, French, Brazilian, German (1.2)
+- Improved feature: The custom CSS now also works even if Arjuna has no write permissions to the theme directory. The CSS rules will be included in the HTML HEAD. This ensures maximum compatibility with a variety of setups.
+- Some minor performance optimizations.
+- Fixed bug: When the display of time in posts is disabled in the admin, the date would inaccurately append the time without any space or words in between.
+- Fixed bug: When the date format of comments was set to the default date format (showing a date instead of the elapsed time), the date was not correctly translated by WordPress. This only occured in non-English WordPress installations.
+- Fixed bug: When users had to be logged in to post a comment, the sidebar would be placed below the whole post.
+- Fixed IE6 display bugs: There had been some IE6 bugs since version 1.1.3, that appeared with and without IE6 optimization enabled.
 1.1.4
 - Localization updated: Brazilian (1.1.3)
 - Fixed bug: When displaying the elapsed time of a comment, there was an error with handling time zones. That way, some comments showed a negative number of seconds.
