@@ -1,5 +1,5 @@
-
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+<?php if (have_posts()) : ?>
+<?php while (have_posts()) : the_post(); ?>
 
 <div class="post" id="post-<?php the_ID(); ?>">
 
@@ -11,42 +11,50 @@
         </legend>
 
         <?php if( is_single() || $options['showpagemeta'] == 1 ) : ?>
-            <div class='capsule dateauthor'>
-                <?php the_time('F jS, Y') ?> by <?php the_author() ?>
+            <!-- wrap the date author in a div so that it sits by itself with a bottom margin -->
+            <div>
+                <div class='capsule dateauthor'>
+                    <?php the_time('F jS, Y') ?> by <?php the_author() ?>
+                </div>
+                <br clear='all'/>
             </div>
         <?php endif; ?>
 
-        <div id='postaction' class='actbubble'>
+        <?php if( is_single() || $options['showpageactions'] == 1 ) : ?>
 
-            <ul>
+            <div id='postaction' class='actbubble'>
 
-                <?php edit_post_link('Edit Entry', '<li>', '</li>'); ?>
+                <ul>
 
-                <?php
-                            
-                    if (('open' == $post-> comment_status) && ('open' == $post->ping_status))
-                    {
-                        print "
-                            <li> <a href='#respond'>Add Comment</a> </li>
-                            <li> <a href='" . trackback_url(false) . "' rel='trackback'>Trackback</a> </li>
-                            ";
-                    }
-                    elseif (!('open' == $post-> comment_status) && ('open' == $post->ping_status))
-                    {
-                        print "<li> <a href='" . trackback_url(false) . "' rel='trackback'>Trackback</a> </li>";
-                    }
+                    <?php edit_post_link('Edit Entry', '<li>', '</li>'); ?>
 
-                ?>
+                    <?php
+                                
+                        if (('open' == $post-> comment_status) && ('open' == $post->ping_status))
+                        {
+                            print "
+                                <li> <a href='#respond'>Add Comment</a> </li>
+                                <li> <a href='" . trackback_url(false) . "' rel='trackback'>Trackback</a> </li>
+                                ";
+                        }
+                        elseif (!('open' == $post-> comment_status) && ('open' == $post->ping_status))
+                        {
+                            print "<li> <a href='" . trackback_url(false) . "' rel='trackback'>Trackback</a> </li>";
+                        }
 
-                <li>
-                    <img border='0' align='middle' alt='Comments Feed'
-                        src='<?php print bloginfo('template_directory') . "/images/rss-icon.gif"; ?>' />
-                    <?php comments_rss_link('Comments Feed'); ?>
-                </li>
+                    ?>
 
-            </ul>
+                    <li>
+                        <img border='0' align='middle' alt='Comments Feed'
+                            src='<?php print bloginfo('template_directory') . "/images/rss-icon.gif"; ?>' />
+                        <?php comments_rss_link('Comments Feed'); ?>
+                    </li>
 
-        </div> <!-- end postaction -->
+                </ul>
+
+            </div> <!-- end postaction -->
+
+        <?php endif; ?>
 
         <div class="entry">
             <?php the_content('Read the rest of this entry &raquo;'); ?>
@@ -82,7 +90,7 @@
             </div>
 
             <!-- inline style for easy JavaScript mods, without getting computed styles -->
-            <div id='postcats' class='postcattags postcats' style='display: none; opacity: 0;'>
+            <div id='postcats' class='postcattags postcats' style='display: none;'>
             <?php
                 foreach((get_the_category()) as $cat)
                     print
@@ -96,7 +104,7 @@
 
             <?php if( get_the_tags() ) : ?>
             <!-- inline style for easy JavaScript mods, without getting computed styles -->
-            <div id='posttags' class='postcattags posttags' style='display: none; opacity: 0;'>
+            <div id='posttags' class='postcattags posttags' style='display: none;'>
             <?php
                 print
                     get_the_tag_list(
@@ -118,7 +126,8 @@
 
 </div>
 
-<?php endwhile; else: ?>
+<?php endwhile; ?>
+<?php else: ?>
 
 <div class="post">
     <fieldset>
@@ -132,12 +141,3 @@
 </div>
 
 <?php endif; // have_posts() ?>
-
-</div>
-
-<?php if( $options['defhidesbpages'] == 1 ): ?>
-    <script language='JavaScript'>
-        fadeSideBar();
-    </script>
-<?php endif; ?>
-

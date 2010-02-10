@@ -1,5 +1,7 @@
 <?php
 
+include_once("utils.php");
+
 if( ! is_array(get_option('ahimsa')) )
     add_option('ahimsa', array('init' => 1));
 
@@ -14,6 +16,7 @@ if( ! isset($options['defhidesbpages'   ]) ) $options['defhidesbpages'  ] = 1;
 if( ! isset($options['sectprefix'       ]) ) $options['sectprefix'      ] = 1;
 if( ! isset($options['idxfadepmeta'     ]) ) $options['idxfadepmeta'    ] = 0;
 if( ! isset($options['showpagemeta'     ]) ) $options['showpagemeta'    ] = 1;
+if( ! isset($options['showpageactions'  ]) ) $options['showpageactions' ] = 1;
 if( ! isset($options['iecorners'        ]) ) $options['iecorners'       ] = 0;
 if( ! isset($options['showdelic'        ]) ) $options['showdelic'       ] = 0;
 if( ! isset($options['delicid'          ]) ) $options['delicid'         ] = "";
@@ -28,12 +31,28 @@ update_option('ahimsa', $options);
 add_action('admin_menu', 'ahimsa_admin_menu');
 
 if ( function_exists('register_sidebar') )
+    add_sidebars();
+
+#-------------------------------------------------------------------------------
+function add_sidebars()
+{
+    global $options, $sectprefix;
+
     register_sidebar(array(
+        'name' => 'leftbar',
         'before_widget' => "<fieldset class='sidebarlist'>",
         'after_widget' => "</fieldset>",
         'before_title' => "<legend>$sectprefix",
         'after_title' => "</legend>",
     ));
+    register_sidebar(array(
+        'name' => 'rightbar',
+        'before_widget' => "<fieldset class='sidebarlist'>",
+        'after_widget' => "</fieldset>",
+        'before_title' => "<legend>$sectprefix",
+        'after_title' => "</legend>",
+    ));
+}
 
 #-------------------------------------------------------------------------------
 function ahimsa_admin_menu()
@@ -45,6 +64,9 @@ function ahimsa_admin_menu()
 function ahimsa_options()
 {
     global $options;
+
+    // TODO: sneak this in here for now
+    check_store_mksymlinks();
 
     if( $_POST['action'] == 'save' )
         save_options();
@@ -77,7 +99,7 @@ function ahimsa_options()
             </li>
             <li style='list-style-type: circle;  margin-left: 10px;'>
                 <a
-                href='http://www.facebook.com/home.php#/pages/Ahren-Code/64305786260'>Facebook</a>
+                href='http://www.facebook.com/ahrencode'>Facebook</a>
             </li>
             <li style='list-style-type: circle;  margin-left: 10px;'>
                 <a href='http://ahren.org/code/tag/ahimsa'>Blog</a>
@@ -102,11 +124,22 @@ function ahimsa_options()
                 '
         >
             Want to add your own funky JavaScript or some such in the footer?
-            Create a file called <code>footer-custom.php</code> in the Ahimsa
-            theme directory and put your code in there. Note that once you
-            create the file, you can edit it using the WordPress theme editor.
+            Create a file <code>" .
+            WP_CONTENT_DIR . "/themestore/ahimsa/footer-custom.php</code>
+            and put your code in there.
+        ";
+        
+        if( file_exists(TEMPLATEPATH . "/footer-custom.php") )
+            print
+            "
+                <b>You can do that by using the Theme Editor</b>
+                (<i>Dashboard->Appearance->Editor</i>).
+            ";
+
+        print
+        "
         </div>
- 
+
         <form id='settings' action='' method='post' class='themeform'
             style='margin: 20px;'>
 
@@ -148,6 +181,11 @@ function ahimsa_options()
                 ($options['showpagemeta'] == 1 ? ' checked' : '') .  " />
             <label style='margin-left: 5px;' for='showpagemeta'>
                 Show author and date information for pages</label><br />
+
+            <input type='checkbox' name='showpageactions' id='showpageactions'" .
+                ($options['showpageactions'] == 1 ? ' checked' : '') .  " />
+            <label style='margin-left: 5px;' for='showpageactions'>
+                Show actions and comment feed link box for pages</label><br />
 
             <input type='checkbox' name='iecorners' id='iecorners'" .
                 ($options['iecorners'] == 1 ? ' checked' : '') .  " />
@@ -205,10 +243,21 @@ function ahimsa_options()
                     clear: right;
                     '>
                 Know your CSS and want to do more detailed customisations? That's easy!
-                Just create a file called <code>custom.css</code> in the theme directory,
+                Just create a file called <code>"
+                . WP_CONTENT_DIR . "/themestore/ahimsa/custom.css</code>
                 and add your custom styling in there. That's it! All customisations in
-                this file are retained even if you upgrade the theme.
+                this file should be retained even if you upgrade the theme.
+        ";
+        
+        if( file_exists(TEMPLATEPATH . "/custom.css") )
+            print
+            "
+                <b>You can do that by using the Theme Editor</b>
+                (<i>Dashboard->Appearance->Editor</i>).
+            ";
 
+        print
+        "
                 <br />
                 <br />
                 <hr size='1' />
@@ -221,7 +270,11 @@ function ahimsa_options()
 
             <input type='checkbox' name='skinupdate' id='skinupdate' />
             <label style='margin-left: 5px;' for='skinupdate'>Update Skins</label>
-            (PLEASE backup your skin before you attempt this)
+            <div style='margin-left: 30px; font-size: smaller;'>
+                (PLEASE backup your skin before you attempt this. If you are upgraded
+                 Ahimsa by more than one version then you may have to do this update
+                 multiple times -- one for each intermediate version.)
+            </div>
 
             <br />
             <br />
@@ -308,7 +361,7 @@ array
     (
         name    => "skinsidebarbg",
         desc    => "Sidebar Background",
-        csssel  => "#sidebar, #tdsidebar",
+        csssel  => ".sidebar, .tdsidebar",
         attr    => "background-color"
     ),
     array
@@ -491,14 +544,14 @@ array
     (
         name    => "skinlistbg",
         desc    => "Page/Post Ordered/Unordered List Background",
-        csssel  => ".entry UL, .page UL, .entry OL, .page OL",
+        csssel  => ".entry UL, .entry OL",
         attr    => "background-color"
     ),
     array
     (
         name    => "skinlistfg",
         desc    => "Page/Post Ordered/Unordered Text Colour",
-        csssel  => ".entry UL, .page UL, .entry OL, .page OL",
+        csssel  => ".entry UL, .entry OL",
         attr    => "color"
     ),
     array
@@ -558,41 +611,27 @@ function skins_menu()
     global $skin_fields, $options;
 
     $html = "";
+    $curskin = $options['skin'];
 
-    $skindir = TEMPLATEPATH . "/skins";
-    if( ! is_dir($skindir) )
-    {
-        if( ! @mkdir($skindir) )
-            $html .= "Failed to create $skindir. Permissions problems? <br/>";
-
-        return($html);
-    }
-
-    if( ! $skinfd = opendir($skindir) )
-    {
-        $html .= "Unable to read skins from $skindir. <br/>";
-        return($html);
-    }
-
-    $checked = ($options['skin'] == 'none') ? 'checked' : "";
+    $checked = ($curskin == 'none') ? 'checked' : "";
     $html .= "<input type=radio name=skin value=none $checked> None <br/>\n";
-    while ( ($skinfile = readdir($skinfd)) !== false )
+
+    $skinfiles = util_get_skin_files();
+    foreach( $skinfiles as $skinfile )
     {
-        if( ! preg_match("/^skin_(.+)\.css$/", $skinfile, $matches) )
-            continue;
-        $checked = ($options['skin'] == $matches[1]) ? 'checked' : "";
+        $filename = basename($skinfile);
+        $skinname = preg_replace("/^skin_([^\.]+)\.css/", "$1", $filename);
+        $checked = ($skinname == $curskin) ? 'checked' : "";
         $html .=
         "
-            <input type=radio name=skin value='$matches[1]' $checked> $matches[1]
-            (<a href='" . get_bloginfo("url") . "?ahimsaskin=$matches[1]' target=_new>Preview</a>)
+            <input type=radio name=skin value='$skinname' $checked> $skinname
+            (<a href='" . get_bloginfo("url") . "?ahimsaskin=$skinname' target=_new>Preview</a>)
             <br/>
         ";
     }
 
-    closedir($skinfd);
-
-    if( $options['skin'] != 'none' )
-        $skinfile_array = read_skin_file("$skindir/skin_$options[skin].css");
+    if( $curskin != 'none' )
+        $skinfile_array = read_skin_file(util_get_skin_path($curskin));
     else
         $skinfile_array = array();
 
@@ -611,10 +650,14 @@ function skins_menu()
 
         <div id='skinedit' style='display: none;'>
 
+        <br/>
+        Caution: if you edit an Ahimsa supplied skin, you really should rename
+        it and save it as a new skin.
+
         <h4>Enter Skin Details</h4>
 
         <p>(hint: change the name below to create a new skin)</p>
-        Skin name: <input type=text name=skinname size=20 value='" . $options['skin'] . "'>
+        Skin name: <input type=text name=skinname size=20 value='$curskin'>
         &nbsp;&nbsp;&nbsp;
         <a href='javascript:
                     document.getElementById(\"skinedit\").style.display = \"none\";
@@ -683,6 +726,7 @@ function save_options()
     $options['sectprefix']      = ( isset($_POST['sectprefix']) ) ? 1 : 0;
     $options['idxfadepmeta']    = ( isset($_POST['idxfadepmeta']) ) ? 1 : 0;
     $options['showpagemeta']    = ( isset($_POST['showpagemeta']) ) ? 1 : 0;
+    $options['showpageactions'] = ( isset($_POST['showpageactions']) ) ? 1 : 0;
     $options['iecorners']       = ( isset($_POST['iecorners']) ) ? 1 : 0;
     $options['showdelic']       = ( isset($_POST['showdelic']) ) ? 1 : 0;
     $options['delicid']         = ( isset($_POST['delicid']) ) ? $_POST['delicid'] : "";
@@ -741,13 +785,13 @@ function save_skin()
         ";
     }
 
-    return(write_skin_file(TEMPLATEPATH . "/skins/skin_$skinname.css", $skincss));
+    return(write_skin_file(WP_CONTENT_DIR . "/themestore/ahimsa/skin_$skinname.css", $skincss));
 }
 
 //------------------------------------------------------------------------------
 function read_skin_file($skinfile)
 {
-    if( ! ($styles = @file("$skindir/$skinfile", FILE_IGNORE_NEW_LINES|FILE_SKIP_EMPTY_LINES)) )
+    if( ! ($styles = @file("$skinfile", FILE_IGNORE_NEW_LINES|FILE_SKIP_EMPTY_LINES)) )
     {
         ah_admin_error("Unable to read skin file: $skinfile");
         return(false);
@@ -853,32 +897,27 @@ function update_skins()
             "#postaction a, replybuttonbox .capsule, #respond INPUT#submit"
             => ".actbubble, .actbubble a",
         "fieldset#comments"                         => "#comments",
-        "fieldset#responsebox"                      => "#responsebox"
+        "fieldset#responsebox"                      => "#responsebox",
+        "#sidebar, #tdsidebar"                      => ".sidebar, .tdsidebar"
     );
 
     // TODO: some of this code is common to skins_menu() and should be
     // abstracted rather than duplicated.
 
-    $skindir = TEMPLATEPATH . "/skins";
-
-    if( ! is_dir($skindir) )
+    $skinfiles = util_get_skin_files();
+    if( ! sizeof($skinfiles) )
     {
         ah_admin_error("No skins!");
         return(false);
     }
 
-    if( ! $skinfd = opendir($skindir) )
+    foreach( $skinfiles as $skinfile )
     {
-        ah_admin_error("Unable to read skins from $skindir");
-        return(false);
-    }
-
-    while( ($skinfile = readdir($skinfd)) !== false )
-    {
-        if( ! preg_match("/^skin_(.+)\.css$/", $skinfile, $matches) )
+        $filename = basename($skinfile);
+        if( ! preg_match("/^skin_(.+)\.css$/", $filename, $matches) )
             continue;
 
-        if( ($skinfile_array = read_skin_file("$skindir/$skinfile")) == false )
+        if( ($skinfile_array = read_skin_file($skinfile)) == false )
             return(false);
 
         $newskin = "";
@@ -896,12 +935,51 @@ function update_skins()
             $newskin .= "}\n";
         }
 
-        if( ! write_skin_file("$skindir/$skinfile", $newskin) )
+        if( ! write_skin_file($skinfile, $newskin) )
             return(false);
     }
+}
 
-    closedir($skinfd);
- 
+//------------------------------------------------------------------------------
+function check_store_mksymlinks()
+{
+    $themestore = WP_CONTENT_DIR . "/themestore";
+    $ahimsastore = $themestore . "/ahimsa";
+    foreach( array($themestore, $ahimsastore) as $dir )
+    {
+        if( is_dir($dir) )
+            continue;
+        if( ! @mkdir($dir) )
+        {
+            ah_admin_error(
+                "
+                    A bit of a problem has occurred. I could not create: $dir.
+                    This is probably because your WordPress or WebServer (Apache?)
+                    installation is such that the webserver program does not
+                    have write access to this directory. As a consequence, you
+                    cannot use the Skins feature of Ahimsa to create new colour
+                    schemes.
+                    
+                    Don't lose heart entirely. Contact
+                    <a href='mailto:code@ahren.org'>me</a> and we can see if
+                    there is a way around this situation.
+                ");
+            return;
+        }
+    }
+
+
+    // create some symlinks to make editing custom stuff easier
+    foreach( array("custom.css", "footer-custom.php") as $file )
+    {
+        // fail silently
+        if( ! file_exists("$ahimsastore/$file") )
+            if( ! @touch("$ahimsastore/$file") )
+                return;
+        if( ! file_exists(TEMPLATEPATH . "/$file") )
+            if( ! @symlink("$ahimsastore/$file", TEMPLATEPATH . "/$file") )
+                return;
+    }
 }
 
 //------------------------------------------------------------------------------
@@ -910,13 +988,15 @@ function ah_admin_error($msg)
         print
         "
             <div
-                style='background-color: #aa4400;
-                        color: #ffffff;
-                        border: 1px solid #660000;
-                        padding: 3px 8px;
-                        width: 300px;
-                        margin-top: 30px;
-                        margin-left: 20px'>
+                style=
+                '
+                    background-color: #bb4400;
+                    color: #ffffff;
+                    padding: 15px 20px;
+                    width: 500px;
+                    margin-top: 30px;
+                    margin-left: 20px
+                '>
             $msg
             </div>
         ";

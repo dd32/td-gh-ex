@@ -1,4 +1,6 @@
 
+<?php if( is_active_sidebar(2) ) get_sidebar('right'); ?>
+
 </td>
 </tr>
 </table> <!-- end of table main -->
@@ -29,8 +31,8 @@ if( $options['copyright'] != "" )
 </table> <!-- end of table container -->
 
 <?php
-    if( file_exists(TEMPLATEPATH . "/footer-custom.php") )
-        include_once(TEMPLATEPATH . "/footer-custom.php");
+    if( file_exists(WP_CONTENT_DIR . "/themestore/ahimsa/footer-custom.php") )
+        include_once(WP_CONTENT_DIR . "/themestore/ahimsa/footer-custom.php");
 ?>
 
 <?php wp_footer(); ?>

@@ -1,3 +1,4 @@
+<?php
 
 // Do not delete these lines
 if('comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
@@ -21,7 +22,7 @@ if($comments) :
 <div id='comments'>
 
     <h3 id="commentheader">
-    <?php comments_number('No Responses', 'One Response', '% Responses' );?>
+        <?php comments_number('No Responses', 'One Response', '% Responses' );?>
     </h3>
 
     <?php foreach ($comments as $comment) : ?>

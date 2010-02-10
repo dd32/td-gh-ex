@@ -3,19 +3,18 @@
 <?php if( $options['showdelic'] && $options['delicid'] ) :
     $delid = $options['delicid']; ?>
 
-<div id='recent'>
-    <div id='recentheader'>
-        <div id='recentclose'
-            onclick='toggleDelicious();'>+</div>
-        <div id='recentmore' class='capsule'
-            onclick='document.location="http://delicious.com/<?php print $delid; ?>";'> More </div>
-        <?php print $options['delictitle']; ?>
-        <!-- inline style for easy JavaScript mods, without getting computed styles -->
-        <div id='recentlist' style='opacity: 1.0; display: block;'>
-            <?php delicious_bookmarks($delid, 5, true, false); ?>
+    <div id='recent'>
+        <div id='recentheader'>
+            <div id='recentclose'
+                onclick='toggleDelicious();'>+</div>
+            <div id='recentmore' class='capsule'
+                onclick='document.location="http://delicious.com/<?php print $delid; ?>";'> More </div>
+            <?php print $options['delictitle']; ?>
+            <div id='recentlist'>
+                <?php delicious_bookmarks($delid, 5, true, false); ?>
+            </div>
         </div>
     </div>
-</div>
 
 <?php endif; ?>
 
@@ -32,8 +31,12 @@
                         title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
                 </legend>
 
-                <div class='capsule dateauthor'>
-                    <?php the_time('M jS, Y') ?> by <?php the_author() ?>
+                <!-- wrap the date author in a div so that it sits by itself with a bottom margin -->
+                <div>
+                    <div class='capsule dateauthor'>
+                        <?php the_time('M jS, Y') ?> by <?php the_author() ?>
+                    </div>
+                    <br clear='all'/>
                 </div>
 
                 <div class="entry">
@@ -65,7 +68,7 @@
 
                     <!-- inline style for easy JavaScript mods, without getting computed styles -->
                     <div id='postcats-<?php the_ID(); ?>' class='postcattags postcats'
-                        style='display: none; opacity: 0;'>
+                        style='display: none;'>
                         <?php
                             $first = 1;
                             foreach((get_the_category()) as $cat)
@@ -83,7 +86,7 @@
                     <?php if( get_the_tags() ) : ?>
                         <!-- inline style for easy JavaScript mods, without getting computed styles -->
                         <div id='posttags-<?php the_ID(); ?>' class='postcattags posttags'
-                            style='display: none; opacity: 0;'>
+                            style='display: none;'>
                             <?php
                                 print
                                     get_the_tag_list(
@@ -130,11 +133,12 @@
 
 <?php endif; ?>
 
+<?php get_footer(); ?>
+
 <?php if( $options['defhidesidebar'] == 1 ): ?>
     <script language='JavaScript'>
-        fadeSideBar();
+        fadeSideBar('left');
+        fadeSideBar('right');
     </script>
 <?php endif; ?>
-
-<?php get_footer(); ?>
 

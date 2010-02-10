@@ -1,4 +1,3 @@
-
 <?php get_header(); ?>
 
 <div id='single' style='width: 100%;'>
@@ -8,4 +7,11 @@
 <?php comments_template(); ?>
 
 <?php get_footer(); ?>
+
+<?php if( $options['defhidesbpages'] == 1 ): ?>
+    <script language='JavaScript'>
+        fadeSideBar('left');
+        fadeSideBar('right');
+    </script>
+<?php endif; ?>
 

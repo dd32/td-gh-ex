@@ -1,13 +1,13 @@
 /*  
 Theme Name: Ahimsa
 Theme URI: http://ahren.org/code/ahimsa
-Description: Ahimsa -- customisable colours, different skins, low graphics, minimal distractions, collapsible sidebar, with rounded corners in Firefox, Safari, Chrome (some support in IE). New for version 3.0: IE6 support dropped, many, many fixes and features, editable colour schemes (skins), custom CSS and footer support, W3C/XHTML 1.0 Standard validation. Please visit http://ahren.org/code/bit/ahimsa-wp-3dot0 for feature and fixes list and to suggest changes.
-Version: 3.0
+Description: Ahimsa -- customisable collapsible sidebars, skinnable colour schemes, custom CSS and footer, low graphics, minimal distractions, with rounded corners in Firefox, Safari, Chrome (some support in IE). New for version 3.1: PLEASE NOTE: You may need to run a custom plugin with this update. Please, please visit <a href='http://ahren.org/code/bit/ahimsa-wp-3dot1'>http://ahren.org/code/bit/ahimsa-wp-3dot1</a> for details on that and other issues (including a comprehensive list of changes). If you are not going to install and use the plugin, and you have created custom skins or used a custom stylesheet or footer, <b>PLEASE backup your theme files</b> before you upgrade.
+Version: 3.1
 Author: Ravi Sarma
 Author URI: http://ahren.org/code/
-Tags: two-columns, flexible-width, left-sidebar, theme-options, threaded-comments
+Tags: one-column, two-columns, flexible-width, left-sidebar, right-sidebar, theme-options, threaded-comments, custom-colors, light, yellow, red, orange, green
 
-	 Ahimsa 3.0
+	 Ahimsa 3.1
 	 http://ahren.org/code/ahimsa
 
 	Theme built for the Ahren Code site but free for all
@@ -32,7 +32,7 @@ BODY
     border-style: none;
     background-color: #6f900d;
     font-size: medium;
-    font-family: Futura, Helvetica, sans-serif;
+    font-family: "Lucida Grande", Futura, Helvetica, sans-serif;
 }
 
 A
@@ -54,29 +54,15 @@ IMG
 BLOCKQUOTE
 {
     background-image: URL('images/quote.gif');
-    background-position: 0px 1px;
+    background-position: 2px 1px;
     background-repeat: no-repeat;
     background-color: #f0f0aa;
-    color: #333355;
+    color: #222222;
     margin: 15px 25px 15px 25px;
     padding: 20px 20px 10px 20px;
     border-radius: 15px;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
-}
-
-/* hack to get fieldset background and legend position working right in IE */
-FIELDSET
-{
-    position: relative;
-    margin: 0 0 1em 0;
-}
-
-FIELDSET LEGEND
-{
-    position: absolute;
-    top: -15px;
-    left: 3%;
 }
 
 /*
@@ -89,7 +75,7 @@ FIELDSET LEGEND
 {
     text-align: center;
     padding: 4px 10px;
-    font-family: Optima, Verdana, Helvetica;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
     font-size: small;
     border-radius: 10px; 
     background-color: #cc9900;
@@ -140,7 +126,8 @@ FIELDSET LEGEND
 
 #main
 {
-    margin: 60px 40px 60px 20px;
+    margin: 60px auto 60px auto;
+    width: 90%;
     border-radius: 30px; 
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px; 
@@ -174,8 +161,7 @@ FIELDSET LEGEND
 #title
 {
     height: 20px;
-    font-size:  24pt;
-    font-family: "Trebuchet MS", "Gill Sans", Skia, "Century Gothic";
+    font-size: 24pt;
     padding-right: 15px;
     padding-left: 10px;
     border-right: 2px solid #ffdd00;
@@ -233,7 +219,6 @@ FIELDSET LEGEND
 {
     padding: 5px 10px;
     font-size: large;
-    font-family: "Trebuchet MS", "Gill Sans", Skia, "Century Gothic";
 }
 
 #recentmore
@@ -293,7 +278,7 @@ FIELDSET LEGEND
     color: #ffffff;
 }
 
-#sidebartab
+.sidebartab
 {
     width: 20px;
     text-align: center;
@@ -304,29 +289,54 @@ FIELDSET LEGEND
     background-color: #111111;
     color: #cccccc;
     cursor: pointer;
-    -webkit-border-bottom-left-radius: 8px;
-    -webkit-border-top-left-radius: 8px;
-    -moz-border-radius-bottomleft: 8px;
-    -moz-border-radius-topleft: 8px;
     opacity: 0.8;
     filter: alpha(opacity = 80);
 }
 
-#tdsidebar,
-#sidebar
+#sidebartableft
 {
-    background-color: #ff9f06;
-    border-radius-bottomleft: 30px; 
-    -webkit-border-bottom-left-radius: 30px;
-    -moz-border-radius-bottomleft: 30px; 
+    -webkit-border-bottom-left-radius: 8px;
+    -webkit-border-top-left-radius: 8px;
+    -moz-border-radius-bottomleft: 8px;
+    -moz-border-radius-topleft: 8px;
 }
 
-#sidebar
+#sidebartabright
+{
+    -webkit-border-bottom-right-radius: 8px;
+    -webkit-border-top-right-radius: 8px;
+    -moz-border-radius-bottomright: 8px;
+    -moz-border-radius-topright: 8px;
+}
+
+.tdsidebar,
+.sidebar
+{
+    background-color: #ff9f06;
+}
+
+.sidebar
 {
     color: #111111;
     padding: 10px;
     padding-top: 15px;
     height: 100%;
+}
+
+#tdsidebarleft,
+#sidebarleft
+{
+    border-radius-bottomleft: 30px; 
+    -webkit-border-bottom-left-radius: 30px;
+    -moz-border-radius-bottomleft: 30px; 
+}
+
+#tdsidebarright,
+#sidebarright
+{
+    border-radius-bottomright: 30px; 
+    -webkit-border-bottom-right-radius: 30px;
+    -moz-border-radius-bottomright: 30px; 
 }
 
 .sidebarlist
@@ -344,7 +354,6 @@ FIELDSET LEGEND
 
 .sidebarlist > LEGEND
 {
-    font-family: "Trebuchet MS", Verdana, Helvetica;
     font-size: 10pt;
     font-weight: normal;
     color: #ffffff;
@@ -475,9 +484,20 @@ FIELDSET LEGEND
     padding-top: 30px;
     width: 100%;
     background-color: #aaaaaa;
-    border-radius-bottomright: 30px; 
+}
+
+.contentnoleftsb
+{
+    -webkit-border-bottom-left-radius: 30px;
+    -moz-border-radius-bottomleft: 30px;
+    border-radius-bottomleft: 30px;
+}
+
+.contentnorightsb
+{
     -webkit-border-bottom-right-radius: 30px;
-    -moz-border-radius-bottomright: 30px; 
+    -moz-border-radius-bottomright: 30px;
+    border-radius-bottomright: 30px;
 }
 
 .post
@@ -489,7 +509,7 @@ FIELDSET LEGEND
 {
     background-color: #ffffff;
     padding: 0px;
-    padding-top: 20px;
+    padding-top: 10px;
     /* Firefox uses padding-left to determine Fieldset Legend margin!!! */
     padding-left: 15px;
     border-style: none;
@@ -505,18 +525,20 @@ FIELDSET LEGEND
 {
     background-color: #6f900d;
     border: 0px solid #666666;
-    font-size: large;
+    font-size: 12pt;
     padding: 4px 20px;
     margin-left: 15px; /* doesn't work for Firefox -- see comment above in .post fieldset */
     border-radius: 8px; 
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px; 
-    font-family: "Trebuchet MS", "Gill Sans", Helvetica, Arial;
 }
 
+#title,
 LEGEND,
-LEGEND A
+LEGEND A,
+#recentheader
 {
+    font-family: "Trebuchet MS", Skia, "Century Gothic", sans-serif;
     color: #ffffff;
 }
 
@@ -537,7 +559,7 @@ LEGEND A
 .entry,
 .commenttext
 {
-    font-size: small;
+    font-size: 9pt;
 }
 
 .entry A:hover
@@ -564,7 +586,7 @@ LEGEND A
     padding: 8px 10px 32px 10px;
     background-color: #eeeeee;
     margin: 0px;
-    margin-left: -15px; /* see hack for Firefox in .post frameset above */
+    margin-left: -15px; /* see hack for Firefox in .post fieldset above */
     clear: both;
     -webkit-border-bottom-left-radius: 20px;
     -webkit-border-bottom-right-radius: 20px;
@@ -745,9 +767,7 @@ FIELDSET.comment .commenttext
 }
 
 .entry UL,
-.page UL,
-.entry OL,
-.page OL
+.entry OL
 {
 	margin-left: 0px;
 	padding: 15px;
@@ -765,16 +785,14 @@ BLOCKQUOTE OL
     border-style: none !important;
 }
 
-.post LI,
-.page LI
+.post LI
 {
     padding: 4px 0px;
 	margin-left: 0px;
     /*border-bottom: 1px dotted #aaaaaa;*/
 }
 
-.post LI:first-child,
-.page LI:first-child
+.post LI:first-child
 {
     /*border-top: 1px dotted #aaaaaa;*/
 }
@@ -799,7 +817,6 @@ BLOCKQUOTE OL
     left: 0;
     padding: 4px 10px;
     margin: 0px;
-    font-family: Helvetica;
     font-size: 8pt;
     background-color: #333333;
     color: #ffffff;
@@ -831,7 +848,6 @@ BLOCKQUOTE OL
 #credits
 {
     margin: 0px;
-    font-family: "Trebuchet MS", Verdana, Helvetica;
     padding: 5px;
     padding-right: 10px;
     background-color: #333333;
