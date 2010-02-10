@@ -29,7 +29,7 @@ class="left-better-half"> <?php break; case "full-empty": ?><div style="width:80
 "full-full": ?><div style="width:1000px; padding-left:15px; padding-bottom:5px; float:left;"><h3 class="left-h"><?php echo $value['name']; ?></h3> <?php break; case
 "pad": ?><div style="width:700px; padding-left:15px; padding-bottom:10px; float:left;"> <?php break; case "right-line": ?> <div class="right-better-half"> <div
 style="width:150px; float:left;"><p><?php echo $value['name']; ?></p></div> <?php break; case "left-line": ?><div class="left-better-half"><div style="width:150px;
-float:left;"<p><?php echo $value['name']; ?></p></div><?php break; case "title": ?><div class="dinox"><input class="dino" name="save" type="submit" value="Save" /> <input type="hidden" name="action" value="save" /></div><div></div><div class="slak"><H3 class="slak-h3"><?php echo $value['name']; ?></H3></div><?php
+float:left;"<p><?php echo $value['name']; ?></p></div><?php break; case "title": ?><div class="dinox"><input style="border:0px;" class="dino" name="save" type="submit" value="" /> <input type="hidden" name="action" value="save" /></div><div></div><div class="slak"><H3 class="slak-h3"><?php echo $value['name']; ?></H3></div><?php
 break; case "subtitle":?><div class="subtone"><H4 class="subtone-h4"><?php echo $value['name']; ?></H4></div><?php break; case "text-four": ?><div
 class="text-appolo"><h3 class="left-h"><?php echo $value['name']; ?></h3><?php break; case 'space-boy':?><div class="space-boy-space"></div><?php break; case
 'text-small': ?><div style="width:100px; float:left;padding:2px; overflow:hidden;"> <span style="font-family:Arial, sans-serif; font-size:12px; color:#444;
@@ -46,22 +46,40 @@ stripslashes(get_settings( $value['id'] )); } else { echo stripslashes($value['s
 padding-top:10px; float:left; clear:none;"><span style="font-family:Arial, sans-serif; font-size:12px; color:#444; padding-top:0px;"><?php echo $value['name'];
 ?></span><input style="width:60px;background-color:#eee; border:1px solid #98AFC7;" name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php
 echo $value['type']; ?>" value="<?php if ( get_settings( $value['id'] ) != "") { echo stripslashes(get_settings( $value['id'] )); } else { echo
-stripslashes($value['std']); } ?>" /></div> <?php break; case 'text-mp':?><div style="width:50px; padding-top:10px; float:left; clear:none;"> <span
-style="font-family:Arial, sans-serif; font-size:12px; color:#444; padding-top:5px;"> <?php echo $value['name']; ?></span><input
+stripslashes($value['std']); } ?>" /></div> <?php break; 
+
+
+case 'text-mp':?><div style="width:50px; padding-top:10px; float:left; clear:none;"> <span
+style="font-family:Arial, sans-serif; font-size:12px; color:#444; padding-top:5px;"> <?php echo $value['name']; ?></span>
+<input
 style="width:30px;background-color:#eee; border:1px solid #98AFC7;" name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo
 $value['type']; ?>" value="<?php if ( get_settings( $value['id'] ) != "") { echo stripslashes(get_settings( $value['id'] )); } else { echo
-stripslashes($value['std']); } ?>" /></div> <?php break; case 'text-color-wide': ?><script type="text/javascript" src="<?php bloginfo("template_url");
+stripslashes($value['std']); } ?>" /></div> <?php break; 
+
+
+
+
+case 'text-color-wide': ?><script type="text/javascript" src="<?php bloginfo("template_url");
 ?>/jscolor/jscolor.js"></script> <div style="width:130px; float:left; padding:5px;"><span style="font-family:Arial, sans-serif; font-size:12px; color:#444;
 display:block; padding-top:5px;"> <?php echo $value['name']; ?></span><input class="color {required:false}" style="width:110px;background-color:#eee; border:1px
 solid #98AFC7;" name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php if ( get_settings(
 $value['id'] ) != "") { echo stripslashes(get_settings( $value['id'] )); } else { echo stripslashes($value['std']); } ?>" /> <br/><span style="font-family:Arial,
-sans-serif; font-size:12px; color:#444;"><?php echo $value['desc']; ?></span> </div> <?php break; case 'text-color': ?><script type="text/javascript" src="<?php
+sans-serif; font-size:12px; color:#444;"><?php echo $value['desc']; ?></span> </div> <?php break; 
+
+
+case 'text-color': ?><script type="text/javascript" src="<?php
 bloginfo("template_url"); ?>/jscolor/jscolor.js"></script> <div style="width:90px; float:left;padding:5px;"><span style="font-family:Arial, sans-serif;
 font-size:12px; color:#444; display:block; padding-top:5px;"> <?php echo $value['name']; ?></span><input class="color {required:false}"
 style="width:70px;background-color:#eee; border:1px solid #98AFC7;" name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo
 $value['type']; ?>" value="<?php if ( get_settings( $value['id'] ) != "") { echo stripslashes(get_settings( $value['id'] )); } else { echo
 stripslashes($value['std']); } ?>" /><br/><span style="font-family:Arial, sans-serif; font-size:12px; color:#444; "><?php echo $value['desc']; ?></span></div> <?php
-break; case 'somehelp': ?><div style="width:808px; clear:both;"> <span style="font-family:Arial, sans-serif; font-size:12px; color:#444; display:block;
+break; 
+
+
+
+
+
+case 'somehelp': ?><div style="width:808px; clear:both;"> <span style="font-family:Arial, sans-serif; font-size:12px; color:#444; display:block;
 padding:5px;"> <?php echo $value['name']; ?></span></div> <?php break; case 'semi-title': ?> <h3><?php echo $value['name']; ?></h3> <?php break; case 'dummy-space':
 ?> <div class="backend-clear"></div> <?php break; case 'office-space':?> <div style="height:30px; width:100%; clear:both;"></div> <?php break; case 'dummy-h1': ?>
 <div id="dummy-box"><div id="dummy-con"> <p class="dummy-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et nibh ornare sapien dignissim
@@ -96,28 +114,20 @@ href="http://www.wordpress.org">Tag Eight,</a></div></div><div class="super-clea
 style="clear:both" />&nbsp; <div id="dummy-con"><img class="dummy-image" src="<?php bloginfo('template_url'); ?>/images/london.jpg" alt="London Dummy Image"
 title="Dummy Image" /> <div class="wp-caption"><p>This is an image caption and its container box.</p></div> </div><br style="clear:both" />&nbsp;</div> <?php break;
 case 'dummy-blockquote': ?> <div id="dummy-box"><br style="clear:both" />&nbsp; <div id="dummy-con"> <p class="dummy-p">Lorem ipsum dolor sit amet, consectetur
-adipiscing elit. Integer et nibh ornare sapien dignissim fringilla sit amet nec nisi. Sed orci arcu, faucibus et viverra at, pretium id urna. </p> <blockquote
-class="backend-block"> This is a block quote, so edit accordingly! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et nibh ornare sapien dignissim
+adipiscing elit. Integer et nibh ornare sapien dignissim fringilla sit amet nec nisi. Sed orci arcu, faucibus et viverra at, pretium id urna. </p> <blockquote class="backend-block"> This is a block quote, so edit accordingly! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et nibh ornare sapien dignissim
 fringilla sit amet nec nisi. Sed orci arcu, faucibus et viverra at, pretium id urna. End of Block Quote!!! </blockquote><p class="dummy-p">Sed rutrum ultrices
 lectus ac dignissim. Duis et dui ut dui consectetur bibendum ut vel dui. Ut enim urna, semper nec ultricies nec, faucibus eu lacus. Aliquam eu euismod est. Nunc
-faucibus fermentum turpis, a hendrerit nisi hendrerit scelerisque.</p></div><br style="clear:both" />&nbsp;</div> <?php break; case 'dummy-table': ?><div
-id="dummy-box"><br style="clear:both" />&nbsp; <div id="dummy-con"> <p class="dummy-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et nibh
-ornare sapien dignissim fringilla sit amet nec nisi. Sed orci arcu, faucibus et viverra at, pretium id urna. </p> <table class="back"><tr class="back-tr"><th
-class="back-th">Month</th><th class="back-th">Savings</th></tr> <tr class="arse"><td class="back-td">row 1, cell 1</td><td class="back-td">row 1, cell 2</td>
+faucibus fermentum turpis, a hendrerit nisi hendrerit scelerisque.</p></div><br style="clear:both" />&nbsp;</div> <?php break; case 'dummy-table': ?><div id="dummy-box"><br style="clear:both" />&nbsp; <div id="dummy-con"> <p class="dummy-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et nibh
+ornare sapien dignissim fringilla sit amet nec nisi. Sed orci arcu, faucibus et viverra at, pretium id urna. </p> <table class="back"><tr class="back-tr"><th class="back-th">Month</th><th class="back-th">Savings</th></tr> <tr class="arse"><td class="back-td">row 1, cell 1</td><td class="back-td">row 1, cell 2</td>
 </tr><tr class="arse"><td class="back-td">row 2, cell 1</td> <td class="back-td">row 2, cell 2</td></tr></table> <p class="dummy-p">Sed rutrum ultrices lectus ac
 dignissim. Duis et dui ut dui consectetur bibendum ut vel dui. Ut enim urna, semper nec ultricies nec, faucibus eu lacus. Aliquam eu euismod est. Nunc faucibus
 fermentum turpis, a hendrerit nisi hendrerit scelerisque.</p> </div><br style="clear:both" />&nbsp;</div> <?php break; case 'dummy-nav': ?> <div id="dummy-box"><div
-class="head-dummy"><h1 id="logo-text"><a href="<?php echo get_option('home'); ?>/" title="<?php bloginfo('name'); ?> Homepage"><?php bloginfo('name');
-?></a></h1><h5 id="slogan"><?php bloginfo('description'); ?></h5> </div><div id="navbar"> <ul> <?php if (is_home()) { ?> <li class="current_page_item"><a
+class="head-dummy"><h1 id="logo-text">Website Title</h1><h5 id="slogan"><?php bloginfo('description'); ?></h5> </div><div id="navbar"> <ul> <?php if (is_home()) { ?> <li class="current_page_item"><a
 href="<?php echo get_settings('home'); ?>" title="Home">Home</a></li> <?php }else{ ?><li class="page_item"><a href="<?php echo get_settings('home'); ?>"
 title="Home">Home</a></li> <?php } ?> <?php wp_list_pages('sort_column=menu_order&depth=1&title_li=');?> </ul><div class="clearbox"></div></div></div> <?php break;
 case 'dummy-sticky': ?> <div id="dummy-box"><br style="clear:both" />&nbsp; <div id="dummy-con"><div class="sticky"> <h3 class="post-title"> <a
 href="http://www.wordpress.org">This is a Sticky Post Title</a></h3> <div class="metabox"><p> Posted by <a class="puddle" href="http://www.wordpress.org">Author
-Link</a> | Filed under <a class="puddle" href="http://www.wordpress.org">Category</a> | 12.01 | <a class="puddle" href="http://www.wordpress.org">Tag One,</a>, <a
-class="puddle" href="http://www.wordpress.org">Tag Two</a>, | <a class="puddle" href="http://www.wordpress.org">10 Comments</a></p></div><p>This is some P text for
-the sticky post, this is that is this is that is this.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et nibh ornare sapien dignissim fringilla sit
-amet nec nisi. Sed orci arcu, faucibus et viverra at, pretium id urna. Sed rutrum ultrices lectus ac dignissim. Duis et dui ut dui consectetur bibendum ut vel dui.
-Ut enim urna, semper nec ultricies nec, faucibus eu lacus. Aliquam eu euismod est. Nunc faucibus fermentum turpis, a hendrerit nisi hendrerit scelerisque.</p>
+Link</a> | Filed under <a class="puddle" href="http://www.wordpress.org">Category</a> | 12.01 | <a class="puddle" href="http://www.wordpress.org">Tag One,</a>, <a class="puddle" href="http://www.wordpress.org">Tag Two</a>, | <a class="puddle" href="http://www.wordpress.org">10 Comments</a></p></div><p>This is some P text for the sticky post, this is that is this is that is this.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et nibh ornare sapien dignissim fringilla sit amet nec nisi. Sed orci arcu, faucibus et viverra at, pretium id urna. Sed rutrum ultrices lectus ac dignissim. Duis et dui ut dui consectetur bibendum ut vel dui. Ut enim urna, semper nec ultricies nec, faucibus eu lacus. Aliquam eu euismod est. Nunc faucibus fermentum turpis, a hendrerit nisi hendrerit scelerisque.</p>
 </div>&nbsp; </div>&nbsp; </div> <?php break;
 
 case 'dummy-list': ?> <div id="dummy-box"><br style="clear:both" />&nbsp; <div id="dummy-con"> <div id="one-list" style="width:180px;margin:10px; float:left;
@@ -196,7 +206,7 @@ $value['std']) { echo ' selected="selected"'; } ?>><?php echo $option; ?></optio
 
 case 'reset-reset': ?> <div style="display:none"><p class="submit"><input name="save" type="submit" value="Save changes" /><input type="hidden" name="action"
 value="save" /></p></div></form><p class="tenip"><strong>DANGER WILL ROBINSON!</strong> This resets ALL the options, so please be warned before you click this!
-There is <strong>NO</strong> undo and it does reset everything!</p> <div class="dinox-reset"><form method="post"><input class="dino" name="save" type="submit"
-value="Reset" /> <input type="hidden" name="action" value="reset" /></form></span> <?php break;
+There is <strong>NO</strong> undo and it does reset everything!</p> <div class="dinox-reset"><form method="post"><input style="border:0px;" class="fino" name="save" type="submit"
+value="" /> <input type="hidden" name="action" value="reset" /></form></span> <?php break;
 
 case "submit": ?> <?php break; } } ?> </form>

@@ -1,5 +1,10 @@
-<?php global $options; foreach ($options as $value) { if (get_settings( $value['id'] ) === FALSE) { $$value['id'] =
-$value['std']; } else { $$value['id'] = get_settings( $value['id'] ); } } ?> <style type="text/css">
+<?php
+	global $options;
+	foreach ($options as $value) {
+	if (get_settings( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_settings( $value['id'] ); }
+	}
+?>
+<style type="text/css">
 .logo-text { background-color: #<?php echo $bxx_logo_background_color;?>; font-size: <?php echo $bxx_logo_size;?>px; float:
 <?php echo $bxx_logo_float;?>; margin-left: 0px; margin-right: 15px; margin-top: 10px; margin-bottom: 0xp; margin-bottom: 0px;
 line-height: 100%; color: #<?php echo $bxx_logo_color;?>; text-transform: <?php echo $bxx_title_trans;?>; text-decoration: <?php echo $bxx_name_decoration;?>;  font-weight: <?php echo $bxx_logo_weight;?>; } 
