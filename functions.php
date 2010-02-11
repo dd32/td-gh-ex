@@ -153,11 +153,6 @@ function arjuna_add_theme_options() {
 			else $options['headerMenu2_sortOrder'] = $validOptions[0];
 		}
 		
-		//Menu 2 sorting order
-		$validOptions = array('asc', 'desc');
-		if ( in_array($_POST['headerMenu2_sortOrder'], $validOptions) ) $options['headerMenu2_sortOrder'] = $_POST['headerMenu2_sortOrder'];
-		else $options['headerMenu2_sortOrder'] = 'asc';
-
 		//Menu 2 Home Icon
 		if ($_POST['headerMenu2_displayHomeButton']) $options['headerMenu2_displayHomeButton'] = true;
 		else $options['headerMenu2_displayHomeButton'] = false;
@@ -304,7 +299,7 @@ function arjuna_add_theme_page () {
 		
 		<div class="tSRSIntro">
 			<div class="tTop">
-			<?php printf(__('Thank you for using Arjuna, the free WordPress theme designed by %s.', 'Arjuna'), '<a href="http://www.srssolutions.com/en/" class="tSRS">SRS Solutions</a>'); ?> <a href="http://www.twitter.com/srssolutions" class="tTwitter">Follow Us</a>
+			<?php printf(__('Thank you for using Arjuna, the free WordPress theme designed by %s.', 'Arjuna'), '<a href="http://www.srssolutions.com/en/" class="tSRS">SRS Solutions</a>'); ?> <a href="http://www.twitter.com/srssolutions" class="tTwitter"><?php _e('Follow Us', 'Arjuna'); ?></a>
 			</div>
 			<div class="tMid">
 				<div class="tReportBugs">
@@ -324,7 +319,7 @@ function arjuna_add_theme_page () {
 				</div>
 			</div>
 			<div class="tBottom">
-				<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GV5N8DN6XR6PY"><img src="https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif" /></a>
+				<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GV5N8DN6XR6PY"><img src="https://www.paypal.com/<?php if(defined('WPLANG') && WPLANG != '') print WPLANG; else print 'en_US'; ?>/i/btn/btn_donate_SM.gif" /></a>
 				<span><?php _e('Arjuna is completely free. If you like this project and want to support further development and maintenance, please', 'Arjuna'); ?></span>
 			</div>
 		</div>
@@ -757,7 +752,7 @@ function arjuna_add_theme_page () {
 						if (!is_writable(dirname(__FILE__).'/')):
 						?>
 						<br />
-						<span class="description"><?php _e('Arjuna needs write permissions to create a new file "user-style.css", which will contain the custom CSS.'); ?></span>
+						<span class="description"><?php _e('Arjuna needs write permissions to create a new file &quot;user-style.css&quot;, which will contain the custom CSS.'); ?></span>
 						<?php else: ?>
 						<label><input name="customCSS" onclick="customCSS_switch(this)" type="checkbox"<?php if($options['customCSS']) echo ' checked="checked"'; ?> /> <?php _e('Enable custom CSS rules', 'Arjuna'); ?></label><br />
 						<span class="description"><?php _e('If enabled, Arjuna will create a user stylesheet with your custom CSS rules. The user stylesheet will be included with every page call. If you intend to make some minor changes to the stylesheet, enabling this option ensures that you can safely upgrade Arjuna without losing your custom CSS.', 'Arjuna');?></span>
@@ -768,7 +763,7 @@ function arjuna_add_theme_page () {
 								if(file_exists($path))
 									print file_get_contents($path);
 							?></textarea>
-							<?php if (is_writable(dirname(__FILE__).'/')): ?>
+							<?php if (!is_writable(dirname(__FILE__).'/')): ?>
 							<br /><span style="color:#C00;font-style:italic;"><?php _e('Note:', 'Arjuna'); ?></span> <?php _e('Arjuna cannot write to the themes directory. The custom CSS rules will be included in the header of each page, between &lt;STYLE&gt; tags.');?>
 							<?php endif; ?>
 						</div>
@@ -785,7 +780,6 @@ function arjuna_add_theme_page () {
 					<th scope="row"><?php _e('Internet Explorer 6 Optimization', 'Arjuna'); ?></th>
 					<td>
 						<label><input name="enableIE6optimization" type="checkbox"<?php if($options['enableIE6optimization']) echo ' checked="checked"'; ?> /> <?php _e('Enable IE6 performance optimization', 'Arjuna'); ?></label><br />
-						<br />
 						<span class="description"><?php _e('If turned on, Arjuna will attempt to detect IE6 and serve a stand-alone CSS file specifically made for IE6.', 'Arjuna'); ?><br /><?php _e('Note: IE6 will still work the same if this option is turned off, however, you and your IE6 users will save an estimated 28kb (11 image and 2 CSS files) in bandwidth for first-time visitors. IE6 also might render more rapidly if this is turned on.', 'Arjuna');?></span>
 					</td>
 				</tr>
@@ -1103,6 +1097,14 @@ function arjuna_get_pagination($previousLabel, $nextLabel) {
 		echo $output;
 	}
 	return;
+}
+
+function arjuna_get_edit_link($label) {
+	global $post;
+		
+	if ( !$url = get_edit_post_link( $post->ID ) ) return;
+	
+	return '<a href="'.$url.'" class="postEdit"><span>'.$label.'</span></a>';
 }
 
 //Try to detect if IE6 or below is the user's browser. This allows for Arjuna to optimize IE6 output and significantly reduce bandwidth for IE6 users.

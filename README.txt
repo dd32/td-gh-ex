@@ -29,7 +29,7 @@ Currently available translations:
 - Italian (thanks to Gianni Diurno, gidibao.net)
 - Lithuanian (thanks to Vaidas Juknevicius aka SeniZ)
 - Chinese (thanks to Liuyue, liuyue.asia)
-- French (thanks to Laurent Measson)
+- French (thanks to Laurent Measson and Sebastien Violet)
 - Brazilian (thanks to Pedro Spoladore)
 - Spanish (thanks to José Marín)
 - German (thanks to Frank Weichbrodt and Markus Liebl)
@@ -61,6 +61,11 @@ Nonetheless, we still hope that IE6 will rest in peace soon.
 Changelog:
 ---------------------------------------------------
 
+1.2.1
+- Fixed bug: The Edit in Admin button always appeared even if nobody was logged in. It now only appears if you are logged in into the WordPress admin.
+- Fixed bug: If you chose to display pages in the second header menu, the items could not be sorted in descending order. Instead Arjuna always switched back to ascending.
+- Fixed minor bugs in the admin.
+- Updated localizations: German, French
 1.2
 - New feature: Native support for pagination has been added.
 - New feature: It's now possible to enable links to previous and next posts on permalink pages, i.e. the URL where one single post/page is displayed.

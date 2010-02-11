@@ -704,7 +704,7 @@ msgid "Page Gap"
 msgstr "Abertura de Página"
 
 #: Arjuna/functions.php:678
-msgid "The number of page buttons in a gap before an ellipsis (...) is display."
+msgid "The number of page buttons in a gap before an ellipsis (...) is displayed."
 msgstr "O número de botões de página em um intervalo antes de uma elipse (...) é mostrado."
 
 #: Arjuna/functions.php:683
@@ -857,7 +857,7 @@ msgstr "%d segundos"
 
 #: Arjuna/functions.php:1007
 msgid "Page %s of %s"
-msgstr "Página % de %"
+msgstr "Página %s de %s"
 
 #: Arjuna/functions.php:1046
 #: Arjuna/functions.php:1049
@@ -900,7 +900,7 @@ msgstr "Páginas:"
 #: Arjuna/page.php:34
 #: Arjuna/page_fullwidth.php:39
 msgid "Page %"
-msgstr "Página %"
+msgstr "Página %s"
 
 #: Arjuna/page.php:36
 #: Arjuna/page_fullwidth.php:41
