@@ -67,7 +67,7 @@ include_once (TEMPLATEPATH . '/functions/bfa_theme_options.php');
 include_once (TEMPLATEPATH . '/functions/bfa_get_options.php');
 global $bfa_ata;
 $bfa_ata['name'] = "Atahualpa";
-$bfa_ata['version'] = "3.4.5";
+$bfa_ata['version'] = "3.4.6";
 
 // Load functions
 include_once (TEMPLATEPATH . '/functions/bfa_header_config.php');

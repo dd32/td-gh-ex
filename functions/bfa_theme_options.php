@@ -2339,7 +2339,7 @@ __('Category:','atahualpa') . " %categories-linked(', ')% %edit(' | ', '" . __('
             "info" => "Height of Post Thumbnails in pixels."),
 
     array(    "name" => "Crop Post Thumbnails?",
-    	    "category" => "posts-or-excerpts",
+    	    "category" => "post-thumbnails",
             "id" => $shortname."_post_thumbnail_crop",
             "type" => "select",
             "std" => "No",
@@ -2349,7 +2349,7 @@ __('Category:','atahualpa') . " %categories-linked(', ')% %edit(' | ', '" . __('
 			With cropping you get the same size for all post thumbnails, but something will be cut off from the image (unless the image is square sized). "),
 
     array(    "name" => "Post Thumbnail CSS",
-    	    "category" => "posts-or-excerpts",
+    	    "category" => "post-thumbnails",
             "id" => $shortname."_post_thumbnail_css",
             "type" => "textarea-large",
             "std" => "float: left;\nborder: 0;\npadding: 0;\nbackground: none;\nmargin: 0 10px 5px 0;\n",
