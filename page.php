@@ -15,6 +15,7 @@
 </div></div>
 <?php endwhile; ?>
 <?php else : ?>
+<?php include (TEMPLATEPATH.'/bricks/mistake.php');?>
 <?php endif; ?>
  </div>
 <?php get_sidebar(); ?>

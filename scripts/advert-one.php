@@ -3,6 +3,5 @@
 
 
 
-
 <!-- Advert One Above this line, no need to change anything else on this page -->
 </div>

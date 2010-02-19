@@ -7,4 +7,5 @@
 <?php  include (TEMPLATEPATH . '/scripts/advert-one.php'); ?>
 </div>
 </div><div id="comment-land"><?php comments_template();?></div><?php endwhile; ?></div><?php else : ?>
+<?php include (TEMPLATEPATH.'/bricks/mistake.php');?>
 <?php endif; ?><?php get_sidebar(); ?><?php get_footer(); ?>

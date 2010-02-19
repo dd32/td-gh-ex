@@ -47,26 +47,18 @@ padding-top:10px; float:left; clear:none;"><span style="font-family:Arial, sans-
 ?></span><input style="width:60px;background-color:#eee; border:1px solid #98AFC7;" name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php
 echo $value['type']; ?>" value="<?php if ( get_settings( $value['id'] ) != "") { echo stripslashes(get_settings( $value['id'] )); } else { echo
 stripslashes($value['std']); } ?>" /></div> <?php break; 
-
-
 case 'text-mp':?><div style="width:50px; padding-top:10px; float:left; clear:none;"> <span
 style="font-family:Arial, sans-serif; font-size:12px; color:#444; padding-top:5px;"> <?php echo $value['name']; ?></span>
 <input
 style="width:30px;background-color:#eee; border:1px solid #98AFC7;" name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo
 $value['type']; ?>" value="<?php if ( get_settings( $value['id'] ) != "") { echo stripslashes(get_settings( $value['id'] )); } else { echo
 stripslashes($value['std']); } ?>" /></div> <?php break; 
-
-
-
-
 case 'text-color-wide': ?><script type="text/javascript" src="<?php bloginfo("template_url");
 ?>/jscolor/jscolor.js"></script> <div style="width:130px; float:left; padding:5px;"><span style="font-family:Arial, sans-serif; font-size:12px; color:#444;
 display:block; padding-top:5px;"> <?php echo $value['name']; ?></span><input class="color {required:false}" style="width:110px;background-color:#eee; border:1px
 solid #98AFC7;" name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php if ( get_settings(
 $value['id'] ) != "") { echo stripslashes(get_settings( $value['id'] )); } else { echo stripslashes($value['std']); } ?>" /> <br/><span style="font-family:Arial,
 sans-serif; font-size:12px; color:#444;"><?php echo $value['desc']; ?></span> </div> <?php break; 
-
-
 case 'text-color': ?><script type="text/javascript" src="<?php
 bloginfo("template_url"); ?>/jscolor/jscolor.js"></script> <div style="width:90px; float:left;padding:5px;"><span style="font-family:Arial, sans-serif;
 font-size:12px; color:#444; display:block; padding-top:5px;"> <?php echo $value['name']; ?></span><input class="color {required:false}"
@@ -74,11 +66,6 @@ style="width:70px;background-color:#eee; border:1px solid #98AFC7;" name="<?php 
 $value['type']; ?>" value="<?php if ( get_settings( $value['id'] ) != "") { echo stripslashes(get_settings( $value['id'] )); } else { echo
 stripslashes($value['std']); } ?>" /><br/><span style="font-family:Arial, sans-serif; font-size:12px; color:#444; "><?php echo $value['desc']; ?></span></div> <?php
 break; 
-
-
-
-
-
 case 'somehelp': ?><div style="width:808px; clear:both;"> <span style="font-family:Arial, sans-serif; font-size:12px; color:#444; display:block;
 padding:5px;"> <?php echo $value['name']; ?></span></div> <?php break; case 'semi-title': ?> <h3><?php echo $value['name']; ?></h3> <?php break; case 'dummy-space':
 ?> <div class="backend-clear"></div> <?php break; case 'office-space':?> <div style="height:30px; width:100%; clear:both;"></div> <?php break; case 'dummy-h1': ?>
@@ -153,37 +140,24 @@ stripslashes($value['std']); } ?>" /><br/><?php echo $value['desc']; ?> <?php br
 case 'quart': ?> <?php echo $value['name']; ?><input style="width:100px;" name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo
 $value['type']; ?>" value="<?php if ( get_settings( $value['id'] ) != "") { echo stripslashes(get_settings( $value['id'] )); } else { echo
 stripslashes($value['std']); } ?>" /><br/> <?php echo $value['desc']; ?>
-
 <?php break;
-
 case 'somehelp': ?> <div style="width:808px; overflow:hidden; clear:both;"><span style=" width:700px; font-family:Verdana, sans-serif; font-size:12px; color:#333;
 display:block; "> <?php echo $value['name']; ?> </span></div> <?php break;
-
 case 'advice': ?> <div style="width:650px; margin-left:30px; 0px; overflow:hidden; clear:both;"><span style="font-family:Arial, sans-serif; font-size:12px;
 color:#444; display:block;"><?php echo $value['name']; ?></span></div> <?php break;
-
 case 'html': ?> <div style="width:650px; margin-left:30px; 0px; overflow:hidden; clear:both;"><script type="text/javascript" src="<?php bloginfo("template_url");
 ?>/style.css"></script><span style="font-family:Arial, sans-serif; font-size:12px; color:#444; display:block; "><?php echo $value['name']; ?></span> </div> <?php
 break;
-
 case 'tin-tin': ?> <div style="padding-left:10px;"> <?php break;
-
 case 'deus': ?> <div style="padding:10px; clear:both;"><?php echo $value['name']; ?></div> <?php break;
-
 case 'advert': ?> <div style="padding:20px;"><span style="font-family:Arial, sans-serif; font-size:12px; color:#444; display:block; padding:5px;"> <?php echo
 $value['name']; ?></span> <textarea name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" style="background-color:#eee; border:1px solid #98AFC7;"
 cols="100" rows="3"><?php if ( get_settings( $value['id'] ) != "") { echo stripslashes(get_settings( $value['id'] )); } else { echo stripslashes($value['std']); }
 ?></textarea><span style="font-family:Arial, sans-serif; font-size:12px; color:#444; display:block;"> <?php echo $value['desc']; ?></span> </div> <?php break;
 case 'sugercube': ?> <div style=" width:100%; clear:both;">
 <img class="profile-left" src="<?php bloginfo("template_url");?>/bricks/homepage-images/42k-layout-normal.png" />
-<img class="profile-right" src="<?php bloginfo("template_url");?>/bricks/homepage-images/42k-layout-mulletrightcontent.png" />
 <img class="profile-left" src="<?php bloginfo("template_url");?>/bricks/homepage-images/42k-layout-mullet.png" />
-<img class="profile-right" src="<?php bloginfo("template_url");?>/bricks/homepage-images/42l-layout-normal-right-content.png" />
 </div> <?php break;
-
-
-
-
 case 'select-super': ?> <div style="width:760px; float:left; padding-top:5px; overflow:hidden;"> <span style="font-family:Arial, sans-serif; font-size:12px;
 color:#444; display:block; padding:5px;"> <?php echo $value['name']; ?></span><select style="width:700px;" name="<?php echo $value['id']; ?>" id="<?php echo
 $value['id']; ?>"> <?php foreach ($value['options'] as $option) { ?><option<?php if ( get_settings( $value['id'] ) == $option) { echo ' selected="selected"'; }
@@ -193,20 +167,16 @@ display:block; padding-top:5px;"> <?php echo $value['name']; ?></span><select st
 $value['id']; ?>" id="<?php echo $value['id']; ?>"> <?php foreach ($value['options'] as $option) { ?><option<?php if ( get_settings( $value['id'] ) == $option) {
 echo ' selected="selected"'; } elseif ($option == $value['std']) { echo ' selected="selected"'; } ?>><?php echo $option; ?></option><?php } ?></select> <br/></div>
 <?php break;
-
 case 'select-wide': ?> <div style="width:160px; float:left; padding-top:5px; overflow:hidden;"> <span style="font-family:Arial, sans-serif; font-size:12px;
 color:#444; display:block; padding:5px;"> <?php echo $value['name']; ?></span><select style="width:150px;" name="<?php echo $value['id']; ?>" id="<?php echo
 $value['id']; ?>"> <?php foreach ($value['options'] as $option) { ?><option<?php if ( get_settings( $value['id'] ) == $option) { echo ' selected="selected"'; }
 elseif ($option == $value['std']) { echo ' selected="selected"'; } ?>><?php echo $option; ?></option><?php } ?></select> <br/></div> <?php break;
-
 case 'select-four': ?> <div style="width:260px; float:left; padding:15px; overflow:hidden;"> <span style="font-family:Arial, sans-serif; font-size:12px; color:#444;
 display:block; padding:5px;"> <?php echo $value['name']; ?></span><select style="width:150px;" name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>">
 <?php foreach ($value['options'] as $option) { ?><option<?php if ( get_settings( $value['id'] ) == $option) { echo ' selected="selected"'; } elseif ($option ==
 $value['std']) { echo ' selected="selected"'; } ?>><?php echo $option; ?></option><?php } ?></select> <br/></div> <?php break;
-
 case 'reset-reset': ?> <div style="display:none"><p class="submit"><input name="save" type="submit" value="Save changes" /><input type="hidden" name="action"
 value="save" /></p></div></form><p class="tenip"><strong>DANGER WILL ROBINSON!</strong> This resets ALL the options, so please be warned before you click this!
 There is <strong>NO</strong> undo and it does reset everything!</p> <div class="dinox-reset"><form method="post"><input style="border:0px;" class="fino" name="save" type="submit"
 value="" /> <input type="hidden" name="action" value="reset" /></form></span> <?php break;
-
 case "submit": ?> <?php break; } } ?> </form>

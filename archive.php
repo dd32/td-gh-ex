@@ -33,6 +33,7 @@
 <div class="alignright"><?php previous_posts_link('Newer Entries &raquo;') ?></div>
 </div>
 <?php else : ?>
+<?php include (TEMPLATEPATH.'/bricks/mistake.php');?>
 <?php endif; ?>
  </div>
 <?php get_sidebar(); ?></div>

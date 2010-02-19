@@ -5,18 +5,29 @@
 	}
 ?>
 <style type="text/css">
+.joes-head {
+	border: 0px;
+	float: <?php echo $bxx_joe_float;?>; 
+	margin-top: <?php echo $bxx_joe_margin_top;?>px; 
+	margin-right: <?php echo $bxx_joe_margin_right;?>px; 
+	margin-bottom: <?php echo $bxx_joe_margin_bottom;?>px; 
+	margin-left: <?php echo $bxx_joe_margin_left;?>px; 
+	}
 .logo-text { background-color: #<?php echo $bxx_logo_background_color;?>; font-size: <?php echo $bxx_logo_size;?>px; float:
 <?php echo $bxx_logo_float;?>; margin-left: 0px; margin-right: 15px; margin-top: 10px; margin-bottom: 0xp; margin-bottom: 0px;
-line-height: 100%; color: #<?php echo $bxx_logo_color;?>; text-transform: <?php echo $bxx_title_trans;?>; text-decoration: <?php echo $bxx_name_decoration;?>;  font-weight: <?php echo $bxx_logo_weight;?>; } 
+line-height: 100%; color: #<?php echo $bxx_logo_color;?>; text-transform: <?php echo $bxx_title_trans;?>; text-decoration: <?php echo $bxx_name_decoration;?>;  font-weight: <?php echo $bxx_logo_weight;?>; font-family: <?php echo $bxx_logo_font_family;?>, <?php echo $bxx_p_font;?>;} 
 .logo-text a:link, .logo-text a:visited, .logo-text a:hover {
 background-color: #<?php echo $bxx_logo_background_color;?>; color: #<?php echo $bxx_logo_color;?>; font-size: <?php echo
 $bxx_logo_size;?>px; text-decoration: <?php echo $bxx_name_decoration;?>; font-style: <?php echo $bxx_logo_style;?>;
 font-weight: <?php echo $bxx_logo_weight;?>; font-family: <?php echo $bxx_logo_font_family;?>, <?php echo $bxx_p_font;?>;
 text-transform: <?php echo $bxx_title_trans;?>; text-decoration: <?php echo $bxx_name_decoration;?>; font-weight: <?php echo
 $bxx_logo_weight;?>; padding: 0px; margin-bottom: 0px; line-height: 100%; } 
-.icon-holder { width: 1000px; } .icon { float:<?php
-echo $bxx_icon_float;?>; border: 0px; width: 21px; height: 21px; padding-left: 5px; padding-right: 5px; margin-bottom: 3px;
-margin-top: 3px; } #showhide { margin-left: auto; margin-right: auto; display: none; width: 1000px; padding-top: 15px;
+.icon-holder { width: 1000px; } 
+.icon { float:<?php echo $bxx_icon_float;?>; border: 0px; width: 21px; height: 21px; padding-left: 5px; padding-right: 5px; margin-bottom: 3px;
+margin-top: 10px; } 
+.icon2 { float:<?php echo $bxx_icon_float;?>; border: 0px; width: 21px; height: 21px; padding-left: 5px; padding-right: 5px; margin-bottom: 3px;
+margin-top: 70px; vertical-align:text-bottom; } 
+#showhide { margin-left: auto; margin-right: auto; display: none; width: 1000px; padding-top: 15px;
 padding-bottom: 15px; } .search-input{ width: 350px; height: 14px; color: #<?php echo $bxx_p_color;?>; float:left; border: 1px
 solid #ccc; background:#fff; font-size: 11px; padding: 3px 5px; }
 .maxi { width: 230px; float: right; } .mini .avatar { border:<?php echo $bxx_avatar_border_size;?>px <?php echo
@@ -121,23 +132,31 @@ echo $bxx_button_margin_left;?>px; margin-bottom: <?php echo $bxx_button_margin_
 $bxx_button_font_weight;?>; border:<?php echo $bxx_button_border_width;?>px <?php echo $bxx_button_border_type;?> #<?php echo
 $bxx_button_border_color;?>; line-height: <?php echo $bxx_button_line_pen;?>%; font-family: <?php echo
 $bxx_button_font_family;?>, <?php echo $bxx_p_font;?>; } .clearbox { display:block; height:0px; background-color:none;
-width:100%; clear:both; } #navbar ul li.current_page_item a:link, #navbar ul li.current_page_item a:visited, #navbar ul
-li.current_page_item a:hover, #navbar ul li.current_page_item a:active, #navbar ul li.current_page_item a:focus{
-background-color: #<?php echo $bxx_button_background_current;?>; color: #<?php echo $bxx_button_font_color_current;?>;
+width:100%; clear:both; } 
+#navbar ul li.current_page_item a:link, #navbar ul li.current_page_item a:visited, #navbar ul li.current_page_item a:hover, #navbar ul li.current_page_item a:active, #navbar ul li.current_page_item a:focus{
+background-color: #<?php echo $bxx_button_background_current;?>; 
+color: #<?php echo $bxx_button_font_color_current;?>;
 font-family: <?php echo $bxx_button_font_family;?>, <?php echo $bxx_p_font;?>;
-} #navbar ul li a:hover, #navbar ul li a:active, #navbar ul li a:focus{ text-decoration: none; background-color: #<?php echo
-$bxx_button_background_hover;?>; color: #<?php echo $bxx_button_font_color_hover;?>; font-family: <?php echo
-$bxx_button_font_family;?>, <?php echo $bxx_p_font;?>; text-decoration: none;
+} 
+#navbar ul li a:hover, #navbar ul li a:active, #navbar ul li a:focus{ 
+text-decoration: none; 
+background-color: #<?php echo $bxx_button_background_hover;?>; 
+color: #<?php echo $bxx_button_font_color_hover;?>; 
+font-family: <?php echo $bxx_button_font_family;?>, <?php echo $bxx_p_font;?>; 
+text-decoration: none;
 }
 #sidebar-left-one { width: 200px; float: left; overflow: hidden; width: 260px; }
 #main-right{ float: right; width: 700px;
 }
-#main{ background-color: #<?php echo $bxx_main_background_color;?>; float: left; clear: left; overflow: hidden; width: 70%; }
+#main{  float: <?php echo $bxx_con_tent_float;?>; 
+overflow: hidden; width: 70%; }
 #sidebar{ background-image: url(<?php bloginfo('template_url');?>/images/<?php echo $bxx_main_sidebar_background_image;?>);
 background-color: #<?php echo $bxx_main_sidebar_background_color;?>; background-repeat: <?php echo
 $bxx_main_sidebar_background_image_repeat;?>; background-position: <?php echo $bxx_main_sidebar_background_image_align;?>;
-height: 100% }
-.footer-widget { width: 315px; background: #<?php echo $bxx_footer_left_sidebar_background_color;?>; background-image: url(<?php
+ float: <?php echo $bxx_side_bar_float;?>; 
+width: 26%; 
+overflow: hidden; } 
+ .footer-widget { width: 315px; background: #<?php echo $bxx_footer_left_sidebar_background_color;?>; background-image: url(<?php
 bloginfo('template_url');?>/images/<?php echo $bxx_footer_left_sidebar_background_image;?>); background-position: <?php echo
 $bxx_footer_left_align?>; background-repeat: <?php echo $bxx_footer_left_sidebar_background_image_repeat;?>; float: left; clear:
 none; padding: 4px; margin: 4px; border: 0px; margin-top: 10px; text-align: left; } #submit { background: none;?>; color: #<?php

@@ -2,7 +2,7 @@
 Theme Name: 42k
 Theme URI: http://www.factory42.co.uk
 Description: A theme with flexibility! All major components are user changeable, be that colors, sizes or layouts.The theme works perfectly out of the box, or you can change things around to suit your needs via the extremely easy to use huge admin control panel with its built in admin area inline previews. The theme comes loaded with 4 widget areas, dedicated Favicon, 4 different front page layouts, user defined error messages, dedicated tag cloud area, 2 advert areas and a free background PSD is available to download to allow you to change the look completely. Highy customizable theme framework, ready for your imagination!
-Version: 1.6
+Version: 1.7
 Author: Factory42
 Author URI: http://factory42.co.uk/42k-wordpress-theme/
 Tags: light, black, two-columns, right-sidebar, fixed-width, custom-colors, custom-header, theme-options, sticky-post, microformats
@@ -12,8 +12,8 @@ table, th, td { list-style-image: none; list-style-type: none; } input:focus, in
 padding-bottom: 15px; } .bold{ font-weight: bold; } .italic{ font-style: italic; } .block{ display: block; } .clear{ clear: both;
 } #navbar ul{ list-style-type: none; list-style-image: none; display: inline; } #navbar ul li{ display: inline; float: left;
 padding: 0px; margin: 0px; margin-bottom: 0px; padding-bottom: 0px; line-height: 100%; } .advert-x { padding-top: 5px;
-padding-bottom: 5px; }  #sidebar{ width: 260px; float: right; clear:
-right; overflow: hidden; } #post-container { width:650px; padding: 0px; margin: 0px; } .search-box{ width: 470px; height: 22px;
+padding-bottom: 5px; }  
+#post-container { width:650px; padding: 0px; margin: 0px; } .search-box{ width: 470px; height: 22px;
 overflow: hidden; margin-left: auto; margin-right: auto; } .search-box-small{ width: 200px;overflow: hidden; float: left;  }
 .search-box-small .search-input { width: 150px; } ul.commentlist { padding: 0px; } #comment-land { list-style-type:
 none; width: 670px; padding: 0px; } ul .commentlist #comment-land ul li{ list-style-type: none; } #comment-land ul.commentlist li.depth-1 { width:650px;

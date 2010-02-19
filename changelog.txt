@@ -2,7 +2,18 @@
 
 By Factory42
 
+www.factory42.co.uk
+
 VERSIONS AND FIXES
+
+1.7 13th Feb 2009
+		-Fixed bug with website name not changing fonts.
+		-Added a remove option to the top menu.
+		-Added two more user switchable menus. Categories and Custom menu
+		-Added the option to float the sidebar on the left and content on the right.
+		-Added a header with an image in it as a header variable.
+		-Fixed a PHP error that wasnt showing the 404 text on certain pages.
+		-Fixed issue with website name not displaying correct font.
 
 1.6 9th Feb 2009
 		-Forgot to delete some code from framework. D'oh.
