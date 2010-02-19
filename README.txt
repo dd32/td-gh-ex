@@ -61,6 +61,10 @@ Nonetheless, we still hope that IE6 will rest in peace soon.
 Changelog:
 ---------------------------------------------------
 
+1.2.2
+- Fixed bug: The Edit in Admin button still appeared on pages even if you are not logged in.
+- Fixed IE6 bug: When IE6 optimization was turned on, the new navigation links within single posts did not render properly.
+- Fixed IE6 bug: The Edit in Admin button was messed up.
 1.2.1
 - Fixed bug: The Edit in Admin button always appeared even if nobody was logged in. It now only appears if you are logged in into the WordPress admin.
 - Fixed bug: If you chose to display pages in the second header menu, the items could not be sorted in descending order. Instead Arjuna always switched back to ascending.

@@ -38,7 +38,7 @@ Template Name: Full Page (No Sidebar)
 		</div>
 		<div class="postLinkPages"><?php wp_link_pages('before=<strong>'.__('Pages:', 'Arjuna').'</strong>&pagelink=<span>'.__('Page %', 'Arjuna').'</span>'); ?></div>
 		<div class="postFooter"><div class="r"></div>
-			<a href="<?php print get_edit_post_link( $post->ID ) ?>" class="postEdit"><span><?php _e('Edit in Admin', 'Arjuna'); ?></span></a>
+			<?php print arjuna_get_edit_link(__('Edit in Admin', 'Arjuna')); ?>
 		</div>
 	</div>
 	<div class="postComments" id="comments">

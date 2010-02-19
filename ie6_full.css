@@ -1118,11 +1118,11 @@ a.btnLogout:hover {
 	margin-top:1px;
 }
 .pagination .newer span {
-	background:url(./images/ie6/pagination.png) no-repeat 0 -70px;
+	background:url(./images/ie6/pagination.png) no-repeat 0 -100px;
 	padding-left:20px;
 }
 .pagination a.newer:hover span {
-	background-position:0 -95px;
+	background-position:0 -125px;
 }
 .pagination .older {
 	display:block;
@@ -1130,11 +1130,11 @@ a.btnLogout:hover {
 	margin-top:1px;
 }
 .pagination .older span {
-	background:url(./images/ie6/pagination.png) no-repeat right -70px;
+	background:url(./images/ie6/pagination.png) no-repeat right -100px;
 	padding-right:20px;
 }
 .pagination a.older:hover span {
-	background-position:right -95px;
+	background-position:right -125px;
 }
 
 /* Footer */
@@ -1577,7 +1577,8 @@ a.btn span {
 	zoom:1;
 }
 
-.postReadMore span {
+.postReadMore span,
+.postEdit span{
 	float:left;
 	display:inline;
 	zoom:1;

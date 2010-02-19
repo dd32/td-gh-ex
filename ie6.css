@@ -145,7 +145,8 @@ a.btn span {
 	zoom:1;
 }
 
-.postReadMore span {
+.postReadMore span,
+.postEdit span{
 	float:left;
 	display:inline;
 	zoom:1;
