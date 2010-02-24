@@ -2,10 +2,27 @@
 Theme Name: Aggiornare
 Theme URI: http://themes.geekdesigngirl.com/download/aggiornare-theme/
 Description: The Aggiornare theme is built with minimalism in mind but with some decent options in the backend.  Aggiornare means 'to update' in Italian.  Happy Updating!
-Version: 1.0
+Version: 1.0.1
 Author: GeekDesignGirl
 Author URI: http://geekdesigngirl.com/
 Tags: white, fixed-width, two-columns, light, theme-options
+*/
+
+/*
+    Copyright Nikki Selene Lamagna (GeekDesignGirl)
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    I hope this theme will be useful and enjoyable but WITHOUT ANY WARRANTY; 
+    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A 
+    PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 */
 
 /* CSS Reset */
@@ -311,7 +328,9 @@ p.tagline { font-size: 22px; font-style: italic; padding: 10px 0; }
 
 #respond { float: left; width: 600px; border-top: 2px solid #414141; margin: 15px 0 0 0; }
 
-.content li.comment { border-bottom: 1px dashed #e6e6e6; padding: 12px; margin: 0 0 15px 0; -moz-border-radius: 10px; -webkit-border-radius: 10px; }
+#submit { cursor: pointer; }
+
+.content li.comment { border-bottom: 1px dashed #e6e6e6; padding: 12px; margin: 0 0 15px 0; -moz-border-radius: 10px; -webkit-border-radius: 10px; clear: both; }
 
 .content li.odd { background: #e6e6e6; }
 
@@ -324,3 +343,21 @@ p.tagline { font-size: 22px; font-style: italic; padding: 10px 0; }
 .comment-meta { text-align: left; font-size: 12px; }
 
 .comment a { text-decoration: none; }
+
+.children #respond { width: inherit; border: 2px solid #e6e6e6; background: #fff; padding: 8px; margin: 0 0 10px 0; -moz-border-radius: 10px; -webkit-border-radius: 10px; }
+
+#commentform textarea, #commentform input { width: inherit; }
+
+.content ul ul.children { margin: 0 0 0 5px; }
+
+.content ul.children { list-style-type: none; }
+
+.content ul.children li.even { background: #fff; }
+
+.content ul.children li.odd { background: #e6e6e6; }
+
+.reply { margin: 10px 0; background: #c4c4c4; -moz-border-radius: 10px; -webkit-border-radius: 10px; padding: 4px; width: 75px; text-align: center; }
+
+.reply a { font-style: italic; font-size: 13px; color: #fff; }
+
+.reply a:hover { color: #992622; }
