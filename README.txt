@@ -34,6 +34,7 @@ Currently available translations:
 - Spanish (thanks to José Marín)
 - German (thanks to Frank Weichbrodt and Markus Liebl)
 - Czech (thanks to Jirka Knapek and Ivan)
+- Turkish (thanks to Serhat Yolaçan)
 
 
 More Information and Support
@@ -61,7 +62,12 @@ Nonetheless, we still hope that IE6 will rest in peace soon.
 Changelog:
 ---------------------------------------------------
 
-1.2.2
+1.2.4
+- Localization added: Turkish (1.2)
+- Updated localization: Italian (1.2.3)
+- Fixed bug: The header does not appear above any Lightbox 2 layers anymore.
+- Fixed bug: A weird space character at the very beginning of the header.php file caused a bunch of issues, especially with Internet Explorer.
+1.2.3
 - Fixed bug: The Edit in Admin button still appeared on pages even if you are not logged in.
 - Fixed IE6 bug: When IE6 optimization was turned on, the new navigation links within single posts did not render properly.
 - Fixed IE6 bug: The Edit in Admin button was messed up.
