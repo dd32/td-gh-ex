@@ -48,6 +48,12 @@ img, div { behavior: url(<?php bloginfo('stylesheet_directory'); ?>/images/iepng
 			
 				<div id="navigation">
 					<ul>
-						<?php wp_list_pages('title_li=&sort_column=menu_order'); ?>
+						<?php 
+						$navigation = get_option('aggiornare_navigation');
+						if(!$navigation) {
+							wp_list_pages('title_li=&sort_column=menu_order');
+						} else {
+							wp_list_pages('title_li=&sort_column=menu_order&depth=3&include='.$navigation.'');
+						} ?>
 					</ul>
 				</div>

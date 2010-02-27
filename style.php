@@ -5,12 +5,14 @@ header("Content-type: text/css");
 	$width = get_option('aggiornare_logo_width');
 	$height = get_option('aggiornare_logo_height');
 	$headlineColor = get_option('aggiornare_headline_color');
+	$border = get_option('aggiornare_image_border');
 	if($headlineColor=='') {
 		$headlineColor = "414141";
 	}
 
 ?>
 .introBanner h2 { color: #<?php echo $headlineColor; ?>; }
+<?php if($border) { ?> .content p img { border: 0; } .content .wp-caption img { border: 0; } <?php } ?>
 <?php if($logo) { ?>
 #siteIdentification h1 a { display: block; text-indent: -9999px; background: url('<?php echo $logo; ?>') top left no-repeat; width: <?php echo $width; ?>px; height: <?php echo $height; ?>px; }
 #siteIdentification h1 a:hover { background: url('<?php echo $logo; ?>') bottom left no-repeat; }

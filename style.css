@@ -2,7 +2,7 @@
 Theme Name: Aggiornare
 Theme URI: http://themes.geekdesigngirl.com/download/aggiornare-theme/
 Description: The Aggiornare theme is built with minimalism in mind but with some decent options in the backend.  Aggiornare means 'to update' in Italian.  Happy Updating!
-Version: 1.0.1
+Version: 1.0.3
 Author: GeekDesignGirl
 Author URI: http://geekdesigngirl.com/
 Tags: white, fixed-width, two-columns, light, theme-options
@@ -174,13 +174,19 @@ p.tagline { font-size: 22px; font-style: italic; padding: 10px 0; }
 
 #sidebar input { width: inherit; }
 
-#sidebar h2 { text-decoration: none; padding: 0 0 2px 0; margin: 4px; }
+#sidebar h2 { text-decoration: none; padding: 0 0 2px 0; margin: 4px; line-height: 32px; }
 
 .sidebarItem { border: 1px solid #e6e6e6; padding: 10px; margin: 0 0 10px 0; -moz-border-radius: 15px; -webkit-border-radius: 15px; }
 
 #sidebar img { float: left; margin: 0 5px 0 0; }
 
 #sidebar p { margin: 10px 0 15px 0; }
+
+#sidebar a { text-decoration: none; }
+
+#sidebar ul ul { margin: 4px 0 0 4px; }
+
+#sidebar ul ul li { padding: 4px 0 4px 4px; border-bottom: 1px solid #c4c4c4; }
 
 #wp-calendar { width: 100%; }
 
@@ -300,7 +306,7 @@ p.tagline { font-size: 22px; font-style: italic; padding: 10px 0; }
 
 .content .entry input { width: inherit; margin: 0 0 8px 0; }
 
-.content p.postmetadata { font-style: italic; line-height: 19px; }
+.content p.postmetadata { font-style: italic; line-height: 19px; clear: both; }
 
 .content .navigation a img { border: none; margin: 0 0 4px 0; padding: 0 0 4px 0; }
 
@@ -309,6 +315,8 @@ p.tagline { font-size: 22px; font-style: italic; padding: 10px 0; }
 .content .wp-caption { background: #f4f4f4; padding: 10px; margin: 5px 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; text-align: center; border: 1px solid #595959; }
 
 .content .wp-caption .wp-caption-text { font-style: italic; font-size: 14px; padding: 4px; }
+
+.content .wp-caption img { border: 1px solid #414141; }
 
 /* Content navigation properties */
 
@@ -330,7 +338,7 @@ p.tagline { font-size: 22px; font-style: italic; padding: 10px 0; }
 
 #submit { cursor: pointer; }
 
-.content li.comment { border-bottom: 1px dashed #e6e6e6; padding: 12px; margin: 0 0 15px 0; -moz-border-radius: 10px; -webkit-border-radius: 10px; clear: both; }
+.content li.comment, .content li.pingback { border-bottom: 1px dashed #e6e6e6; padding: 12px; margin: 0 0 15px 0; -moz-border-radius: 10px; -webkit-border-radius: 10px; clear: both; }
 
 .content li.odd { background: #e6e6e6; }
 
@@ -356,8 +364,6 @@ p.tagline { font-size: 22px; font-style: italic; padding: 10px 0; }
 
 .content ul.children li.odd { background: #e6e6e6; }
 
-.reply { margin: 10px 0; background: #c4c4c4; -moz-border-radius: 10px; -webkit-border-radius: 10px; padding: 4px; width: 75px; text-align: center; }
-
-.reply a { font-style: italic; font-size: 13px; color: #fff; }
+.reply a { margin: 10px 0; background: #c4c4c4; -moz-border-radius: 10px; -webkit-border-radius: 10px; padding: 3px 14px; text-align: center; font-style: italic; font-size: 13px; color: #fff; display: block; width: 75px; }
 
 .reply a:hover { color: #992622; }

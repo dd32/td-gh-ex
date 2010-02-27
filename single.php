@@ -17,6 +17,7 @@ get_header();
 
 		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 			<h2><?php the_title(); ?></h2>
+			<p class="theTime"><?php the_time('F jS, Y') ?> by <?php the_author() ?> </p>
 
 			<div class="entry">
 				<?php the_content('<p class="serif">Read the rest of this entry &raquo;</p>'); ?>

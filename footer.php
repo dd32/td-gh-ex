@@ -54,9 +54,10 @@
 		
 		<p class="copyright">Copyright &copy; <?php echo date('Y'); ?> by <?php bloginfo('name'); ?>.  All Rights Reserved.  <a href="<?php bloginfo('rss2_url'); ?>">Subscribe to <?php bloginfo('name'); ?>'s feed</a>.<br /><a href="http://geekdesigngirl.com/wordpress-resources/themes/" title="GeekDesignGirl's themes">Aggiornare Theme by GeekDesignGirl</a></p>
 	<!-- It's completely optional, but if you like the theme I would appreciate it if you keep the credit link at the bottom. -->
-	</div>
+	
+	<?php wp_footer(); ?>
 
-		<?php wp_footer(); ?>
-		
+	</div>
+	
 </body>
 </html>

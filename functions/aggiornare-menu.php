@@ -16,6 +16,8 @@ function register_settings() {
 	register_setting( 'aggiornare_settings_page', 'aggiornare_logo' );
 	register_setting( 'aggiornare_settings_page', 'aggiornare_logo_width' );
 	register_setting( 'aggiornare_settings_page', 'aggiornare_logo_height' );
+	register_setting( 'aggiornare_settings_page', 'aggiornare_navigation' );
+	register_setting( 'aggiornare_settings_page', 'aggiornare_image_border' );
 	register_setting( 'aggiornare_settings_page', 'aggiornare_homepage_image' );
 	register_setting( 'aggiornare_settings_page', 'aggiornare_homepage_headline' );
 	register_setting( 'aggiornare_settings_page', 'aggiornare_headline_color' );
@@ -48,7 +50,25 @@ function aggiornare_settings_page() {
 	<?php wp_nonce_field('update-options');
 	settings_fields( 'aggiornare_settings_page' );
  ?>
- 
+ <p class="submit">
+<input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
+</p>
+
+ <div class=" homePageStuff">
+    <table class="form-table">
+   		<tr>
+    		<th><h3>Initial Setup</h3></th>
+   		</tr>
+		<tr valign="top">
+			<td>
+				Aggiornare will work out of the box but, if you want it to look like it does here, please create 2 new pages, a "Home" page (name the page Home) and a blog page (you can name that page anything. When you create your "Home" page, choose the Home option underneath Template in the Attributes box (in the right sidebar). Then, click under Settings&raquo;Reading and choose "Front page displays a static page" and choose "Home" for the Front Page and the blog page for the Posts page.
+			</td>
+		<tr>
+			<td>Support for this theme is offered in the Support Forum of <a href="http://support.denverwebworkshops.com/">Denver Web Workshops</a>.  Please check there to see if your question has already been answered or to submit an issues/feature request.</td>
+		</tr>
+		</tr>
+	</table>
+</div> 
  <div class=" homePageStuff">
     <table class="form-table">
    		<tr>
@@ -67,6 +87,35 @@ function aggiornare_settings_page() {
 		</tr>
 		<tr valign="top">
 			<th scope="row" colspan="2"><input class="checkbox" type="checkbox" name="aggiornare_tagline"<?php if(get_option('aggiornare_tagline')=='on') { echo ' checked="checked"'; } ?> /> Display tagline?</th>
+		</tr>
+	</table>
+</div>
+
+ <div class=" homePageStuff">
+    <table class="form-table">
+   		<tr>
+    		<th colspan="2"><h3>Navigation Settings</h3></th>
+   		</tr>
+		<tr valign="top">
+			<th scope="row">Pages to display in top navigation:</th>
+				<td><input type="text" name="aggiornare_navigation" value="<?php echo get_option('aggiornare_navigation'); ?>" /></td>
+		</tr>
+		<tr>
+			<td colspan="2"><em>Please put a comma separated list of the page ID's you would like to show in the top navigation. If you leave this blank, the default value is all pages. ONLY pages that are in this list will be displayed (that means you have to explicitly set child pages to display if you want them to).</em></td>
+		</tr>
+	</table>
+</div>
+
+ <div class=" homePageStuff">
+    <table class="form-table">
+   		<tr>
+    		<th colspan="2"><h3>Image Settings</h3></th>
+   		</tr>
+		<tr valign="top">
+			<th scope="row" colspan="2"><input class="checkbox" type="checkbox" name="aggiornare_image_border"<?php if(get_option('aggiornare_image_border')=='on') { echo ' checked="checked"'; } ?> /> Remove borders around all images?</th>
+		</tr>
+		<tr>
+			<td colspan="2"><em>By default, Aggiornare draws a 1 pixel border around images that are placed in posts &amp; pages. Checking this box will remove them.</em></td>
 		</tr>
 	</table>
 </div>
@@ -122,8 +171,6 @@ function aggiornare_settings_page() {
 </select>
 </td>
 </tr>
-
-
 </table>
 </div>
  <div class=" homePageStuff">
