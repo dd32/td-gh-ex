@@ -18,7 +18,9 @@ get_header(); ?>
 ?>
 
 <div class="introBanner">
-					<div class="bannerImage" style="background: url('<?php echo $bannerImage; ?>') 50% 50% no-repeat;"></div>
+					<?php if($bannerImage) { ?>
+						<div class="bannerImage">&nbsp;</div>
+					<?php } ?>
 						<h2><?php echo $bannerHeadline; ?></h2>
 				</div>
 				

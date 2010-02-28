@@ -14,8 +14,6 @@ function aggiornare_settings() {
 function register_settings() {
 	//register our settings
 	register_setting( 'aggiornare_settings_page', 'aggiornare_logo' );
-	register_setting( 'aggiornare_settings_page', 'aggiornare_logo_width' );
-	register_setting( 'aggiornare_settings_page', 'aggiornare_logo_height' );
 	register_setting( 'aggiornare_settings_page', 'aggiornare_navigation' );
 	register_setting( 'aggiornare_settings_page', 'aggiornare_image_border' );
 	register_setting( 'aggiornare_settings_page', 'aggiornare_homepage_image' );
@@ -33,7 +31,7 @@ function register_settings() {
 function aggiornare_settings_page() {
 ?>
 <style type="text/css">
-	.homePageStuff { border: 1px solid #DFDFDF;  -moz-border-radius: 15px; -webkit-border-radius: 15px; padding: 0 0 15px 0; width: 550px; margin: 0 0 15px 0; }
+	.homePageStuff { border: 1px solid #DFDFDF; background: #fbfafa; -moz-border-radius: 15px; -webkit-border-radius: 15px; padding: 0 0 15px 0; width: 550px; margin: 0 0 15px 0; }
 	input, select { width: 300px; }
 	input.short { width: 100px; }
 	input.checkbox { width: 15px; }
@@ -46,7 +44,7 @@ function aggiornare_settings_page() {
     if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>settings saved.</strong></p></div>';
     if ( $_REQUEST['updated'] ) echo '<div id="message" class="updated fade"><p><strong>Settings have been updated.  Thank you!</strong></p></div>';
 ?>
-<form method="post" action="/wp-admin/options.php">
+<form method="post" action="<?php bloginfo('url'); ?>/wp-admin/options.php">
 	<?php wp_nonce_field('update-options');
 	settings_fields( 'aggiornare_settings_page' );
  ?>
@@ -57,14 +55,14 @@ function aggiornare_settings_page() {
  <div class=" homePageStuff">
     <table class="form-table">
    		<tr>
-    		<th><h3>Initial Setup</h3></th>
+    		<th><h2>Initial Setup</h2></th>
    		</tr>
 		<tr valign="top">
 			<td>
 				Aggiornare will work out of the box but, if you want it to look like it does here, please create 2 new pages, a "Home" page (name the page Home) and a blog page (you can name that page anything. When you create your "Home" page, choose the Home option underneath Template in the Attributes box (in the right sidebar). Then, click under Settings&raquo;Reading and choose "Front page displays a static page" and choose "Home" for the Front Page and the blog page for the Posts page.
 			</td>
 		<tr>
-			<td>Support for this theme is offered in the Support Forum of <a href="http://support.denverwebworkshops.com/">Denver Web Workshops</a>.  Please check there to see if your question has already been answered or to submit an issues/feature request.</td>
+			<td><h2>Support</h2>Support for this theme is offered at the <a href="http://support.geekdesigngirl.com/">GeekDesignGirl Support Forums</a>.  Please check there to see if your question has already been answered or to submit an issues/feature request.</td>
 		</tr>
 		</tr>
 	</table>
@@ -72,18 +70,13 @@ function aggiornare_settings_page() {
  <div class=" homePageStuff">
     <table class="form-table">
    		<tr>
-    		<th colspan="2"><h3>Logo Settings</h3></th>
+    		<th colspan="2"><h2>Logo Settings</h2></th>
    		</tr>
 		<tr valign="top">
-			<th scope="row">Logo image URL:</th>
-				<td><input type="text" name="aggiornare_logo" value="<?php echo get_option('aggiornare_logo'); ?>" /></td>
+			<th scope="row" colspan="2"><input class="checkbox" type="checkbox" name="aggiornare_logo"<?php if(get_option('aggiornare_logo')=='on') { echo ' checked="checked"'; } ?> /> Enable custom logo?</th>
 		</tr>
 		<tr>
-			<td colspan="2">Put the complete URL here <em>(i.e. <?php bloginfo('url'); ?>/wp-content/uploads/IMAGEFILE.png)</em>. Image must be no larger 278 pixels wide by 160 pixels tall.</td>
-		</tr>
-		<tr>
-			<td><p>Width (whole number only):<br /><input type="text" name="aggiornare_logo_width" value="<?php echo get_option('aggiornare_logo_width'); ?>" class="short" /></p></td>
-			<td><p>Height (whole number only):<br /><input type="text" name="aggiornare_logo_height" value="<?php echo get_option('aggiornare_logo_height'); ?>" class="short" /></p></td>
+			<td colspan="2">If you enable this option, you MUST upload, via FTP, an image file named <code>logo.jpg</code> to the 'images' directory inside the 'aggiornare' directory. Image must be no larger 278 pixels wide by 160 pixels tall. <strong>The image must have permissions set to 777!</strong></td>
 		</tr>
 		<tr valign="top">
 			<th scope="row" colspan="2"><input class="checkbox" type="checkbox" name="aggiornare_tagline"<?php if(get_option('aggiornare_tagline')=='on') { echo ' checked="checked"'; } ?> /> Display tagline?</th>
@@ -94,7 +87,7 @@ function aggiornare_settings_page() {
  <div class=" homePageStuff">
     <table class="form-table">
    		<tr>
-    		<th colspan="2"><h3>Navigation Settings</h3></th>
+    		<th colspan="2"><h2>Navigation Settings</h2></th>
    		</tr>
 		<tr valign="top">
 			<th scope="row">Pages to display in top navigation:</th>
@@ -109,13 +102,13 @@ function aggiornare_settings_page() {
  <div class=" homePageStuff">
     <table class="form-table">
    		<tr>
-    		<th colspan="2"><h3>Image Settings</h3></th>
+    		<th colspan="2"><h2>Image Settings</h2></th>
    		</tr>
 		<tr valign="top">
 			<th scope="row" colspan="2"><input class="checkbox" type="checkbox" name="aggiornare_image_border"<?php if(get_option('aggiornare_image_border')=='on') { echo ' checked="checked"'; } ?> /> Remove borders around all images?</th>
 		</tr>
 		<tr>
-			<td colspan="2"><em>By default, Aggiornare draws a 1 pixel border around images that are placed in posts &amp; pages. Checking this box will remove them.</em></td>
+			<td colspan="2"><em>By default, Aggiornare draws a 1 pixel border around images that are placed in posts &amp; pages. Checking this box will remove the border.</em></td>
 		</tr>
 	</table>
 </div>
@@ -123,14 +116,13 @@ function aggiornare_settings_page() {
  <div class=" homePageStuff">
     <table class="form-table">
    		<tr>
-    		<th colspan="2"><h3>Homepage Settings</h3></th>
+    		<th colspan="2"><h2>Homepage Settings</h2></th>
    		</tr>
 		<tr valign="top">
-			<th scope="row">Banner image URL:</th>
-				<td><input type="text" name="aggiornare_homepage_image" value="<?php echo get_option('aggiornare_homepage_image'); ?>" /></td>
+			<th scope="row" colspan="2"><input class="checkbox" type="checkbox" name="aggiornare_homepage_image"<?php if(get_option('aggiornare_homepage_image')=='on') { echo ' checked="checked"'; } ?> /> Enable homepage banner image?</th>
 		</tr>
 		<tr>
-			<td colspan="2">Put the complete URL here <em>(i.e. <?php bloginfo('url'); ?>/wp-content/uploads/IMAGEFILE.jpg)</em>. Image should be 600 pixels wide by 227 pixels tall but if it's larger, the image will be centered in the "frame" and trust me, it'll look nice :)</td>
+			<td colspan="2">If you enable this option, you MUST upload, via FTP, an image file named <code>banner.jpg</code> to the 'images' directory inside the 'aggiornare' directory. Image should be 600 pixels wide by 227 pixels tall but if it's larger, the image will be centered in the "frame" and trust me, it'll look nice :) <strong>The image must have permissions set to 777!</strong></td>
 		</tr>
 		<tr valign="top">
 			<th scope="row">Banner headline:</th>
@@ -176,15 +168,18 @@ function aggiornare_settings_page() {
  <div class=" homePageStuff">
     <table class="form-table">
    		<tr>
-    		<th colspan="2"><h3>Footer Settings</h3></th>
+    		<th colspan="2"><h2>Footer Settings</h2></th>
    		</tr>
 		<tr valign="top">
 			<th scope="row">Footer header:</th>
 				<td><input type="text" name="aggiornare_footer_title" value="<?php echo get_option('aggiornare_footer_title'); ?>" /></td>
 		</tr>
 		<tr valign="top">
-			<th scope="row">Footer text:</th>
-				<td><textarea name="aggiornare_footer_text" style="width: 300px; height: 200px;"><?php echo get_option('aggiornare_footer_text'); ?></textarea></td>
+			<th scope="row" style="height: 50px;">Footer text:</th>
+				<td rowspan="2"><textarea name="aggiornare_footer_text" style="width: 300px; height: 200px;"><?php echo get_option('aggiornare_footer_text'); ?></textarea></td>
+		</tr>
+		<tr>
+			<td valign="top">You may use <code>HTML</code> code in this box.</td>
 		</tr>
 	</table>
 </div>
