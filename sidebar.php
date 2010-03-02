@@ -15,6 +15,12 @@
 		<ul class="ul-archives">
 			<?php wp_get_archives('type=monthly'); ?>
 		</ul>
+                  <h3>Theme Links</h3>
+                  <ul class="ul-cat">
+                     <li><a href="#">Bug Reports</a></li>
+                     <li><a href="#">Updates</a></li>
+                     <li><a href="#">Contact</a></li>
+                  </ul>
 <?php if ( !function_exists('dynamic_sidebar')
 || !dynamic_sidebar() ) : ?>
 <?php endif; ?>

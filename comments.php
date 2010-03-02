@@ -22,13 +22,13 @@
 <?php if ( have_comments() ) : ?>
 	<h3 id="comments"><?php comments_number('No Responses', 'One Response', '% Responses' );?> to &#8220;<?php the_title(); ?>&#8221;</h3>
 
-	<ol class="commentlist">
+	<ul class="commentlist">
 
 	<?php foreach ($comments as $comment) : ?>
 
 		<li <?php echo $oddcomment; ?>id="comment-<?php comment_ID() ?>">
 			<?php echo get_avatar( $comment, 32 ); ?>
-			<cite><?php comment_author_link() ?></cite>
+			<span class="comment-author"><?php comment_author_link() ?></span>
 			<?php if ($comment->comment_approved == '0') : ?>
 			<em>Your comment is awaiting moderation.</em>
 			<?php endif; ?>
@@ -47,7 +47,7 @@
 
 	<?php endforeach; /* end for each comment */ ?>
 
-	</ol>
+	</ul>
 
  <?php else : // this is displayed if there are no comments so far ?>
 

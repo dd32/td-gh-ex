@@ -15,6 +15,13 @@
 
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+<script src="<?php echo get_bloginfo('template_url'); ?>/js/cufon-yui.js" type="text/javascript"></script>
+<script src="<?php echo get_bloginfo('template_url'); ?>/js/Myriad_Pro_400.font.js" type="text/javascript"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+			Cufon.replace('h2');
+/* ]]> */
+</script>
 
 <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 

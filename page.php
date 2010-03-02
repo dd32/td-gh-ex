@@ -14,7 +14,7 @@ get_header(); ?>
 
 		<div class="post">
 
-			<h2><?php the_title(); ?></h2>
+			<h2 class="center"><?php the_title(); ?></h2>
 
 			<div class="entry">
 				<?php the_content('Read the rest of this entry &raquo;'); ?>

@@ -1,7 +1,7 @@
 <?php
 /**
  * @package WordPress
- * @subpackage Belle
+ * @subpackage Default_Theme
  */
 /*
 Template Name: Archives

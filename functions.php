@@ -44,10 +44,10 @@ a{
 	padding-left:15px;
 	padding-bottom:5px;
 	border-left:1px solid #dcdcdc;
-	width:140px;
+	width:160px;
 	position: absolute;
 	left: 160px;
-	top:60px;
+	top:56px;
 	font-size: 1em;
 	height:30px;
 }
