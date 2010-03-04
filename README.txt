@@ -35,6 +35,7 @@ Currently available translations:
 - German (thanks to Frank Weichbrodt and Markus Liebl)
 - Czech (thanks to Jirka Knapek and Ivan)
 - Turkish (thanks to Serhat Yolaçan)
+- Hungarian (thanks to Márton Bakos)
 
 
 More Information and Support
@@ -62,6 +63,9 @@ Nonetheless, we still hope that IE6 will rest in peace soon.
 Changelog:
 ---------------------------------------------------
 
+1.2.5
+- Localization added: Hungarian (1.2)
+- Fixed bug: The fix for the lightbox in 1.2.4 has caused the previous bug in 1.1.3, where a dropdown in the first header menu would appear behind the second header menu, to reappear again.
 1.2.4
 - Localization added: Turkish (1.2)
 - Updated localization: Italian (1.2.3)
