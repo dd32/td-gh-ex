@@ -17,12 +17,12 @@
 	$oddcomment = 'class="alt" ';
 ?>
 
-<!-- You can start editing here. -->
+<div style="clear:both;"></div>
 
 <?php if ( have_comments() ) : ?>
 	<h3 id="comments"><?php comments_number('No Responses', 'One Response', '% Responses' );?> to &#8220;<?php the_title(); ?>&#8221;</h3>
 
-	<ul class="commentlist">
+	<ul id="commentlist">
 
 	<?php foreach ($comments as $comment) : ?>
 
@@ -53,11 +53,14 @@
 
 	<?php if ('open' == $post->comment_status) : ?>
 		<!-- If comments are open, but there are no comments. -->
-
+         <ul id="commentlist">
+			<li id="leavecomment">
+				<?php _e('No Comments'); ?>
+			</li>
+		</ul>
 	 <?php else : // comments are closed ?>
 		<!-- If comments are closed. -->
-		<p class="nocomments">Comments are closed.</p>
-
+		<div id="comments-closed-msg"><?php _e('Comments are currently closed.'); ?></div>
 	<?php endif; ?>
 <?php endif; ?>
 

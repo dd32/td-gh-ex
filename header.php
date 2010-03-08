@@ -5,6 +5,8 @@
  * @url http://www.getbelle.com/
  */
 ?>
+<?php
+if (!is_search()): ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
 
@@ -15,11 +17,15 @@
 
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+<script type='text/javascript' src='<?php bloginfo('url'); ?>/wp-includes/js/jquery/jquery.js'></script>
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/functions.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/livesearch.js"></script>
 <script src="<?php echo get_bloginfo('template_url'); ?>/js/cufon-yui.js" type="text/javascript"></script>
-<script src="<?php echo get_bloginfo('template_url'); ?>/js/Myriad_Pro_400.font.js" type="text/javascript"></script>
+<script src="<?php echo get_bloginfo('template_url'); ?>/js/Comfortaa_400.font.js" type="text/javascript"></script>
 <script type="text/javascript">
 /* <![CDATA[ */
 			Cufon.replace('h2');
+			Cufon.replace('h3');
 /* ]]> */
 </script>
 
@@ -40,3 +46,5 @@
 			<?php wp_list_pages('sort_column=menu_order&depth=1&title_li=');?>
 	</ul>
 </div>
+
+<?php endif; ?>

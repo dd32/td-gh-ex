@@ -1,15 +1,15 @@
 <?php
 /**
  * @package WordPress
- * @subpackage Default_Theme
+ * @subpackage Belle
  */
 
 /** @ignore */
-$img = 'kubrickheader.jpg';
+$img = 'default_header.jpg';
 
 // If we don't have image processing support, redirect.
 if ( ! function_exists('imagecreatefromjpeg') )
-	die(header("Location: kubrickheader.jpg"));
+	die(header("Location: default_header.jpg"));
 
 // Assign and validate the color values
 $default = false;

@@ -31,6 +31,9 @@ get_header(); ?>
 		<p>Sorry, but you are looking for something that isn't here.</p>
 
 	<?php endif; ?>
+	<?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
+	
+	<?php comments_template(); ?>
 
 	</div>
 	<!--/content -->

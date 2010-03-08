@@ -4,7 +4,8 @@
  * @subpackage Belle
  */
 ?>
-
+<?php
+if (!is_search()): ?>
 	<div id="footer">
     	<div id="footer-logo">
            <a href="<?php bloginfo('home'); ?>"><?php bloginfo('name'); ?></a>
@@ -14,8 +15,19 @@
 </div>
 
 <!-- Gorgeous design by Grigoruta Adrian - http://www.pixelstudio.ro/ -->
-<?php /* "Just what do you think you're doing Dave?" */ ?>
+<?php wp_footer(); ?>
+	<script type="text/javascript">
+	//<![CDATA[
+		function initBelle() {
+			Belle.AjaxURL		= "<?php bloginfo('url'); ?>/"
+			// Initialize Livesearch
+			Belle.LiveSearch	= new LiveSearch( "Search" )
+			}
+		jQuery(document).ready( function() { initBelle() })
+	//]]>
+	</script>
 
-		<?php wp_footer(); ?>
+	
 </body>
 </html>
+<?php endif; ?>
