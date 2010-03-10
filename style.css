@@ -2,7 +2,7 @@
 Theme Name: Belle
 Theme URI: http://www.GetBelle.com/
 Description: Simple, Light, clean web 2.0 Wordpress Theme with Custom header.
-Version: 1.2
+Version: 1.3
 Author: Grigoruta Adrian
 Author URI: http://www.pixelstudio.ro/
 Tags: blue, silver, custom-header, fixed-width, two-columns, theme-options, light, custom-colors
@@ -106,16 +106,19 @@ blockquote {
 	color:#41add9;
 	font-size:25px;
 }
+#headerimg .blog-title{
+	float:left;
+	margin-right:10px;
+}
 #headerimg .description{
-	padding-left:15px;
-	padding-bottom:5px;
+	width:165px;
 	border-left:1px solid #dcdcdc;
-	width:140px;
-	position: absolute;
-	left: 150px;
-	top:60px;
+	float:left;
 	font-size: 1em;
 	height:30px;
+	margin-top:18px;
+	padding-left:10px;
+	padding-bottom:3px;
 }
 
 #nav {
@@ -251,7 +254,9 @@ blockquote {
 	float:left;
 	margin-bottom:15px;
 }
-
+#search-label { /* The 'Search for:' label */
+	display: none;
+	}
 #search-label.overlabel-apply { /* Inline label for livesearch */
 	display: block;
 	position: absolute;
@@ -272,7 +277,7 @@ blockquote {
 
 #s, #search-label.overlabel-apply { /* Style #s and label in same way */
 	font-size: 1.1em;
-	width: 190px;
+	width: 155px;
 	line-height: 15px;
 	border-radius: 2px;
 	-moz-border-radius: 2px;
@@ -323,24 +328,12 @@ blockquote {
 	margin:0px 0px 15px;
 	padding:0px;
 }
-.widget ul li.page_item{
-	margin: 0px;
-	padding: 2px 0px 2px 5px;
-	border-bottom: 1px solid #dcdcdc;
-}
-.widget ul li.page_item a{
-	color: #555555;
-	text-decoration: none;
-	padding:0 0 0 13px;
-	background:transparent url("images/arrow.gif") no-repeat center left;
-
-}
 
 .widget li a, .widget li a:visited{
     color: #555555;
 	text-decoration: none;
 	padding:0 0 0 13px;
-	background:transparent url("images/arrow.gif") no-repeat center left;
+	background:transparent url("images/arrow.gif") no-repeat top left;
 	border-bottom: 1px solid #dcdcdc;
 }
 .ul-cat {
@@ -356,7 +349,7 @@ blockquote {
 	color: #555555;
 	text-decoration: none;
 	padding:0 0 0 13px;
-	background:transparent url("images/arrow.gif") no-repeat center left;
+	background:transparent url("images/arrow.gif") no-repeat top left;
 	border-bottom: 1px solid #dcdcdc;
 }
 .ul-cat li a:hover{
@@ -429,41 +422,42 @@ blockquote {
 
 
 /*------------------- Comment List ------------------------*/
-#comments {
+.comments {
 	font-size: 1.5em;
 	font-weight: normal;
-	font-family: "Trebuchet MS", Verdana, sans-serif;
 }
-
-#commentlist {
+.commentmetadata{
+	font-size:smaller;
+}
+.commentlist {
 	margin: 10px 0;
 	position: relative;
 	}
 
-#commentlist .children {
+.commentlist .children {
 	margin-left: 20px;
 	}
 
-#commentlist .children li {
+.commentlist .children li {
 	}
 
-#commentlist li {
+.commentlist li {
 	margin: 10px 0 0;
 	list-style: none;
 	}
 
-#commentlist .comment {
+.commentlist .comment {
 	padding: 10px;
 	border-radius: 4px;
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 	}
 
-#commentlist li.comment {
+.commentlist li.comment {
 	padding: 0;
 	}
 
-#commentlist li .comment-content {
+.commentlist li .comment-content {
 	font-size: 1.2em;
 	line-height: 1.8em;
 	}
@@ -476,22 +470,22 @@ blockquote {
 	margin: 13px 0;
 	}
 
-#commentlist li .comment-meta {
+.commentlist li .comment-meta {
 	padding: 2px 0;
 	display: block;
 	}
 
-#commentlist li img {
+.commentlist li img {
 	padding: 0;
 	border: none;
 	}
 
-#commentlist .avatar,
-#commentlist .gravatar {
+.commentlist .avatar,
+.commentlist .gravatar {
 	float: right;
 	}
 
-#commentlist .comment-author {
+.commentlist .comment-author {
 	font-size: 1.3em;
 	font-weight: normal;
 	}
@@ -499,7 +493,7 @@ blockquote {
 .comment-author cite {
 	font-style: normal;
 	}
-#leavecomment, #comments-closed-msg {
+.leavecomment, .nocomments {
 	text-align: center;
 	margin: 30px 0 20px !important;
 	color: #ddd;

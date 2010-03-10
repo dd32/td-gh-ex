@@ -77,7 +77,7 @@ LiveSearch.prototype.doSearch = function(self) {
 
 	self.prevSearch = self.searchField.val();
 	
-	Belle.ajaxGet(self.searchform.serialize(),
+	Belle.ajaxGet(self.searchform.serialize() + '&dynamic=true',
 		function(data) {
 			jQuery('#current-content').hide();
 			jQuery('#dynamic-content').html(data).show();

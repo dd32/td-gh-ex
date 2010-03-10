@@ -7,7 +7,7 @@
 get_header(); ?>
 
 <?php
-if (!is_search()): ?>
+if ($_GET["dynamic"]!='true'): ?>
 <div id="content">
 <?php endif; ?>
 	
@@ -20,7 +20,7 @@ if (!is_search()): ?>
 	<div id="dynamic-content"></div>
 	<!--Corrent Content OFF-->
 	<?php
-if (!is_search()): ?>
+if ($_GET["dynamic"]!='true'): ?>
 </div>
 <?php endif; ?>
 

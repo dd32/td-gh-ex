@@ -5,7 +5,7 @@
  */
 ?>
 	<?php
-if (!is_search()): ?>
+if ($_GET["dynamic"]!='true'): ?>
 	<div id="sidebar">
 		 <?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar(1) ) : else : ?>
 		<h3>Category</h3>

@@ -11,6 +11,22 @@ define('HEADER_IMAGE', '%s/images/default_header.jpg'); // %s is theme dir uri
 define('HEADER_IMAGE_WIDTH', 760); // use width and height appropriate for your theme
 define('HEADER_IMAGE_HEIGHT', 163);
 
+function register_scripts() {
+wp_register_script('livesearch',
+	get_bloginfo('template_directory') . '/js/livesearch.js',
+	array('jquery'), K2_CURRENT, true);
+			
+wp_register_script('functions',
+	get_bloginfo('template_directory') . '/js/functions.js',
+	array('jquery'), K2_CURRENT);
+			
+wp_enqueue_script('livesearch');
+wp_enqueue_script('functions');
+wp_enqueue_script('jquery');
+}
+add_action('init', 'register_scripts');
+
+
 // gets included in the site header
 function header_style() {
     ?><style type="text/css">
