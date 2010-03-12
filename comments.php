@@ -89,6 +89,7 @@
 	</p>
 	<?php do_action('comment_form', $post->ID); ?>
 </form>
+<div style="clear:both;"></div>
 <?php endif; ?>
 </div>
 <?php else : // Comments are closed ?>
