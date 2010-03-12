@@ -54,6 +54,20 @@
 	float:left;
 	margin-top:6px;
 }
+#icon-khaki {
+	width:300px;
+	height:28px;
+	background:url(./images/admin/headerImages.jpg) no-repeat 0 -100px;
+	float:left;
+	margin-top:6px;
+}
+#icon-seaGreen {
+	width:300px;
+	height:28px;
+	background:url(./images/admin/headerImages.jpg) no-repeat 0 -150px;
+	float:left;
+	margin-top:6px;
+}
 
 #icon-sidebarRight {
 	width:40px;
@@ -133,15 +147,12 @@ a.tSRS {
 	border-top:1px solid #ccc;
 	padding:5px 10px;
 	background-color:#f2f2f2;
-	text-align:right;
 	overflow:hidden;
 }
 .tBottom span {
 	font-size:11px;
-	color:#666;
+	color:#999;
 	display:block;
-	float:right;
-	width:670px;
 }
 .tBottom a {
 	display:block;
@@ -193,4 +204,33 @@ a.tSRS {
 .form-table textarea {
 	width:500px;
 	height:150px;
+}
+
+#headerMenu1_include_categories,
+#headerMenu1_include_pages,
+#headerMenu2_include_categories,
+#headerMenu2_include_pages{
+	display:inline-block;
+}
+.tArrows {
+	text-align:center;
+}
+.tArrows a {
+	display:inline-block;
+	width:17px;
+	height:17px;
+	margin:0 2px;
+	background:url(./images/admin/admin.png) no-repeat;
+}
+a.tArrowUp {
+	background-position:-100px -270px;
+}
+a.tArrowUp:hover {
+	background-position:-150px -270px;
+}
+a.tArrowDown {
+	background-position:0 -270px;
+}
+a.tArrowDown:hover {
+	background-position:-50px -270px;
 }

@@ -15,3 +15,6 @@ a span {
 	zoom:1;
 }
 
+.postHeaderCompact .bottom span {
+	margin-right:-45px;
+}

@@ -165,14 +165,6 @@ a#skipToPosts {
 .headerMain {
 	position:relative;
 }
-.header_lightBlue {
-	height:89px;
-	background:url(./images/header/lightBlue.jpg) no-repeat 0 0;
-}
-.header_darkBlue {
-	height:89px;
-	background:url(./images/header/darkBlue.jpg) no-repeat 0 0;
-}
 .headerMain h1 {
 	position:absolute;
 	left:50px;
@@ -198,6 +190,18 @@ a#skipToPosts {
 	font-family:"Times New Roman", Times, serif;
 }
 
+/*
+ * Header Versions
+ */
+.header_lightBlue {
+	height:89px;
+	background:url(./images/header/lightBlue.jpg) no-repeat 0 0;
+}
+
+.header_darkBlue {
+	height:89px;
+	background:url(./images/header/darkBlue.jpg) no-repeat 0 0;
+}
 .header_darkBlue h1,
 .header_darkBlue h1 a,
 .header_darkBlue h1 a:visited,
@@ -206,6 +210,34 @@ a#skipToPosts {
 }
 .header_darkBlue span {
 	color:#4d4d4d;
+}
+
+.header_khaki {
+	height:89px;
+	background:url(./images/header/khaki.jpg) no-repeat 0 0;
+}
+.header_khaki h1,
+.header_khaki h1 a,
+.header_khaki h1 a:visited,
+.header_khaki h1 a:hover {
+	color:#4d2d16;
+}
+.header_khaki span {
+	color:#5f4e3a;
+}
+
+.header_seaGreen {
+	height:89px;
+	background:url(./images/header/seaGreen.jpg) no-repeat 0 0;
+}
+.header_seaGreen h1,
+.header_seaGreen h1 a,
+.header_seaGreen h1 a:visited,
+.header_seaGreen h1 a:hover {
+	color:#003330;
+}
+.header_seaGreen span {
+	color:#33504e;
 }
 
 .headerSearch {
@@ -454,17 +486,18 @@ h3.contentHeader em {
 }
 
 .postHeader {
-	
 }
 .postTitle {
-	background:url(./images/ie6/heading.png) no-repeat 0 0;
 	font-weight:bold;
 	font-size:16px;
 	font-family:Verdana, Geneva, sans-serif;
+}
+.postHeader .postTitle {
+	background:url(./images/ie6/heading.png) no-repeat 0 0;
 	padding-left:15px;
 	margin-right:15px;
 }
-.postTitle span {
+.postHeader .postTitle span {
 	display:block;
 	background:url(./images/ie6/heading.png) no-repeat right 0;
 	padding:8px 15px 7px;
@@ -510,6 +543,42 @@ h3.contentHeader em {
 .postAuthor a {
 	color:#555;
 }
+
+.postHeaderCompact {
+	background:url(./images/ie6/heading.png) no-repeat 0 -120px;
+	padding-left:15px;
+	margin:0 15px 40px 0;
+}
+.postHeaderCompact .inner {
+	display:block;
+	background:url(./images/ie6/heading.png) no-repeat right -120px;
+	padding:0 15px;
+	margin-right:-15px;
+	position:relative;
+}
+.postHeaderCompact .postTitle {
+	margin-bottom:-30px;
+	position:relative;
+	z-index:1;
+	top:8px;
+}
+.postHeaderCompact .bottom {
+	background:url(./images/ie6/heading.png) no-repeat 0 -152px;
+	padding-left:15px;
+	margin:0 15px 0 -30px;
+	position:relative;
+	bottom:-26px;
+	height:26px;
+}
+.postHeaderCompact .bottom span {
+	display:block;
+	background:url(./images/ie6/heading.png) no-repeat right -152px;
+	padding:0 15px;
+	margin-right:-30px;
+	height:26px;
+	position:relative;
+}
+
 
 .postCommentLabel {
 	display:block;
@@ -828,12 +897,12 @@ li.comment li {
 /* Comment pagination */
 .commentNavigation {
 	height:24px;
-	background:url(./images/ie6/pagination.png) no-repeat 0 0;
+	background:url(./images/ie6/pagination.png) no-repeat 0 -30px;
 	margin:30px 10px 0 0;
 }
 .commentNavigation div {
 	height:24px;
-	background:url(./images/ie6/pagination.png) no-repeat right 0;
+	background:url(./images/ie6/pagination.png) no-repeat right -30px;
 	margin:0 -10px 0 10px;
 	padding:0 20px 0 10px;
 }
@@ -849,10 +918,10 @@ li.comment li {
 	font-size:11px;
 	line-height:18px;
 	padding:1px 7px;
-	background:#fff url(./images/ie6/pagination.png) no-repeat -15px -69px;
+	background:#fff url(./images/ie6/pagination.png) no-repeat -15px -99px;
 }
 .commentNavigation a:hover {
-	background-position:-15px -94px;
+	background-position:-15px -124px;
 	text-decoration:none;
 }
 .commentNavigation .title {
@@ -864,7 +933,7 @@ li.comment li {
 	padding:0 15px 0 25px;
 	font-size:11px;
 	border:none;
-	background:url(./images/ie6/pagination.png) no-repeat 0 -31px;
+	background:url(./images/ie6/pagination.png) no-repeat 0 -61px;
 }
 .commentNavigation .gap {
 	color:#808080;
@@ -880,7 +949,7 @@ li.comment li {
 	margin:-2px 1px -2px 0;
 	height:24px;
 	line-height:24px;
-	background:#fff url(./images/ie6/pagination.png) no-repeat 0 -119px;
+	background:#fff url(./images/ie6/pagination.png) no-repeat 0 -149px;
 	padding:1px 9px;
 	font-weight:bold;
 	color:#808080;
@@ -895,21 +964,21 @@ li.comment li {
 	margin:0;
 }
 .commentNavigation .newer a {
-	background:#fff url(./images/ie6/pagination.png) no-repeat 0 -69px;
+	background:#fff url(./images/ie6/pagination.png) no-repeat 0 -99px;
 	padding-left:20px;
 }
 .commentNavigation .newer a:hover {
-	background-position:0 -94px;
+	background-position:0 -124px;
 }
 .commentNavigation .older {
 	float:right;
 }
 .commentNavigation .older a {
-	background:#fff url(./images/ie6/pagination.png) no-repeat right -69px;
+	background:#fff url(./images/ie6/pagination.png) no-repeat right -99px;
 	padding-right:20px;
 }
 .commentNavigation .older a:hover {
-	background-position:right -94px;
+	background-position:right -124px;
 }
 
 
@@ -1017,7 +1086,7 @@ a.btnLogout:hover {
 }
 .paginationTop {
 	margin:0 10px 30px 0;
-	background-position:0 0;
+	background-position:0 -30px;
 }
 .pagination div {
 	height:24px;
@@ -1026,7 +1095,7 @@ a.btnLogout:hover {
 	padding:0 20px 0 10px;
 }
 .paginationTop div {
-	background-position:right 0;
+	background-position:right -30px;
 }
 .pagination .info {
 	display:block;
@@ -1397,7 +1466,17 @@ a.btnLogout:hover {
 		font-size:12px;
 		font-weight:bold;
 		color:#056;
-		background:url(./images/ie6/sidebars.png) no-repeat -250px -190px;
+		background:url(./images/ie6/sidebars.png) no-repeat -150px -190px;
+	}
+	.sidebars a.facebookBtn {
+		display:block;
+		height:26px;
+		padding:0 10px 0 32px;
+		line-height:26px;
+		font-size:12px;
+		font-weight:bold;
+		color:#223b73;
+		background:url(./images/ie6/sidebars.png) no-repeat -300px -190px;
 	}
 .sidebars .b {
 	height:15px;
@@ -1536,12 +1615,22 @@ a span {
 	height:350px;
 }
 
-.postHeader h2 span {
+.postHeader .postTitle span {
 	position:relative;
 }
 .postHeader .bottom div {
 	z-index:1;
 }
+
+.postHeaderCompact,
+.postHeaderCompact .inner,
+.postHeaderCompact .postTitle{
+	zoom:1;
+}
+.postHeaderCompact .bottom span {
+	margin-right:-45px;
+}
+
 
 .postContent {
 	zoom:1;

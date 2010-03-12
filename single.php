@@ -24,6 +24,7 @@
 				<?php if($arjunaOptions['postsShowAuthor']): ?>
 				<span class="postAuthor"><?php the_author_posts_link(); ?></span>
 				<?php endif; ?>
+				<?php if(!$arjunaOptions['comments_hideWhenDisabledOnPosts'] || ( 0 != $post->comment_count || comments_open() || pings_open() )): ?>
 				<a href="<?php comments_link(); ?>" class="postCommentLabel"><span><?php
 					if (function_exists('post_password_required') && post_password_required()) {
 						_e('Pass required', 'Arjuna');
@@ -33,6 +34,7 @@
 						comments_number(__('No comments', 'Arjuna'), __('1 comment', 'Arjuna'), __('% comments', 'Arjuna'));
 					}
 				?></span></a>
+				<?php endif; ?>
 			</div></div>
 		</div>
 		<div class="postContent">
@@ -51,9 +53,11 @@
 			<?php print arjuna_get_edit_link(__('Edit in Admin', 'Arjuna')); ?>
 		</div>
 	</div>
+	<?php if(!$arjunaOptions['comments_hideWhenDisabledOnPosts'] || ( 0 != $post->comment_count || comments_open() || pings_open() )): ?>
 	<div class="postComments" id="comments">
 		<?php comments_template(); ?>
 	</div>
+	<?php endif; ?>
 
 	<?php if($arjunaOptions['posts_showBottomPostLinks'] && arjuna_has_other_posts()): ?>
 	<div class="pagination"><div>

@@ -36,6 +36,7 @@
 				<?php if($arjunaOptions['postsShowAuthor']): ?>
 				<span class="postAuthor"><?php the_author_posts_link(); ?></span>
 				<?php endif; ?>
+				<?php if(!$arjunaOptions['comments_hideWhenDisabledOnPosts'] || ( 0 != $post->comment_count || comments_open() || pings_open() )): ?>
 				<a href="<?php comments_link(); ?>" class="postCommentLabel"><span><?php
 					if (function_exists('post_password_required') && post_password_required()) {
 						_e('Pass required', 'Arjuna');
@@ -45,6 +46,7 @@
 						comments_number(__('No comments', 'Arjuna'), __('1 comment', 'Arjuna'), __('% comments', 'Arjuna'));
 					}
 				?></span></a>
+				<?php endif; ?>
 			</div></div>
 		</div>
 		<div class="postContent">

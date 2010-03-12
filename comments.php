@@ -31,17 +31,7 @@ if (function_exists('post_password_required')) {
 	<?php wp_list_comments('callback=arjuna_get_comment'); ?>
 </ul>
 
-<?php // NOTE: NOT YET IMPLEMENTED PROPERLY INTO ARJUNA // ?>
-<div class="commentNavigation"><div>
-	<?php if(function_exists('paginate_comments_links')) { ?>
-		<span class="title"><?php _e('Comment Pages:', 'Arjuna'); ?></span>
-		<?php paginate_comments_links('prev_text='.__('Previous', 'Arjuna').'&next_text='.__('Next', 'Arjuna').''); ?>
-	<?php } else { ?>
-		<span class="older"><?php previous_comments_link(__('Older Comments', 'Arjuna')) ?></span>
-		<span class="newer"><?php next_comments_link(__('Newer Comments', 'Arjuna')) ?></span>
-	<?php } ?>
-</div></div>
-<?php // NOTE END // ?>
+<?php arjuna_get_comment_pagination(); ?>
 
 <?php } else { // no comments (yet) ?>
 	<?php if ('open' == $post->comment_status) { ?>

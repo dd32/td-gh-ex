@@ -66,10 +66,10 @@ pre {
 	height:350px;
 }
 
-.postTitle {
+.postHeader .postTitle {
 	background-image:url(./images/ie6/heading.png);
 }
-.postTitle span {
+.postHeader .postTitle span {
 	position:relative;
 	background-image:url(./images/ie6/heading.png);
 }
@@ -84,6 +84,25 @@ pre {
 .postAuthor {
 	background-image:url(./images/ie6/heading.png);
 }
+
+
+
+.postHeaderCompact,
+.postHeaderCompact .inner,
+.postHeaderCompact .postTitle{
+	zoom:1;
+}
+.postHeaderCompact .bottom span {
+	margin-right:-45px;
+}
+
+.postHeaderCompact,
+.postHeaderCompact .inner,
+.postHeaderCompact .bottom,
+.postHeaderCompact .bottom span {
+	background-image:url(./images/ie6/heading.png);
+}
+
 
 .postContent {
 	zoom:1;
@@ -262,7 +281,8 @@ a.btn span {
 .sidebars .b,
 .sidebars .b div,
 .sidebars a.rssBtn,
-.sidebars a.twitterBtn {
+.sidebars a.twitterBtn,
+.sidebars a.facebookBtn {
 	background-image:url(./images/ie6/sidebars.png);
 }
 .sidebars h4,

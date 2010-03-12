@@ -7,6 +7,8 @@ $_arjunaDefaultOptions = array(
 	'headerMenu1_alignment' => 'right', // right, left
 	'headerMenu1_show' => true,
 	'headerMenu1_disableParentPageLink' => false,
+	'headerMenu1_exclude_categories' => '',
+	'headerMenu1_exclude_pages' => '',
 	'headerMenu2_dropdown' => '3', // 1, 2, 3 (the depth of the menu, 1 being no dropdown)
 	'headerMenu2_display' => 'categories', // pages, categories
 	'headerMenu2_sortBy' => 'name', // [CATEGORIES]: name, ID, count, slug [PAGES]: post_title, ID, post_name (slug), menu_order (the page's Order value)
@@ -14,10 +16,14 @@ $_arjunaDefaultOptions = array(
 	'headerMenu2_displayHomeButton' => true,
 	'headerMenu2_displaySeparators' => true,
 	'headerMenu2_disableParentPageLink' => false,
+	'headerMenu2_exclude_categories' => '',
+	'headerMenu2_exclude_pages' => '',
 	'headerImage' => 'lightBlue', //lightBlue, darkBlue
 	'commentDisplay' => 'alt', // alt, left, right
-	'footerStyle' => 'style1', // style1, style2
 	'commentDateFormat' => 'timePassed', // timePassed, date
+	'comments_hideWhenDisabledOnPages' => true,
+	'comments_hideWhenDisabledOnPosts' => false,
+	'footerStyle' => 'style1', // style1, style2
 	'appendToPageTitle' => 'blogName', // blogName, custom
 	'appendToPageTitleCustom' => '',
 	'sidebarDisplay' => 'right', // right, left, none
@@ -26,16 +32,20 @@ $_arjunaDefaultOptions = array(
 	'sidebar_showRSSButton' => true, 
 	'sidebar_showTwitterButton' => false, 
 	'sidebar_twitterURL' => '', 
+	'sidebar_showFacebookButton' => false, 
+	'sidebar_facebookURL' => '', 
+	'sidebar_displayButtonTexts' => false, 
 	'enableIE6optimization' => true,
 	'postsShowAuthor' => true,
 	'postsShowTime' => false,
 	'posts_showTopPostLinks' => false,
 	'posts_showBottomPostLinks' => true,
+	'pages_showInfoBar' => false,
 	'customCSS' => false,
 	'customCSS_input' => '',
 	'customCSS_useFilesystem' => false,
 	'pagination' => true,
-	'pagination_pageRange' => 3, //the number of page buttons to show before and after the current page button
+	'pagination_pageRange' => 2, //the number of page buttons to show before and after the current page button
 	'pagination_pageAnchors' => 1, //the number of buttons to always show at the beginning and end of the pagination bar
 	'pagination_pageGap' => 1 //the number of pages in a gap before an ellipsis is added
 );
@@ -121,6 +131,15 @@ function arjuna_add_theme_options() {
 		// Menu 1 - Disable Parent Page Links in
 		if ($_POST['headerMenu1_disableParentPageLink']) $options['headerMenu1_disableParentPageLink'] = true;
 		else $options['headerMenu1_disableParentPageLink'] = false;
+		
+		// Menu 1 - Exclude items
+		if($_POST['headerMenu1_exclude_categories']) {
+			$options['headerMenu1_exclude_categories'] = implode(',', $_POST['headerMenu1_exclude_categories']);
+		} else $options['headerMenu1_exclude_categories'] = '';
+
+		if($_POST['headerMenu1_exclude_pages']) {
+			$options['headerMenu1_exclude_pages'] = implode(',', $_POST['headerMenu1_exclude_pages']);
+		} else $options['headerMenu1_exclude_pages'] = '';
 
 
 		//Menu 2 dropdown
@@ -165,9 +184,19 @@ function arjuna_add_theme_options() {
 		if ($_POST['headerMenu2_disableParentPageLink']) $options['headerMenu2_disableParentPageLink'] = true;
 		else $options['headerMenu2_disableParentPageLink'] = false;
 
+		
+		// Menu 2 - Exclude items
+		if($_POST['headerMenu2_exclude_categories']) {
+			$options['headerMenu2_exclude_categories'] = implode(',', $_POST['headerMenu2_exclude_categories']);
+		} else $options['headerMenu2_exclude_categories'] = '';
+
+		if($_POST['headerMenu2_exclude_pages']) {
+			$options['headerMenu2_exclude_pages'] = implode(',', $_POST['headerMenu2_exclude_pages']);
+		} else $options['headerMenu2_exclude_pages'] = '';
+
 
 		//Header Image
-		$validOptions = array('lightBlue', 'darkBlue');
+		$validOptions = array('lightBlue', 'darkBlue', 'khaki', 'seaGreen');
 		if ( in_array($_POST['headerImage'], $validOptions) ) $options['headerImage'] = $_POST['headerImage'];
 		else $options['headerImage'] = $validOptions[0];
 
@@ -176,6 +205,13 @@ function arjuna_add_theme_options() {
 		$validOptions = array('alt', 'left', 'right');
 		if ( in_array($_POST['commentDisplay'], $validOptions) ) $options['commentDisplay'] = $_POST['commentDisplay'];
 		else $options['commentDisplay'] = 'alt';
+
+		// Comment display
+		if ($_POST['comments_hideWhenDisabledOnPages']) $options['comments_hideWhenDisabledOnPages'] = true;
+		else $options['comments_hideWhenDisabledOnPages'] = false;
+
+		if ($_POST['comments_hideWhenDisabledOnPosts']) $options['comments_hideWhenDisabledOnPosts'] = true;
+		else $options['comments_hideWhenDisabledOnPosts'] = false;
 
 		//Footer style
 		$validOptions = array('style1', 'style2');
@@ -211,13 +247,41 @@ function arjuna_add_theme_options() {
 		
 		// Sidebar: Twitter Button
 		if ($_POST['sidebar_showTwitterButton']) {
-			$_POST['sidebar_twitterURL'] = trim($_POST['sidebar_twitterURL']);
-			if (!empty($_POST['sidebar_twitterURL'])) {
-				$options['sidebar_showTwitterButton'] = true;
-				$options['sidebar_twitterURL'] = $_POST['sidebar_twitterURL'];
-			} else $options['sidebar_showTwitterButton'] = false;
+			$twitterURL = trim($_POST['sidebar_twitterURL']);
+			$options['sidebar_showTwitterButton'] = true;
+			if ( !preg_match('/twitter\.com/i', $twitterURL) ) {
+				if(!preg_match('/\.com/i', $twitterURL)) {
+					//Add the twitter host name
+					$twitterURL = "http://twitter.com/" . $twitterURL;
+				} else {
+					$options['sidebar_showTwitterButton'] = false;
+					$twitterURL = "";
+				}
+			} elseif ( !preg_match('/http[s]?\:\/\//i', $twitterURL) ) {
+				$twitterURL = "http://" . $twitterURL;
+			} elseif ( empty($twitterURL) ) {
+				$options['sidebar_showTwitterButton'] = false;
+			}
+			$options['sidebar_twitterURL'] = $twitterURL;
 		} else $options['sidebar_showTwitterButton'] = false;
-				
+		
+		// Sidebar: Facebook Button
+		if ($_POST['sidebar_showFacebookButton']) {
+			$facebookURL = trim($_POST['sidebar_facebookURL']);
+			$options['sidebar_showFacebookButton'] = true;
+			if ( !preg_match('/facebook\./i', $facebookURL) ) {
+					$twitterURL = "http://facebook.com/" . $facebookURL;
+			} elseif ( !preg_match('/http[s]?\:\/\//i', $facebookURL) ) {
+				$facebookURL = "http://" . $facebookURL;
+			} elseif ( empty($facebookURL) ) {
+				$options['sidebar_showFacebookButton'] = false;
+			}
+			$options['sidebar_facebookURL'] = $facebookURL;
+		} else $options['sidebar_showFacebookButton'] = false;
+
+		if ($_POST['sidebar_displayButtonTexts']) $options['sidebar_displayButtonTexts'] = true;
+		else $options['sidebar_displayButtonTexts'] = false;
+
 
 		//Sidebar Width
 		$validOptions = array('normal', 'small', 'large');
@@ -236,6 +300,9 @@ function arjuna_add_theme_options() {
 		if ($_POST['postsShowTime']) $options['postsShowTime'] = true;
 		else $options['postsShowTime'] = false;
 		
+		if ($_POST['pages_showInfoBar']) $options['pages_showInfoBar'] = true;
+		else $options['pages_showInfoBar'] = false;
+		
 		//Navigation links to previous and next posts
 		if ($_POST['posts_showTopPostLinks']) $options['posts_showTopPostLinks'] = true;
 		else $options['posts_showTopPostLinks'] = false;
@@ -246,7 +313,7 @@ function arjuna_add_theme_options() {
 		if ($_POST['pagination']=='1') {
 			$options['pagination'] = true;
 			
-			$validOptions = array(1,2,3,4,5,6,7);
+			$validOptions = array(1,2,3,4,5);
 			if ( in_array($_POST['pagination_pageRange'], $validOptions) ) $options['pagination_pageRange'] = $_POST['pagination_pageRange'];
 			else $options['pagination_pageRange'] = 3;
 
@@ -290,10 +357,11 @@ function arjuna_add_theme_page () {
 	global $optionsSaved;
 
 	$options = arjuna_get_options();
+	
 	if ( $optionsSaved )
 		echo '<div id="message" class="updated fade"><p><strong>'.__('The Arjuna options have been saved.', 'Arjuna').'</strong></p></div>';
 ?>
-<form action="#" method="post" name="arjuna_form" id="eos_update_theme">
+<form action="#" method="post" name="arjuna_form" id="arjuna_update_theme">
 	<div class="wrap">
 		<h2><?php _e('Arjuna Theme Options', 'Arjuna'); ?></h2>
 		
@@ -319,8 +387,8 @@ function arjuna_add_theme_page () {
 				</div>
 			</div>
 			<div class="tBottom">
-				<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GV5N8DN6XR6PY"><img src="https://www.paypal.com/<?php if(defined('WPLANG') && WPLANG != '') print WPLANG; else print 'en_US'; ?>/i/btn/btn_donate_SM.gif" /></a>
-				<span><?php _e('Arjuna is completely free. If you like this project and want to support further development and maintenance, please', 'Arjuna'); ?></span>
+				<?php /* <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GV5N8DN6XR6PY"><img src="https://www.paypal.com/<?php if(defined('WPLANG') && WPLANG != '') print WPLANG; else print 'en_US'; ?>/i/btn/btn_donate_SM.gif" /></a> */ ?>
+				<span><?php _e('Arjuna is completely free. Therefore, please understand that we do NOT offer free support. If you require support of any kind other than fixing a bug that is related to Arjuna, please request a quote from us.', 'Arjuna'); ?></span>
 			</div>
 		</div>
 		
@@ -414,6 +482,84 @@ function arjuna_add_theme_page () {
 								</div>
 							</td>
 						</tr>
+						<tr valign="top">
+							<th scope="row"><?php _e('Menu Items', 'Arjuna'); ?></th>
+							<td>
+							<div id="headerMenu1_include_categories"<?php if($options['headerMenu1_display']=='pages'): ?> style="display:none;"<?php endif; ?>>
+								<div>
+									<?php _e('Include categories', 'Arjuna'); ?><br />
+									<?php
+									$parameters = 'depth='.$options['headerMenu1_dropdown'];
+									$parameters .= '&exclude='.$options['headerMenu1_exclude_categories'];
+									$categories = get_categories($parameters); 
+									?>
+									<select multiple="multiple" size="3" name="headerMenu1_include_categories[]" id="hm1ic" style="height:auto;width:100%; padding-right:20px;">
+										<?php foreach($categories as $cat): ?>
+										<option value="<?php print $cat->cat_ID; ?>"><?php print $cat->cat_name; ?></option>
+										<?php endforeach; ?>
+									</select>
+								</div>
+								<div class="tArrows">
+									<a href="#" class="tArrowUp" id="hm1ic_up"></a><a href="#" class="tArrowDown" id="hm1ic_down"></a>
+								</div>
+								<div>
+									<?php _e('Exclude categories', 'Arjuna'); ?><br />
+									<?php
+									$parameters = 'orderby='.$options['headerMenu1_sortBy'].'&order='.$options['headerMenu1_sortOrder'].'&depth='.$options['headerMenu1_dropdown'];
+									$parameters .= '&include='.$options['headerMenu1_exclude_categories'];
+									$categories = get_categories($parameters); 
+									?>
+									<select multiple="multiple" size="3" name="headerMenu1_exclude_categories[]" id="hm1ec" style="height:auto;width:100%; padding-right:20px;">
+										<?php
+										if(!empty($options['headerMenu1_exclude_categories'])):
+											foreach($categories as $cat):
+											?>
+											<option value="<?php print $cat->cat_ID; ?>"><?php print $cat->cat_name; ?></option>
+											<?php
+											endforeach;
+										endif;
+										?>
+									</select>
+								</div>
+							</div>
+							<div id="headerMenu1_include_pages"<?php if($options['headerMenu1_display']!='pages'): ?> style="display:none;"<?php endif; ?>>
+								<div>
+									<?php _e('Include pages', 'Arjuna'); ?><br />
+									<?php
+									$parameters = 'depth='.$options['headerMenu1_dropdown'];
+									$parameters .= '&exclude='.$options['headerMenu1_exclude_pages'];
+									$pages = get_pages($parameters); 
+									?>
+									<select multiple="multiple" size="3" name="headerMenu1_include_pages[]" id="hm1ip" style="height:auto;width:100%; padding-right:20px;">
+										<?php foreach($pages as $page): ?>
+										<option value="<?php print $page->ID; ?>"><?php print $page->post_title; ?></option>
+										<?php endforeach; ?>
+									</select>
+								</div>
+								<div class="tArrows">
+									<a href="#" class="tArrowUp" id="hm1ip_up"></a><a href="#" class="tArrowDown" id="hm1ip_down"></a>
+								</div>
+								<div>
+									<?php _e('Exclude pages', 'Arjuna'); ?><br />
+									<?php
+									$parameters = 'depth='.$options['headerMenu1_dropdown'];
+									$parameters .= '&include='.$options['headerMenu1_exclude_pages'];
+									$pages = get_pages($parameters); 
+									?>
+									<select multiple="multiple" size="3" name="headerMenu1_exclude_pages[]" id="hm1ep" style="height:auto;width:100%; padding-right:20px;">
+										<?php
+										if(!empty($options['headerMenu1_exclude_pages'])):
+											foreach($pages as $page):
+											?>
+											<option value="<?php print $page->ID; ?>"><?php print $page->post_title; ?></option>
+											<?php
+											endforeach;
+										endif;
+										?>
+									</select>
+								</div>
+							</div>
+							</td>
 						</tr>
 						<?php /*
 						<tr id="headerMenu1_disableParentPageLink_pages"<?php if($options['headerMenu1_display']!='pages'): ?> style="display:none;"<?php endif; ?>>
@@ -433,12 +579,6 @@ function arjuna_add_theme_page () {
 				<h4><?php _e('Second Header Menu', 'Arjuna'); ?></h4>
 				<table class="form-table">
 					<tbody>
-						<tr>
-							<th scope="row"><?php _e('Home Button', 'Arjuna'); ?></th>
-							<td>
-								<label><input name="headerMenu2_displayHomeButton" type="checkbox"<?php if($options['headerMenu2_displayHomeButton']) echo ' checked="checked"'; ?> /> <?php _e('Display Home button', 'Arjuna'); ?></label>
-							</td>
-						</tr>
 						<tr>
 							<th scope="row"><?php _e('Separators', 'Arjuna'); ?></th>
 							<td>
@@ -508,6 +648,91 @@ function arjuna_add_theme_page () {
 								</div>
 							</td>
 						</tr>
+						<tr>
+							<th scope="row"><?php _e('Home Button', 'Arjuna'); ?></th>
+							<td>
+								<label><input name="headerMenu2_displayHomeButton" type="checkbox"<?php if($options['headerMenu2_displayHomeButton']) echo ' checked="checked"'; ?> /> <?php _e('Display Home button', 'Arjuna'); ?></label>
+							</td>
+						</tr>
+						<tr valign="top">
+							<th scope="row"><?php _e('Menu Items', 'Arjuna'); ?></th>
+							<td>
+							<div id="headerMenu2_include_categories"<?php if($options['headerMenu2_display']=='pages'): ?> style="display:none;"<?php endif; ?>>
+								<div>
+									<?php _e('Include categories', 'Arjuna'); ?><br />
+									<?php
+									$parameters = 'depth='.$options['headerMenu2_dropdown'];
+									$parameters .= '&exclude='.$options['headerMenu2_exclude_categories'];
+									$categories = get_categories($parameters); 
+									?>
+									<select multiple="multiple" size="3" name="headerMenu2_include_categories[]" id="hm2ic" style="height:auto;width:100%; padding-right:20px;">
+										<?php foreach($categories as $cat): ?>
+										<option value="<?php print $cat->cat_ID; ?>"><?php print $cat->cat_name; ?></option>
+										<?php endforeach; ?>
+									</select>
+								</div>
+								<div class="tArrows">
+									<a href="#" class="tArrowUp" id="hm2ic_up"></a><a href="#" class="tArrowDown" id="hm2ic_down"></a>
+								</div>
+								<div>
+									<?php _e('Exclude categories', 'Arjuna'); ?><br />
+									<?php
+									$parameters = 'orderby='.$options['headerMenu2_sortBy'].'&order='.$options['headerMenu2_sortOrder'].'&depth='.$options['headerMenu2_dropdown'];
+									$parameters .= '&include='.$options['headerMenu2_exclude_categories'];
+									$categories = get_categories($parameters); 
+									?>
+									<select multiple="multiple" size="3" name="headerMenu2_exclude_categories[]" id="hm2ec" style="height:auto;width:100%; padding-right:20px;">
+										<?php
+										if(!empty($options['headerMenu2_exclude_categories'])):
+											foreach($categories as $cat):
+											?>
+											<option value="<?php print $cat->cat_ID; ?>"><?php print $cat->cat_name; ?></option>
+											<?php
+											endforeach;
+										endif;
+										?>
+									</select>
+								</div>
+							</div>
+							<div id="headerMenu2_include_pages"<?php if($options['headerMenu2_display']!='pages'): ?> style="display:none;"<?php endif; ?>>
+								<div>
+									<?php _e('Include pages', 'Arjuna'); ?><br />
+									<?php
+									$parameters = 'depth='.$options['headerMenu2_dropdown'];
+									$parameters .= '&exclude='.$options['headerMenu2_exclude_pages'];
+									$pages = get_pages($parameters); 
+									?>
+									<select multiple="multiple" size="3" name="headerMenu2_include_pages[]" id="hm2ip" style="height:auto;width:100%; padding-right:20px;">
+										<?php foreach($pages as $page): ?>
+										<option value="<?php print $page->ID; ?>"><?php print $page->post_title; ?></option>
+										<?php endforeach; ?>
+									</select>
+								</div>
+								<div class="tArrows">
+									<a href="#" class="tArrowUp" id="hm2ip_up"></a><a href="#" class="tArrowDown" id="hm2ip_down"></a>
+								</div>
+								<div>
+									<?php _e('Exclude pages', 'Arjuna'); ?><br />
+									<?php
+									$parameters = 'depth='.$options['headerMenu2_dropdown'];
+									$parameters .= '&include='.$options['headerMenu2_exclude_pages'];
+									$pages = get_pages($parameters); 
+									?>
+									<select multiple="multiple" size="3" name="headerMenu2_exclude_pages[]" id="hm2ep" style="height:auto;width:100%; padding-right:20px;">
+										<?php
+										if(!empty($options['headerMenu2_exclude_pages'])):
+											foreach($pages as $page):
+											?>
+											<option value="<?php print $page->ID; ?>"><?php print $page->post_title; ?></option>
+											<?php
+											endforeach;
+										endif;
+										?>
+									</select>
+								</div>
+							</div>
+							</td>
+						</tr>
 						<?php /*
 						<tr id="headerMenu2_disableParentPageLink_pages"<?php if($options['headerMenu2_display']!='pages'): ?> style="display:none;"<?php endif; ?>>
 							<th scope="row"><?php _e('Parent Page Links', 'Arjuna'); ?></th>
@@ -538,6 +763,16 @@ function arjuna_add_theme_page () {
 							<input name="headerImage" type="radio" id="headerImage_darkBlue" value="darkBlue"<?php if($options['headerImage']=='darkBlue') echo ' checked="checked"'; ?> />
 							<div class="tImage" id="icon-darkBlue"></div>
 							<span><label for="headerImage_darkBlue"><?php _e('Dark Blue', 'Arjuna'); ?></label></span>
+						</div>
+						<div class="tImageOptions" style="float:none">
+							<input name="headerImage" type="radio" id="headerImage_khaki" value="khaki"<?php if($options['headerImage']=='khaki') echo ' checked="checked"'; ?> />
+							<div class="tImage" id="icon-khaki"></div>
+							<span><label for="headerImage_khaki"><?php _e('Khaki', 'Arjuna'); ?></label></span>
+						</div>
+						<div class="tImageOptions" style="float:none">
+							<input name="headerImage" type="radio" id="headerImage_seaGreen" value="seaGreen"<?php if($options['headerImage']=='seaGreen') echo ' checked="checked"'; ?> />
+							<div class="tImage" id="icon-seaGreen"></div>
+							<span><label for="headerImage_seaGreen"><?php _e('Sea Green', 'Arjuna'); ?></label></span>
 						</div>
 					</td>
 				</tr>
@@ -599,10 +834,28 @@ function arjuna_add_theme_page () {
 						</div>
 					</td>
 				</tr>
+				<tr>
+					<th scope="row"><?php _e('Facebook Button', 'Arjuna'); ?></th>
+					<td>
+						<label><input name="sidebar_showFacebookButton" onclick="sidebar_facebookURL_switch(this)" type="checkbox"<?php if($options['sidebar_showFacebookButton']) echo ' checked="checked"'; ?> /> <?php _e('Display a Facebook button on the very top of the sidebar.', 'Arjuna'); ?></label>
+						<div id="sidebar_facebookURL"<?php if(!$options['sidebar_showFacebookButton']) echo ' style="display:none;"'; ?>>
+							Your Facebook URL:<input type="text" class="regular-text" name="sidebar_facebookURL" value="<?php print $options['sidebar_facebookURL'] ?>" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><?php _e('Display Button Labels', 'Arjuna'); ?></th>
+					<td>
+						<label><input name="sidebar_displayButtonTexts" type="checkbox"<?php if($options['sidebar_displayButtonTexts']) echo ' checked="checked"'; ?> /> <?php _e('Display labels next to the buttons (RSS, Twitter and Facebook).', 'Arjuna'); ?></label>
+					</td>
+				</tr>
 			</tbody>
 		</table>
+		
+		
+		
 
-		<h4><?php _e('Single Post Pages', 'Arjuna'); ?></h4>
+		<h4><?php _e('Single Posts and Pages', 'Arjuna'); ?></h4>
 		<table class="form-table">
 			<tbody>
 				<tr>
@@ -615,6 +868,13 @@ function arjuna_add_theme_page () {
 					<th scope="row"><?php _e('Display Time', 'Arjuna'); ?></th>
 					<td>
 						<label><input name="postsShowTime" type="checkbox"<?php if($options['postsShowTime']) echo ' checked="checked"'; ?> /> <?php _e('Include the time and date of when the post has been published, instead of only the date.', 'Arjuna'); ?></label><br />
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><?php _e('Display Info Bar for Pages', 'Arjuna'); ?></th>
+					<td>
+						<label><input name="pages_showInfoBar" type="checkbox"<?php if($options['pages_showInfoBar']) echo ' checked="checked"'; ?> /> <?php _e('Display the info bar right below the title of pages.', 'Arjuna'); ?></label><br />
+						<span class="description"><?php _e('The info bar usually includes the author of the page, the publish date and the comments button. This options entirely hides the bar so that only the title is shown.', 'Arjuna'); ?></span>
 					</td>
 				</tr>
 				<tr>
@@ -659,6 +919,14 @@ function arjuna_add_theme_page () {
 							<span class="description"><?php _e('The default date format can be customized in Settings &gt; General.', 'Arjuna'); ?></span>
 					</td>
 				</tr>
+				<tr>
+					<th scope="row"><?php _e('Comment Display', 'Arjuna'); ?></th>
+					<td>
+						<label><input name="comments_hideWhenDisabledOnPages" type="checkbox"<?php if($options['comments_hideWhenDisabledOnPages']) echo ' checked="checked"'; ?> /> <?php _e('Hide any traces of comments when comments are disabled on <strong>Pages</strong>.', 'Arjuna'); ?></label><br />
+						<label><input name="comments_hideWhenDisabledOnPosts" type="checkbox"<?php if($options['comments_hideWhenDisabledOnPosts']) echo ' checked="checked"'; ?> /> <?php _e('Hide any traces of comments when comments are disabled on <strong>Posts</strong>.', 'Arjuna'); ?></label><br />
+						<span class="description"><?php _e('Note: If enabled, the section that says Comments and the comments button in the heading of the respective pages/posts will be removed.', 'Arjuna'); ?></span>
+					</td>
+				</tr>
 			</tbody>
 		</table>
 
@@ -676,7 +944,7 @@ function arjuna_add_theme_page () {
 								<th scope="row"><?php _e('Page Range', 'Arjuna'); ?>:</th>
 								<td>
 								<select name="pagination_pageRange" style="width:50px;"><?php
-								$validValues = array(1, 2, 3, 4, 5, 6, 7);
+								$validValues = array(1, 2, 3, 4, 5);
 								foreach($validValues as $value) {
 									if ($options['pagination_pageRange'] == $value)
 										print '<option value="'.$value.'" selected="selected">'.$value.'</option>';
@@ -802,28 +1070,36 @@ add_action('admin_menu', 'arjuna_add_theme_options');
 
 if ( function_exists('register_sidebar') ) {
 	register_sidebar(array(
-		'name'=>'sidebar_full_top',
+		'name'=>'Sidebar Top',
+			'id'=>'sidebar_full_top',
+			'description'=>'This is the top widget bar in the sidebar, extending to full width of the sidebar.',
 			'before_widget' => '<div class="sidebarBox">',
 			'after_widget' => '</div>',
 			'before_title' => '<h4><span>',
 			'after_title' => '</span></h4>'
 	));
 	register_sidebar(array(
-		'name'=>'sidebar_left',
+		'name'=>'Sidebar Left',
+			'id'=>'sidebar_left',
+			'description'=>'This is the widget bar on the left hand side in the sidebar. It appears right below the top widget bar.',
 			'before_widget' => '<div class="sidebarBox">',
 			'after_widget' => '</div>',
 			'before_title' => '<h4><span>',
 			'after_title' => '</span></h4>'
 	));
 	register_sidebar(array(
-		'name'=>'sidebar_right',
+		'name'=>'Sidebar Right',
+			'id'=>'sidebar_right',
+			'description'=>'This is the widget bar on the right hand side in the sidebar. It appears right below the top widget bar, next to the left widget bar.',
 			'before_widget' => '<div class="sidebarBox">',
 			'after_widget' => '</div>',
 			'before_title' => '<h4><span>',
 			'after_title' => '</span></h4>'
 	));
 	register_sidebar(array(
-		'name'=>'sidebar_full_bottom',
+		'name'=>'Sidebar Bottom',
+			'id'=>'sidebar_full_bottom',
+			'description'=>'This is the bottom widget bar in the sidebar, extending to full width of the sidebar. It will appear below the left and right widget bars.',
 			'before_widget' => '<div class="sidebarBox">',
 			'after_widget' => '</div>',
 			'before_title' => '<h4><span>',
@@ -1097,6 +1373,25 @@ function arjuna_get_pagination($previousLabel, $nextLabel) {
 		echo $output;
 	}
 	return;
+}
+
+function arjuna_get_comment_pagination() {
+	if ( !is_singular() || !get_option('page_comments') )
+		return;
+	if(get_comment_pages_count() <= 1)
+		return;
+	
+	echo '<div class="commentNavigation"><div>';
+	
+	if(function_exists('paginate_comments_links')) {
+		echo '<span class="title">' . __('Comment Pages:', 'Arjuna') . '</span>';
+		paginate_comments_links('prev_text='.__('Previous', 'Arjuna').'&next_text='.__('Next', 'Arjuna').'');
+	} else {
+		echo '<span class="older">'; previous_comments_link(__('Older Comments', 'Arjuna')); echo '</span>';
+		echo '<span class="newer">'; next_comments_link(__('Newer Comments', 'Arjuna')); echo '</span>';
+	}
+	
+	echo '</div></div>';
 }
 
 function arjuna_get_edit_link($label) {
