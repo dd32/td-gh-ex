@@ -21,7 +21,7 @@ if ($_GET["dynamic"]!='true'): ?>
 		function initBelle() {
 			Belle.AjaxURL		= "<?php bloginfo('url'); ?>/"
 			// Initialize Livesearch
-			Belle.LiveSearch	= new LiveSearch( "Search" )
+			Belle.LiveSearch	= new LiveSearch( "Type and wait for search" )
 			}
 		jQuery(document).ready( function() { initBelle() })
 	//]]>

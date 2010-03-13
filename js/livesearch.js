@@ -1,6 +1,8 @@
 function LiveSearch(searchprompt) {
 	var self = this;
-
+	
+	jQuery('#search-form-wrap').addClass('livesearch');
+	
 	this.searchPrompt	= searchprompt;
 	this.searchform		= jQuery('#searchform');
 	this.searchField	= jQuery('#s');

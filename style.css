@@ -2,7 +2,7 @@
 Theme Name: Belle
 Theme URI: http://www.GetBelle.com/
 Description: Simple, Light, clean web 2.0 Wordpress Theme with Custom header.
-Version: 1.4
+Version: 1.4.1
 Author: Grigoruta Adrian
 Author URI: http://www.pixelstudio.ro/
 Tags: blue, silver, custom-header, fixed-width, two-columns, theme-options, light, custom-colors
@@ -70,12 +70,32 @@ blockquote {
 	border: none;
 	}
 
-img.alignright {float:right; margin:0 0 1em 1em}
-img.alignleft {float:left; margin:0 1em 1em 0}
-img.aligncenter {display: block; margin-left: auto; margin-right: auto}
-a img.alignright {float:right; margin:0 0 1em 1em}
-a img.alignleft {float:left; margin:0 1em 1em 0}
-a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
+.aligncenter,
+.center {
+	text-align: center;
+	}
+
+.entry .aligncenter,
+img.center,
+img[align="center"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	}
+	
+.entry .alignright,
+img[align="right"] {
+	float: right;
+	margin: 0 0 4px 8px;
+	display: block;
+	}
+
+.entry .alignleft,
+img[align="left"] {
+	float: left;
+	margin: 0 8px 4px 0;
+	display: block;
+	}
 
 /*---------------------------------Header-----------------------------*/
 
@@ -91,7 +111,7 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 	height: 100px;
 }
 
-#headerimg a, headerimg a:visited{
+#headerimg a, #headerimg a:visited{
 	color:#41add9;
 	font-size:25px;
 }
@@ -177,6 +197,10 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 	font-family: "Trebuchet MS", Verdana, sans-serif;
 	font-weight:lighter;
 }
+.post-tags{
+   font-size: 75%;
+	color: #999999;
+}
 .post-info {
 	float:left;
 	font-size: 75%;
@@ -214,6 +238,7 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 	padding-top: 0px;
 	font-size: 1.1em;
 	line-height: 1.8em;
+	text-align: justify;
 }
 .entry-title, .entry-title a, .entry-title a:visited,
 h2, h2 a, h2 a:visited,
@@ -244,20 +269,23 @@ h4, h4 a, h4 a:visited {
 
 #searchform {
 	background: #f2f2f2;
-	width: 173px;
+	width: 177px;
 	padding: 13px 13px 13px 13px;
 	float:left;
 	margin-bottom:15px;
 }
+
 #search-label { /* The 'Search for:' label */
 	display: none;
 	}
+
 #search-label.overlabel-apply { /* Inline label for livesearch */
 	display: block;
 	position: absolute;
 	color: #888;
 	cursor: text;
-	padding: 4px 5px;
+	padding: 3px 5px;
+	margin-top:2px;
 	z-index: 1;
 	background: white;
 	}
@@ -272,7 +300,7 @@ h4, h4 a, h4 a:visited {
 
 #s, #search-label.overlabel-apply { /* Style #s and label in same way */
 	font-size: 1.1em;
-	width: 155px;
+	width: 164px;
 	line-height: 15px;
 	border-radius: 2px;
 	-moz-border-radius: 2px;
@@ -282,20 +310,41 @@ h4, h4 a, h4 a:visited {
 #s { /* The actual search input field */
 	position: relative;
 	padding: 3px;
-	width: 60%;
 	border: 1px solid #d0d0d0;
-	color:#adacac;
-	background: #ffffff url("images/magnifier.jpg") no-repeat center right;
+	background: transparent;
 	z-index: 2;
 	}
-
+.livesearch{
+	position:relative;
+}
 .livesearch #s { /* The search input field w. livesearch enabled */
-	width: 157px;
+	padding-right: 20px;
+	width: 150px;
 	}
 
 #s:focus {
-	border-color: #34a0cc
+	border-color: #34a0cc;
 	}
+
+#searchreset, #searchload { /* Reset button & loading spinner */
+	position: absolute;
+	top: 2px;
+	opacity: 0;
+	right: 2px;
+	height: 18px;
+	width: 18px;
+	}
+
+#searchreset {
+	z-index: 4;
+	background: url('images/reset-fff.png') center center no-repeat;
+	}
+
+#searchload {
+	z-index: 3;
+	background: url('images/spinner.gif') center center no-repeat;
+	}
+
 	
 /*------------------------ Side Bar ---------------------------*/
 #sidebar {
@@ -371,7 +420,6 @@ h4, h4 a, h4 a:visited {
 	color: #71c2e3;
 	text-decoration: none;
 }
-
 
 /*----------------------Comment Form -------------------------------------*/
 #commentform {

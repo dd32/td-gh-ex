@@ -6,8 +6,11 @@
 
 get_header(); ?>
 
-	<div id="content">
+<div id="content">
 
+	
+	<!--Corrent Content ON-->
+    <div id="current-content">
 	<?php if (have_posts()) : ?>
 
 		<?php while (have_posts()) : the_post(); ?>
@@ -34,9 +37,12 @@ get_header(); ?>
 	<?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
 	
 	<?php comments_template(); ?>
-
 	</div>
-	<!--/content -->
+	<div id="dynamic-content"></div>
+	<!--Corrent Content OFF-->
+	
+</div>
+<!--/content -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

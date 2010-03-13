@@ -7,6 +7,7 @@
 				<div class="post-info">Posted by <?php the_author() ?> | Category: <span class="entry-categories"><?php the_category(', ') ?></span> | <span class="entry-comments"><?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?> </span></div>
 				<div style="clear:both;"></div>
 			   </div>
+			   <div class="post-tags"><?php the_tags(); ?></div>
 				<div class="entry">
 					<?php the_content('Read the rest of this entry &raquo;'); ?>
 				</div>

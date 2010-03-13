@@ -13,7 +13,7 @@ if ($_GET["dynamic"]!='true'): ?>
 	
 	<div id="notices"></div>
 	
-	<!--Corrent Content OFF-->
+	<!--Corrent Content ON-->
     <div id="current-content">
 	   <?php include(TEMPLATEPATH . '/belle/loop.php'); ?>
 	</div>

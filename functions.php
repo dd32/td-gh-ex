@@ -26,15 +26,21 @@ wp_enqueue_script('jquery');
 }
 add_action('init', 'register_scripts');
 
+//remove recent comments style
+add_action('widgets_init', 'my_remove_recent_comments_style');
+function my_remove_recent_comments_style() {
+	global $wp_widget_factory;
+	remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
+}
 
 // gets included in the site header
 function header_style() {
     ?><style type="text/css">
         #content-head {
             background:url(<?php header_image(); ?>) no-repeat 90% 90%;
-	     position: relative;
-	     padding:0px;
-	     height:170px;
+			position: relative;
+			padding:0px;
+			height:170px;
         }
     </style><?php
 }
@@ -45,28 +51,31 @@ function admin_header_style() {
         #headimg {
             width: <?php echo HEADER_IMAGE_WIDTH; ?>px;
             height: <?php echo HEADER_IMAGE_HEIGHT; ?>px;
+			}
+		#headimg{
+	        position: relative;
+	        padding: 35px 0px 0px 7px;
+	        height: 100px;
         }
-	#headimg {
-	position: relative;
-	padding: 45px 0px 0px 7px;
-	height: 100px;
-}
-
-a{
-	color: #34a0cc;
-	text-decoration: none;
-	}
-#desc{
-	padding-left:15px;
-	padding-bottom:5px;
-	border-left:1px solid #dcdcdc;
-	width:160px;
-	position: absolute;
-	left: 160px;
-	top:56px;
-	font-size: 1em;
-	height:30px;
-}
+        #headimg h1 {
+			float:left;
+			margin-right:10px;
+			margin-top:23px;
+		}
+		#headimg a{
+			color: #41add9;
+			text-decoration: none;
+		}
+		#desc{
+			width:165px;
+			border-left:1px solid #dcdcdc;
+			float:left;
+			font-size: 1em;
+			height:30px;
+			margin-top:18px;
+			padding-left:10px;
+			padding-bottom:3px;
+		}
     </style><?php
 }
 
