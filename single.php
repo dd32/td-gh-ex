@@ -13,28 +13,32 @@
         <div class="post" id="post-<?php the_ID(); ?>">
             
             <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a><?php edit_post_link('Edit', ' ', ''); ?></h2>
-            <p class="time"><?php the_time('l, j. F Y') ?></p>
+            <p class="time"><?php the_time('l, F j, Y') ?> by <?php the_author() ?></p>
             
             <div class="entry">
-            	<?php the_content('Read more »'); ?>
+            	<?php the_content(''); ?>
                 
                 <?php wp_link_pages('before=<div class="nav_link">&after=</div>&next_or_number=number&pagelink=<span class="page_number">%</span>'); ?>
-                
-            	<?php the_tags('<div id="tags">Tags: ', ', ', '.</div>'); ?> 
             </div>
             
             
             
-            <p class="postmetadata">Posted in <?php the_category(', ') ?> by <?php the_author() ?></p>
+             <p class="postmetadata">
+            	<?php the_tags('Tags: ', ', ', ' '); ?><br />
+                Posted in <?php the_category(', ') ?> <br />
+				
+            </p>
             
             
              
-            <?php comments_template(); ?>
+            <div id="commentsFrame">
+            	<?php comments_template(); ?>
+            </div>
+            <br />
+
             <?php endwhile; ?>
             
-            <div class="previous_next">
-                <?php posts_nav_link(' | ','&laquo; Previous Page','Next Page &raquo;'); ?>
-            </div>
+            
             
             <?php else : ?>
             <div class="post">

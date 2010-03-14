@@ -22,11 +22,12 @@
             </div>
             
             
-            <?php comments_template(); ?>
-            <?php endwhile; ?>
-            <div class="previous_next">
-                <?php posts_nav_link(' | ','&laquo; Previous Page','Next Page &raquo;'); ?>
+            <div id="commentsFrame">
+            	<?php comments_template(); ?>
             </div>
+            <br />
+            <?php endwhile; ?>
+            
             
 			<?php else : ?>
             <div class="post">

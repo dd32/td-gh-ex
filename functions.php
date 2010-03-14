@@ -94,5 +94,31 @@ function adStyle_panel_setting() {
         </form>
   </div>
   
-<?php
+<?php 
+}
+
+class truncate{
+	/* Public function for truncating content
+	*  Requires an string and a length
+	*
+	* Structure:
+	* $truncateString = 'text ro truncate'
+	*
+	* Example:
+	*	$truncateString = truncate::doTruncate($_POST['truncate'], 100);
+	*					
+	* Returns:
+	* return truncated string;
+	*/	
+	public static function doTruncate($truncateString, $limit, $break=".", $pad="...") { 
+	// return with no change if string is shorter than $limit  
+	if(strlen($truncateString) <= $limit) return $truncateString; 
+		// is $break present between $limit and the end of the string?  
+		if(false !== ($breakpoint = strpos($truncateString, $break, $limit))) { 
+			if($breakpoint < strlen($truncateString) - 1) { 
+				$truncateString = substr($truncateString, 0, $breakpoint) . $pad; 
+			}
+		} 
+		return $truncateString;
+	}
 }

@@ -19,15 +19,15 @@
                     
             <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h2>
             
-            <p class="time"><?php the_time('l, j. F Y') ?></p>
+            <p class="time"><?php the_time('l, F j, Y') ?> by <?php the_author() ?></p>
             
-            
-            <p><?php the_content('Read more »'); ?>
-               <?php the_tags('<div id="tags">Tags: ', ', ', '.</div>'); ?> 
-            </p>
+             <?php $truncateContent = truncate::doTruncate(strip_tags(get_the_content(), '<p><a><br/>'), 300, '.', '...'); ?>    
+             <p class="desc"><?php echo $truncateContent; ?></p>
+
             
             <p class="postmetadata">
-                Posted in <?php the_category(', ') ?> by <?php the_author() ?> - <?php comments_popup_link('No Comments','1 Comment','% Comments','Comments Off') ?>
+            	<?php the_tags('Tags: ', ', ', ' '); ?><br />
+                Posted in <?php the_category(', ') ?>
             </p>
         
         	</div>

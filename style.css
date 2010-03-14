@@ -3,13 +3,13 @@
 /*
 Theme Name: AdStyle
 Theme URI: http://wordpress.gordonfrench.com/
-Description: AdStyle is designed for adsense placement, has  modern scroll work and broken boundries for added flair. Your adsense code needs to be added in the wp-admin panel. Current update fixes firefox issue.
-Version: 1.3.4
+Description: AdStyle is designed for adsense placement, has  modern scroll work and broken boundries for added flair. Your adsense code needs to be added in the wp-admin panel. Current update fixes IE7 issues. Added Navigation, Improved Comments.
+Version: 2.0
 Author: Gordon French
 Author URI: http://gordonfrench.com/
 Tags:light,right-sidebar,fixed-width,two-columns,orange 
 
-	French v1.3.4
+	French v2.0
 	 http://gordonfrench.com/
 
 	This theme was designed by Gordon French,
@@ -37,16 +37,19 @@ body  {font: 100% Arial, Verdana, Helvetica, sans-serif; background: url(images/
 #container { width: 954px; margin: 0 auto; position:relative; z-index:5; } 
 
 /* background componets */
-#topDecor{ position:fixed; top:0px; left:0px; background:url(images/topDecor.png) no-repeat; width:463px; height:542px; z-index:1;}
-#bottomDecor { position:fixed; bottom:0px; right:0px; background:url(images/baseDecor.png) no-repeat; height:414px; width:363px; z-index:1}
-#bottomGradient{ background:url(images/lowerBG.jpg) repeat-x; width:100%; height:665px; margin-top:-640px;}
+#topDecor			{ position:fixed; top:0px; left:0px; background:url(images/topDecor.png) no-repeat; width:463px; height:542px; z-index:1;}
+#bottomDecor 		{ position:fixed; bottom:0px; right:0px; background:url(images/baseDecor.png) no-repeat; height:414px; width:363px; z-index:1}
+#bottomGradient		{ background:url(images/lowerBG.jpg) repeat-x; width:100%; height:665px; margin-top:-640px;}
 
 
 /* basics */
-a { text-decoration:none}
-.aligncenter { display:block; margin-left:auto; margin-right:auto}
-.alignleft { float: left; width:100%}
-.alignright {float: right;  width:100%}
+a					{ color:#8ea5c9;  text-decoration:none}
+a img				{ border:none;}
+a:hover				{ color:#ac6e2d}
+.aligncenter 		{ display:block; margin-left:auto; margin-right:auto; text-align:center}
+.alignleft 			{ float: left; margin-right:5px;}
+.alignright 		{ float: right; margin-left:5px;}
+
 #recent-posts-3 { font-size:80%;}
 
 .clearfloat { clear:both; height:0; font-size: 1px; line-height: 0px;}
@@ -57,7 +60,7 @@ a { text-decoration:none}
 
 
 /* header */
-#header { position:relative; background: url(images/header.png) no-repeat; height:230px; margin-left:10px; margin-top:70px; margin-bottom:8px; z-index:3} 
+#header { position:relative; background: url(images/header.png) no-repeat; height:220px; margin-left:10px; margin-top:70px; margin-bottom:-10px; z-index:3} 
 	/* h1 header text */
 	#header h1 { position: relative; margin-bottom:-50px; z-index:20; left:10px; top:-10px; font-size:250%;  }
 	#header h1 a {color:#54340d}
@@ -89,20 +92,20 @@ a { text-decoration:none}
 
 
 /* Sidebar */
-#sidebar {  position:relative; float:right; top:0px; width:285px; padding: 0px 0px 10px 0px; margin-right:10px; margin-top:-7px}
-	#sidebarContentTop {background: url(images/sidebarTop.png) no-repeat; height:33px; margin-bottom:-18px }
-	#sidebarContent {background: url(images/sidebarBG.png) repeat-y; padding:0px 35px 0px 20px; }
-	#sidebarContentBottom { background: url(images/sidebarBase.png) no-repeat; height:30px; }
-	
-	/* sidebar heard title box */
-	#sidebarContent h2 { position:relative; top:-7px; background:url(images/sidebarTitleBox.png) no-repeat; height:44px; padding:15px 10px 10px 40px;  width:298px; margin:2px 0px -30px -45px; font-size:110%; }
-	
-	/* sidebar links */
-	#sidebarContent li { position:relative; z-index:10}
-	#sidebarContent li a { color:#54340d;}
-	#sidebarContent li a:hover { color:#da944a;}
-	#sidebarContent ul { padding:10px 0 10px 10px; margin:0 0 0 0; list-style-type:none}
-	#sidebarContent caption {padding-top:10px}
+#sidebar {  position:relative; float:right; top:0px; width:285px; font-size:90%; padding: 0px 0px 10px 0px; margin-right:10px; margin-top:-7px}
+#sidebarContentTop {background: url(images/sidebarTop.png) no-repeat; height:33px; margin-bottom:-18px }
+#sidebarContent {background: url(images/sidebarBG.png) repeat-y; padding:0px 35px 0px 20px; }
+#sidebarContentBottom { background: url(images/sidebarBase.png) no-repeat; height:30px; }
+
+/* sidebar heard title box */
+#sidebarContent h2 { position:relative; top:-7px; background:url(images/sidebarTitleBox.png) no-repeat; height:44px; padding:15px 10px 10px 40px;  width:298px; margin:2px 0px -30px -45px; font-size:110%; }
+
+/* sidebar links */
+#sidebarContent li { position:relative; z-index:10; padding:2px 0px}
+#sidebarContent li a { color:#54340d;}
+#sidebarContent li a:hover { color:#da944a;}
+#sidebarContent ul { padding:10px 0 10px 10px; margin:0 0 0 0; list-style-type:none}
+#sidebarContent caption {padding-top:10px}
 	
 
 
@@ -115,33 +118,100 @@ a { text-decoration:none}
 #mainContentTop{ position:relative; width:654px; background: url(images/contentTop.png) no-repeat; height:25px; margin-left:10px; margin-bottom:-18px; z-index:3}
 #mainContentBottom{background: url(images/contentBottom.png) no-repeat;width:654px; height:25px; margin:-18px 0px 5px 10px}
 #mainContent { margin: 0 0px 0 0; padding:0px 40px 0 50px; width:570px; background:url(images/contentBG.png) repeat-y;  margin-left:10px;}
-	#mainContent #text { position:relative; z-index:3; }/* lifts text above the decor element */
+#mainContent #text { position:relative; z-index:3; }/* lifts text above the decor element */
+		
+/* sets the tile box for h1 and h2 tags */
+#mainContent h1 { position:relative; top:-10px; background:url(images/contentTitleBox.png) no-repeat; height:60px; padding:35px 10px 0px 70px;  width:592px; margin:0px 0px -25px -80px }
+
+#mainContent h2 { position:relative; top:-10px; background:url(images/contentTitleBox.png) no-repeat; height:55px; padding:38px 10px 0px 70px;  width:592px; margin:0px 0px -25px -80px; font-size:130% }
 	
-	/* links in post */
-	#mainContent #text p a {color:#da944a}
-	#mainContent #text p a:hover {color:#aec2e1}
+/* image on bottom of content box */
+#mainContentDecor{ position:relative; bottom:343px; left:150px; background:url(images/contentSwirl.png) no-repeat; width:353px; height:368px; margin-bottom:-368px;}
+
+/* Post tile link color */
+#mainContent h2 a { color:#54340d;}
+#mainContent h2 a:hover { color:#a16d35;}
 	
-	/* Tags */
-	#tags a, #text a {color:#54340d}
-	#tags a:hover, #text a:hover {color:#aec2e1}
-	
-	/* sets the tile box for h1 and h2 tags */
-	#mainContent h1 { position:relative; top:-10px; background:url(images/contentTitleBox.png) no-repeat; height:60px; padding:35px 10px 0px 70px;  width:592px; margin:0px 0px -25px -80px }
-	#mainContent h2 { position:relative; top:-10px; background:url(images/contentTitleBox.png) no-repeat; height:55px; padding:38px 10px 0px 70px;  width:592px; margin:0px 0px -25px -80px; font-size:130% }
-	
-	/* image on bottom of content box */
-	#mainContentDecor{ position:relative; bottom:343px; left:150px; background:url(images/contentSwirl.png) no-repeat; width:353px; height:368px; margin-bottom:-368px;}
-	/* Post tile link color */
-	#mainContent h2 a { color:#54340d;}
-	#mainContent h2 a:hover { color:#da944a;}
-	
-	/* time */
-	.time { text-align:right; margin-top:-10px}
-	
-	/* Div added for code styleing */
-	#code { background:url(images/codeBG.png) repeat; padding:10px; border:solid thin #000}
+
+/* Navigation */
+.rounded		{-moz-border-radius: 5px; -webkit-border-radius: 5px;}
+.nav			{ position:relative; top:-60px; left:75px; list-style:none; width:850px; padding:10px 0px; z-index:15;  }
+.nav ul			{ list-style:none;  margin:0; padding:0}
+.nav li			{ float:left; padding:0px 0px 0px 0px;  font-size:90%; font-weight:bold; }
+
+.nav li a		{ color:#526b7f; margin:0px 10px 0px 0px; background-color:#FFF; padding:3px 5px;
+					-moz-box-shadow:0 0 1em #54340d; -webkit-box-shadow:0 0 1em #54340d; border:1px solid #54340d; 
+					-moz-border-radius: 5px; -webkit-border-radius: 5px;}
+.nav li a:hover	{ position:relative; z-index:20; color:#f0880c;  }
+.homeLink		{ position:absolute; left:-43px; top:60px; font-size:85%}
 
 
+/* COMMENTS */
+.commentlist			{ width:550px}
+.commentlist .photo		{ float:left; padding:3px 5px 0px 3px}
+ol.commentlist 			{ left:-20px; margin:3px 0px; padding:0px}
+.commentlist li			{ list-style:none; margin:10px 0px; padding:5px;}
+.commentlist a			{ color:#738eb9}
+.commentlist .url		{ font-size:110%; font-weight:bold; font-style:normal}
+
+
+.commentlist .reply		{ margin-bottom:5px}
+.commentlist .reply a	{ color:#738eb9; font-weight:bold; }
+.commentlist .reply a:hover	{ color:#f0880c; text-decoration:underline; }
+.comment-meta a			{ color:#738eb9; font-size:80%}
+
+.pinglist				{ position:relative; left:0px;  padding:0px; font-size:80%; width:550px}
+.pinglist li			{ list-style:none}
+.pinglist .says			{ display:none; }
+.pinglist .comment-meta	{ display:none;}
+.pinglist p				{ display:none;}
+.pinglist .reply		{ display:none;}
+.pinglist .vcard		{ padding:3px 10px;}
+.pinglist a				{ color:#738eb9}
+.pinglist a:hover		{ color:#ac6e2d;}
+
+
+
+
+
+/* SINGLE POST */
+
+.entry h1, .entry h2, .entry h3	{ color:#242424; margin:5px 0px 0px 0px}
+.entry h4, .entry h5, .entry h6	{ color:#242424; margin:5px 0px 0px 0px}
+
+.entry 					{ font-size:90%;}
+.entry a				{ color:#738eb9}
+.entry a:hover			{ color:#ac6e2d}
+
+.entry table				{ background:#d8cac2}
+.entry th				{ background:#6e5b4f; color:#FFF; padding:3px}
+.entry tr				{ background:#ead5c8;}
+.entry tr.alternate		{ background:#f7ede7}
+.entry td				{ padding:3px}
+
+.entry ul 				{ padding:0; margin:10px 0px 0px 30px; }
+.entry li 				{ margin:0px 0px 5px 30px;}
+.entry ol 				{ list-style-type: decimal; color:#553e30; }
+.entry ol ol 			{ list-style-type: upper-alpha; }
+.entry ol ol ol 			{ list-style-type: upper-roman; }
+.entry ol ol ol ol 		{ list-style-type: lower-alpha; }
+.entry ol ol ol ol ol 	{ list-style-type: lower-roman; }
+
+.even					{ background:#fff9ec}
+.odd					{ background:#fef2da}
+
+.time 					{ text-align:right; margin:-10px 5px 0px 0px; font-size:80%; font-weight:bold; color:#da944a}
+.postmetadata			{ font-size:70%; color:#a0907e}
+
+.tags a 				{color:#54340d}
+.tags a:hover  			{color:#aec2e1}
+
+.previous_next			{ margin:20px 0px 10px; font-size:90%}
+.previous_next a		{ color:#738eb9; background-color:#FFF; padding:3px 5px;
+					-moz-box-shadow:0 0 1em #c6d9e9; -webkit-box-shadow:0 0 1em #c6d9e9; border:1px solid #c6d9e9}
+.previous_next a:hover	{ color:#f0880c}
+
+.desc					{ font-size:90%;}
 
 
 /* Footer */
