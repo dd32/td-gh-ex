@@ -6,11 +6,6 @@ Author:  Gordon French
 $themename = "adstyle";
 $shortname = "adstyle";
 
-$adStyleOptions = array(
-	'ads' => 'car'
-);
-add_option('myOptions', $myOptions);
-
 
 if ( function_exists('register_sidebar') ) register_sidebar(); 
 
