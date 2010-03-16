@@ -1,8 +1,8 @@
 /*
 Theme Name: Belle
 Theme URI: http://www.GetBelle.com/
-Description: Simple, Light, clean web 2.0 Wordpress Theme with Custom header.
-Version: 1.4.1
+Description: Simple, Light, clean web 2.0 Wordpress Theme with Custom Header and Live Search.
+Version: 1.4.2
 Author: Grigoruta Adrian
 Author URI: http://www.pixelstudio.ro/
 Tags: blue, silver, custom-header, fixed-width, two-columns, theme-options, light, custom-colors
@@ -68,6 +68,7 @@ blockquote {
 	color: #333;
 	background: url('images/quote.jpg') no-repeat 10px 0;
 	border: none;
+	font-style:italic;
 	}
 
 .aligncenter,
@@ -75,27 +76,22 @@ blockquote {
 	text-align: center;
 	}
 
-.entry .aligncenter,
-img.center,
-img[align="center"] {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	}
-	
-.entry .alignright,
-img[align="right"] {
-	float: right;
-	margin: 0 0 4px 8px;
-	display: block;
-	}
-
-.entry .alignleft,
-img[align="left"] {
+img.alignleft {
 	float: left;
-	margin: 0 8px 4px 0;
-	display: block;
-	}
+	padding: 2px;
+	margin: 0 20px 20px 0;
+}
+
+img.alignright {
+	float: right;
+	padding: 2px;
+	margin: 0 0 20px 20px;
+}
+
+img.aligncenter {
+	text-align: center;
+	padding: 2px;
+}
 
 /*---------------------------------Header-----------------------------*/
 
@@ -232,7 +228,10 @@ img[align="left"] {
 	padding-top: 2px;
 	margin-left: -3px;
 }
-
+.entry img {
+	padding: 2px;
+	border: 1px solid #DADADA;
+}
 .entry {
 	clear: both;
 	padding-top: 0px;
@@ -379,6 +378,9 @@ h4, h4 a, h4 a:visited {
 	padding:0 0 0 13px;
 	background:transparent url("images/arrow.gif") no-repeat center left;
 	border-bottom: 1px solid #dcdcdc;
+}
+.widget li a:hover{
+	color:#34A0CC;
 }
 .ul-cat {
 	list-style: none;
