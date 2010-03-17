@@ -44,7 +44,7 @@ function adStyle_panel_setting() {
   }
 
 ?>
-	<h1 style="padding-left:0px">adStyle</h1><p style="padding-left:55px; margin-top:-15px"> by <a href="http://gordonfrench.com">Gordon French</a> </p>
+	<h1 style="padding-left:0px">adStyle</h1><p style="padding-left:55px; margin-top:-15px"> by <a href="http://wordpress.gordonfrench.com/adstyle">Gordon French</a> </p>
   
   
 
