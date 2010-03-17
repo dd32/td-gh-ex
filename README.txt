@@ -64,9 +64,9 @@ Nonetheless, we still hope that IE6 will rest in peace soon.
 Changelog:
 ---------------------------------------------------
 
-1.3.1
+1.3.2
 - Localization: Italian has been updated to 1.3.
-- Fix: The new exclude pages/categories feature had some errors. 
+- Fix: The new exclude pages/categories feature had some errors.
 1.3
 - New: It's now possible to hide comments completely, including the Comments section and the buttons, if comments are disabled for posts or pages.
 - New: You can now exclude pages and categories from both header menus. It's pretty basic right now due a number of limitations imposed by the default WordPress functions. Therefore, the admin currently doesn't show any hierarchy information, but it should suffice for most purposes for now.

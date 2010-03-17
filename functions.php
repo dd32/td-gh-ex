@@ -506,7 +506,7 @@ function arjuna_add_theme_page () {
 								<div>
 									<?php _e('Exclude categories', 'Arjuna'); ?><br />
 									<?php
-									$parameters = 'orderby='.$options['headerMenu1_sortBy'].'&order='.$options['headerMenu1_sortOrder'].'&depth='.$options['headerMenu1_dropdown'];
+									$parameters = 'depth='.$options['headerMenu1_dropdown'];
 									$parameters .= '&hide_empty=0';
 									$parameters .= '&include='.$options['headerMenu1_exclude_categories'];
 									$categories = get_categories($parameters); 
@@ -681,7 +681,7 @@ function arjuna_add_theme_page () {
 								<div>
 									<?php _e('Exclude categories', 'Arjuna'); ?><br />
 									<?php
-									$parameters = 'orderby='.$options['headerMenu2_sortBy'].'&order='.$options['headerMenu2_sortOrder'].'&depth='.$options['headerMenu2_dropdown'];
+									$parameters = 'depth='.$options['headerMenu2_dropdown'];
 									$parameters .= '&hide_empty=0';
 									$parameters .= '&include='.$options['headerMenu2_exclude_categories'];
 									$categories = get_categories($parameters); 
