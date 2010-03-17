@@ -64,6 +64,9 @@ Nonetheless, we still hope that IE6 will rest in peace soon.
 Changelog:
 ---------------------------------------------------
 
+1.3.1
+- Localization: Italian has been updated to 1.3.
+- Fix: The new exclude pages/categories feature had some errors. 
 1.3
 - New: It's now possible to hide comments completely, including the Comments section and the buttons, if comments are disabled for posts or pages.
 - New: You can now exclude pages and categories from both header menus. It's pretty basic right now due a number of limitations imposed by the default WordPress functions. Therefore, the admin currently doesn't show any hierarchy information, but it should suffice for most purposes for now.
@@ -77,7 +80,6 @@ Changelog:
 - Change: The names of the widget bars of the sidebar have been changed. Note: This might mean that you need to reassign your widgets if you are upgrading Arjuna.
 - Fix: Bullet lists and numbered lists in the content of posts rendered with no white space below them.
 - Fix: Some international blogs with a language that has characters not part of the standard ASCII table seemed to cause major rendering issues in several browsers, mostly Internet Explorer. Arjuna is now encoded in UTF-8.
-1.2.6
 - Localization: Slovak (1.2) has been added.
 1.2.5
 - Localization: Hungarian (1.2) has been added.

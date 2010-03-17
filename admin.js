@@ -33,10 +33,14 @@ function headerMenu2_tD(o) {
 		if(v=='pages') {
 			document.getElementById('headerMenu2_sortBy_categories').style.display = 'none';
 			document.getElementById('headerMenu2_sortBy_pages').style.display = 'block';
+			document.getElementById('headerMenu2_include_categories').style.display = 'none';
+			document.getElementById('headerMenu2_include_pages').style.display = '';
 			//document.getElementById('headerMenu2_disableParentPageLink_pages').style.display = '';
 		} else if(v=='categories') {
 			document.getElementById('headerMenu2_sortBy_categories').style.display = 'block';
 			document.getElementById('headerMenu2_sortBy_pages').style.display = 'none';
+			document.getElementById('headerMenu2_include_categories').style.display = '';
+			document.getElementById('headerMenu2_include_pages').style.display = 'none';
 			//document.getElementById('headerMenu2_disableParentPageLink_pages').style.display = 'none';
 		}
 }
@@ -80,7 +84,6 @@ function enableIncludeMenuItems() {
 	});
 	jQuery("#hm1ic_down").click(function() {
 		jQuery("#hm1ic option:selected").each(function() {
-			console.log(this);
 			var tmp = '<option value="'+jQuery(this).attr('value')+'">'+jQuery(this).html()+'</option>';
 			jQuery("#hm1ec").append(tmp);
 			jQuery(this).remove();
@@ -102,7 +105,6 @@ function enableIncludeMenuItems() {
 	});
 	jQuery("#hm1ip_down").click(function() {
 		jQuery("#hm1ip option:selected").each(function() {
-			console.log(this);
 			var tmp = '<option value="'+jQuery(this).attr('value')+'">'+jQuery(this).html()+'</option>';
 			jQuery("#hm1ep").append(tmp);
 			jQuery(this).remove();
@@ -125,7 +127,6 @@ function enableIncludeMenuItems() {
 	});
 	jQuery("#hm2ic_down").click(function() {
 		jQuery("#hm2ic option:selected").each(function() {
-			console.log(this);
 			var tmp = '<option value="'+jQuery(this).attr('value')+'">'+jQuery(this).html()+'</option>';
 			jQuery("#hm2ec").append(tmp);
 			jQuery(this).remove();
@@ -147,7 +148,6 @@ function enableIncludeMenuItems() {
 	});
 	jQuery("#hm2ip_down").click(function() {
 		jQuery("#hm2ip option:selected").each(function() {
-			console.log(this);
 			var tmp = '<option value="'+jQuery(this).attr('value')+'">'+jQuery(this).html()+'</option>';
 			jQuery("#hm2ep").append(tmp);
 			jQuery(this).remove();

@@ -490,6 +490,7 @@ function arjuna_add_theme_page () {
 									<?php _e('Include categories', 'Arjuna'); ?><br />
 									<?php
 									$parameters = 'depth='.$options['headerMenu1_dropdown'];
+									$parameters .= '&hide_empty=0';
 									$parameters .= '&exclude='.$options['headerMenu1_exclude_categories'];
 									$categories = get_categories($parameters); 
 									?>
@@ -506,6 +507,7 @@ function arjuna_add_theme_page () {
 									<?php _e('Exclude categories', 'Arjuna'); ?><br />
 									<?php
 									$parameters = 'orderby='.$options['headerMenu1_sortBy'].'&order='.$options['headerMenu1_sortOrder'].'&depth='.$options['headerMenu1_dropdown'];
+									$parameters .= '&hide_empty=0';
 									$parameters .= '&include='.$options['headerMenu1_exclude_categories'];
 									$categories = get_categories($parameters); 
 									?>
@@ -521,6 +523,7 @@ function arjuna_add_theme_page () {
 										?>
 									</select>
 								</div>
+								<span class="description"><?php _e('Note: While the above fields show empty categories, the theme will only display categories that have at least one published post in them.</span>', 'Arjuna'); ?></span>
 							</div>
 							<div id="headerMenu1_include_pages"<?php if($options['headerMenu1_display']!='pages'): ?> style="display:none;"<?php endif; ?>>
 								<div>
@@ -662,6 +665,7 @@ function arjuna_add_theme_page () {
 									<?php _e('Include categories', 'Arjuna'); ?><br />
 									<?php
 									$parameters = 'depth='.$options['headerMenu2_dropdown'];
+									$parameters .= '&hide_empty=0';
 									$parameters .= '&exclude='.$options['headerMenu2_exclude_categories'];
 									$categories = get_categories($parameters); 
 									?>
@@ -678,6 +682,7 @@ function arjuna_add_theme_page () {
 									<?php _e('Exclude categories', 'Arjuna'); ?><br />
 									<?php
 									$parameters = 'orderby='.$options['headerMenu2_sortBy'].'&order='.$options['headerMenu2_sortOrder'].'&depth='.$options['headerMenu2_dropdown'];
+									$parameters .= '&hide_empty=0';
 									$parameters .= '&include='.$options['headerMenu2_exclude_categories'];
 									$categories = get_categories($parameters); 
 									?>
@@ -693,6 +698,7 @@ function arjuna_add_theme_page () {
 										?>
 									</select>
 								</div>
+								<span class="description"><?php _e('Note: While the above fields show empty categories, the theme will only display categories that have at least one published post in them.</span>', 'Arjuna'); ?></span>
 							</div>
 							<div id="headerMenu2_include_pages"<?php if($options['headerMenu2_display']!='pages'): ?> style="display:none;"<?php endif; ?>>
 								<div>
@@ -1020,7 +1026,7 @@ function arjuna_add_theme_page () {
 						if (!is_writable(dirname(__FILE__).'/')):
 						?>
 						<br />
-						<span class="description"><?php _e('Arjuna needs write permissions to create a new file &quot;user-style.css&quot;, which will contain the custom CSS.'); ?></span>
+						<span class="description"><?php sprintf(__('Arjuna needs write permissions to create a new file %s, which will contain the custom CSS.'), '&quot;user-style.css&quot;'); ?></span>
 						<?php else: ?>
 						<label><input name="customCSS" onclick="customCSS_switch(this)" type="checkbox"<?php if($options['customCSS']) echo ' checked="checked"'; ?> /> <?php _e('Enable custom CSS rules', 'Arjuna'); ?></label><br />
 						<span class="description"><?php _e('If enabled, Arjuna will create a user stylesheet with your custom CSS rules. The user stylesheet will be included with every page call. If you intend to make some minor changes to the stylesheet, enabling this option ensures that you can safely upgrade Arjuna without losing your custom CSS.', 'Arjuna');?></span>
