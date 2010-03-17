@@ -2,7 +2,7 @@
 Theme Name:Basal
 Theme URI:http://ryanmcnair.co.uk/blog/wp-content/theme/basal/
 Description:This WordPress theme is minimal and cleanly styled. Special thanks to <a href="http://ryanmcnair.co.uk/">Ryan McNair</a>.
-Version:1.0.5
+Version:1.0.6
 Author:Ryan McNair
 Author URI:http://ryanmcnair.co.uk/
 Tags:white, light, fixed-width, two-columns, right-sidebar
@@ -90,16 +90,18 @@ font-weight:bold;
 color:#808080; 
 letter-spacing:-1px; 
 word-spacing:4px;
+
 }
 
-#nav ul {position:relative; margin:0; padding:0;}
-#nav ul li {list-style:none; float:right; padding-left:15px; top:30px;}
+#nav ul {position:relative; margin:0; padding:0;float:right}
+#nav ul li {list-style:none; float:left;text-align:right; padding-left:15px; top:30px;}
 #nav ul li a {text-decoration:none; outline:none; cursor:pointer;}
 #nav a:link {color: #808080;}
 #nav a:visited {color: #808080;}
 #nav a:hover {color: #c9c9c9}
 #nav a:active {color: #c9c9c9;}
-
+.navigation .alignleft {float:left;}
+.navigation .alignright {float:right;}
 
 #line {
 border-top: 1px solid #b0b0b0;
@@ -160,14 +162,17 @@ font-size:small;
 .post .alignright {
 float:right;
 margin-left:10px;
+margin-bottom:10px;
 }
 .post .alignleft {
 float:left;
 margin-right:10px;
+margin-bottom:10px;
 }
 .post .aligncenter {
 margin:0 auto;
 display:block;
+margin-bottom:10px;
 }
 .post abbr {
 font-weight:normal;
@@ -307,7 +312,7 @@ text-align:center;
 width: 35%;
 float:right;
 border-left:1px solid #b0b0b0;
-margin:8px 0 12px 0;
+margin:-8px 0 12px 0;
 }
 
 #r-side a:link {color: #494949;text-decoration:none;border-bottom:1px dotted #4b4b4b;}
@@ -317,6 +322,7 @@ margin:8px 0 12px 0;
 
 #r-side p { 
 margin-left:40px;
+width:80%;
 }
 
 #r-side h3 {
@@ -335,6 +341,7 @@ padding-top:14px;
 list-style:none;
 padding:0;
 margin:0 0 18px 0px;
+padding-left:42px;
 }
 
 #r-side li {font-size:90%; margin:5px 0;}
@@ -359,9 +366,9 @@ font-weight:bold;
 #copy p .thin{
 font-weight:normal;
 }
-
+#s.tsearch{margin-left:40px;}
 .tsearch {
-margin-left:40px;
+
 font-family:"Arial", "Helvetica", Sans-serif;
 color:#4b4b4b;
 font-size:0.8em;
@@ -455,9 +462,9 @@ margin-left:2px;
 #respond{width:300px;}
 
 h2.widgettitle {
-margin-left:0px; 
+margin-left:40px; 
 padding:15px 0 10px 0;
-font-size:1.8em;
+font-size:26px;
 font-weight:100;
 text-transform:uppercase;
 letter-spacing:-1px; 
@@ -476,3 +483,4 @@ padding:15px 0 10px 0;
 #s {
 margin:15px 0 10px 0;
 }
+li.recentcomments{padding-bottom:5px;}
