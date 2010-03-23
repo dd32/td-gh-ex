@@ -928,8 +928,8 @@ function arjuna_add_theme_page () {
 				<tr>
 					<th scope="row"><?php _e('Comment Display', 'Arjuna'); ?></th>
 					<td>
-						<label><input name="comments_hideWhenDisabledOnPages" type="checkbox"<?php if($options['comments_hideWhenDisabledOnPages']) echo ' checked="checked"'; ?> /> <?php _e('Hide any traces of comments when comments are disabled on <strong>Pages</strong>.', 'Arjuna'); ?></label><br />
-						<label><input name="comments_hideWhenDisabledOnPosts" type="checkbox"<?php if($options['comments_hideWhenDisabledOnPosts']) echo ' checked="checked"'; ?> /> <?php _e('Hide any traces of comments when comments are disabled on <strong>Posts</strong>.', 'Arjuna'); ?></label><br />
+						<label><input name="comments_hideWhenDisabledOnPages" type="checkbox"<?php if($options['comments_hideWhenDisabledOnPages']) echo ' checked="checked"'; ?> /> <?php _e('Hide any traces of comments when comments, pingbacks and trackbacks are disabled on <strong>Pages</strong>.', 'Arjuna'); ?></label><br />
+						<label><input name="comments_hideWhenDisabledOnPosts" type="checkbox"<?php if($options['comments_hideWhenDisabledOnPosts']) echo ' checked="checked"'; ?> /> <?php _e('Hide any traces of comments when comments, pingbacks and trackbacks are disabled on <strong>Posts</strong>.', 'Arjuna'); ?></label><br />
 						<span class="description"><?php _e('Note: If enabled, the section that says Comments and the comments button in the heading of the respective pages/posts will be removed.', 'Arjuna'); ?></span>
 					</td>
 				</tr>

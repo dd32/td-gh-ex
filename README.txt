@@ -64,6 +64,10 @@ Nonetheless, we still hope that IE6 will rest in peace soon.
 Changelog:
 ---------------------------------------------------
 
+1.3.3
+- Localization: German has been updated to 1.3.
+- Localization: Brazilian has been updated to 1.3.2.
+- Change: Improved the display of numbered and bulleted lists. Nested lists now show different list styles to help separate them visually. In addition, the margins have been altered slightly.
 1.3.2
 - Localization: Italian has been updated to 1.3.
 - Fix: The new exclude pages/categories feature had some errors.
@@ -172,4 +176,3 @@ Changelog:
 - Fix: If the content of a widget bar in the sidebar explicitly extended over the width of the sidebar, e.g. in the case of an image, the sidebar in IE6 would break completely.
 1.0.2
 - Fix: There was a small issue with the header bars where they would overrun the header area if too many items were shown.
-
