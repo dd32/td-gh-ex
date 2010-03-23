@@ -64,6 +64,8 @@ Nonetheless, we still hope that IE6 will rest in peace soon.
 Changelog:
 ---------------------------------------------------
 
+1.3.4
+- Fix: The default setup with the sidebar having a normal width and being on the right caused issues with the display.
 1.3.3
 - Localization: German has been updated to 1.3.
 - Localization: Brazilian has been updated to 1.3.2.
