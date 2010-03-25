@@ -6,10 +6,11 @@
 
 get_header(); ?>
 
+<!-- Content ON -->
 <div id="content">
 
 	
-	<!--Corrent Content ON-->
+	<!--Current Content ON-->
     <div id="current-content">
 	<?php if (have_posts()) : ?>
 
@@ -20,7 +21,7 @@ get_header(); ?>
 			<h2 class="center"><?php the_title(); ?></h2>
 
 			<div class="entry">
-				<?php the_content('Read the rest of this entry &raquo;'); ?>
+				<?php the_content(__('Read the rest of this entry &raquo;',belle)); ?>
 				<?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
 			</div>
 			
@@ -30,19 +31,21 @@ get_header(); ?>
 
 	<?php else : ?>
 
-		<h2>Not Found</h2>
-		<p>Sorry, but you are looking for something that isn't here.</p>
+		<h2><?php _e('Not Found',belle); ?></h2>
+		<p><?php _e('Sorry, but you are looking for something that isn\'t here.',belle); ?></p>
 
 	<?php endif; ?>
-	<?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
+        <div style="clear:both;"></div>
+	<?php edit_post_link(__('Edit this entry.',belle), '<p>', '</p>'); ?>
 	
 	<?php comments_template(); ?>
 	</div>
 	<div id="dynamic-content"></div>
-	<!--Corrent Content OFF-->
+	<!--Current Content OFF-->
 	
 </div>
-<!--/content -->
+<!--Content OFF-->
 
 <?php get_sidebar(); ?>
+
 <?php get_footer(); ?>

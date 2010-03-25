@@ -1,8 +1,8 @@
 /*
 Theme Name: Belle
 Theme URI: http://www.GetBelle.com/
-Description: Simple, Light, clean web 2.0 Wordpress Theme with Custom Header and Live Search.
-Version: 1.4.2
+Description: Simple, Light, clean XHTML web 2.0 Wordpress Theme with Custom header and Theme options witch include a color scheme picker that allow you to pick from your choice of orange, red, blue, green, or yellow color schemes. You can also include custom social links like twitter or facebook.
+Version: 1.5
 Author: Grigoruta Adrian
 Author URI: http://www.pixelstudio.ro/
 Tags: blue, silver, custom-header, fixed-width, two-columns, theme-options, light, custom-colors
@@ -10,52 +10,32 @@ Tags: blue, silver, custom-header, fixed-width, two-columns, theme-options, ligh
 
 /*--------------------General Classes---------------*/
 body {
-	background: #ffffff url("images/bg_body.jpg") repeat-x top left;
+	background: #ffffff url("images/body.jpg") repeat-x top left;
 	padding: 0px 0px 40px;
 	margin: 0px;
        font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Helvetica, Arial, sans-serif;
 	font-size:12px;
 	} 
 a {
-	color: #34a0cc;
 	text-decoration: none;
 }
 a:visited {
-	color: #8cb3c3;
 	text-decoration: none;
 }
 a:hover {
-	color: #34a0cc;
 	text-decoration: underline;
 }
-
-a img {
-	border: 1px solid #dcdcdc;
-	}
-
+a img{
+        border:0px;
+}
 #page {
 	margin: 0 auto;
 	width: 760px;
-	background: #FFFFFF url("images/bg_header.jpg") repeat-x top left;
 }
 h2 {
-	color: #41add9;
 	font-size:22px;
 	margin:0px;
 	padding:0px;
-}
-
-h2 a:visited{
-	color: #41add9;
-}
-
-::selection {
-	color: #0d62aa; /* Safari */
-	background:#ffffff;
-	}
-::-moz-selection {
-	color: #71c2e3; /* Firefox */
-	background:#ffffff;
 }
 .center {
 	text-align: center;
@@ -68,7 +48,6 @@ blockquote {
 	color: #333;
 	background: url('images/quote.jpg') no-repeat 10px 0;
 	border: none;
-	font-style:italic;
 	}
 
 .aligncenter,
@@ -76,22 +55,27 @@ blockquote {
 	text-align: center;
 	}
 
-img.alignleft {
-	float: left;
-	padding: 2px;
-	margin: 0 20px 20px 0;
-}
-
-img.alignright {
+.entry .aligncenter,
+img.center,
+img[align="center"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	}
+	
+.entry .alignright,
+img[align="right"] {
 	float: right;
-	padding: 2px;
-	margin: 0 0 20px 20px;
-}
+	margin: 0 0 4px 8px;
+	display: block;
+	}
 
-img.aligncenter {
-	text-align: center;
-	padding: 2px;
-}
+.entry .alignleft,
+img[align="left"] {
+	float: left;
+	margin: 0 8px 4px 0;
+	display: block;
+	}
 
 /*---------------------------------Header-----------------------------*/
 
@@ -108,7 +92,6 @@ img.aligncenter {
 }
 
 #headerimg a, #headerimg a:visited{
-	color:#41add9;
 	font-size:25px;
 }
 #headerimg .blog-title{
@@ -125,6 +108,30 @@ img.aligncenter {
 	margin-top:18px;
 	padding-left:10px;
 	padding-bottom:3px;
+}
+#headerimg .link1{
+	width:130px;
+	border-left:1px solid #dcdcdc;
+	float:right;
+	height:30px;
+	top:5px;
+	padding-left:10px;
+	padding-bottom:3px;
+}
+#headerimg .link1 a,.link1 a:visited{
+   	font-size:1.2em;
+}
+#headerimg .link2{
+	width:130px;
+	border-left:1px solid #dcdcdc;
+	float:right;
+	height:30px;
+	top:35px;
+	padding-left:10px;
+	padding-bottom:3px;
+}
+#headerimg .link2 a, .link2 a:visited{
+	 font-size:1.2em;
 }
 
 #nav {
@@ -146,7 +153,7 @@ img.aligncenter {
 	background: #ffffff;
 	padding: 5px 7px;
 	display: block;
-    opacity:.60;
+        opacity:.60;
 	-moz-opacity: 0.6;
 	-khtml-opacity: 0.6;
 	-ms-filter: "alpha(opacity=60)";
@@ -158,13 +165,11 @@ img.aligncenter {
 	text-decoration: none;
 }
 #nav li a:hover {
+       height:16px;
 	color: #000000;
 	background:#eaf6fb;
-	border-bottom:1px solid #71c2e3;
-	
 }
 #nav li.current_page_item{
-	border-bottom:1px solid #71c2e3;
 	background: #ffffff;
 }
 #nav li.current_page_item a:hover{
@@ -221,17 +226,13 @@ img.aligncenter {
 }
 .post-day {
 	font-size: 18px;
-	color: #71c2e3;
 	text-align: center;
 	display:block;
 	line-height: 18px;
 	padding-top: 2px;
 	margin-left: -3px;
 }
-.entry img {
-	padding: 2px;
-	border: 1px solid #DADADA;
-}
+
 .entry {
 	clear: both;
 	padding-top: 0px;
@@ -243,11 +244,8 @@ img.aligncenter {
 h2, h2 a, h2 a:visited,
 h3, h3 a, h3 a:visited,
 h4, h4 a, h4 a:visited {
-	color: #41add9;
 	text-decoration:none;
 	}
-
-
 .navigation {
 	clear: both;
 	padding: 10px 0px;
@@ -289,10 +287,6 @@ h4, h4 a, h4 a:visited {
 	background: white;
 	}
 
-#search-label.overlabel-apply.fade { /* Fade label when #s has focus */
-	color: #ccc;
-	}
-
 #search-label.overlabel-apply.hide { /* Hide label when #s isn't empty */
 	text-indent: -1000px;
 	}
@@ -305,7 +299,9 @@ h4, h4 a, h4 a:visited {
 	-moz-border-radius: 2px;
 	-webkit-border-radius: 2px;
 	}
-
+#search-label.overlabel-apply.fade { /* Fade label when #s has focus */
+	color: #ccc;
+	}
 #s { /* The actual search input field */
 	position: relative;
 	padding: 3px;
@@ -319,10 +315,6 @@ h4, h4 a, h4 a:visited {
 .livesearch #s { /* The search input field w. livesearch enabled */
 	padding-right: 20px;
 	width: 150px;
-	}
-
-#s:focus {
-	border-color: #34a0cc;
 	}
 
 #searchreset, #searchload { /* Reset button & loading spinner */
@@ -354,12 +346,10 @@ h4, h4 a, h4 a:visited {
 	width: 200px;
 }
 #sidebar h3{
-	color:#34a0cc;
 	font-size:18px;
 	font-weight:normal;
 }
 .widgettitle{
-	color:#34a0cc;
 	font-size: 120%; 
 	font-weight:normal;
 }
@@ -373,14 +363,11 @@ h4, h4 a, h4 a:visited {
 }
 
 .widget li a, .widget li a:visited{
-    color: #555555;
+       color: #555555;
 	text-decoration: none;
 	padding:0 0 0 13px;
 	background:transparent url("images/arrow.gif") no-repeat center left;
 	border-bottom: 1px solid #dcdcdc;
-}
-.widget li a:hover{
-	color:#34A0CC;
 }
 .ul-cat {
 	list-style: none;
@@ -399,7 +386,6 @@ h4, h4 a, h4 a:visited {
 	border-bottom: 1px solid #dcdcdc;
 }
 .ul-cat li a:hover{
-	color: #71c2e3;
 	text-decoration: none;
 }
 .ul-archives {
@@ -419,7 +405,6 @@ h4, h4 a, h4 a:visited {
 	background:transparent url("images/arrow.gif") no-repeat center left;
 }
 .ul-archives li a:hover{
-	color: #71c2e3;
 	text-decoration: none;
 }
 
@@ -452,13 +437,9 @@ h4, h4 a, h4 a:visited {
 	padding: 2px;
 	margin-top: 3px;
 }
-#commentform textarea:focus, #commentform input[type="text"]:focus {
-	background: #ffffff;
-	border:1px solid #71c2e3;
-}
+
 #commentform #submit{
 	font: bold 12px Arial, Helvetica, sans-serif;
-	color: #71c2e3;
 	border: 1px solid #d0d0d0;
 	float:left;
 	width: 144px;
@@ -547,7 +528,6 @@ h4, h4 a, h4 a:visited {
 /*------------------- Footer ------------------------------*/
 
 #footer{
-	background: #FFFFFF url("images/bg_header.jpg") repeat-x top left;
 	clear: both;
 	position:relative;
 	padding-top:15px;
@@ -567,11 +547,6 @@ h4, h4 a, h4 a:visited {
 	border-left: 1px solid #999999;
 	width:165px;	
 }
-#credits a, #credits a:visited{
-	color:#41add9;
-}
-
 #footer-logo a, #footer-logo a:visited{
-	color:#41add9;
 	font-size:24px;
 }

@@ -7,7 +7,7 @@
 get_header();
 ?>
 
-	<div id="content" class="widecolumn">
+<div id="content" class="widecolumn">
 
   <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -61,7 +61,7 @@ get_header();
 
 	<?php endwhile; else: ?>
 
-		<p>Sorry, no attachments matched your criteria.</p>
+		<p><?php _e('Sorry, no attachments matched your criteria.',belle); ?></p>
 
 <?php endif; ?>
 

@@ -13,7 +13,14 @@ if ($_GET["dynamic"]!='true'): ?>
 <head profile="http://gmpg.org/xfn/11">
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 <title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
+<?php
+global $options;
+foreach ($options as $value) {
+    if (get_settings( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_settings( $value['id'] ); }
+}
+?>
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/colorstyles/<?php echo $wpb_color_scheme; ?>.css" type="text/css" media="screen" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 
@@ -25,8 +32,15 @@ if ($_GET["dynamic"]!='true'): ?>
 
 <div id="content-head">
 	<div id="headerimg">
-		<h1 class="blog-title"><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
-		<div class="description"><?php bloginfo('description'); ?></div>
+		<?php if($wpb_title_disable!="true"){?><h1 class="blog-title"><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1><?php } ?>
+		<?php if($wpb_tagline_disable!="true"):?><div class="description"><?php bloginfo('description'); ?></div><?php endif; ?>
+              <?php if($wpb_sociallink1_enable=="true"):?>
+		 <div class="link1"><a href="<?php echo $wpb_link1_url; ?>"><?php echo $wpb_link1_title; ?></a><br><?php echo $wpb_link1_desc; ?></div>
+              <?php endif; ?>
+              <?php if($wpb_sociallink2_enable=="true"):?>
+	        <div style="clear:both;"></div>
+               <div class="link2"><a href="<?php echo $wpb_link2_url; ?>"><?php echo $wpb_link2_title; ?></a><br><?php echo $wpb_link2_desc; ?></div>
+              <?php endif; ?>
 	</div>
 	<ul id="nav">
 			<?php wp_list_pages('sort_column=menu_order&depth=1&title_li=');?>
