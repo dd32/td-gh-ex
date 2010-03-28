@@ -55,7 +55,7 @@
 			</li>
 		<?php } ?>
 		</ul>
-		<ul role="navigation">
+		<ul>
 
 			<li class="sidebarItem"><h2>Archives</h2>
 				<ul>
@@ -107,7 +107,7 @@
 			</li>
 		<?php } ?>
 		</ul>
-		<ul role="navigation">
+		<ul>
 
 			<li class="sidebarItem"><h2>Archives</h2>
 				<ul>

@@ -39,4 +39,17 @@ register_sidebar(array('name'=>'Footer - Right Column',
 'after_title' => '</h3>',
 ));
 }
+
+function my_search_form($form) {
+$form = '<form method="get" id="searchform" action="' . get_option('home') . '/" >
+<div><label class="hidden" for="s">' . __('Search for:') . '</label>
+<input type="text" value="' . attribute_escape(apply_filters('the_search_query', get_search_query())) . '" name="s" id="s" />
+<input type="submit" id="searchsubmit" value="'.attribute_escape(__('Search')).'" />
+</div>
+</form>';
+return $form;
+}
+
+add_filter('get_search_form', 'my_search_form'); 
+
 ?>

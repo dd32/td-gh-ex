@@ -14,6 +14,7 @@ function aggiornare_settings() {
 function register_settings() {
 	//register our settings
 	register_setting( 'aggiornare_settings_page', 'aggiornare_logo' );
+	register_setting( 'aggiornare_settings_page', 'aggiornare_logo_hover' );
 	register_setting( 'aggiornare_settings_page', 'aggiornare_navigation' );
 	register_setting( 'aggiornare_settings_page', 'aggiornare_image_border' );
 	register_setting( 'aggiornare_settings_page', 'aggiornare_homepage_image' );
@@ -77,6 +78,12 @@ function aggiornare_settings_page() {
 		</tr>
 		<tr>
 			<td colspan="2">If you enable this option, you MUST upload, via FTP, an image file named <code>logo.jpg</code> to the 'images' directory inside the 'aggiornare' directory. Image must be no larger 278 pixels wide by 160 pixels tall. <strong>The image must have permissions set to 777!</strong></td>
+		</tr>
+		<tr valign="top">
+			<th scope="row" colspan="2"><input class="checkbox" type="checkbox" name="aggiornare_logo_hover"<?php if(get_option('aggiornare_logo_hover')=='on') { echo ' checked="checked"'; } ?> /> Enable hover over logo?</th>
+		</tr>
+		<tr>
+			<td colspan="2">This option allows your logo to 'change' when a visitor hovers their mouse over the image. It must be the same dimensions as your <code>logo.jpg</code> image. If you enable this option, you MUST upload, via FTP, an image file named <code>logoHover.jpg</code> to the 'images' directory inside the 'aggiornare' directory. Image must be no larger 278 pixels wide by 160 pixels tall. <strong>The image must have permissions set to 777!</strong></td>
 		</tr>
 		<tr valign="top">
 			<th scope="row" colspan="2"><input class="checkbox" type="checkbox" name="aggiornare_tagline"<?php if(get_option('aggiornare_tagline')=='on') { echo ' checked="checked"'; } ?> /> Display tagline?</th>

@@ -1,8 +1,8 @@
 /*
 Theme Name: Aggiornare
-Theme URI: http://themes.geekdesigngirl.com/download/aggiornare-theme/
-Description: The Aggiornare theme is built with minimalism in mind but with some decent options in the backend.  Aggiornare means 'to update' in Italian.  Happy Updating!
-Version: 1.0.4
+Theme URI: http://geekdesigngirl.com/aggiornare-a-free-wordpress-theme/
+Description: The Aggiornare theme is a minmal theme with a focus on your content. Featuring a custom home page, custom theme options, 4 widgets and free support.  Aggiornare means 'to update' in Italian.  Happy Updating!
+Version: 1.0.5
 Author: GeekDesignGirl
 Author URI: http://geekdesigngirl.com/
 Tags: white, fixed-width, two-columns, light, theme-options
@@ -166,17 +166,19 @@ p.tagline { font-size: 22px; font-style: italic; padding: 10px 0; }
 
 #wrapper { width: 950px; margin: 0 auto; }
 
-#top { width: 950px; float: left; margin: 10px 0 15px 0; background: #fff; }
+#top { width: 950px; float: left; margin: 10px 0 15px 0; padding: 0 0 15px 0; background: #fff; }
 
 #siteIdentification { width: 278px; float: left; }
 
 #sidebar { width: 278px; float: left; margin: 20px 0 0 0; }
 
-#sidebar input { width: inherit; }
+#sidebar input { width: 265px; }
+
+#sidebar input#searchsubmit { margin: 4px 0 0 0; width: 125px; }
 
 #sidebar h2 { text-decoration: none; padding: 0 0 2px 0; margin: 4px; line-height: 32px; }
 
-.sidebarItem { border: 1px solid #e6e6e6; padding: 10px; margin: 0 0 10px 0; -moz-border-radius: 15px; -webkit-border-radius: 15px; }
+.sidebarItem { border: 1px solid #e6e6e6; padding: 10px; margin: 0 0 10px 0; -moz-border-radius: 15px; -webkit-border-radius: 15px; float: left; width: 278px; }
 
 #sidebar img { float: left; margin: 0 5px 0 0; }
 
@@ -256,13 +258,9 @@ p.tagline { font-size: 22px; font-style: italic; padding: 10px 0; }
 
 .footerWidget ul li { line-height: 22px; }
 
-.footerWidget form #quick_user_login { background: url('images/usernameBG.png') top left no-repeat; width: 248px; height: 31px; border: 0; padding: 5px 15px; font-size: 18px; font-weight: bold; }
+.footerWidget input { width: 250px; }
 
-.footerWidget form #quick_password { background: url('images/passwordBG.png') top left no-repeat; width: 248px; height: 31px; border: 0; padding: 5px 15px; font-size: 18px; font-weight: bold; margin: 10px 0; }
-
-.footerWidget form .submit { background: url('images/signinBG.png') top left no-repeat; width: 152px; height: 41px; text-indent: -9999px; border: 0; cursor: pointer; float: right; }
-
-.footerWidget form .submit:hover { background: url('images/signinBG.png') bottom left no-repeat; }
+.footerWidget input#searchsubmit { width: 125px; margin: 4px 0 0 0; }
 
 .footerWidget form a { font-size: 18px; color: #ded6d6; text-decoration: none; float: left; font-style: italic; margin: 10px 4px 0 0; }
 
@@ -365,3 +363,10 @@ p.tagline { font-size: 22px; font-style: italic; padding: 10px 0; }
 .reply a { margin: 10px 0; background: #c4c4c4; -moz-border-radius: 10px; -webkit-border-radius: 10px; padding: 3px 14px; text-align: center; font-style: italic; font-size: 13px; color: #fff; display: block; width: 75px; }
 
 .reply a:hover { color: #992622; }
+
+/* This will preload our hover over image for the logo. May not be ideal but don't want to use Js or other method. */
+
+div#preloaded-images { position: absolute; overflow: hidden; left: -9999px; top: -9999px; height: 1px; width: 1px; }
+
+div#preloaded-images { background: url('images/logoHover.jpg') no-repeat -9999px -9999px; }
+

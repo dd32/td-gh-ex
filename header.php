@@ -30,6 +30,9 @@ img, div { behavior: url(<?php bloginfo('stylesheet_directory'); ?>/images/iepng
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<div id="preloaded-images">
+   <img src="<?php bloginfo('stylesheet_directory'); ?>/images/logoHover.jpg" width="1" height="1" alt="Image 01" />
+</div>
 <div id="color">
 
 	<div id="wrapper">
