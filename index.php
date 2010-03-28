@@ -15,7 +15,7 @@
 
 <div class="entry">
 <div class="indexfeature"><?php the_post_thumbnail(array(180,180)); ?></div>
-<?php the_excerpt(); ?>
+<?php the_content(); ?>
 </div>
 <div class="clearboth">&nbsp;</div>
 

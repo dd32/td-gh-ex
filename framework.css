@@ -240,9 +240,9 @@ margin:5px 0 0 0;
 
 #left_side h2 a { color: #900; text-decoration:none; background:none;}
 
-.indexfeature {  float:left; padding: 15px 15px 0 0;}
+.indexfeature {  float:left; margin: 15px 15px 0 0; border:1px solid #900;}
 
-#left_side img  {  padding:5px;  border:1px solid #900; }
+#left_side img  {  padding:5px;  margin: 5px;  }
 
 
 #left_side  .info {
@@ -280,7 +280,7 @@ margin: 10px 0;
 .avatar { float:left; margin: 0 10px 10px 0;}
 .says { display:none;}
 
-cite { font-size:2em; font-style:normal; color:#000;}
+cite { font-size:1.5em; font-style:normal; color:#000;}
 
 .right_side {
 float :right;
