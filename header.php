@@ -25,7 +25,7 @@
 
 
 <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/cufon-yui.js"></script> 
-<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/sansation.font.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/justus.font.js"></script>
  
  <script type="text/javascript"> 
 Cufon.replace('h1');
@@ -46,9 +46,9 @@ Cufon.replace('h4');
 <div id="header">
 <div id="menubar">
 <ul id="menu" style="padding:0; margin:0;">
-
-<li <?php if ( is_home() ) { ?> class="current_page_item" <?php } ?>><a href="<?php echo get_settings('home'); ?>/">Home</a></li>
-<?php wp_list_pages('sort_column=menu_order&depth=1&title_li='); ?>
+<li class="home"><a href="<?php echo get_settings('home'); ?>/">Home</a></li>
+<li class="rss"> <a href="<?php bloginfo('rss2_url'); ?>"> RSS (Posts) </a></li>
+<li class="rssc"> <a href="<?php bloginfo('comments_rss2_url'); ?>"> RSS (Comments) </a></li>
 </ul>
 <div class="clearboth">&nbsp;</div>
 </div>
@@ -62,7 +62,7 @@ Cufon.replace('h4');
 
 <div id="subbar">	
 <ul id="menu2" style="padding:0; margin:0;">	
-<?php wp_list_categories('sort_column=name&sort_order=asc&style=list&children=true&hierarchical=true&title_li='); ?>
+<?php wp_list_pages('sort_column=menu_order&title_li='); ?>
 </ul>
 <div class="clearboth">&nbsp;</div>
 </div>

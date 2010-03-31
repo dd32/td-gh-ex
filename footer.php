@@ -6,7 +6,8 @@
 
 </div>
 <div id="footer"> 
-AppleX is designed by <a href="http://sinfonicapr.com/"> Sinfonica PR</a>   <?php wp_footer(); ?>  
+AppleX is designed by <a href="http://sinfonicapr.com/"> Sinfonica PR</a> | Icons by <a href="http://pixel-mixer.com/">Pixel Mixer</a> | <?php bloginfo('name'); ?> is proudly powered by
+		<a href="http://wordpress.org/">WordPress</a>   <?php wp_footer(); ?>  
 
 </div> 
 
