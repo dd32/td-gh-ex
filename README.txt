@@ -37,6 +37,7 @@ Currently available translations:
 - Turkish (thanks to Serhat Yolaçan)
 - Hungarian (thanks to Márton Bakos)
 - Slovak
+- Romanian (thanks to Grigore Dolghin, grigore.dolghin.ro)
 
 
 More Information and Support
@@ -64,6 +65,10 @@ Nonetheless, we still hope that IE6 will rest in peace soon.
 Changelog:
 ---------------------------------------------------
 
+1.3.5
+- Localization: Romanian (1.3.4) has been added.
+- Localization: French has been updated to 1.3.3.
+- Fix: Pagination did not work for posts (only pages). Note: The pagination for posts and pages is not formatting like the comment pagination and the native archive page pagination of Arjuna. This is mostly due to some WordPress limitations. If the community would greatly appreciate if this feature be fully implemented, please vote for it on our roadmap.
 1.3.4
 - Fix: The default setup with the sidebar having a normal width and being on the right caused issues with the display.
 1.3.3

@@ -40,6 +40,9 @@
 		<div class="postContent">
 			<?php the_content(__('continue reading...', 'Arjuna')); ?>
 		</div>
+		<div class="postLinkPages"><div>
+			<?php wp_link_pages('before=<strong>'.__('Pages:', 'Arjuna').'</strong>&pagelink=<span>'.__('Page %', 'Arjuna').'</span>'); ?>
+		</div></div>
 		<div class="postFooter"><div class="r"></div>
 			<div class="left">
 				<span class="postCategories"><?php the_category(', '); ?></span>
