@@ -11,6 +11,10 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-KeywordsList: _e;__;ngettext\n"
 "X-Poedit-Basepath: \\wordpress\\wp-content\\themes\\beauty\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "X-Poedit-SearchPath-0: \\wordpress\\wp-content\\themes\\beauty\n"
 
 #: \wordpress\wp-content\themes\beauty/comments.php:11
