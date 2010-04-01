@@ -270,10 +270,10 @@ background:#eee;
 
 #left_side  .info a { color:#900; text-decoration:none; }
 
-.comments { background: url(images/comment.gif) left center no-repeat; padding: 10px 10px 10px 25px;  }
-.time { background: url(images/permalink.gif) left center no-repeat; padding:  10px 10px 10px 25px;  }
-.category { background: url(images/categories.gif) left center no-repeat; padding: 10px 10px 10px 25px;  }
-.tags { background: url(images/tags.gif) left center no-repeat; padding: 10px 10px 10px 25px;  }
+.comments { background: url(images/comment.png) left center no-repeat; padding: 10px 10px 10px 25px;  }
+.time { background: url(images/permalink.png) left center no-repeat; padding:  10px 10px 10px 25px;  }
+.category { background: url(images/categories.png) left center no-repeat; padding: 10px 10px 10px 25px;  }
+.tags { background: url(images/tags.png) left center no-repeat; padding: 10px 10px 10px 25px;  }
 
 .commentlist {
 padding: 20px 0;
