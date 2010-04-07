@@ -1,0 +1,53 @@
+table {
+	width: 80%;
+	margin: 10px;
+	}
+	
+tr {
+	padding: 8px;
+	}
+	
+table h3, .support h3 {
+	font-size: 1.4em;
+	font-weight: normal;
+	font-style: italic;
+	margin: 20px 0 5px 0;
+	padding: 5px 0 0 0;
+	border-top: 1px solid #edebea;
+	}
+	
+.inputfield {
+	width: 200px;
+	}
+	
+.title {
+	font-family: Georgia,Times,serif; 
+	color:#a288a2; 
+	padding:0;
+	}
+	
+.name {
+	color: #6b3159;
+	font-style: italic;
+	}
+	
+.note {
+	background-color: #edebea;
+	border: 1px solid #5a5a5a;
+	float: left;
+	padding: 5px;
+	margin: 5px;
+	}
+	
+.submit {
+	font: caption;
+	float: left;
+	margin-right: 20px;
+	}
+	
+.support {
+	clear: both;
+	margin: 20px 0;
+	padding: 5px;
+	font-size: 9pt;
+	}
