@@ -12,10 +12,9 @@ foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$val
 
 
 		<?php if (have_posts()) : ?>
-	
-		<h2> <?php printf(__('Searchresults for &quot;%1s&quot;', 'altop'), get_search_query() ); ?> </h2> 
-
-	  
+		
+		<h2> <?php printf(__('Searchresults for:<span class="keyword"> %s </span>', 'altop'), htmlentities(get_search_query()) ); ?> </h2>
+		
 		<?php while (have_posts()) : the_post(); ?>
 		
 		<div class="post_content" id="post-<?php the_ID(); ?>">
@@ -45,7 +44,7 @@ foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$val
 		</div>
 
 	<?php else : ?>
-	<?php printf (__('<h2>Sorry, but there are no results for &quot;%s&quot;.</h2> Try again with another keyword.', 'altop'), get_search_query() ); ?>
+	<?php printf (__('<h2>Sorry, but there are no results for:<span class="keyword"> %s </span></h2> Try again with another keyword.', 'altop'), htmlentities(get_search_query()) ); ?>
 	<?php endif; ?>
 	
 	</div>

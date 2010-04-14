@@ -1,4 +1,4 @@
-<form method="get" id="searchform" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+<form method="get" id="searchform" action="">
 <div>
 
 <input type="text" class="searchfield" value="<?php _e('Search for...', 'altop'); ?>" 

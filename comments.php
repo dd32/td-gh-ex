@@ -5,14 +5,12 @@ foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$val
 
 <?php
 // Do not delete these lines
-	if (isset($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
-		die ('Please do not load this page directly. Thanks!');
-	
-	if ( post_password_required() ) { ?>
-		<p><?php _e('This post is password protected. Enter the password to view comments.', 'altop'); ?></p> 
-	<?php
-		return;
-	}
+if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
+die ('Please do not load this page directly. Thanks!');
+if ( post_password_required() ) { ?>
+<p class="nocomments">  <?php _e('Sorry, you must be logged in to post a comment.','altop'); ?></p>
+<?php
+return;	}
 ?>
 
 <!-- You can start editing here. -->	
@@ -20,7 +18,7 @@ foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$val
 <?php if ( have_comments() ) : ?>
 	
 	<h3 id="comments"><?php comments_number(__('No Responses', 'altop'), __('One Response', 'altop'), __('% Responses', 'altop'));?> <?php echo _e('to', 'altop'); ?> <?php the_title('&quot;','&quot;'); ?></h3>
-	
+		
 	<?php if ( !empty($comments_by_type['comment']) ) : ?>
 	<ul class="commentlist">
 	<?php wp_list_comments('type=comment&callback=list_comments'); ?>
@@ -49,14 +47,15 @@ foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$val
 
 	<?php if ( comments_open() ) : ?>
 	<h3><?php _e('Leave your own comment', 'altop'); ?></h3>
-	
+		
 	<?php if ( get_option('comment_registration') && !is_user_logged_in() ) : ?>
 	<p> <?php printf(__('You must be <a href="%s">logged in</a> to post a comment.', 'altop'), wp_login_url( get_permalink() ) );?> </p>
 		
 
 <?php else : ?>
 
-<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
+<div id="respond">
+<form action="<?php echo esc_attr(get_option('siteurl')); ?>/wp-comments-post.php" method="post" id="commentform">
 	<?php if ( is_user_logged_in() ) : ?>
 	<p> <?php printf(__('Logged in as %s.', 'altop'), '<a href="'.get_option('siteurl').'/wp-admin/profile.php">'.$user_identity.'</a>'); ?> <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php _e('Log out', 'altop') ?>"><?php _e('Log out &raquo;', 'altop'); ?></a> </p>
 
@@ -81,16 +80,21 @@ foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$val
 	<p class="comment-tags">	<small><strong>XHTML:</strong> <?php printf(__('You can use these tags: %s', 'altop'), allowed_tags()); ?> </small> </p>
 	<?php } ?>
 
-			<p>
+			<div>
 			<textarea class="commenttext" name="comment" id="comment" cols="58" rows="10" tabindex="4"></textarea>
-			</p>
+			<div id="cancel-comment-reply">	<?php cancel_comment_reply_link() ?> </div>
+			</div>
 
 			<p>
 				<input class="commentsubmit" name="submit" type="submit" id="submit" tabindex="5" value="<?php esc_attr_e('Submit', 'altop'); ?>" />
-				<input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
+				<?php comment_id_fields(); ?>
 			</p>
+			
+	
+
 <?php do_action('comment_form', $post->ID); ?>
 </form>
+</div>
 
 <?php endif; ?>
 <?php endif; ?>

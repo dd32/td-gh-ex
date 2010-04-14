@@ -48,17 +48,10 @@ $options = array (
 		    ),
 
 	array( "name" => __("Home Link", 'altop'),
-		   "type" => "checkbox",
-		   "desc" => __("Display the <i>HOME</i> Link in the menu", 'altop'),
-		   "id" => $shortname."_show_home",
-		   "std" => "false",
-		   ),
-
-	array( "name" => __("Home name", 'altop'),
 		   "type" => "text",
-		   "desc" => __("The name of the <i>HOME</i> link. <i>Theme default is &quot;Home&quot;</i>", 'altop'),
-		   "id" => $shortname."_home_name",
-		   "std" => "Home",
+		   "desc" => __("Show a <i>HOME-Link</i> in your main menu. Type in the name of your Home Link. If you leave it blank, the home link will not been shown!", 'altop'),
+		   "id" => $shortname."_home_link",
+		   "std" => "",
 		   ),
 		   
 	array( "name" => __("Posts & Pages", 'altop'),
@@ -89,20 +82,13 @@ $options = array (
 	array( "name" => __("Bottombar", 'altop'),
 		   "type" => "title",
 		   ),
-	
-	array( "name" => __("Bottombar", 'altop'),
-		   "type" => "checkbox",
-		   "desc" => __("Use the &quot;Bottombar&quot; in your theme. Here you can place some little widgets or text.", 'altop'),
-		   "id" => $shortname."_bottombar_show",
-		   "std" => "false",
-		   ),	
 		   
-	array( "name" => __("Bottombar Image", 'altop'),
+	array( "name" => __("Bottombar", 'altop'),
 		   "type" => "select",
-		   "desc" => __("Select the &quot;Bottombar&quot; background image <br />", 'altop') . '<img src="'.$imgurl.'/admin/bottombar-purple-admin.jpg" alt="Purple" />' . (__("<strong> 1</strong> = purple (default) <br />", 'altop')) . '<img src="'.$imgurl.'/admin/bottombar-grey-admin.jpg" alt="Grey" />' . (__(" 2 = grey <br />", 'altop')) . '<img src="'.$imgurl.'/admin/just-grey-admin.jpg" alt="just grey" />' . (__(" 0 = only color grey", 'altop')),
-		   "id" => $shortname."_bottombar_image",
-		   "std" => "",
-		   "options" => array("","1","2","0"),
+		   "desc" => __("Use the &quot;Bottombar&quot; in your theme and choose the background image. Here you can place some little widgets or text. If you don&#180;t want to show the Bottombar, choose <b>none</b>. <br />", 'altop') . '<img src="'.$imgurl.'/admin/bottombar-purple-admin.jpg" alt="Purple" />' . (__("<strong> 1</strong> = purple (default) <br />", 'altop')) . '<img src="'.$imgurl.'/admin/bottombar-grey-admin.jpg" alt="Grey" />' . (__(" 2 = grey <br />", 'altop')) . '<img src="'.$imgurl.'/admin/just-grey-admin.jpg" alt="just grey" />' . (__(" 0 = only color grey", 'altop')),
+		   "id" => $shortname."_bottombar",
+		   "std" => "none",
+		   "options" => array("none","1","2","0"),
 		   ),	
 		   
 	array( "name" => "Sidebar",
@@ -121,17 +107,10 @@ $options = array (
 		   "type" => "title",
 		   ),
 	
-	array( "name" => __("Button", 'altop'),
-		   "type" => "checkbox",
-		   "desc" => __("Show the Twitter button in the head", 'altop'),
-		   "id" => $shortname."_twitter_logo",
-		   "std" => "false",
-		   ),
-	
-	array( "name" => "Name",
+	array( "name" => "Account",
 		   "type" => "text",
-		   "desc" => __("Your Twitter username? <br /> <a href='http://twitter.com/t3blogart' title='Visit me on Twitter...' target='blank'>You can follow me on Twitter too. Visit my page under twitter.com/t3blogart.</a>", 'altop'),
-		   "id" => $shortname."_twitter_name",
+		   "desc" => __("Type in your Twitter-Username (without slashes!) to create a link to your Twitter Account. The Twitter Logo will be displayed in the head of your site. <br /> <a href='http://twitter.com/t3blogart' title='Visit me on Twitter...' target='blank'>You can follow me on Twitter too. Visit my page under twitter.com/t3blogart.</a>", 'altop'),
+		   "id" => $shortname."_twitter",
 		   "std" => ""),
 		   
 	array( "name" => "RSS Feed",
@@ -214,7 +193,7 @@ $options = array (
 		<?php break; case 'text': ?>
 		 
 			<tr>
-				<td width="20%" rowspan="2" valign="top" class="name" > <?php echo $value['name']; ?> </td>
+				<td width="20%" rowspan="2" valign="top" class="name" > <?php echo esc_attr($value['name']); ?> </td>
 				<td width="80%"><input class="inputfield" name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php if ( get_option( $value['id'] ) != "") { echo get_option( $value['id'] ); } else { echo $value['std']; } ?>" /></td>
 			</tr>
 		 
@@ -317,11 +296,12 @@ if ( function_exists('register_sidebar') )
 	}
 				
 	printf(__('<li id="comment-%1s" %2s>'), get_comment_ID(), comment_class('', null, null, false) );
-	printf(__('<div class="commentbody"> %1s '), get_avatar( $comment, 50 ) ); 
-	if($comment->comment_approved == '0') { 
+	printf(__('<div class="commentbody"> %1s'), get_avatar( $comment, 50 ) );
+	 if($comment->comment_approved == '0') { 
      echo __('<em> Your comment is awaiting moderation.</em>'); }
  	comment_text();
-	printf(__('<p class="commentfooter"> <span class="commnumber">%1s</span> <span class="commauthor">%2s</span> said this <small>(%3s at %4s)</small>', 'altop'), ++$commentnumber, get_comment_author_link(), get_comment_date(), get_comment_time() ); edit_comment_link(__('Edit', 'altop'), ' |');
+	printf(__('<p class="commentfooter"> <span class="commnumber">%1s</span> <span class="commauthor">%2s</span> said this <small>(%3s at %4s)</small> %5s', 'altop'), ++$commentnumber, get_comment_author_link(), get_comment_date(), get_comment_time(), get_comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ); 
+	edit_comment_link(__('Edit', 'altop'), ' |', '<br />');
 	echo ('</p>');
 	echo ('<br clear="all" /> </div>');
 	} 
@@ -334,4 +314,5 @@ if ( function_exists('register_sidebar') )
   printf(__('&nbsp;<small>%1s at %2s</small>', 'altop'), get_comment_date(), get_comment_time()); edit_comment_link(__('Edit', 'altop'), ' |');
  }
 }
+
 ?>

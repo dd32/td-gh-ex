@@ -21,6 +21,17 @@ Support, Bugfixes and Updates under http://blog.t3-artwork.info
 
 Changelog:
 
-You have actually the newest version of 'altop'.
+1.1
+	Fixed
+	- Security Update in the Search.php
+	- Broken Backlink
+	
+	Added
+	- Threaded Comment Support
+	- Some new CSS-Classes
+
+	Changed
+	- Theme Options
+	
 
 --------------------------------------------------------------

@@ -1,10 +1,10 @@
 /*
 Theme Name: A little touch of purple
-Theme URI: http://blog.t3-artwork.com
-Description: altop = a little touch of purple is a classic theme for creative blogs or families and NOT only for women! ;) It is widget and translation ready and has some usefull theme options. 
-Version: 1.0
+Theme URI: http://blog.t3-artwork.info
+Description: altop = a little touch of purple is a classic theme for creative blogs or families and NOT only for women! It is widget and translation ready, supported threaded-comments and has some usefull theme options. 
+Version: 1.1
 Author: Thomas Gutzmer
-Tags: purple, pink, two-columns, fixed-width, theme-options, sticky-post, translation-ready
+Tags: purple, pink, two-columns, fixed-width, theme-options, sticky-post, translation-ready, threaded-comments
 Text Domain: altop
 */
 	
@@ -509,9 +509,23 @@ a:hover, a:active {
 	font-size: 0.8em;
 	}
 	
+.comment-reply-link {
+	margin-right: 10px;
+	}
+	
+.depth-2, .depth-3, .depth-4, .depth-5, .depth-6, .depth-7, .depth-8, .depth-9, .depth-10 {
+	border-left: 3px solid #ccc;
+	}
+	
 .searchfield {
 	width: 90%;
 	}	
+	
+.keyword {
+	color: #b7629c;
+	font-weight: normal;
+	font-style: italic;
+	}
 	
 #footer {
 	width: 880px;
@@ -645,6 +659,11 @@ code {
 	overflow: auto;
 	}
 
+.hidden {
+	display: none;
+	visibility: hidden;
+	}
+	
 .alignleft {
 	float: left;
 	margin: 5px;
