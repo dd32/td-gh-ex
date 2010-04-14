@@ -10,7 +10,7 @@ if ($_GET["dynamic"]!='true'): ?>
     	<div id="footer-logo">
            <a href="<?php bloginfo('home'); ?>"><?php bloginfo('name'); ?></a>
         </div>
-        <div id="credits">Powered by <a href="http://www.wordpress.org/">WordPress</a> and <a href="http://www.getbelle.com/">Belle</a> Design by <a href="http://www.usainstantpayday.com/" title="web design">Bad Credit Loans</a></span></div>
+        <div id="credits">Powered by <a href="http://www.wordpress.org/">WordPress</a> and <a href="http://www.getbelle.com/">Belle</a> Design and Code by <a href="http://www.pixelstudio.ro/" title="web design">pixelStudio</a></span></div>
      </div>
 </div>
 

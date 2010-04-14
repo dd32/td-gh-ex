@@ -3,15 +3,14 @@
  * @package WordPress
  * @subpackage Belle
  */
-define('belle_CURRENT', '1.6');
+define('belle_CURRENT', '1.7');
 
 $content_width = 450;
 
 define('HEADER_TEXTCOLOR', '34a0cc');
 define('HEADER_IMAGE', '%s/images/default_header.jpg'); // %s is theme dir uri
 define('HEADER_IMAGE_WIDTH', 760); // use width and height appropriate for your theme
-define('HEADER_IMAGE_HEIGHT', 163); //use height 
-
+define('HEADER_IMAGE_HEIGHT', 163);
 
 function register_scripts() {
 wp_register_script('livesearch',
