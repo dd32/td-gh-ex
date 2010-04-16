@@ -21,19 +21,10 @@ SRS.dd = function() {
 			this.style.zIndex = '2';
 		};
 		els[i].onmouseout = function(e) {
-			/*
-			if (!e) var e = window.event;
-			var from = (window.event) ? e.srcElement : e.target;
-			var to = e.relatedTarget || e.toElement;
-			while (to != from && to.nodeName != 'BODY')
-				to = to.parentNode;
-			if(to==from) return;
-			*/
 			this.className = this.className.replace(new RegExp(" jHover\\b"), "");
 			this.style.zIndex = '1';
 		};
 	}
-
 }
 
 SRS.addLoadEvent(SRS.dd);

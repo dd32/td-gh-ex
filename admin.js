@@ -73,6 +73,16 @@ function pagination_switch(o) {
 }
 
 function enableIncludeMenuItems() {
+	jQuery('.srsContainer h4.title')
+	.click(function() {
+		if(jQuery(this).parent().hasClass('srsContainerClosed'))
+			jQuery(this).parent().removeClass('srsContainerClosed');
+		else jQuery(this).parent().addClass('srsContainerClosed');
+	})
+	.mouseover(function() { jQuery(this).addClass('over'); })
+	.mouseout(function() { jQuery(this).removeClass('over'); });
+	
+	
 	//First menu
 	jQuery("#hm1ic_up").click(function() {
 		jQuery("#hm1ec option:selected").each(function() {

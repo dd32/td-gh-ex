@@ -367,7 +367,11 @@ function arjuna_add_theme_page () {
 		
 		<div class="tSRSIntro">
 			<div class="tTop">
-			<?php printf(__('Thank you for using Arjuna, the free WordPress theme designed by %s.', 'Arjuna'), '<a href="http://www.srssolutions.com/en/" class="tSRS">SRS Solutions</a>'); ?> <a href="http://www.twitter.com/srssolutions" class="tTwitter"><?php _e('Follow Us', 'Arjuna'); ?></a>
+			<?php printf(__('Thank you for using Arjuna, the free WordPress theme designed by %s.', 'Arjuna'), '<a href="http://www.srssolutions.com/en/" class="tSRS">SRS Solutions</a>'); ?>
+			<div class="tTwitter">
+				<a href="http://www.twitter.com/srssolutions"><?php _e('Follow Us', 'Arjuna'); ?></a>
+				to receive news, updates, and more.
+			</div>
 			</div>
 			<div class="tMid">
 				<div class="tReportBugs">
@@ -393,10 +397,10 @@ function arjuna_add_theme_page () {
 		</div>
 		
 		<h3><?php _e('Header', 'Arjuna'); ?></h3>
-		<table width="100%"><tr>
-			<td width="50%">
-				<div class="tIcon" id="icon-firstMenu"></div>
-				<h4><?php _e('First Header Menu', 'Arjuna'); ?></h4>
+		
+		<div class="srsContainer srsContainerClosed">
+			<h4 class="title"><span><div class="tIcon" id="icon-firstMenu"></div><?php _e('First Header Menu', 'Arjuna'); ?></span></h4>
+			<div class="inside">
 				<table class="form-table">
 					<tbody>
 						<tr>
@@ -494,7 +498,7 @@ function arjuna_add_theme_page () {
 									$parameters .= '&exclude='.$options['headerMenu1_exclude_categories'];
 									$categories = get_categories($parameters); 
 									?>
-									<select multiple="multiple" size="3" name="headerMenu1_include_categories[]" id="hm1ic" style="height:auto;width:100%; padding-right:20px;">
+									<select multiple="multiple" size="7" name="headerMenu1_include_categories[]" id="hm1ic" style="height:auto;width:100%; padding-right:20px;">
 										<?php foreach($categories as $cat): ?>
 										<option value="<?php print $cat->cat_ID; ?>"><?php print $cat->cat_name; ?></option>
 										<?php endforeach; ?>
@@ -511,7 +515,7 @@ function arjuna_add_theme_page () {
 									$parameters .= '&include='.$options['headerMenu1_exclude_categories'];
 									$categories = get_categories($parameters); 
 									?>
-									<select multiple="multiple" size="3" name="headerMenu1_exclude_categories[]" id="hm1ec" style="height:auto;width:100%; padding-right:20px;">
+									<select multiple="multiple" size="7" name="headerMenu1_exclude_categories[]" id="hm1ec" style="height:auto;width:100%; padding-right:20px;">
 										<?php
 										if(!empty($options['headerMenu1_exclude_categories'])):
 											foreach($categories as $cat):
@@ -533,7 +537,7 @@ function arjuna_add_theme_page () {
 									$parameters .= '&exclude='.$options['headerMenu1_exclude_pages'];
 									$pages = get_pages($parameters); 
 									?>
-									<select multiple="multiple" size="3" name="headerMenu1_include_pages[]" id="hm1ip" style="height:auto;width:100%; padding-right:20px;">
+									<select multiple="multiple" size="7" name="headerMenu1_include_pages[]" id="hm1ip" style="height:auto;width:100%; padding-right:20px;">
 										<?php foreach($pages as $page): ?>
 										<option value="<?php print $page->ID; ?>"><?php print $page->post_title; ?></option>
 										<?php endforeach; ?>
@@ -549,7 +553,7 @@ function arjuna_add_theme_page () {
 									$parameters .= '&include='.$options['headerMenu1_exclude_pages'];
 									$pages = get_pages($parameters); 
 									?>
-									<select multiple="multiple" size="3" name="headerMenu1_exclude_pages[]" id="hm1ep" style="height:auto;width:100%; padding-right:20px;">
+									<select multiple="multiple" size="7" name="headerMenu1_exclude_pages[]" id="hm1ep" style="height:auto;width:100%; padding-right:20px;">
 										<?php
 										if(!empty($options['headerMenu1_exclude_pages'])):
 											foreach($pages as $page):
@@ -576,10 +580,14 @@ function arjuna_add_theme_page () {
 						*/ ?>
 					</tbody>
 				</table>
-			</td>
-			<td width="50%" valign="top">
-				<div class="tIcon" id="icon-secondMenu"></div>
-				<h4><?php _e('Second Header Menu', 'Arjuna'); ?></h4>
+				
+			</div>
+			<div class="bottom"><span></span></div>
+		</div>
+		
+		<div class="srsContainer srsContainerClosed">
+			<h4 class="title"><span><div class="tIcon" id="icon-secondMenu"></div><?php _e('Second Header Menu', 'Arjuna'); ?></span></h4>
+			<div class="inside">
 				<table class="form-table">
 					<tbody>
 						<tr>
@@ -751,14 +759,17 @@ function arjuna_add_theme_page () {
 						*/ ?>
 					</tbody>
 				</table>
-			</td>
-		</tr></table>
-		<div class="tIcon" id="icon-headerImage"></div>
-		<h4><?php _e('Header Image', 'Arjuna'); ?></h4>
+			</div>
+			<div class="bottom"><span></span></div>
+		</div>
+		
+		
+		<div class="srsContainer srsContainerClosed">
+			<h4 class="title"><span><div class="tIcon" id="icon-headerImage"></div><?php _e('Header Image', 'Arjuna'); ?></span></h4>
+			<div class="inside">
 				<table class="form-table">
 					<tbody>
-				<tr>
-					<th scope="row"><?php _e('Header Image', 'Arjuna'); ?></th>
+					<tr>
 					<td>
 						<div class="tImageOptions" style="float:none">
 							<input name="headerImage" type="radio" id="headerImage_lightBlue" value="lightBlue"<?php if($options['headerImage']=='lightBlue') echo ' checked="checked"'; ?> />
@@ -781,285 +792,306 @@ function arjuna_add_theme_page () {
 							<span><label for="headerImage_seaGreen"><?php _e('Sea Green', 'Arjuna'); ?></label></span>
 						</div>
 					</td>
-				</tr>
+					</tr>
 					</tbody>
 				</table>
+			</div>
+			<div class="bottom"><span></span></div>
+		</div>
+		
 		
 		<h3><?php _e('General Options', 'Arjuna'); ?></h3>
-		<h4><?php _e('Sidebar', 'Arjuna'); ?></h4>
-		<table class="form-table">
-			<tbody>
-				<tr>
-					<th scope="row"><?php _e('Sidebar Position', 'Arjuna'); ?></th>
-					<td>
-						<div class="tImageOptions">
-							<input name="sidebarDisplay" type="radio" id="sidebarDisplay_right" value="right"<?php if($options['sidebarDisplay']=='right') echo ' checked="checked"'; ?> />
-							<div class="tImage" id="icon-sidebarRight"></div>
-							<span><label for="sidebarDisplay_right"><?php _e('Right sidebar', 'Arjuna'); ?></label></span>
-						</div>
-						<div class="tImageOptions">
-							<input name="sidebarDisplay" type="radio" id="sidebarDisplay_left" value="left"<?php if($options['sidebarDisplay']=='left') echo ' checked="checked"'; ?> />
-							<div class="tImage" id="icon-sidebarLeft"></div>
-							<span><label for="sidebarDisplay_left"><?php _e('Left sidebar', 'Arjuna'); ?></label></span>
-						</div>
-						<div class="tImageOptions">
-							<input name="sidebarDisplay" type="radio" id="sidebarDisplay_none" value="none"<?php if($options['sidebarDisplay']=='none') echo ' checked="checked"'; ?> />
-							<div class="tImage" id="icon-sidebarNone"></div>
-							<span><label for="sidebarDisplay_none"><?php _e('No sidebar', 'Arjuna'); ?></label></span>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<th scope="row"><?php _e('Sidebar Width', 'Arjuna'); ?></th>
-					<td>
-							<div class="tALeft"><label><input name="sidebarWidth" type="radio" id="sidebarWidth_small" value="small"<?php if($options['sidebarWidth']=='small') echo ' checked="checked"'; ?> /> <?php _e('Small', 'Arjuna'); ?></label></div>
-							<div class="tALeft"><label><input name="sidebarWidth" type="radio" id="sidebarWidth_normal" value="normal"<?php if($options['sidebarWidth']=='normal') echo ' checked="checked"'; ?> /> <?php _e('Normal', 'Arjuna'); ?></label></div>
-							<div class="tALeft"><label><input name="sidebarWidth" type="radio" id="sidebarWidth_large" value="large"<?php if($options['sidebarWidth']=='large') echo ' checked="checked"'; ?> /> <?php _e('Large', 'Arjuna'); ?></label></div>
-							<br /><span class="description"><?php _e('If you intend to use the two column sidebar, we recommend to choose either the normal or the large sidebar.', 'Arjuna'); ?></span>
-					</td>
-				</tr>
-				<tr>
-					<th scope="row"><?php _e('Default Widgets', 'Arjuna'); ?></th>
-					<td>
-						<label><input name="sidebar_showDefault" type="checkbox"<?php if($options['sidebar_showDefault']) echo ' checked="checked"'; ?> /> <?php _e('Display default sidebar widgets if the widget bars are empty.', 'Arjuna'); ?></label><br />
-						<span class="description"><?php _e('If enabled, these widgets will be displayed if the widget bar is empty: <b>sidebar_full_top:</b> Recent Posts and Browse by Tags, <b>sidebar_left:</b> Categories, <b>sidebar_right:</b> Meta', 'Arjuna'); ?></span>
-					</td>
-				</tr>
-				<tr>
-					<th scope="row"><?php _e('RSS Button', 'Arjuna'); ?></th>
-					<td>
-						<label><input name="sidebar_showRSSButton" type="checkbox"<?php if($options['sidebar_showRSSButton']) echo ' checked="checked"'; ?> /> <?php _e('Display an RSS button on the very top of the sidebar.', 'Arjuna'); ?></label>
-					</td>
-				</tr>
-				<tr>
-					<th scope="row"><?php _e('Twitter Button', 'Arjuna'); ?></th>
-					<td>
-						<label><input name="sidebar_showTwitterButton" onclick="sidebar_twitterURL_switch(this)" type="checkbox"<?php if($options['sidebar_showTwitterButton']) echo ' checked="checked"'; ?> /> <?php _e('Display a Twitter button on the very top of the sidebar.', 'Arjuna'); ?></label>
-						<div id="sidebar_twitterURL"<?php if(!$options['sidebar_showTwitterButton']) echo ' style="display:none;"'; ?>>
-							Your Twitter URL:<input type="text" class="regular-text" name="sidebar_twitterURL" value="<?php print $options['sidebar_twitterURL'] ?>" />
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<th scope="row"><?php _e('Facebook Button', 'Arjuna'); ?></th>
-					<td>
-						<label><input name="sidebar_showFacebookButton" onclick="sidebar_facebookURL_switch(this)" type="checkbox"<?php if($options['sidebar_showFacebookButton']) echo ' checked="checked"'; ?> /> <?php _e('Display a Facebook button on the very top of the sidebar.', 'Arjuna'); ?></label>
-						<div id="sidebar_facebookURL"<?php if(!$options['sidebar_showFacebookButton']) echo ' style="display:none;"'; ?>>
-							Your Facebook URL:<input type="text" class="regular-text" name="sidebar_facebookURL" value="<?php print $options['sidebar_facebookURL'] ?>" />
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<th scope="row"><?php _e('Display Button Labels', 'Arjuna'); ?></th>
-					<td>
-						<label><input name="sidebar_displayButtonTexts" type="checkbox"<?php if($options['sidebar_displayButtonTexts']) echo ' checked="checked"'; ?> /> <?php _e('Display labels next to the buttons (RSS, Twitter and Facebook).', 'Arjuna'); ?></label>
-					</td>
-				</tr>
-			</tbody>
-		</table>
 		
+		<div class="srsContainer srsContainerClosed">
+			<h4 class="title"><span><?php _e('Sidebar', 'Arjuna'); ?></span></h4>
+			<div class="inside">
+				<table class="form-table">
+					<tbody>
+						<tr>
+							<th scope="row"><?php _e('Sidebar Position', 'Arjuna'); ?></th>
+							<td>
+								<div class="tImageOptions">
+									<input name="sidebarDisplay" type="radio" id="sidebarDisplay_right" value="right"<?php if($options['sidebarDisplay']=='right') echo ' checked="checked"'; ?> />
+									<div class="tImage" id="icon-sidebarRight"></div>
+									<span><label for="sidebarDisplay_right"><?php _e('Right sidebar', 'Arjuna'); ?></label></span>
+								</div>
+								<div class="tImageOptions">
+									<input name="sidebarDisplay" type="radio" id="sidebarDisplay_left" value="left"<?php if($options['sidebarDisplay']=='left') echo ' checked="checked"'; ?> />
+									<div class="tImage" id="icon-sidebarLeft"></div>
+									<span><label for="sidebarDisplay_left"><?php _e('Left sidebar', 'Arjuna'); ?></label></span>
+								</div>
+								<div class="tImageOptions">
+									<input name="sidebarDisplay" type="radio" id="sidebarDisplay_none" value="none"<?php if($options['sidebarDisplay']=='none') echo ' checked="checked"'; ?> />
+									<div class="tImage" id="icon-sidebarNone"></div>
+									<span><label for="sidebarDisplay_none"><?php _e('No sidebar', 'Arjuna'); ?></label></span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><?php _e('Sidebar Width', 'Arjuna'); ?></th>
+							<td>
+									<div class="tALeft"><label><input name="sidebarWidth" type="radio" id="sidebarWidth_small" value="small"<?php if($options['sidebarWidth']=='small') echo ' checked="checked"'; ?> /> <?php _e('Small', 'Arjuna'); ?></label></div>
+									<div class="tALeft"><label><input name="sidebarWidth" type="radio" id="sidebarWidth_normal" value="normal"<?php if($options['sidebarWidth']=='normal') echo ' checked="checked"'; ?> /> <?php _e('Normal', 'Arjuna'); ?></label></div>
+									<div class="tALeft"><label><input name="sidebarWidth" type="radio" id="sidebarWidth_large" value="large"<?php if($options['sidebarWidth']=='large') echo ' checked="checked"'; ?> /> <?php _e('Large', 'Arjuna'); ?></label></div>
+									<br /><span class="description"><?php _e('If you intend to use the two column sidebar, we recommend to choose either the normal or the large sidebar.', 'Arjuna'); ?></span>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><?php _e('Default Widgets', 'Arjuna'); ?></th>
+							<td>
+								<label><input name="sidebar_showDefault" type="checkbox"<?php if($options['sidebar_showDefault']) echo ' checked="checked"'; ?> /> <?php _e('Display default sidebar widgets if the widget bars are empty.', 'Arjuna'); ?></label><br />
+								<span class="description"><?php _e('If enabled, these widgets will be displayed if the widget bar is empty: <b>sidebar_full_top:</b> Recent Posts and Browse by Tags, <b>sidebar_left:</b> Categories, <b>sidebar_right:</b> Meta', 'Arjuna'); ?></span>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><?php _e('RSS Button', 'Arjuna'); ?></th>
+							<td>
+								<label><input name="sidebar_showRSSButton" type="checkbox"<?php if($options['sidebar_showRSSButton']) echo ' checked="checked"'; ?> /> <?php _e('Display an RSS button on the very top of the sidebar.', 'Arjuna'); ?></label>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><?php _e('Twitter Button', 'Arjuna'); ?></th>
+							<td>
+								<label><input name="sidebar_showTwitterButton" onclick="sidebar_twitterURL_switch(this)" type="checkbox"<?php if($options['sidebar_showTwitterButton']) echo ' checked="checked"'; ?> /> <?php _e('Display a Twitter button on the very top of the sidebar.', 'Arjuna'); ?></label>
+								<div id="sidebar_twitterURL"<?php if(!$options['sidebar_showTwitterButton']) echo ' style="display:none;"'; ?>>
+									Your Twitter URL:<input type="text" class="regular-text" name="sidebar_twitterURL" value="<?php print $options['sidebar_twitterURL'] ?>" />
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><?php _e('Facebook Button', 'Arjuna'); ?></th>
+							<td>
+								<label><input name="sidebar_showFacebookButton" onclick="sidebar_facebookURL_switch(this)" type="checkbox"<?php if($options['sidebar_showFacebookButton']) echo ' checked="checked"'; ?> /> <?php _e('Display a Facebook button on the very top of the sidebar.', 'Arjuna'); ?></label>
+								<div id="sidebar_facebookURL"<?php if(!$options['sidebar_showFacebookButton']) echo ' style="display:none;"'; ?>>
+									Your Facebook URL:<input type="text" class="regular-text" name="sidebar_facebookURL" value="<?php print $options['sidebar_facebookURL'] ?>" />
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><?php _e('Display Button Labels', 'Arjuna'); ?></th>
+							<td>
+								<label><input name="sidebar_displayButtonTexts" type="checkbox"<?php if($options['sidebar_displayButtonTexts']) echo ' checked="checked"'; ?> /> <?php _e('Display labels next to the buttons (RSS, Twitter and Facebook).', 'Arjuna'); ?></label>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="bottom"><span></span></div>
+		</div>
 		
+		<div class="srsContainer srsContainerClosed">
+			<h4 class="title"><span><?php _e('Single Posts and Pages', 'Arjuna'); ?></span></h4>
+			<div class="inside">
+				<table class="form-table">
+					<tbody>
+						<tr>
+							<th scope="row"><?php _e('Display Author', 'Arjuna'); ?></th>
+							<td>
+								<label><input name="postsShowAuthor" type="checkbox"<?php if($options['postsShowAuthor']) echo ' checked="checked"'; ?> /> <?php _e('Include the author of a post in the post header.', 'Arjuna'); ?></label><br />
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><?php _e('Display Time', 'Arjuna'); ?></th>
+							<td>
+								<label><input name="postsShowTime" type="checkbox"<?php if($options['postsShowTime']) echo ' checked="checked"'; ?> /> <?php _e('Include the time and date of when the post has been published, instead of only the date.', 'Arjuna'); ?></label><br />
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><?php _e('Display Info Bar for Pages', 'Arjuna'); ?></th>
+							<td>
+								<label><input name="pages_showInfoBar" type="checkbox"<?php if($options['pages_showInfoBar']) echo ' checked="checked"'; ?> /> <?php _e('Display the info bar right below the title of pages.', 'Arjuna'); ?></label><br />
+								<span class="description"><?php _e('The info bar usually includes the author of the page, the publish date and the comments button. This options entirely hides the bar so that only the title is shown.', 'Arjuna'); ?></span>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><?php _e('Navigation Links', 'Arjuna'); ?></th>
+							<td>
+								<label><input name="posts_showTopPostLinks" type="checkbox"<?php if($options['posts_showTopPostLinks']) echo ' checked="checked"'; ?> /> <?php _e('Display links to the previous and next posts above each post.', 'Arjuna'); ?></label><br />
+								<label><input name="posts_showBottomPostLinks" type="checkbox"<?php if($options['posts_showBottomPostLinks']) echo ' checked="checked"'; ?> /> <?php _e('Display links to the previous and next posts below each post.', 'Arjuna'); ?></label><br />
+								<span class="description"><?php _e('Note: The links will only be shown on permalink pages, i.e. the URL where one single post/page is displayed.', 'Arjuna'); ?></span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="bottom"><span></span></div>
+		</div>
+
+		<div class="srsContainer srsContainerClosed">
+			<h4 class="title"><span><?php _e('Comments', 'Arjuna'); ?></span></h4>
+			<div class="inside">
+				<table class="form-table">
+					<tbody>
+						<tr>
+							<th scope="row"><?php _e('Display comments as follows', 'Arjuna'); ?></th>
+							<td>
+								<div class="tImageOptions" style="float:none">
+									<input name="commentDisplay" type="radio" id="commentDisplay_left" value="left"<?php if($options['commentDisplay']=='left') echo ' checked="checked"'; ?> />
+									<div class="tImage" id="icon-commentsLeft"></div>
+									<span><label for="commentDisplay_left"><?php _e('Aligned to the left', 'Arjuna'); ?></label></span>
+								</div>
+								<div class="tImageOptions" style="float:none">
+									<input name="commentDisplay" type="radio" id="commentDisplay_right" value="right"<?php if($options['commentDisplay']=='right') echo ' checked="checked"'; ?> />
+									<div class="tImage" id="icon-commentsRight"></div>
+									<span><label for="commentDisplay_right"><?php _e('Aligned to the right', 'Arjuna'); ?></label></span>
+								</div>
+								<div class="tImageOptions" style="float:none">
+									<input name="commentDisplay" type="radio" id="commentDisplay_alt" value="none"<?php if($options['commentDisplay']=='alt') echo ' checked="checked"'; ?> />
+									<div class="tImage" id="icon-commentsAlt"></div>
+									<span><label for="commentDisplay_alt"><?php _e('Alternate between left and right alignment', 'Arjuna'); ?></label></span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><?php _e('Date Format', 'Arjuna'); ?></th>
+							<td>
+									<label><input name="commentDateFormat" type="radio" value="timePassed"<?php if($options['commentDateFormat']=='timePassed') echo ' checked="checked"'; ?> /> <?php _e('Passed Time (Example: <em>&quot;Written by admin about 3 days ago.&quot;</em>)', 'Arjuna'); ?></label><br />
+									<label><input name="commentDateFormat" type="radio" value="date"<?php if($options['commentDateFormat']=='date') echo ' checked="checked"'; ?> /> <?php printf(__('Default Date Format (Example: <em>&quot;Written by admin on %s&quot;</em>)', 'Arjuna'), date(get_option('date_format'))); ?></label><br />
+									<span class="description"><?php _e('The default date format can be customized in Settings &gt; General.', 'Arjuna'); ?></span>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><?php _e('Comment Display', 'Arjuna'); ?></th>
+							<td>
+								<label><input name="comments_hideWhenDisabledOnPages" type="checkbox"<?php if($options['comments_hideWhenDisabledOnPages']) echo ' checked="checked"'; ?> /> <?php _e('Hide any traces of comments when comments, pingbacks and trackbacks are disabled on <strong>Pages</strong>.', 'Arjuna'); ?></label><br />
+								<label><input name="comments_hideWhenDisabledOnPosts" type="checkbox"<?php if($options['comments_hideWhenDisabledOnPosts']) echo ' checked="checked"'; ?> /> <?php _e('Hide any traces of comments when comments, pingbacks and trackbacks are disabled on <strong>Posts</strong>.', 'Arjuna'); ?></label><br />
+								<span class="description"><?php _e('Note: If enabled, the section that says Comments and the comments button in the heading of the respective pages/posts will be removed.', 'Arjuna'); ?></span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="bottom"><span></span></div>
+		</div>
 		
-
-		<h4><?php _e('Single Posts and Pages', 'Arjuna'); ?></h4>
-		<table class="form-table">
-			<tbody>
-				<tr>
-					<th scope="row"><?php _e('Display Author', 'Arjuna'); ?></th>
-					<td>
-						<label><input name="postsShowAuthor" type="checkbox"<?php if($options['postsShowAuthor']) echo ' checked="checked"'; ?> /> <?php _e('Include the author of a post in the post header.', 'Arjuna'); ?></label><br />
-					</td>
-				</tr>
-				<tr>
-					<th scope="row"><?php _e('Display Time', 'Arjuna'); ?></th>
-					<td>
-						<label><input name="postsShowTime" type="checkbox"<?php if($options['postsShowTime']) echo ' checked="checked"'; ?> /> <?php _e('Include the time and date of when the post has been published, instead of only the date.', 'Arjuna'); ?></label><br />
-					</td>
-				</tr>
-				<tr>
-					<th scope="row"><?php _e('Display Info Bar for Pages', 'Arjuna'); ?></th>
-					<td>
-						<label><input name="pages_showInfoBar" type="checkbox"<?php if($options['pages_showInfoBar']) echo ' checked="checked"'; ?> /> <?php _e('Display the info bar right below the title of pages.', 'Arjuna'); ?></label><br />
-						<span class="description"><?php _e('The info bar usually includes the author of the page, the publish date and the comments button. This options entirely hides the bar so that only the title is shown.', 'Arjuna'); ?></span>
-					</td>
-				</tr>
-				<tr>
-					<th scope="row"><?php _e('Navigation Links', 'Arjuna'); ?></th>
-					<td>
-						<label><input name="posts_showTopPostLinks" type="checkbox"<?php if($options['posts_showTopPostLinks']) echo ' checked="checked"'; ?> /> <?php _e('Display links to the previous and next posts above each post.', 'Arjuna'); ?></label><br />
-						<label><input name="posts_showBottomPostLinks" type="checkbox"<?php if($options['posts_showBottomPostLinks']) echo ' checked="checked"'; ?> /> <?php _e('Display links to the previous and next posts below each post.', 'Arjuna'); ?></label><br />
-						<span class="description"><?php _e('Note: The links will only be shown on permalink pages, i.e. the URL where one single post/page is displayed.', 'Arjuna'); ?></span>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-
-		<h4><?php _e('Comments', 'Arjuna'); ?></h4>
-		<table class="form-table">
-			<tbody>
-				<tr>
-					<th scope="row"><?php _e('Display comments as follows', 'Arjuna'); ?></th>
-					<td>
-						<div class="tImageOptions" style="float:none">
-							<input name="commentDisplay" type="radio" id="commentDisplay_left" value="left"<?php if($options['commentDisplay']=='left') echo ' checked="checked"'; ?> />
-							<div class="tImage" id="icon-commentsLeft"></div>
-							<span><label for="commentDisplay_left"><?php _e('Aligned to the left', 'Arjuna'); ?></label></span>
-						</div>
-						<div class="tImageOptions" style="float:none">
-							<input name="commentDisplay" type="radio" id="commentDisplay_right" value="right"<?php if($options['commentDisplay']=='right') echo ' checked="checked"'; ?> />
-							<div class="tImage" id="icon-commentsRight"></div>
-							<span><label for="commentDisplay_right"><?php _e('Aligned to the right', 'Arjuna'); ?></label></span>
-						</div>
-						<div class="tImageOptions" style="float:none">
-							<input name="commentDisplay" type="radio" id="commentDisplay_alt" value="none"<?php if($options['commentDisplay']=='alt') echo ' checked="checked"'; ?> />
-							<div class="tImage" id="icon-commentsAlt"></div>
-							<span><label for="commentDisplay_alt"><?php _e('Alternate between left and right alignment', 'Arjuna'); ?></label></span>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<th scope="row"><?php _e('Date Format', 'Arjuna'); ?></th>
-					<td>
-							<label><input name="commentDateFormat" type="radio" value="timePassed"<?php if($options['commentDateFormat']=='timePassed') echo ' checked="checked"'; ?> /> <?php _e('Passed Time (Example: <em>&quot;Written by admin about 3 days ago.&quot;</em>)', 'Arjuna'); ?></label><br />
-							<label><input name="commentDateFormat" type="radio" value="date"<?php if($options['commentDateFormat']=='date') echo ' checked="checked"'; ?> /> <?php printf(__('Default Date Format (Example: <em>&quot;Written by admin on %s&quot;</em>)', 'Arjuna'), date(get_option('date_format'))); ?></label><br />
-							<span class="description"><?php _e('The default date format can be customized in Settings &gt; General.', 'Arjuna'); ?></span>
-					</td>
-				</tr>
-				<tr>
-					<th scope="row"><?php _e('Comment Display', 'Arjuna'); ?></th>
-					<td>
-						<label><input name="comments_hideWhenDisabledOnPages" type="checkbox"<?php if($options['comments_hideWhenDisabledOnPages']) echo ' checked="checked"'; ?> /> <?php _e('Hide any traces of comments when comments, pingbacks and trackbacks are disabled on <strong>Pages</strong>.', 'Arjuna'); ?></label><br />
-						<label><input name="comments_hideWhenDisabledOnPosts" type="checkbox"<?php if($options['comments_hideWhenDisabledOnPosts']) echo ' checked="checked"'; ?> /> <?php _e('Hide any traces of comments when comments, pingbacks and trackbacks are disabled on <strong>Posts</strong>.', 'Arjuna'); ?></label><br />
-						<span class="description"><?php _e('Note: If enabled, the section that says Comments and the comments button in the heading of the respective pages/posts will be removed.', 'Arjuna'); ?></span>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-
-		<h4><?php _e('Blog', 'Arjuna'); ?></h4>
-		<table class="form-table">
-			<tbody>
-				<tr>
-					<th scope="row"><?php _e('Pagination', 'Arjuna'); ?></th>
-					<td>
-						<label><input name="pagination" onclick="pagination_switch(this)" type="radio" value="1"<?php if($options['pagination']) echo ' checked="checked"'; ?> /> <?php _e('Use Arjuna pagination', 'Arjuna'); ?></label><br />
-						<span class="description"><?php _e('If enabled, Arjuna will use its own native pagination to allow your users to navigate the blog using pages.', 'Arjuna');?></span><br />
-						<div id="pagination_input"<?php if(!$options['pagination']) echo ' style="display:none;"'; ?> style="padding:5px 0 5px 20px;">
-							<table>
-							<tr>
-								<th scope="row"><?php _e('Page Range', 'Arjuna'); ?>:</th>
-								<td>
-								<select name="pagination_pageRange" style="width:50px;"><?php
-								$validValues = array(1, 2, 3, 4, 5);
-								foreach($validValues as $value) {
-									if ($options['pagination_pageRange'] == $value)
-										print '<option value="'.$value.'" selected="selected">'.$value.'</option>';
-									else print '<option value="'.$value.'">'.$value.'</option>';
-								}
-								?></select><span class="description"><?php _e('The number of page buttons that will appear before and after the current page button.', 'Arjuna'); ?></span>
-								</td>
-							</tr>
-							<tr>
-								<th scope="row"><?php _e('Page Anchors', 'Arjuna'); ?>:</th>
-								<td>
-								<select name="pagination_pageAnchors" style="width:50px;"><?php
-									$validValues = array(1, 2, 3);
-									foreach($validValues as $value) {
-										if ($options['pagination_pageAnchors'] == $value)
-											print '<option value="'.$value.'" selected="selected">'.$value.'</option>';
-										else print '<option value="'.$value.'">'.$value.'</option>';
-									}
-								?></select><span class="description"><?php _e('The number of page buttons that will always appear at the beginning and the end of the pagination.', 'Arjuna'); ?></span>
-								</td>
-							</tr>
-							<tr>
-								<th scope="row"><?php _e('Page Gap', 'Arjuna'); ?>:</th>
-								<td>
-								<select name="pagination_pageGap" style="width:50px;"><?php
-									$validValues = array(1, 2, 3);
-									foreach($validValues as $value) {
-										if ($options['pagination_pageGap'] == $value)
-											print '<option value="'.$value.'" selected="selected">'.$value.'</option>';
-										else print '<option value="'.$value.'">'.$value.'</option>';
-									}
-								?></select><span class="description"><?php _e('The number of page buttons in a gap before an ellipsis (...) is displayed.', 'Arjuna'); ?></span>
-								</td>
-							</tr>
-						</table>
-						</div>
-						<label><input name="pagination" onclick="pagination_switch(this)" type="radio" value="0"<?php if(!$options['pagination']) echo ' checked="checked"'; ?> /> <?php _e('Use WordPress default', 'Arjuna'); ?></label><br />
-						<span class="description"><?php _e('The default depends on your WordPress version and whether you have any pagination plugins activated. If the wp-paginate or wp-pagenavi plugin is activated, then Arjuna will use these plugins to create the pagination.', 'Arjuna');?></span><br />
-					</td>
-				</tr>
-			</tbody>
-		</table>
-
-		<h4><?php _e('Miscellaneous', 'Arjuna'); ?></h4>
-		<table class="form-table">
-			<tbody>
-				<tr>
-					<th scope="row"><?php _e('Append to page title', 'Arjuna'); ?></th>
-					<td>
-						<label><input name="appendToPageTitle" type="radio" value="blogName"<?php if($options['appendToPageTitle']=='blogName') echo ' checked="checked"'; ?> /> <?php printf(__('Blog Name (&quot; - %s&quot;)', 'Arjuna'), get_bloginfo('blogname')); ?></label><br />
-						<label><input name="appendToPageTitle" type="radio" value="custom"<?php if($options['appendToPageTitle']=='custom') echo ' checked="checked"'; ?> /> <?php _e('Custom:', 'Arjuna'); ?></label> <input type="text" value="<?php if(!empty($options['appendToPageTitleCustom'])) echo $options['appendToPageTitleCustom']; ?>" name="appendToPageTitleCustom" /><br />
-						<span class="description"><?php _e('This will be appended to the page title of every web page (posts, pages, categories, etc.)', 'Arjuna'); ?></span>
-					</td>
-				</tr>
-				<tr>
-					<th scope="row"><?php _e('Footer Style', 'Arjuna'); ?></th>
-					<td>
-						<div class="tImageOptions" style="float:none">
-							<input name="footerStyle" style="margin-top:12px;" type="radio" value="style1"<?php if($options['footerStyle']=='style1') echo ' checked="checked"'; ?> />
-							<div class="tImage" id="icon-footerStyle1"></div>
-						</div>
-						<div class="tImageOptions" style="float:none">
-							<input name="footerStyle" style="margin-top:6px;" type="radio" value="style2"<?php if($options['footerStyle']=='style2') echo ' checked="checked"'; ?> />
-							<div class="tImage" id="icon-footerStyle2"></div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<th scope="row"><?php _e('Custom CSS', 'Arjuna'); ?></th>
-					<td>
-						<?php
-						//first check for permissions
-						if (!is_writable(dirname(__FILE__).'/')):
-						?>
-						<br />
-						<span class="description"><?php sprintf(__('Arjuna needs write permissions to create a new file %s, which will contain the custom CSS.'), '&quot;user-style.css&quot;'); ?></span>
-						<?php else: ?>
-						<label><input name="customCSS" onclick="customCSS_switch(this)" type="checkbox"<?php if($options['customCSS']) echo ' checked="checked"'; ?> /> <?php _e('Enable custom CSS rules', 'Arjuna'); ?></label><br />
-						<span class="description"><?php _e('If enabled, Arjuna will create a user stylesheet with your custom CSS rules. The user stylesheet will be included with every page call. If you intend to make some minor changes to the stylesheet, enabling this option ensures that you can safely upgrade Arjuna without losing your custom CSS.', 'Arjuna');?></span>
-						<div id="customCSS_input"<?php if(!$options['customCSS']) echo ' style="display:none;"'; ?>>
-							<textarea name="customCSS_input"><?php
-								//check if there is a user-style.css file
-								$path = dirname(__FILE__).'/user-style.css';
-								if(file_exists($path))
-									print file_get_contents($path);
-							?></textarea>
-							<?php if (!is_writable(dirname(__FILE__).'/')): ?>
-							<br /><span style="color:#C00;font-style:italic;"><?php _e('Note:', 'Arjuna'); ?></span> <?php _e('Arjuna cannot write to the themes directory. The custom CSS rules will be included in the header of each page, between &lt;STYLE&gt; tags.');?>
-							<?php endif; ?>
-						</div>
-						<?php endif; ?>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-
-		<h3><?php _e('Performance Optimization', 'Arjuna'); ?></h3>
-		<table class="form-table">
-			<tbody>
-				<tr>
-					<th scope="row"><?php _e('Internet Explorer 6 Optimization', 'Arjuna'); ?></th>
-					<td>
-						<label><input name="enableIE6optimization" type="checkbox"<?php if($options['enableIE6optimization']) echo ' checked="checked"'; ?> /> <?php _e('Enable IE6 performance optimization', 'Arjuna'); ?></label><br />
-						<span class="description"><?php _e('If turned on, Arjuna will attempt to detect IE6 and serve a stand-alone CSS file specifically made for IE6.', 'Arjuna'); ?><br /><?php _e('Note: IE6 will still work the same if this option is turned off, however, you and your IE6 users will save an estimated 28kb (11 image and 2 CSS files) in bandwidth for first-time visitors. IE6 also might render more rapidly if this is turned on.', 'Arjuna');?></span>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-
+		<div class="srsContainer srsContainerClosed">
+			<h4 class="title"><span><?php _e('Pagination', 'Arjuna'); ?></span></h4>
+			<div class="inside">
+				<table class="form-table">
+					<tbody>
+						<tr>
+							<th scope="row"><?php _e('Pagination', 'Arjuna'); ?></th>
+							<td>
+								<label><input name="pagination" onclick="pagination_switch(this)" type="radio" value="1"<?php if($options['pagination']) echo ' checked="checked"'; ?> /> <?php _e('Use Arjuna pagination', 'Arjuna'); ?></label><br />
+								<span class="description"><?php _e('If enabled, Arjuna will use its own native pagination to allow your users to navigate the blog using pages.', 'Arjuna');?></span><br />
+								<div id="pagination_input"<?php if(!$options['pagination']) echo ' style="display:none;"'; ?> style="padding:5px 0 5px 20px;">
+									<table>
+									<tr>
+										<th scope="row"><?php _e('Page Range', 'Arjuna'); ?>:</th>
+										<td>
+										<select name="pagination_pageRange" style="width:50px;"><?php
+										$validValues = array(1, 2, 3, 4, 5);
+										foreach($validValues as $value) {
+											if ($options['pagination_pageRange'] == $value)
+												print '<option value="'.$value.'" selected="selected">'.$value.'</option>';
+											else print '<option value="'.$value.'">'.$value.'</option>';
+										}
+										?></select><span class="description"><?php _e('The number of page buttons that will appear before and after the current page button.', 'Arjuna'); ?></span>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><?php _e('Page Anchors', 'Arjuna'); ?>:</th>
+										<td>
+										<select name="pagination_pageAnchors" style="width:50px;"><?php
+											$validValues = array(1, 2, 3);
+											foreach($validValues as $value) {
+												if ($options['pagination_pageAnchors'] == $value)
+													print '<option value="'.$value.'" selected="selected">'.$value.'</option>';
+												else print '<option value="'.$value.'">'.$value.'</option>';
+											}
+										?></select><span class="description"><?php _e('The number of page buttons that will always appear at the beginning and the end of the pagination.', 'Arjuna'); ?></span>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><?php _e('Page Gap', 'Arjuna'); ?>:</th>
+										<td>
+										<select name="pagination_pageGap" style="width:50px;"><?php
+											$validValues = array(1, 2, 3);
+											foreach($validValues as $value) {
+												if ($options['pagination_pageGap'] == $value)
+													print '<option value="'.$value.'" selected="selected">'.$value.'</option>';
+												else print '<option value="'.$value.'">'.$value.'</option>';
+											}
+										?></select><span class="description"><?php _e('The number of page buttons in a gap before an ellipsis (...) is displayed.', 'Arjuna'); ?></span>
+										</td>
+									</tr>
+								</table>
+								</div>
+								<label><input name="pagination" onclick="pagination_switch(this)" type="radio" value="0"<?php if(!$options['pagination']) echo ' checked="checked"'; ?> /> <?php _e('Use WordPress default', 'Arjuna'); ?></label><br />
+								<span class="description"><?php _e('The default depends on your WordPress version and whether you have any pagination plugins activated. If the wp-paginate or wp-pagenavi plugin is activated, then Arjuna will use these plugins to create the pagination.', 'Arjuna');?></span><br />
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="bottom"><span></span></div>
+		</div>
+		
+		<div class="srsContainer srsContainerClosed">
+			<h4 class="title"><span><?php _e('Miscellaneous', 'Arjuna'); ?></span></h4>
+			<div class="inside">
+				<table class="form-table">
+					<tbody>
+						<tr>
+							<th scope="row"><?php _e('Append to page title', 'Arjuna'); ?></th>
+							<td>
+								<label><input name="appendToPageTitle" type="radio" value="blogName"<?php if($options['appendToPageTitle']=='blogName') echo ' checked="checked"'; ?> /> <?php printf(__('Blog Name (&quot; - %s&quot;)', 'Arjuna'), get_bloginfo('blogname')); ?></label><br />
+								<label><input name="appendToPageTitle" type="radio" value="custom"<?php if($options['appendToPageTitle']=='custom') echo ' checked="checked"'; ?> /> <?php _e('Custom:', 'Arjuna'); ?></label> <input type="text" value="<?php if(!empty($options['appendToPageTitleCustom'])) echo $options['appendToPageTitleCustom']; ?>" name="appendToPageTitleCustom" /><br />
+								<span class="description"><?php _e('This will be appended to the page title of every web page (posts, pages, categories, etc.)', 'Arjuna'); ?></span>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><?php _e('Footer Style', 'Arjuna'); ?></th>
+							<td>
+								<div class="tImageOptions" style="float:none">
+									<input name="footerStyle" style="margin-top:12px;" type="radio" value="style1"<?php if($options['footerStyle']=='style1') echo ' checked="checked"'; ?> />
+									<div class="tImage" id="icon-footerStyle1"></div>
+								</div>
+								<div class="tImageOptions" style="float:none">
+									<input name="footerStyle" style="margin-top:6px;" type="radio" value="style2"<?php if($options['footerStyle']=='style2') echo ' checked="checked"'; ?> />
+									<div class="tImage" id="icon-footerStyle2"></div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><?php _e('Custom CSS', 'Arjuna'); ?></th>
+							<td>
+								<?php
+								//first check for permissions
+								if (!is_writable(dirname(__FILE__).'/')):
+								?>
+								<br />
+								<span class="description"><?php sprintf(__('Arjuna needs write permissions to create a new file %s, which will contain the custom CSS.'), '&quot;user-style.css&quot;'); ?></span>
+								<?php else: ?>
+								<label><input name="customCSS" onclick="customCSS_switch(this)" type="checkbox"<?php if($options['customCSS']) echo ' checked="checked"'; ?> /> <?php _e('Enable custom CSS rules', 'Arjuna'); ?></label><br />
+								<span class="description"><?php _e('If enabled, Arjuna will create a user stylesheet with your custom CSS rules. The user stylesheet will be included with every page call. If you intend to make some minor changes to the stylesheet, enabling this option ensures that you can safely upgrade Arjuna without losing your custom CSS.', 'Arjuna');?></span>
+								<div id="customCSS_input"<?php if(!$options['customCSS']) echo ' style="display:none;"'; ?>>
+									<textarea name="customCSS_input"><?php
+										//check if there is a user-style.css file
+										$path = dirname(__FILE__).'/user-style.css';
+										if(file_exists($path))
+											print file_get_contents($path);
+									?></textarea>
+									<?php if (!is_writable(dirname(__FILE__).'/')): ?>
+									<br /><span style="color:#C00;font-style:italic;"><?php _e('Note:', 'Arjuna'); ?></span> <?php _e('Arjuna cannot write to the themes directory. The custom CSS rules will be included in the header of each page, between &lt;STYLE&gt; tags.');?>
+									<?php endif; ?>
+								</div>
+								<?php endif; ?>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><?php _e('Internet Explorer 6 Optimization', 'Arjuna'); ?></th>
+							<td>
+								<label><input name="enableIE6optimization" type="checkbox"<?php if($options['enableIE6optimization']) echo ' checked="checked"'; ?> /> <?php _e('Enable IE6 performance optimization', 'Arjuna'); ?></label><br />
+								<span class="description"><?php _e('If turned on, Arjuna will attempt to detect IE6 and serve a stand-alone CSS file specifically made for IE6.', 'Arjuna'); ?><br /><?php _e('Note: IE6 will still work the same if this option is turned off, however, you and your IE6 users will save an estimated 28kb (11 image and 2 CSS files) in bandwidth for first-time visitors. IE6 also might render more rapidly if this is turned on.', 'Arjuna');?></span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="bottom"><span></span></div>
+		</div>
+		
 		<p class="submit">
 			<input class="button-primary" type="submit" name="arjuna_save_options" value="<?php _e('Save Changes', 'Arjuna'); ?>" />
 		</p>
@@ -1142,14 +1174,14 @@ add_action ('init', 'theme_init');
 add_action('admin_print_styles', 'arjuna_admin_initCSS');
 
 function arjuna_admin_initCSS() {
-	wp_enqueue_style('arjunaAdminCSS', get_bloginfo('stylesheet_directory').'/admin.css');
+	wp_enqueue_style('arjunaAdminCSS', get_bloginfo('template_url').'/admin.css');
 }
 
 //JS for plugin page
 add_action('admin_print_scripts', 'arjuna_admin_initJS');
 
 function arjuna_admin_initJS() {
-	wp_enqueue_script('arjunaAdminJS', get_bloginfo('stylesheet_directory').'/admin.js');
+	wp_enqueue_script('arjunaAdminJS', get_bloginfo('template_url').'/admin.js');
 }
 
 
@@ -1165,7 +1197,7 @@ function legacy_comments( $file ) {
 
 // custom comments
 function arjuna_get_comment($comment, $args, $depth) {
-	$arjunaOptions = get_option('arjuna_options');
+	$arjunaOptions = arjuna_get_options();
 	$GLOBALS['comment'] = $comment;
 	$commentClass = 'comment';
 	
@@ -1303,7 +1335,7 @@ function arjuna_get_appendToPageTitle() {
 function arjuna_get_custom_CSS() {
 	$arjunaOptions = arjuna_get_options();
 	if($arjunaOptions['customCSS'] && $arjunaOptions['customCSS_useFilesystem'] && file_exists(dirname(__FILE__).'/user-style.css'))
-		return '<link rel="stylesheet" href="'.get_bloginfo('stylesheet_directory').'/user-style.css" type="text/css" media="screen" />';
+		return '<link rel="stylesheet" href="'.get_bloginfo('template_url').'/user-style.css" type="text/css" media="screen" />';
 	if($arjunaOptions['customCSS'] && !$arjunaOptions['customCSS_useFilesystem'] && $arjunaOptions['customCSS_input'])
 		return '<style>'.$arjunaOptions['customCSS_input'].'</style>';
 	return '';

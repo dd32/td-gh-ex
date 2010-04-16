@@ -1,24 +1,4 @@
-#icon-firstMenu {
-	width:42px;
-	height:28px;
-	background:url(./images/admin/admin.png) no-repeat 0 -100px;
-	float:left;
-	margin:12px 10px 0 0;
-}
-#icon-secondMenu {
-	width:42px;
-	height:28px;
-	background:url(./images/admin/admin.png) no-repeat -50px -100px;
-	float:left;
-	margin:12px 10px 0 0;
-}
-#icon-headerImage {
-	width:42px;
-	height:28px;
-	background:url(./images/admin/admin.png) no-repeat -100px -100px;
-	float:left;
-	margin:12px 10px 0 0;
-}
+
 
 .tALeft {
 	float:left;
@@ -124,16 +104,21 @@
 	border:1px solid #ccc;
 	background-color:#eee;
 	width:780px;
+	margin-bottom:20px;
 }
 .tSRSIntro .tTwitter {
+	margin-top:5px;
+	color:#999;
+	font-size:10px;
+}
+.tSRSIntro .tTwitter a {
 	background:url(./images/admin/admin.png) no-repeat 0 -240px;
-	margin-left:5px;
-	padding-left:22px;
+	margin-right:3px;
+	width:70px;
+	height:20px;
 	display:-moz-inline-stack;
 	display:inline-block;
-	color:#056;
-	line-height:18px;
-	font-size:11px;
+	text-indent:-999em;
 }
 a.tSRS {
 	color:#666;
@@ -233,4 +218,82 @@ a.tArrowDown {
 }
 a.tArrowDown:hover {
 	background-position:-50px -270px;
+}
+
+.srsContainer {
+	margin:3px 0;
+}
+.srsContainer h4 {
+	font-size:12px;
+	font-weight:bold;
+	line-height:28px;
+	cursor:pointer;
+	height:28px;
+	margin:0 10px 0 0;
+	background:url(./images/admin/adminContainers.png) no-repeat 0 -50px;
+}
+.srsContainerClosed h4 {
+	background-position:0 0;
+}
+.srsContainer h4 span {
+	display:block;
+	height:28px;
+	background:url(./images/admin/adminContainers.png) no-repeat 100% -50px;
+	margin:0 -10px 0 30px;
+}
+.srsContainerClosed h4 span {
+	background-position:100% 0;
+}
+.srsContainer h4.over {
+	background-position:0 -150px;
+}
+.srsContainerClosed h4.over {
+	background-position:0 -100px;
+}
+.srsContainer h4 .tIcon {
+	float:left;
+	margin:4px 10px 0 10px;
+}
+.srsContainer .inside {
+	background:#fff;
+	border:1px solid #ccc;
+	border-width:0 1px;
+	padding:5px;
+}
+.srsContainer .bottom {
+	background:url(./images/admin/adminContainers.png) no-repeat 0 -200px;
+	height:5px;
+	margin:0 10px 0 0;
+}
+.srsContainer .bottom span {
+	background:url(./images/admin/adminContainers.png) no-repeat 100% -200px;
+	height:5px;
+	margin:0 -10px 0 10px;
+	display:block;
+}
+.srsContainerClosed .inside {
+	display:none;
+}
+.srsContainerClosed .bottom {
+	display:none;
+}
+
+.form-table {
+	margin:0;
+}
+
+#icon-firstMenu {
+	width:36px;
+	height:20px;
+	background:url(./images/admin/admin.png) no-repeat 0 -100px;
+}
+#icon-secondMenu {
+	width:36px;
+	height:20px;
+	background:url(./images/admin/admin.png) no-repeat -50px -100px;
+}
+#icon-headerImage {
+	width:36px;
+	height:20px;
+	background:url(./images/admin/admin.png) no-repeat -100px -100px;
 }

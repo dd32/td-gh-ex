@@ -22,7 +22,7 @@ Translation
 ---------------------------------------------------
 
 
-Help and how to translate Arjuna into your own language can be found here: http://192.168.2.100/srssolutions.com/en/downloads/arjuna_wordpress_theme#faq
+Help and how to translate Arjuna into your own language can be found here: http://www.srssolutions.com/en/downloads/arjuna_wordpress_theme#faq
 
 Currently available translations:
 
@@ -65,6 +65,10 @@ Nonetheless, we still hope that IE6 will rest in peace soon.
 Changelog:
 ---------------------------------------------------
 
+1.3.6
+- Change: Improved the admin options page of Arjuna to allow users to browse through the many options more easily.
+- Localization: German has been updated to 1.3.5.
+- Localization: Chinese has been updated to 1.3.5.
 1.3.5
 - Localization: Romanian (1.3.4) has been added.
 - Localization: French has been updated to 1.3.3.
