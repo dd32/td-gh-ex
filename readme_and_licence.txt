@@ -20,6 +20,10 @@ Support, Bugfixes and Updates under http://blog.t3-artwork.info
 --------------------------------------------------------------
 
 Changelog:
+1.2
+	Added
+	- French Translation (Thanks to Wolforg - http://www.wptrads.fr/a-little-touch-of-purple/ )
+
 
 1.1
 	Fixed
