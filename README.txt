@@ -65,6 +65,10 @@ Nonetheless, we still hope that IE6 will rest in peace soon.
 Changelog:
 ---------------------------------------------------
 
+1.3.7
+- Change: The include and exclude boxes are now larger in height, making it less awkward to work with a lot of categories/pages.
+- Fix: Added better support for WPML when excluding pages or categories in the menus. Arjuna now excludes translated versions of selected pages/categories as well.
+- Fix: Normalized comment form so that certain plugins, notably Tango Smileys Extended, are working properly.
 1.3.6
 - Change: Improved the admin options page of Arjuna to allow users to browse through the many options more easily.
 - Localization: German has been updated to 1.3.5.

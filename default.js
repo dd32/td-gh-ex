@@ -57,7 +57,7 @@ SRS = {
 				{ID: 'replyName', defaultID: 'replyNameDefault'},
 				{ID: 'replyEmail', defaultID: 'replyEmailDefault'},
 				{ID: 'replyURL', defaultID: 'replyURLDefault'},
-				{ID: 'replyMsg', defaultID: 'replyMsgDefault'}
+				{ID: 'comment', defaultID: 'replyMsgDefault'}
 			];
 			for (var i=0; i<els.length; i++) {
 				var e = document.getElementById(els[i].ID);
@@ -84,7 +84,7 @@ SRS = {
 						{ID: 'replyName', defaultID: 'replyNameDefault'},
 						{ID: 'replyEmail', defaultID: 'replyEmailDefault'},
 						{ID: 'replyURL', defaultID: 'replyURLDefault'},
-						{ID: 'replyMsg', defaultID: 'replyMsgDefault'}
+						{ID: 'comment', defaultID: 'replyMsgDefault'}
 					];
 					for (var i=0; i<els.length; i++) {
 						var e = document.getElementById(els[i].ID);

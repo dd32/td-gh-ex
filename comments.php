@@ -76,7 +76,7 @@ if ('open' == $post->comment_status):
 			}
 			?>
 			<input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
-			<div class="replyRow"><textarea class="inputIA" id="replyMsg" name="comment"><?php _e('Your comment', 'Arjuna'); ?></textarea></div>
+			<div class="replyRow"><textarea class="inputIA" id="comment" name="comment"><?php _e('Your comment', 'Arjuna'); ?></textarea></div>
 			<div class="replySubmitArea">
 				<a href="<?php echo get_post_comments_feed_link(); ?>" class="btnSubscribe btn"><span><?php _e('Subscribe to comments', 'Arjuna'); ?></span></a>
 				<button type="submit" class="inputBtn" value="Submit" name="submit"><?php _e('Leave comment', 'Arjuna'); ?></button>

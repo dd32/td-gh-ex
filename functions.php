@@ -490,81 +490,73 @@ function arjuna_add_theme_page () {
 							<th scope="row"><?php _e('Menu Items', 'Arjuna'); ?></th>
 							<td>
 							<div id="headerMenu1_include_categories"<?php if($options['headerMenu1_display']=='pages'): ?> style="display:none;"<?php endif; ?>>
-								<div>
-									<?php _e('Include categories', 'Arjuna'); ?><br />
-									<?php
-									$parameters = 'depth='.$options['headerMenu1_dropdown'];
-									$parameters .= '&hide_empty=0';
-									$parameters .= '&exclude='.$options['headerMenu1_exclude_categories'];
-									$categories = get_categories($parameters); 
-									?>
-									<select multiple="multiple" size="7" name="headerMenu1_include_categories[]" id="hm1ic" style="height:auto;width:100%; padding-right:20px;">
-										<?php foreach($categories as $cat): ?>
-										<option value="<?php print $cat->cat_ID; ?>"><?php print $cat->cat_name; ?></option>
-										<?php endforeach; ?>
-									</select>
-								</div>
+								<?php _e('Include categories', 'Arjuna'); ?><br />
+								<?php
+								$parameters = 'depth='.$options['headerMenu1_dropdown'];
+								$parameters .= '&hide_empty=0';
+								$parameters .= '&exclude='.$options['headerMenu1_exclude_categories'];
+								$categories = get_categories($parameters); 
+								?>
+								<select multiple="multiple" size="7" name="headerMenu1_include_categories[]" id="hm1ic" style="height:auto;width:400px; padding-right:20px;">
+									<?php foreach($categories as $cat): ?>
+									<option value="<?php print $cat->cat_ID; ?>"><?php print $cat->cat_name; ?></option>
+									<?php endforeach; ?>
+								</select>
 								<div class="tArrows">
 									<a href="#" class="tArrowUp" id="hm1ic_up"></a><a href="#" class="tArrowDown" id="hm1ic_down"></a>
 								</div>
-								<div>
-									<?php _e('Exclude categories', 'Arjuna'); ?><br />
+								<?php _e('Exclude categories', 'Arjuna'); ?><br />
+								<?php
+								$parameters = 'depth='.$options['headerMenu1_dropdown'];
+								$parameters .= '&hide_empty=0';
+								$parameters .= '&include='.$options['headerMenu1_exclude_categories'];
+								$categories = get_categories($parameters); 
+								?>
+								<select multiple="multiple" size="7" name="headerMenu1_exclude_categories[]" id="hm1ec" style="height:auto;width:400px; padding-right:20px;">
 									<?php
-									$parameters = 'depth='.$options['headerMenu1_dropdown'];
-									$parameters .= '&hide_empty=0';
-									$parameters .= '&include='.$options['headerMenu1_exclude_categories'];
-									$categories = get_categories($parameters); 
-									?>
-									<select multiple="multiple" size="7" name="headerMenu1_exclude_categories[]" id="hm1ec" style="height:auto;width:100%; padding-right:20px;">
-										<?php
-										if(!empty($options['headerMenu1_exclude_categories'])):
-											foreach($categories as $cat):
-											?>
-											<option value="<?php print $cat->cat_ID; ?>"><?php print $cat->cat_name; ?></option>
-											<?php
-											endforeach;
-										endif;
+									if(!empty($options['headerMenu1_exclude_categories'])):
+										foreach($categories as $cat):
 										?>
-									</select>
-								</div>
+										<option value="<?php print $cat->cat_ID; ?>"><?php print $cat->cat_name; ?></option>
+										<?php
+										endforeach;
+									endif;
+									?>
+								</select>
 								<span class="description"><?php _e('Note: While the above fields show empty categories, the theme will only display categories that have at least one published post in them.', 'Arjuna'); ?></span>
 							</div>
 							<div id="headerMenu1_include_pages"<?php if($options['headerMenu1_display']!='pages'): ?> style="display:none;"<?php endif; ?>>
-								<div>
-									<?php _e('Include pages', 'Arjuna'); ?><br />
-									<?php
-									$parameters = 'depth='.$options['headerMenu1_dropdown'];
-									$parameters .= '&exclude='.$options['headerMenu1_exclude_pages'];
-									$pages = get_pages($parameters); 
-									?>
-									<select multiple="multiple" size="7" name="headerMenu1_include_pages[]" id="hm1ip" style="height:auto;width:100%; padding-right:20px;">
-										<?php foreach($pages as $page): ?>
-										<option value="<?php print $page->ID; ?>"><?php print $page->post_title; ?></option>
-										<?php endforeach; ?>
-									</select>
-								</div>
+								<?php _e('Include pages', 'Arjuna'); ?><br />
+								<?php
+								$parameters = 'depth='.$options['headerMenu1_dropdown'];
+								$parameters .= '&exclude='.$options['headerMenu1_exclude_pages'];
+								$pages = get_pages($parameters); 
+								?>
+								<select multiple="multiple" size="7" name="headerMenu1_include_pages[]" id="hm1ip" style="height:auto;width:400px; padding-right:20px;">
+									<?php foreach($pages as $page): ?>
+									<option value="<?php print $page->ID; ?>"><?php print $page->post_title; ?></option>
+									<?php endforeach; ?>
+								</select>
 								<div class="tArrows">
 									<a href="#" class="tArrowUp" id="hm1ip_up"></a><a href="#" class="tArrowDown" id="hm1ip_down"></a>
 								</div>
-								<div>
-									<?php _e('Exclude pages', 'Arjuna'); ?><br />
+								<?php _e('Exclude pages', 'Arjuna'); ?><br />
+								<?php
+								$parameters = 'depth='.$options['headerMenu1_dropdown'];
+								$parameters .= '&include='.$options['headerMenu1_exclude_pages'];
+								$pages = get_pages($parameters); 
+								?>
+								<select multiple="multiple" size="7" name="headerMenu1_exclude_pages[]" id="hm1ep" style="height:auto;width:400px; padding-right:20px;">
 									<?php
-									$parameters = 'depth='.$options['headerMenu1_dropdown'];
-									$parameters .= '&include='.$options['headerMenu1_exclude_pages'];
-									$pages = get_pages($parameters); 
-									?>
-									<select multiple="multiple" size="7" name="headerMenu1_exclude_pages[]" id="hm1ep" style="height:auto;width:100%; padding-right:20px;">
-										<?php
-										if(!empty($options['headerMenu1_exclude_pages'])):
-											foreach($pages as $page):
-											?>
-											<option value="<?php print $page->ID; ?>"><?php print $page->post_title; ?></option>
-											<?php
-											endforeach;
-										endif;
+									if(!empty($options['headerMenu1_exclude_pages'])):
+										foreach($pages as $page):
 										?>
-									</select>
-								</div>
+										<option value="<?php print $page->ID; ?>"><?php print $page->post_title; ?></option>
+										<?php
+										endforeach;
+									endif;
+									?>
+								</select>
 							</div>
 							</td>
 						</tr>
@@ -669,81 +661,73 @@ function arjuna_add_theme_page () {
 							<th scope="row"><?php _e('Menu Items', 'Arjuna'); ?></th>
 							<td>
 							<div id="headerMenu2_include_categories"<?php if($options['headerMenu2_display']=='pages'): ?> style="display:none;"<?php endif; ?>>
-								<div>
-									<?php _e('Include categories', 'Arjuna'); ?><br />
-									<?php
-									$parameters = 'depth='.$options['headerMenu2_dropdown'];
-									$parameters .= '&hide_empty=0';
-									$parameters .= '&exclude='.$options['headerMenu2_exclude_categories'];
-									$categories = get_categories($parameters); 
-									?>
-									<select multiple="multiple" size="3" name="headerMenu2_include_categories[]" id="hm2ic" style="height:auto;width:100%; padding-right:20px;">
-										<?php foreach($categories as $cat): ?>
-										<option value="<?php print $cat->cat_ID; ?>"><?php print $cat->cat_name; ?></option>
-										<?php endforeach; ?>
-									</select>
-								</div>
+								<?php _e('Include categories', 'Arjuna'); ?><br />
+								<?php
+								$parameters = 'depth='.$options['headerMenu2_dropdown'];
+								$parameters .= '&hide_empty=0';
+								$parameters .= '&exclude='.$options['headerMenu2_exclude_categories'];
+								$categories = get_categories($parameters); 
+								?>
+								<select multiple="multiple" size="7" name="headerMenu2_include_categories[]" id="hm2ic" style="height:auto;width:400px; padding-right:20px;">
+									<?php foreach($categories as $cat): ?>
+									<option value="<?php print $cat->cat_ID; ?>"><?php print $cat->cat_name; ?></option>
+									<?php endforeach; ?>
+								</select>
 								<div class="tArrows">
 									<a href="#" class="tArrowUp" id="hm2ic_up"></a><a href="#" class="tArrowDown" id="hm2ic_down"></a>
 								</div>
-								<div>
-									<?php _e('Exclude categories', 'Arjuna'); ?><br />
+								<?php _e('Exclude categories', 'Arjuna'); ?><br />
+								<?php
+								$parameters = 'depth='.$options['headerMenu2_dropdown'];
+								$parameters .= '&hide_empty=0';
+								$parameters .= '&include='.$options['headerMenu2_exclude_categories'];
+								$categories = get_categories($parameters); 
+								?>
+								<select multiple="multiple" size="7" name="headerMenu2_exclude_categories[]" id="hm2ec" style="height:auto;width:400px; padding-right:20px;">
 									<?php
-									$parameters = 'depth='.$options['headerMenu2_dropdown'];
-									$parameters .= '&hide_empty=0';
-									$parameters .= '&include='.$options['headerMenu2_exclude_categories'];
-									$categories = get_categories($parameters); 
-									?>
-									<select multiple="multiple" size="3" name="headerMenu2_exclude_categories[]" id="hm2ec" style="height:auto;width:100%; padding-right:20px;">
-										<?php
-										if(!empty($options['headerMenu2_exclude_categories'])):
-											foreach($categories as $cat):
-											?>
-											<option value="<?php print $cat->cat_ID; ?>"><?php print $cat->cat_name; ?></option>
-											<?php
-											endforeach;
-										endif;
+									if(!empty($options['headerMenu2_exclude_categories'])):
+										foreach($categories as $cat):
 										?>
-									</select>
-								</div>
+										<option value="<?php print $cat->cat_ID; ?>"><?php print $cat->cat_name; ?></option>
+										<?php
+										endforeach;
+									endif;
+									?>
+								</select>
 								<span class="description"><?php _e('Note: While the above fields show empty categories, the theme will only display categories that have at least one published post in them.</span>', 'Arjuna'); ?></span>
 							</div>
 							<div id="headerMenu2_include_pages"<?php if($options['headerMenu2_display']!='pages'): ?> style="display:none;"<?php endif; ?>>
-								<div>
-									<?php _e('Include pages', 'Arjuna'); ?><br />
-									<?php
-									$parameters = 'depth='.$options['headerMenu2_dropdown'];
-									$parameters .= '&exclude='.$options['headerMenu2_exclude_pages'];
-									$pages = get_pages($parameters); 
-									?>
-									<select multiple="multiple" size="3" name="headerMenu2_include_pages[]" id="hm2ip" style="height:auto;width:100%; padding-right:20px;">
-										<?php foreach($pages as $page): ?>
-										<option value="<?php print $page->ID; ?>"><?php print $page->post_title; ?></option>
-										<?php endforeach; ?>
-									</select>
-								</div>
+								<?php _e('Include pages', 'Arjuna'); ?><br />
+								<?php
+								$parameters = 'depth='.$options['headerMenu2_dropdown'];
+								$parameters .= '&exclude='.$options['headerMenu2_exclude_pages'];
+								$pages = get_pages($parameters); 
+								?>
+								<select multiple="multiple" size="7" name="headerMenu2_include_pages[]" id="hm2ip" style="height:auto;width:400px; padding-right:20px;">
+									<?php foreach($pages as $page): ?>
+									<option value="<?php print $page->ID; ?>"><?php print $page->post_title; ?></option>
+									<?php endforeach; ?>
+								</select>
 								<div class="tArrows">
 									<a href="#" class="tArrowUp" id="hm2ip_up"></a><a href="#" class="tArrowDown" id="hm2ip_down"></a>
 								</div>
-								<div>
-									<?php _e('Exclude pages', 'Arjuna'); ?><br />
+								<?php _e('Exclude pages', 'Arjuna'); ?><br />
+								<?php
+								$parameters = 'depth='.$options['headerMenu2_dropdown'];
+								$parameters .= '&include='.$options['headerMenu2_exclude_pages'];
+								$pages = get_pages($parameters); 
+								?>
+								<select multiple="multiple" size="7" name="headerMenu2_exclude_pages[]" id="hm2ep" style="height:auto;width:400px; padding-right:20px;">
 									<?php
-									$parameters = 'depth='.$options['headerMenu2_dropdown'];
-									$parameters .= '&include='.$options['headerMenu2_exclude_pages'];
-									$pages = get_pages($parameters); 
-									?>
-									<select multiple="multiple" size="3" name="headerMenu2_exclude_pages[]" id="hm2ep" style="height:auto;width:100%; padding-right:20px;">
-										<?php
-										if(!empty($options['headerMenu2_exclude_pages'])):
-											foreach($pages as $page):
-											?>
-											<option value="<?php print $page->ID; ?>"><?php print $page->post_title; ?></option>
-											<?php
-											endforeach;
-										endif;
+									if(!empty($options['headerMenu2_exclude_pages'])):
+										foreach($pages as $page):
 										?>
-									</select>
-								</div>
+										<option value="<?php print $page->ID; ?>"><?php print $page->post_title; ?></option>
+										<?php
+										endforeach;
+									endif;
+									?>
+								</select>
 							</div>
 							</td>
 						</tr>
@@ -1450,4 +1434,16 @@ function arjuna_isIE6() {
 		&& strpos($userAgent, 'msie 8') === false
 	)	return true;
 	return false;
+}
+
+function arjuna_parseExcludes($IDs, $type) {
+	if(!function_exists('icl_object_id'))
+		return $IDs;
+	
+	$array = explode(',', $IDs);
+	$newArray = array();
+	foreach($array as $ID)
+		$newArray[] = icl_object_id($ID,$type);
+	
+	return implode(',', $newArray);
 }

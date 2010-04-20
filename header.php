@@ -42,9 +42,9 @@ if (!$arjunaOptions['enableIE6optimization'] || !arjuna_isIE6()) { ?>
 		<div class="headerMenu1<?php if($arjunaOptions['headerMenu1_alignment']=='left'): ?> headerMenu1L<?php endif; ?>">
 			<ul id="headerMenu1"><?php
 				if ($arjunaOptions['headerMenu1_display']=='pages') {
-					wp_list_pages('sort_column='.$arjunaOptions['headerMenu1_sortBy'].'&sort_order='.$arjunaOptions['headerMenu1_sortOrder'].'&title_li=&exclude='.$arjunaOptions['headerMenu1_exclude_pages'].'&depth='.$arjunaOptions['headerMenu1_dropdown']);
+					wp_list_pages('sort_column='.$arjunaOptions['headerMenu1_sortBy'].'&sort_order='.$arjunaOptions['headerMenu1_sortOrder'].'&title_li=&exclude='.arjuna_parseExcludes($arjunaOptions['headerMenu1_exclude_pages'], 'page').'&depth='.$arjunaOptions['headerMenu1_dropdown']);
 				} elseif ($arjunaOptions['headerMenu1_display']=='categories') {
-					wp_list_categories('orderby='.$arjunaOptions['headerMenu1_sortBy'].'&order='.$arjunaOptions['headerMenu1_sortOrder'].'&title_li=&exclude='.$arjunaOptions['headerMenu1_exclude_categories'].'&depth='.$arjunaOptions['headerMenu1_dropdown']);
+					wp_list_categories('orderby='.$arjunaOptions['headerMenu1_sortBy'].'&order='.$arjunaOptions['headerMenu1_sortOrder'].'&title_li=&exclude='.arjuna_parseExcludes($arjunaOptions['headerMenu1_exclude_categories'], 'category').'&depth='.$arjunaOptions['headerMenu1_dropdown']);
 				}
 			?></ul>
 			<span class="clear"></span>
@@ -69,9 +69,9 @@ if (!$arjunaOptions['enableIE6optimization'] || !arjuna_isIE6()) { ?>
 			<ul id="headerMenu2">
 				<?php if($arjunaOptions['headerMenu2_displayHomeButton']): ?><li><a href="<?php (function_exists('icl_get_home_url'))?(print icl_get_home_url()):(bloginfo('url')) ?>" class="homeIcon"><?php _e('Home','Arjuna'); ?></a></li><?php endif; ?><?php
 					if ($arjunaOptions['headerMenu2_display']=='pages') {
-						wp_list_pages('sort_column='.$arjunaOptions['headerMenu2_sortBy'].'&sort_order='.$arjunaOptions['headerMenu2_sortOrder'].'&title_li=&exclude='.$arjunaOptions['headerMenu2_exclude_pages'].'&depth='.$arjunaOptions['headerMenu2_dropdown']);
+						wp_list_pages('sort_column='.$arjunaOptions['headerMenu2_sortBy'].'&sort_order='.$arjunaOptions['headerMenu2_sortOrder'].'&title_li=&exclude='.arjuna_parseExcludes($arjunaOptions['headerMenu2_exclude_pages'], 'page').'&depth='.$arjunaOptions['headerMenu2_dropdown']);
 					} elseif ($arjunaOptions['headerMenu2_display']=='categories') {
-						wp_list_categories('orderby='.$arjunaOptions['headerMenu2_sortBy'].'&order='.$arjunaOptions['headerMenu2_sortOrder'].'&title_li=&exclude='.$arjunaOptions['headerMenu2_exclude_categories'].'&depth='.$arjunaOptions['headerMenu2_dropdown']);
+						wp_list_categories('orderby='.$arjunaOptions['headerMenu2_sortBy'].'&order='.$arjunaOptions['headerMenu2_sortOrder'].'&title_li=&exclude='.arjuna_parseExcludes($arjunaOptions['headerMenu2_exclude_categories'], 'category').'&depth='.$arjunaOptions['headerMenu2_dropdown']);
 					}
 				?>
 			</ul>

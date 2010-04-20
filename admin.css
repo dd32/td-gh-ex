@@ -199,6 +199,8 @@ a.tSRS {
 }
 .tArrows {
 	text-align:center;
+	margin:10px 0 -5px;
+	width:400px;
 }
 .tArrows a {
 	display:inline-block;
