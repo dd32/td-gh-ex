@@ -1,4 +1,4 @@
-This program is free software: you can redistribute it and/or modify
+ÔªøThis program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
@@ -31,13 +31,14 @@ Currently available translations:
 - Chinese (thanks to Liuyue, liuyue.asia)
 - French (thanks to Laurent Measson and Sebastien Violet)
 - Brazilian (thanks to Pedro Spoladore)
-- Spanish (thanks to JosÈ MarÌn)
+- Spanish (thanks to Jos√© Mar√≠n)
 - German (thanks to Frank Weichbrodt and Markus Liebl)
 - Czech (thanks to Jirka Knapek and Ivan)
-- Turkish (thanks to Serhat YolaÁan)
-- Hungarian (thanks to M·rton Bakos)
+- Turkish (thanks to Serhat Yola√ßan)
+- Hungarian (thanks to M√°rton Bakos and Gy≈ëz≈ë Farkas)
 - Slovak
 - Romanian (thanks to Grigore Dolghin, grigore.dolghin.ro)
+- Dutch (thanks to Hildo de Vries)
 
 
 More Information and Support
@@ -65,6 +66,11 @@ Nonetheless, we still hope that IE6 will rest in peace soon.
 Changelog:
 ---------------------------------------------------
 
+1.3.8
+- Localization: Dutch (1.3.7) has been added.
+- Localization: Italian has been updated to 1.3.7.
+- Localization: Hungarian has been updated to 1.3.7.
+- Localizatoin: German has been improved.
 1.3.7
 - Change: The include and exclude boxes are now larger in height, making it less awkward to work with a lot of categories/pages.
 - Fix: Added better support for WPML when excluding pages or categories in the menus. Arjuna now excludes translated versions of selected pages/categories as well.

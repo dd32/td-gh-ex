@@ -960,7 +960,7 @@ msgstr "Kommentarseite"
 
 #: Arjuna-X/header.php:10
 msgid "Search Results:"
-msgstr "Suchergebnis"
+msgstr "Suchergebnisse:"
 
 #: Arjuna-X/header.php:37
 msgid "Skip to posts"
@@ -1012,7 +1012,7 @@ msgstr "Hier gibt es nichts."
 
 #: Arjuna-X/search.php:8
 msgid "Search Results on <em>%s</em>"
-msgstr "Suchergebnisse für<em>%s</em>"
+msgstr "Suchergebnisse für <em>%s</em>"
 
 #: Arjuna-X/search.php:65
 msgid "Your search returned no results."
