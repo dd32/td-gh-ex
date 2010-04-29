@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: altop-Theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-14 22:26+0100\n"
+"POT-Creation-Date: 2010-04-29 18:09+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Thomas Gutzmer <support@t3-artwork.info>\n"
 "Language-Team: Thomas Gutzmer <support@t3-artwork.info>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: German\n"
+"X-Poedit-Language: English\n"
 "X-Poedit-Country: GERMANY\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-KeywordsList: __;_e\n"
@@ -242,50 +242,58 @@ msgid "to"
 msgstr ""
 
 #: ../comments.php:49
-msgid "Leave your own comment"
+msgid "No Comments (yet)"
 msgstr ""
 
-#: ../comments.php:52
+#: ../comments.php:53
+msgid "Sorry, Comments are closed."
+msgstr ""
+
+#: ../comments.php:62
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr ""
 
-#: ../comments.php:60
+#: ../comments.php:69
 #, php-format
 msgid "Logged in as %s."
 msgstr ""
 
-#: ../comments.php:60
+#: ../comments.php:69
 msgid "Log out"
 msgstr ""
 
-#: ../comments.php:60
+#: ../comments.php:69
 msgid "Log out &raquo;"
 msgstr ""
 
-#: ../comments.php:65
+#: ../comments.php:74
 msgid "Name"
 msgstr ""
 
-#: ../comments.php:65
+#: ../comments.php:74
 msgid "(required)"
 msgstr ""
 
-#: ../comments.php:70
+#: ../comments.php:79
 msgid "Mail (will not be published"
 msgstr ""
 
-#: ../comments.php:70
+#: ../comments.php:79
 msgid " but required)"
 msgstr ""
 
-#: ../comments.php:75
+#: ../comments.php:84
 msgid "Website"
 msgstr ""
 
-#: ../comments.php:80
+#: ../comments.php:89
 #, php-format
 msgid "You can use these tags: %s"
+msgstr ""
+
+#: ../comments.php:98
+msgid "Submit"
 msgstr ""
 
 #: ../footer.php:18

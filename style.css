@@ -1,17 +1,20 @@
 /*
 Theme Name: A little touch of purple
 Theme URI: http://blog.t3-artwork.info/2010/04/altop-neues-wordpress-theme/
-Description: A classic and elegant theme for creative blogs, individualists or families. It is widget and translation ready, does´t required any plugin, supported threaded-comments and has some usefull theme options. Currently available in English (default) German and French.
-Version: 1.2
+Description: A classic and elegant theme for creative blogs, individualists or families. It is widget and translation ready, doesn't required any plugin, supported threaded-comments and has some usefull theme options. Currently available in English (default) German and French.
+Version: 1.3
 Author: Thomas Gutzmer
 Author URI: http://blog.t3-artwork.info
 Tags: purple, pink, two-columns, fixed-width, theme-options, sticky-post, translation-ready, threaded-comments
 Text Domain: altop
+
+** c.voigt@webinet.de
+** 21.04.2010 changes made to increase compatibility with IE's <= 7
+*
+* centered website body for all browsers
+* i hacked about a bit with the menu, had to change the 'topnav-border.png' a bit too. sub-menu now works in ie8 and partially in ie7. no flyouts for ie < 7 though
+**
 */
-	
-	
-	
-	
 
 body {
 	color : #ececec;
@@ -21,13 +24,13 @@ body {
 	background-image : url(images/body.jpg);
 	background-repeat : no-repeat;
 	background-position : center top;
-	margin : 0;
-	padding : 0;
+	margin : 0;	padding : 0;
+	/* E:CV -- makes IE < 7 center the page correctly, has to be counteracted for centered areas (in this case #header, body_wrap, #footer) */
+	text-align: center;
 	}
 
 h1, h2, h3, h4, h5, h6 {
-	margin: 0;
-	padding: 0;
+	margin: 0; padding: 0;
 	}
 
 h1 { 
@@ -100,6 +103,8 @@ a:hover, a:active {
 	margin : 0 auto;
 	padding : 0;
 	border : 2px solid #6b3159;
+	/* E:CV -- counteracting body:text-align: center*/
+	text-align: left;
 	}
 
 #header {
@@ -108,6 +113,8 @@ a:hover, a:active {
 	height : 280px;
 	margin : 0 auto;
 	padding : 0;
+	/* E:CV -- counteracting body:text-align: center*/
+	text-align: left;
 	}
 	
 #header h2, #header h2 a:link, #header h2 a:visited {
@@ -145,10 +152,17 @@ a:hover, a:active {
 
 
 #navbar ul {
+  position: relative; display: block;
 	padding-left: 10px;
 	margin: 0 auto;
 	list-style: none;
 	}
+  
+#navbar a {
+  display: inline-block;
+  float: left;
+  height: 40px; line-height: 40px;
+}
 
 #navbar a:link, #navbar a:visited  {
 	display: block;
@@ -157,7 +171,7 @@ a:hover, a:active {
 	background-repeat: repeat-y;
 	color: #fff;
 	text-decoration: none;
-	padding: 10px 8px;
+	padding: 0 8px;
 	}
 
 #navbar a:hover, #navbar a:active  {
@@ -165,17 +179,30 @@ a:hover, a:active {
 	}
 
 #navbar li {
+  position: relative;
 	float: left;
 	width: auto; 
 	}
 
 #navbar li ul { 
 	position: absolute;
-	background: #bababa;
+/*	background-color: #bababa; */
 	left: -999em;
 	width: auto;
 	padding: 0;
 	}
+
+#navbar li ul li { 
+  position: relative;
+	background-image: url(images/sub_menue-bg.jpg);
+	background-repeat: repeat-x;
+  }
+
+#navbar li ul li a { 
+	height: auto;
+  line-height: 1em; margin-top: 1px;
+  background: transparent;
+  }
 
 #navbar  li ul a:link, #navbar  li ul a:visited  {
 	display: block;
@@ -193,15 +220,20 @@ a:hover, a:active {
 
 #navbar li ul ul { /* third-and-above-level lists */
 	position: absolute;
-	margin: -0.5em;
+	top: -20px; left: 40px;
 	}
 
 #navbar li:hover ul ul, #navbar li:hover ul ul ul, #navbar li.sfhover ul ul, #navbar li.sfhover ul ul ul {
 	left: -999em;
 	}
 
-#navbar li:hover ul, #navbar li li:hover ul, #navbar li li li:hover ul, #navbar li.sfhover ul, #navbar li li.sfhover ul, #navbar li li li.sfhover ul { /* lists nested under hovered list items */
-	left: auto;
+#navbar li:hover ul, #navbar li.sfhover ul { /* lists nested under hovered list items */
+	left: 0; top: 40px;
+	}
+
+#navbar li li:hover ul, #navbar li li li:hover ul, #navbar li li.sfhover ul, #navbar li li li.sfhover ul { /* lists nested under hovered list items */
+	left: 40px; top: 20px;
+  z-index: 100;
 	}
 
 
@@ -278,7 +310,7 @@ a:hover, a:active {
 	}
 	
 #sidebar {
-	color: #babaab;
+	color: #8e8e8e;
 	font-size: 0.8em;
 	margin: 10px 0;
 	padding: 5px;
@@ -534,6 +566,8 @@ a:hover, a:active {
 	font-size: 0.8em;
 	margin: 10px auto;
 	padding: 0 10px;
+	/* E:CV -- counteracting body:text-align: center*/
+	text-align: left;
 	}
 
 #footerwrap {
@@ -575,7 +609,7 @@ a:hover, a:active {
 .bot-color { /* Or any other color...*/
 	background-color: #5a5a5a;
 	}
-	
+
 #bottombar h2 {
 	font-family: Georgia, Verdana, Arial;
 	margin: 5px 0;
@@ -726,4 +760,26 @@ code {
 	margin: 10px 5px 5px 0;
 	padding: 3px;
 	border: 0px none;
+	}
+  
+	/* http://www.webtoolkit.info/css-clearfix.html (modified) */
+	.clearfix:after {
+		content: ".";
+		display: block;
+		clear: both;
+		visibility: hidden;
+		line-height: 0;
+		height: 0;
+	}
+	 
+	.clearfix {
+		display: inline-block;
+	}
+	 
+	html[xmlns] .clearfix {
+		display: block;
+	}
+	 
+	* html .clearfix {
+		height: 1%;
 	}

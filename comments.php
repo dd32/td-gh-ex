@@ -41,21 +41,30 @@ return;	}
 	<div class="alignleft"><?php previous_comments_link( '&laquo; Older pings' ); ?></div>
 	<div class="alignright"><?php next_comments_link( 'Newer pings &raquo;', 0 ); ?></div>
 	</div>
-	<?php endif; //Close for pings ?>
-
+	<?php endif; //End for pings ?>
+		
+		<?php else : // this is displayed if there are no comments so far ?>
+		<?php if ( comments_open() ) : ?>
+		<!-- If comments are open, but there are no comments. -->
+		<p class="nocomments"><?php echo _e('No Comments (yet)', 'altop'); ?></p>
+		
+		<?php else : // comments are closed ?>
+		<!-- If comments are closed. -->
+		<p class="nocomments"><?php echo _e('Sorry, Comments are closed.', 'altop'); ?></p>
+		
+	<?php endif; ?>
 	<?php endif; //Close for if have_comments ?>
 
-	<?php if ( comments_open() ) : ?>
-	<h3><?php _e('Leave your own comment', 'altop'); ?></h3>
-		
-	<?php if ( get_option('comment_registration') && !is_user_logged_in() ) : ?>
-	<p> <?php printf(__('You must be <a href="%s">logged in</a> to post a comment.', 'altop'), wp_login_url( get_permalink() ) );?> </p>
-		
-
-<?php else : ?>
+	<?php if (comments_open() ) : ?>
 
 <div id="respond">
-<form action="<?php echo esc_attr(get_option('siteurl')); ?>/wp-comments-post.php" method="post" id="commentform">
+	<?php if ( get_option('comment_registration') && !is_user_logged_in() ) : ?>
+	<p> <?php printf(__('You must be <a href="%s">logged in</a> to post a comment.', 'altop'), wp_login_url( get_permalink() ) );?> </p>
+	<?php else: ?>
+	
+	<h3><?php comment_form_title(); ?></h3>
+	
+	<form action="<?php echo esc_attr(get_option('siteurl')); ?>/wp-comments-post.php" method="post" id="commentform">
 	<?php if ( is_user_logged_in() ) : ?>
 	<p> <?php printf(__('Logged in as %s.', 'altop'), '<a href="'.get_option('siteurl').'/wp-admin/profile.php">'.$user_identity.'</a>'); ?> <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php _e('Log out', 'altop') ?>"><?php _e('Log out &raquo;', 'altop'); ?></a> </p>
 
@@ -74,7 +83,7 @@ return;	}
 			<input class="commentinput" type="text" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" tabindex="3" />
 			<label for="url"><small><?php _e('Website', 'altop'); ?></small></label>
 			</p>
-<?php endif; ?>
+			<?php endif; ?>
 
 	<?php if ($altop_xhtml_tags == "true") { ?>
 	<p class="comment-tags">	<small><strong>XHTML:</strong> <?php printf(__('You can use these tags: %s', 'altop'), allowed_tags()); ?> </small> </p>
@@ -86,15 +95,13 @@ return;	}
 			</div>
 
 			<p>
-				<input class="commentsubmit" name="submit" type="submit" id="submit" tabindex="5" value="<?php esc_attr_e('Submit', 'altop'); ?>" />
+				<input class="commentsubmit" name="submit" type="submit" id="submit" tabindex="5" value="<?php esc_attr_e(__('Submit', 'altop')); ?>" />
 				<?php comment_id_fields(); ?>
 			</p>
 			
-	
+			<?php do_action('comment_form', $post->ID); ?>
+			</form>
+			<?php endif; ?>
+			</div>
 
-<?php do_action('comment_form', $post->ID); ?>
-</form>
-</div>
-
-<?php endif; ?>
 <?php endif; ?>

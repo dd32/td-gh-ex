@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: altop-Theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-14 22:09+0100\n"
+"POT-Creation-Date: 2010-04-29 18:05+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Thomas Gutzmer <support@t3-artwork.info>\n"
 "Language-Team: Thomas Gutzmer\n"
@@ -242,51 +242,59 @@ msgid "to"
 msgstr "zu"
 
 #: ../comments.php:49
-msgid "Leave your own comment"
-msgstr "Hinterlasse Deinen Kommentar"
+msgid "No Comments (yet)"
+msgstr "(Noch) Keine Kommentare"
 
-#: ../comments.php:52
+#: ../comments.php:53
+msgid "Sorry, Comments are closed."
+msgstr "Sorry, aber die Kommentarfunktion ist hier nicht verf&uuml;gbar."
+
+#: ../comments.php:62
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr "Du musst <a href=\"%s\">angemeldet</a> sein, um zu kommentieren."
 
-#: ../comments.php:60
+#: ../comments.php:69
 #, php-format
 msgid "Logged in as %s."
 msgstr "Angemeldet als %s."
 
-#: ../comments.php:60
+#: ../comments.php:69
 msgid "Log out"
 msgstr "Abmelden"
 
-#: ../comments.php:60
+#: ../comments.php:69
 msgid "Log out &raquo;"
 msgstr "Abmelden &raquo;"
 
-#: ../comments.php:65
+#: ../comments.php:74
 msgid "Name"
 msgstr "Name"
 
-#: ../comments.php:65
+#: ../comments.php:74
 msgid "(required)"
 msgstr "(erforderlich)"
 
-#: ../comments.php:70
+#: ../comments.php:79
 msgid "Mail (will not be published"
 msgstr "E-Mail (wird nicht ver&ouml;ffentlicht"
 
-#: ../comments.php:70
+#: ../comments.php:79
 msgid " but required)"
 msgstr " aber erforderlich)"
 
-#: ../comments.php:75
+#: ../comments.php:84
 msgid "Website"
 msgstr "Homepage"
 
-#: ../comments.php:80
+#: ../comments.php:89
 #, php-format
 msgid "You can use these tags: %s"
 msgstr "Du kannst diese Tags benutzen: %s"
+
+#: ../comments.php:98
+msgid "Submit"
+msgstr "Senden"
 
 #: ../footer.php:18
 #, php-format
@@ -581,6 +589,8 @@ msgstr "Hinterlasse einen <a href='%s'>Trackback</a> von Deiner Seite."
 msgid "Sorry, no posts found..."
 msgstr "Sorry, Nichts gefunden..."
 
+#~ msgid "Leave your own comment"
+#~ msgstr "Hinterlasse Deinen Kommentar"
 #~ msgid ""
 #~ "This post is password protected. Enter the password to view comments."
 #~ msgstr ""
@@ -657,8 +667,6 @@ msgstr "Sorry, Nichts gefunden..."
 #~ msgstr "Trackback"
 #~ msgid "Pingback"
 #~ msgstr "Pingback"
-#~ msgid "No comments yet."
-#~ msgstr "Noch keine Kommentare."
 #~ msgid "E-mail"
 #~ msgstr "E-Mail"
 

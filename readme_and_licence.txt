@@ -20,6 +20,16 @@ Support, Bugfixes and Updates under http://blog.t3-artwork.info
 --------------------------------------------------------------
 
 Changelog:
+1.3
+	Added
+	- Some changes in the menu and in the style.css (Thanks to Christian Voigt)
+
+	Fixed
+	- Issues with older IE version (prior 7) (Thanks to Christian Voigt)
+
+	Changed
+	- Some code lines in the comments.php
+
 1.2
 	Added
 	- French Translation (Thanks to Wolforg - http://www.wptrads.fr/a-little-touch-of-purple/ )
