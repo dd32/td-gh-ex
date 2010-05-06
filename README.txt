@@ -39,6 +39,7 @@ Currently available translations:
 - Slovak
 - Romanian (thanks to Grigore Dolghin, grigore.dolghin.ro)
 - Dutch (thanks to Hildo de Vries)
+- Swedish (thanks to Jonas Herjeskog, thenook.se)
 
 
 More Information and Support
@@ -66,6 +67,9 @@ Nonetheless, we still hope that IE6 will rest in peace soon.
 Changelog:
 ---------------------------------------------------
 
+1.3.9
+- Fix: Pagination was not included on category pages and other archive pages.
+- Localization: Swedish (1.3.5) has been added.
 1.3.8
 - Localization: Dutch (1.3.7) has been added.
 - Localization: Italian has been updated to 1.3.7.

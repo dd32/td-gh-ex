@@ -68,16 +68,23 @@
 	<?php endwhile; ?>
 
 	<?php
-	if(function_exists('wp_paginate')) { ?>
-		<div class="pagination"><div><?php wp_paginate(); ?></div></div>
-	<?php	} elseif(function_exists('wp_pagenavi')) { ?>
-		<div class="pagination"><?php wp_pagenavi(); ?></div>
-	<?php } elseif(has_pages()) {	?>
-		<div class="pagination"><div>
-			<?php arjuna_get_previous_page_link(__('Newer Entries', 'Arjuna')); ?>
-			<?php arjuna_get_next_page_link(__('Older Entries', 'Arjuna')); ?>
-		</div></div>
-	<?php } ?>
+	if($arjunaOptions['pagination']) {
+		arjuna_get_pagination(__('Previous Page', 'Arjuna'), __('Next Page', 'Arjuna'));
+	} elseif(function_exists('wp_paginate')) {
+		print '<div class="pagination">';
+		wp_paginate();
+		print '</div>';
+	} elseif(function_exists('wp_pagenavi')) {
+		print '<div class="pagination">';
+		wp_pagenavi();
+		print '</div>';
+	} elseif(has_pages()) {
+		print '<div class="pagination"><div>';
+		arjuna_get_previous_page_link(__('Newer Entries', 'Arjuna'));
+		arjuna_get_next_page_link(__('Older Entries', 'Arjuna'));
+		print '</div></div>';
+	}
+	?>
 
 	<?php else : ?>
   <p><?php _e('There is nothing here (yet).', 'Arjuna'); ?></p>
