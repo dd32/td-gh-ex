@@ -8,7 +8,7 @@ foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$val
 		<?php if ($altop_sidebar_align == "left") { ?> <div id="content" class="con_right">	<?php } ?>		
 			<?php if ($altop_sidebar_align == "none") { ?> <div id="content" class="con_wide"> <?php } ?>	
 				<?php if ($altop_sidebar_align == "") { ?> <div id="content" class="con_left">	<?php } ?>		
-				
+      <div id="content_inner">				
 				
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		
@@ -24,7 +24,8 @@ foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$val
 				
 				<?php if ($altop_sidebar_align == "none") { ?> <div class="entry_wide"> <?php } //Wide content and NO sidebar ?>
 					<?php if ($altop_sidebar_align != "none") { ?> <div class="entry"> <?php } // content AND sidebar ?>
-					
+					            <div class="entry_inner"> 
+
 					<?php if ($altop_sidebar_align == "none" && $altop_post_thumbnail == "true") { ?> <?php the_post_thumbnail('medium'); ?> <?php } //A bigger thumbnail if there is no sidebar ?>
 					<?php if ($altop_sidebar_align != "none" && $altop_post_thumbnail == "true") { ?> <?php the_post_thumbnail('thumbnail'); ?> <?php } //Smaller thumbnail if there is a sidebar ?>
 					
@@ -38,6 +39,7 @@ foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$val
 					<?php the_tags(__('Tags:', 'altop') . ' ', ', ', '<br />'); ?>
 					<?php printf(__('Filed under: %s', 'altop'), get_the_category_list(', ')); ?>
 				</p>
+        </div>
 			
 		</div>
 		
@@ -67,7 +69,7 @@ foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$val
 		<p><?php _e('Sorry, no posts found...', 'altop'); ?></p>
 
 <?php endif; ?>
-
+</div>
 	</div>
 					
 <?php get_sidebar(); ?>

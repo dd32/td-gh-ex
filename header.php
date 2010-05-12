@@ -31,11 +31,15 @@ foreach ($options as $value) {
 		
 		<div class="headtools">
 				<h3><?php _e('Follow me...', 'altop'); ?></h3>
+
+				<?php if ($altop_facebook != "") { ?>
+				    <a href="http://www.facebook.com/people/@/<?php echo $altop_facebook; ?>"><img src="<?php echo bloginfo('template_directory'); ?>/images/facebook.png" title="<?php echo _e('Follow me on Facebook', 'altop'); ?>" alt="Follow me on Facebook" border="0" width="50" height="50" /></a>
+				<?php } ?>
 				
 				<?php if ($altop_twitter != "") { ?>
 				    <a href="http://www.twitter.com/<?php echo $altop_twitter; ?>"><img src="<?php echo bloginfo('template_directory'); ?>/images/twitter.png" title="<?php echo _e('Follow me on Twitter', 'altop'); ?>" alt="Follow me on Twitter" border="0" width="50" height="50" /></a>
 				<?php } ?>
-				
+								
 				<?php if ($altop_feed_url != "") { ?>
 					<a href="<?php echo $altop_feed_url; ?>"><img src="<?php echo bloginfo('template_directory'); ?>/images/rss.png" title="Twitter.com" alt="twitter" border="0" width="50" height="50" /></a>
 				<?php } ?>
@@ -55,6 +59,31 @@ foreach ($options as $value) {
 <div id="bodywrap">
 
 <div id="navbar">
+<?php
+/**
+ * Start CSS Dropdown-Menü support. Sadly, there is no depth option available!
+ **/
+?>
+    <?php if (class_exists('CSSDropDownMenu')) : ?>
+      <?php
+        $myMenu = new CSSDropDownMenu(); 
+        $myMenu->home = ($altop_home_link != '') ? $altop_home_link : ''; //display the Home Link
+        
+        if ($altop_menue_pages == 'Pages' or $altop_menue_pages == '') {
+          $myMenu->exclude_pid = $altop_page_exclude;
+        } elseif ($altop_menue_pages == 'Categories') {
+          $myMenu->show_cats = '1';
+          $myMenu->show_pages = '0';
+          $myMenu->exclude_cid = $altop_page_exclude;
+        }
+        $myMenu->show(); 
+      ?>
+      <?php else : ?>
+<?php
+/**
+ * End CSS Dropdown-Menü support.
+ **/
+?>
 		<ul>
 			<?php if ($altop_home_link != "") { //display the Home Link ?>
 				<li class="home"><a href="<?php echo get_option('home'); ?>"> <?php echo $altop_home_link; ?></a></li>
@@ -68,4 +97,5 @@ foreach ($options as $value) {
 								wp_list_pages('depth=0&title_li=');			
 									} ?>
 		</ul>
+      <?php endif; ?>
 </div>

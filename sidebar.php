@@ -5,12 +5,13 @@ foreach ($options as $value) {
 
 	 <?php if ($altop_sidebar_align == "right") { ?> <div id="sidebar" class="sb_right"> <?php } ?>
 		<?php if ($altop_sidebar_align == "left") { ?> <div id="sidebar" class="sb_left"> <?php } ?>
-			<?php if ($altop_sidebar_align == "none") { ?> <div id="sidebar" class="sb_hidden">	<?php } ?>	
+			<?php if ($altop_sidebar_align == "none") { ?> <div id="sidebar" class="sb_wide">	<?php } ?>	
 				<?php if ($altop_sidebar_align == "") { ?> <div id="sidebar" class="sb_right"> <?php } ?>			
+      <div id="sidebar_inner">
 		
 		
 		<?php 	/* Widgetized sidebar, if you have the plugin installed. */
-					if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : ?>
+		if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : ?>
 
 		<?php get_search_form(); ?> 			
 					
@@ -40,6 +41,6 @@ foreach ($options as $value) {
 			
 	<?php endif; ?>
 
-			
+			</div>
 
 	</div>

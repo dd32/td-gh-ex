@@ -8,11 +8,13 @@ foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$val
 		<?php if ($altop_sidebar_align == "left") { ?> <div id="content" class="con_right">	<?php } ?>		
 			<?php if ($altop_sidebar_align == "none") { ?> <div id="content" class="con_wide"> <?php } ?>	
 				<?php if ($altop_sidebar_align == "") { ?> <div id="content" class="con_left">	<?php } ?>	
-
+      <div id="content_inner">
 	<div class="post_content">
 		<h2><?php echo _e('Error 404 - Not found', 'altop'); ?></h2>
 		<p><?php echo _e('Sorry, but here is no content. <br /> Take a look at my pages and categories.', 'altop'); ?></p>
 		
+          <div class="entry">
+            <div class="entry_inner"> 
 		
 		<div class="alignleft">
 		<h3><?php echo _e('Pages on this site', 'altop'); ?></h3>
@@ -27,11 +29,14 @@ foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$val
 		<?php wp_list_categories('show_count=1&title_li='); ?>
 		</ul>
 		</div>
+	</div>
+	</div>
 		
 	<br clear="all" />		
 	
 	</div>
 	</div>
+</div>
 
 <?php get_sidebar(); ?>
 

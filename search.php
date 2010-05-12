@@ -9,7 +9,7 @@ foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$val
 		<?php if ($altop_sidebar_align == "left") { ?> <div id="content" class="con_right">	<?php } ?>		
 			<?php if ($altop_sidebar_align == "none") { ?> <div id="content" class="con_wide"> <?php } ?>	
 				<?php if ($altop_sidebar_align == "") { ?> <div id="content" class="con_left">	<?php } ?>		
-
+      <div id="content_inner">
 
 		<?php if (have_posts()) : ?>
 		
@@ -21,7 +21,8 @@ foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$val
 			<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Link to %s', 'altop'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h2>
 				<small><?php the_time(__('jS', 'altop')); ?> <?php the_time(__('F Y', 'altop')); ?> | <?php comments_popup_link(__('0 Comments', 'altop'), __('1 Comment', 'altop'), __('% Comments', 'altop'), '', __('Closed', 'altop') ); ?></small>
 
-				<div class="archiv_entry"> 					
+				<div class="archiv_entry entry"> 
+            <div class="entry_inner"> 
 					<?php the_excerpt(); ?>
 					
 				<p class="postinfo"> 				
@@ -31,6 +32,7 @@ foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$val
 					<?php the_tags(__('tags:', 'altop') . ' ', ', ', '<br />'); ?>
 					<?php printf(__('filed under: %s', 'altop'), get_the_category_list(', ')); ?>
 				</p>
+        </div>
 				</div>
 			
 			<br clear="all" />
@@ -47,6 +49,7 @@ foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$val
 	<?php printf (__('<h2>Sorry, but there are no results for:<span class="keyword"> %s </span></h2> Try again with another keyword.', 'altop'), htmlentities(get_search_query()) ); ?>
 	<?php endif; ?>
 	
+</div>
 	</div>
 
 <?php get_sidebar(); ?>

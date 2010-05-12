@@ -20,6 +20,12 @@ Support, Bugfixes and Updates under http://blog.t3-artwork.info
 --------------------------------------------------------------
 
 Changelog:
+1.4	Added
+	- Facebook connection
+	- Polish Translation (Thanks to Wioletta Makuch - http://www.moje.designy.pl)
+	- Some new CSS-Classes to make this theme ready for all browser (Thanks to Christian Voigt - http://www.evolutioncv.de)
+	- Function to use the css-dropdown-menu plugin for nice fold-out effects in the main menu
+
 1.3
 	Added
 	- Some changes in the menu and in the style.css (Thanks to Christian Voigt)

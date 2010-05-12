@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: altop-Theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-29 18:05+0100\n"
+"POT-Creation-Date: 2010-05-12 09:00+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Thomas Gutzmer <support@t3-artwork.info>\n"
 "Language-Team: Thomas Gutzmer\n"
@@ -25,123 +25,123 @@ msgstr "Fehler 404 - nicht gefunden"
 msgid "Sorry, but here is no content. <br /> Take a look at my pages and categories."
 msgstr "Sorry, der gew&uuml;schte Inhalt kann nicht gefunden werden. <br /> Schau doch mal auf die Blog-Seiten und Kategorien."
 
-#: ../404.php:18
+#: ../404.php:20
 msgid "Pages on this site"
 msgstr "Seiten auf diesem Blog"
 
-#: ../404.php:25
-#: ../sidebar.php:27
+#: ../404.php:27
+#: ../sidebar.php:28
 msgid "Categories"
 msgstr "Kategorien"
 
-#: ../archive.php:17
+#: ../archive.php:16
 #, php-format
 msgid "Archive for the &#8216; %s &#8217; Category"
 msgstr "Archiv der Kategorie &#8216; %s &#8217;"
 
-#: ../archive.php:20
+#: ../archive.php:19
 #, php-format
 msgid "Posts Tagged &#8216; %s &#8217;"
 msgstr "Artikel mit dem Schlagwort &#8216; %s &#8217;"
 
-#: ../archive.php:23
+#: ../archive.php:22
 #, php-format
 msgid "Daily archive for &#8216; %s &#8217;"
 msgstr "Tages-Archiv f&uuml;r  &#8216; %s &#8217;"
 
-#: ../archive.php:23
+#: ../archive.php:22
 msgid "F jS, Y"
 msgstr "j. F  Y"
 
-#: ../archive.php:26
+#: ../archive.php:25
 #, php-format
 msgid "Monthly archive for &#8216; %s &#8217;"
 msgstr "Monats-Archiv f&uuml;r  &#8216; %s &#8217;"
 
-#: ../archive.php:26
+#: ../archive.php:25
 msgid "F, Y"
 msgstr "F, Y"
 
-#: ../archive.php:29
+#: ../archive.php:28
 #, php-format
 msgid "Yearly archive for &#8216; %s &#8217;"
 msgstr "Jahres-Archiv f&uuml;r &#8216; %s &#8217;"
 
-#: ../archive.php:29
+#: ../archive.php:28
 msgid "Y"
 msgstr "Y"
 
-#: ../archive.php:32
+#: ../archive.php:31
 msgid "Author Archive"
 msgstr "Autoren-Archiv"
 
-#: ../archive.php:40
+#: ../archive.php:39
 #: ../index.php:20
 #: ../search.php:21
 #, php-format
 msgid "Link to %s"
 msgstr "Link zu %s"
 
-#: ../archive.php:41
+#: ../archive.php:40
 #: ../index.php:24
 #: ../page-no-comments.php:26
-#: ../page-no-sidebar-no-comments.php:16
-#: ../page-no-sidebar.php:16
+#: ../page-no-sidebar-no-comments.php:17
+#: ../page-no-sidebar.php:17
 #: ../page.php:20
 #: ../search.php:22
 #: ../single.php:19
 msgid "jS"
 msgstr "j."
 
-#: ../archive.php:41
+#: ../archive.php:40
 #: ../index.php:25
 #: ../page-no-comments.php:27
-#: ../page-no-sidebar-no-comments.php:17
-#: ../page-no-sidebar.php:17
+#: ../page-no-sidebar-no-comments.php:18
+#: ../page-no-sidebar.php:18
 #: ../page.php:21
 #: ../search.php:22
 #: ../single.php:20
 msgid "F Y"
 msgstr "F, Y"
 
-#: ../archive.php:41
+#: ../archive.php:40
 #: ../index.php:26
 #: ../page-no-comments.php:28
-#: ../page-no-sidebar-no-comments.php:18
-#: ../page-no-sidebar.php:18
+#: ../page-no-sidebar-no-comments.php:19
+#: ../page-no-sidebar.php:19
 #: ../page.php:22
 #: ../search.php:22
 #: ../single.php:21
 msgid "0 Comments"
 msgstr "0 Kommentare"
 
-#: ../archive.php:41
+#: ../archive.php:40
 #: ../index.php:26
 #: ../page-no-comments.php:28
-#: ../page-no-sidebar-no-comments.php:18
-#: ../page-no-sidebar.php:18
+#: ../page-no-sidebar-no-comments.php:19
+#: ../page-no-sidebar.php:19
 #: ../page.php:22
 #: ../search.php:22
 #: ../single.php:21
 msgid "1 Comment"
 msgstr "1 Kommentar"
 
-#: ../archive.php:41
+#: ../archive.php:40
 #: ../index.php:26
 #: ../page-no-comments.php:28
-#: ../page-no-sidebar-no-comments.php:18
-#: ../page-no-sidebar.php:18
+#: ../page-no-sidebar-no-comments.php:19
+#: ../page-no-sidebar.php:19
 #: ../page.php:22
 #: ../search.php:22
 #: ../single.php:21
 msgid "% Comments"
 msgstr "% Kommentare"
 
-#: ../archive.php:41
+#: ../archive.php:40
 #: ../index.php:26
 #: ../page-no-comments.php:28
-#: ../page-no-sidebar-no-comments.php:18
-#: ../page-no-sidebar.php:18
+#: ../page-no-sidebar-no-comments.php:19
+#: ../page-no-sidebar.php:19
 #: ../page.php:22
 #: ../search.php:22
 #: ../single.php:21
@@ -149,75 +149,75 @@ msgid "Closed"
 msgstr "Geschlossen"
 
 #: ../archive.php:47
-#: ../index.php:43
-#: ../page-no-comments.php:42
-#: ../page-no-sidebar-no-comments.php:30
-#: ../page-no-sidebar.php:30
-#: ../page.php:36
-#: ../search.php:28
-#: ../single.php:35
+#: ../index.php:44
+#: ../page-no-comments.php:43
+#: ../page-no-sidebar-no-comments.php:32
+#: ../page-no-sidebar.php:32
+#: ../page.php:37
+#: ../search.php:29
+#: ../single.php:36
 msgid "posted by&nbsp;"
 msgstr "geschrieben von&nbsp;"
 
 #: ../archive.php:49
-#: ../functions.php:304
-#: ../functions.php:314
-#: ../index.php:45
-#: ../page-no-comments.php:44
-#: ../page-no-sidebar-no-comments.php:32
-#: ../page-no-sidebar.php:32
-#: ../page.php:38
-#: ../search.php:30
-#: ../single.php:37
+#: ../functions.php:310
+#: ../functions.php:320
+#: ../index.php:46
+#: ../page-no-comments.php:45
+#: ../page-no-sidebar-no-comments.php:34
+#: ../page-no-sidebar.php:34
+#: ../page.php:39
+#: ../search.php:31
+#: ../single.php:38
 msgid "Edit"
 msgstr "Bearbeiten"
 
 #: ../archive.php:50
-#: ../index.php:46
-#: ../page-no-comments.php:45
-#: ../page-no-sidebar-no-comments.php:33
-#: ../page-no-sidebar.php:33
-#: ../page.php:39
-#: ../single.php:38
+#: ../index.php:47
+#: ../page-no-comments.php:46
+#: ../page-no-sidebar-no-comments.php:35
+#: ../page-no-sidebar.php:35
+#: ../page.php:40
+#: ../single.php:39
 msgid "Tags:"
 msgstr "Schlagworte:"
 
 #: ../archive.php:51
-#: ../index.php:47
-#: ../page-no-comments.php:46
-#: ../page-no-sidebar-no-comments.php:34
-#: ../page-no-sidebar.php:34
-#: ../page.php:40
-#: ../single.php:39
+#: ../index.php:48
+#: ../page-no-comments.php:47
+#: ../page-no-sidebar-no-comments.php:36
+#: ../page-no-sidebar.php:36
+#: ../page.php:41
+#: ../single.php:40
 #, php-format
 msgid "Filed under: %s"
 msgstr "Abgelegt unter: %s"
 
-#: ../archive.php:61
-#: ../index.php:57
+#: ../archive.php:62
+#: ../index.php:59
 msgid "&laquo;&lsaquo; Older Entries"
 msgstr "&laquo;&lsaquo; &Auml;ltere Beitr&auml;ge"
 
-#: ../archive.php:62
-#: ../index.php:58
+#: ../archive.php:63
+#: ../index.php:60
 msgid "Newer Entries &rsaquo;&raquo;"
 msgstr "Neuere Beitr&auml;ge &rsaquo;&raquo;"
 
-#: ../archive.php:68
+#: ../archive.php:69
 #, php-format
 msgid "Sorry, but there aren't any posts in the %s category yet."
 msgstr "Sorry, aber es gibt in der Kategorie %s keine Beitr&auml;ge."
 
-#: ../archive.php:70
+#: ../archive.php:71
 msgid "Sorry, but there aren't any posts with this date."
 msgstr "Sorry, aber es gibt keine Beitra&auml;ge mit diesem Datum."
 
-#: ../archive.php:73
+#: ../archive.php:74
 #, php-format
 msgid "Sorry, but there aren't any posts by %s yet."
 msgstr "Sorry, aber der Autor %s hat noch keine Beitr&auml;ge geschrieben."
 
-#: ../archive.php:75
+#: ../archive.php:76
 msgid "No posts found."
 msgstr "Keine Beitr&auml;ge gefunden"
 
@@ -401,69 +401,73 @@ msgstr "Die Sidebar links (left), rechts (right) ausrichten, oder sogar ausblend
 
 #: ../functions.php:112
 msgid "Type in your Twitter-Username (without slashes!) to create a link to your Twitter Account. The Twitter Logo will be displayed in the head of your site. <br /> <a href='http://twitter.com/t3blogart' title='Visit me on Twitter...' target='blank'>You can follow me on Twitter too. Visit my page under twitter.com/t3blogart.</a>"
-msgstr "Trage hier Deinen Twitter-Usernamen ein (OHNE Schr&auml;gstriche). Es wird automatisch ein Link zu Deinem Account erstellt, und das Twitter-Logo wird im Kopf Deiner Seite eingeblendet. <br /> <a href='http://twitter.com/t3blogart' title='Besuche mich auf Twitter...' target='blank'>Du kannst auch einen Bliock auf meine Twitter Seite werfen. Zu finden unter twitter.com/t3blogart.</a>"
+msgstr "Trage hier Deinen Twitter-Usernamen ein (OHNE Schr&auml;gstriche). Es wird automatisch ein Link zu Deinem Account erstellt, und das Twitter-Logo wird im Kopf Deiner Seite eingeblendet. <br /> <a href='http://twitter.com/t3blogart' title='Besuche mich auf Twitter...' target='blank'>Du kannst auch einen Blick auf meine Twitter Seite werfen. Zu finden unter twitter.com/t3blogart.</a>"
 
-#: ../functions.php:120
+#: ../functions.php:118
+msgid "Type in your Facebook-ID to create a link to your Facebook-Account. The Facebook Logo will be displayed in the head of your site. <br /> If you need help to find your Facebook ID, visit my site. I wrote a <a href='http://blog.t3-artwork.info/2010/05/quicky-eigenes-facebook-konto-richtig-verlinken' target='blank'>little tutorial</a> to use this function."
+msgstr "Trage hier Deine Facebook-ID ein um einen Link zu Deinem Facebook-Account zu erstellen. Das Facebook-Logo wird ebenfalls oben im Kopf Deiner Seite angezeigt. <br />Wenn Du Hilfe benötigst um an Deine ID zu gelangen, schau doch mal auf meiner Seite vorbei. Ich habe ein <a href='http://blog.t3-artwork.info/2010/05/quicky-eigenes-facebook-konto-richtig-verlinken' target='blank'>kleines Tutorial</a> dazu geschrieben."
+
+#: ../functions.php:126
 msgid "Custom Feed URL"
 msgstr "Eigene Feed-URL"
 
-#: ../functions.php:122
+#: ../functions.php:128
 msgid "Your custom feed URL? (Feedburner...)"
 msgstr "Deine eigene (externe) Feed-URL (Feedburner usw.)"
 
-#: ../functions.php:165
+#: ../functions.php:171
 msgid "settings saved."
 msgstr "Einstellungen gespeichert."
 
-#: ../functions.php:166
+#: ../functions.php:172
 msgid "settings reset."
 msgstr "Einstellungen zur&uuml;ck gesetzt."
 
-#: ../functions.php:175
+#: ../functions.php:181
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: ../functions.php:248
+#: ../functions.php:254
 msgid "Save changes"
 msgstr "&Auml;nderungen speichern"
 
-#: ../functions.php:255
+#: ../functions.php:261
 msgid "Reset"
 msgstr "zur&uuml;ck setzen"
 
-#: ../functions.php:261
+#: ../functions.php:267
 msgid "Thank you for using the &quot;altop Theme&quot; !"
 msgstr "Danke, dass Du das &quot;altop Theme&quot; benutzt !"
 
-#: ../functions.php:262
-msgid "If you have any questions or problems with this theme, leave a reply at my <a href=\"http://blog.t3-artwork.info\">site</a>. <br /> Update informations and bugfixes are also available at my site or follow me on Twitter. <br /> Have fun with my theme and <strong>Happy Blogging...</strong> :)"
-msgstr "Wenn Du Fragen oder Probleme mit diesem Theme hast, hinterlasse einfach auf meiner <a href=\"http://blog.t3-artwork.info\">Seite</a> einen kurzen Kommentar. <br /> Update Informationen und Bugfixes sind ebenso auf meiner Seite erh&auml;ltlich - oder folge mir auf Twitter. <br /> Nun viel Spa&szlig; mit dem Theme und <strong>Happy Blogging...</strong> :)"
+#: ../functions.php:268
+msgid "If you have any questions or problems with this theme, visit the <a href=\"http://blog.t3-artwork.info/forum/a-little-touch-of-purple-theme/\">Support Forum</a>. <br /> Update informations and bugfixes are available at my site or follow me on Twitter. <br /> Have fun with my theme and <strong>Happy Blogging...</strong> :)"
+msgstr "Wenn Du Fragen oder Probleme mit diesem Theme hast, wird Dir im <a href=\"http://blog.t3-artwork.info/forum/a-little-touch-of-purple-theme/\">Support Forum</a> geholfen. <br /> Update Informationen und Bugfixes sind ebenso auf meiner Seite erh&auml;ltlich - oder folge mir auf Twitter. <br /> Nun viel Spa&szlig; mit dem Theme und <strong>Happy Blogging...</strong> :)"
 
-#: ../functions.php:298
+#: ../functions.php:304
 #, php-format
 msgid "<li id=\"comment-%1s\" %2s>"
 msgstr "<li id=\"comment-%1s\" %2s>"
 
-#: ../functions.php:299
+#: ../functions.php:305
 #, php-format
 msgid "<div class=\"commentbody\"> %1s"
 msgstr "<div class=\"commentbody\"> %1s"
 
-#: ../functions.php:301
+#: ../functions.php:307
 msgid "<em> Your comment is awaiting moderation.</em>"
 msgstr "<em>Dein Kommentar muss noch freigegeben werden</em>"
 
-#: ../functions.php:303
+#: ../functions.php:309
 #, php-format
 msgid "<p class=\"commentfooter\"> <span class=\"commnumber\">%1s</span> <span class=\"commauthor\">%2s</span> said this <small>(%3s at %4s)</small> %5s"
 msgstr "<p class=\"commentfooter\"> <span class=\"commnumber\">%1s</span> <span class=\"commauthor\">%2s</span> schrieb das <small>(%3s gegen %4s Uhr)</small> %5s"
 
-#: ../functions.php:312
+#: ../functions.php:318
 #, php-format
 msgid "<li id=\"comment-%1s\">"
 msgstr "<li id=\"comment-%1s\">"
 
-#: ../functions.php:314
+#: ../functions.php:320
 #, php-format
 msgid "&nbsp;<small>%1s at %2s</small>"
 msgstr "&nbsp;<small>%1s gegen %2s</small>"
@@ -473,52 +477,56 @@ msgid "Follow me..."
 msgstr "Folge mir..."
 
 #: ../header.php:36
+msgid "Follow me on Facebook"
+msgstr "Folge mir auf Facebook"
+
+#: ../header.php:40
 msgid "Follow me on Twitter"
 msgstr "Folge mir auf Twitter"
 
-#: ../header.php:43
+#: ../header.php:47
 msgid "Subscribe to my Feed"
 msgstr "Abboniere meinen RSS-Feed"
 
-#: ../index.php:40
+#: ../index.php:41
 msgid "Continue reading &rsaquo;"
 msgstr "weiter lesen &rsaquo;"
 
-#: ../index.php:63
+#: ../index.php:65
 msgid "Nothing found"
 msgstr "Nichts gefunden"
 
-#: ../index.php:64
+#: ../index.php:66
 msgid "Sorry, but here is no content... Not yet... Try again later!"
 msgstr "Sorry, aber hier gibt es noch keinen Inhalt... Noch nicht... Versuche es doch sp&aauml;ter noch einmal!"
 
-#: ../page-no-comments.php:38
-#: ../page-no-sidebar-no-comments.php:26
-#: ../page-no-sidebar.php:26
-#: ../page.php:32
-#: ../single.php:31
+#: ../page-no-comments.php:39
+#: ../page-no-sidebar-no-comments.php:28
+#: ../page-no-sidebar.php:28
+#: ../page.php:33
+#: ../single.php:32
 msgid "Continue reading &raquo;"
 msgstr "weiter lesen &raquo;"
 
-#: ../page-no-comments.php:39
-#: ../page-no-sidebar-no-comments.php:27
-#: ../page-no-sidebar.php:27
-#: ../page.php:33
-#: ../single.php:32
+#: ../page-no-comments.php:40
+#: ../page-no-sidebar-no-comments.php:29
+#: ../page-no-sidebar.php:29
+#: ../page.php:34
+#: ../single.php:33
 msgid "Pages:"
 msgstr "Seiten:"
 
-#: ../page-no-comments.php:54
-#: ../page-no-sidebar-no-comments.php:43
-#: ../page-no-sidebar.php:44
-#: ../page.php:50
+#: ../page-no-comments.php:55
+#: ../page-no-sidebar-no-comments.php:46
+#: ../page-no-sidebar.php:47
+#: ../page.php:51
 msgid "Sorry, nothing found."
 msgstr "Sorry, Nichts gefunden..."
 
-#: ../page-no-comments.php:55
-#: ../page-no-sidebar-no-comments.php:44
-#: ../page-no-sidebar.php:45
-#: ../page.php:51
+#: ../page-no-comments.php:56
+#: ../page-no-sidebar-no-comments.php:47
+#: ../page-no-sidebar.php:48
+#: ../page.php:52
 msgid "Here is no content. Maybe it was moved or deleted. Try to search for some related content."
 msgstr "Hier gibt es leider keinen Inhalt. Vielleicht wurde er verschoben oder gar gel&ouml;scht. Versuche mit der Suche einen &auml,hnlichen Inhalt zu finden."
 
@@ -527,24 +535,24 @@ msgstr "Hier gibt es leider keinen Inhalt. Vielleicht wurde er verschoben oder g
 msgid "Searchresults for:<span class=\"keyword\"> %s </span>"
 msgstr "Suchergebnisse f&uuml;r: <span class=\"keyword\"> %s </span>"
 
-#: ../search.php:31
+#: ../search.php:32
 msgid "tags:"
 msgstr "Schlagworte:"
 
-#: ../search.php:32
+#: ../search.php:33
 #, php-format
 msgid "filed under: %s"
 msgstr "abgelegt unter: %s"
 
-#: ../search.php:42
+#: ../search.php:44
 msgid "&laquo;&lsaquo; Older results"
 msgstr "&laquo;&lsaquo; &Auml;ltere Resultate"
 
-#: ../search.php:43
+#: ../search.php:45
 msgid "Newer results &rsaquo;&raquo;"
 msgstr "Neuere Ergebnisse &rsaquo;&raquo;"
 
-#: ../search.php:47
+#: ../search.php:49
 #, php-format
 msgid "<h2>Sorry, but there are no results for:<span class=\"keyword\"> %s </span></h2> Try again with another keyword."
 msgstr "<h2>Sorry, leider keine Treffer zu: <span class=\"keyword\"> %s </span></h2> Versuche es doch noch einmal mit einem anderen Suchbegriff."
@@ -555,118 +563,150 @@ msgstr "<h2>Sorry, leider keine Treffer zu: <span class=\"keyword\"> %s </span><
 msgid "Search for..."
 msgstr "Suche nach..."
 
-#: ../sidebar.php:18
+#: ../sidebar.php:19
 msgid "Archives"
 msgstr "Archive"
 
-#: ../sidebar.php:23
+#: ../sidebar.php:24
 msgid "Pages"
 msgstr "Seiten"
 
-#: ../sidebar.php:36
+#: ../sidebar.php:37
 msgid "The Tags"
 msgstr "Schlagworte"
 
-#: ../single.php:45
+#: ../single.php:47
 msgid "&laquo; %link"
 msgstr "&laquo; %link"
 
-#: ../single.php:46
+#: ../single.php:48
 msgid "%link &raquo;"
 msgstr "%link &raquo;"
 
-#: ../single.php:56
+#: ../single.php:58
 #, php-format
 msgid "Subscribe to the <a href='%s'>Comments RSS</a>. <br />"
 msgstr "Abboniere meinen <a href='%s'>Kommentar RSS-Feed</a>. <br />"
 
-#: ../single.php:60
+#: ../single.php:62
 #, php-format
 msgid "Leave a <a href='%s'>trackback</a> from your site."
 msgstr "Hinterlasse einen <a href='%s'>Trackback</a> von Deiner Seite."
 
-#: ../single.php:67
+#: ../single.php:69
 msgid "Sorry, no posts found..."
 msgstr "Sorry, Nichts gefunden..."
 
 #~ msgid "Leave your own comment"
 #~ msgstr "Hinterlasse Deinen Kommentar"
+
 #~ msgid ""
 #~ "This post is password protected. Enter the password to view comments."
 #~ msgstr ""
 #~ "Dieser Beitrag ist durch ein Passwort gesch&uuml;tzt. Gib das Passwort "
 #~ "ein, um die Kommentare zu lesen."
+
 #~ msgid "Display the <i>HOME</i> Link in the menu"
 #~ msgstr "Den <i>Home</i> Link im Men&uuml; anzeigen"
+
 #~ msgid "Home name"
 #~ msgstr "Home Name"
+
 #~ msgid ""
 #~ "The name of the <i>HOME</i> link. <i>Theme default is &quot;Home&quot;</i>"
 #~ msgstr ""
 #~ "Der Name f&uuml;r den <i>Home</i> Link. <i>Theme-Standard ist &quot;"
 #~ "Home&quot;</i>"
+
 #~ msgid "Bottombar Image"
 #~ msgstr "Bottombar Hintergrund"
+
 #~ msgid "Select the &quot;Bottombar&quot; background image <br />"
 #~ msgstr "W&auml;hle das &quot;Bottombar&quot; Hintergrundbild <br />"
+
 #~ msgid "Button"
 #~ msgstr "Button"
+
 #~ msgid "Show the Twitter button in the head"
 #~ msgstr "Zeige den Twitter-Button im Kopf der Seite"
+
 #~ msgid "Searchresults for &quot;%1s&quot;"
 #~ msgstr "Suchergebnisse zu &quot;%1s&quot;"
+
 #~ msgid "Home button"
 #~ msgstr "Home Button"
+
 #~ msgid "Display the <i>HOME</i> button"
 #~ msgstr "Den <i>Home</i> Button anzeigen"
+
 #~ msgid "The name of the <i>HOME</i> button (default is Home)"
 #~ msgstr "Der Name f&uuml;r den <i>Home</i> Button. (Standard ist Home)"
+
 #~ msgid "Posts"
 #~ msgstr "Beitr&auml;ge"
+
 #~ msgid ""
 #~ "Show the &quot;Bottombar&quot;. Here you can place some little widgets or "
 #~ "some text."
 #~ msgstr ""
 #~ "Nutze die &quot;Bottombar&quot; in Deinem Blog. Hier kannst Du ein paar "
 #~ "kleine Widgets oder Text platzieren..."
+
 #~ msgid "Bottombar image"
 #~ msgstr "Bottombar Hintergrund"
+
 #~ msgid "<strong>1</strong> = purple (default) <br />"
 #~ msgstr "<strong>1</strong> = lila (standard) <br />"
+
 #~ msgid "2 = grey <br />"
 #~ msgstr "v2 = grau <br />"
+
 #~ msgid "0 = only color grey"
 #~ msgstr "0 = nur Farbe grau"
+
 #~ msgid "Sidebar align left, right or hidden"
 #~ msgstr ""
 #~ "Die Sidebar links (left) oder rechts (right) ausrichten, oder sogar "
 #~ "ausblenden (none)"
+
 #~ msgid "posted by"
 #~ msgstr "geschrieben von"
+
 #~ msgid "M Y"
 #~ msgstr "M Y"
+
 #~ msgid "Not Found"
 #~ msgstr "Nichts gefunden"
+
 #~ msgid "Sorry, but there is no content."
 #~ msgstr "Sorry, aber hier gibt es keinen Inhalt."
+
 #~ msgid "Your Twitter username?"
 #~ msgstr "Dein Twitter-Name?"
+
 #~ msgid "Archives by Month:"
 #~ msgstr "Archiv nach Monat:"
+
 #~ msgid "Archives by Subject:"
 #~ msgstr "Archive nach Kategorie:"
+
 #~ msgid "Links:"
 #~ msgstr "Links:"
+
 #~ msgid "Meta"
 #~ msgstr "Meta"
+
 #~ msgid "Comments"
 #~ msgstr "Kommentare"
+
 #~ msgid "Comment"
 #~ msgstr "Kommentar"
+
 #~ msgid "Trackback"
 #~ msgstr "Trackback"
+
 #~ msgid "Pingback"
 #~ msgstr "Pingback"
+
 #~ msgid "E-mail"
 #~ msgstr "E-Mail"
-

@@ -7,7 +7,8 @@ Template Name: Page without Sidebar
 <?php get_header(); ?>
 
 <div id="content" class="con_wide">
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+      <div id="content_inner">
+      <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		
 	<div class="post_content" id="post-<?php the_ID(); ?>">
 									
@@ -20,7 +21,8 @@ Template Name: Page without Sidebar
 				</div>
 				
 				<div class="entry_wide"> 
-				
+				            <div class="entry_inner"> 
+
 					<?php if ($altop_post_thumbnail == "true") { ?> <?php the_post_thumbnail('medium'); ?> <?php } ?>
 					
 					<?php the_content('<p>' . __('Continue reading &raquo;', 'altop') . '</p>'); ?>
@@ -34,6 +36,7 @@ Template Name: Page without Sidebar
 					<?php printf(__('Filed under: %s', 'altop'), get_the_category_list(', ')); ?>
 				</p>
 				</div>
+        </div>
 			
 			<br clear="all" />
 			</div>
@@ -46,6 +49,7 @@ Template Name: Page without Sidebar
 		
 
 	<?php endif; ?>
+</div>
 			</div>			
 					
 <?php get_footer(); ?>

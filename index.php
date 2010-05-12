@@ -8,7 +8,7 @@ foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$val
 		<?php if ($altop_sidebar_align == "left") { ?> <div id="content" class="con_right">	<?php } ?>		
 			<?php if ($altop_sidebar_align == "none") { ?> <div id="content" class="con_wide"> <?php } ?>	
 				<?php if ($altop_sidebar_align == "") { ?> <div id="content" class="con_left">	<?php } ?>		
-			
+      <div id="content_inner">			
 			
 			
 	<?php if (have_posts()) : ?>
@@ -31,13 +31,14 @@ foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$val
 				</div>
 				
 				<?php if ($altop_sidebar_align == "none") { ?> <div class="entry_wide"> <?php } //Wide content and NO sidebar ?>
-					<?php if ($altop_sidebar_align != "none") { ?> <div class="entry"> <?php } // content AND sidebar ?>
-					
+				<?php if ($altop_sidebar_align != "none") { ?> <div class="entry"> <?php } // content AND sidebar ?>
+				<div class="entry_inner"> 
+
 					<?php if ($altop_sidebar_align == "none" && $altop_post_thumbnail == "true") { ?> <?php the_post_thumbnail('medium'); ?> <?php } //A bigger thumbnail if there is no sidebar ?>
 					<?php if ($altop_sidebar_align != "none" && $altop_post_thumbnail == "true") { ?> <?php the_post_thumbnail('thumbnail'); ?> <?php } //Smaller thumbnail if there is a sidebar ?>
 					
 					
-					<?php the_content (__("Continue reading &rsaquo;", 'altop')); ?>
+					<?php the_content(__("Continue reading &rsaquo;", 'altop')); ?>
 				
 				<p class="postinfo"> 				
 					<?php if ($altop_posts_author == "true") : ?> <?php echo _e('posted by&nbsp;', 'altop'); the_author(); ?> <?php endif ?>
@@ -47,6 +48,7 @@ foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$val
 					<?php printf(__('Filed under: %s', 'altop'), get_the_category_list(', ')); ?>
 				</p>
 				</div>
+        </div>
 			
 			<br clear="all" />
 			</div>
@@ -65,6 +67,7 @@ foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$val
 		
 
 	<?php endif; ?>
+</div>
 
 	</div>
 

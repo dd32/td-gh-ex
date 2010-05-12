@@ -9,8 +9,7 @@ foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$val
 		<?php if ($altop_sidebar_align == "left") { ?> <div id="content" class="con_right">	<?php } ?>		
 			<?php if ($altop_sidebar_align == "none") { ?> <div id="content" class="con_wide"> <?php } ?>	
 				<?php if ($altop_sidebar_align == "") { ?> <div id="content" class="con_left">	<?php } ?>		
-
-
+      <div id="content_inner">
 		<?php if (have_posts()) : ?>
 
  	  <?php if (is_category()) { ?>
@@ -41,6 +40,7 @@ foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$val
 				<small><?php the_time(__('jS', 'altop')); ?> <?php the_time(__('F Y', 'altop')); ?> | <?php comments_popup_link(__('0 Comments', 'altop'), __('1 Comment', 'altop'), __('% Comments', 'altop'), '', __('Closed', 'altop') ); ?></small>
 
 				<div class="archiv_entry"> 					
+            <div class="entry_inner"> 
 					<?php the_excerpt(); ?>
 					
 				<p class="postinfo"> 				
@@ -51,6 +51,7 @@ foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$val
 					<?php printf(__('Filed under: %s', 'altop'), get_the_category_list(', ')); ?>
 				</p>
 				</div>
+        </div>
 			
 			<br clear="all" />
 			</div>
@@ -77,6 +78,7 @@ foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$val
 
 	endif;
 ?>
+</div>
 	</div>
 
 <?php get_sidebar(); ?>

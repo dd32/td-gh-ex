@@ -103,14 +103,20 @@ $options = array (
 		   "options" => array("","left","right","none"),
 		   ),
 			
-	array( "name" => "Twitter",
+	array( "name" => "Social Networks",
 		   "type" => "title",
 		   ),
-	
-	array( "name" => "Account",
+
+	array( "name" => "Twitter",
 		   "type" => "text",
 		   "desc" => __("Type in your Twitter-Username (without slashes!) to create a link to your Twitter Account. The Twitter Logo will be displayed in the head of your site. <br /> <a href='http://twitter.com/t3blogart' title='Visit me on Twitter...' target='blank'>You can follow me on Twitter too. Visit my page under twitter.com/t3blogart.</a>", 'altop'),
 		   "id" => $shortname."_twitter",
+		   "std" => ""),
+		   
+	array( "name" => "Facebook",
+		   "type" => "text",
+		   "desc" => __("Type in your Facebook-ID to create a link to your Facebook-Account. The Facebook Logo will be displayed in the head of your site. <br /> If you need help to find your Facebook ID, visit my site. I wrote a <a href='http://blog.t3-artwork.info/2010/05/quicky-eigenes-facebook-konto-richtig-verlinken' target='blank'>little tutorial</a> to use this function.", 'altop'),
+		   "id" => $shortname."_facebook",
 		   "std" => ""),
 		   
 	array( "name" => "RSS Feed",
@@ -259,7 +265,7 @@ $options = array (
 		
 		<div class="support">
 			<h3><?php echo _e('Thank you for using the &quot;altop Theme&quot; !', 'altop'); ?></h3>
-			<p><?php echo _e('If you have any questions or problems with this theme, leave a reply at my <a href="http://blog.t3-artwork.info">site</a>. <br /> Update informations and bugfixes are also available at my site or follow me on Twitter. <br /> Have fun with my theme and <strong>Happy Blogging...</strong> :)', 'altop'); ?></p>
+			<p><?php echo _e('If you have any questions or problems with this theme, visit the <a href="http://blog.t3-artwork.info/forum/a-little-touch-of-purple-theme/">Support Forum</a>. <br /> Update informations and bugfixes are available at my site or follow me on Twitter. <br /> Have fun with my theme and <strong>Happy Blogging...</strong> :)', 'altop'); ?></p>
 		</div>
 		
 	</div>
