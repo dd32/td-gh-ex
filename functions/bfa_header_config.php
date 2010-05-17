@@ -5,31 +5,34 @@ global $bfa_ata, $post;
 
 
 // Page Menu Bar
-if ( strpos($header_items,'%pages') !== FALSE OR strpos($header_items,'%page-center') !== FALSE OR strpos($header_items,'%page-right') !== FALSE ) {
+if ( strpos($header_items,'%pages') !== FALSE OR strpos($header_items,'%page-center') !== FALSE 
+OR strpos($header_items,'%page-right') !== FALSE ) {
 
-	$page_menu_bar = '<div id="menu1">';
+	ob_start();
+	
+	echo '<div id="menu1">';
 	
 	// Left, Right or Centered
 	if ( strpos($header_items,"%page-right") !== FALSE ) {
-		$page_menu_bar .= '<ul id="rmenu2" class="clearfix rMenu-hor rMenu-hRight rMenu">' . "\n";
+		echo '<ul id="rmenu2" class="clearfix rMenu-hor rMenu-hRight rMenu">' . "\n";
 	} elseif ( strpos($header_items,"%page-center") !== FALSE ) {
-		$page_menu_bar .= '<table cellpadding="0" cellspacing="0" style="margin: 0 auto"><tr><td align="center">
+		echo '<table cellpadding="0" cellspacing="0" style="margin: 0 auto"><tr><td align="center">
 		<ul id="rmenu2" class="clearfix rMenu-hor rMenu">' . "\n";
 	} else {
-		$page_menu_bar .= '<ul id="rmenu2" class="clearfix rMenu-hor rMenu">' . "\n";	
+		echo '<ul id="rmenu2" class="clearfix rMenu-hor rMenu">' . "\n";	
 	}
 	
 	// "Home" Link?
 	if ( $bfa_ata['home_page_menu_bar'] != '' ) {
-		$page_menu_bar .= '<li class="page_item';
+		echo '<li class="page_item';
 		if (function_exists('is_front_page')) {
 			if ( is_front_page() ) { 
-				$page_menu_bar .= ' current_page_item';
+				echo ' current_page_item';
 			}
 		} elseif ( is_home() ) { 
-			$page_menu_bar .= ' current_page_item';	
+			echo ' current_page_item';	
 		}
-		$page_menu_bar .= '"><a href="' . $bfa_ata['get_option_home'] . '/" title="' . $bfa_ata['bloginfo_name'] . '">' . 
+		echo '"><a href="'; bloginfo('url'); echo '/" title="'; bloginfo('name'); echo '">' . 
 		$bfa_ata['home_page_menu_bar'] . '</a></li>' . "\n";	
 	}
 	
@@ -38,47 +41,53 @@ if ( strpos($header_items,'%pages') !== FALSE OR strpos($header_items,'%page-cen
 		$bfa_ata['levels_page_menu_bar'] = 0; 
 	}	
 	
-	$page_menu_bar .= bfa_hor_pages($bfa_ata['sorting_page_menu_bar'], $bfa_ata['levels_page_menu_bar'], 
+	echo bfa_hor_pages($bfa_ata['sorting_page_menu_bar'], $bfa_ata['levels_page_menu_bar'], 
 	$bfa_ata['titles_page_menu_bar'], $bfa_ata['exclude_page_menu_bar']);
 	
 	// Close table if centered
 	if ( strpos($header_items,"%page-center") !== FALSE ) {
-		$page_menu_bar .= '</ul></td></tr></table></div>' . "\n";
+		echo '</ul></td></tr></table></div>' . "\n";
 	} else {
-		$page_menu_bar .= '</ul></div>' . "\n";
+		echo '</ul></div>' . "\n";
 	}
 
+	$page_menu_bar = ob_get_contents(); 
+	
+	ob_end_clean();
 }
 
 
 
 
 // Category Menu Bar 
-if ( strpos($header_items,'%cats') !== FALSE OR strpos($header_items,'%cat-center') !== FALSE OR strpos($header_items,'%cat-right') !== FALSE ) {
+if ( strpos($header_items,'%cats') !== FALSE OR strpos($header_items,'%cat-center') !== FALSE 
+OR strpos($header_items,'%cat-right') !== FALSE ) {
 
-	$cat_menu_bar = '<div id="menu2">';
+	ob_start();
+	
+	echo '<div id="menu2">';
 
 	if ( strpos($header_items,"%cat-right") !== FALSE ) {	
-		$cat_menu_bar .= '<ul id="rmenu" class="clearfix rMenu-hor rMenu-hRight rMenu">' . "\n";
+		echo '<ul id="rmenu" class="clearfix rMenu-hor rMenu-hRight rMenu">' . "\n";
 	} elseif ( strpos($header_items,"%cat-center") !== FALSE ) {	
-		$cat_menu_bar .= '<table cellpadding="0" cellspacing="0" style="margin: 0 auto"><tr><td align="center">
+		echo '<table cellpadding="0" cellspacing="0" style="margin: 0 auto"><tr><td align="center">
 		<ul id="rmenu" class="clearfix rMenu-hor rMenu">' . "\n";
 	} else {
-		$cat_menu_bar .= '<ul id="rmenu" class="clearfix rMenu-hor rMenu">' . "\n";
+		echo '<ul id="rmenu" class="clearfix rMenu-hor rMenu">' . "\n";
 	}	
 	
 	// Home Link?	
 	if ( $bfa_ata['home_cat_menu_bar'] != '' ) {
-		$cat_menu_bar .= '<li class="cat-item';
+		echo '<li class="cat-item';
 		if ( function_exists('is_front_page') ) {
 			if ( is_front_page() OR is_home() ) { 
-				$cat_menu_bar .= ' current-cat';
+				echo ' current-cat';
 			}
 		} elseif ( is_home() ) { 
-			$cat_menu_bar .= ' current-cat';	
+			echo ' current-cat';	
 		}
-	$cat_menu_bar .= '"><a href="' . $bfa_ata['get_option_home'] . '/" title="' . $bfa_ata['bloginfo_name'] . '">' . 
-	$bfa_ata['home_cat_menu_bar'] . '</a></li>' . "\n";	
+		echo '"><a href="'; bloginfo('url'); echo '/" title="'; bloginfo('name'); echo '">' . 
+		$bfa_ata['home_cat_menu_bar'] . '</a></li>' . "\n";	
 	}	
 
 	// Empty setting "levels" same as 0
@@ -87,16 +96,19 @@ if ( strpos($header_items,'%cats') !== FALSE OR strpos($header_items,'%cat-cente
 	}	
 	
 	// Create menu list
-	$cat_menu_bar .= bfa_hor_cats($bfa_ata['sorting_cat_menu_bar'], $bfa_ata['order_cat_menu_bar'], 
+	echo bfa_hor_cats($bfa_ata['sorting_cat_menu_bar'], $bfa_ata['order_cat_menu_bar'], 
 	$bfa_ata['levels_cat_menu_bar'], $bfa_ata['titles_cat_menu_bar'], $bfa_ata['exclude_cat_menu_bar']);
 	
 	// Close table if centered
 	if ( strpos($header_items,"%cat-center") !== FALSE ) {
-		$cat_menu_bar .= '</ul></td></tr></table></div>' . "\n";
+		echo '</ul></td></tr></table></div>' . "\n";
 	} else {
-		$cat_menu_bar .= '</ul></div>' . "\n";
+		echo '</ul></div>' . "\n";
 	}
 	
+	$cat_menu_bar = ob_get_contents(); 
+	
+	ob_end_clean();
 }
 
 
@@ -105,7 +117,9 @@ if ( strpos($header_items,'%cats') !== FALSE OR strpos($header_items,'%cat-cente
 // Logo Area 
 if ( strpos($header_items,'%logo') !== FALSE ) {
 
-	$logo_area = '<table id="logoarea" cellpadding="0" cellspacing="0" border="0" width="100%"><tr>';
+	ob_start();
+	
+	echo '<table id="logoarea" cellpadding="0" cellspacing="0" border="0" width="100%"><tr>';
 
 	if ( $bfa_ata['show_search_box'] == "Yes" AND ($bfa_ata['show_posts_icon'] == "Yes" OR 
 	$bfa_ata['show_email_icon'] == "Yes" OR $bfa_ata['show_comments_icon'] == "Yes") ) { 
@@ -116,8 +130,8 @@ if ( strpos($header_items,'%logo') !== FALSE ) {
 
 		// Logo Icon for Wordpress and WPMU
 		if ( $bfa_ata['logo'] != "" ) { 
-			$logo_area .= '<td ' . $header_rowspan . 'valign="middle" class="logoarea-logo"><a href="' . 
-			$bfa_ata['get_option_home'] . '/"><img class="logo" src="';
+			echo '<td ' . $header_rowspan . 'valign="middle" class="logoarea-logo"><a href="'; 
+			bloginfo('url'); echo '/"><img class="logo" src="';
 
 				// if this is WordPress MU 
 				if ( file_exists(ABSPATH."/wpmu-settings.php") ) {
@@ -138,38 +152,38 @@ if ( strpos($header_items,'%logo') !== FALSE ) {
 					if ( $wpmu_logosymbol ) {
 						$new_logosymbol = str_replace($upload_path,
 						get_option('fileupload_url'), $wpmu_logosymbol); 
-						$logo_area .= $new_logosymbol[0] . '" alt="' . $bfa_ata['bloginfo_name'];
+						echo $new_logosymbol[0] . '" alt="'; bloginfo('name');
 					// otherwise: print the one in the theme folder
 					} else { 
-						$logo_area .= $bfa_ata['template_directory'] . '/images/' . $bfa_ata['logo'] . 
-						'" alt="' . $bfa_ata['bloginfo_name']; 
+						bloginfo('template_directory'); echo '/images/' . $bfa_ata['logo'] . 
+						'" alt="'; bloginfo('name'); 
 					}
 
 				// if this is Wordpress and not WPMU, print the logosymbol.gif in the theme folder right away
 				} else { 
-					$logo_area .= $bfa_ata['template_directory'] . '/images/' . $bfa_ata['logo'] . '" alt="' . 
-					$bfa_ata['bloginfo_name']; 
+					bloginfo('template_directory'); echo '/images/' . $bfa_ata['logo'] . '" alt="';
+					bloginfo('name'); 
 				} 
 
-		$logo_area .= '" /></a></td>';
+		echo '" /></a></td>';
 		} 
 
 
 		// Blog title and description
 		if ( $bfa_ata['blog_title_show'] == "Yes" OR $bfa_ata['blog_tagline_show'] == "Yes" ) {
 			
-			$logo_area .= '<td ' . $header_rowspan . 'valign="middle" class="logoarea-title">';
+			echo '<td ' . $header_rowspan . 'valign="middle" class="logoarea-title">';
 			
 			if ( $bfa_ata['blog_title_show'] == "Yes" ) {
-				$logo_area .= '<h' . $bfa_ata['h_blogtitle'] . ' class="blogtitle"><a href="' . 
-				$bfa_ata['get_option_home'] . '/">' . $bfa_ata['bloginfo_name'] . '</a></h' . $bfa_ata['h_blogtitle'] . '>'; 
+				echo '<h' . $bfa_ata['h_blogtitle'] . ' class="blogtitle"><a href="'; 
+				bloginfo('url'); echo '/">'; bloginfo('name'); echo '</a></h' . $bfa_ata['h_blogtitle'] . '>'; 
 			}
 			
 			if ( $bfa_ata['blog_tagline_show'] == "Yes" ) {
-				$logo_area .= '<p class="tagline">' . $bfa_ata['bloginfo_description'] . '</p>'; 
+				echo '<p class="tagline">'; bloginfo('description'); echo '</p>'; 
 			}
 			
-			$logo_area .= '</td>';
+			echo '</td>';
 		}
 
 
@@ -178,7 +192,7 @@ if ( strpos($header_items,'%logo') !== FALSE ) {
 		// is any feed icon or link active?
 		if ( $bfa_ata['show_posts_icon'] == "Yes" OR $bfa_ata['show_email_icon'] == "Yes" OR 
 		$bfa_ata['show_comments_icon'] == "Yes" ) {
-			$logo_area .= '<td class="feed-icons" valign="middle" align="right"><div class="clearfix rss-box">';
+			echo '<td class="feed-icons" valign="middle" align="right"><div class="clearfix rss-box">';
 		}
 
 
@@ -186,13 +200,13 @@ if ( strpos($header_items,'%logo') !== FALSE ) {
 		// COMMENT Feed link
 		if ( $bfa_ata['show_comments_icon'] == "Yes" ) { 
 			
-			$logo_area .= '<a class="comments-icon" '; 
+			echo '<a class="comments-icon" '; 
 			
 			if ( $bfa_ata['nofollow'] == "Yes" ) { 
-				$logo_area .= 'rel="nofollow" '; 
+				echo 'rel="nofollow" '; 
 			} 
 			
-			$logo_area .= 'href="' . $bfa_ata['bloginfo_comments_rss2_url'] . '" title="' . 
+			echo 'href="'; bloginfo('comments_rss2_url'); echo '" title="' . 
 			$bfa_ata['comment_feed_link_title'] . '">' . $bfa_ata['comment_feed_link'] . '</a>';
 			
 		} 
@@ -202,13 +216,13 @@ if ( strpos($header_items,'%logo') !== FALSE ) {
 		// Feedburner Email link
 		if ( $bfa_ata['show_email_icon'] == "Yes" ) { 
 			
-			$logo_area .= '<a class="email-icon" '; 
+			echo '<a class="email-icon" '; 
 			
 			if ( $bfa_ata['nofollow'] == "Yes" ) { 
-				$logo_area .= 'rel="nofollow" '; 
+				echo 'rel="nofollow" '; 
 			} 
 			
-			$logo_area .= 'href="http://' . ($bfa_ata['feedburner_old_new'] == 'New - at feedburner.google.com' ? 
+			echo 'href="http://' . ($bfa_ata['feedburner_old_new'] == 'New - at feedburner.google.com' ? 
 			'feedburner.google.com/fb/a/mailverify?uri=' : 'www.feedburner.com/fb/a/emailverifySubmit?feedId=') . 
 			$bfa_ata['feedburner_email_id'] . '&amp;loc=' . get_locale() . '" title="' . 
 			$bfa_ata['email_subscribe_link_title'] . '">' . $bfa_ata['email_subscribe_link'] . '</a>';
@@ -220,13 +234,13 @@ if ( strpos($header_items,'%logo') !== FALSE ) {
 		// POSTS Feed link
 		if ( $bfa_ata['show_posts_icon'] == "Yes" ) { 
 			
-			$logo_area .= '<a class="posts-icon" '; 
+			echo '<a class="posts-icon" '; 
 			
 			if ( $bfa_ata['nofollow'] == "Yes" ) { 
-				$logo_area .= 'rel="nofollow" '; 
+				echo 'rel="nofollow" '; 
 			} 
 			
-			$logo_area .= 'href="' . $bfa_ata['bloginfo_rss2_url'] . '" title="' . 
+			echo 'href="'; bloginfo('rss2_url'); echo '" title="' . 
 			$bfa_ata['post_feed_link_title'] . '">' . 
 			$bfa_ata['post_feed_link'] . '</a>';
 			
@@ -236,9 +250,9 @@ if ( strpos($header_items,'%logo') !== FALSE ) {
 
 		if ( $bfa_ata['show_posts_icon'] == "Yes" OR $bfa_ata['show_email_icon'] == "Yes" OR 
 		$bfa_ata['show_comments_icon'] == "Yes" ) {
-			$logo_area .= '</div></td>';
+			echo '</div></td>';
 			if ( $bfa_ata['show_search_box'] == "Yes" ) { 
-				$logo_area .= '</tr><tr>';
+				echo '</tr><tr>';
 			}
 		}	
 
@@ -246,10 +260,9 @@ if ( strpos($header_items,'%logo') !== FALSE ) {
 		
 		// Search box
 		if ( $bfa_ata['show_search_box'] == "Yes" ) { 
-			$logo_area .= '<td valign="bottom" class="search-box" align="right">';
-			$logo_area .= '<div class="searchbox">
-				<form method="get" class="searchform" action="' . get_bloginfo( 'url' ) . '/">
-				<div class="searchbox-form">' .
+			echo '<td valign="bottom" class="search-box" align="right"><div class="searchbox">
+				<form method="get" class="searchform" action="'; bloginfo( 'url' ); echo '/">
+				<div class="searchbox-form">' . 
 					// Check for WP 2.2 which doesn't know get_search_query
 					(function_exists('get_search_query') ? '
 					<input type="text" class="text inputblur" onfocus="this.value=\''.
@@ -264,42 +277,57 @@ if ( strpos($header_items,'%logo') !== FALSE ) {
 			</td>';
 		} 
 
-
-	$logo_area .= '</tr></table>';	
+	echo '</tr></table>';	
+	
+	$logo_area = ob_get_contents(); 
+	
+	ob_end_clean();
 }
-
 
 
 
 // Header Image
 if ( strpos($header_items,'%image') !== FALSE ) {
 
+	ob_start();
+	
 	$bfa_header_images = bfa_rotating_header_images();
-	$header_image = '<div id="imagecontainer" class="header-image-container" style="background: url(' . 
+	
+	echo '<div id="imagecontainer" class="header-image-container" style="background: url(' . 
 	$bfa_header_images[array_rand($bfa_header_images)] . ') ' . $bfa_ata['headerimage_alignment'] . ' no-repeat;">';
-	$header_image .= ($bfa_ata['header_image_clickable'] == "Yes" ? '<div class="clickable">
-		<a class="divclick" title="' . $bfa_ata['bloginfo_name'] . '" href ="' . $bfa_ata['get_option_home'] . '/">&nbsp;</a></div>' : '' );
+	
+	if ($bfa_ata['header_image_clickable'] == "Yes") {
+		echo '<div class="clickable"><a class="divclick" title="'; 
+		bloginfo('name'); echo '" href ="'; bloginfo('url'); echo '/">&nbsp;</a></div>';
+	}
 
-		if ( $bfa_ata['header_opacity_left'] != 0 AND $bfa_ata['header_opacity_left'] != '' ) { 
-			$header_image .= '<div class="opacityleft">&nbsp;</div>';
+	if ( $bfa_ata['header_opacity_left'] != 0 AND $bfa_ata['header_opacity_left'] != '' ) { 
+		echo '<div class="opacityleft">&nbsp;</div>';
+	}
+
+	if ( $bfa_ata['header_opacity_right'] != 0 AND $bfa_ata['header_opacity_right'] != '' ) { 
+		echo '<div class="opacityright">&nbsp;</div>';
+	}
+	// END: If Header Opacity 
+
+	if ( $bfa_ata['overlay_blog_title'] == "Yes" OR $bfa_ata['overlay_blog_tagline'] == "Yes" ) {
+		echo '<div class="titleoverlay">'; 
+		if ($bfa_ata['overlay_blog_title'] == "Yes") {
+			echo '<h' . $bfa_ata['h_blogtitle'] . ' class="blogtitle"><a href="'; bloginfo('url'); echo '/">'; 
+			bloginfo('name'); echo '</a></h' . $bfa_ata['h_blogtitle'] . '>';
 		}
-
-		if ( $bfa_ata['header_opacity_right'] != 0 AND $bfa_ata['header_opacity_right'] != '' ) { 
-			$header_image .= '<div class="opacityright">&nbsp;</div>';
+		if ($bfa_ata['overlay_blog_tagline'] == "Yes") {
+			echo '<p class="tagline">'; bloginfo('description'); echo '</p>';
 		}
-		// END: If Header Opacity 
+		echo '</div>';
+	}
 
-		if ( $bfa_ata['overlay_blog_title'] == "Yes" OR $bfa_ata['overlay_blog_tagline'] == "Yes" ) {
-			$header_image .= '<div class="titleoverlay">' . 
-			( $bfa_ata['overlay_blog_title'] == "Yes" ? '<h' . $bfa_ata['h_blogtitle'] . ' class="blogtitle"><a href="' . $bfa_ata['get_option_home'] . '/">' . 
-			$bfa_ata['bloginfo_name'] . '</a></h' . $bfa_ata['h_blogtitle'] . '>' : '' ) . ( $bfa_ata['overlay_blog_tagline'] == "Yes" ? '<p class="tagline">' . 
-			$bfa_ata['bloginfo_description'] . '</p>' : '' ) . '</div>';
-		}
+	echo '</div>';
 
-	$header_image .= '</div>';
-
+	$header_image = ob_get_contents(); 
+	
+	ob_end_clean();
 }
-
 
 
 
@@ -307,7 +335,6 @@ if ( strpos($header_items,'%image') !== FALSE ) {
 if ( strpos($header_items,'%bar1') !== FALSE ) {
 	$horizontal_bar1 = '<div class="horbar1">&nbsp;</div>';
 }
-
 
 
 // Horizontal bar 2
@@ -343,7 +370,6 @@ $header_output = array(
 	);
 
 
-
 // Parse PHP code
 if ( strpos($header_items,'<?php ') !== FALSE ) {
 	ob_start(); 
@@ -353,13 +379,11 @@ if ( strpos($header_items,'<?php ') !== FALSE ) {
 }
 
 
-
 $header_items = trim($header_items);
 #$header_items = str_replace(" ", "", $header_items);
 $final_header = str_replace($header_item_numbers, $header_output, $header_items);
 
-
-		
+	
 echo $final_header;
 }
 ?>

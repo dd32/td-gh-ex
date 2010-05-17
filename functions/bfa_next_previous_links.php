@@ -17,8 +17,11 @@ global $bfa_ata;
 
 if ( !is_single() AND !is_page() AND $bfa_ata['home_multi_next_prev'] != '' ) {
 
-	$nav_home_div_on = '<div class="home"><a href="' . $bfa_ata['get_option_home'] . '/">' . 
-	$bfa_ata['home_multi_next_prev'] . '</a></div>'; 
+	ob_start();
+		echo '<div class="home"><a href="'; bloginfo('url'); echo '/">' . 
+		$bfa_ata['home_multi_next_prev'] . '</a></div>'; 
+		$nav_home_div_on = ob_get_contents(); 
+	ob_end_clean();
 	
 	// for WP 2.5 and newer
 	if ( function_exists('is_front_page') ) {
@@ -51,10 +54,11 @@ if ( !is_single() AND !is_page() AND $bfa_ata['home_multi_next_prev'] != '' ) {
 if ( is_single() ) {
 
 	if ( $bfa_ata['home_single_next_prev'] != '' ) {
-
-		$nav_home_div_on_single = '<div class="home"><a href="' .
-        $bfa_ata['get_option_home'] . '/">' .
-		$bfa_ata['home_single_next_prev'] . '</a></div>';
+		ob_start(); 
+			echo '<div class="home"><a href="'; bloginfo('url'); echo '/">' .
+			$bfa_ata['home_single_next_prev'] . '</a></div>';
+			$nav_home_div_on_single= ob_get_contents(); 
+		ob_end_clean();
 		$nav_home_add_single = '-home';
 
 	} else {
@@ -92,7 +96,7 @@ global $bfa_ata;
 
 		} else {
 
-			echo '<div class="navigation-'.strtolower($location).'">
+			echo '<div class="clearfix navigation-'.strtolower($location).'">
 			<div class="older' . $nav_home_add . '">';
 
 			$bfa_ata['next_prev_orientation'] == 'Older Left, Newer Right' ? 
@@ -106,7 +110,7 @@ global $bfa_ata;
 			previous_posts_link($bfa_ata['multi_next_prev_newer']) : 
 			next_posts_link($bfa_ata['multi_next_prev_older']);
 
-			echo '</div><div class="clearboth"></div></div>';
+			echo '</div></div>';
 
 		}
 
@@ -129,25 +133,50 @@ global $bfa_ata;
     // don't display on WP Email pages
     intval(get_query_var('email')) != 1 )  {
 
-		echo '<div class="navigation-'.strtolower($location).'">
+		echo '<div class="clearfix navigation-'.strtolower($location).'">
 		<div class="older' . ($bfa_ata['home_single_next_prev'] != '' ?
         '-home' : '') . '">';
 
-		$bfa_ata['next_prev_orientation'] == 'Older Left, Newer Right' ? 
-		previous_post_link($bfa_ata['single_next_prev_older']) : 
-		next_post_link($bfa_ata['single_next_prev_newer']);
+		if ($bfa_ata['next_prev_orientation'] == 'Older Left, Newer Right') {
+			if($bfa_ata['single_next_prev_same_cat'] == "Yes") {
+				previous_post_link($bfa_ata['single_next_prev_older'], '%title', TRUE);
+			} else { 
+				previous_post_link($bfa_ata['single_next_prev_older']);
+			}
+		} else {
+			if($bfa_ata['single_next_prev_same_cat'] == "Yes") {
+				next_post_link($bfa_ata['single_next_prev_newer'], '%title', TRUE);
+			} else { 
+				next_post_link($bfa_ata['single_next_prev_newer']);
+			}
+		}
+		
+		echo ' &nbsp;</div>';
+		if ($bfa_ata['home_single_next_prev'] != '') { 
+			echo '<div class="home"><a href="'; bloginfo('url'); echo '/">' .
+			$bfa_ata['home_single_next_prev'] . '</a></div>';
+		}
+		echo '<div class="newer';
+		if ($bfa_ata['home_single_next_prev'] != '') {
+			echo '-home';
+		}
+		echo '">&nbsp; ';
 
-		echo ' &nbsp;</div>' . ($bfa_ata['home_single_next_prev'] != '' ?
-        '<div class="home"><a href="' . $bfa_ata['get_option_home'] . '/">' .
-        $bfa_ata['home_single_next_prev'] . '</a></div>' : '') .
-		'<div class="newer' . ($bfa_ata['home_single_next_prev'] != '' ?
-        '-home' : '') . '">&nbsp; ';
+		if ($bfa_ata['next_prev_orientation'] == 'Older Left, Newer Right') {
+			if($bfa_ata['single_next_prev_same_cat'] == "Yes") {
+				next_post_link($bfa_ata['single_next_prev_newer'], '%title', TRUE);
+			} else { 
+				next_post_link($bfa_ata['single_next_prev_newer']);
+			}
+		} else {
+			if($bfa_ata['single_next_prev_same_cat'] == "Yes") {
+				previous_post_link($bfa_ata['single_next_prev_older'], '%title', TRUE);
+			} else { 
+				previous_post_link($bfa_ata['single_next_prev_older']);
+			}
+		}
 
-		$bfa_ata['next_prev_orientation'] == 'Older Left, Newer Right' ? 
-		next_post_link($bfa_ata['single_next_prev_newer']) : 
-		previous_post_link($bfa_ata['single_next_prev_older']);
-
-		echo '</div><div class="clearboth"></div></div>';
+		echo '</div></div>';
 
 	}
 
@@ -170,7 +199,7 @@ global $bfa_ata;
     if ( get_comment_pages_count() > 1 ) {
 
       // Overall navigation container
-      echo '<div class="navigation-comments-'.strtolower($location).'">';
+      echo '<div class="clearfix navigation-comments-'.strtolower($location).'">';
 
     	if ( $bfa_ata['next_prev_comments_pagination'] == "Yes" ) {
 
@@ -195,7 +224,7 @@ global $bfa_ata;
     		next_comments_link($bfa_ata['comments_next_prev_newer']) :
     		previous_comments_link($bfa_ata['comments_next_prev_older']);
 
-    		echo '</div><div style="clear:both"></div>';
+    		echo '</div></div>';
 
     	}
       echo '</div>';

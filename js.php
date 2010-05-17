@@ -66,7 +66,8 @@ window.onload = RotateHeaderImages;
 /* JQUERY */
 
 jQuery(document).ready(function(){  
-  
+
+ 
 	/* For IE6 */
 	if (jQuery.browser.msie && /MSIE 6\.0/i.test(window.navigator.userAgent) && !/MSIE 7\.0/i.test(window.navigator.userAgent) && !/MSIE 8\.0/i.test(window.navigator.userAgent)) {
 

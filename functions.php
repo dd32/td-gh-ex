@@ -1,4 +1,5 @@
 <?php
+$bfa_ata_version = "3.4.9";
 
 // Load translation file 
 load_theme_textdomain('atahualpa');
@@ -8,6 +9,11 @@ load_theme_textdomain('atahualpa');
 #remove_filter('the_excerpt', 'wptexturize');
 #remove_filter('comment_text', 'wptexturize');
 #remove_filter('the_title', 'wptexturize');
+
+// get default theme options
+include_once (TEMPLATEPATH . '/functions/bfa_theme_options.php');
+// Load options
+include_once (TEMPLATEPATH . '/functions/bfa_get_options.php');
 
 // Sidebars:
 if ( function_exists('register_sidebar') ) {
@@ -46,7 +52,8 @@ if ( function_exists('register_sidebar') ) {
 			
 	
 	// Register additional extra widget areas:
-	$bfa_ata_extra_widget_areas = get_option('bfa_widget_areas');
+	# $bfa_ata_extra_widget_areas = get_option('bfa_widget_areas');
+	$bfa_ata_extra_widget_areas = $bfa_ata['bfa_widget_areas'];
 	
 	if ($bfa_ata_extra_widget_areas != '') {
 		foreach ($bfa_ata_extra_widget_areas as $widget_area) { 
@@ -61,13 +68,6 @@ if ( function_exists('register_sidebar') ) {
 	}
 } 
 
-// get default theme options
-include_once (TEMPLATEPATH . '/functions/bfa_theme_options.php');
-// Load options
-include_once (TEMPLATEPATH . '/functions/bfa_get_options.php');
-global $bfa_ata;
-$bfa_ata['name'] = "Atahualpa";
-$bfa_ata['version'] = "3.4.6";
 
 // Load functions
 include_once (TEMPLATEPATH . '/functions/bfa_header_config.php');
@@ -166,9 +166,7 @@ if ( !function_exists('paged_comments') ) {
 
 // remove WP default inline CSS for ".recentcomments a" from header
 function remove_wp_widget_recent_comments_style() {
-   #if ( has_filter('wp_head', 'wp_widget_recent_comments_style') ) {
       remove_filter('wp_head', 'wp_widget_recent_comments_style' );
-   #}
 }
 add_filter( 'wp_head', 'remove_wp_widget_recent_comments_style', 1 );
 
@@ -211,10 +209,10 @@ if ( function_exists('wp_generator') ) {
 }
 add_action('wp_head', 'bfa_debug');
 function bfa_debug() {
-	global $bfa_ata;
+	global $bfa_ata, $bfa_ata_version;
 	$debug = get_query_var('bfa_debug');
 	if ( $debug == 1 ) {
-		echo '<meta name="theme" content="' . $bfa_ata['name'] . ' ' . $bfa_ata['version'] . '" />' . "\n";
+		echo '<meta name="theme" content="Atahualpa ' . $bfa_ata_version . '" />' . "\n";
 		if ( function_exists('the_generator') ) { 
 			the_generator( apply_filters( 'wp_generator_type', 'xhtml' ) );
 		}
@@ -234,16 +232,26 @@ add_action('wp_head', 'bfa_inline_css_js');
 function add_js_link() {
 	global $bfa_ata;
 	if ( $bfa_ata['javascript_external'] == "External" ) { ?>
-	<script type="text/javascript" src="<?php echo $bfa_ata['get_option_home']; ?>/?bfa_ata_file=js"></script>
+	<script type="text/javascript" src="<?php bloginfo('url'); ?>/?bfa_ata_file=js"></script>
 	<?php } 
 }
 add_action('wp_head', 'add_js_link');
 
 function bfa_css_js_redirect() {
+	global $bfa_ata;
 	$bfa_ata_query_var_file = get_query_var('bfa_ata_file');
 	if ( $bfa_ata_query_var_file == "css" OR $bfa_ata_query_var_file == "js" ) {
-			global $bfa_ata;
 			include_once (TEMPLATEPATH . '/' . $bfa_ata_query_var_file . '.php');
+			exit; // this stops WordPress entirely
+	}
+	// Since 3.4.7: Import/Export Settings
+	if ( $bfa_ata_query_var_file == "settings-download" ) {
+			$uploadedfile = $_FILES['userfile'];
+			include_once (TEMPLATEPATH . '/download.php');
+			exit; // this stops WordPress entirely
+	}
+	if ( $bfa_ata_query_var_file == "settings-upload" ) {
+			include_once (TEMPLATEPATH . '/upload.php');
 			exit; // this stops WordPress entirely
 	}
 }
@@ -267,32 +275,51 @@ function bfa_inline_css_js() {
 
 // Custom Excerpts 
 function bfa_wp_trim_excerpt($text) { // Fakes an excerpt if needed
-	
-	global $bfa_ata;
 
-	if ( '' == $text ) {
-		$text = get_the_content('');
-		$text = apply_filters('the_content', $text);
-		$text = str_replace(']]>', ']]>', $text);
-		$text = strip_tags($text, $bfa_ata['dont_strip_excerpts']);
-		$excerpt_length = $bfa_ata['excerpt_length'];
-		$words = explode(' ', $text, $excerpt_length + 1);
-	} else {
+	global $bfa_ata, $post;
+
+	if ( '' <> $text ) {
+//  an excerpt exists, just stick on the 'custom read more' and we're done
 		$words = explode(' ', $text);
+		$custom_read_more = str_replace('%permalink%', get_permalink(), $bfa_ata['custom_read_more']);
+		$custom_read_more = str_replace('%title%', the_title('','',FALSE), $custom_read_more);
+		array_push($words, $custom_read_more);
+		$text = implode(' ', $words);
+		return $text;
 	}
 
-	if (count($words) > $excerpt_length) {	
+	$text = get_the_content('');
+	$words = explode(' ', $text);
+	$post_content = $post->post_content;
+	$post_content_length = count(explode(' ', $post_content));
+ 
+	if (count($words) < $post_content_length) {	
+//  use the teaser and its 'read more'
+		$bfa_ata_more_tag_final = str_replace("%post-title%", the_title('', '', false), $bfa_ata['more_tag']);
+		$text = the_content($bfa_ata_more_tag_final); 
+		return $text;
+	} else {
+// Build the excerpt from the post 
+
+		$text = apply_filters('the_content', $text);
+ 		$text = str_replace(']]>', ']]>', $text);
+		$text = strip_tags($text, $bfa_ata['dont_strip_excerpts']);
+		$excerpt_length = $bfa_ata['excerpt_length'];
+		$words = explode(' ', $text, $excerpt_length + 3);
+		array_pop($words);	
 		array_pop($words);	
 		$custom_read_more = str_replace('%permalink%', get_permalink(), $bfa_ata['custom_read_more']);
 		$custom_read_more = str_replace('%title%', the_title('','',FALSE), $custom_read_more);
 		array_push($words, $custom_read_more);
 		$text = implode(' ', $words);
-	}
+		return $text;
+		}
 
 	return $text;
 }
 remove_filter('get_the_excerpt', 'wp_trim_excerpt');
 add_filter('get_the_excerpt', 'bfa_wp_trim_excerpt');
+
 
 
 
@@ -328,6 +355,7 @@ after_title			HMTL after the title ... Default: </h3></div>
 
 */
 function bfa_widget_area($args = '') {
+	global $bfa_ata;
 	$defaults = array(
 		'cells' => 1,
 		'align' => 2,
@@ -342,7 +370,8 @@ function bfa_widget_area($args = '') {
 
 	$area_id = strtolower(str_replace(" ", "_", $r['name']));
 	
-	$bfa_widget_areas = get_option('bfa_widget_areas');
+	# $bfa_widget_areas = get_option('bfa_widget_areas');
+	$bfa_widget_areas = $bfa_ata['bfa_widget_areas'];	
 	
 	// If there are more than 1 cell, use a table, otherwise just a DIV:
 	if ( $r['cells'] > 1 ) {
@@ -424,7 +453,9 @@ function bfa_widget_area($args = '') {
 	
 	}
 
-	update_option("bfa_widget_areas", $bfa_widget_areas);
+	# update_option("bfa_widget_areas", $bfa_widget_areas);
+	$bfa_ata['bfa_widget_areas'] = $bfa_widget_areas;
+	update_option('bfa_ata4', $bfa_ata);
 
 }
 
@@ -450,13 +481,17 @@ function bfa_table_cell_align($align_type) {
 
 // Since 3.4.3: Delete Widget Areas
 function bfa_ata_reset_widget_areas() {
+	global $bfa_ata;
 	check_ajax_referer( "reset_widget_areas" );
 	$delete_areas = $_POST['delete_areas'];
-	$current_areas = get_option('bfa_widget_areas');
+	# $current_areas = get_option('bfa_widget_areas');
+	$current_areas = $bfa_ata['bfa_widget_areas'];
 	foreach ($delete_areas as $area_name) {
 		unset($current_areas[$area_name]);
 	}
-	update_option('bfa_widget_areas', $current_areas);
+	# update_option('bfa_widget_areas', $current_areas);
+	$bfa_ata['bfa_widget_areas'] = $current_areas;
+	update_option('bfa_ata4', $bfa_ata);
 	echo 'Custom widget areas deleted...'; 
 	die();
 }
@@ -486,17 +521,31 @@ function bfa_center_content($center_content) {
 
 }
 
-
+// Since 3.4.7 HTML Inserts with PHP, used for parsing PHP in css.php as well: 
+// Purpose is that PHP such as bloginfo('template_directory') can be used in CSS text areas so that image paths work across
+// Atahualpa installations & imported/exported files
+function bfa_html_inserts($custom_code) {
+	if($custom_code != '') {
+		if ( strpos($custom_code,'<?php ') !== FALSE ) {
+			ob_start(); 
+				eval('?>'.$custom_code); 
+				$custom_code = ob_get_contents(); 
+			ob_end_clean();
+		}
+		# echo apply_filters(widget_text, $custom_code); 
+		echo $custom_code; 
+	} 
+}
 
 /* CUSTOM BODY TITLE and meta title, meta keywords, meta description */
 
 
 /* Use the admin_menu action to define the custom boxes */
-if (is_admin())
-add_action('admin_menu', 'bfa_ata_add_custom_box');
+#if (is_admin())
+#add_action('admin_menu', 'bfa_ata_add_custom_box');
 
 /* Use the save_post action to do something with the data entered */
-add_action('save_post', 'bfa_ata_save_postdata');
+#add_action('save_post', 'bfa_ata_save_postdata');
 
 /* Use the publish_post action to do something with the data entered */
 #add_action('publish_post', 'bfa_ata_save_postdata');
@@ -524,7 +573,7 @@ function bfa_ata_inner_custom_box() {
 	
   // Use nonce for verification
 
-  echo '<input type="hidden" name="bfa_ata_noncename" id="bfa_ata_noncename" value="' . 
+	echo '<input type="hidden" name="bfa_ata_noncename" id="bfa_ata_noncename" value="' . 
     wp_create_nonce( plugin_basename(__FILE__) ) . '" />';
 
   // The actual fields for data entry
@@ -631,12 +680,14 @@ function bfa_ata_save_postdata( $post_id ) {
 
 
 // Since 3.4.3: Add Spam and Delete links to comments
+/* Since 3.4.7 deactivated because it's causing issues see http://forum.bytesforall.com/showthread.php?t=6742
 function delete_comment_link($id) {  
 	if (current_user_can('edit_post')) {  
 		echo '| <a href="'.admin_url("comment.php?action=cdc&c=$id").'">Delete</a> ';  
 		echo '| <a href="'.admin_url("comment.php?action=cdc&dt=spam&c=$id").'">Spam</a>';  
 	}  
 }  
+*/
 
 // Add "in-cat-catname" to body_class of single post pages
 /*
@@ -663,4 +714,43 @@ if ( function_exists( 'add_theme_support' ) ) { // Added in 2.9
 	add_image_size( 'single-post-thumbnail', 400, 9999 ); // Permalink thumbnail size
 }
 
+
+// Since 3.4.7: Import/Export Settings
+function bfa_import_settings_now() {
+	check_ajax_referer( "import_bfa_settings" );
+	$new_options = maybe_unserialize(file_get_contents($_FILES['userfile']['tmp_name']));
+	update_option('bfa_new_test', $new_options);
+	die();
+}
+// add_action ( 'wp_ajax_' + [name of "action" in jQuery.ajax, see functions/bfa_css_admin_head.php], [name of function])
+add_action( 'wp_ajax_import_bfa_settings_now', 'bfa_import_settings_now' );
+
+
+
+// file_get_contents/file_put_contents for PHP4
+if (!function_exists('file_get_contents')) {
+
+	function file_get_contents($filename) {
+		$fhandle = fopen($filename, "r");
+		if (!$fhandle) {
+			return false; 
+		} else {
+			$fcontents = fread($fhandle, filesize($filename));
+			fclose($fhandle);
+		}
+		return $fcontents;
+	}
+
+	function file_put_contents($filename, $data) {
+		$fhandle = @fopen($filename, 'w');
+		if (!$fhandle) {
+			return false;
+		} else {
+			$fcontents = fwrite($fhandle, $data);
+			fclose($fhandle);
+		}
+		return $fcontents;
+	}
+	
+}
 ?>

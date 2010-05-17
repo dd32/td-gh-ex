@@ -40,7 +40,7 @@ body {
 							inside the container */
 	margin: 0;
 	padding: 0;
-	<?php echo $bfa_ata['body_style']; ?>
+	<?php bfa_html_inserts($bfa_ata['body_style']); ?>
 	}
 
 a:link, a:visited, a:active {
@@ -67,35 +67,14 @@ ul ul, ul ol, ol ul, ol ol {
 	margin-top: 0;
 	margin-bottom: 0;
 	}
-
 /*
-h1 {font-size: 2.15em; font-weight: bold;}
-h2 {font-size: 1.85em; font-weight: bold;}
-h3 {font-size: 1.6em; font-weight: bold; }
-h4 {font-size: 1.4em;}
-h5 {font-size: 1.2em;}
-h6 {font-size: 1em;}
-*/
-
-h1, h2, h3, h4, h5, h6 {
-  color: #000;
-  display: block;
-  /* fixed for Non-PCs without Photoshop CS2+ */
-	font-smooth: always;
-}
-
 h1 { font-size: 34px; line-height: 1.2; margin: 0.3em 0 10px; }
 h2 { font-size: 28px; line-height: 1.3; margin: 1em 0 .2em; }
 h3 { font-size: 24px; line-height: 1.3; margin: 1em 0 .2em; }
 h4 { font-size: 19px; margin: 1.33em 0 .2em; }
 h5 { font-size: 1.3em; margin: 1.67em 0; font-weight: bold; }
 h6 { font-size: 1.15em; margin: 1.67em 0; font-weight: bold; }
-
-h1 a, h2 a, h1 a:link, h2 a:link, h1 a:visited, h2 a:visited { color: #000; }
-h1 a:active, h2 a:active, h1 a:focus, h2 a:focus, h1 a:hover, h2 a:hover { color: #669900; }
-
-
-
+*/
 code, pre {
 	font-family: "Courier New", Courier, monospace;
 	font-size: 1em;
@@ -252,14 +231,14 @@ table#logoarea td {
 table#logoarea {
 	width: 100%;
 	border-spacing: 0px;
-	<?php echo $bfa_ata['logoarea_style']; ?>
+	<?php bfa_html_inserts($bfa_ata['logoarea_style']); ?>
 	}
 	
 /*-------------------- LOGO -------------------------------*/
 
 img.logo {
 	display: block;
-	<?php echo $bfa_ata['logo_style']; ?>
+	<?php bfa_html_inserts($bfa_ata['logo_style']); ?>
 	}
 
 td.logoarea-logo {
@@ -272,7 +251,7 @@ td.logoarea-logo {
 h1.blogtitle,
 h2.blogtitle {
     display: block;
-	<?php echo $bfa_ata['blog_title_style']; ?>
+	<?php bfa_html_inserts($bfa_ata['blog_title_style']); ?>
 	font-smooth: always;
 	}
 	
@@ -298,7 +277,7 @@ h2.blogtitle a:hover {
 /*-------------------- BLOG TAGLINE -----------------------*/
 
 p.tagline { 
-	<?php echo $bfa_ata['blog_tagline_style']; ?>
+	<?php bfa_html_inserts($bfa_ata['blog_tagline_style']); ?>
 	}
 
 td.feed-icons {
@@ -329,11 +308,11 @@ a.comments-icon {
 a.comments-icon:link,
 a.commentss-icon:active,
 a.comments-icon:visited {
-	background: transparent url(<?php echo $bfa_ata['template_directory']; ?>/images/comment-gray.png) no-repeat scroll center left;
+	background: transparent url(<?php bloginfo('template_directory'); ?>/images/comment-gray.png) no-repeat scroll center left;
 }
 
 a.comments-icon:hover {
-	background: transparent url(<?php echo $bfa_ata['template_directory']; ?>/images/comment.png) no-repeat scroll center left;
+	background: transparent url(<?php bloginfo('template_directory'); ?>/images/comment.png) no-repeat scroll center left;
 }
 
 
@@ -353,11 +332,11 @@ a.posts-icon {
 a.posts-icon:link,
 a.posts-icon:active,
 a.posts-icon:visited {
-	background: transparent url(<?php echo $bfa_ata['template_directory']; ?>/images/rss-gray.png) no-repeat scroll center left;
+	background: transparent url(<?php bloginfo('template_directory'); ?>/images/rss-gray.png) no-repeat scroll center left;
 }
 
 a.posts-icon:hover {
-	background: transparent url(<?php echo $bfa_ata['template_directory']; ?>/images/rss.png) no-repeat scroll center left;
+	background: transparent url(<?php bloginfo('template_directory'); ?>/images/rss.png) no-repeat scroll center left;
 }
 
 /*-------------------- EMAIL SUBSCRIBE ICON ---------------*/
@@ -376,11 +355,11 @@ a.email-icon {
 a.email-icon:link,
 a.email-icon:active,
 a.email-icon:visited {
-	background: transparent url(<?php echo $bfa_ata['template_directory']; ?>/images/email-gray.png) no-repeat scroll center left;
+	background: transparent url(<?php bloginfo('template_directory'); ?>/images/email-gray.png) no-repeat scroll center left;
 }
 
 a.email-icon:hover {
-	background: transparent url(<?php echo $bfa_ata['template_directory']; ?>/images/email.png) no-repeat scroll center left;
+	background: transparent url(<?php bloginfo('template_directory'); ?>/images/email.png) no-repeat scroll center left;
 }
 	
 /*-------------------- SEARCH BOX IN HEADER ---------------*/	
@@ -391,7 +370,7 @@ td.search-box {
 	
 div.searchbox {
 	height: 35px;
-	<?php echo $bfa_ata['searchbox_style']; ?>
+	<?php bfa_html_inserts($bfa_ata['searchbox_style']); ?>
 	}
 
 div.searchbox-form {
@@ -414,11 +393,11 @@ div.horbar2 {
 	}
 
 div.horbar1 {
-	<?php echo $bfa_ata['horbar1']; ?>
+	<?php bfa_html_inserts($bfa_ata['horbar1']); ?>
 	}
 	
 div.horbar2 { 
-	<?php echo $bfa_ata['horbar2']; ?>
+	<?php bfa_html_inserts($bfa_ata['horbar2']); ?>
 	}	
 
 <?php if (strpos($bfa_ata['configure_header'],'%image')!==false) { ?>
@@ -507,12 +486,12 @@ a.divclick:hover {
 
 td#left {
 	vertical-align: top;
-	<?php echo $bfa_ata['left_sidebar_style']; ?>
+	<?php bfa_html_inserts($bfa_ata['left_sidebar_style']); ?>
 	}
 
 td#left-inner {
 	vertical-align: top;
-	<?php echo $bfa_ata['left_sidebar2_style']; ?>
+	<?php bfa_html_inserts($bfa_ata['left_sidebar2_style']); ?>
 	}
 	
 /* ------------------------------------------------------------------
@@ -521,12 +500,12 @@ td#left-inner {
 
 td#right {
 	vertical-align: top;
-	<?php echo $bfa_ata['right_sidebar_style']; ?>
+	<?php bfa_html_inserts($bfa_ata['right_sidebar_style']); ?>
 	}
 
 td#right-inner {
 	vertical-align: top;
-	<?php echo $bfa_ata['right_sidebar2_style']; ?>
+	<?php bfa_html_inserts($bfa_ata['right_sidebar2_style']); ?>
 	}
 	
 /* ------------------------------------------------------------------
@@ -536,7 +515,7 @@ td#right-inner {
 td#middle {
 	vertical-align: top;
 	width: 100%;
-	<?php echo $bfa_ata['center_column_style']; ?>
+	<?php bfa_html_inserts($bfa_ata['center_column_style']); ?>
 	}
 
 	
@@ -546,15 +525,15 @@ td#middle {
 
 td#footer {
 	width: auto;
-	<?php echo $bfa_ata['footer_style']; ?>
+	<?php bfa_html_inserts($bfa_ata['footer_style']); ?>
 	}
 
 td#footer a:link, td#footer a:visited, td#footer a:active {
-	<?php echo $bfa_ata['footer_style_links']; ?>
+	<?php bfa_html_inserts($bfa_ata['footer_style_links']); ?>
 	}
 
 td#footer a:hover {
-	<?php echo $bfa_ata['footer_style_links_hover']; ?>
+	<?php bfa_html_inserts($bfa_ata['footer_style_links_hover']); ?>
 	}
 	
 	
@@ -568,13 +547,13 @@ div.widget {
 					menus but not the other widgets. With 100% IE
 					will remove sidebar borders if select menu is
 					too wide */
-	<?php echo $bfa_ata['widget_container']; ?>
+	<?php bfa_html_inserts($bfa_ata['widget_container']); ?>
 	}
 
 div.widget-title {
 	display: block;
 	width: auto;
-	<?php echo $bfa_ata['widget_title_box']; ?>
+	<?php bfa_html_inserts($bfa_ata['widget_title_box']); ?>
 	}
 
 div.widget-title h3,
@@ -584,7 +563,7 @@ td#left ul.tw-nav-list,
 td#right ul.tw-nav-list {
 	padding:0;
 	margin:0;
-	<?php echo $bfa_ata['widget_title']; ?>
+	<?php bfa_html_inserts($bfa_ata['widget_title']); ?>
 	}
 
 /* Since 3.4 "div-widget-content" is gone for better plugin compatibility. 
@@ -594,7 +573,7 @@ div.widget ul,
 div.textwidget {
 	display: block;
 	width: auto;
-	<?php echo $bfa_ata['widget_content']; ?>
+	<?php bfa_html_inserts($bfa_ata['widget_content']); ?>
 	}
 
 	
@@ -841,42 +820,42 @@ table.subscribe td.comment-text {
 
 div.post, div.page {
 	display: block;
-	<?php echo $bfa_ata['post_container_style']; ?>
+	<?php bfa_html_inserts($bfa_ata['post_container_style']); ?>
 	}
 
 /* additonal styles for sticky posts */
 
 div.sticky {
-	<?php echo $bfa_ata['post_container_sticky_style']; ?>
+	<?php bfa_html_inserts($bfa_ata['post_container_sticky_style']); ?>
 	}
 
 /*-------------------- POST KICKER ------------------------*/
 
 div.post-kicker {
-	<?php echo $bfa_ata['post_kicker_style']; ?>
+	<?php bfa_html_inserts($bfa_ata['post_kicker_style']); ?>
 	}
 
 div.post-kicker a:link, 
 div.post-kicker a:visited, 
 div.post-kicker a:active {
-	<?php echo $bfa_ata['post_kicker_style_links']; ?>
+	<?php bfa_html_inserts($bfa_ata['post_kicker_style_links']); ?>
 	}
 
 div.post-kicker a:hover {
-	<?php echo $bfa_ata['post_kicker_style_links_hover']; ?>
+	<?php bfa_html_inserts($bfa_ata['post_kicker_style_links_hover']); ?>
 	}
 
 /*-------------------- POST HEADLINE ----------------------*/
 
 div.post-headline {
-	<?php echo $bfa_ata['post_headline_style']; ?>
+	<?php bfa_html_inserts($bfa_ata['post_headline_style']); ?>
 	}
 
 div.post-headline h1,
 div.post-headline h2 {
     margin: 0;
     padding: 0;
-	<?php echo $bfa_ata['post_headline_style_text']; ?>
+	<?php bfa_html_inserts($bfa_ata['post_headline_style_text']); ?>
 	}
 
 div.post-headline h2 a:link, 
@@ -885,36 +864,36 @@ div.post-headline h2 a:active,
 div.post-headline h1 a:link, 
 div.post-headline h1 a:visited, 
 div.post-headline h1 a:active {
-	<?php echo $bfa_ata['post_headline_style_links']; ?>
+	<?php bfa_html_inserts($bfa_ata['post_headline_style_links']); ?>
 	}
 
 div.post-headline h2 a:hover,
 div.post-headline h1 a:hover {
-	<?php echo $bfa_ata['post_headline_style_links_hover']; ?>
+	<?php bfa_html_inserts($bfa_ata['post_headline_style_links_hover']); ?>
 	}
 
 
 /*-------------------- POST BYLINE ------------------------*/
 
 div.post-byline {
-	<?php echo $bfa_ata['post_byline_style']; ?>
+	<?php bfa_html_inserts($bfa_ata['post_byline_style']); ?>
 	}
 
 div.post-byline a:link, 
 div.post-byline a:visited, 
 div.post-byline a:active {
-	<?php echo $bfa_ata['post_byline_style_links']; ?>
+	<?php bfa_html_inserts($bfa_ata['post_byline_style_links']); ?>
 	}
 
 div.post-byline a:hover {
-	<?php echo $bfa_ata['post_byline_style_links_hover']; ?>
+	<?php bfa_html_inserts($bfa_ata['post_byline_style_links_hover']); ?>
 	}
 
 
 /*-------------------- POST BODY COPY ---------------------*/
 	
 div.post-bodycopy {
-	<?php echo $bfa_ata['post_bodycopy_style']; ?>
+	<?php bfa_html_inserts($bfa_ata['post_bodycopy_style']); ?>
 	}
 	
 div.post-bodycopy p {
@@ -941,17 +920,17 @@ div.post-pagination {
 div.post-footer {
 	clear:both; 
 	display: block;	
-	<?php echo $bfa_ata['post_footer_style']; ?>
+	<?php bfa_html_inserts($bfa_ata['post_footer_style']); ?>
 	}
 
 div.post-footer a:link, 
 div.post-footer a:visited, 
 div.post-footer a:active {
-	<?php echo $bfa_ata['post_footer_style_links']; ?>
+	<?php bfa_html_inserts($bfa_ata['post_footer_style_links']); ?>
 	}	
 
 div.post-footer a:hover {
-	<?php echo $bfa_ata['post_footer_style_links_hover']; ?>
+	<?php bfa_html_inserts($bfa_ata['post_footer_style_links_hover']); ?>
 	}
 
 /*-------------------- ICONS in KICKER, BYLINE & FOOTER ---*/
@@ -981,38 +960,28 @@ span.post-ratings {
 ------------------------------------------------------------------ */
 
 div.navigation-top {
-	display: block;
-	width: 100%; 
-	<?php echo $bfa_ata['next_prev_style_top']; ?>
+	<?php bfa_html_inserts($bfa_ata['next_prev_style_top']); ?>
 	}
 
 div.navigation-middle {
-	display: block; 
-	width: 100%; 
-	<?php echo $bfa_ata['next_prev_style_middle']; ?>
+	<?php bfa_html_inserts($bfa_ata['next_prev_style_middle']); ?>
 	}
 	
 div.navigation-bottom {
-	display: block; 
-	width: 100%; 
-	<?php echo $bfa_ata['next_prev_style_bottom']; ?>
+	<?php bfa_html_inserts($bfa_ata['next_prev_style_bottom']); ?>
 	}
 
 div.navigation-comments-above {
-	display: block; 
-	width: 100%; 
-	<?php if (isset($bfa_ata['next_prev_style_comments_above'])) echo $bfa_ata['next_prev_style_comments_above']; ?>
+	<?php if (isset($bfa_ata['next_prev_style_comments_above'])) bfa_html_inserts($bfa_ata['next_prev_style_comments_above']); ?>
 	}
 	
 div.navigation-comments-below {
-	display: block; 
-	width: 100%; 
-	<?php if (isset($bfa_ata['next_prev_style_comments_below'])) echo $bfa_ata['next_prev_style_comments_below']; ?>
+	<?php if (isset($bfa_ata['next_prev_style_comments_below'])) bfa_html_inserts($bfa_ata['next_prev_style_comments_below']); ?>
 	}
 	
 div.older {
 	float: left; 
-	width: 49%; 
+	width: 48%; 
 	text-align: left; 
 	margin:0; 
 	padding:0;
@@ -1020,7 +989,7 @@ div.older {
 	
 div.newer {
 	float:right; 
-	width: 49%; 
+	width: 48%; 
 	text-align: right; 
 	margin:0; 
 	padding:0; 
@@ -1028,7 +997,7 @@ div.newer {
 
 div.older-home {
 	float: left; 
-	width: 45%; 
+	width: 44%; 
 	text-align: left; 
 	margin:0; 
 	padding:0;
@@ -1036,7 +1005,7 @@ div.older-home {
 
 div.newer-home {
 	float:right; 
-	width: 45%; 
+	width: 44%; 
 	text-align: right; 
 	margin:0; 
 	padding:0; 
@@ -1044,7 +1013,7 @@ div.newer-home {
 
 div.home {
 	float: left; 
-	width: 9%; 
+	width: 8%; 
 	text-align: center;  
 	margin:0; 
 	padding:0;
@@ -1079,6 +1048,10 @@ form p {
 	margin: 5px 0 0 0; 
 	padding: 0; 
 	}
+
+div.xhtml-tags p {
+margin: 0;
+}
 	
 label {
 	margin-right: 0.5em; 
@@ -1096,9 +1069,9 @@ input.TextField,
 textarea {
 	padding: 3px;
 	<?php echo $bfa_ata['form_input_field_style'] . "\n"; ?>
-	<?php echo ($bfa_ata['form_input_field_background'] != "" ? 
-	"background: url(" . $bfa_ata['template_directory'] . "/images/" . 
-	$bfa_ata['form_input_field_background'] . ") top left no-repeat;" : ""); ?>
+	<?php if ($bfa_ata['form_input_field_background'] != "") {  
+	echo "background: url("; bloginfo('template_directory'); echo "/images/" . 
+	$bfa_ata['form_input_field_background'] . ") top left no-repeat;"; } ?>
 	}
 
 textarea {
@@ -1118,7 +1091,7 @@ input.inputfocus {
 	
 <?php if ($bfa_ata['highlight_forms'] == "Yes") { ?>
 input.highlight, textarea.highlight {
-	<?php echo $bfa_ata['highlight_forms_style']; ?>
+	<?php bfa_html_inserts($bfa_ata['highlight_forms_style']); ?>
 	}
 <?php } ?>
 
@@ -1127,19 +1100,31 @@ input.highlight, textarea.highlight {
 	padding: 0 2px;
 	height: 24px;
 	line-height: 16px;
-	<?php echo $bfa_ata['button_style']; ?>
+	<?php bfa_html_inserts($bfa_ata['button_style']); ?>
 	}
 	
 .buttonhover {
 	padding: 0 2px;
 	cursor: pointer;
-	<?php echo $bfa_ata['button_style_hover']; ?>
+	<?php bfa_html_inserts($bfa_ata['button_style_hover']); ?>
 	}
 
 /* comment submit button */
 
+/* IE button width/padding fix */
+
+form#commentform input#submit {
+    padding: 0 .25em;
+    width: 0;
+    overflow:visible;
+}
+
+form#commentform input#submit[class] { /*ie ignores [class]*/
+    width: auto;
+}
+
 form#commentform input#submit	{
-	<?php echo $bfa_ata['submit_button_style']; ?>
+	<?php bfa_html_inserts($bfa_ata['submit_button_style']); ?>
 	}
 	
 /* ------------------------------------------------------------------
@@ -1171,14 +1156,14 @@ blockquote {
 	height: 1%;
 	display: block;
 	clear: both;
-	<?php echo $bfa_ata['blockquote_style']; ?>	
+	<?php bfa_html_inserts($bfa_ata['blockquote_style']); ?>	
 	}
 	
 blockquote blockquote {
 	height: 1%;
 	display: block;
 	clear: both;
-	<?php echo $bfa_ata['blockquote_style_2nd_level']; ?>
+	<?php bfa_html_inserts($bfa_ata['blockquote_style_2nd_level']); ?>
 	}
 
 
@@ -1189,33 +1174,33 @@ blockquote blockquote {
 /*-------------------- TABLES IN POSTS --------------------*/
 
 div.post table {
-	<?php echo $bfa_ata['table']; ?>
+	<?php bfa_html_inserts($bfa_ata['table']); ?>
 	}
 	
 div.post table caption {
 	width: auto;
 	margin: 0 auto;
-	<?php echo $bfa_ata['table_caption']; ?>
+	<?php bfa_html_inserts($bfa_ata['table_caption']); ?>
 	}
 	
 div.post table th {
-	<?php echo $bfa_ata['table_th']; ?>
+	<?php bfa_html_inserts($bfa_ata['table_th']); ?>
 	}
 	
 div.post table td {
-	<?php echo $bfa_ata['table_td']; ?>
+	<?php bfa_html_inserts($bfa_ata['table_td']); ?>
 	}
 
 div.post table tfoot td {
-	<?php echo $bfa_ata['table_tfoot_td']; ?>
+	<?php bfa_html_inserts($bfa_ata['table_tfoot_td']); ?>
 	}
 	
 div.post table tr.alt td {
-	<?php echo $bfa_ata['table_zebra_td']; ?>
+	<?php bfa_html_inserts($bfa_ata['table_zebra_td']); ?>
 	}
 
 div.post table tr.over td {
-	<?php echo $bfa_ata['table_hover_td']; ?>
+	<?php bfa_html_inserts($bfa_ata['table_hover_td']); ?>
 	}
 
 /*-------------------- CALENDAR WIDGET --------------------*/
@@ -1285,7 +1270,7 @@ table#wp-calendar td a {
 
 /* whole respond area */
 div#respond {
-	<?php echo $bfa_ata['comment_form_style']; ?> 
+	<?php bfa_html_inserts($bfa_ata['comment_form_style']); ?> 
 	}
 
 p.thesetags {
@@ -1530,7 +1515,7 @@ abbr em {
 	border-top: dashed 1px #aaa !important;
 	display: -moz-inline-box !important; /* Firefox 2 doesn't know default "inline-block" */
 	display: inline-block !important;
-	background: url(<?php echo $bfa_ata['template_directory']; ?>/images/commentluv.gif) 0% 90% no-repeat;
+	background: url(<?php bloginfo('template_directory'); ?>/images/commentluv.gif) 0% 90% no-repeat;
 	margin-top: 8px;
 	padding:  5px 5px 2px 20px !important;
 	font-style: normal;
@@ -1725,7 +1710,7 @@ img {
 }
 
 .post img { 
-	<?php echo $bfa_ata['post_image_style']; ?> 
+	<?php bfa_html_inserts($bfa_ata['post_image_style']); ?> 
 	}
 
 .post img.size-full {
@@ -1809,7 +1794,7 @@ div.archives-page img {
 	width: auto 100%;
 	height: auto;  /* FF3 needs "auto", IE6 needs "100%", see next style*/
 	display: block;
-	<?php echo $bfa_ata['post_image_caption_style']; ?> 
+	<?php bfa_html_inserts($bfa_ata['post_image_caption_style']); ?> 
 	}
 
 /* for imges inside a caption container IE6 does not
@@ -1827,7 +1812,7 @@ required as jQuery sets the height for caption'ed images too */
 	}
 	
 .wp-caption p.wp-caption-text {
-	<?php echo $bfa_ata['image_caption_text']; ?>
+	<?php bfa_html_inserts($bfa_ata['image_caption_text']); ?>
 	}
 
 /* ------------------------------------------------------------------
@@ -1835,7 +1820,7 @@ required as jQuery sets the height for caption'ed images too */
 ------------------------------------------------------------------ */
 
 img.wp-post-image {
-	<?php echo $bfa_ata['post_thumbnail_css']; ?>
+	<?php bfa_html_inserts($bfa_ata['post_thumbnail_css']); ?>
 }
 
 /* ------------------------------------------------------------------
@@ -1858,7 +1843,7 @@ img.wp-smiley {
 img.avatar {
 	float: left; 
 	display: block;
-	<?php echo $bfa_ata['avatar_style']; ?> 
+	<?php bfa_html_inserts($bfa_ata['avatar_style']); ?> 
 	}
 	
 
@@ -2380,7 +2365,6 @@ div#menu1 ul.rMenu li a:visited,
 div#menu1 ul.rMenu li a:active {
 	text-decoration: none;
 	margin: 0;
-	padding: 4px 5px;	
 	color: #<?php echo $bfa_ata['page_menu_bar_link_color']; ?>;
 	text-transform: <?php echo $bfa_ata['page_menu_transform']; ?>;
 	font: <?php echo $bfa_ata['page_menu_font']; ?>;  
@@ -2391,7 +2375,6 @@ div#menu2 ul.rMenu li a:visited,
 div#menu2 ul.rMenu li a:active {
 	text-decoration: none;
 	margin:0;
-	padding: 4px 5px;	
 	color: #<?php echo $bfa_ata['cat_menu_bar_link_color']; ?>;
 	text-transform: <?php echo $bfa_ata['cat_menu_transform']; ?>;
 	font: <?php echo $bfa_ata['cat_menu_font']; ?>; 
@@ -2483,7 +2466,7 @@ div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expa
 	padding-left: 5px;
 	background-repeat: no-repeat;
 	background-position: 100% 50%;
-	background-image: url(<?php echo $bfa_ata['template_directory']; ?>/images/expand-right<?php echo ($bfa_ata['page_menu_arrows'] == "white" ? "-white" : ""); ?>.gif);
+	background-image: url(<?php bloginfo('template_directory'); ?>/images/expand-right<?php echo ($bfa_ata['page_menu_arrows'] == "white" ? "-white" : ""); ?>.gif);
 	}
 div#menu2 ul.rMenu li.rMenu-expand a,
 div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand a,
@@ -2499,7 +2482,7 @@ div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expa
 	padding-left: 5px;
 	background-repeat: no-repeat;
 	background-position: 100% 50%;
-	background-image: url(<?php echo $bfa_ata['template_directory']; ?>/images/expand-right<?php echo ($bfa_ata['cat_menu_arrows'] == "white" ? "-white" : ""); ?>.gif);
+	background-image: url(<?php bloginfo('template_directory'); ?>/images/expand-right<?php echo ($bfa_ata['cat_menu_arrows'] == "white" ? "-white" : ""); ?>.gif);
 	}
 	
 ul.rMenu-vRight li.rMenu-expand a,
@@ -2525,7 +2508,7 @@ ul.rMenu-hRight li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand 
 	{
 	padding-right: 5px;
 	padding-left: 20px;
-	background-image: url(<?php echo $bfa_ata['template_directory']; ?>/images/expand-left.gif);
+	background-image: url(<?php bloginfo('template_directory'); ?>/images/expand-left.gif);
 	background-repeat: no-repeat;
 	background-position: -5px 50%;
 	}
@@ -2536,13 +2519,13 @@ div#menu1 ul.rMenu-hor li.rMenu-expand a {
 	padding-left: 5px;	/* reset padding */
 	padding-right: 15px !important;
 	background-position: 100% 50%;
-	background-image: url(<?php echo $bfa_ata['template_directory']; ?>/images/expand-down<?php echo ($bfa_ata['page_menu_arrows'] == "white" ? "-white" : ""); ?>.gif);
+	background-image: url(<?php bloginfo('template_directory'); ?>/images/expand-down<?php echo ($bfa_ata['page_menu_arrows'] == "white" ? "-white" : ""); ?>.gif);
 	}
 div#menu2 ul.rMenu-hor li.rMenu-expand a {
 	padding-left: 5px;	/* reset padding */
 	padding-right: 15px !important;
 	background-position: 100% 50%;
-	background-image: url(<?php echo $bfa_ata['template_directory']; ?>/images/expand-down<?php echo ($bfa_ata['cat_menu_arrows'] == "white" ? "-white" : ""); ?>.gif);
+	background-image: url(<?php bloginfo('template_directory'); ?>/images/expand-down<?php echo ($bfa_ata['cat_menu_arrows'] == "white" ? "-white" : ""); ?>.gif);
 	}
 	
 	
@@ -3081,18 +3064,6 @@ html:/* */not([lang*=""])  div.rMenu-center ul.rMenu li a:hover {
 
 
 
-
-<?php if ( $bfa_ata['pngfix_selectors'] != '' ) { ?>
-/* ------------------------------------------------------------------
----------- IE6 PNG FIX ----------------------------------------------
------------------------------------------------------------------- */
-	
-* html <?php echo $bfa_ata['pngfix_selectors']; ?> { 
-	behavior: url("<?php echo $bfa_ata['template_directory']; ?>/js/iepngfix.php") 
-}
-<?php } ?>
-
-
 /* ------------------------------------------------------------------
 ---------- HACKS: Clearfix & others ---------------------------------
 ------------------------------------------------------------------ */
@@ -3130,7 +3101,7 @@ Also, adding height and font-size for IE6 */
 
 
 <?php 
-echo $bfa_ata['html_inserts_css']; 
+bfa_html_inserts($bfa_ata['html_inserts_css']); 
 if ( $bfa_ata['css_compress'] == "Yes" AND 
 !( $bfa_ata_debug == 1 AND $bfa_ata['allow_debug'] == "Yes" ) ) {
 	ob_end_flush();

@@ -5,43 +5,44 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 <?php /* if index.php or another page template (copied from index.php) was not used
 (i.e. by a plugin such as WPG2), the global $bfa_ata would be empty */
-global $bfa_ata; if ($bfa_ata == "") include_once (TEMPLATEPATH . '/functions/bfa_get_options.php'); ?>
+global $bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2; 
+if ($bfa_ata == "") include_once (TEMPLATEPATH . '/functions/bfa_get_options.php'); ?>
 <?php if ( $bfa_ata['css_external'] == "External" ) { ?>
-<link rel="stylesheet" href="<?php echo $bfa_ata['get_option_home']; ?>/?bfa_ata_file=css" type="text/css" media="all" />
+<link rel="stylesheet" href="<?php bloginfo('url'); ?>/?bfa_ata_file=css" type="text/css" media="all" />
 <?php } ?>
 <?php include (TEMPLATEPATH . '/functions/bfa_meta_tags.php'); ?>
-<?php if ($bfa_ata['favicon_file'] != "") { ?><link rel="shortcut icon" href="<?php echo $bfa_ata['template_directory']; ?>/images/favicon/<?php echo $bfa_ata['favicon_file']; ?>" /><?php } ?>
+<?php if ($bfa_ata['favicon_file'] != "") { ?><link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/images/favicon/<?php echo $bfa_ata['favicon_file']; ?>" /><?php } ?>
 <?php if ( is_single() OR is_page() ) { ?><link rel="canonical" href="<?php the_permalink(); ?>" /><?php } ?>
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 <link rel="alternate" type="application/atom+xml" title="<?php bloginfo('name'); ?> Atom Feed" href="<?php bloginfo('atom_url'); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-<?php 	wp_enqueue_script( 'jquery' ); ?>
+<?php wp_enqueue_script( 'jquery' ); ?>
 <?php if ( function_exists('wp_list_comments') AND is_singular() ) { 	wp_enqueue_script( 'comment-reply' ); } ?>
 <?php wp_head(); ?>
-<?php echo ($bfa_ata['html_inserts_header'] != "" ? apply_filters(widget_text, $bfa_ata['html_inserts_header']) : ''); ?>
+<?php bfa_html_inserts($bfa_ata['html_inserts_header']); ?>
 <?php if ($bfa_ata['pngfix_selectors'] != "") { ?>
 <!--[if IE 6]>
-<script type="text/javascript" src="<?php echo $bfa_ata['template_directory']; ?>/js/DD_roundies.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/DD_roundies.js"></script>
 <script type="text/javascript">DD_roundies.addRule('<?php echo $bfa_ata['pngfix_selectors']; ?>');</script>
 <![endif]-->
 <?php } ?>
 </head>
-<body <?php body_class(); ?><?php echo ($bfa_ata['html_inserts_body_tag'] != "" ? ' ' . apply_filters(widget_text, $bfa_ata['html_inserts_body_tag']) : ''); ?>>
-<?php echo ($bfa_ata['html_inserts_body_top'] != "" ? apply_filters(widget_text, $bfa_ata['html_inserts_body_top']) : ''); ?>
+<body <?php body_class(); ?><?php if ($bfa_ata['html_inserts_body_tag'] != "") { echo ' '; bfa_html_inserts($bfa_ata['html_inserts_body_tag']); } ?>>
+<?php bfa_html_inserts($bfa_ata['html_inserts_body_top']); ?>
 <div id="wrapper">
 <div id="container">
 <table id="layout" border="0" cellspacing="0" cellpadding="0">
 <colgroup>
-<?php if ( $bfa_ata['left_col'] == "on" ) { ?><col class="colone" /><?php } ?>
-<?php if ( $bfa_ata['left_col2'] == "on" ) { ?><col class="colone-inner" /><?php } ?>
+<?php if ( $left_col == "on" ) { ?><col class="colone" /><?php } ?>
+<?php if ( $left_col2 == "on" ) { ?><col class="colone-inner" /><?php } ?>
 <col class="coltwo" />
-<?php if ( $bfa_ata['right_col2'] == "on" ) { ?><col class="colthree-inner" /><?php } ?>
-<?php if ( $bfa_ata['right_col'] == "on" ) { ?><col class="colthree" /><?php } ?>
+<?php if ( $right_col2 == "on" ) { ?><col class="colthree-inner" /><?php } ?>
+<?php if ( $right_col == "on" ) { ?><col class="colthree" /><?php } ?>
 </colgroup> 
 	<tr>
 
 		<!-- Header -->
-		<td id="header" colspan="<?php echo $bfa_ata['cols']; ?>">
+		<td id="header" colspan="<?php echo $cols; ?>">
 
 		<?php bfa_header_config($bfa_ata['configure_header']); ?>
 
@@ -53,7 +54,7 @@ global $bfa_ata; if ($bfa_ata == "") include_once (TEMPLATEPATH . '/functions/bf
 	<!-- Main Body -->	
 	<tr id="bodyrow">
 
-		<?php if ( $bfa_ata['left_col'] == "on" ) { ?>
+		<?php if ( $left_col == "on" ) { ?>
 		<!-- Left Sidebar -->
 		<td id="left">
 
@@ -78,7 +79,7 @@ global $bfa_ata; if ($bfa_ata == "") include_once (TEMPLATEPATH . '/functions/bf
 		<!-- / Left Sidebar -->
 		<?php } ?>
 
-		<?php if ( $bfa_ata['left_col2'] == "on" ) { ?>
+		<?php if ( $left_col2 == "on" ) { ?>
 		<!-- Left INNER Sidebar -->
 		<td id="left-inner">
 

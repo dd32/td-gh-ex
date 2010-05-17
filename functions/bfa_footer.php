@@ -24,8 +24,11 @@ if ( strpos($footer_content,'%page') !== FALSE ) {
 
 // home link
 if ( strpos($footer_content,'%home%') !== FALSE ) {
-	$footer_content = str_replace("%home%",  '<a href="' . $bfa_ata['get_option_home'] . '/">' . 
-	$bfa_ata['bloginfo_name'] . '</a>', $footer_content);
+	ob_start();
+		echo '<a href="'; bloginfo('url'); echo '/">'; bloginfo('name'); echo '</a>';
+		$footer_home_link = ob_get_contents(); 
+	ob_end_clean();	
+	$footer_content = str_replace("%home%", $footer_home_link, $footer_content);
 }
 
 
@@ -90,14 +93,22 @@ if ( strpos($footer_content,'%admin%') !== FALSE ) {
 
 // RSS link
 if ( strpos($footer_content,'%rss%') !== FALSE ) {
-	$footer_content = str_replace("%rss%",  $bfa_ata['bloginfo_rss2_url'], $footer_content);
+	ob_start();
+		bloginfo('rss2_url');
+		$footer_rss2_url = ob_get_contents(); 
+	ob_end_clean();
+	$footer_content = str_replace("%rss%", $footer_rss2_url, $footer_content);
 }
 
 
 
 // Comments RSS link
 if ( strpos($footer_content,'%comments-rss%') !== FALSE ) {
-	$footer_content = str_replace("%comments-rss%",  $bfa_ata['bloginfo_comments_rss2_url'], $footer_content);
+	ob_start();
+		bloginfo('comments_rss2_url');
+		$footer_comments_rss2_url = ob_get_contents(); 
+	ob_end_clean();
+	$footer_content = str_replace("%comments-rss%", $footer_comments_rss2_url, $footer_content);
 }
 
 

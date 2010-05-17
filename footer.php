@@ -1,11 +1,11 @@
 <?php /* if index.php or another page template (copied from index.php) was not used
 (i.e. by a plugin such as WPG2), the global $bfa_ata will be empty */
-global $bfa_ata; if ($bfa_ata == "")
-	include_once (TEMPLATEPATH . '/functions/bfa_get_options.php'); ?>
+global $bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2; 
+if ($bfa_ata == "") include_once (TEMPLATEPATH . '/functions/bfa_get_options.php'); ?>
 </td>
 <!-- / Main Column -->
 
-<?php if ( $bfa_ata['right_col2'] == "on" ) { ?>
+<?php if ( $right_col2 == "on" ) { ?>
 <!-- Right Inner Sidebar -->
 <td id="right-inner">
 
@@ -20,7 +20,7 @@ global $bfa_ata; if ($bfa_ata == "")
 <!-- / Right Inner Sidebar -->
 <?php } ?>
 
-<?php if ( $bfa_ata['right_col'] == "on" ) { ?>
+<?php if ( $right_col == "on" ) { ?>
 <!-- Right Sidebar -->
 <td id="right">
 
@@ -72,7 +72,7 @@ if ($r->have_posts()) : ?>
 <tr>
 
 <!-- Footer -->
-<td id="footer" colspan="<?php echo $bfa_ata['cols']; ?>">
+<td id="footer" colspan="<?php echo $cols; ?>">
 
     <p>
     <?php echo bfa_footer($bfa_ata['footer_style_content']); ?>
@@ -98,6 +98,6 @@ if ($r->have_posts()) : ?>
 </table><!-- / layout -->
 </div><!-- / container -->
 </div><!-- / wrapper -->
-<?php echo ($bfa_ata['html_inserts_body_bottom'] != "" ? apply_filters(widget_text, $bfa_ata['html_inserts_body_bottom']) : ''); ?>
+<?php bfa_html_inserts($bfa_ata['html_inserts_body_bottom']); ?>
 </body>
 </html>

@@ -13,6 +13,12 @@ global $bfa_ata;
 ?>
 
 <?php // If there are any comments
+$bfa_page_comment_open = 0;  
+if ( is_page() and ('open' == $post->comment_status)) {
+	 $bfa_page_comment_open = 1; }
+else {
+	$bfa_page_comment_open = 0;} 
+
 if ( have_comments() ) : ?>
 
 	<a name="comments"></a><!-- named anchor for skip links -->
@@ -65,7 +71,7 @@ if ( have_comments() ) : ?>
 <?php else : // If there are NO comments  ?>
 
 	<?php // If comments are open, but there are no comments:
-	if ('open' == $post->comment_status) : ?>
+if ( ('open' == $post->comment_status) ) : ?>
 		<!-- .... -->
 
 	<?php else : // If comments are closed: ?>
@@ -76,9 +82,10 @@ if ( have_comments() ) : ?>
 
 <?php endif; // END of "If there are NO comments" ?>
 
-<?php // If comments are open
-if ('open' == $post->comment_status) : ?>
 
+<?php // If comments are open
+if ( ('open' == $post->comment_status) 
+OR ( is_page() and ($bfa_page_comment_open)) ) : ?>
 
 	<?php // If Login is required and User is not logged in 
 	if ( get_option('comment_registration') && !$user_ID ) : ?>

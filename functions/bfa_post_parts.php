@@ -121,7 +121,7 @@ function bfa_post_bodycopy($before = '<div class="post-bodycopy clearfix">', $af
 		$bfa_ata_more_tag_final = str_replace("%post-title%", the_title('', '', false), $bfa_ata['more_tag']);
 		the_content($bfa_ata_more_tag_final); 
 	} else { 
-		if (function_exists('the_post_thumbnail')) the_post_thumbnail();
+		if (function_exists('the_post_thumbnail') AND !function_exists('tfe_get_image')) the_post_thumbnail();
 		the_excerpt(); 
 	} 
 	echo $after;
@@ -152,9 +152,10 @@ function bfa_post_pagination($before = '<p class="post-pagination"><strong>Pages
 
 function bfa_archives_page($before = '<div class="archives-page">', $after = '</div>') {
 	
-	global $bfa_ata;
+	global $bfa_ata, $wp_query;
+	$current_page_id = $wp_query->get_queried_object_id();
 	
-	if ( is_page() AND $bfa_ata['current_page_id'] == $bfa_ata['archives_page_id'] ) { 
+	if ( is_page() AND $current_page_id == $bfa_ata['archives_page_id'] ) { 
 		
 		echo $before;				
 		if ( $bfa_ata['archives_date_show'] == "Yes" ) { ?>
