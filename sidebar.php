@@ -46,21 +46,15 @@
 		<?php }?>
 		</ul>
 		<ul role="navigation">
-			<?php wp_list_pages('title_li=<h2>' . __('Pages', 'kubrick') . '</h2>' ); ?>
+			<?php wp_list_pages('title_li=<h2>Pages</h2>' ); ?>
 
 			<li><h2><?php _e('Archives', 'kubrick'); ?></h2>
 				<ul>
 				<?php wp_get_archives('type=monthly'); ?>
 				</ul>
 			</li>
-		</ul>
-		<ul role="navigation">
-			<?php wp_list_pages('title_li=<h2>Pages</h2>' ); ?>
 
 			<?php wp_list_categories('show_count=1&title_li=<h2>' . __('Categories', 'kubrick') . '</h2>'); ?>
-		</ul>
-		<ul>
-			<?php wp_list_categories(array('show_count' => 1, 'title_li' => '<h2>Categories</h2>')); ?>
 		</ul>
 		<ul>
 			<?php /* If this is the frontpage */ if ( is_home() || is_page() ) { ?>
