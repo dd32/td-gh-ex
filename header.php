@@ -18,7 +18,7 @@
 <style type="text/css" media="screen">
 
 <?php
-// Checks to see whether it needs a sidebar
+// Checks to see whether it needs a sidebar or not
 if ( empty($withcomments) && !is_single() ) {
 ?>
 	#page { background: url("<?php bloginfo('stylesheet_directory'); ?>/images/kubrickbg-<?php bloginfo('text_direction'); ?>.jpg") repeat-y top; border: none; }
@@ -28,7 +28,7 @@ if ( empty($withcomments) && !is_single() ) {
 
 </style>
 
-<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
+<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?> 
 
 <?php wp_head(); ?>
 </head>
@@ -38,7 +38,7 @@ if ( empty($withcomments) && !is_single() ) {
 
 <div id="header" role="banner">
 	<div id="headerimg">
-		<h1><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a></h1>
+		<h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
 		<div class="description"><?php bloginfo('description'); ?></div>
 	</div>
 </div>
