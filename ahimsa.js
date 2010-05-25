@@ -1,25 +1,27 @@
 
-function toggleDisplay(id)
-{
-    el = document.getElementById(id);
-    if( el.style.display != 'none' )
-        el.style.display = 'none';
-    else
-        el.style.display = 'block';
-}
-
 function fadeBlock(id)
 {
-    if( $('#'+id).is(':visible') )
-        $('#'+id).fadeOut(1200);
+    if( jQuery(id).is(':visible') )
+        jQuery(id).fadeOut(500);
     else
-        $('#'+id).fadeIn(1200);
+        jQuery(id).fadeIn(500);
 
     return;
 }
 
+function slideBlock(id, side)
+{
+    if( jQuery(id).is(':visible') )
+        jQuery(id).hide("slide", { direction: side }, 600);
+    else
+        jQuery(id).show("slide", { direction: side }, 600);
+
+    return;
+}
+
+
 var tdsbBackground = "";
-function fadeSideBar(side)
+function slideSideBar(side)
 {
     if( ! document.getElementById('sidebar'+side) )
         return;
@@ -47,7 +49,7 @@ function fadeSideBar(side)
         tdsb.style.backgroundColor = 'transparent';
     }
 
-    fadeBlock('sidebar'+side);
+    slideBlock('#sidebar'+side, side);
 }
 
 function contentCurve(side, size)
@@ -142,3 +144,54 @@ function getWinWidth()
     return(myWidth);
 }
 
+jQuery(document).ready
+(
+    function()
+    {
+        // display vertical or rotated text depending on browser support
+        // test in the order of browser popularity to save a few cycles ;-)
+        if( jQuery('#sidebartableft').length > 0 )
+            tab = '#sidebartableft';
+        else
+        if( jQuery('#sidebartabright').length > 0 )
+            tab = '#sidebartabright';
+        else
+            tab = "";
+        if( tab != "" )
+        {
+            // safari returns the CSS property even if it doesn't implement it
+            // so we have a special check below for safari3 which does not
+            // support CSS transform
+            var safari3re = /Version\/3\.0.*Safari/;
+            if( !safari3re.test(navigator.appVersion) &&
+                ((jQuery(tab).css('filter') != '' &&
+                    jQuery(tab).css('filter') != 'none') ||
+                (jQuery(tab).css('-moz-transform') != '' &&
+                    jQuery(tab).css('-moz-transform') != 'none') ||
+                (jQuery(tab).css('-webkit-transform') != '' &&
+                    jQuery(tab).css('-webkit-transform') != 'none') ||
+                (jQuery(tab).css('-o-transform') != '' &&
+                    jQuery(tab).css('-o-transform') != 'none')) )
+            {
+                jQuery('#sidebartableft').addClass('sidebartableftrotated');
+                jQuery('#sidebartabright').addClass('sidebartabrightrotated');
+                jQuery('.sidebartabnorotatetext').hide();
+                jQuery('.sidebartabrotatedtext').show();
+            }
+            else
+            {
+                jQuery('.sidebartab').addClass('sidebartabnorotate');
+                jQuery('#sidebartableft').addClass('sidebartableftnorotate');
+                jQuery('#sidebartabright').addClass('sidebartabrightnorotate');
+                jQuery('.sidebartabrotatedtext').hide();
+                jQuery('.sidebartabnorotatetext').show();
+            }
+            jQuery('.sidebartab').show();
+        }
+        
+
+        // display tags permitted in comments when focus is on response box
+        jQuery('#replytext').focus(function() { jQuery('#commenthint').fadeIn(); });
+        jQuery('#replytext').blur(function() { jQuery('#commenthint').fadeOut(); });
+    }
+);

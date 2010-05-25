@@ -1,13 +1,13 @@
 /*  
 Theme Name: Ahimsa
 Theme URI: http://ahren.org/code/ahimsa
-Description: Ahimsa -- customisable collapsible sidebars, skinnable colour schemes, custom CSS and footer, low graphics, minimal distractions, with rounded corners in Firefox, Safari, Chrome (some support in IE). New for version 3.1: PLEASE NOTE: You may need to run a custom plugin with this update. Please, please visit <a href='http://ahren.org/code/bit/ahimsa-wp-3dot1'>http://ahren.org/code/bit/ahimsa-wp-3dot1</a> for details on that and other issues (including a comprehensive list of changes). If you are not going to install and use the plugin, and you have created custom skins or used a custom stylesheet or footer, <b>PLEASE backup your theme files</b> before you upgrade.
-Version: 3.1.1
+Description: Ahimsa -- customisable collapsible sidebars, skinnable colour schemes, custom CSS and footer, low graphics, minimal distractions, with rounded corners in Firefox, Safari, Chrome (some support in IE). Built-in shortcodes for Fancybox image galleries and simple FAQ posts/pages. New for version 3.2: Internationalisation support, header logo, sidebar tab rotated text, much more. See: <a href='http://ahren.org/code/bit/ahimsa-wp-3dot2'>http://ahren.org/code/bit/ahimsa-wp-3dot2</a>. (If you are upgrading from Ahimsa versions before 3.1 please visit <a href='http://ahren.org/code/bit/ahimsa-wp-3dot1'>http://ahren.org/code/bit/ahimsa-wp-3dot1</a> for details on saving your theme skins and customisations). Always backup any theme files you have changed or added before you upgrade.
+Version: 3.2
 Author: Ravi Sarma
 Author URI: http://ahren.org/code/
-Tags: one-column, two-columns, three-columns, flexible-width, left-sidebar, right-sidebar, theme-options, threaded-comments
+Tags: one-column, two-columns, three-columns, flexible-width, left-sidebar, right-sidebar, theme-options, threaded-comments, orange, red, white, yellow, custom-colors, translation-ready
 
-	 Ahimsa 3.1.1
+	 Ahimsa 3.2
 	 http://ahren.org/code/ahimsa
 
 	Theme built for the Ahren Code site but free for all
@@ -17,9 +17,8 @@ Tags: one-column, two-columns, three-columns, flexible-width, left-sidebar, righ
     theme uses rounded borders viewable in all browsers
     that support them.
 
-	The CSS, XHTML and design are released under the
-    latest GPL (at time of use):
-	http://www.opensource.org/licenses/gpl-license.php
+	The CSS, XHTML and design are released under the GNU GPL:
+    http://www.gnu.org/licenses/gpl.html
 
 */
 
@@ -77,8 +76,8 @@ BLOCKQUOTE
     padding: 4px 10px;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     font-size: small;
-    border-radius: 10px; 
     background-color: #cc9900;
+    border-radius: 10px; 
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px; 
 }
@@ -133,10 +132,6 @@ BLOCKQUOTE
     -moz-border-radius: 30px; 
 }
 
-.sidetabs
-{
-}
-
 #header
 {
     background-color: #b70100;
@@ -144,8 +139,8 @@ BLOCKQUOTE
     margin: 0;
     padding: 20px;
     text-align: left;
-    border-radius-topleft: 30px; 
-    border-radius-topright: 30px; 
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
     -webkit-border-top-right-radius: 30px;
     -webkit-border-top-left-radius: 30px;
     -moz-border-radius-topleft: 30px; 
@@ -158,6 +153,11 @@ BLOCKQUOTE
     width: 100%;
 }
 
+#header TABLE TD
+{
+    vertical-align: middle;
+}
+
 #title
 {
     height: 20px;
@@ -165,6 +165,12 @@ BLOCKQUOTE
     padding-right: 15px;
     padding-left: 10px;
     border-right: 2px solid #ffdd00;
+}
+
+#logo
+{
+    margin-right: 10px;
+    vertical-align: middle;
 }
 
 #description
@@ -181,7 +187,6 @@ BLOCKQUOTE
 
 #search
 {
-    vertical-align: middle;
     text-align: right;
     padding-right: 20px;
 }
@@ -280,33 +285,93 @@ BLOCKQUOTE
 
 .sidebartab
 {
-    width: 20px;
+    display: none;
     text-align: center;
-    margin-top: 50px;
-    margin-bottom: 100px;
     padding: 7px 0px;
-    font-size: smaller;
     background-color: #111111;
     color: #cccccc;
+    font-size: 8pt;
     cursor: pointer;
     opacity: 0.8;
     filter: alpha(opacity = 80);
+    letter-spacing: 0.2em;
+
 }
 
+.sidebartabnorotate
+{
+    width: 20px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+/* we are adding the rotation right here (rather than to #sidebartableftrotated)
+ * since we want to check this property in ahimsa.js to find out if rotation
+ * is supported by the current browser. Hacky? You decide!
+ */
 #sidebartableft
 {
-    -webkit-border-bottom-left-radius: 8px;
+    -webkit-transform: rotate(-90deg);
+    -webkit-transform-origin: bottom right;
+    -moz-transform: rotate(-90deg);
+    -moz-transform-origin: bottom right;
+    -o-transform: rotate(-90deg);
+    -o-transform-origin: bottom right;
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+.sidebartableftrotated
+{
+    margin-left: -80px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
     -webkit-border-top-left-radius: 8px;
+    -webkit-border-top-right-radius: 8px;
+    -moz-border-radius-topleft: 8px;
+    -moz-border-radius-topright: 8px;
+}
+
+.sidebartableftnorotate
+{
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    -webkit-border-top-left-radius: 8px;
+    -webkit-border-bottom-left-radius: 8px;
+    -moz-border-radius-topleft: 8px;
     -moz-border-radius-bottomleft: 8px;
+}
+
+/* see comment on #sidebartableft above */
+#sidebartabright
+{
+    -webkit-transform: rotate(90deg);
+    -webkit-transform-origin: bottom left;
+    -moz-transform: rotate(90deg);
+    -moz-transform-origin: bottom left;
+    -o-transform: rotate(90deg);
+    -o-transform-origin: bottom left;
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+}
+
+.sidebartabrightrotated
+{
+    margin-right: -80px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    -webkit-border-top-right-radius: 8px;
+    -webkit-border-top-left-radius: 8px;
+    -moz-border-radius-topright: 8px;
     -moz-border-radius-topleft: 8px;
 }
 
-#sidebartabright
+.sidebartabrightnorotate
 {
-    -webkit-border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
     -webkit-border-top-right-radius: 8px;
-    -moz-border-radius-bottomright: 8px;
+    -webkit-border-bottom-right-radius: 8px;
     -moz-border-radius-topright: 8px;
+    -moz-border-radius-bottomright: 8px;
 }
 
 .tdsidebar,
@@ -326,7 +391,7 @@ BLOCKQUOTE
 #tdsidebarleft,
 #sidebarleft
 {
-    border-radius-bottomleft: 30px; 
+    border-bottom-left-radius: 30px;
     -webkit-border-bottom-left-radius: 30px;
     -moz-border-radius-bottomleft: 30px; 
 }
@@ -334,7 +399,7 @@ BLOCKQUOTE
 #tdsidebarright,
 #sidebarright
 {
-    border-radius-bottomright: 30px; 
+    border-bottom-right-radius: 30px;
     -webkit-border-bottom-right-radius: 30px;
     -moz-border-radius-bottomright: 30px; 
 }
@@ -451,6 +516,8 @@ BLOCKQUOTE
 #wp-calendar THEAD TH:first-child,
 #wp-calendar #prev
 {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
     -webkit-border-bottom-left-radius: 5px;
     -webkit-border-top-left-radius: 5px;
     -moz-border-radius-bottomleft: 5px;
@@ -460,6 +527,8 @@ BLOCKQUOTE
 #wp-calendar THEAD TH:last-child,
 #wp-calendar #next
 {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
     -webkit-border-bottom-right-radius: 5px;
     -webkit-border-top-right-radius: 5px;
     -moz-border-radius-bottomright: 5px;
@@ -488,16 +557,16 @@ BLOCKQUOTE
 
 .contentnoleftsb
 {
+    border-bottom-left-radius: 30px;
     -webkit-border-bottom-left-radius: 30px;
     -moz-border-radius-bottomleft: 30px;
-    border-radius-bottomleft: 30px;
 }
 
 .contentnorightsb
 {
+    border-bottom-right-radius: 30px;
     -webkit-border-bottom-right-radius: 30px;
     -moz-border-radius-bottomright: 30px;
-    border-radius-bottomright: 30px;
 }
 
 .post
@@ -588,6 +657,8 @@ LEGEND A,
     margin: 0px;
     margin-left: -15px; /* see hack for Firefox in .post fieldset above */
     clear: both;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
     -webkit-border-bottom-left-radius: 20px;
     -webkit-border-bottom-right-radius: 20px;
     -moz-border-radius-bottomleft: 20px;
@@ -604,12 +675,6 @@ LEGEND A,
 {
     cursor: pointer;
     float: left;
-    /*
-    background-image: URL('images/down_arrow.png');
-    background-position: 85% 50%;
-    padding: 3px 35px 3px 10px;
-    background-repeat: no-repeat;
-    */
     padding: 3px 10px;
     margin-right: 10px;
     margin-bottom: 10px;
@@ -894,6 +959,12 @@ BLOCKQUOTE OL
     padding-left: 15px;
 }
 
+#commenthint
+{
+    display: none;
+    margin-bottom: 10px;
+}
+
 img.avatar
 {
     float: left;
@@ -932,7 +1003,6 @@ img.avatar
    /* optional rounded corners for browsers that support it */
    border-radius: 3px;
    -moz-border-radius: 3px;
-   -khtml-border-radius: 3px;
    -webkit-border-radius: 3px;
 }
 

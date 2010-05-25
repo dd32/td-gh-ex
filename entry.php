@@ -7,14 +7,20 @@
 
         <legend class='title'>
             <a href="<?php the_permalink() ?>" rel="bookmark"
-                title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
+                title="<?php printf(__('Permanent Link to %s', 'ahimsa'), get_the_title()); ?>">
+                <?php the_title(); ?></a>
         </legend>
 
         <?php if( is_single() || $options['showpagemeta'] == 1 ) : ?>
             <!-- wrap the date author in a div so that it sits by itself with a bottom margin -->
             <div>
                 <div class='capsule dateauthor'>
-                    <?php the_time('F jS, Y') ?> by <?php the_author() ?>
+                <?php
+                    /* translators: this is the post/page date format */
+                    $post_time = the_time(__('F jS, Y', 'ahimsa'));
+                    /* translators: this is the post/page date bubble: 'date' by 'author' */
+                    printf(__('%1$s by %2$s', 'ahimsa'), $post_time, get_the_author());
+                ?>
                 </div>
                 <br clear='all'/>
             </div>
@@ -26,28 +32,30 @@
 
                 <ul>
 
-                    <?php edit_post_link('Edit Entry', '<li>', '</li>'); ?>
+                    <?php edit_post_link(__('Edit Entry', 'ahimsa'), '<li>', '</li>'); ?>
 
                     <?php
                                 
                         if (('open' == $post-> comment_status) && ('open' == $post->ping_status))
                         {
                             print "
-                                <li> <a href='#respond'>Add Comment</a> </li>
-                                <li> <a href='" . trackback_url(false) . "' rel='trackback'>Trackback</a> </li>
+                                <li> <a href='#respond'>" . __('Add Comment', 'ahimsa') . "</a> </li>
+                                <li> <a href='" . trackback_url(false) . "' rel='trackback'>" .
+                                    __('Trackback', 'ahimsa') . "</a> </li>
                                 ";
                         }
                         elseif (!('open' == $post-> comment_status) && ('open' == $post->ping_status))
                         {
-                            print "<li> <a href='" . trackback_url(false) . "' rel='trackback'>Trackback</a> </li>";
+                            print "<li> <a href='" . trackback_url(false) . "' rel='trackback'>" .
+                                __('Trackback', 'ahimsa') . "</a> </li>";
                         }
 
                     ?>
 
                     <li>
-                        <img border='0' align='middle' alt='Comments Feed'
+                        <img border='0' align='middle' alt='<?php _e('Comments Feed', 'ahimsa'); ?>'
                             src='<?php print bloginfo('template_directory') . "/images/rss-icon.gif"; ?>' />
-                        <?php comments_rss_link('Comments Feed'); ?>
+                        <?php comments_rss_link(__('Comments Feed', 'ahimsa')); ?>
                     </li>
 
                 </ul>
@@ -57,7 +65,7 @@
         <?php endif; ?>
 
         <div class="entry">
-            <?php the_content('Read the rest of this entry &raquo;'); ?>
+            <?php the_content(__('Read the rest of this entry', 'ahimsa') . ' &raquo;'); ?>
         </div>
 
         <br clear='all'/>
@@ -68,7 +76,8 @@
                 wp_link_pages(
                         array
                         (
-                            'before' => '<div id="subpagelinks" class="capsule actbubble"><span>Pages:</span> ',
+                            'before' => '<div id="subpagelinks" class="capsule actbubble">
+                                            <span>' . __('Pages:', 'ahimsa') . '</span> ',
                             'after' => '</div>',
                             'next_or_number' => 'number'
                         )
@@ -78,13 +87,13 @@
             <div>
 
                 <input type='button' class='capsule actbubble cattrigger'
-                    value='Categories &darr;'
-                    onclick='fadeBlock("postcats");'/>
+                    value='<?php _e('Categories', 'ahimsa'); ?> &darr;'
+                    onclick='fadeBlock(".postcats");'/>
 
                 <?php if( get_the_tags() ) : ?>
                 <input type='button' class='capsule actbubble cattrigger'
-                    value='Tags &darr;'
-                    onclick='fadeBlock("posttags");'/>
+                    value='<?php _e('Tags', 'ahimsa'); ?> &darr;'
+                    onclick='fadeBlock(".posttags");'/>
                 <?php endif; ?>
 
             </div>
@@ -133,7 +142,7 @@
     <fieldset>
     <br/>
     <div class='entry'>
-    Sorry, no posts matched your criteria.
+    <?php _e('Sorry, no posts matched your criteria.', 'ahimsa'); ?>
     <br/>
     <br/>
     </div>

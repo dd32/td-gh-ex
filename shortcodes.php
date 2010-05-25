@@ -16,18 +16,18 @@ add_shortcode('qfgallery', 'qfgallery_handler');
 
 <link
     rel='stylesheet'
-    href='<?php bloginfo('template_url'); ?>/jquery.fancybox/jquery.fancybox.css'
+    href='<?php bloginfo('template_url'); ?>/lib/jquery.fancybox/jquery.fancybox.css'
     type='text/css'
     media='screen' />
 
 <script
     type="text/javascript"
-    src="<?php bloginfo('template_url'); ?>/jquery.fancybox/jquery.easing.1.3.js">
+    src="<?php bloginfo('template_url'); ?>/lib/jquery.fancybox/jquery.easing.1.3.js">
 </script>
 
 <script
     type="text/javascript"
-    src="<?php bloginfo('template_url'); ?>/jquery.fancybox/jquery.fancybox-1.2.1.js">
+    src="<?php bloginfo('template_url'); ?>/lib/jquery.fancybox/jquery.fancybox-1.2.1.js">
 </script>
 
 <?php
@@ -75,11 +75,10 @@ function qfgallery_handler($atts, $content)
     if( $title != "" ) $newcontent .= "<h2>$title</h2>\n";
     foreach( explode("\n", $content) as $line )
     {
-        // strip the <br /> tag added by wpautop et al
-        $line = preg_replace("/\s*\<br.*/", "", $line);
-
+        // strip all HTML tags (such as <br>, <p> and other stuff inserted by wp_autop()
+        $line = preg_replace("/\s*<[^>]*>\s*/", "", $line);
         $matches = preg_split("/\s*\|\s*/", $line);
-        if( sizeof($matches) <= 1 )
+        if( sizeof($matches) < 1 || preg_match("/^\s*$/", $matches[0]) )
             continue;
 
         $newcontent .=
@@ -107,10 +106,10 @@ function qfgallery_handler($atts, $content)
 
 <script language='JavaScript'>
 
-$(document).ready(
+jQuery(document).ready(
     function()
     {
-	    $("a.qfgallery").
+	    jQuery("a.qfgallery").
             fancybox
             ({
                 'imageScale':   true,
@@ -124,7 +123,6 @@ $(document).ready(
 );
 
 </script>
-
 
 <?php
 

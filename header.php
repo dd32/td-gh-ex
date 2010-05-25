@@ -10,11 +10,12 @@
     />
 
     <title>
-        <?php bloginfo('name'); ?>
-        <?php if ( is_single() ) { ?>
-            &raquo; Blog Archive
-        <?php } ?>
-        <?php wp_title(); ?>
+        <?php
+            bloginfo('name');
+            if ( is_single() )
+                print '&raquo; ' . __('Blog Archive', 'ahimsa');
+            wp_title();
+        ?>
     </title>
 
     <meta
@@ -31,26 +32,33 @@
     <link
         rel="alternate"
         type="application/rss+xml"
-        title="<?php bloginfo('name'); ?> RSS Feed"
+        title="<?php bloginfo('name'); _e('RSS Feed', 'ahimsa'); ?>"
         href="<?php bloginfo('rss2_url'); ?>"
     />
 
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
+    <!-- inlude jQuery before we call wp_head(); -->
+    <?php wp_enqueue_script("jquery"); ?>
+
     <?php
-        if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
+        if ( is_singular() )
+            wp_enqueue_script('comment-reply');
         wp_head();
     ?>
 
-    <script type="text/javascript" src="<?php print get_bloginfo('template_url').'/jquery-min.js'; ?>"></script>
+    <script
+        type="text/javascript"
+        src="<?php print get_bloginfo('template_url').'/lib/jquery-ui/jquery-ui.min.js'; ?>"></script>
+
     <script type="text/javascript" src="<?php print get_bloginfo('template_url').'/ahimsa.js'; ?>"></script>
 
     <!-- render some corners in IE using jQuery plugins -->
     <?php global $options; if( $options['iecorners'] == 1 ) : ?>
         <script type="text/javascript"
-            src="<?php print get_bloginfo('template_url').'/jquery.corner.js'; ?>"></script>
+            src="<?php print get_bloginfo('template_url').'/lib/jquery.corner.js'; ?>"></script>
         <script type="text/javascript"
-            src="<?php print get_bloginfo('template_url').'/jquery.corners.min.js'; ?>"></script>
+            src="<?php print get_bloginfo('template_url').'/lib/jquery.corners.min.js'; ?>"></script>
         <script type="text/javascript"
             src="<?php print get_bloginfo('template_url').'/iecorners.js'; ?>"></script>
     <?php endif; ?>
@@ -71,18 +79,28 @@
 
 <div id='rsslinks'>
     <div class='capsule'>
-    <a href='<?php bloginfo('comments_rss2_url'); ?>'>
-    <img border='0' align='top' alt='Comments RSS'
-        src='<?php print bloginfo('template_directory') . "/images/rss-icon.gif"; ?>' />
-    <span title='Subscribe to the RSS feed for the comments on this site'>Comments</span>
-    </a>
+        <a href='<?php bloginfo('comments_rss2_url'); ?>'>
+        <img border='0' align='top' alt='<?php _e('Comments RSS', 'ahimsa'); ?>'
+            src='<?php print bloginfo('template_directory') . "/images/rss-icon.gif"; ?>' />
+        <span title='<?php _e('Subscribe to the RSS feed for the comments on this site', 'ahimsa'); ?>'>
+            <?php
+                /* translators: this is the text of the comments RSS link at top right */
+                _e('Comments', 'ahimsa');
+            ?>
+        </span>
+        </a>
     </div>
     <div class='capsule'>
-    <a href='<?php bloginfo("rss2_url"); ?>'>
-    <img border='0' align='top' alt='Site RSS'
-        src='<?php print bloginfo('template_directory') . "/images/rss-icon.gif"; ?>' />
-    <span title='Subscribe to the RSS feed for the posts on this site'>Site</span>
-    </a>
+        <a href='<?php bloginfo("rss2_url"); ?>'>
+        <img border='0' align='top' alt='<?php _e('Site RSS', 'ahimsa'); ?>'
+            src='<?php print bloginfo('template_directory') . "/images/rss-icon.gif"; ?>' />
+        <span title='<?php _e('Subscribe to the RSS feed for the posts on this site', 'ahimsa'); ?>'>
+            <?php
+                /* translators: this is the text of the site RSS link at top right */
+                _e('Site', 'ahimsa');
+            ?>
+        </span>
+        </a>
     </div>
     <?php if( $options['showloginout'] == 1 ) { ?>
     <div class='capsule'>
@@ -101,24 +119,30 @@
 <tr>
 
 <?php if( is_active_sidebar(1) ) : ?>
-<td class='sidetabs'>&nbsp;</td>
+    <td class='tdsidetabs'>&nbsp;</td>
 <?php endif; ?>
 
 <td colspan='<?php print (is_active_sidebar(1)?1:0)+(is_active_sidebar(2)?1:0)+1; ?>' id='header'>
-
-<table border='0' cellpadding='0' cellspacing='0'>
-
-    <tr>
-    <td id='title'><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></td>
-    <td id='description'><?php bloginfo('description'); ?></td>
-    <td id='search' valign='middle'><?php include (TEMPLATEPATH . "/searchform.php"); ?> </td>
-    </tr>
-
-</table>
+    <table border='0' cellpadding='0' cellspacing='0'>
+        <tr>
+            <?php if( $options['logourl'] != "" ) : ?>
+                <td id='tdlogo'>
+                    <img id='logo' alt='' title='' src='<?php print $options['logourl']; ?>' />
+                </td>
+            <?php endif; ?>
+            <td id='title'>
+                <a href="<?php print get_option('home'); ?>/">
+                    <?php bloginfo('name'); ?>
+                </a>
+            </td>
+            <td id='description'><?php bloginfo('description'); ?></td>
+            <td id='search' valign='middle'><?php include (TEMPLATEPATH . "/searchform.php"); ?> </td>
+        </tr>
+    </table>
 </td>
 
 <?php if( is_active_sidebar(2) ) : ?>
-<td class='sidetabs'>&nbsp;</td>
+    <td class='tdsidetabs'>&nbsp;</td>
 <?php endif; ?>
 
 </tr>
