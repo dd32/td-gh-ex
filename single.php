@@ -56,7 +56,7 @@
 				<?php endif; ?>
 			
 				
-				<?php posts_nav_link(' &#8212; ', __('&laquo; Older Posts'), __('Newer Posts &raquo;')); ?>
+				<?php posts_nav_link(' &#8212; ', __('&laquo; Newer Posts'), __('Older Posts &raquo;')); ?>
 				
 				
 			</div><!-- #content-->
