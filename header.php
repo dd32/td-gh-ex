@@ -24,6 +24,4 @@
 
 </head>
 
-<body onload="initialize()" onunload="GUnload()" <?php body_class(); ?> >
-
-<div id="clear"><img id="background-img" class="bg" src="<?php bloginfo('template_url'); ?>/images/image 94.jpg" alt=""></div>
+<body <?php body_class(); ?> >

@@ -6,7 +6,7 @@ Theme URI: http://schwarttzy.com/?page_id=551
 Description: Inspired by a certain GPS Manufacture, I designed this theme to feel like your looking through a window out into the wilderness. The CSS, XHTML and design is released under GPL:
 	http://www.opensource.org/licenses/gpl-license.php
 
-Version: 1.1
+Version: 1.2
 
 Author: Eric Schwarz
 
@@ -26,7 +26,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 body {
 	font-size:13px;
-	background: #000;
+	background: fixed center top url(images/image%2094.jpg) #000;
 	margin: 0;
 	padding: 0;
 	width: 100%;
@@ -51,7 +51,7 @@ body {
 }
 
 #endspacer {
-	height: 500px;
+	height: 150px;
 	width: 900px;
 	float: left;
 }
@@ -223,6 +223,7 @@ h1 a:hover{
 	border-radius: 6px;
 	float: left;
 }
+object {z-index: -1}
 #label {
 	padding-top: 5px;
 	text-transform: uppercase;
@@ -342,13 +343,15 @@ h1 a:hover{
 #commentbody { 
 	margin-bottom: 10px;
 	padding: 10px 10px 25px 10px;
-	height: 100%;
 	width: 580px;
 	min-height: 90px;
-	
+	overflow:auto;
 }
 #avatar {
 	float: left;
+}
+#avatar img {
+	border: 2px solid #000;
 }
 #commentz {
 	float: right;
@@ -452,9 +455,13 @@ blockquote {
 	background: url(images/blacktrans.png);
 	
 }
-#content img {background: url(images/blacktrans2.png);
-	border: 2px solid #000;
+#content img {
+	background: url(images/blacktrans2.png);
+	max-width: 595px;
+	width: expression(this.width > 500 ? 500: true);
+	height: auto;
 }
+a img {border: none; }
 img.alignleft {
 	float: left;
 	margin: 0 15px 10px 0;

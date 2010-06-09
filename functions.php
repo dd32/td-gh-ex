@@ -1,4 +1,5 @@
 <?php
+$GLOBALS['content_width'] = 50;
 
 if ( function_exists('register_sidebar') )
     register_sidebar(array(
@@ -12,10 +13,11 @@ function print_comment($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment; ?>
     
 		<div id="commentbody">
-        	<div id="avatar">
+        <div id="avatar">
 				<?php echo get_avatar($comment, 100, get_bloginfo('stylesheet_directory') . '/images/avatar.gif'); ?>
-            </div>
+            </div>	
             <div id="commentz">
+            
                 <div id="commentlabel"><?php comment_author_link() ?> commented</div>
                 
                     <?php if ($comment->comment_approved == '0') : ?>
@@ -28,9 +30,8 @@ function print_comment($comment, $args, $depth) {
                     
                     <div class="alignleft"><?php edit_comment_link(__('(Edit)'),'  ','') ?></div>
                     
-            </div>
-            
-			<div class="cl">&nbsp;</div>
+            </div>       
+			
 		</div>
 	<?php
 }
