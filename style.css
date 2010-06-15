@@ -6,7 +6,7 @@ Theme URI: http://schwarttzy.com/?page_id=551
 Description: Inspired by a certain GPS Manufacture, I designed this theme to feel like your looking through a window out into the wilderness. The CSS, XHTML and design is released under GPL:
 	http://www.opensource.org/licenses/gpl-license.php
 
-Version: 1.2
+Version: 1.2.1
 
 Author: Eric Schwarz
 
@@ -26,7 +26,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 body {
 	font-size:13px;
-	background: fixed center top url(images/image%2094.jpg) #000;
+	background: #000;
 	margin: 0;
 	padding: 0;
 	width: 100%;
@@ -152,54 +152,6 @@ h1 a:hover{
 	font-variant: small-caps;
 	float: left;
 	border-left: 1px solid #575253;
-}
-
-/************************************************
-				Map          
-************************************************/
-
-#mapborder {
-	background: url(images/75.png);
-	width: 875px;
-	padding: 10px;
-	margin: 0 0 25px 0;
-	border: 3px solid #4a4646;
-	-moz-border-radius: 6px;
-	-khtml-border-radius: 6px;
-	-webkit-border-radius: 6px;
-	border-radius: 6px;
-	float: left;
-	text-align:left;
-}
-#map {
-	margin-top: 10px;
-	height:385px;
-	border: 2px solid #000;
-}
-#mapreset a {
-	text-transform: uppercase;
-	color:#333;
-	font-weight: 100;
-	font-size: 18px;
-	padding: 5px;
-	float: right;
-}
-#mapreset a:hover {
-	color:#0b6492;
-}
-.top{
-	font-size:18px;
-	color:#000;
-}
-.small {
-	color:#000;
-	font-size:x-small;
-}
-.rest {
-	color:#000;
-}
-.time {
-	color:#000;
 }
 
 /************************************************
