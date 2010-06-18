@@ -1,22 +1,19 @@
 		<div id="sidebar">
 			<ul>
-			<?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar(1) ) : else : ?>
+			<?php if (!dynamic_sidebar(1)): //If no widget sidebar, output default sidebar. ?>
 				<li id="search" class="search">
 				<?php get_search_form(); ?>
 				</li>
 				
-				<li><h2 class="sidebar-title"><?php _e('Pages', 'simplish') ?></h2>
-				<?php
-				$args = array(
-						'echo' => true,
-						'link_before' => '',
-						'link_after' => '',
-						'menu_class' => 'pagenav',
-						'show_home' => '0',
-						'sort_column' => 'menu_order',
-						);
-				wp_page_menu($args);
-				?>
+				<li><h2 class="sidebar-title"><?php _e('Navigation', 'simplish') ?></h2>
+					<?php /* wp_nav_menu falls back to wp_page_menu if user has no menu setup/assigned. */
+					wp_nav_menu( array(
+										 'sort_column' => 'menu_order',
+										 'container_class' => 'pagenav',
+										 'theme_location' => 'sidebar'
+										 )
+								  );
+					?>
 				</li>
 
 				<li id="categories"><h2 class="sidebar-title"><?php _e('Categories', 'simplish') ?></h2>

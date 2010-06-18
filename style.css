@@ -3,10 +3,24 @@ THEME NAME: Simplish
 THEME URI: http://simplish.pomfolio.com
 DESCRIPTION: Simplish is a WordPress variant of the Scribbish theme for blogs.
 TAGS: two-columns, fixed-width, right-sidebar, threaded-comments, sticky-post, microformats, white, light
-VERSION: 2.3
+VERSION: 2.4
 AUTHOR: <a href="http://labs.utopian.net">Utopian.net Labs</a>, <a href="http://pittcrew.net/geekblog/">K. Pitt</a>, <a href="http://quotedprintable.com">J. Hardy</a>
 AUTHOR URI:
 */
+
+/*
+ * Reset. Adapted from Eric Meyer, via CSS Boilerplate.
+ * Uses different bracket/spacing style to ease comparing with source. 
+ */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+:focus { outline: 0; }
+ins { text-decoration: none; }
+del { text-decoration: line-through; }
+table { border-collapse: collapse; border-spacing: 0; }
 
 /*
  * #container
@@ -505,6 +519,30 @@ span.caps{
 	padding: 1em 4px 0 5px;
 }
 
+/* WordPress image gallery */
+.gallery{
+	margin: auto;
+}
+.gallery .gallery-item{
+	float: left;
+	margin-top: 0;
+	text-align: center;
+	width: 33%;
+}
+.gallery .gallery-caption{
+	font-size: 0.8em;
+	margin: 0 0 12px;
+}
+.gallery dl{
+	margin: 0;
+}
+.gallery img{
+	border: 5px solid #eee;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+}
+
 /* Shared between search and sitemap templates archive listings. */
 .archive-index .entry-title a:link,
 .archive-index .entry-title a:visited{
@@ -515,7 +553,7 @@ span.caps{
 	background: #000 none repeat scroll 0 0;
 	color: #fff;
 }
-/* Sitemap template restyles.entry-title as list item. */
+/* Sitemap template restyles .entry-title as list item. */
 #sitemap-list .hentry{
 	margin: 0 0 0 1em;
 }
