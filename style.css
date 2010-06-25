@@ -2,16 +2,16 @@
 /* CSS Document */
 /*
 Theme Name: AdStyle
-Theme URI: http://wordpress.gordonfrench.com/adstyle
-Description: AdStyle is designed for adsense placement, has  modern scroll work and broken boundries for added flair. 
-Your adsense code needs to be added in the wp-admin panel. Current update fixes IE7 issues. Added Navigation, Improved Comments.
-Version: 2.0.4
+Theme URI: http://wordpresspowerthemes.com/adstyle
+Description: AdStyle is designed for adsense placement, has modern scroll work and broken boundries for added flair. 
+Your adsense code needs to be added in the wp-admin panel. Added Navigation, Paypal Integration, Improved Comments, Added Menu Support.
+Version: 3.0
 Author: Gordon French
 Author URI: http://gordonfrench.com/
 Tags:light,right-sidebar,fixed-width,two-columns,orange 
 
-	French v2.0.4
-	http://gordonfrench.com/
+	French v3.0
+	http://wordpresspowerthemes.com
 
 	This theme was designed by Gordon French,
 	whose portfolio can be found at http://gordonfrench.com/
@@ -60,7 +60,8 @@ a:hover				{ color:#ac6e2d}
 
 
 /* header */
-#header { position:relative; background: url(images/header.png) no-repeat; height:220px; margin-left:10px; margin-top:70px; margin-bottom:-10px; z-index:3} 
+#header { position:relative; background: url(images/header.png) no-repeat; height:220px; margin-left:10px; margin-top:70px; margin-bottom:-10px; z-index:3}
+	#header ul	{ list-style:none}
 	/* h1 header text */
 	#header h1 { position: relative; margin-bottom:-50px; z-index:20; left:10px; top:-10px; font-size:250%;  }
 	#header h1 a {color:#54340d}
@@ -76,18 +77,20 @@ a:hover				{ color:#ac6e2d}
 	/* Search box in header */
 	#search { position:relative;  width:350px; height:25px; top:-100px; left:630px}
 	/* adsense in header */
-	#topAds { position:relative;  width:728px; height:90px; margin:-60px 0 0 90px; }
+	#topAds { position:absolute; top:100px; left:20px;  width:880px; height:90px; margin:0px; overflow:hidden; text-align:center; }
+	#topAds ul	{ padding:0; margin:0;}
 	
 
 	/* top nav */
-	#header ul {  position:relative; padding-left:0; list-style-type:none; float:left; width:97%; margin-top:-45px; z-index:10;  margin-left:290px;}
-	#header ul li { display:inline;}
-	#header ul a, .home a { display:block; float:left; padding:0px 9px; font-size:100%; text-decoration:none; color:#54340d; width:auto}
-	#header ul a:hover, .home a:hover  { color:#aec2e1;}
+	.topNav ul {  position:relative; padding-left:0; list-style-type:none; float:left; margin:0px; width:880px; }
+	.topNav ul li { display:inline;}
+	.topNav ul a, .home a { display:block; float:left; padding:0px 9px; font-size:100%; text-decoration:none; color:#54340d;}
+	.topNav ul a:hover, .home a:hover  { color:#aec2e1;}
 	.pagenav { position:relative; left:20px; top:50px; color:#fdf0d7; list-style-type:none}
 	.home { position:relative; top:24px; left:250px; margin-bottom:-20px; width:50px; z-index:20; }
-
-
+	.topNav	{ position:absolute; top:60px; left:-30px;}
+	
+	.headerTitle	{ padding:0; margin:0;}
 
 
 
@@ -176,6 +179,8 @@ ol.commentlist 			{ left:-20px; margin:3px 0px; padding:0px}
 
 /* SINGLE POST */
 
+.postImage		{ position:relative; width:150px; height:112px; overflow:hidden; float:left; margin:13px 10px 5px 0px; border:1px solid #000}
+
 .entry h1, .entry h2, .entry h3	{ color:#242424; margin:5px 0px 0px 0px}
 .entry h4, .entry h5, .entry h6	{ color:#242424; margin:5px 0px 0px 0px}
 
@@ -201,7 +206,7 @@ ol.commentlist 			{ left:-20px; margin:3px 0px; padding:0px}
 .odd					{ background:#fef2da}
 
 .time 					{ text-align:right; margin:-10px 5px 0px 0px; font-size:80%; font-weight:bold; color:#da944a}
-.postmetadata			{ font-size:70%; color:#a0907e}
+.postmetadata			{ font-size:70%; color:#a0907e; clear:both;}
 
 .tags a 				{color:#54340d}
 .tags a:hover  			{color:#aec2e1}

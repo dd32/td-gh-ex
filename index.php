@@ -16,15 +16,21 @@
 		<?php while (have_posts()) : the_post(); ?>
     
             <div class="post" id="post-<?php the_ID(); ?>">
-                    
+            
+           
             <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h2>
             
             <p class="time"><?php the_time('l, F j, Y') ?> by <?php the_author() ?></p>
             
+             <?php $image = get_first_image();?>
+			<?php if ($image != 'nope'){ ?>
+            <div class="postImage"><img src="<?php echo $image ?>"/></div>
+            <?php } ?>
+            
              <?php $truncateContent = truncate::doTruncate(strip_tags(get_the_content(), '<p><a><br/>'), 300, '.', '...'); ?>    
              <p class="desc"><?php echo $truncateContent; ?></p>
 
-            
+            <br clear="all" />
             <p class="postmetadata">
             	<?php the_tags('Tags: ', ', ', ' '); ?><br />
                 Posted in <?php the_category(', ') ?>

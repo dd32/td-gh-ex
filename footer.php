@@ -10,7 +10,7 @@
     
   <div id="footer">
     <!-- If you'd like to support WordPress, having the "powered by" link somewhere on your blog is the best way; it's our only promotion or advertising. -->
-		<p>Copyright 2009, Powered by <a href="http://wordpress.org/">WordPress</a> - Theme AdStyle by <a href="http://www.gordonfrench.com">Gordon French</a></p>
+		<p>Copyright 2009, Powered by <a href="http://wordpress.org/">WordPress</a> - Theme AdStyle by <a title="wordpress themes" href="http://wordpresspowerthems.com" rel="follow">Wordpress Power Themes</a></p>
 		
 		
 

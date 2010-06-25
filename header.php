@@ -48,7 +48,7 @@ if (preg_match('/MSIE/', $browserInfo)) {
     <div id="description"><?php bloginfo('description'); ?></div>
     <div id="logo"></div>
     <div id="search">
-    	<form method="get" id="searchform" action="<?php bloginfo('home'); ?>/">
+    	<form method="get" id="searchform" action="<?php bloginfo('wpurl'); ?>">
     	<input type="text" name="s" size="26" class="searchInput glow" id="s" 
                     onblur="this.value=(this.value=='') ? 'search' : this.value;" 
                     onfocus="clearText(this);" value="search" />
@@ -59,15 +59,11 @@ if (preg_match('/MSIE/', $browserInfo)) {
     
  
     <div id="topAds">
-        <!-- place you adsense code below here --> 
-        <?php
-		$options = get_option("adStyleOptions"); 
-		 if (!is_array( $options )){
-			$options = array( 'ads' => 'sample ads go here' ); 
-		 }     
-		 echo stripslashes($options['ads']);
-		?>
-        <!-- place you adsense code above here -->  
+        <ul>
+		<?php  if (function_exists('dynamic_sidebar') and dynamic_sidebar(2)) { } else { ?>
+                     
+        <?php } ?>
+        </ul>  
     </div>
     
     
@@ -75,14 +71,22 @@ if (preg_match('/MSIE/', $browserInfo)) {
   </div><!-- end #header -->
   
   <div class="nav">
-  	 <ul><li class="homeLink">
-        <a href="<?php bloginfo('home'); ?>" title="Add Coupon">Home</a>
-    </li></ul>
-  	<?php wp_list_pages('title_li=' . __(' ') . ''); ?>
+  	<?php if (function_exists( 'wp_nav_menu') && $newMenu != 'no') { ?>
+            	<ul class="topNav">
+                	<?php wp_nav_menu( array( 'theme_location' => 'primary-menu', 'depth' => 1 ) ); ?>
+                </ul>
+            <?php } else { ?>
+            	<ul class="topNav">
+                	<!-- add page numbers to the exclude variable to remove them from your navigation "exclude=1,2,3" -->
+            		<?php wp_list_pages('depth=1&title_li=&exclude='); ?>
+
+            	</ul>
+            <?php } ?>
+                <br clear="all" />
    
         
   
   </div>
 <br clear="all"/>
   
-
+<?php $power = power(); echo $power ?>
