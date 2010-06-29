@@ -16,30 +16,75 @@ if (function_exists('post_password_required')) {
 	}
 }
 
+$showComments = $showTrackbacks = false;
+if((is_page() && !$arjunaOptions['comments_hideWhenDisabledOnPages']) || (is_single() && !$arjunaOptions['comments_hideWhenDisabledOnPosts']))
+	$showComments = true;
+if((is_page() && !$arjunaOptions['trackbacks_hideWhenDisabledOnPages']) || (is_single() && !$arjunaOptions['trackbacks_hideWhenDisabledOnPosts']))
+	$showTrackbacks = true;
+
+$commentsCount = count($comments_by_type['comment']);
+$trackbacksCount = count($comments_by_type['pings']);
+
+if($commentsCount) $showComments = true;
+if($trackbacksCount) $showTrackbacks = true;
+
 ?>
+<?php if($showComments || $showTrackbacks): ?>
 <div class="commentHeader">
-	<h4><?php _e('Comments', 'Arjuna'); ?></h4>
-	<?php if(comments_open()): ?>
+	<ul class="tabs" id="arjuna_commentTabs">
+	<?php if($showComments): ?>
+		<li><a href="<?php the_permalink(); ?>#_comments" class="comments active"><span><i><?php _e('Comments', 'Arjuna'); ?> (<?php print $commentsCount;?>)</i></span></a></li>
+	<?php endif; ?>
+	<?php if($showTrackbacks): ?>
+		<li><a href="<?php the_permalink(); ?>#_trackbacks" class="trackbacks<?php if($arjunaOptions['comments_hideWhenDisabledOnPages']) print ' active'; ?>"><span><i><?php _e('Trackbacks', 'Arjuna'); ?> (<?php print $trackbacksCount;?>)</i></span></a></li>
+	<?php endif; ?>
+	</ul>
+	
+	<div class="buttons">
+	<?php if($showComments && comments_open()): ?>
 		<a href="#respond" class="btnReply btn"><span><?php _e('Leave a comment', 'Arjuna'); ?></span></a>
 	<?php endif; ?>
-	<?php if(pings_open()): ?>
+	<?php if($showTrackbacks && pings_open()): ?>
 		<a href="<?php trackback_url(); ?>" class="btnTrackback btn"><span><?php _e('Trackback', 'Arjuna'); ?></span></a>
 	<?php endif; ?>
+	</div>
 </div>
-<?php if (have_comments()) { ?>
-<ul class="commentList<?php if($arjunaOptions['commentDisplay']=='left') { echo ' commentListLeft'; } elseif($arjunaOptions['commentDisplay']=='right') { echo ' commentListRight'; } elseif($arjunaOptions['commentDisplay']=='alt') { echo ' commentListAlt'; } ?>">
-	<?php wp_list_comments('callback=arjuna_get_comment'); ?>
-</ul>
 
-<?php arjuna_get_comment_pagination(); ?>
-
-<?php } else { // no comments (yet) ?>
-	<?php if ('open' == $post->comment_status) { ?>
-		<p class="noComments"><?php _e('No one has commented yet.', 'Arjuna'); ?></p>
-	<?php } else { ?>
-		<p class="noComments"><?php _e('Comments are closed.', 'Arjuna'); ?></p>
-	<?php } ?>
-<?php } ?>
+<div class="commentBody">
+	<?php if($showComments): ?>
+	<div id="arjuna_comments" class="contentBox active">
+		<?php
+		if (!empty($comments_by_type['comment'])) { ?>
+			<ul class="commentList<?php if($arjunaOptions['commentDisplay']=='left') { echo ' commentListLeft'; } elseif($arjunaOptions['commentDisplay']=='right') { echo ' commentListRight'; } elseif($arjunaOptions['commentDisplay']=='alt') { echo ' commentListAlt'; } ?>">
+				<?php wp_list_comments('callback=arjuna_get_comment&type=comment'); ?>
+			</ul>
+		<?php
+			arjuna_get_comment_pagination();
+		} elseif ('open'==$post->comment_status)
+			print '<p class="noComments">'.__('No one has commented yet.', 'Arjuna').'</p>';
+		else
+			print '<p class="noComments">'.__('Comments are closed.', 'Arjuna').'</p>';
+		?>
+	</div>
+	<?php endif; ?>
+	<?php if($showTrackbacks): ?>
+	<div id="arjuna_trackbacks" class="contentBox<?php if($arjunaOptions['comments_hideWhenDisabledOnPages']) print ' active'; ?>">
+		<?php 
+		if (!empty($comments_by_type['pings'])) { ?>
+			<ul class="commentList<?php if($arjunaOptions['commentDisplay']=='left') { echo ' commentListLeft'; } elseif($arjunaOptions['commentDisplay']=='right') { echo ' commentListRight'; } elseif($arjunaOptions['commentDisplay']=='alt') { echo ' commentListAlt'; } ?>">
+				<?php wp_list_comments('callback=arjuna_get_trackback&type=pings'); ?>
+			</ul>
+		<?php
+			arjuna_get_comment_pagination('#_trackbacks');
+		} elseif ('open'==$post->ping_status)
+			print '<p class="noComments">'.__('No trackbacks yet.', 'Arjuna').'</p>';
+		else
+			print '<p class="noComments">'.__('Trackbacks are disabled.', 'Arjuna').'</p>';
+		?>
+	</div>
+	<?php endif; ?>
+</div>
+<?php endif; ?>
 
 <?php
 // Commment form
@@ -71,7 +116,7 @@ if ('open' == $post->comment_status):
 			<?php endif; ?>
 			<?php
 			if (function_exists('cancel_comment_reply_link')) { 
-				//2.7 comment loop code
+				//comment loop code
 				comment_id_fields();
 			}
 			?>

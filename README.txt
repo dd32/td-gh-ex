@@ -40,6 +40,9 @@ Currently available translations:
 - Romanian (thanks to Grigore Dolghin, grigore.dolghin.ro)
 - Dutch (thanks to Hildo de Vries)
 - Swedish (thanks to Jonas Herjeskog, thenook.se)
+- Polish (thanks to Tomasz Cieśla)
+- Norwegian (thanks to Knut-Rasmus Tvervik Skille)
+- Japanese (thanks to Hajime Fujino)
 
 
 More Information and Support
@@ -67,6 +70,36 @@ Nonetheless, we still hope that IE6 will rest in peace soon.
 Changelog:
 ---------------------------------------------------
 
+1.5
+- New: Arjuna now supports a feature to select between a few blog background styles as well as allowing you to set a solid background color. The lighter background is most welcomed to anyone who found the old background a tad too dark.
+- New: The permalink to a comment is now included.
+- New: The second header menu can now be disabled.
+- New: Support for excerpts has been added. In addition, if full posts are shown on selected pages the read more button will no longer be displayed.
+- New: The homepage and all archive pages now include the post ID anchors, allowing external feeds to access specific posts using URL anchors in the form of #post-XYZ.
+- New: The footer style now matches the header style. Check out the Background & Color Schemes panel in Arjuna Options.
+- New: Added a new header color scheme (Light Red).
+- New: You can now upload a custom logo to the header.
+- New: Post pagination is now fully supported. You can now split your posts in pages and Arjuna will render the pagination on its own.
+- New: Comments are separated from trackbacks using a tab navigation.
+- New: The display of categories and tags can now be disabled on index pages.
+- New: The theme now displays a notice to IE6 users to update their browser. This will ensure that this ancient browser is rolled out further as the experience is far better with modern browsers.
+- Change: The title bars of blog posts are now entirely clickable.
+- Change: Dropped support for IE6 full optimization. IE6 is still supported, but the performance optimization previously offered by Arjuna is not. 
+- Change: Improved and rearranged the Arjuna options panel. 
+- Change: Custom CSS styles are now included in HTML style tags. The user-style.css file will no longer be created and used. 
+- Change: The default text color is a little darker than before, improving readability. 
+- Change: In the Arjuna options panel, parent-child relationships between categories and pages are now visible for the include/exclude feature. 
+- Change: Minor design changes to left and right widget bars in the sidebar. 
+- Fix: Text widgets in the sidebar did not support correct rendering of STRONG and EM elements. 
+- Fix: Images in posts that are larger than the available space are now scaled down proportionally instead of cut off.
+- Fix: There was some whitespace in the sidebar if only the Sidebar Bottom widget bar was filled with widgets.  
+- Fix: Fixed some minor IE issues.
+- Localization: Japanese (1.3.5) has been added.
+1.3.10
+- Fix: There was a translation error on all 404 - Not Found pages.
+- Localization: Polish (1.3.8) has been added.
+- Localization: Norwegian (1.3.8) has been added.
+- Localization: Hungarian has been updated to 1.3.9.
 1.3.9
 - Fix: Pagination was not included on category pages and other archive pages.
 - Localization: Swedish (1.3.5) has been added.

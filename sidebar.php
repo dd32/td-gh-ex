@@ -30,34 +30,38 @@ if ($arjunaOptions['sidebarDisplay']!='none') {
 			<?php endif; ?>
 		<?php endif; ?>
 		</div>
-		<div class="sidebarLeft">
-		<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Sidebar Left')): ?>
-			<?php if($arjunaOptions['sidebar_showDefault']): ?>
-			<div class="sidebarbox">
-			<h4><span><?php _e('Categories', 'Arjuna'); ?></span></h4>
-			<ul>
-				<?php wp_list_categories('show_count=0&title_li='); ?>
-			</ul>
-			</div>
+		<?php if(is_active_sidebar('sidebar_left')): ?>
+			<div class="sidebarLeft">
+			<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Sidebar Left')): ?>
+				<?php if($arjunaOptions['sidebar_showDefault']): ?>
+				<div class="sidebarbox">
+				<h4><span><?php _e('Categories', 'Arjuna'); ?></span></h4>
+				<ul>
+					<?php wp_list_categories('show_count=0&title_li='); ?>
+				</ul>
+				</div>
+				<?php endif; ?>
 			<?php endif; ?>
-		<?php endif; ?>
-		</div>
-		<div class="sidebarRight">
-		<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Sidebar Right')): ?>
-			<?php if($arjunaOptions['sidebar_showDefault']): ?>
-			<div class="sidebarbox">
-			<h4><span><?php _e('Meta', 'Arjuna'); ?></span></h4>
-			<ul>
-				<?php wp_register(); ?>
-				<li><?php wp_loginout(); ?></li>
-				<li><a href="http://validator.w3.org/check/referer" title="This page validates as XHTML 1.0 Transitional">Valid <abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a></li>
-				<?php wp_meta(); ?>
-			</ul>
 			</div>
-			<?php endif; ?>
 		<?php endif; ?>
-		</div>
-		<div class="clear">
+		<?php if(is_active_sidebar('sidebar_right')): ?>
+			<div class="sidebarRight">
+			<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Sidebar Right')): ?>
+				<?php if($arjunaOptions['sidebar_showDefault']): ?>
+				<div class="sidebarbox">
+				<h4><span><?php _e('Meta', 'Arjuna'); ?></span></h4>
+				<ul>
+					<?php wp_register(); ?>
+					<li><?php wp_loginout(); ?></li>
+					<li><a href="http://validator.w3.org/check/referer" title="This page validates as XHTML 1.0 Transitional">Valid <abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a></li>
+					<?php wp_meta(); ?>
+				</ul>
+				</div>
+				<?php endif; ?>
+			<?php endif; ?>
+			</div>
+		<?php endif; ?>
+		<div<?php if(is_active_sidebar('sidebar_left') || is_active_sidebar('sidebar_right') || $arjunaOptions['sidebar_showDefault']) print ' class="clear"'; ?>>
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Sidebar Bottom') ) : ?>
 			<?php endif; ?>
 		</div>

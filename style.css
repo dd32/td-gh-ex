@@ -4,7 +4,7 @@ Theme URI: http://www.srssolutions.com/en/downloads/arjuna_wordpress_theme
 Description: Arjuna stands for elegance, accessibility, and attention to detail. We have put a great deal in optimizing its ins and outs. Translation ready, SEO focused, IE6-8, Firefox, Chrome, Safari and Opera compatibility, support for threaded comments, four widget bars, flexible sidebar, and more. It can be customized via the admin panel. Changelog: http://bit.ly/aLicfb
 Author: SRS Solutions
 Author URI: http://www.srssolutions.com
-Version: 1.3.9
+Version: 1.5
 Tags: white, silver, light, three-columns, two-columns, fixed-width, right-sidebar, left-sidebar, theme-options, translation-ready, threaded-comments, black
 
 
@@ -113,10 +113,22 @@ pre {
  */
 
 body {
-	background:#d9d9d9 url(./images/pageBG.png) repeat-x 0 0;
 	font-family:Arial, Helvetica, Verdana, sans-serif;
 	font-size:13px;
 	line-height:normal;
+}
+
+body.gradient_blueish {
+	background:#d9d9d9 url(./images/bg/gradient_blueish.png) repeat-x 0 0;
+}
+body.gradient_gray {
+	background:#f2f2f2 url(./images/bg/gradient_gray.png) repeat-x 0 0;
+}
+body.gradient_gray_reverse {
+	background:#ccc url(./images/bg/gradient_gray_reverse.png) repeat-x 0 0;
+}
+body.gradient_khaki {
+	background:#ede9e4 url(./images/bg/gradient_khaki.png) repeat-x 0 0;
 }
 
 /* Links */
@@ -152,6 +164,18 @@ a.btn:hover span {
 	background-position:100% -80px;
 }
 
+.gradient_gray a.btn,
+.gradient_gray a.btn:hover,
+.gradient_gray .btn span,
+.gradient_khaki a.btn,
+.gradient_khaki a.btn:hover,
+.gradient_khaki .btn span,
+.buttonStyle_light a.btn,
+.buttonStyle_light a.btn:hover,
+.buttonStyle_light .btn span {
+	background-image:url(./images/icons_light.png);
+}
+
 /* Miscellaneous */
 .clear {
 	display:block;
@@ -163,6 +187,20 @@ a#skipToPosts {
 	position:absolute;
 	top:0;
 	left:-999em;
+}
+
+.IENotice {
+	background:#990000;
+	color:#fff;
+	border-bottom:2px solid #600;
+	line-height:20px;
+	text-align:center;
+	font-size:11px;
+}
+.IENotice a,
+.IENotice a:visited {
+	color:#fff;
+	text-decoration:underline;
 }
 
 .pageContainer {
@@ -234,7 +272,7 @@ a#skipToPosts {
 	color:#0f2033;
 }
 .header_darkBlue span {
-	color:#4d4d4d;
+	color:#3d454d;
 }
 
 .header_khaki {
@@ -265,6 +303,20 @@ a#skipToPosts {
 	color:#33504e;
 }
 
+.header_lightRed {
+	height:89px;
+	background:url(./images/header/lightRed.jpg) no-repeat 0 0;
+}
+.header_lightRed h1,
+.header_lightRed h1 a,
+.header_lightRed h1 a:visited,
+.header_lightRed h1 a:hover {
+	color:#330000;
+}
+.header_lightRed span {
+	color:#503333;
+}
+
 
 
 .headerSearch {
@@ -287,8 +339,9 @@ a#skipToPosts {
 	background:none;
 }
 .headerMain .searchQueryIA {
-	color:#888b8d;
+	color:#666;
 	font-style:italic;
+	text-shadow:#fff 1px 1px 1px;
 }
 .headerMain .searchButton {
 	display:block;
@@ -345,11 +398,13 @@ a#skipToPosts {
 	text-decoration:none;
 	padding:0 8px;
 }
-.headerMenu1 li a:hover {
+.headerMenu1 li a:hover,
+.headerMenu1 li a.active {
 	color:#bfbfbf;
 	text-decoration:none;
 }
 .headerMenu1 ul ul {
+	float:none;
 	position:absolute;
 	top:24px;
 	right:0;
@@ -375,9 +430,10 @@ a#skipToPosts {
 	padding:0 8px;
 	width:164px;
 	position:relative;
-	color:#333;
+	color:#333 !important;
 }
-.headerMenu1 li li a:hover {
+.headerMenu1 li li a:hover,
+.headerMenu1 li li a.active {
 	background:#cacccc;
 	padding:0 8px;
 	color:#333;
@@ -392,6 +448,7 @@ a#skipToPosts {
 	display:none;
 	top:3px;
 	right:175px;
+	z-index:2;
 }
 .headerMenu1L ul ul ul,
 .headerMenu1L li:hover ul ul,
@@ -437,7 +494,8 @@ a#skipToPosts {
 	text-decoration:none;
 	padding:0 8px;
 }
-.headerMenu2 li a:hover {
+.headerMenu2 li a:hover,
+.headerMenu2 li a.active {
 	background:url(./images/headerMenu2.png) no-repeat -25px -60px;
 	color:#ddd;
 	text-decoration:none;
@@ -470,7 +528,8 @@ a#skipToPosts {
 	position:relative;
 	color:#333;
 }
-.headerMenu2 li li a:hover {
+.headerMenu2 li li a:hover,
+.headerMenu2 li li a.active {
 	background:#cacccc;
 	color:#333;
 }
@@ -484,6 +543,7 @@ a#skipToPosts {
 	top:3px;
 	display:none;
 	left:175px;
+	z-index:2;
 }
 .headerMenu2 li li:hover ul,
 .headerMenu2 li li.jHover ul {
@@ -495,8 +555,13 @@ a#skipToPosts {
 	background:url(./images/headerMenu2.png) no-repeat 0 -120px;
 	padding-left:26px;
 }
-.headerMenu2 li a.homeIcon:hover {
+.headerMenu2 li a.homeIcon:hover,
+.headerMenu2 li a.homeIcon.active {
 	background:url(./images/headerMenu2.png) no-repeat 0 -60px;
+}
+
+.noHeaderMenu2 {
+	border-top:1px solid #4d4d4d;
 }
 
 h3.contentHeader {
@@ -518,6 +583,8 @@ h3.contentHeader em {
 	font-weight:bold;
 	font-size:16px;
 	font-family:Verdana, Geneva, sans-serif;
+	text-decoration:none;
+	color:#000;
 }
 .postHeader .postTitle {
 	background:url(./images/heading.png) no-repeat 0 0;
@@ -530,11 +597,8 @@ h3.contentHeader em {
 	padding:8px 15px 7px;
 	margin-right:-15px;
 }
-.postTitle a,
-.postTitle a:visited,
-.postTitle a:hover {
+.postHeader a:hover {
 	text-decoration:none;
-	color:#000;
 }
 .postHeader .bottom {
 	background:url(./images/heading.png) no-repeat 0 -60px;
@@ -635,7 +699,7 @@ a.postCommentLabel:hover {
 }
 
 .postContent {
-	color:#555;
+	color:#222;
 	font-family:Verdana, Geneva, sans-serif;
 	font-size:12px;
 	line-height:20px;
@@ -719,6 +783,9 @@ a.postCommentLabel:hover {
 	font-weight:bold;
 	margin-bottom:10px;
 }
+.postContent img.size-full {
+	width:100%;
+}
 
 .postFooter {
 	background:url(./images/postFooter.png) no-repeat 0 0;
@@ -741,6 +808,9 @@ a.postCommentLabel:hover {
 	overflow:hidden;
 	padding-top:8px;
 }
+
+/* Buttons */
+
 .postCategories {
 	background:url(./images/icons.png) no-repeat 0px -99px;
 	padding-left:25px;
@@ -758,55 +828,36 @@ a.postCommentLabel:hover {
 	color:#777;
 }
 
-.postEdit,
+a.postEdit,
 a.postEdit:hover {
 	position:absolute;
 	top:8px;
 	right:-20px;
-	height:18px;
-	background:url(./images/icons.png) no-repeat 0 -340px;
+	background-position:0 -340px;
 	color:#5c7a99;
 	text-decoration:none;
 }
 a.postEdit:hover {
 	text-decoration:none;
 }
-.postEdit span {
-	display:block;
-	height:18px;
-	margin-left:21px;
-	background:url(./images/icons.png) no-repeat 100% -60px;
-	line-height:18px;
-	font-size:11px;
-	padding:0 15px 0 8px;
+a.postEdit span {
+	background-position:100% -60px;
 }
-.postEdit:hover span {
+a.postEdit:hover span {
 	background-position:100% -80px;
 }
 
-.postReadMore,
-a.postReadMore:hover {
+.btnReadMore,
+.btnReadMore:hover {
 	position:absolute;
 	top:8px;
 	right:-20px;
-	height:18px;
-	background:url(./images/icons.png) no-repeat 0 -220px;
-	color:#5c7a99;
-	text-decoration:none;
+	background-position:0 -220px;
 }
-a.postReadMore:hover {
-	text-decoration:none;
+.btnReadMore span {
+	background-position:100% -60px;
 }
-.postReadMore span {
-	display:block;
-	height:18px;
-	margin-left:21px;
-	background:url(./images/icons.png) no-repeat 100% -60px;
-	line-height:18px;
-	font-size:11px;
-	padding:0 15px 0 8px;
-}
-.postReadMore:hover span {
+.btnReadMore:hover span {
 	background-position:100% -80px;
 }
 
@@ -816,14 +867,16 @@ a.postReadMore:hover {
 
 .noComments {
 	margin:0 0 40px;
+	text-align:center;
+	color:#333;
 }
 
 .postComments {
 	margin-top:30px;
 }
 .commentHeader {
-	height:30px;
-	background:url(./images/icons.png) repeat-x 0 -172px;
+	min-height:27px;
+	background:url(./images/icons.png) repeat-x 0 -175px;
 	margin-bottom:20px;
 	overflow:hidden;
 }
@@ -834,6 +887,58 @@ a.postReadMore:hover {
 	line-height:30px;
 	margin:0 20px 0 15px;
 }
+.commentHeader .tabs {
+	overflow:hidden;
+	float:left;
+	font-size:13px;
+	font-family:Verdana, Geneva, sans-serif;
+	margin:0 0 0 15px;
+}
+.commentHeader .tabs li {
+	float:left;
+	display:block;
+	margin-right:5px;
+}
+.commentHeader .tabs li a {
+	display:block;
+	margin-right:5px;
+	height:25px;
+	color:#333;
+	text-decoration:none;
+	outline:none;
+}
+.commentHeader .tabs li a span {
+	display:block;
+	margin:0 -5px 0 10px;
+	height:25px;
+	line-height:25px;
+}
+.commentHeader .tabs li a.active {
+	background:url(./images/commentTabs.png) no-repeat 0 0;
+}
+.commentHeader .tabs li a.active span {
+	background:url(./images/commentTabs.png) no-repeat right 0;
+}
+.commentHeader .tabs a.comments i {
+	background:url(./images/commentTabs.png) no-repeat 0 -47px;
+	padding:0 10px 0 20px;
+}
+.commentHeader .tabs a.trackbacks i {
+	background:url(./images/commentTabs.png) no-repeat 0 -98px;
+	padding:0 10px 0 20px;
+}
+.commentHeader .buttons {
+	float:right;
+	margin-right:20px;
+}
+
+.commentBody .contentBox {
+	display:none;
+}
+.commentBody .active {
+	display:block;
+}
+
 a.btnTrackback,
 a.btnTrackback:hover {
 	background-position:0 -260px;
@@ -845,68 +950,81 @@ a.btnReply:hover {
 	margin-top:5px;
 }
 
-li.comment {
+li.comment,
+li.pingback {
 	overflow:hidden;
 	margin-bottom:20px;
 }
-li.comment li {
+li.comment li,
+li.pingback li {
 	margin:2px 0 0;
 }
-.comment .avatar {
+.comment .avatar,
+.pingback .avatar {
 	border:1px solid #a6a6a6;
 	background-color:#d9d9d9;
 	padding:1px;
 	float:left;
 	margin-top:8px;
 }
-.comment .message {
+.comment .message,
+.pingback .message {
 	margin-left:50px;
 }
-.comment .message .t {
+.comment .message .t,
+.pingback .message .t {
 	height:40px;
 	background:url(./images/comment.png) no-repeat 0 0;
 	margin-right:10px;
 }
-.comment .message .t div {
+.comment .message .t div,
+.pingback .message .t div {
 	height:40px;
 	width:10px;
 	background:url(./images/comment.png) no-repeat -990px 0;
 	float:right;
 	margin-right:-10px;
 }
-.comment .message .i {
+.comment .message .i,
+.pingback .message .i {
 	border:1px solid #bfbfbf;
 	border-width:0 1px;
 	background-color:#f2f2f2;
 	margin:0 0 0 17px;
 	padding:1px 0;
 }
-.comment .message .i .i2 {
+.comment .message .i .i2,
+.pingback .message .i .i2 {
 	margin:-37px 15px 0;
 	position:relative;
 	padding-top:14px;
 }
-	.comment .message .i span {
+	.comment .message .i span,
+	.pingback .message .i span {
 		font-size:11px;
 	}
-	.comment .message .i .title {
+	.comment .message .i .title,
+	.pingback .message .i .title {
 		display:block;
 		position:absolute;
 		top:0;
 		left:5px;
 	}
-	.comment .message .i .links {
+	.comment .message .i .links,
+	.pingback .message .i .links {
 		display:block;
 		position:absolute;
 		top:0;
 		right:5px;
 	}
-.comment .message .b {
+.comment .message .b,
+.pingback .message .b {
 	height:11px;
 	background:url(./images/comment.png) no-repeat 0 -40px;
 	margin-right:10px;
 }
-.comment .message .b div {
+.comment .message .b div,
+.pingback .message .b div {
 	height:11px;
 	width:10px;
 	background:url(./images/comment.png) no-repeat -990px -40px;
@@ -914,7 +1032,9 @@ li.comment li {
 	margin-right:-10px;
 }
 .comment .message p,
-.comment .message ul {
+.comment .message ul,
+.pingback .message p,
+.pingback .message ul {
 	margin-top:10px;
 	font-size:12px;
 	line-height:150%;
@@ -927,130 +1047,43 @@ li.comment li {
 
 
 .commentListAlt .thread-odd .avatar,
-.commentListRight .comment .avatar {
+.commentListRight li .avatar {
 	float:right;
 }
 .commentListAlt .thread-odd .message,
-.commentListRight .comment .message {
+.commentListRight li .message {
 	margin:0 50px 0 0;
 }
 .commentListAlt .thread-odd .message .t,
-.commentListRight .comment .message .t {
+.commentListRight li .message .t {
 	margin:0 0 0 10px;
 	background-position:right -60px;
 }
 .commentListAlt .thread-odd .message .t div,
-.commentListRight .comment .message .t div {
+.commentListRight li .message .t div {
 	background-position:0 -60px;
 	float:left;
 	margin:0 0 0 -10px;
 }
 .commentListAlt .thread-odd .message .i,
-.commentListRight .comment .message .i {
+.commentListRight li .message .i {
 	margin:0 17px 0 0;
 }
 .commentListAlt .thread-odd .message .b,
-.commentListRight .comment .message .b {
+.commentListRight li .message .b {
 	background-position:right -100px;
 	margin:0 0 0 10px;
 }
 .commentListAlt .thread-odd .message .b div,
-.commentListRight .comment .message .b div {
+.commentListRight li .message .b div {
 	background-position:0 -100px;
 	float:left;
 	margin:0 0 0 -10px;
 }
 
 .commentListAlt .thread-odd ul.children,
-.commentListRight .comment ul.children {
+.commentListRight li ul.children {
 	margin:0 20px 0 0;
-}
-
-/* Comment pagination */
-.commentNavigation {
-	height:24px;
-	background:url(./images/pagination.png) no-repeat 0 -30px;
-	margin:30px 10px 0 0;
-}
-.commentNavigation div {
-	height:24px;
-	background:url(./images/pagination.png) no-repeat right -30px;
-	margin:0 -10px 0 10px;
-	padding:0 20px 0 10px;
-}
-.commentNavigation span,
-.commentNavigation a
-{
-	display:block;
-	float:left;
-	height:18px;
-	border:1px solid #9a9a9a;
-	margin:1px;
-	color:#5c7a99;
-	font-size:11px;
-	line-height:18px;
-	padding:1px 7px;
-	background:#fff url(./images/pagination.png) no-repeat -15px -99px;
-}
-.commentNavigation a:hover {
-	background-position:-15px -124px;
-	text-decoration:none;
-}
-.commentNavigation .title {
-	display:block;
-	float:left;
-	color:#808080;
-	height:22px;
-	line-height:22px;
-	padding:0 15px 0 25px;
-	font-size:11px;
-	border:none;
-	background:url(./images/pagination.png) no-repeat 0 -61px;
-}
-.commentNavigation .gap {
-	color:#808080;
-	height:22px;
-	line-height:22px;
-	font-size:11px;
-	padding:0 8px;
-	border:none;
-	background:none;
-}
-.commentNavigation .current {
-	float:left;
-	margin:-2px 1px -2px 0;
-	height:24px;
-	line-height:24px;
-	background:#fff url(./images/pagination.png) no-repeat 0 -149px;
-	padding:1px 9px;
-	font-weight:bold;
-	color:#808080;
-}
-
-.commentNavigation .newer,
-.commentNavigation .older {
-	display:block;
-	background:none;
-	padding:0;
-	border:0;
-	margin:0;
-}
-.commentNavigation .newer a {
-	background:#fff url(./images/pagination.png) no-repeat 0 -99px;
-	padding-left:20px;
-}
-.commentNavigation .newer a:hover {
-	background-position:0 -124px;
-}
-.commentNavigation .older {
-	float:right;
-}
-.commentNavigation .older a {
-	background:#fff url(./images/pagination.png) no-repeat right -99px;
-	padding-right:20px;
-}
-.commentNavigation .older a:hover {
-	background-position:right -124px;
 }
 
 /*
@@ -1120,7 +1153,8 @@ a.btnCancel:hover {
 .commentReplyActive {
 	padding:20px;
 	margin:20px 0;
-	border:1px dashed #999;
+	border:1px dotted #999;
+	background:#ddd;
 }
 .commentReplyActive .replyHeader {
 	margin:0 -19px 20px;
@@ -1159,18 +1193,53 @@ a.btnLogout:hover {
 	background-position:0 -300px;
 }
 
+.pagination,
+.pagination div,
+.pagination .info,
+.pagination a span {
+	background:url(./images/pagination/default.png) no-repeat 0 100px;
+}
+.buttonStyle_light .pagination,
+.buttonStyle_light .pagination div,
+.buttonStyle_light .pagination .info,
+.buttonStyle_light .pagination a span,
+.gradient_gray .pagination,
+.gradient_gray .pagination div,
+.gradient_gray .pagination .info,
+.gradient_gray .pagination a span,
+.gradient_gray_reverse .pagination,
+.gradient_gray_reverse .pagination div,
+.gradient_gray_reverse .pagination .info,
+.gradient_gray_reverse .pagination a span {
+	background-image:url(./images/pagination/light.png);
+}
+
+.gradient_gray_reverse .pagination {
+	background-position:0 0 !important;
+}
+.gradient_gray_reverse .pagination div {
+	background-position:right 0 !important;
+}
+.gradient_gray_reverse .paginationTop {
+	background:url(./images/pagination/default.png) 0 -30px !important;
+}
+.gradient_gray_reverse .paginationTop div {
+	background:url(./images/pagination/default.png) right -30px !important;
+}
+
 .pagination {
 	height:24px;
-	background:url(./images/pagination.png) no-repeat 0 -30px;
+	background-position:0 -30px;
 	margin:30px 10px 0 0;
 }
+
 .paginationTop {
 	margin:0 10px 30px 0;
 	background-position:0 0;
 }
 .pagination div {
 	height:24px;
-	background:url(./images/pagination.png) no-repeat right -30px;
+	background-position:right -30px;
 	margin:0 -10px 0 10px;
 	padding:0 20px 0 10px;
 }
@@ -1185,7 +1254,7 @@ a.btnLogout:hover {
 	line-height:22px;
 	padding:0 15px 0 25px;
 	font-size:11px;
-	background:url(./images/pagination.png) no-repeat 0 -61px;
+	background-position:0 -61px;
 }
 
 .pagination li {
@@ -1201,7 +1270,7 @@ a.btnLogout:hover {
 	margin-right:10px;
 }
 .pagination li.prev a span {
-	background:url(./images/pagination.png) no-repeat 0 -100px;
+	background-position:0 -100px;
 	padding:0 7px 0 20px;
 }
 .pagination li.prev a:hover span {
@@ -1211,7 +1280,7 @@ a.btnLogout:hover {
 	margin-left:10px;
 }
 .pagination li.next a span {
-	background:url(./images/pagination.png) no-repeat right -100px;
+	background-position:right -100px;
 	padding:0 20px 0 7px;
 }
 .pagination li.next a:hover span {
@@ -1242,7 +1311,7 @@ a.btnLogout:hover {
 	font-size:11px;
 	line-height:18px;
 	padding:0 7px;
-	background:url(./images/pagination.png) no-repeat -15px -100px;
+	background-position:-15px -100px;
 }
 .pagination a:hover {
 	text-decoration:none;
@@ -1257,7 +1326,7 @@ a.btnLogout:hover {
 .pagination li.current a span {
 	height:24px;
 	line-height:24px;
-	background:url(./images/pagination.png) no-repeat 0 -150px;
+	background-position:0 -150px;
 	padding:0 9px;
 	font-weight:bold;
 }
@@ -1270,7 +1339,7 @@ a.btnLogout:hover {
 	margin-top:1px;
 }
 .pagination .newer span {
-	background:url(./images/pagination.png) no-repeat 0 -100px;
+	background-position:0 -100px;
 	padding-left:20px;
 }
 .pagination a.newer:hover span {
@@ -1282,12 +1351,109 @@ a.btnLogout:hover {
 	margin-top:1px;
 }
 .pagination .older span {
-	background:url(./images/pagination.png) no-repeat right -100px;
+	background-position:right -100px;
 	padding-right:20px;
 }
 .pagination a.older:hover span {
 	background-position:right -125px;
 }
+
+/* Comment pagination */
+
+.commentPagination span,
+.commentPagination a {
+	background:url(./images/pagination/default.png) no-repeat 0 100px;
+}
+
+.commentPagination span,
+.commentPagination a {
+	background:url(./images/pagination/default.png) no-repeat 0 100px;
+}
+
+.commentPagination {
+	height:24px;
+	margin:30px 10px 0 0;
+}
+.commentPagination div {
+	height:24px;
+	margin:0 -10px 0 10px;
+	padding:0 20px 0 10px;
+}
+.commentPagination span,
+.commentPagination a
+{
+	display:block;
+	float:left;
+	height:18px;
+	border:1px solid #9a9a9a;
+	margin:1px;
+	color:#5c7a99;
+	font-size:11px;
+	line-height:18px;
+	padding:1px 7px;
+	background-position:-15px -99px;
+}
+.commentPagination a:hover {
+	background-position:-15px -124px;
+	text-decoration:none;
+}
+.commentPagination .title {
+	display:block;
+	float:left;
+	color:#555;
+	height:22px;
+	line-height:22px;
+	padding:0 15px 0 25px;
+	font-size:11px;
+	border:none;
+	background-position:0 -61px;
+}
+.commentPagination .gap {
+	color:#808080;
+	height:22px;
+	line-height:22px;
+	font-size:11px;
+	padding:0 8px;
+	border:none;
+	background:none;
+}
+.commentPagination .current {
+	float:left;
+	margin:-2px 1px -2px 0;
+	height:24px;
+	line-height:24px;
+	background-position:0 -149px;
+	padding:1px 9px;
+	font-weight:bold;
+	color:#808080;
+}
+
+.commentPagination .newer,
+.commentPagination .older {
+	display:block;
+	background:none;
+	padding:0;
+	border:0;
+	margin:0;
+}
+.commentPagination .newer a {
+	background-position:0 -99px;
+	padding-left:20px;
+}
+.commentPagination .newer a:hover {
+	background-position:0 -124px;
+}
+.commentPagination .older {
+	float:right;
+}
+.commentPagination .older a {
+	background-position:right -99px;
+	padding-right:20px;
+}
+.commentPagination .older a:hover {
+	background-position:right -124px;
+}
+
 
 /* Footer */
 .footer {
@@ -1304,7 +1470,7 @@ a.btnLogout:hover {
 }
 .footer .icon2 {
 	position:absolute;
-	top:15px;
+	top:20px;
 	left:110px;
 }
 .footer .copyright {
@@ -1335,7 +1501,19 @@ a.btnLogout:hover {
 	width:960px;
 	margin:10px auto 0;
 	position:relative;
-	background:url(./images/footer2.jpg) no-repeat 0 0;
+	background:url(./images/footer/lightBlue.jpg) no-repeat 0 0;
+}
+.footer_khaki {
+	background-image:url(./images/footer/khaki.jpg);
+}
+.footer_darkBlue {
+	background-image:url(./images/footer/darkBlue.jpg);
+}
+.footer_seaGreen {
+	background-image:url(./images/footer/seaGreen.jpg);
+}
+.footer_lightRed {
+	background-image:url(./images/footer/lightRed.jpg);
 }
 .footer2 .icon1 {
 	position:absolute;
@@ -1344,8 +1522,8 @@ a.btnLogout:hover {
 }
 .footer2 .icon2 {
 	position:absolute;
-	top:28px;
-	left:110px;
+	top:33px;
+	left:105px;
 }
 .footer2 .copyright {
 	position:absolute;
@@ -1367,6 +1545,23 @@ a.btnLogout:hover {
 }
 .footer2 .design a em {
 	color:#525c66;
+}
+
+.footer_darkBlue .copyright,
+.footer_darkBlue .design,
+.footer_darkBlue .design a {
+	color:#3d454d;
+}
+.footer_darkBlue .design a em {
+	color:#0F2033;
+}
+.footer_lightRed .copyright,
+.footer_lightRed .design,
+.footer_lightRed .design a {
+	color:#503333;
+}
+.footer_lightRed .design a em {
+	color:#330000;
 }
 
 /**
@@ -1520,6 +1715,18 @@ a.btnLogout:hover {
 		font-size:16px;
 		padding:6px 15px;
 	}
+	.sidebars .sidebarLeft h4 {
+		border-width:1px 1px 1px 0;
+	}
+	.sidebars .sidebarLeft h4 span {
+		margin:1px 1px 1px 0;
+	}
+	.sidebars .sidebarRight h4 {
+		border-width:1px 0 1px 1px;
+	}
+	.sidebars .sidebarRight h4 span {
+		margin:1px 0 1px 1px;
+	}
 	.sidebars ul {
 	}
 	.sidebars li {
@@ -1571,6 +1778,13 @@ a.btnLogout:hover {
 	background:url(./images/sidebars.png) no-repeat -485px -170px;
 	float:right;
 	margin-right:-15px;
+}
+
+.textwidget strong {
+	font-weight:bold;
+}
+.textwidget em {
+	font-style:italic;
 }
 
 
@@ -1633,3 +1847,4 @@ a.btnLogout:hover {
 	border:none;
 	color:#5c7a99;
 }
+

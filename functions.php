@@ -1,4 +1,6 @@
 <?php
+@session_start();
+
 $_arjunaDefaultOptions = array(
 	'headerMenu1_dropdown' => '3', // 1, 2, 3 (the depth of the menu, 1 being no dropdown)
 	'headerMenu1_display' => 'pages', // pages, categories
@@ -15,6 +17,7 @@ $_arjunaDefaultOptions = array(
 	'headerMenu2_sortOrder' => 'asc', // asc, desc
 	'headerMenu2_displayHomeButton' => true,
 	'headerMenu2_displaySeparators' => true,
+	'headerMenu2_show' => true,
 	'headerMenu2_disableParentPageLink' => false,
 	'headerMenu2_exclude_categories' => '',
 	'headerMenu2_exclude_pages' => '',
@@ -23,6 +26,8 @@ $_arjunaDefaultOptions = array(
 	'commentDateFormat' => 'timePassed', // timePassed, date
 	'comments_hideWhenDisabledOnPages' => true,
 	'comments_hideWhenDisabledOnPosts' => false,
+	'trackbacks_hideWhenDisabledOnPages' => true,
+	'trackbacks_hideWhenDisabledOnPosts' => true,
 	'footerStyle' => 'style1', // style1, style2
 	'appendToPageTitle' => 'blogName', // blogName, custom
 	'appendToPageTitleCustom' => '',
@@ -31,11 +36,10 @@ $_arjunaDefaultOptions = array(
 	'sidebar_showDefault' => true, 
 	'sidebar_showRSSButton' => true, 
 	'sidebar_showTwitterButton' => false, 
-	'sidebar_twitterURL' => '', 
 	'sidebar_showFacebookButton' => false, 
+	'sidebar_twitterURL' => '', 
 	'sidebar_facebookURL' => '', 
 	'sidebar_displayButtonTexts' => false, 
-	'enableIE6optimization' => true,
 	'postsShowAuthor' => true,
 	'postsShowTime' => false,
 	'posts_showTopPostLinks' => false,
@@ -43,12 +47,33 @@ $_arjunaDefaultOptions = array(
 	'pages_showInfoBar' => false,
 	'customCSS' => false,
 	'customCSS_input' => '',
-	'customCSS_useFilesystem' => false,
 	'pagination' => true,
 	'pagination_pageRange' => 2, //the number of page buttons to show before and after the current page button
 	'pagination_pageAnchors' => 1, //the number of buttons to always show at the beginning and end of the pagination bar
-	'pagination_pageGap' => 1 //the number of pages in a gap before an ellipsis is added
+	'pagination_pageGap' => 1, //the number of pages in a gap before an ellipsis is added
+	
+	//Added 1.5
+	'excerpts_index' => false,
+	'excerpts_categoryPages' => true,
+	'excerpts_archivePages' => true,
+	'excerpts_searchPages' => true,
+	'background_color' => '#d9d9d9',
+	'background_style' => 'gradient_blueish', //if set, overrides background_color
+	'solidBackground_buttonStyle' => 'default', //will only be used if the background color is solid
+	'headerLogo' => '',
+	'headerLogo_width' => 0,
+	'headerLogo_height' => 0,
+
+	'archives_includeTags' => true,
+	'archives_includeCategories' => true,
+
+	'miscellaneous_IE6Notice' => true,
+	'headerMenus_enableJavaScript' => true,
+	'headerMenus_effect' => 'slide', //slide, fade, none
+	'headerMenus_delay' => 500 //in milliseconds
+
 );
+
 
 $optionsSaved = false;
 function arjuna_create_options() {
@@ -71,20 +96,23 @@ function arjuna_create_options() {
 }
 
 function arjuna_get_options() {
+	
 	static $return = false;
 	if($return !== false)
 		return $return;
-
+	
 	$options = get_option('arjuna_options');
-	if(!empty($options) && count($options) == count($GLOBALS['_arjunaDefaultOptions']))
+	
+	if(!empty($options) && $options == $GLOBALS['_arjunaDefaultOptions'])
 		$return = $options;
-	else $return = $GLOBALS['_arjunaDefaultOptions'];
+	else $return = arjuna_create_options();
 	
 	return $return;
 }
 
+$formErrors = array();
 function arjuna_add_theme_options() {
-	global $optionsSaved;
+	global $optionsSaved, $formErrors;
 	if(isset($_POST['arjuna_save_options'])) {
 		
 		$options = arjuna_create_options();
@@ -140,8 +168,12 @@ function arjuna_add_theme_options() {
 		if($_POST['headerMenu1_exclude_pages']) {
 			$options['headerMenu1_exclude_pages'] = implode(',', $_POST['headerMenu1_exclude_pages']);
 		} else $options['headerMenu1_exclude_pages'] = '';
-
-
+		
+		
+		//Menu 2 show
+		if ($_POST['headerMenu2_show']) $options['headerMenu2_show'] = true;
+		else $options['headerMenu2_show'] = false;
+		
 		//Menu 2 dropdown
 		$validOptions = array('1', '2', '3');
 		if ( in_array($_POST['headerMenu2_dropdown'], $validOptions) ) $options['headerMenu2_dropdown'] = $_POST['headerMenu2_dropdown'];
@@ -196,7 +228,7 @@ function arjuna_add_theme_options() {
 
 
 		//Header Image
-		$validOptions = array('lightBlue', 'darkBlue', 'khaki', 'seaGreen');
+		$validOptions = array('lightBlue', 'darkBlue', 'khaki', 'seaGreen', 'lightRed');
 		if ( in_array($_POST['headerImage'], $validOptions) ) $options['headerImage'] = $_POST['headerImage'];
 		else $options['headerImage'] = $validOptions[0];
 
@@ -212,6 +244,12 @@ function arjuna_add_theme_options() {
 
 		if ($_POST['comments_hideWhenDisabledOnPosts']) $options['comments_hideWhenDisabledOnPosts'] = true;
 		else $options['comments_hideWhenDisabledOnPosts'] = false;
+		
+		if ($_POST['trackbacks_hideWhenDisabledOnPages']) $options['trackbacks_hideWhenDisabledOnPages'] = true;
+		else $options['trackbacks_hideWhenDisabledOnPages'] = false;
+
+		if ($_POST['trackbacks_hideWhenDisabledOnPosts']) $options['trackbacks_hideWhenDisabledOnPosts'] = true;
+		else $options['trackbacks_hideWhenDisabledOnPosts'] = false;
 
 		//Footer style
 		$validOptions = array('style1', 'style2');
@@ -269,12 +307,13 @@ function arjuna_add_theme_options() {
 		if ($_POST['sidebar_showFacebookButton']) {
 			$facebookURL = trim($_POST['sidebar_facebookURL']);
 			$options['sidebar_showFacebookButton'] = true;
-			if ( !preg_match('/facebook\./i', $facebookURL) ) {
+			
+			if ( empty($facebookURL) ) {
+				$options['sidebar_showFacebookButton'] = false;
+			} elseif ( !preg_match('/facebook\./i', $facebookURL) ) {
 					$twitterURL = "http://facebook.com/" . $facebookURL;
 			} elseif ( !preg_match('/http[s]?\:\/\//i', $facebookURL) ) {
 				$facebookURL = "http://" . $facebookURL;
-			} elseif ( empty($facebookURL) ) {
-				$options['sidebar_showFacebookButton'] = false;
 			}
 			$options['sidebar_facebookURL'] = $facebookURL;
 		} else $options['sidebar_showFacebookButton'] = false;
@@ -287,10 +326,6 @@ function arjuna_add_theme_options() {
 		$validOptions = array('normal', 'small', 'large');
 		if ( in_array($_POST['sidebarWidth'], $validOptions) ) $options['sidebarWidth'] = $_POST['sidebarWidth'];
 		else $options['sidebarWidth'] = $validOptions[0];
-		
-		// IE Optimization
-		if ($_POST['enableIE6optimization']) $options['enableIE6optimization'] = true;
-		else $options['enableIE6optimization'] = false;
 		
 		// Posts, Show Author
 		if ($_POST['postsShowAuthor']) $options['postsShowAuthor'] = true;
@@ -332,18 +367,89 @@ function arjuna_add_theme_options() {
 			if (trim($_POST['customCSS_input'])) {
 				$options['customCSS'] = true;
 				$input = trim($_POST['customCSS_input']);
-				if (is_writable(dirname(__FILE__).'/')) {
-					//create a new CSS file
-					$handle = fopen(dirname(__FILE__).'/user-style.css', 'w');
-					fwrite($handle, $input);
-					fclose($handle);
-					$options['customCSS_useFilesystem'] = true;
-				} else {
-					$options['customCSS_useFilesystem'] = false;
-					$options['customCSS_input'] = $input;
-				}
+				$options['customCSS_input'] = $input;
+			} else {
+				$options['customCSS'] = false;
+				$options['customCSS_input'] = '';
 			}
 		} else $options['customCSS'] = false;
+		
+		
+		//Background Styles
+		
+		if ($_POST['backgroundStyle'] == '') {
+			$options['background_style'] = '';
+			$options['background_color'] = $_POST['backgroundColor'];
+			$options['solidBackground_buttonStyle'] = $_POST['backgroundButtonStyle'];
+		} else {
+			$validOptions = array('gradient_blueish', 'gradient_gray', 'gradient_gray_reverse', 'gradient_khaki');
+			if ( in_array($_POST['backgroundStyle'], $validOptions) )
+				$options['background_style'] = $_POST['backgroundStyle'];
+			else $options['background_style'] = 'gradient_blueish';
+		}
+		
+		//Index Pages
+		if ($_POST['archives_includeTags']) $options['archives_includeTags'] = true;
+		else $options['archives_includeTags'] = false;
+		
+		if ($_POST['archives_includeCategories']) $options['archives_includeCategories'] = true;
+		else $options['archives_includeCategories'] = false;
+		
+		//Excerpts
+		if ($_POST['excerpts_index']) $options['excerpts_index'] = true;
+		else $options['excerpts_index'] = false;
+		
+		if ($_POST['excerpts_categoryPages']) $options['excerpts_categoryPages'] = true;
+		else $options['excerpts_categoryPages'] = false;
+		
+		if ($_POST['excerpts_archivePages']) $options['excerpts_archivePages'] = true;
+		else $options['excerpts_archivePages'] = false;
+		
+		if ($_POST['excerpts_searchPages']) $options['excerpts_searchPages'] = true;
+		else $options['excerpts_searchPages'] = false;
+		
+		//Logo
+		if($_FILES['headerLogo']['type']) {
+			if(!eregi('image/', $_FILES['headerLogo']['type'])) {
+				//catch error
+				$formErrors['headerLogo'] = __('The uploaded file is not a valid image. Only JPEG, PNG and GIF is supported.', 'Arjuna');
+			} else {
+				// check if valid image
+				$info = getimagesize($_FILES['headerLogo']['tmp_name']);
+				$supportedMimeTypes = array('image/gif', 'image/jpeg', 'image/png');
+				if(!$info || !in_array($info['mime'], $supportedMimeTypes)) {
+					//catch error
+					$formErrors['headerLogo'] = __('The uploaded file is not a valid image. Only JPEG, PNG and GIF is supported.', 'Arjuna');
+				} else {
+					list($width, $height) = $info;
+					$path = arjuna_get_upload_directory() . '/' . $_FILES['headerLogo']['name'];
+					move_uploaded_file($_FILES['headerLogo']['tmp_name'], $path);
+					$options['headerLogo'] = arjuna_get_upload_url() . '/' . $_FILES['headerLogo']['name'];
+					$options['headerLogo_width'] = $width;
+					$options['headerLogo_height'] = $height;
+				}
+			}
+		}
+		
+		//Javascript menus
+		if ($_POST['headerMenus_enableJavaScript']) $options['headerMenus_enableJavaScript'] = true;
+		else $options['headerMenus_enableJavaScript'] = false;
+		
+		//IE6 Notice
+		if ($_POST['miscellaneous_IE6Notice']) $options['miscellaneous_IE6Notice'] = true;
+		else $options['miscellaneous_IE6Notice'] = false;
+		
+		
+		update_option('arjuna_options', $options);
+		$optionsSaved = true;
+	}
+	
+	if(isset($_POST['removeLogo'])) {
+		$options = arjuna_create_options();
+		
+		$options['headerLogo'] = '';
+		$options['headerLogo_width'] = 0;
+		$options['headerLogo_height'] = 0;
 		
 		update_option('arjuna_options', $options);
 		$optionsSaved = true;
@@ -352,16 +458,26 @@ function arjuna_add_theme_options() {
 	add_theme_page(__('Arjuna Options', 'Arjuna'), __('Arjuna Options', 'Arjuna'), 'edit_themes', basename(__FILE__), 'arjuna_add_theme_page');
 }
 
+function arjuna_admin_is_panel_open($ID) {
+	if(!isset($_SESSION['arjunaAdminPanels']))
+		return false;
+	if(!isset($_SESSION['arjunaAdminPanels'][$ID]))
+		return false;
+	if($_SESSION['arjunaAdminPanels'][$ID])
+		return true;
+}
+
 
 function arjuna_add_theme_page () {
-	global $optionsSaved;
+	global $optionsSaved, $formErrors;
 
 	$options = arjuna_get_options();
 	
 	if ( $optionsSaved )
 		echo '<div id="message" class="updated fade"><p><strong>'.__('The Arjuna options have been saved.', 'Arjuna').'</strong></p></div>';
 ?>
-<form action="#" method="post" name="arjuna_form" id="arjuna_update_theme">
+<input type="hidden" id="arjuna_themeURL" value="<?php bloginfo('template_directory'); ?>" />
+<form action="#" method="post" name="arjuna_form" id="arjuna_update_theme" enctype="multipart/form-data">
 	<div class="wrap">
 		<h2><?php _e('Arjuna Theme Options', 'Arjuna'); ?></h2>
 		
@@ -372,6 +488,7 @@ function arjuna_add_theme_page () {
 				<a href="http://www.twitter.com/srssolutions"><?php _e('Follow Us', 'Arjuna'); ?></a>
 				to receive news, updates, and more.
 			</div>
+			<div class="logo"></div>
 			</div>
 			<div class="tMid">
 				<div class="tReportBugs">
@@ -396,9 +513,43 @@ function arjuna_add_theme_page () {
 			</div>
 		</div>
 		
-		<h3><?php _e('Header', 'Arjuna'); ?></h3>
+		<?php
+		if(!empty($formErrors))
+			print '<div class="error">';
+			foreach($formErrors as $error)
+				print '<p>'.$error.'</p>';
+			print '</div>';
+		?>
 		
-		<div class="srsContainer srsContainerClosed">
+		<h3><?php _e('General Blog Appearance', 'Arjuna'); ?></h3>
+		
+		<div self:ID="logo" class="srsContainer<?php if(!arjuna_admin_is_panel_open('logo')) print ' srsContainerClosed'; ?>">
+			<h4 class="title"><span><?php _e('Logo', 'Arjuna'); ?></span></h4>
+			<div class="inside">
+				<table class="form-table">
+					<tbody>
+						<tr>
+							<th scope="row"><?php _e('Header Logo', 'Arjuna'); ?></th>
+							<td>
+							<?php if(is_writable(arjuna_get_upload_directory())): ?>
+								<input type="file" name="headerLogo" id="headerLogo" />
+								<?php if($options['headerLogo']): ?>
+									<div class="logoPreview"><img src="<?php print $options['headerLogo']; ?>" /></div>
+									<input type="submit" name="removeLogo" value="Remove Logo" />
+								<?php endif; ?>
+								<br /><span class="description"><?php printf(__('The custom logo will be included in the header, aligned to the left and vertically centered.', 'Arjuna'), arjuna_get_upload_directory());?></span>
+							<?php else: ?>
+								<span class="description"><?php printf(__('You do not have write permissions for the upload directory %s. Please check with your webmaster or host to set write permissions for this directory.', 'Arjuna'), arjuna_get_upload_directory());?></span>
+							<?php endif; ?>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="bottom"><span></span></div>
+		</div>
+		
+		<div self:ID="firstHeaderMenu" class="srsContainer<?php if(!arjuna_admin_is_panel_open('firstHeaderMenu')) print ' srsContainerClosed'; ?>">
 			<h4 class="title"><span><div class="tIcon" id="icon-firstMenu"></div><?php _e('First Header Menu', 'Arjuna'); ?></span></h4>
 			<div class="inside">
 				<table class="form-table">
@@ -492,70 +643,40 @@ function arjuna_add_theme_page () {
 							<div id="headerMenu1_include_categories"<?php if($options['headerMenu1_display']=='pages'): ?> style="display:none;"<?php endif; ?>>
 								<?php _e('Include categories', 'Arjuna'); ?><br />
 								<?php
-								$parameters = 'depth='.$options['headerMenu1_dropdown'];
-								$parameters .= '&hide_empty=0';
-								$parameters .= '&exclude='.$options['headerMenu1_exclude_categories'];
-								$categories = get_categories($parameters); 
+								$categories = arjuna_get_all_categories($options['headerMenu1_exclude_categories'], '', $options['headerMenu1_dropdown']);
 								?>
 								<select multiple="multiple" size="7" name="headerMenu1_include_categories[]" id="hm1ic" style="height:auto;width:400px; padding-right:20px;">
-									<?php foreach($categories as $cat): ?>
-									<option value="<?php print $cat->cat_ID; ?>"><?php print $cat->cat_name; ?></option>
-									<?php endforeach; ?>
+									<?php arjuna_admin_walk_categories($categories); ?>
 								</select>
 								<div class="tArrows">
 									<a href="#" class="tArrowUp" id="hm1ic_up"></a><a href="#" class="tArrowDown" id="hm1ic_down"></a>
 								</div>
 								<?php _e('Exclude categories', 'Arjuna'); ?><br />
 								<?php
-								$parameters = 'depth='.$options['headerMenu1_dropdown'];
-								$parameters .= '&hide_empty=0';
-								$parameters .= '&include='.$options['headerMenu1_exclude_categories'];
-								$categories = get_categories($parameters); 
+								$categories = arjuna_get_all_categories('', $options['headerMenu1_exclude_categories'], $options['headerMenu1_dropdown']);
 								?>
 								<select multiple="multiple" size="7" name="headerMenu1_exclude_categories[]" id="hm1ec" style="height:auto;width:400px; padding-right:20px;">
-									<?php
-									if(!empty($options['headerMenu1_exclude_categories'])):
-										foreach($categories as $cat):
-										?>
-										<option value="<?php print $cat->cat_ID; ?>"><?php print $cat->cat_name; ?></option>
-										<?php
-										endforeach;
-									endif;
-									?>
+									<?php if(!empty($options['headerMenu1_exclude_categories'])) arjuna_admin_walk_categories($categories); ?>
 								</select>
 								<span class="description"><?php _e('Note: While the above fields show empty categories, the theme will only display categories that have at least one published post in them.', 'Arjuna'); ?></span>
 							</div>
 							<div id="headerMenu1_include_pages"<?php if($options['headerMenu1_display']!='pages'): ?> style="display:none;"<?php endif; ?>>
 								<?php _e('Include pages', 'Arjuna'); ?><br />
 								<?php
-								$parameters = 'depth='.$options['headerMenu1_dropdown'];
-								$parameters .= '&exclude='.$options['headerMenu1_exclude_pages'];
-								$pages = get_pages($parameters); 
+								$pages = arjuna_get_all_pages($options['headerMenu1_exclude_pages'], '', $options['headerMenu1_dropdown']);
 								?>
 								<select multiple="multiple" size="7" name="headerMenu1_include_pages[]" id="hm1ip" style="height:auto;width:400px; padding-right:20px;">
-									<?php foreach($pages as $page): ?>
-									<option value="<?php print $page->ID; ?>"><?php print $page->post_title; ?></option>
-									<?php endforeach; ?>
+									<?php arjuna_admin_walk_pages($pages); ?>
 								</select>
 								<div class="tArrows">
 									<a href="#" class="tArrowUp" id="hm1ip_up"></a><a href="#" class="tArrowDown" id="hm1ip_down"></a>
 								</div>
 								<?php _e('Exclude pages', 'Arjuna'); ?><br />
 								<?php
-								$parameters = 'depth='.$options['headerMenu1_dropdown'];
-								$parameters .= '&include='.$options['headerMenu1_exclude_pages'];
-								$pages = get_pages($parameters); 
+								$pages = arjuna_get_all_pages('', $options['headerMenu1_exclude_pages'], $options['headerMenu1_dropdown']);
 								?>
 								<select multiple="multiple" size="7" name="headerMenu1_exclude_pages[]" id="hm1ep" style="height:auto;width:400px; padding-right:20px;">
-									<?php
-									if(!empty($options['headerMenu1_exclude_pages'])):
-										foreach($pages as $page):
-										?>
-										<option value="<?php print $page->ID; ?>"><?php print $page->post_title; ?></option>
-										<?php
-										endforeach;
-									endif;
-									?>
+									<?php if(!empty($options['headerMenu1_exclude_pages'])) arjuna_admin_walk_pages($pages); ?>
 								</select>
 							</div>
 							</td>
@@ -577,11 +698,19 @@ function arjuna_add_theme_page () {
 			<div class="bottom"><span></span></div>
 		</div>
 		
-		<div class="srsContainer srsContainerClosed">
+		<div self:ID="secondHeaderMenu" class="srsContainer<?php if(!arjuna_admin_is_panel_open('secondHeaderMenu')) print ' srsContainerClosed'; ?>">
 			<h4 class="title"><span><div class="tIcon" id="icon-secondMenu"></div><?php _e('Second Header Menu', 'Arjuna'); ?></span></h4>
 			<div class="inside">
 				<table class="form-table">
 					<tbody>
+						<tr>
+							<th scope="row"><?php _e('Enabled', 'Arjuna'); ?></th>
+							<td>
+								<label><input name="headerMenu2_show" type="checkbox"<?php if($options['headerMenu2_show']) echo ' checked="checked"'; ?> /> <?php _e('Enable this menu', 'Arjuna'); ?></label>
+								<br />
+								<span class="description"><?php _e('If disabled, the menu will be hidden.', 'Arjuna');?></span>
+							</td>
+						</tr>
 						<tr>
 							<th scope="row"><?php _e('Separators', 'Arjuna'); ?></th>
 							<td>
@@ -663,70 +792,40 @@ function arjuna_add_theme_page () {
 							<div id="headerMenu2_include_categories"<?php if($options['headerMenu2_display']=='pages'): ?> style="display:none;"<?php endif; ?>>
 								<?php _e('Include categories', 'Arjuna'); ?><br />
 								<?php
-								$parameters = 'depth='.$options['headerMenu2_dropdown'];
-								$parameters .= '&hide_empty=0';
-								$parameters .= '&exclude='.$options['headerMenu2_exclude_categories'];
-								$categories = get_categories($parameters); 
+								$categories = arjuna_get_all_categories($options['headerMenu2_exclude_categories'], '', $options['headerMenu2_dropdown']);
 								?>
 								<select multiple="multiple" size="7" name="headerMenu2_include_categories[]" id="hm2ic" style="height:auto;width:400px; padding-right:20px;">
-									<?php foreach($categories as $cat): ?>
-									<option value="<?php print $cat->cat_ID; ?>"><?php print $cat->cat_name; ?></option>
-									<?php endforeach; ?>
+									<?php arjuna_admin_walk_categories($categories); ?>
 								</select>
 								<div class="tArrows">
 									<a href="#" class="tArrowUp" id="hm2ic_up"></a><a href="#" class="tArrowDown" id="hm2ic_down"></a>
 								</div>
 								<?php _e('Exclude categories', 'Arjuna'); ?><br />
 								<?php
-								$parameters = 'depth='.$options['headerMenu2_dropdown'];
-								$parameters .= '&hide_empty=0';
-								$parameters .= '&include='.$options['headerMenu2_exclude_categories'];
-								$categories = get_categories($parameters); 
+								$categories = arjuna_get_all_categories('', $options['headerMenu2_exclude_categories'], $options['headerMenu2_dropdown']);
 								?>
 								<select multiple="multiple" size="7" name="headerMenu2_exclude_categories[]" id="hm2ec" style="height:auto;width:400px; padding-right:20px;">
-									<?php
-									if(!empty($options['headerMenu2_exclude_categories'])):
-										foreach($categories as $cat):
-										?>
-										<option value="<?php print $cat->cat_ID; ?>"><?php print $cat->cat_name; ?></option>
-										<?php
-										endforeach;
-									endif;
-									?>
+									<?php if(!empty($options['headerMenu2_exclude_categories'])) arjuna_admin_walk_categories($categories); ?>	
 								</select>
 								<span class="description"><?php _e('Note: While the above fields show empty categories, the theme will only display categories that have at least one published post in them.</span>', 'Arjuna'); ?></span>
 							</div>
 							<div id="headerMenu2_include_pages"<?php if($options['headerMenu2_display']!='pages'): ?> style="display:none;"<?php endif; ?>>
 								<?php _e('Include pages', 'Arjuna'); ?><br />
 								<?php
-								$parameters = 'depth='.$options['headerMenu2_dropdown'];
-								$parameters .= '&exclude='.$options['headerMenu2_exclude_pages'];
-								$pages = get_pages($parameters); 
+								$pages = arjuna_get_all_pages($options['headerMenu2_exclude_pages'], '', $options['headerMenu2_dropdown']);
 								?>
 								<select multiple="multiple" size="7" name="headerMenu2_include_pages[]" id="hm2ip" style="height:auto;width:400px; padding-right:20px;">
-									<?php foreach($pages as $page): ?>
-									<option value="<?php print $page->ID; ?>"><?php print $page->post_title; ?></option>
-									<?php endforeach; ?>
+									<?php arjuna_admin_walk_pages($pages); ?>
 								</select>
 								<div class="tArrows">
 									<a href="#" class="tArrowUp" id="hm2ip_up"></a><a href="#" class="tArrowDown" id="hm2ip_down"></a>
 								</div>
 								<?php _e('Exclude pages', 'Arjuna'); ?><br />
 								<?php
-								$parameters = 'depth='.$options['headerMenu2_dropdown'];
-								$parameters .= '&include='.$options['headerMenu2_exclude_pages'];
-								$pages = get_pages($parameters); 
+								$pages = arjuna_get_all_pages('', $options['headerMenu2_exclude_pages'], $options['headerMenu2_dropdown']);
 								?>
 								<select multiple="multiple" size="7" name="headerMenu2_exclude_pages[]" id="hm2ep" style="height:auto;width:400px; padding-right:20px;">
-									<?php
-									if(!empty($options['headerMenu2_exclude_pages'])):
-										foreach($pages as $page):
-										?>
-										<option value="<?php print $page->ID; ?>"><?php print $page->post_title; ?></option>
-										<?php
-										endforeach;
-									endif;
-									?>
+									<?php if(!empty($options['headerMenu2_exclude_pages'])) arjuna_admin_walk_pages($pages); ?>	
 								</select>
 							</div>
 							</td>
@@ -747,48 +846,105 @@ function arjuna_add_theme_page () {
 			<div class="bottom"><span></span></div>
 		</div>
 		
-		
-		<div class="srsContainer srsContainerClosed">
-			<h4 class="title"><span><div class="tIcon" id="icon-headerImage"></div><?php _e('Header Image', 'Arjuna'); ?></span></h4>
+		<div self:ID="background" class="srsContainer<?php if(!arjuna_admin_is_panel_open('background')) print ' srsContainerClosed'; ?>">
+			<h4 class="title"><span><?php _e('Background &amp; Color Schemes', 'Arjuna'); ?></span></h4>
 			<div class="inside">
 				<table class="form-table">
 					<tbody>
-					<tr>
-					<td>
-						<div class="tImageOptions" style="float:none">
-							<input name="headerImage" type="radio" id="headerImage_lightBlue" value="lightBlue"<?php if($options['headerImage']=='lightBlue') echo ' checked="checked"'; ?> />
-							<div class="tImage" id="icon-lightBlue"></div>
-							<span><label for="headerImage_lightBlue"><?php _e('Light Blue', 'Arjuna'); ?></label></span>
-						</div>
-						<div class="tImageOptions" style="float:none">
-							<input name="headerImage" type="radio" id="headerImage_darkBlue" value="darkBlue"<?php if($options['headerImage']=='darkBlue') echo ' checked="checked"'; ?> />
-							<div class="tImage" id="icon-darkBlue"></div>
-							<span><label for="headerImage_darkBlue"><?php _e('Dark Blue', 'Arjuna'); ?></label></span>
-						</div>
-						<div class="tImageOptions" style="float:none">
-							<input name="headerImage" type="radio" id="headerImage_khaki" value="khaki"<?php if($options['headerImage']=='khaki') echo ' checked="checked"'; ?> />
-							<div class="tImage" id="icon-khaki"></div>
-							<span><label for="headerImage_khaki"><?php _e('Khaki', 'Arjuna'); ?></label></span>
-						</div>
-						<div class="tImageOptions" style="float:none">
-							<input name="headerImage" type="radio" id="headerImage_seaGreen" value="seaGreen"<?php if($options['headerImage']=='seaGreen') echo ' checked="checked"'; ?> />
-							<div class="tImage" id="icon-seaGreen"></div>
-							<span><label for="headerImage_seaGreen"><?php _e('Sea Green', 'Arjuna'); ?></label></span>
-						</div>
-					</td>
-					</tr>
+						<tr>
+							<th scope="row"><?php _e('Background Style', 'Arjuna'); ?></th>
+							<td>
+								<?php 
+								$versions = array(
+									array('id' => 'backgroundStyle_blueish', 'value' => 'gradient_blueish', 'label' => __('Blueish gradient')),
+									array('id' => 'backgroundStyle_gray', 'value' => 'gradient_gray', 'label' => __('Gray gradient')),
+									array('id' => 'backgroundStyle_grayReverse', 'value' => 'gradient_gray_reverse', 'label' => __('Gray gradient (reverse)')),
+									array('id' => 'backgroundStyle_khaki', 'value' => 'gradient_khaki', 'label' => __('Khaki gradient'))
+								);
+								foreach($versions as $version):
+								?>
+								<div class="tImageOptions">
+									<input name="backgroundStyle" type="radio" id="<?php print $version['id']; ?>" value="<?php print $version['value']; ?>"<?php if($options['background_style']==$version['value']) echo ' checked="checked"'; ?> />
+									<div class="tImage" id="icon-<?php print $version['value'];?>"></div>
+									<span><label for="<?php print $version['id']; ?>"><?php print $version['label']; ?></label></span>
+								</div>
+								<?php endforeach; ?>
+								<div class="tImageOptions" style="float:none; clear:left;">
+									<input name="backgroundStyle" type="radio" id="backgroundStyle_solid" value=""<?php if($options['background_style']=='') echo ' checked="checked"'; ?> />
+									<span style="margin-top:0;"><label for="backgroundStyle_solid">Solid Color:
+										<div class="backgroundColor"><div id="backgroundColor_picker"><div class="inner"></div></div></div>
+										<input name="backgroundColor" type="text" id="backgroundColor" value="<?php print $options['background_color']; ?>" />
+										Button Style: <select name="backgroundButtonStyle" id="backgroundButtonStyle">
+											<option value="default"<?php if($options['solidBackground_buttonStyle'] == 'default') print ' selected="selected"'; ?>>Default</option>
+											<option value="light"<?php if($options['solidBackground_buttonStyle'] == 'light') print ' selected="selected"'; ?>>Light</option>
+										</select>
+									</label></span>
+								</div>
+								<br class="clear" /><span class="description"><?php _e('If the background is a solid color, you can choose the style of the buttons yourself.', 'Arjuna'); ?></span>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><?php _e('Header Image', 'Arjuna'); ?></th>
+							<td>
+								<table class="form-table">
+									<tbody>
+									<tr>
+									<td>
+										<div class="tImageOptions" style="float:none;overflow:hidden;">
+											<input name="headerImage" type="radio" id="headerImage_lightBlue" value="lightBlue"<?php if($options['headerImage']=='lightBlue') echo ' checked="checked"'; ?> />
+											<div class="tImage" id="icon-lightBlue"></div>
+											<span><label for="headerImage_lightBlue"><?php _e('Light Blue', 'Arjuna'); ?></label></span>
+										</div>
+										<div class="tImageOptions" style="float:none;overflow:hidden;">
+											<input name="headerImage" type="radio" id="headerImage_darkBlue" value="darkBlue"<?php if($options['headerImage']=='darkBlue') echo ' checked="checked"'; ?> />
+											<div class="tImage" id="icon-darkBlue"></div>
+											<span><label for="headerImage_darkBlue"><?php _e('Dark Blue', 'Arjuna'); ?></label></span>
+										</div>
+										<div class="tImageOptions" style="float:none;overflow:hidden;">
+											<input name="headerImage" type="radio" id="headerImage_khaki" value="khaki"<?php if($options['headerImage']=='khaki') echo ' checked="checked"'; ?> />
+											<div class="tImage" id="icon-khaki"></div>
+											<span><label for="headerImage_khaki"><?php _e('Khaki', 'Arjuna'); ?></label></span>
+										</div>
+										<div class="tImageOptions" style="float:none;overflow:hidden;">
+											<input name="headerImage" type="radio" id="headerImage_seaGreen" value="seaGreen"<?php if($options['headerImage']=='seaGreen') echo ' checked="checked"'; ?> />
+											<div class="tImage" id="icon-seaGreen"></div>
+											<span><label for="headerImage_seaGreen"><?php _e('Sea Green', 'Arjuna'); ?></label></span>
+										</div>
+										<div class="tImageOptions" style="float:none;overflow:hidden;">
+											<input name="headerImage" type="radio" id="headerImage_lightRed" value="lightRed"<?php if($options['headerImage']=='lightRed') echo ' checked="checked"'; ?> />
+											<div class="tImage" id="icon-lightRed"></div>
+											<span><label for="headerImage_lightRed"><?php _e('Light Red', 'Arjuna'); ?></label></span>
+										</div>
+									</td>
+									</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><?php _e('Footer Style', 'Arjuna'); ?></th>
+							<td>
+								<div class="tImageOptions" style="float:none;overflow:hidden;">
+									<input name="footerStyle" style="margin-top:12px;" type="radio" id="footerStyle_style1" value="style1"<?php if($options['footerStyle']=='style1') echo ' checked="checked"'; ?> />
+									<div class="tImage" id="icon-footerStyle1"></div>
+								</div>
+								<div class="tImageOptions" style="float:none;overflow:hidden;">
+									<input name="footerStyle" style="margin-top:8px;" type="radio" id="footerStyle_style2" value="style2"<?php if($options['footerStyle']=='style2') echo ' checked="checked"'; ?> />
+									<div class="tImage <?php print $options['headerImage']; ?>" id="icon-footerStyle2"></div>
+									<span style="margin-top:4px;"><label for="footerStyle_style2"><?php _e('Match Header Image', 'Arjuna'); ?></label></span>
+								</div>
+							</td>
+						</tr>
 					</tbody>
 				</table>
 			</div>
 			<div class="bottom"><span></span></div>
 		</div>
 		
-		
-		<h3><?php _e('General Options', 'Arjuna'); ?></h3>
-		
-		<div class="srsContainer srsContainerClosed">
+		<div self:ID="sidebar" class="srsContainer<?php if(!arjuna_admin_is_panel_open('sidebar')) print ' srsContainerClosed'; ?>">
 			<h4 class="title"><span><?php _e('Sidebar', 'Arjuna'); ?></span></h4>
 			<div class="inside">
+				<p class="note"><?php printf(__('Note: To see how the sidebar and its widget bars work in Arjuna, please read our %sFAQ%s.', 'Arjuna'), '<a href="http://www.srssolutions.com/en/downloads/arjuna_wordpress_theme#faq">', '</a>'); ?></p>
 				<table class="form-table">
 					<tbody>
 						<tr>
@@ -824,7 +980,7 @@ function arjuna_add_theme_page () {
 							<th scope="row"><?php _e('Default Widgets', 'Arjuna'); ?></th>
 							<td>
 								<label><input name="sidebar_showDefault" type="checkbox"<?php if($options['sidebar_showDefault']) echo ' checked="checked"'; ?> /> <?php _e('Display default sidebar widgets if the widget bars are empty.', 'Arjuna'); ?></label><br />
-								<span class="description"><?php _e('If enabled, these widgets will be displayed if the widget bar is empty: <b>sidebar_full_top:</b> Recent Posts and Browse by Tags, <b>sidebar_left:</b> Categories, <b>sidebar_right:</b> Meta', 'Arjuna'); ?></span>
+								<span class="description"><?php _e('If enabled, the following widgets will be displayed if the widget bar is empty: <b>Sidebar Top:</b> Recent Posts and Browse by Tags, <b>Sidebar Left:</b> Categories, <b>Siderbar Right:</b> Meta', 'Arjuna'); ?></span>
 							</td>
 						</tr>
 						<tr>
@@ -863,7 +1019,33 @@ function arjuna_add_theme_page () {
 			<div class="bottom"><span></span></div>
 		</div>
 		
-		<div class="srsContainer srsContainerClosed">
+		<h3><?php _e('General Options', 'Arjuna'); ?></h3>
+		
+		<div self:ID="archives" class="srsContainer<?php if(!arjuna_admin_is_panel_open('archives')) print ' srsContainerClosed'; ?>">
+			<h4 class="title"><span><?php _e('Index Pages', 'Arjuna'); ?></span></h4>
+			<div class="inside">
+				<p class="note"><?php _e('Index pages include the homepage (unless it is static), archives, category and tag listing pages as well as search results pages. Basically any page that displays a listing of posts.'); ?></p>
+				<table class="form-table">
+					<tbody>
+						<tr>
+							<th scope="row"><?php _e('Display Tags', 'Arjuna'); ?></th>
+							<td>
+								<label><input name="archives_includeTags" type="checkbox"<?php if($options['archives_includeTags']) echo ' checked="checked"'; ?> /> <?php _e('Display the tags of a post right below each post.', 'Arjuna'); ?></label><br />
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><?php _e('Display Categories', 'Arjuna'); ?></th>
+							<td>
+								<label><input name="archives_includeCategories" type="checkbox"<?php if($options['archives_includeCategories']) echo ' checked="checked"'; ?> /> <?php _e('Display the categories of a post right below each post.', 'Arjuna'); ?></label><br />
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="bottom"><span></span></div>
+		</div>
+		
+		<div self:ID="singlePosts" class="srsContainer<?php if(!arjuna_admin_is_panel_open('singePosts')) print ' srsContainerClosed'; ?>">
 			<h4 class="title"><span><?php _e('Single Posts and Pages', 'Arjuna'); ?></span></h4>
 			<div class="inside">
 				<table class="form-table">
@@ -901,25 +1083,25 @@ function arjuna_add_theme_page () {
 			<div class="bottom"><span></span></div>
 		</div>
 
-		<div class="srsContainer srsContainerClosed">
-			<h4 class="title"><span><?php _e('Comments', 'Arjuna'); ?></span></h4>
+		<div self:ID="comments" class="srsContainer<?php if(!arjuna_admin_is_panel_open('comments')) print ' srsContainerClosed'; ?>">
+			<h4 class="title"><span><?php _e('Comments &amp; Trackbacks', 'Arjuna'); ?></span></h4>
 			<div class="inside">
 				<table class="form-table">
 					<tbody>
 						<tr>
 							<th scope="row"><?php _e('Display comments as follows', 'Arjuna'); ?></th>
 							<td>
-								<div class="tImageOptions" style="float:none">
+								<div class="tImageOptions" style="float:none;overflow:hidden;">
 									<input name="commentDisplay" type="radio" id="commentDisplay_left" value="left"<?php if($options['commentDisplay']=='left') echo ' checked="checked"'; ?> />
 									<div class="tImage" id="icon-commentsLeft"></div>
 									<span><label for="commentDisplay_left"><?php _e('Aligned to the left', 'Arjuna'); ?></label></span>
 								</div>
-								<div class="tImageOptions" style="float:none">
+								<div class="tImageOptions" style="float:none;overflow:hidden;">
 									<input name="commentDisplay" type="radio" id="commentDisplay_right" value="right"<?php if($options['commentDisplay']=='right') echo ' checked="checked"'; ?> />
 									<div class="tImage" id="icon-commentsRight"></div>
 									<span><label for="commentDisplay_right"><?php _e('Aligned to the right', 'Arjuna'); ?></label></span>
 								</div>
-								<div class="tImageOptions" style="float:none">
+								<div class="tImageOptions" style="float:none;overflow:hidden;">
 									<input name="commentDisplay" type="radio" id="commentDisplay_alt" value="none"<?php if($options['commentDisplay']=='alt') echo ' checked="checked"'; ?> />
 									<div class="tImage" id="icon-commentsAlt"></div>
 									<span><label for="commentDisplay_alt"><?php _e('Alternate between left and right alignment', 'Arjuna'); ?></label></span>
@@ -937,9 +1119,17 @@ function arjuna_add_theme_page () {
 						<tr>
 							<th scope="row"><?php _e('Comment Display', 'Arjuna'); ?></th>
 							<td>
-								<label><input name="comments_hideWhenDisabledOnPages" type="checkbox"<?php if($options['comments_hideWhenDisabledOnPages']) echo ' checked="checked"'; ?> /> <?php _e('Hide any traces of comments when comments, pingbacks and trackbacks are disabled on <strong>Pages</strong>.', 'Arjuna'); ?></label><br />
-								<label><input name="comments_hideWhenDisabledOnPosts" type="checkbox"<?php if($options['comments_hideWhenDisabledOnPosts']) echo ' checked="checked"'; ?> /> <?php _e('Hide any traces of comments when comments, pingbacks and trackbacks are disabled on <strong>Posts</strong>.', 'Arjuna'); ?></label><br />
-								<span class="description"><?php _e('Note: If enabled, the section that says Comments and the comments button in the heading of the respective pages/posts will be removed.', 'Arjuna'); ?></span>
+								<label><input name="comments_hideWhenDisabledOnPages" type="checkbox"<?php if($options['comments_hideWhenDisabledOnPages']) echo ' checked="checked"'; ?> /> <?php _e('Hide any traces of comments when they are disabled for <strong>Pages</strong>.', 'Arjuna'); ?></label><br />
+								<label><input name="comments_hideWhenDisabledOnPosts" type="checkbox"<?php if($options['comments_hideWhenDisabledOnPosts']) echo ' checked="checked"'; ?> /> <?php _e('Hide any traces of comments when they are disabled for <strong>Posts</strong>.', 'Arjuna'); ?></label><br />
+								<span class="description"><?php _e('Note: If enabled, the comments tab section as well as the comment form on pages/posts will be removed.', 'Arjuna'); ?></span>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><?php _e('Trackback Display', 'Arjuna'); ?></th>
+							<td>
+								<label><input name="trackbacks_hideWhenDisabledOnPages" type="checkbox"<?php if($options['trackbacks_hideWhenDisabledOnPages']) echo ' checked="checked"'; ?> /> <?php _e('Hide any traces of trackbacks and pingbacks when they are disabled for <strong>Pages</strong>.', 'Arjuna'); ?></label><br />
+								<label><input name="trackbacks_hideWhenDisabledOnPosts" type="checkbox"<?php if($options['trackbacks_hideWhenDisabledOnPosts']) echo ' checked="checked"'; ?> /> <?php _e('Hide any traces of trackbacks and pingbacks when they are disabled for <strong>Posts</strong>.', 'Arjuna'); ?></label><br />
+								<span class="description"><?php _e('Note: If enabled, the trackbacks tab section on pages/posts will be removed.', 'Arjuna'); ?></span>
 							</td>
 						</tr>
 					</tbody>
@@ -948,7 +1138,28 @@ function arjuna_add_theme_page () {
 			<div class="bottom"><span></span></div>
 		</div>
 		
-		<div class="srsContainer srsContainerClosed">
+		<div self:ID="excerpts" class="srsContainer<?php if(!arjuna_admin_is_panel_open('excerpts')) print ' srsContainerClosed'; ?>">
+			<h4 class="title"><span><?php _e('Excerpts', 'Arjuna'); ?></span></h4>
+			<div class="inside">
+				<table class="form-table">
+					<tbody>
+						<tr>
+							<th scope="row"><?php _e('Show excerpts on', 'Arjuna'); ?></th>
+							<td>
+								<label><input name="excerpts_index" type="checkbox"<?php if($options['excerpts_index']) echo ' checked="checked"'; ?> /> <?php _e('Homepage/Index page', 'Arjuna'); ?></label><br />
+								<label><input name="excerpts_categoryPages" type="checkbox"<?php if($options['excerpts_categoryPages']) echo ' checked="checked"'; ?> /> <?php _e('Category &amp; tag pages', 'Arjuna'); ?></label><br />
+								<label><input name="excerpts_archivePages" type="checkbox"<?php if($options['excerpts_archivePages']) echo ' checked="checked"'; ?> /> <?php _e('Archive pages', 'Arjuna'); ?></label><br />
+								<label><input name="excerpts_searchPages" type="checkbox"<?php if($options['excerpts_searchPages']) echo ' checked="checked"'; ?> /> <?php _e('Search pages', 'Arjuna'); ?></label><br />
+								<span class="description"><?php _e('Note: If enabled, an excerpt will be shown instead of the full post on selected pages. If a post does not have a custom excerpt, an automatic excerpt of the first 55 words will be displayed.', 'Arjuna'); ?></span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="bottom"><span></span></div>
+		</div>
+		
+		<div self:ID="pagination" class="srsContainer<?php if(!arjuna_admin_is_panel_open('pagination')) print ' srsContainerClosed'; ?>">
 			<h4 class="title"><span><?php _e('Pagination', 'Arjuna'); ?></span></h4>
 			<div class="inside">
 				<table class="form-table">
@@ -1011,7 +1222,7 @@ function arjuna_add_theme_page () {
 			<div class="bottom"><span></span></div>
 		</div>
 		
-		<div class="srsContainer srsContainerClosed">
+		<div self:ID="miscellaneous" class="srsContainer<?php if(!arjuna_admin_is_panel_open('miscellaneous')) print ' srsContainerClosed'; ?>">
 			<h4 class="title"><span><?php _e('Miscellaneous', 'Arjuna'); ?></span></h4>
 			<div class="inside">
 				<table class="form-table">
@@ -1025,16 +1236,15 @@ function arjuna_add_theme_page () {
 							</td>
 						</tr>
 						<tr>
-							<th scope="row"><?php _e('Footer Style', 'Arjuna'); ?></th>
+							<th scope="row"><?php _e('Enable JavaScript menus', 'Arjuna'); ?></th>
 							<td>
-								<div class="tImageOptions" style="float:none">
-									<input name="footerStyle" style="margin-top:12px;" type="radio" value="style1"<?php if($options['footerStyle']=='style1') echo ' checked="checked"'; ?> />
-									<div class="tImage" id="icon-footerStyle1"></div>
-								</div>
-								<div class="tImageOptions" style="float:none">
-									<input name="footerStyle" style="margin-top:6px;" type="radio" value="style2"<?php if($options['footerStyle']=='style2') echo ' checked="checked"'; ?> />
-									<div class="tImage" id="icon-footerStyle2"></div>
-								</div>
+								<label><input name="headerMenus_enableJavaScript" type="checkbox"<?php if($options['headerMenus_enableJavaScript']) echo ' checked="checked"'; ?> /> <?php _e('Enable JavaScript dropdown menus. This will improve usability of the menus. If JavaScript is disabled, CSS-based dropdown menus will be used instead.', 'Arjuna'); ?></label><br />
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><?php _e('Show IE6 Notice', 'Arjuna'); ?></th>
+							<td>
+								<label><input name="miscellaneous_IE6Notice" type="checkbox"<?php if($options['miscellaneous_IE6Notice']) echo ' checked="checked"'; ?> /> <?php _e('Display a notice to Internet Explorer 6 users to update their browsers.', 'Arjuna'); ?></label><br />
 							</td>
 						</tr>
 						<tr>
@@ -1048,26 +1258,13 @@ function arjuna_add_theme_page () {
 								<span class="description"><?php sprintf(__('Arjuna needs write permissions to create a new file %s, which will contain the custom CSS.'), '&quot;user-style.css&quot;'); ?></span>
 								<?php else: ?>
 								<label><input name="customCSS" onclick="customCSS_switch(this)" type="checkbox"<?php if($options['customCSS']) echo ' checked="checked"'; ?> /> <?php _e('Enable custom CSS rules', 'Arjuna'); ?></label><br />
-								<span class="description"><?php _e('If enabled, Arjuna will create a user stylesheet with your custom CSS rules. The user stylesheet will be included with every page call. If you intend to make some minor changes to the stylesheet, enabling this option ensures that you can safely upgrade Arjuna without losing your custom CSS.', 'Arjuna');?></span>
+								<span class="description"><?php _e('If enabled, Arjuna will include your custom CSS rules with every page call. If you intend to make some minor changes to the theme, enabling this option ensures that you can safely upgrade Arjuna without losing your custom CSS. We recommend to use child themes for more serious customizations.', 'Arjuna');?></span>
 								<div id="customCSS_input"<?php if(!$options['customCSS']) echo ' style="display:none;"'; ?>>
 									<textarea name="customCSS_input"><?php
-										//check if there is a user-style.css file
-										$path = dirname(__FILE__).'/user-style.css';
-										if(file_exists($path))
-											print file_get_contents($path);
+										print $options['customCSS_input'];
 									?></textarea>
-									<?php if (!is_writable(dirname(__FILE__).'/')): ?>
-									<br /><span style="color:#C00;font-style:italic;"><?php _e('Note:', 'Arjuna'); ?></span> <?php _e('Arjuna cannot write to the themes directory. The custom CSS rules will be included in the header of each page, between &lt;STYLE&gt; tags.');?>
-									<?php endif; ?>
 								</div>
 								<?php endif; ?>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row"><?php _e('Internet Explorer 6 Optimization', 'Arjuna'); ?></th>
-							<td>
-								<label><input name="enableIE6optimization" type="checkbox"<?php if($options['enableIE6optimization']) echo ' checked="checked"'; ?> /> <?php _e('Enable IE6 performance optimization', 'Arjuna'); ?></label><br />
-								<span class="description"><?php _e('If turned on, Arjuna will attempt to detect IE6 and serve a stand-alone CSS file specifically made for IE6.', 'Arjuna'); ?><br /><?php _e('Note: IE6 will still work the same if this option is turned off, however, you and your IE6 users will save an estimated 28kb (11 image and 2 CSS files) in bandwidth for first-time visitors. IE6 also might render more rapidly if this is turned on.', 'Arjuna');?></span>
 							</td>
 						</tr>
 					</tbody>
@@ -1159,12 +1356,14 @@ add_action('admin_print_styles', 'arjuna_admin_initCSS');
 
 function arjuna_admin_initCSS() {
 	wp_enqueue_style('arjunaAdminCSS', get_bloginfo('template_url').'/admin.css');
+	wp_enqueue_style('fionnFarbtasticCSS', get_bloginfo('template_url').'/lib/farbtastic/farbtastic.css');
 }
 
 //JS for plugin page
 add_action('admin_print_scripts', 'arjuna_admin_initJS');
 
 function arjuna_admin_initJS() {
+	wp_enqueue_script('fionnFarbtasticJS', get_bloginfo('template_url').'/lib/farbtastic/farbtastic.js');
 	wp_enqueue_script('arjunaAdminJS', get_bloginfo('template_url').'/admin.js');
 }
 
@@ -1180,7 +1379,9 @@ function legacy_comments( $file ) {
 
 
 // custom comments
+$commentCount = 0;
 function arjuna_get_comment($comment, $args, $depth) {
+	global $commentCount;
 	$arjunaOptions = arjuna_get_options();
 	$GLOBALS['comment'] = $comment;
 	$commentClass = 'comment';
@@ -1194,7 +1395,7 @@ function arjuna_get_comment($comment, $args, $depth) {
 		<div class="message">
 			<div class="t"><div></div></div>
 			<div class="i"><div class="i2">
-				<span class="title"><?php _e('Written by', 'Arjuna'); ?> <?php if (!get_comment_author_url()): print get_comment_author_link(); else: ?><a href="<?php comment_author_url(); ?>" class="authorLink"><?php comment_author(); ?></a><?php endif; ?> <?php
+				<span class="title"><a href="#comment-<?php comment_ID() ?>">#<?php print ++$commentCount;?></a> | <?php _e('Written by', 'Arjuna'); ?> <?php if (!get_comment_author_url()): print get_comment_author_link(); else: ?><a href="<?php comment_author_url(); ?>" class="authorLink"><?php comment_author(); ?></a><?php endif; ?> <?php
 					if($arjunaOptions['commentDateFormat'] == 'timePassed'){
 						printf(__('about %s ago', 'Arjuna'), arjuna_get_time_passed(strtotime($comment->comment_date_gmt)));
 					} else {
@@ -1207,6 +1408,45 @@ function arjuna_get_comment($comment, $args, $depth) {
 				</span>
 				<?php if ($comment->comment_approved == '0'): ?>
 					<p><?php _e('Your comment is awaiting moderation.', 'Arjuna'); ?></p>
+				<?php endif; ?>
+				<div id="commentbody-<?php comment_ID() ?>">
+					<?php comment_text(); ?>
+				</div>
+			</div></div>
+			<div class="b"><div></div></div>
+		</div>
+	<?php //</li> , WP, as strange as this is, adds it automatically ?>
+<?php
+}
+
+$trackbackCount = 0;
+function arjuna_get_trackback($comment, $args, $depth) {
+	global $trackbackCount;
+	$arjunaOptions = arjuna_get_options();
+	$GLOBALS['comment'] = $comment;
+	$commentClass = 'comment';
+	
+?>
+	<li <?php comment_class();?> id="comment-<?php comment_ID() ?>">
+		<?php 
+			if (function_exists('get_avatar'))
+				echo get_avatar($comment, 40);
+		?>
+		<div class="message">
+			<div class="t"><div></div></div>
+			<div class="i"><div class="i2">
+				<span class="title"><a href="#comment-<?php comment_ID() ?>">#<?php print ++$trackbackCount;?></a> | <?php _e('Pinged by', 'Arjuna'); ?> <?php if (!get_comment_author_url()): print get_comment_author_link(); else: ?><a href="<?php comment_author_url(); ?>" class="authorLink"><?php comment_author(); ?></a><?php endif; ?> <?php
+					if($arjunaOptions['commentDateFormat'] == 'timePassed'){
+						printf(__('about %s ago', 'Arjuna'), arjuna_get_time_passed(strtotime($comment->comment_date_gmt)));
+					} else {
+						print __('on', 'Arjuna').' '.get_comment_time(get_option('date_format'));
+					}
+				?>.</span>
+				<span class="links">
+					<?php edit_comment_link(__('Edit', 'Arjuna'),'',''); ?>
+				</span>
+				<?php if ($comment->comment_approved == '0'): ?>
+					<p><?php _e('Your trackback is awaiting moderation.', 'Arjuna'); ?></p>
 				<?php endif; ?>
 				<div id="commentbody-<?php comment_ID() ?>">
 					<?php comment_text(); ?>
@@ -1318,9 +1558,7 @@ function arjuna_get_appendToPageTitle() {
 
 function arjuna_get_custom_CSS() {
 	$arjunaOptions = arjuna_get_options();
-	if($arjunaOptions['customCSS'] && $arjunaOptions['customCSS_useFilesystem'] && file_exists(dirname(__FILE__).'/user-style.css'))
-		return '<link rel="stylesheet" href="'.get_bloginfo('template_url').'/user-style.css" type="text/css" media="screen" />';
-	if($arjunaOptions['customCSS'] && !$arjunaOptions['customCSS_useFilesystem'] && $arjunaOptions['customCSS_input'])
+	if($arjunaOptions['customCSS'] && $arjunaOptions['customCSS_input'])
 		return '<style>'.$arjunaOptions['customCSS_input'].'</style>';
 	return '';
 }
@@ -1397,17 +1635,72 @@ function arjuna_get_pagination($previousLabel, $nextLabel) {
 	return;
 }
 
-function arjuna_get_comment_pagination() {
+function arjuna_get_post_pagination($previousLabel, $nextLabel) {
+	$arjunaOptions = arjuna_get_options();
+	global $post, $page, $numpages, $multipage, $more, $pagenow;
+	
+	$currentPage = $page;
+	$totalPages = $numpages;
+		
+	if ($multipage) {
+		$output = '';
+		$output .= '<div class="pagination"><div><ol>';
+		
+		
+		//display page info, e.g. "Page 2 of 7"
+		$output .= '<li class="info"><span>'.sprintf(__('Page %s of %s', 'Arjuna'), $currentPage, $totalPages).'</span></li>';
+		
+		//previous button
+		$previousPageURL = arjuna_post_pagination_get_url($currentPage - 1);
+		if ($currentPage > 1 && !empty($previousPageURL))
+			$output .= '<li class="prev"><a href="'.$previousPageURL.'"><span>'.$previousLabel.'</span></a></li>';
+		
+		//the pages to be included in the pagination
+		$include = array();
+
+		for ($i=1; $i<=$totalPages; $i++) {
+			if($i==$currentPage) {
+				$URL = arjuna_post_pagination_get_url($i);
+				$output .= '<li class="current"><a href="'.$URL.'" title="'.sprintf(__('Page %s', 'Arjuna'), $i).'"><span>'.$i.'</span></a></li>';
+			} else {
+				$URL = arjuna_post_pagination_get_url($i);
+				$output .= '<li><a href="'.$URL.'" title="'.sprintf(__('Page %s', 'Arjuna'), $i).'"><span>'.$i.'</span></a></li>';
+			}
+		}
+
+		//next button
+		$nextPageURL = arjuna_post_pagination_get_url($currentPage + 1);
+		if ($currentPage < $totalPages && !empty($nextPageURL))
+			$output .= '<li class="next"><a href="'.$nextPageURL.'"><span>'.$nextLabel.'</span></a></li>';
+	
+		$output .= '</ol></div></div>';
+		
+		echo $output;
+	}
+	return;
+}
+function arjuna_post_pagination_get_url($page) {
+	if($page == 1)
+		return add_query_arg('page', $page, get_permalink());
+	elseif('' == get_option('permalink_structure') || in_array($post->post_status, array('draft', 'pending')))
+		return add_query_arg('page', $page, get_permalink());
+	elseif('page' == get_option('show_on_front') && get_option('page_on_front') == $post->ID)
+		return trailingslashit(get_permalink()) . user_trailingslashit('page/' . $page, 'single_paged');
+	
+	return trailingslashit(get_permalink()) . user_trailingslashit($page, 'single_paged');
+}
+
+function arjuna_get_comment_pagination($fragment = '#_comments') {
 	if ( !is_singular() || !get_option('page_comments') )
 		return;
 	if(get_comment_pages_count() <= 1)
 		return;
 	
-	echo '<div class="commentNavigation"><div>';
+	echo '<div class="pagination commentPagination"><div>';
 	
 	if(function_exists('paginate_comments_links')) {
 		echo '<span class="title">' . __('Comment Pages:', 'Arjuna') . '</span>';
-		paginate_comments_links('prev_text='.__('Previous', 'Arjuna').'&next_text='.__('Next', 'Arjuna').'');
+		paginate_comments_links('prev_text='.__('Previous', 'Arjuna').'&next_text='.__('Next', 'Arjuna').'&type=list&add_fragment='.$fragment);
 	} else {
 		echo '<span class="older">'; previous_comments_link(__('Older Comments', 'Arjuna')); echo '</span>';
 		echo '<span class="newer">'; next_comments_link(__('Newer Comments', 'Arjuna')); echo '</span>';
@@ -1421,20 +1714,9 @@ function arjuna_get_edit_link($label) {
 		
 	if ( !$url = get_edit_post_link( $post->ID ) ) return;
 	
-	return '<a href="'.$url.'" class="postEdit"><span>'.$label.'</span></a>';
+	return '<a href="'.$url.'" class="btn postEdit"><span>'.$label.'</span></a>';
 }
 
-//Try to detect if IE6 or below is the user's browser. This allows for Arjuna to optimize IE6 output and significantly reduce bandwidth for IE6 users.
-function arjuna_isIE6() {
-	$userAgent = strtolower($_SERVER['HTTP_USER_AGENT']);
-	if (
-		( strpos($userAgent, 'msie 6') !== false || strpos($userAgent, 'msie 5') !== false )
-		&& strpos($userAgent, 'opera') === false
-		&& strpos($userAgent, 'msie 7') === false
-		&& strpos($userAgent, 'msie 8') === false
-	)	return true;
-	return false;
-}
 
 function arjuna_parseExcludes($IDs, $type) {
 	if(!function_exists('icl_object_id'))
@@ -1447,3 +1729,151 @@ function arjuna_parseExcludes($IDs, $type) {
 	
 	return implode(',', $newArray);
 }
+
+function arjuna_get_all_pages($exclude, $include, $depth) {
+	$pages = array();
+	
+	$parameters = 'depth='.$depth;
+	if($exclude)
+		$parameters .= '&exclude='.$exclude;
+	if($include)
+		$parameters .= '&include='.$include;
+	$wp_pages = get_pages($parameters);
+	
+	foreach($wp_pages as $wp_page) {
+		if($wp_page->post_parent) {
+			//find parent
+			if(!arjuna_get_all_pages_iterator($pages, $wp_page))
+				$pages[$wp_page->ID] = (object) array(
+				'ID' => $wp_page->ID,
+				'title' => $wp_page->post_title,
+				'children' => array()
+			);
+		} else {
+			$pages[$wp_page->ID] = (object) array(
+				'ID' => $wp_page->ID,
+				'title' => $wp_page->post_title,
+				'children' => array()
+			);
+		}
+	}
+	
+	return $pages;
+}
+function arjuna_get_all_pages_iterator(&$pages, $wp_page) {
+	foreach($pages as $ID => $page) {
+		if($ID == $wp_page->post_parent) {
+			$pages[$ID]->children[$wp_page->ID] = (object) array(
+				'ID' => $wp_page->ID,
+				'title' => $wp_page->post_title,
+				'children' => array()
+			);
+			return true;
+		} elseif(!empty($page->children)) {
+			if(arjuna_get_all_pages_iterator($page->children, $wp_page))
+				return true;
+		}
+	}
+	return false;
+}
+
+function arjuna_admin_walk_pages($pages, $level=0) {
+	if(empty($pages))
+		return true;
+	
+	foreach($pages as $page) {
+		print '<option value="'.$page->ID.'"'.($level ? ' style="margin-left:'. 15*$level .'px;"' : '').'>'.$page->title.'</option>';
+		if(!empty($page->children))
+			arjuna_admin_walk_pages($page->children, $level+1);
+	}
+}
+
+function arjuna_get_all_categories($exclude, $include, $depth) {
+	global $_tmp_buffer;
+	$_tmp_buffer = array();
+	
+	$categories = array();
+	
+	$parameters = 'depth='.$depth . '&hide_empty=0';
+	if($exclude)
+		$parameters .= '&exclude='.$exclude;
+	if($include)
+		$parameters .= '&include='.$include;
+	$wp_categories = get_categories($parameters);
+	
+	foreach($wp_categories as $wp_category) {
+		if($wp_category->parent) {
+			//put into buffer
+			if(!isset($_tmp_buffer[$wp_category->parent]))
+				$_tmp_buffer[$wp_category->parent] = array();
+			$_tmp_buffer[$wp_category->parent][] = (object) array(
+				'ID' => $wp_category->cat_ID,
+				'title' => $wp_category->cat_name,
+				'children' => array()
+			);
+		} else {
+			$categories[$wp_category->cat_ID] = (object) array(
+				'ID' => $wp_category->cat_ID,
+				'title' => $wp_category->cat_name,
+				'children' => array()
+			);
+		}
+	}
+	
+	//now use the buffer
+	foreach($categories as $ID => $category)
+		$categories[$ID] = arjuna_get_all_categories_iterator($category);
+	
+	return $categories;
+}
+function arjuna_get_all_categories_iterator($category) {
+	global $_tmp_buffer;
+	
+	if(!isset($_tmp_buffer[$category->ID]))
+		return $category;
+	
+	$categories = $_tmp_buffer[$category->ID];
+	foreach($categories as $key => $cat)
+		$categories[$key] = arjuna_get_all_categories_iterator($cat);
+	
+		
+	$category->children = $categories;
+		
+	return $category;
+}
+
+function arjuna_admin_walk_categories($categories, $level=0) {
+	if(empty($categories))
+		return true;
+	
+	foreach($categories as $category) {
+		print '<option value="'.$category->ID.'"'.($level ? ' style="margin-left:'. 15*$level .'px;"' : '').'>'.$category->title.'</option>';
+		if(!empty($category->children))
+			arjuna_admin_walk_categories($category->children, $level+1);
+	}
+}
+
+function arjuna_get_upload_directory() {
+	$uploadpath = wp_upload_dir();
+	$path = $uploadpath['basedir'] . '/arjuna';
+	if(!is_dir($path))
+		@mkdir($path, 0777, true);
+	return $path;
+}
+function arjuna_get_upload_url() {
+	$uploadpath = wp_upload_dir();
+	if ($uploadpath['baseurl']=='')
+		$uploadpath['baseurl'] = get_bloginfo('siteurl').'/wp-content/uploads';
+	return $uploadpath['baseurl'] . '/arjuna';
+}
+
+add_filter('get_comments_number', 'arjuna_comment_count', 0);
+function arjuna_comment_count( $count ) {
+	if (!is_admin()) {
+		global $id;
+		$comments_by_type = &separate_comments(get_comments('status=approve&post_id=' . $id));
+		return count($comments_by_type['comment']);
+	} 
+	return $count;
+}
+

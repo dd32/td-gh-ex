@@ -73,15 +73,6 @@ function pagination_switch(o) {
 }
 
 function enableIncludeMenuItems() {
-	jQuery('.srsContainer h4.title')
-	.click(function() {
-		if(jQuery(this).parent().hasClass('srsContainerClosed'))
-			jQuery(this).parent().removeClass('srsContainerClosed');
-		else jQuery(this).parent().addClass('srsContainerClosed');
-	})
-	.mouseover(function() { jQuery(this).addClass('over'); })
-	.mouseout(function() { jQuery(this).removeClass('over'); });
-	
 	
 	//First menu
 	jQuery("#hm1ic_up").click(function() {
@@ -170,6 +161,91 @@ function enableIncludeMenuItems() {
 	});
 }
 
+function ajax_savePanel(ID, set) {
+	jQuery.ajax({
+		type: "GET",
+		url: jQuery('#arjuna_themeURL').val() + '/admin/ajax/savePanel.php',
+		data: {
+			ID: ID,
+			set: set
+		},
+		dataType: 'json',
+		success: function(response){
+		}
+	});
+}
+
+tmp_farbtastic = null;
+
 jQuery(function() {
+	jQuery('.srsContainer h4.title')
+	.click(function() {
+		if(jQuery(this).parent().hasClass('srsContainerClosed')) {
+			jQuery(this).parent().removeClass('srsContainerClosed');
+			ajax_savePanel(jQuery(this).parent().attr('self:ID'), 1);
+		} else {
+			jQuery(this).parent().addClass('srsContainerClosed');
+			ajax_savePanel(jQuery(this).parent().attr('self:ID'), 0);
+		}
+	})
+	.mouseover(function() { jQuery(this).addClass('over'); })
+	.mouseout(function() { jQuery(this).removeClass('over'); });
+	
 	enableIncludeMenuItems();
+	
+	if(jQuery('#backgroundColor_picker').length > 0) {
+		tmp_farbtastic = jQuery.farbtastic('#backgroundColor_picker div.inner', function(color) {
+			jQuery('#backgroundColor').val(color);
+			jQuery('#backgroundColor_picker').css('background-color', color);
+		}).setColor(jQuery('#backgroundColor').val());
+		
+		jQuery('#backgroundColor_picker')
+		.click(function(e) {
+			jQuery('div.inner', this).fadeIn(500);
+			jQuery('#backgroundStyle_solid').attr('checked', 'checked');
+			e.stopPropagation();
+		});
+		
+		jQuery(document.body).click(function() {
+			jQuery('#backgroundColor_picker div.inner').fadeOut(500);
+		});
+	}
+	
+	jQuery('#icon-lightBlue').click(function() {
+		jQuery('#headerImage_lightBlue').attr('checked', 'checked').change();
+	});
+	jQuery('#headerImage_lightBlue').change(function() {
+		jQuery('#icon-footerStyle2').removeClass('darkBlue khaki seaGreen lightRed').addClass('lightBlue');
+	});
+	jQuery('#icon-darkBlue').click(function() {
+		jQuery('#headerImage_darkBlue').attr('checked', 'checked').change();
+	});
+	jQuery('#headerImage_darkBlue').change(function() {
+		jQuery('#icon-footerStyle2').removeClass('lightBlue khaki seaGreen lightRed').addClass('darkBlue');
+	});
+	jQuery('#icon-khaki').click(function() {
+		jQuery('#headerImage_khaki').attr('checked', 'checked').change();
+	});
+	jQuery('#headerImage_khaki').change(function() {
+		jQuery('#icon-footerStyle2').removeClass('darkBlue lightBlue seaGreen lightRed').addClass('khaki');
+	});
+	jQuery('#icon-seaGreen').click(function() {
+		jQuery('#headerImage_seaGreen').attr('checked', 'checked').change();
+	});
+	jQuery('#headerImage_seaGreen').change(function() {
+		jQuery('#icon-footerStyle2').removeClass('darkBlue khaki lightBlue lightRed').addClass('seaGreen');
+	});
+	jQuery('#icon-lightRed').click(function() {
+		jQuery('#headerImage_lightRed').attr('checked', 'checked').change();
+	});
+	jQuery('#headerImage_lightRed').change(function() {
+		jQuery('#icon-footerStyle2').removeClass('darkBlue khaki lightBlue seaGreen').addClass('lightRed');
+	});
+	
+	jQuery('#icon-footerStyle1').click(function() {
+		jQuery('#footerStyle_style1').attr('checked', 'checked').change();
+	});
+	jQuery('#icon-footerStyle2').click(function() {
+		jQuery('#footerStyle_style2').attr('checked', 'checked').change();
+	});
 });

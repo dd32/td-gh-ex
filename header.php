@@ -12,29 +12,36 @@ else { echo trim(wp_title(' ',false)); arjuna_get_appendToPageTitle(); }
 ?></title>
 <?php if(is_home()): ?><link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" /><?php endif; ?>
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-<?php
-if (!$arjunaOptions['enableIE6optimization'] || !arjuna_isIE6()) { ?>
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
-	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' );?>
-	<?php wp_head(); ?>
-	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/default.js"></script>
-	<!--[if lte IE 7]><link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/ie7.css" type="text/css" media="screen" /><![endif]-->
-	<!--[if lte IE 6]>
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/ie6.css" type="text/css" media="screen" />
-	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/ie6.js"></script>
-	<![endif]-->
-	<?php print arjuna_get_custom_CSS(); ?>
-<?php } elseif(arjuna_isIE6()) { ?>
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/ie6_full.css" type="text/css" media="screen" />
-	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' );?>
-	<?php wp_head(); ?>
-	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/default.js"></script>
-	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/ie6.js"></script>
-	<?php print arjuna_get_custom_CSS(); ?>
-<?php } ?>
+<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
+<?php wp_enqueue_script('jquery'); ?>
+<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' );?>
+<?php wp_head(); ?>
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/default.js"></script>
+<!--[if lte IE 7]><link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/ie7.css" type="text/css" media="screen" /><![endif]-->
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/ie6.css" type="text/css" media="screen" />
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/ie6.js"></script>
+<![endif]-->
+<?php print arjuna_get_custom_CSS(); ?>
 </head>
 
-<body<?php if(!$arjunaOptions['headerMenu1_show']): ?> class="hideHeaderMenu1"<?php endif; ?>><a name="top"></a><a id="skipToPosts" href="#content"><?php _e('Skip to posts', 'Arjuna'); ?></a>
+<?php
+$bodyClasses = array();
+if(!$arjunaOptions['headerMenus_enableJavaScript'])
+	$bodyClasses[] = 'menusNoJS';
+if(!$arjunaOptions['headerMenu1_show'])
+	$bodyClasses[] = 'hideHeaderMenu1';
+if($arjunaOptions['background_style'])
+	$bodyClasses[] = $arjunaOptions['background_style'];
+else
+	$bodyClasses[] = 'buttonStyle_'.$arjunaOptions['solidBackground_buttonStyle'];
+?>
+<body class="<?php print implode(' ', $bodyClasses); ?>"<?php if(!$arjunaOptions['background_style']) print ' style="background-color:'.$arjunaOptions['background_color'].'"'; ?>><a name="top"></a><a id="skipToPosts" href="#content"><?php _e('Skip to posts', 'Arjuna'); ?></a>
+<?php if($arjunaOptions['miscellaneous_IE6Notice']): ?>
+<!--[if lte IE 6]>
+<div class="IENotice"><?php _e('This browser is outdated. Please <a href="http://www.microsoft.com/windows/internet-explorer/default.aspx">upgrade</a> your browser to enjoy this website to its fullest extent.', 'Arjuna'); ?></div>
+<![endif]-->
+<?php endif; ?>
 <div class="pageContainer">
 	<div class="headerBG"></div>
 	<div class="header">
@@ -56,8 +63,13 @@ if (!$arjunaOptions['enableIE6optimization'] || !arjuna_isIE6()) { ?>
 		else $tmp = ' header_lightBlue';
 		?>
 		<div class="headerMain<?php print $tmp; ?>">
-			<h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
-			<span><?php bloginfo('description'); ?></span>
+			<?php if($arjunaOptions['headerLogo']): ?>
+				<a href="<?php bloginfo('url'); ?>"><img src="<?php print $arjunaOptions['headerLogo']; ?>" height="<?php print $arjunaOptions['headerLogo_height']; ?>" width="<?php print $arjunaOptions['headerLogo_width']; ?>" style="position:absolute;top:50%;margin:-<?php print ceil($arjunaOptions['headerLogo_height']/2); ?>px 0 0 20px;" /></a>
+			<?php else: ?>
+				<h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
+				<span><?php bloginfo('description'); ?></span>
+			<?php endif; ?>
+			
 			<div class="headerSearch">
 				<form method="get" action="<?php bloginfo('url'); ?>/">
 					<input type="text" class="searchQuery searchQueryIA" id="searchQuery" value="<?php _e('Search here...', 'Arjuna'); ?>" name="s" />
@@ -65,6 +77,7 @@ if (!$arjunaOptions['enableIE6optimization'] || !arjuna_isIE6()) { ?>
 				</form>
 			</div>
 		</div>
+		<?php if($arjunaOptions['headerMenu2_show']): ?>
 		<div class="headerMenu2<?php if($arjunaOptions['headerMenu2_displaySeparators']): ?> headerMenu2DS<?php endif; ?>"><span class="helper"></span>
 			<ul id="headerMenu2">
 				<?php if($arjunaOptions['headerMenu2_displayHomeButton']): ?><li><a href="<?php (function_exists('icl_get_home_url'))?(print icl_get_home_url()):(bloginfo('url')) ?>" class="homeIcon"><?php _e('Home','Arjuna'); ?></a></li><?php endif; ?><?php
@@ -77,6 +90,9 @@ if (!$arjunaOptions['enableIE6optimization'] || !arjuna_isIE6()) { ?>
 			</ul>
 			<span class="clear"></span>
 		</div>
+		<?php else: ?>
+		<div class="noHeaderMenu2"></div>
+		<?php endif; ?>
 	</div>
 
 	<div class="contentWrapper<?php

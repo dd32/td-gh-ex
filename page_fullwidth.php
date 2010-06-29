@@ -12,12 +12,12 @@ Template Name: Full Page (No Sidebar)
 	<div class="post" id="post-<?php the_ID(); ?>">
 		<?php if(!$arjunaOptions['pages_showInfoBar']): ?>
 			<div class="postHeaderCompact"><div class="inner">
-				<h1 class="postTitle"><a href="<?php the_permalink() ?>" title="<?php _e('Permalink to', 'Arjuna'); ?> <?php the_title(); ?>"><?php the_title(); ?></a></h1>
+				<a href="<?php the_permalink() ?>" title="<?php _e('Permalink to', 'Arjuna'); ?> <?php the_title(); ?>"><h1 class="postTitle"><?php the_title(); ?></h1></a>
 				<div class="bottom"><span></span></div>
 			</div></div>
 		<?php else: ?>
 			<div class="postHeader">
-				<h1 class="postTitle"><span><a href="<?php the_permalink() ?>" title="<?php _e('Permalink to', 'Arjuna'); ?> <?php the_title(); ?>"><?php the_title(); ?></a></span></h1>
+				<a href="<?php the_permalink() ?>" title="<?php _e('Permalink to', 'Arjuna'); ?> <?php the_title(); ?>"><h1 class="postTitle"><span><?php the_title(); ?></span></h1></a>
 				<div class="bottom"><div>
 					<span class="postDate"><?php the_time(get_option('date_format')); ?><?php
 						//Time

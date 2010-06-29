@@ -1,0 +1,1047 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Arjuna X 1.3.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-31 12:10+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: SRS Solutions <info@srssolutions.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: D:\\_Local Web Server\\TestServer\\WordPress\\2.8\\wp-content\\themes\n"
+"X-Poedit-Language: Polish\n"
+"X-Poedit-Country: POLAND\n"
+"X-Poedit-SearchPath-0: Arjuna-X\n"
+
+#: Arjuna-X/404.php:4
+msgid "Error 404 - Not Found"
+msgstr "Error 404 - Nie znaleziono"
+
+#: Arjuna-X/404.php:5
+msgid "Sorry, but you are looking for something that isn't here. "
+msgstr "Przepraszamy, ale szukasz co&#347 czego tutaj nie ma."
+
+#: Arjuna-X/archive.php:8
+msgid "Browsing Posts in <em>%s</em>"
+msgstr "Wyszukiwanie post&#243w w <em>%s</em>"
+
+#: Arjuna-X/archive.php:10
+msgid "Browsing Posts tagged <em>%s</em>"
+msgstr "Wyszukiwanie post&#243w z tagami <em>%s</em>"
+
+#: Arjuna-X/archive.php:12
+msgid "Browsing Posts published on %s"
+msgstr "Wyszukiwanie post&#243w publikowanych w %s"
+
+#: Arjuna-X/archive.php:14
+#: Arjuna-X/archive.php:16
+msgid "Browsing Posts published in %s"
+msgstr "Wyszukiwanie post&#243w publikowanych w %s"
+
+#: Arjuna-X/archive.php:14
+msgid "F, Y"
+msgstr ""
+
+#: Arjuna-X/archive.php:16
+msgid "Y"
+msgstr ""
+
+#: Arjuna-X/archive.php:19
+msgid "Browsing Posts published by <em>%s</em>"
+msgstr "Wyszukiwanie post&#243w publikowanych przez <em>%s</em>"
+
+#: Arjuna-X/archive.php:21
+msgid "Blog Archives"
+msgstr "Archiwum Blogu"
+
+#: Arjuna-X/archive.php:28
+#: Arjuna-X/index.php:9
+#: Arjuna-X/page.php:11
+#: Arjuna-X/page.php:16
+#: Arjuna-X/page_fullwidth.php:15
+#: Arjuna-X/page_fullwidth.php:20
+#: Arjuna-X/search.php:15
+#: Arjuna-X/single.php:16
+msgid "Permalink to"
+msgstr "Permalink do"
+
+#: Arjuna-X/archive.php:33
+#: Arjuna-X/index.php:14
+#: Arjuna-X/page.php:21
+#: Arjuna-X/page_fullwidth.php:25
+#: Arjuna-X/search.php:20
+#: Arjuna-X/single.php:21
+msgid " at "
+msgstr "przy"
+
+#: Arjuna-X/archive.php:42
+#: Arjuna-X/index.php:23
+#: Arjuna-X/page.php:30
+#: Arjuna-X/page_fullwidth.php:34
+#: Arjuna-X/search.php:28
+#: Arjuna-X/single.php:30
+msgid "Pass required"
+msgstr "Wymagane has&#322o"
+
+#: Arjuna-X/archive.php:44
+#: Arjuna-X/index.php:25
+#: Arjuna-X/page.php:32
+#: Arjuna-X/page_fullwidth.php:36
+#: Arjuna-X/search.php:30
+#: Arjuna-X/single.php:32
+msgid "Comments off"
+msgstr "Komentarze wy&#322&#261czone"
+
+#: Arjuna-X/archive.php:46
+#: Arjuna-X/index.php:27
+#: Arjuna-X/page.php:34
+#: Arjuna-X/page_fullwidth.php:38
+#: Arjuna-X/search.php:32
+#: Arjuna-X/single.php:34
+msgid "No comments"
+msgstr "Brak komentarzy"
+
+#: Arjuna-X/archive.php:46
+#: Arjuna-X/index.php:27
+#: Arjuna-X/page.php:34
+#: Arjuna-X/page_fullwidth.php:38
+#: Arjuna-X/search.php:32
+#: Arjuna-X/single.php:34
+msgid "1 comment"
+msgstr "1 komentarz"
+
+#: Arjuna-X/archive.php:46
+#: Arjuna-X/index.php:27
+#: Arjuna-X/page.php:34
+#: Arjuna-X/page_fullwidth.php:38
+#: Arjuna-X/search.php:32
+#: Arjuna-X/single.php:34
+msgid "% comments"
+msgstr "% komentarzy"
+
+#: Arjuna-X/archive.php:53
+#: Arjuna-X/index.php:34
+#: Arjuna-X/page.php:42
+#: Arjuna-X/page_fullwidth.php:46
+#: Arjuna-X/search.php:38
+#: Arjuna-X/single.php:41
+msgid "continue reading..."
+msgstr "czytaj dalej..."
+
+#: Arjuna-X/archive.php:61
+#: Arjuna-X/index.php:42
+#: Arjuna-X/search.php:46
+#: Arjuna-X/single.php:52
+msgid "<i>none</i>"
+msgstr "<i>brak</i>"
+
+#: Arjuna-X/archive.php:65
+#: Arjuna-X/index.php:46
+#: Arjuna-X/search.php:50
+msgid "Read more"
+msgstr "Czytaj wi&#281cej"
+
+#: Arjuna-X/archive.php:77
+#: Arjuna-X/index.php:64
+#: Arjuna-X/search.php:59
+msgid "Newer Entries"
+msgstr "Nowsze wiadomo&#347ci"
+
+#: Arjuna-X/archive.php:78
+#: Arjuna-X/index.php:65
+#: Arjuna-X/search.php:60
+msgid "Older Entries"
+msgstr "Starsze wiadomo&#347ci"
+
+#: Arjuna-X/archive.php:83
+#: Arjuna-X/index.php:71
+msgid "There is nothing here (yet)."
+msgstr "Tutaj nic nie ma (jeszcze)."
+
+#: Arjuna-X/comments.php:13
+#: Arjuna-X/comments_legacy.php:11
+msgid "This post is password protected. Enter the password to view comments."
+msgstr "Ten post jest zabezpieczony has&#322em. Wpisz has&#322o, aby zobaczy&#263 komentarze."
+
+#: Arjuna-X/comments.php:21
+#: Arjuna-X/comments_legacy.php:18
+#: Arjuna-X/functions.php:897
+msgid "Comments"
+msgstr "Komentarze"
+
+#: Arjuna-X/comments.php:23
+#: Arjuna-X/comments_legacy.php:20
+msgid "Leave a comment"
+msgstr "Dodaj komentarz"
+
+#: Arjuna-X/comments.php:26
+#: Arjuna-X/comments_legacy.php:23
+msgid "Trackback"
+msgstr "Trackback"
+
+#: Arjuna-X/comments.php:38
+#: Arjuna-X/comments_legacy.php:91
+msgid "No one has commented yet."
+msgstr "Nikt jeszcze nie komentowa&#322."
+
+#: Arjuna-X/comments.php:40
+#: Arjuna-X/comments_legacy.php:93
+msgid "Comments are closed."
+msgstr "Komentarze s&#261 wy&#322&#261czone."
+
+#: Arjuna-X/comments.php:50
+#: Arjuna-X/comments_legacy.php:102
+msgid "Leave a Comment"
+msgstr "Zostaw komentarz"
+
+#: Arjuna-X/comments.php:52
+msgid "Cancel Reply"
+msgstr "Skasuj odpowied&#378"
+
+#: Arjuna-X/comments.php:56
+#: Arjuna-X/comments_legacy.php:104
+msgid "You must be %slogged in%s to post a comment."
+msgstr "Musisz by&#263 %slogged in%, aby napisaæ komentarz"
+
+#: Arjuna-X/comments.php:59
+#: Arjuna-X/comments.php:68
+#: Arjuna-X/comments_legacy.php:107
+#: Arjuna-X/comments_legacy.php:114
+msgid "Your name"
+msgstr "Twoje imi&#281"
+
+#: Arjuna-X/comments.php:60
+#: Arjuna-X/comments.php:69
+#: Arjuna-X/comments_legacy.php:108
+#: Arjuna-X/comments_legacy.php:115
+msgid "Your email"
+msgstr "Tw&#243j mail"
+
+#: Arjuna-X/comments.php:61
+#: Arjuna-X/comments.php:70
+#: Arjuna-X/comments_legacy.php:109
+#: Arjuna-X/comments_legacy.php:116
+msgid "Your website"
+msgstr "Twoja strona www"
+
+#: Arjuna-X/comments.php:62
+#: Arjuna-X/comments.php:79
+#: Arjuna-X/comments_legacy.php:110
+#: Arjuna-X/comments_legacy.php:119
+msgid "Your comment"
+msgstr "Tw&#243j komentarz"
+
+#: Arjuna-X/comments.php:65
+#: Arjuna-X/comments_legacy.php:112
+msgid "Logged in as %s."
+msgstr "Zalogowany jako%s."
+
+#: Arjuna-X/comments.php:65
+#: Arjuna-X/comments_legacy.php:112
+msgid "Log out of this account"
+msgstr "Wyloguj si&#281 z tego konta"
+
+#: Arjuna-X/comments.php:65
+#: Arjuna-X/comments_legacy.php:112
+msgid "Logout"
+msgstr "Wylogowanie"
+
+#: Arjuna-X/comments.php:81
+#: Arjuna-X/comments_legacy.php:121
+msgid "Subscribe to comments"
+msgstr "Subskrybuj komentarze"
+
+#: Arjuna-X/comments.php:82
+#: Arjuna-X/comments_legacy.php:122
+msgid "Leave comment"
+msgstr "Zostaw komentarz"
+
+#: Arjuna-X/comments_legacy.php:58
+msgid "%1$s at %2$s"
+msgstr "-------------------%1$s przy %2$s"
+
+#: Arjuna-X/comments_legacy.php:58
+msgid "H:i"
+msgstr "Godz:min"
+
+#: Arjuna-X/comments_legacy.php:65
+#: Arjuna-X/functions.php:1193
+msgid "Your comment is awaiting moderation."
+msgstr "Tw&#243j komentarz czeka na akceptacj&#281"
+
+#: Arjuna-X/comments_legacy.php:81
+#: Arjuna-X/functions.php:1394
+msgid "Previous"
+msgstr "Wcze&#347niejszy"
+
+#: Arjuna-X/comments_legacy.php:81
+#: Arjuna-X/functions.php:1394
+msgid "Next"
+msgstr "Nast&#281pny"
+
+#: Arjuna-X/comments_legacy.php:83
+#: Arjuna-X/functions.php:1396
+msgid "Older Comments"
+msgstr "Starsze komentarze"
+
+#: Arjuna-X/comments_legacy.php:84
+#: Arjuna-X/functions.php:1397
+msgid "Newer Comments"
+msgstr "Nowsze komentarze"
+
+#: Arjuna-X/functions.php:352
+msgid "Arjuna Options"
+msgstr "Arjuna Ustawienia"
+
+#: Arjuna-X/functions.php:362
+msgid "The Arjuna options have been saved."
+msgstr "Ustawienia Arjuny zosta&#322y zapisane."
+
+#: Arjuna-X/functions.php:366
+msgid "Arjuna Theme Options"
+msgstr "Ustawienia tematu Arjuna"
+
+#: Arjuna-X/functions.php:370
+msgid "Thank you for using Arjuna, the free WordPress theme designed by %s."
+msgstr "Dzi&#281kujemy za u&#380ywanie Arjuny, darmowego tematu WordPress`a stworzonego przez %s."
+
+#: Arjuna-X/functions.php:370
+msgid "Follow Us"
+msgstr "&#346led&#378 nas"
+
+#: Arjuna-X/functions.php:374
+msgid "Report Bugs"
+msgstr "Zg&#322aszanie b&#322&#281d&#243w"
+
+#: Arjuna-X/functions.php:375
+msgid "Report a Bug"
+msgstr "Zg&#322o&#347 b&#322&#261d"
+
+#: Arjuna-X/functions.php:375
+msgid "Please include your Wordpress version, browser details and a screenshot, if necessary."
+msgstr "Dodaj prosz&#281 Swoj&#261 wersj&#281 WordPress`a, informacje na temat u&#380ywanej przegl&#261darki oraz zrzut ekranu, je&#347li tego potrzebujesz."
+
+#: Arjuna-X/functions.php:378
+msgid "Useful Links"
+msgstr "U&#380yteczne linki"
+
+#: Arjuna-X/functions.php:379
+msgid "Changelog"
+msgstr "Zmiany w kodzie"
+
+#: Arjuna-X/functions.php:380
+msgid "FAQ"
+msgstr "FAQ"
+
+#: Arjuna-X/functions.php:381
+msgid "Roadmap"
+msgstr "Planowane zmiany"
+
+#: Arjuna-X/functions.php:382
+msgid "Leave Feedback"
+msgstr "Dodaj opini&#281"
+
+#: Arjuna-X/functions.php:385
+msgid "Support &amp; Sales"
+msgstr "Support & Sprzeda&#380"
+
+#: Arjuna-X/functions.php:386
+msgid "Contact Sales"
+msgstr "Kontakt z dzia&#322em sprzeda&#380y"
+
+#: Arjuna-X/functions.php:386
+msgid "Need installation or integration support? Need something customized or extended?"
+msgstr "Potrzebujesz pomocy przy instalacji lub integracji? Potrzebujesz dostosowa&#263 lub rozszerzy&#263 ustawienia tego tematu?"
+
+#: Arjuna-X/functions.php:391
+msgid "Arjuna is completely free. Therefore, please understand that we do NOT offer free support. If you require support of any kind other than fixing a bug that is related to Arjuna, please request a quote from us."
+msgstr "Arjuna jest ca&#322kowicie darmowym tematem WordPress`a. Jednak&#380e zrozum nas prosz&#281, &#380e NIE oferujemy darmowego wsparcia. Je&#347li jednak potrzebujesz pomocy innej ni&#380 zg&#322oszenie b&#322&#281du zwi&#261zanego z Arjun&#261, prosimy o kontakt z nami. "
+
+#: Arjuna-X/functions.php:395
+msgid "Header"
+msgstr "Nag&#322&#243wek"
+
+#: Arjuna-X/functions.php:399
+msgid "First Header Menu"
+msgstr "Menu pierwszego nag&#322&#243wka"
+
+#: Arjuna-X/functions.php:403
+msgid "Enabled"
+msgstr "W&#322&#261czone"
+
+#: Arjuna-X/functions.php:405
+msgid "Enable this menu"
+msgstr "W&#322&#261cz to menu"
+
+#: Arjuna-X/functions.php:407
+msgid "If disabled, the menu will be hidden."
+msgstr "Je&#347li jest wy&#322&#261czone - menu b&#281dzie ukryte."
+
+#: Arjuna-X/functions.php:411
+#: Arjuna-X/functions.php:592
+msgid "Dropdown"
+msgstr "Rozwijanie"
+
+#: Arjuna-X/functions.php:415
+#: Arjuna-X/functions.php:596
+msgid "No dropdown menu"
+msgstr "Brak rozwini&#281cia menu."
+
+#: Arjuna-X/functions.php:419
+#: Arjuna-X/functions.php:600
+msgid "One-level dropdown menu"
+msgstr "Rozwini&#281cie menu jedno-poziomowe."
+
+#: Arjuna-X/functions.php:423
+#: Arjuna-X/functions.php:604
+msgid "Two-level dropdown menu"
+msgstr "Rozwini&#281cie menu dwu-poziomowe."
+
+#: Arjuna-X/functions.php:427
+msgid "Alignment"
+msgstr "Po&#322o&#380enie"
+
+#: Arjuna-X/functions.php:431
+msgid "Left"
+msgstr "Do lewej"
+
+#: Arjuna-X/functions.php:435
+msgid "Right"
+msgstr "Do prawej"
+
+#: Arjuna-X/functions.php:440
+#: Arjuna-X/functions.php:609
+msgid "Menu lists only"
+msgstr "Lista menu tylko"
+
+#: Arjuna-X/functions.php:444
+#: Arjuna-X/functions.php:613
+msgid "Pages"
+msgstr "Strony"
+
+#: Arjuna-X/functions.php:448
+#: Arjuna-X/functions.php:617
+#: Arjuna-X/sidebar.php:37
+msgid "Categories"
+msgstr "Kategorie"
+
+#: Arjuna-X/functions.php:453
+#: Arjuna-X/functions.php:622
+msgid "Sorting Order"
+msgstr "Sortowanie wed&#322ug"
+
+#: Arjuna-X/functions.php:456
+#: Arjuna-X/functions.php:470
+#: Arjuna-X/functions.php:625
+#: Arjuna-X/functions.php:639
+msgid "Sort menu items in"
+msgstr "Sortuj elementy menu"
+
+#: Arjuna-X/functions.php:458
+#: Arjuna-X/functions.php:472
+#: Arjuna-X/functions.php:627
+#: Arjuna-X/functions.php:641
+msgid "ascending"
+msgstr "rosn&#261co"
+
+#: Arjuna-X/functions.php:459
+#: Arjuna-X/functions.php:473
+#: Arjuna-X/functions.php:628
+#: Arjuna-X/functions.php:642
+msgid "descending"
+msgstr "malej&#261co"
+
+#: Arjuna-X/functions.php:461
+#: Arjuna-X/functions.php:475
+#: Arjuna-X/functions.php:630
+#: Arjuna-X/functions.php:644
+msgid "order by"
+msgstr "uporz&#261dkowane wg"
+
+#: Arjuna-X/functions.php:463
+#: Arjuna-X/functions.php:632
+msgid "Category Name"
+msgstr "Nazwa kategorii"
+
+#: Arjuna-X/functions.php:464
+#: Arjuna-X/functions.php:633
+msgid "Category ID"
+msgstr "ID kategorii"
+
+#: Arjuna-X/functions.php:465
+#: Arjuna-X/functions.php:634
+msgid "Post Count"
+msgstr "Licznik post&#243w"
+
+#: Arjuna-X/functions.php:466
+#: Arjuna-X/functions.php:635
+msgid "Category Slug"
+msgstr "Alfabetycznie"
+
+#: Arjuna-X/functions.php:477
+#: Arjuna-X/functions.php:646
+msgid "Page Title"
+msgstr "Tytu&#322 strony"
+
+#: Arjuna-X/functions.php:478
+#: Arjuna-X/functions.php:647
+msgid "Page ID"
+msgstr "ID strony"
+
+#: Arjuna-X/functions.php:479
+#: Arjuna-X/functions.php:648
+msgid "Page Slug"
+msgstr "Alfabetycznie"
+
+#: Arjuna-X/functions.php:480
+#: Arjuna-X/functions.php:649
+msgid "Page Order"
+msgstr "Kolejno&#347ci stron"
+
+#: Arjuna-X/functions.php:486
+#: Arjuna-X/functions.php:661
+msgid "Menu Items"
+msgstr "Elementy menu"
+
+#: Arjuna-X/functions.php:490
+#: Arjuna-X/functions.php:665
+msgid "Include categories"
+msgstr "Do&#322&#261cz kategorie"
+
+#: Arjuna-X/functions.php:507
+#: Arjuna-X/functions.php:682
+msgid "Exclude categories"
+msgstr "Wy&#322&#261cz kategorie"
+
+#: Arjuna-X/functions.php:526
+msgid "Note: While the above fields show empty categories, the theme will only display categories that have at least one published post in them."
+msgstr "Uwaga: Je&#347li pole powy&#380ej pokazuje puste kategorie, temat wy&#347wietli tylko te kategorie, kt&#243re maj&#261 co najmniej jeden post opublikowanych w nich."
+
+#: Arjuna-X/functions.php:530
+#: Arjuna-X/functions.php:705
+msgid "Include pages"
+msgstr "Do&#322&#261cz strony"
+
+#: Arjuna-X/functions.php:546
+#: Arjuna-X/functions.php:721
+msgid "Exclude pages"
+msgstr "Wy&#322&#261cz strony"
+
+#: Arjuna-X/functions.php:582
+msgid "Second Header Menu"
+msgstr "Nag&#322&#243wek drugiego menu"
+
+#: Arjuna-X/functions.php:586
+msgid "Separators"
+msgstr "Separatory"
+
+#: Arjuna-X/functions.php:588
+msgid "Visually separate the menu buttons"
+msgstr "Wstaw wizualny separator pomi&#281dzy przyciskami menu"
+
+#: Arjuna-X/functions.php:655
+msgid "Home Button"
+msgstr "Przycisk Home"
+
+#: Arjuna-X/functions.php:657
+msgid "Display Home button"
+msgstr "Wy&#347wietl przycisk Home"
+
+#: Arjuna-X/functions.php:701
+msgid "Note: While the above fields show empty categories, the theme will only display categories that have at least one published post in them.</span>"
+msgstr "Uwaga: je&#347li pole z dodanymi kategoriami b&#281dzie puste, temat wy&#347wietli jedynie te kategorie, kt&#243re posiadaj&#261 co najmniej 1 post w nich opublikowany.</span>"
+
+#: Arjuna-X/functions.php:757
+#: Arjuna-X/functions.php:761
+msgid "Header Image"
+msgstr "T&#322o nag&#322&#243wka"
+
+#: Arjuna-X/functions.php:766
+msgid "Light Blue"
+msgstr "Jasny niebieski"
+
+#: Arjuna-X/functions.php:771
+msgid "Dark Blue"
+msgstr "Ciemny niebieski"
+
+#: Arjuna-X/functions.php:776
+msgid "Khaki"
+msgstr "Khaki"
+
+#: Arjuna-X/functions.php:781
+msgid "Sea Green"
+msgstr "Morski zielony"
+
+#: Arjuna-X/functions.php:788
+msgid "General Options"
+msgstr "G&#322&#243wne Ustawienia"
+
+#: Arjuna-X/functions.php:789
+msgid "Sidebar"
+msgstr "Ustawienia paska bocznego"
+
+#: Arjuna-X/functions.php:793
+msgid "Sidebar Position"
+msgstr "Pozycja paska bocznego"
+
+#: Arjuna-X/functions.php:798
+msgid "Right sidebar"
+msgstr "Pasek boczny po prawej"
+
+#: Arjuna-X/functions.php:803
+msgid "Left sidebar"
+msgstr "Pasek boczny po lewej"
+
+#: Arjuna-X/functions.php:808
+msgid "No sidebar"
+msgstr "Brak paska bocznego"
+
+#: Arjuna-X/functions.php:813
+msgid "Sidebar Width"
+msgstr "Szeroko&#347&#263 paska bocznego"
+
+#: Arjuna-X/functions.php:815
+msgid "Small"
+msgstr "Ma&#322a"
+
+#: Arjuna-X/functions.php:816
+msgid "Normal"
+msgstr "Normalna"
+
+#: Arjuna-X/functions.php:817
+msgid "Large"
+msgstr "Du&#380a"
+
+#: Arjuna-X/functions.php:818
+msgid "If you intend to use the two column sidebar, we recommend to choose either the normal or the large sidebar."
+msgstr "Je&#347li masz zamiar u&#380ywa&#263 dw&#243ch pask&#243w bocznych, polecamy wybra&#263 normalny lub du&#380y rozmiar."
+
+#: Arjuna-X/functions.php:822
+msgid "Default Widgets"
+msgstr "Standardowe wid&#380ety"
+
+#: Arjuna-X/functions.php:824
+msgid "Display default sidebar widgets if the widget bars are empty."
+msgstr "Wy&#347wietl standardowy pasek wid&#380et&#243w, je&#347li pasek wid&#380et&#243w jest pusty."
+
+#: Arjuna-X/functions.php:825
+msgid "If enabled, these widgets will be displayed if the widget bar is empty: <b>sidebar_full_top:</b> Recent Posts and Browse by Tags, <b>sidebar_left:</b> Categories, <b>sidebar_right:</b> Meta"
+msgstr "Je&#347li opcja jest w&#322&#261czona, a pasek wid&#380et&#243w jest pusty, wid&#380ety b&#281d&#261 wy&#347wietlane nast&#281puj&#261co: <b> g&#243rny pasek boczny: </ b> Ostatnie posty i Przegl&#261daj po  tagach, <b>lewy pasek boczny<b>: </ b> Kategorie,  <b>prawy pasek boczny: </ b > Meta"
+
+#: Arjuna-X/functions.php:829
+msgid "RSS Button"
+msgstr "Przycisk RSS"
+
+#: Arjuna-X/functions.php:831
+msgid "Display an RSS button on the very top of the sidebar."
+msgstr "Wy&#347wietl przycisk RSS na samej g&#243rze paska bocznego."
+
+#: Arjuna-X/functions.php:835
+msgid "Twitter Button"
+msgstr "Przycisk Twitter`a."
+
+#: Arjuna-X/functions.php:837
+msgid "Display a Twitter button on the very top of the sidebar."
+msgstr "Wy&#347wietl przycisk Twitter`a na samej g&#243rze paska bocznego."
+
+#: Arjuna-X/functions.php:844
+msgid "Facebook Button"
+msgstr "Przycisk Facebook`a."
+
+#: Arjuna-X/functions.php:846
+msgid "Display a Facebook button on the very top of the sidebar."
+msgstr "Wy&#347wietl przycisk Facebook`a na samej g&#243rze paska bocznego."
+
+#: Arjuna-X/functions.php:853
+msgid "Display Button Labels"
+msgstr "Wy&#347wietl etykiety przycisk&#243w."
+
+#: Arjuna-X/functions.php:855
+msgid "Display labels next to the buttons (RSS, Twitter and Facebook)."
+msgstr "Wy&#347wietl etykiety NEXT do przycisk&#243w (RSS, Twitter and Facebook)."
+
+#: Arjuna-X/functions.php:864
+msgid "Single Posts and Pages"
+msgstr "Ustawienia post&#243w i stron"
+
+#: Arjuna-X/functions.php:868
+msgid "Display Author"
+msgstr "Autor"
+
+#: Arjuna-X/functions.php:870
+msgid "Include the author of a post in the post header."
+msgstr "Do&#322&#261cz Autora postu do nag&#322&#243wka tego postu."
+
+#: Arjuna-X/functions.php:874
+msgid "Display Time"
+msgstr "Czas"
+
+#: Arjuna-X/functions.php:876
+msgid "Include the time and date of when the post has been published, instead of only the date."
+msgstr "Dodaj czas i godzin&#281 publikacji posta, zamiast samej daty."
+
+#: Arjuna-X/functions.php:880
+msgid "Display Info Bar for Pages"
+msgstr "Pasek informacyjny dla stron"
+
+#: Arjuna-X/functions.php:882
+msgid "Display the info bar right below the title of pages."
+msgstr "Wy&#347wietl pasek informacyjny po prawej stronie ponad tytu&#322&#322em strony."
+
+#: Arjuna-X/functions.php:883
+msgid "The info bar usually includes the author of the page, the publish date and the comments button. This options entirely hides the bar so that only the title is shown."
+msgstr "Pasek informacji zwykle zawiera autora strony, dat&#281 publikacji i przycisk komentarzy. Ta opcja ca&#322kowicie ukrywa pasek, wy&#347wietlany jest tylko tytu&#322."
+
+#: Arjuna-X/functions.php:887
+msgid "Navigation Links"
+msgstr "Linki nawigacyjne"
+
+#: Arjuna-X/functions.php:889
+msgid "Display links to the previous and next posts above each post."
+msgstr "Wy&#347wietl linki do starszych i nowszych post&#243w powy&#380ej ka&#380dego posta."
+
+#: Arjuna-X/functions.php:890
+msgid "Display links to the previous and next posts below each post."
+msgstr "Wy&#347wietl linki do starszych i nowszych post&#243w poni&#380ej ka&#380dego posta."
+
+#: Arjuna-X/functions.php:891
+msgid "Note: The links will only be shown on permalink pages, i.e. the URL where one single post/page is displayed."
+msgstr "Uwaga: linki b&#281d&#261 wy&#347wietlane tylko na stronach permalinkowanych, tzn. adres URL, gdzie jeden post/strona jest wy&#347wietlany/a."
+
+#: Arjuna-X/functions.php:901
+msgid "Display comments as follows"
+msgstr "Wy&#347wietl komentarze w nast&#281puj&#261co"
+
+#: Arjuna-X/functions.php:906
+msgid "Aligned to the left"
+msgstr "Wyr&#243wnane do lewej"
+
+#: Arjuna-X/functions.php:911
+msgid "Aligned to the right"
+msgstr "Wyr&#243wnane do prawej"
+
+#: Arjuna-X/functions.php:916
+msgid "Alternate between left and right alignment"
+msgstr "Stosuj wyr&#243wnanie naprzemiennie do lewej i prawej"
+
+#: Arjuna-X/functions.php:921
+msgid "Date Format"
+msgstr "Format daty"
+
+#: Arjuna-X/functions.php:923
+msgid "Passed Time (Example: <em>&quot;Written by admin about 3 days ago.&quot;</em>)"
+msgstr "Wy&#347wietl jako up&#322ywaj&#261cy czas (np. <em>&quot;Napisane przez admina 3 dni temu.&quot;</em>"
+
+#: Arjuna-X/functions.php:924
+msgid "Default Date Format (Example: <em>&quot;Written by admin on %s&quot;</em>)"
+msgstr "Wy&#347wietl standardowo (np. <em>&quot;Napisane przez admina %s&quot;</em>)"
+
+#: Arjuna-X/functions.php:925
+msgid "The default date format can be customized in Settings &gt; General."
+msgstr "Standardowy format daty mo&#380e by&#263 wybrany w Ustawieniach &gt Og&#243lne"
+
+#: Arjuna-X/functions.php:929
+msgid "Comment Display"
+msgstr "Wy&#347wietlanie komentarza"
+
+#: Arjuna-X/functions.php:931
+msgid "Hide any traces of comments when comments, pingbacks and trackbacks are disabled on <strong>Pages</strong>."
+msgstr "Ukryj dodatkowe opcje komentarzy, gdy komentarze, pingback`i i trackback`i s&#261 wy&#322&#322&#261czone na<strong> Stronach</strong>."
+
+#: Arjuna-X/functions.php:932
+msgid "Hide any traces of comments when comments, pingbacks and trackbacks are disabled on <strong>Posts</strong>."
+msgstr "Ukryj dodatkowe opcje komentarzy, gdy komentarze, pingback`i i trackback`i s&#261 wy&#322&#261czone w <strong>Postach</strong>."
+
+#: Arjuna-X/functions.php:933
+msgid "Note: If enabled, the section that says Comments and the comments button in the heading of the respective pages/posts will be removed."
+msgstr "Uwaga: Je&#347li opcja jest w&#322&#261czona, sekcja obs&#322uguj&#261ca komentarze oraz przycisk komentarzy w nag&#322&#243wku poszczeg&#243lnych stron/post&#243w b&#281dzie usuni&#281ty."
+
+#: Arjuna-X/functions.php:939
+msgid "Blog"
+msgstr "Blog"
+
+#: Arjuna-X/functions.php:943
+msgid "Pagination"
+msgstr "Numeracja stron"
+
+#: Arjuna-X/functions.php:945
+msgid "Use Arjuna pagination"
+msgstr "U&#380yj numeracji stron tematu Arjuna."
+
+#: Arjuna-X/functions.php:946
+msgid "If enabled, Arjuna will use its own native pagination to allow your users to navigate the blog using pages."
+msgstr "Je&#347li opcja jest w&#322&#261czona, Arjuna b&#281dzie u&#380ywa&#322a w&#322asnej numeracji stron, aby umo&#380liwi&#263 u&#380ytkownikom poruszanie si&#281 po blogu za ich pomoc&#261."
+
+#: Arjuna-X/functions.php:950
+msgid "Page Range"
+msgstr "Ranga strony"
+
+#: Arjuna-X/functions.php:959
+msgid "The number of page buttons that will appear before and after the current page button."
+msgstr "Numery przycisk&#243w na stronie, kt&#243re pojawi&#261 si&#281 przed i po przycisku obecnej strony."
+
+#: Arjuna-X/functions.php:963
+msgid "Page Anchors"
+msgstr "Zakotwiczanie strony"
+
+#: Arjuna-X/functions.php:972
+msgid "The number of page buttons that will always appear at the beginning and the end of the pagination."
+msgstr "Numery przycisk&#243w na stronie, kt&#243re pojawi&#261 si&#281 zawsze na poczatku i na ko&#324cu numeracji stron."
+
+#: Arjuna-X/functions.php:976
+msgid "Page Gap"
+msgstr "Odst&#281py na stronie"
+
+#: Arjuna-X/functions.php:985
+msgid "The number of page buttons in a gap before an ellipsis (...) is displayed."
+msgstr "Numery przycisk&#243w stron w odst&#281pach przed nawiasami (...) nie b&#281d&#261 wy&#347wietlane."
+
+#: Arjuna-X/functions.php:990
+msgid "Use WordPress default"
+msgstr "U&#380yj standardowej WordPress`a"
+
+#: Arjuna-X/functions.php:991
+msgid "The default depends on your WordPress version and whether you have any pagination plugins activated. If the wp-paginate or wp-pagenavi plugin is activated, then Arjuna will use these plugins to create the pagination."
+msgstr "Domy&#347lnie zale&#380y od wersji WordPress`a i tego czy masz jakie&#347 pluginy paginacji aktywowane. Je&#347li paginacja WP lub plugin pagenavi jest w&#322&#261czony Arjuna wykorzysta te pluginy do tworzenia numeracji stron."
+
+#: Arjuna-X/functions.php:997
+msgid "Miscellaneous"
+msgstr "Inne ustawienia"
+
+#: Arjuna-X/functions.php:1001
+msgid "Append to page title"
+msgstr "Dodaj do strony tytu&#322owej"
+
+#: Arjuna-X/functions.php:1003
+msgid "Blog Name (&quot; - %s&quot;)"
+msgstr "Nazwa Bloga (&quot; - %s&quot;)"
+
+#: Arjuna-X/functions.php:1004
+msgid "Custom:"
+msgstr "Wybrany:"
+
+#: Arjuna-X/functions.php:1005
+msgid "This will be appended to the page title of every web page (posts, pages, categories, etc.)"
+msgstr "B&#281dzie do&#322&#261czone do tytu&#322u strony na wszystkich stronach (postach, stronach, kategoriach, etc.)"
+
+#: Arjuna-X/functions.php:1009
+msgid "Footer Style"
+msgstr "Styl Stopki"
+
+#: Arjuna-X/functions.php:1022
+msgid "Custom CSS"
+msgstr "Wybrany CSS"
+
+#: Arjuna-X/functions.php:1029
+msgid "Arjuna needs write permissions to create a new file %s, which will contain the custom CSS."
+msgstr "Arjuna potrzebuje zezwolenia na zapis, aby utworzy&#263 nowy plik% s, kt&#243ry b&#281dzie zawiera&#322 wybrane CSS."
+
+#: Arjuna-X/functions.php:1031
+msgid "Enable custom CSS rules"
+msgstr "Za&#322&#261czanie wybranych regu&#322 CSS"
+
+#: Arjuna-X/functions.php:1032
+msgid "If enabled, Arjuna will create a user stylesheet with your custom CSS rules. The user stylesheet will be included with every page call. If you intend to make some minor changes to the stylesheet, enabling this option ensures that you can safely upgrade Arjuna without losing your custom CSS."
+msgstr "Je&#347li opcja jest w&#322&#261czona, Arjuna utworzy arkusz styl&#243w z Twoimi wybranymi regu&#322ami CSS. Arkusz styl&#243w u&#380ytkownika zostanie do&#322&#261czony do odwo&#322ania ka&#380dej strony. Je&#347li zamierzaj&#261 Pa&#324stwo dokona&#263 pewnych drobnych zmian w arkuszu styl&#243w, w&#322&#261czenie tej opcji gwarantuje, &#380e mo&#380na bezpiecznie aktualizowa&#263 temat Arjuna bez utraty w&#322asnych arkuszy sty&#243w."
+
+#: Arjuna-X/functions.php:1041
+msgid "Note:"
+msgstr "Uwaga:"
+
+#: Arjuna-X/functions.php:1041
+msgid "Arjuna cannot write to the themes directory. The custom CSS rules will be included in the header of each page, between &lt;STYLE&gt; tags."
+msgstr "Arjuna nie mo&#380e zapisywa&#263 do katalogu tematu. Regu&#322y w&#322asnych CSS mog&#261 zosta&#263 do&#322&#261czone w nag&#322&#243wku ka&#380dej strony, mi&#281dzy tagami &lt;STYLE&gt;."
+
+#: Arjuna-X/functions.php:1050
+msgid "Performance Optimization"
+msgstr "Optymalizacja wydajno&#347ci"
+
+#: Arjuna-X/functions.php:1054
+msgid "Internet Explorer 6 Optimization"
+msgstr "Optymalizacja dla IE6"
+
+#: Arjuna-X/functions.php:1056
+msgid "Enable IE6 performance optimization"
+msgstr "Optymalizacja wydajno&#347ci dla IE6"
+
+#: Arjuna-X/functions.php:1057
+msgid "If turned on, Arjuna will attempt to detect IE6 and serve a stand-alone CSS file specifically made for IE6."
+msgstr "Je&#347li opcja jest w&#322&#261czona, temat Arjuna b&#281dzie pr&#243bowa&#322 wykry&#263 IE6 i spr&#243buje samodzielnie u&#380y&#263 pliku CSS specjalnie dla IE6."
+
+#: Arjuna-X/functions.php:1057
+msgid "Note: IE6 will still work the same if this option is turned off, however, you and your IE6 users will save an estimated 28kb (11 image and 2 CSS files) in bandwidth for first-time visitors. IE6 also might render more rapidly if this is turned on."
+msgstr "Uwaga: IE6 nadal dzia&#322a tak samo, je&#347li opcja ta jest wy&#322&#322&#261czona, jednak&#380e Ty i u&#380ytkownicy IE6 mo&#380ecie zaoszcz&#281dzi&#263 oko&#322&#322o 28KB (11 obraz&#243w i 2 pliki CSS) na przepustowo&#347ci dla u&#380ytkownik&#243&#243w pierwszy raz odwiedzaj&#261cych. IE6 m&#243g&#322yby by&#263 wi&#281c szybszy, je&#347li opcja jest w&#322&#261czona."
+
+#: Arjuna-X/functions.php:1064
+msgid "Save Changes"
+msgstr "Zachowaj zmiany"
+
+#: Arjuna-X/functions.php:1181
+msgid "Written by"
+msgstr "Napisane przez"
+
+#: Arjuna-X/functions.php:1183
+msgid "about %s ago"
+msgstr "oko&#322o %s temu"
+
+#: Arjuna-X/functions.php:1185
+msgid "on"
+msgstr "w dniu"
+
+#: Arjuna-X/functions.php:1190
+msgid "Edit"
+msgstr "Edycja"
+
+#: Arjuna-X/functions.php:1217
+msgid "1 year"
+msgstr "1 rok"
+
+#: Arjuna-X/functions.php:1217
+msgid "%d years"
+msgstr "%d rok (lata)"
+
+#: Arjuna-X/functions.php:1221
+msgid "1 month"
+msgstr "1 miesi&#261c"
+
+#: Arjuna-X/functions.php:1221
+msgid "%d months"
+msgstr "%d miesi&#281ce/y"
+
+#: Arjuna-X/functions.php:1225
+msgid "1 week"
+msgstr "1 tydzie&#324"
+
+#: Arjuna-X/functions.php:1225
+msgid "%d weeks"
+msgstr "%d tygodnie/i"
+
+#: Arjuna-X/functions.php:1229
+msgid "1 day"
+msgstr "1 dzie&#324"
+
+#: Arjuna-X/functions.php:1229
+msgid "%d days"
+msgstr "%d dni"
+
+#: Arjuna-X/functions.php:1233
+msgid "1 hour"
+msgstr "1 godzina"
+
+#: Arjuna-X/functions.php:1233
+msgid "%d hours"
+msgstr "%d godzin"
+
+#: Arjuna-X/functions.php:1237
+msgid "1 minute"
+msgstr "1 minuta"
+
+#: Arjuna-X/functions.php:1237
+msgid "%d minutes"
+msgstr "%d minut"
+
+#: Arjuna-X/functions.php:1240
+msgid "1 second"
+msgstr "1 sekunda"
+
+#: Arjuna-X/functions.php:1240
+msgid "%d seconds"
+msgstr "%d sekund"
+
+#: Arjuna-X/functions.php:1326
+msgid "Page %s of %s"
+msgstr "Strona %s z %s"
+
+#: Arjuna-X/functions.php:1365
+#: Arjuna-X/functions.php:1368
+msgid "Page %s"
+msgstr "Strona %s"
+
+#: Arjuna-X/functions.php:1393
+msgid "Comment Pages:"
+msgstr "Komentowane strony:"
+
+#: Arjuna-X/header.php:10
+msgid "Search Results:"
+msgstr "Szukaj wynik&#243w:"
+
+#: Arjuna-X/header.php:37
+msgid "Skip to posts"
+msgstr "Przejd&#378 do post&#243w"
+
+#: Arjuna-X/header.php:63
+msgid "Search here..."
+msgstr "Szukaj tutaj..."
+
+#: Arjuna-X/header.php:64
+msgid "Find"
+msgstr "Szukaj"
+
+#: Arjuna-X/header.php:70
+msgid "Home"
+msgstr "Home"
+
+#: Arjuna-X/index.php:53
+msgid "Previous Page"
+msgstr "Poprzednia strona"
+
+#: Arjuna-X/index.php:53
+msgid "Next Page"
+msgstr "Nast&#281pna strona"
+
+#: Arjuna-X/page.php:44
+#: Arjuna-X/page_fullwidth.php:48
+#: Arjuna-X/single.php:44
+msgid "Pages:"
+msgstr "Strony:"
+
+#: Arjuna-X/page.php:44
+#: Arjuna-X/page_fullwidth.php:48
+#: Arjuna-X/single.php:44
+msgid "Page %"
+msgstr "Strona %"
+
+#: Arjuna-X/page.php:46
+#: Arjuna-X/page_fullwidth.php:50
+#: Arjuna-X/single.php:56
+msgid "Edit in Admin"
+msgstr "Edytuj jako Admin"
+
+#: Arjuna-X/page.php:58
+#: Arjuna-X/page_fullwidth.php:63
+#: Arjuna-X/single.php:76
+msgid "There is nothing here."
+msgstr "Nic tu nie ma niestety."
+
+#: Arjuna-X/search.php:8
+msgid "Search Results on <em>%s</em>"
+msgstr "Szukaj wynik&#243w na <em>%s</em>"
+
+#: Arjuna-X/search.php:65
+msgid "Your search returned no results."
+msgstr "Wyszukiwanie nie przynios&#322&#322o rezultat&#243&#243w."
+
+#: Arjuna-X/sidebar.php:20
+msgid "Recent Posts"
+msgstr "Ostatnie posty"
+
+#: Arjuna-X/sidebar.php:27
+msgid "Browse by Tags"
+msgstr "Przegl&#261daj po Tagach"
+
+#: Arjuna-X/sidebar.php:49
+msgid "Meta"
+msgstr "Meta"
+
+#: Arjuna-X/single.php:9
+#: Arjuna-X/single.php:67
+msgid "Previous Post"
+msgstr "Poprzedni post"
+
+#: Arjuna-X/single.php:10
+#: Arjuna-X/single.php:68
+msgid "Next Post"
+msgstr "Nast&#281pny post"
+

@@ -13,7 +13,7 @@
 	
 	<div class="post" id="post-<?php the_ID(); ?>">
 		<div class="postHeader">
-			<h1 class="postTitle"><span><a href="<?php the_permalink() ?>" title="<?php _e('Permalink to', 'Arjuna'); ?> <?php the_title(); ?>"><?php the_title(); ?></a></span></h1>
+			<a href="<?php the_permalink() ?>" title="<?php _e('Permalink to', 'Arjuna'); ?> <?php the_title(); ?>"><h1 class="postTitle"><span><?php the_title(); ?></span></h1></a>
 			<div class="bottom"><div>
 				<span class="postDate"><?php the_time(get_option('date_format')); ?><?php
 					//Time
@@ -41,7 +41,7 @@
 			<?php the_content(__('continue reading...', 'Arjuna')); ?>
 		</div>
 		<div class="postLinkPages"><div>
-			<?php wp_link_pages('before=<strong>'.__('Pages:', 'Arjuna').'</strong>&pagelink=<span>'.__('Page %', 'Arjuna').'</span>'); ?>
+			<?php arjuna_get_post_pagination(__('Previous Page', 'Arjuna'), __('Next Page', 'Arjuna'));?>
 		</div></div>
 		<div class="postFooter"><div class="r"></div>
 			<div class="left">
@@ -58,7 +58,7 @@
 	</div>
 	<?php if(!$arjunaOptions['comments_hideWhenDisabledOnPosts'] || ( 0 != $post->comment_count || comments_open() || pings_open() )): ?>
 	<div class="postComments" id="comments">
-		<?php comments_template(); ?>
+		<?php comments_template('', true); ?>
 	</div>
 	<?php endif; ?>
 

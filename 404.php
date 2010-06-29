@@ -2,7 +2,7 @@
 
 <div class="contentArea">
 	<h3 class="contentHeader"><?php _e('Error 404 - Not Found', 'Arjuna'); ?></h3>
-  <p><?php _e('Sorry, but you are looking for something that isn\'t here. ', 'Eos'); ?></p>
+  <p><?php _e('Sorry, but you are looking for something that isn\'t here. ', 'Arjuna'); ?></p>
 </div>
 
 <?php get_sidebar(); ?>

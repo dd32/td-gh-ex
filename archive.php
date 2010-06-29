@@ -23,9 +23,9 @@
 	</h3>
 	
 	<?php while (have_posts()) : the_post(); ?>
-	<div class="post">
+	<div class="post" id="post-<?php the_ID(); ?>">
 		<div class="postHeader">
-			<h2 class="postTitle"><span><a href="<?php the_permalink() ?>" title="<?php _e('Permalink to', 'Arjuna'); ?> <?php the_title(); ?>"><?php the_title(); ?></a></span></h2>
+			<a href="<?php the_permalink() ?>" title="<?php _e('Permalink to', 'Arjuna'); ?> <?php the_title(); ?>"><h2 class="postTitle"><span><?php the_title(); ?></span></h2></a>
 			<div class="bottom"><div>
 				<span class="postDate"><?php the_time(get_option('date_format')); ?><?php
 					//Time
@@ -62,7 +62,7 @@
 				?></span>
 				<?php endif; ?>
 			</div>
-			<a href="<?php the_permalink() ?>" class="postReadMore"><span><?php _e('Read more', 'Arjuna'); ?></span></a>
+			<a href="<?php the_permalink() ?>" class="btn btnReadMore"><span><?php _e('Read more', 'Arjuna'); ?></span></a>
 		</div>
 	</div>
 	<?php endwhile; ?>

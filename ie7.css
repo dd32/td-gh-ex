@@ -18,3 +18,36 @@ a span {
 .postHeaderCompact .bottom span {
 	margin-right:-45px;
 }
+
+.commentHeader .buttons {
+	white-space:nowrap;
+	margin-right:13px;
+}
+
+.headerMenu1 ul ul ul,
+.headerMenu1 li:hover ul ul,
+.headerMenu1 li.jHover ul ul {
+	right:180px;
+}
+.headerMenu1L ul ul ul,
+.headerMenu1L li:hover ul ul,
+.headerMenu1L li.jHover ul ul,
+.headerMenu2 ul ul ul,
+.headerMenu2 li:hover ul ul,
+.headerMenu2 li.jHover ul ul {
+	right:auto;
+	left:180px;
+}
+.headerMenu1 li li,
+.headerMenu2 li li {
+	display:inline;
+}
+.headerMenu1 li li li,
+.headerMenu2 li li li {
+	display:block;
+}
+
+.headerMenu2 ul ul ul {
+	display:block;
+	zoom:1;
+}
