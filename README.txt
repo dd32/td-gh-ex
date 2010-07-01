@@ -70,6 +70,8 @@ Nonetheless, we still hope that IE6 will rest in peace soon.
 Changelog:
 ---------------------------------------------------
 
+1.5.1
+- Fix: Some images extended to full width, resulting in a distorted look.
 1.5
 - New: Arjuna now supports a feature to select between a few blog background styles as well as allowing you to set a solid background color. The lighter background is most welcomed to anyone who found the old background a tad too dark.
 - New: The permalink to a comment is now included.
