@@ -41,6 +41,10 @@ foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$val
 
 				<div class="archiv_entry"> 					
             <div class="entry_inner"> 
+				
+					<?php if ($altop_sidebar_align == "none" && $altop_post_thumbnail == "true") { ?> <?php the_post_thumbnail('medium'); ?> <?php } //A bigger thumbnail if there is no sidebar ?>
+					<?php if ($altop_sidebar_align != "none" && $altop_post_thumbnail == "true") { ?> <?php the_post_thumbnail('thumbnail'); ?> <?php } //Smaller thumbnail if there is a sidebar ?>
+					
 					<?php the_excerpt(); ?>
 					
 				<p class="postinfo"> 				

@@ -15,15 +15,23 @@ If not, see <http://www.gnu.org/licenses/>.
 
 --------------------------------------------------------------
 
-Support, Bugfixes and Updates under http://blog.t3-artwork.info
+Support, Bugfixes and Updates under http://blog.t3-artwork.info/forum/
 
 --------------------------------------------------------------
 
 Changelog:
+1.5	Added
+	- A Function to display Sub-Pages in the Sidebar if only Top-Pages have to be display in the Top-Menu
+	- Post-Thumbnails will be display in archives too, if this function is activated in the Theme-Options
+	
+	Changed
+	- Removed Java-Script for the Top-Menu
+ 
+
 1.4	Added
 	- Facebook connection
 	- Polish Translation (Thanks to Wioletta Makuch - http://www.moje.designy.pl)
-	- Some new CSS-Classes to make this theme ready for all browser (Thanks to Christian Voigt - http://www.evolutioncv.de)
+	- Some new CSS-Classes to make this theme ready for all browser (Thanks to Christian Voigt - 	  http://www.evolutioncv.de)
 	- Function to use the css-dropdown-menu plugin for nice fold-out effects in the main menu
 
 1.3

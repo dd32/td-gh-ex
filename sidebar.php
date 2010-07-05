@@ -9,6 +9,22 @@ foreach ($options as $value) {
 				<?php if ($altop_sidebar_align == "") { ?> <div id="sidebar" class="sb_right"> <?php } ?>			
       <div id="sidebar_inner">
 		
+		    <?php if ( is_page() ) { ?>
+    
+				<?php
+				if($post->post_parent)
+				$children = wp_list_pages('title_li=&child_of='.$post->post_parent.'&echo=0'); else
+				$children = wp_list_pages('title_li=&child_of='.$post->ID.'&echo=0');
+				if ($children) { ?>
+			
+				<ul>	
+				<li>
+					<h4><?php $parent_title = get_the_title($post->post_parent); echo $parent_title; ?></h4>
+					<ul><?php echo $children; ?></ul>
+				<br /><br /></li>
+				</ul>
+			
+				<?php } } ?>
 		
 		<?php 	/* Widgetized sidebar, if you have the plugin installed. */
 		if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : ?>

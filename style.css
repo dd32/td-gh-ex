@@ -2,7 +2,7 @@
 Theme Name: A little touch of purple
 Theme URI: http://blog.t3-artwork.info/2010/04/altop-neues-wordpress-theme/
 Description: A classic and elegant theme for creative blogs, individualists or families. It is widget and translation ready, doesn't required any plugin, supported threaded-comments and has some usefull theme options. Tested under IE 5.5/6/7/8, Firefox, Opera, Safari and Chrome. Altop is currently available in English (default) German, French and Polish. 
-Version: 1.4
+Version: 1.5
 Author: Thomas Gutzmer
 Author URI: http://blog.t3-artwork.info
 Tags: purple, pink, two-columns, fixed-width, theme-options, sticky-post, translation-ready, threaded-comments
@@ -368,7 +368,8 @@ code {
   margin: 5px 5px 10px 5px;
   text-align: justify;
 }
-  
+
+
 .sb_left  h2, .sb_right h2 {
   font-size: 1.4em;
   font-weight: normal;
