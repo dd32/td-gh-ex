@@ -4,9 +4,9 @@ Theme Name: Adventure
 Theme URI: http://schwarttzy.com/?page_id=551
 
 Description: Inspired by a certain GPS Manufacture, I designed this theme to feel like your looking through a window out into the wilderness. The CSS, XHTML and design is released under GPL:
-	http://www.opensource.org/licenses/gpl-license.php
+	http://www.opensource.org/licenses/gpl-license.php . The code neasary to use the Plugin "SFC - Comments" is already to go, just install the plugin. 
 
-Version: 1.2.1
+Version: 1.2.2
 
 Author: Eric Schwarz
 
@@ -26,7 +26,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 body {
 	font-size:13px;
-	background: #000;
+	background: fixed center top url(images/image%2094.jpg) #000;
 	margin: 0;
 	padding: 0;
 	width: 100%;
@@ -154,6 +154,7 @@ h1 a:hover{
 	border-left: 1px solid #575253;
 }
 
+
 /************************************************
 				Content          
 ************************************************/
@@ -277,6 +278,9 @@ object {z-index: -1}
 /************************************************
 				Comments          
 ************************************************/
+#commentform {
+	padding-top:5px;
+}
 #respond {
 	padding-top: 15px;
 }
@@ -289,21 +293,23 @@ object {z-index: -1}
 }
 #reply{
 	float: left;
-	width: 600px;
+	width: 460px;
 }
 .commentlist {float:right; padding:10px 0 0 0; margin:0px;}
 #commentbody { 
-	margin-bottom: 10px;
+	margin:0 0 10px 0;
 	padding: 10px 10px 25px 10px;
 	width: 580px;
 	min-height: 90px;
 	overflow:auto;
 }
+#commentbody ul{
+	padding:0;
+	margin:0;
+}
 #avatar {
 	float: left;
-}
-#avatar img {
-	border: 2px solid #000;
+	width: 120px;
 }
 #commentz {
 	float: right;
@@ -317,6 +323,10 @@ object {z-index: -1}
 	font-weight: 100;
 	font-size: 18px;
 }
+.children {
+	margin:0px;
+	padding:0px;
+}
 #commentlabel a {
 	color:#000;
 	font-weight: 100;
@@ -324,6 +334,11 @@ object {z-index: -1}
 }
 #commentlabel a:hover {
 	color:#0b6492;
+}
+#commentboxleft {
+	width:190px;
+	float:left;
+	padding-right:10px;
 }
 #commententry {
 	width: 100%;
@@ -335,6 +350,7 @@ object {z-index: -1}
 #commentbox {
 	width: 360px;
 	margin: 5px;
+	padding-top:10px;
 	float: right;
 	font-weight: 100;
 	font-size: 16px;
@@ -360,7 +376,7 @@ object {z-index: -1}
 }
 
 input{
-	width: 210px;
+	width: 100%;
 	height: 25px;
 	background: url(images/form-field-bg.gif) no-repeat;
 	border-top: 1px solid #ccc;
@@ -368,6 +384,7 @@ input{
 	border-bottom: 1px solid #aaa;
 	border-left: 1px solid #ccc;
 }
+
 .button, input[type="submit"], .submit {
 	border-color: #DEDEDE #bbb #bbb #DEDEDE;
 	border-style: solid;
@@ -408,7 +425,6 @@ blockquote {
 	
 }
 #content img {
-	background: url(images/blacktrans2.png);
 	max-width: 595px;
 	width: expression(this.width > 500 ? 500: true);
 	height: auto;

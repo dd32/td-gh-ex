@@ -23,32 +23,38 @@
 						<a href="<?php echo wp_logout_url(get_permalink()); ?>" title="Log out of this account">Log out &raquo;</a></p>
                 </div>
 				<?php else : ?>
-                <div class="left">
-                <div id="commentinput">
-						<div id="commententry"><label for="author">Name <?php if ($req) echo "(required)"; ?></label></div>
-						<div class="field"><input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> /></div>
-						
-						<div id="commententry"><label for="email">E-Mail (not shared<?php if ($req) echo ", required"; ?>)</label></div>
-						<div class="field"><input type="text" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> /></div>
-						
-						<div id="commententry"><label for="url">Website</label></div>
-						<div class="field"><input type="text" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" tabindex="3" /></div>
-                </div>
-                </div>
+                <div id="comment-user-details">
+                <?php do_action('alt_comment_login'); ?>
+                
+                    		<div id="commentboxleft">
+                            <div id="commententry"><label for="author">Name <?php if ($req) echo "(required)"; ?></label></div>
+                            <div class="field"><input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> /></div>
+                            </div>
+                            
+                            <div id="commentboxleft">
+                            <div id="commententry"><label for="email">E-Mail (not shared<?php if ($req) echo ", required"; ?>)</label></div>
+                            <div class="field"><input type="text" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> /></div>
+                            </div>
+                            
+                            <div id="commentboxleft">
+                            <div id="commententry"><label for="url">Website</label></div>
+                            <div class="field"><input type="text" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" tabindex="3" /></div>
+                    		</div>
+                            
+                    </div>
 				<?php endif; ?>
                 
-				<div class="right">
+				<div class="left">
                 	<div id="commentbox">Comment</div>
                 </div>
-                <div class="right">
-					<div id="textarea2"><textarea name="comment" id="comment" cols="40" rows="10" tabindex="4" class="field"></textarea></div>
+                <div class="left">
+					<div id="textarea2"><textarea name="comment" id="comment" cols="69" rows="10" tabindex="4" class="field"></textarea></div>
 				</div>
-				<div id="submit">
-                <input name="submit" type="submit" id="submit" tabindex="5" class="button <?php echo is_user_logged_in() ? 'userloggedbtn' : '' ?>" value="Submit Comment" />
-                </div>
 				<?php comment_id_fields(); ?>
 				<?php do_action('comment_form', $post->ID); ?>
-				<div class="right">&nbsp;</div>
+                <div id="submit">
+                <input name="submit" type="submit" id="submit" tabindex="5" class="button <?php echo is_user_logged_in() ? 'userloggedbtn' : '' ?>" value="Submit Comment" />
+                </div>
 			</form>
 		<?php endif; // If registration required and not logged in ?>
 

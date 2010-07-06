@@ -1,12 +1,14 @@
 <?php
 /**
  * @package WordPress
- * @subpackage Adventure
+ * @subpackage Garmin
  */
 
 get_header(); ?>
 
 <div id="center">
+
+	<?php if ( is_home()) : ?> <?php include( TEMPLATEPATH . '/map.php' ); ?> <?php endif; ?>
 	
 	<?php get_sidebar(); ?>
     
@@ -22,7 +24,7 @@ get_header(); ?>
         	<?php comments_popup_link('Leave A Comment', '1 Comment', '% Comments'); ?>,
             <?php endif; ?>
         <?php endif; ?>
-        	Written on <?php the_time('F jS, Y') ?> &amp; filed under <?php the_category(', ') ?> <?php the_tags('Tags: ', ', ', '<br />'); ?>       
+        	Written on <?php the_time('F jS, Y') ?> <?php if ( is_page()) : ?><?php else : ?>&amp; filed under <?php the_category(', ') ?> <?php the_tags('Tags: ', ', ', '<br />'); ?><?php endif; ?>
         </div></div>
     </div>
 	<?php if ('open' == $post->comment_status) : ?>
@@ -30,14 +32,18 @@ get_header(); ?>
     <?php endif; ?>  
     <?php endwhile; ?>
     
-    <?php if ( is_home()) : ?>
-    <div id="content" >
+    
+    <?php next_posts_link('<div id="content" >
         <div id="label">
-        <div class="left"><?php next_posts_link('<< Older Entries', 0); ?></div>
-        <div class="right"><?php previous_posts_link('Newer Entries >>', '0') ?></div>
+        <div class="left"><< Older Entries</div>
         </div>
-	</div>
-    <?php endif; ?>
+	</div>', 0); ?>
+    
+    <?php previous_posts_link('<div id="content" >
+        <div id="label">
+        <div class="right">Newer Entries >></div>
+        </div>
+	</div>', '0') ?>
     
     <?php if ( is_search()) : ?>
     <div id="content" >
