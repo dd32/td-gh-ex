@@ -50,7 +50,16 @@
 			</div></div>
 		</div>
 		<div class="postContent">
-			<?php the_content(__('continue reading...', 'Arjuna')); ?>
+			<?php
+			if($arjunaOptions['excerpts_categoryPages'] && (is_category() || is_tag()))
+				the_excerpt();
+			elseif($arjunaOptions['excerpts_archivePages'] && (is_day() || is_month() || is_year()))
+				the_excerpt();
+			elseif($arjunaOptions['excerpts_authorPages'] && is_author())
+				the_excerpt();
+			else
+				the_content(__('continue reading...', 'Arjuna'));
+			?>
 		</div>
 		<div class="postFooter"><div class="r"></div>
 			<div class="left">

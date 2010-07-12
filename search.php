@@ -35,20 +35,30 @@
 			</div></div>
 		</div>
 		<div class="postContent">
-			<?php the_content(__('continue reading...', 'Arjuna')); ?>
+			<?php 
+			if($arjunaOptions['excerpts_searchPages'])
+				the_excerpt();
+			else the_content(__('continue reading...', 'Arjuna'));
+			?>
 		</div>
+		<?php if($arjunaOptions['excerpts_index'] || $arjunaOptions['archives_includeCategories'] || $arjunaOptions['archives_includeTags']): ?>
 		<div class="postFooter"><div class="r"></div>
 			<div class="left">
+			<?php if($arjunaOptions['archives_includeCategories']): ?>
 				<span class="postCategories"><?php the_category(', '); ?></span>
-				<?php if ( function_exists('the_tags') ): ?>
+			<?php endif; ?>
+			<?php if($arjunaOptions['archives_includeTags'] && function_exists('the_tags')): ?>
 				<span class="postTags"><?php
 					if (get_the_tags()) the_tags('', ', ', '');
 					else print '<span>'.__('<i>none</i>', 'Arjuna').'</span>';
 				?></span>
-				<?php endif; ?>
+			<?php endif; ?>
 			</div>
-			<a href="<?php the_permalink() ?>" class="postReadMore"><span><?php _e('Read more', 'Arjuna'); ?></span></a>
+			<?php if($arjunaOptions['excerpts_index']): ?>
+				<a href="<?php the_permalink() ?>" class="btn btnReadMore"><span><?php _e('Read more', 'Arjuna'); ?></span></a>
+			<?php endif; ?>
 		</div>
+		<?php endif; ?>
 	</div>
 	<?php endwhile; ?>
 

@@ -57,6 +57,7 @@ $_arjunaDefaultOptions = array(
 	'excerpts_categoryPages' => true,
 	'excerpts_archivePages' => true,
 	'excerpts_searchPages' => true,
+	'excerpts_authorPages' => false,
 	'background_color' => '#d9d9d9',
 	'background_style' => 'gradient_blueish', //if set, overrides background_color
 	'solidBackground_buttonStyle' => 'default', //will only be used if the background color is solid
@@ -119,172 +120,208 @@ function arjuna_add_theme_options() {
 		
 		//Menu 1 dropdown
 		$validOptions = array('1', '2', '3');
-		if ( in_array($_POST['headerMenu1_dropdown'], $validOptions) ) $options['headerMenu1_dropdown'] = $_POST['headerMenu1_dropdown'];
-		else $options['headerMenu1_dropdown'] = '3';
-
+		if(isset($_POST['headerMenu1_dropdown'])) {
+			if ( in_array($_POST['headerMenu1_dropdown'], $validOptions) ) $options['headerMenu1_dropdown'] = $_POST['headerMenu1_dropdown'];
+			else $options['headerMenu1_dropdown'] = '3';
+		}
+		
 		//Menu 1 display
 		$validOptions = array('pages', 'categories');
-		if ( in_array($_POST['headerMenu1_display'], $validOptions) ) $options['headerMenu1_display'] = $_POST['headerMenu1_display'];
-		else $options['headerMenu1_display'] = 'pages';
-		
-		if ($options['headerMenu1_display']=='pages') {
-			//Menu 1 sorting for PAGES
-			$validOptions = array('post_title', 'ID', 'post_name', 'menu_order');
-			if ( in_array($_POST['headerMenu1_sortBy_pages'], $validOptions) ) $options['headerMenu1_sortBy'] = $_POST['headerMenu1_sortBy_pages'];
-			else $options['headerMenu1_sortBy'] = $validOptions[0];
-			//Menu 1 sorting order
-			$validOptions = array('asc', 'desc');
-			if ( in_array($_POST['headerMenu1_sortOrder_pages'], $validOptions) ) $options['headerMenu1_sortOrder'] = $_POST['headerMenu1_sortOrder_pages'];
-			else $options['headerMenu1_sortOrder'] = $validOptions[0];
-		} elseif ($options['headerMenu1_display']=='categories') {
-			//Menu 1 sorting for CATEGORIES
-			$validOptions = array('name', 'ID', 'count', 'slug');
-			if ( in_array($_POST['headerMenu1_sortBy_categories'], $validOptions) ) $options['headerMenu1_sortBy'] = $_POST['headerMenu1_sortBy_categories'];
-			else $options['headerMenu1_sortBy'] = $validOptions[0];
-			//Menu 1 sorting order
-			$validOptions = array('asc', 'desc');
-			if ( in_array($_POST['headerMenu1_sortOrder_categories'], $validOptions) ) $options['headerMenu1_sortOrder'] = $_POST['headerMenu1_sortOrder_categories'];
-			else $options['headerMenu1_sortOrder'] = $validOptions[0];
+		if(isset($_POST['headerMenu1_display'])) {
+			if ( in_array($_POST['headerMenu1_display'], $validOptions) ) $options['headerMenu1_display'] = $_POST['headerMenu1_display'];
+			else $options['headerMenu1_display'] = 'pages';
 		}
-
+		
+		if(isset($_POST['headerMenu1_display'])) {
+			if ($options['headerMenu1_display']=='pages') {
+				//Menu 1 sorting for PAGES
+				$validOptions = array('post_title', 'ID', 'post_name', 'menu_order');
+				if ( in_array($_POST['headerMenu1_sortBy_pages'], $validOptions) ) $options['headerMenu1_sortBy'] = $_POST['headerMenu1_sortBy_pages'];
+				else $options['headerMenu1_sortBy'] = $validOptions[0];
+				//Menu 1 sorting order
+				$validOptions = array('asc', 'desc');
+				if ( in_array($_POST['headerMenu1_sortOrder_pages'], $validOptions) ) $options['headerMenu1_sortOrder'] = $_POST['headerMenu1_sortOrder_pages'];
+				else $options['headerMenu1_sortOrder'] = $validOptions[0];
+			} elseif ($options['headerMenu1_display']=='categories') {
+				//Menu 1 sorting for CATEGORIES
+				$validOptions = array('name', 'ID', 'count', 'slug');
+				if ( in_array($_POST['headerMenu1_sortBy_categories'], $validOptions) ) $options['headerMenu1_sortBy'] = $_POST['headerMenu1_sortBy_categories'];
+				else $options['headerMenu1_sortBy'] = $validOptions[0];
+				//Menu 1 sorting order
+				$validOptions = array('asc', 'desc');
+				if ( in_array($_POST['headerMenu1_sortOrder_categories'], $validOptions) ) $options['headerMenu1_sortOrder'] = $_POST['headerMenu1_sortOrder_categories'];
+				else $options['headerMenu1_sortOrder'] = $validOptions[0];
+			}
+		}
+		
 		//Menu 1 show
-		if ($_POST['headerMenu1_show']) $options['headerMenu1_show'] = true;
+		if (isset($_POST['headerMenu1_show'])) $options['headerMenu1_show'] = true;
 		else $options['headerMenu1_show'] = false;
-
+		
 		//Menu 1 alignment
 		$validOptions = array('right', 'left');
-		if ( in_array($_POST['headerMenu1_alignment'], $validOptions) ) $options['headerMenu1_alignment'] = $_POST['headerMenu1_alignment'];
-		else $options['headerMenu1_alignment'] = $validOptions[0];
+		if(isset($_POST['headerMenu1_alignment'])) {
+			if ( in_array($_POST['headerMenu1_alignment'], $validOptions) ) $options['headerMenu1_alignment'] = $_POST['headerMenu1_alignment'];
+			else $options['headerMenu1_alignment'] = $validOptions[0];
+		}
 		
 		// Menu 1 - Disable Parent Page Links in
-		if ($_POST['headerMenu1_disableParentPageLink']) $options['headerMenu1_disableParentPageLink'] = true;
+		if (isset($_POST['headerMenu1_disableParentPageLink'])) $options['headerMenu1_disableParentPageLink'] = true;
 		else $options['headerMenu1_disableParentPageLink'] = false;
 		
 		// Menu 1 - Exclude items
-		if($_POST['headerMenu1_exclude_categories']) {
-			$options['headerMenu1_exclude_categories'] = implode(',', $_POST['headerMenu1_exclude_categories']);
-		} else $options['headerMenu1_exclude_categories'] = '';
-
-		if($_POST['headerMenu1_exclude_pages']) {
-			$options['headerMenu1_exclude_pages'] = implode(',', $_POST['headerMenu1_exclude_pages']);
-		} else $options['headerMenu1_exclude_pages'] = '';
+		if(isset($_POST['headerMenu1_exclude_categories'])) {
+			if($_POST['headerMenu1_exclude_categories']) {
+				$options['headerMenu1_exclude_categories'] = implode(',', $_POST['headerMenu1_exclude_categories']);
+			} else $options['headerMenu1_exclude_categories'] = '';
+		}
+		
+		if(isset($_POST['headerMenu1_exclude_pages'])) {
+			if($_POST['headerMenu1_exclude_pages']) {
+				$options['headerMenu1_exclude_pages'] = implode(',', $_POST['headerMenu1_exclude_pages']);
+			} else $options['headerMenu1_exclude_pages'] = '';
+		}
 		
 		
 		//Menu 2 show
-		if ($_POST['headerMenu2_show']) $options['headerMenu2_show'] = true;
+		if (isset($_POST['headerMenu2_show'])) $options['headerMenu2_show'] = true;
 		else $options['headerMenu2_show'] = false;
 		
 		//Menu 2 dropdown
 		$validOptions = array('1', '2', '3');
-		if ( in_array($_POST['headerMenu2_dropdown'], $validOptions) ) $options['headerMenu2_dropdown'] = $_POST['headerMenu2_dropdown'];
-		else $options['headerMenu2_dropdown'] = '3';
-
+		if(isset($_POST['headerMenu2_dropdown'])) {
+			if ( in_array($_POST['headerMenu2_dropdown'], $validOptions) ) $options['headerMenu2_dropdown'] = $_POST['headerMenu2_dropdown'];
+			else $options['headerMenu2_dropdown'] = '3';
+		}
+		
 		//Menu 2 display
 		$validOptions = array('pages', 'categories');
-		if ( in_array($_POST['headerMenu2_display'], $validOptions) ) $options['headerMenu2_display'] = $_POST['headerMenu2_display'];
-		else $options['headerMenu2_display'] = 'pages';
-
-		if ($options['headerMenu2_display']=='pages') {
-			//Menu 2 sorting for PAGES
-			$validOptions = array('post_title', 'ID', 'post_name', 'menu_order');
-			if ( in_array($_POST['headerMenu2_sortBy_pages'], $validOptions) ) $options['headerMenu2_sortBy'] = $_POST['headerMenu2_sortBy_pages'];
-			else $options['headerMenu2_sortBy'] = $validOptions[0];
-			//Menu 2 sorting order
-			$validOptions = array('asc', 'desc');
-			if ( in_array($_POST['headerMenu2_sortOrder_pages'], $validOptions) ) $options['headerMenu2_sortOrder'] = $_POST['headerMenu2_sortOrder_pages'];
-			else $options['headerMenu2_sortOrder'] = $validOptions[0];
-		} elseif ($options['headerMenu2_display']=='categories') {
-			//Menu 2 sorting for CATEGORIES
-			$validOptions = array('name', 'ID', 'count', 'slug');
-			if ( in_array($_POST['headerMenu2_sortBy_categories'], $validOptions) ) $options['headerMenu2_sortBy'] = $_POST['headerMenu2_sortBy_categories'];
-			else $options['headerMenu2_sortBy'] = $validOptions[0];
-			//Menu 2 sorting order
-			$validOptions = array('asc', 'desc');
-			if ( in_array($_POST['headerMenu2_sortOrder_categories'], $validOptions) ) $options['headerMenu2_sortOrder'] = $_POST['headerMenu2_sortOrder_categories'];
-			else $options['headerMenu2_sortOrder'] = $validOptions[0];
+		if(isset($_POST['headerMenu2_display'])) {
+			if ( in_array($_POST['headerMenu2_display'], $validOptions) ) $options['headerMenu2_display'] = $_POST['headerMenu2_display'];
+			else $options['headerMenu2_display'] = 'pages';
+		}
+		
+		if(isset($_POST['headerMenu2_display'])) {
+			if ($options['headerMenu2_display']=='pages') {
+				//Menu 2 sorting for PAGES
+				$validOptions = array('post_title', 'ID', 'post_name', 'menu_order');
+				if ( in_array($_POST['headerMenu2_sortBy_pages'], $validOptions) ) $options['headerMenu2_sortBy'] = $_POST['headerMenu2_sortBy_pages'];
+				else $options['headerMenu2_sortBy'] = $validOptions[0];
+				//Menu 2 sorting order
+				$validOptions = array('asc', 'desc');
+				if ( in_array($_POST['headerMenu2_sortOrder_pages'], $validOptions) ) $options['headerMenu2_sortOrder'] = $_POST['headerMenu2_sortOrder_pages'];
+				else $options['headerMenu2_sortOrder'] = $validOptions[0];
+			} elseif ($options['headerMenu2_display']=='categories') {
+				//Menu 2 sorting for CATEGORIES
+				$validOptions = array('name', 'ID', 'count', 'slug');
+				if ( in_array($_POST['headerMenu2_sortBy_categories'], $validOptions) ) $options['headerMenu2_sortBy'] = $_POST['headerMenu2_sortBy_categories'];
+				else $options['headerMenu2_sortBy'] = $validOptions[0];
+				//Menu 2 sorting order
+				$validOptions = array('asc', 'desc');
+				if ( in_array($_POST['headerMenu2_sortOrder_categories'], $validOptions) ) $options['headerMenu2_sortOrder'] = $_POST['headerMenu2_sortOrder_categories'];
+				else $options['headerMenu2_sortOrder'] = $validOptions[0];
+			}
 		}
 		
 		//Menu 2 Home Icon
-		if ($_POST['headerMenu2_displayHomeButton']) $options['headerMenu2_displayHomeButton'] = true;
+		if (isset($_POST['headerMenu2_displayHomeButton'])) $options['headerMenu2_displayHomeButton'] = true;
 		else $options['headerMenu2_displayHomeButton'] = false;
-
+		
 		//Menu 2 Home Icon
-		if ($_POST['headerMenu2_displaySeparators']) $options['headerMenu2_displaySeparators'] = true;
+		if (isset($_POST['headerMenu2_displaySeparators'])) $options['headerMenu2_displaySeparators'] = true;
 		else $options['headerMenu2_displaySeparators'] = false;
 		
 		// Menu 2 - Disable Parent Page Links in
-		if ($_POST['headerMenu2_disableParentPageLink']) $options['headerMenu2_disableParentPageLink'] = true;
+		if (isset($_POST['headerMenu2_disableParentPageLink'])) $options['headerMenu2_disableParentPageLink'] = true;
 		else $options['headerMenu2_disableParentPageLink'] = false;
-
+		
 		
 		// Menu 2 - Exclude items
-		if($_POST['headerMenu2_exclude_categories']) {
-			$options['headerMenu2_exclude_categories'] = implode(',', $_POST['headerMenu2_exclude_categories']);
-		} else $options['headerMenu2_exclude_categories'] = '';
-
-		if($_POST['headerMenu2_exclude_pages']) {
-			$options['headerMenu2_exclude_pages'] = implode(',', $_POST['headerMenu2_exclude_pages']);
-		} else $options['headerMenu2_exclude_pages'] = '';
-
+		if(isset($_POST['headerMenu2_exclude_categories'])) {
+			if($_POST['headerMenu2_exclude_categories']) {
+				$options['headerMenu2_exclude_categories'] = implode(',', $_POST['headerMenu2_exclude_categories']);
+			} else $options['headerMenu2_exclude_categories'] = '';
+		}
+		
+		if(isset($_POST['headerMenu2_exclude_pages'])) {
+			if($_POST['headerMenu2_exclude_pages']) {
+				$options['headerMenu2_exclude_pages'] = implode(',', $_POST['headerMenu2_exclude_pages']);
+			} else $options['headerMenu2_exclude_pages'] = '';
+		}
+		
 
 		//Header Image
 		$validOptions = array('lightBlue', 'darkBlue', 'khaki', 'seaGreen', 'lightRed');
-		if ( in_array($_POST['headerImage'], $validOptions) ) $options['headerImage'] = $_POST['headerImage'];
-		else $options['headerImage'] = $validOptions[0];
-
+		if(isset($_POST['headerImage'])) {
+			if ( in_array($_POST['headerImage'], $validOptions) ) $options['headerImage'] = $_POST['headerImage'];
+			else $options['headerImage'] = $validOptions[0];
+		}
+		
 
 		//Comment display
 		$validOptions = array('alt', 'left', 'right');
-		if ( in_array($_POST['commentDisplay'], $validOptions) ) $options['commentDisplay'] = $_POST['commentDisplay'];
-		else $options['commentDisplay'] = 'alt';
+		if(isset($_POST['commentDisplay'])) {
+			if ( in_array($_POST['commentDisplay'], $validOptions) ) $options['commentDisplay'] = $_POST['commentDisplay'];
+			else $options['commentDisplay'] = 'alt';
+		}
+		
 
 		// Comment display
-		if ($_POST['comments_hideWhenDisabledOnPages']) $options['comments_hideWhenDisabledOnPages'] = true;
+		if (isset($_POST['comments_hideWhenDisabledOnPages'])) $options['comments_hideWhenDisabledOnPages'] = true;
 		else $options['comments_hideWhenDisabledOnPages'] = false;
-
-		if ($_POST['comments_hideWhenDisabledOnPosts']) $options['comments_hideWhenDisabledOnPosts'] = true;
+		
+		if (isset($_POST['comments_hideWhenDisabledOnPosts'])) $options['comments_hideWhenDisabledOnPosts'] = true;
 		else $options['comments_hideWhenDisabledOnPosts'] = false;
 		
-		if ($_POST['trackbacks_hideWhenDisabledOnPages']) $options['trackbacks_hideWhenDisabledOnPages'] = true;
+		if (isset($_POST['trackbacks_hideWhenDisabledOnPages'])) $options['trackbacks_hideWhenDisabledOnPages'] = true;
 		else $options['trackbacks_hideWhenDisabledOnPages'] = false;
-
-		if ($_POST['trackbacks_hideWhenDisabledOnPosts']) $options['trackbacks_hideWhenDisabledOnPosts'] = true;
+		
+		if (isset($_POST['trackbacks_hideWhenDisabledOnPosts'])) $options['trackbacks_hideWhenDisabledOnPosts'] = true;
 		else $options['trackbacks_hideWhenDisabledOnPosts'] = false;
-
+		
 		//Footer style
 		$validOptions = array('style1', 'style2');
-		if ( in_array($_POST['footerStyle'], $validOptions) ) $options['footerStyle'] = $_POST['footerStyle'];
-		else $options['footerStyle'] = 'style1';
-
+		if(isset($_POST['footerStyle'])) {
+			if ( in_array($_POST['footerStyle'], $validOptions) ) $options['footerStyle'] = $_POST['footerStyle'];
+			else $options['footerStyle'] = 'style1';
+		}
+		
 		//Comment date format
 		$validOptions = array('timePassed', 'date');
-		if ( in_array($_POST['commentDateFormat'], $validOptions) ) $options['commentDateFormat'] = $_POST['commentDateFormat'];
-		else $options['commentDateFormat'] = 'timePassed';
-
+		if(isset($_POST['commentDateFormat'])) {
+			if ( in_array($_POST['commentDateFormat'], $validOptions) ) $options['commentDateFormat'] = $_POST['commentDateFormat'];
+			else $options['commentDateFormat'] = 'timePassed';
+		}
+		
 		//Append to page title
 		$validOptions = array('blogName', 'custom');
-		if ( in_array($_POST['appendToPageTitle'], $validOptions) ) $options['appendToPageTitle'] = $_POST['appendToPageTitle'];
-		else $options['appendToPageTitle'] = 'blogName';
-		
-		if ($_POST['appendToPageTitle']=='custom') {
-			$options['appendToPageTitleCustom'] = $_POST['appendToPageTitleCustom'];
+		if(isset($_POST['appendToPageTitle'])) {
+			if ( in_array($_POST['appendToPageTitle'], $validOptions) ) $options['appendToPageTitle'] = $_POST['appendToPageTitle'];
+			else $options['appendToPageTitle'] = 'blogName';
 		}
-
+		
+		if(isset($_POST['appendToPageTitle'])) {
+			if ($_POST['appendToPageTitle']=='custom')
+				$options['appendToPageTitleCustom'] = $_POST['appendToPageTitleCustom'];
+		}
+		
 		//Sidebar display
 		$validOptions = array('right', 'left', 'none');
-		if ( in_array($_POST['sidebarDisplay'], $validOptions) ) $options['sidebarDisplay'] = $_POST['sidebarDisplay'];
-		else $options['sidebarDisplay'] = $validOptions[0];
+		if(isset($_POST['sidebarDisplay'])) {
+			if ( in_array($_POST['sidebarDisplay'], $validOptions) ) $options['sidebarDisplay'] = $_POST['sidebarDisplay'];
+			else $options['sidebarDisplay'] = $validOptions[0];
+		}
 		
 		// Whether or not to show the default bars (if no widget bars are defined)
-		if ($_POST['sidebar_showDefault']) $options['sidebar_showDefault'] = true;
+		if (isset($_POST['sidebar_showDefault'])) $options['sidebar_showDefault'] = true;
 		else $options['sidebar_showDefault'] = false;
 		
 		// Sidebar: RSS Button
-		if ($_POST['sidebar_showRSSButton']) $options['sidebar_showRSSButton'] = true;
+		if (isset($_POST['sidebar_showRSSButton'])) $options['sidebar_showRSSButton'] = true;
 		else $options['sidebar_showRSSButton'] = false;
 		
 		// Sidebar: Twitter Button
-		if ($_POST['sidebar_showTwitterButton']) {
+		if (isset($_POST['sidebar_showTwitterButton'])) {
 			$twitterURL = trim($_POST['sidebar_twitterURL']);
 			$options['sidebar_showTwitterButton'] = true;
 			if ( !preg_match('/twitter\.com/i', $twitterURL) ) {
@@ -304,7 +341,7 @@ function arjuna_add_theme_options() {
 		} else $options['sidebar_showTwitterButton'] = false;
 		
 		// Sidebar: Facebook Button
-		if ($_POST['sidebar_showFacebookButton']) {
+		if (isset($_POST['sidebar_showFacebookButton'])) {
 			$facebookURL = trim($_POST['sidebar_facebookURL']);
 			$options['sidebar_showFacebookButton'] = true;
 			
@@ -317,53 +354,56 @@ function arjuna_add_theme_options() {
 			}
 			$options['sidebar_facebookURL'] = $facebookURL;
 		} else $options['sidebar_showFacebookButton'] = false;
-
-		if ($_POST['sidebar_displayButtonTexts']) $options['sidebar_displayButtonTexts'] = true;
+		
+		if (isset($_POST['sidebar_displayButtonTexts'])) $options['sidebar_displayButtonTexts'] = true;
 		else $options['sidebar_displayButtonTexts'] = false;
-
-
+		
 		//Sidebar Width
 		$validOptions = array('normal', 'small', 'large');
-		if ( in_array($_POST['sidebarWidth'], $validOptions) ) $options['sidebarWidth'] = $_POST['sidebarWidth'];
-		else $options['sidebarWidth'] = $validOptions[0];
+		if(isset($_POST['sidebarWidth'])) {
+			if ( in_array($_POST['sidebarWidth'], $validOptions) ) $options['sidebarWidth'] = $_POST['sidebarWidth'];
+			else $options['sidebarWidth'] = $validOptions[0];
+		}
 		
 		// Posts, Show Author
-		if ($_POST['postsShowAuthor']) $options['postsShowAuthor'] = true;
+		if (isset($_POST['postsShowAuthor'])) $options['postsShowAuthor'] = true;
 		else $options['postsShowAuthor'] = false;
 		
 		// Posts, Show Time
-		if ($_POST['postsShowTime']) $options['postsShowTime'] = true;
+		if (isset($_POST['postsShowTime'])) $options['postsShowTime'] = true;
 		else $options['postsShowTime'] = false;
 		
-		if ($_POST['pages_showInfoBar']) $options['pages_showInfoBar'] = true;
+		if (isset($_POST['pages_showInfoBar'])) $options['pages_showInfoBar'] = true;
 		else $options['pages_showInfoBar'] = false;
-		
+
 		//Navigation links to previous and next posts
-		if ($_POST['posts_showTopPostLinks']) $options['posts_showTopPostLinks'] = true;
+		if (isset($_POST['posts_showTopPostLinks'])) $options['posts_showTopPostLinks'] = true;
 		else $options['posts_showTopPostLinks'] = false;
 		
-		if ($_POST['posts_showBottomPostLinks']) $options['posts_showBottomPostLinks'] = true;
+		if (isset($_POST['posts_showBottomPostLinks'])) $options['posts_showBottomPostLinks'] = true;
 		else $options['posts_showBottomPostLinks'] = false;
 		
-		if ($_POST['pagination']=='1') {
-			$options['pagination'] = true;
-			
-			$validOptions = array(1,2,3,4,5);
-			if ( in_array($_POST['pagination_pageRange'], $validOptions) ) $options['pagination_pageRange'] = $_POST['pagination_pageRange'];
-			else $options['pagination_pageRange'] = 3;
-
-			$validOptions = array(1,2,3);
-			if ( in_array($_POST['pagination_pageAnchors'], $validOptions) ) $options['pagination_pageAnchors'] = $_POST['pagination_pageAnchors'];
-			else $options['pagination_pageAnchors'] = 1;
-			
-			$validOptions = array(1,2,3);
-			if ( in_array($_POST['pagination_pageGap'], $validOptions) ) $options['pagination_pageGap'] = $_POST['pagination_pageGap'];
-			else $options['pagination_pageGap'] = 1;
-			
-		} else $options['pagination'] = false;
+		if(isset($_POST['pagination'])) {
+			if ($_POST['pagination']=='1') {
+				$options['pagination'] = true;
+				
+				$validOptions = array(1,2,3,4,5);
+				if ( in_array($_POST['pagination_pageRange'], $validOptions) ) $options['pagination_pageRange'] = $_POST['pagination_pageRange'];
+				else $options['pagination_pageRange'] = 3;
+	
+				$validOptions = array(1,2,3);
+				if ( in_array($_POST['pagination_pageAnchors'], $validOptions) ) $options['pagination_pageAnchors'] = $_POST['pagination_pageAnchors'];
+				else $options['pagination_pageAnchors'] = 1;
+				
+				$validOptions = array(1,2,3);
+				if ( in_array($_POST['pagination_pageGap'], $validOptions) ) $options['pagination_pageGap'] = $_POST['pagination_pageGap'];
+				else $options['pagination_pageGap'] = 1;
+				
+			} else $options['pagination'] = false;
+		}
 		
 		//Custom CSS
-		if ($_POST['customCSS']) {
+		if (isset($_POST['customCSS'])) {
 			if (trim($_POST['customCSS_input'])) {
 				$options['customCSS'] = true;
 				$input = trim($_POST['customCSS_input']);
@@ -389,54 +429,61 @@ function arjuna_add_theme_options() {
 		}
 		
 		//Index Pages
-		if ($_POST['archives_includeTags']) $options['archives_includeTags'] = true;
+		
+		if (isset($_POST['archives_includeTags'])) $options['archives_includeTags'] = true;
 		else $options['archives_includeTags'] = false;
 		
-		if ($_POST['archives_includeCategories']) $options['archives_includeCategories'] = true;
+		if (isset($_POST['archives_includeCategories'])) $options['archives_includeCategories'] = true;
 		else $options['archives_includeCategories'] = false;
 		
+		
 		//Excerpts
-		if ($_POST['excerpts_index']) $options['excerpts_index'] = true;
+		if (isset($_POST['excerpts_index'])) $options['excerpts_index'] = true;
 		else $options['excerpts_index'] = false;
 		
-		if ($_POST['excerpts_categoryPages']) $options['excerpts_categoryPages'] = true;
+		if (isset($_POST['excerpts_categoryPages'])) $options['excerpts_categoryPages'] = true;
 		else $options['excerpts_categoryPages'] = false;
-		
-		if ($_POST['excerpts_archivePages']) $options['excerpts_archivePages'] = true;
+	
+		if (isset($_POST['excerpts_archivePages'])) $options['excerpts_archivePages'] = true;
 		else $options['excerpts_archivePages'] = false;
-		
-		if ($_POST['excerpts_searchPages']) $options['excerpts_searchPages'] = true;
+	
+		if (isset($_POST['excerpts_searchPages'])) $options['excerpts_searchPages'] = true;
 		else $options['excerpts_searchPages'] = false;
+	
+		if (isset($_POST['excerpts_authorPages'])) $options['excerpts_authorPages'] = true;
+		else $options['excerpts_authorPages'] = false;
 		
 		//Logo
-		if($_FILES['headerLogo']['type']) {
-			if(!eregi('image/', $_FILES['headerLogo']['type'])) {
-				//catch error
-				$formErrors['headerLogo'] = __('The uploaded file is not a valid image. Only JPEG, PNG and GIF is supported.', 'Arjuna');
-			} else {
-				// check if valid image
-				$info = getimagesize($_FILES['headerLogo']['tmp_name']);
-				$supportedMimeTypes = array('image/gif', 'image/jpeg', 'image/png');
-				if(!$info || !in_array($info['mime'], $supportedMimeTypes)) {
+		if(isset($_FILES['headerLogo'])) {
+			if($_FILES['headerLogo']['type']) {
+				if(!eregi('image/', $_FILES['headerLogo']['type'])) {
 					//catch error
 					$formErrors['headerLogo'] = __('The uploaded file is not a valid image. Only JPEG, PNG and GIF is supported.', 'Arjuna');
 				} else {
-					list($width, $height) = $info;
-					$path = arjuna_get_upload_directory() . '/' . $_FILES['headerLogo']['name'];
-					move_uploaded_file($_FILES['headerLogo']['tmp_name'], $path);
-					$options['headerLogo'] = arjuna_get_upload_url() . '/' . $_FILES['headerLogo']['name'];
-					$options['headerLogo_width'] = $width;
-					$options['headerLogo_height'] = $height;
+					// check if valid image
+					$info = getimagesize($_FILES['headerLogo']['tmp_name']);
+					$supportedMimeTypes = array('image/gif', 'image/jpeg', 'image/png');
+					if(!$info || !in_array($info['mime'], $supportedMimeTypes)) {
+						//catch error
+						$formErrors['headerLogo'] = __('The uploaded file is not a valid image. Only JPEG, PNG and GIF is supported.', 'Arjuna');
+					} else {
+						list($width, $height) = $info;
+						$path = arjuna_get_upload_directory() . '/' . $_FILES['headerLogo']['name'];
+						move_uploaded_file($_FILES['headerLogo']['tmp_name'], $path);
+						$options['headerLogo'] = arjuna_get_upload_url() . '/' . $_FILES['headerLogo']['name'];
+						$options['headerLogo_width'] = $width;
+						$options['headerLogo_height'] = $height;
+					}
 				}
 			}
 		}
 		
 		//Javascript menus
-		if ($_POST['headerMenus_enableJavaScript']) $options['headerMenus_enableJavaScript'] = true;
+		if (isset($_POST['headerMenus_enableJavaScript'])) $options['headerMenus_enableJavaScript'] = true;
 		else $options['headerMenus_enableJavaScript'] = false;
 		
 		//IE6 Notice
-		if ($_POST['miscellaneous_IE6Notice']) $options['miscellaneous_IE6Notice'] = true;
+		if (isset($_POST['miscellaneous_IE6Notice'])) $options['miscellaneous_IE6Notice'] = true;
 		else $options['miscellaneous_IE6Notice'] = false;
 		
 		
@@ -1045,7 +1092,7 @@ function arjuna_add_theme_page () {
 			<div class="bottom"><span></span></div>
 		</div>
 		
-		<div self:ID="singlePosts" class="srsContainer<?php if(!arjuna_admin_is_panel_open('singePosts')) print ' srsContainerClosed'; ?>">
+		<div self:ID="singlePosts" class="srsContainer<?php if(!arjuna_admin_is_panel_open('singlePosts')) print ' srsContainerClosed'; ?>">
 			<h4 class="title"><span><?php _e('Single Posts and Pages', 'Arjuna'); ?></span></h4>
 			<div class="inside">
 				<table class="form-table">
@@ -1150,6 +1197,7 @@ function arjuna_add_theme_page () {
 								<label><input name="excerpts_categoryPages" type="checkbox"<?php if($options['excerpts_categoryPages']) echo ' checked="checked"'; ?> /> <?php _e('Category &amp; tag pages', 'Arjuna'); ?></label><br />
 								<label><input name="excerpts_archivePages" type="checkbox"<?php if($options['excerpts_archivePages']) echo ' checked="checked"'; ?> /> <?php _e('Archive pages', 'Arjuna'); ?></label><br />
 								<label><input name="excerpts_searchPages" type="checkbox"<?php if($options['excerpts_searchPages']) echo ' checked="checked"'; ?> /> <?php _e('Search pages', 'Arjuna'); ?></label><br />
+								<label><input name="excerpts_authorPages" type="checkbox"<?php if($options['excerpts_authorPages']) echo ' checked="checked"'; ?> /> <?php _e('Author pages', 'Arjuna'); ?></label><br />
 								<span class="description"><?php _e('Note: If enabled, an excerpt will be shown instead of the full post on selected pages. If a post does not have a custom excerpt, an automatic excerpt of the first 55 words will be displayed.', 'Arjuna'); ?></span>
 							</td>
 						</tr>

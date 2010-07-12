@@ -70,6 +70,12 @@ Nonetheless, we still hope that IE6 will rest in peace soon.
 Changelog:
 ---------------------------------------------------
 
+1.5.2
+- New: The excerpts feature can now be individually set for author pages as well.
+- Fix: The excerpts feature was not working correctly for archive pages, search pages and category/tag pages.
+- Fix: STRONG and EM tags in comments had not been formatted correctly.
+- Fix: The state of the admin panel "Single Posts & Pages" was not saved properly. 
+- Fix: Some minor changes in the backend to comply with new WordPress theme review regulations.
 1.5.1
 - Fix: Some images extended to full width, resulting in a distorted look.
 1.5
