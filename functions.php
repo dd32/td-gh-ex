@@ -903,10 +903,10 @@ function arjuna_add_theme_page () {
 							<td>
 								<?php 
 								$versions = array(
-									array('id' => 'backgroundStyle_blueish', 'value' => 'gradient_blueish', 'label' => __('Blueish gradient')),
-									array('id' => 'backgroundStyle_gray', 'value' => 'gradient_gray', 'label' => __('Gray gradient')),
-									array('id' => 'backgroundStyle_grayReverse', 'value' => 'gradient_gray_reverse', 'label' => __('Gray gradient (reverse)')),
-									array('id' => 'backgroundStyle_khaki', 'value' => 'gradient_khaki', 'label' => __('Khaki gradient'))
+									array('id' => 'backgroundStyle_blueish', 'value' => 'gradient_blueish', 'label' => __('Blueish gradient', 'Arjuna')),
+									array('id' => 'backgroundStyle_gray', 'value' => 'gradient_gray', 'label' => __('Gray gradient', 'Arjuna')),
+									array('id' => 'backgroundStyle_grayReverse', 'value' => 'gradient_gray_reverse', 'label' => __('Gray gradient (reverse)', 'Arjuna')),
+									array('id' => 'backgroundStyle_khaki', 'value' => 'gradient_khaki', 'label' => __('Khaki gradient', 'Arjuna'))
 								);
 								foreach($versions as $version):
 								?>
@@ -918,10 +918,10 @@ function arjuna_add_theme_page () {
 								<?php endforeach; ?>
 								<div class="tImageOptions" style="float:none; clear:left;">
 									<input name="backgroundStyle" type="radio" id="backgroundStyle_solid" value=""<?php if($options['background_style']=='') echo ' checked="checked"'; ?> />
-									<span style="margin-top:0;"><label for="backgroundStyle_solid">Solid Color:
+									<span style="margin-top:0;"><label for="backgroundStyle_solid"><?php _e('Solid Color', 'Arjuna'); ?>:
 										<div class="backgroundColor"><div id="backgroundColor_picker"><div class="inner"></div></div></div>
 										<input name="backgroundColor" type="text" id="backgroundColor" value="<?php print $options['background_color']; ?>" />
-										Button Style: <select name="backgroundButtonStyle" id="backgroundButtonStyle">
+										<?php _e('Button Style', 'Arjuna'); ?>: <select name="backgroundButtonStyle" id="backgroundButtonStyle">
 											<option value="default"<?php if($options['solidBackground_buttonStyle'] == 'default') print ' selected="selected"'; ?>>Default</option>
 											<option value="light"<?php if($options['solidBackground_buttonStyle'] == 'light') print ' selected="selected"'; ?>>Light</option>
 										</select>
@@ -1071,7 +1071,7 @@ function arjuna_add_theme_page () {
 		<div self:ID="archives" class="srsContainer<?php if(!arjuna_admin_is_panel_open('archives')) print ' srsContainerClosed'; ?>">
 			<h4 class="title"><span><?php _e('Index Pages', 'Arjuna'); ?></span></h4>
 			<div class="inside">
-				<p class="note"><?php _e('Index pages include the homepage (unless it is static), archives, category and tag listing pages as well as search results pages. Basically any page that displays a listing of posts.'); ?></p>
+				<p class="note"><?php _e('Index pages include the homepage (unless it is static), archives, category and tag listing pages as well as search results pages. Basically any page that displays a listing of posts.', 'Arjuna'); ?></p>
 				<table class="form-table">
 					<tbody>
 						<tr>

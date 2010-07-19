@@ -70,6 +70,9 @@ Nonetheless, we still hope that IE6 will rest in peace soon.
 Changelog:
 ---------------------------------------------------
 
+1.5.3
+- Localization: German has been updated to 1.5.3
+- Localization: Polish has been updated to 1.5.
 1.5.2
 - New: The excerpts feature can now be individually set for author pages as well.
 - Fix: The excerpts feature was not working correctly for archive pages, search pages and category/tag pages.
