@@ -1,5 +1,5 @@
 <?php
-$bfa_ata_version = "3.4.9";
+$bfa_ata_version = "3.5.2";
 
 // Load translation file 
 load_theme_textdomain('atahualpa');
@@ -17,7 +17,6 @@ include_once (TEMPLATEPATH . '/functions/bfa_get_options.php');
 
 // Sidebars:
 if ( function_exists('register_sidebar') ) {
-	
 	register_sidebar(array(
 		'name'=>'Left Sidebar',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -25,7 +24,6 @@ if ( function_exists('register_sidebar') ) {
 		'before_title' => '<div class="widget-title"><h3>',
 		'after_title' => '</h3></div>',
 	));
-
 	register_sidebar(array(
 		'name'=>'Right Sidebar',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -33,7 +31,6 @@ if ( function_exists('register_sidebar') ) {
 		'before_title' => '<div class="widget-title"><h3>',
 		'after_title' => '</h3></div>',
 	));
-	
 	register_sidebar(array(
 		'name'=>'Left Inner Sidebar',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -41,7 +38,6 @@ if ( function_exists('register_sidebar') ) {
 		'before_title' => '<div class="widget-title"><h3>',
 		'after_title' => '</h3></div>',
 	));
-
 	register_sidebar(array(
 		'name'=>'Right Inner Sidebar',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -50,7 +46,6 @@ if ( function_exists('register_sidebar') ) {
 		'after_title' => '</h3></div>',
 	));
 			
-	
 	// Register additional extra widget areas:
 	# $bfa_ata_extra_widget_areas = get_option('bfa_widget_areas');
 	$bfa_ata_extra_widget_areas = $bfa_ata['bfa_widget_areas'];
@@ -68,11 +63,13 @@ if ( function_exists('register_sidebar') ) {
 	}
 } 
 
-
+global $bfa_ata;
 // Load functions
 include_once (TEMPLATEPATH . '/functions/bfa_header_config.php');
 include_once (TEMPLATEPATH . '/functions/bfa_hor_cats.php');
 include_once (TEMPLATEPATH . '/functions/bfa_hor_pages.php');
+// New WP3 menus:
+include_once (TEMPLATEPATH . '/functions/bfa_new_wp3_menus.php');
 include_once (TEMPLATEPATH . '/functions/bfa_footer.php');
 include_once (TEMPLATEPATH . '/functions/bfa_recent_comments.php');
 include_once (TEMPLATEPATH . '/functions/bfa_popular_posts.php');
@@ -84,6 +81,13 @@ include_once (TEMPLATEPATH . '/functions/bfa_next_previous_links.php');
 include_once (TEMPLATEPATH . '/functions/bfa_post_parts.php');
 if (!function_exists('paged_comments'))  
 	include_once (TEMPLATEPATH . '/functions/bfa_custom_comments.php');
+	
+// Since 3.5.2: JSON for PHP 4 & 5.1:
+if (!function_exists('json_decode')) {
+	include_once (TEMPLATEPATH . '/functions/JSON.php');
+	function json_encode($data) { $json = new Services_JSON(); return( $json->encode($data) ); }
+	function json_decode($data) { $json = new Services_JSON(); return( $json->decode($data) ); }
+}
 
 // old, propretiary bodyclasses() of Atahualpa. Usage: bodyclasses()
 // include_once (TEMPLATEPATH . '/functions/bfa_bodyclasses.php');
@@ -100,9 +104,6 @@ if (function_exists('sociable_html'))
 if (file_exists(ABSPATH."/wpmu-settings.php")) 
 	include_once (TEMPLATEPATH . '/functions/bfa_m_find_in_dir.php');
 
-// add jquery function only to theme page or widgets won't work in 2.3 and older
-#if ( $_GET['page'] == basename(__FILE__) ) { 
-
 // CSS for admin area
 include_once (TEMPLATEPATH . '/functions/bfa_css_admin_head.php');
 // Add the CSS to the <head>...</head> of the theme option admin area
@@ -112,7 +113,6 @@ include_once (TEMPLATEPATH . '/functions/bfa_ata_add_admin.php');
 include_once (TEMPLATEPATH . '/functions/bfa_ata_admin.php');
 add_action('admin_menu', 'bfa_ata_add_admin');
 
-#}
 
 // Escape single & double quotes
 function bfa_escape($string) {
@@ -271,6 +271,15 @@ function bfa_inline_css_js() {
 }
 
 
+function bfa_delete_bfa_ata4() {
+	check_ajax_referer( "delete_bfa_ata4" );
+	if (delete_option('bfa_ata4')) echo '<span style="color:green;font-weight:bold;">Successfully deleted option \'bfa_ata4\' ...</span>'; 
+	else echo '<span style="color:green;font-weight:bold;">Something went wrong...</span>';
+	die();
+}
+// add_action ( 'wp_ajax_' + [name of "action" in jQuery.ajax, see functions/bfa_css_admin_head.php], [name of function])
+add_action( 'wp_ajax_bfa_delete_bfa_ata4', 'bfa_delete_bfa_ata4' );
+
 
 
 // Custom Excerpts 
@@ -280,7 +289,7 @@ function bfa_wp_trim_excerpt($text) { // Fakes an excerpt if needed
 
 	if ( '' <> $text ) {
 //  an excerpt exists, just stick on the 'custom read more' and we're done
-		$words = explode(' ', $text);
+		$words = preg_split("/\s+/", $text);
 		$custom_read_more = str_replace('%permalink%', get_permalink(), $bfa_ata['custom_read_more']);
 		$custom_read_more = str_replace('%title%', the_title('','',FALSE), $custom_read_more);
 		array_push($words, $custom_read_more);
@@ -289,28 +298,34 @@ function bfa_wp_trim_excerpt($text) { // Fakes an excerpt if needed
 	}
 
 	$text = get_the_content('');
-	$words = explode(' ', $text);
+	$words = preg_split ("/\s+/", $text);
 	$post_content = $post->post_content;
-	$post_content_length = count(explode(' ', $post_content));
+	$post_content_length = count(preg_split("/\s+/", $post_content));
  
 	if (count($words) < $post_content_length) {	
+
 //  use the teaser and its 'read more'
 		$bfa_ata_more_tag_final = str_replace("%post-title%", the_title('', '', false), $bfa_ata['more_tag']);
 		$text = the_content($bfa_ata_more_tag_final); 
 		return $text;
 	} else {
-// Build the excerpt from the post 
 
+// Build the excerpt from the post 
 		$text = apply_filters('the_content', $text);
  		$text = str_replace(']]>', ']]>', $text);
 		$text = strip_tags($text, $bfa_ata['dont_strip_excerpts']);
 		$excerpt_length = $bfa_ata['excerpt_length'];
-		$words = explode(' ', $text, $excerpt_length + 3);
-		array_pop($words);	
-		array_pop($words);	
-		$custom_read_more = str_replace('%permalink%', get_permalink(), $bfa_ata['custom_read_more']);
-		$custom_read_more = str_replace('%title%', the_title('','',FALSE), $custom_read_more);
-		array_push($words, $custom_read_more);
+		$words = preg_split("/\s+/", $text, $excerpt_length + 1);
+
+// this is to handle the case where the number of words 
+// in the post equals the excerpt length
+ 		if ($post_content_length > $excerpt_length) {	
+ 			array_pop($words);	
+  			array_pop($words);	
+			$custom_read_more = str_replace('%permalink%', get_permalink(), $bfa_ata['custom_read_more']);
+			$custom_read_more = str_replace('%title%', the_title('','',FALSE), $custom_read_more);
+			array_push($words, $custom_read_more);
+ 		}
 		$text = implode(' ', $words);
 		return $text;
 		}
@@ -525,6 +540,7 @@ function bfa_center_content($center_content) {
 // Purpose is that PHP such as bloginfo('template_directory') can be used in CSS text areas so that image paths work across
 // Atahualpa installations & imported/exported files
 function bfa_html_inserts($custom_code) {
+	global $bfa_ata; 
 	if($custom_code != '') {
 		if ( strpos($custom_code,'<?php ') !== FALSE ) {
 			ob_start(); 
@@ -539,13 +555,14 @@ function bfa_html_inserts($custom_code) {
 
 /* CUSTOM BODY TITLE and meta title, meta keywords, meta description */
 
-
+if ($bfa_ata['page_post_options'] == "Yes") {
 /* Use the admin_menu action to define the custom boxes */
-#if (is_admin())
-#add_action('admin_menu', 'bfa_ata_add_custom_box');
+	if (is_admin())
+	add_action('admin_menu', 'bfa_ata_add_custom_box');
 
-/* Use the save_post action to do something with the data entered */
-#add_action('save_post', 'bfa_ata_save_postdata');
+	/* Use the save_post action to do something with the data entered */
+	add_action('save_post', 'bfa_ata_save_postdata');
+}
 
 /* Use the publish_post action to do something with the data entered */
 #add_action('publish_post', 'bfa_ata_save_postdata');
@@ -752,5 +769,16 @@ if (!function_exists('file_get_contents')) {
 		return $fcontents;
 	}
 	
+}
+
+// Since 3.5.2: New menu system in WP 3
+add_action( 'init', 'register_new_menus' );
+function register_new_menus() {
+	register_nav_menus(
+		array(
+			'menu1' => __( 'Menu 1' ),
+			'menu2' => __( 'Menu 2' )
+		)
+	);
 }
 ?>

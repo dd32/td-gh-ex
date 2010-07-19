@@ -1,5 +1,7 @@
 <?php 	/* get all options: */
+# error_reporting(-1);
 include (TEMPLATEPATH . '/functions/bfa_get_options.php');
+global $bfa_ata;
 get_header(); ?>
 
 <?php /* If there are any posts: */

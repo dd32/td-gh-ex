@@ -6,7 +6,7 @@
 <?php /* if index.php or another page template (copied from index.php) was not used
 (i.e. by a plugin such as WPG2), the global $bfa_ata would be empty */
 global $bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2; 
-if ($bfa_ata == "") include_once (TEMPLATEPATH . '/functions/bfa_get_options.php'); ?>
+// if ($bfa_ata == "") include_once (TEMPLATEPATH . '/functions/bfa_get_options.php'); ?>
 <?php if ( $bfa_ata['css_external'] == "External" ) { ?>
 <link rel="stylesheet" href="<?php bloginfo('url'); ?>/?bfa_ata_file=css" type="text/css" media="all" />
 <?php } ?>
@@ -25,6 +25,23 @@ if ($bfa_ata == "") include_once (TEMPLATEPATH . '/functions/bfa_get_options.php
 <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/DD_roundies.js"></script>
 <script type="text/javascript">DD_roundies.addRule('<?php echo $bfa_ata['pngfix_selectors']; ?>');</script>
 <![endif]-->
+<?php } ?>
+<?php if (strpos($bfa_ata['configure_header'],'%image')!== FALSE AND 
+$bfa_ata['header_image_javascript'] != "0" AND $bfa_ata['crossslide_fade'] != "0") { ?>
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery.cross-slide.js"></script>
+<?php } ?>
+<?php if ( ($bfa_ata['animate_page_menu_bar'] == "Yes" AND strpos($bfa_ata['configure_header'],'%page')!== FALSE ) OR 
+( $bfa_ata['animate_cat_menu_bar'] == "Yes" AND strpos($bfa_ata['configure_header'],'%cat')!== FALSE ) ) { ?>
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/mootools-for-dropdown.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/UvumiDropdown-compressed.js"></script>
+<script type="text/javascript">
+<?php if ( $bfa_ata['animate_cat_menu_bar'] == "Yes" AND strpos($bfa_ata['configure_header'],'%cat')!== FALSE ) { ?>
+var myMenu = new UvumiDropdown("rmenu",{ closeDelay:200});
+<?php } ?>
+<?php if ($bfa_ata['animate_page_menu_bar'] == "Yes" AND strpos($bfa_ata['configure_header'],'%page')!== FALSE) { ?>
+var myMenu2 = new UvumiDropdown("rmenu2",{ closeDelay:200});
+<?php } ?>
+</script>
 <?php } ?>
 </head>
 <body <?php body_class(); ?><?php if ($bfa_ata['html_inserts_body_tag'] != "") { echo ' '; bfa_html_inserts($bfa_ata['html_inserts_body_tag']); } ?>>
@@ -61,18 +78,28 @@ if ($bfa_ata == "") include_once (TEMPLATEPATH . '/functions/bfa_get_options.php
 			<?php // Widgetize the Left Sidebar 
 			if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Left Sidebar') ) : ?>
 		
-					<div class="widget widget_categories"><div class="widget-title">
-					<h3><?php _e('Categories','atahualpa'); ?></h3>
-					</div>
-					<ul><?php wp_list_categories('show_count=1&title_li='); ?></ul>
-					</div>
-					
-					<div class="widget widget_archive"><div class="widget-title">
-					<h3><?php _e('Archives','atahualpa'); ?></h3>
-					</div>
-					<ul><?php wp_get_archives('type=monthly'); ?></ul>
-					</div>
-									
+				<div class="widget widget_categories"><div class="widget-title">
+				<h3><?php _e('Categories','atahualpa'); ?></h3>
+				</div>
+				<ul><?php wp_list_categories('show_count=1&title_li='); ?></ul>
+				</div>
+				
+				<div class="widget widget_archive"><div class="widget-title">
+				<h3><?php _e('Archives','atahualpa'); ?></h3>
+				</div>
+				<ul><?php wp_get_archives('type=monthly'); ?></ul>
+				</div>
+
+				<div class="widget widget_text"><div class="widget-title">
+				<h3>A sample text widget</h3></div>
+				<div class="textwidget">
+				<p>Etiam pulvinar consectetur dolor sed malesuada. Ut convallis 
+				<a href="http://wordpress.org/">euismod dolor nec</a> pretium. Nunc ut tristique massa. </p>
+				<p>Nam sodales mi vitae dolor <em>ullamcorper et vulputate enim accumsan</em>. 
+				Morbi orci magna, tincidunt vitae molestie nec, molestie at mi. <strong>Nulla nulla lorem</strong>, 
+				suscipit in posuere in, interdum non magna. </p>
+				</div>
+				
 			<?php endif; ?>
 
 		</td>

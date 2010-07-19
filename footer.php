@@ -12,7 +12,7 @@ if ($bfa_ata == "") include_once (TEMPLATEPATH . '/functions/bfa_get_options.php
 	<?php // Widgetize the Right Inner Sidebar
 	if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Right Inner Sidebar') ) : ?>
 
-		<!-- No default content for the RIGHT INNER sidebar -->
+
 
 	<?php endif; ?>
 

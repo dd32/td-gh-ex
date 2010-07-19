@@ -19,8 +19,7 @@ Atahualpa <?php echo $bfa_ata_version; ?></h2></td><td valign="middle"><iframe s
 	<li><a href="#" id="start-here-tab" rel="start-here" class="selected">START</a></li>
 	
 	<strong>Export/Import Settings</strong>
-	<li><a href="#" id="export-import-tab" rel="export-import">
-	<span style="background:white;color:red">NEW</span> Export/Import Settings</a></li>
+	<li><a href="#" id="export-import-tab" rel="export-import">Export/Import Settings</a></li>
 	
 	<strong>Search Engine Optimization</strong>
 	<li><a href="#" id="seo-tab" rel="seo">Configure SEO</a></li>
@@ -32,15 +31,14 @@ Atahualpa <?php echo $bfa_ata_version; ?></h2></td><td valign="middle"><iframe s
 	
 	<strong>Header Area</strong>
 	<li><a href="#" id="header-tab" rel="header">Style & edit HEADER AREA</a></li>
-	<li><a href="#" id="header-image-tab" rel="header-image">Header Image</a></li>
+	<li><a href="#" id="header-image-tab" rel="header-image"><span style="background:white;color:red">NEW</span> Header Image</a></li>
 	<li><a href="#" id="feed-links-tab" rel="feed-links">RSS Settings</a></li>
-	<li><a href="#" id="page-menu-bar-tab" rel="page-menu-bar">Page Menu Bar</a></li>
-	<li><a href="#" id="cat-menu-bar-tab" rel="cat-menu-bar">Category Menu Bar</a></li>
+	<li><a href="#" id="page-menu-bar-tab" rel="page-menu-bar"><span style="background:white;color:red">NEW</span> <?php if (function_exists('wp_nav_menu')) { ?>MENU 1 (Page Menu)<?php } else { ?>Page Menu Bar<?php } ?></a></li>
+	<li><a href="#" id="cat-menu-bar-tab" rel="cat-menu-bar"><span style="background:white;color:red">NEW</span> <?php if (function_exists('wp_nav_menu')) { ?>MENU 2 (Category Menu)<?php } else { ?>Category Menu Bar<?php } ?></a></li>
 	
 	<strong>Center Column</strong>
 	<li><a href="#" id="center-tab" rel="center">Style & edit CENTER COLUMN</a></li>
-	<li><a href="#" id="next-prev-nav-tab" rel="next-prev-nav">
-	<span style="background:white;color:red">NEW</span> Next/Previous Navigation</a></li>
+	<li><a href="#" id="next-prev-nav-tab" rel="next-prev-nav">Next/Previous Navigation</a></li>
 	
 	<strong>Sidebars & Widgets</strong>
 	<li><a href="#" id="sidebars-tab" rel="sidebars">Style & configure SIDEBARS</a></li>
@@ -65,8 +63,7 @@ Atahualpa <?php echo $bfa_ata_version; ?></h2></td><td valign="middle"><iframe s
 	<li><a href="#" id="forms-tab" rel="forms">Style FORMS</a></li>
 	<li><a href="#" id="blockquotes-tab" rel="blockquotes">Style BLOCKQUOTES</a></li>
 	<li><a href="#" id="images-tab" rel="images">Style IMAGES</a></li>
-	<li><a href="#" id="html-inserts-tab" rel="html-inserts">
-	<span style="background:white;color:red">NEW</span> Add HTML/CSS Inserts</a></li>
+	<li><a href="#" id="html-inserts-tab" rel="html-inserts">Add HTML/CSS Inserts</a></li>
 	
 	<strong>Archives Page</strong>
 	<li><a href="#" id="archives-page-tab" rel="archives-page">Create ARCHIVES PAGE</a></li>
@@ -456,7 +453,7 @@ $current_options = $bfa_ata[ $value['id'] ];
 			</td>
 			<td>
 				<select name="<?php echo $value['id'] . '[link-weight]'; ?>" id="<?php echo $value['id'] . '[link-weight]'; ?>">
-					<?php foreach ($font_weight as $option) { ?>
+					<?php foreach (array('normal', 'bold') as $option) { ?>
 					<option<?php if ( $current_options['link-weight'] == $option) { echo ' selected="selected"'; } 
 					elseif ( !isset($current_options['link-weight']) AND $option == $value['std']['link-weight']) { 
 					echo ' selected="selected"'; } ?>><?php echo $option; ?></option>

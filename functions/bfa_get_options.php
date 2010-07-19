@@ -1,5 +1,6 @@
 <?php
-// If no option 'bfa_ata4' was saved yet
+global $options, $bfa_ata;
+
 if (get_option('bfa_ata4') === FALSE) {
 
 	// 268 Old ATA 3.X options:
@@ -277,10 +278,12 @@ if (get_option('bfa_ata4') === FALSE) {
 
 	// If no old settings exit, use the new 'default' style
 	$old_setting_exists = 'no';
+
 	foreach ($bfa_ata3 as $old_option) {
 		if (get_option( 'bfa_ata_' . $old_option ) !== FALSE )
 			$old_setting_exists = 'yes';
 	}
+	
 	
 	// Separate option bfa_widget_areas
 	if (get_option('bfa_widget_areas') !== FALSE) {
@@ -292,9 +295,9 @@ if (get_option('bfa_ata4') === FALSE) {
 	}
 	
 	if ( $old_setting_exists == 'yes' ) 
-		$bfa_ata_default = unserialize(file_get_contents( TEMPLATEPATH . '/styles/ata-classic.txt' ));
+		$bfa_ata_default = json_decode(file_get_contents( TEMPLATEPATH . '/styles/ata-classic.txt' ), TRUE);
 	else
-		$bfa_ata_default = unserialize(file_get_contents( TEMPLATEPATH . '/styles/ata-default.txt' ));	
+		$bfa_ata_default = json_decode(file_get_contents( TEMPLATEPATH . '/styles/ata-default2.txt' ), TRUE);	
 		
 	foreach ($options as $value) { 
 		if ($value['type'] != 'info') {
@@ -304,6 +307,32 @@ if (get_option('bfa_ata4') === FALSE) {
 				$bfa_ata4[ $value['id'] ] = get_option( 'bfa_ata_' . $value['id'] );
 		}
 	}
+
+	
+	/*
+		foreach ($options as $value) {
+			if ($value['type'] != 'info') {
+					if ( $value['escape'] == "yes" ) {
+						if( get_option( 'bfa_ata_' . $value['id'] ) === FALSE ) 
+							$bfa_ata[ $value['id'] ] = stripslashes(bfa_escape($_REQUEST[ $value['id'] ]  )); 
+						else 
+							unset ($bfa_ata[ $value['id'] ]); 
+					} elseif ($value['stripslashes'] == "no") { 
+						if( get_option( 'bfa_ata_' . $value['id'] ) === FALSE ) 
+							$bfa_ata[ $value['id'] ] = $_REQUEST[ $value['id'] ]  ; 
+						else 
+							unset ($bfa_ata[ $value['id'] ]);  
+					} else { 
+						if( get_option( 'bfa_ata_' . $value['id'] ) === FALSE ) 
+							$bfa_ata[ $value['id'] ] = stripslashes($_REQUEST[ $value['id'] ]  ); 
+						else 
+							unset ($bfa_ata[ $value['id'] ]); 
+					} 
+			}
+		} 
+	*/		
+			
+	
 	// Separate option bfa_widget_areas
 	$bfa_ata4['bfa_widget_areas'] = get_option('bfa_widget_areas');
 	
@@ -493,7 +522,8 @@ if ( is_page() AND (function_exists('is_front_page') ? !is_front_page() : '') AN
 
 
 // $bfa_ata['h1_on_single_pages'] turn the blogtitle to h2 and the post/page title to h1 on single post pages and static "page" pages
-if ( $bfa_ata['h1_on_single_pages'] == "Yes"  AND ( is_single() OR is_page() ) ) {
+
+if ( $bfa_ata['h1_on_single_pages'] == "Yes" AND ( is_single() OR is_page() ) ) {
 	$bfa_ata['h_blogtitle'] = 2; $bfa_ata['h_posttitle'] = 1; 
 } else {
 	$bfa_ata['h_blogtitle'] = 1; $bfa_ata['h_posttitle'] = 2; 

@@ -1,5 +1,11 @@
 <?php
 
+// Since 3.5.2: Hint for new WP3 system
+if (function_exists('wp_nav_menu')) { 
+$newwp3menutext1 = "<span style='color:red'>Recommended: Since you're using WP 3+: Use the new WP menu system, see <code>Appearance</code> &rarr; <code>Menus</code> on the left. Create a menu there and add it to <code>Menu Location</code> &rarr; <code>Menu 1</code>. Once you've done that this setting here and the next few settings become obsolete. (The Javascript animation and the style settings at the bottom of this page still work).</span>";
+$newwp3menutext2 = "<span style='color:red'>Recommended: Since you're using WP 3+: Use the new WP menu system, see <code>Appearance</code> &rarr; <code>Menus</code> on the left. Create a menu there and add it to <code>Menu Location</code> &rarr; <code>Menu 2</code>. Once you've done that this setting here and the next few settings become obsolete. (The Javascript animation and the style settings at the bottom of this page still work).</span>";
+$newwp3menutext = "<span style='color:red'>See red message above...</span>";
+}
 // http://example.com/home/wp-content/themes/atahualpa
 $url_base = get_bloginfo('template_directory');
 
@@ -25,7 +31,8 @@ if (is_array($bfa_ata_widget_areas)) {
 	foreach ($bfa_ata_widget_areas as $widget_area) {
 		$widget_form_string .= '
 		<input type="checkbox" name="delete_widget_areas" id="' . 
-		$widget_area['name'] . '" value="' . $widget_area['name'] . '" /><label class="widget_area_label" for="' . $widget_area['name'] . 
+		$widget_area['name'] . '" value="' . $widget_area['name'] . 
+		'" /><label class="widget_area_label" for="' . $widget_area['name'] . 
 		'">' . $widget_area['name'] . '</label><br />';
 	}
 }
@@ -45,6 +52,8 @@ if(is_writable($upload_path)) {
 	$is_writable = "<span style='color:red;background:white'>No</span>"; 
 }
 */
+
+/* make some of these variables global in functions in 3.5.0+ */
 
 // different options text for WP and WPMU, because image upload works differently
 $header_image_text_wp = "To add your own header image(s), upload one or several
@@ -120,42 +129,28 @@ $options1 = array(
             "id" => "start_here",
             "type" => "info",
 			"lastoption" => "yes", 
-            "info" => "<br />Atahualpa is a <strong>mature, browser-safe WordPress/PHP/CSS Framework</strong> released under GPL.<br />
-          <h3>Support</h3>
-			Get support, discuss Atahualpa, get styles, language files and more at the <a href=\"http://forum.bytesforall.com/\">Bytes For All Forum</a>.<br />
-			<h3>PLEASE DONATE</h3>Endless hours of coding and fixing bugs have gone, and are going, into Atahualpa. See the \"Donate\" links at <a href=\"http://wordpress.bytesforall.com/\">
-			wordpress.bytesforall.com</a> and <a href=\"http://forum.bytesforall.com/\">forum.bytesforall.com</a>. Become a 
-			<a href=\"http://forum.bytesforall.com/awc_ds.php?do=donation\">donating member</a> at 
-			forum.bytesforall.com for <strong>additonal benefits</strong> such as preferred attention from developers and 
-			moderators. Ideally, subscribe to the forum first and donate then, this way your donations will be automatically added to your forum user name. 
-<br />
-			<h3>Customizing with CSS</h3>For greater flexibility many site elements can be styled with raw CSS rather than 
-			color pickers and select menus. But don't be afraid, Atahualpa takes care of the hard, layout and cross-browser related issues and leaves 
-			only the fun part of CSS for you: borders, colors, fonts, padding (inner spacing) and margin (outer spacing).
-			<h3>CSS usage instructions</h3><ul><li>Atahualpa's CSS is dynamically created in css.php. You should avoid editing css.php because 
-			you would have to re-do these manual file edits whenever you upgrade to a newer Atahualpa version. Instead, 
-			use one of the many text areas in the theme options to apply CSS to specific parts of the layout.</li>
-			<li>When customizing CSS via the theme options, you'll only be editing what's between the brackets, the part in red: 
-			<code>selector {<i>property:value; property2:value2;</i>}</code></li><li>Finish every property:value pair with 
-			a semicolon <code>;</code> unless the descripton, the example or the default settings indicate that a semicolon 
-			<code>;</code> should not be added. </li><li>To add completely new styles (incl. selectors &amp; brackets), 
-			add them at menu tab <a href=\"javascript: myflowers.expandit('html-inserts-tab')\">HTML/CSS Inserts</a> -> CSS Inserts</li>
-			<li>More about CSS at the <a href=\"http://www.w3schools.com/css/css_syntax.asp\">W3 Schools</a></li></ul>
-			<h3>Plugins</h3>Enhance your site with <a href=\"http://wordpress.org/extend/plugins/\">plugins</a>. 
-			Atahualpa should work with most plugins. It has plug &amp; play support for these: 
-			<a href=\"http://txfx.net/code/wordpress/subscribe-to-comments/\">Subscribe to Comments</a>, 
-			<a href=\"http://www.keyvan.net/code/paged-comments/\">Paged Comments</a>, 
-			<a href=\"http://aboutme.lmbbox.com/lmbbox-plugins/lmbbox-comment-quicktags/\">LMB Box Comment Quicktags</a>,
-			<a href=\"http://lesterchan.net/portfolio/programming/php/\">WP-PageNavi</a>, 
-			<a href=\"http://lesterchan.net/portfolio/programming/php/\">WP-Email</a>, 
-			<a href=\"http://lesterchan.net/portfolio/programming/php/\">WP-Print</a>, 
-			<a href=\"http://lesterchan.net/portfolio/programming/php/\">WP-PostViews</a> and 
-			<a href=\"http://wordpress.org/extend/plugins/sociable/\">Sociable</a>. Tested with 
-			<a href=\"http://wordpress.org/extend/plugins/wp-super-cache/\">WP Super Cache</a>, 
-			<a href=\"http://mnm.uib.es/gallir/wp-cache-2/\">WP Cache 2</a> and 
-			<a href=\"http://wordpress.org/extend/plugins/wp-syntax/\">WP-Syntax</a>. 
-			Atahualpa automatically recognizes 12 popular SEO plugins (incl. All-in-one-SEO and Headspace2) and disables its 
-			own SEO features to avoid conflicts.<br />
+            "info" => "<br /><h3 class='infohighlight-header'>Join for free:</h3>
+			<div class='infohighlight'>
+			<img src=\"" . $url_base . "/images/comment_icon.png\" style=\"float: left; margin: 0px 10px 5px 0;\">
+
+			<a href='http://forum.bytesforall.com/register.php'>Become a member</a> of our active <a href='http://forum.bytesforall.com/'>Forum</a> and discuss Atahualpa with 1000's of other Atahualpa users.   
+			Get new styles and language files, ask or answer questions and more.</div> 
+			<h3 class='infohighlight-header'>Please donate if you can:</h3>
+			<div class='infohighlight'>
+			<img src=\"" . $url_base . "/images/awardsmall.gif\" style=\"float: left; margin: 0px 10px 5px 0;\">				
+			<a href='http://forum.bytesforall.com/awc_ds.php?do=donation'>Please donate</a> to support the Atahualpa/BytesForAll team. Your financial help will serve to maintain, 
+			improve and support Atahualpa. <strong>Thank you</strong> <img src=\"" . $url_base . "/images/heart.png\" style=\"\">
+			&nbsp; <em>BytesForAll Team</em>
+			</div>
+			<h3 class='infohighlight-header'>Or go even further:</h3>
+			<div class='infohighlight'>
+			<img src=\"" . $url_base . "/images/award1small.gif\" style=\"float: left; margin: 0px 10px 5px 0;\">
+			<img src=\"" . $url_base . "/images/diamondsmall.gif\" style=\"float: left; margin: 0px 10px 5px 0;\">
+			<a href='http://forum.bytesforall.com/awc_ds.php?do=donation'>Donate $20</a> or more to become a 
+			<strong>Gold</strong> or <strong>Diamond</strong> member  
+			for additonal benefits such as extra styles and tutorials and preferred 
+			attention from developers and moderators.</div> 
+			<br /><br />
 			"),
 
 // New category: Export/Import Settings
@@ -170,12 +165,10 @@ $options1 = array(
 					Atahualpa 3.4.7+ installation:<br /><br /><a class='button' href='" . $wordpress_base . "/?bfa_ata_file=settings-download' id='settings-download'><strong>Export &amp; Download</strong> Atahualpa Settings File</a>
 					<br /><br />The file will be named <code>ata-" . str_replace('.','', $_SERVER['SERVER_NAME']) . "-" . date('Y') . date('m') . date('d') . ".txt</code>. After you downloaded it, 
 					you can (but don't need to) rename the file to something more meaningful.
-					<br /><br /><h4>Use dynamic PHP image paths for universally working settings files</h4>If you're using background images somewhere in your CSS, and you want the image paths to work 
-					properly when importing this settings file in another Atahualpa installation, use dynamic image paths such as <br /><br /><code>background: url('<span style='color:red'>&lt;?php bloginfo('template_directory'); ?&gt;</span>/images/someimage.gif') no-repeat top left;</code> 
-					<br /><br />instead of static image paths such as <br /><br /><code>background: url('<span style='color:red'>/wp-content/themes/atahualpa349</span>/images/someimage.gif') no-repeat top left;</code><br /><br />This way the image paths are corrent on another installation even if 
-					(1) the atahualpa directory was named differently, (2) the WP installation isn't in the root but in a path such as /blog/ and (3) regardless of domain name.<br /><br />
-					You can use PHP in all HTML and CSS Inserts, and in all CSS text areas (but not in single line text fields where you cannot put background image CSS anyway).<br /><br />
-					Note: if you're using custom images, you'd still need to put those images into the right place, at the other Atahualpa installation, where you want to import a settings file."
+					<br /><br /><div class='infohighlight'><div style='font-size:13px;font-weight:bold'>Recommended: Use dynamic image paths, for universally working settings files:</div><div style='font-size:11px;line-height:1.3'>If you're using background images in your CSS, , use dynamic image paths such as <br /><code>background: url('<span style='color:red'>&lt;?php bloginfo('template_directory'); ?&gt;</span>/images/someimage.gif') no-repeat top left;</code> 
+					<br />instead of static image paths such as <br /><code>background: url('<span style='color:red'>/wp-content/themes/atahualpa349</span>/images/someimage.gif') no-repeat top left;</code><br />This way the image paths are correct on another installation even if 
+					(1) the atahualpa directory was named differently, or (2) the WP installation isn't in the root but in a path such as /blog/ .<br />
+					</div></div>"
 ),
 
 	array(	
@@ -183,20 +176,42 @@ $options1 = array(
 	"category" 	=> "export-import",
     "id" => "import_settings",
 	"type" 		=> "info",
-	"lastoption" => "yes", 
 	"info" 		=> "<br />Upload a Atahualpa settings file from your desktop computer and import it:<br />
-				<br /><a class='button' href='#' id='importSettings-upload'><strong>Upload &amp; Import</strong> Atahualpa Settings File</a><br /><br />
+				<br /><span style='color:red;font-weight:bold'>THIS WILL OVERLAY ANY EXISTING SETTINGS YOU ALREADY HAVE</span>
+				<br /><br /><a class='button' href='#' id='importSettings-upload'><strong>Upload &amp; Import</strong> Atahualpa Settings File</a><br /><br />
 					<div id='atasettingsfile'></div>
-					<br /><br />2 additional styles are included in the Atahualpa download. See <code>ata-round.txt</code> and <code>ata-classic.txt</code> inside <code>/atahualpa/styles/</code> on your desktop computer. For now you'd have to import those 
-					files from there, if you want to use them"
+					<div class='infohighlight'>4 styles are included in the Atahualpa download. See <code>ata-round.txt</code>, <code>ata-classic.txt</code>, <code>ata-default.txt</code> and  <code>ata-adsense.txt</code> inside <code>/atahualpa/styles/</code> on your desktop computer. For now you'd have to import those 
+					files from there, if you want to use them</div>"
 ),
 
+	array(	
+	"name" 		=> "Delete the option 'bfa_ata4'",
+	"category" 	=> "export-import",
+    "id" => "delete_bfa_ata4",
+	"type" 		=> "info",
+	"lastoption" => "yes", 
+	"info" 		=> "<div class='infohighlight'>Since 3.4.7 options are stored in one single option named <code>bfa_ata4</code>. If you had issues with Atahulpa 3.4.7, 3.4.8 or 3.4.9 you may have a corrupted option <code>bfa_ata4</code> in the 
+				database.</div><br /><a class='button' href='#' id='delete_bfa_ata4'><strong>Delete 'bfa_ata4'</strong></a>, 
+				then reload a page on your site. This will create a 
+				new <code>bfa_ata4</code> entry in the database.<div id='bfa_ata4_deleted'></div>"
+),
 
 // New category: seo
 
-    array(    "name" => "Use Bytes For All SEO options?",
+    array(    "name" => "<span style='background:white;color:red'>NEW</span> Use Post / Page Options?",
     	    "category" => "seo",
 			"switch" => "yes",
+            "id" => "page_post_options",
+            "type" => "select",
+            "std" => "No",
+            "options" => array("No", "Yes"),
+            "info" => "This adds a few option fields to the 'Write' panel of Wordpress, allowing you to set different titles 
+			for posts or pages based on where the title appears (Meta Tag, Body on single post pages, Body on multi post pages)
+			<br /><br /><em>This used to be turned on by default in 3.4.6 and was removed in 3.4.7 - 3.4.9. It is an option that can be turned on 
+			since 3.5.0.</em>"),
+			
+    array(    "name" => "Use Bytes For All SEO options?",
+    	    "category" => "seo",
             "id" => "use_bfa_seo",
             "type" => "select",
             "std" => "No",
@@ -525,7 +540,8 @@ $options1 = array(
             "type" => "text",
             "std" => "logo.png",
             "info" => "Show a logo in the logo area? Leave blank to show no logo. To test this, put <code>huge-logo.gif</code> 
-			here and set both \"Show Blog Title\" and \"Show Blog Tagline\" to \"No\" below. <br /><br />" . $logo_icon_text),
+			here and set both \"Show Blog Title\" and \"Show Blog Tagline\" to \"No\" below. <br /><br />" . $logo_icon_text . 
+			" Upload custom logo images to /atahualpa/images/."),
 
 	array(    "name" => "Logo Image: Styling",
     	    "category" => "header",
@@ -657,8 +673,17 @@ $options1 = array(
             "type" => "select",
             "std" => "0",
             "options" => array(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30),
-            "info" => "Select amount of seconds between rotation. Set to 0 to not use Javascript for rotation. In this case the 
-			images will still be rotated on each page load, but without JS."),
+            "info" => "Select amount of seconds between rotation. Set to 0 to not use Javascript for rotation. In this case  
+			a new random image from <code>". $css_img_path ."images/header/</code> will be used on each page view, but the images won't rotate while the page is being viewed."),
+
+    array(    "name" => "<span style='background:white;color:red'>NEW</span> Fade in/out header images with Javascript?",
+    	    "category" => "header-image",
+            "id" => "crossslide_fade",
+            "type" => "select",
+            "std" => "0",
+            "options" => array(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30),
+            "info" => "Select duration of fade effect in seconds. Set to 0 to not fade images. In this case  
+			the images will be rotated abruptly."),
 
     array(    "name" => "Preload header images for Javascript rotation?",
     	    "category" => "header-image",
@@ -952,13 +977,21 @@ $options1 = array(
 
 // New category: page-menu-bar
 
-    array(    "name" => "Home link in Page Menu Bar",
+    array(    "name" => "<span style='background:white;color:red'>NEW</span> Animate Page Menu Bar",
     	    "category" => "page-menu-bar",
 			"switch" => "yes",
+            "id" => "animate_page_menu_bar",
+            "std" => "No",
+            "type" => "select",
+            "options" => array("Yes", "No"),
+            "info" => "Animate the page menu bar with Javascript?"),
+			
+    array(    "name" => "Home link in Page Menu Bar",
+    	    "category" => "page-menu-bar",
             "id" => "home_page_menu_bar",
             "std" => __("Home","atahualpa"),
             "type" => "text",
-            "info" => "<ul><li>Leave this blank to have no \"Home\" link in the page menu bar</li><li>Or, put text here 
+            "info" => $newwp3menutext1 . "<ul><li>Leave this blank to have no \"Home\" link in the page menu bar</li><li>Or, put text here 
 			to include a link to your homepage into the page menu bar</li><li>The text doesn't have to be \"Home\", it 
 			can be anything</li></ul>"),
 
@@ -968,7 +1001,7 @@ $options1 = array(
             "std" => "",
             "type" => "text",
 			"size" => "30", 
-            "info" => "<ul><li>Leave blank to include all pages in the page menu bar</li><li>To exclude certain pages from the 
+            "info" => $newwp3menutext . "<ul><li>Leave blank to include all pages in the page menu bar</li><li>To exclude certain pages from the 
 			page menu bar, put their ID's into this field, separated by comma</li></ul><strong>Example:</strong> <code>13,29,102,117</code>
 			<br /><br />To get the ID of a page, go to WP Admin -> Pages -> <a href=\"edit-pages.php\">Edit</a>, point your mouse at the title of the page 
 			in question, and watch your browser's status bar (it's at the bottom) for an URL ending on \"...action=edit&post=<strong>XX</strong>\". 
@@ -980,7 +1013,7 @@ $options1 = array(
             "std" => "0",
             "type" => "select",
             "options" => array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
-            "info" => "<ul><li>Choose 0 to include ALL levels of pages (top level, sub pages, sub sub pages...) in the page 
+            "info" => $newwp3menutext . "<ul><li>Choose 0 to include ALL levels of pages (top level, sub pages, sub sub pages...) in the page 
 			menu bar</li><li>Choose a number between 1 and 10 to include only the respective amount of page levels</li></ul>"),
 
     array(    "name" => "Sorting order of Page Menu Bar",
@@ -989,7 +1022,7 @@ $options1 = array(
             "type" => "select",
             "std" => "menu_order",
             "options" => array("menu_order", "post_title"),
-            "info" => "<ul><li><code>menu_order</code> - Sort the pages chronologically, as you created them (Change the page 
+            "info" => $newwp3menutext . "<ul><li><code>menu_order</code> - Sort the pages chronologically, as you created them (Change the page 
 			order at Manage -> Pages -> Click on page title -> Page Order)</li><li><code>post_title</code> - alphabetically</li></ul>"),
 
     array(    "name" => "Title tags in Page Menu Bar",
@@ -998,7 +1031,7 @@ $options1 = array(
             "type" => "select",
             "std" => "No",
             "options" => array("No", "Yes"),
-            "info" => "Include a \"title\" tag for each item in the page menu? These will pop up when hovering over a menu item."),
+            "info" => $newwp3menutext . "Include a \"title\" tag for each item in the page menu? These will pop up when hovering over a menu item."),
 
     array(    "name" => "Don't link first level parent items in Page Menu Bar?",
     	    "category" => "page-menu-bar",
@@ -1006,7 +1039,7 @@ $options1 = array(
             "type" => "select",
             "std" => "No",
             "options" => array("No", "Yes"),
-            "info" => "Set this to No to replace the link target of first level parent items with &lt;a href=\"#\"&gt; 
+            "info" => $newwp3menutext . "Set this to No to replace the link target of first level parent items with &lt;a href=\"#\"&gt; 
 			This will basically unlink the first level menu items that have children. The submenus drop down when pointing 
 			the mouse at the link, but clicking the link doesn't do anything. This is for users that want to organize their 
 			pages in main pages and sub pages but don't have content on the main pages. \"Yes\" means \"Yes, don't link\"."),
@@ -1068,7 +1101,7 @@ $options1 = array(
             "type" => "text",
             "info" => "Color of the link text in hover state."),
 	
-    array(    "name" => "Transform text in Page Menu Bar?",
+    array(    "name" => "Transform text?",
     	    "category" => "page-menu-bar",
             "id" => "page_menu_transform",
             "type" => "select",
@@ -1098,13 +1131,21 @@ $options1 = array(
 			
 // New category: cat-menu-bar
 
-    array(    "name" => "Home link in Category Menu Bar",
+    array(    "name" => "<span style='background:white;color:red'>NEW</span> Animate Category Menu Bar",
     	    "category" => "cat-menu-bar",
 			"switch" => "yes",
+            "id" => "animate_cat_menu_bar",
+            "std" => "No",
+            "type" => "select",
+            "options" => array("Yes", "No"),
+            "info" => "Animate the category menu bar with Javascript?"),
+			
+    array(    "name" => "Home link in Category Menu Bar",
+    	    "category" => "cat-menu-bar",
             "id" => "home_cat_menu_bar",
             "std" => "",
             "type" => "text",
-            "info" => "<ul><li>Leave this blank to have no \"Home\" link in the category menu bar</li><li>Or, put text 
+            "info" => $newwp3menutext2 . "<ul><li>Leave this blank to have no \"Home\" link in the category menu bar</li><li>Or, put text 
 			here to include a link to your homepage into the category menu bar</li><li>The text doesn't have to be \"Home\", 
 			it can be anything</li></ul>"),
 
@@ -1114,7 +1155,7 @@ $options1 = array(
             "std" => "",
             "type" => "text",
 			"size" => "30", 
-            "info" => "<ul><li>Leave blank to include all categories in the category menu bar</li><li>To exclude certain 
+            "info" => $newwp3menutext . "<ul><li>Leave blank to include all categories in the category menu bar</li><li>To exclude certain 
 			categories put their ID into this field, separated by comma</li></ul><strong>Example:</strong> <code>13,29,102,117</code>
 			<br /><br />To get the ID of a category, go to WP Admin -> Posts -> <a href=\"categories.php\">Categories</a>, point your mouse at the 
 			title of the category in question, and watch your browser's status bar (it's at the bottom) for an URL ending 
@@ -1126,7 +1167,7 @@ $options1 = array(
             "std" => "0",
             "type" => "select",
             "options" => array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
-            "info" => "<ul><li>Choose 0 to include ALL levels of categories (top level, sub cats, sub sub cats...) in the 
+            "info" => $newwp3menutext . "<ul><li>Choose 0 to include ALL levels of categories (top level, sub cats, sub sub cats...) in the 
 			category menu bar</li><li>Choose a number between 1 and 10 to include only the respective amount of category levels</li></ul>"),
 
     array(    "name" => "Sort Category Menu Bar by:",
@@ -1135,7 +1176,7 @@ $options1 = array(
             "type" => "select",
             "std" => "ID",
             "options" => array("ID", "name", "count", "order"),
-            "info" => '<ul><li><code>ID</code> - Sort the categories chronologically, as you created them</li>
+            "info" => $newwp3menutext . '<ul><li><code>ID</code> - Sort the categories chronologically, as you created them</li>
 			<li><code>name</code> - alphabetically</li><li><code>count</code> - by number of posts</li>
 			<li><code>order</code> - individually, as set on the options page of the plugin 
 			<a href="http://wordpress.org/extend/plugins/my-category-order/">My Category Order</a> (requires this 
@@ -1147,7 +1188,7 @@ $options1 = array(
             "type" => "select",
             "std" => "ASC",
             "options" => array("ASC", "DESC"),
-            "info" => "Sort categories in ascending (ASC) or descending (DESC) order?"),		
+            "info" => $newwp3menutext . "Sort categories in ascending (ASC) or descending (DESC) order?"),		
 			
     array(    "name" => "Title tags in Category Menu Bar",
     	    "category" => "cat-menu-bar",
@@ -1155,7 +1196,7 @@ $options1 = array(
             "type" => "select",
             "std" => "No",
             "options" => array("No", "Yes"),
-            "info" => "Include a \"title\" tag for each item in the category menu bar? Title tags are the little 
+            "info" => $newwp3menutext . "Include a \"title\" tag for each item in the category menu bar? Title tags are the little 
 			boxes that pop up when hovering over a menu item. Setting this to yes makes sense if you've set a 
 			\"description\" for each category (Manage -> Categories -> Click on category name). Otherwise the 
 			title tag will just repeat the category name."),
@@ -1166,7 +1207,7 @@ $options1 = array(
             "type" => "select",
             "std" => "No",
             "options" => array("No", "Yes"),
-            "info" => "This will add a line break &lt;br /&gt; followed by the \"category description\" (which you can set at 
+            "info" => $newwp3menutext . "This will add a line break &lt;br /&gt; followed by the \"category description\" (which you can set at 
 			Site Admin -> Posts -> Categories -> Description) to the link text of each category's button in the category menu bar. 
 			This category description, which is now visible inside the menu buttons, can be styled through HTML/CSS Inserts -> 
 			CSS Insert, i.e.: <code>span.cat-descr { font-size: 90%; text-tranform: none; }</code>"),
@@ -1178,7 +1219,7 @@ $options1 = array(
             "type" => "text",
 			"size" => "30", 
 			"editable" => "yes",
-            "info" => "If you chose to include the category description in the menu bar's link texts (one option above), then set 
+            "info" => $newwp3menutext . "If you chose to include the category description in the menu bar's link texts (one option above), then set 
 			a default text here for categories that have no description. <code>%category%</code> is a placeholder and will be 
 			replaced with the Category Title. HTML allowed."),
 			
@@ -1237,7 +1278,7 @@ $options1 = array(
             "type" => "text",
             "info" => "Color of the link text in hover state."),
 			
-    array(    "name" => "Transform text in Category Menu Bar?",
+    array(    "name" => "Transform text?",
     	    "category" => "cat-menu-bar",
             "id" => "cat_menu_transform",
             "type" => "select",
@@ -1283,12 +1324,11 @@ $options1 = array(
             "std" => "<?php /* For MULTI post pages if activated at ATO -> Next/Previous Navigation: */
 bfa_next_previous_page_links('Top'); ?>
 
-<?php /* For the plugin Page2Cat http://wordpress.org/extend/plugins/page2cat/ */
-if( is_category() AND function_exists('page2cat_output')) { page2cat_output(\$cat); } ?>",
+<?php if( is_category() AND function_exists('page2cat_output')) { page2cat_output(\$cat); } ?>",
             "type" => "textarea-large",
             "info" => "Edit/add/remove content above THE LOOP. The Loop is the content that Wordpress outputs for a particular page. This 
-can be a list of posts (thus the name \"Loop\", because it \"loops\" through the posts that are supposed to be displayed on the given page), or a single 
-post, or a static page. In the 2 latter cases it isn't really a \"loop\" anymore, but it is still called a Loop. You can use HTML and <strong>PHP</strong> here and in the other text areas below."),	
+can be a list of posts (thus the name \"Loop\"), or a single 
+post or a static page. You can use HTML and <strong>PHP</strong> here and in the other text areas below."),	
 
 	array(    "name" => "The LOOP",
     	    "category" => "center",
@@ -3103,7 +3143,7 @@ text-align: center;\ncolor: #777777;\nfont-size: 95%;",
             "options" => array("Yes", "No"),
             "info" => "Setting this to <strong>Yes</strong> will show inline, uncompressed 
 			CSS and Javascript in the source code of your site, regardless of your settings above, <strong>IF</strong> <code>?bfa_debug=1</code> was added to the URL. Additionally, the Wordpress and Atahualpa versions will be displayed as meta tags, and a meta robots tag \"noindex,follow\" will be inserted, to avoid duplicate content 
-			issues in search engines.<br /><br /><strong>Set this to <code>YES</code> before you ask someone at i.e. forum.bytesforall.com to have a look at the code of your site</strong>."),
+			issues in search engines.<br /><br /><strong>Set this to <code>YES</code> before you ask someone at i.e. forum.bytesforall.com to have a look at the code of your site</strong>.")
 			
 /*                                
     array(    "name" => "Javascript: Compress?",

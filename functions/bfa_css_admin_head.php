@@ -5,6 +5,7 @@ function bfa_add_stuff_admin_head() {
 
 		// Create a WP nonce for the Ajax action later on
 		$nonce = wp_create_nonce( 'reset_widget_areas' );
+		$nonce2 = wp_create_nonce( 'delete_bfa_ata4' );
 
 		echo '
 		<script src="'; bloginfo('template_directory'); echo '/options/jscolor/jscolor.js" type="text/javascript"></script>
@@ -17,17 +18,16 @@ function bfa_add_stuff_admin_head() {
 		
 		// Since 3.4.7.: Upload settings file	
 		
-		new AjaxUpload("#importSettings-upload", {
-			action: "'; bloginfo('url'); echo '/?bfa_ata_file=settings-upload",
-			name: "userfile",
-			onComplete: function(file, response){
-				jQuery("div#atasettingsfile").html(response);	
-				// Refresh admin pages to fill forms with new values
-				window.location = window.location;
-			}
-		});
-		
-		
+			new AjaxUpload("#importSettings-upload", {
+				action: "'; bloginfo('url'); echo '/?bfa_ata_file=settings-upload",
+				name: "userfile",
+				onComplete: function(file, response){
+					jQuery("div#atasettingsfile").html(response).fadeIn("fast").fadeOut(7000); 
+					// Refresh admin pages to fill forms with new values
+					window.location = window.location;
+				}
+			});
+			
 			/*since 3.4.3:*/
 			jQuery("a#reset_widget_areas").bind("click", function() { 
 				var delWidgetAreas = "";
@@ -48,6 +48,21 @@ function bfa_add_stuff_admin_head() {
 				return false;
 			});
 
+			/*since 3.5.0:*/
+			jQuery("a#delete_bfa_ata4").bind("click", function() { 
+				jQuery.ajax({
+					type: "post", 
+					url: "admin-ajax.php",
+					data: "action=bfa_delete_bfa_ata4&_ajax_nonce=' . $nonce2 . '",
+					success: function(html){ 
+						jQuery("#bfa_ata4_deleted").html( html ).fadeIn("fast").fadeOut(3000); 
+						window.location = window.location;
+					}
+				}); 			
+				// prevent form or link from being processed the traditional way:
+				return false;
+				
+			});
 		
 			var textareawidth = jQuery(document).width() - 430; 		
 			jQuery("div.mooarea, textarea.growing").css({width: textareawidth}); 
@@ -62,6 +77,17 @@ function bfa_add_stuff_admin_head() {
 				width: auto 100%; border: solid 3px #C6D9E9; background-color: #E4F2FD; margin: 0 auto 7px auto; padding: 0;
 				-moz-border-radius: 10px; -khtml-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px;	
 			} 
+			.bfa-container div.infohighlight {
+				background:#f3fafe; padding:15px; border: 2px solid #C6D9E9;
+				-moz-border-radius: 10px; -khtml-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px;	
+			}
+			.bfa-container h3.infohighlight-header {
+				color: #247aa8;
+				margin: 30px 0 10px 0;
+				font-family:georgia;
+				font-weight:normal;
+				font-size: 20px;
+			}
 			.bfa-container ul {
 				list-style: circle url('; bloginfo('template_directory'); echo '/options/images/list-arrow.gif) !important; 
 				margin: 1em 1em 1em 2em;

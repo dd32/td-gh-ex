@@ -36,37 +36,52 @@ function bfa_compress_js($buffer) {
 
 //<![CDATA[
 
-<?php if (strpos($bfa_ata['configure_header'],'%image')!==FALSE AND 
-$bfa_ata['header_image_javascript'] != "0" ) { ?>
-
-var HeaderImages = new Array(<?php echo implode(",", bfa_rotating_header_images()); ?>);
-var t; var j = 0
-var p = HeaderImages.length
-<?php if ($bfa_ata['header_image_javascript_preload'] == "Yes") { ?>
-var PreLoadImages = new Array()
-for (i = 0; i < p; i++){
-	PreLoadImages[i] = new Image()
-	PreLoadImages[i].src = HeaderImages[i]
-}
-<?php } ?>
-function RotateHeaderImages(){
-	if (document.body){
-		HeaderImageContainer = document.getElementById('imagecontainer');
-		HeaderImageContainer.style.background = 'url(' + HeaderImages[j] + ') <?php echo $bfa_ata['headerimage_alignment']; ?> no-repeat';
-		j = j + 1
-		if (j > (p-1)) j=0
-		t = setTimeout('RotateHeaderImages()', <?php echo $bfa_ata['header_image_javascript']; ?>000)
+<?php if (strpos($bfa_ata['configure_header'],'%image')!== FALSE AND 
+$bfa_ata['header_image_javascript'] != "0" AND $bfa_ata['crossslide_fade'] == "0") { ?>
+	var HeaderImages = new Array(<?php echo implode(",", bfa_rotating_header_images()); ?>);
+	var t; var j = 0
+	var p = HeaderImages.length
+	<?php if ($bfa_ata['header_image_javascript_preload'] == "Yes") { ?>
+	var PreLoadImages = new Array()
+	for (i = 0; i < p; i++){
+		PreLoadImages[i] = new Image()
+		PreLoadImages[i].src = HeaderImages[i]
 	}
-}
-window.onload = RotateHeaderImages;
-
+	<?php } ?>
+	function RotateHeaderImages(){
+		if (document.body){
+			HeaderImageContainer = document.getElementById('imagecontainer');
+			HeaderImageContainer.style.background = 'url(' + HeaderImages[j] + ') <?php echo $bfa_ata['headerimage_alignment']; ?> no-repeat';
+			j = j + 1
+			if (j > (p-1)) j=0
+			t = setTimeout('RotateHeaderImages()', <?php echo $bfa_ata['header_image_javascript']; ?>000)
+		}
+	}
+	window.onload = RotateHeaderImages;
 <?php } ?>
+
 
 
 /* JQUERY */
-
 jQuery(document).ready(function(){  
 
+<?php if (strpos($bfa_ata['configure_header'],'%image')!== FALSE AND 
+$bfa_ata['header_image_javascript'] != "0" AND $bfa_ata['crossslide_fade'] != "0") { ?>
+
+	jQuery('div#imagecontainer')
+	.crossSlide({sleep: <?php echo $bfa_ata['header_image_javascript']; ?>,fade: <?php echo $bfa_ata['crossslide_fade']; ?>},[
+		{ src: <?php echo implode( " },\n{ src: ", bfa_rotating_header_images() ); ?> }
+	]);
+	/*	
+	.crossSlide({fade: <?php echo $bfa_ata['crossslide_fade']; ?>},[
+		<?php echo "{ src: " . implode( ", from: '40% 40%', to: '60% 60%', time: 3 },\n{ src: ", bfa_rotating_header_images() ) . ", 
+		from: '40% 40%', to: '60% 60%', time: 3
+		}\n ]);"; ?>
+	*/
+<?php } ?>
+
+	/* jQuery('ul#rmenu').superfish(); */
+	/* jQuery('ul#rmenu').superfish().find('ul').bgIframe({opacity:false}); */
  
 	/* For IE6 */
 	if (jQuery.browser.msie && /MSIE 6\.0/i.test(window.navigator.userAgent) && !/MSIE 7\.0/i.test(window.navigator.userAgent) && !/MSIE 8\.0/i.test(window.navigator.userAgent)) {

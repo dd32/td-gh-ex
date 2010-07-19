@@ -8,52 +8,64 @@ global $bfa_ata, $post;
 if ( strpos($header_items,'%pages') !== FALSE OR strpos($header_items,'%page-center') !== FALSE 
 OR strpos($header_items,'%page-right') !== FALSE ) {
 
-	ob_start();
-	
-	echo '<div id="menu1">';
-	
-	// Left, Right or Centered
-	if ( strpos($header_items,"%page-right") !== FALSE ) {
-		echo '<ul id="rmenu2" class="clearfix rMenu-hor rMenu-hRight rMenu">' . "\n";
-	} elseif ( strpos($header_items,"%page-center") !== FALSE ) {
-		echo '<table cellpadding="0" cellspacing="0" style="margin: 0 auto"><tr><td align="center">
-		<ul id="rmenu2" class="clearfix rMenu-hor rMenu">' . "\n";
+	// Since 3.5.2: New WP 3 menu system:
+	if (function_exists('wp_nav_menu') AND has_nav_menu('menu1')) {
+		if (strpos($header_items,'%pages') !== FALSE ) $alignment = "left";
+		elseif (strpos($header_items,'%page-center') !== FALSE ) $alignment = "center";
+		else $alignment = "right";
+		$page_menu_bar = bfa_new_wp3_menus("menu1", $alignment );
+		
+	// Old custom Atahualpa menu system:
 	} else {
-		echo '<ul id="rmenu2" class="clearfix rMenu-hor rMenu">' . "\n";	
-	}
-	
-	// "Home" Link?
-	if ( $bfa_ata['home_page_menu_bar'] != '' ) {
-		echo '<li class="page_item';
-		if (function_exists('is_front_page')) {
-			if ( is_front_page() ) { 
-				echo ' current_page_item';
-			}
-		} elseif ( is_home() ) { 
-			echo ' current_page_item';	
+		
+		ob_start();
+		
+		echo '<div id="menu1">';
+		
+		// Left, Right or Centered
+		if ( strpos($header_items,"%page-right") !== FALSE ) {
+			echo '<ul id="rmenu2" class="dropdown clearfix rMenu-hor rMenu-hRight rMenu">' . "\n";
+		} elseif ( strpos($header_items,"%page-center") !== FALSE ) {
+			echo '<table cellpadding="0" cellspacing="0" style="margin: 0 auto"><tr><td align="center">
+			<ul id="rmenu2" class="clearfix rMenu-hor rMenu">' . "\n";
+		} else {
+			echo '<ul id="rmenu2" class="clearfix rMenu-hor rMenu">' . "\n";	
 		}
-		echo '"><a href="'; bloginfo('url'); echo '/" title="'; bloginfo('name'); echo '">' . 
-		$bfa_ata['home_page_menu_bar'] . '</a></li>' . "\n";	
-	}
-	
-	// Empty setting "levels" same as 0
-	if ( $bfa_ata['levels_page_menu_bar'] == '' ) {
-		$bfa_ata['levels_page_menu_bar'] = 0; 
-	}	
-	
-	echo bfa_hor_pages($bfa_ata['sorting_page_menu_bar'], $bfa_ata['levels_page_menu_bar'], 
-	$bfa_ata['titles_page_menu_bar'], $bfa_ata['exclude_page_menu_bar']);
-	
-	// Close table if centered
-	if ( strpos($header_items,"%page-center") !== FALSE ) {
-		echo '</ul></td></tr></table></div>' . "\n";
-	} else {
-		echo '</ul></div>' . "\n";
+		
+		// "Home" Link?
+		if ( $bfa_ata['home_page_menu_bar'] != '' ) {
+			echo '<li class="page_item';
+			if (function_exists('is_front_page')) {
+				if ( is_front_page() ) { 
+					echo ' current_page_item';
+				}
+			} elseif ( is_home() ) { 
+				echo ' current_page_item';	
+			}
+			echo '"><a href="'; bloginfo('url'); echo '/" title="'; bloginfo('name'); echo '">' . 
+			$bfa_ata['home_page_menu_bar'] . '</a></li>' . "\n";	
+		}
+		
+		// Empty setting "levels" same as 0
+		if ( $bfa_ata['levels_page_menu_bar'] == '' ) {
+			$bfa_ata['levels_page_menu_bar'] = 0; 
+		}	
+		
+		echo bfa_hor_pages($bfa_ata['sorting_page_menu_bar'], $bfa_ata['levels_page_menu_bar'], 
+		$bfa_ata['titles_page_menu_bar'], $bfa_ata['exclude_page_menu_bar']);
+		
+		// Close table if centered
+		if ( strpos($header_items,"%page-center") !== FALSE ) {
+			echo '</ul></td></tr></table></div>' . "\n";
+		} else {
+			echo '</ul></div>' . "\n";
+		}
+
+		$page_menu_bar = ob_get_contents(); 
+		
+		ob_end_clean();
 	}
 
-	$page_menu_bar = ob_get_contents(); 
-	
-	ob_end_clean();
 }
 
 
@@ -63,52 +75,63 @@ OR strpos($header_items,'%page-right') !== FALSE ) {
 if ( strpos($header_items,'%cats') !== FALSE OR strpos($header_items,'%cat-center') !== FALSE 
 OR strpos($header_items,'%cat-right') !== FALSE ) {
 
-	ob_start();
-	
-	echo '<div id="menu2">';
-
-	if ( strpos($header_items,"%cat-right") !== FALSE ) {	
-		echo '<ul id="rmenu" class="clearfix rMenu-hor rMenu-hRight rMenu">' . "\n";
-	} elseif ( strpos($header_items,"%cat-center") !== FALSE ) {	
-		echo '<table cellpadding="0" cellspacing="0" style="margin: 0 auto"><tr><td align="center">
-		<ul id="rmenu" class="clearfix rMenu-hor rMenu">' . "\n";
+	// Since 3.5.2: New WP 3 menu system:
+	if (function_exists('wp_nav_menu') AND has_nav_menu('menu2')) {
+		if (strpos($header_items,'%cats') !== FALSE ) $alignment = "left";
+		elseif (strpos($header_items,'%cat-center') !== FALSE ) $alignment = "center";
+		else $alignment = "right";
+		$cat_menu_bar = bfa_new_wp3_menus("menu2", $alignment );
+		
+	// Old custom Atahualpa menu system:
 	} else {
-		echo '<ul id="rmenu" class="clearfix rMenu-hor rMenu">' . "\n";
-	}	
-	
-	// Home Link?	
-	if ( $bfa_ata['home_cat_menu_bar'] != '' ) {
-		echo '<li class="cat-item';
-		if ( function_exists('is_front_page') ) {
-			if ( is_front_page() OR is_home() ) { 
-				echo ' current-cat';
+
+		ob_start();
+		
+		echo '<div id="menu2">';
+
+		if ( strpos($header_items,"%cat-right") !== FALSE ) {	
+			echo '<ul id="rmenu" class="dropdown clearfix rMenu-hor rMenu-hRight rMenu">' . "\n";
+		} elseif ( strpos($header_items,"%cat-center") !== FALSE ) {	
+			echo '<table cellpadding="0" cellspacing="0" style="margin: 0 auto"><tr><td align="center">
+			<ul id="rmenu" class="clearfix rMenu-hor rMenu">' . "\n";
+		} else {
+			echo '<ul id="rmenu" class="clearfix rMenu-hor rMenu">' . "\n";
+		}	
+		
+		// Home Link?	
+		if ( $bfa_ata['home_cat_menu_bar'] != '' ) {
+			echo '<li class="cat-item';
+			if ( function_exists('is_front_page') ) {
+				if ( is_front_page() OR is_home() ) { 
+					echo ' current-cat';
+				}
+			} elseif ( is_home() ) { 
+				echo ' current-cat';	
 			}
-		} elseif ( is_home() ) { 
-			echo ' current-cat';	
-		}
-		echo '"><a href="'; bloginfo('url'); echo '/" title="'; bloginfo('name'); echo '">' . 
-		$bfa_ata['home_cat_menu_bar'] . '</a></li>' . "\n";	
-	}	
+			echo '"><a href="'; bloginfo('url'); echo '/" title="'; bloginfo('name'); echo '">' . 
+			$bfa_ata['home_cat_menu_bar'] . '</a></li>' . "\n";	
+		}	
 
-	// Empty setting "levels" same as 0
-	if ( $bfa_ata['levels_cat_menu_bar'] == '' ) {
-		$bfa_ata['levels_cat_menu_bar'] = 0; 
-	}	
-	
-	// Create menu list
-	echo bfa_hor_cats($bfa_ata['sorting_cat_menu_bar'], $bfa_ata['order_cat_menu_bar'], 
-	$bfa_ata['levels_cat_menu_bar'], $bfa_ata['titles_cat_menu_bar'], $bfa_ata['exclude_cat_menu_bar']);
-	
-	// Close table if centered
-	if ( strpos($header_items,"%cat-center") !== FALSE ) {
-		echo '</ul></td></tr></table></div>' . "\n";
-	} else {
-		echo '</ul></div>' . "\n";
+		// Empty setting "levels" same as 0
+		if ( $bfa_ata['levels_cat_menu_bar'] == '' ) {
+			$bfa_ata['levels_cat_menu_bar'] = 0; 
+		}	
+		
+		// Create menu list
+		echo bfa_hor_cats($bfa_ata['sorting_cat_menu_bar'], $bfa_ata['order_cat_menu_bar'], 
+		$bfa_ata['levels_cat_menu_bar'], $bfa_ata['titles_cat_menu_bar'], $bfa_ata['exclude_cat_menu_bar']);
+		
+		// Close table if centered
+		if ( strpos($header_items,"%cat-center") !== FALSE ) {
+			echo '</ul></td></tr></table></div>' . "\n";
+		} else {
+			echo '</ul></div>' . "\n";
+		}
+		
+		$cat_menu_bar = ob_get_contents(); 
+		
+		ob_end_clean();
 	}
-	
-	$cat_menu_bar = ob_get_contents(); 
-	
-	ob_end_clean();
 }
 
 
