@@ -1,5 +1,5 @@
 <?php
-$GLOBALS['content_width'] = 50;
+$GLOBALS['content_width'] = 595;
 
 if ( function_exists('register_sidebar') )
     register_sidebar(array(
