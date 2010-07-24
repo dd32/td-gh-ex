@@ -7,8 +7,6 @@
 get_header(); ?>
 
 <div id="center">
-
-	<?php if ( is_home()) : ?> <?php include( TEMPLATEPATH . '/map.php' ); ?> <?php endif; ?>
 	
 	<?php get_sidebar(); ?>
     
