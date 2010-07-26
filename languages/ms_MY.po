@@ -1,0 +1,415 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Graphene 1.0 theme for WordPress\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-07-26 23:55+1200\n"
+"PO-Revision-Date: 2010-07-26 23:59+1200\n"
+"Last-Translator: Syahir Hakim <syahir@khairul-syahir.com>\n"
+"Language-Team: Syahir Hakim <syahir@khairul-syahir.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_n\n"
+"X-Poedit-Basepath: D:\\[[MyVault]]\\MyProjects\\[Websites]\\wordpress-theme-test\\site\\wp-content\\themes\\graphene\\\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Language: Malay\n"
+"X-Poedit-Country: MALAYSIA\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: comment-form.php:5
+msgid "Leave a reply"
+msgstr "Tulis komen"
+
+#: comment-form.php:5
+#, php-format
+msgid "Leave a reply to %s"
+msgstr "Tulis komen kepada %s"
+
+#: comment-form.php:6
+msgid "Click here to cancel reply"
+msgstr "Klik di sini untuk batalkan komen"
+
+#: comment-form.php:10
+#, php-format
+msgid "You must be <a href=\"%1$s/wp-login.php?redirect_to=%2$s\">logged in</a> to post a comment"
+msgstr "Anda perlu <a href=\"%1$s/wp-login.php?redirect_to=%2$s\">log masuk</a> untuk tulis komen"
+
+#: comment-form.php:18
+msgid "Logged in as"
+msgstr "Anda telah log masuk sebagai"
+
+#: comment-form.php:18
+msgid "Log out of this account"
+msgstr "Log keluar daripada akaun ini"
+
+#: comment-form.php:18
+msgid "Logout &raquo;"
+msgstr "Log keluar &raquo;"
+
+#: comment-form.php:22
+msgid "Your name:"
+msgstr "Nama:"
+
+#: comment-form.php:26
+msgid "Your email:"
+msgstr "E-mel:"
+
+#: comment-form.php:30
+msgid "Website:"
+msgstr "Laman web:"
+
+#: comment-form.php:35
+msgid "Message:"
+msgstr "Mesej:"
+
+#: comment-form.php:41
+msgid "Submit Comment"
+msgstr "Hantar Komen"
+
+#: comments.php:18
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "Artikel ini memerlukan kata laluan. Masukkan kata laluan untuk melihat komen."
+
+#: comments.php:36
+msgid "No comment yet"
+msgstr "Tiada komen"
+
+#: comments.php:36
+#: loop.php:67
+#: search_norm.php:20
+msgid "1 comment"
+msgstr "1 komen"
+
+#: comments.php:36
+#: loop.php:67
+#: search_norm.php:20
+#, php-format
+msgid "% comment"
+msgstr "% komen"
+
+#: comments.php:60
+msgid "Comments are closed"
+msgstr "Komen ditutup."
+
+#: footer.php:16
+#: admin/options.php:215
+msgid "Except where otherwise noted, content on this site is licensed under a <a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/\">Creative Commons Licence</a>."
+msgstr "Kecuali dinyatakan sebaliknya, kandungan laman web ini dilesenkan di bawah <a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/\">Lesen Creative Commons</a>."
+
+#: footer.php:22
+msgid "Valid XHTML 1.0 Strict"
+msgstr "Menepati piawaian XHTML 1.0 Strict"
+
+#: footer.php:23
+msgid "Valid CSS Level 2.1"
+msgstr "Menepati piawaian CSS Level 2.1"
+
+#: footer.php:43
+#, php-format
+msgid "%1$s uses %2$s theme by %3$s."
+msgstr "%1$s menggunakan tema %2$s oleh %3$s."
+
+#: functions.php:85
+msgid "Header Menu"
+msgstr "Menu Kepala"
+
+#: functions.php:129
+msgid "Header image by Syahir Hakim"
+msgstr "Imej kepala oleh Syahir Hakim"
+
+#: functions.php:135
+msgid "This is the default Graphene theme header image, cropped from image by Quantin Houyoux at sxc.hu"
+msgstr "Ini adalah imej kepala asal bagi tema Graphene, dipotong daripada imej asal oleh Quantin Houyoux di sxc.hu"
+
+#: functions.php:141
+#: functions.php:147
+#: functions.php:153
+#: functions.php:159
+#: functions.php:165
+msgid "Header image cropped from image by Ilco at sxc.hu"
+msgstr "Imej kepala dipotong daripada imej asal oleh Ilco di sxc.hu"
+
+#: functions.php:265
+msgid "Home"
+msgstr "Muka Utama"
+
+#: functions.php:285
+msgid " says:"
+msgstr " berkata:"
+
+#: functions.php:288
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s pada %2$s"
+
+#: functions.php:290
+msgid "Edit comment"
+msgstr "Edit komen"
+
+#: functions.php:291
+msgid "Reply"
+msgstr "Balas"
+
+#: functions.php:295
+msgid "Your comment is awaiting moderation."
+msgstr "Komen anda sedang menunggu moderasi."
+
+#: functions.php:365
+msgid "Primary Widget Area"
+msgstr "Bahagian Widget Utama"
+
+#: functions.php:367
+msgid "The primary widget area"
+msgstr "Bahagian widget utama"
+
+#: functions.php:413
+msgid "Follow me on Twitter"
+msgstr "Ikuti saya di Twitter"
+
+#: functions.php:451
+msgid "Latest tweets"
+msgstr "Tweet terkini"
+
+#: functions.php:456
+msgid "Title:"
+msgstr "Tajuk:"
+
+#: functions.php:460
+msgid "Twitter Username:"
+msgstr "Nama pengguna Twitter:"
+
+#: functions.php:464
+msgid "Number of tweets to display:"
+msgstr "Bilangan tweet untuk dipaparkan:"
+
+#: functions.php:486
+msgid "Graphene Options"
+msgstr "Tetapan Graphene"
+
+#: header.php:54
+msgid "Subscribe to RSS feed"
+msgstr "Langgani capaian RSS"
+
+#: loop.php:22
+#: search_norm.php:5
+#, php-format
+msgid "Permanent Link to %s"
+msgstr "Capaian kekal kepada %s"
+
+#: loop.php:22
+msgid "(No title)"
+msgstr "Tiada tajuk"
+
+#: loop.php:36
+#, php-format
+msgid "by %s"
+msgstr "oleh %s"
+
+#: loop.php:38
+#: search_norm.php:9
+msgid "Edit post"
+msgstr "Edit artikel"
+
+#: loop.php:46
+msgid "Read the rest of this entry &raquo;"
+msgstr "Baca artikel penuh &raquo;"
+
+#: loop.php:50
+msgid "<p><strong>Pages:</strong> "
+msgstr "<p><strong>Halaman:</strong> "
+
+#: loop.php:56
+msgid "Tags: "
+msgstr "Tag:"
+
+#: loop.php:56
+msgid "This post has no tag"
+msgstr "Artikel ini tidak mempunyai tag"
+
+#: loop.php:67
+msgid "Leave comment"
+msgstr "Tulis komen"
+
+#: loop.php:89
+#: search_norm.php:26
+msgid "Older posts &laquo;"
+msgstr "Artikel terdahulu &laquo;"
+
+#: loop.php:90
+#: search_norm.php:27
+msgid "&raquo; Newer posts"
+msgstr "&raquo; Artikel terkini"
+
+#: loop.php:97
+msgid "Not found"
+msgstr "Tidak dijumpai"
+
+#: loop.php:102
+msgid "Sorry, but you are looking for something that isn't here. Wanna try a search?"
+msgstr "Maaf, artikel yang anda pohon tidak dijumpai di laman ini. Hendak mencuba carian?"
+
+#: loop.php:104
+msgid "Sorry, but no results were found for that keyword. Wanna try an alternative keyword search?"
+msgstr "Maaf, tiada artikel dijumpai menggunakan kata kunci tersebut. Hendak mencuba carian menggunakan kata kunci alternatif?"
+
+#: loop.php:110
+#: loop.php:111
+#: search-form.php:3
+#: search-form.php:4
+msgid "Search"
+msgstr "Carian"
+
+#: search_404.php:3
+msgid "Error 404 - Page Not Found"
+msgstr "Ralat 404 - Halaman Tidak Dijumpai"
+
+#: search_404.php:5
+msgid "Sorry, I've looked everywhere but I can't find the page you're looking for."
+msgstr "Maaf, saya telah mencari di keseluruhan laman web ini, tetapi artikel yang anda pohon tidak dijumpai."
+
+#: search_404.php:6
+msgid "If you follow the link from another website, I may have removed or renamed the page some time ago. You may want to try searching for the page:"
+msgstr "Sekiranya anda mengikut capaian dari laman web lain, saya mungkin telah manghapuskan atau menukar nama artikel tersebut. Mungkin carian kata kunci dapat membantu anda mencari artikel tersebut:"
+
+#: search_404.php:14
+msgid "Suggested results"
+msgstr "Hasil carian automatik"
+
+#: search_404.php:18
+#, php-format
+msgid "I've done a courtesy search for the term %s for you. See if you can find what you're looking for in the list below:"
+msgstr "Saya telah melakukan carian automatik bagi kata kunci %s untuk anda. Mungkin artikel yang anda cari ada dalam senarai di bawah:"
+
+#: search_404.php:37
+msgid "<strong>Sorry, couldn't find anything.</strong> Try searching for alternative terms using the search form above."
+msgstr "<strong>Maaf, tiada artikel dijumpai.</strong> Cuba carian sekali dengan menggunakan kata kunci yang lain."
+
+#: search_norm.php:7
+msgid "Categories:"
+msgstr "Kategori:"
+
+#: search_norm.php:9
+msgid "by "
+msgstr "oleh"
+
+#: search_norm.php:20
+msgid "No comment"
+msgstr "Tiada komen"
+
+#: search_norm.php:33
+msgid "No post found"
+msgstr "Tiada artikel dijumpai"
+
+#: search_norm.php:35
+msgid "You might want to try another search using alternative terms."
+msgstr "Anda mungkin mahu mencuba carian sekali lagi menggunakan kata kunci alternatif."
+
+#: sidebar.php:29
+msgid "Meta"
+msgstr "Meta"
+
+#: sidebar.php:35
+msgid "Posts RSS"
+msgstr "RSS Artikel"
+
+#: sidebar.php:36
+msgid "Comments RSS"
+msgstr "RSS Komen"
+
+#: sidebar.php:37
+msgid "Powered by <a href=\"http://www.wordpress.org\" title=\"Powered by WordPress, state-of-the-art semantic personal publishing platform.\">WordPress</a>"
+msgstr "Laman menggunakan <a href=\"http://www.wordpress.org\" title=\"Laman menggunakan WordPress, platform penerbitan peribadi yang semantik dan canggih.\">WordPress</a>"
+
+#: admin/options.php:124
+msgid "Graphene Theme Options"
+msgstr "Tetapan Tema Graphene"
+
+#: admin/options.php:149
+msgid "Adsense Options"
+msgstr "Tetapan AdSense"
+
+#: admin/options.php:156
+msgid "Show Adsense advertising"
+msgstr "Paparkan pengiklanan AdSense"
+
+#: admin/options.php:162
+msgid "Your Adsense Publisher's ID"
+msgstr "ID Penerbit (Publisher's ID) AdSense anda"
+
+#: admin/options.php:168
+msgid "Your Adsense Ad Slot"
+msgstr "Slot Iklan (Ad Slot) Adsense anda"
+
+#: admin/options.php:177
+msgid "AddThis Options"
+msgstr "Tetapan AddThis"
+
+#: admin/options.php:180
+msgid "Show AddThis social sharing button"
+msgstr "Paparkan butang perkongsian sosial AddThis"
+
+#: admin/options.php:184
+msgid "Your AddThis button code"
+msgstr "Kod butang AddThis anda"
+
+#: admin/options.php:191
+msgid "Google Analytics Options"
+msgstr "Tetapan Google Analytics"
+
+#: admin/options.php:194
+msgid "Enable Google Analytics tracking"
+msgstr "Aktifkan Google Analytics"
+
+#: admin/options.php:198
+msgid "Google Analytics tracking code"
+msgstr "Kod Google Analytics"
+
+#: admin/options.php:205
+msgid "Footer Options"
+msgstr "Tetapan Bahagian Kaki Tema"
+
+#: admin/options.php:208
+msgid "Show Creative Commons logo"
+msgstr "Paparkan logo Creative Commons"
+
+#: admin/options.php:213
+msgid "Copyright text (html allowed)"
+msgstr "Teks hakcipta (html boleh digunakan)"
+
+#: admin/options.php:214
+msgid "If this field is empty, the following default copyright text will be displayed:"
+msgstr "Sekiranya ruangan ini kosong, teks hakcipta di bawah akan digunakan:"
+
+#: admin/options.php:224
+msgid "Update Settings"
+msgstr "Simpan Tetapan"
+
+#: admin/options.php:230
+msgid "Support the developer"
+msgstr "Sokong pembangun"
+
+#: admin/options.php:231
+msgid "Developing this awesome theme took a lot of effort and time, weeks and weeks of voluntary unpaid work. If you like this theme or if you are using it for commercial websites, please consider a donation to the developer to help support future updates and development."
+msgstr "Membangunkan tema ini memerlukan begitu banyak masa dan usaha, sehingga berminggu-minggu tanpa sebarang bayaran. Jika anda suka akan tema ini atau menggunakannya untuk laman yang bersifat perniagaan/perdagangan, sila pertimbangkan sedikit sumbangan kepada pembangunnya untuk membantu menyokong pembangunan dan pengemaskinian tema ini."
+
+#: admin/options.php:241
+msgid "Uninstall theme"
+msgstr "Tanggalkan Tema"
+
+#: admin/options.php:242
+msgid "<strong>Be careful!</strong> Uninstalling the theme will remove all of the theme's options from the database. Do this only if you decide not to use the theme anymore."
+msgstr "<strong>Berhati-hati!</strong> Menanggalkan tema ini akan menghapuskan semua tetapan tema ini daripada pengkalan data. Pastikan anda hanya melakukan langkah ini sekiranya anda telah memutuskan untuk tidak menggunakan tema ini lagi."
+
+#: admin/options.php:243
+msgid "If you just want to try another theme, there is no need to uninstall this theme. Simply activate the other theme in the Appearance > Themes admin page."
+msgstr "Jika anda hanya mahu mencuba tema yang lain, anda tidak perlu menanggalkan tema ini. Hanya aktifkan tema tersebut di halaman admin Reka Bentuk > Tema."
+
+#: admin/options.php:244
+msgid "Note that uninstalling this theme <strong>does not remove</strong> the theme's files. To delete the files after you have uninstalled this theme, go to Appearances > Themes and delete the theme from there."
+msgstr "Menanggalkan tema ini <strong>tidak menghapuskan</strong> fail-fail tema ini. Untuk menghapuskan fail-fail tema ini setelah anda menanggalkannya, pergi ke halaman Reka Bentuk > Tema and hapuskan tema ini di halaman tersebut."
+
+#: admin/options.php:247
+msgid "Uninstall Theme"
+msgstr "Tanggalkan Tema"
+
