@@ -6,11 +6,12 @@ Template Name: Page without Comments
 
 <?php get_header(); ?>
 
-
 <?php
 global $options;
-foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_option( $value['id'] ); } } ?>
-
+foreach ($options as $value) 
+		if (isset($value['id']))
+			{ if (get_option( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_option( $value['id'] ); } } ?>
+	
 	 <?php if ($altop_sidebar_align == "right") { ?> <div id="content" class="con_left"> <?php } ?>	
 		<?php if ($altop_sidebar_align == "left") { ?> <div id="content" class="con_right">	<?php } ?>		
 			<?php if ($altop_sidebar_align == "none") { ?> <div id="content" class="con_wide"> <?php } ?>	
@@ -44,7 +45,7 @@ foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$val
 					
 					<?php edit_post_link(__('Edit', 'altop'), ' &int; ', ' &int; '); ?> <br />
 					<?php the_tags(__('Tags:', 'altop') . ' ', ', ', '<br />'); ?>
-					<?php printf(__('Filed under: %s', 'altop'), get_the_category_list(', ')); ?>
+										
 				</p>
 				</div>
 			</div>

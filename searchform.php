@@ -1,4 +1,4 @@
-<form method="get" id="searchform" action="">
+<form method="get" id="searchform" action="<?php echo (get_bloginfo('url')); ?>">
 <div>
 
 <input type="text" class="searchfield" value="<?php _e('Search for...', 'altop'); ?>" 

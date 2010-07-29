@@ -1,23 +1,26 @@
 <?php
 global $options;
-foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_option( $value['id'] ); } } ?>
-
+foreach ($options as $value) 
+		if (isset($value['id']))
+			{ if (get_option( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_option( $value['id'] ); } } ?>
 
 <?php
 // Do not delete these lines
-if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
-die ('Please do not load this page directly. Thanks!');
-if ( post_password_required() ) { ?>
+	if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
+		die ('Please do not load this page directly. Thanks!');
+
+	if ( post_password_required() ) { ?> 
 <p class="nocomments">  <?php _e('Sorry, you must be logged in to post a comment.','altop'); ?></p>
 <?php
-return;	}
+return;
+	}
 ?>
 
 <!-- You can start editing here. -->	
 
 <?php if ( have_comments() ) : ?>
 	
-	<h3 id="comments"><?php comments_number(__('No Responses', 'altop'), __('One Response', 'altop'), __('% Responses', 'altop'));?> <?php echo _e('to', 'altop'); ?> <?php the_title('&quot;','&quot;'); ?></h3>
+	<h3 id="comments" class="comments-header"><?php comments_number(__('No Responses', 'altop'), __('One Response', 'altop'), __('% Responses', 'altop'));?> <?php printf(__('to &#8220; %1s &#8221;', 'altop'), get_the_title()); ?></h3>
 		
 	<?php if ( !empty($comments_by_type['comment']) ) : ?>
 	<ul class="commentlist">
@@ -25,10 +28,10 @@ return;	}
 	</ul>
 	
 	<div id="comment-navigation">
-	<div class="alignleft"><?php previous_comments_link( '&laquo; More comments' ); ?></div>
-	<div class="alignright"><?php next_comments_link( 'More comments &raquo;', 0 ); ?></div>
+	<div class="alignleft"><?php previous_comments_link(); ?></div>
+	<div class="alignright"><?php next_comments_link(); ?></div>
 	</div>
-	<?php endif; ?>
+	<?php endif; //End for Comments?>
 
 	<?php if ( !empty($comments_by_type['pings']) ) : ?>
 	<h3 id="pings">Ping- & Trackbacks</h3>
@@ -38,31 +41,37 @@ return;	}
 	</ol>
 	
 	<div id="ping-navigation">
-	<div class="alignleft"><?php previous_comments_link( '&laquo; Older pings' ); ?></div>
-	<div class="alignright"><?php next_comments_link( 'Newer pings &raquo;', 0 ); ?></div>
+	<div class="alignleft"><?php previous_comments_link(); ?></div>
+	<div class="alignright"><?php next_comments_link(); ?></div>
 	</div>
 	<?php endif; //End for pings ?>
 		
-		<?php else : // this is displayed if there are no comments so far ?>
-		<?php if ( comments_open() ) : ?>
+		<?php else : // this is displayed if there are no comments so far
+		if ( comments_open() ) : ?>
 		<!-- If comments are open, but there are no comments. -->
 		<p class="nocomments"><?php echo _e('No Comments (yet)', 'altop'); ?></p>
 		
-		<?php else : // comments are closed ?>
-		<!-- If comments are closed. -->
-		<p class="nocomments"><?php echo _e('Sorry, Comments are closed.', 'altop'); ?></p>
-		
+		<?php else : // comments are closed 
+		if ( ! comments_open() ) : ?> 
+		<p class="nocomments"><?php echo _e('Sorry, Comments are closed.', 'altop'); ?></p>	
+	
+	<?php endif; ?>
 	<?php endif; ?>
 	<?php endif; //Close for if have_comments ?>
 
 	<?php if (comments_open() ) : ?>
 
 <div id="respond">
+
+	<h3><?php comment_form_title(); ?></h3>
+	
+	<div id="cancel-comment-reply">	<?php cancel_comment_reply_link() ?> </div>
+	
 	<?php if ( get_option('comment_registration') && !is_user_logged_in() ) : ?>
 	<p> <?php printf(__('You must be <a href="%s">logged in</a> to post a comment.', 'altop'), wp_login_url( get_permalink() ) );?> </p>
 	<?php else: ?>
 	
-	<h3><?php comment_form_title(); ?></h3>
+	
 	
 	<form action="<?php echo esc_attr(get_option('siteurl')); ?>/wp-comments-post.php" method="post" id="commentform">
 	<?php if ( is_user_logged_in() ) : ?>
@@ -91,7 +100,7 @@ return;	}
 
 			<div>
 			<textarea class="commenttext" name="comment" id="comment" cols="58" rows="10" tabindex="4"></textarea>
-			<div id="cancel-comment-reply">	<?php cancel_comment_reply_link() ?> </div>
+			
 			</div>
 
 			<p>

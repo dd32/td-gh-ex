@@ -1,7 +1,8 @@
 <?php
 global $options;
-foreach ($options as $value) {
-    if (get_option( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_option( $value['id'] ); } } ?>
+foreach ($options as $value) 
+		if (isset($value['id']))
+			{ if (get_option( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_option( $value['id'] ); } } ?>
 
 	 <?php if ($altop_sidebar_align == "right") { ?> <div id="sidebar" class="sb_right"> <?php } ?>
 		<?php if ($altop_sidebar_align == "left") { ?> <div id="sidebar" class="sb_left"> <?php } ?>

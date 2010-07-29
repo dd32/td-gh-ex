@@ -1,6 +1,6 @@
 <?php
 
-automatic_feed_links();
+add_theme_support( 'automatic-feed-links' );
 
 //Load the Options CSS
 add_action('admin_print_styles', 'altop_option_css');
@@ -129,6 +129,17 @@ $options = array (
 		   "id" => $shortname."_feed_url",
 		   "std" => "",
 		   ),
+		   
+	array( "name" => __("Comments Workaround", 'altop'),
+		   "type" => "title",
+		   ),
+
+	array( "name" => __("Comments Workaround", 'altop'),
+		   "type" => "checkbox",
+		   "desc" => __("Activate this Option to load another comments.php (based on the Kubrick basic comments.php). Older Browser have a problem with the &quot;modern&quot; Comment-Design.", 'altop'),
+		   "id" => $shortname."_work",
+		   "std" => "",
+		   ),
 
 	array( "type" => "close")
 	);
@@ -136,16 +147,21 @@ $options = array (
 		function altop_add_admin() {
 		 
 		global $themename, $shortname, $options;
-		 
+		if (isset( $_GET['page']))
 		if ( $_GET['page'] == basename(__FILE__) ) {
 		 
+		if (isset($_REQUEST['action']))
 		if ( 'save' == $_REQUEST['action'] ) {
 		 
-		foreach ($options as $value) {
+		foreach ($options as $value) 
+		if (isset( $value['id'] ) && isset($_REQUEST[ $value['id'] ]) ) { 
 		update_option( $value['id'], $_REQUEST[ $value['id'] ] ); }
 		 
 		foreach ($options as $value) {
-		if( isset( $_REQUEST[ $value['id'] ] ) ) { update_option( $value['id'], $_REQUEST[ $value['id'] ]  ); } else { delete_option( $value['id'] ); } }
+		if (isset( $value['id'] ) && isset($_REQUEST[ $value['id'] ])) { 
+		update_option( $value['id'], $_REQUEST[ $value['id'] ]  ); }
+				
+		else if( isset( $value['id'] )){ delete_option( $value['id'] ); } }
 		 
 		header("Location: themes.php?page=functions.php&saved=true");
 		die;
@@ -153,6 +169,7 @@ $options = array (
 		} else if( 'reset' == $_REQUEST['action'] ) {
 		 
 		foreach ($options as $value) {
+		if (isset($value['id']))
 		delete_option( $value['id'] ); }
 		 
 		header("Location: themes.php?page=functions.php&reset=true");
@@ -170,8 +187,10 @@ $options = array (
 		global $themename, $shortname, $options;
 		$saved = __('settings saved.', 'altop');
 		$reset = __('settings reset.', 'altop');
-		 
+		
+		if (isset($_REQUEST['saved']))
 		if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' '.$saved.'</strong></p></div>';
+		if (isset($_REQUEST['reset']))
 		if ( $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' '.$reset.'</strong></p></div>';
 		 
 ?>

@@ -1,10 +1,12 @@
 <?php get_header(); ?>
 
-
 <?php
 global $options;
-foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_option( $value['id'] ); } } ?>
-
+foreach ($options as $value) 
+		if (isset($value['id']))
+			{ if (get_option( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_option( $value['id'] ); } } ?>
+			
+			
 	 <?php if ($altop_sidebar_align == "right") { ?> <div id="content" class="con_left"> <?php } ?>	
 		<?php if ($altop_sidebar_align == "left") { ?> <div id="content" class="con_right">	<?php } ?>		
 			<?php if ($altop_sidebar_align == "none") { ?> <div id="content" class="con_wide"> <?php } ?>	
@@ -19,8 +21,11 @@ foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$val
 				<div class="postdate">
 					<span class="postdate_day"><?php the_time(__('jS', 'altop')); ?></span><br />
 					<span class="postdate_month"><?php the_time(__('F Y', 'altop')); ?></span><br />
-					<img src="<?php echo bloginfo('template_directory'); ?>/images/comments.png" alt="Comments" align="bottom" /> <?php comments_popup_link(__('0 Comments', 'altop'), __('1 Comment', 'altop'), __('% Comments', 'altop'), '', __('Closed', 'altop') ); ?><br />
 					
+					<?php if (comments_open() ) { ?>
+					<img src="<?php echo bloginfo('template_directory'); ?>/images/comments.png" alt="Comments" align="bottom" /> <?php comments_popup_link(__('0 Comments', 'altop'), __('1 Comment', 'altop'), __('% Comments', 'altop'), '', __('Closed', 'altop') ); ?><br />
+					<?php } ?>
+				
 				</div>
 				
 				<?php if ($altop_sidebar_align == "none") { ?> <div class="entry_wide"> <?php } //Wide content and NO sidebar ?>
@@ -38,15 +43,21 @@ foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$val
 					
 					<?php edit_post_link(__('Edit', 'altop'), ' &int; ', ' &int; '); ?> <br />
 					<?php the_tags(__('Tags:', 'altop') . ' ', ', ', '<br />'); ?>
-					<?php printf(__('Filed under: %s', 'altop'), get_the_category_list(', ')); ?>
+					
 				</p>
 				</div>
 			</div>
 			<br clear="all" />
 			</div>
-					
-	<?php comments_template('', true); ?>
 
+	<?php if (comments_open() && ($altop_work == "") ) { //Load the default comments.php
+		comments_template('',true); 
+	} ?>
+	
+	<?php if (comments_open() && ($altop_work == "true") ) { //Load the Workaound.php
+		comments_template('/workaround.php'); 
+	} ?>
+	
 	<?php endwhile; else: ?>
 		<h2><?php _e('Sorry, nothing found.', 'altop'); ?></h2>
 		<p><?php _e('Here is no content. Maybe it was moved or deleted. Try to search for some related content.', 'altop'); ?></p>

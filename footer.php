@@ -1,7 +1,8 @@
 <?php
 global $options;
-foreach ($options as $value) {
-	if (get_option( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_option( $value['id'] ); } } ?>
+foreach ($options as $value) 
+		if (isset($value['id']))
+			{ if (get_option( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_option( $value['id'] ); } } ?>
 
 	
 	 <?php if ($altop_bottombar != "none") : //if you want to show the "Bottombar" ?>

@@ -2,7 +2,9 @@
 
 <?php
 global $options;
-foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_option( $value['id'] ); } } ?>
+foreach ($options as $value) 
+		if (isset($value['id']))
+			{ if (get_option( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_option( $value['id'] ); } } ?>
 
 	 <?php if ($altop_sidebar_align == "right") { ?> <div id="content" class="con_left"> <?php } ?>	
 		<?php if ($altop_sidebar_align == "left") { ?> <div id="content" class="con_right">	<?php } ?>		
@@ -50,8 +52,14 @@ foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$val
 		
 		<br clear="all" />
 		</div>
+		
+	<?php if ($altop_work == '') { //Load the default comments.php 
+		comments_template('',true);
+	} ?>
 	
-	<?php comments_template('',true); ?>
+	<?php if ($altop_work == "true") { //Load the Workaround for older IE-Versions
+		comments_template('/workaround.php');
+	} ?>
 
 					<p class="post-tools">
 					<?php if (comments_open() ) { ?>
@@ -59,7 +67,7 @@ foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$val
 					<?php } ?>
 					
 					<?php if (pings_open() ) { ?>
-						<img src="<?php echo bloginfo('template_directory'); ?>/images/ping-small.png" alt="Trackback" /> <?php printf(__("Leave a <a href='%s'>trackback</a> from your site.", 'altop'), trackback_url(false));; ?><br /><small>Trackback URL: <?php echo trackback_url(); ?></small>
+						<img src="<?php echo bloginfo('template_directory'); ?>/images/ping-small.png" alt="Trackback" /> <?php printf(__("Leave a <a href='%s'>trackback</a> from your site.", 'altop'), get_trackback_url(false));; ?><br /><small>Trackback URL: <?php echo get_trackback_url(); ?></small>
 					<?php } ?>
 						
 					</p>

@@ -2,8 +2,9 @@
 
 <?php
 global $options;
-foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_option( $value['id'] ); } } ?>
-
+foreach ($options as $value) 
+		if (isset($value['id']))
+			{ if (get_option( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_option( $value['id'] ); } } ?>
 
 	 <?php if ($altop_sidebar_align == "right") { ?> <div id="content" class="con_left"> <?php } ?>	
 		<?php if ($altop_sidebar_align == "left") { ?> <div id="content" class="con_right">	<?php } ?>		
@@ -22,7 +23,7 @@ foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$val
 				<small><?php the_time(__('jS', 'altop')); ?> <?php the_time(__('F Y', 'altop')); ?> | <?php comments_popup_link(__('0 Comments', 'altop'), __('1 Comment', 'altop'), __('% Comments', 'altop'), '', __('Closed', 'altop') ); ?></small>
 
 				<div class="archiv_entry entry"> 
-            <div class="entry_inner"> 
+					<div class="entry_inner"> 
 					<?php the_excerpt(); ?>
 					
 				<p class="postinfo"> 				
@@ -32,7 +33,7 @@ foreach ($options as $value) { if (get_option( $value['id'] ) === FALSE) { $$val
 					<?php the_tags(__('tags:', 'altop') . ' ', ', ', '<br />'); ?>
 					<?php printf(__('filed under: %s', 'altop'), get_the_category_list(', ')); ?>
 				</p>
-        </div>
+					</div>
 				</div>
 			
 			<br clear="all" />

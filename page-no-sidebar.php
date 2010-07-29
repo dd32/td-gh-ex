@@ -6,6 +6,12 @@ Template Name: Page without Sidebar
 
 <?php get_header(); ?>
 
+<?php
+global $options;
+foreach ($options as $value) 
+		if (isset($value['id']))
+			{ if (get_option( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_option( $value['id'] ); } } ?>
+			
 <div id="content" class="con_wide">
       <div id="content_inner">
       <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -33,7 +39,6 @@ Template Name: Page without Sidebar
 					
 					<?php edit_post_link(__('Edit', 'altop'), ' &int; ', ' &int; '); ?> <br />
 					<?php the_tags(__('Tags:', 'altop') . ' ', ', ', '<br />'); ?>
-					<?php printf(__('Filed under: %s', 'altop'), get_the_category_list(', ')); ?>
 				</p>
 				</div>
         </div>
@@ -41,7 +46,13 @@ Template Name: Page without Sidebar
 			<br clear="all" />
 			</div>
 
-			<?php comments_template(); ?>
+	<?php if (comments_open() && ($altop_work == "") ) { //Load the default comments.php
+		comments_template('',true); 
+	} ?>
+	
+	<?php if (comments_open() && ($altop_work == "true") ) { //Load the Workaound.php
+		comments_template('/workaround.php'); 
+	} ?>
 			
 	<?php endwhile; else: ?>
 		<h2><?php _e('Sorry, nothing found.', 'altop'); ?></h2>
