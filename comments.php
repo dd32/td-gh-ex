@@ -81,9 +81,9 @@
 
 <?php else : ?>
 
-<li><input type="text" name="author" id="author" value="Name <?php if ($req) echo "(required)"; ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> onblur="if(this.value.length == 0) this.value='Name <?php if ($req) echo "(required)"; ?>';" onclick="if(this.value == 'Name <?php if ($req) echo "(required)"; ?>') this.value='';" /></li>
+<li><input type="text" name="author" id="author" value="Name <?php if ($req) echo "(required)"; ?>" size="22" tabindex="1" onblur="if(this.value.length == 0) this.value='Name <?php if ($req) echo "(required)"; ?>';" onclick="if(this.value == 'Name <?php if ($req) echo "(required)"; ?>') this.value='';" /></li>
 
-<li><input type="text" name="email" id="email" value="Mail (will not be published) <?php if ($req) echo "(required)"; ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> onblur="if(this.value.length == 0) this.value='Mail (will not be published) <?php if ($req) echo "(required)"; ?>';" onclick="if(this.value == 'Mail (will not be published) <?php if ($req) echo "(required)"; ?>') this.value='';" /></li>
+<li><input type="text" name="email" id="email" value="Mail (will not be published) <?php if ($req) echo "(required)"; ?>" size="22" tabindex="2" onblur="if(this.value.length == 0) this.value='Mail (will not be published) <?php if ($req) echo "(required)"; ?>';" onclick="if(this.value == 'Mail (will not be published) <?php if ($req) echo "(required)"; ?>') this.value='';" /></li>
 
 <li><input type="text" name="url" id="url" value="Website" size="22" tabindex="3" onblur="if(this.value.length == 0) this.value='Website';" onclick="if(this.value == 'Website') this.value='';" /></li>
 
