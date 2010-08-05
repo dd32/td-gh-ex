@@ -2,11 +2,8 @@
 <?php if ( !function_exists('dynamic_sidebar')
         || !dynamic_sidebar() ) : ?>
 
-<label for="search"><h3>Search</h3></label>
-<form method="get" id="searchform" action="<?php bloginfo('url');?>/">
-<input type="text" name="s" id="s" class="tsearch" />
-<input type="submit" id="find" value="Find" class="go" />
-</form>
+</div>
+<?php include (TEMPLATEPATH . '/searchform.php'); ?>
 
 <h3>Categories</h3>
 <ul>

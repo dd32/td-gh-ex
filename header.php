@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 
 <title><?php bloginfo('name'); ?> <?php if ( is_single() ) { ?> &raquo; Blog Archive <?php } ?> <?php wp_title(); ?></title>
-<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW" />
+<meta name="ROBOTS" content="INDEX, FOLLOW" />
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/reset.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 <!--[if IE]><link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/ie.css" type="text/css" media="screen" /><![endif]-->
@@ -24,7 +24,7 @@
 
 		<div id="logo">
 		<h1><?php bloginfo('name');?></h1>
-		<h2><?php bloginfo('description');?><h2>
+		<h2><?php bloginfo('description');?></h2>
 		</div>
 		<div id="nav">
 <ul>
