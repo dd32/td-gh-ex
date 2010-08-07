@@ -57,6 +57,13 @@ To display the codes within the <code> element with the preformatted styling, in
 
 CHANGELOG
 
+Version 1.0.1
+
+	* Replaced include() function call with get_search_form() function call to get the search form
+	* Replaced hard-coded comment form with comment_form() function call
+	* Added missing post_class() in post <div> tag
+	* Removed "Comments are closed" message from posts and pages where commenting is disabled
+
 Version 1.0
 
     * Initial public release

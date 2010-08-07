@@ -39,5 +39,7 @@
     </div>
     
     <?php endif; ?>
+    
+    <?php wp_meta(); ?>
 
 </div><!-- #sidebar -->

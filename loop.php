@@ -1,6 +1,6 @@
 <?php if (have_posts()) : ?>
 	<?php while (have_posts()) : the_post(); ?>
-            <div class="post clearfix" id="post-<?php the_ID(); ?>">
+            <div id="post-<?php the_ID(); ?>" <?php post_class('clearfix post'); ?>>
             
             	<?php /* Posts navigation for single post pages, but not for Page post */ ?>
                 <?php if (is_single() && !is_page()) : ?>
@@ -105,12 +105,7 @@
 			?>
                 
             </p>
-            <form method="get" action="<?php bloginfo('url'); ?>">
-            <p>
-                <input type="text" name="s" onblur="if (this.value == '') {this.value = '<?php _e('Search','graphene'); ?>';}" onfocus="if (this.value == '<?php _e('Search','graphene'); ?>') {this.value = '';}" value="<?php _e('Search','graphene'); ?>" />
-                <input type="submit" value="<?php _e('Search','graphene'); ?>" />
-            </p>
-            </form>
+            <?php get_search_form(); ?>
         </div>
     </div>
 <?php endif; ?>

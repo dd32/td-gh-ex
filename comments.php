@@ -55,11 +55,20 @@
         <?php endif; // Ends the comment navigation ?>
     
  	<?php endif; // Ends the comment listing ?>
-
-    <?php else : // Leave some message if comments are closed ?>
-		<h4><?php _e('Comments are closed','graphene'); ?></h4>
         
 <?php endif; // Ends the comment status ?>
 </div>
 
-<?php include('comment-form.php'); ?>
+<?php 
+	/**
+	 * Get the comment form.
+	*/ 
+	
+	comment_form(array(
+				'comment_notes_before' => '<p class="comment-notes">'.__('Your email address will not be published.', 'graphene').'</p>',
+				'comment_notes_after'  => '<p class="form-allowed-tags">'.sprintf(__('You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s', 'graphene'),'<code>'.allowed_tags().'</code>').'</p>',
+				'id_form'              => 'commentform',
+				'label_submit'         => __( 'Submit Comment', 'graphene' ),
+					   )); 
+
+?>

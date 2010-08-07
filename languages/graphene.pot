@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graphene 1.0 theme for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-27 00:00+1200\n"
-"PO-Revision-Date: 2010-07-27 00:00+1200\n"
+"POT-Creation-Date: 2010-08-08 08:45+1200\n"
+"PO-Revision-Date: 2010-08-08 08:45+1200\n"
 "Last-Translator: Syahir Hakim <syahir@khairul-syahir.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -14,56 +14,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-SearchPath-0: .\n"
-
-#: comment-form.php:5
-msgid "Leave a reply"
-msgstr ""
-
-#: comment-form.php:5
-#, php-format
-msgid "Leave a reply to %s"
-msgstr ""
-
-#: comment-form.php:6
-msgid "Click here to cancel reply"
-msgstr ""
-
-#: comment-form.php:10
-#, php-format
-msgid "You must be <a href=\"%1$s/wp-login.php?redirect_to=%2$s\">logged in</a> to post a comment"
-msgstr ""
-
-#: comment-form.php:18
-msgid "Logged in as"
-msgstr ""
-
-#: comment-form.php:18
-msgid "Log out of this account"
-msgstr ""
-
-#: comment-form.php:18
-msgid "Logout &raquo;"
-msgstr ""
-
-#: comment-form.php:22
-msgid "Your name:"
-msgstr ""
-
-#: comment-form.php:26
-msgid "Your email:"
-msgstr ""
-
-#: comment-form.php:30
-msgid "Website:"
-msgstr ""
-
-#: comment-form.php:35
-msgid "Message:"
-msgstr ""
-
-#: comment-form.php:41
-msgid "Submit Comment"
-msgstr ""
 
 #: comments.php:18
 msgid "This post is password protected. Enter the password to view any comments."
@@ -86,12 +36,21 @@ msgstr ""
 msgid "% comment"
 msgstr ""
 
-#: comments.php:60
-msgid "Comments are closed"
+#: comments.php:68
+msgid "Your email address will not be published."
+msgstr ""
+
+#: comments.php:69
+#, php-format
+msgid "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags and attributes: %s"
+msgstr ""
+
+#: comments.php:71
+msgid "Submit Comment"
 msgstr ""
 
 #: footer.php:16
-#: admin/options.php:215
+#: admin/options.php:206
 msgid "Except where otherwise noted, content on this site is licensed under a <a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/\">Creative Commons Licence</a>."
 msgstr ""
 
@@ -108,81 +67,97 @@ msgstr ""
 msgid "%1$s uses %2$s theme by %3$s."
 msgstr ""
 
-#: functions.php:85
+#: functions.php:97
 msgid "Header Menu"
 msgstr ""
 
-#: functions.php:129
+#: functions.php:141
 msgid "Header image by Syahir Hakim"
 msgstr ""
 
-#: functions.php:135
+#: functions.php:147
 msgid "This is the default Graphene theme header image, cropped from image by Quantin Houyoux at sxc.hu"
 msgstr ""
 
-#: functions.php:141
-#: functions.php:147
 #: functions.php:153
 #: functions.php:159
 #: functions.php:165
+#: functions.php:171
+#: functions.php:177
 msgid "Header image cropped from image by Ilco at sxc.hu"
 msgstr ""
 
-#: functions.php:265
+#: functions.php:277
 msgid "Home"
 msgstr ""
 
-#: functions.php:285
+#: functions.php:297
 msgid " says:"
 msgstr ""
 
-#: functions.php:288
+#: functions.php:300
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: functions.php:290
+#: functions.php:302
 msgid "Edit comment"
 msgstr ""
 
-#: functions.php:291
+#: functions.php:303
 msgid "Reply"
 msgstr ""
 
-#: functions.php:295
+#: functions.php:307
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: functions.php:365
+#: functions.php:368
 msgid "Primary Widget Area"
 msgstr ""
 
-#: functions.php:367
+#: functions.php:370
 msgid "The primary widget area"
 msgstr ""
 
-#: functions.php:413
+#: functions.php:416
 msgid "Follow me on Twitter"
 msgstr ""
 
-#: functions.php:451
+#: functions.php:454
 msgid "Latest tweets"
 msgstr ""
 
-#: functions.php:456
+#: functions.php:459
 msgid "Title:"
 msgstr ""
 
-#: functions.php:460
+#: functions.php:463
 msgid "Twitter Username:"
 msgstr ""
 
-#: functions.php:464
+#: functions.php:467
 msgid "Number of tweets to display:"
 msgstr ""
 
-#: functions.php:486
+#: functions.php:508
 msgid "Graphene Options"
+msgstr ""
+
+#: functions.php:523
+msgid "Name:"
+msgstr ""
+
+#: functions.php:524
+msgid "Email:"
+msgstr ""
+
+#: functions.php:525
+msgid "Website:"
+msgstr ""
+
+#: functions.php:532
+msgid "Message:"
 msgstr ""
 
 #: header.php:54
@@ -251,10 +226,8 @@ msgstr ""
 msgid "Sorry, but no results were found for that keyword. Wanna try an alternative keyword search?"
 msgstr ""
 
-#: loop.php:110
-#: loop.php:111
-#: search-form.php:3
-#: search-form.php:4
+#: searchform.php:3
+#: searchform.php:4
 msgid "Search"
 msgstr ""
 
@@ -319,95 +292,91 @@ msgstr ""
 msgid "Powered by <a href=\"http://www.wordpress.org\" title=\"Powered by WordPress, state-of-the-art semantic personal publishing platform.\">WordPress</a>"
 msgstr ""
 
-#: admin/options.php:124
+#: admin/options.php:121
 msgid "Graphene Theme Options"
 msgstr ""
 
-#: admin/options.php:149
+#: admin/options.php:146
 msgid "Adsense Options"
 msgstr ""
 
-#: admin/options.php:156
+#: admin/options.php:153
 msgid "Show Adsense advertising"
 msgstr ""
 
-#: admin/options.php:162
-msgid "Your Adsense Publisher's ID"
+#: admin/options.php:159
+msgid "Your Adsense code"
 msgstr ""
 
 #: admin/options.php:168
-msgid "Your Adsense Ad Slot"
-msgstr ""
-
-#: admin/options.php:177
 msgid "AddThis Options"
 msgstr ""
 
-#: admin/options.php:180
+#: admin/options.php:171
 msgid "Show AddThis social sharing button"
 msgstr ""
 
-#: admin/options.php:184
+#: admin/options.php:175
 msgid "Your AddThis button code"
 msgstr ""
 
-#: admin/options.php:191
+#: admin/options.php:182
 msgid "Google Analytics Options"
 msgstr ""
 
-#: admin/options.php:194
+#: admin/options.php:185
 msgid "Enable Google Analytics tracking"
 msgstr ""
 
-#: admin/options.php:198
+#: admin/options.php:189
 msgid "Google Analytics tracking code"
 msgstr ""
 
-#: admin/options.php:205
+#: admin/options.php:196
 msgid "Footer Options"
 msgstr ""
 
-#: admin/options.php:208
+#: admin/options.php:199
 msgid "Show Creative Commons logo"
 msgstr ""
 
-#: admin/options.php:213
+#: admin/options.php:204
 msgid "Copyright text (html allowed)"
 msgstr ""
 
-#: admin/options.php:214
+#: admin/options.php:205
 msgid "If this field is empty, the following default copyright text will be displayed:"
 msgstr ""
 
-#: admin/options.php:224
+#: admin/options.php:215
 msgid "Update Settings"
 msgstr ""
 
-#: admin/options.php:230
+#: admin/options.php:221
 msgid "Support the developer"
 msgstr ""
 
-#: admin/options.php:231
+#: admin/options.php:222
 msgid "Developing this awesome theme took a lot of effort and time, weeks and weeks of voluntary unpaid work. If you like this theme or if you are using it for commercial websites, please consider a donation to the developer to help support future updates and development."
 msgstr ""
 
-#: admin/options.php:241
+#: admin/options.php:232
 msgid "Uninstall theme"
 msgstr ""
 
-#: admin/options.php:242
+#: admin/options.php:233
 msgid "<strong>Be careful!</strong> Uninstalling the theme will remove all of the theme's options from the database. Do this only if you decide not to use the theme anymore."
 msgstr ""
 
-#: admin/options.php:243
+#: admin/options.php:234
 msgid "If you just want to try another theme, there is no need to uninstall this theme. Simply activate the other theme in the Appearance > Themes admin page."
 msgstr ""
 
-#: admin/options.php:244
+#: admin/options.php:235
 msgid "Note that uninstalling this theme <strong>does not remove</strong> the theme's files. To delete the files after you have uninstalled this theme, go to Appearances > Themes and delete the theme from there."
 msgstr ""
 
-#: admin/options.php:247
+#: admin/options.php:238
 msgid "Uninstall Theme"
 msgstr ""
 

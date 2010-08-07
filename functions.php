@@ -44,7 +44,7 @@
  * Used to set the width of images and content. Should be equal to the width the theme
  * is designed for, generally via the style.css stylesheet.
  */
-if ( ! isset( $content_width ) )
+if (!isset( $content_width ) )
 	$content_width = 500;
 
 
@@ -74,6 +74,9 @@ if (!function_exists( 'graphene_setup')):
  */
 function graphene_setup() {
 
+	// Add support for editor syling
+	add_editor_style();
+	
 	// Add default posts and comments RSS feed links to head
 	add_theme_support( 'automatic-feed-links' );
 	
@@ -508,4 +511,29 @@ add_action('admin_menu', 'graphene_options_init');
 
 // Includes the file where our theme options are defined
 include('admin/options.php');
+
+
+/**
+ * Customise the comment form
+*/
+
+// Starting with the default fields
+function graphene_comment_form_fields(){
+	$fields =  array(
+		'author' => '<p class="comment-form-author">'.'<label for="author">'.__('Name:','graphene').'</label><input id="author" name="author" type="text" /></p>',
+		'email'  => '<p class="comment-form-email"><label for="email">' . __('Email:','graphene').'</label><input id="email" name="email" type="text" /></p>',
+		'url'    => '<p class="comment-form-url"><label for="url">'.__('Website:','graphene').'</label><input id="url" name="url" type="text" /></p>',
+	);
+	return $fields;
+}
+
+// The comment field textarea
+function graphene_comment_textarea(){
+	echo '<p><label>'.__('Message:','graphene').'</label><textarea name="comment" id="comment" cols="40" rows="10" tabindex="4"></textarea></p>';
+}
+
+// Add all the filters we defined
+add_filter('comment_form_default_fields', 'graphene_comment_form_fields');
+add_filter('comment_form_field_comment', 'graphene_comment_textarea');
+
 ?>

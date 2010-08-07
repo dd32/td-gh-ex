@@ -60,7 +60,9 @@
 			 * search form somewhere else, we do not use get_search_form() here.
 			*/ 
 			?>
-            <?php include(TEMPLATEPATH.'/search-form.php'); ?>
+            <div id="top_search">
+            <?php get_search_form(); ?>
+            </div>
         </div>
         <?php
         if ( is_singular() && has_post_thumbnail( $post->ID ) &&( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&	$image[1] >= HEADER_IMAGE_WIDTH ) {
