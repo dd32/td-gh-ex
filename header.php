@@ -84,7 +84,7 @@
 			$style = ' style="color:#' . get_theme_mod( 'header_textcolor', HEADER_TEXTCOLOR ) . ';"';
 		?>
         <div id="header" style="background-image:url(<?php echo $header_img; ?>);">
-        	<h1 <?php echo $style; ?>><a <?php echo $style; ?> href="<?php echo get_option('wpurl'); ?>"><?php bloginfo('name'); ?></a></h1>
+        	<h1 <?php echo $style; ?>><a <?php echo $style; ?> href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
             <h2 <?php echo $style; ?>><?php bloginfo('description'); ?></h2>
         </div>
         <div id="nav">

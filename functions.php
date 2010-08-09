@@ -92,6 +92,9 @@ function graphene_setup() {
 	if ( is_readable( $locale_file ) )
 		require_once( $locale_file );
 		
+	// This theme supports custom menu
+	add_theme_support('menus');
+	
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'Header Menu' => __( 'Header Menu', 'graphene' ),

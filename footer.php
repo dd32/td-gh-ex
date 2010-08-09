@@ -40,14 +40,12 @@
 			<?php
 				$theme_data = get_theme_data(get_bloginfo('stylesheet_url'));
 			?>
-			<?php printf(__('%1$s uses %2$s theme by %3$s.','graphene'), '<a href="'.get_bloginfo('wpurl').'">'.get_bloginfo('name').'</a>', '<a href="'.$theme_data['URI'].'">'.$theme_data['Title'].'</a>', $theme_data['Author']); ?>
+			<?php printf(__('%1$s uses %2$s theme by %3$s.','graphene'), '<a href="'.get_bloginfo('url').'">'.get_bloginfo('name').'</a>', '<a href="'.$theme_data['URI'].'">'.$theme_data['Title'].'</a>', $theme_data['Author']); ?>
         </p>
     </div><!-- #footer -->
 </div><!-- #container -->
     
     <!-- WP-Minify JS -->
-    
-    <?php wp_footer(); ?>
     
     <?php /* Print out Google Analytics code if tracking is enabled */ ?>
     <?php if (get_option('graphene_show_ga')) : ?>
@@ -56,5 +54,6 @@
     <!-- END Google Analytics script -->
     <?php endif; ?>
 
+	<?php wp_footer(); ?>
 </body>
 </html>

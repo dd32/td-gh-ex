@@ -57,6 +57,10 @@ To display the codes within the <code> element with the preformatted styling, in
 
 CHANGELOG
 
+Version 1.0.3
+
+	* Minor code fixes
+
 Version 1.0.2
 	
 	* Replaced include() function call in search.php with get_template_part()
@@ -68,6 +72,7 @@ Version 1.0.1
 	* Replaced hard-coded comment form with comment_form() function call
 	* Added missing post_class() in post <div> tag
 	* Removed "Comments are closed" message from posts and pages where commenting is disabled
+	* Added support for editor style
 	* Updated language files
 
 Version 1.0
