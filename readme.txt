@@ -57,6 +57,10 @@ To display the codes within the <code> element with the preformatted styling, in
 
 CHANGELOG
 
+Version 1.0.4
+
+	* Fixed custom menu where previously assigned custom menu loses capability for dropdown menu
+
 Version 1.0.3
 
 	* Minor code fixes

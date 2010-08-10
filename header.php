@@ -89,7 +89,7 @@
         </div>
         <div id="nav">
         	<!-- BEGIN dynamically generated and highlighted menu-->
-        	<?php wp_nav_menu(array('container' => '', 'menu_id' => 'menu', 'menu_class' => 'clearfix', 'fallback_cb' => 'graphene_default_menu', 'depth' => 1, 'theme_location' => 'Header Menu')); ?>
+        	<?php wp_nav_menu(array('container' => '', 'menu_id' => 'menu', 'menu_class' => 'clearfix', 'fallback_cb' => 'graphene_default_menu', 'depth' => 3, 'theme_location' => 'Header Menu')); ?>
             <!-- END dynamically generated and highlighted menu-->
         </div>
         <div id="content" class="clearfix">
