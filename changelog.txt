@@ -4,6 +4,10 @@ http://www.khairul-syahir.com
 
 CHANGELOG
 
+Version 1.0.6
+
+	* Fixed minor CSS styling bug causing the allowed HTML tags note in comment form to be partially hidden in IE6 and IE7
+
 Version 1.0.5
 
 	* Minor CSS sprite background positioning and paragraph margin fix
