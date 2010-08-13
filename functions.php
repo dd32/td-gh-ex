@@ -278,7 +278,7 @@ if (!function_exists('graphene_default_menu')) :
 	function graphene_default_menu(){ ?>
 		<ul id="menu" class="clearfix">
             <li <?php if ( is_single() || is_home()) { echo 'class="current_page_item"'; } ?>><a href="<?php echo bloginfo('url'); ?>"><?php _e('Home','graphene'); ?></a></li>
-            <?php wp_list_pages('echo=1&sort_column=menu_order&depth=3&title_li='); ?>
+            <?php wp_list_pages('echo=1&sort_column=menu_order&depth=5&title_li='); ?>
         </ul>
 <?php      		
 	} 
@@ -300,6 +300,7 @@ if (!function_exists('graphene_comment')) :
 						<h5><cite><?php comment_author_link() ?></cite><?php _e(' says:','graphene'); ?></h5>
 						<div class="comment-meta">
 							<p class="commentmetadata">
+                            	<?php /* translators: %1$s is the comment date, %2#s is the comment time */ ?>
 								<?php printf(__('%1$s at %2$s', 'ksv3'), get_comment_date(), get_comment_time()); ?>
 								<?php echo '(UTC '.get_option('gmt_offset').')'; ?>
 								<?php edit_comment_link(__('Edit comment','graphene'),' | ',''); ?></p>
@@ -371,10 +372,10 @@ function graphene_widgets_init() {
 			'name' => __('Primary Widget Area', 'graphene'),
 			'id' => 'primary-widget-area',
 			'description' => __( 'The primary widget area', 'graphene' ),
-			'before_widget' => '',
+			'before_widget' => '<div class="sidebar-wrap clearfix">',
 			'after_widget' => '</div>',
 			'before_title' => "<h3>",
-			'after_title' => "</h3>\n<div class=\"sidebar-wrap clearfix\">",
+			'after_title' => "</h3>",
 		));
 }
 /** Register sidebars by running graphene_widgets_init() on the widgets_init hook. */
@@ -523,20 +524,26 @@ include('admin/options.php');
 // Starting with the default fields
 function graphene_comment_form_fields(){
 	$fields =  array(
-		'author' => '<p class="comment-form-author">'.'<label for="author">'.__('Name:','graphene').'</label><input id="author" name="author" type="text" /></p>',
-		'email'  => '<p class="comment-form-email"><label for="email">' . __('Email:','graphene').'</label><input id="email" name="email" type="text" /></p>',
-		'url'    => '<p class="comment-form-url"><label for="url">'.__('Website:','graphene').'</label><input id="url" name="url" type="text" /></p>',
+		'author' => '<p class="comment-form-author"><label for="author" class="graphene_form_label">'.__('Name:','graphene').'</label><input id="author" name="author" type="text" /></p>',
+		'email'  => '<p class="comment-form-email"><label for="email" class="graphene_form_label">' . __('Email:','graphene').'</label><input id="email" name="email" type="text" /></p>',
+		'url'    => '<p class="comment-form-url"><label for="url" class="graphene_form_label">'.__('Website:','graphene').'</label><input id="url" name="url" type="text" /></p>',
 	);
 	return $fields;
 }
 
 // The comment field textarea
 function graphene_comment_textarea(){
-	echo '<p><label>'.__('Message:','graphene').'</label><textarea name="comment" id="comment" cols="40" rows="10" tabindex="4"></textarea></p>';
+	echo '<p class="clearfix"><label class="graphene_form_label">'.__('Message:','graphene').'</label><textarea name="comment" id="comment" cols="40" rows="10" tabindex="4"></textarea></p><div class="graphene_wrap">';
 }
+
+// The submit button
+function graphene_comment_submit_button(){
+	echo '</div><p class="graphene-form-submit"><button type="submit" id="graphene_submit" class="submit" name="graphene_submit"><span>'.__('Submit Comment', 'graphene').'</span></button></p>';
+	}
 
 // Add all the filters we defined
 add_filter('comment_form_default_fields', 'graphene_comment_form_fields');
 add_filter('comment_form_field_comment', 'graphene_comment_textarea');
+add_filter('comment_form', 'graphene_comment_submit_button');
 
 ?>

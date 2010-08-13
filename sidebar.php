@@ -19,7 +19,7 @@
     </li>
     -->
         
-    <h3>Archives</h3>
+    <h3><?php _e('Archives', 'graphene'); ?></h3>
     <div class="sidebar-wrap clearfix">
         <ul>
         <?php wp_get_archives('type=monthly'); ?>
@@ -34,7 +34,8 @@
             <?php wp_meta(); ?>
             <li class="rss"><a href="<?php bloginfo('rss2_url'); ?>"><?php _e('Posts RSS','graphene'); ?></a></li>
             <li class="rss"><a href="<?php bloginfo('comments_rss2_url'); ?>"><?php _e('Comments RSS','graphene'); ?></a></li>
-            <li><?php _e('Powered by <a href="http://www.wordpress.org" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress</a>','graphene'); ?></li>
+            <?php /* translators: %s is the link to wordpress.org */ ?>
+            <li><?php printf(__('Powered by %s','graphene'), '<a href="http://www.wordpress.org" title="'.__('Powered by WordPress, state-of-the-art semantic personal publishing platform.', 'graphene').'">WordPress</a>'); ?></li>
         </ul>
     </div>
     

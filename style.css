@@ -1,15 +1,15 @@
 /*
 Theme Name: Graphene
 Theme URI: http://www.khairul-syahir.com/wordpress-dev/graphene-theme
-Description: The Graphene theme for Wordpress 3.0 is a stylish, neat, and tight WordPress theme supporting widgetised sidebar with built-in Twitter widget. It allows for customisable header and background through the WordPress admin. It has built-in AdSense placement as well as AddThis social sharing button. It supports custom menu with drop-down navigation of up to 3 levels deep. Threaded comments is supported with deep nesting, up to 10 levels! The codes are written so that you can easily override or add functionality to the theme by using your own child theme without altering the parent theme's code. Seriously, there's too many features for this theme to describe them all here!
-Version: 1.0.4
+Description: The Graphene theme for Wordpress 3.0 is a stylish, neat, and tight WordPress theme supporting widgetised sidebar with built-in Twitter widget. It allows for customisable header and background through the WordPress admin. It has built-in AdSense placement as well as AddThis social sharing button. It supports custom menu with drop-down navigation of up to 5 levels deep. Threaded comments is supported with deep nesting, up to 10 levels! A one-column, full-width page template without the sidebar is included. The codes are written so that you can easily override or add functionality to the theme by using your own child theme without altering the parent theme's code. Seriously, there's too many features for this theme to describe them all here! See this <a href="http://www.khairul-syahir.com/wordpress-dev/graphene-theme#changelog">theme's changelog</a>.
+Version: 1.0.5
 Author: Syahir Hakim
 Author URI: http://www.khairul-syahir.com
 Tags: black, blue, white, two-columns, fixed-width, custom-header, custom-background, custom-menu, theme-options, threaded-comments, sticky-post, translation-ready
 License: GNU General Public License, v2 (or newer)
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
-html,body,h1,h2,h3,h4,h5,h6,p,img,ul,ol,li,form,fieldset,textarea{border:0 none;margin:0;padding:0;}
+html,body,h1,h2,h3,h4,h5,h6,p,img,ul,ol,li,form,fieldset{border:0 none;margin:0;padding:0;}
 .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
 .clearfix{display:inline-block;}
 /* Hide from IE Mac \*/
@@ -83,78 +83,82 @@ margin-left:16px;
 border-bottom:3px solid #fff;
 padding-top:12px;
 }
-#menu ul li{
-list-style-type:none;
-padding-top:7px;
+
+/* Son of Suckerfish dropdown menu. Here goes what makes it tick... */
+#menu, #menu ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	line-height: 1;
 }
+#menu a {
+	display: block;
+}
+#menu li {
+	float: left;
+	margin-left:5px;
+}
+#menu li li{
+	width: 175px;
+	margin-left:0;
+	}
+#menu li ul {
+	position: absolute;
+	width: 175px;
+	left: -999em;
+}
+#menu li:hover ul, #menu li.sfhover ul{
+	left: auto;
+}
+#menu li ul ul {
+	margin: -1.8em 0 0 175px;
+}
+#menu li:hover ul ul, #menu li:hover ul ul ul, #menu li:hover ul ul ul ul, #menu li:hover ul ul ul ul ul, #menu li.sfhover ul ul, #menu li.sfhover ul ul ul, #menu li.sfhover ul ul ul ul, #menu li.sfhover ul ul ul ul ul {
+	left: -999em;
+}
+#menu li:hover ul, #menu li li:hover ul, #menu li li li:hover ul, #menu li li li li:hover ul, #menu li li li li li:hover ul, #menu li.sfhover ul, #menu li li.sfhover ul, #menu li li li.sfhover ul, #menu li li li li.sfhover ul, #menu li li li li li.sfhover ul {
+	left: auto;
+}
+
+
+/* ...and here goes the styling */ 
 #menu li a, #menu li a:visited{
-font:normal 11px 'trebuchet ms';
-color:#dfedff;
-text-decoration:none;
-line-height:24px;
-display:block;
-padding:0 6px;
-text-transform:uppercase;
+	font:normal 11px 'trebuchet ms';
+	color:#dfedff;
+	text-decoration:none;
+	line-height:24px;
+	padding:0 6px;
+	text-transform:uppercase;
 }
-#menu ul.children li, #menu ul.sub-menu li{
+#menu ul{
+	border:1px solid #a0a0a0;
+	}
+#menu ul li, #menu ul li{
+	background:#fff;
 	padding-top:0;
 	}
-#menu ul.children li a, #menu ul.children li a:visited, #menu ul.sub-menu li a, #menu ul.sub-menu li a:visited{
-	line-height:18px;
+#menu ul a, #menu ul a:visited{
 	font-size:11px;
 	}
-#menu li a:hover, #menu li:hover a, #menu li:hover a:visited, #menu li.current_page_item a, #menu li.current_page_ancestor a, #menu li.current_page_parent a, #menu li.current_page_item a:visited, #menu li.current_page_ancestor a:visited, #menu li.current_page_parent a:visited{
+#menu ul li a, #menu ul li a:visited{
 	color:#000;
-	}
-#menu li:hover, #menu li.current_page_item, #menu li.current_page_ancestor, #menu li.current_page_parent{
-background:url(images/sprite_h.png) left -66px repeat-x;
-}
-#menu li{
-float:left;
-display:block;
-position:relative;
-margin-left:5px;
-}
-#menu ul.children, #menu ul.sub-menu{
-	list-style:none;
-	display:none;
-	}
-#menu li:hover ul.children, #menu li:hover ul.sub-menu{
-	display:block;
-	position:absolute;
-	}
-#menu ul.children li a, #menu ul.children li a:visited, #menu ul.sub-menu li a, #menu ul.sub-menu li a:visited{
-	padding:0 5px;
-	line-height:18px;
+	line-height:normal;
+	padding:2px 5px;
 	text-decoration:none;
 	border-bottom:1px solid #a0a0a0;
-	display:block;
+	width:165px;
+	}
+#menu li a:hover, #menu li:hover a, #menu li:hover a:visited, #menu li a:hover, #menu li.sfhover a, #menu li.sfhover a:visited, #menu li.current_page_item a, #menu li.current_page_ancestor a, #menu li.current_page_parent a, #menu li.current_page_item a:visited, #menu li.current_page_ancestor a:visited, #menu li.current_page_parent a:visited{
 	color:#000;
-	width:100px;
 	}
-#menu ul.children li, #menu ul.sub-menu li{
-	float:none;
-	margin:0;
-	position:relative;
-	background:#fff;
+#menu li:hover, #menu li.sfhover, #menu li.current_page_item, #menu li.current_page_ancestor, #menu li.current_page_parent{
+	background:url(images/sprite_h.png) left -66px repeat-x;
+}
+#menu ul li a:hover{
+	background:#e0e0e0 !important;
 	}
-#menu ul.children li a:hover, #menu ul.sub-menu li a:hover{
-	background:#e0e0e0;
-	}
-#menu ul.children li ul.children, #menu ul.sub-menu li ul.sub-menu{
-	list-style:none;
-	display:none;
-	position:absolute;
-	left:100%;
-	top:0;
-	}
-#menu ul.children li ul.children li a, #menu ul.sub-menu li ul.sub-menu li a{
-	display:block;
-	width:100px;
-	}
-#menu ul.children li:hover ul.children, #menu ul.sub-menu li:hover ul.sub-menu{
-	display:block;
-	}
+/* And that's the end of our Suckerfish delight! */
+
 #content{
 background:url(images/sprite_v.png) -943px top repeat-y;
 width:900px;
@@ -162,10 +166,17 @@ padding-bottom:20px;
 margin-left:16px;
 border-top:21px solid #e3e3e3;
 }
+#content.one_column{
+background:#E3E3E3;
+}
 #content-main{
 width:600px;
 float:left;
 }
+.one_column #content-main{
+	float:none;
+	width:900px;
+	}
 .post{
 	width:558px;
 	padding:25px 18px 20px 24px;
@@ -175,6 +186,12 @@ float:left;
 	-webkit-border-radius-topright:30px;
 	border-radius-topright:30px;
 }
+.one_column .post{
+	width:858px;
+	-moz-border-radius-topright:0;
+	-webkit-border-radius-topright:0;
+	border-radius-topright:0;
+	}
 .post .date{
 	clear:both;
 	background:url(images/sprite_master.png) -325px top no-repeat #3bc5ef;
@@ -201,6 +218,12 @@ padding:0;
 margin:0;
 float:right;
 }
+.page .entry{
+	width:565px;
+	}
+.one_column .entry{
+	width:865px;
+	}
 h2, h2 a, h2 a:visited{
 font:18px arial;
 color:#1772af;
@@ -314,7 +337,7 @@ margin-top:2px;
 	font-size:12px;
 	}
 .entry-content p{
-	margin-bottom:10px;
+	margin-top:10px;
 }
 .entry-content a, .entry-content a:visited{
 	color:#1772af;
@@ -619,7 +642,7 @@ code.block, pre.block{
 #commentform a:hover, #respond a:hover{
 	text-decoration:underline;
 }
-#commentform label{
+#commentform label.graphene_form_label{
 	float:left;
 	width:71px;
 	padding-top:4px;
@@ -637,7 +660,7 @@ code.block, pre.block{
 }
 #commentform textarea{
 	width:418px;
-	height:150px;
+	height:175px;
 	margin-bottom:5px;
 	border:1px solid #e3e3e3;
 }
@@ -652,34 +675,70 @@ code.block, pre.block{
 #respond p#cancel-comment-reply{
 	margin-bottom:10px;
 }
-#commentform #submit{
-	padding:0;
-	margin:10px 0 0 70px !important;
+#commentform .form-submit{
+	display:none;
+	}
+#commentform .submit{
+	margin:10px 0 0 74px !important;
 	font:normal 12px arial;
 	color:#414040;
-	border:none;
-	width:116px;
-	height:26px;
-	background:url(images/sprite_master.png) left -234px no-repeat !important;
+	background:url("images/sprite_master.png") right -234px no-repeat !important;
 	cursor:pointer;
-	float:none;
+	
+	position: relative;
+	border: none; 
+	padding: 0 8px 0 0;
+	cursor: pointer;
+	overflow: visible; /* removes extra side padding in IE */
 }
-#commentform #submit:focus{outline:1px dotted;}
-#commentform #submit:hover{
-	background-position:left -260px !important;
+#commentform .submit::-moz-focus-inner{
+	border:none;
+	}
+#commentform .submit:focus{outline:1px dotted;}
+#commentform .submit:hover{
+	background-position:right -269px !important;
+}
+#commentform .submit span{
+	background:url(images/sprite_master.png) left -234px no-repeat !important;
+	height:26px;
+	line-height:26px;
+	margin-left:-5px;
+	padding-left:8px;
+	
+	position: relative;
+	display: block; 
+	white-space: nowrap;
+	}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	/* Safari and Google Chrome only - fix margins */
+	button span {
+		margin-top: -1px;
+	}
+}
+#commentform .submit:hover span{
+	background-position:left -269px !important;
 }
 #commentform p.form-allowed-tags{
-	margin: 5px 0 0 118px;
-	width:424px;
+	font-size:11px;
+	margin-top:-10px !important;
 	}
 #commentform p.form-allowed-tags code{
 	display:block;
+	color:#808080;
+	}
+#commentform div.graphene_wrap{
+	margin: 5px 0 0 118px;
+	width:424px;
+	}
+#commentform div.graphene_wrap p{
+	margin-left:0;
+	margin-top:10px;
 	}
 #sidebar{
-	float:right;
 	margin-right:15px;
 	width:255px;
 	display:inline;
+	float:right;
 }
 #sidebar h3{
 	clear:both;
@@ -689,13 +748,15 @@ code.block, pre.block{
 	font:bold 15px "Trebuchet MS";
 	line-height:33px;
 	padding-left:12px;
-	margin:16px 0 5px 0;
+	margin:0 0 5px -12px;
 	color:#333232;
 	letter-spacing:0.03em;
 }
 #sidebar div.sidebar-wrap{
 	width:231px;
 	padding:5px 12px;
+	margin-top:16px;
+	overflow:hidden;
 }
 #sidebar #tweetfollow{
 	text-align:right;
@@ -782,7 +843,7 @@ code.block, pre.block{
 	width:0px;
 }
 #sidebar li.rss{
-	background:url(images/sprite_master.png) -885px -330px no-repeat;
+	background:url(images/sprite_master.png) -885px -338px no-repeat;
 	padding-left:20px;
 	}
 #footer{

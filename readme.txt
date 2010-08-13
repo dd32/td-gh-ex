@@ -1,4 +1,4 @@
-GRAPHENE THEME 1.0 README
+GRAPHENE WORDPRESS THEME README
 by Syahir Hakim
 http://www.khairul-syahir.com
 
@@ -36,6 +36,7 @@ Graphene WordPress theme is currently available in the following languages:
 
     * English (en_GB), the default language.
     * Malay (ms_MY), by Syahir Hakim
+    * Brazilian Portuguese (pt_BR), by Leonardo Antonioli (http://www.tobeguarany.com)
 
 To use the other languages for your WordPress installation, see how you can install WordPress in your language page from the WordPress Codex.
 
@@ -53,32 +54,3 @@ My gratitude to these image authors who have allowed me to include their royalty
 OTHER NOTES
 
 To display the codes within the <code> element with the preformatted styling, include the class attribute class="block". Example: <code class="block">some code here</code>.
-
-
-CHANGELOG
-
-Version 1.0.4
-
-	* Fixed custom menu where previously assigned custom menu loses capability for dropdown menu
-
-Version 1.0.3
-
-	* Minor code fixes
-
-Version 1.0.2
-	
-	* Replaced include() function call in search.php with get_template_part()
-	* Slight modification to the redirect URL in 404.php.
-
-Version 1.0.1
-
-	* Replaced include() function call with get_search_form() function call to get the search form
-	* Replaced hard-coded comment form with comment_form() function call
-	* Added missing post_class() in post <div> tag
-	* Removed "Comments are closed" message from posts and pages where commenting is disabled
-	* Added support for editor style
-	* Updated language files
-
-Version 1.0
-
-    * Initial public release

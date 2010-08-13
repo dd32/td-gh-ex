@@ -24,15 +24,14 @@
     <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" /> <!-- leave this for stats -->
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />  
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" /> 
-      <!--[if lte IE 6]>
-          <style>
-          	#container{background:none;}
-            #menu ul.children li{display:inline;}
-          </style>
-          <script src="<?php bloginfo('template_directory'); ?>/js/IE7.js"></script>
+      <!--[if lte IE 6]><style>#container{background:none;}</style><![endif]-->
+      <!--[if lte IE 7]>
+          <script>
+          	sfHover=function(){var sfEls=document.getElementById("menu").getElementsByTagName("li");for(var i=0;i<sfEls.length;i++){sfEls[i].onmouseover=function(){this.className+=" sfhover";}
+sfEls[i].onmouseout=function(){this.className=this.className.replace(new RegExp(" sfhover\\b"),"");}}}
+if(window.attachEvent)window.attachEvent("onload",sfHover);
+          </script>
       <![endif]-->
-      
-      <!--[if lte IE 7]><style>#menu ul.children li ul.children{left:99%;}</style><![endif]-->
     <?php
 	/* We add some JavaScript to pages with the comment form
 	 * to support sites with threaded comments (when in use).
@@ -88,9 +87,9 @@
             <h2 <?php echo $style; ?>><?php bloginfo('description'); ?></h2>
         </div>
         <div id="nav">
-        	<!-- BEGIN dynamically generated and highlighted menu-->
-        	<?php wp_nav_menu(array('container' => '', 'menu_id' => 'menu', 'menu_class' => 'clearfix', 'fallback_cb' => 'graphene_default_menu', 'depth' => 3, 'theme_location' => 'Header Menu')); ?>
-            <!-- END dynamically generated and highlighted menu-->
+        	<!-- BEGIN dynamically generated and highlighted menu -->
+        	<?php wp_nav_menu(array('container' => '', 'menu_id' => 'menu', 'menu_class' => 'clearfix', 'fallback_cb' => 'graphene_default_menu', 'depth' => 5, 'theme_location' => 'Header Menu')); ?>
+            <!-- END dynamically generated and highlighted menu -->
         </div>
-        <div id="content" class="clearfix">
+        <div id="content" class="clearfix<?php if (is_page_template('page-onecolumn.php')) {echo ' one_column';} ?>">
         	<div id="content-main" class="clearfix">

@@ -68,7 +68,7 @@
 				'comment_notes_before' => '<p class="comment-notes">'.__('Your email address will not be published.', 'graphene').'</p>',
 				'comment_notes_after'  => '<p class="form-allowed-tags">'.sprintf(__('You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s', 'graphene'),'<code>'.allowed_tags().'</code>').'</p>',
 				'id_form'              => 'commentform',
-				'label_submit'         => __( 'Submit Comment', 'graphene' ),
+				'label_submit'         => __('Submit Comment', 'graphene'),
 					   )); 
 
 ?>

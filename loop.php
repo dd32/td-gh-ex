@@ -53,7 +53,9 @@
                     <?php /* Post footer */ ?>
                     <div class="entry-footer clearfix">
                     	<?php /* Display the post's tags, if there is any */ ?>
+                        <?php if (!is_page()) : ?>
                         <p class="post-tags"><?php if (has_tag()) {_e('Tags: ','graphene'); the_tags('', ', ', '');} else {_e('This post has no tag','graphene');} ?></p>
+                        <?php endif; ?>
                         
 						<?php 
 							/**

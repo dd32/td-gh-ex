@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graphene 1.0 theme for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-08 08:42+1200\n"
-"PO-Revision-Date: 2010-08-08 08:43+1200\n"
+"POT-Creation-Date: 2010-08-11 13:41+1200\n"
+"PO-Revision-Date: 2010-08-11 13:44+1200\n"
 "Last-Translator: Syahir Hakim <syahir@khairul-syahir.com>\n"
 "Language-Team: Syahir Hakim <syahir@khairul-syahir.com>\n"
 "MIME-Version: 1.0\n"
@@ -27,13 +27,11 @@ msgstr "Tiada komen"
 
 #: comments.php:36
 #: loop.php:67
-#: search_norm.php:20
 msgid "1 comment"
 msgstr "1 komen"
 
 #: comments.php:36
 #: loop.php:67
-#: search_norm.php:20
 #, php-format
 msgid "% comment"
 msgstr "% komen"
@@ -69,96 +67,96 @@ msgstr "Menepati piawaian CSS Level 2.1"
 msgid "%1$s uses %2$s theme by %3$s."
 msgstr "%1$s menggunakan tema %2$s oleh %3$s."
 
-#: functions.php:97
+#: functions.php:100
 msgid "Header Menu"
 msgstr "Menu Kepala"
 
-#: functions.php:141
+#: functions.php:144
 msgid "Header image by Syahir Hakim"
 msgstr "Imej kepala oleh Syahir Hakim"
 
-#: functions.php:147
+#: functions.php:150
 msgid "This is the default Graphene theme header image, cropped from image by Quantin Houyoux at sxc.hu"
 msgstr "Ini adalah imej kepala asal bagi tema Graphene, dipotong daripada imej asal oleh Quantin Houyoux di sxc.hu"
 
-#: functions.php:153
-#: functions.php:159
-#: functions.php:165
-#: functions.php:171
-#: functions.php:177
+#: functions.php:156
+#: functions.php:162
+#: functions.php:168
+#: functions.php:174
+#: functions.php:180
 msgid "Header image cropped from image by Ilco at sxc.hu"
 msgstr "Imej kepala dipotong daripada imej asal oleh Ilco di sxc.hu"
 
-#: functions.php:277
+#: functions.php:280
 msgid "Home"
 msgstr "Muka Utama"
 
-#: functions.php:297
+#: functions.php:300
 msgid " says:"
 msgstr " berkata:"
 
-#: functions.php:300
+#: functions.php:303
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s pada %2$s"
 
-#: functions.php:302
+#: functions.php:305
 msgid "Edit comment"
 msgstr "Edit komen"
 
-#: functions.php:303
+#: functions.php:306
 msgid "Reply"
 msgstr "Balas"
 
-#: functions.php:307
+#: functions.php:310
 msgid "Your comment is awaiting moderation."
 msgstr "Komen anda sedang menunggu moderasi."
 
-#: functions.php:368
+#: functions.php:371
 msgid "Primary Widget Area"
 msgstr "Bahagian Widget Utama"
 
-#: functions.php:370
+#: functions.php:373
 msgid "The primary widget area"
 msgstr "Bahagian widget utama"
 
-#: functions.php:416
+#: functions.php:419
 msgid "Follow me on Twitter"
 msgstr "Ikuti saya di Twitter"
 
-#: functions.php:454
+#: functions.php:457
 msgid "Latest tweets"
 msgstr "Tweet terkini"
 
-#: functions.php:459
+#: functions.php:462
 msgid "Title:"
 msgstr "Tajuk:"
 
-#: functions.php:463
+#: functions.php:466
 msgid "Twitter Username:"
 msgstr "Nama pengguna Twitter:"
 
-#: functions.php:467
+#: functions.php:470
 msgid "Number of tweets to display:"
 msgstr "Bilangan tweet untuk dipaparkan:"
 
-#: functions.php:508
+#: functions.php:511
 msgid "Graphene Options"
 msgstr "Tetapan Graphene"
 
-#: functions.php:523
+#: functions.php:526
 msgid "Name:"
 msgstr "Nama:"
 
-#: functions.php:524
+#: functions.php:527
 msgid "Email:"
 msgstr "Emel:"
 
-#: functions.php:525
+#: functions.php:528
 msgid "Website:"
 msgstr "Laman web:"
 
-#: functions.php:532
+#: functions.php:535
 msgid "Message:"
 msgstr "Mesej:"
 
@@ -167,7 +165,6 @@ msgid "Subscribe to RSS feed"
 msgstr "Langgani capaian RSS"
 
 #: loop.php:22
-#: search_norm.php:5
 #, php-format
 msgid "Permanent Link to %s"
 msgstr "Capaian kekal kepada %s"
@@ -182,7 +179,6 @@ msgid "by %s"
 msgstr "oleh %s"
 
 #: loop.php:38
-#: search_norm.php:9
 msgid "Edit post"
 msgstr "Edit artikel"
 
@@ -207,12 +203,10 @@ msgid "Leave comment"
 msgstr "Tulis komen"
 
 #: loop.php:89
-#: search_norm.php:26
 msgid "Older posts &laquo;"
 msgstr "Artikel terdahulu &laquo;"
 
 #: loop.php:90
-#: search_norm.php:27
 msgid "&raquo; Newer posts"
 msgstr "&raquo; Artikel terkini"
 
@@ -228,71 +222,60 @@ msgstr "Maaf, artikel yang anda pohon tidak dijumpai di laman ini. Hendak mencub
 msgid "Sorry, but no results were found for that keyword. Wanna try an alternative keyword search?"
 msgstr "Maaf, tiada artikel dijumpai menggunakan kata kunci tersebut. Hendak mencuba carian menggunakan kata kunci alternatif?"
 
+#: search-404.php:3
+msgid "Error 404 - Page Not Found"
+msgstr "Ralat 404 - Halaman Tidak Dijumpai"
+
+#: search-404.php:5
+msgid "Sorry, I've looked everywhere but I can't find the page you're looking for."
+msgstr "Maaf, saya telah mencari di keseluruhan laman web ini, tetapi artikel yang anda pohon tidak dijumpai."
+
+#: search-404.php:6
+msgid "If you follow the link from another website, I may have removed or renamed the page some time ago. You may want to try searching for the page:"
+msgstr "Sekiranya anda mengikut capaian dari laman web lain, saya mungkin telah manghapuskan atau menukar nama artikel tersebut. Mungkin carian kata kunci dapat membantu anda mencari artikel tersebut:"
+
+#: search-404.php:14
+msgid "Suggested results"
+msgstr "Hasil carian automatik"
+
+#: search-404.php:18
+#, php-format
+msgid "I've done a courtesy search for the term %s for you. See if you can find what you're looking for in the list below:"
+msgstr "Saya telah melakukan carian automatik bagi kata kunci %s untuk anda. Mungkin artikel yang anda cari ada dalam senarai di bawah:"
+
+#: search-404.php:37
+msgid "<strong>Sorry, couldn't find anything.</strong> Try searching for alternative terms using the search form above."
+msgstr "<strong>Maaf, tiada artikel dijumpai.</strong> Cuba carian sekali dengan menggunakan kata kunci yang lain."
+
 #: searchform.php:3
 #: searchform.php:4
 msgid "Search"
 msgstr "Carian"
 
-#: search_404.php:3
-msgid "Error 404 - Page Not Found"
-msgstr "Ralat 404 - Halaman Tidak Dijumpai"
+#: sidebar.php:22
+msgid "Archives"
+msgstr "Arkib"
 
-#: search_404.php:5
-msgid "Sorry, I've looked everywhere but I can't find the page you're looking for."
-msgstr "Maaf, saya telah mencari di keseluruhan laman web ini, tetapi artikel yang anda pohon tidak dijumpai."
-
-#: search_404.php:6
-msgid "If you follow the link from another website, I may have removed or renamed the page some time ago. You may want to try searching for the page:"
-msgstr "Sekiranya anda mengikut capaian dari laman web lain, saya mungkin telah manghapuskan atau menukar nama artikel tersebut. Mungkin carian kata kunci dapat membantu anda mencari artikel tersebut:"
-
-#: search_404.php:14
-msgid "Suggested results"
-msgstr "Hasil carian automatik"
-
-#: search_404.php:18
-#, php-format
-msgid "I've done a courtesy search for the term %s for you. See if you can find what you're looking for in the list below:"
-msgstr "Saya telah melakukan carian automatik bagi kata kunci %s untuk anda. Mungkin artikel yang anda cari ada dalam senarai di bawah:"
-
-#: search_404.php:37
-msgid "<strong>Sorry, couldn't find anything.</strong> Try searching for alternative terms using the search form above."
-msgstr "<strong>Maaf, tiada artikel dijumpai.</strong> Cuba carian sekali dengan menggunakan kata kunci yang lain."
-
-#: search_norm.php:7
-msgid "Categories:"
-msgstr "Kategori:"
-
-#: search_norm.php:9
-msgid "by "
-msgstr "oleh"
-
-#: search_norm.php:20
-msgid "No comment"
-msgstr "Tiada komen"
-
-#: search_norm.php:33
-msgid "No post found"
-msgstr "Tiada artikel dijumpai"
-
-#: search_norm.php:35
-msgid "You might want to try another search using alternative terms."
-msgstr "Anda mungkin mahu mencuba carian sekali lagi menggunakan kata kunci alternatif."
-
-#: sidebar.php:29
+#: sidebar.php:31
 msgid "Meta"
 msgstr "Meta"
 
-#: sidebar.php:35
+#: sidebar.php:37
 msgid "Posts RSS"
 msgstr "RSS Artikel"
 
-#: sidebar.php:36
+#: sidebar.php:38
 msgid "Comments RSS"
 msgstr "RSS Komen"
 
-#: sidebar.php:37
-msgid "Powered by <a href=\"http://www.wordpress.org\" title=\"Powered by WordPress, state-of-the-art semantic personal publishing platform.\">WordPress</a>"
-msgstr "Laman menggunakan <a href=\"http://www.wordpress.org\" title=\"Laman menggunakan WordPress, platform penerbitan peribadi yang semantik dan canggih.\">WordPress</a>"
+#: sidebar.php:39
+#, php-format
+msgid "Powered by %s"
+msgstr "Laman menggunakan %s"
+
+#: sidebar.php:39
+msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
+msgstr "Laman menggunakan WordPress, platform penerbitan peribadi yang semantik dan canggih."
 
 #: admin/options.php:121
 msgid "Graphene Theme Options"
@@ -381,6 +364,23 @@ msgstr "Menanggalkan tema ini <strong>tidak menghapuskan</strong> fail-fail tema
 #: admin/options.php:238
 msgid "Uninstall Theme"
 msgstr "Tanggalkan Tema"
+
+#~ msgid "Categories:"
+#~ msgstr "Kategori:"
+
+#~ msgid "by "
+#~ msgstr "oleh"
+
+#~ msgid "No comment"
+#~ msgstr "Tiada komen"
+
+#~ msgid "No post found"
+#~ msgstr "Tiada artikel dijumpai"
+
+#~ msgid "You might want to try another search using alternative terms."
+#~ msgstr ""
+#~ "Anda mungkin mahu mencuba carian sekali lagi menggunakan kata kunci "
+#~ "alternatif."
 
 #~ msgid "Leave a reply"
 #~ msgstr "Tulis komen"

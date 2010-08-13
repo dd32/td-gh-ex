@@ -3,9 +3,9 @@ msgstr ""
 "Project-Id-Version: Graphene 1.0 theme for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-08-11 14:06+1200\n"
-"PO-Revision-Date: 2010-08-11 14:07+1200\n"
-"Last-Translator: Syahir Hakim <syahir@khairul-syahir.com>\n"
-"Language-Team: \n"
+"PO-Revision-Date: 2010-08-11 06:16-0300\n"
+"Last-Translator: Leonardo Antonioli <leo@tobeguarany.com>\n"
+"Language-Team: Leonardo Antonioli <leo@tobeguarany.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,69 +13,71 @@ msgstr ""
 "X-Poedit-Basepath: D:\\[[MyVault]]\\MyProjects\\[Websites]\\wordpress-theme-test\\site\\wp-content\\themes\\graphene\\\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Language: Portuguese\n"
+"X-Poedit-Country: BRAZIL\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: comments.php:18
 msgid "This post is password protected. Enter the password to view any comments."
-msgstr ""
+msgstr "Este post está protegido por senha. Digite a senha para ver os comentários."
 
 #: comments.php:36
 msgid "No comment yet"
-msgstr ""
+msgstr "Nenhum comentário ainda"
 
 #: comments.php:36
 #: loop.php:67
 msgid "1 comment"
-msgstr ""
+msgstr "1 comentário"
 
 #: comments.php:36
 #: loop.php:67
 #, php-format
 msgid "% comment"
-msgstr ""
+msgstr "% comentários"
 
 #: comments.php:68
 msgid "Your email address will not be published."
-msgstr ""
+msgstr "Seu e-mail não será publicado."
 
 #: comments.php:69
 #, php-format
 msgid "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags and attributes: %s"
-msgstr ""
+msgstr "Você pode usar estas tags e atributos <abbr title=\"HyperText Markup Language\">HTML</abbr>: %s"
 
 #: comments.php:71
 msgid "Submit Comment"
-msgstr ""
+msgstr "Enviar comentário"
 
 #: footer.php:16
 #: admin/options.php:206
 msgid "Except where otherwise noted, content on this site is licensed under a <a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/\">Creative Commons Licence</a>."
-msgstr ""
+msgstr "Exceto disposição em contrário, o conteúdo deste site é licenciado sob a <a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/deed.pt_BR\">Licença Creative Commons</a>."
 
 #: footer.php:22
 msgid "Valid XHTML 1.0 Strict"
-msgstr ""
+msgstr "XHTML 1.0 Strict válido"
 
 #: footer.php:23
 msgid "Valid CSS Level 2.1"
-msgstr ""
+msgstr "CSS Level 2.1 válida"
 
 #: footer.php:43
 #, php-format
 msgid "%1$s uses %2$s theme by %3$s."
-msgstr ""
+msgstr "%1$s usa o tema %2$s criado por %3$s."
 
 #: functions.php:100
 msgid "Header Menu"
-msgstr ""
+msgstr "Menu superior"
 
 #: functions.php:144
 msgid "Header image by Syahir Hakim"
-msgstr ""
+msgstr "Imagem do cabeçalho por Syahir Hakim"
 
 #: functions.php:150
 msgid "This is the default Graphene theme header image, cropped from image by Quantin Houyoux at sxc.hu"
-msgstr ""
+msgstr "Esta é a imagem padrão do tema Graphene, recorte de uma imagem de Quantin Houyoux em sxc.hu"
 
 #: functions.php:156
 #: functions.php:162
@@ -83,283 +85,297 @@ msgstr ""
 #: functions.php:174
 #: functions.php:180
 msgid "Header image cropped from image by Ilco at sxc.hu"
-msgstr ""
+msgstr "Imagem de cabeçalho recortada de uma imagem de Ilco em sxc.hu"
 
 #: functions.php:280
 msgid "Home"
-msgstr ""
+msgstr "Início"
 
 #: functions.php:300
 msgid " says:"
-msgstr ""
+msgstr "disse:"
 
 #: functions.php:304
 #, php-format
 msgid "%1$s at %2$s"
-msgstr ""
+msgstr "%1$s em %2$s"
 
 #: functions.php:306
 msgid "Edit comment"
-msgstr ""
+msgstr "Editar comentário"
 
 #: functions.php:307
 msgid "Reply"
-msgstr ""
+msgstr "Responder"
 
 #: functions.php:311
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "Seu comentário está aguardando revisão."
 
 #: functions.php:372
 msgid "Primary Widget Area"
-msgstr ""
+msgstr "Área de widgets primária"
 
 #: functions.php:374
 msgid "The primary widget area"
-msgstr ""
+msgstr "A área principal de widgets"
 
 #: functions.php:420
 msgid "Follow me on Twitter"
-msgstr ""
+msgstr "Siga-me no Twitter"
 
 #: functions.php:458
 msgid "Latest tweets"
-msgstr ""
+msgstr "Últimos tweets"
 
 #: functions.php:463
 msgid "Title:"
-msgstr ""
+msgstr "Título:"
 
 #: functions.php:467
 msgid "Twitter Username:"
-msgstr ""
+msgstr "Nome de usuário do Twitter:"
 
 #: functions.php:471
 msgid "Number of tweets to display:"
-msgstr ""
+msgstr "Número de tweets a exibir:"
 
 #: functions.php:512
 msgid "Graphene Options"
-msgstr ""
+msgstr "Opções do Graphene"
 
 #: functions.php:527
 msgid "Name:"
-msgstr ""
+msgstr "Nome:"
 
 #: functions.php:528
 msgid "Email:"
-msgstr ""
+msgstr "E-mail:"
 
 #: functions.php:529
 msgid "Website:"
-msgstr ""
+msgstr "Website:"
 
 #: functions.php:536
 msgid "Message:"
-msgstr ""
+msgstr "Mensagem:"
 
 #: header.php:54
 msgid "Subscribe to RSS feed"
-msgstr ""
+msgstr "Assine o canal RSS"
 
 #: loop.php:22
 #, php-format
 msgid "Permanent Link to %s"
-msgstr ""
+msgstr "Link permanente para %s"
 
 #: loop.php:22
 msgid "(No title)"
-msgstr ""
+msgstr "(sem título)"
 
 #: loop.php:36
 #, php-format
 msgid "by %s"
-msgstr ""
+msgstr "por %s"
 
 #: loop.php:38
 msgid "Edit post"
-msgstr ""
+msgstr "Editar post"
 
 #: loop.php:46
 msgid "Read the rest of this entry &raquo;"
-msgstr ""
+msgstr "Leia mais &raquo;"
 
 #: loop.php:50
 msgid "<p><strong>Pages:</strong> "
-msgstr ""
+msgstr "<p><strong>Páginas:</strong> "
 
 #: loop.php:56
 msgid "Tags: "
-msgstr ""
+msgstr "Tags: "
 
 #: loop.php:56
 msgid "This post has no tag"
-msgstr ""
+msgstr "Este post não tem tags"
 
 #: loop.php:67
 msgid "Leave comment"
-msgstr ""
+msgstr "Escreva um comentário"
 
 #: loop.php:89
 msgid "Older posts &laquo;"
-msgstr ""
+msgstr "Posts mais velhos &laquo;"
 
 #: loop.php:90
 msgid "&raquo; Newer posts"
-msgstr ""
+msgstr "&raquo; Posts mais novos"
 
 #: loop.php:97
 msgid "Not found"
-msgstr ""
+msgstr "Nada encontrado"
 
 #: loop.php:102
 msgid "Sorry, but you are looking for something that isn't here. Wanna try a search?"
-msgstr ""
+msgstr "Desculpe, mas o que você procurava não está aqui. Quer tentar uma busca?"
 
 #: loop.php:104
 msgid "Sorry, but no results were found for that keyword. Wanna try an alternative keyword search?"
-msgstr ""
+msgstr "Desculpe, mas não encontramos resultados para sua palavra-chave. Quer tentar buscar por outra palavra?"
 
 #: search-404.php:3
 msgid "Error 404 - Page Not Found"
-msgstr ""
+msgstr "Erro 404 - Página não encontrada"
 
 #: search-404.php:5
 msgid "Sorry, I've looked everywhere but I can't find the page you're looking for."
-msgstr ""
+msgstr "Desculpe. Procurei em todo lugar, mas não encontre a página que você buscava."
 
 #: search-404.php:6
 msgid "If you follow the link from another website, I may have removed or renamed the page some time ago. You may want to try searching for the page:"
-msgstr ""
+msgstr "Se você chegou aqui a partir de outro site, talvez nós tenhamos removido ou renomado a página. Você pode tentar encontrá-la através da busca:"
 
 #: search-404.php:14
 msgid "Suggested results"
-msgstr ""
+msgstr "Resultados sugeridos"
 
 #: search-404.php:18
 #, php-format
 msgid "I've done a courtesy search for the term %s for you. See if you can find what you're looking for in the list below:"
-msgstr ""
+msgstr "Fiz uma busca pelo termo %s para você. Veja se pode encontrar o que procurava na lista abaixo:"
 
 #: search-404.php:37
 msgid "<strong>Sorry, couldn't find anything.</strong> Try searching for alternative terms using the search form above."
-msgstr ""
+msgstr "<strong>Desculpe, não encontramos nada.</strong> Tente buscar por termos alternativos usando o formulário de pesquisa."
 
 #: searchform.php:3
 #: searchform.php:4
 msgid "Search"
-msgstr ""
+msgstr "Busca"
 
 #: sidebar.php:22
 msgid "Archives"
-msgstr ""
+msgstr "Arquivos"
 
 #: sidebar.php:29
 msgid "Meta"
-msgstr ""
+msgstr "Meta"
 
 #: sidebar.php:35
 msgid "Posts RSS"
-msgstr ""
+msgstr "RSS dos posts"
 
 #: sidebar.php:36
 msgid "Comments RSS"
-msgstr ""
+msgstr "RSS dos comentários"
 
 #: sidebar.php:37
 #, php-format
 msgid "Powered by %s"
-msgstr ""
+msgstr "Powered by %s"
 
 #: sidebar.php:37
 msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
-msgstr ""
+msgstr "Powered by WordPress, o supra-sumo dos gerenciadores de conteúdo."
 
 #: admin/options.php:121
 msgid "Graphene Theme Options"
-msgstr ""
+msgstr "Opções do tema Graphene"
 
 #: admin/options.php:146
 msgid "Adsense Options"
-msgstr ""
+msgstr "Opções Adsense"
 
 #: admin/options.php:153
 msgid "Show Adsense advertising"
-msgstr ""
+msgstr "Exibir anúncios Adsense"
 
 #: admin/options.php:159
 msgid "Your Adsense code"
-msgstr ""
+msgstr "Seu código Adsense"
 
 #: admin/options.php:168
 msgid "AddThis Options"
-msgstr ""
+msgstr "Opções AddThis"
 
 #: admin/options.php:171
 msgid "Show AddThis social sharing button"
-msgstr ""
+msgstr "Exibir botão de compartilhamento AddThis"
 
 #: admin/options.php:175
 msgid "Your AddThis button code"
-msgstr ""
+msgstr "Seu código do botão AddThis"
 
 #: admin/options.php:182
 msgid "Google Analytics Options"
-msgstr ""
+msgstr "Opções Google Analytics"
 
 #: admin/options.php:185
 msgid "Enable Google Analytics tracking"
-msgstr ""
+msgstr "Habilitar rastreamento do Google Analytics"
 
 #: admin/options.php:189
 msgid "Google Analytics tracking code"
-msgstr ""
+msgstr "Código de rastreamento Google Analytics"
 
 #: admin/options.php:196
 msgid "Footer Options"
-msgstr ""
+msgstr "Opções do rodapé"
 
 #: admin/options.php:199
 msgid "Show Creative Commons logo"
-msgstr ""
+msgstr "Exibir logotipo Creative Commons"
 
 #: admin/options.php:204
 msgid "Copyright text (html allowed)"
-msgstr ""
+msgstr "Texto de Direitos Autorais (HTML permitido)"
 
 #: admin/options.php:205
 msgid "If this field is empty, the following default copyright text will be displayed:"
-msgstr ""
+msgstr "Se este campo ficar vazio, o seguinte texto padrão será exibido:"
 
 #: admin/options.php:215
 msgid "Update Settings"
-msgstr ""
+msgstr "Atualizar opções"
 
 #: admin/options.php:221
 msgid "Support the developer"
-msgstr ""
+msgstr "Mostre sua gratidão ao desenvolvedor"
 
 #: admin/options.php:222
 msgid "Developing this awesome theme took a lot of effort and time, weeks and weeks of voluntary unpaid work. If you like this theme or if you are using it for commercial websites, please consider a donation to the developer to help support future updates and development."
-msgstr ""
+msgstr "Desenvolver este fantástico tema exigiu muito tempo e esforço, semanas e mais semanas de trabalho voluntário. Se você gosta desse tema ou se você está usando-o em sites comerciais, por favor considere fazer uma doação ao desenvolvedor para incentivar futuras atualizações e melhorias."
 
 #: admin/options.php:232
 msgid "Uninstall theme"
-msgstr ""
+msgstr "Desinstalar tema"
 
 #: admin/options.php:233
 msgid "<strong>Be careful!</strong> Uninstalling the theme will remove all of the theme's options from the database. Do this only if you decide not to use the theme anymore."
-msgstr ""
+msgstr "<strong>Atenção!</strong> Desinstalar o tema removerá do banco de dados todas as opções do tema. Faça isso apenas se você decidir não mais usá-lo."
 
 #: admin/options.php:234
 msgid "If you just want to try another theme, there is no need to uninstall this theme. Simply activate the other theme in the Appearance > Themes admin page."
-msgstr ""
+msgstr "Se você quer apenas testar um outro tema, não é necessário desinstalar este. Simplesmente ative o outro tema na página Aparência > Temas."
 
 #: admin/options.php:235
 msgid "Note that uninstalling this theme <strong>does not remove</strong> the theme's files. To delete the files after you have uninstalled this theme, go to Appearances > Themes and delete the theme from there."
-msgstr ""
+msgstr "Desinstalar esse tema <strong>não removerá</strong> os arquivos do tema Graphene. Para apagar esses arquivos após desinstalá-lo, vá na página Aparência > Temas e apague o Graphene a partir de lá."
 
 #: admin/options.php:238
 msgid "Uninstall Theme"
-msgstr ""
+msgstr "Desinstalar Tema"
 
+#~ msgid "Categories:"
+#~ msgstr "Categorias:"
+
+#~ msgid "by "
+#~ msgstr "por "
+
+#~ msgid "No comment"
+#~ msgstr "Sem comentários"
+
+#~ msgid "No post found"
+#~ msgstr "Nenhum post encontrado"
+
+#~ msgid "You might want to try another search using alternative terms."
+#~ msgstr "Você deveria tentar outra busca utilizando termos alternativos."

@@ -9,6 +9,9 @@
  * @since Graphene 1.0
  */
 ?>
+		<?php if (is_page_template('page-onecolumn.php')) : ?>
+		</div><!-- #content-main -->
+        <?php endif; ?>
     </div><!-- #content -->
     <div id="footer">
         <p id="copyright" <?php if (!get_option('graphene_show_cc')) {echo 'style="background:none;padding-left:20px;"';} ?>>
@@ -38,14 +41,13 @@
 		?>
         <p id="developer">
 			<?php
-				$theme_data = get_theme_data(get_bloginfo('stylesheet_url'));
+				$theme_data = get_theme_data(ABSPATH.'wp-content/themes/graphene/style.css');
 			?>
+            <?php /* translators: %1$s is the blog title, %2$s is the theme's name, %3$s is the theme's author */ ?>
 			<?php printf(__('%1$s uses %2$s theme by %3$s.','graphene'), '<a href="'.get_bloginfo('url').'">'.get_bloginfo('name').'</a>', '<a href="'.$theme_data['URI'].'">'.$theme_data['Title'].'</a>', $theme_data['Author']); ?>
         </p>
     </div><!-- #footer -->
 </div><!-- #container -->
-    
-    <!-- WP-Minify JS -->
     
     <?php /* Print out Google Analytics code if tracking is enabled */ ?>
     <?php if (get_option('graphene_show_ga')) : ?>
