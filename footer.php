@@ -14,7 +14,7 @@
         <?php endif; ?>
     </div><!-- #content -->
     <div id="footer">
-        <p id="copyright" <?php if (!get_option('graphene_show_cc')) {echo 'style="background:none;padding-left:20px;"';} ?>>
+        <p id="copyright" <?php if (!get_option('graphene_show_cc')) {echo 'style="background:none;padding-left:20px;width:400px;"';} ?>>
         	<?php if (get_option('graphene_copy_text') == '') : ?>
 				<?php _e('Except where otherwise noted, content on this site is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Creative Commons Licence</a>.','graphene'); echo get_option('graphene_copy_text');?>
             <?php else : ?>

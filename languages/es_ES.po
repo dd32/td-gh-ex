@@ -1,82 +1,84 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Graphene 1.0 theme for WordPress\n"
+"Project-Id-Version: Graphene 1.0 theme for WordPress en español\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-14 04:02+1200\n"
-"PO-Revision-Date: 2010-08-14 04:02+1200\n"
-"Last-Translator: Syahir Hakim <syahir@khairul-syahir.com>\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2010-08-15 12:09+0100\n"
+"PO-Revision-Date: 2010-08-15 12:14+0100\n"
+"Last-Translator: Eduardo Larequi <elarequi@gmail.com>\n"
+"Language-Team: PNTE <blogs@educacion.navarra.es>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e;_n\n"
-"X-Poedit-Basepath: D:\\[[MyVault]]\\MyProjects\\[Websites]\\wordpress-theme-test\\site\\wp-content\\themes\\graphene\\\n"
+"X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Language: Spanish\n"
+"X-Poedit-Country: Spain\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: comments.php:18
 msgid "This post is password protected. Enter the password to view any comments."
-msgstr ""
+msgstr "Entrada protegida por contraseña. Escribe la contraseña para ver los comentarios."
 
 #: comments.php:36
 msgid "No comment yet"
-msgstr ""
+msgstr "Sin comentarios"
 
 #: comments.php:36
 #: loop.php:69
 msgid "1 comment"
-msgstr ""
+msgstr "Un comentario"
 
 #: comments.php:36
 #: loop.php:69
 #, php-format
 msgid "% comments"
-msgstr ""
+msgstr "% comentarios"
 
 #: comments.php:68
 msgid "Your email address will not be published."
-msgstr ""
+msgstr "Tu email nunca se publicará."
 
 #: comments.php:69
 #, php-format
 msgid "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags and attributes: %s"
-msgstr ""
+msgstr "Puedes utilizar las siguientes etiquetas y atributos <abbr title=\"HyperText Markup Language\">HTML</abbr>: %s"
 
 #: comments.php:71
 #: functions.php:541
 msgid "Submit Comment"
-msgstr ""
+msgstr "Enviar"
 
 #: footer.php:19
 #: admin/options.php:206
 msgid "Except where otherwise noted, content on this site is licensed under a <a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/\">Creative Commons Licence</a>."
-msgstr ""
+msgstr "A no ser que se establezca otra cosa, el contenido de este sitio se publica bajo una licencia <a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/\">Creative Commons</a>."
 
 #: footer.php:25
 msgid "Valid XHTML 1.0 Strict"
-msgstr ""
+msgstr "Valid XHTML 1.0 Strict"
 
 #: footer.php:26
 msgid "Valid CSS Level 2.1"
-msgstr ""
+msgstr "Valid CSS Level 2.1"
 
 #: footer.php:47
 #, php-format
 msgid "%1$s uses %2$s theme by %3$s."
-msgstr ""
+msgstr "%1$s utiza el tema %2$s, diseñado por %3$s."
 
 #: functions.php:100
 msgid "Header Menu"
-msgstr ""
+msgstr "Menú de cabecera"
 
 #: functions.php:144
 msgid "Header image by Syahir Hakim"
-msgstr ""
+msgstr "Imagen de cabecera por Syahir Hakim"
 
 #: functions.php:150
 msgid "This is the default Graphene theme header image, cropped from image by Quantin Houyoux at sxc.hu"
-msgstr ""
+msgstr "Esta es la imagen de cabecera por defecto del tema Graphene, recortada a partir de una imagen de Quantin Houyoux en sxc.hu"
 
 #: functions.php:156
 #: functions.php:162
@@ -84,283 +86,283 @@ msgstr ""
 #: functions.php:174
 #: functions.php:180
 msgid "Header image cropped from image by Ilco at sxc.hu"
-msgstr ""
+msgstr "Imagen de cabecera recortada a partir de una imagen de Ilco en sxc.hu"
 
 #: functions.php:280
 msgid "Home"
-msgstr ""
+msgstr "Inicio"
 
 #: functions.php:300
 msgid " says:"
-msgstr ""
+msgstr " escribió:"
 
 #: functions.php:304
 #, php-format
 msgid "%1$s at %2$s"
-msgstr ""
+msgstr "%1$s a las %2$s"
 
 #: functions.php:306
 msgid "Edit comment"
-msgstr ""
+msgstr "Editar comentario"
 
 #: functions.php:307
 msgid "Reply"
-msgstr ""
+msgstr "Responder"
 
 #: functions.php:311
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "Tu comentario está a la espera de ser aprobado."
 
 #: functions.php:372
 msgid "Primary Widget Area"
-msgstr ""
+msgstr "Área principal de widgets"
 
 #: functions.php:374
 msgid "The primary widget area"
-msgstr ""
+msgstr "El área principal de widgets, correspondiente a la barra lateral"
 
 #: functions.php:420
 msgid "Follow me on Twitter"
-msgstr ""
+msgstr "Sígueme en Twitter"
 
 #: functions.php:458
 msgid "Latest tweets"
-msgstr ""
+msgstr "Últimos tweets"
 
 #: functions.php:463
 msgid "Title:"
-msgstr ""
+msgstr "Título:"
 
 #: functions.php:467
 msgid "Twitter Username:"
-msgstr ""
+msgstr "Nombre de usuario de Twitter:"
 
 #: functions.php:471
 msgid "Number of tweets to display:"
-msgstr ""
+msgstr "Número de tweets que mostrar:"
 
 #: functions.php:512
 msgid "Graphene Options"
-msgstr ""
+msgstr "Opciones del tema Graphene"
 
 #: functions.php:527
 msgid "Name:"
-msgstr ""
+msgstr "Nombre:"
 
 #: functions.php:528
 msgid "Email:"
-msgstr ""
+msgstr "Email:"
 
 #: functions.php:529
 msgid "Website:"
-msgstr ""
+msgstr "Sitio web:"
 
 #: functions.php:536
 msgid "Message:"
-msgstr ""
+msgstr "Mensaje:"
 
 #: header.php:53
 msgid "Subscribe to RSS feed"
-msgstr ""
+msgstr "Suscribirse a la fuente RSS"
 
 #: loop.php:22
 #, php-format
 msgid "Permanent Link to %s"
-msgstr ""
+msgstr "Enlace permanente a %s"
 
 #: loop.php:22
 msgid "(No title)"
-msgstr ""
+msgstr "(Sin título)"
 
 #: loop.php:36
 #, php-format
 msgid "by %s"
-msgstr ""
+msgstr "por %s"
 
 #: loop.php:38
 msgid "Edit post"
-msgstr ""
+msgstr "Editar"
 
 #: loop.php:46
 msgid "Read the rest of this entry &raquo;"
-msgstr ""
+msgstr "Continuar leyendo &raquo;"
 
 #: loop.php:50
 msgid "<p><strong>Pages:</strong> "
-msgstr ""
+msgstr "<p><strong>Páginass:</strong> "
 
 #: loop.php:57
 msgid "Tags: "
-msgstr ""
+msgstr "Etiquetas: "
 
 #: loop.php:57
 msgid "This post has no tag"
-msgstr ""
+msgstr "Esta entrada no tiene ninguna etiqueta"
 
 #: loop.php:69
 msgid "Leave comment"
-msgstr ""
+msgstr "Dejar un comentario"
 
 #: loop.php:91
 msgid "Older posts &laquo;"
-msgstr ""
+msgstr "Entradas más antiguas &laquo;"
 
 #: loop.php:92
 msgid "&raquo; Newer posts"
-msgstr ""
+msgstr "&raquo; Entradas más recientes"
 
 #: loop.php:99
 msgid "Not found"
-msgstr ""
+msgstr "Página no encontrada"
 
 #: loop.php:104
 msgid "Sorry, but you are looking for something that isn't here. Wanna try a search?"
-msgstr ""
+msgstr "Lo sentimos, pero estás buscando algo que no se encuentra aquí. ¿Quieres probar con el formulario de búsqueda?"
 
 #: loop.php:106
 msgid "Sorry, but no results were found for that keyword. Wanna try an alternative keyword search?"
-msgstr ""
+msgstr "Lo sentimos, pero no se ha encontrado ningún resultado correspondiente a tu patrón de búsqueda. Quizás quieras intentarlo con otro diferente."
 
 #: search-404.php:3
 msgid "Error 404 - Page Not Found"
-msgstr ""
+msgstr "Error 404 - Página no encontrada"
 
 #: search-404.php:5
 msgid "Sorry, I've looked everywhere but I can't find the page you're looking for."
-msgstr ""
+msgstr "Lo sentimos, pero aunque hemos buscado por todo el blog, no ha sido posible encontrar la página que estabas buscando."
 
 #: search-404.php:6
 msgid "If you follow the link from another website, I may have removed or renamed the page some time ago. You may want to try searching for the page:"
-msgstr ""
+msgstr "Es posible que la página a la que has intentado llegar haya sido renombrada o eliminada. Inténtalo de nuevo mediante el formulario de búsqueda:"
 
 #: search-404.php:14
 msgid "Suggested results"
-msgstr ""
+msgstr "Resultados aconsejados"
 
 #: search-404.php:18
 #, php-format
 msgid "I've done a courtesy search for the term %s for you. See if you can find what you're looking for in the list below:"
-msgstr ""
+msgstr "Hemos puesto en práctica una búsqueda de cortesía correspondiente al término %s que has utilizado. Comprueba si puedes encontrar lo que estabas buscando en la lista que tienes a continuación:"
 
 #: search-404.php:37
 msgid "<strong>Sorry, couldn't find anything.</strong> Try searching for alternative terms using the search form above."
-msgstr ""
+msgstr "<strong>Lo sentimos, pero no hemos podido encontrar nada.</strong>. Inténtalo con un patrón de búsqueda alternativo mediante el formulario que tienes sobre estas líneas."
 
 #: searchform.php:3
 #: searchform.php:4
 msgid "Search"
-msgstr ""
+msgstr "Buscar"
 
 #: sidebar.php:22
 msgid "Archives"
-msgstr ""
+msgstr "Archivo"
 
 #: sidebar.php:29
 msgid "Meta"
-msgstr ""
+msgstr "Meta"
 
 #: sidebar.php:35
 msgid "Posts RSS"
-msgstr ""
+msgstr "Fuente RSS de entradas"
 
 #: sidebar.php:36
 msgid "Comments RSS"
-msgstr ""
+msgstr "Fuente RSS de comentarios"
 
 #: sidebar.php:38
 #, php-format
 msgid "Powered by %s"
-msgstr ""
+msgstr "Blog elaborado con %s"
 
 #: sidebar.php:38
 msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
-msgstr ""
+msgstr "Elaborado con WordPress, la plataforma de publicación semántica personal definitiva."
 
 #: admin/options.php:121
 msgid "Graphene Theme Options"
-msgstr ""
+msgstr "Opciones del tema Graphene"
 
 #: admin/options.php:146
 msgid "Adsense Options"
-msgstr ""
+msgstr "Opciones de AdSense"
 
 #: admin/options.php:153
 msgid "Show Adsense advertising"
-msgstr ""
+msgstr "Mostrar anuncios de AdSense"
 
 #: admin/options.php:159
 msgid "Your Adsense code"
-msgstr ""
+msgstr "Tu código de AdSense"
 
 #: admin/options.php:168
 msgid "AddThis Options"
-msgstr ""
+msgstr "Opciones de AddThis"
 
 #: admin/options.php:171
 msgid "Show AddThis social sharing button"
-msgstr ""
+msgstr "Mostrar el botón de AddThis"
 
 #: admin/options.php:175
 msgid "Your AddThis button code"
-msgstr ""
+msgstr "Tu código del botón de AddThis"
 
 #: admin/options.php:182
 msgid "Google Analytics Options"
-msgstr ""
+msgstr "Opciones de Google Analytics"
 
 #: admin/options.php:185
 msgid "Enable Google Analytics tracking"
-msgstr ""
+msgstr "Activar el seguimiento de Google Analytics"
 
 #: admin/options.php:189
 msgid "Google Analytics tracking code"
-msgstr ""
+msgstr "Código de seguimiento de Google Analytics"
 
 #: admin/options.php:196
 msgid "Footer Options"
-msgstr ""
+msgstr "Opciones de pie de página"
 
 #: admin/options.php:199
 msgid "Show Creative Commons logo"
-msgstr ""
+msgstr "Mostrar el logotipo de Creative Commons"
 
 #: admin/options.php:204
 msgid "Copyright text (html allowed)"
-msgstr ""
+msgstr "Texto de copyright (se permiten etiquetas HTML)"
 
 #: admin/options.php:205
 msgid "If this field is empty, the following default copyright text will be displayed:"
-msgstr ""
+msgstr "Si este campo está vacío, se mostrará por defecto el siguiente texto de copyright:"
 
 #: admin/options.php:215
 msgid "Update Settings"
-msgstr ""
+msgstr "Actualizar configuración"
 
 #: admin/options.php:221
 msgid "Support the developer"
-msgstr ""
+msgstr "Apoya al desarrollador"
 
 #: admin/options.php:222
 msgid "Developing this awesome theme took a lot of effort and time, weeks and weeks of voluntary unpaid work. If you like this theme or if you are using it for commercial websites, please consider a donation to the developer to help support future updates and development."
-msgstr ""
+msgstr "El desarrollo de este extraordiario tema ha supuesto un gran esfuerzo y mucho tiempo, semanas y semanas de trabajo no pagado y voluntario. Si te gusta este tema o lo estás utilizando para sitios web comerciales, por favor considera la posibilidad de una donación para ayudar al desarrollador con el desarrollo y futuras actualizaciones del tema."
 
 #: admin/options.php:232
 msgid "Uninstall theme"
-msgstr ""
+msgstr "Desinstalar el tema"
 
 #: admin/options.php:233
 msgid "<strong>Be careful!</strong> Uninstalling the theme will remove all of the theme's options from the database. Do this only if you decide not to use the theme anymore."
-msgstr ""
+msgstr "<strong>¡Ten mucho cuidado!</strong> Al desinstalar el tema se eliminarán todas las opciones relacionadas con él en la base de datos. Sólo debes desinstalar el tema si has decidido no volver a utilizarlo nunca más."
 
 #: admin/options.php:234
 msgid "If you just want to try another theme, there is no need to uninstall this theme. Simply activate the other theme in the Appearance > Themes admin page."
-msgstr ""
+msgstr "Si sólo quieres probar otro tema, no hay ninguna necesidad de desinstalar éste. Simplemente activa otro desde el menú <em>Apariencia</em> > <em>Temas</em>."
 
 #: admin/options.php:235
 msgid "Note that uninstalling this theme <strong>does not remove</strong> the theme's files. To delete the files after you have uninstalled this theme, go to Appearances > Themes and delete the theme from there."
-msgstr ""
+msgstr "Debes tener en cuenta que al desinstalar el tema <strong>no se eliminan</strong> los archivos de que consta. Para borrarlos, debes ir al menú <em>Apariencia</em> > <em>Temas</em>, y borrar desde allí el tema."
 
 #: admin/options.php:238
 msgid "Uninstall Theme"
-msgstr ""
+msgstr "Desinstalar el tema"
 

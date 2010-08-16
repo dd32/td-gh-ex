@@ -4,6 +4,19 @@ http://www.khairul-syahir.com
 
 CHANGELOG
 
+Version 1.0.8
+
+	[TODO] Add options to show/hide post parameters, e.g. post date, post author, comment count, post category, post tag (useful for use as CMS)
+	[TODO] Add option to display Adsense ads on the front page
+	[TODO] Add option to switch to a lighter-coloured header bars
+
+Version 1.0.7
+
+	* Fixed gettext call for comment count string
+	* Added copyright text and developer credit widths in footer to prevent layout overflow for long text
+	* Fixed alignment classes CSS so that captioned images are aligned properly
+	* Added Spanish (es_ES) translation, by Eduardo Larequi (http://www.labitacoradeltigre.com/)
+
 Version 1.0.6
 
 	* Fixed minor CSS styling bug causing the allowed HTML tags note in comment form to be partially hidden in IE6 and IE7

@@ -1,11 +1,11 @@
 /*
 Theme Name: Graphene
 Theme URI: http://www.khairul-syahir.com/wordpress-dev/graphene-theme
-Description: The Graphene theme for Wordpress 3.0 is a stylish, neat, and tight WordPress theme supporting widgetised sidebar with built-in Twitter widget. It allows for customisable header and background through the WordPress admin. It has built-in AdSense placement as well as AddThis social sharing button. It supports custom menu with drop-down navigation of up to 5 levels deep. Threaded comments is supported with deep nesting, up to 10 levels! A one-column, full-width page template without the sidebar is included. The codes are written so that you can easily override or add functionality to the theme by using your own child theme without altering the parent theme's code. Seriously, there's too many features for this theme to describe them all here! See this <a href="http://www.khairul-syahir.com/wordpress-dev/graphene-theme#changelog">theme's changelog</a>.
-Version: 1.0.6
+Description: The Graphene theme for Wordpress 3.0 is a stylish, neat, and tight WordPress theme supporting widgetised sidebar with built-in Twitter widget. It allows for customisable header and background through the WordPress admin, built-in AdSense placement and AddThis social sharing button, supports custom menu with drop-down navigation of up to 5 levels deep, and threaded comments of up to 10 levels deep! A one-column, full-width page template without the sidebar is included. The codes are written so that you can easily override or add functionality to the theme by using your own child theme without altering the parent theme's code. Seriously, there's too many features for this theme to describe them all here! This theme has been tested and confirmed compatible with IE6, IE7, IE8, Mozilla Firefox, Google Chrome, and Safari. Translations included: Malay (ms_MY), Brazilian Portuguese (pt_BR), Spanish (es_ES). See this <a href="http://www.khairul-syahir.com/wordpress-dev/graphene-theme#changelog">theme's changelog</a>.
+Version: 1.0.7
 Author: Syahir Hakim
 Author URI: http://www.khairul-syahir.com
-Tags: black, blue, white, two-columns, fixed-width, custom-header, custom-background, custom-menu, theme-options, threaded-comments, sticky-post, translation-ready
+Tags: black, blue, white, two-columns, one-column, right-sidebar, fixed-width, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready
 License: GNU General Public License, v2 (or newer)
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
@@ -160,7 +160,7 @@ padding-top:12px;
 /* And that's the end of our Suckerfish delight! */
 
 #content{
-background:url(images/sprite_v.png) -943px top repeat-y;
+background:url(images/sprite_v.png) -943px top repeat-y #e3e3e3;
 width:900px;
 padding-bottom:20px;
 margin-left:16px;
@@ -280,6 +280,7 @@ margin-top:2px;
 }
 .wp-caption{
 	background:#eee;
+	margin:0 auto;
 	}
 .wp-caption img{
 	border:none !important;
@@ -339,6 +340,9 @@ margin-top:2px;
 .entry-content p{
 	margin-top:10px;
 }
+.entry-content p.wp-caption-text{
+	margin-top:0;
+	}
 .entry-content a, .entry-content a:visited{
 	color:#1772af;
 	text-decoration:none;
@@ -387,12 +391,9 @@ a.more-link{
 	margin:5px;
 	max-width:487px;
 }
-.entry-content img.alignright {float:right; margin:0 0 1em 1em}
-.entry-content img.alignleft {float:left; margin:0 1em 1em 0}
-.entry-content img.aligncenter {display: block; margin-left: auto; margin-right: auto}
-.entry-content a img.alignright {float:right; margin:0 0 1em 1em}
-.entry-content a img.alignleft {float:left; margin:0 1em 1em 0}
-.entry-content a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
+.alignright {float:right; margin:1em 0 0 1em !important;}
+.alignleft {float:left; margin:1em 1em 0 0 !important;}
+.aligncenter {display: block; margin:1em auto 0 auto !important;}
 img.wp-smiley, .entry-content p img.wp-smiley, .comment-entry p img.wp-smiley{
 	border:none !important;
 	display:inline !important;
@@ -680,7 +681,7 @@ code.block, pre.block{
 	margin:10px 0 0 74px !important;
 	font:normal 12px arial;
 	color:#414040;
-	background:url("images/sprite_master.png") right -234px no-repeat !important;
+	background:url("images/sprite_master.png") right -265px no-repeat !important;
 	cursor:pointer;
 	
 	position: relative;
@@ -694,10 +695,10 @@ code.block, pre.block{
 	}
 #commentform .submit:focus{outline:1px dotted;}
 #commentform .submit:hover{
-	background-position:right -269px !important;
+	background-position:right -300px !important;
 }
 #commentform .submit span{
-	background:url(images/sprite_master.png) left -234px no-repeat !important;
+	background:url(images/sprite_master.png) left -265px no-repeat !important;
 	height:26px;
 	line-height:26px;
 	margin-left:-5px;
@@ -714,7 +715,7 @@ code.block, pre.block{
 	}
 }
 #commentform .submit:hover span{
-	background-position:left -269px !important;
+	background-position:left -300px !important;
 }
 #commentform p.form-allowed-tags{
 	font-size:11px;
@@ -856,7 +857,7 @@ width:900px;
 #copyright{
 	float:left;
 	background:url(images/sprite_master.png) -749px -366px no-repeat;
-	width:270px;
+	width:300px;
 	height:42px;
 	padding-left:120px;
 	color:#abb1aa;
@@ -893,9 +894,11 @@ width:900px;
 	}
 #developer{
 	height:24px;
+	width:300px;
 	float:right;
 	margin-right:5px;
 	color:#abb1aa;
 	font:normal 11px tahoma;
-	padding-top:42px;
+	padding-top:26px;
+	text-align:right;
 }

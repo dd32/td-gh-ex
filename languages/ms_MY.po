@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graphene 1.0 theme for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-11 13:41+1200\n"
-"PO-Revision-Date: 2010-08-11 13:44+1200\n"
+"POT-Creation-Date: 2010-08-14 03:49+1200\n"
+"PO-Revision-Date: 2010-08-14 03:49+1200\n"
 "Last-Translator: Syahir Hakim <syahir@khairul-syahir.com>\n"
 "Language-Team: Syahir Hakim <syahir@khairul-syahir.com>\n"
 "MIME-Version: 1.0\n"
@@ -26,14 +26,14 @@ msgid "No comment yet"
 msgstr "Tiada komen"
 
 #: comments.php:36
-#: loop.php:67
+#: loop.php:69
 msgid "1 comment"
 msgstr "1 komen"
 
 #: comments.php:36
-#: loop.php:67
+#: loop.php:69
 #, php-format
-msgid "% comment"
+msgid "% comments"
 msgstr "% komen"
 
 #: comments.php:68
@@ -46,23 +46,24 @@ msgid "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> t
 msgstr "Anda boleh menggunakan tag dan attribute <abbr title=\"HyperText Markup Language\">HTML</abbr> yang berikut: %s"
 
 #: comments.php:71
+#: functions.php:541
 msgid "Submit Comment"
 msgstr "Hantar Komen"
 
-#: footer.php:16
+#: footer.php:19
 #: admin/options.php:206
 msgid "Except where otherwise noted, content on this site is licensed under a <a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/\">Creative Commons Licence</a>."
 msgstr "Kecuali dinyatakan sebaliknya, kandungan laman web ini dilesenkan di bawah <a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/\">Lesen Creative Commons</a>."
 
-#: footer.php:22
+#: footer.php:25
 msgid "Valid XHTML 1.0 Strict"
 msgstr "Menepati piawaian XHTML 1.0 Strict"
 
-#: footer.php:23
+#: footer.php:26
 msgid "Valid CSS Level 2.1"
 msgstr "Menepati piawaian CSS Level 2.1"
 
-#: footer.php:43
+#: footer.php:47
 #, php-format
 msgid "%1$s uses %2$s theme by %3$s."
 msgstr "%1$s menggunakan tema %2$s oleh %3$s."
@@ -95,72 +96,72 @@ msgstr "Muka Utama"
 msgid " says:"
 msgstr " berkata:"
 
-#: functions.php:303
+#: functions.php:304
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s pada %2$s"
 
-#: functions.php:305
+#: functions.php:306
 msgid "Edit comment"
 msgstr "Edit komen"
 
-#: functions.php:306
+#: functions.php:307
 msgid "Reply"
 msgstr "Balas"
 
-#: functions.php:310
+#: functions.php:311
 msgid "Your comment is awaiting moderation."
 msgstr "Komen anda sedang menunggu moderasi."
 
-#: functions.php:371
+#: functions.php:372
 msgid "Primary Widget Area"
 msgstr "Bahagian Widget Utama"
 
-#: functions.php:373
+#: functions.php:374
 msgid "The primary widget area"
 msgstr "Bahagian widget utama"
 
-#: functions.php:419
+#: functions.php:420
 msgid "Follow me on Twitter"
 msgstr "Ikuti saya di Twitter"
 
-#: functions.php:457
+#: functions.php:458
 msgid "Latest tweets"
 msgstr "Tweet terkini"
 
-#: functions.php:462
+#: functions.php:463
 msgid "Title:"
 msgstr "Tajuk:"
 
-#: functions.php:466
+#: functions.php:467
 msgid "Twitter Username:"
 msgstr "Nama pengguna Twitter:"
 
-#: functions.php:470
+#: functions.php:471
 msgid "Number of tweets to display:"
 msgstr "Bilangan tweet untuk dipaparkan:"
 
-#: functions.php:511
+#: functions.php:512
 msgid "Graphene Options"
 msgstr "Tetapan Graphene"
 
-#: functions.php:526
+#: functions.php:527
 msgid "Name:"
 msgstr "Nama:"
 
-#: functions.php:527
+#: functions.php:528
 msgid "Email:"
 msgstr "Emel:"
 
-#: functions.php:528
+#: functions.php:529
 msgid "Website:"
 msgstr "Laman web:"
 
-#: functions.php:535
+#: functions.php:536
 msgid "Message:"
 msgstr "Mesej:"
 
-#: header.php:54
+#: header.php:53
 msgid "Subscribe to RSS feed"
 msgstr "Langgani capaian RSS"
 
@@ -190,35 +191,35 @@ msgstr "Baca artikel penuh &raquo;"
 msgid "<p><strong>Pages:</strong> "
 msgstr "<p><strong>Halaman:</strong> "
 
-#: loop.php:56
+#: loop.php:57
 msgid "Tags: "
 msgstr "Tag:"
 
-#: loop.php:56
+#: loop.php:57
 msgid "This post has no tag"
 msgstr "Artikel ini tidak mempunyai tag"
 
-#: loop.php:67
+#: loop.php:69
 msgid "Leave comment"
 msgstr "Tulis komen"
 
-#: loop.php:89
+#: loop.php:91
 msgid "Older posts &laquo;"
 msgstr "Artikel terdahulu &laquo;"
 
-#: loop.php:90
+#: loop.php:92
 msgid "&raquo; Newer posts"
 msgstr "&raquo; Artikel terkini"
 
-#: loop.php:97
+#: loop.php:99
 msgid "Not found"
 msgstr "Tidak dijumpai"
 
-#: loop.php:102
+#: loop.php:104
 msgid "Sorry, but you are looking for something that isn't here. Wanna try a search?"
 msgstr "Maaf, artikel yang anda pohon tidak dijumpai di laman ini. Hendak mencuba carian?"
 
-#: loop.php:104
+#: loop.php:106
 msgid "Sorry, but no results were found for that keyword. Wanna try an alternative keyword search?"
 msgstr "Maaf, tiada artikel dijumpai menggunakan kata kunci tersebut. Hendak mencuba carian menggunakan kata kunci alternatif?"
 
@@ -256,24 +257,24 @@ msgstr "Carian"
 msgid "Archives"
 msgstr "Arkib"
 
-#: sidebar.php:31
+#: sidebar.php:29
 msgid "Meta"
 msgstr "Meta"
 
-#: sidebar.php:37
+#: sidebar.php:35
 msgid "Posts RSS"
 msgstr "RSS Artikel"
 
-#: sidebar.php:38
+#: sidebar.php:36
 msgid "Comments RSS"
 msgstr "RSS Komen"
 
-#: sidebar.php:39
+#: sidebar.php:38
 #, php-format
 msgid "Powered by %s"
 msgstr "Laman menggunakan %s"
 
-#: sidebar.php:39
+#: sidebar.php:38
 msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
 msgstr "Laman menggunakan WordPress, platform penerbitan peribadi yang semantik dan canggih."
 
@@ -364,6 +365,9 @@ msgstr "Menanggalkan tema ini <strong>tidak menghapuskan</strong> fail-fail tema
 #: admin/options.php:238
 msgid "Uninstall Theme"
 msgstr "Tanggalkan Tema"
+
+#~ msgid "% comment"
+#~ msgstr "% komen"
 
 #~ msgid "Categories:"
 #~ msgstr "Kategori:"

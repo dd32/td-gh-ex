@@ -33,7 +33,7 @@
 <?php /* Lists all the comments for the current post */ ?>
 <div id="comments" class="clearfix">
 <?php if ('open' == $post->comment_status) : ?>
-    <h4><?php comments_number( __('No comment yet','graphene'), __('1 comment','graphene'), _n("% comment","% comments", get_comments_number(),'graphene') );?></h4>
+    <h4><?php comments_number(__('No comment yet','graphene'), __('1 comment','graphene'), __("% comments", 'graphene') );?></h4>
 
 	<?php if ( have_comments() ) : ?>
     <ol class="clearfix">

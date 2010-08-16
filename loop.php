@@ -66,7 +66,7 @@
                         <?php if (is_single() || is_page()) : ?>
                             <?php graphene_addthis(); ?>
                         <?php else : ?>
-                        	<p class="comment-link"><?php comments_popup_link(__('Leave comment','graphene'), __('1 comment','graphene'), _n("% comment","% comments", get_comments_number(),'graphene')); ?></p>
+                        	<p class="comment-link"><?php comments_popup_link(__('Leave comment','graphene'), __('1 comment','graphene'), __("% comments",'graphene')); ?></p>
                         <?php endif; ?>
                     </div>
                 </div>
