@@ -4,18 +4,10 @@
 	<?php if (have_posts()) : ?>
 		<div id="thumbnail">
 		<ul>
-		<?php while (have_posts()) : the_post(); ?>
-			<li class="post entry">
-				<a href="<?php the_permalink() ?>"><?php birdsite_the_thumbnail(); ?></a>
-				<h2><a href="<?php the_permalink() ?>" rel="bookmark"><?php birdsite_the_thumbnail_title(get_the_title()); ?></a></h2>
-		        <div class="postMeta">
-		        	<div><?php the_time(get_option('date_format')); ?></div>
-					<?php if ('closed' <> $post->comment_status) : ?>
-						<div class="comment"><?php comments_popup_link(__('No Comments &#187;', 'birdsite'), __('1 Comment &#187;', 'birdsite'), __('% Comments &#187;', 'birdsite'), '', __('Comments Closed', 'birdsite') ); ?></div>
-					<?php endif; ?>
-				</div>
-			</li>
-		<?php endwhile; ?>
+			<?php while (have_posts()) : the_post(); ?><li class="post entry"><?php birdsite_the_thumbnail(); ?><h2><a href="<?php the_permalink() ?>" rel="bookmark"><?php birdsite_the_thumbnail_title(get_the_title()); ?></a></h2><p><?php the_time(get_option('date_format')); ?>
+			<?php if ('closed' <> $post->comment_status) : ?><br /><?php comments_popup_link(__('No Comments &#187;', 'birdsite'), __('1 Comment &#187;', 'birdsite'), __('% Comments &#187;', 'birdsite'), '', __('Comments Closed', 'birdsite') ); ?>
+				<?php endif; ?>
+			</p></li><?php endwhile; // no CR conform CSS ?> 
 		</ul>
 		</div>
 

@@ -10,11 +10,11 @@
 	 	  <?php /* If this is a tag archive */ } elseif( is_tag() ) { ?>
 			<h1 class="pagetitle"><?php printf(__('Posts Tagged &#8216;%s&#8217;', 'birdsite'), single_tag_title('', false) ); ?></h1>
 	 	  <?php /* If this is a daily archive */ } elseif (is_day()) { ?>
-			<h1 class="pagetitle"><?php printf(_c('Archive for %s|Daily archive page', 'birdsite'), get_the_time(__('F jS, Y', 'birdsite'))); ?></h1>
+			<h1 class="pagetitle"><?php printf(__('Archive for %s|Daily archive page', 'birdsite'), get_the_time(__('F jS, Y', 'birdsite'))); ?></h1>
 	 	  <?php /* If this is a monthly archive */ } elseif (is_month()) { ?>
-			<h1 class="pagetitle"><?php printf(_c('Archive for %s|Monthly archive page', 'birdsite'), get_the_time(__('F, Y', 'birdsite'))); ?></h1>
+			<h1 class="pagetitle"><?php printf(__('Archive for %s|Monthly archive page', 'birdsite'), get_the_time(__('F, Y', 'birdsite'))); ?></h1>
 	 	  <?php /* If this is a yearly archive */ } elseif (is_year()) { ?>
-			<h1 class="pagetitle"><?php printf(_c('Archive for %s|Yearly archive page', 'birdsite'), get_the_time(__('Y', 'birdsite'))); ?></h1>
+			<h1 class="pagetitle"><?php printf(__('Archive for %s|Yearly archive page', 'birdsite'), get_the_time(__('Y', 'birdsite'))); ?></h1>
 		  <?php /* If this is an author archive */ } elseif (is_author()) { ?>
 			<h1 class="pagetitle"><?php _e('Author Archive', 'birdsite'); ?></h1>
 	 	  <?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
@@ -23,19 +23,10 @@
 
 		<div id="thumbnail">
 		<ul>
-    	<?php while (have_posts()) : the_post(); ?>
-			<li class="post entry">
-				<a href="<?php the_permalink() ?>"><?php birdsite_the_thumbnail(); ?></a>
-				<h3 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php birdsite_the_thumbnail_title(get_the_title()); ?></a></h3>
-				<?php if ('closed' <> $post->comment_status) : ?>
-			        <div class="postMeta">
-			        	<div><?php the_date(get_option('date_format')); ?></div>
-						<div class="comment"><?php comments_popup_link(__('No Comments &#187;', 'birdsite'), __('1 Comment &#187;', 'birdsite'), __('% Comments &#187;', 'birdsite'), '', __('Comments Closed', 'birdsite') ); ?>
-						</div>
-					</div>
+			<?php while (have_posts()) : the_post(); ?><li class="post entry"><?php birdsite_the_thumbnail(); ?><h2><a href="<?php the_permalink() ?>" rel="bookmark"><?php birdsite_the_thumbnail_title(get_the_title()); ?></a></h2><p><?php the_time(get_option('date_format')); ?>
+			<?php if ('closed' <> $post->comment_status) : ?><br /><?php comments_popup_link(__('No Comments &#187;', 'birdsite'), __('1 Comment &#187;', 'birdsite'), __('% Comments &#187;', 'birdsite'), '', __('Comments Closed', 'birdsite') ); ?>
 				<?php endif; ?>
-			</li>
-			<?php endwhile; ?>
+			</p></li><?php endwhile; // no CR conform CSS ?> 
 		</ul>
 		</div>
 		

@@ -1,14 +1,14 @@
 /*
 Theme Name: BirdSITE
-Theme URI: http://sysbird.jp/birdsite/
+Themel URI: http://sysbird.jp/birdsite/
 Description: Simple Photolog
-Version: 1.0
+Version: 1.01
 Author: Sysbird
 Author URI: http://sysbird.jp/blog/
 Tags: white, fixed-width, one-column, photoblogging
 Text Domain: BirdSITE
 
-	BirdSITE v1.0
+	BirdSITE v1.01
 	http://sysbird.jp/birdsite/
 
 	This theme was designed and built by Sysbird,
@@ -38,10 +38,6 @@ html {
 h1, h2, h3, h4, h5, h6 {
     font-size: 100%; 
     font-weight: normal;
-	}
-
-ol, ul {
-    list-style:none;
 	}
 
 fieldset, img {
@@ -190,25 +186,72 @@ a:hover{
   text-align: left;
 	}
 
-#content .entry {
+	#content .entry {
 	text-align: center;
 }
-
-#content .entry p {
-	margin-top: 0.5em;
-	}
 
 #content h1 {
 	font-size: 130%;
 	font-weight: normal;
 	margin: 10px 0 30px;
 	padding: 0;
+	line-height: 1.5;
 	}
 
+#content table caption {
+	font-weight: bold;
+	color: #333;
+	font-style: italic;
+	}
+
+
+#content table th {
+	border-bottom: solid 1px #CCC;
+	font-weight: bold;
+	}
+
+#content table td {
+	border-bottom: solid 1px #CCC;
+	}
+
+#content blockquote {
+	margin-left: 1em;
+	}
+
+#content pre {
+	border: dashed 1px #CCC;
+	padding: 10px;
+	}
+
+#content ul,
+#content ol {
+	margin-left: 1em;
+}
+
 #content h2 {
-	font-size: 130%;
-	font-weight: normal;
-	margin: 2em 0 1em 0;
+	font-size: 120%;
+	font-weight: bold;
+	margin: 0 0 0.5em 0;
+	}
+
+#content h3 {
+	font-size: 120%;
+	margin: 0 0 0.5em 0;
+	}
+
+#content h4 {
+	font-size: 110%;
+	margin: 0 0 0.5em 0;
+	}
+
+#content h5 {
+	font-size: 100%;
+	margin: 0 0 0.5em 0;
+	}
+
+#content h6 {
+	font-size: 100%;
+	margin: 0 0 0.5em 0;
 	}
 
 /* thumbnail List
@@ -216,10 +259,6 @@ a:hover{
 #content #thumbnail {
 	width: 610px;
 }
-	
-* html #content #thumbnail { /* for IE6 */
-	width: 610px;
-	}
 
 #content #thumbnail:after {
 	content: ".";
@@ -228,23 +267,9 @@ a:hover{
 	height: 0;
 	visibility: hidden;
 	}
-	
+
 #content #thumbnail a {
 	color: #002A5A;
-}
-
-#content #thumbnail h2,
-#content #thumbnail h3 {
-	text-align: center;
-	font-size: 110%;
-	font-weight: normal;
-	margin: 10px 0 0 0;
-	padding: 0;
-	}
-
-#content #thumbnail h2 a,
-#content #thumbnail h3 a {
-	color: #555;
 	}
 
 #content #thumbnail ul {
@@ -254,68 +279,88 @@ a:hover{
 	zoom: 1;
 	}
 
-* html #content #thumbnail ul { /* for IE6 */
-	margin-right: -20px;
-	}
-
 #content #thumbnail ul li {
 	font-size: 90%;
-	float: left;
-	width: 180px;
-	height: 290px;
-	padding: 0 5px;
+	width: 150px;
+	overflow: hidden;
+	padding: 20px 20px 35px 20px;
 	margin: 0 20px 10px 0;
-	background: url(images/shadow.gif) no-repeat;
+	border-top: solid 1px #E4E4E4;
+	background: url(images/shadow.gif) no-repeat bottom left;
+
+	min-height: 250px;
+	height: auto !important;
+	height: 250px;
+
+	display:inline-block;
+	vertical-align:top;
+
+	_display:inline; /* IE6 and below */
+	_zoom:1; /* IE6 and below */
 	}
 
-#content #thumbnail ul li .postMeta {
-	font-size: 90%;
-	margin-top: 5px;
+#content #thumbnail ul li h2 {
+	font-size: 110%;
+	font-weight: normal;
+	line-height: 1.2;
+	margin: 0 0 10px 0;
+	padding: 0;
+	}
+
+#content #thumbnail ul li h2 a {
+	color: #555;
 	}
 
 #content #thumbnail ul li img {
 	border: none;
-	margin-top: 20px;
+	margin-bottom: 10px;
+	}
+
+#content #thumbnail ul li p {
+	font-size: 90%;
+	margin : 0;
+	text-align: center;
+	color: #333;
+	font-style: italic;
 	}
 
 /* Pagenation
 -------------------------------------------------------------------- */
 #content .tablenav {
-	color: #2583ad;
-	text-align:center;
-	}
+	margin-top: 20px;
+	color: #00A;
+}
 
-#content .tablenav a.page-numbers, .tablenav .current {
-	color: #00019b;
+#content .tablenav a.page-numbers,
+#content .tablenav .current {
+	color:#06C;
 	padding: 2px .4em;
-	border:solid 1px #ccc;
+	border:solid 1px #CCC;
+	background: #EFEFEF;
 	text-decoration:none;
 	font-size:smaller;
-	}
+}
+
+#content .tablenav a.page-numbers {
+	font-weight: bold;
+}
 
 #content .tablenav a.page-numbers:hover {
-	color:white;
-	background: #328ab2;
-	background: #39c;
-	}
+	border-color: #DF610D;
+	color: #DF610D;
+	font-weight: bold;
+}
 
 #content .tablenav .current {
-	color: white;
-	background: #328ab2;
-	background: #39c;
-	background: #80A9FB;
-	border-color: #328ab2;
-	border-color: #39c;
-	font-weight:bold;
-	}
+	color: #333;
+	background: #DDD;
+	border-color: #CCC;
+}
 
-#content .tablenav a.next, .tablenav a.prev {
-	border:0 none;
-	background:transparent;
-	text-decoration:underline;
-	font-size:smaller;
-	font-weight:bold;
-	}
+#content .tablenav a.next, #content .tablenav a.prev {
+	border: none;
+	background: #FFF;
+}
 
 /* Single Post Page
 -------------------------------------------------------------------*/
@@ -339,6 +384,23 @@ a:hover{
 	border: 1px solid #DDD;
 	}
 
+.single #content .page-link {
+}
+
+.single #content .page-link a {
+	color:#06C;
+	padding: 2px .4em;
+	border:solid 1px #CCC;
+	background: #EFEFEF;
+	text-decoration:none;
+	font-size:smaller;
+}
+
+.single #content .page-link a:hover {
+	border-color: #DF610D;
+	color: #DF610D;
+}
+
 /* Comments
 -------------------------------------------------------------------*/
 .single #content #comments {
@@ -349,6 +411,11 @@ a:hover{
 	font-size: 130%;
 	font-weight: normal;
 	margin: 2em 0 1em 0;
+	}
+
+.single #content #comments ol,
+.single #content #comments ul {
+	list-style: none;
 	}
 
 .single #content #comments ol li {
@@ -432,6 +499,15 @@ a:hover{
 	float: left;
 	}
 
+
+#sidebar ul {
+	margin-left: 1em;
+	list-style: none;
+	}
+
+#sidebar ol {
+	margin-left: 1em;
+	}
 
 /* Footer
 -------------------------------------------------------------------- */

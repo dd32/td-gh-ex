@@ -88,14 +88,17 @@ function birdsite_the_thumbnail() {
 		}
 	}
 
-	echo $html;
+	if(!empty($html)){
+		$html = '<a href="' .get_permalink($id) .'">' .$html .'</a>'; 
+		echo $html;
+	}
 }
 
 //////////////////////////////////////////////////////
 // Show thumbnail title
 function birdsite_the_thumbnail_title( $title ) {
 
-	$title = mb_strimwidth ($title, 0, 44, "...",utf8);
+//	$title = mb_strimwidth ($title, 0, 44, "...",utf8);
 	echo $title;
 }
 
@@ -127,11 +130,14 @@ function birdsite_the_images() {
 //////////////////////////////////////////////////////
 // Add FeedIcon
 function birdsite_setup() {
-	add_theme_support( 'automatic-feed-links' );
+	if ( function_exists( 'add_theme_support' ) ) {
+		add_theme_support( 'automatic-feed-links' );
+	}
 }
 
-
+//////////////////////////////////////////////////////
+// Action Hook
 add_action( 'widgets_init', 'birdsite_widgets_init' );
-automatic_feed_links();
+add_action( 'after_setup_theme', 'birdsite_setup' );  
 
 ?>

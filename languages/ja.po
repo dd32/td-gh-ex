@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: BirdSITE 2.8 ja\n"
 "Report-Msgid-Bugs-To: http://www.sysbird.jp/toriko\n"
 "POT-Creation-Date: 2010-08-08 17:54+0300\n"
-"PO-Revision-Date: 2010-08-11 16:14+0900\n"
+"PO-Revision-Date: 2010-08-17 16:44+0900\n"
 "Last-Translator: TORIYAMA Yuko <sysbird@gmail.com>\n"
 "Language-Team: sysbird <sysbird@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -65,27 +65,27 @@ msgstr "投稿者のアーカイブ"
 msgid "Blog Archives"
 msgstr "ブログアーカイブ"
 
-#: archive.php:33
-#: index.php:14
-#: search.php:18
+#: archive.php:27
+#: index.php:8
+#: search.php:12
 msgid "No Comments &#187;"
-msgstr "コメントはまだありません &#187;"
+msgstr "コメント &#187;"
 
-#: archive.php:33
-#: index.php:14
-#: search.php:18
+#: archive.php:27
+#: index.php:8
+#: search.php:12
 msgid "1 Comment &#187;"
 msgstr "1件のコメント &#187;"
 
-#: archive.php:33
-#: index.php:14
-#: search.php:18
+#: archive.php:27
+#: index.php:8
+#: search.php:12
 msgid "% Comments &#187;"
 msgstr "%件のコメント &#187;"
 
-#: archive.php:33
-#: index.php:14
-#: search.php:18
+#: archive.php:27
+#: index.php:8
+#: search.php:12
 msgid "Comments Closed"
 msgstr "コメントは受け付けていません。"
 
@@ -111,10 +111,6 @@ msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr "コメントを投稿するには<a href=\"%s\">ログイン</a>してください。"
 
 #: comments.php:51
-msgid "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of this account\">Log out &raquo;</a>"
-msgstr "<a href=\"%1$s\">%2$s</a> としてログイン中。<a href=\"%3$s\" title=\"このアカウントからログアウトする\">ログアウト &raquo;</a>"
-
-#: comments.php:51
 msgid "Logged in as <a href=\"%1$s\">%2$s</a>."
 msgstr "<a href=\"%1$s\">%2$s</a> としてログイン中。"
 
@@ -133,7 +129,7 @@ msgstr "お名前"
 #: comments.php:55
 #: comments.php:56
 msgid "(required)"
-msgstr " (必須)"
+msgstr "(必須)"
 
 #: comments.php:56
 msgid "Mail (will not be published)"
@@ -147,7 +143,7 @@ msgstr "ウェブサイト"
 msgid "Submit Comment"
 msgstr "コメント送信"
 
-#: comments.php:76
+#: comments.php:73
 msgid "Comments are closed."
 msgstr "コメントは受け付けていません。"
 
@@ -175,8 +171,7 @@ msgstr "この投稿の続きを読む &raquo;"
 msgid "Search Results &#8216;%s&#8217;"
 msgstr "&#8216;%s&#8217; の検索結果"
 
-#: search.php:31
-#: single.php:25
+#: search.php:22
 msgid "Sorry, no posts matched &#8216;%s&#8217;"
 msgstr "&#8216;%s&#8217; は見つかりませんでした。"
 
@@ -184,7 +179,7 @@ msgstr "&#8216;%s&#8217; は見つかりませんでした。"
 msgid "Categories"
 msgstr "カテゴリー"
 
-#: sidebar.php:13
+#: sidebar.php:11
 msgid "Archives"
 msgstr "アーカイブ"
 
@@ -192,23 +187,23 @@ msgstr "アーカイブ"
 msgid "Meta"
 msgstr "メタ情報"
 
-#: single.php:13
+#: single.php:16
 msgid "Pages:"
 msgstr "ページ:"
 
-#: single.php:17
+#: single.php:19
 msgid "Edit"
 msgstr "編集"
 
-#: single.php:19
+#: single.php:20
 msgid "Posted in:"
 msgstr "カテゴリー:"
 
-#: single.php:20
+#: single.php:21
 msgid "Tags"
 msgstr "タグ"
 
-#: single.php:29
+#: single.php:30
 msgid "Sorry, no posts matched your criteria."
 msgstr "該当する投稿は見つかりませんでした。"
 

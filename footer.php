@@ -4,7 +4,7 @@
 
     <form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
 		<div id="qsearch">
-			<input type="text" name="s" id="s" value="" />
+			<input type="text" name="s" id="s" value="<?php if(is_search()): echo esc_html($s); endif; ?>" />
 			<input class="btn" alt="Search" type="image" src="<?php echo bloginfo('template_url'); ?>/images/search.gif" title="Search" id="searchsubmit" value="<?php _e('Search', 'birdsite'); ?>" />
 		</div>
     </form>
