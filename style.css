@@ -4,10 +4,10 @@ Theme URI: http://blog.rcg-pt.net/rcg-forest/
 Description: A simple green theme.
 Author: Rui Carlos A. Gonçalves <rcgoncalves.pt@gmail.com>
 Author URI: http://rcg-pt.net
-Version: 1.5.0
-Tags: green, fixed-width, two-columns, right-sidebar, translation-ready, custom-header
+Version: 1.6.0
+Tags: green, fixed-width, two-columns, right-sidebar, translation-ready, custom-header, threaded-comments, sticky-post
 
-License: This theme is released under GNU GPL.
+License: GNU GPL 2.0
 
 Acknowledgements:
 Thanks to Jean-Baptiste Nizet for the French translation.
@@ -15,23 +15,23 @@ Thanks to Marcis G for the Russian and Belorussian translations.
 */
 
 body {
-  font-size: 75%;
-  font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif;
-  color: #333;
-  margin: 0;
   background-color: #444;
+  color: #333;
+  font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif;
+  font-size: 75%;
+  margin: 0;
 }
 
 #top {
-  width: 100%;
-  height: 60px;
   background-color: #222;
   border-bottom: #999 solid;
+  width: 100%;
+  height: 60px;
 }
 
 #topcenter {
-  width: 770px;
   margin: 0 auto;
+  width: 770px;
 }
 
 #search {
@@ -41,32 +41,32 @@ body {
 
 #page {
   background-color: #fff;
-  width: 780px;
   margin: auto;
+  width: 780px;
 }
 
 #header {
   background: url(images/forest.png) no-repeat;
-  height: 120px;
   border: 3px #fff solid;
+  height: 120px;
 }
 
 #sidebar {
-  width: 200px;
   margin-left: 540px;
   padding: 15px 20px 20px 20px;
+  width: 200px;
 }
 
 #footer {
   background-color: #444;
-  text-align: center;
   clear: both;
   padding: 10px;
+  text-align: center;
 }
 
-#commentform #submit {
-  margin: 0 0 15px auto;
+#respond #submit {
   float: right;
+  margin: 0 0 15px auto;
 }
 
 /*========================================================*/
@@ -85,14 +85,14 @@ body {
 }
 
 .twocolumns {
-  width: 490px;
   float: left;
   padding: 0px 25px;
+  width: 490px;
 }
 
 .onecolumn {
-  width: 500px;
   margin: auto;
+  width: 500px;
 }
 
 /*========================================================*/
@@ -102,28 +102,65 @@ body {
 }
 
 .navigation {
+  font-size: 12px;
+}
+
+.navigation-comments {
+  font-size: 10px;
+  height: 13px;
+}
+
+.nav-prev {
   display: block;
-  margin-top: 20px;
+  float: left;
+  margin-top: 0px;
   margin-bottom: 20px;
-  height: 16px;
+  width: 50%;
+}
+
+.navigation-comments .nav-prev {
+  margin-bottom: 0px;
+}
+
+.nav-next {
+  float: right;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  text-align: right;
+  width: 50%;
+}
+
+.navigation-comments .nav-next {
+  margin-bottom: 0px;
 }
 
 .postinfo {
+  border-bottom: thin dotted #CCC;
+  border-top: thin dotted #CCC;
   clear: both;
+  color: #666;
   margin: 10px 2px 20px 2px;
   padding: 3px 2px 3px 2px;
-  border-top: thin dotted #CCC;
-  border-bottom: thin dotted #CCC;
-  color: #666;
 }
 
 .postinfocom {
+  border-bottom: thin dotted #CCC;
+  border-top: thin dotted #CCC;
   clear: both;
+  color: #666;
   height: 15px;
   padding: 4px 2px 2px 2px;
-  border-top: thin dotted #CCC;
-  border-bottom: thin dotted #CCC;
-  color: #666;
+}
+
+a.post-edit-link {
+  clear: both;
+  display: block;
+}
+
+.postinfo a.post-edit-link,
+.postinfocom a.post-edit-link {
+  clear: none;
+  display: inline;
 }
 
 .com {
@@ -133,14 +170,12 @@ body {
 
 .nocomments {
   text-align: center;
-  margin: 0;
-  padding: 0;
 }
 
 .commentmetadata {
-  margin: 0;
   display: block;
   font-weight: normal;
+  margin: 0;
 }
 
 .alt {
@@ -148,6 +183,29 @@ body {
 }
 
 /*========================================================*/
+
+table {
+  border: 2px solid #eee;
+  margin: 0;
+  padding: 0;
+}
+
+tr {
+  margin: 0;
+  padding: 0;
+}
+
+th {
+  font-weight: bold;
+  margin: 0;
+  padding: 5px 8px;
+}
+
+td {
+  border-top: 1px solid #eee;
+  margin: 0;
+  padding: 5px 8px;
+}
 
 p {
   margin: 8px 0px;
@@ -164,12 +222,16 @@ a:hover {
   text-decoration: underline;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Sans-Serif;
   font-weight: bold;
 }
 
-h2, h2 a, h2 a:visited {
+h2,
+h2 a,
+h2 a:visited {
   color: #333;
 }
 
@@ -201,7 +263,8 @@ code {
   font: 1.2em 'Courier New', Courier, Fixed;
 }
 
-acronym, abbr {
+acronym,
+abbr {
   font-size: 0.9em;
   letter-spacing: .07em;
 }
@@ -240,93 +303,107 @@ a img.aligncenter {
 
 .aligncenter,
 div.aligncenter {
-   display: block;
-   margin-left: auto;
-   margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .alignleft {
-   float: left;
+  float: left;
 }
 
 .alignright {
-   float: right;
+  float: right;
 }
 
 .wp-caption {
-  border: 1px solid #ddd;
-  text-align: center;
   background-color: #f3f3f3;
-  max-width: 96%;
-  padding-top: 5px;
-  margin: 10px;
-  /* optional rounded corners for browsers that support it */
+  border: 1px solid #ddd;
   -moz-border-radius: 3px;
   -khtml-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
+  margin: 10px;
+  max-width: 96%;
+  padding-top: 5px;
+  text-align: center;
 }
 
 .wp-caption img {
-   margin: 0;
-   padding: 0;
-   border: 0 none;
-   max-width: 100%;
-   height: auto;
+  border: 0 none;
+  height: auto;
+  margin: 0;
+  max-width: 100%;
+  padding: 0;
 }
 
 .wp-caption p.wp-caption-text {
-   font-size: 11px;
-   line-height: 17px;
-   padding: 5px;
-   margin: 0;
+  font-size: 11px;
+  line-height: 17px;
+  margin: 0;
+  padding: 5px;
 }
 
 img {
   border: 0;
-  max-width: 100%;
   height: auto;
+  max-width: 100%;
 }
 
 blockquote {
+  border-left: 5px solid #ddd;
   color: #777;
   margin: 15px 30px 0 20px;
   padding-left: 10px;
-  border-left: 5px solid #ddd;
 }
 
-/*========================================================*/
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-bottom: 10px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 5px;
+}
+
+/* =Header
+-------------------------------------------------------------- */
 
 #topcenter h1 {
-  margin: 12px 2px;
-  font-size: 2.5em;
   color: #dec;
   display: inline;
   float: left;
+  font-size: 2.5em;
+  margin: 12px 2px;
 }
 
 #topcenter h1 a {
-  text-decoration: none;
   color: #dec;
+  text-decoration: none;
 }
 
 #topcenter h2 {
-  margin: 24px 0px;
-  font-size: 1.2em;
   color: #dec;
   display: inline;
   float: left;
+  font-size: 1.2em;
+  margin: 24px 0px;
 }
 
-/*========================================================*/
+/* =Post and Comments
+-------------------------------------------------------------- */
 
 .post {
   text-align: justify;
 }
 
 .post h2 {
-  margin: 20px 0 2px 0;
   clear: both;
+  margin: 20px 0 2px 0;
 }
 
 .entry {
@@ -334,9 +411,9 @@ blockquote {
 }
 
 .entry ul {
+  list-style: none;
   margin-left: 0;
   padding: 0 0 0 10px;
-  list-style: none;
   text-indent: -10px;
 }
 
@@ -355,16 +432,15 @@ blockquote {
 }
 
 .entry ol li {
-  margin: 7px 0 8px 10px;
   list-style-position: inside;
+  margin: 7px 0 8px 10px;
 }
 
 .entry ol li:before {
   content: "";
 }
 
-.entry form {
-  text-align:center;
+.entry input {
 }
 
 .com a {
@@ -372,33 +448,33 @@ blockquote {
   padding-left: 18px;
 }
 
-ol.commentlist {
+ul.commentlist,
+.commentlist ul {
+  list-style-type: none;
   margin: 0;
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
-.commentlist li {
-  font: 0.9em 'Lucida Grande', Verdana, Arial, Sans-Serif;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .commentlist li {
   border: #ccc 1px dotted;
+  font: 0.9em 'Lucida Grande', Verdana, Arial, Sans-Serif;
   margin: 4px 0;
   padding: 4px;
 }
 
 .commentlist li .avatar { 
-  float: right;
-  border: 1px solid #eee;
-  padding: 2px;
   background: #fff;
+  border: 1px solid #eee;
+  float: right;
+  padding: 2px;
 }
 
-.commentlist cite, .commentlist cite a {
-  font-weight: bold;
-  font-style: normal;
+.commentlist cite,
+.commentlist cite a {
   font-size: 1.1em;
+  font-style: normal;
+  font-weight: bold;
 }
 
 .commentlist p {
@@ -410,36 +486,45 @@ ol.commentlist {
   text-decoration: none;
 }
 
-#commentform input, #commentform textarea {
+#respond input,
+#respond textarea {
   font: 0.9em 'Lucida Grande', Verdana, Arial, Sans-Serif;
 }
 
-#commentform input {
-  width: 170px;
-  padding: 2px;
-  margin: 5px 5px 1px 0;
+#respond input {
 }
 
-#commentform textarea {
-  width: 100%;
-  padding: 2px;
+#respond textarea {
+  width: 99%;
 }
 
-/*========================================================*/
+#reply-title {
+  clear: both;
+  display: block;
+}
+
+p.form-submit {
+  height: 20px;
+}
+
+/* =Sidebar
+-------------------------------------------------------------- */
+
 
 #sidebar h2 {
+  border-bottom: 1px dotted #888;
   font-family: 'Lucida Grande', Verdana, Sans-Serif;
   font-size: 1.2em;
-  text-decoration: none;
   margin: 0px 0px;
-  border-bottom: 1px dotted #888;
+  text-decoration: none;
 }
 
 #sidebar ul ul li:before {
   content: "\00BB \0020";
 }
 
-#sidebar ul, #sidebar ul ol {
+#sidebar ul,
+#sidebar ul ol {
   margin: 0;
   padding: 0;
 }
@@ -450,26 +535,36 @@ ol.commentlist {
   margin-bottom: 25px;
 }
 
-#sidebar ul p, #sidebar ul select {
+#sidebar ul p,
+#sidebar ul select {
   margin: 5px 0 8px;
 }
 
-#sidebar ul ul, #sidebar ul ol {
+#sidebar ul ul,
+#sidebar ul ol {
   margin: 0 0 0 10px;
 }
 
-#sidebar ul ul ul, #sidebar ul ol {
+#sidebar ul ul ul,
+#sidebar ul ol {
   margin: 0 0 0 10px;
 }
 
-ol li, #sidebar ul ol li {
+ol li,
+#sidebar ul ol li {
   list-style: decimal outside;
 }
 
-#sidebar ul ul li, #sidebar ul ol li {
+#sidebar ul ul li,
+#sidebar ul ol li {
+  font-size: 90%;
   margin: 2px 0 0;
   padding: 0;
-  font-size: 90%;
+}
+
+table#wp-calendar,
+#wp-calendar td {
+  border: 0;
 }
 
 #wp-calendar {
@@ -491,15 +586,15 @@ ol li, #sidebar ul ol li {
 }
 
 #wp-calendar a {
-   text-decoration: none;
    display: block;
+   text-decoration: none;
 }
 
 #wp-calendar caption {
-  text-align: center;
-  width: 100%;
   font: bold 1.3em 'Lucida Grande', Verdana, Arial, Sans-Serif;
+  text-align: center;
   text-decoration: none;
+  width: 100%;
 }
 
 #wp-calendar th {
@@ -516,7 +611,8 @@ ol li, #sidebar ul ol li {
   background-color: #fff;
 }
 
-/*========================================================*/
+/* =Footer
+-------------------------------------------------------------- */
 
 #footer {
   color: #bbb;
