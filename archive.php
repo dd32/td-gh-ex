@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 
-<!--include sidebar-->
-<?php include(TEMPLATEPATH."/sidebar.php");?>
+
 
 <article>
 	<!--the loop-->
@@ -63,7 +62,7 @@
 	<?php else : ?>
 
 		Not Found
-		<?php include (TEMPLATEPATH . '/searchform.php'); ?>
+		<?php get_search_form(); ?>
 
          <!--do not delete-->
 	<?php endif; ?>
@@ -71,6 +70,7 @@
 	
 <!--archive.php end-->
 </article>
-
+<!--include sidebar-->
+<?php get_sidebar(); ?>   
 <!--include footer-->
 <?php get_footer(); ?>

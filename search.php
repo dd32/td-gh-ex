@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 
-<!--include sidebar-->
-<?php include(TEMPLATEPATH."/sidebar.php");?>
+
 
 <article>
 <!--search.php-->
@@ -21,7 +20,7 @@
 		<?php while (have_posts()) : the_post(); ?>
 				
 			        <!--permalink of the post title-->
-				<h3 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h3>
+				<h3> <div id="post-<?php the_ID(); ?>"<?php post_class(); ?>><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h3>
 		
 			<!--show the category, edit link, comments-->
                            Posted in <?php the_category(', ') ?>
@@ -40,12 +39,13 @@
 
 		No posts found. Try a different search?
                  <!--include searchform-->
-		<?php include (TEMPLATEPATH . '/searchform.php'); ?>
+		<?php get_search_form(); ?>
         <!--do not delete-->
 	<?php endif; ?>
 		
 </article>
 <!--search.php end-->
-
+<!--include sidebar-->
+<?php get_sidebar(); ?> 
 <!--include footer-->
 <?php get_footer(); ?>

@@ -10,7 +10,7 @@
 		<?php while (have_posts()) : the_post(); ?>
 				
 			<!--post title as a link-->
-				<h1 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h1>
+				<h1><div id="post-<?php the_ID(); ?>"<?php post_class(); ?>><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h1>
 	<p><b>By <?php the_author(); ?></b> | <?php the_time('F j, Y'); ?> </p>
 		<div class="post3">
 	</div>	
