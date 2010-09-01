@@ -1,0 +1,558 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Graphene 1.0 theme for WordPress\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-08-11 14:06+1200\n"
+"PO-Revision-Date: 2010-08-18 23:05+0100\n"
+"Last-Translator: Ermes <gardaweb.net@gmail.com>\n"
+"Language-Team: Ermes <gardaweb.net@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: Italian\n"
+"X-Poedit-Country: ITALY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: D:/[[MyVault]]/MyProjects/[Websites]/wordpress-theme-test/site/wp-content/themes/graphene/\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: comments.php:18
+#@ graphene
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "Contenuto protetto da Password, per visualizzarlo è necessaria l'autorizzazione."
+
+#: comments.php:36
+#@ graphene
+msgid "No comment yet"
+msgstr "Nessun commento disponibile"
+
+#: comments.php:36
+#: loop.php:75
+#@ graphene
+msgid "1 comment"
+msgstr "1 commento"
+
+#: comments.php:65
+#@ graphene
+msgid "Your email address will not be published."
+msgstr "Il tuo indirizzo EMAIL non viene pubblicato!"
+
+#: comments.php:66
+#, php-format
+#@ graphene
+msgid "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags and attributes: %s"
+msgstr "Puoi usare i seguenti tag <abbr title=\"Hyper Text Markup Language\">HTML</abbr> per scrivere: %s"
+
+#: comments.php:68
+#: functions.php:532
+#@ graphene
+msgid "Submit Comment"
+msgstr "Invia"
+
+#: admin/options.php:221
+#: footer.php:24
+#@ graphene
+msgid "Except where otherwise noted, content on this site is licensed under a <a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/\">Creative Commons Licence</a>."
+msgstr "Eccetto dove diversamente specificato, i contenuti di questo sito sono coperti da <a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/deed.pt_BR/\" target=\"_blank\">Licenza Creative Commons</a>."
+
+#: footer.php:30
+#@ graphene
+msgid "Valid XHTML 1.0 Strict"
+msgstr "XHTML 1.0 Strict Valido"
+
+#: footer.php:31
+#@ graphene
+msgid "Valid CSS Level 2.1"
+msgstr "CSS 2.1 Valido"
+
+#. translators: %1$s is the blog title, %2$s is the theme's name, %3$s is the theme's author 
+#: footer.php:52
+#, php-format
+#@ graphene
+msgid "%1$s uses %2$s theme by %3$s."
+msgstr "%1$s usa %2$s tema di %3$s."
+
+#: functions.php:100
+#@ graphene
+msgid "Header Menu"
+msgstr "Menu Header"
+
+#. translators: header image description 
+#: functions.php:144
+#@ graphene
+msgid "Header image by Syahir Hakim"
+msgstr "Immagine testata di Syahir Hakim"
+
+#. translators: header image description 
+#: functions.php:150
+#@ graphene
+msgid "This is the default Graphene theme header image, cropped from image by Quantin Houyoux at sxc.hu"
+msgstr "Questa è l'immagine predefinita della testata del tema ritagliata da Quantin Houyoux at sxc.hu"
+
+#. translators: header image description 
+#: functions.php:156
+#: functions.php:162
+#: functions.php:168
+#: functions.php:174
+#: functions.php:180
+#@ graphene
+msgid "Header image cropped from image by Ilco at sxc.hu"
+msgstr "Immagine testata ritagliata da Ilco at sxc.hu"
+
+#: functions.php:276
+#@ graphene
+msgid "Home"
+msgstr "Home"
+
+#: functions.php:296
+#@ graphene
+msgid " says:"
+msgstr " scrive:"
+
+#. translators: %1$s is the comment date, %2#s is the comment time 
+#: functions.php:300
+#, php-format
+#@ ksv3
+msgid "%1$s at %2$s"
+msgstr "%1$s a %2$s"
+
+#: functions.php:302
+#@ graphene
+msgid "Edit comment"
+msgstr "Modifica commento"
+
+#: functions.php:303
+#@ ksv3
+msgid "Reply"
+msgstr "Rispondi"
+
+#: functions.php:307
+#@ default
+msgid "Your comment is awaiting moderation."
+msgstr "Commento in attesa di moderazione..."
+
+#: functions.php:368
+#@ graphene
+msgid "Primary Widget Area"
+msgstr "Area WIDGET Primaria"
+
+#: functions.php:370
+#@ graphene
+msgid "The primary widget area"
+msgstr "Area principale widget"
+
+#: functions.php:428
+#@ graphene
+msgid "Follow me on Twitter"
+msgstr "Seguimi su Twitter"
+
+#: functions.php:466
+#@ graphene
+msgid "Latest tweets"
+msgstr "Ultimo tweets"
+
+#: functions.php:471
+#@ graphene
+msgid "Title:"
+msgstr "Titolo:"
+
+#: functions.php:475
+#@ graphene
+msgid "Twitter Username:"
+msgstr "Twitter Username:"
+
+#: functions.php:479
+#@ graphene
+msgid "Number of tweets to display:"
+msgstr "Nr. di tweets da mostrare:"
+
+#: functions.php:501
+#@ graphene
+msgid "Graphene Options"
+msgstr "Opzioni Graphene"
+
+#: functions.php:518
+#@ graphene
+msgid "Name:"
+msgstr "Nome:"
+
+#: functions.php:519
+#@ graphene
+msgid "Email:"
+msgstr "Email:"
+
+#: functions.php:520
+#@ graphene
+msgid "Website:"
+msgstr "Sito web:"
+
+#: functions.php:527
+#@ graphene
+msgid "Message:"
+msgstr "Messaggio:"
+
+#: header.php:53
+#@ graphene
+msgid "Subscribe to RSS feed"
+msgstr "Sottoscrivi RSS"
+
+#: loop.php:23
+#@ graphene
+msgid "(No title)"
+msgstr "(nessun titolo)"
+
+#. translators: %s refers to the author name 
+#: loop.php:40
+#, php-format
+#@ graphene
+msgid "by %s"
+msgstr "di %s"
+
+#: loop.php:42
+#@ graphene
+msgid "Edit post"
+msgstr "Modifica"
+
+#: loop.php:52
+#@ graphene
+msgid "Read the rest of this entry &raquo;"
+msgstr "Leggi tutto &raquo;"
+
+#: loop.php:56
+#@ graphene
+msgid "<p><strong>Pages:</strong> "
+msgstr "<p><strong>Pagine:</strong> "
+
+#: loop.php:63
+#@ graphene
+msgid "Tags: "
+msgstr "Tags: "
+
+#: loop.php:63
+#@ graphene
+msgid "This post has no tag"
+msgstr "Nessun tag"
+
+#: loop.php:75
+#@ graphene
+msgid "Leave comment"
+msgstr "Scrivi un tuo commento"
+
+#: loop.php:97
+#@ graphene
+msgid "Older posts &laquo;"
+msgstr "Indietro &laquo;"
+
+#: loop.php:98
+#@ graphene
+msgid "&raquo; Newer posts"
+msgstr "&raquo; Avanti"
+
+#: loop.php:105
+#@ graphene
+msgid "Not found"
+msgstr "Nessun contenuto trovato..."
+
+#: loop.php:110
+#@ graphene
+msgid "Sorry, but you are looking for something that isn't here. Wanna try a search?"
+msgstr "Spiacente ma il contenuto non esiste. Prova ancora con altri termini di ricerca..."
+
+#: loop.php:112
+#@ graphene
+msgid "Sorry, but no results were found for that keyword. Wanna try an alternative keyword search?"
+msgstr "Spiacente ma il contenuto non esiste. Prova ancora con altri termini di ricerca..."
+
+#: search-404.php:3
+#@ graphene
+msgid "Error 404 - Page Not Found"
+msgstr "Errore 404 - Pagina inesistente"
+
+#: search-404.php:5
+#@ graphene
+msgid "Sorry, I've looked everywhere but I can't find the page you're looking for."
+msgstr "Spiacente ma la pagina che cerchi è inesistente!"
+
+#: search-404.php:6
+#@ graphene
+msgid "If you follow the link from another website, I may have removed or renamed the page some time ago. You may want to try searching for the page:"
+msgstr "Se hai seguito un link da un altro sito, forse ho rimosso o rinominato la pagina che cercavi. Ti consiglio di provare a cercare la pagina:"
+
+#: search-404.php:14
+#@ graphene
+msgid "Suggested results"
+msgstr "Risultati consigliati"
+
+#. translators: %s is the search term 
+#: search-404.php:18
+#, php-format
+#@ graphene
+msgid "I've done a courtesy search for the term %s for you. See if you can find what you're looking for in the list below:"
+msgstr "Ho effettuato una ricerca con il termine <strong>%s</strong>. Guarda tra i risultati se trovi ciò che stai cercando..."
+
+#: search-404.php:37
+#@ graphene
+msgid "<strong>Sorry, couldn't find anything.</strong> Try searching for alternative terms using the search form above."
+msgstr "Mi spiace ma non trovo nulla. Prova ancora con altri termini di ricerca dal motore qui sopra."
+
+#: searchform.php:3
+#: searchform.php:4
+#@ graphene
+msgid "Search"
+msgstr "Cerca"
+
+#: sidebar.php:23
+#@ graphene
+msgid "Archives"
+msgstr "Archivi"
+
+#: sidebar.php:30
+#@ graphene
+msgid "Meta"
+msgstr "Meta"
+
+#: sidebar.php:35
+#@ graphene
+msgid "Posts RSS"
+msgstr "Posts RSS"
+
+#: sidebar.php:36
+#@ graphene
+msgid "Comments RSS"
+msgstr "Commenti RSS"
+
+#. translators: %s is the link to wordpress.org 
+#: sidebar.php:38
+#, php-format
+#@ graphene
+msgid "Powered by %s"
+msgstr "Scritto da %s"
+
+#: sidebar.php:38
+#@ graphene
+msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
+msgstr "Powered by WordPress."
+
+#: admin/options.php:127
+#@ graphene
+msgid "Graphene Theme Options"
+msgstr "Opzioni Tema Graphene"
+
+#: admin/options.php:152
+#@ graphene
+msgid "Adsense Options"
+msgstr "Opzioni Adsense"
+
+#: admin/options.php:159
+#@ graphene
+msgid "Show Adsense advertising"
+msgstr "Mostrare messaggi Adsense"
+
+#: admin/options.php:171
+#@ graphene
+msgid "Your Adsense code"
+msgstr "Codice personale Adsense"
+
+#: admin/options.php:180
+#@ graphene
+msgid "AddThis Options"
+msgstr "Opzioni AddThis"
+
+#: admin/options.php:183
+#@ graphene
+msgid "Show AddThis social sharing button"
+msgstr "Mostra pulsante social AddThis"
+
+#: admin/options.php:188
+#@ graphene
+msgid "Your AddThis button code"
+msgstr "Codice pulsante AddThis"
+
+#: admin/options.php:197
+#@ graphene
+msgid "Google Analytics Options"
+msgstr "Opzioni Google Analytics"
+
+#: admin/options.php:200
+#@ graphene
+msgid "Enable Google Analytics tracking"
+msgstr "Abilita tracciamento Google Analytics"
+
+#: admin/options.php:204
+#@ graphene
+msgid "Google Analytics tracking code"
+msgstr "Codice personale Google Analytics"
+
+#: admin/options.php:211
+#@ graphene
+msgid "Footer Options"
+msgstr "Opzioni Footer"
+
+#: admin/options.php:214
+#@ graphene
+msgid "Show Creative Commons logo"
+msgstr "Mostra Logo Creative Commons"
+
+#: admin/options.php:219
+#@ graphene
+msgid "Copyright text (html allowed)"
+msgstr "Testo Copyright (HTML permesso)"
+
+#: admin/options.php:220
+#@ graphene
+msgid "If this field is empty, the following default copyright text will be displayed:"
+msgstr "Se il campo è vuoto, viene mostrato di default il copyright visualizzato:"
+
+#: admin/display.php:181
+#: admin/options.php:230
+#@ graphene
+msgid "Update Settings"
+msgstr "Aggiorna Settaggi"
+
+#: admin/options.php:236
+#@ graphene
+msgid "Support the developer"
+msgstr "Supporto per sviluppatori"
+
+#: admin/options.php:237
+#@ graphene
+msgid "Developing this awesome theme took a lot of effort and time, weeks and weeks of voluntary unpaid work. If you like this theme or if you are using it for commercial websites, please consider a donation to the developer to help support future updates and development."
+msgstr "Sviluppando questo tema impressionante ho impiegato molto tempo e fatica, settimane e settimane di lavoro volontario non retribuito. Se ti piace questo tema o se si sta usando per siti web commerciali, si prega di prendere in considerazione una donazione allo sviluppatore per contribuire e sostenere i futuri aggiornamenti e sviluppi. Grazie..."
+
+#: admin/options.php:247
+#@ graphene
+msgid "Uninstall theme"
+msgstr "Disinstalla Tema"
+
+#: admin/options.php:248
+#@ graphene
+msgid "<strong>Be careful!</strong> Uninstalling the theme will remove all of the theme's options from the database. Do this only if you decide not to use the theme anymore."
+msgstr "<strong>ATTENZIONE</strong> La disinstallazione del Tema, rimuoverà per sempre tutte le opzioni del tema dal Database. Rimuovete il tema Graphene solo se ne siete sicuri."
+
+#: admin/options.php:249
+#@ graphene
+msgid "If you just want to try another theme, there is no need to uninstall this theme. Simply activate the other theme in the Appearance > Themes admin page."
+msgstr "Se vuoi provare/testare altri temi, non serve rimuovere questo. Puoi cambiare/attivare un nuovo tema in Aspetto > Temi del pannello di amministrazione."
+
+#: admin/options.php:250
+#@ graphene
+msgid "Note that uninstalling this theme <strong>does not remove</strong> the theme's files. To delete the files after you have uninstalled this theme, go to Appearances > Themes and delete the theme from there."
+msgstr "Si noti che la disinstallazione del tema, non rimuove definitivamente il tema dal server. Per eliminare tutto, si deve disinstallare il tema da Aspetto > Temi."
+
+#: admin/options.php:253
+#@ graphene
+msgid "Uninstall Theme"
+msgstr "Disinstalla Tema"
+
+#: admin/display.php:86
+#@ graphene
+msgid "Graphene Display Options"
+msgstr ""
+
+#: admin/display.php:92
+#@ graphene
+msgid "ERROR:"
+msgstr ""
+
+#: admin/display.php:111
+#@ graphene
+msgid "Posts Display Options"
+msgstr ""
+
+#: admin/display.php:118
+#@ graphene
+msgid "Hide post author"
+msgstr ""
+
+#: admin/display.php:124
+#@ graphene
+msgid "Hide post date"
+msgstr ""
+
+#: admin/display.php:130
+#@ graphene
+msgid "Hide post categories"
+msgstr ""
+
+#: admin/display.php:136
+#@ graphene
+msgid "Hide post tags"
+msgstr ""
+
+#: admin/display.php:142
+#@ graphene
+msgid "Hide post comment count"
+msgstr ""
+
+#: admin/display.php:143
+#@ graphene
+msgid "Only affects posts listing (such as the front page) and not single post view."
+msgstr ""
+
+#: admin/display.php:152
+#@ graphene
+msgid "Bottom Widget Display Options"
+msgstr ""
+
+#: admin/display.php:153
+#: admin/display.php:167
+#@ graphene
+msgid "Leave field empty to use the default value."
+msgstr ""
+
+#: admin/display.php:158
+#@ graphene
+msgid "Number of columns to display"
+msgstr ""
+
+#: admin/display.php:166
+#@ graphene
+msgid "Navigation Menu Display Options"
+msgstr ""
+
+#: admin/display.php:172
+#@ graphene
+msgid "Dropdown menu item width"
+msgstr ""
+
+#: admin/options.php:165
+#@ graphene
+msgid "Show ads on front page as well"
+msgstr ""
+
+#: admin/options.php:189
+#@ graphene
+msgid "You can generate your button code from <a href=\"http://www.addthis.com/\">AddThis website</a>."
+msgstr ""
+
+#: comments.php:36
+#: loop.php:75
+#@ graphene
+msgid "% comments"
+msgstr ""
+
+#: functions.php:378
+#@ graphene
+msgid "Bottom Widget Area"
+msgstr ""
+
+#: functions.php:380
+#@ graphene
+msgid "The bottom widget area. Leave empty to disable. Set the number of columns to display at the theme's Display Options page."
+msgstr ""
+
+#: functions.php:502
+#@ graphene
+msgid "Graphene Display"
+msgstr ""
+
+#: loop.php:23
+#: search-404.php:24
+#, php-format
+#@ graphene
+msgid "Permalink Link to %s"
+msgstr ""
+

@@ -1,11 +1,11 @@
 /*
 Theme Name: Graphene
 Theme URI: http://www.khairul-syahir.com/wordpress-dev/graphene-theme
-Description: The Graphene theme for Wordpress 3.0 is a stylish, neat, and tight WordPress theme supporting widgetised sidebar with built-in Twitter widget. It allows for customisable header and background through the WordPress admin, built-in AdSense placement and AddThis social sharing button, supports custom menu with drop-down navigation of up to 5 levels deep, and threaded comments of up to 10 levels deep! A one-column, full-width page template without the sidebar is included. The codes are written so that you can easily override or add functionality to the theme by using your own child theme without altering the parent theme's code. Seriously, there's too many features for this theme to describe them all here! This theme has been tested and confirmed compatible with IE6, IE7, IE8, Mozilla Firefox, Google Chrome, and Safari. Translations included: Malay (ms_MY), Brazilian Portuguese (pt_BR), Spanish (es_ES). See this <a href="http://www.khairul-syahir.com/wordpress-dev/graphene-theme#changelog">theme's changelog</a>.
-Version: 1.0.7
+Description: The Graphene theme for Wordpress 3.0 is a stylish, neat, and tight WordPress theme supporting 2 widget areas, with the ability to determine the number of columns to display in the footer widget area. It has built-in Twitter widget, allows for customisable header and background through the WordPress admin, built-in AdSense placement and AddThis social sharing button, supports custom menu with drop-down navigation of up to 5 levels deep, and threaded comments of up to 10 levels deep! A one-column, full-width page template without the sidebar is included. You can hide post parameters, show post author's gravatar, use different widgets for the front page than the rest of the website, and specify font styles for header and content texts. The codes are written so that you can easily override or add functionality to the theme by using your own child theme without altering the parent theme's code. Seriously, there's too many features for this theme to describe them all here! This theme has been tested and confirmed compatible with IE6, IE7, IE8, Mozilla Firefox, Google Chrome, and Safari. Translations included: Malay (ms_MY), Brazilian Portuguese (pt_BR), Spanish (es_ES), Italian (it_IT), and German (de_DE). See this <a href="http://www.khairul-syahir.com/wordpress-dev/graphene-theme#changelog">theme's changelog</a>.
+Version: 1.0.8
 Author: Syahir Hakim
 Author URI: http://www.khairul-syahir.com
-Tags: black, blue, white, two-columns, one-column, right-sidebar, fixed-width, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready
+Tags: black, blue, white, two-columns, right-sidebar, fixed-width, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready
 License: GNU General Public License, v2 (or newer)
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
@@ -18,7 +18,7 @@ html,body,h1,h2,h3,h4,h5,h6,p,img,ul,ol,li,form,fieldset{border:0 none;margin:0;
 body{
 /* background:url(images/sprite_h.png) left -196px repeat-x #4a4949; */
 background:url(images/bg_g.gif) repeat #000 fixed;
-font:12px tahoma;
+font:12px arial;
 }
 #container{
 margin:0 auto;
@@ -67,6 +67,31 @@ margin-left:10px;
 }
 #top_search button span{
 	display:none;
+	}
+#header{
+background-color:#000;
+background-repeat:no-repeat;
+height:198px;
+margin-left:16px;
+width:900px;
+}
+#header h1{
+position:relative;
+top:80px;
+left:38px;
+width:852px;
+font:bold 28px "Trebuchet MS";
+}
+#header h1 a, #header h1 a:visited{
+	text-decoration:none;
+	}
+#header h2{
+	color:#000;
+	border-bottom:none;
+	position:relative;
+	top:80px;
+	width:852px;
+	left:38px;
 	}
 .sidebar-wrap #searchsubmit{
 	float:right;
@@ -218,8 +243,11 @@ padding:0;
 margin:0;
 float:right;
 }
-.page .entry{
-	width:565px;
+.page .entry, .nodate{
+	width:555px;
+	}
+.nodate .entry-content img{
+	max-width:542px;
 	}
 .one_column .entry{
 	width:865px;
@@ -245,8 +273,9 @@ margin-top:2px;
 	color:#074d7c;
 }
 .post-meta ul{
-	background:url(images/sprite_master.png) -885px -148px no-repeat;
+	background:url(images/sprite_master.png) left -85px no-repeat;
 	padding-left:15px;
+	max-width:300px;
 	}
 .post-meta li{
 	font:normal 11px tahoma;
@@ -268,7 +297,13 @@ margin-top:2px;
 	display:block;
 	line-height:18px;
 	color:#074d7c;
+	position:relative;
 }
+.post-meta p.post-author img.avatar{
+	position:absolute;
+	top:-43px;
+	right:0;
+	}
 .entry-content{
 	margin-top:10px;
 	clear:both;
@@ -286,7 +321,7 @@ margin-top:2px;
 	border:none !important;
 	}
 .wp-caption-text{
-	margin:0 5px;
+	margin:0 5px !important;
 	font:normal 11px arial !important;
 	padding-bottom:5px;
 	text-align:center;
@@ -357,9 +392,6 @@ a.more-link{
 .entry-content dt{
 	margin-top:10px;
 	}
-.entry-content table{
-	border-collapse:collapse;	
-	}
 .entry-content ul{
 	list-style-position:outside;
 	list-style-type:none;
@@ -391,24 +423,47 @@ a.more-link{
 	margin:5px;
 	max-width:487px;
 }
-.alignright {float:right; margin:1em 0 0 1em !important;}
-.alignleft {float:left; margin:1em 1em 0 0 !important;}
-.aligncenter {display: block; margin:1em auto 0 auto !important;}
+.alignright {float:right; margin:4px 0 12px 1em !important;}
+.alignleft {float:left; margin:4px 1em 12px 0 !important;}
+.aligncenter {display: block; margin:1em auto !important;}
 img.wp-smiley, .entry-content p img.wp-smiley, .comment-entry p img.wp-smiley{
 	border:none !important;
 	display:inline !important;
 	margin:0;
 	float:none !important;
 }
+table{
+	border-collapse:collapse;
+	}
+table td, table th, table tr{
+	padding:2px 5px;
+	border:1px solid #ccc;
+	font-family:arial;
+	}
+table th{
+	background:#e0e0e0;
+	border-bottom-width:2px;
+	}
+table tr{
+	background:#f3f3f3;
+	}
+table tr.alternate{
+	background:#fff;
+	}
+table#wp-calendar td, table#wp-calendar th, table#wp-calendar tr{
+	border:none;
+	}
 blockquote{
 	background:url(images/sprite_master.png) left -475px no-repeat #f3f3f3;
 	border:1px dotted #e3e3e3;
 	margin:10px 0 10px 20px;
-	padding:12px 18px 0 32px;
+	padding:8px 18px 5px 32px;
 	clear:both;
 }
 blockquote p{
-	color:#474747;
+	color:#474747 !important;
+	margin-top:0 !important;
+	margin-bottom:5px;
 }
 blockquote cite{
 	font-style:italic;
@@ -426,6 +481,9 @@ p cite{
 p code{
 	background-color:#EDEDFF;
 }
+p.form-allowed-tags code{
+	background:none;
+	}
 code.block, pre.block{
 	font:normal 11px "Courier New";
 	color:#000;
@@ -448,13 +506,33 @@ code.block, pre.block{
 	float:right;
 }
 .post-tags{
-	width:350px;
+	width:250px;
 	float:left;
 	font:normal 11px tahoma;
 	line-height:16px;
 	margin-top:5px;
 	color:#929292;
 }
+
+/* Author page styles */
+.author-entry .avatar{
+	float:left;
+	border:4px solid #e3e3e3;
+	}
+.author-entry h2, .author-entry .entry-content{
+	float:right;
+	width:377px;
+	}
+.author-entry .entry-content{
+	clear:right;
+	padding-bottom:20px;
+	}
+.author-entry .author-first-heading{
+	margin-top:0;
+	margin-bottom:0;
+	}
+/* Author page styles */
+
 .comment-nav{
 	text-align:center;
 	font:normal 12px tahoma;
@@ -470,6 +548,8 @@ code.block, pre.block{
 .comment-link{
 	float:right;
 	padding-top:5px;
+	text-align:right;
+	width:240px;
 }
 .comment-link a, .comment-link a:visited{
 	font:normal 18px arial;
@@ -498,7 +578,7 @@ code.block, pre.block{
 	float:right;
 	margin-right:8px;
 }
-#comments h4, #respond h3{
+#comments h4, #respond h3, h3.author-post-list{
 	clear:both;
 	margin:20px 0 5px 24px;
 	font:normal 22px arial;
@@ -507,11 +587,18 @@ code.block, pre.block{
 	padding-left:25px;
 }
 #respond h3#reply-title{
-	background-position:-880px -32px;
+	background-position:-880px -17px;
+	}
+h3.author-post-list{
+	background-position:-880px -73px;
+	padding-left:30px;
+	margin-top:50px;
+	margin-bottom:10px;
 	}
 #respond h3#reply-title small{
 	display:block;
 	font-size:12px;
+	background:none;
 	}
 #comments ol{
 	list-style-type:none;
@@ -615,7 +702,7 @@ code.block, pre.block{
 #comments #commentform{
 	border:1px solid #1772AF;
 	}
-#sidebar select{
+.sidebar select{
 	border:1px solid #e3e3e3;
 	font:normal 12px arial;
 	color:#2c2b2b;
@@ -736,13 +823,13 @@ code.block, pre.block{
 #commentform .comment-notes{
 	padding-bottom:10px;
 	}
-#sidebar{
+#sidebar_right{
 	margin-right:15px;
 	width:255px;
 	display:inline;
 	float:right;
 }
-#sidebar h3{
+.sidebar h3{
 	clear:both;
 	background:url(images/sprite_master.png) -390px top no-repeat;
 	width:243px;
@@ -754,15 +841,45 @@ code.block, pre.block{
 	color:#333232;
 	letter-spacing:0.03em;
 }
-#sidebar div.sidebar-wrap{
+.sidebar div.sidebar-wrap{
 	width:231px;
 	padding:5px 12px;
 	margin-top:16px;
 	overflow:hidden;
 }
-#sidebar #tweetfollow{
+.sidebar #tweetfollow{
 	text-align:right;
 	margin-top:5px;
+	}
+#sidebar_bottom{
+	clear:both;
+	border-top:2px solid #000;
+	background:#eee;
+	width:900px;
+	margin-left:16px;
+	border-top:15px solid #CFCFCF;
+	}
+#sidebar_bottom .sidebar-wrap{
+	display:inline-block;
+	zoom:1;
+	*display:inline;
+	vertical-align:top;
+	margin-left:15px;
+	width:254px;
+	margin-top:10px;
+	margin-bottom:5px;
+	border-right:1px dotted #ccc;
+	padding:5px 15px 5px 10px;
+	}
+#sidebar_bottom .sidebar-wrap h3{
+	background:none;
+	border-bottom:3px double #ccc;
+	line-height:16px;
+	padding-top:5px;
+	padding-bottom:5px;
+	height:auto;
+	margin-left:-15px;
+	width:257px;
 	}
 #calendar_wrap{
 	text-align:center;
@@ -783,68 +900,68 @@ code.block, pre.block{
 #wp-calendar #next{
 	text-align:right;
 }
-#sidebar ul, #sidebar ol, #sidebar p{
+.sidebar ul, .sidebar ol, .sidebar p{
 	margin:0;
 	font:normal 11px tahoma;
 	color:#000;
 }
-#sidebar ol{
+.sidebar ol{
 	list-style-position:outside;
 	margin-left:29px;
 }
-#sidebar ol ol{
+.sidebar ol ol{
 	list-style-type:lower-alpha;
 	margin-left:20px;
 }
-#sidebar ul ul{
+.sidebar ul ul{
 	margin-left:20px;
 }
-#sidebar ol ol ol{
+.sidebar ol ol ol{
 	list-style-type:lower-roman;
 }
-#sidebar ol li{
+.sidebar ol li{
 	line-height:15px;
 	padding:2px 0;
 }
-#sidebar ul ul li{
+.sidebar ul ul li{
 	border:none;
 }
-#sidebar ul ul li{
+.sidebar ul ul li{
 	line-height:15px;
 }
-#sidebar a, #sidebar a:visited{
+.sidebar a, .sidebar a:visited{
 	text-decoration:none;
 	color:#11598a;
 }
-#sidebar a:hover{
+.sidebar a:hover{
 	text-decoration:underline;
 }
-#sidebar p{
+.sidebar p{
 	line-height:18px;
 }
-#sidebar p img{
+.sidebar p img{
 	border:4px solid #dedede;
 }
-#sidebar ul{
+.sidebar ul{
 	list-style-type:none;
 	list-style-position:outside;
 }
-#sidebar ul li{
+.sidebar ul li{
 	padding:6px 0;
 	line-height:15px;
 	border-bottom:1px solid #e3e3e3;
 }
-#sidebar ul li img, #sidebar ol li img{
+.sidebar ul li img, .sidebar ol li img{
 	display:inline;
 	vertical-align:middle;
 	margin:0 2px;
 }
-#sidebar ul li span.meta-rss{
+.sidebar ul li span.meta-rss{
 	display:inline-block;
 	height:16px;
 	width:0px;
 }
-#sidebar li.rss{
+.sidebar li.rss{
 	background:url(images/sprite_master.png) -885px -338px no-repeat;
 	padding-left:20px;
 	}
@@ -894,7 +1011,7 @@ width:900px;
 	}
 #developer{
 	height:24px;
-	width:300px;
+	width:250px;
 	float:right;
 	margin-right:5px;
 	color:#abb1aa;

@@ -15,13 +15,13 @@
         <div class="entry-content clearfix">
         <p>
         <?php /* translators: %s is the search term */ ?>
-        <?php printf(__("I've done a courtesy search for the term %s for you. See if you can find what you're looking for in the list below:", 'graphene'), '<a href="'.$_GET['full_search_url'].'">'.$_GET['search_term'].'</a>'); ?>
+        <?php printf(__("I've done a courtesy search for the term %s for you. See if you can find what you're looking for in the list below:", 'graphene'), '<code>'.get_search_query().'</code>'); ?>
         </p>
         <?php if (have_posts()) : ?>    
             <ul style="margin-left:20px;padding-left:0;">
             <?php while (have_posts()) : the_post(); ?>
                 <li>
-                    <h3><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+                    <h3><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(esc_attr__('Permalink Link to %s', 'graphene'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h3>
                      <?php the_excerpt(); ?>
                 </li>
             <?php endwhile; ?>

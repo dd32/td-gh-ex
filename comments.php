@@ -31,8 +31,8 @@
 ?>
 
 <?php /* Lists all the comments for the current post */ ?>
-<div id="comments" class="clearfix">
 <?php if ('open' == $post->comment_status) : ?>
+<div id="comments" class="clearfix">
     <h4><?php comments_number(__('No comment yet','graphene'), __('1 comment','graphene'), __("% comments", 'graphene') );?></h4>
 
 	<?php if ( have_comments() ) : ?>
@@ -55,10 +55,7 @@
         <?php endif; // Ends the comment navigation ?>
     
  	<?php endif; // Ends the comment listing ?>
-        
-<?php endif; // Ends the comment status ?>
 </div>
-
 <?php 
 	/**
 	 * Get the comment form.
@@ -72,3 +69,4 @@
 					   )); 
 
 ?>
+<?php endif; // Ends the comment status ?>

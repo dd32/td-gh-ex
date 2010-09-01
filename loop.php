@@ -11,34 +11,47 @@
                 <?php endif; ?>
                 
                 <?php /* Post date is not shown if this is a Page post */ ?>
-                <?php if (!is_page()) : ?>
+                <?php if (!is_page() && (get_option('graphene_hide_post_date') != true)) : ?>
                 <div class="date">
                     <p><?php the_time('M'); ?><br /><span><?php the_time('d') ?></span></p>
                 </div>
                 <?php endif; ?>
                 
-                <div class="entry clearfix">
+                <div class="entry clearfix<?php if (get_option('graphene_hide_post_date') == true) {echo ' nodate';} ?>">
+                
                 	<?php /* Post title */ ?>
-                    <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','graphene'), get_the_title()); ?>"><?php if (get_the_title() == '') {_e('(No title)','graphene');} else {the_title();} ?></a></h2>
-                    <?php /* Post meta */ ?>
+                    <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(esc_attr__('Permalink Link to %s', 'graphene'), the_title_attribute('echo=0')); ?>"><?php if (get_the_title() == '') {_e('(No title)','graphene');} else {the_title();} ?></a></h2>
+                    
+					<?php /* Post meta */ ?>
+                    <?php if ((get_option('graphene_hide_post_cat') != true) || (get_option('graphene_hide_post_author') != true)) : ?>
                     <div class="post-meta clearfix">
-                    	<?php /* Post category is not shown if this is a Page post */ ?>
-                        <?php if (!is_page()) : ?>
-                        <ul>
+                    	
+						<?php /* Post category, not shown if this is a Page post or if admin decides to hide it */ ?>
+                        <?php if (!is_page() && (get_option('graphene_hide_post_cat') != true)) : ?>
+                        <ul class="meta_categories">
                             <li><?php the_category(",</li>\n<li>") ?></li>
                         </ul>
                         <?php endif; ?>
                         
+                        <?php /* Post author, not not shown if this is a Page post or if admin decides to hide it */ ?>
+                        <?php if (get_option('graphene_hide_post_author') != true) : ?>
                         <p class="post-author">
 							<?php
 								if (!is_page()) {
-									/* translators: %s refers to the author name */
-									printf(__('by %s','graphene'), ' '.get_the_author_link());
+									/* translators: this is for the author byline, such as 'by John Doe' */
+									_e('by','graphene'); echo ' '; the_author_posts_link();
 								}
-								edit_post_link(__('Edit post','graphene'), ' (', ')'); 
+								edit_post_link(__('Edit post','graphene'), ' (', ')');
+								
+								/* Show the post author's gravatar if enabled */
+								if (get_option('graphene_show_post_avatar')) {
+									echo get_avatar(get_the_author_meta('user_email'), 40);
+								}
 							?>
                         </p>
+                        <?php endif; ?>
                     </div>
+                    <?php endif; ?>
                     
                     <?php /* Post content */ ?>
                     <div class="entry-content clearfix">
@@ -53,8 +66,8 @@
                     <?php /* Post footer */ ?>
                     <div class="entry-footer clearfix">
                     	<?php /* Display the post's tags, if there is any */ ?>
-                        <?php if (!is_page()) : ?>
-                        <p class="post-tags"><?php if (has_tag()) {_e('Tags: ','graphene'); the_tags('', ', ', '');} else {_e('This post has no tag','graphene');} ?></p>
+                        <?php if (!is_page() && (get_option('graphene_hide_post_tags') != true)) : ?>
+                        <p class="post-tags"><?php if (has_tag()) {_e('Tags:','graphene'); the_tags(' ', ', ', '');} else {_e('This post has no tag','graphene');} ?></p>
                         <?php endif; ?>
                         
 						<?php 
@@ -65,7 +78,7 @@
 						?>
                         <?php if (is_single() || is_page()) : ?>
                             <?php graphene_addthis(); ?>
-                        <?php else : ?>
+                        <?php elseif (get_option('graphene_hide_post_commentcount') != true) : ?>
                         	<p class="comment-link"><?php comments_popup_link(__('Leave comment','graphene'), __('1 comment','graphene'), __("% comments",'graphene')); ?></p>
                         <?php endif; ?>
                     </div>
@@ -78,7 +91,7 @@
 			 * See graphene_adsense() function in functions.php
 			*/ 
 			?>
-            <?php if (is_single() || is_page()) {graphene_adsense();} ?>
+            <?php if (is_single() || is_page() || get_option('graphene_adsense_show_frontpage')) {graphene_adsense();} ?>
             
             <?php /* Get the comments template for single post pages */ ?>
             <?php if (is_single() || is_page()) {comments_template();} ?>

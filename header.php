@@ -10,7 +10,7 @@
  */
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
-<head>
+<head profile="http://gmpg.org/xfn/11">
     <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
     <title><?php 
 		if(is_home()) {  
@@ -21,17 +21,17 @@
 		} 
 		?>	
     </title>
-    <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" /> <!-- leave this for stats -->
-    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />  
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" /> 
-      <!--[if lte IE 6]><style>#container{background:none;}</style><![endif]-->
-      <!--[if lte IE 7]>
+    <style type="text/css" media="screen">@import "<?php echo get_stylesheet_uri(); ?>";</style>  
+      <!--[if lte IE 6]>
+      	  <style>#container{background:none;}</style>
           <script>
           	sfHover=function(){var sfEls=document.getElementById("menu").getElementsByTagName("li");for(var i=0;i<sfEls.length;i++){sfEls[i].onmouseover=function(){this.className+=" sfhover";}
 sfEls[i].onmouseout=function(){this.className=this.className.replace(new RegExp(" sfhover\\b"),"");}}}
 if(window.attachEvent)window.attachEvent("onload",sfHover);
           </script>
       <![endif]-->
+       
     <?php
 	/* We add some JavaScript to pages with the comment form
 	 * to support sites with threaded comments (when in use).
@@ -50,7 +50,7 @@ if(window.attachEvent)window.attachEvent("onload",sfHover);
 <body <?php body_class(); ?>>
 	<div id="container">
     	<div id="top-bar">
-        	<p id="rss"><a href="<?php bloginfo('rss2_url'); ?>" title="<?php _e('Subscribe to RSS feed', 'graphene'); ?>"><span><?php _e('Subscribe to RSS feed', 'graphene'); ?></span></a></p>
+        	<p id="rss"><a href="<?php bloginfo('rss2_url'); ?>" title="<?php esc_attr_e('Subscribe to RSS feed', 'graphene'); ?>"><span><?php _e('Subscribe to RSS feed', 'graphene'); ?></span></a></p>
             
             <?php 
 			/**
@@ -83,7 +83,7 @@ if(window.attachEvent)window.attachEvent("onload",sfHover);
 			$style = ' style="color:#' . get_theme_mod( 'header_textcolor', HEADER_TEXTCOLOR ) . ';"';
 		?>
         <div id="header" style="background-image:url(<?php echo $header_img; ?>);">
-        	<h1 <?php echo $style; ?>><a <?php echo $style; ?> href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
+        	<h1 <?php echo $style; ?>><a <?php echo $style; ?> href="<?php home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
             <h2 <?php echo $style; ?>><?php bloginfo('description'); ?></h2>
         </div>
         <div id="nav">

@@ -4,7 +4,7 @@ http://www.khairul-syahir.com
 
 The Graphene theme is a stylish, neat, and tight WordPress theme built for WordPress 3.0. It supports many (if not all) of the new features introduced in WordPress 3.0 as well as a host of other features introduced in earlier versions of WordPress.
 
-Graphene theme is compatible with IE6, IE7, IE8, Mozilla Firefox, and Google Chrome. I haven’t tested with Safari, but this theme is compatible even with IE6, so there’s a good chance it is compatible with Safari as well.
+Graphene theme is compatible with IE6, IE7, IE8, Mozilla Firefox, Safari, and Google Chrome. I haven’t tested with Opera, but this theme is compatible even with IE6, so there’s a good chance it is compatible with Opera as well.
 
 
 FEATURES
@@ -37,6 +37,9 @@ Graphene WordPress theme is currently available in the following languages:
     * English (en_GB), the default language.
     * Malay (ms_MY), by Syahir Hakim
     * Brazilian Portuguese (pt_BR), by Leonardo Antonioli (http://www.tobeguarany.com)
+	* Spanish (es_ES), by Eduardo Larequi (http://www.labitacoradeltigre.com/)
+	* Italian (it_IT), by Ermes Gelosa (http://www.gardaservice.net/)
+	* German (de_DE), by Sebastian Brandner
 
 To use the other languages for your WordPress installation, see how you can install WordPress in your language page from the WordPress Codex.
 

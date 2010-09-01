@@ -1,6 +1,10 @@
 <?php
 /**
- * This function generates the theme's option page in Wordpress administration.
+ * This function generates the theme's general options page in Wordpress administration.
+ *
+ * @package WordPress
+ * @subpackage Graphene
+ * @since Graphene 1.0
 */
 function graphene_options(){
 
@@ -17,13 +21,14 @@ function graphene_options(){
 				$show_adsense = $_POST['show_adsense'];
 			} else {
 				if (empty($_POST['adsense_code']))
-					$errors[] = "You must enter your Adsense code to enable Adsense advertising";
+					$errors[] = __("You must enter your Adsense code to enable Adsense advertising", 'graphene');
 				$show_adsense = false;
 			}
 		} else {
 			$show_adsense = false;
 		}
-		$adsense_code = $_POST['adsense_code'];
+		$adsense_code = (!empty($_POST['adsense_code'])) ? $_POST['adsense_code'] : '';
+		$adsense_show_frontpage = (!empty($_POST['adsense_show_frontpage'])) ? $_POST['adsense_show_frontpage'] : false;
 		
 		// Process the AddThis options
 		if (!empty($_POST['show_addthis'])) {
@@ -31,13 +36,13 @@ function graphene_options(){
 				$show_addthis = $_POST['show_addthis'];
 			} else {
 				if (empty($_POST['addthis_code']))
-					$errors[] = "You must enter your AddThis Publisher's ID to enable the AddThis social sharing button";
+					$errors[] = __("You must enter your AddThis button code to enable the AddThis social sharing button", 'graphene');
 				$show_addthis = false;
 			}
 		} else {
 			$show_addthis = false;
 		}
-		$addthis_code = html_entity_decode($_POST['addthis_code']);
+		$addthis_code = (!empty($_POST['addthis_code'])) ? html_entity_decode($_POST['addthis_code']) : '';
 		
 		// Process the Google Analytics options
 		if (!empty($_POST['show_ga'])) {
@@ -45,13 +50,18 @@ function graphene_options(){
 				$show_ga = $_POST['show_ga'];
 			} else {
 				if (empty($_POST['ga_code']))
-					$errors[] = "You must enter your Google Analytics tracking code to enable Google Analytics tracking.";
+					$errors[] = __("You must enter your Google Analytics tracking code to enable Google Analytics tracking.", 'graphene');
 				$show_ga = false;
 			}
 		} else {
 			$show_ga = false;
 		}
 		$ga_code = html_entity_decode($_POST['ga_code']);
+		
+		
+		// Process widget area options
+		$alt_home_sidebar = (!empty($_POST['alt_home_sidebar'])) ? $_POST['alt_home_sidebar'] : false ;
+		$alt_home_footerwidget = (!empty($_POST['alt_home_footerwidget'])) ? $_POST['alt_home_footerwidget'] : false ;
 		
 		
 		// Process the Footer options
@@ -69,6 +79,7 @@ function graphene_options(){
 			// AdSense options
 			update_option('graphene_show_adsense', $show_adsense);
 			update_option('graphene_adsense_code', $adsense_code);
+			update_option('graphene_adsense_show_frontpage', $adsense_show_frontpage);
 			
 			// AddThis options
 			update_option('graphene_show_addthis', $show_addthis);
@@ -78,13 +89,16 @@ function graphene_options(){
 			update_option('graphene_show_ga', $show_ga);
 			update_option('graphene_ga_code', $ga_code);
 			
+			// Widget area options
+			update_option('graphene_alt_home_sidebar', $alt_home_sidebar);
+			update_option('graphene_alt_home_footerwidget', $alt_home_footerwidget);
+			
 			// Footer options
 			update_option('graphene_show_cc', $show_cc);
 			update_option('graphene_copy_text', $copy_text);
 			
-			
 			// Print successful message
-			$messages[] = 'Settings updated.';
+			$messages[] = __('Settings updated.','graphene');
 		}
 	}
 	
@@ -96,12 +110,16 @@ function graphene_options(){
 	// Get the current options from database
 	$show_adsense = get_option('graphene_show_adsense');
 	$adsense_code = get_option('graphene_adsense_code');
+	$adsense_show_frontpage = get_option('graphene_adsense_show_frontpage');
 	
 	$show_addthis = get_option('graphene_show_addthis');
 	$addthis_code = get_option('graphene_addthis_code');
 	
 	$show_ga = get_option('graphene_show_ga');
 	$ga_code = get_option('graphene_ga_code');
+	
+	$alt_home_sidebar = get_option('graphene_alt_home_sidebar');
+	$alt_home_footerwidget = get_option('graphene_alt_home_footerwidget');
 	
 	$show_cc = get_option('graphene_show_cc');
 	$copy_text = get_option('graphene_copy_text');
@@ -124,7 +142,7 @@ function graphene_options(){
 			if (!empty($errors)) {
 				echo '<div class="error">';
 				foreach ($errors as $error) : ?>
-					<p><strong>ERROR: </strong><?php echo $error; ?></p>
+					<p><strong><?php _e('ERROR:', 'graphene'); ?> </strong><?php echo $error; ?></p>
 				<?php endforeach;
 				echo '</div>';
 			}
@@ -149,10 +167,16 @@ function graphene_options(){
         <form action="" method="post">
             <table class="form-table">
                 <tr>
-                    <th scope="row" style="width:260px;">
+                    <th scope="row">
                     	<label><?php _e('Show Adsense advertising', 'graphene'); ?></label>
                     </th>
                     <td><input type="checkbox" name="show_adsense" <?php if ($show_adsense == true) echo 'checked="checked"' ?> value="true" /></td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                    	<label><?php _e('Show ads on front page as well', 'graphene'); ?></label>
+                    </th>
+                    <td><input type="checkbox" name="adsense_show_frontpage" <?php if ($adsense_show_frontpage == true) echo 'checked="checked"' ?> value="true" /></td>
                 </tr>
                 <tr>
                     <th scope="row">
@@ -168,11 +192,14 @@ function graphene_options(){
         <h3><?php _e('AddThis Options', 'graphene'); ?></h3> 
         <table class="form-table">       	
             <tr>
-                <th scope="row" style="width:260px;"><label><?php _e('Show AddThis social sharing button', 'graphene'); ?></label></th>
+                <th scope="row"><label><?php _e('Show AddThis social sharing button', 'graphene'); ?></label></th>
                 <td><input type="checkbox" name="show_addthis" <?php if ($show_addthis == true) echo 'checked="checked"' ?> value="true" /></td>
             </tr>
             <tr>
-                <th scope="row"><label><?php _e("Your AddThis button code", 'graphene'); ?></label></th>
+                <th scope="row">
+                	<label><?php _e("Your AddThis button code", 'graphene'); ?></label><br />
+                	<small><?php _e('You can generate your button code from the <a href="http://www.addthis.com/">AddThis website</a>.', 'graphene'); ?></small>
+                </th>
                 <td><textarea name="addthis_code" cols="60" rows="7"><?php echo htmlentities(stripslashes($addthis_code)); ?></textarea></td>
             </tr>
         </table>
@@ -182,12 +209,32 @@ function graphene_options(){
         <h3><?php _e('Google Analytics Options', 'graphene'); ?></h3> 
         <table class="form-table">       	
             <tr>
-                <th scope="row" style="width:260px;"><label><?php _e('Enable Google Analytics tracking', 'graphene'); ?></label></th>
+                <th scope="row"><label><?php _e('Enable Google Analytics tracking', 'graphene'); ?></label></th>
                 <td><input type="checkbox" name="show_ga" <?php if ($show_ga == true) echo 'checked="checked"' ?> value="true" /></td>
             </tr>
             <tr>
-                <th scope="row"><label><?php _e("Google Analytics tracking code", 'graphene'); ?></label></th>
+                <th scope="row"><label><?php _e("Google Analytics tracking code", 'graphene'); ?></label><br />
+                <small><?php _e('Make sure you include the full tracking code (including the <code>&lt;script&gt;</code> and <code>&lt;/script&gt;</code> tags) and not just the <code>UA-#######-#</code> code.','graphene'); ?></small>
+                </th>
                 <td><textarea name="ga_code" cols="60" rows="7"><?php echo htmlentities(stripslashes($ga_code)); ?></textarea></td>
+            </tr>
+        </table>
+        
+        
+        <?php /* Widget Area Options */ ?>
+        <h3><?php _e('Widget Area Options', 'graphene'); ?></h3>
+        <h4><?php _e('Alternate Widgets', 'graphene'); ?></h4>
+        <p><?php _e('You can enable the theme to show different widget areas in the front page than the rest of the website. If you enable this option, additional widget areas that will only be displayed on the front page will be added to the Widget settings page.', 'graphene'); ?></p>
+        <table class="form-table">       	
+            <tr>
+                <th scope="row" style="width:350px;"><label><?php _e('Enable alternate front page sidebar widget area', 'graphene'); ?></label></th>
+                <td><input type="checkbox" name="alt_home_sidebar" <?php if ($alt_home_sidebar == true) echo 'checked="checked"' ?> value="true" /></td>
+            </tr>
+            <tr>
+                <th scope="row"><label><?php _e('Enable alternate front page footer widget area', 'graphene'); ?></label><br />
+                <small><?php _e('You can also specify different column counts for the front page footer widget and the rest-of-site footer widget if you enable this option.', 'graphene'); ?></small>
+                </th>
+                <td><input type="checkbox" name="alt_home_footerwidget" <?php if ($alt_home_footerwidget == true) echo 'checked="checked"' ?> value="true" /></td>
             </tr>
         </table>
         
@@ -196,7 +243,7 @@ function graphene_options(){
         <h3><?php _e('Footer Options', 'graphene'); ?></h3> 
         <table class="form-table">       	
             <tr>
-                <th scope="row" style="width:260px;"><label><?php _e('Show Creative Commons logo', 'graphene'); ?></label><br />
+                <th scope="row"><label><?php _e('Show Creative Commons logo', 'graphene'); ?></label><br />
                 <img src="http://i.creativecommons.org/l/by-nc-nd/2.5/my/88x31.png" alt="" /></th>
                 <td><input type="checkbox" name="show_cc" <?php if ($show_cc == true) echo 'checked="checked"' ?> value="true" /></td>
             </tr>
@@ -235,7 +282,7 @@ function graphene_options(){
             <p><?php _e("Note that uninstalling this theme <strong>does not remove</strong> the theme's files. To delete the files after you have uninstalled this theme, go to Appearances > Themes and delete the theme from there.",'graphene'); ?></p>
             <form action="" method="post">
                 <input type="hidden" name="graphene_uninstall" value="true" />
-                <input type="submit" class="button" value="<?php _e('Uninstall Theme', 'graphene'); ?>" style="text-shadow:0 -1px 0 rgba(0, 0, 0, 0.3);margin-bottom:50px;background:#ff0000;color:#fff;border-color:#aa0000;font-weight:bold;" />
+                <input type="submit" class="button graphene_uninstall" value="<?php _e('Uninstall Theme', 'graphene'); ?>" />
             </form>
     </div>
     

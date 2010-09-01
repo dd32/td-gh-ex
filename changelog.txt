@@ -4,11 +4,33 @@ http://www.khairul-syahir.com
 
 CHANGELOG
 
+Version 1.0.9
+
+	* [TODO] Add the author info box under each post in single post display
+	* [TODO] Add the comments popup functionality
+
 Version 1.0.8
 
-	[TODO] Add options to show/hide post parameters, e.g. post date, post author, comment count, post category, post tag (useful for use as CMS)
-	[TODO] Add option to display Adsense ads on the front page
-	[TODO] Add option to switch to a lighter-coloured header bars
+	* Added options to hide post parameters, i.e. post date, post author, comment count, post category, post tag (useful for use as CMS)
+	* Added option to display Adsense ads on the front page as well
+	* Added another widget area at the bottom of the theme
+	* Added option to use different widget areas for front page than the rest of the website
+	* Added option to specify number of columns for footer widget area, and the width of each column will be adjusted automatically
+	* Added option to specify font styles for header text title and description as well as content text
+	* Added option to specify width of dropdown menu children
+	* Added author's page, which includes author bio, latest posts, most commented posts, and a full list of author's posts with excerpt
+	* Added CSS styling for tables and made other minor CSS modifications
+	* Added additional message strings and included esc_attr_e and esc_attr__ as language keywords (attn. translators)
+	* Added option to switch to a lighter-coloured header bars
+	* Added option to display post author's gravatar in posts (useful if blog has multiple authors)
+	* Replaced excerpt's [...] with an ellipsis and link to the full posts, based on the Twenty Ten excerpt more filter functions
+	* Added Italian (it_IT) translation, by Ermes Gelosa
+	* Added German (de_DE) translation, by Sebastian Brandner
+	* Replaced all instances of bloginfo('url') with the newer home_url() introduced in WP3.0
+	* Renamed page-onecolumn.php template file to template-onecolumn.php to avoid conflict with Wordpress template hierarchy
+	* Fixed nav menu hover effect where the the hover styles stays permanently in IE6 and IE7
+	* Fixed Custom Background bug where the default background is still displayed even when a custom background colour is set
+	* Replaced the get_the_title() with the_title_attribute() function for title attribute of post title's <a> element
 
 Version 1.0.7
 
