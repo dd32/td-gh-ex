@@ -11,51 +11,13 @@
 	}
 ?>
 <?php if ( comments_open() ) : ?>
-<div id="label">LEAVE A COMMENT</div>
 				
 		<?php if ( get_option('comment_registration') && !is_user_logged_in() ) : ?>
 			<p>You must be <a href="<?php echo wp_login_url( get_permalink() ); ?>">logged in</a> to post a comment.</p>
 		<?php else : ?>
-			<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
-				<?php if ( is_user_logged_in() ) : ?>
-                <div class="left">
-						<p>Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>.
-						<a href="<?php echo wp_logout_url(get_permalink()); ?>" title="Log out of this account">Log out &raquo;</a></p>
-                </div>
-				<?php else : ?>
-                <div id="comment-user-details">
-                <?php do_action('alt_comment_login'); ?>
-                
-                    		<div id="commentboxleft">
-                            <div id="commententry"><label for="author">Name <?php if ($req) echo "(required)"; ?></label></div>
-                            <div class="field"><input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> /></div>
-                            </div>
-                            
-                            <div id="commentboxleft">
-                            <div id="commententry"><label for="email">E-Mail (not shared<?php if ($req) echo ", required"; ?>)</label></div>
-                            <div class="field"><input type="text" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> /></div>
-                            </div>
-                            
-                            <div id="commentboxleft">
-                            <div id="commententry"><label for="url">Website</label></div>
-                            <div class="field"><input type="text" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" tabindex="3" /></div>
-                    		</div>
-                            
-                    </div>
-				<?php endif; ?>
-                
-				<div class="left">
-                	<div id="commentbox">Comment</div>
-                </div>
-                <div class="left">
-					<div id="textarea2"><textarea name="comment" id="comment" cols="69" rows="10" tabindex="4" class="field"></textarea></div>
-				</div>
-				<?php comment_id_fields(); ?>
-				<?php do_action('comment_form', $post->ID); ?>
-                <div id="submit">
-                <input name="submit" type="submit" id="submit" tabindex="5" class="button <?php echo is_user_logged_in() ? 'userloggedbtn' : '' ?>" value="Submit Comment" />
-                </div>
-			</form>
+			
+		<?php comment_form(); ?>
+        
 		<?php endif; // If registration required and not logged in ?>
 
 <?php endif; ?>

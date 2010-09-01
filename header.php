@@ -1,7 +1,7 @@
 <?php
 /**
  * @package WordPress
- * @subpackage Garmin
+ * @subpackage Adventure
  */
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -25,5 +25,3 @@
 </head>
 
 <body <?php body_class(); ?> >
-
-<div id="clear"><img id="background-img" class="bg" src="<?php bloginfo('template_url'); ?>/images/image 94.jpg" alt=""></div>

@@ -1,7 +1,7 @@
 <?php
 /**
  * @package WordPress
- * @subpackage Garmin
+ * @subpackage Adventure
  */
 
 get_header(); ?>
@@ -62,7 +62,14 @@ get_header(); ?>
 
 <?php endif; ?>
 
-<?php get_footer(); ?>
+<div id="notfooter">
+<p>
+		<?php bloginfo('name'); ?> is proudly powered by <a href="http://wordpress.org/">WordPress</a>, Theme <a href="http://schwarttzy.com/?page_id=551">Adventure</a> designed by <a href="http://schwarttzy.com/?page_id=225">Eric Schwarz</a>
+		<br /><a href="<?php bloginfo('rss2_url'); ?>">Entries (RSS)</a> and <a href="<?php bloginfo('comments_rss2_url'); ?>">Comments (RSS)</a>.
+		<!-- <?php echo get_num_queries(); ?> queries. <?php timer_stop(1); ?> seconds. -->
+        <!-- Theme design by Eric Schwarz - http://schwarttzy.com/?page_id=225 -->
+	</p>
+</div>
 
 </div>
 
@@ -75,9 +82,9 @@ get_header(); ?>
     	<h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
     </div>
     	
-    <div id="menu">
+    <div id="menuz">
         <ul id="menulist">
-			<?php $frontpage_id = get_option('page_on_front'); wp_list_pages('sort_column=menu_order&exclude='.$frontpage_id.'&depth=1&title_li=');?>
+        <?php wp_nav_menu( array( 'theme_location' => 'primary-menu' ) ); ?>
 		</ul>
     </div>
     
@@ -87,5 +94,6 @@ get_header(); ?>
     
 </div>
 
+<?php get_footer(); ?>
 </body>
 </html>
