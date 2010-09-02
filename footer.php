@@ -9,7 +9,7 @@
  * @since Graphene 1.0
  */
 ?>
-		<?php if (is_page_template('page-onecolumn.php')) : ?>
+		<?php if (is_page_template('template-onecolumn.php')) : ?>
 		</div><!-- #content-main -->
         <?php endif; ?>
         

@@ -9,6 +9,10 @@ Version 1.0.9
 	* [TODO] Add the author info box under each post in single post display
 	* [TODO] Add the comments popup functionality
 
+Version 1.0.8.1
+
+	* Fixed the one-column, no sidebar template
+
 Version 1.0.8
 
 	* Added options to hide post parameters, i.e. post date, post author, comment count, post category, post tag (useful for use as CMS)

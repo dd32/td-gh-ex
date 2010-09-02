@@ -91,5 +91,5 @@ if(window.attachEvent)window.attachEvent("onload",sfHover);
         	<?php wp_nav_menu(array('container' => '', 'menu_id' => 'menu', 'menu_class' => 'clearfix', 'fallback_cb' => 'graphene_default_menu', 'depth' => 5, 'theme_location' => 'Header Menu')); ?>
             <!-- END dynamically generated and highlighted menu -->
         </div>
-        <div id="content" class="clearfix<?php if (is_page_template('page-onecolumn.php')) {echo ' one_column';} ?>">
+        <div id="content" class="clearfix<?php if (is_page_template('template-onecolumn.php')) {echo ' one_column';} ?>">
         	<div id="content-main" class="clearfix">
