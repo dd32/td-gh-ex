@@ -15,9 +15,9 @@
                 ?>
             </div>
             <?php print $options['delictitle']; ?>
-            <div id='recentlist'>
-                <?php delicious_bookmarks($delid, 5, true, false); ?>
-            </div>
+        </div>
+        <div id='recentlist'>
+            <?php delicious_bookmarks($delid, 5, true, false); ?>
         </div>
     </div>
 
@@ -54,13 +54,11 @@
                     <?php the_content(__('Read the rest of this entry', 'ahimsa') . ' &raquo;'); ?>
                 </div>
 
-                <div class="postmetadata"
-                    <?php if( $options["idxfadepmeta"] ) : ?>
-                    style='opacity: 0.3;'
-                    onmouseover='this.style.opacity = 1.0;'
-                    onmouseout='this.style.opacity = 0.3;'
-                    <?php endif; ?>
-                    >
+                <div class="postmetadata
+                        <?php if( $options["idxfadepmeta"] ) : ?>
+                            fadedbottombar
+                        <?php endif; ?>
+                        ">
 
                     <span class='capsule commentlink actbubble'>
                         <?php comments_popup_link(
@@ -79,7 +77,6 @@
                             onclick='fadeBlock("#posttags-<?php the_ID();?>");'/>
                     <?php endif; ?>
 
-                    <!-- inline style for easy JavaScript mods, without getting computed styles -->
                     <div id='postcats-<?php the_ID(); ?>' class='postcattags postcats'
                         style='display: none;'>
                         <?php
@@ -97,7 +94,6 @@
                     </div>
 
                     <?php if( get_the_tags() ) : ?>
-                        <!-- inline style for easy JavaScript mods, without getting computed styles -->
                         <div id='posttags-<?php the_ID(); ?>' class='postcattags posttags'
                             style='display: none;'>
                             <?php
@@ -111,6 +107,8 @@
                             ?> 
                         </div>
                     <?php endif; ?>
+
+                    <div style='clear: both; height: 1px !important;'></div>
 
                 </div> <!-- postmetadata -->
 
@@ -132,6 +130,8 @@
                 __("Older Entries", "ahimsa") .
                 "</span>"); ?>
     </div>
+
+    <br clear='all' />
 
 <?php else : ?>
 

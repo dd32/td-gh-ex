@@ -28,6 +28,7 @@ if( ! isset($options['delictitle'       ]) ) $options['delictitle'      ] = __("
 if( ! isset($options['copyright'        ]) ) $options['copyright'       ] = "";
 if( ! isset($options['skin'             ]) ) $options['skin'            ] = "none";
 if( ! isset($options['logourl'          ]) ) $options['logourl'         ] = "";
+if( ! isset($options['commentguide'     ]) ) $options['commentguide'    ] = "";
 # end defaults
 
 update_option('ahimsa', $options);
@@ -214,6 +215,13 @@ function ahimsa_options()
             </label>
             <input type='text' size='50' name='logourl' id='logourl'
                 value='$options[logourl]' />
+
+            <br />
+            <br />
+
+            Custom text (instructions) to display above comment box: <br />
+            <textarea name='commentguide' id='commentguide'
+            rows=5 cols=60>" . stripslashes($options[commentguide]) . "</textarea>
 
             <br/>
             <br/>
@@ -748,6 +756,7 @@ function save_options()
     $options['copyright']       = ( isset($_POST['copyright']) ) ? $_POST['copyright'] : "";
     $options['skin']            = ( isset($_POST['skin']) ) ? $_POST['skin'] : "none";
     $options['logourl']         = ( isset($_POST['logourl']) ) ? $_POST['logourl'] : "";
+    $options['commentguide']    = ( isset($_POST['commentguide']) ) ? $_POST['commentguide'] : "";
 
     update_option('ahimsa', $options);
 
@@ -1028,7 +1037,7 @@ function custom_comment($comment, $args, $depth)
 
     <fieldset class='comment'>
 
-        <legend><?php printf(__("%s writes:", "ahimsa"), comment_author_link()); ?></legend>
+        <legend><?php printf(__('%s writes:', "ahimsa"), comment_author_link()); ?></legend>
 
         <div class="capsule dateauthor">
             <small>
@@ -1036,7 +1045,7 @@ function custom_comment($comment, $args, $depth)
                 /* translators: this is the comment date/time format. See http://php.net/date */
                 $comment_date_format = __('F jS, Y');
                 /* translators: this is the comment date bubble */
-                printf(__("%1$s at %2$s", 'ahimsa'), comment_date($comment_date_format), comment_time());
+                printf(__('%1$s at %2$s', 'ahimsa'), get_comment_date($comment_date_format), get_comment_time());
             ?>
             </small>
         </div>

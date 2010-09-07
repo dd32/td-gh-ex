@@ -9,18 +9,17 @@ function fadeBlock(id)
     return;
 }
 
-function slideBlock(id, side)
+function slideBlock(id, side, cb)
 {
     if( jQuery(id).is(':visible') )
-        jQuery(id).hide("slide", { direction: side }, 600);
+        jQuery(id).hide("slide", { direction: side }, 600, cb);
     else
-        jQuery(id).show("slide", { direction: side }, 600);
+        jQuery(id).show("slide", { direction: side }, 600, cb);
 
     return;
 }
 
 
-var tdsbBackground = "";
 function slideSideBar(side)
 {
     if( ! document.getElementById('sidebar'+side) )
@@ -29,27 +28,24 @@ function slideSideBar(side)
     tdsb = document.getElementById('tdsidebar'+side);
     sb = document.getElementById('sidebar'+side);
 
-    // I am not sure how the below works to toggle the background on and off
-    // for the container cell. tdsbBackground, as set below, doesn't work!!!
-    // It's empty, I guess because sb.style.backgroundColor is computed and
-    // not available here. But the below logic, to toggle the background from
-    // transparent to colour and back works magically!!!
+    tdsb.style.backgroundColor = jQuery('#content').css('background-color');
 
-    if( tdsbBackground == "" )
-        tdsbBackground = sb.style.backgroundColor;
+    curstatus = sb.style.display;
 
-    if( sb.style.display == 'none' )
+    if( curstatus == 'none' )
     {
         contentCurve(side, '0px');
-        tdsb.style.backgroundColor = tdsbBackground;
+        //jQuery('#tdsidebar'+side).show();
+        cb = function() { };
     }
     else
     {
         contentCurve(side, '30px');
-        tdsb.style.backgroundColor = 'transparent';
+        // cb = function() { jQuery('#tdsidebar'+side).hide(); }
+        cb = function() { };
     }
 
-    slideBlock('#sidebar'+side, side);
+    slideBlock('#sidebar'+side, side, cb);
 }
 
 function contentCurve(side, size)
@@ -150,6 +146,7 @@ jQuery(document).ready
     {
         // display vertical or rotated text depending on browser support
         // test in the order of browser popularity to save a few cycles ;-)
+        // checking to see if at least one sidebar is active/defined...
         if( jQuery('#sidebartableft').length > 0 )
             tab = '#sidebartableft';
         else
@@ -189,9 +186,27 @@ jQuery(document).ready
             jQuery('.sidebartab').show();
         }
         
+        // support for faded bottom bar in index page
+        jQuery('.fadedbottombar').hover(
+                function() { jQuery(this).css('opacity', '1.0'); },
+                function() { jQuery(this).css('opacity', '0.3'); }
+        );
 
         // display tags permitted in comments when focus is on response box
         jQuery('#replytext').focus(function() { jQuery('#commenthint').fadeIn(); });
         jQuery('#replytext').blur(function() { jQuery('#commenthint').fadeOut(); });
+
+        // display Comment edit/reply bottombar on hover
+        jQuery('.comment').hover(
+                function() { jQuery(this).children('.replybuttonbox').css('visibility', 'visible'); },
+                function() { jQuery(this).children('.replybuttonbox').css('visibility', 'hidden'); }
+        );
+
+        // if user has declared a DIV of type "download" then make the whole thing clickable
+        // We could have used a shortcode for this, but shortcodes are not expanded for RSS feeds.
+        jQuery('.downloadbox').click
+        (
+            function() { document.location = jQuery(this).find('.downlink').attr('href'); }
+        );
     }
 );
