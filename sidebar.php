@@ -23,6 +23,8 @@
 			</ul>
 		</div>
 
+		<?php get_search_form(); ?>
+
 	<?php endif; ?>
 </div>
 

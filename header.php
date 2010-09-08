@@ -16,16 +16,12 @@
 
 	<div id="header">
 
-
 		<?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
 		<<?php echo $heading_tag; ?> id="site-title">
 			<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 		</<?php echo $heading_tag; ?>>
 		<div id="tagline"><?php bloginfo( 'description' ); ?></div>
 
-		<ul>
-			<li><a href="<?php  bloginfo('url'); ?>"><?php _e('Top', 'birdsite'); ?></a>
-			<li><a href="<?php  bloginfo('url'); ?>/about"><?php _e('About', 'birdsite'); ?></a>
-			<li><a href="<?php  bloginfo('url'); ?>/feed"><?php _e('Feed', 'birdsite'); ?></a>
-		</ul>
+		<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
+
 	</div>

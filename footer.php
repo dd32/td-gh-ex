@@ -1,19 +1,14 @@
-</div>
 
-<div id="footer">
+	<div id="footer">
 
-    <form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
-		<div id="qsearch">
-			<input type="text" name="s" id="s" value="<?php if(is_search()): echo esc_html($s); endif; ?>" />
-			<input class="btn" alt="Search" type="image" src="<?php echo bloginfo('template_url'); ?>/images/search.gif" title="Search" id="searchsubmit" value="<?php _e('Search', 'birdsite'); ?>" />
-		</div>
-    </form>
+	    <strong><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></strong>
+	    	<div id="generator"><a href="http://wordpress.org/" target="_blank">Proudly powered by WordPress</a></div>
 
-    <p>Powered by <a href="http://wordpress.org/" target="_blank">WordPress</a> with Photolog <a href="http://www.sysbird.jp/birdsite/" target="_blank">BirdSITE</a>  Theme</p>
+	</div>
 
 </div>
 
-	<?php wp_footer(); ?>
+<?php wp_footer(); ?>
 
 </body>
 </html>

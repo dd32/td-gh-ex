@@ -7,7 +7,8 @@
     <div class="post" id="post-<?php the_ID(); ?>">
         <h1><?php the_title(); ?></h1>
 		<?php the_content('<p class="serif">Read the rest of this entry &raquo;</p>'); ?>
-   </div>
+	</div>
+	<?php comments_template( '', true ); ?>
 
 	<?php endwhile; endif; ?>
 

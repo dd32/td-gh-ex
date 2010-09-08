@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: BirdSITE 2.8 ja\n"
+"Project-Id-Version: BirdSITE 1.02 ja\n"
 "Report-Msgid-Bugs-To: http://www.sysbird.jp/toriko\n"
-"POT-Creation-Date: 2010-08-08 17:54+0300\n"
-"PO-Revision-Date: 2010-08-17 16:44+0900\n"
+"POT-Creation-Date: 2010-09-08 17:54+0300\n"
+"PO-Revision-Date: 2010-09-08 12:08+0900\n"
 "Last-Translator: TORIYAMA Yuko <sysbird@gmail.com>\n"
 "Language-Team: sysbird <sysbird@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -53,7 +53,7 @@ msgstr "Y年n月"
 msgid "Archive for %s|Yearly archive page"
 msgstr "%s のアーカイブ|年別アーカイブのページ"
 
-#: archive.php:21
+#: archive.php:17
 msgid "Y"
 msgstr "Y年"
 
@@ -89,79 +89,61 @@ msgstr "%件のコメント &#187;"
 msgid "Comments Closed"
 msgstr "コメントは受け付けていません。"
 
-#: comments.php:6
+#: comments.php:3
 msgid "This post is password protected. Enter the password to view comments."
 msgstr "この投稿はパスワードで保護されています。コメントを閲覧するにはパスワードを入力してください。"
 
-#: comments.php:15
-msgid "Comments"
-msgstr "コメント"
+#: comments.php:19
+#: comments.php:32
+msgid "Previous Comments &raquo;"
+msgstr "前のコメント &raquo;"
 
-#: comments.php:38
-msgid "Leave a Reply"
-msgstr "コメントをどうぞ"
+#: comments.php:18
+#: comments.php:31
+msgid "&laquo; Next Comments"
+msgstr "&laquo; 次のコメント"
 
-#: comments.php:38
-#, php-format
-msgid "Leave a Reply for %s"
-msgstr "%s にコメントする"
+#: comments.php:12
+msgid "One Comment"
+msgid_plural "%1$s Comments"
+msgstr[0] "%1$s件のコメント"
 
-#: comments.php:44
-msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
-msgstr "コメントを投稿するには<a href=\"%s\">ログイン</a>してください。"
-
-#: comments.php:51
-msgid "Logged in as <a href=\"%1$s\">%2$s</a>."
-msgstr "<a href=\"%1$s\">%2$s</a> としてログイン中。"
-
-#: comments.php:51
-msgid "Log out of this account"
-msgstr "このアカウントからログアウト"
-
-#: comments.php:51
-msgid "Log out &raquo;"
-msgstr "ログアウト &raquo;"
-
-#: comments.php:55
+#: comments.php:45
 msgid "Name"
 msgstr "お名前"
 
-#: comments.php:55
-#: comments.php:56
-msgid "(required)"
-msgstr "(必須)"
+#: comments.php:45
+#: comments.php:46
+msgid "(*required)"
+msgstr "(*必須)"
 
-#: comments.php:56
-msgid "Mail (will not be published)"
+#: comments.php:46
+msgid "Email (will not be published)"
 msgstr "メールアドレス (公開されません)"
 
-#: comments.php:57
+#: comments.php:47
 msgid "Website"
 msgstr "ウェブサイト"
 
-#: comments.php:62
-msgid "Submit Comment"
-msgstr "コメント送信"
-
-#: comments.php:73
+#: comments.php:39
 msgid "Comments are closed."
 msgstr "コメントは受け付けていません。"
 
-#: footer.php:8
+#: single.php:41
+msgid "(Edit)"
+msgstr "(編集)"
+
+#: functions.php:38
+msgid "Pingback"
+msgstr "ピンバック"
+
+#: functions.php:97
 msgid "Search"
 msgstr "検索"
 
-#: header.php:27
-msgid "Top"
-msgstr "トップ"
-
-#: header.php:28
-msgid "About"
-msgstr "紹介"
-
-#: header.php:29
-msgid "Feed"
-msgstr "フィード"
+#: functions.php:194
+msgid "Primary Navigation"
+msgstr "グローバルナビゲーション"
 
 #: page.php:9
 msgid "Read the rest of this entry &raquo;"
@@ -187,7 +169,7 @@ msgstr "アーカイブ"
 msgid "Meta"
 msgstr "メタ情報"
 
-#: single.php:16
+#: single.php:13
 msgid "Pages:"
 msgstr "ページ:"
 

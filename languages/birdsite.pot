@@ -1,13 +1,13 @@
-# SOME DESCRIPTIVE TITLE.
+# Translation of the WordPress theme BirdSITE 1.02 by Sysbird
 # Copyright (C) Sysbird
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the BirdSITE package.
 # FIRST AUTHOR <sysbird@gmail.com>, 2010.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: wordpress 2.8\n"
+"Project-Id-Version: wordpress 3.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/theme\n"
-"POT-Creation-Date: 2010-08-08 17:34+0200\n"
+"POT-Creation-Date: 2010-09-08 12:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Sysbird <sysbird@gmail.com>\n"
 "Language-Team: sysbird <sysbird@gmail.com>\n"
@@ -26,7 +26,7 @@ msgstr ""
 #: archive.php:9
 msgid "Archive for the &#8216;%s&#8217; Category"
 msgstr ""
-
+ 
 #: archive.php:11
 msgid "Posts Tagged &#8216;%s&#8217;"
 msgstr ""
@@ -51,7 +51,7 @@ msgstr ""
 msgid "Archive for %s|Yearly archive page"
 msgstr ""
 
-#: archive.php:21
+#: archive.php:17
 msgid "Y"
 msgstr ""
 
@@ -87,78 +87,60 @@ msgstr ""
 msgid "Comments Closed"
 msgstr ""
 
-#: comments.php:6
+#: comments.php:3
 msgid "This post is password protected. Enter the password to view comments."
 msgstr ""
 
-#: comments.php:15
-msgid "Comments"
+#: comments.php:19
+#: comments.php:32
+msgid "Previous Comments &raquo;"
 msgstr ""
 
-#: comments.php:38
-msgid "Leave a Reply"
+#: comments.php:18
+#: comments.php:31
+msgid "&laquo; Next Comments"
 msgstr ""
 
-#: comments.php:38
-#, php-format
-msgid "Leave a Reply for %s"
+#: comments.php:12
+msgid "One Comment"
+msgid_plural "%1$s Comments"
 msgstr ""
 
-#: comments.php:44
-msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
-msgstr ""
-
-#: comments.php:51
-msgid "Logged in as <a href=\"%1$s\">%2$s</a>."
-msgstr ""
-
-#: comments.php:51
-msgid "Log out of this account"
-msgstr ""
-
-#: comments.php:51
-msgid "Log out &raquo;"
-msgstr ""
-
-#: comments.php:55
+#: comments.php:45
 msgid "Name"
 msgstr ""
 
-#: comments.php:55
-#: comments.php:56
-msgid "(required)"
+#: comments.php:45
+#: comments.php:46
+msgid "(*required)"
 msgstr ""
 
-#: comments.php:56
-msgid "Mail (will not be published)"
+#: comments.php:46
+msgid "Email (will not be published)"
 msgstr ""
 
-#: comments.php:57
+#: comments.php:47
 msgid "Website"
 msgstr ""
 
-#: comments.php:62
-msgid "Submit Comment"
-msgstr ""
-
-#: comments.php:73
+#: comments.php:39
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:8
+#: single.php:41
+msgid "(Edit)"
+msgstr ""
+
+#: functions.php:38
+msgid "Pingback"
+msgstr ""
+
+#: functions.php:97
 msgid "Search"
 msgstr ""
 
-#: header.php:27
-msgid "Top"
-msgstr ""
-
-#: header.php:28
-msgid "About"
-msgstr ""
-
-#: header.php:29
-msgid "Feed"
+#: functions.php:194
+msgid "Primary Navigation"
 msgstr ""
 
 #: page.php:9
@@ -185,7 +167,7 @@ msgstr ""
 msgid "Meta"
 msgstr ""
 
-#: single.php:16
+#: single.php:13
 msgid "Pages:"
 msgstr ""
 
