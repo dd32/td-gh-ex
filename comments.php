@@ -31,11 +31,11 @@
 ?>
 
 <?php /* Lists all the comments for the current post */ ?>
-<?php if ('open' == $post->comment_status) : ?>
+<?php if ( have_comments() ) : ?>
 <div id="comments" class="clearfix">
     <h4><?php comments_number(__('No comment yet','graphene'), __('1 comment','graphene'), __("% comments", 'graphene') );?></h4>
 
-	<?php if ( have_comments() ) : ?>
+	
     <ol class="clearfix">
         <?php
         /* Loop through and list the comments. Tell wp_list_comments()
@@ -44,7 +44,7 @@
          * define graphene_comment() and that will be used instead.
          * See graphene_comment() in functions.php for more.
          */
-		 wp_list_comments(array('callback' => 'graphene_comment', 'style' => 'ol', 'max_depth' => 10)); ?>
+		 wp_list_comments(array('callback' => 'graphene_comment', 'style' => 'ol')); ?>
     </ol>
                     
 		<?php // Are there comments to navigate through? ?>
@@ -54,8 +54,16 @@
         </div>
         <?php endif; // Ends the comment navigation ?>
     
- 	<?php endif; // Ends the comment listing ?>
 </div>
+<?php endif; // Ends the comment listing ?>
+
+<?php if ('open' != $post->comment_status && have_comments()) : ?>
+	<div id="respond">
+		<h3 id="reply-title"><?php _e('Comments have been disabled.', 'graphene'); ?></h3>
+    </div>
+<?php endif; ?>
+
+<?php if ('open' == $post->comment_status) : ?>
 <?php 
 	/**
 	 * Get the comment form.

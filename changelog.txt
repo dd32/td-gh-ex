@@ -7,7 +7,15 @@ CHANGELOG
 Version 1.0.9
 
 	* [TODO] Add the author info box under each post in single post display
-	* [TODO] Add the comments popup functionality
+
+Version 1.0.8.2
+
+	* Fixed the header text link - now correctly links to the homepage
+	* Added Polish (pl_PL) translation, by Dariusz Francuz
+	* Added French (fr_FR) translation, by Wolforg
+	* Removed the max_depth parameter in listing comments so that threading depth can be set (or disabled) in the admin panel
+	* Existing comments will now be shown if comment is closed on posts/pages that already have comments
+	* Replaced the minified Son of Suckerfish js for IE6 with the un-minified js - somehow it caused the dropdown menu to 'stick' on hover in IE6
 
 Version 1.0.8.1
 

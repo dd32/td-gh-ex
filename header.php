@@ -26,10 +26,19 @@
       <!--[if lte IE 6]>
       	  <style>#container{background:none;}</style>
           <script>
-          	sfHover=function(){var sfEls=document.getElementById("menu").getElementsByTagName("li");for(var i=0;i<sfEls.length;i++){sfEls[i].onmouseover=function(){this.className+=" sfhover";}
-sfEls[i].onmouseout=function(){this.className=this.className.replace(new RegExp(" sfhover\\b"),"");}}}
-if(window.attachEvent)window.attachEvent("onload",sfHover);
-          </script>
+          sfHover = function() {
+              var sfEls = document.getElementById("menu").getElementsByTagName("LI");
+              for (var i=0; i<sfEls.length; i++) {
+                  sfEls[i].onmouseover=function() {
+                      this.className+=" sfhover";
+                  }
+                  sfEls[i].onmouseout=function() {
+                      this.className=this.className.replace(new RegExp(" sfhover\\b"), "");
+                  }
+              }
+          }
+          if (window.attachEvent) window.attachEvent("onload", sfHover);
+		  </script>
       <![endif]-->
        
     <?php
@@ -83,7 +92,7 @@ if(window.attachEvent)window.attachEvent("onload",sfHover);
 			$style = ' style="color:#' . get_theme_mod( 'header_textcolor', HEADER_TEXTCOLOR ) . ';"';
 		?>
         <div id="header" style="background-image:url(<?php echo $header_img; ?>);">
-        	<h1 <?php echo $style; ?>><a <?php echo $style; ?> href="<?php home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+        	<h1 <?php echo $style; ?>><a <?php echo $style; ?> href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
             <h2 <?php echo $style; ?>><?php bloginfo('description'); ?></h2>
         </div>
         <div id="nav">
