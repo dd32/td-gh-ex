@@ -6,7 +6,7 @@ Theme URI: http://schwarttzy.com/?page_id=551
 Description: Inspired by a certain GPS Manufacture, I designed this theme to feel like your looking through a window out into the wilderness. The CSS, XHTML and design is released under GPL:
 	http://www.opensource.org/licenses/gpl-license.php
 
-Version: 1.2.6
+Version: 1.2.7
 
 Author: Eric Schwarz
 
@@ -283,7 +283,6 @@ object {z-index: -1}
 }
 #sidebar ul, #sidebar li{
 	list-style-type: none;
-	float: left;
 	color: #cccbc4;
 	padding: 0;
 	margin: 0;
@@ -293,6 +292,7 @@ object {z-index: -1}
 #sidebar h2{
 	color: #FFF;
 	margin: 25px 0 10px 0;
+	width:200px;
 }	
 #sidebar a {
 	color: #cccbc4;

@@ -2,6 +2,10 @@
 if ( ! isset( $content_width ) )
 	$content_width = 730;
 	
+add_theme_support('automatic-feed-links');
+
+add_theme_support('menus');
+	
 add_action( 'init', 'register_my_menu' );
 
 function register_my_menu() {
@@ -18,10 +22,11 @@ if ( function_exists('register_sidebar') )
    
 function print_comment($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment; ?>
-    
+    	
+        <div id="comment-<?php comment_ID() ?>" <?php comment_class(); ?>>
 		<div id="commentbody">
         	<div id="avatar">
-				<?php echo get_avatar($comment, 100, get_bloginfo('stylesheet_directory') . '/images/avatar.gif'); ?>
+				<?php echo get_avatar( $comment, 100 ); ?>
             </div>
             <div id="commentz">
                 <div id="commentlabel"><?php comment_author_link() ?> commented</div>
@@ -39,7 +44,7 @@ function print_comment($comment, $args, $depth) {
             </div>
             
 			<div class="cl">&nbsp;</div>
-		</div>
+		</div></div>
 	<?php
 }
    

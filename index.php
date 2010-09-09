@@ -12,7 +12,8 @@ get_header(); ?>
     
     <?php if (have_posts()) : ?>
 	<?php while (have_posts()) : the_post(); ?>
-    <div id="content" >
+    <div id="content">
+    	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <div id="label"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></div>
 		<?php the_content('Read the rest of this entry &raquo;'); ?>
         <?php wp_link_pages(); ?>
@@ -23,7 +24,7 @@ get_header(); ?>
             <?php endif; ?>
         <?php endif; ?>
         	Written on <?php the_time('F jS, Y') ?> <?php if ( is_page()) : ?><?php else : ?>&amp; filed under <?php the_category(', ') ?> <?php the_tags('Tags: ', ', ', '<br />'); ?><?php endif; ?>
-        </div></div>
+        </div></div></div>
     </div>
 	<?php if ('open' == $post->comment_status) : ?>
     <?php comments_template(); ?>
