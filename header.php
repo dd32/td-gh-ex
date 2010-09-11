@@ -17,7 +17,7 @@
 		<?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
 		<?php wp_head(); ?>
 	</head>
-	<body> 
+	<body <?php body_class( $class ); ?>> 
 		<div id="top">
 			<div id="topcenter">
 				<h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>

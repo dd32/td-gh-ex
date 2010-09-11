@@ -48,4 +48,6 @@ function rcg_admin_header_style() {
 
 add_custom_image_header('header_style', 'rcg_admin_header_style');
 
+add_theme_support( 'automatic-feed-links' );
+
 ?>
