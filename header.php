@@ -7,7 +7,7 @@
     <script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 <!-- AnIMass WordPress Theme design by Richard Dickinson - http://www.richard-dickinson.com/ -->
-<?php add_theme_support('automatic-feed-links'); ?> 
+
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel='stylesheet' href='wp.css' type='text/css' media='all' />
@@ -20,7 +20,7 @@
 <div id="container">
 <header>
 <h1>
-    <a href="<?php echo get_option('home'); ?>">
+    <a href="<?php echo home_url ( '/' ); ?>">
        <?php bloginfo('name'); ?></a>
    </h1>
     <?php bloginfo('description'); ?>

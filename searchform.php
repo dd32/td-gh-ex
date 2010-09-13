@@ -1,10 +1,18 @@
 <!--create the searchfield-->
 <h2>Search</h2>
-	
-<form method=”get” id=”searchform” action=”<?php bloginfo(‘home’); ?>/”>
-<div><input type=”text” size=”18? value=” ” name=”s” id=”s” />
-<input type=”submit” id=”searchsubmit” value=”Search” class=”btn” />
-</div>
+
+
+<?php
+/**
+ * The template for displaying the search form.
+ *
+  */
+?>
+<form method="get" id="searchform" action="<?php bloginfo('url'); ?>">
+	<div id="search-form-wrap">
+		<label for="s" id="search-label"><?php _e('Search for:', 'anIMass'); ?></label>
+		<input type="text" id="s" name="s" value="<?php the_search_query(); ?>" accesskey="4" />
+		<input type="submit" id="searchsubmit" value="<?php esc_attr_e('Search &raquo;', 'anIMass'); ?>" />
+	</div>
 </form>
 
-<!--searchform.php end-->

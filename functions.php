@@ -62,6 +62,13 @@ add_theme_support('nav-menus');
 } 
 
 $content_width = 500;
-
+?>
+<?php
+function my_own_gravatar( $avatar_defaults ) {
+    $myavatar = get_bloginfo('template_directory') . '/images/gravatar.png';
+    $avatar_defaults[$myavatar] = 'RPD_GRAVATAR';
+    return $avatar_defaults;
+}
+add_filter( 'avatar_defaults', 'my_own_gravatar' );
 
 ?>
