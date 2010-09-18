@@ -16,6 +16,8 @@
 <?php if ( post_password_required() ) : ?>
 			<div id="comments">
 				<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'graphene' ); ?></p>
+                
+                <?php do_action('graphene_protected_comment'); ?>
 			</div><!-- #comments -->
 <?php
 		/* Stop the rest of comments.php from being processed,
@@ -32,10 +34,12 @@
 
 <?php /* Lists all the comments for the current post */ ?>
 <?php if ( have_comments() ) : ?>
+
 <div id="comments" class="clearfix">
     <h4><?php comments_number(__('No comment yet','graphene'), __('1 comment','graphene'), __("% comments", 'graphene') );?></h4>
 
-	
+	<?php do_action('graphene_before_comments'); ?>
+
     <ol class="clearfix">
         <?php
         /* Loop through and list the comments. Tell wp_list_comments()
@@ -51,19 +55,23 @@
         <?php if (get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
         <div class="comment-nav clearfix">
             <p><?php paginate_comments_links(); ?>&nbsp;</p>
+            <?php do_action('graphene_comments_pagination'); ?>
         </div>
         <?php endif; // Ends the comment navigation ?>
     
+    <?php do_action('graphene_after_comments'); ?>
 </div>
 <?php endif; // Ends the comment listing ?>
 
 <?php if ('open' != $post->comment_status && have_comments()) : ?>
 	<div id="respond">
 		<h3 id="reply-title"><?php _e('Comments have been disabled.', 'graphene'); ?></h3>
+        <?php do_action('graphene_comments_disabled'); ?>
     </div>
 <?php endif; ?>
 
 <?php if ('open' == $post->comment_status) : ?>
+	<?php do_action('graphene_before_commentform'); ?>
 <?php 
 	/**
 	 * Get the comment form.
@@ -77,4 +85,5 @@
 					   )); 
 
 ?>
+	<?php do_action('graphene_after_commentform'); ?>
 <?php endif; // Ends the comment status ?>

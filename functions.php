@@ -188,6 +188,8 @@ function graphene_setup() {
 		),
 		*/
 	) );
+	
+	do_action('graphene_setup');
 }
 endif;
 
@@ -200,28 +202,29 @@ if (!function_exists('graphene_admin_header_style')) :
  *
  * @since graphene 1.0
  */
-function graphene_admin_header_style() {
-?>
-<style type="text/css">
-#headimg #name{
-position:relative;
-top:65px;
-left:38px;
-width:852px;
-font:bold 28px "Trebuchet MS";
-text-decoration:none;
-}
-#headimg #desc{
-	color:#000;
-	border-bottom:none;
-	position:relative;
-	top:50px;
-	width:852px;
-	left:38px;
-	font:18px arial;
-	}
-</style>
-<?php
+function graphene_admin_header_style(){ ?>
+	<style type="text/css">
+    #headimg #name{
+    position:relative;
+    top:65px;
+    left:38px;
+    width:852px;
+    font:bold 28px "Trebuchet MS";
+    text-decoration:none;
+    }
+    #headimg #desc{
+        color:#000;
+        border-bottom:none;
+        position:relative;
+        top:50px;
+        width:852px;
+        left:38px;
+        font:18px arial;
+        }
+    </style>
+    
+	<?php
+	do_action('graphene_admin_header_style');
 }
 endif;
 
@@ -319,7 +322,9 @@ function graphene_custom_style(){
     </style>
     <?php endif; ?>
     
-<?php }
+<?php 
+	do_action('graphene_custom_style');
+}
 
 /* This is for future updates, where hopefully I can make the theme generate the CSS file each time it's changed 
  * and just load that instead. Would be more efficient.
@@ -347,6 +352,8 @@ if (get_option('graphene_light_header')) :
 	function graphene_lightheader_style(){
 		wp_register_style('graphene-light-header', get_bloginfo('template_url').'/style-light.css');
 		wp_enqueue_style('graphene-light-header');
+		
+		do_action('graphene_light_header');
 		}
 	add_action('wp_print_styles', 'graphene_lightheader_style');
 endif;
@@ -362,10 +369,13 @@ if (!function_exists('graphene_default_menu')) :
 
 	function graphene_default_menu(){ ?>
 		<ul id="menu" class="clearfix">
+            <?php if (get_option('show_on_front') == 'posts') : ?>
             <li <?php if ( is_single() || is_front_page()) { echo 'class="current_page_item"'; } ?>><a href="<?php echo get_home_url(); ?>"><?php _e('Home','graphene'); ?></a></li>
+            <?php endif; ?>
             <?php wp_list_pages('echo=1&sort_column=menu_order&depth=5&title_li='); ?>
         </ul>
-<?php      		
+<?php
+	do_action('graphene_default_menu');
 	} 
 	
 endif;
@@ -379,26 +389,52 @@ if (!function_exists('graphene_comment')) :
 
 	function graphene_comment($comment, $args, $depth) {
 		$GLOBALS['comment'] = $comment; ?>
-			<li id="comment-<?php comment_ID() ?>" <?php comment_class('clearfix'); ?>>
+			<li id="comment-<?php comment_ID(); ?>" <?php comment_class('clearfix'); ?>>
+            	
+				<?php do_action('graphene_before_comment'); ?>
+                
 				<?php echo get_avatar($comment,$size='40'); ?>
+                <?php do_action('graphene_comment_gravatar'); ?>
+                
 					<div class="comment-wrap clearfix">
-						<h5><cite><?php comment_author_link() ?></cite><?php _e(' says:','graphene'); ?></h5>
+						<h5>
+                        	<cite><?php comment_author_link(); ?></cite><?php _e(' says:','graphene'); ?>
+                        <?php do_action('graphene_comment_author'); ?>
+                        </h5>
 						<div class="comment-meta">
 							<p class="commentmetadata">
                             	<?php /* translators: %1$s is the comment date, %2#s is the comment time */ ?>
 								<?php printf(__('%1$s at %2$s', 'graphene'), get_comment_date(), get_comment_time()); ?>
 								<?php echo '(UTC '.get_option('gmt_offset').')'; ?>
-								<?php edit_comment_link(__('Edit comment','graphene'),' | ',''); ?></p>
-							<p class="comment-reply-link"><?php comment_reply_link(array('depth' => $depth, 'max_depth' => $args['max_depth'], 'reply_text' => __('Reply', 'graphene'))); ?></p>
+								<?php edit_comment_link(__('Edit comment','graphene'),' | ',''); ?>
+                            	<?php do_action('graphene_comment_metadata'); ?>    
+                            </p>
+							<p class="comment-reply-link">
+								<?php comment_reply_link(array('depth' => $depth, 'max_depth' => $args['max_depth'], 'reply_text' => __('Reply', 'graphene'))); ?>
+                            
+                            	<?php do_action('graphene_comment_replylink'); ?>
+                            </p>
+                            
+							<?php do_action('graphene_comment_meta'); ?>
 						</div>
 						<div class="comment-entry">
+                        	<?php do_action('graphene_before_commententry'); ?>
+                            
 							<?php if ($comment->comment_approved == '0') : ?>
 							   <p><em><?php _e('Your comment is awaiting moderation.') ?></em></p>
-							<?php endif; ?>
-							<?php comment_text() ?>
+                               <?php do_action('graphene_comment_moderation'); ?>
+							<?php else : ?>
+								<?php comment_text(); ?>
+                            <?php endif; ?>
+                            
+                            <?php do_action('graphene_after_commententry'); ?>
 						</div>
 					</div>
+                
+                <?php do_action('graphene_after_comment'); ?>
 	<?php
+	
+	do_action('graphene_after_comment');
 	}
 
 endif;
@@ -413,17 +449,17 @@ if (!function_exists('graphene_adsense')) :
 
 	function graphene_adsense(){
 		
-		if (get_option('graphene_show_adsense')) :
-		?>
-		<div id="adsense_single" class="post" style="text-align:right;">
+		if (get_option('graphene_show_adsense')) : ?>
+        
+		<div class="post adsense_single" style="text-align:right;">
 			<?php echo stripslashes(get_option('graphene_adsense_code')); ?>
 		</div>
+		<?php do_action('graphene_show_adsense'); ?>
 		
-		<?php
+		<?php endif;
 		
-		endif;
-		
-}
+		do_action('graphene_adsense');
+	}
 
 endif;
 
@@ -438,7 +474,10 @@ if (!function_exists('graphene_addthis')) :
 			echo '<div class="add-this-right">';
 			echo stripslashes(get_option('graphene_addthis_code'));
 			echo '</div>';
+			
+			do_action('graphene_show_addthis');
 		}
+		do_action('graphene_addthis');
 	}
 
 endif;
@@ -507,6 +546,7 @@ function graphene_widgets_init() {
 		}
 	}
 	
+	do_action('graphene_widgets_init');
 }
 /** Register sidebars by running graphene_widgets_init() on the widgets_init hook. */
 add_action('widgets_init', 'graphene_widgets_init');
@@ -515,6 +555,8 @@ add_action('widgets_init', 'graphene_widgets_init');
 /**
  * Register custom Twitter widgets.
 */
+global $twitter_username;
+global $twitter_tweetcount;
 $twitter_username = '';
 $twitter_tweetcount = 1;
 
@@ -529,11 +571,11 @@ class Graphene_Widget_Twitter extends WP_Widget{
 		
 		// Create the widget
 		$this->WP_Widget('graphene-twitter', 'Graphene Twitter', $widget_ops, $control_ops);
+		
 	}
 	
 	function widget($args, $instance){		// This function displays the widget
 		extract($args);
-		
 		
 		// User selected settings
 		global $twitter_username;
@@ -548,13 +590,12 @@ class Graphene_Widget_Twitter extends WP_Widget{
             	<li>&nbsp;</li>
             </ul>
             <p id="tweetfollow" class="sidebar_ablock"><a href="http://twitter.com/<?php echo $twitter_username; ?>"><?php _e('Follow me on Twitter', 'graphene') ?></a></p>
+            
+            <?php do_action('graphene_twitter_widget'); ?>
         <?php echo $args['after_widget']; ?>
         
-        <?php 
-		
-		//echo $twitter_script;
-        
-        function graphene_add_twitter_script() {
+        <?php
+		function graphene_add_twitter_script() {
 			global $twitter_username;
 			global $twitter_tweetcount;
 			echo '
@@ -605,6 +646,7 @@ class Graphene_Widget_Twitter extends WP_Widget{
 	}
 }
 
+
 /**
  * Register the custom widget by passing the graphene_load_widgets() function to widgets_init
  * action hook.
@@ -637,6 +679,8 @@ function graphene_options_init() {
 	
 	add_action('admin_print_styles-'.$graphene_options, 'graphene_admin_options_style');
 	add_action('admin_print_styles-'.$graphene_display, 'graphene_admin_options_style');
+	
+	do_action('graphene_options_init');
 }
 add_action('admin_menu', 'graphene_options_init');
 
@@ -657,17 +701,24 @@ function graphene_comment_form_fields(){
 		'email'  => '<p class="comment-form-email"><label for="email" class="graphene_form_label">' . __('Email:','graphene').'</label><input id="email" name="email" type="text" /></p>',
 		'url'    => '<p class="comment-form-url"><label for="url" class="graphene_form_label">'.__('Website:','graphene').'</label><input id="url" name="url" type="text" /></p>',
 	);
+	
+	do_action('graphene_comment_form_fields');
+	
 	return $fields;
 }
 
 // The comment field textarea
 function graphene_comment_textarea(){
 	echo '<p class="clearfix"><label class="graphene_form_label">'.__('Message:','graphene').'</label><textarea name="comment" id="comment" cols="40" rows="10" tabindex="4"></textarea></p><div class="graphene_wrap">';
+	
+	do_action('graphene_comment_textarea');
 }
 
 // The submit button
 function graphene_comment_submit_button(){
 	echo '</div><p class="graphene-form-submit"><button type="submit" id="graphene_submit" class="submit" name="graphene_submit"><span>'.__('Submit Comment', 'graphene').'</span></button></p>';
+	
+	do_action('graphene_comment_submit_button');
 	}
 
 // Add all the filters we defined
@@ -685,7 +736,9 @@ add_filter('comment_form', 'graphene_comment_submit_button');
  */
 if (!function_exists('graphene_continue_reading_link')) :
 	function graphene_continue_reading_link() {
-		return ' <a href="'. get_permalink() . '">' . __( 'Continue reading &raquo;', 'graphene' ) . '</a>';
+		return ' <a class="continue_reading" href="'. get_permalink() . '">' . __( 'Continue reading &raquo;', 'graphene' ) . '</a>';
+		
+		do_action('graphene_continue_reading_link');
 	}
 endif;
 
@@ -701,7 +754,63 @@ endif;
  */
 function graphene_auto_excerpt_more( $more ) {
 	return '&hellip;' . graphene_continue_reading_link();
+	
+	do_action('graphene_auto_excerpt_more');
 }
 add_filter('excerpt_more', 'graphene_auto_excerpt_more' );
+
+
+/**
+ * Generates the posts navigation links
+*/
+if (!function_exists('graphene_posts_nav')) :
+	function graphene_posts_nav(){ ?>
+		<div class="post-nav clearfix">
+			<p id="previous"><?php next_posts_link(__('Older posts &laquo;', 'graphene')) ?></p>
+			<p id="next-post"><?php previous_posts_link(__('&raquo; Newer posts', 'graphene')) ?></p>
+		</div>
+        
+        <?php do_action('graphene_posts_nav'); ?>
+	<?php
+	}
+endif;
+
+
+/**
+ * Prints out the scripts required for the featured posts slider
+*/
+
+/* jQuery Scrollable */ 
+if (!function_exists('graphene_scrollable')) :
+	function graphene_scrollable() { 
+		if (is_front_page() && !get_option('graphene_slider_disable')) : ?>
+            <!-- Scrollable -->
+            <script type="text/javascript">
+                jQuery(document).ready(function($){
+					$(function() {
+                        // initialize scrollable
+						$("#slider_root").scrollable({circular: true}).navigator({	  
+								navi: ".slider_nav",
+								naviItem: 'a',
+								activeClass: 'active'
+							}).autoscroll({interval: 7000});
+                    });
+                });
+            </script>
+            <!-- #Scrollable -->
+		<?php 
+		endif;
+	}
+endif;
+
+/* Load jQuery Tools script */
+function graphene_scrollable_js() {
+	if (is_front_page() && !get_option('graphene_slider_disable')) {
+		wp_enqueue_script('graphene-jquery-tools', 'http://cdn.jquerytools.org/1.2.4/all/jquery.tools.min.js', array('jquery'), '', true);
+	}
+}
+// Print both the js and the script
+add_action('template_redirect', 'graphene_scrollable_js');
+add_action('wp_footer', 'graphene_scrollable');
 
 ?>

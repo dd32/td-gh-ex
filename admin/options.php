@@ -15,6 +15,12 @@ function graphene_options(){
 	// Updates the database
 	if (isset($_POST['graphene_submitted']) && $_POST['graphene_submitted'] == true) {
 		
+		
+		// Process the slider options
+		$slider_cat = (!empty($_POST['slider_cat'])) ? $_POST['slider_cat'] : '';
+		$slider_disable = (!empty($_POST['slider_disable'])) ? $_POST['slider_disable'] : false;
+		
+		
 		// Process the adsense options
 		if (!empty($_POST['show_adsense'])) {
 			if (!empty($_POST['adsense_code'])) {
@@ -76,6 +82,10 @@ function graphene_options(){
 		// Updates all options
 		if (empty($errors)) {
 			
+			// Slider options
+			update_option('graphene_slider_cat', $slider_cat);
+			update_option('graphene_slider_disable', $slider_disable);
+			
 			// AdSense options
 			update_option('graphene_show_adsense', $show_adsense);
 			update_option('graphene_adsense_code', $adsense_code);
@@ -108,6 +118,9 @@ function graphene_options(){
 		}
 	
 	// Get the current options from database
+	$slider_cat = get_option('graphene_slider_cat');
+	$slider_disable = get_option('graphene_slider_disable');
+	
 	$show_adsense = get_option('graphene_show_adsense');
 	$adsense_code = get_option('graphene_adsense_code');
 	$adsense_show_frontpage = get_option('graphene_adsense_show_frontpage');
@@ -159,13 +172,42 @@ function graphene_options(){
 			}
 		?>
         
-        
         <?php /* AdSense Options */ ?>
-        <h3><?php _e('Adsense Options', 'graphene'); ?></h3>
+        <h3><?php _e('Slider Options', 'graphene'); ?></h3>
         
         <?php // Begins the main html form. Note that one html form is used for *all* options ?>
         <form action="" method="post">
             <table class="form-table">
+            	<tr>
+                    <th scope="row">
+                    	<label><?php _e('Category to show in slider', 'graphene'); ?></label><br />
+                        <small><?php _e('All posts within the category selected here will be displayed on the slider. Usage example: create a new category "Featured" and assign all posts to be displayed on the slider to that category, and then select that category here.', 'graphene'); ?></small>
+                    </th>
+                    <td>
+                    	<select name="slider_cat">
+                        	<option value=""><?php _e('Show latest posts', 'graphene'); ?></option>
+                            <option value="" disabled="disabled">--------------------</option>
+                            <?php /* Get the list of categories */ 
+								$categories = get_categories();
+								foreach ($categories as $category) :
+							?>
+                            <option value="<?php echo $category->cat_name; ?>" <?php if ($slider_cat == $category->cat_name) {echo 'selected="selected"';}?>><?php echo $category->cat_name; ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </td>
+                </tr>
+            	<tr>
+                    <th scope="row">
+                    	<label><?php _e('Disable slider', 'graphene'); ?></label>
+                    </th>
+                    <td><input type="checkbox" name="slider_disable" <?php if ($slider_disable == true) echo 'checked="checked"' ?> value="true" /></td>
+                </tr>
+            </table>
+        
+        
+        <?php /* AdSense Options */ ?>
+        <h3><?php _e('Adsense Options', 'graphene'); ?></h3>
+        	<table class="form-table">
                 <tr>
                     <th scope="row">
                     	<label><?php _e('Show Adsense advertising', 'graphene'); ?></label>

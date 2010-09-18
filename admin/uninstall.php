@@ -1,4 +1,9 @@
 <?php 
+
+	// Slider options
+	delete_option('graphene_slider_cat', $slider_cat);
+	delete_option('graphene_slider_disable', $slider_disable);
+
 	// AdSense options
 	delete_option('graphene_show_adsense', $show_adsense);
 	delete_option('graphene_adsense_code', $adsense_code);

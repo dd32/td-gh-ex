@@ -7,6 +7,7 @@
             	<div class="post-nav clearfix">
                     <p id="previous"><?php previous_post_link() ?></p>
                     <p id="next-post"><?php next_post_link() ?></p>
+                    <?php do_action('graphene_post_nav'); ?>
                 </div>
                 <?php endif; ?>
                 
@@ -14,16 +15,19 @@
                 <?php if (!is_page() && (get_option('graphene_hide_post_date') != true)) : ?>
                 <div class="date">
                     <p><?php the_time('M'); ?><br /><span><?php the_time('d') ?></span></p>
+                    <?php do_action('graphene_post_date'); ?>
                 </div>
                 <?php endif; ?>
                 
                 <div class="entry clearfix<?php if (get_option('graphene_hide_post_date') == true) {echo ' nodate';} ?>">
                 
                 	<?php /* Post title */ ?>
-                    <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(esc_attr__('Permalink Link to %s', 'graphene'), the_title_attribute('echo=0')); ?>"><?php if (get_the_title() == '') {_e('(No title)','graphene');} else {the_title();} ?></a></h2>
+                    <h2>
+                    	<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(esc_attr__('Permalink Link to %s', 'graphene'), the_title_attribute('echo=0')); ?>"><?php if (get_the_title() == '') {_e('(No title)','graphene');} else {the_title();} ?></a>
+                    <?php do_action('graphene_post_title'); ?>
+                    </h2>
                     
 					<?php /* Post meta */ ?>
-                    <?php if ((get_option('graphene_hide_post_cat') != true) || (get_option('graphene_hide_post_author') != true)) : ?>
                     <div class="post-meta clearfix">
                     	
 						<?php /* Post category, not shown if this is a Page post or if admin decides to hide it */ ?>
@@ -50,17 +54,23 @@
 							?>
                         </p>
                         <?php endif; ?>
+                        
+                        <?php do_action('graphene_post_meta'); ?>
                     </div>
-                    <?php endif; ?>
                     
                     <?php /* Post content */ ?>
                     <div class="entry-content clearfix">
+                    	<?php do_action('graphene_before_post_content'); ?>
+                        
                     	<?php if (!is_search() && !is_archive()) : ?>
                         <?php the_content(__('Read the rest of this entry &raquo;','graphene')); ?>
                         <?php else : ?>
                         	<?php the_excerpt(); ?>
                         <?php endif; ?>
                         <?php wp_link_pages(array('before' => __('<p><strong>Pages:</strong> ','graphene'), 'after' => '</p>', 'next_or_number' => 'number')); ?>
+                        
+                        <?php do_action('graphene_after_post_content'); ?>
+                        
                     </div>
                     
                     <?php /* Post footer */ ?>
@@ -81,6 +91,8 @@
                         <?php elseif (get_option('graphene_hide_post_commentcount') != true) : ?>
                         	<p class="comment-link"><?php comments_popup_link(__('Leave comment','graphene'), __('1 comment','graphene'), __("% comments",'graphene')); ?></p>
                         <?php endif; ?>
+                        
+                        <?php do_action('graphene_post_footer'); ?>
                     </div>
                 </div>
             </div>
@@ -100,10 +112,8 @@
     
     <?php /* Display posts navigation if this is not a single post page */ ?>
     <?php if (!is_single()) : ?>
-        <div class="post-nav clearfix">
-            <p id="previous"><?php next_posts_link(__('Older posts &laquo;','graphene')) ?></p>
-            <p id="next-post"><?php previous_posts_link(__('&raquo; Newer posts','graphene')) ?></p>
-        </div>
+        <?php /* Posts navigation. See functions.php for the function definition */ ?>
+    	<?php graphene_posts_nav(); ?>
     <?php endif; ?>
     
 <?php /* If there is no post, display message and search form */ ?>
@@ -123,4 +133,6 @@
             <?php get_search_form(); ?>
         </div>
     </div>
+    
+    <?php do_action('graphene_not_found'); ?>
 <?php endif; ?>

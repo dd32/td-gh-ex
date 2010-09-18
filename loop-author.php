@@ -2,6 +2,8 @@
 
     <div class="entry author-entry clearfix">
     
+    	<?php do_action('graphene_author_entry'); ?>
+    
     	<?php /* Display the user's gravatar */ ?>
         <?php echo get_avatar(get_the_author_meta('user_email'), 150); ?>
             
@@ -21,15 +23,15 @@
                 <?php if (get_the_author_meta('jabber') != '') {echo '<br />';printf('<strong>Jabber / Google Talk:</strong> %1$s', get_the_author_meta('jabber'));} ?>
                 <?php if (get_the_author_meta('yim') != '') {echo '<br />';printf('<strong>Yahoo! IM:</strong> %1$s', get_the_author_meta('yim'));} ?>
 			</p>
+            <?php do_action('graphene_author_details'); ?>
             
 			<?php if (get_the_author_meta('description') != '') : ?>
             <h4><?php _e('Biography', 'graphene'); ?></h4>
 			<p><?php the_author_meta('description'); ?></p>
-            <?php endif; ?>
             
-        	<?php /* Rewind the loop so that we can list the author's posts properly */ 
-			//rewind_posts();
-			?>
+            <?php do_action('graphene_author_desc'); ?>
+            <?php endif; ?>
+         
             
             <?php /* Lists the author's latest posts */ ?>
             <h4><?php _e('Latest posts', 'graphene'); ?></h4>
@@ -41,6 +43,7 @@
                     <li><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(esc_attr__('Permalink Link to %s', 'graphene'), the_title_attribute('echo=0')); ?>"><?php if (get_the_title() == '') {_e('(No title)','graphene');} else {the_title();} ?></a> &mdash; <?php echo get_the_date(); ?></li>    
                 <?php } ?>
             	</ol>
+                <?php do_action('graphene_author_latestposts'); ?>
             
             <?php /* Lists the author's most commented posts */ ?>
             <h4><?php _e('Most commented posts', 'graphene'); ?></h4>
@@ -55,6 +58,7 @@
                     <?php endif; ?>
                 <?php } ?>
             	</ol>
+                <?php do_action('graphene_author_popularposts'); ?>
         </div>
         
         <?php /* Post footer */ ?>

@@ -28,6 +28,7 @@ get_header(); ?>
      get_template_part('loop', 'author');
     ?>
     
+    <?php do_action('graphene_before_authorpostlist'); ?>
     
     <h3 class="author-post-list"><?php _e("Author's posts listings", 'graphene'); ?></h3>
     <?php 
@@ -35,6 +36,8 @@ get_header(); ?>
 	query_posts(array('author' => get_the_author_meta('ID'), 'paged' => get_query_var('paged'))); 
 	get_template_part('loop', 'archive'); 
 	?>
+    
+    <?php do_action('graphene_after_authorpostlist'); ?>
             
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

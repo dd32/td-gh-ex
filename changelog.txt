@@ -4,9 +4,20 @@ http://www.khairul-syahir.com
 
 CHANGELOG
 
-Version 1.0.9
+Version 1.0.10
 
 	* [TODO] Add the author info box under each post in single post display
+
+Version 1.0.9
+
+	* Added jQuery slider on the front page
+	* Fixed border-radius CSS property, now works in Chrome and Safari too
+	* Fixed the W3C CSS validator link
+	* Removed max-width property from the content area and use overflow:auto instead
+	* Default menu no longer show the hardcoded Home link when static front page is used
+	* Added class attributes for the header title <h1> and description <h2>
+	* Added action hooks for much greater customisability through child theme
+	* Added SSL check for custom header image link, and return https link instead of http if SSL connection is used
 
 Version 1.0.8.2
 

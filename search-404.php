@@ -1,4 +1,4 @@
-<div class="post clearfix">
+<div class="post clearfix post_404">
     <div class="entry clearfix">
         <h2><?php _e('Error 404 - Page Not Found', 'graphene'); ?></h2>
         <div class="entry-content clearfix">
@@ -9,7 +9,7 @@
         </div>
     </div>
 </div>
-<div class="post clearfix">
+<div class="post clearfix post_404_search">
 	<div class="entry clearfix"> 
 	<h2><?php _e('Suggested results', 'graphene'); ?></h2>   
         <div class="entry-content clearfix">
@@ -28,11 +28,9 @@
             </ul>
         </div>
     </div>
-</div>            
-    <div class="post-nav clearfix">
-        <p id="previous"><?php next_posts_link('Older posts &laquo;') ?></p>
-        <p id="next-post"><?php previous_posts_link('&raquo; Newer posts') ?></p>
-    </div>
+</div>
+	<?php /* Posts navigation. See functions.php for the function definition */ ?>
+    <?php graphene_posts_nav(); ?>
 <?php else : ?>
 			<p><?php _e("<strong>Sorry, couldn't find anything.</strong> Try searching for alternative terms using the search form above.", 'graphene'); ?></p>
     	</div>

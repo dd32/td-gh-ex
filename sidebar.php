@@ -10,6 +10,9 @@
 ?>
 	</div><!-- #content-main -->
 <div id="sidebar_right" class="sidebar">
+
+	<?php do_action('graphene_before_rightsidebar'); ?>
+
     <?php 	/* Widgetized sidebar, if supported. */
     if (!is_home() && is_active_sidebar('sidebar-widget-area')) { // Not home, display normal sidebar if active
 		dynamic_sidebar('sidebar-widget-area');
@@ -50,5 +53,7 @@
     <?php } ?>
     
     <?php wp_meta(); ?>
+    
+    <?php do_action('graphene_after_rightsidebar'); ?>
 
 </div><!-- #sidebar -->
