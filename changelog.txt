@@ -7,6 +7,10 @@ CHANGELOG
 Version 1.0.10
 
 	* [TODO] Add the author info box under each post in single post display
+	
+Version 1.0.9.2
+
+	* Fixed the menu's z-index that caused the dropdown menu to be displayed behind the slider
 
 Version 1.0.9.1
 

@@ -2,7 +2,7 @@
 Theme Name: Graphene
 Theme URI: http://www.khairul-syahir.com/wordpress-dev/graphene-theme
 Description: The Graphene theme for Wordpress 3.0 is a stylish, neat, and tight WordPress theme supporting 2 widget areas, with the ability to determine the number of columns to display in the footer widget area. It includes action hooks for greater customisability through child theme, and a jQuery slider for your featured posts. It has built-in Twitter widget, allows for customisable header and background through the WordPress admin, built-in AdSense placement and AddThis social sharing button, supports custom menu with drop-down navigation of up to 5 levels deep, and threaded comments of up to 10 levels deep! A one-column, full-width page template without the sidebar is included. You can hide post parameters, show post author's gravatar, use different widgets for the front page than the rest of the website, and specify font styles for header and content texts. The codes are written so that you can easily override or add functionality to the theme by using your own child theme without altering the parent theme's code. Seriously, there's too many features for this theme to describe them all here! This theme has been tested and confirmed compatible with IE6, IE7, IE8, Mozilla Firefox, Google Chrome, and Safari. Translations included: Malay, Brazilian Portuguese, Spanish, Italian, French, Polish, and German. See this <a href="http://www.khairul-syahir.com/wordpress-dev/graphene-theme#changelog">theme's changelog</a>.
-Version: 1.0.9.1
+Version: 1.0.9.2
 Author: Syahir Hakim
 Author URI: http://www.khairul-syahir.com
 Tags: black, blue, white, two-columns, right-sidebar, fixed-width, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready
@@ -131,6 +131,7 @@ padding-top:12px;
 	position: absolute;
 	width: 175px;
 	left: -999em;
+	z-index:100;
 }
 #menu li:hover ul, #menu li.sfhover ul{
 	left: auto;
