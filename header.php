@@ -126,7 +126,7 @@
                 		<div class="slider_items">
 				<?php 
 					/**
-					 * Get the latest post from each category, and limit to 5 categories
+					 * Get the featured posts to be displayed on the slider
 					*/
 					global $post;
 					
@@ -139,7 +139,7 @@
 					/* Get the list of posts to display in the slider */
 					if (!$slidercat) {						
 						$sliderposts = get_posts(array(
-										'showposts' => 5,
+										'posts_per_page' => 5,
 										'orderby' => 'date',
 										'order' => 'DESC',
 											   ));
@@ -148,6 +148,7 @@
 										'category_name' => $slidercat,
 										'orderby' => 'date',
 										'order' => 'DESC',
+										'nopaging' => true
 											   ));
 					}
 						

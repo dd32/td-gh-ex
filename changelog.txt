@@ -8,6 +8,10 @@ Version 1.0.10
 
 	* [TODO] Add the author info box under each post in single post display
 
+Version 1.0.9.1
+
+	* Fixed the jQuery slider so that all posts in the selected category is shown instead of limited to 5 posts
+
 Version 1.0.9
 
 	* Added jQuery slider on the front page
