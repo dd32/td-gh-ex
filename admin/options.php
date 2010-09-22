@@ -174,7 +174,7 @@ function graphene_options(){
         
         <?php /* AdSense Options */ ?>
         <h3><?php _e('Slider Options', 'graphene'); ?></h3>
-        
+        <p><?php _e("The slider will display the Featured Image of the post, along with the post's excerpt. If no featured image is set, it will display a generic image instead.", 'graphene'); ?></p>
         <?php // Begins the main html form. Note that one html form is used for *all* options ?>
         <form action="" method="post">
             <table class="form-table">

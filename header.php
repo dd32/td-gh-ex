@@ -90,7 +90,7 @@
 		}
 		
 		/* Check if the page uses SSL and change HTTP to HTTPS if true */
-		if (is_ssl()){
+		if (is_ssl() && !stripos($header_img, 'https')){
 			$header_img = str_replace('http', 'https', $header_img);	
 		}
 		

@@ -91,9 +91,6 @@ function graphene_setup() {
 	$locale_file = TEMPLATEPATH . "/languages/$locale.php";
 	if ( is_readable( $locale_file ) )
 		require_once( $locale_file );
-		
-	// This theme supports custom menu
-	add_theme_support('menus');
 	
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(

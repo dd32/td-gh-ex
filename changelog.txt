@@ -7,6 +7,17 @@ CHANGELOG
 Version 1.0.10
 
 	* [TODO] Add the author info box under each post in single post display
+	* [TODO] Add option to show the AddThis button on posts and pages or posts only
+	* [TODO] Learn how to add option to the edit post screen
+	* [TODO] Add option to have the slider pull the first image from the post instead of using featured image (Note: using wordpress' own resizing function perhaps?)
+	* [TODO] Add option to link the header image to the homepage
+	
+Version 1.0.9.3
+
+	* Hides the "Continue reading" link in excerpts of posts in slider
+	* Some CSS updates on the slider styling
+	* Removed add_theme_support() calls that used read-only arguments
+	* Removed overflow:auto on content paragraphs and lists
 	
 Version 1.0.9.2
 
