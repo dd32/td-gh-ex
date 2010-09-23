@@ -1,10 +1,4 @@
-<?php
-/**
- * @package WordPress
- * @subpackage Adventure
- */
-
-get_header(); ?>
+<?php get_header(); ?>
 
 <div id="center">
 	
@@ -23,7 +17,7 @@ get_header(); ?>
         	<?php comments_popup_link('Leave A Comment', '1 Comment', '% Comments'); ?>,
             <?php endif; ?>
         <?php endif; ?>
-        	Written on <?php the_time('F jS, Y') ?> <?php if ( is_page()) : ?><?php else : ?>&amp; filed under <?php the_category(', ') ?> <?php the_tags('Tags: ', ', ', '<br />'); ?><?php endif; ?>
+        <?php the_time('F jS, Y') ?> <?php if ( is_page()) : ?><?php else : ?>, <?php the_category(', ') ?> <?php the_tags('Tags: ', ', ', '<br />'); ?><?php endif; ?>
         </div></div></div>
     </div>
 	<?php if ('open' == $post->comment_status) : ?>
@@ -77,16 +71,18 @@ get_header(); ?>
 <div id="endspacer">
 </div>
     
-<div id="header">
+<div id="bottombar">
+
+	<div id="menuz">
+        <ul id="menulist">
+        <?php if ( has_nav_menu( 'menu' ) ) : wp_nav_menu(); else : ?>
+        <ul id="menulist"><?php wp_list_pages( 'title_li=&depth=-1' ); ?></ul>
+        <?php endif; ?>
+		</ul>
+    </div>
     
 	<div id="title">
     	<h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
-    </div>
-    	
-    <div id="menuz">
-        <ul id="menulist">
-        <?php wp_nav_menu( array( 'theme_location' => 'primary-menu' ) ); ?>
-		</ul>
     </div>
     
     <div id="slogan">
@@ -96,5 +92,3 @@ get_header(); ?>
 </div>
 
 <?php get_footer(); ?>
-</body>
-</html>

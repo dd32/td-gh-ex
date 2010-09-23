@@ -6,7 +6,7 @@ Theme URI: http://schwarttzy.com/?page_id=551
 Description: Inspired by a certain GPS Manufacture, I designed this theme to feel like your looking through a window out into the wilderness. The CSS, XHTML and design is released under GPL:
 	http://www.opensource.org/licenses/gpl-license.php
 
-Version: 1.2.7
+Version: 1.2.8
 
 Author: Eric Schwarz
 
@@ -81,7 +81,7 @@ h1 a:hover{
 				Header          
 ************************************************/
 
-#header {
+#bottombar {
 	background: url(images/bars.png);
 	width: 100%;
 	height: 50px;
@@ -547,6 +547,35 @@ img.aligncenter {
 	margin: 10px auto 10px;
 	text-align: center;
 	display: block;
+}
+.wp-caption {
+	background: url(images/blacktrans.png);
+	margin: 0 auto 0;
+	padding:5px;
+	text-align: center;
+	-moz-border-radius: 6px;
+	-khtml-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	background: url(images/blacktrans.png);
+}
+.size-thumbnail {
+	margin: 0 15px 10px 0;
+}
+.gallery {
+	background: url(images/blacktrans.png);
+	margin: 10px;
+	padding: 0 5px 0 5px;
+	-moz-border-radius: 6px;
+	-khtml-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 .left {float: left;}
 .textleft {text-align: left;}
