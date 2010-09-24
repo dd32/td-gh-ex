@@ -17,7 +17,7 @@
         	<?php comments_popup_link('Leave A Comment', '1 Comment', '% Comments'); ?>,
             <?php endif; ?>
         <?php endif; ?>
-        <?php the_time('F jS, Y') ?> <?php if ( is_page()) : ?><?php else : ?>, <?php the_category(', ') ?> <?php the_tags('Tags: ', ', ', '<br />'); ?><?php endif; ?>
+        Written on <?php the_time('F jS, Y') ?> <?php if ( is_page()) : ?><?php else : ?>, <?php the_category(', ') ?> <?php the_tags('Tags: ', ', ', '<br />'); ?><?php endif; ?>
         </div></div></div>
     </div>
 	<?php if ('open' == $post->comment_status) : ?>
