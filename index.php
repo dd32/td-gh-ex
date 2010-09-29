@@ -11,15 +11,16 @@
 				
 			<!--post title as a link-->
 				<h1><div id="post-<?php the_ID(); ?>"<?php post_class(); ?>><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h1>
-	<p><b>By <?php the_author(); ?></b> | <?php the_time('F j, Y'); ?> </p>
+	<p><b>By <?php the_author(); ?></b> | <?php the_time( get_option( 'date_format' ) ) ?>  </p>
 		<div class="post3">
 	</div>	
 				<!--post text with the read more link-->
 					<?php the_content('Read the rest of this entry &raquo;'); ?>
 				<!--show categories, edit link ,comments-->
-		
+	<div class="clear"><!--clearing--></div>
 				<p><b>Topics:</b> <?php the_category(', ') ?> | <?php edit_post_link('Edit', '', ' | '); ?>  <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?></p>
 	<?php the_tags('<p>Tags: ', ', ', '</p>'); ?>
+
 	<div class="post2">
 	</div>		
 	<?php the_post_thumbnail(); ?>
@@ -35,13 +36,14 @@
 
 		Not Found
 		Sorry, but you are looking for something that isn't here.
-		<?php include (TEMPLATEPATH . "/searchform.php"); ?>
+	<?php get_search_form(); ?>
+
         <!--do not delete-->
 	<?php endif; ?>
 
 <!--index.php end-->
 </article>
-	
+	<div class="clear"><!--clearing--></div>	
 	<!--include sidebar-->
 <?php get_sidebar(); ?>                                 
 <!--include footer-->

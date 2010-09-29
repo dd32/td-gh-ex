@@ -1,7 +1,7 @@
 /*  
 Theme Name: anIMass
 Author URI: http://richard-dickinson.com
-Version: 6.0
+Version: 6.1
 Author: Richard Dickinson
 Description: anIMass is a customizable theme designed for blog content. It is suitable for Internet Marketing and other purposes. It is coded in html5 and is WordPress3 compatible.
 Tags:two-columns, fixed-width, custom-header, custom-background, threaded-comments, sticky-post, editor-style
@@ -328,7 +328,10 @@ footer a:hover {
 }
 /* Images
 -------------------------------------------------------------- */
-
+img { 
+    max-width: 500px; 
+    max-height: 500px; 
+}
 .entry-content img {
 	margin: 0 0 1.5em 0;
 }
@@ -363,6 +366,7 @@ img.aligncenter {
 .wp-caption p.wp-caption-text {
 	margin: 0;
 }
+
 .wp-smiley { 
 	max-height: 1em;
 	margin:0 !important;
@@ -394,6 +398,7 @@ margin-left: 0;
 
 
 
+
 .commenttext {
 	background: #9bc561 ;
 	border-top:1px solid #c5f386;
@@ -421,9 +426,42 @@ font-size: 11px;
 line-height: 17px;
 padding: 0 4px 5px;
 margin: 0;
+
 }
 
+/* Captions */
+.aligncenter,
+div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
 
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
+/* End captions */
 /* Nav      */
 nav 
 {
@@ -468,3 +506,22 @@ nav li a
 
 nav li a:hover {
 background: #383; }
+
+.comments-template{margin: 10px 0 0;border-top: 1px solid #ccc;padding: 10px 0 0;}
+.comments-template ol{margin: 0;padding: 0 0 15px;list-style: none;}
+.comments-template ol li{margin: 10px 0 0;line-height: 18px;padding: 0 0 10px;border-bottom: 1px solid #ccc;}
+.comments-template h2, .comments-template h3{font-family: Georgia, Sans-serif;font-size: 16px;}
+.commentmetadata{font-size: 12px;}
+.comments-template p.nocomments{padding: 0;}
+.comments-template textarea{font-family: Arial, Helvetica, Georgia, Sans-serif;font-size: 12px;}
+
+
+
+#comment {width:450px; padding:10px;}
+.commentlist li ul li {background-color: #f3f2f1; border:1px solid #e5e4e2; padding-bottom:10px; margin-bottom:10px; margin-top:13px;}
+.commentlist li ul li ul li {background-color: white;}
+
+div.clear { clear: both; }
+
+
+

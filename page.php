@@ -2,7 +2,7 @@
 <!--page.php-->
 
 <div id="maincontent">
-<article>
+<article >
 
     <!--loop-->
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -17,6 +17,10 @@
 	                       <!--if you paginate pages-->
 				<?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?> 
 	
+	
+		<div class="commentblock">
+		 		<?php comments_template(); ?>
+		       </div><!--commentblock-->
 	<!--end of post and end of loop-->
 	  <?php endwhile; endif; ?>
 

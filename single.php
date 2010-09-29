@@ -36,8 +36,12 @@
 				<!--all options over and out-->
 	
 		
-	<!--include comments template-->
-	<?php comments_template(); ?>
+<div class="comments-template">
+
+<?php comments_template(); ?>
+
+</div>
+
 	
 <p><?php previous_post_link('&laquo; %link  |') ?>  <a href="<?php bloginfo('url'); ?>">Home</a>  <?php next_post_link('|  %link &raquo;') ?></p>
 

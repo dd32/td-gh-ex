@@ -1,5 +1,6 @@
 <?php
 
+
 // This theme uses wp_nav_menu() in three locations.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Navigation'),
@@ -52,16 +53,23 @@ add_custom_background();
  
 if(function_exists('add_theme_support')) {  
 add_theme_support('automatic-feed-links');  
-add_theme_support('editor_style'); 
+add_editor_style();
 add_theme_support( 'post-thumbnails' );
 set_post_thumbnail_size( 50, 50, true );
 add_image_size( 'hp-post-thumbnail', 200, 200, true ); // Homepage thumbnail size
 add_image_size( 'single-post-thumbnail', 300, 9999 ); // Permalink t
-add_theme_support( 'menus' );
-add_theme_support('nav-menus');
-} 
 
-$content_width = 500;
+add_theme_support('menus');
+} 
+/* Set the content width based on the theme's design and stylesheet. 
+ * 
+ * Used to set the width of images and content. Should be equal to the width the theme 
+ * is designed for, generally via the style.css stylesheet. 
+ */ 
+if ( ! isset( $content_width ) ) 
+    $content_width = 500; 
+
+
 ?>
 <?php
 function my_own_gravatar( $avatar_defaults ) {

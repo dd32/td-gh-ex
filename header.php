@@ -9,8 +9,8 @@
 <!-- AnIMass WordPress Theme design by Richard Dickinson - http://www.richard-dickinson.com/ -->
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel='stylesheet' href='wp.css' type='text/css' media='all' />
+<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
 <?php //comments_popup_script(); // off by default ?>
