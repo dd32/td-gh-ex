@@ -2,13 +2,13 @@
 if ( !isset( $content_width ) ) $content_width = 730;
 if ( function_exists( 'add_theme_support' ) ) add_theme_support( 'automatic-feed-links' );
 if ( function_exists( 'register_nav_menu' ) ) register_nav_menu( 'menu', 'Menu' );
-if ( function_exists('register_sidebar') ) register_sidebar( array(
-    'name' => __( 'Widgets', 'simplest' ),
-    'id' => 'widgets',
-    'before_widget' => '<li id="%1$s" class="widget %2$s">',
-    'after_widget' => '</li>',
-    'before_title' => '<h2 class="widgettitle">',
-    'after_title' => '</h2>',) );
+if ( function_exists('register_sidebar') )
+    register_sidebar(array(
+        'before_widget' => '<li id="%1$s" class="widget %2$s">',
+        'after_widget' => '</li>',
+        'before_title' => '<h2 class="widgettitle">',
+        'after_title' => '</h2>',
+    ));
    
 function print_comment($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment; ?>
