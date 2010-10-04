@@ -8,40 +8,27 @@
 <!--loop-->			
   <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-	        <!--navigation-->
-<p><?php previous_post_link('&laquo; %link  |') ?>  <a href="<?php bloginfo('url'); ?>">Home</a>  <?php next_post_link('|  %link &raquo;') ?></p>
-	
-		<!--post title-->
+	<!--post title-->
 		<h1><div id="post-<?php the_ID(); ?>"<?php post_class(); ?>><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h1>
-		<p><b>By <?php the_author(); ?></b> | <?php the_time('F j, Y'); ?></p>
+		<p><b>By <?php the_author(); ?></b> | <?php the_time( get_option( 'date_format' ) ) ?></p>
 <div class="post3">
 	</div>			
 <!--content with more link-->
 			<?php the_content('<p class="serif">Read the rest of this entry &raquo;</p>'); ?>
-	
+<!--navigation-->
+		<div class="navigation">
+<?php previous_post_link('&laquo; %link') ?> | <?php next_post_link('%link &raquo;') ?>
+</div>	
                        <!--for paginate posts-->
 			<?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?> 
 
 <p><b>Topics:</b> <?php the_category(', ') ?> | <?php edit_post_link('Edit', '', ' | '); ?>  <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?></p>
-				
+		<?php the_tags( $before, $separator, $after ); ?> 		
 <div class="post2">
 	</div>
-<?php if ( function_exists( 'add_theme_support' ) ) : ?>
-            <?php if ( has_post_thumbnail() ) : ?>
-			<div class="postthumb">
-            <?php the_post_thumbnail( 'single-post-thumbnail' ); ?>
-            </div>
-            <?php endif; ?>
-            <?php endif; ?>
-				<!--all options over and out-->
-	
+<?php if ( has_post_thumbnail() ) {        the_post_thumbnail();}; ?>
 		
-<div class="comments-template">
-
-<?php comments_template(); ?>
-
-</div>
-
+<?php comments_template( '', true ); ?>
 	
 <p><?php previous_post_link('&laquo; %link  |') ?>  <a href="<?php bloginfo('url'); ?>">Home</a>  <?php next_post_link('|  %link &raquo;') ?></p>
 

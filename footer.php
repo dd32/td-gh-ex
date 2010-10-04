@@ -1,6 +1,6 @@
 
 <footer>
-<!-- AnIMass WordPress Theme design by Richard Dickinson - http://www.richard-dickinson.com/ -->
+<!-- anIMass WordPress Theme design by Richard Dickinson - http://www.richard-dickinson.com/ -->
 	<p><img src="<?php bloginfo('template_url'); ?>/images/footer.gif" alt="footer ornament" /><br>
 	anIMass WordPress theme by rpd
 copyright &copy; 2006-<?php echo date('Y'); ?> <a href="http://richard-dickinson.com"target="_blank">www.richard-dickinson.com</a><br>
@@ -9,8 +9,8 @@ copyright &copy; 2006-<?php echo date('Y'); ?> <a href="http://richard-dickinson
 <p>http://validator.w3.org/check
 This document was successfully checked as HTML5!</p>	
 </footer>
-</div>
-</div>
-	<?php wp_footer(); ?>
+
+
+<?php wp_footer(); ?>
 </body>
 </html>
