@@ -1,11 +1,12 @@
 /*  
 Theme Name: anIMass
 Author URI: http://richard-dickinson.com
-Version: 7.0
+Version: 7.1
 Author: Richard Dickinson
 Description: anIMass is a customizable theme designed for blog content. It is suitable for Internet Marketing and other purposes. It is coded in html5 and is WordPress3 compatible.
 Tags:two-columns, fixed-width, custom-header, custom-background, threaded-comments, sticky-post, editor-style
-License:GNU General Public License v2.0 see license.txt in theme directory
+License:GNU General Public License v2.0 (see license.txt in anIMass theme directory)
+License URI:license.txt 
 */
 
 
@@ -801,8 +802,23 @@ img {
 	display: none;
 }
 
+/* Pullquotes
+-------------------------------------------------------------- */
 
-
+blockquote.left {
+	float: left;
+	margin-left: 0;
+	margin-right: 20px;
+	text-align: right;
+	width: 33%;
+}
+blockquote.right {
+	float: right;
+	margin-left: 20px;
+	margin-right: 0;
+	text-align: left;
+	width: 33%;
+}
 /* Gallery listing
 -------------------------------------------------------------- */
 
@@ -967,19 +983,21 @@ div.menu li {
 }
 
 
-/* Nav      */
-/* =Navigation
+
+/* =Navigation animass7.0
 -------------------------------------------------------------- */
 
-/* Nav      */
+
 nav 
 {
 font-family:Georgia, Arial;
- float: left;
+
  font-size:  11px;
 	line-height: 14px;
 	overflow: hidden;
 	background: #000;
+
+	
 }
 nav a:link,
 nav a:visited {
@@ -993,14 +1011,16 @@ nav a:hover {
 nav ul, {
 background: black;
 width: 860px;
- margin: 0;
+ 	margin:auto;
  padding: 0;
+
 }
 
 nav ul li{
 color: #000;
- list-style-type: none;
+
  display: inline;
+text-align:center;  
 }
 
 nav li a{
@@ -1010,11 +1030,12 @@ color: #000;
  padding: 5px 5px;
 
  text-decoration: none;
- border-right: 1px solid #fff;
+ 
 }
 
 nav li a:hover {
 background: #383; }
+
 
 /* =Comments
 -------------------------------------------------------------- */

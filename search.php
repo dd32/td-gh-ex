@@ -5,6 +5,7 @@
 <!--search.php-->
 
         <!--loop-->
+        
 	<?php if (have_posts()) : ?>
 
 		<h2>Search Results</h2>
@@ -41,7 +42,8 @@
 		<?php get_search_form(); ?>
         <!--do not delete-->
 	<?php endif; ?>
-		
+		<?php the_post_thumbnail(); ?>
+
 </article>
 <!--search.php end-->
 <!--include sidebar-->

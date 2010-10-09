@@ -66,7 +66,8 @@
 
          <!--do not delete-->
 	<?php endif; ?>
-		
+	<?php the_post_thumbnail(); ?>
+	
 	
 <!--archive.php end-->
 </article>

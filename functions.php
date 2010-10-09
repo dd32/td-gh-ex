@@ -1,13 +1,9 @@
 <?php
+add_action( 'init', 'register_my_menu' );
 
-
-// This theme uses wp_nav_menu() in three locations.
-	register_nav_menus( array(
-		'primary' => __( 'Primary Navigation'),
-                'secondary' => __( 'Secondary Navigation'),
-                'tertiary' => __( 'Tertiary Navigation'),
-	) );
-
+function register_my_menu() {
+register_nav_menu( 'primary', __( 'Primary Navigation' ) );
+}
 
 if ( function_exists('register_sidebar') )
     register_sidebar();    
@@ -61,6 +57,35 @@ add_image_size( 'single-post-thumbnail', 300, 9999 ); // Permalink t
 
 add_theme_support('menus');
 } 
+
+register_default_headers( array(
+		'mview' => array(
+			'url' => '%s/images/headers/mview.jpg',
+			'thumbnail_url' => '%s/images/headers/mview-thumbnail.jpg',
+			/* translators: header image description */
+			'description' => __( 'Mountain View', 'anIMass' )
+		),
+		'anewday' => array(
+			'url' => '%s/images/headers/anewday.jpg',
+			'thumbnail_url' => '%s/images/headers/anewday-thumbnail.jpg',
+			/* translators: header image description */
+			'description' => __( 'A New Day', 'anIMass' )
+		),
+		'dream-on' => array(
+			'url' => '%s/images/headers/dream-on.jpg',
+			'thumbnail_url' => '%s/images/headers/dream-on-thumbnail.jpg',
+			/* translators: header image description */
+			'description' => __( 'Dream-On', 'anIMass' )
+		),
+			'pastValencia' => array(
+			'url' => '%s/images/headers/pastValencia.jpg',
+			'thumbnail_url' => '%s/images/headers/pastValencia-thumbnail.jpg',
+			/* translators: header image description */
+			'description' => __( 'Past Valencia', 'anIMass' )
+		)
+		) );
+
+
 /* Set the content width based on the theme's design and stylesheet. 
  * 
  * Used to set the width of images and content. Should be equal to the width the theme 
@@ -87,7 +112,7 @@ if (!is_admin()) {
 }
 
 
-if ( ! function_exists( 'twentyten_comment' ) ) :
+if ( ! function_exists( 'anIMass_comment' ) ) :
 /**
  * Template for comments and pingbacks.
  *
@@ -98,7 +123,7 @@ if ( ! function_exists( 'twentyten_comment' ) ) :
  *
  * @since Twenty Ten 1.0
  */
-function twentyten_comment( $comment, $args, $depth ) {
+function anIMass_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
 		case '' :
@@ -107,17 +132,17 @@ function twentyten_comment( $comment, $args, $depth ) {
 		<div id="comment-<?php comment_ID(); ?>">
 		<div class="comment-author vcard">
 			<?php echo get_avatar( $comment, 40 ); ?>
-			<?php printf( __( '%s <span class="says">says:</span>', 'twentyten' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+			<?php printf( __( '%s <span class="says">says:</span>', 'anIMass' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
 		</div><!-- .comment-author .vcard -->
 		<?php if ( $comment->comment_approved == '0' ) : ?>
-			<em><?php _e( 'Your comment is awaiting moderation.', 'twentyten' ); ?></em>
+			<em><?php _e( 'Your comment is awaiting moderation.', 'anIMass' ); ?></em>
 			<br />
 		<?php endif; ?>
 
 		<div class="comment-meta commentmetadata"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 			<?php
 				/* translators: 1: date, 2: time */
-				printf( __( '%1$s at %2$s', 'twentyten' ), get_comment_date(),  get_comment_time() ); ?></a><?php edit_comment_link( __( '(Edit)', 'twentyten' ), ' ' );
+				printf( __( '%1$s at %2$s', 'anIMass' ), get_comment_date(),  get_comment_time() ); ?></a><?php edit_comment_link( __( '(Edit)', 'anIMass' ), ' ' );
 			?>
 		</div><!-- .comment-meta .commentmetadata -->
 
@@ -134,7 +159,7 @@ function twentyten_comment( $comment, $args, $depth ) {
 		case 'trackback' :
 	?>
 	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'twentyten' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __('(Edit)', 'twentyten'), ' ' ); ?></p>
+		<p><?php _e( 'Pingback:', 'anIMass' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __('(Edit)', 'anIMass'), ' ' ); ?></p>
 	<?php
 			break;
 	endswitch;
