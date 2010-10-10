@@ -24,7 +24,7 @@
 <p><b><?php the_tags('Tags: | ', ', ', '<br />'); ?> </b></p>
 <div class="post2">
 	</div>
-<?php if ( has_post_thumbnail() ) {        the_post_thumbnail();}; ?>
+<?php if ( has_post_thumbnail() ) { the_post_thumbnail();}; ?>
 
 <!--do not delete-->
 	<?php endwhile; else: ?>

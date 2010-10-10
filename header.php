@@ -7,9 +7,7 @@
     <script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
@@ -28,17 +26,12 @@
   <p> <h3> <?php bloginfo('description'); ?></h3></p>
 </header>
 
-	<nav >
+<nav >
 <div id="access" role="navigation">
 			  <?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
-				<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentyten' ); ?>"><?php _e( 'Skip to content', 'twentyten' ); ?></a></div>
+				<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'anIMass' ); ?>"><?php _e( 'Skip to content', 'anIMass' ); ?></a></div>
 				<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
-				 <?php wp_nav_menu( array( 'depth' => 2,'theme_location' => 'primary' ) ); ?>
-
-			
-				
-       
-			</div><!-- #access -->
-			
+		  	<?php wp_nav_menu( array('container_class' => 'menu-header','theme_location' => 'primary' ) ); ?>
+</div><!-- #access -->
 </nav>
 <!--header.php end-->

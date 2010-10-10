@@ -1,9 +1,18 @@
 <?php
-add_action( 'init', 'register_my_menu' );
 
-function register_my_menu() {
-register_nav_menu( 'primary', __( 'Primary Navigation' ) );
-}
+// Make theme available for translation
+	// Translations can be filed in the /languages/ directory
+	load_theme_textdomain( 'anIMass', TEMPLATEPATH . '/languages' );
+
+	$locale = get_locale();
+	$locale_file = TEMPLATEPATH . "/languages/$locale.php";
+	if ( is_readable( $locale_file ) )
+		require_once( $locale_file );
+
+// This theme uses wp_nav_menu() in one location.
+	register_nav_menus( array(
+		'primary' => __( 'Primary Navigation', 'anIMass' ),
+	) );
 
 if ( function_exists('register_sidebar') )
     register_sidebar();    

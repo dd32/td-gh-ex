@@ -40,6 +40,8 @@
 		<div class="navigation">
 <?php previous_post_link('&laquo; %link') ?> | <?php next_post_link('%link &raquo;') ?>
 </div>
+
+
 <!--single.php end-->
 </article>
 <!--include sidebar-->
