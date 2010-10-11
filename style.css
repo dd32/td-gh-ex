@@ -1,7 +1,7 @@
 /*  
 Theme Name: anIMass
 Author URI: http://richard-dickinson.com
-Version: 7.2
+Version: 7.3
 Author: Richard Dickinson
 Description: anIMass is a customizable theme designed for blog content. It is suitable for Internet Marketing and other purposes. It is coded in html5 and is WordPress3 compatible.
 Tags:two-columns, fixed-width, custom-header, custom-background, threaded-comments, sticky-post, editor-style
@@ -1022,15 +1022,78 @@ div.menu li {
 
 
 
-/* =Navigation from 2010
+/* =Navigation (adapted from 2010 for anIMass theme)
 -------------------------------------------------------------- */
 
-nav {width:860px;
-	font-size:  12px;
-	line-height: 18px;
+nav {
+font-family:Georgia, Arial;
+width:860px;
+font-size:  11px;
+	line-height: 14px;
 	overflow: hidden;
 	color: #888;
 }
+
+nav a:link,
+nav a:visited {
+	color: #888;
+	text-decoration: none;
+}
+nav a:active,
+nav a:hover {
+	color: blue;
+}
+nav ul, {
+background: black;
+width: 860px;
+ 	margin:auto;
+ padding: 0;
+}
+
+nav ul li{
+color: #000;
+ display: inline;
+text-align:center;  
+}
+
+nav li a{
+color: #000;
+ display: block;
+ float: left;
+ padding: 5px 5px;
+ text-decoration: none;
+ }
+
+nav li a:hover {
+background: #383; }
+
+/*RMorn nav*/
+.nav-previous {
+	float: left;
+	width: 50%;
+}
+.nav-next {
+	float: right;
+	width: 50%;
+	text-align:right;
+}
+#nav-above {
+	margin: 0 0 18px 0;
+}
+#nav-above {
+	display: none;
+}
+.paged #nav-above,
+.single #nav-above {
+	display: block;
+}
+#nav-below {
+	margin: -18px 0 0 0;
+}
+
+
+
+
 
 /* =Navigation 2010
 -------------------------------------------------------------- */
