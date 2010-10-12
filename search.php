@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+		<div id="container">
 			<div id="content" role="main">
 				<?php if (have_posts()) : ?>
                     <h1 class="page-title"><?php printf(__('Search Results for: %s'), '<span>'.get_search_query().'</span>'); ?></h1>
@@ -12,5 +13,6 @@
                     </div><!-- #post-0 -->
 				<?php endif; ?>
 			</div><!-- #content -->
+		</div><!-- #container -->
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

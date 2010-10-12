@@ -1,7 +1,7 @@
 /*
 Theme Name: Atmospheric Augmentation
 Theme URI: http://tsegwordpressthemes.com/atmospheric-augmentation
-Version: 1.0
+Version: 1.1
 Description: An erie window to the future, this template incorporates a three-column layout with eye-catching graphics.  Perfect for any blogger looking for an edgy and tech-driven appearance.  Built under the Themeatic Theme Framework environment.
 Author: The Search Engine Guys, LLC
 Author URI: http://www.thesearchengineguys.com
@@ -49,8 +49,8 @@ a:active, a:hover{color:#d1d1d1;}
 #header{background:#2d2d2d;border-top:4px solid #000;border-bottom:4px solid #000;}
 #site-title{font-family:Tahoma, Geneva, sans-serif;margin:0 auto;padding:0;font-size:60px;line-height:80px;text-align:center;text-transform:uppercase;}
 #site-title a{color:#fff;text-decoration:none;}
-#wrapper{float:left;background:url('images/main-bg.jpg') top center no-repeat;width:100%;}
-#main{width:960px;margin:0 auto;padding:0;}
+#wrapper{background:url('images/main-bg.jpg') top center no-repeat;margin:0 auto;}
+#main{width:960px;margin:0 auto;}
 #left-bar{float:left;width:188px;padding:60px 38px 0 20px;text-align:center;}
 #right-bar{float:right;width:197px;padding:100px 20px 0 25px;text-align:center;}
 #content{float:left;width:432px;background:url('images/content-bg.png') repeat-y;padding:13px 20px;font-family:Tahoma, Geneva, sans-serif;}
@@ -196,3 +196,8 @@ h3#reply-title{margin:18px 0;}
 #searchform{padding:0 0 0 5px;}
 #searchsubmit{border:1px solid #646462;background:#343434;color:#fff;height:22px;}
 #s{width:120px;}
+#floating-frame{position:fixed;left:0;top:0;width:100%;height:42px;}
+#info-social, #info-download {float:right;padding:5px 0 0;}
+#info-social{width:295px;}
+#info-download{width:105px;}
+.bypostauthor{color:#fff;}

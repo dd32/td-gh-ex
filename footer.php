@@ -1,3 +1,4 @@
+				<div style="clear:both;"></div>
 			</div><!-- #main -->
         </div><!-- #wrapper .hfeed -->
         <div id="footer-frame">
