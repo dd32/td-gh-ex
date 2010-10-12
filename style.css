@@ -6,13 +6,17 @@ Theme URI: http://schwarttzy.com/?page_id=551
 Description: Inspired by a certain GPS Manufacture, I designed this theme to feel like your looking through a window out into the wilderness. The CSS, XHTML and design is released under GPL:
 	http://www.opensource.org/licenses/gpl-license.php
 
-Version: 1.3.1
+Version: 1.3.2
 
 Author: Eric Schwarz
 
 Author URI: http://schwarttzy.com/?page_id=225
 
 Tags:  white, purple, two-columns, fixed-width
+
+License: GPL
+
+License URI: http://www.opensource.org/licenses/gpl-license.php
 
 */
 
@@ -23,6 +27,7 @@ Tags:  white, purple, two-columns, fixed-width
 h1, h2, h3, h4, h5, h6 {
 	font-family: sans-serif;
 	padding: 0;
+	clear:both;
 }
 body {
 	font-size:13px;
@@ -98,7 +103,7 @@ h1 a:hover{
 }
 #title h1 {
 	font-size: 20px;
-	font-weight: 1000;
+	font-weight: bold;
 	font-variant: small-caps;
 }
 #slogan {
@@ -119,26 +124,22 @@ h1 a:hover{
 				Navigation          
 ************************************************/
 
-#menuz {
+#menu, #menu ul {
 	float: right;
-}
-#menulist, .menulist ul {
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
 	list-style-position: outside;
 	position: relative;
 	line-height: 50px;
-	width: 100%;
-	font-weight: bold;
-	
+	font-weight: bold;	
 }
-#menulist ul li li {
+#menu ul li li {
 	display:none;
 	padding:0;
 	margin:0;
 }
-#menulist a { 
+#menu a { 
 	height: 50px;
 	display: block;
 	padding: 0px 12px 0px 12px;
@@ -146,13 +147,13 @@ h1 a:hover{
 	text-decoration: none;
 	background-image: url(images/bars.png);
 }
-#menulist a:hover {
+#menu a:hover {
 	background-position: bottom;
 	color: #FFF;
 }
-#menulist li {
+#menu li {
 	font-size: 14px;
-	font-weight: 1000;
+	font-weight: bold;
 	font-family: sans-serif;
 	font-variant: small-caps;
 	float: left;
@@ -160,58 +161,10 @@ h1 a:hover{
 }
 
 /************************************************
-				Map          
-************************************************/
-
-#mapborder {
-	background: url(images/75.png);
-	width: 740px;
-	padding: 10px;
-	margin-bottom: 15px;
-	border: 3px solid #4a4646;
-	-moz-border-radius: 6px;
-	-khtml-border-radius: 6px;
-	-webkit-border-radius: 6px;
-	border-radius: 6px;
-	float: left;
-	text-align:left;
-}
-#map {
-	margin-top: 10px;
-	height:385px;
-	border: 2px solid #000;
-}
-#mapreset a {
-	text-transform: uppercase;
-	color:#333;
-	font-weight: 100;
-	font-size: 18px;
-	padding: 5px;
-	float: right;
-}
-#mapreset a:hover {
-	color:#0b6492;
-}
-.top{
-	font-size:18px;
-	color:#000;
-}
-.small {
-	color:#000;
-	font-size:x-small;
-}
-.rest {
-	color:#000;
-}
-.time {
-	color:#000;
-}
-
-/************************************************
 				Content          
 ************************************************/
 
-#content {
+.content {
 	background: url(images/75.png);
 	font-family: sans-serif;
 	font-size: 13px;
@@ -229,26 +182,26 @@ h1 a:hover{
 	float: left;
 }
 object {z-index: -1}
-#label {
+.label {
 	padding-top: 5px;
 	text-transform: uppercase;
 	font-weight: 100;
 	font-size: 18px;
 }
-#label a {
+.label a {
 	color:#000;
 	text-transform: uppercase;
 	font-weight: 100;
 	font-size: 18px;
 }
-#label a:hover {
+.label a:hover {
 	color:#0b6492;
 }
-#clearz{
+.clearz{
 	width: 600px;
 	float: right;
 }
-#tags{ 
+.tags{ 
 	width: auto;
 	float: right;
 	border-top: 1px solid #4a4646;
@@ -321,9 +274,9 @@ object {z-index: -1}
 	-khtml-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	border-radius: 6px;
-	width: 1000px;
+	width: 975px;
 	padding: 10px;
-	margin: 0 0 20px 0;
+	margin: 15px 0 20px 0;
 	float: right;
 	text-align: center;
 }
@@ -338,132 +291,52 @@ object {z-index: -1}
 /************************************************
 				Comments          
 ************************************************/
-
-#respond {
-	text-transform: uppercase;
-	font-weight: 100;
-	font-size:15px;
-}
-label {
-	font-weight: bold;
-}
-#commentform {
-	width: 475pz;
+.comment {
+	float:left;
+	list-style:none;
+	width:740px;
+	margin: 10px 0 5px 0;
+	padding:5px 0px;
 }
 #reply-title {
-	padding-top: 5px;
-	font-size: 18px;
-	font-weight: 100;
-	line-height:0px;
-}
-#author {
-	width:385px;
-	margin-right:263px;
-	float: right;
-}
-#email {
-	width:385px;
-	margin-right:263px;
-	float: right;
-}
-#url {
-	width:385px;
-	margin-right:263px;
-	float: right;
-}
-#submit {
-	width:205px;
-	margin:140px 20px 20px 20px;
-	float:right;
-}
-#comment {
-	float:right;
-}
-.comment-form-comment {
-	float:left;
-	width:475px;
-}
-.form-allowed-tags {
-	display:none;
-}
-#comment-user-details {
-	width: 475px;
-}
-.comment-notes{
 	text-transform: uppercase;
 	font-weight: 100;
-	font-size: 12px;
-}
-#commentinput{
-	width:150px;
-}
-#line {
-	width: 100%;
-	margin-bottom: 5px;
-}
-.commentlist {float:right; padding:10px 0 0 0; margin:0px;}
-#commentbody { 
-	margin:0 0 10px 0;
-	padding: 10px 10px 25px 10px;
-	width: 730px;
-	min-height: 90px;
-	overflow:auto;
-}
-#commentbody ul{
-	padding:0;
-	margin:0;
-}
-#avatar {
-	float: left;
-	width: 120px;
-}
-#commentz {
-	float: right;
-	width: 610px;
-}
-#commentlabel {
-	width: 100%;
-	border-bottom: 1px solid #4a4646;
-	margin-bottom: 15px;
-	float: left;
-	font-weight: 100;
 	font-size: 18px;
 }
-.children {
-	margin:0px;
-	padding:0px;
-}
-#commentlabel a {
-	color:#000;
+.comment-notes {font-style:italic;}
+.comment-form-author, .comment-form-email, .comment-form-url, .comment-form-comment {
+	text-transform: uppercase;
 	font-weight: 100;
-	font-size: 18px;
+	font-size: 16px;
 }
-#commentlabel a:hover {
-	color:#0b6492;
-}
-#commentboxleft {
-	width:190px;
+#comment {width:735px;}
+.avatar {
 	float:left;
-	padding-right:10px;
+	margin-right:5px;
 }
-#commententry {
-	width: 100%;
-	margin: 5px;
-	float: left;
-	font-weight: 100;
-	font-size: 16px;
+.commentinfo{
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 14px;
+	border-bottom: 1px solid #4a4646;
 }
-testarea .comment {
-	width:50px;
+.trackback, .pingback {
+	background: url(images/blacktrans.png);
+	float:left;
+	width:730px;
+	padding:5px;
+	margin-bottom:5px;
+	color:#FFF;
 }
-#commentbox {
-	width: 360px;
-	margin: 5px;
-	padding-top:10px;
-	float: right;
-	font-weight: 100;
-	font-size: 16px;
-}
+.trackback a, .pingback a {color:#392026;}
+.trackback a:hover, .pingback a:hover {color:#0b6492;}
+.depth-2 {width: 700px;}
+.depth-3 {width: 660px;}
+.depth-4 {width: 620px;}
+.depth-5 {width: 580px;}
+.depth-6 {width: 540px;}
+.depth-7 {width: 500px;}
+.depth-8 {width: 460px;}
 
 /************************************************
 				Forms          
@@ -529,10 +402,35 @@ blockquote {
 	background: url(images/blacktrans.png);
 	
 }
-#content img {
-	max-width: 735px;
-	width: expression(this.width > 500 ? 500: true);
+address {font-weight:bold;}
+pre {
+	color:#FFF;
+	background: url(images/blacktrans.png);
+	padding:5px;
+	width:680px;
+	margin: 10px 25px ;
+}
+.page-link {
+	color: #000;
+	font-weight: bold;
+	margin: 0 0 22px 0;
+	word-spacing: 0.5em;
+}
+.page-link a:link,
+.page-link a:visited {
+	background: #f1f1f1;
+	color: #333;
+	font-weight: normal;
+	padding: 0.5em 0.75em;
+	text-decoration: none;
+}
+.page-link a:active,
+.page-link a:hover {
+	color: #ff4b33;
+}
+img {
 	height: auto;
+	max-width: 735px;
 }
 a img {border: none; }
 img.alignleft {
@@ -559,6 +457,10 @@ img.aligncenter {
 	border-radius: 6px;
 	background: url(images/blacktrans.png);
 }
+.wp-caption-text{
+	color:#FFF;
+	font-weight:bold;
+}
 .size-thumbnail {
 	margin: 0 15px 10px 0;
 }
@@ -570,6 +472,10 @@ img.aligncenter {
 	-khtml-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	border-radius: 6px;
+}
+.gallery-caption{
+	color:#FFF;
+	font-weight:bold;
 }
 .aligncenter {
 	clear: both;
@@ -598,18 +504,22 @@ hr {
 	left: 0;
 }
 table {margin: 0 0 10px 0;}
+#sidebar table{ float:left;}
 table th {color: #0b6492;}
 table td, table th {
-	padding: 3px 9px;
+	padding: 3px 6px;
 	font-size: 12px;
 }
 table th {
+	color:#FFF;
+	background: url(images/blacktrans.png);
+	font-weight:bold;
 	text-transform: uppercase;
 	border-bottom: 1px transparent;
 }
 table td {background: url(images/blacktrans.png);}
-table tr.even td {background: url(images/blacktrans2.png);}
-table tr:hover td{background: none;}
+table td  a {color:#FFF;}
+
 
 /************************************************
 				Fortitudo Et Honos         

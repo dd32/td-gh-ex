@@ -1,4 +1,4 @@
-<div id="content" >
+<div class="content" >
 
 <?php
 	if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
@@ -23,17 +23,15 @@
 <?php endif; ?>
 </div>
 <?php if ( have_comments() ) : ?>
-<div id="content" >
-	<div id="label">COMMENTS</div>
-	<div id="comments">
-		<ol class="commentlist">
+<div class="content" >
+	<div class="label">COMMENTS</div>
+		<ol class="comment">
 			<?php wp_list_comments('callback=print_comment'); ?>
 		</ol>
 		<div class="navigation">
 			<div class="alignleft"><?php previous_comments_link() ?></div>
 			<div class="alignright"><?php next_comments_link() ?></div>
 		</div>
-	</div>
 </div>
 <?php else : ?>
 	<?php if ( comments_open() ) : ?>
