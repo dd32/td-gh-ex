@@ -4,10 +4,12 @@
  *
  * The area of the page that contains both current comments
  * and the comment form.  The actual display of comments is
- * handled by a callback to twentyten_comment which is
+ * handled by a callback to anIMass_comment which is
  * located in the functions.php file.
  *
- * 
+ * @package WordPress
+ * @subpackage Twenty_Ten
+ * @since anIMass1.0
  */
 ?>
 
@@ -73,5 +75,9 @@
 <?php endif; // end have_comments() ?>
 
 <?php comment_form(); ?>
+
+
+
+
 
 </div><!-- #comments -->

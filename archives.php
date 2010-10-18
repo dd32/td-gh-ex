@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 
 
-
 <article>
 	<!--the loop-->
 
@@ -33,11 +32,7 @@
 		<?php } ?>
 
 
-		<!-- navigation-->
-
-               <?php next_posts_link('&laquo; Previous Entries') ?>
-		<?php previous_posts_link('Next Entries &raquo;') ?>
-		
+	
                 <!--loop article begin-->
 <br />
 		<?php while (have_posts()) : the_post(); ?>
@@ -55,9 +50,7 @@
 	       <!--one post end-->
 		<?php endwhile; ?>
                 
-               <!-- navigation-->
-               <?php next_posts_link('&laquo; Previous Entries') ?>
-		<?php previous_posts_link('Next Entries &raquo;') ?>
+              
 	<!-- do not delete-->
 	<?php else : ?>
 
@@ -66,6 +59,11 @@
 
          <!--do not delete-->
 	<?php endif; ?>
+		<!-- navigation-->
+
+               <?php next_posts_link('&laquo; Previous Entries') ?>
+		<?php previous_posts_link('Next Entries &raquo;') ?>
+		
 	<?php the_post_thumbnail(); ?>
 	
 	

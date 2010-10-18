@@ -1,46 +1,52 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying all pages.
+ *
+ * This is the template that displays all pages by default.
+ * Please note that this is the wordpress construct of pages
+ * and that other 'pages' on your wordpress site will use a
+ * different template.
+ *
+ * @package WordPress
+ * @subpackage anIMass
+ * @since anIMass 7.0
+ */
+
+get_header(); ?>
 <!--page.php-->
 
 <div id="maincontent">
 <article >
-<!--loop-->			
-  <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-<!--post title-->
-		<h1><div id="post-<?php the_ID(); ?>"<?php post_class(); ?>><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h1>
-		<p><b>By <?php the_author(); ?></b> | <?php the_time( get_option( 'date_format' ) ) ?></p>
+
+<div id="content" role="main">
 		
-<div class="post3">
-	</div>			
-<!--content with more link-->
-			<?php the_content('<p class="serif">Read the rest of this entry &raquo;</p>'); ?>
-	
-                       <!--for paginate posts-->
-			<?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?> 
 
-<p><b>Topics:</b> <?php the_category(', ') ?> | <?php edit_post_link('Edit', '', ' | '); ?>  <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?></p>
-<p><b><?php the_tags('Tags: | ', ', ', '<br />'); ?> </b></p>
+<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+
+				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<?php if ( is_front_page() ) { ?>
+						<h2 class="entry-title"><?php the_title(); ?></h2>
+					<?php } else { ?>	
+						<h1 class="entry-title"><?php the_title(); ?></h1>
+					<?php } ?>				
+
+					<div class="entry-content">
+						<?php the_content(); ?>
+						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'anIMass' ), 'after' => '</div>' ) ); ?>
+						<?php edit_post_link( __( 'Edit', 'anIMass' ), '<span class="edit-link">', '</span>' ); ?>
+					</div><!-- .entry-content -->
+				</div><!-- #post-## -->
 <div class="post2">
 	</div>
-<?php if ( has_post_thumbnail() ) {        the_post_thumbnail();}; ?>
-	
-		<?php comments_template( '', true ); ?>
-	<!--do not delete-->
-	<?php endwhile; else: ?>
-	
-	Sorry, no posts matched your criteria.
+				<?php comments_template( '', true ); ?>
 
-<!--do not delete-->
-<?php endif; ?>
-	<!--navigation-->
-		<div class="navigation">
-<?php previous_post_link('&laquo; %link') ?> | <?php next_post_link('%link &raquo;') ?>
-</div>
- <!--edit link-->
-	<?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
- 
-</article>
+<?php endwhile; ?>
+
+		</div><!-- #content -->
 	
+</article>
+		
 <!--page.php end-->
 <!--include sidebar-->
 <?php get_sidebar(); ?> 
