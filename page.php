@@ -39,7 +39,7 @@ get_header(); ?>
 				</div><!-- #post-## -->
 <div class="post2">
 	</div>
-				<?php comments_template( '', true ); ?>
+	
 
 <?php endwhile; ?>
 

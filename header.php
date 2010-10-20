@@ -2,15 +2,14 @@
 <html<?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-<title><?php
-	/*
-	 * Print the <title> tag based on what is being viewed.
-	 * We filter the output of wp_title() a bit -- see
-	 * anIMass_filter_wp_title() in functions.php.
-	 */
-	wp_title( '|', true, 'right' );
-
-	?></title>
+<title><?php // Returns the title based on what is being viewed 
+if  
+( get_the_title() ) {
+    wp_title('|', true, 'right');
+ } else {
+    echo '(No Title)';
+ }
+ ?>  </title>
 
 <!--[if IE]>
     <script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -54,6 +53,7 @@
 					</span>
 				</<?php echo $heading_tag; ?>>
 				<div id="site-description"><?php bloginfo( 'description' ); ?></div>
+
 
 				<?php
 					// Check if this is a post or page, if it has a thumbnail, and if it's a big one

@@ -202,6 +202,8 @@ add_image_size( 'single-post-thumbnail', 300, 9999 ); // Permalink t
 
 
 
+
+
 function my_own_gravatar( $avatar_defaults ) {
     $myavatar = get_bloginfo('template_directory') . '/images/gravatar.png';
     $avatar_defaults[$myavatar] = 'RPD_GRAVATAR';
@@ -271,6 +273,10 @@ function anIMass_filter_wp_title( $title, $separator ) {
 
 	// Return the new title to wp_title():
 	return $title;
+	
+	
+
+	
 }
 add_filter( 'wp_title', 'anIMass_filter_wp_title', 10, 2 );
 
@@ -393,15 +399,7 @@ function anIMass_comment( $comment, $args, $depth ) {
 		</div><!-- .comment-meta .commentmetadata -->
 
 		<div class="comment-body"><?php comment_text(); ?></div>
-<?php
-$fields =  array(
-	'author' => '<p class="comment-form-author">' . '<label for="author">' . __( 'Name' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
-	            '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>',
-	'email'  => '<p class="comment-form-email"><label for="email">' . __( 'Email' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
-	            '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>',
-	'url'    => '<p class="comment-form-url"><label for="url">' . __( 'Website' ) . '</label>' .
-	            '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>',
-); ?>
+
 		<div class="reply">
 			<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 		</div><!-- .reply -->

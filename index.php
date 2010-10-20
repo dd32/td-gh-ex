@@ -184,8 +184,10 @@
 				</div><!-- #nav-below -->
 	<div class="post2">
 	</div>			
-				
+			Permalink for this post:<br />
+<?php echo get_permalink(); ?>	
 <?php endif; ?>
+
 </div><!-- #content -->
 
 </article>
