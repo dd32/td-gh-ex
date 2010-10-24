@@ -2,14 +2,8 @@
 <html<?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-<title><?php // Returns the title based on what is being viewed 
-if  
-( get_the_title() ) {
-    wp_title('|', true, 'right');
- } else {
-    echo '(No Title)';
- }
- ?>  </title>
+<title><?php echo wp_title(' | ','true','right'); ?><?php echo get_the_title(' ',' ','true'); ?>
+</title>
 
 <!--[if IE]>
     <script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>

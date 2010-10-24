@@ -164,15 +164,18 @@
 				<?php endif; ?>
 				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'anIMass' ), __( '1 Comment', 'anIMass' ), __( '% Comments', 'anIMass' ) ); ?></span>
 				<?php edit_post_link( __( 'Edit', 'anIMass' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
+				         
 			</div><!-- .entry-utility -->
 		</div><!-- #post-## -->
-<?php global $withcomments; $withcomments = true; ?>  
+
 
 <?php comments_template( '', true ); ?> 
 
 
 
 	<?php endif; // This was the if statement that broke the loop into three parts based on categories. ?>
+	
+
 
 <?php endwhile; // End the loop. Whew. ?>
 
@@ -184,8 +187,7 @@
 				</div><!-- #nav-below -->
 	<div class="post2">
 	</div>			
-			Permalink for this post:<br />
-<?php echo get_permalink(); ?>	
+		
 <?php endif; ?>
 
 </div><!-- #content -->

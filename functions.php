@@ -45,7 +45,7 @@
  * is designed for, generally via the style.css stylesheet.
  */
 if ( ! isset( $content_width ) ) 
-    $content_width = 860; 
+    $content_width = 460; 
 
 /** Tell WordPress to run anIMass_setup() when the 'after_setup_theme' hook is run. */
 add_action( 'after_setup_theme', 'anIMass_setup' );
