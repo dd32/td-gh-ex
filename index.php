@@ -168,7 +168,8 @@
 			</div><!-- .entry-utility -->
 		</div><!-- #post-## -->
 
-
+<div class="post2">
+	</div>
 <?php comments_template( '', true ); ?> 
 
 

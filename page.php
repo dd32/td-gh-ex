@@ -188,7 +188,8 @@ get_header(); ?>
               
 			</div><!-- .entry-utility -->
 		</div><!-- #post-## -->
-
+<div class="post2">
+	</div>	
 
 <?php comments_template( '', true ); ?> 
 
@@ -206,13 +207,13 @@ get_header(); ?>
 					<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'anIMass' ) ); ?></div>
 					<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'anIMass' ) ); ?></div>
 				</div><!-- #nav-below -->
-	<div class="post2">
-	</div>			
+	
 		
 <?php endif; ?>
 
 </div><!-- #content -->
-
+	<div class="post2">
+	</div>		
 	
 </article>
 		
