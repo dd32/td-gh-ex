@@ -164,20 +164,19 @@
 				<?php endif; ?>
 				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'anIMass' ), __( '1 Comment', 'anIMass' ), __( '% Comments', 'anIMass' ) ); ?></span>
 				<?php edit_post_link( __( 'Edit', 'anIMass' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
-				         
+		     <span class="meta-sep">|</span>
+    <a href="<?php echo get_permalink(); ?>">Permalink</a>   
 			</div><!-- .entry-utility -->
-		</div><!-- #post-## -->
-
+			
 <div class="post2">
 	</div>
+		</div><!-- #post-## -->
+
 <?php comments_template( '', true ); ?> 
 
 
-
-	<?php endif; // This was the if statement that broke the loop into three parts based on categories. ?>
+<?php endif; // This was the if statement that broke the loop into three parts based on categories. ?>
 	
-
-
 <?php endwhile; // End the loop. Whew. ?>
 
 <?php /* Display navigation to next/previous pages when applicable */ ?>
@@ -186,9 +185,8 @@
 					<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'anIMass' ) ); ?></div>
 					<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'anIMass' ) ); ?></div>
 				</div><!-- #nav-below -->
-	<div class="post2">
-	</div>			
-		
+	
+			
 <?php endif; ?>
 
 </div><!-- #content -->
