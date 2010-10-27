@@ -12,11 +12,32 @@ function graphene_options_display(){
 	$errors = array();
 	$messages = array();
 	
+	/* Check authorisation */
+	$authorised = true;
+	// Check nonce
+	if (isset($_POST['graphene-display'])){
+		if (!wp_verify_nonce($_POST['graphene-display'], 'graphene-display')) { 
+			$authorised = false;
+		}
+		// Check permissions
+		if (!current_user_can('manage_options')){
+			$authorised = false;
+		}
+	} else {
+		$authorised = false;	
+	}
+	
 	// Updates the database
 	if (isset($_POST['graphene_submitted']) && $_POST['graphene_submitted'] == true) {		
 		
+		// Check authorisation status
+		if (!$authorised){
+			wp_die(__('ERROR: You are not authorised to perform that operation', 'graphene'));
+		}
+		
 		// Process the header display options
 		$light_header = (!empty($_POST['light_header'])) ? $_POST['light_header'] : false ;
+		$link_header_img = (!empty($_POST['link_header_img'])) ? $_POST['link_header_img'] : false ;		
 		
 		// Process the posts display options
 		$hide_post_author = (!empty($_POST['hide_post_author'])) ? $_POST['hide_post_author'] : false ;
@@ -25,6 +46,7 @@ function graphene_options_display(){
 		$hide_post_cat = (!empty($_POST['hide_post_cat'])) ? $_POST['hide_post_cat'] : false ;
 		$hide_post_tags = (!empty($_POST['hide_post_tags'])) ? $_POST['hide_post_tags'] : false ;
 		$show_post_avatar = (!empty($_POST['show_post_avatar'])) ? $_POST['show_post_avatar'] : false ;
+		$show_post_author = (!empty($_POST['show_post_author'])) ? $_POST['show_post_author'] : false ;
 		
 		// Process the text style options
 		$header_title_font_type = (!empty($_POST['header_title_font_type'])) ? $_POST['header_title_font_type'] : false ;
@@ -73,11 +95,18 @@ function graphene_options_display(){
 			$navmenu_child_width = $_POST['navmenu_child_width'];
 		}
 		
+		// Comments display options
+		$hide_allowedtags = (!empty($_POST['hide_allowedtags'])) ? $_POST['hide_allowedtags'] : false ;
+		
+		// Miscellaneous options
+		$swap_title = (!empty($_POST['swap_title'])) ? $_POST['swap_title'] : false ;
+		
 		// Updates all options
 		if (empty($errors)) {
 			
 			// Header options
-			update_option('graphene_light_header', $light_header);			
+			update_option('graphene_light_header', $light_header);	
+			update_option('graphene_link_header_img', $link_header_img);	
 			
 			// Posts Display options
 			update_option('graphene_hide_post_author', $hide_post_author);
@@ -86,6 +115,7 @@ function graphene_options_display(){
 			update_option('graphene_hide_post_cat', $hide_post_cat);
 			update_option('graphene_hide_post_tags', $hide_post_tags);
 			update_option('graphene_show_post_avatar', $show_post_avatar);
+			update_option('graphene_show_post_author', $show_post_author);
 			
 			// Text style options
 			update_option('graphene_header_title_font_type', $header_title_font_type);
@@ -112,6 +142,12 @@ function graphene_options_display(){
 			// Nav menu display options
 			update_option('graphene_navmenu_child_width', $navmenu_child_width);
 			
+			// Comments display options
+			update_option('graphene_hide_allowedtags', $hide_allowedtags);
+			
+			// Miscellaneous options
+			update_option('graphene_swap_title', $swap_title);
+			
 			// Print successful message
 			$messages[] = __('Settings updated.', 'graphene');
 		}
@@ -119,6 +155,7 @@ function graphene_options_display(){
 	
 	// Get the current options from database
 	$light_header = get_option('graphene_light_header');
+	$link_header_img = get_option('graphene_link_header_img');
 	
 	$hide_post_author = get_option('graphene_hide_post_author');
 	$hide_post_date = get_option('graphene_hide_post_date');
@@ -126,6 +163,7 @@ function graphene_options_display(){
 	$hide_post_cat = get_option('graphene_hide_post_cat');
 	$hide_post_tags = get_option('graphene_hide_post_tags');
 	$show_post_avatar = get_option('graphene_show_post_avatar');
+	$show_post_author = get_option('graphene_show_post_author');
 	
 	$footerwidget_column = get_option('graphene_footerwidget_column');
 	$alt_footerwidget_column = get_option('graphene_alt_footerwidget_column');
@@ -148,6 +186,10 @@ function graphene_options_display(){
 	$content_font_size = get_option('graphene_content_font_size');
 	$content_font_lineheight = get_option('graphene_content_font_lineheight');
 	$content_font_colour = get_option('graphene_content_font_colour');
+	
+	$hide_allowedtags = get_option('graphene_hide_allowedtags');
+	
+	$swap_title = get_option('graphene_swap_title');
 	?>
     
     
@@ -186,6 +228,10 @@ function graphene_options_display(){
         <?php // Begins the main html form. Note that one html form is used for *all* options ?>
         <form action="" method="post">
 
+        <?php 
+		/* Secure our form with nonce */
+		wp_nonce_field('graphene-display', 'graphene-display');
+		?>
         
         <?php /* Header Options */ ?>
         <h3><?php _e('Header Display Options', 'graphene'); ?></h3>
@@ -195,6 +241,14 @@ function graphene_options_display(){
                     	<label><?php _e('Use light-coloured header bars', 'graphene'); ?></label>
                     </th>
                     <td><input type="checkbox" name="light_header" <?php if ($light_header == true) echo 'checked="checked"' ?> value="true" /></td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                    	<label><?php _e('Link header image to front page', 'graphene'); ?></label>
+                    </th>
+                    <td><input type="checkbox" name="link_header_img" <?php if ($link_header_img == true) echo 'checked="checked"' ?> value="true" /><br />
+                    	<span class="description"><?php _e('Check this if you disable the header texts and want the header image to be linked to the front page.', 'graphene'); ?></span>
+                    </td>
                 </tr>
             </table>
         
@@ -237,7 +291,23 @@ function graphene_options_display(){
                     <th scope="row"><label><?php _e("Show post author's gravatar", 'graphene'); ?></label></th>
                     <td><input type="checkbox" name="show_post_avatar" <?php if ($show_post_avatar == true) echo 'checked="checked"' ?> value="true" /></td>
                 </tr>
+                <tr>
+                    <th scope="row"><label><?php _e("Show post author's info", 'graphene'); ?></label></th>
+                    <td><input type="checkbox" name="show_post_author" <?php if ($show_post_author == true) echo 'checked="checked"' ?> value="true" /></td>
+                </tr>
             </table>
+        
+        <?php /* Comments Display Options */ ?>
+        <h3><?php _e('Comments Display Options', 'graphene'); ?></h3>
+        <table class="form-table">
+            <tr>
+                <th scope="row">
+                    <label><?php _e('Hide allowed tags in comment form', 'graphene'); ?></label>
+                </th>
+                <td><input type="checkbox" name="hide_allowedtags" <?php if ($hide_allowedtags == true) echo 'checked="checked"' ?> value="true" /></td>
+            </tr>
+        </table>
+        
             
         <?php /* Text Style Options */ ?>
         <h3><?php _e('Text Style Options', 'graphene'); ?></h3>    
@@ -395,6 +465,20 @@ function graphene_options_display(){
                     <td><input type="text" name="navmenu_child_width" value="<?php echo $navmenu_child_width; ?>" maxlength="3" size="3" /> px</td>
                 </tr>
             </table>
+            
+        <?php /* Miscellaneous Display Options */ ?>
+        <h3><?php _e('Miscellaneous Display Options', 'graphene'); ?></h3>        
+        <table class="form-table">
+            <tr>
+                <th scope="row">
+                    <label><?php _e('Swap title order', 'graphene'); ?></label>
+                </th>
+                <td>
+                	<input type="checkbox" name="swap_title" <?php if ($swap_title == true) echo 'checked="checked"' ?> value="true" /><br />
+                    <span class="description"><?php _e('If this is checked, the website title will be displayed first, followed by the page title.', 'graphene'); ?></span>
+                </td>
+            </tr>
+        </table>
                     
         
         <?php /* Ends the main form */ ?>

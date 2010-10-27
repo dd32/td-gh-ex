@@ -77,9 +77,14 @@
 	 * Get the comment form.
 	*/ 
 	
+	if (!get_option('graphene_hide_allowedtags'))
+		$allowedtags = '<p class="form-allowed-tags">'.sprintf(__('You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s', 'graphene'),'<code>'.allowed_tags().'</code>').'</p>';
+	else
+		$allowedtags = '';
+		
 	comment_form(array(
 				'comment_notes_before' => '<p class="comment-notes">'.__('Your email address will not be published.', 'graphene').'</p>',
-				'comment_notes_after'  => '<p class="form-allowed-tags">'.sprintf(__('You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s', 'graphene'),'<code>'.allowed_tags().'</code>').'</p>',
+				'comment_notes_after'  => $allowedtags,
 				'id_form'              => 'commentform',
 				'label_submit'         => __('Submit Comment', 'graphene'),
 					   )); 

@@ -1,8 +1,8 @@
 /*
 Theme Name: Graphene
 Theme URI: http://www.khairul-syahir.com/wordpress-dev/graphene-theme
-Description: The Graphene theme for Wordpress 3.0 is a stylish, neat, and tight WordPress theme supporting 2 widget areas, with the ability to determine the number of columns to display in the footer widget area. It includes action hooks for greater customisability through child theme, and a jQuery slider for your featured posts. It has built-in Twitter widget, allows for customisable header and background through the WordPress admin, built-in AdSense placement and AddThis social sharing button, supports custom menu with drop-down navigation of up to 5 levels deep, and threaded comments of up to 10 levels deep! A one-column, full-width page template without the sidebar is included. You can hide post parameters, show post author's gravatar, use different widgets for the front page than the rest of the website, and specify font styles for header and content texts. The codes are written so that you can easily override or add functionality to the theme by using your own child theme without altering the parent theme's code. Seriously, there's too many features for this theme to describe them all here! This theme has been tested and confirmed compatible with IE6, IE7, IE8, Mozilla Firefox, Google Chrome, and Safari. Translations included: Malay, Brazilian Portuguese, Spanish, Italian, French, Polish, and German. See this <a href="http://www.khairul-syahir.com/wordpress-dev/graphene-theme#changelog">theme's changelog</a>.
-Version: 1.0.9.3
+Description: The Graphene theme for Wordpress 3.0 is a stylish, neat, and tight WordPress theme supporting 2 widget areas, with the ability to determine the number of columns to display in the footer widget area. It includes action hooks for greater customisability through child theme, and a jQuery slider for your featured posts. It has built-in Twitter widget, allows for customisable header and background through the WordPress admin, built-in AdSense placement and AddThis social sharing button, supports custom menu with drop-down navigation of up to 5 levels deep, and threaded comments of up to 10 levels deep! A one-column, full-width page template without the sidebar is included. You can hide post parameters, show post author's gravatar, use different widgets for the front page than the rest of the website, and specify font styles for header and content texts. The codes are written so that you can easily override or add functionality to the theme by using your own child theme without altering the parent theme's code. Seriously, there's too many features for this theme to describe them all here! This theme has been tested and confirmed compatible with IE6, IE7, IE8, Mozilla Firefox, Google Chrome, and Safari. Translations included: Malay, Brazilian Portuguese, Spanish, Italian, French, Polish, German, and Norwegian. See this <a href="http://www.khairul-syahir.com/wordpress-dev/graphene-theme#changelog">theme's changelog</a>.
+Version: 1.1
 Author: Syahir Hakim
 Author URI: http://www.khairul-syahir.com
 Tags: black, blue, white, two-columns, right-sidebar, fixed-width, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready
@@ -93,6 +93,12 @@ font:bold 28px "Trebuchet MS";
 	width:852px;
 	left:38px;
 	}
+#header_img_link{
+	text-decoration:none;
+	width:900px;
+	height:198px;
+	display:block;
+	}
 .sidebar-wrap #searchsubmit{
 	float:right;
 	margin-top:10px;
@@ -174,10 +180,10 @@ padding-top:12px;
 	border-bottom:1px solid #a0a0a0;
 	width:165px;
 	}
-#menu li a:hover, #menu li:hover a, #menu li:hover a:visited, #menu li a:hover, #menu li.sfhover a, #menu li.sfhover a:visited, #menu li.current_page_item a, #menu li.current_page_ancestor a, #menu li.current_page_parent a, #menu li.current_page_item a:visited, #menu li.current_page_ancestor a:visited, #menu li.current_page_parent a:visited{
+#menu li a:hover, #menu li:hover a, #menu li:hover a:visited, #menu li a:hover, #menu li.sfhover a, #menu li.sfhover a:visited, #menu li.current-menu-item a, #menu li.current_page_ancestor a, #menu li.current-category-ancestor a, #menu li.current-menu-parent a, #menu li.current-menu-ancestor a, #menu li.current_page_parent a, #menu li.current-menu-item a:visited, #menu li.current_page_ancestor a:visited, #menu li.current-category-ancestor a:visited, #menu li.current-menu-parent a:visited, #menu li.current-menu-ancestor a:visited, #menu li.current_page_parent a:visited{
 	color:#000;
 	}
-#menu li:hover, #menu li.sfhover, #menu li.current_page_item, #menu li.current_page_ancestor, #menu li.current_page_parent{
+#menu li:hover, #menu li.sfhover, #menu li.current-menu-item, #menu li.current_page_ancestor, #menu li.current-category-ancestor, #menu li.current-menu-parent, #menu li.current-menu-ancestor, #menu li.current_page_parent{
 	background:url(images/sprite_h.png) left -66px repeat-x;
 }
 #menu ul li a:hover{
@@ -186,7 +192,7 @@ padding-top:12px;
 /* And that's the end of our Suckerfish delight! */
 
 #content{
-background:url(images/sprite_v.png) -943px top repeat-y #e3e3e3;
+background:#e3e3e3;
 width:900px;
 padding-bottom:20px;
 margin-left:16px;
@@ -202,10 +208,10 @@ float:left;
 
 .featured_slider{
 	background:#eee;
-	height:270px;
 	width:600px;
 	margin-bottom:20px;
 	padding-top:5px;
+	padding-bottom:5px;
 	}
 .featured_slider #slider_root{
 	position:relative;
@@ -215,7 +221,7 @@ float:left;
 	height:220px;
 	border:1px solid #ddd;
 	background:#fff;
-	padding:5px;
+	padding:10px 5px;
 	}
 .featured_slider .slider_items{
 	width:20000em;
@@ -321,9 +327,6 @@ float:right;
 }
 .page .entry, .nodate{
 	width:555px;
-	}
-.nodate .entry-content img{
-	max-width:542px;
 	}
 .one_column .entry{
 	width:865px;
@@ -589,6 +592,30 @@ code.block, pre.block{
 	margin-top:5px;
 	color:#929292;
 }
+.single .author{
+	background:#E9ECF5;
+	padding:10px;
+	}
+.single .author_h4{
+	font:normal 18px arial;
+	color:#929292;
+	margin-bottom:5px;
+	margin-left:10px;
+	}
+.single .author .avatar{
+	float:left;
+	margin-right:10px;
+	}
+.single .author .author_name{
+	font-size:14px;
+	margin-bottom:5px;
+	}
+.single .author p{
+	color:#444;
+	font-size:11px;
+	line-height:18px;
+	}
+
 
 /* Author page styles */
 .author-entry .avatar{
@@ -899,10 +926,11 @@ h3.author-post-list{
 	padding-bottom:10px;
 	}
 #sidebar_right{
-	margin-right:15px;
 	width:255px;
 	display:inline;
 	float:right;
+	background:url(images/sprite_v.png) -1558px top repeat-y;
+	padding:0 15px 30px 15px;
 }
 .sidebar h3{
 	clear:both;

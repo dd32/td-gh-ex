@@ -14,7 +14,7 @@
                 <?php /* Post date is not shown if this is a Page post */ ?>
                 <?php if (!is_page() && (get_option('graphene_hide_post_date') != true)) : ?>
                 <div class="date">
-                    <p><?php the_time('M'); ?><br /><span><?php the_time('d') ?></span></p>
+                    <p class="default_date"><?php the_time('M'); ?><br /><span><?php the_time('d') ?></span></p>
                     <?php do_action('graphene_post_date'); ?>
                 </div>
                 <?php endif; ?>
@@ -48,7 +48,7 @@
 								edit_post_link(__('Edit post','graphene'), ' (', ')');
 								
 								/* Show the post author's gravatar if enabled */
-								if (get_option('graphene_show_post_avatar')) {
+								if (get_option('graphene_show_post_avatar') && !is_page()) {
 									echo get_avatar(get_the_author_meta('user_email'), 40);
 								}
 							?>
@@ -87,8 +87,8 @@
 							*/ 
 						?>
                         <?php if (is_single() || is_page()) : ?>
-                            <?php graphene_addthis(); ?>
-                        <?php elseif (get_option('graphene_hide_post_commentcount') != true) : ?>
+                            <?php graphene_addthis(get_the_ID()); ?>
+                        <?php elseif (get_option('graphene_hide_post_commentcount') != true && comments_open()) : ?>
                         	<p class="comment-link"><?php comments_popup_link(__('Leave comment','graphene'), __('1 comment','graphene'), __("% comments",'graphene')); ?></p>
                         <?php endif; ?>
                         
@@ -96,6 +96,20 @@
                     </div>
                 </div>
             </div>
+            <?php 
+			/**
+			 * Display the post author's bio in single-post page if enabled
+			*/
+			if (is_single() && get_option('graphene_show_post_author')) :
+			?>
+            <h4 class="author_h4"><?php _e('About the author', 'graphene'); ?></h4>
+            <div class="author clearfix">
+            	<?php echo get_avatar(get_the_author_meta('user_email'), 100); ?>
+                <p class="author_name"><strong><?php the_author_meta('display_name'); ?></strong></p>
+                <p class="author_bio"><?php the_author_meta('description'); ?></p>
+                
+            </div>
+            <?php endif; ?>
             
             <?php 
 			/**
@@ -103,7 +117,7 @@
 			 * See graphene_adsense() function in functions.php
 			*/ 
 			?>
-            <?php if (is_single() || is_page() || get_option('graphene_adsense_show_frontpage')) {graphene_adsense();} ?>
+            <?php if (is_single() || is_page() || (is_front_page() && get_option('graphene_adsense_show_frontpage')) || is_archive() || is_search()) {graphene_adsense();} ?>
             
             <?php /* Get the comments template for single post pages */ ?>
             <?php if (is_single() || is_page()) {comments_template();} ?>
@@ -136,3 +150,5 @@
     
     <?php do_action('graphene_not_found'); ?>
 <?php endif; ?>
+
+<?php do_action('graphene_bottom_content'); ?>

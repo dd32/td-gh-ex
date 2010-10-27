@@ -86,11 +86,6 @@ function graphene_setup() {
 	// Make theme available for translation
 	// Translations can be filed in the /languages/ directory
 	load_theme_textdomain( 'graphene', TEMPLATEPATH . '/languages' );
-
-	$locale = get_locale();
-	$locale_file = TEMPLATEPATH . "/languages/$locale.php";
-	if ( is_readable( $locale_file ) )
-		require_once( $locale_file );
 	
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -235,7 +230,7 @@ endif;
 function graphene_custom_style(){ 
 	$background = get_theme_mod('background_image', false);
 	$bgcolor = get_theme_mod('background_color', false);
-	$widgetcolumn = (is_home() && get_option('graphene_alt_home_footerwidget')) ? get_option('graphene_alt_footerwidget_column') : get_option('graphene_footerwidget_column');
+	$widgetcolumn = (is_front_page() && get_option('graphene_alt_home_footerwidget')) ? get_option('graphene_alt_footerwidget_column') : get_option('graphene_footerwidget_column');
 	$navmenu_width = get_option('graphene_navmenu_child_width');
 	
 	$header_title_font_type = get_option('graphene_header_title_font_type');
@@ -257,7 +252,11 @@ function graphene_custom_style(){
 	
 	$show_post_avatar = get_option('graphene_show_post_avatar');
 	
-	if ((!$background && $bgcolor) || $widgetcolumn || $navmenu_width || $header_title_font_type || $header_title_font_size || $header_title_font_lineheight || $header_title_font_weight || $header_desc_font_type || $header_desc_font_size || $header_desc_font_lineheight || $header_desc_font_weight || $content_font_type || $content_font_size || $content_font_lineheight || $content_font_colour || $show_post_avatar) : ?>
+	$slider_height = get_option('graphene_slider_height');
+	
+	$link_header_img = get_option('graphene_link_header_img');
+	
+	if ((!$background && $bgcolor) || $widgetcolumn || $navmenu_width || $header_title_font_type || $header_title_font_size || $header_title_font_lineheight || $header_title_font_weight || $header_desc_font_type || $header_desc_font_size || $header_desc_font_lineheight || $header_desc_font_weight || $content_font_type || $content_font_size || $content_font_lineheight || $content_font_colour || $show_post_avatar || $slider_height || $link_header_img) : ?>
 	<style type="text/css">
 		<?php /* Disable default background if a custom background colour is defined */ ?>
 		<?php if (!$background && $bgcolor) : ?>
@@ -316,6 +315,17 @@ function graphene_custom_style(){
 		<?php if ($show_post_avatar) : ?>
 		h2 a, h2 a:visited{display:block;margin-right:45px;padding-bottom:0;}
 		<?php endif; ?>
+		
+		<?php /* Slider height */ ?>
+		<?php if ($slider_height) : ?>
+		.featured_slider #slider_root{height:<?php echo $slider_height; ?>px;}
+		<?php endif; ?>
+		
+		<?php /* Link header image */ ?>
+		<?php if ($link_header_img && HEADER_IMAGE_WIDTH != 900 && HEADER_IMAGE_HEIGHT != 198) : ?>
+		#header_img_link{width:<?php echo HEADER_IMAGE_WIDTH; ?>px;height:<?php echo HEADER_IMAGE_HEIGHT; ?>px;}
+		<?php endif;?>
+		
     </style>
     <?php endif; ?>
     
@@ -361,7 +371,6 @@ endif;
  * This menu automatically lists all Pages as menu items, including their direct
  * direct descendant, which will only be displayed for the current parent.
 */
-
 if (!function_exists('graphene_default_menu')) :
 
 	function graphene_default_menu(){ ?>
@@ -466,8 +475,27 @@ endif;
 
 if (!function_exists('graphene_addthis')) :
 	
-	function graphene_addthis(){
-		if (get_option('graphene_show_addthis')) {
+	function graphene_addthis($post_id){
+		
+		// Get the local setting
+		$show_addthis_local = (get_post_meta($post_id, '_graphene_show_addthis', true)) ? get_post_meta($post_id, '_graphene_show_addthis', true) : 'global';
+		$show_addthis_global = get_option('graphene_show_addthis');
+		$show_addthis_page = get_option('graphene_show_addthis_page');
+		
+		// Determine whether we should show AddThis or not
+		if ($show_addthis_local == 'show')
+			$show_addthis = true;
+		elseif ($show_addthis_local == 'hide')
+			$show_addthis = false;
+		elseif ($show_addthis_local == 'global'){
+			if (($show_addthis_global && !is_page()) || ($show_addthis_global && $show_addthis_page))
+				$show_addthis = true;
+			else
+				$show_addthis = false;
+		}
+		
+		// Show the AddThis button
+		if ($show_addthis) {
 			echo '<div class="add-this-right">';
 			echo stripslashes(get_option('graphene_addthis_code'));
 			echo '</div>';
@@ -685,6 +713,24 @@ add_action('admin_menu', 'graphene_options_init');
 include('admin/options.php');
 include('admin/display.php');
 
+/**
+ * Include the file for additional user fields
+ * 
+ * @package WordPress
+ * @subpackage Graphene
+ * @since Graphene 1.1
+*/
+include('admin/user.php');
+
+/**
+ * Include the file for additional custom fields in posts and pages editing screens
+ * 
+ * @package WordPress
+ * @subpackage Graphene
+ * @since Graphene 1.1
+*/
+include('admin/custom-fields.php');
+
 
 
 /**
@@ -780,6 +826,7 @@ endif;
 /* jQuery Scrollable */ 
 if (!function_exists('graphene_scrollable')) :
 	function graphene_scrollable() { 
+		$interval = (get_option('graphene_slider_speed')) ? get_option('graphene_slider_speed') : 7000;
 		if (is_front_page() && !get_option('graphene_slider_disable')) : ?>
             <!-- Scrollable -->
             <script type="text/javascript">
@@ -790,7 +837,7 @@ if (!function_exists('graphene_scrollable')) :
 								navi: ".slider_nav",
 								naviItem: 'a',
 								activeClass: 'active'
-							}).autoscroll({interval: 7000});
+							}).autoscroll({interval: <?php echo $interval; ?>});
                     });
                 });
             </script>
@@ -809,5 +856,248 @@ function graphene_scrollable_js() {
 // Print both the js and the script
 add_action('template_redirect', 'graphene_scrollable_js');
 add_action('wp_footer', 'graphene_scrollable');
+
+/**
+ * Creates the function that outputs the slider
+*/
+function graphene_slider(){
+	
+	if (is_front_page()) :
+		do_action('graphene_before_slider'); ?>
+    
+    <div class="featured_slider">
+        <?php do_action('graphene_before_slideritems'); ?>
+        <div id="slider_root">
+            <div class="slider_items">
+    <?php 
+        /**
+         * Get the featured posts to be displayed on the slider
+        */
+        global $post;
+        
+        /**
+         * Get the category whose posts should be displayed here. If no 
+         * category is defined, the 5 latest posts will be displayed
+        */
+        $slidercat = (get_option('graphene_slider_cat') != '') ? get_option('graphene_slider_cat') : false;
+        
+        /* Get the list of posts to display in the slider */
+        if (!$slidercat) {						
+			
+			// Get the number of posts to show
+			$postcount = (get_option('graphene_slider_postcount')) ? get_option('graphene_slider_postcount') : 5 ;
+			
+            $sliderposts = get_posts(array(
+                            'numberposts' => $postcount,
+                            'orderby' => 'date',
+                            'order' => 'DESC',
+                                   ));
+        } else {
+            $sliderposts = get_posts(array(
+                            'category' => $slidercat,
+                            'orderby' => 'date',
+                            'order' => 'DESC',
+                            'nopaging' => true
+                                   ));
+        }
+            
+        /* Display each post in the slider */	
+        foreach ($sliderposts as $post){
+            setup_postdata($post); ?>
+            
+            <div class="slider_post clearfix">
+            
+                <?php do_action('graphene_before_sliderpost'); ?>
+            
+                <?php /* The slider post's featured image */ ?>
+                <?php 
+				if (get_post_meta($post->ID, '_graphene_slider_img', true) != 'disabled' && !((get_post_meta($post->ID, '_graphene_slider_img', true) == 'global' || get_post_meta($post->ID, '_graphene_slider_img', true) == '') && get_option('graphene_slider_img') == 'disabled')) : 
+				?>
+                
+                <div class="sliderpost_featured_image alignleft">
+                    <?php echo graphene_get_slider_image($post->ID); ?>
+                </div>
+                
+                <?php endif; ?>
+                
+                <?php /* The slider post's title */ ?>
+                <h2 class="slider_post_title">
+                    <a href="<?php the_permalink(); ?>">
+                    <?php the_title(); ?>
+                    </a>
+                </h2>
+                
+                <?php /* The slider post's excerpt */ ?>
+                <div class="slider_post_entry">
+                    <?php the_excerpt(); ?>
+                    <a class="block_link" href="<?php the_permalink(); ?>"><?php _e('View full post', 'graphene'); ?></a>
+                    
+                    <?php do_action('graphene_slider_postentry'); ?>
+                </div>
+            </div>
+        <?php	
+        }
+        
+    ?>
+            </div>
+        </div>
+        
+        <?php /* The slider navigation */ ?>
+        <div class="slider_nav">
+            <?php $i = 0; foreach ($sliderposts as $post) : ?>
+            <a href="#" <?php if ($i == 0) {echo ' class="active"';} ?>><span><?php the_title(); ?></span></a>
+            <?php $i++; endforeach; ?>
+            
+            <?php do_action('graphene_slider_nav'); ?>
+        </div>
+        
+    </div>
+    <?php
+	endif;
+}
+// Hook the slider to the appropriate action hook
+if (!get_option('graphene_slider_disable')){
+	if (!get_option('graphene_slider_position'))
+		add_action('graphene_top_content', 'graphene_slider');
+	else
+		add_action('graphene_bottom_content', 'graphene_slider');
+		
+}
+
+
+/**
+ * This function determines which image to be used as the slider image based on user
+ * settings, and returns the <img> tag of the the slider image.
+ *
+ * It requires the post's ID to be passed in as argument so that the user settings in
+ * individual post / page can be retrieved.
+*/
+if (!function_exists('graphene_get_slider_image')) :
+	function graphene_get_slider_image($post_id = NULL){
+		
+		// Throw an error message if no post ID supplied
+		if ($post_id == NULL){
+			echo '<strong>ERROR:</strong> Post ID must be passed as an input argument to call the function <code>graphene_get_slider_image()</code>.';
+			return;
+		} 
+		
+		// First get the settings
+		$global_setting = (get_option('graphene_slider_img')) ? get_option('graphene_slider_img') : 'featured_image';
+		$local_setting = (get_post_meta($post_id, '_graphene_slider_img', true)) ? get_post_meta($post_id, '_graphene_slider_img', true) : 'global';
+		
+		// Determine which image should be displayed
+		$final_setting = ($local_setting == 'global') ? $global_setting : $local_setting;
+		
+		// Build the html based on the final setting
+		$html = '';
+		if ($final_setting == 'disabled'){					// image disabled
+		
+			return;
+			
+		} elseif ($final_setting == 'featured_image'){		// Featured Image
+		
+			if (has_post_thumbnail($post_id)) :
+				$html .= get_the_post_thumbnail($post_id, array(150,150,true));
+			else :
+				$html .= '<img alt="" src="'.get_bloginfo('template_directory').'/images/img_slider_generic.png">';
+			endif;
+			
+		} elseif ($final_setting == 'post_image'){			// First image in post
+			
+			$html .= graphene_get_post_image($post_id);
+			
+		} elseif ($final_setting == 'custom_url'){			// Custom URL
+			
+			$html .= '<a href="'.get_permalink($post_id).'">';
+			if ($local_setting == 'global') :
+				$html .= '<img src="'.get_post_meta($post_id, '_graphene_slider_imgurl').'" alt="" />';
+			else :
+				$html .= '<img src="'.get_option('graphene_slider_imgurl').'" alt="" />';
+			endif;
+			$html .= '</a>';
+			
+		}
+		
+		// Returns the html
+		return $html;
+		
+	}
+endif;
+
+
+/**
+ * This function gets the first image (as ordered in the post's media gallery) attached to
+ * the current post. It outputs the complete <img> tag, with height and width attributes.
+ * The function returns the thumbnail of the original image, linked to the post's 
+ * permalink. Returns FALSE if the current post has no image.
+ *
+ * This function requires the post ID to get the image from to be supplied as the
+ * argument. If no post ID is supplied, it outputs an error message. An optional argument
+ * size can be used to determine the size of the image to be used.
+ *
+ * Based on code snippets by John Crenshaw 
+ * (http://www.rlmseo.com/blog/get-images-attached-to-post/)
+ *
+ * @package WordPress
+ * @subpackage Graphene
+ * @since Graphene 1.1
+*/
+if (!function_exists('graphene_get_post_image')) :
+	function graphene_get_post_image($post_id = NULL, $size = 'thumbnail'){
+		
+		/* Display error message if no post ID is supplied */
+		if ($post_id == NULL){
+			_e('<strong>ERROR: You must supply the post ID to get the image from as an argument when calling the graphene_get_post_image() function.</strong>', 'graphene');
+			return;
+		}
+		
+		/* Get the images */
+		$images = get_children(array(
+								'post_type' 		=> 'attachment',
+								'post_mime_type' 	=> 'image',
+								'post_parent' 	 	=> $post_id,
+								'orderby'			=> 'menu_order',
+								'order'				=> 'ASC',
+								'numberposts'		=> 1,
+									 ), ARRAY_A);
+		
+		/* Returns FALSE if there is no image */
+		if (empty($images)) {
+			return FALSE;
+		}
+		
+		/* Build the <img> tag if there is an image */
+		$html = '';
+		foreach ($images as $image){
+			$html .= '<a href="'.get_permalink($post_id).'">';
+			$html .= wp_get_attachment_image($image['ID'], $size);
+			$html .= '</a>';
+		}
+		
+		/* Returns the image HTMl */
+		return $html;
+}
+endif;
+
+
+/**
+ * This function prints out the title for the website
+*/
+if (!function_exists('graphene_title')) :
+	function graphene_title(){
+		if(is_front_page()) { 
+			if (!get_option('graphene_swap_title'))
+				echo get_bloginfo('description') . " &raquo; " . get_bloginfo('name');
+			else
+				echo get_bloginfo('name') . " &raquo; " . get_bloginfo('description');
+		} 
+		else { 
+			if (!get_option('graphene_swap_title'))
+				echo wp_title('', false) . " &raquo; " . get_bloginfo('name'); 
+			else
+				echo get_bloginfo('name') . " &raquo; " . wp_title('', false); 
+		} 
+	}
+endif;
 
 ?>

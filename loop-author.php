@@ -4,8 +4,14 @@
     
     	<?php do_action('graphene_author_entry'); ?>
     
-    	<?php /* Display the user's gravatar */ ?>
-        <?php echo get_avatar(get_the_author_meta('user_email'), 150); ?>
+    	<?php /* Display the user's profile image */ ?>
+        <?php 
+			if (get_the_author_meta('graphene_author_imgurl')) {
+				echo '<img class="avatar" src="'.get_the_author_meta('graphene_author_imgurl').'" alt="" />';
+			} else {
+				echo get_avatar(get_the_author_meta('user_email'), 150); 
+			}
+		?>
             
         <?php /* Page title, which is the user's nicename */ ?>
         <h2><?php echo ucfirst(get_the_author_meta('display_name')); ?></h2>
@@ -34,31 +40,49 @@
          
             
             <?php /* Lists the author's latest posts */ ?>
-            <h4><?php _e('Latest posts', 'graphene'); ?></h4>
             <?php 
-				// global $post;
-				$posts = get_posts(array('numberposts' => 5, 'author' => get_the_author_meta('ID'), 'orderby' => 'date')); ?>
-                <ol>
-				<?php foreach ($posts as $post) { ?>
-                    <li><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(esc_attr__('Permalink Link to %s', 'graphene'), the_title_attribute('echo=0')); ?>"><?php if (get_the_title() == '') {_e('(No title)','graphene');} else {the_title();} ?></a> &mdash; <?php echo get_the_date(); ?></li>    
-                <?php } ?>
-            	</ol>
-                <?php do_action('graphene_author_latestposts'); ?>
+			$posts = get_posts(array('numberposts' => 5, 'author' => get_the_author_meta('ID'), 'orderby' => 'date')); 
+			if (!empty($posts)) : ?>
+            
+            <h4><?php _e('Latest posts', 'graphene'); ?></h4>
+			<ol>	
+			<?php foreach ($posts as $post) { ?>
+                <li><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(esc_attr__('Permalink Link to %s', 'graphene'), the_title_attribute('echo=0')); ?>"><?php if (get_the_title() == '') {_e('(No title)','graphene');} else {the_title();} ?></a> &mdash; <?php echo get_the_date(); ?></li>    
+            <?php } ?>
+            </ol>
+            <?php do_action('graphene_author_latestposts'); ?>
+            
+            <?php endif; ?>
+            
             
             <?php /* Lists the author's most commented posts */ ?>
-            <h4><?php _e('Most commented posts', 'graphene'); ?></h4>
             <?php 
-				// global $post;
-				$posts = get_posts(array('numberposts' => 5, 'author' => get_the_author_meta('ID'), 'orderby' => 'comment_count')); ?>
-                <ol>
-				<?php foreach ($posts as $post) { setup_postdata($post); ?>
-                	<?php /* List the post only if comment is open and there's comment(s) and the post is not password-protected */ ?>
-                	<?php if (comments_open() && empty($post->post_password) && get_comments_number() != 0) : ?>
-                    <li><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(esc_attr__('Permalink Link to %s', 'graphene'), the_title_attribute('echo=0')); ?>"><?php if (get_the_title() == '') {_e('(No title)','graphene');} else {the_title();} ?></a> &mdash; <?php comments_number(__('Leave comment','graphene'), __('1 comment','graphene'), __("% comments",'graphene')); ?></li>
-                    <?php endif; ?>
-                <?php } ?>
-            	</ol>
-                <?php do_action('graphene_author_popularposts'); ?>
+			$posts = get_posts(array('numberposts' => 5, 'author' => get_the_author_meta('ID'), 'orderby' => 'comment_count')); 
+			
+			// Check if at least one of the author's post has comments
+			$have_comments = NULL;
+			foreach ($posts as $post) {
+				setup_postdata($post);
+				if (get_comments_number() != 0)
+					$have_comments = TRUE;
+			}
+			
+			if ($have_comments) :
+			?>
+                
+            <h4><?php _e('Most commented posts', 'graphene'); ?></h4>
+            <ol>
+            <?php foreach ($posts as $post) { setup_postdata($post); ?>
+                <?php /* List the post only if comment is open and there's comment(s) and the post is not password-protected */ ?>
+                <?php if (comments_open() && empty($post->post_password) && get_comments_number() != 0) : ?>
+                <li><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(esc_attr__('Permalink Link to %s', 'graphene'), the_title_attribute('echo=0')); ?>"><?php if (get_the_title() == '') {_e('(No title)','graphene');} else {the_title();} ?></a> &mdash; <?php comments_number(__('Leave comment','graphene'), __('1 comment','graphene'), __("% comments",'graphene')); ?></li>
+                <?php endif; ?>
+            <?php } ?>
+            </ol>
+            <?php do_action('graphene_author_popularposts'); ?>
+            
+            <?php endif; ?>
+            
         </div>
         
         <?php /* Post footer */ ?>
@@ -69,7 +93,7 @@
                  * See the graphene_addthis() function in functions.php
                 */ 
             ?>
-            <?php graphene_addthis(); ?>
+            <?php graphene_addthis(get_the_ID()); ?>
         </div>
     </div>
 </div>	

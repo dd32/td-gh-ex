@@ -4,13 +4,31 @@ http://www.khairul-syahir.com
 
 CHANGELOG
 
-Version 1.0.10
+Version 1.1
 
-	* [TODO] Add the author info box under each post in single post display
-	* [TODO] Add option to show the AddThis button on posts and pages or posts only
-	* [TODO] Learn how to add option to the edit post screen
-	* [TODO] Add option to have the slider pull the first image from the post instead of using featured image (Note: using wordpress' own resizing function perhaps?)
-	* [TODO] Add option to link the header image to the homepage
+	* Slider now uses category ID to pull the posts instead of category name/slug
+	* Added nonce and user-capability check protection to the theme's options pages
+	* The menu now highlights the current category item as well
+	* Added the author info box under each post in single post display
+	* Added option to enable/disable the AddThis button on posts and pages
+	* Added option to individual pages and posts to enable/disable the AddThis button, which will override the global setting
+	* Added option to link the header image to the homepage
+	* Added option to hide the allowed tags notification in comment form
+	* Don't display most commented post in author's page if there are no posts with comments
+	* [CANCELLED] Add option to make posts one-column (ideally, the user would be able to set this to be global or only for specific posts)
+	* The main content area now uses colour as background instead of repeating image
+	* Removed author gravatar from pages
+	* Added option to move the slider to the bottom of page
+	* Added option to specify slider speed
+	* Added option to specify the number of latest posts to display in the slider
+	* Added a few options that the user can select on which image to show as the slider image. Each posts and pages has their individual settings which can be used to override the global setting.
+	* Added additional author field to specify the image (by URL) to be displayed on the author's page
+	* [CANCELLED] Add RSS icon to wordpress' default Meta widget
+	* Added a confirmation page before uninstalling the theme
+	* Added option to disable the Creative Commons copyright text at the bottom
+	* Added two more action hooks: graphene_top_content, graphene_bottom_content
+	* Fixed alternate sidebars - now working on static front page as well
+	* Added PHP flush right after </head> to improve page loading time
 	
 Version 1.0.9.3
 

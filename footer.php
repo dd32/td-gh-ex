@@ -21,6 +21,8 @@
     <?php do_action('graphene_before_footer'); ?>
     
     <div id="footer">
+    	
+		<?php if (!get_option('graphene_hide_copyright')) : ?>
         <div id="copyright" <?php if (!get_option('graphene_show_cc')) {echo 'style="background:none;padding-left:20px;"';} ?>>
         	<?php if (get_option('graphene_copy_text') == '') : ?>
 				<p>
@@ -32,6 +34,8 @@
             
             <?php do_action('graphene_copyright'); ?>
         </div>
+        <?php endif; ?>
+        
         <div id="w3c">
         	<p>
             <a title="<?php esc_attr_e('Valid XHTML 1.0 Strict', 'graphene'); ?>" href="http://validator.w3.org/check?uri=referer" id="w3c_xhtml"><span><?php _e('Valid XHTML 1.0 Strict', 'graphene'); ?></span></a> 

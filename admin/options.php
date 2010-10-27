@@ -12,13 +12,38 @@ function graphene_options(){
 	$errors = array();
 	$messages = array();
 	
+	/* Check authorisation */
+	$authorised = true;
+	// Check nonce
+	if (isset($_POST['graphene-options'])){
+		if (!wp_verify_nonce($_POST['graphene-options'], 'graphene-options')) { 
+			$authorised = false;
+		}
+		// Check permissions
+		if (!current_user_can('manage_options')){
+			$authorised = false;
+		}
+	} else {
+		$authorised = false;	
+	}
+	
 	// Updates the database
 	if (isset($_POST['graphene_submitted']) && $_POST['graphene_submitted'] == true) {
 		
+		// Check authorisation status
+		if (!$authorised){
+			wp_die(__('ERROR: You are not authorised to perform that operation', 'graphene'));
+		}
 		
 		// Process the slider options
 		$slider_cat = (!empty($_POST['slider_cat'])) ? $_POST['slider_cat'] : '';
+		$slider_postcount = (!empty($_POST['slider_postcount'])) ? $_POST['slider_postcount'] : '';
 		$slider_disable = (!empty($_POST['slider_disable'])) ? $_POST['slider_disable'] : false;
+		$slider_img = (!empty($_POST['slider_img'])) ? $_POST['slider_img'] : 'featured_image';
+		$slider_imgurl = (!empty($_POST['slider_imgurl'])) ? $_POST['slider_imgurl'] : '';
+		$slider_height = (!empty($_POST['slider_height'])) ? $_POST['slider_height'] : '';
+		$slider_speed = (!empty($_POST['slider_speed'])) ? $_POST['slider_speed'] : '';
+		$slider_position = (!empty($_POST['slider_position'])) ? $_POST['slider_position'] : false;
 		
 		
 		// Process the adsense options
@@ -49,6 +74,7 @@ function graphene_options(){
 			$show_addthis = false;
 		}
 		$addthis_code = (!empty($_POST['addthis_code'])) ? html_entity_decode($_POST['addthis_code']) : '';
+		$show_addthis_page = (!empty($_POST['show_addthis_page'])) ? $_POST['show_addthis_page'] : false;
 		
 		// Process the Google Analytics options
 		if (!empty($_POST['show_ga'])) {
@@ -71,12 +97,9 @@ function graphene_options(){
 		
 		
 		// Process the Footer options
-		if (!empty($_POST['show_cc'])){
-			$show_cc = $_POST['show_cc'];
-		} else {
-			$show_cc = false;	
-		}
+		$show_cc = (!empty($_POST['show_cc'])) ? $_POST['show_cc'] : false;
 		$copy_text = $_POST['copy_text'];
+		$hide_copyright = (!empty($_POST['hide_copyright'])) ? $_POST['hide_copyright'] : false;
 		
 		
 		// Updates all options
@@ -84,6 +107,12 @@ function graphene_options(){
 			
 			// Slider options
 			update_option('graphene_slider_cat', $slider_cat);
+			update_option('graphene_slider_postcount', $slider_postcount);
+			update_option('graphene_slider_img', $slider_img);
+			update_option('graphene_slider_imgurl', $slider_imgurl);
+			update_option('graphene_slider_height', $slider_height);
+			update_option('graphene_slider_speed', $slider_speed);
+			update_option('graphene_slider_position', $slider_position);
 			update_option('graphene_slider_disable', $slider_disable);
 			
 			// AdSense options
@@ -93,6 +122,7 @@ function graphene_options(){
 			
 			// AddThis options
 			update_option('graphene_show_addthis', $show_addthis);
+			update_option('graphene_show_addthis_page', $show_addthis_page);
 			update_option('graphene_addthis_code', $addthis_code);
 			
 			// Google Analytics options
@@ -106,19 +136,55 @@ function graphene_options(){
 			// Footer options
 			update_option('graphene_show_cc', $show_cc);
 			update_option('graphene_copy_text', $copy_text);
+			update_option('graphene_hide_copyright', $hide_copyright);
 			
 			// Print successful message
 			$messages[] = __('Settings updated.','graphene');
 		}
 	}
 	
-	// Uninstall the theme and remove all theme options from the database
-	if (isset($_POST['graphene_uninstall'])) {
-		include('uninstall.php');
+	/* Display a confirmation page to uninstall the theme */
+	if (isset($_POST['graphene_uninstall'])) { 
+	
+		// Check authorisation status
+		if (!$authorised){
+			wp_die(__('ERROR: You are not authorised to perform that operation', 'graphene'));
 		}
+	?>
+
+		<div class="wrap">
+        <h2><?php _e('Uninstall Graphene', 'graphene'); ?></h2>
+        <p><?php _e("Please confirm that you would like to uninstall the Graphene theme. All of the theme's options in the database will be deleted.", 'graphene'); ?></p>
+        <p><?php _e('This action is not reversible.', 'graphene'); ?></p>
+        <form action="" method="post">
+        	<?php wp_nonce_field('graphene-options', 'graphene-options'); ?>
+        	<input type="hidden" name="graphene_uninstall_confirmed" value="true" />
+            <input type="submit" class="button graphene_uninstall" value="<?php _e('Uninstall Theme', 'graphene'); ?>" />
+        </form>
+        </div>
+        
+		<?php
+		return;
+	}
+	
+	/* Uninstall the theme if confirmed */
+	if (isset($_POST['graphene_uninstall_confirmed'])) { 
+	
+		// Check authorisation status
+		if (!$authorised){
+			wp_die(__('ERROR: You are not authorised to perform that operation', 'graphene'));
+		}
+		include('uninstall.php');
+	}
 	
 	// Get the current options from database
 	$slider_cat = get_option('graphene_slider_cat');
+	$slider_postcount = get_option('graphene_slider_postcount');
+	$slider_img = (get_option('graphene_slider_img')) ? get_option('graphene_slider_img') : 'featured_image';
+	$slider_imgurl = get_option('graphene_slider_imgurl');
+	$slider_height = get_option('graphene_slider_height');
+	$slider_speed = get_option('graphene_slider_speed');
+	$slider_position = get_option('graphene_slider_position');
 	$slider_disable = get_option('graphene_slider_disable');
 	
 	$show_adsense = get_option('graphene_show_adsense');
@@ -126,6 +192,7 @@ function graphene_options(){
 	$adsense_show_frontpage = get_option('graphene_adsense_show_frontpage');
 	
 	$show_addthis = get_option('graphene_show_addthis');
+	$show_addthis_page = get_option('graphene_show_addthis_page');
 	$addthis_code = get_option('graphene_addthis_code');
 	
 	$show_ga = get_option('graphene_show_ga');
@@ -136,6 +203,7 @@ function graphene_options(){
 	
 	$show_cc = get_option('graphene_show_cc');
 	$copy_text = get_option('graphene_copy_text');
+	$hide_copyright = get_option('graphene_hide_copyright');
 
 	?>
     
@@ -150,6 +218,7 @@ function graphene_options(){
 	?>
 	<div class="wrap">
 		<h2><?php _e('Graphene Theme Options', 'graphene'); ?></h2>
+        <p><?php _e('These are the global settings for the theme. You may override some of the settings in individual posts and pages.', 'graphene'); ?></p>
 		<?php 
 			// Display errors if exist
 			if (!empty($errors)) {
@@ -172,11 +241,16 @@ function graphene_options(){
 			}
 		?>
         
-        <?php /* AdSense Options */ ?>
-        <h3><?php _e('Slider Options', 'graphene'); ?></h3>
-        <p><?php _e("The slider will display the Featured Image of the post, along with the post's excerpt. If no featured image is set, it will display a generic image instead.", 'graphene'); ?></p>
         <?php // Begins the main html form. Note that one html form is used for *all* options ?>
         <form action="" method="post">
+        
+        <?php 
+		/* Secure our form with nonce */
+		wp_nonce_field('graphene-options', 'graphene-options');
+		?>
+        
+        <?php /* Slider Options */ ?>
+        <h3><?php _e('Slider Options', 'graphene'); ?></h3>
             <table class="form-table">
             	<tr>
                     <th scope="row">
@@ -191,10 +265,64 @@ function graphene_options(){
 								$categories = get_categories();
 								foreach ($categories as $category) :
 							?>
-                            <option value="<?php echo $category->cat_name; ?>" <?php if ($slider_cat == $category->cat_name) {echo 'selected="selected"';}?>><?php echo $category->cat_name; ?></option>
+                            <option value="<?php echo $category->cat_ID; ?>" <?php if ($slider_cat == $category->cat_ID) {echo 'selected="selected"';}?>><?php echo $category->cat_name; ?></option>
                             <?php endforeach; ?>
                         </select>
                     </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                    	<label><?php _e('Number of latest posts to display', 'graphene'); ?></label>
+                    </th>
+                    <td>
+                    	<input type="text" name="slider_postcount" value="<?php echo $slider_postcount; ?>" size="3" /><br />
+                        <span class="description"><?php _e('This setting only affects the slider if "Show latest posts" is selected above.', 'graphene'); ?></span>                        
+                    </td>
+                </tr>
+                <tr>
+                	<th scope="row">
+                    	<label><?php _e('Slider image', 'graphene'); ?></label>
+                    </th>
+                    <td>
+                    	<select name="slider_img">
+                        	<option value="disabled" <?php if ($slider_img == 'disabled') {echo 'selected="selected"';} ?>><?php _e("Don't show image", 'graphene'); ?></option>
+                            <option value="featured_image" <?php if ($slider_img == 'featured_image') {echo 'selected="selected"';} ?>><?php _e("Featured Image", 'graphene'); ?></option>
+                            <option value="post_image" <?php if ($slider_img == 'post_image') {echo 'selected="selected"';} ?>><?php _e("First image in post", 'graphene'); ?></option>
+                            <option value="custom_url" <?php if ($slider_img == 'custom_url') {echo 'selected="selected"';} ?>><?php _e("Custom URL", 'graphene'); ?></option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                    	<label><?php _e('Custom slider image URL', 'graphene'); ?></label>
+                    </th>
+                    <td>
+                    	<input type="text" name="slider_imgurl" value="<?php echo $slider_imgurl; ?>" size="60" /><br />
+                        <span class="description"><?php _e('Make sure you select Custom URL in the slider image option above to use this custom url.', 'graphene'); ?></span>                        
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                    	<label><?php _e('Slider height', 'graphene'); ?></label>
+                    </th>
+                    <td>
+                    	<input type="text" name="slider_height" value="<?php echo $slider_height; ?>" size="3" /> px                        
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                    	<label><?php _e('Slider speed', 'graphene'); ?></label>
+                    </th>
+                    <td>
+                    	<input type="text" name="slider_speed" value="<?php echo $slider_speed; ?>" size="4" /> <?php _e('milliseconds', 'graphene'); ?><br />
+                        <span class="description"><?php _e('This is the duration that each slider item will be shown', 'graphene'); ?></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                    	<label><?php _e('Move slider to bottom of page', 'graphene'); ?></label>
+                    </th>
+                    <td><input type="checkbox" name="slider_position" <?php if ($slider_position == true) echo 'checked="checked"' ?> value="true" /></td>
                 </tr>
             	<tr>
                     <th scope="row">
@@ -236,6 +364,10 @@ function graphene_options(){
             <tr>
                 <th scope="row"><label><?php _e('Show AddThis social sharing button', 'graphene'); ?></label></th>
                 <td><input type="checkbox" name="show_addthis" <?php if ($show_addthis == true) echo 'checked="checked"' ?> value="true" /></td>
+            </tr>
+            <tr>
+                <th scope="row"><label><?php _e('Show in Pages as well?', 'graphene'); ?></label></th>
+                <td><input type="checkbox" name="show_addthis_page" <?php if ($show_addthis_page == true) echo 'checked="checked"' ?> value="true" /></td>
             </tr>
             <tr>
                 <th scope="row">
@@ -296,6 +428,10 @@ function graphene_options(){
                 </th>
                 <td><textarea name="copy_text" cols="60" rows="7"><?php echo stripslashes($copy_text); ?></textarea></td>
             </tr>
+            <tr>
+                <th scope="row"><label><?php _e('Do not show copyright info', 'graphene'); ?></label></th>
+                <td><input type="checkbox" name="hide_copyright" <?php if ($hide_copyright == true) echo 'checked="checked"' ?> value="true" /></td>
+            </tr>
         </table>
         
         
@@ -323,6 +459,8 @@ function graphene_options(){
             <p><?php _e('If you just want to try another theme, there is no need to uninstall this theme. Simply activate the other theme in the Appearance > Themes admin page.','graphene'); ?></p>
             <p><?php _e("Note that uninstalling this theme <strong>does not remove</strong> the theme's files. To delete the files after you have uninstalled this theme, go to Appearances > Themes and delete the theme from there.",'graphene'); ?></p>
             <form action="" method="post">
+            	<?php wp_nonce_field('graphene-options', 'graphene-options'); ?>
+            
                 <input type="hidden" name="graphene_uninstall" value="true" />
                 <input type="submit" class="button graphene_uninstall" value="<?php _e('Uninstall Theme', 'graphene'); ?>" />
             </form>

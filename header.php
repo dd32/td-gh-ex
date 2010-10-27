@@ -12,17 +12,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
 <head profile="http://gmpg.org/xfn/11">
     <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
-    <title><?php 
-		if(is_home()) {  
-			echo get_bloginfo('description') . " &raquo; " . get_bloginfo('name'); 
-		} 
-		else { 
-			echo wp_title('', false) . " &raquo; " . get_bloginfo('name'); 
-		} 
-		?>	
-    </title>
+    <title><?php graphene_title(); ?></title>
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" /> 
-    <style type="text/css" media="screen">@import "<?php echo get_stylesheet_uri(); ?>";</style>  
+    <style type="text/css" media="screen">@import "<?php echo get_stylesheet_uri(); ?>";</style>
       <!--[if lte IE 6]>
       	  <style>#container{background:none;}</style>
           <script>
@@ -55,7 +47,7 @@
 	 */
 	wp_head();
 	?>
-</head>
+</head><?php flush(); ?>
 <body <?php body_class(); ?>>
 	<div id="container">
     	<div id="top-bar">
@@ -101,8 +93,13 @@
 			$style = ' style="color:#' . get_theme_mod( 'header_textcolor', HEADER_TEXTCOLOR ) . ';"';
 		?>
         <div id="header" style="background-image:url(<?php echo $header_img; ?>);">
-        	<h1 <?php echo $style; ?> class="header_title"><a <?php echo $style; ?> href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+        	<?php if (get_option('graphene_link_header_img')) : ?>
+            <a href="<?php echo home_url(); ?>" id="header_img_link" title="<?php esc_attr_e('Go back to the front page', 'graphene'); ?>">&nbsp;</a>
+            <?php endif; ?>
+        
+        	<h1 <?php echo $style; ?> class="header_title"><a <?php echo $style; ?> href="<?php echo home_url(); ?>" title="<?php esc_attr_e('Go back to the front page', 'graphene'); ?>"><?php bloginfo('name'); ?></a></h1>
             <h2 <?php echo $style; ?> class="header_desc"><?php bloginfo('description'); ?></h2>
+            <?php do_action('graphene_header'); ?>
         </div>
         <div id="nav">
         	<!-- BEGIN dynamically generated and highlighted menu -->
@@ -116,91 +113,4 @@
         
         <div id="content" class="clearfix<?php if (is_page_template('template-onecolumn.php')) {echo ' one_column';} ?>">
         	<div id="content-main" class="clearfix">
-            	
-                <?php /* The preview slider */ ?>
-                <?php if (is_front_page() && !get_option('graphene_slider_disable')) : ?>
-                <?php do_action('graphene_before_slider'); ?>
-                <div class="featured_slider">
-                	<?php do_action('graphene_before_slideritems'); ?>
-                	<div id="slider_root">
-                		<div class="slider_items">
-				<?php 
-					/**
-					 * Get the featured posts to be displayed on the slider
-					*/
-					global $post;
-					
-					/**
-					 * Get the category whose posts should be displayed here. If no 
-					 * category is defined, the 5 latest posts will be displayed
-					*/
-					$slidercat = (get_option('graphene_slider_cat') != '') ? get_option('graphene_slider_cat') : false;
-					
-					/* Get the list of posts to display in the slider */
-					if (!$slidercat) {						
-						$sliderposts = get_posts(array(
-										'posts_per_page' => 5,
-										'orderby' => 'date',
-										'order' => 'DESC',
-											   ));
-					} else {
-						$sliderposts = get_posts(array(
-										'category_name' => $slidercat,
-										'orderby' => 'date',
-										'order' => 'DESC',
-										'nopaging' => true
-											   ));
-					}
-						
-					/* Display each post in the slider */	
-					foreach ($sliderposts as $post){
-						setup_postdata($post); ?>
-                        
-						<div class="slider_post clearfix">
-						
-                        	<?php do_action('graphene_before_sliderpost'); ?>
-                        
-							<?php /* The slider post's featured image */ ?>
-                            <div class="sliderpost_featured_image alignleft">
-                                <a href="<?php the_permalink(); ?>">
-                                <?php if (has_post_thumbnail()) : ?>
-                                	<?php the_post_thumbnail(array(150,150,true)); ?>
-                                <?php else : ?>
-                                	<img src="<?php bloginfo('template_url'); ?>/images/img_slider_generic.png" alt="" />
-                                <?php endif; ?>
-                                </a>
-                            </div>
-							
-                            <?php /* The slider post's title */ ?>
-							<h2 class="slider_post_title">
-								<a href="<?php the_permalink(); ?>">
-								<?php the_title(); ?>
-								</a>
-							</h2>
-                            
-                            <?php /* The slider post's excerpt */ ?>
-							<div class="slider_post_entry">
-								<?php the_excerpt(); ?>
-                                <a class="block_link" href="<?php the_permalink(); ?>"><?php _e('View full post', 'graphene'); ?></a>
-                                
-                                <?php do_action('graphene_slider_postentry'); ?>
-							</div>
-						</div>
-					<?php	
-					}
-                    
-                ?>
-                		</div>
-                	</div>
-                    
-                    <?php /* The slider navigation */ ?>
-                    <div class="slider_nav">
-						<?php $i = 0; foreach ($sliderposts as $post) : ?>
-                        <a href="#" <?php if ($i == 0) {echo ' class="active"';} ?>><span><?php the_title(); ?></span></a>
-                        <?php $i++; endforeach; ?>
-                        
-                        <?php do_action('graphene_slider_nav'); ?>
-                    </div>
-                    
-                </div>
-                <?php endif; ?>
+            	<?php do_action('graphene_top_content'); ?>
