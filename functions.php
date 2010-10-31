@@ -54,6 +54,11 @@
         define("TMN_THE_TIME_FORMAT",'F j, Y');//
 
     }
+    if(!defined('TMN_THE_MONTH_FORMAT')){
+        define("TMN_THE_MONTH_FORMAT",'F j');//archive.php
+
+    }
+
 
     add_editor_style();
     // This theme uses wp_nav_menu() in one location.
@@ -64,13 +69,46 @@
     // This theme allows users to set a custom background
     add_custom_background();
 
-if ( function_exists( 'add_theme_support' ) ) {
+
+
     add_theme_support( 'post-thumbnails' );
-    //set_post_thumbnail_size( 32, 32, true );
+    set_post_thumbnail_size( 48, 48, true );
+    add_image_size( 'single-post-thumbnail', 600, 200, true);
 
-    add_image_size( 'single-post-thumbnail', 600, 200, true); //height see single.php div.eye-catch
-}
+    // Add default posts and comments RSS feed links to head
+    add_theme_support( 'automatic-feed-links' );
 
+
+
+    // custom content_width
+    /*When the value is specified for this variable,
+    it is not ..width of the page.. revokable from the management screen. */
+
+        $content_width = '';
+
+    if(isset($content_width) and !empty($content_width)){
+
+        add_action("wp_head","tmn_custom_width");
+
+        function tmn_custom_width($content,$key){
+        global $content_width;
+            //maybe
+                $c_width = (int)$content_width;
+                $width    = $c_width / 13;
+                $ie_width = $width * 0.9759;
+            $custom_content_width = '<style type="text/css">'.
+            '#custom-doc {margin:auto;text-align:left;'."\n".
+            'width:'.round($width,0).'em;'."\n".
+            '*width:'.round($ie_width,0).'em;'."\n".
+            'min-width:'.round($width * 0.7,0).'em;}</style>';
+
+
+            echo $custom_content_width;
+        }
+
+
+
+    }
 
 
 if ( function_exists( 'add_custom_image_header' ) ) {
@@ -453,7 +491,9 @@ if(is_admin){
  */
 function warehouse($name){
     global $raindrops_base_setting;
+    global $content_width;
     $vertical = array();
+
 
     foreach($raindrops_base_setting as $key=>$val){
         if(!is_null($raindrops_base_setting)){
@@ -463,6 +503,13 @@ function warehouse($name){
     }
 
         $row = array_search($name,$vertical);
+
+
+if(isset($content_width) and !empty($content_width) and $name == 'raindrops_page_width'){
+        return 'custom-doc';
+
+}
+
 
         return get_option($name, $raindrops_base_setting[$row]['option_value']);
 }
@@ -572,7 +619,10 @@ class tmn_menu_create {
 
     function add_menus() {
         if(function_exists('add_options_page')) {
-        add_options_page(TMN_TABLE_TITLE, 'RAINDROPS Options', 8, __FILE__, array($this, 'SubMenu_GUI'));
+
+       add_options_page(TMN_TABLE_TITLE, 'RAINDROPS Options', 'edit_pages', __FILE__, array($this, 'SubMenu_GUI'));
+
+
         }
     }
 
@@ -814,6 +864,9 @@ $color_en = array("american red" => "#bf0a30","american blue" => "#002868","amer
                     $color = "#".dechex($cr).dechex($cg).dechex($cb);
                 }elseif( $cb > $cr and $cr > $cg ){
                     $color = "#".dechex($cg).dechex($cr).dechex($cb);
+                }else{
+                    $color = "#000";
+
                 }
             }
 
@@ -932,7 +985,11 @@ color:$tmn_footer_color;
 $h2_default_background
 $h_position_rsidebar_h2
 }
+.home .sticky {
+background: $c4
+border-top:solid 6px $rgba_border;
 
+}
 .social textarea#comment,
 .social input[type="text"] {
     outline:none;
@@ -1079,6 +1136,17 @@ h2 a{
     $c_5
 }
 
+.home .sticky {
+background: $c_4
+border-top:solid 6px $rgba_border;
+
+}
+
+#yui-main{
+
+background: $c_5
+
+}
 #hd{
     $c_3
     background-image:url({$images_path}{$tmn_header_image});
@@ -1377,6 +1445,16 @@ body{
 h2,h3{
     $c5
 }
+.home .sticky {
+background: $c4
+border-top:solid 6px $rgba_border;
+
+}
+.home .sticky a{
+background: none;
+
+}
+
 .entry div h2,.entry div h3{
     $c5
 }
