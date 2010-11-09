@@ -61,7 +61,7 @@
         <div id="developer">
         	<p>
             <?php /* translators: %1$s is the blog title, %2$s is the theme's name, %3$s is the theme's author */ ?>
-			<?php printf(__('%1$s uses %2$s theme by %3$s.','graphene'), '<a href="'.get_home_url().'">'.get_bloginfo('name').'</a>', '<a href="http://www.khairul-syahir.com/wordpress-dev/graphene-theme">'.ucfirst(get_template()).'</a>', '<a href="http://www.khairul-syahir.com">Syahir Hakim</a>'); ?>
+			<?php printf(__('%1$s uses %2$s theme by %3$s.','graphene'), '<a href="'.get_home_url().'">'.get_bloginfo('name').'</a>', '<a href="http://www.khairul-syahir.com/wordpress-dev/graphene-theme">'.ucfirst(get_template()).'</a>', 'Syahir Hakim'); ?>
             </p>
             
             <?php do_action('graphene_developer'); ?>
