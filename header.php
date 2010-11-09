@@ -14,7 +14,6 @@
     <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
     <title><?php graphene_title(); ?></title>
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" /> 
-    <style type="text/css" media="screen">@import "<?php echo get_stylesheet_uri(); ?>";</style>
       <!--[if lte IE 6]>
       	  <style>#container{background:none;}</style>
           <script>
@@ -69,7 +68,7 @@
             </div>
         </div>
         <?php
-        if ( is_singular() && has_post_thumbnail( $post->ID ) &&( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&	$image[1] >= HEADER_IMAGE_WIDTH ) {
+        if ( is_singular() && has_post_thumbnail( $post->ID ) && ( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&	$image[1] >= HEADER_IMAGE_WIDTH && !get_option('graphene_featured_img_header')) {
 			// Houston, we have a new header image!
 			// Gets only the image url. It's a pain, I know! Wish Wordpress has better options on this one
 			$header_img = get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
@@ -81,10 +80,17 @@
 			$header_img = get_header_image();
 		}
 		
-		/* Check if the page uses SSL and change HTTP to HTTPS if true */
+		/* 
+		 * Check if the page uses SSL and change HTTP to HTTPS if true 
+		 * 
+		 * Currently commented out as it causes more trouble than it fixes. If you want 
+		 * to use it, just uncomment it.
+		*/
+		/*
 		if (is_ssl() && !stripos($header_img, 'https')){
 			$header_img = str_replace('http', 'https', $header_img);	
 		}
+		*/
 		
 		// Gets the colour for header texts, or if we should display them at all
 		if ( 'blank' == get_theme_mod('header_textcolor', HEADER_TEXTCOLOR) || '' == get_theme_mod('header_textcolor', HEADER_TEXTCOLOR))

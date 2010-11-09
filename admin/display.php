@@ -37,9 +37,11 @@ function graphene_options_display(){
 		
 		// Process the header display options
 		$light_header = (!empty($_POST['light_header'])) ? $_POST['light_header'] : false ;
-		$link_header_img = (!empty($_POST['link_header_img'])) ? $_POST['link_header_img'] : false ;		
+		$link_header_img = (!empty($_POST['link_header_img'])) ? $_POST['link_header_img'] : false ;
+		$featured_img_header = (!empty($_POST['featured_img_header'])) ? $_POST['featured_img_header'] : false ;
 		
 		// Process the posts display options
+		$posts_show_excerpt = (!empty($_POST['posts_show_excerpt'])) ? $_POST['posts_show_excerpt'] : false ;
 		$hide_post_author = (!empty($_POST['hide_post_author'])) ? $_POST['hide_post_author'] : false ;
 		$hide_post_date = (!empty($_POST['hide_post_date'])) ? $_POST['hide_post_date'] : false ;
 		$hide_post_commentcount = (!empty($_POST['hide_post_commentcount'])) ? $_POST['hide_post_commentcount'] : false ;
@@ -106,9 +108,11 @@ function graphene_options_display(){
 			
 			// Header options
 			update_option('graphene_light_header', $light_header);	
-			update_option('graphene_link_header_img', $link_header_img);	
+			update_option('graphene_link_header_img', $link_header_img);
+			update_option('graphene_featured_img_header', $featured_img_header);
 			
 			// Posts Display options
+			update_option('graphene_posts_show_excerpt', $posts_show_excerpt);
 			update_option('graphene_hide_post_author', $hide_post_author);
 			update_option('graphene_hide_post_date', $hide_post_date);
 			update_option('graphene_hide_post_commentcount', $hide_post_commentcount);
@@ -156,7 +160,9 @@ function graphene_options_display(){
 	// Get the current options from database
 	$light_header = get_option('graphene_light_header');
 	$link_header_img = get_option('graphene_link_header_img');
+	$featured_img_header = get_option('graphene_featured_img_header');
 	
+	$posts_show_excerpt = get_option('graphene_posts_show_excerpt');
 	$hide_post_author = get_option('graphene_hide_post_author');
 	$hide_post_date = get_option('graphene_hide_post_date');
 	$hide_post_commentcount = get_option('graphene_hide_post_commentcount');
@@ -250,12 +256,26 @@ function graphene_options_display(){
                     	<span class="description"><?php _e('Check this if you disable the header texts and want the header image to be linked to the front page.', 'graphene'); ?></span>
                     </td>
                 </tr>
+                <tr>
+                    <th scope="row">
+                    	<label><?php _e('Disable Featured Image replacing header image', 'graphene'); ?></label>
+                    </th>
+                    <td><input type="checkbox" name="featured_img_header" <?php if ($featured_img_header == true) echo 'checked="checked"' ?> value="true" /><br />
+                    	<span class="description"><?php _e('Check this to prevent the posts Featured Image replacing the header image regardless of the featured image dimension.', 'graphene'); ?></span>
+                    </td>
+                </tr>
             </table>
         
         
         <?php /* Posts Display Options */ ?>
         <h3><?php _e('Posts Display Options', 'graphene'); ?></h3>
             <table class="form-table">
+            	<tr>
+                    <th scope="row">
+                    	<label><?php _e('Show excerpts in front page', 'graphene'); ?></label>
+                    </th>
+                    <td><input type="checkbox" name="posts_show_excerpt" <?php if ($posts_show_excerpt == true) echo 'checked="checked"' ?> value="true" /></td>
+                </tr>
                 <tr>
                     <th scope="row">
                     	<label><?php _e('Hide post author', 'graphene'); ?></label>

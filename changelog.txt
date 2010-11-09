@@ -4,6 +4,21 @@ http://www.khairul-syahir.com
 
 CHANGELOG
 
+Version 1.1.1
+
+	* Removed the SSL check for the header image
+	* Replaced all variants of get_bloginfo('template_directory') with get_template_directory_uri()
+	* Added .gallery-caption class in style.css
+	* Added graphene_display_slider() function that handles the conditional statements for better control of which pages should display the slider
+	* Ditched get_theme_data() for author credit links and use hardcoded links instead
+	* Added option for front page to display posts excerpt instead of full content
+	* Added option to prevent the featured image from replacing the header image
+	* Added the graphene_slider_post_type filter to modify the post types to be displayed in the slider
+	* Fixed post's slider image from custom URL not appearing in the slider
+	* Fixed header image link to use the dimension of HEADER_IMAGE_WIDTH and HEADER_IMAGE_HEIGHT set in functions.php
+	* Added Chinese (zh_CN) translation, by Alex Chen
+	* Removed hardcoded stylesheet link from the header file and use wp_enqueue_style instead
+
 Version 1.1
 
 	* Slider now uses category ID to pull the posts instead of category name/slug

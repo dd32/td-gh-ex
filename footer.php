@@ -59,11 +59,10 @@
 		*/
 		?>
         <div id="developer">
-			<?php
-				$theme_data = get_theme_data(ABSPATH.'wp-content/themes/graphene/style.css');
-			?>
+        	<p>
             <?php /* translators: %1$s is the blog title, %2$s is the theme's name, %3$s is the theme's author */ ?>
-			<?php printf(__('%1$s uses %2$s theme by %3$s.','graphene'), '<a href="'.get_home_url().'">'.get_bloginfo('name').'</a>', '<a href="'.$theme_data['URI'].'">'.ucfirst(get_template()).'</a>', $theme_data['Author']); ?>
+			<?php printf(__('%1$s uses %2$s theme by %3$s.','graphene'), '<a href="'.get_home_url().'">'.get_bloginfo('name').'</a>', '<a href="http://www.khairul-syahir.com/wordpress-dev/graphene-theme">'.ucfirst(get_template()).'</a>', '<a href="http://www.khairul-syahir.com">Syahir Hakim</a>'); ?>
+            </p>
             
             <?php do_action('graphene_developer'); ?>
         </div>

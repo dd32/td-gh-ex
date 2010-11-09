@@ -85,7 +85,7 @@ function graphene_setup() {
 
 	// Make theme available for translation
 	// Translations can be filed in the /languages/ directory
-	load_theme_textdomain( 'graphene', TEMPLATEPATH . '/languages' );
+	load_theme_textdomain( 'graphene', get_template_directory().'/languages' );
 	
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -96,9 +96,9 @@ function graphene_setup() {
 	add_custom_background();
 
 	// Your changeable header business starts here
-	define('HEADER_TEXTCOLOR', '000000');
+	define('HEADER_TEXTCOLOR', apply_filters('graphene_header_textcolor', '000000'));
 	// No CSS, just IMG call. The %s is a placeholder for the theme template directory URI.
-	define('HEADER_IMAGE', '%s/images/headers/flow.jpg');
+	define('HEADER_IMAGE', apply_filters('graphene_header_image', '%s/images/headers/flow.jpg'));
 
 	// The height and width of your custom header. You can hook into the theme's own filters to change these values.
 	// Add a filter to graphene_header_image_width and graphene_header_image_height to change these values.
@@ -111,7 +111,7 @@ function graphene_setup() {
 	set_post_thumbnail_size(HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true);
 
 	// Don't support text inside the header image.
-	define('NO_HEADER_TEXT', false);
+	define('NO_HEADER_TEXT', apply_filters('graphene_header_text', false));
 
 	// Add a way for the custom header to be styled in the admin panel that controls
 	// custom headers. See graphene_admin_header_style(), below.
@@ -184,6 +184,16 @@ function graphene_setup() {
 	do_action('graphene_setup');
 }
 endif;
+
+
+/**
+ * Register and print the main theme stylesheet
+*/
+function graphene_main_stylesheet(){
+	wp_register_style('graphene-stylesheet', get_stylesheet_uri(), array(), false, 'screen');
+	wp_enqueue_style('graphene-stylesheet');
+}
+add_action('wp_print_styles', 'graphene_main_stylesheet');
 
 
 if (!function_exists('graphene_admin_header_style')) :
@@ -322,7 +332,7 @@ function graphene_custom_style(){
 		<?php endif; ?>
 		
 		<?php /* Link header image */ ?>
-		<?php if ($link_header_img && HEADER_IMAGE_WIDTH != 900 && HEADER_IMAGE_HEIGHT != 198) : ?>
+		<?php if ($link_header_img && (HEADER_IMAGE_WIDTH != 900 || HEADER_IMAGE_HEIGHT != 198)) : ?>
 		#header_img_link{width:<?php echo HEADER_IMAGE_WIDTH; ?>px;height:<?php echo HEADER_IMAGE_HEIGHT; ?>px;}
 		<?php endif;?>
 		
@@ -337,7 +347,7 @@ function graphene_custom_style(){
  * and just load that instead. Would be more efficient.
 if (!function_exists('graphene_print_style')) :
 	function graphene_print_style(){
-		wp_register_style('graphene-customised-style', get_bloginfo('template_url').'/style-custom.php');
+		wp_register_style('graphene-customised-style', get_template_directory_uri().'/style-custom.php');
 		wp_enqueue_style('graphene-customised-style');
 	}
 endif;
@@ -345,7 +355,6 @@ endif;
 add_action('wp_print_styles', 'graphene_print_style');
 */
 add_action('wp_head', 'graphene_custom_style');
-
 
 
 /**
@@ -357,7 +366,7 @@ add_action('wp_head', 'graphene_custom_style');
 */
 if (get_option('graphene_light_header')) :
 	function graphene_lightheader_style(){
-		wp_register_style('graphene-light-header', get_bloginfo('template_url').'/style-light.css');
+		wp_register_style('graphene-light-header', get_template_directory_uri().'/style-light.css');
 		wp_enqueue_style('graphene-light-header');
 		
 		do_action('graphene_light_header');
@@ -700,7 +709,7 @@ function graphene_options_init() {
 	$graphene_options = add_submenu_page('themes.php', __('Graphene Options', 'graphene'), __('Graphene Options', 'graphene'), 'manage_options', 'graphene_options', 'graphene_options');
 	$graphene_display = add_submenu_page('themes.php', __('Graphene Display', 'graphene'), __('Graphene Display', 'graphene'), 'manage_options', 'graphene_options_display', 'graphene_options_display');	
 	
-	wp_register_style('graphene-admin-style', get_bloginfo('template_url').'/admin/style.css');
+	wp_register_style('graphene-admin-style', get_template_directory_uri().'/admin/style.css');
 	
 	add_action('admin_print_styles-'.$graphene_options, 'graphene_admin_options_style');
 	add_action('admin_print_styles-'.$graphene_display, 'graphene_admin_options_style');
@@ -857,13 +866,13 @@ function graphene_scrollable_js() {
 add_action('template_redirect', 'graphene_scrollable_js');
 add_action('wp_footer', 'graphene_scrollable');
 
+
 /**
- * Creates the function that outputs the slider
+ * Creates the functions that output the slider
 */
 function graphene_slider(){
-	
-	if (is_front_page()) :
-		do_action('graphene_before_slider'); ?>
+
+	do_action('graphene_before_slider'); ?>
     
     <div class="featured_slider">
         <?php do_action('graphene_before_slideritems'); ?>
@@ -881,7 +890,10 @@ function graphene_slider(){
         */
         $slidercat = (get_option('graphene_slider_cat') != '') ? get_option('graphene_slider_cat') : false;
         
-        /* Get the list of posts to display in the slider */
+		/* Set the post types to be displayed */
+		$slider_post_type = apply_filters('graphene_slider_post_type', array('post'));
+		
+        /* Get the posts to display in the slider */
         if (!$slidercat) {						
 			
 			// Get the number of posts to show
@@ -891,12 +903,14 @@ function graphene_slider(){
                             'numberposts' => $postcount,
                             'orderby' => 'date',
                             'order' => 'DESC',
+							'post_type' => $slider_post_type
                                    ));
         } else {
             $sliderposts = get_posts(array(
                             'category' => $slidercat,
                             'orderby' => 'date',
                             'order' => 'DESC',
+							'post_type' => $slider_post_type,
                             'nopaging' => true
                                    ));
         }
@@ -953,15 +967,18 @@ function graphene_slider(){
         
     </div>
     <?php
-	endif;
 }
-// Hook the slider to the appropriate action hook
+/* Create an intermediate function that controls where the slider should be displayed */
+function graphene_display_slider(){
+	if (is_front_page())
+		graphene_slider();
+}
+/* Hook the slider to the appropriate action hook */
 if (!get_option('graphene_slider_disable')){
 	if (!get_option('graphene_slider_position'))
-		add_action('graphene_top_content', 'graphene_slider');
+		add_action('graphene_top_content', 'graphene_display_slider');
 	else
-		add_action('graphene_bottom_content', 'graphene_slider');
-		
+		add_action('graphene_bottom_content', 'graphene_display_slider');
 }
 
 
@@ -973,7 +990,7 @@ if (!get_option('graphene_slider_disable')){
  * individual post / page can be retrieved.
 */
 if (!function_exists('graphene_get_slider_image')) :
-	function graphene_get_slider_image($post_id = NULL){
+	function graphene_get_slider_image($post_id = NULL, $size = array(150, 150, true)){
 		
 		// Throw an error message if no post ID supplied
 		if ($post_id == NULL){
@@ -997,9 +1014,9 @@ if (!function_exists('graphene_get_slider_image')) :
 		} elseif ($final_setting == 'featured_image'){		// Featured Image
 		
 			if (has_post_thumbnail($post_id)) :
-				$html .= get_the_post_thumbnail($post_id, array(150,150,true));
+				$html .= get_the_post_thumbnail($post_id, $size);
 			else :
-				$html .= '<img alt="" src="'.get_bloginfo('template_directory').'/images/img_slider_generic.png">';
+				$html .= apply_filters('graphene_generic_slider_img', '<img alt="" src="'.get_template_directory_uri().'/images/img_slider_generic.png" />');
 			endif;
 			
 		} elseif ($final_setting == 'post_image'){			// First image in post
@@ -1009,8 +1026,8 @@ if (!function_exists('graphene_get_slider_image')) :
 		} elseif ($final_setting == 'custom_url'){			// Custom URL
 			
 			$html .= '<a href="'.get_permalink($post_id).'">';
-			if ($local_setting == 'global') :
-				$html .= '<img src="'.get_post_meta($post_id, '_graphene_slider_imgurl').'" alt="" />';
+			if ($local_setting != 'global') :
+				$html .= '<img src="'.get_post_meta($post_id, '_graphene_slider_imgurl', true).'" alt="" />';
 			else :
 				$html .= '<img src="'.get_option('graphene_slider_imgurl').'" alt="" />';
 			endif;

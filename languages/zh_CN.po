@@ -1,100 +1,100 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Graphene 1.0 theme for WordPress\n"
+"Project-Id-Version: Graphene chinese zh_CN (version 1.1.1)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-08 10:37+1200\n"
-"PO-Revision-Date: 2010-11-08 10:38+1200\n"
-"Last-Translator: Syahir Hakim <syahir@khairul-syahir.com>\n"
-"Language-Team: Syahir Hakim <syahir@khairul-syahir.com>\n"
+"POT-Creation-Date: 2010-11-08 10:39+1200\n"
+"PO-Revision-Date: 2010-11-08 01:07-0000\n"
+"Last-Translator: Ren.me <gfcyz@msn.com>\n"
+"Language-Team: RENME <gfcyz@msn.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: __;_e;_n;esc_attr__;esc_attr_e\n"
-"X-Poedit-Basepath: D:\\[[MyVault]]\\MyProjects\\[Websites]\\wordpress-theme-test\\site\\wp-content\\themes\\graphene\\\n"
+"X-Poedit-KeywordsList: __;_e;_n;esc_attr_e;esc_attr__\n"
+"X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-Language: Malay\n"
-"X-Poedit-Country: MALAYSIA\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: CHINA\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: author.php:33
 msgid "Author's posts listings"
-msgstr "Senarai artikel penulis"
+msgstr "作者文章发布列表"
 
 #: comments.php:18
 msgid "This post is password protected. Enter the password to view any comments."
-msgstr "Artikel ini memerlukan kata laluan. Masukkan kata laluan untuk melihat komen."
+msgstr "本文受密码保护。请输入密码查看评论。"
 
 #: comments.php:39
 msgid "No comment yet"
-msgstr "Tiada komen"
+msgstr "没有评论"
 
 #: comments.php:39
 #: loop-author.php:78
 #: loop.php:92
 msgid "1 comment"
-msgstr "1 komen"
+msgstr "1 条评论"
 
 #: comments.php:39
 #: loop-author.php:78
 #: loop.php:92
 #, php-format
 msgid "% comments"
-msgstr "% komen"
+msgstr "% 条评论"
 
 #: comments.php:68
 msgid "Comments have been disabled."
-msgstr "Komen telah dinyahaktifkan."
+msgstr "禁止评论。"
 
 #: comments.php:81
 #, php-format
 msgid "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags and attributes: %s"
-msgstr "Anda boleh menggunakan tag dan attribute <abbr title=\"HyperText Markup Language\">HTML</abbr> yang berikut: %s"
+msgstr "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags and attributes: %s"
 
 #: comments.php:86
 msgid "Your email address will not be published."
-msgstr "Alamat emel anda tidak akan dipaparkan."
+msgstr "呢称和邮箱是必填项，您的邮箱只有管理员可见。"
 
 #: comments.php:89
 #: functions.php:771
 msgid "Submit Comment"
-msgstr "Hantar Komen"
+msgstr "提交评论"
 
 #: footer.php:29
 msgid "Except where otherwise noted, content on this site is licensed under a <a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/\">Creative Commons Licence</a>."
-msgstr "Kecuali dinyatakan sebaliknya, kandungan laman web ini dilesenkan di bawah <a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/\">Lesen Creative Commons</a>."
+msgstr "Except where otherwise noted, content on this site is licensed under a <a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/\">Creative Commons Licence</a>."
 
 #: footer.php:41
 msgid "Valid XHTML 1.0 Strict"
-msgstr "Menepati piawaian XHTML 1.0 Strict"
+msgstr "Valid XHTML 1.0 Strict"
 
 #: footer.php:42
 msgid "Valid CSS"
-msgstr "Menepati piawaian CSS"
+msgstr "Valid CSS"
 
 #: footer.php:42
 msgid "Valid CSS Level 2.1"
-msgstr "Menepati piawaian CSS Level 2.1"
+msgstr "Valid CSS Level 2.1"
 
 #. translators: %1$s is the blog title, %2$s is the theme's name, %3$s is the theme's author
 #: footer.php:64
 #, php-format
 msgid "%1$s uses %2$s theme by %3$s."
-msgstr "%1$s menggunakan tema %2$s oleh %3$s."
+msgstr "%1$s uses %2$s theme by %3$s."
 
 #: functions.php:92
 msgid "Header Menu"
-msgstr "Menu Kepala"
+msgstr "顶部菜单"
 
 #. translators: header image description
 #: functions.php:136
 msgid "Header image by Syahir Hakim"
-msgstr "Imej kepala oleh Syahir Hakim"
+msgstr "Header image by Syahir Hakim"
 
 #. translators: header image description
 #: functions.php:142
 msgid "This is the default Graphene theme header image, cropped from image by Quantin Houyoux at sxc.hu"
-msgstr "Ini adalah imej kepala asal bagi tema Graphene, dipotong daripada imej asal oleh Quantin Houyoux di sxc.hu"
+msgstr "This is the default Graphene theme header image, cropped from image by Quantin Houyoux at sxc.hu"
 
 #. translators: header image description
 #: functions.php:148
@@ -103,161 +103,161 @@ msgstr "Ini adalah imej kepala asal bagi tema Graphene, dipotong daripada imej a
 #: functions.php:166
 #: functions.php:172
 msgid "Header image cropped from image by Ilco at sxc.hu"
-msgstr "Imej kepala dipotong daripada imej asal oleh Ilco di sxc.hu"
+msgstr "Header image cropped from image by Ilco at sxc.hu"
 
 #: functions.php:388
 msgid "Home"
-msgstr "Muka Utama"
+msgstr "主页"
 
 #: functions.php:416
 msgid " says:"
-msgstr " berkata:"
+msgstr " 说："
 
 #. translators: %1$s is the comment date, %2#s is the comment time
 #: functions.php:422
 #, php-format
 msgid "%1$s at %2$s"
-msgstr "%1$s pada %2$s"
+msgstr "%1$s 在 %2$s"
 
 #: functions.php:424
 msgid "Edit comment"
-msgstr "Edit komen"
+msgstr "编辑评论"
 
 #: functions.php:428
 msgid "Reply"
-msgstr "Balas"
+msgstr "回复"
 
 #: functions.php:439
 msgid "Your comment is awaiting moderation."
-msgstr "Komen anda sedang menunggu moderasi."
+msgstr "你的评论正在等待审查。"
 
 #: functions.php:532
 msgid "Sidebar Widget Area"
-msgstr "Bahagian Widget Sidebar"
+msgstr "边栏区 Widget"
 
 #: functions.php:534
 msgid "The right sidebar widget area."
-msgstr "Bahagian widget sidebar sebelah kanan."
+msgstr "边栏区 widget。"
 
 #: functions.php:542
 msgid "Footer Widget Area"
-msgstr "Bahagian Widget Kekaki"
+msgstr "底部 Widget"
 
 #: functions.php:544
 msgid "The footer widget area. Leave empty to disable. Set the number of columns to display at the theme's Display Options page."
-msgstr "Bahagian widget kekaki. Tinggalkan kosong untuk batalkan paparan. Tetapkan bilangan lajur di muka Tetapan Paparan tema."
+msgstr "底部 widget。留空默认未开启。设置栏目数字，这将显示在主题选项相应区域。"
 
 #: functions.php:560
 msgid "Front Page Sidebar Widget Area"
-msgstr "Widget Sidebar Muka Hadapan"
+msgstr "首页边栏区 widget"
 
 #: functions.php:562
 msgid "The right sidebar widget area that will only be displayed on the front page."
-msgstr "Bahagian widget sidebar sebelah kanan yang hanya akan dipaparkan di muka hadapan."
+msgstr "右边边栏 widget 将只会显示在主页。"
 
 #: functions.php:572
 msgid "Front Page Footer Widget Area"
-msgstr "Widget Kekaki Muka Hadapan"
+msgstr "首页底部 Widget"
 
 #: functions.php:574
 msgid "The footer widget area that will only be displayed on the front page. Leave empty to disable. Set the number of columns to display at the theme's Display Options page."
-msgstr "Bahagian widget kekaki yang hanya akan dipaparkan di muka hadapan. Tinggalkan kosong untuk batalkan paparan. Tetapkan bilangan lajur di muka Tetapan Paparan tema."
+msgstr "底部 widget 只会显示在首页。留空默认未开启。设置栏目数字，这将显示在主题选项相应区域。"
 
 #: functions.php:626
 msgid "Follow me on Twitter"
-msgstr "Ikuti saya di Twitter"
+msgstr "从 Twitter 关注我"
 
 #: functions.php:663
 msgid "Latest tweets"
-msgstr "Tweet terkini"
+msgstr "最新 tweets"
 
 #: functions.php:668
 msgid "Title:"
-msgstr "Tajuk:"
+msgstr "题目:"
 
 #: functions.php:672
 msgid "Twitter Username:"
-msgstr "Nama pengguna Twitter:"
+msgstr "Twitter 用户名:"
 
 #: functions.php:676
 msgid "Number of tweets to display:"
-msgstr "Bilangan tweet untuk dipaparkan:"
+msgstr "显示 tweets 数目:"
 
 #: functions.php:709
 msgid "Graphene Options"
-msgstr "Tetapan Graphene"
+msgstr "Graphene 选项"
 
 #: functions.php:710
 msgid "Graphene Display"
-msgstr "Paparan Graphene"
+msgstr "Graphene 显示"
 
 #: functions.php:752
 msgid "Name:"
-msgstr "Nama:"
+msgstr "昵称:"
 
 #: functions.php:753
 msgid "Email:"
-msgstr "Emel:"
+msgstr "邮件:"
 
 #: functions.php:754
 msgid "Website:"
-msgstr "Laman web:"
+msgstr "网站:"
 
 #: functions.php:764
 msgid "Message:"
-msgstr "Mesej:"
+msgstr "留言:"
 
 #: functions.php:791
 msgid "Continue reading &raquo;"
-msgstr "Teruskan membaca &raquo;"
+msgstr "继续阅读 &raquo;"
 
 #: functions.php:821
 msgid "Older posts &laquo;"
-msgstr "Artikel terdahulu &laquo;"
+msgstr "旧文章 &laquo;"
 
 #: functions.php:822
 msgid "&raquo; Newer posts"
-msgstr "&raquo; Artikel terkini"
+msgstr "&raquo; 新文章"
 
 #: functions.php:947
 msgid "View full post"
-msgstr "Lihat artikel penuh"
+msgstr "阅读全文"
 
 #: functions.php:1067
 msgid "<strong>ERROR: You must supply the post ID to get the image from as an argument when calling the graphene_get_post_image() function.</strong>"
-msgstr "<strong>RALAT: Anda perlu menggunakan ID artikel sebagai argumen apabila memanggil fungsi graphene_get_post_image().</strong>"
+msgstr "<strong>ERROR: You must supply the post ID to get the image from as an argument when calling the graphene_get_post_image() function.</strong>"
 
 #: header.php:54
 msgid "Subscribe to RSS feed"
-msgstr "Langgani capaian RSS"
+msgstr "订阅 RSS"
 
 #: header.php:103
 #: header.php:106
 msgid "Go back to the front page"
-msgstr "Kembali ke muka hadapan"
+msgstr "返回首页"
 
 #: loop-author.php:23
 msgid "Author's details"
-msgstr "Maklumat penulis"
+msgstr "作者详细信息"
 
 #. translators: %1$s is the first name, %2$s is the last name
 #: loop-author.php:25
 #, php-format
 msgid "<strong>Name:</strong> %1$s %2$s"
-msgstr "<strong>Nama:</strong> %1$s %2$s"
+msgstr "<strong>姓名:</strong> %1$s %2$s"
 
 #: loop-author.php:26
 #, php-format
 msgid "<strong>Date registered:</strong> %1$s"
-msgstr "<strong>Berdaftar sejak:</strong> %1$s"
+msgstr "<strong>注册日期:</strong> %1$s"
 
 #: loop-author.php:35
 msgid "Biography"
-msgstr "Biografi"
+msgstr "地区"
 
 #: loop-author.php:47
 msgid "Latest posts"
-msgstr "Artikel-artikel terkini"
+msgstr "最新发表"
 
 #: loop-author.php:50
 #: loop-author.php:78
@@ -265,98 +265,98 @@ msgstr "Artikel-artikel terkini"
 #: search-404.php:24
 #, php-format
 msgid "Permalink Link to %s"
-msgstr "Capaian kekal kepada %s"
+msgstr "链接到 %s"
 
 #: loop-author.php:50
 #: loop-author.php:78
 #: loop.php:26
 msgid "(No title)"
-msgstr "Tiada tajuk"
+msgstr "(无标题)"
 
 #: loop-author.php:73
 msgid "Most commented posts"
-msgstr "Artikel dengan komen terbanyak"
+msgstr "最多评论文章"
 
 #: loop-author.php:78
 #: loop.php:92
 msgid "Leave comment"
-msgstr "Tulis komen"
+msgstr "发表评论"
 
 #. translators: this is for the author byline, such as 'by John Doe'
 #: loop.php:46
 msgid "by"
-msgstr "oleh"
+msgstr "文章由"
 
 #: loop.php:48
 msgid "Edit post"
-msgstr "Edit artikel"
+msgstr "编辑文章"
 
 #: loop.php:66
 msgid "Read the rest of this entry &raquo;"
-msgstr "Baca artikel penuh &raquo;"
+msgstr "继续阅读 &raquo;"
 
 #: loop.php:70
 msgid "<p><strong>Pages:</strong> "
-msgstr "<p><strong>Halaman:</strong> "
+msgstr "<p><strong>页数:</strong> "
 
 #: loop.php:80
 msgid "Tags:"
-msgstr "Tag:"
+msgstr "标签:"
 
 #: loop.php:80
 msgid "This post has no tag"
-msgstr "Artikel ini tidak mempunyai tag"
+msgstr "没有标签"
 
 #: loop.php:105
 msgid "About the author"
-msgstr "Penulis artikel"
+msgstr "关于作者"
 
 #: loop.php:136
 msgid "Not found"
-msgstr "Tidak dijumpai"
+msgstr "没有找到"
 
 #: loop.php:141
 msgid "Sorry, but you are looking for something that isn't here. Wanna try a search?"
-msgstr "Maaf, artikel yang anda pohon tidak dijumpai di laman ini. Hendak mencuba carian?"
+msgstr "抱歉，没有找到。要不试试搜索？"
 
 #: loop.php:143
 msgid "Sorry, but no results were found for that keyword. Wanna try an alternative keyword search?"
-msgstr "Maaf, tiada artikel dijumpai menggunakan kata kunci tersebut. Hendak mencuba carian menggunakan kata kunci alternatif?"
+msgstr "抱歉，未找到任何与关键字匹配的信息。要不试试其他关键字？"
 
 #: search-404.php:3
 msgid "Error 404 - Page Not Found"
-msgstr "Ralat 404 - Halaman Tidak Dijumpai"
+msgstr "Error 404 - 页面空"
 
 #: search-404.php:5
 msgid "Sorry, I've looked everywhere but I can't find the page you're looking for."
-msgstr "Maaf, saya telah mencari di keseluruhan laman web ini, tetapi artikel yang anda pohon tidak dijumpai."
+msgstr "抱歉，已搜索所以页面。"
 
 #: search-404.php:6
 msgid "If you follow the link from another website, I may have removed or renamed the page some time ago. You may want to try searching for the page:"
-msgstr "Sekiranya anda mengikut capaian dari laman web lain, saya mungkin telah manghapuskan atau menukar nama artikel tersebut. Mungkin carian kata kunci dapat membantu anda mencari artikel tersebut:"
+msgstr "如果你是从外部链接到此，我可能已经移除或者重命名本页面。你可以尝试一下页面搜索："
 
 #: search-404.php:14
 msgid "Suggested results"
-msgstr "Hasil carian automatik"
+msgstr "建议结果"
 
 #. translators: %s is the search term
 #: search-404.php:18
 #, php-format
 msgid "I've done a courtesy search for the term %s for you. See if you can find what you're looking for in the list below:"
-msgstr "Saya telah melakukan carian automatik bagi kata kunci %s untuk anda. Mungkin artikel yang anda cari ada dalam senarai di bawah:"
+msgstr "Hemos puesto en práctica una búsqueda de cortesía correspondiente al término %s que has utilizado. Comprueba si puedes encontrar lo que estabas buscando en la lista que tienes a continuación:"
 
 #: search-404.php:35
 msgid "<strong>Sorry, couldn't find anything.</strong> Try searching for alternative terms using the search form above."
-msgstr "<strong>Maaf, tiada artikel dijumpai.</strong> Cuba carian sekali dengan menggunakan kata kunci yang lain."
+msgstr "<strong>Lo sentimos, pero no hemos podido encontrar nada.</strong>. Inténtalo con un patrón de búsqueda alternativo mediante el formulario que tienes sobre estas líneas."
 
 #: searchform.php:3
 #: searchform.php:4
 msgid "Search"
-msgstr "Carian"
+msgstr "搜索"
 
 #: sidebar.php:34
 msgid "Archives"
-msgstr "Arkib"
+msgstr "存档"
 
 #: sidebar.php:41
 msgid "Meta"
@@ -364,214 +364,214 @@ msgstr "Meta"
 
 #: sidebar.php:46
 msgid "Posts RSS"
-msgstr "RSS Artikel"
+msgstr "文章 RSS "
 
 #: sidebar.php:47
 msgid "Comments RSS"
-msgstr "RSS Komen"
+msgstr "评论 RSS"
 
 #. translators: %s is the link to wordpress.org
 #: sidebar.php:49
 #, php-format
 msgid "Powered by %s"
-msgstr "Laman menggunakan %s"
+msgstr "Powered by %s"
 
 #: sidebar.php:49
 msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
-msgstr "Laman menggunakan WordPress, platform penerbitan peribadi yang semantik dan canggih."
+msgstr "Powered by WordPress, state-of-the-art semantic personal publishing platform."
 
 #: admin/custom-fields.php:15
 msgid "Graphene post-specific options"
-msgstr "Tetapan Graphene spesifik bagi artikel"
+msgstr "Graphene 具体发布选项"
 
 #: admin/custom-fields.php:16
 msgid "Graphene page-specific options"
-msgstr "Tetapan Graphene spesifik bagi muka"
+msgstr "Graphene 具体页面选项"
 
 #: admin/custom-fields.php:82
 msgid "These settings will only be applied to this particular post or page you're editing. They will override the global settings set in the Graphene Options or Graphene Display options page."
-msgstr "Tetapan ini hanya akan digunakan untuk artikel atau muka yang sedang anda edit. Tetapan di sini akan diberi keutamaan berbanding tetapan di muka Tetapan Graphene dan Tetapan Paparan Graphene."
+msgstr "这些设置将只对本文章/页面有效。本设置将会取代 Graphene 选项或者 Graphene 显示里相应的设置。"
 
 #: admin/custom-fields.php:83
 msgid "Slider options"
-msgstr "Tetapan Slider"
+msgstr "滑块设置"
 
 #: admin/custom-fields.php:87
 #: admin/options.php:284
 msgid "Slider image"
-msgstr "Imej slider"
+msgstr "滑块图片"
 
 #: admin/custom-fields.php:91
 #: admin/custom-fields.php:117
 msgid "Use global setting"
-msgstr "Guna tetapan global"
+msgstr "使用全局设置"
 
 #: admin/custom-fields.php:92
 #: admin/options.php:288
 msgid "Don't show image"
-msgstr "Jangan paparkan imej"
+msgstr "不显示图片"
 
 #: admin/custom-fields.php:93
 #: admin/options.php:289
 msgid "Featured Image"
-msgstr "Featured Image"
+msgstr "特色图片"
 
 #: admin/custom-fields.php:94
 #: admin/options.php:290
 msgid "First image in post"
-msgstr "Imej pertama dalam artikel"
+msgstr "文章中第一张图片"
 
 #: admin/custom-fields.php:95
 #: admin/options.php:291
 msgid "Custom URL"
-msgstr "URL tersendiri"
+msgstr "自定义 URL"
 
 #: admin/custom-fields.php:101
 #: admin/options.php:297
 msgid "Custom slider image URL"
-msgstr "URL imej bagi slider"
+msgstr "自定义滑块图片 URL"
 
 #: admin/custom-fields.php:105
 #: admin/options.php:301
 msgid "Make sure you select Custom URL in the slider image option above to use this custom url."
-msgstr "Pastikan anda memilih URL tersendiri dalam tetapan imej slider di atas untuk menggunakan URL tersendiri di sini."
+msgstr "请确认在上面下拉框中选择自定义URL选项。"
 
 #: admin/custom-fields.php:109
 msgid "Display options"
-msgstr "Tetapan paparan"
+msgstr "显示选项"
 
 #: admin/custom-fields.php:113
 msgid "AddThis Social Sharing button"
-msgstr "Butang perkongsian sosial AddThis"
+msgstr "AddThis  分享按钮"
 
 #: admin/custom-fields.php:118
 msgid "Show button"
-msgstr "Paparkan butang"
+msgstr "显示按钮"
 
 #: admin/custom-fields.php:119
 msgid "Hide button"
-msgstr "Jangan paparkan butang"
+msgstr "隐藏按钮"
 
 #: admin/display.php:35
 #: admin/options.php:35
 #: admin/options.php:151
 #: admin/options.php:175
 msgid "ERROR: You are not authorised to perform that operation"
-msgstr "RALAT: Anda tidak mempunyaui kebenaran untuk menjalankan operasi tersebut"
+msgstr "ERROR: 你没有权限执行。"
 
 #: admin/display.php:75
 msgid "Please enter only numerical value for the footer widget column count."
-msgstr "Hanya input berbentuk nombor sahaja diterima untuk bilangan lajur bahagian widget kekaki."
+msgstr "请为底部 widget 栏数输入有效值，只限数字。"
 
 #: admin/display.php:84
 msgid "Please enter only numerical value for the front page footer widget column count."
-msgstr "Hanya input berbentuk nombor sahaja diterima untuk bilangan lajur bahagian widget kekaki muka hadapan."
+msgstr "请为首页底部 widget 栏数输入有效值，只限数字。"
 
 #: admin/display.php:94
 msgid "Please enter only numerical value for the navigation menu dropdown item width."
-msgstr "Hanya input berbentuk nombor sahaja diterima untuk lebar item menu."
+msgstr "请为导航下拉菜单显示个数输入有效值，只限数字。"
 
 #: admin/display.php:156
 #: admin/options.php:142
 msgid "Settings updated."
-msgstr "Tetapan disimpan."
+msgstr "设置已更新。"
 
 #: admin/display.php:211
 msgid "Graphene Display Options"
-msgstr "Tetapan Paparan Graphene"
+msgstr "Graphene 显示选项"
 
 #: admin/display.php:217
 #: admin/options.php:227
 msgid "ERROR:"
-msgstr "RALAT:"
+msgstr "ERROR:"
 
 #: admin/display.php:243
 msgid "Header Display Options"
-msgstr "Tetapan Paparan Kepala"
+msgstr "顶部显示选项"
 
 #: admin/display.php:247
 msgid "Use light-coloured header bars"
-msgstr "Gunakan bahagian kepala berwarna cerah"
+msgstr "顶部和导航栏使用淡色"
 
 #: admin/display.php:253
 msgid "Link header image to front page"
-msgstr "Tambah capaian ke muka hadapan untuk imej kepala"
+msgstr "链接顶部图片到首页"
 
 #: admin/display.php:256
 msgid "Check this if you disable the header texts and want the header image to be linked to the front page."
-msgstr "Aktifkan tetapan ini jika anda menyahaktifkan teks kepala dan mahu imej kepala dicapaikan kepada muka hadapan."
+msgstr "请确认，你将让网站名称失去链接回主页功能，转而替代为图片链接回首页。"
 
 #: admin/display.php:261
 msgid "Disable Featured Image replacing header image"
-msgstr "Nyahaktif fungsi Featured Image menggantikan imej kepala"
+msgstr "关闭特色图片替换顶部图片"
 
 #: admin/display.php:264
 msgid "Check this to prevent the posts Featured Image replacing the header image regardless of the featured image dimension."
-msgstr "Tetapan ini menyahaktifkan fungsi Featured Image menggantikan imej kepala tanpa mengambil kira dimensi Featured Image."
+msgstr "选择此项防止以任意大小特色图片替换顶部图片。"
 
 #: admin/display.php:271
 msgid "Posts Display Options"
-msgstr "Tetapan Paparan Artikel"
+msgstr "文章显示选项"
 
 #: admin/display.php:275
 msgid "Show excerpts in front page"
-msgstr "Paparkan ringkasan di muka hadapan"
+msgstr "在首页显示摘要"
 
 #: admin/display.php:281
 msgid "Hide post author"
-msgstr "Jangan paparkan penulis"
+msgstr "隐藏文章作者"
 
 #: admin/display.php:287
 msgid "Hide post date"
-msgstr "Jangan paparkan tarikh"
+msgstr "隐藏发布日期"
 
 #: admin/display.php:293
 msgid "Hide post categories"
-msgstr "Jangan paparkan kategori"
+msgstr "隐藏文章分类"
 
 #: admin/display.php:299
 msgid "Hide post tags"
-msgstr "Jangan paparkan tag"
+msgstr "隐藏文章标签"
 
 #: admin/display.php:305
 msgid "Hide post comment count"
-msgstr "Jangan paparkan bilangan komen"
+msgstr "隐藏评论数"
 
 #: admin/display.php:306
 msgid "Only affects posts listing (such as the front page) and not single post view."
-msgstr "Hanya mengubah halaman yang menyenaraikan artikel (seperti muka hadapan) dan bukan halaman yang memaparkan hanya satu artikel."
+msgstr "这只会影响到文章列表（例如首页），不会影响到单独的文章页面。"
 
 #: admin/display.php:311
 msgid "Show post author's gravatar"
-msgstr "Paparkan gravatar penulis artikel"
+msgstr "显示文章作者的 gravatar"
 
 #: admin/display.php:315
 msgid "Show post author's info"
-msgstr "Paparkan maklumat penulis artikel"
+msgstr "显示文章作者的信息"
 
 #: admin/display.php:321
 msgid "Comments Display Options"
-msgstr "Tetapan Paparan Komen"
+msgstr "评论显示选项"
 
 #: admin/display.php:325
 msgid "Hide allowed tags in comment form"
-msgstr "Jangan paparkan nota bagi tag yang dibenarkan"
+msgstr "隐藏评论留言框下方标签"
 
 #: admin/display.php:333
 msgid "Text Style Options"
-msgstr "Tetapan Gaya Teks"
+msgstr "文本格式选项"
 
 #: admin/display.php:334
 msgid "Note that these are CSS properties, so any valid CSS values for each particular property can be used."
-msgstr "Ini merupakan tetapan CSS. Oleh sebab itu, sebarang nilai CSS yang sah untuk setiap tetapan boleh digunakan."
+msgstr "提示：下面为 CSS 格式，所以 CSS 值都可以使用。"
 
 #: admin/display.php:335
 msgid "Some example CSS properties values:"
-msgstr "Beberapa contoh nilai-nilai CSS:"
+msgstr "一些 CSS 特性值："
 
 #: admin/display.php:338
 msgid "Text font:"
-msgstr "Font teks:"
+msgstr "文本字体："
 
 #: admin/display.php:339
 msgid "<code>arial</code>, <code>tahoma</code>, <code>georgia</code>, <code>'Trebuchet MS'</code>"
@@ -579,7 +579,7 @@ msgstr "<code>arial</code>, <code>tahoma</code>, <code>georgia</code>, <code>'Tr
 
 #: admin/display.php:342
 msgid "Text size and line height:"
-msgstr "Saiz teks dan tinggi baris:"
+msgstr "文本大小和线高："
 
 #: admin/display.php:343
 msgid "<code>12px</code>, <code>12pt</code>, <code>12em</code>"
@@ -587,7 +587,7 @@ msgstr "<code>12px</code>, <code>12pt</code>, <code>12em</code>"
 
 #: admin/display.php:346
 msgid "Text weight:"
-msgstr "Berat teks:"
+msgstr "文本重量："
 
 #: admin/display.php:347
 msgid "<code>normal</code>, <code>bold</code>, <code>100</code>, <code>700</code>"
@@ -595,15 +595,15 @@ msgstr "<code>normal</code>, <code>bold</code>, <code>100</code>, <code>700</cod
 
 #: admin/display.php:350
 msgid "Text style:"
-msgstr "Gaya teks:"
+msgstr "文本格式："
 
 #: admin/display.php:351
 msgid " <code>normal</code>, <code>italic</code>, <code>oblique</code>"
-msgstr " <code>normal</code>, <code>italic</code>, <code>oblique</code>"
+msgstr "<code>normal</code>, <code>italic</code>, <code>oblique</code>"
 
 #: admin/display.php:354
 msgid "Text colour:"
-msgstr "Warna teks:"
+msgstr "文本颜色："
 
 #: admin/display.php:355
 msgid "<code>blue</code>, <code>navy</code>, <code>red</code>, <code>#ff0000</code>"
@@ -613,388 +613,337 @@ msgstr "<code>blue</code>, <code>navy</code>, <code>red</code>, <code>#ff0000</c
 #: admin/display.php:456
 #: admin/display.php:478
 msgid "Leave field empty to use the default value."
-msgstr "Tinggalkan ruangan kosong untuk menggunakan nilai asal."
+msgstr "留空则使用默认值。"
 
 #: admin/display.php:359
 msgid "Header Text"
-msgstr "Teks Kepala"
+msgstr "顶部文本"
 
 #: admin/display.php:363
 msgid "Title text font"
-msgstr "Font teks tajuk"
+msgstr "标题文字字体"
 
 #: admin/display.php:369
 msgid "Title text size"
-msgstr "Saiz teks tajuk"
+msgstr "标题文字大小"
 
 #: admin/display.php:375
 msgid "Title text weight"
-msgstr "Berat teks tajuk"
+msgstr "标题文字重量"
 
 #: admin/display.php:381
 msgid "Title text line height"
-msgstr "Tinggi baris teks tajuk"
+msgstr "标题文字线高"
 
 #: admin/display.php:387
 msgid "Title text style"
-msgstr "Gaya teks tajuk"
+msgstr "标题文字格式"
 
 #: admin/display.php:396
 msgid "Description text font"
-msgstr "Font teks deskripsi"
+msgstr "描述文字字体"
 
 #: admin/display.php:402
 msgid "Description text size"
-msgstr "Saiz teks deskripsi"
+msgstr "描述文字大小"
 
 #: admin/display.php:408
 msgid "Description text weight"
-msgstr "Berat teks deskripsi"
+msgstr "描述文字重量"
 
 #: admin/display.php:414
 msgid "Description text line height"
-msgstr "Tinggi baris tesk deskripsi"
+msgstr "描述文字线高"
 
 #: admin/display.php:420
 msgid "Description text style"
-msgstr "Gaya teks deskripsi"
+msgstr "描述文字格式"
 
 #: admin/display.php:425
 msgid "Content Text"
-msgstr "Teks Kandungan"
+msgstr "内容文字"
 
 #: admin/display.php:429
 msgid "Text font"
-msgstr "Font teks"
+msgstr "文字字体"
 
 #: admin/display.php:435
 msgid "Text size"
-msgstr "Saiz teks"
+msgstr "文字大小"
 
 #: admin/display.php:441
 msgid "Text line height"
-msgstr "Tinggi baris teks"
+msgstr "文字线高"
 
 #: admin/display.php:447
 msgid "Text colour"
-msgstr "Warna teks"
+msgstr "文字颜色"
 
 #: admin/display.php:455
 msgid "Footer Widget Display Options"
-msgstr "Tetapan Paparan Widget Kekaki"
+msgstr "底部 Widget 显示选项"
 
 #: admin/display.php:461
 msgid "Number of columns to display"
-msgstr "Bilangan lajur untuk dipaparkan"
+msgstr "栏目显示数"
 
 #: admin/display.php:468
 msgid "Number of columns to display for front page footer widget"
-msgstr "Bilangan lajur untuk dipaparkan pada bahagian widget kekaki di muka hadapan"
+msgstr "首页底部 widget 栏目显示数"
 
 #: admin/display.php:477
 msgid "Navigation Menu Display Options"
-msgstr "Tetapan Paparan Menu"
+msgstr "导航菜单显示选项"
 
 #: admin/display.php:483
 msgid "Dropdown menu item width"
-msgstr "Lebar item menu dropdown"
+msgstr "下拉菜单宽度"
 
 #: admin/display.php:490
 msgid "Miscellaneous Display Options"
-msgstr "Tetapan Paparan Lain-lain"
+msgstr "杂项"
 
 #: admin/display.php:494
 msgid "Swap title order"
-msgstr "Terbalikkan aturan tajuk"
+msgstr "交换标题顺序"
 
 #: admin/display.php:498
 msgid "If this is checked, the website title will be displayed first, followed by the page title."
-msgstr "Jika diaktifkan, tajuk laman akan dipaparkan dahulu, diikuti dengan tajuk muka."
+msgstr "选择这个选项，网站名称会先显示，然后是页面标题。请查看浏览器标签。"
 
 #: admin/display.php:506
 #: admin/options.php:440
 msgid "Update Settings"
-msgstr "Simpan Tetapan"
+msgstr "更新设置"
 
 #: admin/options.php:55
 msgid "You must enter your Adsense code to enable Adsense advertising"
-msgstr "And perlu memasukkan kod Adsense anda untuk menggunakan fungsi pengiklanan Adsense"
+msgstr "你需要输入 Adsense code 才能开启 Adsense 广告"
 
 #: admin/options.php:70
 msgid "You must enter your AddThis button code to enable the AddThis social sharing button"
-msgstr "And perlu memasukkan kod butang AddThis anda untuk menggunakan fungsi butang perkongsian sosial AddThis"
+msgstr "你需要输入 AddThis 按钮 code 才能开启 AddThis social sharing 按钮。国内用户建议到中文的主页申请 code。"
 
 #: admin/options.php:85
 msgid "You must enter your Google Analytics tracking code to enable Google Analytics tracking."
-msgstr "And perlu memasukkan kod penjejak Google Analytics anda untuk menggunakan fungsi penjejakan Google Analytics"
+msgstr "你需要输入 Google Analytics tracking code 才能开启谷歌统计。"
 
 #: admin/options.php:156
 msgid "Uninstall Graphene"
-msgstr "Tanggalkan Graphene"
+msgstr "卸载 Graphene"
 
 #: admin/options.php:157
 msgid "Please confirm that you would like to uninstall the Graphene theme. All of the theme's options in the database will be deleted."
-msgstr "Sila pastikan bahawa anda ingin menanggalkan tema Graphene. Semua tetapan tema dalam pengkalan data akan dipadam."
+msgstr "请确认你要卸载 Graphene 主题。所以主题设置将被删除。"
 
 #: admin/options.php:158
 msgid "This action is not reversible."
-msgstr "Operasi ini tidak boleh dibatalkan."
+msgstr "此操作不可逆。"
 
 #: admin/options.php:162
 #: admin/options.php:465
 msgid "Uninstall Theme"
-msgstr "Tanggalkan Tema"
+msgstr "卸载主题"
 
 #: admin/options.php:220
 msgid "Graphene Theme Options"
-msgstr "Tetapan Tema Graphene"
+msgstr "Graphene 主题选项"
 
 #: admin/options.php:221
 msgid "These are the global settings for the theme. You may override some of the settings in individual posts and pages."
-msgstr "Berikut adalah tetapan global bagi tema ini. Anda boleh menggantikan sebahagian daripada tetapan di sini dengan tetapan individual bagi setiap artikel dan muka halaman."
+msgstr "以下是主题全局设置。你可以在单独文章或者页面中根据需要设置。"
 
 #: admin/options.php:253
 msgid "Slider Options"
-msgstr "Tetapan Slider"
+msgstr "滑块选项"
 
 #: admin/options.php:257
 msgid "Category to show in slider"
-msgstr "Kategori untuk dipaparkan dalam slider"
+msgstr "显示在滑块的分类"
 
 #: admin/options.php:258
 msgid "All posts within the category selected here will be displayed on the slider. Usage example: create a new category \"Featured\" and assign all posts to be displayed on the slider to that category, and then select that category here."
-msgstr "Semua artikel dalam kategori yang dipilih di sini akan dipaparkan dalam slider. Contoh penggunaan: buat kategori baru \"Istimewa\" dan tetapkan semua artikel yang hendak dipaparkan dalam slider berada dalam kategori tersebut. Kemudian, pilih kategori tersebut di sini."
+msgstr "所以发布在此分类下的文章将会显示在滑块中。例如：新建一个分类如“特色”，然后选择发布在此分类下（你可以选择多个分类），然后在这里选择该分类显示。"
 
 #: admin/options.php:262
 msgid "Show latest posts"
-msgstr "Paparkan artikel terkini"
+msgstr "显示最新发布"
 
 #: admin/options.php:275
 msgid "Number of latest posts to display"
-msgstr "Bilangan artikel terkini untuk dipaparkan"
+msgstr "最新发布显示数量"
 
 #: admin/options.php:279
 msgid "This setting only affects the slider if \"Show latest posts\" is selected above."
-msgstr "Tetapan ini hanya digunakan jika \"Paparkan artikel terkini\" dipilih bagi tetapan di atas."
+msgstr "此设置只有当选择“显示最新发布”时才有效。"
 
 #: admin/options.php:306
 msgid "Slider height"
-msgstr "Tinggi slider"
+msgstr "滑块高度"
 
 #: admin/options.php:314
 msgid "Slider speed"
-msgstr "Kelajuan slider"
+msgstr "滑块速度"
 
 #: admin/options.php:317
 msgid "milliseconds"
-msgstr "milisaat"
+msgstr "毫秒"
 
 #: admin/options.php:318
 msgid "This is the duration that each slider item will be shown"
-msgstr "Ini adalah tempoh masa setiap item slider akan dipaparkan"
+msgstr "这是每个滑块停留时间"
 
 #: admin/options.php:323
 msgid "Move slider to bottom of page"
-msgstr "Letakkan slider di bahagian bawah halaman"
+msgstr "将滑块移到页面底部"
 
 #: admin/options.php:329
 msgid "Disable slider"
-msgstr "Nyahaktifkan slider"
+msgstr "取消滑块"
 
 #: admin/options.php:337
 msgid "Adsense Options"
-msgstr "Tetapan AdSense"
+msgstr "AdSense 选项"
 
 #: admin/options.php:341
 msgid "Show Adsense advertising"
-msgstr "Paparkan pengiklanan AdSense"
+msgstr "显示 AdSense 广告"
 
 #: admin/options.php:347
 msgid "Show ads on front page as well"
-msgstr "Paparkan iklan di muka hadapan juga"
+msgstr "在首页显示"
 
 #: admin/options.php:353
 msgid "Your Adsense code"
-msgstr "Kod AdSense anda"
+msgstr "你的 AdSense code"
 
 #: admin/options.php:362
 msgid "AddThis Options"
-msgstr "Tetapan AddThis"
+msgstr "AddThis 选项"
 
 #: admin/options.php:365
 msgid "Show AddThis social sharing button"
-msgstr "Paparkan butang perkongsian sosial AddThis"
+msgstr "显示 AddThis 按钮"
 
 #: admin/options.php:369
 msgid "Show in Pages as well?"
-msgstr "Paparkan pada Muka juga?"
+msgstr "是否在所以页面显示？"
 
 #: admin/options.php:374
 msgid "Your AddThis button code"
-msgstr "Kod butang AddThis anda"
+msgstr "你的 AddThis code"
 
 #: admin/options.php:375
 msgid "You can generate your button code from the <a href=\"http://www.addthis.com/\">AddThis website</a>."
-msgstr "Anda boleh dapatkan kod butang anda daripada <a href=\"http://www.addthis.com/\">laman web AddThis</a>."
+msgstr "你可以在此申请 <a href=\"http://www.addthis.com/\">AddThis</a>。"
 
 #: admin/options.php:383
 msgid "Google Analytics Options"
-msgstr "Tetapan Google Analytics"
+msgstr "Google Analytics 选项"
 
 #: admin/options.php:386
 msgid "Enable Google Analytics tracking"
-msgstr "Aktifkan Google Analytics"
+msgstr "开启 Google Analytics tracking"
 
 #: admin/options.php:390
 msgid "Google Analytics tracking code"
-msgstr "Kod Google Analytics"
+msgstr "Google Analytics tracking code"
 
 #: admin/options.php:391
 msgid "Make sure you include the full tracking code (including the <code>&lt;script&gt;</code> and <code>&lt;/script&gt;</code> tags) and not just the <code>UA-#######-#</code> code."
-msgstr "Pastikan anda memasukkan kod penjejak yang penuh (termasuk tag <code>&lt;script&gt;</code> and <code>&lt;/script&gt;</code>) dan bukan hanya kod <code>UA-#######-#</code> sahaja."
+msgstr "请确认包含完整的追踪代码 (包括 <code>&lt;script&gt;</code> 和 <code>&lt;/script&gt;</code>) 不只是 <code>UA-#######-#</code>。"
 
 #: admin/options.php:399
 msgid "Widget Area Options"
-msgstr "Tetapan Bahagian Widget"
+msgstr "Widget 选项"
 
 #: admin/options.php:400
 msgid "Alternate Widgets"
-msgstr "Widget Alternatif"
+msgstr "Widgets 替换"
 
 #: admin/options.php:401
 msgid "You can enable the theme to show different widget areas in the front page than the rest of the website. If you enable this option, additional widget areas that will only be displayed on the front page will be added to the Widget settings page."
-msgstr "Anda boleh tetapkan supaya tema ini memaparkan widget yang berlainan di muka hadapan berbanding muka-muka yang lain. Sekiranya anda mengaktifkan fungsi ini, bahagian widget tambahan yang hanya akan dipaparkan di muka hadapan akan ditambah di muka Tetapan Widget."
+msgstr "你可以使用主题设置在首页和在其他页面开启不同的 widget。如果选择这个选项，只在首页显示的 widget 区也会同时显示在小工具设置页面。"
 
 #: admin/options.php:404
 msgid "Enable alternate front page sidebar widget area"
-msgstr "Aktifkan bahagian widget sidebar muka hadapan alternatif"
+msgstr "开启另一个首页边栏 widget"
 
 #: admin/options.php:408
 msgid "Enable alternate front page footer widget area"
-msgstr "Aktifkan bahagian widget kekaki muka hadapan alternatif"
+msgstr "开启另一个首页底部 widget"
 
 #: admin/options.php:409
 msgid "You can also specify different column counts for the front page footer widget and the rest-of-site footer widget if you enable this option."
-msgstr "Anda juga boleh menetapkan bilangan lajur yang berlainan untuk dipaparkan di bahagian widget kekaki di muka hadapan berbanding muka-muka yang lain sekiranya anda mengaktifkan fungsi ini."
+msgstr "你可以同时为首页底部 widget 指定不同的栏数，开启时可用。"
 
 #: admin/options.php:417
 msgid "Footer Options"
-msgstr "Tetapan Bahagian Kaki Tema"
+msgstr "底部选项"
 
 #: admin/options.php:420
 msgid "Show Creative Commons logo"
-msgstr "Paparkan logo Creative Commons"
+msgstr "显示 Creative Commons 标志"
 
 #: admin/options.php:425
 msgid "Copyright text (html allowed)"
-msgstr "Teks hakcipta (html boleh digunakan)"
+msgstr "版权文本 (可用 HTML 代码)"
 
 #: admin/options.php:426
 msgid "If this field is empty, the following default copyright text will be displayed:"
-msgstr "Sekiranya ruangan ini kosong, teks hakcipta di bawah akan digunakan:"
+msgstr "如留空，将显示以下默认版权信息："
 
 #: admin/options.php:432
 msgid "Do not show copyright info"
-msgstr "Jangan paparkan maklumat hakcipta"
+msgstr "不显示版权信息"
 
 #: admin/options.php:446
 msgid "Support the developer"
-msgstr "Sokong pembangun"
+msgstr "赞助作者"
 
 #: admin/options.php:447
 msgid "Developing this awesome theme took a lot of effort and time, weeks and weeks of voluntary unpaid work. If you like this theme or if you are using it for commercial websites, please consider a donation to the developer to help support future updates and development."
-msgstr "Membangunkan tema ini memerlukan begitu banyak masa dan usaha, sehingga berminggu-minggu tanpa sebarang bayaran. Jika anda suka akan tema ini atau menggunakannya untuk laman yang bersifat perniagaan/perdagangan, sila pertimbangkan sedikit sumbangan kepada pembangunnya untuk membantu menyokong pembangunan dan pengemaskinian tema ini."
+msgstr "开发这个很棒的主题，作者付出了许多努力和精力。如果你喜欢这个主题或者你将它用与商业网站，请考虑捐助开发者以支持主题的后续更新和发展。"
 
 #: admin/options.php:457
 msgid "Uninstall theme"
-msgstr "Tanggalkan Tema"
+msgstr "卸载主题"
 
 #: admin/options.php:458
 msgid "<strong>Be careful!</strong> Uninstalling the theme will remove all of the theme's options from the database. Do this only if you decide not to use the theme anymore."
-msgstr "<strong>Berhati-hati!</strong> Menanggalkan tema ini akan menghapuskan semua tetapan tema ini daripada pengkalan data. Pastikan anda hanya melakukan langkah ini sekiranya anda telah memutuskan untuk tidak menggunakan tema ini lagi."
+msgstr "<strong>注意！</strong> 卸载主题将会从数据库中移除所有主题设置。只有当你决定不再使用这个主题时才进行卸载。"
 
 #: admin/options.php:459
 msgid "If you just want to try another theme, there is no need to uninstall this theme. Simply activate the other theme in the Appearance > Themes admin page."
-msgstr "Jika anda hanya mahu mencuba tema yang lain, anda tidak perlu menanggalkan tema ini. Hanya aktifkan tema tersebut di halaman admin Reka Bentuk > Tema."
+msgstr "如果你只是想换其他主题，则你不需要进行卸载。只需要在外观 > 主题选项中开启相应主题即可。"
 
 #: admin/options.php:460
 msgid "Note that uninstalling this theme <strong>does not remove</strong> the theme's files. To delete the files after you have uninstalled this theme, go to Appearances > Themes and delete the theme from there."
-msgstr "Menanggalkan tema ini <strong>tidak menghapuskan</strong> fail-fail tema ini. Untuk menghapuskan fail-fail tema ini setelah anda menanggalkannya, pergi ke halaman Reka Bentuk > Tema and hapuskan tema ini di halaman tersebut."
+msgstr "注意，卸载主题 <strong>不会移除</strong> 主题文件。 卸载后如需删除文件，请到外观 > 主题中选择本主题删除。"
 
 #: admin/user.php:7
 msgid "Graphene-specific User Profile Information"
-msgstr "Maklumat Profil Pengguna Spesifik untuk Tema Graphene"
+msgstr "Graphene 具体用户信息"
 
 #: admin/user.php:8
 msgid "The settings defined here are used only with the Graphene theme."
-msgstr "Tetapan berikut hanya digunakan dengan tema Graphene."
+msgstr "这些设置只能作用于 Graphene 主题。"
 
 #: admin/user.php:12
 msgid "Author profile image URL"
-msgstr "URL imej profil penulis"
+msgstr "作者图片 URL"
 
 #: admin/user.php:13
 msgid "You can specify the image to be displayed as the author's profile image in the Author's page. If no URL is defined here, the author's <a href=\"http://www.gravatar.com\">Gravatar</a> will be used."
-msgstr "Anda boleh menetapkan imej yang akan dipaparkan sebagai imej profil penulis di Halaman Penulis. Jika tiada URL ditetapkan di sini, <a href=\"http://www.gravatar.com\">Gravatar</a> penulis akan digunakan."
+msgstr "你可以指定显示在作者页面的头像. 如果没有指定 URL，将会显示作者的 <a href=\"http://www.gravatar.com\">Gravatar</a>。"
 
 #: admin/user.php:17
 msgid "Please enter the URL to your profile image."
-msgstr "Sila masukkan URL untuk imej profil anda."
+msgstr "请填入图片的 URL。"
 
 #: admin/user.php:17
 msgid "<strong>Important: </strong>Image width must be less than or equal to <strong>150px</strong>."
-msgstr "<strong>Penting: </strong>Lebar imej mesti kurang atau sama dengan <strong>150px</strong>."
+msgstr "<strong>重要提示: </strong>图片宽度必须少于或等于<strong>150px</strong>。"
 
 #~ msgid "by %s"
-#~ msgstr "oleh %s"
-
-#~ msgid "% comment"
-#~ msgstr "% komen"
-
-#~ msgid "Categories:"
-#~ msgstr "Kategori:"
-
-#~ msgid "No comment"
-#~ msgstr "Tiada komen"
-
-#~ msgid "No post found"
-#~ msgstr "Tiada artikel dijumpai"
-
-#~ msgid "You might want to try another search using alternative terms."
-#~ msgstr ""
-#~ "Anda mungkin mahu mencuba carian sekali lagi menggunakan kata kunci "
-#~ "alternatif."
-
-#~ msgid "Leave a reply"
-#~ msgstr "Tulis komen"
-
-#~ msgid "Leave a reply to %s"
-#~ msgstr "Tulis komen kepada %s"
-
-#~ msgid "Click here to cancel reply"
-#~ msgstr "Klik di sini untuk batalkan komen"
-
-#~ msgid ""
-#~ "You must be <a href=\"%1$s/wp-login.php?redirect_to=%2$s\">logged in</a> "
-#~ "to post a comment"
-#~ msgstr ""
-#~ "Anda perlu <a href=\"%1$s/wp-login.php?redirect_to=%2$s\">log masuk</a> "
-#~ "untuk tulis komen"
-
-#~ msgid "Logged in as"
-#~ msgstr "Anda telah log masuk sebagai"
-
-#~ msgid "Log out of this account"
-#~ msgstr "Log keluar daripada akaun ini"
-
-#~ msgid "Logout &raquo;"
-#~ msgstr "Log keluar &raquo;"
-
-#~ msgid "Your name:"
-#~ msgstr "Nama:"
-
-#~ msgid "Your email:"
-#~ msgstr "E-mel:"
-
-#~ msgid "Your Adsense Publisher's ID"
-#~ msgstr "ID Penerbit (Publisher's ID) AdSense anda"
+#~ msgstr "por %s"

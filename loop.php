@@ -5,8 +5,8 @@
             	<?php /* Posts navigation for single post pages, but not for Page post */ ?>
                 <?php if (is_single() && !is_page()) : ?>
             	<div class="post-nav clearfix">
-                    <p id="previous"><?php previous_post_link() ?></p>
-                    <p id="next-post"><?php next_post_link() ?></p>
+                    <p id="previous"><?php previous_post_link(); ?></p>
+                    <p id="next-post"><?php next_post_link(); ?></p>
                     <?php do_action('graphene_post_nav'); ?>
                 </div>
                 <?php endif; ?>
@@ -62,7 +62,7 @@
                     <div class="entry-content clearfix">
                     	<?php do_action('graphene_before_post_content'); ?>
                         
-                    	<?php if (!is_search() && !is_archive()) : ?>
+                    	<?php if (!is_search() && !is_archive() && !get_option('graphene_posts_show_excerpt')) : ?>
                         <?php the_content(__('Read the rest of this entry &raquo;','graphene')); ?>
                         <?php else : ?>
                         	<?php the_excerpt(); ?>

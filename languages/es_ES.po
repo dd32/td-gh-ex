@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tema Graphene para WordPress en español (versión 1.0.8a)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-23 20:09+0100\n"
-"PO-Revision-Date: 2010-10-23 20:30+0100\n"
+"POT-Creation-Date: 2010-11-09 19:47+0100\n"
+"PO-Revision-Date: 2010-11-09 19:50+0100\n"
 "Last-Translator: Eduardo Larequi <elarequi@gmail.com>\n"
 "Language-Team: PNTE <blogs@educacion.navarra.es>\n"
 "MIME-Version: 1.0\n"
@@ -56,7 +56,7 @@ msgid "Your email address will not be published."
 msgstr "Tu email nunca se publicará."
 
 #: comments.php:89
-#: functions.php:767
+#: functions.php:771
 msgid "Submit Comment"
 msgstr "Enviar"
 
@@ -76,158 +76,158 @@ msgstr "CSS válido"
 msgid "Valid CSS Level 2.1"
 msgstr "Valid CSS Level 2.1"
 
-#: footer.php:66
+#: footer.php:64
 #, php-format
 msgid "%1$s uses %2$s theme by %3$s."
 msgstr "%1$s utiza el tema %2$s, diseñado por %3$s."
 
-#: functions.php:97
+#: functions.php:92
 msgid "Header Menu"
 msgstr "Menú de cabecera"
 
-#: functions.php:141
+#: functions.php:136
 msgid "Header image by Syahir Hakim"
 msgstr "Imagen de cabecera por Syahir Hakim"
 
-#: functions.php:147
+#: functions.php:142
 msgid "This is the default Graphene theme header image, cropped from image by Quantin Houyoux at sxc.hu"
 msgstr "Esta es la imagen de cabecera por defecto del tema Graphene, recortada a partir de una imagen de Quantin Houyoux en sxc.hu"
 
-#: functions.php:153
-#: functions.php:159
-#: functions.php:165
-#: functions.php:171
-#: functions.php:177
+#: functions.php:148
+#: functions.php:154
+#: functions.php:160
+#: functions.php:166
+#: functions.php:172
 msgid "Header image cropped from image by Ilco at sxc.hu"
 msgstr "Imagen de cabecera recortada a partir de una imagen de Ilco en sxc.hu"
 
-#: functions.php:384
+#: functions.php:388
 msgid "Home"
 msgstr "Inicio"
 
-#: functions.php:412
+#: functions.php:416
 msgid " says:"
 msgstr " escribió:"
 
-#: functions.php:418
+#: functions.php:422
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s a las %2$s"
 
-#: functions.php:420
+#: functions.php:424
 msgid "Edit comment"
 msgstr "Editar comentario"
 
-#: functions.php:424
+#: functions.php:428
 msgid "Reply"
 msgstr "Responder"
 
-#: functions.php:435
+#: functions.php:439
 msgid "Your comment is awaiting moderation."
 msgstr "Tu comentario está a la espera de ser aprobado."
 
-#: functions.php:528
+#: functions.php:532
 msgid "Sidebar Widget Area"
 msgstr "Barra lateral"
 
-#: functions.php:530
+#: functions.php:534
 msgid "The right sidebar widget area."
 msgstr "El área de widgets de la barra lateral derecha."
 
-#: functions.php:538
+#: functions.php:542
 msgid "Footer Widget Area"
 msgstr "Pie de página"
 
-#: functions.php:540
+#: functions.php:544
 msgid "The footer widget area. Leave empty to disable. Set the number of columns to display at the theme's Display Options page."
 msgstr "Área de widgets del pie de página. Si deseas desactivarla, déjala vacía. Puedes establecer el número de columnas que deseas mostrar en la página de opciones del tema."
 
-#: functions.php:556
+#: functions.php:560
 msgid "Front Page Sidebar Widget Area"
 msgstr "Barra lateral de la página de inicio"
 
-#: functions.php:558
+#: functions.php:562
 msgid "The right sidebar widget area that will only be displayed on the front page."
 msgstr "Área de widgets de la barra lateral derecha que sólo se mostrará en la página de inicio."
 
-#: functions.php:568
+#: functions.php:572
 msgid "Front Page Footer Widget Area"
 msgstr "Pie de la página de inicio"
 
-#: functions.php:570
+#: functions.php:574
 msgid "The footer widget area that will only be displayed on the front page. Leave empty to disable. Set the number of columns to display at the theme's Display Options page."
 msgstr "El área de widgets del pie de página que sólo se mostrará en la página de inicio. Si deseas desactivarla, déjala vacía. Desde la página de opciones del tema puedes establecer el número de columnas que deseas mostrar en esta área."
 
-#: functions.php:622
+#: functions.php:626
 msgid "Follow me on Twitter"
 msgstr "Sígueme en Twitter"
 
-#: functions.php:659
+#: functions.php:663
 msgid "Latest tweets"
 msgstr "Últimos tweets"
 
-#: functions.php:664
+#: functions.php:668
 msgid "Title:"
 msgstr "Título:"
 
-#: functions.php:668
+#: functions.php:672
 msgid "Twitter Username:"
 msgstr "Nombre de usuario de Twitter:"
 
-#: functions.php:672
+#: functions.php:676
 msgid "Number of tweets to display:"
 msgstr "Número de tweets que mostrar:"
 
-#: functions.php:705
+#: functions.php:709
 msgid "Graphene Options"
 msgstr "Opciones del tema Graphene"
 
-#: functions.php:706
+#: functions.php:710
 msgid "Graphene Display"
 msgstr "Opciones de visualización"
 
-#: functions.php:748
+#: functions.php:752
 msgid "Name:"
 msgstr "Nombre:"
 
-#: functions.php:749
+#: functions.php:753
 msgid "Email:"
 msgstr "Email:"
 
-#: functions.php:750
+#: functions.php:754
 msgid "Website:"
 msgstr "Sitio web:"
 
-#: functions.php:760
+#: functions.php:764
 msgid "Message:"
 msgstr "Mensaje:"
 
-#: functions.php:787
+#: functions.php:791
 msgid "Continue reading &raquo;"
 msgstr "Continuar leyendo &raquo;"
 
-#: functions.php:817
+#: functions.php:821
 msgid "Older posts &laquo;"
 msgstr "Entradas más antiguas &laquo;"
 
-#: functions.php:818
+#: functions.php:822
 msgid "&raquo; Newer posts"
 msgstr "&raquo; Entradas más recientes"
 
-#: functions.php:938
+#: functions.php:947
 msgid "View full post"
 msgstr "Ver entrada completa"
 
-#: functions.php:1055
+#: functions.php:1067
 msgid "<strong>ERROR: You must supply the post ID to get the image from as an argument when calling the graphene_get_post_image() function.</strong>"
 msgstr "<strong>ERROR: cuando llames a la función graphene_get_post_image(), debes proporcionar el ID de la entrada de la que desees obtener la imagen como un argumento.</strong>"
 
-#: header.php:55
+#: header.php:54
 msgid "Subscribe to RSS feed"
 msgstr "Suscribirse a la fuente RSS"
 
-#: header.php:97
-#: header.php:100
+#: header.php:103
+#: header.php:106
 msgid "Go back to the front page"
 msgstr "Volver a la página de inicio"
 
@@ -450,247 +450,259 @@ msgstr "Ocultar botón"
 msgid "ERROR: You are not authorised to perform that operation"
 msgstr "ERROR: No estás autorizado a llevar a cabo esta operación"
 
-#: admin/display.php:73
+#: admin/display.php:75
 msgid "Please enter only numerical value for the footer widget column count."
 msgstr "Por favor, escribe sólo valores numéricos para contar las columnas de widgets del pie de página."
 
-#: admin/display.php:82
+#: admin/display.php:84
 msgid "Please enter only numerical value for the front page footer widget column count."
 msgstr "Por favor, escribe sólo valores numéricos para contar las columnas del pie de la página de inicio."
 
-#: admin/display.php:92
+#: admin/display.php:94
 msgid "Please enter only numerical value for the navigation menu dropdown item width."
 msgstr "Por favor, escribe sólo valores numéricos para la anchura de los ítems del menú de navegación."
 
-#: admin/display.php:152
+#: admin/display.php:156
 #: admin/options.php:142
 msgid "Settings updated."
 msgstr "Configuración actualizada."
 
-#: admin/display.php:205
+#: admin/display.php:211
 msgid "Graphene Display Options"
 msgstr "Opciones de visualización del tema Graphene"
 
-#: admin/display.php:211
+#: admin/display.php:217
 #: admin/options.php:227
 msgid "ERROR:"
 msgstr "ERROR:"
 
-#: admin/display.php:237
+#: admin/display.php:243
 msgid "Header Display Options"
 msgstr "Opciones para la cabecera"
 
-#: admin/display.php:241
+#: admin/display.php:247
 msgid "Use light-coloured header bars"
 msgstr "Utilizar barras de navegación de cabecera con colores claros"
 
-#: admin/display.php:247
+#: admin/display.php:253
 msgid "Link header image to front page"
 msgstr "Enlazar la imagen de cabecera a la página de inicio"
 
-#: admin/display.php:250
+#: admin/display.php:256
 msgid "Check this if you disable the header texts and want the header image to be linked to the front page."
 msgstr "Marca esta casilla si quieres desactivar los textos de cabecera y hacer que la imagen de cabecera enlace a la página de inicio."
 
-#: admin/display.php:257
+#: admin/display.php:261
+msgid "Disable Featured Image replacing header image"
+msgstr "Desactivar la posibilidad de que la imagen destacada sustituya a la imagen de cabecera"
+
+#: admin/display.php:264
+msgid "Check this to prevent the posts Featured Image replacing the header image regardless of the featured image dimension."
+msgstr "Marca esta casilla para prevenir que la imagen destacada de una entrada sustituya a la imagen de cabecera, con independencia de las dimensiones de la imagen destacada."
+
+#: admin/display.php:271
 msgid "Posts Display Options"
 msgstr "Opciones para las entradas"
 
-#: admin/display.php:261
+#: admin/display.php:275
+msgid "Show excerpts in front page"
+msgstr "Mostrar resúmenes en la página de inicio"
+
+#: admin/display.php:281
 msgid "Hide post author"
 msgstr "Ocultar el autor"
 
-#: admin/display.php:267
+#: admin/display.php:287
 msgid "Hide post date"
 msgstr "Ocultar la fecha"
 
-#: admin/display.php:273
+#: admin/display.php:293
 msgid "Hide post categories"
 msgstr "Ocultar la categoría"
 
-#: admin/display.php:279
+#: admin/display.php:299
 msgid "Hide post tags"
 msgstr "Ocultar las etiquetas"
 
-#: admin/display.php:285
+#: admin/display.php:305
 msgid "Hide post comment count"
 msgstr "Ocultar el número de comentarios"
 
-#: admin/display.php:286
+#: admin/display.php:306
 msgid "Only affects posts listing (such as the front page) and not single post view."
 msgstr "Sólo afecta a los listados de entradas (como el de la página de inicio) y no a las páginas de entradas individuales."
 
-#: admin/display.php:291
+#: admin/display.php:311
 msgid "Show post author's gravatar"
 msgstr "Mostrar el gravatar del autor"
 
-#: admin/display.php:295
+#: admin/display.php:315
 msgid "Show post author's info"
 msgstr "Mostrar la información del autor"
 
-#: admin/display.php:301
+#: admin/display.php:321
 msgid "Comments Display Options"
 msgstr "Opciones de visualización de comentarios"
 
-#: admin/display.php:305
+#: admin/display.php:325
 msgid "Hide allowed tags in comment form"
 msgstr "Ocultar las etiquetas HTML permitidas en el formulario de comentarios"
 
-#: admin/display.php:313
+#: admin/display.php:333
 msgid "Text Style Options"
 msgstr "Opciones para los estilos del texto"
 
-#: admin/display.php:314
+#: admin/display.php:334
 msgid "Note that these are CSS properties, so any valid CSS values for each particular property can be used."
 msgstr "Ten en cuenta que estamos tratando de propiedades CSS; por tanto, puede utilizarse cualquier valor CSS válido para una propiedad determinada."
 
-#: admin/display.php:315
+#: admin/display.php:335
 msgid "Some example CSS properties values:"
 msgstr "Algunos ejemplos de valores para las propiedades CSS:"
 
-#: admin/display.php:318
+#: admin/display.php:338
 msgid "Text font:"
 msgstr "Fuente tipográfica del texto:"
 
-#: admin/display.php:319
+#: admin/display.php:339
 msgid "<code>arial</code>, <code>tahoma</code>, <code>georgia</code>, <code>'Trebuchet MS'</code>"
 msgstr "<code>arial</code>, <code>tahoma</code>, <code>georgia</code>, <code>'Trebuchet MS'</code>"
 
-#: admin/display.php:322
+#: admin/display.php:342
 msgid "Text size and line height:"
 msgstr "Tamaño del texto y altura de línea:"
 
-#: admin/display.php:323
+#: admin/display.php:343
 msgid "<code>12px</code>, <code>12pt</code>, <code>12em</code>"
 msgstr "<code>12px</code>, <code>12pt</code>, <code>12em</code>"
 
-#: admin/display.php:326
+#: admin/display.php:346
 msgid "Text weight:"
 msgstr "Grosor del texto:"
 
-#: admin/display.php:327
+#: admin/display.php:347
 msgid "<code>normal</code>, <code>bold</code>, <code>100</code>, <code>700</code>"
 msgstr "<code>normal</code>, <code>bold</code>, <code>100</code>, <code>700</code>"
 
-#: admin/display.php:330
+#: admin/display.php:350
 msgid "Text style:"
 msgstr "Estilo del texto:"
 
-#: admin/display.php:331
+#: admin/display.php:351
 msgid " <code>normal</code>, <code>italic</code>, <code>oblique</code>"
 msgstr "<code>normal</code>, <code>italic</code>, <code>oblique</code>"
 
-#: admin/display.php:334
+#: admin/display.php:354
 msgid "Text colour:"
 msgstr "Color del texto:"
 
-#: admin/display.php:335
+#: admin/display.php:355
 msgid "<code>blue</code>, <code>navy</code>, <code>red</code>, <code>#ff0000</code>"
 msgstr "<code>blue</code>, <code>navy</code>, <code>red</code>, <code>#ff0000</code>"
 
-#: admin/display.php:338
-#: admin/display.php:436
-#: admin/display.php:458
+#: admin/display.php:358
+#: admin/display.php:456
+#: admin/display.php:478
 msgid "Leave field empty to use the default value."
 msgstr "Si quieres utilizar el valor por defecto, deja el campo en blanco."
 
-#: admin/display.php:339
+#: admin/display.php:359
 msgid "Header Text"
 msgstr "Texto de cabecera"
 
-#: admin/display.php:343
+#: admin/display.php:363
 msgid "Title text font"
 msgstr "Fuente tipográfica del texto del título"
 
-#: admin/display.php:349
+#: admin/display.php:369
 msgid "Title text size"
 msgstr "Tamaño del texto del título"
 
-#: admin/display.php:355
+#: admin/display.php:375
 msgid "Title text weight"
 msgstr "Grosor del texto del título"
 
-#: admin/display.php:361
+#: admin/display.php:381
 msgid "Title text line height"
 msgstr "Altura de línea del texto del título"
 
-#: admin/display.php:367
+#: admin/display.php:387
 msgid "Title text style"
 msgstr "Estilo del texto del título"
 
-#: admin/display.php:376
+#: admin/display.php:396
 msgid "Description text font"
 msgstr "Fuente tipográfica del texto de la descripción"
 
-#: admin/display.php:382
+#: admin/display.php:402
 msgid "Description text size"
 msgstr "Tamaño del texto para la descripción"
 
-#: admin/display.php:388
+#: admin/display.php:408
 msgid "Description text weight"
 msgstr "Grosor del texto de la descripción"
 
-#: admin/display.php:394
+#: admin/display.php:414
 msgid "Description text line height"
 msgstr "Altura de línea del texto de la descripción"
 
-#: admin/display.php:400
+#: admin/display.php:420
 msgid "Description text style"
 msgstr "Estilo del texto de la descripción"
 
-#: admin/display.php:405
+#: admin/display.php:425
 msgid "Content Text"
 msgstr "Texto del contenido"
 
-#: admin/display.php:409
+#: admin/display.php:429
 msgid "Text font"
 msgstr "Fuente tipográfica del texto"
 
-#: admin/display.php:415
+#: admin/display.php:435
 msgid "Text size"
 msgstr "Tamaño del texto"
 
-#: admin/display.php:421
+#: admin/display.php:441
 msgid "Text line height"
 msgstr "Altura de línea del texto"
 
-#: admin/display.php:427
+#: admin/display.php:447
 msgid "Text colour"
 msgstr "Color del texto"
 
-#: admin/display.php:435
+#: admin/display.php:455
 msgid "Footer Widget Display Options"
 msgstr "Opciones para los widgets del pie de página"
 
-#: admin/display.php:441
+#: admin/display.php:461
 msgid "Number of columns to display"
 msgstr "Número de columnas que mostrar"
 
-#: admin/display.php:448
+#: admin/display.php:468
 msgid "Number of columns to display for front page footer widget"
 msgstr "Número de columnas para el pie de página de la página de inicio"
 
-#: admin/display.php:457
+#: admin/display.php:477
 msgid "Navigation Menu Display Options"
 msgstr "Opciones para el menú de navegación"
 
-#: admin/display.php:463
+#: admin/display.php:483
 msgid "Dropdown menu item width"
 msgstr "Anchura de los ítems del menú desplegable"
 
-#: admin/display.php:470
+#: admin/display.php:490
 msgid "Miscellaneous Display Options"
 msgstr "Opciones de visualización misceláneas"
 
-#: admin/display.php:474
+#: admin/display.php:494
 msgid "Swap title order"
 msgstr "Cambiar el orden de los títulos"
 
-#: admin/display.php:478
+#: admin/display.php:498
 msgid "If this is checked, the website title will be displayed first, followed by the page title."
 msgstr "Si marcas esta casilla, el título del sitio web se mostrará en primer lugar, seguido por el título de la página."
 
-#: admin/display.php:486
+#: admin/display.php:506
 #: admin/options.php:440
 msgid "Update Settings"
 msgstr "Actualizar configuración"
