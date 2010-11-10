@@ -113,18 +113,18 @@
 
 if ( function_exists( 'add_custom_image_header' ) ) {
 
-add_custom_image_header('header_style', 'admin_header_style');
+    add_custom_image_header('header_style', 'admin_header_style');
 
-function header_style(){
-
-
-}
+    function header_style(){
 
 
-function admin_header_style(){
+    }
 
 
-}
+    function admin_header_style(){
+
+
+    }
 
 
     register_default_headers( array(
@@ -150,25 +150,19 @@ function admin_header_style(){
 
     $is_submenu = new tmn_menu_create;
     add_action('admin_menu', array($is_submenu, 'add_menus'));
+    add_action('admin_menu', 'setup_raindrops');
+
+
+
+
+
 
     if ( !is_admin() ) {
-        wp_register_script('raindrops_script',get_bloginfo('stylesheet_directory') .'/lib/script.php',array('jquery'),'0.1' );
+        wp_register_script('raindrops_script',get_stylesheet_directory_uri() .'/lib/script.php',array('jquery'),'0.1' );
         wp_enqueue_script('raindrops_script');
         add_action('wp_print_styles', 'add_raindrops_stylesheet');
     }
 
-    add_filter('mce_css', 'raindrops_editor_style');
-
-    function my_editor_style($url) {
-
-      if ( !empty($url) )
-        $url .= ',';
-
-      // Change the path here if using sub-directory
-      $url .= trailingslashit( get_stylesheet_directory_uri() ) . 'editor-style.css';
-
-      return $url;
-    }
 
 
     wp_register_sidebar_widget('colorsample','Color Sample', 'raindrop_colors');
@@ -235,6 +229,9 @@ $raindrops_base_setting = array(
 
 }
 
+
+
+
     include_once(STYLESHEETPATH."/lib/csscolor.css.php");
 
 
@@ -242,11 +239,11 @@ if (!function_exists('add_body_class')) {
 function add_body_class($class) {
 
     /**
-     * body class への追加 ブラウザ　lang
+     * body class add　lang
      *
      *　example
      *
-     *　$classes= array('追加クラス名1'、'追加クラス名2');
+     *　$classes= array('class1'、'class2');
      *
      */
     $lang = WPLANG;
@@ -403,7 +400,7 @@ if (!function_exists('raindrops_posted_on')) {
 if (!function_exists('filter_explode_meta_keys')) {
 
     function filter_explode_meta_keys( $content, $key ) {
-        $explode_keys = array( 'css', 'javascript', 'meta','embed','excerpt','template'); // 除外したいキーを設定
+        $explode_keys = array( 'css', 'javascript', 'meta','embed','excerpt','template');
         if ( in_array( $key, $explode_keys ) ) return;
         else return $content;
     }
@@ -634,7 +631,6 @@ class tmn_menu_create {
         $option_value = "-";
 
         $deliv = htmlspecialchars($_SERVER['REQUEST_URI']);
-        //if(get_option(TMN_TABLE_TITLE."_db_version") !== TMN_TABLE_VERSION){return;}
 
         $sql = 'SELECT * FROM `'.TMN_PLUGIN_TABLE.'` WHERE `option_name` LIKE \'raindrops%\'';
         $results = $wpdb->get_results($sql);
@@ -642,23 +638,6 @@ class tmn_menu_create {
 
         $lines = "<table class=\"widefat post fixed\" cellspacing=\"0\">";
         $lines .=  '<thead><tr><th style=\"display:none;\">'.__("Color").'</th><th>'.__("Value").'</th><th >'.__("Edit").'</th><th>&nbsp;</th></tr></thead>';
-
-
-        if(empty($results)){
-            foreach($raindrops_base_setting as $add){
-
-                add_option($add['option_name'],$add['option_value'],"description",$add['autoload']);
-
-            }
-
-        $host               = $_SERVER['HTTP_HOST'];
-        $dirname            = dirname($_SERVER['PHP_SELF']);
-        $filename           = basename($_SERVER['SCRIPT_FILENAME']);
-        $query_str          = $_SERVER['QUERY_STRING'];
-        $current_url        = "http://{$host}{$dirname}{$filename}{$query_str}";
-
-        wp_redirect($current_url);
-        }
 
 
 
@@ -681,7 +660,7 @@ class tmn_menu_create {
 
             if(preg_match("!\.(png|gif|jpeg|jpg)$!i",$result->option_value)){
 
-                $style .="background:url(".get_bloginfo("stylesheet_directory")."/images/".$result->option_value.');';
+                $style .="background:url(".get_stylesheet_directory_uri()."/images/".$result->option_value.');';
             }else{
 
                 $style .="";
@@ -1755,7 +1734,7 @@ function add_raindrops_stylesheet() {
 
 global $wpdb;
 
-    $raindrops_url  = get_bloginfo('stylesheet_directory') . '/lib/style.php';
+    $raindrops_url  = get_stylesheet_directory_uri(). '/lib/style.php';
     $raindrops_file = STYLESHEETPATH. '/lib/style.php';
 
     if ( file_exists($raindrops_file) ) {
@@ -1764,7 +1743,7 @@ global $wpdb;
     }
 
     $stylesheet_name = 'b'.str_replace("wp","",$wpdb->prefix).'-csscolor.css';
-    $raindrops_url  = get_bloginfo('stylesheet_directory') . '/lib/' .INDIVIDUAL_STYLE;
+    $raindrops_url  = get_stylesheet_directory_uri() . '/lib/' .INDIVIDUAL_STYLE;
     $raindrops_file = STYLESHEETPATH . '/lib/' .INDIVIDUAL_STYLE;
 
     if ( file_exists($raindrops_file) ) {
@@ -1781,4 +1760,22 @@ $form['url'] = '<p class="comment-form-url"><label for="url">' . __( 'Website' )
 
 return $form;
 }
+
+function setup_raindrops(){
+
+    global $wpdb,$raindrops_base_setting;
+        $sql = 'SELECT * FROM `'.TMN_PLUGIN_TABLE.'` WHERE `option_name` LIKE \'raindrops%\'';
+        $results = $wpdb->get_results($sql);
+
+        if(empty($results)){
+            foreach($raindrops_base_setting as $add){
+
+                add_option($add['option_name'],$add['option_value'],"description",$add['autoload']);
+
+            }
+
+        }
+
+    }
+
 ?>
