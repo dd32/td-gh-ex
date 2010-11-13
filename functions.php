@@ -8,7 +8,7 @@
  */
 
 if ( ! isset( $content_width ) )
-	$content_width = 640;
+	$content_width = 514;
 
 $themename = 'Atmosphere 2010';
 

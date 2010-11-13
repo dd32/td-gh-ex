@@ -4,7 +4,7 @@ Theme URI: http://digitalraindrops.net/atmosphere/
 Description: Atmosphere 2010, created using the The twenty ten theme from WordPress, and based on an un-supported 2007 theme called Atmosphere,simple, and readable, custom menu, header image, featured images (thumbnails for gallery posts. It includes stylesheets for print and the admin Visual Editor, special styles for posts in the "Asides" and "Gallery" categories, and has an optional one-column page template that removes the sidebar.
 Author: Digital Raindrops original theme The WordPress Team 
 Author URI: http://digitalraindrops.net/ 
-Version: 1.1
+Version: 1.2
 Tags: dark, black, white, two-columns, fixed-width, custom-header, custom-background, threaded-comments, sticky-post, translation-ready, microformats, rtl-language-support, editor-style, theme-options
 
 License: GNU General Public License v2.0
@@ -314,7 +314,7 @@ big {
 	font-size: 131.25%;
 }
 ins {
-	background: #ffc;
+	background: #333;
 	text-decoration: none;
 }
 blockquote {
@@ -545,7 +545,7 @@ div.menu li {
 }
 #content dt,
 #content th {
-	color: #000;
+	color: #f1f1f1;
 }
 #content h1,
 #content h2,
@@ -553,7 +553,7 @@ div.menu li {
 #content h4,
 #content h5,
 #content h6 {
-	color: #000;
+	color: #f1f1f1;
 	line-height: 1.5em;
 	margin: 0 0 20px 0;
 }
@@ -576,7 +576,7 @@ div.menu li {
 	padding: 6px 24px;
 }
 #content tr.odd td {
-	background: #212121;
+	background: #121212;
 }
 .hentry {
 	margin: 0 15px 20px 0;
@@ -689,7 +689,7 @@ div.menu li {
 	width: 33%;
 }
 .page-link {
-	color: #000;
+	color: #f1f1f1;
 	font-weight: bold;
 	margin: 0 0 22px 0;
 	word-spacing: 0.5em;
@@ -715,7 +715,7 @@ body.page .edit-link {
 }
 #entry-author-info {
 	background: #f2f7fc;
-	border-top: 4px solid #000;
+	border-top: 4px solid #121212;
 	clear: both;
 	font-size: 10px;
 	line-height: 18px;
@@ -736,7 +736,7 @@ body.page .edit-link {
 	margin: 0 0 0 104px;
 }
 #entry-author-info h2 {
-	color: #000;
+	color: #f1f1f1;
 	font-size: 100%;
 	font-weight: bold;
 	margin-bottom: 0;
@@ -953,7 +953,7 @@ body.page .edit-link {
 }
 h3#comments-title,
 h3#reply-title {
-	color: #000;
+	color: #f1f1f1;
 	font-size: 16px;
 	font-weight: bold;
 	margin-bottom: 0;
@@ -997,7 +997,7 @@ h3#comments-title {
 .comment-author {
 }
 .comment-author cite {
-	color: #000;
+	color: #f1f1f1;
 	font-style: normal;
 	font-weight: bold;
 }
@@ -1155,7 +1155,7 @@ h3#reply-title {
 .widget-title {
 	border-bottom:1px dotted #878686;
 	border-top:1px dotted #878686;
-	margin:15px 0 0;
+	margin:15px 0 5px 0;
 	padding:0 0 0 4px;
 }
 .widget-area a:link,
@@ -1192,7 +1192,7 @@ h3#reply-title {
 }
 #wp-calendar tbody td {
 	background: #000;
-	border: 1px solid #000;
+	border: 1px solid #121212;
 	padding: 3px 0 2px;
 	text-align: center;
 }
@@ -1203,7 +1203,7 @@ h3#reply-title {
 	text-align: right;
 }
 .widget_rss a.rsswidget {
-	color: #000;
+	color: #f1f1f1;
 }
 .widget_rss a.rsswidget:hover {
 	color: #6BA2DB;
@@ -1242,7 +1242,7 @@ h3#reply-title {
 }
 #colophon {
 	background: #000;
-	border-top: 4px solid #000;
+	border-top: 4px solid #121212;
 	margin-top: -4px;
 	overflow: hidden;
 	padding: 18px 0;
@@ -1310,11 +1310,11 @@ code {
 		position: relative !important;
 	}
 	#header {
-		border-bottom: 2pt solid #000;
+		border-bottom: 2pt solid #121212;
 		padding-bottom: 18pt;
 	}
 	#colophon {
-		border-top: 2pt solid #000;
+		border-top: 2pt solid #121212;
 	}
 	#site-title,
 	#site-description {
@@ -1515,3 +1515,7 @@ page-menu.menu {
 	margin: 5px;
 }
 /* End Footer Credit */
+
+#wp-calendar tbody td {
+	border: none;
+}
