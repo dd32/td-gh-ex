@@ -1,5 +1,4 @@
 <?php
-/* only load this page for Admin Users */
 if (!is_admin()) return;
 
 global $themename;
@@ -257,8 +256,6 @@ $adminOptions = array (
 
 );
 
-/* Do Not Edit Below This Line */
-
 function mytheme_style_init() {
 	global $shortname;
 	$file_dir=get_bloginfo('template_directory');
@@ -269,53 +266,34 @@ function mytheme_add_admin() {
  
 global $themename, $shortname, $adminOptions, $selectedPageID;
  
-if ( $_GET['page'] == basename(__file__) ) {
+if ( isset( $_GET['page'] ) && $_GET['page'] == basename(__file__) ) {
  
-	if ( 'save' == $_REQUEST['action'] ) {
+	if (  isset( $_REQUEST['action'] ) && 'save' == $_REQUEST['action'] ) {
 
-		if (!$selectedPageID){
-			foreach ($adminOptions as $value) {
-				update_option( $value['id'], $_REQUEST[ $value['id'] ] ); }
-			
-			foreach ($adminOptions as $value) {
-				if( isset( $_REQUEST[ $value['id'] ] ) ) { 
-					update_option( $value['id'], $_REQUEST[ $value['id'] ]  ); 
-				} else { 
-					delete_option( $value['id'] ); 
-				} 
-			}
-		} else {
-			foreach ($adminOptions as $value) {
-					update_post_meta( $selectedPageID, $value['id'], $_REQUEST[ $value['id'] ] ); }
-		
-			foreach ($adminOptions as $value) {
-				if( isset( $_REQUEST[ $value['id'] ] ) ) { 
-					if ($value['type']=='pages') {
-						update_option( $value['id'], $_REQUEST[ $value['id'] ] );
-					} else {
-						update_post_meta( $selectedPageID, $value['id'], $_REQUEST[ $value['id'] ]  ); 
-					}
-				} else { 
-					delete_post_meta( $selectedPageID, $value['id'] ); 
-				} 
-			}
-		} 
-	header("Location: themes.php?page=admin-options.php&saved=true");
-	die;
-} 
-else if( 'reset' == $_REQUEST['action'] ) {
- 
-	if (!$selectedPageID){
 		foreach ($adminOptions as $value) {
-			delete_option( $value['id'] ); 
-		}
-	}else{
+				update_post_meta( $selectedPageID, $value['id'], $_REQUEST[ $value['id'] ] ); }
+		
+		foreach ($adminOptions as $value) {
+			if( isset( $_REQUEST[ $value['id'] ] ) ) { 
+				if ($value['type']=='pages') {
+					update_option( $value['id'], $_REQUEST[ $value['id'] ] );
+				} else {
+					update_post_meta( $selectedPageID, $value['id'], $_REQUEST[ $value['id'] ]  ); 
+				}
+			} else { 
+				delete_post_meta( $selectedPageID, $value['id'] ); 
+			} 
+		}				 
+		header("Location: themes.php?page=admin-options.php&saved=true");
+		die;
+	} 
+	else if( isset( $_REQUEST['action'] ) && 'reset' == $_REQUEST['action'] ) {
+ 
 		foreach ($adminOptions as $value) {
 			delete_post_meta( $selectedPageID, $value['id'] ); 
 		}
-	}
-	header("Location: themes.php?page=admin-options.php&reset=true");
-	die;
+		header("Location: themes.php?page=admin-options.php&reset=true");
+		die;
 	}
 }
 
@@ -327,8 +305,8 @@ function mytheme_admin() {
 global $themename, $shortname, $adminOptions, $selectedPageID, $mypagename;
 $i=0;
  
-if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename. ' '.$mypagename .' page settings saved.</strong></p></div>';
-if ( $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' '.$mypagename .' page settings reset.</strong></p></div>';
+if ( isset( $_REQUEST['saved'] ) && $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename. ' '.$mypagename .' page settings saved.</strong></p></div>';
+if ( isset( $_REQUEST['reset'] ) && $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' '.$mypagename .' page settings reset.</strong></p></div>';
  
 ?>
 <div class="wrap rm_wrap">

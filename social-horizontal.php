@@ -1,4 +1,3 @@
-
 <?php $shortname = 'drcms'; ?>
 <?php if( !get_option($shortname. '_hide_footer_icons') ) : ?>
 	<div class="social">

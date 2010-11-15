@@ -1,5 +1,5 @@
 /*
-Theme Name: Twenty Ten
+Theme Name: Atmosphere
 */
 /*
 Used to style the TinyMCE editor.
@@ -10,7 +10,7 @@ html .mceContentBody{
 	float:right;
 }
 * {
-	font-family: Arial, Tahoma, sans-serif;
+	font-family: 'Lucida Grande', Verdana, arial, sans-serif;
 }
 /* Text elements */
 ul {
@@ -35,7 +35,7 @@ html .mceContentBody{
 	float:right;
 }
 * {
-	font-family: Arial, Tahoma, sans-serif;
+	font-family: 'Lucida Grande', Verdana, arial, sans-serif;
 }
 /* Text elements */
 ul {

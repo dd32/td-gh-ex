@@ -1,9 +1,3 @@
-<?php
-/**
- * The Sidebar containing the primary and secondary widget areas.
-*/
-?>
-
 <div id="sidebar-menu"><!-- Container Div -->
 	
 	<div id="primary" class="widget-area" role="complementary">
@@ -42,7 +36,6 @@
 	</div><!-- #primary .widget-area -->
 
 	<?php
-		// A second sidebar for widgets, just because.
 		if ( is_active_sidebar( 'secondary-widget-area' ) ) : ?>
 			
 			<div id="secondary" class="widget-area" role="complementary">
@@ -52,7 +45,6 @@
 			</div><!-- #secondary .widget-area -->
 	<?php endif; ?>
 	
-	<!-- Historic Content based on Original Theme -->
 	<div id="tertiary" class="widget-area" role="complementary">
 		<ul class="xoxo">
 		
