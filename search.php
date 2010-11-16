@@ -1,44 +1,61 @@
 <?php get_header(); ?>
 
-	<div id="content_box">
-	<div id="content_body">
+<div id="content" class="narrow">
 
 	<?php if (have_posts()) : ?>
+		
+		<h2 class="page-title"><?php _e('Search Results For ', 'undedicated'); ?>&ldquo;<?php echo $s; ?>&rdquo;</h2>
 
 		<?php while (have_posts()) : the_post(); ?>
-
-			<div class="post">
-				
-				<div class="h2-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></div>
-				<div class="below-title"> <?php the_time('F jS, Y') ?> | <?php the_author_firstname(); ?> <?php the_author_lastname(); ?> | <?php comments_popup_link('No Comments Yet', '1 Comment', '% Comments'); ?>
-				</div>
-				
-
-				<div class="entry">
-					<?php the_content('<br />Read the rest of this entry &raquo;'); ?>
-				</div>
-<div id="tagbox">
-				<p class="postmetadata"><?php the_tags('Tags: ', ', ', '<br />'); ?> Posted in <?php the_category(', ') ?> | <?php edit_post_link('Edit', '', ' | '); ?>  <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?></p>
-</div>				
-				<div class="hr-post-end"></div>
+		
+		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<div class="post-header">
+				<h2><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+				<p><?php _e('By ','undedicated'); ?><?php the_author_posts_link(); ?> | <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_time('F j, Y') ?></a></p>
 			</div>
+			
+			<?php the_post_thumbnail(array( 150, 150 ), array( 'class' => 'alignleft' )); ?>
+			<?php the_excerpt(); ?>
+			<p><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( ); ?>" rel="bookmark"><?php _e('Read more', 'undedicated'); ?> &raquo;</a></p>
+			
+			<div class="post-meta">
+				<ul>
+					<li><?php comments_popup_link( __('Leave your comment', 'undedicated'), __( '1 comment', 'undedicated'), __('% comments', 'undedicated')); ?> &bull; <?php the_category(' &bull; ');?></li>
+					<?php the_tags( __('<li>Tagged as: ', 'undedicated'), ' &bull; ', '</li>'); ?>
+					<li><?php _e('Share on ', 'undedicated'); ?><a href="http://twitter.com/home?status=Currently reading: <?php the_title_attribute(); ?> <?php the_permalink(); ?>"><?php _e('Twitter','undedicated'); ?></a>, <a href="http://www.facebook.com/share.php?u=<?php the_permalink(); ?>&amp;t=<?php the_title_attribute(); ?>"><?php _e('Facebook', 'undedicated'); ?></a>, <a href="http://del.icio.us/post?v=4;url=<?php the_permalink(); ?>"><?php _e('Delicious', 'undedicated'); ?></a>, <a href="http://digg.com/submit?url=<?php the_permalink(); ?>"><?php _e('Digg', 'undedicated'); ?></a>, <a href="http://www.reddit.com/submit?url=<?php the_permalink(); ?>&amp;title=<?php the_title_attribute(); ?>"><?php _e('Reddit', 'undedicated'); ?></a></li>
+					<?php edit_post_link(__('Edit this post','undedicated'), '<li>', '</li>'); ?>
+				</ul>
+			</div>
+		</div>
 
 		<?php endwhile; ?>
 		
-		<div class="navigation">
-			<div class="alignleft"><?php previous_posts_link('&laquo; Newer Entries') ?></div>
-			<div class="alignright"><?php next_posts_link(' Older Entries &raquo;') ?></div>
+		<?php if (show_posts_nav()) : ?>
+		
+		<div class="post-navigation">
+			<ul>
+				<li><?php next_posts_link( __('&laquo; Previous Page')) ?></li>
+				<li><?php previous_posts_link( __('Next Page &raquo;')) ?></li>
+			</ul>
 		</div>
-
+		
+		<?php endif; ?>
+		
 	<?php else : ?>
-
-		<h2 class="center">No posts found</h2>
-		<?php include (TEMPLATEPATH . '/searchform.php'); ?>
-		<?php include (TEMPLATEPATH . '/archive-list.php'); ?>
-
+		
+	<h2 class="page-title"><?php _e('Nothing Found For ', 'undedicated'); ?>&ldquo;<?php echo $s; ?>&rdquo;</h2>
+	<p><?php _e('There are not posts that match your query. Please try searching with different keywords.', 'undedicated'); ?></p>
+	<?php get_search_form(); ?>
+	
+	<script type="text/javascript">
+		// focus on search field after it has loaded
+		document.getElementById('s') && document.getElementById('s').focus();
+	</script>
 	<?php endif; ?>
-
-</div>
-<?php get_sidebar(); ?>
-
-<?php get_footer(); ?>
+	
+	</div><!--#content-->
+	
+	<hr />
+	
+	<?php get_sidebar(); ?>
+	<?php get_footer(); ?>

@@ -1,39 +1,105 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
-<head profile="http://gmpg.org/xfn/11">
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<head>
+<meta charset="<?php bloginfo( 'charset' ); ?>" />
+<title><?php
+	/*
+	 * Print the <title> tag based on what is being viewed.
+	 */
+	global $page, $paged;
 
-<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+	wp_title( '|', true, 'right' );
 
-<title><?php bloginfo('name'); ?> <?php wp_title(); ?></title>
+	// Add the blog name.
+	bloginfo( 'name' );
 
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
-<!--[if IE 6]>
-<link href="<?php bloginfo('template_url'); ?>/ie6.css" media="screen" rel="stylesheet" type="text/css" />
-<![endif]-->
-<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
-<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+	// Add the blog description for the home/front page.
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) )
+		echo " | $site_description";
 
-<?php wp_head(); ?>
+	// Add a page number if necessary:
+	if ( $paged >= 2 || $page >= 2 )
+		echo ' | ' . sprintf( __( 'Page %s', 'twentyten' ), max( $paged, $page ) );
+
+	?></title>
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+	<!--[if lt IE 8]>
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/ie-fixes.css" type="text/css" media="screen" />
+	<![endif]-->	
+
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+	
+	
+	<?php if((is_home() && ($paged < 2 )) || is_single() || is_page()){
+    echo '<meta name="robots" content="index,follow" />';
+		} else {
+    echo '<meta name="robots" content="noindex,follow" />';
+	} ?>
+	
+<?php
+	/* We add some JavaScript to pages with the comment form
+	 * to support sites with threaded comments (when in use).
+	 */
+	if ( is_singular() && get_option( 'thread_comments' ) )
+		wp_enqueue_script( 'comment-reply' );
+
+	/* Always have wp_head() just before the closing </head>
+	 * tag of your theme, or you will break many plugins, which
+	 * generally use this hook to add elements to <head> such
+	 * as styles, scripts, and meta tags.
+	 */
+	wp_head();
+?>
 </head>
-<body>
-<div id="top-strip"></div>
+
+<body <?php body_class(); ?>>
 <div id="wrapper">
-<div id="container">
-<div id="header">
+	
+	<div id="header">
+		<div id="masthead">
+				<?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
+				<<?php echo $heading_tag; ?> id="site-title">
+					<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+				</<?php echo $heading_tag; ?>>
+				<div id="site-description"><?php bloginfo( 'description' ); ?></div>
+		</div><!-- #masthead -->
 
-	<div class="blog-title"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></div>
-            <div class="blog-description"><?php bloginfo('description'); ?></div>
-</div>
-<div id="search-header">
-    <form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
-      <input type="text" value="<?php the_search_query(); ?>" name="s" id="s" class="txtField" />
-      <input type="submit" id="searchsubmit" class="btnSearch" value="Search &raquo;" />
-    </form>
-  </div>
-<ul id="menubar">
-	<li><a href="<?php bloginfo('url'); ?>">Home</a></li>
-	<?php wp_list_pages('title_li=&depth=-1&sort_column=ID'); ?>
-	<li><a href="<?php bloginfo('rss2_url'); ?>" class="rss">RSS</a></li>
-</ul>
+	<?php if (get_option('p2h_show_search') != '') { ?>
+	<div id="search-header">
+    	<?php get_search_form(); ?>
+	</div>
+	<?php } ?>
 
-<div class="clear"></div>
+	</div><!-- #header -->
+	
+	<div id="access">
+		<?php wp_nav_menu( array( 'menu' => 'Header Navigation', 'container_class' => 'menu-header', 'theme_location' => 'primary', 'theme_location' => 'primary-menu' ) ); ?>
+
+		<ul id="connect">	
+
+		<li>
+		<?php if (get_option('p2h_feedurl') != '') { ?>
+		<a class="feedicon" href="<?php echo( (get_option('p2h_feedurl'))); ?>" title="<?php _e('Subscribe ', 'undedicated'); ?><?php bloginfo('name'); ?><?php _e(' RSS Feed', 'undedicated'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/feed.png" alt="<?php _e(' RSS', 'undedicated'); ?>" /></a>
+		<?php } else { ?>
+		<a class="feedicon" href="<?php bloginfo('rss2_url'); ?>" title="<?php _e('Subscribe ', 'undedicated'); ?><?php bloginfo('name'); ?><?php _e(' RSS Feed', 'undedicated'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/feed.png" alt="<?php _e(' RSS', 'undedicated'); ?>" /></a>
+		<?php } ?>
+		</li>
+		
+		<?php if (get_option('p2h_twitterid') != '') { ?>
+		<li>
+		<a class="twittericon" href="http://twitter.com/<?php echo( get_option('p2h_twitterid') );?>" title="<?php _e('Follow ', 'undedicated'); ?><?php bloginfo('name'); ?><?php _e(' on Twitter', 'undedicated'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/twitter.png" alt="<?php _e('Twitter', 'undedicated'); ?>" /></a>
+		</li>
+		<?php } ?>
+
+		<?php if (get_option('p2h_facebookid') != '') { ?>
+		<li>
+		<a class="facebookicon" href="<?php echo(stripslashes (get_option('p2h_facebookid')));?>" title="<?php _e('Find ', 'undedicated'); ?><?php bloginfo('name'); ?><?php _e(' on Facebook', 'undedicated'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/facebook.png" alt="<?php _e('Facebook', 'undedicated'); ?>" /></a>
+		</li>
+		<?php } ?>
+		
+		</ul>
+		
+	</div><!-- #access -->
+		

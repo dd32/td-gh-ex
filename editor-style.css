@@ -1,0 +1,112 @@
+/*
+Theme Name: Undedicated
+Description: Used to style the TinyMCE editor.
+*/
+
+html .mceContentBody {
+	max-width: 600px;
+	font-family:"Trebuchet MS",Verdana,Arial,sans-serif;
+	font-size: 14px;
+	color: #444;
+	line-height:1.6;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+hr {
+	display: none;
+}
+
+img {
+	vertical-align: baseline;
+	border: 0;
+}
+
+p {
+	margin: 0 0 1.4em 0;
+
+}
+
+a {
+	color:#4789CA;
+	text-decoration:none;
+}
+
+a:hover {
+	color: #4789CA;
+	text-decoration: underline;
+}
+
+/*Typo Styles*/
+.intro, .intro1 {
+color:#666;
+font-size:18px;
+font-family:"Trebuchet MS",Arial,sans-serif;
+}
+.intro2 {
+color:#666;
+font-size:18px;
+font-family:Georgia, "Times New Roman", Serif;
+}
+.intro3{
+color:#444;
+font-size:20px;
+font-family:Georgia, "Times New Roman", Serif;
+}
+
+.capitalize{
+text-transform:capitalize;
+}
+
+.column{
+	clear:both;
+	margin-bottom:15px;
+}
+
+.column:after{
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.col1, .half, .half1 {
+width:48%;
+float:left;
+margin-bottom:1.4em;
+}
+
+.col2, .half2{
+width:48%;
+float:right;
+margin-bottom:1.4em;
+}
+
+.third, .third1, .third2{
+width:280px;
+float:left;
+margin-bottom:1.4em;
+margin-right:20px;
+}
+
+.third3{
+width:280px;
+float:right;
+margin-bottom:1.4em;
+}
+
+.quarter, .quarter1, .quarter2, .quarter3{
+	width:205px;
+	float:left;
+	margin-bottom:1.4em;
+	margin-right:20px;
+}
+.quarter4{
+width: 205px;
+float:right;
+margin-bottom:1.4em;
+}

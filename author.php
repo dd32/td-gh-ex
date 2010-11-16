@@ -1,47 +1,89 @@
 <?php get_header(); ?>
 
-	<div id="content_box">
-	<div id="content_body">
+	<div id="content" class="narrow">
 
 <?php
-if(isset($_GET['author_name'])) :
-$curauth = get_userdatabylogin($author_name);
-else :
-$curauth = get_userdata(intval($author));
-endif;
+	/* Queue the first post, that way we know who
+	 * the author is when we try to get their name,
+	 * URL, description, avatar, etc.
+	 *
+	 * We reset this later so we can run the loop
+	 * properly with a call to rewind_posts().
+	 */
+	if ( have_posts() )
+		the_post();
 ?>
-		<div class="navigation">
-			<div class="alignright"><?php next_post_link('%link','&laquo; Newer') ?></div>
-			<div class="alignleft"><?php previous_post_link('%link','Older  &raquo;') ?></div>
+	<h1 class="page-title"><?php printf( __('Author Archives: %s', 'undedicated'), "<span class='capitalize'>".get_the_author() ."</span>"  ); ?></h1>
+
+<?php
+// If a user has filled out their description, show a bio on their entries.
+if ( get_the_author_meta( 'description' ) ) : ?>
+					<div id="entry-author-info">
+						<div id="author-avatar">
+							<?php echo get_avatar( get_the_author_meta( 'user_email')); ?>
+						</div><!-- #author-avatar -->
+						<div id="author-description">
+							<h2><?php printf( __('About %s', 'undedicated'), "<span class='capitalize'>".get_the_author() ."</span>" ); ?></h2>
+							<?php the_author_meta( 'description' ); ?>
+						</div><!-- #author-description	-->
+					</div><!-- #entry-author-info -->
+<?php endif; ?>
+
+<?php
+	/* Since we called the_post() above, we need to
+	 * rewind the loop back to the beginning that way
+	 * we can run the loop properly, in full.
+	 */
+	rewind_posts();
+?>
+
+		<?php if ( have_posts() ) :?>
+		<?php while (have_posts()) : the_post(); ?>
+			
+		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<div class="post-header">
+				<h2><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+				<p><?php _e('By ','undedicated'); ?><?php the_author_posts_link(); ?> | <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_time('F j, Y') ?></a></p>
+			</div>
+			
+			<?php the_post_thumbnail(array( 150, 150 ), array( 'class' => 'alignleft' )); ?>
+			<?php the_excerpt(); ?>
+			<p><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( ); ?>" rel="bookmark"><?php _e('Read more', 'undedicated'); ?> &raquo;</a></p>
+			
+			<div class="post-meta">
+				<ul>
+					<?php the_tags( __('<li>Tags: ', 'undedicated'), ', ', '</li>'); ?>
+					<li>Posted in <?php the_category(', ');?> | <?php comments_popup_link( __('Leave your comment', 'undedicated'), __( '1 comment', 'undedicated'), __('% comments', 'undedicated')); ?></li>
+					<li><?php _e('Share on ', 'undedicated'); ?><a href="http://twitter.com/home?status=Currently reading: <?php the_title_attribute(); ?> <?php the_permalink(); ?>"><?php _e('Twitter','undedicated'); ?></a>, <a href="http://www.facebook.com/share.php?u=<?php the_permalink(); ?>&amp;t=<?php the_title_attribute(); ?>"><?php _e('Facebook', 'undedicated'); ?></a>, <a href="http://del.icio.us/post?v=4;url=<?php the_permalink(); ?>"><?php _e('Delicious', 'undedicated'); ?></a>, <a href="http://digg.com/submit?url=<?php the_permalink(); ?>"><?php _e('Digg', 'undedicated'); ?></a>, <a href="http://www.reddit.com/submit?url=<?php the_permalink(); ?>&amp;title=<?php the_title_attribute(); ?>"><?php _e('Reddit', 'undedicated'); ?></a></li>
+					<?php edit_post_link(__('Edit this post','undedicated'), '<li>', '</li>'); ?>
+				</ul>
+			</div>
 		</div>
 
-<div class="h2-title">About: <?php echo $curauth->nickname; ?></div>
+		<?php endwhile; ?>
+		
+		<?php if (show_posts_nav()) : ?>
+		
+		<div class="post-navigation">
+			<ul>
+				<li><?php next_posts_link( __('&laquo; Previous Page')) ?></li>
+				<li><?php previous_posts_link( __('Next Page &raquo;')) ?></li>
+			</ul>
+		</div>
+		
+		<?php endif; ?>
+		
+	<?php else : ?>
 
-<dl>
-<dt>Website</dt>
-<dd><a href="<?php echo $curauth->user_url; ?>"><?php echo $curauth->user_url; ?></a></dd>
-<dt>Profile</dt>
-<dd><?php echo $curauth->user_description; ?></dd>
-</dl>
-
-<h2>Posts by <?php echo $curauth->nickname; ?>:</h2>
-
-<ul>
-<!-- The Loop -->
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-  <li>
-<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link: <?php the_title(); ?>">
-<?php the_title(); ?></a>, 
-<?php the_time('d M Y'); ?> in <?php the_category('&');?>
-  </li>
-
-  <?php endwhile; else: ?>
-     <p><?php _e('No posts by this author.'); ?></p>
-
+		<h2 class="page-title"><?php _e('Not Found', 'undedicated'); ?></h2>
+		<p><?php _e('Sorry, but you are looking for something that is not here.', 'undedicated'); ?></p>
+		<?php get_search_form(); ?>
+	
 	<?php endif; ?>
-<!-- End Loop -->
-</ul>
-</div>
-<?php get_sidebar(); ?>
 
+	</div><!--#content-->
+	
+	<hr />
+	
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>
