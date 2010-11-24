@@ -58,6 +58,7 @@ and the modification Last X days by DJ Chuang www.djchuang.com
 		$bfa_pic_posts = $wpdb->get_results($bfa_pic_request);
 
 		if ($bfa_pic_posts) {
+			$widget_mdv_most_commented_per_cat = '';
 			foreach ($bfa_pic_posts as $bfa_pic_post) {
 				$bfa_pic_post_title = stripslashes($bfa_pic_post->post_title);
 				$bfa_pic_comment_count = $bfa_pic_post->comment_count;
@@ -84,7 +85,7 @@ and the modification Last X days by DJ Chuang www.djchuang.com
 
 	  // Fetch the options, check them and if need be, update the options array
 	  $bfa_pic_options = $bfa_pic_newoptions = get_option('widget_mdv_most_commented_per_cat');
-	  if ( $_POST["bfa_pic_src-submit"] ) {
+	  if ( isset($_POST["bfa_pic_src-submit"]) ) {
 	    $bfa_pic_newoptions['bfa_pic_title'] = strip_tags(stripslashes($_POST["bfa_pic_src-title"]));
 	    $bfa_pic_newoptions['bfa_pic_no_posts'] = (int) $_POST["bfa_pic_no_posts"];
 	    $bfa_pic_newoptions['bfa_pic_duration'] = (int) $_POST["bfa_pic_duration"];
@@ -126,11 +127,8 @@ and the modification Last X days by DJ Chuang www.djchuang.com
 <?php
 	 }
 	
-	// This registers our widget so it appears with the other available
-	// widgets and can be dragged and dropped into any active sidebars.
-	register_sidebar_widget('BFA Popular in Cat', 'widget_mdv_most_commented_per_cat');
-
-	// This registers our optional widget control form. Because of this
-	// our widget will have a button that reveals a 520x480 pixel form.
-	register_widget_control('BFA Popular in Cat', 'widget_mdv_most_commented_per_cat_control', 520, 480);
+	$widget_ops = array('classname' => 'widget_popular_in_cat', 'description' => __("Lists most commented posts of given category","atahualpa") );
+	$control_ops = array('width' => 600, 'height' => 500);
+	wp_register_sidebar_widget('popular_in_cat', __('BFA Popular in Cat','atahualpa'), 'widget_mdv_most_commented_per_cat', $widget_ops);
+	wp_register_widget_control('popular_in_cat',  __('BFA Popular in Cat','atahualpa'), 'widget_mdv_most_commented_per_cat_control', $control_ops);	
 ?>

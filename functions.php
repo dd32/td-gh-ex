@@ -1,5 +1,5 @@
 <?php
-$bfa_ata_version = "3.5.2";
+$bfa_ata_version = "3.5.4";
 
 // Load translation file 
 load_theme_textdomain('atahualpa');
@@ -14,7 +14,7 @@ load_theme_textdomain('atahualpa');
 include_once (TEMPLATEPATH . '/functions/bfa_theme_options.php');
 // Load options
 include_once (TEMPLATEPATH . '/functions/bfa_get_options.php');
-
+list($bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2, $bfa_ata['h_blogtitle'], $bfa_ata['h_posttitle']) = bfa_get_options();
 // Sidebars:
 if ( function_exists('register_sidebar') ) {
 	register_sidebar(array(
@@ -48,7 +48,8 @@ if ( function_exists('register_sidebar') ) {
 			
 	// Register additional extra widget areas:
 	# $bfa_ata_extra_widget_areas = get_option('bfa_widget_areas');
-	$bfa_ata_extra_widget_areas = $bfa_ata['bfa_widget_areas'];
+	if(isset($bfa_ata['bfa_widget_areas'])) $bfa_ata_extra_widget_areas = $bfa_ata['bfa_widget_areas'];
+	else $bfa_ata_extra_widget_areas = '';
 	
 	if ($bfa_ata_extra_widget_areas != '') {
 		foreach ($bfa_ata_extra_widget_areas as $widget_area) { 
@@ -88,6 +89,13 @@ if (!function_exists('json_decode')) {
 	function json_encode($data) { $json = new Services_JSON(); return( $json->encode($data) ); }
 	function json_decode($data) { $json = new Services_JSON(); return( $json->decode($data) ); }
 }
+function toArray($data) {
+    if (is_object($data)) $data = get_object_vars($data);
+    return is_array($data) ? array_map(__FUNCTION__, $data) : $data;
+}
+
+// Since 3.5.4:
+add_theme_support('automatic-feed-links');
 
 // old, propretiary bodyclasses() of Atahualpa. Usage: bodyclasses()
 // include_once (TEMPLATEPATH . '/functions/bfa_bodyclasses.php');
@@ -146,7 +154,7 @@ function remove_featured_gallery_scripts() {
 }
 add_action('init','remove_featured_gallery_scripts', 1);
 function addscripts_featured_gallery() {
-	if(!function_exists(gallery_styles)) return;
+	if(!function_exists('gallery_styles')) return;
 	gallery_styles();
 }
 add_action('wp_head', 'addscripts_featured_gallery', 12);
@@ -246,7 +254,7 @@ function bfa_css_js_redirect() {
 	}
 	// Since 3.4.7: Import/Export Settings
 	if ( $bfa_ata_query_var_file == "settings-download" ) {
-			$uploadedfile = $_FILES['userfile'];
+			if(isset($_FILES['userfile'])) $uploadedfile = $_FILES['userfile'];
 			include_once (TEMPLATEPATH . '/download.php');
 			exit; // this stops WordPress entirely
 	}
@@ -554,14 +562,15 @@ function bfa_html_inserts($custom_code) {
 }
 
 /* CUSTOM BODY TITLE and meta title, meta keywords, meta description */
+if(isset($bfa_ata['page_post_options'])) {
+	if ($bfa_ata['page_post_options'] == "Yes") {
+	/* Use the admin_menu action to define the custom boxes */
+		if (is_admin())
+		add_action('admin_menu', 'bfa_ata_add_custom_box');
 
-if ($bfa_ata['page_post_options'] == "Yes") {
-/* Use the admin_menu action to define the custom boxes */
-	if (is_admin())
-	add_action('admin_menu', 'bfa_ata_add_custom_box');
-
-	/* Use the save_post action to do something with the data entered */
-	add_action('save_post', 'bfa_ata_save_postdata');
+		/* Use the save_post action to do something with the data entered */
+		add_action('save_post', 'bfa_ata_save_postdata');
+	}
 }
 
 /* Use the publish_post action to do something with the data entered */
@@ -597,7 +606,8 @@ function bfa_ata_inner_custom_box() {
   
   	$thePostID = $post->ID;
 	$post_id = get_post($thePostID);
-	$title = $post_id->post_title;
+#	$title = $post_id->post_title;
+	$title = ($post_id->post_title !== 'Auto Draft') ? $post_id->post_title : '';
 
 	$body_title = get_post_meta($post->ID, 'bfa_ata_body_title', true);
 	if ( $body_title == '' ) {
@@ -772,13 +782,27 @@ if (!function_exists('file_get_contents')) {
 }
 
 // Since 3.5.2: New menu system in WP 3
+if (function_exists('register_nav_menus')) {
 add_action( 'init', 'register_new_menus' );
-function register_new_menus() {
-	register_nav_menus(
-		array(
-			'menu1' => __( 'Menu 1' ),
-			'menu2' => __( 'Menu 2' )
-		)
-	);
+	function register_new_menus() {
+		register_nav_menus(
+			array(
+				'menu1' => __( 'Menu 1' ),
+				'menu2' => __( 'Menu 2' )
+			)
+		);
+	}
+}
+
+// Since 3.5.4: Add odd/even class to WP's post_class
+add_filter ( 'post_class' , 'bfa_post_class' );
+global $current_class;
+$current_class = 'odd';
+
+function bfa_post_class ( $classes ) {
+	global $current_class;
+	$classes[] = $current_class;
+	$current_class = ($current_class == 'odd') ? 'even' : 'odd';
+	return $classes;
 }
 ?>

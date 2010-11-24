@@ -1,5 +1,6 @@
 <?php
 function widget_bfa_subscribe($args) {
+	global $bfa_ata;
 	extract($args);
 	$options = get_option('widget_bfa_subscribe');
 	$title = apply_filters('widget_title', $options['title']);
@@ -50,13 +51,13 @@ onfocus="this.value='';" />
 </td></tr>
 <tr>
 <td  class="post-text" colspan="2"><p>
-<a href="<?php echo get_bloginfo('rss2_url'); ?>"<?php if ($bfa_ata_nofollow == "Yes") { ?> rel="nofollow"<?php } ?>>
+<a href="<?php echo get_bloginfo('rss2_url'); ?>"<?php if ($bfa_ata['nofollow'] == "Yes") { ?> rel="nofollow"<?php } ?>>
 <img src="<?php echo get_bloginfo('template_directory'); ?>/images/post-feed.gif" style="float:left; margin: 0 7px 3px 0" alt="" /></a><?php echo $posts_text; ?></p>
 </td>
 </tr>
 <tr>
 <td class="comment-text" colspan="2"><p>
-<a href="<?php echo get_bloginfo('comments_rss2_url'); ?>"<?php if ($cur_opt['bfa_ata_nofollow'] == "Yes") { ?> rel="nofollow"<?php } ?>>
+<a href="<?php echo get_bloginfo('comments_rss2_url'); ?>"<?php if ($bfa_ata['nofollow'] == "Yes") { ?> rel="nofollow"<?php } ?>>
 <img src="<?php echo get_bloginfo('template_directory'); ?>/images/comment-feed.gif" style="float:left; margin: 0 7px 3px 0" alt="" /></a><?php echo $comments_text; ?></p>
 </td>
 </tr>
@@ -67,7 +68,7 @@ onfocus="this.value='';" />
 }
 function widget_bfa_subscribe_control() {
 	$options = $newoptions = get_option('widget_bfa_subscribe');
-	if ( $_POST["subscribe-submit"] ) {
+	if ( isset($_POST["subscribe-submit"]) ) {
 		$newoptions['title'] = strip_tags(stripslashes($_POST["subscribe-title"]));
 		
 		$newoptions['field-text'] = strip_tags(stripslashes($_POST["feedburner-email-field-text"]));
@@ -90,14 +91,14 @@ function widget_bfa_subscribe_control() {
 		$options = $newoptions;
 		update_option('widget_bfa_subscribe', $options);
 	}
-	$title = attribute_escape($options['title']);
+	$title = esc_attr($options['title']);
 	$email_text = format_to_edit($options['email-text']);
-	$field_text = attribute_escape($options['field-text']);
-	$submit_text = attribute_escape($options['submit-text']);
+	$field_text = esc_attr($options['field-text']);
+	$submit_text = esc_attr($options['submit-text']);
 	$posts_text = format_to_edit($options['posts-text']);
 	$comments_text = format_to_edit($options['comments-text']);
-	$id = attribute_escape($options['id']);
-	$google_or_feedburner = attribute_escape($options['google-or-feedburner']);
+	$id = esc_attr($options['id']);
+	$google_or_feedburner = esc_attr($options['google-or-feedburner']);
 	if ( $google_or_feedburner == "" ) { $google_or_feedburner = "google"; }
 ?>
 <p><label for="subscribe-title">Optional: Title:</label>

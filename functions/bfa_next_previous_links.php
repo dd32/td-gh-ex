@@ -9,48 +9,8 @@ function show_posts_nav() {
 }
 
 
-global $bfa_ata;
-
-/* if this is a multi post page, and a "home" link is set for the next/prev
-   navigation on multi post pages, figure out if we are on the blog homepage,
-   and remove the "home" link from the next/prev navigation if true */
-
-if ( !is_single() AND !is_page() AND $bfa_ata['home_multi_next_prev'] != '' ) {
-
-	ob_start();
-		echo '<div class="home"><a href="'; bloginfo('url'); echo '/">' . 
-		$bfa_ata['home_multi_next_prev'] . '</a></div>'; 
-		$nav_home_div_on = ob_get_contents(); 
-	ob_end_clean();
-	
-	// for WP 2.5 and newer
-	if ( function_exists('is_front_page') ) {
-
-		// make sure this is the real homepage and not a subsequent page
-		if ( is_front_page() AND !is_paged() ) {
-			$nav_home_add = ""; $nav_home_div = ""; 
-		} else {
-			$nav_home_add = '-home';
-			$nav_home_div = $nav_home_div_on; 
-		}
-	} 
-	
-	/* For WP 2.3 and older: Make sure this is the real homepage
-       and not a subsequent page */
-	elseif ( is_home() AND !is_paged() ) {
-		$nav_home_add = ""; $nav_home_div = "";
-	} else { 
-		$nav_home_add = '-home'; 
-		$nav_home_div = $nav_home_div_on; 
-	}
-	
-}
-
-
-
-
 // Home link for next/prev on single pages
-
+/*
 if ( is_single() ) {
 
 	if ( $bfa_ata['home_single_next_prev'] != '' ) {
@@ -68,7 +28,7 @@ if ( is_single() ) {
 
 	}
 }
-
+*/
 
 
 
@@ -96,6 +56,39 @@ global $bfa_ata;
 
 		} else {
 
+			if($bfa_ata['home_multi_next_prev'] != '') { 
+				ob_start();
+					echo '<div class="home"><a href="'; bloginfo('url'); echo '/">' . 
+					$bfa_ata['home_multi_next_prev'] . '</a></div>'; 
+					$nav_home_div_on = ob_get_contents(); 
+				ob_end_clean();
+				
+				// for WP 2.5 and newer
+				if ( function_exists('is_front_page') ) {
+
+					// make sure this is the real homepage and not a subsequent page
+					if ( is_front_page() AND !is_paged() ) {
+						$nav_home_add = ""; $nav_home_div = ""; 
+					} else {
+						$nav_home_add = '-home';
+						$nav_home_div = $nav_home_div_on; 
+					}
+				} 
+				
+				/* For WP 2.3 and older: Make sure this is the real homepage
+				   and not a subsequent page */
+				elseif ( is_home() AND !is_paged() ) {
+					$nav_home_add = ""; $nav_home_div = "";
+				} else { 
+					$nav_home_add = '-home'; 
+					$nav_home_div = $nav_home_div_on; 
+				}	
+			} else {
+					$nav_home_add = ''; 
+					$nav_home_div = ''; 
+			}
+		
+		
 			echo '<div class="clearfix navigation-'.strtolower($location).'">
 			<div class="older' . $nav_home_add . '">';
 

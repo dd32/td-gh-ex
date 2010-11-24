@@ -5,20 +5,24 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 <?php /* if index.php or another page template (copied from index.php) was not used
 (i.e. by a plugin such as WPG2), the global $bfa_ata would be empty */
-global $bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2; 
-// if ($bfa_ata == "") include_once (TEMPLATEPATH . '/functions/bfa_get_options.php'); ?>
+// global $bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2; 
+// if ($bfa_ata == "") include_once (TEMPLATEPATH . '/functions/bfa_get_options.php'); 
+if (!isset($bfa_ata))  
+list($bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2, $bfa_ata['h_blogtitle'], $bfa_ata['h_posttitle']) = bfa_get_options();
+?>
 <?php if ( $bfa_ata['css_external'] == "External" ) { ?>
 <link rel="stylesheet" href="<?php bloginfo('url'); ?>/?bfa_ata_file=css" type="text/css" media="all" />
 <?php } ?>
 <?php include (TEMPLATEPATH . '/functions/bfa_meta_tags.php'); ?>
 <?php if ($bfa_ata['favicon_file'] != "") { ?><link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/images/favicon/<?php echo $bfa_ata['favicon_file']; ?>" /><?php } ?>
 <?php if ( is_single() OR is_page() ) { ?><link rel="canonical" href="<?php the_permalink(); ?>" /><?php } ?>
+<link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 <link rel="alternate" type="application/atom+xml" title="<?php bloginfo('name'); ?> Atom Feed" href="<?php bloginfo('atom_url'); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <?php wp_enqueue_script( 'jquery' ); ?>
+<?php wp_head(); // moved this down in 3.5.4 ?>
 <?php if ( function_exists('wp_list_comments') AND is_singular() ) { 	wp_enqueue_script( 'comment-reply' ); } ?>
-<?php wp_head(); ?>
 <?php bfa_html_inserts($bfa_ata['html_inserts_header']); ?>
 <?php if ($bfa_ata['pngfix_selectors'] != "") { ?>
 <!--[if IE 6]>
@@ -30,19 +34,7 @@ global $bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2;
 $bfa_ata['header_image_javascript'] != "0" AND $bfa_ata['crossslide_fade'] != "0") { ?>
 <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery.cross-slide.js"></script>
 <?php } ?>
-<?php if ( ($bfa_ata['animate_page_menu_bar'] == "Yes" AND strpos($bfa_ata['configure_header'],'%page')!== FALSE ) OR 
-( $bfa_ata['animate_cat_menu_bar'] == "Yes" AND strpos($bfa_ata['configure_header'],'%cat')!== FALSE ) ) { ?>
-<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/mootools-for-dropdown.js"></script>
-<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/UvumiDropdown-compressed.js"></script>
-<script type="text/javascript">
-<?php if ( $bfa_ata['animate_cat_menu_bar'] == "Yes" AND strpos($bfa_ata['configure_header'],'%cat')!== FALSE ) { ?>
-var myMenu = new UvumiDropdown("rmenu",{ closeDelay:200});
-<?php } ?>
-<?php if ($bfa_ata['animate_page_menu_bar'] == "Yes" AND strpos($bfa_ata['configure_header'],'%page')!== FALSE) { ?>
-var myMenu2 = new UvumiDropdown("rmenu2",{ closeDelay:200});
-<?php } ?>
-</script>
-<?php } ?>
+
 </head>
 <body <?php body_class(); ?><?php if ($bfa_ata['html_inserts_body_tag'] != "") { echo ' '; bfa_html_inserts($bfa_ata['html_inserts_body_tag']); } ?>>
 <?php bfa_html_inserts($bfa_ata['html_inserts_body_top']); ?>

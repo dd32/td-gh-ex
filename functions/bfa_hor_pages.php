@@ -3,8 +3,11 @@ function bfa_hor_pages($sort_order = "menu_order", $levels = "", $titles = "No",
 	
 	global $bfa_ata;
 
-	$list_pages_string = wp_list_pages('sort_column=' . $sort_order . '&title_li=&depth=' . $levels . '&exclude=' . trim(str_replace(" ", "", $exclude)) . '&echo=0');
+	$list_pages_string = wp_list_pages('sort_column=' . $sort_order . '&title_li=&depth=' . $levels . '&exclude=' . trim(str_replace(" ", "", 
+	$exclude)) . '&echo=0');
 	
+	$list_pages_string = preg_replace("/<ul class='children'/","<ul",$list_pages_string);
+
 	if ( $bfa_ata['page_menu_1st_level_not_linked'] == "Yes" ) {
 		$list_pages_string = preg_replace("/<li class=\"(.*?)><a href=\"(.*?)\"(.*?)\n<ul>/i","<li class=\"rMenu-expand \\1><a href=\"#\" onclick=\"return false\"\\3\n <ul class=\"rMenu-ver\">",$list_pages_string);
 	} else {

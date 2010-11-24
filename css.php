@@ -1,14 +1,15 @@
 <?php 
-global $bfa_ata; 
-if ($bfa_ata == "") include_once (TEMPLATEPATH . '/functions/bfa_get_options.php'); 
-if ( $bfa_ata_preview == 1 OR $bfa_ata['css_external'] == "Inline" OR 
-( $bfa_ata_debug == 1 AND $bfa_ata['allow_debug'] == "Yes" ) ) {
+#list($bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2, $bfa_ata['h_blogtitle'], $bfa_ata['h_posttitle']) = bfa_get_options();
+# global $bfa_ata; 
+#if ($bfa_ata == "") include_once (TEMPLATEPATH . '/functions/bfa_get_options.php'); 
+if ( isset($bfa_ata_preview) OR $bfa_ata['css_external'] == "Inline" OR 
+( isset($bfa_ata_debug) AND $bfa_ata['allow_debug'] == "Yes" ) ) {
 	echo '<style type="text/css">'; 
 } else { 
 	header("Content-type: text/css"); 
 }
 if ( $bfa_ata['css_compress'] == "Yes" AND 
-!( $bfa_ata_debug == 1 AND $bfa_ata['allow_debug'] == "Yes" ) ) {
+!( isset($bfa_ata_debug) AND $bfa_ata['allow_debug'] == "Yes" ) ) {
 	ob_start("bfa_compress_css");
 }
 
@@ -306,7 +307,7 @@ a.comments-icon {
 	}
 
 a.comments-icon:link,
-a.commentss-icon:active,
+a.comments-icon:active,
 a.comments-icon:visited {
 	background: transparent url(<?php bloginfo('template_directory'); ?>/images/comment-gray.png) no-repeat scroll center left;
 }
@@ -642,6 +643,9 @@ div.widget ul li ul li ul li.sfhover {
 	border-left: solid <?php echo $bfa_ata['widget_lists3']['link-border-left-width']; ?>px #<?php echo $bfa_ata['widget_lists3']['link-border-left-hover-color']; ?>; 
 	}
 	
+div.widget td a:link,
+div.widget td a:visited,
+div.widget td a:active,
 div.widget ul li a:link, 
 div.widget ul li a:visited, 
 div.widget ul li a:active {
@@ -2157,6 +2161,7 @@ ul.rMenu-hRight li {
 				   elements floated to get them over there */
 	}
 	
+ul.sub-menu li,
 ul.rMenu-ver li {
 	float: none;		/* clear this so vertical sub-menus that are
 				   children of horizontal menus won't have
@@ -2170,10 +2175,14 @@ strpos($bfa_ata['configure_header'],'%page-right')!==FALSE OR
 strpos($bfa_ata['configure_header'],'%cats')!==FALSE OR 
 strpos($bfa_ata['configure_header'],'%cat-center')!==FALSE OR 
 strpos($bfa_ata['configure_header'],'%cat-right')!==FALSE) { ?>
+div#menu1 ul.sub-menu, 
+div#menu1 ul.sub-menu ul,
 div#menu1 ul.rMenu-ver, 
 div#menu1 ul.rMenu-ver ul {
 	width: <?php echo $bfa_ata['page_menu_submenu_width']; ?>em;	
 	}
+div#menu2 ul.sub-menu, 
+div#menu2 ul.sub-menu ul,
 div#menu2 ul.rMenu-ver, 
 div#menu2 ul.rMenu-ver ul {
 	width: <?php echo $bfa_ata['cat_menu_submenu_width']; ?>em;	
@@ -2254,6 +2263,7 @@ ul.rMenu-hor ul ul {
 	margin-left: 0px;
 	}
 	
+ul.sub-menu ul,
 ul.rMenu-ver ul {
 	/*left: 60%;*/
 	left: 100%;
@@ -2266,6 +2276,7 @@ ul.rMenu-ver ul {
 	}
 	
 ul.rMenu-vRight ul, 
+ul.rMenu-hRight ul.sub-menu ul,
 ul.rMenu-hRight ul.rMenu-ver ul {
 	left: -100%;
 	right: auto;
@@ -2337,6 +2348,7 @@ ul.rMenu-hor {
 				   the above negative margin. */
 	}
 	
+ul.sub-menu li,
 ul.rMenu-ver li {
 	margin-left: 0;
 	margin-top: -1px;	/* same thing above except for vertical
@@ -2344,9 +2356,11 @@ ul.rMenu-ver li {
 				   
 	}
 	
+div#menu1 ul.sub-menu,
 div#menu1 ul.rMenu-ver {
 	border-top: <?php echo $bfa_ata['anchor_border_page_menu_bar']; ?>;	
 	}
+div#menu2 ul.sub-menu,
 div#menu2 ul.rMenu-ver {
 	border-top: <?php echo $bfa_ata['anchor_border_cat_menu_bar']; ?>;	
 	}
@@ -2415,6 +2429,10 @@ div#menu2 ul.rMenu li.sfhover {
 	}
 
 /* "current" page and hover, first part old version */
+div#menu1 ul.rMenu li.current-menu-item > a:link, 
+div#menu1 ul.rMenu li.current-menu-item > a:active, 
+div#menu1 ul.rMenu li.current-menu-item > a:hover, 
+div#menu1 ul.rMenu li.current-menu-item > a:visited,
 div#menu1 ul.rMenu li.current_page_item > a:link, 
 div#menu1 ul.rMenu li.current_page_item > a:active, 
 div#menu1 ul.rMenu li.current_page_item > a:hover, 
@@ -2423,6 +2441,10 @@ div#menu1 ul.rMenu li.current_page_item > a:visited {
 	color: #<?php echo $bfa_ata['page_menu_bar_link_color_hover']; ?>;
 	}
 /* First 4 lines For IE6:*/
+div#menu1 ul.rMenu li.current-menu-item a:link, 
+div#menu1 ul.rMenu li.current-menu-item a:active, 
+div#menu1 ul.rMenu li.current-menu-item a:hover, 
+div#menu1 ul.rMenu li.current-menu-item a:visited, 
 div#menu1 ul.rMenu li.current_page_item a:link, 
 div#menu1 ul.rMenu li.current_page_item a:active, 
 div#menu1 ul.rMenu li.current_page_item a:hover, 
@@ -2431,6 +2453,10 @@ div#menu1 ul.rMenu li a:hover {
 	background-color: #<?php echo $bfa_ata['page_menu_bar_background_color_hover']; ?>;
 	color: #<?php echo $bfa_ata['page_menu_bar_link_color_hover']; ?>;
 	}
+div#menu2 ul.rMenu li.current-menu-item > a:link, 
+div#menu2 ul.rMenu li.current-menu-item > a:active, 
+div#menu2 ul.rMenu li.current-menu-item > a:hover, 
+div#menu2 ul.rMenu li.current-menu-item > a:visited,
 div#menu2 ul.rMenu li.current-cat > a:link, 
 div#menu2 ul.rMenu li.current-cat > a:active, 
 div#menu2 ul.rMenu li.current-cat > a:hover, 
@@ -2439,6 +2465,10 @@ div#menu2 ul.rMenu li.current-cat > a:visited {
 	color: #<?php echo $bfa_ata['cat_menu_bar_link_color_hover']; ?>;
 	}
 /* First 4 lines For IE6:*/
+div#menu2 ul.rMenu li.current-menu-item a:link, 
+div#menu2 ul.rMenu li.current-menu-item a:active, 
+div#menu2 ul.rMenu li.current-menu-item a:hover, 
+div#menu2 ul.rMenu li.current-menu-item a:visited, 
 div#menu2 ul.rMenu li.current-cat a:link, 
 div#menu2 ul.rMenu li.current-cat a:active, 
 div#menu2 ul.rMenu li.current-cat a:hover, 
@@ -2564,6 +2594,7 @@ ul#rmenu2 li ul li a {
 	white-space: normal; /* reset nowrap for sub levels. They should wrap if required */
 }
 
+ul#rmenu2 ul.sub-menu,
 ul#rmenu2 ul.rMenu-ver {
 	text-align: left; /* because the parent container, the table's TD has align="center" */
 }
@@ -2589,6 +2620,7 @@ ul#rmenu li ul li a {
 	white-space: normal; /* reset nowrap for sub levels. They should wrap if required */
 }
 
+ul#rmenu ul.sub-menu,
 ul#rmenu ul.rMenu-ver {
 	text-align: left; /* because the parent container, the table's TD has align="center" */
 }
@@ -2651,7 +2683,9 @@ ul.rMenu ul {
 				   menu itself. */
 	}
 	
+* html ul.sub-menu li,
 * html ul.rMenu-ver li,
+* html ul.rMenu-hor li ul.sub-menu li,
 * html ul.rMenu-hor li ul.rMenu-ver li {
 				/* the second selector above is there 
 				   because of problems IE/Mac has with 
@@ -2668,6 +2702,7 @@ ul.rMenu ul {
 				   because we need a width of 100% on floats. */
 	}
 	
+*:first-child+html ul.sub-menu > li,	
 *:first-child+html ul.rMenu-ver > li	/* hide from IE5.0 because 
 										it gets confused by this 
 										selector */
@@ -2718,8 +2753,10 @@ ul.rMenu li a {
 	
 * html ul.rMenu ul,
 * html ul.rMenu-hor ul,
+* html ul.sub-menu ul,
 * html ul.rMenu-ver ul,
 * html ul.rMenu-vRight ul, 
+* html ul.rMenu-hRight ul.sub-menu ul,
 * html ul.rMenu-hRight ul.rMenu-ver ul,
 * html ul.rMenu-hRight ul {
 	left: -10000px;		/* move menus off screen. note we're ovewriting
@@ -2760,6 +2797,7 @@ ul.rMenu li a {
 	}
 
 	
+* html ul.sub-menu li.sfhover ul,
 * html ul.rMenu-ver li.sfhover ul {
 	left: 100%;		/* dropdown positioning uses the left attribute
 				   for horizontal positioning. however we can't
@@ -2777,6 +2815,7 @@ ul.rMenu li a {
 	
 	
 * html ul.rMenu-vRight li.sfhover ul, 
+* html ul.rMenu-hRight ul.sub-menu li.sfhover ul,
 * html ul.rMenu-hRight ul.rMenu-ver li.sfhover ul {
 	left: -100%;		/* ^ ditto ^ */
 	}
@@ -2860,7 +2899,9 @@ ul.rMenu ul
 							   as the background color his covered by the
 							   menu itself. */
 }
+* html ul.sub-menu li,
 * html ul.rMenu-ver li,
+* html ul.rMenu-hor li ul.sub-menu li,
 * html ul.rMenu-hor li ul.rMenu-ver li
 {
 					/* the second selector above is there 
@@ -2877,7 +2918,8 @@ ul.rMenu ul
 					   note that this also triggers hasLayout 
 					   because we need a width of 100% on floats. */
 }
-*:first-child+html ul.rMenu-ver > li:hover ul/* hide from IE5.0 because it gets confused by this selector */
+*:first-child+html ul.sub-menu > li:hover ul,
+*:first-child+html ul.rMenu-ver > li:hover ul /* hide from IE5.0 because it gets confused by this selector */
 {
 	min-width: 0;	/* this fixes a similar problem as described in the
 					   rule set that exists in IE7 (and later?). However
@@ -2956,8 +2998,10 @@ html:/* */not([lang*=""])  div.rMenu-center ul.rMenu li a:hover {
 }
 * html ul.rMenu ul,
 * html ul.rMenu-hor ul,
+* html ul.sub-menu ul,
 * html ul.rMenu-ver ul,
 * html ul.rMenu-vRight ul,
+* html ul.rMenu-hRight ul.sub-menu ul,
 * html ul.rMenu-hRight ul.rMenu-ver ul,
 * html ul.rMenu-hRight ul
 {
@@ -2989,6 +3033,7 @@ html:/* */not([lang*=""])  div.rMenu-center ul.rMenu li a:hover {
 	display: block;		/* ^ ditto ^ */
 }
 
+* html ul.sub-menu li.sfhover ul,
 * html ul.rMenu-ver li.sfhover ul
 {
 	left: 60%;		/* dropdown positioning uses the left attribute
@@ -3005,6 +3050,7 @@ html:/* */not([lang*=""])  div.rMenu-center ul.rMenu li a:hover {
 				 */
 }
 * html ul.rMenu-vRight li.sfhover ul,
+* html ul.rMenu-hRight ul.sub-menu li.sfhover ul
 * html ul.rMenu-hRight ul.rMenu-ver li.sfhover ul
 {
 	left: -60%;		/* ^ ditto ^ */
@@ -3103,11 +3149,11 @@ Also, adding height and font-size for IE6 */
 <?php 
 bfa_html_inserts($bfa_ata['html_inserts_css']); 
 if ( $bfa_ata['css_compress'] == "Yes" AND 
-!( $bfa_ata_debug == 1 AND $bfa_ata['allow_debug'] == "Yes" ) ) {
+!( isset($bfa_ata_debug) AND $bfa_ata['allow_debug'] == "Yes" ) ) {
 	ob_end_flush();
 }	
-if ( $bfa_ata_preview == 1 OR $bfa_ata['css_external'] == "Inline" OR 
-( $bfa_ata_debug == 1 AND $bfa_ata['allow_debug'] == "Yes" ) ) {
+if ( isset($bfa_ata_preview) OR $bfa_ata['css_external'] == "Inline" OR 
+( isset($bfa_ata_debug) AND $bfa_ata['allow_debug'] == "Yes" ) ) {
 	echo "</style>\n"; 
 }
 ?>

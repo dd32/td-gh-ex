@@ -1,18 +1,15 @@
 <?php 
-# global $bfa_ata; if ($bfa_ata == "") include_once (TEMPLATEPATH . '/functions/bfa_get_options.php'); 
-if ( isset($bfa_ata_preview) OR $bfa_ata['javascript_external'] == "Inline" OR 
-( isset($bfa_ata_debug) AND $bfa_ata['allow_debug'] == "Yes" ) ) {
+global $bfa_ata; if ($bfa_ata == "") include_once (TEMPLATEPATH . '/functions/bfa_get_options.php'); 
+if ( $bfa_ata_preview == 1 OR $bfa_ata['javascript_external'] == "Inline" OR 
+( $bfa_ata_debug == 1 AND $bfa_ata['allow_debug'] == "Yes" ) ) {
 	echo '<script type="text/javascript">'; 
 } else { 
 	header("Content-type: application/x-javascript"); 
 }
-// Currently not used. Enable in bfa_theme_options as well
-/*
 if ( $bfa_ata['javascript_compress'] == "Yes" AND 
 !( $bfa_ata_debug == 1 AND $bfa_ata['allow_debug'] == "Yes" ) ) {
 	ob_start("bfa_compress_js");
 }
-*/
 
 function bfa_compress_js($buffer) {
 	/* remove comments */
@@ -64,32 +61,13 @@ $bfa_ata['header_image_javascript'] != "0" AND $bfa_ata['crossslide_fade'] == "0
 <?php } ?>
 
 
+
 /* JQUERY */
-jQuery(document).ready(function(){ 
-<?php if ( $bfa_ata['animate_page_menu_bar'] == "Yes" AND strpos($bfa_ata['configure_header'],'%page')!== FALSE ) { ?>
-  jQuery("#rmenu2 li.rMenu-expand").hover(function(){
-    jQuery(this).find('ul.rMenu-ver:first').css({"display":"block","position":"absolute"});
-    jQuery(this).find('ul.rMenu-ver:first li').css({"display":"none"}).slideDown(500);	
-  },function() {
-    jQuery(this).find('ul.rMenu-ver:first').css("display","block");
-    jQuery(this).find('ul.rMenu-ver:first li').css("display","block").slideUp(300);
-	jQuery(this).find('ul.rMenu-ver:first').slideUp(300);
-   });
-<?php } ?>    
-   
-<?php if ( $bfa_ata['animate_cat_menu_bar'] == "Yes" AND strpos($bfa_ata['configure_header'],'%cat')!== FALSE ) { ?>
-  jQuery("#rmenu li.rMenu-expand").hover(function(){
-    jQuery(this).find('ul.rMenu-ver:first').css({"display":"block","position":"absolute"});
-    jQuery(this).find('ul.rMenu-ver:first li').css({"display":"none"}).slideDown(500);	
-  },function() {
-    jQuery(this).find('ul.rMenu-ver:first').css("display","block");
-    jQuery(this).find('ul.rMenu-ver:first li').css("display","block").slideUp(300);
-	jQuery(this).find('ul.rMenu-ver:first').slideUp(300);
-   });
-<?php } ?>
-  
+jQuery(document).ready(function(){  
+
 <?php if (strpos($bfa_ata['configure_header'],'%image')!== FALSE AND 
 $bfa_ata['header_image_javascript'] != "0" AND $bfa_ata['crossslide_fade'] != "0") { ?>
+
 	jQuery('div#imagecontainer')
 	.crossSlide({sleep: <?php echo $bfa_ata['header_image_javascript']; ?>,fade: <?php echo $bfa_ata['crossslide_fade']; ?>},[
 		{ src: <?php echo implode( " },\n{ src: ", bfa_rotating_header_images() ); ?> }
@@ -269,15 +247,12 @@ $bfa_ata['header_image_javascript'] != "0" AND $bfa_ata['crossslide_fade'] != "0
 #if ( function_exists('wp_list_comments') AND $bfa_ata['include_wp_comment_reply_js'] == "Yes" ) 
 #	include (ABSPATH . '/wp-includes/js/comment-reply.js'); 
 
-// Currently not used. Enable in bfa_theme_options as well
-/*
 if ( $bfa_ata['javascript_compress'] == "Yes" AND 
 !( $bfa_ata_debug == 1 AND $bfa_ata['allow_debug'] == "Yes" ) ) {
 	ob_end_flush(); 
 }
-*/
-if ( isset($bfa_ata_preview) OR $bfa_ata['javascript_external'] == "Inline" OR 
-( isset($bfa_ata_debug) AND $bfa_ata['allow_debug'] == "Yes" ) ) {
+if ( $bfa_ata_preview == 1 OR $bfa_ata['javascript_external'] == "Inline" OR 
+( $bfa_ata_debug == 1 AND $bfa_ata['allow_debug'] == "Yes" ) ) {
 	echo "</script>\n"; 
 }
 ?>

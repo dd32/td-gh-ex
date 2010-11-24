@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Dump template
+// Templddate Name: Dump template
 */
  ?>
 <?php // Do not delete these lines ?>

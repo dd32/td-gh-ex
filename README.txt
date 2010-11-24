@@ -1,4 +1,4 @@
-Wordpress Theme "Atahualpa" version 3.4
+Wordpress Theme "Atahualpa" version 3.5.4
 
 VISIT THE SUPPORT FORUMS AT http://forum.bytesforall.com/
 
@@ -28,7 +28,7 @@ You can now check out the new version. If something is wrong, you can simply go 
 
 #####################################################################
 
-1. Extract the file "atahualpa34.zip", "atahualpa.zip" or similar 
+1. Extract the file "atahualpa353.zip", "atahualpa.zip" or similar 
 on your desktop computer, i.e. with WinZip or 7-zip
 
 This will create a directory named atahualpa (or atahualpaXX) with many 
@@ -39,16 +39,16 @@ From now on we'll call this directory "atahualpa" although it might be
 
 #####################################################################
 
-2. Upload the complete folder "atahualpa" with all its contents to
+2. Upload the complete folder "atahualpa354" with all its contents to
 your web hosting account to the directory
 /your wordpress-install/wp-content/themes/
 so the final destination of the "atahualpa" folder becomes:
-/your wordpress-install/wp-content/themes/atahualpa/
+/your wordpress-install/wp-content/themes/atahualpa354/
 You will need a "FTP Client" Software for this
 
 #####################################################################
 
-3. Activate Atahualpa3 by clicking on its name or screenshot at:
+3. Activate Atahualpa by clicking on its name or screenshot at:
 
 WP 2.3 and older: 
 Your Blog -> Site Admin -> Presentation -> Themes
@@ -170,7 +170,7 @@ Get Recent Comments
 http://wordpress.org/extend/plugins/get-recent-comments/
 
 
-Additionally, Atahualpa3 has been tested with
+Additionally, Atahualpa has been tested with
 
 Akismet
 http://wordpress.org/extend/plugins/akismet/

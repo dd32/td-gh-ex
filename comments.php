@@ -39,7 +39,7 @@ if ( have_comments() ) : ?>
 			'avatar_size'=>$bfa_ata['avatar_size'],
 			'reply_text'=>__(' &middot; Reply','atahualpa'),
 			'login_text'=>__('Log in to Reply','atahualpa'),
-			'callback' => bfa_comments, 
+			'callback' => 'bfa_comments', 
 			'type' => 'comment'
 			));
 
@@ -47,7 +47,7 @@ if ( have_comments() ) : ?>
 			'avatar_size'=>$bfa_ata['avatar_size'],
 			'reply_text'=>__(' &middot; Reply','atahualpa'),
 			'login_text'=>__('Log in to Reply','atahualpa'),
-			'callback' => bfa_comments, 
+			'callback' => 'bfa_comments', 
 			'type' => 'pings'
 			));
 
@@ -57,7 +57,7 @@ if ( have_comments() ) : ?>
 			'avatar_size'=>$bfa_ata['avatar_size'],
 			'reply_text'=>__(' &middot; Reply','atahualpa'),
 			'login_text'=>__('Log in to Reply','atahualpa'),
-			'callback' => bfa_comments, 
+			'callback' => 'bfa_comments', 
 			'type' => 'all'
 			));
 

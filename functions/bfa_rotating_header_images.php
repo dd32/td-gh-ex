@@ -1,6 +1,6 @@
 <?php
 function bfa_rotating_header_images() {
-
+global $bfa_ata;
 	if (file_exists(ABSPATH."/wpmu-settings.php")) {
 
 		################### images in WP upload folder (on WPMU)
@@ -34,6 +34,14 @@ function bfa_rotating_header_images() {
 		   $files[] = $filename;
 		   }
 		}
+
+		if(isset($bfa_ata['header_image_sort_or_shuffle'])) {
+			if ($bfa_ata['header_image_sort_or_shuffle'] == "Sort") {
+				sort($files); } 
+			else { 
+				shuffle($files); }
+		}
+		
 		closedir($dh);
 
 		foreach($files as $value) {

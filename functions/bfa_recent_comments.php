@@ -75,8 +75,8 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 	  $post_bold = $bfa_rc_options['post_bold'];
 	  $post_em = $bfa_rc_options['post_em'];
 	  $author_nofollow = $bfa_rc_options['author_nofollow'];	
-	  $bfa_rc_pre_HTML = $bfa_rc_options['bfa_rc_pre_HTML'];
-	  $bfa_rc_post_HTML = $bfa_rc_options['bfa_rc_post_HTML'];
+	  if(isset($bfa_rc_options['bfa_rc_pre_HTML'])) $bfa_rc_pre_HTML = $bfa_rc_options['bfa_rc_pre_HTML'];
+	  if(isset($bfa_rc_options['bfa_rc_post_HTML'])) $bfa_rc_post_HTML = $bfa_rc_options['bfa_rc_post_HTML'];
 	  $bfa_rc_display_homepage = $bfa_rc_options['bfa_rc_display_homepage'];
 	  $bfa_rc_display_category = $bfa_rc_options['bfa_rc_display_category'];
 	  $bfa_rc_display_post = $bfa_rc_options['bfa_rc_display_post'];
@@ -211,7 +211,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 	  // Fetch the options, check them and if need be, update the options array
 	  $bfa_rc_options = $bfa_rc_newoptions = get_option('widget_simple_recent_comments');
-	  if ( $_POST["bfa_rc_src-submit"] ) {
+	  if ( isset($_POST["bfa_rc_src-submit"]) ) {
 	    $bfa_rc_newoptions['bfa_rc_title'] = strip_tags(stripslashes($_POST["bfa_rc_src-title"]));
 	    $bfa_rc_newoptions['bfa_rc_src_count'] = (int) $_POST["bfa_rc_src_count"];
 	    $bfa_rc_newoptions['bfa_rc_src_length'] = (int) $_POST["bfa_rc_src_length"];
@@ -246,12 +246,12 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 	  // Default options to the parameters
 	  if ( !$bfa_rc_options['bfa_rc_src_count'] ) $bfa_rc_options['bfa_rc_src_count'] = 7;
-	  if ( !$bfa_rc_options['bfa_rc_src_length'] ) $bfa_rc_options['bfa_rc_src_length'] = 60;
-	  if ( !$bfa_rc_options['bfa_rc_linking_scheme'] ) $bfa_rc_options['bfa_rc_linking_scheme'] = "Author Comment link-all";
-	  if ( !$bfa_rc_options['point_first_link'] ) $bfa_rc_options['point_first_link'] = "author";
-	  if ( !$bfa_rc_options['point_second_link'] ) $bfa_rc_options['point_second_link'] = "comment";
-	  if ( !$bfa_rc_options['limit_by'] ) $bfa_rc_options['limit_by'] = "letters";
-	  if ( !$bfa_rc_options['author_nofollow'] ) $bfa_rc_options['author_nofollow'] = "on";
+	  if ( !isset($bfa_rc_options['bfa_rc_src_length']) ) $bfa_rc_options['bfa_rc_src_length'] = 60;
+	  if ( !isset($bfa_rc_options['bfa_rc_linking_scheme']) ) $bfa_rc_options['bfa_rc_linking_scheme'] = "Author Comment link-all";
+	  if ( !isset($bfa_rc_options['point_first_link']) ) $bfa_rc_options['point_first_link'] = "author";
+	  if ( !isset($bfa_rc_options['point_second_link']) ) $bfa_rc_options['point_second_link'] = "comment";
+	  if ( !isset($bfa_rc_options['limit_by']) ) $bfa_rc_options['limit_by'] = "letters";
+	  if ( !isset($bfa_rc_options['author_nofollow']) ) $bfa_rc_options['author_nofollow'] = "on";
 	  
 	  $bfa_rc_src_count = $bfa_rc_options['bfa_rc_src_count'];
 	  $bfa_rc_src_length = $bfa_rc_options['bfa_rc_src_length'];
@@ -278,8 +278,8 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 	  $bfa_rc_display_404 = $bfa_rc_options['bfa_rc_display_404'];
 	  	  
 	  // Deal with HTML in the parameters
-	  $bfa_rc_pre_HTML = htmlspecialchars($bfa_rc_options['bfa_rc_pre_HTML'], ENT_QUOTES);
-	  $bfa_rc_post_HTML = htmlspecialchars($bfa_rc_options['bfa_rc_post_HTML'], ENT_QUOTES);
+	  if(isset($bfa_rc_options['bfa_rc_pre_HTML'])) $bfa_rc_pre_HTML = htmlspecialchars($bfa_rc_options['bfa_rc_pre_HTML'], ENT_QUOTES);
+	  if(isset($bfa_rc_options['bfa_rc_post_HTML'])) $bfa_rc_post_HTML = htmlspecialchars($bfa_rc_options['bfa_rc_post_HTML'], ENT_QUOTES);
 	  $bfa_rc_title = htmlspecialchars($bfa_rc_options['bfa_rc_title'], ENT_QUOTES);
 
 ?>
@@ -328,12 +328,9 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
   	    <input type="hidden" id="bfa_rc_src-submit" name="bfa_rc_src-submit" value="1" />
 <?php
 	 }
-	
-	// This registers our widget so it appears with the other available
-	// widgets and can be dragged and dropped into any active sidebars.
-	register_sidebar_widget('BFA Recent Comments', 'widget_simple_recent_comments');
 
-	// This registers our optional widget control form. Because of this
-	// our widget will have a button that reveals a 520x480 pixel form.
-	register_widget_control('BFA Recent Comments', 'widget_simple_recent_comments_control', 620, 520);
+	$widget_ops = array('classname' => 'widget_recent_comments', 'description' => __("Lists the most recent comments","atahualpa") );
+	$control_ops = array('width' => 600, 'height' => 500);
+	wp_register_sidebar_widget('recent_comments', __('BFA Recent Comments','atahualpa'), 'widget_simple_recent_comments', $widget_ops);
+	wp_register_widget_control('recent_comments',  __('BFA Recent Comments','atahualpa'), 'widget_simple_recent_comments_control', $control_ops);	
 ?>

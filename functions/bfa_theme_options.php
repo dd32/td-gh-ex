@@ -1,11 +1,5 @@
 <?php
 
-// Since 3.5.2: Hint for new WP3 system
-if (function_exists('wp_nav_menu')) { 
-$newwp3menutext1 = "<span style='color:red'>Recommended: Since you're using WP 3+: Use the new WP menu system, see <code>Appearance</code> &rarr; <code>Menus</code> on the left. Create a menu there and add it to <code>Menu Location</code> &rarr; <code>Menu 1</code>. Once you've done that this setting here and the next few settings become obsolete. (The Javascript animation and the style settings at the bottom of this page still work).</span>";
-$newwp3menutext2 = "<span style='color:red'>Recommended: Since you're using WP 3+: Use the new WP menu system, see <code>Appearance</code> &rarr; <code>Menus</code> on the left. Create a menu there and add it to <code>Menu Location</code> &rarr; <code>Menu 2</code>. Once you've done that this setting here and the next few settings become obsolete. (The Javascript animation and the style settings at the bottom of this page still work).</span>";
-$newwp3menutext = "<span style='color:red'>See red message above...</span>";
-}
 // http://example.com/home/wp-content/themes/atahualpa
 $url_base = get_bloginfo('template_directory');
 
@@ -26,7 +20,9 @@ $css_img_path = $wordpress_dir . $template_path;
 
 # $bfa_ata_widget_areas = get_option('bfa_widget_areas');
 $bfa_ata = get_option('bfa_ata4');
-$bfa_ata_widget_areas = $bfa_ata['bfa_widget_areas'];
+if(isset($bfa_ata['bfa_widget_areas'])) $bfa_ata_widget_areas = $bfa_ata['bfa_widget_areas'];
+else $bfa_ata_widget_areas = '';
+$widget_form_string = '';
 if (is_array($bfa_ata_widget_areas)) {
 	foreach ($bfa_ata_widget_areas as $widget_area) {
 		$widget_form_string .= '
@@ -102,10 +98,10 @@ if (defined('ABSPATH')) {
 	if (file_exists(ABSPATH."/wpmu-settings.php")) {
 		$header_image_text = $header_image_text_wpmu; 
 		$logo_icon_text = $logo_icon_text_wpmu; 
-	} 
-} else { 
-	$header_image_text = $header_image_text_wp; 
-	$logo_icon_text = $logo_icon_text_wp;
+	} else { 
+		$header_image_text = $header_image_text_wp; 
+		$logo_icon_text = $logo_icon_text_wp;
+	}
 }
 
 // different options text for different WP versions
@@ -198,7 +194,7 @@ $options1 = array(
 
 // New category: seo
 
-    array(    "name" => "<span style='background:white;color:red'>NEW</span> Use Post / Page Options?",
+    array(    "name" => "Use Post / Page Options?",
     	    "category" => "seo",
 			"switch" => "yes",
             "id" => "page_post_options",
@@ -676,7 +672,15 @@ $options1 = array(
             "info" => "Select amount of seconds between rotation. Set to 0 to not use Javascript for rotation. In this case  
 			a new random image from <code>". $css_img_path ."images/header/</code> will be used on each page view, but the images won't rotate while the page is being viewed."),
 
-    array(    "name" => "<span style='background:white;color:red'>NEW</span> Fade in/out header images with Javascript?",
+    array(    "name" => "Sort or Shuffle header images?",
+    	    "category" => "header-image",
+            "id" => "header_image_sort_or_shuffle",
+            "type" => "select",
+            "std" => "Sort",
+            "options" => array("Sort", "Shuffle"),
+            "info" => "Setting this to <strong>Sort</strong> will sort the images by filename. Selecting <strong>Shuffle</strong> will randomly present the images."),
+
+    array(    "name" => "Fade in/out header images with Javascript?",
     	    "category" => "header-image",
             "id" => "crossslide_fade",
             "type" => "select",
@@ -977,13 +981,13 @@ $options1 = array(
 
 // New category: page-menu-bar
 
-    array(    "name" => "<span style='background:white;color:red'>NEW</span> Animate Page Menu Bar",
+    array(    "name" => "Animate Page Menu Bar",
     	    "category" => "page-menu-bar",
 			"switch" => "yes",
             "id" => "animate_page_menu_bar",
             "std" => "No",
             "type" => "select",
-            "options" => array("Yes", "No"),
+            "options" => array("No", "Yes"),
             "info" => "Animate the page menu bar with Javascript?"),
 			
     array(    "name" => "Home link in Page Menu Bar",
@@ -991,7 +995,7 @@ $options1 = array(
             "id" => "home_page_menu_bar",
             "std" => __("Home","atahualpa"),
             "type" => "text",
-            "info" => $newwp3menutext1 . "<ul><li>Leave this blank to have no \"Home\" link in the page menu bar</li><li>Or, put text here 
+            "info" => "<ul><li>Leave this blank to have no \"Home\" link in the page menu bar</li><li>Or, put text here 
 			to include a link to your homepage into the page menu bar</li><li>The text doesn't have to be \"Home\", it 
 			can be anything</li></ul>"),
 
@@ -1001,7 +1005,7 @@ $options1 = array(
             "std" => "",
             "type" => "text",
 			"size" => "30", 
-            "info" => $newwp3menutext . "<ul><li>Leave blank to include all pages in the page menu bar</li><li>To exclude certain pages from the 
+            "info" => "<ul><li>Leave blank to include all pages in the page menu bar</li><li>To exclude certain pages from the 
 			page menu bar, put their ID's into this field, separated by comma</li></ul><strong>Example:</strong> <code>13,29,102,117</code>
 			<br /><br />To get the ID of a page, go to WP Admin -> Pages -> <a href=\"edit-pages.php\">Edit</a>, point your mouse at the title of the page 
 			in question, and watch your browser's status bar (it's at the bottom) for an URL ending on \"...action=edit&post=<strong>XX</strong>\". 
@@ -1013,7 +1017,7 @@ $options1 = array(
             "std" => "0",
             "type" => "select",
             "options" => array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
-            "info" => $newwp3menutext . "<ul><li>Choose 0 to include ALL levels of pages (top level, sub pages, sub sub pages...) in the page 
+            "info" => "<ul><li>Choose 0 to include ALL levels of pages (top level, sub pages, sub sub pages...) in the page 
 			menu bar</li><li>Choose a number between 1 and 10 to include only the respective amount of page levels</li></ul>"),
 
     array(    "name" => "Sorting order of Page Menu Bar",
@@ -1022,7 +1026,7 @@ $options1 = array(
             "type" => "select",
             "std" => "menu_order",
             "options" => array("menu_order", "post_title"),
-            "info" => $newwp3menutext . "<ul><li><code>menu_order</code> - Sort the pages chronologically, as you created them (Change the page 
+            "info" => "<ul><li><code>menu_order</code> - Sort the pages chronologically, as you created them (Change the page 
 			order at Manage -> Pages -> Click on page title -> Page Order)</li><li><code>post_title</code> - alphabetically</li></ul>"),
 
     array(    "name" => "Title tags in Page Menu Bar",
@@ -1031,7 +1035,7 @@ $options1 = array(
             "type" => "select",
             "std" => "No",
             "options" => array("No", "Yes"),
-            "info" => $newwp3menutext . "Include a \"title\" tag for each item in the page menu? These will pop up when hovering over a menu item."),
+            "info" => "Include a \"title\" tag for each item in the page menu? These will pop up when hovering over a menu item."),
 
     array(    "name" => "Don't link first level parent items in Page Menu Bar?",
     	    "category" => "page-menu-bar",
@@ -1039,7 +1043,7 @@ $options1 = array(
             "type" => "select",
             "std" => "No",
             "options" => array("No", "Yes"),
-            "info" => $newwp3menutext . "Set this to No to replace the link target of first level parent items with &lt;a href=\"#\"&gt; 
+            "info" => "Set this to No to replace the link target of first level parent items with &lt;a href=\"#\"&gt; 
 			This will basically unlink the first level menu items that have children. The submenus drop down when pointing 
 			the mouse at the link, but clicking the link doesn't do anything. This is for users that want to organize their 
 			pages in main pages and sub pages but don't have content on the main pages. \"Yes\" means \"Yes, don't link\"."),
@@ -1101,7 +1105,7 @@ $options1 = array(
             "type" => "text",
             "info" => "Color of the link text in hover state."),
 	
-    array(    "name" => "Transform text?",
+    array(    "name" => "Transform text in Page Menu Bar?",
     	    "category" => "page-menu-bar",
             "id" => "page_menu_transform",
             "type" => "select",
@@ -1131,7 +1135,7 @@ $options1 = array(
 			
 // New category: cat-menu-bar
 
-    array(    "name" => "<span style='background:white;color:red'>NEW</span> Animate Category Menu Bar",
+    array(    "name" => "Animate Category Menu Bar",
     	    "category" => "cat-menu-bar",
 			"switch" => "yes",
             "id" => "animate_cat_menu_bar",
@@ -1145,7 +1149,7 @@ $options1 = array(
             "id" => "home_cat_menu_bar",
             "std" => "",
             "type" => "text",
-            "info" => $newwp3menutext2 . "<ul><li>Leave this blank to have no \"Home\" link in the category menu bar</li><li>Or, put text 
+            "info" => "<ul><li>Leave this blank to have no \"Home\" link in the category menu bar</li><li>Or, put text 
 			here to include a link to your homepage into the category menu bar</li><li>The text doesn't have to be \"Home\", 
 			it can be anything</li></ul>"),
 
@@ -1155,7 +1159,7 @@ $options1 = array(
             "std" => "",
             "type" => "text",
 			"size" => "30", 
-            "info" => $newwp3menutext . "<ul><li>Leave blank to include all categories in the category menu bar</li><li>To exclude certain 
+            "info" => "<ul><li>Leave blank to include all categories in the category menu bar</li><li>To exclude certain 
 			categories put their ID into this field, separated by comma</li></ul><strong>Example:</strong> <code>13,29,102,117</code>
 			<br /><br />To get the ID of a category, go to WP Admin -> Posts -> <a href=\"categories.php\">Categories</a>, point your mouse at the 
 			title of the category in question, and watch your browser's status bar (it's at the bottom) for an URL ending 
@@ -1167,7 +1171,7 @@ $options1 = array(
             "std" => "0",
             "type" => "select",
             "options" => array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
-            "info" => $newwp3menutext . "<ul><li>Choose 0 to include ALL levels of categories (top level, sub cats, sub sub cats...) in the 
+            "info" => "<ul><li>Choose 0 to include ALL levels of categories (top level, sub cats, sub sub cats...) in the 
 			category menu bar</li><li>Choose a number between 1 and 10 to include only the respective amount of category levels</li></ul>"),
 
     array(    "name" => "Sort Category Menu Bar by:",
@@ -1176,7 +1180,7 @@ $options1 = array(
             "type" => "select",
             "std" => "ID",
             "options" => array("ID", "name", "count", "order"),
-            "info" => $newwp3menutext . '<ul><li><code>ID</code> - Sort the categories chronologically, as you created them</li>
+            "info" => '<ul><li><code>ID</code> - Sort the categories chronologically, as you created them</li>
 			<li><code>name</code> - alphabetically</li><li><code>count</code> - by number of posts</li>
 			<li><code>order</code> - individually, as set on the options page of the plugin 
 			<a href="http://wordpress.org/extend/plugins/my-category-order/">My Category Order</a> (requires this 
@@ -1188,7 +1192,7 @@ $options1 = array(
             "type" => "select",
             "std" => "ASC",
             "options" => array("ASC", "DESC"),
-            "info" => $newwp3menutext . "Sort categories in ascending (ASC) or descending (DESC) order?"),		
+            "info" => "Sort categories in ascending (ASC) or descending (DESC) order?"),		
 			
     array(    "name" => "Title tags in Category Menu Bar",
     	    "category" => "cat-menu-bar",
@@ -1196,7 +1200,7 @@ $options1 = array(
             "type" => "select",
             "std" => "No",
             "options" => array("No", "Yes"),
-            "info" => $newwp3menutext . "Include a \"title\" tag for each item in the category menu bar? Title tags are the little 
+            "info" => "Include a \"title\" tag for each item in the category menu bar? Title tags are the little 
 			boxes that pop up when hovering over a menu item. Setting this to yes makes sense if you've set a 
 			\"description\" for each category (Manage -> Categories -> Click on category name). Otherwise the 
 			title tag will just repeat the category name."),
@@ -1207,7 +1211,7 @@ $options1 = array(
             "type" => "select",
             "std" => "No",
             "options" => array("No", "Yes"),
-            "info" => $newwp3menutext . "This will add a line break &lt;br /&gt; followed by the \"category description\" (which you can set at 
+            "info" => "This will add a line break &lt;br /&gt; followed by the \"category description\" (which you can set at 
 			Site Admin -> Posts -> Categories -> Description) to the link text of each category's button in the category menu bar. 
 			This category description, which is now visible inside the menu buttons, can be styled through HTML/CSS Inserts -> 
 			CSS Insert, i.e.: <code>span.cat-descr { font-size: 90%; text-tranform: none; }</code>"),
@@ -1219,7 +1223,7 @@ $options1 = array(
             "type" => "text",
 			"size" => "30", 
 			"editable" => "yes",
-            "info" => $newwp3menutext . "If you chose to include the category description in the menu bar's link texts (one option above), then set 
+            "info" => "If you chose to include the category description in the menu bar's link texts (one option above), then set 
 			a default text here for categories that have no description. <code>%category%</code> is a placeholder and will be 
 			replaced with the Category Title. HTML allowed."),
 			
@@ -1278,7 +1282,7 @@ $options1 = array(
             "type" => "text",
             "info" => "Color of the link text in hover state."),
 			
-    array(    "name" => "Transform text?",
+    array(    "name" => "Transform text in Category Menu Bar?",
     	    "category" => "cat-menu-bar",
             "id" => "cat_menu_transform",
             "type" => "select",
@@ -1474,7 +1478,7 @@ bfa_next_previous_page_links('Bottom'); ?>",
 			"editable" => "yes", 
             "info" => "See above for HTML examples.<br /><br />To include the linked title of the older post, use <code>%link</code>"),
 
-    array(    "name" => "<span style='color:red;background:white'>New:</span> Keep next/prev. links on SINGLE post pages to same post category?",
+    array(    "name" => "Keep next/prev. links on SINGLE post pages to same post category?",
     	    "category" => "next-prev-nav",
             "id" => "single_next_prev_same_cat",
             "std" => "No",
@@ -2337,6 +2341,7 @@ __('Category:','atahualpa') . " %categories-linked(', ')% %edit(' | ', '" . __('
             "info" => "Length of excerpts (= number of words)."),
 
      array(    "name" => "Don't strip these tags",
+			"escape" => "yes",
     	    "category" => "posts-or-excerpts",
             "id" => "dont_strip_excerpts",
             "type" => "text",
@@ -2473,7 +2478,7 @@ __('Category:','atahualpa') . " %categories-linked(', ')% %edit(' | ', '" . __('
 			<code>&lt;!--more--&gt;</code> in a post, either by manually inserting that tag into a post or by using the 
 			more button (see images below). This is a more fine-grained method of generating post excerpts than setting 
 			the post display type to \"Excerpts\" (see menu tab \"Posts or Excerpts\"). <br /><br />Whenever you insert 
-			<code>&lt;!--more--&gt;</code> into a post or page, only the text before that tag will be displayed on 
+			<code>&lt;!--more--&gt;</code> into a post, only the text before that tag will be displayed on 
 			multi-post-pages while the whole post will be displayed on its dedicated single post page. <br /><br />
 			Use <code>%post-title%</code> to include the post title in the \"More\" text.<br /><br />
 			Example:<br /> <code>Continue reading \"&lt;strong&gt;%post-title%&lt/strong&gt;\" &amp;raquo;</code><br /><br />
@@ -2913,7 +2918,7 @@ text-align: center;\ncolor: #777777;\nfont-size: 95%;",
 			between <code>&lt;head&gt;</code> and <code>&lt;/head&gt;</code>. <strong>Note:</strong> Any HTML you put here shouldn't be
 			\"visible\" HTML such as a table or a DIV container. If you put HTML here, then it would be machine parsable code, something like a 
 			meta tag, such as:<br /><code>&lt;meta name=\"author\" content=\"John W. Doe\" /&gt;</code>.
-			<br /><br /><span style='background:white;color:red'>NEW</span> Since 3.4.7 PHP code can be used in HTML/CSS Inserts."),
+			<br /><br />PHP code can be used in HTML/CSS Inserts."),
 
     array(    "name" => "HTML Inserts: Body Tag",
     	    "category" => "html-inserts",
@@ -2925,7 +2930,7 @@ text-align: center;\ncolor: #777777;\nfont-size: 95%;",
 			<strong>Example:</strong><br /><code>onLoad=\"alert('The page is loading... now!')\"</code> would result
 			in an output of <code>&lt;body <i>onLoad=\"alert('The page is loading... now!')\"</i>&gt;</code> instead
 			of the regular <code>&lt;body&gt;</code>.
-			<br /><br /><span style='background:white;color:red'>NEW</span> Since 3.4.7 PHP code can be used in HTML/CSS Inserts."),
+			<br /><br />PHP code can be used in HTML/CSS Inserts."),
 
     array(    "name" => "HTML Inserts: Body Top",
     	    "category" => "html-inserts",
@@ -2935,7 +2940,7 @@ text-align: center;\ncolor: #777777;\nfont-size: 95%;",
 			"editable" => "yes", 
             "info" => "Add code here (JavaScript, HTML, CSS) that you want to put into the body section of the website, between 
 			<code>&lt;body&gt;</code> and <code>&lt;/body&gt;</code>, right after <code>&lt;body&gt;</code>.
-			<br /><br /><span style='background:white;color:red'>NEW</span> Since 3.4.7 PHP code can be used in HTML/CSS Inserts."),
+			<br /><br />PHP code can be used in HTML/CSS Inserts."),
 
     array(    "name" => "HTML Inserts: Body Bottom",
     	    "category" => "html-inserts",
@@ -2946,7 +2951,7 @@ text-align: center;\ncolor: #777777;\nfont-size: 95%;",
             "info" => "Add code here (JavaScript, HTML, CSS) that you want to put into the body section of the website, 
 			between <code>&lt;body&gt;</code> and <code>&lt;/body&gt;</code>, right before <code>&lt;/body&gt;</code>.
 			<strong>Google Analytics</strong> code would go here, and most other tracking code probably too.
-			<br /><br /><span style='background:white;color:red'>NEW</span> Since 3.4.7 PHP code can be used in HTML/CSS Inserts."),
+			<br /><br />PHP code can be used in HTML/CSS Inserts."),
 
     array(    "name" => "CSS Inserts",
     	    "category" => "html-inserts",
@@ -2959,7 +2964,7 @@ text-align: center;\ncolor: #777777;\nfont-size: 95%;",
 			<code>.newclass {<br />color: #123456;<br />border: solid 1px #000000;<br />
 			font-family: arial, \"comic sans ms\", sans-serif;<br />background: url(". $css_img_path ."images/myimage.gif);
             <br />}</code>
-			<br /><br /><span style='background:white;color:red'>NEW</span> Since 3.4.7 PHP code can be used in HTML/CSS Inserts.<br /><br />
+			<br /><br />PHP code can be used in HTML/CSS Inserts.<br /><br />
 			Example: Using the dynamic PHP function <code>bloginfo('template_url')</code> instead of (even a relative = domain-less) static image URL like <code>/wp-content/themes/atahualpa347/</code>, the image URL would work 
 			regardless of how the Atahualpa directory was named ('atahualpa', 'atahualpa347' ...) on the given Atahualpa installation, and regardless of whether the CSS was set to 
 			'inline' or 'external':<br /><code>div.widget ul li { background: url('<span style='color:blue'>&lt;?php bloginfo('template_url'); ?&gt;</span>/images/bullets/round-gray.gif') no-repeat 0 7px }</code>"),

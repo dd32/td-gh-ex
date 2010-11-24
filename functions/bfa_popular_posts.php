@@ -77,7 +77,7 @@ and the modification Last X days by DJ Chuang www.djchuang.com
 
 	  // Fetch the options, check them and if need be, update the options array
 	  $bfa_pp_options = $bfa_pp_newoptions = get_option('widget_mdv_most_commented');
-	  if ( $_POST["bfa_pp_src-submit"] ) {
+	  if ( isset($_POST["bfa_pp_src-submit"]) ) {
 	    $bfa_pp_newoptions['bfa_pp_title'] = strip_tags(stripslashes($_POST["bfa_pp_src-title"]));
 	    $bfa_pp_newoptions['bfa_pp_no_posts'] = (int) $_POST["bfa_pp_no_posts"];
 	    $bfa_pp_newoptions['bfa_pp_duration'] = (int) $_POST["bfa_pp_duration"];
@@ -102,21 +102,21 @@ and the modification Last X days by DJ Chuang www.djchuang.com
 	  if ( !$bfa_pp_options['bfa_pp_no_posts'] ) $options['bfa_pp_no_posts'] = 10;
 	  if ( !$bfa_pp_options['bfa_pp_min_amount_comments'] OR $bfa_pp_options['bfa_pp_min_amount_comments'] == 0) $bfa_pp_options['bfa_pp_min_amount_comments'] = 1;
 
-	  $bfa_pp_no_posts = $bfa_pp_options['bfa_pp_no_posts'];
-	  $bfa_pp_duration = $bfa_pp_options['bfa_pp_duration'];
+	  if(isset($bfa_pp_options['bfa_pp_no_posts'])) $bfa_pp_no_posts = $bfa_pp_options['bfa_pp_no_posts'];
+	  if(isset($bfa_pp_options['bfa_pp_duration'])) $bfa_pp_duration = $bfa_pp_options['bfa_pp_duration'];
 	  $bfa_pp_min_amount_comments = $bfa_pp_options['bfa_pp_min_amount_comments'];
-	  $bfa_pp_display_homepage = $bfa_pp_options['bfa_pp_display_homepage'];
-	  $bfa_pp_display_category = $bfa_pp_options['bfa_pp_display_category'];
-	  $bfa_pp_display_post = $bfa_pp_options['bfa_pp_display_post'];
-	  $bfa_pp_display_page = $bfa_pp_options['bfa_pp_display_page'];
-	  $bfa_pp_display_archive = $bfa_pp_options['bfa_pp_display_archive'];
-	  $bfa_pp_display_tag = $bfa_pp_options['bfa_pp_display_tag'];	  
-	  $bfa_pp_display_search = $bfa_pp_options['bfa_pp_display_search'];
-	  $bfa_pp_display_author = $bfa_pp_options['bfa_pp_display_author'];
-	  $bfa_pp_display_404 = $bfa_pp_options['bfa_pp_display_404'];
+	  if(isset($bfa_pp_options['bfa_pp_display_homepage'])) $bfa_pp_display_homepage = $bfa_pp_options['bfa_pp_display_homepage'];
+	  if(isset($bfa_pp_options['bfa_pp_display_category'])) $bfa_pp_display_category = $bfa_pp_options['bfa_pp_display_category'];
+	  if(isset($bfa_pp_options['bfa_pp_display_post'])) $bfa_pp_display_post = $bfa_pp_options['bfa_pp_display_post'];
+	  if(isset($bfa_pp_options['bfa_pp_display_page'])) $bfa_pp_display_page = $bfa_pp_options['bfa_pp_display_page'];
+	  if(isset($bfa_pp_options['bfa_pp_display_archive'])) $bfa_pp_display_archive = $bfa_pp_options['bfa_pp_display_archive'];
+	  if(isset($bfa_pp_options['bfa_pp_display_tag'])) $bfa_pp_display_tag = $bfa_pp_options['bfa_pp_display_tag'];	  
+	  if(isset($bfa_pp_options['bfa_pp_display_search'])) $bfa_pp_display_search = $bfa_pp_options['bfa_pp_display_search'];
+	  if(isset($bfa_pp_options['bfa_pp_display_author'])) $bfa_pp_display_author = $bfa_pp_options['bfa_pp_display_author'];
+	  if(isset($bfa_pp_options['bfa_pp_display_404'])) $bfa_pp_display_404 = $bfa_pp_options['bfa_pp_display_404'];
 	  	  
 	  // Deal with HTML in the parameters
-	  $bfa_pp_title = htmlspecialchars($bfa_pp_options['bfa_pp_title'], ENT_QUOTES);
+	  if(isset($bfa_pp_options['bfa_pp_title'])) $bfa_pp_title = htmlspecialchars($bfa_pp_options['bfa_pp_title'], ENT_QUOTES);
 
 ?>
 	    Title: <input style="width: 450px;" id="bfa_pp_src-title" name="bfa_pp_src-title" type="text" value="<?php echo $bfa_pp_title; ?>" />
@@ -127,25 +127,22 @@ and the modification Last X days by DJ Chuang www.djchuang.com
    	    </p>
   	    <hr noshade size="1" style="clear:left; color: #ccc">
             <p>And display the list on: </p>
-            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_homepage" name="bfa_pp_display_homepage" type="checkbox" <?php if($bfa_pp_display_homepage == "on"){echo " CHECKED";}?> /> Homepage</p>
-            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_category" name="bfa_pp_display_category" type="checkbox" <?php if($bfa_pp_display_category == "on"){echo " CHECKED";}?> /> Category Pages</p>
-            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_post" name="bfa_pp_display_post" type="checkbox" <?php if($bfa_pp_display_post == "on"){echo " CHECKED";}?> /> Single Post Pages</p>
-            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_page" name="bfa_pp_display_page" type="checkbox" <?php if($bfa_pp_display_page == "on"){echo " CHECKED";}?> /> "Page" Pages</p>
-            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_archive" name="bfa_pp_display_archive" type="checkbox" <?php if($bfa_pp_display_archive == "on"){echo " CHECKED";}?> /> Archive Pages</p>
-            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_tag" name="bfa_pp_display_tag" type="checkbox" <?php if($bfa_pp_display_tag == "on"){echo " CHECKED";}?> /> Tag Pages</p>
-            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_search" name="bfa_pp_display_search" type="checkbox" <?php if($bfa_pp_display_search == "on"){echo " CHECKED";}?> /> Search Result Pages</p>
-            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_author" name="bfa_pp_display_author" type="checkbox" <?php if($bfa_pp_display_author == "on"){echo " CHECKED";}?> /> Author Pages</p>
-            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_404" name="bfa_pp_display_404" type="checkbox" <?php if($bfa_pp_display_404 == "on"){echo " CHECKED";}?> /> 404 Not Found Pages</p>
+            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_homepage" name="bfa_pp_display_homepage" type="checkbox" <?php if(isset($bfa_pp_display_homepage)){echo " CHECKED";}?> /> Homepage</p>
+            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_category" name="bfa_pp_display_category" type="checkbox" <?php if(isset($bfa_pp_display_category)){echo " CHECKED";}?> /> Category Pages</p>
+            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_post" name="bfa_pp_display_post" type="checkbox" <?php if(isset($bfa_pp_display_post)){echo " CHECKED";}?> /> Single Post Pages</p>
+            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_page" name="bfa_pp_display_page" type="checkbox" <?php if(isset($bfa_pp_display_page)){echo " CHECKED";}?> /> "Page" Pages</p>
+            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_archive" name="bfa_pp_display_archive" type="checkbox" <?php if(isset($bfa_pp_display_archive)){echo " CHECKED";}?> /> Archive Pages</p>
+            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_tag" name="bfa_pp_display_tag" type="checkbox" <?php if(isset($bfa_pp_display_tag)){echo " CHECKED";}?> /> Tag Pages</p>
+            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_search" name="bfa_pp_display_search" type="checkbox" <?php if(isset($bfa_pp_display_search)){echo " CHECKED";}?> /> Search Result Pages</p>
+            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_author" name="bfa_pp_display_author" type="checkbox" <?php if(isset($bfa_pp_display_author)){echo " CHECKED";}?> /> Author Pages</p>
+            <p style="float: left; width: 160px; text-align: left;"><input id="bfa_pp_display_404" name="bfa_pp_display_404" type="checkbox" <?php if(isset($bfa_pp_display_404)){echo " CHECKED";}?> /> 404 Not Found Pages</p>
             <div style="clear:left"></div>
   	    <input type="hidden" id="bfa_pp_src-submit" name="bfa_pp_src-submit" value="1" />
 <?php
 	 }
 	
-	// This registers our widget so it appears with the other available
-	// widgets and can be dragged and dropped into any active sidebars.
-	register_sidebar_widget('BFA Popular Posts', 'widget_mdv_most_commented');
-
-	// This registers our optional widget control form. Because of this
-	// our widget will have a button that reveals a 520x480 pixel form.
-	register_widget_control('BFA Popular Posts', 'widget_mdv_most_commented_control', 520, 480);
+	$widget_ops = array('classname' => 'widget_popular_posts', 'description' => __("Lists most commented posts overall","atahualpa") );
+	$control_ops = array('width' => 600, 'height' => 500);
+	wp_register_sidebar_widget('popular_posts', __('BFA Popular posts','atahualpa'), 'widget_mdv_most_commented', $widget_ops);
+	wp_register_widget_control('popular_posts', __('BFA Popular posts','atahualpa'), 'widget_mdv_most_commented_control', $control_ops);	
 ?>

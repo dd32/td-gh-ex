@@ -2,8 +2,8 @@
 function bfa_ata_admin() {
     global $bfa_ata, $bfa_ata_version, $options;
 
-    if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>Atahualpa settings saved.</strong></p></div>';
-    if ( $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>Atahualpa settings reset.</strong></p></div>';
+    if ( isset($_REQUEST['saved']) ) echo '<div id="message" class="updated fade"><p><strong>Atahualpa settings saved.</strong></p></div>';
+    if ( isset($_REQUEST['reset']) ) echo '<div id="message" class="updated fade"><p><strong>Atahualpa settings reset.</strong></p></div>';
 ?>
 <table width="100%" cellpadding="2" cellspacing="0"><tr><td valign="middle" width="380"><h2 style="margin:0 30px 0 0; padding: 5px 0 5px 0;">
 Atahualpa <?php echo $bfa_ata_version; ?></h2></td><td valign="middle"><iframe src="http://wordpress.bytesforall.com/update.php?theme=Atahualpa&version=<?php echo $bfa_ata_version; ?>" width="98%" height="40" scrolling="no" frameborder="0"></iframe></td>
@@ -31,10 +31,10 @@ Atahualpa <?php echo $bfa_ata_version; ?></h2></td><td valign="middle"><iframe s
 	
 	<strong>Header Area</strong>
 	<li><a href="#" id="header-tab" rel="header">Style & edit HEADER AREA</a></li>
-	<li><a href="#" id="header-image-tab" rel="header-image"><span style="background:white;color:red">NEW</span> Header Image</a></li>
+	<li><a href="#" id="header-image-tab" rel="header-image">Header Image</a></li>
 	<li><a href="#" id="feed-links-tab" rel="feed-links">RSS Settings</a></li>
-	<li><a href="#" id="page-menu-bar-tab" rel="page-menu-bar"><span style="background:white;color:red">NEW</span> <?php if (function_exists('wp_nav_menu')) { ?>MENU 1 (Page Menu)<?php } else { ?>Page Menu Bar<?php } ?></a></li>
-	<li><a href="#" id="cat-menu-bar-tab" rel="cat-menu-bar"><span style="background:white;color:red">NEW</span> <?php if (function_exists('wp_nav_menu')) { ?>MENU 2 (Category Menu)<?php } else { ?>Category Menu Bar<?php } ?></a></li>
+	<li><a href="#" id="page-menu-bar-tab" rel="page-menu-bar"><?php if (function_exists('wp_nav_menu')) { ?>MENU 1 (Page Menu)<?php } else { ?>Page Menu Bar<?php } ?></a></li>
+	<li><a href="#" id="cat-menu-bar-tab" rel="cat-menu-bar"><?php if (function_exists('wp_nav_menu')) { ?>MENU 2 (Category Menu)<?php } else { ?>Category Menu Bar<?php } ?></a></li>
 	
 	<strong>Center Column</strong>
 	<li><a href="#" id="center-tab" rel="center">Style & edit CENTER COLUMN</a></li>
@@ -82,12 +82,12 @@ Atahualpa <?php echo $bfa_ata_version; ?></h2></td><td valign="middle"><iframe s
 <?php foreach ($options as $value) {     // start the options loop, check first, if we need to switch to another tab = option category
 
 // open/close category tab divs . All categories except first category "start-here" get an opening form tag. "start-here" has no value "switch"
-if ( $value['switch'] == "yes") echo '</div><div id="'.$value['category'].'" class="tabcontent"><form method="post">'; 
+if ( isset($value['switch'])) echo '</div><div id="'.$value['category'].'" class="tabcontent"><form method="post">'; 
 
 // extra info for some categories
 
 // "Postinfo" instructions
-if($value['category'] == "postinfos" AND $value['switch'] == "yes") { ?>
+if($value['category'] == "postinfos" AND isset($value['switch'])) { ?>
 	<div class="bfa-container">
 		<div class="bfa-container-full">
 			<img src="<?php bloginfo('template_directory'); ?>/options/images/post-structure.gif" 
@@ -266,7 +266,7 @@ if($value['category'] == "postinfos" AND $value['switch'] == "yes") { ?>
 			<br /><strong>Example 2:</strong> <code>%comments('<i>Comments</i>', '<i>Comments (1)</i>', '<i>Comments (%)</i>', '<i>dontshow</i>')%</code>
 			<br /><br />NOTE: On single post pages the <code>%comments('...')%</code> link won't display anything because the comments are on the same page. If you still 
 			want to link to the comments, the comment section and the comment form start with named anchors, so you use something like this:<br /> 
-			<code>&lt;a href="#comments"&gt;Skip to comments&lt;/a&gt;</code> or <code>&lt;a href="#commentform"&gt;Skip to comments form&lt;/a&gt;</code>
+			<code>&lt;?php echo '&lt;a href="'.getH().'comments"&gt;Skip to comments&lt;/a&gt;'; ?&gt;</code> or <code>&lt;?php echo '&lt;a href="'.getH().'commentform"&gt;Skip to comments form&lt;/a&gt;'; ?&gt;</code>
 			<hr><code>%comments-rss('linktext')%</code> - Displays the comment feed link for a post, with linktext as the link text.
 			<hr><code>%trackback%</code> - Displays the trackback URL for the current post.
 			<hr><code>%trackback-linked('linktext')%</code> - Displays a link to the trackback URL, with linktext as the link text.
@@ -356,18 +356,18 @@ if ($value['type'] == "text") {
 	echo '<div class="bfa-container"><div class="bfa-container-left">
 	<label for="' . $value['name'] . '">' . $value['name'] . '</label><input ';
 	
-	if ($value['size'] != "") 
+	if ( isset($value['size'])) 
 		echo "size=" . $value['size'] . ($value['size'] > 20 ? ' style="width: 95%;"' : ' '); 
 	
 	echo ( eregi("color", $value['id']) ? 'class="color" ' : '' ) . 
 	'name="' . $value['id'] . '" id="' . $value['id'] . '" type="' . $value['type'] . '" value="';
 	 
 	if ( isset($bfa_ata[ $value['id'] ]) ) 
-		echo ( $value['editable'] == "yes" ? 
+		echo ( isset($value['editable']) ? 
 		stripslashes(format_to_edit( $bfa_ata[ $value['id'] ] )) : 
 		$bfa_ata[ $value['id'] ]  ); 
 	else  
-		echo ( $value['editable'] == "yes" ? 
+		echo ( isset($value['editable']) ? 
 		stripslashes(format_to_edit($value['std'])) : 
 		$value['std'] ); 
 
@@ -376,7 +376,7 @@ if ($value['type'] == "text") {
 	if ($value['std'] == "") 
 		echo "blank"; 
 	else  
-		echo ( $value['editable'] == "yes" ? 
+		echo ( isset($value['editable']) ? 
 		stripslashes(format_to_edit($value['std'])) : 
 		$value['std'] ); 
 	
@@ -497,30 +497,30 @@ elseif ($value['type'] == "displayon") {
 	<table align="right" class="bfa-optiontable" border="0" cellspacing="0" cellpadding="5">
 	<tbody><tr><td style="vertical-align: top">
 	<input type="checkbox" name="' . $value['id'] . '[homepage]" ' . 
-	($current_options['homepage'] ? 'checked="checked"' : '' ) . ' /> Homepage<br /> 
+	(isset($current_options['homepage']) ? 'checked="checked"' : '' ) . ' /> Homepage<br /> 
 	<input type="checkbox" name="' . $value['id'] . '[frontpage]" ' . 
-	($current_options['frontpage'] ? 'checked="checked"' : '' ) . ' /> Front Page (*)<br /> 
+	(isset($current_options['frontpage']) ? 'checked="checked"' : '' ) . ' /> Front Page (*)<br /> 
 	<input type="checkbox" name="' . $value['id'] . '[single]" ' . 
-	($current_options['single'] ? 'checked="checked"' : '' ) . ' /> Single Posts<br /> 
+	(isset($current_options['single']) ? 'checked="checked"' : '' ) . ' /> Single Posts<br /> 
 	<input type="checkbox" name="' . $value['id'] . '[page]" ' . 
-	($current_options['page'] ? 'checked="checked"' : '' ) . ' /> "Page" pages<br /> 
+	(isset($current_options['page']) ? 'checked="checked"' : '' ) . ' /> "Page" pages<br /> 
 	<input type="checkbox" name="' . $value['id'] . '[category]" ' . 
-	($current_options['category'] ? 'checked="checked"' : '' ) . ' /> Category Pages<br /> 
+	(isset($current_options['category']) ? 'checked="checked"' : '' ) . ' /> Category Pages<br /> 
 	<input type="checkbox" name="' . $value['id'] . '[date]" ' . 
-	($current_options['date'] ? 'checked="checked"' : '' ) . ' /> Archive Pages
+	(isset($current_options['date']) ? 'checked="checked"' : '' ) . ' /> Archive Pages
 	</td><td style="vertical-align: top"> 
 	<input type="checkbox" name="' . $value['id'] . '[tag]" ' . 
-	($current_options['tag'] ? 'checked="checked"' : '' ) . ' /> Tag Pages<br /> 
+	(isset($current_options['tag']) ? 'checked="checked"' : '' ) . ' /> Tag Pages<br /> 
 	<input type="checkbox" name="' . $value['id'] . '[taxonomy]" ' . 
-	($current_options['taxonomy'] ? 'checked="checked"' : '' ) . ' /> Cust.Tax. (**)<br /> 
+	(isset($current_options['taxonomy']) ? 'checked="checked"' : '' ) . ' /> Cust.Tax. (**)<br /> 
 	<input type="checkbox" name="' . $value['id'] . '[search]" ' . 
-	($current_options['search'] ? 'checked="checked"' : '' ) . ' /> Search Results<br /> 
+	(isset($current_options['search']) ? 'checked="checked"' : '' ) . ' /> Search Results<br /> 
 	<input type="checkbox" name="' . $value['id'] . '[author]" ' . 
-	($current_options['author'] ? 'checked="checked"' : '' ) . ' /> Author Pages<br /> 
+	(isset($current_options['author']) ? 'checked="checked"' : '' ) . ' /> Author Pages<br /> 
 	<input type="checkbox" name="' . $value['id'] . '[404]" ' . 
-	($current_options['404'] ? 'checked="checked"' : '' ) . ' /> "Not Found"<br /> 
+	(isset($current_options['404']) ? 'checked="checked"' : '' ) . ' /> "Not Found"<br /> 
 	<input type="checkbox" name="' . $value['id'] . '[attachment]" ' . 
-	($current_options['attachment'] ? 'checked="checked"' : '' ) . ' /> Attachments<br /> 
+	(isset($current_options['attachment']) ? 'checked="checked"' : '' ) . ' /> Attachments<br /> 
 	<input type="hidden" name="' . $value['id'] . '[check-if-saved-once]" value="saved">
 	</td></tr></tbody>
 	</table>
@@ -656,7 +656,7 @@ elseif ($value['type'] == "select") {
 #####################################################################
 
 	// all categories except first category "start-here" get closing form tags and buttons
-	if ( $value['category'] != "start-here" AND $value['lastoption'] == "yes" ) {  
+	if ( $value['category'] != "start-here" AND isset($value['lastoption']) ) {  
 		echo '<div id="submit-container" class="bfa-container" style="background: none; border: none;">	
 		<p class="submit">
 		<input class="save-tab" name="save" type="submit" value="" />
@@ -667,7 +667,7 @@ elseif ($value['type'] == "select") {
 		</form>
 		<form method="post">
 		<p class="submit">
-		<input class="reset-tab" name="reset" type="submit" value="" />
+		<input class="reset-tab" name="reset" type="submit" value="" onClick="return confirmPageReset()" />
 		<input type="hidden" name="action" value="reset" />
 		<input type="hidden" name="category" value="' . $value['category'] . '" />
 		<span style="font-weight: bold; font-size: 13px; color: #ab0000">Reset settings of current page</span>

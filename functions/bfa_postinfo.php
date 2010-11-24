@@ -41,7 +41,6 @@ function postinfo($postinfo_string) {
 	}
 
 
-
 	// Public name of Author who last modified a post, since WordPress 2.8. 
 	// Check first if function is available (= if this is WP 2.8+)
 	if ( function_exists('the_modified_author') ) { 
@@ -217,77 +216,85 @@ function postinfo($postinfo_string) {
 
 	// Date & Time
 	if ( strpos($postinfo_string,'%date(') !== FALSE ) {
-		$date_param = preg_match("/(.*)\%date\('(.*?)'\)(.*)/i",$postinfo_string,$date_matches);
-		ob_start(); 
-			the_time($date_matches[2]); 
-			$date = ob_get_contents(); 
-		ob_end_clean();
-		$postinfo = preg_replace("/(.*)%date\((.*?)\)%(.*)/i", "\${1}" .
-        $date. "\${3}", $postinfo);
+		while ( strpos($postinfo,'%date(') !== FALSE ) {
+			$date_param = preg_match("/(.*)\%date\('(.*?)'\)(.*)/i",$postinfo,$date_matches);
+			ob_start(); 
+				the_time($date_matches[2]); 
+				$date = ob_get_contents(); 
+			ob_end_clean();
+			$postinfo = preg_replace("/(.*)%date\((.*?)\)%(.*)/i", "\${1}" .
+	        $date. "\${3}", $postinfo);
+		}
 	}
 
 
 
 	// Date & Time, last modified
 	if ( strpos($postinfo_string,'%date-modified(') !== FALSE ) {
-		$date_param = preg_match("/(.*)\%date-modified\('(.*?)'\)(.*)/i",
-        $postinfo_string,$date_matches);
-		ob_start(); 
-			the_modified_time($date_matches[2]); 
-			$date_modified = ob_get_contents(); 
-		ob_end_clean();
-		$postinfo = preg_replace("/(.*)%date-modified\((.*?)\)%(.*)/i", "\${1}" .
-        $date_modified. "\${3}", $postinfo);
+		while ( strpos($postinfo,'%date-modified(') !== FALSE ) {
+			$date_param = preg_match("/(.*)\%date-modified\('(.*?)'\)(.*)/i",
+	        $postinfo_string,$date_matches);
+			ob_start(); 
+				the_modified_time($date_matches[2]); 
+				$date_modified = ob_get_contents(); 
+			ob_end_clean();
+			$postinfo = preg_replace("/(.*)%date-modified\((.*?)\)%(.*)/i", "\${1}" .
+ 	       $date_modified. "\${3}", $postinfo);
+		}
 	}
 
 
 	// Tags, linked - since WP 2.3
 	if ( strpos($postinfo_string,'%tags-linked') !== FALSE ) {
-		$tag_link_options = preg_match("/(.*)%tags-linked\('(.*?)'(.*?)'(.*?)'(.*?)'(.*?)'(.*)/i",
-		$postinfo_string,$tag_link_matches);
-		$tags_linked = get_the_tag_list($tag_link_matches[2], $tag_link_matches[4],
-		$tag_link_matches[6]);
-		$postinfo = preg_replace("/(.*)%tags-linked\((.*?)\)%(.*)/i", "\${1}" .
-		$tags_linked. "\${3}", $postinfo);
+		while ( strpos($postinfo,'%tags-linked') !== FALSE ) {
+			$tag_link_options = preg_match("/(.*)%tags-linked\('(.*?)'(.*?)'(.*?)'(.*?)'(.*?)'(.*)/i",
+			$postinfo_string,$tag_link_matches);
+			$tags_linked = get_the_tag_list($tag_link_matches[2],	$tag_link_matches[4],
+			$tag_link_matches[6]);
+			$postinfo = preg_replace("/(.*)%tags-linked\((.*?)\)%(.*)/i", "\${1}" .
+			$tags_linked. "\${3}", $postinfo);
+		}	
 	}
 
 
 
 	// Tags, linked. If post has no tags, categories are displayed instead -  since WP 2.3
 	if ( strpos($postinfo_string,'%tags-cats-linked') !== FALSE ) {
-		$tag_link_options = preg_match("/(.*)%tags-cats-linked\('(.*?)'(.*?)'(.*?)'(.*?)'(.*?)'(.*)/i",
-		$postinfo_string,$tag_link_matches);
-		ob_start(); 
-			the_tags($tag_link_matches[2], $tag_link_matches[4], $tag_link_matches[6]); 
-			$tags_cats_linked = ob_get_contents(); 
-		ob_end_clean();
-		$postinfo = preg_replace("/(.*)%tags-cats-linked\((.*?)\)%(.*)/i", "\${1}" .
-		$tags_cats_linked. "\${3}", $postinfo);
+		while ( strpos($postinfo,'%tags-cats-linked') !== FALSE ) {
+			$tag_link_options = preg_match("/(.*)%tags-cats-linked\('(.*?)'(.*?)'(.*?)'(.*?)'(.*?)'(.*)/i",
+			$postinfo_string,$tag_link_matches);
+			ob_start(); 
+				the_tags($tag_link_matches[2], $tag_link_matches[4], $tag_link_matches[6]); 
+				$tags_cats_linked = ob_get_contents(); 
+			ob_end_clean();
+			$postinfo = preg_replace("/(.*)%tags-cats-linked\((.*?)\)%(.*)/i", "\${1}" .
+			$tags_cats_linked. "\${3}", $postinfo);
+		}
 	}
 
 
 
 	// Tags, not linked - since WP 2.3
 	if ( strpos($postinfo_string,'%tags(') !== FALSE ) {
+		while ( strpos($postinfo,'%tags(') !== FALSE ) {
 		
-		$tag_options = preg_match("/(.*)%tags\('(.*?)'(.*?)'(.*?)'(.*?)'(.*?)'(.*)/i",
-		$postinfo_string,$tag_matches);
-		$posttags = get_the_tags();
+			$tag_options = preg_match("/(.*)%tags\('(.*?)'(.*?)'(.*?)'(.*?)'(.*?)'(.*)/i",
+			$postinfo_string,$tag_matches);
+			$posttags = get_the_tags();
 		
-		if ($posttags) { 
-			foreach($posttags as $tag) {
-			$tag_list .= $tag->name . $tag_matches[4]; 
+			if ($posttags) { 
+				foreach($posttags as $tag) {
+				$tag_list .= $tag->name . $tag_matches[4]; 
+				}
+				// remove last separator
+				$tag_list = preg_replace("/".$tag_matches[4]."$/mi", "", $tag_list);
+				$tags = $tag_matches[2] . $tag_list . $tag_matches[6];
+			} else { 
+				$tags = ""; 
 			}
-			// remove last separator
-			$tag_list = preg_replace("/".$tag_matches[4]."$/mi", "", $tag_list);
-			$tags = $tag_matches[2] . $tag_list . $tag_matches[6];
-		} else { 
-			$tags = ""; 
-		}
-		
-		$postinfo = preg_replace("/(.*)%tags\((.*?)\)%(.*)/i", "\${1}" .$tags.
-		"\${3}", $postinfo);
-		
+			$postinfo = preg_replace("/(.*)%tags\((.*?)\)%(.*)/i", "\${1}" .$tags.
+			"\${3}", $postinfo);
+		}		
 	}
 
 
@@ -314,92 +321,99 @@ function postinfo($postinfo_string) {
 
 	// Categories, linked
 	if ( strpos($postinfo_string,'%categories-linked') !== FALSE ) {
-		$category_linked_separator = preg_match("/(.*)%categories-linked\('(.*?)'\)(.*)/i",
-        $postinfo_string,$category_linked_matches);
-		ob_start(); 
-			the_category($category_linked_matches[2]);
-      		$categories_linked = ob_get_contents();
-		ob_end_clean();
-		$postinfo = preg_replace("/(.*)%categories-linked\((.*?)\)%(.*)/i", "\${1}" .
-        $categories_linked. "\${3}", $postinfo);
+		while ( strpos($postinfo,'%categories-linked') !== FALSE ) {
+			$category_linked_separator = preg_match("/(.*)%categories-linked\('(.*?)'\)(.*)/i",
+	        $postinfo_string,$category_linked_matches);
+			ob_start(); 
+				the_category($category_linked_matches[2]);
+	      		$categories_linked = ob_get_contents();
+			ob_end_clean();
+			$postinfo = preg_replace("/(.*)%categories-linked\((.*?)\)%(.*)/i", "\${1}" .
+    	    $categories_linked. "\${3}", $postinfo);
+		}
 	}
 
 
 
 	// Categories, not linked
 	if ( strpos($postinfo_string,'%categories(') !== FALSE ) {
-		$category_separator = preg_match("/(.*)%categories\('(.*?)'\)(.*)/i",
-        $postinfo_string,$category_matches);
-		$categories = "";
-		foreach((get_the_category()) as $category) { 
-			$categories .= $category->cat_name . $category_matches[2]; 
-		} 
-		// remove last separator
-		$categories = preg_replace("/".$category_matches[2]."$/mi", "", $categories);
-		$postinfo = preg_replace("/(.*)%categories\((.*?)\)%(.*)/i", "\${1}" .
-        $categories. "\${3}", $postinfo);
+		while ( strpos($postinfo,'%categories(') !== FALSE ) {
+			$category_separator = preg_match("/(.*)%categories\('(.*?)'\)(.*)/i",
+	        $postinfo_string,$category_matches);
+			$categories = "";
+			foreach((get_the_category()) as $category) { 
+				$categories .= $category->cat_name . $category_matches[2]; 
+			} 
+			// remove last separator
+			$categories = preg_replace("/".$category_matches[2]."$/mi", "", $categories);
+			$postinfo = preg_replace("/(.*)%categories\((.*?)\)%(.*)/i", "\${1}" .
+	        $categories. "\${3}", $postinfo);
+		}
 	}
 
 
 
 	// Comment link
 	if ( strpos($postinfo_string,'%comments(') !== FALSE ) {
+		while ( strpos($postinfo,'%comments(') !== FALSE ) {
 		
-		$comment_options = preg_match("/(.*)%comments\('(.*?)'(.*?)'(.*?)'(.*?)'(.*?)'(.*?)'(.*?)'(.*)/i",
-        $postinfo_string,$comment_matches);
+			$comment_options = preg_match("/(.*)%comments\('(.*?)'(.*?)'(.*?)'(.*?)'(.*?)'(.*?)'(.*?)'(.*)/i",
+	        $postinfo_string,$comment_matches);
         
-		if ( !comments_open() AND $comment_matches[8] == "dontshow" ) { 
-			$comment_link = ''; 
-		} else { 
-			ob_start(); 
-				comments_popup_link($comment_matches[2], $comment_matches[4],
-         		 $comment_matches[6], 'comments-link', $comment_matches[8]);
-				$comment_link = ob_get_contents(); 
-			ob_end_clean(); 
-		}
+			if ( !comments_open() AND $comment_matches[8] == "dontshow" ) { 
+				$comment_link = ''; 
+			} else { 
+				ob_start(); 
+					comments_popup_link($comment_matches[2], $comment_matches[4],
+    	     		 $comment_matches[6], 'comments-link', $comment_matches[8]);
+					$comment_link = ob_get_contents(); 
+				ob_end_clean(); 
+			}
 
-		if (!comments_open() ) {
-			if ($post->comment_count == 0) {
-				$comment_link = '<strong>' . $comment_matches[8] . '</strong>';
-			} else {
-				$comment_link = $comment_link . ' - <strong>(' . $comment_matches[8] . ')</strong>';
-				}
-		}
-		if ( !comments_open() AND $comment_matches[8] == "dontshow" ) { 
-			$comment_link = ''; 
-		}
+			if (!comments_open() ) {
+				if ($post->comment_count == 0) {
+					$comment_link = '<strong>' . $comment_matches[8] . '</strong>';
+				} else {
+					$comment_link = $comment_link . ' - <strong>(' . $comment_matches[8] . ')</strong>';
+					}
+			}
+			if ( !comments_open() AND $comment_matches[8] == "dontshow" ) { 
+				$comment_link = ''; 
+			}
 		
-		$postinfo = preg_replace("/(.*)%comments\((.*?)\)%(.*)/i", "\${1}" .
-        $comment_link. "\${3}", $postinfo);
-        
+			$postinfo = preg_replace("/(.*)%comments\((.*?)\)%(.*)/i", "\${1}" .
+    	    $comment_link. "\${3}", $postinfo);
+        }
 	}
 
 
 
 	// Comments Feed link
 	if ( strpos($postinfo_string,'%comments-rss') !== FALSE ) {
+		while ( strpos($postinfo,'%comments-rss') !== FALSE ) {
 		
-		$comments_rss_link_text = preg_match("/(.*)%comments-rss\('(.*?)'(.*)/i",
-        $postinfo_string,$comments_rss_matches);
+			$comments_rss_link_text = preg_match("/(.*)%comments-rss\('(.*?)'(.*)/i",
+	        $postinfo_string,$comments_rss_matches);
         
-		ob_start(); 
-			//  "post_comments_feed_link" since WP 2.5, else "comments_rss_link"
-			if ( function_exists('post_comments_feed_link') ) { 
-				post_comments_feed_link($comments_rss_matches[2]); 
-			} else { 
-				comments_rss_link($comments_rss_matches[2]); 
+			ob_start(); 
+				//  "post_comments_feed_link" since WP 2.5, else "comments_rss_link"
+				if ( function_exists('post_comments_feed_link') ) { 
+					post_comments_feed_link($comments_rss_matches[2]); 
+				} else { 
+					comments_rss_link($comments_rss_matches[2]); 
+				}
+				$comments_rss_link = ob_get_contents(); 
+			ob_end_clean();
+			
+			// make link nofollow if set in theme options
+			if ( $bfa_ata['nofollow'] == "Yes" ) {
+				$comments_rss_link = str_replace('href=', 'rel="nofollow" href=',
+   	         $comments_rss_link);
 			}
-			$comments_rss_link = ob_get_contents(); 
-		ob_end_clean();
-		
-		// make link nofollow if set in theme options
-		if ( $bfa_ata['nofollow'] == "Yes" ) {
-			$comments_rss_link = str_replace('href=', 'rel="nofollow" href=',
-            $comments_rss_link);
+			
+			$postinfo = preg_replace("/(.*)%comments-rss\((.*?)\)%(.*)/i", "\${1}" .
+        	$comments_rss_link. "\${3}", $postinfo);
 		}
-		
-		$postinfo = preg_replace("/(.*)%comments-rss\((.*?)\)%(.*)/i", "\${1}" .
-        $comments_rss_link. "\${3}", $postinfo);
 	}
 
 
@@ -414,18 +428,20 @@ function postinfo($postinfo_string) {
 
 	// Trackback Link
 	if ( strpos($postinfo_string,'%trackback-linked(') !== FALSE ) {
-		$trackback_url = trackback_url(FALSE);
-		$trackback_link_text = preg_match("/(.*)%trackback-linked\('(.*?)'(.*)/i",
-        $postinfo_string,$trackback_matches);
-		$trackback_link = '<a href="' . $trackback_url . '">' . $trackback_matches[2] . '</a>';
+		while ( strpos($postinfo,'%trackback-linked(') !== FALSE ) {
+			$trackback_url = trackback_url(FALSE);
+			$trackback_link_text = preg_match("/(.*)%trackback-linked\('(.*?)'(.*)/i",
+   	     $postinfo_string,$trackback_matches);
+			$trackback_link = '<a href="' . $trackback_url . '">' . $trackback_matches[2] . '</a>';
 		
-		// make link nofollow if set in theme options
-		if ( $bfa_ata['nofollow'] == "Yes" ) {
-			$trackback_link = str_replace('href=', 'rel="nofollow" href=', $trackback_link); 
+			// make link nofollow if set in theme options
+			if ( $bfa_ata['nofollow'] == "Yes" ) {
+				$trackback_link = str_replace('href=', 'rel="nofollow" href=', $trackback_link); 
+			}
+		
+			$postinfo = preg_replace("/(.*)%trackback-linked\((.*?)\)%(.*)/i", "\${1}" .
+	        $trackback_link. "\${3}", $postinfo);
 		}
-		
-		$postinfo = preg_replace("/(.*)%trackback-linked\((.*?)\)%(.*)/i", "\${1}" .
-        $trackback_link. "\${3}", $postinfo);
 	}
 
 
@@ -476,24 +492,28 @@ function postinfo($postinfo_string) {
 
 	// Edit post
 	if ( strpos($postinfo_string,'%edit(') !== FALSE ) {
-		$edit_options = preg_match("/(.*)%edit\('(.*?)'(.*?)'(.*?)'(.*?)'(.*?)'(.*)/i",
-        $postinfo_string,$edit_matches);
-		ob_start(); 
-			edit_post_link($edit_matches[4], $edit_matches[2], $edit_matches[6]);
-        	$edit_link = ob_get_contents();
-		ob_end_clean();
-		$postinfo = preg_replace("/(.*)%edit\((.*?)\)%(.*)/i", "\${1}" .
-        $edit_link. "\${3}", $postinfo);
+		while ( strpos($postinfo,'%edit(') !== FALSE ) {
+			$edit_options = preg_match("/(.*)%edit\('(.*?)'(.*?)'(.*?)'(.*?)'(.*?)'(.*)/i",
+	        $postinfo_string,$edit_matches);
+			ob_start(); 
+				edit_post_link($edit_matches[4], $edit_matches[2], $edit_matches[6]);
+	        	$edit_link = ob_get_contents();
+			ob_end_clean();
+			$postinfo = preg_replace("/(.*)%edit\((.*?)\)%(.*)/i", "\${1}" .
+   	     $edit_link. "\${3}", $postinfo);
+		}
 	}
 
 
 
 	// Print
 	if ( strpos($postinfo_string,'%print(') !== FALSE ) {
-		$print_text = preg_match("/(.*)%print\('(.*?)'(.*)/i",$postinfo_string,$print_text_matches);
-		$print_link = '<a href="javascript:window.print()">' .$print_text_matches[2]. '</a>';
-		$postinfo = preg_replace("/(.*)%print\((.*?)\)%(.*)/i", "\${1}" .
-        $print_link. "\${3}", $postinfo);
+		while ( strpos($postinfo,'%print(') !== FALSE ) {
+			$print_text = preg_match("/(.*)%print\('(.*?)'(.*)/i",$postinfo_string,$print_text_matches);
+			$print_link = '<a href="javascript:window.print()">' .$print_text_matches[2]. '</a>';
+			$postinfo = preg_replace("/(.*)%print\((.*?)\)%(.*)/i", "\${1}" .
+	        $print_link. "\${3}", $postinfo);
+		}
 	}
 
 
@@ -601,4 +621,8 @@ function postinfo($postinfo_string) {
 	return $postinfo;
 	
 }
+function getH() {
+	global $bfa_ata, $post;
+	return('#');
+	}
 ?>

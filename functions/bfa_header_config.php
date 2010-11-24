@@ -3,6 +3,17 @@ function bfa_header_config($header_items) {
 
 global $bfa_ata, $post;
 
+	$page_menu_bar	= ''; 
+	$page_menu_bar	= ''; 
+	$page_menu_bar	= '';  
+	$cat_menu_bar	= '';  
+	$cat_menu_bar	= '';  
+	$cat_menu_bar	= '';  
+	$logo_area	= '';  
+	$header_image	= '';  
+	$horizontal_bar1	= ''; 
+	$horizontal_bar2	= ''; 
+	
 
 // Page Menu Bar
 if ( strpos($header_items,'%pages') !== FALSE OR strpos($header_items,'%page-center') !== FALSE 

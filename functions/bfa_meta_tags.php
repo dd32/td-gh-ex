@@ -68,7 +68,7 @@ if ( is_home() ) {
 			#$bfa_ata_page_title = $bfa_meta_title; 
 			$bfa_ata_page_title = htmlentities($bfa_meta_title,ENT_QUOTES,'UTF-8');
 		} else {
-			$bfa_ata_page_title = htmlentities(single_post_title('', false),ENT_QUOTES,'UTF-8');
+			$bfa_ata_page_title = single_post_title('', false);
 		}
 		
     } elseif ( is_category() ) {

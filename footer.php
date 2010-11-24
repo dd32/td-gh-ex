@@ -1,7 +1,10 @@
 <?php /* if index.php or another page template (copied from index.php) was not used
 (i.e. by a plugin such as WPG2), the global $bfa_ata will be empty */
-global $bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2; 
-if ($bfa_ata == "") include_once (TEMPLATEPATH . '/functions/bfa_get_options.php'); ?>
+# global $bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2; 
+# if ($bfa_ata == "") include_once (TEMPLATEPATH . '/functions/bfa_get_options.php');
+if (!isset($bfa_ata))  
+list($bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2, $bfa_ata['h_blogtitle'], $bfa_ata['h_posttitle']) = bfa_get_options();
+?>
 </td>
 <!-- / Main Column -->
 

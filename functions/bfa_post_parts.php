@@ -40,6 +40,7 @@ function bfa_post_headline($before = '<div class="post-headline">', $after = '</
 	if ( is_single() OR is_page() ) {
 		$bfa_ata_body_title = get_post_meta($post->ID, 'bfa_ata_body_title', true);
 		$bfa_ata_display_body_title = get_post_meta($post->ID, 'bfa_ata_display_body_title', true);
+		$bfa_ata_body_title_multi = get_post_meta($post->ID, 'bfa_ata_body_title_multi', true);
 	} else {
 		$bfa_ata_body_title_multi = get_post_meta($post->ID, 'bfa_ata_body_title_multi', true);
 	}
@@ -121,8 +122,12 @@ function bfa_post_bodycopy($before = '<div class="post-bodycopy clearfix">', $af
 		$bfa_ata_more_tag_final = str_replace("%post-title%", the_title('', '', false), $bfa_ata['more_tag']);
 		the_content($bfa_ata_more_tag_final); 
 	} else { 
-		if (function_exists('the_post_thumbnail') AND !function_exists('tfe_get_image')) the_post_thumbnail();
-		the_excerpt(); 
+		if (function_exists('the_post_thumbnail') AND !function_exists('tfe_get_image')) {
+		     if(has_post_thumbnail()): ?>
+                <a href="<?php the_permalink() ?>"> <?php the_post_thumbnail(); ?></a>
+				<?php endif;
+			the_excerpt(); 
+		}
 	} 
 	echo $after;
 	
