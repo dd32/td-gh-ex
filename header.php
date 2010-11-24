@@ -15,7 +15,7 @@
     <title><?php graphene_title(); ?></title>
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" /> 
       <!--[if lte IE 6]>
-      	  <style>#container{background:none;}</style>
+      	  <style>#container{background:none !important;}</style>
           <script>
           sfHover = function() {
               var sfEls = document.getElementById("menu").getElementsByTagName("LI");

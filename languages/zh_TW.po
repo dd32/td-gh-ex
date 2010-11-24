@@ -1,71 +1,68 @@
-# Polish (pl_PL) translation for WordPress theme graphene.
-# Copyright (C) 2010 WordPress contributors.
-# This file is distributed under the same license as the graphene package.
-# Dariusz Francuz <francuzpm@gmail.com>, 2010.
-# Agard Khaardin <AgardKhaardin@gmail.com>, 2010.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: Graphene 1.1.1.1 theme for WordPress\n"
+"Project-Id-Version: Graphene chinese zh_TW (version 1.1.1)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-08 10:39+1200\n"
-"PO-Revision-Date: 2010-11-22 09:18+0100\n"
-"Last-Translator: Agard Khaardin <AgardKhaardin@gmail.com>\n"
-"Language-Team: Dariusz Francuz <francuzpm@gmail.com>, Agard Khaardin <AgardKhaardin@gmail.com>\n"
+"POT-Creation-Date: 2010-11-11 16:16-0500\n"
+"PO-Revision-Date: 2010-11-11 17:15-0500\n"
+"Last-Translator: NavCore <navcore@gmail.com>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pl_PL\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Poedit-KeywordsList: __;_e;_n;esc_attr_e;esc_attr__\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: TAIWAN\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: author.php:33
 msgid "Author's posts listings"
-msgstr "Lista wpisów tego autora"
+msgstr "作者文章發佈列表"
 
 #: comments.php:18
 msgid "This post is password protected. Enter the password to view any comments."
-msgstr "Ten wpis jest chroniony hasłem. Podaj hasło aby zobaczyć komentarze."
+msgstr "本文受密碼保護。請輸入密碼查看評論。"
 
 #: comments.php:39
 msgid "No comment yet"
-msgstr "Brak komentarzy"
+msgstr "没有評論"
 
 #: comments.php:39
 #: loop-author.php:78
 #: loop.php:92
 msgid "1 comment"
-msgstr "1 komentarz"
+msgstr "1 條評論"
 
 #: comments.php:39
 #: loop-author.php:78
 #: loop.php:92
 #, php-format
 msgid "% comments"
-msgstr "% komentarzy"
+msgstr "% 條評論"
 
 #: comments.php:68
 msgid "Comments have been disabled."
-msgstr "Komentarze zostały wyłączone"
+msgstr "禁止評論。"
 
 #: comments.php:81
 #, php-format
 msgid "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags and attributes: %s"
-msgstr "Możesz użyć tych znaczników i atrybutów <abbr title=\"HyperText Markup Language\">HTML</abbr>a: %s"
+msgstr "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags and attributes: %s"
 
 #: comments.php:86
 msgid "Your email address will not be published."
-msgstr "Twój adres email nie będzie publikowany."
+msgstr "暱稱和郵箱必需填寫，您的郵箱只有管理員可見。"
 
 #: comments.php:89
 #: functions.php:771
 msgid "Submit Comment"
-msgstr "Wyślij komentarz"
+msgstr "提交評論"
 
 #: footer.php:29
 msgid "Except where otherwise noted, content on this site is licensed under a <a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/\">Creative Commons Licence</a>."
-msgstr "Z wyjątkiem, gdzie zostało to zaznaczone, zawartość tej strony podlega licencji <a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/\">Creative Commons Licence</a>"
+msgstr "Except where otherwise noted, content on this site is licensed under a <a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/\">Creative Commons Licence</a>."
 
 #: footer.php:41
 msgid "Valid XHTML 1.0 Strict"
@@ -79,191 +76,182 @@ msgstr "Valid CSS"
 msgid "Valid CSS Level 2.1"
 msgstr "Valid CSS Level 2.1"
 
-#. translators: %1$s is the blog title, %2$s is the theme's name, %3$s is the theme's author
 #: footer.php:64
 #, php-format
 msgid "%1$s uses %2$s theme by %3$s."
-msgstr "%1$s używa motywu %2$s stworzonego przez %3$s."
+msgstr "%1$s uses %2$s theme by %3$s."
 
 #: functions.php:92
 msgid "Header Menu"
-msgstr "Menu nagłówka"
+msgstr "上方選單"
 
-#. translators: header image description
 #: functions.php:136
 msgid "Header image by Syahir Hakim"
-msgstr "Obrazek w nagłówku stworzył Syahir Hakim"
+msgstr "Header image by Syahir Hakim"
 
-#. translators: header image description
 #: functions.php:142
 msgid "This is the default Graphene theme header image, cropped from image by Quantin Houyoux at sxc.hu"
-msgstr "To jest domyślny obrazek w nagłówku motywu Graphene, wycięty z obrazu  Quantin'a Houyoux'a na sxc.hu"
+msgstr "This is the default Graphene theme header image, cropped from image by Quantin Houyoux at sxc.hu"
 
-#. translators: header image description
 #: functions.php:148
 #: functions.php:154
 #: functions.php:160
 #: functions.php:166
 #: functions.php:172
 msgid "Header image cropped from image by Ilco at sxc.hu"
-msgstr "Obrazek w nagłówku wycięty z obrazu Ilco na sxc.hu"
+msgstr "Header image cropped from image by Ilco at sxc.hu"
 
 #: functions.php:388
 msgid "Home"
-msgstr "Strona główna"
+msgstr "首頁"
 
 #: functions.php:416
 msgid " says:"
-msgstr "pisze:"
+msgstr " 說："
 
-#. translators: %1$s is the comment date, %2#s is the comment time
 #: functions.php:422
 #, php-format
 msgid "%1$s at %2$s"
-msgstr "%1$s na %2$s"
+msgstr "%1$s 在 %2$s"
 
 #: functions.php:424
 msgid "Edit comment"
-msgstr "Edytuj komentarz"
+msgstr "编輯評論"
 
 #: functions.php:428
 msgid "Reply"
-msgstr "Odpowiedz"
+msgstr "回覆"
 
 #: functions.php:439
 msgid "Your comment is awaiting moderation."
-msgstr "Twój komentarz czeka na sprawdzenie przez moderatora."
+msgstr "你的評論正在等待審查。"
 
 #: functions.php:532
 msgid "Sidebar Widget Area"
-msgstr "Obszar Widget'ów kolumnowych"
+msgstr "邊欄區 Widget"
 
 #: functions.php:534
 msgid "The right sidebar widget area."
-msgstr "Obszar na widget'y w prawej kolumnie"
+msgstr "右邊欄區 widget。"
 
 #: functions.php:542
 msgid "Footer Widget Area"
-msgstr "Obszar na Widget'y w Stopce"
+msgstr "底部 Widget"
 
 #: functions.php:544
 msgid "The footer widget area. Leave empty to disable. Set the number of columns to display at the theme's Display Options page."
-msgstr "Obszar na widget'y w stopce. Pozostaw pusty, aby go wyłączyć. Liczbę wyświetlanych kolumn można ustawić w Opcjach Motywu w części dotyczącej wyświetlania stron."
+msgstr "底部 widget。留空預設為關閉。設置欄目數字，這將顯示在主題選項相應區域。"
 
 #: functions.php:560
 msgid "Front Page Sidebar Widget Area"
-msgstr "Obszar Widget'ów kolumnowych na stronie głównej"
+msgstr "首頁邊欄區 widget"
 
 #: functions.php:562
 msgid "The right sidebar widget area that will only be displayed on the front page."
-msgstr "Obszar na widget'y w prawej kolumnie które będą wyświatlane tylko na stronie głównej."
+msgstr "右邊邊欄 widget 將只會顯示在首頁。"
 
 #: functions.php:572
 msgid "Front Page Footer Widget Area"
-msgstr "Obszar na Widget'y w Stopce Strony Głównej"
+msgstr "首頁底部 Widget"
 
 #: functions.php:574
 msgid "The footer widget area that will only be displayed on the front page. Leave empty to disable. Set the number of columns to display at the theme's Display Options page."
-msgstr "Obszar na widget'y w stopce strony głównej. Pozostaw pusty, aby go wyłączyć. Liczbę wyświetlanych kolumn można ustawić w Opcjach Motywu w części dotyczącej wyświetlania stron."
+msgstr "底部 widget 只會顯示在首頁。留空預設為關閉。設置欄目數字，這將顯示在主題選項相應區域。"
 
 #: functions.php:626
 msgid "Follow me on Twitter"
-msgstr "Śledź mnie na Twitterze"
+msgstr "從 Twitter 關注我"
 
-# dosłownie:
-# Ostatnie świergoty/ćwierkania
 #: functions.php:663
 msgid "Latest tweets"
-msgstr "Ostatnie tweet'y"
+msgstr "最新 tweets"
 
 #: functions.php:668
 msgid "Title:"
-msgstr "Tytuł:"
+msgstr "題目:"
 
 #: functions.php:672
 msgid "Twitter Username:"
-msgstr "Login na Twitterze:"
+msgstr "Twitter 用户名:"
 
-# tweet - świegot, ćwierkanie (np. ptaków)
 #: functions.php:676
 msgid "Number of tweets to display:"
-msgstr "Liczba tweetów do wyświetlenia:"
+msgstr "顯示 tweets 數目:"
 
 #: functions.php:709
 msgid "Graphene Options"
-msgstr "Opcje Motywu Graphene"
+msgstr "Graphene 選項"
 
 #: functions.php:710
 msgid "Graphene Display"
-msgstr "Opcje Wyświetlania Motywu Graphene"
+msgstr "Graphene 顯示"
 
 #: functions.php:752
 msgid "Name:"
-msgstr "Imię:"
+msgstr "暱稱:"
 
 #: functions.php:753
 msgid "Email:"
-msgstr "Email:"
+msgstr "郵件:"
 
 #: functions.php:754
 msgid "Website:"
-msgstr "Strona WWW:"
+msgstr "網站:"
 
 #: functions.php:764
 msgid "Message:"
-msgstr "Wiadomość:"
+msgstr "留言:"
 
 #: functions.php:791
 msgid "Continue reading &raquo;"
-msgstr "Kontynuuj czytanie &raquo;"
+msgstr "繼續閱讀 &raquo;"
 
 #: functions.php:821
 msgid "Older posts &laquo;"
-msgstr "Starsze posty &laquo"
+msgstr "舊文章 &laquo;"
 
 #: functions.php:822
 msgid "&raquo; Newer posts"
-msgstr "&raquo; Brako postów"
+msgstr "&raquo; 新文章"
 
 #: functions.php:947
 msgid "View full post"
-msgstr "Zobacz cały wpis"
+msgstr "全文View full post"
 
 #: functions.php:1067
 msgid "<strong>ERROR: You must supply the post ID to get the image from as an argument when calling the graphene_get_post_image() function.</strong>"
-msgstr "<strong>BŁĄD: Musisz przekazać ID wpisu jako argument, aby funkcja  graphene_get_post_image() zwróciła obraz po wywołaniu.</strong>"
+msgstr "<strong>ERROR: You must supply the post ID to get the image from as an argument when calling the graphene_get_post_image() function.</strong>"
 
 #: header.php:54
 msgid "Subscribe to RSS feed"
-msgstr "Subskrybuj RSS"
+msgstr "訂閱 RSS"
 
 #: header.php:103
 #: header.php:106
 msgid "Go back to the front page"
-msgstr "Wróć na stronę główną"
+msgstr "返回首頁"
 
 #: loop-author.php:23
 msgid "Author's details"
-msgstr "O Autorze"
+msgstr "作者詳细信息"
 
-#. translators: %1$s is the first name, %2$s is the last name
 #: loop-author.php:25
 #, php-format
 msgid "<strong>Name:</strong> %1$s %2$s"
-msgstr "<strong>Imię:</strong> %1$s %2$s"
+msgstr "<strong>姓名:</strong> %1$s %2$s"
 
 #: loop-author.php:26
 #, php-format
 msgid "<strong>Date registered:</strong> %1$s"
-msgstr "<strong>Data rejestracji:</strong> %1$s"
+msgstr "<strong>註册日期:</strong> %1$s"
 
 #: loop-author.php:35
 msgid "Biography"
-msgstr "Biografia"
+msgstr "地區"
 
 #: loop-author.php:47
 msgid "Latest posts"
-msgstr "Najnowsze posty"
+msgstr "最新發表"
 
 #: loop-author.php:50
 #: loop-author.php:78
@@ -271,98 +259,96 @@ msgstr "Najnowsze posty"
 #: search-404.php:24
 #, php-format
 msgid "Permalink Link to %s"
-msgstr "Permalink do %s"
+msgstr "鏈接到 %s"
 
 #: loop-author.php:50
 #: loop-author.php:78
 #: loop.php:26
 msgid "(No title)"
-msgstr "(Brak tytułu)"
+msgstr "(無標題)"
 
 #: loop-author.php:73
 msgid "Most commented posts"
-msgstr "Najczęściej komentowane posty"
+msgstr "最多評論文章"
 
 #: loop-author.php:78
 #: loop.php:92
 msgid "Leave comment"
-msgstr "Pozostaw komentarz"
+msgstr "發表評論"
 
-#. translators: this is for the author byline, such as 'by John Doe'
 #: loop.php:46
 msgid "by"
-msgstr "przez"
+msgstr "文章由"
 
 #: loop.php:48
 msgid "Edit post"
-msgstr "Edytuj post"
+msgstr "編輯文章"
 
 #: loop.php:66
 msgid "Read the rest of this entry &raquo;"
-msgstr "Czytaj pozostałe wpisy &raquo"
+msgstr "繼續閱讀 &raquo;"
 
 #: loop.php:70
 msgid "<p><strong>Pages:</strong> "
-msgstr "<p><strong>Strony:</strong>"
+msgstr "<p><strong>頁數:</strong> "
 
 #: loop.php:80
 msgid "Tags:"
-msgstr "Etykiety:"
+msgstr "標籤:"
 
 #: loop.php:80
 msgid "This post has no tag"
-msgstr "Ten wpis nie zawiera etykiet"
+msgstr "没有標籤"
 
 #: loop.php:105
 msgid "About the author"
-msgstr "O autorze"
+msgstr "關於作者"
 
 #: loop.php:136
 msgid "Not found"
-msgstr "Nie znaleziono"
+msgstr "没有找到"
 
 #: loop.php:141
 msgid "Sorry, but you are looking for something that isn't here. Wanna try a search?"
-msgstr "Przepraszam, nie ma tu tego, czego szukasz.Chcesz spróbować jeszcze raz?  "
+msgstr "抱歉，没有找到。要試試搜索嗎？"
 
 #: loop.php:143
 msgid "Sorry, but no results were found for that keyword. Wanna try an alternative keyword search?"
-msgstr "Przepraszam, brak wyników dla tego słowa. Chcesz spróbować inne? "
+msgstr "抱歉，未找到任何與關鍵字匹配的信息。要試試其他關鍵字嗎？"
 
 #: search-404.php:3
 msgid "Error 404 - Page Not Found"
-msgstr "Błąd 404 - Strona nie dziła"
+msgstr "Error 404 - 網頁不存在"
 
 #: search-404.php:5
 msgid "Sorry, I've looked everywhere but I can't find the page you're looking for."
-msgstr "Przeprazam, szukałem wszędzie, ale nie mogę znaleźć strony, której szukasz."
+msgstr "抱歉，已搜索所有頁面但無匹配資料。"
 
 #: search-404.php:6
 msgid "If you follow the link from another website, I may have removed or renamed the page some time ago. You may want to try searching for the page:"
-msgstr "Jeśli kliknąłeś na link na innej stronie, możliwe, że usunałem, lub zmieniłem nazwę strony. Czy chcesz znależć tą stornę:"
+msgstr "如果你是從外部链接到此，我可能已經移除或者重命名該頁面。你可以嚐試一下頁面搜索："
 
 #: search-404.php:14
 msgid "Suggested results"
-msgstr "Proponowane wyniki"
+msgstr "建議结果"
 
-#. translators: %s is the search term
 #: search-404.php:18
 #, php-format
 msgid "I've done a courtesy search for the term %s for you. See if you can find what you're looking for in the list below:"
-msgstr "Dokonałem wyszukiwania zagadnienia %s. Sprawdź, czy to, czego szukasz znajduje się na liście poniżej:"
+msgstr "Hemos puesto en práctica una búsqueda de cortesía correspondiente al término %s que has utilizado. Comprueba si puedes encontrar lo que estabas buscando en la lista que tienes a continuación:"
 
 #: search-404.php:35
 msgid "<strong>Sorry, couldn't find anything.</strong> Try searching for alternative terms using the search form above."
-msgstr "<strong>Przepraszam, nie mogłem znależć niczego.</strong> Spróbuj wyszukać alternatywnych zagadnień używająć wyszukiwarki poniżej. "
+msgstr "<strong>抱歉, 找不到任何對應資料.</strong>. 請由上方搜尋欄查類似名稱."
 
 #: searchform.php:3
 #: searchform.php:4
 msgid "Search"
-msgstr "Szukaj"
+msgstr "搜索"
 
 #: sidebar.php:34
 msgid "Archives"
-msgstr "Archiwa"
+msgstr "存檔"
 
 #: sidebar.php:41
 msgid "Meta"
@@ -370,214 +356,213 @@ msgstr "Meta"
 
 #: sidebar.php:46
 msgid "Posts RSS"
-msgstr "Posty RSS"
+msgstr "文章 RSS "
 
 #: sidebar.php:47
 msgid "Comments RSS"
-msgstr "Komentarze RSS"
+msgstr "評論 RSS"
 
-#. translators: %s is the link to wordpress.org
 #: sidebar.php:49
 #, php-format
 msgid "Powered by %s"
-msgstr "Stworzony przez %s"
+msgstr "Powered by %s"
 
 #: sidebar.php:49
 msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
-msgstr "Stworzone przez WordPress."
+msgstr "Powered by WordPress, state-of-the-art semantic personal publishing platform."
 
 #: admin/custom-fields.php:15
 msgid "Graphene post-specific options"
-msgstr "Opcje motywu Graphene specyficzne dla wpisów"
+msgstr "Graphene 發文相關選項"
 
 #: admin/custom-fields.php:16
 msgid "Graphene page-specific options"
-msgstr "Opcje motywu Graphene specyficzne dla stron"
+msgstr "Graphene 頁面相關選項"
 
 #: admin/custom-fields.php:82
 msgid "These settings will only be applied to this particular post or page you're editing. They will override the global settings set in the Graphene Options or Graphene Display options page."
-msgstr "Ustawienia te bedą miały zastosowanie tylko do wpisu lub strony którą właśnie edytyjesz. Tym samym zastąpią globalne ustawienia ustalone na stronach Opcje Motywu Graphene lub Opcje Wyświetlania Motywu Graphene."
+msgstr "這些設置將只對本文章/頁面有效。本設置將會取代 Graphene 選項或者 Graphene 顯示裏相應的設置。"
 
 #: admin/custom-fields.php:83
 msgid "Slider options"
-msgstr "Opcje Slider"
+msgstr "走馬燈設置"
 
 #: admin/custom-fields.php:87
 #: admin/options.php:284
 msgid "Slider image"
-msgstr "Obrazek w Slider"
+msgstr "走馬燈圖片"
 
 #: admin/custom-fields.php:91
 #: admin/custom-fields.php:117
 msgid "Use global setting"
-msgstr "Użyj ustawień globalnych"
+msgstr "使用全局設置"
 
 #: admin/custom-fields.php:92
 #: admin/options.php:288
 msgid "Don't show image"
-msgstr "Nie pokazuj obrazka"
+msgstr "不顯示圖片"
 
 #: admin/custom-fields.php:93
 #: admin/options.php:289
 msgid "Featured Image"
-msgstr "Obrazek reprezantacyjny"
+msgstr "特色圖片"
 
 #: admin/custom-fields.php:94
 #: admin/options.php:290
 msgid "First image in post"
-msgstr "Pierwszy obraz we wpisie"
+msgstr "文章中第一張圖片"
 
 #: admin/custom-fields.php:95
 #: admin/options.php:291
 msgid "Custom URL"
-msgstr "Własny URL"
+msgstr "自定義 URL"
 
 #: admin/custom-fields.php:101
 #: admin/options.php:297
 msgid "Custom slider image URL"
-msgstr "URL własnego obrazka w Slider"
+msgstr "自定義走馬燈 URL"
 
 #: admin/custom-fields.php:105
 #: admin/options.php:301
 msgid "Make sure you select Custom URL in the slider image option above to use this custom url."
-msgstr "Upewnij się że wybrano \"Własny URL\" w opcji \"Obrazek w Slider\" powyżej "
+msgstr "請確認在上面下拉框中選擇自定義URL選項。"
 
 #: admin/custom-fields.php:109
 msgid "Display options"
-msgstr "Opcje wyświetlnia"
+msgstr "顯示選項"
 
 #: admin/custom-fields.php:113
 msgid "AddThis Social Sharing button"
-msgstr "Pokaż przyciski AddThis"
+msgstr "AddThis  分享按鈕"
 
 #: admin/custom-fields.php:118
 msgid "Show button"
-msgstr "Pokaż przyciski"
+msgstr "顯示按鈕"
 
 #: admin/custom-fields.php:119
 msgid "Hide button"
-msgstr "Ukryj przyciski"
+msgstr "隐藏按鈕"
 
 #: admin/display.php:35
 #: admin/options.php:35
 #: admin/options.php:151
 #: admin/options.php:175
 msgid "ERROR: You are not authorised to perform that operation"
-msgstr "BŁĄD: Nie jesteś upoważniony do wykonania tej operacji."
+msgstr "錯誤: 你没有權限執行。"
 
 #: admin/display.php:75
 msgid "Please enter only numerical value for the footer widget column count."
-msgstr "Proszę podać tylko wartości liczbowe dla liczby kolumn footer widget. "
+msgstr "請為底部 widget 欄輸入有效值，只限數字。"
 
 #: admin/display.php:84
 msgid "Please enter only numerical value for the front page footer widget column count."
-msgstr "Proszę podać tylko wartości liczbowe dla liczby kolumn footer widget  na stronie głównej"
+msgstr "請為首頁底部 widget 欄輸入有效值，只限數字。"
 
 #: admin/display.php:94
 msgid "Please enter only numerical value for the navigation menu dropdown item width."
-msgstr "Proszę podać tylko wartości liczbowe dla ustalenie szerokości menu nawigacji."
+msgstr "請為導航下拉選單顯示欄輸入有效值，只限數字。"
 
 #: admin/display.php:156
 #: admin/options.php:142
 msgid "Settings updated."
-msgstr "Ustawienia uaktualniono."
+msgstr "設置已更新。"
 
 #: admin/display.php:211
 msgid "Graphene Display Options"
-msgstr "Opcje wyświetlania Graphene"
+msgstr "Graphene 顯示選項"
 
 #: admin/display.php:217
 #: admin/options.php:227
 msgid "ERROR:"
-msgstr "BŁĄD:"
+msgstr "錯誤:"
 
 #: admin/display.php:243
 msgid "Header Display Options"
-msgstr "Opcje wyświetlnia nagłówka"
+msgstr "頂部顯示選項"
 
 #: admin/display.php:247
 msgid "Use light-coloured header bars"
-msgstr "Użyj kolorowych pasków nagłówka "
+msgstr "頂部和導航欄使用淺色"
 
 #: admin/display.php:253
 msgid "Link header image to front page"
-msgstr "Odsyłacz do obrazka w nagłówku strony głównej"
+msgstr "鏈接頂部圖片到首頁"
 
 #: admin/display.php:256
 msgid "Check this if you disable the header texts and want the header image to be linked to the front page."
-msgstr "Zaznacz tutaj jeśli chcesz wyłączyc tekst w nagłówku i zamiast tego wolisz użyć na stronie odsyłacza do obrazka."
+msgstr "請確認，你將讓網站名稱失去鏈接回主頁功能，轉而替代為圖片鏈接回首頁。"
 
 #: admin/display.php:261
 msgid "Disable Featured Image replacing header image"
-msgstr "Wyłącz zastępowanie obrazka w nagłówku poprzez Obraz reprezentacyjny"
+msgstr "關閉特色圖片替換頂部圖片"
 
 #: admin/display.php:264
 msgid "Check this to prevent the posts Featured Image replacing the header image regardless of the featured image dimension."
-msgstr "Zaznacz tutaj jeśli chcesz zapobiec, aby Obraz Reprezentacyjny wpisu zastępował obraz w nagłówku bez wzgledu na wymiary obrazu reprezentacyjnego."
+msgstr "選擇此項防止以任意大小特色圖片替换頂部圖片。"
 
 #: admin/display.php:271
 msgid "Posts Display Options"
-msgstr "Opcje wyświetlnia wpisów"
+msgstr "文章顯示選項"
 
 #: admin/display.php:275
 msgid "Show excerpts in front page"
-msgstr "Pokazuj wypisy na stronie głównej"
+msgstr "在首頁顯示摘要"
 
 #: admin/display.php:281
 msgid "Hide post author"
-msgstr "Ukryj autora wpisów"
+msgstr "隐藏文章作者"
 
 #: admin/display.php:287
 msgid "Hide post date"
-msgstr "Ukryj datę opublikowania wpisów"
+msgstr "隐藏發佈日期"
 
 #: admin/display.php:293
 msgid "Hide post categories"
-msgstr "Ukryj kategorię wpisów"
+msgstr "隐藏文章分類"
 
 #: admin/display.php:299
 msgid "Hide post tags"
-msgstr "Ukryj etykiety wpisów"
+msgstr "隐藏文章標籤"
 
 #: admin/display.php:305
 msgid "Hide post comment count"
-msgstr "Ukryj licznik komentarzy do wpisów"
+msgstr "隐藏評論數"
 
 #: admin/display.php:306
 msgid "Only affects posts listing (such as the front page) and not single post view."
-msgstr "Odnosi się tylko do wyświetlania list wpisów (tak jak na stronie głównej), a nie do wyświetlania pojedynczych wpisów."
+msgstr "這只會影響到文章列表（例如首頁），不會影響到單獨的文章頁面。"
 
 #: admin/display.php:311
 msgid "Show post author's gravatar"
-msgstr "Pokaż gravatar autora wpisu"
+msgstr "顯示文章作者的 gravatar"
 
 #: admin/display.php:315
 msgid "Show post author's info"
-msgstr "Pokaż informacje o autorze wpisu"
+msgstr "顯示文章作者的信息"
 
 #: admin/display.php:321
 msgid "Comments Display Options"
-msgstr "Opcje wyświetlnia komentarzy"
+msgstr "評論顯示選項"
 
 #: admin/display.php:325
 msgid "Hide allowed tags in comment form"
-msgstr "Ukryj listę dozwolonych znaczników w formularzu dodawania komentarza"
+msgstr "隐藏評論留言框下方標籤"
 
 #: admin/display.php:333
 msgid "Text Style Options"
-msgstr "Opcje wyświetlania tekstu."
+msgstr "文本格式選項"
 
 #: admin/display.php:334
 msgid "Note that these are CSS properties, so any valid CSS values for each particular property can be used."
-msgstr "To są ustawienia CSS, każda poprawna wartość CSS może być użyta."
+msgstr "提示：下面為 CSS 格式，所以 CSS 值都可以使用。"
 
 #: admin/display.php:335
 msgid "Some example CSS properties values:"
-msgstr "Przykłady właściwośći CSS:"
+msgstr "一些 CSS 特性值："
 
 #: admin/display.php:338
 msgid "Text font:"
-msgstr "Czcionka tekstu:"
+msgstr "文本字體："
 
 #: admin/display.php:339
 msgid "<code>arial</code>, <code>tahoma</code>, <code>georgia</code>, <code>'Trebuchet MS'</code>"
@@ -585,7 +570,7 @@ msgstr "<code>arial</code>, <code>tahoma</code>, <code>georgia</code>, <code>'Tr
 
 #: admin/display.php:342
 msgid "Text size and line height:"
-msgstr "Rozmiar tekstu i wysokość linii:"
+msgstr "文本大小和線高："
 
 #: admin/display.php:343
 msgid "<code>12px</code>, <code>12pt</code>, <code>12em</code>"
@@ -593,7 +578,7 @@ msgstr "<code>12px</code>, <code>12pt</code>, <code>12em</code>"
 
 #: admin/display.php:346
 msgid "Text weight:"
-msgstr "Grubość tekstu:"
+msgstr "文本重量："
 
 #: admin/display.php:347
 msgid "<code>normal</code>, <code>bold</code>, <code>100</code>, <code>700</code>"
@@ -601,7 +586,7 @@ msgstr "<code>normal</code>, <code>bold</code>, <code>100</code>, <code>700</cod
 
 #: admin/display.php:350
 msgid "Text style:"
-msgstr "Styl tekstu:"
+msgstr "文本格式："
 
 #: admin/display.php:351
 msgid " <code>normal</code>, <code>italic</code>, <code>oblique</code>"
@@ -609,7 +594,7 @@ msgstr "<code>normal</code>, <code>italic</code>, <code>oblique</code>"
 
 #: admin/display.php:354
 msgid "Text colour:"
-msgstr "Kolor tekstu:"
+msgstr "文本颜色："
 
 #: admin/display.php:355
 msgid "<code>blue</code>, <code>navy</code>, <code>red</code>, <code>#ff0000</code>"
@@ -619,335 +604,337 @@ msgstr "<code>blue</code>, <code>navy</code>, <code>red</code>, <code>#ff0000</c
 #: admin/display.php:456
 #: admin/display.php:478
 msgid "Leave field empty to use the default value."
-msgstr "Zostaw pole puste, aby użyć wartości domyślnych."
+msgstr "留空则使用預設值。"
 
 #: admin/display.php:359
 msgid "Header Text"
-msgstr "Tekst nagłówka"
+msgstr "頂部文本"
 
 #: admin/display.php:363
 msgid "Title text font"
-msgstr "Czcionka tytułu"
+msgstr "標題文字字體"
 
 #: admin/display.php:369
 msgid "Title text size"
-msgstr "Rozmiar czcionki tytułu"
+msgstr "標題文字大小"
 
 #: admin/display.php:375
 msgid "Title text weight"
-msgstr "Grubość czcionki tytułu"
+msgstr "標題文字重量"
 
 #: admin/display.php:381
 msgid "Title text line height"
-msgstr "Wysokość linii (odstępu pomiędzy wierszami) tytułu"
+msgstr "標題文字線高"
 
 #: admin/display.php:387
 msgid "Title text style"
-msgstr "Styl tytułu"
+msgstr "標題文字格式"
 
 #: admin/display.php:396
 msgid "Description text font"
-msgstr "Czcionka opisu"
+msgstr "描述文字字體"
 
 #: admin/display.php:402
 msgid "Description text size"
-msgstr "Rozmiar czcionki opisu"
+msgstr "描述文字大小"
 
 #: admin/display.php:408
 msgid "Description text weight"
-msgstr "Grubość czcionki opisu"
+msgstr "描述文字重量"
 
 #: admin/display.php:414
 msgid "Description text line height"
-msgstr "Wysokość linii (odstępu pomiędzy wierszami) opisu"
+msgstr "描述文字線高"
 
 #: admin/display.php:420
 msgid "Description text style"
-msgstr "Styl opisu"
+msgstr "描述文字格式"
 
 #: admin/display.php:425
 msgid "Content Text"
-msgstr "Zawartość tekstu"
+msgstr "内容文字"
 
 #: admin/display.php:429
 msgid "Text font"
-msgstr "Czcionka tekstu"
+msgstr "文字字體"
 
 #: admin/display.php:435
 msgid "Text size"
-msgstr "Rozmiar tekstu"
+msgstr "文字大小"
 
 #: admin/display.php:441
 msgid "Text line height"
-msgstr "Wysokość linii (odstępu pomiędzy wierszami) tekstu"
+msgstr "文字線高"
 
 #: admin/display.php:447
 msgid "Text colour"
-msgstr "Kolor tekstu"
+msgstr "文字颜色"
 
 #: admin/display.php:455
 msgid "Footer Widget Display Options"
-msgstr "Opcje wyświetlania Obszaru na Widgety w stopce"
+msgstr "底部 Widget 顯示選項"
 
 #: admin/display.php:461
 msgid "Number of columns to display"
-msgstr "Liczba wyświetlanych kolumn"
+msgstr "欄目顯示數"
 
 #: admin/display.php:468
 msgid "Number of columns to display for front page footer widget"
-msgstr "Liczba wyświetlanych kolumn na stronie głównej "
+msgstr "首頁底部 widget 欄目顯示數"
 
 #: admin/display.php:477
 msgid "Navigation Menu Display Options"
-msgstr "Opcje wyświetlania Menu Nawigacyjnego"
+msgstr "導航選單顯示選項"
 
 #: admin/display.php:483
 msgid "Dropdown menu item width"
-msgstr "Szerokość Opuszczanego Menu."
+msgstr "下拉菜單寬度"
 
 #: admin/display.php:490
 msgid "Miscellaneous Display Options"
-msgstr "Pozostałe opcje wyświetlania"
+msgstr "雜項"
 
 #: admin/display.php:494
 msgid "Swap title order"
-msgstr "Zmień kolejność wyświetlania tytułów"
+msgstr "交换標題順序"
 
 #: admin/display.php:498
 msgid "If this is checked, the website title will be displayed first, followed by the page title."
-msgstr "Jeżeli zaznaczysz tutaj to tytuł witryny będzie wyświetlany przed tytułem strony."
+msgstr "選擇這個選項，網站名稱會先顯示，然後是頁面標題。請查看瀏覽器標籤。"
 
 #: admin/display.php:506
 #: admin/options.php:440
 msgid "Update Settings"
-msgstr "Uaktualnij ustawienia"
+msgstr "更新設置"
 
 #: admin/options.php:55
 msgid "You must enter your Adsense code to enable Adsense advertising"
-msgstr "Musisz podać swój kod Adsense, aby włączyć reklamy Adsense"
+msgstr "你需要输入 Adsense code 才能開啟 Adsense 廣告"
 
 #: admin/options.php:70
 msgid "You must enter your AddThis button code to enable the AddThis social sharing button"
-msgstr "Musisz podać swój kod AddThis, aby włączyć guzik AddThis"
+msgstr "你需要输入 AddThis 按鈕 code 才能開啟 AddThis social sharing 按鈕。中文用户建議到中文的主頁申請 code。"
 
 #: admin/options.php:85
 msgid "You must enter your Google Analytics tracking code to enable Google Analytics tracking."
-msgstr "Musisz podać swój kod Google Analytics, aby włączyć śledzenie Google Analytics"
+msgstr "你需要输入 Google Analytics tracking code 才能開啟谷歌統計。"
 
 #: admin/options.php:156
 msgid "Uninstall Graphene"
-msgstr "Odinstaluj motyw"
+msgstr "卸載 Graphene"
 
 #: admin/options.php:157
 msgid "Please confirm that you would like to uninstall the Graphene theme. All of the theme's options in the database will be deleted."
-msgstr "Prosimy o potwierdzenie żę naprawdę chcesz odinstalować motyw Graphene. Wszystkie opcje motywu w bazie danych zostaną skasowane."
+msgstr "請確認你要卸載 Graphene 主題。所以主題設置將被删除。"
 
 #: admin/options.php:158
 msgid "This action is not reversible."
-msgstr "Ta akcja jest nieodwracalna."
+msgstr "此操作不可恢復。"
 
 #: admin/options.php:162
 #: admin/options.php:465
 msgid "Uninstall Theme"
-msgstr "Odinstaluj motyw"
+msgstr "卸載主題"
 
 #: admin/options.php:220
 msgid "Graphene Theme Options"
-msgstr "Opcje motywu Graphene"
+msgstr "Graphene 主題選項"
 
 #: admin/options.php:221
 msgid "These are the global settings for the theme. You may override some of the settings in individual posts and pages."
-msgstr "To są globalne ustawienia motywu. Niektóre z nich mogą być zastąpione poprzez indywidualne ustawienia stron lub wpisów"
+msgstr "以下是主題全局設置。你可以在單獨文章或者頁面中根據需要設置。"
 
 #: admin/options.php:253
 msgid "Slider Options"
-msgstr "Opcje Slider"
+msgstr "走馬燈欄選項"
 
 #: admin/options.php:257
 msgid "Category to show in slider"
-msgstr "Kategoria pokazywana w Slider"
+msgstr "走馬燈區塊顯示分類"
 
 #: admin/options.php:258
 msgid "All posts within the category selected here will be displayed on the slider. Usage example: create a new category \"Featured\" and assign all posts to be displayed on the slider to that category, and then select that category here."
-msgstr "Wszystkie wpisy w kategorii wybranej tutaj będą wyświetlane w slider. Przykład użycia: stwórz nową kategorię \"Prezentacja\" i przypis do niej wszystkie wpisy które mają być wyświetlane w obszarze slider, a  następnie wskaż tą kategorię tutaj."
+msgstr "所有發佈在此分類下的文章將會顯示在走馬燈中。例如：新建一個分類如“特色”，然後選擇發佈在此分類下（你可以選擇多個分類），然後在這裡選擇該分類顯示。"
 
 #: admin/options.php:262
 msgid "Show latest posts"
-msgstr "Najnowsze wpisy"
+msgstr "顯示最新發佈"
 
 #: admin/options.php:275
 msgid "Number of latest posts to display"
-msgstr "Liczba ostatnich wpisów do wyświetlenia:"
+msgstr "最新發佈顯示數量"
 
 #: admin/options.php:279
 msgid "This setting only affects the slider if \"Show latest posts\" is selected above."
-msgstr "To ustawienie będzie miało wpływ na obszar slider tylko jeśli wybrano \"Najnowsze wpisy\" powyżej."
+msgstr "此設置只有當選擇“顯示最新發佈”時才有效。"
 
 #: admin/options.php:306
 msgid "Slider height"
-msgstr "Wysokość Slider"
+msgstr "走馬燈高度"
 
 #: admin/options.php:314
 msgid "Slider speed"
-msgstr "Prędkość Slider"
+msgstr "走馬燈速度"
 
 #: admin/options.php:317
 msgid "milliseconds"
-msgstr "milisekund"
+msgstr "毫秒"
 
 #: admin/options.php:318
 msgid "This is the duration that each slider item will be shown"
-msgstr "To jest czas trwania wyświetlania każdego elementu w obszarze Slider z osobna"
+msgstr "這是每格走馬燈停留时間"
 
 #: admin/options.php:323
 msgid "Move slider to bottom of page"
-msgstr "Przenieś obszar Slider na dół strony"
+msgstr "將走馬燈移到頁面底部"
 
 #: admin/options.php:329
 msgid "Disable slider"
-msgstr "Wyłącz Slider"
+msgstr "取消走馬燈"
 
 #: admin/options.php:337
 msgid "Adsense Options"
-msgstr "Opcje Adsense"
+msgstr "AdSense 選項"
 
 #: admin/options.php:341
 msgid "Show Adsense advertising"
-msgstr "Pokaż reklamy Adsense"
+msgstr "顯示 AdSense 廣告"
 
 #: admin/options.php:347
 msgid "Show ads on front page as well"
-msgstr "Pokazuj reklamy na stronie głównej"
+msgstr "在首頁顯示"
 
 #: admin/options.php:353
 msgid "Your Adsense code"
-msgstr "Twój kod Adsense"
+msgstr "你的 AdSense code"
 
 #: admin/options.php:362
 msgid "AddThis Options"
-msgstr "Opcje AddThis"
+msgstr "AddThis 選項"
 
 #: admin/options.php:365
 msgid "Show AddThis social sharing button"
-msgstr "Pokaż przyciski AddThis"
+msgstr "顯示 AddThis 按鈕"
 
 #: admin/options.php:369
 msgid "Show in Pages as well?"
-msgstr "Czy pokazywać też Strony?"
+msgstr "是否在所有頁面顯示？"
 
 #: admin/options.php:374
 msgid "Your AddThis button code"
-msgstr "Twój kod przycisków AddThis"
+msgstr "你的 AddThis code"
 
 #: admin/options.php:375
 msgid "You can generate your button code from the <a href=\"http://www.addthis.com/\">AddThis website</a>."
-msgstr "Możesz wygenerować kod swoich przycisków na <a href=\"http://www.addthis.com/\">Witrynie AddThis</a>"
+msgstr "你可以在此申请 <a href=\"http://www.addthis.com/\">AddThis</a>。"
 
 #: admin/options.php:383
 msgid "Google Analytics Options"
-msgstr "Opcje Google Analytics"
+msgstr "Google Analytics 選項"
 
 #: admin/options.php:386
 msgid "Enable Google Analytics tracking"
-msgstr "Włącz śledzenie Google Analytics"
+msgstr "開啟 Google Analytics tracking"
 
 #: admin/options.php:390
 msgid "Google Analytics tracking code"
-msgstr "Kod Google Analytics"
+msgstr "Google Analytics tracking code"
 
 #: admin/options.php:391
 msgid "Make sure you include the full tracking code (including the <code>&lt;script&gt;</code> and <code>&lt;/script&gt;</code> tags) and not just the <code>UA-#######-#</code> code."
-msgstr "Upewnij się, że podałeś pełny kod (zawierający <code>&lt;script&gt;</code> i <code>&lt;/script&gt;</code> tag) a nie tylko <code>UA-#######-#</code>."
+msgstr "請確認包含完整的追踪代碼 (包括 <code>&lt;script&gt;</code> 和 <code>&lt;/script&gt;</code>) 不只是 <code>UA-#######-#</code>。"
 
 #: admin/options.php:399
 msgid "Widget Area Options"
-msgstr "Opcje Obszarów na Widgety"
+msgstr "Widget 選項"
 
 #: admin/options.php:400
 msgid "Alternate Widgets"
-msgstr "Alternatywne Widgety"
+msgstr "Widgets 替换"
 
 #: admin/options.php:401
 msgid "You can enable the theme to show different widget areas in the front page than the rest of the website. If you enable this option, additional widget areas that will only be displayed on the front page will be added to the Widget settings page."
-msgstr "Możesz wymusić, aby motyw rozróżniał obszary na widgety umieszczone na stronie głównej od tych na pozostałej części witryny. Jeśli uaktywnisz tą opcje to powstanie dodatkowy obszar na widgety wyświetlane tylko na stronie głównej którego właściwości będzie można zmieniać w opcjach wyświetlania motywu w części dotyczącwj widgetów."
+msgstr "你可以使用主題設置在首頁和在其他頁面開啟不同的 widget。如果選擇這個選項，只在首頁顯示的 widget 區也會同時顯示在小工具設置頁面。"
 
 #: admin/options.php:404
 msgid "Enable alternate front page sidebar widget area"
-msgstr "Uaktywnij alternatywny obszar boczny na widgety wyświetlane tylko na stronie głównej"
+msgstr "開啟另一個首頁邊欄 widget"
 
 #: admin/options.php:408
 msgid "Enable alternate front page footer widget area"
-msgstr "Uaktywnij alternatywny obszar w stopce na widgety wyświetlane tylko na stronie głównej"
+msgstr "開啟另一個首頁底部 widget"
 
 #: admin/options.php:409
 msgid "You can also specify different column counts for the front page footer widget and the rest-of-site footer widget if you enable this option."
-msgstr "Jeśli uaktywnisz tą opcję to będzie można mieć różne ilości kolumn na widgety w stopce strony głównej oraz w stopkach reszty witryny."
+msgstr "你可以同時為首頁底部 widget 指定不同的欄數，開啟時可用。"
 
 #: admin/options.php:417
 msgid "Footer Options"
-msgstr "Opcje Stopki"
+msgstr "底部選項"
 
 #: admin/options.php:420
 msgid "Show Creative Commons logo"
-msgstr "Pokaż logo Creative Commons "
+msgstr "顯示 Creative Commons 標誌"
 
 #: admin/options.php:425
 msgid "Copyright text (html allowed)"
-msgstr "Nota o prawach autorskich (html jest dozwolony) "
+msgstr "版權文本 (可用 HTML 代碼)"
 
 #: admin/options.php:426
 msgid "If this field is empty, the following default copyright text will be displayed:"
-msgstr "Jeśli pozostawisz to pole puste to będzie wyświetlana domyślna nota o prawach autorskich:"
+msgstr "如留空， 將顯示預設版權信息："
 
 #: admin/options.php:432
 msgid "Do not show copyright info"
-msgstr "Nie pokazuj informacji o prawach autorskich "
+msgstr "不顯示版權信息"
 
 #: admin/options.php:446
 msgid "Support the developer"
-msgstr "Wsparcie dla twórcy"
+msgstr "贊助作者"
 
 #: admin/options.php:447
 msgid "Developing this awesome theme took a lot of effort and time, weeks and weeks of voluntary unpaid work. If you like this theme or if you are using it for commercial websites, please consider a donation to the developer to help support future updates and development."
-msgstr "Sworzenie tak niesamowitego motywu zajęło wiele wysiłku i pracy, wiele tygodniu bezpłatnej pracy. Jeśli podoba Ci się ten motyw, lub jeśli używasz go do zastosowań komercyjnych, proszę rozważ przekazanie dotacji dla twórcy, aby wesprzeć przyszłe aktualizacje i dalszy rozwój tego motywu."
+msgstr "開發這個很棒的主題，作者付出了許多努力和精力。如果你喜歡這個主題或者你將他用於商業網站，請考慮捐助開發者以支持主題的後續更新和發展。"
 
 #: admin/options.php:457
 msgid "Uninstall theme"
-msgstr "Odinstaluj motyw"
+msgstr "卸載主題"
 
 #: admin/options.php:458
 msgid "<strong>Be careful!</strong> Uninstalling the theme will remove all of the theme's options from the database. Do this only if you decide not to use the theme anymore."
-msgstr "<strong>Uważaj!</strong>Odinstalowanie motywu usunie wszystkie opcje motywu z bazy danych. Zrób to tylko jeśli zdecydowałeś/łaś, że nie będziesz już więcej używał/a tego motywu na swoim blogu."
+msgstr "<strong>注意！</strong> 卸載主題將會從資料庫中移除所有主題設置。只有當你决定不再使用這個主題時才進行卸載。"
 
 #: admin/options.php:459
 msgid "If you just want to try another theme, there is no need to uninstall this theme. Simply activate the other theme in the Appearance > Themes admin page."
-msgstr "Jeśli chcesz wypróbować inny motyw, nie ma potrzeby aby odinstalowywać ten motyw. Po prostu uaktywnij inny motyw na stronie Wygląd > Motywy w panelu administracyjnym."
+msgstr "如果你只是想换其他主題，則你不需要進行卸載。只需要在外觀 > 主題選項中開啟相應主題即可。"
 
 #: admin/options.php:460
 msgid "Note that uninstalling this theme <strong>does not remove</strong> the theme's files. To delete the files after you have uninstalled this theme, go to Appearances > Themes and delete the theme from there."
-msgstr "Zauważ że odinstalowanie tego motywu <strong>nie usunie</strong> plików motywu na serwerze. Aby usunąć pliki, przejdź do Wygląd > Motywy i tam usuń motyw."
+msgstr "注意，卸載主題 <strong>不會移除</strong> 主題文件。 卸載後如需删除文件，請到外觀 > 主題中選擇本主題删除。"
 
 #: admin/user.php:7
 msgid "Graphene-specific User Profile Information"
-msgstr "Opcje motywu Graphene specyficzne dla Profilu użytkownika"
+msgstr "Graphene 具體用户信息"
 
 #: admin/user.php:8
 msgid "The settings defined here are used only with the Graphene theme."
-msgstr "Ustawienia zdefiniowane tutaj są używane tylko przez motyw Graphene"
+msgstr "這些設置只能用於 Graphene 主題。"
 
 #: admin/user.php:12
 msgid "Author profile image URL"
-msgstr "URL wizytówki autora"
+msgstr "作者圖片 URL"
 
 #: admin/user.php:13
 msgid "You can specify the image to be displayed as the author's profile image in the Author's page. If no URL is defined here, the author's <a href=\"http://www.gravatar.com\">Gravatar</a> will be used."
-msgstr "Możesz tutaj określić obraz wyświetlany jako wizytówka na stronie Autora. Jeśli nie zdefiniujesz tutaj URLa to zostanie użyty <a href=\"http://www.gravatar.com\">Gravatar</a>"
+msgstr "你可以指定顯示在作者頁面的頭像. 如果没有指定 URL，將會顯示作者的 <a href=\"http://www.gravatar.com\">Gravatar</a>。"
 
 #: admin/user.php:17
 msgid "Please enter the URL to your profile image."
-msgstr "Prosimy o wpisanie tutaj URLa (adresu internetowego) do twojej wizytówki."
+msgstr "請填入圖片的 URL。"
 
 #: admin/user.php:17
 msgid "<strong>Important: </strong>Image width must be less than or equal to <strong>150px</strong>."
-msgstr "<strong>Ważne: </strong>Szerokość obrazka musi być mniejsza bądź równa <strong>150 px</strong>."
+msgstr "<strong>重要提示: </strong>圖片宽度必须小於或等於<strong>150px</strong>。"
 
+#~ msgid "by %s"
+#~ msgstr "por %s"

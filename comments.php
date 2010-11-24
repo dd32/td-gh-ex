@@ -63,14 +63,14 @@
 </div>
 <?php endif; // Ends the comment listing ?>
 
-<?php if ('open' != $post->comment_status && have_comments()) : ?>
+<?php if (!comments_open() && have_comments()) : ?>
 	<div id="respond">
 		<h3 id="reply-title"><?php _e('Comments have been disabled.', 'graphene'); ?></h3>
         <?php do_action('graphene_comments_disabled'); ?>
     </div>
 <?php endif; ?>
 
-<?php if ('open' == $post->comment_status) : ?>
+<?php if (comments_open()) : ?>
 	<?php do_action('graphene_before_commentform'); ?>
 <?php 
 	/**

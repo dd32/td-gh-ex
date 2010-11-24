@@ -4,7 +4,18 @@ http://www.khairul-syahir.com
 
 CHANGELOG
 
-Version 1.1.1
+Version 1.1.2
+
+	* Added Chinese (Taiwan) (zh_TW) translation, by NavCore
+	* Added filters to change the number of latest author posts and most commented author posts
+	* Fixed content width styling for Pages that appear in search results
+	* Replaced ('open' == $post->comment_status) with comments_open() for checking comment status
+	* Added check for the presence of favicon.ico in wordpress root directory, and add the appropriate head element for using the favicon
+	* Fixed dropdown menu items not showing in IE7 when the parent menu item is selected
+	* Fixed the current page item in the menu not being highlighted
+	* Added European Portuguese (pt_PT) translation, by PL Monteiro
+
+Version 1.1.1.1
 
 	* Removed the SSL check for the header image
 	* Replaced all variants of get_bloginfo('template_directory') with get_template_directory_uri()
@@ -16,7 +27,7 @@ Version 1.1.1
 	* Added the graphene_slider_post_type filter to modify the post types to be displayed in the slider
 	* Fixed post's slider image from custom URL not appearing in the slider
 	* Fixed header image link to use the dimension of HEADER_IMAGE_WIDTH and HEADER_IMAGE_HEIGHT set in functions.php
-	* Added Chinese (zh_CN) translation, by Alex Chen
+	* Added Chinese (PRC) (zh_CN) translation, by Alex Chen
 	* Removed hardcoded stylesheet link from the header file and use wp_enqueue_style instead
 
 Version 1.1

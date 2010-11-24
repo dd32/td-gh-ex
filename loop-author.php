@@ -41,7 +41,8 @@
             
             <?php /* Lists the author's latest posts */ ?>
             <?php 
-			$posts = get_posts(array('numberposts' => 5, 'author' => get_the_author_meta('ID'), 'orderby' => 'date')); 
+			$args = apply_filters('graphene_author_latest_posts_args', array('numberposts' => 5, 'author' => get_the_author_meta('ID'), 'orderby' => 'date'));
+			$posts = get_posts($args); 
 			if (!empty($posts)) : ?>
             
             <h4><?php _e('Latest posts', 'graphene'); ?></h4>
@@ -57,7 +58,8 @@
             
             <?php /* Lists the author's most commented posts */ ?>
             <?php 
-			$posts = get_posts(array('numberposts' => 5, 'author' => get_the_author_meta('ID'), 'orderby' => 'comment_count')); 
+			$args = apply_filters('graphene_author_popular_posts_args', array('numberposts' => 5, 'author' => get_the_author_meta('ID'), 'orderby' => 'comment_count'));
+			$posts = get_posts($args); 
 			
 			// Check if at least one of the author's post has comments
 			$have_comments = NULL;

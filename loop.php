@@ -22,7 +22,7 @@
                 <div class="entry clearfix<?php if (get_option('graphene_hide_post_date') == true) {echo ' nodate';} ?>">
                 
                 	<?php /* Post title */ ?>
-                    <h2>
+                    <h2 class="post-title">
                     	<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(esc_attr__('Permalink Link to %s', 'graphene'), the_title_attribute('echo=0')); ?>"><?php if (get_the_title() == '') {_e('(No title)','graphene');} else {the_title();} ?></a>
                     <?php do_action('graphene_post_title'); ?>
                     </h2>
@@ -62,7 +62,7 @@
                     <div class="entry-content clearfix">
                     	<?php do_action('graphene_before_post_content'); ?>
                         
-                    	<?php if (!is_search() && !is_archive() && !get_option('graphene_posts_show_excerpt')) : ?>
+                    	<?php if (!is_search() && !is_archive() && (!get_option('graphene_posts_show_excerpt') || is_single() || is_page())) : ?>
                         <?php the_content(__('Read the rest of this entry &raquo;','graphene')); ?>
                         <?php else : ?>
                         	<?php the_excerpt(); ?>

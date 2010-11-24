@@ -2,7 +2,7 @@
 Theme Name: Graphene
 Theme URI: http://www.khairul-syahir.com/wordpress-dev/graphene-theme
 Description: The Graphene theme for Wordpress 3.0 is a stylish, neat, and tight WordPress theme supporting 2 widget areas, with the ability to determine the number of columns to display in the footer widget area. It includes action hooks for greater customisability through child theme, and a jQuery slider for your featured posts. It has built-in Twitter widget, allows for customisable header and background through the WordPress admin, built-in AdSense placement and AddThis social sharing button, supports custom menu with drop-down navigation of up to 5 levels deep, and threaded comments of up to 10 levels deep! A one-column, full-width page template without the sidebar is included. You can hide post parameters, show post author's gravatar, use different widgets for the front page than the rest of the website, and specify font styles for header and content texts. The codes are written so that you can easily override or add functionality to the theme by using your own child theme without altering the parent theme's code. Seriously, there's too many features for this theme to describe them all here! This theme has been tested and confirmed compatible with IE6, IE7, IE8, Mozilla Firefox, Google Chrome, and Safari. Translations included: Malay, Brazilian Portuguese, Spanish, Italian, French, Polish, German, Norwegian, and Chinese. See this <a href="http://www.khairul-syahir.com/wordpress-dev/graphene-theme#changelog">theme's changelog</a>.
-Version: 1.1.1.1
+Version: 1.1.2
 Author: Syahir Hakim
 Author URI: http://www.khairul-syahir.com
 Tags: black, blue, white, two-columns, right-sidebar, fixed-width, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready
@@ -130,6 +130,9 @@ padding-top:12px;
 	float: left;
 	margin-left:5px;
 }
+#menu li:hover, #menu li.sfhover{
+	position:static;
+	}
 #menu li li{
 	width: 175px;
 	margin-left:0;
@@ -181,10 +184,10 @@ padding-top:12px;
 	border-bottom:1px solid #a0a0a0;
 	width:165px;
 	}
-#menu li a:hover, #menu li:hover a, #menu li:hover a:visited, #menu li a:hover, #menu li.sfhover a, #menu li.sfhover a:visited, #menu li.current-menu-item a, #menu li.current_page_ancestor a, #menu li.current-category-ancestor a, #menu li.current-menu-parent a, #menu li.current-menu-ancestor a, #menu li.current_page_parent a, #menu li.current-menu-item a:visited, #menu li.current_page_ancestor a:visited, #menu li.current-category-ancestor a:visited, #menu li.current-menu-parent a:visited, #menu li.current-menu-ancestor a:visited, #menu li.current_page_parent a:visited{
+#menu li a:hover, #menu li:hover a, #menu li:hover a:visited, #menu li a:hover, #menu li.sfhover a, #menu li.sfhover a:visited, #menu li.current_page_item a, #menu li.current-menu-item a, #menu li.current_page_ancestor a, #menu li.current-category-ancestor a, #menu li.current-menu-parent a, #menu li.current-menu-ancestor a, #menu li.current_page_parent a, #menu li.current_page_item a:visited, #menu li.current-menu-item a:visited, #menu li.current_page_ancestor a:visited, #menu li.current-category-ancestor a:visited, #menu li.current-menu-parent a:visited, #menu li.current-menu-ancestor a:visited, #menu li.current_page_parent a:visited{
 	color:#000;
 	}
-#menu li:hover, #menu li.sfhover, #menu li.current-menu-item, #menu li.current_page_ancestor, #menu li.current-category-ancestor, #menu li.current-menu-parent, #menu li.current-menu-ancestor, #menu li.current_page_parent{
+#menu li:hover, #menu li.sfhover, #menu li.current_page_item, #menu li.current-menu-item, #menu li.current_page_ancestor, #menu li.current-category-ancestor, #menu li.current-menu-parent, #menu li.current-menu-ancestor, #menu li.current_page_parent{
 	background:url(images/sprite_h.png) left -66px repeat-x;
 }
 #menu ul li a:hover{
@@ -326,10 +329,10 @@ padding:0;
 margin:0;
 float:right;
 }
-.page .entry, .nodate{
+.page .post .entry, .nodate{
 	width:555px;
 	}
-.one_column .entry{
+.one_column .post .entry{
 	width:865px;
 	}
 h2, h2 a, h2 a:visited{

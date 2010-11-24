@@ -376,6 +376,18 @@ endif;
 
 
 /**
+ * Check to see if there's a favicon.ico in wordpress root directory and add
+ * appropriate head element for the favicon
+*/
+function graphene_favicon(){
+	if (is_file(ABSPATH.'favicon.ico')){ ?>
+		<link rel="icon" href="<?php echo home_url(); ?>/favicon.ico" type="image/x-icon" />
+		<?php }
+}
+add_action('wp_head', 'graphene_favicon');
+
+
+/**
  * Define the callback menu, if there is no custom menu.
  * This menu automatically lists all Pages as menu items, including their direct
  * direct descendant, which will only be displayed for the current parent.
@@ -408,7 +420,7 @@ if (!function_exists('graphene_comment')) :
             	
 				<?php do_action('graphene_before_comment'); ?>
                 
-				<?php echo get_avatar($comment,$size='40'); ?>
+				<?php echo get_avatar($comment, apply_filters('graphene_gravatar_size', 40)); ?>
                 <?php do_action('graphene_comment_gravatar'); ?>
                 
 					<div class="comment-wrap clearfix">
@@ -935,11 +947,7 @@ function graphene_slider(){
                 <?php endif; ?>
                 
                 <?php /* The slider post's title */ ?>
-                <h2 class="slider_post_title">
-                    <a href="<?php the_permalink(); ?>">
-                    <?php the_title(); ?>
-                    </a>
-                </h2>
+                <h2 class="slider_post_title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                 
                 <?php /* The slider post's excerpt */ ?>
                 <div class="slider_post_entry">
