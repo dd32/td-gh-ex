@@ -44,6 +44,7 @@
 				<?php get_template_part( 'navigation', 2 ); ?>
 				
 				<?php $shortname = 'drcms'; ?>
+				<?php $style = ''; ?>
 				<?php if( get_option($shortname. '_hide_titles') ) $style = ' style="display: none;" '; ?>
 				<div id="branding" role="banner">
 					<?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>

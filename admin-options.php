@@ -271,17 +271,13 @@ if ( isset( $_GET['page'] ) && $_GET['page'] == basename(__file__) ) {
 	if (  isset( $_REQUEST['action'] ) && 'save' == $_REQUEST['action'] ) {
 
 		foreach ($adminOptions as $value) {
-				update_post_meta( $selectedPageID, $value['id'], $_REQUEST[ $value['id'] ] ); }
+				update_option( $value['id'], $_REQUEST[ $value['id'] ] ); }
 		
 		foreach ($adminOptions as $value) {
 			if( isset( $_REQUEST[ $value['id'] ] ) ) { 
-				if ($value['type']=='pages') {
-					update_option( $value['id'], $_REQUEST[ $value['id'] ] );
-				} else {
-					update_post_meta( $selectedPageID, $value['id'], $_REQUEST[ $value['id'] ]  ); 
-				}
+				update_option( $value['id'], $_REQUEST[ $value['id'] ] );
 			} else { 
-				delete_post_meta( $selectedPageID, $value['id'] ); 
+				delete_option( $value['id'] ); 
 			} 
 		}				 
 		header("Location: themes.php?page=admin-options.php&saved=true");
@@ -290,7 +286,7 @@ if ( isset( $_GET['page'] ) && $_GET['page'] == basename(__file__) ) {
 	else if( isset( $_REQUEST['action'] ) && 'reset' == $_REQUEST['action'] ) {
  
 		foreach ($adminOptions as $value) {
-			delete_post_meta( $selectedPageID, $value['id'] ); 
+			delete_option( $value['id'] ); 
 		}
 		header("Location: themes.php?page=admin-options.php&reset=true");
 		die;
