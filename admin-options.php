@@ -4,7 +4,7 @@ if (!is_admin()) return;
 global $themename;
 $shortname = "drcms";
 
-$icons = list_images( TEMPLATEPATH. '/images/icons/24X24/');
+$icons = list_images( TEMPLATEPATH. '/images/icons/');
 array_unshift($icons, "");
 
 $adminOptions = array (

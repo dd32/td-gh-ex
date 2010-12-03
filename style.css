@@ -4,7 +4,7 @@ Theme URI: http://digitalraindrops.net/atmosphere/
 Description: Atmosphere 2010, based on the The twenty ten theme from WordPress, inspired by the un-supported 2007 theme called Atmosphere, this theme is simple, and readable, custom menu, header image, featured images (thumbnails for gallery posts). social media ready, theme options, includes stylesheets for print and the admin Visual Editor, special styles for posts in the "Asides" and "Gallery" categories, and has an optional one-column page template that removes the sidebar.
 Author: Digital Raindrops 
 Author URI: http://digitalraindrops.net/ 
-Version: 1.5
+Version: 1.6
 Tags: dark, black, white, two-columns, fixed-width, custom-header, custom-background, threaded-comments, sticky-post, translation-ready, microformats, rtl-language-support, editor-style, theme-options
 
 License: GNU General Public License v2.0
@@ -816,12 +816,10 @@ body.page .edit-link {
 
 #content img {
 	margin: 0;
-	/*height: auto; */
-	max-width: 640px;
-	/* width: auto; */
+	max-width: 500px;
 }
 #content .attachment img {
-	max-width: 900px;
+	max-width: 750px;
 }
 #content .alignleft,
 #content img.alignleft {
@@ -954,7 +952,7 @@ body.page .edit-link {
 h3#comments-title,
 h3#reply-title {
 	color: #f1f1f1;
-	font-size: 16px;
+	font-size: 12px;
 	font-weight: bold;
 	margin-bottom: 0;
 }
@@ -1144,7 +1142,7 @@ h3#reply-title {
 	margin-left: 1.3em;
 }
 .widget_search #s {/* This keeps the search inputs in line */
-	width: 60%;
+	width: 50%;
 }
 .widget_search label {
 	display: none;

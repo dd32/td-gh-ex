@@ -6,28 +6,28 @@
 		<?php if ( ! dynamic_sidebar( 'primary-widget-area' ) ) : ?>
 			
 			<?php if( !get_option('drcms_hide_menu') ) :  ?>
-				<li><div class="widget-title"><?php _e('Pages'); ?></div></li>
+				<li><h3 class="widget-title"><?php _e('Pages'); ?></h3></li>
 				<li><a href="<?php echo home_url(); ?>">Home</a></li>
 				<?php wp_list_pages('sort_column=menu_order&depth=1&title_li='); ?>
 			<?php endif; ?>
 		
 			<?php if( !get_option('drcms_hide_categories') ) :  ?>
-				<li><div class="widget-title"><?php _e('Categories'); ?></div></li>
+				<li><h3 class="widget-title"><?php _e('Categories'); ?></h3></li>
 				<?php wp_list_categories('title_li='); ?>
 			<?php endif; ?>
 
 			<?php if( !get_option('drcms_hide_archive') ) : ?>
-				<li><div class="widget-title"><?php _e('Archives'); ?></div></li>
+				<li><h3 class="widget-title"><?php _e('Archives'); ?></h3></li>
 				<?php wp_get_archives('type=monthly'); ?>
 			<?php endif; ?>
 
 			<?php if( !get_option('drcms_hide_calendar') ) :  ?>
-				 <li><div class="widget-title"><?php _e('Calendar'); ?></div></li>
+				 <li><h3 class="widget-title"><?php _e('Calendar'); ?></h3></li>
 				  <li><?php get_calendar(); ?></li>
 			<?php endif; ?>
 
 			<?php if( !get_option('drcms_hide_links') ) : ?>
-				<li><div class="widget-title"><?php _e('Links'); ?></div></li>
+				<li><h3 class="widget-title"><?php _e('Links'); ?></h3></li>
 				 <?php wp_list_bookmarks('title_li=&categorize=0'); ?>
 			<?php endif; ?>
 
@@ -51,7 +51,7 @@
 		<?php if ( ! dynamic_sidebar( 'tertiary-widget-area' ) ) : ?>
 			
 			<?php if( !get_option('drcms_hide_meta') ) :  ?>
-				<li><div class="widget-title"><?php _e('Meta'); ?></div></li>
+				<li><h3 class="widget-title"><?php _e('Meta'); ?></h3></li>
 				<?php wp_register(); ?>
 				<li><?php wp_loginout(); ?></li>
 				<li><a href="<?php bloginfo('rss2_url'); ?>" title="<?php _e('Syndicate this site using RSS'); ?>"><?php _e('<abbr title="Really Simple Syndication">RSS</abbr>'); ?></a></li>
@@ -60,7 +60,7 @@
 			<?php endif; ?>
 
 			<?php if( !get_option('drcms_hide_search') ) :  ?>	
-				<li><div class="widget-title" style="margin-bottom: 5px;"><?php _e('Search'); ?></div></li>
+				<li><h3 class="widget-title" style="margin-bottom: 5px;"><?php _e('Search'); ?></h3></li>
 				<li id="search">
 					<div>
 						<form id="searchform" method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
