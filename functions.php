@@ -5,6 +5,7 @@ if ( ! isset( $content_width ) )
 	$content_width = 640;
 
 $themename = 'Atmosphere 2010';
+$themeOptions = get_option( 'drcms_theme_options' );
 
 add_action( 'after_setup_theme', 'atmosphere_setup' );
 
@@ -63,7 +64,7 @@ function admin_header_style() {
 }
 endif;
 
-function cms_insert_category($taxonomy,$catName){
+function drcms_insert_category($taxonomy,$catName){
 	if (!$taxonomy || !$catName) exit;
 	/* if we have a category name then insert the category */
 	if(!term_exists($catName, $taxonomy) && $catName){
@@ -73,10 +74,10 @@ function cms_insert_category($taxonomy,$catName){
 		$temp = wp_insert_term($catName, $taxonomy, $cat_defaults);
 	}
 }
-cms_insert_category('category','gallery');
-cms_insert_category('category','asides');
+drcms_insert_category('category','gallery');
+drcms_insert_category('category','asides');
 
-function list_images($path){
+function drcms_list_images($path){
     $list = array();
     $dir_handle = @opendir($path) or die("Unable to open $path"); 
     while($file = readdir($dir_handle)){ 
@@ -92,7 +93,7 @@ function list_images($path){
     return $list;
 }
 
-if (is_admin() && file_exists(TEMPLATEPATH. '/admin-options.php')) include_once(TEMPLATEPATH. '/admin-options.php');
+if (is_admin() && file_exists(TEMPLATEPATH. '/theme-options.php')) include_once(TEMPLATEPATH. '/theme-options.php');
 if (file_exists(STYLESHEETPATH. '/htmLawed.php')) include_once ( STYLESHEETPATH . '/htmLawed.php' );
 
 function clean_the_content( $content )

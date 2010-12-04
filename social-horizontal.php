@@ -1,29 +1,30 @@
 <?php $shortname = 'drcms'; ?>
-<?php if( !get_option($shortname. '_hide_footer_icons') ) : ?>
+<?php global $themeOptions; ?>
+<?php if( !$themeOptions[$shortname. '_hide_footer_icons'] ) : ?>
 	<div class="social">
-		<?php if(get_option($shortname .'_rss_icon')) :?>
+		<?php if( $themeOptions[$shortname .'_rss_icon'] ) :?>
 		<div class="social_inner"><a href="<?php bloginfo('rss2_url'); ?>" target="_blank">
-		<img src="<?php echo get_template_directory_uri(); ?>/images/icons/<?php echo get_option($shortname .'_rss_icon'); ?>" style="width:24px; height:24px;" alt="RSS" /></a></div>
+		<img src="<?php echo get_template_directory_uri(); ?>/images/icons/<?php echo $themeOptions[$shortname .'_rss_icon']; ?>" style="width:24px; height:24px;" alt="RSS" /></a></div>
 		<?php endif; ?>
-		<?php if(get_option($shortname .'_icon_1') && get_option($shortname .'_icon_1_url')): ?>
-		<div class="social_inner"><a href="<?php echo get_option($shortname .'_icon_1_url'); ?>" target="_blank">
-		<img src="<?php echo get_template_directory_uri(); ?>/images/icons/<?php echo get_option($shortname .'_icon_1'); ?>" style="width:24px; height:24px;" alt="<?php echo get_option($shortname .'_icon_1_alt'); ?>" /></a></div>
+		<?php if( $themeOptions[$shortname .'_icon_1'] && $themeOptions[$shortname .'_icon_1_url'] ): ?>
+		<div class="social_inner"><a href="<?php echo $themeOptions[$shortname .'_icon_1_url']; ?>" target="_blank">
+		<img src="<?php echo get_template_directory_uri(); ?>/images/icons/<?php echo $themeOptions[$shortname .'_icon_1']; ?>" style="width:24px; height:24px;" alt="<?php echo $themeOptions[$shortname .'_icon_1_alt']; ?>" /></a></div>
 		<?php endif; ?>
-		<?php if(get_option($shortname .'_icon_2') && get_option($shortname .'_icon_2_url')): ?>
-		<div class="social_inner"><a href="<?php echo get_option($shortname .'_icon_2_url'); ?>" target="_blank">
-		<img src="<?php echo get_template_directory_uri(); ?>/images/icons/<?php echo get_option($shortname .'_icon_2'); ?>" style="width:24px; height:24px;" alt="<?php echo get_option($shortname .'_icon_2_alt'); ?>" /></a></div>
+		<?php if( $themeOptions[$shortname .'_icon_2'] && $themeOptions[$shortname .'_icon_2_url'] ): ?>
+		<div class="social_inner"><a href="<?php echo $themeOptions[$shortname .'_icon_2_url']; ?>" target="_blank">
+		<img src="<?php echo get_template_directory_uri(); ?>/images/icons/<?php echo $themeOptions[$shortname .'_icon_2']; ?>" style="width:24px; height:24px;" alt="<?php echo $themeOptions[$shortname .'_icon_2_alt']; ?>" /></a></div>
 		<?php endif; ?>
-		<?php if(get_option($shortname .'_icon_3') && get_option($shortname .'_icon_3_url')): ?>
-		<div class="social_inner"><a href="<?php echo get_option($shortname .'_icon_3_url'); ?>" target="_blank">
-		<img src="<?php echo get_template_directory_uri(); ?>/images/icons/<?php echo get_option($shortname .'_icon_3'); ?>" style="width:24px; height:24px;" alt="<?php echo get_option($shortname .'_icon_3_alt'); ?>" /></a></div>
+		<?php if( $themeOptions[$shortname .'_icon_3'] && $themeOptions[$shortname .'_icon_3_url'] ): ?>
+		<div class="social_inner"><a href="<?php echo $themeOptions[$shortname .'_icon_3_url']; ?>" target="_blank">
+		<img src="<?php echo get_template_directory_uri(); ?>/images/icons/<?php echo $themeOptions[$shortname .'_icon_3']; ?>" style="width:24px; height:24px;" alt="<?php echo $themeOptions[$shortname .'_icon_3_alt']; ?>" /></a></div>
 		<?php endif; ?>
-		<?php if(get_option($shortname .'_icon_4') && get_option($shortname .'_icon_4_url')): ?>
-		<div class="social_inner"><a href="<?php echo get_option($shortname .'_icon_4_url'); ?>" target="_blank">
-		<img src="<?php echo get_template_directory_uri(); ?>/images/icons/<?php echo get_option($shortname .'_icon_4'); ?>" style="width:24px; height:24px;" alt="<?php echo get_option($shortname .'_icon_4_alt'); ?>" /></a></div>
+		<?php if( $themeOptions[$shortname .'_icon_4'] && $themeOptions[$shortname .'_icon_4_url'] ): ?>
+		<div class="social_inner"><a href="<?php echo $themeOptions[$shortname .'_icon_4_url']; ?>" target="_blank">
+		<img src="<?php echo get_template_directory_uri(); ?>/images/icons/<?php echo $themeOptions[$shortname .'_icon_4']; ?>" style="width:24px; height:24px;" alt="<?php echo $themeOptions[$shortname .'_icon_4_alt']; ?>" /></a></div>
 		<?php endif; ?>
-		<?php if(get_option($shortname .'_icon_5') && get_option($shortname .'_icon_5_url')): ?>
-		<div class="social_inner"><a href="<?php echo get_option($shortname .'_icon_5_url'); ?>" target="_blank">
-		<img src="<?php echo get_template_directory_uri(); ?>/images/icons/<?php echo get_option($shortname .'_icon_5'); ?>" style="width:24px; height:24px;" alt="<?php echo get_option($shortname .'_icon_5_alt'); ?>" /></a></div>
+		<?php if( $themeOptions[$shortname .'_icon_5'] && $themeOptions[$shortname .'_icon_5_url'] ): ?>
+		<div class="social_inner"><a href="<?php echo $themeOptions[ $shortname .'_icon_5_url']; ?>" target="_blank">
+		<img src="<?php echo get_template_directory_uri(); ?>/images/icons/<?php echo $themeOptions[$shortname .'_icon_5']; ?>" style="width:24px; height:24px;" alt="<?php echo $themeOptions[$shortname .'_icon_5_alt']; ?>" /></a></div>
 		<?php endif; ?>
 	</div>
 <?php endif; ?>

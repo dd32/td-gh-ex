@@ -2,31 +2,33 @@
 	
 	<div id="primary" class="widget-area" role="complementary">
 		<ul class="xoxo">
-
+        
 		<?php if ( ! dynamic_sidebar( 'primary-widget-area' ) ) : ?>
-			
-			<?php if( !get_option('drcms_hide_menu') ) :  ?>
+			<?php $shortname = 'drcms'; ?>
+			<?php global $themeOptions; ?>
+		    	
+			<?php if( !$themeOptions[$shortname .'_hide_menu'] ) :  ?>
 				<li><h3 class="widget-title"><?php _e('Pages'); ?></h3></li>
 				<li><a href="<?php echo home_url(); ?>">Home</a></li>
 				<?php wp_list_pages('sort_column=menu_order&depth=1&title_li='); ?>
 			<?php endif; ?>
 		
-			<?php if( !get_option('drcms_hide_categories') ) :  ?>
+			<?php if( !$themeOptions[$shortname .'_hide_categories'] ) :  ?>
 				<li><h3 class="widget-title"><?php _e('Categories'); ?></h3></li>
 				<?php wp_list_categories('title_li='); ?>
 			<?php endif; ?>
 
-			<?php if( !get_option('drcms_hide_archive') ) : ?>
+			<?php if( !$themeOptions[$shortname .'_hide_archives'] ) : ?>
 				<li><h3 class="widget-title"><?php _e('Archives'); ?></h3></li>
 				<?php wp_get_archives('type=monthly'); ?>
 			<?php endif; ?>
 
-			<?php if( !get_option('drcms_hide_calendar') ) :  ?>
+			<?php if( !$themeOptions[$shortname .'_hide_calendar'] ) :  ?>
 				 <li><h3 class="widget-title"><?php _e('Calendar'); ?></h3></li>
 				  <li><?php get_calendar(); ?></li>
 			<?php endif; ?>
 
-			<?php if( !get_option('drcms_hide_links') ) : ?>
+			<?php if( !$themeOptions[$shortname .'_hide_links'] ) : ?>
 				<li><h3 class="widget-title"><?php _e('Links'); ?></h3></li>
 				 <?php wp_list_bookmarks('title_li=&categorize=0'); ?>
 			<?php endif; ?>
@@ -49,8 +51,9 @@
 		<ul class="xoxo">
 		
 		<?php if ( ! dynamic_sidebar( 'tertiary-widget-area' ) ) : ?>
-			
-			<?php if( !get_option('drcms_hide_meta') ) :  ?>
+			<?php $shortname = 'drcms'; ?>
+			<?php global $themeOptions; ?>
+			<?php if( !$themeOptions[$shortname .'_hide_meta'] ) :  ?>
 				<li><h3 class="widget-title"><?php _e('Meta'); ?></h3></li>
 				<?php wp_register(); ?>
 				<li><?php wp_loginout(); ?></li>
@@ -59,7 +62,7 @@
 				<?php wp_meta(); ?>
 			<?php endif; ?>
 
-			<?php if( !get_option('drcms_hide_search') ) :  ?>	
+			<?php if( !$themeOptions[$shortname .'_hide_search'] ) :  ?>	
 				<li><h3 class="widget-title" style="margin-bottom: 5px;"><?php _e('Search'); ?></h3></li>
 				<li id="search">
 					<div>

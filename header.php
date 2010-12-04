@@ -31,6 +31,8 @@
 
 <body <?php body_class(); ?>>
 
+<?php global $themeOptions; ?>
+
 <?php /* Add in our Right Hand Social Menu */ ?>
 <?php get_template_part( 'social', 'vertical' ); ?>
 
@@ -45,7 +47,7 @@
 				
 				<?php $shortname = 'drcms'; ?>
 				<?php $style = ''; ?>
-				<?php if( get_option($shortname. '_hide_titles') ) $style = ' style="display: none;" '; ?>
+				<?php if( $themeOptions[$shortname. '_hide_titles'] ) $style = ' style="display: none;" '; ?>
 				<div id="branding" role="banner">
 					<?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
 					<<?php echo $heading_tag; ?> id="site-title" <?php echo $style; ?>>
@@ -56,7 +58,7 @@
 					<div id="site-description" <?php echo $style; ?>><?php bloginfo( 'description' ); ?></div>
 				</div><!-- #branding -->
 
-				<?php if( !get_option($shortname. '_hide_lower_menu') ) : ?>				
+				<?php if( !$themeOptions[$shortname. '_hide_lower_menu'] ) : ?>				
 					<div id="access" role="navigation">
 					  	<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'atmosphere' ); ?>"><?php _e( 'Skip to content', 'atmosphere' ); ?></a></div>
 						<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
