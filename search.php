@@ -37,12 +37,11 @@ echo '</div>';
     <?php the_title(); ?>
     </a></h3>
   <small>
-  <?php the_time(TMN_THE_TIME_FORMAT) ?>
+  <?php the_time(get_option('date_format')) ?>
   </small> <br />
   <br />
   <?php the_content('Read the rest of this entry &raquo;'); ?>
-  <?php //the_content_rss('', TRUE, '', 50); //text2htmlが検索結果で利かない　?>
-  <br />
+
   <br />
   <p class="postmetadata">Posted in
     <?php the_category(', ') ?>
