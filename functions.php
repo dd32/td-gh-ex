@@ -19,7 +19,8 @@ add_action('admin_menu', 'ctx_aj_theme_add_pages');
 add_filter('excerpt_more', 'ctx_aj_auto_excerpt_more');
 add_filter('get_the_excerpt', 'ctx_aj_custom_excerpt_more');
 //Add help to the Layout page
-add_action('admin_head-appearance_page_theme-options','ctx_aj_help_theme_options');
+//add_action('admin_head-appearance_page_theme-options','ctx_aj_help_theme_options');
+add_action('admin_init','ctx_aj_help_theme_options');
 
 /************************************************************************************************
  * Add this theme's scripts and stylesheets
@@ -428,7 +429,7 @@ function ctx_aj_posted_on() {
 }
 
 /**
- *
+ * This adds contextual help to the theme
  */
 function ctx_aj_help_theme_options(){
     //Add contextual help to this page
