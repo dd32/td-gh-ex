@@ -8,9 +8,8 @@ function widget_calendar($args) {
 	echo '<div id="calendar_wrap">'; get_calendar(); echo '</div>'; 
 	if ( !empty( $title ) ) { echo $after_widget; } else { echo "</div>"; }
 }
-?>
-<?php // unregister old / register new calendar widget
+	// unregister old / register new calendar widget
 	$widget_ops = array('classname' => 'widget_calendar', 'description' => __("A calendar of your blog's posts","atahualpa") );
-	unregister_sidebar_widget('calendar', __('Calendar','atahualpa'), 'wp_widget_calendar', $widget_ops);
+	wp_unregister_sidebar_widget('calendar', __('Calendar','atahualpa'), 'wp_widget_calendar', $widget_ops);
 	wp_register_sidebar_widget('calendar', __('Calendar','atahualpa'), 'widget_calendar', $widget_ops);
 ?>

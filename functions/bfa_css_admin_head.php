@@ -1,6 +1,8 @@
 <?php
 // Add admin page CSS
 function bfa_add_stuff_admin_head() {
+	global $templateURI, $homeURL;
+	
 	if ( isset($_GET['page'])) {
 		if ( $_GET['page'] == "functions.php" ) {
 
@@ -9,8 +11,8 @@ function bfa_add_stuff_admin_head() {
 			$nonce2 = wp_create_nonce( 'delete_bfa_ata4' );
 
 			echo '
-			<script src="'; bloginfo('template_directory'); echo '/options/jscolor/jscolor.js" type="text/javascript"></script>
-			<script src="'; bloginfo('template_directory'); echo '/js/ajaxupload.js" type="text/javascript"></script>
+			<script src="' . $templateURI . '/options/jscolor/jscolor.js" type="text/javascript"></script>
+			<script src="' . $templateURI . '/js/ajaxupload.js" type="text/javascript"></script>
 			<script type="text/javascript">
 			/* <![CDATA[ */
 			jQuery.noConflict();
@@ -20,7 +22,7 @@ function bfa_add_stuff_admin_head() {
 			// Since 3.4.7.: Upload settings file	
 			
 				new AjaxUpload("#importSettings-upload", {
-					action: "'; bloginfo('url'); echo '/?bfa_ata_file=settings-upload",
+					action: "' . $homeURL . '/?bfa_ata_file=settings-upload",
 					name: "userfile",
 					onComplete: function(file, response){
 						jQuery("div#atasettingsfile").html(response).fadeIn("fast").fadeOut(7000); 
@@ -90,7 +92,7 @@ function bfa_add_stuff_admin_head() {
 					font-size: 20px;
 				}
 				.bfa-container ul {
-					list-style: circle url('; bloginfo('template_directory'); echo '/options/images/list-arrow.gif) !important; 
+					list-style: circle url(' . $templateURI . '/options/images/list-arrow.gif) !important; 
 					margin: 1em 1em 1em 2em;
 				} 
 				.bfa-container-left { 
@@ -196,10 +198,10 @@ function bfa_add_stuff_admin_head() {
 					padding: 0 !important;
 					width: 565px; 
 					height: 174px; 
-					background: url('; bloginfo('template_directory'); echo '/options/images/save-changes.gif) top left !important; 
+					background: url(' . $templateURI . '/options/images/save-changes.gif) top left !important; 
 				}
 				input.save-tab:hover { 
-					background: url('; bloginfo('template_directory'); echo '/options/images/save-changes.gif) bottom left !important; 
+					background: url(' . $templateURI . '/options/images/save-changes.gif) bottom left !important; 
 				}
 				input.reset-tab { 
 					display: block; 
@@ -208,21 +210,21 @@ function bfa_add_stuff_admin_head() {
 					padding: 0 !important;
 					width: 250px; 
 					height: 68px; 
-					background: url('; bloginfo('template_directory'); echo '/options/images/reset-settings.gif) top left !important; ; 
+					background: url(' . $templateURI . '/options/images/reset-settings.gif) top left !important; ; 
 				} 
 				input.reset-tab:hover { 
-					background: url('; bloginfo('template_directory'); echo '/options/images/reset-settings.gif) bottom left !important; ; 
+					background: url(' . $templateURI . '/options/images/reset-settings.gif) bottom left !important; ; 
 				} 
 				input.reset-all { 
 					overflow: visible; /* for IE */
 					letter-spacing: -1px;
 					line-height: normal !important; font-size: 1.5em !important; padding: 5px 10px 5px 45px; 
-					background: #777 url('; bloginfo('template_directory'); echo '/options/images/reset-all-gray.png) no-repeat 5% 50% !important; 
+					background: #777 url(' . $templateURI . '/options/images/reset-all-gray.png) no-repeat 5% 50% !important; 
 					background-image: none; color: #ddd; text-align: center; font-weight: bold; border: solid 3px #555; 
 				} 
 				input.reset-all:hover { 
 					border: solid 3px #ff9393; color: #fff;
-					background: #800 url('; bloginfo('template_directory'); echo '/options/images/reset-all.png) 5% 50% no-repeat !important;
+					background: #800 url(' . $templateURI . '/options/images/reset-all.png) 5% 50% no-repeat !important;
 				} 
 				p.submit { 
 					text-align: center; 
@@ -264,21 +266,21 @@ function bfa_add_stuff_admin_head() {
 			
 			// add jquery to WP 2.3 and older
 			if ( substr(get_bloginfo('version'), 0, 3) < 2.5 ) {
-				echo '<script type="text/javascript" src="'; bloginfo('template_directory'); echo '/js/jquery-1.2.6.min.js"></script>';
+				echo '<script type="text/javascript" src="' . $templateURI . '/js/jquery-1.2.6.min.js"></script>';
 			}
 			echo '
-			<script type="text/javascript" src="'; bloginfo('template_directory'); echo '/options/tabcontent/tabcontent.js">
+			<script type="text/javascript" src="' . $templateURI . '/options/tabcontent/tabcontent.js">
 				/***********************************************
 				* Tab Content script v2.2- Copyright Dynamic Drive DHTML code library (www.dynamicdrive.com)
 				* This notice MUST stay intact for legal use
 				* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
 				***********************************************/
 			</script>
-			<script src="'; bloginfo('template_directory'); echo '/options/mootools-for-textarea.js" type="text/javascript"></script>
-			<script src="'; bloginfo('template_directory'); echo '/options/UvumiTextarea-compressed.js" type="text/javascript"></script>
-			<link rel="stylesheet" href="'; bloginfo('template_directory'); echo '/options/uvumi-textarea.css" type="text/css" />
+			<script src="' . $templateURI . '/options/mootools-for-textarea.js" type="text/javascript"></script>
+			<script src="' . $templateURI . '/options/UvumiTextarea-compressed.js" type="text/javascript"></script>
+			<link rel="stylesheet" href="' . $templateURI . '/options/uvumi-textarea.css" type="text/css" />
 			<!--[if IE]>
-			<link rel="stylesheet" href="'; bloginfo('template_directory'); echo '/options/uvumi-textarea-ie.css" type="text/css" />
+			<link rel="stylesheet" href="' . $templateURI . '/options/uvumi-textarea-ie.css" type="text/css" />
 			<![endif]--> 
 			<script type="text/javascript">
 				new UvumiTextarea({

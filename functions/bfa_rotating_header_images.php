@@ -1,6 +1,6 @@
 <?php
 function bfa_rotating_header_images() {
-global $bfa_ata;
+global $bfa_ata, $templateURI;
 	if (file_exists(ABSPATH."/wpmu-settings.php")) {
 
 		################### images in WP upload folder (on WPMU)
@@ -26,11 +26,11 @@ global $bfa_ata;
 
 		$files = "";
 		$imgpath = TEMPLATEPATH . '/images/header/';
-		$imgdir = get_bloginfo('template_directory') . '/images/header/';
+		$imgdir = $templateURI . '/images/header/';
 		$dh  = opendir($imgpath);
 
 		while (FALSE !== ($filename = readdir($dh))) {
-			if(eregi('.jpg', $filename) || eregi('.gif', $filename) || eregi('.png', $filename)) {
+			if( preg_match('/\.jpg/i', $filename) || preg_match('/\.gif/i', $filename) || preg_match('/\.png/i', $filename) ) {
 		   $files[] = $filename;
 		   }
 		}

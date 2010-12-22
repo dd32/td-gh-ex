@@ -344,32 +344,6 @@
 
 	$bfa_ata = get_option('bfa_ata4');
 
-	/*
-	$bfa_ata['name'] = "Atahualpa";
-	$bfa_ata['version'] = "3.4.8";
-	*/
-	/*
-	ob_start(); 
-		if (get_bloginfo('wpurl') == '') { 
-			// Older WP versions
-			bloginfo('siteurl'); 
-		} else { 
-			bloginfo('wpurl'); 
-		} 
-		$bfa_ata['siteurl'] = ob_get_contents(); 
-	ob_end_clean();
-	ob_start(); bloginfo('template_directory'); $bfa_ata['template_directory'] = ob_get_contents(); ob_end_clean();
-	ob_start(); bloginfo('home'); $bfa_ata['get_option_home'] = ob_get_contents(); ob_end_clean();
-
-
-	ob_start(); bloginfo('name'); $bfa_ata['bloginfo_name'] = ob_get_contents(); ob_end_clean();
-	ob_start(); bloginfo('description'); $bfa_ata['bloginfo_description'] = ob_get_contents(); ob_end_clean();
-
-	ob_start(); bloginfo('comments_rss2_url'); $bfa_ata['bloginfo_comments_rss2_url'] = ob_get_contents(); ob_end_clean();
-	ob_start(); bloginfo('rss2_url'); $bfa_ata['bloginfo_rss2_url'] = ob_get_contents(); ob_end_clean();
-	*/
-
-
 	if ( is_page() ) {
 		global $wp_query;
 		$current_page_id = $wp_query->get_queried_object_id();

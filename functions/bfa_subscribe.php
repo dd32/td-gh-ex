@@ -1,6 +1,6 @@
 <?php
 function widget_bfa_subscribe($args) {
-	global $bfa_ata;
+	global $bfa_ata, $templateURI;
 	extract($args);
 	$options = get_option('widget_bfa_subscribe');
 	$title = apply_filters('widget_title', $options['title']);
@@ -40,7 +40,7 @@ onsubmit="window.open('http://<?php echo $window_url . $id; ?>',
 <td class="email-text" colspan="2"><p>
 <a href="http://<?php echo $window_url . $id; ?>&amp;loc=<?php echo get_locale() . 
 ($bfa_ata_nofollow == "Yes" ? ' rel="nofollow"' : ''); ?>">
-<img src="<?php echo get_bloginfo('template_directory'); ?>/images/feedburner-email.gif" style="float:left; margin: 0 7px 3px 0" alt="" /></a><?php echo $email_text; ?></p>
+<img src="<?php echo $templateURI; ?>/images/feedburner-email.gif" style="float:left; margin: 0 7px 3px 0" alt="" /></a><?php echo $email_text; ?></p>
 </td></tr><tr><td class="email-field"><input type="text" name="email" class="text inputblur" value="<?php echo $field_text; ?>" 
 onfocus="this.value='';" />
 <input type="hidden" value="<?php echo $hidden_value_url . $id; ?>" name="<?php echo $hidden_uri; ?>"/>
@@ -52,13 +52,13 @@ onfocus="this.value='';" />
 <tr>
 <td  class="post-text" colspan="2"><p>
 <a href="<?php echo get_bloginfo('rss2_url'); ?>"<?php if ($bfa_ata['nofollow'] == "Yes") { ?> rel="nofollow"<?php } ?>>
-<img src="<?php echo get_bloginfo('template_directory'); ?>/images/post-feed.gif" style="float:left; margin: 0 7px 3px 0" alt="" /></a><?php echo $posts_text; ?></p>
+<img src="<?php echo $templateURI; ?>/images/post-feed.gif" style="float:left; margin: 0 7px 3px 0" alt="" /></a><?php echo $posts_text; ?></p>
 </td>
 </tr>
 <tr>
 <td class="comment-text" colspan="2"><p>
 <a href="<?php echo get_bloginfo('comments_rss2_url'); ?>"<?php if ($bfa_ata['nofollow'] == "Yes") { ?> rel="nofollow"<?php } ?>>
-<img src="<?php echo get_bloginfo('template_directory'); ?>/images/comment-feed.gif" style="float:left; margin: 0 7px 3px 0" alt="" /></a><?php echo $comments_text; ?></p>
+<img src="<?php echo $templateURI; ?>/images/comment-feed.gif" style="float:left; margin: 0 7px 3px 0" alt="" /></a><?php echo $comments_text; ?></p>
 </td>
 </tr>
 </table>

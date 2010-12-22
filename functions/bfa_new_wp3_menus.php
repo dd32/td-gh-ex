@@ -28,7 +28,9 @@ function bfa_new_wp3_menus($theme_location = "menu1", $alignment = "left") {
 		'container' => 'div', 
 		'container_id' => $theme_location,
 		'menu_class' => $menu_class,
-		'menu_id' => $menu_id
+		'menu_id' => $menu_id,
+		'link_before' => '<span>',
+		'link_after' => '</span>'
 		) );
 		
 	$newmenu = ob_get_contents(); 

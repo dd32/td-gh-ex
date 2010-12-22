@@ -1,13 +1,13 @@
 <?php
 
 // http://example.com/home/wp-content/themes/atahualpa
-$url_base = get_bloginfo('template_directory');
+$templateURI = get_template_directory_uri();
 
 // http://example.com/home
-$wordpress_base = get_bloginfo('url');
+$wordpress_base = home_url();
 
 // /wp-content/themes/atahualpa/
-$template_path = str_replace( $wordpress_base, '', $url_base) . '/';
+$template_path = str_replace( $wordpress_base, '', $templateURI) . '/';
 
 // example.com/home
 $server_name_incl_wp_dir = str_replace("http://", "", $wordpress_base);
@@ -127,21 +127,21 @@ $options1 = array(
 			"lastoption" => "yes", 
             "info" => "<br /><h3 class='infohighlight-header'>Join for free:</h3>
 			<div class='infohighlight'>
-			<img src=\"" . $url_base . "/images/comment_icon.png\" style=\"float: left; margin: 0px 10px 5px 0;\">
+			<img src=\"" . $templateURI . "/images/comment_icon.png\" style=\"float: left; margin: 0px 10px 5px 0;\">
 
 			<a href='http://forum.bytesforall.com/register.php'>Become a member</a> of our active <a href='http://forum.bytesforall.com/'>Forum</a> and discuss Atahualpa with 1000's of other Atahualpa users.   
 			Get new styles and language files, ask or answer questions and more.</div> 
 			<h3 class='infohighlight-header'>Please donate if you can:</h3>
 			<div class='infohighlight'>
-			<img src=\"" . $url_base . "/images/awardsmall.gif\" style=\"float: left; margin: 0px 10px 5px 0;\">				
+			<img src=\"" . $templateURI . "/images/awardsmall.gif\" style=\"float: left; margin: 0px 10px 5px 0;\">				
 			<a href='http://forum.bytesforall.com/awc_ds.php?do=donation'>Please donate</a> to support the Atahualpa/BytesForAll team. Your financial help will serve to maintain, 
-			improve and support Atahualpa. <strong>Thank you</strong> <img src=\"" . $url_base . "/images/heart.png\" style=\"\">
+			improve and support Atahualpa. <strong>Thank you</strong> <img src=\"" . $templateURI . "/images/heart.png\" style=\"\">
 			&nbsp; <em>BytesForAll Team</em>
 			</div>
 			<h3 class='infohighlight-header'>Or go even further:</h3>
 			<div class='infohighlight'>
-			<img src=\"" . $url_base . "/images/award1small.gif\" style=\"float: left; margin: 0px 10px 5px 0;\">
-			<img src=\"" . $url_base . "/images/diamondsmall.gif\" style=\"float: left; margin: 0px 10px 5px 0;\">
+			<img src=\"" . $templateURI . "/images/award1small.gif\" style=\"float: left; margin: 0px 10px 5px 0;\">
+			<img src=\"" . $templateURI . "/images/diamondsmall.gif\" style=\"float: left; margin: 0px 10px 5px 0;\">
 			<a href='http://forum.bytesforall.com/awc_ds.php?do=donation'>Donate $20</a> or more to become a 
 			<strong>Gold</strong> or <strong>Diamond</strong> member  
 			for additonal benefits such as extra styles and tutorials and preferred 
@@ -161,7 +161,7 @@ $options1 = array(
 					Atahualpa 3.4.7+ installation:<br /><br /><a class='button' href='" . $wordpress_base . "/?bfa_ata_file=settings-download' id='settings-download'><strong>Export &amp; Download</strong> Atahualpa Settings File</a>
 					<br /><br />The file will be named <code>ata-" . str_replace('.','', $_SERVER['SERVER_NAME']) . "-" . date('Y') . date('m') . date('d') . ".txt</code>. After you downloaded it, 
 					you can (but don't need to) rename the file to something more meaningful.
-					<br /><br /><div class='infohighlight'><div style='font-size:13px;font-weight:bold'>Recommended: Use dynamic image paths, for universally working settings files:</div><div style='font-size:11px;line-height:1.3'>If you're using background images in your CSS, , use dynamic image paths such as <br /><code>background: url('<span style='color:red'>&lt;?php bloginfo('template_directory'); ?&gt;</span>/images/someimage.gif') no-repeat top left;</code> 
+					<br /><br /><div class='infohighlight'><div style='font-size:13px;font-weight:bold'>Recommended: Use dynamic image paths, for universally working settings files:</div><div style='font-size:11px;line-height:1.3'>If you're using background images in your CSS, , use dynamic image paths such as <br /><code>background: url('<span style='color:red'>&lt;?php echo get_template_directory_uri(); ?&gt;</span>/images/someimage.gif') no-repeat top left;</code> 
 					<br />instead of static image paths such as <br /><code>background: url('<span style='color:red'>/wp-content/themes/atahualpa349</span>/images/someimage.gif') no-repeat top left;</code><br />This way the image paths are correct on another installation even if 
 					(1) the atahualpa directory was named differently, or (2) the WP installation isn't in the root but in a path such as /blog/ .<br />
 					</div></div>"
@@ -456,7 +456,7 @@ $options1 = array(
             "type" => "text",
 			"size" => "30",
 			"lastoption" => "yes", 
-            "info" =>  "<img src=\"" . $url_base .
+            "info" =>  "<img src=\"" . $templateURI .
             "/options/images/favicon-locations.gif\" style=\"float: right;
             margin: 0 0 10px 10px;\">" . "Put the file name of the favicon here,
             i.e. <code>fff-sport_soccer.ico</code>. To use your own graphic,
@@ -475,7 +475,7 @@ $options1 = array(
             transparent background) and a size of 16x16 pixels and convert it
             into an <code>.ico</code> file with a software such as
             <a href=\"http://www.towofu.net/soft-e/\">@Icon Sushi</a></em>
-            <img src=\"" . $url_base . "/options/images/favicons.gif\"
+            <img src=\"" . $templateURI . "/options/images/favicons.gif\"
             style=\"display: block; margin: 10px;\">"),
 
 // New category: header
@@ -522,7 +522,7 @@ $options1 = array(
             "id" => "logoarea_style",
             "std" => "",
             "type" => "textarea-large",
-            "info" => "<img src=\"" . $url_base . "/options/images/logo-area.jpg\" style=\"float: right; 
+            "info" => "<img src=\"" . $templateURI . "/options/images/logo-area.jpg\" style=\"float: right; 
 			margin: 0 0 10px 10px;\">" . "Style the header's logo area. The logo area is the container that holds 
 			the logo / logo icon, the blog title, the blog tagline, the search box and the RSS/Email icons. 
 			The height of the logo area will be determined by its content. If you want more height, set the height here. 
@@ -544,7 +544,7 @@ $options1 = array(
             "id" => "logo_style",
             "std" => "margin: 0 10px 0 0;",
             "type" => "textarea-large",
-            "info" => "<img src=\"" . $url_base . "/options/images/logo-style.gif\" style=\"float: right; 
+            "info" => "<img src=\"" . $templateURI . "/options/images/logo-style.gif\" style=\"float: right; 
 			margin: 0 0 10px 10px;\">" . "Style the logo here, i.e. give it a border or move it around by applying margins.
 			<br /><br /><strong>Example:</strong><br /><br /><code>margin: 30px 30px 30px 30px;</code>"),
 
@@ -712,7 +712,7 @@ $options1 = array(
             "std" => "150",
             "type" => "text",
 			"size" => "5",
-            "info" => "<img src=\"" . $url_base . "/options/images/header-image-height.jpg\" 
+            "info" => "<img src=\"" . $templateURI . "/options/images/header-image-height.jpg\" 
 			style=\"float: right; margin: 0 0 10px 10px;\">" . "Visible height of the header image(s), <strong>in pixels</strong>. 
 			Change this value to show a taller or less tall area of the header image(s). <br /><br /><em>This value 
 			does not need to match the actual height of your header image(s). In fact, all your header images could 
@@ -738,7 +738,7 @@ $options1 = array(
             "type" => "select",
 			"options" => array("0", "5", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55", "60", "65", 
 			"70", "75", "80", "85", "90", "95"),
-            "info" => "<img src=\"" . $url_base . "/options/images/opacity.jpg\" style=\"float: right; 
+            "info" => "<img src=\"" . $templateURI . "/options/images/opacity.jpg\" style=\"float: right; 
 			margin: 0 0 10px 10px;\">" . "Opacity overlay for the LEFT hand side of the header image. 
 			Choose 0 to remove the Opacity."),
 
@@ -748,7 +748,7 @@ $options1 = array(
             "std" => "200",
             "type" => "text",
 			"size" => "5",
-            "info" => "<img src=\"" . $url_base . "/options/images/opacity-left-width.jpg\" style=\"float: right; 
+            "info" => "<img src=\"" . $templateURI . "/options/images/opacity-left-width.jpg\" style=\"float: right; 
 			margin: 0 0 10px 10px;\">" . "Width of the Opacity overlay for the LEFT hand side of the header image, 
 			<strong>in pixels</strong>. To match this to the left sidebar's width, add up the left sidebar's width plus 
 			its left and right paddings, if you've set any."),
@@ -767,7 +767,7 @@ $options1 = array(
             "type" => "select",
 			"options" => array("0", "5", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55", "60", "65", 
 			"70", "75", "80", "85", "90", "95"),
-            "info" => "<img src=\"" . $url_base . "/options/images/opacity.jpg\" style=\"float: right; 
+            "info" => "<img src=\"" . $templateURI . "/options/images/opacity.jpg\" style=\"float: right; 
 			margin: 0 0 10px 10px;\">" . "Opacity overlay for the RIGHT hand side of the header image. 
 			Choose 0 to remove the Opacity."),
 
@@ -777,7 +777,7 @@ $options1 = array(
             "std" => "200",
             "type" => "text",
 			"size" => "5",
-            "info" => "<img src=\"" . $url_base . "/options/images/opacity-right-width.jpg\" style=\"float: right; 
+            "info" => "<img src=\"" . $templateURI . "/options/images/opacity-right-width.jpg\" style=\"float: right; 
 			margin: 0 0 10px 10px;\">" . "Width of the Opacity overlay for the RIGHT hand side of the header image, 
 			<strong>in pixels</strong>. To match this to the right sidebar's width, add up the left sidebar's width plus 
 			its left and right paddings, if you've set any."),
@@ -811,7 +811,7 @@ $options1 = array(
             "std" => "margin-top: 30px;\nmargin-left: 30px;",
             "type" => "textarea-large",
 			"lastoption" => "yes", 
-            "info" => "<img src=\"" . $url_base . "/options/images/header-overlay.jpg\" style=\"float: right; 
+            "info" => "<img src=\"" . $templateURI . "/options/images/header-overlay.jpg\" style=\"float: right; 
 			margin: 0 0 10px 10px;\">" . "The overlayed blog title and blog tagline will be in a div container. 
 			Move that container around by changing the <code>margin-top</code> and <code>margin-left</code> values. 
 			To right-align the overlayed container, add <code>float: right;</code> and replace <code>margin-left</code> 
@@ -864,7 +864,7 @@ $options1 = array(
             "id" => "rss_box_width",
             "std" => "280",
             "type" => "text",
-            "info" => "<img src=\"" . $url_base . "/options/images/rss-box.gif\" style=\"float: right; margin: 0 0 10px 10px;\">" . 
+            "info" => "<img src=\"" . $templateURI . "/options/images/rss-box.gif\" style=\"float: right; margin: 0 0 10px 10px;\">" . 
 			"Give the box containing the RSS buttons/links a fixed width, <strong>in pixels</strong>, to keep them in 
 			one line, to avoid early wrapping. You shouldn't make this wider than needed for the given content."),		
 			
@@ -874,7 +874,7 @@ $options1 = array(
             "type" => "select",
             "std" => "Yes",
             "options" => array("Yes", "No"),
-            "info" => "<img src=\"" . $url_base . "/options/images/show_posts_icon.gif\" style=\"float: right; margin: 0 0 10px 10px;\">" . 
+            "info" => "<img src=\"" . $templateURI . "/options/images/show_posts_icon.gif\" style=\"float: right; margin: 0 0 10px 10px;\">" . 
 			"Show the Post RSS Feed icon on the right hand side of the logo area?"),
 
 	array(    "name" => "Post Feed Link Text",
@@ -882,7 +882,7 @@ $options1 = array(
             "id" => "post_feed_link",
             "std" => __("Posts","atahualpa"),
             "type" => "text",
-            "info" => "<img src=\"" . $url_base . "/options/images/post_feed_link.gif\" style=\"float: right; margin: 0 0 10px 10px;\">" . 
+            "info" => "<img src=\"" . $templateURI . "/options/images/post_feed_link.gif\" style=\"float: right; margin: 0 0 10px 10px;\">" . 
 			"Leave blank to show no Post Feed Text Link in the logo area."),		
 
 	array(    "name" => "Post Feed Link \"Title\"",
@@ -891,7 +891,7 @@ $options1 = array(
             "std" => __("Subscribe to the POSTS feed","atahualpa"),
             "type" => "text",
 			"size" => "30", 
-            "info" => "<img src=\"" . $url_base . "/options/images/post_feed_link_title.gif\" style=\"float: right; margin: 0 0 10px 10px;\">" . 
+            "info" => "<img src=\"" . $templateURI . "/options/images/post_feed_link_title.gif\" style=\"float: right; margin: 0 0 10px 10px;\">" . 
 			"This is not the link anchor text (that was one option above), but the link \"title\", a text that will pop up when the mouse points at the link."),		
 
     array(    "name" => "Show Comment Feed icon?",
@@ -900,7 +900,7 @@ $options1 = array(
             "type" => "select",
             "std" => "Yes",
             "options" => array("Yes", "No"),
-            "info" => "<img src=\"" . $url_base . "/options/images/show_comments_icon.gif\" style=\"float: right; margin: 0 0 10px 10px;\">" .
+            "info" => "<img src=\"" . $templateURI . "/options/images/show_comments_icon.gif\" style=\"float: right; margin: 0 0 10px 10px;\">" .
 			"Show the Comment RSS Feed icon on the right hand side of the logo area?"),
 
 	array(    "name" => "Comment Feed Link Text",
@@ -908,7 +908,7 @@ $options1 = array(
             "id" => "comment_feed_link",
             "std" => __("Comments","atahualpa"),
             "type" => "text",
-            "info" => "<img src=\"" . $url_base . "/options/images/comment_feed_link.gif\" style=\"float: right; margin: 0 0 10px 10px;\">" .
+            "info" => "<img src=\"" . $templateURI . "/options/images/comment_feed_link.gif\" style=\"float: right; margin: 0 0 10px 10px;\">" .
 			"Leave blank to show no Comment Feed Text Link in the logo area."),
 
 	array(    "name" => "Comment Feed Link \"Title\"",
@@ -917,7 +917,7 @@ $options1 = array(
             "std" => __("Subscribe to the COMMENTS feed","atahualpa"),
             "type" => "text",
 			"size" => "30", 
-            "info" => "<img src=\"" . $url_base . "/options/images/comment_feed_link_title.gif\" style=\"float: right; margin: 0 0 10px 10px;\">" .
+            "info" => "<img src=\"" . $templateURI . "/options/images/comment_feed_link_title.gif\" style=\"float: right; margin: 0 0 10px 10px;\">" .
 			"This is not the link anchor text (that was one option above), but the link \"title\", a text that will pop up when the mouse points at the link."),		
 
     array(    "name" => "Show Feedburner Email icon?",
@@ -926,7 +926,7 @@ $options1 = array(
             "type" => "select",
             "std" => "No",
             "options" => array("No", "Yes"),
-            "info" => "<img src=\"" . $url_base . "/options/images/show_email_icon.gif\" style=\"float: right; margin: 0 0 10px 10px;\">" . 
+            "info" => "<img src=\"" . $templateURI . "/options/images/show_email_icon.gif\" style=\"float: right; margin: 0 0 10px 10px;\">" . 
 			"Show a Feedburner \"Subscribe by Email\" icon on the right hand side of the logo area?"),
 
 	array(    "name" => "Feedburner Email Link Text",
@@ -934,7 +934,7 @@ $options1 = array(
             "id" => "email_subscribe_link",
             "std" => __("By Email","atahualpa"),
             "type" => "text",
-            "info" => "<img src=\"" . $url_base . "/options/images/email_subscribe_link.gif\" style=\"float: right; margin: 0 0 10px 10px;\">" . 
+            "info" => "<img src=\"" . $templateURI . "/options/images/email_subscribe_link.gif\" style=\"float: right; margin: 0 0 10px 10px;\">" . 
 			"Leave blank to show no \"Subscribe by Email\" Text Link in the logo area"),		
 
 	array(    "name" => "Feedburner Email Link \"Title\"",
@@ -943,7 +943,7 @@ $options1 = array(
             "std" => __("Subscribe by EMAIL","atahualpa"),
             "type" => "text",
 			"size" => "30", 
-            "info" => "<img src=\"" . $url_base . "/options/images/email_subscribe_link_title.gif\" style=\"float: right; margin: 0 0 10px 10px;\">" . 
+            "info" => "<img src=\"" . $templateURI . "/options/images/email_subscribe_link_title.gif\" style=\"float: right; margin: 0 0 10px 10px;\">" . 
 			"This is not the link anchor text (that was one option above), but the link \"title\", a text that will pop up when the mouse points at the link."),		
 			
     array(    "name" => "Feedburner ID for this site?",
@@ -1837,7 +1837,7 @@ $options3 = array(
             "id" => "widget_container",
             "std" => "margin: 0 0 15px 0;",
             "type" => "textarea-large",
-            "info" => "<img src=\"" . $url_base . "/options/images/widget.gif\" 
+            "info" => "<img src=\"" . $templateURI . "/options/images/widget.gif\" 
 			style=\"float: right; margin: 0 0 10px 10px;\">" . 
 			"The widget container contains the \"Widget Title\" (-Box) and the \"Widget Content\" (-Box), 
 			both of which you can style independently."),
@@ -1847,7 +1847,7 @@ $options3 = array(
             "id" => "widget_title_box",
             "std" => "",
             "type" => "textarea-large",
-            "info" => "<img src=\"" . $url_base . "/options/images/widget-title-box.gif\" 
+            "info" => "<img src=\"" . $templateURI . "/options/images/widget-title-box.gif\" 
 			style=\"float: right; margin: 0 0 10px 10px;\">" . 
 			"The Widget Title box contains the widget title. Text, calendar and search widgets may have no 
 			title if you chose none. In that case there will be no Widget Title box in the widget container."),	
@@ -1857,7 +1857,7 @@ $options3 = array(
             "id" => "widget_title",
             "std" => "font-size: 1.6em;\nfont-weight: bold;",
             "type" => "textarea-large",
-            "info" => "<img src=\"" . $url_base . "/options/images/widget-title.gif\" 
+            "info" => "<img src=\"" . $templateURI . "/options/images/widget-title.gif\" 
 			style=\"float: right; margin: 0 0 10px 10px;\">" . "Style the Widget Title Font."),	
 
     array(    "name" => "Widget Content Box",
@@ -1865,7 +1865,7 @@ $options3 = array(
             "id" => "widget_content",
             "std" => "",
             "type" => "textarea-large",
-            "info" => "<img src=\"" . $url_base . "/options/images/widget-content.gif\" 
+            "info" => "<img src=\"" . $templateURI . "/options/images/widget-content.gif\" 
 			style=\"float: right; margin: 0 0 10px 10px;\">" . "The Widget Content Box is gone since Atahualpa 3.4. for better 
 			plugin compatibility. It was a propretiary Atahualpa feature that provided extra styling possibilites but didn't play well with 
 			all plugins because some of them rely heavily on widgets having the same structure as in the \"Default\" theme (which does 
@@ -1889,7 +1889,7 @@ $options3 = array(
        								"link-border-left-hover-color" => "000000"),
             "type" => "widget-list-items",
 			"stripslashes" => "no",
-            "info" => "<img src=\"" . $url_base . "/options/images/widget-list-items-1.gif\" 
+            "info" => "<img src=\"" . $templateURI . "/options/images/widget-list-items-1.gif\" 
 			style=\"float: right; margin: 0 0 10px 10px;\">" . "List items and links in widgets."),
 
     array(    "name" => "Widget List Items, 2nd level",
@@ -1906,7 +1906,7 @@ $options3 = array(
        								"link-border-left-hover-color" => "000000"),
             "type" => "widget-list-items",
 			"stripslashes" => "no",
-            "info" => "<img src=\"" . $url_base . "/options/images/widget-list-items-2.gif\" 
+            "info" => "<img src=\"" . $templateURI . "/options/images/widget-list-items-2.gif\" 
 			style=\"float: right; margin: 0 0 10px 10px;\">" . "Second level list items and links in widgets."),
 
     array(    "name" => "Widget List Items, 3rd and lower level",
@@ -1923,7 +1923,7 @@ $options3 = array(
        								"link-border-left-hover-color" => "000000"),
             "type" => "widget-list-items",
 			"stripslashes" => "no",
-            "info" => "<img src=\"" . $url_base . "/options/images/widget-list-items-3.gif\" 
+            "info" => "<img src=\"" . $templateURI . "/options/images/widget-list-items-3.gif\" 
 			style=\"float: right; margin: 0 0 10px 10px;\">" . "Third and lower level list items and links in widgets."),
 
     array(    "name" => "Category Widget Display Type",
@@ -1945,7 +1945,7 @@ $options3 = array(
             "type" => "select", 
             "options" => array("Default", "12px", "11px", "10px", "9px"),
 			"lastoption" => "yes", 
-            "info" => "<img src=\"" . $url_base . "/options/images/select-cutoff.gif\" 
+            "info" => "<img src=\"" . $templateURI . "/options/images/select-cutoff.gif\" 
 			style=\"float: right; margin: 0 0 10px 10px;\">" . "In <strong>Internet Explorer</strong>, 
 			\"Select\" drop down menus will be cut off if one or more of the select menu items (in this 
 			case: category titles) are too long. <br /><br />To avoid this, set a (small) fixed pixel font 
@@ -2025,13 +2025,13 @@ than the table consists of.
 <td class='bfa-td'>Amount of (table) cells. Each cell is a new widget area. Default: 1</td>
 </tr><tr>
 <td class='bfa-td'><code>align</code></td>
-<td class='bfa-td'><img src=\"" . $url_base . "/options/images/widget-area-alignment.gif\" 
+<td class='bfa-td'><img src=\"" . $templateURI . "/options/images/widget-area-alignment.gif\" 
 			style=\"float: left; margin: 0 10px 10px 0;\">Default alignment for all cells.<br />Default: <code>2</code> (= center top). <code>1</code> = center middle, <code>2</code> = center top, 
 <code>3</code> = right top, <code>4</code> = right middle, <code>5</code> = right bottom, <code>6</code> = center bottom, 
 <code>7</code> = left bottom, <code>8</code> = left middle, <code>9</code> = left top.</td>
 </tr><tr>
 <td class='bfa-td'><code>align_1</code>, <code>align_2</code>, <code>align_3</code> etc.</td>
-<td class='bfa-td'><img src=\"" . $url_base . "/options/images/widget-area-alignment.gif\" 
+<td class='bfa-td'><img src=\"" . $templateURI . "/options/images/widget-area-alignment.gif\" 
 			style=\"float: left; margin: 0 10px 10px 0;\">Alignment for a particular widget area cell. If not defined, widget area cells get the default value of the global parameter <code>align</code>, which, if not defined, is <code>2</code> (= center top).</td>
 </tr><tr>
 <td class='bfa-td'><code>width_1</code>, <code>width_2</code>, <code>width_3</code> etc.</td>	
@@ -2185,17 +2185,17 @@ __('Category:','atahualpa') . " %categories-linked(', ')% %edit(' | ', '" . __('
             "id" => "post_container_style",
             "std" => "margin: 0 0 30px 0;",
             "type" => "textarea-large",
-            "info" => "<img src=\"" . $url_base . "/options/images/post-container.gif\" 
+            "info" => "<img src=\"" . $templateURI . "/options/images/post-container.gif\" 
 			style=\"float: right; margin: 0 0 10px 10px;\">" . "Style <strong>the container</strong> 
 			that contains the whole post/page."),
 
     array(    "name" => "POST Container: STICKY",
     	    "category" => "posts",
             "id" => "post_container_sticky_style",
-            "std" => "background: #eee url(" . $url_base .
+            "std" => "background: #eee url(" . $templateURI .
             "/images/sticky.gif) 99% 5% no-repeat;\nborder: dashed 1px #cccccc;\npadding: 10px;",
             "type" => "textarea-large",
-            "info" => "<img src=\"" . $url_base . "/options/images/post-container.gif\"
+            "info" => "<img src=\"" . $templateURI . "/options/images/post-container.gif\"
 			style=\"float: right; margin: 0 0 10px 10px;\">" . "Additional styles for <strong>the container
 			</strong> when it is <strong>STICKY</strong>. This works only in WP 2.7 and newer. 
 			In WP 2.7, posts can be marked as \"sticky\" which will make them stay on the top of the homepage."),
@@ -2205,7 +2205,7 @@ __('Category:','atahualpa') . " %categories-linked(', ')% %edit(' | ', '" . __('
             "id" => "post_kicker_style",
             "std" => "margin: 0 0 5px 0;",
             "type" => "textarea-large",
-            "info" => "<img src=\"" . $url_base . "/options/images/post-kicker.gif\"
+            "info" => "<img src=\"" . $templateURI . "/options/images/post-kicker.gif\"
 			style=\"float: right; margin: 0 0 10px 10px;\">" . "Style <strong>the box</strong> that 
 			contains the post/page \"kicker\", <strong>and the text</strong> inside, except the links."),
 
@@ -2214,7 +2214,7 @@ __('Category:','atahualpa') . " %categories-linked(', ')% %edit(' | ', '" . __('
             "id" => "post_kicker_style_links",
             "std" => "color: #000000;\ntext-decoration: none;\ntext-transform: uppercase;",
             "type" => "textarea-large",
-            "info" => "<img src=\"" . $url_base . "/options/images/post-kicker-links.gif\"
+            "info" => "<img src=\"" . $templateURI . "/options/images/post-kicker-links.gif\"
 			style=\"float: right; margin: 0 0 10px 10px;\">" . "Style <strong>the links</strong> in the kicker box."),			
 
 	array(    "name" => "KICKER Box: Links: Hover",
@@ -2222,7 +2222,7 @@ __('Category:','atahualpa') . " %categories-linked(', ')% %edit(' | ', '" . __('
             "id" => "post_kicker_style_links_hover",
             "std" => "color: #cc0000;",
             "type" => "textarea-large",
-            "info" => "<img src=\"" . $url_base . "/options/images/post-kicker-links-hover.gif\"
+            "info" => "<img src=\"" . $templateURI . "/options/images/post-kicker-links-hover.gif\"
 			style=\"float: right; margin: 0 0 10px 10px;\">" . "Style <strong>the links</strong> in the 
 			kicker box, in their <strong>hover</strong> state."),			
 			
@@ -2231,7 +2231,7 @@ __('Category:','atahualpa') . " %categories-linked(', ')% %edit(' | ', '" . __('
             "id" => "post_headline_style",
             "std" => "",
             "type" => "textarea-large",
-            "info" => "<img src=\"" . $url_base . "/options/images/post-headline.gif\" 
+            "info" => "<img src=\"" . $templateURI . "/options/images/post-headline.gif\" 
 			style=\"float: right; margin: 0 0 10px 10px;\">" . "Style <strong>the box</strong> that contains 
 			the post/page title. The text inside (= the post/page title) will be styled in the next section."),
 
@@ -2240,7 +2240,7 @@ __('Category:','atahualpa') . " %categories-linked(', ')% %edit(' | ', '" . __('
             "id" => "post_headline_style_text",
             "std" => "padding: 0;\nmargin: 0;",
             "type" => "textarea-large",
-            "info" => "<img src=\"" . $url_base . "/options/images/post-headline-text.gif\" 
+            "info" => "<img src=\"" . $templateURI . "/options/images/post-headline-text.gif\" 
 			style=\"float: right; margin: 0 0 10px 10px;\">" . "Style <strong>the post/page titles, when 
 			they are NOT links</strong>, but regular text (= on single post pages and \"page\" pages)."),
 			
@@ -2249,7 +2249,7 @@ __('Category:','atahualpa') . " %categories-linked(', ')% %edit(' | ', '" . __('
             "id" => "post_headline_style_links",
             "std" => "color: #666666;\ntext-decoration: none;",
             "type" => "textarea-large",
-            "info" => "<img src=\"" . $url_base . "/options/images/post-headline-links.gif\" 
+            "info" => "<img src=\"" . $templateURI . "/options/images/post-headline-links.gif\" 
 			style=\"float: right; margin: 0 0 10px 10px;\">" . "Style <strong>the post/page titles, when 
 			they ARE links</strong> (= on multi post pages such as home, archive, category, tag, search...). 
 			\"Page\" page titles are usually never links, but they might become links, i.e. if you expand 
@@ -2260,7 +2260,7 @@ __('Category:','atahualpa') . " %categories-linked(', ')% %edit(' | ', '" . __('
             "id" => "post_headline_style_links_hover",
             "std" => "color: #000000;\ntext-decoration: none;",
             "type" => "textarea-large",
-            "info" => "<img src=\"" . $url_base . "/options/images/post-headline-links-hover.gif\" 
+            "info" => "<img src=\"" . $templateURI . "/options/images/post-headline-links-hover.gif\" 
 			style=\"float: right; margin: 0 0 10px 10px;\">" . "Style the <strong>hover</strong> state of 
 			<strong>post/page titles</strong>, when they are links."),			
 
@@ -2269,7 +2269,7 @@ __('Category:','atahualpa') . " %categories-linked(', ')% %edit(' | ', '" . __('
             "id" => "post_byline_style",
             "type" => "textarea-large",
             "std" => "margin: 5px 0 10px 0;",
-            "info" => "<img src=\"" . $url_base . "/options/images/post-byline.gif\" 
+            "info" => "<img src=\"" . $templateURI . "/options/images/post-byline.gif\" 
 			style=\"float: right; margin: 0 0 10px 10px;\">" . "Style <strong>the box</strong> that contains 
 			the post/page byline, <strong>and the text</strong> inside, except the links."),
 
@@ -2278,7 +2278,7 @@ __('Category:','atahualpa') . " %categories-linked(', ')% %edit(' | ', '" . __('
             "id" => "post_byline_style_links",
             "type" => "textarea-large",
             "std" => "",
-            "info" => "<img src=\"" . $url_base . "/options/images/post-byline-links.gif\" 
+            "info" => "<img src=\"" . $templateURI . "/options/images/post-byline-links.gif\" 
 			style=\"float: right; margin: 0 0 10px 10px;\">" . "Style <strong>the links</strong> in 
 			the byline box."),
 
@@ -2287,7 +2287,7 @@ __('Category:','atahualpa') . " %categories-linked(', ')% %edit(' | ', '" . __('
             "id" => "post_byline_style_links_hover",
             "type" => "textarea-large",
             "std" => "",
-            "info" => "<img src=\"" . $url_base . "/options/images/post-byline-links-hover.gif\" 
+            "info" => "<img src=\"" . $templateURI . "/options/images/post-byline-links-hover.gif\" 
 			style=\"float: right; margin: 0 0 10px 10px;\">" . "Style <strong>the links</strong> in the 
 			byline box, in their <strong>hover</strong> state."),
 
@@ -2296,7 +2296,7 @@ __('Category:','atahualpa') . " %categories-linked(', ')% %edit(' | ', '" . __('
             "id" => "post_bodycopy_style",
             "type" => "textarea-large",
             "std" => "",
-            "info" => "<img src=\"" . $url_base . "/options/images/post-body.gif\" 
+            "info" => "<img src=\"" . $templateURI . "/options/images/post-body.gif\" 
 			style=\"float: right; margin: 0 0 10px 10px;\">" . "Style <strong>the box</strong> that 
 			contains the post/page main text (= the \"body copy\"). The text and links in 
 			the post/page main text box can be styled on the main tab \"Text & Link Styling\"."),
@@ -2306,7 +2306,7 @@ __('Category:','atahualpa') . " %categories-linked(', ')% %edit(' | ', '" . __('
             "id" => "post_footer_style",
             "type" => "textarea-large",
             "std" => "margin: 0;\npadding: 5px;\nbackground: #eeeeee;\ncolor: #666;\nline-height: 18px;",
-            "info" => "<img src=\"" . $url_base . "/options/images/post-footer.gif\" 
+            "info" => "<img src=\"" . $templateURI . "/options/images/post-footer.gif\" 
 			style=\"float: right; margin: 0 0 10px 10px;\">" . "Style <strong>the box</strong> that 
 			contains the post/page footer, <strong>and the text</strong> inside, except the links."),
 
@@ -2315,7 +2315,7 @@ __('Category:','atahualpa') . " %categories-linked(', ')% %edit(' | ', '" . __('
             "id" => "post_footer_style_links",
             "type" => "textarea-large",
             "std" => "color: #333;\nfont-weight: normal;\ntext-decoration: none;",
-            "info" => "<img src=\"" . $url_base . "/options/images/post-footer-links.gif\" 
+            "info" => "<img src=\"" . $templateURI . "/options/images/post-footer-links.gif\" 
 			style=\"float: right; margin: 0 0 10px 10px;\">" . "Style <strong>the links</strong> in the footer box."),
 
 	array(    "name" => "FOOTER Box: Links: Hover",
@@ -2324,7 +2324,7 @@ __('Category:','atahualpa') . " %categories-linked(', ')% %edit(' | ', '" . __('
             "type" => "textarea-large",
             "std" => "color: #333;\nfont-weight: normal;\ntext-decoration: underline;",
 			"lastoption" => "yes", 
-            "info" => "<img src=\"" . $url_base . "/options/images/post-footer-links-hover.gif\" 
+            "info" => "<img src=\"" . $templateURI . "/options/images/post-footer-links-hover.gif\" 
 			style=\"float: right; margin: 0 0 10px 10px;\">" . "Style <strong>the links</strong> in the 
 			footer box, in their <strong>hover</strong> state."),
 
@@ -2493,8 +2493,8 @@ __('Category:','atahualpa') . " %categories-linked(', ')% %edit(' | ', '" . __('
 			<span style=\"font-size: 25px\">&rarr;</span></li><li><code>&amp;larr;</code> for a left arrow 
 			<span style=\"font-size: 25px\">&larr;</span></li></ul>The WordPress editor buttons to insert the 
 			\"Read More\" tag into a post or page. They look different depending on whether you're in Visual or HTML mode.<br /><br >" .
-			"<img src=\"" . $url_base . "/options/images/readmore1.gif\" /><br /><br />
-			<img src=\"" . $url_base . "/options/images/readmore2.gif\" />"),
+			"<img src=\"" . $templateURI . "/options/images/readmore1.gif\" /><br /><br />
+			<img src=\"" . $templateURI . "/options/images/readmore2.gif\" />"),
  
 // New category: comments
                                                                 
@@ -2865,7 +2865,7 @@ text-align: center;\ncolor: #777777;\nfont-size: 95%;",
             "id" => "blockquote_style",
             "std" => "color: #555555;\npadding: 1em 1em;\nbackground: #f4f4f4;\nborder: solid 1px #e1e1e1;",
             "type" => "textarea-large",
-            "info" => "<img src=\"" . $url_base . "/options/images/blockquotes.gif\" style=\"float: right; margin: 0 0 10px 10px;\">" . 
+            "info" => "<img src=\"" . $templateURI . "/options/images/blockquotes.gif\" style=\"float: right; margin: 0 0 10px 10px;\">" . 
 			"Style blockquotes. <br /><br /><strong>Example:</strong><br /><code>font: italic 1.1em georgia, serif;<br />color: #336699;<br />
 			padding: 0 1em;<br />background: #c9dbed;<br />border: dashed 5px #336699;</code><br /><br />Example Screenshot is from IE7. 
 			It will look different on non-IE browsers."),
@@ -2965,9 +2965,9 @@ text-align: center;\ncolor: #777777;\nfont-size: 95%;",
 			font-family: arial, \"comic sans ms\", sans-serif;<br />background: url(". $css_img_path ."images/myimage.gif);
             <br />}</code>
 			<br /><br />PHP code can be used in HTML/CSS Inserts.<br /><br />
-			Example: Using the dynamic PHP function <code>bloginfo('template_url')</code> instead of (even a relative = domain-less) static image URL like <code>/wp-content/themes/atahualpa347/</code>, the image URL would work 
+			Example: Using the dynamic PHP function <code>echo get_template_directory_uri();</code> instead of (even a relative = domain-less) static image URL like <code>/wp-content/themes/atahualpa347/</code>, the image URL would work 
 			regardless of how the Atahualpa directory was named ('atahualpa', 'atahualpa347' ...) on the given Atahualpa installation, and regardless of whether the CSS was set to 
-			'inline' or 'external':<br /><code>div.widget ul li { background: url('<span style='color:blue'>&lt;?php bloginfo('template_url'); ?&gt;</span>/images/bullets/round-gray.gif') no-repeat 0 7px }</code>"),
+			'inline' or 'external':<br /><code>div.widget ul li { background: url('<span style='color:blue'>&lt;?php echo get_template_directory_uri(); ?&gt;</span>/images/bullets/round-gray.gif') no-repeat 0 7px }</code>"),
 
 // New category: Archives page
 

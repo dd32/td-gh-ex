@@ -40,7 +40,7 @@ if ($comments) : ?>
 		if ( ($bfa_ata['separate_trackbacks'] == "Yes" AND get_comment_type() == 'comment') 
 		OR $bfa_ata['separate_trackbacks'] == "No" ) { ?>
 
-		<li <?php if ( $bfa_ata['author_highlight'] == "Yes" AND $comment->comment_author_email == get_the_author_email() ) { 
+		<li <?php if ( $bfa_ata['author_highlight'] == "Yes" AND $comment->comment_author_email == get_the_author_meta('email') ) { 
 				echo 'class="authorcomment clearfix" '; 
 			} else { 
 				echo $oddcomment; 
@@ -54,7 +54,7 @@ if ($comments) : ?>
 			# if this WP version has no gravatars, use the theme's custom gravatar function:
 			else { if(!empty($comment -> comment_author_email)) {
 				$md5 = md5($comment -> comment_author_email);
-				$default = urlencode(get_bloginfo('template_directory') . '/images/no-gravatar.gif');
+				$default = urlencode(get_template_directory_uri() . '/images/no-gravatar.gif');
 				echo '<img class="avatar" src="http://www.gravatar.com/avatar.php?gravatar_id='.$md5.'&size='.$bfa_ata['avatar_size'].'&default='.$default.' alt="'. __('Gravatar','atahualpa') .'" />';
 				}
 			}

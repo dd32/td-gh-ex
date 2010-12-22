@@ -1,44 +1,17 @@
 <?php
-
 /* Check if several pages exist to avoid empty
    next/prev navigation on multi post pages */
-
 function show_posts_nav() {
 	global $wp_query;
 	return ($wp_query->max_num_pages > 1) ? TRUE : FALSE;
 }
 
-
-// Home link for next/prev on single pages
-/*
-if ( is_single() ) {
-
-	if ( $bfa_ata['home_single_next_prev'] != '' ) {
-		ob_start(); 
-			echo '<div class="home"><a href="'; bloginfo('url'); echo '/">' .
-			$bfa_ata['home_single_next_prev'] . '</a></div>';
-			$nav_home_div_on_single= ob_get_contents(); 
-		ob_end_clean();
-		$nav_home_add_single = '-home';
-
-	} else {
-
-		$nav_home_div_on_single = "";
-		$nav_home_add_single = "";
-
-	}
-}
-*/
-
-
-
 /* Next/Previous PAGE Links (on multi post pages)
    in next_posts_link "next" means older posts
    Available parameters for $location: Top, Bottom. Default: Top */
-
 function bfa_next_previous_page_links($location = "Top") {
 
-global $bfa_ata;
+	global $bfa_ata, $homeURL;
 
 	if ( !is_single() AND !is_page() AND
     strpos($bfa_ata['location_multi_next_prev'],$location) !== FALSE AND
@@ -58,7 +31,7 @@ global $bfa_ata;
 
 			if($bfa_ata['home_multi_next_prev'] != '') { 
 				ob_start();
-					echo '<div class="home"><a href="'; bloginfo('url'); echo '/">' . 
+					echo '<div class="home"><a href="' . $homeURL . '/">' . 
 					$bfa_ata['home_multi_next_prev'] . '</a></div>'; 
 					$nav_home_div_on = ob_get_contents(); 
 				ob_end_clean();
@@ -87,8 +60,7 @@ global $bfa_ata;
 					$nav_home_add = ''; 
 					$nav_home_div = ''; 
 			}
-		
-		
+			
 			echo '<div class="clearfix navigation-'.strtolower($location).'">
 			<div class="older' . $nav_home_add . '">';
 
@@ -104,22 +76,16 @@ global $bfa_ata;
 			next_posts_link($bfa_ata['multi_next_prev_older']);
 
 			echo '</div></div>';
-
 		}
-
 	} 						
 }
-
-
-
 
 /* Next/Previous POST Links (on single post pages)
    in next_post_link "next" means newer posts
    Available parameters for $location: Top, Middle, Bottom. Default: Top  */
-
 function bfa_next_previous_post_links($location = "Top") {
 
-global $bfa_ata;
+global $bfa_ata, $homeURL;
 
 	if ( is_single() AND strpos($bfa_ata['location_single_next_prev'],$location) !== FALSE AND
 	
@@ -146,7 +112,7 @@ global $bfa_ata;
 		
 		echo ' &nbsp;</div>';
 		if ($bfa_ata['home_single_next_prev'] != '') { 
-			echo '<div class="home"><a href="'; bloginfo('url'); echo '/">' .
+			echo '<div class="home"><a href="' . $homeURL . '/">' .
 			$bfa_ata['home_single_next_prev'] . '</a></div>';
 		}
 		echo '<div class="newer';
@@ -170,61 +136,53 @@ global $bfa_ata;
 		}
 
 		echo '</div></div>';
-
 	}
-
 }
-
-
-
 
 /* Next/Previous Comments Links.
    In next_comments_link "next" means newer.
    If navigation above comments is set: */
-
 function bfa_next_previous_comments_links($location = "Above") {
 
-global $bfa_ata;
+	global $bfa_ata;
 
-  if ( strpos($bfa_ata['location_comments_next_prev'],$location) !== FALSE ) {
+	if ( strpos($bfa_ata['location_comments_next_prev'],$location) !== FALSE ) {
 
-    // if any navigation links exist, paginated or next/previous:
-    if ( get_comment_pages_count() > 1 ) {
+		// if any navigation links exist, paginated or next/previous:
+		if ( get_comment_pages_count() > 1 ) {
 
-      // Overall navigation container
-      echo '<div class="clearfix navigation-comments-'.strtolower($location).'">';
+			// Overall navigation container
+			echo '<div class="clearfix navigation-comments-'.strtolower($location).'">';
 
-    	if ( $bfa_ata['next_prev_comments_pagination'] == "Yes" ) {
+			if ( $bfa_ata['next_prev_comments_pagination'] == "Yes" ) {
 
-    	    // paginated links
-    		paginate_comments_links(array(
-    		'prev_text' => $bfa_ata['comments_next_prev_older'],
-    		'next_text' => $bfa_ata['comments_next_prev_newer'],
-    		));
+				// paginated links
+				paginate_comments_links(array(
+				'prev_text' => $bfa_ata['comments_next_prev_older'],
+				'next_text' => $bfa_ata['comments_next_prev_newer'],
+				));
 
-    	} else {
+			} else {
 
-    	    // next/previous links
-    		echo '<div class="older">';
+				// next/previous links
+				echo '<div class="older">';
 
-    		$bfa_ata['next_prev_orientation'] == 'Older Left, Newer Right' ?
-    		previous_comments_link($bfa_ata['comments_next_prev_older']) :
-    		next_comments_link($bfa_ata['comments_next_prev_newer']);
+				$bfa_ata['next_prev_orientation'] == 'Older Left, Newer Right' ?
+				previous_comments_link($bfa_ata['comments_next_prev_older']) :
+				next_comments_link($bfa_ata['comments_next_prev_newer']);
 
-    		echo ' &nbsp;</div><div class="newer">&nbsp; ';
+				echo ' &nbsp;</div><div class="newer">&nbsp; ';
 
-    		$bfa_ata['next_prev_orientation'] == 'Older Left, Newer Right' ?
-    		next_comments_link($bfa_ata['comments_next_prev_newer']) :
-    		previous_comments_link($bfa_ata['comments_next_prev_older']);
+				$bfa_ata['next_prev_orientation'] == 'Older Left, Newer Right' ?
+				next_comments_link($bfa_ata['comments_next_prev_newer']) :
+				previous_comments_link($bfa_ata['comments_next_prev_older']);
 
-    		echo '</div></div>';
+				echo '</div></div>';
 
-    	}
-      echo '</div>';
-    }
-  }
-
+			}
+			
+			echo '</div>';
+		}
+	}
 }
-
-
 ?>

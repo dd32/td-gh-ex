@@ -4,7 +4,7 @@ function bfa_hor_pages($sort_order = "menu_order", $levels = "", $titles = "No",
 	global $bfa_ata;
 
 	$list_pages_string = wp_list_pages('sort_column=' . $sort_order . '&title_li=&depth=' . $levels . '&exclude=' . trim(str_replace(" ", "", 
-	$exclude)) . '&echo=0');
+	$exclude)) . '&echo=0&link_before=<span>&link_after=</span>');
 	
 	$list_pages_string = preg_replace("/<ul class='children'/","<ul",$list_pages_string);
 

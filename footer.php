@@ -8,44 +8,40 @@ list($bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2, $bfa_ata['
 </td>
 <!-- / Main Column -->
 
-<?php if ( $right_col2 == "on" ) { ?>
 <!-- Right Inner Sidebar -->
+<?php if ( $right_col2 == "on" ) { ?>
 <td id="right-inner">
 
-	<?php // Widgetize the Right Inner Sidebar
-	if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Right Inner Sidebar') ) : ?>
-
-
-
+	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Right Inner Sidebar') ) : ?>
+	<!-- Default content here -->
 	<?php endif; ?>
 
 </td>
-<!-- / Right Inner Sidebar -->
 <?php } ?>
 
-<?php if ( $right_col == "on" ) { ?>
 <!-- Right Sidebar -->
+<?php if ( $right_col == "on" ) { ?>
 <td id="right">
 
-	<?php // Widgetize the Right Sidebar
-	if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Right Sidebar') ) : ?>
-
-    	<div class="widget"><div class="widget-title">
-    	<h3>Recent Posts</h3></div>
-<?php $r = new WP_Query(array(
-	'showposts' => 20,
-	'what_to_show' => 'posts',
-	'nopaging' => 0,
-	'post_status' => 'publish',
-	'caller_get_posts' => 1));
-if ($r->have_posts()) : ?>
-<ul><?php  while ($r->have_posts()) : $r->the_post(); ?>
-<li><a href="<?php the_permalink() ?>"><?php if ( get_the_title() ) the_title(); else the_ID(); ?></a></li>
+	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Right Sidebar') ) : ?>
+	
+		<!-- Default content here -->
+    	<div class="widget"><div class="widget-title"><h3>Recent Posts</h3></div>
+			<?php $r = new WP_Query(array(
+				'showposts' => 20,
+				'what_to_show' => 'posts',
+				'nopaging' => 0,
+				'post_status' => 'publish',
+				'caller_get_posts' => 1));
+			if ($r->have_posts()) : ?>
+		<ul>
+		<?php  while ($r->have_posts()) : $r->the_post(); ?>
+			<li><a href="<?php the_permalink() ?>"><?php if ( get_the_title() ) the_title(); else the_ID(); ?></a></li>
     	<?php endwhile; ?>
     	</ul>
     	<?php wp_reset_query();  // Restore global post data stomped by the_post().
     	endif; ?>
-    </div>
+		</div>
 
     	<div id="linkcat-99" class="widget widget_links"><div class="widget-title">
     	<?php wp_list_bookmarks('category_before=&category_after=&title_before=<h3>&title_after=</h3></div>'); ?>
@@ -67,8 +63,8 @@ if ($r->have_posts()) : ?>
 	<?php endif; ?>
 
 </td>
-<!-- / Right Sidebar -->
 <?php } ?>
+<!-- / Right Sidebar -->
 
 </tr>
 <!-- / Main Body -->
@@ -76,9 +72,8 @@ if ($r->have_posts()) : ?>
 
 <!-- Footer -->
 <td id="footer" colspan="<?php echo $cols; ?>">
-
     <p>
-    <?php echo bfa_footer($bfa_ata['footer_style_content']); ?>
+    <?php $GLOBALS['footer_style_content'] = bfa_footer(); include 'bfa://footer_style_content'; ?>
     </p>
     <?php if ($bfa_ata['footer_show_queries'] == "Yes - visible") { ?>
     <p>
@@ -93,14 +88,13 @@ if ($r->have_posts()) : ?>
     <?php } ?>
 
     <?php wp_footer(); ?>
-
 </td>
-<!-- / Footer -->
+
 
 </tr>
 </table><!-- / layout -->
 </div><!-- / container -->
 </div><!-- / wrapper -->
-<?php bfa_html_inserts($bfa_ata['html_inserts_body_bottom']); ?>
+<?php include 'bfa://html_inserts_body_bottom'; ?>
 </body>
 </html>

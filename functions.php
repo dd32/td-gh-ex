@@ -1,10 +1,10 @@
 <?php
-$bfa_ata_version = "3.5.4";
+$bfa_ata_version = "3.6";
 
-// Load translation file 
+// Load translation file above
 load_theme_textdomain('atahualpa');
 
-// disable wp texturize, remove hashes to enable
+// To disable some default WP filters, remove the '#' character
 #remove_filter('the_content', 'wptexturize');
 #remove_filter('the_excerpt', 'wptexturize');
 #remove_filter('comment_text', 'wptexturize');
@@ -64,9 +64,10 @@ if ( function_exists('register_sidebar') ) {
 	}
 } 
 
-global $bfa_ata;
+#global $bfa_ata;
 // Load functions
 include_once (TEMPLATEPATH . '/functions/bfa_header_config.php');
+include_once (TEMPLATEPATH . '/functions/bfa_meta_tags.php');
 include_once (TEMPLATEPATH . '/functions/bfa_hor_cats.php');
 include_once (TEMPLATEPATH . '/functions/bfa_hor_pages.php');
 // New WP3 menus:
@@ -94,15 +95,14 @@ function toArray($data) {
     return is_array($data) ? array_map(__FUNCTION__, $data) : $data;
 }
 
-// Since 3.5.4:
-add_theme_support('automatic-feed-links');
-
 // old, propretiary bodyclasses() of Atahualpa. Usage: bodyclasses()
 // include_once (TEMPLATEPATH . '/functions/bfa_bodyclasses.php');
 // new, default Wordpress body_class(). usage: body_class()
 // include only in WP 2.3 - WP 2.7 . From WP 2.8 on it is a core Wordpress function:
+/*
 if (!function_exists('body_class'))
 	include_once (TEMPLATEPATH . '/functions/bfa_body_class.php');
+*/
 
 // For plugin "Sociable":
 if (function_exists('sociable_html')) 
@@ -129,26 +129,19 @@ function bfa_escape($string) {
 	return $string;
 }
 
-// change them back
-function bfa_unescape($string) {
-	$string = str_replace('&#34;', '"', $string);
-	$string = str_replace('&#39;', "'", $string);
-	return $string;
-}
 
-function bfa_escapelt($string) {
-	$string = str_replace('<', '&lt;', $string);
-	$string = str_replace('>', '&gt;', $string);
-	return $string;
-}
+
+
 
 
 function footer_output($footer_content) {
-	$footer_content .= '<br />Powered by <a href="http://wordpress.org/">WordPress</a> &amp; the <a href="http://wordpress.bytesforall.com/" title="Customizable WordPress themes">Atahualpa Theme</a> by <a href="http://www.bytesforall.com/" title="BFA Webdesign">BytesForAll</a>. Discuss on our <a href="http://forum.bytesforall.com/" title="Atahualpa &amp; WordPress">WP Forum</a>';
+	global $bfa_ata;
+	$footer_content .= '<br />Powered by <a href="http://wordpress.org/">WordPress</a> &amp; <a href="http://forum.bytesforall.com/">Atahualpa</a>';
 	return $footer_content;
 }
 
 // Move Featured Content Gallery down in script order in wp_head(), so that jQuery can finish before mootools
+// Since 3.6 this probably won't work because as per the new WP rules wp_head() must be right before </head>
 function remove_featured_gallery_scripts() {
        remove_action('wp_head', 'gallery_styles');
 }
@@ -161,12 +154,13 @@ add_action('wp_head', 'addscripts_featured_gallery', 12);
 
 
 // new comment template for WP 2.7+, legacy template for old WP 2.6 and older
+// Since 3.6.: ToDo: Remove legacy.comments.php after a while. Older WP's won't work anyway 
+// with the new WP requirements to REPLACE older functions with newer ones introduced in 2.8 (i.e. get_the_author_meta)
 if ( !function_exists('paged_comments') ) {
 	include_once (TEMPLATEPATH . '/functions/bfa_custom_comments.php'); 
 	function legacy_comments($file) {
 		if( !function_exists('wp_list_comments') ) 
 			$file = TEMPLATEPATH . '/legacy.comments.php';
-			
 		return $file;
 	}
 	add_filter('comments_template', 'legacy_comments');
@@ -184,22 +178,15 @@ This will be extended and improved in upcoming versions */
 
 // remove WP Pagenavi CSS, will be included in css.php
 if (function_exists('wp_pagenavi')) {
-remove_action('wp_head', 'pagenavi_css');
+	remove_action('wp_head', 'pagenavi_css');
 }
-
-// remove Sociable CSS & JS, will be included in css.php and js.php
-# if (function_exists('sociable_html')) {
-# remove_action('wp_head', 'sociable_wp_head');
-# }
-
 
 // If the plugin Share This is activated, disable its auto-output so we can control it 
 // through the Atahualpa Theme Options
 if ( function_exists('akst_share_link') ) {
-@define('AKST_ADDTOCONTENT', false);
-@define('AKST_ADDTOFOOTER', false);
+	@define('AKST_ADDTOCONTENT', false);
+	@define('AKST_ADDTOFOOTER', false);
 }
-
 
 /* EXTERNAL OR INTERNAL CSS & JS, PLUS COMPRESSION & DEBUG */
 
@@ -228,19 +215,15 @@ function bfa_debug() {
 	}
 }	
 
-/* redirect the template if new var "bfa_ata_file" or "bfa_debug" exists in URL
-and is "css" or "js", or "yes" for debug. That means that a request for 
-mydomain.com/?bfa_ata_file=css would not try to display a
-normal page but do whatever we define below. In this
-case "get the saved options and display the CSS file" */
+// redirect the template if new var "bfa_ata_file" or "bfa_debug" exists in URL 
 add_action('template_redirect', 'bfa_css_js_redirect');
 add_action('wp_head', 'bfa_inline_css_js');
 
-/* since 3.4.3 */
+// since 3.4.3 
 function add_js_link() {
-	global $bfa_ata;
+	global $bfa_ata, $homeURL;
 	if ( $bfa_ata['javascript_external'] == "External" ) { ?>
-	<script type="text/javascript" src="<?php bloginfo('url'); ?>/?bfa_ata_file=js"></script>
+	<script type="text/javascript" src="<?php echo $homeURL; ?>/?bfa_ata_file=js"></script>
 	<?php } 
 }
 add_action('wp_head', 'add_js_link');
@@ -249,18 +232,18 @@ function bfa_css_js_redirect() {
 	global $bfa_ata;
 	$bfa_ata_query_var_file = get_query_var('bfa_ata_file');
 	if ( $bfa_ata_query_var_file == "css" OR $bfa_ata_query_var_file == "js" ) {
-			include_once (TEMPLATEPATH . '/' . $bfa_ata_query_var_file . '.php');
-			exit; // this stops WordPress entirely
+		include_once (TEMPLATEPATH . '/' . $bfa_ata_query_var_file . '.php');
+		exit; // this stops WordPress entirely
 	}
 	// Since 3.4.7: Import/Export Settings
 	if ( $bfa_ata_query_var_file == "settings-download" ) {
-			if(isset($_FILES['userfile'])) $uploadedfile = $_FILES['userfile'];
-			include_once (TEMPLATEPATH . '/download.php');
-			exit; // this stops WordPress entirely
+		if(isset($_FILES['userfile'])) $uploadedfile = $_FILES['userfile'];
+		include_once (TEMPLATEPATH . '/download.php');
+		exit; // this stops WordPress entirely
 	}
 	if ( $bfa_ata_query_var_file == "settings-upload" ) {
-			include_once (TEMPLATEPATH . '/upload.php');
-			exit; // this stops WordPress entirely
+		include_once (TEMPLATEPATH . '/upload.php');
+		exit; // this stops WordPress entirely
 	}
 }
 	
@@ -425,11 +408,10 @@ function bfa_widget_area($args = '') {
 				
 				echo "\n" . '<td id="' . $current_id .'" ';
 				
-				if ( $r[$current_align] ) { 
+				if ( $r[$current_align] ) 
 					$align_type = $r["$current_align"];
-				} else {
+				else 
 					$align_type = $r['align'];
-				}
 				
 				echo bfa_table_cell_align($align_type) . ">";
 				
@@ -484,7 +466,6 @@ function bfa_widget_area($args = '') {
 
 
 function bfa_table_cell_align($align_type) {
-	
 	switch ($align_type) {
 		case 1: $string = 'align="center" valign="middle"'; break;
 		case 2: $string = 'align="center" valign="top"'; break;
@@ -496,9 +477,7 @@ function bfa_table_cell_align($align_type) {
 		case 8: $string = 'align="left" valign="middle"'; break;
 		case 9: $string = 'align="left" valign="top"'; 
 	}
-	
 	return $string;
-	
 }
 	
 
@@ -522,51 +501,12 @@ function bfa_ata_reset_widget_areas() {
 add_action( 'wp_ajax_reset_bfa_ata_widget_areas', 'bfa_ata_reset_widget_areas' );
 
 
-
-// This adds arbitrary content at various places in the center (= content) column:
-function bfa_center_content($center_content) {
-	global $bfa_ata; 
-	
-	// PHP 
-	// not for WPMU - enabled again since 3.4.3 until alternative for WPMU is available
-	# if ( !file_exists(ABSPATH."/wpmu-settings.php") ) {
-		
-		if ( strpos($center_content,'<?php ') !== FALSE ) {
-			ob_start(); 
-				eval('?>'.$center_content); 
-				$center_content = ob_get_contents(); 
-			ob_end_clean();
-		}
-		
-	# }
-	
-	echo $center_content; 
-
-}
-
-// Since 3.4.7 HTML Inserts with PHP, used for parsing PHP in css.php as well: 
-// Purpose is that PHP such as bloginfo('template_directory') can be used in CSS text areas so that image paths work across
-// Atahualpa installations & imported/exported files
-function bfa_html_inserts($custom_code) {
-	global $bfa_ata; 
-	if($custom_code != '') {
-		if ( strpos($custom_code,'<?php ') !== FALSE ) {
-			ob_start(); 
-				eval('?>'.$custom_code); 
-				$custom_code = ob_get_contents(); 
-			ob_end_clean();
-		}
-		# echo apply_filters(widget_text, $custom_code); 
-		echo $custom_code; 
-	} 
-}
-
 /* CUSTOM BODY TITLE and meta title, meta keywords, meta description */
 if(isset($bfa_ata['page_post_options'])) {
 	if ($bfa_ata['page_post_options'] == "Yes") {
 	/* Use the admin_menu action to define the custom boxes */
 		if (is_admin())
-		add_action('admin_menu', 'bfa_ata_add_custom_box');
+			add_action('admin_menu', 'bfa_ata_add_custom_box');
 
 		/* Use the save_post action to do something with the data entered */
 		add_action('save_post', 'bfa_ata_save_postdata');
@@ -621,8 +561,6 @@ function bfa_ata_inner_custom_box() {
 	$meta_title = get_post_meta($post->ID, 'bfa_ata_meta_title', true);
 	$meta_keywords = get_post_meta($post->ID, 'bfa_ata_meta_keywords', true);
 	$meta_description = get_post_meta($post->ID, 'bfa_ata_meta_description', true);	
-
-	
 
 	echo '<table cellpadding="5" cellspacing="0" border="0" style="table-layout:fixed;width:100%">';
 	echo '<tr><td style="text-align:right;padding:2px 5px 2px 2px"><input id="bfa_ata_display_body_title" name="bfa_ata_display_body_title" type="checkbox" '. ($display_body_title == 'on' ? ' CHECKED' : '') .' /></td><td>Check to <strong>NOT</strong> display the Body Title on Single Post or Static Pages</td></tr>';
@@ -732,13 +670,18 @@ add_filter('body_class', 'add_cats_to_body_class');
 */
 
 
-// Since 3.4.5: WP 2.9 thumbnails support:
+
 if ( function_exists( 'add_theme_support' ) ) { // Added in 2.9
+
+	// Since 3.4.5: WP 2.9 thumbnails support:
 	add_theme_support( 'post-thumbnails' );
 	if ($bfa_ata['post_thumbnail_crop'] == "Yes") 
 		set_post_thumbnail_size( $bfa_ata['post_thumbnail_width'], $bfa_ata['post_thumbnail_height'], true );
 	else set_post_thumbnail_size( $bfa_ata['post_thumbnail_width'], $bfa_ata['post_thumbnail_height'] );
 	add_image_size( 'single-post-thumbnail', 400, 9999 ); // Permalink thumbnail size
+	
+	// Since 3.5.4:
+	add_theme_support('automatic-feed-links');
 }
 
 
@@ -805,4 +748,177 @@ function bfa_post_class ( $classes ) {
 	$current_class = ($current_class == 'odd') ? 'even' : 'odd';
 	return $classes;
 }
+
+// Since 3.6: Use stream wrapper instead of eval to include user code 
+class bfa_VariableStream {
+    var $position;
+    var $varname;
+
+    function stream_open($path, $mode, $options, &$opened_path)
+    {
+        $url = parse_url($path);
+        $this->varname = $url["host"];
+        $this->position = 0;
+
+        return true;
+    }
+
+    function stream_read($count)
+    {
+        $ret = substr($GLOBALS[$this->varname], $this->position, $count);
+        $this->position += strlen($ret);
+        return $ret;
+    }
+
+    function stream_write($data)
+    {
+        $left = substr($GLOBALS[$this->varname], 0, $this->position);
+        $right = substr($GLOBALS[$this->varname], $this->position + strlen($data));
+        $GLOBALS[$this->varname] = $left . $data . $right;
+        $this->position += strlen($data);
+        return strlen($data);
+    }
+
+    function stream_tell()
+    {
+        return $this->position;
+    }
+
+    function stream_eof()
+    {
+        return $this->position >= strlen($GLOBALS[$this->varname]);
+    }
+
+    function stream_seek($offset, $whence)
+    {
+        switch ($whence) {
+            case SEEK_SET:
+                if ($offset < strlen($GLOBALS[$this->varname]) && $offset >= 0) {
+                     $this->position = $offset;
+                     return true;
+                } else {
+                     return false;
+                }
+                break;
+
+            case SEEK_CUR:
+                if ($offset >= 0) {
+                     $this->position += $offset;
+                     return true;
+                } else {
+                     return false;
+                }
+                break;
+
+            case SEEK_END:
+                if (strlen($GLOBALS[$this->varname]) + $offset >= 0) {
+                     $this->position = strlen($GLOBALS[$this->varname]) + $offset;
+                     return true;
+                } else {
+                     return false;
+                }
+                break;
+
+            default:
+                return false;
+        }
+    }
+
+	function stream_stat() 
+	{
+		return array('size' => strlen($GLOBALS[$this->varname]));
+	} 
+
+	function url_stat() 
+	{
+		return array();
+	}
+
+}
+
+// Since 3.6: Register stream wrapper 'bfa'
+stream_wrapper_register("bfa", "bfa_VariableStream")
+    or die("Failed to register new stream protocol 'bfa'");
+
+// Since 3.6: Make sure $GLOBALS has all values
+foreach($bfa_ata as $key => $value) {
+	$GLOBALS[$key] = $value;
+}
+
+// Since 3.6: New variables using newer WP functions
+$templateURI = get_template_directory_uri(); 
+$homeURL = home_url();
+
+// Since 3.6: Include Javascripts here and with wp_enqueue instead of header.php
+$isIE6 = (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE 6.') !== FALSE);
+ 
+if ( !is_admin() ) { 
+
+	if ($bfa_ata['pngfix_selectors'] != "" AND $isIE6 = TRUE) 
+	{
+		wp_register_script('ddroundies', $templateURI . '/js/DD_roundies.js', false, '0.0.2a' );
+		wp_enqueue_script('ddroundies');
+	}
+	
+	if (strpos($bfa_ata['configure_header'],'%image')!== FALSE AND $bfa_ata['header_image_javascript'] != "0" 
+	AND $bfa_ata['crossslide_fade'] != "0") {
+		wp_register_script('crossslide', $templateURI . '/js/jquery.cross-slide.js', array('jquery'), '0.3.2' );
+		wp_enqueue_script('crossslide');
+	}
+}
+
+// Since 3.6: Content Width
+if ( ! isset( $content_width ) )
+	$content_width = 640;
+
+// editor style, custom background & custom image header not activted yet. background & header work
+// Atahualpa has most of this - confusing to have 2 places to set header images etc. ?
+/*
+add_editor_style();
+add_custom_background(); 
+
+
+define('HEADER_TEXTCOLOR', 'ffffff');
+define('HEADER_IMAGE', '%s/images/header/header6.jpg'); 
+define('HEADER_IMAGE_WIDTH', 775); 
+define('HEADER_IMAGE_HEIGHT', 200);
+
+function header_style() {
+    ?><style type="text/css">
+        #header {
+            background: url(<?php header_image(); ?>);
+        }
+    </style><?php
+}
+
+function admin_header_style() {
+    ?><style type="text/css">
+        #headimg {
+            width: <?php echo HEADER_IMAGE_WIDTH; ?>px;
+            height: <?php echo HEADER_IMAGE_HEIGHT; ?>px;
+        }
+    </style><?php
+}
+add_custom_image_header('header_style', 'admin_header_style');
+
+register_default_headers( array(
+	'header6' => array(
+		'url' => '%s/images/header/header6.jpg',
+		'thumbnail_url' => '%s/images/header/header6-thumb.jpg',
+		'description' => __( 'Raspberry', 'twentyten' )
+	),
+	'IMG_1479' => array(
+		'url' => '%s/images/header/IMG_1479.jpg',
+		'thumbnail_url' => '%s/images/header/IMG_1479-thumb.jpg',
+		'description' => __( 'Apple Blossom', 'twentyten' )
+	),
+	'IMG_1496.jpg' => array(
+		'url' => '%s/images/header/IMG_1496.jpg',
+		'thumbnail_url' => '%s/images/header/IMG_1496-thumb.jpg',
+		'description' => __( 'Spring', 'twentyten' )
+	)
+) );
+
+*/
+
 ?>

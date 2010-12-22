@@ -1,6 +1,6 @@
 <?php
 function bfa_ata_admin() {
-    global $bfa_ata, $bfa_ata_version, $options;
+    global $bfa_ata, $bfa_ata_version, $options, $templateURI;
 
     if ( isset($_REQUEST['saved']) ) echo '<div id="message" class="updated fade"><p><strong>Atahualpa settings saved.</strong></p></div>';
     if ( isset($_REQUEST['reset']) ) echo '<div id="message" class="updated fade"><p><strong>Atahualpa settings reset.</strong></p></div>';
@@ -90,7 +90,7 @@ if ( isset($value['switch'])) echo '</div><div id="'.$value['category'].'" class
 if($value['category'] == "postinfos" AND isset($value['switch'])) { ?>
 	<div class="bfa-container">
 		<div class="bfa-container-full">
-			<img src="<?php bloginfo('template_directory'); ?>/options/images/post-structure.gif" 
+			<img src="<?php echo $templateURI; ?>/options/images/post-structure.gif" 
 			style="float: right; margin: 40px 0 15px 15px;">
 			<label for="Post Info Items">Post Info Items</label>
 			Configure a <strong>Kicker</strong>, a <strong>Byline</strong> and a <strong>Footer</strong> 
@@ -141,9 +141,8 @@ if($value['category'] == "postinfos" AND isset($value['switch'])) { ?>
 			}
 			sort($files);
 			foreach ($files as $key => $file) {
-				echo '<span style="float:left; width: 280px; margin-right: 10px; height: 22px;"><img src="';
-				bloginfo('template_directory'); 
-				echo '/images/icons/'.$file.'" /> &nbsp;<code>&lt;image('.$file.')&gt;</code></span>';
+				echo '<span style="float:left; width: 280px; margin-right: 10px; height: 22px;"><img src="' . 
+				$templateURI . '/images/icons/'.$file.'" /> &nbsp;<code>&lt;image('.$file.')&gt;</code></span>';
 			} ?>
 
 			<div style="clear:left">&nbsp;</div>

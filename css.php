@@ -1,7 +1,5 @@
-<?php 
-#list($bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2, $bfa_ata['h_blogtitle'], $bfa_ata['h_posttitle']) = bfa_get_options();
-# global $bfa_ata; 
-#if ($bfa_ata == "") include_once (TEMPLATEPATH . '/functions/bfa_get_options.php'); 
+<?php # error_reporting(E_ALL & ~E_NOTICE);
+#include_once (TEMPLATEPATH . '/functions.php'); 
 if ( isset($bfa_ata_preview) OR $bfa_ata['css_external'] == "Inline" OR 
 ( isset($bfa_ata_debug) AND $bfa_ata['allow_debug'] == "Yes" ) ) {
 	echo '<style type="text/css">'; 
@@ -30,6 +28,7 @@ function bfa_compress_css($buffer) {
 	return $buffer;
   
 }
+
 ?>
 /* ------------------------------------------------------------------
 ---------- BASE LAYOUT ----------------------------------------------
@@ -41,7 +40,7 @@ body {
 							inside the container */
 	margin: 0;
 	padding: 0;
-	<?php bfa_html_inserts($bfa_ata['body_style']); ?>
+	<?php echo $bfa_ata['body_style']; ?>
 	}
 
 a:link, a:visited, a:active {
@@ -232,14 +231,14 @@ table#logoarea td {
 table#logoarea {
 	width: 100%;
 	border-spacing: 0px;
-	<?php bfa_html_inserts($bfa_ata['logoarea_style']); ?>
+	<?php include('bfa://logoarea_style') ?>
 	}
 	
 /*-------------------- LOGO -------------------------------*/
 
 img.logo {
 	display: block;
-	<?php bfa_html_inserts($bfa_ata['logo_style']); ?>
+	<?php include 'bfa://logo_style' ?>
 	}
 
 td.logoarea-logo {
@@ -252,7 +251,7 @@ td.logoarea-logo {
 h1.blogtitle,
 h2.blogtitle {
     display: block;
-	<?php bfa_html_inserts($bfa_ata['blog_title_style']); ?>
+	<?php include 'bfa://blog_title_style' ?>
 	font-smooth: always;
 	}
 	
@@ -278,7 +277,7 @@ h2.blogtitle a:hover {
 /*-------------------- BLOG TAGLINE -----------------------*/
 
 p.tagline { 
-	<?php bfa_html_inserts($bfa_ata['blog_tagline_style']); ?>
+	<?php include 'bfa://blog_tagline_style' ?>
 	}
 
 td.feed-icons {
@@ -309,11 +308,11 @@ a.comments-icon {
 a.comments-icon:link,
 a.comments-icon:active,
 a.comments-icon:visited {
-	background: transparent url(<?php bloginfo('template_directory'); ?>/images/comment-gray.png) no-repeat scroll center left;
+	background: transparent url(<?php echo $templateURI; ?>/images/comment-gray.png) no-repeat scroll center left;
 }
 
 a.comments-icon:hover {
-	background: transparent url(<?php bloginfo('template_directory'); ?>/images/comment.png) no-repeat scroll center left;
+	background: transparent url(<?php echo $templateURI; ?>/images/comment.png) no-repeat scroll center left;
 }
 
 
@@ -333,11 +332,11 @@ a.posts-icon {
 a.posts-icon:link,
 a.posts-icon:active,
 a.posts-icon:visited {
-	background: transparent url(<?php bloginfo('template_directory'); ?>/images/rss-gray.png) no-repeat scroll center left;
+	background: transparent url(<?php echo $templateURI; ?>/images/rss-gray.png) no-repeat scroll center left;
 }
 
 a.posts-icon:hover {
-	background: transparent url(<?php bloginfo('template_directory'); ?>/images/rss.png) no-repeat scroll center left;
+	background: transparent url(<?php echo $templateURI; ?>/images/rss.png) no-repeat scroll center left;
 }
 
 /*-------------------- EMAIL SUBSCRIBE ICON ---------------*/
@@ -356,11 +355,11 @@ a.email-icon {
 a.email-icon:link,
 a.email-icon:active,
 a.email-icon:visited {
-	background: transparent url(<?php bloginfo('template_directory'); ?>/images/email-gray.png) no-repeat scroll center left;
+	background: transparent url(<?php echo $templateURI; ?>/images/email-gray.png) no-repeat scroll center left;
 }
 
 a.email-icon:hover {
-	background: transparent url(<?php bloginfo('template_directory'); ?>/images/email.png) no-repeat scroll center left;
+	background: transparent url(<?php echo $templateURI; ?>/images/email.png) no-repeat scroll center left;
 }
 	
 /*-------------------- SEARCH BOX IN HEADER ---------------*/	
@@ -371,7 +370,7 @@ td.search-box {
 	
 div.searchbox {
 	height: 35px;
-	<?php bfa_html_inserts($bfa_ata['searchbox_style']); ?>
+	<?php include 'bfa://searchbox_style' ?>
 	}
 
 div.searchbox-form {
@@ -394,11 +393,11 @@ div.horbar2 {
 	}
 
 div.horbar1 {
-	<?php bfa_html_inserts($bfa_ata['horbar1']); ?>
+	<?php include 'bfa://horbar1' ?>
 	}
 	
 div.horbar2 { 
-	<?php bfa_html_inserts($bfa_ata['horbar2']); ?>
+	<?php include 'bfa://horbar2' ?>
 	}	
 
 <?php if (strpos($bfa_ata['configure_header'],'%image')!==false) { ?>
@@ -487,12 +486,12 @@ a.divclick:hover {
 
 td#left {
 	vertical-align: top;
-	<?php bfa_html_inserts($bfa_ata['left_sidebar_style']); ?>
+	<?php include 'bfa://left_sidebar_style' ?>
 	}
 
 td#left-inner {
 	vertical-align: top;
-	<?php bfa_html_inserts($bfa_ata['left_sidebar2_style']); ?>
+	<?php include 'bfa://left_sidebar2_style' ?>
 	}
 	
 /* ------------------------------------------------------------------
@@ -501,12 +500,12 @@ td#left-inner {
 
 td#right {
 	vertical-align: top;
-	<?php bfa_html_inserts($bfa_ata['right_sidebar_style']); ?>
+	<?php include 'bfa://right_sidebar_style' ?>
 	}
 
 td#right-inner {
 	vertical-align: top;
-	<?php bfa_html_inserts($bfa_ata['right_sidebar2_style']); ?>
+	<?php include 'bfa://right_sidebar2_style' ?>
 	}
 	
 /* ------------------------------------------------------------------
@@ -516,7 +515,7 @@ td#right-inner {
 td#middle {
 	vertical-align: top;
 	width: 100%;
-	<?php bfa_html_inserts($bfa_ata['center_column_style']); ?>
+	<?php include 'bfa://center_column_style' ?>
 	}
 
 	
@@ -526,15 +525,15 @@ td#middle {
 
 td#footer {
 	width: auto;
-	<?php bfa_html_inserts($bfa_ata['footer_style']); ?>
+	<?php include 'bfa://footer_style' ?>
 	}
 
 td#footer a:link, td#footer a:visited, td#footer a:active {
-	<?php bfa_html_inserts($bfa_ata['footer_style_links']); ?>
+	<?php include 'bfa://footer_style_links' ?>
 	}
 
 td#footer a:hover {
-	<?php bfa_html_inserts($bfa_ata['footer_style_links_hover']); ?>
+	<?php include 'bfa://footer_style_links_hover' ?>
 	}
 	
 	
@@ -548,13 +547,13 @@ div.widget {
 					menus but not the other widgets. With 100% IE
 					will remove sidebar borders if select menu is
 					too wide */
-	<?php bfa_html_inserts($bfa_ata['widget_container']); ?>
+	<?php include 'bfa://widget_container' ?>
 	}
 
 div.widget-title {
 	display: block;
 	width: auto;
-	<?php bfa_html_inserts($bfa_ata['widget_title_box']); ?>
+	<?php include 'bfa://widget_title_box' ?>
 	}
 
 div.widget-title h3,
@@ -564,7 +563,7 @@ td#left ul.tw-nav-list,
 td#right ul.tw-nav-list {
 	padding:0;
 	margin:0;
-	<?php bfa_html_inserts($bfa_ata['widget_title']); ?>
+	<?php include 'bfa://widget_title' ?>
 	}
 
 /* Since 3.4 "div-widget-content" is gone for better plugin compatibility. 
@@ -574,7 +573,7 @@ div.widget ul,
 div.textwidget {
 	display: block;
 	width: auto;
-	<?php bfa_html_inserts($bfa_ata['widget_content']); ?>
+	<?php include 'bfa://widget_content' ?>
 	}
 
 	
@@ -824,42 +823,42 @@ table.subscribe td.comment-text {
 
 div.post, div.page {
 	display: block;
-	<?php bfa_html_inserts($bfa_ata['post_container_style']); ?>
+	<?php include 'bfa://post_container_style' ?>
 	}
 
 /* additonal styles for sticky posts */
 
 div.sticky {
-	<?php bfa_html_inserts($bfa_ata['post_container_sticky_style']); ?>
+	<?php include 'bfa://post_container_sticky_style' ?>
 	}
 
 /*-------------------- POST KICKER ------------------------*/
 
 div.post-kicker {
-	<?php bfa_html_inserts($bfa_ata['post_kicker_style']); ?>
+	<?php include 'bfa://post_kicker_style' ?>
 	}
 
 div.post-kicker a:link, 
 div.post-kicker a:visited, 
 div.post-kicker a:active {
-	<?php bfa_html_inserts($bfa_ata['post_kicker_style_links']); ?>
+	<?php include 'bfa://post_kicker_style_links' ?>
 	}
 
 div.post-kicker a:hover {
-	<?php bfa_html_inserts($bfa_ata['post_kicker_style_links_hover']); ?>
+	<?php include 'bfa://post_kicker_style_links_hover' ?>
 	}
 
 /*-------------------- POST HEADLINE ----------------------*/
 
 div.post-headline {
-	<?php bfa_html_inserts($bfa_ata['post_headline_style']); ?>
+	<?php include 'bfa://post_headline_style' ?>
 	}
 
 div.post-headline h1,
 div.post-headline h2 {
     margin: 0;
     padding: 0;
-	<?php bfa_html_inserts($bfa_ata['post_headline_style_text']); ?>
+	<?php include 'bfa://post_headline_style_text' ?>
 	}
 
 div.post-headline h2 a:link, 
@@ -868,36 +867,36 @@ div.post-headline h2 a:active,
 div.post-headline h1 a:link, 
 div.post-headline h1 a:visited, 
 div.post-headline h1 a:active {
-	<?php bfa_html_inserts($bfa_ata['post_headline_style_links']); ?>
+	<?php include 'bfa://post_headline_style_links' ?>
 	}
 
 div.post-headline h2 a:hover,
 div.post-headline h1 a:hover {
-	<?php bfa_html_inserts($bfa_ata['post_headline_style_links_hover']); ?>
+	<?php include 'bfa://post_headline_style_links_hover' ?>
 	}
 
 
 /*-------------------- POST BYLINE ------------------------*/
 
 div.post-byline {
-	<?php bfa_html_inserts($bfa_ata['post_byline_style']); ?>
+	<?php include 'bfa://post_byline_style' ?>
 	}
 
 div.post-byline a:link, 
 div.post-byline a:visited, 
 div.post-byline a:active {
-	<?php bfa_html_inserts($bfa_ata['post_byline_style_links']); ?>
+	<?php include 'bfa://post_byline_style_links' ?>
 	}
 
 div.post-byline a:hover {
-	<?php bfa_html_inserts($bfa_ata['post_byline_style_links_hover']); ?>
+	<?php include 'bfa://post_byline_style_links_hover' ?>
 	}
 
 
 /*-------------------- POST BODY COPY ---------------------*/
 	
 div.post-bodycopy {
-	<?php bfa_html_inserts($bfa_ata['post_bodycopy_style']); ?>
+	<?php include 'bfa://post_bodycopy_style' ?>
 	}
 	
 div.post-bodycopy p {
@@ -924,17 +923,17 @@ div.post-pagination {
 div.post-footer {
 	clear:both; 
 	display: block;	
-	<?php bfa_html_inserts($bfa_ata['post_footer_style']); ?>
+	<?php include 'bfa://post_footer_style' ?>
 	}
 
 div.post-footer a:link, 
 div.post-footer a:visited, 
 div.post-footer a:active {
-	<?php bfa_html_inserts($bfa_ata['post_footer_style_links']); ?>
+	<?php include 'bfa://post_footer_style_links' ?>
 	}	
 
 div.post-footer a:hover {
-	<?php bfa_html_inserts($bfa_ata['post_footer_style_links_hover']); ?>
+	<?php include 'bfa://post_footer_style_links_hover' ?>
 	}
 
 /*-------------------- ICONS in KICKER, BYLINE & FOOTER ---*/
@@ -964,23 +963,23 @@ span.post-ratings {
 ------------------------------------------------------------------ */
 
 div.navigation-top {
-	<?php bfa_html_inserts($bfa_ata['next_prev_style_top']); ?>
+	<?php include 'bfa://next_prev_style_top' ?>
 	}
 
 div.navigation-middle {
-	<?php bfa_html_inserts($bfa_ata['next_prev_style_middle']); ?>
+	<?php include 'bfa://next_prev_style_middle' ?>
 	}
 	
 div.navigation-bottom {
-	<?php bfa_html_inserts($bfa_ata['next_prev_style_bottom']); ?>
+	<?php include 'bfa://next_prev_style_bottom' ?>
 	}
 
 div.navigation-comments-above {
-	<?php if (isset($bfa_ata['next_prev_style_comments_above'])) bfa_html_inserts($bfa_ata['next_prev_style_comments_above']); ?>
+	<?php include 'bfa://next_prev_style_comments_above' ?>
 	}
 	
 div.navigation-comments-below {
-	<?php if (isset($bfa_ata['next_prev_style_comments_below'])) bfa_html_inserts($bfa_ata['next_prev_style_comments_below']); ?>
+	<?php include 'bfa://next_prev_style_comments_below' ?>
 	}
 	
 div.older {
@@ -1074,7 +1073,7 @@ textarea {
 	padding: 3px;
 	<?php echo $bfa_ata['form_input_field_style'] . "\n"; ?>
 	<?php if ($bfa_ata['form_input_field_background'] != "") {  
-	echo "background: url("; bloginfo('template_directory'); echo "/images/" . 
+	echo "background: url(" . $templateURI . "/images/" . 
 	$bfa_ata['form_input_field_background'] . ") top left no-repeat;"; } ?>
 	}
 
@@ -1095,7 +1094,7 @@ input.inputfocus {
 	
 <?php if ($bfa_ata['highlight_forms'] == "Yes") { ?>
 input.highlight, textarea.highlight {
-	<?php bfa_html_inserts($bfa_ata['highlight_forms_style']); ?>
+	<?php include 'bfa://highlight_forms_style' ?>
 	}
 <?php } ?>
 
@@ -1104,13 +1103,13 @@ input.highlight, textarea.highlight {
 	padding: 0 2px;
 	height: 24px;
 	line-height: 16px;
-	<?php bfa_html_inserts($bfa_ata['button_style']); ?>
+	<?php include 'bfa://button_style' ?>
 	}
 	
 .buttonhover {
 	padding: 0 2px;
 	cursor: pointer;
-	<?php bfa_html_inserts($bfa_ata['button_style_hover']); ?>
+	<?php include 'bfa://button_style_hover' ?>
 	}
 
 /* comment submit button */
@@ -1119,7 +1118,8 @@ input.highlight, textarea.highlight {
 
 form#commentform input#submit {
     padding: 0 .25em;
-    width: 0;
+    /* Since 3.6: Using comment_form() */
+	/* width: 0; */
     overflow:visible;
 }
 
@@ -1128,7 +1128,7 @@ form#commentform input#submit[class] { /*ie ignores [class]*/
 }
 
 form#commentform input#submit	{
-	<?php bfa_html_inserts($bfa_ata['submit_button_style']); ?>
+	<?php include 'bfa://submit_button_style' ?>
 	}
 	
 /* ------------------------------------------------------------------
@@ -1160,14 +1160,14 @@ blockquote {
 	height: 1%;
 	display: block;
 	clear: both;
-	<?php bfa_html_inserts($bfa_ata['blockquote_style']); ?>	
+	<?php include 'bfa://blockquote_style' ?>
 	}
 	
 blockquote blockquote {
 	height: 1%;
 	display: block;
 	clear: both;
-	<?php bfa_html_inserts($bfa_ata['blockquote_style_2nd_level']); ?>
+	<?php include 'bfa://blockquote_style_2nd_level' ?>
 	}
 
 
@@ -1178,33 +1178,33 @@ blockquote blockquote {
 /*-------------------- TABLES IN POSTS --------------------*/
 
 div.post table {
-	<?php bfa_html_inserts($bfa_ata['table']); ?>
+	<?php include 'bfa://table' ?>
 	}
 	
 div.post table caption {
 	width: auto;
 	margin: 0 auto;
-	<?php bfa_html_inserts($bfa_ata['table_caption']); ?>
+	<?php include 'bfa://table_caption' ?>
 	}
 	
 div.post table th {
-	<?php bfa_html_inserts($bfa_ata['table_th']); ?>
+	<?php include 'bfa://table_th' ?>
 	}
 	
 div.post table td {
-	<?php bfa_html_inserts($bfa_ata['table_td']); ?>
+	<?php include 'bfa://table_td' ?>
 	}
 
 div.post table tfoot td {
-	<?php bfa_html_inserts($bfa_ata['table_tfoot_td']); ?>
+	<?php include 'bfa://table_tfoot_td' ?>
 	}
 	
 div.post table tr.alt td {
-	<?php bfa_html_inserts($bfa_ata['table_zebra_td']); ?>
+	<?php include 'bfa://table_zebra_td' ?>
 	}
 
 div.post table tr.over td {
-	<?php bfa_html_inserts($bfa_ata['table_hover_td']); ?>
+	<?php include 'bfa://table_hover_td' ?>
 	}
 
 /*-------------------- CALENDAR WIDGET --------------------*/
@@ -1274,7 +1274,7 @@ table#wp-calendar td a {
 
 /* whole respond area */
 div#respond {
-	<?php bfa_html_inserts($bfa_ata['comment_form_style']); ?> 
+	<?php include 'bfa://comment_form_style' ?>
 	}
 
 p.thesetags {
@@ -1359,6 +1359,10 @@ textarea#comment {
 	margin: 10px 0; 
 	display: block;
 	}
+form#commentform label {
+	width: 150px;
+	display:block;
+}
 
 
 /* ------------------------------------------------------------------
@@ -1519,7 +1523,7 @@ abbr em {
 	border-top: dashed 1px #aaa !important;
 	display: -moz-inline-box !important; /* Firefox 2 doesn't know default "inline-block" */
 	display: inline-block !important;
-	background: url(<?php bloginfo('template_directory'); ?>/images/commentluv.gif) 0% 90% no-repeat;
+	background: url(<?php echo $templateURI; ?>/images/commentluv.gif) 0% 90% no-repeat;
 	margin-top: 8px;
 	padding:  5px 5px 2px 20px !important;
 	font-style: normal;
@@ -1714,7 +1718,7 @@ img {
 }
 
 .post img { 
-	<?php bfa_html_inserts($bfa_ata['post_image_style']); ?> 
+	<?php include 'bfa://post_image_style' ?>
 	}
 
 .post img.size-full {
@@ -1798,7 +1802,7 @@ div.archives-page img {
 	width: auto 100%;
 	height: auto;  /* FF3 needs "auto", IE6 needs "100%", see next style*/
 	display: block;
-	<?php bfa_html_inserts($bfa_ata['post_image_caption_style']); ?> 
+	<?php include 'bfa://post_image_caption_style' ?>
 	}
 
 /* for imges inside a caption container IE6 does not
@@ -1816,7 +1820,7 @@ required as jQuery sets the height for caption'ed images too */
 	}
 	
 .wp-caption p.wp-caption-text {
-	<?php bfa_html_inserts($bfa_ata['image_caption_text']); ?>
+	<?php include 'bfa://image_caption_text' ?>
 	}
 
 /* ------------------------------------------------------------------
@@ -1824,7 +1828,7 @@ required as jQuery sets the height for caption'ed images too */
 ------------------------------------------------------------------ */
 
 img.wp-post-image {
-	<?php bfa_html_inserts($bfa_ata['post_thumbnail_css']); ?>
+	<?php include 'bfa://post_thumbnail_css' ?>
 }
 
 /* ------------------------------------------------------------------
@@ -1847,7 +1851,7 @@ img.wp-smiley {
 img.avatar {
 	float: left; 
 	display: block;
-	<?php bfa_html_inserts($bfa_ata['avatar_style']); ?> 
+	<?php include 'bfa://avatar_style' ?>
 	}
 	
 
@@ -2496,7 +2500,7 @@ div#menu1 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expa
 	padding-left: 5px;
 	background-repeat: no-repeat;
 	background-position: 100% 50%;
-	background-image: url(<?php bloginfo('template_directory'); ?>/images/expand-right<?php echo ($bfa_ata['page_menu_arrows'] == "white" ? "-white" : ""); ?>.gif);
+	background-image: url(<?php echo $templateURI; ?>/images/expand-right<?php echo ($bfa_ata['page_menu_arrows'] == "white" ? "-white" : ""); ?>.gif);
 	}
 div#menu2 ul.rMenu li.rMenu-expand a,
 div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand a,
@@ -2512,7 +2516,7 @@ div#menu2 ul.rMenu li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expa
 	padding-left: 5px;
 	background-repeat: no-repeat;
 	background-position: 100% 50%;
-	background-image: url(<?php bloginfo('template_directory'); ?>/images/expand-right<?php echo ($bfa_ata['cat_menu_arrows'] == "white" ? "-white" : ""); ?>.gif);
+	background-image: url(<?php echo $templateURI; ?>/images/expand-right<?php echo ($bfa_ata['cat_menu_arrows'] == "white" ? "-white" : ""); ?>.gif);
 	}
 	
 ul.rMenu-vRight li.rMenu-expand a,
@@ -2538,7 +2542,7 @@ ul.rMenu-hRight li.rMenu-expand li.rMenu-expand li.rMenu-expand li.rMenu-expand 
 	{
 	padding-right: 5px;
 	padding-left: 20px;
-	background-image: url(<?php bloginfo('template_directory'); ?>/images/expand-left.gif);
+	background-image: url(<?php echo $templateURI; ?>/images/expand-left.gif);
 	background-repeat: no-repeat;
 	background-position: -5px 50%;
 	}
@@ -2549,13 +2553,13 @@ div#menu1 ul.rMenu-hor li.rMenu-expand a {
 	padding-left: 5px;	/* reset padding */
 	padding-right: 15px !important;
 	background-position: 100% 50%;
-	background-image: url(<?php bloginfo('template_directory'); ?>/images/expand-down<?php echo ($bfa_ata['page_menu_arrows'] == "white" ? "-white" : ""); ?>.gif);
+	background-image: url(<?php echo $templateURI; ?>/images/expand-down<?php echo ($bfa_ata['page_menu_arrows'] == "white" ? "-white" : ""); ?>.gif);
 	}
 div#menu2 ul.rMenu-hor li.rMenu-expand a {
 	padding-left: 5px;	/* reset padding */
 	padding-right: 15px !important;
 	background-position: 100% 50%;
-	background-image: url(<?php bloginfo('template_directory'); ?>/images/expand-down<?php echo ($bfa_ata['cat_menu_arrows'] == "white" ? "-white" : ""); ?>.gif);
+	background-image: url(<?php echo $templateURI; ?>/images/expand-down<?php echo ($bfa_ata['cat_menu_arrows'] == "white" ? "-white" : ""); ?>.gif);
 	}
 	
 	
@@ -3147,7 +3151,8 @@ Also, adding height and font-size for IE6 */
 
 
 <?php 
-bfa_html_inserts($bfa_ata['html_inserts_css']); 
+include 'bfa://html_inserts_css'; 
+
 if ( $bfa_ata['css_compress'] == "Yes" AND 
 !( isset($bfa_ata_debug) AND $bfa_ata['allow_debug'] == "Yes" ) ) {
 	ob_end_flush();

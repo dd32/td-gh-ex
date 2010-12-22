@@ -67,6 +67,7 @@ function bfa_ata_add_admin() {
 		}
 	}
 
-    add_theme_page("Atahualpa Options", "Atahualpa Theme Options", 'switch_themes', 'functions.php', 'bfa_ata_admin');	
+    add_theme_page("Atahualpa Options", "Atahualpa Theme Options", 'edit_theme_options', 'functions.php', 'bfa_ata_admin');	
+    // add_theme_page("Atahualpa Options", "Atahualpa Theme Options", 'switch_themes', 'functions.php', 'bfa_ata_admin');	
 }
 ?>

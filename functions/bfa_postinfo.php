@@ -1,11 +1,10 @@
 <?php
-
 // Callback function for image replacement
 function bfa_image_files($matches) {
-	return '<img src="' . get_bloginfo('template_directory') . 
+	global $templateURI;
+	return '<img src="' . $templateURI . 
 	'/images/icons/' . $matches[1] . '" alt="" />';
 }
-
 
 
 // Callback function for post meta replacement
@@ -13,7 +12,6 @@ function bfa_meta_value($matches) {
 	global $post;
 	return get_post_meta($post->ID, $matches[1], true);
 }
-
 
 
 function postinfo($postinfo_string) {
@@ -30,7 +28,6 @@ function postinfo($postinfo_string) {
 
 	$postinfo = $postinfo_string;
 
-
 	// Author public name
 	if ( strpos($postinfo_string,'%author%') !== FALSE ) {
 		ob_start(); 
@@ -39,7 +36,6 @@ function postinfo($postinfo_string) {
 		ob_end_clean();
 		$postinfo = str_replace("%author%", $author, $postinfo);
 	}
-
 
 	// Public name of Author who last modified a post, since WordPress 2.8. 
 	// Check first if function is available (= if this is WP 2.8+)
@@ -53,102 +49,82 @@ function postinfo($postinfo_string) {
 		}
 	}
 
-
-
 	// Author about yourself
 	if ( strpos($postinfo_string,'%author-description%') !== FALSE ) {
 		ob_start(); 
-			the_author_description(); 
+			the_author_meta('description'); 
 			$author_description = ob_get_contents(); 
 		ob_end_clean();
 		$postinfo = str_replace("%author-description%", $author_description, $postinfo);
 	}
 
-
-
 	// Author login name
 	if ( strpos($postinfo_string,'%author-login%') !== FALSE ) {
 		ob_start(); 
-			the_author_login(); 
+			the_author_meta('user_login'); 
 			$author_login = ob_get_contents(); 
 		ob_end_clean();
 		$postinfo = str_replace("%author-login%", $author_login, $postinfo);
 	}
 
-
-
 	// Author first name
 	if ( strpos($postinfo_string,'%author-firstname%') !== FALSE ) {
 		ob_start(); 
-			the_author_firstname(); 
+			the_author_meta('first_name'); 
 			$author_firstname = ob_get_contents(); 
 		ob_end_clean();
 		$postinfo = str_replace("%author-firstname%", $author_firstname, $postinfo);
 	}
 
-
-
 	// Author last name
 	if ( strpos($postinfo_string,'%author-lastname%') !== FALSE ) {
 		ob_start(); 
-			the_author_lastname(); 
+			the_author_meta('last_name'); 
 			$author_lastname = ob_get_contents(); 
 		ob_end_clean();
 		$postinfo = str_replace("%author-lastname%", $author_lastname, $postinfo);
 	}
 
-
-
 	// Author nickname
 	if ( strpos($postinfo_string,'%author-nickname%') !== FALSE ) {
 		ob_start(); 
-			the_author_nickname(); 
+			the_author_meta('nickname'); 
 		 	$author_nickname = ob_get_contents(); 
 		ob_end_clean();
 		$postinfo = str_replace("%author-nickname%", $author_nickname, $postinfo);
 	}
 
-
-
 	// Author ID
 	if ( strpos($postinfo_string,'%author-id%') !== FALSE ) {
 		ob_start(); 
-			the_author_ID(); 
+			the_author_meta('ID'); 
 			$author_ID = ob_get_contents(); 
 		ob_end_clean();
 		$postinfo = str_replace("%author-id%", $author_ID, $postinfo);
 	}
 
-
-
 	// Author email address, clear text in HTML source code
 	if ( strpos($postinfo_string,'%author-email-clear%') !== FALSE ) {
 		ob_start(); 
-			the_author_email(); 
+			the_author_meta('email'); 
 			$author_email_clear = ob_get_contents(); 
 		ob_end_clean();
 		$postinfo = str_replace("%author-email-clear%", $author_email_clear, $postinfo);
 	}
-
-
 
 	// Author email address obfuscated
 	if ( strpos($postinfo_string,'%author-email%') !== FALSE ) {
 		$postinfo = str_replace("%author-email%", antispambot(get_the_author_email()), $postinfo);
 	}
 
-
-
 	// Author website URL
 	if ( strpos($postinfo_string,'%author-url%') !== FALSE ) {
 		ob_start(); 
-			the_author_url(); 
+			the_author_meta('url'); 
 			$author_url = ob_get_contents(); 
 		ob_end_clean();
 		$postinfo = str_replace("%author-url%", $author_url, $postinfo);
 	}
-
-
 
 	// Author website link
 	if ( strpos($postinfo_string,'%author-link%') !== FALSE ) {
@@ -158,8 +134,6 @@ function postinfo($postinfo_string) {
 		ob_end_clean();
 		$postinfo = str_replace("%author-link%", $author_link, $postinfo);
 	}
-
-
 
 	// Author posts archive link
 	if ( strpos($postinfo_string,'%author-posts-link%') !== FALSE ) {
@@ -179,8 +153,6 @@ function postinfo($postinfo_string) {
 		$postinfo = str_replace("%author-linked%", $author_posts_link, $postinfo);
 	}
 
-	
-
 	// Author post count
 	if ( strpos($postinfo_string,'%author-post-count%') !== FALSE ) {
 		ob_start(); 
@@ -190,29 +162,23 @@ function postinfo($postinfo_string) {
 		$postinfo = str_replace("%author-post-count%", $author_post_count, $postinfo);
 	}
 
-
-
 	// Author AOL Instant Messenger screenname
 	if ( strpos($postinfo_string,'%author-aim%') !== FALSE ) {
 		ob_start(); 
-			the_author_aim(); 
+			the_author_meta('aim'); 
 			$author_aim = ob_get_contents(); 
 		ob_end_clean();
 		$postinfo = str_replace("%author-aim%", $author_aim, $postinfo);
 	}
 
-
-
 	// Author Yahoo IM ID
 	if ( strpos($postinfo_string,'%author-yim%') !== FALSE ) {
 		ob_start(); 
-			the_author_yim(); 
+			the_author_meta('yim'); 
 			$author_yim = ob_get_contents(); 
 		ob_end_clean();
 		$postinfo = str_replace("%author-yim%", $author_yim, $postinfo);
 	}
-
-
 
 	// Date & Time
 	if ( strpos($postinfo_string,'%date(') !== FALSE ) {
@@ -226,8 +192,6 @@ function postinfo($postinfo_string) {
 	        $date. "\${3}", $postinfo);
 		}
 	}
-
-
 
 	// Date & Time, last modified
 	if ( strpos($postinfo_string,'%date-modified(') !== FALSE ) {
@@ -243,7 +207,6 @@ function postinfo($postinfo_string) {
 		}
 	}
 
-
 	// Tags, linked - since WP 2.3
 	if ( strpos($postinfo_string,'%tags-linked') !== FALSE ) {
 		while ( strpos($postinfo,'%tags-linked') !== FALSE ) {
@@ -255,8 +218,6 @@ function postinfo($postinfo_string) {
 			$tags_linked. "\${3}", $postinfo);
 		}	
 	}
-
-
 
 	// Tags, linked. If post has no tags, categories are displayed instead -  since WP 2.3
 	if ( strpos($postinfo_string,'%tags-cats-linked') !== FALSE ) {
@@ -271,8 +232,6 @@ function postinfo($postinfo_string) {
 			$tags_cats_linked. "\${3}", $postinfo);
 		}
 	}
-
-
 
 	// Tags, not linked - since WP 2.3
 	if ( strpos($postinfo_string,'%tags(') !== FALSE ) {
@@ -297,7 +256,6 @@ function postinfo($postinfo_string) {
 		}		
 	}
 
-
 	// 1st category
 	if ( strpos($postinfo_string,'%category%') !== FALSE ) {
 		$all_categories = get_the_category(); 
@@ -305,8 +263,6 @@ function postinfo($postinfo_string) {
 		$category_notlinked = $category; 
 		$postinfo = str_replace("%category%", $category_notlinked, $postinfo);
 	}
-
-
 
 	// 1st category, linked
 	if ( strpos($postinfo_string,'%category-linked%') !== FALSE ) {
@@ -316,8 +272,6 @@ function postinfo($postinfo_string) {
         '">' . $category . '</a>';
 		$postinfo = str_replace("%category-linked%", $category_linked, $postinfo);
 	}
-
-
 
 	// Categories, linked
 	if ( strpos($postinfo_string,'%categories-linked') !== FALSE ) {
@@ -332,8 +286,6 @@ function postinfo($postinfo_string) {
     	    $categories_linked. "\${3}", $postinfo);
 		}
 	}
-
-
 
 	// Categories, not linked
 	if ( strpos($postinfo_string,'%categories(') !== FALSE ) {
@@ -350,8 +302,6 @@ function postinfo($postinfo_string) {
 	        $categories. "\${3}", $postinfo);
 		}
 	}
-
-
 
 	// Comment link
 	if ( strpos($postinfo_string,'%comments(') !== FALSE ) {
@@ -386,8 +336,6 @@ function postinfo($postinfo_string) {
         }
 	}
 
-
-
 	// Comments Feed link
 	if ( strpos($postinfo_string,'%comments-rss') !== FALSE ) {
 		while ( strpos($postinfo,'%comments-rss') !== FALSE ) {
@@ -396,35 +344,24 @@ function postinfo($postinfo_string) {
 	        $postinfo_string,$comments_rss_matches);
         
 			ob_start(); 
-				//  "post_comments_feed_link" since WP 2.5, else "comments_rss_link"
-				if ( function_exists('post_comments_feed_link') ) { 
-					post_comments_feed_link($comments_rss_matches[2]); 
-				} else { 
-					comments_rss_link($comments_rss_matches[2]); 
-				}
+				post_comments_feed_link($comments_rss_matches[2]); 
 				$comments_rss_link = ob_get_contents(); 
 			ob_end_clean();
 			
 			// make link nofollow if set in theme options
-			if ( $bfa_ata['nofollow'] == "Yes" ) {
-				$comments_rss_link = str_replace('href=', 'rel="nofollow" href=',
-   	         $comments_rss_link);
-			}
+			if ( $bfa_ata['nofollow'] == "Yes" ) 
+				$comments_rss_link = str_replace('href=', 'rel="nofollow" href=', $comments_rss_link);
 			
 			$postinfo = preg_replace("/(.*)%comments-rss\((.*?)\)%(.*)/i", "\${1}" .
         	$comments_rss_link. "\${3}", $postinfo);
 		}
 	}
 
-
-
 	// Trackback URL
 	if ( strpos($postinfo_string,'%trackback%') !== FALSE ) {
 		$trackback_url = trackback_url(FALSE);
 		$postinfo = str_replace("%trackback%", $trackback_url, $postinfo);
 	}
-
-
 
 	// Trackback Link
 	if ( strpos($postinfo_string,'%trackback-linked(') !== FALSE ) {
@@ -444,8 +381,6 @@ function postinfo($postinfo_string) {
 		}
 	}
 
-
-
 	// Trackback RDF
 	if ( strpos($postinfo_string,'%trackback-rdf%') !== FALSE ) {
 		ob_start(); 
@@ -454,8 +389,6 @@ function postinfo($postinfo_string) {
 		ob_end_clean();
 		$postinfo = str_replace("%trackback-rdf%", $trackback_rdf, $postinfo);
 	}
-
-
 
 	// Permalink
 	if ( strpos($postinfo_string,'%permalink%') !== FALSE ) {
@@ -466,8 +399,6 @@ function postinfo($postinfo_string) {
 		$postinfo = str_replace("%permalink%", $permalink, $postinfo);
 	}
 
-
-
 	// Post ID
 	if ( strpos($postinfo_string,'%post-id%') !== FALSE ) {
 		ob_start(); 
@@ -477,8 +408,6 @@ function postinfo($postinfo_string) {
 		$postinfo = str_replace("%post-id%", $post_id, $postinfo);
 	}
 
-
-
 	// Post Title
 	if ( strpos($postinfo_string,'%post-title%') !== FALSE ) {
 		ob_start(); 
@@ -487,8 +416,6 @@ function postinfo($postinfo_string) {
 		ob_end_clean();
 		$postinfo = str_replace("%post-title%", $post_title, $postinfo);
 	}
-
-
 
 	// Edit post
 	if ( strpos($postinfo_string,'%edit(') !== FALSE ) {
@@ -504,8 +431,6 @@ function postinfo($postinfo_string) {
 		}
 	}
 
-
-
 	// Print
 	if ( strpos($postinfo_string,'%print(') !== FALSE ) {
 		while ( strpos($postinfo,'%print(') !== FALSE ) {
@@ -516,16 +441,12 @@ function postinfo($postinfo_string) {
 		}
 	}
 
-
-
 	// For the "WP-Email" plugin
 	if ( strpos($postinfo_string,'%wp-email%') !== FALSE ) {
 		$wp_email = ( function_exists('wp_email') ? email_link($email_post_text = '',
         $email_page_text = '', $echo = FALSE) : "" );
 		$postinfo = str_replace("%wp-email%", $wp_email, $postinfo);
 	}
-
-
 
 	// For the "WP-Print" plugin
 	if ( strpos($postinfo_string,'%wp-print%') !== FALSE ) {
@@ -534,15 +455,11 @@ function postinfo($postinfo_string) {
 		$postinfo = str_replace("%wp-print%", $wp_print, $postinfo);
 	}
 
-
-
 	// For the "WP-PostViews" plugin
 	if ( strpos($postinfo_string,'%wp-postviews%') !== FALSE ) {
 		$wp_postviews = ( function_exists('the_views') ? the_views($display = FALSE) : "" );
 		$postinfo = str_replace("%wp-postviews%", $wp_postviews, $postinfo);
 	}
-
-
 
 	// For the "WP-PostRatings" plugin
 	if ( strpos($postinfo_string,'%wp-postratings%') !== FALSE ) {
@@ -551,16 +468,12 @@ function postinfo($postinfo_string) {
 		$postinfo = str_replace("%wp-postratings%", $wp_postratings, $postinfo);
 	}
 
-
-
 	// For the "Sociable" plugin
 	if ( strpos($postinfo_string,'%sociable%') !== FALSE ) {
 		$sociable = ( (function_exists('sociable_html2') AND
-        function_exists('sociable_html'))? $sociable = sociable_html2() : "" );
+        function_exists('sociable_html') ) ? $sociable = sociable_html2() : "" );
 		$postinfo = str_replace("%sociable%", $sociable, $postinfo);
 	}
-
-
 
 	// For the "Share This" plugin
 	if ( strpos($postinfo_string,'%share-this%') !== FALSE ) {
@@ -575,14 +488,9 @@ function postinfo($postinfo_string) {
 		$postinfo = str_replace("%share-this%", $share_this, $postinfo);
 	} 
 
-
-
 	// Images
-	if ( strpos($postinfo_string,'<image(') !== FALSE ) {
+	if ( strpos($postinfo_string,'<image(') !== FALSE ) 
 		$postinfo = preg_replace_callback("|<image\((.*?)\)>|","bfa_image_files",$postinfo);
-	}
-
-
 
 	/* The meta = ALL custom fields:values, formatted by Wordpress as
 	unordered list <ul><li>..</li><li>..</li></ul> */
@@ -596,33 +504,27 @@ function postinfo($postinfo_string) {
 		$postinfo = str_replace("%meta%", $the_meta, $postinfo);
 	}
 
-
-
 	// Single post meta values, not formatted
-	if ( strpos($postinfo_string,'%meta(') !== FALSE ) {
+	if ( strpos($postinfo_string,'%meta(') !== FALSE ) 
 		$postinfo = preg_replace_callback("|%meta\('(.*?)'\)%|","bfa_meta_value",$postinfo);
-	}
-
-
 
 	/* PHP code in Post Info Items.
 	But not for WPMU */
 	/*removed in 3.4.3. - PHP code works in WPMU too */
+	/*
 	if ( strpos($postinfo_string,'<?php ') !== FALSE ) {
-			ob_start(); 
-				eval('?>'.$postinfo); 
-				$postinfo = ob_get_contents(); 
-			ob_end_clean();
+		ob_start(); 
+			eval('?>'.$postinfo); 
+			$postinfo = ob_get_contents(); 
+		ob_end_clean();
 	}
-
-
-
-
-	return $postinfo;
+	*/
 	
+	return $postinfo;
 }
+
 function getH() {
 	global $bfa_ata, $post;
 	return('#');
-	}
+}
 ?>
