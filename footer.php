@@ -1,17 +1,9 @@
-</div>
+<section class="footerbox"><?php get_template_part( 'sidebar', '1' ); ?></section>
+<section class="footerbox"><?php get_template_part( 'sidebar', '2' ); ?></section>
+<section class="footerbox"><?php get_template_part( 'sidebar', '3' ); ?></section>
+<section class="footerbox"><?php get_template_part( 'sidebar', '4' ); ?></section>
 
-<br style="clear: both;" />
-
-<div class="footerbox"><?php include(TEMPLATEPATH."/sidebar1.php");?></div>
-<div class="footerbox"><?php include(TEMPLATEPATH."/sidebar2.php");?></div>
-<div class="footerbox"><?php include(TEMPLATEPATH."/sidebar3.php");?></div>
-<div class="footerbox"><?php include(TEMPLATEPATH."/sidebar4.php");?></div>
-
-
-<div class="footer">generated in <?php timer_stop(1); ?> seconds. |  <cite>Powered by <a href='http://wordpress.org' title='Powered by Wordpress'><strong>WordPress <?php bloginfo('version'); ?></strong></a></cite> | Theme: <a href="http://www.northern-web-coders.de">Northern-Web-Coders</a></div>
-
-
-</div>
+<section class="footer"><p><a href="http://www.northern-web-coders.de/blog" title="Northern-Web-Coders Theme 2010" id="nwc">Northern-Web-Coders Theme 2010</a> <span><?php echo sprintf(__("Powered by <a href='http://wordpress.org/' title='%s'><strong>WordPress</strong></a>"), __("Powered by WordPress, state-of-the-art semantic personal publishing platform.")); ?></span></p></section>
 
 <?php do_action('wp_footer'); ?>
 

@@ -1,6 +1,6 @@
-The Theme is set to show 6 posts per page.
+The Theme is set to show 8 posts per page.
 To change the number of posts per page, you have to edit the number of post to show in the index.php of the theme too.
-This is the special line in the index.php: <?php $post_counter++; if($post_counter == 4) : ?>
+This is the special line in the index.php: <?php $post_counter++; if($post_counter == 5) : ?>
 
 12 articles in 2 columns
 <?php $post_counter++; if($post_counter == 7) : ?>

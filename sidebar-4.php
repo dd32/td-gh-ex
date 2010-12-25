@@ -1,7 +1,5 @@
 <ul>
-
 <?php if ( !function_exists('dynamic_sidebar')
-        || !dynamic_sidebar(2) ) : ?>
+        || !dynamic_sidebar('Footer-Sidebar 4') ) : ?>
 <?php endif; ?>
-
 </ul>

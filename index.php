@@ -2,30 +2,54 @@
 get_header();
 ?>
 
-<div id="columns">
+<section id="columns">
 
-<div class="column-left">
+<section class="column-left">
 <?php if (have_posts()) : ?>
 <?php while(have_posts()) : the_post(); ?>
-<?php $post_counter++; if($post_counter == 4) : ?>
-</div>
+<?php $post_counter++; if($post_counter == 5) : ?>
+</section>
 
-<div class="column-right">
+<section class="column-right">
 <?php endif; ?>
-<div class="post">
-<?php the_date('','<h2>','</h2>'); ?>
+
+<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
+
+<?php the_date('','<h2 class="date">','</h2>'); ?>
+
 <h3 class="storytitle"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h3>
-<div class="meta"><?php _e("Filed under:"); ?> <?php the_category(',') ?> <?php the_tags(__('Tags:&nbsp;'), ' , ' , ''); ?>  <?php edit_post_link(__('Edit This')); ?></div>
+
+<section class="meta">
+<?php printf(__('Posted in %s', 'nwc'), get_the_category_list(', ')); ?><br />
+<?php the_tags(__('Tags:&nbsp;'), ' , ' , ''); ?>  
+<?php edit_post_link(__('Edit This')); ?>
+</section>
+
 <?php the_content(__('(more...)')); ?>
+
+<section class="comment">
 <?php wp_link_pages(); ?>
-<div class="comment"><?php comments_popup_link(__('Comments (0)'), __('Comments (1)'), __('Comments (%)')); ?></div>
-</div>
+<?php comments_popup_link(__('No Comments'), __('1 Comment'), __('% Comments'), '', __('Comments are closed.') ); ?>
+</section>
+
+</article>
+
 <?php endwhile; ?>
 <?php else : ?>
-<div class="post" style="width: 500px"><?php _e('Sorry, no posts matched your criteria.'); ?></div>
+
+<article class="post">
+<?php _e('Sorry, no posts matched your criteria.'); ?>
+</article>
+
 <?php endif; ?>
-</div>
-</div>
-<?php comments_template(); // Get wp-comments.php template ?>
-<div style="clear: both"><?php posts_nav_link(' &#8212; ', __('&laquo; Previous Page'), __('Next Page &raquo;')); ?></div>
+
+</section>
+</section>
+
+<?php comments_template(); ?>
+
+<section id="pagenav">
+<?php posts_nav_link() ?>
+</section>
+
 <?php get_footer(); ?>
