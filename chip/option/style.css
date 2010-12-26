@@ -1,0 +1,6 @@
+#chipthemesetting{}
+.clear{clear:both;height:0px;font-size:1px;line-height:0px;}
+.head1{padding-bottom:5px;font-family:Georgia, "Times New Roman", Times, serif;margin-bottom:10px;font-size:26px;color:#666;font-weight:normal;}
+.head2{padding-bottom:5px;border-bottom:1px solid #ccc;font-family:Georgia, "Times New Roman", Times, serif;margin-bottom:10px;font-size:22px;color:#666;font-weight:normal;}
+.help1{font-size:8pt;padding-bottom:10px;}
+table.chipthemesettingtable th{text-align:left;width:30%;}
