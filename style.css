@@ -4,7 +4,7 @@ Theme URI: http://www.tenman.info/wp3/raindrops/
 Description: basic template
 Author: Tenman
 Author URI: http://www.tenman.info/
-Version: 0.263
+Version: 0.264
 License: GNU General Public License v2.0
 Licence URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,10 +51,6 @@ strong{
     -moz-border-radius:5px;
 	padding:5px;
 }
-
-
-
-
 
 
 /* headding */
@@ -133,7 +129,7 @@ h6 a,
 	display:inline;
 	background:none;
 }
-
+/*
 .ja h1,
 .ja h1 a,
 .ja .h1 a,
@@ -165,7 +161,7 @@ h6 a,
 .ja .h6 a{
 	font-size:93%;
 	}
-		
+*/
 #site-title {
 	display:inline!important;
 	
@@ -277,7 +273,7 @@ ol,ul{
 	margin-left:2.5em;
 }
 ol li{
-	list-style-type:decimal;
+
 }
 
 dl {
@@ -494,14 +490,14 @@ li.question {
 	padding:5px 5px 5px 30px;
 }
 
-p.pagenate a {
+.pagenate a {
 	overflow:hidden;
 	text-decoration:none;
 	width:15px;
 	margin:0;
 }
 
-p.pagenate a:hover {
+.pagenate a:hover {
 	font-weight:700;
 	height:100%;
 	text-decoration:none;
@@ -1053,13 +1049,16 @@ ul.index li .edit {
 	margin:0 10%;
 }
 
-ol.commentlist{
-list-style:decimal;
+ol.commentlist >li{
+	list-style:decimal;
 }
+/*
+
+
 ol.commentlist .comment-author{
 
 
-}
+}*/
 .comment-author img{
 	float:left;
 }
