@@ -1,4 +1,4 @@
- <?php
+<?php
 /**
  * Graphene functions and definitions
  *
@@ -733,9 +733,9 @@ endif;
  * Adds the theme options page
 */
 function graphene_options_init() {
-	$graphene_options = add_submenu_page('themes.php', __('Graphene Options', 'graphene'), __('Graphene Options', 'graphene'), 'edit_theme_options', 'graphene_options', 'graphene_options');
-	$graphene_display = add_submenu_page('themes.php', __('Graphene Display', 'graphene'), __('Graphene Display', 'graphene'), 'edit_theme_options', 'graphene_options_display', 'graphene_options_display');
-	$graphene_faq = add_submenu_page('themes.php', __('Graphene FAQs', 'graphene'), __('Graphene FAQs', 'graphene'), 'edit_theme_options', 'graphene_faq', 'graphene_faq');
+	$graphene_options = add_theme_page(__('Graphene Options', 'graphene'), __('Graphene Options', 'graphene'), 'edit_theme_options', 'graphene_options', 'graphene_options');	
+	$graphene_display = add_theme_page(__('Graphene Display', 'graphene'), __('Graphene Display', 'graphene'), 'edit_theme_options', 'graphene_options_display', 'graphene_options_display');
+	$graphene_faq = add_theme_page(__('Graphene FAQs', 'graphene'), __('Graphene FAQs', 'graphene'), 'edit_theme_options', 'graphene_faq', 'graphene_faq');
 	
 	wp_register_style('graphene-admin-style', get_template_directory_uri().'/admin/style.css');
 	
