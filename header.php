@@ -46,20 +46,28 @@
 	 */
 	wp_head();
 	?>
+    
+    <?php /* Print out Google Analytics code if tracking is enabled */ ?>
+    <?php if (get_option('graphene_show_ga')) : ?>
+    <!-- BEGIN Google Analytics script -->
+    	<?php echo stripslashes(get_option('graphene_ga_code')); ?>
+    <!-- END Google Analytics script -->
+    <?php endif; ?>
+    
 </head><?php flush(); ?>
 <body <?php body_class(); ?>>
 	<div id="container">
     	<div id="top-bar">
         	<div id="rss">
-            	<a href="<?php bloginfo('rss2_url'); ?>" title="<?php esc_attr_e('Subscribe to RSS feed', 'graphene'); ?>" class="rss_link"><span><?php _e('Subscribe to RSS feed', 'graphene'); ?></span></a>
+            	<?php 
+				$custom_feed_url = ($graphene_custom_feed_url = get_option('graphene_custom_feed_url')) ? $graphene_custom_feed_url : get_bloginfo('rss2_url'); ?>
+            	<a href="<?php echo $custom_feed_url; ?>" title="<?php esc_attr_e('Subscribe to RSS feed', 'graphene'); ?>" class="rss_link"><span><?php _e('Subscribe to RSS feed', 'graphene'); ?></span></a>
                 <?php do_action('graphene_feed_icon'); ?>
             </div>
             
             <?php 
 			/**
-			 * Retrieves our custom search form. Note that this search form is only used
-			 * in the top bar of the theme. Since the theme uses the default wordpress
-			 * search form somewhere else, we do not use get_search_form() here.
+			 * Retrieves our custom search form.
 			*/ 
 			?>
             <div id="top_search">
@@ -83,14 +91,11 @@
 		/* 
 		 * Check if the page uses SSL and change HTTP to HTTPS if true 
 		 * 
-		 * Currently commented out as it causes more trouble than it fixes. If you want 
-		 * to use it, just uncomment it.
+		 * Experimental. Let me know if there's any problem.
 		*/
-		/*
-		if (is_ssl() && !stripos($header_img, 'https')){
+		if (is_ssl() && stripos($header_img, 'https') === false){
 			$header_img = str_replace('http', 'https', $header_img);	
 		}
-		*/
 		
 		// Gets the colour for header texts, or if we should display them at all
 		if ( 'blank' == get_theme_mod('header_textcolor', HEADER_TEXTCOLOR) || '' == get_theme_mod('header_textcolor', HEADER_TEXTCOLOR))
@@ -118,5 +123,6 @@
         <?php do_action('graphene_before_content'); ?>
         
         <div id="content" class="clearfix<?php if (is_page_template('template-onecolumn.php')) {echo ' one_column';} ?>">
+        	<?php do_action('graphene_before_content-main'); ?>
         	<div id="content-main" class="clearfix">
             	<?php do_action('graphene_top_content'); ?>

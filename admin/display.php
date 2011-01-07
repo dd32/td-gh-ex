@@ -20,7 +20,7 @@ function graphene_options_display(){
 			$authorised = false;
 		}
 		// Check permissions
-		if (!current_user_can('manage_options')){
+		if (!current_user_can('edit_theme_options')){
 			$authorised = false;
 		}
 	} else {
@@ -49,6 +49,7 @@ function graphene_options_display(){
 		$hide_post_tags = (!empty($_POST['hide_post_tags'])) ? $_POST['hide_post_tags'] : false ;
 		$show_post_avatar = (!empty($_POST['show_post_avatar'])) ? $_POST['show_post_avatar'] : false ;
 		$show_post_author = (!empty($_POST['show_post_author'])) ? $_POST['show_post_author'] : false ;
+		$show_excerpt_more = (!empty($_POST['show_excerpt_more'])) ? $_POST['show_excerpt_more'] : false ;
 		
 		// Process the text style options
 		$header_title_font_type = (!empty($_POST['header_title_font_type'])) ? $_POST['header_title_font_type'] : false ;
@@ -67,6 +68,12 @@ function graphene_options_display(){
 		$content_font_size = (!empty($_POST['content_font_size'])) ? $_POST['content_font_size'] : false ;
 		$content_font_lineheight = (!empty($_POST['content_font_lineheight'])) ? $_POST['content_font_lineheight'] : false ;
 		$content_font_colour = (!empty($_POST['content_font_colour'])) ? $_POST['content_font_colour'] : false ;
+		
+		$link_colour_normal = (!empty($_POST['link_colour_normal'])) ? $_POST['link_colour_normal'] : false ;
+		$link_colour_visited = (!empty($_POST['link_colour_visited'])) ? $_POST['link_colour_visited'] : false ;
+		$link_colour_hover = (!empty($_POST['link_colour_hover'])) ? $_POST['link_colour_hover'] : false ;
+		$link_decoration_normal = (!empty($_POST['link_decoration_normal'])) ? $_POST['link_decoration_normal'] : false ;
+		$link_decoration_hover = (!empty($_POST['link_decoration_hover'])) ? $_POST['link_decoration_hover'] : false ;
 		
 		// Process the footer widget display options
 		if (empty($_POST['footerwidget_column'])){
@@ -120,6 +127,7 @@ function graphene_options_display(){
 			update_option('graphene_hide_post_tags', $hide_post_tags);
 			update_option('graphene_show_post_avatar', $show_post_avatar);
 			update_option('graphene_show_post_author', $show_post_author);
+			update_option('graphene_show_excerpt_more', $show_excerpt_more);
 			
 			// Text style options
 			update_option('graphene_header_title_font_type', $header_title_font_type);
@@ -138,6 +146,12 @@ function graphene_options_display(){
 			update_option('graphene_content_font_size', $content_font_size);
 			update_option('graphene_content_font_lineheight', $content_font_lineheight);
 			update_option('graphene_content_font_colour', $content_font_colour);
+			
+			update_option('graphene_link_colour_normal', $link_colour_normal);
+			update_option('graphene_link_colour_visited', $link_colour_visited);
+			update_option('graphene_link_colour_hover', $link_colour_hover);
+			update_option('graphene_link_decoration_normal', $link_decoration_normal);
+			update_option('graphene_link_decoration_hover', $link_decoration_hover);
 			
 			// Bottom widget display options
 			update_option('graphene_footerwidget_column', $footerwidget_column);
@@ -170,6 +184,7 @@ function graphene_options_display(){
 	$hide_post_tags = get_option('graphene_hide_post_tags');
 	$show_post_avatar = get_option('graphene_show_post_avatar');
 	$show_post_author = get_option('graphene_show_post_author');
+	$show_excerpt_more = get_option('graphene_show_excerpt_more');
 	
 	$footerwidget_column = get_option('graphene_footerwidget_column');
 	$alt_footerwidget_column = get_option('graphene_alt_footerwidget_column');
@@ -192,6 +207,12 @@ function graphene_options_display(){
 	$content_font_size = get_option('graphene_content_font_size');
 	$content_font_lineheight = get_option('graphene_content_font_lineheight');
 	$content_font_colour = get_option('graphene_content_font_colour');
+	
+	$link_colour_normal = get_option('graphene_link_colour_normal');
+	$link_colour_visited = get_option('graphene_link_colour_visited');
+	$link_colour_hover = get_option('graphene_link_colour_hover');
+	$link_decoration_normal = get_option('graphene_link_decoration_normal');
+	$link_decoration_hover = get_option('graphene_link_decoration_hover');
 	
 	$hide_allowedtags = get_option('graphene_hide_allowedtags');
 	
@@ -314,6 +335,10 @@ function graphene_options_display(){
                 <tr>
                     <th scope="row"><label><?php _e("Show post author's info", 'graphene'); ?></label></th>
                     <td><input type="checkbox" name="show_post_author" <?php if ($show_post_author == true) echo 'checked="checked"' ?> value="true" /></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label><?php _e("Show More link for manual excerpts", 'graphene'); ?></label></th>
+                    <td><input type="checkbox" name="show_excerpt_more" <?php if ($show_excerpt_more == true) echo 'checked="checked"' ?> value="true" /></td>
                 </tr>
             </table>
         
@@ -447,6 +472,40 @@ function graphene_options_display(){
                     	<label><?php _e('Text colour', 'graphene'); ?></label>
                     </th>
                     <td><input type="text" name="content_font_colour" value="<?php if ($content_font_colour) echo $content_font_colour; ?>" /></td>
+                </tr>
+            </table>
+            
+            <h4><?php _e('Link Text', 'graphene'); ?></h4>
+        	<table class="form-table">
+                <tr>
+                    <th scope="row">
+                    	<label><?php _e('Link colour (normal state)', 'graphene'); ?></label>
+                    </th>
+                    <td><input type="text" name="link_colour_normal" value="<?php if ($link_colour_normal) echo $link_colour_normal; ?>" /></td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                    	<label><?php _e('Link colour (visited state)', 'graphene'); ?></label>
+                    </th>
+                    <td><input type="text" name="link_colour_visited" value="<?php if ($link_colour_visited) echo $link_colour_visited; ?>" /></td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                    	<label><?php _e('Link colour (hover state)', 'graphene'); ?></label>
+                    </th>
+                    <td><input type="text" name="link_colour_hover" value="<?php if ($link_colour_hover) echo $link_colour_hover; ?>" /></td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                    	<label><?php _e('Text decoration (normal state)', 'graphene'); ?></label>
+                    </th>
+                    <td><input type="text" name="link_decoration_normal" value="<?php if ($link_decoration_normal) echo $link_decoration_normal; ?>" /></td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                    	<label><?php _e('Text decoration (hover state)', 'graphene'); ?></label>
+                    </th>
+                    <td><input type="text" name="link_decoration_hover" value="<?php if ($link_decoration_hover) echo $link_decoration_hover; ?>" /></td>
                 </tr>
             </table>
 		

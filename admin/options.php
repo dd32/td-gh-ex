@@ -20,7 +20,7 @@ function graphene_options(){
 			$authorised = false;
 		}
 		// Check permissions
-		if (!current_user_can('manage_options')){
+		if (!current_user_can('edit_theme_options')){
 			$authorised = false;
 		}
 	} else {
@@ -45,6 +45,8 @@ function graphene_options(){
 		$slider_speed = (!empty($_POST['slider_speed'])) ? $_POST['slider_speed'] : '';
 		$slider_position = (!empty($_POST['slider_position'])) ? $_POST['slider_position'] : false;
 		
+		// Process the feed options
+		$custom_feed_url = (!empty($_POST['custom_feed_url'])) ? $_POST['custom_feed_url'] : '';
 		
 		// Process the adsense options
 		if (!empty($_POST['show_adsense'])) {
@@ -114,6 +116,9 @@ function graphene_options(){
 			update_option('graphene_slider_speed', $slider_speed);
 			update_option('graphene_slider_position', $slider_position);
 			update_option('graphene_slider_disable', $slider_disable);
+			
+			// Feed options
+			update_option('graphene_custom_feed_url', $custom_feed_url);
 			
 			// AdSense options
 			update_option('graphene_show_adsense', $show_adsense);
@@ -186,6 +191,8 @@ function graphene_options(){
 	$slider_speed = get_option('graphene_slider_speed');
 	$slider_position = get_option('graphene_slider_position');
 	$slider_disable = get_option('graphene_slider_disable');
+	
+	$custom_feed_url = get_option('graphene_custom_feed_url');
 	
 	$show_adsense = get_option('graphene_show_adsense');
 	$adsense_code = get_option('graphene_adsense_code');
@@ -332,6 +339,17 @@ function graphene_options(){
                 </tr>
             </table>
         
+        <?php /* Feed Options */ ?>
+        <h3><?php _e('Feed Options', 'graphene'); ?></h3> 
+        <table class="form-table">       	
+            <tr>
+                <th scope="row"><label><?php _e('Use custom feed URL', 'graphene'); ?></label></th>
+                <td>
+                	<input type="text" name="custom_feed_url" value="<?php echo $custom_feed_url; ?>" size="60" /><br />
+                    <span class="description"><?php _e('This custom feed URL will replace the default Wordpress RSS feed URL.', 'graphene'); ?></span>
+                </td>
+            </tr>
+        </table>
         
         <?php /* AdSense Options */ ?>
         <h3><?php _e('Adsense Options', 'graphene'); ?></h3>
@@ -380,7 +398,8 @@ function graphene_options(){
         
         
         <?php /* Google Analytics Options */ ?>
-        <h3><?php _e('Google Analytics Options', 'graphene'); ?></h3> 
+        <h3><?php _e('Google Analytics Options', 'graphene'); ?></h3>
+        <p><?php _e('<strong>Note:</strong> the theme now places the Google Analytics script in the <code>&lt;head&gt;</code> element to better support the new asynchronous Google Analytics script. Please make sure you update your script to use the new asynchronous script from Google Analytics.', 'graphene'); ?></p>
         <table class="form-table">       	
             <tr>
                 <th scope="row"><label><?php _e('Enable Google Analytics tracking', 'graphene'); ?></label></th>

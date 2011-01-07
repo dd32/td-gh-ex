@@ -23,7 +23,7 @@
                 
                 	<?php /* Post title */ ?>
                     <h2 class="post-title">
-                    	<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(esc_attr__('Permalink Link to %s', 'graphene'), the_title_attribute('echo=0')); ?>"><?php if (get_the_title() == '') {_e('(No title)','graphene');} else {the_title();} ?></a>
+                    	<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(esc_attr__('Permalink to %s', 'graphene'), the_title_attribute('echo=0')); ?>"><?php if (get_the_title() == '') {_e('(No title)','graphene');} else {the_title();} ?></a>
                     <?php do_action('graphene_post_title'); ?>
                     </h2>
                     
@@ -104,7 +104,13 @@
 			?>
             <h4 class="author_h4"><?php _e('About the author', 'graphene'); ?></h4>
             <div class="author clearfix">
-            	<?php echo get_avatar(get_the_author_meta('user_email'), 100); ?>
+                <?php
+                if (get_the_author_meta('graphene_author_imgurl')) {
+                    echo '<img class="avatar" src="'.get_the_author_meta('graphene_author_imgurl').'" alt="" />';
+                } else {
+                    echo get_avatar(get_the_author_meta('user_email'), 100); 
+                }
+				?>
                 <p class="author_name"><strong><?php the_author_meta('display_name'); ?></strong></p>
                 <p class="author_bio"><?php the_author_meta('description'); ?></p>
                 

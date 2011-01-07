@@ -1,0 +1,336 @@
+/*
+Theme Name: Graphene
+*/
+body{
+direction:rtl;
+unicode-bidi:embed;
+}
+#rss a{
+float:right;
+margin: 13px 23px 0 0;
+}
+#top-bar{
+	margin-right:16px;
+	margin-left:0;
+	}
+#top_search{
+float:left;
+}
+#top_search input{
+padding:3px 5px 2px 7px;
+float:right;
+}
+#top_search button{
+float:right;
+margin-right:10px;
+}
+#header{
+margin-right:16px;
+}
+#header h1{
+right:38px;
+}
+#header h2{
+	right:38px;
+	}
+.sidebar-wrap #searchsubmit{
+	float:left;
+	}
+#nav{
+margin-right:16px;
+}
+#menu li {
+	float: right;
+	margin-right:5px;
+}
+#menu li li{
+	margin-right:0;
+	}
+#menu li ul {
+	right: -999em;
+	left:auto;
+}
+#menu li:hover ul, #menu li.sfhover ul{
+	right: auto;
+	left:auto;
+}
+#menu li ul ul {
+	margin: -1.8em 175px 0 0;
+}
+#menu li:hover ul ul, #menu li:hover ul ul ul, #menu li:hover ul ul ul ul, #menu li:hover ul ul ul ul ul, #menu li.sfhover ul ul, #menu li.sfhover ul ul ul, #menu li.sfhover ul ul ul ul, #menu li.sfhover ul ul ul ul ul {
+	right: -999em;
+	left:auto;
+}
+#menu li:hover ul, #menu li li:hover ul, #menu li li li:hover ul, #menu li li li li:hover ul, #menu li li li li li:hover ul, #menu li.sfhover ul, #menu li li.sfhover ul, #menu li li li.sfhover ul, #menu li li li li.sfhover ul, #menu li li li li li.sfhover ul {
+	right: auto;
+	left:auto;
+}
+#content{
+margin-right:16px;
+}
+#content-main{
+float:right;
+}
+.slider_post{
+	float:right;
+}
+.slider_post a.block_link, .slider_post a.block_link:visited{
+	left:10px;
+	right:auto;
+	}
+.slider_nav{
+	text-align:left;
+	padding-left:15px;
+	padding-right:0;
+	}
+.slider_nav a, .slider_nav a:visited{
+	margin-right:3px;
+	margin-left:0;
+	}
+.post{
+	padding:25px 24px 20px 18px;
+	-moz-border-radius-topleft:30px;
+	-webkit-border-top-left-radius:30px;
+	border-top-left-radius:30px;
+	-moz-border-radius-topright:0;
+	-webkit-border-top-right-radius:0;
+	border-top-right-radius:0;
+}
+.one_column .post{
+	-moz-border-radius-topleft:30px;
+	-webkit-border-top-left-radius:30px;
+	border-top-left-radius:30px;
+	-moz-border-radius-topright:0;
+	-webkit-border-top-right-radius:0;
+	border-top-right-radius:0;
+	}
+.post .date{
+	clear:both;
+	float:right;
+}
+.entry{
+float:left;
+}
+.post-meta p, .post-meta ul, .post-meta li{
+	float:right;
+}
+.post-meta ul{
+	padding-right:15px;
+	padding-left:0;
+	background-position:300px -85px;
+	}
+.post-meta li{
+	margin-right:5px;
+}
+.post-meta p.post-author{
+	float:left;
+}
+.post-meta p.post-author img.avatar{
+	left:0;
+	right:auto;
+	}
+.comment-entry ol, .comment-entry ul{
+	margin:0 40px 10px 0 !important;
+}
+.nopassword{
+	margin-right:80px;
+	}
+.entry-content ul{
+	margin:10px 25px 10px 0;
+}
+.entry-content ul li{
+	padding-right:13px;
+	}
+.entry-content ul ul{
+	margin-right:10px;
+}
+.entry-content ol{
+	margin:5px 50px 5px 0;
+}
+.entry-content ol ol{
+	margin-right:30px;
+}
+.sliderpost_featured_image{
+	float:right;
+	margin:4px 0 12px 1em;
+	}
+blockquote{
+	margin:10px 20px 10px 0;
+	padding:8px 32px 5px 18px;
+}
+blockquote cite{
+	text-align:left;
+}
+p cite{
+	text-align:left;
+	}
+code.block, pre.block{
+	padding:15px 20px 2px 2px;
+}
+.add-this, .add-this-right{
+	float:right;
+}
+.add-this-right{
+	float:left;
+}
+.post-tags{
+	float:right;
+}
+.single .author_h4{
+	margin-right:10px;
+	}
+.single .author .avatar{
+	float:right;
+	margin-left:10px;
+	}
+
+/* Author page styles */
+.author-entry .avatar{
+	float:right;
+	}
+.author-entry h2, .author-entry .entry-content{
+	float:left;
+	}
+.author-entry .entry-content{
+	clear:left;
+	}
+/* Author page styles */
+
+.comment-link{
+	float:left;
+	text-align:left;
+}
+#previous{
+	float:right;
+	margin-right:8px;
+}
+#next-post{
+	float:left;
+	margin-left:8px;
+}
+#comments h4, #respond h3, h3.author-post-list{
+	padding-right:25px;
+	padding-left:0;
+	background-position:right 6px;
+	margin: 20px 24px 5px 0;
+}
+#respond h3#reply-title{
+	background-position:right -164px;
+	}
+#comments h4{
+	float:right;
+	}
+#comments h4.pings{
+	background-position:right -109px;
+	margin-right:10px;
+	}
+h3.author-post-list{
+	padding-right:30px;
+	}
+#comments li.depth-1{
+	padding:18px 50px 5px 0;
+	-moz-border-radius-topleft:30px;
+	-webkit-border-top-left-radius:30px;
+	border-top-left-radius:30px;
+	-moz-border-radius-topright:0;
+	-webkit-border-top-right-radius:0;
+	border-top-right-radius:0;
+}
+#comments ol li img.avatar{
+	float:right;
+	margin-left:10px;
+}
+#comments ol li.comment .comment-wrap, #comments ol li.pingback .comment-wrap, #comments ol li.trackback .comment-wrap{
+	float:left;
+	margin-left:20px;
+	}
+#comments ol li.depth-1 li.comment{
+	margin-right:30px;
+	}
+#comments p.comment-reply-link{
+	left:0;
+	right:auto;
+	}
+#commentform{
+	-moz-border-radius-topleft:30px;
+	-webkit-border-top-left-radius:30px;
+	border-top-left-radius:30px;
+	-moz-border-radius-topright:0;
+	-webkit-border-top-right-radius:0;
+	border-top-right-radius:0;
+}
+#commentform label.graphene_form_label{
+	float:right;
+}
+#commentform input, #commentform textarea{
+	float:right;
+}
+#respond p{
+	margin:0 46px 0 0;
+}
+#commentform .submit{
+	margin:10px 74px 0 0 !important;
+}
+#commentform div.graphene_wrap{
+	margin: 0 118px 0 0;
+	}
+#commentform div.graphene_wrap p{
+	margin-right:0;
+	}
+#sidebar_right{
+	float:left;
+}
+.sidebar h3{
+	padding-right:12px;
+	margin:0 -12px 5px 0;
+	background-position:-378px top;
+}
+.sidebar #tweetfollow{
+	text-align:left;
+	}
+#sidebar_bottom{
+	margin-right:16px;
+	}
+#sidebar_bottom .sidebar-wrap{
+	margin-right:15px;
+	border-left:1px dotted #ccc;
+	padding:5px 10px 5px 15px;
+	}
+#sidebar_bottom .sidebar-wrap h3{
+	margin-right:-15px;
+	}
+#wp-calendar #prev{
+	text-align:right;
+}
+#wp-calendar #next{
+	text-align:left;
+}
+.sidebar ol{
+	margin-right:29px;
+}
+.sidebar ol ol{
+	margin-right:20px;
+}
+.sidebar ul ul{
+	margin-right:20px;
+}
+.sidebar li.rss{
+	padding-right:20px;
+	}
+#footer{
+margin-right:16px;
+}
+#copyright{
+	float:right;
+	padding-right:120px;
+}
+#w3c{
+	float:left;
+	margin-left:25px;
+	margin-right:0;
+}
+#developer{
+	float:left;
+	margin-left:5px;
+	text-align:left;
+}

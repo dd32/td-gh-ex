@@ -1,11 +1,11 @@
 /*
 Theme Name: Graphene
 Theme URI: http://www.khairul-syahir.com/wordpress-dev/graphene-theme
-Description: The Graphene theme for Wordpress 3.0 is a stylish, neat, and tight WordPress theme supporting 2 widget areas, with the ability to determine the number of columns to display in the footer widget area. It includes action hooks for greater customisability through child theme, and a jQuery slider for your featured posts. It has built-in Twitter widget, allows for customisable header and background through the WordPress admin, built-in AdSense placement and AddThis social sharing button, supports custom menu with drop-down navigation of up to 5 levels deep, and threaded comments of up to 10 levels deep! A one-column, full-width page template without the sidebar is included. You can hide post parameters, show post author's gravatar, use different widgets for the front page than the rest of the website, and specify font styles for header and content texts. The codes are written so that you can easily override or add functionality to the theme by using your own child theme without altering the parent theme's code. Seriously, there's too many features for this theme to describe them all here! This theme has been tested and confirmed compatible with IE6, IE7, IE8, Mozilla Firefox, Google Chrome, and Safari. Translations included: Malay, Brazilian Portuguese, Spanish, Italian, French, Polish, German, Norwegian, and Chinese. See this <a href="http://www.khairul-syahir.com/wordpress-dev/graphene-theme#changelog">theme's changelog</a>.
-Version: 1.1.2
+Description: The Graphene theme for Wordpress 3.0 is a stylish, neat, and tight WordPress theme supporting 2 widget areas, with the ability to determine the number of columns to display in the footer widget area. It includes action hooks for greater customisability through child theme, and a jQuery slider for your featured posts. It has built-in Twitter widget, allows for customisable header and background through the WordPress admin, built-in AdSense placement and AddThis social sharing button, supports custom menu with drop-down navigation of up to 5 levels deep, and threaded comments of up to 10 levels deep! A one-column, full-width page template without the sidebar is included. You can hide post parameters, show post author's gravatar, use different widgets for the front page than the rest of the website, and specify font styles for header and content texts. The codes are written so that you can easily override or add functionality to the theme by using your own child theme without altering the parent theme's code. Seriously, there's too many features for this theme to describe them all here! This theme has been tested and confirmed compatible with IE6, IE7, IE8, Mozilla Firefox, Google Chrome, and Safari. Translations included: Malay, Brazilian Portuguese, European Portuguese, Spanish, Italian, French, Polish, German, Norwegian, Chinese (PRC), Chinese (Taiwan), Polish, and Turkish. The theme also fully supports right-to-left languages. See the <a href="http://www.khairul-syahir.com/wordpress-dev/graphene-theme#changelog">theme's changelog</a>.
+Version: 1.1.3
 Author: Syahir Hakim
 Author URI: http://www.khairul-syahir.com
-Tags: black, blue, white, two-columns, right-sidebar, fixed-width, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready
+Tags: black, blue, white, two-columns, right-sidebar, fixed-width, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, rtl-language-support
 License: GNU General Public License, v2 (or newer)
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
@@ -20,6 +20,14 @@ body{
 background:url(images/bg_g.gif) repeat #000 fixed;
 font:12px arial;
 }
+a, a:visited{
+	color:#1772af;
+	text-decoration:none;
+	}
+a:hover{
+	color:#074d7c;
+	text-decoration:none;
+	}
 #container{
 margin:0 auto;
 background:url(images/sprite_v.png) left top repeat-y;
@@ -231,6 +239,10 @@ float:left;
 	width:20000em;
 	position:absolute;
 	}
+.sliderpost_featured_image{
+	float:left;
+	margin:4px 1em 12px 0;
+	}
 .slider_post{
 	float:left;
 	width:540px;
@@ -329,7 +341,7 @@ padding:0;
 margin:0;
 float:right;
 }
-.page .post .entry, .nodate{
+.page .post .entry, .author .post .entry, .nodate{
 	width:555px;
 	}
 .one_column .post .entry{
@@ -337,29 +349,22 @@ float:right;
 	}
 h2, h2 a, h2 a:visited{
 font:18px arial;
-color:#1772af;
 border-bottom:1px solid #e3e3e3;
 padding-bottom:5px;
-text-decoration:none;
 }
 h2 a, h2 a:visited{
 	border:none;
-}
-h2 a:hover, .slider_post h2 a:hover{
-	color:#074d7c;
-	text-decoration:none;
 }
 .post-meta{
 margin-top:2px;
 }
 .post-meta p, .post-meta ul, .post-meta li{
 	float:left;
-	color:#074d7c;
 }
 .post-meta ul{
 	background:url(images/sprite_master.png) left -85px no-repeat;
 	padding-left:15px;
-	max-width:300px;
+	width:300px;
 	}
 .post-meta li{
 	font:normal 11px tahoma;
@@ -368,19 +373,11 @@ margin-top:2px;
 	line-height:18px;
 	margin-left:5px;
 }
-.post-meta a, .post-meta a:visited{
-	color:#1772af;
-	text-decoration:none;
-}
-.post-meta a:hover{
-	text-decoration:underline;
-}
 .post-meta p.post-author{
 	font:normal 11px tahoma;
 	float:right;
 	display:block;
 	line-height:18px;
-	color:#074d7c;
 	position:relative;
 }
 .post-meta p.post-author img.avatar{
@@ -468,13 +465,6 @@ margin-top:2px;
 .entry-content p.wp-caption-text{
 	margin-top:0;
 	}
-.entry-content a, .entry-content a:visited, .slider_post a, .slider_post a:visited{
-	color:#1772af;
-	text-decoration:none;
-}
-.entry-content a:hover, .slider_post a:hover{
-	text-decoration:underline;
-}
 a.more-link{
 	display:block;
 	margin-top:20px;
@@ -651,13 +641,6 @@ code.block, pre.block{
 	font:normal 12px tahoma;
 	color:#929292;
 }
-.comment-nav a, .comment-nav a:visited, .post-tags a, .post-tags a:visited{
-	color:#1772af;
-	text-decoration:none;
-}
-.comment-nav a:hover, .post-tags a:hover{
-	text-decoration:underline;
-}
 .comment-link{
 	float:right;
 	padding-top:5px;
@@ -666,11 +649,6 @@ code.block, pre.block{
 }
 .comment-link a, .comment-link a:visited{
 	font:normal 18px arial;
-	color:#1772af;
-	text-decoration:none;
-}
-.comment-link a:hover{
-	text-decoration:underline;
 }
 .post-nav{
 	margin-bottom:20px;
@@ -680,9 +658,6 @@ code.block, pre.block{
 	color:#929292;
 	text-decoration:none;
 }
-#previous a:hover, #next-post a:hover{
-	text-decoration:underline;
-}
 #previous{
 	float:left;
 	margin-left:8px;
@@ -691,14 +666,30 @@ code.block, pre.block{
 	float:right;
 	margin-right:8px;
 }
+#comments{
+	position:relative;
+	}
 #comments h4, #respond h3, h3.author-post-list{
 	clear:both;
 	margin:20px 0 5px 24px;
-	font:normal 22px arial;
+	font:normal 20px arial;
 	color:#929292;
 	background:url(images/sprite_master.png) -880px 6px no-repeat;
 	padding-left:25px;
 }
+#comments h4 a, #comments h4 a:visited{
+	color:#929292;
+	}
+#comments h4.pings{
+	background-position:-880px -109px;
+	clear:none;
+	}
+#comments h4{
+	float:left;
+	}
+#comments h4.current a{
+	color:#1772AF;
+	}
 #respond h3#reply-title{
 	background-position:-880px -17px;
 	}
@@ -746,13 +737,6 @@ h3.author-post-list{
 #comments li.comment h5 cite, #comments li.pingback h5 cite, #comments li.trackback h5 cite{
 	font-style:normal;
 	}
-#comments li.comment a, #comments li.comment a:visited, #comments li.pingback a, #comments li.pingback a:visited, #comments li.trackback a, #comments li.trackback a:visited{
-	text-decoration:none;
-	color:#1772af;
-	}
-#comments ol li.comment a:hover, #comments ol li.pingback a:hover, #comments ol li.trackback a:hover{
-	text-decoration:underline;
-}
 #comments ol li.comment .comment-wrap, #comments ol li.pingback .comment-wrap, #comments ol li.trackback .comment-wrap{
 	width:480px;
 	float:right;
@@ -812,6 +796,12 @@ h3.author-post-list{
 	font:normal 12px arial;
 	line-height:16px;
 	}
+#comments li.bypostauthor{
+	background-color:#B8CDF5;
+	}
+#comments li.comment.bypostauthor h5{
+	border-color:#a5a5a5;
+	}
 #comments #commentform{
 	border:1px solid #1772AF;
 	}
@@ -834,13 +824,6 @@ h3.author-post-list{
 	font:normal 12px arial;
 	color:#606060;
 	vertical-align:middle;
-}
-#commentform a, #commentform a:visited, #respond a, #respond a:visited{
-	text-decoration:none;
-	color:#1772af;
-}
-#commentform a:hover, #respond a:hover{
-	text-decoration:underline;
 }
 #commentform label.graphene_form_label{
 	float:left;
@@ -866,6 +849,10 @@ h3.author-post-list{
 #commentform .input-text:focus, #commentform textarea:focus{
 	border-color:#bfdff5;
 }
+#respond{
+	z-index:200;
+	left:0;
+	}
 #respond p{
 	margin:0 0 0 46px;
 	font:normal 12px arial;
@@ -1041,13 +1028,6 @@ h3.author-post-list{
 }
 .sidebar ul ul li{
 	line-height:15px;
-}
-.sidebar a, .sidebar a:visited{
-	text-decoration:none;
-	color:#11598a;
-}
-.sidebar a:hover{
-	text-decoration:underline;
 }
 .sidebar p{
 	line-height:18px;

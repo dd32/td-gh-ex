@@ -1,4 +1,4 @@
-<?php
+ <?php
 /**
  * Graphene functions and definitions
  *
@@ -266,7 +266,13 @@ function graphene_custom_style(){
 	
 	$link_header_img = get_option('graphene_link_header_img');
 	
-	if ((!$background && $bgcolor) || $widgetcolumn || $navmenu_width || $header_title_font_type || $header_title_font_size || $header_title_font_lineheight || $header_title_font_weight || $header_desc_font_type || $header_desc_font_size || $header_desc_font_lineheight || $header_desc_font_weight || $content_font_type || $content_font_size || $content_font_lineheight || $content_font_colour || $show_post_avatar || $slider_height || $link_header_img) : ?>
+	$link_colour_normal = get_option('graphene_link_colour_normal');
+	$link_colour_visited = get_option('graphene_link_colour_visited');
+	$link_colour_hover = get_option('graphene_link_colour_hover');
+	$link_decoration_normal = get_option('graphene_link_decoration_normal');
+	$link_decoration_hover = get_option('graphene_link_decoration_hover');
+	
+	if ((!$background && $bgcolor) || $widgetcolumn || $navmenu_width || $header_title_font_type || $header_title_font_size || $header_title_font_lineheight || $header_title_font_weight || $header_desc_font_type || $header_desc_font_size || $header_desc_font_lineheight || $header_desc_font_weight || $content_font_type || $content_font_size || $content_font_lineheight || $content_font_colour || $show_post_avatar || $slider_height || $link_header_img || $link_colour_normal || $link_colour_visited || $link_colour_hover || $link_decoration_normal || $link_decoration_hover) : ?>
 	<style type="text/css">
 		<?php /* Disable default background if a custom background colour is defined */ ?>
 		<?php if (!$background && $bgcolor) : ?>
@@ -335,6 +341,13 @@ function graphene_custom_style(){
 		<?php if ($link_header_img && (HEADER_IMAGE_WIDTH != 900 || HEADER_IMAGE_HEIGHT != 198)) : ?>
 		#header_img_link{width:<?php echo HEADER_IMAGE_WIDTH; ?>px;height:<?php echo HEADER_IMAGE_HEIGHT; ?>px;}
 		<?php endif;?>
+		
+		<?php /* Link text */ ?>
+		<?php if ($link_colour_normal) {echo 'a{color:'.$link_colour_normal.';}';} ?>
+		<?php if ($link_colour_visited) {echo 'a:visited{color:'.$link_colour_visited.';}';} ?>
+		<?php if ($link_colour_hover) {echo 'a:hover{color:'.$link_colour_hover.';}';} ?>
+		<?php if ($link_decoration_normal) {echo 'a{text-decoration:'.$link_decoration_normal.';}';} ?>
+		<?php if ($link_decoration_hover) {echo 'a:hover{text-decoration:'.$link_decoration_hover.';}';} ?>
 		
     </style>
     <?php endif; ?>
@@ -417,8 +430,10 @@ if (!function_exists('graphene_comment')) :
 	function graphene_comment($comment, $args, $depth) {
 		$GLOBALS['comment'] = $comment; ?>
 			<li id="comment-<?php comment_ID(); ?>" <?php comment_class('clearfix'); ?>>
-            	
 				<?php do_action('graphene_before_comment'); ?>
+                
+                <?php /* Added support for comment numbering using Greg's Threaded Comment Numbering plugin */ ?>
+                <?php if (function_exists('gtcn_comment_numbering')) {gtcn_comment_numbering($comment->comment_ID, $args);} ?>
                 
 				<?php echo get_avatar($comment, apply_filters('graphene_gravatar_size', 40)); ?>
                 <?php do_action('graphene_comment_gravatar'); ?>
@@ -718,8 +733,9 @@ endif;
  * Adds the theme options page
 */
 function graphene_options_init() {
-	$graphene_options = add_submenu_page('themes.php', __('Graphene Options', 'graphene'), __('Graphene Options', 'graphene'), 'manage_options', 'graphene_options', 'graphene_options');
-	$graphene_display = add_submenu_page('themes.php', __('Graphene Display', 'graphene'), __('Graphene Display', 'graphene'), 'manage_options', 'graphene_options_display', 'graphene_options_display');	
+	$graphene_options = add_submenu_page('themes.php', __('Graphene Options', 'graphene'), __('Graphene Options', 'graphene'), 'edit_theme_options', 'graphene_options', 'graphene_options');
+	$graphene_display = add_submenu_page('themes.php', __('Graphene Display', 'graphene'), __('Graphene Display', 'graphene'), 'edit_theme_options', 'graphene_options_display', 'graphene_options_display');
+	$graphene_faq = add_submenu_page('themes.php', __('Graphene FAQs', 'graphene'), __('Graphene FAQs', 'graphene'), 'edit_theme_options', 'graphene_faq', 'graphene_faq');
 	
 	wp_register_style('graphene-admin-style', get_template_directory_uri().'/admin/style.css');
 	
@@ -733,6 +749,7 @@ add_action('admin_menu', 'graphene_options_init');
 // Includes the files where our theme options are defined
 include('admin/options.php');
 include('admin/display.php');
+include('admin/faq.php');
 
 /**
  * Include the file for additional user fields
@@ -817,11 +834,29 @@ endif;
  * @return string An ellipsis
  */
 function graphene_auto_excerpt_more( $more ) {
-	return '&hellip;' . graphene_continue_reading_link();
+	return ' &hellip; ' . graphene_continue_reading_link();
 	
 	do_action('graphene_auto_excerpt_more');
 }
 add_filter('excerpt_more', 'graphene_auto_excerpt_more' );
+
+
+/**
+ * Add the Read More link to manual excerpts
+ *
+ * @since Graphene 1.1.3
+*/
+function graphene_manual_except_more($text){
+	if (has_excerpt()){
+		$text = explode('</p>', $text);
+		$text[count($text)-2] .= graphene_auto_excerpt_more('');
+		$text = implode('</p>', $text);
+	}
+	return $text;
+}
+if (get_option('graphene_show_excerpt_more')) {
+	add_filter('the_excerpt', 'graphene_manual_except_more');
+}
 
 
 /**
@@ -833,6 +868,7 @@ if (!function_exists('graphene_posts_nav')) :
 			<p id="previous"><?php next_posts_link(__('Older posts &laquo;', 'graphene')) ?></p>
 			<p id="next-post"><?php previous_posts_link(__('&raquo; Newer posts', 'graphene')) ?></p>
 		</div>
+        
         
         <?php do_action('graphene_posts_nav'); ?>
 	<?php
@@ -870,9 +906,7 @@ endif;
 
 /* Load jQuery Tools script */
 function graphene_scrollable_js() {
-	if (is_front_page() && !get_option('graphene_slider_disable')) {
-		wp_enqueue_script('graphene-jquery-tools', 'http://cdn.jquerytools.org/1.2.4/all/jquery.tools.min.js', array('jquery'), '', true);
-	}
+	wp_enqueue_script('graphene-jquery-tools', 'http://cdn.jquerytools.org/1.2.4/all/jquery.tools.min.js', array('jquery'), '', true);
 }
 // Print both the js and the script
 add_action('template_redirect', 'graphene_scrollable_js');
@@ -940,8 +974,8 @@ function graphene_slider(){
 				if (get_post_meta($post->ID, '_graphene_slider_img', true) != 'disabled' && !((get_post_meta($post->ID, '_graphene_slider_img', true) == 'global' || get_post_meta($post->ID, '_graphene_slider_img', true) == '') && get_option('graphene_slider_img') == 'disabled')) : 
 				?>
                 
-                <div class="sliderpost_featured_image alignleft">
-                    <?php echo graphene_get_slider_image($post->ID); ?>
+                <div class="sliderpost_featured_image">
+                    <?php echo graphene_get_slider_image($post->ID, apply_filters('graphene_slider_image_size', array(150, 150, true))); ?>
                 </div>
                 
                 <?php endif; ?>
@@ -1125,4 +1159,61 @@ if (!function_exists('graphene_title')) :
 	}
 endif;
 
+
+/**
+ * Adds the functionality to count comments by type, eg. comments, pingbacks, tracbacks.
+ * Based on the code at WPCanyon (http://wpcanyon.com/tipsandtricks/get-separate-count-for-comments-trackbacks-and-pingbacks-in-wordpress/)
+ *
+ * @package WordPress
+ * @subpackage Graphene
+ * @since Graphene 1.1.3
+*/
+function graphene_comment_count($type = 'comments', $noneText = '', $oneText = '', $moreText = ''){
+
+	if($type == 'comments') :
+		$typeSql = 'comment_type = ""';
+	elseif($type == 'pings') :
+		$typeSql = 'comment_type != ""';
+	elseif($type == 'trackbacks') :
+		$typeSql = 'comment_type = "trackback"';
+	elseif($type == 'pingbacks') :
+		$typeSql = 'comment_type = "pingback"';
+	endif;
+
+	global $wpdb;
+
+    $result = $wpdb->get_var('
+        SELECT
+            COUNT(comment_ID)
+        FROM
+            '.$wpdb->comments.'
+        WHERE
+            '.$typeSql.' AND
+            comment_approved="1" AND
+            comment_post_ID= '.get_the_ID()
+    );
+
+	if($result == 0):
+		echo str_replace('%', $result, $noneText);
+	elseif($result == 1): 
+		echo str_replace('%', $result, $oneText);
+	elseif($result > 1): 
+		echo str_replace('%', $result, $moreText);
+	endif;
+}
+
+/**
+ * Enqueue the jQuery Tools Tabs JS and the necessary script for comments/pings tabs
+*/
+function graphene_tabs_js(){ ?>
+	<script>
+		jQuery(document).ready(function($){
+			$(function(){
+				$("div#comments").tabs("div#comments > ol", {tabs: 'h4', effect: 'fade'});
+			});
+		});
+	</script>
+<?php
+}
+add_action('wp_footer', 'graphene_tabs_js');
 ?>

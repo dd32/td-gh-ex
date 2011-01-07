@@ -36,11 +36,12 @@
 <?php if ( have_comments() ) : ?>
 
 <div id="comments" class="clearfix">
-    <h4><?php comments_number(__('No comment yet','graphene'), __('1 comment','graphene'), __("% comments", 'graphene') );?></h4>
+    <h4><a href="#"><?php graphene_comment_count('comments', __('No comment yet','graphene'), __('1 comment','graphene'), __("% comments", 'graphene') );?></a></h4>
+    <h4 class="pings"><a href="#"><?php graphene_comment_count('pings', __('No ping yet','graphene'), __('1 ping','graphene'), __("% pings", 'graphene') );?></a></h4>
 
 	<?php do_action('graphene_before_comments'); ?>
 
-    <ol class="clearfix">
+    <ol class="clearfix" id="comments_list">
         <?php
         /* Loop through and list the comments. Tell wp_list_comments()
          * to use graphene_comment() to format the comments.
@@ -48,7 +49,14 @@
          * define graphene_comment() and that will be used instead.
          * See graphene_comment() in functions.php for more.
          */
-		 wp_list_comments(array('callback' => 'graphene_comment', 'style' => 'ol')); ?>
+		 wp_list_comments(array('callback' => 'graphene_comment', 'style' => 'ol', 'type' => 'comment')); ?>
+    </ol>
+    <ol class="clearfix" id="pings_list">
+        <?php
+        /* Loop through and list the pings. Use the same callback function as
+		 * listing comments above, graphene_comment() to format the pings.
+         */
+		 wp_list_comments(array('callback' => 'graphene_comment', 'style' => 'ol', 'type' => 'pings')); ?>
     </ol>
                     
 		<?php // Are there comments to navigate through? ?>
