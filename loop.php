@@ -30,6 +30,7 @@
 	<?php if ( is_archive() || is_search() ) :  ?>
 		
 			<?php the_content( __( '', 'application' ) ); ?>
+			<div class="clear"></div>
 			<?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'application' ), 'after' => '' ) ); ?>
 			
 	<?php else : ?>
@@ -38,6 +39,7 @@
 	
 	
 			<?php the_content( __( '', 'application' ) ); ?>
+			<div class="clear"></div>
 			<?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'application' ), 'after' => '' ) ); ?>
 	<?php endif; ?>
 	

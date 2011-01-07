@@ -10,7 +10,7 @@
 	margin-bottom: 35px;
 }
 
-div.logo_tz a:link, div.logo_tz a:visited{
+div.logo_app a:link, div.logo_app a:visited{
 	text-indent: -9999em;
 	background: url(../images/logo.png) no-repeat top right;
 	margin: 20px 0;
@@ -19,14 +19,14 @@ div.logo_tz a:link, div.logo_tz a:visited{
 	display: block;
 }
 
-.tz_section{
+.app_section{
 	border:1px solid #ddd;
 	border-bottom:0;
 	background:#f9f9f9;
 	overflow: hidden;
 }
 
-.tz_options label{
+.app_options label{
 	font-size:12px;
 	font-weight:700;
 	width:200px;
@@ -34,18 +34,18 @@ div.logo_tz a:link, div.logo_tz a:visited{
 	float:left;	
 }
 
-.tz_base {
+.app_base {
 	padding:20px 10px;
 	border-bottom:1px solid #ddd;
 	border-top:1px solid #fff;
 }
-.tz_options small{
+.app_options small{
 	display:block;
 	float:right;
 	width:200px;
 	color:#999;
 }
-.tz_options input[type="text"], .tz_options select{
+.app_options input[type="text"], .app_options select{
 	width:280px;
 	font-size:12px;
 	padding:4px;
@@ -53,10 +53,10 @@ div.logo_tz a:link, div.logo_tz a:visited{
 	line-height:1em;
 	background:#f3f3f3;
 }
-.tz_input input:focus, .tz_input textarea:focus{
+.app_input input:focus, .app_input textarea:focus{
 		background:#fff;
 }
-.tz_input textarea{
+.app_input textarea{
 	width:250px;
 	height:175px;
 	font-size:12px;
@@ -65,7 +65,7 @@ div.logo_tz a:link, div.logo_tz a:visited{
 	line-height:1.5em;
 	background:#f3f3f3;
 }
-.tz_title h3 {
+.app_title h3 {
 	cursor:pointer;
 	font-size:1em;
 	text-transform: uppercase;
@@ -77,14 +77,14 @@ div.logo_tz a:link, div.logo_tz a:visited{
 	padding:14px 4px;
 }
 
-.tz_title{
+.app_title{
 	cursor:pointer;
 	border-bottom:1px solid #ddd;
 	background:#eee;
 	padding:0;
 	}
 
-.tz_title h3 img.inactive{
+.app_title h3 img.inactive{
 	margin:-8px 10px 0 2px;
 	width:32px;
 	height:32px;	
@@ -94,7 +94,7 @@ div.logo_tz a:link, div.logo_tz a:visited{
 	border:1px solid #ccc;
 }
 
-.tz_title h3 img.active{
+.app_title h3 img.active{
 	margin:-8px 10px 0 2px;
 	width:32px;
 	height:32px;	
@@ -105,11 +105,11 @@ div.logo_tz a:link, div.logo_tz a:visited{
 	border:1px solid #ccc;
 }
 		
-.tz_title h3:hover img{
+.app_title h3:hover img{
 	border:1px solid #999;
 }
 
-.tz_title span.submit{
+.app_title span.submit{
 	display:block;
 	float:right;
 	margin:0;
@@ -131,12 +131,12 @@ width: 250px;
 margin:4px;
 }
 
-.tz_table th, .tz_table td{
+.app_table th, .app_table td{
 	border:1px solid #bbb;
 	padding:10px;
 	text-align:center;
 }
 
-.tz_table th, .tz_table td.feature{
+.app_table th, .app_table td.feature{
 	border-color:#888;
 	}

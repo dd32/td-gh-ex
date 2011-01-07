@@ -20,6 +20,7 @@
 					<div class="post-entry">
 
 						<?php the_content(); ?>
+						<div class="clear"></div>
 						<?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'application' ), 'after' => '' ) ); ?>
 						
 					</div><!--post-entry end-->

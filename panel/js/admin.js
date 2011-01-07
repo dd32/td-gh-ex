@@ -1,8 +1,8 @@
     jQuery(document).ready(function(){
-		jQuery('.tz_options').slideUp();
+		jQuery('.app_options').slideUp();
 		
-		jQuery('.tz_section h3').click(function(){		
-			if(jQuery(this).parent().next('.tz_options').css('display')=='none')
+		jQuery('.app_section h3').click(function(){		
+			if(jQuery(this).parent().next('.app_options').css('display')=='none')
 				{	jQuery(this).removeClass('inactive');
 					jQuery(this).addClass('active');
 					jQuery(this).children('img').removeClass('inactive');
@@ -16,6 +16,6 @@
 					jQuery(this).children('img').addClass('inactive');
 				}
 				
-			jQuery(this).parent().next('.tz_options').slideToggle('slow');	
+			jQuery(this).parent().next('.app_options').slideToggle('slow');	
 		});
 });

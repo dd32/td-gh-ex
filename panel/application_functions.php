@@ -13,7 +13,7 @@ global $themename, $shortname, $options;
 
 if ( isset($_GET['page'])== basename(__FILE__) ) {
  
-	if ( 'save' == $_REQUEST['action'] ) {
+	if ( 'save' == isset($_REQUEST['action'] )) {
  
 		foreach ($options as $value) {
 		update_option($value['id'], $_REQUEST[ $value['id'] ] )  ; }
@@ -25,7 +25,7 @@ foreach ($options as $value) {
 die;
  
 } 
-else if( 'reset' == $_REQUEST['action'] ) {
+else if( 'reset' == isset($_REQUEST['action'] )) {
  
 	foreach ($options as $value) {
 		delete_option( $value['id'] ); }
@@ -41,8 +41,8 @@ add_menu_page($themename, $themename, 'administrator', basename(__FILE__), 'appl
 
 function application_init() {
 
-wp_enqueue_style("tzen", get_template_directory_uri()."/panel/css/admin.css", false, "1.0", "all");
-wp_enqueue_script("tzen", get_template_directory_uri()."/panel/js/admin.js", false, "1.0");
+wp_enqueue_style("app", get_template_directory_uri()."/panel/css/admin.css", false, "1.0", "all");
+wp_enqueue_script("app", get_template_directory_uri()."/panel/js/admin.js", false, "1.0");
 
 }
 function application_admin() {
@@ -55,9 +55,9 @@ if ( isset($_REQUEST['reset'] )) echo '<div id="message" class="updated fade"><p
  
 ?>
 <div class="option_wrapper">
-<div class="logo_tz"><a href="http://www.themeszen.com">logo</a></div>
+<div class="logo_app"><a href="http://www.themeszen.com">logo</a></div>
 <div id="go_pro"><h2>Go for Pro Version!</h2>This is a free version of application. Get your own copy of professional version for more features, tutorials, support forum and much more! <a href="http://www.themeszen.com">Click Here to Learn More Now</a></div>
-<div class="tz_opts">
+<div class="app_opts">
 <form method="post">
 <?php foreach ($options as $value) {
 switch ( $value['type'] ) {
@@ -87,7 +87,7 @@ case "title":
 case 'text':
 ?>
 
-<div class="tz_base tz_input">
+<div class="app_base app_input">
 	<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
  	<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php if ( get_option( $value['id'] ) != "") { echo stripslashes(get_option( $value['id'])  ); } else { echo $value['std']; } ?>" />
  <small><?php echo $value['desc']; ?></small><div class="clearfix"></div>
@@ -98,7 +98,7 @@ break;
 
 case 'savebutton':
 ?>
-		<div class="tz_base submit">
+		<div class="app_base submit">
 			<input type="hidden" name="action" value="save" />
 			<input name="save<?php echo $i; ?>" type="submit" value="Save changes" />
 		</div>
@@ -110,7 +110,7 @@ break;
 case 'textarea':
 ?>
 
-<div class="tz_base tz_input">
+<div class="app_base app_input">
 	<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
  	<textarea name="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" cols="" rows=""><?php if ( get_option( $value['id'] ) != "") { echo stripslashes(get_option( $value['id']) ); } else { echo $value['std']; } ?></textarea>
  <small><?php echo $value['desc']; ?></small><div class="clearfix"></div>
@@ -123,7 +123,7 @@ break;
 case 'select':
 ?>
 
-<div class="tz_base tz_select">
+<div class="app_base app_select">
 	<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
 	
 <select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>">
@@ -138,7 +138,7 @@ case 'select':
 case "multicheckbox":
 ?>
 
-<div class="tz_base">
+<div class="app_base">
 	<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
 
 	<div class="box-option">
@@ -169,7 +169,7 @@ break;
 case "checkbox":
 ?>
 
-<div class="tz_base tz_checkbox">
+<div class="app_base app_checkbox">
 	<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
 	
 <?php if(get_option($value['id'])){ $checked = "checked=\"checked\""; }else{ $checked = "";} ?>
@@ -183,7 +183,7 @@ case "checkbox":
 case "radio":
 ?>
 
-<div class="tz_base">
+<div class="app_base">
 	<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
 
 	<div class="box-option">
@@ -218,9 +218,9 @@ $i++;
 
 ?>
 
-<div class="tz_section">
-<div class="tz_title"><h3><img src="<?php get_template_directory_uri(); ?>/functions/images/trans.gif" class="inactive" alt="" /><?php echo $value['name']; ?></h3><div class="clearfix"></div></div>
-<div class="tz_options">
+<div class="app_section">
+<div class="app_title"><h3><img src="<?php get_template_directory_uri(); ?>/functions/images/trans.gif" class="inactive" alt="" /><?php echo $value['name']; ?></h3><div class="clearfix"></div></div>
+<div class="app_options">
 
  
 <?php break;

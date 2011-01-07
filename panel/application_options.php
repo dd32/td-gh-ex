@@ -3,7 +3,7 @@
 require_once ('application_functions.php');
 
 $themename = "application";
-$shortname = "tm";
+$shortname = "app";
 
 $categories = get_categories('hide_empty=0');
 $cats_all = array();

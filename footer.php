@@ -27,13 +27,11 @@
 			
 			<div id="footer-info">		
 				
-				<span id="copyright">Copyright 2010. <?php echo get_option('tm_footer_text') ?> | Powered by <a href="http://www.wordpress.com">WordPress</a> | application theme by <a href="http://www.themeszen.com">themeszen</a></span>
-				<span id="follow-us">Follow us: <a href="<?php echo get_option('tm_feedburner') ?>">RSS</a> | <a href="<?php echo get_option('tm_twitter') ?> ">Twitter</a></span>
+				<span id="copyright">Copyright <?php echo get_the_date( 'Y' ); ?>
+ <?php echo get_option('app_footer_text') ?> | Powered by <a href="http://www.wordpress.com">WordPress</a> | application theme by <a href="http://www.themeszen.com">themeszen</a></span>
+				<span id="follow-us">Follow us: <a href="<?php echo get_option('app_feedburner') ?>">RSS</a> | <a href="<?php echo get_option('app_twitter') ?> ">Twitter</a></span>
 			
 			</div>
-		
-	<?php $googleanalytics=get_option("tm_go_code"); ?>
-	<?php echo stripslashes($googleanalytics); ?>	
 	
 	<?php wp_footer(); ?>
 

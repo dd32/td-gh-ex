@@ -188,6 +188,16 @@ function application_posted_on() {
 	);
 }
 endif;
+
+// Filter wp_nav_menu() to add additional links and other output
+function application_nav_menu_items($items) {
+	$homelink = '<div id="home_btn"><a href="' . home_url( '/' ) . '">' . __('Home') . '</a></div>';
+	$items = $homelink . $items;
+	return $items;
+}
+add_filter( 'wp_nav_menu_items', 'application_nav_menu_items' );
+add_filter( 'wp_list_pages', 'application_nav_menu_items' );
+
 /** Register sidebars by running application_widgets_init() on the widgets_init hook. */
 add_action( 'widgets_init', 'application_widgets_init' );
 

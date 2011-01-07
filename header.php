@@ -58,6 +58,9 @@ DD_belatedPNG.fix('#navbar .nav li a, #home_btn img, .menu, #logo img, #searchsu
     });
  
 </script>
+
+	<?php $googleanalytics=get_option("app_go_code"); ?>
+	<?php echo stripslashes($googleanalytics); ?>
 	
 </head>
 
@@ -81,8 +84,6 @@ DD_belatedPNG.fix('#navbar .nav li a, #home_btn img, .menu, #logo img, #searchsu
 			
 		<div class="menu">
 		
-		<!--home button--><div id="home_btn"><a href="<?php echo home_url(); ?>/" title="Home"><img src="<?php echo get_template_directory_uri(); ?>/images/home_icon.png" alt="Home" /></a></div><!--home end-->
-		
 		<!--nav bar-->
 		
 		<div id="navbar">
@@ -99,13 +100,13 @@ DD_belatedPNG.fix('#navbar .nav li a, #home_btn img, .menu, #logo img, #searchsu
 					
 		<?php
 
-				if(get_option('tm_menu_bar') == 'true'){
+				if(get_option('app_menu_bar') == 'true'){
 					wp_list_pages('title_li');
 				}
 		?>
 		
 		<?php
-				if (get_option('tm_cat_bar') == 'true'){
+				if (get_option('app_cat_bar') == 'true'){
 					wp_list_categories('title_li');
 					}
 		?>
