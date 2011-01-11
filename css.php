@@ -1,5 +1,6 @@
 <?php # error_reporting(E_ALL & ~E_NOTICE);
 #include_once (TEMPLATEPATH . '/functions.php'); 
+global $templateURI,  $homeURL; 
 if ( isset($bfa_ata_preview) OR $bfa_ata['css_external'] == "Inline" OR 
 ( isset($bfa_ata_debug) AND $bfa_ata['allow_debug'] == "Yes" ) ) {
 	echo '<style type="text/css">'; 
@@ -1098,15 +1099,16 @@ input.highlight, textarea.highlight {
 	}
 <?php } ?>
 
-/* .Button for WP-Email */
-.button, .Button {
+/* .Button for WP-Email, input[type=submit] for comment submit button since 3.6.1 */
+.button, .Button, input[type=submit] {
 	padding: 0 2px;
 	height: 24px;
 	line-height: 16px;
 	<?php include 'bfa://button_style' ?>
 	}
-	
-.buttonhover {
+
+/* changed from .buttonhover to input.buttonhover in 3.6.1 */
+input.buttonhover {
 	padding: 0 2px;
 	cursor: pointer;
 	<?php include 'bfa://button_style_hover' ?>
@@ -1280,8 +1282,9 @@ div#respond {
 p.thesetags {
 	margin: 10px 0;
 	}
-	
-h3.reply {
+
+/* Since 3.6.1: added h3#reply-title. class reply cannot be added to new comment_form() without hacks */
+h3.reply, h3#reply-title {
 	margin: 0;
 	padding: 0 0 10px 0;
 	}
@@ -1359,10 +1362,7 @@ textarea#comment {
 	margin: 10px 0; 
 	display: block;
 	}
-form#commentform label {
-	width: 150px;
-	display:block;
-}
+
 
 
 /* ------------------------------------------------------------------
@@ -2651,216 +2651,6 @@ div#menu2 ul.rMenu {
 	}
 <?php } ?>
 	
-
-/* ------------------------------------------------------------------
----------- HACKS: General -------------------------------------------
------------------------------------------------------------------- */
-
-* html ul.rMenu {
-	display: inline-block;	/* this is for IE/Mac. it forces IE/Mac to 
-				   expand the element's dimensions to contain 
-				   its floating child elements without a 
-				   clearing element. */
-	/* \*/ display: block;	/* override above rule for every other 
-				   browser using IE/Mac backslash hack */
-	position: relative;	/* IE 5.0/Mac needs this or it may clip the
-				   dropdown menus */
-	/* \*/ position: static;/* reset position attribute for IE/Win as it
-				   causes z-index problems */
-	}
-	
-* html ul.rMenu ul {
-	float: left;		/* IE/Mac 5.0 needs this, otherwise hidden 
-				   menus are not completely removed from the
-				   flow of the document. */
-	/* \*/ float: none;	/* reset the rule for non-Macs */
-	}
-	
-ul.rMenu ul {
-	/*background-color: #fff;*/ 	/* IE/Win (including 7) needs this on an object 
-				   that hasLayout so that it doesn't "look through"
-				   the menu and let any object (text) below the 
-				   menu to gain focus, causing the menu to 
-				   disappear. application of this rule does not
-				   cause any rendering problems with other browsers
-				   as the background color is covered by the
-				   menu itself. */
-	}
-	
-* html ul.sub-menu li,
-* html ul.rMenu-ver li,
-* html ul.rMenu-hor li ul.sub-menu li,
-* html ul.rMenu-hor li ul.rMenu-ver li {
-				/* the second selector above is there 
-				   because of problems IE/Mac has with 
-				   inheritance and what rules should take
-				   precedence. and to serve as a reminder on
-				   how to work around the issue if it's 
-				   encountered again down the road. */
-	width: 100%;
-	float: left;
-	clear: left;		/* IE likes to stick space below any LI
-				   in :hover state with a sub-menu. floating
-				   the LIs seems to work around this issue. But
-				   note that this also triggers hasLayout 
-				   because we need a width of 100% on floats. */
-	}
-	
-*:first-child+html ul.sub-menu > li,	
-*:first-child+html ul.rMenu-ver > li	/* hide from IE5.0 because 
-										it gets confused by this 
-										selector */
-	{
-	width: 100%;
-	float: left;
-	clear: left;		/* same as previous rule set except this is
-				   for IE7 and the direct child selector 
-				   make inheritence much easier and obvious */
-	}
-	
-ul.rMenu li a {
-	position: relative;	/* trigger hasLayout for IE on anchor 
-				   elements. without hasLayout on anchors
-				   they would not expand the full width 
-				   of the menu. this rule may not trigger
-				   hasLayour in later versions of IE and
-				   if you find this system broken in new
-				   versions of IE, this is probably the
-				   source. */
-	min-width: 0;		/* triggers hasLayout for IE 7 */
-	}
-	
-* html ul.rMenu-hor li {
-	width: 11em;		/* IE Mac doesn't do auto widths so specify a width 
-				   for the sake of IE/Mac. Salt to taste. */
-	/* \*/ width: auto;	/* now undo previous rule for non Macs by using 
-				   the IE Mac backslash comment hack */
-	}
-	
-* html div.rMenu-center {
-	position: relative;
-	z-index: 1;		/* IE 6 and earlier need a little help with
-				   z-indexes on centered menus */
-	}
-
-
-/* ------------------------------------------------------------------
----------- HACKS: Suckerfish w/ Form Field Support (IE 5.5 & 6) -----
------------------------------------------------------------------- */
-
-* html ul.rMenu ul {
-	display: block;
-	position: absolute;	/* ovewrite original functionality of hiding
-				   element so we can hide these off screen */
-	}
-	
-	
-* html ul.rMenu ul,
-* html ul.rMenu-hor ul,
-* html ul.sub-menu ul,
-* html ul.rMenu-ver ul,
-* html ul.rMenu-vRight ul, 
-* html ul.rMenu-hRight ul.sub-menu ul,
-* html ul.rMenu-hRight ul.rMenu-ver ul,
-* html ul.rMenu-hRight ul {
-	left: -10000px;		/* move menus off screen. note we're ovewriting
-				   the dropdown position rules that use the 
-				   LEFT property, thus all the selectors. */
-	}
-	
-	
-* html ul.rMenu li.sfhover {
-	z-index: 999;		/* not totally needed, but keep the menu 
-				   that pops above all other elements within
-				   it's parent menu system */
-	}
-	
-	
-* html ul.rMenu li.sfhover ul {
-	left: auto;		/* pull the menus that were off-screen back 
-				   onto the screen */
-	}
-	
-	
-* html ul.rMenu li.sfhover ul ul, 
-* html ul.rMenu li.sfhover ul ul ul,
-* html ul.rMenu li.sfhover ul ul ul ul,
-* html ul.rMenu li.sfhover ul ul ul ul ul,
-* html ul.rMenu li.sfhover ul ul ul ul ul ul { 
-	display: none;		/* IE/Suckerfish alternative for browsers that
-				   don't support :hover state on LI elements */
-	}
-	
-	
-* html ul.rMenu li.sfhover ul, 
-* html ul.rMenu li li.sfhover ul, 
-* html ul.rMenu li li li.sfhover ul,
-* html ul.rMenu li li li li.sfhover ul,
-* html ul.rMenu li li li li li.sfhover ul {
-	display: block;		/* ^ ditto ^ */
-	}
-
-	
-* html ul.sub-menu li.sfhover ul,
-* html ul.rMenu-ver li.sfhover ul {
-	left: 100%;		/* dropdown positioning uses the left attribute
-				   for horizontal positioning. however we can't
-				   use this property until the menu is being
-				   displayed.
-
-				   note that all ULs beneath the menu item 
-				   currently in the hover state will get this
-				   value through inheritance. however all sub-
-				   menus still won't display because
-				   two rule sets up we're setting the 
-				   DISPLAY property to none.
-				 */
-	}
-	
-	
-* html ul.rMenu-vRight li.sfhover ul, 
-* html ul.rMenu-hRight ul.sub-menu li.sfhover ul,
-* html ul.rMenu-hRight ul.rMenu-ver li.sfhover ul {
-	left: -100%;		/* ^ ditto ^ */
-	}
-	
-	
-* html ul.rMenu iframe {
-	/*filter:progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=0); */
-				/* the above rule is now applied in the 
-				   javascript used to generate the IFRAME this
-				   is applied to. it allows the CSS to validate
-				   while keeping the original functionality. */
-	position: absolute;
-	left: 0;
-	top: 0;
-	z-index: -1;		/* this is the IFRAME that's placed behind
-				   dropdown menus so that form elements don't
-				   show through the menus. they are not set
-				   programatically via javascript because
-				   doing so generates some lag in the display
-				   of the dropdown menu. */
-	}
-
-
-/* ie6 fixes */
-
-* html ul.rMenu {
-	margin-left: 1px;
-	}
-
-* html ul.rMenu ul, 
-* html ul.rMenu ul ul,
-* html ul.rMenu ul ul ul,
-* html ul.rMenu ul ul ul ul {
-	margin-left: 0;
-	}
-	
-	
-	
-	
-	
-	
 /*******************************************************************************
  * HACKS : General
  *
@@ -3077,42 +2867,20 @@ html:/* */not([lang*=""])  div.rMenu-center ul.rMenu li a:hover {
 				   of the dropdown menu. */
 }
 
-/*******************************************************************************
- * HACKS : Clearfix
- *
- * Clearfix provides a means to for an element to contain all it's floated 
- * children even if it's not normally tall enough to do so. For more information
- * on clearfix please see:
- * http://www.positioniseverything.net/easyclearing.html
- */
-.clearfix:after
-{
-    content: "."; 
-    display: block; 
-    height: 0; 
-    clear: both; 
-    visibility: hidden;
-}
-.clearfix
-{
-	min-width: 0;		/* trigger hasLayout for IE7 */
-	display: inline-block;
-	/* \*/	display: block;	/* Hide from IE Mac */
-}
-* html .clearfix
-{
-	/* \*/  height: 1%;	/* Hide from IE Mac */ 
+/* ie6 fixes */
+
+* html ul.rMenu {
+	margin-left: 1px;
 }
 
-/******************************************************************************/
-	
-	
-	
+* html ul.rMenu ul, 
+* html ul.rMenu ul ul,
+* html ul.rMenu ul ul ul,
+* html ul.rMenu ul ul ul ul {
+	margin-left: 0;
+}
 	
 <?php } ?>	
-
-
-
 
 /* ------------------------------------------------------------------
 ---------- HACKS: Clearfix & others ---------------------------------
@@ -3147,7 +2915,6 @@ Also, adding height and font-size for IE6 */
 	padding: 0;
 	margin: 0;
 	}
-
 
 
 <?php 

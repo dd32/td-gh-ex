@@ -1,36 +1,21 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php global $templateURI,  $homeURL; ?>
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
 <head>
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 <?php // if index.php or another page template (copied from index.php) was not used
 if (!isset($bfa_ata))  
-list($bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2, $bfa_ata['h_blogtitle'], $bfa_ata['h_posttitle']) = bfa_get_options();
-?>
-<?php if ( $bfa_ata['css_external'] == "External" ) { ?>
-	<link rel="stylesheet" href="<?php echo $homeURL; ?>/?bfa_ata_file=css" type="text/css" media="all" />
-<?php } ?>
+list($bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2, $bfa_ata['h_blogtitle'], $bfa_ata['h_posttitle']) = bfa_get_options(); ?>
 <?php bfa_meta_tags(); ?>
-<?php if ($bfa_ata['favicon_file'] != "") { ?>
-	<link rel="shortcut icon" href="<?php echo $templateURI; ?>/images/favicon/<?php echo $bfa_ata['favicon_file']; ?>" />
-<?php } ?>
-<?php if ( is_single() OR is_page() ) { ?>
-	<link rel="canonical" href="<?php the_permalink(); ?>" />
+<?php if ($bfa_ata['favicon_file'] != "") { ?><link rel="shortcut icon" href="<?php echo $templateURI; ?>/images/favicon/<?php echo $bfa_ata['favicon_file']; ?>" />
 <?php } ?>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
-<link rel="alternate" type="application/atom+xml" title="<?php bloginfo('name'); ?> Atom Feed" href="<?php bloginfo('atom_url'); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-<?php wp_enqueue_script( 'jquery' ); ?>
-<?php wp_head(); // moved this down in 3.5.4 ?>
+<?php if ( $bfa_ata['css_external'] == "External" ) { ?><link rel="stylesheet" href="<?php echo $homeURL; ?>/?bfa_ata_file=css" type="text/css" media="all" /><?php } ?>
 <?php if ( function_exists('wp_list_comments') AND is_singular() ) { 	wp_enqueue_script( 'comment-reply' ); } ?>
 <?php if( $bfa_ata['html_inserts_header'] != '' ) include 'bfa://html_inserts_header'; ?>
-<?php if ($bfa_ata['pngfix_selectors'] != "") { ?>
-<!--[if IE 6]>
-<script type="text/javascript">DD_roundies.addRule('<?php echo $bfa_ata['pngfix_selectors']; ?>');</script>
-<![endif]-->
-<?php } ?>
-
+<?php wp_head(); // moved this down in 3.6.1. It was higher up to prevent issues with plugins using mootools. Trying to solve this solely through functions.php/wp_head/wp_enqueue_script now ?>
 </head>
 <body <?php body_class(); ?><?php include 'bfa://html_inserts_body_tag'; ?>>
 <?php include 'bfa://html_inserts_body_top'; ?>

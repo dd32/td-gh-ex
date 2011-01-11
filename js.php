@@ -210,7 +210,7 @@ $bfa_ata['header_image_javascript'] != "0" AND $bfa_ata['crossslide_fade'] != "0
 <?php } ?>
 
 	
-	jQuery("input.button, input.Button").
+	jQuery("input.button, input.Button, input#submit").
 		mouseover(function() {
 			jQuery(this).addClass("buttonhover");
 		}).

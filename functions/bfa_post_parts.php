@@ -39,7 +39,12 @@ function bfa_post_headline($before = '<div class="post-headline">', $after = '</
 		$bfa_ata_body_title_multi = get_post_meta($post->ID, 'bfa_ata_body_title_multi', true);
 	}
 	
-	if ( (!is_single() AND !is_page()) OR $bfa_ata_display_body_title == '' ) {
+	// Since 3.6.1: Display a link to the full post if there is no post title and the post is too short
+	// for a read more link.
+	if ( get_the_title() == '' ) { ?>
+		<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link">Permalink</a><?php 
+		
+	} else if ( (!is_single() AND !is_page()) OR $bfa_ata_display_body_title == '' ) {
 		
 		echo $before; ?>
 		<h<?php echo $bfa_ata['h_posttitle']; ?>><?php 

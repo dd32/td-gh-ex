@@ -1,5 +1,5 @@
 <?php
-$bfa_ata_version = "3.6";
+$bfa_ata_version = "3.6.1";
 
 // Load translation file above
 load_theme_textdomain('atahualpa');
@@ -853,11 +853,14 @@ $homeURL = home_url();
 $isIE6 = (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE 6.') !== FALSE);
  
 if ( !is_admin() ) { 
+	
+	wp_enqueue_script('jquery');
 
 	if ($bfa_ata['pngfix_selectors'] != "" AND $isIE6 = TRUE) 
 	{
 		wp_register_script('ddroundies', $templateURI . '/js/DD_roundies.js', false, '0.0.2a' );
 		wp_enqueue_script('ddroundies');
+		add_action('wp_head', 'ddroundiesHead');
 	}
 	
 	if (strpos($bfa_ata['configure_header'],'%image')!== FALSE AND $bfa_ata['header_image_javascript'] != "0" 
@@ -865,6 +868,16 @@ if ( !is_admin() ) {
 		wp_register_script('crossslide', $templateURI . '/js/jquery.cross-slide.js', array('jquery'), '0.3.2' );
 		wp_enqueue_script('crossslide');
 	}
+}
+
+// Since 3.6.1: Add ddroundies script in head this way:
+function ddroundiesHead() {
+	global $bfa_ata;
+	echo '
+<!--[if IE 6]>
+<script type="text/javascript">DD_roundies.addRule("' . $bfa_ata['pngfix_selectors'] . '");</script>
+<![endif]-->
+';
 }
 
 // Since 3.6: Content Width

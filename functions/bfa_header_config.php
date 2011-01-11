@@ -273,7 +273,7 @@ function bfa_header_config() {
 			if ( $bfa_ata['show_search_box'] == "Yes" ) 
 			{ 
 				echo '<td valign="bottom" class="search-box" align="right"><div class="searchbox">
-					<form method="get" class="searchform" action="'; bloginfo( 'url' ); echo '/">
+					<form method="get" class="searchform" action="' . home_url() . '/">
 					<div class="searchbox-form">' . 
 						// Check for WP 2.2 which doesn't know get_search_query
 						( function_exists('get_search_query') ? '

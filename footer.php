@@ -13,7 +13,29 @@ list($bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2, $bfa_ata['
 <td id="right-inner">
 
 	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Right Inner Sidebar') ) : ?>
-	<!-- Default content here -->
+
+		<div class="widget widget_categories"><div class="widget-title">
+		<h3><?php _e('Categories','atahualpa'); ?></h3>
+		</div>
+		<ul><?php wp_list_categories('show_count=1&title_li='); ?></ul>
+		</div>
+		
+		<div class="widget widget_archive"><div class="widget-title">
+		<h3><?php _e('Archives','atahualpa'); ?></h3>
+		</div>
+		<ul><?php wp_get_archives('type=monthly'); ?></ul>
+		</div>
+
+		<div class="widget widget_text"><div class="widget-title">
+		<h3>A sample text widget</h3></div>
+		<div class="textwidget">
+		<p>Etiam pulvinar consectetur dolor sed malesuada. Ut convallis 
+		<a href="http://wordpress.org/">euismod dolor nec</a> pretium. Nunc ut tristique massa. </p>
+		<p>Nam sodales mi vitae dolor <em>ullamcorper et vulputate enim accumsan</em>. 
+		Morbi orci magna, tincidunt vitae molestie nec, molestie at mi. <strong>Nulla nulla lorem</strong>, 
+		suscipit in posuere in, interdum non magna. </p>
+		</div>
+	
 	<?php endif; ?>
 
 </td>
@@ -32,7 +54,7 @@ list($bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2, $bfa_ata['
 				'what_to_show' => 'posts',
 				'nopaging' => 0,
 				'post_status' => 'publish',
-				'caller_get_posts' => 1));
+				'ignore_sticky_posts' => 1));
 			if ($r->have_posts()) : ?>
 		<ul>
 		<?php  while ($r->have_posts()) : $r->the_post(); ?>
