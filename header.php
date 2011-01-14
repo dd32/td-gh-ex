@@ -74,7 +74,7 @@ DD_belatedPNG.fix('#navbar .nav li a, #home_btn img, .menu, #logo img, #searchsu
 		
 			<div id="logo">
 
-				<a href="<?php echo home_url(); ?>" title="<?php bloginfo('description'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="logo" /></a>
+				<a href="<?php echo home_url(); ?>" title="<?php bloginfo('description'); ?>"><?php bloginfo( 'name' ); ?></a>
 				
 			</div><!--logo end-->
 			

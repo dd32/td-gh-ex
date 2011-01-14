@@ -2,7 +2,7 @@
 Theme Name: application
 Theme URI: http://theme9.themeszen.com
 Description: A very neat and clean white business theme. The theme supports widgets. And features theme-options, threaded-comments and multi-level dropdown menu. A simple and neat typography.
-Version: 1.1
+Version: 1.2
 Author: Manish Gori
 Author URI: http://themeszen.com
 Tags: white,translation-ready,threaded-comments,light,one-column,theme-options
@@ -329,8 +329,12 @@ th {
 	margin: 25px 0px 0px 10px;
 }
 
-#logo img{
-	border: none;
+#logo a{
+	text-decoration: none;
+	color: #333;
+	font-size: 33px;
+	font-weight: bold;
+	letter-spacing: -2pt;
 }
 
 /*search*/
