@@ -1,10 +1,13 @@
 /*
 Theme Name: Adventure Journal
-Theme URI: http://www.contextureintl.com/open-source-projects/adventure-journal-wordpress-theme/
-Description: <em>Share your adventures with the world! Adventure Journal allows you to select header art, backgrounds, and a one or two column layout from the comfort of your Dashboard - no coding required! Compatible with WordPress 3.0+<em>
-Version: 1.1
+Theme URI: http://www.contextureintl.com/wordpress/adventure-journal-wordpress-theme/
+Description: Share your adventures with the world! Adventure Journal allows you to select header art, backgrounds, and a one or two column layout from the comfort of your Dashboard - no coding required! Compatible with WordPress 3.0+
 Author: Contexture International
 Author URI: http://www.contextureintl.com
+Version: 1.2
+License: GNU General Public License
+License URI: license.txt
+
 Tags: brown, tan, yellow, light, dark, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, custom-header, custom-background, custom-menu, theme-options, threaded-comments, sticky-post, holiday, photoblogging
 */
 
@@ -24,15 +27,15 @@ h1,h2,h3,h4,h5,h6, .h1, .h2,.h3,.h4,.h5,.h6{font-family:'VollkornRegular', Genev
 p{line-height:1.5em; margin-bottom:1em; }
 ul,ol{margin-bottom:1em; padding:0; }
     ul ul{padding-bottom:0px; margin-bottom:0px; }
-ol{margin-bottom:1em; }
-	ol li{list-style:decimal; }
-    ol ol li{list-style:upper-alpha; }
-	ol ol ol li{list-style:lower-roman;}
 li{margin-left:2.8em; padding:0px; margin-bottom:0.5em; }
 	ul li{list-style:square; }
     ul ul li{list-style:disc; }
 	ul ul ul li{list-style:circle;}
-	
+ol{margin-bottom:1em; }
+	ol li{list-style:decimal; }
+    ol ol li{list-style:upper-alpha; }
+	ol ol ol li{list-style:lower-roman;}
+
 table{border-collapse:collapse;border-spacing:0;border:1px solid #E7E7E7;width:100%;font-size:14px;}
 	th{padding:4px; vertical-align:top;text-align:left;}
 	td{padding:4px; vertical-align:top;text-align:left;border-top:1px solid #E7E7E7; }
@@ -155,7 +158,7 @@ a:active {}
 .opacity-50 {opacity:0.50; filter:alpha(opacity=50);}
 .opacity-75 {opacity:0.75; filter:alpha(opacity=75);}
 .opacity-25 {opacity:0.25; filter:alpha(opacity=25);}
-#attrition a {background:url("images/contexture-international-logo-white.png") no-repeat scroll center center transparent;display:block;float:right;height:44px;margin-bottom:20px;overflow:hidden;text-indent:-9999px;width:128px;}
+
 
 
 /******************** Default Wordpress Styling *********************/
@@ -194,20 +197,20 @@ a:active {}
 img.alignleft, img.alignright, img.aligncenter { margin-bottom: 12px !important; }
 
 .wp-caption {background: #EFE3D8;line-height: 18px;margin-bottom: 20px;padding: 4px;text-align: center;}
-.wp-caption img {margin: 5px 5px 0;}
+	.wp-caption img {margin: 5px 5px 0;margin-left:auto; margin-right:auto;text-align: center;display:block;}
+	.wp-caption a{text-align: center;display:block;}
 .wp-caption p.wp-caption-text {color: #888;font-size: 12px;margin: 5px;}
 .wp-smiley {margin: 0;}
 
 .gallery {margin: 0 auto 18px;}
-.gallery .gallery-item {float: left;margin-top: 0;text-align: center;width: 33%;}
-.gallery img {border: 2px solid #cfcfcf;}
-.gallery .gallery-caption {color: #888;font-size: 12px;margin: 0 0 12px;}
-.gallery dl {	margin: 0;}
-.gallery img {border: 10px solid #f1f1f1;}
-.gallery br+br {display: none;}
+	.gallery .gallery-item {float: left;margin-top: 0;text-align: center;width: 33%;}
+	.gallery img {border: 2px solid #cfcfcf;margin-left:auto;margin-right:auto;margin-bottom:6px;}
+	.gallery .gallery-caption {color: #888;font-size: 12px;margin: 0 0 0px;}
+	.gallery dl {	margin: 0;}
+	.gallery br+br {display: none;}
 .attachment img {display: block;margin: 0 auto;}
 
-#main-content img {margin: 0;height: auto;max-width: 640px;width: auto;}
+#main-content img {max-width: 640px;}
 
 .bypostauthor{ min-height:80px; }
 .bypostauthor:after { content:url(images/tape.gif); opacity:0.5; position:absolute; /*left:623px;*/ right:-18px; top:-20px; filter:alpha(opacity=60); }
@@ -242,15 +245,12 @@ img.alignleft, img.alignright, img.aligncenter { margin-bottom: 12px !important;
 /********************* Master Page *********************/
 
 body{background: url(images/mp-background-tile.jpg) center top;text-align:center;}
-#container{
-	background: url(images/mp-background-shading.png) center top;min-height:100%;
-}
+#container{background: url(images/mp-background-shading.png) center top;min-height:100%;}
 #container2 {width:980px;margin-left:auto;margin-right:auto;text-align:left;}
 .content{background-image: url(images/mp-sprite-content-bg.png);background-repeat: repeat-y;background-position: center top;}
 #header{background: url(images/mp-sprite-header-bg.png) no-repeat 0px 0px;height: 389px;text-align:center;padding-top:20px;text-align:left;}
 
 #banner{margin-left:auto;margin-right:auto;position:relative;left:25px;z-index:5;}
-
 
 #logo{position:relative;z-index:10;top:-30px;left:10px;}
 	#logo-2{background: url(images/mp-sprite-master.png) no-repeat right -226px;padding-right:70px;height:133px;position:absolute;z-index:20;}
@@ -260,6 +260,13 @@ body{background: url(images/mp-background-tile.jpg) center top;text-align:center
 	#logo table, #logo td{border:0px;padding:0px;margin:0px;text-align:left;vertical-align: middle;height:120px;width:auto;}
 #site-title{margin-bottom:-12px;}
 #site-description{margin-top:12px;}
+
+#attrition {color:#FFF;text-decoration:none;-moz-text-shadow: 1px 1px #000;-webkit-text-shadow: 1px 1px #000;text-shadow: 1px 1px #000;font-size:12px;float:left;}
+#attrition a{color:#FFF;}
+#attrition #contexture {background:url("images/contexture-international-logo-white.png") no-repeat scroll center center transparent;display:block;height:36px;margin-bottom:20px;overflow:hidden;text-indent:-9999px;width:138px;padding-top:6px;}
+
+#site-generator{float:right;font-size:12px;}	
+	#site-generator a{color:#FFF;text-decoration:none;-moz-text-shadow: 1px 1px #000;-webkit-text-shadow: 1px 1px #000;text-shadow: 1px 1px #000;}
 	
 /********************* Navigation *********************/
 
@@ -349,13 +356,15 @@ h1 a:hover, h2 a:hover, h3 a:hover{text-decoration:underline;}
 
 /********************* Comments Section *********************/
 
-#commentlist{}
-	#commentlist > li{margin-left: 0px;list-style-type: none;clear:both;padding-bottom:20px;position:relative;}
-	#commentlist .comment-body{}
-	#commentlist .unapproved{font-style: italic;color: #F00;}
-	#commentlist .comment-meta{float:left;width:75px;font-size:0.8em;font-style: italic;padding-bottom:20px;}
-		#commentlist .comment-meta img{margin-bottom:5px;}
-		#commentlist .comment-body{margin-left:85px;padding-bottom:10px;}
+.commentlist{}
+	.commentlist > li{margin-left: 0px;list-style-type: none;clear:both;padding-bottom:20px;position:relative;margin-bottom:10px;}
+	.commentlist .comment-body{}
+	.commentlist .unapproved{font-style: italic;color: #F00;}
+	.commentlist .comment-meta{float:left;width:75px;font-size:0.8em;font-style: italic;padding-bottom:20px;}
+		.commentlist .comment-meta img{margin-bottom:5px;}
+		.commentlist .comment-date a{text-decoration:none;}
+		.commentlist .comment-date a:hover{text-decoration:underline;}
+		.commentlist .comment-body{margin-left:85px;padding-bottom:10px;}
 
 .comments-paginate{padding-bottom:10px;padding-top:10px;font-size:0.9em;}
 	.comments-paginate a{color: #000;background-color: #F4F4F4;text-decoration:none;padding-top: 2px;padding-right: 5px;padding-bottom: 2px;padding-left: 5px;}

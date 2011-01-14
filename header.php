@@ -22,10 +22,8 @@
             if ( $paged >= 2 || $page >= 2 )
                     echo ' | ' . sprintf( __( 'Page %s', 'adventurejournal' ), max( $paged, $page ) );
     ?></title>
-    <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta name="author" content="Designed by Contexture International | http://www.contextureintl.com" />
     <link rel="profile" href="http://gmpg.org/xfn/11" />
-    <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
     <?php
             /* We add some JavaScript to pages with the comment form
@@ -42,45 +40,32 @@
             wp_head();
     ?>
 </head>
-<body <?php echo ctx_aj_get_relationships($post->ID); ?>>
-
-    <!--
-    <table id="ctx-lightbox">
-        <tr>
-            <td>
-                <div class="imagebox">
-                    <img src="" alt="" />
-                    <p></p>
+<body <?php body_class(); ?>>
+    <div <?php echo ctx_aj_get_relationships($post->ID); ?>>
+        <div id="container">
+          <div id="container2">
+            <div class="nav-horz nav-main" id="menu">
+              <div class="nav-main-left">
+                <div class="nav-main-right">
+                    <?php wp_nav_menu( array( 'menu' => 'primary-menu' ) ); ?>
                 </div>
-            </td>
-        </tr>
-    </table>
-    -->
-
-<div id="container" <?php body_class(); ?>>
-  <div id="container2">
-    <div class="nav-horz nav-main" id="menu">
-      <div class="nav-main-left">
-        <div class="nav-main-right">
- 			<?php wp_nav_menu( array( 'menu' => 'primary-menu' ) ); ?>
- 		</div>
-      </div>
-      <div class="nav-main-bottom"></div>
-    </div>
-    <div class="clear"></div>
-    <!-- end header -->
-    <div id="header">
-      <div id="logo">
-        <div id="logo-2">
-          <div id="logo-3">
-          
-              <table border="0" cellspacing="0" cellpadding="0"><tr><td>
-              <div id="site-title"><a href="<?php echo home_url( '/' ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
-              <?php $sitedescr = get_bloginfo('description','display'); echo (empty($sitedescr)) ? '' : sprintf('<div id="site-description">%s</div>',$sitedescr); ?>
-              </td></tr></table>
-
-          </div>
-        </div>
-      </div>
-      <div id="banner"><img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>"/></div>
-    </div>
+              </div>
+              <div class="nav-main-bottom"></div>
+            </div>
+            <div class="clear"></div>
+            <!-- end header -->
+            <div id="header">
+              <div id="logo">
+                <div id="logo-2">
+                  <div id="logo-3">
+                  
+                      <table border="0" cellspacing="0" cellpadding="0"><tr><td>
+                      <div id="site-title"><a href="<?php echo home_url( '/' ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
+                      <?php $sitedescr = get_bloginfo('description','display'); echo (empty($sitedescr)) ? '' : sprintf('<div id="site-description">%s</div>',$sitedescr); ?>
+                      </td></tr></table>
+        
+                  </div>
+                </div>
+              </div>
+              <div id="banner"><img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>"/></div>
+            </div>

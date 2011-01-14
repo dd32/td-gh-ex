@@ -26,7 +26,7 @@ add_action('admin_init','ctx_aj_help_theme_options');
  * Add this theme's scripts and stylesheets
  ************************************************************************************************/
 //Get the URL of the active theme directory
-$themeDir = get_bloginfo('template_directory');
+$themeDir = get_template_directory_uri();
 
 //Add these files to the core website but NOT the Admin Section
 if(!is_admin()) {
@@ -291,10 +291,15 @@ function ctx_aj_get_relationships($postID=''){
 
 
 /************************************************************************************************
- * This snippet displays a link in the wp_footer section with a link back back to the theme's creator
+ * This snippet displays a link in the wp_footer section with a link back back to the theme's creator and WordPress
  ************************************************************************************************/
 function ctx_attribution() {
-    echo ('<div id="attrition"><a href="http://www.contextureintl.com">Proudly Designed By Contexture International</a></div>');
+	?>
+	<div id="site-generator">
+		<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'adventurejournal' ) ); ?>" title="<?php esc_attr_e( 'Simply the best CMS & blog platform out there', 'adventurejournal' ); ?>" rel="generator"><?php printf( __( 'Powered by %s', 'adventurejournal' ), 'WordPress' ); ?></a>
+		</div>
+    <div id="attrition"><a href="http://www.contextureintl.com/wordpress/adventure-journal-wordpress-theme/">Adventure Journal</a> is Proudly Designed By <a href="http://www.contextureintl.com" id="contexture">Contexture International</a></div>
+    <?php
 }
 
 
@@ -312,7 +317,7 @@ function ctx_aj_get_comments($comment, $args, $depth) {
 	<li <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
         <div class="comment-meta">
             <?php echo get_avatar( $comment, 64 ); ?>
-            <span class="comment-date"><a href="#comment-<?php comment_ID() ?>" title="Permanent Link"><?php comment_date() ?></a></span><br />
+            <span class="comment-date"><a href="#comment-<?php comment_ID() ?>" title="Permanent Link"><?php comment_date('F j <br>Y') ?></a></span><br />
         </div>
         <div class="comment-body">
             <?php edit_comment_link(__("Edit"), ''); ?>
@@ -435,5 +440,6 @@ function ctx_aj_help_theme_options(){
     //Add contextual help to this page
     add_contextual_help( 'appearance_page_theme-options', __('<p>Adventure Journal supports different page layouts without any additional coding. Simply select the layout you want to use on your site and click Save Changes.') );
 }
+
 
 ?>

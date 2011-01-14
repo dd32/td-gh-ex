@@ -3,77 +3,90 @@
  * @package WordPress
  * @subpackage Adventure_Journal
  */
-if ( post_password_required() ) : ?>
-<p><?php _e('Enter your password to view comments.'); ?></p>
-<?php return; endif; ?>
+?>
 
-<h2 id="comments"><?php comments_number(__('No Comments'), __('1 Comment'), __('% Comments')); ?>
-<?php if ( comments_open() ) : ?>
-	<a href="#postcomment" title="<?php _e("Leave a comment"); ?>">&raquo;</a>
-<?php endif; ?>
-</h2>
-<?php if ( have_comments() ) : ?>
+			<div id="comments">
+<?php if ( post_password_required() ) : ?>
+				<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'twentyten' ); ?></p>
+			</div><!-- #comments -->
+<?php
+		/* Stop the rest of comments.php from being processed,
+		 * but don't kill the script entirely -- we still have
+		 * to fully load the template.
+		 */
+		return;
+	endif;
+	
+if ( have_comments() ) : ?>
+			<h3 id="comments-title"><?php
+			printf( _n( 'One Response to %2$s', '%1$s Responses to %2$s', get_comments_number(), 'twentyten' ),
+			number_format_i18n( get_comments_number() ), '<em>' . get_the_title() . '</em>' );
+			?></h3>
 
-<div class="comments-paginate">
-	<?php paginate_comments_links(); ?>
-</div>
-<ol id="commentlist">
-	<?php wp_list_comments('type=comment&callback=ctx_aj_get_comments'); ?>
-</ol>
-<div class="clear"></div>
-<div class="comments-paginate">
-	<?php paginate_comments_links(); ?>
-</div>
+<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+			<div class="navigation">
+				<div class="nav-previous"><?php previous_comments_link( __( '<span class="meta-nav">&larr;</span> Older Comments', 'twentyten' ) ); ?></div>
+				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'twentyten' ) ); ?></div>
+			</div> <!-- .navigation -->
+<?php endif; // check for comment navigation ?>
 
-<?php else : // If there are no comments yet ?>
-	<p><?php _e('No comments yet.'); ?></p>
-<?php endif; ?>
+			<ol class="commentlist">
+				<?php
+					/* Loop through and list the comments. Tell wp_list_comments()
+					 * to use twentyten_comment() to format the comments.
+					 * If you want to overload this in a child theme then you can
+					 * define twentyten_comment() and that will be used instead.
+					 * See twentyten_comment() in twentyten/functions.php for more.
+					 */
+					wp_list_comments('type=comment&callback=ctx_aj_get_comments');
+				?>
+			</ol>
 
-<p><?php post_comments_feed_link(__('<abbr title="Really Simple Syndication">RSS</abbr> feed for comments on this post.')); ?>
-<?php if ( pings_open() ) : ?>
-	<a href="<?php trackback_url() ?>" rel="trackback"><?php _e('TrackBack <abbr title="Universal Resource Locator">URL</abbr>'); ?></a>
-<?php endif; ?>
-</p>
+<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+			<div class="navigation">
+				<div class="nav-previous"><?php previous_comments_link( __( '<span class="meta-nav">&larr;</span> Older Comments', 'twentyten' ) ); ?></div>
+				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'twentyten' ) ); ?></div>
+			</div><!-- .navigation -->
+<?php endif; // check for comment navigation ?>
 
-<?php if ( comments_open() ) : ?>
-<h2 id="postcomment"><?php _e('Leave a comment'); ?></h2>
+<?php else : // or, if we don't have comments:
 
-<?php if ( get_option('comment_registration') && !is_user_logged_in() ) : ?>
-<p><?php printf(__('You must be <a href="%s">logged in</a> to post a comment.'), wp_login_url( get_permalink() ) );?></p>
-<?php else : ?>
+	/* If there are no comments and comments are closed,
+	 * let's leave a little note, shall we?
+	 */
+	if ( ! comments_open() ) :
+?>
+	<p class="nocomments"><?php _e( 'Comments are closed.', 'twentyten' ); ?></p>
+<?php endif; // end ! comments_open() ?>
 
-<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
+<?php endif; // end have_comments() ?>
 
-<?php if ( is_user_logged_in() ) : ?>
+<?php 
+$fields =  array(
+	'author' => '<p class="comment-form-author">' .
+	            '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' />  '. '<label for="author">' . __( 'Name' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ).' </p>',
+	'email'  => '<p class="comment-form-email">' . 
+	            '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' />  '. __( 'Email' ) . '<label for="email"></label> ' . ( $req ? '<span class="required">*</span>' : '' ) .'</p>',
+	'url'    => '<p class="comment-form-url">' .
+	            '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" />  <label for="url">' . __( 'Website' ) . '</label></p>',
+);
+$defaults = array(
+	'fields'               => apply_filters( 'comment_form_default_fields', $fields ),
+	'comment_field'        => '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>',
+	'must_log_in'          => '<p class="must-log-in">' .  sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
+	'logged_in_as'         => '<p class="logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
+	'comment_notes_before' => '<p class="comment-notes">' . __( 'Your email address will not be published.' ) . ( $req ? $required_text : '' ) . '</p>',
+	'comment_notes_after'  => '<p class="form-allowed-tags">' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s' ), ' <code>' . allowed_tags() . '</code>' ) . '</p>',
+	'id_form'              => 'commentform',
+	'id_submit'            => 'submit',
+	'title_reply'          => __( 'Leave a Reply' ),
+	'title_reply_to'       => __( 'Leave a Reply to %s' ),
+	'cancel_reply_link'    => __( 'Cancel reply' ),
+	'label_submit'         => __( 'Post Comment' )
+);
 
-<p><?php printf(__('Logged in as %s.'), '<a href="'.get_option('siteurl').'/wp-admin/profile.php">'.$user_identity.'</a>'); ?> <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php _e('Log out of this account') ?>"><?php _e('Log out &raquo;'); ?></a></p>
 
-<?php else : ?>
 
-<p><input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" size="22" tabindex="1" />
-<label for="author"><small><?php _e('Name'); ?> <?php if ($req) _e('(required)'); ?></small></label></p>
+comment_form($defaults); ?>
 
-<p><input type="text" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" size="22" tabindex="2" />
-<label for="email"><small><?php _e('Mail (will not be published)');?> <?php if ($req) _e('(required)'); ?></small></label></p>
-
-<p><input type="text" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" size="22" tabindex="3" />
-<label for="url"><small><?php _e('Website'); ?></small></label></p>
-
-<?php endif; ?>
-
-<!--<p><small><strong>XHTML:</strong> <?php printf(__('You can use these tags: %s'), allowed_tags()); ?></small></p>-->
-
-<p><textarea name="comment" id="comment" cols="58" rows="10" tabindex="4"></textarea></p>
-
-<p><input name="submit" type="submit" id="submit" tabindex="5" value="<?php esc_attr_e('Submit Comment'); ?>" />
-<input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
-</p>
-<?php do_action('comment_form', $post->ID); ?>
-
-</form>
-
-<?php endif; // If registration required and not logged in ?>
-
-<?php else : // Comments are closed ?>
-<p><?php _e('Sorry, the comment form is closed at this time.'); ?></p>
-<?php endif; ?>
+</div><!-- #comments -->
