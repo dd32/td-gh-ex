@@ -95,9 +95,9 @@ endif;
   
   
 
- <?php } if ($options['abs_content_font'] == "comic") { ?>
+ <?php } if ($options['abs_content_font'] == "calibri") { ?>
 
-  <style type="text/css">body, input, textarea {font-family: Comic Sans, Comic Sans MS, cursive;}</style>
+  <style type="text/css">body, input, textarea {font-family:Calibri,Segoe UI,Myriad Pro,Myriad,Trebuchet MS,Helvetica,Arial,sans-serif;}</style>
   
   
  <?php } if ($options['abs_title_scheme'] == "blue") { ?>
@@ -232,15 +232,6 @@ display:block !important; }
 
   <?php } ?>
   
-    <?php if ($options['abs_header_slider'] == "disable" || $options['abs_header_slider'] == "" || $options['abs_header_slider'] == "one") { ?>
-
-<?php } else { ?>
-
-<script type='text/javascript' src="<?php echo get_template_directory_uri(); ?>/js/carousel.js"></script>  
-
-<?php } ?>
-
-
 <!--[if IE 6]><script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/ie6.js"></script><![endif]-->
 <!--[if IE 6]><link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.ie6.php" type="text/css" media="screen" /><![endif]-->
 

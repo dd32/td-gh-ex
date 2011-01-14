@@ -1,6 +1,7 @@
 <?php 
 add_action( 'admin_init', 'theme_options_init' );
 add_action( 'admin_menu', 'theme_options_add_page' ); 
+add_action( 'init', 'absolum_media' ); 
 
 
 function theme_options_init() {
@@ -8,9 +9,27 @@ function theme_options_init() {
   wp_register_style('mycss', WP_CONTENT_URL . '/themes/absolum/css/theme-options.css');
 }
 
- function absolum_styles() {
+
+function absolum_styles() {
        wp_enqueue_style('mycss');
    }
+   
+   
+function absolum_media() {
+	if( is_admin() ) return;
+	wp_enqueue_script( 'hoverIntent' );  
+  wp_enqueue_script( 'my-jquery', WP_CONTENT_URL . '/themes/absolum/js/jquery.js' );
+  
+$options = get_option('absolum');  
+if ($options['abs_header_slider'] == "disable" || $options['abs_header_slider'] == "" || $options['abs_header_slider'] == "one") { 
+
+ } else { 
+  
+  wp_enqueue_script( 'carousel', WP_CONTENT_URL . '/themes/absolum/js/carousel.js' );
+  
+  }   
+}   
+ 
 
 $themename = "Absolum";
 $template_url = get_template_directory_uri();
@@ -90,8 +109,8 @@ $select_content_font = array(
 		'label' => __( 'Courier New' )
 	),
 	'5' => array(
-		'value' =>	'comic',
-		'label' => __( 'Comic Sans' )
+		'value' =>	'calibri',
+		'label' => __( 'Calibri' )
 	)
 );
 
@@ -302,7 +321,7 @@ array(  "name" => "Twitter",
       
 array(  "name" => "Content font",
         "desc" => "Examples: <span style='font-style:normal;font-size:23px;font-weight:bold;letter-spacing:-1px;'><span style='font-family:Trebuchet MS;'>Trebuchet MS</span> <span style='font-family:Segoe UI,Calibri,Myriad Pro,Myriad,Trebuchet MS,Helvetica,Arial,sans-serif;'>Segoe UI</span> <span style='font-family:arial;'>Arial</span>
-        <span style='font-family:times new roman;'>Times</span> <span style='font-family:courier new;'>Courier New</span> <span style='font-family:Comic Sans MS;'>Comic Sans</span>
+        <span style='font-family:times new roman;'>Times</span> <span style='font-family:courier new;'>Courier New</span> <span style='font-family:Calibri,Segoe UI,Myriad Pro,Myriad,Trebuchet MS,Helvetica,Arial,sans-serif;'>Calibri</span>
         </span>",
         "id" => $shortname."_content_font",
         "type" => "select2",
@@ -386,7 +405,6 @@ if( isset( $_REQUEST['reset'] )) {
 				<input type="submit" class="button-primary" value="<?php _e( 'Save Settings' ); ?>" />   
 			</p>  
       
-    <?php available_update(); ?>
     
       
 
@@ -992,29 +1010,6 @@ function absolum_widgets_init() {
 	) );
 }
 
-function available_update() {
-  static $themes_update;
-  $theme = get_theme("absolum");
-  if (!isset($themes_update)) $themes_update = get_transient('update_themes');
-
-  if (is_object($theme) && isset($theme->stylesheet)) $stylesheet = $theme->stylesheet;
-  elseif (is_array($theme) && isset($theme['Stylesheet'])) $stylesheet = $theme['Stylesheet'];
-  else return;
-
-  if (isset($themes_update->response[$stylesheet])):
-    $update = $themes_update->response[$stylesheet];
-    $theme_name = is_object($theme) ? $theme->name : (is_array($theme) ? $theme['Name'] : '');
-    $details_url = add_query_arg(array('TB_iframe' => 'true', 'width' => 1024, 'height' => 800), $update['url']);
-    $update_url = wp_nonce_url('update.php?action=upgrade-theme&amp;theme='.urlencode($stylesheet), 'upgrade-theme_'.$stylesheet);
-    echo '<div class="updated fade below-h2" style="float:left;"><p>';
-    if (!current_user_can('update_themes') || empty($update->package))
-      printf(__('There is a new version of %1$s available. <a href="%2$s" class="thickbox" title="%1$s">View version %3$s Details</a>.'), $theme_name, $details_url, $update['new_version']);
-    else printf(__('There is a new version of %1$s available. <a href="%2$s" class="thickbox" title="%1$s">View version %3$s Details</a> or <a href="%4$s" >upgrade automatically</a>.'), $theme_name, $details_url, $update['new_version'], $update_url);
-    echo '</p></div>';
-  endif;
-}
-
-
 /** Register sidebars by running absolum_widgets_init() on the widgets_init hook. */
 add_action( 'widgets_init', 'absolum_widgets_init' );
 
@@ -1022,7 +1017,7 @@ add_action( 'widgets_init', 'absolum_widgets_init' );
 add_action('wp_footer', 'absolum_credits');
 
 function absolum_credits( ) {
-	$credits = '<div id="site-info"><a href="'. home_url() .'">'. get_bloginfo( 'name' ) .'</a></div><div id="site-generator"><a href="http://theme4press.com/absolum/">Absolum</a> theme by Theme4Press&nbsp;&nbsp;&bull;&nbsp;&nbsp;Powered by <a rel="generator" title="Semantic Personal Publishing Platform" href="http://wordpress.org">WordPress</a></div>';
+	$credits = '<div id="site-info"><a href="'. home_url() .'">'. get_bloginfo( 'name' ) .'</a></div><div id="site-generator">Absolum theme by <a href="http://blogatize.net/">Blogatize</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;Powered by <a rel="generator" title="Semantic Personal Publishing Platform" href="http://wordpress.org">WordPress</a></div>';
 	echo apply_filters( 'absolum_credits', (string) $credits );
 }
 
@@ -1036,10 +1031,11 @@ add_action( 'widgets_init', 'absolum_remove_recent_comments_style' );
 if ( ! function_exists( 'absolum_posted_on' ) ) :
 
 function absolum_posted_on() {
-	printf( __( '<span class="%1$s">Posted on</span> %2$s <span class="meta-sep">by</span> %3$s', 'absolum' ),
-		'meta-prep meta-prep-author',
+	printf( __( '<a href="%1$s"><span class="%2$s">Posted on</span> %3$s</a> <span class="meta-sep">by</span> %4$s', 'absolum' ),
+		post_permalink(),
+    'meta-prep meta-prep-author',        
 		sprintf( '<span class="entry-date">%3$s</span>',
-			get_permalink(),
+      get_permalink(), 
 			esc_attr( get_the_time() ),
 			get_the_date()
 		),
