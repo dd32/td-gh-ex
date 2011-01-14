@@ -62,30 +62,18 @@ if ( have_comments() ) : ?>
 <?php endif; // end have_comments() ?>
 
 <?php 
+
+//Change the comments form so that the labels are to the right of the fields
 $fields =  array(
 	'author' => '<p class="comment-form-author">' .
-	            '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' />  '. '<label for="author">' . __( 'Name' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ).' </p>',
+	            '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . ' />  '. '<label for="author">' . __( 'Name' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ).' </p>',
 	'email'  => '<p class="comment-form-email">' . 
-	            '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' />  '. __( 'Email' ) . '<label for="email"></label> ' . ( $req ? '<span class="required">*</span>' : '' ) .'</p>',
+	            '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . ' />  '. __( 'Email' ) . '<label for="email"></label> ' . ( $req ? '<span class="required">*</span>' : '' ) .'</p>',
 	'url'    => '<p class="comment-form-url">' .
-	            '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" />  <label for="url">' . __( 'Website' ) . '</label></p>',
-);
-$defaults = array(
-	'fields'               => apply_filters( 'comment_form_default_fields', $fields ),
-	'comment_field'        => '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>',
-	'must_log_in'          => '<p class="must-log-in">' .  sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
-	'logged_in_as'         => '<p class="logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
-	'comment_notes_before' => '<p class="comment-notes">' . __( 'Your email address will not be published.' ) . ( $req ? $required_text : '' ) . '</p>',
-	'comment_notes_after'  => '<p class="form-allowed-tags">' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s' ), ' <code>' . allowed_tags() . '</code>' ) . '</p>',
-	'id_form'              => 'commentform',
-	'id_submit'            => 'submit',
-	'title_reply'          => __( 'Leave a Reply' ),
-	'title_reply_to'       => __( 'Leave a Reply to %s' ),
-	'cancel_reply_link'    => __( 'Cancel reply' ),
-	'label_submit'         => __( 'Post Comment' )
+	            '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" />  <label for="url">' . __( 'Website' ) . '</label></p>'
 );
 
-
+$defaults = array('fields'  => apply_filters( 'comment_form_default_fields', $fields ));
 
 comment_form($defaults); ?>
 

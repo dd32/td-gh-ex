@@ -274,12 +274,14 @@ function ctx_aj_get_relationships($postID=''){
         // Construct the class name from the first part of the URI only.
         $body_class = str_replace('/',' page-', $uri_path);
 
-        //Generates an array of this pages parents based on the variable passed in the function
+        //Generate an array of this pages parents based on the variable passed in the function
         $myAncestors = get_post_ancestors($postID);
+        
         //Grab the top most parent's ID out of the array
-        $ancestor = $myAncestors[count($myAncestors)-1];
+        $ancestor = (count($myAncestors)>0) ? $myAncestors[(count($myAncestors)-1)] : 0;
+        
         //If the current page IS a top level parent then grab it's own ID since it would otherwise be blank
-        if($ancestor == ""){$ancestor = $postID;}
+        if( empty($ancestor) ){$ancestor = $postID;}
 
     }
     //Prefix body classes with "page-"
@@ -290,9 +292,9 @@ function ctx_aj_get_relationships($postID=''){
 }
 
 
-/************************************************************************************************
- * This snippet displays a link in the wp_footer section with a link back back to the theme's creator and WordPress
- ************************************************************************************************/
+/**
+ * This snippet echos/displays a link in the wp_footer section with a link back back to the theme's creator and WordPress
+ */
 function ctx_attribution() {
 	?>
 	<div id="site-generator">
