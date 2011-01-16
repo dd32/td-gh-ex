@@ -203,8 +203,6 @@ endif;
 
 <?php } ?>
 
-<script type='text/javascript' src="<?php echo get_template_directory_uri(); ?>/js/jquery-min.js"></script>  
-
 
 <?php if ($options['abs_header_slider'] == "disable" || $options['abs_header_slider'] == "") { ?>
 
