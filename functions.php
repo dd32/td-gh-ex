@@ -18,7 +18,6 @@ function absolum_styles() {
 function absolum_media() {
 	if( is_admin() ) return;
 	wp_enqueue_script( 'hoverIntent' );  
-  wp_enqueue_script( 'my-jquery', WP_CONTENT_URL . '/themes/absolum/js/jquery.js' );
   
 $options = get_option('absolum');  
 if ($options['abs_header_slider'] == "disable" || $options['abs_header_slider'] == "" || $options['abs_header_slider'] == "one") { 
