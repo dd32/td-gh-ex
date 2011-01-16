@@ -66,7 +66,7 @@
         add_action("admin_head","header_image_alert");
     }
 
-    if('/'.$_GET['page'] == __FILE__){
+    if(isset($_GET['page']) and '/'.$_GET['page'] == __FILE__){
         add_action("admin_head","jquery_toggle_action");
     }
 
@@ -91,13 +91,22 @@
     add_theme_support( 'automatic-feed-links' );
 
 
+    /**
+     * embed css , javascript , meta from custom field
+     *
+     * field name css, javascript, meta
+     *
+     *
+     */
+
+    add_filter("wp_head","tmn_embed_meta",'99');
 
     // custom content_width
     /*When the value is specified for this variable,
     it is not ..width of the page.. revokable from the management screen. */
 
-    $page_width = '';
-    $content_width = '';
+    // $page_width = '';
+   // $content_width = '';
 
 
 
@@ -517,7 +526,7 @@ if (!function_exists('raindrops_help')) {
 
     if(TMN_TABLE_TITLE == $title){
 
-$result = "<h2>".__('Raindrops Another Settings').'</h2>';
+$result = "<h2 class=\"h2\">".__('Raindrops Another Settings').'</h2>';
 
 
 $result .= "<dl><dt><strong>".__('When you do not want to use the automatic color setting','Raindrops').'</strong></dt>';
@@ -540,9 +549,11 @@ $result .= "<p>".sprintf(__('WEBSite:<a href="%1$s">%2$s</a>'),'http://www.tenma
     }
 
 }
-    add_filter('contextual_help','raindrops_edit_help');
 
-if (!function_exists('raindrops_edit_help')) {
+if (TMN_USE_AUTO_COLOR == true){
+    add_filter('contextual_help','raindrops_edit_help');
+}
+if (!function_exists('raindrops_edit_help') and TMN_USE_AUTO_COLOR == true) {
 
 
     function raindrops_edit_help($text){
@@ -551,7 +562,7 @@ if (!function_exists('raindrops_edit_help')) {
 
     if(isset($post_type_object) and ($title == $post_type_object->labels->add_new_item or $title == $post_type_object->labels->edit_item)){
 
-$result = "<h2>".__('Tips',"Raindrops").'</h2>';
+$result = "<h2 class=\"h2\">".__('Tips',"Raindrops").'</h2>';
 $result .= '<p>'.__('If Raindrops Options panel is opened, and the reference color is set, this arrangement of color is changed at once.',"Raindrops")."</p>";
 $result .= "<dl><dt><h3>".__('Dinamic Color Class','Raindrops').'</strong></h3>';
 $result .= '<dd><table><tr>
@@ -690,7 +701,7 @@ class tmn_menu_create {
 
     echo '<div class="wrap"><div id="title-raindrops-header" style="height:100px">';
     echo '<div id="icon-options-general" class="icon32"><br></div>';
-    echo '<h2>Raindrops theme Settings</h2>';
+    echo '<h2 class="h2">Raindrops theme Settings</h2>';
     echo "<p>Saved Database table name:<strong>".TMN_PLUGIN_TABLE."</strong></p></div>";
     echo '<div style="clear:both;margin:2em;"><button id="showAll" class="button">'.__("Show All", "Raindrops").'</button>&nbsp;&nbsp;<button id="hideAll" class="button">'.__("Hide All", "Raindrops").'</button></div>';
     if(isset($_POST) and !empty($_POST)){
@@ -732,54 +743,55 @@ $lines = "";
 
 
 
-
+$i = 0;
+$accesskey = array("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z");
         foreach($results as $key=>$result){
 $excerpt = "";
         switch($result->option_name){
 
         case("raindrops_col_width"):
 $table = "<table  class=\"raindrops-col-width widefat post fixed\" cellspacing=\"0\" style=\"margin-left:2em;width:90%;\">";
-        $excerpt = '<h3 id="raindrops-col-width" style="position:relative;top:-0.3em;padding-bottom:0.6em;text-indent:1em;cursor:auto;background:none;">'.__('Width of Column Setting','Raindrops').'</h3>';
+        $excerpt = '<h3 title="Setting about raindrops col width"  id="raindrops-col-width" style="position:relative;top:-0.3em;padding-bottom:0.6em;text-indent:1em;cursor:auto;background:none;">'.__('Width of Column Setting','Raindrops').'</h3>';
         break;
         case("raindrops_page_width"):
 $table = "<table class=\"raindrops-page-width widefat post fixed\" cellspacing=\"0\" style=\"margin-left:2em;width:90%;\">";
-        $excerpt = '<h3 id="raindrops-page-width"style="position:relative;top:-0.3em;padding-bottom:0.6em;text-indent:1em;cursor:auto;background:none;">'.__('Width of page Setting','Raindrops').'</h3>';
+        $excerpt = '<h3  title="Setting about raindrops page width" id="raindrops-page-width"style="position:relative;top:-0.3em;padding-bottom:0.6em;text-indent:1em;cursor:auto;background:none;">'.__('Width of page Setting','Raindrops').'</h3>';
 
 
         break;
         case("raindrops_right_sidebar_width_percent"):
 $table = "<table class=\"raindrops-right-sidebar-width-percent widefat post fixed\" cellspacing=\"0\" style=\"margin-left:2em;width:90%;\">";
-        $excerpt = '<h3 id="raindrops-right-sidebar-width-percent" style="position:relative;top:-0.3em;padding-bottom:0.6em;text-indent:1em;cursor:auto;background:none;">'.__('Ratio to text when extra sidebar is displayed Setting','Raindrops').'</h3>';
+        $excerpt = '<h3 title="Setting about raindrops right sidebar width_percent" id="raindrops-right-sidebar-width-percent" style="position:relative;top:-0.3em;padding-bottom:0.6em;text-indent:1em;cursor:auto;background:none;">'.__('Ratio to text when extra sidebar is displayed Setting','Raindrops').'</h3>';
 
         break;
         case("raindrops_show_right_sidebar"):
 $table = "<table class=\"raindrops-show-right-sidebar widefat post fixed\" cellspacing=\"0\" style=\"margin-left:2em;width:90%;\">";
-        $excerpt = '<h3 id="raindrops-show-right-sidebar" style="position:relative;top:-0.3em;padding-bottom:0.6em;text-indent:1em;cursor:auto;background:none;">'.__('Display of extra sidebar Setting','Raindrops').'</h3>';
+        $excerpt = '<h3 title="Setting about raindrops_show_right_sidebar" id="raindrops-show-right-sidebar" style="position:relative;top:-0.3em;padding-bottom:0.6em;text-indent:1em;cursor:auto;background:none;">'.__('Display of extra sidebar Setting','Raindrops').'</h3>';
 
 
         break;
         case("raindrops_footer_color"):
 $table = "<table class=\"raindrops-footer-color widefat post fixed\" cellspacing=\"0\" style=\"margin-left:2em;width:90%;\">";
-        $excerpt = '<h3 id="raindrops-footer-color" style="position:relative;top:-0.3em;padding-bottom:0.6em;text-indent:1em;cursor:auto;background:none;">'.__('Footer Fonts Color Setting','Raindrops').'</h3>';
+        $excerpt = '<h3 title="Setting about raindrops footer color" id="raindrops-footer-color" style="position:relative;top:-0.3em;padding-bottom:0.6em;text-indent:1em;cursor:auto;background:none;">'.__('Footer Fonts Color Setting','Raindrops').'</h3>';
 
 
         break;
         case("raindrops_default_fonts_color"):
 $table = "<table class=\"raindrops-default-fonts-color widefat post fixed\" cellspacing=\"0\" style=\"margin-left:2em;width:90%;\">";
-        $excerpt = '<h3 id="raindrops-default-fonts-color" style="position:relative;top:-0.3em;padding-bottom:0.6em;text-indent:1em;cursor:auto;background:none;">'.__('Default Fonts Color Setting','Raindrops').'</h3>';
+        $excerpt = '<h3 title="Setting about raindrops_default_fonts_color" id="raindrops-default-fonts-color" style="position:relative;top:-0.3em;padding-bottom:0.6em;text-indent:1em;cursor:auto;background:none;">'.__('Default Fonts Color Setting','Raindrops').'</h3>';
 
 
         break;
         case("raindrops_col_width"):
 $table = "<table class=\"raindrops-col-width widefat post fixed\" cellspacing=\"0\" style=\"margin-left:2em;width:90%;\">";
-        $excerpt = '<h3 id="raindrops-col-width" style="position:relative;top:-0.3em;padding-bottom:0.6em;text-indent:1em;cursor:auto;background:none;">'.__('Width of Column Setting','Raindrops').'</h3>';
+        $excerpt = '<h3 title="Setting about raindrops_col_width" id="raindrops-col-width" style="position:relative;top:-0.3em;padding-bottom:0.6em;text-indent:1em;cursor:auto;background:none;">'.__('Width of Column Setting','Raindrops').'</h3>';
 
 
         break;
 
         case("raindrops_base_color"):
 $table = "<table class=\"raindrops-base-color widefat post fixed\" cellspacing=\"0\" style=\"margin-left:2em;width:90%;\">";
-        $excerpt = '<h3 id="raindrops-base-color" style="position:relative;top:-0.3em;padding-bottom:0.6em;text-indent:1em;cursor: auto;background:none;">'.__('Base color Setting','Raindrops').'</h3>';
+        $excerpt = '<h3 title="Setting about raindrops base color" id="raindrops-base-color" style="position:relative;top:-0.3em;padding-bottom:0.6em;text-indent:1em;cursor: auto;background:none;">'.__('Base color Setting','Raindrops').'</h3>';
         $excerpt .= '<p class="rd-excerpt">'.__('The reference color of an automatic arrangement of color is decided.','Raindrops').'</p>';
 
         $excerpt .= '<div style="border:1px solild #999;padding:2em;">'.__('If it wants you other arrangement of color sets ..you.., themes/functions.php is opened, and it is ..value of const COLOR_SCHEME.. revokable. In default, color_en or color_en_140 can be set. ','Raindrops').'</div>';
@@ -787,14 +799,14 @@ $table = "<table class=\"raindrops-base-color widefat post fixed\" cellspacing=\
         break;
         case("raindrops_style_type"):
 $table = "<table class=\"raindrops-style-type widefat post fixed\" cellspacing=\"0\" style=\"margin-left:2em;width:90%;\">";
-        $excerpt = '<h3 id="raindrops-style-type" style="position:relative;top:-0.3em;padding-bottom:0.6em;text-indent:1em;cursor:auto;background:none;">'.__('Expression Setting','Raindrops').'</h3>';
+        $excerpt = '<h3 title="Setting about raindrops style type" id="raindrops-style-type" style="position:relative;top:-0.3em;padding-bottom:0.6em;text-indent:1em;cursor:auto;background:none;">'.__('Expression Setting','Raindrops').'</h3>';
         $excerpt .= '<p class="rd-excerpt">'.__('The mood like dark atmosphere and the bright note, etc. is decided.','Raindrops').'</p>';
 
 
         break;
         case("raindrops_header_image"):
 $table = "<table class=\"raindrops-header-image widefat post fixed\" cellspacing=\"0\" style=\"margin-left:2em;width:90%;\">";
-        $excerpt = '<h3 id="raindrops-header-image" style="position:relative;top:-0.3em;padding-bottom:0.6em;text-indent:1em;cursor:auto;background:none;">'.__('Header image Setting','Raindrops').'</h3>';
+        $excerpt = '<h3 title="Setting about raindrops header image" id="raindrops-header-image" style="position:relative;top:-0.3em;padding-bottom:0.6em;text-indent:1em;cursor:auto;background:none;">'.__('Header image Setting','Raindrops').'</h3>';
         $excerpt .= '<p class="rd-excerpt">'.__('The name of the picture file used for the header is set. ','Raindrops').'</p>';
         $excerpt .= '<p class="rd-excerpt">'.__('As for the image, the image that exists in themes/raindrops/image/is used.','Raindrops').'</p>';
         break;
@@ -808,7 +820,7 @@ $table = "<table class=\"raindrops-footer-image widefat post fixed\" cellspacing
         break;
         case("raindrops_heading_image_position"):
 $table = "<table class=\"raindrops-heading-image-position widefat post fixed\" cellspacing=\"0\" style=\"margin-left:2em;width:90%;\">";
-        $excerpt = '<h3 id="raindrops-heading-image-position"style="position:relative;top:-0.3em;padding-bottom:0.6em;text-indent:1em;cursor:auto;background:none;">'.__('h2 headding image position Setting','Raindrops').'</h3>';
+        $excerpt = '<h3 title="Setting about raindrops_heading image position"   id="raindrops-heading-image-position"style="position:relative;top:-0.3em;padding-bottom:0.6em;text-indent:1em;cursor:auto;background:none;">'.__('h2 headding image position Setting','Raindrops').'</h3>';
         $excerpt .= '<p class="rd-excerpt">'.__('The name of the picture file used for the h2 headding is set. ','Raindrops').'</p>';
         $excerpt .= '<p class="rd-excerpt">'.__('Please set the integral value from 0 to 7. ','Raindrops').'</p>';
 
@@ -816,7 +828,7 @@ $table = "<table class=\"raindrops-heading-image-position widefat post fixed\" c
         break;
         case("raindrops_heading_image"):
 $table = "<table class=\"raindrops-heading-image widefat post fixed\" cellspacing=\"0\" style=\"margin-left:2em;width:90%;\">";
-        $excerpt = '<h3 id="raindrops-heading-image" style="position:relative;top:-0.3em;padding-bottom:0.6em;text-indent:1em;cursor:auto;background:none;">'.__('h2 headding background image Setting','Raindrops').'</h3>';
+        $excerpt = '<h3 title="Setting about raindrops heading image" id="raindrops-heading-image" style="position:relative;top:-0.3em;padding-bottom:0.6em;text-indent:1em;cursor:auto;background:none;">'.__('h2 headding background image Setting','Raindrops').'</h3>';
         $excerpt .= '<p class="rd-excerpt">'.__('The name of the picture file used for the h2 headding is set. ','Raindrops').'</p>';
         $excerpt .= '<p class="rd-excerpt">'.__('As for the image, the image that exists in themes/raindrops/image/is used.','Raindrops').'</p>';
         $excerpt .= '<p class="rd-excerpt">'.__('The header image can be chosen from among three kinds (h2.png,h2b,png,h2c.png) now. Of course, customizing is also possible. ','Raindrops').'</p>';
@@ -865,6 +877,20 @@ $table = "<table class=\"widefat post fixed\" cellspacing=\"0\" style=\"margin-l
 
             }
 
+        if (TMN_USE_AUTO_COLOR == false and (   $result->option_name == "raindrops_footer_color" or
+                                                $result->option_name == "raindrops_default_fonts_color" or
+                                                $result->option_name == "raindrops_base_color" or
+                                                $result->option_name == "raindrops_header_image" or
+                                                $result->option_name == "raindrops_footer_image" or
+                                                $result->option_name == "raindrops_heading_image_position" or
+                                                $result->option_name == "raindrops_heading_image" or
+                                                $result->option_name == "raindrops_style_type") ){
+
+            continue;
+        }
+
+
+
 
         $lines .= $excerpt;
 
@@ -876,8 +902,6 @@ $table = "<table class=\"widefat post fixed\" cellspacing=\"0\" style=\"margin-l
             $lines .= '<tr>';
             $lines .= '<td style="display:none;">';
             $lines .= '<input type="text" name="option_id" value="'.$result->option_id.'" />'.$result->option_id.'</td>';
-
-
 
 
 
@@ -894,7 +918,7 @@ $table = "<table class=\"widefat post fixed\" cellspacing=\"0\" style=\"margin-l
 
             }elseif($result->option_name == "raindrops_col_width"){
 
-                $lines .='<td><select name="option_value" size="6" ';
+                $lines .='<td><select  accesskey="'.$accesskey[$i].'" name="option_value" size="6" ';
                 $lines .='style="width:150px;vertical-align:bottom;margin-bottom:0px;height:120px;">';
 
                 $col_settings = array("left 160px"=>"t1","left 180px"=>"t2","left 300px"=>"t3","right 180px"=>"t4","right 240px"=>"t5","right 300px"=>"t6");
@@ -911,7 +935,7 @@ $table = "<table class=\"widefat post fixed\" cellspacing=\"0\" style=\"margin-l
 
             }elseif($result->option_name == "raindrops_page_width"){
 
-                $lines .='<td><select name="option_value" size="4" ';
+                $lines .='<td><select  accesskey="'.$accesskey[$i].'" name="option_value" size="4" ';
                 $lines .='style="width:150px;vertical-align:bottom;margin-bottom:0px;height:80px;">';
 
                 $col_settings = array("750px centered"=>"doc","950px centered"=>"doc2","100% fluid"=>"doc3","974px fluid"=>"doc4");
@@ -926,7 +950,7 @@ $table = "<table class=\"widefat post fixed\" cellspacing=\"0\" style=\"margin-l
 
             }elseif($result->option_name == "raindrops_right_sidebar_width_percent"){
 
-                $lines .='<td><select name="option_value" size="5" ';
+                $lines .='<td><select  accesskey="'.$accesskey[$i].'" name="option_value" size="5" ';
                 $lines .='style="width:150px;vertical-align:bottom;margin-bottom:0px;height:100px;">';
 
                 $col_settings = array("25%"=>"25","33%"=>"33","50%"=>"50","66%"=>"66","75%"=>"75");
@@ -942,7 +966,7 @@ $table = "<table class=\"widefat post fixed\" cellspacing=\"0\" style=\"margin-l
 
             }elseif($result->option_name == "raindrops_show_right_sidebar"){
 
-                $lines .='<td><select name="option_value" size="2" ';
+                $lines .='<td><select  accesskey="'.$accesskey[$i].'" name="option_value" size="2" ';
                 $lines .='style="width:150px;vertical-align:bottom;margin-bottom:0px;height:40px;">';
 
                 $col_settings = array("show"=>"show","hide"=>"hide");
@@ -958,7 +982,7 @@ $table = "<table class=\"widefat post fixed\" cellspacing=\"0\" style=\"margin-l
 
             }elseif($result->option_name == "raindrops_style_type"){
 
-                $lines .='<td><select name="option_value" size="3" ';
+                $lines .='<td><select  accesskey="'.$accesskey[$i].'" name="option_value" size="3" ';
                 $lines .='style="width:150px;vertical-align:bottom;margin-bottom:0px;height:60px;">';
 
                 $col_settings = array("light"=>"light","dark"=>"dark","default"=>"default");
@@ -976,7 +1000,7 @@ $table = "<table class=\"widefat post fixed\" cellspacing=\"0\" style=\"margin-l
 
             }elseif($result->option_name == "raindrops_heading_image"){
 
-                $lines .= '<td style="height:225px"><input type="text" name="option_value" value="'.$result->option_value.'"';
+                $lines .= '<td style="height:225px"><input  accesskey="'.$accesskey[$i].'" type="text" name="option_value" value="'.$result->option_value.'"';
 
                 if($result->option_name == "raindrops_base_color"){
                     $lines .= 'id="raindrops_base_color"';
@@ -988,7 +1012,7 @@ $table = "<table class=\"widefat post fixed\" cellspacing=\"0\" style=\"margin-l
 
             }else{
 
-                $lines .= '<td><input type="text" name="option_value" value="'.$result->option_value.'"';
+                $lines .= '<td><input  accesskey="'.$accesskey[$i].'" type="text" name="option_value" value="'.$result->option_value.'"';
 
                 if($result->option_name == "raindrops_base_color"){
                     $lines .= 'id="raindrops_base_color"';
@@ -997,7 +1021,7 @@ $table = "<table class=\"widefat post fixed\" cellspacing=\"0\" style=\"margin-l
                 $lines .= '/></td>';
 
             }
-
+        $i++;
             $send_key_name = ",option_name";
             $send_key_name .= ",option_id";
             $send_key_name .= ",option_value";
@@ -2379,5 +2403,50 @@ function header_image_alert(){
 
 
 
+    function tmn_embed_meta($content){
+        $result = "";
+        global $post;
 
+    /**
+     * insert into embed style ,javascript script and embed tags from custom field
+     *
+     *
+     */
+        if (is_single() || is_page()) {
+
+            if(have_posts()){
+
+             while (have_posts()) : the_post();
+
+                $css = get_post_meta($post->ID, 'css', true);
+                if (!empty($css)) {
+                $result .= '<style type="text/css">';
+                $result .= "\n/*<![CDATA[*/\n";
+                $result .=  $css;
+                $result .= "\n/*]]>*/\n";
+                $result .= "</style>";
+                }
+
+                $javascript = get_post_meta($post->ID, 'javascript', true);
+                if (!empty($javascript)) {
+                $result .= '<script type="text/javascript">';
+                $result .= "\n/*<![CDATA[*/\n";
+                $result .= $javascript;
+                $result .= "\n/*]]>*/\n";
+                $result .= "</script>";
+                }
+                $meta = get_post_meta($post->ID, 'meta', true);
+                if (!empty($meta)) {
+                $result .= $meta;
+                }
+              endwhile;
+            }else{
+
+
+            }
+        }
+        echo $result;
+
+        return $content;
+    }
 ?>
