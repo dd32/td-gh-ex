@@ -21,8 +21,16 @@ if(!function_exists('sp_setup')){
 		/* Generate default RSS/Atom feed links in output head. */
 		add_theme_support('automatic-feed-links');
 
+		/* Offer Custom Background admin options. */
+		add_custom_background();
+		
 		/* Menu - wp_nav_menu() in sidebar.php - new in WP3. */
-		register_nav_menus( array('sidebar' => __( 'Sidebar Menu', 'simplish' ), ) );
+		register_nav_menus( array('nowidget-right-sidebar' => __( '(Non-widget) Sidebar Menu', 'simplish' ), ) );
+				
+		/* Current use in search results view. */
+		add_theme_support('post-thumbnails');
+		set_post_thumbnail_size(50, 50, true);
+
 	}
 }
 /* The after_setup_theme hook fires before the theme init hook. */
@@ -31,11 +39,90 @@ add_action('after_setup_theme', 'sp_setup');
 /* Widget Sidebar */
 function sp_widgets_init()
 {
-	register_sidebar();
+	register_sidebar( array(
+		'name' => __('Right Sidebar', 'simplish' ),
+		'id' => 'widget-right-sidebar',
+		'description' => __('The right-hand sidebar widget container.', 'simplish'),
+	) );
 }
 add_action('widgets_init', 'sp_widgets_init');
 
-/*
+/**
+ * Set post excerpt length.
+ *
+ * To override this in a child theme, remove the filter and add your own
+ * function tied to the excerpt_length filter hook.
+ * 
+ * All excerpt handling borrows heavily from the 2010 theme.
+ *
+ * @since Simplish 2.4.2 (Twenty Ten 1.0)
+ * @return int
+ */
+function sp_excerpt_length($length)
+{
+	return 36;
+}
+add_filter('excerpt_length', 'sp_excerpt_length');
+
+if(!function_exists('sp_readmore_text')){
+	/**
+	 * "More" text (no link) for More tags in the_content().
+	 *
+	 * @since Simplish 2.5
+	 * @return string "More ->"
+	 */
+	function sp_readmore_text()
+	{
+		return __( 'More', 'simplish' ) . '<span class="meta-nav">&rarr;</span>';
+	}
+}
+
+/**
+ * "More" link for excerpts
+ *
+ * @since Simplish 2.4.2 (Twenty Ten 1.0)
+ * @uses sp_readmore_text
+ * @return string "More ->" wrapped in a link
+ */
+function sp_readmore_link()
+{
+	return ' <a class="more-link" href="'. get_permalink() . '">' . sp_readmore_text() . '</a>';
+}
+
+/**
+ * Replaces "[...]" (appended to auto-generated excerpts) with an ellipsis and sp_readmore_link().
+ *
+ * To override this in a child theme, remove the filter and add your own
+ * function tied to the excerpt_more filter hook.
+ *
+ * @since Simplish 2.4.2 (Twenty Ten 1.0)
+ * @return string An ellipsis and a link
+ */	
+function sp_auto_excerpt_more($more)
+{
+	return ' &hellip;' . sp_readmore_link();
+}
+add_filter('excerpt_more', 'sp_auto_excerpt_more');
+
+/**
+ * Add "More" link to custom post excerpts.
+ *
+ * To override this link in a child theme, remove the filter and add your own
+ * function tied to the get_the_excerpt filter hook.
+ *
+ * @since Simplish 2.4.2 (Twenty Ten 1.0)
+ * @return string The user-specified (not auto-generated) excerpt with a "More" link
+ */
+function sp_custom_excerpt_more($output)
+{
+	if ( has_excerpt() && ! is_attachment() ){
+		$output .= sp_readmore_link();
+	}
+	return $output;
+}
+add_filter( 'get_the_excerpt', 'sp_custom_excerpt_more' );
+
+/**
  * Zero the default gallery shortcode style, so it isn't injected into output body.
  * Simplish gallery styles are in style.css.
  *
@@ -50,28 +137,6 @@ add_filter('gallery_style', 'sp_zero_gallery_css');
  * hCard producers based on blog.txt,
  * http://www.plaintxt.org/themes/blogtxt/
  */
-if(!function_exists('sp_admin_hcard')){
-	/* 
-	 * Echo hCard for blog admin, with URL.
-	 * Currently unused: Gets site admin on
-	 * MU, where only blog owner is wanted.
-	 * See http://mu.wordpress.org/forums/topic.php?id=7476
-	 */
-	function sp_admin_hcard()
-	{
-		global $wpdb, $admin_info;
-
-		$admin_info = get_userdata(1);
-		echo '<span class="vcard"><a class="url fn n" href="' .
-			$admin_info->user_url .
-			'"><span class="given-name">' .
-			$admin_info->first_name .
-			'</span> <span class="family-name">' .
-			$admin_info->last_name .
-			'</span></a></span>';
-	}
-}
-
 if(!function_exists('sp_byline_hcard')){
 	/* Echo hCard for post author, with URL of author's archive. */
 	function sp_byline_hcard()

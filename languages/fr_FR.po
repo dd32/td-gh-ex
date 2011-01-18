@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simplish\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-17 16:04-0700\n"
-"PO-Revision-Date: 2010-06-17 16:59-0800\n"
+"POT-Creation-Date: 2010-08-10 19:37-0700\n"
+"PO-Revision-Date: 2011-01-18 02:39-0800\n"
 "Last-Translator: Josh Wood <josh@utopian.net>\n"
 "Language-Team: Utopian.net Laboratories <josh@labs.utopian.net>\n"
 "MIME-Version: 1.0\n"
@@ -55,7 +55,6 @@ msgid "Tag:"
 msgstr "Mot-clef :"
 
 #: archive.php:21
-#: sidebar.php:25
 msgid "Archives"
 msgstr "Archives"
 
@@ -64,114 +63,46 @@ msgstr "Archives"
 msgid "%1$s Archives"
 msgstr "%1$s Archives"
 
-#: archive.php:32
-#: index.php:12
-msgid "More&hellip;"
-msgstr "Plus&hellip;"
-
 #: archive.php:43
-#: index.php:23
+#: index.php:24
 msgid "Not Found"
 msgstr "Non Trouvé"
 
-#: comments.php:3
-msgid "Not labeled for individual sale."
-msgstr "Non marqué en vente individuelle."
+#: comments.php:14
+msgid "Enter the password to view comments."
+msgstr ""
 
-#: comments.php:12
-#: hentrymeta.php:8
+#: comments.php:30
 msgid "0 Comments"
 msgstr "0 Commentaires"
 
-#: comments.php:12
+#: comments.php:30
 #: hentrymeta.php:8
 msgid "1 Comment"
 msgstr "1 Commentaire"
 
-#: comments.php:12
+#: comments.php:30
 #: hentrymeta.php:8
 msgid "% Comments"
 msgstr "% Commentaires"
 
-#: comments.php:12
+#: comments.php:30
 msgid "on"
 msgstr "sur"
 
-#: comments.php:15
-msgid "Log in"
-msgstr "Connexion"
+#: comments.php:34
+#: comments.php:45
+msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
+msgstr ""
 
-#: comments.php:15
-msgid "to respond"
-msgstr "répondre"
+#: comments.php:35
+#: comments.php:46
+msgid "Newer Comments <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
 
-#: comments.php:18
-#: comments.php:41
-msgid "Respond"
-msgstr "Répondre"
-
-#: comments.php:21
+#: comments.php:57
 msgid "Closed"
 msgstr "Fermé"
-
-#: comments.php:29
-msgid "&laquo; Older Comments"
-msgstr "&laquo;  Commentaires plus anciens"
-
-#: comments.php:30
-msgid "Newer Comments &raquo;"
-msgstr "Commentaires plus récents &raquo;"
-
-#: comments.php:41
-#, php-format
-msgid "Respond to %s"
-msgstr "Répondre à %s"
-
-#: comments.php:50
-#: comments.php:84
-msgid "Comments"
-msgstr "Commentaires"
-
-#: comments.php:54
-msgid "Logged in as"
-msgstr "Connecté en tant que"
-
-#: comments.php:55
-msgid "Log out of this account"
-msgstr "Déconnexion de ce compte"
-
-#: comments.php:55
-msgid "Log out"
-msgstr "Déconnexion"
-
-#: comments.php:61
-msgid "Name:"
-msgstr "Nom :"
-
-#: comments.php:61
-#: comments.php:67
-msgid "(required)"
-msgstr "(requis)"
-
-#: comments.php:67
-msgid "Email:"
-msgstr "E-mail :"
-
-#: comments.php:69
-msgid "(will not be published)"
-msgstr "(non affiché)"
-
-#: comments.php:74
-msgid "URL:"
-msgstr "Site :"
-
-#: comments.php:81
-msgid "You can use these tags:"
-msgstr "Tags autorisées :"
-
-#: comments.php:87
-msgid "Submit"
-msgstr "Envoyez"
 
 #: footer.php:8
 msgid "WordPress Engine"
@@ -185,15 +116,27 @@ msgstr "Modèle de Simplish"
 msgid "from"
 msgstr "de"
 
-#: functions.php:25
-msgid "Sidebar Menu"
+#: functions.php:28
+msgid "(Non-widget) Sidebar Menu"
 msgstr ""
 
-#: functions.php:83
+#: functions.php:43
+msgid "Right Sidebar"
+msgstr ""
+
+#: functions.php:45
+msgid "The right-hand sidebar widget container."
+msgstr ""
+
+#: functions.php:76
+msgid "More"
+msgstr ""
+
+#: functions.php:148
 msgid "More posts by"
 msgstr "Plus d'articles par"
 
-#: functions.php:113
+#: functions.php:178
 msgid "home page"
 msgstr "page d'accueil"
 
@@ -215,16 +158,21 @@ msgid "Tags: "
 msgstr "Mots-clefs : "
 
 #: hentrymeta.php:8
-msgid "Feed"
-msgstr "Flux"
+msgid "Leave a reply"
+msgstr ""
 
-#: image.php:35
+#: hentrymeta.php:8
+#, fuzzy
+msgid "Comments Closed"
+msgstr "Flux Commentaires"
+
+#: image.php:34
 msgid "Sorry, no attachments matched your criteria."
 msgstr "Désolé, mais vous cherchez quelque chose qui n'est pas ici."
 
+#: index.php:13
 #: page.php:11
 #: single.php:12
-#: tplpgcomm.php:17
 msgid "Pages:"
 msgstr "Pages:"
 
@@ -232,7 +180,6 @@ msgstr "Pages:"
 #: single.php:14
 #: tplarchives.php:31
 #: tpllinks.php:17
-#: tplpgcomm.php:23
 msgid "Edit&hellip;"
 msgstr "Modifier&hellip;"
 
@@ -248,41 +195,13 @@ msgstr "Ensuite &raquo;"
 msgid "Results for"
 msgstr "Résultats pour"
 
-#: search.php:28
+#: search.php:29
 msgid "No results for"
 msgstr "Aucun résultat pour"
 
-#: sidebar.php:8
+#: sidebar.php:9
 msgid "Navigation"
 msgstr "Navigation"
-
-#: sidebar.php:19
-msgid "Categories"
-msgstr "Catégories"
-
-#: sidebar.php:33
-msgid "Syndicate"
-msgstr "Souscrivez"
-
-#: sidebar.php:36
-msgid "Articles RSS"
-msgstr "Flux Articles"
-
-#: sidebar.php:36
-msgid "Articles Feed"
-msgstr "Flux Articles"
-
-#: sidebar.php:38
-msgid "Comments RSS"
-msgstr "Flux Commentaires"
-
-#: sidebar.php:38
-msgid "Comments Feed"
-msgstr "Flux Commentaires"
-
-#: sidebar.php:42
-msgid "Meta"
-msgstr "Autre"
 
 #: tplarchives.php:14
 #: tplsitemap.php:52
@@ -315,6 +234,84 @@ msgstr "Lien permanent á %s"
 #: tplsitemap.php:63
 msgid "Pages: "
 msgstr "Pages :"
+
+#~ msgid "More&hellip;"
+#~ msgstr "Plus&hellip;"
+
+#~ msgid "Feed"
+#~ msgstr "Flux"
+
+#~ msgid "Categories"
+#~ msgstr "Catégories"
+
+#~ msgid "Syndicate"
+#~ msgstr "Souscrivez"
+
+#~ msgid "Articles RSS"
+#~ msgstr "Flux Articles"
+
+#~ msgid "Articles Feed"
+#~ msgstr "Flux Articles"
+
+#~ msgid "Comments RSS"
+#~ msgstr "Flux Commentaires"
+
+#~ msgid "Meta"
+#~ msgstr "Autre"
+
+#~ msgid "Not labeled for individual sale."
+#~ msgstr "Non marqué en vente individuelle."
+
+#~ msgid "Log in"
+#~ msgstr "Connexion"
+
+#~ msgid "to respond"
+#~ msgstr "répondre"
+
+#~ msgid "Respond"
+#~ msgstr "Répondre"
+
+#~ msgid "&laquo; Older Comments"
+#~ msgstr "&laquo;  Commentaires plus anciens"
+
+#~ msgid "Newer Comments &raquo;"
+#~ msgstr "Commentaires plus récents &raquo;"
+
+#~ msgid "Respond to %s"
+#~ msgstr "Répondre à %s"
+
+#~ msgid "Comments"
+#~ msgstr "Commentaires"
+
+#~ msgid "Logged in as"
+#~ msgstr "Connecté en tant que"
+
+#~ msgid "Log out of this account"
+#~ msgstr "Déconnexion de ce compte"
+
+#~ msgid "Log out"
+#~ msgstr "Déconnexion"
+
+#~ msgid "Name:"
+#~ msgstr "Nom :"
+
+#~ msgid "(required)"
+#~ msgstr "(requis)"
+
+#~ msgid "Email:"
+#~ msgstr "E-mail :"
+
+#~ msgid "(will not be published)"
+#~ msgstr "(non affiché)"
+
+#~ msgid "URL:"
+#~ msgstr "Site :"
+
+#~ msgid "You can use these tags:"
+#~ msgstr "Tags autorisées :"
+
+#~ msgid "Submit"
+#~ msgstr "Envoyez"
 
 #~ msgid "Trackback"
 #~ msgstr "Rétrolien"

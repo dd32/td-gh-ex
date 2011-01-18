@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simplish\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-17 16:04-0700\n"
-"PO-Revision-Date: 2010-06-20 11:37+0200\n"
-"Last-Translator: Demetris Kikizas <op111.net@gmail.com>\n"
+"POT-Creation-Date: 2010-08-10 19:37-0700\n"
+"PO-Revision-Date: 2011-01-18 02:40-0800\n"
+"Last-Translator: Josh Wood <josh@utopian.net>\n"
 "Language-Team: op111.net <op111.net@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -55,7 +55,6 @@ msgid "Tag:"
 msgstr "Ετικέτα:"
 
 #: archive.php:21
-#: sidebar.php:25
 msgid "Archives"
 msgstr "Αρχείο"
 
@@ -64,114 +63,46 @@ msgstr "Αρχείο"
 msgid "%1$s Archives"
 msgstr "Αρχείο %1$s"
 
-#: archive.php:32
-#: index.php:12
-msgid "More&hellip;"
-msgstr "Συνέχεια&hellip;"
-
 #: archive.php:43
-#: index.php:23
+#: index.php:24
 msgid "Not Found"
 msgstr "Δεν βρέθηκε!"
 
-#: comments.php:3
-msgid "Not labeled for individual sale."
-msgstr "Δεν πωλείται!"
+#: comments.php:14
+msgid "Enter the password to view comments."
+msgstr ""
 
-#: comments.php:12
-#: hentrymeta.php:8
+#: comments.php:30
 msgid "0 Comments"
 msgstr "0 σχόλια"
 
-#: comments.php:12
+#: comments.php:30
 #: hentrymeta.php:8
 msgid "1 Comment"
 msgstr "1 σχόλιο"
 
-#: comments.php:12
+#: comments.php:30
 #: hentrymeta.php:8
 msgid "% Comments"
 msgstr "% σχόλια"
 
-#: comments.php:12
+#: comments.php:30
 msgid "on"
 msgstr "στο"
 
-#: comments.php:15
-msgid "Log in"
-msgstr "Σύνδεση"
+#: comments.php:34
+#: comments.php:45
+msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
+msgstr ""
 
-#: comments.php:15
-msgid "to respond"
-msgstr "για να απαντήσετε"
+#: comments.php:35
+#: comments.php:46
+msgid "Newer Comments <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
 
-#: comments.php:18
-#: comments.php:41
-msgid "Respond"
-msgstr "Απάντηση"
-
-#: comments.php:21
+#: comments.php:57
 msgid "Closed"
 msgstr "Κλειστό"
-
-#: comments.php:29
-msgid "&laquo; Older Comments"
-msgstr "&larr; Προηγούμενα σχόλια"
-
-#: comments.php:30
-msgid "Newer Comments &raquo;"
-msgstr "Επόμενα σχόλια &rarr;"
-
-#: comments.php:41
-#, php-format
-msgid "Respond to %s"
-msgstr "Απάντηση στο %s"
-
-#: comments.php:50
-#: comments.php:84
-msgid "Comments"
-msgstr "Σχόλια"
-
-#: comments.php:54
-msgid "Logged in as"
-msgstr "Έχετε συνδεθεί ως"
-
-#: comments.php:55
-msgid "Log out of this account"
-msgstr "Αποσυνδεθείτε από τον λογαριασμό"
-
-#: comments.php:55
-msgid "Log out"
-msgstr "Αποσύνδεση"
-
-#: comments.php:61
-msgid "Name:"
-msgstr "Όνομα:"
-
-#: comments.php:61
-#: comments.php:67
-msgid "(required)"
-msgstr "(υποχρεωτικό)"
-
-#: comments.php:67
-msgid "Email:"
-msgstr "E-mail:"
-
-#: comments.php:69
-msgid "(will not be published)"
-msgstr "(δεν δημοσιεύεται)"
-
-#: comments.php:74
-msgid "URL:"
-msgstr "URL:"
-
-#: comments.php:81
-msgid "You can use these tags:"
-msgstr "Επιτρέπονται τα εξής στοιχεία:"
-
-#: comments.php:87
-msgid "Submit"
-msgstr "Υποβολή"
 
 #: footer.php:8
 msgid "WordPress Engine"
@@ -185,15 +116,28 @@ msgstr "Θέμα Simplish"
 msgid "from"
 msgstr "από"
 
-#: functions.php:25
-msgid "Sidebar Menu"
+#: functions.php:28
+#, fuzzy
+msgid "(Non-widget) Sidebar Menu"
 msgstr "Πλευρικό μενού"
 
-#: functions.php:83
+#: functions.php:43
+msgid "Right Sidebar"
+msgstr ""
+
+#: functions.php:45
+msgid "The right-hand sidebar widget container."
+msgstr ""
+
+#: functions.php:76
+msgid "More"
+msgstr ""
+
+#: functions.php:148
 msgid "More posts by"
 msgstr "Περισσότερα άρθρα της/του"
 
-#: functions.php:113
+#: functions.php:178
 msgid "home page"
 msgstr "Αρχική"
 
@@ -215,16 +159,21 @@ msgid "Tags: "
 msgstr "Ετικέτες: "
 
 #: hentrymeta.php:8
-msgid "Feed"
+msgid "Leave a reply"
+msgstr ""
+
+#: hentrymeta.php:8
+#, fuzzy
+msgid "Comments Closed"
 msgstr "Κανάλι σχολίων"
 
-#: image.php:35
+#: image.php:34
 msgid "Sorry, no attachments matched your criteria."
 msgstr "Κανένα συνημμένο με τους όρους αυτούς."
 
+#: index.php:13
 #: page.php:11
 #: single.php:12
-#: tplpgcomm.php:17
 msgid "Pages:"
 msgstr "Σελίδες:"
 
@@ -232,7 +181,6 @@ msgstr "Σελίδες:"
 #: single.php:14
 #: tplarchives.php:31
 #: tpllinks.php:17
-#: tplpgcomm.php:23
 msgid "Edit&hellip;"
 msgstr "Επεξεργασία&hellip;"
 
@@ -248,41 +196,13 @@ msgstr "Επόμενα &rarr;"
 msgid "Results for"
 msgstr "Αποτελέσματα για"
 
-#: search.php:28
+#: search.php:29
 msgid "No results for"
 msgstr "Κανένα αποτέλεσμα για"
 
-#: sidebar.php:8
+#: sidebar.php:9
 msgid "Navigation"
 msgstr "Μενού"
-
-#: sidebar.php:19
-msgid "Categories"
-msgstr "Κατηγορίες"
-
-#: sidebar.php:33
-msgid "Syndicate"
-msgstr "RSS"
-
-#: sidebar.php:36
-msgid "Articles RSS"
-msgstr "– Όλα τα άρθρα μέσω RSS"
-
-#: sidebar.php:36
-msgid "Articles Feed"
-msgstr "Κανάλι άρθρων"
-
-#: sidebar.php:38
-msgid "Comments RSS"
-msgstr "– Όλα τα σχόλια μέσω RSS"
-
-#: sidebar.php:38
-msgid "Comments Feed"
-msgstr "Κανάλι σχολίων"
-
-#: sidebar.php:42
-msgid "Meta"
-msgstr "Μεταστοιχεία"
 
 #: tplarchives.php:14
 #: tplsitemap.php:52
@@ -315,6 +235,84 @@ msgstr "Μόνιμος σύνδεσμος του %s"
 #: tplsitemap.php:63
 msgid "Pages: "
 msgstr "Σελίδες: "
+
+#~ msgid "More&hellip;"
+#~ msgstr "Συνέχεια&hellip;"
+
+#~ msgid "Feed"
+#~ msgstr "Κανάλι σχολίων"
+
+#~ msgid "Categories"
+#~ msgstr "Κατηγορίες"
+
+#~ msgid "Syndicate"
+#~ msgstr "RSS"
+
+#~ msgid "Articles RSS"
+#~ msgstr "– Όλα τα άρθρα μέσω RSS"
+
+#~ msgid "Articles Feed"
+#~ msgstr "Κανάλι άρθρων"
+
+#~ msgid "Comments RSS"
+#~ msgstr "– Όλα τα σχόλια μέσω RSS"
+
+#~ msgid "Meta"
+#~ msgstr "Μεταστοιχεία"
+
+#~ msgid "Not labeled for individual sale."
+#~ msgstr "Δεν πωλείται!"
+
+#~ msgid "Log in"
+#~ msgstr "Σύνδεση"
+
+#~ msgid "to respond"
+#~ msgstr "για να απαντήσετε"
+
+#~ msgid "Respond"
+#~ msgstr "Απάντηση"
+
+#~ msgid "&laquo; Older Comments"
+#~ msgstr "&larr; Προηγούμενα σχόλια"
+
+#~ msgid "Newer Comments &raquo;"
+#~ msgstr "Επόμενα σχόλια &rarr;"
+
+#~ msgid "Respond to %s"
+#~ msgstr "Απάντηση στο %s"
+
+#~ msgid "Comments"
+#~ msgstr "Σχόλια"
+
+#~ msgid "Logged in as"
+#~ msgstr "Έχετε συνδεθεί ως"
+
+#~ msgid "Log out of this account"
+#~ msgstr "Αποσυνδεθείτε από τον λογαριασμό"
+
+#~ msgid "Log out"
+#~ msgstr "Αποσύνδεση"
+
+#~ msgid "Name:"
+#~ msgstr "Όνομα:"
+
+#~ msgid "(required)"
+#~ msgstr "(υποχρεωτικό)"
+
+#~ msgid "Email:"
+#~ msgstr "E-mail:"
+
+#~ msgid "(will not be published)"
+#~ msgstr "(δεν δημοσιεύεται)"
+
+#~ msgid "URL:"
+#~ msgstr "URL:"
+
+#~ msgid "You can use these tags:"
+#~ msgstr "Επιτρέπονται τα εξής στοιχεία:"
+
+#~ msgid "Submit"
+#~ msgstr "Υποβολή"
 
 #~ msgid "Trackback"
 #~ msgstr "Παράθεση"

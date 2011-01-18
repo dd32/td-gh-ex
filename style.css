@@ -3,7 +3,7 @@ THEME NAME: Simplish
 THEME URI: http://simplish.pomfolio.com
 DESCRIPTION: Simplish is a WordPress variant of the Scribbish theme for blogs.
 TAGS: two-columns, fixed-width, right-sidebar, threaded-comments, sticky-post, microformats, white, light
-VERSION: 2.4.1
+VERSION: 2.5
 AUTHOR: <a href="http://labs.utopian.net">Utopian.net Labs</a>, <a href="http://pittcrew.net/geekblog/">K. Pitt</a>, <a href="http://quotedprintable.com">J. Hardy</a>
 AUTHOR URI:
 */
@@ -25,7 +25,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 /*
  * #container
  * 	#header
- * 	#page
+ * 	#content-wrapper
  * 		#content
  * 			#article-n (.hentry)
  * 				.entry-title
@@ -37,7 +37,7 @@ table { border-collapse: collapse; border-spacing: 0; }
  */
 
 body{
-	background: #fff url(img/background.png) repeat-x left top;
+	background: #fff;
 	font: normal .75em "lucida grande", "liberation sans", verdana, arial, helvetica, sans-serif;
 	margin: 0;
 	padding: 0.6em 1em 1em;
@@ -55,7 +55,8 @@ body{
 	margin: 0 -0.5px 12px 0;
 	padding: 0;
 }
-#page{
+#content-wrapper{
+	background: #fff;
 }
 #content{
 	float: left;
@@ -180,6 +181,9 @@ blockquote{
 	margin: 1.3em 1em;
 	padding: 0 1em;
 }
+small{
+	font-size: 70%;
+}
 code{
 	font: normal 1em "bitstream vera sans mono", monaco, "lucida console", "courier new", courier, serif;
 }
@@ -207,7 +211,18 @@ th{
 .hentry{
 	margin: 0 0 3em 0;
 }
+.sticky{
+	background: #F2F7FC;
+	border-radius: 0 0 4px 4px;
+	-moz-border-radius: 0 0 4px 4px;
+	-webkit-border-radius: 0 0 4px 4px;
+	border-top: 3px solid #000;
+}
+.sticky .meta{
+	background: #ddd;
+}
 .entry-title{
+	clear: both;
 	font-size: 2.5em;
 	letter-spacing: -1.5px;
 	line-height: 99%;
@@ -246,6 +261,20 @@ h2.page-title{
 br.downpad{
 	margin: 0 0 33px;
 }
+.admin-edit{
+    clear: both;
+}
+.pgnum-link{
+	font-weight: bold;
+	margin: 1.2em 0;
+}
+.pgnum-link a:link, .pgnum-link a:visited{
+	background: #ddd;
+	font-weight: normal;
+}
+.pgnum-link a:hover, .pgnum-link a:active{
+	background: #000;
+}
 .meta{
 	background: #eee;
 	border: 1px solid #ddd;
@@ -271,7 +300,13 @@ br.downpad{
 .meta a:hover, .meta a:active{
 	color: #fff;
 }
-ol.comments{
+.nocomments, .nopassword{
+	display: none;
+}
+#comments{
+	clear: both;
+}
+ol.commentlist{
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
@@ -323,28 +358,28 @@ a.comment-permalink{
 .comment p{
 	margin-right: 2em;
 }
-form.comments{
+#commentform{
 	background: #f2f2f2;
 	border-radius: 4px;
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 	padding: 1em 0.5em;
 }
-.comments fieldset{
+#commentform fieldset{
 	border: none;
 }
-.comments legend{
+#commentform legend{
 	display: none;
 }
-.comments label{
+#commentform label{
 	font-weight: bold;
 }
-.comments textarea{
+#commentform textarea{
 	height: 150px;
 	padding: 3px;
 	width: 90%;
 }
-.readmore{
+.more-link{
 	font-style: italic;
 }
 .navigation{
@@ -569,6 +604,11 @@ span.caps{
 .search-results .entry-title{
 	font-size: 1.7em;
 	letter-spacing: -1px;
+}
+/* Post thumbnails on search results. */
+.attachment-post-thumbnail{
+	float: left;
+	margin: 4px 10px 10px 2px;
 }
 
 @media print{
