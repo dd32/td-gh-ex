@@ -19,6 +19,13 @@ function absolum_media() {
 	if( is_admin() ) return;
 	wp_enqueue_script( 'hoverIntent' );  
   
+if( !is_admin()){
+	wp_deregister_script('jquery');
+	wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"), false, '1.4.4');
+	wp_enqueue_script('jquery');
+}
+  
+  
 $options = get_option('absolum');  
 if ($options['abs_header_slider'] == "disable" || $options['abs_header_slider'] == "" || $options['abs_header_slider'] == "one") { 
 

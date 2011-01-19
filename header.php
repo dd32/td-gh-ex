@@ -234,9 +234,6 @@ display:block !important; }
 <!--[if IE 6]><link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.ie6.php" type="text/css" media="screen" /><![endif]-->
 
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-
-
 <?php
 
 	if ( is_singular() && get_option( 'thread_comments' ) )
