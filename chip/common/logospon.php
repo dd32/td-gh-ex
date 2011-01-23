@@ -2,12 +2,12 @@
   <div class="logoboxdata">            
     
 	<div class="chipsetl2">
-      <?php require_once(COMMON_FSROOT . 'logo.php'); ?>
+      <?php locate_template( array( CHIP_LIFE_COMMON_FSROOT . 'logo.php' ), true, false ); ?>
     </div>
     
     <div class="chipsetr2">
       <div class="chipsetr2data">
-        <?php require_once(SPONSOR_FSROOT . 'leaderboard-728x90.php'); ?>
+        <?php locate_template( array( CHIP_LIFE_SPONSOR_FSROOT . 'leaderboard-728x90.php' ), true, false ); ?>
       </div>
     </div>
     

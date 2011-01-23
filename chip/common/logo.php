@@ -1,24 +1,19 @@
 <?php
-if( get_option($theme_options['c2']['id']) == "yes" ):
-	if( get_option($theme_options['c3']['id']) == "na" ):
+global $chip_life_global;
+if( $chip_life_global['theme_options']['chip_life_logo'] == "yes"):
 ?>
-        <a href="<?php echo BLOG_WSROOT; ?>"><img src="<?php echo IMAGES_WSROOT; ?>logo.gif" width="215" height="120" alt="" border="0" /></a>
-<?php 
-else:
-?>
-		<a href="<?php echo BLOG_WSROOT; ?>"><img src="<?php echo get_option($theme_options['c3']['id']); ?>" width="215" height="120" alt="" border="0" /></a>
+<a href="<?php echo CHIP_LIFE_HOME; ?>"><img src="<?php echo $chip_life_global['theme_options']['chip_life_logo_url']; ?>" width="215" height="125" alt="" border="0" /></a>
 <?php
-	endif;
 else:
 ?>
-		<div class="textlogobox">
-          <div class="blogname">
-            <a href="<?php echo BLOG_WSROOT; ?>" title="<?php bloginfo('name'); ?>" class="white"><?php bloginfo('name'); ?></a>
-          </div>
-          <div class="blogdesc">
-            <?php bloginfo('description'); ?>
-          </div>
-        </div>
+<div class="textlogobox">
+  <div class="blogname">
+    <a href="<?php echo CHIP_LIFE_HOME; ?>" title="<?php bloginfo('name'); ?>" class="white"><?php bloginfo('name'); ?></a>
+  </div>
+  <div class="blogdesc">
+    <?php bloginfo('description'); ?>
+  </div>
+</div>
 <?php
 endif;
 ?>

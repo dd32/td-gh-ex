@@ -14,7 +14,7 @@ class chip_social extends WP_Widget {
 	*/
 	
 	function chip_social() {
-		$widget_ops = array( 'classname' => 'chip_social', 'description' => 'Use this widget to add subscription and social bookmarking sites as a widget.' );
+		$widget_ops = array( 'classname' => 'chip_social', 'description' => 'Use this widget to add subscription and social contacts.' );
 		$this->WP_Widget( 'chip_social', 'Chip Social Box', $widget_ops );
 	}
 	
@@ -26,17 +26,13 @@ class chip_social extends WP_Widget {
 	
 	function widget( $args, $instance ) {
 		
-		global $theme_options;
+		global $chip_life_global;
+		extract( $args );		
 		
-		extract( $args );
-		
-		echo $before_widget;
-		
-		$title = empty($instance['title']) ? '' : apply_filters('widget_title', $instance['title']);		
-		if ( !empty( $title ) ) { echo $before_title . $title . $after_title; };
-		
-		require(WIDGET_FSROOT . 'chip-social/widget.php');
-		
+		echo $before_widget;		
+		$title = empty( $instance['title'] ) ? '' : apply_filters( 'widget_title', $instance['title'] );		
+		if ( !empty( $title ) ) { echo $before_title . $title . $after_title; };		
+		locate_template( array( CHIP_LIFE_WIDGET_FSROOT . 'chip-social/widget.php' ), true, false );
 		echo $after_widget;		
 	
 	}
@@ -62,7 +58,12 @@ class chip_social extends WP_Widget {
 	function form( $instance ) {
 		$instance = wp_parse_args( (array) $instance, array( 'title' => 'Join Us' ) );
 		$title = strip_tags($instance['title']);
-		require(WIDGET_FSROOT . 'chip-social/form.php');		
+		echo '
+		<p>
+		  <label for="'.$this->get_field_id( 'title' ).'">Socialbox</label>
+		  <input type="text" id="'.$this->get_field_id( 'title' ).'" name="'.$this->get_field_name( 'title' ).'" value="'.esc_attr( $title ).'"  />
+		</p>
+		';
 	}	
 	
 }

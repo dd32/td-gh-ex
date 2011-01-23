@@ -2,7 +2,7 @@
 
 <div class="sidebarbox sidebarboxw1 chipstyle3 margin10b wppages">
   <div class="sidebarboxw1data">
-  	<?php require_once(TEMPLATE_FSROOT . 'searchform.php'); ?>
+  	<?php get_search_form(); ?>
   </div>
 </div>
 
@@ -30,7 +30,7 @@
 <div class="sidebarbox sidebarboxw1 chipstyle3 margin10b wpcalendar">
   <div class="sidebarboxw1data">
   	<h2 class="blue chipstyle3 padding5 margin10b">Calendar</h2>
-	  <ul><?php get_calendar(); ?></ul>
+	<?php get_calendar(); ?>
   </div>
 </div>
 
@@ -44,7 +44,7 @@
 <div class="sidebarbox sidebarboxw1 chipstyle3 margin10b wptagcloud">
   <div class="sidebarboxw1data">
   	<h2 class="blue chipstyle3 padding5 margin10b">Tag Cloud</h2>
-	  <?php wp_tag_cloud('smallest=10&largest=20&number=30&unit=px&format=flat&orderby=name'); ?>
+	<?php wp_tag_cloud('smallest=10&largest=20&number=30&unit=px&format=flat&orderby=name'); ?>
   </div>
 </div>
 

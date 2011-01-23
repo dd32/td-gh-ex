@@ -4,7 +4,7 @@ Theme URI: http://chip-life.tutorialchip.com/
 Author: Life.Object
 Author URI: http://www.tutorialchip.com/
 Description: Chip Life (CL) theme for WordPress is stylish, customizable, flexible, readable, and professional with a power of custom menu, and background. Chip Life supports one widgetized area in the sidebar and featured images (thumbnails for posts). Check <a href="http://www.tutorialchip.com/chip-life/">CL Official Page</a> in case you need directions</a>.
-Version: 1.0
+Version: 1.1
 Tags: dark, blue, white, two-columns, fixed-width, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, custom-background
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -36,6 +36,7 @@ th, td {padding:4px;vertical-align:top;}
 tr {background-color:#c2c6e1;}
 
 img {border:none;}
+object, embed {max-width: 100%;}
 
 del {color:#F00;}
 blockquote {clear:left;margin:10px 10px 10px 10px;padding:0px 20px 0px 20px;background-color:#c2c6e1;border-width:1px;border-style:solid;border-color:#dfe3fc #878ba6 #878ba6 #dfe3fc;}
@@ -55,11 +56,24 @@ blockquote {clear:left;margin:10px 10px 10px 10px;padding:0px 20px 0px 20px;back
 img.alignleft {float:left;clear:left;margin:0px 10px 10px 0px;}
 img.alignright {float:right;clear:right;margin:0px 0px 10px 10px;}
 img.aligncenter, img.centered, img.center {display:block;margin:10px auto 10px auto;float:none;clear:both;}
+img.size-auto, img.size-large, img.size-full,
+img.size-medium, img.size-thumbnail, .attachment img {max-width:100%;width:auto;height:auto;}
+img.wp-smiley {margin:0px;}
+img.wp-post-image {width:150px;height:150px;margin:5px;border:solid 1px #FFF;overflow:hidden;}
 
 .wp-caption {text-align:center;}
 .wp-caption-text {font-size:11px;}
 
-.bypostauthor{background-color:#18232c;}
+.bypostauthor {background-color:#18232c;}
+
+.nopassword,
+.nocomments {
+	display: none;
+}
+
+.more-link {padding:5px 5px 5px 5px;color:#FFF;background-color:#32495b;border-width:1px;border-style:solid;border-color:#445463 #021221 #021221 #445463;}
+a.more-link:link,a.more-link:visited {color:#FFF;}
+a.more-link:hover {color:#FFF;}
 
 /*
 |------------------
@@ -71,6 +85,7 @@ img.aligncenter, img.centered, img.center {display:block;margin:10px auto 10px a
 .gallery-item {float:left;margin-top:10px;text-align:center;width:33%;}
 .gallery img {border:1px solid #cfcfcf;}
 .gallery-caption {margin-left:0px;font-size:11px;}
+.gallery br{clear:none!important;float:left;}
 
 /*
 |------------------
@@ -86,12 +101,12 @@ a.white:hover {color:#c2c6e1;}
 
 a.img1:link, a.img1:visited {display:block;width:162px;height:162px;background-color:#a6c0ca;color:#4a4b84;text-decoration:none;}
 a.img1:hover {color:#2200d6;}
-img.one {width:150px;height:150px;margin:5px;border:solid 1px #FFF;overflow:hidden;}
 
 .alignr {text-align:right;}
 
 .margin0 {margin:0px;}
 .margin10b {margin:0px 0px 10px 0px;}
+.margin10t {margin:10px 0px 0px 0px;}
 
 .padding5 {padding:5px;}
 
@@ -217,24 +232,6 @@ img.one {width:150px;height:150px;margin:5px;border:solid 1px #FFF;overflow:hidd
 
 /*
 |------------------
-| Primary Menu Box
-|------------------
-*/
-
-.primarymenubox {width:100%;height:46px;z-index:9999;position:relative;background:url(images/nav-bg.jpg) repeat-x scroll 0% 0% transparent;}
-.primarymenuboxdata {position:absolute;width:100%;top:0px;left:0px;}
-
-/*
-|------------------
-| Secondary Menu Box
-|------------------
-*/
-
-.secondarymenubox {width:960px;margin:0px auto;height:47px;z-index:9998;position:relative;background:url(images/nav-bg-2.png) repeat-x scroll 0% 0% transparent;}
-.secondarymenuboxdata {position:absolute;width:100%;top:0px;left:0px;}
-
-/*
-|------------------
 | Chip Sidebar(s)
 | Wide - Medium - Small - Tiny
 |------------------
@@ -248,13 +245,6 @@ img.one {width:150px;height:150px;margin:5px;border:solid 1px #FFF;overflow:hidd
 | Sidebar Box - Common
 |------------------
 */
-
-.sidebarbox form {margin:0px;padding:0px;}
-
-.sidebarbox #searchform {width:295px;margin:0px auto;}
-.sidebarbox #searchform .screen-reader-text {display:none;}
-.sidebarbox #searchform input#s {width:190px;float:left;padding:6px 4px 6px 25px;color:#135171;border-width:1px;border-style:solid;border-color:#dfe3fc #878ba6 #878ba6 #dfe3fc;background:#fff url(images/ico_search.jpg) 5px 50% no-repeat;}
-.sidebarbox #searchform input#searchsubmit {width:70px;height:30px;border:none;background:url(images/search_btn.jpg) -2px 0px no-repeat;cursor:pointer;padding:0px;text-align:center;color:#ccc;font-size:11px;}
 
 .sidebarbox ul {margin:5px 20px 10px 20px;padding:0px;color:#135171;}
 .sidebarbox ul ul {margin:5px 20px 10px 20px;}
@@ -276,6 +266,8 @@ img.one {width:150px;height:150px;margin:5px;border:solid 1px #FFF;overflow:hidd
 | Comment(s)
 |------------------
 */
+
+#comments {word-wrap: break-word;}
 
 #comments h3 {margin:0px 0px 10px 0px;font-weight:normal;}
 #comments #respond h3 {margin:10px 0px 10px 0px;}
@@ -307,21 +299,19 @@ img.one {width:150px;height:150px;margin:5px;border:solid 1px #FFF;overflow:hidd
 
 #comments ol.commentlist div.comment-body {padding:10px;}
 
-input[type=submit] {color: #333;}
-#respond {overflow:hidden;position:relative;}
+#respond {overflow:hidden;position:relative;margin:0px 10px 0px 10px;}
 #respond p {margin:0px;}
-#respond .comment-notes {margin-bottom:1em;}
-.form-allowed-tags {line-height:1em;}
-.children #respond {margin:0px 48px 0px 0px;}
-#comments-list #respond {margin:0px 0px 18px 0px;}
-#comments-list ul #respond {margin:0px;}
-#respond .required {color:#ff4b33;font-weight: bold;}
 #respond input {margin:0px 0px 9px;width:98%;}
 #respond textarea {width: 98%;}
-#respond .form-allowed-tags {margin:10px 0px 5px 0px;}
-#respond .form-allowed-tags code {font-size: 11px;}
+
+#respond .comment-notes {margin-bottom:1em;}
+#respond .form-allowed-tags {line-height:1em;}
+#respond .form-allowed-tags code {font-size: 11px;margin:10px 0px 5px 0px;}
+#respond .required {color:#ff4b33;font-weight: bold;}
 #respond .form-submit {margin: 12px 0px;}
 #respond .form-submit input {font-size: 14px;width: auto;}
+
+#respond .comment-form-comment label {display: none;}
  
 /*
 |------------------
@@ -329,34 +319,35 @@ input[type=submit] {color: #333;}
 |------------------
 */
 
-.primary-container {width:960px;margin:0px auto;}
+.primarymenubox {position:relative;z-index:200;width:100%;background:url(images/nav-bg.jpg) repeat scroll 0% 0% transparent;}
+.primarymenuboxdata {width:960px;margin:0px auto}
 
-.primary-container ul, .primary-container ul * {margin:0px;padding:0px;list-style:none;}
-.primary-container ul {float:left;margin-bottom:1em;line-height:1.0;}
-.primary-container ul ul {position:absolute;top:-999em;width:10em;}
-.primary-container ul ul li {width:100%;}
-.primary-container ul li:hover {visibility:inherit;}
-.primary-container ul li {float:left;position:relative;}
+.primarymenubox ul, .primarymenubox ul * {margin:0px;padding:0px;list-style:none;}
+.primarymenubox ul {float:left;margin-bottom:0px;line-height:1.0;}
+.primarymenubox ul ul {position:absolute;top:-999em;width:10em;}
+.primarymenubox ul ul li {width:100%;}
+.primarymenubox ul li:hover {visibility:inherit;}
+.primarymenubox ul li {float:left;position:relative;}
 
-.primary-container ul li:hover ul, .primary-container ul li.sfHover ul {left:0px;top:45px;z-index:99;}
-.primary-container ul li:hover li ul, .primary-container ul li.sfHover li ul {top:-999em;}
-.primary-container ul li li:hover ul, .primary-container ul li li.sfHover ul {left:10em;top:0px;}
-.primary-container ul li li:hover li ul, .primary-container ul li li.sfHover li ul {top:-999em;}
-.primary-container ul li li li:hover ul, .primary-container ul li li li.sfHover ul {left:10em;top:0px;}
+.primarymenubox ul li:hover ul, .primarymenubox ul li.sfHover ul {left:0px;top:45px;z-index:200;}
+.primarymenubox ul li:hover li ul, .primarymenubox ul li.sfHover li ul {top:-999em;}
+.primarymenubox ul li li:hover ul, .primarymenubox ul li li.sfHover ul {left:10em;top:0px;}
+.primarymenubox ul li li:hover li ul, .primarymenubox ul li li.sfHover li ul {top:-999em;}
+.primarymenubox ul li li li:hover ul, .primarymenubox ul li li li.sfHover ul {left:10em;top:0px;}
 
-.primary-container ul a, .primary-container ul a:visited {display:block;position:relative;font-size:12px;color:#4a4b84;font-weight:bold;padding:16px 14px 16px 14px;text-decoration:none;}
-.primary-container ul ul.sub-menu a, .primary-container ul ul.sub-menu a:visited {font-weight:bold;color:#FFF;}
-.primary-container ul ul.children a, .primary-container ul ul.children a:visited {font-weight:bold;color:#FFF;}
+.primarymenubox ul a, .primarymenubox ul a:visited {display:block;position:relative;font-size:12px;color:#4a4b84;font-weight:bold;padding:17px 14px 17px 14px;text-decoration:none;}
+.primarymenubox ul ul.sub-menu a, .primarymenubox ul ul.sub-menu a:visited {font-weight:bold;color:#FFF;}
+.primarymenubox ul ul.children a, .primarymenubox ul ul.children a:visited {font-weight:bold;color:#FFF;}
 
-.primary-container ul li {background: url(images/bg_nav1_side.jpg) no-repeat scroll right top transparent;}
-.primary-container ul li li {background:none repeat scroll 0% 0% #343434;border-width:1px;border-style:solid;border-color:#828282 #000 #000 #828282;}
-.primary-container ul li li li {background:none repeat scroll 0% 0% #343434;border-width:1px;border-style:solid;border-color:#828282 #000 #000 #828282;}
-.primary-container ul li:hover, .primary-container ul li.sfHover, .primary-container ul a:focus, .primary-container ul a:hover, .primary-container ul a:active {color:#9788c3;outline:0;text-decoration:none;background:none repeat scroll 0% 0% #fff;}
+.primarymenubox ul li {background: url(images/bg_nav1_side.jpg) no-repeat scroll right top transparent;}
+.primarymenubox ul li li {background:none repeat scroll 0% 0% #343434;border-width:1px;border-style:solid;border-color:#828282 #000 #000 #828282;}
+.primarymenubox ul li li li {background:none repeat scroll 0% 0% #343434;border-width:1px;border-style:solid;border-color:#828282 #000 #000 #828282;}
+.primarymenubox ul li:hover, .primarymenubox ul li.sfHover, .primarymenubox ul a:focus, .primarymenubox ul a:hover, .primarymenubox ul a:active {color:#9788c3;outline:0;text-decoration:none;background:none repeat scroll 0% 0% #fff;z-index:200;}
 
-.primary-container ul ul.sub-menu li:hover, .primary-container ul ul.sub-menu li.sfHover, .primary-container ul ul.sub-menu a:focus, .primary-container ul ul.sub-menu a:hover, .primary-container ul ul.sub-menu a:active {background:none repeat scroll 0% 0% #232323;}
-.primary-container ul ul.children li:hover, .primary-container ul ul.children li.sfHover, .primary-container ul ul.children a:focus, .primary-container ul ul.children a:hover, .primary-container ul ul.children a:active {background:none repeat scroll 0% 0% #232323;}
+.primarymenubox ul ul.sub-menu li:hover, .primarymenubox ul ul.sub-menu li.sfHover, .primarymenubox ul ul.sub-menu a:focus, .primarymenubox ul ul.sub-menu a:hover, .primarymenubox ul ul.sub-menu a:active {background:none repeat scroll 0% 0% #232323;z-index:200;}
+.primarymenubox ul ul.children li:hover, .primarymenubox ul ul.children li.sfHover, .primarymenubox ul ul.children a:focus, .primarymenubox ul ul.children a:hover, .primarymenubox ul ul.children a:active {background:none repeat scroll 0% 0% #232323;z-index:200;}
 
-.primary-container ul .sf-sub-indicator{padding:0px 0px 0px 5px;}
+.primarymenubox ul .sf-sub-indicator{padding:0px 0px 0px 5px;}
 
 /*
 |------------------
@@ -364,34 +355,46 @@ input[type=submit] {color: #333;}
 |------------------
 */
 
-.secondary-container {}
+.secondarymenubox {position:relative;z-index:100;width:960px;margin:0px auto;background:url(images/nav-bg-2.png) repeat scroll 0% 0% transparent;}
 
-.secondary-container ul, .secondary-container ul * {margin:0px;padding:0px;list-style:none;}
-.secondary-container ul {float:left;margin-bottom:1em;line-height:1.0;}
-.secondary-container ul ul {position:absolute;top:-999em;width:10em;}
-.secondary-container ul ul li {width:100%;}
-.secondary-container ul li:hover {visibility:inherit;}
-.secondary-container ul li {float:left;position:relative;}
+.secondarymenubox ul, .secondarymenubox ul * {margin:0px;padding:0px;list-style:none;}
+.secondarymenubox ul {float:left;margin-bottom:0px;line-height:1.0;}
+.secondarymenubox ul ul {position:absolute;top:-999em;width:10em;}
+.secondarymenubox ul ul li {width:100%;}
+.secondarymenubox ul li:hover {visibility:inherit;}
+.secondarymenubox ul li {float:left;position:relative;}
 
-.secondary-container ul li:hover ul, .secondary-container ul li.sfHover ul {left:0px;top:48px;z-index:99;}
-.secondary-container ul li:hover li ul, .secondary-container ul li.sfHover li ul {top:-999em;}
-.secondary-container ul li li:hover ul, .secondary-container ul li li.sfHover ul {left:10em;top:0px;}
-.secondary-container ul li li:hover li ul, .secondary-container ul li li.sfHover li ul {top:-999em;}
-.secondary-container ul li li li:hover ul, .secondary-container ul li li li.sfHover ul {left:10em;top:0px;}
+.secondarymenubox ul li:hover ul, .secondarymenubox ul li.sfHover ul {left:0px;top:45px;z-index:100;}
+.secondarymenubox ul li:hover li ul, .secondarymenubox ul li.sfHover li ul {top:-999em;}
+.secondarymenubox ul li li:hover ul, .secondarymenubox ul li li.sfHover ul {left:10em;top:0px;}
+.secondarymenubox ul li li:hover li ul, .secondarymenubox ul li li.sfHover li ul {top:-999em;}
+.secondarymenubox ul li li li:hover ul, .secondarymenubox ul li li li.sfHover ul {left:10em;top:0px;}
 
-.secondary-container ul a, .secondary-container ul a:visited {display:block;position:relative;font-size:12px;color:#ccc;font-weight:bold;padding:17px 14px 17px 14px;text-decoration:none;}
-.secondary-container ul ul.sub-menu a, .secondary-container ul ul.sub-menu a:visited {font-weight:bold;}
-.secondary-container ul ul.children a, .secondary-container ul ul.children a:visited {font-weight:bold;}
+.secondarymenubox ul a, .secondarymenubox ul a:visited {display:block;position:relative;font-size:12px;color:#ccc;font-weight:bold;padding:17px 14px 17px 14px;text-decoration:none;}
+.secondarymenubox ul ul.children a, .secondarymenubox ul ul.children a:visited {font-weight:bold;}
 
-.secondary-container ul li {background: url(images/bg_nav2_side.jpg) no-repeat scroll right top transparent;}
-.secondary-container ul li li {background:none repeat scroll 0% 0% #343434;border-width:1px;border-style:solid;border-color:#828282 #000 #000 #828282;}
-.secondary-container ul li li li {background:none repeat scroll 0% 0% #343434;border-width:1px;border-style:solid;border-color:#828282 #000 #000 #828282;}
-.secondary-container ul li:hover, .secondary-container ul li.sfHover, .secondary-container ul a:focus, .secondary-container ul a:hover, .secondary-container ul a:active {color:#FFF;outline:0;text-decoration:none;background:url(images/nav-hover-2.png) repeat-x;}
+.secondarymenubox ul li {background: url(images/bg_nav2_side.jpg) no-repeat scroll right top transparent;}
+.secondarymenubox ul li li {background:none repeat scroll 0% 0% #343434;border-width:1px;border-style:solid;border-color:#828282 #000 #000 #828282;}
+.secondarymenubox ul li li li {background:none repeat scroll 0% 0% #343434;border-width:1px;border-style:solid;border-color:#828282 #000 #000 #828282;}
+.secondarymenubox ul li:hover, .secondarymenubox ul li.sfHover, .secondarymenubox ul a:focus, .secondarymenubox ul a:hover, .secondarymenubox ul a:active {color:#FFF;outline:0;text-decoration:none;background:none repeat scroll 0% 0% #232323;z-index:100;}
 
-.secondary-container ul ul.sub-menu li:hover, .secondary-container ul ul.sub-menu li.sfHover, .secondary-container ul ul.sub-menu a:focus, .secondary-container ul ul.sub-menu a:hover, .secondary-container ul ul.sub-menu a:active {background: none repeat scroll 0% 0% #232323;}
-.secondary-container ul ul.children li:hover, .secondary-container ul ul.children li.sfHover, .secondary-container ul ul.children a:focus, .secondary-container ul ul.children a:hover, .secondary-container ul ul.children a:active {background: none repeat scroll 0% 0% #232323;}
+.secondarymenubox ul ul.sub-menu li:hover, .secondarymenubox ul ul.sub-menu li.sfHover, .secondarymenubox ul ul.sub-menu a:focus, .secondarymenubox ul ul.sub-menu a:hover, .secondarymenubox ul ul.sub-menu a:active {background: none repeat scroll 0% 0% #232323;z-index:100;}
+.secondarymenubox ul ul.children li:hover, .secondarymenubox ul ul.children li.sfHover, .secondarymenubox ul ul.children a:focus, .secondarymenubox ul ul.children a:hover, .secondarymenubox ul ul.children a:active {background: none repeat scroll 0% 0% #232323;z-index:100;}
 
-.secondary-container ul .sf-sub-indicator{padding:0px 0px 0px 5px;}
+.secondarymenubox ul .sf-sub-indicator{padding:0px 0px 0px 5px;}
+
+/*
+|------------------
+| Search Form
+|------------------
+*/
+
+.searchform form {margin:0px;padding:0px;}
+
+.searchform {width:295px;margin:0px auto;}
+.searchform .screen-reader-text {display:none;}
+.searchform input#s {width:190px;float:left;padding:6px 4px 6px 25px;color:#135171;border-width:1px;border-style:solid;border-color:#dfe3fc #878ba6 #878ba6 #dfe3fc;background:#fff url(images/ico_search.jpg) 5px 50% no-repeat;}
+.searchform input#searchsubmit {width:70px;height:30px;border:none;background:url(images/search_btn.jpg) -2px 0px no-repeat;cursor:pointer;padding:0px;text-align:center;color:#ccc;font-size:11px;}
 
 /*
 |------------------

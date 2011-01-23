@@ -1,49 +1,78 @@
 <?php
 /*
 |------------------------
+| Home Page
+|------------------------
+*/
+
+define('CHIP_LIFE_HOME'		, home_url() . "/");
+
+/*
+|------------------------
 | Template Directory
 |------------------------
 */	
 
-define('TEMPLATE_FSROOT'	, TEMPLATEPATH . "/");
-define('TEMPLATE_WSROOT'	, get_bloginfo('template_directory') . "/");
-
-/*
-|------------------------
-| Blog Directory
-|------------------------
-*/
-
-define('BLOG_WSROOT'		, get_bloginfo('url') . "/");
+define('CHIP_LIFE_ABSPATH'	, TEMPLATEPATH . "/");
+define('CHIP_LIFE_URLPATH'	, get_template_directory_uri() . "/");
 
 /*
 |------------------------
 | Chip Directory
+| FSROOT set to relative in favour of WP locate_template
 |------------------------
 */
 
-define('CHIP_FSROOT'		, TEMPLATE_FSROOT . "chip/");
-define('CHIP_WSROOT'		, TEMPLATE_WSROOT . "chip/");
+define('CHIP_LIFE_FSROOT'	, 'chip/');
+define('CHIP_LIFE_WSROOT'	, CHIP_LIFE_URLPATH . 'chip/');
 
 /*
 |------------------------
-| Chip Gateway
-| Dissect logic into relevant files.
+| Option Directory
 |------------------------
 */
 
-require_once(CHIP_FSROOT . 'gateway.php');
+define('CHIP_LIFE_OPTION_FSROOT'	, CHIP_LIFE_FSROOT . 'option/');
+define('CHIP_LIFE_OPTION_WSROOT'	, CHIP_LIFE_WSROOT . 'option/');
 
 /*
 |------------------------
-| Chip Gateway for User
-| Keep user logic safe while upgrading Chip theme.
-| Write your constants and other logic in gateway-user.php
+| Common Directory
 |------------------------
 */
 
-if( file_exists( CHIP_FSROOT . 'gateway-user.php' ) ) {
-require_once(CHIP_FSROOT . 'gateway-user.php');
-}
+define('CHIP_LIFE_COMMON_FSROOT'	, CHIP_LIFE_FSROOT . 'common/');
 
+/*
+|------------------------
+| Script Directory
+|------------------------
+*/
+
+define('CHIP_LIFE_SCRIPT_FSROOT'	, CHIP_LIFE_FSROOT . 'script/');
+define('CHIP_LIFE_SCRIPT_WSROOT'	, CHIP_LIFE_WSROOT . 'script/');
+
+/*
+|------------------------
+| Widget Directory
+|------------------------
+*/
+
+define('CHIP_LIFE_WIDGET_FSROOT'	, CHIP_LIFE_FSROOT . 'widget/');
+
+/*
+|------------------------
+| Sponsor Directory
+|------------------------
+*/
+
+define('CHIP_LIFE_SPONSOR_FSROOT'	, CHIP_LIFE_FSROOT . 'sponsor/');
+
+/*
+|------------------------
+| Image Directory
+|------------------------
+*/
+
+define('CHIP_LIFE_IMAGES_WSROOT'	, CHIP_LIFE_URLPATH . 'images/');
 ?>

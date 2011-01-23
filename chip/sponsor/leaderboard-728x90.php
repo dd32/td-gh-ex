@@ -1,11 +1,6 @@
 <?php
-if( get_option($theme_options['c102']['id'] ) == "yes"):
-	if( get_option($theme_options['c103']['id']) == "na" ):
-?>
-		<img src="<?php echo SPONSOR_WSROOT; ?>leaderboard-728x90.gif" width="728" height="90" />
-<?php 
-	else:
-		echo stripslashes( get_option($theme_options['c103']['id']) );
-	endif;
+global $chip_life_global;
+if( $chip_life_global['theme_options']['chip_life_sponsor_header_728x90'] == "yes"):
+echo htmlspecialchars_decode ( $chip_life_global['theme_options']['chip_life_sponsor_header_728x90_code'] );
 endif;
 ?>

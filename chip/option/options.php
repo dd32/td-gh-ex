@@ -1,359 +1,716 @@
 <?php
 /*
 |--------------------------
-| Theme Variables
+| Chip Life Options Class
 |--------------------------
 */
 
-$theme_full_name = "Chip Life";
-$theme_short_name = "chip_life";
-$theme_action = FALSE;
+class Chip_Life_Options {
 
-/*
-|--------------------------
-| Theme Options
-|--------------------------
-*/
-
-$theme_options = array(
-	
-	/*
-	|--------------------------
-	| Theme Title Options
-	| 10-50
-	|--------------------------
-	*/
-	
-	"c1"	=>	array(
-				"name"			=>	$theme_full_name." Title",
-				"id"			=>	$theme_short_name."_title",
-				"type"			=>	"header"
-				),
-
-	"c2"	=>	array(
-				"name"			=>	"Use Image Logo in Header",
-				"id"			=>	$theme_short_name."_logo",
-				"type"			=>	"select",
-				"std"			=>	"no",
-				"options"		=>	array("no", "yes"),
-				"help"			=>	"Select yes to add the image logo in the site header. Enter your logo URl below."
-				),
-	
-	"c3"	=>	array(
-				"name"			=>	"Enter Logo URl - Dimension (215x120)",
-				"id"			=>	$theme_short_name."_logo_url",
-				"std"			=>	"na",
-				"type"			=>	"textarea",
-				"help"			=>	"Replace the above code with your own logo URl."
-				),
-	
-	/*
-	|--------------------------
-	| Theme Post Options
-	| 51-100
-	|--------------------------
-	*/
-	
-	"c51"	=>	array(
-				"name"			=>	$theme_full_name." Post",
-				"id"			=>	$theme_short_name."_post",
-				"type"			=>	"header"
-				),
-
-	"c52"	=>	array(
-				"name"			=>	"Use Related Posts at the bottom of Post",
-				"id"			=>	$theme_short_name."_related_post",
-				"type"			=>	"select",
-				"std"			=>	"no",
-				"options"		=>	array("no", "yes"),
-				"help"			=>	"Select yes to add the related post at the bottom of post"
-				),
+		
+		/*
+		|--------------------------
+		| Chip Admin Init
+		|--------------------------
+		*/
+		
+		function chip_admin_init() {
+		
+			/** Register Admin Stylesheet */
+			wp_register_style( 'chip_life_stylesheet', CHIP_LIFE_OPTION_WSROOT . 'style.css' );
+			
+			/** Register Theme Options */
+			register_setting( 'chip_life_options_group', 'chip_life_options', array( 'Chip_Life_Options', 'chip_validation_fn' ) );
+			
+			/** Chip Blog Section */
+			add_settings_section( 'chip_life_section_blog', 'Blog Options', array( 'Chip_Life_Options', 'chip_life_section_blog_fn' ), 'chip_life_sections' );
+			add_settings_field( 'chip_life_field_logo', 'Use Image Logo in Header', array( 'Chip_Life_Options', 'chip_life_field_logo_fn' ), 'chip_life_sections', 'chip_life_section_blog' );
+			add_settings_field( 'chip_life_field_logo_url', 'Enter Logo URl - Dimension (215x125)', array( 'Chip_Life_Options', 'chip_life_field_logo_url_fn' ), 'chip_life_sections', 'chip_life_section_blog' );
+			
+			add_settings_field( 'chip_life_field_post_style', 'Post Style', array( 'Chip_Life_Options', 'chip_life_field_post_style_fn' ), 'chip_life_sections', 'chip_life_section_blog' );
+			
+			/** Chip Post Section */
+			add_settings_section( 'chip_life_section_post', 'Post Options', array( 'Chip_Life_Options', 'chip_life_section_post_fn' ), 'chip_life_sections' );
+			add_settings_field( 'chip_life_field_related_post', 'Use Related Posts at the Bottom of Post', array( 'Chip_Life_Options', 'chip_life_field_related_post_fn' ), 'chip_life_sections', 'chip_life_section_post' );
+			add_settings_field( 'chip_life_field_related_post_number', 'How many Related Posts to Execute', array( 'Chip_Life_Options', 'chip_life_field_related_post_number_fn' ), 'chip_life_sections', 'chip_life_section_post' );
+			
+			/** Chip Sponsor Section */
+			add_settings_section( 'chip_life_section_sponsor', 'Sponsor Options', array( 'Chip_Life_Options', 'chip_life_section_sponsor_fn' ), 'chip_life_sections' );
+			add_settings_field( 'chip_life_field_sponsor_header_728x90', 'Display 728x90 Sponsor in Header', array( 'Chip_Life_Options', 'chip_life_field_sponsor_header_728x90_fn' ), 'chip_life_sections', 'chip_life_section_sponsor' );
+			add_settings_field( 'chip_life_field_sponsor_header_728x90_code', 'Enter Sponsor Code of Dimensions: 728x90', array( 'Chip_Life_Options', 'chip_life_field_sponsor_header_728x90_code_fn' ), 'chip_life_sections', 'chip_life_section_sponsor' );
+			
+			/** Chip Subscription Section */
+			add_settings_section( 'chip_life_section_subscription', 'Subscription Options', array( 'Chip_Life_Options', 'chip_life_section_subscription_fn' ), 'chip_life_sections' );
+			add_settings_field( 'chip_life_field_rss', 'Use RSS', array( 'Chip_Life_Options', 'chip_life_field_rss_fn' ), 'chip_life_sections', 'chip_life_section_subscription' );
+			add_settings_field( 'chip_life_field_rss_url', 'Enter RSS URL', array( 'Chip_Life_Options', 'chip_life_field_rss_url_fn' ), 'chip_life_sections', 'chip_life_section_subscription' );
+			
+			add_settings_field( 'chip_life_field_feedburner', 'Use Feedburner', array( 'Chip_Life_Options', 'chip_life_field_feedburner_fn' ), 'chip_life_sections', 'chip_life_section_subscription' );
+			add_settings_field( 'chip_life_field_feedburner_id', 'Enter Feedburner ID', array( 'Chip_Life_Options', 'chip_life_field_feedburner_id_fn' ), 'chip_life_sections', 'chip_life_section_subscription' );
+			
+			add_settings_field( 'chip_life_field_feedburner_post_bottom', 'Use Feedburner at Post bottom', array( 'Chip_Life_Options', 'chip_life_field_feedburner_post_bottom_fn' ), 'chip_life_sections', 'chip_life_section_subscription' );
+			
+			add_settings_field( 'chip_life_field_twitter', 'Use Twitter', array( 'Chip_Life_Options', 'chip_life_field_twitter_fn' ), 'chip_life_sections', 'chip_life_section_subscription' );
+			add_settings_field( 'chip_life_field_twitter_url', 'Enter Twitter URL', array( 'Chip_Life_Options', 'chip_life_field_twitter_url_fn' ), 'chip_life_sections', 'chip_life_section_subscription' );
+			
+			add_settings_field( 'chip_life_field_delicious', 'Use Delicious', array( 'Chip_Life_Options', 'chip_life_field_delicious_fn' ), 'chip_life_sections', 'chip_life_section_subscription' );
+			add_settings_field( 'chip_life_field_delicious_url', 'Enter Delicious URL', array( 'Chip_Life_Options', 'chip_life_field_delicious_url_fn' ), 'chip_life_sections', 'chip_life_section_subscription' );
+			
+			add_settings_field( 'chip_life_field_facebook', 'Use Facebook', array( 'Chip_Life_Options', 'chip_life_field_facebook_fn' ), 'chip_life_sections', 'chip_life_section_subscription' );
+			add_settings_field( 'chip_life_field_facebook_url', 'Enter Facebook URL', array( 'Chip_Life_Options', 'chip_life_field_facebook_url_fn' ), 'chip_life_sections', 'chip_life_section_subscription' );
+			
+			add_settings_field( 'chip_life_field_stumble', 'Use Stumbleupon', array( 'Chip_Life_Options', 'chip_life_field_stumble_fn' ), 'chip_life_sections', 'chip_life_section_subscription' );
+			add_settings_field( 'chip_life_field_stumble_url', 'Enter Stumbleupon URL', array( 'Chip_Life_Options', 'chip_life_field_stumble_url_fn' ), 'chip_life_sections', 'chip_life_section_subscription' );
+			
+			add_settings_field( 'chip_life_field_digg', 'Use Digg', array( 'Chip_Life_Options', 'chip_life_field_digg_fn' ), 'chip_life_sections', 'chip_life_section_subscription' );
+			add_settings_field( 'chip_life_field_digg_url', 'Enter Digg URL', array( 'Chip_Life_Options', 'chip_life_field_digg_url_fn' ), 'chip_life_sections', 'chip_life_section_subscription' );
+			
+			
+			/** Chip General Section */
+			add_settings_section( 'chip_life_section_general', 'General Options', array( 'Chip_Life_Options', 'chip_life_section_general_fn' ), 'chip_life_sections' );
+			add_settings_field( 'chip_life_field_analytic', 'Use Analytic', array( 'Chip_Life_Options', 'chip_life_field_analytic_fn' ), 'chip_life_sections', 'chip_life_section_general' );
+			add_settings_field( 'chip_life_field_analytic_code', 'Enter Analytic Code', array( 'Chip_Life_Options', 'chip_life_field_analytic_code_fn' ), 'chip_life_sections', 'chip_life_section_general' );
+			
+			add_settings_field('chip_life_field_reset', 'Reset Theme Options', array( 'Chip_Life_Options', 'chip_life_field_reset_fn' ), 'chip_life_sections', 'chip_life_section_general');
+		
+		}
+		
+		/*
+		|--------------------------
+		| Chip Admin Menu
+		|--------------------------
+		*/
+		
+		function chip_admin_menu() {
+		
+			$page = add_theme_page( 'Chip Life Theme Options', 'Chip Life Theme Options', 'edit_theme_options', 'theme_options', array( 'Chip_Life_Options', 'chip_setting_fn' ) );
+			/* Using registered $page handle to hook stylesheet loading */
+			add_action( 'admin_print_styles-' . $page, array( 'Chip_Life_Options', 'chip_admin_styles_fn' ) );
+		
+		}
+		
+		/**
+		* Chip Init Default
+		*/
+		
+		function chip_init_default() {
+		
+			$chip_life_options = get_option('chip_life_options');
+			
+			//if(($tmp['chkbox1']=='on')||(!is_array($tmp))) {
+			if( ( $chip_life_options['chip_life_reset'] == "yes" || !is_array( $chip_life_options ) ) ) {
 				
-	"c53"		=>	array(
-				"name"			=>	"How many Related Post",
-				"id"			=>	$theme_short_name."_related_post_number",
-				"type"			=>	"select",
-				"std"			=>	"5",
-				"options"		=>	array("5", "1", "2", "3", "4", "6", "7", "8", "9", "10"),
-				"help"			=>	"How many related posts would you like to display?"
-				),	
-	
-	/*
-	|--------------------------
-	| Theme Advertisement Options
-	| 101-200
-	|--------------------------
-	*/
-	
-	"c101"	=>	array(
-				"name"			=>	$theme_full_name." Advertisement",
-				"id"			=>	$theme_short_name."_advertisement",
-				"type"			=>	"header"
-				),
-
-	"c102"	=>	array(
-				"name"			=>	"Display 728x90 Sponsor in Header",
-				"id"			=>	$theme_short_name."_sponsor_001",
-				"type"			=>	"select",
-				"std"			=>	"no",
-				"options"		=>	array("no", "yes"),
-				"help"			=>	"Select yes to add the 728x90 sponsor in the site header. Enter your own ad code below."
-				),
-	
-	"c103"	=>	array(
-				"name"			=>	"Header 728x90 Sponsor Code",
-				"id"			=>	$theme_short_name."_sponsor_001_code",
-				"std"			=>	"na",
-				"type"			=>	"textarea",
-				"help"			=>	"Replace the above code with your own advertising code."
-				),
+				$default = array(
+					'chip_life_logo'						=>	'no',
+					'chip_life_logo_url'					=>	CHIP_LIFE_IMAGES_WSROOT.'logo.gif',
+					
+					'chip_life_post_style'					=>	'excerpt',
+					
+					'chip_life_related_post'				=>	'no',
+					'chip_life_related_post_number'			=>	5,
+					
+					'chip_life_sponsor_header_728x90'		=>	'no',
+					'chip_life_sponsor_header_728x90_code'	=>	'Sponsor Code 728x90',
+					
+					'chip_life_rss'							=>	'no',
+					'chip_life_rss_url'						=>	CHIP_LIFE_HOME.'feed/',
+					
+					'chip_life_feedburner'					=>	'no',
+					'chip_life_feedburner_id'				=>	'tutorialchip',
+					
+					'chip_life_feedburner_post_bottom'		=>	'no',
+					
+					'chip_life_twitter'						=>	'no',
+					'chip_life_twitter_url'					=>	'http://twitter.com/lifeobject1',
+					
+					'chip_life_delicious'					=>	'no',
+					'chip_life_delicious_url'				=>	'http://www.delicious.com/life.object',
+					
+					'chip_life_facebook'					=>	'no',
+					'chip_life_facebook_url'				=>	'http://www.facebook.com/profile.php?id=100001747038774',
+					
+					'chip_life_stumble'						=>	'no',
+					'chip_life_stumble_url'					=>	'http://www.stumbleupon.com/stumbler/lifeobject',
+					
+					'chip_life_digg'						=>	'no',
+					'chip_life_digg_url'					=>	'http://digg.com/lifeobject',
+					
+					'chip_life_analytic'					=>	'no',
+					'chip_life_analytic_code'				=>	'Analytic Code',
+					
+					'chip_life_reset'						=>	'no',
+					
+				);
 				
-	/*
-	|--------------------------
-	| Theme Subscription/Community Options
-	| 201-300
-	|--------------------------
-	*/
-	
-	"c201"	=>	array(
-				"name"			=>	$theme_full_name." Subscription",
-				"id"			=>	$theme_short_name."_subscription",
-				"type"			=>	"header"
-				),
-	
-	"c202"	=>	array(
-				"name"			=>	"Use RSS",
-				"id"			=>	$theme_short_name."_rss",
-				"type"			=>	"select",
-				"std"			=>	"no",
-				"options"		=>	array("no", "yes"),
-				"help"			=> "RSS (most commonly expanded as 'Really Simple Syndication') is a family of web feed formats used to publish frequently updated work<br />Select 'yes' to use RSS address, and enter your RSS Feed URI below."
-				),
-	
-	"c203"	=>	array(
-				"name"			=>	"Enter RSS URl",
-				"id"			=>	$theme_short_name."_rss_url",
-				"std"			=>	"na",
-				"type"			=>	"textarea",
-				"help"			=>	"Enter RSS full URl.<br /> For example, Google/FeedBurner feed URL: http://feeds.feedburner.com/tutorialchip"
-				),
-	
-	"c204"	=>	array(
-				"name"			=>	"Use Feedburner Subscription",
-				"id"			=>	$theme_short_name."_feedburner",
-				"type"			=>	"select",
-				"std"			=>	"no",
-				"options"		=>	array("no", "yes"),
-				"help"			=> "Use Feedburner Subscription<br />Select 'yes' to use Feedburner ID for email subscription."
-				),
-	
-	"c205"	=>	array(
-				"name"			=>	"Enter Feedburner ID",
-				"id"			=>	$theme_short_name."_feedburner_id",
-				"std"			=>	"na",
-				"type"			=>	"textarea",
-				"help"			=>	"Enter Feedburner ID.<br /> For example, http://feeds.feedburner.com/<strong>tutorialchip</strong>"
-				),
-	
-	"c206"	=>	array(
-				"name"			=>	"Display Feedburner Subscription Form at the end of Post",
-				"id"			=>	$theme_short_name."_feedburner_display_bottom",
-				"type"			=>	"select",
-				"std"			=>	"no",
-				"options"		=>	array("no", "yes"),
-				"help"			=> "Use Feedburner Subscription Form<br />Select 'yes' to use Feedburner subscription form at the end of post in 'Single Template'."
-				),
-	
-	"c207"	=>	array(
-				"name"			=>	"Use Twitter",
-				"id"			=>	$theme_short_name."_twitter",
-				"type"			=>	"select",
-				"std"			=>	"no",
-				"options"		=>	array("no", "yes"),
-				"help"			=> "Use Twitter URL<br />Select 'yes' to use Twitter address, and enter your Twitter URI below."
-				),
-	
-	"c208"	=>	array(
-				"name"			=>	"Enter Twitter URl",
-				"id"			=>	$theme_short_name."_twitter_url",
-				"std"			=>	"na",
-				"type"			=>	"textarea",
-				"help"			=>	"Enter Twitter URl.<br /> For example, http://twitter.com/lifeobject1"
-				),
-				
-	"c209"	=>	array(
-				"name"			=>	"Use Delicious",
-				"id"			=>	$theme_short_name."_delicious",
-				"type"			=>	"select",
-				"std"			=>	"no",
-				"options"		=>	array("no", "yes"),
-				"help"			=> "Use Delicious URL<br />Select 'yes' to use Delicious address, and enter your Delicious URI below."
-				),
-	
-	"c210"	=>	array(
-				"name"			=>	"Enter Delicious URl",
-				"id"			=>	$theme_short_name."_delicious_url",
-				"std"			=>	"na",
-				"type"			=>	"textarea",
-				"help"			=>	"Enter Delicious URl.<br /> For example, http://www.delicious.com/life.object"
-				),
-	
-	"c211"	=>	array(
-				"name"			=>	"Use Facebook",
-				"id"			=>	$theme_short_name."_facebook",
-				"type"			=>	"select",
-				"std"			=>	"no",
-				"options"		=>	array("no", "yes"),
-				"help"			=> "Use Facebook URL<br />Select 'yes' to use Facebook address, and enter your Facebook URI below."
-				),
-	
-	"c212"	=>	array(
-				"name"			=>	"Enter Facebook URl",
-				"id"			=>	$theme_short_name."_facebook_url",
-				"std"			=>	"na",
-				"type"			=>	"textarea",
-				"help"			=>	"Enter Facebook URl.<br /> For example, http://www.facebook.com/profile.php?id=100001747038774"
-				),
-	
-	"c213"	=>	array(
-				"name"			=>	"Use StumbleUpon",
-				"id"			=>	$theme_short_name."_stumbleupon",
-				"type"			=>	"select",
-				"std"			=>	"no",
-				"options"		=>	array("no", "yes"),
-				"help"			=> "Use StumbleUpon URL<br />Select 'yes' to use StumbleUpon address, and enter your StumbleUpon URI below."
-				),
-	
-	"c214"	=>	array(
-				"name"			=>	"Enter StumbleUpon URl",
-				"id"			=>	$theme_short_name."_stumbleupon_url",
-				"std"			=>	"na",
-				"type"			=>	"textarea",
-				"help"			=>	"Enter StumbleUpon URl.<br /> For example, http://www.stumbleupon.com/stumbler/lifeobject"
-				),
-	
-	"c215"	=>	array(
-				"name"			=>	"Use Digg",
-				"id"			=>	$theme_short_name."_digg",
-				"type"			=>	"select",
-				"std"			=>	"no",
-				"options"		=>	array("no", "yes"),
-				"help"			=> "Use Digg URL<br />Select 'yes' to use Digg address, and enter your Digg URI below."
-				),
-	
-	"c216"	=>	array(
-				"name"			=>	"Enter Digg URl",
-				"id"			=>	$theme_short_name."_digg_url",
-				"std"			=>	"na",
-				"type"			=>	"textarea",
-				"help"			=>	"Enter Digg URl.<br /> For example, http://digg.com/lifeobject"
-				),
-	
-	/*
-	|--------------------------
-	| Theme Advance Options
-	| 301-350
-	|--------------------------
-	*/
-	
-	"c301"	=>	array(
-				"name"			=>	$theme_full_name." Advance",
-				"id"			=>	$theme_short_name."_advance",
-				"type"			=>	"header"
-				),
-
-	"c302"	=>	array(
-				"name"			=>	"Use Analytics",
-				"id"			=>	$theme_short_name."_analytics",
-				"type"			=>	"select",
-				"std"			=>	"no",
-				"options"		=>	array("no", "yes"),
-				"help"			=> "Using Analytics code <strong>(For example, Google Analytics)</strong> is very helpful to understand the traffic nature of your blog. Select 'yes' to use analytics code, and enter your analytics code below."
-				),
-	
-	"c303"	=>	array(
-				"name"			=>	"Enter Analytics Code",
-				"id"			=>	$theme_short_name."_analytics_code",
-				"std"			=>	"na",
-				"type"			=>	"textarea",
-				"help"			=>	"Enter analytics code. This code will be inserted in footer."
-				),
-	
-	
-);
-
-/*
-|--------------------------
-| Theme Gateway Method
-|--------------------------
-*/
-
-function chip_theme_page() {
-	
-	global $theme_full_name, $theme_short_name, $theme_options, $theme_action;
-
-    if ( undefined_index_fix( $_GET['page'] ) == basename(__FILE__) ) {
-
-    	if ( undefined_index_fix ( $_REQUEST['action'] ) == 'save' ) {
-
-                foreach ( $theme_options as $value ) {
-                    if( isset( $_REQUEST[ $value['id'] ] ) ) { 
-						update_option( $value['id'], $_REQUEST[$value['id']] );
-					}else{
-						delete_option( $value['id'] );
-					}
-				}
-				
-				$theme_action = "save";
-
-        } else if( $_REQUEST['action'] == 'reset' ) {
-
-            foreach ( $theme_options as $value ) {
-                delete_option( $value['id'] );
+				update_option( 'chip_life_options' , $default );
+			
+			}
+		
+		}
+		
+		/*
+		|--------------------------
+		| Chip Admin Style
+		|--------------------------
+		*/
+		
+		function chip_admin_styles_fn() {
+			wp_enqueue_style( 'chip_life_stylesheet' );
+		}
+		
+		/*
+		|--------------------------
+		| Chip Setting - Form
+		|--------------------------
+		*/
+		
+		function chip_setting_fn() {
+			locate_template( array( CHIP_LIFE_OPTION_FSROOT . 'setting.php' ), true, false );
+		}
+		
+		/*
+		|--------------------------
+		| Chip Life Pre-defined Range
+		|--------------------------
+		*/
+		
+		/* Boolean Yes | No */
+		
+		function chip_boolean_pd() {			
+			$temp = array( 'yes' => 'yes', 'no' => 'no' );		
+			return $temp;
+		}
+		
+		/* Valid Home Page Post Range */		
+		
+		function chip_post_style_pd() {			
+			$temp = array( 'excerpt' => 'excerpt', 'content' => 'content' );			
+			return $temp;			
+		}
+		
+		/* Valid Related Post Range */		
+		
+		function chip_related_posts_pd() {			
+			$temp = array( 1 => 1, 2 => 2, 3 => 3, 4 => 4, 5 => 5, 6 => 6, 7 => 7, 8 => 8, 9 => 9, 10 => 10 );			
+			return $temp;			
+		}
+		
+		/*
+		|--------------------------
+		| Chip Validation
+		|--------------------------
+		*/		
+		
+		function chip_validation_fn( $input ) {
+			
+			/* Validation: chip_life_logo */
+			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
+			if ( ! array_key_exists( $input['chip_life_logo'], $chip_boolean_pd ) ) {
+				 $input['chip_life_logo'] = "no";
 			}
 			
-			$theme_action = "reset";
-        }
-    
-	} // if ($_GET['page'] == basename(__FILE__))
+			/* Validation: chip_life_logo_url */
+			if( !empty( $input['chip_life_logo_url'] ) ) {
+				$input['chip_life_logo_url'] = esc_url( $input['chip_life_logo_url'] );
+			}
+			
+			/* Validation: chip_life_post_style */
+			$chip_post_style_pd = Chip_Life_Options::chip_post_style_pd();
+			if ( ! array_key_exists( $input['chip_life_post_style'], $chip_post_style_pd ) ) {
+				 $input['chip_life_post_style'] = "excerpt";
+			}
+			
+			/* Validation: chip_life_related_post */
+			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
+			if ( ! array_key_exists( $input['chip_life_related_post'], $chip_boolean_pd ) ) {
+				 $input['chip_life_related_post'] = "no";
+			}
+			
+			/* Validation: chip_life_related_post_number */
+			$chip_related_posts_pd = Chip_Life_Options::chip_related_posts_pd();
+			if ( ! array_key_exists( $input['chip_life_related_post_number'], $chip_related_posts_pd ) ) {
+				 $input['chip_life_related_post_number'] = 5;
+			}
+			
+			/* Validation: chip_life_sponsor_header_728x90 */
+			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
+			if ( ! array_key_exists( $input['chip_life_sponsor_header_728x90'], $chip_boolean_pd ) ) {
+				 $input['chip_life_sponsor_header_728x90'] = "no";
+			}
+			
+			/* Validation: chip_life_sponsor_header_728x90_code */
+			if( !empty( $input['chip_life_sponsor_header_728x90_code'] ) ) {
+				$input['chip_life_sponsor_header_728x90_code'] = htmlspecialchars ( $input['chip_life_sponsor_header_728x90_code'] );
+			}
+			
+			/* Validation: chip_life_rss */
+			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
+			if ( ! array_key_exists( $input['chip_life_rss'], $chip_boolean_pd ) ) {
+				 $input['chip_life_rss'] = "no";
+			}
+			
+			/* Validation: chip_life_rss_url */
+			if( !empty( $input['chip_life_rss_url'] ) ) {
+				$input['chip_life_rss_url'] = esc_url( $input['chip_life_rss_url'] );
+			}
+			
+			/* Validation: chip_life_feedburner */
+			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
+			if ( ! array_key_exists( $input['chip_life_feedburner'], $chip_boolean_pd ) ) {
+				 $input['chip_life_rss'] = "no";
+			}
+			
+			/* Validation: chip_life_feedburner_id */
+			if( !empty( $input['chip_life_feedburner_id'] ) ) {
+				$input['chip_life_feedburner_id'] = wp_kses( $input['chip_life_feedburner_id'], array() );
+			}
+			
+			/* Validation: chip_life_feedburner_post_bottom */
+			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
+			if ( ! array_key_exists( $input['chip_life_feedburner_post_bottom'], $chip_boolean_pd ) ) {
+				 $input['chip_life_rss'] = "no";
+			}
+			
+			/* Validation: chip_life_twitter */
+			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
+			if ( ! array_key_exists( $input['chip_life_twitter'], $chip_boolean_pd ) ) {
+				 $input['chip_life_twitter'] = "no";
+			}
+			
+			/* Validation: chip_life_twitter_url */
+			if( !empty( $input['chip_life_twitter_url'] ) ) {
+				$input['chip_life_twitter_url'] = esc_url( $input['chip_life_twitter_url'] );
+			}
+			
+			/* Validation: chip_life_delicious */
+			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
+			if ( ! array_key_exists( $input['chip_life_delicious'], $chip_boolean_pd ) ) {
+				 $input['chip_life_delicious'] = "no";
+			}
+			
+			/* Validation: chip_life_delicious_url */
+			if( !empty( $input['chip_life_delicious_url'] ) ) {
+				$input['chip_life_delicious_url'] = esc_url( $input['chip_life_delicious_url'] );
+			}
+			
+			/* Validation: chip_life_facebook */
+			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
+			if ( ! array_key_exists( $input['chip_life_facebook'], $chip_boolean_pd ) ) {
+				 $input['chip_life_facebook'] = "no";
+			}
+			
+			/* Validation: chip_life_facebook_url */
+			if( !empty( $input['chip_life_facebook_url'] ) ) {
+				$input['chip_life_facebook_url'] = esc_url( $input['chip_life_facebook_url'] );
+			}
+			
+			/* Validation: chip_life_stumble */
+			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
+			if ( ! array_key_exists( $input['chip_life_stumble'], $chip_boolean_pd ) ) {
+				 $input['chip_life_stumble'] = "no";
+			}
+			
+			/* Validation: chip_life_stumble_url */
+			if( !empty( $input['chip_life_stumble_url'] ) ) {
+				$input['chip_life_stumble_url'] = esc_url( $input['chip_life_stumble_url'] );
+			}
+			
+			/* Validation: chip_life_digg */
+			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
+			if ( ! array_key_exists( $input['chip_life_digg'], $chip_boolean_pd ) ) {
+				 $input['chip_life_digg'] = "no";
+			}
+			
+			/* Validation: chip_life_digg_url */
+			if( !empty( $input['chip_life_digg_url'] ) ) {
+				$input['chip_life_digg_url'] = esc_url( $input['chip_life_digg_url'] );
+			}
+			
+			/* Validation: chip_life_analytic */
+			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
+			if ( ! array_key_exists( $input['chip_life_analytic'], $chip_boolean_pd ) ) {
+				 $input['chip_life_analytic'] = "no";
+			}
+			
+			/* Validation: chip_life_analytic_code */
+			if( !empty( $input['chip_life_analytic_code'] ) ) {
+				$input['chip_life_analytic_code'] = htmlspecialchars ( $input['chip_life_analytic_code'], ENT_NOQUOTES );
+			}
+			
+			/* Validation: chip_life_reset */
+			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
+			if ( ! array_key_exists( undefined_index_fix ( $input['chip_life_reset'] ), $chip_boolean_pd ) ) {
+				 $input['chip_life_reset'] = "no";
+			}
+			
+			return $input;
+		
+		}
+		
+		/*
+		|--------------------------
+		| Chip Blog Section
+		|--------------------------
+		*/		
+		
+		function chip_life_section_blog_fn() {
+			echo "These options will help you to customize Chip Life theme.";
+		}
+		
+		/* Chip Logo */
+		
+		function  chip_life_field_logo_fn() {
+			
+			$chip_life_options = get_option( 'chip_life_options' );
+			$items = Chip_Life_Options::chip_boolean_pd();
+			
+			echo '<select id="chip_life_logo" name="chip_life_options[chip_life_logo]">';
+			foreach( $items as $key => $val ) {
+				$selected = ( $chip_life_options['chip_life_logo'] == $key ) ? 'selected="selected"' : '';
+				echo '<option value="'.$key.'" '.$selected.'>'.$val.'</option>';
+			}
+			echo '</select>';
+			echo '<div><small>Select yes to add the image logo in the site header. Enter your logo URl below.</small></div>';
+		
+		}
+		
+		function chip_life_field_logo_url_fn() {
+			$chip_life_options = get_option('chip_life_options');
+			echo '<input type="text" id="chip_life_logo_url" name="chip_life_options[chip_life_logo_url]" size="40" value="'.$chip_life_options['chip_life_logo_url'].'" />';
+			echo '<div>Enter the logo URl</div>';
+		}
+		
+		/* Home Page Post Style */
+		
+		function chip_life_field_post_style_fn() {
+			
+			$chip_life_options = get_option('chip_life_options');
+			$items = Chip_Life_Options::chip_post_style_pd();			
+			
+			foreach( $items as $key => $val ) {
+				$checked = ( $chip_life_options['chip_life_post_style'] == $key ) ? ' checked="checked" ' : '';
+				echo '<label><input type="radio" id="chip_life_post_style[]" name="chip_life_options[chip_life_post_style]" value="'.$key.'" '.$checked.' /> '.$val.'</label><br />';
+			}
+		
+		}	
+		
+		/*
+		|--------------------------
+		| Chip Post Section
+		|--------------------------
+		*/		
+		
+		function chip_life_section_post_fn() {
+			echo "These options will help you to customize options about post.";
+		}
+		
+		/* Chip Related Posts */
+		
+		function  chip_life_field_related_post_fn() {
+			
+			$chip_life_options = get_option( 'chip_life_options' );
+			$items = Chip_Life_Options::chip_boolean_pd();
+			
+			echo '<select id="chip_life_related_post" name="chip_life_options[chip_life_related_post]">';
+			foreach( $items as $key => $val ) {
+				$selected = ( $chip_life_options['chip_life_related_post'] == $key ) ? 'selected="selected"' : '';
+				echo '<option value="'.$key.'" '.$selected.'>'.$val.'</option>';
+			}
+			echo '</select>';
+			echo '<div><small>Select yes to add the related posts at the bottom of post.</small></div>';
+		
+		}
+		
+		function  chip_life_field_related_post_number_fn() {
+			
+			$chip_life_options = get_option( 'chip_life_options' );
+			$items = Chip_Life_Options::chip_related_posts_pd();
+			
+			echo '<select id="chip_life_related_post_number" name="chip_life_options[chip_life_related_post_number]">';
+			foreach( $items as $key => $val ) {
+				$selected = ( $chip_life_options['chip_life_related_post_number'] == $key ) ? 'selected="selected"' : '';
+				echo '<option value="'.$key.'" '.$selected.'>'.$val.'</option>';
+			}
+			echo '</select>';
+			echo '<div><small>How many related posts would you like to display?</small></div>';
+		
+		}
+		
+		/*
+		|--------------------------
+		| Chip Sponsor Section
+		|--------------------------
+		*/		
+		
+		function chip_life_section_sponsor_fn() {
+			echo "These options will help you to integrate Sponsor ads.";
+		}
+		
+		/* Sponsor Header: 728x90 */
+		
+		function  chip_life_field_sponsor_header_728x90_fn() {
+			
+			$chip_life_options = get_option( 'chip_life_options' );
+			$items = Chip_Life_Options::chip_boolean_pd();
+			
+			echo '<select id="chip_life_sponsor_header_728x90" name="chip_life_options[chip_life_sponsor_header_728x90]">';
+			foreach( $items as $key => $val ) {
+				$selected = ( $chip_life_options['chip_life_sponsor_header_728x90'] == $key ) ? 'selected="selected"' : '';
+				echo '<option value="'.$key.'" '.$selected.'>'.$val.'</option>';
+			}
+			echo '</select>';
+			echo '<div><small>Select yes to add 728x90 sponsor ad in your blog header.</small></div>';
+		
+		}
+		
+		function chip_life_field_sponsor_header_728x90_code_fn() {
+			$chip_life_options = get_option('chip_life_options');
+			echo '<textarea type="textarea" id="chip_life_sponsor_header_728x90_code" name="chip_life_options[chip_life_sponsor_header_728x90_code]" rows="7" cols="50">'.$chip_life_options['chip_life_sponsor_header_728x90_code'].'</textarea>';
+			echo '<div>Enter the Sponsor ad code: 728x90</div>';
+		}
+		
+		/**
+		* Chip Subscription Section
+		*/
+		
+		function chip_life_section_subscription_fn() {
+			echo "These options will help you to customize Subscription options.";
+		}
+		
+		/** Chip RSS */
+		
+		function  chip_life_field_rss_fn() {
+			
+			$chip_life_options = get_option( 'chip_life_options' );
+			$items = Chip_Life_Options::chip_boolean_pd();
+			
+			echo '<select id="chip_life_rss" name="chip_life_options[chip_life_rss]">';
+			foreach( $items as $key => $val ) {
+				$selected = ( $chip_life_options['chip_life_rss'] == $key ) ? 'selected="selected"' : '';
+				echo '<option value="'.$key.'" '.$selected.'>'.$val.'</option>';
+			}
+			echo '</select>';
+			echo '<div><small>RSS (most commonly expanded as "Really Simple Syndication") is a family of web feed formats used to publish frequently updated work. Select yes to add your RSS URL.</small></div>';
+		
+		}
+		
+		function chip_life_field_rss_url_fn() {
+			
+			$chip_life_options = get_option('chip_life_options');
+			echo '<input type="text" id="chip_life_rss_url" name="chip_life_options[chip_life_rss_url]" size="40" value="'.$chip_life_options['chip_life_rss_url'].'" />';
+			echo '<div>Enter the RSS URL. For Example: <strong>http://www.tutorialchip.com/feed/</strong></div>';
+		
+		}
+		
+		/** Chip Feedburner */
+		
+		function  chip_life_field_feedburner_fn() {
+			
+			$chip_life_options = get_option( 'chip_life_options' );
+			$items = Chip_Life_Options::chip_boolean_pd();
+			
+			echo '<select id="chip_life_feedburner" name="chip_life_options[chip_life_feedburner]">';
+			foreach( $items as $key => $val ) {
+				$selected = ( $chip_life_options['chip_life_feedburner'] == $key ) ? 'selected="selected"' : '';
+				echo '<option value="'.$key.'" '.$selected.'>'.$val.'</option>';
+			}
+			echo '</select>';
+			echo '<div><small>Select yes to add your Feedburner ID.</small></div>';
+		
+		}
+		
+		function chip_life_field_feedburner_id_fn() {
+			
+			$chip_life_options = get_option('chip_life_options');
+			echo '<input type="text" id="chip_life_feedburner_id" name="chip_life_options[chip_life_feedburner_id]" size="40" value="'.$chip_life_options['chip_life_feedburner_id'].'" />';
+			echo '<div>Enter the Feedburner ID. For Example: <strong>tutorialchip</strong></div>';
+		
+		}
+		
+		function  chip_life_field_feedburner_post_bottom_fn() {
+			
+			$chip_life_options = get_option( 'chip_life_options' );
+			$items = Chip_Life_Options::chip_boolean_pd();
+			
+			echo '<select id="chip_life_feedburner_post_bottom" name="chip_life_options[chip_life_feedburner_post_bottom]">';
+			foreach( $items as $key => $val ) {
+				$selected = ( $chip_life_options['chip_life_feedburner_post_bottom'] == $key ) ? 'selected="selected"' : '';
+				echo '<option value="'.$key.'" '.$selected.'>'.$val.'</option>';
+			}
+			echo '</select>';
+			echo '<div><small>Select yes to add your Feedburner Form at the bottom of Post.</small></div>';
+		
+		}
+		
+		/** Chip Twitter */
+		
+		function  chip_life_field_twitter_fn() {
+			
+			$chip_life_options = get_option( 'chip_life_options' );
+			$items = Chip_Life_Options::chip_boolean_pd();
+			
+			echo '<select id="chip_life_twitter" name="chip_life_options[chip_life_twitter]">';
+			foreach( $items as $key => $val ) {
+				$selected = ( $chip_life_options['chip_life_twitter'] == $key ) ? 'selected="selected"' : '';
+				echo '<option value="'.$key.'" '.$selected.'>'.$val.'</option>';
+			}
+			echo '</select>';
+			echo '<div><small>Select yes to add your Twitter URL.</small></div>';
+		
+		}
+		
+		function chip_life_field_twitter_url_fn() {
+			
+			$chip_life_options = get_option('chip_life_options');
+			echo '<input type="text" id="chip_life_twitter_url" name="chip_life_options[chip_life_twitter_url]" size="40" value="'.$chip_life_options['chip_life_twitter_url'].'" />';
+			echo '<div>Enter the Twitter URL. For Example: <strong>http://twitter.com/lifeobject1</strong></div>';
+		
+		}
+		
+		/** Chip Delicious */
+		
+		function  chip_life_field_delicious_fn() {
+			
+			$chip_life_options = get_option( 'chip_life_options' );
+			$items = Chip_Life_Options::chip_boolean_pd();
+			
+			echo '<select id="chip_life_delicious" name="chip_life_options[chip_life_delicious]">';
+			foreach( $items as $key => $val ) {
+				$selected = ( $chip_life_options['chip_life_delicious'] == $key ) ? 'selected="selected"' : '';
+				echo '<option value="'.$key.'" '.$selected.'>'.$val.'</option>';
+			}
+			echo '</select>';
+			echo '<div><small>Select yes to add your Delicious URL.</small></div>';
+		
+		}
+		
+		function chip_life_field_delicious_url_fn() {
+			
+			$chip_life_options = get_option('chip_life_options');
+			echo '<input type="text" id="chip_life_delicious_url" name="chip_life_options[chip_life_delicious_url]" size="40" value="'.$chip_life_options['chip_life_delicious_url'].'" />';
+			echo '<div>Enter the Delicious URL. For Example: <strong>http://www.delicious.com/life.object</strong></div>';
+		
+		}
+		
+		/** Chip Facebook */
+		
+		function  chip_life_field_facebook_fn() {
+			
+			$chip_life_options = get_option( 'chip_life_options' );
+			$items = Chip_Life_Options::chip_boolean_pd();
+			
+			echo '<select id="chip_life_facebook" name="chip_life_options[chip_life_facebook]">';
+			foreach( $items as $key => $val ) {
+				$selected = ( $chip_life_options['chip_life_facebook'] == $key ) ? 'selected="selected"' : '';
+				echo '<option value="'.$key.'" '.$selected.'>'.$val.'</option>';
+			}
+			echo '</select>';
+			echo '<div><small>Select yes to add your Facebook URL.</small></div>';
+		
+		}
+		
+		function chip_life_field_facebook_url_fn() {
+			
+			$chip_life_options = get_option('chip_life_options');
+			echo '<input type="text" id="chip_life_facebook_url" name="chip_life_options[chip_life_facebook_url]" size="40" value="'.$chip_life_options['chip_life_facebook_url'].'" />';
+			echo '<div>Enter the Facebook URL. For Example: <strong>http://www.facebook.com/profile.php?id=100001747038774</strong></div>';
+		
+		}
+		
+		/** Chip Stumble */
+		
+		function  chip_life_field_stumble_fn() {
+			
+			$chip_life_options = get_option( 'chip_life_options' );
+			$items = Chip_Life_Options::chip_boolean_pd();
+			
+			echo '<select id="chip_life_stumble" name="chip_life_options[chip_life_stumble]">';
+			foreach( $items as $key => $val ) {
+				$selected = ( $chip_life_options['chip_life_stumble'] == $key ) ? 'selected="selected"' : '';
+				echo '<option value="'.$key.'" '.$selected.'>'.$val.'</option>';
+			}
+			echo '</select>';
+			echo '<div><small>Select yes to add your Stumbleupon URL.</small></div>';
+		
+		}
+		
+		function chip_life_field_stumble_url_fn() {
+			
+			$chip_life_options = get_option('chip_life_options');
+			echo '<input type="text" id="chip_life_stumble_url" name="chip_life_options[chip_life_stumble_url]" size="40" value="'.$chip_life_options['chip_life_stumble_url'].'" />';
+			echo '<div>Enter the Stumbleupon URL. For Example: <strong>http://www.stumbleupon.com/stumbler/lifeobject</strong></div>';
+		
+		}
+		
+		/** Chip Digg */
+		
+		function  chip_life_field_digg_fn() {
+			
+			$chip_life_options = get_option( 'chip_life_options' );
+			$items = Chip_Life_Options::chip_boolean_pd();
+			
+			echo '<select id="chip_life_digg" name="chip_life_options[chip_life_digg]">';
+			foreach( $items as $key => $val ) {
+				$selected = ( $chip_life_options['chip_life_digg'] == $key ) ? 'selected="selected"' : '';
+				echo '<option value="'.$key.'" '.$selected.'>'.$val.'</option>';
+			}
+			echo '</select>';
+			echo '<div><small>Select yes to add your Digg URL.</small></div>';
+		
+		}
+		
+		function chip_life_field_digg_url_fn() {
+			
+			$chip_life_options = get_option('chip_life_options');
+			echo '<input type="text" id="chip_life_digg_url" name="chip_life_options[chip_life_digg_url]" size="40" value="'.$chip_life_options['chip_life_digg_url'].'" />';
+			echo '<div>Enter the Digg URL. For Example: <strong>http://digg.com/lifeobject</strong></div>';
+		
+		}
+		
+		/**
+		* Chip General Section
+		*/		
+		
+		function chip_life_section_general_fn() {
+			echo "These options will help you to customize General options.";
+		}
+		
+		/* Chip Analytic */
+		
+		function  chip_life_field_analytic_fn() {
+			
+			$chip_life_options = get_option( 'chip_life_options' );
+			$items = Chip_Life_Options::chip_boolean_pd();
+			
+			echo '<select id="chip_life_analytic" name="chip_life_options[chip_life_analytic]">';
+			foreach( $items as $key => $val ) {
+				$selected = ( $chip_life_options['chip_life_analytic'] == $key ) ? 'selected="selected"' : '';
+				echo '<option value="'.$key.'" '.$selected.'>'.$val.'</option>';
+			}
+			echo '</select>';
+			echo '<div><small>Select yes to add your Analytic code.</small></div>';
+		
+		}
+		
+		function chip_life_field_analytic_code_fn() {
+			
+			$chip_life_options = get_option('chip_life_options');
+			echo '<textarea type="textarea" id="chip_life_analytic_code" name="chip_life_options[chip_life_analytic_code]" rows="7" cols="50">'.$chip_life_options['chip_life_analytic_code'].'</textarea>';
+			echo '<div>Enter the Analytic code</div>';
+		
+		}
+		
+		/* Theme Reset */
+		
+		function chip_life_field_reset_fn() {
+			
+			$chip_life_options = get_option('chip_life_options');			
+			$items = Chip_Life_Options::chip_boolean_pd();
+			
+			$checked = ( $chip_life_options['chip_life_reset'] == $items['yes'] ) ? 'checked="checked"' : '';
+			echo '<label><input type="checkbox" id="chip_life_reset" name="chip_life_options[chip_life_reset]" value="yes" '.$checked.' /> Reset Theme Options</label>';
+		}
+		
+		
 
-	/*
-	|--------------------------
-	| Theme Page
-	|--------------------------
-	*/
-	
-	$file = add_menu_page( $theme_full_name." Options", $theme_full_name." Options", 'edit_themes', basename(__FILE__), 'chip_theme_setting');
-	add_submenu_page( $theme_full_name." Options", $theme_full_name." Options 2", 'edit_themes', basename(__FILE__), 'chip_theme_setting');
-	
-	//$file = add_theme_page($themeName." Options", "Sense Emerald Settings", 'edit_themes', basename(__FILE__), 'getSenseOptionsPage');
-	add_action("admin_head-".$file, 'chip_theme_head');
-}
-
-/*
-|--------------------------
-| Theme Settings
-|--------------------------
-*/
-
-function chip_theme_setting() {
-	
-	global $theme_full_name, $theme_short_name, $theme_options, $theme_action;
-	require_once(OPTION_FSROOT . 'setting.php');
-}
-
-/*
-|--------------------------
-| Sense Head - Style
-|--------------------------
-*/
-
-function chip_theme_head() {
-
-?>
-
-<link rel="stylesheet" type="text/css" href="<?php echo OPTION_WSROOT; ?>style.css">
-
-<?php
 }
 ?>

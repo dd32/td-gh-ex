@@ -1,14 +1,11 @@
 <?php
-
-global $chip_life_global;
-
 /*
 |--------------------------
 | Begin POST Loop
 |--------------------------
 */
 
-while (have_posts()) : the_post();
+while ( have_posts() ) : the_post();
 
 /*
 |--------------------------
@@ -69,44 +66,4 @@ foreach( $post_class_array as $val ) {
   </div>
 </div>
 
-<?php
-if( $chip_life_global['theme_options']['chip_life_related_post'] == "yes" ):
-locate_template( array( CHIP_LIFE_COMMON_FSROOT . 'post-related.php' ), true, false );
-endif;
-?>
-
-<?php
-if( $chip_life_global['theme_options']['chip_life_feedburner'] == "yes" && $chip_life_global['theme_options']['chip_life_feedburner_post_bottom'] == "yes" ):
-locate_template( array( CHIP_LIFE_COMMON_FSROOT . 'feedburner.php' ), true, false );
-endif;
-?>
-
-<div class="chipboxm1 margin10b">
-  <div class="chipboxm1data">
-    
-    <div class="chipsetl4">
-        <div><?php echo get_avatar( get_the_author_meta( 'user_email' ), 60 ); ?></div>   
-    </div>
-    
-    <div class="chipsetr5">
-        <h2 class="blue margin10b"><?php _e("About the Author"); ?></h2>
-      	<div class="font11"><?php the_author_meta('description'); ?></div>
-    </div>
-    
-    <br class="clear" /> 
-  
-  </div>
-</div>
-
-<div class="chipboxm1 chipstyle3 margin10b">
-  <div class="chipboxm1data">
-    
-    <?php comments_template(); ?>
-      
-  </div>
-</div>
-
-<?php
-locate_template( array( CHIP_LIFE_COMMON_FSROOT . 'pager-single.php' ), true, false );
-endwhile;
-?>
+<?php endwhile; ?>
