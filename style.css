@@ -3,7 +3,7 @@ THEME NAME: Simplish
 THEME URI: http://simplish.pomfolio.com
 DESCRIPTION: Simplish is a WordPress variant of the Scribbish theme for blogs.
 TAGS: two-columns, fixed-width, right-sidebar, threaded-comments, sticky-post, microformats, white, light
-VERSION: 2.5.1
+VERSION: 2.5.2
 AUTHOR: <a href="http://labs.utopian.net">Utopian.net Labs</a>, <a href="http://pittcrew.net/geekblog/">K. Pitt</a>, <a href="http://quotedprintable.com">J. Hardy</a>
 AUTHOR URI:
 LICENSE: GNU General Public License v3.0
@@ -157,9 +157,16 @@ h1.archive-title span.archive-subtitle{
 p{
 	margin: 1.2em 0;
 }
-ul, ol{
+ol, ul{
+	margin-bottom: 1.5em;
 	margin-left: 1em;
 	padding:0;
+}
+ol ol, ol ul, ul ol, ul ul{
+	margin-bottom: 0;
+}
+ol{
+	list-style-type: decimal;
 }
 ul{
 	list-style-type: square;
