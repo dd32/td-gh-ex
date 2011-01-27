@@ -7,11 +7,11 @@
 //define('WP_DEBUG', true);
 
 //Adds the code into the footer
-add_action( 'wp_footer', 'ctx_attribution');
+add_action('wp_footer', 'ctx_attribution');
 // Remove message about IP blocking
 add_filter('login_errors', 'ctx_aj_login_error_mess');
 //Run initial setup for the theme
-add_action( 'after_setup_theme', 'ctx_aj_setup');
+add_action('after_setup_theme', 'ctx_aj_setup');
 
 // Hook for adding admin menus
 add_action('admin_menu', 'ctx_aj_theme_add_pages');
@@ -28,16 +28,38 @@ add_action('admin_init','ctx_aj_help_theme_options');
 //Get the URL of the active theme directory
 $themeDir = get_template_directory_uri();
 
-//Add these files to the core website but NOT the Admin Section
-if(!is_admin()) {
-    wp_enqueue_style('theme', $themeDir.'/style.css','','');
-}
 
-//If we don't have a content width specified, assume this as default
-if ( ! isset( $content_width ) ){
-    $content_width = 665;
-}
+add_action('wp_print_styles','ctx_aj_stylesheets');
+function ctx_aj_stylesheets(){
 
+    global $themeDir,$wp_styles;
+
+    $themeOpts = get_option('ctx-adventurejournal-options');
+
+    //Add these files to the core website but NOT the Admin Section
+    if(!is_admin()) {
+        wp_enqueue_style('theme', $themeDir.'/style.css','','');
+
+		//Enqueue an IE specific stylesheet
+		wp_register_style('style-ie',$themeDir.'/style-ie.css');
+		wp_enqueue_style('style-ie');
+		$wp_styles->add_data( 'style-ie', 'conditional', 'IE' );
+
+
+        //wp_die(print_r($themeOpts,true));
+
+        //If we have a custom override stylesheet, let's use it
+        if( !empty($themeOpts['css-path']) && file_exists(ABSPATH.$themeOpts['css-path']) ) {
+            wp_enqueue_style('theme_override', '/'.$themeOpts['css-path'], array('theme'), '');
+        }
+    }
+
+    //If we don't have a content width specified, assume this as default
+    if ( ! isset( $content_width ) ){
+        $content_width = 665;
+    }
+
+}
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -61,6 +83,8 @@ if ( ! isset( $content_width ) ){
  * @since Advenure Journal 1.0
  */
 function ctx_aj_setup() {
+
+    $themeOpts = get_option('ctx-adventurejournal-options');
 
 	// This theme styles the visual editor with editor-style.css to match the theme style.
 	add_editor_style();
@@ -98,10 +122,23 @@ function ctx_aj_setup() {
         define( 'HEADER_IMAGE_WIDTH', apply_filters( 'adventurejournal_header_image_width', 920 ) );
         define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'adventurejournal_header_image_height', 360 ) );
 
-        // We'll be using post thumbnails for custom header images on posts and pages.
-        // We want them to be 920 pixels wide by 180 pixels tall.
-        // Larger images will be auto-cropped to fit, smaller ones will be ignored. See header.php.
-        set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT/2, true );
+        //Set post thumbnail sizes depending on layout
+        switch ($themeOpts['layout']) {
+            case 'col-2-left':
+            case 'col-2-right':
+                set_post_thumbnail_size( 665, 130, true );
+            break;
+            case 'col-3':
+            case 'col-3-left':
+                set_post_thumbnail_size( 485, 94, true );
+            break;
+            default:
+                // We'll be using post thumbnails for custom header images on posts and pages.
+                // We want them to be 920 pixels wide by 180 pixels tall.
+                // Larger images will be auto-cropped to fit, smaller ones will be ignored. See header.php.
+                set_post_thumbnail_size( 920, 180, true );
+            break;
+        }
 
         // Don't support text inside the header image.
         define( 'NO_HEADER_TEXT', true );
@@ -137,24 +174,63 @@ function ctx_aj_setup() {
             )
 	));
 
-        //Choose which sidebars the user can add widgets to
         if ( function_exists('register_sidebar') ){
-            //Page Sidebar
-            register_sidebar(array(
-                'name'=>'Page Sidebar',
-                'before_widget' => '<li id="%1$s" class="widget %2$s">',
-                'after_widget' => '</li>',
-                'before_title' => '<h3></h3>',
-                'after_title' => '<h3></h3>',
-            ));
-            //Blog Sidebar
-            register_sidebar(array(
-                'name'=>'Blog Sidebar',
-                'before_widget' => '<li id="%1$s" class="widget %2$s">',
-                'after_widget' => '</li>',
-                'before_title' => '<h3></h3>',
-                'after_title' => '<h3></h3>',
-            ));
+            switch ($themeOpts['layout']) {
+                case 'col-2-left':
+                case 'col-2-right':
+                    /** 2 COL LAYOUTS **/
+                    //Page Sidebar
+                    register_sidebar(array(
+                        'name'=>'Page Sidebar',
+                        'before_widget' => '<li id="%1$s" class="widget %2$s">',
+                        'after_widget' => '</li>',
+                        'before_title' => '<h3>',
+                        'after_title' => '</h3>',
+                    ));
+                    //Blog Sidebar
+                    register_sidebar(array(
+                        'name'=>'Blog Sidebar',
+                        'before_widget' => '<li id="%1$s" class="widget %2$s">',
+                        'after_widget' => '</li>',
+                        'before_title' => '<h3>',
+                        'after_title' => '</h3>',
+                    ));
+                break;
+                case 'col-3':
+                case 'col-3-left':
+                    /** 3 COL LAYOUT **/
+                    //Blog Sidebar
+                    register_sidebar(array(
+                        'name'=>'Page Sidebar (Left)',
+                        'before_widget' => '<li id="%1$s" class="widget %2$s">',
+                        'after_widget' => '</li>',
+                        'before_title' => '<h3>',
+                        'after_title' => '</h3>',
+                    ));
+                    register_sidebar(array(
+                        'name'=>'Page Sidebar (Right)',
+                        'before_widget' => '<li id="%1$s" class="widget %2$s">',
+                        'after_widget' => '</li>',
+                        'before_title' => '<h3>',
+                        'after_title' => '</h3>',
+                    ));
+                    register_sidebar(array(
+                        'name'=>'Blog Sidebar (Left)',
+                        'before_widget' => '<li id="%1$s" class="widget %2$s">',
+                        'after_widget' => '</li>',
+                        'before_title' => '<h3>',
+                        'after_title' => '</h3>',
+                    ));
+                    register_sidebar(array(
+                        'name'=>'Blog Sidebar (Right)',
+                        'before_widget' => '<li id="%1$s" class="widget %2$s">',
+                        'after_widget' => '</li>',
+                        'before_title' => '<h3>',
+                        'after_title' => '</h3>',
+                    ));
+                break;
+                default:break;
+            }
         }
 
         //Create the default theme options
@@ -170,15 +246,7 @@ function ctx_aj_setup() {
  * @since Adventure Journal 1.0
  */
 function ctx_aj_admin_header_style() {
-    ?>
-    <style type="text/css">
-        #headimg {}
-        /* If NO_HEADER_TEXT is false, you would style the text with these selectors:
-                #headimg #name { }
-                #headimg #desc { }
-        */
-    </style>
-    <?php
+    //echo ''; //Warning: This would go at top of screen
 }
 
 /**
@@ -192,7 +260,7 @@ function ctx_aj_continue_reading_link() {
 
 /**
  * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and adventuretheme_continue_reading_link().
- * 
+ *
  * @param <type> $more
  * @return <type>
  */
@@ -225,7 +293,10 @@ function ctx_aj_set_options($arrayOverrides=false){
 
     //Set defaults
     $defaultOpts = array(
-        "layout"=>"col-2-left"
+        'layout'=>'col-2-left',
+        'custom_css'=>'',
+        'attrib'=>'true',
+        'showtitle'=>'true'
     );
 
     //Let's see if the options already exist...
@@ -260,7 +331,7 @@ function ctx_aj_set_options($arrayOverrides=false){
  * @param int $postID The id of the post get relationships for
  * @return string Returns a string containing html attributes for the body tag
  */
-function ctx_aj_get_relationships($postID=''){
+function ctx_aj_get_relationships($postID='',$extraclass=''){
     // Remove any leading and trailing slashes.
     $uri_path = trim($_SERVER['REQUEST_URI'], '/');
     // Split up the remaining URI into an array, using '/' as delimiter.
@@ -276,16 +347,17 @@ function ctx_aj_get_relationships($postID=''){
 
         //Generate an array of this pages parents based on the variable passed in the function
         $myAncestors = get_post_ancestors($postID);
-        
+
         //Grab the top most parent's ID out of the array
         $ancestor = (count($myAncestors)>0) ? $myAncestors[(count($myAncestors)-1)] : 0;
-        
+
         //If the current page IS a top level parent then grab it's own ID since it would otherwise be blank
         if( empty($ancestor) ){$ancestor = $postID;}
 
     }
+    $body_class = $extraclass.' ';
     //Prefix body classes with "page-"
-    $body_class = 'page-'.$body_class;
+    $body_class .= 'page-'.$body_class;
 
     //Generate the ID and Class tags
     return 'id="ancestor-'.$ancestor.'" class="'.$body_class.'"';
@@ -293,41 +365,45 @@ function ctx_aj_get_relationships($postID=''){
 
 
 /**
- * This snippet echos/displays a link in the wp_footer section with a link back back to the theme's creator and WordPress
+ * This snippet echos/displays a link in the wp_footer section with a link back back to the theme's creator and WordPress.
+ *
+ * You can remove this from footer.php if you really want to, but we'd REALLY appreciate if you left it in there. ;-)
+ *
+ * @return Prints HTML for the footer's attribution.
  */
 function ctx_attribution() {
-	?>
-	<div id="site-generator">
-		<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'adventurejournal' ) ); ?>" title="<?php esc_attr_e( 'Simply the best CMS & blog platform out there', 'adventurejournal' ); ?>" rel="generator"><?php printf( __( 'Powered by %s', 'adventurejournal' ), 'WordPress' ); ?></a>
-		</div>
-    <div id="attrition"><a href="http://www.contextureintl.com/wordpress/adventure-journal-wordpress-theme/">Adventure Journal</a> is Proudly Designed By <a href="http://www.contextureintl.com" id="contexture">Contexture International</a></div>
+    $themeOpts = get_option('ctx-adventurejournal-options');
+    ?>
+    <div id="site-generator" style="<?php if($themeOpts['attrib']=='false'){ echo 'display:none'; } ?>">
+        <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'adventurejournal' ) ); ?>" title="<?php esc_attr_e( 'Simply the best CMS & blog platform out there', 'adventurejournal' ); ?>" rel="generator"><?php printf( __( 'Powered by %s', 'adventurejournal' ), 'WordPress' ); ?></a>
+    </div>
+    <div id="attrition" style="<?php if($themeOpts['attrib']=='false'){ echo 'display:none'; } ?>"><a href="http://www.contextureintl.com/wordpress/adventure-journal-wordpress-theme/">Adventure Journal</a> is Proudly Designed By <a href="http://www.contextureintl.com" id="contexture">Contexture International</a></div>
     <?php
 }
-
 
 /**
  * Determines the html layout/order and components of the comments section. This function is called by
  * wp_list_comments() located in comments.php. Without this function Wordpress would use the default layout
  * and components. This function allows you to customize everything comments related
  *
- * @param <type> $comment
- * @param <type> $args
- * @param <type> $depth
+ * @param string $comment
+ * @param array $args
+ * @param integer $depth
  */
 function ctx_aj_get_comments($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
-	<li <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
-        <div class="comment-meta">
-            <?php echo get_avatar( $comment, 64 ); ?>
-            <span class="comment-date"><a href="#comment-<?php comment_ID() ?>" title="Permanent Link"><?php comment_date('F j <br>Y') ?></a></span><br />
-        </div>
-        <div class="comment-body">
-            <?php edit_comment_link(__("Edit"), ''); ?>
-            <strong><?php comment_author_link(); ?></strong>
-            <?php comment_text() ?>
-            <?php if ($comment->comment_approved == '0') _e("\t\t\t\t\t<span class='unapproved'>Your comment is awaiting moderation.</span>\n", 'sandbox') ?>
-        </div>
-	</li>
+    <li <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
+    <div class="comment-meta">
+        <?php echo get_avatar( $comment, 64 ); ?>
+        <span class="comment-date"><a href="#comment-<?php comment_ID() ?>" title="Permanent Link"><?php comment_date('F j <br>Y') ?></a></span><br />
+    </div>
+    <div class="comment-body">
+        <?php edit_comment_link(__("Edit"), ''); ?>
+        <strong><?php comment_author_link(); ?></strong>
+        <?php comment_text() ?>
+        <?php if ($comment->comment_approved == '0') _e("\t\t\t\t\t<span class='unapproved'>Your comment is awaiting moderation.</span>\n", 'adventurejournal') ?>
+    </div>
+    </li>
 <?php
 }
 
@@ -372,20 +448,47 @@ function ctx_aj_generate_sidebars(){
     //Get the selected layout option
     $layout = get_option('ctx-adventurejournal-options');
 
-    if($layout['layout'] == 'col-1'){
-        //Do nothing - no sidebar support
-    }
-    else if(($layout['layout'] == "col-2-left")||($layout['layout'] == "col-2-right")){
+    switch ($layout['layout']) {
+        case 'col-2-left':
+        case 'col-2-right':
+            //Check if the current page is a non blog related page
+            if (is_page()){
+                //If so then generate the normal website sidebar
+                ctx_aj_build_sidebar('col-left','Page Sidebar');
+            } else  {
+                //If this is a blog or blog related page then generate the blog sidebar
+                ctx_aj_build_sidebar('col-left','Blog Sidebar');
+            }
+        break;
+        case 'col-3':
+            //Check if the current page is a non blog related page
+            if (is_page()){
+                //If so then generate the normal website sidebars
+                ctx_aj_build_sidebar('col-left','Page Sidebar (Left)');
+                ctx_aj_build_sidebar('col-right','Page Sidebar (Right)');
+            } else  {
+                //If this is a blog or blog related page then generate the blog sidebar
+                ctx_aj_build_sidebar('col-left','Blog Sidebar (Left)');
+                ctx_aj_build_sidebar('col-right','Blog Sidebar (Right)');
+            }
+        break;
+        case 'col-3-left':
+            //Check if the current page is a non blog related page
+            if (is_page()){
+                //If so then generate the normal website sidebars
+                ctx_aj_build_sidebar('col-left','Page Sidebar (Left)');
+                ctx_aj_build_sidebar('col-right','Page Sidebar (Right)');
+            } else  {
+                //If this is a blog or blog related page then generate the blog sidebar
+                ctx_aj_build_sidebar('col-left','Blog Sidebar (Left)');
+                ctx_aj_build_sidebar('col-right','Blog Sidebar (Right)');
+            }
+        break;
+        case 'col-1':
+        default:
+            //Do nothing - no sidebar support
+        break;
 
-        //Check if the current page is a non blog related page
-        if (is_page()){
-            //If so then generate the normal website sidebar
-            ctx_aj_build_sidebar('col-left','Page Sidebar');
-        } else  {
-            //If this is a blog or blog related page then generate the blog sidebar
-            ctx_aj_build_sidebar('col-left','Blog Sidebar');
-        }
-        
     }
 }
 
@@ -393,9 +496,13 @@ function ctx_aj_generate_sidebars(){
 /**
  * Creates and populates the sidebars based on the layout option set in the admin section
  */
-function ctx_aj_build_sidebar($sidebar_html, $sidebar_name){
-    echo sprintf('<div id="%s" class="sidebar"><ul>',$sidebar_html);
-    $generic_sidebar = (!function_exists('dynamic_sidebar') || !dynamic_sidebar($sidebar_name) ) ? true : false;
+function ctx_aj_build_sidebar($sidebar_class, $sidebar_name){
+    echo sprintf('<div id="%s" class="sidebar"><ul>',$sidebar_class);
+
+    if ( function_exists('dynamic_sidebar') ){
+        dynamic_sidebar($sidebar_name);
+    }
+
     echo '</ul></div>';
 }
 
@@ -405,7 +512,9 @@ function ctx_aj_build_sidebar($sidebar_html, $sidebar_name){
  */
 function ctx_aj_theme_add_pages() {
     // Add a new submenu under Appearance:
-    add_theme_page('Layout', 'Layout', 'administrator', 'theme-options', 'ctx_aj_options_appearance_layout');
+    add_theme_page(__('Layout','adventurejournal'), __('Layout','adventurejournal'), 'administrator', 'theme-layouts', 'ctx_aj_options_appearance_layout');
+    //add_theme_page(, __('Advanced','adventurejournal'), 'administrator', 'theme-options', 'ctx_aj_options_adventurejournal');
+    add_submenu_page('options-general.php', __('Adventure Journal','adventurejournal'), __('Adventure Journal','adventurejournal'), 'manage_options', 'adventurejournal', 'ctx_aj_options_adventurejournal');
 }
 
 
@@ -417,10 +526,17 @@ function ctx_aj_options_appearance_layout() {
 }
 
 /**
+ * Shows "choose layout" page in Appearance Meny
+ */
+function ctx_aj_options_adventurejournal() {
+    require_once 'admin/options.php';
+}
+
+/**
  * Prints HTML with meta information for the current post—date/time and author.
  */
 function ctx_aj_posted_on() {
-	printf( __( '<span class="%1$s">Posted on</span> %2$s <span class="meta-sep">by</span> %3$s', 'adventuretheme' ),
+	printf( __( '<span class="%1$s">Posted on</span> %2$s <span class="meta-sep">by</span> %3$s', 'adventurejournal' ),
 		'meta-prep meta-prep-author',
 		sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
 			get_permalink(),
@@ -429,7 +545,7 @@ function ctx_aj_posted_on() {
 		),
 		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>',
 			get_author_posts_url( get_the_author_meta( 'ID' ) ),
-			sprintf( esc_attr__( 'View all posts by %s', 'adventuretheme' ), get_the_author() ),
+			sprintf( esc_attr__( 'View all posts by %s', 'adventurejournal' ), get_the_author() ),
 			get_the_author()
 		)
 	);

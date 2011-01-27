@@ -3,7 +3,7 @@
 
 
 /********************* Layout Section *********************/
-#admin-layout{padding:0px;margin:0px;margin-bottom:1em;width:500px;}
+#admin-layout{padding:0px;margin:0px;margin-bottom:1em;width:800px;}
     #admin-layout td { vertical-align:middle; padding:10px; border-radius:10px;-webkit-border-radius:10px;-moz-border-radius:10px; }
     #admin-layout .active-layout { background:#e4e4e4; }
     #admin-layout td:hover { background-color:#d5d5d5; }

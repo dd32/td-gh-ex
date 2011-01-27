@@ -1,10 +1,10 @@
 <?php
     global $themeDir;
 
-    	global $hook_suffix;
-	echo "<!-- The hook for the current page is \"";
-	print_r( $hook_suffix );
-	echo "\" -->\n";
+    global $hook_suffix;
+    echo "<!-- The hook for the current page is \"";
+    print_r( $hook_suffix );
+    echo "\" -->\n";
 
     //Empty message
     $message = '';
@@ -40,11 +40,26 @@
                             <div style="text-align:center;padding-bottom:5px;"><?php _e('2 Columns <br />(Content Left)','adventurejournal') ?></div>
                             <img src="<?php echo $themeDir; ?>/images/layout-opt-2collt.gif" alt="2 Col Lt" />
                         </label>
-                    </td><td <?php if($ctx_theme_opts['layout'] == 'col-2-right'){echo ' class="active-layout"';}?>>
+                    </td>
+                    <td <?php if($ctx_theme_opts['layout'] == 'col-2-right'){echo ' class="active-layout"';}?>>
                         <input name="master-layout" type="radio" class="radial" id="layout-2" value="col-2-right" <?php if($ctx_theme_opts['layout'] == 'col-2-right'){echo ' checked="checked"';}?>>
                         <label for="layout-2">
                             <div style="text-align:center;padding-bottom:5px;"><?php _e('2 Columns <br />(Content Right)','adventurejournal') ?></div>
                             <img src="<?php echo $themeDir; ?>/images/layout-opt-2colrt.gif" alt="2 Col Rt" />
+                        </label>
+                    </td>
+                    <td <?php if($ctx_theme_opts['layout'] == 'col-3'){echo ' class="active-layout"';}?>>
+                        <input name="master-layout" type="radio" class="radial" id="layout-4" value="col-3" <?php if($ctx_theme_opts['layout'] == 'col-3'){echo ' checked="checked"';}?>>
+                        <label for="layout-4">
+                            <div style="text-align:center;padding-bottom:5px;"><?php _e('3 Columns <br/>(Content Middle)','adventurejournal') ?></div>
+                            <img src="<?php echo $themeDir; ?>/images/layout-opt-3col.gif" alt="3 Col" />
+                        </label>
+                    </td>
+                    <td <?php if($ctx_theme_opts['layout'] == 'col-3-left'){echo ' class="active-layout"';}?>>
+                        <input name="master-layout" type="radio" class="radial" id="layout-5" value="col-3-left" <?php if($ctx_theme_opts['layout'] == 'col-3-left'){echo ' checked="checked"';}?>>
+                        <label for="layout-5">
+                            <div style="text-align:center;padding-bottom:5px;"><?php _e('3 Columns <br/>(Content Left)','adventurejournal') ?></div>
+                            <img src="<?php echo $themeDir; ?>/images/layout-opt-3col-lt.gif" alt="3 Col Lt" />
                         </label>
                     </td>
                 </tr>

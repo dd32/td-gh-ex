@@ -18,7 +18,6 @@ get_header(); ?>
 		<div class="content" <?php ctx_aj_getlayout(); ?>>
                     <div id="col-main" role="main">
                         <div id="main-content">
-                            <h1>Blog</h1>
 			<?php
 			/* Run the loop to output the posts.
 			 * If you want to overload this in a child theme then include a file

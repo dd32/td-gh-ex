@@ -41,7 +41,7 @@
     ?>
 </head>
 <body <?php body_class(); ?>>
-    <div <?php echo ctx_aj_get_relationships($post->ID); ?>>
+	<div <?php echo ctx_aj_get_relationships($post->ID,'siteframe'); ?>>
         <div id="container">
           <div id="container2">
             <div class="nav-horz nav-main" id="menu">
@@ -58,12 +58,12 @@
               <div id="logo">
                 <div id="logo-2">
                   <div id="logo-3">
-                  
-                      <table border="0" cellspacing="0" cellpadding="0"><tr><td>
+
+                      <table><tr><td>
                       <div id="site-title"><a href="<?php echo home_url( '/' ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
                       <?php $sitedescr = get_bloginfo('description','display'); echo (empty($sitedescr)) ? '' : sprintf('<div id="site-description">%s</div>',$sitedescr); ?>
                       </td></tr></table>
-        
+
                   </div>
                 </div>
               </div>
