@@ -377,7 +377,7 @@ function ctx_attribution() {
     <div id="site-generator" style="<?php if($themeOpts['attrib']=='false'){ echo 'display:none'; } ?>">
         <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'adventurejournal' ) ); ?>" title="<?php esc_attr_e( 'Simply the best CMS & blog platform out there', 'adventurejournal' ); ?>" rel="generator"><?php printf( __( 'Powered by %s', 'adventurejournal' ), 'WordPress' ); ?></a>
     </div>
-    <div id="attrition" style="<?php if($themeOpts['attrib']=='false'){ echo 'display:none'; } ?>"><a href="http://www.contextureintl.com/wordpress/adventure-journal-wordpress-theme/">Adventure Journal</a> is Proudly Designed By <a href="http://www.contextureintl.com" id="contexture">Contexture International</a></div>
+    <div id="attrition" style="<?php if($themeOpts['attrib']=='false'){ echo 'display:none'; } ?>"><a href="http://www.contextureintl.com/wordpress/adventure-journal-wordpress-theme/" title="Adventure Journal Wordpress Theme">Adventure Journal</a> is Proudly Designed By <a href="http://www.contextureintl.com" id="contexture" title="Contexture International">Contexture International</a></div>
     <?php
 }
 
@@ -512,9 +512,9 @@ function ctx_aj_build_sidebar($sidebar_class, $sidebar_name){
  */
 function ctx_aj_theme_add_pages() {
     // Add a new submenu under Appearance:
-    add_theme_page(__('Layout','adventurejournal'), __('Layout','adventurejournal'), 'administrator', 'theme-layouts', 'ctx_aj_options_appearance_layout');
+    add_theme_page(__('Layout','adventurejournal'), __('Layout','adventurejournal'), 'edit_theme_options', 'theme-layouts', 'ctx_aj_options_appearance_layout');
     //add_theme_page(, __('Advanced','adventurejournal'), 'administrator', 'theme-options', 'ctx_aj_options_adventurejournal');
-    add_submenu_page('options-general.php', __('Adventure Journal','adventurejournal'), __('Adventure Journal','adventurejournal'), 'manage_options', 'adventurejournal', 'ctx_aj_options_adventurejournal');
+    add_theme_page(__('Adventure Journal','adventurejournal'), __('Adventure Journal','adventurejournal'), 'edit_theme_options', 'z-adventurejournal', 'ctx_aj_options_adventurejournal');
 }
 
 

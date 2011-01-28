@@ -37,7 +37,7 @@
                 Options updated. <a href="%s" target="_blank">View your site</a> to see how it looks.
             </p>%s
         </div>','adventurejournal'),
-                get_bloginfo('url'),
+                home_url(),
                 (isset($_POST['attrib'])) ? __('<p>I see you removed the attribution. Does this mean we\'re not friends any more?</p>','adventurejournal') : ''
         );
     }
@@ -45,7 +45,7 @@
     //Load default theme variables
     $AJOpts = get_option('ctx-adventurejournal-options');
 
-    if($_GET['showopts']=='true'){
+    if(!empty($_GET['showopts']) && $_GET['showopts']=='true'){
         $debugOpts = '<hr/><pre>'.print_r($AJOpts,true).'</pre><hr/>';
     }
 
@@ -134,7 +134,7 @@
         </td>
         <td style="vertical-align:top;">
             <div id="ctx-about">
-                <a class="img-block" href="http://www.contextureintl.com"><img src="<?php echo get_bloginfo('template_url').'/images/ctx-logo.gif'; ?>" alt="Contexture International" /></a>
+                <a class="img-block" href="http://www.contextureintl.com"><img src="<?php echo get_template_directory_uri().'/images/ctx-logo.gif'; ?>" alt="Contexture International" /></a>
                 <p>Contexture International is an all-in-one agency specializing in <a href="http://www.contextureintl.com/portfolio/graphic-design/">graphic design</a>, <a href="http://www.contextureintl.com/portfolio/web-interactive/">web design</a>, and <a href="http://www.contextureintl.com/portfolio/broadcast-video-production/">broadcast and video production</a>, with an unparalleled ability to connect with the heart of your audience.</p>
                 <p>Contexture's staff has successfully promoted organizations and visionaries for more than 2 decades through exceptional storytelling, in just the right contexts for their respective audiences, with overwhelming returns on investment.  See the proof in our <a href="http://www.contextureintl.com/portfolio/">portfolio </a>or learn more <a href="http://www.contextureintl.com/about-us/">about us</a>.</p>
                 <div><a href="http://www.contextureintl.com/">Need a custom web or video project?</a></div>
