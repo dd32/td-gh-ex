@@ -309,6 +309,22 @@ function bfa_header_config() {
 			bloginfo('name'); echo '" href ="' . $homeURL . '/">&nbsp;</a></div>';
 		}
 
+	// Header Code Overlay 
+	if ( $bfa_ata['overlay_header_image'] !== "") {
+	$overlay_image_code = $bfa_ata['overlay_header_image'];
+	// Parse PHP code
+		if ( strpos($overlay_image_code,'<?php ') !== FALSE ) {
+			ob_start(); 
+				eval('?>'.$overlay_image_code); 
+				$overlay_image_code = ob_get_contents(); 
+			ob_end_clean();
+		}
+
+		echo '<div class="codeoverlay">'; 			
+		echo $overlay_image_code;
+		echo '</div>';
+	}
+
 		if ( $bfa_ata['header_opacity_left'] != 0 AND $bfa_ata['header_opacity_left'] != '' )  
 			echo '<div class="opacityleft">&nbsp;</div>';
 

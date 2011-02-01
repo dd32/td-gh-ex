@@ -1,6 +1,6 @@
 <?php
 function bfa_meta_tags() {
-	global $bfa_ata;
+	global $bfa_ata, $post;
 		
 	ob_start();
 

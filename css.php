@@ -643,6 +643,9 @@ div.widget ul li ul li ul li.sfhover {
 	border-left: solid <?php echo $bfa_ata['widget_lists3']['link-border-left-width']; ?>px #<?php echo $bfa_ata['widget_lists3']['link-border-left-hover-color']; ?>; 
 	}
 	
+div.widget a:link,
+div.widget a:visited,
+div.widget a:active,
 div.widget td a:link,
 div.widget td a:visited,
 div.widget td a:active,
@@ -670,6 +673,7 @@ div.widget ul li ul li ul li a:active {
 	}
 
 	
+div.widget a:hover,
 div.widget ul li a:hover {
 	color: #<?php echo $bfa_ata['widget_lists']['link-hover-color']; ?>; 
 	}
@@ -708,6 +712,7 @@ rules up to "BFA SUBSCRIBE WIDGET" */
 /* First, remove the left border and padding from the <LI>. The margin stays on the <LI>'s 
 because if the <A>'s of the cateories widget were set to display:inline (default setting) 
 then margin would work there */
+div.widget_nav_menu ul li, 
 div.widget_pages ul li, 
 div.widget_categories ul li {
 	border-left: 0 !important;
@@ -715,6 +720,9 @@ div.widget_categories ul li {
 }
 
 /* Then, add left border and padding to the <A> */
+div.widget_nav_menu ul li a:link, 
+div.widget_nav_menu ul li a:visited, 
+div.widget_nav_menu ul li a:active,
 div.widget_pages ul li a:link, 
 div.widget_pages ul li a:visited, 
 div.widget_pages ul li a:active,
@@ -725,11 +733,15 @@ div.widget_categories ul li a:active {
 	border-left: solid <?php echo $bfa_ata['widget_lists']['link-border-left-width']; ?>px #<?php echo $bfa_ata['widget_lists']['link-border-left-color']; ?>;
 	}
 
+div.widget_nav_menu ul li a:hover,
 div.widget_pages ul li a:hover,
 div.widget_categories ul li a:hover {
 	border-left: solid <?php echo $bfa_ata['widget_lists']['link-border-left-width']; ?>px #<?php echo $bfa_ata['widget_lists']['link-border-left-hover-color']; ?>; 
 }
 
+div.widget_nav_menu ul li ul li a:link, 
+div.widget_nav_menu ul li ul li a:visited, 
+div.widget_nav_menu ul li ul li a:active,
 div.widget_pages ul li ul li a:link, 
 div.widget_pages ul li ul li a:visited, 
 div.widget_pages ul li ul li a:active,
@@ -740,11 +752,15 @@ div.widget_categories ul li ul li a:active {
 	border-left: solid <?php echo $bfa_ata['widget_lists2']['link-border-left-width']; ?>px #<?php echo $bfa_ata['widget_lists2']['link-border-left-color']; ?>;
 	}
 
+div.widget_nav_menu ul li ul li a:hover,
 div.widget_pages ul li ul li a:hover,
 div.widget_categories ul li ul li a:hover {
 	border-left: solid <?php echo $bfa_ata['widget_lists2']['link-border-left-width']; ?>px #<?php echo $bfa_ata['widget_lists2']['link-border-left-hover-color']; ?>; 
 }
 
+div.widget_nav_menu ul li ul li ul li a:link, 
+div.widget_nav_menu ul li ul li ul li a:visited, 
+div.widget_nav_menu ul li ul li ul li a:active,
 div.widget_pages ul li ul li ul li a:link, 
 div.widget_pages ul li ul li ul li a:visited, 
 div.widget_pages ul li ul li ul li a:active,
@@ -755,6 +771,7 @@ div.widget_categories ul li ul li ul li a:active {
 	border-left: solid <?php echo $bfa_ata['widget_lists3']['link-border-left-width']; ?>px #<?php echo $bfa_ata['widget_lists3']['link-border-left-color']; ?>;
 	}
 
+div.widget_nav_menu ul li ul li ul li a:hover,
 div.widget_pages ul li ul li ul li a:hover,
 div.widget_categories ul li ul li ul li a:hover {
 	border-left: solid <?php echo $bfa_ata['widget_lists3']['link-border-left-width']; ?>px #<?php echo $bfa_ata['widget_lists3']['link-border-left-hover-color']; ?>; 
@@ -762,6 +779,10 @@ div.widget_categories ul li ul li ul li a:hover {
 
 /* The pages widget gets "block" because it usually has only 
 one link per <LI> and no text */
+div.widget_nav_menu ul li a:link,
+div.widget_nav_menu ul li a:active,
+div.widget_nav_menu ul li a:visited,
+div.widget_nav_menu ul li a:hover,
 div.widget_pages ul li a:link,
 div.widget_pages ul li a:active,
 div.widget_pages ul li a:visited,

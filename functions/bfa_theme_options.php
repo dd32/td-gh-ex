@@ -186,10 +186,8 @@ $options1 = array(
     "id" => "delete_bfa_ata4",
 	"type" 		=> "info",
 	"lastoption" => "yes", 
-	"info" 		=> "<div class='infohighlight'>Since 3.4.7 options are stored in one single option named <code>bfa_ata4</code>. If you had issues with Atahulpa 3.4.7, 3.4.8 or 3.4.9 you may have a corrupted option <code>bfa_ata4</code> in the 
-				database.</div><br /><a class='button' href='#' id='delete_bfa_ata4'><strong>Delete 'bfa_ata4'</strong></a>, 
-				then reload a page on your site. This will create a 
-				new <code>bfa_ata4</code> entry in the database.<div id='bfa_ata4_deleted'></div>"
+	"info" 		=> "<div class='infohighlight'>Since 3.4.7, the theme options are stored in one single option named <code>bfa_ata4</code>. If you had issues with Atahulpa 3.4.7, 3.4.8 or 3.4.9 you may have a corrupted option <code>bfa_ata4</code> in the database.<br /><br /><span style='color:red;font-weight:bold'>WARNING</span> - Pressing this button <span style='color:red;font-weight:bold'>WILL RESET ALL THEME OTPTIONS</span> to their default</div>
+					<br /><a class='button' href='#' id='delete_bfa_ata4'><strong>Delete 'bfa_ata4'</strong></a>, then reload a page on your site. This will create a new <code>bfa_ata4</code> entry in the database.<div id='bfa_ata4_deleted'></div>"
 ),
 
 // New category: seo
@@ -440,11 +438,19 @@ $options1 = array(
             "std" => "0",
             "type" => "text",
 			"size" => "4",
-			"lastoption" => "yes", 
             "info" => "If you want left/right padding on the layout container,
             put the pixel value here. Atahualpa needs this as a separate style,
             in order to include it in the min/max width calculation.
             <strong>Example:</strong> <code>20</code>"),
+
+	array(    "name" => "Emulate IE7",
+    	    "category" => "layout",
+            "id" => "EmulateIE7",
+            "type" => "select",
+            "std" => "No",
+            "options" => array("No", "Yes"),
+            "lastoption" => "yes", 
+            "info" => "Set this option to YES if you would like to set IE7 compatibility mode on."),
 
 // New category: favicon
 
@@ -810,7 +816,6 @@ $options1 = array(
             "id" => "overlay_box_style",
             "std" => "margin-top: 30px;\nmargin-left: 30px;",
             "type" => "textarea-large",
-			"lastoption" => "yes", 
             "info" => "<img src=\"" . $templateURI . "/options/images/header-overlay.jpg\" style=\"float: right; 
 			margin: 0 0 10px 10px;\">" . "The overlayed blog title and blog tagline will be in a div container. 
 			Move that container around by changing the <code>margin-top</code> and <code>margin-left</code> values. 
@@ -827,6 +832,14 @@ $options1 = array(
 			-khtml-border-radius: 7px;<br />-webkit-border-radius: 7px;<br />border-radius: 7px;</code><br /><br />
 			Leave <code>width: ...;</code> out to let the box adjust to the width of the blog title or tagline, whichever is longer.<br />
 			<br />To change the styles of the blog title or the blog tagline individually, see the menu tab \"Header\"."),        
+
+    array(    "name" => "<span style='background:white;color:red'>NEW</span> Overlay Header Image",
+    	    "category" => "header-image",
+            "id" => "overlay_header_image",
+            "std" => "",
+            "type" => "textarea-large",
+			"lastoption" => "yes", 
+            "info" => "The Overlay Header Image area allows you to put in HTML which will overlay the header image. You could use this code to put buttons for links on top of the header image. You can also mix in PHP code in this area. This would allow you to point to an image in the wp-content folder and not have to worry about it's location during theme upgrades.<br /><br />For example, suppose you want to put buttons to link to your Twitter and FaceBook sites. You put the images (facebook.jpg and twitter.jpg) in a folder in wp-contents ('wp-content/my-images'). You could add the following to this option<br /><br /><code>&lt;div id=\"header_image_sociable\"&gt;<br />&nbsp;&nbsp;&lt;ul&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href=\"http://www.facebook.com/myid\"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src=\"&lt;?php bloginfo('wpurl'); ?&gt;/wp-content/images/facebook.jpg\" alt=\"Facebook\" /&gt;&lt;/a&gt;&lt;/li&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href=\"http://www.twitter.com/myid\"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src=\"&lt;?php bloginfo('wpurl'); ?&gt;/wp-content/images/twitter.jpg\" alt=\"Twitter\" /&gt;&lt;/a&gt;&lt;/li&gt;<br />&nbsp;&nbsp;&lt;/ul&gt;<br />&nbsp;&lt;/div&gt;</code><br /><br />If you wanted to remove the bullets from the items and position the items on the right side of the image, you could put the following in the CSS Inserts<br /><br /><code>#header_image_sociable {position: absolute; right:40px; top: 20px;}<br />#header_image_sociable ul {list-style-type: none;}</code>"),        
 
 // New category: feed-links
 
