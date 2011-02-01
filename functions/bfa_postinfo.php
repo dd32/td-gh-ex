@@ -508,18 +508,7 @@ function postinfo($postinfo_string) {
 	if ( strpos($postinfo_string,'%meta(') !== FALSE ) 
 		$postinfo = preg_replace_callback("|%meta\('(.*?)'\)%|","bfa_meta_value",$postinfo);
 
-	/* PHP code in Post Info Items.
-	But not for WPMU */
-	/*removed in 3.4.3. - PHP code works in WPMU too */
-	/*
-	if ( strpos($postinfo_string,'<?php ') !== FALSE ) {
-		ob_start(); 
-			eval('?>'.$postinfo); 
-			$postinfo = ob_get_contents(); 
-		ob_end_clean();
-	}
-	*/
-	
+
 	return $postinfo;
 }
 
