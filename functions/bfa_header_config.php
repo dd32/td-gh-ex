@@ -310,12 +310,12 @@ function bfa_header_config() {
 		}
 
 	// Header Code Overlay 
-	if ( $bfa_ata['overlay_header_image'] !== "") {
+	if ( isset($bfa_ata['overlay_header_image']) ) {
 	$overlay_image_code = $bfa_ata['overlay_header_image'];
 	// Parse PHP code
 		if ( strpos($overlay_image_code,'<?php ') !== FALSE ) {
 			ob_start(); 
-				eval('?>'.$overlay_image_code); 
+				include 'bfa://overlay_header_image';
 				$overlay_image_code = ob_get_contents(); 
 			ob_end_clean();
 		}

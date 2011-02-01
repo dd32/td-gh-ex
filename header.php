@@ -6,8 +6,8 @@
 <?php // if index.php or another page template (copied from index.php) was not used
 if (!isset($bfa_ata))  
 list($bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2, $bfa_ata['h_blogtitle'], $bfa_ata['h_posttitle']) = bfa_get_options(); ?>
-<?php if  ( $bfa_ata['EmulateIE7'] == "Yes" ) { ?><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-<?php }; ?>
+<?php if  ( isset($bfa_ata['EmulateIE7']) ) { if ( $bfa_ata['EmulateIE7'] == "Yes" ) { ?><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<?php }}; ?>
 <?php bfa_meta_tags(); ?>
 <?php if ($bfa_ata['favicon_file'] != "") { ?><link rel="shortcut icon" href="<?php echo $templateURI; ?>/images/favicon/<?php echo $bfa_ata['favicon_file']; ?>" />
 <?php } ?>
