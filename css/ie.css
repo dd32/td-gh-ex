@@ -1,0 +1,25 @@
+
+
+.mainSrch input.inputText { padding:1px 2px 1px 2px; }
+
+.addComment .submit input {padding:1px 0 0 0;}
+
+#mainNav a, 
+#mainNav li, 
+#mainNav li .ddMenu,
+#content,
+.breadcrumbs, 
+.linkList, 
+.hotel .about, 
+.hotelNav, 
+.fanBlock .socialBtns, 
+.mainSrch, 
+.bestObjects, 
+.bestObjects .slider, 
+.bestObjects .objectsList,
+.sideBar .best .object,
+#bottomNav,
+#footer, 
+#footer .nav {zoom:1}
+
+* html #mainNav li .ddMenu .frame {overflow:hidden;}
