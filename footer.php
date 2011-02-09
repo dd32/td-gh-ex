@@ -72,6 +72,10 @@
     
 </div><!-- #container -->
 
+<?php if (!get_theme_mod('background_image', false) && !get_theme_mod('background_color', false)) :?>
+</div><!-- .bg-gradient -->
+<?php endif; ?>
+
 	<?php wp_footer(); ?>
 </body>
 </html>

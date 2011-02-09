@@ -14,10 +14,15 @@ function graphene_faq(){ ?>
             	<p><strong><?php _e("Where should I go for the theme's support?", 'graphene'); ?></strong></p>
                 <p><?php _e("Please direct all support requests for the theme at the theme's <a href=\"http://forum.khairul-syahir.com/forum/graphene-wordpress-theme\">Support Forum</a>.", 'graphene'); ?></p>
             </li>
+            <li>
+            	<p><strong><?php _e("The post's featured image is replacing my header image. Help!", 'graphene'); ?></strong></p>
+                <p><?php _e("This is actually one of the theme's features, based on the feature in the default TwentyTen theme. Any featured image that has a size of greater than or equal to the theme's header image size (900 x 198 pixels) will replace the header image when the post/page that featured image is assigned to is being displayed. It enables you to have different header image for different posts and/or pages.", 'graphene'); ?></p>
+                <p><?php _e("If you want to disable this feature, simply tick the <em>Disable Featured Image replacing header image</em> option in the <a href=\"themes.php?page=graphene_options_display\">Graphene Display</a> options page, under Header Display Options.", 'graphene'); ?></p>
+            </li>
         	<li>
             	<p><strong><?php _e("Can I modify Graphene to my heart's content without paying anything?", 'graphene'); ?></strong></p>
                 <p><?php _e("The Graphene Wordpress theme, along with all the other themes in the Wordpress.org Official Free Themes Directory, is released under the GNU General Public License (GPL) Version 2. The full text of that licence is included with the theme in the <code>licence.txt</code> file in the theme's folder. Releasing the theme under that licence means, among others, that you are <em>free to modify the theme in any way for any purpose (including commercial)</em> without any obligation to the theme's author. However, if you decide to redistribute the theme, the licence dictates that you must release the theme under the same licence, GPLv2.", 'graphene'); ?></p>
-                <p><?php _e("But of course, the author would always appreciate donations to support ongoing and future developments of the theme.", 'graphene'); ?></p>
+                <p><?php _e("But of course, the author would always appreciate <a href=\"themes.php?page=graphene_options\">donations</a> to support ongoing and future developments of the theme.", 'graphene'); ?></p>
             </li>
             <li>
             	<p><strong><?php _e("If the theme is released under GPLv2, what is this Creative Commons licence in the theme's footer?", 'graphene'); ?></strong></p>

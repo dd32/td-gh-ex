@@ -13,7 +13,7 @@
  */
 ?>
 
-<?php if ( post_password_required() ) : ?>
+<?php if (post_password_required()) : ?>
 			<div id="comments">
 				<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'graphene' ); ?></p>
                 
@@ -60,7 +60,7 @@
     </ol>
                     
 		<?php // Are there comments to navigate through? ?>
-        <?php if (get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
+        <?php if (get_comment_pages_count() > 1 && get_option('page_comments')) : ?>
         <div class="comment-nav clearfix">
             <p><?php paginate_comments_links(); ?>&nbsp;</p>
             <?php do_action('graphene_comments_pagination'); ?>
@@ -71,6 +71,8 @@
 </div>
 <?php endif; // Ends the comment listing ?>
 
+
+<?php /* Display comments disabled message if there's already comments, but commenting is disabled */ ?>
 <?php if (!comments_open() && have_comments()) : ?>
 	<div id="respond">
 		<h3 id="reply-title"><?php _e('Comments have been disabled.', 'graphene'); ?></h3>
@@ -78,9 +80,11 @@
     </div>
 <?php endif; ?>
 
+
+<?php /* Display the comment form if comment is open */ ?>
 <?php if (comments_open()) : ?>
-	<?php do_action('graphene_before_commentform'); ?>
-<?php 
+	<?php do_action('graphene_before_commentform'); 
+	
 	/**
 	 * Get the comment form.
 	*/ 
@@ -89,14 +93,15 @@
 		$allowedtags = '<p class="form-allowed-tags">'.sprintf(__('You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s', 'graphene'),'<code>'.allowed_tags().'</code>').'</p>';
 	else
 		$allowedtags = '';
-		
-	comment_form(array(
+	
+	$args = array(
 				'comment_notes_before' => '<p class="comment-notes">'.__('Your email address will not be published.', 'graphene').'</p>',
 				'comment_notes_after'  => $allowedtags,
 				'id_form'              => 'commentform',
 				'label_submit'         => __('Submit Comment', 'graphene'),
-					   )); 
+				 );
+	comment_form(apply_filters('graphene_comment_form_args', $args)); 
 
-?>
-	<?php do_action('graphene_after_commentform'); ?>
-<?php endif; // Ends the comment status ?>
+	do_action('graphene_after_commentform'); 
+
+endif; // Ends the comment status ?>

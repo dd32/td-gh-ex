@@ -1,4 +1,4 @@
-<div id="author-<?php the_author_meta('ID');  ?>" <?php post_class('clearfix page'); ?>>
+<div id="author-<?php the_author_meta('ID'); ?>" <?php post_class('clearfix page'); ?>>
 
     <div class="entry author-entry clearfix">
     
@@ -41,8 +41,13 @@
             
             <?php /* Lists the author's latest posts */ ?>
             <?php 
-			$args = apply_filters('graphene_author_latest_posts_args', array('numberposts' => 5, 'author' => get_the_author_meta('ID'), 'orderby' => 'date'));
-			$posts = get_posts($args); 
+			$args = array(
+						'numberposts' => 5,
+						'author' => get_the_author_meta('ID'),
+						'orderby' => 'date',
+						'suppress_filters' => 0,
+						);
+			$posts = get_posts(apply_filters('graphene_author_latest_posts_args', $args)); 
 			if (!empty($posts)) : ?>
             
             <h4><?php _e('Latest posts', 'graphene'); ?></h4>
@@ -58,8 +63,13 @@
             
             <?php /* Lists the author's most commented posts */ ?>
             <?php 
-			$args = apply_filters('graphene_author_popular_posts_args', array('numberposts' => 5, 'author' => get_the_author_meta('ID'), 'orderby' => 'comment_count'));
-			$posts = get_posts($args); 
+			$args = array(
+						'numberposts' => 5,
+						'author' => get_the_author_meta('ID'),
+						'orderby' => 'comment_count',
+						'suppress_filters' => 0,
+						);
+			$posts = get_posts(apply_filters('graphene_author_popular_posts_args', $args)); 
 			
 			// Check if at least one of the author's post has comments
 			$have_comments = NULL;

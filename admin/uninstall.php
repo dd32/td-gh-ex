@@ -3,16 +3,28 @@
 	// Header options
 	delete_option('graphene_light_header');	
 	delete_option('graphene_link_header_img');	
-	
+	delete_option('graphene_featured_img_header');
+        delete_option('graphene_use_random_header_img');
+        delete_option('graphene_hide_top_bar');
+        delete_option('graphene_hide_feed_icon');
+        delete_option('graphene_search_box_location');
+        
+        // Sidebar position
+        delete_option('graphene_content_sidebar_position');
+        delete_option('graphene_hide_sidebar');
+        
 	// Posts Display options
+        delete_option('graphene_posts_show_excerpt');
 	delete_option('graphene_hide_post_author');
 	delete_option('graphene_hide_post_date');
-	delete_option('graphene_hide_post_commentcount');
+	delete_option('graphene_show_post_year');
+        delete_option('graphene_hide_post_commentcount');
 	delete_option('graphene_hide_post_cat');
 	delete_option('graphene_hide_post_tags');
 	delete_option('graphene_show_post_avatar');
 	delete_option('graphene_show_post_author');
-	
+	delete_option('graphene_show_excerpt_more');
+        
 	// Text style options
 	delete_option('graphene_header_title_font_type');
 	delete_option('graphene_header_title_font_size');
@@ -30,6 +42,12 @@
 	delete_option('graphene_content_font_size');
 	delete_option('graphene_content_font_lineheight');
 	delete_option('graphene_content_font_colour');
+        
+        delete_option('graphene_link_colour_normal');
+	delete_option('graphene_link_colour_visited');
+	delete_option('graphene_link_colour_hover');
+	delete_option('graphene_link_decoration_normal');
+	delete_option('graphene_link_decoration_hover');
 	
 	// Bottom widget display options
 	delete_option('graphene_footerwidget_column');
@@ -43,6 +61,9 @@
 	
 	// Miscellaneous options
 	delete_option('graphene_swap_title');
+        
+        // Custom CSS
+        delete_option('graphene_custom_css');
 	
 	// Slider options
 	delete_option('graphene_slider_cat');
@@ -53,6 +74,13 @@
 	delete_option('graphene_slider_speed');
 	delete_option('graphene_slider_position');
 	delete_option('graphene_slider_disable');
+        
+        // Front page options
+        delete_option('graphene_frontpage_posts_cats');
+
+        // Feed options
+        delete_option('graphene_custom_feed_url');
+        delete_option('graphene_hide_feed_icon');
 	
 	// AdSense options
 	delete_option('graphene_show_adsense');

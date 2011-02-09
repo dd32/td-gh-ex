@@ -16,6 +16,15 @@
 get_header(); ?>
 
 	<?php
+	
+	/* Check if the user selects specific category for the front page */
+	if (is_home() && get_option('graphene_frontpage_posts_cats')) {
+		global $wp_query;
+		$cats = implode(',', get_option('graphene_frontpage_posts_cats'));
+		$args = array_merge($wp_query->query, array('cat' => $cats));
+		query_posts($args);
+	}
+	
     /* Run the loop to output the posts.
      * If you want to overload this in a child theme then include a file
      * called loop-index.php and that will be used instead.

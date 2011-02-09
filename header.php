@@ -56,37 +56,45 @@
     
 </head><?php flush(); ?>
 <body <?php body_class(); ?>>
+
+<?php if (!get_theme_mod('background_image', false) && !get_theme_mod('background_color', false)) :?>
+<div class="bg-gradient">
+<?php endif; ?>
+
 	<div id="container">
+    	
+		<?php if (get_option('graphene_hide_top_bar') != true) : ?>
     	<div id="top-bar">
+        
+			<?php if (get_option('graphene_hide_feed_icon') != true) : ?>
         	<div id="rss">
             	<?php 
 				$custom_feed_url = ($graphene_custom_feed_url = get_option('graphene_custom_feed_url')) ? $graphene_custom_feed_url : get_bloginfo('rss2_url'); ?>
             	<a href="<?php echo $custom_feed_url; ?>" title="<?php esc_attr_e('Subscribe to RSS feed', 'graphene'); ?>" class="rss_link"><span><?php _e('Subscribe to RSS feed', 'graphene'); ?></span></a>
                 <?php do_action('graphene_feed_icon'); ?>
             </div>
+            <?php endif; ?>
             
             <?php 
 			/**
 			 * Retrieves our custom search form.
 			*/ 
 			?>
+            <?php if (($search_box_location = get_option('graphene_search_box_location')) && $search_box_location == 'top_bar' || $search_box_location == '') : ?>
             <div id="top_search">
             <?php get_search_form(); ?>
             <?php do_action('graphene_top_search'); ?>
             </div>
+            <?php endif; ?>
         </div>
+        <?php endif; ?>
+        
         <?php
-        if ( is_singular() && has_post_thumbnail( $post->ID ) && ( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&	$image[1] >= HEADER_IMAGE_WIDTH && !get_option('graphene_featured_img_header')) {
-			// Houston, we have a new header image!
-			// Gets only the image url. It's a pain, I know! Wish Wordpress has better options on this one
-			$header_img = get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
-			$header_img = explode('" class="', $header_img);
-			$header_img = $header_img[0];
-			$header_img = explode('src="', $header_img);
-			$header_img = $header_img[1];
-		} else {
-			$header_img = get_header_image();
-		}
+		if ($post)
+			$post_id = $post->ID;
+		else
+			$post_id = false;
+        $header_img = graphene_get_header_image($post_id);
 		
 		/* 
 		 * Check if the page uses SSL and change HTTP to HTTPS if true 
@@ -113,16 +121,44 @@
             <?php do_action('graphene_header'); ?>
         </div>
         <div id="nav">
-        	<!-- BEGIN dynamically generated and highlighted menu -->
-        	<?php wp_nav_menu(array('container' => '', 'menu_id' => 'menu', 'menu_class' => 'clearfix', 'fallback_cb' => 'graphene_default_menu', 'depth' => 5, 'theme_location' => 'Header Menu')); ?>
+        	<?php /* The navigation menu */ ?>
+        	<?php 
+				/* Header menu */
+				$args = array(
+							'container' => '',
+							'menu_id' => 'header-menu',
+							'menu_class' => 'menu clearfix',
+							'fallback_cb' => 'graphene_default_menu',
+							'depth' => 5,
+							'theme_location' => 'Header Menu',
+							);
+				wp_nav_menu(apply_filters('graphene_header_menu_args', $args)); 
+			
+				/* Secondary menu */
+				$args = array(
+							'container' => '',
+							'menu_id' => 'secondary-menu',
+							'menu_class' => 'menu clearfix',
+							'fallback_cb' => 'none',
+							'depth' => 5,
+							'theme_location' => 'secondary-menu',
+							);
+				wp_nav_menu(apply_filters('graphene_secondary_menu_args', $args)); ?>
             
+            	
             <?php do_action('graphene_top_menu'); ?>
-            <!-- END dynamically generated and highlighted menu -->
+            
+            <?php if (($search_box_location = get_option('graphene_search_box_location')) && $search_box_location == 'nav_bar') : ?>
+                <div id="top_search">
+                <?php get_search_form(); ?>
+                <?php do_action('graphene_top_search'); ?>
+                </div>
+            <?php endif; ?>
         </div>
         
         <?php do_action('graphene_before_content'); ?>
-        
-        <div id="content" class="clearfix<?php if (is_page_template('template-onecolumn.php')) {echo ' one_column';} ?>">
+
+        <div id="content" class="clearfix">
         	<?php do_action('graphene_before_content-main'); ?>
         	<div id="content-main" class="clearfix">
             	<?php do_action('graphene_top_content'); ?>

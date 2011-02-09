@@ -14,10 +14,17 @@
                 <?php /* Post date is not shown if this is a Page post */ ?>
                 <?php if (!is_page() && (get_option('graphene_hide_post_date') != true)) : ?>
                 <div class="date">
-                    <p class="default_date"><?php the_time('M'); ?><br /><span><?php the_time('d') ?></span></p>
+                    <p class="default_date"><?php the_time('M'); ?><br /><span><?php the_time('d') ?></span>
+                        <?php if (get_option('graphene_show_post_year')) : ?>
+                        <br /><span class="year"><?php the_time('Y'); ?></span>
+                        <?php endif; ?>
+                    </p>
+                    
                     <?php do_action('graphene_post_date'); ?>
                 </div>
                 <?php endif; ?>
+                
+                <?php do_action('graphene_before_post'); ?>
                 
                 <div class="entry clearfix<?php if (get_option('graphene_hide_post_date') == true) {echo ' nodate';} ?>">
                 
@@ -37,6 +44,13 @@
                         </ul>
                         <?php endif; ?>
                         
+                        <?php /* Edit post link, if user is logged in */ ?>
+                        <?php if (is_user_logged_in()) : ?>
+                        <p class="edit-post">
+                        	<?php edit_post_link(__('Edit post','graphene'), ' (', ')'); ?>
+                        </p>
+                        <?php endif; ?>
+                        
                         <?php /* Post author, not not shown if this is a Page post or if admin decides to hide it */ ?>
                         <?php if (get_option('graphene_hide_post_author') != true) : ?>
                         <p class="post-author">
@@ -45,7 +59,6 @@
 									/* translators: this is for the author byline, such as 'by John Doe' */
 									_e('by','graphene'); echo ' '; the_author_posts_link();
 								}
-								edit_post_link(__('Edit post','graphene'), ' (', ')');
 								
 								/* Show the post author's gravatar if enabled */
 								if (get_option('graphene_show_post_avatar') && !is_page()) {
@@ -63,11 +76,21 @@
                     	<?php do_action('graphene_before_post_content'); ?>
                         
                     	<?php if (!is_search() && !is_archive() && (!get_option('graphene_posts_show_excerpt') || is_single() || is_page())) : ?>
-                        <?php the_content(__('Read the rest of this entry &raquo;','graphene')); ?>
+                        	<?php the_content('<span class="block-button">'.__('Read the rest of this entry &raquo;','graphene').'</span>'); ?>
                         <?php else : ?>
+                        	<?php /* The post thumbnail */
+                        	if (has_post_thumbnail(get_the_ID())) {
+								echo '<div class="excerpt-thumb">';
+								the_post_thumbnail(apply_filters('graphene_excerpt_thumbnail_size', 'thumbnail'));
+								echo '</div>';
+							} else {
+								echo graphene_get_post_image(get_the_ID(), apply_filters('graphene_excerpt_thumbnail_size', 'thumbnail'), 'excerpt');	
+							}
+							?>
                         	<?php the_excerpt(); ?>
                         <?php endif; ?>
-                        <?php wp_link_pages(array('before' => __('<p><strong>Pages:</strong> ','graphene'), 'after' => '</p>', 'next_or_number' => 'number')); ?>
+                        
+                        <?php wp_link_pages(array('before' => __('<div class="link-pages"><p><strong>Pages:</strong> ','graphene'), 'after' => '</p></div>', 'next_or_number' => 'number')); ?>
                         
                         <?php do_action('graphene_after_post_content'); ?>
                         

@@ -6,8 +6,30 @@ CHANGELOG
 
 Version 1.1.4
 
-	* [TODO] Add option to specify the category of posts to be displayed in the front page
-	* [TODO] Add a secondary navigation menu
+	* Added a secondary navigation menu
+	* Added option to specify the categories of posts to be displayed in the front page
+	* Added option to display the date's year for posts
+	* Added Japanese (ja) translation, by Masato Maekawa
+	* Added Dutch (nl_NL) translation, by Jeffrey Thummers
+	* Generic slider post image is displayed if "First post in image" is selected but the post has no image
+	* Added Persian (fa_IR) translation, by Dayan
+	* Added 'suppress_filters' => 0 to all get_posts() function call for compatibility with WPML
+	* Added filters to arguments of all get_posts() call
+	* Improved options pages layout
+	* Edit post link is now displayed even when author name is hidden
+	* Added option to disable the sidebar
+	* Added a Custom CSS option in the theme's display options page
+	* Uses list-style-image for list bullets instead of padding and background image
+	* Added thumbnail to posts listing
+	* The theme now displays only a maximum of 3 Adsense ads per page
+	* Added FAQ regarding featured image replacing the header image
+	* Added option to specify the location of sidebar
+	* Added option to show/hide the top_bar (including the feed icon and the SearchBox?)
+	* Added option to hide the RSS feed icon
+    * Added option to specify the location of the searchbox (Top bar (current default), or the navigation bar
+    * Added option to turn on rotating header image (randomly taken from the available header images) 
+	* Fixed several issues with RTL language support
+	* Added option for the slider to show random posts on each page load
 	
 Version 1.1.3.1
 	

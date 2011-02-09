@@ -9,6 +9,8 @@
  */
 ?>
 	</div><!-- #content-main -->
+    
+<?php if (!get_option('graphene_hide_sidebar')) : ?>
 <div id="sidebar_right" class="sidebar">
 
 	<?php do_action('graphene_before_rightsidebar'); ?>
@@ -57,3 +59,4 @@
     <?php do_action('graphene_after_rightsidebar'); ?>
 
 </div><!-- #sidebar -->
+<?php endif; ?>

@@ -39,11 +39,20 @@ function graphene_options_display(){
 		$light_header = (!empty($_POST['light_header'])) ? $_POST['light_header'] : false ;
 		$link_header_img = (!empty($_POST['link_header_img'])) ? $_POST['link_header_img'] : false ;
 		$featured_img_header = (!empty($_POST['featured_img_header'])) ? $_POST['featured_img_header'] : false ;
+		$use_random_header_img = (!empty($_POST['use_random_header_img'])) ? $_POST['use_random_header_img'] : false ;
+		$hide_top_bar = (!empty($_POST['hide_top_bar'])) ? $_POST['hide_top_bar'] : false ;
+		$hide_feed_icon = (!empty($_POST['hide_feed_icon'])) ? $_POST['hide_feed_icon'] : false;
+		$search_box_location = (!empty($_POST['search_box_location'])) ? $_POST['search_box_location'] : 'top_bar' ;
+		
+		// Sidebar options
+		$content_sidebar_position = (!empty($_POST['content_sidebar_position'])) ? $_POST['content_sidebar_position'] : 'right' ;
+		$hide_sidebar = (!empty($_POST['hide_sidebar'])) ? $_POST['hide_sidebar'] : false ;
 		
 		// Process the posts display options
 		$posts_show_excerpt = (!empty($_POST['posts_show_excerpt'])) ? $_POST['posts_show_excerpt'] : false ;
 		$hide_post_author = (!empty($_POST['hide_post_author'])) ? $_POST['hide_post_author'] : false ;
 		$hide_post_date = (!empty($_POST['hide_post_date'])) ? $_POST['hide_post_date'] : false ;
+        $show_post_year = (!empty($_POST['show_post_year'])) ? $_POST['show_post_year'] : false ;
 		$hide_post_commentcount = (!empty($_POST['hide_post_commentcount'])) ? $_POST['hide_post_commentcount'] : false ;
 		$hide_post_cat = (!empty($_POST['hide_post_cat'])) ? $_POST['hide_post_cat'] : false ;
 		$hide_post_tags = (!empty($_POST['hide_post_tags'])) ? $_POST['hide_post_tags'] : false ;
@@ -110,6 +119,9 @@ function graphene_options_display(){
 		// Miscellaneous options
 		$swap_title = (!empty($_POST['swap_title'])) ? $_POST['swap_title'] : false ;
 		
+		// Custom CSS
+		$custom_css = (!empty($_POST['custom_css'])) ? $_POST['custom_css'] : '' ;
+		
 		// Updates all options
 		if (empty($errors)) {
 			
@@ -117,11 +129,20 @@ function graphene_options_display(){
 			update_option('graphene_light_header', $light_header);	
 			update_option('graphene_link_header_img', $link_header_img);
 			update_option('graphene_featured_img_header', $featured_img_header);
+			update_option('graphene_use_random_header_img', $use_random_header_img);
+			update_option('graphene_hide_top_bar', $hide_top_bar);
+			update_option('graphene_hide_feed_icon', $hide_feed_icon);
+			update_option('graphene_search_box_location', $search_box_location);
+			
+			// Sidebar position
+			update_option('graphene_content_sidebar_position', $content_sidebar_position);
+			update_option('graphene_hide_sidebar', $hide_sidebar);
 			
 			// Posts Display options
 			update_option('graphene_posts_show_excerpt', $posts_show_excerpt);
 			update_option('graphene_hide_post_author', $hide_post_author);
 			update_option('graphene_hide_post_date', $hide_post_date);
+                        update_option('graphene_show_post_year', $show_post_year);
 			update_option('graphene_hide_post_commentcount', $hide_post_commentcount);
 			update_option('graphene_hide_post_cat', $hide_post_cat);
 			update_option('graphene_hide_post_tags', $hide_post_tags);
@@ -166,6 +187,9 @@ function graphene_options_display(){
 			// Miscellaneous options
 			update_option('graphene_swap_title', $swap_title);
 			
+			// Custom CSS
+			update_option('graphene_custom_css', $custom_css);
+			
 			// Print successful message
 			$messages[] = __('Settings updated.', 'graphene');
 		}
@@ -175,10 +199,18 @@ function graphene_options_display(){
 	$light_header = get_option('graphene_light_header');
 	$link_header_img = get_option('graphene_link_header_img');
 	$featured_img_header = get_option('graphene_featured_img_header');
+	$use_random_header_img = get_option('graphene_use_random_header_img');
+	$hide_top_bar = get_option('graphene_hide_top_bar');
+	$hide_feed_icon = get_option('graphene_hide_feed_icon');
+	$search_box_location = get_option('graphene_search_box_location');
+	
+	$content_sidebar_position = get_option('graphene_content_sidebar_position');
+	$hide_sidebar = get_option('graphene_hide_sidebar');
 	
 	$posts_show_excerpt = get_option('graphene_posts_show_excerpt');
 	$hide_post_author = get_option('graphene_hide_post_author');
 	$hide_post_date = get_option('graphene_hide_post_date');
+    $show_post_year = get_option('graphene_show_post_year');
 	$hide_post_commentcount = get_option('graphene_hide_post_commentcount');
 	$hide_post_cat = get_option('graphene_hide_post_cat');
 	$hide_post_tags = get_option('graphene_hide_post_tags');
@@ -217,6 +249,8 @@ function graphene_options_display(){
 	$hide_allowedtags = get_option('graphene_hide_allowedtags');
 	
 	$swap_title = get_option('graphene_swap_title');
+	
+	$custom_css = get_option('graphene_custom_css');
 	?>
     
     
@@ -228,7 +262,7 @@ function graphene_options_display(){
 		 * including all the form inputs and messages
 		*/
 	?>
-    <div class="wrap">
+    <div class="wrap meta-box-sortables">
 		<h2><?php _e('Graphene Display Options', 'graphene'); ?></h2>
 		<?php 
 			// Display errors if exist
@@ -252,6 +286,8 @@ function graphene_options_display(){
 			}
 		?>
         
+        <div class="left-wrap">
+        
         <?php // Begins the main html form. Note that one html form is used for *all* options ?>
         <form action="" method="post">
 
@@ -261,309 +297,454 @@ function graphene_options_display(){
 		?>
         
         <?php /* Header Options */ ?>
-        <h3><?php _e('Header Display Options', 'graphene'); ?></h3>
-        	<table class="form-table">
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Use light-coloured header bars', 'graphene'); ?></label>
-                    </th>
-                    <td><input type="checkbox" name="light_header" <?php if ($light_header == true) echo 'checked="checked"' ?> value="true" /></td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Link header image to front page', 'graphene'); ?></label>
-                    </th>
-                    <td><input type="checkbox" name="link_header_img" <?php if ($link_header_img == true) echo 'checked="checked"' ?> value="true" /><br />
-                    	<span class="description"><?php _e('Check this if you disable the header texts and want the header image to be linked to the front page.', 'graphene'); ?></span>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Disable Featured Image replacing header image', 'graphene'); ?></label>
-                    </th>
-                    <td><input type="checkbox" name="featured_img_header" <?php if ($featured_img_header == true) echo 'checked="checked"' ?> value="true" /><br />
-                    	<span class="description"><?php _e('Check this to prevent the posts Featured Image replacing the header image regardless of the featured image dimension.', 'graphene'); ?></span>
-                    </td>
-                </tr>
-            </table>
+        <div class="postbox">
+            <div class="head-wrap">
+                <div title="Click to toggle" class="handlediv"><br /></div>
+        		<h3 class="hndle"><?php _e('Header Display Options', 'graphene'); ?></h3>
+            </div>
+            <div class="panel-wrap inside">
+                <table class="form-table">
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Use light-coloured header bars', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="checkbox" name="light_header" <?php if ($light_header == true) echo 'checked="checked"' ?> value="true" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Link header image to front page', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="checkbox" name="link_header_img" <?php if ($link_header_img == true) echo 'checked="checked"' ?> value="true" /><br />
+                            <span class="description"><?php _e('Check this if you disable the header texts and want the header image to be linked to the front page.', 'graphene'); ?></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Disable Featured Image replacing header image', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="checkbox" name="featured_img_header" <?php if ($featured_img_header == true) echo 'checked="checked"' ?> value="true" /><br />
+                            <span class="description"><?php _e('Check this to prevent the posts Featured Image replacing the header image regardless of the featured image dimension.', 'graphene'); ?></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Use random header image', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="checkbox" name="use_random_header_img" <?php if ($use_random_header_img == true) echo 'checked="checked"' ?> value="true" /><br />
+                            <span class="description">
+								<?php _e('Check this to show a random header image (random image taken from the available default header images).', 'graphene'); ?><br />
+                                <?php _e('<strong>Note:</strong> only works on pages where a specific header image is not defined.', 'graphene'); ?></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Hide the top bar', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="checkbox" name="hide_top_bar" <?php if ($hide_top_bar == true) echo 'checked="checked"' ?> value="true" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Search box location', 'graphene'); ?></label>
+                        </th>
+                        <td>
+                            <select name="search_box_location">
+                                <option value="top_bar" <?php if ($search_box_location == 'top_bar') {echo 'selected="selected"';} ?>><?php _e("Top bar", 'graphene'); ?></option>
+                                <option value="nav_bar" <?php if ($search_box_location == 'nav_bar') {echo 'selected="selected"';} ?>><?php _e("Navigation bar", 'graphene'); ?></option>                        
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        
+        <?php /* Sidebar Options */ ?>
+        <div class="postbox">
+            <div class="head-wrap">
+                <div title="Click to toggle" class="handlediv"><br /></div>
+        		<h3 class="hndle"><?php _e('Sidebar Options', 'graphene'); ?></h3>
+            </div>
+            <div class="panel-wrap inside">
+                <table class="form-table">
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Content sidebar location', 'graphene'); ?></label>
+                        </th>
+                        <td>
+                            <select name="content_sidebar_position">
+                            	<option value="right" <?php if ($content_sidebar_position == 'right') {echo 'selected="selected"';} ?>><?php _e("Right", 'graphene'); ?></option>
+                                <option value="left" <?php if ($content_sidebar_position == 'left') {echo 'selected="selected"';} ?>><?php _e("Left", 'graphene'); ?></option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Hide sidebar', 'graphene'); ?></label>                   
+                        </th>
+                        <td>
+                        	<input type="checkbox" name="hide_sidebar" <?php if ($hide_sidebar == true) echo 'checked="checked"' ?> value="true" /><br />
+                            <span class="description"><?php _e('Will cause all posts and pages to be displayed in a single-column layout.', 'graphene'); ?></span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
         
         
         <?php /* Posts Display Options */ ?>
-        <h3><?php _e('Posts Display Options', 'graphene'); ?></h3>
-            <table class="form-table">
-            	<tr>
-                    <th scope="row">
-                    	<label><?php _e('Show excerpts in front page', 'graphene'); ?></label>
-                    </th>
-                    <td><input type="checkbox" name="posts_show_excerpt" <?php if ($posts_show_excerpt == true) echo 'checked="checked"' ?> value="true" /></td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Hide post author', 'graphene'); ?></label>
-                    </th>
-                    <td><input type="checkbox" name="hide_post_author" <?php if ($hide_post_author == true) echo 'checked="checked"' ?> value="true" /></td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Hide post date', 'graphene'); ?></label>
-                    </th>
-                    <td><input type="checkbox" name="hide_post_date" <?php if ($hide_post_date == true) echo 'checked="checked"' ?> value="true" /></td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Hide post categories', 'graphene'); ?></label>
-                    </th>
-                    <td><input type="checkbox" name="hide_post_cat" <?php if ($hide_post_cat == true) echo 'checked="checked"' ?> value="true" /></td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Hide post tags', 'graphene'); ?></label>
-                    </th>
-                    <td><input type="checkbox" name="hide_post_tags" <?php if ($hide_post_tags == true) echo 'checked="checked"' ?> value="true" /></td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Hide post comment count', 'graphene'); ?></label><br />
-                        <small><?php _e('Only affects posts listing (such as the front page) and not single post view.', 'graphene'); ?></small>                        
-                    </th>
-                    <td><input type="checkbox" name="hide_post_commentcount" <?php if ($hide_post_commentcount == true) echo 'checked="checked"' ?> value="true" /></td>
-                </tr>
-                <tr>
-                    <th scope="row"><label><?php _e("Show post author's gravatar", 'graphene'); ?></label></th>
-                    <td><input type="checkbox" name="show_post_avatar" <?php if ($show_post_avatar == true) echo 'checked="checked"' ?> value="true" /></td>
-                </tr>
-                <tr>
-                    <th scope="row"><label><?php _e("Show post author's info", 'graphene'); ?></label></th>
-                    <td><input type="checkbox" name="show_post_author" <?php if ($show_post_author == true) echo 'checked="checked"' ?> value="true" /></td>
-                </tr>
-                <tr>
-                    <th scope="row"><label><?php _e("Show More link for manual excerpts", 'graphene'); ?></label></th>
-                    <td><input type="checkbox" name="show_excerpt_more" <?php if ($show_excerpt_more == true) echo 'checked="checked"' ?> value="true" /></td>
-                </tr>
-            </table>
+        <div class="postbox">
+            <div class="head-wrap">
+                <div title="Click to toggle" class="handlediv"><br /></div>
+        		<h3 class="hndle"><?php _e('Posts Display Options', 'graphene'); ?></h3>
+            </div>
+            <div class="panel-wrap inside">
+                <table class="form-table">
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Show excerpts in front page', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="checkbox" name="posts_show_excerpt" <?php if ($posts_show_excerpt == true) echo 'checked="checked"' ?> value="true" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Hide post author', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="checkbox" name="hide_post_author" <?php if ($hide_post_author == true) echo 'checked="checked"' ?> value="true" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Hide post date', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="checkbox" name="hide_post_date" <?php if ($hide_post_date == true) echo 'checked="checked"' ?> value="true" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Show post year', 'graphene'); ?></label>
+                        </th>
+                        <td>
+                            <input type="checkbox" name="show_post_year" <?php if ($show_post_year == true) echo 'checked="checked"' ?> value="true" /><br/>
+                            <span class="description"><?php _e('Only works if the option "Hide post date" is disabled.', 'graphene'); ?></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Hide post categories', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="checkbox" name="hide_post_cat" <?php if ($hide_post_cat == true) echo 'checked="checked"' ?> value="true" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Hide post tags', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="checkbox" name="hide_post_tags" <?php if ($hide_post_tags == true) echo 'checked="checked"' ?> value="true" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Hide post comment count', 'graphene'); ?></label><br />
+                            <small><?php _e('Only affects posts listing (such as the front page) and not single post view.', 'graphene'); ?></small>                        
+                        </th>
+                        <td><input type="checkbox" name="hide_post_commentcount" <?php if ($hide_post_commentcount == true) echo 'checked="checked"' ?> value="true" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label><?php _e("Show post author's gravatar", 'graphene'); ?></label></th>
+                        <td><input type="checkbox" name="show_post_avatar" <?php if ($show_post_avatar == true) echo 'checked="checked"' ?> value="true" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label><?php _e("Show post author's info", 'graphene'); ?></label></th>
+                        <td><input type="checkbox" name="show_post_author" <?php if ($show_post_author == true) echo 'checked="checked"' ?> value="true" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label><?php _e("Show More link for manual excerpts", 'graphene'); ?></label></th>
+                        <td><input type="checkbox" name="show_excerpt_more" <?php if ($show_excerpt_more == true) echo 'checked="checked"' ?> value="true" /></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        
         
         <?php /* Comments Display Options */ ?>
-        <h3><?php _e('Comments Display Options', 'graphene'); ?></h3>
-        <table class="form-table">
-            <tr>
-                <th scope="row">
-                    <label><?php _e('Hide allowed tags in comment form', 'graphene'); ?></label>
-                </th>
-                <td><input type="checkbox" name="hide_allowedtags" <?php if ($hide_allowedtags == true) echo 'checked="checked"' ?> value="true" /></td>
-            </tr>
-        </table>
+        <div class="postbox">
+            <div class="head-wrap">
+                <div title="Click to toggle" class="handlediv"><br /></div>
+        		<h3 class="hndle"><?php _e('Comments Display Options', 'graphene'); ?></h3>
+            </div>
+            <div class="panel-wrap inside">
+                <table class="form-table">
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Hide allowed tags in comment form', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="checkbox" name="hide_allowedtags" <?php if ($hide_allowedtags == true) echo 'checked="checked"' ?> value="true" /></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
         
             
         <?php /* Text Style Options */ ?>
-        <h3><?php _e('Text Style Options', 'graphene'); ?></h3>    
-        <p><?php _e('Note that these are CSS properties, so any valid CSS values for each particular property can be used.', 'graphene'); ?></p>
-        <p><?php _e('Some example CSS properties values:', 'graphene'); ?></p>
-        <table class="graphene-code-example">
-            <tr>
-                <th scope="row"><?php _e('Text font:', 'graphene'); ?></th>
-                <td><?php _e("<code>arial</code>, <code>tahoma</code>, <code>georgia</code>, <code>'Trebuchet MS'</code>", 'graphene'); ?></td>
-            </tr>
-            <tr>
-                <th scope="row"><?php _e('Text size and line height:', 'graphene'); ?></th>
-                <td><?php _e("<code>12px</code>, <code>12pt</code>, <code>12em</code>", 'graphene'); ?></td>
-            </tr>
-            <tr>
-                <th scope="row"><?php _e('Text weight:', 'graphene'); ?></th>
-                <td><?php _e("<code>normal</code>, <code>bold</code>, <code>100</code>, <code>700</code>", 'graphene'); ?></td>
-            </tr>
-            <tr>
-                <th scope="row"><?php _e('Text style:', 'graphene'); ?></th>
-                <td><?php _e(" <code>normal</code>, <code>italic</code>, <code>oblique</code>", 'graphene'); ?></td>
-            </tr>
-            <tr>
-                <th scope="row"><?php _e('Text colour:', 'graphene'); ?></th>
-                <td><?php _e("<code>blue</code>, <code>navy</code>, <code>red</code>, <code>#ff0000</code>", 'graphene'); ?></td>
-            </tr>        
-        </table>
-        <p><?php _e('Leave field empty to use the default value.', 'graphene'); ?></p>
-        <h4><?php _e('Header Text', 'graphene'); ?></h4>
-            <table class="form-table">
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Title text font', 'graphene'); ?></label>
-                    </th>
-                    <td><input type="text" name="header_title_font_type" value="<?php if ($header_title_font_type) echo $header_title_font_type; ?>" /></td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Title text size', 'graphene'); ?></label>
-                    </th>
-                    <td><input type="text" name="header_title_font_size" value="<?php if ($header_title_font_size) echo $header_title_font_size; ?>" /></td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Title text weight', 'graphene'); ?></label>
-                    </th>
-                    <td><input type="text" name="header_title_font_weight" value="<?php if ($header_title_font_weight) echo $header_title_font_weight; ?>" /></td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Title text line height', 'graphene'); ?></label>
-                    </th>
-                    <td><input type="text" name="header_title_font_lineheight" value="<?php if ($header_title_font_lineheight) echo $header_title_font_lineheight; ?>" /></td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Title text style', 'graphene'); ?></label>
-                    </th>
-                    <td><input type="text" name="header_title_font_style" value="<?php if ($header_title_font_style) echo $header_title_font_style; ?>" /></td>
-                </tr>
-            </table>
-            
-            <table class="form-table" style="margin-top:30px;">               
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Description text font', 'graphene'); ?></label>
-                    </th>
-                    <td><input type="text" name="header_desc_font_type" value="<?php if ($header_desc_font_type) echo $header_desc_font_type; ?>" /></td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Description text size', 'graphene'); ?></label>
-                    </th>
-                    <td><input type="text" name="header_desc_font_size" value="<?php if ($header_desc_font_size) echo $header_desc_font_size; ?>" /></td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Description text weight', 'graphene'); ?></label>
-                    </th>
-                    <td><input type="text" name="header_desc_font_weight" value="<?php if ($header_desc_font_weight) echo $header_desc_font_weight; ?>" /></td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Description text line height', 'graphene'); ?></label>
-                    </th>
-                    <td><input type="text" name="header_desc_font_lineheight" value="<?php if ($header_desc_font_lineheight) echo $header_desc_font_lineheight; ?>" /></td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Description text style', 'graphene'); ?></label>
-                    </th>
-                    <td><input type="text" name="header_desc_font_style" value="<?php if ($header_desc_font_style) echo $header_desc_font_style; ?>" /></td>
-                </tr>
-            </table>
-        <h4><?php _e('Content Text', 'graphene'); ?></h4>
-        	<table class="form-table">
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Text font', 'graphene'); ?></label>
-                    </th>
-                    <td><input type="text" name="content_font_type" value="<?php if ($content_font_type) echo $content_font_type; ?>" /></td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Text size', 'graphene'); ?></label>
-                    </th>
-                    <td><input type="text" name="content_font_size" value="<?php if ($content_font_size) echo $content_font_size; ?>" /></td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Text line height', 'graphene'); ?></label>
-                    </th>
-                    <td><input type="text" name="content_font_lineheight" value="<?php if ($content_font_lineheight) echo $content_font_lineheight; ?>" /></td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Text colour', 'graphene'); ?></label>
-                    </th>
-                    <td><input type="text" name="content_font_colour" value="<?php if ($content_font_colour) echo $content_font_colour; ?>" /></td>
-                </tr>
-            </table>
-            
-            <h4><?php _e('Link Text', 'graphene'); ?></h4>
-        	<table class="form-table">
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Link colour (normal state)', 'graphene'); ?></label>
-                    </th>
-                    <td><input type="text" name="link_colour_normal" value="<?php if ($link_colour_normal) echo $link_colour_normal; ?>" /></td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Link colour (visited state)', 'graphene'); ?></label>
-                    </th>
-                    <td><input type="text" name="link_colour_visited" value="<?php if ($link_colour_visited) echo $link_colour_visited; ?>" /></td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Link colour (hover state)', 'graphene'); ?></label>
-                    </th>
-                    <td><input type="text" name="link_colour_hover" value="<?php if ($link_colour_hover) echo $link_colour_hover; ?>" /></td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Text decoration (normal state)', 'graphene'); ?></label>
-                    </th>
-                    <td><input type="text" name="link_decoration_normal" value="<?php if ($link_decoration_normal) echo $link_decoration_normal; ?>" /></td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Text decoration (hover state)', 'graphene'); ?></label>
-                    </th>
-                    <td><input type="text" name="link_decoration_hover" value="<?php if ($link_decoration_hover) echo $link_decoration_hover; ?>" /></td>
-                </tr>
-            </table>
+        <div class="postbox">
+            <div class="head-wrap">
+                <div title="Click to toggle" class="handlediv"><br /></div>
+        		<h3 class="hndle"><?php _e('Text Style Options', 'graphene'); ?></h3>
+            </div>
+            <div class="panel-wrap inside">
+                <p><?php _e('Note that these are CSS properties, so any valid CSS values for each particular property can be used.', 'graphene'); ?></p>
+                <p><?php _e('Some example CSS properties values:', 'graphene'); ?></p>
+                <table class="graphene-code-example">
+                    <tr>
+                        <th scope="row"><?php _e('Text font:', 'graphene'); ?></th>
+                        <td><?php _e("<code>arial</code>, <code>tahoma</code>, <code>georgia</code>, <code>'Trebuchet MS'</code>", 'graphene'); ?></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><?php _e('Text size and line height:', 'graphene'); ?></th>
+                        <td><?php _e("<code>12px</code>, <code>12pt</code>, <code>12em</code>", 'graphene'); ?></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><?php _e('Text weight:', 'graphene'); ?></th>
+                        <td><?php _e("<code>normal</code>, <code>bold</code>, <code>100</code>, <code>700</code>", 'graphene'); ?></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><?php _e('Text style:', 'graphene'); ?></th>
+                        <td><?php _e(" <code>normal</code>, <code>italic</code>, <code>oblique</code>", 'graphene'); ?></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><?php _e('Text colour:', 'graphene'); ?></th>
+                        <td><?php _e("<code>blue</code>, <code>navy</code>, <code>red</code>, <code>#ff0000</code>", 'graphene'); ?></td>
+                    </tr>        
+                </table>
+                <p><?php _e('Leave field empty to use the default value.', 'graphene'); ?></p>
+                
+                <h4><?php _e('Header Text', 'graphene'); ?></h4>
+                <table class="form-table">
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Title text font', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="text" class="code" name="header_title_font_type" value="<?php if ($header_title_font_type) echo $header_title_font_type; ?>" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Title text size', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="text" class="code" name="header_title_font_size" value="<?php if ($header_title_font_size) echo $header_title_font_size; ?>" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Title text weight', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="text" class="code" name="header_title_font_weight" value="<?php if ($header_title_font_weight) echo $header_title_font_weight; ?>" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Title text line height', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="text" class="code" name="header_title_font_lineheight" value="<?php if ($header_title_font_lineheight) echo $header_title_font_lineheight; ?>" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Title text style', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="text" class="code" name="header_title_font_style" value="<?php if ($header_title_font_style) echo $header_title_font_style; ?>" /></td>
+                    </tr>
+                </table>
+                
+                <table class="form-table" style="margin-top:30px;">               
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Description text font', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="text" class="code" name="header_desc_font_type" value="<?php if ($header_desc_font_type) echo $header_desc_font_type; ?>" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Description text size', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="text" class="code" name="header_desc_font_size" value="<?php if ($header_desc_font_size) echo $header_desc_font_size; ?>" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Description text weight', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="text" class="code" name="header_desc_font_weight" value="<?php if ($header_desc_font_weight) echo $header_desc_font_weight; ?>" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Description text line height', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="text" class="code" name="header_desc_font_lineheight" value="<?php if ($header_desc_font_lineheight) echo $header_desc_font_lineheight; ?>" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Description text style', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="text" class="code" name="header_desc_font_style" value="<?php if ($header_desc_font_style) echo $header_desc_font_style; ?>" /></td>
+                    </tr>
+                </table>
+                
+                <h4><?php _e('Content Text', 'graphene'); ?></h4>
+                <table class="form-table">
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Text font', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="text" class="code" name="content_font_type" value="<?php if ($content_font_type) echo $content_font_type; ?>" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Text size', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="text" class="code" name="content_font_size" value="<?php if ($content_font_size) echo $content_font_size; ?>" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Text line height', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="text" class="code" name="content_font_lineheight" value="<?php if ($content_font_lineheight) echo $content_font_lineheight; ?>" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Text colour', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="text" class="code" name="content_font_colour" value="<?php if ($content_font_colour) echo $content_font_colour; ?>" /></td>
+                    </tr>
+                </table>
+                    
+                <h4><?php _e('Link Text', 'graphene'); ?></h4>
+                <table class="form-table">
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Link colour (normal state)', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="text" class="code" name="link_colour_normal" value="<?php if ($link_colour_normal) echo $link_colour_normal; ?>" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Link colour (visited state)', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="text" class="code" name="link_colour_visited" value="<?php if ($link_colour_visited) echo $link_colour_visited; ?>" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Link colour (hover state)', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="text" class="code" name="link_colour_hover" value="<?php if ($link_colour_hover) echo $link_colour_hover; ?>" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Text decoration (normal state)', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="text" class="code" name="link_decoration_normal" value="<?php if ($link_decoration_normal) echo $link_decoration_normal; ?>" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Text decoration (hover state)', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="text" class="code" name="link_decoration_hover" value="<?php if ($link_decoration_hover) echo $link_decoration_hover; ?>" /></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
 		
         
 		<?php /* Footer Widget Display Options */ ?>
-        <h3><?php _e('Footer Widget Display Options', 'graphene'); ?></h3>
-        <p><?php _e('Leave field empty to use the default value.', 'graphene'); ?></p>
+        <div class="postbox">
+            <div class="head-wrap">
+                <div title="Click to toggle" class="handlediv"><br /></div>
+        		<h3 class="hndle"><?php _e('Footer Widget Display Options', 'graphene'); ?></h3>
+            </div>
+            <div class="panel-wrap inside">
+        		<p><?php _e('Leave field empty to use the default value.', 'graphene'); ?></p>
         
-            <table class="form-table">
-                <tr>
-                    <th scope="row" style="width:260px;">
-                    	<label><?php _e('Number of columns to display', 'graphene'); ?></label>
-                    </th>
-                    <td><input type="text" name="footerwidget_column" value="<?php echo $footerwidget_column; ?>" maxlength="2" size="3" /></td>
-                </tr>
-                <?php if (get_option('graphene_alt_home_footerwidget')) : ?>
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Number of columns to display for front page footer widget', 'graphene'); ?></label>
-                    </th>
-                    <td><input type="text" name="alt_footerwidget_column" value="<?php echo $alt_footerwidget_column; ?>" maxlength="2" size="3" /></td>
-                </tr>
-                <?php endif; ?>
-            </table>
+                <table class="form-table">
+                    <tr>
+                        <th scope="row" style="width:260px;">
+                            <label><?php _e('Number of columns to display', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="text" class="code" name="footerwidget_column" value="<?php echo $footerwidget_column; ?>" maxlength="2" size="3" /></td>
+                    </tr>
+                    <?php if (get_option('graphene_alt_home_footerwidget')) : ?>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Number of columns to display for front page footer widget', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="text" class="code" name="alt_footerwidget_column" value="<?php echo $alt_footerwidget_column; ?>" maxlength="2" size="3" /></td>
+                    </tr>
+                    <?php endif; ?>
+                </table>
+            </div>
+        </div>
             
         
-        <?php /* Bottom Widget Display Options */ ?>
-        <h3><?php _e('Navigation Menu Display Options', 'graphene'); ?></h3>
-        <p><?php _e('Leave field empty to use the default value.', 'graphene'); ?></p>
+        <?php /* Navigation Menu Display Options */ ?>
+        <div class="postbox">
+            <div class="head-wrap">
+                <div title="Click to toggle" class="handlediv"><br /></div>
+        		<h3 class="hndle"><?php _e('Navigation Menu Display Options', 'graphene'); ?></h3>
+            </div>
+            <div class="panel-wrap inside">
+		        <p><?php _e('Leave field empty to use the default value.', 'graphene'); ?></p>
         
-            <table class="form-table">
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Dropdown menu item width', 'graphene'); ?></label>
-                    </th>
-                    <td><input type="text" name="navmenu_child_width" value="<?php echo $navmenu_child_width; ?>" maxlength="3" size="3" /> px</td>
-                </tr>
-            </table>
+                <table class="form-table">
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Dropdown menu item width', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="text" class="code" name="navmenu_child_width" value="<?php echo $navmenu_child_width; ?>" maxlength="3" size="3" /> px</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
             
         <?php /* Miscellaneous Display Options */ ?>
-        <h3><?php _e('Miscellaneous Display Options', 'graphene'); ?></h3>        
-        <table class="form-table">
-            <tr>
-                <th scope="row">
-                    <label><?php _e('Swap title order', 'graphene'); ?></label>
-                </th>
-                <td>
-                	<input type="checkbox" name="swap_title" <?php if ($swap_title == true) echo 'checked="checked"' ?> value="true" /><br />
-                    <span class="description"><?php _e('If this is checked, the website title will be displayed first, followed by the page title.', 'graphene'); ?></span>
-                </td>
-            </tr>
-        </table>
+        <div class="postbox">
+            <div class="head-wrap">
+                <div title="Click to toggle" class="handlediv"><br /></div>
+        		<h3 class="hndle"><?php _e('Miscellaneous Display Options', 'graphene'); ?></h3>
+            </div>
+            <div class="panel-wrap inside">
+                <table class="form-table">
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Swap title order', 'graphene'); ?></label>
+                        </th>
+                        <td>
+                            <input type="checkbox" name="swap_title" <?php if ($swap_title == true) echo 'checked="checked"' ?> value="true" /><br />
+                            <span class="description"><?php _e('If this is checked, the website title will be displayed first, followed by the page title.', 'graphene'); ?></span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+                    
+                    
+        <?php /* Custom CSS */ ?>
+        <div class="postbox">
+            <div class="head-wrap">
+            	<div title="Click to toggle" class="handlediv"><br /></div>
+            	<h3 class="hndle"><?php _e('Custom CSS', 'graphene'); ?></h3>
+            </div>
+            <div class="panel-wrap inside">
+                <table class="form-table">
+                    <tr>
+                        <th scope="row"><label><?php _e('Custom CSS styles', 'graphene'); ?></label></th>
+                        <td>
+                        	<span class="description"><?php _e("You can enter your own CSS codes below to modify any other aspects of the theme's appearance that is not included in the options.", 'graphene'); ?></span>
+                        	<textarea name="custom_css" cols="60" rows="20" class="widefat code"><?php echo stripslashes($custom_css); ?></textarea>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
                     
         
         <?php /* Ends the main form */ ?>
             <input type="hidden" name="graphene_submitted" value="true" />
             <input type="submit" class="button-primary" value="<?php _e('Update Settings', 'graphene'); ?>" style="margin-top:20px;margin-bottom:50px;" />
         </form>
+        
+        </div><!-- $left-wrap -->
         
     </div><!-- #wrap -->
     

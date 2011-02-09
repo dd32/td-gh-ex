@@ -45,7 +45,11 @@ function graphene_options(){
 		$slider_speed = (!empty($_POST['slider_speed'])) ? $_POST['slider_speed'] : '';
 		$slider_position = (!empty($_POST['slider_position'])) ? $_POST['slider_position'] : false;
 		
+		// Process the front page options
+		$frontpage_posts_cats = (in_array('', $_POST['frontpage_posts_cat'])) ? array() : $_POST['frontpage_posts_cat'] ;
+		
 		// Process the feed options
+		$hide_feed_icon = (!empty($_POST['hide_feed_icon'])) ? $_POST['hide_feed_icon'] : false;
 		$custom_feed_url = (!empty($_POST['custom_feed_url'])) ? $_POST['custom_feed_url'] : '';
 		
 		// Process the adsense options
@@ -117,8 +121,12 @@ function graphene_options(){
 			update_option('graphene_slider_position', $slider_position);
 			update_option('graphene_slider_disable', $slider_disable);
 			
+			// Front page options
+			update_option('graphene_frontpage_posts_cats', $frontpage_posts_cats);
+			
 			// Feed options
 			update_option('graphene_custom_feed_url', $custom_feed_url);
+			update_option('graphene_hide_feed_icon', $hide_feed_icon);
 			
 			// AdSense options
 			update_option('graphene_show_adsense', $show_adsense);
@@ -192,7 +200,10 @@ function graphene_options(){
 	$slider_position = get_option('graphene_slider_position');
 	$slider_disable = get_option('graphene_slider_disable');
 	
+	$frontpage_posts_cats = get_option('graphene_frontpage_posts_cats');
+	
 	$custom_feed_url = get_option('graphene_custom_feed_url');
+	$hide_feed_icon = get_option('graphene_hide_feed_icon');
 	
 	$show_adsense = get_option('graphene_show_adsense');
 	$adsense_code = get_option('graphene_adsense_code');
@@ -223,7 +234,7 @@ function graphene_options(){
 		 * including all the form inputs and messages
 		*/
 	?>
-	<div class="wrap">
+	<div class="wrap meta-box-sortables">
 		<h2><?php _e('Graphene Theme Options', 'graphene'); ?></h2>
         <p><?php _e('These are the global settings for the theme. You may override some of the settings in individual posts and pages.', 'graphene'); ?></p>
 		<?php 
@@ -248,6 +259,8 @@ function graphene_options(){
 			}
 		?>
         
+        <div class="left-wrap">        
+        
         <?php // Begins the main html form. Note that one html form is used for *all* options ?>
         <form action="" method="post">
         
@@ -257,232 +270,339 @@ function graphene_options(){
 		?>
         
         <?php /* Slider Options */ ?>
-        <h3><?php _e('Slider Options', 'graphene'); ?></h3>
-            <table class="form-table">
-            	<tr>
-                    <th scope="row">
-                    	<label><?php _e('Category to show in slider', 'graphene'); ?></label><br />
-                        <small><?php _e('All posts within the category selected here will be displayed on the slider. Usage example: create a new category "Featured" and assign all posts to be displayed on the slider to that category, and then select that category here.', 'graphene'); ?></small>
-                    </th>
-                    <td>
-                    	<select name="slider_cat">
-                        	<option value=""><?php _e('Show latest posts', 'graphene'); ?></option>
-                            <option value="" disabled="disabled">--------------------</option>
-                            <?php /* Get the list of categories */ 
-								$categories = get_categories();
-								foreach ($categories as $category) :
-							?>
-                            <option value="<?php echo $category->cat_ID; ?>" <?php if ($slider_cat == $category->cat_ID) {echo 'selected="selected"';}?>><?php echo $category->cat_name; ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Number of latest posts to display', 'graphene'); ?></label>
-                    </th>
-                    <td>
-                    	<input type="text" name="slider_postcount" value="<?php echo $slider_postcount; ?>" size="3" /><br />
-                        <span class="description"><?php _e('This setting only affects the slider if "Show latest posts" is selected above.', 'graphene'); ?></span>                        
-                    </td>
-                </tr>
-                <tr>
-                	<th scope="row">
-                    	<label><?php _e('Slider image', 'graphene'); ?></label>
-                    </th>
-                    <td>
-                    	<select name="slider_img">
-                        	<option value="disabled" <?php if ($slider_img == 'disabled') {echo 'selected="selected"';} ?>><?php _e("Don't show image", 'graphene'); ?></option>
-                            <option value="featured_image" <?php if ($slider_img == 'featured_image') {echo 'selected="selected"';} ?>><?php _e("Featured Image", 'graphene'); ?></option>
-                            <option value="post_image" <?php if ($slider_img == 'post_image') {echo 'selected="selected"';} ?>><?php _e("First image in post", 'graphene'); ?></option>
-                            <option value="custom_url" <?php if ($slider_img == 'custom_url') {echo 'selected="selected"';} ?>><?php _e("Custom URL", 'graphene'); ?></option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Custom slider image URL', 'graphene'); ?></label>
-                    </th>
-                    <td>
-                    	<input type="text" name="slider_imgurl" value="<?php echo $slider_imgurl; ?>" size="60" /><br />
-                        <span class="description"><?php _e('Make sure you select Custom URL in the slider image option above to use this custom url.', 'graphene'); ?></span>                        
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Slider height', 'graphene'); ?></label>
-                    </th>
-                    <td>
-                    	<input type="text" name="slider_height" value="<?php echo $slider_height; ?>" size="3" /> px                        
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Slider speed', 'graphene'); ?></label>
-                    </th>
-                    <td>
-                    	<input type="text" name="slider_speed" value="<?php echo $slider_speed; ?>" size="4" /> <?php _e('milliseconds', 'graphene'); ?><br />
-                        <span class="description"><?php _e('This is the duration that each slider item will be shown', 'graphene'); ?></span>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Move slider to bottom of page', 'graphene'); ?></label>
-                    </th>
-                    <td><input type="checkbox" name="slider_position" <?php if ($slider_position == true) echo 'checked="checked"' ?> value="true" /></td>
-                </tr>
-            	<tr>
-                    <th scope="row">
-                    	<label><?php _e('Disable slider', 'graphene'); ?></label>
-                    </th>
-                    <td><input type="checkbox" name="slider_disable" <?php if ($slider_disable == true) echo 'checked="checked"' ?> value="true" /></td>
-                </tr>
-            </table>
-        
-        <?php /* Feed Options */ ?>
-        <h3><?php _e('Feed Options', 'graphene'); ?></h3> 
-        <table class="form-table">       	
-            <tr>
-                <th scope="row"><label><?php _e('Use custom feed URL', 'graphene'); ?></label></th>
-                <td>
-                	<input type="text" name="custom_feed_url" value="<?php echo $custom_feed_url; ?>" size="60" /><br />
-                    <span class="description"><?php _e('This custom feed URL will replace the default Wordpress RSS feed URL.', 'graphene'); ?></span>
-                </td>
-            </tr>
-        </table>
-        
-        <?php /* AdSense Options */ ?>
-        <h3><?php _e('Adsense Options', 'graphene'); ?></h3>
-        	<table class="form-table">
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Show Adsense advertising', 'graphene'); ?></label>
-                    </th>
-                    <td><input type="checkbox" name="show_adsense" <?php if ($show_adsense == true) echo 'checked="checked"' ?> value="true" /></td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e('Show ads on front page as well', 'graphene'); ?></label>
-                    </th>
-                    <td><input type="checkbox" name="adsense_show_frontpage" <?php if ($adsense_show_frontpage == true) echo 'checked="checked"' ?> value="true" /></td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                    	<label><?php _e("Your Adsense code", 'graphene'); ?></label>
-                    </th>
-                    <td><textarea name="adsense_code" cols="60" rows="7"><?php echo htmlentities(stripslashes($adsense_code)); ?></textarea></td>
-                </tr>
-            </table>
+        <div class="postbox">
+            <div class="head-wrap">
+                <div title="Click to toggle" class="handlediv"><br /></div>
+        		<h3 class="hndle"><?php _e('Slider Options', 'graphene'); ?></h3>
+            </div>
+            <div class="panel-wrap inside">
+                <table class="form-table">
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Category to show in slider', 'graphene'); ?></label><br />
+                            <small><?php _e('All posts within the category selected here will be displayed on the slider. Usage example: create a new category "Featured" and assign all posts to be displayed on the slider to that category, and then select that category here.', 'graphene'); ?></small>
+                        </th>
+                        <td>
+                            <select name="slider_cat">
+                                <option value=""><?php _e('Show latest posts', 'graphene'); ?></option>
+                                <option value="random" <?php if ($slider_cat == 'random') {echo 'selected="selected"';}?>><?php _e('Show random posts', 'graphene'); ?></option>
+                                <option value="" disabled="disabled">--------------------</option>
+                                <?php /* Get the list of categories */ 
+                                    $categories = get_categories();
+                                    foreach ($categories as $category) :
+                                ?>
+                                <option value="<?php echo $category->cat_ID; ?>" <?php if ($slider_cat == $category->cat_ID) {echo 'selected="selected"';}?>><?php echo $category->cat_name; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Number of posts to display', 'graphene'); ?></label>
+                        </th>
+                        <td>
+                            <input type="text" name="slider_postcount" value="<?php echo $slider_postcount; ?>" size="3" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Slider image', 'graphene'); ?></label>
+                        </th>
+                        <td>
+                            <select name="slider_img">
+                                <option value="disabled" <?php if ($slider_img == 'disabled') {echo 'selected="selected"';} ?>><?php _e("Don't show image", 'graphene'); ?></option>
+                                <option value="featured_image" <?php if ($slider_img == 'featured_image') {echo 'selected="selected"';} ?>><?php _e("Featured Image", 'graphene'); ?></option>
+                                <option value="post_image" <?php if ($slider_img == 'post_image') {echo 'selected="selected"';} ?>><?php _e("First image in post", 'graphene'); ?></option>
+                                <option value="custom_url" <?php if ($slider_img == 'custom_url') {echo 'selected="selected"';} ?>><?php _e("Custom URL", 'graphene'); ?></option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Custom slider image URL', 'graphene'); ?></label>
+                        </th>
+                        <td>
+                            <input type="text" name="slider_imgurl" value="<?php echo $slider_imgurl; ?>" size="60" class="widefat code" /><br />
+                            <span class="description"><?php _e('Make sure you select Custom URL in the slider image option above to use this custom url.', 'graphene'); ?></span>                        
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Slider height', 'graphene'); ?></label>
+                        </th>
+                        <td>
+                            <input type="text" name="slider_height" value="<?php echo $slider_height; ?>" size="3" /> px                        
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Slider speed', 'graphene'); ?></label>
+                        </th>
+                        <td>
+                            <input type="text" name="slider_speed" value="<?php echo $slider_speed; ?>" size="4" /> <?php _e('milliseconds', 'graphene'); ?><br />
+                            <span class="description"><?php _e('This is the duration that each slider item will be shown', 'graphene'); ?></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Move slider to bottom of page', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="checkbox" name="slider_position" <?php if ($slider_position == true) echo 'checked="checked"' ?> value="true" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Disable slider', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="checkbox" name="slider_disable" <?php if ($slider_disable == true) echo 'checked="checked"' ?> value="true" /></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
         
         
-                
-        <?php /* AddThis Options */ ?>
-        <h3><?php _e('AddThis Options', 'graphene'); ?></h3> 
-        <table class="form-table">       	
-            <tr>
-                <th scope="row"><label><?php _e('Show AddThis social sharing button', 'graphene'); ?></label></th>
-                <td><input type="checkbox" name="show_addthis" <?php if ($show_addthis == true) echo 'checked="checked"' ?> value="true" /></td>
-            </tr>
-            <tr>
-                <th scope="row"><label><?php _e('Show in Pages as well?', 'graphene'); ?></label></th>
-                <td><input type="checkbox" name="show_addthis_page" <?php if ($show_addthis_page == true) echo 'checked="checked"' ?> value="true" /></td>
-            </tr>
-            <tr>
-                <th scope="row">
-                	<label><?php _e("Your AddThis button code", 'graphene'); ?></label><br />
-                	<small><?php _e('You can generate your button code from the <a href="http://www.addthis.com/">AddThis website</a>.', 'graphene'); ?></small>
-                </th>
-                <td><textarea name="addthis_code" cols="60" rows="7"><?php echo htmlentities(stripslashes($addthis_code)); ?></textarea></td>
-            </tr>
-        </table>
-        
-        
-        <?php /* Google Analytics Options */ ?>
-        <h3><?php _e('Google Analytics Options', 'graphene'); ?></h3>
-        <p><?php _e('<strong>Note:</strong> the theme now places the Google Analytics script in the <code>&lt;head&gt;</code> element to better support the new asynchronous Google Analytics script. Please make sure you update your script to use the new asynchronous script from Google Analytics.', 'graphene'); ?></p>
-        <table class="form-table">       	
-            <tr>
-                <th scope="row"><label><?php _e('Enable Google Analytics tracking', 'graphene'); ?></label></th>
-                <td><input type="checkbox" name="show_ga" <?php if ($show_ga == true) echo 'checked="checked"' ?> value="true" /></td>
-            </tr>
-            <tr>
-                <th scope="row"><label><?php _e("Google Analytics tracking code", 'graphene'); ?></label><br />
-                <small><?php _e('Make sure you include the full tracking code (including the <code>&lt;script&gt;</code> and <code>&lt;/script&gt;</code> tags) and not just the <code>UA-#######-#</code> code.','graphene'); ?></small>
-                </th>
-                <td><textarea name="ga_code" cols="60" rows="7"><?php echo htmlentities(stripslashes($ga_code)); ?></textarea></td>
-            </tr>
-        </table>
+        <?php /* Front Page Options */ ?>
+        <div class="postbox">
+            <div class="head-wrap">
+                <div title="Click to toggle" class="handlediv"><br /></div>
+        		<h3 class="hndle"><?php _e('Front Page Options', 'graphene'); ?></h3>
+            </div>
+            <div class="panel-wrap inside">
+                <table class="form-table">       	
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Front page posts categories', 'graphene'); ?></label>
+                            <p>
+                            	<small><?php _e('Only posts that belong to the categories selected here will be displayed on the front page. Does not affect Static Front Page.', 'graphene'); ?></small>
+                            </p>
+                        </th>
+                        <td>
+                            <select name="frontpage_posts_cat[]" multiple="multiple" class="select-multiple">
+                                <option value="" <?php if (empty($frontpage_posts_cats)) {echo 'selected="selected"';} ?>><?php _e('--Disabled--', 'graphene'); ?></option>
+                                <?php /* Get the list of categories */ 
+                                    $categories = get_categories();
+                                    foreach ($categories as $category) :
+                                ?>
+                                <option value="<?php echo $category->cat_ID; ?>" <?php if (in_array($category->cat_ID, $frontpage_posts_cats)) {echo 'selected="selected"';}?>><?php echo $category->cat_name; ?></option>
+                                <?php endforeach; ?>
+                            </select><br />
+                            <span class="description"><?php _e('You may select multiple categories by holding down the CTRL key.', 'graphene'); ?></span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
         
         
         <?php /* Widget Area Options */ ?>
-        <h3><?php _e('Widget Area Options', 'graphene'); ?></h3>
-        <h4><?php _e('Alternate Widgets', 'graphene'); ?></h4>
-        <p><?php _e('You can enable the theme to show different widget areas in the front page than the rest of the website. If you enable this option, additional widget areas that will only be displayed on the front page will be added to the Widget settings page.', 'graphene'); ?></p>
-        <table class="form-table">       	
-            <tr>
-                <th scope="row" style="width:350px;"><label><?php _e('Enable alternate front page sidebar widget area', 'graphene'); ?></label></th>
-                <td><input type="checkbox" name="alt_home_sidebar" <?php if ($alt_home_sidebar == true) echo 'checked="checked"' ?> value="true" /></td>
-            </tr>
-            <tr>
-                <th scope="row"><label><?php _e('Enable alternate front page footer widget area', 'graphene'); ?></label><br />
-                <small><?php _e('You can also specify different column counts for the front page footer widget and the rest-of-site footer widget if you enable this option.', 'graphene'); ?></small>
-                </th>
-                <td><input type="checkbox" name="alt_home_footerwidget" <?php if ($alt_home_footerwidget == true) echo 'checked="checked"' ?> value="true" /></td>
-            </tr>
-        </table>
+        <div class="postbox">
+            <div class="head-wrap">
+                <div title="Click to toggle" class="handlediv"><br /></div>
+        		<h3 class="hndle"><?php _e('Widget Area Options', 'graphene'); ?></h3>
+            </div>
+            <div class="panel-wrap inside">
+                <h4><?php _e('Alternate Widgets', 'graphene'); ?></h4>
+                <p><?php _e('You can enable the theme to show different widget areas in the front page than the rest of the website. If you enable this option, additional widget areas that will only be displayed on the front page will be added to the Widget settings page.', 'graphene'); ?></p>
+                <table class="form-table">       	
+                    <tr>
+                        <th scope="row" style="width:350px;"><label><?php _e('Enable alternate front page sidebar widget area', 'graphene'); ?></label></th>
+                        <td><input type="checkbox" name="alt_home_sidebar" <?php if ($alt_home_sidebar == true) echo 'checked="checked"' ?> value="true" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label><?php _e('Enable alternate front page footer widget area', 'graphene'); ?></label><br />
+                        <small><?php _e('You can also specify different column counts for the front page footer widget and the rest-of-site footer widget if you enable this option.', 'graphene'); ?></small>
+                        </th>
+                        <td><input type="checkbox" name="alt_home_footerwidget" <?php if ($alt_home_footerwidget == true) echo 'checked="checked"' ?> value="true" /></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        
+        <?php /* Feed Options */ ?>
+        <div class="postbox">
+            <div class="head-wrap">
+                <div title="Click to toggle" class="handlediv"><br /></div>
+        		<h3 class="hndle"><?php _e('Feed Options', 'graphene'); ?></h3>
+            </div>
+            <div class="panel-wrap inside">
+                <table class="form-table">
+                	<tr>
+                        <th scope="row"><label><?php _e('Hide feed icon', 'graphene'); ?></label></th>
+                        <td><input type="checkbox" name="hide_feed_icon"  <?php if ($hide_feed_icon == true) echo 'checked="checked"' ?> value="true" /></td>                                    
+                    </tr> 	
+                    <tr>
+                        <th scope="row"><label><?php _e('Use custom feed URL', 'graphene'); ?></label></th>
+                        <td>
+                            <input type="text" name="custom_feed_url" value="<?php echo $custom_feed_url; ?>" size="60" class="widefat code" /><br />
+                            <span class="description"><?php _e('This custom feed URL will replace the default Wordpress RSS feed URL.', 'graphene'); ?></span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        
+        <?php /* Social Sharing Options */ ?>
+        <div class="postbox">
+            <div class="head-wrap">
+                <div title="Click to toggle" class="handlediv"><br /></div>
+        		<h3 class="hndle"><?php _e('Social Sharing Buttons', 'graphene'); ?></h3>
+            </div>
+            <div class="panel-wrap inside">
+                <table class="form-table">       	
+                    <tr>
+                        <th scope="row"><label><?php _e('Show social sharing button', 'graphene'); ?></label></th>
+                        <td><input type="checkbox" name="show_addthis" <?php if ($show_addthis == true) echo 'checked="checked"' ?> value="true" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label><?php _e('Show in Pages as well?', 'graphene'); ?></label></th>
+                        <td><input type="checkbox" name="show_addthis_page" <?php if ($show_addthis_page == true) echo 'checked="checked"' ?> value="true" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e("Your social sharing button code", 'graphene'); ?></label><br />
+                            <small><?php _e('You can use codes from any popular social sharing sites, like Facebook, Digg, AddThis, etc.', 'graphene'); ?></small>
+                        </th>
+                        <td><textarea name="addthis_code" cols="60" rows="7" class="widefat code"><?php echo htmlentities(stripslashes($addthis_code)); ?></textarea></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        
+        
+        <?php /* AdSense Options */ ?>
+		<div class="postbox">
+            <div class="head-wrap">
+                <div title="Click to toggle" class="handlediv"><br /></div>
+        		<h3 class="hndle"><?php _e('Adsense Options', 'graphene'); ?></h3>
+            </div>
+            <div class="panel-wrap inside">
+                <table class="form-table">
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Show Adsense advertising', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="checkbox" name="show_adsense" <?php if ($show_adsense == true) echo 'checked="checked"' ?> value="true" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Show ads on front page as well', 'graphene'); ?></label>
+                        </th>
+                        <td><input type="checkbox" name="adsense_show_frontpage" <?php if ($adsense_show_frontpage == true) echo 'checked="checked"' ?> value="true" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e("Your Adsense code", 'graphene'); ?></label>
+                        </th>
+                        <td><textarea name="adsense_code" cols="60" rows="7" class="widefat code"><?php echo htmlentities(stripslashes($adsense_code)); ?></textarea></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        
+        <?php /* Google Analytics Options */ ?>
+        <div class="postbox">
+            <div class="head-wrap">
+                <div title="Click to toggle" class="handlediv"><br /></div>
+        		<h3 class="hndle"><?php _e('Google Analytics Options', 'graphene'); ?></h3>
+            </div>
+            <div class="panel-wrap inside">
+                <p><?php _e('<strong>Note:</strong> the theme now places the Google Analytics script in the <code>&lt;head&gt;</code> element to better support the new asynchronous Google Analytics script. Please make sure you update your script to use the new asynchronous script from Google Analytics.', 'graphene'); ?></p>
+                <table class="form-table">       	
+                    <tr>
+                        <th scope="row"><label><?php _e('Enable Google Analytics tracking', 'graphene'); ?></label></th>
+                        <td><input type="checkbox" name="show_ga" <?php if ($show_ga == true) echo 'checked="checked"' ?> value="true" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label><?php _e("Google Analytics tracking code", 'graphene'); ?></label><br />
+                        <small><?php _e('Make sure you include the full tracking code (including the <code>&lt;script&gt;</code> and <code>&lt;/script&gt;</code> tags) and not just the <code>UA-#######-#</code> code.','graphene'); ?></small>
+                        </th>
+                        <td><textarea name="ga_code" cols="60" rows="7" class="widefat code"><?php echo htmlentities(stripslashes($ga_code)); ?></textarea></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
         
         
         <?php /* Footer Options */ ?>
-        <h3><?php _e('Footer Options', 'graphene'); ?></h3> 
-        <table class="form-table">       	
-            <tr>
-                <th scope="row"><label><?php _e('Show Creative Commons logo', 'graphene'); ?></label><br />
-                <img src="http://i.creativecommons.org/l/by-nc-nd/2.5/my/88x31.png" alt="" /></th>
-                <td><input type="checkbox" name="show_cc" <?php if ($show_cc == true) echo 'checked="checked"' ?> value="true" /></td>
-            </tr>
-            <tr>
-                <th scope="row"><label><?php _e("Copyright text (html allowed)", 'graphene'); ?></label>
-                <br /><small><?php _e('If this field is empty, the following default copyright text will be displayed:', 'graphene'); ?></small>
-                <p style="background-color:#fff;padding:5px;border:1px solid #ddd;"><small><?php _e('Except where otherwise noted, content on this site is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Creative Commons Licence</a>.','graphene'); ?></small></p>
-                </th>
-                <td><textarea name="copy_text" cols="60" rows="7"><?php echo stripslashes($copy_text); ?></textarea></td>
-            </tr>
-            <tr>
-                <th scope="row"><label><?php _e('Do not show copyright info', 'graphene'); ?></label></th>
-                <td><input type="checkbox" name="hide_copyright" <?php if ($hide_copyright == true) echo 'checked="checked"' ?> value="true" /></td>
-            </tr>
-        </table>
+        <div class="postbox">
+            <div class="head-wrap">
+                <div title="Click to toggle" class="handlediv"><br /></div>
+        		<h3 class="hndle"><?php _e('Footer Options', 'graphene'); ?></h3>
+            </div>
+            <div class="panel-wrap inside">
+                <table class="form-table">       	
+                    <tr>
+                        <th scope="row"><label><?php _e('Show Creative Commons logo', 'graphene'); ?></label><br />
+                        <img src="http://i.creativecommons.org/l/by-nc-nd/2.5/my/88x31.png" alt="" /></th>
+                        <td><input type="checkbox" name="show_cc" <?php if ($show_cc == true) echo 'checked="checked"' ?> value="true" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label><?php _e("Copyright text (html allowed)", 'graphene'); ?></label>
+                        <br /><small><?php _e('If this field is empty, the following default copyright text will be displayed:', 'graphene'); ?></small>
+                        <p style="background-color:#fff;padding:5px;border:1px solid #ddd;"><small><?php _e('Except where otherwise noted, content on this site is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Creative Commons Licence</a>.','graphene'); ?></small></p>
+                        </th>
+                        <td><textarea name="copy_text" cols="60" rows="7"><?php echo stripslashes($copy_text); ?></textarea></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label><?php _e('Do not show copyright info', 'graphene'); ?></label></th>
+                        <td><input type="checkbox" name="hide_copyright" <?php if ($hide_copyright == true) echo 'checked="checked"' ?> value="true" /></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
         
         
             <?php /* Ends the main form */ ?>
             <input type="hidden" name="graphene_submitted" value="true" />
             <input type="submit" class="button-primary" value="<?php _e('Update Settings', 'graphene'); ?>" style="margin-top:20px;" />
         </form>
+       
+        </div><!-- #left-wrap -->
         
-        
+        <div class="side-wrap">
         
         <?php /* PayPal's donation button */ ?>
-        <h2 style="margin-top:50px;"><?php _e('Support the developer', 'graphene'); ?></h2>
-        <p><?php _e('Developing this awesome theme took a lot of effort and time, weeks and weeks of voluntary unpaid work. If you like this theme or if you are using it for commercial websites, please consider a donation to the developer to help support future updates and development.', 'graphene'); ?></p>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-            <input type="hidden" name="cmd" value="_s-xclick" />
-            <input type="hidden" name="hosted_button_id" value="SJRVDSEJF6VPU" />
-            <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" />
-            <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-        </form>
+        <div class="postbox donation">
+            <div>
+        		<h3 class="hndle"><?php _e('Support the developer', 'graphene'); ?></h3>
+            </div>
+            <div class="panel-wrap inside">
+                <p><?php _e('Developing this awesome theme took a lot of effort and time, weeks and weeks of voluntary unpaid work. If you like this theme or if you are using it for commercial websites, please consider a donation to the developer to help support future updates and development.', 'graphene'); ?></p>
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                    <input type="hidden" name="cmd" value="_s-xclick" />
+                    <input type="hidden" name="hosted_button_id" value="SJRVDSEJF6VPU" />
+                    <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" />
+                    <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+                </form>
+            </div>
+        </div>
         
         
         <?php /* Theme's uninstall */ ?>
-        <h2 style="margin-top:20px;"><?php _e('Uninstall theme', 'graphene'); ?></h2>
-        	<p><?php _e("<strong>Be careful!</strong> Uninstalling the theme will remove all of the theme's options from the database. Do this only if you decide not to use the theme anymore.",'graphene'); ?></p>
-            <p><?php _e('If you just want to try another theme, there is no need to uninstall this theme. Simply activate the other theme in the Appearance > Themes admin page.','graphene'); ?></p>
-            <p><?php _e("Note that uninstalling this theme <strong>does not remove</strong> the theme's files. To delete the files after you have uninstalled this theme, go to Appearances > Themes and delete the theme from there.",'graphene'); ?></p>
-            <form action="" method="post">
-            	<?php wp_nonce_field('graphene-options', 'graphene-options'); ?>
+        <div class="postbox">
+            <div class="head-wrap">
+                <div title="Click to toggle" class="handlediv"><br /></div>
+        		<h3 class="hndle"><?php _e('Uninstall theme', 'graphene'); ?></h3>
+            </div>
+            <div class="panel-wrap inside">
+                <p><?php _e("<strong>Be careful!</strong> Uninstalling the theme will remove all of the theme's options from the database. Do this only if you decide not to use the theme anymore.",'graphene'); ?></p>
+                <p><?php _e('If you just want to try another theme, there is no need to uninstall this theme. Simply activate the other theme in the Appearance > Themes admin page.','graphene'); ?></p>
+                <p><?php _e("Note that uninstalling this theme <strong>does not remove</strong> the theme's files. To delete the files after you have uninstalled this theme, go to Appearances > Themes and delete the theme from there.",'graphene'); ?></p>
+                <form action="" method="post">
+                    <?php wp_nonce_field('graphene-options', 'graphene-options'); ?>
+                
+                    <input type="hidden" name="graphene_uninstall" value="true" />
+                    <input type="submit" class="button graphene_uninstall" value="<?php _e('Uninstall Theme', 'graphene'); ?>" />
+                </form>
+            </div>
+        </div>
             
-                <input type="hidden" name="graphene_uninstall" value="true" />
-                <input type="submit" class="button graphene_uninstall" value="<?php _e('Uninstall Theme', 'graphene'); ?>" />
-            </form>
-    </div>
+            
+         </div><!-- #side-wrap -->   
+            
+    </div><!-- #wrap -->
     
 <?php } // Closes the graphene_options() function definition ?>
