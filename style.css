@@ -2,8 +2,8 @@
 THEME NAME: Simplish
 THEME URI: http://simplish.pomfolio.com
 DESCRIPTION: Simplish is a WordPress variant of the Scribbish theme for blogs.
-TAGS: two-columns, fixed-width, right-sidebar, threaded-comments, sticky-post, microformats, white, light
-VERSION: 2.5.2
+TAGS: two-columns, fixed-width, right-sidebar, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, translation-ready, microformats, white, light
+VERSION: 2.6
 AUTHOR: <a href="http://labs.utopian.net">Utopian.net Labs</a>, <a href="http://pittcrew.net/geekblog/">K. Pitt</a>, <a href="http://quotedprintable.com">J. Hardy</a>
 AUTHOR URI:
 LICENSE: GNU General Public License v3.0
@@ -14,7 +14,7 @@ LICENSE URI: http://www.gnu.org/licenses/gpl-3.0.html
  * Reset. Adapted from Eric Meyer, via CSS Boilerplate.
  * Uses different bracket/spacing style to ease comparing with source. 
  */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
 body { line-height: 1; }
 ol, ul { list-style: none; }
 blockquote, q { quotes: none; }
@@ -433,10 +433,6 @@ a.comment-permalink{
 #sidebar ul li li li{
 	list-style-type: square;
 	margin-left: 1.5em;
-}
-#sidebar ul li li li li{
-	list-style-type: disc;
-	margin-left : 1.5em;
 }
 #sidebar em{
 	font-style: normal;

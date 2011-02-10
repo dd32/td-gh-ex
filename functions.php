@@ -36,6 +36,77 @@ if(!function_exists('sp_setup')){
 /* The after_setup_theme hook fires before the theme init hook. */
 add_action('after_setup_theme', 'sp_setup');
 
+/* 
+ * Custom Header Image.
+ * BUG: Admin hdr img preview gets vertically tiled? (It is only 62px h.)
+ */
+if(!defined('HEADER_TEXTCOLOR'))
+	define('HEADER_TEXTCOLOR', '000');
+	
+/* Commented out because simplish ships no default image. */
+//if(!defined('HEADER_IMAGE'))
+//	define('HEADER_IMAGE', get_bloginfo('stylesheet_directory') . '/images/banner.jpg'); //To allow child themes' imgs
+
+define('HEADER_IMAGE_WIDTH', 900); 
+define('HEADER_IMAGE_HEIGHT', 62);
+
+/* Controls whether text color/styling opts are offered in admin.
+ * A confusing name and value. Quite a pair.
+ * Simplish offers text styling opts.
+ */
+if(!defined('NO_HEADER_TEXT'))
+	define('NO_HEADER_TEXT', false);
+	
+if(!function_exists('sp_header_style')):
+	function sp_header_style()
+	{
+	?>
+		<style type="text/css">
+		#header{
+			background: url(<?php header_image(); ?>);
+		}
+		<?php switch(get_header_textcolor()):
+			/*_Display text: No_ in theme hdr admin. Hide hdr text. */
+			case 'blank':
+				echo '#header h1, #header h2{
+					display: none;
+				}';
+				break;
+			/* Default hdr text color set. Use traditional burgundy a:active/hover. */
+			case '000':
+				echo '/* Duplicates style.css:/^#header a:hover */
+				#header a:active, #header a:hover{
+					color: #760909;
+				}';
+				break;
+			/* Use hdr text color set in theme hdr admin. */	
+			default:
+				echo '/* Must spec <a> or else style.css is more specific & wins. */
+				#header a:link, #header a:visited, #header h1, #header h2{
+					color: #' . get_header_textcolor() . '
+				}';
+		endswitch; ?>
+		</style>
+	<?php
+	}
+endif;
+
+if(!function_exists('sp_admin_header_style')):
+	/* Styles the Appearance->Header image preview. */
+	function sp_admin_header_style()
+	{
+	?>
+		<style type="text/css">
+		#headimg {
+			width: <?php echo HEADER_IMAGE_WIDTH; ?>px;
+			height: <?php echo HEADER_IMAGE_HEIGHT; ?>px;
+		}
+		</style>
+	<?php
+	}
+endif;
+add_custom_image_header('sp_header_style', 'sp_admin_header_style');
+
 /* Widget Sidebar */
 function sp_widgets_init()
 {
