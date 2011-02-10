@@ -82,8 +82,8 @@ if ( get_the_author_meta( 'description' ) ) : ?>
 
         </dl>
 
-        <br style="clear:both;" />
-        <h2 class="h2"><?php sprintf(__("Posts by %s",'Raindrops'),$curauth->nickname); ?>:</h2>
+        <br class="clear" />
+        <h2 class="h2"><?php printf(__("Posts by %s",'Raindrops'),$curauth->nickname); ?></h2>
 
         <dl class="<?php echo  esc_attr(basename(__FILE__,'.php'));?> <?php echo  esc_attr(basename(dirname(__FILE__)));?>">
           <!-- The Loop -->
@@ -95,7 +95,7 @@ if ( get_the_author_meta( 'description' ) ) : ?>
           <?php endwhile; else: ?>
 
           <p>
-            <?php _e('No posts by this author.'); ?>
+            <?php _e('No posts by this author.','Raindrops'); ?>
           </p>
           <?php endif; ?>
           <!-- End Loop -->
