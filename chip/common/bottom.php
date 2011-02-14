@@ -15,7 +15,7 @@ jQuery(document).ready(function($) {
 
 <!-- Begin Analytic Code -->
 <?php
-if( $chip_life_global['theme_options']['chip_life_analytic'] == "yes" ):
+if( $chip_life_global['theme_options']['chip_life_analytic'] == 1 ):
 echo htmlspecialchars_decode( $chip_life_global['theme_options']['chip_life_analytic_code'] );
 endif;
 ?>

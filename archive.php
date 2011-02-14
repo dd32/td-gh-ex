@@ -8,7 +8,21 @@
       <div id="contentleftdata">    
         
 		<div class="chipboxm1 chipstyle3 margin10b">
-          <div class="chipboxm1data"><h2 class="blue margin0">Search Results for: <?php echo get_search_query(); ?></h2></div>
+          <div class="chipboxm1data">
+            
+            <h2 class="blue margin0">
+			<?php if ( is_day() ): ?>
+            Daily Archives: <?php echo get_the_date(); ?>
+            <?php elseif ( is_month() ): ?>
+            Monthly Archives: <?php echo get_the_date('F Y'); ?>
+            <?php elseif ( is_year() ) : ?>
+            Yearly Archives: <?php echo get_the_date('Y'); ?>
+            <?php else: ?>
+            Blog Archives
+            <?php endif; ?>
+            </h2>
+          
+          </div>
         </div>
 		
 		<?php

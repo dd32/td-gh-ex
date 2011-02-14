@@ -32,7 +32,7 @@ foreach( $post_class_array as $val ) {
     
     <div class="chipboxg1 chiplisth1 margin0 font11">
       <ul>
-        <li><span><?php the_time('M j, Y') ?></span></li>            
+        <li><span><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_time('M j, Y') ?></a></span></li>            
         <li><a href="<?php echo get_author_posts_url( $authordata->ID ); ?>" class="lblue"><span><?php echo $authordata->display_name; ?></span></a></li>
         <li><a href="<?php echo get_comments_link( $post->ID ); ?>" class="lblue"><span><?php echo get_comments_number( $post->ID ); ?> Comments</span></a></li>
         <?php if( ! empty( $edit_post_link ) ): ?>

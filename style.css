@@ -4,7 +4,7 @@ Theme URI: http://chip-life.tutorialchip.com/
 Author: Life.Object
 Author URI: http://www.tutorialchip.com/
 Description: Chip Life (CL) theme for WordPress is stylish, customizable, flexible, readable, and professional with a power of custom menu, and background. Chip Life supports one widgetized area in the sidebar and featured images (thumbnails for posts). Check <a href="http://www.tutorialchip.com/chip-life/">CL Official Page</a> in case you need directions</a>.
-Version: 1.1
+Version: 1.2
 Tags: dark, blue, white, two-columns, fixed-width, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, custom-background
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -41,6 +41,11 @@ object, embed {max-width: 100%;}
 del {color:#F00;}
 blockquote {clear:left;margin:10px 10px 10px 10px;padding:0px 20px 0px 20px;background-color:#c2c6e1;border-width:1px;border-style:solid;border-color:#dfe3fc #878ba6 #878ba6 #dfe3fc;}
 
+ol {list-style: decimal;}
+ol ol {list-style: upper-alpha;}
+ol ol ol {list-style: lower-roman;}
+ol ol ol ol {list-style: lower-alpha;}
+
 /*
 |------------------
 | WP Classes Support
@@ -49,7 +54,7 @@ blockquote {clear:left;margin:10px 10px 10px 10px;padding:0px 20px 0px 20px;back
 
 .clear {clear:both;height:0px;font-size:1px;line-height:0px;}
 
-.alignleft {float:left;}
+.alignleft {float:left;margin:0px 10px 10px 0px;}
 .alignright {float:right;}
 .aligncenter {display:block;margin:0px auto 0px auto;float:none;clear:both;}
 
@@ -266,8 +271,6 @@ a.img1:hover {color:#2200d6;}
 | Comment(s)
 |------------------
 */
-
-#comments {word-wrap: break-word;}
 
 #comments h3 {margin:0px 0px 10px 0px;font-weight:normal;}
 #comments #respond h3 {margin:10px 0px 10px 0px;}

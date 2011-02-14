@@ -8,7 +8,7 @@
       <div id="contentleftdata">    
         
 		<div class="chipboxm1 chipstyle3 margin10b">
-          <div class="chipboxm1data"><h2 class="blue margin0">Search Results for: <?php echo get_search_query(); ?></h2></div>
+          <div class="chipboxm1data"><h2 class="blue margin0">Tag Archives: <?php echo single_tag_title( '', false ); ?></h2></div>
         </div>
 		
 		<?php

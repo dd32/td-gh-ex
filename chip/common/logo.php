@@ -1,6 +1,6 @@
 <?php
 global $chip_life_global;
-if( $chip_life_global['theme_options']['chip_life_logo'] == "yes"):
+if( $chip_life_global['theme_options']['chip_life_logo'] == 1 ):
 ?>
 <a href="<?php echo CHIP_LIFE_HOME; ?>"><img src="<?php echo $chip_life_global['theme_options']['chip_life_logo_url']; ?>" width="215" height="125" alt="" border="0" /></a>
 <?php

@@ -97,47 +97,47 @@ class Chip_Life_Options {
 			$chip_life_options = get_option('chip_life_options');
 			
 			//if(($tmp['chkbox1']=='on')||(!is_array($tmp))) {
-			if( ( $chip_life_options['chip_life_reset'] == "yes" || !is_array( $chip_life_options ) ) ) {
+			if( ( $chip_life_options['chip_life_reset'] == 1 || !is_array( $chip_life_options ) ) ) {
 				
 				$default = array(
-					'chip_life_logo'						=>	'no',
+					'chip_life_logo'						=>	0,
 					'chip_life_logo_url'					=>	CHIP_LIFE_IMAGES_WSROOT.'logo.gif',
 					
 					'chip_life_post_style'					=>	'excerpt',
 					
-					'chip_life_related_post'				=>	'no',
+					'chip_life_related_post'				=>	0,
 					'chip_life_related_post_number'			=>	5,
 					
-					'chip_life_sponsor_header_728x90'		=>	'no',
+					'chip_life_sponsor_header_728x90'		=>	0,
 					'chip_life_sponsor_header_728x90_code'	=>	'Sponsor Code 728x90',
 					
-					'chip_life_rss'							=>	'no',
+					'chip_life_rss'							=>	0,
 					'chip_life_rss_url'						=>	CHIP_LIFE_HOME.'feed/',
 					
-					'chip_life_feedburner'					=>	'no',
+					'chip_life_feedburner'					=>	0,
 					'chip_life_feedburner_id'				=>	'tutorialchip',
 					
-					'chip_life_feedburner_post_bottom'		=>	'no',
+					'chip_life_feedburner_post_bottom'		=>	0,
 					
-					'chip_life_twitter'						=>	'no',
+					'chip_life_twitter'						=>	0,
 					'chip_life_twitter_url'					=>	'http://twitter.com/lifeobject1',
 					
-					'chip_life_delicious'					=>	'no',
+					'chip_life_delicious'					=>	0,
 					'chip_life_delicious_url'				=>	'http://www.delicious.com/life.object',
 					
-					'chip_life_facebook'					=>	'no',
+					'chip_life_facebook'					=>	0,
 					'chip_life_facebook_url'				=>	'http://www.facebook.com/profile.php?id=100001747038774',
 					
-					'chip_life_stumble'						=>	'no',
+					'chip_life_stumble'						=>	0,
 					'chip_life_stumble_url'					=>	'http://www.stumbleupon.com/stumbler/lifeobject',
 					
-					'chip_life_digg'						=>	'no',
+					'chip_life_digg'						=>	0,
 					'chip_life_digg_url'					=>	'http://digg.com/lifeobject',
 					
-					'chip_life_analytic'					=>	'no',
+					'chip_life_analytic'					=>	0,
 					'chip_life_analytic_code'				=>	'Analytic Code',
 					
-					'chip_life_reset'						=>	'no',
+					'chip_life_reset'						=>	0,
 					
 				);
 				
@@ -176,7 +176,7 @@ class Chip_Life_Options {
 		/* Boolean Yes | No */
 		
 		function chip_boolean_pd() {			
-			$temp = array( 'yes' => 'yes', 'no' => 'no' );		
+			$temp = array( 1 => 'yes', 0 => 'no' );		
 			return $temp;
 		}
 		
@@ -205,7 +205,7 @@ class Chip_Life_Options {
 			/* Validation: chip_life_logo */
 			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
 			if ( ! array_key_exists( $input['chip_life_logo'], $chip_boolean_pd ) ) {
-				 $input['chip_life_logo'] = "no";
+				 $input['chip_life_logo'] = 0;
 			}
 			
 			/* Validation: chip_life_logo_url */
@@ -339,7 +339,7 @@ class Chip_Life_Options {
 			/* Validation: chip_life_reset */
 			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
 			if ( ! array_key_exists( undefined_index_fix ( $input['chip_life_reset'] ), $chip_boolean_pd ) ) {
-				 $input['chip_life_reset'] = "no";
+				 $input['chip_life_reset'] = 0;
 			}
 			
 			return $input;
@@ -706,8 +706,8 @@ class Chip_Life_Options {
 			$chip_life_options = get_option('chip_life_options');			
 			$items = Chip_Life_Options::chip_boolean_pd();
 			
-			$checked = ( $chip_life_options['chip_life_reset'] == $items['yes'] ) ? 'checked="checked"' : '';
-			echo '<label><input type="checkbox" id="chip_life_reset" name="chip_life_options[chip_life_reset]" value="yes" '.$checked.' /> Reset Theme Options</label>';
+			$checked = ( $chip_life_options['chip_life_reset'] == 1 ) ? 'checked="checked"' : '';
+			echo '<label><input type="checkbox" id="chip_life_reset" name="chip_life_options[chip_life_reset]" value="1" '.$checked.' /> Reset Theme Options</label>';
 		}
 		
 		
