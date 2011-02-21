@@ -2,7 +2,7 @@
 
 <div id="header">		
 <?php if (is_home()) { ?><h1><?php } ?>
-<a class="blogtitle" href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a><?php if (is_home()) { ?></h1><?php } ?><div class="description"><?php bloginfo('description'); ?></div>
+<a class="blogtitle" href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a><?php if (is_home()) { ?></h1><?php } ?><div class="description"><?php bloginfo('description'); ?></div>
 
 </div>
 

@@ -13,4 +13,6 @@ register_sidebar(array('name'=>'sidebar2',
         'after_title' => '</h4>',
 ));  
 add_theme_support('automatic-feed-links');
+if ( ! isset( $content_width ) )
+	$content_width = 470;
 ?>
