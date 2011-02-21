@@ -3,10 +3,9 @@ Theme Name: Adventure
 
 Theme URI: http://schwarttzy.com/?page_id=551
 
-Description: Inspired by a certain GPS Manufacture, I designed this theme to feel like your looking through a window out into the wilderness. The CSS, XHTML and design is released under GPL:
-	http://www.opensource.org/licenses/gpl-license.php
+Description: Inspired by a certain GPS Manufacture, I designed this theme to feel like your looking through a window out into the wilderness.
 
-Version: 1.3.2
+Version: 1.3.3
 
 Author: Eric Schwarz
 
@@ -16,7 +15,7 @@ Tags:  white, purple, two-columns, fixed-width
 
 License: GPL
 
-License URI: http://www.opensource.org/licenses/gpl-license.php
+License URI: http://www.opensource.org/licenses/gpl-2.0.php
 
 */
 
@@ -163,7 +162,7 @@ h1 a:hover{
 /************************************************
 				Content          
 ************************************************/
-
+.post p {clear:both;}
 .content {
 	background: url(images/75.png);
 	font-family: sans-serif;
@@ -293,23 +292,52 @@ object {z-index: -1}
 ************************************************/
 .comment {
 	float:left;
-	list-style:none;
-	width:740px;
+	list-style: none;
+	width:730px;
 	margin: 10px 0 5px 0;
-	padding:5px 0px;
+	padding:5px;
 }
+.children {list-style: none;}
 #reply-title {
 	text-transform: uppercase;
 	font-weight: 100;
 	font-size: 18px;
 }
-.comment-notes {font-style:italic;}
+.comment-notes {
+	font-style:italic;
+	font-size:13px;
+	float:right;
+	width:265px;
+	text-align:center;
+	padding-right:125px;
+}
+.comment .comment-notes {
+	font-style:italic;
+	font-size:13px;
+	float:right;
+	width:150px;
+	text-align:center;
+	padding-right:5px;
+}
+.comment #respond {
+	padding: 0 10px 0 10px;
+	background: url(images/blacktrans.png);
+	-moz-border-radius: 6px;
+	-khtml-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	float:left;
+}
+#author {margin-left:22px;}
+#email {margin-left:22px;}
+#url {margin-left:8px;}
 .comment-form-author, .comment-form-email, .comment-form-url, .comment-form-comment {
 	text-transform: uppercase;
 	font-weight: 100;
 	font-size: 16px;
 }
-#comment {width:735px;}
+.form-submit {float:right;}
+#comment {width:100%;}
 .avatar {
 	float:left;
 	margin-right:5px;
@@ -321,22 +349,22 @@ object {z-index: -1}
 	border-bottom: 1px solid #4a4646;
 }
 .trackback, .pingback {
-	background: url(images/blacktrans.png);
 	float:left;
 	width:730px;
 	padding:5px;
 	margin-bottom:5px;
 	color:#FFF;
 }
+.form-allowed-tags {display:none;}
 .trackback a, .pingback a {color:#392026;}
 .trackback a:hover, .pingback a:hover {color:#0b6492;}
-.depth-2 {width: 700px;}
-.depth-3 {width: 660px;}
-.depth-4 {width: 620px;}
-.depth-5 {width: 580px;}
-.depth-6 {width: 540px;}
-.depth-7 {width: 500px;}
-.depth-8 {width: 460px;}
+.depth-2 {width: 690px;}
+.depth-3 {width: 650px;}
+.depth-4 {width: 610px;}
+.depth-5 {width: 570px;}
+.depth-6 {width: 530px;}
+.depth-7 {width: 490px;}
+.depth-8 {width: 450px;}
 
 /************************************************
 				Forms          
@@ -354,7 +382,7 @@ object {z-index: -1}
 }
 
 input{
-	width: 100%;
+	
 	height: 25px;
 	background: url(images/form-field-bg.gif) no-repeat;
 	border-top: 1px solid #ccc;
@@ -381,7 +409,8 @@ input{
 .button:active, input[type="submit"]:active, .submit:active {
 	background: #e5e5e5 url(images/lightgraydown.png) repeat-x left top;
 }
-#textarea2 {
+#textarea {
+	width: 100%;
 	border-color: #DEDEDE #bbb #bbb #DEDEDE;
 	border-style: solid;
 	border-width: 1px;
@@ -398,10 +427,26 @@ input{
 blockquote {
 	font-style: italic;
 	margin: 10px;
-	padding: 0 5px 0 5px;
+	padding: 5px;
 	background: url(images/blacktrans.png);
-	
+	clear: both;
+	float:left;
+	width:700px;
 }
+blockquote blockquote {
+	background: none;
+	width:670px;
+	border: 1px solid #FFF;
+}
+blockquote blockquote blockquote {
+	background: none;
+	width:630px;
+}
+blockquote blockquote blockquote blockquote {
+	background: none;
+	width:600px;
+}
+cite { float:right;}
 address {font-weight:bold;}
 pre {
 	color:#FFF;
@@ -433,6 +478,8 @@ img {
 	max-width: 735px;
 }
 a img {border: none; }
+.alignleft {float:left;}
+.alignright {float:right;}
 img.alignleft {
 	float: left;
 	margin: 0 15px 10px 0;
@@ -446,9 +493,13 @@ img.aligncenter {
 	text-align: center;
 	display: block;
 }
+img.alignnone {
+	display: block;
+	margin: 10px 0 10px;	
+}
 .wp-caption {
 	background: url(images/blacktrans.png);
-	margin: 0 auto 0;
+	margin: 5px;
 	padding:5px;
 	text-align: center;
 	-moz-border-radius: 6px;

@@ -73,7 +73,7 @@
 
 	<div id="menu">
         <?php if ( has_nav_menu( 'menu' ) ) : wp_nav_menu(); else : ?>
-        <?php wp_list_pages( 'title_li=&depth=-0' ); ?>
+    	<ul><?php wp_list_pages( 'title_li=&depth=0' ); ?></ul>
         <?php endif; ?>
     </div>
     

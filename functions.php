@@ -1,5 +1,5 @@
 <?php
-if ( !isset( $content_width ) ) $content_width = 730;
+if ( !isset( $content_width ) ) $content_width = 760;
 if ( function_exists( 'add_theme_support' ) ) add_theme_support( 'automatic-feed-links' );
 if ( function_exists( 'register_nav_menu' ) ) register_nav_menu( 'menu', 'Menu' );
 if ( function_exists('register_sidebar') )
