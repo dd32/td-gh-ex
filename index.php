@@ -12,17 +12,19 @@
  * @subpackage Graphene
  * @since Graphene 1.0
  */
-
+global $graphene_settings;
 get_header(); ?>
 
 	<?php
 	
 	/* Check if the user selects specific category for the front page */
-	if (is_home() && get_option('graphene_frontpage_posts_cats')) {
+	if (is_home() && $graphene_settings['frontpage_posts_cats']) {
 		global $wp_query;
-		$cats = implode(',', get_option('graphene_frontpage_posts_cats'));
-		$args = array_merge($wp_query->query, array('cat' => $cats));
+		$cats = implode(',', $graphene_settings['frontpage_posts_cats']);
+		$args = wp_parse_args(array('cat' => $cats, 'paged' => get_query_var('paged')), $query_string);
+		// $args = $query_string.'&paged='.get_query_var('paged').'&cat='.$cats;
 		query_posts($args);
+		$wp_query->is_home = true;
 	}
 	
     /* Run the loop to output the posts.
@@ -32,5 +34,4 @@ get_header(); ?>
      get_template_part('loop', 'index');
     ?>
             
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

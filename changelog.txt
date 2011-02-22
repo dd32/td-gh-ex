@@ -4,13 +4,38 @@ http://www.khairul-syahir.com
 
 CHANGELOG
 
+Version 1.2
+    * Changed hooks:
+         - graphene_before_rightsidebar -> graphene_before_sidebar1
+         - graphene_after_rightsidebar -> graphene_after_sidebar1
+	* Fixed home page showing excerpt when displaying posts by categories
+	* Optimised comments styling
+	* Optimised posts styling
+	* Added styling content text not wrapped in <p> elements
+	* Added styling for sticky posts
+	* Hooked the Google Analytics code to wp_head() instead of printing it directly
+	* Migrated the theme's options to use the WordPress Settings API
+	* Added title for archive and search results pages
+	* Added configurable columns layouts, now includes three-column layout
+	* Added page template for each of the layout options
+	* Added option to display the date as inline text in the post's parameter
+	* Added two- and three-column page templates
+	* Increased container width to 960px for wider content area
+	* Added option to customise browser bar site title structure
+	* Added a widget area in the header
+	* Added option to display slider content in different style - thumbnail and excerpt, background image and excerpt, and full post
+	* Fixed the home page posts listing showing excerpts when showing posts by categories
+	* Fixed the slider and pagination not working when showing posts by categories
+	* Custom menu styling now affects custom menu in the navigation bar only, and not anywhere else
+	* Added child page listing for pages with children
+
 Version 1.1.4
 
 	* Added a secondary navigation menu
 	* Added option to specify the categories of posts to be displayed in the front page
 	* Added option to display the date's year for posts
 	* Added Japanese (ja) translation, by Masato Maekawa
-	* Added Dutch (nl_NL) translation, by Jeffrey Thummers
+	* Added Dutch (nl_NL) translation, by Jeffrey Tummers
 	* Generic slider post image is displayed if "First post in image" is selected but the post has no image
 	* Added Persian (fa_IR) translation, by Dayan
 	* Added 'suppress_filters' => 0 to all get_posts() function call for compatibility with WPML
@@ -26,8 +51,8 @@ Version 1.1.4
 	* Added option to specify the location of sidebar
 	* Added option to show/hide the top_bar (including the feed icon and the SearchBox?)
 	* Added option to hide the RSS feed icon
-    * Added option to specify the location of the searchbox (Top bar (current default), or the navigation bar
-    * Added option to turn on rotating header image (randomly taken from the available header images) 
+        * Added option to specify the location of the searchbox (Top bar (current default), or the navigation bar
+        * Added option to turn on rotating header image (randomly taken from the available header images) 
 	* Fixed several issues with RTL language support
 	* Added option for the slider to show random posts on each page load
 	

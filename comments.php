@@ -11,9 +11,10 @@
  * @subpackage Graphene
  * @since Graphene 1.0
  */
+global $graphene_settings;
 ?>
 
-<?php if (post_password_required()) : ?>
+<?php if (post_password_required() && (comments_open() || have_comments())) : ?>
 			<div id="comments">
 				<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'graphene' ); ?></p>
                 
@@ -89,7 +90,7 @@
 	 * Get the comment form.
 	*/ 
 	
-	if (!get_option('graphene_hide_allowedtags'))
+	if (!$graphene_settings['hide_allowedtags'])
 		$allowedtags = '<p class="form-allowed-tags">'.sprintf(__('You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s', 'graphene'),'<code>'.allowed_tags().'</code>').'</p>';
 	else
 		$allowedtags = '';

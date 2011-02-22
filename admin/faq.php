@@ -8,7 +8,8 @@
 */
 function graphene_faq(){ ?>
 	<div class="wrap">
-    	<h2><?php _e("Graphene's Frequently Asked Questions", 'graphene'); ?></h2>
+    	<div class="icon32" id="icon-themes"><br /></div>
+        <h2><?php _e("Graphene's Frequently Asked Questions", 'graphene'); ?></h2>
         <ol>
         	<li>
             	<p><strong><?php _e("Where should I go for the theme's support?", 'graphene'); ?></strong></p>
@@ -17,7 +18,7 @@ function graphene_faq(){ ?>
             <li>
             	<p><strong><?php _e("The post's featured image is replacing my header image. Help!", 'graphene'); ?></strong></p>
                 <p><?php _e("This is actually one of the theme's features, based on the feature in the default TwentyTen theme. Any featured image that has a size of greater than or equal to the theme's header image size (900 x 198 pixels) will replace the header image when the post/page that featured image is assigned to is being displayed. It enables you to have different header image for different posts and/or pages.", 'graphene'); ?></p>
-                <p><?php _e("If you want to disable this feature, simply tick the <em>Disable Featured Image replacing header image</em> option in the <a href=\"themes.php?page=graphene_options_display\">Graphene Display</a> options page, under Header Display Options.", 'graphene'); ?></p>
+                <p><?php _e("If you want to disable this feature, simply tick the <em>Disable Featured Image replacing header image</em> option in the <a href=\"themes.php?page=graphene_options&tab=display\">Graphene Options</a> page, under Display > Header Display Options.", 'graphene'); ?></p>
             </li>
         	<li>
             	<p><strong><?php _e("Can I modify Graphene to my heart's content without paying anything?", 'graphene'); ?></strong></p>

@@ -1,4 +1,4 @@
-<div id="author-<?php the_author_meta('ID'); ?>" <?php post_class('clearfix page'); ?>>
+<div id="author-<?php the_author_meta('ID'); ?>" <?php post_class(array('clearfix', 'page', 'author')); ?>>
 
     <div class="entry author-entry clearfix">
     

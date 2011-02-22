@@ -39,5 +39,4 @@ get_header(); ?>
     
     <?php do_action('graphene_after_authorpostlist'); ?>
             
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -6,7 +6,12 @@
 
 get_header(); ?>
 
-<?php if (isset($_GET['search_404'])) { get_template_part('search', '404'); } else { get_template_part('loop', 'search'); } ?>
+<h1 class="page-title">
+    <?php
+        printf(__('Search results for: <span>%s</span>', 'graphene'), get_search_query());
+    ?>
+</h1>
 
-<?php get_sidebar(); ?>
+<?php if (isset($_GET['search_404'])) { get_template_part('search', '404'); } else {get_template_part('loop', 'search');} ?>
+
 <?php get_footer(); ?>

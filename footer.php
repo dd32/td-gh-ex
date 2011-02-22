@@ -2,80 +2,98 @@
 /**
  * The template for displaying the footer.
  *
- * Closes the <div> for #content and #container, <body> and <html> tags.
+ * Closes the <div> for #content, #content-main and #container, <body> and <html> tags.
  *
  * @package WordPress
  * @subpackage Graphene
  * @since Graphene 1.0
  */
+global $graphene_settings;
 ?>
-		<?php if (is_page_template('template-onecolumn.php')) : ?>
-		</div><!-- #content-main -->
-        <?php endif; ?>
-        
-    </div><!-- #content -->
+  
+    </div><!-- #content-main -->
     
-    <?php /* Get the footer widget area */ ?>
-    <?php get_template_part('sidebar','footer'); ?>
+    <?php
     
-    <?php do_action('graphene_before_footer'); ?>
+        /* Sidebar 1 on the right side? */
+        if ( in_array(graphene_column_mode(), array('two-col-left', 'three-col-left')) ){
+            get_sidebar();
+        }
+        /* Sidebar 2 on the right side? */
+        if ( in_array(graphene_column_mode(), array('three-col-left', 'three-col-center')) ){
+            get_sidebar('two');
+        }
     
-    <div id="footer">
-    	
-		<?php if (!get_option('graphene_hide_copyright')) : ?>
-        <div id="copyright" <?php if (!get_option('graphene_show_cc') && !is_rtl()) {echo 'style="background:none;padding-left:20px;"';} elseif (!get_option('graphene_show_cc') && is_rtl()) {echo 'style="background:none;padding-right:20px;"';}?>>
-        	<?php if (get_option('graphene_copy_text') == '') : ?>
-				<p>
-				<?php _e('Except where otherwise noted, content on this site is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Creative Commons Licence</a>.','graphene'); ?>
+    ?>
+    
+
+</div><!-- #content -->
+
+<?php /* Get the footer widget area */ ?>
+<?php get_template_part('sidebar', 'footer'); ?>
+
+<?php do_action('graphene_before_footer'); ?>
+
+<div id="footer">
+
+    <?php if (!$graphene_settings['hide_copyright']) : ?>
+        <div id="copyright" <?php if (!$graphene_settings['show_cc'] && !is_rtl()) {
+        echo 'style="background:none;padding-left:20px;"';
+    } elseif (!$graphene_settings['show_cc'] && is_rtl()) {
+        echo 'style="background:none;padding-right:20px;"';
+    } ?>>
+            <?php if ($graphene_settings['copy_text'] == '') : ?>
+                <p>
+                <?php _e('Except where otherwise noted, content on this site is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Creative Commons Licence</a>.', 'graphene'); ?>
                 </p>
             <?php else : ?>
-            	<?php echo stripslashes(get_option('graphene_copy_text')); ?>
-            <?php endif; ?>
-            
-            <?php do_action('graphene_copyright'); ?>
-        </div>
+            <?php echo stripslashes($graphene_settings['copy_text']); ?>
         <?php endif; ?>
-        
-        <div id="w3c">
-        	<p>
-            <a title="<?php esc_attr_e('Valid XHTML 1.0 Strict', 'graphene'); ?>" href="http://validator.w3.org/check?uri=referer" id="w3c_xhtml"><span><?php _e('Valid XHTML 1.0 Strict', 'graphene'); ?></span></a> 
-            <a title="<?php esc_attr_e('Valid CSS', 'graphene'); ?>" href="http://jigsaw.w3.org/css-validator/check/referer/" id="w3c_css"><span><?php _e('Valid CSS Level 2.1', 'graphene'); ?></span></a>
-            </p>
-            
-            <?php do_action('graphene_w3c'); ?>
-        </div>
-        
-        <?php 
-		/**
-		 * This is where the credit for the theme is placed. Please keep the link back
-		 * to the author's website. Seriously, developing this awesome theme took a lot
-		 * of effort and time, weeks and weeks of voluntary unpaid work. I only ask 
-		 * that you retain this link here, and you can use and/or modify the theme
-		 * however you like to.
-		 *
-		 * If you still would like to remove the credit, please consider a donation
-		 * through Graphene Options page under Appearance in Wordpress admin
-		 * to help support the author and future theme development/support.
-		*/
-		?>
-        <div id="developer">
-        	<p>
-            <?php /* translators: %1$s is the blog title, %2$s is the theme's name, %3$s is the theme's author */ ?>
-			<?php printf(__('%1$s uses %2$s theme by %3$s.','graphene'), '<a href="'.get_home_url().'">'.get_bloginfo('name').'</a>', '<a href="http://www.khairul-syahir.com/wordpress-dev/graphene-theme">'.ucfirst(get_template()).'</a>', 'Syahir Hakim'); ?>
-            </p>
-            
-            <?php do_action('graphene_developer'); ?>
-        </div>
-    </div><!-- #footer -->
-    
-    <?php do_action('graphene_after_footer'); ?>
-    
-</div><!-- #container -->
 
-<?php if (!get_theme_mod('background_image', false) && !get_theme_mod('background_color', false)) :?>
-</div><!-- .bg-gradient -->
+    <?php do_action('graphene_copyright'); ?>
+        </div>
 <?php endif; ?>
 
-	<?php wp_footer(); ?>
+    <div id="w3c">
+        <p>
+            <a title="<?php esc_attr_e('Valid XHTML 1.0 Strict', 'graphene'); ?>" href="http://validator.w3.org/check?uri=referer" id="w3c_xhtml"><span><?php _e('Valid XHTML 1.0 Strict', 'graphene'); ?></span></a> 
+            <a title="<?php esc_attr_e('Valid CSS', 'graphene'); ?>" href="http://jigsaw.w3.org/css-validator/check/referer/" id="w3c_css"><span><?php _e('Valid CSS Level 2.1', 'graphene'); ?></span></a>
+        </p>
+
+    <?php do_action('graphene_w3c'); ?>
+    </div>
+
+    <?php
+    /**
+     * This is where the credit for the theme is placed. Please keep the link back
+     * to the author's website. Seriously, developing this awesome theme took a lot
+     * of effort and time, weeks and weeks of voluntary unpaid work. I only ask 
+     * that you retain this link here, and you can use and/or modify the theme
+     * however you like to.
+     *
+     * If you still would like to remove the credit, please consider a donation
+     * through Graphene Options page under Appearance in Wordpress admin
+     * to help support the author and future theme development/support.
+     */
+    ?>
+    <div id="developer">
+        <p>
+        <?php /* translators: %1$s is the blog title, %2$s is the theme's name, %3$s is the theme's author */ ?>
+<?php printf(__('%1$s uses %2$s theme by %3$s.', 'graphene'), '<a href="' . get_home_url() . '">' . get_bloginfo('name') . '</a>', '<a href="http://www.khairul-syahir.com/wordpress-dev/graphene-theme">' . ucfirst(get_template()) . '</a>', 'Syahir Hakim'); ?>
+        </p>
+
+<?php do_action('graphene_developer'); ?>
+    </div>
+</div><!-- #footer -->
+
+<?php do_action('graphene_after_footer'); ?>
+
+</div><!-- #container -->
+
+<?php if (!get_theme_mod('background_image', false) && !get_theme_mod('background_color', false)) : ?>
+    </div><!-- .bg-gradient -->
+<?php endif; ?>
+
+<?php wp_footer(); ?>
 </body>
 </html>

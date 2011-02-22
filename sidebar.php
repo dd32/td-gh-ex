@@ -1,26 +1,25 @@
 <?php
 /**
  * The Sidebar for display in the content page.
- * This file closes the <div> of #content-main 
+ * Is only called by header.php or footer.php if the sidebar is needed, so no checking is required!
  *
  * @package WordPress
  * @subpackage Graphene
  * @since graphene 1.0
  */
-?>
-	</div><!-- #content-main -->
+global $graphene_settings;
+?>	
     
-<?php if (!get_option('graphene_hide_sidebar')) : ?>
-<div id="sidebar_right" class="sidebar">
+<div id="sidebar1" class="sidebar">
 
-	<?php do_action('graphene_before_rightsidebar'); ?>
+	<?php do_action('graphene_before_sidebar1'); ?>
 
     <?php 	/* Widgetized sidebar, if supported. */
     if (!is_front_page() && is_active_sidebar('sidebar-widget-area')) { // Not home, display normal sidebar if active
 		dynamic_sidebar('sidebar-widget-area');
-	} elseif (is_front_page() && !get_option('graphene_alt_home_sidebar') && is_active_sidebar('sidebar-widget-area')) { // Home, but alternate sidebar disabled, display normal sidebar if active
+	} elseif (is_front_page() && !$graphene_settings['alt_home_sidebar'] && is_active_sidebar('sidebar-widget-area')) { // Home, but alternate sidebar disabled, display normal sidebar if active
 		dynamic_sidebar('sidebar-widget-area');
-	} elseif (is_front_page() && get_option('graphene_alt_home_sidebar') && is_active_sidebar('home-sidebar-widget-area')) { // Home, alternate sidebar enabled, display alternate sidebar if active
+	} elseif (is_front_page() && $graphene_settings['alt_home_sidebar'] && is_active_sidebar('home-sidebar-widget-area')) { // Home, alternate sidebar enabled, display alternate sidebar if active
 		dynamic_sidebar('home-sidebar-widget-area');
 	} else { // Display the default unwidgetised sidebar otherwise	?>   
     
@@ -56,7 +55,6 @@
     
     <?php wp_meta(); ?>
     
-    <?php do_action('graphene_after_rightsidebar'); ?>
+    <?php do_action('graphene_after_sidebar1'); ?>
 
-</div><!-- #sidebar -->
-<?php endif; ?>
+</div><!-- #sidebar1 -->

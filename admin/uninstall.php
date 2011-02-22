@@ -1,114 +1,34 @@
 <?php 
+/* Check authorisation */
+$authorised = true;
+// Check nonce
+if (!wp_verify_nonce($_POST['graphene-uninstall'], 'graphene-uninstall')) { 
+	$authorised = false;
+}
+// Check permissions
+if (!current_user_can('edit_theme_options')){
+	$authorised = false;
+}
 
-	// Header options
-	delete_option('graphene_light_header');	
-	delete_option('graphene_link_header_img');	
-	delete_option('graphene_featured_img_header');
-        delete_option('graphene_use_random_header_img');
-        delete_option('graphene_hide_top_bar');
-        delete_option('graphene_hide_feed_icon');
-        delete_option('graphene_search_box_location');
-        
-        // Sidebar position
-        delete_option('graphene_content_sidebar_position');
-        delete_option('graphene_hide_sidebar');
-        
-	// Posts Display options
-        delete_option('graphene_posts_show_excerpt');
-	delete_option('graphene_hide_post_author');
-	delete_option('graphene_hide_post_date');
-	delete_option('graphene_show_post_year');
-        delete_option('graphene_hide_post_commentcount');
-	delete_option('graphene_hide_post_cat');
-	delete_option('graphene_hide_post_tags');
-	delete_option('graphene_show_post_avatar');
-	delete_option('graphene_show_post_author');
-	delete_option('graphene_show_excerpt_more');
-        
-	// Text style options
-	delete_option('graphene_header_title_font_type');
-	delete_option('graphene_header_title_font_size');
-	delete_option('graphene_header_title_font_lineheight');
-	delete_option('graphene_header_title_font_weight');
-	delete_option('graphene_header_title_font_style');
-	
-	delete_option('graphene_header_desc_font_type');
-	delete_option('graphene_header_desc_font_size');
-	delete_option('graphene_header_desc_font_lineheight');
-	delete_option('graphene_header_desc_font_weight');
-	delete_option('graphene_header_desc_font_style');
-	
-	delete_option('graphene_content_font_type');
-	delete_option('graphene_content_font_size');
-	delete_option('graphene_content_font_lineheight');
-	delete_option('graphene_content_font_colour');
-        
-        delete_option('graphene_link_colour_normal');
-	delete_option('graphene_link_colour_visited');
-	delete_option('graphene_link_colour_hover');
-	delete_option('graphene_link_decoration_normal');
-	delete_option('graphene_link_decoration_hover');
-	
-	// Bottom widget display options
-	delete_option('graphene_footerwidget_column');
-	delete_option('graphene_alt_footerwidget_column');
-	
-	// Nav menu display options
-	delete_option('graphene_navmenu_child_width');
-	
-	// Comments display options
-	delete_option('graphene_hide_allowedtags');
-	
-	// Miscellaneous options
-	delete_option('graphene_swap_title');
-        
-        // Custom CSS
-        delete_option('graphene_custom_css');
-	
-	// Slider options
-	delete_option('graphene_slider_cat');
-	delete_option('graphene_slider_postcount');
-	delete_option('graphene_slider_img');
-	delete_option('graphene_slider_imgurl');
-	delete_option('graphene_slider_height');
-	delete_option('graphene_slider_speed');
-	delete_option('graphene_slider_position');
-	delete_option('graphene_slider_disable');
-        
-        // Front page options
-        delete_option('graphene_frontpage_posts_cats');
+// If the user is authorised, delete the theme's options from the database
+if ($authorised) {
+	global $wpdb;
 
-        // Feed options
-        delete_option('graphene_custom_feed_url');
-        delete_option('graphene_hide_feed_icon');
+	delete_option('graphene_settings');
+	delete_option('graphene_dbversion');
+	switch_theme('twentyten', 'twentyten');
+	wp_cache_flush(); ?>
 	
-	// AdSense options
-	delete_option('graphene_show_adsense');
-	delete_option('graphene_adsense_code');
-	delete_option('graphene_adsense_show_frontpage');
-	
-	// AddThis options
-	delete_option('graphene_show_addthis');
-	delete_option('graphene_show_addthis_page');
-	delete_option('graphene_addthis_code');
-	
-	// Google Analytics options
-	delete_option('graphene_show_ga');
-	delete_option('graphene_ga_code');
-	
-	// Widget area options
-	delete_option('graphene_alt_home_sidebar');
-	delete_option('graphene_alt_home_footerwidget');
-	
-	// Footer options
-	delete_option('graphene_show_cc');
-	delete_option('graphene_copy_text');
-	delete_option('graphene_hide_copyright');
-	
-	delete_option('graphene');
-	switch_theme('default', 'default');
-	wp_cache_flush();
-	
-	wp_redirect('themes.php?activated=true');
-	exit();
+    <div class="wrap">
+    <h2><?php _e('Uninstall Graphene', 'graphene'); ?></h2>
+    <p><?php printf(__('Theme uninstalled. Redirecting to %s', 'graphene'), '<a href="'.get_home_url().'/wp-admin/themes.php?activated=true">'.get_home_url().'/wp-admin/themes.php?activated=true</a>...'); ?></p>
+	<script type="text/javascript">
+		window.location = '<?php echo get_home_url(); ?>/wp-admin/themes.php?activated=true';
+	</script>;
+	</div>
+    
+    <?php  
+} else {
+	wp_die(__('ERROR: You are not authorised to perform that operation', 'graphene'));
+}
 ?>
