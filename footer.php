@@ -37,8 +37,6 @@
 </div>    
 
 
-<?php if ( current_user_can('level_1') ) { ?>
-
 <script type='text/javascript'>
   $("div.post").mouseover(function() {
     $(this).find("span.edit-link").css('visibility', 'visible');
@@ -65,7 +63,7 @@
   });
 </script>
 
-<?php } ?>
+
 
 
 

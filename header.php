@@ -352,18 +352,18 @@ if (!empty($options['abs_newsletter'])) { ?><a target="_blank" href="<?php echo 
 	
 		<ul class="slides">
 		
-    <?php
-$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-$args=array(
+   <?php
+
+    $args=array(
    'cat'=>-5981,
    'showposts'=>$number_items,
    'post__not_in' =>get_option("sticky_posts"),
    );
-query_posts($args);
+   
 ?>
 
 
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+<?php if (have_posts()) : $featured = new WP_Query($args); while($featured->have_posts()) : $featured->the_post(); ?>
 
 <li class="slide">
 
@@ -394,7 +394,8 @@ if(has_post_thumbnail()) {
 <?php
 $title = the_title('', '', false);
 echo truncate($title, 40, '...');
- ?></a> 
+?>
+</a>
  
  
  </div>

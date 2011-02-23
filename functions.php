@@ -408,7 +408,7 @@ if( isset( $_REQUEST['reset'] )) {
   <form method="post" action="options.php" enctype="multipart/form-data">
   
     <p class="submit" style="clear:left;">
-				<input type="submit" class="button-primary" value="<?php _e( 'Save Settings' ); ?>" />   
+				<input type="submit" class="button-primary" value="Save Settings" />   
 			</p>  
       
     
@@ -711,7 +711,7 @@ case "checkbox":
       
 
 			<p class="submit">
-				<input type="submit" class="button-primary" value="<?php _e( 'Save Settings' ); ?>" />   
+				<input type="submit" class="button-primary" value="Save Settings" />   
 			</p>
 		</form>
     
