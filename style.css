@@ -4,7 +4,7 @@ Theme URI: http://www.contextureintl.com/wordpress/adventure-journal-wordpress-t
 Description: Share your adventures with the world! Adventure Journal is a powerful theme that lets you customize a wide variety of features from the comfort of your Dashboard - no coding required. Use your own header and background art, change the layout to one, two or three columns, add a custom stylesheet, set up unique sidebars for pages and posts.... and much more. Professionally maintained by Contexture International.
 Author: Contexture International
 Author URI: http://www.contextureintl.com
-Version: 1.4.0
+Version: 1.4.1
 License: GNU General Public License
 License URI: license.txt
 
@@ -337,7 +337,8 @@ h1 a:hover, h2 a:hover, h3 a:hover{text-decoration:underline;}
     .nav-main a:hover {}
 
 	#menu ul ul {display: none;position: absolute;top: 40px;float: left;width: 180px;z-index: 99999;background-image:none;padding:0px;margin:0px;}
-		#menu ul ul li {min-width: 180px;background: #EFE3D8;background-image:none;-moz-box-shadow: 3px 3px 4px #333;-webkit-box-shadow: 3px 3px 5px #333;box-shadow: 3px 3px 5px #333;}
+        .admin-bar #menu ul ul { top:68px !important; }
+                #menu ul ul li {min-width: 180px;background: #EFE3D8;background-image:none;-moz-box-shadow: 3px 3px 4px #333;-webkit-box-shadow: 3px 3px 5px #333;box-shadow: 3px 3px 5px #333;}
 		#menu ul ul ul {left: 100%;top: 0;}
 		#menu li:hover > a,
 		#menu ul ul :hover > a {background: #F7F7F7;color:#000;}
