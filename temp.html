@@ -1,0 +1,362 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  dir="ltr" lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Adventure Journal &#8212; WordPress</title>
+<script type="text/javascript">
+//<![CDATA[
+addLoadEvent = function(func){if(typeof jQuery!="undefined")jQuery(document).ready(func);else if(typeof wpOnload!='function'){wpOnload=func;}else{var oldonload=wpOnload;wpOnload=function(){oldonload();func();}}};
+var userSettings = {
+		'url': '/',
+		'uid': '1',
+		'time':'1297793067'
+	},
+	ajaxurl = 'http://plugindev.contextureintl.com/wp-admin/admin-ajax.php',
+	pagenow = 'appearance_page_z-adventurejournal',
+	typenow = '',
+	adminpage = 'appearance_page_z-adventurejournal',
+	thousandsSeparator = ',',
+	decimalPoint = '.',
+	isRtl = 0;
+//]]>
+</script>
+<link rel='stylesheet' href='http://plugindev.contextureintl.com/wp-admin/load-styles.php?c=1&amp;dir=ltr&amp;load=global,wp-admin&amp;ver=f9636a3731db5d5ec39cb3491dc450ec' type='text/css' media='all' />
+<link rel='stylesheet' id='thickbox-css'  href='http://plugindev.contextureintl.com/wp-includes/js/thickbox/thickbox.css?ver=20090514' type='text/css' media='all' />
+<link rel='stylesheet' id='theme-css'  href='admin/admin-style.css?ver=3.1-RC4' type='text/css' media='all' />
+<link rel='stylesheet' id='colors-css'  href='http://plugindev.contextureintl.com/wp-admin/css/colors-fresh.css?ver=20110121' type='text/css' media='all' />
+<!--[if lte IE 7]>
+<link rel='stylesheet' id='ie-css'  href='http://plugindev.contextureintl.com/wp-admin/css/ie.css?ver=20101102' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='sitepress-style-css'  href='http://plugindev.contextureintl.com/wp-content/plugins/sitepress-multilingual-cms/res/css/style.css?ver=2.0.4' type='text/css' media='all' />
+        <script type="text/javascript">   
+        // <![CDATA[    
+                var icl_ajx_url = 'http://plugindev.contextureintl.com/wp-admin/admin.php?page=sitepress-multilingual-cms/menu/languages.php';
+                var icl_ajx_saved = 'Data saved';
+        var icl_ajx_error = 'Error: data not saved';
+        var icl_default_mark = 'default';     
+        var icl_this_lang = 'en';   
+        var icl_ajxloaderimg_src = 'http://plugindev.contextureintl.com/wp-content/plugins/sitepress-multilingual-cms/res/img/ajax-loader.gif';
+        var icl_cat_adder_msg = 'To add categories that already exist in other languages go to the <a href="edit-tags.php?taxonomy=category">category management page</a>';
+        // ]]>
+        
+                </script>         
+        <script type='text/javascript' src='http://plugindev.contextureintl.com/wp-includes/js/l10n.js?ver=20101110'></script>
+
+<script type='text/javascript' src='http://plugindev.contextureintl.com/wp-admin/load-scripts.php?c=1&amp;load=jquery,utils&amp;ver=7bb5fde83e0949a753f31e184d1c6ac7'></script>
+<script type='text/javascript' src='http://plugindev.contextureintl.com/wp-content/plugins/sitepress-multilingual-cms/res/js/scripts.js?ver=2.0.4'></script>
+<script type='text/javascript' src='http://plugindev.contextureintl.com/wp-content/plugins/sitepress-multilingual-cms/res/js/icl_reminders.js?ver=2.0.4'></script>
+    <script type="text/javascript">
+        var msgNoUnprotect = 'You cannot unprotect this page. It is protected by a parent or ancestor.';
+        var msgEraseSec = "This will completely erase this page's security settings and make it accessible to the public. Continue?";
+        var msgRemoveGroup = 'Are you sure you want to remove group "%s" from this page?';
+        var msgRemovePage = 'Are you sure you want to remove this group from %s ?';
+        var msgRemoveUser = 'Remove this user from the group?';
+    </script>
+    <script type="text/javascript" src="http://plugindev.contextureintl.com/wp-content/plugins/contexture-page-security/inc/js/core-ajax.js"></script>
+        <style type="text/css">
+        #ctx_ps_pagegroupoptions {display:none;}
+        #ctx-ps-page-group-list > div {}
+        #ctx-ps-page-group-list > div.inherited {color:silver;}
+        #ctx-ps-page-group-list > div .removegrp {float:right;color:red;font-family:arial,helvetica,sans-serif;display:none;font-weight:bold;}
+        #ctx-ps-page-group-list > div .viewgrp {float:right;color:gray;font-family:arial,helvetica,sans-serif;display:none;font-weight:bold;text-decoration:none;}
+        #ctx-ps-page-group-list > div:hover .removegrp,
+        #ctx-ps-page-group-list > div:hover .viewgrp{display:inline;cursor:pointer;}
+        .ctx-ajax-status { display:none; float:right; color:green; font-size:0.8em; margin-right:5px; margin-top:-5px; }
+        .ctx-ps-sysgroup { color:gray; }
+        .ctx-ps-sysgroup:hover { color:gray; }
+        option.cts-ps-system-group { font-weight:bold; }
+        .ctx-ps-sidebar-group { padding-bottom:2px; }
+        .ctx-ps-sidebar-group:hover { background:#FFFCE0; }
+        #groups-available .detach { display:none; visibility:hidden; }
+
+        .widefat th#protected { vertical-align:middle; width:30px; }
+        .widefat td.protected { vertical-align:top; }
+        .widefat td.protected img { margin-top:4px; }
+    </style>
+    </head>
+
+<body class="wp-admin no-js  appearance_page_z-adventurejournal">
+<script type="text/javascript">
+//<![CDATA[
+(function(){
+var c = document.body.className;
+c = c.replace(/no-js/, 'js');
+document.body.className = c;
+})();
+//]]>
+</script>
+
+<div id="wpwrap">
+<div id="wpcontent">
+<div id="wphead">
+
+<img id="header-logo" src="http://plugindev.contextureintl.com/wp-includes/images/blank.gif" alt="" width="32" height="32" />
+<h1 id="site-heading" >
+	<a href="http://plugindev.contextureintl.com/" title="Visit Site">
+		<span id="site-title">Adventure Journal</span>
+	</a>
+
+	<a id="privacy-on-link" href="options-privacy.php" title="Your site is asking search engines not to index its content">Search Engines Blocked</a>
+</h1>
+
+
+<div id="wphead-info">
+<div id="user_info">
+<p>Howdy, <a href="profile.php" title="Edit your profile">SuperAdmin</a> | <a href="http://plugindev.contextureintl.com/wp-login.php?action=logout&amp;_wpnonce=ca332cbb3e" title="Log Out">Log Out</a></p>
+</div>
+
+<div id="favorite-actions"><div id="favorite-first"><a href="post-new.php">New Post</a></div><div id="favorite-toggle"><br /></div><div id="favorite-inside"><div class='favorite-action'><a href='edit.php?post_status=draft'>Drafts</a></div>
+
+<div class='favorite-action'><a href='post-new.php?post_type=page'>New Page</a></div>
+<div class='favorite-action'><a href='media-new.php'>Upload</a></div>
+<div class='favorite-action'><a href='edit-comments.php'>Comments</a></div>
+</div></div>
+</div>
+</div>
+
+<div id="wpbody">
+
+<ul id="adminmenu">
+
+
+	<li class="wp-first-item wp-has-submenu menu-top menu-top-first menu-icon-dashboard menu-top-last" id="menu-dashboard">
+
+	<div class='wp-menu-image'><a href='index.php'><br /></a></div><div class="wp-menu-toggle"><br /></div><a href='index.php' class="wp-first-item wp-has-submenu menu-top menu-top-first menu-icon-dashboard menu-top-last" tabindex="1">Dashboard</a>
+	<div class='wp-submenu'><div class='wp-submenu-head'>Dashboard</div><ul><li class="wp-first-item"><a href='index.php' class="wp-first-item" tabindex="1">Dashboard</a></li><li><a href='update-core.php' tabindex="1">Updates <span class='update-plugins count-1' title='1 Plugin Update'><span class='update-count'>1</span></span></a></li></ul></div></li>
+	<li class="wp-menu-separator"><a class="separator" href=""><br /></a></li>
+	<li class="wp-has-submenu open-if-no-js menu-top menu-icon-post menu-top-first" id="menu-posts">
+	<div class='wp-menu-image'><a href='edit.php'><br /></a></div><div class="wp-menu-toggle"><br /></div><a href='edit.php' class="wp-has-submenu open-if-no-js menu-top menu-icon-post menu-top-first" tabindex="1">Posts</a>
+	<div class='wp-submenu'><div class='wp-submenu-head'>Posts</div><ul><li class="wp-first-item"><a href='edit.php' class="wp-first-item" tabindex="1">Posts</a></li><li><a href='post-new.php' tabindex="1">Add New</a></li><li><a href='edit-tags.php?taxonomy=category' tabindex="1">Categories</a></li><li><a href='edit-tags.php?taxonomy=post_tag' tabindex="1">Post Tags</a></li></ul></div></li>
+
+	<li class="wp-has-submenu menu-top menu-icon-media" id="menu-media">
+	<div class='wp-menu-image'><a href='upload.php'><br /></a></div><div class="wp-menu-toggle"><br /></div><a href='upload.php' class="wp-has-submenu menu-top menu-icon-media" tabindex="1">Media</a>
+	<div class='wp-submenu'><div class='wp-submenu-head'>Media</div><ul><li class="wp-first-item"><a href='upload.php' class="wp-first-item" tabindex="1">Library</a></li><li><a href='media-new.php' tabindex="1">Add New</a></li></ul></div></li>
+	<li class="wp-has-submenu menu-top menu-icon-links" id="menu-links">
+	<div class='wp-menu-image'><a href='link-manager.php'><br /></a></div><div class="wp-menu-toggle"><br /></div><a href='link-manager.php' class="wp-has-submenu menu-top menu-icon-links" tabindex="1">Links</a>
+	<div class='wp-submenu'><div class='wp-submenu-head'>Links</div><ul><li class="wp-first-item"><a href='link-manager.php' class="wp-first-item" tabindex="1">Links</a></li><li><a href='link-add.php' tabindex="1">Add New</a></li><li><a href='edit-tags.php?taxonomy=link_category' tabindex="1">Link Categories</a></li></ul></div></li>
+
+	<li class="wp-has-submenu menu-top menu-icon-page" id="menu-pages">
+	<div class='wp-menu-image'><a href='edit.php?post_type=page'><br /></a></div><div class="wp-menu-toggle"><br /></div><a href='edit.php?post_type=page' class="wp-has-submenu menu-top menu-icon-page" tabindex="1">Pages</a>
+	<div class='wp-submenu'><div class='wp-submenu-head'>Pages</div><ul><li class="wp-first-item"><a href='edit.php?post_type=page' class="wp-first-item" tabindex="1">Pages</a></li><li><a href='post-new.php?post_type=page' tabindex="1">Add New</a></li></ul></div></li>
+	<li class="menu-top menu-icon-comments menu-top-last" id="menu-comments">
+	<div class='wp-menu-image'><a href='edit-comments.php'><br /></a></div><div class="wp-menu-toggle"><br /></div><a href='edit-comments.php' class="menu-top menu-icon-comments menu-top-last" tabindex="1">Comments <span id='awaiting-mod' class='count-4'><span class='pending-count'>4</span></span></a></li>
+	<li class="wp-menu-separator"><a class="separator" href=""><br /></a></li>
+
+	<li class="wp-has-submenu wp-has-current-submenu wp-menu-open menu-top menu-icon-appearance menu-top-first" id="menu-appearance">
+	<div class='wp-menu-image'><a href='themes.php'><br /></a></div><div class="wp-menu-toggle"><br /></div><a href='themes.php' class="wp-has-submenu wp-has-current-submenu wp-menu-open menu-top menu-icon-appearance menu-top-first" tabindex="1">Appearance</a>
+	<div class='wp-submenu'><div class='wp-submenu-head'>Appearance</div><ul><li class="wp-first-item"><a href='themes.php' class="wp-first-item" tabindex="1">Themes</a></li><li><a href='widgets.php' tabindex="1">Widgets</a></li><li><a href='nav-menus.php' tabindex="1">Menus</a></li><li><a href='themes.php?page=theme-layouts' tabindex="1">Layout</a></li><li class="current"><a href='themes.php?page=z-adventurejournal' class="current" tabindex="1">Adventure Journal</a></li><li><a href='themes.php?page=custom-background' tabindex="1">Background</a></li><li><a href='themes.php?page=custom-header' tabindex="1">Header</a></li><li><a href='theme-editor.php' tabindex="1">Editor</a></li></ul></div></li>
+	<li class="wp-has-submenu menu-top menu-icon-plugins" id="menu-plugins">
+
+	<div class='wp-menu-image'><a href='plugins.php'><br /></a></div><div class="wp-menu-toggle"><br /></div><a href='plugins.php' class="wp-has-submenu menu-top menu-icon-plugins" tabindex="1">Plugins <span class='update-plugins count-1'><span class='plugin-count'>1</span></span></a>
+	<div class='wp-submenu'><div class='wp-submenu-head'>Plugins <span class='update-plugins count-1'><span class='plugin-count'>1</span></span></div><ul><li class="wp-first-item"><a href='plugins.php' class="wp-first-item" tabindex="1">Plugins</a></li><li><a href='plugin-install.php' tabindex="1">Add New</a></li><li><a href='plugin-editor.php' tabindex="1">Editor</a></li></ul></div></li>
+	<li class="wp-has-submenu menu-top menu-icon-users" id="menu-users">
+	<div class='wp-menu-image'><a href='users.php'><br /></a></div><div class="wp-menu-toggle"><br /></div><a href='users.php' class="wp-has-submenu menu-top menu-icon-users" tabindex="1">Users</a>
+	<div class='wp-submenu'><div class='wp-submenu-head'>Users</div><ul><li class="wp-first-item"><a href='users.php' class="wp-first-item" tabindex="1">Users</a></li><li><a href='user-new.php' tabindex="1">Add New</a></li><li><a href='profile.php' tabindex="1">Your Profile</a></li><li><a href='users.php?page=ps_groups' tabindex="1">Groups</a></li><li><a href='users.php?page=ps_groups_add' tabindex="1">Add Group</a></li></ul></div></li>
+
+	<li class="wp-has-submenu menu-top menu-icon-tools" id="menu-tools">
+	<div class='wp-menu-image'><a href='tools.php'><br /></a></div><div class="wp-menu-toggle"><br /></div><a href='tools.php' class="wp-has-submenu menu-top menu-icon-tools" tabindex="1">Tools</a>
+	<div class='wp-submenu'><div class='wp-submenu-head'>Tools</div><ul><li class="wp-first-item"><a href='tools.php' class="wp-first-item" tabindex="1">Tools</a></li><li><a href='import.php' tabindex="1">Import</a></li><li><a href='export.php' tabindex="1">Export</a></li><li><a href='tools.php?page=wp_beta_tester' tabindex="1">Beta Testing</a></li></ul></div></li>
+	<li class="wp-has-submenu menu-top menu-icon-settings menu-top-last" id="menu-settings">
+	<div class='wp-menu-image'><a href='options-general.php'><br /></a></div><div class="wp-menu-toggle"><br /></div><a href='options-general.php' class="wp-has-submenu menu-top menu-icon-settings menu-top-last" tabindex="1">Settings</a>
+
+	<div class='wp-submenu'><div class='wp-submenu-head'>Settings</div><ul><li class="wp-first-item"><a href='options-general.php' class="wp-first-item" tabindex="1">General</a></li><li><a href='options-writing.php' tabindex="1">Writing</a></li><li><a href='options-reading.php' tabindex="1">Reading</a></li><li><a href='options-discussion.php' tabindex="1">Discussion</a></li><li><a href='options-media.php' tabindex="1">Media</a></li><li><a href='options-privacy.php' tabindex="1">Privacy</a></li><li><a href='options-permalink.php' tabindex="1">Permalinks</a></li><li><a href='options-general.php?page=ps_manage_opts' tabindex="1">Page Security</a></li></ul></div></li>
+	<li class="wp-menu-separator-last"><a class="separator" href=""><br /></a></li>
+	<li class="wp-has-submenu menu-top toplevel_page_sitepress-multilingual-cms/menu/translation-management menu-top-first menu-top-last" id="toplevel_page_sitepress-multilingual-cms-menu-translation-management"><div class='wp-menu-image'><a href='admin.php?page=sitepress-multilingual-cms/menu/translation-management.php'><img src="http://plugindev.contextureintl.com/wp-content/plugins/sitepress-multilingual-cms/res/img/icon16.png" alt="" /></a></div><div class="wp-menu-toggle"><br /></div><a href='admin.php?page=sitepress-multilingual-cms/menu/translation-management.php' class="wp-has-submenu menu-top toplevel_page_sitepress-multilingual-cms/menu/translation-management menu-top-first menu-top-last" tabindex="1">WPML</a>
+	<div class='wp-submenu'><div class='wp-submenu-head'>WPML</div><ul><li class="wp-first-item"><a href='admin.php?page=sitepress-multilingual-cms/menu/translation-management.php' class="wp-first-item" tabindex="1">Translation Management</a></li><li><a href='admin.php?page=sitepress-multilingual-cms/menu/languages.php' tabindex="1">Languages</a></li><li><a href='admin.php?page=sitepress-multilingual-cms/menu/theme-localization.php' tabindex="1">Theme and plugins localization</a></li><li><a href='admin.php?page=sitepress-multilingual-cms/menu/string-translation.php' tabindex="1">String translation</a></li><li><a href='admin.php?page=sitepress-multilingual-cms/menu/comments-translation.php' tabindex="1">Comments translation</a></li><li><a href='admin.php?page=sitepress-multilingual-cms/menu/compatibility-packages.php' tabindex="1">Compatibility packages&nbsp;<img width="12" height="12" style="margin-bottom:-2px;" src="http://plugindev.contextureintl.com/wp-content/plugins/sitepress-multilingual-cms/res/img/alert.png" /></a></li><li><a href='admin.php?page=sitepress-multilingual-cms/menu/support.php' tabindex="1">Support</a></li><li><a href='admin.php?page=sitepress-multilingual-cms/menu/translations-queue.php' tabindex="1">Translations</a></li></ul></div></li></ul>
+
+<div id="wpbody-content">
+<div id="screen-meta">
+	<div id="contextual-help-wrap" class="hidden">
+	<div class="metabox-prefs"><a href="http://codex.wordpress.org/" target="_blank">Documentation</a><br /><a href="http://wordpress.org/support/" target="_blank">Support Forums</a></div>
+	</div>
+
+<div id="screen-meta-links">
+<div id="contextual-help-link-wrap" class="hide-if-no-js screen-meta-toggle">
+<a href="#contextual-help" id="contextual-help-link" class="show-settings">Help</a>
+</div>
+
+</div>
+</div>
+<!-- The hook for the current page is "appearance_page_z-adventurejournal" -->
+    <script type="text/javascript">
+        jQuery(function(){
+            jQuery('#attrib').click(function(){
+                if( jQuery(this).filter(':checked').length>0 ){
+                    return confirm('Are you sure? Why not leave it for a week or two? We would really appreciate it.');
+                }
+            });
+            jQuery('#show-more').click(function(){
+                jQuery(this).hide();
+                jQuery('#more-opts').show();
+            });
+			jQuery('#title-default').click(function(){
+				jQuery('.custom-logo').hide();
+            });
+			jQuery('#title-blank').click(function(){
+				jQuery('.custom-logo').hide();
+            });
+			jQuery('#title-logo').click(function(){
+				jQuery('.custom-logo').show();
+            });
+        });
+    </script>
+    <style type="text/css">
+        #ad-msg-auth, #ad-msg-anon { width:500px; }
+
+        #ctx-about {width:326px;float:right;border:1px solid #e5e5e5;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;padding:10px;margin-top:25px;margin-right:20px;margin-left:10px;}
+        #ctx-about a.img-block {display:block;text-align:center;}
+        #ctx-about p, #ctx-about div {padding-left:10px;color:#9c9c9c;}
+        #ctx-about p a { color:gray; }
+        #ctx-ps-opts-form {float:left;width:765px;}
+        .ctx-footnote { color:#9C9C9C; font-style:italic; }
+        #show-more { cursor:pointer; color:gray; visibility:hidden; }
+        #ctx-opts-table {  }
+    </style>
+<div class="wrap">
+<table cellpadding="0" cellspacing="0" id="ctx-opts-table" style="border:none;width:100%;">
+    <tr>
+        <td id="ctx-ps-opts-form">
+                <div class="icon32" id="icon-users"><br/></div>
+
+                <h2>Adventure Journal Options</h2>
+                                <p></p>
+                <form method="post" action="">
+                    <input type="hidden" id="_wpnonce" name="_wpnonce" value="4f7cd2e29e" /><input type="hidden" name="_wp_http_referer" value="/wp-admin/themes.php?page=z-adventurejournal" />                    <h3 class="title">Custom Stylesheet</h3>
+                    <p>You can use a custom stylesheet to override the default Adventure Journal styles.
+                    We suggest you keep the custom css file in the <code>/wp-content/</code>
+                    directory so that upgrades to WordPress or Adventure Journal don't erase your CSS.</p>
+
+                    <table class="form-table">
+                        <tr valign="top">
+                            <th scope="row">
+                                <label for="filter-menu">CSS File Location:</label>
+                            </th>
+                            <td>
+                                <label>
+                                    <em>http://plugindev.contextureintl.com/     </em>                               <input type="text" name="css-path" id="css-path" title="Example: wp-content/adventurejournal_override.css" style="width:250px;" value="" /> <span style="color:red;"></span><br/>
+
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    
+                    
+                    
+                    
+<h3 class="title">Site Title &amp; Description</h3>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="ctx-table site-title">
+<tr>
+    <td><p><strong>Default</strong></p>
+   <input name="title-type" value="title-default" id="title-default" class="radial" type="radio">
+    <img src="images/title-default.jpg" alt="Default Site Title" width="200" height="122" /> </td>
+    <td><p><strong>No Title</strong></p>
+    <input name="title-type" value="title-default" id="title-blank" class="radial" type="radio">
+    <img src="images/title-blank.jpg" alt="No Site Title" width="200" height="122"  /></td>
+    <td><p><strong>Custom Logo</strong></p>
+    <input name="title-type" value="title-default" id="title-logo" class="radial" type="radio">
+    <img src="images/title-logo.jpg" alt="Custom Logo Site Title" width="200" height="122"  /></td>
+  </tr>
+</table>
+
+
+<table class="form-table custom-logo" style="display:none;">
+<tr valign="top">
+    <th scope="row"> <label for="css-path-logo">Custom Logo File Location:</label>
+  </th>
+    <td><label> <em>http://plugindev.contextureintl.com/</em>
+      <input type="text" name="css-path-logo" id="css-path-logo" title="Example: wp-content/adventurejournal_override.css" style="width:250px;" value="" />
+      <span style="color:red;"></span> </label><br />
+<p style="font-size:10px;">For best results, use a image file with a transparent background such as gif or png.</p>
+  </td>
+  </tr>
+</table>
+
+
+
+<h3 class="title">Header Image</h3>
+&lt;END Matt &gt;
+                  
+                  
+                  
+                    <h3 class="title">Layout</h3>
+                    <p>You can change the site's layout from the <a href="">layout screen</a>.</p>
+
+                <h5 id="show-more" style="display:none">(+) show advanced options</h5>
+                    <div id="more-opts" style="display:none">
+                        <h3 class="title">Attribution</h3>
+                        <p>If you're feeling particularly cold-hearted, you can hide the attribution
+                            links at the bottom of the theme. We think you're a good sort, though, and know that you
+                            would never, ever stoop so low.</p>
+                        <table class="form-table">
+                            <tr valign="top">
+                                <th scope="row">
+
+                                    <label for="filter-menu">Hide Attribution:</label>
+                                </th>
+                                <td>
+                                    <label>
+                                        <input type="checkbox" name="attrib" id="attrib"  />
+                                    </label>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </div>
+
+
+                  <p>
+                    <input type="submit" name="Submit" class="button-primary" value="Save Changes" />
+                    </p>
+                </form>
+
+        </td>
+
+        <td style="vertical-align:top;">
+            <div id="ctx-about">
+                <a class="img-block" href="http://www.contextureintl.com"><img src="http://plugindev.contextureintl.com/wp-content/themes/adventurejournal/images/ctx-logo.gif" alt="Contexture International" /></a>
+                <p>Contexture International is an all-in-one agency specializing in <a href="http://www.contextureintl.com/portfolio/graphic-design/">graphic design</a>, <a href="http://www.contextureintl.com/portfolio/web-interactive/">web design</a>, and <a href="http://www.contextureintl.com/portfolio/broadcast-video-production/">broadcast and video production</a>, with an unparalleled ability to connect with the heart of your audience.</p>
+                <p>Contexture's staff has successfully promoted organizations and visionaries for more than 2 decades through exceptional storytelling, in just the right contexts for their respective audiences, with overwhelming returns on investment.  See the proof in our <a href="http://www.contextureintl.com/portfolio/">portfolio </a>or learn more <a href="http://www.contextureintl.com/about-us/">about us</a>.</p>
+
+                <div><a href="http://www.contextureintl.com/">Need a custom web or video project?</a></div>
+                <div><a href="http://www.contextureintl.com/wordpress/adventure-journal-wordpress-theme/">Need help with Adventure Journal?</a></div>
+            </div>
+        </td>
+    </tr>
+</table>
+</div>
+<div class="clear"></div></div><!-- wpbody-content -->
+<div class="clear"></div></div><!-- wpbody -->
+<div class="clear"></div></div><!-- wpcontent -->
+
+</div><!-- wpwrap -->
+
+<div id="footer">
+<p id="footer-left" class="alignleft"><span id="footer-thankyou">Thank you for creating with <a href="http://wordpress.org/">WordPress</a>.</span> | <a href="http://codex.wordpress.org/">Documentation</a> | <a href="http://wordpress.org/support/forum/4">Feedback</a></p>
+<p id="footer-upgrade" class="alignright">You are using a development version (3.1-RC4). Cool! Please <a href="http://plugindev.contextureintl.com/wp-admin/update-core.php">stay updated</a>.</p>
+
+<div class="clear"></div>
+</div>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var thickboxL10n = {
+	next: "Next &gt;",
+	prev: "&lt; Prev",
+	image: "Image",
+	of: "of",
+	close: "Close",
+	noiframes: "This feature requires inline frames. You have iframes disabled or your browser does not support them."
+};
+try{convertEntities(thickboxL10n);}catch(e){};
+var commonL10n = {
+	warnDelete: "You are about to permanently delete the selected items.\n  \'Cancel\' to stop, \'OK\' to delete."
+};
+try{convertEntities(commonL10n);}catch(e){};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://plugindev.contextureintl.com/wp-admin/load-scripts.php?c=1&amp;load=thickbox,hoverIntent,common,jquery-color,theme-preview&amp;ver=54a0855432de2ab9a0d0542ab28b27f5'></script>
+<script type='text/javascript' src='http://plugindev.contextureintl.com/wp-content/plugins/sitepress-multilingual-cms/res/js/translation-management.js?ver=2.0.4'></script>
+
+<script type="text/javascript">if(typeof wpOnload=='function')wpOnload();</script>
+</body>
+</html>

@@ -54,18 +54,7 @@
             </div>
             <div class="clear"></div>
             <!-- end header -->
-            <div id="header">
-              <div id="logo">
-                <div id="logo-2">
-                  <div id="logo-3">
-
-                      <table><tr><td>
-                      <div id="site-title"><a href="<?php echo home_url( '/' ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
-                      <?php $sitedescr = get_bloginfo('description','display'); echo (empty($sitedescr)) ? '' : sprintf('<div id="site-description">%s</div>',$sitedescr); ?>
-                      </td></tr></table>
-
-                  </div>
-                </div>
-              </div>
+      <div id="header"><div id="header2"><div id="header3"><div id="header4">
+            	<?php ctx_aj_site_title() ;?>
               <div id="banner"><img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>"/></div>
-            </div>
+      </div></div></div></div>

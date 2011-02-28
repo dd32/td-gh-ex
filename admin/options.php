@@ -19,12 +19,15 @@
 
     if(!empty($_POST) && wp_verify_nonce($_POST['_wpnonce'],'aj-options')){
 
-
         //Get rid of any leading forward slashes
         $_POST['css-path'] = preg_replace('/^\/+/', '', trim( $_POST['css-path'] ) );
+		$_POST['logo-path'] = preg_replace('/^\/+/', '', trim( $_POST['logo-path'] ) );
 
         //Set new options
         $newOpts['css-path'] = $_POST['css-path'];
+		$newOpts['logo-path'] = $_POST['logo-path'];
+		$newOpts['title-type'] = $_POST['title-type'];
+		$newOpts['header-height'] = $_POST['header-height'];
         $newOpts['attrib'] = (isset($_POST['attrib'])) ? 'false' : 'true';
 
         //Update the options
@@ -52,20 +55,23 @@
     ?>
     <script type="text/javascript">
         jQuery(function(){
-            jQuery('#attrib').click(function(){
-                if( jQuery(this).filter(':checked').length>0 ){
-                    return confirm('<?php _e('Are you sure? Why not leave it for a week or two? We would really appreciate it.','adventurejournal') ?>');
-                }
-            });
             jQuery('#show-more').click(function(){
                 jQuery(this).hide();
                 jQuery('#more-opts').show();
+            });
+			jQuery('#title-default').click(function(){
+				jQuery('.custom-logo').hide();
+            });
+			jQuery('#title-blank').click(function(){
+				jQuery('.custom-logo').hide();
+            });
+			jQuery('#title-logo').click(function(){
+				jQuery('.custom-logo').show();
             });
         });
     </script>
     <style type="text/css">
         #ad-msg-auth, #ad-msg-anon { width:500px; }
-
         #ctx-about {width:326px;float:right;border:1px solid #e5e5e5;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;padding:10px;margin-top:25px;margin-right:20px;margin-left:10px;}
         #ctx-about a.img-block {display:block;text-align:center;}
         #ctx-about p, #ctx-about div {padding-left:10px;color:#9c9c9c;}
@@ -97,40 +103,56 @@
                             <td>
                                 <label>
                                     <?php echo 'http://'.$_SERVER['SERVER_NAME'].'/' ?>
-                                    <input type="text" name="css-path" id="css-path" title="Example: wp-content/adventurejournal_override.css" style="width:250px;" value="<?php echo $AJOpts['css-path']; ?>" /> <span style="color:red;"><?php if(!file_exists(ABSPATH.$AJOpts['css-path'])){ _e('Notice: File does not exist! ('.'http://'.$_SERVER['SERVER_NAME'].'/'.$AJOpts['css-path'].')','adventurejournal'); } ?></span><br/>
+                                    <input type="text" name="css-path" id="css-path" title="Example: wp-content/adventurejournal_override.css" style="width:300px;font-size:10px;" value="<?php echo $AJOpts['css-path']; ?>" /> <br /><span style="color:red;"><?php if(!file_exists(ABSPATH.$AJOpts['css-path'])){ _e('Notice: File does not exist! ('.'http://'.$_SERVER['SERVER_NAME'].'/'.$AJOpts['css-path'].')','adventurejournal'); } ?></span><br/>
                                 </label>
                             </td>
                         </tr>
                     </table>
 
-                    <h3 class="title"><?php _e('Layout','adventurejournal'); ?></h3>
-                    <p>You can change the site's layout from the <a href="<?php admin_url('themes.php?page=theme-layouts')?>">layout screen</a>.</p>
-                <h5 id="show-more" style="display:none"><?php _e('(+) show advanced options','adventurejournal') ?></h5>
-                    <div id="more-opts" style="display:none">
-                        <h3 class="title"><?php _e('Attribution','adventurejournal'); ?></h3>
-                        <p><?php _e('If you\'re feeling particularly cold-hearted, you can hide the attribution
-                            links at the bottom of the theme. We think you\'re a good sort, though, and know that you
-                            would never, ever stoop so low.','adventurejournal') ?></p>
-                        <table class="form-table">
-                            <tr valign="top">
-                                <th scope="row">
-                                    <label for="filter-menu"><?php _e('Hide Attribution:','adventurejournal') ?></label>
-                                </th>
-                                <td>
-                                    <label>
-                                        <input type="checkbox" name="attrib" id="attrib" <?php if($AJOpts['attrib']=='false'){echo ' checked="checked"';}?> />
-                                    </label>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
+<h3 class="title"><?php _e('Site Title &amp; Description','adventurejournal'); ?></h3>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="ctx-table site-title">
+<tr>
+    <td <?php if($AJOpts['title-type'] == 'title-default'){echo ' class="active-layout"';}?>><p><strong>Default</strong></p>
+    <input name="title-type" value="title-default" id="title-default" class="radial" type="radio" <?php if($AJOpts['title-type'] == 'title-default'){echo ' checked="checked"';}?>>
+    <img src="<?php echo $themeDir; ?>/images/title-default.jpg" alt="Default Site Title" width="200" height="122" /> </td>
+    <td <?php if($AJOpts['title-type'] == 'title-blank'){echo ' class="active-layout"';}?>><p><strong>No Title</strong></p>
+    <input name="title-type" value="title-blank" id="title-blank" class="radial" type="radio" <?php if($AJOpts['title-type'] == 'title-blank'){echo ' checked="checked"';}?>>
+    <img src="<?php echo $themeDir; ?>/images/title-blank.jpg" alt="No Site Title" width="200" height="122"  /></td>
+    <td <?php if($AJOpts['title-type'] == 'title-logo'){echo ' class="active-layout"';}?>><p><strong>Custom Logo</strong></p>
+    <input name="title-type" value="title-logo" id="title-logo" class="radial" type="radio" <?php if($AJOpts['title-type'] == 'title-logo'){echo ' checked="checked"';}?>>
+    <img src="<?php echo $themeDir; ?>/images/title-logo.jpg" alt="Custom Logo Site Title" width="200" height="122"  /></td>
+  </tr>
+</table>
 
+<table class="form-table custom-logo" <?php if($AJOpts['title-type'] != 'title-logo'){echo ' style="display:none;"';}?>>
+<tr valign="top">
+    <th scope="row"> <label for="css-path-logo">Custom Logo Location:</label><br />
+<p style="font-size:10px;">Image height should be <br />less than 90 pixels.</p>
+  </th>
+    <td><label> <em>  <?php echo 'http://'.$_SERVER['SERVER_NAME'].'/' ?></em>
+      <input type="text" name="logo-path" id="logo-path" title="Example: wp-content/adventurejournal_override.css" style="width:300px;font-size:10px;" value="<?php echo $AJOpts['logo-path']; ?>" />
+      <span style="color:red;"><?php if(!file_exists(ABSPATH.$AJOpts['logo-path'])){ _e('<br /> Notice: File does not exist! ('.'http://'.$_SERVER['SERVER_NAME'].'/'.$AJOpts['logo-path'].')','adventurejournal'); } ?></span> </label><br />
+<p style="font-size:10px;">For best results, use a image file with a transparent background such as gif or png.</p>
+  </td>
+  </tr>
+</table>
+
+
+
+<h3 class="title"><?php _e('Custom Header Size','adventurejournal'); ?></h3>
+<p>To change the vertical size of the header image, first enter a value in below, save changes and then upload your image on the <a href="<?php echo admin_url();?>themes.php?page=custom-header">header page</a>. The default value is 360.</p>
+<p>920 x <input type="text" name="header-height" id="header-height" value="<?php if (isset($AJOpts['header-height'])){	echo $AJOpts['header-height'];} else { echo '360';	}?>" size="6" /> pixels</p>
+
+
+
+
+          <h3 class="title"><?php _e('Layout','adventurejournal'); ?></h3>
+                    <p>You can change the site's layout from the <a href="<?php echo admin_url();?>themes.php?page=theme-layouts">layout screen</a>.</p>
 
                   <p>
                     <input type="submit" name="Submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
                     </p>
                 </form>
-
         </td>
         <td style="vertical-align:top;">
             <div id="ctx-about">

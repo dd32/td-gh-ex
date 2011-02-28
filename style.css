@@ -4,7 +4,7 @@ Theme URI: http://www.contextureintl.com/wordpress/adventure-journal-wordpress-t
 Description: Share your adventures with the world! Adventure Journal is a powerful theme that lets you customize a wide variety of features from the comfort of your Dashboard - no coding required. Use your own header and background art, change the layout to one, two or three columns, add a custom stylesheet, set up unique sidebars for pages and posts.... and much more. Professionally maintained by Contexture International.
 Author: Contexture International
 Author URI: http://www.contextureintl.com
-Version: 1.3.1
+Version: 1.4.0
 License: GNU General Public License
 License URI: license.txt
 
@@ -19,7 +19,7 @@ If you need to make changes to this theme, create a new stylesheet in the wp-con
 * {padding:0; margin:0; }
 html,body{width:100%;height:100%;}
 body{font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:1.25;}
-img{border:0; display:block; }
+img{border:0;}
 font{font-family:Tahoma, Geneva, sans-serif; }
 h1,h2,h3,h4,h5,h6, .h1, .h2,.h3,.h4,.h5,.h6{font-family:'VollkornRegular', Geneva, sans-serif;font-size:40px;font-style:normal;font-variant:normal;color:#603913;padding:0px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;letter-spacing:-2px;}
 	h1, .h1{font-weight: normal;}
@@ -106,6 +106,8 @@ a:active {}
 .pad-7, .pad-med {padding:7px; }
 .pad-10, .pad-lot {padding:10px; }
 
+.btn{display:block;overflow:hidden;text-indent:-999px;}
+
 .img-left {float:left; margin-right:8px; margin-bottom:5px; }
 .img-right {float:right; margin-left:8px; margin-bottom:5px; }
 
@@ -173,6 +175,7 @@ a:active {}
 
 
 .post{margin-bottom:20px; padding-bottom:15px; padding-top:0px; position:relative;}
+	.post img{ display:block;}
 .page-link{margin-bottom:5px;}
 	.page-link a:link, .page-link a:visited{background:#FFF;color:#7D3913;font-weight:normal;padding:3px 6px;text-decoration:none;border-radius:20px;-moz-border-radius:20px;-webkit-border-radius:20px;}
 		.page-link a:hover{background:#7D3913;color:#FFF;}
@@ -269,11 +272,15 @@ body{background: url(images/mp-background-tile.jpg) center top;text-align:center
 #ancestor-homepage{}
 #container2 {width:980px;margin-left:auto;margin-right:auto;text-align:left;}
 .content{background-image: url(images/mp-sprite-content-bg.png);background-repeat: repeat-y;background-position: center top;}
-#header{background: url(images/mp-sprite-header-bg.png) no-repeat 0px 0px;height: 389px;text-align:center;padding-top:20px;text-align:left;}
+
+#header{background: url(images/mp-sprite-header-bg2.png) repeat-y 3px 0px;text-align:left;padding-top:0px;position:relative;margin-top:35px;margin-bottom:0px;}
+#header2{background: url(images/mp-sprite-header-bg2.png) no-repeat -1002px top;margin-top:0px;position:relative;top:-35px;}
+#header3{background: url(images/mp-sprite-header-bg2.png) no-repeat -2007px bottom ;position:relative;top:35px;}
+#header4{position:relative;top:-20px;padding-bottom:8px;padding-top:3px;min-height:100px;}
 
 #banner{margin-left:auto;margin-right:auto;position:relative;left:25px;z-index:5;}
 
-#logo{position:relative;z-index:10;top:-30px;left:10px;}
+#logo{position:relative;z-index:10;top:-30px;left:7px;}
 	#logo-2{background: url(images/mp-sprite-master.png) no-repeat right -226px;padding-right:70px;height:133px;position:absolute;z-index:20;}
 	#logo-3{background: url(images/mp-sprite-master.png) no-repeat 0px -50px;padding-left:80px;height:133px;min-width:110px;text-align:center;float:left;line-height:normal;}
 	#logo a:link, #logo a:visited{font-family:'VollkornRegular', Geneva, sans-serif;color:#603913; text-decoration:none;color:#603913;letter-spacing:-1px;font-size:32px;white-space: nowrap;text-decoration:none;}
@@ -329,7 +336,7 @@ h1 a:hover, h2 a:hover, h3 a:hover{text-decoration:underline;}
     .nav-main a:link, .nav-main a:visited {text-align: center;width:auto;padding-top: 13px;padding-right: 10px;padding-bottom: 13px;padding-left: 10px;color:#603913;font-weight: bold;}
     .nav-main a:hover {}
 
-	#menu ul ul {display: none;position: absolute;top: 43px;float: left;width: 180px;z-index: 99999;background-image:none;padding:0px;margin:0px;}
+	#menu ul ul {display: none;position: absolute;top: 40px;float: left;width: 180px;z-index: 99999;background-image:none;padding:0px;margin:0px;}
 		#menu ul ul li {min-width: 180px;background: #EFE3D8;background-image:none;-moz-box-shadow: 3px 3px 4px #333;-webkit-box-shadow: 3px 3px 5px #333;box-shadow: 3px 3px 5px #333;}
 		#menu ul ul ul {left: 100%;top: 0;}
 		#menu li:hover > a,

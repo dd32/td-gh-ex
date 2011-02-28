@@ -4,7 +4,7 @@ Donate link: http://www.contextureintl.com/wordpress/adventure-journal-wordpress
 Tags: brown, tan, yellow, light, dark, one-column, custom-header, custom-background, custom-menu, theme-options, threaded-comments, sticky-post, holiday, photoblogging
 Requires at least: 3.0.0
 Tested up to: 3.1
-Stable tag: 1.3.1
+Stable tag: 1.4.0
 
 
 == Description ==
@@ -32,6 +32,13 @@ http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Changelog ==
+
+= 1.4.0 =
+* NEW FEATURE: Added customizable header size
+* New FEATURE: Ability to remove the site title & description OR add a custom logo instead
+* UPDATE: Added WordPress 3.1 compatibility
+* UPDATE: Added support for IE9
+* FIX: Tweaked some of the background images so they tile a little more seamlessly
 
 = 1.3.1 =
 * NEW FEATURE: Added support for a custom stylesheet

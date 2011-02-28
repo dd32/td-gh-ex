@@ -43,7 +43,7 @@ function ctx_aj_stylesheets(){
 		//Enqueue an IE specific stylesheet
 		wp_register_style('style-ie',$themeDir.'/style-ie.css');
 		wp_enqueue_style('style-ie');
-		$wp_styles->add_data( 'style-ie', 'conditional', 'IE' );
+		$wp_styles->add_data( 'style-ie', 'conditional', 'lt IE 9' );
 
 
         //wp_die(print_r($themeOpts,true));
@@ -117,10 +117,18 @@ function ctx_aj_setup() {
         // No CSS, just IMG call. The %s is a placeholder for the theme template directory URI.
         define( 'HEADER_IMAGE', '%s/images/headers/ctx-header-egypt.jpg' );
 
+
+		//Get the theme options
+		$themeOpts = get_option('ctx-adventurejournal-options');
+		$theme_header_height = $themeOpts['header-height'];
+		//Check and see if the custom header size is set, if not use the default value of 360
+		if(!isset($theme_header_height)){
+			$theme_header_height = 360;
+		}
         // The height and width of your custom header. You can hook into the theme's own filters to change these values.
         // Add a filter to adventurejournal_header_image_width and adventurejournal_header_image_height to change these values.
         define( 'HEADER_IMAGE_WIDTH', apply_filters( 'adventurejournal_header_image_width', 920 ) );
-        define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'adventurejournal_header_image_height', 360 ) );
+        define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'adventurejournal_header_image_height', $theme_header_height ) );
 
         //Set post thumbnail sizes depending on layout
         switch ($themeOpts['layout']) {
@@ -296,7 +304,8 @@ function ctx_aj_set_options($arrayOverrides=false){
         'layout'=>'col-2-left',
         'custom_css'=>'',
         'attrib'=>'true',
-        'showtitle'=>'true'
+        'showtitle'=>'true',
+		'title-type'=>'title-default'
     );
 
     //Let's see if the options already exist...
@@ -377,7 +386,7 @@ function ctx_attribution() {
     <div id="site-generator" style="<?php if($themeOpts['attrib']=='false'){ echo 'display:none'; } ?>">
         <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'adventurejournal' ) ); ?>" title="<?php esc_attr_e( 'Simply the best CMS & blog platform out there', 'adventurejournal' ); ?>" rel="generator"><?php printf( __( 'Powered by %s', 'adventurejournal' ), 'WordPress' ); ?></a>
     </div>
-    <div id="attrition" style="<?php if($themeOpts['attrib']=='false'){ echo 'display:none'; } ?>"><a href="http://www.contextureintl.com/wordpress/adventure-journal-wordpress-theme/" title="Adventure Journal Wordpress Theme">Adventure Journal</a> is Proudly Designed By <a href="http://www.contextureintl.com" id="contexture" title="Contexture International">Contexture International</a></div>
+    <div id="attrition"><a href="http://www.contextureintl.com/wordpress/adventure-journal-wordpress-theme/" title="Adventure Journal Wordpress Theme">Adventure Journal Theme</a> is Proudly Designed By <a href="http://www.contextureintl.com" id="contexture" title="Contexture International">Contexture International</a></div>
     <?php
 }
 
@@ -557,6 +566,50 @@ function ctx_aj_posted_on() {
 function ctx_aj_help_theme_options(){
     //Add contextual help to this page
     add_contextual_help( 'appearance_page_theme-options', __('<p>Adventure Journal supports different page layouts without any additional coding. Simply select the layout you want to use on your site and click Save Changes.') );
+}
+
+/**
+ * Controls the display options for the site title and description. This function lets users turn off the paperclip or use a logo instead.
+*/
+function ctx_aj_site_title(){
+
+//Get the theme options
+$themeOpts = get_option('ctx-adventurejournal-options');
+$themeTitle = $themeOpts['title-type'];
+
+//Check if a site title option has been set, if not use the default value
+if (!isset($themeTitle)){
+	$themeTitle = 'title-default';
+}
+
+//Check and see if the site title option is set to default or custom logo option
+if($themeTitle == 'title-default' || $themeTitle == 'title-logo'){
+	?>
+	<div id="logo">
+	  <div id="logo-2">
+		<div id="logo-3">
+		  <table><tr><td>
+              <?php
+			  //Display the default styling
+              if($themeTitle == 'title-default'){
+			   ?>
+              <div id="site-title"><a href="<?php echo home_url( '/' ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+				  <?php bloginfo( 'name' ); ?>
+				  </a></div>
+				<?php $sitedescr = get_bloginfo('description','display'); echo (empty($sitedescr)) ? '' : sprintf('<div id="site-description">%s</div>',$sitedescr); 
+			  //Display the custom logo
+              } else {
+			  ?>
+              	<a href="<?php echo home_url( '/' ) ?>"><img src="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/'.$themeOpts['logo-path'];?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /></a>
+              <?php
+              } 
+			  ?>			  
+          </td></tr></table>
+		</div>
+	  </div>
+	</div>
+	<?php
+	}
 }
 
 
