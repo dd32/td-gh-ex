@@ -4,7 +4,7 @@ Theme URI: http://chip-life.tutorialchip.com/
 Author: Life.Object
 Author URI: http://www.tutorialchip.com/
 Description: Chip Life (CL) theme for WordPress is stylish, customizable, flexible, readable, and professional with a power of custom menu, and background. Chip Life supports one widgetized area in the sidebar and featured images (thumbnails for posts). Check <a href="http://www.tutorialchip.com/chip-life/">CL Official Page</a> in case you need directions</a>.
-Version: 1.2
+Version: 1.3
 Tags: dark, blue, white, two-columns, fixed-width, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, custom-background
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -41,10 +41,16 @@ object, embed {max-width: 100%;}
 del {color:#F00;}
 blockquote {clear:left;margin:10px 10px 10px 10px;padding:0px 20px 0px 20px;background-color:#c2c6e1;border-width:1px;border-style:solid;border-color:#dfe3fc #878ba6 #878ba6 #dfe3fc;}
 
+p {margin-bottom:18px;}
+
 ol {list-style: decimal;}
 ol ol {list-style: upper-alpha;}
 ol ol ol {list-style: lower-roman;}
 ol ol ol ol {list-style: lower-alpha;}
+
+dl {margin:0px 0px 24px 0px;}
+dt {font-weight:bold;}
+dd {margin-bottom:18px;}
 
 /*
 |------------------
@@ -86,11 +92,19 @@ a.more-link:hover {color:#FFF;}
 |------------------
 */
 
-.gallery {margin:auto;}
-.gallery-item {float:left;margin-top:10px;text-align:center;width:33%;}
-.gallery img {border:1px solid #cfcfcf;}
-.gallery-caption {margin-left:0px;font-size:11px;}
-.gallery br{clear:none!important;float:left;}
+.gallery {margin:0px auto 18px;}
+.gallery .gallery-item {float:left;margin-top:10px;text-align:center;width:33%;}
+.gallery-columns-2 .gallery-item {width:50%;}
+.gallery-columns-4 .gallery-item {width:25%;}
+.gallery img {border:2px solid #cfcfcf;}
+.gallery-columns-2 .attachment-medium {max-width:92%;height:auto;}
+.gallery-columns-4 .attachment-thumbnail {max-width:84%;height:auto;}
+.gallery .gallery-caption {color:#888;font-size:12px;margin:0px 0px 12px;}
+.gallery dl {margin:0px;}
+.gallery img {border:10px solid #f1f1f1;}
+.gallery br+br {display:none;}
+/* single attachment images should be centered */
+#content .attachment img {display:block;margin:0px auto;}
 
 /*
 |------------------
@@ -228,12 +242,12 @@ a.img1:hover {color:#2200d6;}
 */
 
 
-.logobox {width:960px;height:125px;margin:0px auto;/*border:solid 1px red;*/}
+.logobox {width:960px;margin:0px auto;/*border:solid 1px red;*/}
 .logoboxdata {width:100%;overflow:hidden;}
 
 .textlogobox {width:215px;}
-.blogname {font-size:24px;padding:30px 0px 0px 0px;}
-.blogdesc {font-style:italic;padding:5px 0px 0px 0px;}
+.blogname {font-size:24px;padding:20px 0px 0px 0px;line-height:110%;}
+.blogdesc {font-style:italic;padding:5px 0px 20px 0px;}
 
 /*
 |------------------
@@ -280,8 +294,12 @@ a.img1:hover {color:#2200d6;}
 #comments .navnext {width:220px;float:right;text-align:right;}
 
 #comments ol.commentlist {margin:0px;padding:0px;list-style:none;}
-#comments ol.commentlist li {display:block;margin:0px 0px 10px 0px;background-color:#FFF;border-width:1px;border-style:solid;border-color:#dfe3fc #878ba6 #878ba6 #dfe3fc;}
 
+#comments ol.commentlist li.comment,
+#comments ol.commentlist li.trackback,
+#comments ol.commentlist li.pingback {display:block;margin:0px 0px 10px 0px;border-width:1px;border-style:solid;border-color:#dfe3fc #878ba6 #878ba6 #dfe3fc;}
+
+#comments ol.commentlist li {background-color:#FFF;}
 #comments ol.commentlist li.trackback {background-color:#d7eefa;}
 #comments ol.commentlist li.pingback {background-color:#ffefd5;}
 
@@ -291,14 +309,7 @@ a.img1:hover {color:#2200d6;}
 #comments li.comment div.comment-meta {padding:0px 0px 0px 50px;}
 
 #comments ul.children {list-style:none;}
-#comments ul.children li {background-color:#c2c6e1;}
-#comments ul.children li li {background-color:#FFF;}
-#comments ul.children li li li {background-color:#c2c6e1;}
-#comments ul.children li li li li {background-color:#FFF;}
-#comments ul.children li li li li li {background-color:#c2c6e1;}
-#comments ul.children li li li li li li {background-color:#FFF;}
-#comments ul.children li li li li li li li {background-color:#c2c6e1;}
-#comments ul.children li li li li li li li li {background-color:#FFF;}
+#comments ul.children li.odd {background-color:#c2c6e1;}
 
 #comments ol.commentlist div.comment-body {padding:10px;}
 
@@ -338,7 +349,7 @@ a.img1:hover {color:#2200d6;}
 .primarymenubox ul li li:hover li ul, .primarymenubox ul li li.sfHover li ul {top:-999em;}
 .primarymenubox ul li li li:hover ul, .primarymenubox ul li li li.sfHover ul {left:10em;top:0px;}
 
-.primarymenubox ul a, .primarymenubox ul a:visited {display:block;position:relative;font-size:12px;color:#4a4b84;font-weight:bold;padding:17px 14px 17px 14px;text-decoration:none;}
+.primarymenubox ul a, .primarymenubox ul a:visited {display:block;position:relative;font-size:12px;color:#4a4b84;font-weight:bold;padding:17px 10px 17px 10px;text-decoration:none;}
 .primarymenubox ul ul.sub-menu a, .primarymenubox ul ul.sub-menu a:visited {font-weight:bold;color:#FFF;}
 .primarymenubox ul ul.children a, .primarymenubox ul ul.children a:visited {font-weight:bold;color:#FFF;}
 
@@ -373,7 +384,7 @@ a.img1:hover {color:#2200d6;}
 .secondarymenubox ul li li:hover li ul, .secondarymenubox ul li li.sfHover li ul {top:-999em;}
 .secondarymenubox ul li li li:hover ul, .secondarymenubox ul li li li.sfHover ul {left:10em;top:0px;}
 
-.secondarymenubox ul a, .secondarymenubox ul a:visited {display:block;position:relative;font-size:12px;color:#ccc;font-weight:bold;padding:17px 14px 17px 14px;text-decoration:none;}
+.secondarymenubox ul a, .secondarymenubox ul a:visited {display:block;position:relative;font-size:12px;color:#ccc;font-weight:bold;padding:17px 10px 17px 10px;text-decoration:none;}
 .secondarymenubox ul ul.children a, .secondarymenubox ul ul.children a:visited {font-weight:bold;}
 
 .secondarymenubox ul li {background: url(images/bg_nav2_side.jpg) no-repeat scroll right top transparent;}

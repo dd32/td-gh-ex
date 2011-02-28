@@ -32,13 +32,13 @@ $showposts = $chip_life_global['theme_options']['chip_life_related_post_number']
 $showposts = ( ! empty ( $showposts ) )? $showposts : 5;
 
 $args=array(
-	'tag__in'			=>	$tag_ids,
-	'post__not_in'		=>	array($post->ID),
-	'showposts'			=>	$showposts,
-	'caller_get_posts'	=>	1,
+	'tag__in'				=>	$tag_ids,
+	'post__not_in'			=>	array($post->ID),
+	'showposts'				=>	$showposts,
+	'ignore_sticky_posts'	=>	1,
 );
 
-$temp = new WP_Query($args);
+$temp = new WP_Query( $args );
 
 if ( $temp->have_posts() ):
 ?>
