@@ -4,6 +4,14 @@ http://www.khairul-syahir.com
 
 CHANGELOG
 
+Version 1.2.1
+	* Added Arabic (ar_AR) translation, by Amal Abdul
+	* Fixed search listing of pages, where previously the calendar icon overlaps the title, and page's author (and author's avatar) is displayed
+	* Removed "Post has no tags" display from pages in search results
+	* Fixed alternate front page footer widget column count settings not appearing in the theme's options
+	* In search results list, Older Posts and Newer Posts links have been replaced with Next Page and Previous Page
+	* Changed $_REQUEST['updated'] to $_REQUEST['settings-updated'] for the theme's options page, in line with the change in WordPress 3.1
+
 Version 1.2
     * Changed hooks:
          - graphene_before_rightsidebar -> graphene_before_sidebar1

@@ -41,7 +41,6 @@ function graphene_settings_validator($input){
 			$input['show_post_avatar'] = (isset($input['show_post_avatar'])) ? true : false;
 			$input['show_post_author'] = (isset($input['show_post_author'])) ? true : false;
 			$input['show_excerpt_more'] = (isset($input['show_excerpt_more'])) ? true : false;
-			$input['alt_footerwidget_column'] = (isset($input['alt_footerwidget_column'])) ? true : false;
 			$input['hide_allowedtags'] = (isset($input['hide_allowedtags'])) ? true : false;	
 		}
 		

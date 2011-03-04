@@ -26,7 +26,7 @@ function graphene_options(){
 	// $graphene_settings = get_option('graphene_settings');
 	
 	/* Checks if the form has just been submitted */
-	if (!isset($_REQUEST['updated'])) {$_REQUEST['updated'] = false;} 
+	if (!isset($_REQUEST['settings-updated'])) {$_REQUEST['settings-updated'] = false;} 
 	
 	/* Uninstall the theme if confirmed */
 	if (isset($_POST['graphene_uninstall_confirmed'])) { 
@@ -62,7 +62,7 @@ function graphene_options(){
         <p><?php _e('These are the global settings for the theme. You may override some of the settings in individual posts and pages.', 'graphene'); ?></p>
         
 		<?php /* Notification when settings is saved */ ?>
-        <?php if ( false !== $_REQUEST['updated'] ) : ?>
+        <?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
         	<div class="updated"><p><strong><?php _e('Settings saved.', 'graphene'); ?></strong></p></div>
         <?php endif; ?>
         
@@ -870,7 +870,7 @@ function graphene_options_display() {
                         </th>
                         <td><input type="text" class="code" name="graphene_settings[footerwidget_column]" value="<?php echo $graphene_settings['footerwidget_column']; ?>" maxlength="2" size="3" /></td>
                     </tr>
-                    <?php if (get_option('graphene_alt_home_footerwidget')) : ?>
+                    <?php if ($graphene_settings['alt_home_footerwidget']) : ?>
                     <tr>
                         <th scope="row">
                             <label><?php _e('Number of columns to display for front page footer widget', 'graphene'); ?></label>

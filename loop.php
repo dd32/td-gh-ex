@@ -14,7 +14,7 @@
         <div id="post-<?php the_ID(); ?>" <?php post_class('clearfix post'); ?>>
             
             <?php /* Post date is not shown if this is a Page post */ ?>
-            <?php if (!is_page() && ( strpos($graphene_settings['post_date_display'], 'icon_') === 0 )) : ?>
+            <?php if (!is_page() && ( strpos($graphene_settings['post_date_display'], 'icon_') === 0 ) && get_post_type($post) != 'page') : ?>
             <div class="date">
                 <p class="default_date"><?php the_time('M'); ?><br /><span><?php the_time('d') ?></span>
                     <?php if ($graphene_settings['post_date_display'] == 'icon_plus_year') : ?>
@@ -27,7 +27,7 @@
             <?php endif; ?>
             
             <?php	/* Show the post author's gravatar if enabled */
-			if ($graphene_settings['show_post_avatar'] && !is_page()) {
+			if ($graphene_settings['show_post_avatar'] && !is_page() && get_post_type($post) != 'page') {
 				echo get_avatar(get_the_author_meta('user_email'), 40);
 			} ?>
             
@@ -71,7 +71,7 @@
                     <?php if ($graphene_settings['hide_post_author'] != true) : ?>
                     <p class="post-author">
                         <?php
-                            if (!is_page()) {
+                            if (!is_page() && get_post_type($post) != 'page') {
                                 /* translators: this is for the author byline, such as 'by John Doe' */
                                 _e('by','graphene'); echo ' '; the_author_posts_link();                           
                             }
@@ -111,7 +111,7 @@
                 <?php /* Post footer */ ?>
                 <div class="entry-footer clearfix">
                     <?php /* Display the post's tags, if there is any */ ?>
-                    <?php if (!is_page() && ($graphene_settings['hide_post_tags'] != true)) : ?>
+                    <?php if (!is_page() && get_post_type($post) != 'page' && ($graphene_settings['hide_post_tags'] != true)) : ?>
                     <p class="post-tags"><?php if (has_tag()) {_e('Tags:','graphene'); the_tags(' ', ', ', '');} else {_e('This post has no tag','graphene');} ?></p>
                     <?php endif; ?>
                     

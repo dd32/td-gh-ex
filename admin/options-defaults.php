@@ -74,7 +74,7 @@ $graphene_defaults = array(
 	
 	/* Footer widget options */
 	'footerwidget_column' => '',
-	'alt_footerwidget_column' => false,
+	'alt_footerwidget_column' => '',
 	
 	'navmenu_child_width' => '',
 	

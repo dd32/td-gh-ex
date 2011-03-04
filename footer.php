@@ -63,19 +63,6 @@ global $graphene_settings;
     <?php do_action('graphene_w3c'); ?>
     </div>
 
-    <?php
-    /**
-     * This is where the credit for the theme is placed. Please keep the link back
-     * to the author's website. Seriously, developing this awesome theme took a lot
-     * of effort and time, weeks and weeks of voluntary unpaid work. I only ask 
-     * that you retain this link here, and you can use and/or modify the theme
-     * however you like to.
-     *
-     * If you still would like to remove the credit, please consider a donation
-     * through Graphene Options page under Appearance in Wordpress admin
-     * to help support the author and future theme development/support.
-     */
-    ?>
     <div id="developer">
         <p>
         <?php /* translators: %1$s is the blog title, %2$s is the theme's name, %3$s is the theme's author */ ?>

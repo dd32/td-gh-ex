@@ -313,13 +313,13 @@ endif;
  * @since Graphene 1.0.8
 */
 function graphene_custom_style(){ 
-	global $graphene_settings;
+	global $graphene_settings, $content_width;
 	
 	$background = get_theme_mod('background_image', false);
 	$bgcolor = get_theme_mod('background_color', false);
 	$widgetcolumn = (is_front_page() && $graphene_settings['alt_home_footerwidget']) ? $graphene_settings['alt_footerwidget_column'] : $graphene_settings['footerwidget_column'];
 ?>
-	<style type="text/css">
+	<style type="text/css">		
 		<?php /* Disable default background if a custom background colour is defined */ ?>
 		<?php if (!$background && $bgcolor) : ?>
 		body{background-image:none;}
@@ -754,17 +754,6 @@ class Graphene_Widget_Twitter extends WP_Widget{
         <?php echo $args['after_widget']; ?>
         
         <?php
-		function graphene_add_twitter_script() {
-			global $twitter_username;
-			global $twitter_tweetcount;
-			echo '
-			<!-- BEGIN Twitter Updates script -->
-			<script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>
-			<script type="text/javascript" src="http://twitter.com/statuses/user_timeline/'.$twitter_username.'.json?callback=twitterCallback2&amp;count='.$twitter_tweetcount.'"></script>
-			<!-- END Twitter Updates script -->
-			';
-			}
-		// graphene_add_twitter_script();	
 		add_action('wp_footer', 'graphene_add_twitter_script');
 	}
 	
@@ -804,6 +793,20 @@ class Graphene_Widget_Twitter extends WP_Widget{
         <?php
 	}
 }
+
+/* The function that prints the Twitter script to the footer */
+if (!function_exists('graphene_add_twitter_script')) :
+	function graphene_add_twitter_script(){
+		global $twitter_username;
+		global $twitter_tweetcount;
+		echo '
+		<!-- BEGIN Twitter Updates script -->
+		<script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>
+		<script type="text/javascript" src="http://twitter.com/statuses/user_timeline/'.$twitter_username.'.json?callback=twitterCallback2&amp;count='.$twitter_tweetcount.'"></script>
+		<!-- END Twitter Updates script -->
+		';
+	}
+endif;
 
 
 /**
@@ -992,8 +995,13 @@ if ($graphene_settings['show_excerpt_more']) {
 if (!function_exists('graphene_posts_nav')) :
 	function graphene_posts_nav(){ ?>
 		<div class="post-nav clearfix">
+        <?php if (!is_search()) : ?>
 			<p id="previous"><?php next_posts_link(__('Older posts &laquo;', 'graphene')) ?></p>
 			<p id="next-post"><?php previous_posts_link(__('&raquo; Newer posts', 'graphene')) ?></p>
+        <?php else : ?>
+            <p id="next-post"><?php next_posts_link(__('Next page &raquo;', 'graphene')) ?></p>
+			<p id="previous"><?php previous_posts_link(__('&laquo; Previous page', 'graphene')) ?></p>
+        <?php endif; ?>
 		</div>
         
         
