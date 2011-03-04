@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
-	<div id="content" class="narrowcolumn">
+	<div class="content">
 
-		<h2 class="center">Error 404 - Not Found</h2>
+		<h2>Error 404 - Not Found</h2>
 
 	</div>
 <?php get_sidebar(); ?>

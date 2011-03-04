@@ -27,7 +27,6 @@
 	?></title>
 
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
-<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
 <?php wp_head(); ?>
@@ -49,12 +48,11 @@
 			<!-- main NAVIGATION -->
 			<div id="mainNav">
 				<div class="wrap">
-    <?php wp_nav_menu( array( 'fallback_cb' => 'baza_noclegowa_page_menu', 'menu'  => 'primary', 'depth' => 2, 'theme_location' => 'primary', 'before' => '<span>', 'after' => '</span>') ); ?>
-    
+    <?php wp_nav_menu( array( 'fallback_cb' => 'baza_noclegowa_page_menu', 'menu'  => 'primary', 'depth' => 3, 'theme_location' => 'primary', 'before' => '<span>', 'after' => '</span>') ); ?>
 				</div>
 			</div>
 			<!-- /main NAVIGATION -->
-			<div style="clear: both;"></div>
+			<div class="clear"></div>
 
 
 			<!-- CONTENT -->

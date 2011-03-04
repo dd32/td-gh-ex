@@ -13,7 +13,7 @@ if ( function_exists('register_sidebar') )
 		'after_title' => '</span></h3>',        
     ));	
 
-function my_init_method() {
+function baza_noclegowa_init_method() {
     if (!is_admin()) {
         wp_deregister_script( 'jquery' );
         wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js');
@@ -23,11 +23,11 @@ function my_init_method() {
 
 if ( !is_admin() ) {
    wp_register_script('custom_script_1',
-       get_bloginfo('template_directory') . '/js/jquery.ddmenu.js');       
+       get_template_directory_uri() . '/js/jquery.ddmenu.js');       
    wp_enqueue_script('custom_script_1');
 
    wp_register_script('custom_script_2',
-       get_bloginfo('template_directory') . '/js/jcarousellite_1.0.1.js');      
+       get_template_directory_uri() . '/js/jcarousellite_1.0.1.js');      
    wp_enqueue_script('custom_script_2');
    }       
 }
@@ -35,7 +35,7 @@ if ( !is_admin() ) {
        
 
 
-add_action('init', 'my_init_method');
+add_action('init', 'baza_noclegowa_init_method');
 
 add_editor_style();
 add_theme_support( 'automatic-feed-links' );
@@ -72,15 +72,43 @@ function baza_noclegowa_page_menu($o_args) {
         if(isset($post->ID)) {
         if($_row->ID == $post->ID) $_result .= ' current_page_item';
         }
+        
+	//for level 3 start
+    $_subres2 = $wpdb->get_results('SELECT * FROM `'.$wpdb->posts.'` WHERE `post_type` = \'page\' AND `post_parent` = \''.$_subrow->ID.'\' AND `post_status` = \'publish\' ORDER BY `menu_order`');    
+    if( count($_subres2) ) { $_result .= ' multiple';}
+	//for level 3 stop
+        
         $_result .= '">';
         $_result .= '<a href="'.get_permalink($_subrow->ID).'">';
         //$_result .= $o_args['before'];        
         $_result .= apply_filters('the_title', $_subrow->post_title);
         //$_result .= $o_args['after'];        
         $_result .= '</a>';
+    
+    //level 3 start
+    if( count($_subres2) ) {
+      $_result .= '<div class="ddMenu"><ul>';
+      
+      foreach($_subres2 as $_subrow2) {
+        $_result .= '<li id="menu-item-'.$_subrow2->ID.'" class="menu-item';
+        if(isset($post->ID)) {
+        if($_row->ID == $post->ID) $_result .= ' current_page_item';
+        }
+        $_result .= '">';
+        $_result .= '<a href="'.get_permalink($_subrow2->ID).'">';
+        //$_result .= $o_args['before'];        
+        $_result .= apply_filters('the_title', $_subrow2->post_title);
+        //$_result .= $o_args['after'];        
+        $_result .= '</a>';
         $_result .= '</li>';
       }
-      $_result .= '</ul><div class="frame"></div></div>';
+      $_result .= '</ul><div class="btm"></div></div>';
+    }      
+    //level 3 stop
+        
+        $_result .= '</li>';
+      }
+      $_result .= '</ul><div class="btm"></div></div>';
     }
     $_result .= '</li>';
   }
@@ -88,6 +116,7 @@ function baza_noclegowa_page_menu($o_args) {
 
   echo $_result;
 }
+
 
 
 

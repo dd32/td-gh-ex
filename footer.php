@@ -16,7 +16,7 @@
 				<?php wp_list_pages('depth=1&sort_column=menu_order&title_li='); ?>
 			</ul>
 			
-<div class="credits">Powered by <a href="http://wordpress.org/">Wordpress</a>. Theme: <a href="http://www.baza-noclegowa.pl/">Baza Noclegowa</a>.</div>
+<div class="credits">Powered by <a href="http://wordpress.org/">WordPress</a>. Theme: <a href="http://www.baza-noclegowa.pl/">Baza Noclegowa</a>.</div>
 			
 		</div>
 		<!-- /FOOTER -->
