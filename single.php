@@ -9,6 +9,8 @@
 		<h2><?php the_title(); ?></h2>
 
 			<?php the_content(); ?>
+			<div class="clear"></div>
+			
 			<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'ari' ), 'after' => '</div>' ) ); ?>
 						
 		<?php if ( get_the_author_meta( 'description' ) ) : // If a user has filled out their description, show a bio on their entries  ?>
@@ -49,7 +51,7 @@
 	
 		<p class="previous"><?php previous_post_link( '%link', '' . _x( '&larr;  Previous Post', 'Previous post link', 'ari' ) . '' ); ?></p>
 		<p class="next"><?php next_post_link( '%link', __('') . _x( 'Next Post &rarr;', 'Next post link', 'ari' ) . '' ); ?></p>
-
+	
 	</div>
 	<!--end Content-->
 

@@ -4,7 +4,7 @@ Theme URI: http://www.elmastudio.de/themes/ari-wordpress-theme/
 Description: Ari is a minimalistic, flexible three-column blog theme. The theme makes use of CSS3 media queries for its flexible layout and is optimized for tablet pcs and smart phones (the theme switches to a two-column layout when viewed on a horizontal iPad screen, and to a one-column layout on iPhones). You can also choose a dark color scheme and the backgound-, text- and link-colors can be customized in the theme options page.
 Author: Elmastudio
 Author URI: http://www.elmastudio.de
-Version: 1.0.4
+Version: 1.0.6
 Tags: white, dark, three-columns, left-sidebar, right-sidebar, flexible-width, custom-colors, custom-menu, theme-options, threaded-comments, sticky-post, translation-ready
 License: GNU/GPL Version 2 or later
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -171,11 +171,12 @@ ul.sidebar {
 	font-size: 12px;
 	line-height:18px;
 }
-ul.sidebar li.widget-container {
+ul.sidebar li.widget-container, ul.sidebar li.pagenav, ul.sidebar li.categories {
 	margin:0px 0px 30px 0px;
 	padding:0px 0px 10px 0px;
 	border-bottom:1px dotted #4C4C4C;
 	overflow:hidden;
+	line-height:23px;
 }
 ul.sidebar h3.widget-title {
 	padding:0px 0px 5px 0px;
@@ -348,15 +349,7 @@ ul.sidebar li.widget_sociallinks a.delicious {
 	line-height:21px;
 	font-style:italic;
 }
-#content blockquote {
-	margin:10px 0px 20px 0px;
-	padding:0px 0px 0px 16px;
-	background:url(images/blockquote-border.jpg) 0 0 repeat-y;
-	font-family:'Droid Serif',  Times, serif;
-	line-height:21px;
-	font-style:italic;
-}
-#content blockquote p {
+#content .post blockquote p, #content .page blockquote p {
 	padding:0px;
 }
 #content blockquote p cite {
@@ -389,7 +382,8 @@ ul.sidebar li.widget_sociallinks a.delicious {
 	border-right:1px solid #4C4C4C;
 }
 #content img {
-	max-width: 100%;
+	max-width: 100% !important;
+	width: 100%;
 	height: auto;
 	display: block;
 }

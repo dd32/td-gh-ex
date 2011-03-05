@@ -1,29 +1,15 @@
 <?php
 /**
- * The left; fixed Sidebar containing the primary widget areas.
+ * The left fixed Sidebar containing the primary widget areas (some default hard-coded widgets are included).
  */
 ?>
 
-		<ul class="sidebar">
+	<ul class="sidebar">
 
-<?php if ( ! dynamic_sidebar( 'primary-widget-area' ) ) : ?>
-	
-			<li>
-				<h3><?php _e( 'Archives', 'ari' ); ?></h3>
-				<ul>
-					<?php wp_get_archives( 'type=monthly' ); ?>
-				</ul>
-			</li>
+	<?php if ( ! dynamic_sidebar( 'primary-widget-area' ) ) : ?>
+			
+			<?php wp_list_pages('title_li=<h3 class="widget-title">' . __('Pages') . '</h3>'); ?>
 
-			<li>
-				<h3><?php _e( 'Meta', 'ari' ); ?></h3>
-				<ul>
-					<?php wp_register(); ?>
-					<li><?php wp_loginout(); ?></li>
-					<?php wp_meta(); ?>
-				</ul>
-			</li>
-
-		<?php endif; // end primary widget area ?>
-		</ul>
-		<!--end Sidebar-->
+	<?php endif; // end primary widget area ?>
+	</ul>
+	<!--end Sidebar -->

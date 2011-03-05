@@ -30,7 +30,7 @@
 
 	<div class="logo">
 	<?php if (get_option('ari_logo-image') ) : ?>
-	<a href="<?php echo home_url(); ?>"><img src="<?php echo (get_option('logo-image')) ? get_option('logo-image') : get_template_directory_uri() . '/images/logo.png' ?>" alt="<?php bloginfo('name'); ?>"/></a>
+	<a href="<?php echo home_url(); ?>"><img src="<?php echo (get_option('ari_logo-image')) ? get_option('ari_logo-image') : get_template_directory_uri() . '/images/logo.png' ?>" alt="<?php bloginfo('name'); ?>" /></a>
 
 	<?php else : ?>
 	<h1><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1><p><?php bloginfo( 'description' ); ?></p>

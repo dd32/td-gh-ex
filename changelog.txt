@@ -2,16 +2,27 @@
 For detailed documentation and support please visit: http://www.elmastudio.de/themes/ari-wordpress-theme/
 ------------------------------------------------------------------------------------------------------------
 
+Version 1.0.6 - 05th March 2011
+-----------------------------
+1. Included a clearing div after the content in loop.php to properly clear floated images on multiple 
+page posts (recommended by wordpress.org theme review).
+2. Updated the functions.php and deleted the deregister the WordPress bundled jQuery 
+(as recommended by wordpress.org theme review).
+3. Changed the footer link and text in footer.php.
+
+
+Version 1.0.5 - 08th Feb 2011
+-----------------------------
+1. Bugfix for Internet Explorer 8's auto image height problem.
+2. Fixed the code for the image logo option in header.php.
+
 
 Version 1.0.4 - 30th Jan 2011
 -----------------------------
-
-1. Changed the Themes tags, after the WordPress.org recommendations (see style.css, line 8).
-
-2.Updated the stlye.css file to fix the missing styles for included pages on the search results.
-
-3. Some small changes and optimizations in the code of functions.php, footer.php, header.php, 
-single.php and loop.php file  after running the theme-check plugin.
+1. Updated the theme tags in style.css
+2. Updated styles in style.css for search result page.
+3. Small bugfixes in the template files header.php, footer.php, single.php, loop.php und functions.php 
+after running the theme check plugin.
 
 
 Version 1.0.3 - 27th Jan 2011
@@ -27,8 +38,8 @@ WordPress gallery inside the body-tag.
 
 Version 1.0.2 - 20th Jan 2011
 -----------------------------
-1. Fixes on the Ari Social Link Widget code in functions.php (from line 246 - 255), beacuse empty Link 
-icons still visible on firefox and IE browsers.
+1. Fixes on the Ari Social Link Widget code in functions.php (from line 246 - 255), beacuse empty Link icons 
+still visible on firefox and IE browsers.
 
 
 Version 1.0.1 - 13th Jan 2011

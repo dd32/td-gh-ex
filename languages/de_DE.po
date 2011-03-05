@@ -46,9 +46,9 @@ msgstr "Alle Artikel von %s"
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Weiterlesen <span class=\"meta-nav\">&rarr;</span>"
 
-#: loop.php:20
+#: loop.php:22
 #: page.php:16
-#: single.php:12
+#: single.php:14
 #@ ari
 msgid "Pages:"
 msgstr "Seiten:"
@@ -112,8 +112,8 @@ msgstr "Entschuldigung, es wurde kein Suchergebnis zu dieser Anfrage gefunden."
 msgid "Permalink to %s"
 msgstr "Permalink zu %s"
 
-#: loop.php:37
-#: single.php:39
+#: loop.php:39
+#: single.php:41
 #@ ari
 msgid "Leave a comment"
 msgstr "Schreibe einen Kommentar"
@@ -123,14 +123,12 @@ msgstr "Schreibe einen Kommentar"
 msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
 msgstr "Entschuldigung, es konnten keine Suchergebnisse für deine Anfrage gefunden werden."
 
-#: sidebar-primary.php:12
-#: sidebar.php:24
+#: sidebar-secondary.php:20
 #@ ari
 msgid "Archives"
 msgstr "Archiv"
 
-#: sidebar-primary.php:19
-#: sidebar.php:31
+#: sidebar-secondary.php:34
 #@ ari
 msgid "Meta"
 msgstr "Meta"
@@ -195,8 +193,8 @@ msgid "%s <span class=\"says\">says</span>"
 msgstr "%s <span class=\"says\">sagt am</span>"
 
 #: functions.php:119
-#: loop.php:38
-#: single.php:40
+#: loop.php:40
+#: single.php:42
 #@ ari
 msgid "Edit &rarr;"
 msgstr "Bearbeiten &rarr;"
@@ -221,38 +219,38 @@ msgstr "Name*"
 msgid "Continue Reading &rarr;"
 msgstr "Weiterlesen &rarr;"
 
-#: loop.php:26
-#: single.php:29
+#: loop.php:28
+#: single.php:31
 #, php-format
 #@ ari
 msgid "Categories: %2$s"
 msgstr "Kategorien: %2$s"
 
-#: loop.php:33
-#: single.php:36
+#: loop.php:35
+#: single.php:38
 #, php-format
 #@ ari
 msgid "Tags: %2$s"
 msgstr "Schlagwörter: %2$s"
 
-#: loop.php:37
-#: single.php:39
+#: loop.php:39
+#: single.php:41
 #@ ari
 msgid "1 comment"
 msgstr "1 Kommentar"
 
-#: loop.php:37
-#: single.php:39
+#: loop.php:39
+#: single.php:41
 #@ ari
 msgid "% comments"
 msgstr "% Kommentare"
 
-#: loop.php:49
+#: loop.php:51
 #@ ari
 msgid "&larr; Older posts"
 msgstr "&larr; Ältere Artikel"
 
-#: loop.php:50
+#: loop.php:52
 #@ ari
 msgid "Newer posts &rarr;"
 msgstr "Neuere Artikel &rarr;"
@@ -273,7 +271,7 @@ msgstr "Suchergebnisse für <strong>%s</strong>"
 msgid "No Search Result Found"
 msgstr "Keine Suchergebnisse gefunden"
 
-#: single.php:20
+#: single.php:22
 #, php-format
 #@ ari
 msgid "About <span>%s</span>"
@@ -286,17 +284,18 @@ msgid "Tag Archives for <strong>%s</strong>"
 msgstr "Archiv für <strong>%s</strong>"
 
 #: functions.php:97
+#: sidebar-secondary.php:27
 #@ ari
 msgid "Search"
 msgstr "Suchen"
 
-#: single.php:50
+#: single.php:52
 #@ ari
 msgctxt "Previous post link"
 msgid "&larr;  Previous Post"
 msgstr "&larr;  Vorheriger Artikel"
 
-#: single.php:51
+#: single.php:53
 #@ ari
 msgctxt "Next post link"
 msgid "Next Post &rarr;"
@@ -493,4 +492,20 @@ msgstr "Hier kannst du 1 oder 2 wichtige Widgets (z.B. einen Introtext, eine Sei
 #@ ari
 msgid "Here you can put all the additional widgets for your right sidebar."
 msgstr "Hier kannst du zusätzliche Widgets für deine rechte Sidebar einfügen."
+
+#: loop.php:17
+#: loop.php:24
+#@ ari
+msgid "by"
+msgstr "von"
+
+#: sidebar-primary.php:11
+#@ default
+msgid "Pages"
+msgstr ""
+
+#: sidebar-secondary.php:13
+#@ ari
+msgid "Categories"
+msgstr "Kategorien"
 

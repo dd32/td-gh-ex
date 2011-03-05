@@ -14,12 +14,14 @@
 
 	<?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>
 			<?php the_excerpt(); ?>
-			<p class="meta"><span><?php the_time('d. F Y') ?> von <?php the_author() ?></span><br/>	
+			<p class="meta"><span><?php the_time('d. F Y') ?> <?php _e( 'by', 'ari' ); ?> <?php the_author() ?></span><br/>	
 	<?php else : ?>
 			<?php the_content( __( 'Continue Reading &rarr;', 'ari' ) ); ?>
+			<div class="clear"></div>
+			
 			<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'ari' ), 'after' => '</div>' ) ); ?>
 			
-			<p class="meta"><span><?php the_time('d. F Y') ?> von <?php the_author() ?></span><br/>				
+			<p class="meta"><span><?php the_time('d. F Y') ?> <?php _e( 'by', 'ari' ); ?> <?php the_author() ?></span><br/>				
 	<?php endif; ?>
 
 				<?php if ( count( get_the_category() ) ) : ?>

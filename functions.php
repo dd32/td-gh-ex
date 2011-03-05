@@ -36,8 +36,6 @@ endif;
 /* Calls jQuery and SmoothScroll im Footer  */
 function ari_smoothscroll_init() {
     if ( !is_admin() ) {
-        wp_deregister_script( 'jquery' );
-        wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js', false, '1.4.2', true );
         wp_enqueue_script( 'jquery' );
         wp_enqueue_script( 'smoothscroll', get_template_directory_uri() . '/js/smoothscroll.js', array( 'jquery'), '1.0', true ); 
     }
