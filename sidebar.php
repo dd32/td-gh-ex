@@ -4,15 +4,7 @@ if ($arjunaOptions['sidebarDisplay']!='none') {
 ?><div class="sidebars">
 	<div class="t"><div></div></div>
 	<div class="i"><div class="i2"><div class="c">
-		<div class="sidebarIcons">
-			<?php if($arjunaOptions['sidebar_showRSSButton']): ?><a class="rssBtn" href="<?php bloginfo('rss2_url'); ?>"><?php if($arjunaOptions['sidebar_displayButtonTexts']): ?>RSS<?php endif; ?></a><?php endif; ?>
-			<?php if($arjunaOptions['sidebar_showTwitterButton']): ?>
-			<a class="twitterBtn" href="<?php echo $arjunaOptions['sidebar_twitterURL']; ?>"><?php if($arjunaOptions['sidebar_displayButtonTexts']): ?>Twitter<?php endif; ?></a>
-			<?php endif; ?>
-			<?php if($arjunaOptions['sidebar_showFacebookButton']): ?>
-			<a class="facebookBtn" href="<?php echo $arjunaOptions['sidebar_facebookURL']; ?>"><?php if($arjunaOptions['sidebar_displayButtonTexts']): ?>Facebook<?php endif; ?></a>
-			<?php endif; ?>
-		</div>
+		<?php get_template_part( 'templates/sidebar/icons' ); ?>
 		<div>
 		<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Sidebar Top')): ?>
 			<?php if($arjunaOptions['sidebar_showDefault']): ?>

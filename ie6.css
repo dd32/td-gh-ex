@@ -9,6 +9,7 @@ pre {
 }
 
 .headerBG {
+	background:none;
 }
 
 .headerSearch {
@@ -30,11 +31,17 @@ pre {
 .headerMenu2DS ul,
 .headerMenu2DS li,
 .headerMenu2 li a:hover,
+.headerMenu2 li a.active,
 .headerMenu2 li a:visited,
 .headerMenu2 li a.homeIcon,
 .headerMenu2 li a.homeIcon:hover,
-.headerMenu2 li a.homeIcon:visited {
-	background-image:url(./images/ie6/headerMenu2.png);
+.headerMenu2 li a.homeIcon:visited,
+.headerMenu2 .helper {
+	background-image:url(./images/ie6/header/menu-2.png);
+}
+
+.headerMenu2 li a.active {
+	background-position:-1050px 0;
 }
 
 
@@ -59,6 +66,15 @@ pre {
 .headerMenu1 li li a:visited {
 	display:block;
 	float:none;
+}
+
+.headerMenu2 ul {
+	height:26px;
+}
+
+.headerMenu2 .helper {
+	font-size:1px;
+	line-height:1px;
 }
 
 .contentWrapper {
@@ -271,7 +287,8 @@ a.btn span {
 .sidebars .b div,
 .sidebars a.rssBtn,
 .sidebars a.twitterBtn,
-.sidebars a.facebookBtn {
+.sidebars a.facebookBtn,
+.sidebars a.linkedInBtn {
 	background-image:url(./images/ie6/sidebars.png);
 }
 .sidebars h4,
@@ -301,4 +318,29 @@ a.btn span {
 
 .commentHeader {
 	height:27px;
+}
+
+
+.sidebarIcons a,
+.sidebars .rssBtnExtended,
+.sidebars .rssBtnExtended .primary,
+#rss-extended {
+	display:inline;
+	zoom:1;
+}
+#rss-extended li.separator {
+	height:1px;
+	line-height:1px;
+	font-size:1px;
+	margin:4px 5px;
+	display: inline-block;
+}
+
+#rss-extended {
+	z-index:1;
+}
+
+blockquote,
+pre {
+	word-wrap:break-word;
 }

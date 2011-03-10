@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-31 12:10+0100\n"
 "PO-Revision-Date: \n"
-"Last-Translator: SRS Solutions <info@srssolutions.com>\n"
+"Last-Translator: T Benjamin Y <good.blossom@gmail.com>\n"
 "Language-Team: Hajime Fujino <station@pst2.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,44 +15,44 @@ msgstr ""
 
 #: Arjuna-X/404.php:4
 msgid "Error 404 - Not Found"
-msgstr "Error 404 - ファイルが見つかりません"
+msgstr "エラー 404 - 見つかりません"
 
 #: Arjuna-X/404.php:5
 msgid "Sorry, but you are looking for something that isn't here. "
-msgstr "すみません、お探しのものはありません。"
+msgstr "すみません、違うところを探しているようですよ。"
 
 #: Arjuna-X/archive.php:8
 msgid "Browsing Posts in <em>%s</em>"
-msgstr "投稿を閲覧 <em>%s</em>"
+msgstr "カテゴリー <em>%s</em> の投稿をブラウズ中…"
 
 #: Arjuna-X/archive.php:10
 msgid "Browsing Posts tagged <em>%s</em>"
-msgstr "タグで投稿を閲覧 <em>%s</em>"
+msgstr "タグ <em>%s</em> の投稿をブラウズ中…"
 
 #: Arjuna-X/archive.php:12
 msgid "Browsing Posts published on %s"
-msgstr "投稿日で表示 %s"
+msgstr "%s の投稿をブラウズ中…"
 
 #: Arjuna-X/archive.php:14
 #: Arjuna-X/archive.php:16
 msgid "Browsing Posts published in %s"
-msgstr "アーティクルで表示 %s"
+msgstr "%s の投稿をブラウズ中…"
 
 #: Arjuna-X/archive.php:14
 msgid "F, Y"
-msgstr "F, Y"
+msgstr "Y年n月"
 
 #: Arjuna-X/archive.php:16
 msgid "Y"
-msgstr "Y"
+msgstr "Y年"
 
 #: Arjuna-X/archive.php:19
 msgid "Browsing Posts published by <em>%s</em>"
-msgstr "投稿者で表示 <em>%s</em>"
+msgstr "<em>%s</em> の投稿をブラウズ中…"
 
 #: Arjuna-X/archive.php:21
 msgid "Blog Archives"
-msgstr "アーカイヴ"
+msgstr "ブログアーカイブ"
 
 #: Arjuna-X/archive.php:28
 #: Arjuna-X/index.php:9
@@ -72,7 +72,7 @@ msgstr "パーマリンク"
 #: Arjuna-X/search.php:20
 #: Arjuna-X/single.php:21
 msgid " at "
-msgstr " 於 "
+msgstr " @ "
 
 #: Arjuna-X/archive.php:42
 #: Arjuna-X/index.php:23
@@ -81,7 +81,7 @@ msgstr " 於 "
 #: Arjuna-X/search.php:28
 #: Arjuna-X/single.php:30
 msgid "Pass required"
-msgstr "要認証"
+msgstr "認証が必要です"
 
 #: Arjuna-X/archive.php:44
 #: Arjuna-X/index.php:25
@@ -90,7 +90,7 @@ msgstr "要認証"
 #: Arjuna-X/search.php:30
 #: Arjuna-X/single.php:32
 msgid "Comments off"
-msgstr "コメントvオフ"
+msgstr "コメントはできません"
 
 #: Arjuna-X/archive.php:46
 #: Arjuna-X/index.php:27
@@ -108,7 +108,7 @@ msgstr "コメントなし"
 #: Arjuna-X/search.php:32
 #: Arjuna-X/single.php:34
 msgid "1 comment"
-msgstr "1 コメント"
+msgstr "1 件のコメント"
 
 #: Arjuna-X/archive.php:46
 #: Arjuna-X/index.php:27
@@ -117,7 +117,7 @@ msgstr "1 コメント"
 #: Arjuna-X/search.php:32
 #: Arjuna-X/single.php:34
 msgid "% comments"
-msgstr "% のコメント"
+msgstr "% 件のコメント"
 
 #: Arjuna-X/archive.php:53
 #: Arjuna-X/index.php:34
@@ -126,7 +126,7 @@ msgstr "% のコメント"
 #: Arjuna-X/search.php:38
 #: Arjuna-X/single.php:41
 msgid "continue reading..."
-msgstr "続き..."
+msgstr "続きを読む…"
 
 #: Arjuna-X/archive.php:61
 #: Arjuna-X/index.php:42
@@ -139,29 +139,29 @@ msgstr "<i>なし</i>"
 #: Arjuna-X/index.php:46
 #: Arjuna-X/search.php:50
 msgid "Read more"
-msgstr "続き"
+msgstr "もっと読む"
 
 #: Arjuna-X/archive.php:77
 #: Arjuna-X/index.php:64
 #: Arjuna-X/search.php:59
 msgid "Newer Entries"
-msgstr "新しいエントリー"
+msgstr "次の記事"
 
 #: Arjuna-X/archive.php:78
 #: Arjuna-X/index.php:65
 #: Arjuna-X/search.php:60
 msgid "Older Entries"
-msgstr "古いエントリー"
+msgstr "前の記事"
 
 #: Arjuna-X/archive.php:83
 #: Arjuna-X/index.php:71
 msgid "There is nothing here (yet)."
-msgstr "何もなし"
+msgstr "何もありません(まだ)。"
 
 #: Arjuna-X/comments.php:13
 #: Arjuna-X/comments_legacy.php:11
 msgid "This post is password protected. Enter the password to view comments."
-msgstr "要パスワード、投稿は保護されています"
+msgstr "パスワード保護されています。コメントを見るにはパスワードを入力して下さい。"
 
 #: Arjuna-X/comments.php:21
 #: Arjuna-X/comments_legacy.php:18
@@ -172,7 +172,7 @@ msgstr "コメント"
 #: Arjuna-X/comments.php:23
 #: Arjuna-X/comments_legacy.php:20
 msgid "Leave a comment"
-msgstr "コメントを残す"
+msgstr "コメントする"
 
 #: Arjuna-X/comments.php:26
 #: Arjuna-X/comments_legacy.php:23
@@ -182,33 +182,33 @@ msgstr "トラックバック"
 #: Arjuna-X/comments.php:38
 #: Arjuna-X/comments_legacy.php:91
 msgid "No one has commented yet."
-msgstr "未だコメントなし"
+msgstr "まだコメントはありません。"
 
 #: Arjuna-X/comments.php:40
 #: Arjuna-X/comments_legacy.php:93
 msgid "Comments are closed."
-msgstr "コメントは閉鎖中"
+msgstr "コメントは締め切られました。"
 
 #: Arjuna-X/comments.php:50
 #: Arjuna-X/comments_legacy.php:102
 msgid "Leave a Comment"
-msgstr "コメントを残す"
+msgstr "コメントする"
 
 #: Arjuna-X/comments.php:52
 msgid "Cancel Reply"
-msgstr "返信キャンセル"
+msgstr "返信をキャンセル"
 
 #: Arjuna-X/comments.php:56
 #: Arjuna-X/comments_legacy.php:104
 msgid "You must be %slogged in%s to post a comment."
-msgstr "コメント記入には　%slogged in%s が必要です"
+msgstr "コメントするには %sログイン%s して下さい。"
 
 #: Arjuna-X/comments.php:59
 #: Arjuna-X/comments.php:68
 #: Arjuna-X/comments_legacy.php:107
 #: Arjuna-X/comments_legacy.php:114
 msgid "Your name"
-msgstr "お名前"
+msgstr "あなたの名前"
 
 #: Arjuna-X/comments.php:60
 #: Arjuna-X/comments.php:69
@@ -222,7 +222,7 @@ msgstr "メールアドレス"
 #: Arjuna-X/comments_legacy.php:109
 #: Arjuna-X/comments_legacy.php:116
 msgid "Your website"
-msgstr "サイトURL"
+msgstr "ウェブサイトURL"
 
 #: Arjuna-X/comments.php:62
 #: Arjuna-X/comments.php:79
@@ -234,7 +234,7 @@ msgstr "コメント"
 #: Arjuna-X/comments.php:65
 #: Arjuna-X/comments_legacy.php:112
 msgid "Logged in as %s."
-msgstr "ログイン名  %s."
+msgstr "%s でログイン中。"
 
 #: Arjuna-X/comments.php:65
 #: Arjuna-X/comments_legacy.php:112
@@ -249,12 +249,12 @@ msgstr "ログアウト"
 #: Arjuna-X/comments.php:81
 #: Arjuna-X/comments_legacy.php:121
 msgid "Subscribe to comments"
-msgstr "コメントの購読"
+msgstr "コメントを購読する"
 
 #: Arjuna-X/comments.php:82
 #: Arjuna-X/comments_legacy.php:122
 msgid "Leave comment"
-msgstr "コメントを残す"
+msgstr "コメントする"
 
 #: Arjuna-X/comments_legacy.php:58
 msgid "%1$s at %2$s"
@@ -267,27 +267,27 @@ msgstr "H:i"
 #: Arjuna-X/comments_legacy.php:65
 #: Arjuna-X/functions.php:1193
 msgid "Your comment is awaiting moderation."
-msgstr "承認待ちのコメント"
+msgstr "コメントは承認待ちです。"
 
 #: Arjuna-X/comments_legacy.php:81
 #: Arjuna-X/functions.php:1394
 msgid "Previous"
-msgstr "以前"
+msgstr "前の"
 
 #: Arjuna-X/comments_legacy.php:81
 #: Arjuna-X/functions.php:1394
 msgid "Next"
-msgstr "次"
+msgstr "次の"
 
 #: Arjuna-X/comments_legacy.php:83
 #: Arjuna-X/functions.php:1396
 msgid "Older Comments"
-msgstr "より古いコメント"
+msgstr "前のコメント"
 
 #: Arjuna-X/comments_legacy.php:84
 #: Arjuna-X/functions.php:1397
 msgid "Newer Comments"
-msgstr "より新しいコメント"
+msgstr "次のコメント"
 
 #: Arjuna-X/functions.php:352
 msgid "Arjuna Options"
@@ -295,7 +295,7 @@ msgstr "Arjuna の設定"
 
 #: Arjuna-X/functions.php:362
 msgid "The Arjuna options have been saved."
-msgstr "Arjuna の設定が保存されました"
+msgstr "Arjuna の設定を保存しました。"
 
 #: Arjuna-X/functions.php:366
 msgid "Arjuna Theme Options"
@@ -303,11 +303,11 @@ msgstr "Arjuna のテーマ設定"
 
 #: Arjuna-X/functions.php:370
 msgid "Thank you for using Arjuna, the free WordPress theme designed by %s."
-msgstr "WordPress フリーのテーマ Arjuna のご利用ありがとうございます designed by %s."
+msgstr "ご利用ありがとうございます。Arjuna は %s がデザインしたフリーのWordPressテーマです。"
 
 #: Arjuna-X/functions.php:370
 msgid "Follow Us"
-msgstr "作者について"
+msgstr "Follow Us"
 
 #: Arjuna-X/functions.php:374
 msgid "Report Bugs"
@@ -319,11 +319,11 @@ msgstr "バグを報告する"
 
 #: Arjuna-X/functions.php:375
 msgid "Please include your Wordpress version, browser details and a screenshot, if necessary."
-msgstr "必要に応じて Wordpress のバージョン、ブラウザの詳細、スクリーンショットを添付して下さい"
+msgstr "必要に応じて Wordpress のバージョン、ブラウザの詳細、スクリーンショットを添付して下さい。"
 
 #: Arjuna-X/functions.php:378
 msgid "Useful Links"
-msgstr "便利リンク"
+msgstr "便利なリンク"
 
 #: Arjuna-X/functions.php:379
 msgid "Changelog"
@@ -351,11 +351,11 @@ msgstr "セールスに連絡"
 
 #: Arjuna-X/functions.php:386
 msgid "Need installation or integration support? Need something customized or extended?"
-msgstr "インストールサポート、総合サポート、カスタマイズ、拡張などが必要でしょうか。"
+msgstr "インストールやインテグレーションのサポート、何かカスタマイズや拡張されたものがご入用ですか？"
 
 #: Arjuna-X/functions.php:391
 msgid "Arjuna is completely free. Therefore, please understand that we do NOT offer free support. If you require support of any kind other than fixing a bug that is related to Arjuna, please request a quote from us."
-msgstr "Arjuna は完全に無償です。ただし、サポートは無償提供していない点をご了解下さい。バグフィックス以外での Arjuna のサポートについては見積をご依頼下さい。."
+msgstr "Arjuna はまったく無料でご利用頂けます。ですが無償サポートは提供していないことをご了解下さい。Arjuna のバグを直す以外のサポートが必要な場合は、見積りをご依頼下さい。"
 
 #: Arjuna-X/functions.php:395
 msgid "Header"
@@ -363,7 +363,7 @@ msgstr "ヘッダー"
 
 #: Arjuna-X/functions.php:399
 msgid "First Header Menu"
-msgstr "最初のヘッダーメニュー"
+msgstr "一番目のヘッダーメニュー"
 
 #: Arjuna-X/functions.php:403
 msgid "Enabled"
@@ -375,44 +375,44 @@ msgstr "このメニューを有効化"
 
 #: Arjuna-X/functions.php:407
 msgid "If disabled, the menu will be hidden."
-msgstr "無効化で非表示となります"
+msgstr "チェックを外すとメニューは表示されません。"
 
 #: Arjuna-X/functions.php:411
 #: Arjuna-X/functions.php:592
 msgid "Dropdown"
-msgstr "プルダウン"
+msgstr "ドロップダウン"
 
 #: Arjuna-X/functions.php:415
 #: Arjuna-X/functions.php:596
 msgid "No dropdown menu"
-msgstr "プルダウンメニューなし"
+msgstr "ドロップダウンメニュー無し"
 
 #: Arjuna-X/functions.php:419
 #: Arjuna-X/functions.php:600
 msgid "One-level dropdown menu"
-msgstr "一階層プルダウン"
+msgstr "一階層のドロップダウンメニュー"
 
 #: Arjuna-X/functions.php:423
 #: Arjuna-X/functions.php:604
 msgid "Two-level dropdown menu"
-msgstr "二階層プルダウン"
+msgstr "二階層のドロップダウンメニュー"
 
 #: Arjuna-X/functions.php:427
 msgid "Alignment"
-msgstr "整列"
+msgstr "配置"
 
 #: Arjuna-X/functions.php:431
 msgid "Left"
-msgstr "左"
+msgstr "左寄せ"
 
 #: Arjuna-X/functions.php:435
 msgid "Right"
-msgstr "右"
+msgstr "右寄せ"
 
 #: Arjuna-X/functions.php:440
 #: Arjuna-X/functions.php:609
 msgid "Menu lists only"
-msgstr "メニュー表示するリストを選択"
+msgstr "メニューに表示するもの"
 
 #: Arjuna-X/functions.php:444
 #: Arjuna-X/functions.php:613
@@ -428,45 +428,45 @@ msgstr "カテゴリー"
 #: Arjuna-X/functions.php:453
 #: Arjuna-X/functions.php:622
 msgid "Sorting Order"
-msgstr "ソート順を設定"
+msgstr "ソート順"
 
 #: Arjuna-X/functions.php:456
 #: Arjuna-X/functions.php:470
 #: Arjuna-X/functions.php:625
 #: Arjuna-X/functions.php:639
 msgid "Sort menu items in"
-msgstr "ソートメニューは"
+msgstr "メニュー項目を"
 
 #: Arjuna-X/functions.php:458
 #: Arjuna-X/functions.php:472
 #: Arjuna-X/functions.php:627
 #: Arjuna-X/functions.php:641
 msgid "ascending"
-msgstr "正順でソート"
+msgstr "昇順で表示。"
 
 #: Arjuna-X/functions.php:459
 #: Arjuna-X/functions.php:473
 #: Arjuna-X/functions.php:628
 #: Arjuna-X/functions.php:642
 msgid "descending"
-msgstr "逆順でソート"
+msgstr "降順で表示。"
 
 #: Arjuna-X/functions.php:461
 #: Arjuna-X/functions.php:475
 #: Arjuna-X/functions.php:630
 #: Arjuna-X/functions.php:644
 msgid "order by"
-msgstr "　何でソートするか選択"
+msgstr "ソート対象は"
 
 #: Arjuna-X/functions.php:463
 #: Arjuna-X/functions.php:632
 msgid "Category Name"
-msgstr "カテゴリー"
+msgstr "カテゴリー名"
 
 #: Arjuna-X/functions.php:464
 #: Arjuna-X/functions.php:633
 msgid "Category ID"
-msgstr "カテゴリーＩＤ"
+msgstr "カテゴリーID"
 
 #: Arjuna-X/functions.php:465
 #: Arjuna-X/functions.php:634
@@ -476,7 +476,7 @@ msgstr "投稿数"
 #: Arjuna-X/functions.php:466
 #: Arjuna-X/functions.php:635
 msgid "Category Slug"
-msgstr "カテゴリースラグ"
+msgstr "カテゴリースラグ(URL)"
 
 #: Arjuna-X/functions.php:477
 #: Arjuna-X/functions.php:646
@@ -486,17 +486,17 @@ msgstr "ページタイトル"
 #: Arjuna-X/functions.php:478
 #: Arjuna-X/functions.php:647
 msgid "Page ID"
-msgstr "ページＩＤ"
+msgstr "ページID"
 
 #: Arjuna-X/functions.php:479
 #: Arjuna-X/functions.php:648
 msgid "Page Slug"
-msgstr "ページスラグ"
+msgstr "ページスラグ(URL)"
 
 #: Arjuna-X/functions.php:480
 #: Arjuna-X/functions.php:649
 msgid "Page Order"
-msgstr "ページオーダー"
+msgstr "ページ順序"
 
 #: Arjuna-X/functions.php:486
 #: Arjuna-X/functions.php:661
@@ -506,30 +506,30 @@ msgstr "メニュー項目"
 #: Arjuna-X/functions.php:490
 #: Arjuna-X/functions.php:665
 msgid "Include categories"
-msgstr "表示させるカテゴリー"
+msgstr "表示するカテゴリー"
 
 #: Arjuna-X/functions.php:507
 #: Arjuna-X/functions.php:682
 msgid "Exclude categories"
-msgstr "非表示のカテゴリー"
+msgstr "表示しないカテゴリー"
 
 #: Arjuna-X/functions.php:526
 msgid "Note: While the above fields show empty categories, the theme will only display categories that have at least one published post in them."
-msgstr "注：空のカテゴリーを指定しても、テーマはそれらに少なくとも1つの発行ずみ投稿があるカテゴリだけを表示します。"
+msgstr "注: 上の欄に投稿のないカテゴリーがあっても、このテーマは公開された投稿が1件以上あるカテゴリーだけを表示します。"
 
 #: Arjuna-X/functions.php:530
 #: Arjuna-X/functions.php:705
 msgid "Include pages"
-msgstr "表示させるページ"
+msgstr "表示するページ"
 
 #: Arjuna-X/functions.php:546
 #: Arjuna-X/functions.php:721
 msgid "Exclude pages"
-msgstr "非表示のページ"
+msgstr "表示しないページ"
 
 #: Arjuna-X/functions.php:582
 msgid "Second Header Menu"
-msgstr "二つ目のヘッダメニュー"
+msgstr "二番目のヘッダーメニュー"
 
 #: Arjuna-X/functions.php:586
 msgid "Separators"
@@ -537,7 +537,7 @@ msgstr "セパレーター"
 
 #: Arjuna-X/functions.php:588
 msgid "Visually separate the menu buttons"
-msgstr "視覚的にメニューボタンをセパレート"
+msgstr "メニューボタンをはっきりと区切る"
 
 #: Arjuna-X/functions.php:655
 msgid "Home Button"
@@ -545,11 +545,11 @@ msgstr "ホームボタン"
 
 #: Arjuna-X/functions.php:657
 msgid "Display Home button"
-msgstr "ホームボタン表示"
+msgstr "ホームボタンを表示する"
 
 #: Arjuna-X/functions.php:701
 msgid "Note: While the above fields show empty categories, the theme will only display categories that have at least one published post in them.</span>"
-msgstr "注：空白のカテゴリーを指定した際、投稿のないカテゴリーは表示されません。"
+msgstr "注: 上の欄に投稿のないカテゴリーがあっても、このテーマは公開された投稿が1件以上あるカテゴリーだけを表示します。</span>"
 
 #: Arjuna-X/functions.php:757
 #: Arjuna-X/functions.php:761
@@ -566,7 +566,7 @@ msgstr "ダークブルー"
 
 #: Arjuna-X/functions.php:776
 msgid "Khaki"
-msgstr "カーキー"
+msgstr "カーキ"
 
 #: Arjuna-X/functions.php:781
 msgid "Sea Green"
@@ -574,7 +574,7 @@ msgstr "シーグリーン"
 
 #: Arjuna-X/functions.php:788
 msgid "General Options"
-msgstr "全体オプション"
+msgstr "全般的なオプション"
 
 #: Arjuna-X/functions.php:789
 msgid "Sidebar"
@@ -582,19 +582,19 @@ msgstr "サイドバー"
 
 #: Arjuna-X/functions.php:793
 msgid "Sidebar Position"
-msgstr "サイドバー位置"
+msgstr "サイドバーの位置"
 
 #: Arjuna-X/functions.php:798
 msgid "Right sidebar"
-msgstr "右サイドバー"
+msgstr "右に置く"
 
 #: Arjuna-X/functions.php:803
 msgid "Left sidebar"
-msgstr "左サイドバー"
+msgstr "左に置く"
 
 #: Arjuna-X/functions.php:808
 msgid "No sidebar"
-msgstr "サイドバーなし"
+msgstr "サイドバー無し"
 
 #: Arjuna-X/functions.php:813
 msgid "Sidebar Width"
@@ -602,19 +602,19 @@ msgstr "サイドバーの幅"
 
 #: Arjuna-X/functions.php:815
 msgid "Small"
-msgstr "小"
+msgstr "狭い"
 
 #: Arjuna-X/functions.php:816
 msgid "Normal"
-msgstr "中"
+msgstr "普通"
 
 #: Arjuna-X/functions.php:817
 msgid "Large"
-msgstr "大"
+msgstr "広い"
 
 #: Arjuna-X/functions.php:818
 msgid "If you intend to use the two column sidebar, we recommend to choose either the normal or the large sidebar."
-msgstr "サイドバーを、2コラムで使用するなら、中か大のサイドバーの選択をお勧めます。"
+msgstr "二列表示のサイドバーを使用するなら、普通または広いサイドバーがお薦めです。"
 
 #: Arjuna-X/functions.php:822
 msgid "Default Widgets"
@@ -622,11 +622,11 @@ msgstr "デフォルトのウィジェット"
 
 #: Arjuna-X/functions.php:824
 msgid "Display default sidebar widgets if the widget bars are empty."
-msgstr "ウィジェットバーが空の場合に表示するウィジェット"
+msgstr "ウィジェットバーが空ならデフォルトのサイドバーウィジェットを表示する。"
 
 #: Arjuna-X/functions.php:825
 msgid "If enabled, these widgets will be displayed if the widget bar is empty: <b>sidebar_full_top:</b> Recent Posts and Browse by Tags, <b>sidebar_left:</b> Categories, <b>sidebar_right:</b> Meta"
-msgstr "有効化すると、ウィジェットバーが空の場合、以下のウィジェットを表示：<b>サイドバーフルトップ：</b> 直近投稿とタグブラウズ<b>左サイドバー：</b> カテゴリー ：<b>右サイドバー：</b> メタ"
+msgstr "チェックを入れると、ウィジェットバーが空なら以下のウィジェットが表示されます。<b>サイドバー上部:</b> 最近の記事・タグでブラウズ<b>、サイドバー左側:</b> カテゴリー、<b>サイドバー右側:</b> メタ"
 
 #: Arjuna-X/functions.php:829
 msgid "RSS Button"
@@ -634,51 +634,51 @@ msgstr "RSSボタン"
 
 #: Arjuna-X/functions.php:831
 msgid "Display an RSS button on the very top of the sidebar."
-msgstr "RSSボタンをサイドバーの最上部に表示"
+msgstr "RSSボタンをサイドバーの最上部に表示。"
 
 #: Arjuna-X/functions.php:835
 msgid "Twitter Button"
-msgstr "ツイッターボタン"
+msgstr "Twitterボタン"
 
 #: Arjuna-X/functions.php:837
 msgid "Display a Twitter button on the very top of the sidebar."
-msgstr "ツイッターボタンをサイドバーの最上部に表示"
+msgstr "Twitterボタンをサイドバーの最上部に表示。"
 
 #: Arjuna-X/functions.php:844
 msgid "Facebook Button"
-msgstr "フェイスブックボタン"
+msgstr "Facebookボタン"
 
 #: Arjuna-X/functions.php:846
 msgid "Display a Facebook button on the very top of the sidebar."
-msgstr "フェイスブックボタンをサイドバーの最上部に表示"
+msgstr "Facebookボタンをサイドバーの最上部に表示。"
 
 #: Arjuna-X/functions.php:853
 msgid "Display Button Labels"
-msgstr "ボタンのラベル"
+msgstr "ボタン名の表示"
 
 #: Arjuna-X/functions.php:855
 msgid "Display labels next to the buttons (RSS, Twitter and Facebook)."
-msgstr "ラベルをボタン横に表示 (RSS, Twitter と Facebook)."
+msgstr "ラベルをボタンの隣に表示する。(RSS, Twitter, Facebook)"
 
 #: Arjuna-X/functions.php:864
 msgid "Single Posts and Pages"
-msgstr "投稿とページ"
+msgstr "単一の投稿とページ"
 
 #: Arjuna-X/functions.php:868
 msgid "Display Author"
-msgstr "名前を表示"
+msgstr "作成者の表示"
 
 #: Arjuna-X/functions.php:870
 msgid "Include the author of a post in the post header."
-msgstr "名前を投稿ヘッダーに表示"
+msgstr "投稿のヘッダーに作成者を表示する。"
 
 #: Arjuna-X/functions.php:874
 msgid "Display Time"
-msgstr "時間を表示"
+msgstr "時刻の表示"
 
 #: Arjuna-X/functions.php:876
 msgid "Include the time and date of when the post has been published, instead of only the date."
-msgstr "日付に加え、投稿された発行日時を含める"
+msgstr "投稿が公開された時刻と日付を表示する。チェックを外すと日付だけ。"
 
 #: Arjuna-X/functions.php:880
 msgid "Display Info Bar for Pages"
@@ -686,31 +686,31 @@ msgstr "情報バーのページでの表示"
 
 #: Arjuna-X/functions.php:882
 msgid "Display the info bar right below the title of pages."
-msgstr "ページのタイトル直下にインフォメーションバーを表示"
+msgstr "ページのタイトル直下に情報バーを表示する。"
 
 #: Arjuna-X/functions.php:883
 msgid "The info bar usually includes the author of the page, the publish date and the comments button. This options entirely hides the bar so that only the title is shown."
-msgstr "情報バーの通常表示（名前、発行日、コメントボタン）がタイトル以外非表示となります"
+msgstr "情報バーは普通、ページの作成者、公開日、コメントボタンを表示します。チェックを外すと情報バーが隠れてタイトルだけが表示されます。"
 
 #: Arjuna-X/functions.php:887
 msgid "Navigation Links"
-msgstr "リンクナビゲーション"
+msgstr "ナビゲーション用リンク"
 
 #: Arjuna-X/functions.php:889
 msgid "Display links to the previous and next posts above each post."
-msgstr "各投稿の上部に、<strong>戻る</strong>と<strong>次へ</strong>のリンクを表示"
+msgstr "各投稿の<strong>上</strong>に、前の記事と次の記事へのリンクを表示する。"
 
 #: Arjuna-X/functions.php:890
 msgid "Display links to the previous and next posts below each post."
-msgstr "各投稿の下部に、<strong>戻る</strong>と<strong>次へ</strong>のリンクを表示"
+msgstr "各投稿の<strong>下</strong>に、前の記事と次の記事へのリンクを表示する。"
 
 #: Arjuna-X/functions.php:891
 msgid "Note: The links will only be shown on permalink pages, i.e. the URL where one single post/page is displayed."
-msgstr "注：これらのリンクは投稿がひとつだけ表示されている時にのみ表示されます"
+msgstr "注: これらのリンクは、単一の投稿またはページが表示されている(URLがパーマリンク)時だけ表示されます。"
 
 #: Arjuna-X/functions.php:901
 msgid "Display comments as follows"
-msgstr "コメントの表示設定"
+msgstr "コメントを次のように表示"
 
 #: Arjuna-X/functions.php:906
 msgid "Aligned to the left"
@@ -722,23 +722,23 @@ msgstr "右寄せ"
 
 #: Arjuna-X/functions.php:916
 msgid "Alternate between left and right alignment"
-msgstr "左右、交互に"
+msgstr "左右交互に寄せる"
 
 #: Arjuna-X/functions.php:921
 msgid "Date Format"
-msgstr "日付フォーマット"
+msgstr "日付の書式"
 
 #: Arjuna-X/functions.php:923
 msgid "Passed Time (Example: <em>&quot;Written by admin about 3 days ago.&quot;</em>)"
-msgstr "経過時間 (例: <em>&quot;投稿者 admin 約 3 日 前.&quot;</em>)"
+msgstr "経過時間 (例: <em>&quot;書いた人 admin 約 3 日 前.&quot;</em>)"
 
 #: Arjuna-X/functions.php:924
 msgid "Default Date Format (Example: <em>&quot;Written by admin on %s&quot;</em>)"
-msgstr "標準表示 (例: <em>&quot;投稿者 admin on %s&quot;</em>)"
+msgstr "標準の日付形式 (例: <em>&quot;書いた人 admin @ %s&quot;</em>)"
 
 #: Arjuna-X/functions.php:925
 msgid "The default date format can be customized in Settings &gt; General."
-msgstr "日付フォーマットは WordPress でカスタマイズできます &gt; 設定 &gt; 一般"
+msgstr "標準の日付形式は WordPress のメニュー <strong>設定 &gt; 一般</strong> で設定できます。"
 
 #: Arjuna-X/functions.php:929
 msgid "Comment Display"
@@ -746,15 +746,15 @@ msgstr "コメント表示"
 
 #: Arjuna-X/functions.php:931
 msgid "Hide any traces of comments when comments, pingbacks and trackbacks are disabled on <strong>Pages</strong>."
-msgstr "<strong>ページ</strong> でコメント、ピング、トラックバックが有効化されていない場合トレースを非表示"
+msgstr "<strong>ページ</strong>について、コメント、ピンバック、トラックバックが禁止されていたらコメントを隠す。"
 
 #: Arjuna-X/functions.php:932
 msgid "Hide any traces of comments when comments, pingbacks and trackbacks are disabled on <strong>Posts</strong>."
-msgstr "<strong>投稿</strong> でコメント、ピング、トラックバックが有効化されていない場合トレースを非表示"
+msgstr "<strong>投稿</strong>について、コメント、ピンバック、トラックバックが禁止されていたらコメントを隠す。"
 
 #: Arjuna-X/functions.php:933
 msgid "Note: If enabled, the section that says Comments and the comments button in the heading of the respective pages/posts will be removed."
-msgstr "注：有効化すると、そのコメントとコメントボタンが非表示となります"
+msgstr "注: チェックを入れると、各投稿/ページの、コメントおよびヘッダーにあるコメントボタンが表示されません。"
 
 #: Arjuna-X/functions.php:939
 msgid "Blog"
@@ -762,23 +762,23 @@ msgstr "ブログ"
 
 #: Arjuna-X/functions.php:943
 msgid "Pagination"
-msgstr "ページ繰り"
+msgstr "ページ割り"
 
 #: Arjuna-X/functions.php:945
 msgid "Use Arjuna pagination"
-msgstr "Arjuna のページ繰りを使用"
+msgstr "Arjuna自身のページ割りを使用"
 
 #: Arjuna-X/functions.php:946
 msgid "If enabled, Arjuna will use its own native pagination to allow your users to navigate the blog using pages."
-msgstr "有効化すると Arjuna 独自のページ繰りでナビゲーションを提供します"
+msgstr "チェックを入れると、Arjuna自身でページ割りを行い、ブログをページ単位で読むことができます。"
 
 #: Arjuna-X/functions.php:950
 msgid "Page Range"
-msgstr "ページの範囲"
+msgstr "ページ範囲"
 
 #: Arjuna-X/functions.php:959
 msgid "The number of page buttons that will appear before and after the current page button."
-msgstr "現在ページのボタン前後に表示するページボタン数"
+msgstr " &mdash; 現在のページの前後に表示するページボタンの数。"
 
 #: Arjuna-X/functions.php:963
 msgid "Page Anchors"
@@ -786,7 +786,7 @@ msgstr "ページアンカー"
 
 #: Arjuna-X/functions.php:972
 msgid "The number of page buttons that will always appear at the beginning and the end of the pagination."
-msgstr "最初と最後でのページボタン数"
+msgstr " &mdash; ページ割りの最初と最後に必ず表示するページボタンの数。"
 
 #: Arjuna-X/functions.php:976
 msgid "Page Gap"
@@ -794,19 +794,19 @@ msgstr "ページギャップ"
 
 #: Arjuna-X/functions.php:985
 msgid "The number of page buttons in a gap before an ellipsis (...) is displayed."
-msgstr "省略(…)表示の前のギャップページボタン数"
+msgstr " &mdash; ギャップがこのページ数を超えると省略表示(...)する。"
 
 #: Arjuna-X/functions.php:990
 msgid "Use WordPress default"
-msgstr "WordPress のページ繰りを使用"
+msgstr "WordPressのデフォルトのページ割りを使用"
 
 #: Arjuna-X/functions.php:991
 msgid "The default depends on your WordPress version and whether you have any pagination plugins activated. If the wp-paginate or wp-pagenavi plugin is activated, then Arjuna will use these plugins to create the pagination."
-msgstr "WordPress のページ繰りを使用すると WordPress のバージョン、プラグインの有無・有効化に依存します。もし wp-paginate や wp-pagenavi が存在し、有効化されたら Arjuna は、これらのプラグインを使用します"
+msgstr "デフォルトは、WordPressのバージョンと、ページ割りプラグインが有効かどうかによって変わります。wp-paginate または wp-pagenavi プラグインが有効なら、Arjunaはそれを使ってページ割りを行います。"
 
 #: Arjuna-X/functions.php:997
 msgid "Miscellaneous"
-msgstr "その他設定"
+msgstr "その他の設定"
 
 #: Arjuna-X/functions.php:1001
 msgid "Append to page title"
@@ -818,11 +818,11 @@ msgstr "ブログ名 (&quot; - %s&quot;)"
 
 #: Arjuna-X/functions.php:1004
 msgid "Custom:"
-msgstr "カスタム"
+msgstr "カスタム:"
 
 #: Arjuna-X/functions.php:1005
 msgid "This will be appended to the page title of every web page (posts, pages, categories, etc.)"
-msgstr "各ページタイトルに追加されます　（投稿、ページ、カテゴリーなど）"
+msgstr "すべてのwebページ（投稿、ページ、カテゴリー等）のタイトルに追加されます。"
 
 #: Arjuna-X/functions.php:1009
 msgid "Footer Style"
@@ -834,23 +834,23 @@ msgstr "カスタムCSS"
 
 #: Arjuna-X/functions.php:1029
 msgid "Arjuna needs write permissions to create a new file %s, which will contain the custom CSS."
-msgstr "%s, ファイル（カスタムCSSを含む）を生成するために Arjuna に書込みパーミッションが必要です"
+msgstr "カスタムCSSを保持するファイル %s をArjunaが作成する為に、書込みパーミッションが必要です。"
 
 #: Arjuna-X/functions.php:1031
 msgid "Enable custom CSS rules"
-msgstr "カスタムCSSルールを有効化"
+msgstr "カスタムCSSルールを有効にする"
 
 #: Arjuna-X/functions.php:1032
 msgid "If enabled, Arjuna will create a user stylesheet with your custom CSS rules. The user stylesheet will be included with every page call. If you intend to make some minor changes to the stylesheet, enabling this option ensures that you can safely upgrade Arjuna without losing your custom CSS."
-msgstr "有効化で Arjunaはユーザスタイルシートを作成します。ユーザスタイルシートは全ページの呼出時に含まれ、マイナーチェンジの適用を可能にします。あなたのカスタムCSSをなくさずにArjunaの安全なアップグレードを確実にします。"
+msgstr "チェックを入れると、ArjunaはカスタムCSSルールを含んだユーザースタイルシートを生成します。ユーザースタイルシートは各ページと一緒に呼び出されます。スタイルシートのマイナーチェンジを行うなら、あなたのカスタムCSSを失わないでArjunaを安全にアップグレードする為、このオプションを有効にしておくとよいでしょう。"
 
 #: Arjuna-X/functions.php:1041
 msgid "Note:"
-msgstr "注記："
+msgstr "注意:"
 
 #: Arjuna-X/functions.php:1041
 msgid "Arjuna cannot write to the themes directory. The custom CSS rules will be included in the header of each page, between &lt;STYLE&gt; tags."
-msgstr "Arjuna は、テーマディレクトリに書き込めません。カスタムCSSルールは各ページのヘッダーbetween &lt;STYLE&gt; タグの間に書き込まれます"
+msgstr "Arjunaがthemesディレクトリに書き込めません。カスタムCSSルールは各ページのヘッダーに、&lt;STYLE&gt; タグで囲んで書き込まれます。"
 
 #: Arjuna-X/functions.php:1050
 msgid "Performance Optimization"
@@ -862,15 +862,15 @@ msgstr "Internet Explorer 6 最適化"
 
 #: Arjuna-X/functions.php:1056
 msgid "Enable IE6 performance optimization"
-msgstr "Internet Explorer 6 最適化の有効化"
+msgstr "IE6性能向上の為に最適化を行う"
 
 #: Arjuna-X/functions.php:1057
 msgid "If turned on, Arjuna will attempt to detect IE6 and serve a stand-alone CSS file specifically made for IE6."
-msgstr "有効化で Arjuna は IE6 を検出し、IE6に特化した専用のCSSを提供します"
+msgstr "チェックを入れると、ArjunaはIE6を検出して、IE6に特化した専用CSSファイルを提供します。"
 
 #: Arjuna-X/functions.php:1057
 msgid "Note: IE6 will still work the same if this option is turned off, however, you and your IE6 users will save an estimated 28kb (11 image and 2 CSS files) in bandwidth for first-time visitors. IE6 also might render more rapidly if this is turned on."
-msgstr "注：オフにしてもIE6は同じ動きをするでしょうが、IE6ユーザの初回閲覧時に　約28kb (11画像と 2CSSファイル)を保存します。オンにしたら、IE6のレンダリングが早くなるでしょう"
+msgstr "注: チェックを外してもIE6の動作は変わりませんが、初回閲覧時に約28kb（画像ファイル11本とCSSファイル2本）をダウンロードして保存します。また、チェックを入れるとIE6の表示が速くなるでしょう。"
 
 #: Arjuna-X/functions.php:1064
 msgid "Save Changes"
@@ -878,19 +878,19 @@ msgstr "変更を保存"
 
 #: Arjuna-X/functions.php:1181
 msgid "Written by"
-msgstr "投稿者"
+msgstr "書いた人"
 
 #: Arjuna-X/functions.php:1183
 msgid "about %s ago"
-msgstr "約 %s 経過"
+msgstr "約 %s 前"
 
 #: Arjuna-X/functions.php:1185
 msgid "on"
-msgstr "on"
+msgstr "@"
 
 #: Arjuna-X/functions.php:1190
 msgid "Edit"
-msgstr "編集"
+msgstr "編集する"
 
 #: Arjuna-X/functions.php:1217
 msgid "1 year"
@@ -902,11 +902,11 @@ msgstr "%d 年"
 
 #: Arjuna-X/functions.php:1221
 msgid "1 month"
-msgstr "1 ヶ月"
+msgstr "1 ヵ月"
 
 #: Arjuna-X/functions.php:1221
 msgid "%d months"
-msgstr "%d ヶ月"
+msgstr "%d ヵ月"
 
 #: Arjuna-X/functions.php:1225
 msgid "1 week"
@@ -950,7 +950,7 @@ msgstr "%d 秒"
 
 #: Arjuna-X/functions.php:1326
 msgid "Page %s of %s"
-msgstr "ページ %s / %s 中"
+msgstr "ページ %s / %s"
 
 #: Arjuna-X/functions.php:1365
 #: Arjuna-X/functions.php:1368
@@ -959,11 +959,11 @@ msgstr "ページ %s"
 
 #: Arjuna-X/functions.php:1393
 msgid "Comment Pages:"
-msgstr "コメントページ"
+msgstr "コメントページ:"
 
 #: Arjuna-X/header.php:10
 msgid "Search Results:"
-msgstr "検索結果"
+msgstr "検索結果:"
 
 #: Arjuna-X/header.php:37
 msgid "Skip to posts"
@@ -971,7 +971,7 @@ msgstr "投稿へジャンプ"
 
 #: Arjuna-X/header.php:63
 msgid "Search here..."
-msgstr "ココから検索..."
+msgstr "ここから検索..."
 
 #: Arjuna-X/header.php:64
 msgid "Find"
@@ -983,17 +983,17 @@ msgstr "ホーム"
 
 #: Arjuna-X/index.php:53
 msgid "Previous Page"
-msgstr "前ページ"
+msgstr "前のページ"
 
 #: Arjuna-X/index.php:53
 msgid "Next Page"
-msgstr "次ページ"
+msgstr "次のページ"
 
 #: Arjuna-X/page.php:44
 #: Arjuna-X/page_fullwidth.php:48
 #: Arjuna-X/single.php:44
 msgid "Pages:"
-msgstr "ページ："
+msgstr "ページ:"
 
 #: Arjuna-X/page.php:44
 #: Arjuna-X/page_fullwidth.php:48
@@ -1005,25 +1005,25 @@ msgstr "ページ %"
 #: Arjuna-X/page_fullwidth.php:50
 #: Arjuna-X/single.php:56
 msgid "Edit in Admin"
-msgstr "アドミンで編集"
+msgstr "管理画面で編集"
 
 #: Arjuna-X/page.php:58
 #: Arjuna-X/page_fullwidth.php:63
 #: Arjuna-X/single.php:76
 msgid "There is nothing here."
-msgstr "見つかりません"
+msgstr "何もありません。"
 
 #: Arjuna-X/search.php:8
 msgid "Search Results on <em>%s</em>"
-msgstr "検索結果 <em>%s</em>"
+msgstr "<em>%s</em> での検索結果"
 
 #: Arjuna-X/search.php:65
 msgid "Your search returned no results."
-msgstr "検索結果がありません"
+msgstr "見つかりませんでした。"
 
 #: Arjuna-X/sidebar.php:20
 msgid "Recent Posts"
-msgstr "直近の投稿"
+msgstr "最近の記事"
 
 #: Arjuna-X/sidebar.php:27
 msgid "Browse by Tags"
@@ -1036,10 +1036,10 @@ msgstr "メタ"
 #: Arjuna-X/single.php:9
 #: Arjuna-X/single.php:67
 msgid "Previous Post"
-msgstr "前へ"
+msgstr "前の記事"
 
 #: Arjuna-X/single.php:10
 #: Arjuna-X/single.php:68
 msgid "Next Post"
-msgstr "次へ"
+msgstr "次の記事"
 

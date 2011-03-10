@@ -2,25 +2,25 @@
 @session_start();
 
 $_arjunaDefaultOptions = array(
-	'headerMenu1_dropdown' => '3', // 1, 2, 3 (the depth of the menu, 1 being no dropdown)
-	'headerMenu1_display' => 'pages', // pages, categories
-	'headerMenu1_sortBy' => 'post_title', // [CATEGORIES]: name, ID, count, slug [PAGES]: post_title, ID, post_name (slug), menu_order (the page's Order value)
-	'headerMenu1_sortOrder' => 'asc', // asc, desc
-	'headerMenu1_alignment' => 'right', // right, left
-	'headerMenu1_show' => true,
+	//'headerMenu1_dropdown' => '3', // 1, 2, 3 (the depth of the menu, 1 being no dropdown)
+	//'headerMenu1_display' => 'pages', // pages, categories
+	//'headerMenu1_sortBy' => 'post_title', // [CATEGORIES]: name, ID, count, slug [PAGES]: post_title, ID, post_name (slug), menu_order (the page's Order value)
+	//'headerMenu1_sortOrder' => 'asc', // asc, desc
+	//'headerMenu1_alignment' => 'right', // right, left
+	//'headerMenu1_show' => true,
 	'headerMenu1_disableParentPageLink' => false,
-	'headerMenu1_exclude_categories' => '',
-	'headerMenu1_exclude_pages' => '',
-	'headerMenu2_dropdown' => '3', // 1, 2, 3 (the depth of the menu, 1 being no dropdown)
-	'headerMenu2_display' => 'categories', // pages, categories
-	'headerMenu2_sortBy' => 'name', // [CATEGORIES]: name, ID, count, slug [PAGES]: post_title, ID, post_name (slug), menu_order (the page's Order value)
-	'headerMenu2_sortOrder' => 'asc', // asc, desc
-	'headerMenu2_displayHomeButton' => true,
-	'headerMenu2_displaySeparators' => true,
-	'headerMenu2_show' => true,
+	//'headerMenu1_exclude_categories' => '',
+	//'headerMenu1_exclude_pages' => '',
+	//'headerMenu2_dropdown' => '3', // 1, 2, 3 (the depth of the menu, 1 being no dropdown)
+	//'headerMenu2_display' => 'categories', // pages, categories
+	//'headerMenu2_sortBy' => 'name', // [CATEGORIES]: name, ID, count, slug [PAGES]: post_title, ID, post_name (slug), menu_order (the page's Order value)
+	//'headerMenu2_sortOrder' => 'asc', // asc, desc
+	//'headerMenu2_displayHomeButton' => true,
+	//'headerMenu2_displaySeparators' => true,
+	//'headerMenu2_show' => true,
 	'headerMenu2_disableParentPageLink' => false,
-	'headerMenu2_exclude_categories' => '',
-	'headerMenu2_exclude_pages' => '',
+	//'headerMenu2_exclude_categories' => '',
+	//'headerMenu2_exclude_pages' => '',
 	'headerImage' => 'lightBlue', //lightBlue, darkBlue
 	'commentDisplay' => 'alt', // alt, left, right
 	'commentDateFormat' => 'timePassed', // timePassed, date
@@ -35,7 +35,7 @@ $_arjunaDefaultOptions = array(
 	'sidebarWidth' => 'normal', // small, normal, large
 	'sidebar_showDefault' => true, 
 	'sidebar_showRSSButton' => true, 
-	'sidebar_showTwitterButton' => false, 
+	'sidebar_showTwitterButton' => false,
 	'sidebar_showFacebookButton' => false, 
 	'sidebar_twitterURL' => '', 
 	'sidebar_facebookURL' => '', 
@@ -71,10 +71,90 @@ $_arjunaDefaultOptions = array(
 	'miscellaneous_IE6Notice' => true,
 	'headerMenus_enableJavaScript' => true,
 	'headerMenus_effect' => 'slide', //slide, fade, none
-	'headerMenus_delay' => 500 //in milliseconds
+	'headerMenus_delay' => 500, //in milliseconds
+	
+	//Added 1.6
+	'contentAreaWidth' => 570, //width of the content area, sidebar will be calculated
+	'sidebar_showLinkedInButton' => false,
+	'sidebarButtons' => array(
+		'RSS' => array(
+			'enabled' => true,
+			'extended' => true,
+			'label' => '',
+		),
+		'twitter' => array(
+			'enabled' => false,
+			'URL' => '',
+			'label' => '',
+		),
+		'facebook' => array(
+			'enabled' => false,
+			'URL' => '',
+			'label' => '',
+		),
+		'linkedIn' => array(
+			'enabled' => false,
+			'URL' => '',
+			'label' => '',
+		),
+	),
+	'menus' => array(
+		'1' => array(
+			'enabled' => true,
+			'useNavMenus' => true, // false to use legacy menus
+			'depth' => 3, // 1, 2, 3 (the depth of the menu, 1 being no dropdown)
+			'align' => 'right', // right, left
+			
+			//options for legacy menus
+			'display' => 'pages', // pages, categories
+			'sortBy' => 'post_title', // [CATEGORIES]: name, ID, count, slug [PAGES]: post_title, ID, post_name (slug), menu_order (the page's Order value)
+			'sortOrder' => 'asc', // asc, desc
+			'exclude_categories' => '',
+			'exclude_pages' => '',
+		),
+		'2' => array(
+			'enabled' => true,
+			'useNavMenus' => true, // false to use legacy menus
+			'depth' => 3, // 1, 2, 3 (the depth of the menu, 1 being no dropdown)
+			'displayHome' => true,
+			'displaySeparators' => true,
+			
+			//options for legacy menus
+			'display' => 'categories', // pages, categories
+			'sortBy' => 'name', // [CATEGORIES]: name, ID, count, slug [PAGES]: post_title, ID, post_name (slug), menu_order (the page's Order value)
+			'sortOrder' => 'asc', // asc, desc
+			'exclude_categories' => '',
+			'exclude_pages' => '',
+		),
+	),
+	'enableSearch' => true,
+	'useFeedburner' => false,
+	'feedburnerURL' => '',
+	'feedburnerCommentsURL' => '',
+	'copyrightOwner' => '',
+	'twitterWidget' => array(
+		'enabled' => true,
+		'title' => 'Recent Tweets',
+		'username' => 'twitter',
+		'height' => 250,
+		'numTweets' => 4, //1 - 30
+		'scrollbar' => false,
+		'showTimestamps' => true,
+	),
 
+	'currentVersion' => '1.6',
 );
 
+$arjunaColorSchemes = array(
+	'lightBlue' => __('Light Blue'),
+	'darkBlue' => __('Dark Blue'),
+	'khaki' => __('Khaki'),
+	'seaGreen' => __('Sea Green'),
+	'lightRed' => __('Light Red'),
+	'purple' => __('Purple'),
+	'lightGray' => __('Light Gray'),
+	'darkGray' => __('Dark Gray'),
+);
 
 $optionsSaved = false;
 function arjuna_create_options() {
@@ -113,150 +193,151 @@ function arjuna_get_options() {
 
 $formErrors = array();
 function arjuna_add_theme_options() {
-	global $optionsSaved, $formErrors;
+	global $optionsSaved, $formErrors, $arjunaColorSchemes;
 	if(isset($_POST['arjuna_save_options'])) {
 		
 		$options = arjuna_create_options();
 		
 		//Menu 1 dropdown
 		$validOptions = array('1', '2', '3');
-		if(isset($_POST['headerMenu1_dropdown'])) {
-			if ( in_array($_POST['headerMenu1_dropdown'], $validOptions) ) $options['headerMenu1_dropdown'] = $_POST['headerMenu1_dropdown'];
-			else $options['headerMenu1_dropdown'] = '3';
+		if(isset($_POST['menus_1_depth'])) {
+			if ( in_array($_POST['menus_1_depth'], $validOptions) ) $options['menus']['1']['depth'] = $_POST['menus_1_depth'];
+			else $options['menus']['1']['depth'] = '3';
 		}
 		
 		//Menu 1 display
 		$validOptions = array('pages', 'categories');
-		if(isset($_POST['headerMenu1_display'])) {
-			if ( in_array($_POST['headerMenu1_display'], $validOptions) ) $options['headerMenu1_display'] = $_POST['headerMenu1_display'];
-			else $options['headerMenu1_display'] = 'pages';
+		if(isset($_POST['menus_1_display'])) {
+			if ( in_array($_POST['menus_1_display'], $validOptions) ) $options['menus']['1']['display'] = $_POST['menus_1_display'];
+			else $options['menus']['1']['display'] = 'pages';
 		}
 		
-		if(isset($_POST['headerMenu1_display'])) {
-			if ($options['headerMenu1_display']=='pages') {
+		if(isset($_POST['menus_1_display'])) {
+			if ($options['menus']['1']['display']=='pages') {
 				//Menu 1 sorting for PAGES
 				$validOptions = array('post_title', 'ID', 'post_name', 'menu_order');
-				if ( in_array($_POST['headerMenu1_sortBy_pages'], $validOptions) ) $options['headerMenu1_sortBy'] = $_POST['headerMenu1_sortBy_pages'];
-				else $options['headerMenu1_sortBy'] = $validOptions[0];
+				if ( in_array($_POST['menus_1_sortBy_pages'], $validOptions) ) $options['menus']['1']['sortBy'] = $_POST['menus_1_sortBy_pages'];
+				else $options['menus']['1']['sortBy'] = $validOptions[0];
 				//Menu 1 sorting order
 				$validOptions = array('asc', 'desc');
-				if ( in_array($_POST['headerMenu1_sortOrder_pages'], $validOptions) ) $options['headerMenu1_sortOrder'] = $_POST['headerMenu1_sortOrder_pages'];
-				else $options['headerMenu1_sortOrder'] = $validOptions[0];
-			} elseif ($options['headerMenu1_display']=='categories') {
+				if ( in_array($_POST['menus_1_sortOrder_pages'], $validOptions) ) $options['menus']['1']['sortOrder'] = $_POST['menus_1_sortOrder_pages'];
+				else $options['menus']['1']['sortOrder'] = $validOptions[0];
+			} elseif ($options['menus']['1']['display']=='categories') {
 				//Menu 1 sorting for CATEGORIES
 				$validOptions = array('name', 'ID', 'count', 'slug');
-				if ( in_array($_POST['headerMenu1_sortBy_categories'], $validOptions) ) $options['headerMenu1_sortBy'] = $_POST['headerMenu1_sortBy_categories'];
-				else $options['headerMenu1_sortBy'] = $validOptions[0];
+				if ( in_array($_POST['menus_1_sortBy_categories'], $validOptions) ) $options['menus']['1']['sortBy'] = $_POST['menus_1_sortBy_categories'];
+				else $options['menus']['1']['sortBy'] = $validOptions[0];
 				//Menu 1 sorting order
 				$validOptions = array('asc', 'desc');
-				if ( in_array($_POST['headerMenu1_sortOrder_categories'], $validOptions) ) $options['headerMenu1_sortOrder'] = $_POST['headerMenu1_sortOrder_categories'];
-				else $options['headerMenu1_sortOrder'] = $validOptions[0];
+				if ( in_array($_POST['menus_1_sortOrder_categories'], $validOptions) ) $options['menus']['1']['sortOrder'] = $_POST['menus_1_sortOrder_categories'];
+				else $options['menus']['1']['sortOrder'] = $validOptions[0];
 			}
 		}
 		
 		//Menu 1 show
-		if (isset($_POST['headerMenu1_show'])) $options['headerMenu1_show'] = true;
-		else $options['headerMenu1_show'] = false;
+		if (isset($_POST['menus_1_enabled'])) $options['menus']['1']['enabled'] = true;
+		else $options['menus']['1']['enabled'] = false;
+		
+		//Menu 1 use navigation menu
+		if (isset($_POST['menus_1_useNavMenus'])) $options['menus']['1']['useNavMenus'] = (bool)$_POST['menus_1_useNavMenus'];
+		else $options['menus']['1']['useNavMenus'] = false;
 		
 		//Menu 1 alignment
 		$validOptions = array('right', 'left');
-		if(isset($_POST['headerMenu1_alignment'])) {
-			if ( in_array($_POST['headerMenu1_alignment'], $validOptions) ) $options['headerMenu1_alignment'] = $_POST['headerMenu1_alignment'];
-			else $options['headerMenu1_alignment'] = $validOptions[0];
+		if(isset($_POST['menus_1_align'])) {
+			if ( in_array($_POST['menus_1_align'], $validOptions) ) $options['menus']['1']['align'] = $_POST['menus_1_align'];
+			else $options['menus']['1']['align'] = $validOptions[0];
 		}
-		
-		// Menu 1 - Disable Parent Page Links in
-		if (isset($_POST['headerMenu1_disableParentPageLink'])) $options['headerMenu1_disableParentPageLink'] = true;
-		else $options['headerMenu1_disableParentPageLink'] = false;
 		
 		// Menu 1 - Exclude items
-		if(isset($_POST['headerMenu1_exclude_categories'])) {
-			if($_POST['headerMenu1_exclude_categories']) {
-				$options['headerMenu1_exclude_categories'] = implode(',', $_POST['headerMenu1_exclude_categories']);
-			} else $options['headerMenu1_exclude_categories'] = '';
+		if(isset($_POST['menus_1_exclude_categories'])) {
+			if($_POST['menus_1_exclude_categories']) {
+				$options['menus']['1']['exclude_categories'] = implode(',', $_POST['menus_1_exclude_categories']);
+			} else $options['menus']['1']['exclude_categories'] = '';
 		}
 		
-		if(isset($_POST['headerMenu1_exclude_pages'])) {
-			if($_POST['headerMenu1_exclude_pages']) {
-				$options['headerMenu1_exclude_pages'] = implode(',', $_POST['headerMenu1_exclude_pages']);
-			} else $options['headerMenu1_exclude_pages'] = '';
+		if(isset($_POST['menus_1_exclude_pages'])) {
+			if($_POST['menus_1_exclude_pages']) {
+				$options['menus']['1']['exclude_pages'] = implode(',', $_POST['menus_1_exclude_pages']);
+			} else $options['menus']['1']['exclude_pages'] = '';
 		}
 		
 		
 		//Menu 2 show
-		if (isset($_POST['headerMenu2_show'])) $options['headerMenu2_show'] = true;
-		else $options['headerMenu2_show'] = false;
+		if (isset($_POST['menus_2_enabled'])) $options['menus']['2']['enabled'] = true;
+		else $options['menus']['2']['enabled'] = false;
+		
+		//Menu 2 use navigation menu
+		if (isset($_POST['menus_2_useNavMenus'])) $options['menus']['2']['useNavMenus'] = (bool)$_POST['menus_2_useNavMenus'];
+		else $options['menus']['2']['useNavMenus'] = false;
 		
 		//Menu 2 dropdown
 		$validOptions = array('1', '2', '3');
-		if(isset($_POST['headerMenu2_dropdown'])) {
-			if ( in_array($_POST['headerMenu2_dropdown'], $validOptions) ) $options['headerMenu2_dropdown'] = $_POST['headerMenu2_dropdown'];
-			else $options['headerMenu2_dropdown'] = '3';
+		if(isset($_POST['menus_2_depth'])) {
+			if ( in_array($_POST['menus_2_depth'], $validOptions) ) $options['menus']['2']['depth'] = $_POST['menus_2_depth'];
+			else $options['menus']['2']['depth'] = '3';
 		}
 		
 		//Menu 2 display
 		$validOptions = array('pages', 'categories');
-		if(isset($_POST['headerMenu2_display'])) {
-			if ( in_array($_POST['headerMenu2_display'], $validOptions) ) $options['headerMenu2_display'] = $_POST['headerMenu2_display'];
-			else $options['headerMenu2_display'] = 'pages';
+		if(isset($_POST['menus_2_display'])) {
+			if ( in_array($_POST['menus_2_display'], $validOptions) ) $options['menus']['2']['display'] = $_POST['menus_2_display'];
+			else $options['menus']['2']['display'] = 'pages';
 		}
 		
-		if(isset($_POST['headerMenu2_display'])) {
-			if ($options['headerMenu2_display']=='pages') {
+		if(isset($_POST['menus_2_display'])) {
+			if ($options['menus']['2']['display']=='pages') {
 				//Menu 2 sorting for PAGES
 				$validOptions = array('post_title', 'ID', 'post_name', 'menu_order');
-				if ( in_array($_POST['headerMenu2_sortBy_pages'], $validOptions) ) $options['headerMenu2_sortBy'] = $_POST['headerMenu2_sortBy_pages'];
-				else $options['headerMenu2_sortBy'] = $validOptions[0];
+				if ( in_array($_POST['menus_2_sortBy_pages'], $validOptions) ) $options['menus']['2']['sortBy'] = $_POST['menus_2_sortBy_pages'];
+				else $options['menus']['2']['sortBy'] = $validOptions[0];
 				//Menu 2 sorting order
 				$validOptions = array('asc', 'desc');
-				if ( in_array($_POST['headerMenu2_sortOrder_pages'], $validOptions) ) $options['headerMenu2_sortOrder'] = $_POST['headerMenu2_sortOrder_pages'];
-				else $options['headerMenu2_sortOrder'] = $validOptions[0];
-			} elseif ($options['headerMenu2_display']=='categories') {
+				if ( in_array($_POST['menus_2_sortOrder_pages'], $validOptions) ) $options['menus']['2']['sortOrder'] = $_POST['menus_2_sortOrder_pages'];
+				else $options['menus']['2']['sortOrder'] = $validOptions[0];
+			} elseif ($options['menus']['2']['display']=='categories') {
 				//Menu 2 sorting for CATEGORIES
 				$validOptions = array('name', 'ID', 'count', 'slug');
-				if ( in_array($_POST['headerMenu2_sortBy_categories'], $validOptions) ) $options['headerMenu2_sortBy'] = $_POST['headerMenu2_sortBy_categories'];
-				else $options['headerMenu2_sortBy'] = $validOptions[0];
+				if ( in_array($_POST['menus_2_sortBy_categories'], $validOptions) ) $options['menus']['2']['sortBy'] = $_POST['menus_2_sortBy_categories'];
+				else $options['menus']['2']['sortBy'] = $validOptions[0];
 				//Menu 2 sorting order
 				$validOptions = array('asc', 'desc');
-				if ( in_array($_POST['headerMenu2_sortOrder_categories'], $validOptions) ) $options['headerMenu2_sortOrder'] = $_POST['headerMenu2_sortOrder_categories'];
-				else $options['headerMenu2_sortOrder'] = $validOptions[0];
+				if ( in_array($_POST['menus_2_sortOrder_categories'], $validOptions) ) $options['menus']['2']['sortOrder'] = $_POST['menus_2_sortOrder_categories'];
+				else $options['menus']['2']['sortOrder'] = $validOptions[0];
 			}
 		}
 		
 		//Menu 2 Home Icon
-		if (isset($_POST['headerMenu2_displayHomeButton'])) $options['headerMenu2_displayHomeButton'] = true;
-		else $options['headerMenu2_displayHomeButton'] = false;
+		if (isset($_POST['menus_2_displayHome'])) $options['menus']['2']['displayHome'] = true;
+		else $options['menus']['2']['displayHome'] = false;
 		
 		//Menu 2 Home Icon
-		if (isset($_POST['headerMenu2_displaySeparators'])) $options['headerMenu2_displaySeparators'] = true;
-		else $options['headerMenu2_displaySeparators'] = false;
-		
-		// Menu 2 - Disable Parent Page Links in
-		if (isset($_POST['headerMenu2_disableParentPageLink'])) $options['headerMenu2_disableParentPageLink'] = true;
-		else $options['headerMenu2_disableParentPageLink'] = false;
+		if (isset($_POST['menus_2_displaySeparators'])) $options['menus']['2']['displaySeparators'] = true;
+		else $options['menus']['2']['displaySeparator'] = false;
 		
 		
 		// Menu 2 - Exclude items
-		if(isset($_POST['headerMenu2_exclude_categories'])) {
-			if($_POST['headerMenu2_exclude_categories']) {
-				$options['headerMenu2_exclude_categories'] = implode(',', $_POST['headerMenu2_exclude_categories']);
-			} else $options['headerMenu2_exclude_categories'] = '';
+		if(isset($_POST['menus_2_exclude_categories'])) {
+			if($_POST['menus_2_exclude_categories']) {
+				$options['menus']['2']['exclude_categories'] = implode(',', $_POST['menus_2_exclude_categories']);
+			} else $options['menus']['2']['exclude_categories'] = '';
 		}
 		
-		if(isset($_POST['headerMenu2_exclude_pages'])) {
-			if($_POST['headerMenu2_exclude_pages']) {
-				$options['headerMenu2_exclude_pages'] = implode(',', $_POST['headerMenu2_exclude_pages']);
-			} else $options['headerMenu2_exclude_pages'] = '';
+		if(isset($_POST['menus_2_exclude_pages'])) {
+			if($_POST['menus_2_exclude_pages']) {
+				$options['menus']['2']['exclude_pages'] = implode(',', $_POST['menus_2_exclude_pages']);
+			} else $options['menus']['2']['exclude_pages'] = '';
 		}
 		
 
 		//Header Image
-		$validOptions = array('lightBlue', 'darkBlue', 'khaki', 'seaGreen', 'lightRed');
 		if(isset($_POST['headerImage'])) {
-			if ( in_array($_POST['headerImage'], $validOptions) ) $options['headerImage'] = $_POST['headerImage'];
+			if ( isset($arjunaColorSchemes[$_POST['headerImage']]) ) $options['headerImage'] = $_POST['headerImage'];
 			else $options['headerImage'] = $validOptions[0];
 		}
 		
+		if (isset($_POST['enableSearch'])) $options['enableSearch'] = (bool)$_POST['enableSearch'];
+		else $options['enableSearch'] = false;
 
 		//Comment display
 		$validOptions = array('alt', 'left', 'right');
@@ -310,53 +391,16 @@ function arjuna_add_theme_options() {
 		if(isset($_POST['sidebarDisplay'])) {
 			if ( in_array($_POST['sidebarDisplay'], $validOptions) ) $options['sidebarDisplay'] = $_POST['sidebarDisplay'];
 			else $options['sidebarDisplay'] = $validOptions[0];
+			
+			if($options['sidebarDisplay'] != 'none' && isset($_POST['contentAreaWidth'])) {
+				$options['contentAreaWidth'] = $_POST['contentAreaWidth'];
+			}
 		}
 		
 		// Whether or not to show the default bars (if no widget bars are defined)
 		if (isset($_POST['sidebar_showDefault'])) $options['sidebar_showDefault'] = true;
 		else $options['sidebar_showDefault'] = false;
 		
-		// Sidebar: RSS Button
-		if (isset($_POST['sidebar_showRSSButton'])) $options['sidebar_showRSSButton'] = true;
-		else $options['sidebar_showRSSButton'] = false;
-		
-		// Sidebar: Twitter Button
-		if (isset($_POST['sidebar_showTwitterButton'])) {
-			$twitterURL = trim($_POST['sidebar_twitterURL']);
-			$options['sidebar_showTwitterButton'] = true;
-			if ( !preg_match('/twitter\.com/i', $twitterURL) ) {
-				if(!preg_match('/\.com/i', $twitterURL)) {
-					//Add the twitter host name
-					$twitterURL = "http://twitter.com/" . $twitterURL;
-				} else {
-					$options['sidebar_showTwitterButton'] = false;
-					$twitterURL = "";
-				}
-			} elseif ( !preg_match('/http[s]?\:\/\//i', $twitterURL) ) {
-				$twitterURL = "http://" . $twitterURL;
-			} elseif ( empty($twitterURL) ) {
-				$options['sidebar_showTwitterButton'] = false;
-			}
-			$options['sidebar_twitterURL'] = $twitterURL;
-		} else $options['sidebar_showTwitterButton'] = false;
-		
-		// Sidebar: Facebook Button
-		if (isset($_POST['sidebar_showFacebookButton'])) {
-			$facebookURL = trim($_POST['sidebar_facebookURL']);
-			$options['sidebar_showFacebookButton'] = true;
-			
-			if ( empty($facebookURL) ) {
-				$options['sidebar_showFacebookButton'] = false;
-			} elseif ( !preg_match('/facebook\./i', $facebookURL) ) {
-					$twitterURL = "http://facebook.com/" . $facebookURL;
-			} elseif ( !preg_match('/http[s]?\:\/\//i', $facebookURL) ) {
-				$facebookURL = "http://" . $facebookURL;
-			}
-			$options['sidebar_facebookURL'] = $facebookURL;
-		} else $options['sidebar_showFacebookButton'] = false;
-		
-		if (isset($_POST['sidebar_displayButtonTexts'])) $options['sidebar_displayButtonTexts'] = true;
-		else $options['sidebar_displayButtonTexts'] = false;
 		
 		//Sidebar Width
 		$validOptions = array('normal', 'small', 'large');
@@ -364,6 +408,64 @@ function arjuna_add_theme_options() {
 			if ( in_array($_POST['sidebarWidth'], $validOptions) ) $options['sidebarWidth'] = $_POST['sidebarWidth'];
 			else $options['sidebarWidth'] = $validOptions[0];
 		}
+		
+		
+		//Sidebar buttons
+		if(isset($_POST['sidebarButtons_RSS_enabled'])) {
+			$options['sidebarButtons']['RSS']['enabled'] = (bool) $_POST['sidebarButtons_RSS_enabled'];
+			$options['sidebarButtons']['RSS']['label'] = $_POST['sidebarButtons_RSS_label'];
+			if(isset($_POST['sidebarButtons_RSS_extended']))
+				$options['sidebarButtons']['RSS']['extended'] = (bool) $_POST['sidebarButtons_RSS_extended'];
+		}
+		if(isset($_POST['sidebarButtons_twitter_enabled'])) {
+			$options['sidebarButtons']['twitter']['enabled'] = (bool) $_POST['sidebarButtons_twitter_enabled'];
+			$options['sidebarButtons']['twitter']['label'] = $_POST['sidebarButtons_twitter_label'];
+			$URL = $_POST['sidebarButtons_twitter_URL'];
+			if ( !preg_match('/twitter\.com/i', $URL) ) {
+				$URL = "http://twitter.com/" . $URL;
+			} elseif ( !preg_match('/http[s]?\:\/\//i', $URL) ) {
+				$URL = "http://" . $URL;
+			}
+			if ( empty($URL) ) {
+				$options['sidebarButtons']['twitter']['enabled'] = false;
+				$options['sidebarButtons']['twitter']['label'] = '';
+				$options['sidebarButtons']['twitter']['URL'] = '';
+			} else
+				$options['sidebarButtons']['twitter']['URL'] = $URL;
+		}
+		if(isset($_POST['sidebarButtons_facebook_enabled'])) {
+			$options['sidebarButtons']['facebook']['enabled'] = (bool) $_POST['sidebarButtons_facebook_enabled'];
+			$options['sidebarButtons']['facebook']['label'] = $_POST['sidebarButtons_facebook_label'];
+			$URL = $_POST['sidebarButtons_facebook_URL'];
+			if ( !preg_match('/facebook\./i', $URL) ) {
+				$URL = "http://facebook.com/" . $URL;
+			} elseif ( !preg_match('/http[s]?\:\/\//i', $URL) ) {
+				$URL = "http://" . $URL;
+			}
+			if ( empty($URL) ) {
+				$options['sidebarButtons']['facebook']['enabled'] = false;
+				$options['sidebarButtons']['facebook']['label'] = '';
+				$options['sidebarButtons']['facebook']['URL'] = '';
+			} else
+				$options['sidebarButtons']['facebook']['URL'] = $URL;
+		}
+		if(isset($_POST['sidebarButtons_linkedIn_enabled'])) {
+			$options['sidebarButtons']['linkedIn']['enabled'] = (bool) $_POST['sidebarButtons_linkedIn_enabled'];
+			$options['sidebarButtons']['linkedIn']['label'] = $_POST['sidebarButtons_linkedIn_label'];
+			$URL = $_POST['sidebarButtons_linkedIn_URL'];
+			if ( !preg_match('/linkedin\./i', $URL) ) {
+				$URL = "http://linkedin.com/" . $URL;
+			} elseif ( !preg_match('/http[s]?\:\/\//i', $URL) ) {
+				$URL = "http://" . $URL;
+			}
+			if ( empty($URL) ) {
+				$options['sidebarButtons']['linkedIn']['enabled'] = false;
+				$options['sidebarButtons']['linkedIn']['label'] = '';
+				$options['sidebarButtons']['linkedIn']['URL'] = '';
+			} else
+				$options['sidebarButtons']['linkedIn']['URL'] = $URL;
+		}
+			
 		
 		// Posts, Show Author
 		if (isset($_POST['postsShowAuthor'])) $options['postsShowAuthor'] = true;
@@ -486,6 +588,59 @@ function arjuna_add_theme_options() {
 		if (isset($_POST['miscellaneous_IE6Notice'])) $options['miscellaneous_IE6Notice'] = true;
 		else $options['miscellaneous_IE6Notice'] = false;
 		
+		//Feedburner
+		if (isset($_POST['useFeedburner'])) $options['useFeedburner'] = (bool)$_POST['useFeedburner'];
+		else $options['useFeedburner'] = false;
+		
+		$URL = $_POST['feedburnerURL'];
+		if ( !preg_match('/feedburner\.com/i', $URL) )
+			$URL = "http://feeds.feedburner.com/" . $URL;
+		elseif ( !preg_match('/http[s]?\:\/\//i', $URL) )
+			$URL = "http://" . $URL;
+		
+		if ( empty($URL) ) {
+			$options['useFeedburner'] = false;
+			$options['feedburnerURL'] = '';
+		} else
+			$options['feedburnerURL'] = $URL;
+		
+		$URL = $_POST['feedburnerCommentsURL'];
+		if(!empty($URL)) {
+			if ( !preg_match('/feedburner\.com/i', $URL) )
+				$URL = "http://feeds.feedburner.com/" . $URL;
+			elseif ( !preg_match('/http[s]?\:\/\//i', $URL) )
+				$URL = "http://" . $URL;
+		}
+		
+		//Twitter Widget
+		if (isset($_POST['twitterWidget_enabled'])) $options['twitterWidget']['enabled'] = (bool)$_POST['twitterWidget_enabled'];
+		else $options['twitterWidget']['enabled'] = false;
+		
+		if (isset($_POST['twitterWidget_title'])) $options['twitterWidget']['title'] = $_POST['twitterWidget_title'];
+		else $options['twitterWidget']['title'] = '';
+		
+		if (isset($_POST['twitterWidget_username'])) $options['twitterWidget']['username'] = $_POST['twitterWidget_username'];
+		else $options['twitterWidget']['username'] = '';
+		
+		if (isset($_POST['twitterWidget_height'])) $options['twitterWidget']['height'] = (int)$_POST['twitterWidget_height'];
+		else $options['twitterWidget']['height'] = 250;
+		
+		if (isset($_POST['twitterWidget_numTweets'])) $options['twitterWidget']['numTweets'] = (int)$_POST['twitterWidget_numTweets'];
+		else $options['twitterWidget']['numTweets'] = 4;
+		
+		if (isset($_POST['twitterWidget_scrollbar'])) $options['twitterWidget']['scrollbar'] = (bool)$_POST['twitterWidget_scrollbar'];
+		else $options['twitterWidget']['scrollbar'] = false;
+		
+		if (isset($_POST['twitterWidget_showTimestamps'])) $options['twitterWidget']['showTimestamps'] = (bool)$_POST['twitterWidget_showTimestamps'];
+		else $options['twitterWidget']['showTimestamps'] = false;
+		
+		//Copyright Owner
+		if($_POST['coprightOwnerType'] == 'default')
+			$options['copyrightOwner'] = '';
+		else $options['copyrightOwner'] = $_POST['copyrightOwner'];
+		
+		$options['feedburnerCommentsURL'] = $URL;
+		
 		
 		update_option('arjuna_options', $options);
 		$optionsSaved = true;
@@ -516,7 +671,7 @@ function arjuna_admin_is_panel_open($ID) {
 
 
 function arjuna_add_theme_page () {
-	global $optionsSaved, $formErrors;
+	global $optionsSaved, $formErrors, $arjunaColorSchemes;
 
 	$options = arjuna_get_options();
 	
@@ -528,12 +683,19 @@ function arjuna_add_theme_page () {
 	<div class="wrap">
 		<h2><?php _e('Arjuna Theme Options', 'Arjuna'); ?></h2>
 		
+		<!--[if lte IE 6]>
+		<div class="IENotice"><?php _e('This browser is outdated. Please <a href="http://www.microsoft.com/windows/internet-explorer/default.aspx">upgrade</a> your browser to enjoy this website to its fullest extent.', 'Arjuna'); ?></div>
+		<![endif]-->
+		
 		<div class="tSRSIntro">
 			<div class="tTop">
 			<?php printf(__('Thank you for using Arjuna, the free WordPress theme designed by %s.', 'Arjuna'), '<a href="http://www.srssolutions.com/en/" class="tSRS">SRS Solutions</a>'); ?>
 			<div class="tTwitter">
 				<a href="http://www.twitter.com/srssolutions"><?php _e('Follow Us', 'Arjuna'); ?></a>
 				to receive news, updates, and more.
+			</div>
+			<div class="tFacebook">
+				<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="http://www.facebook.com/pages/SRS-Solutions-An-Internet-Marketing-Company/109861081307" show_faces="false" width="600" font="lucida grande"></fb:like>
 			</div>
 			<div class="logo"></div>
 			</div>
@@ -604,7 +766,7 @@ function arjuna_add_theme_page () {
 						<tr>
 							<th scope="row"><?php _e('Enabled', 'Arjuna'); ?></th>
 							<td>
-								<label><input name="headerMenu1_show" type="checkbox"<?php if($options['headerMenu1_show']) echo ' checked="checked"'; ?> /> <?php _e('Enable this menu', 'Arjuna'); ?></label>
+								<label><input name="menus_1_enabled" type="checkbox"<?php if($options['menus']['1']['enabled']) echo ' checked="checked"'; ?> /> <?php _e('Enable this menu', 'Arjuna'); ?></label>
 								<br />
 								<span class="description"><?php _e('If disabled, the menu will be hidden.', 'Arjuna');?></span>
 							</td>
@@ -613,15 +775,15 @@ function arjuna_add_theme_page () {
 							<th scope="row"><?php _e('Dropdown', 'Arjuna'); ?></th>
 							<td>
 								<label>
-									<input name="headerMenu1_dropdown" type="radio" value="1"<?php if($options['headerMenu1_dropdown']=='1') echo ' checked="checked"'; ?> />
+									<input name="menus_1_depth" type="radio" value="1"<?php if($options['menus']['1']['depth']=='1') echo ' checked="checked"'; ?> />
 									 <?php _e('No dropdown menu', 'Arjuna'); ?>
 								</label><br />
 								<label>
-									<input name="headerMenu1_dropdown" type="radio" value="2"<?php if($options['headerMenu1_dropdown']=='2') echo ' checked="checked"'; ?> />
+									<input name="menus_1_depth" type="radio" value="2"<?php if($options['menus']['1']['depth']=='2') echo ' checked="checked"'; ?> />
 									 <?php _e('One-level dropdown menu', 'Arjuna'); ?>
 								</label><br />
 								<label>
-									<input name="headerMenu1_dropdown" type="radio" value="3"<?php if($options['headerMenu1_dropdown']=='3') echo ' checked="checked"'; ?> />
+									<input name="menus_1_depth" type="radio" value="3"<?php if($options['menus']['1']['depth']=='3') echo ' checked="checked"'; ?> />
 									 <?php _e('Two-level dropdown menu', 'Arjuna'); ?>
 								</label>
 							</td>
@@ -629,24 +791,39 @@ function arjuna_add_theme_page () {
 							<th scope="row"><?php _e('Alignment', 'Arjuna'); ?></th>
 							<td>
 								<div class="tALeft"><label>
-									<input name="headerMenu1_alignment" type="radio" value="left"<?php if($options['headerMenu1_alignment']=='left') echo ' checked="checked"'; ?> />
+									<input name="menus_1_align" type="radio" value="left"<?php if($options['menus']['1']['align']=='left') echo ' checked="checked"'; ?> />
 									 <?php _e('Left', 'Arjuna'); ?>
 								</label></div>
 								<div class="tALeft"><label>
-									<input name="headerMenu1_alignment" type="radio" value="right"<?php if($options['headerMenu1_alignment']=='right') echo ' checked="checked"'; ?> />
+									<input name="menus_1_align" type="radio" value="right"<?php if($options['menus']['1']['align']=='right') echo ' checked="checked"'; ?> />
 									 <?php _e('Right', 'Arjuna'); ?>
 								</label></div>
 							</td>
 						</tr>
 						<tr valign="top">
+							<th scope="row"><?php _e('Use', 'Arjuna'); ?></th>
+							<td id="menus-1-useNavMenus">
+								<div class="tALeft"><label>
+									<input name="menus_1_useNavMenus" type="radio" value="1"<?php if($options['menus']['1']['useNavMenus']) echo ' checked="checked"'; ?> />
+									 <?php _e('WordPress Custom Menus', 'Arjuna'); ?>
+								</label></div>
+								<div class="tALeft"><label>
+									<input name="menus_1_useNavMenus" type="radio" value="0"<?php if(!$options['menus']['1']['useNavMenus']) echo ' checked="checked"'; ?> />
+									 <?php _e('Legacy Menus', 'Arjuna'); ?>
+								</label></div>
+							</td>
+						</tr>
+					</tbody>
+					<tbody id="menus-1-useNavMenus-legacy"<?php if($options['menus']['1']['useNavMenus']) echo ' style="display:none;"'; ?>>
+						<tr valign="top">
 							<th scope="row"><?php _e('Menu lists only', 'Arjuna'); ?></th>
 							<td>
 								<div class="tALeft"><label>
-									<input name="headerMenu1_display" type="radio" onclick="headerMenu1_tD(this);" value="pages"<?php if($options['headerMenu1_display']=='pages') echo ' checked="checked"'; ?> />
+									<input name="menus_1_display" type="radio" onclick="headerMenu1_tD(this);" value="pages"<?php if($options['menus']['1']['display']=='pages') echo ' checked="checked"'; ?> />
 									 <?php _e('Pages', 'Arjuna'); ?>
 								</label></div>
 								<div class="tALeft"><label>
-									<input name="headerMenu1_display" type="radio" onclick="headerMenu1_tD(this);" value="categories"<?php if($options['headerMenu1_display']=='categories') echo ' checked="checked"'; ?> />
+									<input name="menus_1_display" type="radio" onclick="headerMenu1_tD(this);" value="categories"<?php if($options['menus']['1']['display']=='categories') echo ' checked="checked"'; ?> />
 									 <?php _e('Categories', 'Arjuna'); ?>
 								</label></div>
 							</td>
@@ -654,45 +831,45 @@ function arjuna_add_theme_page () {
 						<tr valign="top">
 							<th scope="row"><?php _e('Sorting Order', 'Arjuna'); ?></th>
 							<td>
-								<div id="headerMenu1_sortBy_categories"<?php if($options['headerMenu1_display']=='pages'): ?> style="display:none;"<?php endif; ?>>
-								<?php _e('Sort menu items in', 'Arjuna'); ?> 
-								<select name="headerMenu1_sortOrder_categories">
-									<option value="asc"<?php if($options['headerMenu1_sortOrder']=='asc'): ?> selected="selected"<?php endif; ?>><?php _e('ascending', 'Arjuna'); ?></option>
-									<option value="desc"<?php if($options['headerMenu1_sortOrder']=='desc'): ?> selected="selected"<?php endif; ?>><?php _e('descending', 'Arjuna'); ?></option>
-								</select>
-								<?php _e('order by', 'Arjuna'); ?>
-								<select name="headerMenu1_sortBy_categories">
-									<option value="name"<?php if($options['headerMenu1_sortBy']=='name'): ?> selected="selected"<?php endif; ?>><?php _e('Category Name', 'Arjuna'); ?></option>
-									<option value="ID"<?php if($options['headerMenu1_sortBy']=='ID'): ?> selected="selected"<?php endif; ?>><?php _e('Category ID', 'Arjuna'); ?></option>
-									<option value="count"<?php if($options['headerMenu1_sortBy']=='count'): ?> selected="selected"<?php endif; ?>><?php _e('Post Count', 'Arjuna'); ?></option>
-									<option value="slug"<?php if($options['headerMenu1_sortBy']=='slug'): ?> selected="selected"<?php endif; ?>><?php _e('Category Slug', 'Arjuna'); ?></option>
-								</select>
+								<div id="menus_1_sortBy_categories"<?php if($options['menus']['1']['display']=='pages'): ?> style="display:none;"<?php endif; ?>>
+									<?php _e('Sort menu items in', 'Arjuna'); ?> 
+									<select name="menus_1_sortOrder_categories">
+										<option value="asc"<?php if($options['menus']['1']['sortOrder']=='asc'): ?> selected="selected"<?php endif; ?>><?php _e('ascending', 'Arjuna'); ?></option>
+										<option value="desc"<?php if($options['menus']['1']['sortOrder']=='desc'): ?> selected="selected"<?php endif; ?>><?php _e('descending', 'Arjuna'); ?></option>
+									</select>
+									<?php _e('order by', 'Arjuna'); ?>
+									<select name="menus_1_sortBy_categories">
+										<option value="name"<?php if($options['menus']['1']['sortBy']=='name'): ?> selected="selected"<?php endif; ?>><?php _e('Category Name', 'Arjuna'); ?></option>
+										<option value="ID"<?php if($options['menus']['1']['sortBy']=='ID'): ?> selected="selected"<?php endif; ?>><?php _e('Category ID', 'Arjuna'); ?></option>
+										<option value="count"<?php if($options['menus']['1']['sortBy']=='count'): ?> selected="selected"<?php endif; ?>><?php _e('Post Count', 'Arjuna'); ?></option>
+										<option value="slug"<?php if($options['menus']['1']['sortBy']=='slug'): ?> selected="selected"<?php endif; ?>><?php _e('Category Slug', 'Arjuna'); ?></option>
+									</select>
 								</div>
-								<div id="headerMenu1_sortBy_pages"<?php if($options['headerMenu1_display']=='categories'): ?> style="display:none;"<?php endif; ?>>
-								<?php _e('Sort menu items in', 'Arjuna'); ?> 
-								<select name="headerMenu1_sortOrder_pages">
-									<option value="asc"<?php if($options['headerMenu1_sortOrder']=='asc'): ?> selected="selected"<?php endif; ?>><?php _e('ascending', 'Arjuna'); ?></option>
-									<option value="desc"<?php if($options['headerMenu1_sortOrder']=='desc'): ?> selected="selected"<?php endif; ?>><?php _e('descending', 'Arjuna'); ?></option>
-								</select>
-								<?php _e('order by', 'Arjuna'); ?>
-								<select name="headerMenu1_sortBy_pages">
-									<option value="post_title"<?php if($options['headerMenu1_sortBy']=='post_title'): ?> selected="selected"<?php endif; ?>><?php _e('Page Title', 'Arjuna'); ?></option>
-									<option value="ID"<?php if($options['headerMenu1_sortBy']=='ID'): ?> selected="selected"<?php endif; ?>><?php _e('Page ID', 'Arjuna'); ?></option>
-									<option value="post_name"<?php if($options['headerMenu1_sortBy']=='post_name'): ?> selected="selected"<?php endif; ?>><?php _e('Page Slug', 'Arjuna'); ?></option>
-									<option value="menu_order"<?php if($options['headerMenu1_sortBy']=='menu_order'): ?> selected="selected"<?php endif; ?>><?php _e('Page Order', 'Arjuna'); ?></option>
-								</select>
+								<div id="menus_1_sortBy_pages"<?php if($options['menus']['1']['display']=='categories'): ?> style="display:none;"<?php endif; ?>>
+									<?php _e('Sort menu items in', 'Arjuna'); ?> 
+									<select name="menus_1_sortOrder_pages">
+										<option value="asc"<?php if($options['menus']['1']['sortOrder']=='asc'): ?> selected="selected"<?php endif; ?>><?php _e('ascending', 'Arjuna'); ?></option>
+										<option value="desc"<?php if($options['menus']['1']['sortOrder']=='desc'): ?> selected="selected"<?php endif; ?>><?php _e('descending', 'Arjuna'); ?></option>
+									</select>
+									<?php _e('order by', 'Arjuna'); ?>
+									<select name="menus_1_sortBy_pages">
+										<option value="post_title"<?php if($options['menus']['1']['sortBy']=='post_title'): ?> selected="selected"<?php endif; ?>><?php _e('Page Title', 'Arjuna'); ?></option>
+										<option value="ID"<?php if($options['menus']['1']['sortBy']=='ID'): ?> selected="selected"<?php endif; ?>><?php _e('Page ID', 'Arjuna'); ?></option>
+										<option value="post_name"<?php if($options['menus']['1']['sortBy']=='post_name'): ?> selected="selected"<?php endif; ?>><?php _e('Page Slug', 'Arjuna'); ?></option>
+										<option value="menu_order"<?php if($options['menus']['1']['sortBy']=='menu_order'): ?> selected="selected"<?php endif; ?>><?php _e('Page Order', 'Arjuna'); ?></option>
+									</select>
 								</div>
 							</td>
 						</tr>
 						<tr valign="top">
 							<th scope="row"><?php _e('Menu Items', 'Arjuna'); ?></th>
 							<td>
-							<div id="headerMenu1_include_categories"<?php if($options['headerMenu1_display']=='pages'): ?> style="display:none;"<?php endif; ?>>
+							<div id="menus_1_include_categories"<?php if($options['menus']['1']['display']=='pages'): ?> style="display:none;"<?php endif; ?>>
 								<?php _e('Include categories', 'Arjuna'); ?><br />
 								<?php
-								$categories = arjuna_get_all_categories($options['headerMenu1_exclude_categories'], '', $options['headerMenu1_dropdown']);
+								$categories = arjuna_get_all_categories($options['menus']['1']['exclude_categories'], '', $options['menus']['1']['depth']);
 								?>
-								<select multiple="multiple" size="7" name="headerMenu1_include_categories[]" id="hm1ic" style="height:auto;width:400px; padding-right:20px;">
+								<select multiple="multiple" size="7" name="menus_1_include_categories[]" id="hm1ic" style="height:auto;width:400px; padding-right:20px;">
 									<?php arjuna_admin_walk_categories($categories); ?>
 								</select>
 								<div class="tArrows">
@@ -700,19 +877,19 @@ function arjuna_add_theme_page () {
 								</div>
 								<?php _e('Exclude categories', 'Arjuna'); ?><br />
 								<?php
-								$categories = arjuna_get_all_categories('', $options['headerMenu1_exclude_categories'], $options['headerMenu1_dropdown']);
+								$categories = arjuna_get_all_categories('', $options['menus']['1']['exclude_categories'], $options['menus']['1']['depth']);
 								?>
-								<select multiple="multiple" size="7" name="headerMenu1_exclude_categories[]" id="hm1ec" style="height:auto;width:400px; padding-right:20px;">
-									<?php if(!empty($options['headerMenu1_exclude_categories'])) arjuna_admin_walk_categories($categories); ?>
+								<select multiple="multiple" size="7" name="menus_1_exclude_categories[]" id="hm1ec" style="height:auto;width:400px; padding-right:20px;">
+									<?php if(!empty($options['menus']['1']['exclude_categories'])) arjuna_admin_walk_categories($categories); ?>
 								</select>
 								<span class="description"><?php _e('Note: While the above fields show empty categories, the theme will only display categories that have at least one published post in them.', 'Arjuna'); ?></span>
 							</div>
-							<div id="headerMenu1_include_pages"<?php if($options['headerMenu1_display']!='pages'): ?> style="display:none;"<?php endif; ?>>
+							<div id="menus_1_include_pages"<?php if($options['menus']['1']['display']!='pages'): ?> style="display:none;"<?php endif; ?>>
 								<?php _e('Include pages', 'Arjuna'); ?><br />
 								<?php
-								$pages = arjuna_get_all_pages($options['headerMenu1_exclude_pages'], '', $options['headerMenu1_dropdown']);
+								$pages = arjuna_get_all_pages($options['menus']['1']['exclude_pages'], '', $options['menus']['1']['depth']);
 								?>
-								<select multiple="multiple" size="7" name="headerMenu1_include_pages[]" id="hm1ip" style="height:auto;width:400px; padding-right:20px;">
+								<select multiple="multiple" size="7" name="menus_1_include_pages[]" id="hm1ip" style="height:auto;width:400px; padding-right:20px;">
 									<?php arjuna_admin_walk_pages($pages); ?>
 								</select>
 								<div class="tArrows">
@@ -720,14 +897,15 @@ function arjuna_add_theme_page () {
 								</div>
 								<?php _e('Exclude pages', 'Arjuna'); ?><br />
 								<?php
-								$pages = arjuna_get_all_pages('', $options['headerMenu1_exclude_pages'], $options['headerMenu1_dropdown']);
+								$pages = arjuna_get_all_pages('', $options['menus']['1']['exclude_pages'], $options['menus']['1']['depth']);
 								?>
-								<select multiple="multiple" size="7" name="headerMenu1_exclude_pages[]" id="hm1ep" style="height:auto;width:400px; padding-right:20px;">
-									<?php if(!empty($options['headerMenu1_exclude_pages'])) arjuna_admin_walk_pages($pages); ?>
+								<select multiple="multiple" size="7" name="menus_1_exclude_pages[]" id="hm1ep" style="height:auto;width:400px; padding-right:20px;">
+									<?php if(!empty($options['menus']['1']['exclude_pages'])) arjuna_admin_walk_pages($pages); ?>
 								</select>
 							</div>
 							</td>
 						</tr>
+					</tbody>
 						<?php /*
 						<tr id="headerMenu1_disableParentPageLink_pages"<?php if($options['headerMenu1_display']!='pages'): ?> style="display:none;"<?php endif; ?>>
 							<th scope="row"><?php _e('Parent Page Links', 'Arjuna'); ?></th>
@@ -753,7 +931,7 @@ function arjuna_add_theme_page () {
 						<tr>
 							<th scope="row"><?php _e('Enabled', 'Arjuna'); ?></th>
 							<td>
-								<label><input name="headerMenu2_show" type="checkbox"<?php if($options['headerMenu2_show']) echo ' checked="checked"'; ?> /> <?php _e('Enable this menu', 'Arjuna'); ?></label>
+								<label><input name="menus_2_enabled" type="checkbox"<?php if($options['menus']['2']['enabled']) echo ' checked="checked"'; ?> /> <?php _e('Enable this menu', 'Arjuna'); ?></label>
 								<br />
 								<span class="description"><?php _e('If disabled, the menu will be hidden.', 'Arjuna');?></span>
 							</td>
@@ -761,35 +939,56 @@ function arjuna_add_theme_page () {
 						<tr>
 							<th scope="row"><?php _e('Separators', 'Arjuna'); ?></th>
 							<td>
-								<label><input name="headerMenu2_displaySeparators" type="checkbox"<?php if($options['headerMenu2_displaySeparators']) echo ' checked="checked"'; ?> /> <?php _e('Visually separate the menu buttons', 'Arjuna'); ?></label>
+								<label><input name="menus_2_displaySeparators" type="checkbox"<?php if($options['menus']['2']['displaySeparators']) echo ' checked="checked"'; ?> /> <?php _e('Visually separate the menu buttons', 'Arjuna'); ?></label>
 							</td>
 						</tr>
 						<tr valign="top">
 							<th scope="row"><?php _e('Dropdown', 'Arjuna'); ?></th>
 							<td>
 								<label>
-									<input name="headerMenu2_dropdown" type="radio" value="1"<?php if($options['headerMenu2_dropdown']=='1') echo ' checked="checked"'; ?> />
+									<input name="menus_2_depth" type="radio" value="1"<?php if($options['menus']['2']['depth']=='1') echo ' checked="checked"'; ?> />
 									 <?php _e('No dropdown menu', 'Arjuna'); ?>
 								</label><br />
 								<label>
-									<input name="headerMenu2_dropdown" type="radio" value="2"<?php if($options['headerMenu2_dropdown']=='2') echo ' checked="checked"'; ?> />
+									<input name="menus_2_depth" type="radio" value="2"<?php if($options['menus']['2']['depth']=='2') echo ' checked="checked"'; ?> />
 									 <?php _e('One-level dropdown menu', 'Arjuna'); ?>
 								</label><br />
 								<label>
-									<input name="headerMenu2_dropdown" type="radio" value="3"<?php if($options['headerMenu2_dropdown']=='3') echo ' checked="checked"'; ?> />
+									<input name="menus_2_depth" type="radio" value="3"<?php if($options['menus']['2']['depth']=='3') echo ' checked="checked"'; ?> />
 									 <?php _e('Two-level dropdown menu', 'Arjuna'); ?>
 								</label>
 							</td>
 						</tr>
+						<tr>
+							<th scope="row"><?php _e('Home Button', 'Arjuna'); ?></th>
+							<td>
+								<label><input name="menus_2_displayHome" type="checkbox"<?php if($options['menus']['2']['displayHome']) echo ' checked="checked"'; ?> /> <?php _e('Display Home button', 'Arjuna'); ?></label>
+							</td>
+						</tr>
+						<tr valign="top">
+							<th scope="row"><?php _e('Use', 'Arjuna'); ?></th>
+							<td id="menus-2-useNavMenus">
+								<div class="tALeft"><label>
+									<input name="menus_2_useNavMenus" type="radio" value="1"<?php if($options['menus']['2']['useNavMenus']) echo ' checked="checked"'; ?> />
+									 <?php _e('WordPress Custom Menus', 'Arjuna'); ?>
+								</label></div>
+								<div class="tALeft"><label>
+									<input name="menus_2_useNavMenus" type="radio" value="0"<?php if(!$options['menus']['2']['useNavMenus']) echo ' checked="checked"'; ?> />
+									 <?php _e('Legacy Menus', 'Arjuna'); ?>
+								</label></div>
+							</td>
+						</tr>
+					</tbody>
+					<tbody id="menus-2-useNavMenus-legacy"<?php if($options['menus']['2']['useNavMenus']) echo ' style="display:none;"'; ?>>
 						<tr valign="top">
 							<th scope="row"><?php _e('Menu lists only', 'Arjuna'); ?></th>
 							<td>
 								<div class="tALeft"><label>
-									<input name="headerMenu2_display" type="radio" onclick="headerMenu2_tD(this);" value="pages"<?php if($options['headerMenu2_display']=='pages') echo ' checked="checked"'; ?> />
+									<input name="menus_2_display" type="radio" onclick="headerMenu2_tD(this);" value="pages"<?php if($options['menus']['2']['display']=='pages') echo ' checked="checked"'; ?> />
 									 <?php _e('Pages', 'Arjuna'); ?>
 								</label></div>
 								<div class="tALeft"><label>
-									<input name="headerMenu2_display" type="radio" onclick="headerMenu2_tD(this);" value="categories"<?php if($options['headerMenu2_display']=='categories') echo ' checked="checked"'; ?> />
+									<input name="menus_2_display" type="radio" onclick="headerMenu2_tD(this);" value="categories"<?php if($options['menus']['2']['display']=='categories') echo ' checked="checked"'; ?> />
 									 <?php _e('Categories', 'Arjuna'); ?>
 								</label></div>
 							</td>
@@ -797,51 +996,45 @@ function arjuna_add_theme_page () {
 						<tr valign="top">
 							<th scope="row"><?php _e('Sorting Order', 'Arjuna'); ?></th>
 							<td>
-								<div id="headerMenu2_sortBy_categories"<?php if($options['headerMenu2_display']=='pages'): ?> style="display:none;"<?php endif; ?>>
-								<?php _e('Sort menu items in', 'Arjuna'); ?> 
-								<select name="headerMenu2_sortOrder_categories">
-									<option value="asc"<?php if($options['headerMenu2_sortOrder']=='asc'): ?> selected="selected"<?php endif; ?>><?php _e('ascending', 'Arjuna'); ?></option>
-									<option value="desc"<?php if($options['headerMenu2_sortOrder']=='desc'): ?> selected="selected"<?php endif; ?>><?php _e('descending', 'Arjuna'); ?></option>
-								</select>
-								<?php _e('order by', 'Arjuna'); ?>
-								<select name="headerMenu2_sortBy_categories">
-									<option value="name"<?php if($options['headerMenu2_sortBy']=='name'): ?> selected="selected"<?php endif; ?>><?php _e('Category Name', 'Arjuna'); ?></option>
-									<option value="ID"<?php if($options['headerMenu2_sortBy']=='ID'): ?> selected="selected"<?php endif; ?>><?php _e('Category ID', 'Arjuna'); ?></option>
-									<option value="count"<?php if($options['headerMenu2_sortBy']=='count'): ?> selected="selected"<?php endif; ?>><?php _e('Post Count', 'Arjuna'); ?></option>
-									<option value="slug"<?php if($options['headerMenu2_sortBy']=='slug'): ?> selected="selected"<?php endif; ?>><?php _e('Category Slug', 'Arjuna'); ?></option>
-								</select>
+								<div id="menus_2_sortBy_categories"<?php if($options['menus']['2']['display']=='pages'): ?> style="display:none;"<?php endif; ?>>
+									<?php _e('Sort menu items in', 'Arjuna'); ?> 
+									<select name="menus_2_sortOrder_categories">
+										<option value="asc"<?php if($options['menus']['2']['sortOrder']=='asc'): ?> selected="selected"<?php endif; ?>><?php _e('ascending', 'Arjuna'); ?></option>
+										<option value="desc"<?php if($options['menus']['2']['sortOrder']=='desc'): ?> selected="selected"<?php endif; ?>><?php _e('descending', 'Arjuna'); ?></option>
+									</select>
+									<?php _e('order by', 'Arjuna'); ?>
+									<select name="menus_2_sortBy_categories">
+										<option value="name"<?php if($options['menus']['2']['sortBy']=='name'): ?> selected="selected"<?php endif; ?>><?php _e('Category Name', 'Arjuna'); ?></option>
+										<option value="ID"<?php if($options['menus']['2']['sortBy']=='ID'): ?> selected="selected"<?php endif; ?>><?php _e('Category ID', 'Arjuna'); ?></option>
+										<option value="count"<?php if($options['menus']['2']['sortBy']=='count'): ?> selected="selected"<?php endif; ?>><?php _e('Post Count', 'Arjuna'); ?></option>
+										<option value="slug"<?php if($options['menus']['2']['sortBy']=='slug'): ?> selected="selected"<?php endif; ?>><?php _e('Category Slug', 'Arjuna'); ?></option>
+									</select>
 								</div>
-								<div id="headerMenu2_sortBy_pages"<?php if($options['headerMenu2_display']=='categories'): ?> style="display:none;"<?php endif; ?>>
-								<?php _e('Sort menu items in', 'Arjuna'); ?> 
-								<select name="headerMenu2_sortOrder_pages">
-									<option value="asc"<?php if($options['headerMenu2_sortOrder']=='asc'): ?> selected="selected"<?php endif; ?>><?php _e('ascending', 'Arjuna'); ?></option>
-									<option value="desc"<?php if($options['headerMenu2_sortOrder']=='desc'): ?> selected="selected"<?php endif; ?>><?php _e('descending', 'Arjuna'); ?></option>
-								</select>
-								<?php _e('order by', 'Arjuna'); ?>
-								<select name="headerMenu2_sortBy_pages">
-									<option value="post_title"<?php if($options['headerMenu2_sortBy']=='post_title'): ?> selected="selected"<?php endif; ?>><?php _e('Page Title', 'Arjuna'); ?></option>
-									<option value="ID"<?php if($options['headerMenu2_sortBy']=='ID'): ?> selected="selected"<?php endif; ?>><?php _e('Page ID', 'Arjuna'); ?></option>
-									<option value="post_name"<?php if($options['headerMenu2_sortBy']=='post_name'): ?> selected="selected"<?php endif; ?>><?php _e('Page Slug', 'Arjuna'); ?></option>
-									<option value="menu_order"<?php if($options['headerMenu2_sortBy']=='menu_order'): ?> selected="selected"<?php endif; ?>><?php _e('Page Order', 'Arjuna'); ?></option>
-								</select>
+								<div id="menus_2_sortBy_pages"<?php if($options['menus']['2']['display']=='categories'): ?> style="display:none;"<?php endif; ?>>
+									<?php _e('Sort menu items in', 'Arjuna'); ?> 
+									<select name="menus_2_sortOrder_pages">
+										<option value="asc"<?php if($options['menus']['2']['sortOrder']=='asc'): ?> selected="selected"<?php endif; ?>><?php _e('ascending', 'Arjuna'); ?></option>
+										<option value="desc"<?php if($options['menus']['2']['sortOrder']=='desc'): ?> selected="selected"<?php endif; ?>><?php _e('descending', 'Arjuna'); ?></option>
+									</select>
+									<?php _e('order by', 'Arjuna'); ?>
+									<select name="menus_2_sortBy_pages">
+										<option value="post_title"<?php if($options['menus']['2']['sortBy']=='post_title'): ?> selected="selected"<?php endif; ?>><?php _e('Page Title', 'Arjuna'); ?></option>
+										<option value="ID"<?php if($options['menus']['2']['sortBy']=='ID'): ?> selected="selected"<?php endif; ?>><?php _e('Page ID', 'Arjuna'); ?></option>
+										<option value="post_name"<?php if($options['menus']['2']['sortBy']=='post_name'): ?> selected="selected"<?php endif; ?>><?php _e('Page Slug', 'Arjuna'); ?></option>
+										<option value="menu_order"<?php if($options['menus']['2']['sortBy']=='menu_order'): ?> selected="selected"<?php endif; ?>><?php _e('Page Order', 'Arjuna'); ?></option>
+									</select>
 								</div>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row"><?php _e('Home Button', 'Arjuna'); ?></th>
-							<td>
-								<label><input name="headerMenu2_displayHomeButton" type="checkbox"<?php if($options['headerMenu2_displayHomeButton']) echo ' checked="checked"'; ?> /> <?php _e('Display Home button', 'Arjuna'); ?></label>
 							</td>
 						</tr>
 						<tr valign="top">
 							<th scope="row"><?php _e('Menu Items', 'Arjuna'); ?></th>
 							<td>
-							<div id="headerMenu2_include_categories"<?php if($options['headerMenu2_display']=='pages'): ?> style="display:none;"<?php endif; ?>>
+							<div id="menus_2_include_categories"<?php if($options['menus']['2']['display']=='pages'): ?> style="display:none;"<?php endif; ?>>
 								<?php _e('Include categories', 'Arjuna'); ?><br />
 								<?php
-								$categories = arjuna_get_all_categories($options['headerMenu2_exclude_categories'], '', $options['headerMenu2_dropdown']);
+								$categories = arjuna_get_all_categories($options['menus']['2']['exclude_categories'], '', $options['menus']['2']['depth']);
 								?>
-								<select multiple="multiple" size="7" name="headerMenu2_include_categories[]" id="hm2ic" style="height:auto;width:400px; padding-right:20px;">
+								<select multiple="multiple" size="7" name="menus_2_include_categories[]" id="hm2ic" style="height:auto;width:400px; padding-right:20px;">
 									<?php arjuna_admin_walk_categories($categories); ?>
 								</select>
 								<div class="tArrows">
@@ -849,19 +1042,19 @@ function arjuna_add_theme_page () {
 								</div>
 								<?php _e('Exclude categories', 'Arjuna'); ?><br />
 								<?php
-								$categories = arjuna_get_all_categories('', $options['headerMenu2_exclude_categories'], $options['headerMenu2_dropdown']);
+								$categories = arjuna_get_all_categories('', $options['menus']['2']['exclude_categories'], $options['menus']['2']['depth']);
 								?>
-								<select multiple="multiple" size="7" name="headerMenu2_exclude_categories[]" id="hm2ec" style="height:auto;width:400px; padding-right:20px;">
-									<?php if(!empty($options['headerMenu2_exclude_categories'])) arjuna_admin_walk_categories($categories); ?>	
+								<select multiple="multiple" size="7" name="menus_2_exclude_categories[]" id="hm2ec" style="height:auto;width:400px; padding-right:20px;">
+									<?php if(!empty($options['menus']['2']['exclude_categories'])) arjuna_admin_walk_categories($categories); ?>	
 								</select>
 								<span class="description"><?php _e('Note: While the above fields show empty categories, the theme will only display categories that have at least one published post in them.</span>', 'Arjuna'); ?></span>
 							</div>
-							<div id="headerMenu2_include_pages"<?php if($options['headerMenu2_display']!='pages'): ?> style="display:none;"<?php endif; ?>>
+							<div id="menus_2_include_pages"<?php if($options['menus']['2']['display']!='pages'): ?> style="display:none;"<?php endif; ?>>
 								<?php _e('Include pages', 'Arjuna'); ?><br />
 								<?php
-								$pages = arjuna_get_all_pages($options['headerMenu2_exclude_pages'], '', $options['headerMenu2_dropdown']);
+								$pages = arjuna_get_all_pages($options['menus']['2']['exclude_pages'], '', $options['menus']['2']['depth']);
 								?>
-								<select multiple="multiple" size="7" name="headerMenu2_include_pages[]" id="hm2ip" style="height:auto;width:400px; padding-right:20px;">
+								<select multiple="multiple" size="7" name="menus_2_include_pages[]" id="hm2ip" style="height:auto;width:400px; padding-right:20px;">
 									<?php arjuna_admin_walk_pages($pages); ?>
 								</select>
 								<div class="tArrows">
@@ -869,24 +1062,14 @@ function arjuna_add_theme_page () {
 								</div>
 								<?php _e('Exclude pages', 'Arjuna'); ?><br />
 								<?php
-								$pages = arjuna_get_all_pages('', $options['headerMenu2_exclude_pages'], $options['headerMenu2_dropdown']);
+								$pages = arjuna_get_all_pages('', $options['menus']['2']['exclude_pages'], $options['menus']['2']['depth']);
 								?>
-								<select multiple="multiple" size="7" name="headerMenu2_exclude_pages[]" id="hm2ep" style="height:auto;width:400px; padding-right:20px;">
-									<?php if(!empty($options['headerMenu2_exclude_pages'])) arjuna_admin_walk_pages($pages); ?>	
+								<select multiple="multiple" size="7" name="menus_2_exclude_pages[]" id="hm2ep" style="height:auto;width:400px; padding-right:20px;">
+									<?php if(!empty($options['menus']['2']['exclude_pages'])) arjuna_admin_walk_pages($pages); ?>	
 								</select>
 							</div>
 							</td>
 						</tr>
-						<?php /*
-						<tr id="headerMenu2_disableParentPageLink_pages"<?php if($options['headerMenu2_display']!='pages'): ?> style="display:none;"<?php endif; ?>>
-							<th scope="row"><?php _e('Parent Page Links', 'Arjuna'); ?></th>
-							<td>
-								<label><input name="headerMenu2_disableParentPageLink" type="checkbox"<?php if($options['headerMenu2_disableParentPageLink']) echo ' checked="checked"'; ?> /> <?php _e('Disable hyperlinking of parent page items.', 'Arjuna'); ?></label>
-								<br />
-								<span class="description"><?php _e('If checked, the menu\'s "zero level" items will not be linked to their respective permalinks. This is especially useful if you use a dropdown menu for each page item and you don\' want your users to be able to click on the parent page items.', 'Arjuna');?></span>
-							</td>
-						</tr>
-						*/ ?>
 					</tbody>
 				</table>
 			</div>
@@ -937,31 +1120,16 @@ function arjuna_add_theme_page () {
 									<tbody>
 									<tr>
 									<td>
-										<div class="tImageOptions" style="float:none;overflow:hidden;">
-											<input name="headerImage" type="radio" id="headerImage_lightBlue" value="lightBlue"<?php if($options['headerImage']=='lightBlue') echo ' checked="checked"'; ?> />
-											<div class="tImage" id="icon-lightBlue"></div>
-											<span><label for="headerImage_lightBlue"><?php _e('Light Blue', 'Arjuna'); ?></label></span>
-										</div>
-										<div class="tImageOptions" style="float:none;overflow:hidden;">
-											<input name="headerImage" type="radio" id="headerImage_darkBlue" value="darkBlue"<?php if($options['headerImage']=='darkBlue') echo ' checked="checked"'; ?> />
-											<div class="tImage" id="icon-darkBlue"></div>
-											<span><label for="headerImage_darkBlue"><?php _e('Dark Blue', 'Arjuna'); ?></label></span>
-										</div>
-										<div class="tImageOptions" style="float:none;overflow:hidden;">
-											<input name="headerImage" type="radio" id="headerImage_khaki" value="khaki"<?php if($options['headerImage']=='khaki') echo ' checked="checked"'; ?> />
-											<div class="tImage" id="icon-khaki"></div>
-											<span><label for="headerImage_khaki"><?php _e('Khaki', 'Arjuna'); ?></label></span>
-										</div>
-										<div class="tImageOptions" style="float:none;overflow:hidden;">
-											<input name="headerImage" type="radio" id="headerImage_seaGreen" value="seaGreen"<?php if($options['headerImage']=='seaGreen') echo ' checked="checked"'; ?> />
-											<div class="tImage" id="icon-seaGreen"></div>
-											<span><label for="headerImage_seaGreen"><?php _e('Sea Green', 'Arjuna'); ?></label></span>
-										</div>
-										<div class="tImageOptions" style="float:none;overflow:hidden;">
-											<input name="headerImage" type="radio" id="headerImage_lightRed" value="lightRed"<?php if($options['headerImage']=='lightRed') echo ' checked="checked"'; ?> />
-											<div class="tImage" id="icon-lightRed"></div>
-											<span><label for="headerImage_lightRed"><?php _e('Light Red', 'Arjuna'); ?></label></span>
-										</div>
+										<?php 
+										foreach($arjunaColorSchemes as $color => $name) {
+											print '<div class="tImageOptions" style="float:none;overflow:hidden;">';
+												print '<input name="headerImage" type="radio" id="headerImage_'.$color.'" value="'.$color.'"' . ($options['headerImage']==$color ? ' checked="checked"' : '') . ' />';
+												print '<div class="tImage" id="icon-'.$color.'"></div>';
+												print '<span><label for="headerImage_'.$color.'">'.$name.'</label></span>';
+											print '</div>';
+										}
+											
+										?>
 									</td>
 									</tr>
 									</tbody>
@@ -1014,13 +1182,28 @@ function arjuna_add_theme_page () {
 								</div>
 							</td>
 						</tr>
-						<tr>
+						<tr id="sidebar-width-panel">
 							<th scope="row"><?php _e('Sidebar Width', 'Arjuna'); ?></th>
 							<td>
-									<div class="tALeft"><label><input name="sidebarWidth" type="radio" id="sidebarWidth_small" value="small"<?php if($options['sidebarWidth']=='small') echo ' checked="checked"'; ?> /> <?php _e('Small', 'Arjuna'); ?></label></div>
-									<div class="tALeft"><label><input name="sidebarWidth" type="radio" id="sidebarWidth_normal" value="normal"<?php if($options['sidebarWidth']=='normal') echo ' checked="checked"'; ?> /> <?php _e('Normal', 'Arjuna'); ?></label></div>
-									<div class="tALeft"><label><input name="sidebarWidth" type="radio" id="sidebarWidth_large" value="large"<?php if($options['sidebarWidth']=='large') echo ' checked="checked"'; ?> /> <?php _e('Large', 'Arjuna'); ?></label></div>
-									<br /><span class="description"><?php _e('If you intend to use the two column sidebar, we recommend to choose either the normal or the large sidebar.', 'Arjuna'); ?></span>
+								<div id="content-area-width-slider" class="<?php print $options['sidebarDisplay']; ?>">
+									<div class="preview">
+										<div class="content-area" id="preview-content-area"></div>
+										<div class="sidebar" id="preview-sidebar"></div>
+									</div>
+									<div class="right">
+										<div class="slider" id="content-area-slider">
+											<div class="handle" id="content-area-handle"></div>
+										</div>
+										<div class="custom">
+											<p><?php _e('Content Area', 'Arjuna'); ?>:</p>
+											<input type="text" id="content-area-width" maxlength="3" /> px
+											<p><?php _e('Sidebar', 'Arjuna'); ?>:</p>
+											<input type="text" id="sidebar-width" maxlength="3" /> px
+										</div>
+									</div>
+									<input type="hidden" name="contentAreaWidth" id="real-content-area-width" value="<?php print $options['contentAreaWidth'] ?>" />
+								</div>
+								<br /><span class="description"><?php _e('Use the slider to adjust the width of the sidebar.', 'Arjuna'); ?></span>
 							</td>
 						</tr>
 						<tr>
@@ -1031,33 +1214,63 @@ function arjuna_add_theme_page () {
 							</td>
 						</tr>
 						<tr>
-							<th scope="row"><?php _e('RSS Button', 'Arjuna'); ?></th>
+							<th scope="row"><?php _e('Sidebar Buttons', 'Arjuna'); ?></th>
 							<td>
-								<label><input name="sidebar_showRSSButton" type="checkbox"<?php if($options['sidebar_showRSSButton']) echo ' checked="checked"'; ?> /> <?php _e('Display an RSS button on the very top of the sidebar.', 'Arjuna'); ?></label>
+								<table class="sidebar-buttons" id="sidebar-buttons">
+									<tr class="rss<?php if(!$options['sidebarButtons']['RSS']['enabled']) echo ' disabled'; if($options['sidebarButtons']['RSS']['extended']) echo ' rss-extended'; ?>">
+										<td class="checkbox-col"><input type="checkbox" class="checkbox" name="sidebarButtons_RSS_enabled"<?php if($options['sidebarButtons']['RSS']['enabled']) echo ' checked="checked"'; ?> /></td>
+										<td><div class="preview"></div></td>
+										<td class="label"><input name="sidebarButtons_RSS_extended" id="sidebarButtons_RSS_extended" type="checkbox"<?php if($options['sidebarButtons']['RSS']['extended']) echo ' checked="checked"'; ?> /></td>
+										<td class="text"><label for="sidebarButtons_RSS_extended"><?php _e('Use extended button.', 'Arjuna'); ?></label></td>
+										<td class="label"><?php _e('Label', 'Arjuna'); ?>:</td>
+										<td><input type="text" name="sidebarButtons_RSS_label" value="<?php echo $options['sidebarButtons']['RSS']['label']; ?>" /></td>
+									</tr>
+									<tr class="twitter<?php if(!$options['sidebarButtons']['twitter']['enabled']) echo ' disabled'; ?>">
+										<td class="checkbox-col"><input type="checkbox" class="checkbox" name="sidebarButtons_twitter_enabled"<?php if($options['sidebarButtons']['twitter']['enabled']) echo ' checked="checked"'; ?> /></td>
+										<td><div class="preview"></div></td>
+										<td class="label"><?php _e('Your Twitter URL', 'Arjuna'); ?>:</td>
+										<td><input type="text" class="regular-text URL" name="sidebarButtons_twitter_URL" value="<?php print $options['sidebarButtons']['twitter']['URL']; ?>" /></td>
+										<td class="label"><?php _e('Label', 'Arjuna'); ?>:</td>
+										<td><input type="text" name="sidebarButtons_twitter_label" value="<?php echo $options['sidebarButtons']['twitter']['label']; ?>" /></td>
+									</tr>
+									<tr class="facebook<?php if(!$options['sidebarButtons']['facebook']['enabled']) echo ' disabled'; ?>">
+										<td class="checkbox-col"><input type="checkbox" class="checkbox" name="sidebarButtons_facebook_enabled"<?php if($options['sidebarButtons']['facebook']['enabled']) echo ' checked="checked"'; ?> /></td>
+										<td><div class="preview"></div></td>
+										<td class="label"><?php _e('Your Facebook URL', 'Arjuna'); ?>:</td>
+										<td><input type="text" class="regular-text URL" name="sidebarButtons_facebook_URL" value="<?php print $options['sidebarButtons']['facebook']['URL']; ?>" /></td>
+										<td class="label"><?php _e('Label', 'Arjuna'); ?>:</td>
+										<td><input type="text" name="sidebarButtons_facebook_label" value="<?php echo $options['sidebarButtons']['facebook']['label']; ?>" /></td>
+									</tr>
+									<tr class="linked-in<?php if(!$options['sidebarButtons']['linkedIn']['enabled']) echo ' disabled'; ?>">
+										<td class="checkbox-col"><input type="checkbox" class="checkbox" name="sidebarButtons_linkedIn_enabled"<?php if($options['sidebarButtons']['linkedIn']['enabled']) echo ' checked="checked"'; ?> /></td>
+										<td><div class="preview"></div></td>
+										<td class="label"><?php _e('Your LinkedIn URL', 'Arjuna'); ?>:</td>
+										<td><input type="text" class="regular-text URL" name="sidebarButtons_linkedIn_URL" value="<?php print $options['sidebarButtons']['linkedIn']['URL']; ?>" /></td>
+										<td class="label"><?php _e('Label', 'Arjuna'); ?>:</td>
+										<td><input type="text" name="sidebarButtons_linkedIn_label" value="<?php echo $options['sidebarButtons']['linkedIn']['label']; ?>" /></td>
+									</tr>
+								</table>
+								<p class="description"><?php _e('Choose which buttons will be included on the very top of the sidebar.', 'Arjuna'); ?></p>
+								<p class="description"><?php _e('The extended RSS button will allow visitors to choose between all available RSS feeds, depending on the page they are currently browsing.', 'Arjuna'); ?></p>
 							</td>
 						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="bottom"><span></span></div>
+		</div>
+		
+		<div self:ID="search" class="srsContainer<?php if(!arjuna_admin_is_panel_open('search')) print ' srsContainerClosed'; ?>">
+			<h4 class="title"><span><?php _e('Search', 'Arjuna'); ?></span></h4>
+			<div class="inside">
+				<table class="form-table">
+					<tbody>
 						<tr>
-							<th scope="row"><?php _e('Twitter Button', 'Arjuna'); ?></th>
+							<th scope="row"><?php _e('Enabled', 'Arjuna'); ?></th>
 							<td>
-								<label><input name="sidebar_showTwitterButton" onclick="sidebar_twitterURL_switch(this)" type="checkbox"<?php if($options['sidebar_showTwitterButton']) echo ' checked="checked"'; ?> /> <?php _e('Display a Twitter button on the very top of the sidebar.', 'Arjuna'); ?></label>
-								<div id="sidebar_twitterURL"<?php if(!$options['sidebar_showTwitterButton']) echo ' style="display:none;"'; ?>>
-									Your Twitter URL:<input type="text" class="regular-text" name="sidebar_twitterURL" value="<?php print $options['sidebar_twitterURL'] ?>" />
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row"><?php _e('Facebook Button', 'Arjuna'); ?></th>
-							<td>
-								<label><input name="sidebar_showFacebookButton" onclick="sidebar_facebookURL_switch(this)" type="checkbox"<?php if($options['sidebar_showFacebookButton']) echo ' checked="checked"'; ?> /> <?php _e('Display a Facebook button on the very top of the sidebar.', 'Arjuna'); ?></label>
-								<div id="sidebar_facebookURL"<?php if(!$options['sidebar_showFacebookButton']) echo ' style="display:none;"'; ?>>
-									Your Facebook URL:<input type="text" class="regular-text" name="sidebar_facebookURL" value="<?php print $options['sidebar_facebookURL'] ?>" />
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row"><?php _e('Display Button Labels', 'Arjuna'); ?></th>
-							<td>
-								<label><input name="sidebar_displayButtonTexts" type="checkbox"<?php if($options['sidebar_displayButtonTexts']) echo ' checked="checked"'; ?> /> <?php _e('Display labels next to the buttons (RSS, Twitter and Facebook).', 'Arjuna'); ?></label>
+								<label><input name="enableSearch" type="checkbox"<?php if($options['enableSearch']) echo ' checked="checked"'; ?> /> <?php _e('Enable WordPress search', 'Arjuna'); ?></label>
+								<br />
+								<span class="description"><?php _e('If disabled, the search field will not be included in the header.', 'Arjuna');?></span>
 							</td>
 						</tr>
 					</tbody>
@@ -1093,27 +1306,27 @@ function arjuna_add_theme_page () {
 		</div>
 		
 		<div self:ID="singlePosts" class="srsContainer<?php if(!arjuna_admin_is_panel_open('singlePosts')) print ' srsContainerClosed'; ?>">
-			<h4 class="title"><span><?php _e('Single Posts and Pages', 'Arjuna'); ?></span></h4>
+			<h4 class="title"><span><?php _e('Posts and Pages', 'Arjuna'); ?></span></h4>
 			<div class="inside">
 				<table class="form-table">
 					<tbody>
 						<tr>
 							<th scope="row"><?php _e('Display Author', 'Arjuna'); ?></th>
 							<td>
-								<label><input name="postsShowAuthor" type="checkbox"<?php if($options['postsShowAuthor']) echo ' checked="checked"'; ?> /> <?php _e('Include the author of a post in the post header.', 'Arjuna'); ?></label><br />
+								<label><input name="postsShowAuthor" type="checkbox"<?php if($options['postsShowAuthor']) echo ' checked="checked"'; ?> /> <?php _e('Include the author of a post/page.', 'Arjuna'); ?></label><br />
 							</td>
 						</tr>
 						<tr>
 							<th scope="row"><?php _e('Display Time', 'Arjuna'); ?></th>
 							<td>
-								<label><input name="postsShowTime" type="checkbox"<?php if($options['postsShowTime']) echo ' checked="checked"'; ?> /> <?php _e('Include the time and date of when the post has been published, instead of only the date.', 'Arjuna'); ?></label><br />
+								<label><input name="postsShowTime" type="checkbox"<?php if($options['postsShowTime']) echo ' checked="checked"'; ?> /> <?php _e('Include the time and date of when the post/page has been published, instead of only the date.', 'Arjuna'); ?></label><br />
 							</td>
 						</tr>
 						<tr>
 							<th scope="row"><?php _e('Display Info Bar for Pages', 'Arjuna'); ?></th>
 							<td>
 								<label><input name="pages_showInfoBar" type="checkbox"<?php if($options['pages_showInfoBar']) echo ' checked="checked"'; ?> /> <?php _e('Display the info bar right below the title of pages.', 'Arjuna'); ?></label><br />
-								<span class="description"><?php _e('The info bar usually includes the author of the page, the publish date and the comments button. This options entirely hides the bar so that only the title is shown.', 'Arjuna'); ?></span>
+								<span class="description"><?php _e('The info bar usually includes the author of the page, the publish date, and the comments button. If turned off, this option entirely hides the bar so that only the title of the page is shown.', 'Arjuna'); ?></span>
 							</td>
 						</tr>
 						<tr>
@@ -1121,7 +1334,7 @@ function arjuna_add_theme_page () {
 							<td>
 								<label><input name="posts_showTopPostLinks" type="checkbox"<?php if($options['posts_showTopPostLinks']) echo ' checked="checked"'; ?> /> <?php _e('Display links to the previous and next posts above each post.', 'Arjuna'); ?></label><br />
 								<label><input name="posts_showBottomPostLinks" type="checkbox"<?php if($options['posts_showBottomPostLinks']) echo ' checked="checked"'; ?> /> <?php _e('Display links to the previous and next posts below each post.', 'Arjuna'); ?></label><br />
-								<span class="description"><?php _e('Note: The links will only be shown on permalink pages, i.e. the URL where one single post/page is displayed.', 'Arjuna'); ?></span>
+								<span class="description"><?php _e('Note: The links will only be shown on permalink pages, i.e. the URL where one single post is displayed.', 'Arjuna'); ?></span>
 							</td>
 						</tr>
 					</tbody>
@@ -1270,6 +1483,128 @@ function arjuna_add_theme_page () {
 			<div class="bottom"><span></span></div>
 		</div>
 		
+		<div self:ID="rssFeeds" class="srsContainer<?php if(!arjuna_admin_is_panel_open('rssFeeds')) print ' srsContainerClosed'; ?>">
+			<h4 class="title"><span><?php _e('RSS Feeds', 'Arjuna'); ?></span></h4>
+			<div class="inside">
+				<table class="form-table">
+					<tbody>
+						<tr valign="top">
+							<th scope="row"><?php _e('Use', 'Arjuna'); ?></th>
+							<td id="useFeedburner">
+								<div class="tALeft"><label>
+									<input name="useFeedburner" type="radio" value="0"<?php if(!$options['useFeedburner']) echo ' checked="checked"'; ?> />
+									 <?php _e('Default RSS Feeds', 'Arjuna'); ?>
+								</label></div>
+								<div class="tALeft"><label>
+									<input name="useFeedburner" type="radio" value="1"<?php if($options['useFeedburner']) echo ' checked="checked"'; ?> />
+									 <?php _e('Google Feedburner', 'Arjuna'); ?>
+								</label></div>
+							</td>
+						</tr>
+					</tbody>
+					<tbody id="useFeedburner-feedburner"<?php if(!$options['useFeedburner']) echo ' style="display:none;"'; ?>>
+						<tr>
+							<th scope="row"><?php _e('Redirect Feeds to', 'Arjuna'); ?></th>
+							<td>
+								<input type="text" value="<?php if(!empty($options['feedburnerURL'])) echo $options['feedburnerURL']; ?>" name="feedburnerURL" /><br />
+								<span class="description"><?php _e('Arjuna will redirect all of your existing feeds, including category and tag feeds, to Google Feedburner.', 'Arjuna');?></span><br />
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><?php _e('Redirect Comment Feeds to', 'Arjuna'); ?></th>
+							<td>
+								<input type="text" value="<?php if(!empty($options['feedburnerCommentsURL'])) echo $options['feedburnerCommentsURL']; ?>" name="feedburnerCommentsURL" /><br />
+								<span class="description"><?php _e('Arjuna will redirect your comment feeds to Google Feedburner to this URL.', 'Arjuna');?></span><br />
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="bottom"><span></span></div>
+		</div>
+		
+		<div self:ID="twitterWidget" class="srsContainer<?php if(!arjuna_admin_is_panel_open('twitterWidget')) print ' srsContainerClosed'; ?>">
+			<h4 class="title"><span><?php _e('Twitter Widget', 'Arjuna'); ?></span></h4>
+			<div class="inside">
+				<table class="form-table">
+					<tbody>
+						<tr valign="top">
+							<th scope="row"><?php _e('Enabled', 'Arjuna'); ?></th>
+							<td id="enableTwitter">
+								<div class="tALeft"><label>
+									<input name="twitterWidget_enabled" type="radio" value="1"<?php if($options['twitterWidget']['enabled']) echo ' checked="checked"'; ?> />
+									 <?php _e('Yes', 'Arjuna'); ?>
+								</label></div>
+								<div class="tALeft"><label>
+									<input name="twitterWidget_enabled" type="radio" value="0"<?php if(!$options['twitterWidget']['enabled']) echo ' checked="checked"'; ?> />
+									 <?php _e('No', 'Arjuna'); ?>
+								</label></div>
+							</td>
+						</tr>
+					</tbody>
+					<tbody id="enableTwitter-options"<?php if(!$options['twitterWidget']['enabled']) echo ' style="display:none;"'; ?>>
+						<tr>
+							<th scope="row"><?php _e('Widget Title', 'Arjuna'); ?></th>
+							<td>
+								<input type="text" value="<?php if(!empty($options['twitterWidget']['title'])) echo $options['twitterWidget']['title']; ?>" name="twitterWidget_title" style="width:350px;" />
+								<p class="description"><?php _e('The title of the sidebar widget.', 'Arjuna');?></p>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><?php _e('Twitter Username', 'Arjuna'); ?></th>
+							<td>
+								<input type="text" value="<?php if(!empty($options['twitterWidget']['username'])) echo $options['twitterWidget']['username']; ?>" name="twitterWidget_username" style="width:200px;" />
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><?php _e('Height', 'Arjuna'); ?></th>
+							<td>
+								<input type="text" value="<?php if(!empty($options['twitterWidget']['height'])) echo $options['twitterWidget']['height']; ?>" name="twitterWidget_height" style="width:34px;" /> px
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><?php _e('Number of Tweets', 'Arjuna'); ?></th>
+							<td>
+								<select name="twitterWidget_numTweets">
+									<?php
+									for($i=1; $i<=30; $i++)
+										print '<option value="'.$i.'"'.($i==$options['twitterWidget']['numTweets'] ? ' selected="selected"' : '').'>'.$i.'</option>';
+									?>
+								</select>
+							</td>
+						</tr>
+						<tr valign="top">
+							<th scope="row"><?php _e('Scrollbar', 'Arjuna'); ?></th>
+							<td>
+								<div class="tALeft"><label>
+									<input name="twitterWidget_scrollbar" type="radio" value="1"<?php if($options['twitterWidget']['scrollbar']) echo ' checked="checked"'; ?> />
+									 <?php _e('Yes', 'Arjuna'); ?>
+								</label></div>
+								<div class="tALeft"><label>
+									<input name="twitterWidget_scrollbar" type="radio" value="0"<?php if(!$options['twitterWidget']['scrollbar']) echo ' checked="checked"'; ?> />
+									 <?php _e('No', 'Arjuna'); ?>
+								</label></div>
+							</td>
+						</tr>
+						<tr valign="top">
+							<th scope="row"><?php _e('Show Timestamp', 'Arjuna'); ?></th>
+							<td>
+								<div class="tALeft"><label>
+									<input name="twitterWidget_showTimestamps" type="radio" value="1"<?php if($options['twitterWidget']['showTimestamps']) echo ' checked="checked"'; ?> />
+									 <?php _e('Yes', 'Arjuna'); ?>
+								</label></div>
+								<div class="tALeft"><label>
+									<input name="twitterWidget_showTimestamps" type="radio" value="0"<?php if(!$options['twitterWidget']['showTimestamps']) echo ' checked="checked"'; ?> />
+									 <?php _e('No', 'Arjuna'); ?>
+								</label></div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="bottom"><span></span></div>
+		</div>
+		
 		<div self:ID="miscellaneous" class="srsContainer<?php if(!arjuna_admin_is_panel_open('miscellaneous')) print ' srsContainerClosed'; ?>">
 			<h4 class="title"><span><?php _e('Miscellaneous', 'Arjuna'); ?></span></h4>
 			<div class="inside">
@@ -1281,6 +1616,14 @@ function arjuna_add_theme_page () {
 								<label><input name="appendToPageTitle" type="radio" value="blogName"<?php if($options['appendToPageTitle']=='blogName') echo ' checked="checked"'; ?> /> <?php printf(__('Blog Name (&quot; - %s&quot;)', 'Arjuna'), get_bloginfo('blogname')); ?></label><br />
 								<label><input name="appendToPageTitle" type="radio" value="custom"<?php if($options['appendToPageTitle']=='custom') echo ' checked="checked"'; ?> /> <?php _e('Custom:', 'Arjuna'); ?></label> <input type="text" value="<?php if(!empty($options['appendToPageTitleCustom'])) echo $options['appendToPageTitleCustom']; ?>" name="appendToPageTitleCustom" /><br />
 								<span class="description"><?php _e('This will be appended to the page title of every web page (posts, pages, categories, etc.)', 'Arjuna'); ?></span>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><?php _e('Footer Copyright Notice', 'Arjuna'); ?></th>
+							<td id="copyright-owner-box">
+								<label><input name="coprightOwnerType" type="radio" value="default"<?php if(empty($options['copyrightOwner'])) echo ' checked="checked"'; ?> /> <?php printf(__('Blog Name (&quot;%s&quot;)', 'Arjuna'), get_bloginfo('name')); ?></label><br />
+								<label><input name="coprightOwnerType" type="radio" value="custom"<?php if(!empty($options['copyrightOwner'])) echo ' checked="checked"'; ?> /> <?php _e('Custom:', 'Arjuna'); ?></label> <input type="text" value="<?php if(!empty($options['copyrightOwner'])) echo $options['copyrightOwner']; ?>" name="copyrightOwner" id="copyright-owner" /><br />
+								<span class="description"><?php _e('The copyright notice will be displayed in the footer.', 'Arjuna'); ?></span>
 							</td>
 						</tr>
 						<tr>
@@ -1396,6 +1739,7 @@ $GLOBALS['content_width'] = $content_width = 600;
 // Localization
 function theme_init(){
 	load_theme_textdomain('Arjuna', get_template_directory() . '/languages');
+	wp_enqueue_script('jquery');
 }
 add_action ('init', 'theme_init');
 
@@ -1403,7 +1747,7 @@ add_action ('init', 'theme_init');
 add_action('admin_print_styles', 'arjuna_admin_initCSS');
 
 function arjuna_admin_initCSS() {
-	wp_enqueue_style('arjunaAdminCSS', get_bloginfo('template_url').'/admin.css');
+	wp_enqueue_style('arjunaAdminCSS', get_bloginfo('template_url').'/admin/admin.css');
 	wp_enqueue_style('fionnFarbtasticCSS', get_bloginfo('template_url').'/lib/farbtastic/farbtastic.css');
 }
 
@@ -1412,7 +1756,8 @@ add_action('admin_print_scripts', 'arjuna_admin_initJS');
 
 function arjuna_admin_initJS() {
 	wp_enqueue_script('fionnFarbtasticJS', get_bloginfo('template_url').'/lib/farbtastic/farbtastic.js');
-	wp_enqueue_script('arjunaAdminJS', get_bloginfo('template_url').'/admin.js');
+	wp_enqueue_script('arjunaAdminJS', get_bloginfo('template_url').'/admin/admin.js');
+	wp_enqueue_script('arjunaJQueryMinJS', get_bloginfo('template_url').'/lib/jquery-ui-1.8.10.custom.min.js');
 }
 
 
@@ -1640,34 +1985,37 @@ function arjuna_get_pagination($previousLabel, $nextLabel) {
 		$endPaginationAt = $currentPage + $arjunaOptions['pagination_pageRange'];
 		if($endPaginationAt>$totalPages) $endPaginationAt = $totalPages;
 
-		for ($i=1; $i<=$arjunaOptions['pagination_pageAnchors']; $i++)
-			$include[$i] = true;
-		
+		if($startPaginationAt > $arjunaOptions['pagination_pageAnchors'])
+			for ($i=1; $i<=$arjunaOptions['pagination_pageAnchors']; $i++)
+				$include[] = $i;
+			
 		if( $startPaginationAt - $arjunaOptions['pagination_pageGap'] > $arjunaOptions['pagination_pageAnchors'] )
-			$include['gap'] = 'gap';
-		
+			$include[] = 'gap';
+			
 		for ($i=$startPaginationAt; $i<=$endPaginationAt; $i++) {
-			$include[$i] = true;
+			$include[] = $i;
 		}
 		
 		if( $endPaginationAt + $arjunaOptions['pagination_pageGap'] < $totalPages-$arjunaOptions['pagination_pageAnchors']+1 )
-			$include['gap'] = 'gap';
+			$include[] = 'gap';
 
-
-		for ($i=$totalPages-$arjunaOptions['pagination_pageAnchors']+1; $i<=$totalPages; $i++)
-			$include[$i] = true;
+		if($endPaginationAt < $totalPages-$arjunaOptions['pagination_pageAnchors']+1)
+			for ($i=$totalPages-$arjunaOptions['pagination_pageAnchors']+1; $i<=$totalPages; $i++)
+				$include[] = $i;
+			
+		
 
 
 		//write to output string
-		foreach($include as $key => $value) {
-			if($key=='gap') {
+		foreach($include as $value) {
+			if($value=='gap') {
 				$output .= '<li class="gap"><span>...</span></li>';
-			} elseif($key==$currentPage) {
-				$URL = get_pagenum_link($key);
-				$output .= '<li class="current"><a href="'.$URL.'" title="'.sprintf(__('Page %s', 'Arjuna'), $key).'"><span>'.$key.'</span></a></li>';
+			} elseif($value==$currentPage) {
+				$URL = get_pagenum_link($value);
+				$output .= '<li class="current"><a href="'.$URL.'" title="'.sprintf(__('Page %s', 'Arjuna'), $value).'"><span>'.$value.'</span></a></li>';
 			} else {
-				$URL = get_pagenum_link($key);
-				$output .= '<li><a href="'.$URL.'" title="'.sprintf(__('Page %s', 'Arjuna'), $key).'"><span>'.$key.'</span></a></li>';
+				$URL = get_pagenum_link($value);
+				$output .= '<li><a href="'.$URL.'" title="'.sprintf(__('Page %s', 'Arjuna'), $value).'"><span>'.$value.'</span></a></li>';
 			}
 		}
 		
@@ -1925,3 +2273,193 @@ function arjuna_comment_count( $count ) {
 	return $count;
 }
 
+function arjuna_is_show_comments() {
+	global $comments_by_type, $post, $id;
+	$arjunaOptions = arjuna_get_options();
+	$comments_by_type = &separate_comments(get_comments('status=approve&post_id=' . $id));
+	
+	if($post->comment_status == 'open')
+		return true;
+	
+	if(count($comments_by_type['comment']))
+		return true;
+		
+	if($post->post_type == 'page' && !$arjunaOptions['comments_hideWhenDisabledOnPages'])
+		return true;
+	
+	if($post->post_type == 'post' && !$arjunaOptions['comments_hideWhenDisabledOnPosts'])
+		return true;
+		
+	return false;
+}
+
+function arjuna_is_show_trackbacks() {
+	global $comments_by_type, $post, $id;
+	$arjunaOptions = arjuna_get_options();
+	$comments_by_type = &separate_comments(get_comments('status=approve&post_id=' . $id));
+	
+	if($post->ping_status == 'open')
+		return true;
+	
+	if(count($comments_by_type['pings']))
+		return true;
+		
+	if($post->post_type == 'page' && !$arjunaOptions['trackbacks_hideWhenDisabledOnPages'])
+		return true;
+	
+	if($post->post_type == 'post' && !$arjunaOptions['trackbacks_hideWhenDisabledOnPosts'])
+		return true;
+		
+	return false;
+}
+
+function arjuna_get_comments_count() {
+	global $id;
+	$comments_by_type = &separate_comments(get_comments('status=approve&post_id=' . $id));
+	
+	return count($comments_by_type['comment']);
+}
+
+function arjuna_get_trackbacks_count() {
+	global $id;
+	$comments_by_type = &separate_comments(get_comments('status=approve&post_id=' . $id));
+	
+	return count($comments_by_type['pings']);
+}
+
+function arjuna_nav_menus() {
+	register_nav_menus(array(
+		'header_menu_1' => 'First Header Menu',
+		'header_menu_2' => 'Second Header Menu',
+	));
+}
+add_action('init', 'arjuna_nav_menus');
+
+function arjuna_redirect_feeds() {
+	global $feed, $withcomments;
+	$arjunaOptions = arjuna_get_options();
+	
+	if (!is_feed())
+		return;
+	
+	if(!$arjunaOptions['useFeedburner'])
+		return;
+		
+	if (preg_match('/feedburner/i', $_SERVER['HTTP_USER_AGENT']))
+		return;
+		
+	if(!$arjunaOptions['useFeedburner'])
+		return;
+		
+	$URL = $arjunaOptions['feedburnerURL'];
+	$commentsURL = $arjunaOptions['feedburnerCommentsURL'];
+		
+	// Get category
+	$category = get_query_var('category_name');
+	if ($category) {
+		$URL .= '_'.$category;
+	}
+	
+	// Get tag
+	$tag = get_query_var('tag');
+	if ($tag) {
+		$URL .= '_'.$tag;
+	}
+
+	// Get search terms
+	$search = get_query_var('s');
+	
+	if ($feed == 'comments-rss2' || is_single() || $withcomments) {
+		if ($commentsURL) {
+			header("Location: ".$commentsURL);
+			exit;
+		}
+	} else {
+		switch($feed) {
+			case 'feed':
+			case 'rdf':
+			case 'rss':
+			case 'rss2':
+			case 'atom':
+				if ($URL) {
+					// Redirect the feed
+					header("Location: ".$URL);
+					exit;
+				}
+		}
+	}
+	
+	
+}
+add_action('template_redirect', 'arjuna_redirect_feeds');
+
+function arjuna_create_twitter_widget($args) {
+	$arjunaOptions = arjuna_get_options();
+	extract($args);
+	
+	echo $before_widget;
+	echo $before_title . $arjunaOptions['twitterWidget']['title'] . $after_title;
+	
+		//calc width
+		$width = 200;
+		
+		print '<div id="arjuna-tmp"></div>';
+		
+		print '<script src="http://widgets.twimg.com/j/2/widget.js"></script>';
+		print '<script>';
+		print 'new TWTR.Widget({';
+		  print 'version: 2,';
+		  print 'type: "profile",';
+		  print 'rpp: '.$arjunaOptions['twitterWidget']['numTweets'].',';
+		  print 'interval: 6000,';
+		  print 'width: jQuery("#arjuna-tmp").width(),';
+		  print 'height: '.$arjunaOptions['twitterWidget']['height'].',';
+		  print 'theme: {';
+		    print 'shell: {';
+		      print 'background: "#e0e0e0",';
+		      print 'color: "#000000"';
+		    print '},';
+		    print 'tweets: {';
+		      print 'background: "#e0e0e0",';
+		      print 'color: "#333333",';
+		      print 'links: "#5C7A99"';
+		    print '}';
+		  print '},';
+		  print 'features: {';
+		    print 'scrollbar: '.($arjunaOptions['twitterWidget']['scrollbar'] ? 'true' : 'false').',';
+		    print 'loop: false,';
+		    print 'live: false,';
+		    print 'hashtags: true,';
+		    print 'timestamp: '.($arjunaOptions['twitterWidget']['showTimestamps'] ? 'true' : 'false').',';
+		    print 'avatars: false,';
+		    print 'behavior: "all"';
+		  print '}';
+		print '}).render().setUser("'.$arjunaOptions['twitterWidget']['username'].'").start();';
+		print '</script>';
+	
+    echo $after_widget;
+}
+
+function arjuna_create_twitter_widget_control() {
+	print '<p>'.__('Please go to Appearance > Arjuna Options to configure your Arjuna twitter widget.', 'Arjuna').'</p>';
+}
+
+function arjuna_register_twitter_widget() {
+    wp_register_sidebar_widget(
+    	'arjuna_twitter_widget',
+    	__('Arjuna Twitter Profile Widget'),
+    	'arjuna_create_twitter_widget',
+    	array(
+    		'classname' => 'arjuna_twitter_widget',
+    		'description' => __( "Display Twitter Goodies Profile Widget")
+    	)
+    );
+    wp_register_widget_control(
+    	'arjuna_twitter_widget',
+    	__('Arjuna Twitter Profile Widget'),
+    	'arjuna_create_twitter_widget_control'
+    );
+}
+add_action('init', 'arjuna_register_twitter_widget');
+
+add_theme_support('automatic-feed-links');

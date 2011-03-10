@@ -51,3 +51,23 @@ a span {
 	display:block;
 	zoom:1;
 }
+
+.sidebarIcons a,
+.sidebars .rssBtnExtended,
+.sidebars .rssBtnExtended .primary,
+#rss-extended {
+	display:inline;
+	zoom:1;
+}
+#rss-extended li.separator {
+	height:1px;
+	line-height:1px;
+	font-size:1px;
+	margin:4px 5px;
+	display: inline-block;
+}
+
+blockquote,
+pre {
+	word-wrap:break-word;
+}

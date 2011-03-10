@@ -4,7 +4,7 @@ Theme URI: http://www.srssolutions.com/en/downloads/arjuna_wordpress_theme
 Description: Arjuna stands for elegance, accessibility, and attention to detail. We have put a great deal in optimizing its ins and outs. Translation ready, SEO focused, IE6-8, Firefox, Chrome, Safari and Opera compatibility, support for threaded comments, four widget bars, flexible sidebar, and more. It can be customized via the admin panel. Changelog: http://bit.ly/aLicfb
 Author: SRS Solutions
 Author URI: http://www.srssolutions.com
-Version: 1.5.3
+Version: 1.6
 Tags: white, silver, light, three-columns, two-columns, fixed-width, right-sidebar, left-sidebar, theme-options, translation-ready, threaded-comments, black
 
 
@@ -96,7 +96,7 @@ pre {
 	background:url(./images/blockquote.png) 3px 3px no-repeat;
 	padding:4px 12px 0 40px;
 	margin:5px 0;
-	word-wrap:break-word;
+	white-space:pre-wrap;
 	overflow:hidden;
 	font-style:italic;
 }
@@ -143,7 +143,6 @@ a:hover {
 /* Standard buttons */
 a.btn,
 a.btn:hover {
-	display:-moz-inline-stack;
 	display:inline-block;
 	height:18px;
 	background:url(./images/icons.png) no-repeat 0 -220px;
@@ -317,6 +316,48 @@ a#skipToPosts {
 	color:#503333;
 }
 
+.header_purple {
+	height:89px;
+	background:url(./images/header/purple.jpg) no-repeat 0 0;
+}
+.header_purple h1,
+.header_purple h1 a,
+.header_purple h1 a:visited,
+.header_purple h1 a:hover {
+	color:#000033;
+}
+.header_purple span {
+	color:#33334f;
+}
+
+.header_lightGray {
+	height:89px;
+	background:url(./images/header/lightGray.jpg) no-repeat 0 0;
+}
+.header_lightGray h1,
+.header_lightGray h1 a,
+.header_lightGray h1 a:visited,
+.header_lightGray h1 a:hover {
+	color:#333333;
+}
+.header_lightGray span {
+	color:#4f4f4f;
+}
+
+.header_darkGray {
+	height:89px;
+	background:url(./images/header/darkGray.jpg) no-repeat 0 0;
+}
+.header_darkGray h1,
+.header_darkGray h1 a,
+.header_darkGray h1 a:visited,
+.header_darkGray h1 a:hover {
+	color:#000;
+}
+.header_darkGray span {
+	color:#333;
+}
+
 
 
 .headerSearch {
@@ -464,15 +505,19 @@ a#skipToPosts {
 .headerMenu2 {
 	position:relative;
 	z-index:2;
-	background:url(./images/headerMenu2.png) no-repeat 0 0;
+	background:url(./images/header/menu-2.png) no-repeat 0 100%;
+}
+.headerMenu2 .helper {
+	height:1px;
+	background:url(./images/header/menu-2.png) no-repeat 0 0;
 }
 .headerMenu2 ul {
 	margin:0 20px;
-	height:26px;
+	min-height:26px;
 }
 .headerMenu2DS ul {
 	padding-left:2px;
-	background:url(./images/headerMenu2.png) no-repeat -958px -120px;
+	background:url(./images/header/menu-2.png) no-repeat -2498px 0;
 }
 .headerMenu2 li {
 	float:left;
@@ -480,8 +525,11 @@ a#skipToPosts {
 	position:relative;
 	z-index:1;
 }
+.headerMenu2 li.jHover {
+	z-index:2;
+}
 .headerMenu2DS li {
-	background:url(./images/headerMenu2.png) no-repeat right -120px;
+	background:url(./images/header/menu-2.png) no-repeat right 0;
 	padding-right:2px;
 }
 .headerMenu2 li a,
@@ -496,9 +544,12 @@ a#skipToPosts {
 }
 .headerMenu2 li a:hover,
 .headerMenu2 li a.active {
-	background:url(./images/headerMenu2.png) no-repeat -25px -60px;
+	background:url(./images/header/menu-2.png) no-repeat -1050px 0;
 	color:#ddd;
 	text-decoration:none;
+}
+.headerMenu2 li a:not([href]) {
+	cursor:default;
 }
 .headerMenu2 ul ul {
 	position:absolute;
@@ -511,6 +562,7 @@ a#skipToPosts {
 	z-index:1;
 	height:auto;
 	padding:0;
+	min-height:0;
 }
 .headerMenu2 li li {
 	float:none;
@@ -552,12 +604,12 @@ a#skipToPosts {
 
 .headerMenu2 li a.homeIcon,
 .headerMenu2 li a.homeIcon:visited {
-	background:url(./images/headerMenu2.png) no-repeat 0 -120px;
+	background:url(./images/header/menu-2.png) no-repeat -2000px 0;
 	padding-left:26px;
 }
 .headerMenu2 li a.homeIcon:hover,
 .headerMenu2 li a.homeIcon.active {
-	background:url(./images/headerMenu2.png) no-repeat 0 -60px;
+	background:url(./images/header/menu-2.png) no-repeat -1000px 0;
 }
 
 .noHeaderMenu2 {
@@ -591,10 +643,14 @@ h3.contentHeader em {
 	padding-left:15px;
 	margin-right:15px;
 }
+.postHeader .postTitle a,
+.postHeader .postTitle a:visited {
+	color:#000;
+}
 .postHeader .postTitle span {
 	display:block;
 	background:url(./images/heading.png) no-repeat right 0;
-	padding:8px 15px 7px;
+	padding:6px 15px 5px;
 	margin-right:-15px;
 }
 .postHeader a:hover {
@@ -1477,7 +1533,7 @@ a.btnLogout:hover {
 }
 .footer .icon2 {
 	position:absolute;
-	top:20px;
+	top:21px;
 	left:110px;
 }
 .footer .copyright {
@@ -1522,6 +1578,15 @@ a.btnLogout:hover {
 .footer_lightRed {
 	background-image:url(./images/footer/lightRed.jpg);
 }
+.footer_purple {
+	background-image:url(./images/footer/purple.jpg);
+}
+.footer_lightGray {
+	background-image:url(./images/footer/lightGray.jpg);
+}
+.footer_darkGray {
+	background-image:url(./images/footer/darkGray.jpg);
+}
 .footer2 .icon1 {
 	position:absolute;
 	top:33px;
@@ -1562,6 +1627,25 @@ a.btnLogout:hover {
 .footer_darkBlue .design a em {
 	color:#0F2033;
 }
+
+.footer_khaki .copyright,
+.footer_khaki .design,
+.footer_khaki .design a {
+	color:#5F4E3A;
+}
+.footer_khaki .design a em {
+	color:#4D2D16;
+}
+
+.footer_seaGreen .copyright,
+.footer_seaGreen .design,
+.footer_seaGreen .design a {
+	color:#33504E;
+}
+.footer_seaGreen .design a em {
+	color:#003330;
+}
+
 .footer_lightRed .copyright,
 .footer_lightRed .design,
 .footer_lightRed .design a {
@@ -1569,6 +1653,24 @@ a.btnLogout:hover {
 }
 .footer_lightRed .design a em {
 	color:#330000;
+}
+
+.footer_purple .copyright,
+.footer_purple .design,
+.footer_purple .design a {
+	color:#33334F;
+}
+.footer_purple .design a em {
+	color:#000033;
+}
+
+.footer_darkGray .copyright,
+.footer_darkGray .design,
+.footer_darkGray .design a {
+	color:#333;
+}
+.footer_darkGray .design a em {
+	color:#000;
 }
 
 /**
@@ -1596,10 +1698,6 @@ a.btnLogout:hover {
 	clear:both;
 }
 .sidebarIcons {
-	overflow:hidden;
-}
-.sidebarIcons a {
-	float:left;
 }
 
 /* No sidebar */
@@ -1607,71 +1705,12 @@ a.btnLogout:hover {
 	float:none;
 	width:920px;
 }
-
-/* Right sidebar, large width (RSLW) */
-.RSLW .contentArea {
-	float:left;
-	width:570px;
-}
-.RSLW .sidebars {
-	width:350px;
+/* Left sidebar */
+.LS .contentArea {
 	float:right;
 }
-.RSLW .sidebarLeft,
-.RSLW .sidebarRight {
-	width:150px;
-}
-
-/* Right sidebar, small width (RSSW) */
-.RSSW .contentArea {
+.LS .sidebars {
 	float:left;
-	width:670px;
-}
-.RSSW .sidebars {
-	width:250px;
-	float:right;
-}
-.RSSW .sidebarLeft,
-.RSSW .sidebarRight {
-	width:100px;
-}
-
-/* Left sidebar, normal width (LSNW) */
-.LSNW .contentArea {
-	float:right;
-	width:620px;
-}
-.LSNW .sidebars {
-	width:300px;
-	float:left;
-}
-
-/* Left sidebar, large width (LSLW) */
-.LSLW .contentArea {
-	float:right;
-	width:570px;
-}
-.LSLW .sidebars {
-	width:350px;
-	float:left;
-}
-.LSLW .sidebarLeft,
-.LSLW .sidebarRight {
-	width:150px;
-}
-
-/* Left sidebar, small width (LSSW) */
-.LSSW .contentArea {
-	float:right;
-	width:670px;
-}
-.LSSW .sidebars {
-	width:250px;
-	float:left;
-}
-.LSSW .sidebarLeft,
-.LSSW .sidebarRight {
-	width:100px;
 }
 
 
@@ -1714,6 +1753,10 @@ a.btnLogout:hover {
 		background-color:#fbfbfb;
 		margin:10px -14px;
 	}
+	.sidebars .twtr-widget h4 {
+		border:none;
+		background:none;
+	}
 	.sidebars h4 span {
 		display:block;
 		margin:1px 0;
@@ -1737,43 +1780,122 @@ a.btnLogout:hover {
 	.sidebars ul {
 	}
 	.sidebars li {
-		background:url(./images/sidebars.png) no-repeat 0 -225px;
+		background:url(./images/sidebars.png) no-repeat 0 -195px;
 		padding:0 0 0 20px;
 		margin-bottom:1px;
 		line-height:18px;
 		font-size:12px;
 		font-family:Verdana, Geneva, sans-serif;
 	}
-	.sidebars a.rssBtn {
-		display:block;
+	.sidebarIcons a {
+		display:inline-block;
 		height:26px;
-		padding:0 10px 0 32px;
+		padding:0 0 0 32px;
+		margin-right:10px;
 		line-height:26px;
 		font-size:12px;
 		font-weight:bold;
+		vertical-align:middle;
+	}
+	.sidebars a.rssBtn {
 		color:#662700;
-		background:url(./images/sidebars.png) no-repeat 0 -190px;
+		background:url(./images/sidebars.png) no-repeat 0 -250px;
 	}
 	.sidebars a.twitterBtn {
-		display:block;
-		height:26px;
-		padding:0 10px 0 32px;
-		line-height:26px;
-		font-size:12px;
-		font-weight:bold;
 		color:#056;
-		background:url(./images/sidebars.png) no-repeat -150px -190px;
+		background:url(./images/sidebars.png) no-repeat 0 -300px;
 	}
 	.sidebars a.facebookBtn {
-		display:block;
-		height:26px;
-		padding:0 10px 0 32px;
-		line-height:26px;
-		font-size:12px;
-		font-weight:bold;
 		color:#223b73;
-		background:url(./images/sidebars.png) no-repeat -300px -190px;
+		background:url(./images/sidebars.png) no-repeat 0 -350px;
 	}
+	.sidebars a.linkedInBtn {
+		color:#056;
+		background:url(./images/sidebars.png) no-repeat 0 -400px;
+	}
+	.sidebars .rssBtnExtended {
+		margin-right:16px;
+		display:inline-block;
+		vertical-align:middle;
+	}
+	.sidebars .rssBtnExtended a {
+		float:none;
+	}
+	.sidebars .rssBtnExtended .primary {
+		vertical-align:middle;
+		display:inline-block;
+		width:26px;
+		background:url(./images/sidebars.png) no-repeat 0 -450px;
+		padding:0;
+		margin:0;
+		float:none;
+	}
+	#rss-extended {
+		vertical-align:middle;
+		display:inline-block;
+		width:9px;
+		height:26px;
+		background:url(./images/sidebars.png) no-repeat -26px -450px;
+		position:relative;
+	}
+	#rss-extended.active {
+		background-position:-276px -450px;
+	}
+	#rss-extended ul {
+		position:absolute;
+		top:0;
+		left:7px;
+		display:none;
+		background:#fff3e5;
+		border:1px solid #e5bca0;
+		margin:0;
+		z-index:1;
+		height:auto;
+		padding:0;
+	}
+	#rss-extended.active ul {
+		display:block;
+	}
+	#rss-extended li {
+		float:none;
+		width:180px;
+		height:auto;
+		background:none;
+		padding:0;
+	}
+	#rss-extended li.separator {
+		border-bottom:1px solid #f2d5c2;
+		margin:5px 5px 4px;
+		width:170px;
+	}
+	#rss-extended li a,
+	#rss-extended li a:visited {
+		height:auto;
+		line-height:20px;
+		padding:0 8px;
+		width:164px;
+		position:relative;
+		color:#805933;
+		float:none;
+		font-size:11px;
+		display:block;
+		font-weight:normal;
+		margin:0;
+	}
+	#rss-extended li a:hover,
+	#rss-extended li a.active {
+		background:#ffe6cc;
+		color:#805933;
+		text-decoration:none;
+	}
+	#rss-extended li a em {
+		font-style:italic;
+	}
+	#rss-extended li:hover ul,
+	#rss-extended li.jHover ul {
+		display:block;
+	}
+	
 .sidebars .b {
 	height:15px;
 	background:url(./images/sidebars.png) no-repeat 0 -170px;

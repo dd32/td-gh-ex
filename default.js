@@ -329,6 +329,14 @@ jQuery(function() {
 	
 	menus.enable();
 	
+	jQuery('#rss-extended')
+	.mouseenter(function() {
+		jQuery(this).addClass('active');
+	})
+	.mouseleave(function() {
+		jQuery(this).removeClass('active');
+	});
+	
 	if(document.location.hash == '#_trackbacks') {
 		jQuery('#arjuna_trackbacks').show();
 		jQuery('#arjuna_comments').hide();
@@ -350,6 +358,5 @@ jQuery(function() {
 			jQuery('#arjuna_commentTabs a.comments').removeClass('active');
 		}
 	});
-	
 	
 });
