@@ -28,7 +28,7 @@
 
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-
+<?php if ( is_singular() ) wp_enqueue_script( "comment-reply" );?>
 <?php wp_head(); ?>
 <!--[if lte IE 7]><link href="<?php echo get_template_directory_uri(); ?>/ie.css" rel="stylesheet" media="screen" type="text/css" /><![endif]-->	
 <!--[if IE 6]><script src="<?php echo get_template_directory_uri(); ?>/js/DD_belatedPNG.js"></script><![endif]-->

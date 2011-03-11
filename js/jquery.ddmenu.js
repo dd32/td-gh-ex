@@ -1,12 +1,12 @@
-// Dropdown menu
-$(document).ready(function(){
-   $('#mainNav li.multiple').hover(function(){
-       $(this).children('.ddMenu').show();
-       $(this).addClass('dropdown');
-   }, function(){
-       $(this).children('.ddMenu').hide();
-       $(this).removeClass('dropdown');
-   })
-})
 
-
+// Drop down menu style
+$(document).ready(function() {
+	$('#mainNav ul ul').parent().hover(function() {
+		$(this).children('ul').fadeIn('fast');  
+		$(this).addClass('activeParent');
+	},
+	function() {
+		$(this).children('ul').fadeOut('fast');
+		$(this).removeClass('activeParent');
+	});
+});

@@ -30,7 +30,7 @@
 
  <?php else : // this is displayed if there are no comments so far ?>
 
-	<?php if ('open' == $post->comment_status) : ?>
+	<?php if ( comments_open() ) : ?>
 		<!-- If comments are open, but there are no comments. -->
 
 	 <?php else : // comments are closed ?>

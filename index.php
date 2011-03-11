@@ -30,7 +30,7 @@
 		
 				<h2 class="center">Not Found</h2>
 				<p class="center">Sorry, but you are looking for something that isn't here.</p>
-				<?php get_template_part('searchform'); ?>
+				<?php get_search_form(); ?>
 		
 			<?php endif; ?>
 		      </div>

@@ -48,7 +48,7 @@
 	<?php else : ?>
 
 		<h2 class="center">Not Found</h2>
-		<?php get_template_part('searchform'); ?>
+		<?php get_search_form(); ?>
 
 	<?php endif; ?>
 
