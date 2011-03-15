@@ -7,7 +7,7 @@
     	<!-- begin footer -->
         <div class="clear"></div>
             <div id="footer">
-              <div class="nav-horz nav-footer"><?php  wp_nav_menu( array( 'menu' => 'footer-menu' ) ); ?></div>
+              <div class="nav-horz nav-footer"><?php  wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?></div>
                 <?php wp_footer(); ?>
               <div class="clear"></div> 
             </div>

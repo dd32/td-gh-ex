@@ -47,7 +47,7 @@
             <div class="nav-horz nav-main" id="menu">
               <div class="nav-main-left">
                 <div class="nav-main-right">
-                    <?php wp_nav_menu( array( 'menu' => 'primary-menu' ) ); ?>
+                    <?php wp_nav_menu( array( 'theme_location' => 'primary-menu' ) ); ?>
                 </div>
               </div>
               <div class="nav-main-bottom"></div>

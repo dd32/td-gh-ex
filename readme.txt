@@ -4,7 +4,7 @@ Donate link: http://www.contextureintl.com/wordpress/adventure-journal-wordpress
 Tags: brown, tan, yellow, light, dark, one-column, custom-header, custom-background, custom-menu, theme-options, threaded-comments, sticky-post, holiday, photoblogging
 Requires at least: 3.0.0
 Tested up to: 3.1
-Stable tag: 1.4.1
+Stable tag: 1.4.2
 
 
 == Description ==
@@ -32,6 +32,9 @@ http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Changelog ==
+
+= 1.4.2 =
+* FIX: Menus not properly selectedable from the Admin
 
 = 1.4.0 =
 * NEW FEATURE: Added customizable header size
