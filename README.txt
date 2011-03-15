@@ -54,12 +54,6 @@ FAQ: http://www.srssolutions.com/en/downloads/arjuna_wordpress_theme#faq
 Report Bug: http://www.srssolutions.com/en/downloads/bug_report
 
 
-Important notes about this theme:
----------------------------------------------------
-
-* The two menus that are supported by this theme do NOT extend to more than one line. If you have more menu items and they don't fit, the theme has to be customized to accommodate your needs. Generally speaking, it is good practice to keep the options that a user of your website has limited. If you find that you have too many top categories, we advise to minimize the amount of top categories and create your category logic more intelligently and *user-friendly*. Besides, if you use sub categories, they will be shown in a dropdown menu as supported by Arjuna.
-
-
 About IE6 Support:
 ---------------------------------------------------
 

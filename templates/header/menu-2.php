@@ -15,7 +15,7 @@
 			$settings['items_wrap'] .= '<li><a href="';
 				if(function_exists('icl_get_home_url'))
 					$settings['items_wrap'] .= icl_get_home_url();
-				else $settings['items_wrap'] .= get_bloginfo('url');
+				else $settings['items_wrap'] .= home_url();
 			$settings['items_wrap'] .= '" class="homeIcon">' . __('Home','Arjuna') . '</a></li>';
 			$settings['items_wrap'] .= '%3$s</ul>';
 		}

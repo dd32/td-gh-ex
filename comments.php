@@ -7,13 +7,11 @@ if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['
 	die ('This page cannot be loaded directly.');
 
 // Password protection
-if (function_exists('post_password_required')) {
-	if ( post_password_required() ) {
-		?>
-		<p class="noComments"><?php _e('This post is password protected. Enter the password to view comments.', 'Arjuna'); ?></p>
-		<?php
-		return;
-	}
+if ( post_password_required() ) {
+	?>
+	<p class="noComments"><?php _e('This post is password protected. Enter the password to view comments.', 'Arjuna'); ?></p>
+	<?php
+	return;
 }
 
 ?>
