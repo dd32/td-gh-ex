@@ -89,7 +89,7 @@ endif;
     </div>
     
     <div class="chipsetr5">
-        <h2 class="blue margin10b"><?php _e("About the Author"); ?></h2>
+        <h2 class="blue margin10b">About the Author</h2>
       	<div class="font11"><?php the_author_meta('description'); ?></div>
     </div>
     

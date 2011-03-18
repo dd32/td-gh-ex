@@ -18,7 +18,7 @@ if ( ! isset( $_REQUEST['updated'] ) ) {
     <?php settings_fields('chip_life_options_group'); ?>
     <?php do_settings_sections('chip_life_sections'); ?>
     <p class="submit">
-      <input name="Submit" type="submit" class="button-primary" value="<?php esc_attr_e('Save Changes'); ?>" />
+      <input name="Submit" type="submit" class="button-primary" value="Save Changes" />
     </p>
   </form>
 
