@@ -4,7 +4,7 @@
 					<div class="nav">
 						<div class="bFrameT"><i></i></div>
 	<?php 	/* Widgetized sidebar, if you have the plugin installed. */
-			if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar-widget-area') ) : ?>
+			if (!dynamic_sidebar('sidebar-widget-area')) : ?>
 
 				<h3><span>Category</span></h3>
 				<ul>

@@ -1,12 +1,11 @@
-
 // Drop down menu style
-$(document).ready(function() {
-	$('#mainNav ul ul').parent().hover(function() {
-		$(this).children('ul').fadeIn('fast');  
-		$(this).addClass('activeParent');
+jQuery(document).ready(function() {
+	jQuery('#mainNav ul ul').parent().hover(function() {
+		jQuery(this).children('ul').fadeIn('fast');  
+		jQuery(this).addClass('activeParent');
 	},
 	function() {
-		$(this).children('ul').fadeOut('fast');
-		$(this).removeClass('activeParent');
+		jQuery(this).children('ul').fadeOut('fast');
+		jQuery(this).removeClass('activeParent');
 	});
 });
