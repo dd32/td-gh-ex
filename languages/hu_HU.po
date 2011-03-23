@@ -1052,3 +1052,4 @@ msgstr "Következő bejegyzés"
 #~ msgstr ""
 #~ "Arjuna teljesen ingyenes. Ha tetszik a projekt és támogatnád a további "
 #~ "fejlesztést és fenntartást, kérlek"
+

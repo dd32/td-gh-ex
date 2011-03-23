@@ -1,10 +1,10 @@
 /*  
 Theme Name: Arjuna X
 Theme URI: http://www.srssolutions.com/en/downloads/arjuna_wordpress_theme
-Description: Arjuna stands for elegance, accessibility, and attention to detail. We have put a great deal in optimizing its ins and outs. This version requires WordPress 3.1. For older, backwards-compatible versions, please contact us. Changelog: http://www.srssolutions.com/en/downloads/arjuna_wordpress_theme#changelog
+Description: Arjuna stands for elegance, accessibility, and attention to detail. We have put a great deal in optimizing its ins and outs. This version requires WordPress 3.1. For older, backwards-compatible versions, please contact us. Changelog: http://bit.ly/aLicfb
 Author: SRS Solutions
-Author URI: http://www.srssolutions.com/en/services/design/website_design/wordpress_design
-Version: 1.6.11
+Author URI: http://www.srssolutions.com
+Version: 1.6.2
 License: GNU General Public License
 License URI: license.txt
 Tags: white, silver, light, three-columns, two-columns, fixed-width, right-sidebar, left-sidebar, theme-options, translation-ready, threaded-comments, black, custom-colors, custom-background, custom-menu
@@ -193,7 +193,7 @@ a.btn,
 a.btn:hover {
 	display:inline-block;
 	height:18px;
-	background:url(./images/icons.png) no-repeat 0 -450px;
+	background:url(./images/icons.png) no-repeat 0 -220px;
 	color:#5c7a99;
 	text-decoration:none;
 	margin:0 0 0 10px;
@@ -405,53 +405,17 @@ a#skipToPosts {
 	color:#333;
 }
 
-.header_regimentalBlue {
-	height:89px;
-	background:url(./images/header/regimentalBlue.jpg) no-repeat 0 0;
-}
-.header_regimentalBlue h1,
-.header_regimentalBlue h1 a,
-.header_regimentalBlue h1 a:visited,
-.header_regimentalBlue h1 a:hover {
-	color:#b9c4dc;
-}
-.header_regimentalBlue span {
-	color:#8f9ab1;
-}
-
-.header_bristolBlue {
-	height:89px;
-	background:url(./images/header/bristolBlue.jpg) no-repeat 0 0;
-}
-.header_bristolBlue h1,
-.header_bristolBlue h1 a,
-.header_bristolBlue h1 a:visited,
-.header_bristolBlue h1 a:hover {
-	color:#0f2033;
-}
-.header_bristolBlue span {
-	color:#3d454d;
-}
-
 
 
 .headerSearch {
 	width:200px;
 	height:25px;
 	position:absolute;
-	
-}
-.headerSearchTop {
-	top:0;
-	right:1px;
-	background:url(./images/header/searchTop.png) no-repeat 0 0;
-}
-.headerSearchBottom {
 	bottom:0;
 	right:1px;
-	background:url(./images/header/searchBottom.png) no-repeat 0 0;
+	background:url(./images/headerSearch.png) no-repeat 0 0;
 }
-.headerSearch .searchQuery {
+.headerMain .searchQuery {
 	display:block;
 	float:left;
 	padding:6px 5px 5px 10px;
@@ -462,12 +426,12 @@ a#skipToPosts {
 	color:#333;
 	background:none;
 }
-.headerSearch .searchQueryIA {
+.headerMain .searchQueryIA {
 	color:#666;
 	font-style:italic;
 	text-shadow:#fff 1px 1px 1px;
 }
-.headerSearch .searchButton {
+.headerMain .searchButton {
 	display:block;
 	float:left;
 	margin-left:3px;
@@ -479,8 +443,6 @@ a#skipToPosts {
 	text-indent:-1000px;
 	cursor:pointer;
 }
-
-
 
 /* When the option to disable header menu 1 is set */
 /*.hideHeaderMenu1 .headerBG {
@@ -928,6 +890,7 @@ a.postCommentLabel:hover {
 	margin-bottom:10px;
 }
 .postContent img.size-full {
+	max-width:100%;
 }
 
 .postFooter {
@@ -962,7 +925,7 @@ a.postCommentLabel:hover {
 	float:left;
 }
 .postTags {
-	background:url(./images/icons.png) no-repeat 0px -250px;
+	background:url(./images/icons.png) no-repeat 0px -150px;
 	padding-left:25px;
 	font-size:11px;
 	float:left;
@@ -976,7 +939,7 @@ a.postEdit:hover {
 	position:absolute;
 	top:8px;
 	right:-20px;
-	background-position:0 -570px;
+	background-position:0 -340px;
 	color:#5c7a99;
 	text-decoration:none;
 }
@@ -1019,7 +982,7 @@ a.postEdit:hover span {
 }
 .commentHeader {
 	min-height:27px;
-	background:url(./images/icons.png) repeat-x 0 -375px;
+	background:url(./images/icons.png) repeat-x 0 -175px;
 	margin-bottom:20px;
 	overflow:hidden;
 }
@@ -1091,12 +1054,12 @@ a.postEdit:hover span {
 
 a.btnTrackback,
 a.btnTrackback:hover {
-	background-position:0 -490px;
+	background-position:0 -260px;
 	margin-top:5px;
 }
 a.btnReply,
 a.btnReply:hover {
-	background-position:0 -470px;
+	background-position:0 -240px;
 	margin-top:5px;
 }
 
@@ -1107,7 +1070,7 @@ li.pingback {
 }
 li.comment li,
 li.pingback li {
-	margin:20px 0 0;
+	margin:2px 0 0;
 }
 .comment .avatar,
 .pingback .avatar {
@@ -1191,7 +1154,7 @@ li.pingback li {
 }
 
 .commentList ul.children {
-	margin:0 0 0 70px;
+	margin:0 0 0 20px;
 	clear:both;
 }
 
@@ -1254,7 +1217,7 @@ li.pingback li {
 .replyHeader {
 	overflow:hidden;
 	height:30px;
-	background:url(./images/icons.png) repeat-x 0 -372px;
+	background:url(./images/icons.png) repeat-x 0 -172px;
 	margin-bottom:20px;
 }
 .replyHeader h4 {
@@ -1270,7 +1233,7 @@ li.pingback li {
 a.btnCancel,
 a.btnCancel:hover {
 	margin-top:5px;
-	background-position:0 -550px;
+	background-position:0 -320px;
 }
 .commentReply .replyLoggedIn {
 	color:#666;
@@ -1339,11 +1302,11 @@ a.btnCancel:hover {
 
 a.btnSubscribe,
 a.btnSubscribe:hover {
-	background-position:0 -510px;
+	background-position:0 -280px;
 }
 a.btnLogout,
 a.btnLogout:hover {
-	background-position:0 -530px;
+	background-position:0 -300px;
 }
 
 .pagination,
@@ -1650,17 +1613,11 @@ a.btnLogout:hover {
 
 /* Footer Style 2 */
 .footer2 {
-	height:70px;
+	height:74px;
 	width:960px;
 	margin:10px auto 0;
 	position:relative;
-	background:url(./images/footer/lightBlue.jpg) no-repeat 0 bottom;
-}
-.footer2 .footerTop {
-	height:10px;
-	background:url(./images/footer/top.png) no-repeat 0 0;
-}
-.footer2 .footerContainer {
+	background:url(./images/footer/lightBlue.jpg) no-repeat 0 0;
 }
 .footer_khaki {
 	background-image:url(./images/footer/khaki.jpg);
@@ -1682,12 +1639,6 @@ a.btnLogout:hover {
 }
 .footer_darkGray {
 	background-image:url(./images/footer/darkGray.jpg);
-}
-.footer_regimentalBlue {
-	background-image:url(./images/footer/regimentalBlue.jpg);
-}
-.footer_bristolBlue {
-	background-image:url(./images/footer/bristolBlue.jpg);
 }
 .footer2 .icon1 {
 	position:absolute;
@@ -1775,25 +1726,6 @@ a.btnLogout:hover {
 	color:#000;
 }
 
-.footer_regimentalBlue .copyright,
-.footer_regimentalBlue .design,
-.footer_regimentalBlue .design a {
-	color:#8f9ab1;
-}
-.footer_regimentalBlue .design a em {
-	color:#b9c4dc;
-}
-
-.footer_bristolBlue .copyright,
-.footer_bristolBlue .design,
-.footer_bristolBlue .design a {
-	color:#2f353a;
-}
-.footer_bristolBlue .design a em {
-	color:#0F2033;
-}
-
-
 /**
  * Layout Setups
  */
@@ -1819,7 +1751,6 @@ a.btnLogout:hover {
 	clear:both;
 }
 .sidebarIcons {
-	margin-bottom:10px;
 }
 
 /* No sidebar */
@@ -1846,18 +1777,18 @@ a.btnLogout:hover {
 /* Sidebar */
 .sidebars .t {
 	height:170px;
-	background:url(./images/sidebars.png) no-repeat -500px 0;
+	background:url(./images/sidebars.png) no-repeat 0 0;
 	margin-right:15px;
 }
 .sidebars .t div {
 	height:170px;
 	width:15px;
-	background:url(./images/sidebars.png) no-repeat -985px 0;
+	background:url(./images/sidebars.png) no-repeat -485px 0;
 	float:right;
 	margin-right:-15px;
 }
 .sidebars .i {
-	background:url(./images/sidebars.png) repeat-y -1000px 0;
+	background:url(./images/sidebars.png) repeat-y -500px 0;
 	margin-right:15px;
 }
 .sidebars .i .i2 {
@@ -1902,22 +1833,14 @@ a.btnLogout:hover {
 	.sidebars ul {
 	}
 	.sidebars li {
-		background:url(./images/sidebars.png) no-repeat -500px -195px;
+		background:url(./images/sidebars.png) no-repeat 0 -195px;
 		padding:0 0 0 20px;
 		margin-bottom:1px;
 		line-height:18px;
 		font-size:12px;
 		font-family:Verdana, Geneva, sans-serif;
 	}
-	
-	/* Disable for certain widgets */
-	.sidebars .wGallery li {
-		background:none;
-		padding:0;
-	}
-	
-	.sidebarIcons a,
-	.rssBtnExtended {
+	.sidebarIcons a {
 		display:inline-block;
 		height:26px;
 		padding:0 0 0 32px;
@@ -1929,23 +1852,24 @@ a.btnLogout:hover {
 	}
 	.sidebars a.rssBtn {
 		color:#662700;
-		background:url(./images/sidebars.png) no-repeat 0 0;
+		background:url(./images/sidebars.png) no-repeat 0 -250px;
 	}
 	.sidebars a.twitterBtn {
 		color:#056;
-		background:url(./images/sidebars.png) no-repeat 0 -50px;
+		background:url(./images/sidebars.png) no-repeat 0 -300px;
 	}
 	.sidebars a.facebookBtn {
 		color:#223b73;
-		background:url(./images/sidebars.png) no-repeat 0 -100px;
+		background:url(./images/sidebars.png) no-repeat 0 -350px;
 	}
 	.sidebars a.linkedInBtn {
 		color:#056;
-		background:url(./images/sidebars.png) no-repeat 0 -150px;
+		background:url(./images/sidebars.png) no-repeat 0 -400px;
 	}
 	.sidebars .rssBtnExtended {
-		padding:0;
-		color:#662700;
+		margin-right:16px;
+		display:inline-block;
+		vertical-align:middle;
 	}
 	.sidebars .rssBtnExtended a {
 		float:none;
@@ -1954,7 +1878,7 @@ a.btnLogout:hover {
 		vertical-align:middle;
 		display:inline-block;
 		width:26px;
-		background:url(./images/sidebars.png) no-repeat 0 -200px;
+		background:url(./images/sidebars.png) no-repeat 0 -450px;
 		padding:0;
 		margin:0;
 		float:none;
@@ -1964,12 +1888,11 @@ a.btnLogout:hover {
 		display:inline-block;
 		width:9px;
 		height:26px;
-		background:url(./images/sidebars.png) no-repeat -26px -200px;
+		background:url(./images/sidebars.png) no-repeat -26px -450px;
 		position:relative;
-		padding-right:8px;
 	}
 	#rss-extended.active {
-		background-position:-276px -200px;
+		background-position:-276px -450px;
 	}
 	#rss-extended ul {
 		position:absolute;
@@ -2028,13 +1951,13 @@ a.btnLogout:hover {
 	
 .sidebars .b {
 	height:15px;
-	background:url(./images/sidebars.png) no-repeat -500px -170px;
+	background:url(./images/sidebars.png) no-repeat 0 -170px;
 	margin-right:15px;
 }
 .sidebars .b div {
 	height:15px;
 	width:15px;
-	background:url(./images/sidebars.png) no-repeat -985px -170px;
+	background:url(./images/sidebars.png) no-repeat -485px -170px;
 	float:right;
 	margin-right:-15px;
 }

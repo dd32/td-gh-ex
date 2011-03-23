@@ -1,7 +1,7 @@
 <?php $arjunaOptions = arjuna_get_options(); ?>
 <?php get_header(); ?>
 
-<div class="contentArea" id="contentArea">
+<div class="contentArea">
 	<?php if (have_posts()) : ?>
 	<?php while (have_posts()) : the_post(); ?>
 	

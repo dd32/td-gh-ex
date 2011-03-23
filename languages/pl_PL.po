@@ -1175,39 +1175,30 @@ msgstr "następny wpis"
 
 #~ msgid "%1$s at %2$s"
 #~ msgstr "%1$s przy %2$s"
-
 #~ msgid "H:i"
 #~ msgstr "H:i"
-
 #~ msgid "Blog"
 #~ msgstr "Blog"
-
 #~ msgid "Note:"
 #~ msgstr "Uwaga:"
-
 #~ msgid ""
 #~ "Arjuna cannot write to the themes directory. The custom CSS rules will be "
 #~ "included in the header of each page, between &lt;STYLE&gt; tags."
 #~ msgstr ""
 #~ "Arjuna nie może zapisywać do katalogu tematu. Reguły własnych CSS mogą "
 #~ "zostać dołączone w nagłówku każdej strony, między tagami &lt;STYLE&gt;."
-
 #~ msgid "Performance Optimization"
 #~ msgstr "Optymalizacja wydajności"
-
 #~ msgid "Internet Explorer 6 Optimization"
 #~ msgstr "Optymalizacja dla IE6"
-
 #~ msgid "Enable IE6 performance optimization"
 #~ msgstr "Optymalizacja wydajności dla IE6"
-
 #~ msgid ""
 #~ "If turned on, Arjuna will attempt to detect IE6 and serve a stand-alone "
 #~ "CSS file specifically made for IE6."
 #~ msgstr ""
 #~ "Jeśli opcja jest włączona, temat Arjuna będzie próbował wykryć IE6 i "
 #~ "spróbuje samodzielnie użyć pliku CSS specjalnie dla IE6."
-
 #~ msgid ""
 #~ "Note: IE6 will still work the same if this option is turned off, however, "
 #~ "you and your IE6 users will save an estimated 28kb (11 image and 2 CSS "
@@ -1218,3 +1209,4 @@ msgstr "następny wpis"
 #~ "jednakże Ty i użytkownicy IE6 możecie zaoszczędzić okołło 28KB (11 "
 #~ "obrazów i 2 pliki CSS) na przepustowości dla użytkowników pierwszy raz "
 #~ "odwiedzających. IE6 mógłyby być więc szybszy, jeśli opcja jest włączona."
+

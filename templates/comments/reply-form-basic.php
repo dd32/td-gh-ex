@@ -7,9 +7,9 @@ print '<input type="hidden" id="replyMsgDefault" value="' . __('Your comment', '
 
 comment_form(array(
 	'fields' => array(
-		'author' => '<div class="replyRow"><input type="text" class="inputText' . (empty($comment_author) ? ' inputIA' : '') . '" id="replyName" name="author" value="' . (!empty($commenter['comment_author']) ? echo esc_attr($commenter['comment_author']) : __('Your name', 'Arjuna')) . '" /></div>',
-		'email' => '<div class="replyRow"><input type="text" class="inputText' . (empty($comment_author_email) ? ' inputIA' : '') . '" id="replyEmail" name="email" value="' . (!empty($commenter['comment_author_email']) ? echo esc_attr($commenter['comment_author_email']) : __('Your email', 'Arjuna')) . '" /></div>',
-		'url' => '<div class="replyRow"><input type="text" class="inputText' . (empty($comment_author_url) ? ' inputIA' : '') . '" id="replyURL" name="url" value="' . (!empty($commenter['comment_author_url']) ? echo esc_attr($commenter['comment_author_url']) : __('Your website', 'Arjuna')) . '" /></div>',
+		'author' => '<div class="replyRow"><input type="text" class="inputText' . (empty($comment_author) ? ' inputIA' : '') . '" id="replyName" name="author" value="' . (!empty($commenter['comment_author']) ? esc_attr($commenter['comment_author']) : __('Your name', 'Arjuna')) . '" /></div>',
+		'email' => '<div class="replyRow"><input type="text" class="inputText' . (empty($comment_author_email) ? ' inputIA' : '') . '" id="replyEmail" name="email" value="' . (!empty($commenter['comment_author_email']) ? esc_attr($commenter['comment_author_email']) : __('Your email', 'Arjuna')) . '" /></div>',
+		'url' => '<div class="replyRow"><input type="text" class="inputText' . (empty($comment_author_url) ? ' inputIA' : '') . '" id="replyURL" name="url" value="' . (!empty($commenter['comment_author_url']) ? esc_attr($commenter['comment_author_url']) : __('Your website', 'Arjuna')) . '" /></div>',
 	),
 	'title_reply' => __('Leave a Comment', 'Arjuna'),
 	'title_reply_to' => __('Leave a Reply to %s', 'Arjuna'),

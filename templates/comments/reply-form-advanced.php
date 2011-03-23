@@ -17,10 +17,10 @@ $commenter = wp_get_current_commenter();
 	<?php else : ?>
 		<form action="<?php echo site_url( '/wp-comments-post.php' ); ?>" name="reply" method="post" id="commentform">
 			<?php do_action( 'comment_form_top' ); ?>
-			<input type="hidden" id="replyNameDefault" value="<?php echo esc_attr(__('Your name', 'Arjuna')); ?>" />
-			<input type="hidden" id="replyEmailDefault" value="<?php echo esc_attr(__('Your email', 'Arjuna')); ?>" />
-			<input type="hidden" id="replyURLDefault" value="<?php echo esc_attr(__('Your website', 'Arjuna')); ?>" />
-			<input type="hidden" id="replyMsgDefault" value="<?php echo esc_attr(__('Your comment', 'Arjuna')); ?>" />
+			<input type="hidden" id="replyNameDefault" value="<?php esc_attr(__('Your name', 'Arjuna')); ?>" />
+			<input type="hidden" id="replyEmailDefault" value="<?php esc_attr(__('Your email', 'Arjuna')); ?>" />
+			<input type="hidden" id="replyURLDefault" value="<?php esc_attr(__('Your website', 'Arjuna')); ?>" />
+			<input type="hidden" id="replyMsgDefault" value="<?php esc_attr(__('Your comment', 'Arjuna')); ?>" />
 			<?php if ( is_user_logged_in() ): ?>
 				<div class="replyLoggedIn">
 				<?php echo apply_filters( 'comment_form_logged_in', '<div class="replyLoggedIn">' . sprintf(__('Logged in as %s.', 'Arjuna'), '<a href="'.admin_url( 'profile.php' ).'">'.$user_identity.'</a>') . ' <a class="btnLogout btn" href="' . wp_logout_url( apply_filters( 'the_permalink', get_permalink() ) ) . '" title="' . __('Log out of this account', 'Arjuna') . '"><span>' . __('Logout', 'Arjuna') . '</span></a></div>', $commenter, $user_identity ); ?>
@@ -28,9 +28,9 @@ $commenter = wp_get_current_commenter();
 				<?php do_action( 'comment_form_logged_in_after', $commenter, $user_identity ); ?>
 			<?php else : ?>
 				<?php do_action( 'comment_form_before_fields' ); ?>
-				<div class="replyRow"><input type="text" class="inputText<?php if(empty($commenter['comment_author'])): ?> inputIA<?php endif; ?>" id="replyName" name="author" value="<?php if(!empty($commenter['comment_author'])) { echo esc_attr($commenter['comment_author']); } else { echo esc_attr(__('Your name', 'Arjuna')); } ?>" /></div>
-				<div class="replyRow"><input type="text" class="inputText<?php if(empty($commenter['comment_author_email'])): ?> inputIA<?php endif; ?>" id="replyEmail" name="email" value="<?php if(!empty($commenter['comment_author_email'])) { echo esc_attr($commenter['comment_author_email']); } else { echo esc_attr(__('Your email', 'Arjuna')); } ?>" /></div>
-				<div class="replyRow"><input type="text" class="inputText<?php if(empty($commenter['comment_author_url'])): ?> inputIA<?php endif; ?>" id="replyURL" name="url" value="<?php if(!empty($commenter['comment_author_url'])) { echo esc_attr($commenter['comment_author_url']); } else { echo esc_attr(__('Your website', 'Arjuna')); } ?>" /></div>
+				<div class="replyRow"><input type="text" class="inputText<?php if(empty($commenter['comment_author'])): ?> inputIA<?php endif; ?>" id="replyName" name="author" value="<?php if(!empty($commenter['comment_author'])) { echo esc_attr($commenter['comment_author']); } else { esc_attr(__('Your name', 'Arjuna')); } ?>" /></div>
+				<div class="replyRow"><input type="text" class="inputText<?php if(empty($commenter['comment_author_email'])): ?> inputIA<?php endif; ?>" id="replyEmail" name="email" value="<?php if(!empty($commenter['comment_author_email'])) { echo esc_attr($commenter['comment_author_email']); } else { esc_attr(__('Your email', 'Arjuna')); } ?>" /></div>
+				<div class="replyRow"><input type="text" class="inputText<?php if(empty($commenter['comment_author_url'])): ?> inputIA<?php endif; ?>" id="replyURL" name="url" value="<?php if(!empty($commenter['comment_author_url'])) { echo esc_attr($commenter['comment_author_url']); } else { esc_attr(__('Your website', 'Arjuna')); } ?>" /></div>
 				<?php do_action( 'comment_form_after_fields' ); ?>
 			<?php endif; ?>
 			<?php

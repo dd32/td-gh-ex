@@ -1,10 +1,9 @@
 <?php $arjunaOptions = arjuna_get_options(); ?>
-<!DOCTYPE HTML>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
-<head>
+<head profile="http://gmpg.org/xfn/11">
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>"  />
 <?php get_template_part( 'templates/core/head-title-tag' ); ?>
-<link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
@@ -16,7 +15,7 @@
 </head>
 
 <?php get_template_part( 'templates/core/body-tag' ); ?>
-<a id="skipToPosts" href="#contentArea"><?php _e('Skip to posts', 'Arjuna'); ?></a>
+<a name="top"></a><a id="skipToPosts" href="#content"><?php _e('Skip to posts', 'Arjuna'); ?></a>
 <?php get_template_part( 'templates/core/ie6-notice' ); ?>
 <div class="pageContainer">
 	<div class="headerBG"></div>
@@ -31,6 +30,7 @@
 		elseif ($arjunaOptions['sidebarDisplay']=='left')
 			print ' LS';
 	?>">
+		<a name="content"></a>
 		
 
 

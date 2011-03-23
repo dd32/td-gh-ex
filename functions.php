@@ -3,7 +3,7 @@
 
 function arjuna_get_default_options() {
 	$options = array(
-		'headerImage' => 'lightBlue',
+		'headerImage' => 'lightBlue', //lightBlue, darkBlue
 		'commentDisplay' => 'alt', // alt, left, right
 		'commentDateFormat' => 'timePassed', // timePassed, date
 		'comments_hideWhenDisabledOnPages' => true,
@@ -16,6 +16,12 @@ function arjuna_get_default_options() {
 		'sidebarDisplay' => 'right', // right, left, none
 		'sidebarWidth' => 'normal', // small, normal, large
 		'sidebar_showDefault' => true, 
+		'sidebar_showRSSButton' => true, 
+		'sidebar_showTwitterButton' => false,
+		'sidebar_showFacebookButton' => false, 
+		'sidebar_twitterURL' => '', 
+		'sidebar_facebookURL' => '', 
+		'sidebar_displayButtonTexts' => false, 
 		'postsShowAuthor' => true,
 		'postsShowTime' => false,
 		'posts_showTopPostLinks' => false,
@@ -49,7 +55,7 @@ function arjuna_get_default_options() {
 		'headerMenus_effect' => 'slide', //slide, fade, none
 		'headerMenus_delay' => 500, //in milliseconds
 		
-		//Added 1.6.x
+		//Added 1.6
 		'contentAreaWidth' => 570, //width of the content area, sidebar will be calculated
 		'sidebar_showLinkedInButton' => false,
 		'sidebarButtons' => array(
@@ -103,11 +109,7 @@ function arjuna_get_default_options() {
 				'exclude_pages' => '',
 			),
 		),
-		'search' => array(
-			'enabled' => true,
-			'position' => 'bottom' //top, bottom
-		),
-		//'enableSearch' => true,
+		'enableSearch' => true,
 		'useFeedburner' => false,
 		'feedburnerURL' => '',
 		'feedburnerCommentsURL' => '',
@@ -122,7 +124,7 @@ function arjuna_get_default_options() {
 			'showTimestamps' => true,
 		),
 	
-		'currentVersion' => '1.6.11',
+		'currentVersion' => '1.6.2',
 	);
 	
 	return $options;
@@ -131,74 +133,50 @@ function arjuna_get_default_options() {
 
 function arjuna_get_color_schemes() {
 	$colorSchemes = array(
-		'lightBlue' => __('Light Blue', 'Arjuna'),
-		'bristolBlue' => __('Bristol Blue', 'Arjuna'),
-		'darkBlue' => __('Dark Blue', 'Arjuna'),
-		'regimentalBlue' => __('Regimental Blue', 'Arjuna'),
-		'khaki' => __('Khaki', 'Arjuna'),
-		'seaGreen' => __('Sea Green', 'Arjuna'),
-		'lightRed' => __('Light Red', 'Arjuna'),
-		'purple' => __('Purple', 'Arjuna'),
-		'lightGray' => __('Light Gray', 'Arjuna'),
-		'darkGray' => __('Dark Gray', 'Arjuna'),
+		'lightBlue' => __('Light Blue'),
+		'darkBlue' => __('Dark Blue'),
+		'khaki' => __('Khaki'),
+		'seaGreen' => __('Sea Green'),
+		'lightRed' => __('Light Red'),
+		'purple' => __('Purple'),
+		'lightGray' => __('Light Gray'),
+		'darkGray' => __('Dark Gray'),
 	);
 	
 	return $colorSchemes;
 }
 
 function arjuna_parse_version($version) {
-	if(substr_count($version, '.') == 1)
-		return (int) (str_replace('.', '', $version) . '0');
-	else return (int) str_replace('.', '', $version);
+	return (int) str_replace('.', '', $version);
 }
 
-/**
- * Arjuna Load Default Options
- * 
- * Loads the default options into the DB.
- * This should ONLY be done when Arjuna is first installed or if a reset has been initiated.
- */
+$optionsSaved = false;
 function arjuna_load_default_options() {
 	//load defaults
 	$options = arjuna_get_default_options();
+	
+	//load options from database
+	$DBOptions = get_option('arjuna_options');
+	//if no options exist, create a new empty array
+	if (!$DBOptions)
+		$DBOptions = array();
+	
+	//use the default options and override any existing options in the DB
+	//this ensures that any new options after an upgrade are included and existing options do not get overridden.
+	foreach ( $options as $key => $value )
+		if ( isset($DBOptions[$key]) )
+			$options[$key] = $DBOptions[$key];
+	
 	update_option('arjuna_options', $options);
 	
 	return $options;
 }
 
-/**
- * Arjuna Upgrade Options
- * 
- * Compares version numbers and upgrades the DB options accordingly.
- */
-function arjuna_upgrade_options() {
-	//load current defaults
-	$newVersionDefaultOptions = $newVersionOptions = arjuna_get_default_options();
-	
-	//load options from database
-	$oldVersionOptions = get_option('arjuna_options');
-	
-	//create options for new version
-	//start by overwriting any existing option values to the new version
-	foreach ( $newVersionOptions as $key => $value )
-		if ( isset($oldVersionOptions[$key]) && $key != 'currentVersion' )
-			$newVersionOptions[$key] = $oldVersionOptions[$key];
-	
-	//find upgrade profiles
-	if(!isset($oldVersionOptions['currentVersion'])) {
-		//old version below 1.6
-	} else {
-		if(arjuna_parse_version($oldVersionOptions['currentVersion']) >= 139) {
-			$newVersionOptions['search']['enabled'] = $oldVersionOptions['enableSearch'];
-		}
-	}
-	
-	update_option('arjuna_options', $newVersionOptions);
-	
-	return $newVersionOptions;
-}
-
 function arjuna_get_options() {
+	
+	static $return = false;
+	if($return !== false)
+		return $return;
 	
 	//get options from DB
 	$DBOptions = get_option('arjuna_options');
@@ -211,20 +189,16 @@ function arjuna_get_options() {
 	
 	//determine if there is an upgrade required
 	if(!isset($DBOptions['currentVersion']) || arjuna_parse_version($DBOptions['currentVersion']) < arjuna_parse_version($defaultOptions['currentVersion']))
-		return arjuna_upgrade_options();
+		return arjuna_load_default_options();
 		
 	//no upgrade or new installation, continue with DB options
-	return $DBOptions;
+	return $defaultOptions;
 }
 
-add_action('admin_menu', 'arjuna_add_theme_options');
 $formErrors = array();
-$optionsSaved = false;
 function arjuna_add_theme_options() {
-	global $optionsSaved, $formErrors;
+	global $optionsSaved, $formErrors, $arjunaColorSchemes;
 	if(isset($_POST['arjuna_save_options'])) {
-		
-		$arjunaColorSchemes = arjuna_get_color_schemes();
 		
 		/*if(!wp_verify_nonce($_POST['srs_arjuna_nonce'], 'srs_arjuna')) {
 			print "Sorry, your nonce did not verify.";
@@ -352,7 +326,7 @@ function arjuna_add_theme_options() {
 		
 		//Menu 2 Home Icon
 		if (isset($_POST['menus_2_displaySeparators'])) $options['menus']['2']['displaySeparators'] = true;
-		else $options['menus']['2']['displaySeparators'] = false;
+		else $options['menus']['2']['displaySeparator'] = false;
 		
 		
 		// Menu 2 - Exclude items
@@ -370,22 +344,14 @@ function arjuna_add_theme_options() {
 		
 
 		//Header Image
-		
 		if(isset($_POST['headerImage'])) {
 			if ( isset($arjunaColorSchemes[$_POST['headerImage']]) ) $options['headerImage'] = $_POST['headerImage'];
-			else $options['headerImage'] = 'lightBlue';
+			else $options['headerImage'] = $validOptions[0];
 		}
 		
-		//Search
-		if (isset($_POST['search_enabled'])) $options['search']['enabled'] = (bool)$_POST['search_enabled'];
-		else $options['search']['enabled'] = false;
-		
-		$validOptions = array('top', 'bottom');
-		if(isset($_POST['search_position'])) {
-			if ( in_array($_POST['search_position'], $validOptions) ) $options['search']['position'] = $_POST['search_position'];
-			else $options['search']['position'] = 'bottom';
-		}
-		
+		if (isset($_POST['enableSearch'])) $options['enableSearch'] = (bool)$_POST['enableSearch'];
+		else $options['enableSearch'] = false;
+
 		//Comment display
 		$validOptions = array('alt', 'left', 'right');
 		if(isset($_POST['commentDisplay'])) {
@@ -463,9 +429,6 @@ function arjuna_add_theme_options() {
 			$options['sidebarButtons']['RSS']['label'] = $_POST['sidebarButtons_RSS_label'];
 			if(isset($_POST['sidebarButtons_RSS_extended']))
 				$options['sidebarButtons']['RSS']['extended'] = (bool) $_POST['sidebarButtons_RSS_extended'];
-			else $options['sidebarButtons']['RSS']['extended'] = false;
-		} else {
-			$options['sidebarButtons']['RSS']['enabled'] = false;
 		}
 		if(isset($_POST['sidebarButtons_twitter_enabled'])) {
 			$options['sidebarButtons']['twitter']['enabled'] = (bool) $_POST['sidebarButtons_twitter_enabled'];
@@ -482,8 +445,6 @@ function arjuna_add_theme_options() {
 				$options['sidebarButtons']['twitter']['URL'] = '';
 			} else
 				$options['sidebarButtons']['twitter']['URL'] = $URL;
-		} else {
-			$options['sidebarButtons']['twitter']['enabled'] = false;
 		}
 		if(isset($_POST['sidebarButtons_facebook_enabled'])) {
 			$options['sidebarButtons']['facebook']['enabled'] = (bool) $_POST['sidebarButtons_facebook_enabled'];
@@ -500,8 +461,6 @@ function arjuna_add_theme_options() {
 				$options['sidebarButtons']['facebook']['URL'] = '';
 			} else
 				$options['sidebarButtons']['facebook']['URL'] = $URL;
-		} else {
-			$options['sidebarButtons']['facebook']['enabled'] = false;
 		}
 		if(isset($_POST['sidebarButtons_linkedIn_enabled'])) {
 			$options['sidebarButtons']['linkedIn']['enabled'] = (bool) $_POST['sidebarButtons_linkedIn_enabled'];
@@ -518,8 +477,6 @@ function arjuna_add_theme_options() {
 				$options['sidebarButtons']['linkedIn']['URL'] = '';
 			} else
 				$options['sidebarButtons']['linkedIn']['URL'] = $URL;
-		} else {
-			$options['sidebarButtons']['linkedIn']['enabled'] = false;
 		}
 			
 		
@@ -699,8 +656,6 @@ function arjuna_add_theme_options() {
 		
 		
 		update_option('arjuna_options', $options);
-		
-		
 		$optionsSaved = true;
 	}
 	
@@ -732,6 +687,7 @@ function arjuna_add_theme_page () {
 	global $optionsSaved, $formErrors, $arjunaColorSchemes;
 
 	$options = arjuna_get_options();
+	//$nonce = wp_create_nonce();
 	
 	if ( $optionsSaved )
 		echo '<div id="message" class="updated fade"><p><strong>'.__('The Arjuna options have been saved.', 'Arjuna').'</strong></p></div>';
@@ -750,10 +706,10 @@ function arjuna_add_theme_page () {
 			<?php printf(__('Thank you for using Arjuna, the free WordPress theme designed by %s.', 'Arjuna'), '<a href="http://www.srssolutions.com/en/" class="tSRS">SRS Solutions</a>'); ?>
 			<div class="tTwitter">
 				<a href="http://www.twitter.com/srssolutions"><?php _e('Follow Us', 'Arjuna'); ?></a>
-				<?php _e('to receive news, updates, and more.', 'Arjuna'); ?>
+				to receive news, updates, and more.
 			</div>
 			<div class="tFacebook">
-				<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="http://www.facebook.com/srssolutions" show_faces="false" width="600" font="lucida grande"></fb:like>
+				<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="http://www.facebook.com/pages/SRS-Solutions-An-Internet-Marketing-Company/109861081307" show_faces="false" width="600" font="lucida grande"></fb:like>
 			</div>
 			<div class="logo"></div>
 			</div>
@@ -1015,17 +971,14 @@ function arjuna_add_theme_page () {
 						<tr valign="top">
 							<th scope="row"><?php _e('Use', 'Arjuna'); ?></th>
 							<td id="menus-2-useNavMenus">
-								<div style="overflow:hidden;">
-									<div class="tALeft"><label>
-										<input name="menus_2_useNavMenus" type="radio" value="1"<?php checked($options['menus']['2']['useNavMenus']); ?> />
-										 <?php _e('WordPress Custom Menus', 'Arjuna'); ?>
-									</label></div>
-									<div class="tALeft"><label>
-										<input name="menus_2_useNavMenus" type="radio" value="0"<?php checked(!$options['menus']['2']['useNavMenus']); ?> />
-										 <?php _e('Legacy Menus', 'Arjuna'); ?>
-									</label></div>
-								</div>
-								<p class="description"><?php print str_replace(array('[[LINK_START]]', '[[LINK_END]]'), array('<a href="'.admin_url('nav-menus.php').'" target="_blank">', '</a>'), __('If you use WP Custom Menus, please assign a custom menu in [[LINK_START]]Appearance > Menus[[LINK_END]]. Otherwise, the menu will fall back to displaying all pages.', 'Arjuna'));?></p>
+								<div class="tALeft"><label>
+									<input name="menus_2_useNavMenus" type="radio" value="1"<?php checked($options['menus']['2']['useNavMenus']); ?> />
+									 <?php _e('WordPress Custom Menus', 'Arjuna'); ?>
+								</label></div>
+								<div class="tALeft"><label>
+									<input name="menus_2_useNavMenus" type="radio" value="0"<?php checked(!$options['menus']['2']['useNavMenus']); ?> />
+									 <?php _e('Legacy Menus', 'Arjuna'); ?>
+								</label></div>
 							</td>
 						</tr>
 					</tbody>
@@ -1171,7 +1124,6 @@ function arjuna_add_theme_page () {
 									<tr>
 									<td>
 										<?php 
-										$arjunaColorSchemes = arjuna_get_color_schemes();
 										foreach($arjunaColorSchemes as $color => $name) {
 											print '<div class="tImageOptions" style="float:none;overflow:hidden;">';
 												print '<input name="headerImage" type="radio" id="headerImage_'.$color.'" value="'.$color.'"' . checked($options['headerImage'], $color, false) . ' />';
@@ -1319,24 +1271,9 @@ function arjuna_add_theme_page () {
 						<tr>
 							<th scope="row"><?php _e('Enabled', 'Arjuna'); ?></th>
 							<td>
-								<label><input name="search_enabled" id="search-enabled" type="checkbox"<?php checked($options['search']['enabled']); ?> /> <?php _e('Enable WordPress search', 'Arjuna'); ?></label>
+								<label><input name="enableSearch" type="checkbox"<?php checked($options['enableSearch']); ?> /> <?php _e('Enable WordPress search', 'Arjuna'); ?></label>
 								<br />
 								<span class="description"><?php _e('If disabled, the search field will not be included in the header.', 'Arjuna');?></span>
-							</td>
-						</tr>
-					</tbody>
-					<tbody id="search-enabled-container"<?php if(!$options['search']['enabled']) echo ' style="display:none;"'; ?>>
-						<tr valign="top">
-							<th scope="row"><?php _e('Position Search', 'Arjuna'); ?></th>
-							<td>
-								<div class="tALeft"><label>
-									<input name="search_position" type="radio" value="top"<?php checked($options['search']['position'], 'top'); ?> />
-									 <?php _e('Top right (in header)', 'Arjuna'); ?>
-								</label></div>
-								<div class="tALeft"><label>
-									<input name="search_position" type="radio" value="bottom"<?php checked($options['search']['position'], 'bottom'); ?> />
-									 <?php _e('Bottom right (in header)', 'Arjuna'); ?>
-								</label></div>
 							</td>
 						</tr>
 					</tbody>
@@ -1737,42 +1674,42 @@ function arjuna_add_theme_page () {
 
 // register function
 //add_action('admin_menu', 'arjuna_get_options');
-
+add_action('admin_menu', 'arjuna_add_theme_options');
 
 
 
 register_sidebar(array(
-	'name'=> __('Sidebar Top', 'Arjuna'),
+	'name'=>'Sidebar Top',
 		'id'=>'sidebar_full_top',
-		'description'=>__('This is the top widget bar in the sidebar, extending to full width of the sidebar.', 'Arjuna'),
-		'before_widget' => '<div id="%1$s" class="sidebarBox %2$s">',
+		'description'=>'This is the top widget bar in the sidebar, extending to full width of the sidebar.',
+		'before_widget' => '<div class="sidebarBox">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4><span>',
 		'after_title' => '</span></h4>'
 ));
 register_sidebar(array(
-	'name'=>__('Sidebar Left', 'Arjuna'),
+	'name'=>'Sidebar Left',
 		'id'=>'sidebar_left',
-		'description'=>__('This is the widget bar on the left hand side in the sidebar. It appears right below the top widget bar.', 'Arjuna'),
-		'before_widget' => '<div id="%1$s" class="sidebarBox %2$s">',
+		'description'=>'This is the widget bar on the left hand side in the sidebar. It appears right below the top widget bar.',
+		'before_widget' => '<div class="sidebarBox">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4><span>',
 		'after_title' => '</span></h4>'
 ));
 register_sidebar(array(
-	'name'=>__('Sidebar Right', 'Arjuna'),
+	'name'=>'Sidebar Right',
 		'id'=>'sidebar_right',
-		'description'=>__('This is the widget bar on the right hand side in the sidebar. It appears right below the top widget bar, next to the left widget bar.', 'Arjuna'),
-		'before_widget' => '<div id="%1$s" class="sidebarBox %2$s">',
+		'description'=>'This is the widget bar on the right hand side in the sidebar. It appears right below the top widget bar, next to the left widget bar.',
+		'before_widget' => '<div class="sidebarBox">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4><span>',
 		'after_title' => '</span></h4>'
 ));
 register_sidebar(array(
-	'name'=>__('Sidebar Bottom', 'Arjuna'),
+	'name'=>'Sidebar Bottom',
 		'id'=>'sidebar_full_bottom',
-		'description'=>__('This is the bottom widget bar in the sidebar, extending to full width of the sidebar. It will appear below the left and right widget bars.', 'Arjuna'),
-		'before_widget' => '<div id="%1$s" class="sidebarBox %2$s">',
+		'description'=>'This is the bottom widget bar in the sidebar, extending to full width of the sidebar. It will appear below the left and right widget bars.',
+		'before_widget' => '<div class="sidebarBox">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4><span>',
 		'after_title' => '</span></h4>'
@@ -1804,8 +1741,9 @@ function theme_init(){
 }
 add_action ('init', 'theme_init');
 
-//CSS
+//CSS for plugin page
 add_action('admin_print_styles', 'arjuna_admin_initCSS');
+
 function arjuna_admin_initCSS() {
 	wp_enqueue_style('arjunaAdminCSS', get_template_directory_uri().'/admin/admin.css');
 	wp_enqueue_style('fionnFarbtasticCSS', get_template_directory_uri().'/lib/farbtastic/farbtastic.css');
@@ -2130,8 +2068,6 @@ function arjuna_get_post_pagination($previousLabel, $nextLabel) {
 	return;
 }
 function arjuna_post_pagination_get_url($page) {
-	global $post;
-	
 	if($page == 1)
 		return add_query_arg('page', $page, get_permalink());
 	elseif('' == get_option('permalink_structure') || in_array($post->post_status, array('draft', 'pending')))
@@ -2318,8 +2254,7 @@ add_filter('get_comments_number', 'arjuna_comment_count', 0);
 function arjuna_comment_count( $count ) {
 	if (!is_admin()) {
 		global $id;
-		$comments = get_comments('status=approve&post_id=' . $id);
-		$comments_by_type = separate_comments($comments);
+		$comments_by_type = &separate_comments(get_comments('status=approve&post_id=' . $id));
 		return count($comments_by_type['comment']);
 	} 
 	return $count;
@@ -2328,8 +2263,7 @@ function arjuna_comment_count( $count ) {
 function arjuna_is_show_comments() {
 	global $comments_by_type, $post, $id;
 	$arjunaOptions = arjuna_get_options();
-	$comments = get_comments('status=approve&post_id=' . $id);
-	$comments_by_type = separate_comments($comments);
+	$comments_by_type = &separate_comments(get_comments('status=approve&post_id=' . $id));
 	
 	if($post->comment_status == 'open')
 		return true;
@@ -2349,8 +2283,7 @@ function arjuna_is_show_comments() {
 function arjuna_is_show_trackbacks() {
 	global $comments_by_type, $post, $id;
 	$arjunaOptions = arjuna_get_options();
-	$comments = get_comments('status=approve&post_id=' . $id);
-	$comments_by_type = separate_comments(get_comments('status=approve&post_id=' . $id));
+	$comments_by_type = &separate_comments(get_comments('status=approve&post_id=' . $id));
 	
 	if($post->ping_status == 'open')
 		return true;
@@ -2369,24 +2302,22 @@ function arjuna_is_show_trackbacks() {
 
 function arjuna_get_comments_count() {
 	global $id;
-	$comments = get_comments('status=approve&post_id=' . $id);
-	$comments_by_type = separate_comments($comments);
+	$comments_by_type = &separate_comments(get_comments('status=approve&post_id=' . $id));
 	
 	return count($comments_by_type['comment']);
 }
 
 function arjuna_get_trackbacks_count() {
 	global $id;
-	$comments = get_comments('status=approve&post_id=' . $id);
-	$comments_by_type = separate_comments($comments);
+	$comments_by_type = &separate_comments(get_comments('status=approve&post_id=' . $id));
 	
 	return count($comments_by_type['pings']);
 }
 
 function arjuna_nav_menus() {
 	register_nav_menus(array(
-		'header_menu_1' => __('First Header Menu', 'Arjuna'),
-		'header_menu_2' => __('Second Header Menu', 'Arjuna'),
+		'header_menu_1' => 'First Header Menu',
+		'header_menu_2' => 'Second Header Menu',
 	));
 }
 add_action('init', 'arjuna_nav_menus');
@@ -2498,39 +2429,23 @@ function arjuna_create_twitter_widget_control() {
 	print '<p>'.__('Please go to Appearance > Arjuna Options to configure your Arjuna twitter widget.', 'Arjuna').'</p>';
 }
 
-add_action('init', 'arjuna_register_twitter_widget');
 function arjuna_register_twitter_widget() {
     wp_register_sidebar_widget(
     	'arjuna_twitter_widget',
-    	__('Arjuna Twitter Profile Widget', 'Arjuna'),
+    	__('Arjuna Twitter Profile Widget'),
     	'arjuna_create_twitter_widget',
     	array(
     		'classname' => 'arjuna_twitter_widget',
-    		'description' => __("Display Twitter Goodies Profile Widget", "Arjuna"),
+    		'description' => __( "Display Twitter Goodies Profile Widget"),
     	)
     );
     wp_register_widget_control(
     	'arjuna_twitter_widget',
-    	__('Arjuna Twitter Profile Widget', 'Arjuna'),
+    	__('Arjuna Twitter Profile Widget'),
     	'arjuna_create_twitter_widget_control',
     	array('id_base' => 'arjuna_twitter_widget')
     );
 }
-
-//fallback for nav menus
-function arjuna_print_page_menu() {
-	$arjunaOptions = arjuna_get_options();
-	
-	$html = '';
-	
-	$html .= '<ul id="headerMenu2">';
-		if($arjunaOptions['menus']['2']['displayHome'])
-			$html .= '<li><a href="' . (function_exists('icl_get_home_url')?icl_get_home_url():home_url('/')) . '" class="homeIcon">' . __('Home','Arjuna') . '</a></li>';
-		
-		$html .= wp_list_pages('title_li=&echo=0&depth='.$arjunaOptions['menus']['2']['depth']);
-	$html .= '</ul>';
-	
-	print $html;
-}
+add_action('init', 'arjuna_register_twitter_widget');
 
 add_theme_support('automatic-feed-links');
