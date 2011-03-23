@@ -124,7 +124,7 @@ function arjuna_get_default_options() {
 			'showTimestamps' => true,
 		),
 	
-		'currentVersion' => '1.6.2',
+		'currentVersion' => '1.6.3',
 	);
 	
 	return $options;
@@ -174,10 +174,6 @@ function arjuna_load_default_options() {
 
 function arjuna_get_options() {
 	
-	static $return = false;
-	if($return !== false)
-		return $return;
-	
 	//get options from DB
 	$DBOptions = get_option('arjuna_options');
 	//get default options
@@ -192,13 +188,15 @@ function arjuna_get_options() {
 		return arjuna_load_default_options();
 		
 	//no upgrade or new installation, continue with DB options
-	return $defaultOptions;
+	return $DBOptions;
 }
 
 $formErrors = array();
 function arjuna_add_theme_options() {
-	global $optionsSaved, $formErrors, $arjunaColorSchemes;
+	global $optionsSaved, $formErrors;
 	if(isset($_POST['arjuna_save_options'])) {
+		
+		$arjunaColorSchemes = arjuna_get_color_schemes();
 		
 		/*if(!wp_verify_nonce($_POST['srs_arjuna_nonce'], 'srs_arjuna')) {
 			print "Sorry, your nonce did not verify.";
@@ -344,9 +342,10 @@ function arjuna_add_theme_options() {
 		
 
 		//Header Image
+		
 		if(isset($_POST['headerImage'])) {
 			if ( isset($arjunaColorSchemes[$_POST['headerImage']]) ) $options['headerImage'] = $_POST['headerImage'];
-			else $options['headerImage'] = $validOptions[0];
+			else $options['headerImage'] = 'lightBlue';
 		}
 		
 		if (isset($_POST['enableSearch'])) $options['enableSearch'] = (bool)$_POST['enableSearch'];
@@ -656,6 +655,8 @@ function arjuna_add_theme_options() {
 		
 		
 		update_option('arjuna_options', $options);
+		
+		
 		$optionsSaved = true;
 	}
 	
@@ -1124,6 +1125,7 @@ function arjuna_add_theme_page () {
 									<tr>
 									<td>
 										<?php 
+										$arjunaColorSchemes = arjuna_get_color_schemes();
 										foreach($arjunaColorSchemes as $color => $name) {
 											print '<div class="tImageOptions" style="float:none;overflow:hidden;">';
 												print '<input name="headerImage" type="radio" id="headerImage_'.$color.'" value="'.$color.'"' . checked($options['headerImage'], $color, false) . ' />';
