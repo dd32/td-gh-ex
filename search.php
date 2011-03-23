@@ -16,15 +16,15 @@
 
 			<div class="post">
 				<h3 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-				<small><?php the_time(get_option('date_format')); ?>  by <?php the_author() ?>   |  <?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?> | Filed in <?php the_category(', ') ?> <?php edit_post_link('Edit'); ?>  </small>
+				<small><?php the_time('F jS, Y') ?>  by <?php the_author() ?>   |  <?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?> | Filed in <?php the_category(', ') ?> <?php edit_post_link('Edit'); ?>  </small>
  
 			</div>
 
 		<?php endwhile; ?>
 
 		<div class="navigation">
-			<div class="alignleft mainnav"><?php next_posts_link('&laquo; Older Entries') ?></div>
-			<div class="alignright mainnav"><?php previous_posts_link('Newer Entries &raquo;') ?></div>
+			<div class="alignleft"><?php next_posts_link('&laquo; Older Entries') ?></div>
+			<div class="alignright"><?php previous_posts_link('Newer Entries &raquo;') ?></div>
 		</div>
 
 	<?php else : ?>

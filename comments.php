@@ -1,4 +1,7 @@
-<?php  
+<?php // Do not delete these lines
+	if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
+		die ('Please do not load this page directly. Thanks!');
+
 	if ( post_password_required() ) { ?>
 	<p class="nocomments">This post is password protected. Enter the password to view comments.</p>
 
@@ -34,7 +37,7 @@
 
 	 <?php else : // comments are closed ?>
 		<!-- If comments are closed. -->
-		<p class="nocomments">Comments are disabled</p>
+		<p class="nocomments">Comments are closed.</p>
 
 	<?php endif; ?>
 <?php endif; ?>
@@ -44,4 +47,4 @@
 
 <?php comment_form(array('comment_notes_after'=>'' )); ?>
 
-<?php endif; // if you delete this the sky will fall on your head ?>
+<?php endif; // if you delete this the sky will fall on your head ?>
