@@ -2,8 +2,8 @@
 
 	<div class="content">
 
-		<h2>Error 404 - Not Found</h2>
-
+		<h1>Error 404 - Not Found</h1>
+        <p>The requested URL was not found on this server.</p>
 	</div>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

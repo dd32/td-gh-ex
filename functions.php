@@ -23,7 +23,11 @@ function baza_noclegowa_init_method() {
    }       
 }
        
-
+	register_nav_menus(
+		array(
+		  'footer-menu' => 'Footer Menu'
+		)
+	);
 
 add_action('init', 'baza_noclegowa_init_method');
 

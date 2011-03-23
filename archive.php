@@ -10,11 +10,11 @@
  	  <?php /* If this is a tag archive */ } elseif( is_tag() ) { ?>
 		<h2 class="pageTitle"><?php single_tag_title(); ?></h2>
  	  <?php /* If this is a daily archive */ } elseif (is_day()) { ?>
-		<h2 class="pageTitle"><?php get_the_time('F jS, Y'); ?></h2>
+		<h2 class="pageTitle"><?php echo get_the_time('F jS, Y'); ?></h2>
  	  <?php /* If this is a monthly archive */ } elseif (is_month()) { ?>
-		<h2 class="pageTitle"><?php get_the_time('F, Y'); ?></h2>
+		<h2 class="pageTitle"><?php echo get_the_time('F, Y'); ?></h2>
  	  <?php /* If this is a yearly archive */ } elseif (is_year()) { ?>
-		<h2 class="pageTitle"><?php get_the_time('Y'); ?></h2>
+		<h2 class="pageTitle"><?php echo get_the_time('Y'); ?></h2>
 	  <?php /* If this is an author archive */ } elseif (is_author()) { ?>
 		<h2 class="pageTitle">Author Archive</h2>
  	  <?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
@@ -48,6 +48,7 @@
 	<?php else : ?>
 
 		<h2 class="center">Not Found</h2>
+		<p class="center">Sorry, but you are looking for something that isn't here.</p>
 		<?php get_search_form(); ?>
 
 	<?php endif; ?>

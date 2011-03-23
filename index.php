@@ -15,7 +15,7 @@
 						    <?php the_post_thumbnail(); ?>
 							<?php the_excerpt(); ?>
 						</div>
-						<p>Posted in <?php the_category(', ') ?> | <?php edit_post_link('Edit', '', ' | '); ?> <?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?> </p>
+						<p>Posted in <?php the_category(', ') ?><?php the_tags( ' | Tags: ', ', ', ''); ?> | <?php edit_post_link('Edit', '', ' | '); ?> <?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?> </p>
 					</div>
 					<div class="clear"></div>
 					<!-- End: Post -->

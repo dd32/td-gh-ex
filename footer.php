@@ -12,9 +12,7 @@
 		
 		<!-- FOOTER -->
 		<div id="footer">
-			<ul class="nav">
-				<?php wp_list_pages('depth=1&sort_column=menu_order&title_li='); ?>
-			</ul>
+         <?php wp_nav_menu( array( 'menu' => 'Footer Navigation', 'container' => 'div','container_id' => 'footer-nav', 'depth' => '1', 'theme_location' => 'footer-menu') ); ?>
 			
 <div class="credits">Powered by <a href="http://wordpress.org/">WordPress</a>. Theme: <a href="http://www.baza-noclegowa.pl/">Baza Noclegowa</a>.</div>
 			
