@@ -30,11 +30,7 @@
 	<?php else : ?>
 
 		<h2 class="center">No posts found. Try a different search?</h2>
-		<form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
-<div><input type="text" value="<?php the_search_query(); ?>" name="s" id="s" size="30" />
-<input type="submit" id="searchsubmit" value="Search" />
-</div>
-</form>
+		<?php get_search_form(); ?>
 
 	<?php endif; ?>
 

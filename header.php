@@ -12,10 +12,9 @@
 
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
  
-<meta name="robots" content="index,follow" />
+<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 
 <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
 
 <?php wp_head(); ?>
 

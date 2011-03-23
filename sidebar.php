@@ -6,13 +6,8 @@
 
 </div>
 
-
-<form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
-<div><input type="text" value="<?php the_search_query(); ?>" name="s" id="s" size="30" />
-<input type="submit" id="searchsubmit" value="Search" class="formbutton" />
-</div>
-</form>
-
+<?php get_search_form(); ?>
+ 
 <br />
 
 <a href="<?php bloginfo('rss2_url'); ?>" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="XML, RSS"  style="vertical-align:middle;border:0;" /> Subscribe Feed (RSS)</a>
