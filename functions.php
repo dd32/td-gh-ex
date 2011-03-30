@@ -22,6 +22,7 @@ add_filter('get_the_excerpt', 'ctx_aj_custom_excerpt_more');
 //add_action('admin_head-appearance_page_theme-options','ctx_aj_help_theme_options');
 add_action('admin_init','ctx_aj_help_theme_options');
 
+
 /************************************************************************************************
  * Add this theme's scripts and stylesheets
  ************************************************************************************************/
@@ -84,7 +85,15 @@ function ctx_aj_stylesheets(){
  */
 function ctx_aj_setup() {
 
-    $themeOpts = get_option('ctx-adventurejournal-options');
+        //Load language packs, if necessary
+        if (function_exists('load_plugin_textdomain')) {
+            load_theme_textdomain('adventurejournal', TEMPLATEPATH.'/languages' );
+        }
+
+        //Create the default theme options, or set defaults if needed
+        ctx_aj_set_options();
+
+        $themeOpts = get_option('ctx-adventurejournal-options');
 
 	// This theme styles the visual editor with editor-style.css to match the theme style.
 	add_editor_style();
@@ -117,36 +126,39 @@ function ctx_aj_setup() {
         // No CSS, just IMG call. The %s is a placeholder for the theme template directory URI.
         define( 'HEADER_IMAGE', '%s/images/headers/ctx-header-egypt.jpg' );
 
+        //Check and see if the custom header size is set, if not use the default value of 360
+        $theme_header_height = (!empty($themeOpts['header-height'])) ? $themeOpts['header-height'] : 360;
 
-		//Get the theme options
-		$themeOpts = get_option('ctx-adventurejournal-options');
-		$theme_header_height = $themeOpts['header-height'];
-		//Check and see if the custom header size is set, if not use the default value of 360
-		if(!isset($theme_header_height)){
-			$theme_header_height = 360;
-		}
         // The height and width of your custom header. You can hook into the theme's own filters to change these values.
         // Add a filter to adventurejournal_header_image_width and adventurejournal_header_image_height to change these values.
         define( 'HEADER_IMAGE_WIDTH', apply_filters( 'adventurejournal_header_image_width', 920 ) );
         define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'adventurejournal_header_image_height', $theme_header_height ) );
 
-        //Set post thumbnail sizes depending on layout
-        switch ($themeOpts['layout']) {
-            case 'col-2-left':
-            case 'col-2-right':
-                set_post_thumbnail_size( 665, 130, true );
-            break;
-            case 'col-3':
-            case 'col-3-left':
-                set_post_thumbnail_size( 485, 94, true );
-            break;
-            default:
-                // We'll be using post thumbnails for custom header images on posts and pages.
-                // We want them to be 920 pixels wide by 180 pixels tall.
-                // Larger images will be auto-cropped to fit, smaller ones will be ignored. See header.php.
-                set_post_thumbnail_size( 920, 180, true );
-            break;
+        //Set header as site header size
+        if($themeOpts['featured-header']=='true'){
+            set_post_thumbnail_size( HEADER_IMAGE_WIDTH, $theme_header_height, true );
+            //wp_die(HEADER_IMAGE_WIDTH.'x'.HEADER_IMAGE_HEIGHT);
+        }else{
+            //Set post thumbnail sizes depending on layout
+            switch ($themeOpts['layout']) {
+                case 'col-2-left':
+                case 'col-2-right':
+                    set_post_thumbnail_size( 665, 130, true ); //GOOGLE FEATURED
+                break;
+                case 'col-3':
+                case 'col-3-left':
+                    set_post_thumbnail_size( 485, 94, true );
+                break;
+                default:
+                    // We'll be using post thumbnails for custom header images on posts and pages.
+                    // We want them to be 920 pixels wide by 180 pixels tall.
+                    // Larger images will be auto-cropped to fit, smaller ones will be ignored. See header.php.
+                    set_post_thumbnail_size( HEADER_IMAGE_WIDTH, $theme_header_height, true );
+                break;
+            }
         }
+
+
 
         // Don't support text inside the header image.
         define( 'NO_HEADER_TEXT', true );
@@ -241,9 +253,6 @@ function ctx_aj_setup() {
             }
         }
 
-        //Create the default theme options
-        ctx_aj_set_options();
-
 }
 
 /**
@@ -273,7 +282,7 @@ function ctx_aj_continue_reading_link() {
  * @return <type>
  */
 function ctx_aj_auto_excerpt_more( $more ) {
-	return ' &hellip' . ctx_aj_continue_reading_link();
+	return ' &hellip;' . ctx_aj_continue_reading_link();
 }
 
 /**
@@ -305,7 +314,10 @@ function ctx_aj_set_options($arrayOverrides=false){
         'custom_css'=>'',
         'attrib'=>'true',
         'showtitle'=>'true',
-		'title-type'=>'title-default'
+        'title-type'=>'title-default',
+        'paper-type'=>'paper-sticky', //paper-sticky
+        'header-height'=>'360', //360,
+        'featured-header'=>'false'
     );
 
     //Let's see if the options already exist...
@@ -596,14 +608,14 @@ if($themeTitle == 'title-default' || $themeTitle == 'title-logo'){
               <div id="site-title"><a href="<?php echo home_url( '/' ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 				  <?php bloginfo( 'name' ); ?>
 				  </a></div>
-				<?php $sitedescr = get_bloginfo('description','display'); echo (empty($sitedescr)) ? '' : sprintf('<div id="site-description">%s</div>',$sitedescr); 
+				<?php $sitedescr = get_bloginfo('description','display'); echo (empty($sitedescr)) ? '' : sprintf('<div id="site-description">%s</div>',$sitedescr);
 			  //Display the custom logo
               } else {
 			  ?>
               	<a href="<?php echo home_url( '/' ) ?>"><img src="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/'.$themeOpts['logo-path'];?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /></a>
               <?php
-              } 
-			  ?>			  
+              }
+			  ?>
           </td></tr></table>
 		</div>
 	  </div>
@@ -612,5 +624,12 @@ if($themeTitle == 'title-default' || $themeTitle == 'title-logo'){
 	}
 }
 
+
+function ctx_aj_crinkled_paper(){
+    $themeOpts = get_option('ctx-adventurejournal-options');
+    if($themeOpts['paper-type'] == 'paper-all'){
+        echo 'class="paper-all"';
+    }
+}
 
 ?>

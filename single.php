@@ -3,11 +3,12 @@
  * @package WordPress
  * @subpackage Adventure_Journal
  */
+$themeOpts = get_option('ctx-adventurejournal-options');
 get_header();
 ?>
 <div class="content" <?php ctx_aj_getlayout(); ?>>
     <div id="col-main">
-      <div id="main-content">
+      <div id="main-content" <?php //ctx_aj_crinkled_paper(); ?>>
       <!-- BEGIN Main Content-->
 		 <?php
 		//Start the Loop
@@ -15,7 +16,7 @@ get_header();
 
         <div <?php post_class() ?> id="post-<?php the_ID(); ?>">
         <?php echo sprintf('<h1 class="storytitle">%s</h1>',get_the_title());?>
-            <?php if(has_post_thumbnail()) the_post_thumbnail(); ?>
+            <?php if($themeOpts['featured-header']!='true') { the_post_thumbnail(); } ?>
         	<div class="meta">Posted by <?php the_author_posts_link(); ?> on <?php the_date();?></div>
 
 			<?php edit_post_link(__('Edit')); ?>

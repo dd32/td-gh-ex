@@ -56,5 +56,22 @@
             <!-- end header -->
       <div id="header"><div id="header2"><div id="header3"><div id="header4">
             	<?php ctx_aj_site_title() ;?>
-              <div id="banner"><img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>"/></div>
+              <div id="banner">
+                <?php
+
+                //wp_die('||| '.(string)has_post_thumbnail( $post->ID ).' |||');
+
+                // Check if this is a post or page, if it has a thumbnail, and if it's a big one
+                if (is_singular()
+                    && has_post_thumbnail( $post->ID )
+                    && ( $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) )
+                    && $image[1] >= HEADER_IMAGE_WIDTH ) {
+                        // Houston, we have a new header image!
+                        echo get_the_post_thumbnail( $post->ID );
+                } else if ( get_header_image() ) {
+                ?>
+                        <img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="" />
+                <?php }  ?>
+
+              </div>
       </div></div></div></div>

@@ -3,8 +3,8 @@ Contributors: Contexture International, Jerrol Krause & Matt VanAndel
 Donate link: http://www.contextureintl.com/wordpress/adventure-journal-wordpress-theme/
 Tags: brown, tan, yellow, light, dark, one-column, custom-header, custom-background, custom-menu, theme-options, threaded-comments, sticky-post, holiday, photoblogging
 Requires at least: 3.0.0
-Tested up to: 3.1
-Stable tag: 1.4.2
+Tested up to: 3.2
+Stable tag: 1.5.0
 
 
 == Description ==
@@ -33,12 +33,18 @@ http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
-= 1.4.2 =
-* FIX: Menus not properly selectedable from the Admin
+= 1.5.0 =
+* NEW FEATURE: Ability to use the 'crinkled paper' background for all posts (previously for "sticky" posts only)
+* NEW FEATURE: Ability to use "Featured Image" as a site header (admins may need to re-upload images for this work)
+* UPDATE: Now includes an english PO file for translators.
+* UPDATE: Reworked the Appearance > Adventure Journal page a bit to improve usability.
+* FIX: Fixed an issue with some AJ admin menus
+* FIX: Corrected improper character encoding for the MORE tag
+* FIX: Drop-down menus should now behave correctly with or without the admin bar in all modern browsers
 
 = 1.4.0 =
 * NEW FEATURE: Added customizable header size
-* New FEATURE: Ability to remove the site title & description OR add a custom logo instead
+* NEW FEATURE: Ability to remove the site title & description OR add a custom logo instead
 * UPDATE: Added WordPress 3.1 compatibility
 * UPDATE: Added support for IE9
 * FIX: Tweaked some of the background images so they tile a little more seamlessly

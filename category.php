@@ -8,7 +8,7 @@ get_header(); ?>
 
 <div class="content" <?php ctx_aj_getlayout(); ?>>
   <div id="col-main">
-    <div id="main-content">
+    <div id="main-content" <?php ctx_aj_crinkled_paper(); ?>>
       <!-- BEGIN Main Content-->
       <h1><?php echo '<span>'.single_cat_title('',false).'</span>';?></h1>
       <?php

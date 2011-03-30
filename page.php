@@ -7,7 +7,7 @@ get_header();
 ?>
 <div class="content" <?php ctx_aj_getlayout(); ?>>
     <div id="col-main">
-      <div id="main-content">
+      <div id="main-content" <?php //ctx_aj_crinkled_paper(); ?>>
       <!-- BEGIN Main Content-->
 		 <?php
 		//Start the Loop

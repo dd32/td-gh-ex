@@ -17,7 +17,7 @@ get_header(); ?>
 
 		<div class="content" <?php ctx_aj_getlayout(); ?>>
                     <div id="col-main" role="main">
-                        <div id="main-content">
+                          <div id="main-content" <?php ctx_aj_crinkled_paper(); ?>>
 			<?php
 			/* Run the loop to output the posts.
 			 * If you want to overload this in a child theme then include a file

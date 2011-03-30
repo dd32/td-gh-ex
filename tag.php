@@ -7,7 +7,7 @@ get_header(); ?>
 
 <div class="content" <?php ctx_aj_getlayout(); ?>>
   <div id="col-main">
-    <div id="main-content">
+    <div id="main-content" <?php ctx_aj_crinkled_paper(); ?>>
       <!-- BEGIN Main Content-->
    <h1 class="page-title"><?php
         printf( __( 'Posts Tagged With: %s', 'adventurejournal' ), '<span>' . single_tag_title( '', false ) . '</span>' );

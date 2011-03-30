@@ -16,6 +16,8 @@
  * @package WordPress
  * @subpackage Adventure_Journal
  */
+
+$themeOpts = get_option('ctx-adventurejournal-options');
 ?>
 
 <?php /* Display navigation to next/previous pages when applicable */ ?>
@@ -93,7 +95,7 @@
 				<a href="<?php echo get_term_link( _x('gallery', 'gallery category slug', 'adventurejournal'), 'category' ); ?>" title="<?php esc_attr_e( 'View posts in the Gallery category', 'adventurejournal' ); ?>"><?php _e( 'More Galleries', 'adventurejournal' ); ?></a>
 				<span class="meta-sep">|</span>
 				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'adventurejournal' ), __( '1 Comment', 'adventurejournal' ), __( '% Comments', 'adventurejournal' ) ); ?></span>
-				
+
 			</div><!-- .entry-utility -->
 		</div><!-- #post-## -->
 
@@ -117,7 +119,7 @@
 				<?php ctx_aj_posted_on(); ?>
 				<span class="meta-sep">|</span>
 				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'adventurejournal' ), __( '1 Comment', 'adventurejournal' ), __( '% Comments', 'adventurejournal' ) ); ?></span>
-				
+
 			</div><!-- .entry-utility -->
 		</div><!-- #post-## -->
 
@@ -125,7 +127,7 @@
 
 	<?php else : ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                    <?php 
+                    <?php
                         $myclasses=join(' ',get_post_class('',$id));
                         if( preg_match('/sticky/',$myclasses) > 0 ){
                             echo '<div class="tape tr">&nbsp;</div><div class="tape bl">&nbsp;</div>';
@@ -133,7 +135,7 @@
                     ?>
                     <?php edit_post_link( __( 'Edit', 'adventurejournal' ), '<span class="edit-link">', '</span>' ); ?>
 			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'adventurejournal' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-                        <?php if(is_home() && has_post_thumbnail()) the_post_thumbnail(); ?>
+                        <?php if(is_home() && has_post_thumbnail() && $themeOpts['featured-header']!='true' ) the_post_thumbnail(); ?>
 			<div class="entry-meta">
 				<?php ctx_aj_posted_on(); ?>
 			</div><!-- .entry-meta -->
@@ -167,7 +169,7 @@
 					<span class="meta-sep">|</span>
 				<?php endif; ?>
 				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'adventurejournal' ), __( '1 Comment', 'adventurejournal' ), __( '% Comments', 'adventurejournal' ) ); ?></span>
-				
+
 			</div><!-- .entry-utility -->
 		</div><!-- #post-## -->
 
