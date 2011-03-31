@@ -12,15 +12,8 @@ get_header("xhtml1"); ?>
 <?php if(WP_DEBUG == true){echo '<!--'.basename(__FILE__,'.php').'['.basename(dirname(__FILE__)).']-->';}?>
 <div id="yui-main">
 <div class="yui-b">
-<?php
-if(function_exists('bcn_display') and is_home() == false){
-    echo '<div class="breadcrumb">';
-    bcn_display();
-    echo '</div>';
-}
-?>
-<div class="<?php if(isset($yui_inner_layout)){echo $yui_inner_layout;}else{echo 'yui-ge';}?>" id="container">
-<div class="yui-u first <?php echo basename(__FILE__,'.php');?> <?php echo basename(dirname(__FILE__));?>" <?php if($rsidebar_show == false){echo "style=\"width:100%;\"";} ?>>
+<div class="<?php echo yui_class_modify();?>" id="container">
+<div class="yui-u first" <?php is_2col_raindrops('style="width:99%;"');?>>
 <?php
 /**
  * Display navigation to next/previous pages when applicable
@@ -45,19 +38,37 @@ if(function_exists('bcn_display') and is_home() == false){
 
     $thumb = get_the_post_thumbnail($post->ID,'single-post-thumbnail');
 
-    if(isset($thumb)){
+    if(has_post_thumbnail() and isset($thumb) and $is_IE){	
+	/*IE8 img element has width height attribute. and style max-width and height auto makes conflict expand height*/	
+			$thumbnailsrc 		= wp_get_attachment_image_src(get_post_thumbnail_id(), 'single-post-thumbnail');
+			$thumbnailuri		= esc_url($thumbnailsrc[0]);
+			$thumbnailwidth		= $thumbnailsrc[1];
 
-    $thumbnailsrc       = get_url_from_element($thumb);
-    $thumbnail_title    = get_title_from_element($thumb);
+			
+		if($thumbnailwidth > $content_width){ 
+			$thumbnailheight	= $thumbnailsrc[2];
+			$ratio 				= round(TMN_SINGLE_POST_THUMBNAIL_HEIGHT/ TMN_SINGLE_POST_THUMBNAIL_WIDTH,2);
+			$ie_height			= round($content_width * $ratio);
+	
+			$thumbnail_title    = basename($thumbnailsrc[0]);
+			$thumbnail_title    = esc_attr($thumbnail_title);
+			$size_attribute 	= image_hwstring($content_width, $ie_height);
 
-        if(!empty($thumbnailsrc)){
-            echo '<div class="single-post-thumbnail" style="margin-top:1em;">';
-           // echo '<a href="'.esc_url($thumbnailsrc).'" onclick="javascrip:this.target=\'_blank\'" rel="lightbox">';
+			echo '<div class="single-post-thumbnail">';
+			echo '<img src="'.$thumbnailuri.'" '.$size_attribute.'" alt="'.$thumbnail_title.'" style="max-width:100%;" />';
+			echo '</div>';
+
+		}else{
+            echo '<div class="single-post-thumbnail">';
             echo $thumb;
-           // echo '</a>';
             echo '</div>';
-        }
-    }
+		}
+
+    }else{
+            echo '<div class="single-post-thumbnail">';
+            echo $thumb;
+            echo '</div>';
+	}
 
     switch($cat){
 
@@ -65,10 +76,9 @@ if(function_exists('bcn_display') and is_home() == false){
 ?>
 <div id="post-<?php the_ID(); ?>" <?php  post_class('clearfix'); ?>>
 <ul class="entry-meta-list left">
-<li>
-<?php the_time(get_option('date_format')) ?>
+<li class="category-blog-publish-date"><?php $raindrops_date_format = get_option('date_format'); the_time($raindrops_date_format); ?>
 </li>
-<li><?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'raindrops_author_bio_avatar_size', 90 ) ); ?></li>
+<li class="blog-avatar"><?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'raindrops_author_bio_avatar_size', 90 ) ); ?></li>
 <li>
 <?php _e('Category:','Raindrops');?>
 <?php the_category(' ') ?>
@@ -86,8 +96,7 @@ echo sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s"   rel=
 <li>
 <?php comments_popup_link( __( 'Leave a comment', 'Raindrops' ), __( '1 Comment', 'Raindrops' ), __( '% Comments', 'Raindrops' ) ); ?>
 </li>
-<?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar(5) ) : else : ?>
-<?php endif; ?>
+<?php dynamic_sidebar('sidebar-5');?>
 <li>
 <?php edit_post_link( __( 'Edit', 'Raindrops' ), '<span class="edit-link">', '</span>' ); ?>
 </li>
@@ -99,10 +108,10 @@ echo sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s"   rel=
 
 <div class="entry-content clearfix">
 <?php the_content( __( 'Continue&nbsp;reading&nbsp;<span class="meta-nav">&rarr;</span>', 'Raindrops' ) ); ?>
-<br class="clear" />
+<div class="clearfix"></div>
 <?php wp_link_pages('before=<p class="pagenate clearfix">&after=</p>&next_or_number=number&pagelink=<span>%</span>'); ?>
 </div>
-  <br class="clear" />
+<div class="clearfix"></div>
 <?php if(is_single()){  raindrops_prev_next_post('nav-below');}?>
 
 <?php comments_template( '', true ); ?>
@@ -132,7 +141,7 @@ $attachment_page = $image->post_title;
 ?>
 <div class="gallery-thumb"><?php echo wp_get_attachment_link( $image->ID ,array(150,150),true); ?></div>
 <?php the_content( __( 'Continue&nbsp;reading&nbsp;<span class="meta-nav">&rarr;</span>', 'Raindrops' ) ); ?>
-<br class="clear" />
+<div class="clearfix"></div>
 
 <p style="margin:1em;"><em><?php echo sprintf( __( 'This gallery contains %1$s photographs in all as ', 'Raindrops' ),$total_images).'&nbsp;'.wp_get_attachment_link( $image->ID ,false,true).'&nbsp;'.__('photograph etc.','Raindrops');?></em></p>
 </div>
@@ -177,8 +186,9 @@ default:
 
 <?php }else{ // is not archives & search?>
 
-<div class="entry-content clearfix"><?php the_content( __( 'Continue&nbsp;reading&nbsp;<span class="meta-nav">&rarr;</span>', 'Raindrops' ) ); ?><br class="clear" />
-<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'Raindrops' ), 'after' => '</div>' ) ); ?>
+<div class="entry-content clearfix"><?php the_content( __( 'Continue&nbsp;reading&nbsp;<span class="meta-nav">&rarr;</span>', 'Raindrops' ) ); ?>
+<div class="clearfix"></div>
+<?php wp_link_pages('before=<p class="pagenate clearfix">&after=</p>&next_or_number=number&pagelink=<span>%</span>'); ?>
 </div>
 <?php } // end is_archive() || is_search() ?>
 
@@ -193,7 +203,6 @@ default:
 if(WP_DEBUG == true){
 echo '<!-- #post-'.get_the_ID().' -->';
 }?>
-
 <?php }//   end switch($cat)    ?>
 <?php }//　endwhile             ?>
 
@@ -205,13 +214,11 @@ echo '<!-- #post-'.get_the_ID().' -->';
 </span> </div>
 <!-- #nav-above -->
 <?php } }?>
-
-
-<br style="clear:both" />
+<div class="clearfix"></div>
 </div>
 <?php //rsidebar start ?>
 <div class="yui-u">
-<?php if($rsidebar_show){get_sidebar('2');} ?>
+<?php if($rsidebar_show){get_sidebar('extra');} ?>
 </div>
 <?php //add nest grid here?>
 </div>
@@ -220,7 +227,7 @@ echo '<!-- #post-'.get_the_ID().' -->';
 </div>
 <div class="yui-b">
 <?php //lsidebar start ?>
-<?php get_sidebar('1'); ?>
+<?php get_sidebar('default'); ?>
 </div>
 </div>
 <?php get_footer(); ?>
