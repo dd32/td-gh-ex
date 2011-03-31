@@ -33,6 +33,9 @@ http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
+= 1.5.1 =
+* FIX: Fixed a CSS menu bug that affected some menu configurations.
+
 = 1.5.0 =
 * NEW FEATURE: Ability to use the 'crinkled paper' background for all posts (previously for "sticky" posts only)
 * NEW FEATURE: Ability to use "Featured Image" as a site header (admins may need to re-upload images for this work)
