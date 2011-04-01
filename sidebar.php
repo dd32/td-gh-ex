@@ -64,10 +64,10 @@
 <ul>
   <li>
   <?php if ( !function_exists('dynamic_sidebar') 
-        || !dynamic_sidebar('sidebar1') ) : ?>
+        || !dynamic_sidebar('sidebar2') ) : ?>
 <?php endif; ?> 
   </li>
 </ul>
- 
+  
 
 	</div> <!-- /sidebar-->

@@ -1,10 +1,12 @@
 <div id="footer"> 
-	<p>		Copyright <?php echo date('Y'); ?>. <?php bloginfo('name'); ?>. All Rights Reserved.
+	<p>		
+Copyright <?php bloginfo('name'); ?>. All Rights Reserved.
+
 &nbsp;
 
 
 <!-- Released under GPL License --> 
-Powered by <a href="http://www.quickonlinetips.com/archives/quickchic/" title="QuickChic" rel="nofollow" >QuickChic Theme</a>
+<a href="http://www.quickonlinetips.com/archives/quickchic/" title="QuickChic" rel="nofollow" >QuickChic</a> Design.
  
 </p>
 </div>
