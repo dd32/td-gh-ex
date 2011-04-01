@@ -1,13 +1,23 @@
+ 
 <div id="footer"> 
 	<p>
-&copy; Copyright <?php echo date('Y'); ?> - <?php bloginfo('name'); ?> 
+		
+Copyright <?php bloginfo('name'); ?>. All Rights Reserved.
+
 &nbsp;
-&bull;
-&nbsp;
-<a href="http://www.quickonlinethemes.com/wordpress/quickpress/" title="QuickPress WordPress Theme">QuickPress Theme</a> powered by <a href="http://wordpress.org">WordPress</a> 
+
+
+<!-- Released under GPL compatible license --> 
+<a href="http://www.quickonlinetips.com/archives/quickpress/" title="QuickPress" rel="nofollow" >QuickPress</a> Design. 
+ 
 </p>
 </div>
 </div>
- 		<?php wp_footer(); ?>
- </body>
-</html>
+ 
+		<?php wp_footer(); ?>
+ 
+
+</body>
+</html>
+
+
