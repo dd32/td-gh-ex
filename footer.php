@@ -98,11 +98,11 @@
 <div id="footer"> 
 <p>
 
-Copyright <?php echo date('Y'); ?>. <?php bloginfo('name'); ?>. All Rights Reserved.
+Copyright <?php bloginfo('name'); ?>. All Rights Reserved.
 
 <br />
 <!-- Released under GPL compatible license --> 
-Powered by <a href="http://www.quickonlinetips.com/archives/quickpic/" title="QuickPic" rel="nofollow" >QuickPic Theme</a>
+<a href="http://www.quickonlinetips.com/archives/quickpic/" title="QuickPic" rel="nofollow" >QuickPic</a> Design.
  
  
 </p>

@@ -18,10 +18,16 @@ register_sidebar(array('name'=>'sidebar3',
         'before_title' => '<h4>',
         'after_title' => '</h4>',
 )); 
+
+/* Add feeds */
 add_theme_support('automatic-feed-links');
+
+/* Content width */
 if ( ! isset( $content_width ) )
 	$content_width = 520;
 
+
+/* Add search */
 function my_search_form( $form ) {
 
     $form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
