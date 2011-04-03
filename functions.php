@@ -102,6 +102,18 @@ add_editor_style();
 add_custom_background();
 
 /**
+* Header Logic
+*/
+
+define( 'HEADER_TEXTCOLOR', 'ffffff' );
+define( 'HEADER_IMAGE', '%s/images/headers/chip_life.jpg' );
+define( 'HEADER_IMAGE_WIDTH', apply_filters( 'chip_life_header_image_width', 960 ) );
+define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'chip_life_header_image_height', 200 ) );
+define( 'NO_HEADER_TEXT', true );
+
+add_custom_image_header( '', 'chip_life_admin_header_style' );
+
+/**
 * Support(s)
 */
 
@@ -138,4 +150,23 @@ $chip_life_global = array (
 		'theme_options'	=> get_option( 'chip_life_options' ),
 		'chip_image'	=> false,
 	);
+
+/**
+* Chip Life Admin Header Style
+*/
+
+function chip_life_admin_header_style() {
 ?>
+<style type="text/css">
+/* Shows the same border as on front end */
+.appearance_page_custom-header #headimg {
+	width: 960px;
+	height: 200px;
+}
+/* If NO_HEADER_TEXT is false, you would style the text with these selectors:
+	#headimg #name { }
+	#headimg #desc { }
+*/
+</style>
+<?php
+}

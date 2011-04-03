@@ -19,7 +19,7 @@
     <div id="header">
       <div id="headerdata">        
         <?php locate_template( array( CHIP_LIFE_COMMON_FSROOT . 'primary-menu.php' ), true, false ); ?>
-		<?php locate_template( array( CHIP_LIFE_COMMON_FSROOT . 'logospon.php' ), true, false ); ?>        
+        <?php locate_template( array( CHIP_LIFE_COMMON_FSROOT . 'header-style.php' ), true, false ); ?> 
         <?php locate_template( array( CHIP_LIFE_COMMON_FSROOT . 'secondary-menu.php' ), true, false ); ?>        
       </div>
     </div>

@@ -8,10 +8,8 @@ if ( ! isset( $_REQUEST['updated'] ) ) {
   <h2><?php echo sprintf( '%1$s Theme Settings', get_current_theme() ); ?></h2>
   We really thanks of you for using <?php echo get_current_theme(); ?>.
   
-  <?php if ( false !== $_REQUEST['updated'] ) : ?>
-  <div id="message" class="updated fade">
-    <p><strong>Settings Saved.</strong></p>
-  </div>
+  <?php if ( $_REQUEST['settings-updated'] == "true" ) : ?>
+  <div class="updated fade"><p><strong>Settings Saved.</strong></p></div>
   <?php endif; ?>
   
   <form action="options.php" method="post">

@@ -27,6 +27,7 @@ class Chip_Life_Options {
 			add_settings_field( 'chip_life_field_logo', 'Use Image Logo in Header', array( 'Chip_Life_Options', 'chip_life_field_logo_fn' ), 'chip_life_sections', 'chip_life_section_blog' );
 			add_settings_field( 'chip_life_field_logo_url', 'Enter Logo URl - Dimension (215x125)', array( 'Chip_Life_Options', 'chip_life_field_logo_url_fn' ), 'chip_life_sections', 'chip_life_section_blog' );
 			
+			add_settings_field( 'chip_life_field_header_style', 'Header Style', array( 'Chip_Life_Options', 'chip_life_field_header_style_fn' ), 'chip_life_sections', 'chip_life_section_blog' );			
 			add_settings_field( 'chip_life_field_post_style', 'Post Style', array( 'Chip_Life_Options', 'chip_life_field_post_style_fn' ), 'chip_life_sections', 'chip_life_section_blog' );
 			
 			/** Chip Post Section */
@@ -103,7 +104,8 @@ class Chip_Life_Options {
 					'chip_life_logo'						=>	0,
 					'chip_life_logo_url'					=>	CHIP_LIFE_IMAGES_WSROOT.'logo.gif',
 					
-					'chip_life_post_style'					=>	'excerpt',
+					'chip_life_post_style'					=>	'excerpt',					
+					'chip_life_header_style'				=>	'header',
 					
 					'chip_life_related_post'				=>	0,
 					'chip_life_related_post_number'			=>	5,
@@ -187,6 +189,13 @@ class Chip_Life_Options {
 			return $temp;			
 		}
 		
+		/* Valid Header Styles */		
+		
+		function chip_header_style_pd() {			
+			$temp = array( 'header' => 'header', 'logo' => 'logo' );			
+			return $temp;			
+		}
+		
 		/* Valid Related Post Range */		
 		
 		function chip_related_posts_pd() {			
@@ -217,6 +226,12 @@ class Chip_Life_Options {
 			$chip_post_style_pd = Chip_Life_Options::chip_post_style_pd();
 			if ( ! array_key_exists( $input['chip_life_post_style'], $chip_post_style_pd ) ) {
 				 $input['chip_life_post_style'] = "excerpt";
+			}
+			
+			/* Validation: chip_life_header_style */
+			$chip_header_style_pd = Chip_Life_Options::chip_header_style_pd();
+			if ( ! array_key_exists( $input['chip_life_header_style'], $chip_header_style_pd ) ) {
+				 $input['chip_life_header_style'] = "header";
 			}
 			
 			/* Validation: chip_life_related_post */
@@ -379,7 +394,7 @@ class Chip_Life_Options {
 			echo '<div>Enter the logo URl</div>';
 		}
 		
-		/* Home Page Post Style */
+		/* Blog Post Style */
 		
 		function chip_life_field_post_style_fn() {
 			
@@ -389,6 +404,20 @@ class Chip_Life_Options {
 			foreach( $items as $key => $val ) {
 				$checked = ( $chip_life_options['chip_life_post_style'] == $key ) ? ' checked="checked" ' : '';
 				echo '<label><input type="radio" id="chip_life_post_style[]" name="chip_life_options[chip_life_post_style]" value="'.$key.'" '.$checked.' /> '.$val.'</label><br />';
+			}
+		
+		}
+		
+		/* Blog Header Style */
+		
+		function chip_life_field_header_style_fn() {
+			
+			$chip_life_options = get_option('chip_life_options');
+			$items = Chip_Life_Options::chip_header_style_pd();			
+			
+			foreach( $items as $key => $val ) {
+				$checked = ( $chip_life_options['chip_life_header_style'] == $key ) ? ' checked="checked" ' : '';
+				echo '<label><input type="radio" id="chip_life_header_style[]" name="chip_life_options[chip_life_header_style]" value="'.$key.'" '.$checked.' /> '.$val.'</label><br />';
 			}
 		
 		}	
