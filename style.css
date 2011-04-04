@@ -1,10 +1,10 @@
 /*  
 Theme Name: Arjuna X
 Theme URI: http://www.srssolutions.com/en/downloads/arjuna_wordpress_theme
-Description: Arjuna stands for elegance, accessibility, and attention to detail. We have put a great deal in optimizing its ins and outs. This version requires WordPress 3.1. For older, backwards-compatible versions, please contact us. Changelog: http://bit.ly/aLicfb
+Description: Arjuna stands for elegance, accessibility, and attention to detail. We have put a great deal in optimizing its ins and outs. This version requires WordPress 3.1. For older, backwards-compatible versions, please contact us. Changelog: http://www.srssolutions.com/en/downloads/arjuna_wordpress_theme#changelog
 Author: SRS Solutions
 Author URI: http://www.srssolutions.com
-Version: 1.6.3
+Version: 1.6.4
 License: GNU General Public License
 License URI: license.txt
 Tags: white, silver, light, three-columns, two-columns, fixed-width, right-sidebar, left-sidebar, theme-options, translation-ready, threaded-comments, black, custom-colors, custom-background, custom-menu
@@ -193,7 +193,7 @@ a.btn,
 a.btn:hover {
 	display:inline-block;
 	height:18px;
-	background:url(./images/icons.png) no-repeat 0 -220px;
+	background:url(./images/icons.png) no-repeat 0 -420px;
 	color:#5c7a99;
 	text-decoration:none;
 	margin:0 0 0 10px;
@@ -890,7 +890,6 @@ a.postCommentLabel:hover {
 	margin-bottom:10px;
 }
 .postContent img.size-full {
-	max-width:100%;
 }
 
 .postFooter {
@@ -925,7 +924,7 @@ a.postCommentLabel:hover {
 	float:left;
 }
 .postTags {
-	background:url(./images/icons.png) no-repeat 0px -150px;
+	background:url(./images/icons.png) no-repeat 0px -250px;
 	padding-left:25px;
 	font-size:11px;
 	float:left;
@@ -982,7 +981,7 @@ a.postEdit:hover span {
 }
 .commentHeader {
 	min-height:27px;
-	background:url(./images/icons.png) repeat-x 0 -175px;
+	background:url(./images/icons.png) repeat-x 0 -375px;
 	margin-bottom:20px;
 	overflow:hidden;
 }
@@ -1217,7 +1216,7 @@ li.pingback li {
 .replyHeader {
 	overflow:hidden;
 	height:30px;
-	background:url(./images/icons.png) repeat-x 0 -172px;
+	background:url(./images/icons.png) repeat-x 0 -372px;
 	margin-bottom:20px;
 }
 .replyHeader h4 {
@@ -1751,6 +1750,7 @@ a.btnLogout:hover {
 	clear:both;
 }
 .sidebarIcons {
+	margin-bottom:10px;
 }
 
 /* No sidebar */
@@ -1852,19 +1852,19 @@ a.btnLogout:hover {
 	}
 	.sidebars a.rssBtn {
 		color:#662700;
-		background:url(./images/sidebars.png) no-repeat 0 -250px;
+		background:url(./images/sidebars.png) no-repeat 0 -350px;
 	}
 	.sidebars a.twitterBtn {
 		color:#056;
-		background:url(./images/sidebars.png) no-repeat 0 -300px;
+		background:url(./images/sidebars.png) no-repeat 0 -400px;
 	}
 	.sidebars a.facebookBtn {
 		color:#223b73;
-		background:url(./images/sidebars.png) no-repeat 0 -350px;
+		background:url(./images/sidebars.png) no-repeat 0 -450px;
 	}
 	.sidebars a.linkedInBtn {
 		color:#056;
-		background:url(./images/sidebars.png) no-repeat 0 -400px;
+		background:url(./images/sidebars.png) no-repeat 0 -500px;
 	}
 	.sidebars .rssBtnExtended {
 		margin-right:16px;
@@ -1878,7 +1878,7 @@ a.btnLogout:hover {
 		vertical-align:middle;
 		display:inline-block;
 		width:26px;
-		background:url(./images/sidebars.png) no-repeat 0 -450px;
+		background:url(./images/sidebars.png) no-repeat 0 -550px;
 		padding:0;
 		margin:0;
 		float:none;
@@ -1888,11 +1888,11 @@ a.btnLogout:hover {
 		display:inline-block;
 		width:9px;
 		height:26px;
-		background:url(./images/sidebars.png) no-repeat -26px -450px;
+		background:url(./images/sidebars.png) no-repeat -26px -550px;
 		position:relative;
 	}
 	#rss-extended.active {
-		background-position:-276px -450px;
+		background-position:-276px -550px;
 	}
 	#rss-extended ul {
 		position:absolute;

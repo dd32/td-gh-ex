@@ -2070,6 +2070,8 @@ function arjuna_get_post_pagination($previousLabel, $nextLabel) {
 	return;
 }
 function arjuna_post_pagination_get_url($page) {
+	global $post;
+	
 	if($page == 1)
 		return add_query_arg('page', $page, get_permalink());
 	elseif('' == get_option('permalink_structure') || in_array($post->post_status, array('draft', 'pending')))

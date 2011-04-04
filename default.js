@@ -359,4 +359,16 @@ jQuery(function() {
 		}
 	});
 	
+	//image resizing
+	jQuery('#contentArea div.postContent div.wp-caption').each(function() {
+		console.log(jQuery(this).outerWidth());
+		if(jQuery('#contentArea div.postContent').width() < jQuery(this).outerWidth()) {
+			var w = jQuery(this).outerWidth();
+			var h = jQuery(this).outerHeight();
+			var r = jQuery('#contentArea div.postContent').width() / w;
+			jQuery(this).css('width', w * r);
+			jQuery('img', this).css('width', w * r).css('height', h * r);
+		}
+	});
+	
 });
