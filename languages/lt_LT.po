@@ -980,4 +980,3 @@ msgstr "Paskutiniai įrašai"
 
 #~ msgid "Upcoming Features"
 #~ msgstr "Ateities funkcijos"
-

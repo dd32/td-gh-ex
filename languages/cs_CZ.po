@@ -1069,8 +1069,8 @@ msgstr "Následující příspěvek"
 #~ msgstr ""
 #~ "Arjuna je úplně zdarma. Pokud máš rád tento projekt a chceš podpořit "
 #~ "opravy a vývoj, prosím "
+
 #~ msgid ""
 #~ "This feature is disabled because Arjuna does not have write permissions "
 #~ "to %s."
 #~ msgstr "Tato možnost je zakázána jelikož Arjuna nemůže zapisovat do %s."
-

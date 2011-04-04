@@ -1,1200 +1,1343 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Arjuna 1.5.3\n"
+"Project-Id-Version: Arjuna X 1.6.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-15 16:09+0100\n"
-"PO-Revision-Date: \n"
+"POT-Creation-Date: 2011-04-04 11:18+0200\n"
+"PO-Revision-Date: 2011-04-04 11:18+0200\n"
 "Last-Translator: SRS Solutions <info@srssolutions.com>\n"
 "Language-Team: SRS Solutions <info@srssolutions.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: English\n"
 "X-Poedit-KeywordsList: __;_e\n"
-"X-Poedit-Basepath: D:\\_localhost\\srs\\dev\\wordpress\\2.8\\wp-content\\themes\n"
-"X-Poedit-SearchPath-0: Arjuna-X\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: Z:\\localhost\\srs\\dev\\wp31\\wp-content\\themes\\arjuna-x\n"
 
-#: Arjuna-X/404.php:4
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/404.php:4
 msgid "Error 404 - Not Found"
 msgstr ""
 
-#: Arjuna-X/404.php:5
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/404.php:5
 msgid "Sorry, but you are looking for something that isn't here. "
 msgstr ""
 
-#: Arjuna-X/archive.php:8
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/archive.php:8
 #, php-format
 msgid "Browsing Posts in <em>%s</em>"
 msgstr ""
 
-#: Arjuna-X/archive.php:10
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/archive.php:10
 #, php-format
 msgid "Browsing Posts tagged <em>%s</em>"
 msgstr ""
 
-#: Arjuna-X/archive.php:12
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/archive.php:12
 #, php-format
 msgid "Browsing Posts published on %s"
 msgstr ""
 
-#: Arjuna-X/archive.php:14
-#: Arjuna-X/archive.php:16
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/archive.php:14
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/archive.php:16
 #, php-format
 msgid "Browsing Posts published in %s"
 msgstr ""
 
-#: Arjuna-X/archive.php:14
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/archive.php:14
 msgid "F, Y"
 msgstr ""
 
-#: Arjuna-X/archive.php:16
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/archive.php:16
 msgid "Y"
 msgstr ""
 
-#: Arjuna-X/archive.php:19
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/archive.php:19
 #, php-format
 msgid "Browsing Posts published by <em>%s</em>"
 msgstr ""
 
-#: Arjuna-X/archive.php:21
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/archive.php:21
 msgid "Blog Archives"
 msgstr ""
 
-#: Arjuna-X/archive.php:28
-#: Arjuna-X/index.php:9
-#: Arjuna-X/page.php:11
-#: Arjuna-X/page.php:16
-#: Arjuna-X/page_fullwidth.php:15
-#: Arjuna-X/page_fullwidth.php:20
-#: Arjuna-X/search.php:15
-#: Arjuna-X/single.php:16
-msgid "Permalink to"
-msgstr ""
-
-#: Arjuna-X/archive.php:33
-#: Arjuna-X/index.php:14
-#: Arjuna-X/page.php:21
-#: Arjuna-X/page_fullwidth.php:25
-#: Arjuna-X/search.php:20
-#: Arjuna-X/single.php:21
-msgid " at "
-msgstr ""
-
-#: Arjuna-X/archive.php:42
-#: Arjuna-X/index.php:23
-#: Arjuna-X/page.php:30
-#: Arjuna-X/page_fullwidth.php:34
-#: Arjuna-X/search.php:28
-#: Arjuna-X/single.php:30
-msgid "Pass required"
-msgstr ""
-
-#: Arjuna-X/archive.php:44
-#: Arjuna-X/index.php:25
-#: Arjuna-X/page.php:32
-#: Arjuna-X/page_fullwidth.php:36
-#: Arjuna-X/search.php:30
-#: Arjuna-X/single.php:32
-msgid "Comments off"
-msgstr ""
-
-#: Arjuna-X/archive.php:46
-#: Arjuna-X/index.php:27
-#: Arjuna-X/page.php:34
-#: Arjuna-X/page_fullwidth.php:38
-#: Arjuna-X/search.php:32
-#: Arjuna-X/single.php:34
-msgid "No comments"
-msgstr ""
-
-#: Arjuna-X/archive.php:46
-#: Arjuna-X/index.php:27
-#: Arjuna-X/page.php:34
-#: Arjuna-X/page_fullwidth.php:38
-#: Arjuna-X/search.php:32
-#: Arjuna-X/single.php:34
-msgid "1 comment"
-msgstr ""
-
-#: Arjuna-X/archive.php:46
-#: Arjuna-X/index.php:27
-#: Arjuna-X/page.php:34
-#: Arjuna-X/page_fullwidth.php:38
-#: Arjuna-X/search.php:32
-#: Arjuna-X/single.php:34
-#, php-format
-msgid "% comments"
-msgstr ""
-
-#: Arjuna-X/archive.php:61
-#: Arjuna-X/index.php:37
-#: Arjuna-X/page.php:42
-#: Arjuna-X/page_fullwidth.php:46
-#: Arjuna-X/search.php:41
-#: Arjuna-X/single.php:41
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/archive.php:38
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/index.php:13
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/page.php:18
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/page_fullwidth.php:22
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/search.php:20
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/single.php:15
 msgid "continue reading..."
 msgstr ""
 
-#: Arjuna-X/archive.php:70
-#: Arjuna-X/index.php:49
-#: Arjuna-X/search.php:53
-#: Arjuna-X/single.php:52
-msgid "<i>none</i>"
-msgstr ""
-
-#: Arjuna-X/archive.php:74
-#: Arjuna-X/index.php:54
-#: Arjuna-X/search.php:58
-msgid "Read more"
-msgstr ""
-
-#: Arjuna-X/archive.php:81
-#: Arjuna-X/index.php:63
-#: Arjuna-X/single.php:44
-msgid "Previous Page"
-msgstr ""
-
-#: Arjuna-X/archive.php:81
-#: Arjuna-X/index.php:63
-#: Arjuna-X/single.php:44
-msgid "Next Page"
-msgstr ""
-
-#: Arjuna-X/archive.php:92
-#: Arjuna-X/index.php:74
-#: Arjuna-X/search.php:69
-msgid "Newer Entries"
-msgstr ""
-
-#: Arjuna-X/archive.php:93
-#: Arjuna-X/index.php:75
-#: Arjuna-X/search.php:70
-msgid "Older Entries"
-msgstr ""
-
-#: Arjuna-X/archive.php:99
-#: Arjuna-X/index.php:81
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/archive.php:49
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/index.php:25
 msgid "There is nothing here (yet)."
 msgstr ""
 
-#: Arjuna-X/comments.php:13
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/comments.php:12
 msgid "This post is password protected. Enter the password to view comments."
 msgstr ""
 
-#: Arjuna-X/comments.php:36
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/comments.php:23
 msgid "Comments"
 msgstr ""
 
-#: Arjuna-X/comments.php:39
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/comments.php:30
 msgid "Trackbacks"
 msgstr ""
 
-#: Arjuna-X/comments.php:45
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/comments.php:37
 msgid "Leave a comment"
 msgstr ""
 
-#: Arjuna-X/comments.php:48
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/comments.php:40
 msgid "Trackback"
 msgstr ""
 
-#: Arjuna-X/comments.php:64
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/comments.php:56
 msgid "No one has commented yet."
 msgstr ""
 
-#: Arjuna-X/comments.php:66
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/comments.php:58
 msgid "Comments are closed."
 msgstr ""
 
-#: Arjuna-X/comments.php:80
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/comments.php:74
 msgid "No trackbacks yet."
 msgstr ""
 
-#: Arjuna-X/comments.php:82
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/comments.php:76
 msgid "Trackbacks are disabled."
 msgstr ""
 
-#: Arjuna-X/comments.php:95
-msgid "Leave a Comment"
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:136
+msgid "Light Blue"
 msgstr ""
 
-#: Arjuna-X/comments.php:97
-msgid "Cancel Reply"
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:137
+msgid "Dark Blue"
 msgstr ""
 
-#: Arjuna-X/comments.php:101
-#, php-format
-msgid "You must be %slogged in%s to post a comment."
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:138
+msgid "Khaki"
 msgstr ""
 
-#: Arjuna-X/comments.php:104
-#: Arjuna-X/comments.php:113
-msgid "Your name"
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:139
+msgid "Sea Green"
 msgstr ""
 
-#: Arjuna-X/comments.php:105
-#: Arjuna-X/comments.php:114
-msgid "Your email"
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:140
+msgid "Light Red"
 msgstr ""
 
-#: Arjuna-X/comments.php:106
-#: Arjuna-X/comments.php:115
-msgid "Your website"
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:141
+msgid "Purple"
 msgstr ""
 
-#: Arjuna-X/comments.php:107
-#: Arjuna-X/comments.php:124
-msgid "Your comment"
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:142
+msgid "Light Gray"
 msgstr ""
 
-#: Arjuna-X/comments.php:110
-#, php-format
-msgid "Logged in as %s."
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:143
+msgid "Dark Gray"
 msgstr ""
 
-#: Arjuna-X/comments.php:110
-msgid "Log out of this account"
-msgstr ""
-
-#: Arjuna-X/comments.php:110
-msgid "Logout"
-msgstr ""
-
-#: Arjuna-X/comments.php:126
-msgid "Subscribe to comments"
-msgstr ""
-
-#: Arjuna-X/comments.php:127
-msgid "Leave comment"
-msgstr ""
-
-#: Arjuna-X/functions.php:461
-#: Arjuna-X/functions.php:468
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:575
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:582
 msgid "The uploaded file is not a valid image. Only JPEG, PNG and GIF is supported."
 msgstr ""
 
-#: Arjuna-X/functions.php:505
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:674
 msgid "Arjuna Options"
 msgstr ""
 
-#: Arjuna-X/functions.php:524
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:694
 msgid "The Arjuna options have been saved."
 msgstr ""
 
-#: Arjuna-X/functions.php:529
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:699
 msgid "Arjuna Theme Options"
 msgstr ""
 
-#: Arjuna-X/functions.php:533
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:702
+msgid "This browser is outdated. Please <a href=\"http://www.microsoft.com/windows/internet-explorer/default.aspx\">upgrade</a> your browser to enjoy this website to its fullest extent."
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:707
 #, php-format
 msgid "Thank you for using Arjuna, the free WordPress theme designed by %s."
 msgstr ""
 
-#: Arjuna-X/functions.php:535
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:709
 msgid "Follow Us"
 msgstr ""
 
-#: Arjuna-X/functions.php:542
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:719
 msgid "Report Bugs"
 msgstr ""
 
-#: Arjuna-X/functions.php:543
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:720
 msgid "Report a Bug"
 msgstr ""
 
-#: Arjuna-X/functions.php:543
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:720
 msgid "Please include your Wordpress version, browser details and a screenshot, if necessary."
 msgstr ""
 
-#: Arjuna-X/functions.php:546
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:723
 msgid "Useful Links"
 msgstr ""
 
-#: Arjuna-X/functions.php:547
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:724
 msgid "Changelog"
 msgstr ""
 
-#: Arjuna-X/functions.php:548
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:725
 msgid "FAQ"
 msgstr ""
 
-#: Arjuna-X/functions.php:549
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:726
 msgid "Roadmap"
 msgstr ""
 
-#: Arjuna-X/functions.php:550
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:727
 msgid "Leave Feedback"
 msgstr ""
 
-#: Arjuna-X/functions.php:553
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:730
 msgid "Support &amp; Sales"
 msgstr ""
 
-#: Arjuna-X/functions.php:554
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:731
 msgid "Contact Sales"
 msgstr ""
 
-#: Arjuna-X/functions.php:554
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:731
 msgid "Need installation or integration support? Need something customized or extended?"
 msgstr ""
 
-#: Arjuna-X/functions.php:559
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:736
 msgid "Arjuna is completely free. Therefore, please understand that we do NOT offer free support. If you require support of any kind other than fixing a bug that is related to Arjuna, please request a quote from us."
 msgstr ""
 
-#: Arjuna-X/functions.php:571
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:748
 msgid "General Blog Appearance"
 msgstr ""
 
-#: Arjuna-X/functions.php:574
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:751
 msgid "Logo"
 msgstr ""
 
-#: Arjuna-X/functions.php:579
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:756
 msgid "Header Logo"
 msgstr ""
 
-#: Arjuna-X/functions.php:587
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:764
 msgid "The custom logo will be included in the header, aligned to the left and vertically centered."
 msgstr ""
 
-#: Arjuna-X/functions.php:589
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:766
 #, php-format
 msgid "You do not have write permissions for the upload directory %s. Please check with your webmaster or host to set write permissions for this directory."
 msgstr ""
 
-#: Arjuna-X/functions.php:600
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:777
 msgid "First Header Menu"
 msgstr ""
 
-#: Arjuna-X/functions.php:605
-#: Arjuna-X/functions.php:754
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:782
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:936
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1274
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1532
 msgid "Enabled"
 msgstr ""
 
-#: Arjuna-X/functions.php:607
-#: Arjuna-X/functions.php:756
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:784
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:938
 msgid "Enable this menu"
 msgstr ""
 
-#: Arjuna-X/functions.php:609
-#: Arjuna-X/functions.php:758
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:786
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:940
 msgid "If disabled, the menu will be hidden."
 msgstr ""
 
-#: Arjuna-X/functions.php:613
-#: Arjuna-X/functions.php:768
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:790
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:950
 msgid "Dropdown"
 msgstr ""
 
-#: Arjuna-X/functions.php:617
-#: Arjuna-X/functions.php:772
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:794
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:954
 msgid "No dropdown menu"
 msgstr ""
 
-#: Arjuna-X/functions.php:621
-#: Arjuna-X/functions.php:776
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:798
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:958
 msgid "One-level dropdown menu"
 msgstr ""
 
-#: Arjuna-X/functions.php:625
-#: Arjuna-X/functions.php:780
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:802
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:962
 msgid "Two-level dropdown menu"
 msgstr ""
 
-#: Arjuna-X/functions.php:629
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:806
 msgid "Alignment"
 msgstr ""
 
-#: Arjuna-X/functions.php:633
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:810
 msgid "Left"
 msgstr ""
 
-#: Arjuna-X/functions.php:637
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:814
 msgid "Right"
 msgstr ""
 
-#: Arjuna-X/functions.php:642
-#: Arjuna-X/functions.php:785
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:819
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:973
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1491
+msgid "Use"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:823
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:977
+msgid "WordPress Custom Menus"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:827
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:981
+msgid "Legacy Menus"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:834
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:988
 msgid "Menu lists only"
 msgstr ""
 
-#: Arjuna-X/functions.php:646
-#: Arjuna-X/functions.php:789
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:838
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:992
 msgid "Pages"
 msgstr ""
 
-#: Arjuna-X/functions.php:650
-#: Arjuna-X/functions.php:793
-#: Arjuna-X/sidebar.php:38
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:842
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:996
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/sidebar.php:30
 msgid "Categories"
 msgstr ""
 
-#: Arjuna-X/functions.php:655
-#: Arjuna-X/functions.php:798
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:847
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1001
 msgid "Sorting Order"
 msgstr ""
 
-#: Arjuna-X/functions.php:658
-#: Arjuna-X/functions.php:672
-#: Arjuna-X/functions.php:801
-#: Arjuna-X/functions.php:815
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:850
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:864
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1004
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1018
 msgid "Sort menu items in"
 msgstr ""
 
-#: Arjuna-X/functions.php:660
-#: Arjuna-X/functions.php:674
-#: Arjuna-X/functions.php:803
-#: Arjuna-X/functions.php:817
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:852
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:866
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1006
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1020
 msgid "ascending"
 msgstr ""
 
-#: Arjuna-X/functions.php:661
-#: Arjuna-X/functions.php:675
-#: Arjuna-X/functions.php:804
-#: Arjuna-X/functions.php:818
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:853
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:867
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1007
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1021
 msgid "descending"
 msgstr ""
 
-#: Arjuna-X/functions.php:663
-#: Arjuna-X/functions.php:677
-#: Arjuna-X/functions.php:806
-#: Arjuna-X/functions.php:820
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:855
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:869
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1009
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1023
 msgid "order by"
 msgstr ""
 
-#: Arjuna-X/functions.php:665
-#: Arjuna-X/functions.php:808
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:857
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1011
 msgid "Category Name"
 msgstr ""
 
-#: Arjuna-X/functions.php:666
-#: Arjuna-X/functions.php:809
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:858
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1012
 msgid "Category ID"
 msgstr ""
 
-#: Arjuna-X/functions.php:667
-#: Arjuna-X/functions.php:810
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:859
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1013
 msgid "Post Count"
 msgstr ""
 
-#: Arjuna-X/functions.php:668
-#: Arjuna-X/functions.php:811
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:860
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1014
 msgid "Category Slug"
 msgstr ""
 
-#: Arjuna-X/functions.php:679
-#: Arjuna-X/functions.php:822
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:871
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1025
 msgid "Page Title"
 msgstr ""
 
-#: Arjuna-X/functions.php:680
-#: Arjuna-X/functions.php:823
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:872
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1026
 msgid "Page ID"
 msgstr ""
 
-#: Arjuna-X/functions.php:681
-#: Arjuna-X/functions.php:824
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:873
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1027
 msgid "Page Slug"
 msgstr ""
 
-#: Arjuna-X/functions.php:682
-#: Arjuna-X/functions.php:825
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:874
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1028
 msgid "Page Order"
 msgstr ""
 
-#: Arjuna-X/functions.php:688
-#: Arjuna-X/functions.php:837
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:880
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1034
 msgid "Menu Items"
 msgstr ""
 
-#: Arjuna-X/functions.php:691
-#: Arjuna-X/functions.php:840
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:883
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1037
 msgid "Include categories"
 msgstr ""
 
-#: Arjuna-X/functions.php:701
-#: Arjuna-X/functions.php:850
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:893
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1047
 msgid "Exclude categories"
 msgstr ""
 
-#: Arjuna-X/functions.php:708
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:900
 msgid "Note: While the above fields show empty categories, the theme will only display categories that have at least one published post in them."
 msgstr ""
 
-#: Arjuna-X/functions.php:711
-#: Arjuna-X/functions.php:860
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:903
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1057
 msgid "Include pages"
 msgstr ""
 
-#: Arjuna-X/functions.php:721
-#: Arjuna-X/functions.php:870
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:913
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1067
 msgid "Exclude pages"
 msgstr ""
 
-#: Arjuna-X/functions.php:749
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:931
 msgid "Second Header Menu"
 msgstr ""
 
-#: Arjuna-X/functions.php:762
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:944
 msgid "Separators"
 msgstr ""
 
-#: Arjuna-X/functions.php:764
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:946
 msgid "Visually separate the menu buttons"
 msgstr ""
 
-#: Arjuna-X/functions.php:831
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:967
 msgid "Home Button"
 msgstr ""
 
-#: Arjuna-X/functions.php:833
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:969
 msgid "Display Home button"
 msgstr ""
 
-#: Arjuna-X/functions.php:857
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1054
 msgid "Note: While the above fields show empty categories, the theme will only display categories that have at least one published post in them.</span>"
 msgstr ""
 
-#: Arjuna-X/functions.php:897
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1084
 msgid "Background &amp; Color Schemes"
 msgstr ""
 
-#: Arjuna-X/functions.php:902
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1089
 msgid "Background Style"
 msgstr ""
 
-#: Arjuna-X/functions.php:906
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1093
 msgid "Blueish gradient"
 msgstr ""
 
-#: Arjuna-X/functions.php:907
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1094
 msgid "Gray gradient"
 msgstr ""
 
-#: Arjuna-X/functions.php:908
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1095
 msgid "Gray gradient (reverse)"
 msgstr ""
 
-#: Arjuna-X/functions.php:909
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1096
 msgid "Khaki gradient"
 msgstr ""
 
-#: Arjuna-X/functions.php:921
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1108
 msgid "Solid Color"
 msgstr ""
 
-#: Arjuna-X/functions.php:924
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1111
 msgid "Button Style"
 msgstr ""
 
-#: Arjuna-X/functions.php:930
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1117
 msgid "If the background is a solid color, you can choose the style of the buttons yourself."
 msgstr ""
 
-#: Arjuna-X/functions.php:934
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1121
 msgid "Header Image"
 msgstr ""
 
-#: Arjuna-X/functions.php:943
-msgid "Light Blue"
-msgstr ""
-
-#: Arjuna-X/functions.php:948
-msgid "Dark Blue"
-msgstr ""
-
-#: Arjuna-X/functions.php:953
-msgid "Khaki"
-msgstr ""
-
-#: Arjuna-X/functions.php:958
-msgid "Sea Green"
-msgstr ""
-
-#: Arjuna-X/functions.php:963
-msgid "Light Red"
-msgstr ""
-
-#: Arjuna-X/functions.php:972
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1145
 msgid "Footer Style"
 msgstr ""
 
-#: Arjuna-X/functions.php:981
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1154
 msgid "Match Header Image"
 msgstr ""
 
-#: Arjuna-X/functions.php:992
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1165
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1205
 msgid "Sidebar"
 msgstr ""
 
-#: Arjuna-X/functions.php:994
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1167
 #, php-format
 msgid "Note: To see how the sidebar and its widget bars work in Arjuna, please read our %sFAQ%s."
 msgstr ""
 
-#: Arjuna-X/functions.php:998
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1171
 msgid "Sidebar Position"
 msgstr ""
 
-#: Arjuna-X/functions.php:1003
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1176
 msgid "Right sidebar"
 msgstr ""
 
-#: Arjuna-X/functions.php:1008
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1181
 msgid "Left sidebar"
 msgstr ""
 
-#: Arjuna-X/functions.php:1013
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1186
 msgid "No sidebar"
 msgstr ""
 
-#: Arjuna-X/functions.php:1018
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1191
 msgid "Sidebar Width"
 msgstr ""
 
-#: Arjuna-X/functions.php:1020
-msgid "Small"
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1203
+msgid "Content Area"
 msgstr ""
 
-#: Arjuna-X/functions.php:1021
-msgid "Normal"
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1211
+msgid "Use the slider to adjust the width of the sidebar."
 msgstr ""
 
-#: Arjuna-X/functions.php:1022
-msgid "Large"
-msgstr ""
-
-#: Arjuna-X/functions.php:1023
-msgid "If you intend to use the two column sidebar, we recommend to choose either the normal or the large sidebar."
-msgstr ""
-
-#: Arjuna-X/functions.php:1027
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1215
 msgid "Default Widgets"
 msgstr ""
 
-#: Arjuna-X/functions.php:1029
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1217
 msgid "Display default sidebar widgets if the widget bars are empty."
 msgstr ""
 
-#: Arjuna-X/functions.php:1030
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1218
 msgid "If enabled, the following widgets will be displayed if the widget bar is empty: <b>Sidebar Top:</b> Recent Posts and Browse by Tags, <b>Sidebar Left:</b> Categories, <b>Siderbar Right:</b> Meta"
 msgstr ""
 
-#: Arjuna-X/functions.php:1034
-msgid "RSS Button"
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1222
+msgid "Sidebar Buttons"
 msgstr ""
 
-#: Arjuna-X/functions.php:1036
-msgid "Display an RSS button on the very top of the sidebar."
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1229
+msgid "Use extended button."
 msgstr ""
 
-#: Arjuna-X/functions.php:1040
-msgid "Twitter Button"
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1230
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1238
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1246
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1254
+msgid "Label"
 msgstr ""
 
-#: Arjuna-X/functions.php:1042
-msgid "Display a Twitter button on the very top of the sidebar."
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1236
+msgid "Your Twitter URL"
 msgstr ""
 
-#: Arjuna-X/functions.php:1049
-msgid "Facebook Button"
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1244
+msgid "Your Facebook URL"
 msgstr ""
 
-#: Arjuna-X/functions.php:1051
-msgid "Display a Facebook button on the very top of the sidebar."
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1252
+msgid "Your LinkedIn URL"
 msgstr ""
 
-#: Arjuna-X/functions.php:1058
-msgid "Display Button Labels"
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1258
+msgid "Choose which buttons will be included on the very top of the sidebar."
 msgstr ""
 
-#: Arjuna-X/functions.php:1060
-msgid "Display labels next to the buttons (RSS, Twitter and Facebook)."
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1259
+msgid "The extended RSS button will allow visitors to choose between all available RSS feeds, depending on the page they are currently browsing."
 msgstr ""
 
-#: Arjuna-X/functions.php:1069
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1269
+msgid "Search"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1276
+msgid "Enable WordPress search"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1278
+msgid "If disabled, the search field will not be included in the header."
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1287
 msgid "General Options"
 msgstr ""
 
-#: Arjuna-X/functions.php:1072
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1290
 msgid "Index Pages"
 msgstr ""
 
-#: Arjuna-X/functions.php:1074
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1292
 msgid "Index pages include the homepage (unless it is static), archives, category and tag listing pages as well as search results pages. Basically any page that displays a listing of posts."
 msgstr ""
 
-#: Arjuna-X/functions.php:1078
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1296
 msgid "Display Tags"
 msgstr ""
 
-#: Arjuna-X/functions.php:1080
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1298
 msgid "Display the tags of a post right below each post."
 msgstr ""
 
-#: Arjuna-X/functions.php:1084
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1302
 msgid "Display Categories"
 msgstr ""
 
-#: Arjuna-X/functions.php:1086
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1304
 msgid "Display the categories of a post right below each post."
 msgstr ""
 
-#: Arjuna-X/functions.php:1096
-msgid "Single Posts and Pages"
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1314
+msgid "Posts and Pages"
 msgstr ""
 
-#: Arjuna-X/functions.php:1101
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1319
 msgid "Display Author"
 msgstr ""
 
-#: Arjuna-X/functions.php:1103
-msgid "Include the author of a post in the post header."
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1321
+msgid "Include the author of a post/page."
 msgstr ""
 
-#: Arjuna-X/functions.php:1107
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1325
 msgid "Display Time"
 msgstr ""
 
-#: Arjuna-X/functions.php:1109
-msgid "Include the time and date of when the post has been published, instead of only the date."
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1327
+msgid "Include the time and date of when the post/page has been published, instead of only the date."
 msgstr ""
 
-#: Arjuna-X/functions.php:1113
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1331
 msgid "Display Info Bar for Pages"
 msgstr ""
 
-#: Arjuna-X/functions.php:1115
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1333
 msgid "Display the info bar right below the title of pages."
 msgstr ""
 
-#: Arjuna-X/functions.php:1116
-msgid "The info bar usually includes the author of the page, the publish date and the comments button. This options entirely hides the bar so that only the title is shown."
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1334
+msgid "The info bar usually includes the author of the page, the publish date, and the comments button. If turned off, this option entirely hides the bar so that only the title of the page is shown."
 msgstr ""
 
-#: Arjuna-X/functions.php:1120
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1338
 msgid "Navigation Links"
 msgstr ""
 
-#: Arjuna-X/functions.php:1122
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1340
 msgid "Display links to the previous and next posts above each post."
 msgstr ""
 
-#: Arjuna-X/functions.php:1123
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1341
 msgid "Display links to the previous and next posts below each post."
 msgstr ""
 
-#: Arjuna-X/functions.php:1124
-msgid "Note: The links will only be shown on permalink pages, i.e. the URL where one single post/page is displayed."
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1342
+msgid "Note: The links will only be shown on permalink pages, i.e. the URL where one single post is displayed."
 msgstr ""
 
-#: Arjuna-X/functions.php:1134
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1352
 msgid "Comments &amp; Trackbacks"
 msgstr ""
 
-#: Arjuna-X/functions.php:1139
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1357
 msgid "Display comments as follows"
 msgstr ""
 
-#: Arjuna-X/functions.php:1144
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1362
 msgid "Aligned to the left"
 msgstr ""
 
-#: Arjuna-X/functions.php:1149
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1367
 msgid "Aligned to the right"
 msgstr ""
 
-#: Arjuna-X/functions.php:1154
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1372
 msgid "Alternate between left and right alignment"
 msgstr ""
 
-#: Arjuna-X/functions.php:1159
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1377
 msgid "Date Format"
 msgstr ""
 
-#: Arjuna-X/functions.php:1161
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1379
 msgid "Passed Time (Example: <em>&quot;Written by admin about 3 days ago.&quot;</em>)"
 msgstr ""
 
-#: Arjuna-X/functions.php:1162
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1380
 #, php-format
 msgid "Default Date Format (Example: <em>&quot;Written by admin on %s&quot;</em>)"
 msgstr ""
 
-#: Arjuna-X/functions.php:1163
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1381
 msgid "The default date format can be customized in Settings &gt; General."
 msgstr ""
 
-#: Arjuna-X/functions.php:1167
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1385
 msgid "Comment Display"
 msgstr ""
 
-#: Arjuna-X/functions.php:1169
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1387
 msgid "Hide any traces of comments when they are disabled for <strong>Pages</strong>."
 msgstr ""
 
-#: Arjuna-X/functions.php:1170
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1388
 msgid "Hide any traces of comments when they are disabled for <strong>Posts</strong>."
 msgstr ""
 
-#: Arjuna-X/functions.php:1171
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1389
 msgid "Note: If enabled, the comments tab section as well as the comment form on pages/posts will be removed."
 msgstr ""
 
-#: Arjuna-X/functions.php:1175
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1393
 msgid "Trackback Display"
 msgstr ""
 
-#: Arjuna-X/functions.php:1177
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1395
 msgid "Hide any traces of trackbacks and pingbacks when they are disabled for <strong>Pages</strong>."
 msgstr ""
 
-#: Arjuna-X/functions.php:1178
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1396
 msgid "Hide any traces of trackbacks and pingbacks when they are disabled for <strong>Posts</strong>."
 msgstr ""
 
-#: Arjuna-X/functions.php:1179
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1397
 msgid "Note: If enabled, the trackbacks tab section on pages/posts will be removed."
 msgstr ""
 
-#: Arjuna-X/functions.php:1189
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1407
 msgid "Excerpts"
 msgstr ""
 
-#: Arjuna-X/functions.php:1194
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1412
 msgid "Show excerpts on"
 msgstr ""
 
-#: Arjuna-X/functions.php:1196
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1414
 msgid "Homepage/Index page"
 msgstr ""
 
-#: Arjuna-X/functions.php:1197
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1415
 msgid "Category &amp; tag pages"
 msgstr ""
 
-#: Arjuna-X/functions.php:1198
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1416
 msgid "Archive pages"
 msgstr ""
 
-#: Arjuna-X/functions.php:1199
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1417
 msgid "Search pages"
 msgstr ""
 
-#: Arjuna-X/functions.php:1200
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1418
 msgid "Author pages"
 msgstr ""
 
-#: Arjuna-X/functions.php:1201
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1419
 msgid "Note: If enabled, an excerpt will be shown instead of the full post on selected pages. If a post does not have a custom excerpt, an automatic excerpt of the first 55 words will be displayed."
 msgstr ""
 
-#: Arjuna-X/functions.php:1211
-#: Arjuna-X/functions.php:1216
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1429
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1434
 msgid "Pagination"
 msgstr ""
 
-#: Arjuna-X/functions.php:1218
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1436
 msgid "Use Arjuna pagination"
 msgstr ""
 
-#: Arjuna-X/functions.php:1219
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1437
 msgid "If enabled, Arjuna will use its own native pagination to allow your users to navigate the blog using pages."
 msgstr ""
 
-#: Arjuna-X/functions.php:1223
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1441
 msgid "Page Range"
 msgstr ""
 
-#: Arjuna-X/functions.php:1232
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1448
 msgid "The number of page buttons that will appear before and after the current page button."
 msgstr ""
 
-#: Arjuna-X/functions.php:1236
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1452
 msgid "Page Anchors"
 msgstr ""
 
-#: Arjuna-X/functions.php:1245
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1459
 msgid "The number of page buttons that will always appear at the beginning and the end of the pagination."
 msgstr ""
 
-#: Arjuna-X/functions.php:1249
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1463
 msgid "Page Gap"
 msgstr ""
 
-#: Arjuna-X/functions.php:1258
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1470
 msgid "The number of page buttons in a gap before an ellipsis (...) is displayed."
 msgstr ""
 
-#: Arjuna-X/functions.php:1263
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1475
 msgid "Use WordPress default"
 msgstr ""
 
-#: Arjuna-X/functions.php:1264
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1476
 msgid "The default depends on your WordPress version and whether you have any pagination plugins activated. If the wp-paginate or wp-pagenavi plugin is activated, then Arjuna will use these plugins to create the pagination."
 msgstr ""
 
-#: Arjuna-X/functions.php:1274
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1486
+msgid "RSS Feeds"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1495
+msgid "Default RSS Feeds"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1499
+msgid "Google Feedburner"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1506
+msgid "Redirect Feeds to"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1509
+msgid "Arjuna will redirect all of your existing feeds, including category and tag feeds, to Google Feedburner."
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1513
+msgid "Redirect Comment Feeds to"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1516
+msgid "Arjuna will redirect your comment feeds to Google Feedburner to this URL."
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1526
+msgid "Twitter Widget"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1528
+msgid "Note: The minimum sidebar width for the twitter widget to not overflow the sidebar is 280px. Please adjust your sidebar accordingly."
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1536
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1581
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1594
+msgid "Yes"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1540
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1585
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1598
+msgid "No"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1547
+msgid "Widget Title"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1550
+msgid "The title of the sidebar widget."
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1554
+msgid "Twitter Username"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1560
+msgid "Height"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1566
+msgid "Number of Tweets"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1577
+msgid "Scrollbar"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1590
+msgid "Show Timestamp"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1609
 msgid "Miscellaneous"
 msgstr ""
 
-#: Arjuna-X/functions.php:1279
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1614
 msgid "Append to page title"
 msgstr ""
 
-#: Arjuna-X/functions.php:1281
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1616
 #, php-format
 msgid "Blog Name (&quot; - %s&quot;)"
 msgstr ""
 
-#: Arjuna-X/functions.php:1282
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1617
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1625
 msgid "Custom:"
 msgstr ""
 
-#: Arjuna-X/functions.php:1283
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1618
 msgid "This will be appended to the page title of every web page (posts, pages, categories, etc.)"
 msgstr ""
 
-#: Arjuna-X/functions.php:1287
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1622
+msgid "Footer Copyright Notice"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1624
+#, php-format
+msgid "Blog Name (&quot;%s&quot;)"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1626
+msgid "The copyright notice will be displayed in the footer."
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1630
 msgid "Enable JavaScript menus"
 msgstr ""
 
-#: Arjuna-X/functions.php:1289
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1632
 msgid "Enable JavaScript dropdown menus. This will improve usability of the menus. If JavaScript is disabled, CSS-based dropdown menus will be used instead."
 msgstr ""
 
-#: Arjuna-X/functions.php:1293
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1636
 msgid "Show IE6 Notice"
 msgstr ""
 
-#: Arjuna-X/functions.php:1295
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1638
 msgid "Display a notice to Internet Explorer 6 users to update their browsers."
 msgstr ""
 
-#: Arjuna-X/functions.php:1299
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1642
 msgid "Custom CSS"
 msgstr ""
 
-#: Arjuna-X/functions.php:1306
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1649
 #, php-format
 msgid "Arjuna needs write permissions to create a new file %s, which will contain the custom CSS."
 msgstr ""
 
-#: Arjuna-X/functions.php:1308
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1651
 msgid "Enable custom CSS rules"
 msgstr ""
 
-#: Arjuna-X/functions.php:1309
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1652
 msgid "If enabled, Arjuna will include your custom CSS rules with every page call. If you intend to make some minor changes to the theme, enabling this option ensures that you can safely upgrade Arjuna without losing your custom CSS. We recommend to use child themes for more serious customizations."
 msgstr ""
 
-#: Arjuna-X/functions.php:1325
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1668
 msgid "Save Changes"
 msgstr ""
 
-#: Arjuna-X/functions.php:1446
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1780
 msgid "Written by"
 msgstr ""
 
-#: Arjuna-X/functions.php:1448
-#: Arjuna-X/functions.php:1488
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1782
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1822
 #, php-format
 msgid "about %s ago"
 msgstr ""
 
-#: Arjuna-X/functions.php:1450
-#: Arjuna-X/functions.php:1490
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1784
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1824
 msgid "on"
 msgstr ""
 
-#: Arjuna-X/functions.php:1455
-#: Arjuna-X/functions.php:1494
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1789
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1828
 msgid "Edit"
 msgstr ""
 
-#: Arjuna-X/functions.php:1458
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1792
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: Arjuna-X/functions.php:1486
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1820
 msgid "Pinged by"
 msgstr ""
 
-#: Arjuna-X/functions.php:1497
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1831
 msgid "Your trackback is awaiting moderation."
 msgstr ""
 
-#: Arjuna-X/functions.php:1521
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1862
 msgid "1 year"
 msgstr ""
 
-#: Arjuna-X/functions.php:1521
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1862
 #, php-format
 msgid "%d years"
 msgstr ""
 
-#: Arjuna-X/functions.php:1525
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1866
 msgid "1 month"
 msgstr ""
 
-#: Arjuna-X/functions.php:1525
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1866
 #, php-format
 msgid "%d months"
 msgstr ""
 
-#: Arjuna-X/functions.php:1529
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1870
 msgid "1 week"
 msgstr ""
 
-#: Arjuna-X/functions.php:1529
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1870
 #, php-format
 msgid "%d weeks"
 msgstr ""
 
-#: Arjuna-X/functions.php:1533
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1874
 msgid "1 day"
 msgstr ""
 
-#: Arjuna-X/functions.php:1533
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1874
 #, php-format
 msgid "%d days"
 msgstr ""
 
-#: Arjuna-X/functions.php:1537
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1878
 msgid "1 hour"
 msgstr ""
 
-#: Arjuna-X/functions.php:1537
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1878
 #, php-format
 msgid "%d hours"
 msgstr ""
 
-#: Arjuna-X/functions.php:1541
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1882
 msgid "1 minute"
 msgstr ""
 
-#: Arjuna-X/functions.php:1541
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1882
 #, php-format
 msgid "%d minutes"
 msgstr ""
 
-#: Arjuna-X/functions.php:1544
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1885
 msgid "1 second"
 msgstr ""
 
-#: Arjuna-X/functions.php:1544
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1885
 #, php-format
 msgid "%d seconds"
 msgstr ""
 
-#: Arjuna-X/functions.php:1628
-#: Arjuna-X/functions.php:1699
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1967
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:2041
 #, php-format
 msgid "Page %s of %s"
 msgstr ""
 
-#: Arjuna-X/functions.php:1667
-#: Arjuna-X/functions.php:1670
-#: Arjuna-X/functions.php:1712
-#: Arjuna-X/functions.php:1715
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:2009
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:2012
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:2054
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:2057
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: Arjuna-X/functions.php:1750
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:2093
 msgid "Comment Pages:"
 msgstr ""
 
-#: Arjuna-X/functions.php:1751
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:2094
 msgid "Previous"
 msgstr ""
 
-#: Arjuna-X/functions.php:1751
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:2094
 msgid "Next"
 msgstr ""
 
-#: Arjuna-X/functions.php:1753
-msgid "Older Comments"
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:2433
+msgid "Please go to Appearance > Arjuna Options to configure your Arjuna twitter widget."
 msgstr ""
 
-#: Arjuna-X/functions.php:1754
-msgid "Newer Comments"
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:2439
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:2448
+msgid "Arjuna Twitter Profile Widget"
 msgstr ""
 
-#: Arjuna-X/header.php:10
-msgid "Search Results:"
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:2443
+msgid "Display Twitter Goodies Profile Widget"
 msgstr ""
 
-#: Arjuna-X/header.php:39
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/header.php:18
 msgid "Skip to posts"
 msgstr ""
 
-#: Arjuna-X/header.php:42
-msgid "This browser is outdated. Please <a href=\"http://www.microsoft.com/windows/internet-explorer/default.aspx\">upgrade</a> your browser to enjoy this website to its fullest extent."
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/page.php:11
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/page_fullwidth.php:15
+msgid "Permalink to"
 msgstr ""
 
-#: Arjuna-X/header.php:75
-msgid "Search here..."
-msgstr ""
-
-#: Arjuna-X/header.php:76
-msgid "Find"
-msgstr ""
-
-#: Arjuna-X/header.php:83
-msgid "Home"
-msgstr ""
-
-#: Arjuna-X/page.php:44
-#: Arjuna-X/page_fullwidth.php:48
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/page.php:20
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/page_fullwidth.php:24
 msgid "Pages:"
 msgstr ""
 
-#: Arjuna-X/page.php:44
-#: Arjuna-X/page_fullwidth.php:48
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/page.php:20
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/page_fullwidth.php:24
 msgid "Page %"
 msgstr ""
 
-#: Arjuna-X/page.php:46
-#: Arjuna-X/page_fullwidth.php:50
-#: Arjuna-X/single.php:56
-msgid "Edit in Admin"
-msgstr ""
-
-#: Arjuna-X/page.php:58
-#: Arjuna-X/page_fullwidth.php:63
-#: Arjuna-X/single.php:76
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/page.php:32
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/page_fullwidth.php:37
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/single.php:36
 msgid "There is nothing here."
 msgstr ""
 
-#: Arjuna-X/search.php:8
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/search.php:8
 #, php-format
 msgid "Search Results on <em>%s</em>"
 msgstr ""
 
-#: Arjuna-X/search.php:75
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/search.php:32
 msgid "Your search returned no results."
 msgstr ""
 
-#: Arjuna-X/sidebar.php:20
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/sidebar.php:12
 msgid "Recent Posts"
 msgstr ""
 
-#: Arjuna-X/sidebar.php:27
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/sidebar.php:19
 msgid "Browse by Tags"
 msgstr ""
 
-#: Arjuna-X/sidebar.php:52
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/sidebar.php:44
 msgid "Meta"
 msgstr ""
 
-#: Arjuna-X/single.php:9
-#: Arjuna-X/single.php:67
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/single.php:18
+msgid "Previous Page"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/single.php:18
+msgid "Next Page"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-advanced.php:9
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-basic.php:14
+msgid "Leave a Comment"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-advanced.php:9
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-basic.php:15
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-advanced.php:11
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-basic.php:16
+msgid "Cancel Reply"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-advanced.php:15
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-basic.php:18
+#, php-format
+msgid "You must be %slogged in%s to post a comment."
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-advanced.php:20
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-advanced.php:31
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-basic.php:3
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-basic.php:10
+msgid "Your name"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-advanced.php:21
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-advanced.php:32
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-basic.php:4
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-basic.php:11
+msgid "Your email"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-advanced.php:22
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-advanced.php:33
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-basic.php:5
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-basic.php:12
+msgid "Your website"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-advanced.php:23
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-advanced.php:43
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-basic.php:6
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-basic.php:17
+msgid "Your comment"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-advanced.php:26
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-basic.php:19
+#, php-format
+msgid "Logged in as %s."
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-advanced.php:26
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-basic.php:19
+msgid "Log out of this account"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-advanced.php:26
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-basic.php:19
+msgid "Logout"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-advanced.php:45
+msgid "Subscribe to comments"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-advanced.php:46
+msgid "Leave comment"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/core/head-title-tag.php:5
+msgid "Search Results:"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/core/pagination.php:4
+msgid "Prev"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/core/pagination.php:15
+msgid "Newer Entries"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/core/pagination.php:16
+msgid "Older Entries"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/header/menu-2.php:19
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/header/menu-2.php:26
+msgid "Home"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/header/search.php:5
+msgid "Search here..."
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/header/search.php:6
+msgid "Find"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/post/post-footer.php:10
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/post/single-post-footer.php:7
+msgid "<i>none</i>"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/post/post-footer.php:15
+msgid "Read more"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/post/post-header.php:8
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/post/single-post-header.php:8
+msgid " at "
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/post/post-header.php:17
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/post/single-post-header.php:17
+msgid "Pass required"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/post/post-header.php:19
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/post/single-post-header.php:19
+msgid "Comments off"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/post/post-header.php:21
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/post/single-post-header.php:21
+msgid "No comments"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/post/post-header.php:21
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/post/single-post-header.php:21
+msgid "1 comment"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/post/post-header.php:21
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/post/single-post-header.php:21
+#, php-format
+msgid "% comments"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/post/single-page-footer.php:2
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/post/single-post-footer.php:11
+msgid "Edit in Admin"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/post/single-post-bottom-links.php:2
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/post/single-post-top-links.php:2
 msgid "Previous Post"
 msgstr ""
 
-#: Arjuna-X/single.php:10
-#: Arjuna-X/single.php:68
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/post/single-post-bottom-links.php:3
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/post/single-post-top-links.php:3
 msgid "Next Post"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/sidebar/icons.php:11
+#, php-format
+msgid "Posts in %s"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/sidebar/icons.php:15
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/sidebar/icons.php:21
+#, php-format
+msgid "Posts by %s"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/sidebar/icons.php:20
+msgid "Post Comments"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/sidebar/icons.php:25
+msgid "Search Results"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/sidebar/icons.php:29
+msgid "Latest Posts"
+msgstr ""
+
+#: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/sidebar/icons.php:30
+msgid "Latest Comments"
 msgstr ""
 
