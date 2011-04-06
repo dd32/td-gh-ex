@@ -34,7 +34,7 @@
 		      elseif (is_search()) {
 		         echo 'Search for &quot;'.wp_specialchars($s).'&quot; - '; }
 		      elseif (!(is_404()) && (is_single()) || (is_page())) {
-		         wp_title(''); echo ' - '; }
+		         wp_title('');  }
 		      elseif (is_404()) {
 		         echo 'Not Found - '; }
 		      if (is_front_page() AND $hometitle == 'none') {
@@ -42,7 +42,7 @@
 		      elseif (is_front_page() AND $hometitle != 'none') {
 		         bloginfo('name'); echo ' - '; echo $hometitle ; }
 		      else {
-		          bloginfo('name'); }
+		         echo ' - '; bloginfo('name'); }
 		      if ($paged>1) {
 		         echo ' - page '. $paged; }
 		   ?>
