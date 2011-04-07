@@ -106,3 +106,7 @@ function beach_custom_excerpt_more( $output ) {
 	return $output;
 }
 add_filter( 'get_the_excerpt', 'beach_custom_excerpt_more' );
+
+/**
+ * This theme was built with PHP, Semantic HTML, CSS, love, and a Toolbox.
+ */
