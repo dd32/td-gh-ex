@@ -9,7 +9,17 @@ if ( function_exists('register_sidebar') )
         'before_title' => '<h2 class="widgettitle">',
         'after_title' => '</h2>',
     ));
-   
+function new_excerpt_more($more) { return '....'; }
+add_filter('excerpt_more', 'new_excerpt_more');
+function new_excerpt_length($length) {
+	return 250;
+}
+add_filter('excerpt_length', 'new_excerpt_length');
+
+add_custom_background();
+add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
+add_image_size( 'page-thumbnail', 740, 9999, true );
+
 function print_comment($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment; ?>
     	<li>
