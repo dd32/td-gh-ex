@@ -11,7 +11,7 @@
 <div class="imagez">
 <?php if ( has_post_thumbnail()) : ?><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_post_thumbnail('page-thumbnail'); ?></a><?php endif; ?>
 <div class="label"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php if ( get_the_title() ) { the_title();} else { echo '(No Title)';} ?></a></div></div>
-<?php if ( is_home() || is_404() || is_category() || is_day() || is_month() || is_year() || is_search() || is_paged()) : ?><?php the_excerpt(); ?><?php else : ?><?php the_content('Read the rest of this entry &raquo;'); ?><?php endif; ?>
+<?php the_content('Read the rest of this entry &raquo;'); ?>
 <?php wp_link_pages(); ?>
 <div class="clearz"><div class="tags">
 <?php if ( is_home()) : ?>
