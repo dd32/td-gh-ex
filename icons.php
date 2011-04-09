@@ -10,7 +10,7 @@
 	$twitter		= get_option('if_twitter') ? '' : 'http://www.twitter.com';
 	$linkedin		= get_option('if_linkedin') ? '' : 'http://www.linkedin.com';
 	$youtube		= get_option('if_youtube') ? '' : 'http://www.youtube.com';
-	$googlemaps		= get_option('if_googlemaps') ? '': 'http://maps.google.com';
+	$googlemaps		= get_option('if_googlemaps') ?'' : 'http://maps.google.com';
 	$email			= get_option('if_email') ? '' : 'no@way.com';
 	$rss			= get_option('if_rsslink') ? '' : 'default';
 

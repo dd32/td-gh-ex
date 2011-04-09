@@ -8,6 +8,9 @@
 	Copyright (C) 2011 CyberChimps
 */
 
+
+
+
 add_theme_support('automatic-feed-links');
 	if ( ! isset( $content_width ) )
 	$content_width = 600;
@@ -15,6 +18,7 @@ add_theme_support('automatic-feed-links');
 if ( function_exists( 'add_theme_support' ) ) { 
   add_theme_support( 'post-thumbnails' ); 
 }
+
 
 // This theme allows users to set a custom background
 	add_custom_background();
@@ -373,9 +377,9 @@ case "close":
 case "title":  
 ?>  
 <p>Want more features? Click below to upgrade to iFeature Pro, which includes additional sections, color options, fonts, theme .PSD files and much much more.</p>
-<a href="http://cyberchimps.com/ifeature-pro"><img src="<?php bloginfo('template_url'); ?>/images/getifeaturepro.png ?>" alt="Get iFeature Pro"></a> 
+<a href="http://cyberchimps.com/ifeature-pro"><img src="<?php echo get_template_directory_uri(); ?>/images/getifeaturepro.png ?>" alt="Get iFeature Pro"></a> 
 <p>Want to stick with iFeature, but want to support the developers? Please consider making a donation.</p>
-<a href="http://cyberchimps.com/donate"><img src="<?php bloginfo('template_url'); ?>/images/paypal.gif ?>" alt="Donate"></a> 
+<a href="http://cyberchimps.com/donate"><img src="<?php echo get_template_directory_uri(); ?>/images/paypal.gif ?>" alt="Donate"></a> 
 <p>Click on the panes below to edit your iFeature settings.</p> 
 
   
@@ -439,7 +443,7 @@ $i++;
   
 ?>  
 <div class="rm_section">  
-<div class="rm_title"><h3><img src="<?php bloginfo('template_directory')?>/functions/images/trans.gif" class="inactive" alt="""><?php echo $value['name']; ?></h3><span class="submit"><input name="save<?php echo $i; ?>" type="submit" value="Save changes" />  
+<div class="rm_title"><h3><img src="<?php echo get_template_directory_uri();?>/functions/images/trans.gif" class="inactive" alt="""><?php echo $value['name']; ?></h3><span class="submit"><input name="save<?php echo $i; ?>" type="submit" value="Save changes" />  
 </span><div class="clearfix"></div></div>  
 <div class="rm_options">   
 <?php break;  
@@ -450,7 +454,7 @@ $i++;
 
 
 <p>Need help? Follow the links below to visit our support forum and documentation pages:</p>
-<a href="http://cyberchimps.com/forum"><img src="<?php bloginfo('template_url'); ?>/images/forum.png ?>" alt="Forum"></a> <a href="http://cyberchimps.com/ifeature-pro/docs"><img src="<?php bloginfo('template_url'); ?>/images/docs.png ?>" alt="Docs"></a> 
+<a href="http://cyberchimps.com/forum"><img src="<?php echo get_template_directory_uri(); ?>/images/forum.png ?>" alt="Forum"></a> <a href="http://cyberchimps.com/ifeature-pro/docs"><img src="<?php echo get_template_directory_uri(); ?>/images/docs.png ?>" alt="Docs"></a> 
 
 <p>Press to reset your settings (WARNING, THIS RESTORES TO DEFAULT)</p>
 <input type="hidden" name="action" value="save" />  

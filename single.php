@@ -26,7 +26,7 @@ get_header(); ?>
 			
 						<h2 class="posts_title"><?php the_title(); ?></h2>
 			
-						<?php include (TEMPLATEPATH . '/sections/meta.php' ); ?>
+						<?php get_template_part ('meta', 'single'); ?>
 
 							<div class="entry">
 								<?php the_content(); ?>
@@ -34,7 +34,7 @@ get_header(); ?>
 						<?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
 						
 							<?php 
-								$hidefblike		= get_option('if_hide_fb_like') ?  : 'unchecked';
+								$hidefblike		= get_option('if_hide_fb_like') ? '' : 'unchecked';
 							?>
 							<?php if ($hidefblike == 'unchecked' ):?>
 							<div class="fb" >
@@ -48,7 +48,7 @@ get_header(); ?>
 							</div><!--end tags-->
 
 							<div class="postmetadata">
-									<?php include (TEMPLATEPATH . '/sections/share.php' ); ?>
+									<?php get_template_part ('share', 'single' ); ?>
 								<div class="comments">
 									<?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>
 								</div><!--end comments-->	

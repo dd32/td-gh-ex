@@ -43,7 +43,7 @@ get_header(); ?>
 			
 			<?php } ?>
 
-			<?php include (TEMPLATEPATH . '/sections/pagination.php' ); ?>
+			<?php get_template_part('pagination', 'archive'); ?>
 
 			<?php while (have_posts()) : the_post(); ?>
 			
@@ -51,13 +51,13 @@ get_header(); ?>
 				
 						<h2 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
 					
-						<?php include (TEMPLATEPATH . '/sections/meta.php' ); ?>
+						<?php get_template_part('meta', 'archive'); ?>
 
 						<div class="entry">
 							<?php the_content(); ?>
 							
 							<?php 
-								$hidefblike		= get_option('if_hide_fb_like') ?  : 'unchecked';
+								$hidefblike		= get_option('if_hide_fb_like') ? '' : 'unchecked';
 							?>
 							<?php if ($hidefblike == 'unchecked' ):?>
 							<div class="fb" >
@@ -71,7 +71,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php include (TEMPLATEPATH . '/sections/pagination.php' ); ?>
+			<?php get_template_part('pagination', 'archive' ); ?>
 			
 	<?php else : ?>
 

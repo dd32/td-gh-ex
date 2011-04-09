@@ -63,17 +63,15 @@
 	<div id="afterfooter">
 		<div id="afterfooterwrap">
 			<!--Inserts Copyright Text-->
-			<?php $copyright = get_option('if_footer_text') ? : 'default' ; ?>
+			<?php $copyright = get_option('if_footer_text') ? '' : 'default' ; ?>
+			<div id="afterfootercopyright">
 				<?php if ($copyright == 'default'): ?> 
-					<div id="afterfootercopyright">
 						<?php echo '' . get_bloginfo ( 'name' );  ?>
-					</div>
 				<?php endif;?>
-				<?php if ($copyright != 'hide'):?> 
-					<div id="afterfootercopyright">
+				<?php if ($copyright != 'hide') :?> 
 						&copy; <?php echo stripslashes(get_option('if_footer_text')); ?>
-					</div>
 				<?php endif;?>
+				</div>
 			<!--Inserts Afterfooter Menu-->
 			<div id="afterfootermenu">
 				<?php wp_nav_menu('depth=1'); ?>
@@ -81,7 +79,7 @@
 			<!--Inserts iFeature SEO Module-->
 			
 					<div id="seomodule">
-						<?php include (TEMPLATEPATH . '/sections/seomodule.php' ); ?>
+						<?php get_template_part('seomodule', 'footer' ); ?>
 					</div>
 			
 		</div>  <!--end afterfooterwrap-->	

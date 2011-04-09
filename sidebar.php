@@ -22,7 +22,7 @@
     	<ul>
 						<li>iFeature Free is one of the most advanced free themes available for WordPress. You can easily upgrade to <a href="http://cyberchimps.com/ifeaturepro">iFeature Pro</a> to get even more amazing features such as different color iMenus, more Google Fonts, more Widgetized areas, the iFeature Pro homepage template, and many more.</li>
 						<li>&nbsp;</li>
-						<li><a href="http://cyberchimps.com/ifeature-pro/"><img class="aligncenter" src="<?php bloginfo('template_url'); ?>/images/getifeaturepro.png" alt="Get iFeature Pro"></a></li>
+						<li><a href="http://cyberchimps.com/ifeature-pro/"><img class="aligncenter" src="<?php echo get_template_directory_uri(); ?>/images/getifeaturepro.png" alt="Get iFeature Pro"></a></li>
 						<li>&nbsp;</li>
 						<li>We designed iFeature Free and Pro to be as user friendly as possible, if you do run into trouble we provide a <a href="http://cyberchimps.com/forum">free support forum</a>, and <a href="http://www.cyberchimps.com/ifeature-pro/docs/">precise documentation</a>.</li>
 						<li>&nbsp;</li>

@@ -16,16 +16,16 @@
 	
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 	<!-- Inserts META Home Description -->
-	<?php  $homedescription = get_option('if_home_description') ? : ''; ?>
+	<?php  $homedescription = get_option('if_home_description') ? '' : ''; ?>
 		<meta name="description" content="<?php echo $homedescription ?>" />
 	<!-- Inserts META Keywords -->	
-	<?php  $homekeywords = get_option('if_home_keywords') ? : ''; ?>
+	<?php  $homekeywords = get_option('if_home_keywords') ? '' : ''; ?>
 		<meta name="keywords" content="<?php echo $homekeywords ?>" />
 	<meta name="distribution" content="global" />
 	<meta name="language" content="en" />
 <!-- Page title -->
 	<title>
-			<?php  $hometitle = get_option('if_home_title') ? : 'none'; ?>
+			<?php  $hometitle = get_option('if_home_title') ? '': 'none'; ?>
 		   <?php
 		      if (function_exists('is_tag') && is_tag()) {
 		         single_tag_title("Tag Archive for &quot;"); echo '&quot; - '; }
@@ -54,7 +54,7 @@
 	
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 	
-	<?php  $font = get_option('if_font') ? : 'Cantarell'; ?>
+	<?php  $font = get_option('if_font') ? '': 'Cantarell'; ?>
 	
 	<link href='http://fonts.googleapis.com/css?family=<?php echo $font ?>' rel='stylesheet' type='text/css'>
 
@@ -80,7 +80,7 @@
 				<div id="headerwrap">
 					<div id="header_right">
 						<!-- Inserts Header Contact Area -->
-						<?php  $headercontact = get_option('if_header_contact') ? : 'Add contact information here'; ?>
+						<?php  $headercontact = get_option('if_header_contact') ? '': 'Add contact information here'; ?>
 							<?php if ($headercontact != 'hide' ):?>
 								<div id="header_contact"><?php echo stripslashes ($headercontact); ?></div> 
 							<?php endif;?>
@@ -89,11 +89,11 @@
 							<?php endif;?>
 						<br />
 							<div id="social">
-								<?php include (TEMPLATEPATH . '/sections/icons.php' ); ?>
+								<?php get_template_part('icons', 'header'); ?>
 							</div><!-- end social -->
 					</div><!-- end header_right -->
 					<!-- Inserts Site Logo -->
-					<?php  $logo = get_option('if_logo') ? : 'default'; ?>
+					<?php  $logo = get_option('if_logo') ? '': 'default'; ?>
 						<?php if ($logo != 'hide'  and $logo != 'default'):?>
 							<div id="logo">
 								<a href="<?php echo home_url(); ?>/"><img src="<?php echo stripslashes(get_option('if_logo')); ?>" alt="logo"></a>
@@ -101,7 +101,7 @@
 						<?php endif;?>
 						<?php if ($logo == 'default' ):?>
 							<div id="logo">
-								<a href="<?php echo home_url(); ?>/"><img src="<?php bloginfo('template_url'); ?>/images/ifeaturelogo.png" alt="iFeature" /></a>
+								<a href="<?php echo home_url(); ?>/"><img src="<?php echo get_template_directory_uri(); ?>/images/ifeaturelogo.png " alt="iFeature" /></a>
 							</div>
 						<?php endif;?>
 						<?php if ($logo == 'hide' ):?>
@@ -114,7 +114,7 @@
 					</div>
 				</div><!-- end headerwrap -->
 				
-				<div style ="height: 40px; background: url(<?php bloginfo('template_url'); ?>/images/Grey.png) no-repeat left bottom">
-				<?php include (TEMPLATEPATH . '/sections/nav.php' ); ?></div>
+				<div style ="height: 40px; background: url(<?php echo get_template_directory_uri(); ?>/images/Grey.png) no-repeat left bottom">
+				<?php get_template_part('nav', 'header' ); ?></div>
 				
 			</div><!-- end header -->

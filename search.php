@@ -20,14 +20,14 @@ get_header(); ?>
 
 		<h2>Search Results</h2>
 
-		<?php include (TEMPLATEPATH . '/sections/pagination.php' ); ?>
+		<?php get_template_part('pagination', 'search' ); ?>
 
 		<?php while (have_posts()) : the_post(); ?>
 
 			<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 
 				<h2 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-				<?php include (TEMPLATEPATH . '/sections/meta.php' ); ?>
+				<?php get_template_part('meta', 'search' ); ?>
 
 				<div class="entry">
 
@@ -39,7 +39,7 @@ get_header(); ?>
 
 		<?php endwhile; ?>
 
-		<?php include (TEMPLATEPATH . '/sections/pagination.php' ); ?>
+		<?php get_template_part('pagination', 'search'); ?>
 
 	<?php else : ?>
 

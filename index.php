@@ -14,22 +14,29 @@ Copyright (C) 2011 CyberChimps
 	
 		<!--Insert Feature Slider-->
 	
-	<?php $hideslider = get_option('if_hide_slider') ?  : 'unchecked'; ?>
+	<?php $hideslider = get_option('if_hide_slider') ? '' : 'unchecked'; ?>
 		<?php if ($hideslider == 'unchecked' ):?>
-			<?php include (TEMPLATEPATH . '/sections/slider.php' ); ?>
+			<?php get_template_part('slider', 'index' ); ?>
 		<?php endif;?>
 	
 		<div class="content_padding">
 		
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			
+			
 				<div class="post_container">
 			
 					<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 
-						<h2 class="posts_title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-
-						<?php include (TEMPLATEPATH . '/sections/meta.php' ); ?>
+						<h2 class="posts_title">
+						
+						<a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+						<?php 
+							if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+  						the_post_thumbnail();
+						} 
+						?>
+						<?php get_template_part('meta', 'index' ); ?>
 
 							<div class="entry">
 								<?php the_content(); ?>
@@ -37,7 +44,7 @@ Copyright (C) 2011 CyberChimps
 						<?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
 						
 							<?php 
-								$hidefblike		= get_option('if_show_fb_like') ?  : 'unchecked';
+								$hidefblike		= get_option('if_show_fb_like') ? '' : 'unchecked';
 							?>
 							<?php if ($hidefblike != 'unchecked' ):?>
 							<div class="fb" >
@@ -51,7 +58,7 @@ Copyright (C) 2011 CyberChimps
 							</div><!--end tags-->
 
 							<div class="postmetadata">
-										<?php include (TEMPLATEPATH . '/sections/share.php' ); ?>
+										<?php get_template_part('share', 'index' ); ?>
 								<div class="comments">
 									<?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>
 								</div><!--end comments-->	
@@ -63,7 +70,7 @@ Copyright (C) 2011 CyberChimps
 
 		<?php endwhile; ?>
 
-		<?php include (TEMPLATEPATH . '/sections/pagination.php' ); ?>
+		<?php get_template_part('pagination', 'index'); ?>
 
 		<?php else : ?>
 
