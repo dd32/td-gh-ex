@@ -9,20 +9,17 @@ function theme_options_init() {
   wp_register_style('mycss', WP_CONTENT_URL . '/themes/absolum/css/theme-options.css');
 }
 
-
 function absolum_styles() {
        wp_enqueue_style('mycss');
-   }
-   
+}     
    
 function absolum_media() {
 	if( is_admin() ) return;
 	wp_enqueue_script( 'hoverIntent' );  
   
 if( !is_admin()){
-	wp_deregister_script('jquery');
-	wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"), false, '1.4.4');
 	wp_enqueue_script('jquery');
+  wp_enqueue_style('absolum_css', WP_CONTENT_URL . '/themes/absolum/style.css');
 }
   
   
@@ -393,7 +390,7 @@ if( isset( $_REQUEST['reset'] )) {
 </div>
 
      <p style="clear:both;">Do you enjoy this theme? <a rel="bookmark" href="http://theme4press.com/absolum">Send your ideas - issues - wishes</a> or help in development by a donation. Thank you!</p>
-    <p style="font-size:10px;">Version <?php echo $theme_data['Version']; ?> </p> 
+     
     
     </div>  
 
@@ -503,9 +500,10 @@ case 'select1':
 								foreach ( $select_scheme as $option ) {
 									$label = $option['label'];
 									if ( $selected == $option['value'] ) // Make default first in list
-										$p = "\n\t<option style=\"padding-right: 10px;\" selected='selected' value='" . esc_attr( $option['value'] ) . "'>$label</option>";
+										$p = "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . selected( $options['value'], $label ). "'>$label</option>";
 									else
 										$r .= "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . "'>$label</option>";
+                    
 								}
 								echo $p . $r;
 							?>
@@ -535,7 +533,7 @@ case 'select2':
 								foreach ( $select_content_font as $option ) {
 									$label = $option['label'];
 									if ( $selected == $option['value'] ) // Make default first in list
-										$p = "\n\t<option style=\"padding-right: 10px;\" selected='selected' value='" . esc_attr( $option['value'] ) . "'>$label</option>";
+										$p = "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . selected( $options['value'], $label ). "'>$label</option>";
 									else
 										$r .= "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . "'>$label</option>";
 								}
@@ -566,7 +564,7 @@ case 'select3':
 								foreach ( $select_slider as $option ) {
 									$label = $option['label'];
 									if ( $selected == $option['value'] ) // Make default first in list
-										$p = "\n\t<option style=\"padding-right: 10px;\" selected='selected' value='" . esc_attr( $option['value'] ) . "'>$label</option>";
+										$p = "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . selected( $options['value'], $label ). "'>$label</option>";
 									else
 										$r .= "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . "'>$label</option>";
 								}
@@ -598,7 +596,7 @@ case 'select4':
 								foreach ( $select_title as $option ) {
 									$label = $option['label'];
 									if ( $selected == $option['value'] ) // Make default first in list
-										$p = "\n\t<option style=\"padding-right: 10px;\" selected='selected' value='" . esc_attr( $option['value'] ) . "'>$label</option>";
+										$p = "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . selected( $options['value'], $label ). "'>$label</option>";
 									else
 										$r .= "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . "'>$label</option>";
 								}
@@ -629,7 +627,7 @@ case 'select5':
 								foreach ( $select_background as $option ) {
 									$label = $option['label'];
 									if ( $selected == $option['value'] ) // Make default first in list
-										$p = "\n\t<option style=\"padding-right: 10px;\" selected='selected' value='" . esc_attr( $option['value'] ) . "'>$label</option>";
+										$p = "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . selected( $options['value'], $label ). "'>$label</option>";
 									else
 										$r .= "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . "'>$label</option>";
 								}
@@ -660,7 +658,7 @@ case 'select6':
 								foreach ( $select_sidebar as $option ) {
 									$label = $option['label'];
 									if ( $selected == $option['value'] ) // Make default first in list
-										$p = "\n\t<option style=\"padding-right: 10px;\" selected='selected' value='" . esc_attr( $option['value'] ) . "'>$label</option>";
+										$p = "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . selected( $options['value'], $label ). "'>$label</option>";
 									else
 										$r .= "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . "'>$label</option>";
 								}
@@ -732,7 +730,20 @@ case "checkbox":
  * Sanitize and validate input. Accepts an array, return a sanitized array.
  */
 function theme_options_validate( $input ) {
-	global $select_scheme, $select_slider;
+	global $select_scheme, $select_slider, $select_content_font, $select_title, $select_background, $select_sidebar;
+  
+  $input['abs_rss_feed'] = wp_filter_nohtml_kses( $input['abs_rss_feed'] );
+  
+  $input['abs_newsletter'] = wp_filter_nohtml_kses( $input['abs_newsletter'] );
+  
+  $input['abs_facebook'] = wp_filter_nohtml_kses( $input['abs_facebook'] );
+  
+  $input['abs_twitter_id'] = wp_filter_nohtml_kses( $input['abs_twitter_id'] );
+  
+  $input['abs_twitter_id'] = wp_filter_nohtml_kses( $input['abs_twitter_id'] );
+  
+ 	$input['abs_css_content'] = wp_filter_post_kses( $input['abs_css_content'] );
+  
 	return $input;
 }
 
@@ -1020,10 +1031,8 @@ function absolum_widgets_init() {
 add_action( 'widgets_init', 'absolum_widgets_init' );
 
 
-add_action('wp_footer', 'absolum_credits');
-
-function absolum_credits( ) {
-	$credits = '<div id="site-info"><a href="'. home_url() .'">'. get_bloginfo( 'name' ) .'</a></div><div id="site-generator">Absolum theme by <a href="http://blogatize.net/">Blogatize</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;Powered by <a rel="generator" title="Semantic Personal Publishing Platform" href="http://wordpress.org">WordPress</a></div>';
+function absolum_copy() {
+	$credits = '<div id="site-info"><a href="'. home_url() .'">'. get_bloginfo( 'name' ) .'</a></div><div id="site-generator"><a href="http://theme4press.com/absolum/">Absolum</a> theme by Blogatize&nbsp;&nbsp;&bull;&nbsp;&nbsp;Powered by <a rel="generator" title="Semantic Personal Publishing Platform" href="http://wordpress.org">WordPress</a></div>';
 	echo apply_filters( 'absolum_credits', (string) $credits );
 }
 
@@ -1079,6 +1088,19 @@ function absolum_posted_in() {
 endif;
 
 
+function absolum_new_excerpt_length($length) {
+	return 28;
+}
+add_filter('excerpt_length', 'absolum_new_excerpt_length');
+
+function absolum_new_excerpt_more($more) {
+	return ' [..]';
+}
+add_filter('excerpt_more', 'absolum_new_excerpt_more');
+
+
+
+
 // Need to remove background image if a color is set
 
 add_custom_background('absolum_custom_background');
@@ -1096,7 +1118,7 @@ body { <?php echo trim( $style ); ?> }
 
 /* Truncate */
 
-function truncate ($str, $length=10, $trailing='..')
+function absolum_truncate ($str, $length=10, $trailing='..')
 {
  $length-=mb_strlen($trailing);
  if (mb_strlen($str)> $length)
@@ -1113,7 +1135,7 @@ function truncate ($str, $length=10, $trailing='..')
 
 /* Get first image */
 
-function get_first_image() {
+function absolum_get_first_image() {
  global $post, $posts;
  $first_img = '';
  $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
@@ -1121,7 +1143,89 @@ function get_first_image() {
  $first_img = $matches [1][0];
  return $first_img;
  }  
-}  
+} 
+
+function absolum_footer_hook() { ?>
 
 
-?>
+<?php absolum_copy(); ?>
+
+<script type='text/javascript'>
+var $jx = jQuery.noConflict();
+  $jx("div.post").mouseover(function() {
+    $jx(this).find("span.edit-link").css('visibility', 'visible');
+  }).mouseout(function(){
+    $jx(this).find("span.edit-link").css('visibility', 'hidden');
+  });
+  
+    $jx("div.type-page").mouseover(function() {
+    $jx(this).find("span.edit-link").css('visibility', 'visible');
+  }).mouseout(function(){
+    $jx(this).find("span.edit-link").css('visibility', 'hidden');
+  });
+  
+      $jx("div.type-attachment").mouseover(function() {
+    $jx(this).find("span.edit-link").css('visibility', 'visible');
+  }).mouseout(function(){
+    $jx(this).find("span.edit-link").css('visibility', 'hidden');
+  });
+  
+  $jx("li.comment").mouseover(function() {
+    $jx(this).find(".comment-edit-link").css('visibility', 'visible');
+  }).mouseout(function(){
+    $jx(this).find(".comment-edit-link").css('visibility', 'hidden');
+  });
+</script>
+
+
+
+<?php $options = get_option('absolum');
+
+if (!empty($options['abs_header_slider'])) {
+
+
+  if ($options['abs_header_slider'] == "normal") { ?>
+
+<script type="text/javascript">
+var $j = jQuery.noConflict();
+	$j(function(){
+		$j('#slide_holder').loopedSlider({
+			autoStart: 7000,
+			restart: 15000,
+			slidespeed: 1200,
+			containerClick: false
+		});
+	});
+</script>
+
+<?php } if ($options['abs_header_slider'] == "slow") { ?>
+
+<script type="text/javascript">
+var $j = jQuery.noConflict();
+	$j(function(){
+		$j('#slide_holder').loopedSlider({
+			autoStart: 10000,
+			restart: 15000,
+			slidespeed: 1200,
+			containerClick: false
+		});
+	});
+</script>
+
+<?php } if ($options['abs_header_slider'] == "fast") { ?>
+
+<script type="text/javascript">
+var $j = jQuery.noConflict();
+	$j(function(){
+		$j('#slide_holder').loopedSlider({
+			autoStart: 3500,
+			restart: 15000,
+			slidespeed: 1200,
+			containerClick: false
+		});
+	});
+</script>
+
+<?php } } ?>
+
+<?php } ?>
