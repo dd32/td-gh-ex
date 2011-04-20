@@ -124,7 +124,7 @@ function arjuna_get_default_options() {
 			'showTimestamps' => true,
 		),
 	
-		'currentVersion' => '1.6.3',
+		'currentVersion' => '1.6.7',
 	);
 	
 	return $options;
@@ -324,7 +324,7 @@ function arjuna_add_theme_options() {
 		
 		//Menu 2 Home Icon
 		if (isset($_POST['menus_2_displaySeparators'])) $options['menus']['2']['displaySeparators'] = true;
-		else $options['menus']['2']['displaySeparator'] = false;
+		else $options['menus']['2']['displaySeparators'] = false;
 		
 		
 		// Menu 2 - Exclude items
