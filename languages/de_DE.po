@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-04-04 11:18+0200\n"
 "PO-Revision-Date: \n"
-"Last-Translator: SRS Solutions <info@srssolutions.com>\n"
+"Last-Translator: Markus Liebl <ProjectMedlan@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -128,16 +128,15 @@ msgstr "Leichtes rot"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:141
 msgid "Purple"
-msgstr ""
+msgstr "Violett"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:142
-#, fuzzy
 msgid "Light Gray"
-msgstr "Leichtes rot"
+msgstr "Leichtes grau"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:143
 msgid "Dark Gray"
-msgstr ""
+msgstr "Dunkles grau"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:575
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:582
@@ -295,17 +294,17 @@ msgstr "Rechts"
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:973
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1491
 msgid "Use"
-msgstr ""
+msgstr "Benutze"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:823
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:977
 msgid "WordPress Custom Menus"
-msgstr ""
+msgstr "WordPress Custom Menüs"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:827
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:981
 msgid "Legacy Menus"
-msgstr ""
+msgstr "Alte Menüs"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:834
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:988
@@ -478,9 +477,8 @@ msgid "Solid Color"
 msgstr "Solide Farbe"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1111
-#, fuzzy
 msgid "Button Style"
-msgstr "Hintergrund Style"
+msgstr "Button Style"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1117
 msgid "If the background is a solid color, you can choose the style of the buttons yourself."
@@ -530,12 +528,11 @@ msgstr "Breite der Sidebar"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1203
 msgid "Content Area"
-msgstr ""
+msgstr "Inhaltsbereich"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1211
-#, fuzzy
 msgid "Use the slider to adjust the width of the sidebar."
-msgstr "Zeige einen Twitter Button ganz oben in der Sidebar an."
+msgstr "Benutze den Slider um die Breite der Sidebar anzupassen"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1215
 msgid "Default Widgets"
@@ -550,58 +547,51 @@ msgid "If enabled, the following widgets will be displayed if the widget bar is 
 msgstr "Wenn aktiviert werden folgende Widgets angezeigt, wenn die Widgetleiste leer ist: <b>Sidebar Oben:</b> Letzte Beiträge und Suchen nach Schlagwörtern, <b>Sidebar Links:</b> Kategorien, <b> Sidebar Rechts:</b> Meta"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1222
-#, fuzzy
 msgid "Sidebar Buttons"
-msgstr "Sidebar Position"
+msgstr "Sidebar Buttons"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1229
 msgid "Use extended button."
-msgstr ""
+msgstr "Benutze den erweiterten Button"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1230
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1238
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1246
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1254
-#, fuzzy
 msgid "Label"
-msgstr "Groß"
+msgstr "Label"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1236
-#, fuzzy
 msgid "Your Twitter URL"
-msgstr "Deine Webseite"
+msgstr "Deine Twitter URL"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1244
 msgid "Your Facebook URL"
-msgstr ""
+msgstr "Deine Facebook URL"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1252
 msgid "Your LinkedIn URL"
-msgstr ""
+msgstr "Deine LinkedIn URL"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1258
-#, fuzzy
 msgid "Choose which buttons will be included on the very top of the sidebar."
-msgstr "Zeige einen Twitter Button ganz oben in der Sidebar an."
+msgstr "Wähle zwischen den Buttons die im obersten Bereich der Sidebar eingebunden werden"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1259
 msgid "The extended RSS button will allow visitors to choose between all available RSS feeds, depending on the page they are currently browsing."
-msgstr ""
+msgstr "Der erweiterte RSS Button erlaubt deinen Besucher zwischen allen verfügbaren RSS Feeds zu wählen. Je nach dem auf welcher Seite man sich gerade befindeet."
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1269
-#, fuzzy
 msgid "Search"
-msgstr "Suchseiten"
+msgstr "Suche"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1276
-#, fuzzy
 msgid "Enable WordPress search"
-msgstr "Benutze den WordPress Standard"
+msgstr "Aktiviere die Wordpress Suche"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1278
-#, fuzzy
 msgid "If disabled, the search field will not be included in the header."
-msgstr "Wenn deaktiviert wird das Menü nicht angezeigt."
+msgstr "Wenn deaktiviert wird das Suchfeld nicht i m Header angezeigt"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1287
 msgid "General Options"
@@ -632,27 +622,24 @@ msgid "Display the categories of a post right below each post."
 msgstr "Zeige die Kategorien eines Beitrages unter diesem an."
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1314
-#, fuzzy
 msgid "Posts and Pages"
-msgstr "Einzelne Beiträge und Seiten"
+msgstr "Beiträge und Seiten"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1319
 msgid "Display Author"
 msgstr "Autor anzeigen"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1321
-#, fuzzy
 msgid "Include the author of a post/page."
-msgstr "Zeige den Autor des Artikels in der Kopfzeile des Beitrages an."
+msgstr "Zeige den Autor eines Artikels/Seite."
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1325
 msgid "Display Time"
 msgstr "Angezeigte Zeit"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1327
-#, fuzzy
 msgid "Include the time and date of when the post/page has been published, instead of only the date."
-msgstr "Beim Veröffentlichen das Datum und die Uhrzeit in der Kopfzeile anzeigen - nicht nur das Datum."
+msgstr "Zeige das Datum und die Uhrzeit an, wenn ein Beitrag veröffentlich wird -  nicht nur das Datum."
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1331
 msgid "Display Info Bar for Pages"
@@ -663,7 +650,6 @@ msgid "Display the info bar right below the title of pages."
 msgstr "Zeige den Infobalken direkt unter dem Seitentitel an."
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1334
-#, fuzzy
 msgid "The info bar usually includes the author of the page, the publish date, and the comments button. If turned off, this option entirely hides the bar so that only the title of the page is shown."
 msgstr "Der Infobalken beinhaltet gewöhnlich den Autor der Seite, das Veröffentlichungsdatum und den Button für die Kommentare. Diese Option versteckt den Balken komplett, so dass nur noch der Titel sichtbar ist."
 
@@ -680,7 +666,6 @@ msgid "Display links to the previous and next posts below each post."
 msgstr "Zeige die Links zum vorherigen und nächsten Beitrag unter jeden Beitrag an."
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1342
-#, fuzzy
 msgid "Note: The links will only be shown on permalink pages, i.e. the URL where one single post is displayed."
 msgstr "Hinweis: Dieser Link wird nur bei Permalink Seiten angezeigt, z.B. wenn die URL von einem einzigen Beitrag oder einer einzigen Seite aufgerufen wird"
 
@@ -778,9 +763,8 @@ msgid "Search pages"
 msgstr "Suchseiten"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1418
-#, fuzzy
 msgid "Author pages"
-msgstr "Archivierte Seiten"
+msgstr "Autor Seiten"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1419
 msgid "Note: If enabled, an excerpt will be shown instead of the full post on selected pages. If a post does not have a custom excerpt, an automatic excerpt of the first 55 words will be displayed."
@@ -833,84 +817,79 @@ msgstr "Der Standard hängt von deiner WordPress Version ab und ob du ein Nummer
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1486
 msgid "RSS Feeds"
-msgstr ""
+msgstr "RSS Feeds"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1495
-#, fuzzy
 msgid "Default RSS Feeds"
-msgstr "Standard Widgets"
+msgstr "Standard RSS Feeds"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1499
 msgid "Google Feedburner"
-msgstr ""
+msgstr "Google Feedburner"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1506
 msgid "Redirect Feeds to"
-msgstr ""
+msgstr "Feeds umleiten nach"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1509
 msgid "Arjuna will redirect all of your existing feeds, including category and tag feeds, to Google Feedburner."
-msgstr ""
+msgstr "Arjuna leitet alle bestehenden feeds, inklusive Kategorie und Tag Feeds, nach Google Feedburner um"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1513
 msgid "Redirect Comment Feeds to"
-msgstr ""
+msgstr "Kommentare umleiten nach"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1516
 msgid "Arjuna will redirect your comment feeds to Google Feedburner to this URL."
-msgstr ""
+msgstr "Arjuna leitet deine Kommentar Feeds nach Google Feedburner um"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1526
-#, fuzzy
 msgid "Twitter Widget"
-msgstr "Twitter Button"
+msgstr "Twitter Widget"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1528
 msgid "Note: The minimum sidebar width for the twitter widget to not overflow the sidebar is 280px. Please adjust your sidebar accordingly."
-msgstr ""
+msgstr "Hinweis: Die minimale Breite der Sidebar für das Twitter Widget ist 280 Pixel. Bitte passe die Sidebar dementsprechend an, damit die Inhalte nicht darüber hinaus dargestellt werden."
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1536
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1581
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1594
 msgid "Yes"
-msgstr ""
+msgstr "Ja"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1540
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1585
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1598
 msgid "No"
-msgstr ""
+msgstr "Nein"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1547
-#, fuzzy
 msgid "Widget Title"
-msgstr "Seitentitel"
+msgstr "Widget Titel"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1550
 msgid "The title of the sidebar widget."
-msgstr ""
+msgstr "Der Titel des Sidebar Widgets"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1554
-#, fuzzy
 msgid "Twitter Username"
-msgstr "Twitter Button"
+msgstr "Twitter Benutzername"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1560
-#, fuzzy
 msgid "Height"
-msgstr "Rechts"
+msgstr "Höhe"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1566
 msgid "Number of Tweets"
-msgstr ""
+msgstr "Anzahl der Tweets"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1577
 msgid "Scrollbar"
-msgstr ""
+msgstr "Scrollbar"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1590
 msgid "Show Timestamp"
-msgstr ""
+msgstr "Zeitstempel anzeigen"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1609
 msgid "Miscellaneous"
@@ -936,16 +915,16 @@ msgstr "Das wird an den Titel jeder Seite angehängt (Beiträge, Seiten, Kategor
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1622
 msgid "Footer Copyright Notice"
-msgstr ""
+msgstr "Fußzeile Copyright Hinweis"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1624
-#, fuzzy, php-format
+#, php-format
 msgid "Blog Name (&quot;%s&quot;)"
-msgstr "Blog Name (&quot; - %s&quot;)"
+msgstr "Blog Name (&quot; %s&quot;)"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1626
 msgid "The copyright notice will be displayed in the footer."
-msgstr ""
+msgstr "Der Copyright Hinweis wird in der Fußzeile angezeigt"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:1630
 msgid "Enable JavaScript menus"
@@ -1107,16 +1086,16 @@ msgstr "Nächste"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:2433
 msgid "Please go to Appearance > Arjuna Options to configure your Arjuna twitter widget."
-msgstr ""
+msgstr "Bitte gehe zu Darstellung -> Arjuna Optionen, um das Twitter Widget zu konfigurieren"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:2439
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:2448
 msgid "Arjuna Twitter Profile Widget"
-msgstr ""
+msgstr "Arjuna Twitter Profil Widget"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/functions.php:2443
 msgid "Display Twitter Goodies Profile Widget"
-msgstr ""
+msgstr "Zeige Twitter Goodies Profil Widget an"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/header.php:18
 msgid "Skip to posts"
@@ -1181,7 +1160,7 @@ msgstr "Hinterlasse einen Kommentar"
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-basic.php:15
 #, php-format
 msgid "Leave a Reply to %s"
-msgstr ""
+msgstr "Hinterlasse einen Kommentar bei %s"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-advanced.php:11
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/comments/reply-form-basic.php:16
@@ -1251,7 +1230,6 @@ msgid "Search Results:"
 msgstr "Suchergebnisse:"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/core/pagination.php:4
-#, fuzzy
 msgid "Prev"
 msgstr "Vorherige"
 
@@ -1312,7 +1290,7 @@ msgstr "1 Kommentar"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/post/post-header.php:21
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/post/single-post-header.php:21
-#, fuzzy, php-format
+#, php-format
 msgid "% comments"
 msgstr "% Kommentare"
 
@@ -1332,35 +1310,31 @@ msgid "Next Post"
 msgstr "Nächster Beitrag"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/sidebar/icons.php:11
-#, fuzzy, php-format
+#, php-format
 msgid "Posts in %s"
-msgstr "Beiträge"
+msgstr "Beiträgein %s"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/sidebar/icons.php:15
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/sidebar/icons.php:21
-#, fuzzy, php-format
+#, php-format
 msgid "Posts by %s"
-msgstr "Beiträge"
+msgstr "Kommentare von %s"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/sidebar/icons.php:20
-#, fuzzy
 msgid "Post Comments"
-msgstr "Anzahl der Beiträge"
+msgstr "Kommentare"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/sidebar/icons.php:25
-#, fuzzy
 msgid "Search Results"
-msgstr "Suchergebnisse:"
+msgstr "Suchergebnisse"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/sidebar/icons.php:29
-#, fuzzy
 msgid "Latest Posts"
-msgstr "Kürzlich veröffentlicht"
+msgstr "Letzte Beiträge"
 
 #: Z:\localhost\srs\dev\wp31\wp-content\themes\arjuna-x/templates/sidebar/icons.php:30
-#, fuzzy
 msgid "Latest Comments"
-msgstr "Hinterlasse einen Kommentar"
+msgstr "Letzte Kommentare"
 
 #~ msgid "Small"
 #~ msgstr "Klein"

@@ -16,12 +16,12 @@ function arjuna_get_default_options() {
 		'sidebarDisplay' => 'right', // right, left, none
 		'sidebarWidth' => 'normal', // small, normal, large
 		'sidebar_showDefault' => true, 
-		'sidebar_showRSSButton' => true, 
-		'sidebar_showTwitterButton' => false,
-		'sidebar_showFacebookButton' => false, 
-		'sidebar_twitterURL' => '', 
-		'sidebar_facebookURL' => '', 
-		'sidebar_displayButtonTexts' => false, 
+		//'sidebar_showRSSButton' => true, 
+		//'sidebar_showTwitterButton' => false,
+		//'sidebar_showFacebookButton' => false, 
+		//'sidebar_twitterURL' => '', 
+		//'sidebar_facebookURL' => '', 
+		//'sidebar_displayButtonTexts' => false, 
 		'postsShowAuthor' => true,
 		'postsShowTime' => false,
 		'posts_showTopPostLinks' => false,
@@ -428,6 +428,8 @@ function arjuna_add_theme_options() {
 			$options['sidebarButtons']['RSS']['label'] = $_POST['sidebarButtons_RSS_label'];
 			if(isset($_POST['sidebarButtons_RSS_extended']))
 				$options['sidebarButtons']['RSS']['extended'] = (bool) $_POST['sidebarButtons_RSS_extended'];
+		} else {
+			$options['sidebarButtons']['RSS']['enabled'] = false;
 		}
 		if(isset($_POST['sidebarButtons_twitter_enabled'])) {
 			$options['sidebarButtons']['twitter']['enabled'] = (bool) $_POST['sidebarButtons_twitter_enabled'];
@@ -444,6 +446,8 @@ function arjuna_add_theme_options() {
 				$options['sidebarButtons']['twitter']['URL'] = '';
 			} else
 				$options['sidebarButtons']['twitter']['URL'] = $URL;
+		} else {
+			$options['sidebarButtons']['twitter']['enabled'] = false;
 		}
 		if(isset($_POST['sidebarButtons_facebook_enabled'])) {
 			$options['sidebarButtons']['facebook']['enabled'] = (bool) $_POST['sidebarButtons_facebook_enabled'];
@@ -460,6 +464,8 @@ function arjuna_add_theme_options() {
 				$options['sidebarButtons']['facebook']['URL'] = '';
 			} else
 				$options['sidebarButtons']['facebook']['URL'] = $URL;
+		} else {
+			$options['sidebarButtons']['facebook']['enabled'] = false;
 		}
 		if(isset($_POST['sidebarButtons_linkedIn_enabled'])) {
 			$options['sidebarButtons']['linkedIn']['enabled'] = (bool) $_POST['sidebarButtons_linkedIn_enabled'];
@@ -476,6 +482,8 @@ function arjuna_add_theme_options() {
 				$options['sidebarButtons']['linkedIn']['URL'] = '';
 			} else
 				$options['sidebarButtons']['linkedIn']['URL'] = $URL;
+		} else {
+			$options['sidebarButtons']['linkedIn']['enabled'] = false;
 		}
 			
 		
@@ -707,7 +715,7 @@ function arjuna_add_theme_page () {
 			<?php printf(__('Thank you for using Arjuna, the free WordPress theme designed by %s.', 'Arjuna'), '<a href="http://www.srssolutions.com/en/" class="tSRS">SRS Solutions</a>'); ?>
 			<div class="tTwitter">
 				<a href="http://www.twitter.com/srssolutions"><?php _e('Follow Us', 'Arjuna'); ?></a>
-				to receive news, updates, and more.
+				<?php _e('to receive news, updates, and more.', 'Arjuna'); ?>
 			</div>
 			<div class="tFacebook">
 				<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="http://www.facebook.com/pages/SRS-Solutions-An-Internet-Marketing-Company/109861081307" show_faces="false" width="600" font="lucida grande"></fb:like>
@@ -1684,7 +1692,7 @@ register_sidebar(array(
 	'name'=>'Sidebar Top',
 		'id'=>'sidebar_full_top',
 		'description'=>'This is the top widget bar in the sidebar, extending to full width of the sidebar.',
-		'before_widget' => '<div class="sidebarBox">',
+		'before_widget' => '<div id="%1$s" class="sidebarBox %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4><span>',
 		'after_title' => '</span></h4>'
@@ -1693,7 +1701,7 @@ register_sidebar(array(
 	'name'=>'Sidebar Left',
 		'id'=>'sidebar_left',
 		'description'=>'This is the widget bar on the left hand side in the sidebar. It appears right below the top widget bar.',
-		'before_widget' => '<div class="sidebarBox">',
+		'before_widget' => '<div id="%1$s" class="sidebarBox %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4><span>',
 		'after_title' => '</span></h4>'
@@ -1702,7 +1710,7 @@ register_sidebar(array(
 	'name'=>'Sidebar Right',
 		'id'=>'sidebar_right',
 		'description'=>'This is the widget bar on the right hand side in the sidebar. It appears right below the top widget bar, next to the left widget bar.',
-		'before_widget' => '<div class="sidebarBox">',
+		'before_widget' => '<div id="%1$s" class="sidebarBox %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4><span>',
 		'after_title' => '</span></h4>'
@@ -1711,7 +1719,7 @@ register_sidebar(array(
 	'name'=>'Sidebar Bottom',
 		'id'=>'sidebar_full_bottom',
 		'description'=>'This is the bottom widget bar in the sidebar, extending to full width of the sidebar. It will appear below the left and right widget bars.',
-		'before_widget' => '<div class="sidebarBox">',
+		'before_widget' => '<div id="%1$s" class="sidebarBox %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4><span>',
 		'after_title' => '</span></h4>'
@@ -1743,9 +1751,8 @@ function theme_init(){
 }
 add_action ('init', 'theme_init');
 
-//CSS for plugin page
+//CSS
 add_action('admin_print_styles', 'arjuna_admin_initCSS');
-
 function arjuna_admin_initCSS() {
 	wp_enqueue_style('arjunaAdminCSS', get_template_directory_uri().'/admin/admin.css');
 	wp_enqueue_style('fionnFarbtasticCSS', get_template_directory_uri().'/lib/farbtastic/farbtastic.css');
@@ -2258,7 +2265,8 @@ add_filter('get_comments_number', 'arjuna_comment_count', 0);
 function arjuna_comment_count( $count ) {
 	if (!is_admin()) {
 		global $id;
-		$comments_by_type = &separate_comments(get_comments('status=approve&post_id=' . $id));
+		$comments = get_comments('status=approve&post_id=' . $id);
+		$comments_by_type = separate_comments($comments);
 		return count($comments_by_type['comment']);
 	} 
 	return $count;
@@ -2267,7 +2275,8 @@ function arjuna_comment_count( $count ) {
 function arjuna_is_show_comments() {
 	global $comments_by_type, $post, $id;
 	$arjunaOptions = arjuna_get_options();
-	$comments_by_type = &separate_comments(get_comments('status=approve&post_id=' . $id));
+	$comments = get_comments('status=approve&post_id=' . $id);
+	$comments_by_type = separate_comments($comments);
 	
 	if($post->comment_status == 'open')
 		return true;
@@ -2287,7 +2296,8 @@ function arjuna_is_show_comments() {
 function arjuna_is_show_trackbacks() {
 	global $comments_by_type, $post, $id;
 	$arjunaOptions = arjuna_get_options();
-	$comments_by_type = &separate_comments(get_comments('status=approve&post_id=' . $id));
+	$comments = get_comments('status=approve&post_id=' . $id);
+	$comments_by_type = separate_comments(get_comments('status=approve&post_id=' . $id));
 	
 	if($post->ping_status == 'open')
 		return true;
@@ -2306,14 +2316,16 @@ function arjuna_is_show_trackbacks() {
 
 function arjuna_get_comments_count() {
 	global $id;
-	$comments_by_type = &separate_comments(get_comments('status=approve&post_id=' . $id));
+	$comments = get_comments('status=approve&post_id=' . $id);
+	$comments_by_type = separate_comments($comments);
 	
 	return count($comments_by_type['comment']);
 }
 
 function arjuna_get_trackbacks_count() {
 	global $id;
-	$comments_by_type = &separate_comments(get_comments('status=approve&post_id=' . $id));
+	$comments = get_comments('status=approve&post_id=' . $id);
+	$comments_by_type = separate_comments($comments);
 	
 	return count($comments_by_type['pings']);
 }
