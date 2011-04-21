@@ -748,7 +748,7 @@ function theme_options_validate( $input ) {
 }
 
 if ( ! isset( $content_width ) )
-	$content_width = 610;
+	$content_width = 590;
 
 
 add_action( 'after_setup_theme', 'absolum_setup' );
@@ -1031,12 +1031,6 @@ function absolum_widgets_init() {
 add_action( 'widgets_init', 'absolum_widgets_init' );
 
 
-function absolum_copy() {
-	$credits = '<div id="site-info"><a href="'. home_url() .'">'. get_bloginfo( 'name' ) .'</a></div><div id="site-generator"><a href="http://theme4press.com/absolum/">Absolum</a> theme by Blogatize&nbsp;&nbsp;&bull;&nbsp;&nbsp;Powered by <a rel="generator" title="Semantic Personal Publishing Platform" href="http://wordpress.org">WordPress</a></div>';
-	echo apply_filters( 'absolum_credits', (string) $credits );
-}
-
-
 function absolum_remove_recent_comments_style() {
 	global $wp_widget_factory;
 	remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
@@ -1146,9 +1140,6 @@ function absolum_get_first_image() {
 } 
 
 function absolum_footer_hook() { ?>
-
-
-<?php absolum_copy(); ?>
 
 <script type='text/javascript'>
 var $jx = jQuery.noConflict();

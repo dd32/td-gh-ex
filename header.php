@@ -30,20 +30,13 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 
 
-<?php
-
+<?php  
 	if ( is_singular() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
-
 	wp_head();
-  
-
 ?>
 
-<?php get_template_part('custom-css', 'header'); ?>
-
-
-
+<?php get_template_part('custom-css', 'header'); ?> 
 
  <?php $options = get_option('absolum'); 
  $css_content = $options['abs_css_content']; 
@@ -55,10 +48,7 @@
 
 </head>
 
-<body <?php body_class(); ?>>
-
-
-
+<body <?php body_class(); ?>>     
 <div id="blog-title">
 
 <div id="blog-title-holder">
@@ -92,9 +82,7 @@ if (!empty($options['abs_twitter_id'])) { ?><a target="_blank" href="http://twit
 if (!empty($options['abs_newsletter'])) { ?><a target="_blank" href="<?php echo stripslashes($options['abs_newsletter']);?>" title="Newsletter" >
 
 <img src="<?php echo get_template_directory_uri(); ?>/images/newsletter.png" width="40" height="66" alt="Newsletter" />
-</a><?php } ?>
-
-
+</a><?php } ?>     
 
         </div>
         
@@ -121,12 +109,7 @@ if (!empty($options['abs_newsletter'])) { ?><a target="_blank" href="<?php echo 
 <div id="back-left"></div>
 <div id="back-right"></div>
 
-
-	<div id="header">
-  
-  
-  
-          
+	<div id="header">              
     
  <?php $options = get_option('absolum');
  if ($options['abs_header_slider'] == "disable" || $options['abs_header_slider'] == "") {
@@ -142,12 +125,9 @@ if (!empty($options['abs_newsletter'])) { ?><a target="_blank" href="<?php echo 
  if ($options['abs_header_slider'] == "disable" || $options['abs_header_slider'] == "") { } else { ?>
  
      <div id="slide_holder" <?php if( get_header_image() ) { echo 'style="margin-bottom:-250px;"'; } ?> >
-         
-         
 
   	<div class="slide-container">
  
-	
 		<ul class="slides">
 		
    <?php
@@ -158,22 +138,15 @@ if (!empty($options['abs_newsletter'])) { ?><a target="_blank" href="<?php echo 
    'post__not_in' =>get_option("sticky_posts"),
    );
    
-?>
-
+?>  
 
 <?php if (have_posts()) : $featured = new WP_Query($args); while($featured->have_posts()) : $featured->the_post(); ?>
 
-<li class="slide">
-
-
+<li class="slide">  
 
 <a class="post-more" href="<?php the_permalink(); ?>"></a>
-
-
- <?php  
-           
           
-if(has_post_thumbnail()) {
+ <?php if(has_post_thumbnail()) {
 	echo '<a href="'; the_permalink(); echo '">';the_post_thumbnail(array(100,100)); echo '</a>';
   
      } else {
@@ -185,32 +158,24 @@ if(has_post_thumbnail()) {
                } ?>
 
 
-<div class="featured-title">
-     
+<div class="featured-title">        
 
 <a class="title" href="<?php the_permalink() ?>">
 <?php
 $title = the_title('', '', false);
 echo absolum_truncate($title, 40, '...');
 ?>
-</a>
+</a>     
  
- 
- </div>
- 
-
-
+</div>  
 
 <span>
-<?php the_excerpt(); ?>
- 
+<?php the_excerpt(); ?>  
 </span> 
 
-</li>       
-
+</li>   
  
-<?php endwhile; ?> 
-
+<?php endwhile; ?>  
 
 <?php else: ?>
 
@@ -218,25 +183,16 @@ echo absolum_truncate($title, 40, '...');
 Oops, please try to refresh the page
 </li>
 
-<?php endif; ?>
-   
+<?php endif; ?>     
    
 <?php wp_reset_query(); ?>
-   
-   
-   </ul>
-
-      
-       </div>  </div>
+   </ul>        
+</div></div>
        
-       <?php } ?>
-  
-  
-  
+<?php } ?>
+
 		<div id="masthead">
 			<div id="branding" role="banner"> 
-      
-				
 
 				<?php
 
@@ -255,9 +211,8 @@ Oops, please try to refresh the page
             
 					<?php endif; ?>
 			</div><!-- #branding -->
-
 	
 		</div><!-- #masthead -->
 	</div><!-- #header -->
 
-	<div id="main">
+<div id="main">
