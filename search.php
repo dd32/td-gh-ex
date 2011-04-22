@@ -52,5 +52,4 @@ get_header(); ?>
 	<div id="sidebar_right"><?php get_sidebar(); ?></div>
 </div><!--end content_wrap-->
 
-<div style=clear:both;></div>
 <?php get_footer(); ?>

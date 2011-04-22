@@ -1,0 +1,28 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf350
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww15620\viewh11820\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 ****************************\
+iFeature Changelog\
+\
+****************************\
+\
+Version 1.0.3 (4-21-2011)\
+-Separated theme options code from general functions file, now called options.php\
+-Modified theme options page to remove unidentified index errors and modified the UI\
+-Fixed sidebar pushdown issue on comment-enabled pages\
+-Fixed all HTML related errors, now Valid XHTML 1.0 Transitional \
+-general bug fixes\
+\
+Version 1.0.2 (4-9-2011)\
+-Fixed parse errors related to older PHP builds\
+-updated depreciated WordPress calls\
+-general bug fixes\
+\
+Version 1.0.1 (4-6-2011)\
+-Updated Theme URI in style.css \
+\
+Version 1.0 (4-5-2011)\
+-Initial release}

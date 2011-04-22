@@ -52,8 +52,6 @@
 
 <div id="respond">
 
-	
-
 	<div class="cancel-comment-reply">
 		<?php cancel_comment_reply_link(); ?>
 	</div>
@@ -61,20 +59,18 @@
 	<?php if ( get_option('comment_registration') && !is_user_logged_in() ) : ?>
 		<p>You must be <a href="<?php echo wp_login_url( get_permalink() ); ?>">logged in</a> to post a comment.</p>
 	<?php else : ?>
-<?php comment_form(); ?>
+	
+	<?php comment_form(); ?>
 	
 		<?php endif; ?>
 
-		<!--<p>You can use these tags: <code><?php echo allowed_tags(); ?></code></p>-->
-		
+		<!--<p>You can use these tags: <code><?php echo allowed_tags(); ?></code></p>-->	
 		
 		
 		<?php do_action('comment_form', $post->ID); ?>
 
 	</form>
-
-	<?php endif; // If registration required and not logged in ?>
 	
 </div>
 
-
+	<?php endif; // If registration required and not logged in ?>

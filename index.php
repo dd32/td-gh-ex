@@ -4,6 +4,7 @@ Template Name: Default Index
 Copyright (C) 2011 CyberChimps
 
 */
+$options = get_option('ifeature') ;  
 ?>
 
 <?php get_header(); ?>
@@ -14,13 +15,13 @@ Copyright (C) 2011 CyberChimps
 	
 		<!--Insert Feature Slider-->
 	
-	<?php $hideslider = get_option('if_hide_slider') ? '' : 'unchecked'; ?>
-		<?php if ($hideslider == 'unchecked' ):?>
+<?php $hideslider = $options['if_hide_slider'] ?>
+		<?php if ($hideslider != '1' ):?>
 			<?php get_template_part('slider', 'index' ); ?>
 		<?php endif;?>
 	
 		<div class="content_padding">
-		
+	
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			
 			
@@ -43,10 +44,10 @@ Copyright (C) 2011 CyberChimps
 							</div><!--end entry-->
 						<?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
 						
-							<?php 
-								$hidefblike		= get_option('if_show_fb_like') ? '' : 'unchecked';
+						<?php 
+								$showfblike		= $options['if_show_fb_like'];
 							?>
-							<?php if ($hidefblike != 'unchecked' ):?>
+							<?php if ($showfblike == "1" ):?>
 							<div class="fb" >
 								<iframe src="http://www.facebook.com/plugins/like.php?href=<?php the_permalink() ?>&layout=standard&show_faces=true&width=450&action=like&colorscheme=light" scrolling="no" frameborder="0"  allowTransparency="true" style="border:none; overflow:hidden; width:530px; height:28px"></iframe>
 							</div>

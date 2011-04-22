@@ -1,13 +1,15 @@
 <?php
 
 /*
+	
 	Footer
 	
 	Establishes the widgetized footer and static post-footer section of iFeature. 
 	
 	Copyright (C) 2011 CyberChimps
+	
 */
-
+$options = get_option('ifeature') ;  
 ?>
 	
 	
@@ -54,7 +56,8 @@
 		<div class="clear"></div>
 
 		<!--Inserts Google Analytics Code-->
-		<?php echo stripslashes(get_option('if_ga_code')); ?>
+		<?php  $analytics = $options['if_ga_code']; ?>
+		<?php echo stripslashes($analytics); ?>
 			   
 		<?php wp_footer(); ?>
 	</div><!--end footer_wrap-->
@@ -63,15 +66,17 @@
 	<div id="afterfooter">
 		<div id="afterfooterwrap">
 			<!--Inserts Copyright Text-->
-			<?php $copyright = get_option('if_footer_text') ? '' : 'default' ; ?>
-			<div id="afterfootercopyright">
-				<?php if ($copyright == 'default'): ?> 
-						<?php echo '' . get_bloginfo ( 'name' );  ?>
+			<?php  $copyright = $options['if_footer_text']; ?>
+				<?php if ($copyright == ''): ?> 
+					<div id="afterfootercopyright">
+						&copy; <?php echo bloginfo ( 'name' );  ?>
+					</div>
 				<?php endif;?>
-				<?php if ($copyright != 'hide') :?> 
-						&copy; <?php echo stripslashes(get_option('if_footer_text')); ?>
+				<?php if ($copyright != ''):?> 
+					<div id="afterfootercopyright">
+						&copy; <?php echo $copyright; ?>
+					</div>
 				<?php endif;?>
-				</div>
 			<!--Inserts Afterfooter Menu-->
 			<div id="afterfootermenu">
 				<?php wp_nav_menu('depth=1'); ?>

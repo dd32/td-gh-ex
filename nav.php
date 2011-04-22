@@ -12,10 +12,10 @@
 
 ?>
 <?php if ($homeimage == 'default' ):?>
-<div id="homebutton"><a href="<?php echo home_url(); ?>/"><img src="<?php echo get_template_directory_uri(); ?>/images/home.png?>" alt="Home"></a></div>
+<div id="homebutton"><a href="<?php echo home_url(); ?>/"><img src="<?php echo get_template_directory_uri(); ?>/images/home.png?>" alt="Home" /></a></div>
 <?php endif;?>
 <?php if ($homeimage != 'default' ):?>
-<div id="homebutton"><a href="<?php echo home_url(); ?>/"><img src="<?php echo $homeimage?>" alt="Home"></a></div>
+<div id="homebutton"><a href="<?php echo home_url(); ?>/"><img src="<?php echo $homeimage?>" alt="Home" /></a></div>
 <?php endif;?>
     <div id="navwrapper">
         <?php wp_nav_menu( array(
@@ -28,7 +28,7 @@
     ?>
     </div>
 <div id="searchbar">
-<form method="get" class="searchform" action="<?php echo home_url(); ?>/" />
+<form method="get" class="searchform" action="<?php echo home_url(); ?>/">
 		<div><input type="text" value="Search" name="s" class="s" /></div>
 	<div><input type="submit" class="searchsubmit" value="" /></div>
 </form>

@@ -10,5 +10,5 @@
 ?>
 
 <div class="meta">
-	Published by <?php the_author() ?> on <?php the_time('F jS, Y') ?> - in <?php the_category(', ') ?>
+	Published by <?php the_author() ?> on <a href="<?php the_permalink() ?>"><?php the_time('F jS, Y') ?></a> - in <?php the_category(', ') ?>
 </div>

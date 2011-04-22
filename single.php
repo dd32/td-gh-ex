@@ -34,9 +34,9 @@ get_header(); ?>
 						<?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
 						
 							<?php 
-								$hidefblike		= get_option('if_hide_fb_like') ? '' : 'unchecked';
+								$showfblike		= $options['if_show_fb_like'];
 							?>
-							<?php if ($hidefblike == 'unchecked' ):?>
+							<?php if ($showfblike == "1" ):?>
 							<div class="fb" >
 								<iframe src="http://www.facebook.com/plugins/like.php?href=<?php the_permalink() ?>&layout=standard&show_faces=true&width=450&action=like&colorscheme=light" scrolling="no" frameborder="0"  allowTransparency="true" style="border:none; overflow:hidden; width:530px; height:28px"></iframe>
 							</div>

@@ -4,21 +4,16 @@ Theme URI: http://cyberchimps.com/ifeature-free/
 Description: iFeature: A Free WordPress Theme designed by CyberChimps.com (<a href="http://cyberchimps.com/ifeaturepro" alt="Upgrade to iFeature Pro">Upgrade to iFeature Pro</a>)
 Author: CyberChimps
 Author URI: http://cyberchimps.com
-Version: 1.0.2
+Version: 1.0.3
 Tags: white, light, silver, two-columns, fixed-width, custom-header, custom-menu, threaded-comments, sticky-post
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
-@media screen {
-
 /* Body  */
 
 * { margin: 0; padding: 0; }
-body { 
-	background-color: #fff;
-	font: 14px 'Cantarell';
-	}
+body { font-size: 14px;	}
 
 .screen-reader-text { position: absolute; left: -9999px; top: -9999px; }
 .clear { clear: both; }
@@ -57,7 +52,7 @@ code, tt { }
 	margin-bottom: 10px;
 }
 
-#main { width: 980px;margin: auto; }
+#main { width: 980px; }
 
 /* Header  */
 
@@ -85,6 +80,16 @@ code, tt { }
 }
 
 #header_contact {
+	float:right;
+	padding-top: 10px;
+	height: 20px;
+	text-align: right;
+	max-width: 300px;
+	display: block;
+	min-height: 20px;
+}
+
+#header_contact1 {
 	float:right;
 	padding-top: 10px;
 	height: 20px;
@@ -179,7 +184,6 @@ input[type=text] {
 	
 	.searchform .s:focus { outline: 0; border: none;}
 
-	}
 	.searchform .searchsubmit { 
 		display: none;
 	}
@@ -222,6 +226,7 @@ input[type=text] {
 
 .entry {
 	padding-top: 5px;
+	overflow:hidden;
 }
 
 .meta { 
@@ -237,9 +242,7 @@ input[type=text] {
 				padding-left: 2px;
 				border: 1px solid #ccc;
 				border-radius: 3px;
-					-moz-border-radius: 3px;
-					-khtml-border-radius: 3px;
-					-webkit-border-radius: 3px;				
+				-moz-border-radius: 3px;
  }
 
 img.alignright {float:right; margin:0 0 1em 1em}
@@ -263,10 +266,8 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 .wp-caption {
 	background-color: #f3f3f3;
 	border: 1px solid #ddd;
-	-khtml-border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
 	border-radius: 3px; /* optional rounded corners for browsers that support it */
+	-moz-border-radius: 3px;
 	margin: 10px;
 	padding-top: 4px;
 	text-align: center;
@@ -321,6 +322,10 @@ blockquote p { }
 	float:right;
 	margin-right: 10px;
 }
+
+#comments .navigation {
+	padding: 0 0 18px 0;
+}
  
 .tags {
 	font-size: 10px;
@@ -363,10 +368,7 @@ float: right;width: 316px;
 		border-right: 1px solid #AAA;
 		border-bottom: 1px solid #AAA;
 		border-radius: 5px;
-			-moz-border-radius: 5px;
-			-khtml-border-radius: 5px;
-			-webkit-border-radius: 5px;
-			
+		-moz-border-radius: 5px;
 }
 
 
@@ -500,11 +502,7 @@ ol.commentlist li.thread-odd { }
 
 form { }
 
-}
 textarea { }
-
-} /* END screen media */
-
 
 @media print {
 
@@ -547,11 +545,12 @@ a { text-decoration: none; color: black; }
 }
 .sf-menu ul {
     position:       absolute;
-    top:            -999em;
+    margin-top:     0px;
+    margin-left: 	-1px;
     width:          10em; /* left offset of submenus need to match (see below) */
 }
 .sf-menu ul li {
-    width:          195px;
+    width:          190px;
 }
 .sf-menu li:hover {
     visibility:     inherit; /* fixes IE7 'sticky bug' */
@@ -580,7 +579,7 @@ a { text-decoration: none; color: black; }
 }
 ul.sf-menu li:hover li ul,
 ul.sf-menu li.sfHover li ul {
-    top:            -999em;
+    top:            50px;
 }
 
 .sf-menu li li {
@@ -593,8 +592,8 @@ ul.sf-menu li.sfHover li ul {
 
 ul.sf-menu li li:hover ul,
 ul.sf-menu li li.sfHover ul {
-    left:           15.4em; /* match ul width */
-    top:            0;
+    left:           15.2em; /* match ul width */
+    top:            0px;
 }
 ul.sf-menu li li:hover li ul,
 ul.sf-menu li li.sfHover li ul {
@@ -602,8 +601,8 @@ ul.sf-menu li li.sfHover li ul {
 }
 ul.sf-menu li li li:hover ul,
 ul.sf-menu li li li.sfHover ul {
-    left:           10em; /* match ul width */
-    top:            0;
+    left:          15.2em; /* match ul width */
+    top:            0px;
 }
  
 /*** Custom Styles ***/
@@ -615,7 +614,7 @@ ul.sf-menu li li li.sfHover ul {
     width:              690px;
     height: 			37px;
     background:         transparent;
-    font:               1.0em;
+    font-size:          1em;
     margin-left: 		80px;
 }
 .sf-menu {
@@ -628,7 +627,7 @@ ul.sf-menu li li li.sfHover ul {
 }
 .sf-menu a {
 
-    padding:            9px 15px 13px 15px;   
+    padding:            9px 10px 13px 10px;   
     font-weight:    700;
     background: transparent;
 }

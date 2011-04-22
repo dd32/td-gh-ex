@@ -1,12 +1,19 @@
-iFeature is a free WordPress Theme designed by CyberChimps.com
+iFeature is a free WordPress theme designed by CyberChimps.com in California.
 
-For the actual "Read Me" with instructions images please see ReadMe.pdf.
+Theme Homepage -  http://cyberchimps.com/ifeature/
 
-To upgrade to iFeature Pro visit: http://cyberchimps.com/ifeature-pro/ 
+Licensed under GNU General Public License v2.0 - http://www.gnu.org/licenses/gpl-2.0.html
+-------------------------------------------------------------------------------------------------
 
-For the support forum please visit: http://cyberchimps.com/forum
+For updated documentation, walkthroughs, and support please visit http://cyberchimps.com/
 
+To upgrade to iFeature Pro please visit: http://cyberchimps.com/ifeaturepro/
 
-For more support options please visit http://cyberchimps.com/ifeature-pro/support/ 
+For updated docs please visit http://cyberchimps.com/ifeaturepro/docs/
+
+For the support forum please visit: http://cyberchimps.com/forum/
+
+For more support options please visit http://cyberchimps.com/ifeaturepro/support/
 
 e-mail: ifeaturepro@gmail.com
+

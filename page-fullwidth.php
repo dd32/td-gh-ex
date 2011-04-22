@@ -32,15 +32,15 @@ Copyright (C) 2011 CyberChimps
 				<?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
 
 				</div> <!--end have_posts-->
+				
+			</div><!--end post_container-->
 		
 			<?php comments_template(); ?>
 
 			<?php endwhile; endif; ?>
-			</div><!--end post_container-->
+			
 		</div> <!--end content_padding-->
 	</div> <!--end content_fullwidth-->
 </div>  <!--end content_wrap-->
-
-<div style=clear:both;></div>
 
 <?php get_footer(); ?>
