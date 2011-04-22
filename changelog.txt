@@ -9,6 +9,9 @@ iFeature Changelog\
 \
 ****************************\
 \
+Version 1.0.4 (4-22-2011)\
+-Removed a default widget.\
+\
 Version 1.0.3 (4-21-2011)\
 -Separated theme options code from general functions file, now called options.php\
 -Modified theme options page to remove unidentified index errors and modified the UI\
