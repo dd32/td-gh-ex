@@ -9,6 +9,13 @@ iFeature Changelog\
 \
 ****************************\
 \
+Version 1.0.5 (4-24-2011)\
+-Fixed search page pushdown issue, removed extra instance of pagination \
+-"Search" text in search field removes when user clicks within the search box\
+-Reset button in theme settings properly redirects back to theme settings page\
+-Replaced depreciated WordPress function in header.php with current version\
+-Added more detailed theme description in style.css\
+\
 Version 1.0.4 (4-22-2011)\
 -Removed a default widget.\
 \

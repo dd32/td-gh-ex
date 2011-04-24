@@ -20,7 +20,7 @@ get_header(); ?>
 
 		<h2>Search Results</h2>
 
-		<?php get_template_part('pagination', 'search' ); ?>
+		
 
 		<?php while (have_posts()) : the_post(); ?>
 
@@ -51,5 +51,5 @@ get_header(); ?>
 
 	<div id="sidebar_right"><?php get_sidebar(); ?></div>
 </div><!--end content_wrap-->
-
+<div class="clear"></div>
 <?php get_footer(); ?>

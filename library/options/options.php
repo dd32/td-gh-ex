@@ -283,9 +283,9 @@ function theme_options_do_page() {
   if( isset( $_REQUEST['reset'] )) { 
             global $wpdb;
             $query = "DELETE FROM $wpdb->options WHERE option_name LIKE 'ifeature'";
-            $wpdb->query($query);
-            
+            $wpdb->query($query); 
             die;
+            
      } 
    
 ?>
@@ -601,6 +601,8 @@ function register_my_menu() {
 
 if ( is_admin() && isset($_GET['activated'] ) && $pagenow ==	"themes.php" )
 	wp_redirect( 'themes.php?page=theme_options' );
-  
+	
+if ( isset( $_REQUEST['reset'] ))
+  wp_redirect( 'themes.php?page=theme_options' );
 
 ?>
