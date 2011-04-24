@@ -500,7 +500,7 @@ case 'select1':
 								foreach ( $select_scheme as $option ) {
 									$label = $option['label'];
 									if ( $selected == $option['value'] ) // Make default first in list
-										$p = "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . selected( $options['value'], $label ). "'>$label</option>";
+										$p = "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . selected( esc_attr( $option['value'] ), $label ). "'>$label</option>";
 									else
 										$r .= "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . "'>$label</option>";
                     
@@ -533,7 +533,7 @@ case 'select2':
 								foreach ( $select_content_font as $option ) {
 									$label = $option['label'];
 									if ( $selected == $option['value'] ) // Make default first in list
-										$p = "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . selected( $options['value'], $label ). "'>$label</option>";
+										$p = "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . selected( esc_attr( $option['value'] ), $label ). "'>$label</option>";
 									else
 										$r .= "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . "'>$label</option>";
 								}
@@ -564,7 +564,7 @@ case 'select3':
 								foreach ( $select_slider as $option ) {
 									$label = $option['label'];
 									if ( $selected == $option['value'] ) // Make default first in list
-										$p = "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . selected( $options['value'], $label ). "'>$label</option>";
+										$p = "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . selected( esc_attr( $option['value'] ), $label ). "'>$label</option>";
 									else
 										$r .= "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . "'>$label</option>";
 								}
@@ -596,7 +596,7 @@ case 'select4':
 								foreach ( $select_title as $option ) {
 									$label = $option['label'];
 									if ( $selected == $option['value'] ) // Make default first in list
-										$p = "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . selected( $options['value'], $label ). "'>$label</option>";
+										$p = "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . selected( esc_attr( $option['value'] ), $label ). "'>$label</option>";
 									else
 										$r .= "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . "'>$label</option>";
 								}
@@ -627,7 +627,7 @@ case 'select5':
 								foreach ( $select_background as $option ) {
 									$label = $option['label'];
 									if ( $selected == $option['value'] ) // Make default first in list
-										$p = "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . selected( $options['value'], $label ). "'>$label</option>";
+										$p = "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . selected( esc_attr( $option['value'] ), $label ). "'>$label</option>";
 									else
 										$r .= "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . "'>$label</option>";
 								}
@@ -658,7 +658,7 @@ case 'select6':
 								foreach ( $select_sidebar as $option ) {
 									$label = $option['label'];
 									if ( $selected == $option['value'] ) // Make default first in list
-										$p = "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . selected( $options['value'], $label ). "'>$label</option>";
+										$p = "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . selected( esc_attr( $option['value'] ), $label ). "'>$label</option>";
 									else
 										$r .= "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . "'>$label</option>";
 								}
@@ -1031,6 +1031,12 @@ function absolum_widgets_init() {
 add_action( 'widgets_init', 'absolum_widgets_init' );
 
 
+function absolum_copy() {
+	$credits = '<div id="site-info"><a href="'. home_url() .'">'. get_bloginfo( 'name' ) .'</a></div><div id="site-generator"><a href="http://theme4press.com/absolum/">Absolum</a> theme by Blogatize&nbsp;&nbsp;&bull;&nbsp;&nbsp;Powered by <a rel="generator" title="Semantic Personal Publishing Platform" href="http://wordpress.org">WordPress</a></div>';
+	echo apply_filters( 'absolum_credits', (string) $credits );
+}
+
+
 function absolum_remove_recent_comments_style() {
 	global $wp_widget_factory;
 	remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
@@ -1140,6 +1146,9 @@ function absolum_get_first_image() {
 } 
 
 function absolum_footer_hook() { ?>
+
+
+<?php absolum_copy(); ?>
 
 <script type='text/javascript'>
 var $jx = jQuery.noConflict();
