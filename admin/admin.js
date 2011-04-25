@@ -399,6 +399,12 @@ jQuery(function() {
 		else jQuery('#useFeedburner-feedburner').hide();
 	});
 	
+	jQuery('#search-enabled').click(function() {
+		if(jQuery(this).is(':checked'))
+			jQuery('#search-enabled-container').show();
+		else jQuery('#search-enabled-container').hide();
+	});
+	
 	jQuery('#enableTwitter input[name=twitterWidget_enabled]').change(function() {
 		if(jQuery('#enableTwitter input[name=twitterWidget_enabled]:checked').val() == '1')
 			jQuery('#enableTwitter-options').show();
@@ -420,61 +426,34 @@ jQuery(function() {
 			jQuery('#copyright-owner-box input[name=coprightOwnerType][value=default]').attr('checked', true);
 	});
 	
-	jQuery('#icon-lightBlue').click(function() {
-		jQuery('#headerImage_lightBlue').attr('checked', 'checked').change();
-	});
-	jQuery('#headerImage_lightBlue').change(function() {
-		jQuery('#icon-footerStyle2').removeClass('darkBlue khaki seaGreen lightRed purple lightGray darkGray').addClass('lightBlue');
-	});
+	_colorSchemes = [
+		'lightBlue',
+		'darkBlue',
+		'khaki',
+		'seaGreen',
+		'lightRed',
+		'purple',
+		'lightGray',
+		'darkGray',
+		'regimentalBlue',
+		'bristolBlue'
+	];
 	
-	jQuery('#icon-darkBlue').click(function() {
-		jQuery('#headerImage_darkBlue').attr('checked', 'checked').change();
-	});
-	jQuery('#headerImage_darkBlue').change(function() {
-		jQuery('#icon-footerStyle2').removeClass('lightBlue khaki seaGreen lightRed purple lightGray darkGray').addClass('darkBlue');
-	});
-	
-	jQuery('#icon-khaki').click(function() {
-		jQuery('#headerImage_khaki').attr('checked', 'checked').change();
-	});
-	jQuery('#headerImage_khaki').change(function() {
-		jQuery('#icon-footerStyle2').removeClass('darkBlue lightBlue seaGreen lightRed purple lightGray darkGray').addClass('khaki');
-	});
-	
-	jQuery('#icon-seaGreen').click(function() {
-		jQuery('#headerImage_seaGreen').attr('checked', 'checked').change();
-	});
-	jQuery('#headerImage_seaGreen').change(function() {
-		jQuery('#icon-footerStyle2').removeClass('darkBlue khaki lightBlue lightRed purple lightGray darkGray').addClass('seaGreen');
-	});
-	
-	jQuery('#icon-lightRed').click(function() {
-		jQuery('#headerImage_lightRed').attr('checked', 'checked').change();
-	});
-	jQuery('#headerImage_lightRed').change(function() {
-		jQuery('#icon-footerStyle2').removeClass('darkBlue khaki lightBlue seaGreen purple lightGray darkGray').addClass('lightRed');
-	});
-	
-	jQuery('#icon-purple').click(function() {
-		jQuery('#headerImage_purple').attr('checked', 'checked').change();
-	});
-	jQuery('#headerImage_purple').change(function() {
-		jQuery('#icon-footerStyle2').removeClass('darkBlue khaki lightBlue seaGreen lightRed lightGray darkGray').addClass('purple');
-	});
-	
-	jQuery('#icon-lightGray').click(function() {
-		jQuery('#headerImage_lightGray').attr('checked', 'checked').change();
-	});
-	jQuery('#headerImage_lightGray').change(function() {
-		jQuery('#icon-footerStyle2').removeClass('darkBlue khaki lightBlue seaGreen lightRed darkGray').addClass('lightGray');
-	});
-	
-	jQuery('#icon-darkGray').click(function() {
-		jQuery('#headerImage_darkGray').attr('checked', 'checked').change();
-	});
-	jQuery('#headerImage_darkGray').change(function() {
-		jQuery('#icon-footerStyle2').removeClass('darkBlue khaki lightBlue seaGreen lightRed lightGray').addClass('darkGray');
-	});
+	for(var i=0; i<_colorSchemes.length; i++) {
+		var color = _colorSchemes[i];
+		jQuery('#icon-'+color)
+		.attr('color', color)
+		.click(function() {
+			var color = jQuery(this).attr('color');
+			jQuery('#headerImage_'+color).attr('checked', 'checked').change();
+		});
+		jQuery('#headerImage_'+color)
+		.attr('color', color)
+		.change(function() {
+			var color = jQuery(this).attr('color');
+			jQuery('#icon-footerStyle2').removeClass(_colorSchemes.join(' ')).addClass(color);
+		});
+	}
 	
 	jQuery('#icon-footerStyle1').click(function() {
 		jQuery('#footerStyle_style1').attr('checked', 'checked').change();

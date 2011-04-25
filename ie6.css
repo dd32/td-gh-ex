@@ -285,6 +285,10 @@ a.btn span {
 .footer {
 	background-image:url(./images/ie6/footer.png);
 }
+.footer2 .footerTop {
+	height:10px;
+	background:url(./images/ie6/footer/top.png) no-repeat 0 0;
+}
 
 .sidebars .t div,
 .sidebars .b div,

@@ -4,7 +4,7 @@ Theme URI: http://www.srssolutions.com/en/downloads/arjuna_wordpress_theme
 Description: Arjuna stands for elegance, accessibility, and attention to detail. We have put a great deal in optimizing its ins and outs. This version requires WordPress 3.1. For older, backwards-compatible versions, please contact us. Changelog: http://www.srssolutions.com/en/downloads/arjuna_wordpress_theme#changelog
 Author: SRS Solutions
 Author URI: http://www.srssolutions.com
-Version: 1.6.7
+Version: 1.6.8
 License: GNU General Public License
 License URI: license.txt
 Tags: white, silver, light, three-columns, two-columns, fixed-width, right-sidebar, left-sidebar, theme-options, translation-ready, threaded-comments, black, custom-colors, custom-background, custom-menu
@@ -405,17 +405,53 @@ a#skipToPosts {
 	color:#333;
 }
 
+.header_regimentalBlue {
+	height:89px;
+	background:url(./images/header/regimentalBlue.jpg) no-repeat 0 0;
+}
+.header_regimentalBlue h1,
+.header_regimentalBlue h1 a,
+.header_regimentalBlue h1 a:visited,
+.header_regimentalBlue h1 a:hover {
+	color:#b9c4dc;
+}
+.header_regimentalBlue span {
+	color:#8f9ab1;
+}
+
+.header_bristolBlue {
+	height:89px;
+	background:url(./images/header/bristolBlue.jpg) no-repeat 0 0;
+}
+.header_bristolBlue h1,
+.header_bristolBlue h1 a,
+.header_bristolBlue h1 a:visited,
+.header_bristolBlue h1 a:hover {
+	color:#0f2033;
+}
+.header_bristolBlue span {
+	color:#3d454d;
+}
+
 
 
 .headerSearch {
 	width:200px;
 	height:25px;
 	position:absolute;
+	
+}
+.headerSearchTop {
+	top:0;
+	right:1px;
+	background:url(./images/header/searchTop.png) no-repeat 0 0;
+}
+.headerSearchBottom {
 	bottom:0;
 	right:1px;
-	background:url(./images/headerSearch.png) no-repeat 0 0;
+	background:url(./images/header/searchBottom.png) no-repeat 0 0;
 }
-.headerMain .searchQuery {
+.headerSearch .searchQuery {
 	display:block;
 	float:left;
 	padding:6px 5px 5px 10px;
@@ -426,12 +462,12 @@ a#skipToPosts {
 	color:#333;
 	background:none;
 }
-.headerMain .searchQueryIA {
+.headerSearch .searchQueryIA {
 	color:#666;
 	font-style:italic;
 	text-shadow:#fff 1px 1px 1px;
 }
-.headerMain .searchButton {
+.headerSearch .searchButton {
 	display:block;
 	float:left;
 	margin-left:3px;
@@ -443,6 +479,8 @@ a#skipToPosts {
 	text-indent:-1000px;
 	cursor:pointer;
 }
+
+
 
 /* When the option to disable header menu 1 is set */
 /*.hideHeaderMenu1 .headerBG {
@@ -1612,11 +1650,17 @@ a.btnLogout:hover {
 
 /* Footer Style 2 */
 .footer2 {
-	height:74px;
+	height:70px;
 	width:960px;
 	margin:10px auto 0;
 	position:relative;
-	background:url(./images/footer/lightBlue.jpg) no-repeat 0 0;
+	background:url(./images/footer/lightBlue.jpg) no-repeat 0 bottom;
+}
+.footer2 .footerTop {
+	height:10px;
+	background:url(./images/footer/top.png) no-repeat 0 0;
+}
+.footer2 .footerContainer {
 }
 .footer_khaki {
 	background-image:url(./images/footer/khaki.jpg);
@@ -1638,6 +1682,12 @@ a.btnLogout:hover {
 }
 .footer_darkGray {
 	background-image:url(./images/footer/darkGray.jpg);
+}
+.footer_regimentalBlue {
+	background-image:url(./images/footer/regimentalBlue.jpg);
+}
+.footer_bristolBlue {
+	background-image:url(./images/footer/bristolBlue.jpg);
 }
 .footer2 .icon1 {
 	position:absolute;
@@ -1724,6 +1774,25 @@ a.btnLogout:hover {
 .footer_darkGray .design a em {
 	color:#000;
 }
+
+.footer_regimentalBlue .copyright,
+.footer_regimentalBlue .design,
+.footer_regimentalBlue .design a {
+	color:#8f9ab1;
+}
+.footer_regimentalBlue .design a em {
+	color:#b9c4dc;
+}
+
+.footer_bristolBlue .copyright,
+.footer_bristolBlue .design,
+.footer_bristolBlue .design a {
+	color:#2f353a;
+}
+.footer_bristolBlue .design a em {
+	color:#0F2033;
+}
+
 
 /**
  * Layout Setups
@@ -1847,7 +1916,8 @@ a.btnLogout:hover {
 		padding:0;
 	}
 	
-	.sidebarIcons a {
+	.sidebarIcons a,
+	.rssBtnExtended {
 		display:inline-block;
 		height:26px;
 		padding:0 0 0 32px;
@@ -1874,9 +1944,8 @@ a.btnLogout:hover {
 		background:url(./images/sidebars.png) no-repeat 0 -150px;
 	}
 	.sidebars .rssBtnExtended {
-		margin-right:16px;
-		display:inline-block;
-		vertical-align:middle;
+		padding:0;
+		color:#662700;
 	}
 	.sidebars .rssBtnExtended a {
 		float:none;
@@ -1897,6 +1966,7 @@ a.btnLogout:hover {
 		height:26px;
 		background:url(./images/sidebars.png) no-repeat -26px -200px;
 		position:relative;
+		padding-right:8px;
 	}
 	#rss-extended.active {
 		background-position:-276px -200px;

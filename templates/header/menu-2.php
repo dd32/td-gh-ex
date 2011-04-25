@@ -8,6 +8,7 @@
 			'menu_class' => false,
 			'menu_id' => 'headerMenu2',
 			'depth' => $arjunaOptions['menus']['2']['depth'],
+			'fallback_cb' => 'arjuna_print_page_menu',
 		);
 		
 		if($arjunaOptions['menus']['2']['displayHome']) {
@@ -23,7 +24,7 @@
 		wp_nav_menu($settings);
 	} else { ?>
 		<ul id="headerMenu2">
-			<?php if($arjunaOptions['menus']['2']['displayHome']): ?><li><a href="<?php (function_exists('icl_get_home_url'))?(print icl_get_home_url()):(bloginfo('url')) ?>" class="homeIcon"><?php _e('Home','Arjuna'); ?></a></li><?php endif; ?><?php
+			<?php if($arjunaOptions['menus']['2']['displayHome']): ?><li><a href="<?php print (function_exists('icl_get_home_url')?icl_get_home_url():home_url()) ?>" class="homeIcon"><?php _e('Home','Arjuna'); ?></a></li><?php endif; ?><?php
 				if ($arjunaOptions['menus']['2']['display']=='pages') {
 					wp_list_pages('sort_column='.$arjunaOptions['menus']['2']['sortBy'].'&sort_order='.$arjunaOptions['menus']['2']['sortOrder'].'&title_li=&exclude='.arjuna_parseExcludes($arjunaOptions['menus']['2']['exclude_pages'], 'page').'&depth='.$arjunaOptions['menus']['2']['depth']);
 				} elseif ($arjunaOptions['menus']['2']['display']=='categories') {
