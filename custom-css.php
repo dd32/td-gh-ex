@@ -193,5 +193,5 @@ endif;
   ul.slides li.slide {
 display:block !important; }
 </style>    
-
+        
   <?php } ?>

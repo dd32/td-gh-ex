@@ -34,6 +34,7 @@
 
 			<div class="entry-meta">
 				<?php absolum_posted_on(); ?>
+        | <a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'absolum' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">Permalink</a>
         <?php edit_post_link( __( 'Edit', 'absolum' ), '<span class="edit-link">', '</span>' ); ?>
         <span class="comments-link"><?php comments_popup_link( __( '0', 'absolum' ), __( '1', 'absolum' ), __( '%', 'absolum' ) ); ?></span>
 			</div><!-- .entry-meta -->

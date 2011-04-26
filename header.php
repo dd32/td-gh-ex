@@ -30,21 +30,10 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 
 
-<?php  
-	if ( is_singular() && get_option( 'thread_comments' ) )
+<?php if ( is_singular() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
 	wp_head();
 ?>
-
-<?php get_template_part('custom-css', 'header'); ?> 
-
- <?php $options = get_option('absolum'); 
- $css_content = $options['abs_css_content']; 
- if ($css_content === false) $css_content = '';
- if (!empty($css_content)) {
- echo '<style type="text/css">'.stripslashes($css_content).'</style>';
- } 
-?>    
 
 </head>
 

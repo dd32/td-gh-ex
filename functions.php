@@ -1,11 +1,11 @@
 <?php 
-add_action( 'admin_init', 'theme_options_init' );
-add_action( 'admin_menu', 'theme_options_add_page' ); 
+add_action( 'admin_init', 'absolum_theme_options_init' );
+add_action( 'admin_menu', 'absolum_theme_options_add_page' ); 
 add_action( 'init', 'absolum_media' ); 
 
 
-function theme_options_init() {
-	register_setting( 'absolum_options', 'absolum', 'theme_options_validate' );
+function absolum_theme_options_init() {
+	register_setting( 'absolum_options', 'absolum', 'absolum_theme_options_validate' );
   wp_register_style('mycss', WP_CONTENT_URL . '/themes/absolum/css/theme-options.css');
 }
 
@@ -19,7 +19,7 @@ function absolum_media() {
   
 if( !is_admin()){
 	wp_enqueue_script('jquery');
-  wp_enqueue_style('absolum_css', WP_CONTENT_URL . '/themes/absolum/style.css');
+  wp_enqueue_style('absolum_css', WP_CONTENT_URL . '/themes/absolum/style.css');   
 }
   
   
@@ -47,9 +47,9 @@ if ( is_admin() && isset($_GET['activated'] ) && $pagenow ==	"themes.php" )
  * Load up the menu page
  */
  
-function theme_options_add_page() {
+function absolum_theme_options_add_page() {
 global $themename, $shortname, $options;
-  $page = add_theme_page($themename." Settings", "".$themename." Settings", 'edit_theme_options', 'theme_options', 'theme_options_do_page');  
+  $page = add_theme_page($themename." Settings", "".$themename." Settings", 'edit_theme_options', 'theme_options', 'absolum_theme_options_do_page');  
     add_action('admin_print_styles-' . $page, 'absolum_styles'); 
 
 }
@@ -343,7 +343,7 @@ array( "type" => "close"),
 /**
  * Create the options page
  */
-function theme_options_do_page() {
+function absolum_theme_options_do_page() {
 	global $themename, $shortname, $optionlist, $select_scheme, $select_slider, $select_content_font, $select_title, $select_background, $select_sidebar; 
 	if ( ! isset( $_REQUEST['updated'] ) ) {
 		$_REQUEST['updated'] = false; 
@@ -364,10 +364,6 @@ if( isset( $_REQUEST['reset'] )) {
 	<div class="wrap">
   
  
-  
-<?php if ( function_exists('screen_icon') ) screen_icon(); ?>
-
-      
 <h2><?php echo $themename; ?> Settings</h2><br />
 
 
@@ -729,7 +725,7 @@ case "checkbox":
 /**
  * Sanitize and validate input. Accepts an array, return a sanitized array.
  */
-function theme_options_validate( $input ) {
+function absolum_theme_options_validate( $input ) {
 	global $select_scheme, $select_slider, $select_content_font, $select_title, $select_background, $select_sidebar;
   
   $input['abs_rss_feed'] = wp_filter_nohtml_kses( $input['abs_rss_feed'] );
@@ -1031,12 +1027,6 @@ function absolum_widgets_init() {
 add_action( 'widgets_init', 'absolum_widgets_init' );
 
 
-function absolum_copy() {
-	$credits = '<div id="site-info"><a href="'. home_url() .'">'. get_bloginfo( 'name' ) .'</a></div><div id="site-generator"><a href="http://theme4press.com/absolum/">Absolum</a> theme by Blogatize&nbsp;&nbsp;&bull;&nbsp;&nbsp;Powered by <a rel="generator" title="Semantic Personal Publishing Platform" href="http://wordpress.org">WordPress</a></div>';
-	echo apply_filters( 'absolum_credits', (string) $credits );
-}
-
-
 function absolum_remove_recent_comments_style() {
 	global $wp_widget_factory;
 	remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
@@ -1046,8 +1036,8 @@ add_action( 'widgets_init', 'absolum_remove_recent_comments_style' );
 if ( ! function_exists( 'absolum_posted_on' ) ) :
 
 function absolum_posted_on() {
-	printf( __( '<a href="%1$s"><span class="%2$s">Posted on</span> %3$s</a> <span class="meta-sep">by</span> %4$s', 'absolum' ),
-		post_permalink(),
+	printf( __( '<span class="%1$s">Posted on</span> %2$s <span class="meta-sep">by</span> %3$s', 'absolum' ),
+		
     'meta-prep meta-prep-author',        
 		sprintf( '<span class="entry-date">%3$s</span>',
       get_permalink(), 
@@ -1147,9 +1137,6 @@ function absolum_get_first_image() {
 
 function absolum_footer_hook() { ?>
 
-
-<?php absolum_copy(); ?>
-
 <script type='text/javascript'>
 var $jx = jQuery.noConflict();
   $jx("div.post").mouseover(function() {
@@ -1229,3 +1216,19 @@ var $j = jQuery.noConflict();
 <?php } } ?>
 
 <?php } ?>
+
+<?php function absolum_custom_css() {
+ 
+require_once( TEMPLATEPATH . '/custom-css.php' ); 
+ $options = get_option('absolum'); 
+ $css_content = $options['abs_css_content']; 
+ if ($css_content === false) $css_content = '';
+ if (!empty($css_content)) {
+ echo '<style type="text/css">'.stripslashes($css_content).'</style>';
+ }  
+} 
+
+add_action('wp_head', 'absolum_custom_css')
+
+
+?> 

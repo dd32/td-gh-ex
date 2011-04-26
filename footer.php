@@ -23,12 +23,11 @@
 </div><!-- #wrapper -->
 
 <div id="footer-bottom">
-<?php wp_footer(); ?>
-<?php 
-
-$credits = '<div id="site-info"><a href="'. home_url() .'">'. get_bloginfo( 'name' ) .'</a></div><div id="site-generator"><a href="http://theme4press.com/absolum/">Absolum</a> theme by Blogatize&nbsp;&nbsp;&bull;&nbsp;&nbsp;Powered by <a rel="generator" title="Semantic Personal Publishing Platform" href="http://wordpress.org">WordPress</a></div>';
+<?php
+$credits = '<div id="site-info"><a href="'. home_url() .'">'. get_bloginfo( 'name' ) .'</a></div><div id="site-generator"><a href="http://theme4press.com/absolum/">Absolum</a> theme by Theme4Press&nbsp;&nbsp;&bull;&nbsp;&nbsp;Powered by <a rel="generator" title="Semantic Personal Publishing Platform" href="http://wordpress.org">WordPress</a></div>';
 echo apply_filters( 'absolum_credits', (string) $credits );
 absolum_footer_hook(); ?> 
-</div>    
+</div>
+<?php wp_footer(); ?>    
 </body>
 </html>
