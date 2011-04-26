@@ -4,7 +4,7 @@ Theme URI: http://cyberchimps.com/ifeature-free/
 Description: iFeature: A Free WordPress Theme designed by CyberChimps.com featuring customizable theme options, an aesthetically pleasing design, a feature slider, dynamic header for custom logo, social icons, and contact section, widgetized sidebar and footer, typography including Google Fonts, and multiple template choices. (<a href="http://cyberchimps.com/ifeaturepro" alt="Upgrade to iFeature Pro">Upgrade to iFeature Pro</a>)
 Author: CyberChimps
 Author URI: http://cyberchimps.com
-Version: 1.0.5
+Version: 1.0.6
 Tags: white, light, silver, two-columns, fixed-width, custom-header, custom-menu, threaded-comments, sticky-post
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -107,7 +107,7 @@ code, tt { }
 }
 
 .sitename {
-	font-size: 32px;
+	font-size: 26px;
 	font-weight: bolder;
 }
 
@@ -332,6 +332,8 @@ blockquote p { }
 	padding-bottom: 2px;
 }
 
+label[for="comment"] {display: block;}
+
 /* Sidebar Right */
 
 #sidebar_right {
@@ -441,6 +443,7 @@ padding-left: 15px;
 #afterfootermenu {
 	float:left;
 	position: absolute;
+	width: 400px;
 }
 
 #afterfootermenu a {
@@ -527,8 +530,8 @@ caption { background: #fff; margin-bottom: 2em; text-align: left; }
 thead { display: table-header-group; }
 tr { page-break-inside: avoid; } 
 a { text-decoration: none; color: black; }
-	
-} /* END print media */
+
+} /*** ESSENTIAL END SCREEN ***/
 
 /* Superfish Nav */
 /* Superfish Nav */
@@ -539,9 +542,13 @@ a { text-decoration: none; color: black; }
     margin:         0;
     padding:        0;
     list-style:     none;
+    max-height: 35px;
+   
 }
 .sf-menu {
     line-height:    1.0;
+    
+
 }
 .sf-menu ul {
     position:       absolute;
@@ -616,10 +623,13 @@ ul.sf-menu li li li.sfHover ul {
     background:         transparent;
     font-size:          1em;
     margin-left: 		80px;
+    
+
 }
 .sf-menu {
     float:              left;
     width:              100%;
+
 }
 .sf-menu li {
     background:         transparent;

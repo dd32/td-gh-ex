@@ -81,10 +81,9 @@ $options = get_option('ifeature') ;
 			<div id="afterfootermenu">
 				<?php wp_nav_menu('depth=1'); ?>
 			</div>
-			<!--Inserts iFeature SEO Module-->
 			
-					<div id="seomodule">
-						<?php get_template_part('seomodule', 'footer' ); ?>
+					<div id="credit">
+						<?php get_template_part('credit', 'footer' ); ?>
 					</div>
 			
 		</div>  <!--end afterfooterwrap-->	

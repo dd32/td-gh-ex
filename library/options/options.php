@@ -1,7 +1,7 @@
 <?php   
 
 /* 
-Portions of this code written by Blogatize http://blogatize.net
+Portions of code referenced from Theme4Press http://theme4press.com/
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html  
 */
@@ -45,7 +45,7 @@ global $themename, $shortname, $options;
 
 
 $select_font = array(
-	'0' => array('value' =>'Cantarell','label' => __('Cantarell')),'1' => array('value' =>'Arial','label' => __('Arial')),'2' => array('value' =>'Courier New','label' => __('Courier New')),'3' => array('value' =>'Georgia','label' => __('Georgia')),'4' => array('value' =>'Lucida Grande','label' => __('Lucida Grande')),'5' => array('value' =>'Tahoma','label' => __('Tahoma')),'6' => array('value' =>'Tangerine','label' => __('Tangerine')),'7' => array('value' =>'Times New Roman','label' => __('Times New Roman')),'7' => array('value' =>'Ubuntu','label' => __('Ubuntu')),
+	'0' => array('value' =>'Cantarell','label' => __('Cantarell')),'1' => array('value' =>'Arial','label' => __('Arial')),'2' => array('value' =>'Courier New','label' => __('Courier New')),'3' => array('value' =>'Georgia','label' => __('Georgia')),'4' => array('value' =>'Lucida Grande','label' => __('Lucida Grande')),'5' => array('value' =>'Tahoma','label' => __('Tahoma')),'6' => array('value' =>'Times New Roman','label' => __('Times New Roman')),'7' => array('value' =>'Ubuntu','label' => __('Ubuntu')),
 
 );
 

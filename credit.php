@@ -1,9 +1,9 @@
 <?php
 /*
 
-	Section: SEO Module
+	Section: Credit
 	Author: CyberChimps
-	Description: WARNING: If removed your site will not show up in search engines.
+	Description: Please support the developers and keep the link back to CyberChimps.
 	Version: 0.1
 	
 */

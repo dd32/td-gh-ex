@@ -16,8 +16,6 @@ add_theme_support( 'post-thumbnails' );
 set_post_thumbnail_size( 100, 100, true );
 
 
-// This theme allows users to set a custom background
-	add_custom_background();
 	
 // This theme styles the visual editor with editor-style.css to match the theme style.
 	add_editor_style();
@@ -82,7 +80,7 @@ add_action( 'wp_head', 'ifeature_add_scripts',0);
 	global $post; ?>
 	
 	<ul id="menu-nav" class="sf-menu">
-		<?php wp_list_pages( 'title_li=&sort_column=menu_order&depth=3'); ?>
+	<?php wp_list_pages( 'title_li=&sort_column=menu_order&depth=3'); ?>
 	</ul><?php
 }
 

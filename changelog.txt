@@ -9,6 +9,13 @@ iFeature Changelog\
 \
 ****************************\
 \
+Version 1.0.6\
+-Removed "Tangerine" font choice\
+-Fixed secondary footer menu blowout issue\
+-Removed WordPress Background option\
+-Updated sf.js to fix jQuery issue.\
+-Updated docs on credit.php.\
+\
 Version 1.0.5 (4-24-2011)\
 -Fixed search page pushdown issue, removed extra instance of pagination \
 -"Search" text in search field removes when user clicks within the search box\
