@@ -60,26 +60,23 @@ SRS = {
 				{ID: 'comment', defaultID: 'replyMsgDefault'}
 			];
 			for (var i=0; i<els.length; i++) {
-				var e = document.getElementById(els[i].ID);
-				if (e != null) {
-					var dv = document.getElementById(els[i].defaultID).value;
-					e._dv = dv;
-					e.onfocus = function() {
-						if (this.value == this._dv) {
-							this.value = '';
-							this.className = this.className.replace(this.className.match(' inputIA')?' inputIA':'inputIA', '');
-						}
-					};
-					e.onblur = function() {
-						if (this.value == '') {
-							this.className += this.className==''?"inputIA":" inputIA";
-							this.value = this._dv;
-						}
-					}
+				var e = jQuery('#' + els[i].ID);
+				if (e.length) {
+					e.attr('_defaultValue', jQuery('#'+els[i].defaultID).val());
+					e.focus(function() {
+						console.log(jQuery(this).val());
+						console.log(jQuery(this).attr('_defaultValue'));
+						if (jQuery(this).val() == jQuery(this).attr('_defaultValue'))
+							jQuery(this).val('').removeClass('inputIA');
+					});
+					e.blur(function() {
+						if (jQuery(this).val() == '')
+							jQuery(this).val(jQuery(this).attr('_defaultValue')).addClass('inputIA');
+					});
 				}
 			}
 			if(document.reply) {
-				document.reply.onsubmit = function() {
+				jQuery('#commentform').submit(function() {
 					var els = [
 						{ID: 'replyName', defaultID: 'replyNameDefault'},
 						{ID: 'replyEmail', defaultID: 'replyEmailDefault'},
@@ -87,14 +84,13 @@ SRS = {
 						{ID: 'comment', defaultID: 'replyMsgDefault'}
 					];
 					for (var i=0; i<els.length; i++) {
-						var e = document.getElementById(els[i].ID);
-						if (e != null) {
-							var dv = document.getElementById(els[i].defaultID).value;
-							if (e.value == dv)
-								e.value = '';
+						var e = jQuery('#' + els[i].ID);
+						if (e.length) {
+							if (e.val() == jQuery(e).attr('_defaultValue'))
+								e.val('');
 						}
 					}
-				}
+				});
 				return true;
 			}
 			
@@ -113,9 +109,6 @@ SRS = {
 			o.style.filter = 'alpha(opacity='+(op*100)+')';
 	}
 };
-
-SRS.addLoadEvent(SRS.search.init);
-SRS.addLoadEvent(SRS.comment.init);
 
 menus = {
 	effect: 'none',
@@ -328,6 +321,8 @@ menus = {
 jQuery(function() {
 	
 	menus.enable();
+	SRS.search.init();
+	SRS.comment.init();
 	
 	jQuery('#rss-extended')
 	.mouseenter(function() {
@@ -356,6 +351,18 @@ jQuery(function() {
 			jQuery('#arjuna_trackbacks').show();
 			jQuery(this).addClass('active');
 			jQuery('#arjuna_commentTabs a.comments').removeClass('active');
+		}
+	});
+	
+	//image resizing
+	jQuery('#contentArea div.postContent div.wp-caption').each(function() {
+		console.log(jQuery(this).outerWidth());
+		if(jQuery('#contentArea div.postContent').width() < jQuery(this).outerWidth()) {
+			var w = jQuery(this).outerWidth();
+			var h = jQuery(this).outerHeight();
+			var r = jQuery('#contentArea div.postContent').width() / w;
+			jQuery(this).css('width', w * r);
+			jQuery('img', this).css('width', w * r).css('height', h * r);
 		}
 	});
 	

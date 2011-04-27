@@ -144,6 +144,18 @@ a.btnReply:hover,
 	background-image:url(./images/ie6/icons.png);
 }
 
+.gradient_gray a.btn,
+.gradient_gray a.btn:hover,
+.gradient_gray .btn span,
+.gradient_khaki a.btn,
+.gradient_khaki a.btn:hover,
+.gradient_khaki .btn span,
+.buttonStyle_light a.btn,
+.buttonStyle_light a.btn:hover,
+.buttonStyle_light .btn span {
+	background-image:url(./images/ie6/icons_light.png);
+}
+
 a.btn,
 a.btn:hover,
 a.btn span {
@@ -272,6 +284,10 @@ a.btn span {
 
 .footer {
 	background-image:url(./images/ie6/footer.png);
+}
+.footer2 .footerTop {
+	height:10px;
+	background:url(./images/ie6/footer/top.png) no-repeat 0 0;
 }
 
 .sidebars .t div,

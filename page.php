@@ -1,7 +1,7 @@
 <?php $arjunaOptions = arjuna_get_options(); ?>
 <?php get_header(); ?>
 
-<div class="contentArea">
+<div class="contentArea" id="contentArea">
 	<?php if (have_posts()) : ?>
 	<?php while (have_posts()) : the_post(); ?>
 	
@@ -22,7 +22,7 @@
 	</div>
 	<?php if(arjuna_is_show_comments() || arjuna_is_show_trackbacks()): ?>
 		<div class="postComments" id="comments">
-			<?php comments_template(); ?>
+			<?php comments_template('', true); ?>
 		</div>
 	<?php endif; ?>
 	

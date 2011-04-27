@@ -1,7 +1,7 @@
 <?php $arjunaOptions = arjuna_get_options(); ?>
 <?php get_header(); ?>
 
-<div class="contentArea">
+<div class="contentArea" id="contentArea">
 	<?php if (have_posts()) : ?>
 	<h3 class="contentHeader"><?php 
 		if (is_category()) { 

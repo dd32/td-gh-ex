@@ -29,7 +29,9 @@ p.description {
 #icon-lightRed,
 #icon-purple,
 #icon-lightGray,
-#icon-darkGray {
+#icon-darkGray,
+#icon-regimentalBlue,
+#icon-bristolBlue {
 	width:300px;
 	height:36px;
 	float:left;
@@ -60,6 +62,12 @@ p.description {
 }
 #icon-darkGray {
 	background-position:0 -350px;
+}
+#icon-regimentalBlue {
+	background-position:0 -400px;
+}
+#icon-bristolBlue {
+	background-position:0 -450px;
 }
 
 #icon-sidebarRight {
@@ -138,6 +146,12 @@ p.description {
 }
 #icon-footerStyle2.darkGray {
 	background-position:0 -400px;
+}
+#icon-footerStyle2.regimentalBlue {
+	background-position:0 -450px;
+}
+#icon-footerStyle2.bristolBlue {
+	background-position:0 -500px;
 }
 
 #icon-gradient_blueish {

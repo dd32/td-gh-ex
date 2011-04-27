@@ -1,7 +1,7 @@
 <?php $arjunaOptions = arjuna_get_options(); ?>
 <?php get_header(); ?>
 
-<div class="contentArea">
+<div class="contentArea" id="contentArea">
 	<?php if (have_posts()) : ?>
 	<?php while (have_posts()) : the_post(); ?>
 	<?php if($arjunaOptions['posts_showTopPostLinks'] && arjuna_has_other_posts()): ?>

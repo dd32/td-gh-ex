@@ -1073,10 +1073,10 @@ msgstr "Artículo siguiente"
 #~ msgstr ""
 #~ "Arjuna es totalmente gratuito. Si te gusta este proyecto tú puedes ayudar "
 #~ "a su desarrollo y mantenimiento, gracias."
+
 #~ msgid ""
 #~ "This feature is disabled because Arjuna does not have write permissions "
 #~ "to %s."
 #~ msgstr ""
 #~ "Esta función está desactivada porque Arjuna no tiene permisos de "
 #~ "escritura en %s."
-
