@@ -122,7 +122,7 @@ function arjuna_get_default_options() {
 			'showTimestamps' => true,
 		),
 	
-		'currentVersion' => '1.6.8',
+		'currentVersion' => '1.6.9',
 	);
 	
 	return $options;
