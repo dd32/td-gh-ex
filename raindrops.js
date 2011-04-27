@@ -11,9 +11,9 @@
 
 	jQuery("#month_list ul li:last-child").css({border:"none"});
 	jQuery(".widget ul li:last-child").css({border:"none"});
-	
-	
+	jQuery('a').removeAttr("title");
 	
 　});
 
 })(jQuery);
+
