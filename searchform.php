@@ -10,12 +10,7 @@
 
 ?>
 
-<form action="<?php bloginfo('siteurl'); ?>" id="searchform" method="get">
-    <div>
-        <label for="s" class="screen-reader-text">Search for:</label>
-       <input type="text" name="s" class="s" value="Search" id="searchsubmit" onfocus="if (this.value == 'Search') this.value = '';">
-        
-        <input type="submit" value="Search" id="searchsubmit" />
-      
-    </div>
+<form method="get" class="searchform" action="<?php echo home_url(); ?>/">
+		<div><input type="text" name="s" class="s" value="Search" id="searchsubmit" onfocus="if (this.value == 'Search') this.value = '';" /></div>
+	<div><input type="submit" class="searchsubmit" value="" /></div>
 </form>

@@ -17,7 +17,7 @@ Copyright (C) 2011 CyberChimps
 			
 			<div class="post_container">
 			
-				<div class="post" id="post-<?php the_ID(); ?>">
+				<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 
 					<h2 class="posts_title"><?php the_title(); ?></h2>
 

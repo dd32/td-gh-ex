@@ -20,7 +20,7 @@ $options = get_option('ifeature') ;
 <div id="footer">
     <div id="footer_wrap">
     	
-    	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Footer") ) : ?>
+    	<?php if (dynamic_sidebar("Footer")) : else : ?>
 		
 		<div class="footer-widgets">
 			<h3>Recent Posts</h3>
@@ -59,7 +59,7 @@ $options = get_option('ifeature') ;
 		<?php  $analytics = $options['if_ga_code']; ?>
 		<?php echo stripslashes($analytics); ?>
 			   
-		<?php wp_footer(); ?>
+		
 	</div><!--end footer_wrap-->
 </div><!--end footer-->
 	
@@ -88,7 +88,7 @@ $options = get_option('ifeature') ;
 			
 		</div>  <!--end afterfooterwrap-->	
 	</div> <!--end afterfooter-->	
-	
+<?php wp_footer(); ?>	
 </body>
 
 </html>

@@ -4,7 +4,7 @@ Theme URI: http://cyberchimps.com/ifeature-free/
 Description: iFeature: A Free WordPress Theme designed by CyberChimps.com featuring customizable theme options, an aesthetically pleasing design, a feature slider, dynamic header for custom logo, social icons, and contact section, widgetized sidebar and footer, typography including Google Fonts, and multiple template choices. (<a href="http://cyberchimps.com/ifeaturepro" alt="Upgrade to iFeature Pro">Upgrade to iFeature Pro</a>)
 Author: CyberChimps
 Author URI: http://cyberchimps.com
-Version: 1.0.6
+Version: 1.0.7
 Tags: white, light, silver, two-columns, fixed-width, custom-header, custom-menu, threaded-comments, sticky-post
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -127,18 +127,6 @@ code, tt { }
 }
 
 .icons a:hover img { opacity:1;filter:alpha(opacity=100); }
-
-/* Nav */
-
-#homebutton {
-	float: left; 
-	position: absolute;
-	height: 36px;
-	border-right: 1px solid #444;
-	width: 80px;
-}
-
-#homebutton a:hover img { opacity:.6; }
    
 /* Search Form */
 
@@ -149,10 +137,9 @@ input[type=text] {
 /* Search Bar */
 
 #searchbar  {
-	padding-top: 3px;
 	width: 220px;
-	height: 35px;
 	float: right;
+	padding-top: 4px;
 }
 	.searchform {
 		background:transparent url(./images/searchbar.png) no-repeat scroll center top;
@@ -161,9 +148,9 @@ input[type=text] {
 		padding:0;
 		margin:3px 5px 4px 5px ;
 		position: relative;
-		height: 25px;
-		
+		height: 25px;	
 	}
+	
 	.center .searchform {
 		float:none;
 		
@@ -271,11 +258,13 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 	margin: 10px;
 	padding-top: 4px;
 	text-align: center;
+	max-width: 640px;
 }
 .wp-caption img {
 	border: 0 none;
 	margin: 0;
 	padding: 0;
+	max-width: 620px;
 }
 .wp-caption p.wp-caption-text {
 	font-size: 11px;
@@ -331,8 +320,6 @@ blockquote p { }
 	font-size: 10px;
 	padding-bottom: 2px;
 }
-
-label[for="comment"] {display: block;}
 
 /* Sidebar Right */
 
@@ -443,7 +430,6 @@ padding-left: 15px;
 #afterfootermenu {
 	float:left;
 	position: absolute;
-	width: 400px;
 }
 
 #afterfootermenu a {
@@ -530,8 +516,8 @@ caption { background: #fff; margin-bottom: 2em; text-align: left; }
 thead { display: table-header-group; }
 tr { page-break-inside: avoid; } 
 a { text-decoration: none; color: black; }
-
-} /*** ESSENTIAL END SCREEN ***/
+	
+} /* END print media */
 
 /* Superfish Nav */
 /* Superfish Nav */
@@ -542,13 +528,9 @@ a { text-decoration: none; color: black; }
     margin:         0;
     padding:        0;
     list-style:     none;
-    max-height: 35px;
-   
 }
 .sf-menu {
     line-height:    1.0;
-    
-
 }
 .sf-menu ul {
     position:       absolute;
@@ -567,10 +549,10 @@ a { text-decoration: none; color: black; }
 .sf-menu li {
     float:          left;
     position:       relative;
-    
     padding: 0px 10px 0px 10px;
-    background: transparent;
-}
+   	background:  url(./images/imenuitems.png) repeat-x left bottom;
+	display: block;
+	}
 .sf-menu a { /* Nav link color */
     display:        block;
     position:       relative;
@@ -614,26 +596,47 @@ ul.sf-menu li li li.sfHover ul {
  
 /*** Custom Styles ***/
 
-/* The container wrapping .sf-menu */
-#navwrapper {
-    float:              left;
-    position: 			absolute;
-    width:              690px;
-    height: 			37px;
-    background:         transparent;
-    font-size:          1em;
-    margin-left: 		80px;
-    
+/* Nav */
+
+#navbackground {
+		background: url(./images/Grey.png) no-repeat left top;
+		width: 978px;
+		height: 36px;
+		display: block;
+}
+
+#homebutton {
+	float: left; 
+	border-right: 1px solid #444;
+	width: 80px;
+	border-right: 1px solid #444;
+	height: 36px;
 
 }
+
+#homebutton a:hover img { opacity:.6; }
+
+#sfwrapper {
+    float:              left;
+    width:              68%;
+    background:         transparent;
+    font-size:          1em;
+}
+
+
+
+
+/* The container wrapping .sf-menu */
+
 .sf-menu {
     float:              left;
     width:              100%;
-
 }
 .sf-menu li {
-    background:         transparent;
+   	background:         url(./images/imenuitems.png) repeat-x left bottom;
+	display: block;
     border-right: 1px solid #444;
+    z-index: 2000;
 }
 .sf-menu a {
 

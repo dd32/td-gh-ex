@@ -29,7 +29,7 @@ set_post_thumbnail_size( 100, 100, true );
 
 	// Coin Slider 
 
-function cs_head(){
+function ifeaure_cs_head(){
 	 
 	$path =  get_template_directory_uri() ."/library/cs/";
 
@@ -41,7 +41,7 @@ function cs_head(){
 	echo $script;
 }
 
-add_action('wp_head', 'cs_head');
+add_action('wp_head', 'ifeaure_cs_head');
 
 
 	// Register superfish scripts
@@ -52,13 +52,15 @@ function ifeature_add_scripts() {
     // Adjust the below path to where scripts dir is, if you must.
     $scriptdir = get_template_directory_uri() ."/library/sf/";
  
-    // Register the Superfish javascript file
+    // Register the Superfish javascript files
     wp_register_script( 'superfish', $scriptdir.'sf.js', false, '1.4.8');
+    wp_register_script( 'sf-menu', $scriptdir.'sf-menu.js');
     // Now the superfish CSS
    
     //load the scripts and style.
 	wp_enqueue_style('superfish-css');
     wp_enqueue_script('superfish');
+    wp_enqueue_script('sf-menu');
     } // end the !is_admin function
 } //end add_our_scripts function
  
@@ -67,16 +69,16 @@ add_action( 'wp_head', 'ifeature_add_scripts',0);
 	
 	// Register menu names
 	
-	function register_ifeature_menus() {
+	function ifeature_register_menus() {
 	register_nav_menus(
 	array( 'header-menu' => __( 'Header Menu' ), 'extra-menu' => __( 'Extra Menu' ))
   );
 }
-	add_action( 'init', 'register_ifeature_menus' );
+	add_action( 'init', 'ifeature_register_menus' );
 	
 	// Menu fallback
 	
-	function menu_fallback() {
+	function ifeature_menu_fallback() {
 	global $post; ?>
 	
 	<ul id="menu-nav" class="sf-menu">
@@ -84,34 +86,27 @@ add_action( 'wp_head', 'ifeature_add_scripts',0);
 	</ul><?php
 }
 
-	// Clean up the <head>
-	function removeHeadLinks() {
-    	remove_action('wp_head', 'rsd_link');
-    	remove_action('wp_head', 'wlwmanifest_link');
-    }
-    add_action('init', 'removeHeadLinks');
-    remove_action('wp_head', 'wp_generator');
+	//Register Widgetized Sidebar and Footer
     
-    if (function_exists('register_sidebar')) {
-    	register_sidebar(array(
-    		'name' => 'Sidebar Widgets',
-    		'id'   => 'sidebar-widgets',
-    		'description'   => 'These are widgets for the sidebar.',
-    		'before_widget' => '<div id="%1$s" class="sidebar-widget-style">',
-    		'after_widget'  => '</div>',
-    		'before_title'  => '<h2 class="sidebar-widget-title">',
-    		'after_title'   => '</h2>'
-    	));
-	if ( function_exists('register_sidebar') )
+    
+    register_sidebar(array(
+    	'name' => 'Sidebar Widgets',
+    	'id'   => 'sidebar-widgets',
+    	'description'   => 'These are widgets for the sidebar.',
+    	'before_widget' => '<div id="%1$s" class="sidebar-widget-style">',
+    	'after_widget'  => '</div>',
+    	'before_title'  => '<h2 class="sidebar-widget-title">',
+    	'after_title'   => '</h2>'
+    ));
+	
 	register_sidebar(array(
-	'name' => 'Footer',
-	'before_widget' => '<div class="footer-widgets">',
-	'after_widget' => '</div>',
-	'before_title' => '<h3 class="footer-widget-title">',
-	'after_title' => '</h3>',
+		'name' => 'Footer',
+		'before_widget' => '<div class="footer-widgets">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="footer-widget-title">',
+		'after_title' => '</h3>',
 	));
-    }
-
+  
 	//iFeature theme options file
 	
 require_once ( get_template_directory() . '/library/options/options.php' );

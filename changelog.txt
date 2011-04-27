@@ -9,6 +9,15 @@ iFeature Changelog\
 \
 ****************************\
 \
+Version 1.0.7\
+-Fixed menu blowout issue, extra menu items now display below main navigation.\
+-Set max image and caption width for post content to avoid blowout.\
+-Removed hard-coded superfish script from header, now hooked from functions file.\
+-moved wp_footer in footer.php above closing HTML body tag.\
+-Removed function_exists() conditionals from register_sidebar calls.\
+-Searchbar in nav.php now called from get_search_form().\
+-post_class() added to all page templates.\
+\
 Version 1.0.6\
 -Removed "Tangerine" font choice\
 -Fixed secondary footer menu blowout issue\
