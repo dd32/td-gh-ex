@@ -2,48 +2,68 @@
 get_header();
 ?>
 
-<section id="columns">
+<?php $i =(''); ?>
 
 <section class="column-left">
-<?php if (have_posts()) : ?>
-<?php while(have_posts()) : the_post(); ?>
-<?php $post_counter++; if($post_counter == 5) : ?>
-</section>
-
-<section class="column-right">
-<?php endif; ?>
+<?php if (have_posts()) : while(have_posts()) : $i++; if(($i % 2) == 0) : $wp_query->next_post(); else : the_post(); ?>
 
 <article <?php post_class() ?> id="post-<?php the_ID(); ?>">
-
 <?php the_date('','<h2 class="date">','</h2>'); ?>
-
 <h3 class="storytitle"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h3>
-
+<?php
+if ( function_exists('has_post_thumbnail') && has_post_thumbnail() ) {
+the_post_thumbnail();
+}
+?>
 <section class="meta">
-<?php printf(__('Posted in %s', 'nwc'), get_the_category_list(', ')); ?><br />
-<?php the_tags(__('Tags:&nbsp;'), ' , ' , ''); ?>  
+<?php _e("Categories:"); ?> <?php the_category(', ') ?>
+<br />
+<?php the_tags(__('Tags:&nbsp;'), ' , ' , ''); ?>&nbsp;
 <?php edit_post_link(__('Edit This')); ?>
 </section>
-
 <?php the_content(__('(more...)')); ?>
-
 <section class="comment">
 <?php wp_link_pages(); ?>
 <?php comments_popup_link(__('No Comments'), __('1 Comment'), __('% Comments'), '', __('Comments are closed.') ); ?>
 </section>
-
 </article>
 
-<?php endwhile; ?>
-<?php else : ?>
-
-<article class="post">
-<?php _e('Sorry, no posts matched your criteria.'); ?>
-</article>
-
+<?php endif; endwhile; else: ?>
 <?php endif; ?>
-
 </section>
+
+
+
+<?php $i = 0; rewind_posts(); ?>
+
+
+
+
+<section class="column-right">
+<?php if (have_posts()) : while(have_posts()) : $i++; if(($i % 2) !== 0) : $wp_query->next_post(); else : the_post(); ?>
+<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
+<?php the_date('','<h2 class="date">','</h2>'); ?>
+<h3 class="storytitle"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+<?php
+if ( function_exists('has_post_thumbnail') && has_post_thumbnail() ) {
+the_post_thumbnail();
+}
+?>
+<section class="meta">
+<?php _e("Categories:"); ?> <?php the_category(', ') ?>
+<br />
+<?php the_tags(__('Tags:&nbsp;'), ' , ' , ''); ?>&nbsp;
+<?php edit_post_link(__('Edit This')); ?>
+</section>
+<?php the_content(__('(more...)')); ?>
+<section class="comment">
+<?php wp_link_pages(); ?>
+<?php comments_popup_link(__('No Comments'), __('1 Comment'), __('% Comments'), '', __('Comments are closed.') ); ?>
+</section>
+</article>
+
+<?php endif; endwhile; else: ?>
+<?php endif; ?>
 </section>
 
 <?php comments_template(); ?>

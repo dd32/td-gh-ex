@@ -2,9 +2,10 @@
 Theme Name: Northern-Web-Coders
 Theme URI: http://www.northern-web-coders.de
 Description: Northern-Web-Coders - HTML5 Theme
-Version: 2.3
-Author: Kai Ackermann | jaman | Northern-Web-Coders
-Tags: white, two-columns, fixed-width
+Version: 2.4
+Author: Kai Ackermann | jaman
+Author URI: http://www.northern-web-coders.de/blog
+Tags: white, two-columns, flexible-width
 
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -13,7 +14,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 *
 {
     margin: 0;
-    padding: 0;    
+    padding: 0;
 }
 
 header, nav, section, article, footer
@@ -26,21 +27,23 @@ body
     font-family: Arial, Verdana, sans-serif;
     background: #fff;
     margin: 20px auto;
-    width: 950px;
+    width: 80%;
+    min-width: 700px;  
 }
 
+/*Navigation*/
 nav
 {
-    width: 950px;
-    border-bottom: 1px solid #DFDFDF;
+    width: 100%;
+    
     margin-bottom: 20px;
     padding-bottom: 10px;
     float: left;
 }
 
-nav ul li 
-{ 
-    float: left; 
+nav ul li
+{
+    float: left;
     list-style: none;
 }
 
@@ -60,7 +63,8 @@ nav ul li a:hover, nav ul li.current-menu-item a, nav ul li.current-post-ancesto
 
 nav #searchform
 {
-    float: right
+    float: right;
+    margin-top: -20px;
 }
 
 nav #searchform label
@@ -68,9 +72,10 @@ nav #searchform label
     display: none
 }
 
+/*header, left, right, footer*/
 header
 {
-    width: 950px;
+    width: 100%;
 }
 
 header h1#header
@@ -94,50 +99,62 @@ header h1#header a:hover
 
 header em
 {
-    float: right; 
-    width: 150px; 
-    font-size: 11px; 
+    float: right;
+    width: 150px;
+    font-size: 11px;
     margin: 48px 0 0 20px
-}
-
-section#columns
-{
-    color: #495865;
-    font-size: 13px;
-    line-height: 15px 
 }
 
 section.column-left
 {
     float: left;
-    width: 450px;
-    margin: 10px 0 10px 10px
+    width: 48%;
+    margin: 0.5%;
+    padding: 0.5%;
 }
 
 section.column-right
 {
-    float: left;
-    width: 450px;
-    margin: 10px
+    float: right;
+    width: 48%;
+    margin: 0.5%;
+    padding: 0.5%;
 }
 
-section.comment-right
+section.column-full
 {
     float: left;
-    width: 400px;
-    margin: 10px;
+    width: 98%;
+    margin: 0.5%;
+    padding: 0.5%;
 }
 
-section.comment
+section.meta
 {
-    margin-top: 10px;
-    clear: both
+    font-size: 11px;
+    margin-bottom: 10px;
 }
 
+section.meta a
+{
+    color: #FF9F00
+}
+
+
+
+
+/*content*/
 article
 {
-    margin-bottom: 40px;
-    padding: 10px 20px
+    font-size: 12px;
+    margin: 10px 10px 40px 10px;
+    padding: 10px;
+    
+}
+
+article a
+{
+    color: #ff9f00
 }
 
 article.sticky
@@ -146,32 +163,64 @@ article.sticky
     border-bottom: 1px dotted #BFBFBF
 }
 
-
-
 section.meta
 {
     font-size: 11px;
     margin-bottom: 10px;
 }
 
-
 section.meta a
 {
     color: #FF9F00
 }
 
+
+article img {
+   padding: 3px;
+   margin: 2px;
+   background: #F0F0F0;
+   border: 1px solid #BFBFBF;
+}
+
+article img.wp-smiley {
+   padding: 0;
+   margin: 0;
+   background: #fff;
+   border: 0;
+}
+
+article img.alignleft {
+   margin-right: 10px;
+   float: left
+}
+
+article img.alignright {
+   margin-left: 10px;
+   float: right
+}
+
+article img.aligncenter {
+
+   clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 article h2.date
 {
     font-size: 15px;
+    clear: both;
     margin: 0
-
 }
 
 article h3.storytitle
 {
     font-size: 25px;
     line-height: 28px;
-    margin: 0 0 5px 0
+    border-bottom: 1px solid #dfdfdf;
+    margin: 0 0 5px 0;
+    float: none;
 }
 
 article h3.storytitle a
@@ -192,14 +241,61 @@ article p
     margin-bottom: 7px
 }
 
-article ul, article ol
+article pre, div.comment-body pre, article code, div.comment-body code
 {
-    margin: 10px 25px
+    color: #FF9F00
 }
 
-article h1, article h2, article h3, article h4, article h5, article h6
+article ul, article ol, article dl,
+div.comment-body ul, div.comment-body ol, div.comment-body dl
 {
-    margin: 15px 0 10px 0
+    margin: 10px 25px;  clear: both;
+}
+
+article ul a, article ol a, article dl a,
+div.comment-body ul a, div.comment-body ol a, div.comment-body dl a
+{
+    color: #464646
+}
+
+article dl dt
+{
+    font-weight: bold;
+}
+
+article dl dd
+{
+    margin: 0 0 10px 10px;
+}
+
+table
+{
+    border: 1px solid #D3D3D3;
+    background: #FAFAFA;
+}
+
+table tr td
+{
+    border: 1px solid #DDDDDD;
+    background: #fff;
+    padding: 5px;
+    font-size: 11px;
+}
+
+table tr td a
+{
+   text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    margin: 15px 0 10px 0;
+    clear: both;
+}
+
+article h3
+{
+    float: left;
 }
 
 article object
@@ -209,226 +305,234 @@ article object
     float: left
 }
 
-article .wp-caption 
-{
-   padding: 4px;
-   margin: 10px 10px 10px 0;
+article .wp-caption {
+display: block;
+   padding: 20px;
+   margin: 10px;
    background: #F0F0F0;
    border: 1px solid #BFBFBF;
-   float: left;
 }
 
-article .wp-caption-text 
-{
-   font-size: 11px
+article .wp-caption-text {
+   font-size: 11px;
 }
 
-article .wp-caption a img 
-{
+article .wp-caption a img {
    border: none
 }
 
+
 article div.alignleft {
+   float: left;
+   clear: both;
 }
 
-article div.alignright
- {
+article div.alignright {
    float: right
 }
 
-article div.alignright 
-{
+article div.aligncenter {
+float: none;
    margin: 0 auto;
 }
 
-a .attachment-medium
+article div.alignnone {
+   float: none;
+}
+
+.photo
 {
-   padding: 4px;
-   margin: 10px auto;
-   background: #F0F0F0;
-   border: 1px solid #BFBFBF;
+border: 1px solid #BFBFBF;
+padding: 3px;
+margin: 3px;
+display: block
 }
 
 
-
-
-
-section#columns article img.alignleft 
+/*comment*/
+section.comment
 {
-   padding: 4px;
-   margin: 10px 10px 10px 0;
-   background: #F0F0F0;
-   border: 1px solid #BFBFBF;
-   float: left
+    margin: 10px 0;
 }
 
-section#columns article img.alignright 
+section.commentbox
 {
-   padding: 4px;
-   margin: 10px 0 0 10px;
-   background: #F0F0F0;
-   border: 1px solid #BFBFBF;
-   float: right
+    margin: 10px 20px 40px 20px;
+    font-size: 12px;
 }
 
-section#columns article img.aligncenter 
+section.commentbox div.comment-body
 {
-   padding: 4px;
-   margin: 10px auto;
-   background: #F0F0F0;
-   border: 1px solid #BFBFBF;
-
+    margin: 10px 0;
+    padding: 10px 10px 20px 10px;
 }
-			
-.gallery .gallery-item 
-{
-	margin: 10px 0 10px 0;
-	float: left;
-} 
 
-.gallery img
+section.commentbox div#respond
 {
+    margin: 10px 0;
+    padding: 10px 10px 20px 10px;
+}
+
+section.commentbox img.avatar
+{
+    display: block;
+    float: left;
+    background: #fff;
+    margin: 0 10px 0 0;
     padding: 4px;
-    margin: 10px;
-    background: #F0F0F0;
-    border: 1px solid #BFBFBF;
-}       
-
-.gallery .gallery-caption 
-{
-	margin-left: 10px;
 }
 
-dt.gallery-icon
+section.commentbox ol.commentlist
+{
+    margin-bottom: 20px;
+    list-style: none;
+}
+
+section.commentbox ol.commentlist ul.children
+{
+    margin-left: 30px;
+    list-style: none;
+}
+
+section.commentbox li.odd
+{
+    background: #f0f0f0
+}
+
+section.commentbox li.bypostauthor
+{
+    background: #FFBA4B
+}
+
+section.commentbox li.odd li.odd
+{
+    background: #fff
+}
+
+section.commentbox h3#reply-title
+{
+    margin-bottom: 10px;
+}
+
+section.commentbox form#commentform p.comment-notes
+{
+    margin-bottom: 5px;
+}
+
+section.commentbox form#commentform label, section.commentbox form#commentform span.requiyellow
+{
+    font-weight: bold;
+    font-size: 12px;
+}
+
+section.commentbox form#commentform input
+{
+    display: block;
+    margin-bottom: 5px;
+}
+
+section.commentbox form#commentform textarea
 {
     display: block;
 }
 
-a.more-link
+section.comment span
 {
-    font-style: italic
+    display: block;
+    clear: both;
 }
 
-a
+.page section.comment span
 {
-    color: #2F2F2F;
+    display: none;
+    clear: both;
 }
 
-a:hover
+.page section.comment span a
 {
-    color: #FF9F00;
+    display: block;
+    clear: both;
 }
 
-section.comment-right p
+section.commentbox div.commentmetadata
 {
-    font-size: 13px;
-    margin-bottom: 6px;
+     float: right;
+     margin-top: -15px
 }
 
-section.comment-right a
+section.commentbox a, section.comment a
 {
-    font-size: 13px;
-    margin-bottom: 6px;
+    color: #2f2f2f;
 }
 
-section.comment-right h2#comments 
+section.commentbox div.comment-author cite.fn
 {
-    font-size: 17px;
-    margin-bottom: 10px;
-    color: #2F2F2F;
-    border-bottom: 1px solid #DFDFDF;
+    font-weight: bold;
+}
+section.commentbox a.comment-reply-link
+{
+    display: block;
+    margin: 10px 0;
+    clear: both;
 }
 
-section.comment-right h3#postcomment
+p.form-allowed-tags
 {
-    font-size: 13px;
-    margin-bottom: 10px;
-    color: #2F2F2F
+    margin: 10px 0;
+    font-weight: bold
+}
+
+p.form-allowed-tags code
+{
+    margin: 10px 0;
+    font-weight: normal
 }
 
 
-section.comment-right h3#reply-title
-{
-    margin-top: 25px;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #DFDFDF;
+/*gallery*/
+.gallery {
+	margin: 0 auto 18px;
+}
+.gallery .gallery-item {
+	float: left;
+	margin-top: 0;
+	text-align: center;
+	width: 33%;
+}
+.gallery-columns-2 .gallery-item {
+	width: 50%;
+}
+.gallery-columns-4 .gallery-item {
+	width: 25%;
 }
 
-section.comment-right form#commentform
-{
-   font-size: 12px
+.gallery-columns-2 .attachment-medium {
+	max-width: 92%;
+	height: auto;
+}
+.gallery-columns-4 .attachment-thumbnail {
+	max-width: 84%;
+	height: auto;
+}
+.gallery .gallery-caption {
+	color: #888;
+	font-size: 12px;
+	margin: 0 0 12px;
+}
+.gallery dl {
+	margin: 0 0 10px 0;
+	clear: none;
 }
 
-section.comment-right form#commentform p
-{
-    margin-bottom: 6px;
+
+#content .attachment img {
+	display: block;
+	margin: 0 auto;
 }
 
-section.comment-right form#commentform p.form-allowed-tags code
-{
-    font-size: 11px;
-    font-style: italic;
-}
 
-section.comment-right form#commentform p label
-{
-   font-size: 11px
-}
 
-section.comment-right form#commentform input
-{
-   float: left;
-   margin-right: 5px
-}
-
-section.comment-right form#commentform input#submit
-{
-   margin-top: 10px;
-   border: 1px solid #DFDFDF;
-   padding: 2px;
-   background: #fff
-}
-
-section.comment-right ol.commentlist
-{
-   font-size: 13px;
-   margin: 20px;
-}
-
-section.comment-right ol.commentlist li
-{
-   margin-bottom: 20px;
-   padding: 5px
-}
-
-section.comment-right ol.commentlist li.alt
-{
-   background: #F8F8F8
-}
-
-section.comment-right ol.commentlist li.bypostauthor
-{
-   background: #E2E2E2;
-}
-
-section.comment-right ol.commentlist ul.children
-{
-   margin-left: 20px;
-   margin-top: 20px;
-}
-
-section.comment-right a.comment-reply-link
-{
-    display: block
-}
-
-section.column-full
-{
-    float: left;
-    width: 800px;
-    margin: 10px 0 10px 10px
-}
-
+/*pagenav*/
 section#pagenav
 {
   clear: both;
@@ -440,14 +544,18 @@ section#pagenav a
   font-size: 14px;
   font-weight: bold;
   text-decoration: none;
-  border-bottom: 1px solid #2F2F2F
+  color: #FF9F00;
+  border-bottom: 1px solid #FF9F00
 }
 
 section#pagenav a:hover
 {
-  border-bottom: 1px solid #FF9F00
+  color: #2F2F2F;
+  border-bottom: 1px solid
 }
 
+
+/*footer*/
 section.footer
 {
     color: #2F2F2F;
@@ -455,7 +563,7 @@ section.footer
     clear: both;
     font-size: 13px;
     padding: 10px 17px 20px 17px;
-    width: 950px;
+    width: 100%;
 }
 
 section.footer span
@@ -468,22 +576,17 @@ section.footer a
     color: #FF9F00
 }
 
-section.footer a#nwc
-{
-    color: #495865
-}
-
-section.footer a#nwc:hover
-{
-    color: #FF9F00
-}
-
 section.footerbox
 {
     float: left;
-    width: 237px;
+    width: 25%;
     background: #fff;
     margin-bottom: 20px;
+}
+
+ section.footerbox a
+{
+     color: #495865;
 }
 
 section.footerbox ul
@@ -508,13 +611,5 @@ section.footerbox h4
     font-size: 17px;
     color: #495865;
     border-bottom: 1px solid #DFDFDF;
-    margin: 15px 0 5px 0
-}
-
-.photo
-{
-border: 1px solid #BFBFBF;
-padding: 3px;
-margin: 3px;
-display: block
+    margin-bottom: 5px
 }
