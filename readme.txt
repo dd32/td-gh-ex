@@ -1,0 +1,1 @@
+The Theme display your posts in horizontal display order with two columns.

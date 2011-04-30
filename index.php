@@ -4,6 +4,7 @@ get_header();
 
 <?php $i =(''); ?>
 
+
 <section class="column-left">
 <?php if (have_posts()) : while(have_posts()) : $i++; if(($i % 2) == 0) : $wp_query->next_post(); else : the_post(); ?>
 
@@ -16,7 +17,7 @@ the_post_thumbnail();
 }
 ?>
 <section class="meta">
-<?php _e("Categories:"); ?> <?php the_category(', ') ?>
+<?php printf(_e("Categories:")); ?> <?php the_category(', ') ?>
 <br />
 <?php the_tags(__('Tags:&nbsp;'), ' , ' , ''); ?>&nbsp;
 <?php edit_post_link(__('Edit This')); ?>
@@ -50,7 +51,7 @@ the_post_thumbnail();
 }
 ?>
 <section class="meta">
-<?php _e("Categories:"); ?> <?php the_category(', ') ?>
+<?php printf(_e("Categories:")); ?> <?php the_category(', ') ?>
 <br />
 <?php the_tags(__('Tags:&nbsp;'), ' , ' , ''); ?>&nbsp;
 <?php edit_post_link(__('Edit This')); ?>

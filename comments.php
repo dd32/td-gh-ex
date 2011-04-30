@@ -1,6 +1,6 @@
 <section class="commentbox">
 <?php if ( post_password_required() ) : ?>
-<p><?php _e('Enter your password to view comments.'); ?></p>
+<p><?php printf(_e('Enter your password to view comments.')); ?></p>
 </section>
 
 <?php return; endif; ?>

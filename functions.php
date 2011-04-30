@@ -2,6 +2,12 @@
 if ( ! isset( $content_width ) )
 	$content_width = 700;
 
+
+add_action('wp_set_comment_status', 'toto', 10, 2 );
+function toto($comment_ID, $status) {
+   //stuff
+}
+    
 add_theme_support('automatic-feed-links');
 add_theme_support('post-thumbnails');
 
