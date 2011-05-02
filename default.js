@@ -64,8 +64,6 @@ SRS = {
 				if (e.length) {
 					e.attr('_defaultValue', jQuery('#'+els[i].defaultID).val());
 					e.focus(function() {
-						console.log(jQuery(this).val());
-						console.log(jQuery(this).attr('_defaultValue'));
 						if (jQuery(this).val() == jQuery(this).attr('_defaultValue'))
 							jQuery(this).val('').removeClass('inputIA');
 					});
@@ -356,7 +354,6 @@ jQuery(function() {
 	
 	//image resizing
 	jQuery('#contentArea div.postContent div.wp-caption').each(function() {
-		console.log(jQuery(this).outerWidth());
 		if(jQuery('#contentArea div.postContent').width() < jQuery(this).outerWidth()) {
 			var w = jQuery(this).outerWidth();
 			var h = jQuery(this).outerHeight();

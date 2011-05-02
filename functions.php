@@ -122,7 +122,7 @@ function arjuna_get_default_options() {
 			'showTimestamps' => true,
 		),
 	
-		'currentVersion' => '1.6.10',
+		'currentVersion' => '1.6.11',
 	);
 	
 	return $options;
@@ -131,16 +131,16 @@ function arjuna_get_default_options() {
 
 function arjuna_get_color_schemes() {
 	$colorSchemes = array(
-		'lightBlue' => __('Light Blue'),
-		'bristolBlue' => __('Bristol Blue'),
-		'darkBlue' => __('Dark Blue'),
-		'regimentalBlue' => __('Regimental Blue'),
-		'khaki' => __('Khaki'),
-		'seaGreen' => __('Sea Green'),
-		'lightRed' => __('Light Red'),
-		'purple' => __('Purple'),
-		'lightGray' => __('Light Gray'),
-		'darkGray' => __('Dark Gray'),
+		'lightBlue' => __('Light Blue', 'Arjuna'),
+		'bristolBlue' => __('Bristol Blue', 'Arjuna'),
+		'darkBlue' => __('Dark Blue', 'Arjuna'),
+		'regimentalBlue' => __('Regimental Blue', 'Arjuna'),
+		'khaki' => __('Khaki', 'Arjuna'),
+		'seaGreen' => __('Sea Green', 'Arjuna'),
+		'lightRed' => __('Light Red', 'Arjuna'),
+		'purple' => __('Purple', 'Arjuna'),
+		'lightGray' => __('Light Gray', 'Arjuna'),
+		'darkGray' => __('Dark Gray', 'Arjuna'),
 	);
 	
 	return $colorSchemes;
@@ -1742,36 +1742,36 @@ function arjuna_add_theme_page () {
 
 
 register_sidebar(array(
-	'name'=>'Sidebar Top',
+	'name'=> __('Sidebar Top', 'Arjuna'),
 		'id'=>'sidebar_full_top',
-		'description'=>'This is the top widget bar in the sidebar, extending to full width of the sidebar.',
+		'description'=>__('This is the top widget bar in the sidebar, extending to full width of the sidebar.', 'Arjuna'),
 		'before_widget' => '<div id="%1$s" class="sidebarBox %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4><span>',
 		'after_title' => '</span></h4>'
 ));
 register_sidebar(array(
-	'name'=>'Sidebar Left',
+	'name'=>__('Sidebar Left', 'Arjuna'),
 		'id'=>'sidebar_left',
-		'description'=>'This is the widget bar on the left hand side in the sidebar. It appears right below the top widget bar.',
+		'description'=>__('This is the widget bar on the left hand side in the sidebar. It appears right below the top widget bar.', 'Arjuna'),
 		'before_widget' => '<div id="%1$s" class="sidebarBox %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4><span>',
 		'after_title' => '</span></h4>'
 ));
 register_sidebar(array(
-	'name'=>'Sidebar Right',
+	'name'=>__('Sidebar Right', 'Arjuna'),
 		'id'=>'sidebar_right',
-		'description'=>'This is the widget bar on the right hand side in the sidebar. It appears right below the top widget bar, next to the left widget bar.',
+		'description'=>__('This is the widget bar on the right hand side in the sidebar. It appears right below the top widget bar, next to the left widget bar.', 'Arjuna'),
 		'before_widget' => '<div id="%1$s" class="sidebarBox %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4><span>',
 		'after_title' => '</span></h4>'
 ));
 register_sidebar(array(
-	'name'=>'Sidebar Bottom',
+	'name'=>__('Sidebar Bottom', 'Arjuna'),
 		'id'=>'sidebar_full_bottom',
-		'description'=>'This is the bottom widget bar in the sidebar, extending to full width of the sidebar. It will appear below the left and right widget bars.',
+		'description'=>__('This is the bottom widget bar in the sidebar, extending to full width of the sidebar. It will appear below the left and right widget bars.', 'Arjuna'),
 		'before_widget' => '<div id="%1$s" class="sidebarBox %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4><span>',
@@ -2385,8 +2385,8 @@ function arjuna_get_trackbacks_count() {
 
 function arjuna_nav_menus() {
 	register_nav_menus(array(
-		'header_menu_1' => 'First Header Menu',
-		'header_menu_2' => 'Second Header Menu',
+		'header_menu_1' => __('First Header Menu', 'Arjuna'),
+		'header_menu_2' => __('Second Header Menu', 'Arjuna'),
 	));
 }
 add_action('init', 'arjuna_nav_menus');
@@ -2502,16 +2502,16 @@ add_action('init', 'arjuna_register_twitter_widget');
 function arjuna_register_twitter_widget() {
     wp_register_sidebar_widget(
     	'arjuna_twitter_widget',
-    	__('Arjuna Twitter Profile Widget'),
+    	__('Arjuna Twitter Profile Widget', 'Arjuna'),
     	'arjuna_create_twitter_widget',
     	array(
     		'classname' => 'arjuna_twitter_widget',
-    		'description' => __( "Display Twitter Goodies Profile Widget"),
+    		'description' => __("Display Twitter Goodies Profile Widget", "Arjuna"),
     	)
     );
     wp_register_widget_control(
     	'arjuna_twitter_widget',
-    	__('Arjuna Twitter Profile Widget'),
+    	__('Arjuna Twitter Profile Widget', 'Arjuna'),
     	'arjuna_create_twitter_widget_control',
     	array('id_base' => 'arjuna_twitter_widget')
     );
@@ -2527,7 +2527,7 @@ function arjuna_print_page_menu() {
 		if($arjunaOptions['menus']['2']['displayHome'])
 			$html .= '<li><a href="' . (function_exists('icl_get_home_url')?icl_get_home_url():home_url('/')) . '" class="homeIcon">' . __('Home','Arjuna') . '</a></li>';
 		
-		$html .= wp_list_pages('title_li=&echo=0');
+		$html .= wp_list_pages('title_li=&echo=0&depth='.$arjunaOptions['menus']['2']['depth']);
 	$html .= '</ul>';
 	
 	print $html;

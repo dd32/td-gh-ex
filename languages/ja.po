@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Arjuna X 1.6.5\n"
+"Project-Id-Version: Arjuna X 1.6.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-16 20:40+0900\n"
-"PO-Revision-Date: 2011-04-20 11:35+0200\n"
+"POT-Creation-Date: 2011-04-29 21:54+0900\n"
+"PO-Revision-Date: 2011-04-29 21:54+0900\n"
 "Last-Translator: T Benjamin Y <good.blossom@gmail.com>\n"
 "Language-Team: T Benjamin Y <good.blossom@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -14,1331 +14,1358 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
-"X-Poedit-SearchPath-0: /Users/benjamin/Documents/残しておくファイル/WordPress/テーマ色々/Arjuna/1.6.5\n"
+"X-Poedit-SearchPath-0: arjuna-x\n"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/404.php:4
+#: arjuna-x/404.php:4
 msgid "Error 404 - Not Found"
 msgstr "エラー 404 - 見つかりません"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/404.php:5
+#: arjuna-x/404.php:5
 msgid "Sorry, but you are looking for something that isn't here. "
 msgstr "すみません、違うところを探しているようですよ。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/archive.php:8
+#: arjuna-x/archive.php:8
 #, php-format
 msgid "Browsing Posts in <em>%s</em>"
 msgstr "カテゴリー <em>%s</em> の投稿をブラウズ中…"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/archive.php:10
+#: arjuna-x/archive.php:10
 #, php-format
 msgid "Browsing Posts tagged <em>%s</em>"
 msgstr "タグ <em>%s</em> の投稿をブラウズ中…"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/archive.php:12
+#: arjuna-x/archive.php:12
 #, php-format
 msgid "Browsing Posts published on %s"
 msgstr "%s の投稿をブラウズ中…"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/archive.php:14
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/archive.php:16
+#: arjuna-x/archive.php:14
+#: arjuna-x/archive.php:16
 #, php-format
 msgid "Browsing Posts published in %s"
 msgstr "%s の投稿をブラウズ中…"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/archive.php:14
+#: arjuna-x/archive.php:14
 msgid "F, Y"
 msgstr "Y年n月"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/archive.php:16
+#: arjuna-x/archive.php:16
 msgid "Y"
 msgstr "Y年"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/archive.php:19
+#: arjuna-x/archive.php:19
 #, php-format
 msgid "Browsing Posts published by <em>%s</em>"
 msgstr "<em>%s</em> の投稿をブラウズ中…"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/archive.php:21
+#: arjuna-x/archive.php:21
 msgid "Blog Archives"
 msgstr "ブログアーカイブ"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/archive.php:38
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/index.php:13
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/page.php:18
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/page_fullwidth.php:22
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/search.php:20
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/single.php:15
+#: arjuna-x/archive.php:38
+#: arjuna-x/index.php:13
+#: arjuna-x/page.php:18
+#: arjuna-x/page_fullwidth.php:22
+#: arjuna-x/search.php:20
+#: arjuna-x/single.php:15
 msgid "continue reading..."
 msgstr "続きを読む…"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/archive.php:49
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/index.php:25
+#: arjuna-x/archive.php:49
+#: arjuna-x/index.php:25
 msgid "There is nothing here (yet)."
 msgstr "何もありません(まだ)。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/comments.php:12
+#: arjuna-x/comments.php:12
 msgid "This post is password protected. Enter the password to view comments."
 msgstr "パスワード保護されています。コメントを見るにはパスワードを入力して下さい。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/comments.php:23
+#: arjuna-x/comments.php:23
 msgid "Comments"
 msgstr "コメント"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/comments.php:30
+#: arjuna-x/comments.php:30
 msgid "Trackbacks"
 msgstr "トラックバック"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/comments.php:37
+#: arjuna-x/comments.php:37
 msgid "Leave a comment"
 msgstr "コメントする"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/comments.php:40
+#: arjuna-x/comments.php:40
 msgid "Trackback"
 msgstr "トラックバック"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/comments.php:56
+#: arjuna-x/comments.php:56
 msgid "No one has commented yet."
 msgstr "まだコメントはありません。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/comments.php:58
+#: arjuna-x/comments.php:58
 msgid "Comments are closed."
 msgstr "コメントは締め切られました。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/comments.php:74
+#: arjuna-x/comments.php:74
 msgid "No trackbacks yet."
 msgstr "まだトラックバックはありません。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/comments.php:76
+#: arjuna-x/comments.php:76
 msgid "Trackbacks are disabled."
 msgstr "トラックバックはできません。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:136
+#: arjuna-x/functions.php:134
 msgid "Light Blue"
 msgstr "ライトブルー"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:137
+#: arjuna-x/functions.php:135
+msgid "Bristol Blue"
+msgstr "ブリストルブルー"
+
+#: arjuna-x/functions.php:136
 msgid "Dark Blue"
 msgstr "ダークブルー"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:138
+#: arjuna-x/functions.php:137
+msgid "Regimental Blue"
+msgstr "レジメンタルブルー"
+
+#: arjuna-x/functions.php:138
 msgid "Khaki"
 msgstr "カーキ"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:139
+#: arjuna-x/functions.php:139
 msgid "Sea Green"
 msgstr "シーグリーン"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:140
+#: arjuna-x/functions.php:140
 msgid "Light Red"
 msgstr "ライトレッド"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:141
+#: arjuna-x/functions.php:141
 msgid "Purple"
 msgstr "パープル"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:142
+#: arjuna-x/functions.php:142
 msgid "Light Gray"
 msgstr "ライトグレー"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:143
+#: arjuna-x/functions.php:143
 msgid "Dark Gray"
 msgstr "ダークグレー"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:575
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:582
+#: arjuna-x/functions.php:619
+#: arjuna-x/functions.php:626
 msgid "The uploaded file is not a valid image. Only JPEG, PNG and GIF is supported."
 msgstr "アップロードされたファイルは扱えません。JPEG、PNG、GIFだけをサポートします。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:674
+#: arjuna-x/functions.php:718
 msgid "Arjuna Options"
 msgstr "Arjunaの設定"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:694
+#: arjuna-x/functions.php:737
 msgid "The Arjuna options have been saved."
 msgstr "Arjunaの設定を保存しました。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:699
+#: arjuna-x/functions.php:742
 msgid "Arjuna Theme Options"
 msgstr "Arjunaのテーマ設定"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:702
+#: arjuna-x/functions.php:745
 msgid "This browser is outdated. Please <a href=\"http://www.microsoft.com/windows/internet-explorer/default.aspx\">upgrade</a> your browser to enjoy this website to its fullest extent."
 msgstr "お使いのブラウザーは古くありませんか。ブラウザーを<a href=\"http://windows.microsoft.com/ja-JP/internet-explorer/downloads/ie\">アップグレード</a>して、このサイトのすべてをお楽しみ下さい。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:707
+#: arjuna-x/functions.php:750
 #, php-format
 msgid "Thank you for using Arjuna, the free WordPress theme designed by %s."
 msgstr "ご利用ありがとうございます。Arjunaは %s がデザインしたフリーのWordPressテーマです。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:709
+#: arjuna-x/functions.php:752
 msgid "Follow Us"
 msgstr ""
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:719
+#: arjuna-x/functions.php:753
+msgid "to receive news, updates, and more."
+msgstr "ニュースやアップデート等を入手しましょう。"
+
+#: arjuna-x/functions.php:762
 msgid "Report Bugs"
 msgstr "バグの報告"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:720
+#: arjuna-x/functions.php:763
 msgid "Report a Bug"
 msgstr "バグを報告する"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:720
+#: arjuna-x/functions.php:763
 msgid "Please include your Wordpress version, browser details and a screenshot, if necessary."
 msgstr "お使いのWordpressのバージョン、ブラウザの詳細、スクリーンショットを必要に応じて添付して下さい。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:723
+#: arjuna-x/functions.php:766
 msgid "Useful Links"
 msgstr "便利なリンク"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:724
+#: arjuna-x/functions.php:767
 msgid "Changelog"
 msgstr "変更履歴"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:725
+#: arjuna-x/functions.php:768
 msgid "FAQ"
 msgstr "よくある質問"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:726
+#: arjuna-x/functions.php:769
 msgid "Roadmap"
 msgstr "ロードマップ"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:727
+#: arjuna-x/functions.php:770
 msgid "Leave Feedback"
 msgstr "フィードバックを残す"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:730
+#: arjuna-x/functions.php:773
 msgid "Support &amp; Sales"
 msgstr "サポート &amp; セールス"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:731
+#: arjuna-x/functions.php:774
 msgid "Contact Sales"
 msgstr "セールスに連絡"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:731
+#: arjuna-x/functions.php:774
 msgid "Need installation or integration support? Need something customized or extended?"
 msgstr "インストールやインテグレーションのサポート、何かカスタマイズや拡張されたものがご入用ですか？"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:736
+#: arjuna-x/functions.php:779
 msgid "Arjuna is completely free. Therefore, please understand that we do NOT offer free support. If you require support of any kind other than fixing a bug that is related to Arjuna, please request a quote from us."
 msgstr "Arjunaはまったく無料でご利用頂けます。ですが無償サポートは提供していないことをご了解下さい。Arjunaのバグを直す以外のサポートが必要な場合は、見積りをご依頼下さい。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:748
+#: arjuna-x/functions.php:791
 msgid "General Blog Appearance"
 msgstr "ブログの全般的な外観"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:751
+#: arjuna-x/functions.php:794
 msgid "Logo"
 msgstr "ロゴ"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:756
+#: arjuna-x/functions.php:799
 msgid "Header Logo"
 msgstr "ヘッダーのロゴ"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:764
+#: arjuna-x/functions.php:807
 msgid "The custom logo will be included in the header, aligned to the left and vertically centered."
 msgstr "カスタムロゴは、ヘッダーの中で左寄せ、縦中央に置かれます。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:766
+#: arjuna-x/functions.php:809
 #, php-format
 msgid "You do not have write permissions for the upload directory %s. Please check with your webmaster or host to set write permissions for this directory."
 msgstr "ディレクトリ %s へアップロードする権限がありません。ウェブマスターやホスト管理者に問い合わせて、このディレクトリの書き込み権限を貰って下さい。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:777
+#: arjuna-x/functions.php:820
 msgid "First Header Menu"
 msgstr "上側のヘッダーメニュー"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:782
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:936
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1274
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1532
+#: arjuna-x/functions.php:825
+#: arjuna-x/functions.php:979
+#: arjuna-x/functions.php:1320
+#: arjuna-x/functions.php:1593
 msgid "Enabled"
 msgstr "有効化"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:784
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:938
+#: arjuna-x/functions.php:827
+#: arjuna-x/functions.php:981
 msgid "Enable this menu"
 msgstr "このメニューを有効化"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:786
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:940
+#: arjuna-x/functions.php:829
+#: arjuna-x/functions.php:983
 msgid "If disabled, the menu will be hidden."
 msgstr "チェックを外すとメニューは表示されません。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:790
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:950
+#: arjuna-x/functions.php:833
+#: arjuna-x/functions.php:993
 msgid "Dropdown"
 msgstr "ドロップダウン"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:794
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:954
+#: arjuna-x/functions.php:837
+#: arjuna-x/functions.php:997
 msgid "No dropdown menu"
 msgstr "ドロップダウンメニュー無し"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:798
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:958
+#: arjuna-x/functions.php:841
+#: arjuna-x/functions.php:1001
 msgid "One-level dropdown menu"
 msgstr "一階層のドロップダウンメニュー"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:802
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:962
+#: arjuna-x/functions.php:845
+#: arjuna-x/functions.php:1005
 msgid "Two-level dropdown menu"
 msgstr "二階層のドロップダウンメニュー"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:806
+#: arjuna-x/functions.php:849
 msgid "Alignment"
 msgstr "配置"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:810
+#: arjuna-x/functions.php:853
 msgid "Left"
 msgstr "左寄せ"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:814
+#: arjuna-x/functions.php:857
 msgid "Right"
 msgstr "右寄せ"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:819
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:973
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1491
+#: arjuna-x/functions.php:862
+#: arjuna-x/functions.php:1016
+#: arjuna-x/functions.php:1552
 msgid "Use"
 msgstr "使用するもの"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:823
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:977
+#: arjuna-x/functions.php:866
+#: arjuna-x/functions.php:1021
 msgid "WordPress Custom Menus"
 msgstr "WordPressのカスタムメニュー"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:827
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:981
+#: arjuna-x/functions.php:870
+#: arjuna-x/functions.php:1025
 msgid "Legacy Menus"
 msgstr "従来のメニュー"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:834
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:988
+#: arjuna-x/functions.php:877
+#: arjuna-x/functions.php:1034
 msgid "Menu lists only"
 msgstr "メニューに表示するもの"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:838
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:992
+#: arjuna-x/functions.php:881
+#: arjuna-x/functions.php:1038
 msgid "Pages"
 msgstr "ページ"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:842
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:996
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/sidebar.php:30
+#: arjuna-x/functions.php:885
+#: arjuna-x/functions.php:1042
+#: arjuna-x/sidebar.php:30
 msgid "Categories"
 msgstr "カテゴリー"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:847
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1001
+#: arjuna-x/functions.php:890
+#: arjuna-x/functions.php:1047
 msgid "Sorting Order"
 msgstr "ソート順"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:850
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:864
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1004
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1018
+#: arjuna-x/functions.php:893
+#: arjuna-x/functions.php:907
+#: arjuna-x/functions.php:1050
+#: arjuna-x/functions.php:1064
 msgid "Sort menu items in"
 msgstr "メニュー項目を"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:852
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:866
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1006
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1020
+#: arjuna-x/functions.php:895
+#: arjuna-x/functions.php:909
+#: arjuna-x/functions.php:1052
+#: arjuna-x/functions.php:1066
 msgid "ascending"
 msgstr "昇順で表示。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:853
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:867
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1007
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1021
+#: arjuna-x/functions.php:896
+#: arjuna-x/functions.php:910
+#: arjuna-x/functions.php:1053
+#: arjuna-x/functions.php:1067
 msgid "descending"
 msgstr "降順で表示。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:855
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:869
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1009
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1023
+#: arjuna-x/functions.php:898
+#: arjuna-x/functions.php:912
+#: arjuna-x/functions.php:1055
+#: arjuna-x/functions.php:1069
 msgid "order by"
 msgstr "ソート対象は"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:857
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1011
+#: arjuna-x/functions.php:900
+#: arjuna-x/functions.php:1057
 msgid "Category Name"
 msgstr "カテゴリー名"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:858
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1012
+#: arjuna-x/functions.php:901
+#: arjuna-x/functions.php:1058
 msgid "Category ID"
 msgstr "カテゴリーID"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:859
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1013
+#: arjuna-x/functions.php:902
+#: arjuna-x/functions.php:1059
 msgid "Post Count"
 msgstr "投稿数"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:860
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1014
+#: arjuna-x/functions.php:903
+#: arjuna-x/functions.php:1060
 msgid "Category Slug"
 msgstr "カテゴリースラグ(URL)"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:871
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1025
+#: arjuna-x/functions.php:914
+#: arjuna-x/functions.php:1071
 msgid "Page Title"
 msgstr "ページタイトル"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:872
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1026
+#: arjuna-x/functions.php:915
+#: arjuna-x/functions.php:1072
 msgid "Page ID"
 msgstr "ページID"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:873
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1027
+#: arjuna-x/functions.php:916
+#: arjuna-x/functions.php:1073
 msgid "Page Slug"
 msgstr "ページスラグ(URL)"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:874
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1028
+#: arjuna-x/functions.php:917
+#: arjuna-x/functions.php:1074
 msgid "Page Order"
 msgstr "ページ順序"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:880
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1034
+#: arjuna-x/functions.php:923
+#: arjuna-x/functions.php:1080
 msgid "Menu Items"
 msgstr "メニュー項目"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:883
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1037
+#: arjuna-x/functions.php:926
+#: arjuna-x/functions.php:1083
 msgid "Include categories"
 msgstr "表示するカテゴリー"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:893
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1047
+#: arjuna-x/functions.php:936
+#: arjuna-x/functions.php:1093
 msgid "Exclude categories"
 msgstr "表示しないカテゴリー"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:900
+#: arjuna-x/functions.php:943
 msgid "Note: While the above fields show empty categories, the theme will only display categories that have at least one published post in them."
 msgstr "注: 上の欄に、投稿のないカテゴリーがあっても、このテーマは公開された投稿が1件以上あるカテゴリーだけを表示します。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:903
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1057
+#: arjuna-x/functions.php:946
+#: arjuna-x/functions.php:1103
 msgid "Include pages"
 msgstr "表示するページ"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:913
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1067
+#: arjuna-x/functions.php:956
+#: arjuna-x/functions.php:1113
 msgid "Exclude pages"
 msgstr "表示しないページ"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:931
+#: arjuna-x/functions.php:974
 msgid "Second Header Menu"
 msgstr "下側のヘッダーメニュー"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:944
+#: arjuna-x/functions.php:987
 msgid "Separators"
 msgstr "セパレーター"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:946
+#: arjuna-x/functions.php:989
 msgid "Visually separate the menu buttons"
 msgstr "メニューボタンをはっきりと区切る"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:967
+#: arjuna-x/functions.php:1010
 msgid "Home Button"
 msgstr "ホームボタン"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:969
+#: arjuna-x/functions.php:1012
 msgid "Display Home button"
 msgstr "ホームボタンを表示する"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1054
+#: arjuna-x/functions.php:1028
+msgid "If you use WP Custom Menus, please assign a custom menu in [[LINK_START]]Appearance > Menus[[LINK_END]]. Otherwise, the menu will fall back to displaying all pages."
+msgstr "WPカスタムメニューを使うには、[[LINK_START]]外観 > メニュー[[LINK_END]] でメニューを作成して下さい。そうしなければ全てのページを表示するメニューになります。"
+
+#: arjuna-x/functions.php:1100
 msgid "Note: While the above fields show empty categories, the theme will only display categories that have at least one published post in them.</span>"
 msgstr "注: 上の欄に投稿のないカテゴリーがあっても、このテーマは公開された投稿が1件以上あるカテゴリーだけを表示します。</span>"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1084
+#: arjuna-x/functions.php:1130
 msgid "Background &amp; Color Schemes"
 msgstr "背景と色使い"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1089
+#: arjuna-x/functions.php:1135
 msgid "Background Style"
 msgstr "背景のスタイル"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1093
+#: arjuna-x/functions.php:1139
 msgid "Blueish gradient"
 msgstr "ブルーの濃淡"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1094
+#: arjuna-x/functions.php:1140
 msgid "Gray gradient"
 msgstr "グレーの濃淡"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1095
+#: arjuna-x/functions.php:1141
 msgid "Gray gradient (reverse)"
 msgstr "グレーの濃淡(逆向き)"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1096
+#: arjuna-x/functions.php:1142
 msgid "Khaki gradient"
 msgstr "カーキの濃淡"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1108
+#: arjuna-x/functions.php:1154
 msgid "Solid Color"
 msgstr "単色"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1111
+#: arjuna-x/functions.php:1157
 msgid "Button Style"
 msgstr "ボタンのスタイル"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1117
+#: arjuna-x/functions.php:1163
 msgid "If the background is a solid color, you can choose the style of the buttons yourself."
 msgstr "背景が単色の時はボタンのスタイルを選択できます。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1121
+#: arjuna-x/functions.php:1167
 msgid "Header Image"
 msgstr "ヘッダー画像"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1145
+#: arjuna-x/functions.php:1191
 msgid "Footer Style"
 msgstr "フッターのスタイル"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1154
+#: arjuna-x/functions.php:1200
 msgid "Match Header Image"
 msgstr "ヘッダー画像に合わせる"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1165
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1205
+#: arjuna-x/functions.php:1211
+#: arjuna-x/functions.php:1251
 msgid "Sidebar"
 msgstr "サイドバー"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1167
+#: arjuna-x/functions.php:1213
 #, php-format
 msgid "Note: To see how the sidebar and its widget bars work in Arjuna, please read our %sFAQ%s."
 msgstr "注: サイドバーとウィジェットをArjunaがどのように表示するかについては %sFAQ%s をご覧下さい。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1171
+#: arjuna-x/functions.php:1217
 msgid "Sidebar Position"
 msgstr "サイドバーの位置"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1176
+#: arjuna-x/functions.php:1222
 msgid "Right sidebar"
 msgstr "右に置く"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1181
+#: arjuna-x/functions.php:1227
 msgid "Left sidebar"
 msgstr "左に置く"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1186
+#: arjuna-x/functions.php:1232
 msgid "No sidebar"
 msgstr "サイドバー無し"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1191
+#: arjuna-x/functions.php:1237
 msgid "Sidebar Width"
 msgstr "サイドバーの幅"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1203
+#: arjuna-x/functions.php:1249
 msgid "Content Area"
 msgstr "コンテンツ領域"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1211
+#: arjuna-x/functions.php:1257
 msgid "Use the slider to adjust the width of the sidebar."
 msgstr "スライダーを操作してサイドバーの幅を調整します。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1215
+#: arjuna-x/functions.php:1261
 msgid "Default Widgets"
 msgstr "既定のウィジェット"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1217
+#: arjuna-x/functions.php:1263
 msgid "Display default sidebar widgets if the widget bars are empty."
 msgstr "ウィジェットバーが空ならデフォルトのサイドバーウィジェットを表示する。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1218
+#: arjuna-x/functions.php:1264
 msgid "If enabled, the following widgets will be displayed if the widget bar is empty: <b>Sidebar Top:</b> Recent Posts and Browse by Tags, <b>Sidebar Left:</b> Categories, <b>Siderbar Right:</b> Meta"
 msgstr "チェックを入れると、ウィジェットバーが空なら以下のウィジェットが表示されます。<b>サイドバー上部:</b> 最近の記事・タグでブラウズ、<b>サイドバー左側:</b> カテゴリー、<b>サイドバー右側:</b> メタ"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1222
+#: arjuna-x/functions.php:1268
 msgid "Sidebar Buttons"
 msgstr "サイドバーのボタン"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1229
+#: arjuna-x/functions.php:1275
 msgid "Use extended button."
 msgstr "拡張ボタンを使う。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1230
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1238
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1246
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1254
+#: arjuna-x/functions.php:1276
+#: arjuna-x/functions.php:1284
+#: arjuna-x/functions.php:1292
+#: arjuna-x/functions.php:1300
 msgid "Label"
 msgstr "ラベル"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1236
+#: arjuna-x/functions.php:1282
 msgid "Your Twitter URL"
 msgstr "TwitterのURL"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1244
+#: arjuna-x/functions.php:1290
 msgid "Your Facebook URL"
 msgstr "FacebookのURL"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1252
+#: arjuna-x/functions.php:1298
 msgid "Your LinkedIn URL"
 msgstr "LinkedInのURL"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1258
+#: arjuna-x/functions.php:1304
 msgid "Choose which buttons will be included on the very top of the sidebar."
 msgstr "サイドバーの一番上に表示するボタンを選択します。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1259
+#: arjuna-x/functions.php:1305
 msgid "The extended RSS button will allow visitors to choose between all available RSS feeds, depending on the page they are currently browsing."
 msgstr "拡張RSSボタンを使うと、訪問者はRSSフィードを選ぶことができます。選択できるRSSフィードはブラウズ中のページによって異なります。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1269
+#: arjuna-x/functions.php:1315
 msgid "Search"
 msgstr "検索"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1276
+#: arjuna-x/functions.php:1322
 msgid "Enable WordPress search"
 msgstr "WordPressサーチを有効にする"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1278
+#: arjuna-x/functions.php:1324
 msgid "If disabled, the search field will not be included in the header."
 msgstr "チェックを外すと、検索フィールドはヘッダーに表示されません。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1287
+#: arjuna-x/functions.php:1330
+msgid "Position Search"
+msgstr "検索ボックスの位置"
+
+#: arjuna-x/functions.php:1334
+msgid "Top right (in header)"
+msgstr "右上 (ヘッダー内)"
+
+#: arjuna-x/functions.php:1338
+msgid "Bottom right (in header)"
+msgstr "右下 (ヘッダー内)"
+
+#: arjuna-x/functions.php:1348
 msgid "General Options"
 msgstr "全般的なオプション"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1290
+#: arjuna-x/functions.php:1351
 msgid "Index Pages"
 msgstr "インデックスページ"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1292
+#: arjuna-x/functions.php:1353
 msgid "Index pages include the homepage (unless it is static), archives, category and tag listing pages as well as search results pages. Basically any page that displays a listing of posts."
 msgstr "インデックスページとは、ホームページ (静的でないもの)、アーカイブ、カテゴリーおよびタグ毎の一覧ページ、それと検索結果ページです。一般的には、投稿のリストを表示するページです。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1296
+#: arjuna-x/functions.php:1357
 msgid "Display Tags"
 msgstr "タグの表示"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1298
+#: arjuna-x/functions.php:1359
 msgid "Display the tags of a post right below each post."
 msgstr "投稿のタグを、投稿の直下に表示する。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1302
+#: arjuna-x/functions.php:1363
 msgid "Display Categories"
 msgstr "カテゴリーの表示"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1304
+#: arjuna-x/functions.php:1365
 msgid "Display the categories of a post right below each post."
 msgstr "投稿のカテゴリーを、投稿の直下に表示する。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1314
+#: arjuna-x/functions.php:1375
 msgid "Posts and Pages"
 msgstr "投稿とページ"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1319
+#: arjuna-x/functions.php:1380
 msgid "Display Author"
 msgstr "作成者の表示"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1321
+#: arjuna-x/functions.php:1382
 msgid "Include the author of a post/page."
 msgstr "投稿やページの作成者を表示する。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1325
+#: arjuna-x/functions.php:1386
 msgid "Display Time"
 msgstr "時刻の表示"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1327
+#: arjuna-x/functions.php:1388
 msgid "Include the time and date of when the post/page has been published, instead of only the date."
 msgstr "投稿やページが公開された日付だけでなく、時刻も表示する。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1331
+#: arjuna-x/functions.php:1392
 msgid "Display Info Bar for Pages"
 msgstr "ページの情報バーの表示"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1333
+#: arjuna-x/functions.php:1394
 msgid "Display the info bar right below the title of pages."
 msgstr "ページのタイトル直下に情報バーを表示する。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1334
+#: arjuna-x/functions.php:1395
 msgid "The info bar usually includes the author of the page, the publish date, and the comments button. If turned off, this option entirely hides the bar so that only the title of the page is shown."
 msgstr "情報バーは普通、ページの作成者、公開日、コメントボタンを表示します。チェックを外すとバーは表示されず、ページのタイトルだけが表示されます。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1338
+#: arjuna-x/functions.php:1399
 msgid "Navigation Links"
 msgstr "ナビゲーション用リンク"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1340
+#: arjuna-x/functions.php:1401
 msgid "Display links to the previous and next posts above each post."
 msgstr "各投稿の上側に、前の記事と次の記事へのリンクを表示する。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1341
+#: arjuna-x/functions.php:1402
 msgid "Display links to the previous and next posts below each post."
 msgstr "各投稿の下側に、前の記事と次の記事へのリンクを表示する。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1342
+#: arjuna-x/functions.php:1403
 msgid "Note: The links will only be shown on permalink pages, i.e. the URL where one single post is displayed."
 msgstr "注: これらのリンクは、単一の投稿またはページが表示されている時(URLがパーマリンク)だけ表示されます。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1352
+#: arjuna-x/functions.php:1413
 msgid "Comments &amp; Trackbacks"
 msgstr "コメントとトラックバック"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1357
+#: arjuna-x/functions.php:1418
 msgid "Display comments as follows"
 msgstr "コメントを次のように表示"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1362
+#: arjuna-x/functions.php:1423
 msgid "Aligned to the left"
 msgstr "左寄せ"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1367
+#: arjuna-x/functions.php:1428
 msgid "Aligned to the right"
 msgstr "右寄せ"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1372
+#: arjuna-x/functions.php:1433
 msgid "Alternate between left and right alignment"
 msgstr "左右交互に寄せる"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1377
+#: arjuna-x/functions.php:1438
 msgid "Date Format"
 msgstr "日付の書式"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1379
+#: arjuna-x/functions.php:1440
 msgid "Passed Time (Example: <em>&quot;Written by admin about 3 days ago.&quot;</em>)"
 msgstr "経過時間 (例: <em>&quot;書いた人 admin 約 3 日 前.&quot;</em>)"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1380
+#: arjuna-x/functions.php:1441
 #, php-format
 msgid "Default Date Format (Example: <em>&quot;Written by admin on %s&quot;</em>)"
 msgstr "標準の日付形式 (例: <em>&quot;書いた人 admin @ %s&quot;</em>)"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1381
+#: arjuna-x/functions.php:1442
 msgid "The default date format can be customized in Settings &gt; General."
 msgstr "標準の日付形式は WordPress のメニュー <strong>設定 &gt; 一般</strong> で設定できます。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1385
+#: arjuna-x/functions.php:1446
 msgid "Comment Display"
 msgstr "コメントの表示"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1387
+#: arjuna-x/functions.php:1448
 msgid "Hide any traces of comments when they are disabled for <strong>Pages</strong>."
 msgstr "<strong>ページ</strong>について、コメントが禁止されていたら過去のコメントを隠す。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1388
+#: arjuna-x/functions.php:1449
 msgid "Hide any traces of comments when they are disabled for <strong>Posts</strong>."
 msgstr "<strong>投稿</strong>について、コメントが禁止されていたら過去のコメントを隠す。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1389
+#: arjuna-x/functions.php:1450
 msgid "Note: If enabled, the comments tab section as well as the comment form on pages/posts will be removed."
 msgstr "注: チェックを入れると、ページや投稿のコメント表示エリアとコメント入力フォームが隠されます。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1393
+#: arjuna-x/functions.php:1454
 msgid "Trackback Display"
 msgstr "トラックバックの表示"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1395
+#: arjuna-x/functions.php:1456
 msgid "Hide any traces of trackbacks and pingbacks when they are disabled for <strong>Pages</strong>."
 msgstr "<strong>ページ</strong>について、トラックバックとピンバックが禁止されていたらそれらの過去の履歴を隠す。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1396
+#: arjuna-x/functions.php:1457
 msgid "Hide any traces of trackbacks and pingbacks when they are disabled for <strong>Posts</strong>."
 msgstr "<strong>投稿</strong>について、トラックバックとピンバックが禁止されていたらそれらの過去の履歴を隠す。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1397
+#: arjuna-x/functions.php:1458
 msgid "Note: If enabled, the trackbacks tab section on pages/posts will be removed."
 msgstr "注: チェックを入れると、ページや投稿のトラックバック表示エリアが隠されます。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1407
+#: arjuna-x/functions.php:1468
 msgid "Excerpts"
 msgstr "投稿の抜粋"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1412
+#: arjuna-x/functions.php:1473
 msgid "Show excerpts on"
 msgstr "抜粋の表示"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1414
+#: arjuna-x/functions.php:1475
 msgid "Homepage/Index page"
 msgstr "ホームページ/インデックスページ"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1415
+#: arjuna-x/functions.php:1476
 msgid "Category &amp; tag pages"
 msgstr "カテゴリーとタグのページ"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1416
+#: arjuna-x/functions.php:1477
 msgid "Archive pages"
 msgstr "アーカイブのページ"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1417
+#: arjuna-x/functions.php:1478
 msgid "Search pages"
 msgstr "検索結果のページ"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1418
+#: arjuna-x/functions.php:1479
 msgid "Author pages"
 msgstr "作成者のページ"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1419
+#: arjuna-x/functions.php:1480
 msgid "Note: If enabled, an excerpt will be shown instead of the full post on selected pages. If a post does not have a custom excerpt, an automatic excerpt of the first 55 words will be displayed."
 msgstr "注: チェックを入れると、そのページに投稿の全文を表示する代わりに抜粋を表示します。ある投稿がそれ用の抜粋を持たない時は、最初の55ワードを自動的に抜粋として表示します。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1429
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1434
+#: arjuna-x/functions.php:1490
+#: arjuna-x/functions.php:1495
 msgid "Pagination"
 msgstr "ページ割り"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1436
+#: arjuna-x/functions.php:1497
 msgid "Use Arjuna pagination"
 msgstr "Arjuna自身のページ割りを使用"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1437
+#: arjuna-x/functions.php:1498
 msgid "If enabled, Arjuna will use its own native pagination to allow your users to navigate the blog using pages."
 msgstr "チェックを入れると、Arjuna自身でページ割りを行い、ブログをページ単位で読むことができます。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1441
+#: arjuna-x/functions.php:1502
 msgid "Page Range"
 msgstr "ページ範囲"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1448
+#: arjuna-x/functions.php:1509
 msgid "The number of page buttons that will appear before and after the current page button."
 msgstr " &mdash; 現在のページの前後に表示するページボタンの数。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1452
+#: arjuna-x/functions.php:1513
 msgid "Page Anchors"
 msgstr "ページアンカー"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1459
+#: arjuna-x/functions.php:1520
 msgid "The number of page buttons that will always appear at the beginning and the end of the pagination."
 msgstr " &mdash; ページ割りの最初と最後に必ず表示するページボタンの数。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1463
+#: arjuna-x/functions.php:1524
 msgid "Page Gap"
 msgstr "ページギャップ"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1470
+#: arjuna-x/functions.php:1531
 msgid "The number of page buttons in a gap before an ellipsis (...) is displayed."
 msgstr " &mdash; ギャップがこのページ数を超えると省略表示(...)する。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1475
+#: arjuna-x/functions.php:1536
 msgid "Use WordPress default"
 msgstr "WordPressのデフォルトのページ割りを使用"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1476
+#: arjuna-x/functions.php:1537
 msgid "The default depends on your WordPress version and whether you have any pagination plugins activated. If the wp-paginate or wp-pagenavi plugin is activated, then Arjuna will use these plugins to create the pagination."
 msgstr "デフォルトは、WordPressのバージョンと、ページ割りプラグインが有効かどうかによって変わります。wp-paginate または wp-pagenavi プラグインが有効なら、Arjunaはそれを使ってページ割りを行います。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1486
+#: arjuna-x/functions.php:1547
 msgid "RSS Feeds"
 msgstr "RSSフィード"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1495
+#: arjuna-x/functions.php:1556
 msgid "Default RSS Feeds"
 msgstr "既定のRSSフィード"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1499
+#: arjuna-x/functions.php:1560
 msgid "Google Feedburner"
 msgstr ""
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1506
+#: arjuna-x/functions.php:1567
 msgid "Redirect Feeds to"
 msgstr "フィードのリダイレクト先"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1509
+#: arjuna-x/functions.php:1570
 msgid "Arjuna will redirect all of your existing feeds, including category and tag feeds, to Google Feedburner."
 msgstr "Arjunaは、カテゴリーとタグのフィードを含む、あなたのすべてのフィードをGoogle FeedburnerのこのURLへリダイレクトします。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1513
+#: arjuna-x/functions.php:1574
 msgid "Redirect Comment Feeds to"
 msgstr "コメントフィードのリダイレクト先"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1516
+#: arjuna-x/functions.php:1577
 msgid "Arjuna will redirect your comment feeds to Google Feedburner to this URL."
 msgstr "Arjunaは、あなたのコメントフィードをGoogle FeedburnerのこのURLへリダイレクトします。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1526
+#: arjuna-x/functions.php:1587
 msgid "Twitter Widget"
 msgstr "Twitterウィジェット"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1528
+#: arjuna-x/functions.php:1589
 msgid "Note: The minimum sidebar width for the twitter widget to not overflow the sidebar is 280px. Please adjust your sidebar accordingly."
 msgstr "注: twitterウィジェットがサイドバーをはみ出さない為には、サイドバーの幅を280px以上に調整して下さい。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1536
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1581
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1594
+#: arjuna-x/functions.php:1597
+#: arjuna-x/functions.php:1642
+#: arjuna-x/functions.php:1655
 msgid "Yes"
 msgstr "はい"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1540
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1585
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1598
+#: arjuna-x/functions.php:1601
+#: arjuna-x/functions.php:1646
+#: arjuna-x/functions.php:1659
 msgid "No"
 msgstr "いいえ"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1547
+#: arjuna-x/functions.php:1608
 msgid "Widget Title"
 msgstr "ウィジェットのタイトル"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1550
+#: arjuna-x/functions.php:1611
 msgid "The title of the sidebar widget."
 msgstr "サイドバーウィジェットのタイトルです。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1554
+#: arjuna-x/functions.php:1615
 msgid "Twitter Username"
 msgstr "Twitterのユーザー名"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1560
+#: arjuna-x/functions.php:1621
 msgid "Height"
 msgstr "高さ"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1566
+#: arjuna-x/functions.php:1627
 msgid "Number of Tweets"
 msgstr "つぶやきの数"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1577
+#: arjuna-x/functions.php:1638
 msgid "Scrollbar"
 msgstr "スクロールバーの使用"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1590
+#: arjuna-x/functions.php:1651
 msgid "Show Timestamp"
 msgstr "タイムスタンプの表示"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1609
+#: arjuna-x/functions.php:1670
 msgid "Miscellaneous"
 msgstr "その他の設定"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1614
+#: arjuna-x/functions.php:1675
 msgid "Append to page title"
 msgstr "ページタイトルへの追加"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1616
+#: arjuna-x/functions.php:1677
 #, php-format
 msgid "Blog Name (&quot; - %s&quot;)"
 msgstr "ブログ名 (&quot; - %s&quot;)"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1617
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1625
+#: arjuna-x/functions.php:1678
+#: arjuna-x/functions.php:1686
 msgid "Custom:"
 msgstr "カスタム:"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1618
+#: arjuna-x/functions.php:1679
 msgid "This will be appended to the page title of every web page (posts, pages, categories, etc.)"
 msgstr "すべてのwebページ（投稿、ページ、カテゴリー等）のタイトルに追加されます。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1622
+#: arjuna-x/functions.php:1683
 msgid "Footer Copyright Notice"
 msgstr "フッターのコピーライト告知"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1624
+#: arjuna-x/functions.php:1685
 #, php-format
 msgid "Blog Name (&quot;%s&quot;)"
 msgstr "ブログ名 (&quot;%s&quot;)"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1626
+#: arjuna-x/functions.php:1687
 msgid "The copyright notice will be displayed in the footer."
 msgstr "コピーライト告知はフッターに表示されます。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1630
+#: arjuna-x/functions.php:1691
 msgid "Enable JavaScript menus"
 msgstr "JavaScriptメニュー"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1632
+#: arjuna-x/functions.php:1693
 msgid "Enable JavaScript dropdown menus. This will improve usability of the menus. If JavaScript is disabled, CSS-based dropdown menus will be used instead."
 msgstr "JavaScriptによるドロップダウンメニューを有効にする。これによりメニューが便利になります。JavaScriptが無効な時は、CSSによるドロップダウンメニューが代わりに使われます。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1636
+#: arjuna-x/functions.php:1697
 msgid "Show IE6 Notice"
 msgstr "IE6の通知"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1638
+#: arjuna-x/functions.php:1699
 msgid "Display a notice to Internet Explorer 6 users to update their browsers."
 msgstr "Internet Explorer 6 のユーザーにアップデートを促す告知を表示する。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1642
+#: arjuna-x/functions.php:1703
 msgid "Custom CSS"
 msgstr "カスタムCSS"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1649
+#: arjuna-x/functions.php:1710
 #, php-format
 msgid "Arjuna needs write permissions to create a new file %s, which will contain the custom CSS."
 msgstr "カスタムCSSを保持するファイル %s をArjunaが作成する為に、書込みパーミッションが必要です。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1651
+#: arjuna-x/functions.php:1712
 msgid "Enable custom CSS rules"
 msgstr "カスタムCSSルールを有効にする"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1652
+#: arjuna-x/functions.php:1713
 msgid "If enabled, Arjuna will include your custom CSS rules with every page call. If you intend to make some minor changes to the theme, enabling this option ensures that you can safely upgrade Arjuna without losing your custom CSS. We recommend to use child themes for more serious customizations."
 msgstr "チェックを入れると、ArjunaはあなたのカスタムCSS規則を含むユーザースタイルシートを生成します。ユーザースタイルシートはすべてのページに適用されます。テーマにちょっとした変更をするつもりなら、カスタムCSSを失わずにArjunaを安全にアップグレードする為、このオプションを有効にしておくとよいでしょう。大規模なカスタマイズには子テーマの使用をお薦めします。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1668
+#: arjuna-x/functions.php:1729
 msgid "Save Changes"
 msgstr "変更を保存"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1780
+#: arjuna-x/functions.php:1840
 msgid "Written by"
 msgstr "書いた人"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1782
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1822
+#: arjuna-x/functions.php:1842
+#: arjuna-x/functions.php:1882
 #, php-format
 msgid "about %s ago"
 msgstr "約 %s 前"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1784
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1824
+#: arjuna-x/functions.php:1844
+#: arjuna-x/functions.php:1884
 msgid "on"
 msgstr "@"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1789
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1828
+#: arjuna-x/functions.php:1849
+#: arjuna-x/functions.php:1888
 msgid "Edit"
 msgstr "編集する"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1792
+#: arjuna-x/functions.php:1852
 msgid "Your comment is awaiting moderation."
 msgstr "あなたのコメントはモデレート待ちです。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1820
+#: arjuna-x/functions.php:1880
 msgid "Pinged by"
 msgstr "ピンバック元"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1831
+#: arjuna-x/functions.php:1891
 msgid "Your trackback is awaiting moderation."
 msgstr "あなたのトラックバックはモデレート待ちです。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1862
+#: arjuna-x/functions.php:1922
 msgid "1 year"
 msgstr "1 年"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1862
+#: arjuna-x/functions.php:1922
 #, php-format
 msgid "%d years"
 msgstr "%d 年"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1866
+#: arjuna-x/functions.php:1926
 msgid "1 month"
 msgstr "1 ヵ月"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1866
+#: arjuna-x/functions.php:1926
 #, php-format
 msgid "%d months"
 msgstr "%d ヵ月"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1870
+#: arjuna-x/functions.php:1930
 msgid "1 week"
 msgstr "1 週間"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1870
+#: arjuna-x/functions.php:1930
 #, php-format
 msgid "%d weeks"
 msgstr "%d 週間"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1874
+#: arjuna-x/functions.php:1934
 msgid "1 day"
 msgstr "1 日"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1874
+#: arjuna-x/functions.php:1934
 #, php-format
 msgid "%d days"
 msgstr "%d 日"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1878
+#: arjuna-x/functions.php:1938
 msgid "1 hour"
 msgstr "1 時間"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1878
+#: arjuna-x/functions.php:1938
 #, php-format
 msgid "%d hours"
 msgstr "%d 時間"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1882
+#: arjuna-x/functions.php:1942
 msgid "1 minute"
 msgstr "1 分"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1882
+#: arjuna-x/functions.php:1942
 #, php-format
 msgid "%d minutes"
 msgstr "%d 分"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1885
+#: arjuna-x/functions.php:1945
 msgid "1 second"
 msgstr "1 秒"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1885
+#: arjuna-x/functions.php:1945
 #, php-format
 msgid "%d seconds"
 msgstr "%d 秒"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:1967
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:2041
+#: arjuna-x/functions.php:2027
+#: arjuna-x/functions.php:2101
 #, php-format
 msgid "Page %s of %s"
 msgstr "ページ %s / %s"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:2009
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:2012
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:2054
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:2057
+#: arjuna-x/functions.php:2069
+#: arjuna-x/functions.php:2072
+#: arjuna-x/functions.php:2114
+#: arjuna-x/functions.php:2117
 #, php-format
 msgid "Page %s"
 msgstr "ページ %s"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:2093
+#: arjuna-x/functions.php:2153
 msgid "Comment Pages:"
 msgstr "コメントページ:"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:2094
+#: arjuna-x/functions.php:2154
 msgid "Previous"
 msgstr "前へ"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:2094
+#: arjuna-x/functions.php:2154
 msgid "Next"
 msgstr "次へ"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:2433
+#: arjuna-x/functions.php:2498
 msgid "Please go to Appearance > Arjuna Options to configure your Arjuna twitter widget."
 msgstr "&quot;外観 &gt; Arjunaの設定&quot; を開いてtwitterウィジェットを設定して下さい。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:2439
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:2448
+#: arjuna-x/functions.php:2505
+#: arjuna-x/functions.php:2514
 msgid "Arjuna Twitter Profile Widget"
 msgstr ""
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/functions.php:2443
+#: arjuna-x/functions.php:2509
 msgid "Display Twitter Goodies Profile Widget"
 msgstr ""
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/header.php:18
+#: arjuna-x/functions.php:2528
+msgid "Home"
+msgstr "ホーム"
+
+#: arjuna-x/header.php:19
 msgid "Skip to posts"
 msgstr "投稿へジャンプ"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/page.php:11
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/page_fullwidth.php:15
+#: arjuna-x/page.php:11
+#: arjuna-x/page_fullwidth.php:15
 msgid "Permalink to"
 msgstr "パーマリンク"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/page.php:20
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/page_fullwidth.php:24
+#: arjuna-x/page.php:20
+#: arjuna-x/page_fullwidth.php:24
 msgid "Pages:"
 msgstr "ページ:"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/page.php:20
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/page_fullwidth.php:24
+#: arjuna-x/page.php:20
+#: arjuna-x/page_fullwidth.php:24
 msgid "Page %"
 msgstr "ページ %"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/page.php:32
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/page_fullwidth.php:37
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/single.php:36
+#: arjuna-x/page.php:32
+#: arjuna-x/page_fullwidth.php:37
+#: arjuna-x/single.php:36
 msgid "There is nothing here."
 msgstr "何もありません。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/search.php:8
+#: arjuna-x/search.php:8
 #, php-format
 msgid "Search Results on <em>%s</em>"
 msgstr "<em>%s</em> での検索結果"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/search.php:32
+#: arjuna-x/search.php:32
 msgid "Your search returned no results."
 msgstr "見つかりませんでした。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/sidebar.php:12
+#: arjuna-x/sidebar.php:12
 msgid "Recent Posts"
 msgstr "最近の記事"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/sidebar.php:19
+#: arjuna-x/sidebar.php:19
 msgid "Browse by Tags"
 msgstr "タグでブラウズ"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/sidebar.php:44
+#: arjuna-x/sidebar.php:44
 msgid "Meta"
 msgstr "メタ"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/single.php:18
+#: arjuna-x/single.php:18
 msgid "Previous Page"
 msgstr "前の記事"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/single.php:18
+#: arjuna-x/single.php:18
 msgid "Next Page"
 msgstr "次の記事"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/comments/reply-form-advanced.php:9
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/comments/reply-form-basic.php:14
+#: arjuna-x/templates/comments/reply-form-advanced.php:9
+#: arjuna-x/templates/comments/reply-form-basic.php:14
 msgid "Leave a Comment"
 msgstr "コメントする"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/comments/reply-form-advanced.php:9
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/comments/reply-form-basic.php:15
+#: arjuna-x/templates/comments/reply-form-advanced.php:9
+#: arjuna-x/templates/comments/reply-form-basic.php:15
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr "%s へ返信する"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/comments/reply-form-advanced.php:11
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/comments/reply-form-basic.php:16
+#: arjuna-x/templates/comments/reply-form-advanced.php:11
+#: arjuna-x/templates/comments/reply-form-basic.php:16
 msgid "Cancel Reply"
 msgstr "返信をキャンセル"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/comments/reply-form-advanced.php:15
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/comments/reply-form-basic.php:18
+#: arjuna-x/templates/comments/reply-form-advanced.php:15
+#: arjuna-x/templates/comments/reply-form-basic.php:18
 #, php-format
 msgid "You must be %slogged in%s to post a comment."
 msgstr "コメントするには %sログイン%s して下さい。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/comments/reply-form-advanced.php:20
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/comments/reply-form-advanced.php:31
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/comments/reply-form-basic.php:3
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/comments/reply-form-basic.php:10
+#: arjuna-x/templates/comments/reply-form-advanced.php:20
+#: arjuna-x/templates/comments/reply-form-advanced.php:31
+#: arjuna-x/templates/comments/reply-form-basic.php:3
+#: arjuna-x/templates/comments/reply-form-basic.php:10
 msgid "Your name"
 msgstr "あなたの名前"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/comments/reply-form-advanced.php:21
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/comments/reply-form-advanced.php:32
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/comments/reply-form-basic.php:4
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/comments/reply-form-basic.php:11
+#: arjuna-x/templates/comments/reply-form-advanced.php:21
+#: arjuna-x/templates/comments/reply-form-advanced.php:32
+#: arjuna-x/templates/comments/reply-form-basic.php:4
+#: arjuna-x/templates/comments/reply-form-basic.php:11
 msgid "Your email"
 msgstr "メールアドレス"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/comments/reply-form-advanced.php:22
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/comments/reply-form-advanced.php:33
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/comments/reply-form-basic.php:5
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/comments/reply-form-basic.php:12
+#: arjuna-x/templates/comments/reply-form-advanced.php:22
+#: arjuna-x/templates/comments/reply-form-advanced.php:33
+#: arjuna-x/templates/comments/reply-form-basic.php:5
+#: arjuna-x/templates/comments/reply-form-basic.php:12
 msgid "Your website"
 msgstr "ウェブサイトURL"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/comments/reply-form-advanced.php:23
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/comments/reply-form-advanced.php:43
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/comments/reply-form-basic.php:6
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/comments/reply-form-basic.php:17
+#: arjuna-x/templates/comments/reply-form-advanced.php:23
+#: arjuna-x/templates/comments/reply-form-advanced.php:43
+#: arjuna-x/templates/comments/reply-form-basic.php:6
+#: arjuna-x/templates/comments/reply-form-basic.php:17
 msgid "Your comment"
 msgstr "コメント"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/comments/reply-form-advanced.php:26
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/comments/reply-form-basic.php:19
+#: arjuna-x/templates/comments/reply-form-advanced.php:26
+#: arjuna-x/templates/comments/reply-form-basic.php:19
 #, php-format
 msgid "Logged in as %s."
 msgstr "%s でログイン中。"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/comments/reply-form-advanced.php:26
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/comments/reply-form-basic.php:19
+#: arjuna-x/templates/comments/reply-form-advanced.php:26
+#: arjuna-x/templates/comments/reply-form-basic.php:19
 msgid "Log out of this account"
 msgstr "アカウントからログアウト"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/comments/reply-form-advanced.php:26
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/comments/reply-form-basic.php:19
+#: arjuna-x/templates/comments/reply-form-advanced.php:26
+#: arjuna-x/templates/comments/reply-form-basic.php:19
 msgid "Logout"
 msgstr "ログアウト"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/comments/reply-form-advanced.php:45
+#: arjuna-x/templates/comments/reply-form-advanced.php:45
 msgid "Subscribe to comments"
 msgstr "コメントを購読する"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/comments/reply-form-advanced.php:46
+#: arjuna-x/templates/comments/reply-form-advanced.php:46
 msgid "Leave comment"
 msgstr "コメントする"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/core/head-title-tag.php:5
+#: arjuna-x/templates/core/head-title-tag.php:5
 msgid "Search Results:"
 msgstr "検索結果:"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/core/pagination.php:4
+#: arjuna-x/templates/core/pagination.php:4
 msgid "Prev"
 msgstr "前へ"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/core/pagination.php:15
+#: arjuna-x/templates/core/pagination.php:15
 msgid "Newer Entries"
 msgstr "次の記事"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/core/pagination.php:16
+#: arjuna-x/templates/core/pagination.php:16
 msgid "Older Entries"
 msgstr "前の記事"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/header/menu-2.php:19
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/header/menu-2.php:26
-msgid "Home"
-msgstr "ホーム"
-
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/header/search.php:5
+#: arjuna-x/templates/header/search.php:9
 msgid "Search here..."
 msgstr "ここから検索..."
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/header/search.php:6
+#: arjuna-x/templates/header/search.php:10
 msgid "Find"
 msgstr "検索"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/post/post-footer.php:10
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/post/single-post-footer.php:7
+#: arjuna-x/templates/post/post-footer.php:10
+#: arjuna-x/templates/post/single-post-footer.php:7
 msgid "<i>none</i>"
 msgstr "<i>なし</i>"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/post/post-footer.php:15
+#: arjuna-x/templates/post/post-footer.php:15
 msgid "Read more"
 msgstr "もっと読む"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/post/post-header.php:8
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/post/single-post-header.php:8
+#: arjuna-x/templates/post/post-header.php:8
+#: arjuna-x/templates/post/single-post-header.php:8
 msgid " at "
 msgstr " @ "
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/post/post-header.php:17
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/post/single-post-header.php:17
+#: arjuna-x/templates/post/post-header.php:17
+#: arjuna-x/templates/post/single-post-header.php:17
 msgid "Pass required"
 msgstr "認証が必要です"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/post/post-header.php:19
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/post/single-post-header.php:19
+#: arjuna-x/templates/post/post-header.php:19
+#: arjuna-x/templates/post/single-post-header.php:19
 msgid "Comments off"
 msgstr "コメントはできません"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/post/post-header.php:21
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/post/single-post-header.php:21
+#: arjuna-x/templates/post/post-header.php:21
+#: arjuna-x/templates/post/single-post-header.php:21
 msgid "No comments"
 msgstr "コメントなし"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/post/post-header.php:21
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/post/single-post-header.php:21
+#: arjuna-x/templates/post/post-header.php:21
+#: arjuna-x/templates/post/single-post-header.php:21
 msgid "1 comment"
 msgstr "1 件のコメント"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/post/post-header.php:21
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/post/single-post-header.php:21
+#: arjuna-x/templates/post/post-header.php:21
+#: arjuna-x/templates/post/single-post-header.php:21
 #, php-format
 msgid "% comments"
 msgstr "% 件のコメント"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/post/single-page-footer.php:2
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/post/single-post-footer.php:11
+#: arjuna-x/templates/post/single-page-footer.php:2
+#: arjuna-x/templates/post/single-post-footer.php:11
 msgid "Edit in Admin"
 msgstr "管理画面で編集"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/post/single-post-bottom-links.php:2
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/post/single-post-top-links.php:2
+#: arjuna-x/templates/post/single-post-bottom-links.php:2
+#: arjuna-x/templates/post/single-post-top-links.php:2
 msgid "Previous Post"
 msgstr "前の記事"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/post/single-post-bottom-links.php:3
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/post/single-post-top-links.php:3
+#: arjuna-x/templates/post/single-post-bottom-links.php:3
+#: arjuna-x/templates/post/single-post-top-links.php:3
 msgid "Next Post"
 msgstr "次の記事"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/sidebar/icons.php:11
+#: arjuna-x/templates/sidebar/icons.php:11
 #, php-format
 msgid "Posts in %s"
 msgstr "%s の投稿"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/sidebar/icons.php:15
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/sidebar/icons.php:21
+#: arjuna-x/templates/sidebar/icons.php:15
+#: arjuna-x/templates/sidebar/icons.php:21
 #, php-format
 msgid "Posts by %s"
 msgstr "%s による投稿"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/sidebar/icons.php:20
+#: arjuna-x/templates/sidebar/icons.php:20
 msgid "Post Comments"
 msgstr "投稿へのコメント"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/sidebar/icons.php:25
+#: arjuna-x/templates/sidebar/icons.php:25
 msgid "Search Results"
 msgstr "検索結果"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/sidebar/icons.php:29
+#: arjuna-x/templates/sidebar/icons.php:29
 msgid "Latest Posts"
 msgstr "最近の投稿"
 
-#: /Users/benjamin/Documents/æ®ãã¦ãããã¡ã¤ã«/WordPress/ãã¼ãè²ã/Arjuna/1.6.5/templates/sidebar/icons.php:30
+#: arjuna-x/templates/sidebar/icons.php:30
 msgid "Latest Comments"
 msgstr "最近のコメント"
 
