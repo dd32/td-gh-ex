@@ -4,7 +4,7 @@
 	Section: Slider
 	Authors: Tyler Cunningham 
 	Description: Creates iFeature slider.
-	Version: 1.0.3	
+	Version: 1.1.0	
 	Portions of this code written by Ivan Lazarevic  (email : devet.sest@gmail.com) Copyright 2010    
 */
 
@@ -34,8 +34,8 @@
 	    	
 	    		the_post(); 
 	    		
-	    		$image 		= get_post_meta($post->ID, $imgField , true);
-	    		$text 		= get_post_meta($post->ID, $txtField , true);
+	    		$image 		= get_post_meta($post->ID, 'slider_post_image' , true);
+	    		$text 		= get_post_meta($post->ID, 'slider_text' , true);
 
 	    		$permalink 	= get_permalink();
 	    		$thetitle	= get_the_title(); 

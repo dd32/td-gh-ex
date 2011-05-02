@@ -3,7 +3,7 @@
 
 	Section: Credit
 	Author: CyberChimps
-	Description: Please support the developers and keep the link back to CyberChimps.
+	Description: It is completely optional, but if you like the theme we would appreciate it if you keep the credit link at the bottom.
 	Version: 0.1
 	
 */

@@ -207,6 +207,12 @@ array( "name" => "Hide iFeature Slider",
     "id" => $shortname."_hide_slider",  
     "type" => "checkbox",  
     "std" => "false"),
+    
+array( "name" => "Show posts from category:",  
+    "desc" => "(Default is all - WARNING: do not enter a category that does not exist or slider will not display)",  
+    "id" => $shortname."_slider_category",  
+    "type" => "text",  
+    "std" => ""),
 
 array( "name" => "Number of featured posts:",  
     "desc" => "(Default is 5)",  
@@ -238,11 +244,7 @@ array( "name" => "Text custom field:",
     "type" => "text",  
     "std" => ""),
     
-array( "name" => "Show posts from category:",  
-    "desc" => "(Default is all - WARNING: do not enter a category that does not exist or slider will not display)",  
-    "id" => $shortname."_slider_category",  
-    "type" => "text",  
-    "std" => ""),
+
   
 
 array( "type" => "close"),   
@@ -300,7 +302,7 @@ function theme_options_do_page() {
 
 
  
-<p>Want more features? Click below to upgrade to iFeature Pro, which includes additional sections, color options, fonts, theme .PSD files and much much more.</p>
+<p>Want more features? Click below to upgrade to iFeature Pro, which includes additional sections, color options, fonts, custom iFeature slides, and much more.</p>
 <a href="http://cyberchimps.com/ifeaturepro"><img src="<?php echo get_template_directory_uri(); ?>/images/getifeaturepro.png?>" alt="Get iFeature Pro"></a> 
 <p>Want to stick with iFeature, but want to support the developers? Please consider making a donation.</p>
 <a href="http://cyberchimps.com/donate"><img src="<?php echo get_template_directory_uri(); ?>/images/paypal.gif?>" alt="Donate"></a> 

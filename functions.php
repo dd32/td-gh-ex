@@ -18,7 +18,7 @@ set_post_thumbnail_size( 100, 100, true );
 
 	
 // This theme styles the visual editor with editor-style.css to match the theme style.
-	add_editor_style();
+add_editor_style();
 	
 // Load jQuery
 	if ( !is_admin() ) {
@@ -110,4 +110,5 @@ add_action( 'wp_head', 'ifeature_add_scripts',0);
 	//iFeature theme options file
 	
 require_once ( get_template_directory() . '/library/options/options.php' );
+require_once ( get_template_directory() . '/library/options/meta-box.php' );
 ?>
