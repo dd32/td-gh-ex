@@ -1,25 +1,19 @@
 <?php 
-if ( ! isset( $content_width ) )
-	$content_width = 700;
 
 
-add_action('wp_set_comment_status', 'toto', 10, 2 );
-function toto($comment_ID, $status) {
-   //stuff
-}
+$content_width = 400;  
+
     
 add_theme_support('automatic-feed-links');
 add_theme_support('post-thumbnails');
-
-	
-
 
 // remove menu container div
 function my_wp_nav_menu_args( $args = '' )
 {
     $args['container'] = false;
     return $args;
-} // function
+} 
+// function
 add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );
 
 
@@ -68,9 +62,10 @@ add_filter('gallery_style',
 	);
     
     
-    /*
- * Fix the extra 10 pixel width issue for image captions
- */
+    
+/*
+* Fix the extra 10 pixel width issue for image captions
+*/
 add_shortcode('wp_caption', 'fixed_img_caption_shortcode');
 add_shortcode('caption', 'fixed_img_caption_shortcode');
 function fixed_img_caption_shortcode($attr, $content = null) {

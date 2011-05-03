@@ -10,10 +10,10 @@ get_header();
 <?php the_date('','<h2 class="date">','</h2>'); ?>
 <h3 class="storytitle" id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(''); ?></a></h3>
 <section class="meta">
-<?php printf(_e("Categories:")); ?> <?php the_category(', ') ?>
-<br />
-<?php the_tags(__('Tags:&nbsp;'), ' , ' , ''); ?>&nbsp;
 <?php edit_post_link(__('Edit This')); ?>
+<?php printf(_e("Categories:")); ?> <?php the_category(', ') ?><br />
+<?php the_tags(__('Tags:&nbsp;'), ' , ' , ''); ?><br />
+Permalink: <a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?> - <?php echo the_time("l - d F Y"); ?></a>
 </section>
 
 <?php the_content(__('(more...)')); ?>
@@ -26,6 +26,12 @@ get_header();
 </article>
 
 <?php comments_template(); ?>
+
+</section>
+
+<section id="pagenav">
+
+<?php previous_post_link('%link'); ?> - <?php next_post_link('%link'); ?>
 
 </section>
 

@@ -1,10 +1,10 @@
 /*
 Theme Name: Northern-Web-Coders
-Theme URI: http://www.northern-web-coders.de
+Theme URI: http://www.northern-web-coders.de/blog
 Description: Northern-Web-Coders - HTML5 Theme
-Version: 2.5
+Version: 2.5.1
 Author: Kai Ackermann | jaman
-Author URI: http://www.northern-web-coders.de/blog
+Author URI: http://www.northern-web-coders.de
 Tags: white, two-columns, flexible-width
 
 License: GNU General Public License v2.0
@@ -17,6 +17,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
     padding: 0;
 }
 
+html
+{
+    
+}
 header, nav, section, article, footer
 {
     display: block;
@@ -28,14 +32,13 @@ body
     background: #fff;
     margin: 20px auto;
     width: 80%;
-    min-width: 700px;  
+    min-width: 900px;  
 }
 
 /*Navigation*/
 nav
 {
-    width: 100%;
-    
+    width: 100%; 
     margin-bottom: 20px;
     padding-bottom: 10px;
     float: left;
@@ -140,6 +143,12 @@ section.meta a
     color: #FF9F00
 }
 
+section.meta a.post-edit-link
+{
+    font-weight: bold;
+    float:  right;
+}
+
 
 
 
@@ -147,9 +156,9 @@ section.meta a
 article
 {
     font-size: 12px;
-    margin: 10px 10px 40px 10px;
+    margin: 10px 10px 10px 10px;
     padding: 10px;
-    
+    overflow: auto;
 }
 
 article a
@@ -173,7 +182,6 @@ section.meta a
 {
     color: #FF9F00
 }
-
 
 article img {
    padding: 3px;
@@ -246,6 +254,12 @@ article pre, div.comment-body pre, article code, div.comment-body code
     color: #FF9F00
 }
 
+article pre:hover, div.comment-body pre:hover, article code:hover, div.comment-body code:hover
+{
+    background: #afafaf;
+color: #fff
+}
+
 article ul, article ol, article dl,
 div.comment-body ul, div.comment-body ol, div.comment-body dl
 {
@@ -306,8 +320,8 @@ article object
 }
 
 article .wp-caption {
-display: block;
-   padding: 20px;
+   display: block;
+   padding: 20px 30px 20px 20px;
    margin: 10px;
    background: #F0F0F0;
    border: 1px solid #BFBFBF;
@@ -442,17 +456,6 @@ section.comment span
     clear: both;
 }
 
-.page section.comment span
-{
-    display: none;
-    clear: both;
-}
-
-.page section.comment span a
-{
-    display: block;
-    clear: both;
-}
 
 section.commentbox div.commentmetadata
 {
@@ -472,7 +475,7 @@ section.commentbox div.comment-author cite.fn
 section.commentbox a.comment-reply-link
 {
     display: block;
-    margin: 10px 0;
+    margin: 10px 0 0 0;
     clear: both;
 }
 
@@ -536,7 +539,8 @@ p.form-allowed-tags code
 section#pagenav
 {
   clear: both;
-  margin-bottom: 30px
+  margin-bottom: 30px;
+  color: #FF9F00;
 }
 
 section#pagenav a
@@ -545,13 +549,11 @@ section#pagenav a
   font-weight: bold;
   text-decoration: none;
   color: #FF9F00;
-  border-bottom: 1px solid #FF9F00
 }
 
 section#pagenav a:hover
 {
   color: #2F2F2F;
-  border-bottom: 1px solid
 }
 
 
@@ -562,7 +564,7 @@ section.footer
     border-top: 1px solid #DFDFDF;
     clear: both;
     font-size: 13px;
-    padding: 10px 17px 20px 17px;
+    padding: 10px 0 20px 0;
     width: 100%;
 }
 
@@ -592,7 +594,7 @@ section.footerbox
 section.footerbox ul
 {
     padding: 0 10px ;
-    margin: 0 10px;
+    margin: 0 10px 10px 0;
     list-style: none
 }
 

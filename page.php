@@ -12,11 +12,6 @@ get_header();
 
 <?php the_content(__('(more...)')); ?>
 
-<section class="comment">
-<?php wp_link_pages(); ?>
-<?php comments_popup_link(__('No Comments'), __('1 Comment'), __('% Comments'), '', __('Comments are closed.') ); ?>
-</section>
-
 </article> 
  
 <?php comments_template(); ?>

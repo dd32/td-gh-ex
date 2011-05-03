@@ -1,4 +1,4 @@
-<section class="footerbox"><?php get_template_part( 'sidebar', '1' ); ?></section>
+<section class="footerbox"><?php get_sidebar(); ?></section>
 <section class="footerbox"><?php get_template_part( 'sidebar', '2' ); ?></section>
 <section class="footerbox"><?php get_template_part( 'sidebar', '3' ); ?></section>
 <section class="footerbox"><?php get_template_part( 'sidebar', '4' ); ?></section>

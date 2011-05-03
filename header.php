@@ -3,7 +3,6 @@
 <head>
 <title><?php bloginfo('name'); ?></title>
 <meta charset="<?php bloginfo('charset'); ?>" />
-
 <style type="text/css" media="screen">
 @import url( <?php bloginfo('stylesheet_url'); ?> );
 </style>
