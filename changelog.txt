@@ -9,6 +9,9 @@ iFeature Changelog\
 \
 ****************************\
 \
+Version 1.1.1 (5-4-11)\
+-CSS fixes (iMenu).\
+\
 Version 1.1 (5-2-11)\
 -CSS fixes (footer, comments).\
 -Credit.php text revised.\

@@ -1,10 +1,10 @@
 /*   
 Theme Name: iFeature
 Theme URI: http://cyberchimps.com/ifeature-free/
-Description: iFeature: A Free WordPress Theme designed by CyberChimps.com in Long Beach, California. iFeature offers customizable theme options, an aesthetically pleasing design, the iFeature slider, dynamic header for custom logo, social icons, social sharing, and contact section, widgetized sidebar and footer, typography including Google Fonts, and multiple template choices. (<a href="http://cyberchimps.com/ifeaturepro" alt="Upgrade to iFeature Pro">Upgrade to iFeature Pro</a>)
+Description: iFeature: A Free WordPress Theme designed by CyberChimps.com in Long Beach, California. iFeature offers customizable theme options, an aesthetically pleasing design, the iFeature slider, dynamic header for custom logo, social icons, social sharing, contact section, widgetized sidebar and footer, typography including Google Fonts, and multiple template choices. Twitter @cyberchimps. (<a href="http://cyberchimps.com/ifeaturepro" alt="Upgrade to iFeature Pro">Upgrade to iFeature Pro</a>)
 Author: CyberChimps
 Author URI: http://cyberchimps.com
-Version: 1.1
+Version: 1.1.1
 Tags: white, light, silver, two-columns, fixed-width, custom-header, custom-menu, threaded-comments, sticky-post
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -127,6 +127,33 @@ code, tt { }
 }
 
 .icons a:hover img { opacity:1;filter:alpha(opacity=100); }
+ 
+/* Nav */
+
+#navbackground {
+		background: url(./images/Grey.png) no-repeat left top;
+		width: 980px;
+		height: 38px;
+		display: block;
+}
+
+#homebutton {
+	float: left; 
+	border-right: 1px solid #444;
+	width: 80px;
+	border-right: 1px solid #444;
+	height: 35px;
+
+}
+
+#homebutton a:hover img { opacity:.6; }
+
+#sfwrapper {
+    float:              left;
+    width:              70%;
+    background:         transparent;
+    font-size:          1em;
+}
    
 /* Search Form */
 
@@ -137,7 +164,7 @@ input[type=text] {
 /* Search Bar */
 
 #searchbar  {
-	width: 220px;
+	width: 200px;
 	float: right;
 	padding-top: 4px;
 }
@@ -146,7 +173,7 @@ input[type=text] {
 		width: 200px;
 		font-size: 10px;
 		padding:0;
-		margin:3px 5px 4px 5px ;
+		margin:3px 5px 4px 0px;
 		position: relative;
 		height: 25px;	
 	}
@@ -523,7 +550,6 @@ a { text-decoration: none; color: black; }
 } /* END print media */
 
 /* Superfish Nav */
-/* Superfish Nav */
 
 /* The container wrapping .sf-menu */
 /*** ESSENTIAL STYLES ***/
@@ -598,36 +624,6 @@ ul.sf-menu li li li.sfHover ul {
 }
  
 /*** Custom Styles ***/
-
-/* Nav */
-
-#navbackground {
-		background: url(./images/Grey.png) no-repeat left top;
-		width: 978px;
-		height: 36px;
-		display: block;
-}
-
-#homebutton {
-	float: left; 
-	border-right: 1px solid #444;
-	width: 80px;
-	border-right: 1px solid #444;
-	height: 36px;
-
-}
-
-#homebutton a:hover img { opacity:.6; }
-
-#sfwrapper {
-    float:              left;
-    width:              68%;
-    background:         transparent;
-    font-size:          1em;
-}
-
-
-
 
 /* The container wrapping .sf-menu */
 
