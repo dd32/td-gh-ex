@@ -1213,12 +1213,11 @@ var $j = jQuery.noConflict();
 	});
 </script>
 
-<?php } } ?>
-
-<?php } ?>
-
-<?php function absolum_custom_css() {
- 
+<?php 
+} 
+} 
+} 
+function absolum_custom_css() {
 require_once( TEMPLATEPATH . '/custom-css.php' ); 
  $options = get_option('absolum'); 
  $css_content = $options['abs_css_content']; 
@@ -1226,9 +1225,6 @@ require_once( TEMPLATEPATH . '/custom-css.php' );
  if (!empty($css_content)) {
  echo '<style type="text/css">'.stripslashes($css_content).'</style>';
  }  
-} 
-
-add_action('wp_head', 'absolum_custom_css')
-
-
-?> 
+}  
+add_action('wp_head', 'absolum_custom_css'); 
+?>

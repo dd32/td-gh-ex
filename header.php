@@ -158,9 +158,9 @@ echo absolum_truncate($title, 40, '...');
  
 </div>  
 
-<span>
+<div>
 <?php the_excerpt(); ?>  
-</span> 
+</div> 
 
 </li>   
  
