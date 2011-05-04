@@ -54,12 +54,7 @@ register_sidebar(array('name'=>'Footer-Sidebar 4',
   
 
 
-add_filter('gallery_style',
-	create_function(
-		'$css',
-		'return preg_replace("#<style type=\'text/css\'>(.*?)</style>#s", "", $css);'
-		)
-	);
+add_filter( 'use_default_gallery_style', '__return_false' );
     
     
     

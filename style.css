@@ -1,10 +1,10 @@
 /*
 Theme Name: Northern-Web-Coders
-Theme URI: http://www.northern-web-coders.de/blog
+Theme URI: http://www.northern-web-coders.de
 Description: Northern-Web-Coders - HTML5 Theme
-Version: 2.5.1
+Version: 2.5.2
 Author: Kai Ackermann | jaman
-Author URI: http://www.northern-web-coders.de
+Author URI: http://www.design-coding.de/
 Tags: white, two-columns, flexible-width
 
 License: GNU General Public License v2.0
@@ -217,9 +217,15 @@ article img.aligncenter {
 
 article h2.date
 {
-    font-size: 15px;
     clear: both;
-    margin: 0
+    margin: 0;
+}
+
+article h2.date a
+{
+    font-size: 17px;
+    color: #000;
+    text-decoration: none;
 }
 
 article h3.storytitle
