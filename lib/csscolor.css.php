@@ -27,7 +27,7 @@
  */
 raindrops_register_styles("dark");
 
-function raindrops_dark(){
+function raindrops_indv_css_dark(){
 
 $style =<<<DOC
 body{
@@ -487,7 +487,7 @@ return $style.$css3;
  */
 raindrops_register_styles("w3standard");
 
-function raindrops_w3standard(){
+function raindrops_indv_css_w3standard(){
 
 $style =<<<DOC
 
@@ -715,7 +715,7 @@ return $style;
  */
 raindrops_register_styles("light");
 
-function raindrops_light(){
+function raindrops_indv_css_light(){
 
 $style =<<<DOC
 
@@ -1245,7 +1245,7 @@ return $style.$css3;
  */
 raindrops_register_styles("minimal");
 
-function raindrops_minimal(){
+function raindrops_indv_css_minimal(){
 
 $style =<<<DOC
 
@@ -1360,7 +1360,8 @@ return $style;
 <?php
 
 	if(!defined('ABSPATH')){exit;}
-
+	$embed_common_style = get_current_theme();
+	raindrops_register_styles($embed_common_style);
     $images_path            = get_stylesheet_directory_uri().'/images/';
     $count                  = raindrops_warehouse('raindrops_base_color');
     $style_type             = raindrops_warehouse('raindrops_style_type');
@@ -1500,12 +1501,20 @@ function raindrops_gradient_css($color = null,$num = 0,$diff = 1,$order = 'asc')
 			$num2 = (int)$num + $diff;
 
             $custom_light_bg1 = raindrops_colors($num2, 'background',$color);
-			
+			if(isset($base->fg[$num])){			
 			$fg         = $base->fg[$num];
+			}else{
+			$fg         = "";
+			}
+			
         }elseif($order == "desc"){
             $custom_dark_bg1 = $base->bg[$num + $diff];
             $custom_light_bg1 = $base->bg[$num];
+			if(isset($base->fg[$num])){			
 			$fg         = $base->fg[$num];
+			}else{
+			$fg         = "";
+			}
         }
 		$g = 'color:#'.$fg.';';
         $g .= 'background: -webkit-gradient(linear, left top, left bottom, from('.$custom_dark_bg1.'), to('.$custom_light_bg1.'));';
@@ -1821,7 +1830,7 @@ CSS;
 		}
 		
 		
-		$function_name = 'raindrops_'.$name;
+		$function_name = 'raindrops_indv_css_'.$name;
 		
 		if(function_exists($function_name)){
 			$content = $function_name();
