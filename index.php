@@ -9,7 +9,7 @@ get_header();
 <?php if (have_posts()) : while(have_posts()) : $i++; if(($i % 2) == 0) : $wp_query->next_post(); else : the_post(); ?>
 
 <article <?php post_class() ?> id="post-<?php the_ID(); ?>">
-<h2 class="date"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permalink: <?php the_title(); ?>"><?php the_date(); ?></a></h2>
+<?php the_date('','<h2 class="date">','</h2>'); ?>
 <h3 class="storytitle"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
 <?php
 if ( function_exists('has_post_thumbnail') && has_post_thumbnail() ) {
@@ -18,7 +18,10 @@ the_post_thumbnail();
 ?>
 <section class="meta">
 <?php edit_post_link(__('Edit This')); ?>
-<?php printf(_e("Categories:")); ?> <?php the_category(', ') ?> <?php the_tags(__('Tags:&nbsp;'), ' , ' , ''); ?>
+<ul>
+<li><?php printf(_e("Publish on:")); ?> <a href="<?php the_permalink() ?>" rel="bookmark"><?php echo the_time("l - d F Y"); ?></a></li>
+<li><?php printf(_e("Categories:")); ?> <?php the_category(', ') ?> <?php the_tags(__('Tags:&nbsp;'), ' , ' , ''); ?></li> 
+</ul>
 </section>
 <?php the_content(__('(more...)')); ?>
 <section class="comment">
@@ -40,7 +43,7 @@ the_post_thumbnail();
 <section class="column-right">
 <?php if (have_posts()) : while(have_posts()) : $i++; if(($i % 2) !== 0) : $wp_query->next_post(); else : the_post(); ?>
 <article <?php post_class() ?> id="post-<?php the_ID(); ?>">
-<h2 class="date"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permalink: <?php the_title(); ?>"><?php the_date(); ?></a></h2>
+<?php the_date('','<h2 class="date">','</h2>'); ?>
 <h3 class="storytitle"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
 <?php
 if ( function_exists('has_post_thumbnail') && has_post_thumbnail() ) {
@@ -49,7 +52,10 @@ the_post_thumbnail();
 ?>
 <section class="meta">
 <?php edit_post_link(__('Edit This')); ?>
-<?php printf(_e("Categories:")); ?> <?php the_category(', ') ?> <?php the_tags(__('Tags:&nbsp;'), ' , ' , ''); ?>
+<ul>
+<li><?php printf(_e("Publish on:")); ?> <a href="<?php the_permalink() ?>" rel="bookmark"><?php echo the_time("l - d F Y"); ?></a></li>
+<li><?php printf(_e("Categories:")); ?> <?php the_category(', ') ?> <?php the_tags(__('Tags:&nbsp;'), ' , ' , ''); ?></li> 
+</ul>
 </section>
 <?php the_content(__('(more...)')); ?>
 <section class="comment">

@@ -32,4 +32,4 @@ document.createElement("footer");
 <header><h1 id="header"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
 <em><?php bloginfo('description'); ?></em>
 </header> 
-<?php get_template_part( 'nav', '1' ); ?>
+<nav><?php wp_nav_menu( array( 'container' => '' ) ); ?></nav>

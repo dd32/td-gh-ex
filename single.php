@@ -11,9 +11,10 @@ get_header();
 <h3 class="storytitle" id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(''); ?></a></h3>
 <section class="meta">
 <?php edit_post_link(__('Edit This')); ?>
-<?php printf(_e("Categories:")); ?> <?php the_category(', ') ?><br />
-<?php the_tags(__('Tags:&nbsp;'), ' , ' , ''); ?><br />
-Permalink: <a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?> - <?php echo the_time("l - d F Y"); ?></a>
+<ul>
+<li><?php printf(_e("Publish on:")); ?> <a href="<?php the_permalink() ?>" rel="bookmark"><?php echo the_time("l - d F Y"); ?></a></li>
+<li><?php printf(_e("Categories:")); ?> <?php the_category(', ') ?> <?php the_tags(__('Tags:&nbsp;'), ' , ' , ''); ?></li> 
+</ul>
 </section>
 
 <?php the_content(__('(more...)')); ?>

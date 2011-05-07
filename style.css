@@ -1,12 +1,11 @@
 /*
 Theme Name: Northern-Web-Coders
-Theme URI: http://www.northern-web-coders.de
+Theme URI: http://www.northern-web-coders.de/blog/archiv/2011/05/07/northern-web-coders-2-5-3/
 Description: Northern-Web-Coders - HTML5 Theme
-Version: 2.5.2
+Version: 2.5.3
 Author: Kai Ackermann | jaman
-Author URI: http://www.design-coding.de/
+Author URI: http://www.design-coding.de
 Tags: white, two-columns, flexible-width
-
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -17,10 +16,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
     padding: 0;
 }
 
-html
-{
-    
-}
 header, nav, section, article, footer
 {
     display: block;
@@ -64,16 +59,6 @@ nav ul li a:hover, nav ul li.current-menu-item a, nav ul li.current-post-ancesto
     color: #FF9F00;
 }
 
-nav #searchform
-{
-    float: right;
-    margin-top: -20px;
-}
-
-nav #searchform label
-{
-    display: none
-}
 
 /*header, left, right, footer*/
 header
@@ -146,7 +131,6 @@ section.meta a
 section.meta a.post-edit-link
 {
     font-weight: bold;
-    float:  right;
 }
 
 
@@ -175,7 +159,20 @@ article.sticky
 section.meta
 {
     font-size: 11px;
-    margin-bottom: 10px;
+clear: both;
+}
+
+section.meta ul
+{
+    list-style: none;
+
+    margin: 0 0 15px 0;
+}
+
+section.meta ul li
+{
+
+    margin-right: 15px
 }
 
 section.meta a
@@ -335,6 +332,7 @@ article .wp-caption {
 
 article .wp-caption-text {
    font-size: 11px;
+text-align: center;
 }
 
 article .wp-caption a img {
@@ -592,7 +590,13 @@ section.footerbox
     margin-bottom: 20px;
 }
 
- section.footerbox a
+
+.footerbox #searchform label
+{
+    display: none
+}
+
+section.footerbox a
 {
      color: #495865;
 }

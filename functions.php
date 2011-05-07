@@ -1,28 +1,20 @@
 <?php 
 
 
-$content_width = 400;  
+$content_width =842;  
 
-    
 add_theme_support('automatic-feed-links');
 add_theme_support('post-thumbnails');
 
-// remove menu container div
+register_nav_menus();
+
 function my_wp_nav_menu_args( $args = '' )
 {
     $args['container'] = false;
     return $args;
 } 
-// function
 add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );
 
-
-register_sidebar(array('name'=>'Topmenu',
-'before_widget' => '',
-'after_widget' => '',
-'before_title' => '<h4>',
-'after_title' => '</h4>',
-));
 
 register_sidebar(array('name'=>'Footer-Sidebar 1',
 'before_widget' => '<li>',
