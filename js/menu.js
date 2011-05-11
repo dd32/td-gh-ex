@@ -1,13 +1,13 @@
 /**
  * @author Alexander Farkas
- * v. 1.22
+ * v. 1.21
  */
 
 
 (function($) {
 	if(!document.defaultView || !document.defaultView.getComputedStyle){ // IE6-IE8
-		var oldCurCSS = $.curCSS;
-		$.curCSS = function(elem, name, force){
+		var oldCurCSS = jQuery.curCSS;
+		jQuery.curCSS = function(elem, name, force){
 			if(name === 'background-position'){
 				name = 'backgroundPosition';
 			}
@@ -45,13 +45,16 @@
 	$.fx.step. backgroundPosition = function(fx) {
 		if (!fx.bgPosReady) {
 			var start = $.curCSS(fx.elem,'backgroundPosition');
+
 			if(!start){//FF2 no inline-style fallback
 				start = '0px 0px';
 			}
 
 			start = toArray(start);
+
 			fx.start = [start[0],start[2]];
-			var end = toArray(fx.end);
+
+			var end = toArray(fx.options.curAnim.backgroundPosition);
 			fx.end = [end[0],end[2]];
 
 			fx.unit = [end[1],end[3]];

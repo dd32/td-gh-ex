@@ -1,23 +1,7 @@
 <?php
 
 if ( is_admin() ) {
-require_once(dirname(__FILE__) . "/mantra-admin-functions.php");
-}
-
-add_action('wp_print_styles', 'mantra_style');
-
-function mantra_style() {
-
-	wp_register_style( 'mantras',get_template_directory_uri() . '/style.css' );
-	wp_enqueue_style( 'mantras');
-
-}
-
-
-
-
-
-
+require_once(dirname(__FILE__) . "/mantra-admin-functions.php");}
 /**
 
  *
@@ -96,11 +80,11 @@ function mantra_setup() {
 
 	// The height and width of your custom header. You can hook into the theme's own filters to change these values.
 	// Add a filter to mantra_header_image_width and mantra_header_image_height to change these values.
-	define( 'HEADER_IMAGE_WIDTH', apply_filters( 'mantra_header_image_width', 1100 ) );
+	define( 'HEADER_IMAGE_WIDTH', apply_filters( 'mantra_header_image_width', 900 ) );
 	define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'mantra_header_image_height', 200 ) );
 
 	// We'll be using post thumbnails for custom header images on posts and pages.
-	// We want them to be 1100 pixels wide by 200 pixels tall.
+	// We want them to be 900 pixels wide by 200 pixels tall.
 	// Larger images will be auto-cropped to fit, smaller ones will be ignored. See header.php.
 	set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );
 
@@ -117,12 +101,12 @@ function mantra_setup() {
 	register_default_headers( array(
 
 
-	/*	'mantra' => array(
+		'mantra' => array(
 			'url' => '%s/images/headers/mantra.png',
 			'thumbnail_url' => '%s/images/headers/mantra-thumbnail.png',
-			// translators: header image description 
+			/* translators: header image description */
 			'description' => __( 'mantra mantra', 'mantra' )
-		), */
+		),
 
 
 	) );
@@ -437,4 +421,3 @@ function mantra_posted_in() {
 	);
 }
 endif;
-

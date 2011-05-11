@@ -4,7 +4,7 @@ Theme URI: http://www.riotreactions.com/mantra
 Description: A clean and very web 2.0 theme with customizable layout, colors, fonts and graphics. From the admin panel you can change the header image, background image, sidebar position, content and sidebar dimensions, paragraph indent, text colors, fonts, post metas (like author, category or date), background colors and a whole lot more. With over 40 theme options, 7 widget areas, social media animated graphics, multiple pins and bullets you can easily make this theme suit all your needs.
 Author: Cryout Creations
 Author URI: http://www.cryoutcreations.com
-Version: 1.0.12
+Version: 1.0.2
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, red, blue, white, light, two-columns, right-sidebar, left-sidebar, theme-options, dark, flexible-width, custom-header, custom-menu, threaded-comments, sticky-post, translation-ready, microformats, rtl-language-support
@@ -76,18 +76,18 @@ DESCRIPTION: Two-column fixed layout with one sidebar right of content
 
 #container {
 	float: left;
-	margin: 0 -310px 0 0;
+	margin: 0 -360px 0 0;
 	width: 100%;
 }
 #content {
 	margin: 0 0px 0 20px;
-	width:790px;
+	width:1060px;
 }
 #primary,
 #secondary {
 	float: right;
 	overflow: hidden;
-	width:250px;
+	width:220px;
 	border-left:1px dashed #EAEAEA;
 	padding-left:12px;
 	margin-top:10px;
@@ -209,7 +209,7 @@ margin-top:20px;
 #footer-widget-area .widget-area {
 	float: left;
 	margin-right: 20px;
-	width: 22%;
+	width: 220px;
 }
 #footer-widget-area #fourth {
 	margin-right: 0;
@@ -485,7 +485,7 @@ background:url(images/mantra_menu_current.png) top left no-repeat !important;
 
 #access .menu-header li:hover,
 div.menu li:hover, #access a:hover {
-color:#0C85CD !important;
+color:#0C85CD;
 }
 
 #access ul ul {
@@ -514,7 +514,7 @@ color:#0C85CD !important;
 #access ul { }
 #access ul li { }
 #access ul li ul {
-      display: none; /* submenu width fix */ }
+      display: block; /* submenu width fix */ }
 
 #access ul ul li {  /* level 2 */
       border: 0;
@@ -586,7 +586,7 @@ color:#0C85CD !important;
 * html #access ul li.current-menu-item a,
 * html #access ul li.current-menu-parent a,
 * html #access ul li a:hover {
-	color: #5F5B5B ;
+	color: #5F5B5B;
 	background:url(images/mantra_menu_current.png) top right no-repeat;
 }
 
@@ -844,7 +844,6 @@ margin-left:30px;
 	font-weight: bold;
 	margin: 0 0 22px 0;
 	word-spacing: 0.5em;
-	clear:both;
 
 }
 .page-link a {
@@ -1277,8 +1276,7 @@ a.comment-edit-link:hover {
 
 .nopassword,
 .nocomments {
-/*	display: block;*/
-
+	display: none;
 }
 #comments .pingback {
 	border-bottom: 1px solid #e7e7e7;
@@ -1471,7 +1469,7 @@ color:#555;
 	padding-left:10px;
 }
 
-#search-2 #s, #search #s  {/* This keeps the search inputs in line This is the Sidebar Search*/
+#search-2 #s  {/* This keeps the search inputs in line This is the Sidebar Search*/
 	width: 70%;display:block;float:left;
 	margin-bottom:20px;
 	padding-top:6px;
@@ -1481,8 +1479,6 @@ color:#555;
 	border-radius:10px 0 0 0 ;
 	-moz-border-radius:10px 0 0 0 ;
 	-webkit-border-radius:10px 0 0 0 ;
-	font-family:Arial !important;
-font-size:14px;
 }
 
 #searchform #s:hover , #container #s:hover {
@@ -1509,9 +1505,9 @@ color:#0D85CC;
 	-webkit-border-top-left-radius:10px;
 	-moz-border-radius-topleft:10px;
 	-webkit-border-radius-topleft:10px;
-/*	box-shadow:-1px -1px 6px #999;
+	box-shadow:-1px -1px 6px #999;
 	-moz-box-shadow:-1px -1px 6px #999;
-	-webkit-box-shadow:-1px -1px 6px #999;*/
+	-webkit-box-shadow:-1px -1px 6px #999;
 }
 
 #footer-widget-area .widget-title {
@@ -1597,6 +1593,7 @@ margin-left:0;
 	float:none;
 	margin-left:10px;
 }
+
 
 #wp-calendar caption {
 	color: #333;
@@ -1757,18 +1754,10 @@ img#wpstats {
 #container #s  {/* This keeps the search inputs in line */
 	display:block;float:left;
 	margin-bottom:20px;
-	font-family:Arial !important;
-	font-size:14px;
-    padding-bottom: 4px;
-    padding-left: 10px;
-    padding-top: 4px;
 }
 
 #container #searchsubmit, .widget_search #searchsubmit {
-display:block;
-float:left;
-padding:0;
-margin:0;
+display:block;float:left;
 position:relative;
 left:-26px; top:0px;
 background: #777;
@@ -1780,27 +1769,14 @@ color:#EEE;
 text-shadow:0px -1px 0px #000;
 -moz-text-shadow:0px -1px 0px #000;
 -webkit-text-shadow:0px -1px 0px #000;
-font-family:Arial !important;
-
 }
 
 .widget_search #searchsubmit {
 left:-28px;
 top:0px;
 width:27px;
-height:28px;
-font-size:12px;
-font-family:Arial;
-
+height:27px;
 }
-
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-                 .widget_search #searchsubmit {   top:3px;}
-				  #container #s  {padding-top:0px;padding:bottom:0px;height:21px; }
-}
-
-.tagcloud {padding-left:15px;}
-
 
 #searchsubmit:hover {
 background:#888;

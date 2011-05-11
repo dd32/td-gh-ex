@@ -171,15 +171,15 @@ function  section_layout_fn() {
 	echo "<p>Settings for adjusting your blog's layout .</p>";
 }
 function  section_text_fn() {
-	echo '<p>All text related customization options.</p>';
+	echo '<p>All text realted customization options.</p>';
 }
 
 function  section_graphics_fn() {
-	echo '<p>Settings for hiding or showing different graphics.</p>';
+	echo '<p>Settings for hiding or showinng different graphics.</p>';
 }
 
 function  section_post_fn() {
-	echo '<p>Settings for hiding or showing different post tags.</p>';
+	echo '<p>Settings for hiding or showinng different post tags.</p>';
 }
 
 function  section_appereance_fn() {
@@ -187,7 +187,7 @@ function  section_appereance_fn() {
 }
 
 function  section_social_fn() {
-	echo "<p>Insert the addreses for your social media. Leave blank if not the case.
+	echo "<p>Insert the addreses for your social media. Leave blank if it's not the case.
 	Please type the whole address (including <i>http://</i> ) Example : <u>http://www.facebook.com</u>.</p>";
 }
 
@@ -208,7 +208,7 @@ foreach($items as $item) {
 }
 echo "</select>";
 
-echo "<div><small>Select the side on which to display the sidebar. You can also choose to disable it altogether and have only one column for a presentation-like design.
+echo "<div><small>Select the side on which to display the sidebar or disable it altogether and have only one column for a presentation-like design.
 			Disabling the sidemenu also disables the Content/Sidemenu Width option.</small></div>";
 
 }
@@ -263,7 +263,7 @@ function setting_sidewidth_fn()
 
 
    <?php
-   echo "<div><small>Select the width of your content and sidebar (Values range from 550px to 830px for the content, and from 220px to 500px for the sidebar).</small></div>";
+   echo "<div><small>Select the width of your content and sidebar (Values range from 550px to 830px for the content, and from 220px to 500px for the sidemenu).</small></div>";
 
    }
 
@@ -452,7 +452,7 @@ foreach($items as $item) {
 }
 	echo "</select>";
 
-	echo "<div><small>Text line height. The height between 2 rows of text. Leave 'Default' for normal settings (size value will be as set in the CSS).</small></div>";
+	echo "<div><small>Text line height. The hieght between 2 rows of text. Leave 'Default' for normal settings (size value will be as set in the CSS).</small></div>";
 
 }
 
@@ -687,14 +687,14 @@ foreach($items as $item) {
 function setting_pin_fn() {
 	$options = get_option('ma_options');
 	if (!isset($options['mop_pin'])) { $options['mop_pin'] ="Pin2";	}
-	$items = array("mantra_dot", "Pin1", "Pin2", "Pin3" , "Pin4", "Pin5");
+	$items = array("None", "Pin1", "Pin2", "Pin3" , "Pin4", "Pin5");
 
 
 	foreach($items as $item) {
 		$none='';
-		if ($item == 'mantra_dot') { $none='None'; }
+		if ($item == 'None') { $none='None'; }
 		$checked = ($options['mop_pin']==$item) ? ' checked="checked" ' : '';
-		echo "<label><input ".$checked." value='$item' name='ma_options[mop_pin]' type='radio' />$none<img style='display:inline-block;height:auto;padding-top:0px;margin-left:5px;margin-right:20px;' src='".get_template_directory_uri()."/images/pins/".$item.".png'/></label>";
+		echo "<label><input ".$checked." value='$item' name='ma_options[mop_pin]' type='radio' />$none<img style='display:inline-block;height:25px;padding-top:0px;margin-left:5px;margin-right:20px;' src='".get_template_directory_uri()."/images/pins/".$item.".png'/></label>";
 
 
 
@@ -708,12 +708,12 @@ function setting_pin_fn() {
 function setting_sidebullet_fn() {
 	$options = get_option('ma_options');
 	if (!isset($options['mop_sidebullet'])) { $options['mop_sidebullet'] ="arrow_white";	}
-	$items = array("mantra_dot", "arrow_black", "arrow_white", "bullet_dark" , "bullet_gray", "bullet_light", "square_dark", "square_white", "triangle_dark" , "triangle_gray", "triangle_white", "folder_black", "folder_light");
+	$items = array("None", "arrow_black", "arrow_white", "bullet_dark" , "bullet_gray", "bullet_light", "square_dark", "square_white", "triangle_dark" , "triangle_gray", "triangle_white", "folder_black", "folder_light");
 
 
 	foreach($items as $item) {
 		$none='';
-		if ($item == 'mantra_dot') { $none='None'; }
+		if ($item == 'None') { $none='None'; }
 		$checked = ($options['mop_sidebullet']==$item) ? ' checked="checked" ' : '';
 		echo "<label><input ".$checked." value='$item' name='ma_options[mop_sidebullet]' type='radio' />$none<img style='display:inline-block;height:auto;padding-top:0px;margin-left:5px;margin-right:20px;' src='".get_template_directory_uri()."/images/bullets/".$item.".png'/></label>";
 
@@ -1016,27 +1016,6 @@ function ma_options_validate($input) {
 	$input['mop_facebook'] =  wp_kses_data($input['mop_facebook']);
 	$input['mop_tweeter'] =  wp_kses_data($input['mop_tweeter']);
 	$input['mop_rss'] =  wp_kses_data($input['mop_rss']);
-
-	$input['mop_backcolor'] =  wp_kses_data($input['mop_backcolor']);
-	$input['mop_headercolor'] =  wp_kses_data($input['mop_headercolor']);
-	$input['mop_prefootercolor'] =  wp_kses_data($input['mop_prefootercolor']);
-	$input['mop_footercolor'] =  wp_kses_data($input['mop_footercolor']);
-	$input['mop_contentcolor'] =  wp_kses_data($input['mop_contentcolor']);
-	$input['mop_linkscolor'] =  wp_kses_data($input['mop_linkscolor']);
-	$input['mop_hovercolor'] =  wp_kses_data($input['mop_hovercolor']);
-	$input['mop_headtextcolor'] =  wp_kses_data($input['mop_headtextcolor']);
-	$input['mop_headtexthover'] =  wp_kses_data($input['mop_headtexthover']);
-	$input['mop_sideheadbackcolor'] =  wp_kses_data($input['mop_sideheadbackcolor']);
-	$input['mop_sideheadtextcolor'] =  wp_kses_data($input['mop_sideheadtextcolor']);
-	$input['mop_footerheader'] =  wp_kses_data($input['mop_footerheader']);
-	$input['mop_footertext'] =  wp_kses_data($input['mop_footertext']);
-	$input['mop_footerhover'] =  wp_kses_data($input['mop_footerhover']);
-
-	$input['mop_facebook'] =  wp_kses_data($input['mop_facebook']);
-	$input['mop_tweeter'] =  wp_kses_data($input['mop_tweeter']);
-	$input['mop_rss'] =  wp_kses_data($input['mop_rss']);
-
-
 	return $input; // return validated input
 
 }
