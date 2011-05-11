@@ -37,8 +37,18 @@ class Chip_Life_Options {
 			
 			/** Chip Sponsor Section */
 			add_settings_section( 'chip_life_section_sponsor', 'Sponsor Options', array( 'Chip_Life_Options', 'chip_life_section_sponsor_fn' ), 'chip_life_sections' );
-			add_settings_field( 'chip_life_field_sponsor_header_728x90', 'Display 728x90 Sponsor in Header', array( 'Chip_Life_Options', 'chip_life_field_sponsor_header_728x90_fn' ), 'chip_life_sections', 'chip_life_section_sponsor' );
-			add_settings_field( 'chip_life_field_sponsor_header_728x90_code', 'Enter Sponsor Code of Dimensions: 728x90', array( 'Chip_Life_Options', 'chip_life_field_sponsor_header_728x90_code_fn' ), 'chip_life_sections', 'chip_life_section_sponsor' );
+			
+			add_settings_field( 'chip_life_field_sponsor_header_728x90', 'Display Sponsor in Header', array( 'Chip_Life_Options', 'chip_life_field_sponsor_header_728x90_fn' ), 'chip_life_sections', 'chip_life_section_sponsor' );
+			add_settings_field( 'chip_life_field_sponsor_header_728x90_code', 'Enter Sponsor Code', array( 'Chip_Life_Options', 'chip_life_field_sponsor_header_728x90_code_fn' ), 'chip_life_sections', 'chip_life_section_sponsor' );
+			
+			add_settings_field( 'chip_life_field_sponsor_header_728x15', 'Display Sponsor under Header', array( 'Chip_Life_Options', 'chip_life_field_sponsor_header_728x15_fn' ), 'chip_life_sections', 'chip_life_section_sponsor' );
+			add_settings_field( 'chip_life_field_sponsor_header_728x15_code', 'Enter Sponsor Code', array( 'Chip_Life_Options', 'chip_life_field_sponsor_header_728x15_code_fn' ), 'chip_life_sections', 'chip_life_section_sponsor' );
+			
+			add_settings_field( 'chip_life_field_sponsor_post_undertitle', 'Display Sponsor under Post Title', array( 'Chip_Life_Options', 'chip_life_field_sponsor_post_undertitle_fn' ), 'chip_life_sections', 'chip_life_section_sponsor' );
+			add_settings_field( 'chip_life_field_sponsor_post_undertitle_code', 'Enter Sponsor Code', array( 'Chip_Life_Options', 'chip_life_field_sponsor_post_undertitle_code_fn' ), 'chip_life_sections', 'chip_life_section_sponsor' );
+			
+			add_settings_field( 'chip_life_field_sponsor_post_468x15', 'Display Sponsor at the end of Post', array( 'Chip_Life_Options', 'chip_life_field_sponsor_post_468x15_fn' ), 'chip_life_sections', 'chip_life_section_sponsor' );
+			add_settings_field( 'chip_life_field_sponsor_post_468x15_code', 'Enter Sponsor Code', array( 'Chip_Life_Options', 'chip_life_field_sponsor_post_468x15_code_fn' ), 'chip_life_sections', 'chip_life_section_sponsor' );
 			
 			/** Chip Subscription Section */
 			add_settings_section( 'chip_life_section_subscription', 'Subscription Options', array( 'Chip_Life_Options', 'chip_life_section_subscription_fn' ), 'chip_life_sections' );
@@ -65,11 +75,15 @@ class Chip_Life_Options {
 			add_settings_field( 'chip_life_field_digg', 'Use Digg', array( 'Chip_Life_Options', 'chip_life_field_digg_fn' ), 'chip_life_sections', 'chip_life_section_subscription' );
 			add_settings_field( 'chip_life_field_digg_url', 'Enter Digg URL', array( 'Chip_Life_Options', 'chip_life_field_digg_url_fn' ), 'chip_life_sections', 'chip_life_section_subscription' );
 			
-			
 			/** Chip General Section */
 			add_settings_section( 'chip_life_section_general', 'General Options', array( 'Chip_Life_Options', 'chip_life_section_general_fn' ), 'chip_life_sections' );
+			
+			add_settings_field( 'chip_life_field_authorbox', 'Display Author Box', array( 'Chip_Life_Options', 'chip_life_field_authorbox_fn' ), 'chip_life_sections', 'chip_life_section_general' );
+			
 			add_settings_field( 'chip_life_field_analytic', 'Use Analytic', array( 'Chip_Life_Options', 'chip_life_field_analytic_fn' ), 'chip_life_sections', 'chip_life_section_general' );
 			add_settings_field( 'chip_life_field_analytic_code', 'Enter Analytic Code', array( 'Chip_Life_Options', 'chip_life_field_analytic_code_fn' ), 'chip_life_sections', 'chip_life_section_general' );
+			
+			add_settings_field( 'chip_life_field_copyright', 'Enter Copyright Text', array( 'Chip_Life_Options', 'chip_life_field_copyright_fn' ), 'chip_life_sections', 'chip_life_section_general' );
 			
 			add_settings_field('chip_life_field_reset', 'Reset Theme Options', array( 'Chip_Life_Options', 'chip_life_field_reset_fn' ), 'chip_life_sections', 'chip_life_section_general');
 		
@@ -101,45 +115,58 @@ class Chip_Life_Options {
 			if( ( $chip_life_options['chip_life_reset'] == 1 || !is_array( $chip_life_options ) ) ) {
 				
 				$default = array(
-					'chip_life_logo'						=>	0,
-					'chip_life_logo_url'					=>	CHIP_LIFE_IMAGES_WSROOT.'logo.gif',
+					'chip_life_logo'							=>	0,
+					'chip_life_logo_url'						=>	CHIP_LIFE_IMAGES_WSROOT.'logo.gif',
 					
-					'chip_life_post_style'					=>	'excerpt',					
-					'chip_life_header_style'				=>	'header',
+					'chip_life_post_style'						=>	'excerpt',					
+					'chip_life_header_style'					=>	'header',
 					
-					'chip_life_related_post'				=>	0,
-					'chip_life_related_post_number'			=>	5,
+					'chip_life_related_post'					=>	0,
+					'chip_life_related_post_number'				=>	3,
 					
-					'chip_life_sponsor_header_728x90'		=>	0,
-					'chip_life_sponsor_header_728x90_code'	=>	'Sponsor Code 728x90',
+					'chip_life_sponsor_header_728x90'			=>	0,
+					'chip_life_sponsor_header_728x90_code'		=>	'Sponsor Code - Recommended: 728x90',
 					
-					'chip_life_rss'							=>	0,
-					'chip_life_rss_url'						=>	CHIP_LIFE_HOME.'feed/',
+					'chip_life_sponsor_header_728x15'			=>	0,
+					'chip_life_sponsor_header_728x15_code'		=>	'Sponsor Code - Recommended: 728x15',
 					
-					'chip_life_feedburner'					=>	0,
-					'chip_life_feedburner_id'				=>	'tutorialchip',
+					'chip_life_sponsor_post_undertitle'			=>	0,
+					'chip_life_sponsor_post_undertitle_code'	=>	'Sponsor Code - Recommended: 300x250 OR 336x280',
 					
-					'chip_life_feedburner_post_bottom'		=>	0,
+					'chip_life_sponsor_post_468x15'				=>	0,
+					'chip_life_sponsor_post_468x15_code'		=>	'Sponsor Code - Recommended: 468x15',
 					
-					'chip_life_twitter'						=>	0,
-					'chip_life_twitter_url'					=>	'http://twitter.com/lifeobject1',
+					'chip_life_rss'								=>	0,
+					'chip_life_rss_url'							=>	CHIP_LIFE_HOME.'feed/',
 					
-					'chip_life_delicious'					=>	0,
-					'chip_life_delicious_url'				=>	'http://www.delicious.com/life.object',
+					'chip_life_feedburner'						=>	0,
+					'chip_life_feedburner_id'					=>	'tutorialchip',
 					
-					'chip_life_facebook'					=>	0,
-					'chip_life_facebook_url'				=>	'http://www.facebook.com/profile.php?id=100001747038774',
+					'chip_life_feedburner_post_bottom'			=>	0,
 					
-					'chip_life_stumble'						=>	0,
-					'chip_life_stumble_url'					=>	'http://www.stumbleupon.com/stumbler/lifeobject',
+					'chip_life_twitter'							=>	0,
+					'chip_life_twitter_url'						=>	'http://twitter.com/lifeobject1',
 					
-					'chip_life_digg'						=>	0,
-					'chip_life_digg_url'					=>	'http://digg.com/lifeobject',
+					'chip_life_delicious'						=>	0,
+					'chip_life_delicious_url'					=>	'http://www.delicious.com/life.object',
 					
-					'chip_life_analytic'					=>	0,
-					'chip_life_analytic_code'				=>	'Analytic Code',
+					'chip_life_facebook'						=>	0,
+					'chip_life_facebook_url'					=>	'http://www.facebook.com/profile.php?id=100001747038774',
 					
-					'chip_life_reset'						=>	0,
+					'chip_life_stumble'							=>	0,
+					'chip_life_stumble_url'						=>	'http://www.stumbleupon.com/stumbler/lifeobject',
+					
+					'chip_life_digg'							=>	0,
+					'chip_life_digg_url'						=>	'http://digg.com/lifeobject',
+					
+					'chip_life_authorbox'						=>	1,
+					
+					'chip_life_analytic'						=>	0,
+					'chip_life_analytic_code'					=>	'Analytic Code',
+					
+					'chip_life_field_copyright'					=>	'&amp;copy; Copyright '.date('Y').' - <a href=\''.CHIP_LIFE_HOME.'\'>'.get_bloginfo('name').'</a>',
+					
+					'chip_life_reset'							=>	0,
 					
 				);
 				
@@ -199,7 +226,7 @@ class Chip_Life_Options {
 		/* Valid Related Post Range */		
 		
 		function chip_related_posts_pd() {			
-			$temp = array( 1 => 1, 2 => 2, 3 => 3, 4 => 4, 5 => 5, 6 => 6, 7 => 7, 8 => 8, 9 => 9, 10 => 10 );			
+			$temp = array( 3 => 3, 6 => 6, 9 => 9 );			
 			return $temp;			
 		}
 		
@@ -237,7 +264,7 @@ class Chip_Life_Options {
 			/* Validation: chip_life_related_post */
 			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
 			if ( ! array_key_exists( $input['chip_life_related_post'], $chip_boolean_pd ) ) {
-				 $input['chip_life_related_post'] = "no";
+				 $input['chip_life_related_post'] = 0;
 			}
 			
 			/* Validation: chip_life_related_post_number */
@@ -249,7 +276,7 @@ class Chip_Life_Options {
 			/* Validation: chip_life_sponsor_header_728x90 */
 			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
 			if ( ! array_key_exists( $input['chip_life_sponsor_header_728x90'], $chip_boolean_pd ) ) {
-				 $input['chip_life_sponsor_header_728x90'] = "no";
+				 $input['chip_life_sponsor_header_728x90'] = 0;
 			}
 			
 			/* Validation: chip_life_sponsor_header_728x90_code */
@@ -257,10 +284,43 @@ class Chip_Life_Options {
 				$input['chip_life_sponsor_header_728x90_code'] = htmlspecialchars ( $input['chip_life_sponsor_header_728x90_code'] );
 			}
 			
+			/* Validation: chip_life_sponsor_header_728x15 */
+			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
+			if ( ! array_key_exists( $input['chip_life_sponsor_header_728x15'], $chip_boolean_pd ) ) {
+				 $input['chip_life_sponsor_header_728x15'] = 0;
+			}
+			
+			/* Validation: chip_life_sponsor_header_728x15_code */
+			if( !empty( $input['chip_life_sponsor_header_728x15_code'] ) ) {
+				$input['chip_life_sponsor_header_728x15_code'] = htmlspecialchars ( $input['chip_life_sponsor_header_728x15_code'] );
+			}
+			
+			/* Validation: chip_life_sponsor_post_undertitle */
+			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
+			if ( ! array_key_exists( $input['chip_life_sponsor_post_undertitle'], $chip_boolean_pd ) ) {
+				 $input['chip_life_sponsor_post_undertitle'] = 0;
+			}
+			
+			/* Validation: chip_life_sponsor_post_undertitle_code */
+			if( !empty( $input['chip_life_sponsor_post_undertitle_code'] ) ) {
+				$input['chip_life_sponsor_post_undertitle_code'] = htmlspecialchars ( $input['chip_life_sponsor_post_undertitle_code'] );
+			}
+			
+			/* Validation: chip_life_sponsor_post_468x15 */
+			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
+			if ( ! array_key_exists( $input['chip_life_sponsor_post_468x15'], $chip_boolean_pd ) ) {
+				 $input['chip_life_sponsor_post_468x15'] = 0;
+			}
+			
+			/* Validation: chip_life_sponsor_post_468x15_code */
+			if( !empty( $input['chip_life_sponsor_post_468x15_code'] ) ) {
+				$input['chip_life_sponsor_post_468x15_code'] = htmlspecialchars ( $input['chip_life_sponsor_post_468x15_code'] );
+			}						
+			
 			/* Validation: chip_life_rss */
 			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
 			if ( ! array_key_exists( $input['chip_life_rss'], $chip_boolean_pd ) ) {
-				 $input['chip_life_rss'] = "no";
+				 $input['chip_life_rss'] = 0;
 			}
 			
 			/* Validation: chip_life_rss_url */
@@ -271,7 +331,7 @@ class Chip_Life_Options {
 			/* Validation: chip_life_feedburner */
 			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
 			if ( ! array_key_exists( $input['chip_life_feedburner'], $chip_boolean_pd ) ) {
-				 $input['chip_life_rss'] = "no";
+				 $input['chip_life_rss'] = 0;
 			}
 			
 			/* Validation: chip_life_feedburner_id */
@@ -282,13 +342,13 @@ class Chip_Life_Options {
 			/* Validation: chip_life_feedburner_post_bottom */
 			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
 			if ( ! array_key_exists( $input['chip_life_feedburner_post_bottom'], $chip_boolean_pd ) ) {
-				 $input['chip_life_rss'] = "no";
+				 $input['chip_life_rss'] = 0;
 			}
 			
 			/* Validation: chip_life_twitter */
 			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
 			if ( ! array_key_exists( $input['chip_life_twitter'], $chip_boolean_pd ) ) {
-				 $input['chip_life_twitter'] = "no";
+				 $input['chip_life_twitter'] = 0;
 			}
 			
 			/* Validation: chip_life_twitter_url */
@@ -299,7 +359,7 @@ class Chip_Life_Options {
 			/* Validation: chip_life_delicious */
 			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
 			if ( ! array_key_exists( $input['chip_life_delicious'], $chip_boolean_pd ) ) {
-				 $input['chip_life_delicious'] = "no";
+				 $input['chip_life_delicious'] = 0;
 			}
 			
 			/* Validation: chip_life_delicious_url */
@@ -310,7 +370,7 @@ class Chip_Life_Options {
 			/* Validation: chip_life_facebook */
 			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
 			if ( ! array_key_exists( $input['chip_life_facebook'], $chip_boolean_pd ) ) {
-				 $input['chip_life_facebook'] = "no";
+				 $input['chip_life_facebook'] = 0;
 			}
 			
 			/* Validation: chip_life_facebook_url */
@@ -321,7 +381,7 @@ class Chip_Life_Options {
 			/* Validation: chip_life_stumble */
 			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
 			if ( ! array_key_exists( $input['chip_life_stumble'], $chip_boolean_pd ) ) {
-				 $input['chip_life_stumble'] = "no";
+				 $input['chip_life_stumble'] = 0;
 			}
 			
 			/* Validation: chip_life_stumble_url */
@@ -332,7 +392,7 @@ class Chip_Life_Options {
 			/* Validation: chip_life_digg */
 			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
 			if ( ! array_key_exists( $input['chip_life_digg'], $chip_boolean_pd ) ) {
-				 $input['chip_life_digg'] = "no";
+				 $input['chip_life_digg'] = 0;
 			}
 			
 			/* Validation: chip_life_digg_url */
@@ -340,15 +400,26 @@ class Chip_Life_Options {
 				$input['chip_life_digg_url'] = esc_url( $input['chip_life_digg_url'] );
 			}
 			
+			/* Validation: chip_life_authorbox */
+			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
+			if ( ! array_key_exists( $input['chip_life_authorbox'], $chip_boolean_pd ) ) {
+				 $input['chip_life_authorbox'] = 0;
+			}
+			
 			/* Validation: chip_life_analytic */
 			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
 			if ( ! array_key_exists( $input['chip_life_analytic'], $chip_boolean_pd ) ) {
-				 $input['chip_life_analytic'] = "no";
+				 $input['chip_life_analytic'] = 0;
 			}
 			
 			/* Validation: chip_life_analytic_code */
 			if( !empty( $input['chip_life_analytic_code'] ) ) {
 				$input['chip_life_analytic_code'] = htmlspecialchars ( $input['chip_life_analytic_code'], ENT_NOQUOTES );
+			}
+			
+			/* Validation: chip_life_field_copyright */
+			if( !empty( $input['chip_life_field_copyright'] ) ) {
+				$input['chip_life_field_copyright'] = htmlspecialchars ( $input['chip_life_field_copyright'], ENT_NOQUOTES );
 			}
 			
 			/* Validation: chip_life_reset */
@@ -487,14 +558,87 @@ class Chip_Life_Options {
 				echo '<option value="'.$key.'" '.$selected.'>'.$val.'</option>';
 			}
 			echo '</select>';
-			echo '<div><small>Select yes to add 728x90 sponsor ad in your blog header.</small></div>';
+			echo '<div><small>Select yes to add sponsor ad in your blog header. (Header Style should be "logo")</small></div>';
+			echo '<div><small>* Recommended: 728x90 px</small></div>';
 		
 		}
 		
 		function chip_life_field_sponsor_header_728x90_code_fn() {
 			$chip_life_options = get_option('chip_life_options');
 			echo '<textarea type="textarea" id="chip_life_sponsor_header_728x90_code" name="chip_life_options[chip_life_sponsor_header_728x90_code]" rows="7" cols="50">'.$chip_life_options['chip_life_sponsor_header_728x90_code'].'</textarea>';
-			echo '<div>Enter the Sponsor ad code: 728x90</div>';
+			echo '<div>Enter the Sponsor Code</div>';
+		}
+		
+		/* Sponsor Header: 728x15 */
+		
+		function  chip_life_field_sponsor_header_728x15_fn() {
+			
+			$chip_life_options = get_option( 'chip_life_options' );
+			$items = Chip_Life_Options::chip_boolean_pd();
+			
+			echo '<select id="chip_life_sponsor_header_728x15" name="chip_life_options[chip_life_sponsor_header_728x15]">';
+			foreach( $items as $key => $val ) {
+				$selected = ( $chip_life_options['chip_life_sponsor_header_728x15'] == $key ) ? 'selected="selected"' : '';
+				echo '<option value="'.$key.'" '.$selected.'>'.$val.'</option>';
+			}
+			echo '</select>';
+			echo '<div><small>Select yes to add sponsor ad under your blog header.</small></div>';
+			echo '<div><small>* Recommended: 728x15 px</small></div>';
+		
+		}
+		
+		function chip_life_field_sponsor_header_728x15_code_fn() {
+			$chip_life_options = get_option('chip_life_options');
+			echo '<textarea type="textarea" id="chip_life_sponsor_header_728x15_code" name="chip_life_options[chip_life_sponsor_header_728x15_code]" rows="7" cols="50">'.$chip_life_options['chip_life_sponsor_header_728x15_code'].'</textarea>';
+			echo '<div>Enter the Sponsor Code</div>';
+		}
+		
+		/* Sponsor Under Post Title */
+		
+		function  chip_life_field_sponsor_post_undertitle_fn() {
+			
+			$chip_life_options = get_option( 'chip_life_options' );
+			$items = Chip_Life_Options::chip_boolean_pd();
+			
+			echo '<select id="chip_life_sponsor_post_undertitle" name="chip_life_options[chip_life_sponsor_post_undertitle]">';
+			foreach( $items as $key => $val ) {
+				$selected = ( $chip_life_options['chip_life_sponsor_post_undertitle'] == $key ) ? 'selected="selected"' : '';
+				echo '<option value="'.$key.'" '.$selected.'>'.$val.'</option>';
+			}
+			echo '</select>';
+			echo '<div><small>Select yes to add sponsor ad under the post title.</small></div>';
+			echo '<div><small>* Recommended: 300x250 px, 336x280 px</small></div>';
+		
+		}
+		
+		function chip_life_field_sponsor_post_undertitle_code_fn() {
+			$chip_life_options = get_option('chip_life_options');
+			echo '<textarea type="textarea" id="chip_life_sponsor_post_undertitle_code" name="chip_life_options[chip_life_sponsor_post_undertitle_code]" rows="7" cols="50">'.$chip_life_options['chip_life_sponsor_post_undertitle_code'].'</textarea>';
+			echo '<div>Enter the Sponsor Code</div>';
+		}
+		
+		/* Sponsor at the end of Post: 468x15 */
+		
+		function  chip_life_field_sponsor_post_468x15_fn() {
+			
+			$chip_life_options = get_option( 'chip_life_options' );
+			$items = Chip_Life_Options::chip_boolean_pd();
+			
+			echo '<select id="chip_life_sponsor_post_468x15" name="chip_life_options[chip_life_sponsor_post_468x15]">';
+			foreach( $items as $key => $val ) {
+				$selected = ( $chip_life_options['chip_life_sponsor_post_468x15'] == $key ) ? 'selected="selected"' : '';
+				echo '<option value="'.$key.'" '.$selected.'>'.$val.'</option>';
+			}
+			echo '</select>';
+			echo '<div><small>Select yes to add sponsor ad under your post.</small></div>';
+			echo '<div><small>* Recommended: 468x15 px</small></div>';
+		
+		}
+		
+		function chip_life_field_sponsor_post_468x15_code_fn() {
+			$chip_life_options = get_option('chip_life_options');
+			echo '<textarea type="textarea" id="chip_life_sponsor_post_468x15_code" name="chip_life_options[chip_life_sponsor_post_468x15_code]" rows="7" cols="50">'.$chip_life_options['chip_life_sponsor_post_468x15_code'].'</textarea>';
+			echo '<div>Enter the Sponsor Code</div>';
 		}
 		
 		/**
@@ -526,7 +670,7 @@ class Chip_Life_Options {
 			
 			$chip_life_options = get_option('chip_life_options');
 			echo '<input type="text" id="chip_life_rss_url" name="chip_life_options[chip_life_rss_url]" size="40" value="'.$chip_life_options['chip_life_rss_url'].'" />';
-			echo '<div>Enter the RSS URL. For Example: <strong>http://www.tutorialchip.com/feed/</strong></div>';
+			echo '<div><small>Enter the RSS URL. For Example: <strong>http://www.tutorialchip.com/feed/</strong></small></div>';
 		
 		}
 		
@@ -551,7 +695,7 @@ class Chip_Life_Options {
 			
 			$chip_life_options = get_option('chip_life_options');
 			echo '<input type="text" id="chip_life_feedburner_id" name="chip_life_options[chip_life_feedburner_id]" size="40" value="'.$chip_life_options['chip_life_feedburner_id'].'" />';
-			echo '<div>Enter the Feedburner ID. For Example: <strong>tutorialchip</strong></div>';
+			echo '<div><small>Enter the Feedburner ID. For Example: <strong>tutorialchip</strong></small></div>';
 		
 		}
 		
@@ -591,7 +735,7 @@ class Chip_Life_Options {
 			
 			$chip_life_options = get_option('chip_life_options');
 			echo '<input type="text" id="chip_life_twitter_url" name="chip_life_options[chip_life_twitter_url]" size="40" value="'.$chip_life_options['chip_life_twitter_url'].'" />';
-			echo '<div>Enter the Twitter URL. For Example: <strong>http://twitter.com/lifeobject1</strong></div>';
+			echo '<div><small>Enter the Twitter URL. For Example: <strong>http://twitter.com/lifeobject1</strong></small></div>';
 		
 		}
 		
@@ -616,7 +760,7 @@ class Chip_Life_Options {
 			
 			$chip_life_options = get_option('chip_life_options');
 			echo '<input type="text" id="chip_life_delicious_url" name="chip_life_options[chip_life_delicious_url]" size="40" value="'.$chip_life_options['chip_life_delicious_url'].'" />';
-			echo '<div>Enter the Delicious URL. For Example: <strong>http://www.delicious.com/life.object</strong></div>';
+			echo '<div><small>Enter the Delicious URL. For Example: <strong>http://www.delicious.com/life.object</strong></small></div>';
 		
 		}
 		
@@ -641,7 +785,7 @@ class Chip_Life_Options {
 			
 			$chip_life_options = get_option('chip_life_options');
 			echo '<input type="text" id="chip_life_facebook_url" name="chip_life_options[chip_life_facebook_url]" size="40" value="'.$chip_life_options['chip_life_facebook_url'].'" />';
-			echo '<div>Enter the Facebook URL. For Example: <strong>http://www.facebook.com/profile.php?id=100001747038774</strong></div>';
+			echo '<div><small>Enter the Facebook URL. For Example: <strong>http://www.facebook.com/profile.php?id=100001747038774</strong></small></div>';
 		
 		}
 		
@@ -666,7 +810,7 @@ class Chip_Life_Options {
 			
 			$chip_life_options = get_option('chip_life_options');
 			echo '<input type="text" id="chip_life_stumble_url" name="chip_life_options[chip_life_stumble_url]" size="40" value="'.$chip_life_options['chip_life_stumble_url'].'" />';
-			echo '<div>Enter the Stumbleupon URL. For Example: <strong>http://www.stumbleupon.com/stumbler/lifeobject</strong></div>';
+			echo '<div><small>Enter the Stumbleupon URL. For Example: <strong>http://www.stumbleupon.com/stumbler/lifeobject</strong></small></div>';
 		
 		}
 		
@@ -691,7 +835,7 @@ class Chip_Life_Options {
 			
 			$chip_life_options = get_option('chip_life_options');
 			echo '<input type="text" id="chip_life_digg_url" name="chip_life_options[chip_life_digg_url]" size="40" value="'.$chip_life_options['chip_life_digg_url'].'" />';
-			echo '<div>Enter the Digg URL. For Example: <strong>http://digg.com/lifeobject</strong></div>';
+			echo '<div><small>Enter the Digg URL. For Example: <strong>http://digg.com/lifeobject</strong></small></div>';
 		
 		}
 		
@@ -701,6 +845,23 @@ class Chip_Life_Options {
 		
 		function chip_life_section_general_fn() {
 			echo "These options will help you to customize General options.";
+		}
+		
+		/* Chip Author Box */
+		
+		function  chip_life_field_authorbox_fn() {
+			
+			$chip_life_options = get_option( 'chip_life_options' );
+			$items = Chip_Life_Options::chip_boolean_pd();
+			
+			echo '<select id="chip_life_authorbox" name="chip_life_options[chip_life_authorbox]">';
+			foreach( $items as $key => $val ) {
+				$selected = ( $chip_life_options['chip_life_authorbox'] == $key ) ? 'selected="selected"' : '';
+				echo '<option value="'.$key.'" '.$selected.'>'.$val.'</option>';
+			}
+			echo '</select>';
+			echo '<div><small>Select yes to display Author box.</small></div>';
+		
 		}
 		
 		/* Chip Analytic */
@@ -724,9 +885,21 @@ class Chip_Life_Options {
 			
 			$chip_life_options = get_option('chip_life_options');
 			echo '<textarea type="textarea" id="chip_life_analytic_code" name="chip_life_options[chip_life_analytic_code]" rows="7" cols="50">'.$chip_life_options['chip_life_analytic_code'].'</textarea>';
-			echo '<div>Enter the Analytic code</div>';
+			echo '<div><small>Enter the Analytic code</small></div>';
 		
 		}
+		
+		/* Copyright Text */
+		
+		function chip_life_field_copyright_fn() {
+			
+			$chip_life_options = get_option('chip_life_options');
+			echo '<input type="text" id="chip_life_field_copyright" name="chip_life_options[chip_life_field_copyright]" size="40" value="'.$chip_life_options['chip_life_field_copyright'].'" />';
+			echo '<div><small>Enter Copyright Text.</small></div>';
+			echo '<div><small>Example: <strong>&amp;copy; Copyright '.date('Y').' - &lt;a href=\''.CHIP_LIFE_HOME.'\'&gt;'.get_bloginfo('name').'&lt;/a&gt;</strong></small></div>';
+		
+		}
+		
 		
 		/* Theme Reset */
 		

@@ -49,6 +49,10 @@ if ( $temp->have_posts() ):
   </div>
 </div>
 
+<div class="chipboxm1 chipstyle1 margin10b">
+  <div class="chipboxm1data">
+    <div class="chiprelatedpostswrap">
+
 <?php
 
 /*
@@ -75,14 +79,14 @@ while ( $temp->have_posts() ) : $temp->the_post();
 			
 			$post_thumbnail = true;
 			$chip_life_global['chip_image'] = $chip_image;			
-			locate_template( array( CHIP_LIFE_COMMON_FSROOT . 'post-thumbnail-plugin.php' ), true, false );
+			locate_template( array( CHIP_LIFE_COMMON_FSROOT . 'post-thumbnail-plugin-related.php' ), true, false );
 		
 		endif;
 		
 	elseif ( has_post_thumbnail() ) :
 	
 		$post_thumbnail = true;
-		locate_template( array( CHIP_LIFE_COMMON_FSROOT . 'post-thumbnail-default.php' ), true, false );	
+		locate_template( array( CHIP_LIFE_COMMON_FSROOT . 'post-thumbnail-default-related.php' ), true, false );	
 	
 	endif;
 	
@@ -94,12 +98,18 @@ while ( $temp->have_posts() ) : $temp->the_post();
 	
 	if ( $post_thumbnail == false ) :	
 	
-		locate_template( array( CHIP_LIFE_COMMON_FSROOT . 'post-simple.php' ), true, false );
+		locate_template( array( CHIP_LIFE_COMMON_FSROOT . 'post-simple-related.php' ), true, false );
 	
 	endif;
 
 endwhile;
 
+?>
+    <br class="clear" />
+    </div>
+  </div>
+</div>
+<?php
 wp_reset_query();
 endif; // if ( $temp->have_posts() ):
 endif; // if( ! empty( $tags ) ):

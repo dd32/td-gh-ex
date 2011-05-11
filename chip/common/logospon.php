@@ -1,5 +1,5 @@
-<div class="logobox">
-  <div class="logoboxdata">            
+<div class="chipboxgrid">
+  <div class="chipboxgriddata">            
     
 	<div class="chipsetl2">
       <?php locate_template( array( CHIP_LIFE_COMMON_FSROOT . 'logo.php' ), true, false ); ?>

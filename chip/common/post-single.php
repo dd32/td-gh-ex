@@ -51,6 +51,12 @@ foreach( $post_class_array as $val ) {
 <div class="chipboxm1 chipstyle1 margin10b">
   <div class="chipboxm1data">
     
+    <?php 
+	if( $chip_life_global['theme_options']['chip_life_sponsor_post_undertitle'] == 1 ):
+	locate_template( array( CHIP_LIFE_SPONSOR_FSROOT . 'sponsor-post-undertitle.php' ), true, false );
+	endif;
+	?>
+    
     <div class="chipoverride1">
 	  <?php the_content(); ?>
       <br class="clear" />
@@ -69,6 +75,12 @@ foreach( $post_class_array as $val ) {
   </div>
 </div>
 
+<?php 
+if( $chip_life_global['theme_options']['chip_life_sponsor_post_468x15'] == 1 ):
+locate_template( array( CHIP_LIFE_SPONSOR_FSROOT . 'sponsor-468x15.php' ), true, false );
+endif;
+?>
+
 <?php
 if( $chip_life_global['theme_options']['chip_life_related_post'] == 1 ):
 locate_template( array( CHIP_LIFE_COMMON_FSROOT . 'post-related.php' ), true, false );
@@ -81,6 +93,7 @@ locate_template( array( CHIP_LIFE_COMMON_FSROOT . 'feedburner.php' ), true, fals
 endif;
 ?>
 
+<?php if( $chip_life_global['theme_options']['chip_life_authorbox'] == 1 ): ?>
 <div class="chipboxm1 margin10b">
   <div class="chipboxm1data">
     
@@ -97,6 +110,7 @@ endif;
   
   </div>
 </div>
+<?php endif; ?>
 
 <div class="chipboxm1 chipstyle3 margin10b">
   <div class="chipboxm1data">
