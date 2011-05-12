@@ -4,8 +4,8 @@ Theme URI: http://cyberchimps.com/ifeature-free/
 Description: iFeature: A Free WordPress Theme designed by CyberChimps.com in Long Beach, California. iFeature offers customizable theme options, an aesthetically pleasing design, the iFeature slider, dynamic header for custom logo, social icons, social sharing, contact section, widgetized sidebar and footer, typography including Google Fonts, and multiple template choices. Twitter @cyberchimps. (<a href="http://cyberchimps.com/ifeaturepro" alt="Upgrade to iFeature Pro">Upgrade to iFeature Pro</a>)
 Author: CyberChimps
 Author URI: http://cyberchimps.com
-Version: 1.1.1
-Tags: white, light, silver, two-columns, fixed-width, custom-header, custom-menu, threaded-comments, sticky-post
+Version: 1.1.2
+Tags: white, light, silver, two-columns, fixed-width, custom-header, custom-menu, threaded-comments, sticky-post, custom-background, theme-options
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -166,14 +166,14 @@ input[type=text] {
 #searchbar  {
 	width: 200px;
 	float: right;
-	padding-top: 4px;
+	margin-top: 3px;
 }
 	.searchform {
 		background:transparent url(./images/searchbar.png) no-repeat scroll center top;
 		width: 200px;
 		font-size: 10px;
-		padding:0;
-		margin:3px 5px 4px 0px;
+		padding: 0;
+		margin: 3px 5px 4px 0px;
 		position: relative;
 		height: 25px;	
 	}
@@ -220,13 +220,31 @@ input[type=text] {
 }
 
 .content_padding {
-	padding: 8px 8px 8px 8px;
+	padding: 2px 8px 8px 2px;
 }
 
 /* Posts Styling */
 
 .post_container {
-	padding: 0px 0 5px 0px;
+	background-color: #fff;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	margin-bottom: 10px;
+	padding: 0px 5px 5px 5px;
+}
+
+.content-background {
+	background-color: #fff;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	padding: 0px 5px 5px 5px;
+}
+
+.archive-contentbg {
+	background-color: #fff;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	padding: 0px 5px 5px 5px;
 }
 
 .posts_title {
@@ -252,11 +270,12 @@ input[type=text] {
 				font-size: 12px;
 				background-color: #f8f8f8;
 				height: 18px;
-				margin-bottom: 20px;
+				margin-bottom: 0px;
 				padding-left: 2px;
 				border: 1px solid #ccc;
 				border-radius: 3px;
 				-moz-border-radius: 3px;
+				position: relative;
  }
 
 img.alignright {float:right; margin:0 0 1em 1em}
@@ -285,13 +304,13 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 	margin: 10px;
 	padding-top: 4px;
 	text-align: center;
-	max-width: 640px;
+	max-width: 620px;
 }
 .wp-caption img {
 	border: 0 none;
 	margin: 0;
 	padding: 0;
-	max-width: 620px;
+	max-width: 610px;
 }
 .wp-caption p.wp-caption-text {
 	font-size: 11px;
@@ -340,7 +359,7 @@ blockquote p { }
 }
 
 #comments .navigation {
-	padding: 0 0 18px 0;
+	padding: 0 0px 18px 0;
 }
  
 .tags {
@@ -367,7 +386,6 @@ float: right;width: 316px;
 .sidebar-widget-title {
 	color: #5a5a5a;
 	background: url(./images/wtitlebg.png) no-repeat center top;
-	background: #d4d4d4\9;
 	height: 25px;
 	margin: -6px -5px 5px -5px;
 	padding: 0 5px 0 5px;
@@ -563,12 +581,12 @@ a { text-decoration: none; color: black; }
 }
 .sf-menu ul {
     position:       absolute;
-    margin-top:     0px;
+    top:            -999em;
     margin-left: 	-1px;
     width:          10em; /* left offset of submenus need to match (see below) */
 }
 .sf-menu ul li {
-    width:          190px;
+    width:          195px;
 }
 .sf-menu li:hover {
     visibility:     inherit; /* fixes IE7 'sticky bug' */
@@ -578,10 +596,10 @@ a { text-decoration: none; color: black; }
 .sf-menu li {
     float:          left;
     position:       relative;
+    
     padding: 0px 10px 0px 10px;
-   	background:  url(./images/imenuitems.png) repeat-x left bottom;
-	display: block;
-	}
+    background: transparent;
+}
 .sf-menu a { /* Nav link color */
     display:        block;
     position:       relative;
@@ -597,7 +615,7 @@ a { text-decoration: none; color: black; }
 }
 ul.sf-menu li:hover li ul,
 ul.sf-menu li.sfHover li ul {
-    top:            50px;
+    top:            -999em;
 }
 
 .sf-menu li li {
@@ -610,8 +628,8 @@ ul.sf-menu li.sfHover li ul {
 
 ul.sf-menu li li:hover ul,
 ul.sf-menu li li.sfHover ul {
-    left:           15.2em; /* match ul width */
-    top:            0px;
+    left:           15.5em; /* match ul width */
+    top:            0;
 }
 ul.sf-menu li li:hover li ul,
 ul.sf-menu li li.sfHover li ul {
@@ -619,21 +637,28 @@ ul.sf-menu li li.sfHover li ul {
 }
 ul.sf-menu li li li:hover ul,
 ul.sf-menu li li li.sfHover ul {
-    left:          15.2em; /* match ul width */
-    top:            0px;
+    left:           10em; /* match ul width */
+    top:            0;
 }
  
 /*** Custom Styles ***/
 
 /* The container wrapping .sf-menu */
-
+#navwrapper {
+    float:              left;
+    position: 			absolute;
+    width:              690px;
+    height: 			37px;
+    background:         transparent;
+    font:               1.0em;
+    margin-left: 		80px;
+}
 .sf-menu {
     float:              left;
     width:              100%;
 }
 .sf-menu li {
-   	background:         url(./images/imenuitems.png) repeat-x left bottom;
-	display: block;
+    background:         transparent;
     border-right: 1px solid #444;
     z-index: 2000;
 }

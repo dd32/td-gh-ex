@@ -64,7 +64,7 @@ $options = get_option('ifeature') ;
 	<link href='http://fonts.googleapis.com/css?family=<?php echo $font ?>' rel='stylesheet' type='text/css' />
 
 	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
-    
+	    
 	<?php wp_head(); ?>
 	
 	

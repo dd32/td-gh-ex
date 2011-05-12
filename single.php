@@ -15,7 +15,7 @@ get_header(); ?>
 	<div id="content_left">
 	
 		<div class="content_padding">
-		
+				
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			
 				<div class="post_container">
@@ -55,12 +55,12 @@ get_header(); ?>
 							</div><!--end postmetadata-->
 							
 					</div><!--end post_class-->
-						
-		</div><!--end post_container-->
 
 		<?php comments_template(); ?>
+		
 
 		<?php endwhile; endif; ?>
+				</div><!--end post_container-->
 		</div><!--end content_padding-->
 	</div> <!--end content_left-->
 	

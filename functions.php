@@ -15,15 +15,33 @@ add_theme_support('automatic-feed-links');
 add_theme_support( 'post-thumbnails' ); 
 set_post_thumbnail_size( 100, 100, true );
 
-
+// This theme allows users to set a custom background
+add_custom_background();
 	
 // This theme styles the visual editor with editor-style.css to match the theme style.
 add_editor_style();
+
+
+
+/**
+* Attach CSS3PIE behavior to elements
+* Add elements here that need PIE applied
+*/   
+function ifeature_render_ie_pie() { ?>
+<style type="text/css" media="screen">
+#header li a, .postmetadata, .post_container, .wp-caption, .sidebar-widget-style, .sidebar-widget-title {
+  behavior: url('<?php echo get_template_directory_uri(); ?>/library/pie/PIE.htc');
+}
+</style>
+<?php
+}
+
+add_action('wp_head', 'ifeature_render_ie_pie', 8);
 	
 // Load jQuery
 	if ( !is_admin() ) {
 	   wp_deregister_script('jquery');
-	   wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"), false);
+	   wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"), false, '1.4.4');
 	   wp_enqueue_script('jquery');
 	}
 

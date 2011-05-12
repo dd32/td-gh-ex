@@ -25,7 +25,7 @@
 				<?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
 
 				</div><!--end post-->
-		
+				
 			<?php comments_template(); ?>
 
 			<?php endwhile; endif; ?>

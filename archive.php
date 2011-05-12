@@ -15,7 +15,7 @@ get_header(); ?>
 	<div id="content_left">
 		
 		<div class="content_padding">
-
+		
 		<?php if (have_posts()) : ?>
 
  			<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
@@ -43,10 +43,10 @@ get_header(); ?>
 			
 			<?php } ?>
 
-			<?php get_template_part('pagination', 'archive'); ?>
-
 			<?php while (have_posts()) : the_post(); ?>
 			
+			<div class="post_container">
+
 				<div <?php post_class() ?>>
 				
 						<h2 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
@@ -55,19 +55,20 @@ get_header(); ?>
 
 						<div class="entry">
 							<?php the_content(); ?>
-							
-							<?php 
-								$hidefblike		= get_option('if_hide_fb_like') ? '' : 'unchecked';
-							?>
-							<?php if ($hidefblike == 'unchecked' ):?>
-							<div class="fb" >
-								<iframe src="http://www.facebook.com/plugins/like.php?href=<?php the_permalink() ?>&layout=standard&show_faces=true&width=450&action=like&colorscheme=light" scrolling="no" frameborder="0"  allowTransparency="true" style="border:none; overflow:hidden; width:530px; height:28px"></iframe>
-							</div>
-							<?php endif;?>
-							<!--end fb-->
 						</div>
+				<div class="tags">
+								<?php the_tags('Tags: ', ', ', '<br />'); ?>
+							</div><!--end tags-->
 
+							<div class="postmetadata">
+										<?php get_template_part('share', 'index' ); ?>
+								<div class="comments">
+									<?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>
+								</div><!--end comments-->	
+							</div><!--end postmetadata-->
+							
 				</div><!--end post-->
+			</div><!--end post_container-->
 
 			<?php endwhile; ?>
 

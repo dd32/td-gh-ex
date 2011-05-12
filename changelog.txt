@@ -9,6 +9,14 @@ iFeature Changelog\
 \
 ****************************\
 \
+Version 1.1.2 (5-11-11)\
+-Fixed menu CSS to eliminate dropdown blowout when loading certain pages.\
+-Added WordPress background color / image support.\
+-Revised CSS for posts and pages to have a post container with a white background.\
+-Searchbar CSS fixes for IE.\
+-Implemented PIE for rounded corners in IE7-8.\
+-Removed alpha filter for social icons for IE7-8 due to rendering issue (hover no longer supported for IE7-8, IE9 and modern browsers are fine). \
+\
 Version 1.1.1 (5-4-11)\
 -CSS fixes (iMenu).\
 \
