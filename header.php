@@ -18,12 +18,23 @@
 if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); 
 wp_head();
 ?>
+<style type="text/css">
+#header, #footer {
+background: url(<?php header_image();?>);
+}
+#site-title a {
+color:#<?php HEADER_TEXTCOLOR();?>
+}
+#site-description {
+color:#<?php HEADER_TEXTCOLOR();?>
+}
+</style>
 </head>
 <body <?php body_class();?>>
 <div id="wrapper">
 	<div id="header">
 		<h1 id="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php esc_attr_e( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-		<div id="site-description"><?php bloginfo( 'description' ); ?></div>
+		<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
 <?php
 //Add the Slider
 get_template_part('slider');

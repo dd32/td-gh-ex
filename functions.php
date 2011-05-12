@@ -24,6 +24,7 @@ function star_setup() {
 	/* add menu */
 	register_nav_menus( array(
 		'primary' => __( 'Primary Navigation', 'star' ),
+		'footer' => __( 'Footer Navigation', 'star' ),
 	) );
 }
 
@@ -35,6 +36,78 @@ function star_page_menu_args( $args ) {
 add_filter( 'wp_page_menu_args', 'star_page_menu_args' );
 	
 
+/*Headers    Sidhuvud*/
+if ( ! defined( 'HEADER_TEXTCOLOR' ) )
+	define( 'HEADER_TEXTCOLOR', '' );
+		
+if ( ! defined( 'HEADER_IMAGE' ) )
+	define( 'HEADER_IMAGE', '%s/images/star-header.png' );
+
+// The height and width of your custom header. 
+define( 'HEADER_IMAGE_WIDTH', apply_filters( 'star_header_image_width', 1600 ) );
+define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'star_header_image_height', 380 ) );
+
+// We'll be using post thumbnails for custom header images on posts and pages.
+// We want them to be 1600 pixels wide by 380 pixels tall.
+// Larger images will be auto-cropped to fit, smaller ones will be ignored. See header.php.
+set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );
+	
+// Don't support text inside the header image.
+//if ( ! defined( 'NO_HEADER_TEXT' ) )
+//define( 'NO_HEADER_TEXT', true );
+
+// Add a way for the custom header to be styled in the admin panel that controls
+// custom headers. See twentyten_admin_header_style(), below.
+add_custom_image_header( '', 'star_admin_header_style' );
+	
+// Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI.
+register_default_headers( array(
+	'light-blue' => array(
+		'url' => '%s/images/star-header-light-blue.png',
+		'thumbnail_url' => '%s/images/star-header-light-blue-thumb.png',
+		/* translators: header image description */
+		'description' => __( 'Light Blue', 'star' )
+	),
+	'light-beige' => array(
+		'url' => '%s/images/star-header-light-beige.png',
+		'thumbnail_url' => '%s/images/star-header-light-beige-thumb.png',
+		/* translators: header image description */
+		'description' => __( 'Light Beige', 'star' )
+	),
+	'black' => array(
+		'url' => '%s/images/star-header-black.png',
+		'thumbnail_url' => '%s/images/star-header-black-thumb.png',
+		/* translators: header image description */
+		'description' => __( 'Black', 'star' )
+	)
+) );
+	
+if ( ! function_exists( 'star_admin_header_style' ) ) :
+function star_admin_header_style() {
+?>
+<style type="text/css">
+#headimg #name {
+	padding-top:40px;
+	padding-left:30px; 
+	padding-right:30px; 
+	float:left; 
+	font-size:30px; 
+}
+#headimg #desc {
+	margin-top:-27px;
+	padding-left:30px; 
+	padding-right:30px; 
+	float:right; 
+	font-size:16px; 
+	font-style:italic;
+}
+</style>
+<?php
+}
+endif;
+
+	
+	
 /* Post excerpt        utdrag*/
 function star_excerpt_length( $length ) {
 	return 120;
@@ -153,7 +226,7 @@ function star_recent_posts() {
 	'showposts' => 5, /*The number of posts to show            antal som ska visas*/
 	'nopaging' => 0, 
 	'post_status' => 'publish', 
-	'caller_get_posts' => 1));
+	'ignore_sticky_posts' => 1));
 	if ($r->have_posts()) :
 		?>
 			<?php  while ($r->have_posts()) : $r->the_post(); ?>

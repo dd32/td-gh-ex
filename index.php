@@ -5,9 +5,7 @@
 				<?php /* Sticky post loop structure. */ ?>
 				<?php if ( is_sticky() ) : ?>	
 					<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-						<div class="sticky-top"> 
-							<h2 class="sticky-title"><a href="<?php the_permalink(); ?>" title="<?php printf ( __('Permalink to %s', 'star' ), the_title_attribute( 'echo=0' )); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-						</div>	
+						<h2 class="sticky-title"><a href="<?php the_permalink(); ?>" title="<?php printf ( __('Permalink to %s', 'star' ), the_title_attribute( 'echo=0' )); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 						<div class="sticky-content">
 							<?php
 							the_excerpt();
@@ -15,7 +13,6 @@
 							edit_post_link( __( 'Edit', 'star' ), '<span class="edit-link">', '</span>' ); 
 							?>	
 						</div><!-- .sticky -content -->
-						<div class="sticky-bottom"> </div><!-- .entry-utility -->
 					</div><!-- #post-## -->
 				<?php endif; ?>
 			<?php endwhile; // End the loop. ?>
