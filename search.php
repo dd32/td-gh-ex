@@ -1,66 +1,85 @@
-<?php
-/**
- * The template for displaying search results pages.
- *
- * @package Star
- */
-
-get_header(); ?>
-
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-		<?php
-		if ( have_posts() && strlen( trim( get_search_query() ) ) != 0 ) :
-			?>
-
-			<header class="page-header">
-				<h1 class="page-title">
-					<?php
-					printf(
-						/* Translators: %s: search term.  */
-						__( 'Search Results for: %s', 'star' ),
-						'<span>' . get_search_query() . '</span>'
-					);
-					?>
-				</h1>
-			</header><!-- .page-header -->
-
-			<?php /* Start the Loop */ ?>
-			<?php
-			while ( have_posts() ) :
-				the_post();
-				?>
-
+<?php get_header(); ?>
+<div id="container">
+	<div id="content" role="main">	
+		<?php if ( have_posts() ) : ?>
+			<h1 class="tag-page-title"><?php printf( __( 'Search Results for: %s', 'star' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+			<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+						<div class="star-date">
+							<a href="<?php the_permalink(); ?>"><?php the_time('d') ?><br/><?php the_time('m') ?><br/><?php the_time('y') ?><br/></a>
+							<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'star' ), __( '1 Comment', 'star' ), __( '% Comments', 'star' ) ); ?></span>
+						</div>
+						<h2 class="front-title"><a href="<?php the_permalink(); ?>" title="<?php printf ( __('Permalink to %s', 'star' ), the_title_attribute( 'echo=0' )); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+						<div class="entry-meta">
+						<?php if ( count( get_the_category() ) ) : ?>
+								<span class="cat-links entry-utility-prep entry-utility-prep-cat-links">
+									<?php echo __('Posted by ', 'star');
+									the_author_posts_link();
+									?>
+									<span class="meta-sep">|</span>
+									<?php echo get_the_category_list(', '); ?>
+								</span>
+								<span class="meta-sep">|</span>
+						<?php endif;
+						$tags_list = get_the_tag_list( '', ', ' );
+						if ( $tags_list ):
+							?>
+							<span class="tag-links">
+								<?php printf( __( '<span class="%1$s">Tagged</span> %2$s', 'star' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list ); ?>
+							</span>
+							<span class="meta-sep">|</span>
+					<?php endif; ?>
+					<?php edit_post_link( __( 'Edit', 'star' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
+				</div><!-- .entry-meta -->
+				<div class="entry-content">
 				<?php
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'content', get_post_format() );
-				?>
+				if ( has_post_thumbnail() ) 
+				{
+					the_post_thumbnail();// check if the post has a Post Thumbnail assigned to it.
+				}
+				the_content();
+				wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'star' ), 'after' => '</div>' ) ); ?>
+				</div><!-- .entry-content -->
+			</div><!-- #post-## -->
+		<?php
+		endwhile; // End the loop. Whew. ?>
+		
+		<?php wp_reset_query(); //reset and get pages. ?>
+		<?php if ( have_posts() ) : ?>
+			<?php $query = query_posts("$query_string . '&posts_per_page=-1&post_type=page'"); ?> 
+			<?php while ( have_posts() ) : the_post(); ?>
+				<div <?php post_class(); ?>>
+					<h2 class="front-title"><a href="<?php the_permalink(); ?>" title="<?php printf ( __('Permalink to %s', 'star' ), the_title_attribute( 'echo=0' )); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+					<div class="entry-meta">
+						<?php edit_post_link( __( 'Edit', 'star' ), '<span class="edit-link">', '</span>' ); ?>
+					</div><!-- .entry-meta -->
+					<div class="entry-content">
+						<?php the_excerpt(); ?>
+						<br/>
+					</div><!-- .entry-content -->
+				</div><!-- #post-## -->
+		<?php 
+		endwhile; // End the loop. Whew. ?>
+<?php endif; ?>
 
-			<?php endwhile; ?>
+					<?php if (  $wp_query->max_num_pages > 1 ) : ?>
+							<div class="nav navigation">
+								<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'star' ) ); ?></div>
+								<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'star' ) ); ?></div>
+							</div><!-- #nav -->
+					<?php endif; ?>
+					
+<?php else : ?>
+				<div id="post-0" class="no-results">
+					<h2 class="front-title"><?php _e( 'Nothing Found', 'star' ); ?></h2>
+					<div class="entry-content">
+						<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'star' ); ?></p>
+						<?php get_search_form(); ?>
+					</div><!-- .entry-content -->
+				</div><!-- #post-## -->
+<?php endif; ?>
 
-			<?php the_post_navigation(); ?>
-
-			<?php
-			/* If the search is not visible in the menu, and there is only one page of search results, display a search form on the search page. */
-			if ( $GLOBALS['wp_query']->max_num_pages < 2 && ! get_theme_mod( 'star_hide_search' ) ) {
-				echo '<span class="screen-reader-text">' . esc_html__( 'Would you like to search again?', 'star' ) . '</span><br/>';
-				get_search_form();
-			}
-			?>
-			<br>
-		<?php else : ?>
-
-			<?php get_template_part( 'content', 'none' ); ?>
-
-		<?php endif; ?>
-
-		</main><!-- #main -->
-	</section><!-- #primary -->
-
-<?php
-get_sidebar();
-get_footer();
+			</div><!-- #content -->
+			<?php get_sidebar(); ?>
+		</div><!-- #container -->
+<?php get_footer(); ?>
