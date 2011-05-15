@@ -1,8 +1,8 @@
 /*
 Theme Name: Northern-Web-Coders
-Theme URI: http://www.northern-web-coders.de/blog/archiv/2011/05/07/northern-web-coders-2-5-3/
+Theme URI: http://www.northern-web-coders.de/blog/archiv/2011/05/07/northern-web-coders-2-5-4/
 Description: Northern-Web-Coders - HTML5 Theme
-Version: 2.5.3
+Version: 2.5.4
 Author: Kai Ackermann | jaman
 Author URI: http://www.design-coding.de
 Tags: white, two-columns, flexible-width
@@ -31,33 +31,84 @@ body
 }
 
 /*Navigation*/
-nav
-{
-    width: 100%; 
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    float: left;
+nav {
+   background: #fff;
+   display: block;
+   float: left;
+   margin: 0 auto;
+   width: 100%;
+   border-bottom: 1px solid #dfdfdf
+}
+nav ul.menu,
+div.menu {
+   font-size: 13px;
+   margin-left: 12px;
+   width: 100%;
+}
+nav ul.menu,
+div.menu ul {
+   list-style: none;
+   margin: 0;
+}
+nav ul.menu li,
+div.menu li {
+   float: left;
+   position: relative;
+}
+nav a {
+   color: #2F2F2F;
+   font-weight: bold;
+   display: block;
+   line-height: 38px;
+   padding: 0 10px;
+   text-decoration: none;
+}
+nav ul ul {
+   display: none;
+   position: absolute;
+   top: 38px;
+   left: 0;
+   float: left;
+   width: 180px;
+   z-index: 99999;
+}
+nav ul ul li {
+   min-width: 180px;   
+   list-style: none;
+   border-bottom: 1px solid #fff
+}
+nav ul ul ul {
+    left: 100%;
+	top: 0;
+}
+nav ul ul a {
+	background: #2F2F2F;
+	color: #fff;
+	line-height: 1em;
+	padding: 10px;
+	width: 160px;
+	height: auto;
+}
+nav li:hover > a,
+nav ul ul :hover > a {
+	background: #2F2F2F;
+	color: #fff;
+}
+nav ul li:hover > ul {
+	display: block;
 }
 
-nav ul li
-{
-    float: left;
-    list-style: none;
+
+
+
+nav ul li.current_page_item > a,
+nav ul li.current-menu-ancestor > a,
+nav ul li.current-menu-item > a,
+nav ul li.current_page_ancestor > a{
+	color: #fff;
+    background: #ff9f00;
 }
 
-nav ul li a
-{
-    padding: 0px 14px;
-    color: #2F2F2F;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 13px
-}
-
-nav ul li a:hover, nav ul li.current-menu-item a, nav ul li.current-post-ancestor a
-{
-    color: #FF9F00;
-}
 
 
 /*header, left, right, footer*/
@@ -68,7 +119,7 @@ header
 
 header h1#header
 {
-   float: left;
+    float: left;
 }
 
 header h1#header a
@@ -165,13 +216,11 @@ clear: both;
 section.meta ul
 {
     list-style: none;
-
     margin: 0 0 15px 0;
 }
 
 section.meta ul li
 {
-
     margin-right: 15px
 }
 
@@ -181,32 +230,31 @@ section.meta a
 }
 
 article img {
-   padding: 3px;
-   margin: 2px;
-   background: #F0F0F0;
-   border: 1px solid #BFBFBF;
+    padding: 3px;
+    margin: 2px;
+    background: #F0F0F0;
+    border: 1px solid #BFBFBF;
 }
 
 article img.wp-smiley {
-   padding: 0;
-   margin: 0;
-   background: #fff;
-   border: 0;
+    padding: 0;
+    margin: 0;
+    background: #fff;
+    border: 0;
 }
 
 article img.alignleft {
-   margin-right: 10px;
-   float: left
+    margin-right: 10px;
+    float: left
 }
 
 article img.alignright {
-   margin-left: 10px;
-   float: right
+    margin-left: 10px;
+    float: right
 }
 
 article img.aligncenter {
-
-   clear: both;
+    clear: both;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -260,7 +308,7 @@ article pre, div.comment-body pre, article code, div.comment-body code
 article pre:hover, div.comment-body pre:hover, article code:hover, div.comment-body code:hover
 {
     background: #afafaf;
-color: #fff
+    color: #fff
 }
 
 article ul, article ol, article dl,
@@ -301,7 +349,7 @@ table tr td
 
 table tr td a
 {
-   text-decoration: none;
+    text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, h6
@@ -323,16 +371,16 @@ article object
 }
 
 article .wp-caption {
-   display: block;
-   padding: 20px 30px 20px 20px;
-   margin: 10px;
-   background: #F0F0F0;
-   border: 1px solid #BFBFBF;
+    display: block;
+    padding: 20px 20px 20px 20px;
+    margin: 10px;
+    background: #F0F0F0;
+    border: 1px solid #BFBFBF;
 }
 
 article .wp-caption-text {
    font-size: 11px;
-text-align: center;
+   text-align: center;
 }
 
 article .wp-caption a img {
@@ -350,7 +398,7 @@ article div.alignright {
 }
 
 article div.aligncenter {
-float: none;
+   float: none;
    margin: 0 auto;
 }
 
@@ -360,181 +408,182 @@ article div.alignnone {
 
 .photo
 {
-border: 1px solid #BFBFBF;
-padding: 3px;
-margin: 3px;
-display: block
+   border: 1px solid #BFBFBF;
+   padding: 3px;
+   margin: 3px;
+   display: block
 }
 
 
 /*comment*/
 section.comment
 {
-    margin: 10px 0;
+   margin: 10px 0;
 }
 
 section.commentbox
 {
-    margin: 10px 20px 40px 20px;
-    font-size: 12px;
+   margin: 10px 20px 40px 20px;
+   font-size: 12px;
 }
 
 section.commentbox div.comment-body
 {
-    margin: 10px 0;
-    padding: 10px 10px 20px 10px;
+   margin: 10px 0;
+   padding: 10px 10px 20px 10px;
 }
 
 section.commentbox div#respond
 {
-    margin: 10px 0;
-    padding: 10px 10px 20px 10px;
+   margin: 10px 0;
+   padding: 10px 10px 20px 10px;
 }
 
 section.commentbox img.avatar
 {
-    display: block;
-    float: left;
-    background: #fff;
-    margin: 0 10px 0 0;
-    padding: 4px;
+   display: block;
+   float: left;
+   background: #fff;
+   margin: 0 10px 0 0;
+   padding: 4px;
 }
 
 section.commentbox ol.commentlist
 {
-    margin-bottom: 20px;
-    list-style: none;
+   margin-bottom: 20px;
+   list-style: none;
 }
 
 section.commentbox ol.commentlist ul.children
 {
-    margin-left: 30px;
-    list-style: none;
+   margin-left: 30px;
+   list-style: none;
 }
 
 section.commentbox li.odd
 {
-    background: #f0f0f0
+   background: #f0f0f0
 }
 
 section.commentbox li.bypostauthor
 {
-    background: #FFBA4B
+   background: #FFBA4B
 }
 
 section.commentbox li.odd li.odd
 {
-    background: #fff
+   background: #fff
 }
 
 section.commentbox h3#reply-title
 {
-    margin-bottom: 10px;
+   margin-bottom: 10px;
 }
 
 section.commentbox form#commentform p.comment-notes
 {
-    margin-bottom: 5px;
+   margin-bottom: 5px;
 }
 
 section.commentbox form#commentform label, section.commentbox form#commentform span.requiyellow
 {
-    font-weight: bold;
-    font-size: 12px;
+   font-weight: bold;
+   font-size: 12px;
 }
 
 section.commentbox form#commentform input
 {
-    display: block;
-    margin-bottom: 5px;
+   display: block;
+   margin-bottom: 5px;
 }
 
 section.commentbox form#commentform textarea
 {
-    display: block;
+   display: block;
 }
 
 section.comment span
 {
-    display: block;
-    clear: both;
+   display: block;
+   clear: both;
 }
 
 
 section.commentbox div.commentmetadata
 {
-     float: right;
-     margin-top: -15px
+    float: right;
+    margin-top: -15px
 }
 
 section.commentbox a, section.comment a
 {
-    color: #2f2f2f;
+   color: #2f2f2f;
 }
 
 section.commentbox div.comment-author cite.fn
 {
-    font-weight: bold;
+   font-weight: bold;
 }
+
 section.commentbox a.comment-reply-link
 {
-    display: block;
-    margin: 10px 0 0 0;
-    clear: both;
+   display: block;
+   margin: 10px 0 0 0;
+   clear: both;
 }
 
 p.form-allowed-tags
 {
-    margin: 10px 0;
-    font-weight: bold
+   margin: 10px 0;
+   font-weight: bold
 }
 
 p.form-allowed-tags code
 {
-    margin: 10px 0;
-    font-weight: normal
+  margin: 10px 0;
+  font-weight: normal
 }
 
 
 /*gallery*/
 .gallery {
-	margin: 0 auto 18px;
+   margin: 0 auto 18px;
 }
 .gallery .gallery-item {
-	float: left;
-	margin-top: 0;
-	text-align: center;
-	width: 33%;
+   float: left;
+   margin-top: 0;
+   text-align: center;
+   width: 33%;
 }
 .gallery-columns-2 .gallery-item {
-	width: 50%;
+   width: 50%;
 }
 .gallery-columns-4 .gallery-item {
-	width: 25%;
+   width: 25%;
 }
 
 .gallery-columns-2 .attachment-medium {
-	max-width: 92%;
-	height: auto;
+   max-width: 92%;
+   height: auto;
 }
 .gallery-columns-4 .attachment-thumbnail {
-	max-width: 84%;
-	height: auto;
+   max-width: 84%;
+   height: auto;
 }
 .gallery .gallery-caption {
-	color: #888;
-	font-size: 12px;
-	margin: 0 0 12px;
+   color: #888;
+   font-size: 12px;
+   margin: 0 0 12px;
 }
 .gallery dl {
-	margin: 0 0 10px 0;
-	clear: none;
+   margin: 0 0 10px 0;
+   clear: none;
 }
 
 
 #content .attachment img {
-	display: block;
-	margin: 0 auto;
+   display: block;
+   margin: 0 auto;
 }
 
 
@@ -557,71 +606,71 @@ section#pagenav a
 
 section#pagenav a:hover
 {
-  color: #2F2F2F;
+ color: #2F2F2F;
 }
 
 
 /*footer*/
 section.footer
 {
-    color: #2F2F2F;
-    border-top: 1px solid #DFDFDF;
-    clear: both;
-    font-size: 13px;
-    padding: 10px 0 20px 0;
-    width: 100%;
+   color: #2F2F2F;
+   border-top: 1px solid #DFDFDF;
+   clear: both;
+   font-size: 13px;
+   padding: 10px 0 20px 0;
+   width: 100%;
 }
 
 section.footer span
 {
-    float: right
+   float: right
 }
 
 section.footer a
 {
-    color: #FF9F00
+   color: #FF9F00
 }
 
 section.footerbox
 {
-    float: left;
-    width: 25%;
-    background: #fff;
-    margin-bottom: 20px;
+   float: left;
+   width: 25%;
+   background: #fff;
+   margin-bottom: 20px;
 }
 
 
 .footerbox #searchform label
 {
-    display: none
+   display: none
 }
 
 section.footerbox a
 {
-     color: #495865;
+    color: #495865;
 }
 
 section.footerbox ul
 {
-    padding: 0 10px ;
-    margin: 0 10px 10px 0;
-    list-style: none
+   padding: 0 10px ;
+   margin: 0 10px 10px 0;
+   list-style: none
 }
 
 section.footerbox ul li
 {
-    font-size: 13px;
+   font-size: 13px;
 }
 
 section.footerbox ul ul
 {
-    list-style: circle
+   list-style: circle
 }
 
 section.footerbox h4
-{
-    font-size: 17px;
-    color: #495865;
-    border-bottom: 1px solid #DFDFDF;
-    margin-bottom: 5px
+{   
+   font-size: 17px;
+   color: #495865;
+   border-bottom: 1px solid #DFDFDF;
+   margin-bottom: 5px
 }

@@ -4,7 +4,6 @@ get_header();
 
 <?php $i =(''); ?>
 
-
 <section class="column-left">
 <?php if (have_posts()) : while(have_posts()) : $i++; if(($i % 2) == 0) : $wp_query->next_post(); else : the_post(); ?>
 
@@ -34,11 +33,7 @@ the_post_thumbnail();
 <?php endif; ?>
 </section>
 
-
-
 <?php $i = 0; rewind_posts(); ?>
-
-
 
 <section class="column-right">
 <?php if (have_posts()) : while(have_posts()) : $i++; if(($i % 2) !== 0) : $wp_query->next_post(); else : the_post(); ?>

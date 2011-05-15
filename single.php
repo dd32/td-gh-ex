@@ -6,7 +6,7 @@ get_header();
 
 <section class="column-full">
 
-<article class="post">
+<article <?php post_class(); ?>>
 <?php the_date('','<h2 class="date">','</h2>'); ?>
 <h3 class="storytitle" id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(''); ?></a></h3>
 <section class="meta">
@@ -35,8 +35,6 @@ get_header();
 <?php previous_post_link('%link'); ?> - <?php next_post_link('%link'); ?>
 
 </section>
-
-
 
 <?php endwhile; else: ?>
 

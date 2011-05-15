@@ -6,7 +6,7 @@ get_header();
 
 <section class="column-full">
 
-<article class="post">
+<article <?php post_class(); ?>>
 <h3 class="storytitle" id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(''); ?></a></h3>
 <section class="meta"><?php edit_post_link(__('Edit This')); ?></section>
 
