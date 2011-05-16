@@ -1,98 +1,99 @@
 <?php
-/*
-|--------------------------
-| Chip Life Options Class
-|--------------------------
+/**
+* Chip Life Options Class
 */
 
 class Chip_Life_Options {
 
 		
-		/*
-		|--------------------------
-		| Chip Admin Init
-		|--------------------------
+		/**
+		* Chip Admin Init
 		*/
 		
 		function chip_admin_init() {
 		
 			/** Register Admin Stylesheet */
 			wp_register_style( 'chip_life_stylesheet', CHIP_LIFE_OPTION_WSROOT . 'style.css' );
+			wp_register_style( 'chip_life_uismoothness', CHIP_LIFE_SCRIPT_WSROOT . 'jquery/ui/css/smoothness/jquery-ui-1.8.12.custom.css' );
+			
+			/** Register Admin Scripts */
+			wp_register_script( 'chip_life_jquery_cookie', CHIP_LIFE_SCRIPT_WSROOT . 'jquery/jquery.cookie.js' );
 			
 			/** Register Theme Options */
 			register_setting( 'chip_life_options_group', 'chip_life_options', array( 'Chip_Life_Options', 'chip_validation_fn' ) );
 			
 			/** Chip Blog Section */
-			add_settings_section( 'chip_life_section_blog', 'Blog Options', array( 'Chip_Life_Options', 'chip_life_section_blog_fn' ), 'chip_life_sections' );
-			add_settings_field( 'chip_life_field_logo', 'Use Image Logo in Header', array( 'Chip_Life_Options', 'chip_life_field_logo_fn' ), 'chip_life_sections', 'chip_life_section_blog' );
-			add_settings_field( 'chip_life_field_logo_url', 'Enter Logo URl - Dimension (215x125)', array( 'Chip_Life_Options', 'chip_life_field_logo_url_fn' ), 'chip_life_sections', 'chip_life_section_blog' );
+			add_settings_section( 'chip_life_section_blog', 'Blog Options', array( 'Chip_Life_Options', 'chip_life_section_blog_fn' ), 'chip_life_section_blog_page' );
 			
-			add_settings_field( 'chip_life_field_header_style', 'Header Style', array( 'Chip_Life_Options', 'chip_life_field_header_style_fn' ), 'chip_life_sections', 'chip_life_section_blog' );			
-			add_settings_field( 'chip_life_field_post_style', 'Post Style', array( 'Chip_Life_Options', 'chip_life_field_post_style_fn' ), 'chip_life_sections', 'chip_life_section_blog' );
+			add_settings_field( 'chip_life_field_logo', 'Use Image Logo in Header', array( 'Chip_Life_Options', 'chip_life_field_logo_fn' ), 'chip_life_section_blog_page', 'chip_life_section_blog' );
+			add_settings_field( 'chip_life_field_logo_url', 'Enter Logo URl - Dimension (215x125)', array( 'Chip_Life_Options', 'chip_life_field_logo_url_fn' ), 'chip_life_section_blog_page', 'chip_life_section_blog' );
+			
+			add_settings_field( 'chip_life_field_header_style', 'Header Style', array( 'Chip_Life_Options', 'chip_life_field_header_style_fn' ), 'chip_life_section_blog_page', 'chip_life_section_blog' );			
+			add_settings_field( 'chip_life_field_post_style', 'Post Style', array( 'Chip_Life_Options', 'chip_life_field_post_style_fn' ), 'chip_life_section_blog_page', 'chip_life_section_blog' );
 			
 			/** Chip Post Section */
-			add_settings_section( 'chip_life_section_post', 'Post Options', array( 'Chip_Life_Options', 'chip_life_section_post_fn' ), 'chip_life_sections' );
-			add_settings_field( 'chip_life_field_related_post', 'Use Related Posts at the Bottom of Post', array( 'Chip_Life_Options', 'chip_life_field_related_post_fn' ), 'chip_life_sections', 'chip_life_section_post' );
-			add_settings_field( 'chip_life_field_related_post_number', 'How many Related Posts to Execute', array( 'Chip_Life_Options', 'chip_life_field_related_post_number_fn' ), 'chip_life_sections', 'chip_life_section_post' );
+			add_settings_section( 'chip_life_section_post', 'Post Options', array( 'Chip_Life_Options', 'chip_life_section_post_fn' ), 'chip_life_section_post_page' );
+			
+			add_settings_field( 'chip_life_field_related_post', 'Use Related Posts at the Bottom of Post', array( 'Chip_Life_Options', 'chip_life_field_related_post_fn' ), 'chip_life_section_post_page', 'chip_life_section_post' );
+			add_settings_field( 'chip_life_field_related_post_number', 'How many Related Posts to Execute', array( 'Chip_Life_Options', 'chip_life_field_related_post_number_fn' ), 'chip_life_section_post_page', 'chip_life_section_post' );
 			
 			/** Chip Sponsor Section */
-			add_settings_section( 'chip_life_section_sponsor', 'Sponsor Options', array( 'Chip_Life_Options', 'chip_life_section_sponsor_fn' ), 'chip_life_sections' );
+			add_settings_section( 'chip_life_section_sponsor', 'Sponsor Options', array( 'Chip_Life_Options', 'chip_life_section_sponsor_fn' ), 'chip_life_section_sponsor_page' );
 			
-			add_settings_field( 'chip_life_field_sponsor_header_728x90', 'Display Sponsor in Header', array( 'Chip_Life_Options', 'chip_life_field_sponsor_header_728x90_fn' ), 'chip_life_sections', 'chip_life_section_sponsor' );
-			add_settings_field( 'chip_life_field_sponsor_header_728x90_code', 'Enter Sponsor Code', array( 'Chip_Life_Options', 'chip_life_field_sponsor_header_728x90_code_fn' ), 'chip_life_sections', 'chip_life_section_sponsor' );
+			add_settings_field( 'chip_life_field_sponsor_header_728x90', 'Display Sponsor in Header', array( 'Chip_Life_Options', 'chip_life_field_sponsor_header_728x90_fn' ), 'chip_life_section_sponsor_page', 'chip_life_section_sponsor' );
+			add_settings_field( 'chip_life_field_sponsor_header_728x90_code', 'Enter Sponsor Code', array( 'Chip_Life_Options', 'chip_life_field_sponsor_header_728x90_code_fn' ), 'chip_life_section_sponsor_page', 'chip_life_section_sponsor' );
 			
-			add_settings_field( 'chip_life_field_sponsor_header_728x15', 'Display Sponsor under Header', array( 'Chip_Life_Options', 'chip_life_field_sponsor_header_728x15_fn' ), 'chip_life_sections', 'chip_life_section_sponsor' );
-			add_settings_field( 'chip_life_field_sponsor_header_728x15_code', 'Enter Sponsor Code', array( 'Chip_Life_Options', 'chip_life_field_sponsor_header_728x15_code_fn' ), 'chip_life_sections', 'chip_life_section_sponsor' );
+			add_settings_field( 'chip_life_field_sponsor_header_728x15', 'Display Sponsor under Header', array( 'Chip_Life_Options', 'chip_life_field_sponsor_header_728x15_fn' ), 'chip_life_section_sponsor_page', 'chip_life_section_sponsor' );
+			add_settings_field( 'chip_life_field_sponsor_header_728x15_code', 'Enter Sponsor Code', array( 'Chip_Life_Options', 'chip_life_field_sponsor_header_728x15_code_fn' ), 'chip_life_section_sponsor_page', 'chip_life_section_sponsor' );
 			
-			add_settings_field( 'chip_life_field_sponsor_post_undertitle', 'Display Sponsor under Post Title', array( 'Chip_Life_Options', 'chip_life_field_sponsor_post_undertitle_fn' ), 'chip_life_sections', 'chip_life_section_sponsor' );
-			add_settings_field( 'chip_life_field_sponsor_post_undertitle_code', 'Enter Sponsor Code', array( 'Chip_Life_Options', 'chip_life_field_sponsor_post_undertitle_code_fn' ), 'chip_life_sections', 'chip_life_section_sponsor' );
+			add_settings_field( 'chip_life_field_sponsor_post_undertitle', 'Display Sponsor under Post Title', array( 'Chip_Life_Options', 'chip_life_field_sponsor_post_undertitle_fn' ), 'chip_life_section_sponsor_page', 'chip_life_section_sponsor' );
+			add_settings_field( 'chip_life_field_sponsor_post_undertitle_code', 'Enter Sponsor Code', array( 'Chip_Life_Options', 'chip_life_field_sponsor_post_undertitle_code_fn' ), 'chip_life_section_sponsor_page', 'chip_life_section_sponsor' );
 			
-			add_settings_field( 'chip_life_field_sponsor_post_468x15', 'Display Sponsor at the end of Post', array( 'Chip_Life_Options', 'chip_life_field_sponsor_post_468x15_fn' ), 'chip_life_sections', 'chip_life_section_sponsor' );
-			add_settings_field( 'chip_life_field_sponsor_post_468x15_code', 'Enter Sponsor Code', array( 'Chip_Life_Options', 'chip_life_field_sponsor_post_468x15_code_fn' ), 'chip_life_sections', 'chip_life_section_sponsor' );
+			add_settings_field( 'chip_life_field_sponsor_post_468x15', 'Display Sponsor at the end of Post', array( 'Chip_Life_Options', 'chip_life_field_sponsor_post_468x15_fn' ), 'chip_life_section_sponsor_page', 'chip_life_section_sponsor' );
+			add_settings_field( 'chip_life_field_sponsor_post_468x15_code', 'Enter Sponsor Code', array( 'Chip_Life_Options', 'chip_life_field_sponsor_post_468x15_code_fn' ), 'chip_life_section_sponsor_page', 'chip_life_section_sponsor' );
 			
 			/** Chip Subscription Section */
-			add_settings_section( 'chip_life_section_subscription', 'Subscription Options', array( 'Chip_Life_Options', 'chip_life_section_subscription_fn' ), 'chip_life_sections' );
-			add_settings_field( 'chip_life_field_rss', 'Use RSS', array( 'Chip_Life_Options', 'chip_life_field_rss_fn' ), 'chip_life_sections', 'chip_life_section_subscription' );
-			add_settings_field( 'chip_life_field_rss_url', 'Enter RSS URL', array( 'Chip_Life_Options', 'chip_life_field_rss_url_fn' ), 'chip_life_sections', 'chip_life_section_subscription' );
+			add_settings_section( 'chip_life_section_subscription', 'Subscription Options', array( 'Chip_Life_Options', 'chip_life_section_subscription_fn' ), 'chip_life_section_subscription_page' );
 			
-			add_settings_field( 'chip_life_field_feedburner', 'Use Feedburner', array( 'Chip_Life_Options', 'chip_life_field_feedburner_fn' ), 'chip_life_sections', 'chip_life_section_subscription' );
-			add_settings_field( 'chip_life_field_feedburner_id', 'Enter Feedburner ID', array( 'Chip_Life_Options', 'chip_life_field_feedburner_id_fn' ), 'chip_life_sections', 'chip_life_section_subscription' );
+			add_settings_field( 'chip_life_field_rss', 'Use RSS', array( 'Chip_Life_Options', 'chip_life_field_rss_fn' ), 'chip_life_section_subscription_page', 'chip_life_section_subscription' );
+			add_settings_field( 'chip_life_field_rss_url', 'Enter RSS URL', array( 'Chip_Life_Options', 'chip_life_field_rss_url_fn' ), 'chip_life_section_subscription_page', 'chip_life_section_subscription' );
 			
-			add_settings_field( 'chip_life_field_feedburner_post_bottom', 'Use Feedburner at Post bottom', array( 'Chip_Life_Options', 'chip_life_field_feedburner_post_bottom_fn' ), 'chip_life_sections', 'chip_life_section_subscription' );
+			add_settings_field( 'chip_life_field_feedburner', 'Use Feedburner', array( 'Chip_Life_Options', 'chip_life_field_feedburner_fn' ), 'chip_life_section_subscription_page', 'chip_life_section_subscription' );
+			add_settings_field( 'chip_life_field_feedburner_id', 'Enter Feedburner ID', array( 'Chip_Life_Options', 'chip_life_field_feedburner_id_fn' ), 'chip_life_section_subscription_page', 'chip_life_section_subscription' );
 			
-			add_settings_field( 'chip_life_field_twitter', 'Use Twitter', array( 'Chip_Life_Options', 'chip_life_field_twitter_fn' ), 'chip_life_sections', 'chip_life_section_subscription' );
-			add_settings_field( 'chip_life_field_twitter_url', 'Enter Twitter URL', array( 'Chip_Life_Options', 'chip_life_field_twitter_url_fn' ), 'chip_life_sections', 'chip_life_section_subscription' );
+			add_settings_field( 'chip_life_field_feedburner_post_bottom', 'Use Feedburner at Post bottom', array( 'Chip_Life_Options', 'chip_life_field_feedburner_post_bottom_fn' ), 'chip_life_section_subscription_page', 'chip_life_section_subscription' );
 			
-			add_settings_field( 'chip_life_field_delicious', 'Use Delicious', array( 'Chip_Life_Options', 'chip_life_field_delicious_fn' ), 'chip_life_sections', 'chip_life_section_subscription' );
-			add_settings_field( 'chip_life_field_delicious_url', 'Enter Delicious URL', array( 'Chip_Life_Options', 'chip_life_field_delicious_url_fn' ), 'chip_life_sections', 'chip_life_section_subscription' );
+			add_settings_field( 'chip_life_field_twitter', 'Use Twitter', array( 'Chip_Life_Options', 'chip_life_field_twitter_fn' ), 'chip_life_section_subscription_page', 'chip_life_section_subscription' );
+			add_settings_field( 'chip_life_field_twitter_url', 'Enter Twitter URL', array( 'Chip_Life_Options', 'chip_life_field_twitter_url_fn' ), 'chip_life_section_subscription_page', 'chip_life_section_subscription' );
 			
-			add_settings_field( 'chip_life_field_facebook', 'Use Facebook', array( 'Chip_Life_Options', 'chip_life_field_facebook_fn' ), 'chip_life_sections', 'chip_life_section_subscription' );
-			add_settings_field( 'chip_life_field_facebook_url', 'Enter Facebook URL', array( 'Chip_Life_Options', 'chip_life_field_facebook_url_fn' ), 'chip_life_sections', 'chip_life_section_subscription' );
+			add_settings_field( 'chip_life_field_delicious', 'Use Delicious', array( 'Chip_Life_Options', 'chip_life_field_delicious_fn' ), 'chip_life_section_subscription_page', 'chip_life_section_subscription' );
+			add_settings_field( 'chip_life_field_delicious_url', 'Enter Delicious URL', array( 'Chip_Life_Options', 'chip_life_field_delicious_url_fn' ), 'chip_life_section_subscription_page', 'chip_life_section_subscription' );
 			
-			add_settings_field( 'chip_life_field_stumble', 'Use Stumbleupon', array( 'Chip_Life_Options', 'chip_life_field_stumble_fn' ), 'chip_life_sections', 'chip_life_section_subscription' );
-			add_settings_field( 'chip_life_field_stumble_url', 'Enter Stumbleupon URL', array( 'Chip_Life_Options', 'chip_life_field_stumble_url_fn' ), 'chip_life_sections', 'chip_life_section_subscription' );
+			add_settings_field( 'chip_life_field_facebook', 'Use Facebook', array( 'Chip_Life_Options', 'chip_life_field_facebook_fn' ), 'chip_life_section_subscription_page', 'chip_life_section_subscription' );
+			add_settings_field( 'chip_life_field_facebook_url', 'Enter Facebook URL', array( 'Chip_Life_Options', 'chip_life_field_facebook_url_fn' ), 'chip_life_section_subscription_page', 'chip_life_section_subscription' );
 			
-			add_settings_field( 'chip_life_field_digg', 'Use Digg', array( 'Chip_Life_Options', 'chip_life_field_digg_fn' ), 'chip_life_sections', 'chip_life_section_subscription' );
-			add_settings_field( 'chip_life_field_digg_url', 'Enter Digg URL', array( 'Chip_Life_Options', 'chip_life_field_digg_url_fn' ), 'chip_life_sections', 'chip_life_section_subscription' );
+			add_settings_field( 'chip_life_field_stumble', 'Use Stumbleupon', array( 'Chip_Life_Options', 'chip_life_field_stumble_fn' ), 'chip_life_section_subscription_page', 'chip_life_section_subscription' );
+			add_settings_field( 'chip_life_field_stumble_url', 'Enter Stumbleupon URL', array( 'Chip_Life_Options', 'chip_life_field_stumble_url_fn' ), 'chip_life_section_subscription_page', 'chip_life_section_subscription' );
+			
+			add_settings_field( 'chip_life_field_digg', 'Use Digg', array( 'Chip_Life_Options', 'chip_life_field_digg_fn' ), 'chip_life_section_subscription_page', 'chip_life_section_subscription' );
+			add_settings_field( 'chip_life_field_digg_url', 'Enter Digg URL', array( 'Chip_Life_Options', 'chip_life_field_digg_url_fn' ), 'chip_life_section_subscription_page', 'chip_life_section_subscription' );
 			
 			/** Chip General Section */
-			add_settings_section( 'chip_life_section_general', 'General Options', array( 'Chip_Life_Options', 'chip_life_section_general_fn' ), 'chip_life_sections' );
+			add_settings_section( 'chip_life_section_general', 'General Options', array( 'Chip_Life_Options', 'chip_life_section_general_fn' ), 'chip_life_section_general_page' );
 			
-			add_settings_field( 'chip_life_field_authorbox', 'Display Author Box', array( 'Chip_Life_Options', 'chip_life_field_authorbox_fn' ), 'chip_life_sections', 'chip_life_section_general' );
+			add_settings_field( 'chip_life_field_authorbox', 'Display Author Box', array( 'Chip_Life_Options', 'chip_life_field_authorbox_fn' ), 'chip_life_section_general_page', 'chip_life_section_general' );
 			
-			add_settings_field( 'chip_life_field_analytic', 'Use Analytic', array( 'Chip_Life_Options', 'chip_life_field_analytic_fn' ), 'chip_life_sections', 'chip_life_section_general' );
-			add_settings_field( 'chip_life_field_analytic_code', 'Enter Analytic Code', array( 'Chip_Life_Options', 'chip_life_field_analytic_code_fn' ), 'chip_life_sections', 'chip_life_section_general' );
+			add_settings_field( 'chip_life_field_analytic', 'Use Analytic', array( 'Chip_Life_Options', 'chip_life_field_analytic_fn' ), 'chip_life_section_general_page', 'chip_life_section_general' );
+			add_settings_field( 'chip_life_field_analytic_code', 'Enter Analytic Code', array( 'Chip_Life_Options', 'chip_life_field_analytic_code_fn' ), 'chip_life_section_general_page', 'chip_life_section_general' );
 			
-			add_settings_field( 'chip_life_field_copyright', 'Enter Copyright Text', array( 'Chip_Life_Options', 'chip_life_field_copyright_fn' ), 'chip_life_sections', 'chip_life_section_general' );
+			add_settings_field( 'chip_life_field_copyright', 'Enter Copyright Text', array( 'Chip_Life_Options', 'chip_life_field_copyright_fn' ), 'chip_life_section_general_page', 'chip_life_section_general' );
 			
-			add_settings_field('chip_life_field_reset', 'Reset Theme Options', array( 'Chip_Life_Options', 'chip_life_field_reset_fn' ), 'chip_life_sections', 'chip_life_section_general');
+			add_settings_field('chip_life_field_reset', 'Reset Theme Options', array( 'Chip_Life_Options', 'chip_life_field_reset_fn' ), 'chip_life_section_general_page', 'chip_life_section_general');
 		
 		}
 		
-		/*
-		|--------------------------
-		| Chip Admin Menu
-		|--------------------------
+		/**
+		* Chip Admin Menu
 		*/
 		
 		function chip_admin_menu() {
@@ -101,6 +102,29 @@ class Chip_Life_Options {
 			/* Using registered $page handle to hook stylesheet loading */
 			add_action( 'admin_print_styles-' . $page, array( 'Chip_Life_Options', 'chip_admin_styles_fn' ) );
 		
+		}
+		
+		/**
+		* Chip Admin Style
+		*/
+		
+		function chip_admin_styles_fn() {
+			
+			wp_enqueue_script( 'jquery' );
+			wp_enqueue_script( 'jquery-ui-tabs' );
+			wp_enqueue_script( 'chip_life_jquery_cookie', '', array( 'jquery-ui-tabs' ), '1.4' );			
+			
+			wp_enqueue_style( 'chip_life_stylesheet' );
+			wp_enqueue_style( 'chip_life_uismoothness' );
+		
+		}
+		
+		/**
+		* Chip Setting - Form
+		*/
+		
+		function chip_setting_fn() {
+			locate_template( array( CHIP_LIFE_OPTION_FSROOT . 'setting.php' ), true, false );
 		}
 		
 		/**
@@ -174,26 +198,6 @@ class Chip_Life_Options {
 			
 			}
 		
-		}
-		
-		/*
-		|--------------------------
-		| Chip Admin Style
-		|--------------------------
-		*/
-		
-		function chip_admin_styles_fn() {
-			wp_enqueue_style( 'chip_life_stylesheet' );
-		}
-		
-		/*
-		|--------------------------
-		| Chip Setting - Form
-		|--------------------------
-		*/
-		
-		function chip_setting_fn() {
-			locate_template( array( CHIP_LIFE_OPTION_FSROOT . 'setting.php' ), true, false );
 		}
 		
 		/*

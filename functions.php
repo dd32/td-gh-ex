@@ -40,6 +40,16 @@ function chip_life_sidebars() {
 		'after_widget'	=>	'<br class="clear" /></div></div>',
 		'before_title'	=>	'<h2 class="blue chipstyle3 padding5 margin10b">',
 		'after_title'	=> '</h2>',
+	) );
+	
+	register_sidebar( array (
+		'name'			=>	'Footer Navigation Sidebar',
+		'id'			=>	'footer-navigation-sidebar',
+		'description'	=>	'Add Text Widget to display links in footer. Example: <ul><li><a href="#">About Us</a></li></ul>',
+		'before_widget'	=>	'<div id="%1$s" class="margin10b chiplisth1 font11 %2$s">',
+		'after_widget'	=>	'<br class="clear" /></div>',
+		'before_title'	=>	'<h2 class="blue chipstyle3 padding5 margin10b">',
+		'after_title'	=> '</h2>',
 	) );	
 	
 }

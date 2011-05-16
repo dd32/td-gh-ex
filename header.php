@@ -11,6 +11,8 @@
 </head>
 <body <?php body_class(); ?>>
 
+<?php locate_template( array( CHIP_LIFE_COMMON_FSROOT . 'bsa.php' ), true, false ); ?>
+
 <!-- Begin Wrap -->
 <div id="wrap">
   <div id="wrapdata">
