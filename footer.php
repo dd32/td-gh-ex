@@ -1,7 +1,5 @@
-<?php /* if index.php or another page template (copied from index.php) was not used
-(i.e. by a plugin such as WPG2), the global $bfa_ata will be empty */
-# global $bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2; 
-# if ($bfa_ata == "") include_once (TEMPLATEPATH . '/functions/bfa_get_options.php');
+<?php /* if index.php or another page template (copied from index.php) was not used */
+global $bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2;
 if (!isset($bfa_ata))  
 list($bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2, $bfa_ata['h_blogtitle'], $bfa_ata['h_posttitle']) = bfa_get_options();
 ?>
@@ -95,7 +93,7 @@ list($bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2, $bfa_ata['
 <!-- Footer -->
 <td id="footer" colspan="<?php echo $cols; ?>">
     <p>
-    <?php $GLOBALS['footer_style_content'] = bfa_footer(); include 'bfa://footer_style_content'; ?>
+    <?php echo bfa_footer(); ?>
     </p>
     <?php if ($bfa_ata['footer_show_queries'] == "Yes - visible") { ?>
     <p>
@@ -117,6 +115,6 @@ list($bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2, $bfa_ata['
 </table><!-- / layout -->
 </div><!-- / container -->
 </div><!-- / wrapper -->
-<?php include 'bfa://html_inserts_body_bottom'; ?>
+<?php bfa_incl('html_inserts_body_bottom'); ?>
 </body>
 </html>

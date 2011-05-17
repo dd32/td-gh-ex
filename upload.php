@@ -3,10 +3,11 @@ if (!empty($_SERVER['SCRIPT_FILENAME']) AND 'upload.php' == basename($_SERVER['S
 	die ('Please do not load this page directly.');
 }
 global $user_ID; 
+
 if( $user_ID ) { 
 	if( current_user_can('level_10') ) { 
-		$import_options = file_get_contents($_FILES['userfile']['tmp_name']);
-		
+		$import_options = bfa_file_get_contents($_FILES['userfile']['tmp_name']);
+	
 		// Since 3.5.2, use JSON 
 		if ( json_decode($import_options) != NULL AND strpos($import_options, 'use_bfa_seo') !== FALSE ) {
 			update_option('bfa_ata4', json_decode($import_options, TRUE));

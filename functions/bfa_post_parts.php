@@ -18,13 +18,13 @@ function bfa_post_kicker($before = '<div class="post-kicker">', $after = '</div>
 			elseif ( is_single() ) 	$kickertype = 'post_kicker_single'; 
 			else 					$kickertype = 'post_kicker_multi'; 
 			
-			$GLOBALS[$kickertype] = postinfo($bfa_ata[$kickertype]);
-			include ('bfa://' . $kickertype);
+			echo postinfo($bfa_ata[$kickertype]);
 			
 			echo $after;		
     	}
     }
 }
+
 
 
 function bfa_post_headline($before = '<div class="post-headline">', $after = '</div>') 
@@ -41,7 +41,11 @@ function bfa_post_headline($before = '<div class="post-headline">', $after = '</
 	
 	// Since 3.6.1: Display a link to the full post if there is no post title and the post is too short
 	// for a read more link.
-	if ( get_the_title() == '' ) { ?>
+	
+	// some plugins hook into 'the_title()' so we only want it called once. But it must aslo be called 
+	// when using the bfa_ata titles so we use a dummy call ($bfa_toss = the_title();) in those cases
+	$bfa_temp_title = get_the_title();
+	if ( $bfa_temp_title == '' ) { ?>
 		<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link">Permalink</a><?php 
 		
 	} else if ( (!is_single() AND !is_page()) OR $bfa_ata_display_body_title == '' ) {
@@ -50,22 +54,26 @@ function bfa_post_headline($before = '<div class="post-headline">', $after = '</
 		<h<?php echo $bfa_ata['h_posttitle']; ?>><?php 
 			
 		if( !is_single() AND !is_page() ) { ?>
-			<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php 
+			<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php $bfa_temp_title ?>"><?php 
 		} 
 
 		if ( (is_single() OR is_page()) AND $bfa_ata_body_title != "" ) {
 			echo htmlentities($bfa_ata_body_title,ENT_QUOTES,'UTF-8');
+			$bfa_toss = the_title();
 		} else {
-			if ( $bfa_ata_body_title_multi != '' ) 
+			if ( $bfa_ata_body_title_multi != '' ) {
 				echo htmlentities($bfa_ata_body_title_multi,ENT_QUOTES,'UTF-8');  
+			$bfa_toss = the_title(); }
 			else 
-				the_title(); 
+				echo $bfa_temp_title; 
 		}
 
 		if ( !is_single() AND !is_page() ) { ?></a><?php } ?></h<?php echo $bfa_ata['h_posttitle']; ?>>
 		<?php echo $after;
 	}
 }
+
+
 
 
 function bfa_post_byline($before = '<div class="post-byline">', $after = '</div>') 
@@ -87,8 +95,7 @@ function bfa_post_byline($before = '<div class="post-byline">', $after = '</div>
 			elseif ( is_single() )	$bylinetype = 'post_byline_single'; 
 			else 					$bylinetype = 'post_byline_multi'; 
 			
-			$GLOBALS[$bylinetype] = postinfo($bfa_ata[$bylinetype]);
-			include ('bfa://' . $bylinetype);
+			echo postinfo($bfa_ata[$bylinetype]);
 					
     		echo $after;
     	}
@@ -173,7 +180,7 @@ function bfa_archives_page($before = '<div class="archives-page">', $after = '</
 
 function bfa_post_footer($before = '<div class="post-footer">', $after = '</div>') 
 {
-	global $bfa_ata;
+	global $bfa_ata, $post;
 	
     // don't display on WP Email pages
     if(intval(get_query_var('email')) != 1) {
@@ -190,8 +197,7 @@ function bfa_post_footer($before = '<div class="post-footer">', $after = '</div>
 			elseif ( is_single() )		$footertype = 'post_footer_single'; 
 			else 						$footertype = 'post_footer_multi'; 
 			
-			$GLOBALS[$footertype] = postinfo($bfa_ata[$footertype]);
-			include ('bfa://' . $footertype);
+			echo postinfo($bfa_ata[$footertype]);
 					
     		echo $after;
     	}

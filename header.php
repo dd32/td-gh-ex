@@ -6,20 +6,43 @@
 <?php // if index.php or another page template (copied from index.php) was not used
 if (!isset($bfa_ata))  
 list($bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2, $bfa_ata['h_blogtitle'], $bfa_ata['h_posttitle']) = bfa_get_options(); ?>
-<?php if  ( isset($bfa_ata['EmulateIE7']) ) { if ( $bfa_ata['EmulateIE7'] == "Yes" ) { ?><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-<?php }}; ?>
-<?php bfa_meta_tags(); ?>
+<?php if ( isset($bfa_ata['IEDocType']) ) { 
+switch ( $bfa_ata['IEDocType'] ) { 
+	case "None":
+		break;
+	case "EmulateIE7":
+		?><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+		<?php
+		break;
+	case "EmulateIE8":
+		?><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"/>
+		<?php
+		break;
+	case "IE8":
+		?><meta http-equiv="X-UA-Compatible" content="IE=8"/>
+		<?php
+		break;
+	case "IE9":
+		?><meta http-equiv="X-UA-Compatible" content="IE=9"/>
+		<?php
+		break;
+	case "Edge":
+		?><meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+		<?php
+		break;
+	default:
+		break;
+}} ?><?php bfa_meta_tags(); ?>
 <?php if ($bfa_ata['favicon_file'] != "") { ?><link rel="shortcut icon" href="<?php echo $templateURI; ?>/images/favicon/<?php echo $bfa_ata['favicon_file']; ?>" />
 <?php } ?>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <?php if ( $bfa_ata['css_external'] == "External" ) { ?><link rel="stylesheet" href="<?php echo $homeURL; ?>/?bfa_ata_file=css" type="text/css" media="all" /><?php } ?>
 <?php if ( function_exists('wp_list_comments') AND is_singular() ) { 	wp_enqueue_script( 'comment-reply' ); } ?>
-<?php if( $bfa_ata['html_inserts_header'] != '' ) include 'bfa://html_inserts_header'; ?>
-<?php wp_head(); // moved this down in 3.6.1. It was higher up to prevent issues with plugins using mootools. Trying to solve this solely through functions.php/wp_head/wp_enqueue_script now ?>
+<?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?><?php include 'bfa://html_inserts_body_tag'; ?>>
-<?php include 'bfa://html_inserts_body_top'; ?>
+<body <?php body_class(); ?><?php bfa_incl('html_inserts_body_tag'); ?>>
+<?php bfa_incl('html_inserts_body_top'); ?>
 <div id="wrapper">
 <div id="container">
 <table id="layout" border="0" cellspacing="0" cellpadding="0">
@@ -35,9 +58,7 @@ list($bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2, $bfa_ata['
 		<!-- Header -->
 		<td id="header" colspan="<?php echo $cols; ?>">
 
-		<?php 
-		$GLOBALS['configure_header'] = bfa_header_config(); include 'bfa://configure_header';
-		# bfa_header_config($bfa_ata['configure_header']); ?>
+		<?php echo bfa_header_config(); ?>
 
 		</td>
 		<!-- / Header -->

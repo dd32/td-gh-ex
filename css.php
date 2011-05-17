@@ -8,7 +8,7 @@ if ( isset($bfa_ata_preview) OR $bfa_ata['css_external'] == "Inline" OR
 	header("Content-type: text/css"); 
 }
 if ( $bfa_ata['css_compress'] == "Yes" AND 
-!( isset($bfa_ata_debug) AND $bfa_ata['allow_debug'] == "Yes" ) ) {
+!( $bfa_ata_debug == 1 AND $bfa_ata['allow_debug'] == "Yes" ) ) {
 	ob_start("bfa_compress_css");
 }
 
@@ -232,14 +232,14 @@ table#logoarea td {
 table#logoarea {
 	width: 100%;
 	border-spacing: 0px;
-	<?php include('bfa://logoarea_style') ?>
+	<?php bfa_incl('logoarea_style') ?>
 	}
 	
 /*-------------------- LOGO -------------------------------*/
 
 img.logo {
 	display: block;
-	<?php include 'bfa://logo_style' ?>
+	<?php bfa_incl('logo_style') ?>
 	}
 
 td.logoarea-logo {
@@ -252,7 +252,7 @@ td.logoarea-logo {
 h1.blogtitle,
 h2.blogtitle {
     display: block;
-	<?php include 'bfa://blog_title_style' ?>
+	<?php bfa_incl('blog_title_style') ?>
 	font-smooth: always;
 	}
 	
@@ -278,7 +278,7 @@ h2.blogtitle a:hover {
 /*-------------------- BLOG TAGLINE -----------------------*/
 
 p.tagline { 
-	<?php include 'bfa://blog_tagline_style' ?>
+	<?php bfa_incl('blog_tagline_style') ?>
 	}
 
 td.feed-icons {
@@ -371,7 +371,7 @@ td.search-box {
 	
 div.searchbox {
 	height: 35px;
-	<?php include 'bfa://searchbox_style' ?>
+	<?php bfa_incl('searchbox_style') ?>
 	}
 
 div.searchbox-form {
@@ -394,11 +394,11 @@ div.horbar2 {
 	}
 
 div.horbar1 {
-	<?php include 'bfa://horbar1' ?>
+	<?php bfa_incl('horbar1') ?>
 	}
 	
 div.horbar2 { 
-	<?php include 'bfa://horbar2' ?>
+	<?php bfa_incl('horbar2') ?>
 	}	
 
 <?php if (strpos($bfa_ata['configure_header'],'%image')!==false) { ?>
@@ -487,12 +487,12 @@ a.divclick:hover {
 
 td#left {
 	vertical-align: top;
-	<?php include 'bfa://left_sidebar_style' ?>
+	<?php bfa_incl('left_sidebar_style') ?>
 	}
 
 td#left-inner {
 	vertical-align: top;
-	<?php include 'bfa://left_sidebar2_style' ?>
+	<?php bfa_incl('left_sidebar2_style') ?>
 	}
 	
 /* ------------------------------------------------------------------
@@ -501,12 +501,12 @@ td#left-inner {
 
 td#right {
 	vertical-align: top;
-	<?php include 'bfa://right_sidebar_style' ?>
+	<?php bfa_incl('right_sidebar_style') ?>
 	}
 
 td#right-inner {
 	vertical-align: top;
-	<?php include 'bfa://right_sidebar2_style' ?>
+	<?php bfa_incl('right_sidebar2_style') ?>
 	}
 	
 /* ------------------------------------------------------------------
@@ -516,7 +516,7 @@ td#right-inner {
 td#middle {
 	vertical-align: top;
 	width: 100%;
-	<?php include 'bfa://center_column_style' ?>
+	<?php bfa_incl('center_column_style') ?>
 	}
 
 	
@@ -526,15 +526,15 @@ td#middle {
 
 td#footer {
 	width: auto;
-	<?php include 'bfa://footer_style' ?>
+	<?php bfa_incl('footer_style') ?>
 	}
 
 td#footer a:link, td#footer a:visited, td#footer a:active {
-	<?php include 'bfa://footer_style_links' ?>
+	<?php bfa_incl('footer_style_links') ?>
 	}
 
 td#footer a:hover {
-	<?php include 'bfa://footer_style_links_hover' ?>
+	<?php bfa_incl('footer_style_links_hover') ?>
 	}
 	
 	
@@ -548,13 +548,13 @@ div.widget {
 					menus but not the other widgets. With 100% IE
 					will remove sidebar borders if select menu is
 					too wide */
-	<?php include 'bfa://widget_container' ?>
+	<?php bfa_incl('widget_container') ?>
 	}
 
 div.widget-title {
 	display: block;
 	width: auto;
-	<?php include 'bfa://widget_title_box' ?>
+	<?php bfa_incl('widget_title_box') ?>
 	}
 
 div.widget-title h3,
@@ -564,7 +564,7 @@ td#left ul.tw-nav-list,
 td#right ul.tw-nav-list {
 	padding:0;
 	margin:0;
-	<?php include 'bfa://widget_title' ?>
+	<?php bfa_incl('widget_title') ?>
 	}
 
 /* Since 3.4 "div-widget-content" is gone for better plugin compatibility. 
@@ -574,7 +574,7 @@ div.widget ul,
 div.textwidget {
 	display: block;
 	width: auto;
-	<?php include 'bfa://widget_content' ?>
+	<?php bfa_incl('widget_content') ?>
 	}
 
 	
@@ -845,42 +845,42 @@ table.subscribe td.comment-text {
 
 div.post, div.page {
 	display: block;
-	<?php include 'bfa://post_container_style' ?>
+	<?php bfa_incl('post_container_style') ?>
 	}
 
 /* additonal styles for sticky posts */
 
 div.sticky {
-	<?php include 'bfa://post_container_sticky_style' ?>
+	<?php bfa_incl('post_container_sticky_style') ?>
 	}
 
 /*-------------------- POST KICKER ------------------------*/
 
 div.post-kicker {
-	<?php include 'bfa://post_kicker_style' ?>
+	<?php bfa_incl('post_kicker_style') ?>
 	}
 
 div.post-kicker a:link, 
 div.post-kicker a:visited, 
 div.post-kicker a:active {
-	<?php include 'bfa://post_kicker_style_links' ?>
+	<?php bfa_incl('post_kicker_style_links') ?>
 	}
 
 div.post-kicker a:hover {
-	<?php include 'bfa://post_kicker_style_links_hover' ?>
+	<?php bfa_incl('post_kicker_style_links_hover') ?>
 	}
 
 /*-------------------- POST HEADLINE ----------------------*/
 
 div.post-headline {
-	<?php include 'bfa://post_headline_style' ?>
+	<?php bfa_incl('post_headline_style') ?>
 	}
 
 div.post-headline h1,
 div.post-headline h2 {
     margin: 0;
     padding: 0;
-	<?php include 'bfa://post_headline_style_text' ?>
+	<?php bfa_incl('post_headline_style_text') ?>
 	}
 
 div.post-headline h2 a:link, 
@@ -889,36 +889,36 @@ div.post-headline h2 a:active,
 div.post-headline h1 a:link, 
 div.post-headline h1 a:visited, 
 div.post-headline h1 a:active {
-	<?php include 'bfa://post_headline_style_links' ?>
+	<?php bfa_incl('post_headline_style_links') ?>
 	}
 
 div.post-headline h2 a:hover,
 div.post-headline h1 a:hover {
-	<?php include 'bfa://post_headline_style_links_hover' ?>
+	<?php bfa_incl('post_headline_style_links_hover') ?>
 	}
 
 
 /*-------------------- POST BYLINE ------------------------*/
 
 div.post-byline {
-	<?php include 'bfa://post_byline_style' ?>
+	<?php bfa_incl('post_byline_style') ?>
 	}
 
 div.post-byline a:link, 
 div.post-byline a:visited, 
 div.post-byline a:active {
-	<?php include 'bfa://post_byline_style_links' ?>
+	<?php bfa_incl('post_byline_style_links') ?>
 	}
 
 div.post-byline a:hover {
-	<?php include 'bfa://post_byline_style_links_hover' ?>
+	<?php bfa_incl('post_byline_style_links_hover') ?>
 	}
 
 
 /*-------------------- POST BODY COPY ---------------------*/
 	
 div.post-bodycopy {
-	<?php include 'bfa://post_bodycopy_style' ?>
+	<?php bfa_incl('post_bodycopy_style') ?>
 	}
 	
 div.post-bodycopy p {
@@ -945,17 +945,17 @@ div.post-pagination {
 div.post-footer {
 	clear:both; 
 	display: block;	
-	<?php include 'bfa://post_footer_style' ?>
+	<?php bfa_incl('post_footer_style') ?>
 	}
 
 div.post-footer a:link, 
 div.post-footer a:visited, 
 div.post-footer a:active {
-	<?php include 'bfa://post_footer_style_links' ?>
+	<?php bfa_incl('post_footer_style_links') ?>
 	}	
 
 div.post-footer a:hover {
-	<?php include 'bfa://post_footer_style_links_hover' ?>
+	<?php bfa_incl('post_footer_style_links_hover') ?>
 	}
 
 /*-------------------- ICONS in KICKER, BYLINE & FOOTER ---*/
@@ -985,23 +985,23 @@ span.post-ratings {
 ------------------------------------------------------------------ */
 
 div.navigation-top {
-	<?php include 'bfa://next_prev_style_top' ?>
+	<?php bfa_incl('next_prev_style_top') ?>
 	}
 
 div.navigation-middle {
-	<?php include 'bfa://next_prev_style_middle' ?>
+	<?php bfa_incl('next_prev_style_middle') ?>
 	}
 	
 div.navigation-bottom {
-	<?php include 'bfa://next_prev_style_bottom' ?>
+	<?php bfa_incl('next_prev_style_bottom') ?>
 	}
 
 div.navigation-comments-above {
-	<?php include 'bfa://next_prev_style_comments_above' ?>
+	<?php bfa_incl('next_prev_style_comments_above') ?>
 	}
 	
 div.navigation-comments-below {
-	<?php include 'bfa://next_prev_style_comments_below' ?>
+	<?php bfa_incl('next_prev_style_comments_below') ?>
 	}
 	
 div.older {
@@ -1116,7 +1116,7 @@ input.inputfocus {
 	
 <?php if ($bfa_ata['highlight_forms'] == "Yes") { ?>
 input.highlight, textarea.highlight {
-	<?php include 'bfa://highlight_forms_style' ?>
+	<?php bfa_incl('highlight_forms_style') ?>
 	}
 <?php } ?>
 
@@ -1125,14 +1125,14 @@ input.highlight, textarea.highlight {
 	padding: 0 2px;
 	height: 24px;
 	line-height: 16px;
-	<?php include 'bfa://button_style' ?>
+	<?php bfa_incl('button_style') ?>
 	}
 
 /* changed from .buttonhover to input.buttonhover in 3.6.1 */
 input.buttonhover {
 	padding: 0 2px;
 	cursor: pointer;
-	<?php include 'bfa://button_style_hover' ?>
+	<?php bfa_incl('button_style_hover') ?>
 	}
 
 /* comment submit button */
@@ -1151,7 +1151,7 @@ form#commentform input#submit[class] { /*ie ignores [class]*/
 }
 
 form#commentform input#submit	{
-	<?php include 'bfa://submit_button_style' ?>
+	<?php bfa_incl('submit_button_style') ?>
 	}
 	
 /* ------------------------------------------------------------------
@@ -1183,14 +1183,14 @@ blockquote {
 	height: 1%;
 	display: block;
 	clear: both;
-	<?php include 'bfa://blockquote_style' ?>
+	<?php bfa_incl('blockquote_style') ?>
 	}
 	
 blockquote blockquote {
 	height: 1%;
 	display: block;
 	clear: both;
-	<?php include 'bfa://blockquote_style_2nd_level' ?>
+	<?php bfa_incl('blockquote_style_2nd_level') ?>
 	}
 
 
@@ -1201,33 +1201,33 @@ blockquote blockquote {
 /*-------------------- TABLES IN POSTS --------------------*/
 
 div.post table {
-	<?php include 'bfa://table' ?>
+	<?php bfa_incl('table') ?>
 	}
 	
 div.post table caption {
 	width: auto;
 	margin: 0 auto;
-	<?php include 'bfa://table_caption' ?>
+	<?php bfa_incl('table_caption') ?>
 	}
 	
 div.post table th {
-	<?php include 'bfa://table_th' ?>
+	<?php bfa_incl('table_th') ?>
 	}
 	
 div.post table td {
-	<?php include 'bfa://table_td' ?>
+	<?php bfa_incl('table_td') ?>
 	}
 
 div.post table tfoot td {
-	<?php include 'bfa://table_tfoot_td' ?>
+	<?php bfa_incl('table_tfoot_td') ?>
 	}
 	
 div.post table tr.alt td {
-	<?php include 'bfa://table_zebra_td' ?>
+	<?php bfa_incl('table_zebra_td') ?>
 	}
 
 div.post table tr.over td {
-	<?php include 'bfa://table_hover_td' ?>
+	<?php bfa_incl('table_hover_td') ?>
 	}
 
 /*-------------------- CALENDAR WIDGET --------------------*/
@@ -1297,7 +1297,7 @@ table#wp-calendar td a {
 
 /* whole respond area */
 div#respond {
-	<?php include 'bfa://comment_form_style' ?>
+	<?php bfa_incl('comment_form_style') ?>
 	}
 
 p.thesetags {
@@ -1739,7 +1739,7 @@ img {
 }
 
 .post img { 
-	<?php include 'bfa://post_image_style' ?>
+	<?php bfa_incl('post_image_style') ?>
 	}
 
 .post img.size-full {
@@ -1823,7 +1823,7 @@ div.archives-page img {
 	width: auto 100%;
 	height: auto;  /* FF3 needs "auto", IE6 needs "100%", see next style*/
 	display: block;
-	<?php include 'bfa://post_image_caption_style' ?>
+	<?php bfa_incl('post_image_caption_style') ?>
 	}
 
 /* for imges inside a caption container IE6 does not
@@ -1841,7 +1841,7 @@ required as jQuery sets the height for caption'ed images too */
 	}
 	
 .wp-caption p.wp-caption-text {
-	<?php include 'bfa://image_caption_text' ?>
+	<?php bfa_incl('image_caption_text') ?>
 	}
 
 /* ------------------------------------------------------------------
@@ -1849,7 +1849,7 @@ required as jQuery sets the height for caption'ed images too */
 ------------------------------------------------------------------ */
 
 img.wp-post-image {
-	<?php include 'bfa://post_thumbnail_css' ?>
+	<?php bfa_incl('post_thumbnail_css') ?>
 }
 
 /* ------------------------------------------------------------------
@@ -1872,7 +1872,7 @@ img.wp-smiley {
 img.avatar {
 	float: left; 
 	display: block;
-	<?php include 'bfa://avatar_style' ?>
+	<?php bfa_incl('avatar_style') ?>
 	}
 	
 
@@ -2939,7 +2939,7 @@ Also, adding height and font-size for IE6 */
 
 
 <?php 
-include 'bfa://html_inserts_css'; 
+bfa_incl('html_inserts_css'); 
 
 if ( $bfa_ata['css_compress'] == "Yes" AND 
 !( isset($bfa_ata_debug) AND $bfa_ata['allow_debug'] == "Yes" ) ) {

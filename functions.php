@@ -1,5 +1,5 @@
 <?php
-$bfa_ata_version = "3.6.4";
+$bfa_ata_version = "3.6.7";
 
 // Load translation file above
 load_theme_textdomain('atahualpa');
@@ -146,12 +146,25 @@ function remove_featured_gallery_scripts() {
        remove_action('wp_head', 'gallery_styles');
 }
 add_action('init','remove_featured_gallery_scripts', 1);
+
 function addscripts_featured_gallery() {
 	if(!function_exists('gallery_styles')) return;
 	gallery_styles();
 }
 add_action('wp_head', 'addscripts_featured_gallery', 12);
 
+/*
+ * Add custom header inserts through wp_head
+ *
+ * wp_head is supposed to be right before </head>, but html_inserts_header should be after/at the bottom of wp_head
+ *
+@ since 3.6.5
+*/
+function add_html_inserts_header() {
+	global $bfa_ata;
+	if( $bfa_ata['html_inserts_header'] != '' ) bfa_incl('html_inserts_header'); 
+}
+add_action('wp_head', 'add_html_inserts_header', 20);
 
 // new comment template for WP 2.7+, legacy template for old WP 2.6 and older
 // Since 3.6.: ToDo: Remove legacy.comments.php after a while. Older WP's won't work anyway 
@@ -279,47 +292,43 @@ function bfa_wp_trim_excerpt($text) { // Fakes an excerpt if needed
 	global $bfa_ata, $post;
 
 	if ( '' <> $text ) {
-//  an excerpt exists, just stick on the 'custom read more' and we're done
-		$words = preg_split("/\s+/", $text);
+//  an manual excerpt exists, stick on the 'custom read more' and we're done
+		$words = preg_split("/\s+/u", $text);
 		$custom_read_more = str_replace('%permalink%', get_permalink(), $bfa_ata['custom_read_more']);
-		$custom_read_more = str_replace('%title%', the_title('','',FALSE), $custom_read_more);
+		if ( get_the_title() == '' ) { 
+			$custom_read_more = str_replace('%title%', 'Permalink', $custom_read_more);
+		} else {		
+			$custom_read_more = str_replace('%title%', the_title('','',FALSE), $custom_read_more);
+		}
 		array_push($words, $custom_read_more);
 		$text = implode(' ', $words);
 		return $text;
 	}
 
 	$text = get_the_content('');
-	$words = preg_split ("/\s+/", $text);
+	$words = preg_split ("/\s+/u", $text);
 	$post_content = $post->post_content;
-	$post_content_length = count(preg_split("/\s+/", $post_content));
- 
-	if (count($words) < $post_content_length) {	
-
-//  use the teaser and its 'read more'
-		$bfa_ata_more_tag_final = str_replace("%post-title%", the_title('', '', false), $bfa_ata['more_tag']);
-		$text = the_content($bfa_ata_more_tag_final); 
-		return $text;
-	} else {
+	$post_content_length = count(preg_split("/\s+/u", $post_content));
 
 // Build the excerpt from the post 
 		$text = apply_filters('the_content', $text);
  		$text = str_replace(']]>', ']]>', $text);
 		$text = strip_tags($text, $bfa_ata['dont_strip_excerpts']);
 		$excerpt_length = $bfa_ata['excerpt_length'];
-		$words = preg_split("/\s+/", $text, $excerpt_length + 1);
+		$words = preg_split("/\s+/u", $text, $excerpt_length + 1);
 
 // this is to handle the case where the number of words 
 // in the post equals the excerpt length
- 		if ($post_content_length > $excerpt_length) {	
- 			array_pop($words);	
-  			array_pop($words);	
-			$custom_read_more = str_replace('%permalink%', get_permalink(), $bfa_ata['custom_read_more']);
-			$custom_read_more = str_replace('%title%', the_title('','',FALSE), $custom_read_more);
-			array_push($words, $custom_read_more);
- 		}
-		$text = implode(' ', $words);
-		return $text;
-		}
+
+ 	if ($post_content_length > $excerpt_length) {	
+ 		array_pop($words);	
+//  		array_pop($words);	
+		$custom_read_more = str_replace('%permalink%', get_permalink(), $bfa_ata['custom_read_more']);
+		$custom_read_more = str_replace('%title%', the_title('','',FALSE), $custom_read_more);
+		array_push($words, $custom_read_more);
+ 	}
+	$text = implode(' ', $words);
+	return $text;
 
 	return $text;
 }
@@ -363,6 +372,7 @@ after_title			HMTL after the title ... Default: </h3></div>
 function bfa_widget_area($args = '') {
 	global $bfa_ata;
 	$defaults = array(
+		'name' => '',
 		'cells' => 1,
 		'align' => 2,
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -385,7 +395,18 @@ function bfa_widget_area($args = '') {
 		echo '<table id="' . $area_id . '" class="bfa_widget_area" style="table-layout:fixed;width:100%" cellpadding="0" cellspacing="0" border="0">';
 
 		// If a width was set for any of the widget area cells:
-		if ( strpos($args,'width_') !== FALSE ) {
+		# if ( strpos($args,'width_') !== FALSE ) {
+		
+		// Since 3.6.7
+		$colgroup = 'no'; // If all table cells have the same width, this can be achieved by table-layout:fixed alone, without the colgroup element.
+		// Check if any of the cells have a set width
+		for ( $i = 1; $i <= $r['cells']; $i++ ) { 
+			if ( array_key_exists('width_' . $i, $args) AND !empty($args['width_' . $i]) ) {
+					$colgroup = 'yes';
+			}
+		}
+		
+		if ($colgroup == 'yes') {
 			echo "\n<colgroup>";
 			for ( $i = 1; $i <= $r['cells']; $i++ ) {
 				echo '<col';
@@ -499,6 +520,34 @@ function bfa_ata_reset_widget_areas() {
 }
 // add_action ( 'wp_ajax_' + [name of "action" in jQuery.ajax, see functions/bfa_css_admin_head.php], [name of function])
 add_action( 'wp_ajax_reset_bfa_ata_widget_areas', 'bfa_ata_reset_widget_areas' );
+
+
+// Since 3.6.5: Import Settings
+function bfa_ata_import_settings() {
+	global $bfa_ata;
+	check_ajax_referer( "import_settings" );
+	
+	// was encoded with encodeURIComponent in bfa_css_admin_head.php
+	// $import_options = rawurldecode($_POST['options']);
+	$import_options = stripslashes($_POST['ataoptions']);
+	
+	// Since 3.5.2, use JSON 
+	if ( json_decode($import_options) != NULL AND strpos($import_options, 'use_bfa_seo') !== FALSE ) {
+		update_option('bfa_ata4', json_decode($import_options, TRUE));
+		echo "<strong><span style='color:green'>Successfully imported </span></strong><br />";		
+	
+	// Probably not a valid settings file:
+	} else {
+		echo "<strong><span style='color:red'>Sorry, but doesn't appear 
+			to be a valid Atahualpa Settings File.</span></strong>";
+			#print_r($import_options);
+	}	
+	
+	die();
+}
+// add_action ( 'wp_ajax_' + [name of "action" in jQuery.ajax, see functions/bfa_css_admin_head.php], [name of function])
+add_action( 'wp_ajax_import_settings', 'bfa_ata_import_settings' );
+
 
 
 /* CUSTOM BODY TITLE and meta title, meta keywords, meta description */
@@ -688,7 +737,7 @@ if ( function_exists( 'add_theme_support' ) ) { // Added in 2.9
 // Since 3.4.7: Import/Export Settings
 function bfa_import_settings_now() {
 	check_ajax_referer( "import_bfa_settings" );
-	$new_options = maybe_unserialize(file_get_contents($_FILES['userfile']['tmp_name']));
+	$new_options = maybe_unserialize(bfa_file_get_contents($_FILES['userfile']['tmp_name']));
 	update_option('bfa_new_test', $new_options);
 	die();
 }
@@ -696,33 +745,6 @@ function bfa_import_settings_now() {
 add_action( 'wp_ajax_import_bfa_settings_now', 'bfa_import_settings_now' );
 
 
-
-// file_get_contents/file_put_contents for PHP4
-if (!function_exists('file_get_contents')) {
-
-	function file_get_contents($filename) {
-		$fhandle = fopen($filename, "r");
-		if (!$fhandle) {
-			return false; 
-		} else {
-			$fcontents = fread($fhandle, filesize($filename));
-			fclose($fhandle);
-		}
-		return $fcontents;
-	}
-
-	function file_put_contents($filename, $data) {
-		$fhandle = @fopen($filename, 'w');
-		if (!$fhandle) {
-			return false;
-		} else {
-			$fcontents = fwrite($fhandle, $data);
-			fclose($fhandle);
-		}
-		return $fcontents;
-	}
-	
-}
 
 // Since 3.5.2: New menu system in WP 3
 if (function_exists('register_nav_menus')) {
@@ -749,7 +771,7 @@ function bfa_post_class ( $classes ) {
 	return $classes;
 }
 
-// Since 3.6: Use stream wrapper instead of eval to include user code 
+// Since 3.6: Use stream wrapper instead of eval to include user code. Not used anymore since 3.6.5
 class bfa_VariableStream {
     var $position;
     var $varname;
@@ -933,5 +955,81 @@ register_default_headers( array(
 ) );
 
 */
+
+// Since 3.6.5: Process or don't process user included PHP code. 
+function bfa_incl($option) {
+
+	global $bfa_ata;
+	
+	// 'extension_loaded' or 'ini_get' aren't always correct according to http://stackoverflow.com/questions/3383916/how-to-check-whether-suhosin-is-installed
+	/*
+	ob_start(); 
+	phpinfo();
+	$phpinfo = ob_get_contents();
+	ob_end_clean();
+	if (strpos($phpinfo, "Suhosin") !== FALSE)
+    $suhosin = "yes";
+	*/
+	/*
+	if($suhosin == "yes") echo $bfa_ata[$option] 
+	else include('bfa://' . $option);
+	*/
+	$result = bfa_parse_widget_areas($bfa_ata[$option]);
+
+	echo $result;
+}
+
+/*
+function bfa_parse_widget_areas($content) {
+	// For custom widget areas
+	//$widget_option_matches = array();
+				
+	if ( strpos($content,'<?php bfa_widget_area') !== FALSE ) {
+
+
+			$widget_options = preg_match("/(.*)<\?php bfa_widget_area\('(.*?)'\)(.*)\?>(.*)/im",
+	        $content,$widget_option_matches);
+			
+			parse_str($widget_option_matches[2], $widget_option_array);
+			
+			ob_start(); 
+				bfa_widget_area($widget_option_array);
+	      		$widget_area = ob_get_contents();
+			ob_end_clean();
+			
+			$content = preg_replace("/(.*)<\?php bfa_widget_area(.*)\('(.*?)'\)(.*)\?>(.*)/im", "\${1}" .
+    	    $widget_area . "\${5}", $content);	
+	}
+
+	# echo $bfa_ata[$option];
+	return $content; // .  $widget_option_matches[2];
+}	
+*/
+
+function bfa_parse_widget_areas($content) {
+				
+	if ( strpos($content,'<?php bfa_widget_area') !== FALSE ) {
+		$content = preg_replace_callback("|<\?php bfa_widget_area(.*)\((.*)'(.*?)'(.*)\)(.*)\?>|","bfa_parse_widget_areas_callback",$content);
+	}
+
+	return $content; 
+}	
+
+
+// Callback for preg_replace_callback
+function bfa_parse_widget_areas_callback($matches) {
+
+	parse_str($matches[3], $widget_options);
+	
+	ob_start(); 
+	
+		bfa_widget_area($widget_options);
+		$widget_area = ob_get_contents();
+		
+	ob_end_clean();
+	
+	return $widget_area;
+}
+
 
 ?>

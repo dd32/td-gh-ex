@@ -9,6 +9,8 @@ function bfa_add_stuff_admin_head() {
 			// Create a WP nonce for the Ajax action later on
 			$nonce = wp_create_nonce( 'reset_widget_areas' );
 			$nonce2 = wp_create_nonce( 'delete_bfa_ata4' );
+			// Since 3.6.5:
+			$nonce3 = wp_create_nonce( 'import_settings' );
 
 			echo '
 			<script src="' . $templateURI . '/options/jscolor/jscolor.js" type="text/javascript"></script>
@@ -21,15 +23,35 @@ function bfa_add_stuff_admin_head() {
 			
 			// Since 3.4.7.: Upload settings file	
 			
+			/*
 				new AjaxUpload("#importSettings-upload", {
 					action: "' . $homeURL . '/?bfa_ata_file=settings-upload",
 					name: "userfile",
 					onComplete: function(file, response){
-						jQuery("div#atasettingsfile").html(response).fadeIn("fast").fadeOut(7000); 
+						jQuery("div#atasettingsfile").html(response).fadeIn("fast").fadeOut(70000); 
 						// Refresh admin pages to fill forms with new values
-						window.location = window.location;
+						// window.location = window.location;
 					}
+
 				});
+			*/
+
+				/*since 3.6.5:*/
+				jQuery("a#import-settings").live("click", function() { 
+					var dataString = encodeURIComponent(jQuery("textarea#import-textarea").val());
+					jQuery.ajax({
+						type: "post", 
+						url: "admin-ajax.php",
+						data: "action=import_settings&ataoptions=" + dataString + "&_ajax_nonce=' . $nonce3 . '",
+						success: function(html){ 
+							jQuery("#settingsimported").html( html ).fadeIn("fast").fadeOut(3000); 
+						}
+					}); 
+					// prevent form or link from being processed the traditional way:
+					return false;
+				});
+
+
 				
 				/*since 3.4.3:*/
 				jQuery("a#reset_widget_areas").bind("click", function() { 

@@ -26,7 +26,7 @@ function bfa_hor_cats($sort_order = "ID", $order = "ASC", $levels = "", $titles 
 	}
 	
 	if ( $titles == "No" ) { 
-		$list_cat_string = preg_replace("/title=\"(.*?)\"/i","",$list_cat_string);
+		$list_cat_string = preg_replace("/title=\"(.*?)\"/si","",$list_cat_string);
 	}
 
 	return $list_cat_string;

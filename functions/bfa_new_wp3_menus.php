@@ -17,8 +17,11 @@ function bfa_new_wp3_menus($theme_location = "menu1", $alignment = "left") {
 	$menu_class = "clearfix rMenu-hor rMenu";
 	if ( $alignment == "right" ) $menu_class .= " rMenu-hRight";
 	if ( $alignment == "center" ) { 
-		$before_menu = '<table cellpadding="0" cellspacing="0" style="margin: 0 auto"><tr><td align="center">';
-		$after_menu = '</td></tr></table>';
+		if ( $theme_location == "menu1" ) 
+			$before_menu = '<div id="bfa_page_menu"><table cellpadding="0" cellspacing="0" style="margin: 0 auto"><tr><td align="center">';
+		if ( $theme_location == "menu2" ) 
+			$before_menu = '<div id="bfa_cat_menu"><table cellpadding="0" cellspacing="0" style="margin: 0 auto"><tr><td align="center">';
+		$after_menu = '</td></tr></table></div>';
 	} 
 
 	ob_start();

@@ -125,7 +125,11 @@ $options1 = array(
             "id" => "start_here",
             "type" => "info",
 			"lastoption" => "yes", 
-            "info" => "<br /><h3 class='infohighlight-header'>Join for free:</h3>
+            "info" => "<br />New in 3.6.6: <ul><li>Import settings by copying &amp; pasting the content of the settings file into the textarea in the theme options -  instead of uploading the settings file directly.</li>
+			<li>PHP code cannot be put into the textareas in the theme options anymore.</li>
+			</ul>
+			These changes had to be made to comply with the new tightened rules for themes listed at wordpress.org (No file operations, no processing of dynamic PHP code).
+			<h3 class='infohighlight-header'>Join for free:</h3>
 			<div class='infohighlight'>
 			<img src=\"" . $templateURI . "/images/comment_icon.png\" style=\"float: left; margin: 0px 10px 5px 0;\">
 
@@ -161,23 +165,26 @@ $options1 = array(
 					Atahualpa 3.4.7+ installation:<br /><br /><a class='button' href='" . $wordpress_base . "/?bfa_ata_file=settings-download' id='settings-download'><strong>Export &amp; Download</strong> Atahualpa Settings File</a>
 					<br /><br />The file will be named <code>ata-" . str_replace('.','', $_SERVER['SERVER_NAME']) . "-" . date('Y') . date('m') . date('d') . ".txt</code>. After you downloaded it, 
 					you can (but don't need to) rename the file to something more meaningful.
-					<br /><br /><div class='infohighlight'><div style='font-size:13px;font-weight:bold'>Recommended: Use dynamic image paths, for universally working settings files:</div><div style='font-size:11px;line-height:1.3'>If you're using background images in your CSS, , use dynamic image paths such as <br /><code>background: url('<span style='color:red'>&lt;?php echo get_template_directory_uri(); ?&gt;</span>/images/someimage.gif') no-repeat top left;</code> 
-					<br />instead of static image paths such as <br /><code>background: url('<span style='color:red'>/wp-content/themes/atahualpa349</span>/images/someimage.gif') no-repeat top left;</code><br />This way the image paths are correct on another installation even if 
-					(1) the atahualpa directory was named differently, or (2) the WP installation isn't in the root but in a path such as /blog/ .<br />
-					</div></div>"
+					"
 ),
 
 	array(	
-	"name" 		=> "Import Atahualpa settings file",
+	"name" 		=> "Import Atahualpa settings <span style='text-decoration:line-through'>file</span>",
 	"category" 	=> "export-import",
     "id" => "import_settings",
 	"type" 		=> "info",
-	"info" 		=> "<br />Upload a Atahualpa settings file from your desktop computer and import it:<br />
+	"info" 		=> "<br /><span style='text-decoration:line-through'>Upload a Atahualpa settings file from your desktop computer and import it:</span><br />SINCE 3.6.5: <strong>Paste the content of a settings file here</strong> 
+	into this textarea and click 'Import'<br /><br />
+	PHP file functions cannot be used anymore in themes listed on wordpress.org, so we 
+			had to remove file operations from Atahualpa (Upload isn't enough, Atahualpa needs to read the file, too). Instead of uploading a settings file you now need to copy the content of the settings file instead, and paste it into the textarea below, finally click 'Import Settings'.   
+			<br />
 				<br /><span style='color:red;font-weight:bold'>THIS WILL OVERLAY ANY EXISTING SETTINGS YOU ALREADY HAVE</span>
-				<br /><br /><a class='button' href='#' id='importSettings-upload'><strong>Upload &amp; Import</strong> Atahualpa Settings File</a><br /><br />
-					<div id='atasettingsfile'></div>
-					<div class='infohighlight'>4 styles are included in the Atahualpa download. See <code>ata-round.txt</code>, <code>ata-classic.txt</code>, <code>ata-default.txt</code> and  <code>ata-adsense.txt</code> inside <code>/atahualpa/styles/</code> on your desktop computer. For now you'd have to import those 
-					files from there, if you want to use them</div>"
+				<br /><textarea style='border:solid 1px black;' name='import-textarea' cols='80' rows='10' id='import-textarea'></textarea><br />
+				<br /><a class='button' href='#' id='import-settings'><strong>Import Settings</strong></a>
+				<br /><br />
+					<div id='settingsimported'></div>
+					<div class='infohighlight'>4 styles are included in the Atahualpa download, inside <code>/atahualpa/styles/: <code>ata-round.txt</code>, <code>ata-classic.txt</code>, <code>ata-default.txt</code> and  <code>ata-adsense.txt</code> 
+					</code> To use one of them open the file, select all (Ctrl+A), copy (Ctrl+C) and paste it (Ctrl+V) here. (Different keys on MAC)</div>"
 ),
 
 	array(	
@@ -443,15 +450,15 @@ $options1 = array(
             in order to include it in the min/max width calculation.
             <strong>Example:</strong> <code>20</code>"),
 
-	array(    "name" => "Emulate IE7",
+	array(    "name" => "IE Document Type",
     	    "category" => "layout",
-            "id" => "EmulateIE7",
+            "id" => "IEDocType",
             "type" => "select",
-            "std" => "No",
-            "options" => array("No", "Yes"),
+            "std" => "None",
+            "options" => array("None", "EmulateIE7", "EmulateIE8", "IE8", "IE9", "Edge"),
             "lastoption" => "yes", 
-            "info" => "Set this option to YES if you would like to set IE7 compatibility mode on."),
-
+            "info" => "Set this option to force Internet Explorer to use a particular rendering mode (supported by Internet Explorer 8 and newer)"),
+            
 // New category: favicon
 
 	array(    "name" => "Favicon",
@@ -839,7 +846,18 @@ $options1 = array(
             "std" => "",
             "type" => "textarea-large",
 			"lastoption" => "yes", 
-            "info" => "The Overlay Header Image area allows you to put in HTML which will overlay the header image. You could use this code to put buttons for links on top of the header image. You can also mix in PHP code in this area. This would allow you to point to an image in the wp-content folder and not have to worry about it's location during theme upgrades.<br /><br />For example, suppose you want to put buttons to link to your Twitter and FaceBook sites. You put the images (facebook.jpg and twitter.jpg) in a folder in wp-contents ('wp-content/my-images'). You could add the following to this option<br /><br /><code>&lt;div id=\"header_image_sociable\"&gt;<br />&nbsp;&nbsp;&lt;ul&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href=\"http://www.facebook.com/myid\"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src=\"&lt;?php echo site_url(); ?&gt;/wp-content/images/facebook.jpg\" alt=\"Facebook\" /&gt;&lt;/a&gt;&lt;/li&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href=\"http://www.twitter.com/myid\"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src=\"&lt;?php echo site_url(); ?&gt;/wp-content/images/twitter.jpg\" alt=\"Twitter\" /&gt;&lt;/a&gt;&lt;/li&gt;<br />&nbsp;&nbsp;&lt;/ul&gt;<br />&nbsp;&lt;/div&gt;</code><br /><br />If you wanted to remove the bullets from the items and position the items on the right side of the image, you could put the following in the CSS Inserts<br /><br /><code>#header_image_sociable {position: absolute; right:40px; top: 20px;}<br />#header_image_sociable ul {list-style-type: none;}</code>"),        
+            "info" => "The Overlay Header Image area allows you to put in HTML which will overlay the header image. You could use this code to put buttons for links on top of the header image. 
+			<span style='text-decoration:line-through'>You can also mix in PHP code in this area. This would allow you to point to an image in the wp-content folder and not have to worry about it's location during theme upgrades.</span><br /><br />
+			For example, suppose you want to put buttons to link to your Twitter and FaceBook sites. You put the images (facebook.jpg and twitter.jpg) in a folder in wp-contents ('wp-content/my-images'). 
+			You could add the following to this option<br /><br />
+			<code>&lt;div id=\"header_image_sociable\"&gt;<br />&nbsp;&nbsp;&lt;ul&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href=\"http://www.facebook.com/myid\"&gt;<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src=\"<span style='text-decoration:line-through'>&lt;?php echo site_url(); ?&gt;</span>/wp-content/images/facebook.jpg\" alt=\"Facebook\" /&gt;&lt;/a&gt;&lt;/li&gt;<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href=\"http://www.twitter.com/myid\"&gt;<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src=\"<span style='text-decoration:line-through'>&lt;?php echo site_url(); ?&gt;</span>/wp-content/images/twitter.jpg\" alt=\"Twitter\" /&gt;&lt;/a&gt;&lt;/li&gt;<br />
+			&nbsp;&nbsp;&lt;/ul&gt;<br />&nbsp;&lt;/div&gt;</code>
+			<br /><br />Since 3.6.5 <span style='color:red'>PHP code cannot be used</span> anymore. The sample code above should still work, with the striked-through PHP code removed, if your WP installation is in the root of your domain. If it's in a subdirectory such as blog, 
+			the image paths would begin with <code>/blog/wp-content/...</code> instead of <code>/wp-content/</code>
+			<br /><br />If you wanted to remove the bullets from the items and position the items on the right side of the image, you could put the following in the CSS Inserts<br /><br /><code>#header_image_sociable {position: absolute; right:40px; top: 20px;}<br />#header_image_sociable ul {list-style-type: none;}</code>"),        
 
 // New category: feed-links
 
@@ -1323,9 +1341,32 @@ $options1 = array(
 			"20.5", "21", "21.5", "22", "22.5", "23", "23.5", "24", "24.5", "25"),
             "info" => "The width of top level items will adjust to the width of the links inside, but the sub menus 
 			need a defined width, <strong>in \"em\"</strong>."),
+
+
+// NEW since 3.6.5: category: center	
+
+	array(    "name" => "Center column style",
+    	    "category" => "center",
+			"switch" => "yes",
+            "id" => "center_column_style",
+            "std" => "padding: 10px 15px;",
+            "type" => "textarea-large",
+
+            "info" => "Style the center column here. The center column is the container for everything in the middle: 
+			All posts (including \"page\" posts) and the next/prev navigation."),
+
+    array(    "name" => "Where are the 'Content ABOVE Loop', 'The LOOP' etc. options?",
+    	    	"category" => "center",
+            "id" => "widget_areas_reset",
+            "type" => "info",
+			"lastoption" => "yes",
+            "info" => "<strong>They are now 'hardcoded' into Atahualpa's &lt;code&gt;index.php&lt;/code&gt;. To edit the loop or to add custom code before/after the loop, manually edit &lt;code&gt;index.php&lt;/code&gt;.</strong><br /><br />Since 3.6.5 custom PHP code isn't possible anymore in the Atahualpa Theme Options. Atahualpa was one of few themes, if not the only theme, to allow custom PHP code to be inserted through theme options. 
+			The philosophy as to what themes should or should not be able to do (i.e. which PHP functions they can use) has been tightened up quite a bit lately by WordPress, so in order to stay listed on wordpress.org we 
+			had to remove this 'custom PHP' feature. Check wordpress.bytesforall.com and forum.bytesforall.com for possible workarounds or even alternative theme versions, if you cannot live without custom PHP."),
+
 			
 // new category: center
-
+/*
 	array(    "name" => "Center column style",
     	    "category" => "center",
 			"switch" => "yes",
@@ -1338,8 +1379,7 @@ $options1 = array(
 	array(    "name" => "Content ABOVE the LOOP",
     	    "category" => "center",
             "id" => "content_above_loop",
-            "std" => "<?php /* For MULTI post pages if activated at ATO -> Next/Previous Navigation: */
-bfa_next_previous_page_links('Top'); ?>
+            "std" => "<?php bfa_next_previous_page_links('Top'); ?>
 
 <?php if( is_category() AND function_exists('page2cat_output')) { page2cat_output(\$cat); } ?>",
             "type" => "textarea-large",
@@ -1350,10 +1390,9 @@ post or a static page. You can use HTML and <strong>PHP</strong> here and in the
 	array(    "name" => "The LOOP",
     	    "category" => "center",
             "id" => "content_inside_loop",
-            "std" => "<?php /* For SINGLE post pages if activated at ATO -> Next/Previous Navigation: */
-bfa_next_previous_post_links('Top'); ?>
+            "std" => "<?php bfa_next_previous_post_links('Top'); ?>
 
-<?php /* Post Container starts here */
+<?php 
 if ( function_exists('post_class') ) { ?>
 <div <?php if ( is_page() ) { post_class('post'); } else { post_class(\"\$odd_or_even\"); } ?> id=\"post-<?php the_ID(); ?>\">
 <?php } else { ?>
@@ -1388,20 +1427,15 @@ This here will be displayed after the 3rd post on (only) the homepage.<br /><br 
 	array(    "name" => "Content BELOW the LOOP",
     	    "category" => "center",
             "id" => "content_below_loop",
-            "std" => "<?php /* Displayed on SINGLE post pages if activated at ATO -> Next/Previous Navigation: */
-bfa_next_previous_post_links('Middle'); ?>
+            "std" => "<?php bfa_next_previous_post_links('Middle'); ?>
 
-<?php /* Load Comments template (on single post pages, and static pages, if set on options page): */
-bfa_get_comments(); ?>
+<?php bfa_get_comments(); ?>
 
-<?php /* Displayed on SINGLE post pages if activated at ATO -> Next/Previous Navigation: */
-bfa_next_previous_post_links('Bottom'); ?>
+<?php bfa_next_previous_post_links('Bottom'); ?>
 		
-<?php /* Archives Pages. Displayed on a specific static page, if configured at ATO -> Archives Pages: */
-bfa_archives_page('<div class=\"archives-page\">','</div>'); ?>
+<?php bfa_archives_page('<div class=\"archives-page\">','</div>'); ?>
 			
-<?php /* Displayed on MULTI post pages if activated at ATO -> Next/Previous Navigation: */
-bfa_next_previous_page_links('Bottom'); ?>",
+<?php bfa_next_previous_page_links('Bottom'); ?>",
             "type" => "textarea-large",
             "info" => "Add/remove/edit the content below the LOOP here."),		
 
@@ -1413,7 +1447,7 @@ bfa_next_previous_page_links('Bottom'); ?>",
             "type" => "textarea-large",
 				"lastoption" => "yes", 
             "info" => "Add/edit/remove the content here that is displayed on \"404 Not Found\" pages."),		
-            
+*/           
             
 // New category: next/prev navigation
 			
@@ -2640,7 +2674,7 @@ __('Category:','atahualpa') . " %categories-linked(', ')% %edit(' | ', '" . __('
             "type" => "select",
             "std" => "Yes",
             "options" => array("Yes", "No"),
-            "info" => "Show the \"You can use these HTML tags\" info above the comment form?"),			
+            "info" => "Show the \"You can use these HTML tags\" info below the comment form?"),			
 
     array(    "name" => "Comment Form Style",
     	    "category" => "comments",
@@ -2931,7 +2965,7 @@ text-align: center;\ncolor: #777777;\nfont-size: 95%;",
 			between <code>&lt;head&gt;</code> and <code>&lt;/head&gt;</code>. <strong>Note:</strong> Any HTML you put here shouldn't be
 			\"visible\" HTML such as a table or a DIV container. If you put HTML here, then it would be machine parsable code, something like a 
 			meta tag, such as:<br /><code>&lt;meta name=\"author\" content=\"John W. Doe\" /&gt;</code>.
-			<br /><br />PHP code can be used in HTML/CSS Inserts."),
+			<br /><br />Since 3.6.5 <span style='color:red'>PHP code cannot be used anymore</span> in HTML/CSS Inserts."),
 
     array(    "name" => "HTML Inserts: Body Tag",
     	    "category" => "html-inserts",
@@ -2943,7 +2977,7 @@ text-align: center;\ncolor: #777777;\nfont-size: 95%;",
 			<strong>Example:</strong><br /><code>onLoad=\"alert('The page is loading... now!')\"</code> would result
 			in an output of <code>&lt;body <i>onLoad=\"alert('The page is loading... now!')\"</i>&gt;</code> instead
 			of the regular <code>&lt;body&gt;</code>.
-			<br /><br />PHP code can be used in HTML/CSS Inserts."),
+			<br /><br />Since 3.6.5 <span style='color:red'>PHP code cannot be used anymore</span> in HTML/CSS Inserts."),
 
     array(    "name" => "HTML Inserts: Body Top",
     	    "category" => "html-inserts",
@@ -2953,7 +2987,7 @@ text-align: center;\ncolor: #777777;\nfont-size: 95%;",
 			"editable" => "yes", 
             "info" => "Add code here (JavaScript, HTML, CSS) that you want to put into the body section of the website, between 
 			<code>&lt;body&gt;</code> and <code>&lt;/body&gt;</code>, right after <code>&lt;body&gt;</code>.
-			<br /><br />PHP code can be used in HTML/CSS Inserts."),
+			<br /><br />Since 3.6.5 <span style='color:red'>PHP code cannot be used anymore</span> in HTML/CSS Inserts."),
 
     array(    "name" => "HTML Inserts: Body Bottom",
     	    "category" => "html-inserts",
@@ -2964,7 +2998,7 @@ text-align: center;\ncolor: #777777;\nfont-size: 95%;",
             "info" => "Add code here (JavaScript, HTML, CSS) that you want to put into the body section of the website, 
 			between <code>&lt;body&gt;</code> and <code>&lt;/body&gt;</code>, right before <code>&lt;/body&gt;</code>.
 			<strong>Google Analytics</strong> code would go here, and most other tracking code probably too.
-			<br /><br />PHP code can be used in HTML/CSS Inserts."),
+			<br /><br />Since 3.6.5 <span style='color:red'>PHP code cannot be used anymore</span> in HTML/CSS Inserts."),
 
     array(    "name" => "CSS Inserts",
     	    "category" => "html-inserts",
@@ -2977,10 +3011,8 @@ text-align: center;\ncolor: #777777;\nfont-size: 95%;",
 			<code>.newclass {<br />color: #123456;<br />border: solid 1px #000000;<br />
 			font-family: arial, \"comic sans ms\", sans-serif;<br />background: url(". $css_img_path ."images/myimage.gif);
             <br />}</code>
-			<br /><br />PHP code can be used in HTML/CSS Inserts.<br /><br />
-			Example: Using the dynamic PHP function <code>echo get_template_directory_uri();</code> instead of (even a relative = domain-less) static image URL like <code>/wp-content/themes/atahualpa347/</code>, the image URL would work 
-			regardless of how the Atahualpa directory was named ('atahualpa', 'atahualpa347' ...) on the given Atahualpa installation, and regardless of whether the CSS was set to 
-			'inline' or 'external':<br /><code>div.widget ul li { background: url('<span style='color:blue'>&lt;?php echo get_template_directory_uri(); ?&gt;</span>/images/bullets/round-gray.gif') no-repeat 0 7px }</code>"),
+			<br /><br />Since 3.6.5 <span style='color:red'>PHP code cannot be used anymore</span> in HTML/CSS Inserts."),
+
 
 // New category: Archives page
 
@@ -3137,9 +3169,9 @@ text-align: center;\ncolor: #777777;\nfont-size: 95%;",
     	    "category" => "css-javascript",
            "id" => "pngfix_selectors",
             "type" => "textarea-large",
-            "std" => "a.posts-icon, a.comments-icon, a.email-icon, img.logo",
+            "std" => "",
             "info" => "If you're using transparent PNG images, put the CSS selectors here that contain tranparent PNG images, so 
-			a IE6 PNG tranparency fix can be applied on those elements. Separate selectors with commas."),
+			a IE6 PNG tranparency fix can be applied on those elements. Separate selectors with commas. <br>For example you would use <strong>a.posts-icon, a.comments-icon, a.email-icon, img.logo</strong>"),
 			
     array(    "name" => "CSS: Compress?",
     	    "category" => "css-javascript",

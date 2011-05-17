@@ -99,7 +99,10 @@ function bfa_footer() {
 	// Current Year
 	$footer_content = str_replace("%current-year%",  date('Y'), $footer_content);
 
-	return footer_output($footer_content);
+		// Parse widget areas:
+	$result = bfa_parse_widget_areas( footer_output($footer_content) );
+	
+	return $result;
 
 }
 ?>

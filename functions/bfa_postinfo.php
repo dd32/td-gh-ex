@@ -508,7 +508,9 @@ function postinfo($postinfo_string) {
 	if ( strpos($postinfo_string,'%meta(') !== FALSE ) 
 		$postinfo = preg_replace_callback("|%meta\('(.*?)'\)%|","bfa_meta_value",$postinfo);
 
-
+	// Since 3.6.7, parse widget areas
+	$postinfo = bfa_parse_widget_areas($postinfo);	
+		
 	return $postinfo;
 }
 

@@ -315,7 +315,7 @@ function bfa_header_config() {
 	// Parse PHP code
 		if ( strpos($overlay_image_code,'<?php ') !== FALSE ) {
 			ob_start(); 
-				include 'bfa://overlay_header_image';
+				bfa_incl('overlay_header_image');
 				$overlay_image_code = ob_get_contents(); 
 			ob_end_clean();
 		}
@@ -341,9 +341,9 @@ function bfa_header_config() {
 				bloginfo('name'); echo '</a></h' . $bfa_ata['h_blogtitle'] . '>';
 			}
 			
-			if ( $bfa_ata['overlay_blog_tagline'] == "Yes" ) 
+			if ( $bfa_ata['overlay_blog_tagline'] == "Yes" ) { 
 				echo '<p class="tagline">'; bloginfo('description'); echo '</p>';
-
+			}
 			echo '</div>';
 		}
 
@@ -378,7 +378,10 @@ function bfa_header_config() {
 
 	$header_items = trim($header_items);
 	$final_header = str_replace($header_item_numbers, $header_output, $header_items);
-		
+	
+	// Parse widget areas:
+	$final_header = bfa_parse_widget_areas($final_header);
+	
 	return $final_header;
 }
 ?>

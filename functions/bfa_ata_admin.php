@@ -6,7 +6,9 @@ function bfa_ata_admin() {
     if ( isset($_REQUEST['reset']) ) echo '<div id="message" class="updated fade"><p><strong>Atahualpa settings reset.</strong></p></div>';
 ?>
 <table width="100%" cellpadding="2" cellspacing="0"><tr><td valign="middle" width="380"><h2 style="margin:0 30px 0 0; padding: 5px 0 5px 0;">
-Atahualpa <?php echo $bfa_ata_version; ?></h2></td><td valign="middle"><iframe src="http://wordpress.bytesforall.com/update.php?theme=Atahualpa&version=<?php echo $bfa_ata_version; ?>" width="98%" height="40" scrolling="no" frameborder="0"></iframe></td>
+Atahualpa <?php echo $bfa_ata_version; ?></h2></td><td valign="middle">
+<iframe src="http://wordpress.bytesforall.com/update.php?theme=Atahualpa&version=<?php 
+echo $bfa_ata_version; ?>" width="98%" height="40" scrolling="no" frameborder="0"></iframe></td>
 </tr></table>
 
 <div class="wrap" style="margin: 0 10px 0 0">
@@ -33,8 +35,10 @@ Atahualpa <?php echo $bfa_ata_version; ?></h2></td><td valign="middle"><iframe s
 	<li><a href="#" id="header-tab" rel="header">Style & edit HEADER AREA</a></li>
 	<li><a href="#" id="header-image-tab" rel="header-image">Header Image</a></li>
 	<li><a href="#" id="feed-links-tab" rel="feed-links">RSS Settings</a></li>
-	<li><a href="#" id="page-menu-bar-tab" rel="page-menu-bar"><?php if (function_exists('wp_nav_menu')) { ?>MENU 1 (Page Menu)<?php } else { ?>Page Menu Bar<?php } ?></a></li>
-	<li><a href="#" id="cat-menu-bar-tab" rel="cat-menu-bar"><?php if (function_exists('wp_nav_menu')) { ?>MENU 2 (Category Menu)<?php } else { ?>Category Menu Bar<?php } ?></a></li>
+	<li><a href="#" id="page-menu-bar-tab" rel="page-menu-bar"><?php 
+	if (function_exists('wp_nav_menu')) { ?>MENU 1 (Page Menu)<?php } else { ?>Page Menu Bar<?php } ?></a></li>
+	<li><a href="#" id="cat-menu-bar-tab" rel="cat-menu-bar"><?php 
+	if (function_exists('wp_nav_menu')) { ?>MENU 2 (Category Menu)<?php } else { ?>Category Menu Bar<?php } ?></a></li>
 	
 	<strong>Center Column</strong>
 	<li><a href="#" id="center-tab" rel="center">Style & edit CENTER COLUMN</a></li>
@@ -263,9 +267,11 @@ if($value['category'] == "postinfos" AND isset($value['switch'])) { ?>
 			<code>%comments('<i>Leave your comment</i>', '<i>One comment so far</i>', '<i>% people had their say - chime in!</i>', 
 			'<i>Sorry, but comments are closed</i>')%</code>
 			<br /><strong>Example 2:</strong> <code>%comments('<i>Comments</i>', '<i>Comments (1)</i>', '<i>Comments (%)</i>', '<i>dontshow</i>')%</code>
-			<br /><br />NOTE: On single post pages the <code>%comments('...')%</code> link won't display anything because the comments are on the same page. If you still 
+			<br /><br />NOTE: On single post pages the <code>%comments('...')%</code> link won't display anything because the comments are on the same page. 
+			If you still 
 			want to link to the comments, the comment section and the comment form start with named anchors, so you use something like this:<br /> 
-			<code>&lt;?php echo '&lt;a href="'.getH().'comments"&gt;Skip to comments&lt;/a&gt;'; ?&gt;</code> or <code>&lt;?php echo '&lt;a href="'.getH().'commentform"&gt;Skip to comments form&lt;/a&gt;'; ?&gt;</code>
+			<code>&lt;?php echo '&lt;a href="'.getH().'comments"&gt;Skip to comments&lt;/a&gt;'; ?&gt;</code> or <code>&lt;?php echo 
+			'&lt;a href="'.getH().'commentform"&gt;Skip to comments form&lt;/a&gt;'; ?&gt;</code>
 			<hr><code>%comments-rss('linktext')%</code> - Displays the comment feed link for a post, with linktext as the link text.
 			<hr><code>%trackback%</code> - Displays the trackback URL for the current post.
 			<hr><code>%trackback-linked('linktext')%</code> - Displays a link to the trackback URL, with linktext as the link text.
@@ -333,7 +339,8 @@ if($value['category'] == "postinfos" AND isset($value['switch'])) { ?>
 			</ul>
 			<hr><code>%share-this%</code> - Displays little icons, linking the post to social bookmark sites. Requires the plugin 
 			<a href="http://wordpress.org/extend/plugins/share-this/">Share This</a>. 
-			<hr><code>%meta%</code> - Displays all custom fields and their values as unordered list &lt;ul&gt;&lt;li&gt;..&lt;/li&gt;&lt;li&gt;..&lt;/li&gt;&lt;/ul&gt;
+			<hr><code>%meta%</code> - Displays all custom fields and their values as unordered list 
+			&lt;ul&gt;&lt;li&gt;..&lt;/li&gt;&lt;li&gt;..&lt;/li&gt;&lt;/ul&gt;
 			<hr><code>%meta('fieldname')%</code> - Displays the value of the custom field with the field name "fieldname".
 			<br /><strong>Example:</strong> <code>%meta('<i>price</i>')%</code>
 			<hr><code>&lt;?php echo "Hello world!"; ?&gt;</code> - In regular WordPress (but not in WPMU), you can use PHP code, too. 
