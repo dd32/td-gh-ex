@@ -25,7 +25,7 @@
 <?php if ( have_comments() ) : ?>
 <div class="content" >
 	<div class="label">COMMENTS</div>
-		<ol class="comment">
+		<ol id="comments" class="comment">
 			<?php wp_list_comments('callback=print_comment'); ?>
 		</ol>
 		<div class="navigation">

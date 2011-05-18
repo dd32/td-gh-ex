@@ -62,7 +62,7 @@ Written on <?php the_time('F jS, Y') ?> <?php if ( is_page()) : ?><?php else : ?
 <?php if ( has_nav_menu( 'menu' ) ) : wp_nav_menu(); else : ?>
 <ul><?php wp_list_pages( 'title_li=&depth=0' ); ?></ul>
 <?php endif; ?>
-<div id="title"><h1><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a></h1></div>
+<div id="title"><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a></div>
     
 
     

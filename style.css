@@ -3,9 +3,9 @@ Theme Name: Adventure
 
 Theme URI: http://schwarttzy.com/?page_id=551
 
-Description: Inspired by a certain GPS Manufacture, I designed this theme to feel like your looking through a window out into the wilderness. Version 1.4.2 fixes an issue when you have to many links in the bottom bar where the link would disappear entirely if you had to many. Now the slogan goes first, then the title, and finally the links one by one.
+Description: Inspired by a certain GPS Manufacture, I designed this theme to feel like you're looking through a window out into the wilderness. Version 1.4.3 Fixed 404 error page issues, I have done the best I can with the menu bar on IE 6 browser. Version 1.4.2 fixes an issue when you have to many links in the bottom bar where the link would disappear entirely if you had to many. Now the slogan goes first, then the title, and finally the links one by one.
 
-Version: 1.4.2
+Version: 1.4.3
 
 Author: Eric Schwarz
 
@@ -89,9 +89,7 @@ h1 a:hover{
 	color: #FFF;
 	float: left;
 	padding: 0px;
-	margin: 0 0 14px 14px;
-}
-#title h1 {
+	margin: 14px 0 14px 14px;
 	font-size: 20px;
 	font-weight: bold;
 	font-variant: small-caps;
@@ -99,7 +97,7 @@ h1 a:hover{
 #slogan {
 	padding: 0px;
 	float: left;
-	margin: 8px 0 18px 14px;
+	margin: 6px 0 20px 14px;
 }
 #slogan h2{
 	font-size: 15px;
@@ -121,12 +119,13 @@ h1 a:hover{
 	text-align: left;
 	bottom: 0;
 	left: 0;
+	overflow:hidden;
 }
 #bottombar ul {
 	float: right;
 	margin: 0;
 	padding: 0;
-	list-style-type: none;
+	list-style: none;
 	line-height: 50px;
 	font-weight: bold;
 }
@@ -155,7 +154,13 @@ h1 a:hover{
 	padding:0;
 	margin:0;
 }
-
+#title a{
+	color: #FFF;
+	font-size: 20px;
+	font-weight: bold;
+	font-variant: small-caps;
+}
+#title a:hover{ color: #0b6492;}
 /************************************************
 				Content          
 ************************************************/
@@ -552,6 +557,8 @@ hr {
 	top: 0;
 	left: 0;
 }
+.sticky{}
+.bypostauthor{}
 table {margin: 0 0 10px 0;}
 #sidebar table{ float:left;}
 table th {color: #0b6492;}

@@ -4,8 +4,8 @@
 	
 	<?php get_sidebar(); ?>
     
-    <div id="content">
-        <div id="label"><a href="#" title="Error 404 - Not Found">Error 404 - Not Found</a></div>
+<div class="content">
+        <div class="label"><a href="#" title="Error 404 - Not Found">Error 404 - Not Found</a></div>
 		<p>Sorry, but you are looking for something that isn&#8217;t here.</p>
         <p>The 404 or Not Found error message is a HTTP standard response code indicating that the client  was able to communicate with the server, but the server could not find what was requested. 404 errors should not be confused with "server  not found" or similar errors, in which a connection to the destination server could not be made at all. A 404 error indicates that the requested resource may be available again in the future.</p>
         <p>Try searching for what you where looking for using the search box below.</p>
