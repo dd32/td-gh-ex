@@ -1,7 +1,23 @@
 <?php
 
 if ( is_admin() ) {
-require_once(dirname(__FILE__) . "/mantra-admin-functions.php");}
+require_once(dirname(__FILE__) . "/mantra-admin-functions.php");
+}
+
+add_action('wp_print_styles', 'mantra_style');
+
+function mantra_style() {
+
+	wp_register_style( 'mantras',get_template_directory_uri() . '/style.css' );
+	wp_enqueue_style( 'mantras');
+
+}
+
+
+
+
+
+
 /**
 
  *
@@ -421,3 +437,4 @@ function mantra_posted_in() {
 	);
 }
 endif;
+

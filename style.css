@@ -4,7 +4,7 @@ Theme URI: http://www.riotreactions.com/mantra
 Description: A clean and very web 2.0 theme with customizable layout, colors, fonts and graphics. From the admin panel you can change the header image, background image, sidebar position, content and sidebar dimensions, paragraph indent, text colors, fonts, post metas (like author, category or date), background colors and a whole lot more. With over 40 theme options, 7 widget areas, social media animated graphics, multiple pins and bullets you can easily make this theme suit all your needs.
 Author: Cryout Creations
 Author URI: http://www.cryoutcreations.com
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, red, blue, white, light, two-columns, right-sidebar, left-sidebar, theme-options, dark, flexible-width, custom-header, custom-menu, threaded-comments, sticky-post, translation-ready, microformats, rtl-language-support
@@ -1593,8 +1593,6 @@ margin-left:0;
 	float:none;
 	margin-left:10px;
 }
-
-
 
 #wp-calendar caption {
 	color: #333;

@@ -34,7 +34,6 @@
 
 	?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php
 /* This  retrieves  admin options. */
@@ -103,12 +102,32 @@ $mop_rss = $options['mop_rss'];
   }?>
 
 
- <style type="text/css">
+<?php
+
+	/* We add some JavaScript to pages with the comment form
+	 * to support sites with threaded comments (when in use).
+	 */
+	if ( is_singular() && get_option( 'thread_comments' ) )
+		wp_enqueue_script( 'comment-reply' );
+
+	/* Always have wp_head() just before the closing </head>
+	 * tag of your theme, or you will break many plugins, which
+	 * generally use this hook to add elements to <head> such
+	 * as styles, scripts, and meta tags.
+	 */
+    wp_enqueue_script("jquery");
+
+	wp_head(); ?>
+
+</head>
+
+<body <?php body_class(); ?>>
+	 <style type="text/css">
  <?php
-if($options) {
+ if($options) {
  if ($mop_side == "Disable") { ?>#content {margin:20px;} #primary, #secondary {display:none;} <?php }
 ?><?php $mop_sidewidth = $mop_sidewidth - $mop_colpad;
-		 if ($mop_side == "Right") { ?>
+if ($mop_side == "Right") { ?>
 #container {margin-right:<?php echo (-1110+$mop_sidewidth) ?>px;}
 #content { width:<?php echo ($mop_sidewidth) ?>px;}
 #primary,#secondary {width:<?php echo (1050-$mop_sidewidth - $mop_colpad ) ?>px;}
@@ -175,30 +194,7 @@ font-size:<?php echo $mop_fontsize ?>;
 ?><?php if ($mop_parindent != "0px") { ?>  p {text-indent:<?php echo $mop_parindent;?> ;} <?php }
 ?><?php if ($mop_posttime == "Hide") { ?>  .entry-time {display:none;} <?php } }?>
 
-
-
-
 </style>
-
-
-<?php
-
-	/* We add some JavaScript to pages with the comment form
-	 * to support sites with threaded comments (when in use).
-	 */
-	if ( is_singular() && get_option( 'thread_comments' ) )
-		wp_enqueue_script( 'comment-reply' );
-
-	/* Always have wp_head() just before the closing </head>
-	 * tag of your theme, or you will break many plugins, which
-	 * generally use this hook to add elements to <head> such
-	 * as styles, scripts, and meta tags.
-	 */
-    wp_enqueue_script("jquery");
-	wp_head(); ?>
-</head>
-
-<body <?php body_class(); ?>>
 
 <div id="wrapper" class="hfeed">
 <div id="header">

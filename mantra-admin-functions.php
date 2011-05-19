@@ -1016,6 +1016,27 @@ function ma_options_validate($input) {
 	$input['mop_facebook'] =  wp_kses_data($input['mop_facebook']);
 	$input['mop_tweeter'] =  wp_kses_data($input['mop_tweeter']);
 	$input['mop_rss'] =  wp_kses_data($input['mop_rss']);
+
+	$input['mop_backcolor'] =  wp_kses_data($input['mop_backcolor']);
+	$input['mop_headercolor'] =  wp_kses_data($input['mop_headercolor']);
+	$input['mop_prefootercolor'] =  wp_kses_data($input['mop_prefootercolor']);
+	$input['mop_footercolor'] =  wp_kses_data($input['mop_footercolor']);
+	$input['mop_contentcolor'] =  wp_kses_data($input['mop_contentcolor']);
+	$input['mop_linkscolor'] =  wp_kses_data($input['mop_linkscolor']);
+	$input['mop_hovercolor'] =  wp_kses_data($input['mop_hovercolor']);
+	$input['mop_headtextcolor'] =  wp_kses_data($input['mop_headtextcolor']);
+	$input['mop_headtexthover'] =  wp_kses_data($input['mop_headtexthover']);
+	$input['mop_sideheadbackcolor'] =  wp_kses_data($input['mop_sideheadbackcolor']);
+	$input['mop_sideheadtextcolor'] =  wp_kses_data($input['mop_sideheadtextcolor']);
+	$input['mop_footerheader'] =  wp_kses_data($input['mop_footerheader']);
+	$input['mop_footertext'] =  wp_kses_data($input['mop_footertext']);
+	$input['mop_footerhover'] =  wp_kses_data($input['mop_footerhover']);
+
+	$input['mop_facebook'] =  wp_kses_data($input['mop_facebook']);
+	$input['mop_tweeter'] =  wp_kses_data($input['mop_tweeter']);
+	$input['mop_rss'] =  wp_kses_data($input['mop_rss']);
+
+
 	return $input; // return validated input
 
 }
