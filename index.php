@@ -23,7 +23,7 @@ get_header(); ?>
 		$cats = implode(',', $graphene_settings['frontpage_posts_cats']);
 		$args = wp_parse_args(array('cat' => $cats, 'paged' => get_query_var('paged')), $query_string);
 		// $args = $query_string.'&paged='.get_query_var('paged').'&cat='.$cats;
-		query_posts($args);
+		query_posts(apply_filters('graphene_frontpage_posts_cats_args', $args));
 		$wp_query->is_home = true;
 	}
 	

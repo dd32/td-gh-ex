@@ -13,6 +13,7 @@ function graphene_settings_validator($input){
 		if (isset($_POST['graphene_general'])) {
 			$input['slider_position'] = (isset($input['slider_position'])) ? true : false;
 			$input['slider_disable'] = (isset($input['slider_disable'])) ? true : false;
+            $input['hide_child_pages'] = (isset($input['hide_child_pages'])) ? true : false;
 			$input['enable_header_widget'] = (isset($input['enable_header_widget'])) ? true : false;
 			$input['hide_feed_icon'] = (isset($input['hide_feed_icon'])) ? true : false;
 			$input['show_adsense'] = (isset($input['show_adsense'])) ? true : false;
@@ -24,6 +25,13 @@ function graphene_settings_validator($input){
 			$input['alt_home_footerwidget'] = (isset($input['alt_home_footerwidget'])) ? true : false;
 			$input['show_cc'] = (isset($input['show_cc'])) ? true : false;
 			$input['hide_copyright'] = (isset($input['hide_copyright'])) ? true : false;
+            $input['print_css'] = (isset($input['print_css'])) ? true : false;
+            $input['print_button'] = (isset($input['print_button'])) ? true : false;
+			
+			/* Homepage panes */
+			$input['disable_homepage_panes'] = (isset($input['disable_homepage_panes'])) ? true : false;
+			// Remove space
+			$input['homepage_panes_posts'] = str_replace(' ', '', $input['homepage_panes_posts']);
 		}
 		
 		if (isset($_POST['graphene_display'])) {
@@ -32,8 +40,8 @@ function graphene_settings_validator($input){
 			$input['featured_img_header'] = (isset($input['featured_img_header'])) ? true : false;
 			$input['use_random_header_img'] = (isset($input['use_random_header_img'])) ? true : false;
 			$input['hide_top_bar'] = (isset($input['hide_top_bar'])) ? true : false;
-			$input['hide_feed_icon'] = (isset($input['hide_feed_icon'])) ? true : false;
 			$input['posts_show_excerpt'] = (isset($input['posts_show_excerpt'])) ? true : false;
+			$input['archive_full_content'] = (isset($input['archive_full_content'])) ? true : false;
 			$input['hide_post_author'] = (isset($input['hide_post_author'])) ? true : false;
 			$input['hide_post_commentcount'] = (isset($input['hide_post_commentcount'])) ? true : false;
 			$input['hide_post_cat'] = (isset($input['hide_post_cat'])) ? true : false;

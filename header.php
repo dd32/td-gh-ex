@@ -13,6 +13,7 @@ global $graphene_settings;
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
 <head profile="http://gmpg.org/xfn/11">
     <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <title><?php graphene_title(); ?></title>
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" /> 
     <!--[if lte IE 6]>
@@ -30,15 +31,20 @@ global $graphene_settings;
             }
         }
         if (window.attachEvent) window.attachEvent("onload", sfHover);
-              </script>
+        </script>
     <![endif]-->
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <?php
     /* We add some JavaScript to pages with the comment form
      * to support sites with threaded comments (when in use).
      */
     if (is_singular() && get_option('thread_comments'))
         wp_enqueue_script('comment-reply');
+    
+    /* Add a print style only for single pages/posts 
+     * and if the theme option is enabled.
+     */
+    if (is_singular() && $graphene_settings['print_css'])
+        add_action('wp_print_styles', 'graphene_print_style');
 
     /* Always have wp_head() just before the closing </head>
      * tag of your theme, or you will break many plugins, which
@@ -59,13 +65,14 @@ global $graphene_settings;
     <?php if ($graphene_settings['hide_top_bar'] != true) : ?>
         <div id="top-bar">
 
-            <?php if ($graphene_settings['hide_feed_icon'] != true) : ?>
-                <div id="rss">
-                    <?php $custom_feed_url = ($graphene_settings['custom_feed_url']) ? $graphene_settings['custom_feed_url'] : get_bloginfo('rss2_url'); ?>
-                    <a href="<?php echo $custom_feed_url; ?>" title="<?php esc_attr_e('Subscribe to RSS feed', 'graphene'); ?>" class="rss_link"><span><?php _e('Subscribe to RSS feed', 'graphene'); ?></span></a>
+                <div id="rss" class="clearfix">
+                	<?php if ($graphene_settings['hide_feed_icon'] != true) : ?>
+						<?php $custom_feed_url = ($graphene_settings['custom_feed_url']) ? $graphene_settings['custom_feed_url'] : get_bloginfo('rss2_url'); ?>
+                        <a href="<?php echo $custom_feed_url; ?>" title="<?php printf(esc_attr__("Subscribe to %s's RSS feed", 'graphene'), get_bloginfo('name')); ?>" class="rss_link"><span><?php _e('Subscribe to RSS feed', 'graphene'); ?></span></a>
+                    <?php endif; ?>
                     <?php do_action('graphene_feed_icon'); ?>
                 </div>
-            <?php endif; ?>
+            
 
             <?php
             /**
@@ -86,7 +93,7 @@ global $graphene_settings;
             $post_id = $post->ID;
         else
             $post_id = false;
-        $header_img = graphene_get_header_image($post_id);
+        $header_img = apply_filters('graphene_header_image', graphene_get_header_image($post_id));
 
         /*
          * Check if the page uses SSL and change HTTP to HTTPS if true 
@@ -110,12 +117,23 @@ global $graphene_settings;
         
         <?php /* Header widget area */
 		if ($graphene_settings['enable_header_widget'] && is_active_sidebar('header-widget-area')) {
+			echo '<div class="header-widget">';
 			dynamic_sidebar('header-widget-area');
+			echo '</div>';
 		}
 		?>
-
-        <h1 <?php echo $style; ?> class="header_title"><a <?php echo $style; ?> href="<?php echo home_url(); ?>" title="<?php esc_attr_e('Go back to the front page', 'graphene'); ?>"><?php bloginfo('name'); ?></a></h1>
-        <h2 <?php echo $style; ?> class="header_desc"><?php bloginfo('description'); ?></h2>
+		
+        <?php /* The site title and description */ 
+			if (is_singular() && !is_front_page()) { 
+				$title_tag = 'h2';
+				$desc_tag = 'h3';
+			} else {
+				$title_tag = 'h1';
+				$desc_tag = 'h2';
+			}
+		?>
+		<?php echo '<'.$title_tag; ?> <?php echo $style; ?> class="header_title"><a <?php echo $style; ?> href="<?php echo home_url(); ?>" title="<?php esc_attr_e('Go back to the front page', 'graphene'); ?>"><?php bloginfo('name'); ?></a></<?php echo $title_tag; ?>>
+        <?php echo '<'.$desc_tag; ?> <?php echo $style; ?> class="header_desc"><?php bloginfo('description'); ?></<?php echo $desc_tag; ?>>
         <?php do_action('graphene_header'); ?>
     </div>
     <div id="nav">

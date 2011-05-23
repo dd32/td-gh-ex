@@ -9,8 +9,7 @@
  * @since Graphene 1.0
  */
 global $graphene_settings;
-?>
-  
+?>    
     </div><!-- #content-main -->
     
     <?php
@@ -69,7 +68,7 @@ global $graphene_settings;
 <?php printf(__('%1$s uses %2$s theme by %3$s.', 'graphene'), '<a href="' . get_home_url() . '">' . get_bloginfo('name') . '</a>', '<a href="http://www.khairul-syahir.com/wordpress-dev/graphene-theme">' . ucfirst(get_template()) . '</a>', 'Syahir Hakim'); ?>
         </p>
 
-<?php do_action('graphene_developer'); ?>
+	<?php do_action('graphene_developer'); ?>
     </div>
 </div><!-- #footer -->
 

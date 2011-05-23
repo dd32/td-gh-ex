@@ -12,15 +12,31 @@ $graphene_defaults = array(
 	'slider_imgurl' => '',
 	'slider_height' => '',
 	'slider_speed' => '',
+	'slider_trans_speed' => 400,
 	'slider_position' => false,
 	'slider_disable' => false,
 	
 	/* Front page options */
 	'frontpage_posts_cats' => array(),
 	
+	/* Homepage panes */
+	'show_post_type' => 'latest-posts',
+	'homepage_panes_count' => 2,
+	'homepage_panes_cat' => 1,
+	'homepage_panes_posts' => '1',
+	'disable_homepage_panes' => false,
+    
+    /* Comment options */
+    'comments_setting' => 'wordpress', // wordpress | disabled_pages | disabled_completely
+        
+    /* Child page options */
+    'hide_child_pages' => false,
+	
 	/* Syndication options */
 	'custom_feed_url' => '',
 	'hide_feed_icon' => false,
+	'twitter_url' => '',
+	'facebook_url' => '',
 	
 	/* Adsense Options */
 	'show_adsense' => false,
@@ -45,8 +61,11 @@ $graphene_defaults = array(
 	'show_cc' => false,
 	'copy_text' => '',
 	'hide_copyright' => false,
-	
-	
+    
+    /* Print options */
+    'print_css' => false,
+    'print_button' => false,
+    	
 	/* Display Options Page */
 	
 	/* Header options */
@@ -63,6 +82,7 @@ $graphene_defaults = array(
 	
 	/* Posts Display options */
 	'posts_show_excerpt' => false,
+	'archive_full_content' => false,
 	'hide_post_author' => false,
 	'post_date_display' => 'icon_no_year',        
 	'hide_post_commentcount' => false,
@@ -71,6 +91,9 @@ $graphene_defaults = array(
 	'show_post_avatar' => false,
 	'show_post_author' => false,
 	'show_excerpt_more' => false,
+	
+	/* Excerpt options */
+	'excerpt_html_tags' => '',
 	
 	/* Footer widget options */
 	'footerwidget_column' => '',

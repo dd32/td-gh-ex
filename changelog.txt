@@ -4,6 +4,39 @@ http://www.khairul-syahir.com
 
 CHANGELOG
 
+Version 1.3
+	* Added option to disable the listing of child pages in parent pages
+    * Added print stylesheet and button
+	* Fixed excessively wide images in posts overflowing the content area
+	* Added link to the theme's options page in the new WordPress 3.1 admin bar
+	* Fixed adsense ads not appearing on front page when using a page as front page
+	* Fixed child pages listing showing post thumbnail of the parent page instead of its own
+	* Added option to display full content in archive pages (incl. search results) instead of excerpts
+	* Added wp_reset_query() call after every custom posts query
+	* Added Czech (cs_CZ) translation, by Ondřej Pašťalka
+	* Added option to export and import theme settings
+	* Added Hungarian (hu_HU) translation, by Major Gabez
+	* Added option to specify the slider transition speed
+	* Added 'graphene_after_slider' action hook
+	* Added message blocks shortcodes for 'warning', 'error', 'notice', and 'important'
+	* Added message blocks shortcodes buttons to the TinyMCE Editor
+	* Fixed page template being assigned a custom page template automatically, without being able to revert to theme default
+	* Added homepage panes that will be displayed if using a static front page
+	* Added settings presets
+	* Pings / comment counts are no longer displayed if there is no pings / comments yet
+	* Added option to completely remove the comments section site-wide, or for pages only
+	* Fixed issue with paragraph text not wrapping around aligned images properly
+	* Improved the 404.php file so that it returns proper 404 status code, and then redirect. Was returning 302 previously.
+	* Post and page titles in singular pages are now using <h1> tag rather than <h2> for SEO
+	* Added 'graphene_bottomsidebar' action hook inside the bottom sidebar
+	* Added option to retain HTML tags in excerpts
+	* Added id="searchform" to the search <form> element so now search works properly with WPML
+	* Added option to display Facebook and Twitter icons in the top bar
+	* Excerpt thumbnails now link to the full post/page
+	* Fixed double "More link" being shown in slider posts with manual excerpt, and ellipsis is no longer added to manual excerpts
+	* Added id and class to each sidebar item
+	* Added support for WP-PageNavi
+
 Version 1.2.1
 	* Added Arabic (ar_AR) translation, by Amal Abdul
 	* Fixed search listing of pages, where previously the calendar icon overlaps the title, and page's author (and author's avatar) is displayed
@@ -83,7 +116,7 @@ Version 1.1.3
 	* Added graphene_before_content-main action hook
 	* Moved the Google Analytics tracking script to just before closing </head> tag to accommodate the newer asynchronous tracking script
 	* Added graphene_slider_image_size filter
-	* Added the theme's FAQs page in the Wordpress admin
+	* Added the theme's FAQs page in the WordPress admin
 	* Author's bio in single post pages now uses custom author image instead of gravatar if present
 	* Added out-of-the-box support for Greg's Threaded Comment Numbering plugin
 	* Replaced all instances of 'manage_options' user capability check with 'edit_theme_options' for the theme's options pages
@@ -198,7 +231,7 @@ Version 1.0.8
 	* Added Italian (it_IT) translation, by Ermes Gelosa
 	* Added German (de_DE) translation, by Sebastian Brandner
 	* Replaced all instances of bloginfo('url') with the newer home_url() introduced in WP3.0
-	* Renamed page-onecolumn.php template file to template-onecolumn.php to avoid conflict with Wordpress template hierarchy
+	* Renamed page-onecolumn.php template file to template-onecolumn.php to avoid conflict with WordPress template hierarchy
 	* Fixed nav menu hover effect where the the hover styles stays permanently in IE6 and IE7
 	* Fixed Custom Background bug where the default background is still displayed even when a custom background colour is set
 	* Replaced the get_the_title() with the_title_attribute() function for title attribute of post title's <a> element

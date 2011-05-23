@@ -159,6 +159,7 @@ function graphene_setup() {
 	add_image_size('graphene_slider', apply_filters('graphene_slider_image_width', 660), $height, true);
 	add_image_size('graphene_slider_full', apply_filters('graphene_slider_full_image_width', 930), $height, true);
 	add_image_size('graphene_slider_small', apply_filters('graphene_slider_small_image_width', 445), $height, true);
+	add_image_size('graphene-homepage-pane', apply_filters('graphene_homepage_pane_image_width', 451), apply_filters('graphene_homepage_pane_image_height', 250), true);
 	
 	// Add support for editor syling
 	add_editor_style();
@@ -173,7 +174,7 @@ function graphene_setup() {
 	// Translations can be filed in the /languages/ directory
 	load_theme_textdomain( 'graphene', get_template_directory().'/languages' );
 	
-	// This theme uses wp_nav_menu() in one location.
+	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
 		'Header Menu' => __('Header Menu', 'graphene'),
 		'secondary-menu' => __('Secondary Menu', 'graphene'),
@@ -209,7 +210,7 @@ function graphene_setup() {
 	// Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI.
 	register_default_headers( graphene_get_default_headers() );
         
-        do_action('graphene_setup');
+    do_action('graphene_setup');
 }
 endif;
 
@@ -505,7 +506,7 @@ if (!function_exists('graphene_comment')) :
                 
 					<div class="comment-wrap clearfix">
 						<h5>
-                        	<cite><?php comment_author_link(); ?></cite><?php _e(' says:','graphene'); ?>
+                        	<cite><?php comment_author_link(); ?></cite> <?php _e('says:','graphene'); ?>
                         <?php do_action('graphene_comment_author'); ?>
                         </h5>
 						<div class="comment-meta">
@@ -528,7 +529,7 @@ if (!function_exists('graphene_comment')) :
                         	<?php do_action('graphene_before_commententry'); ?>
                             
 							<?php if ($comment->comment_approved == '0') : ?>
-							   <p><em><?php _e('Your comment is awaiting moderation.') ?></em></p>
+							   <p><em><?php _e('Your comment is awaiting moderation.', 'graphene') ?></em></p>
                                <?php do_action('graphene_comment_moderation'); ?>
 							<?php else : ?>
 								<?php comment_text(); ?>
@@ -624,7 +625,7 @@ function graphene_widgets_init() {
 			'name' => __('Sidebar Widget Area', 'graphene'),
 			'id' => 'sidebar-widget-area',
 			'description' => __( 'The first sidebar widget area (available in two and three column layouts).', 'graphene' ),
-			'before_widget' => '<div class="sidebar-wrap clearfix">',
+			'before_widget' => '<div id="%1$s" class="sidebar-wrap clearfix %2$s">',
 			'after_widget' => '</div>',
 			'before_title' => "<h3>",
 			'after_title' => "</h3>",
@@ -634,7 +635,7 @@ function graphene_widgets_init() {
                     'name' => __('Sidebar Two Widget Area', 'graphene'),
                     'id' => 'sidebar-two-widget-area',
                     'description' => __( 'The second sidebar widget area (only available in three column layouts).', 'graphene'),
-                    'before_widget' => '<div class="sidebar-wrap clearfix">',
+                    'before_widget' => '<div id="%1$s" class="sidebar-wrap clearfix %2$s">',
                     'after_widget' => '</div>',
                     'before_title' => "<h3>",
                     'after_title' => "</h3>",
@@ -644,7 +645,7 @@ function graphene_widgets_init() {
 			'name' => __('Footer Widget Area', 'graphene'),
 			'id' => 'footer-widget-area',
 			'description' => __( "The footer widget area. Leave empty to disable. Set the number of columns to display at the theme's Display Options page.", 'graphene' ),
-			'before_widget' => '<div class="sidebar-wrap clearfix">',
+			'before_widget' => '<div id="%1$s" class="sidebar-wrap clearfix %2$s">',
 			'after_widget' => '</div>',
 			'before_title' => "<h3>",
 			'after_title' => "</h3>",
@@ -662,7 +663,7 @@ function graphene_widgets_init() {
 				'name' => __('Front Page Sidebar Widget Area', 'graphene'),
 				'id' => 'home-sidebar-widget-area',
 				'description' => __( 'The first sidebar widget area that will only be displayed on the front page.', 'graphene' ),
-				'before_widget' => '<div class="sidebar-wrap clearfix">',
+				'before_widget' => '<div id="%1$s" class="sidebar-wrap clearfix %2$s">',
 				'after_widget' => '</div>',
 				'before_title' => "<h3>",
 				'after_title' => "</h3>",
@@ -672,7 +673,7 @@ function graphene_widgets_init() {
 				'name' => __('Front Page Sidebar Two Widget Area', 'graphene'),
 				'id' => 'home-sidebar-two-widget-area',
 				'description' => __( 'The second sidebar widget area that will only be displayed on the front page.', 'graphene' ),
-				'before_widget' => '<div class="sidebar-wrap clearfix">',
+				'before_widget' => '<div id="%1$s" class="sidebar-wrap clearfix %2$s">',
 				'after_widget' => '</div>',
 				'before_title' => "<h3>",
 				'after_title' => "</h3>",
@@ -684,7 +685,7 @@ function graphene_widgets_init() {
 				'name' => __('Front Page Footer Widget Area', 'graphene'),
 				'id' => 'home-footer-widget-area',
 				'description' => __( "The footer widget area that will only be displayed on the front page. Leave empty to disable. Set the number of columns to display at the theme's Display Options page.", 'graphene' ),
-				'before_widget' => '<div class="sidebar-wrap clearfix">',
+				'before_widget' => '<div id="%1$s" class="sidebar-wrap clearfix %2$s">',
 				'after_widget' => '</div>',
 				'before_title' => "<h3>",
 				'after_title' => "</h3>",
@@ -697,7 +698,7 @@ function graphene_widgets_init() {
 				'name' => __('Header Widget Area', 'graphene'),
 				'id' => 'header-widget-area',
 				'description' => __("The header widget area.", 'graphene'),
-				'before_widget' => '<div class="sidebar-wrap clearfix">',
+				'before_widget' => '<div id="%1$s" class="sidebar-wrap clearfix %2$s">',
 				'after_widget' => '</div>',
 				'before_title' => "<h3>",
 				'after_title' => "</h3>",
@@ -723,7 +724,7 @@ class Graphene_Widget_Twitter extends WP_Widget{
 	
 	function Graphene_Widget_Twitter(){
 		// Widget settings
-		$widget_ops = array('classname' => 'Graphene_Twitter', 'description' => __('Display the latest Twitter status updates.', 'graphene'));
+		$widget_ops = array('classname' => 'graphene-twitter', 'description' => __('Display the latest Twitter status updates.', 'graphene'));
 		
 		// Widget control settings
 		$control_ops = array('id_base' => 'graphene-twitter');
@@ -947,7 +948,8 @@ add_filter('comment_form', 'graphene_comment_submit_button');
  */
 if (!function_exists('graphene_continue_reading_link')) :
 	function graphene_continue_reading_link() {
-		if (!is_page()) {
+		global $in_slider;
+		if (!is_page() && !$in_slider) {
 			$more_link_text = __('Continue reading &raquo;', 'graphene');
 			return '</p><p><a class="more-link block-button" href="'.get_permalink().'">'.$more_link_text.'</a>';
 		}
@@ -977,9 +979,10 @@ add_filter('excerpt_more', 'graphene_auto_excerpt_more' );
  * @since Graphene 1.1.3
 */
 function graphene_manual_except_more($text){
-	if (has_excerpt()){
+	global $in_slider;
+	if (has_excerpt() && !$in_slider){
 		$text = explode('</p>', $text);
-		$text[count($text)-2] .= graphene_auto_excerpt_more('');
+		$text[count($text)-2] .= graphene_continue_reading_link();
 		$text = implode('</p>', $text);
 	}
 	return $text;
@@ -994,18 +997,17 @@ if ($graphene_settings['show_excerpt_more']) {
 */
 if (!function_exists('graphene_posts_nav')) :
 	function graphene_posts_nav(){ ?>
-		<div class="post-nav clearfix">
-        <?php if (!is_search()) : ?>
-			<p id="previous"><?php next_posts_link(__('Older posts &laquo;', 'graphene')) ?></p>
-			<p id="next-post"><?php previous_posts_link(__('&raquo; Newer posts', 'graphene')) ?></p>
-        <?php else : ?>
-            <p id="next-post"><?php next_posts_link(__('Next page &raquo;', 'graphene')) ?></p>
-			<p id="previous"><?php previous_posts_link(__('&laquo; Previous page', 'graphene')) ?></p>
-        <?php endif; ?>
-		</div>
-        
-        
-        <?php do_action('graphene_posts_nav'); ?>
+        <div class="post-nav clearfix">
+        <?php if (function_exists('wp_pagenavi')) : wp_pagenavi(); else : ?>
+            <?php if (!is_search()) : ?>
+                <p id="previous"><?php next_posts_link(__('Older posts &laquo;', 'graphene')) ?></p>
+                <p id="next-post"><?php previous_posts_link(__('&raquo; Newer posts', 'graphene')) ?></p>
+            <?php else : ?>
+                <p id="next-post"><?php next_posts_link(__('Next page &raquo;', 'graphene')) ?></p>
+                <p id="previous"><?php previous_posts_link(__('&laquo; Previous page', 'graphene')) ?></p>
+            <?php endif; ?>
+        <?php endif; do_action('graphene_posts_nav'); ?>
+        </div>
 	<?php
 	}
 endif;
@@ -1028,7 +1030,7 @@ if (!function_exists('graphene_scrollable')) :
                 jQuery(document).ready(function($){
 					$(function() {
                         // initialize scrollable
-						$("#slider_root").scrollable({circular: true}).navigator({	  
+						$("#slider_root").scrollable({circular: true, speed: <?php echo $graphene_settings['slider_trans_speed']; ?>}).navigator({	  
 								navi: ".slider_nav",
 								naviItem: 'a',
 								activeClass: 'active'
@@ -1077,7 +1079,9 @@ add_filter('excerpt_length', 'graphene_excerpt_length');
  * Creates the functions that output the slider
 */
 function graphene_slider(){
-	global $graphene_settings;
+	global $graphene_settings, $in_slider;
+	
+	$in_slider = true;
 	
 	do_action('graphene_before_slider'); ?>
     <?php $class = ($graphene_settings['slider_display_style'] == 'bgimage-excerpt') ? ' full-sized' : ''; ?>
@@ -1186,7 +1190,6 @@ function graphene_slider(){
             </div>
         <?php	
         }
-        
     ?>
             </div>
         </div>
@@ -1202,6 +1205,9 @@ function graphene_slider(){
         
     </div>
     <?php
+	wp_reset_query();
+	do_action('graphene_after_slider');
+	$in_slider = false;
 }
 /* Create an intermediate function that controls where the slider should be displayed */
 if (!function_exists('graphene_display_slider')) :
@@ -1335,7 +1341,7 @@ if (!function_exists('graphene_get_post_image')) :
 		
 		$html = '';
 		
-		/* Returns FALSE if there is no image */
+		/* Returns generic image if there is no image to show */
 		if (empty($images) && $context != 'excerpt' && !$urlonly) {
 			$html .= apply_filters('graphene_generic_slider_img', '<img alt="" src="'.get_template_directory_uri().'/images/img_slider_generic.png" />');
 		}
@@ -1368,7 +1374,7 @@ if (!function_exists('graphene_get_header_image')) :
 		
 		if ( is_singular() && has_post_thumbnail( $post_id ) && ( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'post-thumbnail' ) ) &&  $image[1] >= HEADER_IMAGE_WIDTH && !$graphene_settings['featured_img_header']) {
 			// Houston, we have a new header image!
-			// Gets only the image url. It's a pain, I know! Wish Wordpress has better options on this one
+			// Gets only the image url. It's a pain, I know! Wish WordPress has better options on this one
 			$header_img = get_the_post_thumbnail( $post_id, 'post-thumbnail' );
 			$header_img = explode('" class="', $header_img);
 			$header_img = $header_img[0];
@@ -1391,13 +1397,14 @@ endif;
 /**
  * Adds the functionality to count comments by type, eg. comments, pingbacks, tracbacks.
  * Based on the code at WPCanyon (http://wpcanyon.com/tipsandtricks/get-separate-count-for-comments-trackbacks-and-pingbacks-in-wordpress/)
+ * 
+ * In Graphene version 1.3 the $noneText param has been removed
  *
  * @package WordPress
  * @subpackage Graphene
- * @since Graphene 1.1.3
+ * @since Graphene 1.3
 */
-function graphene_comment_count($type = 'comments', $noneText = '', $oneText = '', $moreText = ''){
-
+function graphene_comment_count($type = 'comments', $oneText = '', $moreText = ''){
 	if($type == 'comments') :
 		$typeSql = 'comment_type = ""';
 	elseif($type == 'pings') :
@@ -1421,19 +1428,24 @@ function graphene_comment_count($type = 'comments', $noneText = '', $oneText = '
             comment_post_ID= '.get_the_ID()
     );
 
-	if($result == 0):
-		echo str_replace('%', $result, $noneText);
-	elseif($result == 1): 
-		echo str_replace('%', $result, $oneText);
-	elseif($result > 1): 
-		echo str_replace('%', $result, $moreText);
+	//if($result == 0):
+	//	echo str_replace('%', $result, $noneText);
+    if($result == 1) : 
+		return str_replace('%', $result, $oneText);
+	elseif($result > 1) : 
+		return str_replace('%', $result, $moreText);
+	else :
+		return false;
 	endif;
 }
 
 /**
  * Enqueue the jQuery Tools Tabs JS and the necessary script for comments/pings tabs
 */
-function graphene_tabs_js(){ ?>
+function graphene_tabs_js(){ 
+	global $tabbed;
+	if ($tabbed) :
+?>
 	<script type="text/javascript">
 		//<![CDATA[
 		jQuery(document).ready(function($){
@@ -1444,6 +1456,7 @@ function graphene_tabs_js(){ ?>
 		//]]>
 	</script>
 <?php
+	endif;
 }
 add_action('wp_footer', 'graphene_tabs_js');
 
@@ -1502,7 +1515,7 @@ add_action('admin_footer', 'graphene_options_js');
 
 /**
  * This functions adds additional classes to the <body> element. The additional classes
- * are added by filtering the Wordpress body_class() function.
+ * are added by filtering the WordPress body_class() function.
 */
 function graphene_body_class($classes){
     
@@ -1564,13 +1577,38 @@ function graphene_column_mode(){
 function graphene_ie_css3(){ ?>
 	<!--[if lte IE 8]>
       <style type="text/css" media="screen">
-      	#footer, div.sidebar-wrap, .block-button, .featured_slider, #slider_root, #comments li.bypostauthor{behavior: url(<?php echo get_template_directory_uri(); ?>/js/PIE.php);}
+      	#footer, div.sidebar-wrap, .block-button, .featured_slider, #slider_root, #comments li.bypostauthor, .pie{behavior: url(<?php echo get_template_directory_uri(); ?>/js/PIE.php);}
         .featured_slider{margin-top:0 !important;}
       </style>
     <![endif]-->
     <?php
 }
 add_action('wp_head', 'graphene_ie_css3');
+
+
+/**
+ * Fix IE8 image scaling issues when using max-width property on images
+*/
+function graphene_ie8_img(){ ?>
+	<!--[if IE 8]>
+    <script type="text/javascript">
+        (function($) {
+            var imgs, i, w;
+            var imgs = document.getElementsByTagName('img');
+            maxwidth = 0.98 * $('.entry-content').width();
+            for( i = 0; i < imgs.length; i++ ) {
+                w = imgs[i].getAttribute( 'width' );
+                if ( w > maxwidth ) {
+                    imgs[i].removeAttribute( 'width' );
+                    imgs[i].removeAttribute( 'height' );
+                }
+            }
+        })(jQuery);
+    </script>
+    <![endif]-->
+<?php
+}
+add_action('wp_footer', 'graphene_ie8_img');
 
 
 /**
@@ -1658,4 +1696,376 @@ function disect_it($var = NULL, $exit = true, $comment = false){
 		echo '<strong>ERROR:</strong> You must pass a variable as argument to the <code>disect_it()</code> function.';	
 	}
 }
+
+function graphene_page_template_visualizer() {  
+    global $graphene_settings, $post_id;
+    $template_not_found = __('Template preview not found.', 'graphene');    
+    
+	if (!get_post_meta($post_id, '_wp_page_template', true)){
+		$default_template = __('default', 'graphene');
+	} else {
+		switch($graphene_settings['column_mode']){
+			case 'one-column':
+				$default_template = 'template-onecolumn.php';
+				break;
+			case 'two-col-right':
+				$default_template = 'template-twocolumnsright.php';
+				break;
+			case 'three-col-left':
+				$default_template = 'template-threecolumnsleft.php';
+				break;
+			case 'three-col-right':
+				$default_template = 'template-threecolumnsright.php';
+				break;
+			case 'three-col-center':
+				$default_template = 'template-threecolumnscenter.php';
+				break;
+			default:
+				$default_template = 'template-twocolumnsleft.php';
+				break;
+		}
+	}
+    
+    
+    $preview_img_path = get_template_directory_uri() . '/admin/images/';
+    ?>
+    <script type="text/javascript">
+    //<![CDATA[
+    jQuery(document).ready(function($){
+        $('#page_template').change(function(){
+           update_page_template();           
+        });
+        // $('#page_template').after('<p><span><?php echo $template_not_found;?></span><img id="page_template_img" alt="none" /></p>');
+		$('#page_template').after('<p><img id="page_template_img" alt="none" /></p>');
+        
+        function update_page_template() {
+            var preview_img = $('#page_template').val().replace(/.php$/, '.png');
+            //if (preview_img == 'default'){ preview_img = '<?php echo $default_template;?>'; }            
+            $('#page_template_img').attr('src', '<?php echo $preview_img_path ?>'+preview_img);
+        }
+        
+        // if the template preview image is not found, hide the image not found and show text
+        $('#page_template_img').error(function(){
+           $(this).hide();  
+           $('span', $(this).parent()).show();
+        });
+        // if the template preview image is found, show the image
+        $('#page_template_img').load(function(){
+           $(this).show();     
+           $('span', $(this).parent()).hide();
+        });
+        
+        // remove the default option (because the theme overrides the template
+        $('#page_template option[value="default"]').remove();
+        // add the theme default item
+        $('#page_template option:first').before($('<option value="default"><?php _e('Theme default', 'graphene'); ?></option>'));
+        // select the default template if it isn't already selected
+        if ($('#page_template option[selected="selected"]').length == 0){
+            // $('#page_template option[text="<?php echo $default_template; ?>"]').attr('selected', 'selected');
+            $('#page_template option:contains("<?php _e('Theme default', 'graphene'); ?>")').attr('selected', 'selected');
+        }
+        
+        update_page_template();   
+    });
+    //]]>
+    </script>
+    <?php
+}
+add_action('edit_page_form', 'graphene_page_template_visualizer'); // only works on pages 
+
+function graphene_print_style(){
+    wp_register_style('graphene-print', get_template_directory_uri().'/print.css', null, true, 'print');
+    wp_enqueue_style('graphene-print');
+
+    do_action('graphene_print');
+}
+
+function graphene_print_only_text($text){
+    return sprintf('<p class="printonly">%s</p>', $text);
+}
+
+function graphene_can_import(){
+    // json_encode and json_decode only available from PHP version 5.2.1
+    // return version_compare(PHP_VERSION, '5.2.1', '>=');
+	
+	// WordPress provides compatibility layer that supports json_encode and json_decode
+	if (function_exists('json_encode') && function_exists('json_decode')) {return true;} else {return false;}
+}
+
+function graphene_export_options(){
+    
+    global $graphene_settings;
+    
+    ob_clean();
+    
+    $name = 'graphene_options.txt';
+    $data = json_encode($graphene_settings);
+    $size = strlen($data);
+
+    header('Content-Type: text/plain');
+    header('Content-Disposition: attachment; filename="'.$name.'"');
+    header("Content-Transfer-Encoding: binary");
+    header('Accept-Ranges: bytes');
+
+    /* The three lines below basically make the download non-cacheable */
+    header("Cache-control: private");
+    header('Pragma: private');
+    header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
+
+    header("Content-Length: ".$size);
+    print($data);    
+
+    die();   
+}
+
+
+/**
+ * Shortcode handlers
+ */
+function warning_block_shortcode_handler( $atts, $content=null, $code="" ) {
+    return '<div class="warning_block">' . $content . '</div>';
+}
+add_shortcode( 'warning', 'warning_block_shortcode_handler' );
+
+function error_block_shortcode_handler( $atts, $content=null, $code="" ) {
+    return '<div class="error_block">' . $content . '</div>';
+}
+add_shortcode( 'error', 'error_block_shortcode_handler' );
+
+function notice_block_shortcode_handler( $atts, $content=null, $code="" ) {
+    return '<div class="notice_block">' . $content . '</div>';
+}
+add_shortcode( 'notice', 'notice_block_shortcode_handler' );
+
+function important_block_shortcode_handler( $atts, $content=null, $code="" ) {
+    return '<div class="important_block">' . $content . '</div>';
+}
+add_shortcode( 'important', 'important_block_shortcode_handler' );
+
+
+/**
+ * Hook the shortcode buttons to the TinyMCE editor
+*/
+class Graphene_Shortcodes_Buttons{
+	
+	function Graphene_Shortcodes_Buttons(){
+		if ( current_user_can('edit_posts') &&  current_user_can('edit_pages') ) {	
+			// add_filter('tiny_mce_version', array(&$this, 'tiny_mce_version'));
+			add_filter('mce_external_plugins', array(&$this, 'graphene_add_plugin'));  
+			add_filter('mce_buttons_2', array(&$this, 'graphene_register_button'));  
+	   }
+	}
+	
+	function graphene_register_button($buttons){
+		array_push($buttons, "separator", "warning", "error", "notice", "important");
+		return $buttons;
+	}
+	
+	function graphene_add_plugin($plugin_array){
+		$plugin_array['grapheneshortcodes'] = get_template_directory_uri().'/js/mce-shortcodes.js';
+		return $plugin_array; 
+	}
+	
+	/*
+	function tiny_mce_version($version) {
+		return ++$version;
+	}
+	*/
+}
+add_action('init', 'Graphene_Shortcodes_Buttons');
+
+function Graphene_Shortcodes_Buttons(){
+	global $Graphene_Shortcodes_Buttons;
+	$Graphene_Shortcodes_Buttons = new Graphene_Shortcodes_Buttons();
+}
+
+
+/**
+ * Helps to determine if the comments should be shown.
+ */
+function graphene_should_show_comments() {
+    global $graphene_settings, $post;
+    if ($graphene_settings['comments_setting'] == 'disabled_completely'){
+        return false;
+    }
+    if ($graphene_settings['comments_setting'] == 'disabled_pages' && get_post_type($post) == 'page'){
+        return false;
+    }
+    return true;
+}
+
+/**
+ * Add a link to the theme's options page in the admin bar
+*/
+function graphene_wp_admin_bar_theme_options(){
+	global $wp_admin_bar;
+	$wp_admin_bar->add_menu(array(
+								'parent' => 'appearance',
+								'id' => 'graphene-options',
+								'title' => 'Graphene Options',
+								'href' => admin_url('themes.php?page=graphene_options')
+							));
+}
+add_action( 'admin_bar_menu', 'graphene_wp_admin_bar_theme_options', 61 );
+
+
+/**
+ * Adds the content panes in the homepage. The homepage panes are only displayed if using a static
+ * front page, before the comments. It is also recommended that the comments section is disabled 
+ * for the page used as the static front page.
+*/
+function graphene_homepage_panes(){
+	global $graphene_settings, $graphene_defaults;
+	
+	// Get the number of panes to display
+	if ($graphene_settings['show_post_type'] == 'latest-posts' || $graphene_settings['show_post_type'] == 'cat-latest-posts'){
+		$pane_count = $graphene_settings['homepage_panes_count'];
+	} elseif ($graphene_settings['show_post_type'] == 'posts') {
+		$pane_count = count(explode(',', $graphene_settings['homepage_panes_posts']));
+	}
+	
+	// Build the common get_posts() parameter first
+	$args = array(
+				  'orderby' => 'date',
+				  'order' => 'DESC',
+				  'suppress_filters' => 0,
+				  'post_type' => array('post', 'page'),
+				 );
+	
+	// args specific to latest posts
+	if ($graphene_settings['show_post_type'] == 'latest-posts' ){
+		$args_merge = array(
+							'numberposts' => $pane_count,
+							'post_type' => array('post'),
+							);
+		$args = array_merge($args, $args_merge);
+	}
+	
+	// args specific to latest posts by category
+	if ($graphene_settings['show_post_type'] == 'cat-latest-posts' ){
+		$args_merge = array(
+							'numberposts' => $pane_count,
+							'category' => $graphene_settings['homepage_panes_cat'],
+							);
+		$args = array_merge($args, $args_merge);
+	}
+	
+	// args specific to posts/pages
+	if ($graphene_settings['show_post_type'] == 'posts' ){
+		
+		$args_merge = array(
+							'numberposts' => $pane_count,
+							'include' => $graphene_settings['homepage_panes_posts'],
+							);
+		$args = array_merge($args, $args_merge);
+	}
+	
+	global $post;
+	
+	// Get the posts to display as homepage panes
+	$posts = get_posts(apply_filters('graphene_homepage_panes_args', $args));
+	?>
+    
+    <div class="homepage_panes">
+	
+	<?php foreach ($posts as $post) : setup_postdata($post);
+		 ?>
+		<div class="homepage_pane clearfix">
+        
+        	<a href="<?php the_permalink(); ?>" title="<?php printf(__('Permalink to %s', 'graphene'), esc_attr(get_the_title())); ?>">
+        	<?php /* Get the post's image */ 
+			if (has_post_thumbnail($post->ID)) {
+				the_post_thumbnail('graphene-homepage-pane');
+			} else {
+				echo graphene_get_post_image($post->ID, 'graphene-homepage-pane', 'excerpt');
+			}
+			?>
+            </a>
+            
+            <?php /* The post title */ ?>
+            <h3 class="post-title"><a href="<?php the_permalink(); ?>" title="<?php printf(__('Permalink to %s', 'graphene'), esc_attr(get_the_title())); ?>"><?php the_title(); ?></a></h3>
+            
+            <?php /* The post excerpt */ ?>
+            <div class="post-excerpt">
+            	<?php the_excerpt(); ?>
+            </div>
+            
+            <?php /* Read more button */ ?>
+            <p class="post-comments">
+            	<a href="<?php the_permalink(); ?>" title="<?php printf(__('Permalink to %s', 'graphene'), esc_attr(get_the_title())); ?>" class="block-button"><?php _e('Read more', 'graphene'); ?></a>
+            </p>
+        </div>
+    <?php endforeach; ?>
+	</div>
+	
+	<?php
+}
+
+/* Helper function to control when the homepage panes should be displayed. */
+function graphene_display_homepage_panes(){
+	global $graphene_settings;
+	if (get_option('show_on_front') == 'page' && !$graphene_settings['disable_homepage_panes'] && is_front_page()) {
+		graphene_homepage_panes();
+	}	
+}
+add_action('graphene_bottom_content', 'graphene_display_homepage_panes');
+
+
+/**
+ * Improves the WordPress default excerpt output. This function will retain HTML tags inside the excerpt.
+ * Based on codes by Aaron Russell at http://www.aaronrussell.co.uk/blog/improving-wordpress-the_excerpt/
+*/
+function graphene_improved_excerpt($text){
+	global $graphene_settings, $post;
+	
+	$raw_excerpt = $text;
+	if ( '' == $text ) {
+		$text = get_the_content('');
+		$text = strip_shortcodes( $text );
+		$text = apply_filters('the_content', $text);
+		$text = str_replace(']]>', ']]&gt;', $text);
+		
+		/* Remove unwanted JS code */
+		$text = preg_replace('@<script[^>]*?>.*?</script>@si', '', $text);
+		
+		/* Strip HTML tags, but allow certain tags */
+		$text = strip_tags($text, $graphene_settings['excerpt_html_tags']);
+
+		$excerpt_length = apply_filters('excerpt_length', 55);
+		$excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
+		$words = preg_split("/[\n\r\t ]+/", $text, $excerpt_length + 1, PREG_SPLIT_NO_EMPTY);
+		if ( count($words) > $excerpt_length ) {
+			array_pop($words);
+			$text = implode(' ', $words);
+			$text = $text . $excerpt_more;
+		} else {
+			$text = implode(' ', $words);
+		}
+	}
+	return apply_filters('wp_trim_excerpt', $text, $raw_excerpt);
+}
+
+/**
+ * Only use the custom excerpt trimming function if user decides to retain html tags.
+*/
+if ($graphene_settings['excerpt_html_tags']) {
+	remove_filter('get_the_excerpt', 'wp_trim_excerpt');
+	add_filter('get_the_excerpt', 'graphene_improved_excerpt');
+}
+
+
+/**
+ * Add Facebook and Twitter icon to top bar
+*/
+function graphene_top_bar_social(){
+	global $graphene_settings;
+	
+	if ($graphene_settings['twitter_url']) : ?>
+    	<a href="<?php echo $graphene_settings['twitter_url']; ?>" title="<?php printf(esc_attr__('Follow %s on Twitter', 'graphene'), get_bloginfo('name')); ?>" class="twitter_link"><span><?php printf(esc_attr__('Follow %s on Twitter', 'graphene'), get_bloginfo('name')); ?></span></a>
+    <?php endif; 
+	if ($graphene_settings['facebook_url']) : ?>
+    	<a href="<?php echo $graphene_settings['facebook_url']; ?>" title="<?php printf(esc_attr__("Visit %s's Facebook page", 'graphene'), get_bloginfo('name')); ?>" class="facebook_link"><span><?php esc_attr_e('Visit Facebook page', 'graphene'); ?></span></a>
+    <?php endif;
+}
+add_action('graphene_feed_icon', 'graphene_top_bar_social');
 ?>

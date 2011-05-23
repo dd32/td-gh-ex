@@ -1,6 +1,6 @@
 <?php
 /**
- * This function generates the theme's FAQ page in Wordpress administration.
+ * This function generates the theme's FAQ page in WordPress administration.
  *
  * @package WordPress
  * @subpackage Graphene
@@ -22,7 +22,7 @@ function graphene_faq(){ ?>
             </li>
         	<li>
             	<p><strong><?php _e("Can I modify Graphene to my heart's content without paying anything?", 'graphene'); ?></strong></p>
-                <p><?php _e("The Graphene Wordpress theme, along with all the other themes in the Wordpress.org Official Free Themes Directory, is released under the GNU General Public License (GPL) Version 2. The full text of that licence is included with the theme in the <code>licence.txt</code> file in the theme's folder. Releasing the theme under that licence means, among others, that you are <em>free to modify the theme in any way for any purpose (including commercial)</em> without any obligation to the theme's author. However, if you decide to redistribute the theme, the licence dictates that you must release the theme under the same licence, GPLv2.", 'graphene'); ?></p>
+                <p><?php _e("The Graphene WordPress theme, along with all the other themes in the WordPress.org Official Free Themes Directory, is released under the GNU General Public License (GPL) Version 2. The full text of that licence is included with the theme in the <code>licence.txt</code> file in the theme's folder. Releasing the theme under that licence means, among others, that you are <em>free to modify the theme in any way for any purpose (including commercial)</em> without any obligation to the theme's author. However, if you decide to redistribute the theme, the licence dictates that you must release the theme under the same licence, GPLv2.", 'graphene'); ?></p>
                 <p><?php _e("But of course, the author would always appreciate <a href=\"themes.php?page=graphene_options\">donations</a> to support ongoing and future developments of the theme.", 'graphene'); ?></p>
             </li>
             <li>
@@ -32,7 +32,7 @@ function graphene_faq(){ ?>
             </li>
             <li>
             	<p><strong><?php _e("Is the theme compatible with this plugin or that plugin?", 'graphene'); ?></strong></p>
-                <p><?php _e("I don't know. With so many plugins available for Wordpress, there's no way that I (or anybody else for that matter) can test for compatibility for all of them. Having said that, the theme is built with all the necessary Wordpress components included with it, so chances are most plugins will be compatible with the theme.", 'graphene'); ?></p>
+                <p><?php _e("I don't know. With so many plugins available for WordPress, there's no way that I (or anybody else for that matter) can test for compatibility for all of them. Having said that, the theme is built with all the necessary WordPress components included with it, so chances are most plugins will be compatible with the theme.", 'graphene'); ?></p>
                 <p><?php _e("My suggestion is to just install the plugin and try it. If you stumble into problem, ask for support from the plugin author first. If the plugin author says that it's a problems with the theme, you know where to find support.", 'graphene'); ?></p>
             </li>
         </ol>

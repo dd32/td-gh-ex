@@ -14,6 +14,13 @@
 global $graphene_settings;
 ?>
 
+<?php 
+    /* Only show comments depending on the theme setting */
+    if (!graphene_should_show_comments()) : 
+        return;
+    endif;
+?>
+
 <?php if (post_password_required() && (comments_open() || have_comments())) : ?>
 			<div id="comments">
 				<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'graphene' ); ?></p>
@@ -37,36 +44,46 @@ global $graphene_settings;
 <?php if ( have_comments() ) : ?>
 
 <div id="comments" class="clearfix">
-    <h4><a href="#"><?php graphene_comment_count('comments', __('No comment yet','graphene'), __('1 comment','graphene'), __("% comments", 'graphene') );?></a></h4>
-    <h4 class="pings"><a href="#"><?php graphene_comment_count('pings', __('No ping yet','graphene'), __('1 ping','graphene'), __("% pings", 'graphene') );?></a></h4>
+	<?php /* Get the comments and pings count */ 
+		global $tabbed;
+		$comment_count = graphene_comment_count('comments', __('1 comment','graphene'), __("% comments", 'graphene'));
+		$ping_count = graphene_comment_count('pings', __('1 ping','graphene'), __("% pings", 'graphene'));
+		$tabbed = ($comment_count && $ping_count) ? true : false;
+	?>
+    <?php if ($comment_count) : ?>
+    	<h4 class="comments"><?php if ($tabbed) {echo '<a href="#">'.$comment_count.'</a>';} else {echo $comment_count;}?></h4>
+	<?php endif; ?>
+    <?php if ($ping_count) : ?>
+	    <h4 class="pings"><?php if ($tabbed) {echo '<a href="#">'.$ping_count.'</a>';} else {echo $ping_count;}?></h4>
+    <?php endif; ?>
 
 	<?php do_action('graphene_before_comments'); ?>
 
     <ol class="clearfix" id="comments_list">
-        <?php
+		<?php
         /* Loop through and list the comments. Tell wp_list_comments()
          * to use graphene_comment() to format the comments.
          * If you want to overload this in a child theme then you can
          * define graphene_comment() and that will be used instead.
          * See graphene_comment() in functions.php for more.
          */
-		 wp_list_comments(array('callback' => 'graphene_comment', 'style' => 'ol', 'type' => 'comment')); ?>
+         wp_list_comments(array('callback' => 'graphene_comment', 'style' => 'ol', 'type' => 'comment')); ?>
+         
+        <?php // Are there comments to navigate through? ?>
+		<?php if (get_comment_pages_count() > 1 && get_option('page_comments')) : ?>
+        <div class="comment-nav clearfix">
+            <p><?php paginate_comments_links(); ?>&nbsp;</p>
+            <?php do_action('graphene_comments_pagination'); ?>
+        </div>
+        <?php endif; // Ends the comment navigation ?>
     </ol>
     <ol class="clearfix" id="pings_list">
         <?php
         /* Loop through and list the pings. Use the same callback function as
 		 * listing comments above, graphene_comment() to format the pings.
          */
-		 wp_list_comments(array('callback' => 'graphene_comment', 'style' => 'ol', 'type' => 'pings')); ?>
+		 wp_list_comments(array('callback' => 'graphene_comment', 'style' => 'ol', 'type' => 'pings', 'per_page' => 0)); ?>
     </ol>
-                    
-		<?php // Are there comments to navigate through? ?>
-        <?php if (get_comment_pages_count() > 1 && get_option('page_comments')) : ?>
-        <div class="comment-nav clearfix">
-            <p><?php paginate_comments_links(); ?>&nbsp;</p>
-            <?php do_action('graphene_comments_pagination'); ?>
-        </div>
-        <?php endif; // Ends the comment navigation ?>
     
     <?php do_action('graphene_after_comments'); ?>
 </div>

@@ -54,7 +54,7 @@
 			<ol>	
 			<?php foreach ($posts as $post) { ?>
                 <li><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(esc_attr__('Permalink Link to %s', 'graphene'), the_title_attribute('echo=0')); ?>"><?php if (get_the_title() == '') {_e('(No title)','graphene');} else {the_title();} ?></a> &mdash; <?php echo get_the_date(); ?></li>    
-            <?php } ?>
+            <?php } wp_reset_query(); ?>
             </ol>
             <?php do_action('graphene_author_latestposts'); ?>
             
@@ -93,7 +93,7 @@
             </ol>
             <?php do_action('graphene_author_popularposts'); ?>
             
-            <?php endif; ?>
+            <?php endif; wp_reset_query(); ?>
             
         </div>
         

@@ -14,7 +14,10 @@ if (((!$graphene_settings['alt_home_footerwidget'] || !is_front_page()) && is_ac
     <?php do_action('graphene_before_bottomsidebar'); ?>
     
     <div id="sidebar_bottom" class="sidebar clearfix">
-            <?php if (is_front_page() && $graphene_settings['alt_home_footerwidget']) : ?>
+        
+        <?php do_action('graphene_bottomsidebar'); ?>
+		
+		<?php if (is_front_page() && $graphene_settings['alt_home_footerwidget']) : ?>
             <?php dynamic_sidebar('home-footer-widget-area'); ?>
         <?php else : ?>
             <?php dynamic_sidebar('footer-widget-area'); ?>

@@ -103,9 +103,6 @@
 #nav #secondary-menu.menu li a:visited {
 	color: #ccc;
 }
-#rss a {
-	background: url("images/sprite_master_light.png") no-repeat scroll left top transparent;
-}
 #top_search button {
 	background: url("images/sprite_master_light.png") no-repeat scroll -38px top transparent;
 }

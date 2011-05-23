@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graphene 1.0 theme for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-19 16:31+0800\n"
-"PO-Revision-Date: 2011-02-19 20:25+0100\n"
-"Last-Translator: ThumNet <jeffreytummers@gmail.com>\n"
+"POT-Creation-Date: 2011-05-07 21:24+1200\n"
+"PO-Revision-Date: 2011-05-07 19:47+0100\n"
+"Last-Translator: Jeffrey Tummers <info@thumnet.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,18 +27,23 @@ msgstr "Dagelijks archief: <span>%s</span>"
 msgid "Monthly Archive: <span>%s</span>"
 msgstr "Maandelijks archief: <span>%s</span>"
 
+#. translators: F will be replaced with month, and Y will be replaced with year, so "F Y" in English would be replaced with something like "June 2008".
 #: archive.php:29
+msgid "F Y"
+msgstr "F Y"
+
+#: archive.php:31
 #, php-format
 msgid "Yearly Archive: <span>%s</span>"
 msgstr "Jaarlijks archief: <span>%s</span>"
 
-#: archive.php:31
+#: archive.php:33
 #: category.php:14
 #, php-format
 msgid "Category Archive: <span>%s</span>"
 msgstr "Categorie archief: <span>%s</span>"
 
-#: archive.php:33
+#: archive.php:35
 msgid "Blog Archive"
 msgstr "Blog archief"
 
@@ -46,257 +51,276 @@ msgstr "Blog archief"
 msgid "Author's posts listings"
 msgstr "Berichten van deze auteur"
 
-#: comments.php:19
+#: comments.php:26
 msgid "This post is password protected. Enter the password to view any comments."
 msgstr "Dit bericht is beveiligd met een wachtwoord. Voer het wachtwoord in om reacties te bekijken."
 
-#: comments.php:40
-msgid "No comment yet"
-msgstr "Nog geen reacties"
-
-#: comments.php:40
+#: comments.php:47
 #: loop-author.php:90
-#: loop.php:127
+#: loop.php:142
 msgid "1 comment"
 msgstr "1 reactie"
 
-#: comments.php:40
+#: comments.php:47
 #: loop-author.php:90
-#: loop.php:127
+#: loop.php:142
 #, php-format
 msgid "% comments"
 msgstr "% reacties"
 
-#: comments.php:41
-msgid "No ping yet"
-msgstr "Nog geen ping"
-
-#: comments.php:41
+#: comments.php:48
 msgid "1 ping"
 msgstr "1 ping"
 
-#: comments.php:41
+#: comments.php:48
 msgid "% pings"
 msgstr "% pings"
 
-#: comments.php:79
+#: comments.php:86
 msgid "Comments have been disabled."
 msgstr "Reacties zijn uitgeschakeld."
 
-#: comments.php:94
+#: comments.php:101
 #, php-format
 msgid "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags and attributes: %s"
 msgstr "U kunt deze <abbr title=\"HyperText Markup Language\"> HTML </ abbr>-tags en attributen gebruiken:% s"
 
-#: comments.php:99
+#: comments.php:106
 msgid "Your email address will not be published."
 msgstr "Uw email adres zal niet worden gepubliseerd."
 
-#: comments.php:102
-#: functions.php:927
+#: comments.php:109
+#: functions.php:931
 msgid "Submit Comment"
 msgstr "Reactie versturen"
 
-#: footer.php:47
+#: footer.php:46
 msgid "Except where otherwise noted, content on this site is licensed under a <a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/\">Creative Commons Licence</a>."
 msgstr "Tenzij anders vermeld, valt de inhoud van deze site onder de licentie van <a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/\"> Creative Commons Licentie </ a>."
 
-#: footer.php:59
+#: footer.php:58
 msgid "Valid XHTML 1.0 Strict"
 msgstr "Valide XHTML 1.0 Strict"
 
-#: footer.php:60
+#: footer.php:59
 msgid "Valid CSS"
 msgstr "Valide CSS"
 
-#: footer.php:60
+#: footer.php:59
 msgid "Valid CSS Level 2.1"
 msgstr "Valide CSS Level 2.1"
 
-#: footer.php:82
+#. translators: %1$s is the blog title, %2$s is the theme's name, %3$s is the theme's author
+#: footer.php:68
 #, php-format
 msgid "%1$s uses %2$s theme by %3$s."
 msgstr "%1$s gebruikt %2$s thema door %3$s."
 
-#: functions.php:178
+#: functions.php:179
 msgid "Header Menu"
 msgstr "Hoofd menu"
 
-#: functions.php:179
+#: functions.php:180
 msgid "Secondary Menu"
 msgstr "Secundair menu"
 
-#: functions.php:222
+#. translators: header image description
+#: functions.php:223
 msgid "Header image by Syahir Hakim"
 msgstr "Hoofd afbeelding door Syahir Hakim"
 
-#: functions.php:228
+#. translators: header image description
+#: functions.php:229
 msgid "This is the default Graphene theme header image, cropped from image by Quantin Houyoux at sxc.hu"
 msgstr "Dit is de standaard afbeelding voor het Graphene thema, bijgesneden uit een afbeelding door Quantin Houyoux op sxc.hu"
 
-#: functions.php:234
-#: functions.php:240
-#: functions.php:246
-#: functions.php:252
-#: functions.php:258
+#. translators: header image description
+#: functions.php:235
+#: functions.php:241
+#: functions.php:247
+#: functions.php:253
+#: functions.php:259
 msgid "Header image cropped from image by Ilco at sxc.hu"
 msgstr "Hoofd afbeelding bijgesneden uit een afbeelding door Quantin Houyoux op sxc.hu"
 
-#: functions.php:470
+#: functions.php:471
 msgid "Home"
 msgstr "Home"
 
-#: functions.php:508
-msgid " says:"
-msgstr " zegt:"
+#: functions.php:509
+msgid "says:"
+msgstr "zegt:"
 
-#: functions.php:514
+#. translators: %1$s is the comment date, %2#s is the comment time
+#: functions.php:515
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s om %2$s"
 
-#: functions.php:516
+#: functions.php:517
 msgid "Edit comment"
 msgstr "Reactie bewerken"
 
-#: functions.php:520
+#: functions.php:521
 msgid "Reply"
 msgstr "Reageren"
 
-#: functions.php:531
+#: functions.php:532
 msgid "Your comment is awaiting moderation."
 msgstr "Uw commentaar wacht op moderatie."
 
-#: functions.php:624
+#: functions.php:625
 msgid "Sidebar Widget Area"
 msgstr "Zijbalk Widget gebied"
 
-#: functions.php:626
+#: functions.php:627
 msgid "The first sidebar widget area (available in two and three column layouts)."
 msgstr "Het widget gebied voor de eerste zijbalk (beschikbaar in de weergave met twee en drie kolommen)."
 
-#: functions.php:634
+#: functions.php:635
 msgid "Sidebar Two Widget Area"
 msgstr "Widget gebied voor de tweede zijbalk"
 
-#: functions.php:636
+#: functions.php:637
 msgid "The second sidebar widget area (only available in three column layouts)."
 msgstr "Het widget gebied voor de tweede zijbalk (alleen beschikbaar in de weergave met drie kolommen) ."
 
-#: functions.php:644
+#: functions.php:645
 msgid "Footer Widget Area"
 msgstr "Voettekst widget gebied"
 
-#: functions.php:646
+#: functions.php:647
 msgid "The footer widget area. Leave empty to disable. Set the number of columns to display at the theme's Display Options page."
 msgstr "Het voettekst widget gebied. Leeg laten om niet te tonen. Stel het aantal kolommen om weer te geven in op de thema weergave pagina."
 
-#: functions.php:662
+#: functions.php:663
 msgid "Front Page Sidebar Widget Area"
 msgstr "Voorpagina zijbalk widget gebied."
 
-#: functions.php:664
+#: functions.php:665
 msgid "The first sidebar widget area that will only be displayed on the front page."
 msgstr "Het widget gebied van de eerste zijbalk dat alleen wordt weergegeven op de voorpagina."
 
-#: functions.php:672
+#: functions.php:673
 msgid "Front Page Sidebar Two Widget Area"
 msgstr "Widget gebied voor de tweede zijbalk op de voorpagina."
 
-#: functions.php:674
+#: functions.php:675
 msgid "The second sidebar widget area that will only be displayed on the front page."
 msgstr "Het widget gebied voor de tweede zijbalk dat alleen wordt weergegeven op de voorpagina."
 
-#: functions.php:684
+#: functions.php:685
 msgid "Front Page Footer Widget Area"
 msgstr "Voorpagina voettekst widget gebied"
 
-#: functions.php:686
+#: functions.php:687
 msgid "The footer widget area that will only be displayed on the front page. Leave empty to disable. Set the number of columns to display at the theme's Display Options page."
 msgstr "Het voettekst widget gebied dat alleen wordt weergegeven op de voorpagina. Leeg laten om niet te tonen. Stel het aantal kolommen om weer te geven in op de thema weergave pagina."
 
-#: functions.php:697
+#: functions.php:698
 msgid "Header Widget Area"
 msgstr "Hoofd Widget gebied"
 
-#: functions.php:699
+#: functions.php:700
 msgid "The header widget area."
 msgstr "Het hoofd widget gebied"
 
-#: functions.php:726
+#: functions.php:727
 msgid "Display the latest Twitter status updates."
 msgstr "Geef de laatste status updates van Twitter weer."
 
-#: functions.php:751
+#: functions.php:752
 msgid "Follow me on Twitter"
 msgstr "Volg mij op Twitter"
 
-#: functions.php:788
+#: functions.php:778
 msgid "Latest tweets"
 msgstr "Laatste tweets"
 
-#: functions.php:793
+#: functions.php:783
 msgid "Title:"
 msgstr "Titel:"
 
-#: functions.php:797
+#: functions.php:787
 msgid "Twitter Username:"
 msgstr "Twitter gebruikersnaam:"
 
-#: functions.php:801
+#: functions.php:791
 msgid "Number of tweets to display:"
 msgstr "Aantal tweets te tonen:"
 
-#: functions.php:835
+#: functions.php:839
 msgid "Graphene Options"
 msgstr "Graphene instellingen"
 
-#: functions.php:839
+#: functions.php:843
 msgid "Graphene FAQs"
 msgstr "Graphene veel gestelde vragen"
 
-#: functions.php:908
+#: functions.php:912
 msgid "Name:"
 msgstr "Naam:"
 
-#: functions.php:909
+#: functions.php:913
 msgid "Email:"
 msgstr "Email:"
 
-#: functions.php:910
+#: functions.php:914
 msgid "Website:"
-msgstr "v"
+msgstr "Website:"
 
-#: functions.php:920
+#: functions.php:924
 msgid "Message:"
 msgstr "Bericht:"
 
-#: functions.php:948
+#: functions.php:952
 msgid "Continue reading &raquo;"
-msgstr "Lees verder &raqou;"
+msgstr "Lees verder &raquo;"
 
-#: functions.php:995
+#: functions.php:1000
 msgid "Older posts &laquo;"
 msgstr "Oudere berichten &laquo;"
 
-#: functions.php:996
+#: functions.php:1001
 msgid "&raquo; Newer posts"
 msgstr "&raquo; Nieuwere berichten"
 
-#: functions.php:1169
+#: functions.php:1003
+msgid "Next page &raquo;"
+msgstr "Volgende pagina &raquo;"
+
+#: functions.php:1004
+msgid "&laquo; Previous page"
+msgstr "&laquo; Vorige pagina"
+
+#: functions.php:1180
 msgid "View full post"
 msgstr "Volledige bericht bekijken"
 
-#: functions.php:1304
+#: functions.php:1324
 msgid "<strong>ERROR: You must supply the post ID to get the image from as an argument when calling the graphene_get_post_image() function.</strong>"
 msgstr "<strong>ERROR: Het post ID is vereist bij aanroep van de functie graphene_get_post_image() om de bericht afbeelding op te vragen.</strong>"
 
-#: header.php:65
+#: functions.php:1928
+#: functions.php:1939
+#: functions.php:1948
+#: loop-children.php:73
+#: loop-children.php:81
+#: loop.php:40
+#, fuzzy, php-format
+msgid "Permalink to %s"
+msgstr "Permanente koppeling naar %s"
+
+#: functions.php:1948
+msgid "Read more"
+msgstr "Lees verder"
+
+#: header.php:71
 msgid "Subscribe to RSS feed"
 msgstr "Abboneren op de RSS-feed"
 
-#: header.php:108
-#: header.php:117
+#: header.php:114
+#: header.php:123
 msgid "Go back to the front page"
 msgstr "Ga terug naar de voorpagina"
 
@@ -304,6 +328,7 @@ msgstr "Ga terug naar de voorpagina"
 msgid "Author's details"
 msgstr "Auteur details"
 
+#. translators: %1$s is the first name, %2$s is the last name
 #: loop-author.php:25
 #, php-format
 msgid "<strong>Name:</strong> %1$s %2$s"
@@ -331,7 +356,7 @@ msgstr "Permanente koppeling naar %s"
 
 #: loop-author.php:56
 #: loop-author.php:90
-#: loop-children.php:69
+#: loop-children.php:73
 #: loop.php:40
 msgid "(No title)"
 msgstr "(Geen titel)"
@@ -341,58 +366,64 @@ msgid "Most commented posts"
 msgstr "Berichten met de meeste reacties"
 
 #: loop-author.php:90
-#: loop.php:127
+#: loop.php:142
 msgid "Leave comment"
 msgstr "Reactie achterlaten"
 
-#: loop-children.php:69
-#: loop-children.php:77
-#: loop.php:40
-#, fuzzy, php-format
-msgid "Permalink to %s"
-msgstr "Permanente koppeling naar %s"
-
-#: loop-children.php:77
+#: loop-children.php:81
 msgid "View page &raquo;"
-msgstr "Bekijk pagina &raqou;"
+msgstr "Bekijk pagina &raquo;"
 
-#: loop.php:58
+#: loop.php:50
+msgid "Categories:"
+msgstr "Categori&euml;:"
+
+#: loop.php:61
+msgid "Print this page"
+msgstr "Pagina afdrukken"
+
+#: loop.php:67
 msgid "Edit post"
 msgstr "Bericht bewerken"
 
-#: loop.php:76
+#. translators: this is for the author byline, such as 'by John Doe'
+#: loop.php:85
 msgid "by"
 msgstr "door"
 
-#: loop.php:91
+#: loop.php:106
 msgid "Read the rest of this entry &raquo;"
 msgstr "Lees verder &raquo;"
 
-#: loop.php:105
+#: loop.php:120
 msgid "<div class=\"link-pages\"><p><strong>Pages:</strong> "
 msgstr "<div class=\"link-pages\"><p><strong>Pagina's:</strong> "
 
-#: loop.php:115
+#: loop.php:130
 msgid "Tags:"
 msgstr "Tags:"
 
-#: loop.php:115
+#: loop.php:130
 msgid "This post has no tag"
 msgstr "Dit bericht heeft geen tag"
 
-#: loop.php:140
+#: loop.php:155
 msgid "About the author"
 msgstr "Over de auteur"
 
-#: loop.php:180
+#: loop.php:172
+msgid "Permanent link to this article:"
+msgstr "Permanente koppeling naar dit artikel %s"
+
+#: loop.php:201
 msgid "Not found"
 msgstr "Niet gevonden"
 
-#: loop.php:185
+#: loop.php:206
 msgid "Sorry, but you are looking for something that isn't here. Wanna try a search?"
 msgstr "Sorry, maar u bent op zoek naar iets dat hier niet is. Wilt u een zoekopdracht proberen?"
 
-#: loop.php:187
+#: loop.php:208
 msgid "Sorry, but no results were found for that keyword. Wanna try an alternative keyword search?"
 msgstr "Sorry, er werden geen resultaten gevonden voor het zoekwoord. Wil je een alternatief zoek- en of trefwoord proberen?"
 
@@ -412,6 +443,7 @@ msgstr "Ben je doorgelinkt vanuit een andere website of misschien heb ik de pagi
 msgid "Suggested results"
 msgstr "Voorgestelde resultate"
 
+#. translators: %s is the search term
 #: search-404.php:18
 #, php-format
 msgid "I've done a courtesy search for the term %s for you. See if you can find what you're looking for in the list below:"
@@ -446,6 +478,7 @@ msgstr "Berichten RSS"
 msgid "Comments RSS"
 msgstr "Reacties RSS"
 
+#. translators: %s is the link to wordpress.org
 #: sidebar-two.php:44
 #: sidebar.php:50
 #, php-format
@@ -484,7 +517,7 @@ msgid "Slider options"
 msgstr "Slider opties"
 
 #: admin/custom-fields.php:87
-#: admin/options.php:201
+#: admin/options.php:277
 msgid "Slider image"
 msgstr "Slider afbeelding"
 
@@ -494,32 +527,32 @@ msgid "Use global setting"
 msgstr "Gebruik de globale instelling"
 
 #: admin/custom-fields.php:92
-#: admin/options.php:205
+#: admin/options.php:281
 msgid "Don't show image"
 msgstr "Afbeelding niet weergeven"
 
 #: admin/custom-fields.php:93
-#: admin/options.php:206
+#: admin/options.php:282
 msgid "Featured Image"
 msgstr "Aanbevolen afbeelding"
 
 #: admin/custom-fields.php:94
-#: admin/options.php:207
+#: admin/options.php:283
 msgid "First image in post"
 msgstr "Eerste afbeelding in het bericht"
 
 #: admin/custom-fields.php:95
-#: admin/options.php:208
+#: admin/options.php:284
 msgid "Custom URL"
 msgstr "Aangepaste URL"
 
 #: admin/custom-fields.php:101
-#: admin/options.php:214
+#: admin/options.php:290
 msgid "Custom slider image URL"
 msgstr "Aangepaste slider afbeelding URL"
 
 #: admin/custom-fields.php:105
-#: admin/options.php:218
+#: admin/options.php:294
 msgid "Make sure you select Custom URL in the slider image option above to use this custom url."
 msgstr "Zorg ervoor dat bij de instelling Slider afbeelding hierboven gekozen is voor Aangepaste URL."
 
@@ -599,622 +632,833 @@ msgstr "Ik weet het niet. Omdat er zoveel plugins beschikbaar zijn voor Wordpres
 msgid "My suggestion is to just install the plugin and try it. If you stumble into problem, ask for support from the plugin author first. If the plugin author says that it's a problems with the theme, you know where to find support."
 msgstr "Mijn aanbeveling is om de plugin gewoon te installeren en uit te proberen. Als je tegen een probleem aanloopt, vraag dan eerst hulp bij de auteur van de plugin. Als de auteur van de plugin zegt dat het probleem zit bij het thema dan weet je me te vinden."
 
-#: admin/options.php:42
-#: admin/uninstall.php:23
+#: admin/options-presets.php:46
+#: admin/options.php:1298
+msgid "ERROR: You are not authorised to perform that operation"
+msgstr "FOUT: U bent niet gemachtigd om deze bewerking uit te voeren"
+
+#: admin/options.php:63
 msgid "Uninstall Graphene"
 msgstr "Graphene verwijderen"
 
-#: admin/options.php:43
+#: admin/options.php:64
 msgid "Please confirm that you would like to uninstall the Graphene theme. All of the theme's options in the database will be deleted."
 msgstr "Weet u zeker dat u het Graphene thema wilt verwijderen? Alle instellingen van het thema worden uit de database verwijdert."
 
-#: admin/options.php:44
+#: admin/options.php:65
 msgid "This action is not reversible."
 msgstr "De actie kan niet ongedaan gemaakt worden."
 
-#: admin/options.php:48
-#: admin/options.php:146
+#: admin/options.php:69
+#: admin/options.php:222
 msgid "Uninstall Theme"
 msgstr "Thema verwijderen"
 
-#: admin/options.php:60
+#: admin/options.php:81
 msgid "Graphene Theme Options"
 msgstr "Graphene thema instellingen"
 
-#: admin/options.php:62
+#: admin/options.php:83
 msgid "These are the global settings for the theme. You may override some of the settings in individual posts and pages."
 msgstr "Dit zijn globale instellingen voor het thema. Sommige van deze instellingen kunnen overschreven in de individuele berichten en pagina's."
 
-#: admin/options.php:66
+#: admin/options.php:87
 msgid "Settings saved."
 msgstr "Instellingen opgeslagen."
 
-#: admin/options.php:73
+#: admin/options.php:94
 msgid "General"
 msgstr "Globaal"
 
-#: admin/options.php:74
+#: admin/options.php:95
 msgid "Display"
 msgstr "Weergave"
 
-#: admin/options.php:106
+#: admin/options.php:127
 msgid "Save Options"
 msgstr "Instellingen opslaan"
 
-#: admin/options.php:118
+#: admin/options.php:139
 msgid "Support the developer"
 msgstr "Ondersteun de ontwikkelaar"
 
-#: admin/options.php:121
+#: admin/options.php:142
 msgid "Developing this awesome theme took a lot of effort and time, months and months of continuous voluntary unpaid work. If you like this theme or if you are using it for commercial websites, please consider a donation to the developer to help support future updates and development."
 msgstr "Ontwikkeling van dit geweldige thema koste veel tijd en inspanning, maanden en maanden van continu en vrijwillig, onbetaald werk. Als u dit een leuk thema vind, of als u het gebruikt voor commerciële websites, overweeg dan een donatie aan de ontwikkelaar om de ondersteuning van toekomstige updates en ontwikkeling ervan te helpen."
 
-#: admin/options.php:136
+#: admin/options.php:157
+msgid "Options Presets"
+msgstr "Voorgedefinieerde instellingen"
+
+#: admin/options.php:160
+msgid "The default settings for the theme is preconfigured for use in blogs. If you're using this theme primarily for a normal website, or if you want to reset the settings to their default values, you can apply one of the available options presets below."
+msgstr "De standaardinstellingen voor het thema zijn vooraf geconfigureerd voor gebruik in blogs. Als u dit thema voornamelijk gebuikt voor een normale website, of als u de instellingen wilt herstellen naar de standaard waarden, dan kunt u een van de voorgedefinieerde instellingen kiezen."
+
+#: admin/options.php:161
+msgid "Note that you can still configure the individual settings after you apply any preset."
+msgstr "Het is nog steeds mogelijk om alle instellingen afzonderlijk te configureren na het kiezen van een van de voorgedefinieerde instellingen."
+
+#: admin/options.php:166
+msgid "Select Options Preset"
+msgstr "Selecteerd voorgedefinieerde instellingen"
+
+#: admin/options.php:169
+msgid "Normal website"
+msgstr "Normale website"
+
+#: admin/options.php:172
+msgid "Reset to default settings"
+msgstr "Standaard instellingen herstellen"
+
+#: admin/options.php:177
+msgid "Apply Options Preset"
+msgstr "Voorgedefinieerde instellingen toepassen"
+
+#: admin/options.php:187
+msgid "Import/export theme options"
+msgstr "Importeer/exporteer thema instellingen"
+
+#: admin/options.php:194
+msgid "Export Theme options"
+msgstr "Exporteer thema instellingen"
+
+#: admin/options.php:199
+msgid "Import Theme options"
+msgstr "Importeer thema instellingen"
+
+#: admin/options.php:202
+#, php-format
+msgid "Import and export is only available for to users with PHP version 5.2.1 and higher. You are using PHP version %s."
+msgstr "Importeer en exporteer mogelijkheden zijn alleen beschikbaar voor gebruikers die PHP versie 5.2.1 of hoger gebruiken. U gebruikt PHP versie %s."
+
+#: admin/options.php:212
 msgid "Uninstall theme"
 msgstr "Thema verwijderen"
 
-#: admin/options.php:139
+#: admin/options.php:215
 msgid "<strong>Be careful!</strong> Uninstalling the theme will remove all of the theme's options from the database. Do this only if you decide not to use the theme anymore."
 msgstr "<strong>Voorzichtig!</strong> Bij het verwijderen van dit thema worden ook alle thema instellingen uit de database verwijdert. Voer dit alleen uit als je beslist het thema niet meer te gebruiken."
 
-#: admin/options.php:140
+#: admin/options.php:216
 msgid "If you just want to try another theme, there is no need to uninstall this theme. Simply activate the other theme in the Appearance > Themes admin page."
 msgstr "Als je een ander thema wilt gebruiken, dan is het niet nodig dit thema te verwijderen. Het volstaat om het andere thema te activeren. Dit kan onder Weergave >  Thema's pagina."
 
-#: admin/options.php:141
+#: admin/options.php:217
 msgid "Note that uninstalling this theme <strong>does not remove</strong> the theme's files. To delete the files after you have uninstalled this theme, go to Appearances > Themes and delete the theme from there."
 msgstr "Merk op dat het verwijderen van dit thema <strong> niet </strong> resulteert in het verwijderen van de thema bestanden. Voor het verwijderen van de bestanden nadat u dit thema hebt verwijderd, ga dan naar Weergave >  Thema's en verwijder het thema van daar"
 
-#: admin/options.php:168
+#: admin/options.php:244
 msgid "Slider Options"
 msgstr "Slider instellingen"
 
-#: admin/options.php:174
+#: admin/options.php:250
 msgid "Category to show in slider"
 msgstr "Categorie die weergegeven dient te worden in de slider"
 
-#: admin/options.php:175
+#: admin/options.php:251
 msgid "All posts within the category selected here will be displayed on the slider. Usage example: create a new category \"Featured\" and assign all posts to be displayed on the slider to that category, and then select that category here."
 msgstr "Alle berichten uit de geselecteerde categorie worden getoond in de slider. Voorbeeld: maak een nieuwe categorie genaamd \"Aanbevolen\" en koppel alle berichten die weergegeven dienen te worden in de slider aan deze categorie, en kies daarna deze categorie hier."
 
-#: admin/options.php:179
+#: admin/options.php:255
 msgid "Show latest posts"
 msgstr "Toon laatste berichten"
 
-#: admin/options.php:180
+#: admin/options.php:256
 msgid "Show random posts"
 msgstr "Toon willekeurige berichten"
 
-#: admin/options.php:193
+#: admin/options.php:269
 msgid "Number of posts to display"
 msgstr "Aantal berichten om weer te geven"
 
-#: admin/options.php:223
+#: admin/options.php:299
 msgid "Slider display style"
 msgstr "Slider weergave stijl"
 
-#: admin/options.php:227
+#: admin/options.php:303
 msgid "Thumbnail and excerpt"
 msgstr "Miniatuurafbeelding en samenvatting"
 
-#: admin/options.php:228
+#: admin/options.php:304
 msgid "Background image and excerpt"
 msgstr "Achtergrondafbeelding en samenvatting"
 
-#: admin/options.php:229
+#: admin/options.php:305
 msgid "Full post content"
 msgstr "Volledige bericht inhoud"
 
-#: admin/options.php:235
+#: admin/options.php:311
 msgid "Slider height"
 msgstr "Slider hoogte"
 
-#: admin/options.php:243
+#: admin/options.php:319
 msgid "Slider speed"
 msgstr "Slider snelheid"
 
-#: admin/options.php:246
+#: admin/options.php:322
+#: admin/options.php:331
 msgid "milliseconds"
 msgstr "milliseconden"
 
-#: admin/options.php:247
+#: admin/options.php:323
 msgid "This is the duration that each slider item will be shown"
 msgstr "Dit is de duur dat elke slider item wordt getoond"
 
-#: admin/options.php:252
+#: admin/options.php:328
+msgid "Slider transition speed"
+msgstr "Slider overgang snelheid"
+
+#: admin/options.php:332
+msgid "This is the speed of the slider transition. Lower values = higher speed."
+msgstr "Dit is de snelheid van de slider overgang. Lagere waarden = hogere snelheid."
+
+#: admin/options.php:337
 msgid "Move slider to bottom of page"
 msgstr "Verplaats de slider naar de onderkant van de pagina"
 
-#: admin/options.php:258
+#: admin/options.php:343
 msgid "Disable slider"
 msgstr "Slider uitschakelen"
 
-#: admin/options.php:271
+#: admin/options.php:356
 msgid "Front Page Options"
 msgstr "Start pagina instellingen"
 
-#: admin/options.php:277
+#: admin/options.php:362
 msgid "Front page posts categories"
 msgstr "Start pagina bericht categori&euml;n"
 
-#: admin/options.php:279
+#: admin/options.php:364
 msgid "Only posts that belong to the categories selected here will be displayed on the front page. Does not affect Static Front Page."
 msgstr "Alleen berichten die toebehoren aan de geselecteerde categorie worden getoond op de start pagina. Heeft geen invloed op de statische start pagina."
 
-#: admin/options.php:284
+#: admin/options.php:369
 msgid "--Disabled--"
 msgstr "--Uitgeschakeld--"
 
-#: admin/options.php:292
+#: admin/options.php:377
 msgid "You may select multiple categories by holding down the CTRL key."
 msgstr "U kunt meerdere categori&euml;n selecteren door de CTRL toets ingedrukt te houden."
 
-#: admin/options.php:304
+#: admin/options.php:389
+msgid "Homepage Panes"
+msgstr "Startpagina panelen"
+
+#: admin/options.php:392
+msgid "<strong>Note:</strong> homepage panes are only displayed when using a <a href=\"http://codex.wordpress.org/Creating_a_Static_Front_Page\">static front page</a>."
+msgstr "<strong>Opmerking:</strong> de startpagina panelen worden alleen getoond als u gebruik maakt van een <a href=\"http://codex.wordpress.org/Creating_a_Static_Front_Page\">statische startpagina</a>."
+
+#: admin/options.php:396
+msgid "Type of content to show"
+msgstr "Type inhoud om te tonen"
+
+#: admin/options.php:403
+msgid "Latest posts by category"
+msgstr "Laatste berichten per categorie"
+
+#: admin/options.php:406
+msgid "Posts and/or pages"
+msgstr "Berichten en/of pagina's"
+
+#: admin/options.php:411
+msgid "Number of latest posts to display"
+msgstr "Aantal laatste berichten om weer te geven"
+
+#: admin/options.php:415
+msgid "Applicable only if <strong>Latest posts</strong> or <strong>Latest posts by category</strong> is selected above."
+msgstr "Alleen van toepassing indien <strong> Laatste berichten </ strong> of <strong> Laatste berichten per categorie </ strong> is geselecteerd hierboven."
+
+#: admin/options.php:420
+msgid "Category to show latest posts from"
+msgstr "Categorie waarvan de laatste berichten getoond moeten worden"
+
+#: admin/options.php:430
+msgid "Applicable only if <strong>Latest posts by category</strong> is selected above."
+msgstr "Alleen van toepassing indien <strong>Laatste berichten per categorie</ strong> is geselecteerd hierboven."
+
+#: admin/options.php:435
+msgid "Posts and/or pages to display"
+msgstr "Berichten en/of pagina's om weer te geven"
+
+#: admin/options.php:440
+msgid "Enter ID of posts and/or pages to be displayed, separated by comma. Example: <code>1,13,45,33</code>"
+msgstr "Voer ID(s) van berichten en/of pagina's in die moeten worden weergegeven, gescheiden door een komma. Voorbeeld: <code>1,13,45,33</ code>"
+
+#: admin/options.php:441
+msgid "Applicable only if <strong>Posts and/or pages</strong> is selected above."
+msgstr "Alleen van toepassing indien <strong> berichten en/of pagina's </ strong> is geselecteerd hierboven."
+
+#: admin/options.php:447
+msgid "Disable homepage panes"
+msgstr "Startpagina panelen uitschakelen"
+
+#: admin/options.php:462
+msgid "Comments Options"
+msgstr "Discussie instellingen"
+
+#: admin/options.php:468
+msgid "Commenting"
+msgstr "Discussie"
+
+#: admin/options.php:472
+msgid "Use Wordpress settings"
+msgstr "Gebruik de Wordpress instellingen"
+
+#: admin/options.php:473
+msgid "Disabled for pages"
+msgstr "Uitschakelen voor pagina's"
+
+#: admin/options.php:474
+msgid "Disabled completely"
+msgstr "Volledig uitschakelen"
+
+#: admin/options.php:476
+msgid "Note: this setting overrides the global Wordpress Discussion Setting called \"Allow people to post comments on new articles\" and also the \"Allow comments\" option for individual posts/pages."
+msgstr "Opmerking: Deze instelling overschrijft de globale Wordpress Overleg instellingen genaamd \"Laat mensen hun opmerkingen over nieuwe artikelen\post\" en ook de \"Sta opmerkingen toe\" optie voor individuele berichten/pagina's."
+
+#: admin/options.php:488
+msgid "Child Page Options"
+msgstr "Onderliggende pagina instellingen"
+
+#: admin/options.php:494
+msgid "Hide child page listings"
+msgstr "Verberg lijst van onderliggende pagina"
+
+#: admin/options.php:509
 msgid "Widget Area Options"
 msgstr "Widget gebied instellingen"
 
-#: admin/options.php:307
+#: admin/options.php:512
 msgid "Header widget area"
 msgstr "Hoofd widget gebied"
 
-#: admin/options.php:308
+#: admin/options.php:513
 msgid "<strong>Important:</strong> This widget area is unstyled, as it is often used for advertisement banners, etc. If you enable it, make sure you style it to your needs using the Custom CSS option."
 msgstr "<strong>Belangrijk:</strong> Dit widget gebied in niet opgemaakt, omdat het vaak gebruikt wordt voor reclame banners en dergelijke. Als u dit widget activeerd, zorg er dan voor dat u het opmaakt via de aangepaste CSS optie."
 
-#: admin/options.php:312
+#: admin/options.php:517
 msgid "Enable header widget area"
 msgstr "Activeer hoofd widget gebied"
 
-#: admin/options.php:321
+#: admin/options.php:526
 msgid "Alternate Widgets"
 msgstr "Alternatieve widgets"
 
-#: admin/options.php:322
+#: admin/options.php:527
 msgid "You can enable the theme to show different widget areas in the front page than the rest of the website. If you enable this option, additional widget areas that will only be displayed on the front page will be added to the Widget settings page."
 msgstr "Het is mogelijk het thema in te stellen om andere widget gebieden te tonen op de voorpagina dan de rest van de website. Als u deze optie aanvinkt, worden er op de widget instellingen pagina widget gebieden toegevoegd die alleen weergegeven worden op de voorpagina."
 
-#: admin/options.php:325
+#: admin/options.php:530
 msgid "Enable alternate front page sidebar widget area"
 msgstr "Activeer alternatief voorpagina zijkant widget gebied"
 
-#: admin/options.php:329
+#: admin/options.php:534
 msgid "Enable alternate front page footer widget area"
 msgstr "Activeer alternatief voorpagina voettekst widget gebied"
 
-#: admin/options.php:330
+#: admin/options.php:535
 msgid "You can also specify different column counts for the front page footer widget and the rest-of-site footer widget if you enable this option."
 msgstr "Het is ook mogelijk om afwijkende kolom aantallen in te stellen voor het voorpagina voettekst widget en de rest van de website als u deze optie aanvinkt."
 
-#: admin/options.php:343
+#: admin/options.php:548
 msgid "Feed Options"
 msgstr "Feed instellingen"
 
-#: admin/options.php:348
+#: admin/options.php:553
 msgid "Hide feed icon"
 msgstr "Verberg feed icoon"
 
-#: admin/options.php:352
+#: admin/options.php:557
 msgid "Use custom feed URL"
 msgstr "Aangepaste feed URL"
 
-#: admin/options.php:355
+#: admin/options.php:560
 msgid "This custom feed URL will replace the default Wordpress RSS feed URL."
 msgstr "De aangepaste feed URL vervangt de standaard Wordpress RSS feed URL."
 
-#: admin/options.php:367
+#: admin/options.php:572
 msgid "Social Sharing Buttons"
 msgstr "Social Sharing knoppen"
 
-#: admin/options.php:372
+#: admin/options.php:577
 msgid "Show social sharing button"
 msgstr "Toon Social Sharing knop"
 
-#: admin/options.php:376
+#: admin/options.php:581
 msgid "Show in Pages as well?"
 msgstr "Ook op pagina's tonen?"
 
-#: admin/options.php:381
+#: admin/options.php:586
 msgid "Your social sharing button code"
 msgstr "Uw Social Sharing knop code"
 
-#: admin/options.php:382
+#: admin/options.php:587
 msgid "You can use codes from any popular social sharing sites, like Facebook, Digg, AddThis, etc."
 msgstr "U kunt de codes gebruiken van alle social sharing websites, zoals Facebook, Digg, AddThis, etc."
 
-#: admin/options.php:396
+#: admin/options.php:601
 msgid "Adsense Options"
 msgstr "Adsense instellingen"
 
-#: admin/options.php:402
+#: admin/options.php:607
 msgid "Show Adsense advertising"
 msgstr "Toon AdSense advertenties"
 
-#: admin/options.php:408
+#: admin/options.php:613
 msgid "Show ads on front page as well"
 msgstr "Toon ook advertenties op de voorpagina"
 
-#: admin/options.php:414
+#: admin/options.php:619
 msgid "Your Adsense code"
 msgstr "Uw AdSense code"
 
-#: admin/options.php:427
+#: admin/options.php:632
 msgid "Google Analytics Options"
 msgstr "Google Analytics instellingen"
 
-#: admin/options.php:430
+#: admin/options.php:635
 msgid "<strong>Note:</strong> the theme now places the Google Analytics script in the <code>&lt;head&gt;</code> element to better support the new asynchronous Google Analytics script. Please make sure you update your script to use the new asynchronous script from Google Analytics."
 msgstr "<strong>Opmerking:</strong> het thema plaatst het Google Analytics script in het <code>&lt;head&gt;</code> element voor betere ondersteuning van het nieuwe asynchrone Google Analytics script. Let op dat u gebruik maakt van het nieuwe asynchronous script voor Google Analytics."
 
-#: admin/options.php:433
+#: admin/options.php:638
 msgid "Enable Google Analytics tracking"
 msgstr "Google Analytics tracking inschakelen"
 
-#: admin/options.php:437
+#: admin/options.php:642
 msgid "Google Analytics tracking code"
 msgstr "Google Analytics tracking code"
 
-#: admin/options.php:438
+#: admin/options.php:643
 msgid "Make sure you include the full tracking code (including the <code>&lt;script&gt;</code> and <code>&lt;/script&gt;</code> tags) and not just the <code>UA-#######-#</code> code."
 msgstr "Zorg ervoor dat u de volledige tracking code gebruikt (inclusief de <code>&lt;script&gt;</code> en <code>&lt;/script&gt;</code> tags) en niet alleen de <code>UA-#######-#</code> code. "
 
-#: admin/options.php:451
+#: admin/options.php:656
 msgid "Footer Options"
 msgstr "Voettekst instellingen"
 
-#: admin/options.php:456
+#: admin/options.php:661
 msgid "Show Creative Commons logo"
 msgstr "Toon het Creative Commons logo"
 
-#: admin/options.php:461
+#: admin/options.php:666
 msgid "Copyright text (html allowed)"
 msgstr "Copyright tekst (HTML is toegestaan)"
 
-#: admin/options.php:462
+#: admin/options.php:667
 msgid "If this field is empty, the following default copyright text will be displayed:"
 msgstr "Als dit veld leeg is dan wordt de volgende standaard copyright tekst weergegeven:"
 
-#: admin/options.php:468
+#: admin/options.php:673
 msgid "Do not show copyright info"
 msgstr "Copyright informatie niet weergeven"
 
-#: admin/options.php:488
+#: admin/options.php:684
+msgid "Print Options"
+msgstr "Print instellingen"
+
+#: admin/options.php:689
+msgid "Enable print CSS for single posts and pages?"
+msgstr "Print CSS voor enkele berichten en pagina's inschakelen?"
+
+#: admin/options.php:693
+msgid "Show print button as well?"
+msgstr "Ook op print knop tonen?"
+
+#: admin/options.php:713
 msgid "Header Display Options"
 msgstr "Hoofd weergave opties"
 
-#: admin/options.php:494
+#: admin/options.php:719
 msgid "Use light-coloured header bars"
 msgstr "Gebruik van licht-gekleurde hoofd balken"
 
-#: admin/options.php:500
+#: admin/options.php:725
 msgid "Link header image to front page"
 msgstr "Hoofd afbeelding aan voorpagina koppelen"
 
-#: admin/options.php:503
+#: admin/options.php:728
 msgid "Check this if you disable the header texts and want the header image to be linked to the front page."
 msgstr "Vink deze optie aan om de hoofd tekst uit te schakelen en om de hoofd afbeelding aan de voorpagina te koppelen."
 
-#: admin/options.php:508
+#: admin/options.php:733
 msgid "Disable Featured Image replacing header image"
 msgstr "Uitschakelen aanbevolen afbeelding vervanging door hoofd afbeelding"
 
-#: admin/options.php:511
+#: admin/options.php:736
 msgid "Check this to prevent the posts Featured Image replacing the header image regardless of the featured image dimension."
 msgstr "Vink deze optie aan om te voorkomen dat de aanbevolen afbeelding de hoofdafbeelding vervangt (ongeacht de afmetingen van de aanbevolen afbeelding)."
 
-#: admin/options.php:516
+#: admin/options.php:741
 msgid "Use random header image"
 msgstr "Gebruik een willekeurige hoofd afbeelding"
 
-#: admin/options.php:520
+#: admin/options.php:745
 msgid "Check this to show a random header image (random image taken from the available default header images)."
 msgstr "Vink deze optie aan om een willekeurige afbeelding te gebruiken als hoofdafbeelding (deze afbeelding wordt geselecteerd uit de beschikbare standaard afbeeldingen)"
 
-#: admin/options.php:521
+#: admin/options.php:746
 msgid "<strong>Note:</strong> only works on pages where a specific header image is not defined."
 msgstr "<strong>Opmerking:</strong> werkt alleen op pagina's waarvoor de specifieke hoofd afbeelding niet is ingesteld."
 
-#: admin/options.php:526
+#: admin/options.php:751
 msgid "Hide the top bar"
 msgstr "Verberg de bovenste balk"
 
-#: admin/options.php:532
+#: admin/options.php:757
 msgid "Search box location"
 msgstr "Lokatie van de zoek box"
 
-#: admin/options.php:536
+#: admin/options.php:761
 msgid "Top bar"
 msgstr "Bovenste balk"
 
-#: admin/options.php:537
+#: admin/options.php:762
 msgid "Navigation bar"
 msgstr "Navigatie balk"
 
-#: admin/options.php:550
+#: admin/options.php:775
 msgid "Column Options"
 msgstr "Kolom instellingen"
 
-#: admin/options.php:556
+#: admin/options.php:781
 msgid "Column mode"
 msgstr "Kolom modus"
 
-#: admin/options.php:606
+#: admin/options.php:831
 msgid "Posts Display Options"
 msgstr "Bericht weergave instellingen"
 
-#: admin/options.php:612
+#: admin/options.php:837
 msgid "Show excerpts in front page"
 msgstr "Toon uittreksels op de voorpagina"
 
-#: admin/options.php:618
+#: admin/options.php:843
+msgid "Show full content in archive pages"
+msgstr "Toon volledige inhoud voor archiefpagina's"
+
+#: admin/options.php:847
+msgid "Note: Archive pages include the archive for category, tags, time, and search results pages. Enabling this option will cause the full content of posts and pages listed in those archives to displayed instead of the excerpt, and truncated by the Read More tag if used."
+msgstr "Opmerking: Archief pagina's bevatten het archief voor categori&euml;, tags, tijd en pagina's met zoekresultaten. Het inschakelen van deze optie zal de volledige inhoud van berichten en pagina's worden weergegeven in plaats van het fragment afgebroken met de Lees Meer koppeling."
+
+#: admin/options.php:852
 msgid "Hide post author"
 msgstr "Verberg bericht auteur"
 
-#: admin/options.php:624
+#: admin/options.php:858
 msgid "Post date display"
 msgstr "Bericht datum weergave"
 
-#: admin/options.php:628
+#: admin/options.php:862
 msgid "Hidden"
 msgstr "Verborgen"
 
-#: admin/options.php:629
+#: admin/options.php:863
 msgid "As an icon (without the year)"
 msgstr "Als afbeelding (zonder het jaar)"
 
-#: admin/options.php:630
+#: admin/options.php:864
 msgid "As an icon (including the year)"
 msgstr "Als afbeelding (met het jaar)"
 
-#: admin/options.php:631
+#: admin/options.php:865
 msgid "As inline text"
 msgstr "Als tekst"
 
-#: admin/options.php:633
+#: admin/options.php:867
 msgid "Note: displaying date as inline text allows more space for the content area, especially useful for a three-column layout configuration."
 msgstr "Opmerking: datum weergave als tekst zorgt ervoor dat er meer ruimte voor het content gebied overblijft. Erg bruikbaar voor de weergave in drie kolommen. "
 
-#: admin/options.php:638
+#: admin/options.php:872
 msgid "Hide post categories"
 msgstr "Verberg bericht categoriën"
 
-#: admin/options.php:644
+#: admin/options.php:878
 msgid "Hide post tags"
 msgstr "Verberg bericht tags"
 
-#: admin/options.php:650
+#: admin/options.php:884
 msgid "Hide post comment count"
 msgstr "Verberg aantal reactie's bij bericht"
 
-#: admin/options.php:651
+#: admin/options.php:885
 msgid "Only affects posts listing (such as the front page) and not single post view."
 msgstr "Alleen van invloed op bericht lijsten (zoals de voorpagina) en niet bij enkele bericht weergave."
 
-#: admin/options.php:656
+#: admin/options.php:890
 msgid "Show post author's gravatar"
 msgstr "Toon gravatar van de auteur bij bericht"
 
-#: admin/options.php:660
+#: admin/options.php:894
 msgid "Show post author's info"
 msgstr "Toon auteur informatie bij bericht"
 
-#: admin/options.php:664
+#: admin/options.php:898
 msgid "Show More link for manual excerpts"
 msgstr "Toon Meer koppeling bij handmatige uitreksels"
 
-#: admin/options.php:677
+#: admin/options.php:911
 msgid "Comments Display Options"
 msgstr "Commentaren weergave instellingen"
 
-#: admin/options.php:683
+#: admin/options.php:917
 msgid "Hide allowed tags in comment form"
 msgstr "Verberg toegestane tags in commentaar formulier"
 
-#: admin/options.php:696
+#: admin/options.php:930
 msgid "Text Style Options"
 msgstr "Tekst opmaak instellingen"
 
-#: admin/options.php:699
+#: admin/options.php:933
 msgid "Note that these are CSS properties, so any valid CSS values for each particular property can be used."
 msgstr "Let op dit zij CSS eigenschappen, dit wil zeggen dat alleen valide CSS waarden gebruikt kunnen worden voor elke instelling."
 
-#: admin/options.php:700
+#: admin/options.php:934
 msgid "Some example CSS properties values:"
 msgstr "Enkele voorbeeld CSS waarden"
 
-#: admin/options.php:703
+#: admin/options.php:937
 msgid "Text font:"
 msgstr "Lettertype:"
 
-#: admin/options.php:707
+#: admin/options.php:941
 msgid "Text size and line height:"
 msgstr "Tekstgrootte en regelhoogte:"
 
-#: admin/options.php:711
+#: admin/options.php:945
 msgid "Text weight:"
 msgstr "Tekstbreedte:"
 
-#: admin/options.php:715
+#: admin/options.php:949
 msgid "Text style:"
 msgstr "Tekststijl:"
 
-#: admin/options.php:719
+#: admin/options.php:953
 msgid "Text colour:"
 msgstr "Tekstkleur:"
 
-#: admin/options.php:723
-#: admin/options.php:864
-#: admin/options.php:893
+#: admin/options.php:957
+#: admin/options.php:1098
+#: admin/options.php:1127
 msgid "Leave field empty to use the default value."
 msgstr "Laat het veld leeg om de standaard instellingen te gebruiken."
 
-#: admin/options.php:725
+#: admin/options.php:959
 msgid "Header Text"
 msgstr "Hoofd tekst"
 
-#: admin/options.php:729
+#: admin/options.php:963
 msgid "Title text font"
 msgstr "Titel lettertype"
 
-#: admin/options.php:735
+#: admin/options.php:969
 msgid "Title text size"
 msgstr "Titel tekstgrootte"
 
-#: admin/options.php:741
+#: admin/options.php:975
 msgid "Title text weight"
 msgstr "Titel tekstbreedte"
 
-#: admin/options.php:747
+#: admin/options.php:981
 msgid "Title text line height"
 msgstr "Titel regelhoogte"
 
-#: admin/options.php:753
+#: admin/options.php:987
 msgid "Title text style"
 msgstr "Titel tekststijl"
 
-#: admin/options.php:762
+#: admin/options.php:996
 msgid "Description text font"
 msgstr "Omschrijving lettertype"
 
-#: admin/options.php:768
+#: admin/options.php:1002
 msgid "Description text size"
 msgstr "Omschrijving tekstgrootte"
 
-#: admin/options.php:774
+#: admin/options.php:1008
 msgid "Description text weight"
 msgstr "Omschrijving tekstbreedte"
 
-#: admin/options.php:780
+#: admin/options.php:1014
 msgid "Description text line height"
 msgstr "Omschrijving regelhoogte"
 
-#: admin/options.php:786
+#: admin/options.php:1020
 msgid "Description text style"
 msgstr "Omschrijving tekststijl"
 
-#: admin/options.php:792
+#: admin/options.php:1026
 msgid "Content Text"
 msgstr "Inhoud tekst"
 
-#: admin/options.php:796
+#: admin/options.php:1030
 msgid "Text font"
 msgstr "Lettertype"
 
-#: admin/options.php:802
+#: admin/options.php:1036
 msgid "Text size"
 msgstr "Grootte"
 
-#: admin/options.php:808
+#: admin/options.php:1042
 msgid "Text line height"
 msgstr "Tekst regelhoogte"
 
-#: admin/options.php:814
+#: admin/options.php:1048
 msgid "Text colour"
 msgstr "Kleur"
 
-#: admin/options.php:820
+#: admin/options.php:1054
 msgid "Link Text"
 msgstr "Koppeling tekst"
 
-#: admin/options.php:824
+#: admin/options.php:1058
 msgid "Link colour (normal state)"
 msgstr "Koppeling kleur (normaal)"
 
-#: admin/options.php:830
+#: admin/options.php:1064
 msgid "Link colour (visited state)"
 msgstr "Koppeling kleur (reeds bezocht)"
 
-#: admin/options.php:836
+#: admin/options.php:1070
 msgid "Link colour (hover state)"
 msgstr "Koppeling kleur (hover)"
 
-#: admin/options.php:842
+#: admin/options.php:1076
 msgid "Text decoration (normal state)"
 msgstr "Tekst-decoratie (normaal)"
 
-#: admin/options.php:848
+#: admin/options.php:1082
 msgid "Text decoration (hover state)"
 msgstr "Tekst-decoratie (hover)"
 
-#: admin/options.php:861
+#: admin/options.php:1095
 msgid "Footer Widget Display Options"
 msgstr "Voettekst widget weergave instellingen"
 
-#: admin/options.php:869
+#: admin/options.php:1103
 msgid "Number of columns to display"
 msgstr "Aantal weer te geven kolommen"
 
-#: admin/options.php:876
+#: admin/options.php:1110
 msgid "Number of columns to display for front page footer widget"
 msgstr "Aantal weer te geven kolommen op de voorpagina"
 
-#: admin/options.php:890
+#: admin/options.php:1124
 msgid "Navigation Menu Display Options"
 msgstr "Navigatie menu weergave instellingen"
 
-#: admin/options.php:898
+#: admin/options.php:1132
 msgid "Dropdown menu item width"
 msgstr "Element breedte van dropdown menu"
 
-#: admin/options.php:911
+#: admin/options.php:1145
 msgid "Miscellaneous Display Options"
 msgstr "Diverse weergave instellingen"
 
-#: admin/options.php:914
+#: admin/options.php:1148
 msgid "Site title options"
 msgstr "Site titel instellingen"
 
-#: admin/options.php:915
+#: admin/options.php:1149
 msgid "Use these tags to customise your own site title structure: <code>#site-name</code>, <code>#site-desc</code>, <code>#post-title</code>"
 msgstr "Gebruik deze codes om een aangepaste site titel te maken: <code>#site-name</code>, <code>#site-desc</code>, <code>#post-title</code>"
 
-#: admin/options.php:919
+#: admin/options.php:1153
 msgid "Custom front page site title"
 msgstr "Aangepaste hoofdpagina site titel"
 
-#: admin/options.php:923
+#: admin/options.php:1157
 msgid "Defaults to <code>#site-name &raquo; #site-desc</code>. The <code>#post-title</code> tag cannot be used here."
 msgstr "Standaar waarde: <code>#site-name &raquo; #site-desc</code>. De <code>#post-title</code> code kan hier niet gebruikt worden."
 
-#: admin/options.php:928
+#: admin/options.php:1162
 msgid "Custom content pages site title"
 msgstr "Aangepaste pagina site titel"
 
-#: admin/options.php:932
+#: admin/options.php:1166
 msgid "Defaults to <code>#post-title &raquo; #site-name</code>."
 msgstr "Standaard waarde: <code>#post-title &raquo; #site-name</code>."
 
-#: admin/options.php:937
+#: admin/options.php:1171
 msgid "Favicon options"
 msgstr "Favicon instellingen"
 
-#: admin/options.php:941
+#: admin/options.php:1175
 msgid "Favicon URL"
 msgstr "Favicon URL"
 
-#: admin/options.php:945
+#: admin/options.php:1179
 msgid "Simply enter the full URL to your favicon file here to enable favicon. Make sure you include the <code>http://</code> in front of the URL as well."
 msgstr "Voer simpelweg de URL van uw favicon hier in om het te activeren. Zorg ervoor dat u <code>http://</code> vooraan in de URL gebruikt."
 
-#: admin/options.php:957
+#: admin/options.php:1191
 msgid "Custom CSS"
 msgstr "Aangepaste CSS"
 
-#: admin/options.php:962
+#: admin/options.php:1196
 msgid "Custom CSS styles"
 msgstr "Aangepaste CSS Stijlen"
 
-#: admin/options.php:964
+#: admin/options.php:1198
 msgid "You can enter your own CSS codes below to modify any other aspects of the theme's appearance that is not included in the options."
 msgstr "Hieronder kunt u eigen CSS toevoegen om de weergave van het thema verder aan te passen dan de instellingen van het thema u toestaan. "
+
+#: admin/options.php:1214
+msgid "Before you can upload your import file, you will need to fix the following error:"
+msgstr "Voordat u uw import bestand uploaden, moet u de volgende fout te verhelpen:"
+
+#: admin/options.php:1220
+#: admin/options.php:1251
+msgid "Import Graphene Theme Options"
+msgstr "Importeer Graphene thema instellingen"
+
+#: admin/options.php:1223
+msgid "Choose a file from your computer:"
+msgstr "Kies een bestand van uw computer:"
+
+#: admin/options.php:1223
+#, php-format
+msgid "Maximum size: %s"
+msgstr "Maximale grootte: %s"
+
+#: admin/options.php:1230
+msgid "Upload file and import"
+msgstr "Bestand uploaden en importeren"
+
+#: admin/options.php:1269
+msgid "Options import completed"
+msgstr "Het importeren van de instellingen is voltooid"
+
+#: admin/options.php:1270
+msgid "Go to the Graphene options page"
+msgstr "Ga naar Graphene instellingen pagina"
+
+#: admin/options.php:1273
+#: admin/options.php:1278
+#: admin/options.php:1283
+#: admin/options.php:1288
+msgid "Sorry, there has been an error."
+msgstr "Sorry, er is een fout opgetreden."
+
+#: admin/options.php:1274
+msgid "The uploaded file does not contain valid Graphene options."
+msgstr "Het ge&uuml;ploade bestand bevat geen geldige Graphene instellingen."
+
+#: admin/options.php:1279
+msgid "The uploaded file could not be read."
+msgstr "Het ge&uuml;ploade bestand kan niet worden gelezen."
+
+#: admin/options.php:1284
+msgid "The uploaded file is not supported."
+msgstr "Het ge&uuml;ploade bestand wordt niet ondersteund."
+
+#: admin/options.php:1293
+msgid "File is empty. Please upload something more substantial. This error could also be caused by uploads being disabled in your php.ini or by post_max_size being defined as smaller than upload_max_filesize in php.ini."
+msgstr "Bestand is leeg. Upload iets meer substantieels. Deze fout kan ook worden veroorzaakt doordat upload is uitgeschakeld in uw php.ini of doordat post_max_size wordt gedefinieerd als kleiner dan upload_max_filesize in php.ini."
 
 #: admin/uninstall.php:24
 #, php-format
 msgid "Theme uninstalled. Redirecting to %s"
 msgstr "Thema gedeïnstalleerd. U wordt doorgestuurd naar %s"
-
-#: admin/uninstall.php:32
-msgid "ERROR: You are not authorised to perform that operation"
-msgstr "FOUT: U bent niet gemachtigd om deze bewerking uit te voeren"
 
 #: admin/user.php:7
 msgid "Graphene-specific User Profile Information"
@@ -1239,6 +1483,12 @@ msgstr "Voer de URL naar uw profiel afbeelding in."
 #: admin/user.php:17
 msgid "<strong>Important: </strong>Image width must be less than or equal to <strong>150px</strong>."
 msgstr "<strong>Belangrijk: </strong>Afbeelding breedte moet kleiner of gelijk zijn aan <strong>150px</strong>."
+
+#~ msgid "No comment yet"
+#~ msgstr "Nog geen reacties"
+
+#~ msgid "No ping yet"
+#~ msgstr "Nog geen ping"
 
 #~ msgid "Graphene Display"
 #~ msgstr "Graphene weergave"

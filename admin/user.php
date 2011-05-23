@@ -14,7 +14,7 @@ function graphene_show_custom_user_fields(){ global $current_user; ?>
             </th>
             <td>
             	<input type="text" name="author_imgurl" id="author_imgurl" value="<?php echo esc_attr(get_user_meta($current_user->ID, 'graphene_author_imgurl', true)); ?>" size="50" /><br />
-                <span class="description"><?php _e("Please enter the URL to your profile image.", 'graphene'); ?><br /> <?php _e("<strong>Important: </strong>Image width must be less than or equal to <strong>150px</strong>.", 'graphene'); ?></span>
+                <span class="description"><?php _e("Please enter the full URL (including <code>http://</code>) to your profile image.", 'graphene'); ?><br /> <?php _e("<strong>Important: </strong>Image width must be less than or equal to <strong>150px</strong>.", 'graphene'); ?></span>
             </td>
         </tr>
     </table>

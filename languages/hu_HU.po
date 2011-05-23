@@ -1,0 +1,1253 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Graphene 1.0 theme for WordPress\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-02-20 11:21+0800\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Major Gábor <major.gabesz@gmail.com>\n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Hungarian\n"
+"X-Poedit-Country: HUNGARY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: archive.php:25
+#, php-format
+msgid "Daily Archive: <span>%s</span>"
+msgstr "Napi archívum: <span>%s</span>"
+
+#: archive.php:27
+#, php-format
+msgid "Monthly Archive: <span>%s</span>"
+msgstr "Havi archívum: <span>%s</span>"
+
+#. translators: F will be replaced with month, and Y will be replaced with year, so "F Y" in English would be replaced with something like "June 2008".
+#: archive.php:29
+msgid "F Y"
+msgstr "Y. F"
+
+#: archive.php:31
+#, php-format
+msgid "Yearly Archive: <span>%s</span>"
+msgstr "Éves archívum: <span>%s</span>"
+
+#: archive.php:33
+#: category.php:14
+#, php-format
+msgid "Category Archive: <span>%s</span>"
+msgstr "Kategóriák archívuma: <span>%s</span>"
+
+#: archive.php:35
+msgid "Blog Archive"
+msgstr "Blog Archívum"
+
+#: author.php:33
+msgid "Author's posts listings"
+msgstr "Szerzó bejegyzéseinek listázása"
+
+#: comments.php:19
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "A bejegyzés jelszóval védett. Adja meg a helyes jelszót a továbbolvasáshoz."
+
+#: comments.php:40
+msgid "No comment yet"
+msgstr "Még nem szóltak hozzá"
+
+#: comments.php:40
+#: loop-author.php:90
+#: loop.php:127
+msgid "1 comment"
+msgstr "1 hozzászólás"
+
+#: comments.php:40
+#: loop-author.php:90
+#: loop.php:127
+#, php-format
+msgid "% comments"
+msgstr "% hozzászólás"
+
+#: comments.php:41
+msgid "No ping yet"
+msgstr "Még nincs visszakövetés"
+
+#: comments.php:41
+msgid "1 ping"
+msgstr "1 visszakövetés"
+
+#: comments.php:41
+msgid "% pings"
+msgstr "% visszakövetés"
+
+#: comments.php:79
+msgid "Comments have been disabled."
+msgstr "Nem lehet hozzászólni."
+
+#: comments.php:94
+#, php-format
+msgid "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags and attributes: %s"
+msgstr "A hozzászólás szövegében az alábbi <abbr title=\"HyperText Markup Language\">HTML</abbr> kódok használhatók: %s"
+
+#: comments.php:99
+msgid "Your email address will not be published."
+msgstr "Az email címet nem hozzuk nyilvánosságra."
+
+#: comments.php:102
+#: functions.php:927
+msgid "Submit Comment"
+msgstr "Hozzászólás elküldése"
+
+#: footer.php:47
+msgid "Except where otherwise noted, content on this site is licensed under a <a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/\">Creative Commons Licence</a>."
+msgstr "Ha másképp nincs jelölve, akkor a a honlap tartalma a <a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/\">Creative Commons Licensz</a> hatálya alatt áll."
+
+#: footer.php:59
+msgid "Valid XHTML 1.0 Strict"
+msgstr "Valid XHTML 1.0 Strict"
+
+#: footer.php:60
+msgid "Valid CSS"
+msgstr "Valid CSS"
+
+#: footer.php:60
+msgid "Valid CSS Level 2.1"
+msgstr "Valid CSS Level 2.1"
+
+#. translators: %1$s is the blog title, %2$s is the theme's name, %3$s is the theme's author
+#: footer.php:82
+#, php-format
+msgid "%1$s uses %2$s theme by %3$s."
+msgstr "%1$s a %2$s sablont használja, készítette %3$s."
+
+#: functions.php:178
+msgid "Header Menu"
+msgstr "Fejléc menü"
+
+#: functions.php:179
+msgid "Secondary Menu"
+msgstr "Másodlagos menü"
+
+#. translators: header image description
+#: functions.php:222
+msgid "Header image by Syahir Hakim"
+msgstr "A fejléc képet Syahir Hakim készítette"
+
+#. translators: header image description
+#: functions.php:228
+msgid "This is the default Graphene theme header image, cropped from image by Quantin Houyoux at sxc.hu"
+msgstr "Ez a Graphene sablon alapértelmezett fejlécképe, az eredeti képet Quantin Houyoux készítette (sxc.hu)"
+
+#. translators: header image description
+#: functions.php:234
+#: functions.php:240
+#: functions.php:246
+#: functions.php:252
+#: functions.php:258
+msgid "Header image cropped from image by Ilco at sxc.hu"
+msgstr "A fejlécképet Ilco készítette (sxc.hu)"
+
+#: functions.php:470
+msgid "Home"
+msgstr "Kezdőoldal"
+
+#: functions.php:508
+msgid " says:"
+msgstr " írta:"
+
+#. translators: %1$s is the comment date, %2#s is the comment time
+#: functions.php:514
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s , %2$s"
+
+#: functions.php:516
+msgid "Edit comment"
+msgstr "Hozzászólás szerkesztése"
+
+#: functions.php:520
+msgid "Reply"
+msgstr "Válasz"
+
+#: functions.php:531
+msgid "Your comment is awaiting moderation."
+msgstr "A hozzászólás moderációra vár."
+
+#: functions.php:624
+msgid "Sidebar Widget Area"
+msgstr "Elsődleges oldalsó Widget terület"
+
+#: functions.php:626
+msgid "The first sidebar widget area (available in two and three column layouts)."
+msgstr "Elsődleges oldalsó Widget terület (a 2 és 3 oszlopos elrendezésnél használható)."
+
+#: functions.php:634
+msgid "Sidebar Two Widget Area"
+msgstr "Oldalsó 2. Widget terület"
+
+#: functions.php:636
+msgid "The second sidebar widget area (only available in three column layouts)."
+msgstr "Másodlagos oldalsó Widget terület (csak a 3 oszlopos elrendezésnél használható)."
+
+#: functions.php:644
+msgid "Footer Widget Area"
+msgstr "Lábrész Widget terület"
+
+#: functions.php:646
+msgid "The footer widget area. Leave empty to disable. Set the number of columns to display at the theme's Display Options page."
+msgstr "Lábrész Widget terület. Hagyd üresen, ha nem akarod használni. Az oszlopszámokat a sablon Kinézet beállításai menüben tudod megadni."
+
+#: functions.php:662
+msgid "Front Page Sidebar Widget Area"
+msgstr "Kezdőoldal oldalsó Widget területe"
+
+#: functions.php:664
+msgid "The first sidebar widget area that will only be displayed on the front page."
+msgstr "Az 1. oldalsó Widget terület, ami csak a kezdőlapon látszik."
+
+#: functions.php:672
+msgid "Front Page Sidebar Two Widget Area"
+msgstr "Kezdőoldal 2. oldalsó Widget területe"
+
+#: functions.php:674
+msgid "The second sidebar widget area that will only be displayed on the front page."
+msgstr "Csak a kezdőlapon látható 2. oldalsó Widget terület."
+
+#: functions.php:684
+msgid "Front Page Footer Widget Area"
+msgstr "Kezdőoldal lábrészének Widget területe"
+
+#: functions.php:686
+msgid "The footer widget area that will only be displayed on the front page. Leave empty to disable. Set the number of columns to display at the theme's Display Options page."
+msgstr "A lábrész Widget területe, ami a kezdőlapon látható csak. Hagyd üresen, ha nem akarod használni. Az oszlopszámokat a sablon Kinézet beállításai pontban tudod megadni."
+
+#: functions.php:697
+msgid "Header Widget Area"
+msgstr "Fejrész Widget területe"
+
+#: functions.php:699
+msgid "The header widget area."
+msgstr "A fejlécben található Widget terület."
+
+#: functions.php:726
+msgid "Display the latest Twitter status updates."
+msgstr "Az utolsó Twitter bejegyzés(ek) mutatása."
+
+#: functions.php:751
+msgid "Follow me on Twitter"
+msgstr "Kövess a Twitteren!"
+
+#: functions.php:788
+msgid "Latest tweets"
+msgstr "utolsó tweet-ek"
+
+#: functions.php:793
+msgid "Title:"
+msgstr "Cím:"
+
+#: functions.php:797
+msgid "Twitter Username:"
+msgstr "Twitter felhasználónév:"
+
+#: functions.php:801
+msgid "Number of tweets to display:"
+msgstr "A megjelenítendő tweet-ek száma:"
+
+#: functions.php:835
+msgid "Graphene Options"
+msgstr "Graphene beállításai"
+
+#: functions.php:839
+msgid "Graphene FAQs"
+msgstr "Graphene GYIK"
+
+#: functions.php:908
+msgid "Name:"
+msgstr "Név:"
+
+#: functions.php:909
+msgid "Email:"
+msgstr "Email:"
+
+#: functions.php:910
+msgid "Website:"
+msgstr "Honlapcím:"
+
+#: functions.php:920
+msgid "Message:"
+msgstr "Üzenet:"
+
+#: functions.php:948
+msgid "Continue reading &raquo;"
+msgstr "Tovább... &raquo;"
+
+#: functions.php:995
+msgid "Older posts &laquo;"
+msgstr "Régebbi bejegyzések &laquo;"
+
+#: functions.php:996
+msgid "&raquo; Newer posts"
+msgstr "&raquo; Újabb bejegyzések"
+
+#: functions.php:1169
+msgid "View full post"
+msgstr "Tovább a teljes cikkhez"
+
+#: functions.php:1304
+msgid "<strong>ERROR: You must supply the post ID to get the image from as an argument when calling the graphene_get_post_image() function.</strong>"
+msgstr "<strong>HIBA: meg kell adnod a bejegyzés ID azonosítóját ahhoz, hogy a képet meg tudja hívni a graphene_get_post_image() szkripttel.</strong>"
+
+#: header.php:65
+msgid "Subscribe to RSS feed"
+msgstr "Feliratkozás az RSS csatornára"
+
+#: header.php:108
+#: header.php:117
+msgid "Go back to the front page"
+msgstr "Vissza a kezdőoldalra"
+
+#: loop-author.php:23
+msgid "Author's details"
+msgstr "A szerző adatai"
+
+#. translators: %1$s is the first name, %2$s is the last name
+#: loop-author.php:25
+#, php-format
+msgid "<strong>Name:</strong> %1$s %2$s"
+msgstr "<strong>Név:</strong> %1$s %2$s"
+
+#: loop-author.php:26
+#, php-format
+msgid "<strong>Date registered:</strong> %1$s"
+msgstr "<strong>Regisztráció dátuma:</strong> %1$s"
+
+#: loop-author.php:35
+msgid "Biography"
+msgstr "Bemutatkozás"
+
+#: loop-author.php:53
+msgid "Latest posts"
+msgstr "Utolsó bejegyzései"
+
+#: loop-author.php:56
+#: loop-author.php:90
+#: search-404.php:24
+#, php-format
+msgid "Permalink Link to %s"
+msgstr "%s megjelenítése"
+
+#: loop-author.php:56
+#: loop-author.php:90
+#: loop-children.php:69
+#: loop.php:40
+msgid "(No title)"
+msgstr "(Nincs cím)"
+
+#: loop-author.php:85
+msgid "Most commented posts"
+msgstr "Legtöbb hozzászólást kapott bejegyzés(ek)"
+
+#: loop-author.php:90
+#: loop.php:127
+msgid "Leave comment"
+msgstr "Szóljon hozzá"
+
+#: loop-children.php:69
+#: loop-children.php:77
+#: loop.php:40
+#, php-format
+msgid "Permalink to %s"
+msgstr "%s megjelenítése"
+
+#: loop-children.php:77
+msgid "View page &raquo;"
+msgstr "Oldal megtekintése &raquo;"
+
+#: loop.php:58
+msgid "Edit post"
+msgstr "Szerkesztés"
+
+#. translators: this is for the author byline, such as 'by John Doe'
+#: loop.php:76
+msgid "by"
+msgstr "szerző:"
+
+#: loop.php:91
+msgid "Read the rest of this entry &raquo;"
+msgstr "Tovább a teljes bejegyzéshez &raquo;"
+
+#: loop.php:105
+msgid "<div class=\"link-pages\"><p><strong>Pages:</strong> "
+msgstr "<div class=\"link-pages\"><p><strong>Oldalak:</strong> "
+
+#: loop.php:115
+msgid "Tags:"
+msgstr "Cimkék:"
+
+#: loop.php:115
+msgid "This post has no tag"
+msgstr "Nincsenek cimkék"
+
+#: loop.php:140
+msgid "About the author"
+msgstr "A szerzőről"
+
+#: loop.php:180
+msgid "Not found"
+msgstr "Nem található"
+
+#: loop.php:185
+msgid "Sorry, but you are looking for something that isn't here. Wanna try a search?"
+msgstr "Elnézést, de a keresett kifejezés nem található. Megpróbálja megkeresni?"
+
+#: loop.php:187
+msgid "Sorry, but no results were found for that keyword. Wanna try an alternative keyword search?"
+msgstr "Elnézést, de a keresett szó alapján nem találtam semmit. Megpróbálja egy másik szóval a keresést?"
+
+#: search-404.php:3
+msgid "Error 404 - Page Not Found"
+msgstr "Error 404 - Az oldal nem található"
+
+#: search-404.php:5
+msgid "Sorry, I've looked everywhere but I can't find the page you're looking for."
+msgstr "Elnézést, de nem találom a keresett oldalt."
+
+#: search-404.php:6
+msgid "If you follow the link from another website, I may have removed or renamed the page some time ago. You may want to try searching for the page:"
+msgstr "Ha külső oldalról lett ide irányítva, akkor elképzelhető, hogy az oldalt töröltük vagy áthelyeztük. Próbálja meg megkeresni:"
+
+#: search-404.php:14
+msgid "Suggested results"
+msgstr "Ajánlott találatok"
+
+#. translators: %s is the search term
+#: search-404.php:18
+#, php-format
+msgid "I've done a courtesy search for the term %s for you. See if you can find what you're looking for in the list below:"
+msgstr "A keresés a %s kifejezésre az alábbi találatokat eredményezte:"
+
+#: search-404.php:35
+msgid "<strong>Sorry, couldn't find anything.</strong> Try searching for alternative terms using the search form above."
+msgstr "<strong>Elézést, de nem találtam semmit.</strong> Próbáljon meg mást keresni a keresőmezőben."
+
+#: search.php:11
+#, php-format
+msgid "Search results for: <span>%s</span>"
+msgstr "keresés eredménye: <span>%s</span>"
+
+#: searchform.php:3
+#: searchform.php:4
+msgid "Search"
+msgstr "Keresés"
+
+#: sidebar-two.php:36
+#: sidebar.php:42
+msgid "Meta"
+msgstr "Meta"
+
+#: sidebar-two.php:41
+#: sidebar.php:47
+msgid "Posts RSS"
+msgstr "Bejegyzés RSS"
+
+#: sidebar-two.php:42
+#: sidebar.php:48
+msgid "Comments RSS"
+msgstr "Hozzászólás RSS"
+
+#. translators: %s is the link to wordpress.org
+#: sidebar-two.php:44
+#: sidebar.php:50
+#, php-format
+msgid "Powered by %s"
+msgstr "Működteti a"
+
+#: sidebar-two.php:44
+#: sidebar.php:50
+msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
+msgstr "Powered by WordPress, state-of-the-art semantic personal publishing platform."
+
+#: sidebar-two.php:49
+#: sidebar.php:35
+msgid "Archives"
+msgstr "Archívum"
+
+#: tag.php:14
+#, php-format
+msgid "Tag Archive: <span>%s</span>"
+msgstr "Cimke archívum: <span>%s</span>"
+
+#: admin/custom-fields.php:15
+msgid "Graphene post-specific options"
+msgstr "Graphene bejegyzés-specifikus beállításai"
+
+#: admin/custom-fields.php:16
+msgid "Graphene page-specific options"
+msgstr "Graphene bejegyzés-specifikus beállításai"
+
+#: admin/custom-fields.php:82
+msgid "These settings will only be applied to this particular post or page you're editing. They will override the global settings set in the Graphene Options or Graphene Display options page."
+msgstr "A beállítások ehhez a bejegyzéshez vagy oldalhoz használhatók. A Graphene sablon előre beállított értékeit felülírja."
+
+#: admin/custom-fields.php:83
+msgid "Slider options"
+msgstr "Tallózó beállításai"
+
+#: admin/custom-fields.php:87
+#: admin/options.php:201
+msgid "Slider image"
+msgstr "Tallózó képe"
+
+#: admin/custom-fields.php:91
+#: admin/custom-fields.php:117
+msgid "Use global setting"
+msgstr "Általános beállítások használata"
+
+#: admin/custom-fields.php:92
+#: admin/options.php:205
+msgid "Don't show image"
+msgstr "Ne mutasson képet"
+
+#: admin/custom-fields.php:93
+#: admin/options.php:206
+msgid "Featured Image"
+msgstr "Tartalom kiemelt képe"
+
+#: admin/custom-fields.php:94
+#: admin/options.php:207
+msgid "First image in post"
+msgstr "Bejegyzés első képe"
+
+#: admin/custom-fields.php:95
+#: admin/options.php:208
+msgid "Custom URL"
+msgstr "Egyéni URL"
+
+#: admin/custom-fields.php:101
+#: admin/options.php:214
+msgid "Custom slider image URL"
+msgstr "Egyéni URL a Tallózó képéhez"
+
+#: admin/custom-fields.php:105
+#: admin/options.php:218
+msgid "Make sure you select Custom URL in the slider image option above to use this custom url."
+msgstr "Legyen bekapcsolva az Egyéni URL, ha használni szeretnéd ezt a lehetőséget."
+
+#: admin/custom-fields.php:109
+msgid "Display options"
+msgstr "Kinézet beállításai"
+
+#: admin/custom-fields.php:113
+msgid "AddThis Social Sharing button"
+msgstr "AddThis közösségi megosztás gombja"
+
+#: admin/custom-fields.php:118
+msgid "Show button"
+msgstr "Mutat"
+
+#: admin/custom-fields.php:119
+msgid "Hide button"
+msgstr "Rejt"
+
+#: admin/faq.php:12
+msgid "Graphene's Frequently Asked Questions"
+msgstr "Graphene Gyakran Ismételt Kérdések"
+
+#: admin/faq.php:15
+msgid "Where should I go for the theme's support?"
+msgstr "Hol találok támogatást a sablonhoz?"
+
+#: admin/faq.php:16
+msgid "Please direct all support requests for the theme at the theme's <a href=\"http://forum.khairul-syahir.com/forum/graphene-wordpress-theme\">Support Forum</a>."
+msgstr "Minden kérdéssel a készítő <a href=\"http://forum.khairul-syahir.com/forum/graphene-wordpress-theme\">Support Forum</a> oldalát keresd fel."
+
+#: admin/faq.php:19
+msgid "The post's featured image is replacing my header image. Help!"
+msgstr "A bejegyzés kiemelt képe lett a fejrész képe. Mi történt? Segíts!"
+
+#: admin/faq.php:20
+msgid "This is actually one of the theme's features, based on the feature in the default TwentyTen theme. Any featured image that has a size of greater than or equal to the theme's header image size (900 x 198 pixels) will replace the header image when the post/page that featured image is assigned to is being displayed. It enables you to have different header image for different posts and/or pages."
+msgstr "Ez egy beállítása a sablonnak, ami a WordPress alap sablonjának, a TwentyTen-nek az alapján készült. Minden kiemelt kép - amit beállítottál a bejegyzésben/oldalon -, megjelenik a fejrész kép helyett, ha megegyezik, vagy nagyobb a mérete (900 x 198 pixel) a beállítottnál. Ezzel lehet elérni, hogy egyedi fejrész képek jelenjenek meg a különböző bejegyzéseknél vagy oldalakon."
+
+#: admin/faq.php:21
+msgid "If you want to disable this feature, simply tick the <em>Disable Featured Image replacing header image</em> option in the <a href=\"themes.php?page=graphene_options&tab=display\">Graphene Options</a> page, under Display > Header Display Options."
+msgstr "Ha nem akarod ezt a lehetőséget használni, vedd ki a jelölést a <em>Cserélje le a bejegyzés képére a fejrész képét</em> pontnál, amit a <a href=\"themes.php?page=graphene_options&tab=display\">Graphene sablonbeállítások</a> oldalon, a Kinézet > Fejrész Kinézetének beállításai menüben találsz.."
+
+#: admin/faq.php:24
+msgid "Can I modify Graphene to my heart's content without paying anything?"
+msgstr "Módosíthatom úgy a Graphene sablont, hogy fizetnék érte?"
+
+#: admin/faq.php:25
+msgid "The Graphene Wordpress theme, along with all the other themes in the Wordpress.org Official Free Themes Directory, is released under the GNU General Public License (GPL) Version 2. The full text of that licence is included with the theme in the <code>licence.txt</code> file in the theme's folder. Releasing the theme under that licence means, among others, that you are <em>free to modify the theme in any way for any purpose (including commercial)</em> without any obligation to the theme's author. However, if you decide to redistribute the theme, the licence dictates that you must release the theme under the same licence, GPLv2."
+msgstr "Mint minden WordPress sablon, a Graphene is megtalálható a a Worpdress.org hivatalos sablon tárolóban, és vonatkozik rá a GNU General Public License (GPL) Version 2 jogi nyilatkozat. A sablon csomagjában megtalálod a  <code>licence.txt</code> fájlt, ahol elolvashatod a teljes jogi nyilatkozatot. Kérdésedre válaszolva, bármilyen változtatást úgy tudsz végrehajtani, ha figyelembe veszed azt, hogy  <em>szabadon módosíthatod a sablont bárhogyan is használod (beleértve a kereskedelmi felhasználást is)</em> és a készítő felé nincs pénzbeli kötelezettséged. Ha változtatsz a sablonon, tovább kell vinned a  GPLv2 licenszet."
+
+#: admin/faq.php:26
+msgid "But of course, the author would always appreciate <a href=\"themes.php?page=graphene_options\">donations</a> to support ongoing and future developments of the theme."
+msgstr "Persze lehetőséged van támogatni a fejlesztőt a <a href=\"themes.php?page=graphene_options\">Fejlesztő támogatása</a> részben megadott lehetőségekkel, hogy a további fejlesztéseket el tudja végezni."
+
+#: admin/faq.php:29
+msgid "If the theme is released under GPLv2, what is this Creative Commons licence in the theme's footer?"
+msgstr "Ha a sablon a GPLv2 licensz alatt áll, mi ez a Creative Commons licensz a lábrészben?"
+
+#: admin/faq.php:30
+msgid "The Creative Commons licence is a popular licence nowadays that are used by a lot of web-based content authors to licence their work such that it protects their intellectual property but in the same time allows its free distribution. It is included with the theme simply to make it easy for the theme's users to make use of the licence for the content they publish. Theme users can remove it altogether via the theme's Options page should they wish not to use it."
+msgstr "A Creative Commons licensz összefoglalja a napjainkban kiadott webes tartalom készítőire vonatkozó jogi nyilatkozatot, mint például a szabad szellemi tulajdon és a szabad felhasználhatóság. Ezzel a licensszel tudod védeni egyszerűen az oldalad tartalmát, amit létrehoztál. De le is veheted ezt a \"védettséget\" az oldalról a a Graphene sablonbeállítások > Alapbeállítás > Lábrész beállításai menüpontban, ha nem akarod használni."
+
+#: admin/faq.php:31
+msgid "Put simply, <em>it is not the licence that is applied for the theme itself</em>, but just for the website's content should the theme user wants to use it."
+msgstr "Ez a lehetőség <em>nem a sablon licenszének része</em>, csak a weboldalad tartalmának védelmét hivatott szolgálni."
+
+#: admin/faq.php:34
+msgid "Is the theme compatible with this plugin or that plugin?"
+msgstr "Bármelyik kiegészítővel kompatibilis a sablon?"
+
+#: admin/faq.php:35
+msgid "I don't know. With so many plugins available for Wordpress, there's no way that I (or anybody else for that matter) can test for compatibility for all of them. Having said that, the theme is built with all the necessary Wordpress components included with it, so chances are most plugins will be compatible with the theme."
+msgstr "Erre nehéz választ adni. Sok kiegészítő létezik a WordPress-hez, nem lehet a készítés és fejlesztés alatt minden kiegészítőt úgy tesztelni, hogy ezzel a sablonnal is megfelelően működjön. Indulj ki abból, hogy ez a sablon is úgy készült, hogy működjön minden WordPress kiegészítővel."
+
+#: admin/faq.php:36
+msgid "My suggestion is to just install the plugin and try it. If you stumble into problem, ask for support from the plugin author first. If the plugin author says that it's a problems with the theme, you know where to find support."
+msgstr "Javaslom, hogy a használni kívánt kiegészítőt töltsd le, kapcsold be az oldaladon és próbáld ki. Ha valamilyen problémát vagy hibát tapasztalsz, a kiegészítő fejlesztőjét keresd meg a kérdéseddel. Ha ő azt válaszolja, hogy a sablonnal van a probléma, tudod, hol tehetsz fel kérdéseket."
+
+#: admin/options.php:42
+#: admin/uninstall.php:23
+msgid "Uninstall Graphene"
+msgstr "Graphene eltávolítása"
+
+#: admin/options.php:43
+msgid "Please confirm that you would like to uninstall the Graphene theme. All of the theme's options in the database will be deleted."
+msgstr "Erősítsd meg, hogy tényleg törölni szeretnéd a Graphene sablont. Az összes beállítás törölve lesz az adatbázisból."
+
+#: admin/options.php:44
+msgid "This action is not reversible."
+msgstr "A folyamat nem fordítható vissza."
+
+#: admin/options.php:48
+#: admin/options.php:146
+msgid "Uninstall Theme"
+msgstr "Sablon eltávolítása"
+
+#: admin/options.php:60
+msgid "Graphene Theme Options"
+msgstr "Graphene sablonbeállítások"
+
+#: admin/options.php:62
+msgid "These are the global settings for the theme. You may override some of the settings in individual posts and pages."
+msgstr "Ezek a sablon általános beállításai. Az oldalak és bejegyzések beállításait tudod itt elvégezni."
+
+#: admin/options.php:66
+msgid "Settings saved."
+msgstr "Beállítások elmentve."
+
+#: admin/options.php:73
+msgid "General"
+msgstr "Alapbeállítás"
+
+#: admin/options.php:74
+msgid "Display"
+msgstr "Kinézet"
+
+#: admin/options.php:106
+msgid "Save Options"
+msgstr "Beállítások mentése"
+
+#: admin/options.php:118
+msgid "Support the developer"
+msgstr "Fejlesztő támogatása"
+
+#: admin/options.php:121
+msgid "Developing this awesome theme took a lot of effort and time, months and months of continuous voluntary unpaid work. If you like this theme or if you are using it for commercial websites, please consider a donation to the developer to help support future updates and development."
+msgstr "A sablon fejlesztése sok időt vesz igénybe. Ha tetszik a sablon vagy kereskedelmi oldalon használod, támogasd kérlek a további fejlesztést."
+
+#: admin/options.php:136
+msgid "Uninstall theme"
+msgstr "Sablon eltávolítása"
+
+#: admin/options.php:139
+msgid "<strong>Be careful!</strong> Uninstalling the theme will remove all of the theme's options from the database. Do this only if you decide not to use the theme anymore."
+msgstr "<strong>Vigyázz!</strong> Az eltávolításkor minden beállítás törlődik az adatbázisból! Akkor használd, ha biztosan nem szeretnéd többet használni a sablont."
+
+#: admin/options.php:140
+msgid "If you just want to try another theme, there is no need to uninstall this theme. Simply activate the other theme in the Appearance > Themes admin page."
+msgstr "Ha másik sablont szeretnél használni, akkor nem kell ezt eltávolítani. Egyszerűen állítsd be a Vezérlőpultban a Megjelenés > Sablonok menüpontban a másikat."
+
+#: admin/options.php:141
+msgid "Note that uninstalling this theme <strong>does not remove</strong> the theme's files. To delete the files after you have uninstalled this theme, go to Appearances > Themes and delete the theme from there."
+msgstr "A sablon eltávolításakor a fájlok <strong>nem törlődnek</strong> a tárhelyről. Ahhoz, hogy a fájlokat is töröld, a Vezérlőpult Megjelenés > Sablonok pontjában töröld a sablont."
+
+#: admin/options.php:168
+msgid "Slider Options"
+msgstr "Tallózó beállításai"
+
+#: admin/options.php:174
+msgid "Category to show in slider"
+msgstr "Tallózóban megjelenő kategória"
+
+#: admin/options.php:175
+msgid "All posts within the category selected here will be displayed on the slider. Usage example: create a new category \"Featured\" and assign all posts to be displayed on the slider to that category, and then select that category here."
+msgstr "A kiválasztott kategória minden eleme megjelenik a Tallózóban. Használata egyszerű: készíts egy \"Kiemelt\" kategóriát, aztán állítsd be itt, hogy a Tallózóban megjelenjenek a bejegyzései."
+
+#: admin/options.php:179
+msgid "Show latest posts"
+msgstr "Újabb bejegyzések"
+
+#: admin/options.php:180
+msgid "Show random posts"
+msgstr "Véletlenszerű"
+
+#: admin/options.php:193
+msgid "Number of posts to display"
+msgstr "Tallózóban futó bejegyzések száma"
+
+#: admin/options.php:223
+msgid "Slider display style"
+msgstr "Tallózó megjelenési stílusa"
+
+#: admin/options.php:227
+msgid "Thumbnail and excerpt"
+msgstr "Bélyegkép és összefoglaló"
+
+#: admin/options.php:228
+msgid "Background image and excerpt"
+msgstr "Háttérkép és összefoglaló"
+
+#: admin/options.php:229
+msgid "Full post content"
+msgstr "Teljes szöveg"
+
+#: admin/options.php:235
+msgid "Slider height"
+msgstr "Tallózó magassága"
+
+#: admin/options.php:243
+msgid "Slider speed"
+msgstr "Tallózó sebessége"
+
+#: admin/options.php:246
+msgid "milliseconds"
+msgstr "milliszekundum (1000 - 1 másodperc)"
+
+#: admin/options.php:247
+msgid "This is the duration that each slider item will be shown"
+msgstr "A tallózandó cikkek megjelenési idejét lehet itt beállítani."
+
+#: admin/options.php:252
+msgid "Move slider to bottom of page"
+msgstr "Tallózó az oldal alján legyen"
+
+#: admin/options.php:258
+msgid "Disable slider"
+msgstr "Tallózó kikapcsolása"
+
+#: admin/options.php:271
+msgid "Front Page Options"
+msgstr "Kezdőoldal beállításai"
+
+#: admin/options.php:277
+msgid "Front page posts categories"
+msgstr "Kezdőoldalon megjelenő kategóriák"
+
+#: admin/options.php:279
+msgid "Only posts that belong to the categories selected here will be displayed on the front page. Does not affect Static Front Page."
+msgstr "Csak a megadott kategória bejegyzései jelennek meg. Ha beállítottál saját statikus kezdőoldalt, akkor azt nem fogja befolyásolni."
+
+#: admin/options.php:284
+msgid "--Disabled--"
+msgstr "--Kikapcsolva--"
+
+#: admin/options.php:292
+msgid "You may select multiple categories by holding down the CTRL key."
+msgstr "Több kategóriát is kijelölhetsz a CTRL gomb nyomvatartásával."
+
+#: admin/options.php:304
+msgid "Widget Area Options"
+msgstr "Widget terület beállításai"
+
+#: admin/options.php:307
+msgid "Header widget area"
+msgstr "Fejléc Widget terület"
+
+#: admin/options.php:308
+msgid "<strong>Important:</strong> This widget area is unstyled, as it is often used for advertisement banners, etc. If you enable it, make sure you style it to your needs using the Custom CSS option."
+msgstr "<strong>Fontos:</strong> Ez a terület nincs formázva, leggyakrabban hírdetésre és bannerekre, stb. használható. Ha használod, az Egyéni CSS pontban tudod személyre szabni."
+
+#: admin/options.php:312
+msgid "Enable header widget area"
+msgstr "Fejléc Widget terület bekapcsolása"
+
+#: admin/options.php:321
+msgid "Alternate Widgets"
+msgstr "Egyéb Widgetek"
+
+#: admin/options.php:322
+msgid "You can enable the theme to show different widget areas in the front page than the rest of the website. If you enable this option, additional widget areas that will only be displayed on the front page will be added to the Widget settings page."
+msgstr "Engedélyezni lehet, hogy a sablonban más Widget területeket is használj. Ha bekapcsolod, akkor ezeket a területeket csak a kezdőoldaladon fogod látni, ahogyan azt a Widget beállításai pontban mentetted."
+
+#: admin/options.php:325
+msgid "Enable alternate front page sidebar widget area"
+msgstr "Az Egyéb oldalsó Widget terület bekapcsolása a kezdőoldalon"
+
+#: admin/options.php:329
+msgid "Enable alternate front page footer widget area"
+msgstr "Egyéb lábrész Widget terület bekapcsolása a kezdőoldalon"
+
+#: admin/options.php:330
+msgid "You can also specify different column counts for the front page footer widget and the rest-of-site footer widget if you enable this option."
+msgstr "Be tudod állítani az oszlopok számát, amit a kezdőoldalon és a honlap többi részén lévő lábrész Widget területre alkalmazhatsz, ha ezt bekapcsolod."
+
+#: admin/options.php:343
+msgid "Feed Options"
+msgstr "Hírcsatorna beállítások"
+
+#: admin/options.php:348
+msgid "Hide feed icon"
+msgstr "Ne mutassa a hírcsatorna ikont"
+
+#: admin/options.php:352
+msgid "Use custom feed URL"
+msgstr "Egyéni csatorna URL"
+
+#: admin/options.php:355
+msgid "This custom feed URL will replace the default Wordpress RSS feed URL."
+msgstr "Ez a beállítás felülírja az alap Wordpress RSS csatorna URL-jét."
+
+#: admin/options.php:367
+msgid "Social Sharing Buttons"
+msgstr "Közösségi megosztó gombok"
+
+#: admin/options.php:372
+msgid "Show social sharing button"
+msgstr "Mutassa a gombokat"
+
+#: admin/options.php:376
+msgid "Show in Pages as well?"
+msgstr "Oldalakon is látszódjon?"
+
+#: admin/options.php:381
+msgid "Your social sharing button code"
+msgstr "Saját megosztó gombok kódja"
+
+#: admin/options.php:382
+msgid "You can use codes from any popular social sharing sites, like Facebook, Digg, AddThis, etc."
+msgstr "Be tudsz saját kódokkal állítani közösségi oldalakat, pl.: Facebook, Digg, AddThis, stb."
+
+#: admin/options.php:396
+msgid "Adsense Options"
+msgstr "Adsense beállítások"
+
+#: admin/options.php:402
+msgid "Show Adsense advertising"
+msgstr "Adsense hírdetés mutatása"
+
+#: admin/options.php:408
+msgid "Show ads on front page as well"
+msgstr "Hírdetés megjelenése a kezdőlapon is"
+
+#: admin/options.php:414
+msgid "Your Adsense code"
+msgstr "Adsense kód"
+
+#: admin/options.php:427
+msgid "Google Analytics Options"
+msgstr "Google Analytics beállításai"
+
+#: admin/options.php:430
+msgid "<strong>Note:</strong> the theme now places the Google Analytics script in the <code>&lt;head&gt;</code> element to better support the new asynchronous Google Analytics script. Please make sure you update your script to use the new asynchronous script from Google Analytics."
+msgstr "<strong>Figyelem:</strong> a sablonban a Google Analytics szkript a <code>&lt;head&gt;</code> részben található, ezzel jobban kihasználható az új szinkronizáló asynchronous Google Analytics szkript. Győződj meg róla, hogy az új szkriptet használod, vagy frissítsd."
+
+#: admin/options.php:433
+msgid "Enable Google Analytics tracking"
+msgstr "Google Analytics követés bekapcsolása"
+
+#: admin/options.php:437
+msgid "Google Analytics tracking code"
+msgstr "Google Analytics kód"
+
+#: admin/options.php:438
+msgid "Make sure you include the full tracking code (including the <code>&lt;script&gt;</code> and <code>&lt;/script&gt;</code> tags) and not just the <code>UA-#######-#</code> code."
+msgstr "Használd a teljes kódot (beleértve a <code>&lt;script&gt;</code> és a <code>&lt;/script&gt;</code> közötti részeket is) és ne csak a <code>UA-#######-#</code> azonosító kódot."
+
+#: admin/options.php:451
+msgid "Footer Options"
+msgstr "Lábrész beállításai"
+
+#: admin/options.php:456
+msgid "Show Creative Commons logo"
+msgstr "Mutasd a Creative Commons logót"
+
+#: admin/options.php:461
+msgid "Copyright text (html allowed)"
+msgstr "Szerzői jogi nyilatkozat (html engedélyezve)"
+
+#: admin/options.php:462
+msgid "If this field is empty, the following default copyright text will be displayed:"
+msgstr "Ha üresen hagyod, az alábbi előre beállított szöveg fog megjelenni:"
+
+#: admin/options.php:468
+msgid "Do not show copyright info"
+msgstr "Ne mutassa a szerzői jog szövegét"
+
+#: admin/options.php:488
+msgid "Header Display Options"
+msgstr "Fejrész kinézetének beállításai"
+
+#: admin/options.php:494
+msgid "Use light-coloured header bars"
+msgstr "Világos felső menüpontok használata"
+
+#: admin/options.php:500
+msgid "Link header image to front page"
+msgstr "Fejrész képe a kezdőoldalra mutasson"
+
+#: admin/options.php:503
+msgid "Check this if you disable the header texts and want the header image to be linked to the front page."
+msgstr "Jelöld be, ha azt szeretnéd, hogy a fejrész képe mutasson a kezdőoldalra és nem szeretnél szöveget használni."
+
+#: admin/options.php:508
+msgid "Disable Featured Image replacing header image"
+msgstr "Cserélje le a bejegyzés képére a fejrész képét"
+
+#: admin/options.php:511
+msgid "Check this to prevent the posts Featured Image replacing the header image regardless of the featured image dimension."
+msgstr "Jelöld be, ha a bejegyzés képét akarod használni a fejrész képe helyett, de vedd figyelembe a képek beállításait."
+
+#: admin/options.php:516
+msgid "Use random header image"
+msgstr "Véletlenszerű fejrészkép használata"
+
+#: admin/options.php:520
+msgid "Check this to show a random header image (random image taken from the available default header images)."
+msgstr "Jelöld be, ha változó képeket szeretnél látni (a képek helye az alap fejrész képek könyvtára)."
+
+#: admin/options.php:521
+msgid "<strong>Note:</strong> only works on pages where a specific header image is not defined."
+msgstr "<strong>Figyelem:</strong> csak azokon az oldalakon használható, ahol nincs speciálisan beállítva kép."
+
+#: admin/options.php:526
+msgid "Hide the top bar"
+msgstr "Felső mező eltüntetése"
+
+#: admin/options.php:532
+msgid "Search box location"
+msgstr "Keresőmező helye"
+
+#: admin/options.php:536
+msgid "Top bar"
+msgstr "Felső mező"
+
+#: admin/options.php:537
+msgid "Navigation bar"
+msgstr "Navigációs mező"
+
+#: admin/options.php:550
+msgid "Column Options"
+msgstr "Oszlop beállítások"
+
+#: admin/options.php:556
+msgid "Column mode"
+msgstr "Oszlop módozatok"
+
+#: admin/options.php:606
+msgid "Posts Display Options"
+msgstr "Bejegyzés kinézetének beállításai"
+
+#: admin/options.php:612
+msgid "Show excerpts in front page"
+msgstr "Összefoglaló mutatása a kezdőoldalon"
+
+#: admin/options.php:618
+msgid "Hide post author"
+msgstr "Szerző rejtése"
+
+#: admin/options.php:624
+msgid "Post date display"
+msgstr "Dátum megjelenése"
+
+#: admin/options.php:628
+msgid "Hidden"
+msgstr "Rejtett"
+
+#: admin/options.php:629
+msgid "As an icon (without the year)"
+msgstr "Ikonként (év nélkül)"
+
+#: admin/options.php:630
+msgid "As an icon (including the year)"
+msgstr "Ikonként (évvel)"
+
+#: admin/options.php:631
+msgid "As inline text"
+msgstr "Szövegként"
+
+#: admin/options.php:633
+msgid "Note: displaying date as inline text allows more space for the content area, especially useful for a three-column layout configuration."
+msgstr "Megjegyzés: dátum szövegként való megjelenítése területet vesz el a bejegyzésből. 3 mezős elrendezésnél érdemes használni."
+
+#: admin/options.php:638
+msgid "Hide post categories"
+msgstr "Kategória rejtése"
+
+#: admin/options.php:644
+msgid "Hide post tags"
+msgstr "Cimkék rejtése"
+
+#: admin/options.php:650
+msgid "Hide post comment count"
+msgstr "hozzászólások számának rejtése"
+
+#: admin/options.php:651
+msgid "Only affects posts listing (such as the front page) and not single post view."
+msgstr "Csak a bejegyzések felsorolásakor érvényes (pl.: Kezdőoldal), a bejegyzés teljes szövegénél látható lesz."
+
+#: admin/options.php:656
+msgid "Show post author's gravatar"
+msgstr "Szerző gravatar képének mutatása"
+
+#: admin/options.php:660
+msgid "Show post author's info"
+msgstr "Szerző adatainak mutatása"
+
+#: admin/options.php:664
+msgid "Show More link for manual excerpts"
+msgstr "Több link a összefoglalókhoz"
+
+#: admin/options.php:677
+msgid "Comments Display Options"
+msgstr "Hozzászólás megjelenésének beállításai"
+
+#: admin/options.php:683
+msgid "Hide allowed tags in comment form"
+msgstr "Használható kódok eltüntetése"
+
+#: admin/options.php:696
+msgid "Text Style Options"
+msgstr "Szöveg stílusának beállításai"
+
+#: admin/options.php:699
+msgid "Note that these are CSS properties, so any valid CSS values for each particular property can be used."
+msgstr "Itt CSS szabályokat lehet használni, minden érvényes CSS érték használható."
+
+#: admin/options.php:700
+msgid "Some example CSS properties values:"
+msgstr "Néhány példa CSS érték:"
+
+#: admin/options.php:703
+msgid "Text font:"
+msgstr "Szöveg betütípusa:"
+
+#: admin/options.php:707
+msgid "Text size and line height:"
+msgstr "Szöveg és sor magassága:"
+
+#: admin/options.php:711
+msgid "Text weight:"
+msgstr "Szöveg szélessége:"
+
+#: admin/options.php:715
+msgid "Text style:"
+msgstr "Szöveg stílusa:"
+
+#: admin/options.php:719
+msgid "Text colour:"
+msgstr "Szöveg szine:"
+
+#: admin/options.php:723
+#: admin/options.php:864
+#: admin/options.php:893
+msgid "Leave field empty to use the default value."
+msgstr "Alapértékekhez hagyd üresen a mezőt."
+
+#: admin/options.php:725
+msgid "Header Text"
+msgstr "Fejrész szövege"
+
+#: admin/options.php:729
+msgid "Title text font"
+msgstr "Cím betütípusa"
+
+#: admin/options.php:735
+msgid "Title text size"
+msgstr "Betüméret"
+
+#: admin/options.php:741
+msgid "Title text weight"
+msgstr "Szélesség"
+
+#: admin/options.php:747
+msgid "Title text line height"
+msgstr "Sormagassága"
+
+#: admin/options.php:753
+msgid "Title text style"
+msgstr "Stílusa"
+
+#: admin/options.php:762
+msgid "Description text font"
+msgstr "Bemutatkozó szöveg betütípusa"
+
+#: admin/options.php:768
+msgid "Description text size"
+msgstr "Bemutatkozó szöveg mérete"
+
+#: admin/options.php:774
+msgid "Description text weight"
+msgstr "Bemutatkozó szöveg szélessége"
+
+#: admin/options.php:780
+msgid "Description text line height"
+msgstr "Bemutatkozó szöveg sormagassága"
+
+#: admin/options.php:786
+msgid "Description text style"
+msgstr "Bemutatkozó szöveg stílusa"
+
+#: admin/options.php:792
+msgid "Content Text"
+msgstr "Tartalom szövege"
+
+#: admin/options.php:796
+msgid "Text font"
+msgstr "Betütípus"
+
+#: admin/options.php:802
+msgid "Text size"
+msgstr "Méret"
+
+#: admin/options.php:808
+msgid "Text line height"
+msgstr "Magasság"
+
+#: admin/options.php:814
+msgid "Text colour"
+msgstr "Szín"
+
+#: admin/options.php:820
+msgid "Link Text"
+msgstr "Linkek szövege"
+
+#: admin/options.php:824
+msgid "Link colour (normal state)"
+msgstr "Szín (normál)"
+
+#: admin/options.php:830
+msgid "Link colour (visited state)"
+msgstr "Szín (már látogatott)"
+
+#: admin/options.php:836
+msgid "Link colour (hover state)"
+msgstr "Szín (lebegő)"
+
+#: admin/options.php:842
+msgid "Text decoration (normal state)"
+msgstr "Szöveg dekoráció (normál)"
+
+#: admin/options.php:848
+msgid "Text decoration (hover state)"
+msgstr "Szöveg dekoráció (lebegő)"
+
+#: admin/options.php:861
+msgid "Footer Widget Display Options"
+msgstr "Lábrész Widget kinézetének beállításai"
+
+#: admin/options.php:869
+msgid "Number of columns to display"
+msgstr "Oszlopok száma"
+
+#: admin/options.php:876
+msgid "Number of columns to display for front page footer widget"
+msgstr "Kezdőoldalon megjelenő oszlopok száma"
+
+#: admin/options.php:890
+msgid "Navigation Menu Display Options"
+msgstr "Navigációs menü kinézetének beállításai"
+
+#: admin/options.php:898
+msgid "Dropdown menu item width"
+msgstr "Lenyíló menü szélessége"
+
+#: admin/options.php:911
+msgid "Miscellaneous Display Options"
+msgstr "Egyéb megjelenési beállítások"
+
+#: admin/options.php:914
+msgid "Site title options"
+msgstr "Oldal címének beállítása"
+
+#: admin/options.php:915
+msgid "Use these tags to customise your own site title structure: <code>#site-name</code>, <code>#site-desc</code>, <code>#post-title</code>"
+msgstr "Használhatod a következő kódokat a címek megjelentetéséhez: <code>#site-name</code>, <code>#site-desc</code>, <code>#post-title</code>"
+
+#: admin/options.php:919
+msgid "Custom front page site title"
+msgstr "Egyéni kezdőoldali cím"
+
+#: admin/options.php:923
+msgid "Defaults to <code>#site-name &raquo; #site-desc</code>. The <code>#post-title</code> tag cannot be used here."
+msgstr "Alapesetben <code>#site-name &raquo; #site-desc</code>. A <code>#post-title</code> kód nem használható."
+
+#: admin/options.php:928
+msgid "Custom content pages site title"
+msgstr "Egyéni oldalcím beállítása"
+
+#: admin/options.php:932
+msgid "Defaults to <code>#post-title &raquo; #site-name</code>."
+msgstr "Alapesetben <code>#post-title &raquo; #site-name</code> van beállítva."
+
+#: admin/options.php:937
+msgid "Favicon options"
+msgstr "Favicon beállításai"
+
+#: admin/options.php:941
+msgid "Favicon URL"
+msgstr "Favicon URL-je"
+
+#: admin/options.php:945
+msgid "Simply enter the full URL to your favicon file here to enable favicon. Make sure you include the <code>http://</code> in front of the URL as well."
+msgstr "Csak írd be az ikon URL címét. Ne hagyd le a <code>http://</code> részt az elejéről!"
+
+#: admin/options.php:957
+msgid "Custom CSS"
+msgstr "Egyéni CSS"
+
+#: admin/options.php:962
+msgid "Custom CSS styles"
+msgstr "Egyéni CSS stílus"
+
+#: admin/options.php:964
+msgid "You can enter your own CSS codes below to modify any other aspects of the theme's appearance that is not included in the options."
+msgstr "Itt tudod a sablonhoz tartozó egyéni CSS kódokat beírni, amiket nem tudtál beállítani."
+
+#: admin/uninstall.php:24
+#, php-format
+msgid "Theme uninstalled. Redirecting to %s"
+msgstr "Sablon eltávolítva. Átirányítás: %s"
+
+#: admin/uninstall.php:32
+msgid "ERROR: You are not authorised to perform that operation"
+msgstr "HIBA: Nincs jogosultságod a feladat végrehajtásához."
+
+#: admin/user.php:7
+msgid "Graphene-specific User Profile Information"
+msgstr "Graphene-specifikus felhasználói információk"
+
+#: admin/user.php:8
+msgid "The settings defined here are used only with the Graphene theme."
+msgstr "Az itt beállított értékek csak a Graphene sablonra vonatkoznak."
+
+#: admin/user.php:12
+msgid "Author profile image URL"
+msgstr "Szerző profilképének URL-je"
+
+#: admin/user.php:13
+msgid "You can specify the image to be displayed as the author's profile image in the Author's page. If no URL is defined here, the author's <a href=\"http://www.gravatar.com\">Gravatar</a> will be used."
+msgstr "Be tudsz saját képet állítani, amit a Szerző oldalán láthanak majd. Ha nem állítasz be képet, úgy a <a href=\"http://www.gravatar.com\">Gravatar</a> oldalról fog képet használni."
+
+#: admin/user.php:17
+msgid "Please enter the URL to your profile image."
+msgstr "Add meg a profilkép URL-jét."
+
+#: admin/user.php:17
+msgid "<strong>Important: </strong>Image width must be less than or equal to <strong>150px</strong>."
+msgstr "<strong>FONTOS: </strong>A képnek kisebbnek, vagy egyezőnek kell lenni <strong>150px</strong> mérettel."
+

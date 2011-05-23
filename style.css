@@ -1,8 +1,8 @@
 /*
 Theme Name: Graphene
 Theme URI: http://www.khairul-syahir.com/wordpress-dev/graphene-theme
-Description: The Graphene theme for Wordpress 3.0 is a stylish, neat, and tight WordPress theme supporting configurable columns layout options and 4 widget areas, with the ability to determine the number of columns to display in the footer widget area. It includes action hooks for greater customisability through child theme, and a jQuery slider for your featured posts. It has built-in Twitter widget, allows for customisable header and background through the WordPress admin, built-in AdSense placement and social sharing buttons, supports custom menu with drop-down navigation, and threaded comments of up to 10 levels deep! You can hide post parameters, show post author's gravatar, use different widgets for the front page than the rest of the website, and specify font styles for header and content texts. The codes are written so that you can easily override or add functionality to the theme by using your own child theme without altering the parent theme's code. Seriously, there's too many features for this theme to describe them all here! This theme has been tested and confirmed compatible with IE7 and above, Mozilla Firefox, Google Chrome, Opera, and Safari. Translations included: Malay, Brazilian Portuguese, European Portuguese, Spanish, Italian, French, Polish, German, Norwegian, Chinese (PRC), Chinese (Taiwan), Polish, Swedish, Turkish, Japanese, Persian, Dutch, and Arabic. The theme also fully supports right-to-left languages. See the <a href="http://www.khairul-syahir.com/wordpress-dev/graphene-theme#changelog">theme's changelog</a>.
-Version: 1.2.1
+Description: The Graphene theme for WordPress is a stylish, neat, and tight WordPress theme supporting configurable columns layout options and 4 widget areas, with the ability to determine the number of columns to display in the footer widget area. It includes a buckload of action hooks for greater customisability through child theme, and a jQuery slider for your featured posts. It has built-in Twitter widget, allows for customisable header and background through the WordPress admin, built-in AdSense placement and social sharing buttons, supports custom menu with drop-down navigation, and threaded comments of up to 10 levels deep! You can hide post parameters, show post author's gravatar, use different widgets for the front page than the rest of the website, and specify font styles for header and content texts. The codes are written so that you can easily override or add functionality to the theme by using your own child theme without altering the parent theme's code. Seriously, there's too many features for this theme to describe them all here! This theme has been tested and confirmed compatible with IE7 and above, Mozilla Firefox, Google Chrome, Opera, and Safari. The theme currently has been translated into 20 languages, and fully supports right-to-left languages. See the <a href="http://www.khairul-syahir.com/wordpress-dev/graphene-theme#changelog">theme's changelog</a>.
+Version: 1.3
 Author: Syahir Hakim
 Author URI: http://www.khairul-syahir.com
 Tags: black, blue, white, one-column, two-columns, three-columns, right-sidebar, left-sidebar, fixed-width, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, rtl-language-support
@@ -96,15 +96,25 @@ a:hover {
 	position: relative;
 	z-index: 10;
 }
+#rss{
+	padding: 13px 0 0 23px;
+	float: left;
+}
 #rss a {
 	background: url(images/sprite_master.png) left top no-repeat;
 	float: left;
-	width: 29px;
-	height: 29px;
-	margin: 13px 0 0 23px;
+	width: 32px;
+	height: 32px;
+	margin-right: 10px;
 }
 #rss span {
 	display: none;
+}
+#rss a.twitter_link{
+	background-position: left -414px;
+}
+#rss a.facebook_link{
+	background-position: -69px -414px;
 }
 #top_search {
 	float: right;
@@ -140,7 +150,7 @@ a:hover {
 }
 #header {
 	background-color: #000;
-	background-position: center;
+	background-position: center top;
 	background-repeat: no-repeat;
 	border-top:1px solid #000;
 	border-bottom:1px solid #000;
@@ -148,18 +158,19 @@ a:hover {
 	position: relative;
 	width: 960px;
 }
-#header h1 {
+.header_title {
 	font: bold 28px "Trebuchet MS";
 	position: relative;
 	left: 38px;
 	top: 80px;
 	width: 852px;
 }
-#header h1 a,
-#header h1 a:visited {
+.header_title a,
+.header_title a:visited {
 	text-decoration: none;
 }
-#header h2 {
+.header_desc {
+	font-size: 18px;
 	border-bottom: none;
 	color: #000;
 	position: relative;
@@ -416,7 +427,7 @@ h1.page-title {
 	background: -webkit-gradient(linear, left top, right bottom, from(#0F2D4D), to(#2880C3));
 	-pie-background: linear-gradient(left top, #0F2D4D, #2880C3);
 	color: #e3e3e3;
-	font-size: 130%;
+	font-size: 16px;
 	margin: 0 auto 10px;
 	padding: 8px 0;
 	text-align: center;
@@ -506,6 +517,9 @@ h1.page-title span {
 	position: relative;
 	width: 890px;
 	height: 200px;
+}
+.slider_post_entry p{
+	margin-bottom: 10px;
 }
 .full-sized .slider_post {
 	padding: 0;
@@ -703,9 +717,6 @@ h1.page-title span {
 	margin: 0;
 	padding: 0;
 }
-.child-page .excerpt-thumb img {
-	margin: 0 5px 0 0;
-}
 .post.nodate,
 .post.page,
 .post.post_404,
@@ -801,15 +812,15 @@ h1.page-title span {
 	margin: 0;
 	padding: 0;
 }
-h2,
-h2 a,
-h2 a:visited {
+.post-title,
+.post-title a,
+.post-title a:visited {
 	border-bottom: 1px solid #e3e3e3;
 	font: 18px arial;
 	padding-bottom: 5px;
 }
-h2 a,
-h2 a:visited {
+.post-title a,
+.post-title a:visited {
 	border: none;
 }
 .post-meta {
@@ -837,7 +848,8 @@ h2 a:visited {
 }
 .post-meta .post-author,
 .post-meta .edit-post,
-.post-meta .post-date-inline {
+.post-meta .post-date-inline,
+.post-meta .print {
 	display: block;
 	float: right;
 	font: normal 11px tahoma;
@@ -845,9 +857,21 @@ h2 a:visited {
 	position: relative;
 }
 .post-meta .edit-post,
-.post-meta .post-date-inline {
+.post-meta .post-date-inline,
+.post-meta .print {
 	margin-left: 5px;
 }
+.post-meta .print span {
+	display: none;
+	}
+.post-meta .print a, 
+.post-meta .print a:visited {
+	background: url(images/sprite_master.png) -152px -38px no-repeat;
+	display: block;
+	margin-top: 2px;
+	width: 16px;
+	height: 16px;
+	}
 .post-meta .post-date-inline {
 	border-left: 1px solid #ccc;
 	padding-left: 5px;
@@ -877,10 +901,12 @@ h2 a:visited {
 .comment-entry ol {
 	color: #2c2b2b;
 	font: normal 12px arial;
-	line-height: 20px;
+	line-height: 18px;
 }
-.entry-content p {
-	overflow: hidden;
+.entry-content img, 
+.wp-caption {
+	max-width: 98%;
+	height: auto;
 }
 .wp-caption {
 	background: #eee;
@@ -960,10 +986,10 @@ h2 a:visited {
 dt {
 	margin-top: 10px;
 }
-.entry-content .excerpt-thumb,
-.child-page .excerpt-thumb {
+.entry-content .excerpt-thumb img,
+.child-page .excerpt-thumb img{
 	float: left;
-	margin: 5px 5px 0 0;
+	margin: 0 1em 0 0;
 }
 .entry-content .wp-caption img {
 	margin-bottom: 0;	
@@ -975,9 +1001,6 @@ a.more-link,
 a.more-link span {
 	display: block;
 	margin: 0 5px 5px 0;
-}
-.slider_post a.more-link {
-	display: none;
 }
 .entry-content dt {
 	margin-top: 10px;
@@ -1113,6 +1136,7 @@ pre.block {
 .link-pages {
 	clear: both;
 	margin-top: 10px;
+	text-align: center;
 }
 .add-this,
 .add-this-right {
@@ -1153,7 +1177,6 @@ pre.block {
 }
 .author-entry p {
 	color: #444;
-	font-size: 11px;
 	line-height: 18px;
 }
 .author-entry .avatar {
@@ -1205,6 +1228,10 @@ pre.block {
 }
 .post-nav {
 	margin-bottom: 20px;
+}
+.wp-pagenavi{
+	padding-top: 10px;
+	text-align: center;
 }
 #previous,
 #previous a,
@@ -1679,6 +1706,70 @@ h3.author-post-list {
 }
 
 
+/* =The homepage panes
+-------------------------------------------------------------- */
+
+.homepage_panes{
+	width: 100%;
+}
+.homepage_pane{
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	margin:0 0 20px 18px;
+	vertical-align: top;
+	width: 47%;
+}
+.two-col-right .homepage_pane{
+	margin:0 18px 20px 0;
+}
+.three-columns .homepage_pane{
+	margin:0 0 20px 12px;
+}
+.three-col-right .homepage_pane{
+	margin:0 12px 20px 0;
+}
+.three-col-center .homepage_pane{
+	margin:0 0 20px 10px;
+}
+.three-col-center .homepage_panes{
+	margin-left: -10px;
+	width: 104%;
+}
+.homepage_pane img{
+	-moz-box-shadow: -2px 2px 5px #777;
+	-webkit-box-shadow: -2px 2px 5px #999;
+	box-shadow: -2px 2px 5px #999;
+	margin: 0 auto 5px auto;
+}
+.two-columns .homepage_pane img{
+	width: 317px;
+	height: auto;
+}
+.three-columns .homepage_pane img{
+	width: 216px;
+	height: auto;
+}
+.homepage_pane .post-title{
+	margin-bottom: 5px;
+}
+.homepage_pane .post-title a, .homepage_pane .post-title a:visited{
+	color: #052d4a;
+	font: bold 18px arial;	
+}
+.homepage_pane .post-excerpt{
+	color: #696a6a;
+	font: normal 12px/18px arial;
+}
+.homepage_pane .post-excerpt p{
+	margin-bottom: 10px;
+}
+.homepage_pane .post-comments{
+	margin-top: 10px;
+	margin-right: 0;
+}
+
+
 /* =Footer
 -------------------------------------------------------------- */
 
@@ -1737,4 +1828,52 @@ h3.author-post-list {
 	padding-top: 9px;
 	text-align: right;
 	width: 300px;
+}
+
+/* =Shortcode blocks
+-------------------------------------------------------------- */
+
+.warning_block, 
+.error_block, 
+.notice_block, 
+.important_block {
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    padding-left: 65px;
+    background: #eee;
+    padding-bottom: 25px;
+    padding-top: 20px;
+    margin: 10px 0;
+}
+
+.warning_block,
+.warning_block p,
+.error_block,
+.error_block p {
+    background: #FCC url(js/buttons/warning.png) no-repeat scroll 10px 7px;
+    border: 1px solid #F99;
+    color: #C31B00;
+}
+.error_block,
+.error_block p {
+    background-image: url(js/buttons/error.png);
+}
+
+.notice_block,
+.notice_block p {
+    background: #FDEBAE url(js/buttons/notice.png) no-repeat scroll 10px 7px;
+    border: 1px solid #E6C555;
+    color: #9E660D;
+}
+
+.important_block,
+.important_block p {
+    background: #DEE3AB url(js/buttons/important.png) no-repeat scroll 10px 7px;
+    border: 1px solid #A3C159;
+    color: #5E6F33;
+}
+
+.printonly {
+    display: none;
 }
