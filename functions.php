@@ -117,12 +117,12 @@ function mantra_setup() {
 	register_default_headers( array(
 
 
-		'mantra' => array(
+	/*	'mantra' => array(
 			'url' => '%s/images/headers/mantra.png',
 			'thumbnail_url' => '%s/images/headers/mantra-thumbnail.png',
-			/* translators: header image description */
+			// translators: header image description 
 			'description' => __( 'mantra mantra', 'mantra' )
-		),
+		), */
 
 
 	) );
