@@ -230,20 +230,7 @@ array( "name" => "Hide the navigation:",
     "desc" => "Check to disable the slider navigation",  
     "id" => $shortname."_slider_navigation",    
    	"type" => "checkbox",
-        "std" => "false"),   
-    
-array( "name" => "Image custom field:",  
-    "desc" => "(Default is feature-image)",  
-    "id" => $shortname."_slider_image_field",  
-    "type" => "text",  
-    "std" => ""),
-    
-array( "name" => "Text custom field:",  
-    "desc" => "(Default is feature-text)",  
-    "id" => $shortname."_slider_text_field",  
-    "type" => "text",  
-    "std" => ""),
-    
+        "std" => "false"),  
 
   
 

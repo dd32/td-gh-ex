@@ -20,15 +20,6 @@
 	    	if ($options['if_slider_posts_number'] == '')
 	    	$no = '5';
 	    	else $no = $options['if_slider_posts_number'];
-	    	
-	    	if ($options['if_slider_image_field'] == '')
-	    	$imgField = 'feature-image';
-	    	else $imgField = $options['if_slider_image_field'];
-	    	
-	    	if ($options['if_slider_text_field'] == '')
-	    	$txtField = 'feature-text';
-	    	else $txtField = $options['if_slider_text_field'];
-	    	
 
 	    	while (have_posts() && $i<$no) : 
 	    	

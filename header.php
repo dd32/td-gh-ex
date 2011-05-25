@@ -9,19 +9,23 @@
 */
 $options = get_option('ifeature') ; 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
+<html <?php language_attributes('xhtml'); ?>>
 
-<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes('xhtml'); ?>>
-
-<head profile="http://gmpg.org/xfn/11">
+<head>
 	
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+	
+	<?php if ($options['if_home_description'] != ''): ?>
 	<!-- Inserts META Home Description -->
 	<?php  $homedescription = $options['if_home_description']; ?>
 		<meta name="description" content="<?php echo $homedescription ?>" />
+	<?php endif;?> 
+	<?php if ($options['if_home_keywords'] != ''): ?>
 	<!-- Inserts META Keywords -->	
 	<?php  $homekeywords = $options['if_home_keywords'] ; ?>
 		<meta name="keywords" content="<?php echo $homekeywords ?>" />
+	<?php endif;?> 
 	<meta name="distribution" content="global" />
 	<meta name="language" content="en" />
 <!-- Page title -->
@@ -48,9 +52,17 @@ $options = get_option('ifeature') ;
 		         echo ' - page '. $paged; }
 		   ?>
 	</title>	
-	<?php  $favicon = $options['if_favicon']; ?>
-	<link rel="shortcut icon" href="<?php echo stripslashes($favicon); ?>" type="image/x-icon" />
+	<?php  
+	$tdurl = get_template_directory_uri();
+	$favicon = $options['if_favicon']; ?>
 	
+	<?php if ($options['if_favicon'] == ""): ?>
+			
+		<link rel="shortcut icon" href="<?php echo "$tdurl/images/favicon.ico" ; ?>" type="image/x-icon" />
+		<?php endif;?>
+		<?php if ($options['if_favicon'] != ""): ?>
+			<link rel="shortcut icon" href="<?php echo stripslashes($favicon); ?>" type="image/x-icon" />
+	<?php endif;?>
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
 	
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />

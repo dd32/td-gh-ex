@@ -9,6 +9,16 @@ iFeature Changelog\
 \
 ****************************\
 \
+Version 1.1.3 (5-25-11)\
+-Made SEO tags in header dependent on theme options settings.\
+-Optimized style.css, removed outdated styles.\
+-Removed legacy custom field options for iFeature slider options.\
+-Removed title / alt tags from credit link.\
+-Fixed issue where bullets and numbers on lists weren't displaying properly.\
+-Updated doctype to HTML5.\
+-Updated .ico support, including a default .ico.\
+\
+\
 Version 1.1.2 (5-11-11)\
 -Fixed menu CSS to eliminate dropdown blowout when loading certain pages.\
 -Added WordPress background color / image support.\
