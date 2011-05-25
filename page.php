@@ -33,7 +33,7 @@ get_header(); ?>
 					</div><!-- .entry-content -->
 				</div><!-- #post-## -->
 
-				<?php // !!! comments disabled on PAGES // comments_template( '', true ); ?>
+				<?php if ( comments_open() ) { comments_template( '', true );} ?>
 
 <?php endwhile; ?>
 
