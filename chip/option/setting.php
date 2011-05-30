@@ -20,6 +20,7 @@ if ( ! isset( $_REQUEST['updated'] ) ) {
        <a href="http://forums.tutorialchip.com/forums/6-Chip-Life" class="chiplifeadmin"><?php echo get_current_theme(); ?> Forum</a> &sdot;
        <a href="http://www.tutorialchip.com/chip-life/" class="chiplifeadmin"><?php echo get_current_theme(); ?> Official Page</a> &sdot;
        <a href="http://chip-life.tutorialchip.com/" class="chiplifeadmin"><?php echo get_current_theme(); ?> Demo Page</a> &sdot;
+       <a href="http://www.tutorialchip.com/chip-life-guide-book/" class="chiplifeadmin"><?php echo get_current_theme(); ?> Guide Book</a> &sdot;
        <a href="http://www.tutorialchip.com/" class="chiplifeadmin">More WordPress Themes</a>
      </p>
    </div>   

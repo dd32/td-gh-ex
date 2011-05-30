@@ -31,6 +31,9 @@ class Chip_Life_Options {
 			add_settings_field( 'chip_life_field_header_style', 'Header Style', array( 'Chip_Life_Options', 'chip_life_field_header_style_fn' ), 'chip_life_section_blog_page', 'chip_life_section_blog' );			
 			add_settings_field( 'chip_life_field_post_style', 'Post Style', array( 'Chip_Life_Options', 'chip_life_field_post_style_fn' ), 'chip_life_section_blog_page', 'chip_life_section_blog' );
 			
+			add_settings_field( 'chip_life_field_primary_menu', 'Display Primary Menu', array( 'Chip_Life_Options', 'chip_life_field_primary_menu_fn' ), 'chip_life_section_blog_page', 'chip_life_section_blog' );
+			add_settings_field( 'chip_life_field_comment_notes_after', 'Display Comment Notes After', array( 'Chip_Life_Options', 'chip_life_field_comment_notes_after_fn' ), 'chip_life_section_blog_page', 'chip_life_section_blog' );
+			
 			/** Chip Post Section */
 			add_settings_section( 'chip_life_section_post', 'Post Options', array( 'Chip_Life_Options', 'chip_life_section_post_fn' ), 'chip_life_section_post_page' );
 			
@@ -145,6 +148,9 @@ class Chip_Life_Options {
 					'chip_life_post_style'						=>	'excerpt',					
 					'chip_life_header_style'					=>	'header',
 					
+					'chip_life_primary_menu'					=>	1,
+					'chip_life_comment_notes_after'				=>	1,
+					
 					'chip_life_related_post'					=>	0,
 					'chip_life_related_post_number'				=>	3,
 					
@@ -175,7 +181,7 @@ class Chip_Life_Options {
 					'chip_life_delicious_url'					=>	'http://www.delicious.com/life.object',
 					
 					'chip_life_facebook'						=>	0,
-					'chip_life_facebook_url'					=>	'http://www.facebook.com/profile.php?id=100001747038774',
+					'chip_life_facebook_url'					=>	'http://www.facebook.com/tutorialchip',
 					
 					'chip_life_stumble'							=>	0,
 					'chip_life_stumble_url'						=>	'http://www.stumbleupon.com/stumbler/lifeobject',
@@ -265,6 +271,18 @@ class Chip_Life_Options {
 				 $input['chip_life_header_style'] = "header";
 			}
 			
+			/* Validation: chip_life_primary_menu */
+			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
+			if ( ! array_key_exists( $input['chip_life_primary_menu'], $chip_boolean_pd ) ) {
+				 $input['chip_life_primary_menu'] = 1;
+			}
+			
+			/* Validation: chip_life_comment_notes_after */
+			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
+			if ( ! array_key_exists( $input['chip_life_comment_notes_after'], $chip_boolean_pd ) ) {
+				 $input['chip_life_comment_notes_after'] = 1;
+			}					
+			
 			/* Validation: chip_life_related_post */
 			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
 			if ( ! array_key_exists( $input['chip_life_related_post'], $chip_boolean_pd ) ) {
@@ -274,7 +292,7 @@ class Chip_Life_Options {
 			/* Validation: chip_life_related_post_number */
 			$chip_related_posts_pd = Chip_Life_Options::chip_related_posts_pd();
 			if ( ! array_key_exists( $input['chip_life_related_post_number'], $chip_related_posts_pd ) ) {
-				 $input['chip_life_related_post_number'] = 5;
+				 $input['chip_life_related_post_number'] = 3;
 			}
 			
 			/* Validation: chip_life_sponsor_header_728x90 */
@@ -407,7 +425,7 @@ class Chip_Life_Options {
 			/* Validation: chip_life_authorbox */
 			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
 			if ( ! array_key_exists( $input['chip_life_authorbox'], $chip_boolean_pd ) ) {
-				 $input['chip_life_authorbox'] = 0;
+				 $input['chip_life_authorbox'] = 1;
 			}
 			
 			/* Validation: chip_life_analytic */
@@ -495,7 +513,42 @@ class Chip_Life_Options {
 				echo '<label><input type="radio" id="chip_life_header_style[]" name="chip_life_options[chip_life_header_style]" value="'.$key.'" '.$checked.' /> '.$val.'</label><br />';
 			}
 		
+		}
+		
+		/* Chip Primary Menu */
+		
+		function  chip_life_field_primary_menu_fn() {
+			
+			$chip_life_options = get_option( 'chip_life_options' );
+			$items = Chip_Life_Options::chip_boolean_pd();
+			
+			echo '<select id="chip_life_primary_menu" name="chip_life_options[chip_life_primary_menu]">';
+			foreach( $items as $key => $val ) {
+				$selected = ( $chip_life_options['chip_life_primary_menu'] == $key ) ? 'selected="selected"' : '';
+				echo '<option value="'.$key.'" '.$selected.'>'.$val.'</option>';
+			}
+			echo '</select>';
+			echo '<div><small>Select yes to display primary menu which is located above the site header.</small></div>';
+		
+		}
+		
+		/* Chip Comment Notes After */
+		
+		function  chip_life_field_comment_notes_after_fn() {
+			
+			$chip_life_options = get_option( 'chip_life_options' );
+			$items = Chip_Life_Options::chip_boolean_pd();
+			
+			echo '<select id="chip_life_comment_notes_after" name="chip_life_options[chip_life_comment_notes_after]">';
+			foreach( $items as $key => $val ) {
+				$selected = ( $chip_life_options['chip_life_comment_notes_after'] == $key ) ? 'selected="selected"' : '';
+				echo '<option value="'.$key.'" '.$selected.'>'.$val.'</option>';
+			}
+			echo '</select>';
+			echo '<div><small>Select yes to display commnet notes after. For Example: <strong>You may use these HTML tags and attributes....</strong></small></div>';
+		
 		}	
+		
 		
 		/*
 		|--------------------------

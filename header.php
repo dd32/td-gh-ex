@@ -11,8 +11,6 @@
 </head>
 <body <?php body_class(); ?>>
 
-<?php locate_template( array( CHIP_LIFE_COMMON_FSROOT . 'bsa.php' ), true, false ); ?>
-
 <!-- Begin Wrap -->
 <div id="wrap">
   <div id="wrapdata">
@@ -20,11 +18,15 @@
     <!-- Begin Header -->
     <div id="header">
       <div id="headerdata">        
-        <?php locate_template( array( CHIP_LIFE_COMMON_FSROOT . 'primary-menu.php' ), true, false ); ?>
+        <?php 
+		global $chip_life_global; 
+		if( $chip_life_global['theme_options']['chip_life_primary_menu'] == 1 ):
+		locate_template( array( CHIP_LIFE_COMMON_FSROOT . 'primary-menu.php' ), true, false );
+		endif;
+		?>
         <?php locate_template( array( CHIP_LIFE_COMMON_FSROOT . 'header-style.php' ), true, false ); ?> 
         <?php locate_template( array( CHIP_LIFE_COMMON_FSROOT . 'secondary-menu.php' ), true, false ); ?>
         <?php
-		global $chip_life_global; 
 		if( $chip_life_global['theme_options']['chip_life_sponsor_header_728x15'] == 1 ):
 		locate_template( array( CHIP_LIFE_SPONSOR_FSROOT . 'sponsor-728x15.php' ), true, false );
 		endif;

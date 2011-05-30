@@ -69,7 +69,15 @@ else {
 |--------------------------
 */
 
-comment_form();
+global $chip_life_global; 
+if( $chip_life_global['theme_options']['chip_life_comment_notes_after'] == 1 ):
+  comment_form();
+else:
+  $args = array(
+    'comment_notes_after'	=>	'',
+  );
+  comment_form( $args );
+endif;
 
 ?>
 </div>
