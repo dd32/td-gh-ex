@@ -4,7 +4,7 @@ Theme URI: http://www.riotreactions.com/mantra
 Description: A clean and very web 2.0 theme with customizable layout, colors, fonts and graphics. From the admin panel you can change the header image, background image, sidebar position, content and sidebar dimensions, paragraph indent, text colors, fonts, post metas (like author, category or date), background colors and a whole lot more. With over 40 theme options, 7 widget areas, social media animated graphics, multiple pins and bullets you can easily make this theme suit all your needs.
 Author: Cryout Creations
 Author URI: http://www.cryoutcreations.com
-Version: 1.0.7
+Version: 1.0.8
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, red, blue, white, light, two-columns, right-sidebar, left-sidebar, theme-options, dark, flexible-width, custom-header, custom-menu, threaded-comments, sticky-post, translation-ready, microformats, rtl-language-support
@@ -76,18 +76,18 @@ DESCRIPTION: Two-column fixed layout with one sidebar right of content
 
 #container {
 	float: left;
-	margin: 0 -360px 0 0;
+	margin: 0 -310px 0 0;
 	width: 100%;
 }
 #content {
 	margin: 0 0px 0 20px;
-	width:1060px;
+	width:850px;
 }
 #primary,
 #secondary {
 	float: right;
 	overflow: hidden;
-	width:220px;
+	width:250px;
 	border-left:1px dashed #EAEAEA;
 	padding-left:12px;
 	margin-top:10px;
@@ -209,7 +209,7 @@ margin-top:20px;
 #footer-widget-area .widget-area {
 	float: left;
 	margin-right: 20px;
-	width: 220px;
+	width: 22%;
 }
 #footer-widget-area #fourth {
 	margin-right: 0;
@@ -1481,6 +1481,8 @@ color:#555;
 	border-radius:10px 0 0 0 ;
 	-moz-border-radius:10px 0 0 0 ;
 	-webkit-border-radius:10px 0 0 0 ;
+	font-family:Arial !important;
+font-size:14px;
 }
 
 #searchform #s:hover , #container #s:hover {
@@ -1507,9 +1509,9 @@ color:#0D85CC;
 	-webkit-border-top-left-radius:10px;
 	-moz-border-radius-topleft:10px;
 	-webkit-border-radius-topleft:10px;
-	box-shadow:-1px -1px 6px #999;
+/*	box-shadow:-1px -1px 6px #999;
 	-moz-box-shadow:-1px -1px 6px #999;
-	-webkit-box-shadow:-1px -1px 6px #999;
+	-webkit-box-shadow:-1px -1px 6px #999;*/
 }
 
 #footer-widget-area .widget-title {
@@ -1755,6 +1757,11 @@ img#wpstats {
 #container #s  {/* This keeps the search inputs in line */
 	display:block;float:left;
 	margin-bottom:20px;
+	font-family:Arial !important;
+	font-size:14px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    padding-top: 4px;
 }
 
 #container #searchsubmit, .widget_search #searchsubmit {
@@ -1770,13 +1777,16 @@ color:#EEE;
 text-shadow:0px -1px 0px #000;
 -moz-text-shadow:0px -1px 0px #000;
 -webkit-text-shadow:0px -1px 0px #000;
+font-family:Arial !important;
 }
 
 .widget_search #searchsubmit {
 left:-28px;
 top:0px;
 width:27px;
-height:27px;
+height:28px;
+font-size:12px;
+font-family:Arial;
 }
 
 #searchsubmit:hover {
