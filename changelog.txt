@@ -4,6 +4,19 @@ http://www.khairul-syahir.com
 
 CHANGELOG
 
+Version 1.3.1:
+
+	* Fixed an issue where the theme's options export outputting text file onto the page
+	* Fixed the Text Style option for the header text not being applied in singular pages
+	* Fixed a bug where the thumbnails of child pages are not displayed when a featured image is set for those child pages
+	* Fixed issue where sticky posts are not showing at the beginning of posts list when "Front page posts categories" option is used
+	* Added arrows to multi-level menu items to indicate there's a submenu
+	* Increased menu items' vertical padding
+	* Added option to add custom social media icons in the top bar
+	* Added native support for WP-Email plugin
+	* Added native support for WP-CommentNavi plugin
+	* Added 'graphene_adsense_ads_limit' filter for adsense ads count limit
+
 Version 1.3
 	* Added option to disable the listing of child pages in parent pages
     * Added print stylesheet and button
@@ -15,7 +28,7 @@ Version 1.3
 	* Added wp_reset_query() call after every custom posts query
 	* Added Czech (cs_CZ) translation, by Ondřej Pašťalka
 	* Added option to export and import theme settings
-	* Added Hungarian (hu_HU) translation, by Major Gabez
+	* Added Hungarian (hu_HU) translation, by Major Gabor
 	* Added option to specify the slider transition speed
 	* Added 'graphene_after_slider' action hook
 	* Added message blocks shortcodes for 'warning', 'error', 'notice', and 'important'

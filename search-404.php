@@ -20,7 +20,7 @@
         <?php if (have_posts()) : ?>    
             <ul style="margin-left:20px;padding-left:0;">
             <?php while (have_posts()) : the_post(); ?>
-                <li>
+                <li class="clearfix">
                     <h3><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(esc_attr__('Permalink Link to %s', 'graphene'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h3>
                      <?php the_excerpt(); ?>
                 </li>

@@ -72,7 +72,12 @@ global $graphene_settings;
         <?php // Are there comments to navigate through? ?>
 		<?php if (get_comment_pages_count() > 1 && get_option('page_comments')) : ?>
         <div class="comment-nav clearfix">
-            <p><?php paginate_comments_links(); ?>&nbsp;</p>
+        	<?php if(function_exists('wp_commentnavi')) : ?>
+            	<?php wp_commentnavi(); ?>
+                <p class="commentnavi-view-all"><?php wp_commentnavi_all_comments_link(); ?></p>
+			<?php else : ?> 
+            	<p><?php paginate_comments_links(); ?>&nbsp;</p>
+            <?php endif; ?>
             <?php do_action('graphene_comments_pagination'); ?>
         </div>
         <?php endif; // Ends the comment navigation ?>

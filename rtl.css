@@ -161,8 +161,8 @@ a:hover {
 /*	top: 80px;
 	width: 852px; */
 }/*
-#header h1 a,
-#header h1 a:visited {
+.header_title a,
+.header_title a:visited {
 	text-decoration: none;
 }*/
 .header_desc {
@@ -246,7 +246,7 @@ a:hover {
 	left: auto;
 }*/
 #nav .menu li ul ul {
-	margin: -22px 175px 0 0;
+	margin: -26px 175px 0 0;
 }
 #nav .menu li:hover ul ul,
 #nav .menu li:hover ul ul ul,
@@ -299,7 +299,41 @@ a:hover {
 	padding: 2px 5px;
 	text-decoration: none;
 	width: 165px;
+}*/
+
+/* Arrows for multi-level menu items */
+#nav .menu > li.menu-item-ancestor > a,
+#nav .menu > li.menu-item-ancestor > a:visited {
+	padding-right: 5px;
+	padding-left: 20px;
+	background: url(images/sprite_master.png) -880px -206px transparent;
 }
+#nav .menu > li.menu-item-ancestor > a:hover,
+#nav .menu > li.menu-item-ancestor:hover > a,
+#nav .menu > li.menu-item-ancestor.sfhover > a,
+#nav .menu > li.current-menu-item > a,
+#nav .menu > li.current-menu-ancestor > a{
+	background-position: -880px -230px;
+}
+#nav .menu ul > li.menu-item-ancestor > a,
+#nav .menu ul > li.menu-item-ancestor > a:visited,
+#nav .menu ul > li.menu-item-ancestor > a:hover,
+#nav .menu ul > li.menu-item-ancestor:hover > a,
+#nav .menu ul > li.menu-item-ancestor.sfhover > a,
+#nav .menu ul > li.menu-item-ancestor.current-menu-item > a,
+#nav .menu ul > li.current-menu-ancestor > a {
+	padding-right: 5px;
+	padding-left: 20px;
+	width: 150px;
+	background: url(images/sprite_master.png) -880px -282px transparent !important;
+}
+#nav .sub-menu > li.menu-item-ancestor > a:hover,
+#nav .sub-menu > li.menu-item-ancestor:hover > a,
+#nav .sub-menu > li.menu-item-ancestor.sfhover > a{
+	background-color: #e0e0e0 !important;
+}
+
+/*
 #nav .menu li a:hover,
 #nav .menu li:hover a,
 #nav .menu li:hover a:visited,

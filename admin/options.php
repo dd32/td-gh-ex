@@ -33,11 +33,6 @@ function graphene_options(){
 		include('options-presets.php');
 	}
 	
-	/* Export the graphene theme options */
-	if (isset($_POST['graphene_export'])){
-		graphene_export_options();
-	}
-	
 	/* Import the graphene theme options */
 	if (isset($_POST['graphene_import'])) { 
 		graphene_import_form();
@@ -195,6 +190,7 @@ function graphene_options(){
                 </form> <br />
                 <p><strong><?php _e('Export', 'graphene'); ?></strong></p>                
                 <form action="" method="post">
+                	<?php wp_nonce_field('graphene-export', 'graphene-export'); ?>
                     <input type="hidden" name="graphene_export" value="true" />
                     <input type="submit" class="button" value="<?php _e('Export Theme options', 'graphene'); ?>" />
                 </form>              
@@ -546,7 +542,8 @@ function graphene_options_general() {
         		<h3 class="hndle"><?php _e('Top Bar Options', 'graphene'); ?></h3>
             </div>
             <div class="panel-wrap inside">
-                <table class="form-table">
+                <table class="form-table social-media-table">
+                	<tbody>
                 	<tr>
                         <th scope="row"><label><?php _e('Hide feed icon', 'graphene'); ?></label></th>
                         <td><input type="checkbox" name="graphene_settings[hide_feed_icon]"  <?php if ($graphene_settings['hide_feed_icon'] == true) echo 'checked="checked"' ?> value="true" /></td>                                    
@@ -571,6 +568,58 @@ function graphene_options_general() {
                             <input type="text" name="graphene_settings[facebook_url]" value="<?php echo $graphene_settings['facebook_url']; ?>" size="60" class="widefat code" /><br />
                             <span class="description"><?php _e('Enter the URL to your Facebook profile page.', 'graphene'); ?></span>
                         </td>
+                    </tr>
+                    
+                    <?php /* Loop through the registered social media */
+					$social_media = $graphene_settings['social_media'];
+					// disect_it($social_media);
+					if (!empty($social_media)) : 
+						foreach ($social_media as $slug => $social_medium) : ?>
+                            <tr class="<?php echo $slug.'-opt '; echo $slug.'-url'; ?> social-media-custom social-media-custom-name">
+                            	<?php /* translators: %s will be replaced by the social media service name. Example: LinkedIn URL */ ?>
+                                <th scope="row"><label><?php printf(__('%s URL', 'graphene'), $social_medium['name']); ?></label></th>
+                                <td><input type="text" name="graphene_settings[social_media][<?php echo $slug; ?>][url]" value="<?php echo $social_medium['url']; ?>" size="60" class="widefat code" /></td>
+                            </tr>
+                            <tr class="<?php echo $slug.'-opt '; echo $slug.'-icon'; ?> social-media-custom">
+                            	<?php /* translators: %s will be replaced by the social media service name. Example: LinkedIn icon URL */ ?>
+                                <th scope="row"><label><?php printf(__('%s icon URL', 'graphene'), $social_medium['name']); ?></label></th>
+                                <td><input type="text" name="graphene_settings[social_media][<?php echo $slug; ?>][icon]" value="<?php echo $social_medium['icon']; ?>" size="60" class="widefat code" />
+                                    <input type="hidden" name="graphene_settings[social_media][<?php echo $slug; ?>][name]" value="<?php echo $social_medium['name']; ?>" />
+                                    <span class="delete"><a href="#" id="<?php echo $slug.'-del'; ?>" class="social-media-del"><?php _e('Delete', 'graphene'); ?></a></span>
+                                </td>
+                            </tr>
+					<?php endforeach; endif; ?>
+                    
+                    <!--
+                    <div class="social-media">
+                    <tr>
+                        <th scope="row"><label><?php _e('Social Media name', 'graphene'); ?></label></th>
+                        <td>
+                            <input type="text" name="graphene_settings[social_media_new][1][name]" value="" size="60" class="widefat code" /><br />
+                            <span class="description"><?php _e('Name of the social media, e.g. LinkedIn, etc.', 'graphene'); ?></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label><?php _e('Social Media icon URL', 'graphene'); ?></label></th>
+                        <td>
+                            <input type="text" name="graphene_settings[social_media_new][1][icon]" value="" size="60" class="widefat code" /><br />
+                            <span class="description"><?php printf(__('URL to the social media icon. <strong>Note:</strong> the theme uses the %s iconset for the social media icons.', 'graphene'), '<a href="http://www.iconfinder.com/search/?q=iconset%3Asocialmediabookmark">Social Media Bookmark</a>'); ?></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label><?php _e('Social Media profile URL', 'graphene'); ?></label></th>
+                        <td>
+                            <input type="text" name="graphene_settings[social_media_new][1][url]" value="" size="60" class="widefat code" /><br />
+                            <span class="description"><?php _e('URL to your profile page for the social media.', 'graphene'); ?></span>
+                        </td>
+                    </tr>
+                    </div>
+                    -->
+                    </tbody>
+                </table>
+                <table class="form-table">
+                	<tr>
+                    	<td><a href="#" id="social-media-new"><?php _e('Add new social media icon', 'graphene'); ?></a></td>
                     </tr>
                 </table>
             </div>

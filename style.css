@@ -2,7 +2,7 @@
 Theme Name: Graphene
 Theme URI: http://www.khairul-syahir.com/wordpress-dev/graphene-theme
 Description: The Graphene theme for WordPress is a stylish, neat, and tight WordPress theme supporting configurable columns layout options and 4 widget areas, with the ability to determine the number of columns to display in the footer widget area. It includes a buckload of action hooks for greater customisability through child theme, and a jQuery slider for your featured posts. It has built-in Twitter widget, allows for customisable header and background through the WordPress admin, built-in AdSense placement and social sharing buttons, supports custom menu with drop-down navigation, and threaded comments of up to 10 levels deep! You can hide post parameters, show post author's gravatar, use different widgets for the front page than the rest of the website, and specify font styles for header and content texts. The codes are written so that you can easily override or add functionality to the theme by using your own child theme without altering the parent theme's code. Seriously, there's too many features for this theme to describe them all here! This theme has been tested and confirmed compatible with IE7 and above, Mozilla Firefox, Google Chrome, Opera, and Safari. The theme currently has been translated into 20 languages, and fully supports right-to-left languages. See the <a href="http://www.khairul-syahir.com/wordpress-dev/graphene-theme#changelog">theme's changelog</a>.
-Version: 1.3
+Version: 1.3.1
 Author: Syahir Hakim
 Author URI: http://www.khairul-syahir.com
 Tags: black, blue, white, one-column, two-columns, three-columns, right-sidebar, left-sidebar, fixed-width, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, rtl-language-support
@@ -249,7 +249,7 @@ a:hover {
 	left: auto;
 }
 #nav .menu li ul ul {
-	margin: -22px 0 0 175px;
+	margin: -26px 0 0 175px;
 }
 #nav .menu li:hover ul ul,
 #nav .menu li:hover ul ul ul,
@@ -281,6 +281,37 @@ a:hover {
 	padding: 0 6px;
 	text-decoration: none;
 }
+
+/* Arrows for multi-level menu items */
+#nav .menu > li.menu-item-ancestor > a,
+#nav .menu > li.menu-item-ancestor > a:visited {
+	padding-right: 20px;
+	background: url(images/sprite_master.png) right -206px transparent;
+}
+#nav .menu > li.menu-item-ancestor > a:hover,
+#nav .menu > li.menu-item-ancestor:hover > a,
+#nav .menu > li.menu-item-ancestor.sfhover > a,
+#nav .menu > li.current-menu-item > a,
+#nav .menu > li.current-menu-ancestor > a{
+	background-position: right -230px;
+}
+#nav .menu ul > li.menu-item-ancestor > a,
+#nav .menu ul > li.menu-item-ancestor > a:visited,
+#nav .menu ul > li.menu-item-ancestor > a:hover,
+#nav .menu ul > li.menu-item-ancestor:hover > a,
+#nav .menu ul > li.menu-item-ancestor.sfhover > a,
+#nav .menu ul > li.menu-item-ancestor.current-menu-item > a,
+#nav .menu ul > li.current-menu-ancestor > a {
+	padding-right: 20px;
+	width: 150px;
+	background: url(images/sprite_master.png) right -256px transparent !important;
+}
+#nav .sub-menu > li.menu-item-ancestor > a:hover,
+#nav .sub-menu > li.menu-item-ancestor:hover > a,
+#nav .sub-menu > li.menu-item-ancestor.sfhover > a{
+	background-color: #e0e0e0 !important;
+}
+
 #nav .menu ul {
 	border: 1px solid #a0a0a0;
 }
@@ -297,7 +328,7 @@ a:hover {
 	border-bottom: 1px solid #a0a0a0;
 	color: #000;
 	line-height: 16px;
-	padding: 2px 5px;
+	padding: 4px 5px;
 	text-decoration: none;
 	width: 165px;
 }
@@ -323,18 +354,27 @@ a:hover {
 #nav .menu li.current_page_parent a:visited {
 	color: #000;
 }
-#nav .menu li:hover,
-#nav .menu li.sfhover,
-#nav .menu li.current_page_item,
-#nav .menu li.current-menu-item,
-#nav .menu li.current_page_ancestor,
-#nav .menu li.current-category-ancestor,
-#nav .menu li.current-menu-parent,
-#nav .menu li.current-menu-ancestor,
-#nav .menu li.current_page_parent {
+#nav .menu > li:hover,
+#nav .menu > li.sfhover,
+#nav .menu > li.current_page_item,
+#nav .menu > li.current-menu-item,
+#nav .menu > li.current_page_ancestor,
+#nav .menu > li.current-category-ancestor,
+#nav .menu > li.current-menu-parent,
+#nav .menu > li.current-menu-ancestor,
+#nav .menu > li.current_page_parent {
 	background: url(images/sprite_h.png) left -66px repeat-x;
 }
-#nav .menu ul li a:hover {
+#nav .menu ul li a:hover,
+#nav .sub-menu > li:hover,
+#nav .sub-menu > li.sfhover,
+#nav .sub-menu > li.current_page_item,
+#nav .sub-menu > li.current-menu-item,
+#nav .sub-menu > li.current_page_ancestor,
+#nav .sub-menu > li.current-category-ancestor,
+#nav .sub-menu > li.current-menu-parent,
+#nav .sub-menu > li.current-menu-ancestor,
+#nav .sub-menu > li.current_page_parent{
 	background: #e0e0e0 !important;
 }
 #nav #secondary-menu.menu li a,
@@ -586,7 +626,8 @@ h1.page-title span {
 	display: none;
 }
 .block-button,
-.block-button:visited {
+.block-button:visited,
+.Button {
 	background: url(images/bg-block-button.png) left bottom repeat-x #1C5FA5;
 	background: -moz-linear-gradient(#2982C5, #1C5FA5);
 	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#2982C5), to(#1C5FA5));
@@ -849,7 +890,8 @@ h1.page-title span {
 .post-meta .post-author,
 .post-meta .edit-post,
 .post-meta .post-date-inline,
-.post-meta .print {
+.post-meta .print,
+.post-meta .email {
 	display: block;
 	float: right;
 	font: normal 11px tahoma;
@@ -858,8 +900,12 @@ h1.page-title span {
 }
 .post-meta .edit-post,
 .post-meta .post-date-inline,
-.post-meta .print {
+.post-meta .print,
+.post-meta .email {
 	margin-left: 5px;
+}
+.post-meta .email img{
+	vertical-align: bottom;
 }
 .post-meta .print span {
 	display: none;
@@ -872,7 +918,7 @@ h1.page-title span {
 	width: 16px;
 	height: 16px;
 	}
-.post-meta .post-date-inline {
+.post-meta .post-date-inline, .post-meta .email {
 	border-left: 1px solid #ccc;
 	padding-left: 5px;
 }
@@ -910,10 +956,13 @@ h1.page-title span {
 }
 .wp-caption {
 	background: #eee;
+	border: 1px solid #ddd;
 	margin: 0 auto;
 }
-.wp-caption img {
-	border: none !important;
+.entry-content .wp-caption img {
+	border: 1px solid #ccc;
+	max-width: 99%;
+	margin: 4px;
 }
 .wp-caption-text {
 	color: #5e5e5e !important;
@@ -1830,6 +1879,7 @@ h3.author-post-list {
 	width: 300px;
 }
 
+
 /* =Shortcode blocks
 -------------------------------------------------------------- */
 
@@ -1876,4 +1926,49 @@ h3.author-post-list {
 
 .printonly {
     display: none;
+}
+
+
+/* =Plugins
+-------------------------------------------------------------- */
+
+/* WP-Email */
+#wp-email-popup{
+	background: #fff;
+}
+#wp-email-popup p{
+	margin-top: 10px;
+}
+#wp-email-content img{
+	border: none;
+	margin: 0;
+}
+.Button{
+	float: none;
+	margin: 20px auto 10px auto;
+}
+.wp-email label {
+	padding-top: 4px;
+	height: 28px;
+}
+.wp-email .TextField,
+.wp-email .Forms {
+	border: 1px solid #e3e3e3;
+	color: #2c2b2b;
+	font: normal 12px arial;
+	padding: 4px 3px;
+	width: 250px;
+	height: 16px;
+}
+.wp-email #imageverify{
+	width: 50px;
+}
+.wp-email .Forms{
+	height: 100px;
+}
+
+
+/* WP-CommentNavi*/
+.commentnavi-view-all{
+	margin-top: 10px;
 }

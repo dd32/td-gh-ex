@@ -72,3 +72,16 @@ table.graphene-code-example th {
 	padding-right: 30px;
 	vertical-align: middle;
 }
+.form-table .delete a, .form-table .delete a:visited{
+	color: #BC0B0B;
+	text-decoration: none;
+}
+.form-table .delete a:hover{
+	text-decoration: underline;
+}
+tr.new-social-media, tr.social-media-custom{
+	background: #eee;
+}
+tr.new-social-media-name, tr.social-media-custom-name{
+	border-top: 1px solid #fff;
+}

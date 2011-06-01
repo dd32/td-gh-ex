@@ -13,6 +13,17 @@
 #nav .menu li a:visited {
 	color: #000;
 }
+#nav .menu > li.menu-item-ancestor > a,
+#nav .menu > li.menu-item-ancestor > a:visited {
+	background-position: right -230px;
+}
+#nav .menu > li.menu-item-ancestor > a:hover,
+#nav .menu > li.menu-item-ancestor:hover > a,
+#nav .menu > li.menu-item-ancestor.sfhover > a,
+#nav .menu > li.current-menu-item > a,
+#nav .menu > li.current-menu-ancestor > a{
+	background-position: right -206px;
+}
 #nav .menu li a:hover,
 #nav .menu li:hover a,
 #nav .menu li:hover a:visited,
@@ -31,7 +42,7 @@
 #nav .menu li.current-menu-parent a:visited,
 #nav .menu li.current-menu-ancestor a:visited,
 #nav .menu li.current_page_parent a:visited {
-	background: #000;
+	background-color: #000;
 	color: #dfedff;
 }
 #nav .menu li:hover,
@@ -61,7 +72,7 @@
 #nav .menu li.current-menu-item > a:visited,
 #nav .menu li.current-menu-parent > a:visited,
 #nav .menu li.current-menu-ancestor > a:visited {
-	background: #000;
+	background-color: #000;
 	color: #DFEDFF;
 }
 #nav .menu li.current_page_item a li a,

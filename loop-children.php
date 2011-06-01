@@ -58,10 +58,10 @@ if ( ! $graphene_settings['hide_child_pages'] ) :
         <div class="post child-page page">
             <div class="entry">
                     <div class="entry-content clearfix">
-                                    <?php /* The post thumbnail */
+                    <?php /* The post thumbnail */
                     if (has_post_thumbnail($page->ID)) {
                         echo '<div class="excerpt-thumb">';
-                        the_post_thumbnail(apply_filters('graphene_excerpt_thumbnail_size', 'thumbnail'));
+                        echo get_the_post_thumbnail($page->ID, apply_filters('graphene_excerpt_thumbnail_size', 'thumbnail'));
                         echo '</div>';
                     } else {
                         echo graphene_get_post_image($page->ID, apply_filters('graphene_excerpt_thumbnail_size', 'thumbnail'), 'excerpt');	

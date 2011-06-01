@@ -34,7 +34,7 @@ global $graphene_settings;
 <?php do_action('graphene_before_footer'); ?>
 
 <div id="footer">
-
+    
     <?php if (!$graphene_settings['hide_copyright']) : ?>
         <div id="copyright" <?php if (!$graphene_settings['show_cc'] && !is_rtl()) {
         echo 'style="background:none;padding-left:20px;"';
@@ -70,6 +70,8 @@ global $graphene_settings;
 
 	<?php do_action('graphene_developer'); ?>
     </div>
+    
+    <?php do_action('graphene_footer'); ?>
 </div><!-- #footer -->
 
 <?php do_action('graphene_after_footer'); ?>

@@ -19,13 +19,29 @@ get_header(); ?>
 	
 	/* Check if the user selects specific category for the front page */
 	if (is_home() && $graphene_settings['frontpage_posts_cats']) {
-		global $wp_query;
+		global $wp_query, $query_string;
 		$cats = implode(',', $graphene_settings['frontpage_posts_cats']);
-		$args = wp_parse_args(array('cat' => $cats, 'paged' => get_query_var('paged')), $query_string);
-		// $args = $query_string.'&paged='.get_query_var('paged').'&cat='.$cats;
+		
+		// Display the sticky posts first
+		$stickies = get_option('sticky_posts');
+		if (get_query_var('paged') < 2 && ($stickies)) {
+			$args = wp_parse_args(array('cat' => $cats, 'post__in' => $stickies), $query_string);
+			query_posts(apply_filters('graphene_frontpage_posts_cats_sticky_args', $args));
+			$wp_query->is_home = true;
+			if (have_posts()){
+				get_template_part('loop', 'index');
+			}
+			
+			wp_reset_query();
+		}
+		
+		// Display the rest of the posts from the category
+		$args = wp_parse_args(array('cat' => $cats, 'paged' => get_query_var('paged'), 'post__not_in' => $stickies), $query_string);
 		query_posts(apply_filters('graphene_frontpage_posts_cats_args', $args));
 		$wp_query->is_home = true;
 	}
+	
+	do_action('graphene_index_pre_loop');
 	
     /* Run the loop to output the posts.
      * If you want to overload this in a child theme then include a file

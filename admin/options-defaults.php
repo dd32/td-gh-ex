@@ -37,6 +37,7 @@ $graphene_defaults = array(
 	'hide_feed_icon' => false,
 	'twitter_url' => '',
 	'facebook_url' => '',
+	'social_media' => array(),
 	
 	/* Adsense Options */
 	'show_adsense' => false,

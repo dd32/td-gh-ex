@@ -38,6 +38,13 @@
  * @since Graphene 1.0
  */
  
+ 
+/**
+ * Before we do anything, let's get the mobile extension's init file if it exists
+*/
+$mobile_path = dirname(dirname(__FILE__)).'/graphene-mobile/includes/theme-plugin.php';
+if (file_exists($mobile_path)) {include($mobile_path);}
+
  /**
  * Retrieve the theme's user settings and default settings. Individual files can access
  * these setting via a global variable call, so database query is only
@@ -333,13 +340,37 @@ function graphene_custom_style(){
 		
 		<?php /* Set the width of the nav menu dropdown menu item width if specified */ ?>
 		<?php if ($graphene_settings['navmenu_child_width']) : ?>
-		.menu li li, .menu li ul{width:<?php echo $graphene_settings['navmenu_child_width']; ?>px;}
+		#nav .menu li ul, #nav .menu li li{width:<?php echo $graphene_settings['navmenu_child_width']+10; ?>px;}
+		#nav .menu ul li a, #nav .menu ul li a:visited{width:<?php echo $graphene_settings['navmenu_child_width']; ?>px;}
 			<?php if (!is_rtl()) : ?>
-			.menu li ul ul{margin-left:<?php echo $graphene_settings['navmenu_child_width']; ?>px;}
+			#nav .menu li ul ul{margin-left:<?php echo $graphene_settings['navmenu_child_width']+10; ?>px;}
 			<?php else : ?>
-			.menu li ul ul{margin-left:0;margin-right:<?php echo $graphene_settings['navmenu_child_width']; ?>px;}
+			#nav .menu li ul ul{margin-left:0;margin-right:<?php echo $graphene_settings['navmenu_child_width']+10; ?>px;}
 			<?php endif; ?>
 		.menu ul li a, .menu ul li a:visited{width:<?php echo ($graphene_settings['navmenu_child_width']-10); ?>px;}
+		#nav .menu ul > li.menu-item-ancestor > a,
+		#nav .menu ul > li.menu-item-ancestor > a:visited,
+		#nav .menu ul > li.menu-item-ancestor > a:hover,
+		#nav .menu ul > li.menu-item-ancestor:hover > a,
+		#nav .menu ul > li.menu-item-ancestor.sfhover > a,
+		#nav .menu ul > li.menu-item-ancestor.current-menu-item > a,
+		#nav .menu ul > li.current-menu-ancestor > a{
+			width:<?php echo $graphene_settings['navmenu_child_width']-15; ?>px;
+		}
+		<?php endif; ?>
+		
+		<?php if (is_rtl() && $graphene_settings['light_header']) : ?>
+		#nav .menu > li.menu-item-ancestor > a,
+		#nav .menu > li.menu-item-ancestor > a:visited {
+			background-position: -880px -230px;
+		}
+		#nav .menu > li.menu-item-ancestor > a:hover,
+		#nav .menu > li.menu-item-ancestor:hover > a,
+		#nav .menu > li.menu-item-ancestor.sfhover > a,
+		#nav .menu > li.current-menu-item > a,
+		#nav .menu > li.current-menu-ancestor > a{
+			background-position: -880px -206px;
+		}
 		<?php endif; ?>
 		
 		<?php /* Header title text style */ ?>
@@ -351,7 +382,7 @@ function graphene_custom_style(){
 			$font_style .= ($graphene_settings['header_title_font_weight']) ? 'font-weight:'.$graphene_settings['header_title_font_weight'].';' : '';
 			$font_style .= ($graphene_settings['header_title_font_style']) ? 'font-style:'.$graphene_settings['header_title_font_style'].';' : '';
 		?>
-		#header h1{<?php echo $font_style; ?>}
+		.header_title{<?php echo $font_style; ?>}
 		<?php endif; ?>
 		
 		<?php /* Header description text style */ ?>
@@ -363,7 +394,7 @@ function graphene_custom_style(){
 			$font_style .= ($graphene_settings['header_desc_font_weight']) ? 'font-weight:'.$graphene_settings['header_desc_font_weight'].';' : '';
 			$font_style .= ($graphene_settings['header_desc_font_style']) ? 'font-style:'.$graphene_settings['header_desc_font_style'].';' : '';
 		?>
-		#header h2{<?php echo $font_style; ?>}
+		.header_desc{<?php echo $font_style; ?>}
 		<?php endif; ?>
 		
 		<?php /* Content text style */ ?>
@@ -511,7 +542,7 @@ if (!function_exists('graphene_comment')) :
                         </h5>
 						<div class="comment-meta">
 							<p class="commentmetadata">
-                            	<?php /* translators: %1$s is the comment date, %2#s is the comment time */ ?>
+                            	<?php /* translators: %1$s is the comment date, %2$s is the comment time */ ?>
 								<?php printf(__('%1$s at %2$s', 'graphene'), get_comment_date(), get_comment_time()); ?>
 								<?php echo '(UTC '.get_option('gmt_offset').')'; ?>
 								<?php edit_comment_link(__('Edit comment','graphene'),' | ',''); ?>
@@ -553,12 +584,13 @@ endif;
  * Function to display ads from adsense
 */
 $adsense_adcount = 1;
+$ad_limit = apply_filters('graphene_adsense_ads_limit', 3);
 if (!function_exists('graphene_adsense')) :
 	function graphene_adsense(){
-		global $adsense_adcount, $graphene_settings;
+		global $adsense_adcount, $ad_limit, $graphene_settings;
 		
-		if ($graphene_settings['show_adsense'] && $adsense_adcount <= 3) : ?>
-            <div class="post adsense_single">
+		if ($graphene_settings['show_adsense'] && $adsense_adcount <= $ad_limit) : ?>
+            <div class="post adsense_single" id="adsense-ad-<?php echo $adsense_adcount; ?>">
                 <?php echo stripslashes($graphene_settings['adsense_code']); ?>
             </div>
             <?php do_action('graphene_show_adsense'); ?>
@@ -569,6 +601,7 @@ if (!function_exists('graphene_adsense')) :
 		do_action('graphene_adsense');
 	}
 endif;
+
 
 /**
  * Function to display the AddThis social sharing button
@@ -852,7 +885,7 @@ function graphene_options_init() {
 	
 	do_action('graphene_options_init');
 }
-add_action('admin_menu', 'graphene_options_init');
+add_action('admin_menu', 'graphene_options_init', 8);
 
 // Includes the files where our theme options are defined
 include('admin/options.php');
@@ -996,19 +1029,22 @@ if ($graphene_settings['show_excerpt_more']) {
  * Generates the posts navigation links
 */
 if (!function_exists('graphene_posts_nav')) :
-	function graphene_posts_nav(){ ?>
-        <div class="post-nav clearfix">
-        <?php if (function_exists('wp_pagenavi')) : wp_pagenavi(); else : ?>
-            <?php if (!is_search()) : ?>
-                <p id="previous"><?php next_posts_link(__('Older posts &laquo;', 'graphene')) ?></p>
-                <p id="next-post"><?php previous_posts_link(__('&raquo; Newer posts', 'graphene')) ?></p>
-            <?php else : ?>
-                <p id="next-post"><?php next_posts_link(__('Next page &raquo;', 'graphene')) ?></p>
-                <p id="previous"><?php previous_posts_link(__('&laquo; Previous page', 'graphene')) ?></p>
-            <?php endif; ?>
-        <?php endif; do_action('graphene_posts_nav'); ?>
-        </div>
+	function graphene_posts_nav(){ 
+		$query = $GLOBALS['wp_query'];
+		if ($query->max_num_pages > 1) : ?>
+            <div class="post-nav clearfix">
+            <?php if (function_exists('wp_pagenavi')) : wp_pagenavi(); else : ?>
+                <?php if (!is_search()) : ?>
+                    <p id="previous"><?php next_posts_link(__('Older posts &laquo;', 'graphene')) ?></p>
+                    <p id="next-post"><?php previous_posts_link(__('&raquo; Newer posts', 'graphene')) ?></p>
+                <?php else : ?>
+                    <p id="next-post"><?php next_posts_link(__('Next page &raquo;', 'graphene')) ?></p>
+                    <p id="previous"><?php previous_posts_link(__('&laquo; Previous page', 'graphene')) ?></p>
+                <?php endif; ?>
+            <?php endif; do_action('graphene_posts_nav'); ?>
+            </div>
 	<?php
+		endif;
 	}
 endif;
 
@@ -1048,8 +1084,8 @@ endif;
 function graphene_scrollable_js() {
 	wp_enqueue_script('graphene-jquery-tools', 'http://cdn.jquerytools.org/1.2.5/all/jquery.tools.min.js', array('jquery'), '', true);
 }
-// Print both the js and the script
-add_action('template_redirect', 'graphene_scrollable_js');
+// Print the script
+add_action('init', 'graphene_scrollable_js');
 
 
 
@@ -1126,6 +1162,8 @@ function graphene_slider(){
 		}
 
 		$sliderposts = get_posts(apply_filters('graphene_slider_args', $args));
+		
+		$sliderposts = apply_filters('graphene_slider_posts', $sliderposts);
             
         /* Display each post in the slider */	
         foreach ($sliderposts as $post){
@@ -1151,7 +1189,7 @@ function graphene_slider(){
 			}
 			?>
             
-            <div class="slider_post clearfix" <?php echo $style; ?>>
+            <div class="slider_post clearfix" id="slider-post-<?php echo $post->ID; ?>" <?php echo $style; ?>>
                 <?php do_action('graphene_before_sliderpost'); ?>
                 
                 <?php if ($graphene_settings['slider_display_style'] == 'thumbnail-excerpt') : ?>
@@ -1505,6 +1543,50 @@ function graphene_options_js(){ ?>
             $(this).next().toggle(400);
             return false;
         }).next().hide();
+		
+		// New social media icon fields
+		count = 0;
+		$('#social-media-new').click(function(){
+			$('.social-media-table tbody').append('\
+					<tr class="new-social-media new-social-media-name">\
+                        <th scope="row"><label><?php _e('Social Media name', 'graphene'); ?></label></th>\
+                        <td>\
+                            <input type="text" name="graphene_settings[social_media_new]['+count+'][name]" value="" size="60" class="widefat code" /><br />\
+                            <span class="description"><?php _e('Name of the social media, e.g. LinkedIn, etc.', 'graphene'); ?></span>\
+                        </td>\
+                    </tr>\
+					<tr class="new-social-media">\
+                        <th scope="row"><label><?php _e('Social Media profile URL', 'graphene'); ?></label></th>\
+                        <td>\
+                            <input type="text" name="graphene_settings[social_media_new]['+count+'][url]" value="" size="60" class="widefat code" /><br />\
+                            <span class="description"><?php _e('URL to your page for the social media.', 'graphene'); ?></span>\
+                        </td>\
+                    </tr>\
+                    <tr class="new-social-media">\
+                        <th scope="row"><label><?php _e('Social Media icon URL', 'graphene'); ?></label></th>\
+                        <td>\
+                            <input type="text" name="graphene_settings[social_media_new]['+count+'][icon]" value="" size="60" class="widefat code" /><br />\
+                            <span class="description"><?php printf(__('URL to the social media icon. <strong>Note:</strong> the theme uses the %s iconset for the social media icons.', 'graphene'), '<a href="http://www.iconfinder.com/search/?q=iconset%3Asocialmediabookmark">Social Media Bookmark</a>'); ?></span>\
+                        </td>\
+                    </tr>\
+			');
+			count++;
+			return false;
+		});
+		
+		// Delete social media
+		$('.social-media-del').click(function(){
+			
+			social_media = $(this).attr('id');
+			social_media = social_media.replace('del', 'opt');
+			social_media = '.'+social_media;
+			$(social_media).css('background-color', '#A61C09');
+			$(social_media).toggle(300).delay(300).queue(function(){$(this).remove();});
+			// $(social_media).remove();
+			
+			return false;	
+		});
+		
     });
 	//]]>
 	</script>
@@ -1549,6 +1631,18 @@ function graphene_post_class($classes){
     return $classes;
 }
 add_filter('post_class', 'graphene_post_class');
+
+/**
+ * Add the .sticky post class to sticky posts in the home page if the "Front page posts 
+ * categories" option is being used
+*/
+function graphene_sticky_post_class($classes){
+	if (is_sticky() && !in_array('sticky', $classes) && is_home()){
+		$classes[] = 'sticky';	
+	}
+	return $classes;
+}
+add_filter('post_class', 'graphene_sticky_post_class');
 
 
 function graphene_column_mode(){
@@ -1797,27 +1891,46 @@ function graphene_export_options(){
     global $graphene_settings;
     
     ob_clean();
+	
+	/* Check authorisation */
+	$authorised = true;
+	// Check nonce
+	if (!wp_verify_nonce($_POST['graphene-export'], 'graphene-export')) { 
+		$authorised = false;
+	}
+	// Check permissions
+	if (!current_user_can('edit_theme_options')){
+		$authorised = false;
+	}
+	if ($authorised) {
     
-    $name = 'graphene_options.txt';
-    $data = json_encode($graphene_settings);
-    $size = strlen($data);
-
-    header('Content-Type: text/plain');
-    header('Content-Disposition: attachment; filename="'.$name.'"');
-    header("Content-Transfer-Encoding: binary");
-    header('Accept-Ranges: bytes');
-
-    /* The three lines below basically make the download non-cacheable */
-    header("Cache-control: private");
-    header('Pragma: private');
-    header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
-
-    header("Content-Length: ".$size);
-    print($data);    
+		$name = 'graphene_options.txt';
+		$data = json_encode($graphene_settings);
+		$size = strlen($data);
+	
+		header('Content-Type: text/plain');
+		header('Content-Disposition: attachment; filename="'.$name.'"');
+		header("Content-Transfer-Encoding: binary");
+		header('Accept-Ranges: bytes');
+	
+		/* The three lines below basically make the download non-cacheable */
+		header("Cache-control: private");
+		header('Pragma: private');
+		header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
+	
+		header("Content-Length: ".$size);
+		print($data);
+	
+	} else {
+		wp_die(__('ERROR: You are not authorised to perform that operation', 'graphene'));
+	}
 
     die();   
 }
 
+if (isset($_POST['graphene_export'])){
+	add_action('init', 'graphene_export_options');
+}
 
 /**
  * Shortcode handlers
@@ -2064,8 +2177,15 @@ function graphene_top_bar_social(){
     	<a href="<?php echo $graphene_settings['twitter_url']; ?>" title="<?php printf(esc_attr__('Follow %s on Twitter', 'graphene'), get_bloginfo('name')); ?>" class="twitter_link"><span><?php printf(esc_attr__('Follow %s on Twitter', 'graphene'), get_bloginfo('name')); ?></span></a>
     <?php endif; 
 	if ($graphene_settings['facebook_url']) : ?>
-    	<a href="<?php echo $graphene_settings['facebook_url']; ?>" title="<?php printf(esc_attr__("Visit %s's Facebook page", 'graphene'), get_bloginfo('name')); ?>" class="facebook_link"><span><?php esc_attr_e('Visit Facebook page', 'graphene'); ?></span></a>
+    	<a href="<?php echo $graphene_settings['facebook_url']; ?>" title="<?php printf(esc_attr__("Visit %s's Facebook page", 'graphene'), get_bloginfo('name')); ?>" class="facebook_link"><span><?php printf(esc_attr__("Visit %s's Facebook page", 'graphene'), get_bloginfo('name')); ?></span></a>
     <?php endif;
+	
+	/* Loop through the registered custom social modia */
+	$social_media = $graphene_settings['social_media'];
+	foreach ($social_media as $slug => $social_medium) : if (!empty($slug) && !empty($social_medium['url'])) : ?>
+    	<?php /* translators: %1$s is the website's name, %2$s is the social media name */ ?>
+		<a href="<?php echo $social_medium['url']; ?>" title="<?php printf(esc_attr__('Visit %1$s\'s %2$s page', 'graphene'), get_bloginfo('name'), $social_medium['name']); ?>" class="<?php echo $slug?>-link" style="background-image:url(<?php echo $social_medium['icon']; ?>)"><span><?php printf(esc_attr__('Visit %1$s\'s %2$s page', 'graphene'), get_bloginfo('name'), $social_medium['name']); ?></span></a>
+    <?php endif; endforeach;
 }
 add_action('graphene_feed_icon', 'graphene_top_bar_social');
 ?>

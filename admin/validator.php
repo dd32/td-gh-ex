@@ -28,6 +28,21 @@ function graphene_settings_validator($input){
             $input['print_css'] = (isset($input['print_css'])) ? true : false;
             $input['print_button'] = (isset($input['print_button'])) ? true : false;
 			
+			/* Social media */
+			$social_media_new = (!empty($input['social_media_new'])) ? $input['social_media_new'] : array();
+			if (!empty($social_media_new)){
+				$i = 0;
+				foreach ($social_media_new as $social_medium){
+					if (!empty($social_medium['name'])){
+						$slug = sanitize_title($social_medium['name'], $i);
+						$input['social_media'][$slug]['name'] = $social_medium['name'];
+						$input['social_media'][$slug]['icon'] = $social_medium['icon'];
+						$input['social_media'][$slug]['url'] = $social_medium['url'];
+						$i++;
+					}
+				}
+			}
+			
 			/* Homepage panes */
 			$input['disable_homepage_panes'] = (isset($input['disable_homepage_panes'])) ? true : false;
 			// Remove space

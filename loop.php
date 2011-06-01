@@ -64,6 +64,10 @@
 						<p class="print"><a href="javascript:print();" title="<?php esc_attr_e('Print this page', 'graphene'); ?>"><span><?php _e('Print this page', 'graphene'); ?></span></a></p>
 					<?php endif; ?>
                     
+                    <?php /* Add an email post icon if the WP-Email plugin is installed and activated */
+					if(function_exists('wp_email') && is_singular()) {echo '<p class="email">'; email_link(); echo '</p>';}
+					?>
+                    
                     <?php /* Edit post link, if user is logged in */ ?>
                     <?php if (is_user_logged_in()) : ?>
                     <p class="edit-post">
@@ -73,7 +77,7 @@
                     
                     <?php /* Inline post date */
                     	if ($graphene_settings['post_date_display'] == 'text' && !is_page()){
-                            echo '<p class="post-date-inline">';
+                            echo '<p class="post-date-inline updated">';
                             the_time(get_option('date_format'));
                             echo '</p>';
                         }
