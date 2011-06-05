@@ -29,7 +29,7 @@ get_header(); ?>
                     <?php   // display subcategories mod start
                          if (is_category()) {
                          $this_category = get_category($cat);
-                           if (get_term_children($this_category->cat_ID) != "") { ?>
+                           if (get_term_children($this_category->cat_ID, 'category') != "") { ?>
                                <h1 class="page-title"><?php
                                $cats = wp_list_categories('orderby=name&show_count=0&echo=0&style=none&title_li=&use_desc_for_title=1&child_of='.$this_category->cat_ID);
                                printf( __( 'Subcategories: %s', 'mantra' ), '<span>' . str_replace("<br />","&nbsp;",$cats) . '</span>' );
