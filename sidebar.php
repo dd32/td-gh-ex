@@ -4,7 +4,7 @@
 
 				<li id="sidebar-menu" class="widget-container">
 					<h3 class="widget-title">Menu</h3>
-						<?php wp_nav_menu(); ?>
+						<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
 				</li>
 
 			<?php if ( ! dynamic_sidebar( 'primary-widget-area' ) ) : ?>

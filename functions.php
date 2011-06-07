@@ -3,12 +3,10 @@
 /** Tell WordPress to run sutra_setup() when the 'after_setup_theme' hook is run. */
 add_action( 'after_setup_theme', 'sutra_setup' );
 
-if ( ! function_exists( 'sutra_setup' ) ):
-function sutra_setup() {
 
+function sutra_setup() {
 	// This theme styles the visual editor with editor-style.css to match the theme style.
 	add_editor_style();
-	paginate_links( $args );
 	
 	if ( ! isset( $content_width ) ) $content_width = 1100;
 
@@ -17,7 +15,7 @@ function sutra_setup() {
 
 	// Add default posts and comments RSS feed links to head
 	add_theme_support( 'automatic-feed-links' );
-
+	
 	// Make theme available for translation
 	// Translations can be filed in the /languages/ directory
 	load_theme_textdomain( 'sutra', TEMPLATEPATH . '/languages' );
@@ -31,8 +29,10 @@ function sutra_setup() {
 	register_nav_menus( array(
 		'primary' => __( 'Primary Navigation', 'sutra' ),
 	) );
+	
+	// This theme allows users to set a custom background
+	add_custom_background();
 }
-endif;
 
 /* 
 Add first & last class to navigation 
@@ -45,6 +45,14 @@ function add_markup_pages($output) {
 }
 add_filter('wp_nav_menu', 'add_markup_pages');
 
+/*
+Add Google Font
+*/ 
+add_action('wp_head', 'my_google_webfont', 5); // hook my_google_webfont() into wp_head()
+function my_google_webfont(){
+wp_register_style('OFL+Sorts+Mill+Goudy+TT', 'http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT', array(), false, 'screen'); // register the stylesheet
+wp_enqueue_style('OFL+Sorts+Mill+Goudy+TT'); // print the stylesheet into page
+}
 
 
 /*
@@ -54,8 +62,6 @@ Various Post Thumbnail Sizes
 add_image_size( 'large', 640, 640, true ); // Large thumbnails
 add_image_size( 'medium', 300, 300, true ); // Medium thumbnails
 add_image_size( 'small', 150, 150, true ); // Small thumbnails
-
-
 
 /*
 Register widgetized areas, including two sidebars and four widget-ready columns in the footer.
@@ -72,25 +78,9 @@ function sutra_widgets_init() {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
-
-
 }
 /** Register sidebars by running sutra_widgets_init() on the widgets_init hook. */
 add_action( 'widgets_init', 'sutra_widgets_init' );
-
-
-/* 
-Remove junk from head - Thanks to digwp.com
-*/
-remove_action('wp_head', 'rsd_link');
-remove_action('wp_head', 'wp_generator');
-remove_action('wp_head', 'feed_links', 2);
-remove_action('wp_head', 'index_rel_link');
-remove_action('wp_head', 'wlwmanifest_link');
-remove_action('wp_head', 'feed_links_extra', 3);
-remove_action('wp_head', 'start_post_rel_link', 10, 0);
-remove_action('wp_head', 'parent_post_rel_link', 10, 0);
-remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
 
 /* 
 category id in body and post class - Thanks to digwp.com
@@ -103,20 +93,6 @@ function category_id_class($classes) {
 }
 add_filter('post_class', 'category_id_class');
 add_filter('body_class', 'category_id_class');
-
-/*
-remove version info from head and feeds // security measure "security through obscurity" - Thanks to digwp.com
-*/ 
-function complete_version_removal() {
-	return '';
-}
-add_filter('the_generator', 'complete_version_removal');
-
-
-/* 
-enable html markup in user profiles - Thanks to digwp.com
-*/
-remove_filter('pre_user_description', 'wp_filter_kses');
 
 
 /*
@@ -171,7 +147,7 @@ function sutra_remove_gallery_css( $css ) {
 add_filter( 'gallery_style', 'sutra_remove_gallery_css' );
 
 
-if ( ! function_exists( 'sutra_comment' ) ) :
+
 /*
 Template for comments and pingbacks.
 Used as a callback by wp_list_comments() for displaying the comments.
@@ -217,7 +193,6 @@ function sutra_comment( $comment, $args, $depth ) {
 			break;
 	endswitch;
 }
-endif;
 
 
 /*
@@ -229,11 +204,9 @@ function sutra_remove_recent_comments_style() {
 }
 add_action( 'widgets_init', 'sutra_remove_recent_comments_style' );
 
-if ( ! function_exists( 'sutra_posted_on' ) ) :
-/**
- * Prints HTML with meta information for the current post—date/time and author.
- *
- * @since Twenty Ten 1.0
+
+/*
+Prints HTML with meta information for the current post—date/time and author.
  */
 function sutra_posted_on() {
 	printf( __( '<span class="%1$s">Posted on</span> %2$s <span class="meta-sep">by</span> %3$s', 'sutra' ),
@@ -250,14 +223,8 @@ function sutra_posted_on() {
 		)
 	);
 }
-endif;
 
-if ( ! function_exists( 'sutra_posted_in' ) ) :
-/**
- * Prints HTML with meta information for the current post (category, tags and permalink).
- *
- * @since Twenty Ten 1.0
- */
+
 function sutra_posted_in() {
 	// Retrieves tag list of current post, separated by commas.
 	$tag_list = get_the_tag_list( '', ', ' );
@@ -277,80 +244,6 @@ function sutra_posted_in() {
 		the_title_attribute( 'echo=0' )
 	);
 }
-endif;
-
-/* 
-	Numeric Pagination - thanks to Darren Hoyt : http://www.darrenhoyt.com/ 
-	replaces paginate_links(
-	
-*/
-function numeric_pagination ($pageCount = 9, $query = null) {
-
-	if ($query == null) {
-		global $wp_query;
-		$query = $wp_query;
-	}
-	
-	if ($query->max_num_pages <= 1) {
-		return;
-	}
-
-	$pageStart = 1;
-	$paged = $query->query_vars['paged'];
-	
-	// set current page if on the first page
-	if ($paged == null) {
-		$paged = 1;
-	}
-	
-	// work out if page start is halfway through the current visible pages and if so move it accordingly
-	if ($paged > floor($pageCount / 2)) {
-		$pageStart = $paged	- floor($pageCount / 2);
-	}
-
-	if ($pageStart < 1) {
-		$pageStart = 1;
-	}
-
-	// make sure page start is 
-	if ($pageStart + $pageCount > $query->max_num_pages) {
-		$pageCount = $query->max_num_pages - $pageStart;
-	}
-	
-?>
-	<div id="pagination">
-<?php
-	if ($paged != 1) {
-?>
-	<a href="<?php echo get_pagenum_link(1); ?>" class="numbered page-number-first"><span>&lsaquo; <?php _e('Newest', 'sutra'); ?></span></a>
-<?php
-	}
-	// first page is not visible...
-	if ($pageStart > 1) {
-		//echo 'previous';
-	}
-	for ($p = $pageStart; $p <= $pageStart + $pageCount; $p ++) {
-		if ($p == $paged) {
-?>
-		<span class="numbered page-number-<?php echo $p; ?> current-numeric-page"><?php echo $p; ?></span>
-<?php } else { ?>
-		<a href="<?php echo get_pagenum_link($p); ?>" class="numbered page-number-<?php echo $p; ?>"><span><?php echo $p; ?></span></a>
-
-<?php
-		}
-	}
-	// last page is not visible
-	if ($pageStart + $pageCount < $query->max_num_pages) {
-		//echo "last";
-	}
-	if ($paged != $query->max_num_pages) {
-?>
-		<a href="<?php echo get_pagenum_link($query->max_num_pages); ?>" class="numbered page-number-last"><span><?php _e('Oldest', 'sutra'); ?> &rsaquo;</span></a>
-<?php } ?>
-	
-	</div>
-
-<?php } 
 
 
 ?>
