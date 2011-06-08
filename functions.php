@@ -38,18 +38,18 @@ function sutra_setup() {
 Add first & last class to navigation 
 */
 
-function add_markup_pages($output) {
+function sutra_add_markup_pages($output) {
     $output= preg_replace('/menu-item/', 'first-menu-item menu-item', $output, 1);
 	$output=substr_replace($output, "last-menu-item menu-item", strripos($output, "menu-item"), strlen("menu-item"));
     return $output;
 }
-add_filter('wp_nav_menu', 'add_markup_pages');
+add_filter('wp_nav_menu', 'sutra_add_markup_pages');
 
 /*
 Add Google Font
 */ 
-add_action('wp_head', 'my_google_webfont', 5); // hook my_google_webfont() into wp_head()
-function my_google_webfont(){
+add_action('wp_head', 'sutra_my_google_webfont', 5); // hook my_google_webfont() into wp_head()
+function sutra_my_google_webfont(){
 wp_register_style('OFL+Sorts+Mill+Goudy+TT', 'http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT', array(), false, 'screen'); // register the stylesheet
 wp_enqueue_style('OFL+Sorts+Mill+Goudy+TT'); // print the stylesheet into page
 }
@@ -83,16 +83,16 @@ function sutra_widgets_init() {
 add_action( 'widgets_init', 'sutra_widgets_init' );
 
 /* 
-category id in body and post class - Thanks to digwp.com
+category id in body and post class 
 */
-function category_id_class($classes) {
+function sutra_category_id_class($classes) {
 	global $post;
-	foreach((get_the_category($post->ID)) as $category)
-		$classes [] = 'cat-' . $category->cat_ID . '-id';
-		return $classes;
+	if( isset( $post ) ):
+		foreach((get_the_category($post->ID)) as $category)
+			$classes [] = 'cat-' . $category->cat_ID . '-id';
+			return $classes;
+	endif;
 }
-add_filter('post_class', 'category_id_class');
-add_filter('body_class', 'category_id_class');
 
 
 /*
@@ -245,5 +245,29 @@ function sutra_posted_in() {
 	);
 }
 
+/*
+Pagination 
+*/
+function sutra_navigation(){
+	global $wp_query, $wp_rewrite;
+	$wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;
+	
+	$pagination = array(
+		'base' => @add_query_arg('page','%#%'),
+		'format' => '',
+		'total' => $wp_query->max_num_pages,
+		'current' => $current,
+		'show_all' => true,
+		'type' => 'plain'
+		);
+	
+	if( $wp_rewrite->using_permalinks() )
+		$pagination['base'] = user_trailingslashit( trailingslashit( remove_query_arg( 's', get_pagenum_link( 1 ) ) ) . 'page/%#%/', 'paged' );
+	
+	if( !empty($wp_query->query_vars['s']) )
+		$pagination['add_args'] = array( 's' => get_query_var( 's' ) );
+	
+	echo paginate_links( $pagination );
+}
 
 ?>
