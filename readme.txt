@@ -1,4 +1,4 @@
-=== Sutra 1.1.1 ===
+=== Sutra 1.1.2 ===
 Contributors:  maikunari
 Donate link:  http://maikunari.com
 Tags: two-columns, light, featured-images, fixed-width, custom-menu
@@ -71,6 +71,7 @@ Internet Explorer 7,8,9
 
 === Release Notes ===
 
+Versino 1.1.2 - Final fix for Codex Approval
 Version 1.1.1 - Updates to functions & search fix.
 Version 1.1 - Replace Pagination code
 Version 1.0 - Initial Release
