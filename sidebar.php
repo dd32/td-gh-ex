@@ -7,21 +7,16 @@
 </div>
 
 <?php get_search_form(); ?>
- 
-<br />
+ <br />
 
 <a href="<?php bloginfo('rss2_url'); ?>" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="XML, RSS"  style="vertical-align:middle;border:0;" /> Subscribe Feed (RSS)</a>
-
- 
-<br />
-<br />
- 
- 
+ <br /><br />
+  
 <!-- Widgetized sidebar 1 --> 
 <ul>
   <li>
-  <?php if ( !function_exists('dynamic_sidebar') 
-        || !dynamic_sidebar('sidebar1') ) : ?>
+ <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+ <?php dynamic_sidebar( 'sidebar-1' ); ?>
 <?php endif; ?> 
   </li>
 </ul>
@@ -31,13 +26,10 @@
 <?php wp_list_pages('title_li=<h4>Pages</h4>' ); ?>
 </ul>
 
-
 <!-- Categories --> 
 <ul>
      <?php wp_list_categories('show_count=0&title_li=<h4>Categories</h4>'); ?>
 </ul>
-
- 
 
 <!-- Archives --> 
 <ul>
@@ -63,11 +55,9 @@
 <!-- Widgetized sidebar 2 --> 
 <ul>
   <li>
-  <?php if ( !function_exists('dynamic_sidebar') 
-        || !dynamic_sidebar('sidebar2') ) : ?>
+<?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
+ <?php dynamic_sidebar( 'sidebar-2' ); ?>
 <?php endif; ?> 
   </li>
 </ul>
-  
-
-	</div> <!-- /sidebar-->
+  	</div> <!-- /sidebar-->

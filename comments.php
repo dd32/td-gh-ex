@@ -8,8 +8,7 @@
 	<?php
 	 return;
 		}
-	 
-?>
+	 ?>
 
 <!-- You can start editing here. -->
 
@@ -47,4 +46,4 @@
 
 <?php comment_form(array('comment_notes_after'=>'' )); ?>
 
-<?php endif; // if you delete this the sky will fall on your head ?>
+<?php endif; ?>

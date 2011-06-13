@@ -2,7 +2,7 @@
 Theme Name: QuickChic
 Theme URI: http://www.quickonlinetips.com/archives/quickchic/
 Description: 2-columns minimalistic, widget ready, SEO optimized, fast loading, east to customize wordpress theme by <a href="http://www.quickonlinetips.com/">Quick Online Tips</a>.
-Version: 1.2.4
+Version: 1.2.6
 Author: Quick Online Tips
 Author URI: http://www.quickonlinetips.com/
 Tags: white, pink, fixed-width, two-columns, right-sidebar, photoblogging, threaded-comments, sticky-post
@@ -17,7 +17,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 ------------------------------------- */
 body {
 	font-size: 70%;  
-	font-family: 'Droid Sans', arial, serif;
+        font-family: Georgia, serif;
 	background: #fff;
 	color: #333;
         border-top: 10px solid #C32364;
@@ -60,8 +60,7 @@ small {
 	}
 
 h1, h2, h3, h4 {
-	font-family: 'Droid Sans', arial, serif;
-        font-weight: bold;	
+	font-weight: bold;	
 	}
 
 #content h1 {
@@ -80,8 +79,7 @@ h1, h2, h3, h4 {
 	}
 
 .blogtitle {
-	font-family: 'Droid Sans', arial, serif;
-        font-size: 1.9em !important; 
+	font-size: 1.9em !important; 
 	text-align: left; 
   	font-weight: bold; 
         margin: 10px 0 0 0;
@@ -106,7 +104,6 @@ h2.pagetitle {
 	}
 
 #sidebar h2 { 
-	font-family: Arial, Helvetica, Sans-Serif;
 	font-size: 1.2em;
 	}
  
@@ -305,7 +302,6 @@ body {
  
 #footer {
         color: #333;
-	font-family: Arial, Helvetica, Sans-Serif;
 	padding: 10px;
         font-size: 1.2em;
 	margin: 20px auto 10px auto;
@@ -342,7 +338,6 @@ h2.pagetitle, h2.pagetitle {
 	}
 
 #sidebar h4 {
-	font-family: Georgia, "Times New Roman", Times, serif;  
 	margin: 10px 0 0;
 	padding: 0;
 	}
@@ -471,14 +466,21 @@ ol li, #sidebar ul ol li {
 	border: 1px solid #C32364;
        }
 
-#sidebar #searchform #s {
+#searchform #s {
 	width: 200px;
 	padding: 2px;
 	}
 
-#sidebar #searchsubmit {
-	padding: 1px;
+#searchsubmit {
+   cursor:pointer;
+   border: solid 1px #ccc;
+   background:#C32364;
+   color:#fff;
+   font-weight:bold;
+   padding: 2px;
 	}
+
+.screen-reader-text {display: none;}
 
 .formbutton{
    cursor:pointer;
@@ -486,7 +488,7 @@ ol li, #sidebar ul ol li {
    background:#C32364;
    color:#fff;
    font-weight:bold;
-   padding: 1px 2px;
+   padding: 10px;
 }
 
 
@@ -512,7 +514,10 @@ select {
 	}
 
 #commentform #submit {
-	margin: 0;
+        background: #C32364;
+	padding; 5px;
+        color: #fff;
+        margin: 0;
 	float: left;
 	} 
 
@@ -562,7 +567,9 @@ img.avatar {
         padding: 0 4px 0 0; 
         vertical-align:middle;
         }
- 
+
+#respond {margin-bottom: 20px;} 
+#reply-title a {color: #C32364 !important;}
 
 .bypostauthor {background: #E6FFE2 !important; }
 
