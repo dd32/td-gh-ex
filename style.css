@@ -1,10 +1,10 @@
 /*
 Theme Name:Adventure Journal
 Theme URI:http://www.contextureintl.com/wordpress/adventure-journal-wordpress-theme/
-Description:Share your adventures with the world! Adventure Journal is a powerful theme that lets you customize a wide variety of features from the comfort of your Dashboard - no coding required. Use your own header and background art, change the layout to one, two or three columns, add a custom stylesheet, set up unique sidebars for pages and posts.... and much more. Professionally maintained by Contexture International.
+Description:Share your adventures with the world! Adventure Journal is a powerful theme that lets you customize a wide variety of features from the comfort of your Dashboard - no coding required. Use your own header and background art, change the layout to one, two or three columns, add a custom stylesheet, set up unique sidebars for pages and posts.... and much more. Includes support for French and German languages. Professionally maintained by Contexture International.
 Author:Contexture International
 Author URI:http://www.contextureintl.com
-Version:1.5.1
+Version:1.6
 License:GNU General Public License
 License URI:license.txt
 
@@ -394,8 +394,68 @@ h1 a:hover, h2 a:hover, h3 a:hover { text-decoration:underline; }
     .nav-footer a:link, .nav-footer a:visited { text-align:center; width:auto; margin-top:10px; padding-top:12px; padding-right:10px; padding-bottom:13px; padding-left:10px; color:#603913; }
     .nav-footer a:hover { background:#F7F7F7; color:#000; }
 
+/* =Browser Helper
+-------------------------------------------------------------- */
+#browser-helper {
+    position:relative;
+    width:100%;
+    height:100px !important;
+    clear:both;
+    margin-bottom:1px;
+    display:none;
+}
+#bh-bg {
+    height:100px;
+    text-align:center;
+    background:#FAE8D4 url(images/bh-bg.jpg);
+    border-bottom:1px solid white;
+}
+#bh-icon-td {
+    width:100px;
+}
+#bh-copy {
+    padding-top:10px;
+}
+#bh-warning {
+    white-space:nowrap;
+    color:#e01f26;
+    font-size:20px;
+    font-weight:bold;
+}
+#bh-notice {
+    border:none;
+    margin-left:auto;
+    margin-right:auto;
+    width:980px;
+}
+#bh-links {
+    border:none;
+    padding-top:2px;
+    padding-right:5px;
+    text-align:right;
+}
+#bh-links a {
+    color:#075a97;
+    /*text-decoration:none;*/
+}
+#bh-links a:hover {
+    color:#e01f26;
+    /*text-decoration:underline;*/
+}
+#bh-shadow {
+    display:none;
+}
+body.showing-browser-helper { background-position:0 100px; }
+    
 /********************* Comments Section *********************/
 
+#comments #respond { background:rgba(239, 227, 216, 0.5);padding:10px;border:1px solid #DACFBA;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;box-shadow:3px 3px 5px rgba(0,0,0,0.2);-moz-box-shadow:3px 3px 5px rgba(0,0,0,0.2);-webkit-box-shadow:3px 3px 5px rgba(0,0,0,0.2); }
+#comments .form-allowed-tags code { display:block;font-size:0.8em; }
+#cancel-comment-reply-link { float:right;text-decoration:underline;font-family:arial,helvetica,sans-serif; font-size:12px; }
+#commentform {}
+#commentform label { display:block;float:left;width:55px; }
+#commentform label+.required { margin-right:5px; }
+#commentform .comment-form-url label { width:65px; }
 .commentlist { }
 	.commentlist > li { margin-left:0px; list-style-type:none; clear:both; padding-bottom:20px; position:relative; margin-bottom:10px; }
 	.commentlist .comment-body { }

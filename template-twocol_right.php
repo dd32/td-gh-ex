@@ -1,11 +1,15 @@
 <?php
 /**
+ * Template Name: Two columns, content right
+ *
+ * A page template with one sidebar on the left.
+ *
  * @package WordPress
  * @subpackage Adventure_Journal
  */
 get_header();
 ?>
-<div class="content" <?php ctx_aj_getlayout(); ?>>
+<div class="content" id="col-2-right">
     <div id="col-main">
       <div id="main-content" <?php //ctx_aj_crinkled_paper(); ?>>
       <!-- BEGIN Main Content-->
@@ -16,13 +20,7 @@ get_header();
                     <div <?php post_class() ?> id="post-<?php the_ID(); ?>">
                     <?php echo sprintf('<h1 class="storytitle">%s</h1>',get_the_title());?>
 
-                    <?php 
-                        if(!function_exists('is_admin_bar_showing')){
-                            edit_post_link(__('Edit Page', 'adventurejournal'));
-                        } else if ( !is_admin_bar_showing() ){
-                            edit_post_link(__('Edit Page', 'adventurejournal'));
-                        }
-                    ?>
+                    <?php if(!is_admin_b)edit_post_link(__('Edit')); ?>
 
                     <div class="storycontent">
                         <?php the_content(__('(more...)')); ?>

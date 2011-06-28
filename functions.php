@@ -39,8 +39,13 @@ function ctx_aj_stylesheets(){
 
     //Add these files to the core website but NOT the Admin Section
     if(!is_admin()) {
+        
+        wp_enqueue_script('aj', $themeDir.'/aj.js', array('jquery'));
+        
+        wp_enqueue_script('bh', $themeDir.'/bh.js', array('jquery','aj'));
+        
         wp_enqueue_style('theme', $themeDir.'/style.css','','');
-
+       
 		//Enqueue an IE specific stylesheet
 		wp_register_style('style-ie',$themeDir.'/style-ie.css');
 		wp_enqueue_style('style-ie');
@@ -317,7 +322,8 @@ function ctx_aj_set_options($arrayOverrides=false){
         'title-type'=>'title-default',
         'paper-type'=>'paper-sticky', //paper-sticky
         'header-height'=>'360', //360,
-        'featured-header'=>'false'
+        'featured-header'=>'false',
+        'browser-helper'=>'true'
     );
 
     //Let's see if the options already exist...
@@ -412,20 +418,35 @@ function ctx_attribution() {
  * @param integer $depth
  */
 function ctx_aj_get_comments($comment, $args, $depth) {
-   $GLOBALS['comment'] = $comment; ?>
+    $GLOBALS['comment'] = $comment;
+    switch ( $comment->comment_type ) :
+        case '' : ?>
     <li <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
-    <div class="comment-meta">
-        <?php echo get_avatar( $comment, 64 ); ?>
-        <span class="comment-date"><a href="#comment-<?php comment_ID() ?>" title="Permanent Link"><?php comment_date('F j <br>Y') ?></a></span><br />
-    </div>
-    <div class="comment-body">
-        <?php edit_comment_link(__("Edit"), ''); ?>
-        <strong><?php comment_author_link(); ?></strong>
-        <?php comment_text() ?>
-        <?php if ($comment->comment_approved == '0') _e("\t\t\t\t\t<span class='unapproved'>Your comment is awaiting moderation.</span>\n", 'adventurejournal') ?>
-    </div>
+        <div class="comment-meta">
+            <?php echo get_avatar( $comment, 64 ); ?>
+            <span class="comment-date"><a href="#comment-<?php comment_ID() ?>" title="Permanent Link"><?php comment_date('F j <br>Y') ?></a></span><br />
+        </div>
+        <div class="comment-body">
+            <?php edit_comment_link(__("Edit Comment"), ''); ?>
+            <strong><?php comment_author_link(); ?></strong>
+            <?php comment_text() ?>
+            <?php if ($comment->comment_approved == '0') _e("\t\t\t\t\t<span class='unapproved'>Your comment is awaiting moderation.</span>\n", 'adventurejournal') ?>
+        </div>
+        <div class="reply">
+            <?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+        </div>
     </li>
 <?php
+            break;
+        case 'pingback'  :
+        case 'trackback' :
+?>
+    <li class="post pingback">
+            <p><?php _e( 'Pingback:', 'adventurejournal' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'adventurejournal' ), ' ' ); ?></p>
+    </li>
+	<?php
+			break;
+	endswitch;
 }
 
 /**
@@ -532,19 +553,10 @@ function ctx_aj_build_sidebar($sidebar_class, $sidebar_name){
  * Add's "Layout" option to the theme-options/Appearance nav menu
  */
 function ctx_aj_theme_add_pages() {
-    // Add a new submenu under Appearance:
-    add_theme_page(__('Layout','adventurejournal'), __('Layout','adventurejournal'), 'edit_theme_options', 'theme-layouts', 'ctx_aj_options_appearance_layout');
     //add_theme_page(, __('Advanced','adventurejournal'), 'administrator', 'theme-options', 'ctx_aj_options_adventurejournal');
     add_theme_page(__('Adventure Journal','adventurejournal'), __('Adventure Journal','adventurejournal'), 'edit_theme_options', 'z-adventurejournal', 'ctx_aj_options_adventurejournal');
 }
 
-
-/**
- * Shows "choose layout" page in Appearance Meny
- */
-function ctx_aj_options_appearance_layout() {
-    require_once 'admin/appearance-layout.php';
-}
 
 /**
  * Shows "choose layout" page in Appearance Meny

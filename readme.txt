@@ -4,11 +4,16 @@ Donate link: http://www.contextureintl.com/wordpress/adventure-journal-wordpress
 Tags: brown, tan, yellow, light, dark, one-column, custom-header, custom-background, custom-menu, theme-options, threaded-comments, sticky-post, holiday, photoblogging
 Requires at least: 3.0.0
 Tested up to: 3.2
-Stable tag: 1.5.0
+Stable tag: 1.6.0
 
 
 == Description ==
 Share your adventures with the world! Adventure Journal is a powerful theme that lets you customize a wide variety of features from the comfort of your Dashboard - no coding required. Use your own header and background art, change the layout to one, two or three columns, add a custom stylesheet, set up unique sidebars for pages and posts.... and much more. Professionally maintained by Contexture International.
+
+Adventure Journal includes support for the following languages:
+* English
+* French (by Fabrice Fotso)
+* German (by Manuel Krebber)
 
 For questions, comments or bug reports, please go to http://www.contextureintl.com/wordpress/adventure-journal-wordpress-theme/
 
@@ -32,6 +37,17 @@ http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Changelog ==
+
+= 1.5.2 =
+* NEW FEATURE: Added several page templates for overriding the default site layout.
+* NEW FEATURE: Incorporated an awesome new "Browser Update Helper" feature (separate plugin coming soon).
+* FIX: Fixed a bug in IE7 that resulted in drop-down menus dropping behind content.
+* UPDATE: Added French (thanks Fabrice) and German (thanks Manuel) translations 
+* UPDATE: Dramatically retooled the comment system. Threaded comments now work correctly, as do replies.
+* UPDATE: Comments can now be used for pages.
+* UPDATE: Merged Layout page with the AJ settings page
+* UPDATE: Reworded missing file notices to indicate that there MAY be a problem. Provided CSS and logo files will be loaded whether an error is detected or not.
+* UPDATE: Lots of usability improvements and new visual flourishes.
 
 = 1.5.1 =
 * FIX: Fixed a CSS menu bug that affected some menu configurations.

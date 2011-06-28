@@ -61,20 +61,6 @@ if ( have_comments() ) : ?>
 
 <?php endif; // end have_comments() ?>
 
-<?php
-
-//Change the comments form so that the labels are to the right of the fields
-$fields =  array(
-	'author' => '<p class="comment-form-author">' .
-	            '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . ' />  '. '<label for="author">' . __( 'Name' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ).' </p>',
-	'email'  => '<p class="comment-form-email">' .
-	            '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . ' />  '. __( 'Email' ) . '<label for="email"></label> ' . ( $req ? '<span class="required">*</span>' : '' ) .'</p>',
-	'url'    => '<p class="comment-form-url">' .
-	            '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" />  <label for="url">' . __( 'Website' ) . '</label></p>'
-);
-
-$defaults = array('fields'  => apply_filters( 'comment_form_default_fields', $fields ));
-
-comment_form($defaults); ?>
+<?php comment_form($defaults); ?>
 
 </div><!-- #comments -->
