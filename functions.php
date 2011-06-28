@@ -40,7 +40,8 @@ function ctx_aj_stylesheets(){
     //Add these files to the core website but NOT the Admin Section
     if(!is_admin()) {
         
-        wp_enqueue_script('aj', $themeDir.'/aj.js', array('jquery'));
+        if($themeOpts['browser-helper']=='true')
+            wp_enqueue_script('aj', $themeDir.'/aj.js', array('jquery'));
         
         wp_enqueue_script('bh', $themeDir.'/bh.js', array('jquery','aj'));
         

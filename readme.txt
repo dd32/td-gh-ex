@@ -38,7 +38,10 @@ http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
-= 1.5.2 =
+= 1.6.1 =
+* FIX: Fixed a JS error caused by some configurations
+
+= 1.6 =
 * NEW FEATURE: Added several page templates for overriding the default site layout.
 * NEW FEATURE: Incorporated an awesome new "Browser Update Helper" feature (separate plugin coming soon).
 * FIX: Fixed a bug in IE7 that resulted in drop-down menus dropping behind content.
