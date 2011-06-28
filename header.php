@@ -54,7 +54,7 @@ $AJOpts = get_option('ctx-adventurejournal-options');
                     <div id="bh-warning"><?php _e('You are using an insecure version of <span id="bh-browsername">your web browser</span>. Please update your browser!','adventurejournal') ?></div>
                     <div id="bh-explain"><?php _e('Using an outdated browser makes your computer unsafe. For a safer, faster, more enjoyable user experience, please update your browser today or try a newer browser.','adventurejournal') ?></div>
                     <div id="bh-links">
-                        <a id="bh-update" href="#"><?php _e('Update Your Browser','adventurejournal') ?></a> | <a href="http://http://www.google.com/chrome/"><?php _e('Try Something New','adventurejournal') ?></a> | <a href="#" id="bh-hide"><?php _e('Hide This Warning','adventurejournal') ?></a>
+                        <a id="bh-update" href="#"><?php _e('Update Your Browser','adventurejournal') ?></a> | <a href="http://www.google.com/chrome/"><?php _e('Try Something New','adventurejournal') ?></a> | <a href="#" id="bh-hide"><?php _e('Hide This Warning','adventurejournal') ?></a>
                     </div>
                 </td>
             </tr>

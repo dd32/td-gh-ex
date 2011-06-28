@@ -38,6 +38,9 @@ http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
+= 1.6.2 =
+* FIX: Fixed an invalid link for Try Something New
+
 = 1.6.1 =
 * FIX: Fixed a JS error caused by some configurations
 
