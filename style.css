@@ -2,7 +2,7 @@
 Theme Name: QuickChic
 Theme URI: http://www.quickonlinetips.com/archives/quickchic/
 Description: 2-columns minimalistic, widget ready, SEO optimized, fast loading, east to customize wordpress theme by <a href="http://www.quickonlinetips.com/">Quick Online Tips</a>.
-Version: 1.2.6
+Version: 1.2.7
 Author: Quick Online Tips
 Author URI: http://www.quickonlinetips.com/
 Tags: white, pink, fixed-width, two-columns, right-sidebar, photoblogging, threaded-comments, sticky-post
@@ -232,7 +232,7 @@ a:hover {
 
 
 .sticky {
-        background: #f6f6f6 !important; 
+        background: #f9f9f9 !important; 
         padding: 5px 10px;
         margin: 10px 0;
         }
@@ -277,8 +277,7 @@ body {
 
 .post {
 	margin: 0 0 40px;
-	text-align: left; 
-        overflow:hidden;
+	text-align: left;  
 	}
 
 .post hr {
@@ -287,17 +286,19 @@ body {
 
 .entry{ 
         border-top: 1px solid #ddd;  
-	}
+        overflow:auto; 
+        }
+
+.entry p{ 
+        clear:both;	
+        }
 
 .narrowcolumn .postmetadata {
-
 	padding-top: 5px;
-
 	}
 
 .postmetadata {
-	clear: left;
-
+       clear: left;
        }
  
 #footer {
@@ -362,6 +363,7 @@ p img {
  
 .entry img {
         padding:5px; 
+        height:auto;
         }
 
 img.centered {
@@ -684,7 +686,8 @@ a img {
 	text-align: center;
 	margin-top: 10px;
 	margin-bottom: 60px;
-        font-size: 1em; 	} 
+        font-size: 1em; 	 
+        }
 
 /* Captions 
 ------------------------------------- */
@@ -738,7 +741,7 @@ div.aligncenter {
 	margin: 0;
 }
 #content .gallery img {
-	border: 10px solid #f1f1f1;
+	border: 0px solid #f1f1f1;
 }
 #content .gallery br+br {
 	display: none;
