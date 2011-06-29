@@ -29,12 +29,13 @@ foreach( $tags as $individual_tag ) {
 */
 
 $showposts = $chip_life_global['theme_options']['chip_life_related_post_number'];
-$showposts = ( ! empty ( $showposts ) )? $showposts : 5;
+$showposts = ( ! empty ( $showposts ) )? $showposts : 3;
 
 $args=array(
 	'tag__in'				=>	$tag_ids,
 	'post__not_in'			=>	array($post->ID),
 	'showposts'				=>	$showposts,
+	'orderby'				=>	'rand',
 	'ignore_sticky_posts'	=>	1,
 );
 
@@ -51,7 +52,7 @@ if ( $temp->have_posts() ):
 
 <div class="chipboxm1 chipstyle1 margin10b">
   <div class="chipboxm1data">
-    <div class="chiprelatedpostswrap">
+    <div class="chippostcol3wrap">
 
 <?php
 

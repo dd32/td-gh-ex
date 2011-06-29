@@ -4,7 +4,7 @@ Theme URI: http://chip-life.tutorialchip.com/
 Author: Life.Object
 Author URI: http://www.tutorialchip.com/
 Description: Chip Life (CL) theme for WordPress is stylish, customizable, clean, readable, adsense-ready and professional with a power of custom menu, and background. Chip Life supports two widgetized areas in the sidebar and featured images (thumbnails for posts). Check <a href="http://www.tutorialchip.com/chip-life/">CL Official Page</a> in case you need directions</a>.
-Version: 1.3.5.1
+Version: 1.3.6
 Tags: dark, blue, white, two-columns, fixed-width, editor-style, theme-options, threaded-comments, sticky-post, custom-menu, custom-background, custom-header, right-sidebar
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -122,6 +122,7 @@ a.img1:link, a.img1:visited {display:block;width:162px;height:162px;background-c
 a.img1:hover {color:#2200d6;}
 
 .alignr {text-align:right;}
+.alignc {text-align:center;}
 
 .margin0 {margin:0px;}
 .margin10b {margin:0px 0px 10px 0px;}
@@ -198,19 +199,19 @@ a.img1:hover {color:#2200d6;}
 */
 
 .chipsetl1 {width:175px;float:left;}
-.chipsetl2 {width:215px;float:left;}
+.chipsetl2 {width:195px;float:left;}
 .chipsetl3 {width:400px;float:left;}
 .chipsetl4 {width:80px;float:left;}
 .chipsetl5 {width:250px;float:left;}
 
 .chipsetr1 {width:378px;float:right;}
-.chipsetr2{width:728px;float:right;}
+.chipsetr2{width:755px;float:right;}
 .chipsetr3 {width:400px;float:right;}
 .chipsetr4 {width:150px;float:right;}
 .chipsetr5 {width:470px;float:right;}
 .chipsetr6 {width:250px;float:right;}
 
-.chipsetr2data {padding:18px 0px;}
+.chipsetr2data {text-align:right;padding:18px 0px;}
 
 /*
 |------------------
@@ -251,14 +252,14 @@ a.img1:hover {color:#2200d6;}
 
 /*
 |------------------
-| Chip Related Post(s)
+| Chip Post Column 3
 |------------------
 */
 
-.chiprelatedpostswrap { width:548px; margin:0px auto; overflow:hidden; }
-.chiprelatedposts { width:162px; float:left; margin:0px 10px 0px 10px;  }
-.chiprelatedpostsimg { margin: 0px 0px 10px 0px; }
-.chiprelatedpoststitle { width: 162px; text-align:center; overflow:hidden; margin: 0px 0px 10px 0px; }
+.chippostcol3wrap { width:548px; margin:0px auto; overflow:hidden; }
+.chippostcol3 { width:162px; float:left; margin:0px 10px 0px 10px; }
+.chippostcol3img { margin: 0px 0px 10px 0px; }
+.chippostcol3text { width: 162px; height:50px; text-align:center; overflow:hidden; margin: 0px 0px 10px 0px; overflow:hidden; }
 
 /*
 |------------------
@@ -444,3 +445,13 @@ a.img1:hover {color:#2200d6;}
 .wplinkpages a, .wplinkpages span, .wp-pagenavi a, .wp-pagenavi span {text-decoration:none;border:1px solid #c2c6e1;padding:3px 5px;margin:2px;background-color:#e0e2f0;}
 .wplinkpages a:hover, .wp-pagenavi a:hover {background-color:#135171;color:#FFF;}
 .wplinkpages span.current, .wp-pagenavi span.current {border-color:#c2c6e1;background-color:#135171;font-weight:bold;color:#FFF;}
+
+/*
+|------------------
+| Credit
+|------------------
+*/
+
+.credit { font-size:11px; text-align:center; color:#999; }
+.credit a:link, .credit a:visited { color:#999; text-decoration:underline; }
+.credit a:hover { color:#FFF; text-decoration:none; }

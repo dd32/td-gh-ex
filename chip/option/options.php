@@ -33,6 +33,11 @@ class Chip_Life_Options {
 			
 			add_settings_field( 'chip_life_field_primary_menu', 'Display Primary Menu', array( 'Chip_Life_Options', 'chip_life_field_primary_menu_fn' ), 'chip_life_section_blog_page', 'chip_life_section_blog' );
 			add_settings_field( 'chip_life_field_comment_notes_after', 'Display Comment Notes After', array( 'Chip_Life_Options', 'chip_life_field_comment_notes_after_fn' ), 'chip_life_section_blog_page', 'chip_life_section_blog' );
+			add_settings_field( 'chip_life_field_category_display', 'Display Category', array( 'Chip_Life_Options', 'chip_life_field_category_display_fn' ), 'chip_life_section_blog_page', 'chip_life_section_blog' );
+			add_settings_field( 'chip_life_field_tags_display', 'Display Tags', array( 'Chip_Life_Options', 'chip_life_field_tags_display_fn' ), 'chip_life_section_blog_page', 'chip_life_section_blog' );
+			
+			add_settings_field( 'chip_life_field_dt', 'Select Date/Time Format', array( 'Chip_Life_Options', 'chip_life_field_dt_fn' ), 'chip_life_section_blog_page', 'chip_life_section_blog' );
+			add_settings_field( 'chip_life_field_dt_format', 'Enter Custom Date/Time Format', array( 'Chip_Life_Options', 'chip_life_field_dt_format_fn' ), 'chip_life_section_blog_page', 'chip_life_section_blog' );
 			
 			/** Chip Post Section */
 			add_settings_section( 'chip_life_section_post', 'Post Options', array( 'Chip_Life_Options', 'chip_life_section_post_fn' ), 'chip_life_section_post_page' );
@@ -143,13 +148,18 @@ class Chip_Life_Options {
 				
 				$default = array(
 					'chip_life_logo'							=>	0,
-					'chip_life_logo_url'						=>	CHIP_LIFE_IMAGES_WSROOT.'logo.gif',
+					'chip_life_logo_url'						=>	CHIP_LIFE_IMAGES_WSROOT.'logo.png',
 					
 					'chip_life_post_style'						=>	'excerpt',					
 					'chip_life_header_style'					=>	'header',
 					
 					'chip_life_primary_menu'					=>	1,
 					'chip_life_comment_notes_after'				=>	1,
+					'chip_life_category_display'				=>	1,
+					'chip_life_tags_display'					=>	1,
+					
+					'chip_life_dt'								=>	'default',
+					'chip_life_dt_format'						=>	'F j, Y g:i a',
 					
 					'chip_life_related_post'					=>	0,
 					'chip_life_related_post_number'				=>	3,
@@ -219,7 +229,7 @@ class Chip_Life_Options {
 			return $temp;
 		}
 		
-		/* Valid Home Page Post Range */		
+		/* Valid Post Style Range */		
 		
 		function chip_post_style_pd() {			
 			$temp = array( 'excerpt' => 'excerpt', 'content' => 'content' );			
@@ -237,6 +247,13 @@ class Chip_Life_Options {
 		
 		function chip_related_posts_pd() {			
 			$temp = array( 3 => 3, 6 => 6, 9 => 9 );			
+			return $temp;			
+		}
+		
+		/* Valid Date/Time Format Range */		
+		
+		function chip_dt_pd() {			
+			$temp = array( 'default' => 'default', 'custom' => 'custom' );			
 			return $temp;			
 		}
 		
@@ -281,7 +298,30 @@ class Chip_Life_Options {
 			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
 			if ( ! array_key_exists( $input['chip_life_comment_notes_after'], $chip_boolean_pd ) ) {
 				 $input['chip_life_comment_notes_after'] = 1;
-			}					
+			}
+			
+			/* Validation: chip_life_category_display */
+			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
+			if ( ! array_key_exists( $input['chip_life_category_display'], $chip_boolean_pd ) ) {
+				 $input['chip_life_category_display'] = 1;
+			}
+			
+			/* Validation: chip_life_tags_display */
+			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
+			if ( ! array_key_exists( $input['chip_life_tags_display'], $chip_boolean_pd ) ) {
+				 $input['chip_life_tags_display'] = 1;
+			}
+			
+			/* Validation: chip_life_dt */
+			$chip_dt_pd = Chip_Life_Options::chip_dt_pd();
+			if ( ! array_key_exists( $input['chip_life_dt'], $chip_dt_pd ) ) {
+				 $input['chip_life_dt'] = 'default';
+			}
+			
+			/* Validation: chip_life_dt_format */
+			if( !empty( $input['chip_life_dt_format'] ) ) {
+				$input['chip_life_dt_format'] = wp_kses( $input['chip_life_dt_format'], array() );
+			}								
 			
 			/* Validation: chip_life_related_post */
 			$chip_boolean_pd = Chip_Life_Options::chip_boolean_pd();
@@ -547,8 +587,69 @@ class Chip_Life_Options {
 			echo '</select>';
 			echo '<div><small>Select yes to display commnet notes after. For Example: <strong>You may use these HTML tags and attributes....</strong></small></div>';
 		
-		}	
+		}
 		
+		/* Chip Category Display */
+		
+		function  chip_life_field_category_display_fn() {
+			
+			$chip_life_options = get_option( 'chip_life_options' );
+			$items = Chip_Life_Options::chip_boolean_pd();
+			
+			echo '<select id="chip_life_category_display" name="chip_life_options[chip_life_category_display]">';
+			foreach( $items as $key => $val ) {
+				$selected = ( $chip_life_options['chip_life_category_display'] == $key ) ? 'selected="selected"' : '';
+				echo '<option value="'.$key.'" '.$selected.'>'.$val.'</option>';
+			}
+			echo '</select>';
+			echo '<div><small>Select yes to display Category at post detail.</small></div>';
+		
+		}
+		
+		/* Chip Tags Display */
+		
+		function  chip_life_field_tags_display_fn() {
+			
+			$chip_life_options = get_option( 'chip_life_options' );
+			$items = Chip_Life_Options::chip_boolean_pd();
+			
+			echo '<select id="chip_life_tags_display" name="chip_life_options[chip_life_tags_display]">';
+			foreach( $items as $key => $val ) {
+				$selected = ( $chip_life_options['chip_life_tags_display'] == $key ) ? 'selected="selected"' : '';
+				echo '<option value="'.$key.'" '.$selected.'>'.$val.'</option>';
+			}
+			echo '</select>';
+			echo '<div><small>Select yes to display Tags at post detail.</small></div>';
+		
+		}
+		
+		/* Chip Date/Time Format */
+		
+		function  chip_life_field_dt_fn() {
+			
+			$chip_life_options = get_option( 'chip_life_options' );
+			$items = Chip_Life_Options::chip_dt_pd();
+			
+			echo '<select id="chip_life_dt" name="chip_life_options[chip_life_dt]">';
+			foreach( $items as $key => $val ) {
+				$selected = ( $chip_life_options['chip_life_dt'] == $key ) ? 'selected="selected"' : '';
+				echo '<option value="'.$key.'" '.$selected.'>'.$val.'</option>';
+			}
+			echo '</select>';
+			echo '<div><small>Select Date/Time format for the blog.</small></div>';
+			echo '<div><small>Default is the date/time format configured in your WordPress options.</small></div>';
+		
+		}
+		
+		function chip_life_field_dt_format_fn() {
+			$chip_life_options = get_option('chip_life_options');
+			echo '<input type="text" id="chip_life_dt_format" name="chip_life_options[chip_life_dt_format]" size="40" value="'.$chip_life_options['chip_life_dt_format'].'" />';
+			echo '<div>Enter custom Date/Time Format. You can use any desired combination of the following examples:</div>';
+			echo '<div><strong>F j, Y g:i:s a</strong> - '.date('F j, Y g:i:s a').'</div>';
+			echo '<div><strong>l, F jS, Y</strong> - '.date('l, F jS, Y').'</div>';
+			echo '<div><strong>M j, Y @ G:i</strong> - '.date('M j, Y @ G:i').'</div>';
+			echo '<div><strong>Y/m/d \a\t g:i A</strong> - '.date('Y/m/d \a\t g:i A').'</div>';
+		}
 		
 		/*
 		|--------------------------
@@ -842,7 +943,7 @@ class Chip_Life_Options {
 			
 			$chip_life_options = get_option('chip_life_options');
 			echo '<input type="text" id="chip_life_facebook_url" name="chip_life_options[chip_life_facebook_url]" size="40" value="'.$chip_life_options['chip_life_facebook_url'].'" />';
-			echo '<div><small>Enter the Facebook URL. For Example: <strong>http://www.facebook.com/profile.php?id=100001747038774</strong></small></div>';
+			echo '<div><small>Enter the Facebook URL. For Example: <strong>http://www.facebook.com/tutorialchip</strong></small></div>';
 		
 		}
 		
