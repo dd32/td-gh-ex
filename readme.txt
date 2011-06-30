@@ -3,3 +3,6 @@ Header menu limitations:
 
 Footer menu limitations:
 -footer menu always display one menu level.
+
+Tips:
+In order to change the sidebar position to the right place of the layout please edit the style.css and change float attribute into the following: float:right; for .sideBar and float:left; for .content.

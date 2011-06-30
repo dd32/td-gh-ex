@@ -4,7 +4,7 @@ Theme URI: http://www.baza-noclegowa.pl/
 Author URI: http://webm.pl/
 Description: Clean, clear and light theme for blogs, corporate websites and big portals as well.
 Author: webm.pl
-Version: 1.6
+Version: 1.7
 Tags: white, light, two-columns, fixed-width, editor-style
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -219,16 +219,26 @@ body {
 	cursor:pointer;
 }
 /* current menu item */
+#mainNav .current-menu-item a, 
+#mainNav .current-menu-item a:hover {
+	background:#04a6c8 url(images/nav_li_bg.png) 0 0 no-repeat;
+}
+#mainNav .current-menu-item a span,
+#mainNav .current-menu-item a:hover span {
+	background:url(images/nav_li_bg.png) 100% 0 no-repeat;
+}
+
+/* current page item */
 #mainNav .current_page_item a, 
 #mainNav .current_page_item a:hover {
 	background:#04a6c8 url(images/nav_li_bg.png) 0 0 no-repeat;
 }
 #mainNav .current_page_item a span,
-#mainNav .current_page_item a:hover span {
+#mainNav .current_page_item  a:hover span {
 	background:url(images/nav_li_bg.png) 100% 0 no-repeat;
-}					
-
+}
 			/* Drop Down Menu */
+			
 			#mainNav ul ul {
 				position:absolute;
 				background:none;
@@ -242,21 +252,20 @@ body {
 				margin: 0;
 				padding-top:10px;
 			}
-				#mainNav ul ul li{
+				#mainNav ul ul li {
 					background:none;
 					float:none;
 					padding:0 0 1px;
 					height: 23px;
 				}
-				#mainNav ul ul li a span, #mainNav ul ul li a:hover span {background:none;}
 				#mainNav ul ul li a {
 					height:auto;
 					padding-top:4px;
 					padding-bottom:4px;
 					height:100%;
-						display:block;
-											width:212px;
-											background:#3a3f42;
+					display:block;
+					width:212px;
+					background:#3a3f42;
 				}
 				#mainNav ul ul li a:hover {
 					background:#606a6f;
@@ -264,9 +273,13 @@ body {
 				
                 #mainNav ul ul ul {
 	            left:100%;
-	            top:0;
+	            top:-10px;
                 }	
-		
+				
+				
+				
+
+				
 /* CONTENT *************/
 
 #content {
@@ -408,19 +421,7 @@ body {
 						 #commentform textarea {height:80px; width:487px;}
 					#form-submit {color:#8f9699;}
 						.addComment #form-submit strong {color:#777e81;}
-						/*.form-submit input {
-							background:url(images/submit_btn.png) 0 0 no-repeat;
-							border:none;
-							color:#fff;
-							cursor:pointer;
-							font-size:16px;
-							font-weight:bold;
-							padding:1px 0 2px 0;
-							margin:0 17px 0 0;
-							vertical-align:middle;
-							width:195px;
-							height:28px;							
-						}*/
+
 			
 /* Bottom NAVIGATION **********/
 #bottomNav {
@@ -572,6 +573,8 @@ margin-right: 5px;
 margin-right:8px;
 display:inline;
 }
+
+.attachment-post-thumbnail {float: left; padding: 0 10px 10px 0;}
 
 .credits {margin-top: 15px; font-size: 9px; text-align: right;}
 

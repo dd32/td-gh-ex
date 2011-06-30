@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-
-<head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes('xhtml'); ?>>
+<head profile="http://gmpg.org/xfn/11">
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
-
 <title><?php
 	/*
 	 * Print the <title> tag based on what is being viewed.
@@ -25,13 +23,9 @@
 		echo ' | ' . sprintf( __( 'Page %s'), max( $paged, $page ) );
 
 	?></title>
-
-
-
-
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-<?php if ( is_singular() ) wp_enqueue_script( "comment-reply" );?>
+<?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
 <?php wp_head(); ?>
 <!--[if lte IE 7]><link href="<?php echo get_template_directory_uri(); ?>/ie.css" rel="stylesheet" media="screen" type="text/css" /><![endif]-->	
 <!--[if IE 6]><script src="<?php echo get_template_directory_uri(); ?>/js/DD_belatedPNG.js"></script><![endif]-->
@@ -51,7 +45,7 @@
 			<!-- main NAVIGATION -->
 			<div id="mainNav">
 				<div class="wrap">
-    <?php wp_nav_menu( array( 'fallback_cb' => 'baza_noclegowa_page_menu', 'menu'  => 'primary', 'depth' => 3, 'theme_location' => 'primary', 'before' => '<span>', 'after' => '</span>') ); ?>
+    <?php wp_nav_menu( array( 'menu'  => 'primary', 'depth' => 3, 'theme_location' => 'primary', 'link_before' => '<span>', 'link_after' => '</span>') ); ?>
 				</div>
 			</div>
 			<!-- /main NAVIGATION -->

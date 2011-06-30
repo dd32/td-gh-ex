@@ -2,17 +2,14 @@
 	if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
 		die ('Please do not load this page directly. Thanks!');
 
-	if (!empty($post->post_password)) { // if there's a password
-		if ($_COOKIE['wp-postpass_' . COOKIEHASH] != $post->post_password) {  // and it doesn't match the cookie
-			?>
-
+		if ( post_password_required() ) : ?>
 			<p class="nocomments">This post is password protected. Enter the password to view comments.</p>
 
 			<?php
-			return;
-		}
-	}
-
+				return;
+			endif;
+			?>
+<?php
 	/* This variable is for alternating comment background */
 	$oddcomment = 'class="alt" ';
 ?>
