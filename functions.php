@@ -290,7 +290,7 @@ $color_anime = array("bl" => "#110f11", "lb9" => "#1d1f29", "bb" => "#1c232b", "
         'option_name' => "raindrops_base_color",
         'option_value' => "#444444",
         'autoload'=>'yes',
-        'title'=> __('Base Color for Automatic Corlor Arrangement','Raindrops'),
+        'title'=> __('Base Color for Automatic Color Arrangement','Raindrops'),
         'excerpt1'=>'',
         'excerpt2'=>__('Please specify your favorite color. and an automatic arrangement of color is designed.','Raindrops'),
          'validate'=>'raindrops_base_color_validate',
@@ -1255,7 +1255,7 @@ $raindrops_current_theme_name = get_current_theme();
                     if ( is_multisite() ) {
                         $result .= sprintf('<a href="%s">%s</a></p></div>',
                                             'themes.php?page=raindrops_settings',
-                                            __(" Please click.The setting will be fixed.","Raindrops"));
+                                            __(" MultiSite User must Click here !!","Raindrops"));
                     }else{
                         $result .= '</p></div>';
                     }
