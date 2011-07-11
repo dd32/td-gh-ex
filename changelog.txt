@@ -1,4 +1,15 @@
 Changelog -----------------------------------
+version:0.913
+fixed
+    functions.php
+        update error fix
+
+        This update error occurred by e.g. phpfog
+
+        Change csscolor/ require conditional
+        and is_admin() == true to is_user_logged_in()
+
+Changelog -----------------------------------
 version:0.911
 modified
     functions.php
