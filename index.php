@@ -47,7 +47,8 @@ get_header(); ?>
      * If you want to overload this in a child theme then include a file
      * called loop-index.php and that will be used instead.
      */
-     get_template_part('loop', 'index');
+	 if (!(is_home() && $graphene_settings['frontpage_posts_cats'] && !have_posts()))
+     	get_template_part('loop', 'index');
     ?>
             
 <?php get_footer(); ?>

@@ -42,17 +42,17 @@
 /**
  * Before we do anything, let's get the mobile extension's init file if it exists
 */
-$mobile_path = dirname(dirname(__FILE__)).'/graphene-mobile/includes/theme-plugin.php';
-if (file_exists($mobile_path)) {include($mobile_path);}
+$mobile_path = dirname( dirname( __FILE__ ) ) . '/graphene-mobile/includes/theme-plugin.php';
+if ( file_exists($mobile_path) ) { include( $mobile_path ); }
 
  /**
  * Retrieve the theme's user settings and default settings. Individual files can access
  * these setting via a global variable call, so database query is only
  * done once.
- *
 */
 include('admin/options-defaults.php');
-$graphene_settings = get_option('graphene_settings');
+$graphene_settings = array_merge($graphene_defaults, get_option('graphene_settings', array()));
+
 
 /**
  * If there is no theme settings in the database yet (e.g. first install), add the database entry.
@@ -62,35 +62,17 @@ if (!function_exists('graphene_db_init')) :
 		global $graphene_settings, $graphene_defaults;
 		
 		/* Run DB updater if $graphene_settings does not exist in db */
-		if (!$graphene_settings){
+		if (get_option('graphene_ga_code') === ''){
 			
-			// For first install
-			if (get_option('graphene_ga_code') === false) {
-				update_option('graphene_settings', $graphene_defaults);
-				$graphene_settings = $graphene_defaults;
-				
-			} else {
-			// For updates 
-				include('admin/db-updater.php');
-				graphene_update_db();
-				$graphene_settings = get_option('graphene_settings');
-			}
+			// Updates the database for much older version, when Settings API was not yet implemented
+			include('admin/db-updater.php');
+			graphene_update_db();
+			$graphene_settings = array_merge($graphene_defaults, get_option('graphene_settings', array()));
 		
-		/* $graphene_settings exists, but new options has been added since previous version */	
-		} elseif (count($graphene_settings) != count($graphene_defaults)) {
-			$initial_settings = array();
-			
-			// Construct the updated settings
-			foreach ($graphene_defaults as $option => $value) :
-				$updated_settings[$option] = (array_key_exists($option, $graphene_settings)) ? $graphene_settings[$option] : $value;
-			endforeach;
-			
-			// Add the initial settings to the database
-			update_option('graphene_settings', $updated_settings);
-
-			// Update the global $graphene_settings;
-			$graphene_settings = $updated_settings;
-		}
+		} 
+		
+		/* Delete DB Version from the database. This value is now included in the $graphene_defaults array */
+		delete_option('graphene_dbversion');
 	}
 endif;
 add_action('init', 'graphene_db_init');
@@ -154,19 +136,17 @@ if (!function_exists( 'graphene_setup')):
  */
 function graphene_setup() {
 	global $graphene_settings;
-	
-	// Define the theme's database version
-	define('GRAPHENE_DBVERSION', 1.0);
-	
-	// Add the theme's dbversion in the database if none exist
-	if (!get_option('graphene_dbversion')) {update_option('graphene_dbversion', GRAPHENE_DBVERSION);}
-	
-	// Add custom image sizes
-	$height = ($graphene_settings['slider_height']) ? $graphene_settings['slider_height'] : 240;
-	add_image_size('graphene_slider', apply_filters('graphene_slider_image_width', 660), $height, true);
-	add_image_size('graphene_slider_full', apply_filters('graphene_slider_full_image_width', 930), $height, true);
-	add_image_size('graphene_slider_small', apply_filters('graphene_slider_small_image_width', 445), $height, true);
-	add_image_size('graphene-homepage-pane', apply_filters('graphene_homepage_pane_image_width', 451), apply_filters('graphene_homepage_pane_image_height', 250), true);
+		
+	// Add custom image sizes selectively
+	if ($graphene_settings['slider_display_style'] == 'bgimage-excerpt') {
+		$height = ($graphene_settings['slider_height']) ? $graphene_settings['slider_height'] : 240;
+		add_image_size('graphene_slider', apply_filters('graphene_slider_image_width', 660), $height, true);
+		add_image_size('graphene_slider_full', apply_filters('graphene_slider_full_image_width', 930), $height, true);
+		add_image_size('graphene_slider_small', apply_filters('graphene_slider_small_image_width', 445), $height, true);
+	}
+	if (get_option('show_on_front') == 'page' && !$graphene_settings['disable_homepage_panes']) {
+		add_image_size('graphene-homepage-pane', apply_filters('graphene_homepage_pane_image_width', 451), apply_filters('graphene_homepage_pane_image_height', 250), true);
+	}
 	
 	// Add support for editor syling
 	add_editor_style();
@@ -176,15 +156,19 @@ function graphene_setup() {
 	
 	// This theme uses post thumbnails
 	add_theme_support( 'post-thumbnails' );
+	
+	// Add supported post formats
+	add_theme_support('post-formats', array('status', 'audio', 'image', 'video'));
 
 	// Make theme available for translation
 	// Translations can be filed in the /languages/ directory
 	load_theme_textdomain( 'graphene', get_template_directory().'/languages' );
 	
-	// This theme uses wp_nav_menu() in two locations.
+	// This theme uses wp_nav_menu() in three locations.
 	register_nav_menus( array(
 		'Header Menu' => __('Header Menu', 'graphene'),
 		'secondary-menu' => __('Secondary Menu', 'graphene'),
+		'footer-menu' => __('Footer Menu', 'graphene'),
 	) );
 
 	// This theme allows users to set a custom background
@@ -201,7 +185,7 @@ function graphene_setup() {
 	define('HEADER_IMAGE_HEIGHT', apply_filters('graphene_header_image_height', 198));
 
 	// We'll be using post thumbnails for custom header images on posts and pages.
-	// We want them to be 940 pixels wide by 198 pixels tall.
+	// We want them to be 960 pixels wide by 198 pixels tall.
 	// Larger images will be auto-cropped to fit, smaller ones will be ignored. See header.php.
 	set_post_thumbnail_size(HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true);
 
@@ -221,51 +205,53 @@ function graphene_setup() {
 }
 endif;
 
-function graphene_get_default_headers() {
-	return array(
-		'Schematic' => array(
-			'url' => '%s/images/headers/schematic.jpg',
-			'thumbnail_url' => '%s/images/headers/schematic-thumb.jpg',
-			/* translators: header image description */
-			'description' => __('Header image by Syahir Hakim', 'graphene')
-		),
-		'Flow' => array(
-			'url' => '%s/images/headers/flow.jpg',
-			'thumbnail_url' => '%s/images/headers/flow-thumb.jpg',
-			/* translators: header image description */
-			'description' => __('This is the default Graphene theme header image, cropped from image by Quantin Houyoux at sxc.hu', 'graphene')
-		),
-		'Fluid' => array(
-			'url' => '%s/images/headers/fluid.jpg',
-			'thumbnail_url' => '%s/images/headers/fluid-thumb.jpg',
-			/* translators: header image description */
-			'description' => __('Header image cropped from image by Ilco at sxc.hu', 'graphene')
-		),
-		'Techno' => array(
-			'url' => '%s/images/headers/techno.jpg',
-			'thumbnail_url' => '%s/images/headers/techno-thumb.jpg',
-			/* translators: header image description */
-			'description' => __('Header image cropped from image by Ilco at sxc.hu', 'graphene')
-		),
-		'Fireworks' => array(
-			'url' => '%s/images/headers/fireworks.jpg',
-			'thumbnail_url' => '%s/images/headers/fireworks-thumb.jpg',
-			/* translators: header image description */
-			'description' => __('Header image cropped from image by Ilco at sxc.hu', 'graphene')
-		),
-		'Nebula' => array(
-			'url' => '%s/images/headers/nebula.jpg',
-			'thumbnail_url' => '%s/images/headers/nebula-thumb.jpg',
-			/* translators: header image description */
-			'description' => __('Header image cropped from image by Ilco at sxc.hu', 'graphene')
-		),
-		'Sparkle' => array(
-			'url' => '%s/images/headers/sparkle.jpg',
-			'thumbnail_url' => '%s/images/headers/sparkle-thumb.jpg',
-			/* translators: header image description */
-			'description' => __('Header image cropped from image by Ilco at sxc.hu', 'graphene')
-		),
-	);
+if (!function_exists('graphene_get_default_headers')) {
+	function graphene_get_default_headers() {
+		return array(
+			'Schematic' => array(
+				'url' => '%s/images/headers/schematic.jpg',
+				'thumbnail_url' => '%s/images/headers/schematic-thumb.jpg',
+				/* translators: header image description */
+				'description' => __('Header image by Syahir Hakim', 'graphene')
+			),
+			'Flow' => array(
+				'url' => '%s/images/headers/flow.jpg',
+				'thumbnail_url' => '%s/images/headers/flow-thumb.jpg',
+				/* translators: header image description */
+				'description' => __('This is the default Graphene theme header image, cropped from image by Quantin Houyoux at sxc.hu', 'graphene')
+			),
+			'Fluid' => array(
+				'url' => '%s/images/headers/fluid.jpg',
+				'thumbnail_url' => '%s/images/headers/fluid-thumb.jpg',
+				/* translators: header image description */
+				'description' => __('Header image cropped from image by Ilco at sxc.hu', 'graphene')
+			),
+			'Techno' => array(
+				'url' => '%s/images/headers/techno.jpg',
+				'thumbnail_url' => '%s/images/headers/techno-thumb.jpg',
+				/* translators: header image description */
+				'description' => __('Header image cropped from image by Ilco at sxc.hu', 'graphene')
+			),
+			'Fireworks' => array(
+				'url' => '%s/images/headers/fireworks.jpg',
+				'thumbnail_url' => '%s/images/headers/fireworks-thumb.jpg',
+				/* translators: header image description */
+				'description' => __('Header image cropped from image by Ilco at sxc.hu', 'graphene')
+			),
+			'Nebula' => array(
+				'url' => '%s/images/headers/nebula.jpg',
+				'thumbnail_url' => '%s/images/headers/nebula-thumb.jpg',
+				/* translators: header image description */
+				'description' => __('Header image cropped from image by Ilco at sxc.hu', 'graphene')
+			),
+			'Sparkle' => array(
+				'url' => '%s/images/headers/sparkle.jpg',
+				'thumbnail_url' => '%s/images/headers/sparkle-thumb.jpg',
+				/* translators: header image description */
+				'description' => __('Header image cropped from image by Ilco at sxc.hu', 'graphene')
+			),
+		);
+	}
 }
 
 
@@ -313,6 +299,26 @@ function graphene_admin_header_style(){ ?>
 }
 endif;
 
+
+/**
+ * Registers custom scripts that the theme uses
+*/
+function graphene_register_scripts(){
+	wp_register_script('graphene-jquery-tools', 'http://cdn.jquerytools.org/1.2.5/all/jquery.tools.min.js', array('jquery'), '', true);	
+}
+add_action('init', 'graphene_register_scripts');
+
+/**
+ * Enqueues the custom scripts that the theme uses
+*/
+function graphene_enqueue_scripts(){
+	if ( ! is_admin() ) { // Front-end only
+		wp_enqueue_script( 'graphene-jquery-tools' ); // jQuery Tools, required for slider and comments/pingbacks tabs
+	}	
+}
+add_action('init', 'graphene_enqueue_scripts');
+ 
+
 /**
  * Sets the various customised styling according to the options set for the theme
  *
@@ -321,7 +327,7 @@ endif;
  * @since Graphene 1.0.8
 */
 function graphene_custom_style(){ 
-	global $graphene_settings, $content_width;
+	global $graphene_settings, $graphene_defaults, $content_width;
 	
 	$background = get_theme_mod('background_image', false);
 	$bgcolor = get_theme_mod('background_color', false);
@@ -334,78 +340,86 @@ function graphene_custom_style(){
 		<?php endif; ?>
 		
 		<?php /* Set the width of the bottom widget items if number of columns is specified */ ?>
-		<?php if ($widgetcolumn) : $widget_width = floor((960 - (15+25+2)*$widgetcolumn)/$widgetcolumn); ?>
+		<?php if ($widgetcolumn) : $widget_width = floor((apply_filters('graphene_container_width', 960) - (15+25+2)*$widgetcolumn)/$widgetcolumn); ?>
 		#sidebar_bottom .sidebar-wrap{width:<?php echo $widget_width; ?>px;}
 		<?php endif; ?>
 		
 		<?php /* Set the width of the nav menu dropdown menu item width if specified */ ?>
-		<?php if ($graphene_settings['navmenu_child_width']) : ?>
-		#nav .menu li ul, #nav .menu li li{width:<?php echo $graphene_settings['navmenu_child_width']+10; ?>px;}
-		#nav .menu ul li a, #nav .menu ul li a:visited{width:<?php echo $graphene_settings['navmenu_child_width']; ?>px;}
-			<?php if (!is_rtl()) : ?>
-			#nav .menu li ul ul{margin-left:<?php echo $graphene_settings['navmenu_child_width']+10; ?>px;}
-			<?php else : ?>
-			#nav .menu li ul ul{margin-left:0;margin-right:<?php echo $graphene_settings['navmenu_child_width']+10; ?>px;}
-			<?php endif; ?>
-		.menu ul li a, .menu ul li a:visited{width:<?php echo ($graphene_settings['navmenu_child_width']-10); ?>px;}
-		#nav .menu ul > li.menu-item-ancestor > a,
-		#nav .menu ul > li.menu-item-ancestor > a:visited,
-		#nav .menu ul > li.menu-item-ancestor > a:hover,
-		#nav .menu ul > li.menu-item-ancestor:hover > a,
-		#nav .menu ul > li.menu-item-ancestor.sfhover > a,
-		#nav .menu ul > li.menu-item-ancestor.current-menu-item > a,
-		#nav .menu ul > li.current-menu-ancestor > a{
-			width:<?php echo $graphene_settings['navmenu_child_width']-15; ?>px;
-		}
+		<?php if ($graphene_settings['navmenu_child_width']) : $nav_width = $graphene_settings['navmenu_child_width']; ?>
+		#nav li ul{width: <?php echo $nav_width; ?>px}
+		<?php if (!is_rtl()) : ?>
+			#nav li ul ul{margin-left: <?php echo $nav_width; ?>px}
+		
+			#header-menu ul li.menu-item-ancestor > a {
+				background-position: <?php echo -652-(200-$nav_width); ?>px -194px;
+				width: <?php echo $nav_width-35; ?>px;
+			}
+			#header-menu ul li.menu-item-ancestor:hover > a,
+			#header-menu ul li.current-menu-item > a,
+			#header-menu ul li.current-menu-ancestor > a {
+				background-position: <?php echo -652-(200-$nav_width); ?>px -238px;
+			}
+			#secondary-menu ul li.menu-item-ancestor > a {
+				background-position: <?php echo -652-(200-$nav_width); ?>px -286px;
+				width: <?php echo $nav_width-35; ?>px;
+			}
+			#secondary-menu ul li.menu-item-ancestor:hover > a,
+			#secondary-menu ul li.current-menu-item > a,
+			#secondary-menu ul li.current-menu-ancestor > a {
+				background-position: <?php echo -652-(200-$nav_width); ?>px -319px;
+			}
+			
+		<?php else : ?>
+			#nav li ul ul{margin-right: <?php echo $nav_width; ?>px; margin-left: 0;}
+		
+			#header-menu ul li.menu-item-ancestor > a,
+			#secondary-menu ul li.menu-item-ancestor > a {
+				width: <?php echo $nav_width-35; ?>px;
+			}
+			
 		<?php endif; ?>
 		
-		<?php if (is_rtl() && $graphene_settings['light_header']) : ?>
-		#nav .menu > li.menu-item-ancestor > a,
-		#nav .menu > li.menu-item-ancestor > a:visited {
-			background-position: -880px -230px;
-		}
-		#nav .menu > li.menu-item-ancestor > a:hover,
-		#nav .menu > li.menu-item-ancestor:hover > a,
-		#nav .menu > li.menu-item-ancestor.sfhover > a,
-		#nav .menu > li.current-menu-item > a,
-		#nav .menu > li.current-menu-ancestor > a{
-			background-position: -880px -206px;
-		}
+		#header-menu ul li a{width: <?php echo $nav_width-20; ?>px}
+		#secondary-menu ul li a{width: <?php echo $nav_width-30; ?>px}
+
 		<?php endif; ?>
 		
-		<?php /* Header title text style */ ?>
-		<?php if ($graphene_settings['header_title_font_type'] || $graphene_settings['header_title_font_size'] || $graphene_settings['header_title_font_lineheight'] || $graphene_settings['header_title_font_weight'] || $graphene_settings['header_title_font_style']) : 
+		<?php /* Header title text style */ 
 			$font_style = '';
 			$font_style .= ($graphene_settings['header_title_font_type']) ? 'font-family:'.$graphene_settings['header_title_font_type'].';' : '';
 			$font_style .= ($graphene_settings['header_title_font_lineheight']) ? 'line-height:'.$graphene_settings['header_title_font_lineheight'].';' : '';
 			$font_style .= ($graphene_settings['header_title_font_size']) ? 'font-size:'.$graphene_settings['header_title_font_size'].';' : '';
 			$font_style .= ($graphene_settings['header_title_font_weight']) ? 'font-weight:'.$graphene_settings['header_title_font_weight'].';' : '';
 			$font_style .= ($graphene_settings['header_title_font_style']) ? 'font-style:'.$graphene_settings['header_title_font_style'].';' : '';
+			
+			if ($font_style) :
 		?>
 		.header_title{<?php echo $font_style; ?>}
 		<?php endif; ?>
 		
-		<?php /* Header description text style */ ?>
-		<?php if ($graphene_settings['header_desc_font_type'] || $graphene_settings['header_desc_font_size'] || $graphene_settings['header_desc_font_lineheight'] || $graphene_settings['header_desc_font_weight'] || $graphene_settings['header_desc_font_style']) : 
+		<?php /* Header description text style */ 
 			$font_style = '';
 			$font_style .= ($graphene_settings['header_desc_font_type']) ? 'font-family:'.$graphene_settings['header_desc_font_type'].';' : '';
 			$font_style .= ($graphene_settings['header_desc_font_size']) ? 'font-size:'.$graphene_settings['header_desc_font_size'].';' : '';
 			$font_style .= ($graphene_settings['header_desc_font_lineheight']) ? 'line-height:'.$graphene_settings['header_desc_font_lineheight'].';' : '';
 			$font_style .= ($graphene_settings['header_desc_font_weight']) ? 'font-weight:'.$graphene_settings['header_desc_font_weight'].';' : '';
 			$font_style .= ($graphene_settings['header_desc_font_style']) ? 'font-style:'.$graphene_settings['header_desc_font_style'].';' : '';
+			
+			if ($font_style) :
 		?>
 		.header_desc{<?php echo $font_style; ?>}
 		<?php endif; ?>
 		
-		<?php /* Content text style */ ?>
-		<?php if ($graphene_settings['content_font_type'] || $graphene_settings['content_font_size'] || $graphene_settings['content_font_lineheight'] || $graphene_settings['content_font_colour']) : 
+		<?php /* Content text style */ 
 			$font_style = '';
 			$font_style .= ($graphene_settings['content_font_type']) ? 'font-family:'.$graphene_settings['content_font_type'].';' : '';
 			$font_style .= ($graphene_settings['content_font_size']) ? 'font-size:'.$graphene_settings['content_font_size'].';' : '';
 			$font_style .= ($graphene_settings['content_font_lineheight']) ? 'line-height:'.$graphene_settings['content_font_lineheight'].';' : '';
-			$font_style .= ($graphene_settings['content_font_colour']) ? 'color:'.$graphene_settings['content_font_colour'].';' : '';
+			$font_style .= ($graphene_settings['content_font_colour'] != $graphene_defaults['content_font_colour']) ? 'color:'.$graphene_settings['content_font_colour'].';' : '';
+			
+			if ($font_style) :
 		?>
-		.entry-content p, .entry-content ul, .entry-content ol, .comment-entry ol{<?php echo $font_style; ?>}
+		.entry-content, .sidebar, .comment-entry{<?php echo $font_style; ?>}
 		<?php endif; ?>
 	
 		<?php /* Adjust post title if author's avatar is shown */ ?>
@@ -423,14 +437,15 @@ function graphene_custom_style(){
 		<?php /* Link header image */ ?>
 		<?php if ($graphene_settings['link_header_img'] && (HEADER_IMAGE_WIDTH != 900 || HEADER_IMAGE_HEIGHT != 198)) : ?>
 		#header_img_link{width:<?php echo HEADER_IMAGE_WIDTH; ?>px;height:<?php echo HEADER_IMAGE_HEIGHT; ?>px;}
-		<?php endif;?>
+		<?php endif;?>		
 		
-		<?php /* Link text */ ?>
-		<?php if ($graphene_settings['link_colour_normal']) {echo 'a{color:'.$graphene_settings['link_colour_normal'].';}';} ?>
-		<?php if ($graphene_settings['link_colour_visited']) {echo 'a:visited{color:'.$graphene_settings['link_colour_visited'].';}';} ?>
-		<?php if ($graphene_settings['link_colour_hover']) {echo 'a:hover{color:'.$graphene_settings['link_colour_hover'].';}';} ?>
-		<?php if ($graphene_settings['link_decoration_normal']) {echo 'a{text-decoration:'.$graphene_settings['link_decoration_normal'].';}';} ?>
-		<?php if ($graphene_settings['link_decoration_hover']) {echo 'a:hover{text-decoration:'.$graphene_settings['link_decoration_hover'].';}';} ?>
+		<?php // Link style
+		if ($graphene_settings['link_colour_normal'] != $graphene_defaults['link_colour_normal']) {echo 'a{color:'.$graphene_settings['link_colour_normal'].';}';}
+		if ($graphene_settings['link_colour_visited'] != $graphene_defaults['link_colour_visited']) {echo 'a:visited{color:'.$graphene_settings['link_colour_visited'].';}';}
+		if ($graphene_settings['link_colour_hover'] != $graphene_defaults['link_colour_hover']) {echo 'a:hover{color:'.$graphene_settings['link_colour_hover'].';}';}
+		if ($graphene_settings['link_decoration_normal']) {echo 'a{text-decoration:'.$graphene_settings['link_decoration_normal'].';}';}
+		if ($graphene_settings['link_decoration_hover']) {echo 'a:hover{text-decoration:'.$graphene_settings['link_decoration_hover'].';}';}
+		?>
 		
 		<?php /* Custom css */ ?>
 		<?php if ($graphene_settings['custom_css']) {echo $graphene_settings['custom_css'];} ?>
@@ -440,19 +455,160 @@ function graphene_custom_style(){
     
 <?php 
 }
-
-/* This is for future updates, where hopefully I can make the theme generate the CSS file each time it's changed 
- * and just load that instead. Would be more efficient.
-if (!function_exists('graphene_print_style')) :
-	function graphene_print_style(){
-		wp_register_style('graphene-customised-style', get_template_directory_uri().'/style-custom.php');
-		wp_enqueue_style('graphene-customised-style');
-	}
-endif;
-
-add_action('wp_print_styles', 'graphene_print_style');
-*/
 add_action('wp_head', 'graphene_custom_style');
+
+/**
+ * Sets the customised colour options. This <style> block will be added both to the front end as well as the theme's
+ * display options page.
+*/
+function graphene_custom_colours(){
+	
+	if ( ! is_admin() || strstr( $_SERVER["REQUEST_URI"], 'page=graphene_options&tab=display' ) ) {
+		
+		global $graphene_settings, $graphene_defaults;
+		
+		/* Customised colours */ 
+		$style = '';
+		// Content area
+		if ($graphene_settings['bg_content_wrapper'] != $graphene_defaults['bg_content_wrapper']) {$style .= '#content, .menu-bottom-shadow{background-color:'.$graphene_settings['bg_content_wrapper'].';}';}
+		if ($graphene_settings['bg_content'] != $graphene_defaults['bg_content']) {$style .= '.post{background-color:'.$graphene_settings['bg_content'].';}';}
+		if ($graphene_settings['bg_meta_border'] != $graphene_defaults['bg_meta_border']) {$style .= '.post-title, .post-title a, .post-title a:visited, .entry-footer{border-color:'.$graphene_settings['bg_meta_border'].';}';}
+		if ($graphene_settings['bg_post_top_border'] != $graphene_defaults['bg_post_top_border']) {$style .= '.post{border-top-color:'.$graphene_settings['bg_post_top_border'].';}';}
+		if ($graphene_settings['bg_post_bottom_border'] != $graphene_defaults['bg_post_bottom_border']) {$style .= '.post{border-bottom-color:'.$graphene_settings['bg_post_bottom_border'].';}';}
+		if ($graphene_settings['bg_post_bottom_border'] != $graphene_defaults['bg_post_bottom_border']) {$style .= '.post{border-bottom-color:'.$graphene_settings['bg_post_bottom_border'].';}';}
+		
+		// Widgets
+		if ($graphene_settings['bg_widget_item'] != $graphene_defaults['bg_widget_item']) {$style .= '.sidebar div.sidebar-wrap{background-color:'.$graphene_settings['bg_widget_item'].';}';}
+		if ($graphene_settings['bg_widget_list'] != $graphene_defaults['bg_widget_list']) {$style .= '.sidebar ul li{border-color:'.$graphene_settings['bg_widget_list'].';}';}
+		if ($graphene_settings['bg_widget_header_border'] != $graphene_defaults['bg_widget_header_border']) {$style .= '.sidebar h3{border-color:'.$graphene_settings['bg_widget_header_border'].';}';}
+		if ($graphene_settings['bg_widget_title'] != $graphene_defaults['bg_widget_title']) {$style .= '.sidebar h3, .sidebar h3 a, .sidebar h3 a:visited{color:'.$graphene_settings['bg_widget_title'].';}';}
+		if ($graphene_settings['bg_widget_title_textshadow'] != $graphene_defaults['bg_widget_title_textshadow']) {$style .= '.sidebar h3{text-shadow: 0 -1px '.$graphene_settings['bg_widget_title_textshadow'].';}';}
+		$grad_top = $graphene_settings['bg_widget_header_top'];
+		$grad_bottom = $graphene_settings['bg_widget_header_bottom'];
+		if ($grad_bottom != $graphene_defaults['bg_widget_header_bottom'] || $grad_top != $graphene_defaults['bg_widget_header_top']) {$style .= '.sidebar h3{
+				background: ' . $grad_top . ';
+				background: -moz-linear-gradient(' . $grad_top . ', ' . $grad_bottom . ');
+				background: -webkit-gradient(linear, 0 0, 0 top, from(' . $grad_top . '), to(' . $grad_bottom . '));
+				background: linear-gradient(' . $grad_top . ', ' . $grad_bottom . ');
+		}';}
+		
+		// Slider
+		$grad_top = $graphene_settings['bg_slider_top'];
+		$grad_bottom = $graphene_settings['bg_slider_bottom'];
+		if ($grad_bottom != $graphene_defaults['bg_slider_bottom'] || $grad_top != $graphene_defaults['bg_slider_top']) {$style .= '.featured_slider {
+				-pie-background: linear-gradient(left top, ' . $grad_top . ', ' . $grad_bottom . ');
+				background: ' . $grad_top . ';
+				background: linear-gradient(left top, ' . $grad_top . ', ' . $grad_bottom . ');
+				background: -moz-linear-gradient(left top, ' . $grad_top . ', ' . $grad_bottom . ');
+				background: -webkit-gradient(linear, left top, right bottom, from(' . $grad_top . '), to(' . $grad_bottom . '));
+		}';}
+		
+		// Block button
+		$grad_top = $graphene_settings['bg_button'];
+		$grad_bottom = graphene_hex_addition($grad_top, -26);
+		$grad_bottom_hover = graphene_hex_addition($grad_top, -52);
+		$font_color = $graphene_settings['bg_button_label'];
+		$font_shadow = $graphene_settings['bg_button_label_textshadow'];
+		if ($grad_top != $graphene_defaults['bg_button']) {
+			$style .= '.block-button, .block-button:visited, .Button {
+							background: ' . $grad_top . ';
+							background: -moz-linear-gradient(' . $grad_top . ', ' . $grad_bottom . ');
+							background: -webkit-gradient(linear, 0 0, 0 bottom, from(' . $grad_top . '), to(' . $grad_bottom . '));
+							background: linear-gradient(' . $grad_top . ', ' . $grad_bottom . ');
+							border-color: ' . $grad_bottom . ';
+							text-shadow: 0 -1px 1px ' . $font_shadow . ';
+							color: ' . $font_color . ';
+						}';
+			$style .= '.block-button:hover {
+							background: ' . $grad_top . ';
+							background: -moz-linear-gradient(' . $grad_top . ', ' . $grad_bottom_hover . ');
+							background: -webkit-gradient(linear, 0 0, 0 bottom, from(' . $grad_top . '), to(' . $grad_bottom_hover . '));
+							background: linear-gradient(' . $grad_top . ', ' . $grad_bottom_hover . ');
+							color: ' . $font_color . ';
+						}';
+		}
+		
+		if ($style) { echo '<style type="text/css">'.$style.'</style>';	}
+	}
+	
+	// Admin only
+	if ( is_admin() && strstr( $_SERVER["REQUEST_URI"], 'page=graphene_options&tab=display' ) ) {
+		
+		// Widgets
+		$style = '';
+		if ($graphene_settings['content_font_colour'] != $graphene_defaults['content_font_colour']) {$style .= '.graphene, .graphene li, .graphene p{color:'.$graphene_settings['content_font_colour'].';}';}
+		if ($graphene_settings['link_colour_normal'] != $graphene_defaults['link_colour_normal']) {$style .= '.graphene a{color:'.$graphene_settings['link_colour_normal'].';}';}
+		if ($graphene_settings['link_colour_visited'] != $graphene_defaults['link_colour_visited']) {$style .= '.graphene a:visited{color:'.$graphene_settings['link_colour_visited'].';}';}
+		if ($graphene_settings['link_colour_hover'] != $graphene_defaults['link_colour_hover']) {$style .= '.graphene a:hover{color:'.$graphene_settings['link_colour_hover'].';}';}
+		
+		// Slider
+		$grad_bottom = $graphene_settings['bg_slider_bottom'];
+		$grad_top = $graphene_settings['bg_slider_top'];
+		if ($grad_bottom != $graphene_defaults['bg_slider_bottom'] || $grad_top != $graphene_defaults['bg_slider_top']) {$style .= '#grad-box {
+				-pie-background: linear-gradient(left top, ' . $grad_top . ', ' . $grad_bottom . ');
+				background: ' . $grad_top . ';
+				background: linear-gradient(left top, ' . $grad_top . ', ' . $grad_bottom . ');
+				background: -moz-linear-gradient(left top, ' . $grad_top . ', ' . $grad_bottom . ');
+				background: -webkit-gradient(linear, left top, right bottom, from(' . $grad_top . '), to(' . $grad_bottom . '));
+		}';}
+		
+		if ($style) { echo '<style type="text/css">'.$style.'</style>';	}
+	}
+}
+add_action('wp_head', 'graphene_custom_colours');
+add_action('admin_head', 'graphene_custom_colours');
+
+
+/**
+ * Convert a hex decimal color code to its RGB equivalent and vice versa
+ */                                                                                                
+function graphene_rgb2hex($c){
+   if(!$c) return false;
+   $c = trim($c);
+   $out = false;
+  if(preg_match("/^[0-9ABCDEFabcdef\#]+$/i", $c)){
+      $c = str_replace('#','', $c);
+      $l = strlen($c) == 3 ? 1 : (strlen($c) == 6 ? 2 : false);
+
+      if($l){
+         unset($out);
+         $out['red'] = hexdec(substr($c, 0,1*$l));
+         $out['green'] = hexdec(substr($c, 1*$l,1*$l));
+         $out['blue'] = hexdec(substr($c, 2*$l,1*$l));
+      }else $out = false;
+             
+   }elseif (preg_match("/^[0-9]+(,| |.)+[0-9]+(,| |.)+[0-9]+$/i", $c)){
+      $spr = str_replace(array(',',' ','.'), ':', $c);
+      $e = explode(":", $spr);
+      if(count($e) != 3) return false;
+         $out = '#';
+         for($i = 0; $i<3; $i++)
+            $e[$i] = dechex(($e[$i] <= 0)?0:(($e[$i] >= 255)?255:$e[$i]));
+             
+         for($i = 0; $i<3; $i++)
+            $out .= ((strlen($e[$i]) < 2)?'0':'').$e[$i];
+                 
+         $out = strtoupper($out);
+   }else $out = false;
+         
+   return $out;
+}
+
+
+
+/**
+ * Perform adding (or subtracting) operation on a hexadecimal colour code
+*/
+function graphene_hex_addition($hex, $num){
+	$rgb = graphene_rgb2hex($hex);
+	foreach ($rgb as $key => $val) {
+		$rgb[$key] += $num;
+		$rgb[$key] = ($rgb[$key] < 0) ? 0 : $rgb[$key];
+	}
+	$hex = graphene_rgb2hex(implode(',', $rgb));
+	
+	return $hex;
+}
 
 
 /**
@@ -489,6 +645,51 @@ function graphene_favicon(){
 add_action('wp_head', 'graphene_favicon');
 
 
+
+/**
+ * Defines the custom walker that adds description to the display of our Header Menu
+*/
+class Graphene_Description_Walker extends Walker_Nav_Menu {
+	function start_el(&$output, $item, $depth, $args)       {
+		global $wp_query;
+		
+		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+		
+		$class_names = $value = '';
+		
+		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
+		
+		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
+		$class_names = ' class="'. esc_attr( $class_names ) . '"';
+		
+		$output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
+		
+		$attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+		$attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+		$attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+		$attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+		
+		$prepend = '<strong>';
+		$append = '</strong>';
+		$desc_length = apply_filters( 'graphene_menu_desc_length', 50 );
+		$description  = ! empty( $item->description ) ? '<span>'.esc_attr( graphene_substr( $item->description, 0, $desc_length, ' ...' ) ).'</span>' : '';
+		
+		if ( $depth != 0 )	{
+				 $description = $append = $prepend = "";
+		}
+		
+		$item_output = $args->before;
+		$item_output .= '<a'. $attributes .'>';
+		$item_output .= $args->link_before .$prepend.apply_filters( 'the_title', $item->title, $item->ID ).$append;
+		$item_output .= $description.$args->link_after;
+		$item_output .= '</a>';
+		$item_output .= $args->after;
+		
+		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+		}
+}
+
+
 /**
  * Define the callback menu, if there is no custom menu.
  * This menu automatically lists all Pages as menu items, including their direct
@@ -496,17 +697,24 @@ add_action('wp_head', 'graphene_favicon');
 */
 if (!function_exists('graphene_default_menu')) :
 
-	function graphene_default_menu(){ ?>
-		<ul id="header-menu" class="menu clearfix">
+	function graphene_default_menu(){ global $graphene_settings; ?>
+    
+		<ul id="header-menu" class="menu clearfix default-menu">
             <?php if (get_option('show_on_front') == 'posts') : ?>
-            <li <?php if ( is_single() || is_front_page()) { echo 'class="current_page_item"'; } ?>><a href="<?php echo get_home_url(); ?>"><?php _e('Home','graphene'); ?></a></li>
+            <li <?php if ( is_single() || is_front_page()) { echo 'class="current_page_item current-menu-item"'; } ?>>
+            	<a href="<?php echo get_home_url(); ?>">
+                	<strong><?php _e('Home','graphene'); ?></strong>
+                    <?php if ($graphene_settings['navmenu_home_desc']) {echo '<span>'.$graphene_settings['navmenu_home_desc'].'</span>';} ?>
+                </a>
+            </li>
             <?php endif; ?>
             <?php 
 				$args = array(
 							'echo' => 1,
 							'sort_column' => 'menu_order, post_title',
 							'depth' => 5,
-							'title_li' => ''
+							'title_li' => '',
+                            'walker' => new Walker_PageDescription()
 						);
 			wp_list_pages(apply_filters('graphene_default_menu_args', $args)); 
 			?>
@@ -516,6 +724,69 @@ if (!function_exists('graphene_default_menu')) :
 	} 
 	
 endif;
+
+class Walker_PageDescription extends Walker_Page {
+    
+    /**
+     * Code exact copied from: wp-includes\post-template.pgp >> Walker_Page::start_el() 
+     * @since 2.1.0
+     */
+    function start_el(&$output, $page, $depth, $args, $current_page) {
+        if ( $depth )
+            $indent = str_repeat("\t", $depth);
+        else
+            $indent = '';
+        extract($args, EXTR_SKIP);
+        $css_class = array('page_item', 'page-item-'.$page->ID);
+		if ( !empty($current_page) ) {
+			$_current_page = get_page( $current_page );
+			_get_post_ancestors($_current_page);
+			if ( isset($_current_page->ancestors) && in_array($page->ID, (array) $_current_page->ancestors) ) {
+				$css_class[] = 'current_page_ancestor';
+				$css_class[] = 'current-menu-ancestor';
+			}
+			if ( $page->ID == $current_page ) {
+				$css_class[] = 'current_page_item';
+				$css_class[] = 'current-menu-item';
+			}
+			elseif ( $_current_page && $page->ID == $_current_page->post_parent ) {
+				$css_class[] = 'current_page_parent';
+				$css_class[] = 'current-menu-ancestor';
+				$css_class[] = 'current-menu-parent';
+			}
+		} elseif ( $page->ID == get_option('page_for_posts') ) {
+			$css_class[] = 'current_page_parent';
+			$css_class[] = 'current-menu-ancestor';
+			$css_class[] = 'current-menu-parent';
+		}
+		
+		// Check if page has children
+		if (get_pages('child_of='.$page->ID)) {
+			$css_class[] = 'menu-item-ancestor';
+		}
+
+		$css_class = implode(' ', apply_filters('page_css_class', $css_class, $page));
+                
+		$title = apply_filters( 'the_title', $page->post_title, $page->ID );
+		
+		// get the graphene description if it is set otherwise the wordpress default -> title
+		$menu_title = '<strong>'.apply_filters( 'the_title', $page->post_title, $page->ID ).'</strong>';
+		$menu_title .= (get_post_meta($page->ID, '_graphene_nav_description', true) && !$depth) ? 
+						'<span>'.get_post_meta($page->ID, '_graphene_nav_description', true).'</span>' : 
+						'';
+                
+		$output .= $indent . '<li class="' . $css_class . '"><a href="' . get_permalink($page->ID) . '" title="' . esc_attr( wp_strip_all_tags( $title ) ) . '">' . $link_before . $menu_title . $link_after . '</a>';
+
+		if ( !empty($show_date) ) {
+			if ( 'modified' == $show_date )
+				$time = $page->post_modified;
+			else
+				$time = $page->post_date;
+
+			$output .= " " . mysql2date($date_format, $time);
+		}
+    }
+}
 
 /**
  * Defines the callback function for use with wp_list_comments(). This function controls
@@ -544,7 +815,7 @@ if (!function_exists('graphene_comment')) :
 							<p class="commentmetadata">
                             	<?php /* translators: %1$s is the comment date, %2$s is the comment time */ ?>
 								<?php printf(__('%1$s at %2$s', 'graphene'), get_comment_date(), get_comment_time()); ?>
-								<?php echo '(UTC '.get_option('gmt_offset').')'; ?>
+								<span class="timezone"><?php echo '(UTC '.get_option('gmt_offset').')'; ?></span>
 								<?php edit_comment_link(__('Edit comment','graphene'),' | ',''); ?>
                             	<?php do_action('graphene_comment_metadata'); ?>    
                             </p>
@@ -631,7 +902,10 @@ if (!function_exists('graphene_addthis')) :
 		// Show the AddThis button
 		if ($show_addthis) {
 			echo '<div class="add-this-right">';
-			echo stripslashes($graphene_settings['addthis_code']);
+			$html = stripslashes($graphene_settings['addthis_code']);
+			$html = str_replace('[#post-url]', get_permalink($post_id), $html);
+			$html = str_replace('[#post-title]', get_the_title($post_id), $html);
+			echo $html;
 			echo '</div>';
 			
 			do_action('graphene_show_addthis');
@@ -910,6 +1184,7 @@ if (!function_exists('graphene_options_tabs')) :
 		echo '<h3 class="options-tab">';
 		foreach ($links as $link)
 			echo $link;
+		echo '<a class="toggle-all" href="#">'.__('Toggle all tabs', 'graphene').'</a>';
 		echo '</h3>';
 	}
 endif;
@@ -942,9 +1217,9 @@ include('admin/custom-fields.php');
 // Starting with the default fields
 function graphene_comment_form_fields(){
 	$fields =  array(
-		'author' => '<p class="comment-form-author"><label for="author" class="graphene_form_label">'.__('Name:','graphene').'</label><input id="author" name="author" type="text" /></p>',
-		'email'  => '<p class="comment-form-email"><label for="email" class="graphene_form_label">' . __('Email:','graphene').'</label><input id="email" name="email" type="text" /></p>',
-		'url'    => '<p class="comment-form-url"><label for="url" class="graphene_form_label">'.__('Website:','graphene').'</label><input id="url" name="url" type="text" /></p>',
+		'author' => '<p class="comment-form-author clearfix"><label for="author" class="graphene_form_label">'.__('Name:','graphene').'</label><input id="author" name="author" type="text" class="graphene-form-field" /></p>',
+		'email'  => '<p class="comment-form-email clearfix"><label for="email" class="graphene_form_label">' . __('Email:','graphene').'</label><input id="email" name="email" type="text" class="graphene-form-field" /></p>',
+		'url'    => '<p class="comment-form-url clearfix"><label for="url" class="graphene_form_label">'.__('Website:','graphene').'</label><input id="url" name="url" type="text" class="graphene-form-field" /></p>',
 	);
 	
 	do_action('graphene_comment_form_fields');
@@ -954,7 +1229,7 @@ function graphene_comment_form_fields(){
 
 // The comment field textarea
 function graphene_comment_textarea(){
-	echo '<p class="clearfix"><label class="graphene_form_label">'.__('Message:','graphene').'</label><textarea name="comment" id="comment" cols="40" rows="10" tabindex="4"></textarea></p><div class="graphene_wrap">';
+	echo '<p class="clearfix"><label class="graphene_form_label">'.__('Message:','graphene').'</label><textarea name="comment" id="comment" cols="40" rows="10" class="graphene-form-field"></textarea></p><div class="graphene_wrap">';
 	
 	do_action('graphene_comment_textarea');
 }
@@ -1080,15 +1355,6 @@ if (!function_exists('graphene_scrollable')) :
 	}
 endif;
 
-/* Load jQuery Tools script */
-function graphene_scrollable_js() {
-	wp_enqueue_script('graphene-jquery-tools', 'http://cdn.jquerytools.org/1.2.5/all/jquery.tools.min.js', array('jquery'), '', true);
-}
-// Print the script
-add_action('init', 'graphene_scrollable_js');
-
-
-
 
 /**
  * Control the excerpt length
@@ -1138,7 +1404,8 @@ function graphene_slider(){
         $slidercat = ($graphene_settings['slider_cat'] != '') ? $graphene_settings['slider_cat'] : false;
         
 		/* Set the post types to be displayed */
-		$slider_post_type = apply_filters('graphene_slider_post_type', array('post'));
+		$slider_post_type = ($slidercat == 'posts_pages') ? array('post', 'page') : array('post') ;
+		$slider_post_type = apply_filters('graphene_slider_post_type', $slider_post_type);
 		
         /* Get the posts to display in the slider */					
 			
@@ -1150,15 +1417,20 @@ function graphene_slider(){
 					'orderby' => 'date',
 					'order' => 'DESC',
 					'suppress_filters' => 0,
-					'post_type' => $slider_post_type
+					'post_type' => $slider_post_type,
 					 );
 		
-		if ($slidercat && $slidercat != 'random') {
+		if ($slidercat && !in_array($slidercat, array('random', 'posts_pages'))) {
 			$args = array_merge($args, array('category' => $slidercat));
 		}
 		
 		if ($slidercat && $slidercat == 'random') {
 			$args = array_merge($args, array('orderby' => 'rand'));
+		}
+		
+		if ($slidercat && $slidercat == 'posts_pages') {
+			$post_ids = $graphene_settings['slider_specific_posts'];
+			$args = array_merge($args, array('include' => $post_ids, 'numberposts' => -1, 'orderby' => '', 'order' => ''));
 		}
 
 		$sliderposts = get_posts(apply_filters('graphene_slider_args', $args));
@@ -1302,12 +1574,6 @@ if (!function_exists('graphene_get_slider_image')) :
 					$html = wp_get_attachment_image_src(get_post_thumbnail_id($post_id), $size);
 				else
 					$html .= get_the_post_thumbnail($post_id, $size);
-			/* Disabling the default image. Seems like it's more trouble than worth it
-			elseif (!$urlonly) :
-				$html .= apply_filters('graphene_generic_slider_img', '<img alt="" src="'.get_template_directory_uri().'/images/img_slider_generic.png" />');
-			else :
-				$html .= apply_filters('graphene_generic_slider_img', get_template_directory_uri().'/images/img_slider_generic.png');
-			*/
 			endif;
 			
 		} elseif ($final_setting == 'post_image'){			// First image in post
@@ -1499,98 +1765,15 @@ function graphene_tabs_js(){
 add_action('wp_footer', 'graphene_tabs_js');
 
 
-/**
- * Register and enqueue the TinyDropdown menu script
- *
- * @package WordPress
- * @subpackage Graphene
- * @since Graphene 1.1.4
-*/
-/*
-function graphene_tinydropdown_js(){
-	wp_enqueue_script('tiny-dropdown', get_template_directory_uri().'/js/tinydropdown.js', array(), '', true);
-}
-add_action('template_redirect', 'graphene_tinydropdown_js');
-*/
-
 
 /**
- * Add the TinyDropdown initialisation script
+ * Add JavaScript for the theme's options page
 */
-/*
-function apis_tinydropdown_script(){ ?>
-	<script type="text/javascript">
-	<!--
-	var menu1 = new menu.dd('menu1');
-	menu1.init('header-menu');
-	//-->
-	</script>
-<?php
-}
-add_action('wp_footer', 'apis_tinydropdown_script');
-*/
+function graphene_options_js(){ 
 
-
-
-/**
- * Add JavaScript to hide and show the options panel
-*/
-function graphene_options_js(){ ?>
-	<script type="text/javascript">
-	//<![CDATA[
-	jQuery(document).ready(function($){
-        $('.meta-box-sortables .head-wrap').click(function(){
-            $(this).next().toggle(400);
-            return false;
-        }).next().hide();
-		
-		// New social media icon fields
-		count = 0;
-		$('#social-media-new').click(function(){
-			$('.social-media-table tbody').append('\
-					<tr class="new-social-media new-social-media-name">\
-                        <th scope="row"><label><?php _e('Social Media name', 'graphene'); ?></label></th>\
-                        <td>\
-                            <input type="text" name="graphene_settings[social_media_new]['+count+'][name]" value="" size="60" class="widefat code" /><br />\
-                            <span class="description"><?php _e('Name of the social media, e.g. LinkedIn, etc.', 'graphene'); ?></span>\
-                        </td>\
-                    </tr>\
-					<tr class="new-social-media">\
-                        <th scope="row"><label><?php _e('Social Media profile URL', 'graphene'); ?></label></th>\
-                        <td>\
-                            <input type="text" name="graphene_settings[social_media_new]['+count+'][url]" value="" size="60" class="widefat code" /><br />\
-                            <span class="description"><?php _e('URL to your page for the social media.', 'graphene'); ?></span>\
-                        </td>\
-                    </tr>\
-                    <tr class="new-social-media">\
-                        <th scope="row"><label><?php _e('Social Media icon URL', 'graphene'); ?></label></th>\
-                        <td>\
-                            <input type="text" name="graphene_settings[social_media_new]['+count+'][icon]" value="" size="60" class="widefat code" /><br />\
-                            <span class="description"><?php printf(__('URL to the social media icon. <strong>Note:</strong> the theme uses the %s iconset for the social media icons.', 'graphene'), '<a href="http://www.iconfinder.com/search/?q=iconset%3Asocialmediabookmark">Social Media Bookmark</a>'); ?></span>\
-                        </td>\
-                    </tr>\
-			');
-			count++;
-			return false;
-		});
-		
-		// Delete social media
-		$('.social-media-del').click(function(){
-			
-			social_media = $(this).attr('id');
-			social_media = social_media.replace('del', 'opt');
-			social_media = '.'+social_media;
-			$(social_media).css('background-color', '#A61C09');
-			$(social_media).toggle(300).delay(300).queue(function(){$(this).remove();});
-			// $(social_media).remove();
-			
-			return false;	
-		});
-		
-    });
-	//]]>
-	</script>
-<?php
+	if ( strstr( $_SERVER["REQUEST_URI"], 'page=graphene_options' ) ) {
+		require('admin/js/admin.js.php');	
+	}
 }
 add_action('admin_footer', 'graphene_options_js');
 
@@ -1671,7 +1854,7 @@ function graphene_column_mode(){
 function graphene_ie_css3(){ ?>
 	<!--[if lte IE 8]>
       <style type="text/css" media="screen">
-      	#footer, div.sidebar-wrap, .block-button, .featured_slider, #slider_root, #comments li.bypostauthor, .pie{behavior: url(<?php echo get_template_directory_uri(); ?>/js/PIE.php);}
+      	#footer, div.sidebar-wrap, .block-button, .featured_slider, #slider_root, #comments li.bypostauthor, #nav li ul, .pie{behavior: url(<?php echo get_template_directory_uri(); ?>/js/PIE.php);}
         .featured_slider{margin-top:0 !important;}
       </style>
     <![endif]-->
@@ -1996,6 +2179,8 @@ function Graphene_Shortcodes_Buttons(){
 /**
  * Helps to determine if the comments should be shown.
  */
+if ( ! function_exists( 'graphene_should_show_comments' ) ) :
+
 function graphene_should_show_comments() {
     global $graphene_settings, $post;
     if ($graphene_settings['comments_setting'] == 'disabled_completely'){
@@ -2006,6 +2191,8 @@ function graphene_should_show_comments() {
     }
     return true;
 }
+
+endif;
 
 /**
  * Add a link to the theme's options page in the admin bar
@@ -2188,4 +2375,36 @@ function graphene_top_bar_social(){
     <?php endif; endforeach;
 }
 add_action('graphene_feed_icon', 'graphene_top_bar_social');
+
+
+/**
+ * Add breadcrumbs to the top of the content area. Uses the Breadcrumb NavXT plugin
+*/
+if (function_exists('bcn_display')) :
+	function graphene_breadcrumb_navxt(){
+		echo '<div class="breadcrumb">';
+		bcn_display();
+		echo '</div>';
+	}
+	add_action('graphene_top_content', 'graphene_breadcrumb_navxt');
+endif;
+
+
+/**
+ * Truncate a string by specified length
+*/
+if ( ! function_exists( 'graphene_substr' ) ) :
+
+function graphene_substr( $string, $start = 0, $length = '', $append = '' ){
+	
+	if ( $length == '' ) return $string;
+	
+	if ( strlen( $string ) > $length ) {
+		return substr( $string, $start, $length ) . $append;	
+	} else {
+		return $string;	
+	}
+}
+
+endif;
 ?>

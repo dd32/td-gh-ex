@@ -33,39 +33,49 @@ global $graphene_settings;
 
 <?php do_action('graphene_before_footer'); ?>
 
-<div id="footer">
+<div id="footer" class="clearfix">
     
     <?php if (!$graphene_settings['hide_copyright']) : ?>
-        <div id="copyright" <?php if (!$graphene_settings['show_cc'] && !is_rtl()) {
-        echo 'style="background:none;padding-left:20px;"';
-    } elseif (!$graphene_settings['show_cc'] && is_rtl()) {
-        echo 'style="background:none;padding-right:20px;"';
-    } ?>>
-            <?php if ($graphene_settings['copy_text'] == '') : ?>
-                <p>
-                <?php _e('Except where otherwise noted, content on this site is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Creative Commons Licence</a>.', 'graphene'); ?>
-                </p>
-            <?php else : ?>
-            <?php echo stripslashes($graphene_settings['copy_text']); ?>
+    <div id="copyright">
+    	<h3><?php _e('Copyright', 'graphene'); ?></h3>
+		<?php if ($graphene_settings['copy_text'] == '') : ?>
+            <p>
+            <?php _e('Except where otherwise noted, content on this site is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Creative Commons Licence</a>.', 'graphene'); ?>
+            </p>
+        <?php else : ?>
+        	<?php echo stripslashes($graphene_settings['copy_text']); ?>
+ 	    <?php endif; ?>
+        
+        <?php if ($graphene_settings['show_cc']) : ?>
+        	<p class="cc-logo"><span>Creative Commons Licence BY-NC-ND</span></p>
         <?php endif; ?>
 
-    <?php do_action('graphene_copyright'); ?>
-        </div>
+    	<?php do_action('graphene_copyright'); ?>
+    </div>
 <?php endif; ?>
 
-    <div id="w3c">
-        <p>
-            <a title="<?php esc_attr_e('Valid XHTML 1.0 Strict', 'graphene'); ?>" href="http://validator.w3.org/check?uri=referer" id="w3c_xhtml"><span><?php _e('Valid XHTML 1.0 Strict', 'graphene'); ?></span></a> 
-            <a title="<?php esc_attr_e('Valid CSS', 'graphene'); ?>" href="http://jigsaw.w3.org/css-validator/check/referer/" id="w3c_css"><span><?php _e('Valid CSS Level 2.1', 'graphene'); ?></span></a>
-        </p>
-
-    <?php do_action('graphene_w3c'); ?>
+	<div class="footer-menu-wrap">
+    	<ul id="footer-menu" class="clearfix">
+			<?php /* Footer menu */
+            $args = array(
+                'container' => '',
+                'fallback_cb' => 'none',
+                'depth' => 2,
+                'theme_location' => 'footer-menu',
+                'items_wrap' => '%3$s'
+            );
+            wp_nav_menu(apply_filters('graphene_secondary_menu_args', $args));
+            ?>
+            <?php if ( ! $graphene_settings['hide_return_top'] ) : ?>
+        	<li class="menu-item return-top"><a href="#"><?php _e('Return to top', 'graphene'); ?></a></li>
+            <?php endif; ?>
+        </ul>
     </div>
 
     <div id="developer">
         <p>
-        <?php /* translators: %1$s is the blog title, %2$s is the theme's name, %3$s is the theme's author */ ?>
-<?php printf(__('%1$s uses %2$s theme by %3$s.', 'graphene'), '<a href="' . get_home_url() . '">' . get_bloginfo('name') . '</a>', '<a href="http://www.khairul-syahir.com/wordpress-dev/graphene-theme">' . ucfirst(get_template()) . '</a>', 'Syahir Hakim'); ?>
+        <?php /* translators: %1$s is the link to WordPress.org, %2$s is the theme's name */ ?>
+<?php printf(__('Powered by %1$s and the %2$s.', 'graphene'), '<a href="http://wordpress.org/">WordPress</a>', '<a href="http://www.khairul-syahir.com/wordpress-dev/graphene-theme">' . __('Graphene Theme', 'graphene') . '</a>'); ?>
         </p>
 
 	<?php do_action('graphene_developer'); ?>

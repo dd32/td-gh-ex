@@ -1,6 +1,28 @@
 <?php if (have_posts()) : ?>
 	<?php while (have_posts()) : the_post(); global $graphene_settings; ?>
     
+    	<?php 
+		/**
+		 * Check if the post has a post format. Load a post-format specific loop file,
+		 * if it has. Continue with standard loop otherwise.
+		*/ 
+		global $post_format;
+		$post_format = get_post_format();
+		
+		// Get the post formats supported by the theme
+		$supported_formats = get_theme_support( 'post-formats' );
+		if (is_array($supported_formats)) $supported_formats = $supported_formats[0]; 
+		
+		if (in_array($post_format, $supported_formats)) {
+			
+			// Get the post format loop file
+			get_template_part('loop-post-formats', $post_format);
+			
+			// Stop this default posts loop
+			continue;
+		}
+		?>
+    
     	<?php /* Posts navigation for single post pages, but not for Page post */ ?>
 		<?php if (is_single() && !is_page()) : ?>
         <div class="post-nav clearfix">
@@ -9,12 +31,16 @@
             <?php do_action('graphene_post_nav'); ?>
         </div>
         <?php endif; ?>
-        
-        
+
+        <?php if (get_post_type($post) == 'page' && $graphene_settings['hide_parent_content_if_empty'] && $post->post_content == '') : ?>
+        <h1 class="page-title">
+            <?php if (get_the_title() == '') {_e('(No title)','graphene');} else {the_title();} ?>
+        </h1>
+        <?php else : ?>                
         <div id="post-<?php the_ID(); ?>" <?php post_class('clearfix post'); ?>>
             
             <?php /* Post date is not shown if this is a Page post */ ?>
-            <?php if (!is_page() && ( strpos($graphene_settings['post_date_display'], 'icon_') === 0 ) && get_post_type($post) != 'page') : ?>
+            <?php if (( strpos($graphene_settings['post_date_display'], 'icon_') === 0 ) && get_post_type($post) != 'page') : ?>
             <div class="date updated">
                 <p class="default_date"><?php the_time('M'); ?><br /><span><?php the_time('d') ?></span>
                     <?php if ($graphene_settings['post_date_display'] == 'icon_plus_year') : ?>
@@ -75,17 +101,16 @@
                     </p>
                     <?php endif; ?>
                     
-                    <?php /* Inline post date */
-                    	if ($graphene_settings['post_date_display'] == 'text' && !is_page()){
-                            echo '<p class="post-date-inline updated">';
-                            the_time(get_option('date_format'));
-                            echo '</p>';
-                        }
-                    ?>
+                    <?php /* Inline post date */ ?>
+                    <?php if ($graphene_settings['post_date_display'] == 'text' && !is_page()) : ?>
+                    <p class="post-date-inline updated">
+                        <abbr class="published" title="<?php the_date('c'); ?>"><?php the_time(get_option('date_format')); ?></abbr>
+                    </p>
+                    <?php endif; ?>
                     
-                    <?php /* Post author, not not shown if this is a Page post or if admin decides to hide it */ ?>
+                    <?php /* Post author, not shown if this is a Page post or if admin decides to hide it */ ?>
                     <?php if ($graphene_settings['hide_post_author'] != true) : ?>
-                    <p class="post-author vcard">
+                    <p class="post-author author vcard">
                         <?php
                             if (!is_page() && get_post_type($post) != 'page') {
                                 /* translators: this is for the author byline, such as 'by John Doe' */
@@ -110,7 +135,12 @@
                     <?php do_action('graphene_before_post_content'); ?>
                     
                     <?php if ((is_home() && !$graphene_settings['posts_show_excerpt']) || is_singular() || (!is_singular() && !is_home() && $graphene_settings['archive_full_content'])) : ?>
-                        <?php the_content('<span class="block-button">'.__('Read the rest of this entry &raquo;','graphene').'</span>'); ?>
+                    	
+                        <?php /* Social sharing buttons at top of post */ ?>
+                        <?php if (stripos($graphene_settings['addthis_location'], 'top') !== false) {graphene_addthis(get_the_ID());} ?>
+                        
+						<?php /* The full content */ ?>
+						<?php the_content('<span class="block-button">'.__('Read the rest of this entry &raquo;','graphene').'</span>'); ?>
                     <?php else : ?>
                         <?php /* The post thumbnail */
                         if (has_post_thumbnail(get_the_ID())) { ?>
@@ -124,6 +154,7 @@
                             echo graphene_get_post_image(get_the_ID(), apply_filters('graphene_excerpt_thumbnail_size', 'thumbnail'), 'excerpt');	
                         }
                         ?>
+                        <?php /* The excerpt */ ?>
                         <?php the_excerpt(); ?>
                     <?php endif; ?>
                     
@@ -147,7 +178,7 @@
                         */ 
                     ?>
                     <?php if (is_single() || is_page()) : ?>
-                        <?php graphene_addthis(get_the_ID()); ?>
+                        <?php if (stripos($graphene_settings['addthis_location'], 'bottom') !== false) {graphene_addthis(get_the_ID());} ?>
                     <?php elseif ($graphene_settings['hide_post_commentcount'] != true && comments_open() && graphene_should_show_comments() ) : ?>
                         <p class="comment-link"><?php comments_popup_link(__('Leave comment','graphene'), __('1 comment','graphene'), __("% comments",'graphene')); ?></p>
                     <?php endif; ?>
@@ -156,6 +187,8 @@
                 </div>
             </div>
         </div>
+        <?php endif; ?>
+        
         <?php 
         /**
          * Display the post author's bio in single-post page if enabled
@@ -163,7 +196,7 @@
         if (is_single() && $graphene_settings['show_post_author']) :
         ?>
         <h4 class="author_h4"><?php _e('About the author', 'graphene'); ?></h4>
-        <div class="author author-info clearfix">
+        <div class="author-info clearfix">
             <?php
             if (get_the_author_meta('graphene_author_imgurl')) {
                 echo '<img class="avatar" src="'.get_the_author_meta('graphene_author_imgurl').'" alt="" />';
@@ -196,6 +229,8 @@
         
         <?php /* Get the comments template for single post pages */ ?>
         <?php if (is_single() || is_page()) {comments_template();} ?>
+        
+        <?php do_action( 'graphene_loop_footer' ); ?>
             
 	<?php endwhile; ?>
     

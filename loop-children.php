@@ -5,7 +5,8 @@
 */
 global $post, $graphene_settings;
 
-if ( ! $graphene_settings['hide_child_pages'] ) :
+if ( $graphene_settings['child_page_listing'] == 'show_always' ||
+     ( $graphene_settings['child_page_listing'] == 'show_if_parent_empty' && $post->post_content == '' )) :
 
     
     

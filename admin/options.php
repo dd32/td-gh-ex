@@ -6,6 +6,12 @@
 function graphene_settings_init(){
     // register options set and store it in graphene_settings db entry
     register_setting('graphene_options', 'graphene_settings', 'graphene_settings_validator');
+	
+	// Load the farbtastic colour picker
+	if ( strstr( $_SERVER["REQUEST_URI"], 'page=graphene_options&tab=display' ) ) {
+		wp_enqueue_style( 'farbtastic' );
+		wp_enqueue_script( 'farbtastic' );
+	}
 }
 add_action('admin_init', 'graphene_settings_init');
 
@@ -22,8 +28,7 @@ include('validator.php');
 */
 function graphene_options(){
 	
-	global $graphene_settings, $graphene_defaults;        
-	// $graphene_settings = get_option('graphene_settings');
+	global $graphene_settings, $graphene_defaults;
 	
 	/* Checks if the form has just been submitted */
 	if (!isset($_REQUEST['settings-updated'])) {$_REQUEST['settings-updated'] = false;} 
@@ -46,7 +51,7 @@ function graphene_options(){
         
         /* Uninstall the theme if confirmed */
 	if (isset($_POST['graphene_uninstall_confirmed'])) { 
-            include('uninstall.php');
+		include('uninstall.php');
 	}       
 	
 	/* Display a confirmation page to uninstall the theme */
@@ -69,6 +74,8 @@ function graphene_options(){
 		return;
 	}
 	
+	/* Get the updated settings before outputting the options page */
+	$graphene_settings = array_merge($graphene_defaults, get_option('graphene_settings', array()));
 	
 	/* This where we start outputting the options page */ ?>
 	<div class="wrap meta-box-sortables">
@@ -77,10 +84,9 @@ function graphene_options(){
         
         <p><?php _e('These are the global settings for the theme. You may override some of the settings in individual posts and pages.', 'graphene'); ?></p>
         
-		<?php /* Notification when settings is saved */ ?>
-        <?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
-        	<div class="updated"><p><strong><?php _e('Settings saved.', 'graphene'); ?></strong></p></div>
-        <?php endif; ?>
+		<?php settings_errors(); ?>
+        
+        <?php // disect_it($graphene_settings, false); ?>
         
         <?php /* Print the options tabs */ ?>
         <?php 
@@ -141,6 +147,58 @@ function graphene_options(){
                     <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" />
                     <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
                 </form>
+            </div>
+        </div>
+        
+        
+        <?php /* Survey notification */ ?>
+        <div class="postbox donation">
+            <div>
+        		<h3 class="hndle"><?php _e('Graphene Usage Survey', 'graphene'); ?></h3>
+            </div>
+            <div class="panel-wrap inside">
+                <p><?php _e('Help us to get to know you better. Take the Graphene theme usage survey now! Every opinion counts towards making the theme better. The survey is very short, and is completely anonymous.', 'graphene'); ?></p>
+                <p><a href="http://www.surveymonkey.com/s/WKJ7SQD" class="button"><?php _e('Take the survey', 'graphene'); ?> &raquo;</a></p>
+            </div>
+        </div>
+        
+        
+        <?php /* Natively supported plugins */ ?>
+        <div class="postbox">
+        	<div class="head-wrap">
+                <div title="Click to toggle" class="handlediv"><br /></div>
+                <h3 class="hndle"><?php _e('Add-ons and plugins', 'graphene'); ?></h3>
+            </div>
+            <div class="panel-wrap inside">
+            	<h4><?php _e('Add-ons', 'graphene'); ?></h4>
+            	<p><?php _e('Add-ons are not shipped with the theme, but can be installed separately to extend the theme\'s capability.', 'graphene'); ?></p>
+                <ul class="add-ons">
+                	<li>
+                    	<span class="title">Graphene Mobile: </span>
+                        <?php if (function_exists('mgraphene_options_init')) : ?><span class="activated"><?php _e('Installed', 'graphene'); ?></span>
+                        <?php else : ?><span class="not-active"><?php _e('Not installed', 'graphene'); ?>. <a href="http://www.khairul-syahir.com/wordpress-dev/graphene-mobile"><?php _e('Learn more', 'graphene'); ?> &raquo;</a></span><?php endif; ?><br />
+                        <span class="description"><?php _e('Mobile extension developed specifically for optimised display of your site on mobile devices, such as iPhone and Android devices.', 'graphene'); ?></span>
+                </ul>
+                
+                <h4><?php _e('Plugins', 'graphene'); ?></h4>
+                <p><?php _e('The plugins listed here are natively supported by the theme. All you need to do is install the plugins and activate them.', 'graphene'); ?></p>
+                <ul class="add-ons native-plugins">
+                	<?php 
+						$plugins = array(
+										array( 'name' => 'WP-PageNavi', 'function' => 'wp_pagenavi'),
+										array( 'name' => 'WP-CommentNavi', 'function' => 'wp_commentnavi'),
+										array( 'name' => 'WP-Email', 'function' => 'wp_email'),
+										array( 'name' => 'Breadcrumb NavXT', 'function' => 'bcn_display'),
+									);
+						foreach ($plugins as $plugin) :
+					?>
+                	<li>
+                    	<span class="title"><?php echo $plugin['name']; ?>: </span>
+                        <?php if (function_exists($plugin['function'])) : ?><span class="activated"><?php _e('Activated', 'graphene'); ?></span>
+                        <?php else : ?><span class="not-active"><?php _e('Not installed', 'graphene'); ?></span><?php endif; ?>
+                    </li>
+                    <?php endforeach; ?>
+                </ul>
             </div>
         </div>
             
@@ -249,6 +307,7 @@ function graphene_options_general() {
                         <td>
                             <select name="graphene_settings[slider_cat]">
                                 <option value=""><?php _e('Show latest posts', 'graphene'); ?></option>
+                                <option value="posts_pages" <?php if ($graphene_settings['slider_cat'] == 'posts_pages') {echo 'selected="selected"';}?>><?php _e('Show specific posts/pages', 'graphene'); ?></option>
                                 <option value="random" <?php if ($graphene_settings['slider_cat'] == 'random') {echo 'selected="selected"';}?>><?php _e('Show random posts', 'graphene'); ?></option>
                                 <option value="" disabled="disabled">--------------------</option>
                                 <?php /* Get the list of categories */ 
@@ -258,6 +317,18 @@ function graphene_options_general() {
                                 <option value="<?php echo $category->cat_ID; ?>" <?php if ($graphene_settings['slider_cat'] == $category->cat_ID) {echo 'selected="selected"';}?>><?php echo $category->cat_name; ?></option>
                                 <?php endforeach; ?>
                             </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Posts and/or pages to display', 'graphene'); ?></label>
+                        </th>
+                        <td>
+                            <input type="text" name="graphene_settings[slider_specific_posts]" value="<?php echo $graphene_settings['slider_specific_posts']; ?>" size="10" class="code" /><br />
+                            <span class="description">
+							<?php _e('Enter ID of posts and/or pages to be displayed, separated by comma. Example: <code>1,13,45,33</code>', 'graphene'); ?><br />
+							<?php _e('Applicable only if <strong>Show specific posts/pages</strong> is selected above.', 'graphene'); ?>
+                            </span>                        
                         </td>
                     </tr>
                     <tr>
@@ -362,7 +433,7 @@ function graphene_options_general() {
                         </th>
                         <td>
                             <select name="graphene_settings[frontpage_posts_cats][]" multiple="multiple" class="select-multiple">
-                                <option value="" <?php if (empty($graphene_settings['frontpage_posts_cats'])) {echo 'selected="selected"';} ?>><?php _e('--Disabled--', 'graphene'); ?></option>
+                                <option value="" <?php if (in_array('', $graphene_settings['frontpage_posts_cats'])) {echo 'selected="selected"';} ?>><?php _e('--Disabled--', 'graphene'); ?></option>
                                 <?php /* Get the list of categories */ 
                                     $categories = get_categories();
                                     foreach ($categories as $category) :
@@ -487,9 +558,21 @@ function graphene_options_general() {
                 <table class="form-table">       	
                     <tr>
                         <th scope="row">
-                            <label><?php _e('Hide child page listings', 'graphene'); ?></label>                            
+                            <label><?php _e('Hide parent box if content is empty', 'graphene'); ?></label>                            
                         </th>
-                        <td><input type="checkbox" name="graphene_settings[hide_child_pages]" <?php if ($graphene_settings['hide_child_pages'] == true) echo 'checked="checked"' ?> value="true" /></td>
+                        <td><input type="checkbox" name="graphene_settings[hide_parent_content_if_empty]" <?php if ($graphene_settings['hide_parent_content_if_empty'] == true) echo 'checked="checked"' ?> value="true" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Child page listings', 'graphene'); ?></label>                            
+                        </th>
+                        <td>
+                            <select name="graphene_settings[child_page_listing]">
+                                <option value="show_always" <?php if ($graphene_settings['child_page_listing'] == 'show_always') {echo 'selected="selected"';} ?>><?php _e('Show listing', 'graphene'); ?></option>
+                                <option value="hide" <?php if ($graphene_settings['child_page_listing'] == 'hide') {echo 'selected="selected"';} ?>><?php _e('Hide listing', 'graphene'); ?></option>
+                                <option value="show_if_parent_empty" <?php if ($graphene_settings['child_page_listing'] == 'show_if_parent_empty') {echo 'selected="selected"';} ?>><?php _e('Only show listing if parent content is empty', 'graphene'); ?></option>
+                            </select>
+                        </td>                            
                     </tr>
                 </table>
             </div>
@@ -590,31 +673,6 @@ function graphene_options_general() {
                             </tr>
 					<?php endforeach; endif; ?>
                     
-                    <!--
-                    <div class="social-media">
-                    <tr>
-                        <th scope="row"><label><?php _e('Social Media name', 'graphene'); ?></label></th>
-                        <td>
-                            <input type="text" name="graphene_settings[social_media_new][1][name]" value="" size="60" class="widefat code" /><br />
-                            <span class="description"><?php _e('Name of the social media, e.g. LinkedIn, etc.', 'graphene'); ?></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row"><label><?php _e('Social Media icon URL', 'graphene'); ?></label></th>
-                        <td>
-                            <input type="text" name="graphene_settings[social_media_new][1][icon]" value="" size="60" class="widefat code" /><br />
-                            <span class="description"><?php printf(__('URL to the social media icon. <strong>Note:</strong> the theme uses the %s iconset for the social media icons.', 'graphene'), '<a href="http://www.iconfinder.com/search/?q=iconset%3Asocialmediabookmark">Social Media Bookmark</a>'); ?></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row"><label><?php _e('Social Media profile URL', 'graphene'); ?></label></th>
-                        <td>
-                            <input type="text" name="graphene_settings[social_media_new][1][url]" value="" size="60" class="widefat code" /><br />
-                            <span class="description"><?php _e('URL to your profile page for the social media.', 'graphene'); ?></span>
-                        </td>
-                    </tr>
-                    </div>
-                    -->
                     </tbody>
                 </table>
                 <table class="form-table">
@@ -643,11 +701,23 @@ function graphene_options_general() {
                         <td><input type="checkbox" name="graphene_settings[show_addthis_page]" <?php if ($graphene_settings['show_addthis_page'] == true) echo 'checked="checked"' ?> value="true" /></td>
                     </tr>
                     <tr>
+                        <th scope="row"><label><?php _e('Social sharing buttons location', 'graphene'); ?></label></th>
+                        <td>
+                        	<select name="graphene_settings[addthis_location]">
+                        		<option value="post-bottom" <?php if ($graphene_settings['addthis_location'] == 'post-bottom') {echo 'selected="selected"';} ?>><?php _e('Bottom of posts', 'graphene'); ?></option>
+                                <option value="post-top" <?php if ($graphene_settings['addthis_location'] == 'post-top') {echo 'selected="selected"';} ?>><?php _e('Top of posts', 'graphene'); ?></option>
+                                <option value="top-bottom" <?php if ($graphene_settings['addthis_location'] == 'top-bottom') {echo 'selected="selected"';} ?>><?php _e('Both top and bottom', 'graphene'); ?></option>
+                        	</select>
+                        </td>
+                    </tr>
+                    <tr>
                         <th scope="row">
                             <label><?php _e("Your social sharing button code", 'graphene'); ?></label><br />
                             <small><?php _e('You can use codes from any popular social sharing sites, like Facebook, Digg, AddThis, etc.', 'graphene'); ?></small>
                         </th>
-                        <td><textarea name="graphene_settings[addthis_code]" cols="60" rows="7" class="widefat code"><?php echo htmlentities(stripslashes($graphene_settings['addthis_code'])); ?></textarea></td>
+                        <td><textarea name="graphene_settings[addthis_code]" cols="60" rows="7" class="widefat code"><?php echo htmlentities(stripslashes($graphene_settings['addthis_code'])); ?></textarea><br />
+                        	<span class="description"><?php _e("You may use these tags to get the post's URL and title:", 'graphene'); ?> <code>[#post-url]</code>, <code>[#post-title]</code></span>
+                        </td>
                     </tr>
                 </table>
             </div>
@@ -720,7 +790,7 @@ function graphene_options_general() {
                 <table class="form-table">       	
                     <tr>
                         <th scope="row"><label><?php _e('Show Creative Commons logo', 'graphene'); ?></label><br />
-                        <img src="http://i.creativecommons.org/l/by-nc-nd/2.5/my/88x31.png" alt="" /></th>
+                        <span class="cc-logo">&nbsp;</span>
                         <td><input type="checkbox" name="graphene_settings[show_cc]" <?php if ($graphene_settings['show_cc'] == true) echo 'checked="checked"' ?> value="true" /></td>
                     </tr>
                     <tr>
@@ -733,6 +803,10 @@ function graphene_options_general() {
                     <tr>
                         <th scope="row"><label><?php _e('Do not show copyright info', 'graphene'); ?></label></th>
                         <td><input type="checkbox" name="graphene_settings[hide_copyright]" <?php if ($graphene_settings['hide_copyright'] == true) echo 'checked="checked"' ?> value="true" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label><?php _e('Do not show the "Return to top" link', 'graphene'); ?></label></th>
+                        <td><input type="checkbox" name="graphene_settings[hide_return_top]" <?php if ($graphene_settings['hide_return_top'] == true) echo 'checked="checked"' ?> value="true" /></td>
                     </tr>
                 </table>
             </div>
@@ -820,7 +894,8 @@ function graphene_options_display() {
                         <td>
                             <select name="graphene_settings[search_box_location]">
                                 <option value="top_bar" <?php if ($graphene_settings['search_box_location'] == 'top_bar') {echo 'selected="selected"';} ?>><?php _e("Top bar", 'graphene'); ?></option>
-                                <option value="nav_bar" <?php if ($graphene_settings['search_box_location'] == 'nav_bar') {echo 'selected="selected"';} ?>><?php _e("Navigation bar", 'graphene'); ?></option>                        
+                                <option value="nav_bar" <?php if ($graphene_settings['search_box_location'] == 'nav_bar') {echo 'selected="selected"';} ?>><?php _e("Navigation bar", 'graphene'); ?></option>
+                                <option value="disabled" <?php if ($graphene_settings['search_box_location'] == 'disabled') {echo 'selected="selected"';} ?>><?php _e("Disable search box", 'graphene'); ?></option>             
                             </select>
                         </td>
                     </tr>
@@ -1003,6 +1078,129 @@ function graphene_options_display() {
             </div>
         </div>
         
+        
+        <?php /* Background Colours Options */ ?>
+        <div class="postbox">
+            <div class="head-wrap">
+                <div title="Click to toggle" class="handlediv"><br /></div>
+        		<h3 class="hndle"><?php _e('Colours Options', 'graphene'); ?></h3>
+            </div>
+            <div class="panel-wrap inside">
+            	<p><?php _e("Changing colours for your website involves a lot more than just trial and error. Simply mixing and matching colours without regard to their compatibility may do more damage than good to your site's aesthetics.", 'graphene'); ?>
+				<?php printf(__("It's generally a good idea to stick to colours from colour pallettes that are aesthetically pleasing. Try the %s website for a kickstart on some colour palettes you can use.", 'graphene'), '<a href="http://www.colourlovers.com/palettes/">COLOURlovers</a>'); ?></p>
+                <p><?php _e("When you've got the perfect combination, you can even share it with fellow Graphene theme users through the <a href=\"http://forum.khairul-syahir.com/\">Support Forum</a>.", 'graphene'); ?></p>
+            	<p><?php _e('<strong>Note:</strong> The previews work best on modern Gecko- and Webkit-based browsers, such as Mozilla Firefox and Google Chrome.', 'graphene'); ?></p>
+            	<h4><?php _e('Content area', 'graphene'); ?></h4>
+                <table class="form-table">
+                	<?php 
+						$colour_opts = array(
+							'bg_content_wrapper' => array('title' => __('Main content wrapper background', 'graphene')),
+							'bg_content' => array('title' => __('Post and pages content background', 'graphene')),
+							'bg_meta_border' => array('title' => __('Post meta and footer border', 'graphene')),
+							'bg_post_top_border' => array('title' => __('Post and pages top border', 'graphene')),
+							'bg_post_bottom_border' => array('title' => __('Post and pages bottom border', 'graphene')),
+						);
+						
+						$counter = 1;
+						foreach ($colour_opts as $key => $colour_opt) :
+					?>
+                    <tr>
+                        <th scope="row"><label><?php echo $colour_opt['title']; ?></label></th>
+                        <td>
+                        	<input type="text" class="code color-<?php echo $counter; ?>" name="graphene_settings[<?php echo $key; ?>]" value="<?php echo $graphene_settings[$key]; ?>" />
+                        	<a href="#" class="clear-color"><?php _e('Clear', 'graphene'); ?></a>
+                            <div class="colorpicker" id="colorpicker-<?php echo $counter; ?>"></div>
+                        </td>
+                    </tr>
+                    <?php $counter++; endforeach; ?>
+                </table>
+                
+                <h4><?php _e('Widgets', 'graphene'); ?></h4>
+                <table class="form-table">
+                	<tr>
+                    	<th scope="row"><label><?php _e('Widget preview', 'graphene'); ?></label></th>
+                        <td><div class="sidebar graphene"><div class="sidebar-wrap"><h3><?php _e('Widget title', 'graphene'); ?></h3><ul><li><?php _e('List item', 'graphene'); ?> 1</li><li><?php _e('List item', 'graphene'); ?> 2</li><li><a href="#"><?php _e('List item', 'graphene'); ?> 3</a></li></ul></div></div></td>
+                    </tr>
+                	<?php 
+						$colour_opts = array(
+							'bg_widget_item' => array('title' => __('Widget item background', 'graphene')),
+							'bg_widget_list' => array('title' => __('Widget item list border', 'graphene')),
+							'bg_widget_header_border' => array('title' => __('Widget header border', 'graphene')),
+							'bg_widget_title' => array('title' => __('Widget title colour', 'graphene')),
+							'bg_widget_title_textshadow' => array('title' => __('Widget title text shadow colour', 'graphene')),
+							'bg_widget_header_bottom' => array('title' => __('Widget header gradient bottom colour', 'graphene')),
+							'bg_widget_header_top' => array('title' => __('Widget header gradient top colour', 'graphene')),
+						);
+
+						foreach ($colour_opts as $key => $colour_opt) :
+					?>
+                    <tr>
+                        <th scope="row"><label><?php echo $colour_opt['title']; ?></label></th>
+                        <td>
+                        	<input type="text" class="code color-<?php echo $counter.' '.str_replace('_', '-', $key); ?>" name="graphene_settings[<?php echo $key; ?>]" value="<?php echo $graphene_settings[$key]; ?>" />
+                        	<a href="#" class="clear-color"><?php _e('Clear', 'graphene'); ?></a>
+                            <div class="colorpicker" id="colorpicker-<?php echo $counter; ?>"></div>
+                        </td>
+                    </tr>
+                    <?php $counter++; endforeach; ?>
+                    
+                </table>
+                
+                <h4><?php _e('Slider', 'graphene'); ?></h4>
+                <table class="form-table">
+                	<tr>
+                    	<th scope="row"><label><?php _e('Slider background preview', 'graphene'); ?></label></th>
+                        <td><div id="grad-box"></div></td>
+                    </tr>
+                	<?php 
+						$colour_opts = array(
+							'bg_slider_top' => array('title' => __('Slider top left colour', 'graphene')),
+							'bg_slider_bottom' => array('title' => __('Slider bottom right colour', 'graphene')),
+						);
+
+						foreach ($colour_opts as $key => $colour_opt) :
+					?>
+                    <tr>
+                        <th scope="row"><label><?php echo $colour_opt['title']; ?></label></th>
+                        <td>
+                        	<input type="text" class="code color-<?php echo $counter.' '.str_replace('_', '-', $key); ?>" name="graphene_settings[<?php echo $key; ?>]" value="<?php echo $graphene_settings[$key]; ?>" />
+                        	<a href="#" class="clear-color"><?php _e('Clear', 'graphene'); ?></a>
+                            <div class="colorpicker" id="colorpicker-<?php echo $counter; ?>"></div>
+                        </td>
+                    </tr>
+                    <?php $counter++; endforeach; ?>
+                    
+                </table>
+                
+                <h4><?php _e('Block buttons', 'graphene'); ?></h4>
+                <table class="form-table">
+                	<tr>
+                    	<th scope="row"><label><?php _e('Block button preview', 'graphene'); ?></label></th>
+                        <td><a class="block-button" href="#"><?php _e('Button label', 'graphene'); ?></a></td>
+                    </tr>
+                	<?php 
+						$colour_opts = array(
+							'bg_button' => array('title' => __('Button background colour', 'graphene')),
+							'bg_button_label' => array('title' => __('Button label colour', 'graphene')),
+							'bg_button_label_textshadow' => array('title' => __('Button label text shadow', 'graphene')),
+						);
+
+						foreach ($colour_opts as $key => $colour_opt) :
+					?>
+                    <tr>
+                        <th scope="row"><label><?php echo $colour_opt['title']; ?></label></th>
+                        <td>
+                        	<input type="text" class="code color-<?php echo $counter.' '.str_replace('_', '-', $key); ?>" name="graphene_settings[<?php echo $key; ?>]" value="<?php echo $graphene_settings[$key]; ?>" />
+                        	<a href="#" class="clear-color"><?php _e('Clear', 'graphene'); ?></a>
+                            <div class="colorpicker" id="colorpicker-<?php echo $counter; ?>"></div>
+                        </td>
+                    </tr>
+                    <?php $counter++; endforeach; ?>
+                    
+                </table>
+            </div>
+        </div>
+        
             
         <?php /* Text Style Options */ ?>
         <div class="postbox">
@@ -1128,30 +1326,35 @@ function graphene_options_display() {
                         <th scope="row">
                             <label><?php _e('Text colour', 'graphene'); ?></label>
                         </th>
-                        <td><input type="text" class="code" name="graphene_settings[content_font_colour]" value="<?php echo $graphene_settings['content_font_colour']; ?>" /></td>
+                        <td>
+                        	<input type="text" class="code color-<?php echo $counter; ?>" name="graphene_settings[content_font_colour]" value="<?php echo $graphene_settings['content_font_colour']; ?>" />
+                            <a href="#" class="clear-color"><?php _e('Clear', 'graphene'); ?></a>
+                            <div class="colorpicker" id="colorpicker-<?php echo $counter; $counter++; ?>"></div>
+                        </td>
                     </tr>
                 </table>
                     
                 <h4><?php _e('Link Text', 'graphene'); ?></h4>
                 <table class="form-table">
+                	<?php 
+						$colour_opts = array(
+							'link_colour_normal' => array('title' => __('Link colour (normal state)', 'graphene')),
+							'link_colour_visited' => array('title' => __('Link colour (visited state)', 'graphene')),
+							'link_colour_hover' => array('title' => __('Link colour (hover state)', 'graphene')),
+						);
+
+						foreach ($colour_opts as $key => $colour_opt) :
+					?>
                     <tr>
-                        <th scope="row">
-                            <label><?php _e('Link colour (normal state)', 'graphene'); ?></label>
-                        </th>
-                        <td><input type="text" class="code" name="graphene_settings[link_colour_normal]" value="<?php echo $graphene_settings['link_colour_normal']; ?>" /></td>
+                        <th scope="row"><label><?php echo $colour_opt['title']; ?></label></th>
+                        <td>
+                        	<input type="text" class="code color-<?php echo $counter.' '.str_replace('_', '-', $key); ?>" name="graphene_settings[<?php echo $key; ?>]" value="<?php echo $graphene_settings[$key]; ?>" />
+                        	<a href="#" class="clear-color"><?php _e('Clear', 'graphene'); ?></a>
+                            <div class="colorpicker" id="colorpicker-<?php echo $counter; ?>"></div>
+                        </td>
                     </tr>
-                    <tr>
-                        <th scope="row">
-                            <label><?php _e('Link colour (visited state)', 'graphene'); ?></label>
-                        </th>
-                        <td><input type="text" class="code" name="graphene_settings[link_colour_visited]" value="<?php echo $graphene_settings['link_colour_visited']; ?>" /></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            <label><?php _e('Link colour (hover state)', 'graphene'); ?></label>
-                        </th>
-                        <td><input type="text" class="code" name="graphene_settings[link_colour_hover]" value="<?php echo $graphene_settings['link_colour_hover']; ?>" /></td>
-                    </tr>
+                    <?php $counter++; endforeach; ?>
+
                     <tr>
                         <th scope="row">
                             <label><?php _e('Text decoration (normal state)', 'graphene'); ?></label>
@@ -1205,14 +1408,21 @@ function graphene_options_display() {
         		<h3 class="hndle"><?php _e('Navigation Menu Display Options', 'graphene'); ?></h3>
             </div>
             <div class="panel-wrap inside">
-		        <p><?php _e('Leave field empty to use the default value.', 'graphene'); ?></p>
-        
                 <table class="form-table">
                     <tr>
                         <th scope="row">
                             <label><?php _e('Dropdown menu item width', 'graphene'); ?></label>
                         </th>
                         <td><input type="text" class="code" name="graphene_settings[navmenu_child_width]" value="<?php echo $graphene_settings['navmenu_child_width']; ?>" maxlength="3" size="3" /> px</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label><?php _e('Description for default menu "Home" item', 'graphene'); ?></label>
+                        </th>
+                        <td>
+                        	<input type="text" size="60" name="graphene_settings[navmenu_home_desc]" value="<?php echo $graphene_settings['navmenu_home_desc']; ?>" /><br />
+                            <span class="description"><?php _e('Only required if you need a description in the navigation menu and you are not using a custom menu.', 'graphene'); ?></span>
+                        </td>
                     </tr>
                 </table>
             </div>

@@ -16,23 +16,6 @@ global $graphene_settings;
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <title><?php graphene_title(); ?></title>
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" /> 
-    <!--[if lte IE 6]>
-        <style>#container{background:none !important;}</style>
-        <script>
-        sfHover = function() {
-            var sfEls = document.getElementById("menu").getElementsByTagName("LI");
-            for (var i=0; i<sfEls.length; i++) {
-                sfEls[i].onmouseover=function() {
-                    this.className+=" sfhover";
-                }
-                sfEls[i].onmouseout=function() {
-                    this.className=this.className.replace(new RegExp(" sfhover\\b"), "");
-                }
-            }
-        }
-        if (window.attachEvent) window.attachEvent("onload", sfHover);
-        </script>
-    <![endif]-->
     <?php
     /* We add some JavaScript to pages with the comment form
      * to support sites with threaded comments (when in use).
@@ -138,21 +121,34 @@ global $graphene_settings;
     </div>
     <div id="nav">
         <?php /* The navigation menu */ ?>
+        <div id="header-menu-wrap">
+			<?php
+            /* Header menu */
+            $args = array(
+                'container' => '',
+                'menu_id' => 'header-menu',
+                'menu_class' => 'menu clearfix',
+                'fallback_cb' => 'graphene_default_menu',
+                'depth' => 5,
+                'theme_location' => 'Header Menu',
+                'walker' => new Graphene_Description_Walker(),
+            );
+            wp_nav_menu(apply_filters('graphene_header_menu_args', $args)); ?>
+        
+			<?php if (($search_box_location = $graphene_settings['search_box_location']) && $search_box_location == 'nav_bar') : ?>
+                <div id="top_search">
+                    <?php get_search_form(); ?>
+                    <?php do_action('graphene_top_search'); ?>
+                </div>
+            <?php endif; ?>
+        
+        </div>
+		
         <?php
-        /* Header menu */
-        $args = array(
-            'container' => '',
-            'menu_id' => 'header-menu',
-            'menu_class' => 'menu clearfix',
-            'fallback_cb' => 'graphene_default_menu',
-            'depth' => 5,
-            'theme_location' => 'Header Menu',
-        );
-        wp_nav_menu(apply_filters('graphene_header_menu_args', $args));
-
         /* Secondary menu */
         $args = array(
-            'container' => '',
+            'container' => 'div',
+			'container_id' => 'secondary-menu-wrap',
             'menu_id' => 'secondary-menu',
             'menu_class' => 'menu clearfix',
             'fallback_cb' => 'none',
@@ -161,21 +157,17 @@ global $graphene_settings;
         );
         wp_nav_menu(apply_filters('graphene_secondary_menu_args', $args));
         ?>
+        
+        <div class="menu-bottom-shadow"></div>
 
 
         <?php do_action('graphene_top_menu'); ?>
 
-        <?php if (($search_box_location = $graphene_settings['search_box_location']) && $search_box_location == 'nav_bar') : ?>
-            <div id="top_search">
-                <?php get_search_form(); ?>
-                <?php do_action('graphene_top_search'); ?>
-            </div>
-        <?php endif; ?>
     </div>
 
     <?php do_action('graphene_before_content'); ?>
 
-    <div id="content" class="clearfix">
+    <div id="content" class="clearfix hfeed">
         <?php do_action('graphene_before_content-main'); ?>
         
         <?php

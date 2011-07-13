@@ -14,37 +14,37 @@ if (isset($_POST['graphene-preset'])){
 
 if ($authorised) {
 	global $graphene_settings, $graphene_defaults;
-	
-	/* Website preset (non-blog type) */
-	$graphene_preset_website = array(
-		'slider_display_style' => 'bgimage-excerpt',
-		'show_post_type' => 'latest-posts',
-		'homepage_panes_count' => 4,
-		'comments_setting' => 'disabled_pages',
-		'hide_feed_icon' => true,
-		'hide_post_author' => true,
-		'post_date_display' => 'icon_no_year',
-		'print_css' => true,
-	    'print_button' => true,
-	);
-	
-		
+			
 	/* Apply the website preset */
 	if ($_POST['graphene_options_preset'] == 'website') {
-		$graphene_preset_website = array_merge($graphene_defaults, $graphene_preset_website);
-		update_option('graphene_settings', $graphene_preset_website);
+		
+		$graphene_preset_website = array(
+			'slider_display_style' => 'bgimage-excerpt',
+			'show_post_type' => 'latest-posts',
+			'homepage_panes_count' => 4,
+			'comments_setting' => 'disabled_pages',
+			'hide_feed_icon' => true,
+			'hide_post_author' => true,
+			'post_date_display' => 'icon_no_year',
+			'print_css' => true,
+			'print_button' => true,
+		);
+		
+		$graphene_preset_website = array_merge( $graphene_defaults, $graphene_preset_website );
+		update_option( 'graphene_settings', $graphene_preset_website );
+		
+		add_settings_error( 'graphene_options', 2, __( 'The "Normal website" settings preset has been applied.', 'graphene' ), 'updated');
 	
 	/* Reset the options */	
-	} elseif ($_POST['graphene_options_preset'] == 'reset') {
-		update_option('graphene_settings', $graphene_defaults);
-		
+	} elseif ( $_POST['graphene_options_preset'] == 'reset' ) {
+		delete_option( 'graphene_settings' );
+		add_settings_error('graphene_options', 2, __( 'Settings have been reset.', 'graphene' ), 'updated');
 	}
 	
 	// Update the global settings variable
-	$graphene_settings = get_option('graphene_settings');
-	
-	$_REQUEST['settings-updated'] = true;
+	$graphene_settings = array_merge( $graphene_defaults, get_option( 'graphene_settings', array() ) );
+
 } else {
-	wp_die(__('ERROR: You are not authorised to perform that operation', 'graphene'));
+	wp_die( __( 'ERROR: You are not authorised to perform that operation', 'graphene' ) );
 }
 ?>

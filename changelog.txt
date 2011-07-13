@@ -4,6 +4,34 @@ http://www.khairul-syahir.com
 
 CHANGELOG
 
+Version 1.4
+    * Added microformats (hAtom) in the theme (http://microformats.org/)
+	* Added native support for Breadcrumb NavXT plugin
+	* Fixed the "Not found" message in home page when "posts by category" is set and all posts are sticky
+	* Added option to disable the search box in the theme's top / navigation bar
+	* Added link to toggle all options tabs at once
+	* WordPress 3.2 sync:
+		* Removed toggle delay in options page - animation is too slow in Firefox
+	* Improved handling of custom scripts - unqueued jQuery Tools from WP Admin screens. This also fixes compatibility issue with the NextGen Gallery options page.
+	* Custom image sizes are now added only if they are needed
+	* Added option to show social sharing buttons at the top or bottom of posts
+	* Added support for "status", "audio", "image", and "video" post formats
+	* Added [#post-url] and [#post-title] tags that can be used in the social sharing button code to get the post's URL and title
+	* Added display of category description in the category archive page, if exists
+	* Improved theme's settings handling. It will now save only the modified settings to the database.
+	* Added a more comprehensive data validation for the theme's options
+	* Added option to include pages in slider
+	* Improved footer area styling, added space for footer custom menu area
+	* Added custom menu area of up to 2 levels deep in the footer
+	* Removed W3C code validation icons
+	* Arrows for multi-level menu items are now available for default menu as well (i.e. not using Custom Menus)
+	* Completely rewritten the CSS for navigation menus making it much simpler and less redundant
+	* Improved header navigation menu styling to accommodate menu item description
+	* Added the ability to display short description for each menu item in the Header Menu
+	* Added link to the theme's usage survey in the theme's options page
+	* Added more colour options
+	* Added colour picker for colour options
+
 Version 1.3.1:
 
 	* Fixed an issue where the theme's options export outputting text file onto the page

@@ -57,8 +57,11 @@ function graphene_save_custom_meta($post_id){
 	update_post_meta($post_id, '_graphene_slider_img', $_POST['graphene_slider_img']);
 	update_post_meta($post_id, '_graphene_slider_imgurl', $_POST['graphene_slider_imgurl']);
 	update_post_meta($post_id, '_graphene_show_addthis', $_POST['graphene_show_addthis']);
-	
-
+        
+        /* For a page there are more options! */
+        if ('page' == $_POST['post_type']) {
+            update_post_meta($post_id, '_graphene_nav_description', $_POST['graphene_nav_description']);        
+        }
 }
 add_action('save_post', 'graphene_save_custom_meta');
 
@@ -77,10 +80,14 @@ function graphene_custom_meta($post){
 	$slider_img = (get_post_meta($post->ID, '_graphene_slider_img', true)) ? get_post_meta($post->ID, '_graphene_slider_img', true) : 'global';
 	$slider_imgurl = (get_post_meta($post->ID, '_graphene_slider_imgurl', true)) ? get_post_meta($post->ID, '_graphene_slider_imgurl', true) : '';
 	$show_addthis = (get_post_meta($post->ID, '_graphene_show_addthis', true)) ? get_post_meta($post->ID, '_graphene_show_addthis', true) : 'global';
+        
+        if ('page' == $post->post_type){
+            $nav_description = (get_post_meta($post->ID, '_graphene_nav_description', true)) ? get_post_meta($post->ID, '_graphene_nav_description', true) : '';
+        }
 	?>
     
 	<p><?php _e("These settings will only be applied to this particular post or page you're editing. They will override the global settings set in the Graphene Options or Graphene Display options page.", 'graphene'); ?></p>
-    <h4><?php _e('Slider options', 'graphene'); ?></h4>
+    <h4><?php _e('Slider options', 'graphene'); ?></h4>    
     <table class="form-table">
     	<tr>
             <th scope="row">
@@ -121,6 +128,20 @@ function graphene_custom_meta($post){
             </td>
         </tr>
     </table>
+    <?php if ('page' == $post->post_type): ?>
+    <h4><?php _e('Navigation options', 'graphene'); ?></h4>
+    <table class="form-table">
+    	<tr>
+            <th scope="row">
+                <label><?php _e('Description', 'graphene'); ?></label>
+            </th>
+            <td>
+                <input type="text" name="graphene_nav_description" value="<?php echo $nav_description; ?>" size="60" /><br />
+                <span class="description"><?php _e('Only required if you need a description in the navigation menu and you are not using a custom menu.', 'graphene'); ?></span>                        
+            </td>
+        </tr>
+    </table>
+     <?php endif; ?>
 <?php	
 }
 

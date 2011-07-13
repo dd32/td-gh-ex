@@ -100,7 +100,6 @@ function graphene_update_db(){
 	$graphene_settings['link_decoration_hover'] = get_option('graphene_link_decoration_hover');
 	
 	$graphene_settings['hide_allowedtags'] = get_option('graphene_hide_allowedtags');
-	// $graphene_settings['swap_title'] = get_option('graphene_swap_title');
 	$graphene_settings['custom_css'] = get_option('graphene_custom_css');
 	
 	/* Merge current settings with the default settings */

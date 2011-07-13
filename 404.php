@@ -6,8 +6,6 @@ $replace = " ";
 $search_term = trim(preg_replace($find, $replace, $search_term));
 $search_term_q = preg_replace('/ /', '%20', $search_term);
 $redirect_location = get_home_url().'?s='.$search_term_q.'&search_404=1';
-// header("Status: 404 Not Found"); 
-// header($redirect_location);
 get_header();
 ?>
 <script type="text/javascript">
@@ -39,7 +37,7 @@ get_header();
 	<h2><?php _e('Automated search', 'graphene'); ?></h2>   
         <div class="entry-content clearfix">
             <p>
-            <?php printf(__('Searching for the terms <strong>%s</strong> ...', 'graphene'), $search_term); ?></p>
+            <?php printf(__('Searching for the terms <strong>%s</strong> ...', 'graphene'), $search_term); ?>
             </p>
         </div>
     </div>

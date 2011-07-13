@@ -14,6 +14,14 @@ get_header();
         printf(__('Category Archive: <span>%s</span>', 'graphene'), single_cat_title('', false));
     ?>
 </h1>
+<?php /* The category description */
+	$cat_desc = category_description();
+if ($cat_desc) : ?>
+    <div class="cat-desc">
+        <?php echo $cat_desc; ?>
+    </div>
+<?php endif; ?>
+
 <?php
     /* Run the loop for the category page to output the posts.
      * If you want to overload this in a child theme then include a file
