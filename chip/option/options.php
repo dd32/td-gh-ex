@@ -26,7 +26,7 @@ class Chip_Life_Options {
 			add_settings_section( 'chip_life_section_blog', 'Blog Options', array( 'Chip_Life_Options', 'chip_life_section_blog_fn' ), 'chip_life_section_blog_page' );
 			
 			add_settings_field( 'chip_life_field_logo', 'Use Image Logo in Header', array( 'Chip_Life_Options', 'chip_life_field_logo_fn' ), 'chip_life_section_blog_page', 'chip_life_section_blog' );
-			add_settings_field( 'chip_life_field_logo_url', 'Enter Logo URl - Dimension (215x125)', array( 'Chip_Life_Options', 'chip_life_field_logo_url_fn' ), 'chip_life_section_blog_page', 'chip_life_section_blog' );
+			add_settings_field( 'chip_life_field_logo_url', 'Enter Logo URl - Dimension (195x125)', array( 'Chip_Life_Options', 'chip_life_field_logo_url_fn' ), 'chip_life_section_blog_page', 'chip_life_section_blog' );
 			
 			add_settings_field( 'chip_life_field_header_style', 'Header Style', array( 'Chip_Life_Options', 'chip_life_field_header_style_fn' ), 'chip_life_section_blog_page', 'chip_life_section_blog' );			
 			add_settings_field( 'chip_life_field_post_style', 'Post Style', array( 'Chip_Life_Options', 'chip_life_field_post_style_fn' ), 'chip_life_section_blog_page', 'chip_life_section_blog' );
@@ -104,12 +104,8 @@ class Chip_Life_Options {
 		* Chip Admin Menu
 		*/
 		
-		function chip_admin_menu() {
-		
-			$page = add_theme_page( 'Chip Life Theme Options', 'Chip Life Theme Options', 'edit_theme_options', 'theme_options', array( 'Chip_Life_Options', 'chip_setting_fn' ) );
-			/* Using registered $page handle to hook stylesheet loading */
-			add_action( 'admin_print_styles-' . $page, array( 'Chip_Life_Options', 'chip_admin_styles_fn' ) );
-		
+		function chip_admin_menu() {		
+			$page = add_theme_page( 'Chip Life Theme Options', 'Chip Life Theme Options', 'edit_theme_options', 'theme_options', array( 'Chip_Life_Options', 'chip_setting_fn' ) );		
 		}
 		
 		/**

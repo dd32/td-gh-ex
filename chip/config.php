@@ -13,7 +13,7 @@ define('CHIP_LIFE_HOME'		, home_url() . "/");
 |------------------------
 */	
 
-define('CHIP_LIFE_ABSPATH'	, TEMPLATEPATH . "/");
+define('CHIP_LIFE_ABSPATH'	, get_template_directory() . "/");
 define('CHIP_LIFE_URLPATH'	, get_template_directory_uri() . "/");
 
 /*
