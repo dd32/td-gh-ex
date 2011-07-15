@@ -1,7 +1,7 @@
 === Suffusion ===
 Author: Kai Ackermann
 Tags: white, two-columns, flexible-width
-Tested up to: WP 3.1.2
+Tested up to: WP 3.1.4
 
 == Description ==
 

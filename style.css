@@ -1,8 +1,8 @@
 /*
 Theme Name: Northern-Web-Coders
-Theme URI: http://www.northern-web-coders.de/blog/archiv/2011/05/07/northern-web-coders-2-5-4/
+Theme URI: http://www.northern-web-coders.de/blog/
 Description: Northern-Web-Coders - HTML5 Theme
-Version: 2.5.4
+Version: 2.5.6
 Author: Kai Ackermann | jaman
 Author URI: http://www.design-coding.de
 Tags: white, two-columns, flexible-width
@@ -27,7 +27,6 @@ body
     background: #fff;
     margin: 20px auto;
     width: 80%;
-    min-width: 900px;  
 }
 
 /*Navigation*/
@@ -35,15 +34,15 @@ nav {
    background: #fff;
    display: block;
    float: left;
-   margin: 0 auto;
+   margin: 0 auto 20px auto;
    width: 100%;
    border-bottom: 1px solid #dfdfdf
 }
 nav ul.menu,
 div.menu {
    font-size: 13px;
-   margin-left: 12px;
-   width: 100%;
+   
+   width: 100%;    
 }
 nav ul.menu,
 div.menu ul {
@@ -115,17 +114,18 @@ nav ul li.current_page_ancestor > a{
 header
 {
     width: 100%;
+   float: left;
 }
 
 header h1#header
 {
-    float: left;
+ 
+    margin: 30px 0 0 0;
 }
 
 header h1#header a
 {
     font-weight: bold;
-    line-height: 115px;
     font-size: 50px;
     color: #FF9F00;
     text-decoration: none;
@@ -149,15 +149,13 @@ section.column-left
     float: left;
     width: 48%;
     margin: 0.5%;
-    padding: 0.5%;
 }
 
 section.column-right
 {
-    float: right;
+    float: left;
     width: 48%;
     margin: 0.5%;
-    padding: 0.5%;
 }
 
 section.column-full
@@ -165,7 +163,6 @@ section.column-full
     float: left;
     width: 98%;
     margin: 0.5%;
-    padding: 0.5%;
 }
 
 section.meta
@@ -191,9 +188,8 @@ section.meta a.post-edit-link
 article
 {
     font-size: 12px;
-    margin: 10px 10px 10px 10px;
-    padding: 10px;
-    overflow: auto;
+    margin: 10px 10px 60px 10px;
+    padding: 10px
 }
 
 article a
@@ -229,36 +225,6 @@ section.meta a
     color: #FF9F00
 }
 
-article img {
-    padding: 3px;
-    margin: 2px;
-    background: #F0F0F0;
-    border: 1px solid #BFBFBF;
-}
-
-article img.wp-smiley {
-    padding: 0;
-    margin: 0;
-    background: #fff;
-    border: 0;
-}
-
-article img.alignleft {
-    margin-right: 10px;
-    float: left
-}
-
-article img.alignright {
-    margin-left: 10px;
-    float: right
-}
-
-article img.aligncenter {
-    clear: both;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
 
 article h2.date
 {
@@ -370,41 +336,8 @@ article object
     float: left
 }
 
-article .wp-caption {
-    display: block;
-    padding: 20px 20px 20px 20px;
-    margin: 10px;
-    background: #F0F0F0;
-    border: 1px solid #BFBFBF;
-}
-
-article .wp-caption-text {
-   font-size: 11px;
-   text-align: center;
-}
-
-article .wp-caption a img {
-   border: none
-}
 
 
-article div.alignleft {
-   float: left;
-   clear: both;
-}
-
-article div.alignright {
-   float: right
-}
-
-article div.aligncenter {
-   float: none;
-   margin: 0 auto;
-}
-
-article div.alignnone {
-   float: none;
-}
 
 .photo
 {
@@ -522,7 +455,7 @@ section.commentbox a, section.comment a
 
 section.commentbox div.comment-author cite.fn
 {
-   font-weight: bold;
+   font-weight: bold; 
 }
 
 section.commentbox a.comment-reply-link
@@ -668,9 +601,172 @@ section.footerbox ul ul
 }
 
 section.footerbox h4
-{   
+{
    font-size: 17px;
    color: #495865;
    border-bottom: 1px solid #DFDFDF;
    margin-bottom: 5px
+}
+
+
+
+
+
+
+img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    padding: 2px;
+    margin: 2px;
+    background: #F0F0F0;
+    border: 1px solid #BFBFBF;
+}
+
+
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter, div.aligncenter {
+    display:block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float:left;
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+a img.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float:left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin:0;
+    padding:0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size:11px;
+    line-height:17px;
+    margin:0;
+    padding:0 4px 5px;
+}
+
+@media screen and (max-width: 480px) {
+
+  article
+    {
+        font-size: 12px;
+        clear: both;
+        margin: 20px 0;
+    }
+
+  header h1#header a
+    {
+        font-weight: bold;
+        font-size: 30px;
+        color: #FF9F00;
+        text-decoration: none;
+    }
+
+  header em
+    {
+        float: right;
+        width: 150px;
+        font-size: 11px;
+        margin: 10px 0 20px 0
+    }
+
+  section.column-left
+    {
+        float: none;
+        width: 100%;
+        margin: 0;
+    }
+
+  section.column-right
+    {
+        float: none;
+        width: 100%;
+        margin: 0;
+    }
+    
+article h3.storytitle a
+{
+        font-size: 18px;
+}
+
+
+section.commentbox form#commentform input
+{
+        width: 70%
+}
+
+section.commentbox form#commentform textarea
+{
+        width: 100%
+}
+
+div.comment-meta 
+{
+        display: none;
+}
+section.footerbox
+{
+   float: none;
+   width: 100%;
+   background: #fff;
+   margin-bottom: 20px;
+}
 }

@@ -1,6 +1,6 @@
 <?php 
 
-$content_width =500;  
+$content_width =400;  
 
 add_theme_support('automatic-feed-links');
 
