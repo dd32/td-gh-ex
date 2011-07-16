@@ -2,7 +2,7 @@
 Theme Name: Northern-Web-Coders
 Theme URI: http://www.northern-web-coders.de/blog/
 Description: Northern-Web-Coders - HTML5 Theme
-Version: 2.5.6
+Version: 2.5.7
 Author: Kai Ackermann | jaman
 Author URI: http://www.design-coding.de
 Tags: white, two-columns, flexible-width
@@ -703,6 +703,9 @@ a img.aligncenter {
     padding:0 4px 5px;
 }
 
+
+
+
 @media screen and (max-width: 480px) {
 
   article
@@ -762,6 +765,11 @@ div.comment-meta
 {
         display: none;
 }
+
+.ddfmwrap {
+	width: 100%;
+}
+
 section.footerbox
 {
    float: none;
