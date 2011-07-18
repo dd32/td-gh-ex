@@ -56,7 +56,6 @@ global $graphene_settings;
                     <?php do_action('graphene_feed_icon'); ?>
                 </div>
             
-
             <?php
             /**
              * Retrieves our custom search form.
@@ -68,6 +67,9 @@ global $graphene_settings;
                     <?php do_action('graphene_top_search'); ?>
                 </div>
             <?php endif; ?>
+            
+            <?php do_action( 'graphene_top_bar' ); ?>
+            
         </div>
     <?php endif; ?>
 

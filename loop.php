@@ -24,7 +24,7 @@
 		?>
     
     	<?php /* Posts navigation for single post pages, but not for Page post */ ?>
-		<?php if (is_single() && !is_page()) : ?>
+		<?php if ( is_single() && ! is_page() ) : ?>
         <div class="post-nav clearfix">
             <p id="previous"><?php previous_post_link(); ?></p>
             <p id="next-post"><?php next_post_link(); ?></p>

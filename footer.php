@@ -43,11 +43,14 @@ global $graphene_settings;
             <?php _e('Except where otherwise noted, content on this site is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Creative Commons Licence</a>.', 'graphene'); ?>
             </p>
         <?php else : ?>
-        	<?php echo stripslashes($graphene_settings['copy_text']); ?>
+        	<?php 
+				if ( ! stristr( $graphene_settings['copy_text'], '</p>' ) ) { $graphene_settings['copy_text'] = wpautop( $graphene_settings['copy_text'] ); }
+				echo $graphene_settings['copy_text']; 
+			?>
  	    <?php endif; ?>
         
         <?php if ($graphene_settings['show_cc']) : ?>
-        	<p class="cc-logo"><span>Creative Commons Licence BY-NC-ND</span></p>
+        	<p class="cc-logo"><span><?php _e( 'Creative Commons Licence BY-NC-ND', 'graphene' ); ?></span></p>
         <?php endif; ?>
 
     	<?php do_action('graphene_copyright'); ?>

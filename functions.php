@@ -50,8 +50,14 @@ if ( file_exists($mobile_path) ) { include( $mobile_path ); }
  * these setting via a global variable call, so database query is only
  * done once.
 */
-include('admin/options-defaults.php');
-$graphene_settings = array_merge($graphene_defaults, get_option('graphene_settings', array()));
+require_once( 'admin/options-defaults.php' );
+function graphene_get_settings(){
+	global $graphene_defaults;
+	$graphene_settings = array_merge( $graphene_defaults, (array) get_option( 'graphene_settings', array() ) );
+	return apply_filters( 'graphene_settings', $graphene_settings );
+}
+global $graphene_settings;
+$graphene_settings = graphene_get_settings();
 
 
 /**
@@ -488,7 +494,7 @@ function graphene_custom_colours(){
 		if ($grad_bottom != $graphene_defaults['bg_widget_header_bottom'] || $grad_top != $graphene_defaults['bg_widget_header_top']) {$style .= '.sidebar h3{
 				background: ' . $grad_top . ';
 				background: -moz-linear-gradient(' . $grad_top . ', ' . $grad_bottom . ');
-				background: -webkit-gradient(linear, 0 0, 0 top, from(' . $grad_top . '), to(' . $grad_bottom . '));
+				background: -webkit-linear-gradient(top, ' . $grad_top . ', ' . $grad_bottom . ');
 				background: linear-gradient(' . $grad_top . ', ' . $grad_bottom . ');
 		}';}
 		
@@ -498,9 +504,9 @@ function graphene_custom_colours(){
 		if ($grad_bottom != $graphene_defaults['bg_slider_bottom'] || $grad_top != $graphene_defaults['bg_slider_top']) {$style .= '.featured_slider {
 				-pie-background: linear-gradient(left top, ' . $grad_top . ', ' . $grad_bottom . ');
 				background: ' . $grad_top . ';
-				background: linear-gradient(left top, ' . $grad_top . ', ' . $grad_bottom . ');
 				background: -moz-linear-gradient(left top, ' . $grad_top . ', ' . $grad_bottom . ');
-				background: -webkit-gradient(linear, left top, right bottom, from(' . $grad_top . '), to(' . $grad_bottom . '));
+				background: -webkit-linear-gradient(left top, ' . $grad_top . ', ' . $grad_bottom . ');
+				background: linear-gradient(left top, ' . $grad_top . ', ' . $grad_bottom . ');
 		}';}
 		
 		// Block button
@@ -513,7 +519,7 @@ function graphene_custom_colours(){
 			$style .= '.block-button, .block-button:visited, .Button {
 							background: ' . $grad_top . ';
 							background: -moz-linear-gradient(' . $grad_top . ', ' . $grad_bottom . ');
-							background: -webkit-gradient(linear, 0 0, 0 bottom, from(' . $grad_top . '), to(' . $grad_bottom . '));
+							background: -webkit-linear-gradient(top, ' . $grad_top . ', ' . $grad_bottom . ');
 							background: linear-gradient(' . $grad_top . ', ' . $grad_bottom . ');
 							border-color: ' . $grad_bottom . ';
 							text-shadow: 0 -1px 1px ' . $font_shadow . ';
@@ -522,7 +528,7 @@ function graphene_custom_colours(){
 			$style .= '.block-button:hover {
 							background: ' . $grad_top . ';
 							background: -moz-linear-gradient(' . $grad_top . ', ' . $grad_bottom_hover . ');
-							background: -webkit-gradient(linear, 0 0, 0 bottom, from(' . $grad_top . '), to(' . $grad_bottom_hover . '));
+							background: -webkit-linear-gradient(top, ' . $grad_top . ', ' . $grad_bottom_hover . ');
 							background: linear-gradient(' . $grad_top . ', ' . $grad_bottom_hover . ');
 							color: ' . $font_color . ';
 						}';
@@ -671,8 +677,14 @@ class Graphene_Description_Walker extends Walker_Nav_Menu {
 		
 		$prepend = '<strong>';
 		$append = '</strong>';
+		
+		// Don't show description if it's longer than the length
 		$desc_length = apply_filters( 'graphene_menu_desc_length', 50 );
-		$description  = ! empty( $item->description ) ? '<span>'.esc_attr( graphene_substr( $item->description, 0, $desc_length, ' ...' ) ).'</span>' : '';
+		
+		if ( strlen( $item->description ) > $desc_length)
+			$description = '';
+		else
+			$description  = ! empty( $item->description ) ? '<span>'.esc_attr( $item->description ).'</span>' : '';
 		
 		if ( $depth != 0 )	{
 				 $description = $append = $prepend = "";
@@ -761,7 +773,7 @@ class Walker_PageDescription extends Walker_Page {
 		}
 		
 		// Check if page has children
-		if (get_pages('child_of='.$page->ID)) {
+		if ( get_pages( array( 'child_of' => $page->ID, 'parent' => $page->ID ) ) ) {
 			$css_class[] = 'menu-item-ancestor';
 		}
 
@@ -1143,19 +1155,13 @@ endif;
  * Adds the theme options page
 */
 function graphene_options_init() {
-	$graphene_options = add_theme_page(__('Graphene Options', 'graphene'), __('Graphene Options', 'graphene'), 'edit_theme_options', 'graphene_options', 'graphene_options');	
-	/*
-	$graphene_display = add_theme_page(__('Graphene Display', 'graphene'), __('Graphene Display', 'graphene'), 'edit_theme_options', 'graphene_options_display', 'graphene_options_display');
-	*/
+	$graphene_options = add_theme_page(__('Graphene Options', 'graphene'), __('Graphene Options', 'graphene'), 'edit_theme_options', 'graphene_options', 'graphene_options');
 	$graphene_faq = add_theme_page(__('Graphene FAQs', 'graphene'), __('Graphene FAQs', 'graphene'), 'edit_theme_options', 'graphene_faq', 'graphene_faq');
 	
 	wp_register_style('graphene-admin-style', get_template_directory_uri().'/admin/admin.css');
 	if (is_rtl()) {wp_register_style('graphene-admin-style-rtl', get_template_directory_uri().'/admin/admin-rtl.css');}
 	
 	add_action('admin_print_styles-'.$graphene_options, 'graphene_admin_options_style');
-	/*
-	add_action('admin_print_styles-'.$graphene_display, 'graphene_admin_options_style');
-	*/
 	
 	do_action('graphene_options_init');
 }
@@ -1770,7 +1776,6 @@ add_action('wp_footer', 'graphene_tabs_js');
  * Add JavaScript for the theme's options page
 */
 function graphene_options_js(){ 
-
 	if ( strstr( $_SERVER["REQUEST_URI"], 'page=graphene_options' ) ) {
 		require('admin/js/admin.js.php');	
 	}
@@ -2407,4 +2412,13 @@ function graphene_substr( $string, $start = 0, $length = '', $append = '' ){
 }
 
 endif;
+
+
+/**
+ * Fix to allow <g:plusone> in the social-sharing button code
+*/
+function graphene_plusone_fix( $graphene_settings ){
+	return str_replace( 'gplusone', 'g:plusone', $graphene_settings );
+}
+add_filter( 'graphene_settings', 'graphene_plusone_fix' );
 ?>

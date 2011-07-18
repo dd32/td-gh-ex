@@ -3,6 +3,7 @@
  * Set the default values for all the settings. If no user-defined values
  * is available for any setting, these defaults will be used.
  */
+global $graphene_defaults;
 $graphene_defaults = array(
 	/* Theme's DB version */
 	'db_version' => '1.0',
@@ -15,13 +16,13 @@ $graphene_defaults = array(
 	'slider_display_style' => 'thumbnail-excerpt', // thumbnail-excerpt | bgimage-excerpt | full-post
 	'slider_imgurl' => '',
 	'slider_height' => '',
-	'slider_speed' => '',
+	'slider_speed' => '7000',
 	'slider_trans_speed' => '400',
 	'slider_position' => false,
 	'slider_disable' => false,
 	
 	/* Front page options */
-	'frontpage_posts_cats' => array(''),
+	'frontpage_posts_cats' => array( 'disabled' ),
 	
 	/* Homepage panes */
 	'show_post_type' => 'latest-posts', // latest-posts | cat-latest-posts | posts

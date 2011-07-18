@@ -4,6 +4,19 @@ http://www.khairul-syahir.com
 
 CHANGELOG
 
+Version 1.4.1
+	* Fixed a bug in the validator script where the second argument for wp_kses() was missing
+	* Removed kses check for social sharing button code due to various social sharing providers using non-standard html tags
+	* Fixed the search form not vertically centered when used in the navigation bar without menu description
+	* Fixed the navigation menu's dropdown going behind the slider in IE7
+	* Fixed the submenus of custom menus everywhere having box shadow (now limited to only submenus in the navigation bar)
+	* Fixed a bug with the custom walker for default navigation menu (page-based) that may cause WSOD in some sites
+	* Fixed bug where the border of block button in full-sized slider remains blue even when the colour is changed in the options page
+	* Updated CSS3 gradient properties syntax for Chrome
+	* Nav menu item description will not be shown if it's longer than 50 characters (indicating that excerpt is being used)
+	* Automatically add paragraphs (wpautop) to custom copyright text in footer if no <p> element is detected
+	* Fixed colour options preview not working for widget header when colour code is copied or typed in
+
 Version 1.4
     * Added microformats (hAtom) in the theme (http://microformats.org/)
 	* Added native support for Breadcrumb NavXT plugin

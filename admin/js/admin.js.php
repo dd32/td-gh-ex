@@ -71,11 +71,11 @@
 		<?php endif; ?>
 		
 		// The widget background preview
-		$('#colorpicker-8 div, #colorpicker-9 div, #colorpicker-10 div, #colorpicker-11 div, #colorpicker-12 div, color-8, color-9, color-10, color-11, color-12').bind('mouseup keyup', function(){
+		$('#colorpicker-8 div, #colorpicker-9 div, #colorpicker-10 div, #colorpicker-11 div, #colorpicker-12 div, .color-8, .color-9, .color-10, .color-11, .color-12').bind('mouseup keyup', function(){
 			$('.sidebar-wrap h3').attr('style', '\
 				background: ' + color_12.color + ';\
 				background: -moz-linear-gradient(' + color_12.color + ', ' + color_11.color + ');\
-				background: -webkit-gradient(linear, 0 0, 0 bottom, from(' + color_12.color + '), to(' + color_11.color + '));\
+				background: -webkit-linear-gradient(' + color_12.color + ', ' + color_11.color + ');\
 				background: linear-gradient(' + color_12.color + ', ' + color_11.color + ');\
 				border-color: ' + color_8.color + ';\
 				color: ' + color_9.color + ';\
@@ -95,7 +95,7 @@
 				background: ' + color_13.color + ';\
 				background: linear-gradient(left top, ' + color_13.color + ', ' + color_14.color + ');\
 				background: -moz-linear-gradient(left top, ' + color_13.color + ', ' + color_14.color + ');\
-				background: -webkit-gradient(linear, left top, right bottom, from(' + color_13.color + '), to(' + color_14.color + '));\
+				background: -webkit-linear-gradient(left top, ' + color_13.color + ', ' + color_14.color + ');\
 			');
 		});
 		
@@ -110,7 +110,7 @@
 			$('.block-button').attr('style', '\
 					background: ' + color_15.color + ';\
 					background: -moz-linear-gradient(' + color_15.color + ', ' + color_bottom + ');\
-					background: -webkit-gradient(linear, 0 0, 0 bottom, from(' + color_15.color + '), to(' + color_bottom + '));\
+					background: -webkit-linear-gradient(' + color_15.color + ', ' + color_bottom + ');\
 					background: linear-gradient(' + color_15.color + ', ' + color_bottom + ');\
 					border-color: ' + color_bottom + ';\
 					text-shadow: 0 -1px 1px ' + color_17.color + ';\
@@ -120,9 +120,24 @@
 	
 	});
 	
-	function hexToR(h) {return parseInt((cutHex(h)).substring(0,2),16)}
-	function hexToG(h) {return parseInt((cutHex(h)).substring(2,4),16)}
-	function hexToB(h) {return parseInt((cutHex(h)).substring(4,6),16)}
+	function hexToR(h) {
+		if ( h.length == 4 )
+			return parseInt((cutHex(h)).substring(0,1)+(cutHex(h)).substring(0,1),16);
+		if ( h.length == 7 )
+			return parseInt((cutHex(h)).substring(0,2),16);
+	}
+	function hexToG(h) {
+		if ( h.length == 4 )
+			return parseInt((cutHex(h)).substring(1,2)+(cutHex(h)).substring(1,2),16);
+		if ( h.length == 7 )
+			return parseInt((cutHex(h)).substring(2,4),16);
+	}
+	function hexToB(h) {
+		if ( h.length == 4 )
+			return parseInt((cutHex(h)).substring(2,3)+(cutHex(h)).substring(2,3),16);
+		if ( h.length == 7 )
+			return parseInt((cutHex(h)).substring(4,6),16);
+	}
 	function cutHex(h) {return (h.charAt(0)=="#") ? h.substring(1,7):h}	
 	//]]>
 </script>

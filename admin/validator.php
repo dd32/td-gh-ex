@@ -11,7 +11,7 @@ function graphene_settings_validator($input){
 		global $graphene_defaults, $allowedposttags;
 		
 		// Add <script> tag to the allowed tags in code
-		$allowedposttags = array_merge($allowedposttags, array( 'script' => array( 'type' => array(), 'src' => array() ) ) );
+		$allowedposttags = array_merge( $allowedposttags, array( 'script' => array( 'type' => array(), 'src' => array() ) ) );
 		
 		if (isset($_POST['graphene_general'])) {
 		
@@ -57,13 +57,13 @@ function graphene_settings_validator($input){
 			--------------------------------------------------------------------------------------*/
 			
 			// Front page posts categories
-			if ( ! in_array ('', $input['frontpage_posts_cats'] ) ) {
-				if ( in_array ( false, array_map( 'ctype_digit', $input['frontpage_posts_cats'] ) ) ) {
+			if ( ! in_array ( 'disabled', (array) $input['frontpage_posts_cats'] ) ) {
+				if ( in_array ( false, array_map( 'ctype_digit', (array) $input['frontpage_posts_cats'] ) ) ) {
 					unset($input['frontpage_posts_cats']);
 					add_settings_error('graphene_options', 2, __('ERROR: Invalid category selected for the front page posts categories.', 'graphene'));
 				}
 			} else {
-				$input['frontpage_posts_cats'] = array('');
+				$input['frontpage_posts_cats'] = $graphene_defaults['frontpage_posts_cats'];
 			}
 			
 			
@@ -146,7 +146,7 @@ function graphene_settings_validator($input){
 			// Social sharing buttons location
 			$input = graphene_validate_dropdown( $input, 'addthis_location', array('post-bottom', 'post-top', 'top-bottom'), __('ERROR: Invalid option for the social sharing buttons location.', 'graphene') );
 			// Social sharing buttons code
-			$input['addthis_code'] = wp_kses_post($input['addthis_code']);
+			$input['addthis_code'] = trim( stripslashes( $input['addthis_code'] ) );
 			
                         
 			/* =Adsense Options
@@ -157,7 +157,7 @@ function graphene_settings_validator($input){
 			// Show ads on front page switch
 			$input['adsense_show_frontpage'] = (isset($input['adsense_show_frontpage'])) ? true : false;
 			// Adsense code
-			$input['adsense_code'] = wp_kses_post($input['adsense_code']);
+			$input['adsense_code'] = wp_kses_post( $input['adsense_code'] );
 			
 						
 			/* =Google Analytics Options
@@ -275,29 +275,29 @@ function graphene_settings_validator($input){
 			/* =Footer Widget Display Options
 			--------------------------------------------------------------------------------------*/
 			// Number of columns to display
-			$input = graphene_validate_digits( $input, 'footerwidget_column', __('ERROR: The number of columns to be displayed in the footer widget must be a an integer value.', 'graphene') );
+			$input = graphene_validate_digits( $input, 'footerwidget_column', __('ERROR: The number of columns to be displayed in the footer widget must be a an integer value.', 'graphene' ) );
 			
 			
 			/* =Navigation Menu Display Options
 			--------------------------------------------------------------------------------------*/
-			$input = graphene_validate_digits( $input, 'navmenu_child_width', __('ERROR: The width of the submenu must be a an integer value.', 'graphene') );
-			$input['navmenu_home_desc'] = wp_kses_post($input['navmenu_home_desc']);
+			$input = graphene_validate_digits( $input, 'navmenu_child_width', __('ERROR: The width of the submenu must be a an integer value.', 'graphene' ) );
+			$input['navmenu_home_desc'] = wp_kses_post( $input['navmenu_home_desc'] );
 			
 			/* =Miscellaneous Display Options
 			--------------------------------------------------------------------------------------*/
-			$input['custom_site_title_frontpage'] = strip_tags($input['custom_site_title_frontpage']);
-			$input['custom_site_title_content'] = strip_tags($input['custom_site_title_content']);
-			$input = graphene_validate_url( $input, 'favicon_url', __('ERROR: Bad URL entered for the favicon URL.', 'graphene') );
+			$input['custom_site_title_frontpage'] = strip_tags( $input['custom_site_title_frontpage'] );
+			$input['custom_site_title_content'] = strip_tags( $input['custom_site_title_content'] );
+			$input = graphene_validate_url( $input, 'favicon_url', __( 'ERROR: Bad URL entered for the favicon URL.', 'graphene' ) );
 			
 			/* =Custom CSS Options 
 			--------------------------------------------------------------------------------------*/
-			$input['custom_css'] = wp_kses( $input['custom_css'] );
+			$input['custom_css'] = strip_tags( $input['custom_css'] );
 		
 		} // Ends the Display options
 		
 		
 		// Merge the new settings with the previous one (if exists) before saving
-		$input = array_merge(get_option('graphene_settings', array()), $input);
+		$input = array_merge( get_option('graphene_settings', array() ), $input );
 			
 		/* Only save options that have different values than the default values */
 		foreach ($input as $key => $value){
@@ -323,7 +323,7 @@ function graphene_settings_validator($input){
 */
 function graphene_validate_digits( $input, $option_name, $error_message ){
 	
-	if ( '0' === $input[$option_name] || !empty($input[$option_name])){
+	if ( '0' === $input[$option_name] || ! empty($input[$option_name] ) ){
 		if (!ctype_digit($input[$option_name])) {
 			unset($input[$option_name]);
 			add_settings_error('graphene_options', 2, $error_message);

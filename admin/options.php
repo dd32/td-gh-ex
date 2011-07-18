@@ -75,7 +75,7 @@ function graphene_options(){
 	}
 	
 	/* Get the updated settings before outputting the options page */
-	$graphene_settings = array_merge($graphene_defaults, get_option('graphene_settings', array()));
+	$graphene_settings = graphene_get_settings();
 	
 	/* This where we start outputting the options page */ ?>
 	<div class="wrap meta-box-sortables">
@@ -85,8 +85,6 @@ function graphene_options(){
         <p><?php _e('These are the global settings for the theme. You may override some of the settings in individual posts and pages.', 'graphene'); ?></p>
         
 		<?php settings_errors(); ?>
-        
-        <?php // disect_it($graphene_settings, false); ?>
         
         <?php /* Print the options tabs */ ?>
         <?php 
@@ -433,12 +431,12 @@ function graphene_options_general() {
                         </th>
                         <td>
                             <select name="graphene_settings[frontpage_posts_cats][]" multiple="multiple" class="select-multiple">
-                                <option value="" <?php if (in_array('', $graphene_settings['frontpage_posts_cats'])) {echo 'selected="selected"';} ?>><?php _e('--Disabled--', 'graphene'); ?></option>
+                                <option value="disabled" <?php if ( in_array( 'disabled', $graphene_settings['frontpage_posts_cats'])) {echo 'selected="selected"';} ?>><?php _e( '--Disabled--', 'graphene' ); ?></option>
                                 <?php /* Get the list of categories */ 
                                     $categories = get_categories();
                                     foreach ($categories as $category) :
                                 ?>
-                                <option value="<?php echo $category->cat_ID; ?>" <?php if (in_array($category->cat_ID, $graphene_settings['frontpage_posts_cats'])) {echo 'selected="selected"';}?>><?php echo $category->cat_name; ?></option>
+                                <option value="<?php echo $category->cat_ID; ?>" <?php if ( in_array( $category->cat_ID, $graphene_settings['frontpage_posts_cats']) ) {echo 'selected="selected"';}?>><?php echo $category->cat_name; ?></option>
                                 <?php endforeach; ?>
                             </select><br />
                             <span class="description"><?php _e('You may select multiple categories by holding down the CTRL key.', 'graphene'); ?></span>
@@ -749,7 +747,7 @@ function graphene_options_general() {
                         <th scope="row">
                             <label><?php _e("Your Adsense code", 'graphene'); ?></label>
                         </th>
-                        <td><textarea name="graphene_settings[adsense_code]" cols="60" rows="7" class="widefat code"><?php echo htmlentities(stripslashes($graphene_settings['adsense_code'])); ?></textarea></td>
+                        <td><textarea name="graphene_settings[adsense_code]" cols="60" rows="10" class="widefat code"><?php echo htmlentities(stripslashes($graphene_settings['adsense_code'])); ?></textarea></td>
                     </tr>
                 </table>
             </div>
@@ -1233,7 +1231,6 @@ function graphene_options_display() {
                         <td><code>blue</code>, <code>navy</code>, <code>red</code>, <code>#ff0000</code></td>
                     </tr>        
                 </table>
-                <p><?php _e('Leave field empty to use the default value.', 'graphene'); ?></p>
                 
                 <h4><?php _e('Header Text', 'graphene'); ?></h4>
                 <table class="form-table">
@@ -1378,9 +1375,7 @@ function graphene_options_display() {
                 <div title="Click to toggle" class="handlediv"><br /></div>
         		<h3 class="hndle"><?php _e('Footer Widget Display Options', 'graphene'); ?></h3>
             </div>
-            <div class="panel-wrap inside">
-        		<p><?php _e('Leave field empty to use the default value.', 'graphene'); ?></p>
-        
+            <div class="panel-wrap inside">        
                 <table class="form-table">
                     <tr>
                         <th scope="row" style="width:260px;">
