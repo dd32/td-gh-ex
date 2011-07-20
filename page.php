@@ -6,7 +6,7 @@
 get_header();
 ?>
 <div class="content" <?php ctx_aj_getlayout(); ?>>
-    <div id="col-main">
+    <div id="col-main" style="<?php echo ctx_aj_customwidth('content'); ?>">
       <div id="main-content" <?php //ctx_aj_crinkled_paper(); ?>>
       <!-- BEGIN Main Content-->
 		 <?php
@@ -28,14 +28,18 @@ get_header();
                         <?php the_content(__('(more...)')); ?>
                     </div>
 
+                    <?php if ( comments_open() || have_comments() ) : ?>
                     <div class="feedback">
                         <?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'adventurejournal' ), 'after' => '</div>' ) ); ?>
                         <?php comments_popup_link(__('Comments (0)'), __('Comments (1)'), __('Comments (%)')); ?>
                     </div>
+                    <?php endif; ?>
 
                  </div>
                 <br/>
+                <?php if ( comments_open() || have_comments() ) : ?>
                 <?php comments_template(); // Get wp-comments.php template ?>
+                <?php endif; ?>
         <?php endwhile; else: ?>
         <p><?php _e('Sorry, no posts matched your criteria.','adventurejournal'); ?></p>
         <?php endif; ?>

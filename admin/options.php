@@ -25,6 +25,7 @@
         $newOpts['logo-path'] = $_POST['logo-path'];
         $newOpts['title-type'] = $_POST['title-type'];
         $newOpts['paper-type'] = $_POST['paper-type'];
+        $newOpts['sidebar-width'] = $_POST['sidebar-width'];
         $newOpts['header-height'] = $_POST['header-height'];
         $newOpts['featured-header'] = ( isset( $_POST['featured-header'] ) ) ? 'true' : 'false';
         $newOpts['attrib'] = ( isset( $_POST['attrib'] ) ) ? 'false' : 'true';
@@ -73,7 +74,7 @@
     </script>
     <style type="text/css">
         #ad-msg-auth, #ad-msg-anon { width:500px; }
-        #ctx-about {width:326px;float:right;border:1px solid #e5e5e5;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;padding:10px;margin-top:25px;margin-right:20px;margin-left:10px;}
+        #ctx-about {width:326px;float:right;border:1px solid #e5e5e5;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;padding:10px;margin-right:20px;margin-left:10px;}
         #ctx-about a.img-block {display:block;text-align:center;}
         #ctx-about p, #ctx-about div {padding-left:10px;color:#9c9c9c;}
         #ctx-about p a { color:gray; }
@@ -83,17 +84,19 @@
         #ctx-opts-table { }
         .helptext { color:gray; }
     </style>
-<div class="wrap">
+<div id="aj-options" class="wrap">
+    
+    <div id="icon-themes" class="icon32"><br/></div>
+    <h2><?php _e('Adventure Journal Options','adventurejournal') ?></h2>
+    <?php echo $message,$debugOpts; ?>
+    
 <table cellpadding="0" cellspacing="0" id="ctx-opts-table" style="border:none;width:100%;">
     <tr>
         <td id="ctx-ps-opts-form">
-                <div class="icon32" id="icon-users"><br/></div>
-                <h2><?php _e('Adventure Journal Options','adventurejournal') ?></h2>
-                <?php echo $message,$debugOpts; ?>
                 <p></p>
                 <form method="post" action="">
                     <?php wp_nonce_field('aj-options'); ?>
-                    <p style="font-style:italic"><?php _e('This screen allows you to customize advanced options exclusive to Adventure Journal. Customizing your website has never been easier.','adventurejournal'); ?></p>
+                    <p style="font-style:italic"><?php _e('This screen allows you to customize advanced options exclusive to Adventure Journal. Customizing your website has never been easier!','adventurejournal'); ?></p>
                     
                     
                     <div style="border-bottom:1px dotted silver;margin:2em 0 -1em 0;"></div>
@@ -143,18 +146,23 @@
 
                     <div style="border-bottom:1px dotted silver;margin:1em 0 -1em 0;"></div>
                     <h3 class="title"><?php _e('Site Title &amp; Description','adventurejournal'); ?></h3>
-                    <p class="helptext"><?php _e('You can choose how you want your site title to display. You can choose a custom image, or completely hide the paperclipped title scrap.','adventurejournal'); ?></p>
+                    <p class="helptext"><?php _e('You can choose how you want your site title to display. You can choose a custom image, or completely hide the paperclipped title scrap (which is useful if you plan on using the header image as your title).','adventurejournal'); ?></p>
                     <table width="100%" border="0" cellspacing="0" cellpadding="0" class="ctx-table site-title admin-choosebox">
                     <tr>
-                        <td <?php if($AJOpts['title-type'] == 'title-default'){echo ' class="active-layout"';}?>><p><strong><?php _e('Default (Text Only)','adventurejournal'); ?></strong></p>
-                            <input name="title-type" value="title-default" id="title-default" class="radial" type="radio" <?php if($AJOpts['title-type'] == 'title-default'){echo ' checked="checked"';}?>>
-                            <img src="<?php echo $themeDir; ?>/images/title-default.jpg" alt="Default Site Title" width="200" height="122" /> </td>
-                        <td <?php if($AJOpts['title-type'] == 'title-logo'){echo ' class="active-layout"';}?>><p><strong><?php _e('Logo (Custom Image)','adventurejournal'); ?></strong></p>
-                            <input name="title-type" value="title-logo" id="title-logo" class="radial" type="radio" <?php if($AJOpts['title-type'] == 'title-logo'){echo ' checked="checked"';}?>>
-                            <img src="<?php echo $themeDir; ?>/images/title-logo.jpg" alt="Custom Logo Site Title" width="200" height="122"  /></td>
-                        <td <?php if($AJOpts['title-type'] == 'title-blank'){echo ' class="active-layout"';}?>><p><strong><?php _e('No Title','adventurejournal'); ?></strong></p>
-                            <input name="title-type" value="title-blank" id="title-blank" class="radial" type="radio" <?php if($AJOpts['title-type'] == 'title-blank'){echo ' checked="checked"';}?>>
-                            <img src="<?php echo $themeDir; ?>/images/title-blank.jpg" alt="No Site Title" width="200" height="122"  /></td>
+                        <td <?php if($AJOpts['title-type'] == 'title-default'){echo ' class="active-layout"';}?>>
+                            <input style="margin-top:80px;" name="title-type" value="title-default" id="title-default" class="radial" type="radio" <?php if($AJOpts['title-type'] == 'title-default'){echo ' checked="checked"';}?>>
+                            <label for="title-default" style="margin-left:0;">
+                            <p><strong><?php _e('Default (Text Only)','adventurejournal'); ?></strong></p>
+                            <img src="<?php echo $themeDir; ?>/images/title-default.jpg" alt="Default Site Title" width="200" height="122" /></label></td>
+                        <td <?php if($AJOpts['title-type'] == 'title-logo'){echo ' class="active-layout"';}?>>
+                            <input style="margin-top:80px;" name="title-type" value="title-logo" id="title-logo" class="radial" type="radio" <?php if($AJOpts['title-type'] == 'title-logo'){echo ' checked="checked"';}?>>
+                            <label for="title-logo" style="margin-left:0;"><p><strong><?php _e('Logo (Custom Image)','adventurejournal'); ?></strong></p>
+                            <img src="<?php echo $themeDir; ?>/images/title-logo.jpg" alt="Custom Logo Site Title" width="200" height="122"  /></label></td>
+                        <td <?php if($AJOpts['title-type'] == 'title-blank'){echo ' class="active-layout"';}?>>
+                            <input style="margin-top:80px;" name="title-type" value="title-blank" id="title-blank" class="radial" type="radio" <?php if($AJOpts['title-type'] == 'title-blank'){echo ' checked="checked"';}?>>
+                            <label for="title-blank" style="margin-left:0;">
+                            <p><strong><?php _e('No Title','adventurejournal'); ?></strong></p>
+                            <img src="<?php echo $themeDir; ?>/images/title-blank.jpg" alt="No Site Title" width="200" height="122"  /></label></td>
                       </tr>
                     </table>
 
@@ -215,7 +223,14 @@
                         </tr>
                     </table>
                     
+                    
+                    <div style="border-bottom:1px dotted silver;margin:.5em 0 -1em 0;"></div>
+                    <h3 class="title"><?php _e('Custom Sidebar Width','adventurejournal'); ?></h3>
+                    <p class="helptext"><?php _e('By default, Adventure Journals sidebars are 220 pixels wide. For some widgets and advertisements, this may be too narrow. To increase the width of the sidebar, enter a new value below.','adventurejournal'); ?></p>
+                    <p><input type="text" name="sidebar-width" id="sidebar-width" value="<?php echo (!empty($AJOpts['sidebar-width'])) ? $AJOpts['sidebar-width'] :'220'; ?>" size="6" /> pixels</p>
+                    <p><span style="font-style:italic;color:silver;font-size:0.8em;"><?php echo sprintf(__('Note: If you are using a two-sidebar layout, please take this into account, as you may be dramatically decreasing the size of your content area. You may also need to use the %s plugin to adjust the size of your featured images if they become too large for the content area.','adventurejournal'),'<a style="color:silver" href="http://wordpress.org/extend/plugins/regenerate-thumbnails/">Regenerate Thumbnails</a>'); ?></span></p>
 
+                    
                     <div style="border-bottom:1px dotted silver;margin:.5em 0 -1em 0;"></div>
                     <h3 class="title"><?php _e('Custom Header Size','adventurejournal'); ?></h3>
                     <p class="helptext"><?php echo sprintf(__('To change the vertical size of the header image, first enter a value in below, save changes and then upload your image on the <a href="%s">header page</a>. The default value is 360.','adventurejournal'),admin_url().'themes.php?page=custom-header'); ?></p>
@@ -231,7 +246,7 @@
                     
                     <div style="border-bottom:1px dotted silver;margin:2em 0 -1em 0;"></div>
                     <h3 class="title"><?php _e('Browser Update Helper','adventurejournal'); ?></h3>
-                    <p class="helptext"><?php _e('Adventure Journal now includes a customized version of the upcoming "Browser Update Helper" plugin, a new initiative meant to speed up adoption of newer, faster, more secure web browsers. This feature temporarily displays an attractive, helpful notice at the top of the site when a users browser is badly out of date. Leaving this feature on <em>will</em> make the web a better, safer place. To disable this feature, uncheck the box below.','adventurejournal'); ?></p>
+                    <p class="helptext"><?php _e('Adventure Journal now includes a customized version of the upcoming "Browser Update Helper" plugin, a new initiative meant to speed up adoption of newer, faster, more secure web browsers. This feature temporarily displays an attractive, helpful notice at the top of the site when a users browser is badly out of date. Leaving this feature on <em>will</em> make the web a better, safer place. To disable this feature, uncheck the box below.','adventurejournal'); ?> <a href="http://wordpress.org/news/2011/07/are-you-ready-for-wordpress-3-2/" target="_blank"><?php _e('Why include this?','adventurejournal') ?></a></p>
                     <p><label><input type="checkbox" name="browser-helper" <?php echo ($AJOpts['browser-helper']==='true' || !isset($AJOpts['browser-helper'])) ? 'checked="checked"' : ''; ?>/> <strong><?php _e('Make the web a better, safer place','adventurejournal'); ?></strong></label></p>
 
                     <!--
@@ -247,7 +262,7 @@
         </td>
         <td style="vertical-align:top;">
             <div id="ctx-about">
-                <a class="img-block" href="http://www.contextureintl.com"><img src="<?php echo get_template_directory_uri().'/images/ctx-logo.gif'; ?>" alt="Contexture International" /></a>
+                <a class="img-block" href="http://www.contextureintl.com"><img src="<?php echo get_template_directory_uri().'/images/ctx-logo.png'; ?>" alt="Contexture International" /></a>
                 <p>Contexture International is an all-in-one agency specializing in <a href="http://www.contextureintl.com/portfolio/graphic-design/">graphic design</a>, <a href="http://www.contextureintl.com/portfolio/web-interactive/">web design</a>, and <a href="http://www.contextureintl.com/portfolio/broadcast-video-production/">broadcast and video production</a>, with an unparalleled ability to connect with the heart of your audience.</p>
                 <p>Contexture's staff has successfully promoted organizations and visionaries for more than 2 decades through exceptional storytelling, in just the right contexts for their respective audiences, with overwhelming returns on investment.  See the proof in our <a href="http://www.contextureintl.com/portfolio/">portfolio </a>or learn more <a href="http://www.contextureintl.com/about-us/">about us</a>.</p>
                 <div><a href="http://www.contextureintl.com/">Need a custom web or video project?</a></div>

@@ -23,12 +23,12 @@ if ( have_comments() ) : ?>
 			number_format_i18n( get_comments_number() ), '<em>' . get_the_title() . '</em>' );
 			?></h3>
 
-<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+    <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 			<div class="navigation">
 				<div class="nav-previous"><?php previous_comments_link( __( '<span class="meta-nav">&larr;</span> Older Comments', 'adventurejournal' ) ); ?></div>
 				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'adventurejournal' ) ); ?></div>
 			</div> <!-- .navigation -->
-<?php endif; // check for comment navigation ?>
+    <?php endif; // check for comment navigation ?>
 
 			<ol class="commentlist">
 				<?php
@@ -42,12 +42,12 @@ if ( have_comments() ) : ?>
 				?>
 			</ol>
 
-<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+    <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 			<div class="navigation">
 				<div class="nav-previous"><?php previous_comments_link( __( '<span class="meta-nav">&larr;</span> Older Comments', 'adventurejournal' ) ); ?></div>
 				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'adventurejournal' ) ); ?></div>
 			</div><!-- .navigation -->
-<?php endif; // check for comment navigation ?>
+    <?php endif; // check for comment navigation ?>
 
 <?php else : // or, if we don't have comments:
 
@@ -57,10 +57,10 @@ if ( have_comments() ) : ?>
 	if ( ! comments_open() ) :
 ?>
 	<p class="nocomments"><?php _e( 'Comments are closed.', 'adventurejournal' ); ?></p>
-<?php endif; // end ! comments_open() ?>
+    <?php endif; // end ! comments_open() ?>
 
 <?php endif; // end have_comments() ?>
 
-<?php comment_form($defaults); ?>
+<?php comment_form(); ?>
 
 </div><!-- #comments -->

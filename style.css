@@ -4,7 +4,7 @@ Theme URI:http://www.contextureintl.com/wordpress/adventure-journal-wordpress-th
 Description:Share your adventures with the world! Adventure Journal is a powerful theme that lets you customize a wide variety of features from the comfort of your Dashboard - no coding required. Use your own header and background art, change the layout to one, two or three columns, add a custom stylesheet, set up unique sidebars for pages and posts.... and much more. Includes support for French and German languages. Professionally maintained by Contexture International.
 Author:Contexture International
 Author URI:http://www.contextureintl.com
-Version:1.6.2
+Version:1.7
 License:GNU General Public License
 License URI:license.txt
 
@@ -40,9 +40,9 @@ ol { margin-bottom:1em; }
     ol ol li { list-style:upper-alpha; }
 	ol ol ol li { list-style:lower-roman; }
 
-table { border-collapse:collapse; border-spacing:0; border:1px solid #E7E7E7; width:100%; font-size:14px; }
+table { border-collapse:collapse; border-spacing:0; /*border:1px solid #E7E7E7;*/ width:100%; font-size:14px; }
 	th { padding:4px; vertical-align:top; text-align:left; }
-	td { padding:4px; vertical-align:top; text-align:left; border-top:1px solid #E7E7E7; }
+	td { padding:4px; vertical-align:top; text-align:left; /*border-top:1px solid #E7E7E7;*/ }
 
 form { display:inline; }
 	fieldset { padding:10px; }
@@ -56,7 +56,7 @@ form { display:inline; }
 		select { }
 			option { }
 pre { background-color:#F5F5F5; padding:10px; font-family:"Courier 10 Pitch",Courier,monospace; margin-bottom:10px; }
-blockquote { 	font-style:italic; padding:7px; padding-left:50px; padding-bottom:0px; font-size:16px; }
+blockquote { font-style:italic; padding:7px; padding-left:50px; padding-bottom:0px; font-size:16px; }
 hr, .hr { margin-top:0em; margin-bottom:1em; height:1px; border-top-width:1px; border-top-style:dotted; border-right-style:none; border-bottom-style:none; border-left-style:none; border-top-color:#0F2A56; }
 dl { margin:0 0 24px 0; }
 dt { font-weight:bold; }
@@ -376,9 +376,35 @@ h1 a:hover, h2 a:hover, h3 a:hover { text-decoration:underline; }
 		.sidebar li li li { list-style-type:circle; font-size:0.88em; }
 		.sidebar li li li li { list-style-type:disc; font-size:1em; }
 
-    .sidebar li.widget { background-image:url(images/sidebar-bg-bottom.gif),url(images/sidebar-bg-top.gif),url(images/sidebar-bg-middle.gif);
-                         background-repeat:no-repeat,no-repeat,repeat-y;
-                         background-position:bottom left, top left, top left;
+    .sidebar li.widget { background-color:#efe3d8;
+                         margin-right:10px;
+                         background-image: 
+                             url(images/sidebar-top-right.gif),
+                             url(images/sidebar-top-left.gif),
+                             url(images/sidebar-top-horiz.gif),
+                             url(images/sidebar-bottom-right.gif),
+                             url(images/sidebar-bottom-left.gif),
+                             url(images/sidebar-bottom-horiz.gif),
+                             url(images/sidebar-middle-left-vertical.gif),
+                             url(images/sidebar-middle-right-vertical.gif);
+                         background-repeat:
+                             no-repeat,
+                             no-repeat,
+                             repeat-x,
+                             no-repeat,
+                             no-repeat,
+                             repeat-x,
+                             repeat-y,
+                             repeat-y;
+                         background-position:
+                             top right,
+                             top left,
+                             top center,
+                             bottom right,
+                             bottom left,
+                             bottom center,
+                             top left,
+                             top right;
                          position:relative;
                          z-index:10; }
 

@@ -4,7 +4,7 @@ Donate link: http://www.contextureintl.com/wordpress/adventure-journal-wordpress
 Tags: brown, tan, yellow, light, dark, one-column, custom-header, custom-background, custom-menu, theme-options, threaded-comments, sticky-post, holiday, photoblogging
 Requires at least: 3.0.0
 Tested up to: 3.2
-Stable tag: 1.6.0
+Stable tag: 1.7
 
 
 == Description ==
@@ -37,6 +37,10 @@ http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Changelog ==
+
+= 1.7 =
+* NEW FEATURE: You can now set your own custom sidebar widths (should really help folks with wide widgets).
+* FIX: When comments are disabled for a page, you will no longer see "0 Comments" appear.
 
 = 1.6.2 =
 * FIX: Fixed an invalid link for Try Something New

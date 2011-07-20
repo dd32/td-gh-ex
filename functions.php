@@ -149,11 +149,11 @@ function ctx_aj_setup() {
             switch ($themeOpts['layout']) {
                 case 'col-2-left':
                 case 'col-2-right':
-                    set_post_thumbnail_size( 665, 130, true ); //GOOGLE FEATURED
+                    set_post_thumbnail_size( ctx_aj_customwidth('content',false)-40, 130, true ); //FEATURED IMAGE (665)
                 break;
                 case 'col-3':
                 case 'col-3-left':
-                    set_post_thumbnail_size( 485, 94, true );
+                    set_post_thumbnail_size( ctx_aj_customwidth('content',false)-40, 94, true ); //FEATURED IMAGE (485)
                 break;
                 default:
                     // We'll be using post thumbnails for custom header images on posts and pages.
@@ -323,6 +323,7 @@ function ctx_aj_set_options($arrayOverrides=false){
         'title-type'=>'title-default',
         'paper-type'=>'paper-sticky', //paper-sticky
         'header-height'=>'360', //360,
+        'sidebar-width'=>'220', //220
         'featured-header'=>'false',
         'browser-helper'=>'true'
     );
@@ -483,64 +484,14 @@ function ctx_aj_getlayout(){
 }
 
 
-/**
- * Determines which sidebars need to be generated based on the layout option set in the admin section
- * then send the results to ctx_aj_build_sidebar() which actually generates the html
- */
-function ctx_aj_generate_sidebars(){
-    //Get the selected layout option
-    $layout = get_option('ctx-adventurejournal-options');
-
-    switch ($layout['layout']) {
-        case 'col-2-left':
-        case 'col-2-right':
-            //Check if the current page is a non blog related page
-            if (is_page()){
-                //If so then generate the normal website sidebar
-                ctx_aj_build_sidebar('col-left','Page Sidebar');
-            } else  {
-                //If this is a blog or blog related page then generate the blog sidebar
-                ctx_aj_build_sidebar('col-left','Blog Sidebar');
-            }
-        break;
-        case 'col-3':
-            //Check if the current page is a non blog related page
-            if (is_page()){
-                //If so then generate the normal website sidebars
-                ctx_aj_build_sidebar('col-left','Page Sidebar (Left)');
-                ctx_aj_build_sidebar('col-right','Page Sidebar (Right)');
-            } else  {
-                //If this is a blog or blog related page then generate the blog sidebar
-                ctx_aj_build_sidebar('col-left','Blog Sidebar (Left)');
-                ctx_aj_build_sidebar('col-right','Blog Sidebar (Right)');
-            }
-        break;
-        case 'col-3-left':
-            //Check if the current page is a non blog related page
-            if (is_page()){
-                //If so then generate the normal website sidebars
-                ctx_aj_build_sidebar('col-left','Page Sidebar (Left)');
-                ctx_aj_build_sidebar('col-right','Page Sidebar (Right)');
-            } else  {
-                //If this is a blog or blog related page then generate the blog sidebar
-                ctx_aj_build_sidebar('col-left','Blog Sidebar (Left)');
-                ctx_aj_build_sidebar('col-right','Blog Sidebar (Right)');
-            }
-        break;
-        case 'col-1':
-        default:
-            //Do nothing - no sidebar support
-        break;
-
-    }
-}
-
 
 /**
  * Creates and populates the sidebars based on the layout option set in the admin section
  */
 function ctx_aj_build_sidebar($sidebar_class, $sidebar_name){
-    echo sprintf('<div id="%s" class="sidebar"><ul>',$sidebar_class);
+    $ajOpts = get_option('ctx-adventurejournal-options');
+    $sidebar_width = 'width:'.$ajOpts['sidebar-width'].'px;';
+    echo sprintf('<div id="%s" class="sidebar" style="%s"><ul>', $sidebar_class, ctx_aj_customwidth() );
 
     if ( function_exists('dynamic_sidebar') ){
         dynamic_sidebar($sidebar_name);
@@ -549,13 +500,61 @@ function ctx_aj_build_sidebar($sidebar_class, $sidebar_name){
     echo '</ul></div>';
 }
 
+/**
+ * Returns a CSS width style for the specified element, based on the sidebar width setting
+ * @param string $column Which element needs to be adjusted?
+ */
+function ctx_aj_customwidth($column='sidebar',$css=true){
+    $ajOpts = get_option('ctx-adventurejournal-options');
+    $width = $ajOpts['sidebar-width'];
+    $layout = $ajOpts['sidebar-width'];
+    
+    switch($column){
+        case 'sidebar':
+            return ($css)?'width:'.$width.'px;':$width;
+            break;        
+        case 'col-main':
+        case 'content':
+            switch($layout){
+                case 'col-3':
+                case 'col-3-left':
+                case 'col-3-right':
+                    $diff = 220-$width; //Whats the sidebar different from default?
+                    $width = 720+($diff*2); //Adjust the content by the difference
+                    return ($css)?'width:'.$width.'px;':$width;
+                    break;
+                case 'col-1':
+                    break;
+                default:
+                    $diff = 220-$width; //Whats the sidebar different from default?
+                    $width = 720+$diff; //Adjust the content by the difference
+                    return ($css)?'width:'.$width.'px;':$width;
+                    break;
+            }
+            break;
+        case 'content-2':
+            $diff = 220-$width; //Whats the sidebar different from default?
+            $width = 720+$diff; //Adjust the content by the difference
+            return ($css)?'width:'.$width.'px;':$width;
+            break;
+        case 'content-3':
+            $diff = 220-$width; //Whats the sidebar different from default?
+            $width = 720+($diff*2); //Adjust the content by the difference
+            return ($css)?'width:'.$width.'px;':$width;
+            break;
+        default:break;
+    }
+    return '';
+}
+
 
 /**
  * Add's "Layout" option to the theme-options/Appearance nav menu
  */
 function ctx_aj_theme_add_pages() {
     //add_theme_page(, __('Advanced','adventurejournal'), 'administrator', 'theme-options', 'ctx_aj_options_adventurejournal');
-    add_theme_page(__('Adventure Journal','adventurejournal'), __('Adventure Journal','adventurejournal'), 'edit_theme_options', 'z-adventurejournal', 'ctx_aj_options_adventurejournal');
+    //add_theme_page(__('Adventure Journal','adventurejournal'), __('Adventure Journal','adventurejournal'), 'edit_theme_options', 'z-adventurejournal', 'ctx_aj_options_adventurejournal');
+    add_theme_page(__('Theme Options','adventurejournal'), __('Theme Options','adventurejournal'), 'edit_theme_options', 'z-adventurejournal', 'ctx_aj_options_adventurejournal');
 }
 
 
