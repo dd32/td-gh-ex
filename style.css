@@ -3,9 +3,9 @@ Theme Name: Adventure
 
 Theme URI: http://schwarttzy.com/?page_id=551
 
-Description: Inspired by a certain GPS Manufacture, I designed this theme to feel like you're looking through a window out into the wilderness. Version 1.4.3 Fixed IE6 stretch images errors. Version 1.4.3 Fixed 404 error page issues, I have done the best I can with the menu bar on IE 6 browser. Version 1.4.2 fixes an issue when you have to many links in the bottom bar where the link would disappear entirely if you had to many. Now the slogan goes first, then the title, and finally the links one by one.
+Description: Inspired by a certain GPS Manufacture, I designed this theme to feel like you're looking through a window out into the wilderness. Version 1.4.4 added some code for browsers that support it to perfectly strech the background image. I still recommend that you have a 1920by1080 image for browsers that don't support it. Version 1.4.3 Fixed IE6 stretch images errors. Version 1.4.3 Fixed 404 error page issues, I have done the best I can with the menu bar on IE 6 browser. Version 1.4.2 fixes an issue when you have to many links in the bottom bar where the link would disappear entirely if you had to many. Now the slogan goes first, then the title, and finally the links one by one.
 
-Version: 1.4.4
+Version: 1.4.5
 
 Author: Eric Schwarz
 
@@ -35,6 +35,10 @@ body {
 	padding: 0;
 	width: 100%;
 	text-align: center;
+	-o-background-size: cover;
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+	background-size: cover;
 }
 
 /************************************************
