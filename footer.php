@@ -3,7 +3,7 @@
 <section class="footerbox"><?php get_sidebar('3'); ?></section>
 <section class="footerbox"><?php get_sidebar('4'); ?></section>
 
-<section class="footer"><p><a href="http://www.northern-web-coders.de/blog" title="Northern-Web-Coders">Northern-Web-Coders</a> <span><?php echo sprintf(__("Powered by <a href='http://wordpress.org/' title='%s'><strong>WordPress</strong></a>"), __("Powered by WordPress, state-of-the-art semantic personal publishing platform.")); ?></span></p></section>
+<section class="footer"><p><a href="http://www.northern-web-coders.de/blog/archiv/2011/07/21/northern-web-coders-2-5-8/" title="Northern-Web-Coders">Northern-Web-Coders</a> <span><?php echo sprintf(__("Powered by <a href='http://wordpress.org/' title='%s'><strong>WordPress</strong></a>"), __("Powered by WordPress, state-of-the-art semantic personal publishing platform.")); ?></span></p></section>
 
 <?php wp_footer(); ?>
 

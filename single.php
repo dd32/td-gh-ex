@@ -7,7 +7,6 @@ get_header();
 <section class="column-full">
 
 <article <?php post_class(); ?>>
-<?php the_date('','<h2 class="date">','</h2>'); ?>
 <h3 class="storytitle" id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(''); ?></a></h3>
 <section class="meta">
 <?php edit_post_link(__('Edit This')); ?>
@@ -19,7 +18,7 @@ get_header();
 
 <?php the_content(__('(more...)')); ?>
 
-<section class="comment">
+<section class="commentlink">
 <?php wp_link_pages(); ?>
 <?php comments_popup_link(__('No Comments'), __('1 Comment'), __('% Comments'), '', __('Comments are closed.') ); ?>
 </section>

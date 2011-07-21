@@ -7,7 +7,7 @@ get_header();
 <section class="column-left">
 <?php if (have_posts()) : while(have_posts()) : $i++; if(($i % 2) == 0) : $wp_query->next_post(); else : the_post(); ?>
 
-<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
+<article <?php post_class() ?> id="post-<?php the_ID(); ?>">    
 <h3 class="storytitle"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
 <?php
 if ( function_exists('has_post_thumbnail') && has_post_thumbnail() ) {
@@ -22,7 +22,7 @@ the_post_thumbnail();
 </ul>
 </section>
 <?php the_content(__('(more...)')); ?>
-<section class="comment">
+<section class="commentlink">
 <?php wp_link_pages(); ?>
 <?php comments_popup_link(__('No Comments'), __('1 Comment'), __('% Comments'), '', __('Comments are closed.') ); ?>
 </section>
@@ -51,7 +51,7 @@ the_post_thumbnail();
 </ul>
 </section>
 <?php the_content(__('(more...)')); ?>
-<section class="comment">
+<section class="commentlink">
 <?php wp_link_pages(); ?>
 <?php comments_popup_link(__('No Comments'), __('1 Comment'), __('% Comments'), '', __('Comments are closed.') ); ?>
 </section>
