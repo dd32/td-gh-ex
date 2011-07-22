@@ -59,7 +59,6 @@ if ( ! isset( $_REQUEST['updated'] ) ) {
   </form>
 
 </div>
-
 <script>
 //<![CDATA[
 jQuery(document).ready(function(){

@@ -1064,9 +1064,7 @@ class Chip_Life_Options {
 			
 			$checked = ( $chip_life_options['chip_life_reset'] == 1 ) ? 'checked="checked"' : '';
 			echo '<label><input type="checkbox" id="chip_life_reset" name="chip_life_options[chip_life_reset]" value="1" '.$checked.' /> Reset Theme Options</label>';
-		}
-		
-		
+		}		
 
 }
 ?>

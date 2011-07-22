@@ -38,7 +38,6 @@
  * @since Chip Life 1.3.7
  */
 
-
 /** Chip Configuration / Constants */
 locate_template( array( 'chip/config.php' ), true, false );
 
@@ -67,6 +66,4 @@ $chip_life_global = array (
 	'theme_options'	=> get_option( 'chip_life_options' ),
 	'chip_image'	=> false,
 );
-
 ?>
-

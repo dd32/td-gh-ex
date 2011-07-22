@@ -33,5 +33,4 @@ function undefined_index_fix( &$var ) {
 	
 	return '';
 }
-
 ?>
