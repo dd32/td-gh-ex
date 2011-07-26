@@ -20,6 +20,10 @@
 							</div>
 						<?php } ?>
 						
+
+						
+						<?php the_content(); ?>
+						
 						<div class="social-links-single">
 							<div class="twitter-single">
 								<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="mikesensei">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
@@ -33,7 +37,7 @@
 							
 						</div><!-- .social-links-single -->
 						
-						<?php the_content(); ?>
+						
 						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'sutra' ), 'after' => '</div>' ) ); ?>
 					</div><!-- .entry-content -->
 

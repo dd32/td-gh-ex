@@ -73,7 +73,7 @@
 					<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('small'); ?></a>
 				</div>
 			<?php } ?>
-				<?php the_excerpt( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'sutra' ) ); ?>
+				<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'sutra' ) ); ?>
 				<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'sutra' ), 'after' => '</div>' ) ); ?>
 			</div><!-- .entry-content -->
 	<?php endif; ?>

@@ -1,9 +1,9 @@
-=== Sutra 1.1.3 ===
+=== Sutra 1.1.4 ===
 Contributors:  maikunari
 Donate link:  http://maikunari.com
 Tags: two-columns, light, featured-images, fixed-width, custom-menu
 Requires: 3.0
-Tested up to: 3.1.3
+Tested up to: 3.2.1
 
 Minimal theme focussed on simplicity, putting your writing front and center. 
 
@@ -44,8 +44,6 @@ beneath the words "Primary Navigation", press Save and you are all set.
 Adding Widgets to the "Primary Widget Area" section will remove the Category & Archives sections, 
 the Menu will remain.
 
-!!  Be careful not to add too many widgets as the sidebar does not scroll with the rest of the page and it 
-is possible that the widgets will appear too low for your readers to see.
 
 
 C) Adding a Photo Gallery
@@ -70,6 +68,12 @@ Internet Explorer 7,8,9
 
 
 === Release Notes ===
+
+Version 1.1.4 : 
+- Removed fixed sidebar & header, fixed some css that caused problems on smaller screen sizes.  
+- Changed the_excerpt for the_content on main content loop. 
+- Moved social icons to below content rather than above.
+
 
 Version 1.1.3 - Screenshot update
 Version 1.1.2 - Final fix for Codex Approval
