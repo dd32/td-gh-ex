@@ -3,8 +3,8 @@
 <div class="footer">
 
 <div class="fl">
-&copy;<?php date('Y'); ?> <a href="http://wpmole.com">WPMole</a> - Free & Premium Wordpress Themes.
-Powered by <a href="http://wordpress.org">WordPress.</a> 
+&copy;<?php echo date('Y'); ?> <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>.
+Powered by <a href="http://wordpress.org">WordPress</a>. 
 </div>
 
 <div class="fr">
