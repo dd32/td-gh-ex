@@ -1,0 +1,287 @@
+/*
+Theme Name: Adsticle
+Author URI: http://wpmole.com
+Description: Blogmeans is simple WordPress templates which can be used on blogs or article site. Theme markup is convenient for your visitors to concentrate on content. Different features give you unlimited possibilities when you set blog configuration.
+Author: WPMOLE
+Version: 1.0
+License: GNU/GPL Version 2 or later. 
+License URI: http://www.gnu.org/licenses/gpl.html
+Tags: white, two-columns, right-sidebar, fixed-width, custom-menu, translation-ready
+Copyright: (c) 2011 WPMOLE
+*/
+
+html,body,p,h1,h2,h3,h4,h5,em,i,table,tr,td,th,form,input,textarea,select,li,ol,ul,strong{margin:0;padding:0;}
+html{font-size:62.5%;}
+em,i{font-style:normal;}
+li{list-style-type:none;}
+h1,h2,h3,h4,h5{font-weight:400;padding:5px 0; font-weight: none; line-height: 1.6em;}
+p{padding:5px 0;}
+a:active,a:focus,img,input,select{outline:0;}
+a,a:link,a:active,a:visited{color:red;cursor:pointer;text-decoration:underline;}
+a:hover{color:red;text-decoration:underline;}
+img{border:none;}
+.clear{clear:both;font-size:0;line-height:0;height:0;}
+body{background-color:gray;font-size:14px;line-height: 1.4em;color:green;font-family:"Verdana", "Adobe Garamond", "Georgia", "Times New Roman", "serif";}
+
+.wrapper {width: 1000px; margin: 0 auto; position: relative; min-height: 100%;}
+
+::selection {background:blue; color:yellow;}
+
+.header  {width:100%; background:red;  height: 80px; border-bottom: 3px solid green}
+.header  .title {position:absolute; top: 5px; left: 10px; width:500px; height: 80px; }
+.header  .title  h1 {margin-left: 10px; font-size: 30px; margin: 0px; padding:0px}
+.header  .title  h1 a {text-decoration: none;}
+.header  .title  span {font-size: 14px; margin:0px; padding:0px; text-transform:uppercase;}
+.header .ads468-60 {position:absolute; top: 10px; left: 522px; width:468px; height: 60px; background:red;}
+
+.headermenu {border-bottom: 3px solid green; height: 30px; padding-top: 10px}
+.headermenu-left {margin-left: 10px; float:left; }
+.headermenu-left ul  li{display: inline; padding-right: 15px;}
+.headermenu-right {margin-right: 15px; float:right; }
+
+.footer{clear:left; width:100%;height:60px;background-color:red; border-top: 3px solid green;}
+.footer .fl, .footer .fr {display:inline;}
+.footer .fl { float:left; padding: 10px 0px 0px 10px}
+.footer .fr { float:right; padding: 10px 10px 0px 0px}
+
+.middle{width:100%; background-color:lightblue; overflow:hidden;}
+
+.middle .content, .middle .sidebar {display:inline; margin-bottom:30px}
+.middle .content{float:left; width:650px; margin-left: 10px; overflow:hidden;}
+.middle .sidebar {margin:0 5px 0 20px; float:left; width: 305px; overflow:hidden;}
+
+.sidebar-big {clear:both; overflow:hidden; } 
+
+.sidebar-2column1{width:150px; float: left; clear:both; overflow:hidden;}
+.sidebar-2column2{width:150px; float: right; overflow:hidden;}
+
+.widget {padding-bottom: 5px; padding-top: 15px;}
+.widget h3 {font-size: 16px; font-weight: none; text-transform:uppercase;}
+.widget_body {border-top: 3px solid green; padding-top: 5px;}
+.widget_body, .widget_body p, .widget_body li {font-size: 14px;}
+.widget_body p {padding: 0px; margin-bottom: 5px; }
+.widget_body a {color: red; text-decoration: none;}
+.widget_body a:hover {border-color: #000;}
+
+.post {width: 100%}
+.post  h1{font-size: 30px; color: red; margin-top: 15px; padding: 0px}
+.post  h1 a{text-decoration:none;}
+.meta{font-size: 12px; color: gray; text-transform:uppercase; padding-bottom: 10px; }
+.post_content {font-size: 16px;}
+.post_content  p{padding-bottom: 15px}
+.post .addcomment, .footer .readmore {display:inline;}
+.post .readmore {float:left;}
+.post .addcomment {float:right;}
+
+.tags{clear:both; padding-top:10px;} 
+
+.navigation {text-align: center; padding-top: 25px;}
+
+.sticky {background: red;}
+
+
+#comments {
+	clear: both;
+}
+#comments .navigation {
+	padding: 0 0 18px 0;
+}
+h3#comments-title,
+h3#reply-title {
+	color: #000;
+	font-size: 20px;
+	font-weight: none;
+	margin-bottom: 0;
+}
+h3#comments-title {
+	padding: 24px 0;
+}
+.commentlist {
+	list-style: none;
+	margin: 0;
+}
+.commentlist li.comment {
+	border-bottom: 1px solid #e7e7e7;
+	line-height: 24px;
+	margin: 0 0 24px 0;
+	padding: 0 0 0 56px;
+	position: relative;
+}
+.commentlist li:last-child {
+	border-bottom: none;
+	margin-bottom: 0;
+}
+#comments .comment-body ul,
+#comments .comment-body ol {
+	margin-bottom: 18px;
+}
+#comments .comment-body p:last-child {
+	margin-bottom: 6px;
+}
+#comments .comment-body blockquote p:last-child {
+	margin-bottom: 24px;
+}
+.commentlist ol {
+	list-style: decimal;
+}
+.commentlist .avatar {
+	position: absolute;
+	top: 4px;
+	left: 0;
+}
+.comment-author {
+}
+.comment-author cite {
+	color: #000;
+	font-style: normal;
+	font-weight: bold;
+}
+.comment-author .says {
+	font-style: italic;
+}
+.comment-meta {
+	font-size: 12px;
+	margin: 0 0 18px 0;
+}
+.comment-meta a:link,
+.comment-meta a:visited {
+	color: #888;
+	text-decoration: none;
+}
+.comment-meta a:active,
+.comment-meta a:hover {
+	color: #ff4b33;
+}
+.commentlist .even {
+}
+.commentlist .bypostauthor {
+}
+.reply {
+	font-size: 12px;
+	padding: 0 0 24px 0;
+}
+.reply a,
+a.comment-edit-link {
+	color: #888;
+}
+.reply a:hover,
+a.comment-edit-link:hover {
+	color: #ff4b33;
+}
+.commentlist .children {
+	list-style: none;
+	margin: 0;
+}
+.commentlist .children li {
+	border: none;
+	margin: 0;
+}
+.nopassword,
+.nocomments {
+	display: none;
+}
+#comments .pingback {
+	border-bottom: 1px solid #e7e7e7;
+	margin-bottom: 18px;
+	padding-bottom: 18px;
+}
+.commentlist li.comment+li.pingback {
+	margin-top: -6px;
+}
+#comments .pingback p {
+	color: #888;
+	display: block;
+	font-size: 12px;
+	line-height: 18px;
+	margin: 0;
+}
+#comments .pingback .url {
+	font-size: 13px;
+	font-style: italic;
+}
+
+/* Comments form */
+input[type=submit] {
+	color: #333;
+}
+#respond {
+	border-top: 1px solid #e7e7e7;
+	margin: 24px 0;
+	overflow: hidden;
+	position: relative;
+}
+#respond p {
+	margin: 0;
+}
+#respond .comment-notes {
+	margin-bottom: 1em;
+}
+.form-allowed-tags {
+	line-height: 1em;
+}
+.children #respond {
+	margin: 0 48px 0 0;
+}
+h3#reply-title {
+	margin: 18px 0;
+}
+#comments-list #respond {
+	margin: 0 0 18px 0;
+}
+#comments-list ul #respond {
+	margin: 0;
+}
+#cancel-comment-reply-link {
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 18px;
+}
+#respond .required {
+	color: #ff4b33;
+	font-weight: bold;
+}
+#respond label {
+	color: #888;
+	font-size: 12px;
+}
+#respond input {
+	margin: 0 0 9px;
+	width: 98%;
+}
+#respond textarea {
+	width: 98%;
+}
+#respond .form-allowed-tags {
+	color: #888;
+	font-size: 12px;
+	line-height: 18px;
+}
+#respond .form-allowed-tags code {
+	font-size: 11px;
+}
+#respond .form-submit {
+	margin: 12px 0;
+}
+#respond .form-submit input {
+	font-size: 14px;
+	width: auto;
+}
+
+.post_content  img {margin: 0 0 10px; height: auto; max-width: 545px; width: auto;}
+.post_content .attachment img {max-width: 785px;}
+.post_content .alignleft, .post_content img.alignleft {display: inline; float: left; margin-right: 15px; margin-top: 4px;}
+.post_content .alignright, .post_content img.alignright {display: inline; float: right; margin-left: 15px; margin-top: 4px;}
+.post_content .aligncenter, .post_content img.aligncenter {clear: both; display: block; margin-left: auto; margin-right: auto;}
+.post_content img.alignleft, .post_content img.alignright, .post_content img.aligncenter {margin-bottom: 12px;}
+.post_content .wp-caption {background: #f1f1f1; line-height: 18px; margin-bottom: 20px; padding: 4px; text-align: center;}
+.post_content .wp-caption img {margin: 5px 5px 0;}
+.post_content .wp-caption p.wp-caption-text {color: #888; font-size: 12px; margin: 5px;}
+.post_content .wp-smiley {margin: 0;}
+.post_content .gallery {margin: 0 auto 18px;}
+.post_content .gallery .gallery-item {float: left; margin-top: 0; text-align: center; width: 33%;}
+.post_content .gallery img {}
+.post_content .gallery .gallery-caption {color: #888; font-size: 12px; margin: 0 0 12px;}
+.post_content .gallery dl {margin: 0;}
+.post_content .gallery img {}
+.post_content .gallery br+br {display: none;}
+.post_content .attachment img {display: block; margin: 0 auto;}
