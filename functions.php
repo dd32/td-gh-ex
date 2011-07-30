@@ -9,15 +9,19 @@ add_theme_support('post-thumbnails');
 add_filter( 'use_default_gallery_style', '__return_false' );
 
 register_nav_menu( 'primary', 'Primary Navigation Menu' ); 
-
+ 
 register_sidebar(array('name'=>'Footer-Sidebar 1',
+'id' => 'footer-sidebar-one',
+'description' => 'Footer-Sidebar 1',
 'before_widget' => '<li>',
 'after_widget' => '</li>',
 'before_title' => '<h4>',
-'after_title' => '</h4>',
+'after_title' => '</h4>', 
 ));
 
 register_sidebar(array('name'=>'Footer-Sidebar 2',
+'id' => 'footer-sidebar-two',
+'description' => 'Footer-Sidebar 2',
 'before_widget' => '<li>',
 'after_widget' => '</li>',
 'before_title' => '<h4>',
@@ -25,6 +29,8 @@ register_sidebar(array('name'=>'Footer-Sidebar 2',
 ));
 
 register_sidebar(array('name'=>'Footer-Sidebar 3',
+'id' => 'footer-sidebar-three',
+'description' => 'Footer-Sidebar 3',
 'before_widget' => '<li>',
 'after_widget' => '</li>',
 'before_title' => '<h4>',
@@ -32,6 +38,8 @@ register_sidebar(array('name'=>'Footer-Sidebar 3',
 ));
 
 register_sidebar(array('name'=>'Footer-Sidebar 4',
+'id' => 'footer-sidebar-four',
+'description' => 'Footer-Sidebar 4',
 'before_widget' => '<li>',
 'after_widget' => '</li>',
 'before_title' => '<h4>',
