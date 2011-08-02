@@ -29,8 +29,11 @@ body, .header .ads468-60 {background-color:white; color: black}
 a, a:hover, a:link, a:active, a:visited {color:#008000}
 .header{background:white;}
 .footer{background:white;}
-.header, .headermenu {border-bottom: 2px solid black}
-.footer, .widget_body {border-top: 2px solid black}
+
+#access {background:white; border-top: 2px solid black; border-bottom: 2px solid black}
+
+.footer {border-top: 2px solid black}
+.widget h3 {border-bottom: 2px solid black}
 .header .title span {color: gray; }
 h1,h2,h3,h4,h5, .post h1 a, .header .title h1 a, #comments h3 {color: #0000FF;}
 </style>
@@ -53,14 +56,8 @@ h1,h2,h3,h4,h5, .post h1 a, .header .title h1 a, #comments h3 {color: #0000FF;}
 </div>
 </div>
 
-<div class="headermenu">
-
-<?php wp_nav_menu(array('menu' => 'Header', 'theme_location' => 'Header', 'depth' => 1, 'container_class' => 'headermenu-left')); ?>
-
-<div class="headermenu-right">
-<?php dynamic_sidebar('widget-area-for-search-form'); ?>
-</div>
-
+<div id="access" role="navigation">			  
+  <?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
 </div>
 
 <div class="middle">
