@@ -6,9 +6,9 @@
     global $themeDir,
            $hook_suffix;
 
-    $newOpts = array();
-    $message = '';
-    $debugOpts = '';
+    $newOpts    = array();
+    $message    = '';
+    $debugOpts  = '';
 
     echo "<!-- The hook for the current page is \"";
     print_r( $hook_suffix );
@@ -21,16 +21,16 @@
 		$_POST['logo-path'] = preg_replace('/^\/+/', '', trim( $_POST['logo-path'] ) );
 
         //Set new options
-        $newOpts['css-path'] = $_POST['css-path'];
-        $newOpts['logo-path'] = $_POST['logo-path'];
-        $newOpts['title-type'] = $_POST['title-type'];
-        $newOpts['paper-type'] = $_POST['paper-type'];
-        $newOpts['sidebar-width'] = $_POST['sidebar-width'];
-        $newOpts['header-height'] = $_POST['header-height'];
-        $newOpts['featured-header'] = ( isset( $_POST['featured-header'] ) ) ? 'true' : 'false';
-        $newOpts['attrib'] = ( isset( $_POST['attrib'] ) ) ? 'false' : 'true';
-        $newOpts['browser-helper'] = ( isset( $_POST['browser-helper'] ) ) ? 'true' : 'false';
-        $newOpts['layout'] = $_POST['master-layout'];
+        $newOpts['layout']          = $_POST['master-layout'];
+        $newOpts['css-path']        = $_POST['css-path'];
+        $newOpts['logo-path']       = $_POST['logo-path'];
+        $newOpts['title-type']      = $_POST['title-type'];
+        $newOpts['paper-type']      = $_POST['paper-type'];
+        $newOpts['header-height']   = $_POST['header-height'];
+        $newOpts['sidebar-width']   = ( empty($_POST['sidebar-width']) )     ? 220     : $_POST['sidebar-width'];
+        $newOpts['featured-header'] = ( isset( $_POST['featured-header'] ) ) ? 'true'  : 'false';
+        $newOpts['attrib']          = ( isset( $_POST['attrib'] ) )          ? 'false' : 'true';
+        $newOpts['browser-helper']  = ( isset( $_POST['browser-helper'] ) )  ? 'true'  : 'false';
 
         //Update the options
         ctx_aj_set_options($newOpts);
@@ -69,6 +69,25 @@
             });
                     jQuery('#title-logo').click(function(){
                             jQuery('.custom-logo').show();
+            });
+            jQuery('#admin-layout input:radio').change(function(){
+                if(this.checked){
+                    switch(this.value){
+                        case 'col-3':
+                        case 'col-3-left':
+                        case 'col-3-right':
+                            document.getElementById('csw-1').style.display = 'none';
+                            document.getElementById('csw-2').style.display = 'block';
+                            break; 
+                        case 'col-1':
+                        case 'col-2-left':
+                        case 'col-2-right':
+                        default:
+                            document.getElementById('csw-1').style.display = 'block';
+                            document.getElementById('csw-2').style.display = 'none';
+                            break;
+                    }
+                }
             });
         });
     </script>
@@ -112,29 +131,29 @@
                                 </label>
                             </td>
                             <td <?php if($AJOpts['layout'] == 'col-2-left'){echo ' class="active-layout"';}?>>
-                                <input name="master-layout" type="radio" value="col-2-left" id="layout-3" class="radial" <?php if($AJOpts['layout'] == 'col-2-left'){echo ' checked="checked"';}?>>
-                                <label for="layout-3">
+                                <input name="master-layout" type="radio" value="col-2-left" id="layout-2l" class="radial" <?php if($AJOpts['layout'] == 'col-2-left'){echo ' checked="checked"';}?>>
+                                <label for="layout-2l">
                                     <div style="text-align:center;padding-bottom:5px;"><?php _e('2 Columns <br />(Content Left)','adventurejournal') ?></div>
                                     <img src="<?php echo $themeDir; ?>/images/layout-opt-2collt.gif" alt="2 Col Lt" />
                                 </label>
                             </td>
                             <td <?php if($AJOpts['layout'] == 'col-2-right'){echo ' class="active-layout"';}?>>
-                                <input name="master-layout" type="radio" class="radial" id="layout-2" value="col-2-right" <?php if($AJOpts['layout'] == 'col-2-right'){echo ' checked="checked"';}?>>
-                                <label for="layout-2">
+                                <input name="master-layout" type="radio" class="radial" id="layout-2r" value="col-2-right" <?php if($AJOpts['layout'] == 'col-2-right'){echo ' checked="checked"';}?>>
+                                <label for="layout-2r">
                                     <div style="text-align:center;padding-bottom:5px;"><?php _e('2 Columns <br />(Content Right)','adventurejournal') ?></div>
                                     <img src="<?php echo $themeDir; ?>/images/layout-opt-2colrt.gif" alt="2 Col Rt" />
                                 </label>
                             </td>
                             <td <?php if($AJOpts['layout'] == 'col-3'){echo ' class="active-layout"';}?>>
-                                <input name="master-layout" type="radio" class="radial" id="layout-4" value="col-3" <?php if($AJOpts['layout'] == 'col-3'){echo ' checked="checked"';}?>>
-                                <label for="layout-4">
+                                <input name="master-layout" type="radio" class="radial" id="layout-3" value="col-3" <?php if($AJOpts['layout'] == 'col-3'){echo ' checked="checked"';}?>>
+                                <label for="layout-3">
                                     <div style="text-align:center;padding-bottom:5px;"><?php _e('3 Columns <br/>(Content Middle)','adventurejournal') ?></div>
                                     <img src="<?php echo $themeDir; ?>/images/layout-opt-3col.gif" alt="3 Col" />
                                 </label>
                             </td>
                             <td <?php if($AJOpts['layout'] == 'col-3-left'){echo ' class="active-layout"';}?>>
-                                <input name="master-layout" type="radio" class="radial" id="layout-5" value="col-3-left" <?php if($AJOpts['layout'] == 'col-3-left'){echo ' checked="checked"';}?>>
-                                <label for="layout-5">
+                                <input name="master-layout" type="radio" class="radial" id="layout-3l" value="col-3-left" <?php if($AJOpts['layout'] == 'col-3-left'){echo ' checked="checked"';}?>>
+                                <label for="layout-3l">
                                     <div style="text-align:center;padding-bottom:5px;"><?php _e('3 Columns <br/>(Content Left)','adventurejournal') ?></div>
                                     <img src="<?php echo $themeDir; ?>/images/layout-opt-3col-lt.gif" alt="3 Col Lt" />
                                 </label>
@@ -217,22 +236,30 @@
                             <td>
                                 <label>
                                     <?php echo 'http://'.$_SERVER['SERVER_NAME'].'/' ?>
-                                    <input type="text" name="css-path" id="css-path" title="Example: wp-content/adventurejournal_override.css" style="width:300px;font-size:10px;" value="<?php echo $AJOpts['css-path']; ?>" /> <br /><span style="color:red;"><?php if(!file_exists(ABSPATH.$AJOpts['css-path'])){ _e('Notice: File may not exist at '.'http://'.$_SERVER['SERVER_NAME'].'/'.$AJOpts['css-path'].' ','adventurejournal'); } ?></span><br/>
+                                    <input type="text" name="css-path" id="css-path" title="Example: wp-content/adventurejournal_override.css" style="width:300px;font-size:10px;" value="<?php echo (!empty($AJOpts['css-path']))?$AJOpts['css-path']:''; ?>" /> <br /><span style="color:red;"><?php if(!empty($AJOpts['css-path']) && !file_exists(ABSPATH.$AJOpts['css-path'])){ _e('Notice: File may not exist at '.'http://'.$_SERVER['SERVER_NAME'].'/'.$AJOpts['css-path'].' ','adventurejournal'); } ?></span><br/>
                                 </label>
                             </td>
                         </tr>
                     </table>
                     
-                    
+                    <div id="csw-1" style="<?php echo ($AJOpts['layout']!=='col-3' && $AJOpts['layout']!=='col-3-left')?'display:block':'display:none'; ?>">
                     <div style="border-bottom:1px dotted silver;margin:.5em 0 -1em 0;"></div>
                     <h3 class="title"><?php _e('Custom Sidebar Width','adventurejournal'); ?></h3>
                     <p class="helptext"><?php _e('By default, Adventure Journals sidebars are 220 pixels wide. For some widgets and advertisements, this may be too narrow. To increase the width of the sidebar, enter a new value below.','adventurejournal'); ?></p>
                     <p><input type="text" name="sidebar-width" id="sidebar-width" value="<?php echo (!empty($AJOpts['sidebar-width'])) ? $AJOpts['sidebar-width'] :'220'; ?>" size="6" /> pixels</p>
                     <p><span style="font-style:italic;color:silver;font-size:0.8em;"><?php echo sprintf(__('Note: If you are using a two-sidebar layout, please take this into account, as you may be dramatically decreasing the size of your content area. You may also need to use the %s plugin to adjust the size of your featured images if they become too large for the content area.','adventurejournal'),'<a style="color:silver" href="http://wordpress.org/extend/plugins/regenerate-thumbnails/">Regenerate Thumbnails</a>'); ?></span></p>
-
+                    </div>
+                    
+                    <div id="csw-2" style="<?php echo ($AJOpts['layout']!=='col-3' && $AJOpts['layout']!=='col-3-left')?'display:none':'display:block'; ?>">
+                    <div style="border-bottom:1px dotted silver;margin:.5em 0 -1em 0;"></div>
+                    <h3 class="title"><?php _e('Custom Sidebar Width','adventurejournal'); ?> <em><?php _e('(Disabled)','adventurejournal'); ?></em></h3>
+                    <p class="helptext"><?php _e('Your current layout selection (3 columns) does not allow for custom sidebar widths because the content area would become too compressed. To use custom sidebar widths, please select a layout that uses one or two columns.','adventurejournal'); ?></p>
+                    <p><span style="font-style:italic;color:silver;font-size:0.8em;"><?php _e('Note: 3-column layouts always have a sidebar width of 220px. The content has a usable width of 558px.','adventurejournal') ?></span></p>
+                    </div>
+                    <br/>
                     
                     <div style="border-bottom:1px dotted silver;margin:.5em 0 -1em 0;"></div>
-                    <h3 class="title"><?php _e('Custom Header Size','adventurejournal'); ?></h3>
+                    <h3 class="title"><?php _e('Custom Header Height','adventurejournal'); ?></h3>
                     <p class="helptext"><?php echo sprintf(__('To change the vertical size of the header image, first enter a value in below, save changes and then upload your image on the <a href="%s">header page</a>. The default value is 360.','adventurejournal'),admin_url().'themes.php?page=custom-header'); ?></p>
                     <p>920 x <input type="text" name="header-height" id="header-height" value="<?php echo (!empty($AJOpts['header-height'])) ? $AJOpts['header-height'] :'360'; ?>" size="6" /> pixels</p>
 

@@ -153,7 +153,7 @@ function ctx_aj_setup() {
                 break;
                 case 'col-3':
                 case 'col-3-left':
-                    set_post_thumbnail_size( ctx_aj_customwidth('content',false)-40, 94, true ); //FEATURED IMAGE (485)
+                    set_post_thumbnail_size( 458, 94, true ); //FEATURED IMAGE (458)  /*ctx_aj_customwidth('content',false)-40*/
                 break;
                 default:
                     // We'll be using post thumbnails for custom header images on posts and pages.
@@ -507,8 +507,14 @@ function ctx_aj_build_sidebar($sidebar_class, $sidebar_name){
 function ctx_aj_customwidth($column='sidebar',$css=true){
     $ajOpts = get_option('ctx-adventurejournal-options');
     $width = $ajOpts['sidebar-width'];
-    $layout = $ajOpts['sidebar-width'];
+    $layout = $ajOpts['layout'];
     
+    /*WE NEED TO DISABLE CUSTOM SIDEBAR WIDTH FOR 3 COLUMN LAYOUTS*/
+    if($column==='content-3' || $layout==='col-3' || $layout==='col-3-left' || $layout==='col-3-right'){
+        return '';
+    }
+    
+    //Determine what to output
     switch($column){
         case 'sidebar':
             return ($css)?'width:'.$width.'px;':$width;
@@ -516,6 +522,7 @@ function ctx_aj_customwidth($column='sidebar',$css=true){
         case 'col-main':
         case 'content':
             switch($layout){
+                //3 COLS
                 case 'col-3':
                 case 'col-3-left':
                 case 'col-3-right':
@@ -523,13 +530,16 @@ function ctx_aj_customwidth($column='sidebar',$css=true){
                     $width = 720+($diff*2); //Adjust the content by the difference
                     return ($css)?'width:'.$width.'px;':$width;
                     break;
-                case 'col-1':
-                    break;
-                default:
+                //2 COLS
+                case 'col-2':
                     $diff = 220-$width; //Whats the sidebar different from default?
                     $width = 720+$diff; //Adjust the content by the difference
                     return ($css)?'width:'.$width.'px;':$width;
                     break;
+                //1 COL
+                case 'col-1':
+                    break;
+                default:break;
             }
             break;
         case 'content-2':

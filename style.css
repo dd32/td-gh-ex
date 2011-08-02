@@ -1,10 +1,10 @@
 /*
 Theme Name:Adventure Journal
 Theme URI:http://www.contextureintl.com/wordpress/adventure-journal-wordpress-theme/
-Description:Share your adventures with the world! Adventure Journal is a powerful theme that lets you customize a wide variety of features from the comfort of your Dashboard - no coding required. Use your own header and background art, change the layout to one, two or three columns, add a custom stylesheet, set up unique sidebars for pages and posts.... and much more. Includes support for French and German languages. Professionally maintained by Contexture International.
+Description:Share your adventures with the world! Adventure Journal is a powerful, feature-rich theme that lets you customize a wide variety of features from the comfort of your Dashboard - no coding required. Use your own header and background art, change the layout to one, two or three columns, add a custom stylesheet, set up unique sidebars for pages and posts.... and much more. Includes support for French, German, and Portugese languages. Professionally maintained by Contexture International.
 Author:Contexture International
 Author URI:http://www.contextureintl.com
-Version:1.7
+Version:1.7.1
 License:GNU General Public License
 License URI:license.txt
 
@@ -257,17 +257,17 @@ img.alignleft, img.alignright, img.aligncenter { margin-bottom:12px !important; 
 /* 3 Column Layout */
 #col-3 { padding:10px; }
 	#col-3 #col-main { float:left; width:100%; }
-		#col-3 #main-content { margin:0 230px 0 225px; padding:10px; }/*Margins for content column. Should be "0 RightColumnWidth 0 LeftColumnWidth*/
+		#col-3 #main-content { margin:0 240px 0 220px; padding:10px; }/*Margins for content column. Should be "0 RightColumnWidth 0 LeftColumnWidth*/
 		#col-3 .attachment-post-thumbnail { max-width:475px; max-height:92px}
-	#col-3 #col-left { float:left; padding:10px; width:220px; /*Width of left column in pixel*/margin-left:-965px; /*Set margin to that of -(MainContainerWidth)*/}
-	#col-3 #col-right { float:left; padding:10px; width:220px; /*Width of right column*/margin-left:-240px; /*Set left margin to -(RightColumnWidth)*/}
+	#col-3 #col-left { float:left; padding:10px; width:220px; /*Width of left column in pixel*/margin-left:-960px; /*Set margin to that of -(MainContainerWidth)*/}
+	#col-3 #col-right { float:left; padding:10px; width:220px; /*Width of right column*/margin-left:-240px; margin-right:-10px; /*Set left margin to -(RightColumnWidth)*/}
 
 /* 3 Column Layout with content on left */
 #col-3-left { padding:10px; }
 	#col-3-left #col-main { width:495px; float:left; }
 		#col-3-left #main-content { padding:12px; padding-left:15px; padding-right:5px; }
 		#col-3-left .attachment-post-thumbnail { max-width:475px; max-height:92px}
-	#col-3-left #col-left { width:220px; padding:0px; margin-left:5px; float:left; }
+	#col-3-left #col-left { width:220px; padding:0px; margin-left:15px; float:left; }
 	#col-3-left #col-right { width:220px; padding:0px; margin-left:5px; float:left; }
 
 /********************* Master Page *********************/

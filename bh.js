@@ -50,7 +50,7 @@ function CheckBrowser () {
             if(BrowserDetect.version < 5){ShowBH()}
             break;
         case 'Opera':
-            if(BrowserDetect.version < 11){ShowBH()}
+            if(BrowserDetect.version < 10){ShowBH()}
             break;
         default:
             break;

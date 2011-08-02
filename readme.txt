@@ -1,19 +1,20 @@
 === Adventure Journal Wordpress Theme ===
-Contributors: Contexture International, Jerrol Krause & Matt VanAndel
+Contributors: Matt Van Andel
 Donate link: http://www.contextureintl.com/wordpress/adventure-journal-wordpress-theme/
 Tags: brown, tan, yellow, light, dark, one-column, custom-header, custom-background, custom-menu, theme-options, threaded-comments, sticky-post, holiday, photoblogging
 Requires at least: 3.0.0
-Tested up to: 3.2
-Stable tag: 1.7
+Tested up to: 3.3
+Stable tag: 1.7.1
 
 
 == Description ==
-Share your adventures with the world! Adventure Journal is a powerful theme that lets you customize a wide variety of features from the comfort of your Dashboard - no coding required. Use your own header and background art, change the layout to one, two or three columns, add a custom stylesheet, set up unique sidebars for pages and posts.... and much more. Professionally maintained by Contexture International.
+Share your adventures with the world! Adventure Journal is a powerful, feature-rich theme that lets you customize a wide variety of features from the comfort of your Dashboard - no coding required. Use your own header and background art, change the layout to one, two or three columns, add a custom stylesheet, set up unique sidebars for pages and posts.... and much more. Includes support for French, German, and Portugese languages. Professionally maintained by Contexture International.
 
 Adventure Journal includes support for the following languages:
 * English
 * French (by Fabrice Fotso)
 * German (by Manuel Krebber)
+* Portugese (by Fernando Falci)
 
 For questions, comments or bug reports, please go to http://www.contextureintl.com/wordpress/adventure-journal-wordpress-theme/
 
@@ -37,6 +38,13 @@ http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Changelog ==
+
+= 1.7.1 =
+* UPDATE: Added Brazilian Portugese translation (thanks Fernando)
+* FIX: 3-column layouts should now work correctly.
+* FIX: Custom sidebar widths are now automatically disabled when using 3-column layouts.
+* FIX: Updated the browser helper to accept Opera 10 (previously required Opera 11+)
+* FIX: Pages will now show correct sub-page pagination when comments are disabled.
 
 = 1.7 =
 * NEW FEATURE: You can now set your own custom sidebar widths (should really help folks with wide widgets).
