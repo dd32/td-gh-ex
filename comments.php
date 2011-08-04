@@ -1,84 +1,27 @@
 <?php
-/*
-|--------------------------
-| Password Post
-|--------------------------
-*/
+/** Chip Life Comments Template */
 
+/** Prevent Direct Access */
+if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && 'comments.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) {
+	die ( 'Please do not load this page directly. Thanks!' );
+}
+
+/** Password Protected */
 if ( post_password_required() ) {
+	printf( '<p class="nopassword">%s</p>', 'This post is password protected. Enter the password to view comments.' );
+	return;
+}
+
+/** Comments Template */
+do_action( 'chip_life_comments_before' );
+do_action( 'chip_life_comments' );
+do_action( 'chip_life_comments_after' );
+
+do_action( 'chip_life_pings_before' );
+do_action( 'chip_life_pings' );
+do_action( 'chip_life_pings_after' );
+
+do_action( 'chip_life_comment_form_before' );
+do_action( 'chip_life_comment_form' );
+do_action( 'chip_life_comment_form_after' );
 ?>
-
-<!-- Begin Comments -->
-<div id="comments">
-  <p class="nopassword"><?php echo "This post is password protected. Enter the password to view any comments."; ?></p>
-</div>
-<!-- End Comments -->
-
-<?php
-return;
-} // if ( post_password_required() )
-?>
-
-<!-- Begin Comments -->
-<div id="comments">
-
-<?php
-/*
-|--------------------------
-| Display Comments
-|--------------------------
-*/
-
-if ( have_comments() ) {
-?>
-
-  <h3 id="comments-title">
-  	<?php printf( _n( 'One Response to %2$s', '%1$s Responses to %2$s', get_comments_number() ), get_comments_number(), '<em>' . get_the_title() . '</em>' ); ?>
-  </h3>
-
-  <ol class="commentlist">
-    <?php wp_list_comments(); ?>
-  </ol>
-
-<?php
-//if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) {
-if ( get_comment_pages_count() > 1 ) {
-?>
-  <div class="navigation">
-	<div class="navprev"><?php previous_comments_link( '&laquo; Older Comments' ); ?></div>
-	<div class="navnext"><?php next_comments_link( 'Newer Comments &raquo;' ); ?></div>
-   <br class="clear" />
-  </div>
-<?php } ?>
-
-<?php
-} // if ( have_comments() )
-else {
-	if ( ! comments_open() ) {
-?>
-
-  <p class="nocomments"><?php echo 'Comments are closed.'; ?></p>
-
-<?php
-	} // if ( ! comments_open() )
-} // else of if ( have_comments() )
-
-/*
-|--------------------------
-| Comment Form
-|--------------------------
-*/
-
-global $chip_life_global; 
-if( $chip_life_global['theme_options']['chip_life_comment_notes_after'] == 1 ):
-  comment_form();
-else:
-  $args = array(
-    'comment_notes_after'	=>	'',
-  );
-  comment_form( $args );
-endif;
-
-?>
-</div>
-<!-- End Comments -->

@@ -1,3 +1,17 @@
-= 1.3.7.1 =
+= 1.3.8 [2011.08.08] =
+
+* Code Reborn to use the power of WordPress action/filter hooks and to support Child Themes.
+* New and fresh look of Chip Life.
+* 8 new sidebars have been integrated.
+* New Chip Life Social Box widget has been integrated.
+* Post Formats support has been inegrated.
+* 6 beautiful styles for "Aside", "Link", "Gallery", "Status", "Quote" and "Image" Post Format.
+* 3 Layout Styles has been integrated. "Content-Sidebar", "Sidebar-Content" and "Content".
+* Layout Styles for Individual Pages/Posts has been integrated.
+* Advanced Featured Image support has been inegrated by dropping the dependancy of Chip Get Image Plugin.
+* Separation of Comments and Trackbacks.
+* Option to display Comments/Trackbacks on Pages/Posts has been integrated.
+
+= 1.3.7.1 [2011.07.25]
 
 * Header Already Sent Bug: White spaces have been fixed in some parts of code.

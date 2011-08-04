@@ -1,7 +1,5 @@
-<form method="get" class="searchform" action="<?php echo CHIP_LIFE_HOME; ?>" >
-  <div>
-    <label class="screen-reader-text" for="s">Search for:</label>
-    <input type="text" value="<?php echo get_search_query(); ?>" name="s" id="s" />
-    <input type="image" id="searchsubmit" src="<?php echo CHIP_LIFE_IMAGES_WSROOT; ?>searchbtn.gif" />
-  </div>
+<form method="get" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+  <label for="s" class="assistive-text">Search for:</label>
+  <input type="text" class="field" name="s" id="s" value="<?php echo get_search_query(); ?>" />
+  <input type="submit" class="submit" name="submit" id="searchsubmit" value="Search" />
 </form>
