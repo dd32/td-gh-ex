@@ -5,7 +5,7 @@ function chip_life_constants() {
 
 	/** Define Theme Info Constants */
 	define( 'PARENT_THEME_NAME', 'Chip Life' );
-	define( 'PARENT_THEME_VERSION', '2.0' );
+	define( 'PARENT_THEME_VERSION', '1.3.9' );
 
 	/** Define Directory Location Constants */
 	define( 'PARENT_DIR', get_template_directory() );

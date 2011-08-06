@@ -42,6 +42,9 @@ function chip_life_widgets() {
 		'after_title'	=> '</h2>',
 	) );
 	
+	/** Chip Life Register Sidebar Hook */
+	do_action( 'chip_life_register_sidebar' );
+	
 	/** Register Footer Left */
 	register_sidebar( array (
 		'name'			=>	'Footer Left',
@@ -95,7 +98,24 @@ function chip_life_widgets() {
 		'after_widget'	=>	'<div class="clear"></div></div></div>',
 		'before_title'	=>	'<h2 class="sponsor-sidebar2-widget-title">',
 		'after_title'	=> '</h2>',
-	) );	
+	) );
+	
+}
+
+/** Chip Life Register Sidebar */
+function chip_life_register_sidebar_init( $args = array() ) {
+	
+	$defaults = array (
+		'before_widget'	=>	'<div id="%1$s" class="%2$s"><div class="widget-wrap">',
+		'after_widget'	=>	'<div class="clear"></div></div></div>',
+		'before_title'	=>	'<h2 class="widget-title">',
+		'after_title'	=> '</h2>',
+	);
+	
+	$defaults = apply_filters( 'chip_life_register_sidebar_defaults', $defaults );	
+	$args = wp_parse_args( $args, $defaults );
+	
+	return register_sidebar( $args );		 
 	
 }
 ?>
