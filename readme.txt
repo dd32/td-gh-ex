@@ -23,4 +23,4 @@ Support is available at the <a href='http://forum.andreasviklund.com/'>andreasvi
 
 == Changelog ==
 
-Version 1.0 - initial release.
+Version 1.0.1 - initial release.
