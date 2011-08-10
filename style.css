@@ -4,7 +4,7 @@ Theme URI: http://www.riotreactions.com/mantra
 Description: A clean and very web 2.0 theme with customizable layout, colors, fonts and graphics. From the admin panel you can change the header image, background image, sidebar position, content and sidebar dimensions, paragraph indent, text colors, fonts, post metas (like author, category or date), background colors and a whole lot more. With over 40 theme options, 7 widget areas, social media animated graphics, multiple pins and bullets you can easily make this theme suit all your needs.
 Author: Cryout Creations
 Author URI: http://www.cryoutcreations.com
-Version: 1.0.10
+Version: 1.0.11
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, red, blue, white, light, two-columns, right-sidebar, left-sidebar, theme-options, dark, flexible-width, custom-header, custom-menu, threaded-comments, sticky-post, translation-ready, microformats, rtl-language-support
@@ -1765,7 +1765,10 @@ img#wpstats {
 }
 
 #container #searchsubmit, .widget_search #searchsubmit {
-display:block;float:left;
+display:block;
+float:left;
+padding:0;
+margin:0;
 position:relative;
 left:-26px; top:0px;
 background: #777;
@@ -1778,6 +1781,7 @@ text-shadow:0px -1px 0px #000;
 -moz-text-shadow:0px -1px 0px #000;
 -webkit-text-shadow:0px -1px 0px #000;
 font-family:Arial !important;
+
 }
 
 .widget_search #searchsubmit {
@@ -1787,7 +1791,16 @@ width:27px;
 height:28px;
 font-size:12px;
 font-family:Arial;
+
 }
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+                 .widget_search #searchsubmit {   top:3px;}
+				  #container #s  {padding-top:0px;padding:bottom:0px;height:21px; }
+}
+
+.tagcloud {padding-left:15px;}
+
 
 #searchsubmit:hover {
 background:#888;

@@ -134,10 +134,11 @@ if ($mop_side == "Right") { ?>
 #content img {	max-width:<?php echo ($mop_sidewidth-40) ?>px;}
 #content .wp-caption{	max-width:<?php echo ($mop_sidewidth-30) ?>px;} <?php }
 ?><?php if ($mop_side == "Left") { ?>
+.widget-container {tezt-align:right;}
 #container {margin:0 0 0 <?php echo (-1110+$mop_sidewidth) ?>px;float:right;}
 #content { width:<?php echo ($mop_sidewidth) ?>px;float:right;margin:0 20px 0 0;}
 #primary,#secondary {width:<?php echo (1050-$mop_sidewidth - $mop_colpad) ?>px;float:left;padding-left:0px;clear:left;border:none;border-right:1px dashed #EEE;padding-right:20px;}
-.widget-title { -moz-border-radius-topleft:0px ; border-radius-topleft:0px ; -moz-border-radius-topright:10px ;border-radius-topright:10px ;	border-top-right-radius:10px;
+.widget-title { -moz-border-radius-topleft:0px; -webkit-border-radius:0px;border-radius-topleft:0px ; -moz-border-radius-topright:10px ;border-radius-topright:10px ;	border-top-right-radius:10px;
 	-webkit-border-top-right-radius:10px;text-align:right;padding-right:5%;width:100%;}
 #content img {	max-width:<?php echo ($mop_sidewidth-40) ?>px;}
 #content .wp-caption{	max-width:<?php echo ($mop_sidewidth-30) ?>px;} <?php } ?>
