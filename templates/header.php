@@ -1,5 +1,6 @@
 <?php $arjunaOptions = arjuna_get_options(); ?>
 <div class="header">
+	<div class="headerBG"></div>
 	<?php if($arjunaOptions['menus']['1']['enabled']): ?>
 	<div class="headerMenu1<?php if($arjunaOptions['menus']['1']['align']=='left'): ?> headerMenu1L<?php endif; ?>">
 		<?php

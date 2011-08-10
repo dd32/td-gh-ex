@@ -7,7 +7,7 @@
 			'container' => false,
 			'menu_class' => false,
 			'menu_id' => 'headerMenu2',
-			'depth' => $arjunaOptions['menus']['2']['depth'],
+			'depth' => (int)$arjunaOptions['menus']['2']['depth'],
 			'fallback_cb' => 'arjuna_print_page_menu',
 		);
 		

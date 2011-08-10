@@ -19,17 +19,18 @@
 <a id="skipToPosts" href="#contentArea"><?php _e('Skip to posts', 'Arjuna'); ?></a>
 <?php get_template_part( 'templates/core/ie6-notice' ); ?>
 <div class="pageContainer">
-	<div class="headerBG"></div>
 	<?php get_template_part( 'templates/header' ); ?>
 
 	<div class="contentWrapper<?php
 		//Sidebar
-		if ($arjunaOptions['sidebarDisplay']=='none')
+		if ($arjunaOptions['sidebar']['display']=='none')
 			print ' NS';
-		elseif ($arjunaOptions['sidebarDisplay']=='right')
+		elseif ($arjunaOptions['sidebar']['display']=='right')
 			print ' RS';
-		elseif ($arjunaOptions['sidebarDisplay']=='left')
+		elseif ($arjunaOptions['sidebar']['display']=='left')
 			print ' LS';
+		elseif ($arjunaOptions['sidebar']['display']=='both')
+			print ' BS';
 	?>">
 		
 

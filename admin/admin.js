@@ -165,9 +165,7 @@ function ajax_savePanel(ID, set) {
 			ID: ID,
 			set: set
 		},
-		dataType: 'json',
-		success: function(response){
-		}
+		dataType: 'json'
 	});
 }
 
@@ -178,105 +176,262 @@ arjuna_CWA = {
 	constraint: 920,
 	sliderConstraint: 500,
 	minContentArea: 460,
-	maxContentArea: 805,
 	minSidebar: 140,
 	maxSidebar: 460,
-	previewAvailWidth: 86,
+	previewAvailWidth: 93,
+	
+	//calculated
+	constraintRatio: 0,
+	enabledLeft: false,
+	enabledRight: false,
 	
 	init: function() {
-		this.setRealContentArea(jQuery('#real-content-area-width').val());
+		this.constraintRatio = arjuna_CWA.sliderConstraint / arjuna_CWA.constraint;
 		
-		this.moveSlider();
-		this.enterCustom();
+		if(jQuery('#content-area-width-slider').hasClass('both'))
+			this.enabledLeft = this.enabledRight = true;
+		if(jQuery('#content-area-width-slider').hasClass('left'))
+			this.enabledLeft = true;
+		if(jQuery('#content-area-width-slider').hasClass('right'))
+			this.enabledRight = true;
+		
+		this.calculateContentArea();
+		//this.setRealContentArea(jQuery('#real-content-area-width').val());
+		
+		this.enableSliders();
+		this.enableCustom();
 	},
 	
-	moveSlider: function() {
-		jQuery('#content-area-handle').draggable({
-			containment: "#content-area-slider",
+	enableSliders: function() {
+		//set initial position
+		var left = jQuery('#left-sidebar-width').val() * this.constraintRatio;
+		var right = jQuery('#right-sidebar-width').val() * this.constraintRatio;
+		var leftHandle = left - 7;
+		var rightHandle = jQuery('#slide-right-constraint').outerWidth() - right;
+		
+		if(this.enabledLeft)
+			jQuery('#slide-left-constraint .slide-left').css('width', left);
+		if(this.enabledRight)
+			jQuery('#slide-right-constraint .slide-right').css('width', right);
+		
+		if(this.enabledLeft)
+			jQuery('#slide-left-handle').css('left', leftHandle);
+		if(this.enabledRight)
+			jQuery('#slide-right-handle').css('left', rightHandle);
+			
+		this.adjustPreview();
+		
+		jQuery('#slide-left-handle').draggable({
+			containment: "#slide-left-constraint",
 			scroll: false,
 			drag: function(e, ui) {
-				if(jQuery('#content-area-width-slider').hasClass('right'))
-					var addToCA = ui.position.left;
-				else if(jQuery('#content-area-width-slider').hasClass('left'))
-					var addToCA = 250 - Math.floor(arjuna_CWA.minSidebar * (arjuna_CWA.sliderConstraint / arjuna_CWA.constraint)) - ui.position.left;
-				//calculate width for content area and sidebar
-				//within the 500px slider
-				var contentAreaTmp = 250 + addToCA;
-				//var sidebarTmp = arjuna_CWA.sliderConstraint - contentAreaTmp;
+				//calculate sidebar width
+				var sidebarWidth = ui.position.left + 7;
 				
-				var contentArea = Math.floor(contentAreaTmp * (arjuna_CWA.constraint / arjuna_CWA.sliderConstraint));
-				var sidebar = arjuna_CWA.constraint - contentArea;
+				//calculate actual widths
+				var actualLeftSidebar = Math.floor(sidebarWidth / arjuna_CWA.constraintRatio);
+				var actualRightSidebar = arjuna_CWA.enabledRight ? jQuery('#right-sidebar-width').val() : 0;
+				var actualContent = arjuna_CWA.constraint - actualLeftSidebar - actualRightSidebar;
 				
-				arjuna_CWA.contentWidth = contentArea;
+				//check conditions and constrain if necessary
 				
-				jQuery('#content-area-width').val(contentArea);
-				jQuery('#sidebar-width').val(sidebar);
+				//...minimum content area width
+				if(actualContent < arjuna_CWA.minContentArea) {
+					//move right sidebar until that reaches minimum, then constrain
+					actualRightSidebar = actualContent - actualLeftSidebar;
+					if(actualRightSidebar < arjuna_CWA.minSidebar) {
+						actualRightSidebar = arjuna_CWA.enabledRight ? arjuna_CWA.minSidebar : 0;
+						actualContent = arjuna_CWA.minContentArea;
+						actualLeftSidebar = arjuna_CWA.constraint - actualContent - actualRightSidebar;
+					}
+				}
 				
-				arjuna_CWA.adjustPreview(contentArea);
-				arjuna_CWA.setHidden(contentArea);
+				//all conditions done and values adjusted accordingly, set both sidebars
+				arjuna_CWA.setActualValues(actualLeftSidebar, actualRightSidebar);
+				
+				//arjuna_CWA.adjustPreview(contentArea);
+			},
+			stop: function(e, ui) {
+				//set handle to actual position
+				arjuna_CWA.setActualValues(jQuery('#left-sidebar-width').val(), jQuery('#right-sidebar-width').val());
 			}
 		});
-	},
-	
-	enterCustom: function() {
-		jQuery('#content-area-width').change(function() {
-			if(jQuery(this).val() < arjuna_CWA.minContentArea)
-				jQuery(this).val(arjuna_CWA.minContentArea);
-			else if(jQuery(this).val() > arjuna_CWA.maxContentArea)
-				jQuery(this).val(arjuna_CWA.maxContentArea);
-			
-			jQuery('#sidebar-width').val(arjuna_CWA.constraint - jQuery(this).val());
-			
-			var contentArea = jQuery(this).val();
-			
-			arjuna_CWA.setSlider(contentArea);
-			arjuna_CWA.adjustPreview(contentArea);
-			arjuna_CWA.setHidden(contentArea);
-		}).keydown(function(e) {
-			if (e.keyCode == 13) {
-				jQuery(this).blur().change();
-				//e.preventDefault();
-				//e.stopPropagation();
-				return false;
-			}
-		});
-		jQuery('#sidebar-width').change(function() {
-			if(jQuery(this).val() < arjuna_CWA.minSidebar)
-				jQuery(this).val(arjuna_CWA.minSidebar);
-			else if(jQuery(this).val() > arjuna_CWA.maxSidebar)
-				jQuery(this).val(arjuna_CWA.maxSidebar);
-			
-			jQuery('#content-area-width').val(arjuna_CWA.constraint - jQuery(this).val());
-			
-			var contentArea = jQuery('#content-area-width').val();
-			
-			arjuna_CWA.setSlider(contentArea);
-			arjuna_CWA.adjustPreview(contentArea);
-			arjuna_CWA.setHidden(contentArea);
-		}).keydown(function(e) {
-			if (e.keyCode == 13) {
-				jQuery(this).blur().change();
-				//e.preventDefault();
-				//e.stopPropagation();
-				return false;
-			}
-		});
-	},
-	
-	setRealContentArea: function(realContentArea) {
-		this.setSlider(realContentArea);
-		this.updateCustom(realContentArea);
-		this.adjustPreview(realContentArea);
-		this.setHidden(realContentArea);
-	},
-	
-	setSlider: function(contentArea) {
-		if(jQuery('#content-area-width-slider').hasClass('right'))
-			var left = Math.floor(contentArea * (arjuna_CWA.sliderConstraint / arjuna_CWA.constraint)) - 250;
-		else if(jQuery('#content-area-width-slider').hasClass('left'))
-			var left = 500 - Math.floor(arjuna_CWA.minSidebar * (arjuna_CWA.sliderConstraint / arjuna_CWA.constraint)) - Math.floor(contentArea * (arjuna_CWA.sliderConstraint / arjuna_CWA.constraint));
 		
-		jQuery('#content-area-handle').css('left', left);
+		jQuery('#slide-right-handle').draggable({
+			containment: "#slide-right-constraint",
+			scroll: false,
+			drag: function(e, ui) {
+				//calculate sidebar width
+				var sidebarWidth = jQuery('#slide-right-constraint').outerWidth() - ui.position.left;
+				
+				//calculate actual widths
+				var actualLeftSidebar = arjuna_CWA.enabledLeft ? jQuery('#left-sidebar-width').val() : 0;
+				var actualRightSidebar = Math.floor(sidebarWidth / arjuna_CWA.constraintRatio);
+				var actualContent = arjuna_CWA.constraint - actualRightSidebar - actualLeftSidebar;
+				
+				//check conditions and constrain if necessary
+				
+				//...minimum content area width
+				if(actualContent < arjuna_CWA.minContentArea) {
+					//move left sidebar until that reaches minimum, then constrain
+					actualLeftSidebar = actualContent - actualRightSidebar;
+					if(actualLeftSidebar < arjuna_CWA.minSidebar) {
+						actualLeftSidebar = arjuna_CWA.enabledLeft ? arjuna_CWA.minSidebar : 0;
+						actualContent = arjuna_CWA.minContentArea;
+						actualRightSidebar = arjuna_CWA.constraint - actualContent - actualLeftSidebar;
+					}
+				}
+				
+				//all conditions done and values adjusted accordingly, set both sidebars
+				arjuna_CWA.setActualValues(actualLeftSidebar, actualRightSidebar);
+				
+				//arjuna_CWA.adjustPreview(contentArea);
+			},
+			stop: function(e, ui) {
+				//set handle to actual position
+				arjuna_CWA.setActualValues(jQuery('#left-sidebar-width').val(), jQuery('#right-sidebar-width').val());
+			}
+		});
+	},
+	
+	enableCustom: function() {
+		jQuery('#left-sidebar-width').change(function() {
+			//calculate actual widths
+			var actualLeftSidebar = jQuery(this).val();
+			var actualRightSidebar = arjuna_CWA.enabledRight ? jQuery('#right-sidebar-width').val() : 0;
+			var actualContent = jQuery('#content-area-width').val();
+			
+			//conditions
+			
+			//...minimum and maximum
+			if(actualLeftSidebar < arjuna_CWA.minSidebar)
+				actualLeftSidebar = arjuna_CWA.minSidebar;
+				
+			if(actualLeftSidebar > arjuna_CWA.maxSidebar)
+				actualLeftSidebar = arjuna_CWA.maxSidebar;
+			
+			//adjustments
+			
+			//...first add to or subtract from content area
+			actualContent = arjuna_CWA.constraint - actualLeftSidebar - actualRightSidebar;
+			//subtract from other sidebar if necessary
+			if(actualContent < arjuna_CWA.minContentArea) {
+				actualContent = arjuna_CWA.minContentArea;
+				if(arjuna_CWA.enabledRight) {
+					actualRightSidebar = arjuna_CWA.constraint - actualContent - actualLeftSidebar;
+					if(actualRightSidebar < arjuna_CWA.minSidebar) {
+						actualRightSidebar = arjuna_CWA.minSidebar;
+						actualLeftSidebar = arjuna_CWA.constraint - actualContent - actualRightSidebar;
+					}
+				} else actualLeftSidebar = arjuna_CWA.constraint - actualContent;
+				
+				
+			}
+			
+			arjuna_CWA.setActualValues(actualLeftSidebar, actualRightSidebar);
+		}).keydown(function(e) {
+			if (e.keyCode == 13) {
+				jQuery(this).blur().change();
+				//e.preventDefault();
+				//e.stopPropagation();
+				return false;
+			}
+		});
+		
+		jQuery('#right-sidebar-width').change(function() {
+			//calculate actual widths
+			var actualLeftSidebar = arjuna_CWA.enabledLeft ? jQuery('#left-sidebar-width').val() : 0;
+			var actualRightSidebar = jQuery(this).val();
+			var actualContent = jQuery('#content-area-width').val();
+			
+			//conditions
+			
+			//...minimum and maximum
+			if(actualRightSidebar < arjuna_CWA.minSidebar)
+				actualRightSidebar = arjuna_CWA.minSidebar;
+				
+			if(actualRightSidebar > arjuna_CWA.maxSidebar)
+				actualRightSidebar = arjuna_CWA.maxSidebar;
+			
+			//adjustments
+			
+			//...first add to or subtract from content area
+			actualContent = arjuna_CWA.constraint - actualLeftSidebar - actualRightSidebar;
+			//subtract from other sidebar if necessary
+			if(actualContent < arjuna_CWA.minContentArea) {
+				actualContent = arjuna_CWA.minContentArea;
+				if(arjuna_CWA.enabledLeft) {
+					actualLeftSidebar = arjuna_CWA.constraint - actualContent - actualRightSidebar;
+					if(actualLeftSidebar < arjuna_CWA.minSidebar) {
+						actualLeftSidebar = arjuna_CWA.minSidebar;
+						actualRightSidebar = arjuna_CWA.constraint - actualContent - actualLeftSidebar;
+					}
+				} else actualRightSidebar = arjuna_CWA.constraint - actualContent;
+				
+				
+			}
+			
+			arjuna_CWA.setActualValues(actualLeftSidebar, actualRightSidebar);
+		}).keydown(function(e) {
+			if (e.keyCode == 13) {
+				jQuery(this).blur().change();
+				//e.preventDefault();
+				//e.stopPropagation();
+				return false;
+			}
+		});
+	},
+	
+	calculateContentArea: function() {
+		var left = this.enabledLeft ? jQuery('#left-sidebar-width').val() : 0;
+		var right = this.enabledRight ? jQuery('#right-sidebar-width').val() : 0;
+		var contentArea = this.constraint - left - right;
+		
+		jQuery('#content-area-width').val(contentArea);
+	},
+	
+	setLeftSlider: function(actualWidth) {
+		//get slider width
+		var width = actualWidth * this.constraintRatio;
+		
+		//set slide
+		jQuery('#slide-left-constraint .slide-left').width(width);
+		//set handle
+		var left = width - 7;
+		jQuery('#slide-left-handle').css('left', left);
+	},
+	setRightSlider: function(actualWidth) {
+		//get slider width
+		var width = actualWidth * this.constraintRatio;
+		
+		//set slide
+		jQuery('#slide-right-constraint .slide-right').width(width);
+		//set handle
+		jQuery('#slide-right-handle').css('left', jQuery('#slide-right-constraint').outerWidth() - width);
+	},
+	
+	setActualValues: function(actualLeft, actualRight) {
+		if(actualLeft == 0)
+			this.enabledLeft = false;
+		else this.enabledLeft = true;
+		
+		if(actualRight == 0)
+			this.enabledRight = false;
+		else this.enabledRight = true;
+		
+		var actualContent = this.constraint - actualLeft - actualRight;
+		
+		if(this.enabledLeft)
+			this.setLeftSlider(actualLeft);
+		if(this.enabledRight)
+			this.setRightSlider(actualRight);
+		
+		//set values
+		jQuery('#left-sidebar-width').val(actualLeft);
+		jQuery('#content-area-width').val(actualContent);
+		jQuery('#right-sidebar-width').val(actualRight);
+		
+		this.adjustPreview();
 	},
 	
 	updateCustom: function(contentArea) {
@@ -284,20 +439,30 @@ arjuna_CWA = {
 		jQuery('#sidebar-width').val(arjuna_CWA.constraint - contentArea);
 	},
 	
-	calcRealWidth: function(contentAreaTmp) {
-		arjuna_CWA.contentWidth = Math.floor(contentAreaTmp * (arjuna_CWA.constraint / arjuna_CWA.sliderConstraint));
-		//var sidebar = arjuna_CWA.constraint - contentArea;
-	},
-	
-	adjustPreview: function(realContentArea) {
-		var contentArea = Math.floor(realContentArea * (arjuna_CWA.previewAvailWidth / arjuna_CWA.constraint));
-		var sidebar = arjuna_CWA.previewAvailWidth - contentArea;
+	adjustPreview: function() {
+		//get actual values
+		var actualLeftSidebar = arjuna_CWA.enabledLeft ? jQuery('#left-sidebar-width').val() : 0;
+		var actualRightSidebar = arjuna_CWA.enabledRight ? jQuery('#right-sidebar-width').val() : 0;
+		var actualContent = jQuery('#content-area-width').val();
+		
+		//calc available width
+		//one col must be deducted 4px
+		var availWidth = arjuna_CWA.previewAvailWidth - 4;
+		if(actualLeftSidebar != 0)
+			availWidth -= 4;
+		if(actualRightSidebar != 0)
+			availWidth -= 4;
+		
+		//get relative values
+		var constraint = availWidth / arjuna_CWA.constraint;
+		
+		var leftSidebar = actualLeftSidebar * constraint;
+		var rightSidebar = actualRightSidebar * constraint;
+		var contentArea = availWidth - leftSidebar - rightSidebar;
+		
+		jQuery('#preview-sidebar-left').css('width', leftSidebar);
 		jQuery('#preview-content-area').css('width', contentArea);
-		jQuery('#preview-sidebar').css('width', sidebar);
-	},
-	
-	setHidden: function(realContentArea) {
-		jQuery('#real-content-area-width').val(realContentArea);
+		jQuery('#preview-sidebar-right').css('width', rightSidebar);
 	}
 };
 
@@ -367,18 +532,27 @@ jQuery(function() {
 	arjuna_SB.init();
 	
 	jQuery('#sidebarDisplay_right').click(function() {
-		jQuery('#content-area-width-slider').addClass('right').removeClass('left none');
-		arjuna_CWA.setRealContentArea(670);
+		jQuery('#content-area-width-slider').addClass('right').removeClass('left none both');
+		arjuna_CWA.setActualValues(0, 250);
+		jQuery('#sidebarDisplay-both-container').hide();
 		jQuery('#sidebar-width-panel').show();
 	});
 	jQuery('#sidebarDisplay_left').click(function() {
-		jQuery('#content-area-width-slider').addClass('left').removeClass('right none');
-		arjuna_CWA.setRealContentArea(670);
+		jQuery('#content-area-width-slider').addClass('left').removeClass('right none both');
+		arjuna_CWA.setActualValues(250, 0);
+		jQuery('#sidebarDisplay-both-container').hide();
 		jQuery('#sidebar-width-panel').show();
 	});
 	jQuery('#sidebarDisplay_none').click(function() {
 		jQuery('#sidebar-width-panel').hide();
-		jQuery('#content-area-width-slider').removeClass('left right none');
+		jQuery('#sidebarDisplay-both-container').hide();
+		jQuery('#content-area-width-slider').addClass('none').removeClass('left right both');
+	});
+	jQuery('#sidebarDisplay_both').click(function() {
+		arjuna_CWA.setActualValues(200, 200);
+		jQuery('#content-area-width-slider').addClass('both').removeClass('left right none');
+		jQuery('#sidebar-width-panel').show();
+		jQuery('#sidebarDisplay-both-container').show();
 	});
 	
 	jQuery('#menus-1-useNavMenus input[name=menus_1_useNavMenus]').change(function() {

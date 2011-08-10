@@ -1,13 +1,19 @@
 <?php $arjunaOptions = arjuna_get_options(); ?>
 <?php
-if ($arjunaOptions['sidebarDisplay']!='none') {
-?><div class="sidebars">
+if (in_array($arjunaOptions['sidebar']['display'], array('both', 'right'))) {
+?><div class="sidebars sidebarsRight">
 	<div class="t"><div></div></div>
 	<div class="i"><div class="i2"><div class="c">
-		<?php get_template_part( 'templates/sidebar/icons' ); ?>
+		<?php
+		if(
+			($arjunaOptions['sidebar']['display'] == 'both' && $arjunaOptions['sidebarButtons']['inSidebar'] == 'right')
+			|| $arjunaOptions['sidebar']['display'] != 'both'
+		)
+			get_template_part( 'templates/sidebar/icons' );
+		?>
 		<div>
-		<?php if (!dynamic_sidebar('Sidebar Top')): ?>
-			<?php if($arjunaOptions['sidebar_showDefault']): ?>
+		<?php if (!dynamic_sidebar('right_sidebar_full_top')): ?>
+			<?php if($arjunaOptions['sidebar']['showDefault']): ?>
 			<div class="sidebarbox">
 			<h4><span><?php _e('Recent Posts', 'Arjuna'); ?></span></h4>
 			<ul>
@@ -22,10 +28,10 @@ if ($arjunaOptions['sidebarDisplay']!='none') {
 			<?php endif; ?>
 		<?php endif; ?>
 		</div>
-		<?php if(is_active_sidebar('sidebar_left')): ?>
+		<?php if(is_active_sidebar('right_sidebar_left')): ?>
 			<div class="sidebarLeft">
-			<?php if (!dynamic_sidebar('Sidebar Left')): ?>
-				<?php if($arjunaOptions['sidebar_showDefault']): ?>
+			<?php if (!dynamic_sidebar('right_sidebar_left')): ?>
+				<?php if($arjunaOptions['sidebar']['showDefault']): ?>
 				<div class="sidebarbox">
 				<h4><span><?php _e('Categories', 'Arjuna'); ?></span></h4>
 				<ul>
@@ -36,10 +42,10 @@ if ($arjunaOptions['sidebarDisplay']!='none') {
 			<?php endif; ?>
 			</div>
 		<?php endif; ?>
-		<?php if(is_active_sidebar('sidebar_right')): ?>
+		<?php if(is_active_sidebar('right_sidebar_right')): ?>
 			<div class="sidebarRight">
-			<?php if (!dynamic_sidebar('Sidebar Right')): ?>
-				<?php if($arjunaOptions['sidebar_showDefault']): ?>
+			<?php if (!dynamic_sidebar('right_sidebar_right')): ?>
+				<?php if($arjunaOptions['sidebar']['showDefault']): ?>
 				<div class="sidebarbox">
 				<h4><span><?php _e('Meta', 'Arjuna'); ?></span></h4>
 				<ul>
@@ -53,8 +59,8 @@ if ($arjunaOptions['sidebarDisplay']!='none') {
 			<?php endif; ?>
 			</div>
 		<?php endif; ?>
-		<div<?php if(is_active_sidebar('sidebar_left') || is_active_sidebar('sidebar_right') || $arjunaOptions['sidebar_showDefault']) print ' class="clear"'; ?>>
-			<?php if (!dynamic_sidebar('Sidebar Bottom') ) : ?>
+		<div<?php if(is_active_sidebar('right_sidebar_left') || is_active_sidebar('right_sidebar_right') || $arjunaOptions['sidebar']['showDefault']) print ' class="clear"'; ?>>
+			<?php if (!dynamic_sidebar('right_sidebar_full_bottom') ) : ?>
 			<?php endif; ?>
 		</div>
 	</div></div></div>

@@ -13,9 +13,14 @@ function arjuna_get_default_options() {
 		'footerStyle' => 'style1', // style1, style2
 		'appendToPageTitle' => 'blogName', // blogName, custom
 		'appendToPageTitleCustom' => '',
-		'sidebarDisplay' => 'right', // right, left, none
-		'sidebarWidth' => 'normal', // small, normal, large
-		'sidebar_showDefault' => true, 
+#		'sidebarDisplay' => 'right', // right, left, none, both
+		'sidebar' => array(
+			'display' => 'right', // right, left, none, both
+			'widthLeft' => 0,
+			'widthRight' => 160,
+			'showDefault' => true,
+		),
+#		'sidebar_showDefault' => true, 
 		'postsShowAuthor' => true,
 		'postsShowTime' => false,
 		'posts_showTopPostLinks' => false,
@@ -50,7 +55,7 @@ function arjuna_get_default_options() {
 		'headerMenus_delay' => 500, //in milliseconds
 		
 		//Added 1.6.x
-		'contentAreaWidth' => 570, //width of the content area, sidebar will be calculated
+#		'contentAreaWidth' => 570, //width of the content area, sidebar will be calculated
 		'sidebar_showLinkedInButton' => false,
 		'sidebarButtons' => array(
 			'RSS' => array(
@@ -73,6 +78,7 @@ function arjuna_get_default_options() {
 				'URL' => '',
 				'label' => '',
 			),
+			'inSidebar' => 'right', //left, right; in which sidebar the buttons will be included
 		),
 		'menus' => array(
 			'1' => array(
@@ -122,7 +128,7 @@ function arjuna_get_default_options() {
 			'showTimestamps' => true,
 		),
 	
-		'currentVersion' => '1.6.9',
+		'currentVersion' => '1.6.11',
 	);
 	
 	return $options;
@@ -131,16 +137,16 @@ function arjuna_get_default_options() {
 
 function arjuna_get_color_schemes() {
 	$colorSchemes = array(
-		'lightBlue' => __('Light Blue'),
-		'bristolBlue' => __('Bristol Blue'),
-		'darkBlue' => __('Dark Blue'),
-		'regimentalBlue' => __('Regimental Blue'),
-		'khaki' => __('Khaki'),
-		'seaGreen' => __('Sea Green'),
-		'lightRed' => __('Light Red'),
-		'purple' => __('Purple'),
-		'lightGray' => __('Light Gray'),
-		'darkGray' => __('Dark Gray'),
+		'lightBlue' => __('Light Blue', 'Arjuna'),
+		'bristolBlue' => __('Bristol Blue', 'Arjuna'),
+		'darkBlue' => __('Dark Blue', 'Arjuna'),
+		'regimentalBlue' => __('Regimental Blue', 'Arjuna'),
+		'khaki' => __('Khaki', 'Arjuna'),
+		'seaGreen' => __('Sea Green', 'Arjuna'),
+		'lightRed' => __('Light Red', 'Arjuna'),
+		'purple' => __('Purple', 'Arjuna'),
+		'lightGray' => __('Light Gray', 'Arjuna'),
+		'darkGray' => __('Dark Gray', 'Arjuna'),
 	);
 	
 	return $colorSchemes;
@@ -434,30 +440,31 @@ function arjuna_add_theme_options() {
 		}
 		
 		//Sidebar display
-		$validOptions = array('right', 'left', 'none');
-		if(isset($_POST['sidebarDisplay'])) {
-			if ( in_array($_POST['sidebarDisplay'], $validOptions) ) $options['sidebarDisplay'] = $_POST['sidebarDisplay'];
-			else $options['sidebarDisplay'] = $validOptions[0];
+		$validOptions = array('right', 'left', 'none', 'both');
+		if(isset($_POST['sidebar_display'])) {
+			if ( in_array($_POST['sidebar_display'], $validOptions) ) $options['sidebar']['display'] = $_POST['sidebar_display'];
+			else $options['sidebar']['display'] = $validOptions[0];
 			
-			if($options['sidebarDisplay'] != 'none' && isset($_POST['contentAreaWidth'])) {
-				$options['contentAreaWidth'] = $_POST['contentAreaWidth'];
+			if($options['sidebar']['display'] != 'none') {
+				if(isset($_POST['sidebar_widthLeft']))
+					$options['sidebar']['widthLeft'] = $_POST['sidebar_widthLeft'];
+				if(isset($_POST['sidebar_widthRight']))
+					$options['sidebar']['widthRight'] = $_POST['sidebar_widthRight'];
 			}
 		}
 		
 		// Whether or not to show the default bars (if no widget bars are defined)
-		if (isset($_POST['sidebar_showDefault'])) $options['sidebar_showDefault'] = true;
-		else $options['sidebar_showDefault'] = false;
-		
-		
-		//Sidebar Width
-		$validOptions = array('normal', 'small', 'large');
-		if(isset($_POST['sidebarWidth'])) {
-			if ( in_array($_POST['sidebarWidth'], $validOptions) ) $options['sidebarWidth'] = $_POST['sidebarWidth'];
-			else $options['sidebarWidth'] = $validOptions[0];
-		}
+		if (isset($_POST['sidebar_showDefault'])) $options['sidebar']['showDefault'] = true;
+		else $options['sidebar']['showDefault'] = false;
 		
 		
 		//Sidebar buttons
+		$validOptions = array('left', 'right');
+		if(isset($_POST['sidebarButtons_inSidebar'])) {
+			if ( in_array($_POST['sidebarButtons_inSidebar'], $validOptions) ) $options['sidebarButtons']['inSidebar'] = $_POST['sidebarButtons_inSidebar'];
+			else $options['sidebarButtons']['inSidebar'] = 'right';
+		}
+		
 		if(isset($_POST['sidebarButtons_RSS_enabled'])) {
 			$options['sidebarButtons']['RSS']['enabled'] = (bool) $_POST['sidebarButtons_RSS_enabled'];
 			$options['sidebarButtons']['RSS']['label'] = $_POST['sidebarButtons_RSS_label'];
@@ -467,6 +474,7 @@ function arjuna_add_theme_options() {
 		} else {
 			$options['sidebarButtons']['RSS']['enabled'] = false;
 		}
+		
 		if(isset($_POST['sidebarButtons_twitter_enabled'])) {
 			$options['sidebarButtons']['twitter']['enabled'] = (bool) $_POST['sidebarButtons_twitter_enabled'];
 			$options['sidebarButtons']['twitter']['label'] = $_POST['sidebarButtons_twitter_label'];
@@ -485,6 +493,7 @@ function arjuna_add_theme_options() {
 		} else {
 			$options['sidebarButtons']['twitter']['enabled'] = false;
 		}
+		
 		if(isset($_POST['sidebarButtons_facebook_enabled'])) {
 			$options['sidebarButtons']['facebook']['enabled'] = (bool) $_POST['sidebarButtons_facebook_enabled'];
 			$options['sidebarButtons']['facebook']['label'] = $_POST['sidebarButtons_facebook_label'];
@@ -503,6 +512,7 @@ function arjuna_add_theme_options() {
 		} else {
 			$options['sidebarButtons']['facebook']['enabled'] = false;
 		}
+		
 		if(isset($_POST['sidebarButtons_linkedIn_enabled'])) {
 			$options['sidebarButtons']['linkedIn']['enabled'] = (bool) $_POST['sidebarButtons_linkedIn_enabled'];
 			$options['sidebarButtons']['linkedIn']['label'] = $_POST['sidebarButtons_linkedIn_label'];
@@ -748,12 +758,21 @@ function arjuna_add_theme_page () {
 		<div class="tSRSIntro">
 			<div class="tTop">
 			<?php printf(__('Thank you for using Arjuna, the free WordPress theme designed by %s.', 'Arjuna'), '<a href="http://www.srssolutions.com/en/" class="tSRS">SRS Solutions</a>'); ?>
-			<div class="tTwitter">
-				<a href="http://www.twitter.com/srssolutions"><?php _e('Follow Us', 'Arjuna'); ?></a>
-				<?php _e('to receive news, updates, and more.', 'Arjuna'); ?>
-			</div>
-			<div class="tFacebook">
-				<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="http://www.facebook.com/srssolutions" show_faces="false" width="600" font="lucida grande"></fb:like>
+			<div class="tShare">
+				<div class="tTwitter">
+					<a href="http://www.twitter.com/srssolutions"><?php _e('Follow Us', 'Arjuna'); ?></a>
+				</div><div class="tFacebook">
+					<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=253036731381170&amp;xfbml=1"></script><fb:like href="http://www.facebook.com/srssolutions" send="true" layout="button_count" width="180" show_faces="false" action="recommend" font="arial"></fb:like>
+				</div><div class="tPlusOne">
+					<g:plusone size="medium" href="http://www.srssolutions.com"></g:plusone>
+					<script type="text/javascript">
+					  (function() {
+					    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+					    po.src = 'https://apis.google.com/js/plusone.js';
+					    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+					  })();
+					</script>
+				</div>
 			</div>
 			<div class="logo"></div>
 			</div>
@@ -804,7 +823,7 @@ function arjuna_add_theme_page () {
 									<div class="logoPreview"><img src="<?php print $options['headerLogo']; ?>" /></div>
 									<input type="submit" name="removeLogo" value="Remove Logo" />
 								<?php endif; ?>
-								<br /><span class="description"><?php printf(__('The custom logo will be included in the header, aligned to the left and vertically centered.', 'Arjuna'), arjuna_get_upload_directory());?></span>
+								<br /><span class="description"><?php printf(__('The custom logo will be included in the header, aligned to the left and vertically centered. Note: It will NOT replace the background image of the header. Instead it will be placed on top of the background image, replacing only the WordPress blog name and description.', 'Arjuna'), arjuna_get_upload_directory());?></span>
 							<?php else: ?>
 								<span class="description"><?php printf(__('You do not have write permissions for the upload directory %s. Please check with your webmaster or host to set write permissions for this directory.', 'Arjuna'), arjuna_get_upload_directory());?></span>
 							<?php endif; ?>
@@ -1217,44 +1236,63 @@ function arjuna_add_theme_page () {
 							<th scope="row"><?php _e('Sidebar Position', 'Arjuna'); ?></th>
 							<td>
 								<div class="tImageOptions">
-									<input name="sidebarDisplay" type="radio" id="sidebarDisplay_right" value="right"<?php checked($options['sidebarDisplay'], 'right'); ?> />
+									<input name="sidebar_display" type="radio" id="sidebarDisplay_right" value="right"<?php checked($options['sidebar']['display'], 'right'); ?> />
 									<div class="tImage" id="icon-sidebarRight"></div>
 									<span><label for="sidebarDisplay_right"><?php _e('Right sidebar', 'Arjuna'); ?></label></span>
 								</div>
 								<div class="tImageOptions">
-									<input name="sidebarDisplay" type="radio" id="sidebarDisplay_left" value="left"<?php checked($options['sidebarDisplay'], 'left'); ?> />
+									<input name="sidebar_display" type="radio" id="sidebarDisplay_left" value="left"<?php checked($options['sidebar']['display'], 'left'); ?> />
 									<div class="tImage" id="icon-sidebarLeft"></div>
 									<span><label for="sidebarDisplay_left"><?php _e('Left sidebar', 'Arjuna'); ?></label></span>
 								</div>
 								<div class="tImageOptions">
-									<input name="sidebarDisplay" type="radio" id="sidebarDisplay_none" value="none"<?php checked($options['sidebarDisplay'], 'none'); ?> />
+									<input name="sidebar_display" type="radio" id="sidebarDisplay_none" value="none"<?php checked($options['sidebar']['display'], 'none'); ?> />
 									<div class="tImage" id="icon-sidebarNone"></div>
 									<span><label for="sidebarDisplay_none"><?php _e('No sidebar', 'Arjuna'); ?></label></span>
+								</div>
+								<div class="tImageOptions">
+									<input name="sidebar_display" type="radio" id="sidebarDisplay_both" value="both"<?php checked($options['sidebar']['display'], 'both'); ?> />
+									<div class="tImage" id="icon-sidebarBoth"></div>
+									<span><label for="sidebarDisplay_both"><?php _e('Two sidebars', 'Arjuna'); ?></label></span>
 								</div>
 							</td>
 						</tr>
 						<tr id="sidebar-width-panel">
 							<th scope="row"><?php _e('Sidebar Width', 'Arjuna'); ?></th>
 							<td>
-								<div id="content-area-width-slider" class="<?php print $options['sidebarDisplay']; ?>">
+								<div id="content-area-width-slider" class="<?php print $options['sidebar']['display']; ?>">
 									<div class="preview">
+										<div class="sidebar-left" id="preview-sidebar-left"></div>
 										<div class="content-area" id="preview-content-area"></div>
-										<div class="sidebar" id="preview-sidebar"></div>
+										<div class="sidebar-right" id="preview-sidebar-right"></div>
 									</div>
 									<div class="right">
 										<div class="slider" id="content-area-slider">
-											<div class="handle" id="content-area-handle"></div>
+											<div class="slide-area">
+												<div id="slide-left-constraint">
+													<div class="slide-left"></div>
+													<div class="handle" id="slide-left-handle"></div>
+												</div>
+												<div id="slide-right-constraint">
+													<div class="slide-right"></div>
+													<div class="handle" id="slide-right-handle"></div>
+												</div>
+											</div>
 										</div>
 										<div class="custom">
-											<p><?php _e('Content Area', 'Arjuna'); ?>:</p>
-											<input type="text" id="content-area-width" maxlength="3" /> px
-											<p><?php _e('Sidebar', 'Arjuna'); ?>:</p>
-											<input type="text" id="sidebar-width" maxlength="3" /> px
+											<div class="left-sidebar">
+												<span><input type="text" id="left-sidebar-width" name="sidebar_widthLeft" maxlength="3" value="<?php  print $options['sidebar']['widthLeft']; ?>" /> px</span>
+											</div>
+											<div class="content-area">
+												<span><input type="text" id="content-area-width" maxlength="3" /> px</span>
+											</div>
+											<div class="right-sidebar">
+												<span><input type="text" id="right-sidebar-width" name="sidebar_widthRight" maxlength="3" value="<?php  print $options['sidebar']['widthRight']; ?>" /> px</span>
+											</div>
 										</div>
 									</div>
-									<input type="hidden" name="contentAreaWidth" id="real-content-area-width" value="<?php print $options['contentAreaWidth'] ?>" />
 								</div>
-								<br /><span class="description"><?php _e('Use the slider to adjust the width of the sidebar.', 'Arjuna'); ?></span>
+								<br /><span class="description"><?php _e('Use the slider(s) to adjust the width of the sidebar(s).', 'Arjuna'); ?></span>
 							</td>
 						</tr>
 						<tr>
@@ -1267,6 +1305,18 @@ function arjuna_add_theme_page () {
 						<tr>
 							<th scope="row"><?php _e('Sidebar Buttons', 'Arjuna'); ?></th>
 							<td>
+								<div id="sidebarDisplay-both-container"<?php if($options['sidebar']['display'] != 'both') echo ' style="display:none;"'; ?>>
+									<div class="tALeft"><?php _e('Show in:'); ?></div>
+									<div class="tALeft"><label>
+										<input name="sidebarButtons_inSidebar" type="radio" value="left"<?php checked($options['sidebarButtons']['inSidebar'], 'left'); ?> />
+										 <?php _e('Left sidebar', 'Arjuna'); ?>
+									</label></div>
+									<div class="tALeft"><label>
+										<input name="sidebarButtons_inSidebar" type="radio" value="right"<?php checked($options['sidebarButtons']['inSidebar'], 'right'); ?> />
+										 <?php _e('Right sidebar', 'Arjuna'); ?>
+									</label></div>
+									<div class="clear" style="margin-bottom:10px;"></div>
+								</div>
 								<table class="sidebar-buttons" id="sidebar-buttons">
 									<tr class="rss<?php if(!$options['sidebarButtons']['RSS']['enabled']) echo ' disabled'; if($options['sidebarButtons']['RSS']['extended']) echo ' rss-extended'; ?>">
 										<td class="checkbox-col"><input type="checkbox" class="checkbox" name="sidebarButtons_RSS_enabled"<?php checked($options['sidebarButtons']['RSS']['enabled']); ?> /></td>
@@ -1742,36 +1792,73 @@ function arjuna_add_theme_page () {
 
 
 register_sidebar(array(
-	'name'=>'Sidebar Top',
-		'id'=>'sidebar_full_top',
-		'description'=>'This is the top widget bar in the sidebar, extending to full width of the sidebar.',
+	'name'=> __('Right Sidebar - Top', 'Arjuna'),
+		'id'=>'right_sidebar_full_top',
+		'description'=>__('This is the top widget bar in the right sidebar, extending to full width of the sidebar.', 'Arjuna'),
 		'before_widget' => '<div id="%1$s" class="sidebarBox %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4><span>',
 		'after_title' => '</span></h4>'
 ));
 register_sidebar(array(
-	'name'=>'Sidebar Left',
-		'id'=>'sidebar_left',
-		'description'=>'This is the widget bar on the left hand side in the sidebar. It appears right below the top widget bar.',
+	'name'=>__('Right Sidebar - Left', 'Arjuna'),
+		'id'=>'right_sidebar_left',
+		'description'=>__('This is the widget bar on the left hand side in the right sidebar. It appears right below the top widget bar.', 'Arjuna'),
 		'before_widget' => '<div id="%1$s" class="sidebarBox %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4><span>',
 		'after_title' => '</span></h4>'
 ));
 register_sidebar(array(
-	'name'=>'Sidebar Right',
-		'id'=>'sidebar_right',
-		'description'=>'This is the widget bar on the right hand side in the sidebar. It appears right below the top widget bar, next to the left widget bar.',
+	'name'=>__('Right Sidebar - Right', 'Arjuna'),
+		'id'=>'right_sidebar_right',
+		'description'=>__('This is the widget bar on the right hand side in the right sidebar. It appears right below the top widget bar, next to the left widget bar.', 'Arjuna'),
 		'before_widget' => '<div id="%1$s" class="sidebarBox %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4><span>',
 		'after_title' => '</span></h4>'
 ));
 register_sidebar(array(
-	'name'=>'Sidebar Bottom',
-		'id'=>'sidebar_full_bottom',
-		'description'=>'This is the bottom widget bar in the sidebar, extending to full width of the sidebar. It will appear below the left and right widget bars.',
+	'name'=>__('Right Sidebar - Bottom', 'Arjuna'),
+		'id'=>'right_sidebar_full_bottom',
+		'description'=>__('This is the bottom widget bar in the right sidebar, extending to full width of the sidebar. It will appear below the left and right widget bars.', 'Arjuna'),
+		'before_widget' => '<div id="%1$s" class="sidebarBox %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4><span>',
+		'after_title' => '</span></h4>'
+));
+
+register_sidebar(array(
+	'name'=> __('Left Sidebar - Top', 'Arjuna'),
+		'id'=>'left_sidebar_full_top',
+		'description'=>__('This is the top widget bar in the left sidebar, extending to full width of the sidebar.', 'Arjuna'),
+		'before_widget' => '<div id="%1$s" class="sidebarBox %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4><span>',
+		'after_title' => '</span></h4>'
+));
+register_sidebar(array(
+	'name'=>__('Left Sidebar - Left', 'Arjuna'),
+		'id'=>'left_sidebar_left',
+		'description'=>__('This is the widget bar on the left hand side in the left sidebar. It appears right below the top widget bar.', 'Arjuna'),
+		'before_widget' => '<div id="%1$s" class="sidebarBox %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4><span>',
+		'after_title' => '</span></h4>'
+));
+register_sidebar(array(
+	'name'=>__('Left Sidebar - Right', 'Arjuna'),
+		'id'=>'left_sidebar_right',
+		'description'=>__('This is the widget bar on the right hand side in the left sidebar. It appears right below the top widget bar, next to the left widget bar.', 'Arjuna'),
+		'before_widget' => '<div id="%1$s" class="sidebarBox %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4><span>',
+		'after_title' => '</span></h4>'
+));
+register_sidebar(array(
+	'name'=>__('Left Sidebar - Bottom', 'Arjuna'),
+		'id'=>'left_sidebar_full_bottom',
+		'description'=>__('This is the bottom widget bar in the left sidebar, extending to full width of the sidebar. It will appear below the left and right widget bars.', 'Arjuna'),
 		'before_widget' => '<div id="%1$s" class="sidebarBox %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4><span>',
@@ -1797,12 +1884,15 @@ register_sidebar(array(
 
 $GLOBALS['content_width'] = $content_width = 600;
 
-// Localization
+add_action ('init', 'theme_init');
 function theme_init(){
-	load_theme_textdomain('Arjuna', get_template_directory() . '/languages');
 	wp_enqueue_script('jquery');
 }
-add_action ('init', 'theme_init');
+
+add_action('init', 'arjuna_textdomain');
+function arjuna_textdomain(){
+	load_theme_textdomain('Arjuna', get_template_directory() . '/languages');
+}
 
 //CSS
 add_action('admin_print_styles', 'arjuna_admin_initCSS');
@@ -2350,7 +2440,7 @@ function arjuna_is_show_trackbacks() {
 	global $comments_by_type, $post, $id;
 	$arjunaOptions = arjuna_get_options();
 	$comments = get_comments('status=approve&post_id=' . $id);
-	$comments_by_type = separate_comments(get_comments('status=approve&post_id=' . $id));
+	$comments_by_type = separate_comments($comments);
 	
 	if($post->ping_status == 'open')
 		return true;
@@ -2385,8 +2475,8 @@ function arjuna_get_trackbacks_count() {
 
 function arjuna_nav_menus() {
 	register_nav_menus(array(
-		'header_menu_1' => 'First Header Menu',
-		'header_menu_2' => 'Second Header Menu',
+		'header_menu_1' => __('First Header Menu', 'Arjuna'),
+		'header_menu_2' => __('Second Header Menu', 'Arjuna'),
 	));
 }
 add_action('init', 'arjuna_nav_menus');
@@ -2502,16 +2592,16 @@ add_action('init', 'arjuna_register_twitter_widget');
 function arjuna_register_twitter_widget() {
     wp_register_sidebar_widget(
     	'arjuna_twitter_widget',
-    	__('Arjuna Twitter Profile Widget'),
+    	__('Arjuna Twitter Profile Widget', 'Arjuna'),
     	'arjuna_create_twitter_widget',
     	array(
     		'classname' => 'arjuna_twitter_widget',
-    		'description' => __( "Display Twitter Goodies Profile Widget"),
+    		'description' => __("Display Twitter Goodies Profile Widget", "Arjuna"),
     	)
     );
     wp_register_widget_control(
     	'arjuna_twitter_widget',
-    	__('Arjuna Twitter Profile Widget'),
+    	__('Arjuna Twitter Profile Widget', 'Arjuna'),
     	'arjuna_create_twitter_widget_control',
     	array('id_base' => 'arjuna_twitter_widget')
     );
@@ -2527,7 +2617,7 @@ function arjuna_print_page_menu() {
 		if($arjunaOptions['menus']['2']['displayHome'])
 			$html .= '<li><a href="' . (function_exists('icl_get_home_url')?icl_get_home_url():home_url('/')) . '" class="homeIcon">' . __('Home','Arjuna') . '</a></li>';
 		
-		$html .= wp_list_pages('title_li=&echo=0');
+		$html .= wp_list_pages('title_li=&echo=0&depth='.$arjunaOptions['menus']['2']['depth']);
 	$html .= '</ul>';
 	
 	print $html;

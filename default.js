@@ -1,38 +1,32 @@
-
 SRS = {
-	addLoadEvent: function(f) {
-		var oo = window.onload; 
-		if (typeof window.onload != 'function') { 
-			window.onload = f; 
-		} else { 
-			window.onload = function() { 
-				if (oo) oo(); 
-				f(); 
-			} 
-		} 
-	},
+	_searchDefault: '',
+	
 	search: {
-		d: null,
 		init: function() {
-			var s = document.getElementById('searchQuery');
-			SRS.search.d = s.value;
-			s.onfocus = function() {
-				if (this.value == SRS.search.d) {
-					this.value = '';
-					this.className = this.className.replace(new RegExp(" searchQueryIA\\b"), "");
+			if(!jQuery('#searchQuery').length)
+				return true;
+			
+			SRS._searchDefault = jQuery('#searchQuery').val();
+			
+			jQuery('#searchQuery')
+			.focus(function() {
+				if (jQuery(this).val() == SRS._searchDefault) {
+					jQuery(this).val('');
+					jQuery(this).removeClass('searchQueryIA');
 				}
-			};
-			s.onblur = function() {
-				if (this.value == '') {
-					this.value = SRS.search.d;
-					this.className += " searchQueryIA";
+			})
+			.blur(function() {
+				if (jQuery(this).val() == "") {
+					jQuery(this).val(SRS._searchDefault);
+					jQuery(this).addClass('searchQueryIA');
 				}
-			}
+			});
 		}
 	},
 	comment: {
 		d: {},
 		init: function() {
+			
 			//Inject the default WordPress moveForm function with advanced customization.
 			if (typeof addComment != 'undefined') {
 				addComment._moveForm = addComment.moveForm;
@@ -64,8 +58,6 @@ SRS = {
 				if (e.length) {
 					e.attr('_defaultValue', jQuery('#'+els[i].defaultID).val());
 					e.focus(function() {
-						console.log(jQuery(this).val());
-						console.log(jQuery(this).attr('_defaultValue'));
 						if (jQuery(this).val() == jQuery(this).attr('_defaultValue'))
 							jQuery(this).val('').removeClass('inputIA');
 					});
@@ -96,17 +88,6 @@ SRS = {
 			
 		}
 		
-	},
-	
-	setOpacity: function (o, op) {
-		if (typeof o.style.opacity != 'undefined')
-			o.style.opacity = (op==1)?(0.9999999):(op);
-		else if (typeof o.style.MozOpacity != 'undefined')
-			o.style.MozOpacity = (op==1)?(0.9999999):(op);
-		else if (typeof o.style.KhtmlOpacity != 'undefined')
-			o.style.KhtmlOpacity = op;
-		else if (typeof o.filters == 'object')
-			o.style.filter = 'alpha(opacity='+(op*100)+')';
 	}
 };
 
@@ -356,7 +337,6 @@ jQuery(function() {
 	
 	//image resizing
 	jQuery('#contentArea div.postContent div.wp-caption').each(function() {
-		console.log(jQuery(this).outerWidth());
 		if(jQuery('#contentArea div.postContent').width() < jQuery(this).outerWidth()) {
 			var w = jQuery(this).outerWidth();
 			var h = jQuery(this).outerHeight();

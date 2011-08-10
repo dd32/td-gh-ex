@@ -1,12 +1,17 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Arjuna X 1.6.8\n"
-"Report-Msgid-Bugs-To: info@srssolutions.com\n"
+"Project-Id-Version: Arjuna X 1.6.11\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-05-02 13:55+0200\n"
+"PO-Revision-Date: 2011-05-02 13:55+0200\n"
 "Last-Translator: SRS Solutions <info@srssolutions.com>\n"
 "Language-Team: SRS Solutions <info@srssolutions.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-SearchPath-0: arjuna-x\n"
 
 #: arjuna-x/404.php:4
 msgid "Error 404 - Not Found"
@@ -248,6 +253,7 @@ msgid "You do not have write permissions for the upload directory %s. Please che
 msgstr ""
 
 #: arjuna-x/functions.php:820
+#: arjuna-x/functions.php:2388
 msgid "First Header Menu"
 msgstr ""
 
@@ -435,6 +441,7 @@ msgid "Exclude pages"
 msgstr ""
 
 #: arjuna-x/functions.php:974
+#: arjuna-x/functions.php:2389
 msgid "Second Header Menu"
 msgstr ""
 
@@ -989,6 +996,38 @@ msgstr ""
 msgid "Save Changes"
 msgstr ""
 
+#: arjuna-x/functions.php:1745
+msgid "Sidebar Top"
+msgstr ""
+
+#: arjuna-x/functions.php:1747
+msgid "This is the top widget bar in the sidebar, extending to full width of the sidebar."
+msgstr ""
+
+#: arjuna-x/functions.php:1754
+msgid "Sidebar Left"
+msgstr ""
+
+#: arjuna-x/functions.php:1756
+msgid "This is the widget bar on the left hand side in the sidebar. It appears right below the top widget bar."
+msgstr ""
+
+#: arjuna-x/functions.php:1763
+msgid "Sidebar Right"
+msgstr ""
+
+#: arjuna-x/functions.php:1765
+msgid "This is the widget bar on the right hand side in the sidebar. It appears right below the top widget bar, next to the left widget bar."
+msgstr ""
+
+#: arjuna-x/functions.php:1772
+msgid "Sidebar Bottom"
+msgstr ""
+
+#: arjuna-x/functions.php:1774
+msgid "This is the bottom widget bar in the sidebar, extending to full width of the sidebar. It will appear below the left and right widget bars."
+msgstr ""
+
 #: arjuna-x/functions.php:1840
 msgid "Written by"
 msgstr ""
@@ -1271,11 +1310,11 @@ msgstr ""
 msgid "Older Entries"
 msgstr ""
 
-#: arjuna-x/templates/header/search.php:5
+#: arjuna-x/templates/header/search.php:9
 msgid "Search here..."
 msgstr ""
 
-#: arjuna-x/templates/header/search.php:6
+#: arjuna-x/templates/header/search.php:10
 msgid "Find"
 msgstr ""
 

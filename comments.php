@@ -14,6 +14,8 @@ if ( post_password_required() ) {
 	return;
 }
 
+$comments_by_type = &separate_comments($comments);
+
 ?>
 <?php if(arjuna_is_show_comments() || arjuna_is_show_trackbacks()): ?>
 <div class="commentHeader">

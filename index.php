@@ -1,6 +1,9 @@
 <?php $arjunaOptions = arjuna_get_options(); ?>
 <?php get_header(); ?>
 
+<?php get_sidebar('left'); ?>
+<?php get_sidebar('right'); ?>
+
 <div class="contentArea" id="contentArea">
 	<?php if (have_posts()) : ?>
 	<?php while (have_posts()) : the_post(); ?>
@@ -25,7 +28,5 @@
   <p><?php _e('There is nothing here (yet).', 'Arjuna'); ?></p>
 	<?php endif; ?>
 </div>
-
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>
