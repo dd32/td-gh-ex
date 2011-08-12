@@ -59,7 +59,7 @@ if (in_array($arjunaOptions['sidebar']['display'], array('both', 'left'))) {
 			<?php endif; ?>
 			</div>
 		<?php endif; ?>
-		<div<?php if(is_active_sidebar('left_sidebar_left') || is_active_sidebar('left_sidebar_right') || $arjunaOptions['sidebar_showDefault']) print ' class="clear"'; ?>>
+		<div<?php if(is_active_sidebar('left_sidebar_left') || is_active_sidebar('left_sidebar_right') || $arjunaOptions['sidebar']['showDefault']) print ' class="clear"'; ?>>
 			<?php if (!dynamic_sidebar('left_sidebar_full_bottom') ) : ?>
 			<?php endif; ?>
 		</div>

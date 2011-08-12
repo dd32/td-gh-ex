@@ -1298,7 +1298,7 @@ function arjuna_add_theme_page () {
 						<tr>
 							<th scope="row"><?php _e('Default Widgets', 'Arjuna'); ?></th>
 							<td>
-								<label><input name="sidebar_showDefault" type="checkbox"<?php checked($options['sidebar_showDefault']); ?> /> <?php _e('Display default sidebar widgets if the widget bars are empty.', 'Arjuna'); ?></label><br />
+								<label><input name="sidebar_showDefault" type="checkbox"<?php checked($options['sidebar']['showDefault']); ?> /> <?php _e('Display default sidebar widgets if the widget bars are empty.', 'Arjuna'); ?></label><br />
 								<span class="description"><?php _e('If enabled, the following widgets will be displayed if the widget bar is empty: <b>Sidebar Top:</b> Recent Posts and Browse by Tags, <b>Sidebar Left:</b> Categories, <b>Siderbar Right:</b> Meta', 'Arjuna'); ?></span>
 							</td>
 						</tr>
@@ -1306,7 +1306,7 @@ function arjuna_add_theme_page () {
 							<th scope="row"><?php _e('Sidebar Buttons', 'Arjuna'); ?></th>
 							<td>
 								<div id="sidebarDisplay-both-container"<?php if($options['sidebar']['display'] != 'both') echo ' style="display:none;"'; ?>>
-									<div class="tALeft"><?php _e('Show in:'); ?></div>
+									<div class="tALeft"><?php _e('Show in:', 'Arjuna'); ?></div>
 									<div class="tALeft"><label>
 										<input name="sidebarButtons_inSidebar" type="radio" value="left"<?php checked($options['sidebarButtons']['inSidebar'], 'left'); ?> />
 										 <?php _e('Left sidebar', 'Arjuna'); ?>
@@ -1757,7 +1757,7 @@ function arjuna_add_theme_page () {
 								if (!is_writable(dirname(__FILE__).'/')):
 								?>
 								<br />
-								<span class="description"><?php sprintf(__('Arjuna needs write permissions to create a new file %s, which will contain the custom CSS.'), '&quot;user-style.css&quot;'); ?></span>
+								<span class="description"><?php sprintf(__('Arjuna needs write permissions to create a new file %s, which will contain the custom CSS.', 'Arjuna'), '&quot;user-style.css&quot;'); ?></span>
 								<?php else: ?>
 								<label><input name="customCSS" onclick="customCSS_switch(this)" type="checkbox"<?php checked($options['customCSS']); ?> /> <?php _e('Enable custom CSS rules', 'Arjuna'); ?></label><br />
 								<span class="description"><?php _e('If enabled, Arjuna will include your custom CSS rules with every page call. If you intend to make some minor changes to the theme, enabling this option ensures that you can safely upgrade Arjuna without losing your custom CSS. We recommend to use child themes for more serious customizations.', 'Arjuna');?></span>
