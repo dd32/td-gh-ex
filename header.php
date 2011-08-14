@@ -15,9 +15,9 @@
 	if ( $paged >= 2 || $page >= 2 )
 		echo ' | ' . sprintf( __( 'Page %s', 'blogmeans' ), max( $paged, $page ) ); 
 ?></title>
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css" />
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/img/favicon.png" type="image/x-icon" />
+<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.png" type="image/x-icon" />
 <?php 
   if ( is_singular() && get_option( 'thread_comments' ) )
 	wp_enqueue_script( 'comment-reply' );
@@ -35,7 +35,7 @@ a, a:hover, a:link, a:active, a:visited {color:#008000}
 .footer {border-top: 2px solid black}
 .widget h3 {border-bottom: 2px solid black}
 .header .title span {color: gray; }
-h1,h2,h3,h4,h5, .post h1 a, .header .title h1 a, #comments h3 {color: #0000FF;}
+h1,h2,h3,h4,h5, .widget_rss a.rsswidget, .post h1 a, .header .title h1 a, #comments h3 {color: #0000FF;}
 </style>
 
 <?php wp_head(); ?> 
@@ -47,7 +47,7 @@ h1,h2,h3,h4,h5, .post h1 a, .header .title h1 a, #comments h3 {color: #0000FF;}
 <div class="header">
 
 <div class="title">
-<h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
+<h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
 <span><?php bloginfo('description'); ?></span>
 </div>
 

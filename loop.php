@@ -25,9 +25,12 @@
   <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
   <div class="meta">  
   <?php _e('By', 'adsticle'); ?>: <?php the_author_link(); ?> | 
-  <?php _e('Date', 'adsticle'); ?>: <?php the_date(); ?> |
-  <?php _e('Categories', 'adsticle'); ?>: <?php the_category(', '); ?>    
+  <?php _e('Date', 'adsticle'); ?>: <?php the_date(); ?> 
+  <?php if (!is_page()): ?>
+  | <?php _e('Categories', 'adsticle'); ?>: <?php the_category(', '); ?>    
+  <?php endif; ?>
   </div>
+  
 
   <div class="post_content">
   <?php 
