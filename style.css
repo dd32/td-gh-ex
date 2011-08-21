@@ -1,10 +1,10 @@
 /*
 Theme Name: Ari
-Theme URI: http://www.elmastudio.de/themes/ari-wordpress-theme/
-Description: Ari is a minimalistic, flexible three-column blog theme. The theme makes use of CSS3 media queries for its flexible layout and is optimized for tablet pcs and smart phones (the theme switches to a two-column layout when viewed on a horizontal iPad screen, and to a one-column layout on iPhones). You can also choose a dark color scheme and the backgound-, text- and link-colors can be customized in the theme options page.
+Theme URI: http://www.elmastudio.de/wordpress-themes/ari/
+Description: Ari is a minimalistic, flexible three-column blog theme. The theme uses CSS3 media queries for its responsive layout and is therefore optimized for tablet pcs and smart phones (the theme switches to a two-column layout when viewed on a horizontal iPad screen, and to a one-column layout on iPhones). You can also choose a dark color scheme and the backgound-, text- and link-colors can be customized in the theme options page.
 Author: Elmastudio
-Author URI: http://www.elmastudio.de
-Version: 1.0.7
+Author URI: http://www.elmastudio.de/wordpress-themes/
+Version: 1.0.8
 Tags: white, dark, three-columns, left-sidebar, right-sidebar, flexible-width, custom-colors, custom-menu, theme-options, threaded-comments, sticky-post, translation-ready
 License: GNU/GPL Version 2 or later
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -76,6 +76,7 @@ body {
 	padding: 0px 0px 30px 0px;
 	clear: both;
 	font-size: 12px;
+	overflow:hidden;
 }
 .aligncenter {
 	margin:0 auto; 
@@ -207,10 +208,14 @@ ul.sidebar h3.widget-title {
 	font-size:13px;
 }
 #sidebar-primary .logo img {
-	margin:0px;
-	padding:0px;
+	max-width:100%;
+	margin:0;
+	padding:0;
 }
-/* --- About Text Widget --- */
+/* --- Text Widget --- */
+ul.sidebar li.widget_text p {
+	line-height:1.6 !important;
+}
 #sidebar-primary ul.sidebar li.widget_text img {
 	margin:3px 10px 0px 0px;
 	float:left;
@@ -313,8 +318,14 @@ ul.sidebar li.widget_sociallinks a.twitter {
 ul.sidebar li.widget_sociallinks a.facebook {
 	background:url(images/fb-icon.png) 0 0 no-repeat;
 }
+ul.sidebar li.widget_sociallinks a.googleplus {
+	background:url(images/googleplus-icon.png) 0 0 no-repeat;
+}
 ul.sidebar li.widget_sociallinks a.flickr {
 	background:url(images/flickr-icon.png) 0 0 no-repeat;
+}
+ul.sidebar li.widget_sociallinks a.vimeo {
+	background:url(images/vimeo-icon.png) 0 0 no-repeat;
 }
 ul.sidebar li.widget_sociallinks a.xing {
 	background:url(images/xing-icon.png) 0 0 no-repeat;
@@ -342,15 +353,15 @@ ul.sidebar li.widget_sociallinks a.delicious {
 	font-size:13px;
 }
 #content blockquote {
-	margin:10px 0px 20px 0px;
+	margin:10px 0px 30px 0px;
 	padding:0px 0px 0px 16px;
 	background:url(images/blockquote-border.jpg) 0 0 repeat-y;
 	font-family:'Droid Serif',  Times, serif;
 	line-height:21px;
 	font-style:italic;
 }
-#content .post blockquote p, #content .page blockquote p {
-	padding:0px;
+#content blockquote p {
+	padding:0 !important;
 }
 #content blockquote p cite {
 	padding:5px 0px 0px 0px;
@@ -386,6 +397,16 @@ ul.sidebar li.widget_sociallinks a.delicious {
 	width: auto;
 	height: auto;
 	display: block;
+}
+#content img.wp-post-image {
+	width: 125px;
+	height: auto;
+	margin: 5px 15px 5px 0 !important;
+	padding: 0;
+	float: left;
+}
+#content img.wp-smiley {
+	display: inline;
 }
 #content img.alignleft {
 	margin: 5px 10px 10px 0px;
@@ -442,7 +463,13 @@ a.post-edit-link {
 	float:right;
 	font-size:14px;
 }
-
+#content .sticky h3.sticky-label  {
+	font-size:10.5px;
+	font-weight:normal;
+	padding:0;
+	text-transform:uppercase;
+	letter-spacing:2px;
+}
 /* Single Post
 --------------------------------------------- */
 #content .post #author-info {
@@ -573,6 +600,7 @@ form#commentform p.comment-notes {
 form#commentform input#author, form#commentform input#email, form#commentform input#url {
 	font-family:'Droid Sans', arial, sans-serif;
 	height:22px;
+	display: block;
 }
 form#commentform textarea#comment {
 	width:90%;

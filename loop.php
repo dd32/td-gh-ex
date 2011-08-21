@@ -10,12 +10,19 @@
 <?php while ( have_posts() ) : the_post(); ?>
 
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+	<?php if (is_sticky()) echo __( '<h3 class="sticky-label">Featured</h3>', 'ari' ); ?>
 	<h2><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'ari' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 
 	<?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>
 			<?php the_excerpt(); ?>
 			<p class="meta"><span><?php the_time('d. F Y') ?> <?php _e( 'by', 'ari' ); ?> <?php the_author() ?></span><br/>	
 	<?php else : ?>
+	
+			<?php if ( has_post_thumbnail() ): ?>
+				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail'); ?></a>
+			<?php endif; ?>
+
 			<?php the_content( __( 'Continue Reading &rarr;', 'ari' ) ); ?>
 			<div class="clear"></div>
 			

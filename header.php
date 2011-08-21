@@ -13,8 +13,7 @@
 		echo ' | ' . sprintf( __( 'Page %s', 'ari' ), max( $paged, $page ) );
 	?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
-	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" type="image/x-icon" />
-	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" type="text/css" media="all" />
 	<?php if (get_option('ari_dark-style') == 'checked') : ?>
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/dark.css" type="text/css">
 	<?php endif; ?>
@@ -33,12 +32,12 @@
 	<a href="<?php echo home_url(); ?>"><img src="<?php echo (get_option('ari_logo-image')) ? get_option('ari_logo-image') : get_template_directory_uri() . '/images/logo.png' ?>" alt="<?php bloginfo('name'); ?>" /></a>
 
 	<?php else : ?>
-	<h1><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1><p><?php bloginfo( 'description' ); ?></p>
+
+	<h1><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1><p><?php bloginfo( 'description' ); ?></p>
 	<?php endif; ?>
-	</div>
-	<!--end Logo-->
-	
+	</div><!--end Logo-->
+
 	<?php get_sidebar('primary'); ?>
-	
+
 	</div>
 	<!--end Sidebar One-->

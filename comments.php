@@ -35,10 +35,10 @@
 
 <?php comment_form(
 array(
-'title_reply' => __( 'Leave a Reply', 'ari' ),
-'comment_notes_before' =>__( '<p class="comment-notes">Required fields are marked <span class="required">*</span></p>', 'ari'),
-'comment_notes_after' => '',
-'comment_field'  => '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun' ) . '</label><br/><textarea id="comment" name="comment" rows="8" aria-required="true"></textarea></p>',
+	'title_reply' => __( 'Leave a Reply', 'ari' ),
+	'comment_notes_before' =>__( '<p class="comment-notes">Required fields are marked <span class="required">*</span></p>', 'ari'),
+	'comment_notes_after' => '',
+	'comment_field'  => '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun', 'ari' ) . '</label><br/><textarea id="comment" name="comment" rows="8" 	aria-required="true"></textarea></p>',
 )
 ); ?>
 

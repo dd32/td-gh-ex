@@ -25,7 +25,7 @@
 					</div><!-- end Author Info -->
 		<?php endif; ?>
 						
-		<p class="meta"><span><?php the_time('d. F Y') ?> von <?php the_author() ?></span><br/>				
+		<p class="meta"><span><?php the_time('d. F Y') ?> <?php _e( 'by', 'ari' ); ?> <?php the_author() ?></span><br/>				
 
 				<?php if ( count( get_the_category() ) ) : ?>
 					<?php printf( __( 'Categories: %2$s', 'ari' ), 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list( ', ' ) ); ?>
@@ -49,8 +49,8 @@
 	</div>
 	<!--end Post-->
 	
-		<p class="previous"><?php previous_post_link( '%link', '' . _x( '&larr;  Previous Post', 'Previous post link', 'ari' ) . '' ); ?></p>
-		<p class="next"><?php next_post_link( '%link', __('') . _x( 'Next Post &rarr;', 'Next post link', 'ari' ) . '' ); ?></p>
+		<p class="previous"><?php previous_post_link( '%link',  __( '&larr;  Previous Post', 'Previous post link', 'ari' ) ); ?></p>
+		<p class="next"><?php next_post_link( '%link', __( 'Next Post &rarr;', 'Next post link', 'ari' ) ); ?></p>
 	
 	</div>
 	<!--end Content-->

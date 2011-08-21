@@ -2,6 +2,19 @@
 For detailed documentation and support please visit: http://www.elmastudio.de/themes/ari-wordpress-theme/
 ------------------------------------------------------------------------------------------------------------
 
+Version 1.0.8 - 21th August 2011
+-------------------------------
+1. Added Google+ and Vimeo to the Ari social links widget, fixed bugs in the debugging mode and added target=_blank"
+   to the links so the social profiles can be opened esily in a new tab on mobile devices.
+2. Bugfixes in comment form, therefore deleted code line "Comments Form Filters" in functions.php and added disply:block
+   for input fields in style.css line 582.
+3. Added support for post thumbnails (standard size 125px width).
+4. Updated theme options page.
+5. Added styles for sticky posts.
+6. Bugfix for displaying smilies in posts.
+7. Bugifix to resize logo image correctly within the left sidebar (important for viewing on smartphones)
+
+
 Version 1.0.7 - 07th March 2011
 -------------------------------
 1. Bugfix in style.css line 386 to fix auto resizing smaller images to 100% content size.
