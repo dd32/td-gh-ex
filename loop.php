@@ -17,6 +17,15 @@
  * @subpackage mantra
  * @since mantra 0.5
  */
+
+
+$options = get_option('ma_options');
+if($options) {
+$mop_excerpthome = $options['mop_excerpthome'];
+$mop_excerptasides = $options['mop_excerptasides'];
+$mop_excerptarchive = $options['mop_excerptarchive'];
+}
+
 ?>
 
 <?php /* Display navigation to next/previous pages when applicable */ ?>
@@ -103,11 +112,11 @@
 
 		<?php if ( is_archive() || is_search() ) : // Display excerpts for archives and search. ?>
 			<div class="entry-summary">
-				<?php  /*the_excerpt();*/ the_content(); ?>
+				<?php if ($mop_excerptarchive != "Full Post" && $mop_excerptasides=="Yes"){ the_excerpt();} else { the_content();}   ?>
 			</div><!-- .entry-summary -->
 		<?php else : ?>
 			<div class="entry-content">
-				<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'mantra' ) ); ?>
+				<?php if ($mop_excerpthome != "Full Post" && $mop_excerptasides=="Yes") {the_excerpt(); } else { the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'mantra' ) );}  ?>
 			</div><!-- .entry-content -->
 		<?php endif; ?>
 
@@ -130,13 +139,18 @@
 
 			</div><!-- .entry-meta -->
 
-	<?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>
+	<?php if ( is_archive() || is_search()  ): // Only display excerpts for archives and search. ?>
 			<div class="entry-summary">
-				<?php /*the_excerpt();*/the_content();  ?>
+						
+
+				<?php if ($mop_excerptarchive != "Full Post"){ the_excerpt();} else { the_content();}   ?>
+   
 			</div><!-- .entry-summary -->
+
+		
 	<?php else : ?>
 			<div class="entry-content">
-				<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'mantra' ) ); ?>
+				<?php if ($mop_excerpthome != "Full Post") {the_excerpt(); } else { the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'mantra' ) );}  ?>
 				<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'mantra' ), 'after' => '</div>' ) ); ?>
 			</div><!-- .entry-content -->
 	<?php endif; ?>

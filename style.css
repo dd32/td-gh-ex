@@ -1,10 +1,14 @@
 /*
 Theme Name: Mantra
 Theme URI: http://www.riotreactions.com/mantra
-Description: A clean and very web 2.0 theme with customizable layout, colors, fonts and graphics. From the admin panel you can change the header image, background image, sidebar position, content and sidebar dimensions, paragraph indent, text colors, fonts, post metas (like author, category or date), background colors and a whole lot more. With over 40 theme options, 7 widget areas, social media animated graphics, multiple pins and bullets you can easily make this theme suit all your needs.
+Description: 	Mantra is a general purpose WordPress theme, featuring a whole pack of over 50 customizable options and easy to use tweaks, 
+capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:
+the layout (sidebar position), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 20 font-families to choose from),
+text and header sizes, post metas, post excerpts, header image and background image, menus, social media links and icons, pins, bullets and more.
+	With 7 widget areas, subtle animations, modern graphics and an easy and responsive admin section, you can start customizing your blood right now.
 Author: Cryout Creations
 Author URI: http://www.cryoutcreations.com
-Version: 1.0.9
+Version: 1.5.0
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, red, blue, white, light, two-columns, right-sidebar, left-sidebar, theme-options, dark, flexible-width, custom-header, custom-menu, threaded-comments, sticky-post, translation-ready, microformats, rtl-language-support
@@ -81,7 +85,7 @@ DESCRIPTION: Two-column fixed layout with one sidebar right of content
 }
 #content {
 	margin: 0 0px 0 20px;
-	width:850px;
+	width:790px;
 }
 #primary,
 #secondary {
@@ -189,9 +193,10 @@ display:block;
 float:none;
 clear:both;
 height:60px;
-padding:20px;
 padding-top:0;
 margin-top:20px;
+padding-top:10px;
+padding-bottom:20px;
 }
 
 #forbottom, #forbottom2 {min-height:530px;}
@@ -401,6 +406,7 @@ background:none;
 	line-height: 60px;
 	margin-top:10px;
 	margin-left:20px;
+	padding-left:20px;
 }
 #site-title a {
 	color: #EEE;
@@ -514,7 +520,7 @@ color:#0C85CD !important;
 #access ul { }
 #access ul li { }
 #access ul li ul {
-      display: block; /* submenu width fix */ }
+      display: none; /* submenu width fix */ }
 
 #access ul ul li {  /* level 2 */
       border: 0;
@@ -1471,7 +1477,7 @@ color:#555;
 	padding-left:10px;
 }
 
-#search-2 #s  {/* This keeps the search inputs in line This is the Sidebar Search*/
+.widget_search #s, #search #s  {/* This keeps the search inputs in line This is the Sidebar Search*/
 	width: 70%;display:block;float:left;
 	margin-bottom:20px;
 	padding-top:6px;
@@ -1765,7 +1771,10 @@ img#wpstats {
 }
 
 #container #searchsubmit, .widget_search #searchsubmit {
-display:block;float:left;
+display:block;
+float:left;
+padding:0;
+margin:0;
 position:relative;
 left:-26px; top:0px;
 background: #777;
@@ -1778,6 +1787,7 @@ text-shadow:0px -1px 0px #000;
 -moz-text-shadow:0px -1px 0px #000;
 -webkit-text-shadow:0px -1px 0px #000;
 font-family:Arial !important;
+
 }
 
 .widget_search #searchsubmit {
@@ -1787,7 +1797,16 @@ width:27px;
 height:28px;
 font-size:12px;
 font-family:Arial;
+
 }
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+                 .widget_search #searchsubmit {   top:3px;}
+				  #container #s  {padding-top:0px;padding:bottom:0px;height:21px; }
+}
+
+.tagcloud {padding-left:15px;}
+
 
 #searchsubmit:hover {
 background:#888;
@@ -1937,5 +1956,27 @@ height:45px;
 
 #socials a#stweet {background-position:center  -40px; }
 #socials a#srss {background-position:right  -40px; }
+
+/* BACK TO TOP BUTTON */
+
+#toTop {
+width:100px;
+border:1px solid #999;
+background-image:url(js/img/top_back.png);
+text-align:center;
+padding:5px;
+position:fixed;
+bottom:10px;
+right:10px;
+cursor:pointer;
+display:none;
+color:#AAA;
+font-family:verdana;
+font-size:11px;
+}
+
+#toTop:hover {
+color:#BBB;
+}
 
 /* FIN! */

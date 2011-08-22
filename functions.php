@@ -1,8 +1,23 @@
 <?php
 
+$exerpt_n=40;
+$mop_excerptdots =' &hellip;';
+$mop_excerptcont = ' Continue reading';
+
 if ( is_admin() ) {
 require_once(dirname(__FILE__) . "/mantra-admin-functions.php");
 }
+
+$options = get_option('ma_options');
+
+$mop_sidewidth = $options['mop_sidewidth'];
+$mop_sidebar = $options['mop_sidebar'];
+$totalSize = $mop_sidebar + $mop_sidewidth+50;
+$mop_excerptwords = $options['mop_excerptwords'];
+$mop_excerptdots = $options['mop_excerptdots'];
+$mop_excerptcont = $options['mop_excerptcont'];
+
+$exerpt_n=$mop_excerptwords;
 
 add_action('wp_print_styles', 'mantra_style');
 
@@ -12,10 +27,6 @@ function mantra_style() {
 	wp_enqueue_style( 'mantras');
 
 }
-
-
-
-
 
 
 /**
@@ -33,7 +44,7 @@ function mantra_style() {
  * is designed for, generally via the style.css stylesheet.
  */
 if ( ! isset( $content_width ) )
-	$content_width = 790;
+	$content_width = 1050;
 
 /** Tell WordPress to run mantra_setup() when the 'after_setup_theme' hook is run. */
 add_action( 'after_setup_theme', 'mantra_setup' );
@@ -96,11 +107,12 @@ function mantra_setup() {
 
 	// The height and width of your custom header. You can hook into the theme's own filters to change these values.
 	// Add a filter to mantra_header_image_width and mantra_header_image_height to change these values.
-	define( 'HEADER_IMAGE_WIDTH', apply_filters( 'mantra_header_image_width', 900 ) );
-	define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'mantra_header_image_height', 200 ) );
+	global $totalSize;
+	define( 'HEADER_IMAGE_WIDTH', apply_filters( 'mantra_header_image_width', $totalSize ) );
+	define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'mantra_header_image_height', 90 ) );
 
 	// We'll be using post thumbnails for custom header images on posts and pages.
-	// We want them to be 900 pixels wide by 200 pixels tall.
+	// We want them to be 1100 pixels wide by 200 pixels tall.
 	// Larger images will be auto-cropped to fit, smaller ones will be ignored. See header.php.
 	set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );
 
@@ -117,12 +129,12 @@ function mantra_setup() {
 	register_default_headers( array(
 
 
-	/*	'mantra' => array(
+		'mantra' => array(
 			'url' => '%s/images/headers/mantra.png',
 			'thumbnail_url' => '%s/images/headers/mantra-thumbnail.png',
 			// translators: header image description 
-			'description' => __( 'mantra mantra', 'mantra' )
-		), */
+			'description' => __( 'mantra', 'mantra' )
+		),
 
 
 	) );
@@ -178,7 +190,8 @@ add_filter( 'wp_page_menu_args', 'mantra_page_menu_args' );
  * @return int
  */
 function mantra_excerpt_length( $length ) {
-	return 40;
+	global $exerpt_n;
+	return $exerpt_n;
 }
 add_filter( 'excerpt_length', 'mantra_excerpt_length' );
 
@@ -189,7 +202,8 @@ add_filter( 'excerpt_length', 'mantra_excerpt_length' );
  * @return string "Continue Reading" link
  */
 function mantra_continue_reading_link() {
-	return ' <a href="'. get_permalink() . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'mantra' ) . '</a>';
+	global $mop_excerptcont;
+	return ' <a href="'. get_permalink() . '">' . __( $mop_excerptcont.' <span class="meta-nav">&rarr;</span>', 'mantra' ) . '</a>';
 }
 
 /**
@@ -202,9 +216,11 @@ function mantra_continue_reading_link() {
  * @return string An ellipsis
  */
 function mantra_auto_excerpt_more( $more ) {
-	return ' &hellip;' . mantra_continue_reading_link();
+	global $mop_excerptdots;
+	return $mop_excerptdots. mantra_continue_reading_link();
 }
 add_filter( 'excerpt_more', 'mantra_auto_excerpt_more' );
+
 
 /**
  * Adds a pretty "Continue Reading" link to custom post excerpts.

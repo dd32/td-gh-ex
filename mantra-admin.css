@@ -1,21 +1,57 @@
+body, td, textarea, input, select {
+    font-family: Segoe UI, Arial !important;
+    font-size: 13px;
+}
+
+
+
+ .wrap {
+display:block;
+float:none;
+width:730px;
+margin:10px auto !important;
+border:1px solid #CCC;
+background:#F7F7F7;
+padding:0px 30px 10px 30px;
+border-radius:5px;
+-moz-border-radius:5px;
+-webkit-border-radius:5px;
+}
+
+.wrap h2 {
+font-family: Segoe UI, Arial !important;
+font-variant: small-caps;
+text-transform: uppercase;
+}
+
 .form-table th {
 font-weight:bold;
 }
 
 .form-table small {
-font-size:11px;
+font-size:12px;
+ color: #444 !important;
 }
 
-h3 {
+#accordion h3 {
 margin:0;
 padding-bottom:10px;
-margin-top:20px;
-font-family:Georgia,'Times New Roman',Times,serif;
 clear:both;
 display:block;
 float:none;
 color:#0D85CC;
-border-bottom:1px solid #CCC;
+border:1px solid #CCC !important;
+font-size: 16px !important;
+padding:7px; !important;
+padding-left:30px !important;
+font-weight:normal !important;
+}
+
+.form-table th, .form-wrap label {
+    color: #555 !important;
+font-variant: small-caps;
+text-transform: uppercase;
+font-size: 13px;
 }
 
 input[type="text"] , select {
@@ -24,39 +60,11 @@ border-radius:5px;
 -moz-border-radius:5px;
 }
 
-div.slider {
-width:550px;
-margin:10px 0;
-height:20px;
-position: relative;
-background:url(images/admin/slider_back.png) no-repeat center left;
+.submit {text-align:right;margin-right:20px;
 }
 
-div.slider div.handle {
-height:17px;
-width:17px;
-cursor:move;
-position: absolute;
-background:url(images/admin/slider_knob.png) no-repeat center left;
- margin-top:2px;
-}
-
-p.numbers {
-display:block;
-float:left;
-text-align:center;
-margin:0 auto;
-margin-top:-10px !important;
-}
-
-#side_value {float:right;}
-
-.hideSlider {
-display:block;
-height:0px;
-padding:0px;
-overflow:hidden;
-}
+.ui-widget-content {
+background:#FFF !important;
 
 /* TABS  */
 
