@@ -5,7 +5,7 @@ Mantra Theme for WordPress
 capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:
 the layout (sidebar position), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 20 font-families to choose from),
 text and header sizes, post metas, post excerpts, header image and background image, menus, social media links and icons, pins, bullets and more.
-	With 7 widget areas, subtle animations, modern graphics and an easy and responsive admin section, you can start customizing your blood right now.
+	With 7 widget areas, subtle animations, modern graphics and an easy and responsive admin section, you can start customizing your dream site right now.
 
 Among the 50+ customization options you'll find:
 
