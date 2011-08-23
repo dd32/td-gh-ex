@@ -89,7 +89,6 @@ $mop_sidebullet = $options['mop_sidebullet'];
 $mop_contentlist = $options['mop_contentlist'];
 
 $mop_excerpthome = $options['mop_excerpthome'];
-$mop_excerptcateg = $options['mop_excerptcateg'];
 $mop_excerptarchive = $options['mop_excerptarchive'];
 $mop_excerptwords = $options['mop_excerptwords'];
 

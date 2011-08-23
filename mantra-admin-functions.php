@@ -161,7 +161,7 @@ function mantra_init_fn(){
 	add_settings_field('mop_excerptarchive', __('Post Excerpts on Arhive and Category Pages','mantra') , 'setting_excerptarchive_fn', __FILE__, 'excerpt_section');
 	add_settings_field('mop_excerptasides', __('Affect posts in Asides Category','mantra') , 'setting_excerptasides_fn', __FILE__, 'excerpt_section');
 	add_settings_field('mop_excerptwords', __('Number of Words for Post Excerpts ','mantra') , 'setting_excerptwords_fn', __FILE__, 'excerpt_section');
-	add_settings_field('mop_excerptdots', __('Excerpt suffix', 'setting_excerptdots_fn','mantra') , __FILE__, 'excerpt_section');
+	add_settings_field('mop_excerptdots', __('Excerpt suffix','mantra') , 'setting_excerptdots_fn', __FILE__, 'excerpt_section');
 	add_settings_field('mop_excerptcont', __('Continue reading link text ','mantra') , 'setting_excerptcont_fn', __FILE__, 'excerpt_section');
 
 
@@ -193,41 +193,41 @@ function mantra_admin_styles() {
 
 // ************************************************************************************************************
 
-/*
+
 // Callback functions
 
 // General suboptions description
 
 function  section_layout_fn() {
 
-	echo "<p>".__("Settings for adjusting your blog's layout.", "mantra")."</p>";
+//	echo "<p>".__("Settings for adjusting your blog's layout.", "mantra")."</p>";
 }
 function  section_text_fn() {
-	echo "<p>".__("All text related customization options.", "mantra")."</p>";
+	//echo "<p>".__("All text related customization options.", "mantra")."</p>";
 }
 
 function  section_graphics_fn() {
-	echo "<p>".__("Settings for hiding or showing different graphics.", "mantra")."</p>";
+//	echo "<p>".__("Settings for hiding or showing different graphics.", "mantra")."</p>";
 }
 
 function  section_post_fn() {
-	echo "<p>".__("Settings for hiding or showing different post tags.", "mantra")."</p>";
+	//echo "<p>".__("Settings for hiding or showing different post tags.", "mantra")."</p>";
 }
 
 function  section_excerpt_fn() {
-	echo "<p>".__("Settings for post excerpts", "mantra")."</p>";
+//	echo "<p>".__("Settings for post excerpts", "mantra")."</p>";
 }
 
 function  section_appereance_fn() {
-	echo "<p>".__("Set text and background colors.", "mantra")."</p>";
+//	echo "<p>".__("Set text and background colors.", "mantra")."</p>";
 }
 
 function  section_social_fn() {
-	echo "<p>".__("Insert the addreses for your social media. Leave blank if not the case.
-	Please type the whole address (including <i>http://</i> ) Example : <u>http://www.facebook.com</u>.", "mantra")."</p>";
+//	echo "<p>".__("Insert the addreses for your social media. Leave blank if not the case.
+//	Please type the whole address (including <i>http://</i> ) Example : <u>http://www.facebook.com</u>.", "mantra")."</p>";
 }
 
-*/
+
 ////////////////////////////////
 //// LAYOUT SETTINGS ///////////
 ////////////////////////////////
@@ -1335,7 +1335,7 @@ function ma_options_validate($input) {
 	$input['mop_headercolor'] =  wp_kses_data($input['mop_headercolor']);
 	$input['mop_prefootercolor'] =  wp_kses_data($input['mop_prefootercolor']);
 	$input['mop_footercolor'] =  wp_kses_data($input['mop_footercolor']);
-	$input['mop_titlercolor'] =  wp_kses_data($input['mop_titlercolor']);
+	$input['mop_titlecolor'] =  wp_kses_data($input['mop_titlecolor']);
 	$input['mop_descriptioncolor'] =  wp_kses_data($input['mop_descriptioncolor']);
 	$input['mop_contentcolor'] =  wp_kses_data($input['mop_contentcolor']);
 	$input['mop_linkscolor'] =  wp_kses_data($input['mop_linkscolor']);
