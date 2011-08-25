@@ -44,6 +44,7 @@ $mop_tables = $options['mop_tables'];
 $mop_side = $options['mop_side'];
 $mop_sidewidth = $options['mop_sidewidth'];
 $mop_sidebar = $options['mop_sidebar'];
+if($mop_sidebar=='') $mop_sidebar='250';
 $totalwidth= $mop_sidewidth+$mop_sidebar+50;
 $mop_colpad = $options['mop_colpad'];
 $mop_fontsize = $options['mop_fontsize'];

@@ -4,7 +4,7 @@ Theme URI: http://www.riotreactions.com/mantra
 Description: Mantra is a general purpose WordPress theme, featuring a whole pack of over 50 customizable options and easy to use tweaks, capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (sidebar position), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 20 font-families to choose from),text and header sizes, post metas, post excerpts, header image and background image, menus, social media links and icons, pins, bullets and more. With 7 widget areas, subtle animations, modern graphics and an easy and responsive admin section, you can start creating your dream site right now.
 Author: Cryout Creations
 Author URI: http://www.cryoutcreations.com
-Version: 1.5.3
+Version: 1.5.4
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, red, blue, white, light, two-columns, right-sidebar, left-sidebar, theme-options, dark, flexible-width, custom-header, custom-menu, threaded-comments, sticky-post, translation-ready, microformats, rtl-language-support
@@ -979,12 +979,9 @@ body.page .edit-link {
 	margin: 0;
 	height: auto;
 	max-width: 790px;
-	border:1px solid #DDD;
+	border:6px solid #DDD;
 	padding:3px;
 	background-color:#F3F3F3;
-	box-shadow: 3px 3px 3px #999;
-	-moz-box-shadow: 3px 3px 3px #999;
-    -webkit-box-shadow: 3px 3px 3px #999;
 	border-radius:5px;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
@@ -1523,6 +1520,10 @@ color:#0D85CC;
 	-webkit-box-shadow:none;
 	color:#0D85CC;
 	text-align:left;
+	border-radius:10px;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	width:95%;
 }
 
 #footer-widget-area a {
@@ -1531,7 +1532,6 @@ color:#0D85CC;
 	-moz-box-shadow:none;
 	-webkit-box-shadow:none;
 	text-shadow:none;
-
 	border:0;
 	padding:0;margin:0;
 }
