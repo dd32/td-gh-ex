@@ -1,6 +1,13 @@
 ------------------------------------------------------------------------------------------------------------
-For detailed documentation and support please visit: http://www.elmastudio.de/themes/ari-wordpress-theme/
+For detailed documentation and support please visit: http://www.elmastudio.de/wordpress-themes/ari/
 ------------------------------------------------------------------------------------------------------------
+
+Version 1.0.9 - 26th August 2011
+-------------------------------
+1. Bugfix for searchform widget beacuse the searchform widget was breaking the layout (had to delete unneeded closing div in line 99 of functions.php)
+2. Added Swedish and French theme translations to the languages folder
+3. Fixed images resizing for post thumbnails in Smartphone version (line 901 in style.css)
+
 
 Version 1.0.8 - 21th August 2011
 -------------------------------
@@ -12,7 +19,7 @@ Version 1.0.8 - 21th August 2011
 4. Updated theme options page.
 5. Added styles for sticky posts.
 6. Bugfix for displaying smilies in posts.
-7. Bugifix to resize logo image correctly within the left sidebar (important for viewing on smartphones)
+7. Bugfix to resize logo image correctly within the left sidebar (important for viewing on smartphones)
 
 
 Version 1.0.7 - 07th March 2011
