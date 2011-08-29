@@ -1,15 +1,15 @@
 <?php
 /** Chip Life Custom Header */
-add_action( 'chip_life_setup', 'chip_life_custom_header' ); 
-function chip_life_custom_header() {
+add_action( 'chip_life_custom_header', 'chip_life_custom_header_init' ); 
+function chip_life_custom_header_init() {
 
 	/** The default header text color */
 	define( 'HEADER_TEXTCOLOR', '272836' );
 	/** By leaving empty, we allow for random image rotation. */
 	define( 'HEADER_IMAGE', '' );
 	/** The height and width of your custom header. */
-	define( 'HEADER_IMAGE_WIDTH', apply_filters( 'chip_life_header_image_width', 960 ) );
-	define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'chip_life_header_image_height', 200 ) );
+	define( 'HEADER_IMAGE_WIDTH', 960 );
+	define( 'HEADER_IMAGE_HEIGHT', 200 );
 	/** Header Text */
 	define( 'NO_HEADER_TEXT', false );
 	

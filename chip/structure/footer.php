@@ -13,7 +13,9 @@ function chip_life_footer_lmr_sidebars_init() {
     <div id="footer-lmr-sidebars">
       <div id="footer-lmr-sidebars-data">
 	
-	    <?php if( is_active_sidebar('footer-left-sidebar') ): ?>
+	    <?php do_action( 'chip_life_footer_lmr_before' ); ?>
+		
+		<?php if( is_active_sidebar('footer-left-sidebar') ): ?>
         <div id="footer-left-sidebar">
           <div id="footer-left-sidebar-data">    
 	        <?php dynamic_sidebar( 'footer-left-sidebar' ); ?>
@@ -70,7 +72,11 @@ function chip_life_info_init() {
 	
 	$parent_theme = get_template();
 	$child_theme = get_current_theme();
-	$child_theme = ( $child_theme !== 'Chip Life' ) ? $child_theme . ' Theme On ' : '' ;
+	$child_theme_label = '';
+	
+	if( $child_theme !== 'Chip Life' ) {
+		$child_theme_label = '<a href="'.CHIP_LIFE_CHILD_THEME_URL.'" title="'.get_current_theme().'">' . get_current_theme() . '</a> Theme On ';
+	}
 	
 	echo '<div id="chip-life-credit">
 	  <div id="chip-life-credit-data">
@@ -83,7 +89,7 @@ function chip_life_info_init() {
 		 
 		 <div class="chip-life-info">
 		   <div class="chip-life-info-data">
-		     '.$child_theme.'Chip Life Framework by <a href="http://www.tutorialchip.com/" title="TutorialChip">TutorialChip</a> &middot; <a href="http://wordpress.org/" title="WordPress">WordPress</a>
+		     '.$child_theme_label.'Chip Life Framework by <a href="http://www.tutorialchip.com/" title="TutorialChip">TutorialChip</a> &middot; <a href="http://wordpress.org/" title="WordPress">WordPress</a>
 		   </div>
 		 </div>		 
 		 

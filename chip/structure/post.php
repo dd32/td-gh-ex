@@ -13,36 +13,42 @@ function chip_life_post_formats_init() {
 			case 'aside';
 			case 'link':
 			case 'status':			
-			do_action( 'chip_life_post_format_reset' );
+			do_action( 'chip_life_post_format_custom_before' );
 			do_action( 'chip_life_post_format_aside' );
+			do_action( 'chip_life_post_format_custom_after' );
 			break;
 			
 			case 'gallery';			
-			do_action( 'chip_life_post_format_reset' );
+			do_action( 'chip_life_post_format_custom_before' );
 			do_action( 'chip_life_post_format_gallery' );
+			do_action( 'chip_life_post_format_custom_after' );
 			break;
 			
 			case 'image';
-			do_action( 'chip_life_post_format_reset' );
+			do_action( 'chip_life_post_format_custom_before' );
 			do_action( 'chip_life_post_format_image' );
+			do_action( 'chip_life_post_format_custom_after' );
 			break;
 			
 			default:
-			do_action( 'chip_life_post_format_reset' );
+			do_action( 'chip_life_post_format_standard_before' );
+			do_action( 'chip_life_post_format_standard' );
+			do_action( 'chip_life_post_format_standard_after' );
 			
 		}
 }
 
-/** Chip Life Post Format Reset */
-add_action( 'chip_life_post_format_reset', 'chip_life_post_format_reset_init' );	
-function chip_life_post_format_reset_init() {
+/** Chip Life Post Format Standard Before */
+add_action( 'chip_life_post_format_standard_before', 'chip_life_post_format_standard_reset_init' );	
+function chip_life_post_format_standard_reset_init() {
 	
-	/** Remove All Hooks Except Standard Hooks */
-	remove_action( 'chip_life_post_content_after', 'chip_life_post_info_init' );
-	remove_action( 'chip_life_post_content_after', 'chip_life_post_meta_init' );
-	
-	/** Load Standard Format */
-	do_action( 'chip_life_post_format_standard' );			
+	/** Remove All Loop Hooks */
+	remove_all_actions( 'chip_life_post_title_before' );
+	remove_all_actions( 'chip_life_post_title' );
+	remove_all_actions( 'chip_life_post_title_after' );
+	remove_all_actions( 'chip_life_post_content_before' );
+	remove_all_actions( 'chip_life_post_content' );
+	remove_all_actions( 'chip_life_post_content_after' );
 	
 }
 
@@ -63,51 +69,55 @@ function chip_life_post_format_standard_init() {
 	
 	add_action( 'chip_life_post_wrap_after', 'chip_life_post_related_single_init' );	
 	add_action( 'chip_life_post_wrap_after', 'chip_life_post_author_box_single_init' );
-	add_action( 'chip_life_post_wrap_after', 'chip_life_comments_template_single_init' );	
-	
-	add_action( 'chip_life_while_after', 'chip_life_posts_navigation_init' );
-	add_action( 'chip_life_have_posts_else_before', 'chip_life_post_not_found_init' );		
+	add_action( 'chip_life_post_wrap_after', 'chip_life_comments_template_single_init' );				
 	
 }
 
+/** Chip Life Post Format Custom Before */
+add_action( 'chip_life_post_format_custom_before', 'chip_life_post_format_standard_reset_init' );
+
 /** Chip Life Post Format: Aside */
 add_action( 'chip_life_post_format_aside', 'chip_life_post_format_aside_init' );	
-function chip_life_post_format_aside_init() {
+function chip_life_post_format_aside_init() {	
 	
-	/** Remove Other Hooks */				
-	remove_action( 'chip_life_post_title', 'chip_life_post_title_init' );
-	remove_action( 'chip_life_post_title_after', 'chip_life_post_info_init' );
-	remove_action( 'chip_life_post_content', 'chip_life_post_image_init' );
-	remove_action( 'chip_life_post_content_after', 'chip_life_post_meta_init' );
-	
-	/** Aside Hooks */
+	/** Aside Format */
+	add_action( 'chip_life_post_title_before', 'chip_life_post_format_indicator_init' );	
+	add_action( 'chip_life_post_content', 'chip_life_post_content_standard_init' );
 	add_action( 'chip_life_post_content_after', 'chip_life_post_info_init' );			
 	
 }
 
 /** Chip Life Post Format: Gallery */
 add_action( 'chip_life_post_format_gallery', 'chip_life_post_format_gallery_init' );	
-function chip_life_post_format_gallery_init() {
+function chip_life_post_format_gallery_init() {	
 	
-	/** Remove Other Hooks */				
-	remove_action( 'chip_life_post_content', 'chip_life_post_image_init' );	
+	/** Gallery Format */
+	add_action( 'chip_life_post_title_before', 'chip_life_post_format_indicator_init' );	
+	add_action( 'chip_life_post_title', 'chip_life_post_title_init' );	
+	add_action( 'chip_life_post_title_after', 'chip_life_post_info_init' );
+	
+	add_action( 'chip_life_post_content', 'chip_life_post_content_standard_init' );
+	add_action( 'chip_life_post_content_after', 'chip_life_post_meta_init' );	
 	
 }
 
 /** Chip Life Post Format: Image */
 add_action( 'chip_life_post_format_image', 'chip_life_post_format_image_init' );	
-function chip_life_post_format_image_init() {
+function chip_life_post_format_image_init() {	
 	
-	/** Remove Other Hooks */				
-	remove_action( 'chip_life_post_title_after', 'chip_life_post_info_init' );
-	remove_action( 'chip_life_post_content_after', 'chip_life_post_meta_init' );	
-	remove_action( 'chip_life_post_content', 'chip_life_post_image_init' );
+	/** Standard Format */
+	add_action( 'chip_life_post_title_before', 'chip_life_post_format_indicator_init' );	
+	add_action( 'chip_life_post_title', 'chip_life_post_title_init' );	
+	add_action( 'chip_life_post_title_after', 'chip_life_sponsor_sidebar2_single_init' );
 	
-	/** Image Hooks */
+	add_action( 'chip_life_post_content', 'chip_life_post_content_standard_init' );
 	add_action( 'chip_life_post_content_after', 'chip_life_post_info_init' );
 	add_action( 'chip_life_post_content_after', 'chip_life_post_meta_init' );		
 	
 }
+
+/** Chip Life Posts Navigation */
+add_action( 'chip_life_while_after', 'chip_life_posts_navigation_init' );
 
 /**
  * Chip Life Post Functions
@@ -153,11 +163,18 @@ function chip_life_post_title_init() {
 function chip_life_post_image_init() {
 	
 	$chip_life_options = get_chip_life_options();
-	if ( ! is_singular() && $chip_life_options['chip_life_featured_image'] != 'none' ) {
-		$img = chip_life_get_image( array( 'format' => 'html', 'size' => $chip_life_options['chip_life_featured_image'], 'attr' => array( 'class' => 'post-image' ) ) );
-		printf( '<a href="%s" title="%s">%s</a>', get_permalink(), the_title_attribute( 'echo=0' ), $img );
+	if ( ! is_singular() ) {
+		get_chip_life_post_image();
 	}			
 
+}
+function get_chip_life_post_image() {
+	
+	$chip_life_options = get_chip_life_options();
+	if ( $chip_life_options['chip_life_featured_image'] != 'none' ) {
+		$img = chip_life_get_image( array( 'format' => 'html', 'size' => $chip_life_options['chip_life_featured_image'], 'attr' => array( 'class' => 'post-image' ) ) );
+		printf( '<div class="post-image-wrap"><a href="%s" title="%s">%s</a></div>', get_permalink(), the_title_attribute( 'echo=0' ), $img );
+	}	
 }
 
 /** Chip Life Post Content: Standard */
@@ -204,7 +221,8 @@ function chip_life_post_format_gallery_cb_init() {
 	
 	global $post;
 	
-	$img = chip_life_get_image( array( 'format' => 'html', 'size' => 'thumbnail', 'attr' => array( 'class' => 'post-image' ) ) );
+	$chip_life_options = get_chip_life_options();
+	$img = chip_life_get_image( array( 'format' => 'html', 'size' => $chip_life_options['chip_life_featured_image'], 'attr' => array( 'class' => 'post-image' ) ) );
 	printf( '<a href="%s" title="%s">%s</a>', get_permalink(), the_title_attribute( 'echo=0' ), $img );
 	
 	$images = get_children( array( 'post_parent' => $post->ID, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order', 'order' => 'ASC', 'numberposts' => 999 ) );
@@ -236,11 +254,12 @@ function chip_life_post_pages_init() {
 }
 
 /** Chip Life Post Not Found */
+add_action( 'chip_life_have_posts_else_before', 'chip_life_post_not_found_init' );
 function chip_life_post_not_found_init() {	
 	chip_life_post_not_found();
 }
 
-/** Chip Life Post Not */
+/** Chip Life Post Not Found Print */
 function chip_life_post_not_found() {
 ?>
 <div class="post">  
@@ -266,12 +285,15 @@ function chip_life_post_info_init() {
 	if ( 'post' != get_post_type() ) {		
 		
 		$chip_life_post_info = '[chip_life_post_edit]';
-		printf( '<div class="post-info">%s</div>', apply_filters( 'chip_life_post_info', $chip_life_post_info ) );
+		$output = apply_filters( 'chip_life_post_info', $chip_life_post_info, 'page' );
+		if( !empty( $output ) ) {
+			printf( '<div class="post-info">%s</div>', $output );
+		}		
 	
 	} else {
 
 		$chip_life_post_info = '[chip_life_post_date] [chip_life_post_author_posts_link] [chip_life_post_comments] [chip_life_post_edit]';
-		printf( '<div class="post-info">%s</div>', apply_filters( 'chip_life_post_info', $chip_life_post_info ) );
+		printf( '<div class="post-info">%s</div>', apply_filters( 'chip_life_post_info', $chip_life_post_info, 'post' ) );
 	
 	}
 				

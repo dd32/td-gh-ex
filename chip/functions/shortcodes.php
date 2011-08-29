@@ -1,6 +1,6 @@
 <?php
 /**
- * Post Shotcodss
+ * Post Shortcodes
  */
 
 /** Chip Life Post Date Shortcode */
@@ -53,7 +53,7 @@ function chip_life_post_edit_shortcode( $atts ) {
 	if ( ! empty( $edit ) ) {
 	$output = '<span class="post-edit">' . $edit . '</span>';
 	}
-	return apply_filters('chip_life_post_edit_shortcode_output', $output, $atts);
+	return apply_filters( 'chip_life_post_edit_shortcode_output', $output, $atts );
 
 }
 
@@ -62,20 +62,21 @@ add_shortcode( 'chip_life_post_categories', 'chip_life_post_categories_shortcode
 function chip_life_post_categories_shortcode( $atts ) {
 
 	/** Attributes */	
-	$defaults = array( 'sep'    => ', ', 'before' => 'Filed Under: ', 'after'  => '' );
+	$defaults = array( 'sep' => ', ', 'before' => 'Filed Under: ', 'after' => '' );
+	$defaults = apply_filters( 'chip_life_post_categories_shortcode_defaults', $defaults );
 	$atts = shortcode_atts( $defaults, $atts );
 	
 	/** Manipulation */	
 	$chip_life_options = get_chip_life_options( 'chip_life_options' );
-	if( $chip_life_options['chip_life_category_display'] != 1 ) {
+	$cats = get_the_category_list( trim( $atts['sep'] ) . ' ' );
+	if( ! $cats || $chip_life_options['chip_life_category_display'] != 1 ) {
 		return;
 	}
 
-	$cats = get_the_category_list( trim( $atts['sep'] ) . ' ' );
-
-	/** Output */	
+	/** Output */
+	$cats = apply_filters( 'chip_life_post_categories_shortcode_output', $cats );		
 	$output = sprintf( '<span class="post-categories">%2$s%1$s%3$s</span> ', $cats, $atts['before'], $atts['after'] );
-	return apply_filters( 'chip_life_post_categories_shortcode_output', $output, $atts );
+	return $output;
 
 }
 
@@ -84,7 +85,8 @@ add_shortcode( 'chip_life_post_tags', 'chip_life_post_tags_shortcode' );
 function chip_life_post_tags_shortcode( $atts ) {
 
 	/** Attributes */	
-	$defaults = array( 'sep'    => ', ', 'before' => 'Tagged With: ', 'after'  => '' );
+	$defaults = array( 'sep' => ', ', 'before' => 'Tagged With: ', 'after'  => '' );
+	$defaults = apply_filters( 'chip_life_post_tags_shortcode_defaults', $defaults );
 	$atts = shortcode_atts( $defaults, $atts );
 
 	/** Manipulation */	
@@ -95,9 +97,10 @@ function chip_life_post_tags_shortcode( $atts ) {
 		return;
 	}
 
-	/** Output */		
-	$output = sprintf( '<span class="post-tags">%s</span> ', $tags );
-	return apply_filters( 'chip_life_post_tags_shortcode_output', $output, $atts );
+	/** Output */
+	$tags = apply_filters( 'chip_life_post_tags_shortcode_output', $tags );
+	$output = sprintf( '<span class="post-tags">%1$s</span> ', $tags );
+	return $output;	
 
 }
 
@@ -135,6 +138,7 @@ function chip_life_post_comments_shortcode( $atts ) {
 	
 	/** Attributes */
 	$defaults = array( 'zero' => 'Leave a Comment', 'one' => '1 Comment', 'more' => '% Comments', 'hide_if_off' => 'enabled', 'before' => '', 'after' => '' );
+	$defaults = apply_filters( 'chip_life_post_comments_shortcode_defaults', $defaults );
 	$atts = shortcode_atts( $defaults, $atts );
 
 	/** Manipulation */

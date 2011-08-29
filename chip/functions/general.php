@@ -13,6 +13,21 @@ function get_chip_life_options( $key = 'chip_life_options' ) {
 
 }
 
+/** Chip Life Layout Skins */
+function chip_life_layout_skins( $args = array() ) {
+	
+	$defaults = array (
+		'chip-life-default' => 'Chip Life Default',
+		'chip-life-green' => 'Chip Life Green'
+	);
+	
+	$defaults = apply_filters( 'chip_life_layout_skins_defaults', $defaults );	
+	$args = wp_parse_args( $args, $defaults );
+	
+	return $args;
+
+}
+
 /**
  * Avoid "Undefined Index"
  * Must be passed by reference
@@ -24,6 +39,11 @@ function chip_life_undefined_index_fix( &$var ) {
 	}
 	
 	return '';
+}
+
+/** Chip Life Search Form */
+function chip_life_search_form_init() {
+	get_search_form();
 }
 
 /** Chip Life 404 Page */

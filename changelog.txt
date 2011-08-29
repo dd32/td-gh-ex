@@ -1,4 +1,20 @@
-= 1.3.9 [2011.08.08] =
+= 1.4 [2011.08.25] =
+
+* Base stylesheet print logic has been changed to support child themes.
+* New hooks have been added.
+* Change in "$content_width" logic to provide a flexible hook to child themes.
+* Change in Custom Header logic.
+* Skins logic has been added.
+* New Green Skin has been added.
+* Sleek changes in the theme look.
+* Chip Life Reference page integrated.
+* New logic for headers has been written.
+* New logic for Widgets has been written.
+* Stnadard Post Format Reset bug has been fixed.
+* Change in Loop Structure.
+* New Filters have been integrated.
+
+= 1.3.9 [2011.08.06] =
 
 * Image resized in editor fixed.
 * Sponsor 2 content appearing under post title. [For Theme Reviewers]
@@ -7,7 +23,7 @@
 * Support for Child Theme sidebars has been integrated.
 * Change in position of sidebars hooks.
 
-= 1.3.8 [2011.08.08] =
+= 1.3.8 [2011.08.04] =
 
 * Code Reborn to use the power of WordPress action/filter hooks and to support Child Themes.
 * New and fresh look of Chip Life.

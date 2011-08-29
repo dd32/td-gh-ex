@@ -7,7 +7,7 @@ function chip_life_excerpt_length( $length ) {
 
 /** Returns a "Read More" link for excerpts */
 function chip_life_continue_reading_link() {
-	return '<span class="more-link-span"><a href="'. get_permalink() . '" class="more-link">Read More</a></span>';
+	return '<span class="more-link-span"><a href="'. get_permalink() . '" class="more-link">'. apply_filters( 'chip_life_continue_reading_link', 'Read More' ) .' </a></span>';
 }
 
 /** Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and chip_life_continue_reading_link(). */

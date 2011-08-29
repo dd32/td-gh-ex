@@ -1,8 +1,16 @@
+/*  Global
+------------------------ */
+
 .chip-life-clear {
 	clear: both;
 	height: 0px;
 	font-size: 0px;
 	line-height: 0px;
+}
+
+.chip-life-focus {
+	color: #dc4b39;
+	font-weight: bold;
 }
 
 /*  Tabs
@@ -25,13 +33,16 @@
 }
 
 .chip-life-tabs-content a:link,
-.chip-life-tabs-content a:visited {
+.chip-life-tabs-content a:visited,
+.chip-life-tabs-data a:link,
+.chip-life-tabs-data a:visited {
 	color: #dc4b39;
 	text-decoration: none;
 	font-weight: bold;
 }
 
-.chip-life-tabs-content a:hover {
+.chip-life-tabs-content a:hover,
+.chip-life-tabs-data a:hover {
 	text-decoration: underline;
 }
 
@@ -56,4 +67,35 @@
 
 .chip-life-image-radio-option img {
 	margin: 0 0 0 -2px;
+}
+
+/*  Chip Life Framework Tab
+------------------------ */
+
+#chip_life_framework_tab {
+	margin: 20px 0 0 0;
+}
+
+#chip_life_framework_tab ul {
+	list-style: square;
+	margin: 0 0 0 30px;
+}
+
+#chip_life_framework_tab h1 {
+	color: #333;
+	font-family: Helvetica, Arial;
+	font-weight: bold;
+	text-shadow: 0 1px 0 #fff;
+	font-size: 18px;
+	margin: 0 0 10px 0;
+}
+
+#chip_life_framework_tab a:link,
+#chip_life_framework_tab a:visited {
+	color: #dc4b39;
+	text-decoration: none;
+}
+
+#chip_life_framework_tab a:hover {
+	text-decoration: underline;
 }

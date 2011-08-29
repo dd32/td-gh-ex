@@ -6,18 +6,20 @@
   <div class="chip-life-tabs ui-tabs ui-widget ui-widget-content ui-corner-all">
    
      <div class="ui-state-default ui-corner-all">
-       <h2>Welcome by Chip Life Support</h2>
+       <h2>Chip Life Framework</h2>
      </div>
    
      <div class="chip-life-tabs-content">
-       <p>Thanks of using <?php echo get_current_theme(); ?> WordPress theme and to become a part of <a href="http://www.tutorialchip.com/" class="chiplifeadmin">TutorialChip</a> family. We take care our family by providing a professional and an instant support at <strong><?php echo get_current_theme(); ?> forum</strong>. We are just a few clicks away from you.</p>
-       <p>
-         <a href="http://forums.tutorialchip.com/forums/6-Chip-Life" class="chiplifeadmin"><?php echo get_current_theme(); ?> Forum</a> &sdot;
-         <a href="http://www.tutorialchip.com/chip-life/" class="chiplifeadmin"><?php echo get_current_theme(); ?> Official Page</a> &sdot;
-         <a href="http://chip-life.tutorialchip.com/" class="chiplifeadmin"><?php echo get_current_theme(); ?> Demo Page</a> &sdot;
-         <a href="http://www.tutorialchip.com/chip-life-guide-book/" class="chiplifeadmin"><?php echo get_current_theme(); ?> Guide Book</a> &sdot;
-         <a href="http://www.tutorialchip.com/" class="chiplifeadmin">More WordPress Themes</a>
-       </p>
+       <p><strong>Version:</strong> 1.4 &sdot; <strong>Released:</strong> August 29, 2011 &sdot; <strong>Author:</strong> <a href="http://www.tutorialchip.com/" target="_blank">TutorialChip</a></p>
+       <?php
+       $chip_life_current_theme = get_current_theme();
+	   $chip_life_theme_info = 'You are using <strong>Chip Life Framework</strong>.';
+	   if( $chip_life_current_theme !== 'Chip Life' ) {
+		   $chip_life_theme_info = 'You are using Chip Life Child Theme <strong>'. $chip_life_current_theme . '</strong>';
+	   }
+	   ?>
+       <p><?php echo $chip_life_theme_info; ?></p>
+       <p>Please visit <a href="<?php echo admin_url( 'themes.php?page=chip-life-reference' ); ?>"><strong>Chip Life Reference</strong></a> page for Chip Life Child Themes, Support and Documentation.</p>       
      </div>   
   
   </div>
@@ -54,8 +56,8 @@
 
 <script>
 //<![CDATA[
-jQuery(document).ready(function(){
-    jQuery( "#chip_life_tabs" ).tabs({
+jQuery(document).ready(function($){
+    $( '#chip_life_tabs' ).tabs({
 		cookie: { expires: 1 }
 	});
 });

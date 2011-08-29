@@ -47,9 +47,8 @@ function chip_life_post_related_loop_init( $args ) {
     
     <div id="post-related">
       
-	  <?php echo apply_filters( 'chip_life_title_related_posts_text', '<h2 id="post-related-title">Related Posts</h2>' ); ?>
-    
-    <?php
+	<?php 
+	echo apply_filters( 'chip_life_title_related_posts_text', '<h2 id="post-related-title">Related Posts</h2>' );    
 	while ( $custom_query->have_posts() ) : $custom_query->the_post();	
 	?>
     
@@ -57,20 +56,15 @@ function chip_life_post_related_loop_init( $args ) {
         
         <div class="post-related-image">            
             <?php
-            $img = chip_life_get_image( array( 'format' => 'html', 'size' => 'thumbnail', 'attr' => array( 'class' => 'post-image' ) ) );
+            $img = chip_life_get_image( array( 'format' => 'html', 'size' => 'thumbnail', 'attr' => array( 'class' => 'post-image-related' ) ) );
 			if( empty( $img ) ){
-				echo '<img src="'.PARENT_URL.'/images/chip-life-default-image.png" width="150" height="150" class="post-image" />';
+				echo '<img src="'.CHIP_LIFE_PARENT_URL.'/images/chip-life-default-image.png" width="150" height="150" class="post-image-related" />';
 			}
 			printf( '<a href="%s" title="%s">%s</a>', get_permalink(), the_title_attribute( 'echo=0' ), $img );
 			?>            
         </div> <!-- end .post-related-image -->
         
-		<div class="post-related-title">
-        	<?php
-            $title = substr( get_the_title(), 0, 25 ) . '...';
-			printf( '<h3 class="entry-title"><a href="%s" title="%s" rel="bookmark">%s</a></h3>', get_permalink(), the_title_attribute( 'echo=0' ), $title );
-			?>
-        </div> <!-- end .post-related-title -->
+        <?php do_action( 'chip_life_post_related_title' ); ?>	
             
       </div> <!-- end .postclass -->    
 
@@ -85,5 +79,18 @@ function chip_life_post_related_loop_init( $args ) {
     
 <?php    	
 	endif;	
+}
+
+/** Chip Life Post Related Title */
+add_action( 'chip_life_post_related_title', 'chip_life_post_related_title_init' );
+function chip_life_post_related_title_init() {
+?>
+<div class="post-related-title">
+	<?php
+    $title = substr( get_the_title(), 0, 25 ) . '...';
+    printf( '<h3 class="entry-title"><a href="%s" title="%s" rel="bookmark">%s</a></h3>', get_permalink(), the_title_attribute( 'echo=0' ), $title );
+    ?>
+</div> <!-- end .post-related-title -->
+<?php
 }
 ?>

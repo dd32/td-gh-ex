@@ -28,11 +28,11 @@ function chip_life_js_logic_init() {
 <script language="javascript" type="text/javascript">
 jQuery(document).ready(function($) {
 	
-  $(".menu1 ul,.menu2 ul").supersubs({ 
-    minWidth:    12,
-	maxWidth:    15,
-	extraWidth:  1
-  }).superfish();
+  $( '.menu1 ul,.menu2 ul' ).supersubs( {   	
+	minWidth: 12,
+  	maxWidth: 15,
+  	extraWidth: 1
+  } ).superfish();
   <!-- end .menu's -->
 	
 });

@@ -3,11 +3,18 @@
 add_filter( 'body_class', 'chip_life_layout_body_class' );	
 function chip_life_layout_body_class( $existing_classes ) {
 	
-	/** Chip Life Layout Style Logic */
+	/** Classes Array */
 	$classes = array();
+	
+	/** Chip Life Layout Skin Logic */
+	$chip_life_layout_skin = get_chip_life_layout_skin();
+	if( ! empty( $chip_life_layout_skin ) ) {
+		$classes[] = $chip_life_layout_skin;
+	}
+	
+	/** Chip Life Layout Style Logic */
 	$chip_life_layout = get_chip_life_layout();
 	
-	/** Logic */
 	switch( $chip_life_layout ) {
 		
 		case 'content':
@@ -29,7 +36,13 @@ function chip_life_layout_body_class( $existing_classes ) {
 
 }
 
-/** Chip Life Layout */
+/** Chip Life Layout Skin */
+function get_chip_life_layout_skin() {	
+	$chip_life_options = get_chip_life_options();
+	return $chip_life_options['chip_life_layout_skin'];
+}
+
+/** Chip Life Layout Style  */
 function get_chip_life_layout() {
 	
 	/** Setup Cache */

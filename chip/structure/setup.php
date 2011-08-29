@@ -1,14 +1,25 @@
 <?php
 /** Set the content width based on the theme's design and stylesheet. */
-add_action( 'chip_life_setup', 'chip_life_content_width' );
-function chip_life_content_width() {
+add_action( 'chip_life_setup', 'chip_life_content_width_init' );
+function chip_life_content_width_init() {	
+	chip_life_content_width();
+}
+
+/** Chip Life Content Width */
+function chip_life_content_width( $args = array() ) {
 	
-	global $content_width;		
+	global $content_width;	
+	
+	$defaults = array (
+		'content_width'	=>	'595',
+	);
+	$args = wp_parse_args( $args, $defaults );
+	
 	if ( !isset( $content_width ) ) {
-		$content_width = 595;
+		$content_width = $args['content_width'];
 	}
 
-}	
+}
 
 /** 
  * Tell WordPress to run chip_life_setup() when the 'after_setup_theme' hook is run.
@@ -30,6 +41,9 @@ if ( ! function_exists( 'chip_life_setup' ) ):
 		
 		/** This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images */
 		add_theme_support( 'post-thumbnails' );
+		
+		/** Chip Life Custom Header Hook */
+		do_action( 'chip_life_custom_header' );
 		
 		/** Add support for custom backgrounds */
 		add_custom_background();

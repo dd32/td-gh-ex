@@ -23,6 +23,7 @@ function chip_life_loop_init() {
         </div><!-- end .entry-content -->
         <?php do_action( 'chip_life_post_content_after' ); ?>
     
+    <div class="clear"></div>
     </div> <!-- end .postclass -->
 
 <?php

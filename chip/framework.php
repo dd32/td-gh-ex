@@ -6,19 +6,26 @@ function chip_life_init() {
 	do_action( 'chip_life_stage_before' );
 	?>
     <div id="stage">
-      <div id="stage-data">
-      
-        <?php do_action( 'chip_life_content_before' ); ?>
-        <div id="content">
-          <div id="content-data">
-            <?php do_action( 'chip_life_content' ); ?>
-          <div class="clear"></div>
-          </div> <!-- end #content-data --> 
-        </div> <!-- end #content -->
-	    <?php 
-		do_action( 'chip_life_content_after' );
-		get_sidebar();
-		?>        	  
+      <div id="stage-data">      
+        
+        <div id="content-wrap">          
+          
+          <?php do_action( 'chip_life_content_wrap_before' ); ?>
+          
+          <div id="content">
+            <div id="content-data">
+			  <?php do_action( 'chip_life_content_before' ); ?>
+			  <?php do_action( 'chip_life_content' ); ?>
+              <?php do_action( 'chip_life_content_after' ); ?>              
+            <div class="clear"></div>
+            </div> <!-- end #content-data --> 
+          </div> <!-- end #content -->	              
+          
+          <?php do_action( 'chip_life_content_wrap_after' ); ?>
+          
+        </div> <!-- end #content-wrap -->
+		
+		<?php get_sidebar(); ?>        	  
       
       <div class="clear"></div>
       </div> <!-- end #stage-data -->  

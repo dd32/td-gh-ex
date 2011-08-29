@@ -34,7 +34,7 @@ function chip_life_post_layout_metabox_cb() {
 	?>
 		<div class="chip-life-image-radio-option">
 		  <label><input type="radio" id="chip_life_post_layout_meta" name="chip_life_post_layout_meta" value="<?php echo $key; ?>" <?php checked( $key, $chip_life_post_layout_meta ); ?> />
-		    <span><img src="<?php echo PARENT_URL; ?>/images/<?php echo $key; ?>.png" width="136" height="122" alt="" /> <?php echo $val; ?> </span>
+		    <span><img src="<?php echo CHIP_LIFE_PARENT_URL; ?>/images/<?php echo $key; ?>.png" width="136" height="122" alt="" /> <?php echo $val; ?> </span>
 		  </label>        
         </div>		
 		

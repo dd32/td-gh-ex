@@ -14,7 +14,7 @@ class Chip_Life_Options {
 		
 			/** Register Admin Stylesheet */
 			wp_register_style( 'chip_life_style_admin', CHIP_LIFE_CHIP_URL . '/admin/style.css' );
-			wp_register_style( 'chip_life_style_uismoothness', CHIP_LIFE_CHIP_URL . '/js/ui/css/smoothness/jquery-ui-1.8.14.custom.css' );
+			wp_register_style( 'chip_life_style_uismoothness', CHIP_LIFE_CHIP_URL . '/js/ui/css/smoothness/jquery-ui-1.8.16.custom.css' );
 			
 			/** Register Admin Scripts */
 			wp_register_script( 'chip_life_script_jquery_cookie', CHIP_LIFE_CHIP_URL . '/js/jquery.cookie.js' );
@@ -25,7 +25,8 @@ class Chip_Life_Options {
 			/** Chip Blog Section */
 			add_settings_section( 'chip_life_section_blog', 'Blog Options', array( 'Chip_Life_Options', 'chip_life_section_blog_fn' ), 'chip_life_section_blog_page' );			
 			
-			add_settings_field( 'chip_life_field_header_style', 'Header Style', array( 'Chip_Life_Options', 'chip_life_field_header_style_fn' ), 'chip_life_section_blog_page', 'chip_life_section_blog' );						
+			add_settings_field( 'chip_life_field_custom_header', 'Display Custom Header', array( 'Chip_Life_Options', 'chip_life_field_custom_header_fn' ), 'chip_life_section_blog_page', 'chip_life_section_blog' );
+			add_settings_field( 'chip_life_field_sidebars_header', 'Display Sidebars Header', array( 'Chip_Life_Options', 'chip_life_field_sidebars_header_fn' ), 'chip_life_section_blog_page', 'chip_life_section_blog' );						
 			
 			add_settings_field( 'chip_life_field_primary_menu', 'Display Primary Menu', array( 'Chip_Life_Options', 'chip_life_field_primary_menu_fn' ), 'chip_life_section_blog_page', 'chip_life_section_blog' );
 			add_settings_field( 'chip_life_field_category_display', 'Display Category', array( 'Chip_Life_Options', 'chip_life_field_category_display_fn' ), 'chip_life_section_blog_page', 'chip_life_section_blog' );
@@ -45,6 +46,7 @@ class Chip_Life_Options {
 			/** Chip Layout Section */
 			add_settings_section( 'chip_life_section_layout', 'Layout Options', array( 'Chip_Life_Options', 'chip_life_section_layout_fn' ), 'chip_life_section_layout_page' );			
 			
+			add_settings_field( 'chip_life_field_layout_skin', 'Layout Skin', array( 'Chip_Life_Options', 'chip_life_field_layout_skin_fn' ), 'chip_life_section_layout_page', 'chip_life_section_layout' );
 			add_settings_field( 'chip_life_field_layout_style', 'Layout Style', array( 'Chip_Life_Options', 'chip_life_field_layout_style_fn' ), 'chip_life_section_layout_page', 'chip_life_section_layout' );
 			add_settings_field( 'chip_life_field_featured_image', 'Featured Image', array( 'Chip_Life_Options', 'chip_life_field_featured_image_fn' ), 'chip_life_section_layout_page', 'chip_life_section_layout' );
 			
@@ -73,7 +75,8 @@ class Chip_Life_Options {
 		*/
 		
 		function chip_life_admin_menu() {		
-			$page = add_theme_page( 'Chip Life Theme Options', 'Chip Life Theme Options', 'edit_theme_options', 'chip-life-options', array( 'Chip_Life_Options', 'chip_life_setting_fn' ) );		
+			add_theme_page( 'Chip Life Options', 'Chip Life Options', 'edit_theme_options', 'chip-life-options', array( 'Chip_Life_Options', 'chip_life_setting_fn' ) );
+			add_theme_page( 'Chip Life Reference', 'Chip Life Reference', 'edit_theme_options', 'chip-life-reference', array( 'Chip_Life_Options', 'chip_life_reference_fn' ) );		
 		}
 		
 		/**
@@ -92,11 +95,19 @@ class Chip_Life_Options {
 		}
 		
 		/**
-		* Chip Setting - Form
+		* Chip Life Options Page
 		*/
 		
 		function chip_life_setting_fn() {
 			require( CHIP_LIFE_CHIP_DIR . '/admin/setting.php' );
+		}
+		
+		/**
+		* Chip Life Reference Page
+		*/
+		
+		function chip_life_reference_fn() {
+			require( CHIP_LIFE_CHIP_DIR . '/admin/reference.php' );
 		}
 		
 		/**
@@ -111,7 +122,8 @@ class Chip_Life_Options {
 				
 				$default = array(
 					
-					'chip_life_header_style' => 'custom-header',
+					'chip_life_custom_header' => 1,
+					'chip_life_sidebars_header' => 0,
 					
 					'chip_life_primary_menu' => 1,
 					'chip_life_category_display' => 1,
@@ -125,6 +137,7 @@ class Chip_Life_Options {
 					'chip_life_related_post' => 0,
 					'chip_life_related_post_number' => 3,
 					
+					'chip_life_layout_skin' => 'chip-life-default',
 					'chip_life_layout_style' => 'content-sidebar',
 					'chip_life_featured_image' => 'none',
 					
@@ -158,52 +171,50 @@ class Chip_Life_Options {
 		/* Boolean Yes | No */
 		
 		function chip_life_boolean_pd() {			
-			$temp = array( 1 => 'yes', 0 => 'no' );		
-			return $temp;
+			return array( 1 => 'yes', 0 => 'no' );		
 		}
 		
 		/* Valid Post Style Range */		
 		
 		function chip_life_post_style_pd() {			
-			$temp = array( 'excerpt' => 'excerpt', 'content' => 'content' );			
-			return $temp;			
+			return array( 'excerpt' => 'excerpt', 'content' => 'content' );			
 		}
 		
 		/* Valid Header Styles */		
 		
 		function chip_life_header_style_pd() {			
-			$temp = array( 'custom-header' => 'Custom Header', 'header-sidebars' => 'Header Sidebars' );			
-			return $temp;			
+			return array( 'custom-header' => 'Custom Header', 'header-sidebars' => 'Header Sidebars' );			
 		}
 		
 		/* Valid Related Post Range */		
 		
 		function chip_life_related_posts_pd() {			
-			$temp = array( 3 => 3, 6 => 6, 9 => 9 );			
-			return $temp;			
+			return array( 1 => 1, 2 => 2, 3 => 3, 4 => 4, 5 => 5, 6 => 6, 7 => 7, 8 => 8, 9 => 9, 10 => 10, 11 => 11, 12 => 12 );			
 		}
 		
 		/* Valid Date/Time Format Range */		
 		
 		function chip_life_dt_pd() {			
-			$temp = array( 'default' => 'default', 'custom' => 'custom', 'none' => 'none' );			
-			return $temp;			
+			return array( 'default' => 'default', 'custom' => 'custom', 'none' => 'none' );			
 		}
 		
 		/* Valid Layout Styles */		
 		
 		function chip_life_layout_style_pd() {			
-			$temp = array( 'content-sidebar' => 'Content Sidebar', 'sidebar-content' => 'Sidebar Content', 'content' => 'Content' );			
-			return $temp;			
+			return array( 'content-sidebar' => 'Content Sidebar', 'sidebar-content' => 'Sidebar Content', 'content' => 'Content' );			
+		}
+		
+		/* Valid Layout Skins: Dynamic */		
+		
+		function chip_life_layout_skin_pd() {			
+			return chip_life_layout_skins();
 		}
 		
 		/* Valid Featured Image Sizes: Dynamic */		
 		
 		function chip_life_featured_image_pd() {			
-			$temp = array( 'thumbnail' => 'Thumbnail' );			
-			$temp = chip_life_get_image_sizes();
-			return $temp;			
-		}
+			return chip_life_get_image_sizes();
+		}		
 		
 		/**
 		 * Chip Validation
@@ -211,10 +222,16 @@ class Chip_Life_Options {
 		
 		function chip_life_validation_fn( $input ) {
 			
-			/* Validation: chip_life_header_style */
-			$chip_life_header_style_pd = Chip_Life_Options::chip_life_header_style_pd();
-			if ( ! array_key_exists( $input['chip_life_header_style'], $chip_life_header_style_pd ) ) {
-				 $input['chip_life_header_style'] = "custom-header";
+			/* Validation: chip_life_custom_header */
+			$chip_life_boolean_pd = Chip_Life_Options::chip_life_boolean_pd();
+			if ( ! array_key_exists( $input['chip_life_custom_header'], $chip_life_boolean_pd ) ) {
+				 $input['chip_life_custom_header'] = 1;
+			}
+			
+			/* Validation: chip_life_sidebars_header */
+			$chip_life_boolean_pd = Chip_Life_Options::chip_life_boolean_pd();
+			if ( ! array_key_exists( $input['chip_life_sidebars_header'], $chip_life_boolean_pd ) ) {
+				 $input['chip_life_sidebars_header'] = 0;
 			}
 			
 			/* Validation: chip_life_primary_menu */
@@ -270,6 +287,12 @@ class Chip_Life_Options {
 				 $input['chip_life_layout_style'] = 'content-sidebar';
 			}
 			
+			/* Validation: chip_life_layout_skin */
+			$chip_life_layout_skin_pd = Chip_Life_Options::chip_life_layout_skin_pd();
+			if ( ! array_key_exists( $input['chip_life_layout_skin'], $chip_life_layout_skin_pd ) ) {
+				 $input['chip_life_layout_skin'] = 'chip-life-default';
+			}
+			
 			/* Validation: chip_life_featured_image */
 			$chip_life_featured_image_pd = Chip_Life_Options::chip_life_featured_image_pd();
 			if ( ! array_key_exists( $input['chip_life_featured_image'], $chip_life_featured_image_pd ) ) {
@@ -314,7 +337,7 @@ class Chip_Life_Options {
 			
 			/* Validation: chip_life_analytic_code */
 			if( !empty( $input['chip_life_analytic_code'] ) ) {
-				$input['chip_life_analytic_code'] = esc_textarea ( $input['chip_life_analytic_code'] );
+				$input['chip_life_analytic_code'] = htmlspecialchars ( $input['chip_life_analytic_code'] );
 			}
 			
 			/* Validation: chip_life_copyright */
@@ -342,17 +365,37 @@ class Chip_Life_Options {
 			echo "Chip Life Blog Options";
 		}
 		
-		/* Blog Header Style */		
-		function chip_life_field_header_style_fn() {
+		/* Chip Custom Header */		
+		function  chip_life_field_custom_header_fn() {
 			
-			$chip_life_options = get_option('chip_life_options');
-			$items = Chip_Life_Options::chip_life_header_style_pd();			
+			$chip_life_options = get_option( 'chip_life_options' );
+			$items = Chip_Life_Options::chip_life_boolean_pd();
 			
+			echo '<select id="chip_life_custom_header" name="chip_life_options[chip_life_custom_header]">';
 			foreach( $items as $key => $val ) {
-				?>
-				<label><input type="radio" id="chip_life_header_style[]" name="chip_life_options[chip_life_header_style]" value="<?php echo $key; ?>" <?php checked( $key, $chip_life_options['chip_life_header_style'] ); ?> /><?php echo $val; ?></label><br />
-                <?php
+			?>
+				<option value="<?php echo $key; ?>" <?php selected( $key, $chip_life_options['chip_life_custom_header'] ); ?>><?php echo $val; ?></option>
+            <?php
 			}
+			echo '</select>';
+			echo '<div><small>Select yes to use custom header.</small></div>';
+		
+		}
+		
+		/* Chip Sidebars Header */		
+		function  chip_life_field_sidebars_header_fn() {
+			
+			$chip_life_options = get_option( 'chip_life_options' );
+			$items = Chip_Life_Options::chip_life_boolean_pd();
+			
+			echo '<select id="chip_life_sidebars_header" name="chip_life_options[chip_life_sidebars_header]">';
+			foreach( $items as $key => $val ) {
+			?>
+				<option value="<?php echo $key; ?>" <?php selected( $key, $chip_life_options['chip_life_sidebars_header'] ); ?>><?php echo $val; ?></option>
+            <?php
+			}
+			echo '</select>';
+			echo '<div><small>Select yes to use sidebars header.</small></div>';
 		
 		}
 		
@@ -369,7 +412,7 @@ class Chip_Life_Options {
             <?php
 			}
 			echo '</select>';
-			echo '<div><small>Select yes to display primary menu which is located above the site header.</small></div>';
+			echo '<div><small>Select yes to display primary menu.</small></div>';
 		
 		}
 		
@@ -509,11 +552,28 @@ class Chip_Life_Options {
 			?>
             	<label><input type="radio" id="chip_life_layout_style[]" name="chip_life_options[chip_life_layout_style]" value="<?php echo $key; ?>" <?php checked( $key, $chip_life_options['chip_life_layout_style'] ); ?> />
             <?php
-				echo '<span><img src="'.PARENT_URL.'/images/'.$key.'.png" width="136" height="122" alt="" /> '.$val.' </span>';
+				echo '<span><img src="'.CHIP_LIFE_PARENT_URL.'/images/'.$key.'.png" width="136" height="122" alt="" /> '.$val.' </span>';
 				echo '</label></div>';
 			}
 		
 		}
+		
+		/** Chip Life Layout Skin */		
+		function  chip_life_field_layout_skin_fn() {
+			
+			$chip_life_options = get_option( 'chip_life_options' );
+			$items = Chip_Life_Options::chip_life_layout_skin_pd();
+			
+			echo '<select id="chip_life_layout_skin" name="chip_life_options[chip_life_layout_skin]">';
+			foreach( $items as $key => $val ) {
+			?>
+            	<option value="<?php echo $key; ?>" <?php selected( $key, $chip_life_options['chip_life_layout_skin'] ); ?>><?php echo $val; ?></option>
+            <?php
+			}
+			echo '</select>';
+			echo '<div><small>Select layout skin</small></div>';
+		
+		}		
 		
 		/** Chip Life Featured Image */		
 		function  chip_life_field_featured_image_fn() {
@@ -645,7 +705,7 @@ class Chip_Life_Options {
 		function chip_life_field_analytic_code_fn() {
 			
 			$chip_life_options = get_option('chip_life_options');
-			echo '<textarea type="textarea" id="chip_life_analytic_code" name="chip_life_options[chip_life_analytic_code]" rows="7" cols="50">'. $chip_life_options['chip_life_analytic_code'] .'</textarea>';
+			echo '<textarea type="textarea" id="chip_life_analytic_code" name="chip_life_options[chip_life_analytic_code]" rows="7" cols="50">'. htmlspecialchars_decode ( $chip_life_options['chip_life_analytic_code'] ) .'</textarea>';
 			echo '<div><small>Enter the Analytic code</small></div>';
 		
 		}
@@ -664,10 +724,9 @@ class Chip_Life_Options {
 		function chip_life_field_reset_fn() {
 			
 			$chip_life_options = get_option('chip_life_options');			
-			$items = Chip_Life_Options::chip_life_boolean_pd();
-			
-			$checked = ( $chip_life_options['chip_life_reset'] == 1 ) ? 'checked="checked"' : '';
-			echo '<label><input type="checkbox" id="chip_life_reset" name="chip_life_options[chip_life_reset]" value="1" '.$checked.' /> Reset Theme Options</label>';
+			$items = Chip_Life_Options::chip_life_boolean_pd();			
+			echo '<label><input type="checkbox" id="chip_life_reset" name="chip_life_options[chip_life_reset]" value="1" /> Reset Theme Options</label>';
+		
 		}
 
 }
