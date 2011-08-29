@@ -13,7 +13,7 @@
 		echo " | $site_description";
 		
 	if ( $paged >= 2 || $page >= 2 )
-		echo ' | ' . sprintf( __( 'Page %s', 'blogmeans' ), max( $paged, $page ) ); 
+		echo ' | ' . sprintf( __( 'Page %s', 'adsticle' ), max( $paged, $page ) ); 
 ?></title>
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -22,22 +22,6 @@
   if ( is_singular() && get_option( 'thread_comments' ) )
 	wp_enqueue_script( 'comment-reply' );
 ?>
-<style type="text/css">
-body, .header .ads468-60 {background-color:white; color: black}
-.middle{background-color:white }  
-.sticky {background: #CEE3FF}
-a, a:hover, a:link, a:active, a:visited {color:#008000}
-.header{background:white;}
-.footer{background:white;}
-
-#access {background:white; border-top: 2px solid black; border-bottom: 2px solid black}
-
-.footer {border-top: 2px solid black}
-.widget h3 {border-bottom: 2px solid black}
-.header .title span {color: gray; }
-h1,h2,h3,h4,h5, .widget_rss a.rsswidget, .post h1 a, .header .title h1 a, #comments h3 {color: #0000FF;}
-</style>
-
 <?php wp_head(); ?> 
 </head>
 <body <?php body_class(); ?>>

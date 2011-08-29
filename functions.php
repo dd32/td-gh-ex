@@ -1,8 +1,9 @@
 <?php  
+  if ( ! isset( $content_width ) ) 
+    $content_width = 630;
+
   function template_setup() 
-  {
-    global $favicon_url, $footer_text, $content_width;
-	
+  {	
 	load_theme_textdomain('adsticle', TEMPLATEPATH . '/languages');
 	$locale = get_locale();
 	$locale_file = TEMPLATEPATH . "/languages/$locale.php";
@@ -14,20 +15,20 @@
       add_theme_support('menus');	  
       register_nav_menu('primary', __('primary', 'adsticle'));	
 	};
-	
-	if ( ! isset( $content_width ) ) $content_width = 1000;
-	
-	add_theme_support( 'automatic-feed-links' );
-	
+		
+	add_theme_support( 'automatic-feed-links' );	
   };
   
-  add_action( 'init', 'template_setup' );
-
-
+  add_action('after_theme_setup', 'template_setup');
+ 
+  function adsticle_sidebars()
+  {
+  
   if ( function_exists('register_sidebar') )
   { 	
 	register_sidebar(array(
-        'name' => 'text-widget-area-for-ads468x60-in-header',
+	    'id' => 'text-widget-area-for-ads468x60-in-header', 
+        'name' => __('468 x 60 ads in Header', 'adsticle'),
         'before_widget' => '',
         'after_widget' => '',
         'before_title' => '',
@@ -35,7 +36,8 @@
     ));	
   	
     register_sidebar(array(
-        'name' => 'big1',
+	    'id' => 'big1',
+        'name' => __('First right wide sidebar area', 'adsticle'),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h3>',
@@ -43,7 +45,8 @@
     ));
 		
 	register_sidebar(array(
-        'name' => 'small-left1',
+	    'id' => 'small-left1',
+        'name' => __('First right slim sidebar area (left part)', 'adsticle'),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div></div>',
         'before_title' => '<h3>',
@@ -51,7 +54,8 @@
     ));
 	
 	register_sidebar(array(
-        'name' => 'small-right1',
+	    'id' => 'small-right1',
+        'name' => __('First right slim sidebar area (right part)', 'adsticle'),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div></div>',
         'before_title' => '<h3>',
@@ -59,7 +63,8 @@
     ));
 	
 	register_sidebar(array(
-        'name' => 'big2',
+	    'id' => 'big2',
+        'name' => __('Second right wide sidebar area', 'adsticle'),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div></div>',
         'before_title' => '<h3>',
@@ -67,7 +72,8 @@
     ));
 	
 	register_sidebar(array(
-        'name' => 'small-left2',
+	    'id' => 'small-left2',
+        'name' => __('Second right slim sidebar area (left part)', 'adsticle'),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div></div>',
         'before_title' => '<h3>',
@@ -75,15 +81,19 @@
     ));
 	
 	register_sidebar(array(
-        'name' => 'small-right2',
+	    'id' => 'small-right2',
+        'name' => __('Second right slim sidebar area (right part)', 'adsticle'),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div></div>',
         'before_title' => '<h3>',
         'after_title' => '</h3><div class="widget_body">',
     ));
-	
-	
+		
+  };	
+  
   };
+  
+  add_action( 'widgets_init', 'adsticle_sidebars' );
   
   function adsticle_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;

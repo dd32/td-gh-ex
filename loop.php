@@ -22,7 +22,12 @@
 		
   <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
    
-  <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+  <!-- <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1> -->
+  
+  <h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'adsticle' ), 
+    the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
+	<?php if (trim(get_the_title()) != '') { the_title(); } else { echo '&nbsp;'; }; ?></a></h1>
+  
   <div class="meta">  
   <?php _e('By', 'adsticle'); ?>: <?php the_author_link(); ?> | 
   <?php _e('Date', 'adsticle'); ?>: <?php the_date(); ?> 

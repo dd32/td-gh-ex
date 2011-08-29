@@ -3,7 +3,7 @@ Theme Name: Adsticle
 Author URI: http://wpmole.com
 Description: Adsticle is simple WordPress templates which can be used on blogs or article site. Theme markup is convenient for your visitors to concentrate on content. Different features give you unlimited possibilities when you set blog configuration.
 Author: WPMOLE
-Version: 1.0.5
+Version: 1.0.6
 License: GNU/GPL Version 3 or later. 
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: white, two-columns, right-sidebar, fixed-width, custom-menu, translation-ready
@@ -511,3 +511,19 @@ div.menu li {
 	width: 11px;
 	height: 11px;
 }
+
+/* --- */
+
+body, .header .ads468-60 {background-color:white; color: black}
+.middle{background-color:white }  
+.sticky {background: #CEE3FF}
+a, a:hover, a:link, a:active, a:visited {color:#008000}
+.header{background:white;}
+.footer{background:white;}
+
+#access {background:white; border-top: 2px solid black; border-bottom: 2px solid black}
+
+.footer {border-top: 2px solid black}
+.widget h3 {border-bottom: 2px solid black}
+.header .title span {color: gray; }
+h1,h2,h3,h4,h5, .widget_rss a.rsswidget, .post h1 a, .header .title h1 a, #comments h3 {color: #0000FF;}
