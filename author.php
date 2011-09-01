@@ -29,21 +29,13 @@ if ( get_the_author_meta( 'description' ) ) : ?>
 					</div><!-- #entry-author-info -->
 <?php endif; ?>
 
-<?php
-	/* Since we called the_post() above, we need to
-	 * rewind the loop back to the beginning that way
-	 * we can run the loop properly, in full.
-	 */
-	rewind_posts();
-?>
-
 		<?php if ( have_posts() ) :?>
 		<?php while (have_posts()) : the_post(); ?>
 			
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<div class="post-header">
 				<h2><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-				<p><?php _e('By ','undedicated'); ?><?php the_author_posts_link(); ?> | <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_time('F j, Y') ?></a></p>
+				<p><?php _e('By ','undedicated'); ?><?php the_author_posts_link(); ?> | <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_time( get_option( 'date_format' ) ) ?></a></p>
 			</div>
 			
 			<?php the_post_thumbnail(array( 150, 150 ), array( 'class' => 'alignleft' )); ?>

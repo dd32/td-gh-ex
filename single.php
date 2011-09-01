@@ -11,20 +11,16 @@
 			</div>
 			
 			<!--Show Ads Below Post Title -->
-			<?php if (get_option('p2h_posttop_adcode') != '') { ?>
-			<div class="topad">
-			<?php echo(stripslashes (get_option('p2h_posttop_adcode')));?>
-			</div>
+			<?php if ( isset($options['posttop_adcode']) && ($options['posttop_adcode']!="") ){ ?>
+			<div id="topad"><?php echo(stripslashes ($options['posttop_adcode']));?></div>
 			<?php } ?>
 			
 			<?php the_content( __('<p>Read more &raquo;</p>', 'undedicated') ); ?>
 			<?php wp_link_pages( __('before=<div class="post-page-links">Pages:&after=</div>', 'undedicated')) ; ?>
 			
 			<!--Show Ads Below Post -->
-			<?php if (get_option('p2h_postend_adcode') != '') { ?>
-			<div class="bottomad">
-			<?php echo(stripslashes (get_option('p2h_postend_adcode')));?>
-			</div>
+			<?php if ( isset($options['postend_adcode']) && ($options['postend_adcode']!="") ){ ?>
+			<div id="bottomad"><?php echo(stripslashes ($options['postend_adcode']));?></div>
 			<?php } ?>
 			
 			<div class="post-meta">
@@ -67,7 +63,7 @@
 			    'tag__in' => array($first_tag),
 			    'post__not_in' => array($post->ID),
 			    'showposts'=>3,
-			    'caller_get_posts'=>1
+			    'ignore_sticky_posts'=>1
 			   );
 			  $my_query = new WP_Query($args);
 			  if( $my_query->have_posts() ) {

@@ -51,7 +51,7 @@ wp_enqueue_script('newscript', $file_dir.'/includes/archives-page.js', false, '1
 		$myposts = get_posts('numberposts=50&offset=0');
 		foreach($myposts as $post) :
 		?>
-		<li><?php the_time('d/m/y') ?>: <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+		<li><?php the_time( get_option( 'date_format' ) ) ?>: <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
 		<?php endforeach; ?>
 		</ul>
 		</div>

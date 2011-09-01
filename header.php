@@ -1,3 +1,7 @@
+<?php //Retrieve Theme Options Data
+global $options;
+$options = get_option('p2h_theme_options'); 
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -20,7 +24,7 @@
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 )
-		echo ' | ' . sprintf( __( 'Page %s', 'twentyten' ), max( $paged, $page ) );
+		echo ' | ' . sprintf( __( 'Page %s', 'undedicated' ), max( $paged, $page ) );
 
 	?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -37,6 +41,20 @@
 		} else {
     echo '<meta name="robots" content="noindex,follow" />';
 	} ?>
+
+<?php
+	// Custom CSS block in Theme Options Page//	if ( isset ($options['custom_css']) &&  ($options['custom_css']!="") ) {
+	$output = '<style type="text/css">'."\n";
+	$output .= $options['custom_css'] . "\n";
+	$output .= '</style>'."\n";
+	echo $output;
+	}
+
+	if ( isset ($options['feedurl']) &&  ($options['feedurl']!="") ) {
+	echo '<link rel="alternate" type="application/rss+xml" href="'.$options['feedurl'].'" title="'. get_bloginfo('name') .' RSS Feed"/>'."\n";
+	}
+	
+?>
 	
 <?php
 	/* We add some JavaScript to pages with the comment form
@@ -80,22 +98,22 @@
 		<ul id="connect">	
 
 		<li>
-		<?php if (get_option('p2h_feedurl') != '') { ?>
-		<a class="feedicon" href="<?php echo( (get_option('p2h_feedurl'))); ?>" title="<?php _e('Subscribe ', 'undedicated'); ?><?php bloginfo('name'); ?><?php _e(' RSS Feed', 'undedicated'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/feed.png" alt="<?php _e(' RSS', 'undedicated'); ?>" /></a>
-		<?php } else { ?>
-		<a class="feedicon" href="<?php bloginfo('rss2_url'); ?>" title="<?php _e('Subscribe ', 'undedicated'); ?><?php bloginfo('name'); ?><?php _e(' RSS Feed', 'undedicated'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/feed.png" alt="<?php _e(' RSS', 'undedicated'); ?>" /></a>
-		<?php } ?>
+			<?php if ( isset($options['feedurl']) && ($options['feedurl']!="") ){ ?>
+				<a class="feedicon" href="<?php echo $options['feedurl']; ?>" title="<?php _e('Subscribe ', 'undedicated'); ?><?php bloginfo('name'); ?><?php _e(' RSS Feed', 'undedicated'); ?>"><?php _e('RSS', 'undedicated'); ?></a>
+			<?php } else { ?>
+				<a class="feedicon" href="<?php bloginfo('rss2_url'); ?>" title="<?php _e('Subscribe ', 'undedicated'); ?><?php bloginfo('name'); ?><?php _e(' RSS Feed', 'undedicated'); ?>"><img src="<?php get_template_directory_uri(); ?>/images/feed.png" alt="<?php _e(' RSS', 'undedicated'); ?>" /></a>
+			<?php } ?>
 		</li>
 		
-		<?php if (get_option('p2h_twitterid') != '') { ?>
+		<?php if ( isset($options['twitterid']) && ($options['twitterid']!="") ){ ?>
 		<li>
-		<a class="twittericon" href="http://twitter.com/<?php echo( get_option('p2h_twitterid') );?>" title="<?php _e('Follow ', 'undedicated'); ?><?php bloginfo('name'); ?><?php _e(' on Twitter', 'undedicated'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/twitter.png" alt="<?php _e('Twitter', 'undedicated'); ?>" /></a>
+			<a class="twittericon" href="http://twitter.com/<?php echo $options['twitterid'];?>" title="<?php _e('Follow ', 'shaan'); ?><?php bloginfo('name'); ?><?php _e(' on Twitter', 'shaan'); ?>"><?php _e('Twitter', 'shaan'); ?></a>
 		</li>
 		<?php } ?>
 
-		<?php if (get_option('p2h_facebookid') != '') { ?>
+		<?php if ( isset($options['facebookid']) && ($options['facebookid']!="") ){ ?>
 		<li>
-		<a class="facebookicon" href="<?php echo(stripslashes (get_option('p2h_facebookid')));?>" title="<?php _e('Find ', 'undedicated'); ?><?php bloginfo('name'); ?><?php _e(' on Facebook', 'undedicated'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/facebook.png" alt="<?php _e('Facebook', 'undedicated'); ?>" /></a>
+			<a class="facebookicon" href="<?php echo(stripslashes ($options['facebookid']));?>" title="<?php _e('Find ', 'shaan'); ?><?php bloginfo('name'); ?><?php _e(' on Facebook', 'shaan'); ?>"><?php _e('Facebook', 'shaan'); ?></a>
 		</li>
 		<?php } ?>
 		

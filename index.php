@@ -9,7 +9,7 @@
 		
 			<div class="post-header">
 				<h2><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-				<p class="metadata"><span class="capitalize"><?php the_author_posts_link(); ?></span> | <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_time('F j, Y') ?></a> | <?php comments_popup_link( __('Leave your comment', 'undedicated'), __( '1 comment', 'undedicated'), __('% comments', 'undedicated')); ?></p>
+				<p class="metadata"><span class="capitalize"><?php the_author_posts_link(); ?></span> | <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_time( get_option( 'date_format' ) ) ?></a> | <?php comments_popup_link( __('Leave your comment', 'undedicated'), __( '1 comment', 'undedicated'), __('% comments', 'undedicated')); ?></p>
 			</div>
 			
 			<?php if(!empty($post->post_excerpt)) : ?>

@@ -2,7 +2,7 @@
 Theme Name: Undedicated
 Theme URI: http://www.speckygeek.com/wordpress-themes/
 Description: A minimal WordPress theme with lots of white space. Supports custom header and background. Adsense-ready. Tested with IE6 and above, Firefox, Safari and Opera. Threaded comments. Easily customizable with theme options. Wordpress 3.0 and above.
-Version: 1.0.0
+Version: 1.0.1
 Author: Specky Geek
 Author URI: http://www.speckygeek.com
 Tags: white, light, two-columns, fixed-width, threaded-comments, custom-header, custom-menu, custom-background, sticky-post, theme-options, editor-style
@@ -11,6 +11,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 /* ----------------------------------------------- [ * ] */
+
+@import url(http://fonts.googleapis.com/css?family=Cantarell:400,400italic,700&subset=latin,cyrillic-ext,latin-ext,cyrillic);
 
 * {
 	margin: 0;
@@ -70,7 +72,7 @@ a img {
 /* -------------------------------- [ General Elements ] */
 
 body {
-	font-family:"Trebuchet MS",Verdana,Arial,sans-serif;
+	font-family:'Cantarell',"Trebuchet MS",Verdana,Arial,sans-serif;
 	font-size: 14px;
 	color: #444;
 	background:#FFF url(images/strip.gif) repeat-x 0 -5px;
@@ -91,7 +93,7 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6{
-	font-family:"Trebuchet MS",Arial,sans-serif;
+	font-family:'Cantarell',"Trebuchet MS",Arial,sans-serif;
 }
 strong {
 	font-weight: bold;
@@ -195,7 +197,7 @@ h1.page-title , h2.page-title {
 }
 
 #masthead{
-	height:70px;
+	height:75px;
 	padding:25px 0 5px 0;
 	width:600px;
 	float:left;
@@ -216,25 +218,26 @@ h1.page-title , h2.page-title {
 	color:#333;
 	float:left;
 	clear:both;
-	line-height:1;
+	line-height:1.1;
 	margin:0;
 	padding:0;
+	letter-spacing:-2px;
 }
 
 #site-title a{
 	text-decoration: none;
 	color:#000;
-	line-height:1;
+	line-height:1.1;
 	background:transparent;
 }
 
 #site-description{
 	font-size: 14px;
 	font-weight: normal;
-	color:#333;
+	color:#666;
 	float:left;
 	clear:both;
-	line-height:1;
+	line-height:1.6;
 }
 
 #search-header{
@@ -249,7 +252,7 @@ margin-top:40px;
 	border-top:1px solid #DFE2FF;
 	clear:both;
 	background:#EFF0FF;
-	font-family:"Trebuchet MS",Arial,sans-serif;
+	font-family:'Cantarell',"Trebuchet MS",Arial,sans-serif;
 	font-weight:bold;
 	margin-bottom:20px;
 }
@@ -358,6 +361,34 @@ width:20px;
 padding:0;
 margin-left:2px;
 }
+
+#connect a.feedicon, #connect a.feedicon:hover{
+height:16px;
+width:16px;
+padding:0;
+background:url('images/feed.png') no-repeat 0 0;
+text-indent:-9999em;
+margin:0 5px 0 2px;
+}
+
+#connect a.twittericon, #connect a.twittericon:hover{
+height:16px;
+width:16px;
+padding:0;
+background:url('images/twitter.png') no-repeat 0 0;
+text-indent:-9999em;
+margin-left:2px;
+}
+
+#connect a.facebookicon, #connect a.facebookicon:hover{
+height:16px;
+width:16px;
+padding:0;
+background:url('images/facebook.png') no-repeat 0 0;
+text-indent:-9999em;
+margin-left:2px;
+}
+
 
 /* ----------------------------------------- [ Content ] */
 
@@ -994,7 +1025,8 @@ input#submit:hover {
 
 #sidebar h3 {
 	margin: 0 0 10px 0;
-	font-size: 20px;
+	font-size: 16px;
+	font-weight:bold;
 	line-height: 1.4;
 	text-transform: uppercase;
 	color: #4789BF;
@@ -1048,7 +1080,7 @@ border-bottom:1px dotted #EEE;
 /* ------------------------------------------ [ Widget Tag Cloud ] */
 
 .widget_tag_cloud{
-	font-family: "Lucida Grande", "Lucida Sans Unicode", "Trebuchet MS", Arial, sans-serif;
+	font-family: 'Cantarell',"Trebuchet MS", Arial, sans-serif;
 	text-align:center;
 }
 
@@ -1496,7 +1528,7 @@ margin: 20px 0;
 .intro, .intro1 {
 color:#666;
 font-size:18px;
-font-family:"Trebuchet MS",Arial,sans-serif;
+font-family:'Cantarell',"Trebuchet MS",Arial,sans-serif;
 }
 .intro2 {
 color:#666;

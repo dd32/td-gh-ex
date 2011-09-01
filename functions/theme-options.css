@@ -13,19 +13,21 @@ width:98%;
 font-style:normal;
 font-size:28px;
 margin-bottom:20px;
+font-style:italic;
+
 }
 
 .top-notice{
-margin-bottom:35px;
+margin-bottom:25px;
 }
 .section_wrap{
-	margin-bottom:35px;
+	margin-bottom:25px;
 	float:left;
 	width:750px;
 }
 
 .section_body{
-border:1px solid #E6E6E6;
+border:1px solid #DFDFDF;
 	border-top:0;
 	background:#f9f9f9;
 	width:748px;
@@ -36,28 +38,28 @@ border:1px solid #E6E6E6;
 
 h3.section_title{
 -moz-border-radius:6px 6px 6px 6px;
-background:url('images/toggle.gif') no-repeat scroll 10px 13px #F1F1F1;
-border:1px solid #E6E6E6;
+background:url('images/toggle.png') no-repeat scroll 10px 15px #F0F0F0;
+border:1px solid #E1E1E1;
 color:#4E4C41;
 cursor:pointer;
-font-size:1.2em;
+font-size:1.1em;
 margin:0;
 padding:15px 15px 15px 40px;
 clear:both;
 }
 
 h3.section_title:hover{
-background-color:#F2f2f2;
+background-color:#EFEFEF;
 border:1px solid #CFCFCF;
 }
 
 h3.open {
 -moz-border-radius:6px 6px 0 0;
-background-position:10px -27px;
+background-position:10px -25px;
 }
 
 h3.section_title span{
-color:#AAAAAA;
+color:#666;
 float:right;
 font-size:0.9em;
 font-weight:normal;
@@ -96,11 +98,15 @@ label{
 
 .options_input input[type="text"], .options_input select{
 	width:275px;
+	height:auto;
 	font-size:12px;
 	padding:5px;
 	color:#666;
 	background:#FFF;
 	border-color:#DFDFDF;
+}
+#multicheck select{
+height:auto;
 }
 .options_input input:focus, .options_input textarea:focus{
 		background:#fff;
@@ -160,3 +166,15 @@ border:1px solid #ddd;
 .notice{
 color:#888;
 font-size:10px;}
+
+.button-right{
+float:right;
+text-align:right;
+width:250px;
+}
+.button-right span{
+font-size:0.9em;
+color:#999;
+text-align:justified;
+display:block;
+}

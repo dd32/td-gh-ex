@@ -5,11 +5,10 @@
 
 </div><!--#wrapper -->
 
-<?php if (get_option('p2h_analytics_code') != '') { ?>
-<?php echo(stripslashes (get_option('p2h_analytics_code')));?>
+<?php if ( isset($options['analytics_code']) && ($options['analytics_code']!="") ){ ?>
+<?php echo(stripslashes ($options['analytics_code']));?>
 <?php } ?>
 		
-<script type="text/javascript"> Cufon.now(); </script>
 
 <!-- Do not remove this, it's required for certain plugins which generally use this hook to reference JavaScript files. -->
 <?php wp_footer(); ?>	

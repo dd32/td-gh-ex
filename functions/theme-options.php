@@ -1,208 +1,190 @@
 <?php
-
 $themename = "Undedicated";
 $shortname = "p2h";
 $version = "1.0";
 
-//Header Customizations
-function p2h_wp_head() { 
-		
-	// Custom CSS block in Theme Options Page
-	$custom_css = get_option('p2h_custom_css');
-	if($custom_css != '')
-	{
-	$output = '<style type="text/css">'."\n";
-	$output .= $custom_css . "\n";
-	$output .= '</style>'."\n";
-	echo $output;
-	}
+$option_group = $shortname.'_theme_option_group';
+$option_name = $shortname.'_theme_options';
 
-	
-	//If Set in Theme Options, Add Feed URL in Head
-	if(get_option('p2h_feedurl') != '') {
-	echo '<link rel="alternate" type="application/rss+xml" href="'. get_option('p2h_feedurl') .'" title="'. get_bloginfo('name') .' RSS Feed"/>'."\n";
-	}
 
-}
-add_action('wp_head','p2h_wp_head');
+// Load stylesheet and jscript
 
-	
-//Header Customization -- Remove Auto Feed URL
-if(get_option('p2h_feedurl') != '') {
-	// Remove the links to feed
-	remove_action( 'wp_head', 'feed_links', 2);
+add_action('admin_init', 'p2h_add_init');
+
+function p2h_add_init() {
+	$file_dir = get_template_directory_uri();
+	wp_enqueue_style("p2hCss", $file_dir."/functions/theme-options.css", false, "1.0", "all");
+	wp_enqueue_script("p2hScript", $file_dir."/functions/theme-options.js", false, "1.0");
 }
 
-// Remove the links to the extra feeds such as category feeds
-if(get_option('p2h_cleanfeedurls') !='' ) {
-remove_action( 'wp_head', 'feed_links_extra', 3 ); 
+// Create custom settings menu
+
+add_action('admin_menu', 'p2h_create_menu');
+
+function p2h_create_menu() {
+	global $themename;
+
+	//create new top-level menu
+
+	add_theme_page( __( $themename.' Theme Options' ), __( 'Theme Options' ), 'edit_theme_options', basename(__FILE__), 'p2h_settings_page' );
 }
+
+
+// Register settings
+
+add_action( 'admin_init', 'register_settings' );
+
+function register_settings() {
+   global $themename, $shortname, $version, $p2h_options, $option_group, $option_name;
+
+  	//register our settings
+
+	register_setting( $option_group, $option_name);
+}
+
+//Automatically List StyleSheets in Folder
+$alt_stylesheet_path = TEMPLATEPATH . '/styles/';
+$alt_stylesheets = array();
+
+if ( is_dir($alt_stylesheet_path) ) {
+    if ($alt_stylesheet_dir = opendir($alt_stylesheet_path) ) { 
+        while ( ($alt_stylesheet_file = readdir($alt_stylesheet_dir)) !== false ) {
+            if((stristr($alt_stylesheet_file, ".css") !== false) && (stristr($alt_stylesheet_file, "default") == false)){
+                $alt_stylesheets[] = $alt_stylesheet_file;
+            }
+        }    
+    }
+}
+array_unshift($alt_stylesheets, "default.css"); 
 
 
 // Create theme options
-global $options;
-$options = array (
 
-array( "name" => __('RSS Feeds/Twitter/Facebook','undedicated'),
-	"type" => "section"),
+global $p2h_options;
+$p2h_options = array (
 
-array( "name" => __('Set your social links.','undedicated'),
-	"type" => "section-desc"),
+array("name" => __('Theme Styles','undedicated'),
+		"type" => "section"),
+
+array("name" => __('Choose a color scheme and add custom CSS styles.','undedicated'),
+		"type" => "section-desc"),
 	
-array( "type" => "open"),
+array("type" => "open"),
 
-array( "name" => __('Custom Feed URL','undedicated'),
-	"desc" => __('You can use your own feed URL (<strong>with http://</strong>). Paste your Feedburner URL here to let readers see it in your website.','undedicated'),
-	"id" => $shortname."_feedurl",
-	"type" => "text",
-	"std" => get_bloginfo('rss2_url')),
-	
-array( "name" => __('Delete Extra Feeds','undedicated'),
-	"desc" => __('WordPress adds feeds for categories, tags, etc., by default. Check this box to remove them and reduce the clutter.','undedicated'),
-	"id" => $shortname."_cleanfeedurls",
-	"type" => "checkbox",
-	"std" => ""),
-
-array( "name" => __('Twitter ID','undedicated'),
-	"desc" => __('Your Twitter user name, please. It will be shown in the navigation bar. Leaving it blank will keep the Twitter icon supressed.','undedicated'),
-	"id" => $shortname."_twitterid",
-	"type" => "text",
-	"std" => ""),
-
-array( "name" => __('Facebook Page','undedicated'),
-	"desc" => __('Link to your Facebook page, <strong>with http://</strong>. It will be shown in the navigation bar. Leaving it blank will keep the Facebook icon supressed.','undedicated'),
-	"id" => $shortname."_facebookid",
-	"type" => "text",
-	"std" => ""),
-
-array( "type" => "close"),
-
-array( "name" => __('Theme Style','undedicated'),
-	"type" => "section"),
-	
-array( "name" => __('Set your custom CSS.','undedicated'),
-	"type" => "section-desc"),
-
-array( "name" => __('Enable Cufon Font Replacement','undedicated'),
-	"desc" => __('Check to use stylish Gnuolane font.','undedicated'),
-	"id" => $shortname."_enable cufon",
-	"type" => "checkbox",
-	"std" => ""),
-	
 array( "name" => __('Custom Styles','undedicated'),
 	"desc" => __('Want to add any custom CSS code? Put in here, and the rest is taken care of. This overrides any other stylesheets. eg: a.button{color:green}','undedicated'),
-	"id" => $shortname."_custom_css",
+	"id" => "custom_css",
 	"type" => "textarea",
-	"std" => ""),		
-
-array( "type" => "close"),
-
-//ADVERTISEMENTS --- POST ADS 
-array( "name" => "Advertisements",
-	"type" => "section"),
-
-array( "name" => __('Add your ad codes.','undedicated'),
-	"type" => "section-desc"),
-	
-array( "type" => "open"),
-
-array( "name" => "Ad Code - Above Posts",
-					"desc" => "Enter your Adsense code (or other ad network code) here. This ad will be displayed only on <strong>Post Pages</strong> at the beginning of the posts, below the title. It is very basic and effective option for putting ads on your blog. If you want more functionality, get a specialized Ad plugin from <a href='http://wordpress.org/extend/plugins/'>WordPress</a>.",
-					"id" => $shortname."_posttop_adcode",
-					"std" => "",
-					"type" => "textarea"),
-
-array( "name" => "Ad Code - Below Posts",
-					"desc" => "Enter your Adsense code (or other ad network code) here. This ad will be displayed only on <strong>Post Pages</strong> at the end of the posts. Please make sure that you don't activate more ads than what is allowed by your ad network. Adsense allows up to 3 on one page.",
-					"id" => $shortname."_postend_adcode",
-					"std" => "",
-					"type" => "textarea"),
-
-array( "type" => "close"),
-
-array( "name" => __('Others','undedicated'),
-	"type" => "section"),
-
-array( "name" => __('Customize other features.','undedicated'),
-	"type" => "section-desc"),
-
-array( "name" => __('Show Search Box in Header','undedicated'),
-	"desc" => __('Check to show a search box in the header.','undedicated'),
-	"id" => $shortname."_show_search",
-	"type" => "checkbox",
 	"std" => ""),
+
+array("type" => "close"),
+
+array("name" => __('RSS Feeds/Facebook/Twitter','undedicated'),
+		"type" => "section"),
+
+array("name" => __('Set up social links.','undedicated'),
+		"type" => "section-desc"),
 	
-array( "name" => __('Analytics/Tracking Code','undedicated'),
-	"desc" => __('You can paste your Google Analytics or other website tracking code in this box. This will be automatically added to the footer.','undedicated'),
-	"id" => $shortname."_analytics_code",
-	"type" => "textarea",
-	"std" => ""),	
+array("type" => "open"),
 
-array( "type" => "close"),
+array("name" => __('Custom Feed URL','undedicated'),
+		"desc" => __('You can use your own feed URL (<strong>with http://</strong>). Paste your Feedburner URL here to let readers see it in your website.','undedicated'),
+		"id" => "feedurl",
+		"type" => "text",
+		"std" => get_bloginfo('rss2_url')),
+	
+array("name" => __('Delete Extra Feeds','undedicated'),
+		"desc" => __('WordPress adds feeds for categories, tags, etc., by default. Check this box to remove them and reduce the clutter.','undedicated'),
+		"id" => "cleanfeedurls",
+		"type" => "checkbox",
+		"std" => ""),
 
+array("name" => __('Twitter ID','undedicated'),
+		"desc" => __('Your Twitter user name, please. It will be shown in the navigation bar. Leaving it blank will keep the Twitter icon supressed.','undedicated'),
+		"id" => "twitterid",
+		"type" => "text",
+		"std" => ""),
+
+array("name" => __('Facebook Page','undedicated'),
+		"desc" => __('Link to your Facebook page, <strong>with http://</strong>. It will be shown in the navigation bar. Leaving it blank will keep the Facebook icon supressed.','undedicated'),
+		"id" => "facebookid",
+		"type" => "text",
+		"std" => ""),
+	
+array("type" => "close"),
+
+
+//ADVERTISEMENTS POST ADS 
+
+array("name" => __('Advertisements','undedicated'),
+	"type" => "section"),
+
+array("name" => __('Show ads on your blog.','undedicated'),
+		"type" => "section-desc"),
+	
+array("type" => "open"),
+
+array("name" => __('Ad Above Posts','undedicated'),
+		"desc" => __('Enter your Adsense code or other ad network code here. This ad will be displayed at the beginning of posts, below title on Post Pages and Pages with ad-supporting template. It is very basic and effective option for putting ads on your blog. If you want more functionality, get a specialized Ad plugin.','undedicated'),
+		"id" => "posttop_adcode",
+		"std" => "",
+		"type" => "textarea"),
+
+array("name" => __('Ad Below Posts','undedicated'),
+		"desc" => __('Enter your Adsense code (or other ad network code) here. This ad will be displayed at the end of post content on Post Pages and Pages with ad-supporting template. Please make sure that you do not activate more ads than what is allowed by your ad network. Adsense allows up to 3 on one page.','undedicated'),
+		"id" => "postend_adcode",
+		"std" => "",
+		"type" => "textarea"),
+
+array("type" => "close"),
+
+//Analytics Code
+
+array("name" => __('Tracking & Other Codes','undedicated'),
+		"type" => "section"),
+
+array("name" => __('Insert Web tracking & analytics and other codes here.','undedicated'),
+		"type" => "section-desc"),
+	
+array("type" => "open"),
+
+array("name" => __('Analytics & Tracking Code','undedicated'),
+		"desc" => __('You can paste your Google Analytics or other codes in this box. The codes will be automatically added to the footer.','undedicated'),
+		"id" => "analytics_code",
+		"type" => "textarea",
+		"std" => ""),	
+
+array("type" => "close")
 );
 
-		
-function p2h_add_admin() {
 
-    global $themename, $shortname, $options;
-
-	if ( isset ( $_GET['page'] ) && ( $_GET['page'] == basename(__FILE__) ) ) {
-
-		if ( isset ($_REQUEST['action']) && ( 'save' == $_REQUEST['action'] ) ){
-
-			foreach ( $options as $value ) {
-				if ( array_key_exists('id', $value) ) {
-					if ( isset( $_REQUEST[ $value['id'] ] ) ) { 
-						update_option( $value['id'], $_REQUEST[ $value['id'] ]  );
-					} 
-					else {
-						delete_option( $value['id'] );
-					}
-				}
-			}
-		header("Location: admin.php?page=".basename(__FILE__)."&saved=true");
-		} 
-		else if ( isset ($_REQUEST['action']) && ( 'reset' == $_REQUEST['action'] ) ) {
-			foreach ($options as $value) {
-				if ( array_key_exists('id', $value) ) {
-					delete_option( $value['id'] );
-				}
-			}
-		header("Location: admin.php?page=".basename(__FILE__)."&reset=true");
-		}
-	}
-
-add_menu_page($themename, $themename, 'administrator', basename(__FILE__), 'p2h_admin');
-add_submenu_page(basename(__FILE__), $themename . ' Options', 'Theme Options', 'administrator',  basename(__FILE__),'p2h_admin'); // Default
-}
-
-function p2h_add_init() {
-
-$file_dir=get_bloginfo('template_directory');
-wp_enqueue_style("p2hCss", $file_dir."/functions/theme-options.css", false, "1.0", "all");
-wp_enqueue_script("p2hScript", $file_dir."/functions/theme-options.js", false, "1.0");
-
-}
-
-function p2h_admin() {
-
-    global $themename, $shortname, $version, $options;
-	$i=0;
-
-	if ( isset ($_REQUEST['saved']) && ($_REQUEST['saved'] ) )echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings saved.</strong></p></div>';
-	if ( isset ($_REQUEST['reset']) && ($_REQUEST['reset'] ) ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings reset.</strong></p></div>';
-    
+function p2h_settings_page() {
+   global $themename, $shortname, $version, $p2h_options, $option_group, $option_name;
 ?>
 
-<div class="wrap ">
+<div class="wrap">
 <div class="options_wrap">
-<h2 class="settings-title"><?php echo $themename; ?> Settings</h2>
-<p class="top-notice">Use these options to customize undedicated theme.</p>
-<form method="post">
+<?php screen_icon(); ?><h2><?php echo $themename; ?> <?php _e('Theme Options','undedicated'); ?></h2>
+<p class="top-notice"><?php _e('Customize your WordPress blog with these settings. ','undedicated'); ?></p>
+<?php if ( isset ( $_POST['reset'] ) ): ?>
+<?php // Delete Settings
+global $wpdb, $themename, $shortname, $version, $p2h_options, $option_group, $option_name;
+delete_option('p2h_theme_options');
+wp_cache_flush(); ?>
+<div class="updated fade"><p><strong><?php _e( $themename. ' options reset.' ); ?></strong></p></div>
 
+<?php elseif ( isset ( $_REQUEST['save'] ) ): ?>
+<div class="updated fade"><p><strong><?php _e( $themename. ' options saved.' ); ?></strong></p></div>
+<?php endif; ?>
 
-<?php foreach ($options as $value) { 
+<form method="post" action="options.php">
+
+<?php settings_fields( $option_group ); ?>
+
+<?php $options = get_option( $option_name ); ?>        
+
+<?php foreach ($p2h_options as $value) {
+if ( isset($value['id']) ) { $valueid = $value['id'];}
 switch ( $value['type'] ) {
 case "section":
 ?>
@@ -222,8 +204,8 @@ case 'text':
 
 	<div class="options_input options_text">
 		<div class="options_desc"><?php echo $value['desc']; ?></div>
-		<span class="labels"><label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label></span>
-		<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php if ( get_option( $value['id'] ) != "") { echo stripslashes(get_option( $value['id'])  ); } else { echo $value['std']; } ?>" />
+		<span class="labels"><label for="<?php echo $option_name.'['.$valueid.']'; ?>"><?php echo $value['name']; ?></label></span>
+		<input name="<?php echo $option_name.'['.$valueid.']'; ?>" id="<?php echo $option_name.'['.$valueid.']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if ( isset( $options[$valueid]) ){ esc_attr_e($options[$valueid]); } else { esc_attr_e($value['std']); } ?>" />
 	</div>
 
 <?php
@@ -232,8 +214,8 @@ case 'textarea':
 ?>
 	<div class="options_input options_textarea">
 		<div class="options_desc"><?php echo $value['desc']; ?></div>
-		<span class="labels"><label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label></span>
-		<textarea name="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" cols="" rows=""><?php if ( get_option( $value['id'] ) != "") { echo stripslashes(get_option( $value['id']) ); } else { echo $value['std']; } ?></textarea>
+		<span class="labels"><label for="<?php echo $option_name.'['.$valueid.']'; ?>"><?php echo $value['name']; ?></label></span>
+		<textarea name="<?php echo $option_name.'['.$valueid.']'; ?>" type="<?php echo $option_name.'['.$valueid.']'; ?>" cols="" rows=""><?php if ( isset( $options[$valueid]) ){ esc_attr_e($options[$valueid]); } else { esc_attr_e($value['std']); } ?></textarea>
 	</div>
 
 <?php 
@@ -242,10 +224,10 @@ case 'select':
 ?>
 	<div class="options_input options_select">
 		<div class="options_desc"><?php echo $value['desc']; ?></div>
-		<span class="labels"><label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label></span>
-		<select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>">
+		<span class="labels"><label for="<?php echo $option_name.'['.$valueid.']'; ?>"><?php echo $value['name']; ?></label></span>
+		<select name="<?php echo $option_name.'['.$valueid.']'; ?>" id="<?php echo $option_name.'['.$valueid.']'; ?>">
 		<?php foreach ($value['options'] as $option) { ?>
-				<option <?php if (get_option( $value['id'] ) == $option) { echo 'selected="selected"'; } ?>><?php echo $option; ?></option><?php } ?>
+				<option <?php if ($options[$valueid] == $option) { echo 'selected="selected"'; } ?>><?php echo $option; ?></option><?php } ?>
 		</select>
 	</div>
 
@@ -255,11 +237,11 @@ case "radio":
 ?>
 	<div class="options_input options_select">
 		<div class="options_desc"><?php echo $value['desc']; ?></div>
-		<span class="labels"><label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label></span>
+		<span class="labels"><label for="<?php echo $option_name.'['.$valueid.']'; ?>"><?php echo $value['name']; ?></label></span>
 		  <?php foreach ($value['options'] as $key=>$option) { 
-			$radio_setting = get_option($value['id']);
+			$radio_setting = $options[$valueid];
 			if($radio_setting != ''){
-				if ($key == get_option($value['id']) ) {
+				if ($key == $options[$valueid] ) {
 					$checked = "checked=\"checked\"";
 					} else {
 						$checked = "";
@@ -271,7 +253,7 @@ case "radio":
 					$checked = "";
 				}
 			}?>
-			<input type="radio" name="<?php echo $value['id']; ?>" value="<?php echo $key; ?>" <?php echo $checked; ?> /><?php echo $option; ?><br />
+			<input type="radio" id="<?php echo $option_name.'['.$valueid.']'; ?>" name="<?php echo $option_name.'['.$valueid.']'; ?>" value="<?php echo $key; ?>" <?php echo $checked; ?> /><?php echo $option; ?><br />
 			<?php } ?>
 	</div>
 
@@ -281,52 +263,48 @@ case "checkbox":
 ?>
 	<div class="options_input options_checkbox">
 		<div class="options_desc"><?php echo $value['desc']; ?></div>
-		<?php if(get_option($value['id'])){ $checked = "checked=\"checked\""; }else{ $checked = "";} ?>
-		<input type="checkbox" name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" value="true" <?php echo $checked; ?> />
-		<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
+		<?php if( isset( $options[$valueid] ) ){ $checked = "checked=\"checked\""; }else{ $checked = "";} ?>
+		<input type="checkbox" name="<?php echo $option_name.'['.$valueid.']'; ?>" id="<?php echo $option_name.'['.$valueid.']'; ?>" value="true" <?php echo $checked; ?> />
+		<label for="<?php echo $option_name.'['.$valueid.']'; ?>"><?php echo $value['name']; ?></label>
 	 </div>
 
 <?php
 break;
 case "close":
-$i++;
 ?>
-<span class="submit"><input name="save<?php echo $i; ?>" type="submit" value="Save Changes" /></span>
 </div><!--#section_body-->
 </div><!--#section_wrap-->
 
-<?php break;
+<?php 
+break;
 }
 }
 ?>
 
-<input type="hidden" name="action" value="save" />
 <span class="submit">
-<input name="save" type="submit" value="Save All Changes" />
+<input class="button button-primary" type="submit" name="save" value="<?php _e('Save All Changes', 'undedicated') ?>" />
 </span>
 </form>
 
-
-<form method="post">
-<span class="submit">
-<input name="reset" type="submit" value="Reset All Options" />
+<form method="post" action="">
+<span class="button-right" class="submit">
+<input class="button button-secondary" type="submit" name="reset" value="<?php _e('Reset/Delete Settings', 'undedicated') ?>" />
 <input type="hidden" name="action" value="reset" />
+<span><?php _e('Caution: All entries will be deleted from database. Press when starting afresh or completely removing the theme.','undedicated') ?></span>
 </span>
 </form>
-<br/>
 </div><!--#options-wrap-->
 
 <div class="sidebox">
 	<h2>Support <?php echo $themename; ?>!</h2>
-	<p>You are using <strong><a href="http://www.speckygeek.com/undedicated-free-wordpress-theme/"><?php echo $themename; ?> <?php echo $version; ?></a></strong>, a free theme by <a href="http://www.speckygeek.com">Specky Geek</a>, a technology blog.</p>
-	<p>It has taken a lot of effort to make it as good as a premium theme. If you find it useful, why not reward me for my hard work! Be generous and send me as many dollars as you can to <strong>pritam [at] speckygeek.com</strong>.</p>
-	
-		<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+	<p>You are using <strong><?php echo $themename; ?> <?php echo $version; ?></strong>, a wordPress theme by <a href="http://www.speckygeek.com">Specky Geek</a>, a technology blog.</p>
+	<p>If you find this theme helpful, please be generous and send me a reward. Be generous. Select a high amount from the dropdown.</p>
+	<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 	<input type="hidden" name="cmd" value="_s-xclick">
 	<input type="hidden" name="hosted_button_id" value="6WPPE2PW6ERVC">
 	<table>
 	<tr><td><input type="hidden" name="on0" value="Reward for Undedicated WP Theme">Reward for Undedicated WP Theme</td></tr><tr><td><select name="os0">
-		<option value="Five Dollars">Five Dollars $5.00</option>
+		<option value="Twenty Five Dollars">Twenty Five Dollars $25.00</option>
 		<option value="Ten Dollars">Ten Dollars $10.00</option>
 		<option value="Fifteen Dollars">Fifteen Dollars $15.00</option>
 		<option value="Twenty Dollars">Twenty Dollars $20.00</option>
@@ -340,16 +318,13 @@ $i++;
 	<input type="image" src="https://www.paypal.com/en_GB/i/btn/btn_paynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online.">
 	<img alt="" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1">
 	</form>
-<hr />
+	<hr />
 	<ul>
+	<li><a href="http://www.speckygeek.com/">Specky Geek</a></li>
 	<li><a href="http://www.speckygeek.com/wordpress-themes/">Free WordPress Themes</a></li>
 	<li><a href="http://www.speckygeek.com/contact-us/">Contact Specky Geek</a></li>
 	</ul>
+	<p>PS: I cannot offer free support. Make a generous contribution before writing for help.</p>
 </div>
-
-	</div>
-<?php
-}
-add_action('admin_init', 'p2h_add_init');
-add_action('admin_menu' , 'p2h_add_admin'); 
-?>
+</div>
+<?php } ?>

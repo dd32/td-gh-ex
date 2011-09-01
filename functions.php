@@ -1,4 +1,6 @@
-<?php
+<?php //Retrieve Theme Options Data
+global $options;
+$options = get_option('p2h_theme_options'); 
 
 $functions_path = TEMPLATEPATH . '/functions/';
 //Theme Options
@@ -6,15 +8,31 @@ require_once ($functions_path . 'theme-options.php');
 
 
 // Sets content and images width
+
 if ( !isset($content_width) ) $content_width = 600;
 
 // Add default posts and comments RSS feed links to head
-if ( function_exists('add_theme_support') ) add_theme_support('automatic-feed-links');
+
+if ( function_exists('add_theme_support') ) {
+	add_theme_support('automatic-feed-links');
+}
+
+//Header Customization -- Remove Auto Feed URL
+if ( isset ($options['feedurl']) &&  ($options['feedurl']!="") ) {
+	remove_action( 'wp_head', 'feed_links', 2);
+}
+
+// Remove the links to the extra feeds such as category feeds
+if ( isset ($options['cleanfeedurls']) &&  ($options['cleanfeedurls']!="") ) {
+	remove_action( 'wp_head', 'feed_links_extra', 3 ); 
+}
 
 // Enables the navigation menu ability
+
 if ( function_exists('register_nav_menus')) {
 
 	// This theme uses wp_nav_menu() in one location.
+
 	register_nav_menus( array(
 		'primary-menu' => __( 'Header Navigation', 'jenny' ),
 		'footer-menu' => __( 'Footer Navigation', 'jenny' ),
@@ -134,21 +152,7 @@ function p2h_init_js() {
 
 if ( !is_admin() ) { // instruction to only load if it is not the admin area
    // enqueue the script
-   
-	wp_enqueue_script('jquery');
-   
-	wp_enqueue_script('p2h_cufon',
-	get_bloginfo('template_directory') . '/includes/cufon-yui.js', '1.0' );
-		
-	wp_enqueue_script('p2h_vegur',
-	get_bloginfo('template_directory') . '/includes/Vegur.font.js', '1.0' );
-
-	wp_enqueue_script('p2h_gnuolane',
-	get_bloginfo('template_directory') . '/includes/Gnuolane.font.js', '1.0' );
-
-	wp_enqueue_script('p2h_cufons',
-	get_bloginfo('template_directory') . '/includes/cufon-customizations.js', '1.0' );
-
+   wp_enqueue_script('jquery'); 
 }
 
 } 
