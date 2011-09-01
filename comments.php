@@ -22,13 +22,13 @@
 			number_format_i18n( get_comments_number() ), '' . get_the_title() . '' );
 			?></h3>
 
-			<ol>
+			<ol class="commentlist">
 				<?php wp_list_comments( array( 'callback' => 'ari_comment' ) ); ?>
 			</ol>
 
 <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-				<p class="alignleft"><?php previous_comments_link( __( '&larr; Older Comments', 'ari') ); ?></p>
-				<p class="alignright"><?php next_comments_link( __( 'Newer Comments &rarr;', 'ari') ); ?></p>
+				<p class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'ari') ); ?></p>
+				<p class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'ari') ); ?></p>
 <?php endif; // check for comment navigation ?>
 
 <?php endif; // end have_comments() ?>

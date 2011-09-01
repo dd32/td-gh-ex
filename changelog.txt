@@ -2,15 +2,22 @@
 For detailed documentation and support please visit: http://www.elmastudio.de/wordpress-themes/ari/
 ------------------------------------------------------------------------------------------------------------
 
-Version 1.0.9 - 26th August 2011
--------------------------------
+Version 1.1 - September 1th 2011
+--------------------------------
 1. Bugfix for searchform widget beacuse the searchform widget was breaking the layout (had to delete unneeded closing div in line 99 of functions.php)
 2. Added Swedish and French theme translations to the languages folder
 3. Fixed images resizing for post thumbnails in Smartphone version (line 901 in style.css)
+4. Fixed broken layout problem for long titels and site description.
+5. Added permalink to post date so posts with no titles will still have a permalink.
+6. Deleted display:block for img tag in line 81 and 394 of style.css, also fixes styles for aligncenter, alignleft and alignright to fix images problems.
+7. Bugfix for post thumbnails so thumbnails can resize dynamically.
+8. Fixed styles to display ul and ol lists in comments.
+9. Deleted smoothscroll.js and the entire js folder to make the comments pagination work correctly.
+10. Added styles for comments navigation (style.css line 650 - 658)
 
 
 Version 1.0.8 - 21th August 2011
--------------------------------
+--------------------------------
 1. Added Google+ and Vimeo to the Ari social links widget, fixed bugs in the debugging mode and added target=_blank"
    to the links so the social profiles can be opened esily in a new tab on mobile devices.
 2. Bugfixes in comment form, therefore deleted code line "Comments Form Filters" in functions.php and added disply:block

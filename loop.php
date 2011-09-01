@@ -16,7 +16,7 @@
 
 	<?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>
 			<?php the_excerpt(); ?>
-			<p class="meta"><span><?php the_time('d. F Y') ?> <?php _e( 'by', 'ari' ); ?> <?php the_author() ?></span><br/>	
+			<p class="meta"><span><a href="<?php the_permalink(); ?>"><?php the_time('d. F Y') ?></a> <?php _e( 'by', 'ari' ); ?> <?php the_author() ?></span><br/>	
 	<?php else : ?>
 	
 			<?php if ( has_post_thumbnail() ): ?>
@@ -28,7 +28,7 @@
 			
 			<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'ari' ), 'after' => '</div>' ) ); ?>
 			
-			<p class="meta"><span><?php the_time('d. F Y') ?> <?php _e( 'by', 'ari' ); ?> <?php the_author() ?></span><br/>				
+			<p class="meta"><span><a href="<?php the_permalink(); ?>"><?php the_time('d. F Y') ?></a> <?php _e( 'by', 'ari' ); ?> <?php the_author() ?></span><br/>				
 	<?php endif; ?>
 
 				<?php if ( count( get_the_category() ) ) : ?>

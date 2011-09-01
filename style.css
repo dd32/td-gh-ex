@@ -4,7 +4,7 @@ Theme URI: http://www.elmastudio.de/wordpress-themes/ari/
 Description: Ari is a minimalistic, flexible three-column blog theme. The theme uses CSS3 media queries for its responsive layout and is therefore optimized for tablet pcs and smart phones (the theme switches to a two-column layout when viewed on a horizontal iPad screen, and to a one-column layout on iPhones). You can also choose a dark color scheme and the backgound-, text- and link-colors can be customized in the theme options page.
 Author: Elmastudio
 Author URI: http://www.elmastudio.de/wordpress-themes/
-Version: 1.0.9
+Version: 1.1
 Tags: white, dark, three-columns, left-sidebar, right-sidebar, flexible-width, custom-colors, custom-menu, theme-options, threaded-comments, sticky-post, translation-ready
 License: GNU/GPL Version 2 or later
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -78,17 +78,29 @@ body {
 	font-size: 12px;
 	overflow:hidden;
 }
-.aligncenter {
-	margin:0 auto; 
-	display:block; 
-}
+/* Alignment
+--------------------------------------------- */
 .alignleft {
+	display: inline;
 	float:left;
+	margin-right: 10px;
 }
 .alignright {
-	float:right;
+	display: inline;
+	float: right;
+	margin-left: 10px;
 }
-
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+img.alignleft,
+img.alignright,
+img.aligncenter {
+    margin-bottom: 10px;
+}
 /* Headings
 --------------------------------------------- */
 #content .post h1 {
@@ -155,7 +167,7 @@ ul.sidebar a, p.meta a, .comment-meta a, p.logged-in-as a, a.post-edit-link, #fo
 #content #page ul li, #content .post ul li {
 	padding:0px 0px 20px 0px;
 	line-height:21px;
-	list-style: disc;
+	list-style: square !important;
 }
 #content #page ol, #content .post ol {
 	padding:20px 0px 0px 30px;
@@ -164,6 +176,12 @@ ul.sidebar a, p.meta a, .comment-meta a, p.logged-in-as a, a.post-edit-link, #fo
 	padding:0px 0px 20px 0px;
 	line-height:21px;
 	list-style: decimal;
+}
+#content  #page ol ol li, #content .post ol li ol li {
+	list-style: upper-alpha !important;
+}
+#content  #page ol ol ol li, #content .post ol li ol ol li{
+	list-style: lower-roman !important;
 }
 
 /* Sidebars
@@ -190,9 +208,8 @@ ul.sidebar h3.widget-title {
 --------------------------------------------- */
 /* --- Theme Logo --- */
 #sidebar-primary .logo {
-	height:75px;
-	margin:0px 0px 10px 0px;
-	display:block;
+	margin:0px 0px 30px 0px;
+	overflow:hidden;
 }
 #sidebar-primary .logo h1 {
 	padding:5px 0px 0px 0px;
@@ -396,11 +413,8 @@ ul.sidebar li.widget_sociallinks a.delicious {
 	max-width: 100%;
 	width: auto;
 	height: auto;
-	display: block;
 }
 #content img.wp-post-image {
-	width: 125px;
-	height: auto;
 	margin: 5px 15px 5px 0 !important;
 	padding: 0;
 	float: left;
@@ -575,6 +589,19 @@ p.logged-in-as {
 	padding: 20px 0px 10px 20px;
 	list-style:none;
 }
+#content #comments-content .comment-body ol {
+	padding:6px 0 6px 30px;
+	line-height: 1.3;
+}
+#content #comments-content .comment-body ol li {
+	list-style: decimal !important;
+}
+#content #comments-content .comment-body ol li ol li {
+	list-style: upper-alpha !important;
+}
+#content #comments-content .comment-body ol li ol ol li{
+	list-style: lower-roman !important;
+}
 .bypostauthor {
 }
 /* --- Comment Reply --- */
@@ -619,6 +646,15 @@ form#commentform p.form-submit input#submit {
 	font-size:12px;
 	color:#fff;
 	cursor:pointer;
+}
+/* --- Comments Navigation --- */
+.nav-previous {
+	float:left;
+	margin:20px 0 0 0;
+}
+.nav-next {
+	float:right;
+	margin:20px 0 0 0;
 }
 
 /* WordPress Image Gallery

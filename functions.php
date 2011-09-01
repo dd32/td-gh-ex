@@ -37,21 +37,6 @@ function ari_setup() {
 }
 endif;
 
-/* Calls jQuery and SmoothScroll im Footer  */
-function ari_smoothscroll_init() {
-    if ( !is_admin() ) {
-        wp_enqueue_script( 'jquery' );
-        wp_enqueue_script( 'smoothscroll', get_template_directory_uri() . '/js/smoothscroll.js', array( 'jquery'), '1.0', true ); 
-    }
-}
-// works also for WP < version 3.0
-global $wp_version;
-if ( version_compare($wp_version, "3.0alpha", "<") ) {
-    add_action( 'init', 'ari_smoothscroll_init' );
-} else {
-    add_action( 'after_setup_theme', 'ari_smoothscroll_init' );
-}
-
 /* Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link. */
 function ari_page_menu_args( $args ) {
 	$args['show_home'] = true;
