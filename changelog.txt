@@ -1,3 +1,15 @@
+= 1.4.1 [2011.09.01] =
+
+* Author archive integrated.
+* Word break in menus.
+* Images overlapping the contetn area has fixed.
+*
+* For Theme Reviewer
+* Many Trackbacks are working fine in my case. Please re-verify.
+* Sponsor 1 is under Secondary Menu.
+* Sponsor 2 will be under Post Title at single.php
+* Extra Menu under Appearance Tab is allowed. I have already discussed in the list. Here is the example of Chip Bennett theme Oenology: http://wordpress.org/extend/themes/oenology
+
 = 1.4 [2011.08.25] =
 
 * Base stylesheet print logic has been changed to support child themes.

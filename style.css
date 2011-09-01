@@ -4,7 +4,7 @@ Theme URI: http://chip-life.tutorialchip.com/
 Author: Life.Object
 Author URI: http://www.tutorialchip.com/
 Description: Chip Life is an advanced and fully documented Framework intended to serve as a base for Child Themes. Chip Life theme supports 8 Widget Areas, Post Formats, Navigation Menus, Post Thumbnails, Custom Backgrounds, Custom Image Headers, and Custom Editor Style. It includes styles for the Visual Editor, special styles for for six different Post Formats, and has one-column, two-column layout. The Theme includes plug-and-play support for the WP-Pagenavi plugin. Requires WordPress 3.1 and higher. Check <a href="http://www.tutorialchip.com/chip-life/">CL Official Page</a> in case you need directions</a>.
-Version: 1.4
+Version: 1.4.1
 Tags: dark, light, white, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options
 License: GNU General Public License v2.0
 License URI: license.txt
@@ -406,6 +406,7 @@ input[type=text] {
 /*  =Images
 ------------------------ */
 
+.entry-content img,
 .comment-content img,
 .ping-content img {
 	max-width: 97.5%;
@@ -1603,6 +1604,7 @@ p.comment-form-comment {
 .menu1 ul li {
 	float: left; 
 	position: relative;
+	word-wrap: break-word;
 }
 
 .menu1 ul li:hover ul, 
@@ -1727,6 +1729,7 @@ p.comment-form-comment {
 .menu2 ul li {
 	float: left;
 	position: relative;
+	word-wrap: break-word;
 }
 
 .menu2 ul li:hover ul,
