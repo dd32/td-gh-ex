@@ -1,9 +1,3 @@
-body, td, textarea, input, select {
-    font-family: Segoe UI, Arial !important;
-    font-size: 13px;
-}
-
-
 
  .wrap {
 display:block;
@@ -16,6 +10,9 @@ padding:0px 30px 10px 30px;
 border-radius:5px;
 -moz-border-radius:5px;
 -webkit-border-radius:5px;
+    font-family: Segoe UI, Arial !important;
+    font-size: 13px;
+
 }
 
 .wrap h2 {

@@ -20,14 +20,14 @@
 
 
 $options = get_option('ma_options');
-if($options) {
+
 $mop_excerpthome = $options['mop_excerpthome'];
 $mop_excerptasides = $options['mop_excerptasides'];
 $mop_excerptarchive = $options['mop_excerptarchive'];
 if($mop_excerpthome=='') $mop_excerpthome='Full Post';
 if($mop_excerptarchive=='') $mop_excerptarchive='Full Post';
 if($mop_excerptasides=='') $mop_excerptasides='Yes';
-}
+
 
 ?>
 
@@ -155,7 +155,7 @@ if($mop_excerptasides=='') $mop_excerptasides='Yes';
 			<div class="entry-content">
 
 		<?php if ( function_exists("has_post_thumbnail") && has_post_thumbnail() ) { the_post_thumbnail(array(250,190), array("class" => "alignleft post_thumbnail")); } ?>
-		<?php /* faci comentarii cu // in html? 	<img src="<?php echo get_image() ?>" alt="<?php the_title_attribute();  ?>" title="" /> */ ?>
+		<?php /* <img src="<?php echo get_image() ?>" alt="<?php the_title_attribute();  ?>" title="" /> */ ?>
 				<?php if ($mop_excerpthome != "Full Post") {the_excerpt(); } else { the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'mantra' ) );}  ?>
 				<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'mantra' ), 'after' => '</div>' ) ); ?>
 			</div><!-- .entry-content -->

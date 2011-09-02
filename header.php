@@ -37,8 +37,8 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php
 /* This  retrieves  admin options. */
+
 $options = get_option('ma_options');
-if($options) {
 
 $mop_tables = $options['mop_tables'];
 $mop_side = $options['mop_side'];
@@ -101,21 +101,15 @@ $mop_tweeter = $options['mop_tweeter'];
 $mop_rss = $options['mop_rss'];
 
 
-
-
-
 	if ( !is_admin() ) {
 		wp_register_script('menu',get_template_directory_uri() . '/js/menu.js', array('jquery') );
 			wp_enqueue_script('menu');
 				if($mop_backtop!="Disable") {
 							wp_register_script('top',get_template_directory_uri() . '/js/top.js');
-							wp_enqueue_script('top');}
-	}
+							wp_enqueue_script('top');}	
+  						}
 
-  }?>
-
-
-<?php
+?><?php
 
 	/* We add some JavaScript to pages with the comment form
 	 * to support sites with threaded comments (when in use).
@@ -136,9 +130,8 @@ $mop_rss = $options['mop_rss'];
 
 <body <?php body_class(); ?>>
 	 <style type="text/css">
- <?php
- if($options) {
-?>.single-attachment #content,#wrapper, #access, #access .menu-header, div.menu, #colophon, #branding, #main,  .attachment img { width:<?php echo ($totalwidth) ?>px !important;} <?php 
+.single-attachment #content,#wrapper, #access, #colophon, #branding, #main,  .attachment img { width:<?php echo ($totalwidth) ?>px !important;} 
+#access .menu-header, div.menu {width:<?php echo ($totalwidth-12) ?>px !important;}<?php 
  if ($mop_side == "Disable") { ?>#content {width:<?php echo ($totalwidth-50) ?>px !important;margin:20px;} #primary, #secondary {display:none;} <?php }
 ?><?php
 if ($mop_side == "Right") { ?>
@@ -202,7 +195,7 @@ font-size:<?php echo $mop_fontsize ?>;
 ?><?php if ($mop_sidebullet != "arrow_white") { ?>.widget-area ul ul li{ background-image:url(<?php echo get_template_directory_uri()."/images/bullets/".$mop_sidebullet; ?>.png) !important;
 <?php if($mop_sidebullet == "folder_black" || $mop_sidebullet == "folder_light") {?> padding-top:5px;padding-left:20px; } <?php } ?><?php }
 
-?><?php if ($mop_pagetitle == "Hide") { ?> #content h1.entry-title { display:none;} <?php }
+?><?php if ($mop_pagetitle == "Hide") { ?> .page h1.entry-title { display:none;} <?php }
 ?><?php if ($mop_categtitle == "Hide") { ?> h1.page-title { display:none;} <?php }
 ?><?php if (($mop_postdate == "Hide" && $mop_postcateg == "Hide") || ($mop_postauthor == "Hide" && $mop_postcateg == "Hide") ) { ?>.bl_sep {display:none;} <?php }
 ?><?php if ($mop_postdate == "Hide") { ?> span.entry-date, span.onDate {display:none;} <?php }
@@ -210,7 +203,7 @@ font-size:<?php echo $mop_fontsize ?>;
 ?><?php if ($mop_postcateg == "Hide") { ?> span.bl_categ {display:none;} <?php }
 ?><?php if ($mop_postbook == "Hide") { ?>  span.bl_bookmark {display:none;} <?php }
 ?><?php if ($mop_parindent != "0px") { ?>  p {text-indent:<?php echo $mop_parindent;?> ;} <?php }
-?><?php if ($mop_posttime == "Hide") { ?>  .entry-time {display:none;} <?php } }?>
+?><?php if ($mop_posttime == "Hide") { ?>  .entry-time {display:none;} <?php } ?>
 
 </style>
 

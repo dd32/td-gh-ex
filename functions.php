@@ -1,12 +1,89 @@
 <?php
 
-$exerpt_n=40;
-$mop_excerptdots =' &hellip;';
-$mop_excerptcont = ' Continue reading';
+function mantra_get_default_options() {
 
-if ( is_admin() ) {
-require_once(dirname(__FILE__) . "/mantra-admin-functions.php");
+$mantra_defaults = array(
+
+"mop_side" => "Right",
+"mop_sidewidth" => 800,
+"mop_sidebar" => 250,
+"mop_colpad" => "10",
+
+"mop_fontsize" => "15px",
+"mop_headfontsize" => "Default",
+"mop_sidefontsize" => "Default",
+"mop_fontfamily" => '"Segoe UI", Arial, sans-serif',
+"mop_textalign" => "Default",
+"mop_parindent" => "0px",
+"mop_lineheight" => "Default",
+"mop_wordspace" => "Default",
+"mop_letterspace" => "Default",
+
+"mop_backcolor" => "#444444",
+"mop_headercolor" => "#333333",
+"mop_prefootercolor" => "#222222",
+"mop_footercolor" => "#171717",
+"mop_titlecolor" => "#0D85CC",
+"mop_descriptioncolor" => "#999999",
+"mop_contentcolor" => "#333333",
+"mop_linkscolor" => "#0D85CC",
+"mop_hovercolor" => "#333333",
+"mop_headtextcolor" => "#333333",
+"mop_headtexthover" => "#000000",
+"mop_sideheadbackcolor" => "#444444",
+"mop_sideheadtextcolor" => "#2EA5FD",
+
+"mop_footerheader" => "#0C85CD",
+"mop_footertext" => "#666666",
+"mop_footerhover" => "#888888",
+
+"mop_caption" => "Light",
+"mop_pin" => "Pin2",
+"mop_sidebullet" => "arrow_white",
+"mop_contentlist" => "Show",
+"mop_title" => "Show",
+"mop_pagetitle" => "Show",
+"mop_categtitle" => "Show",
+"mop_tables" => "Disable",
+"mop_backtop" => "Enable",
+"mop_comtext" => "Show",
+"mop_copyright" => "",
+
+"mop_postdate" => "Show",
+"mop_posttime" => "Hide",
+"mop_postauthor" => "Show",
+"mop_postcateg" => "Show",
+"mop_postbook" => "Show",
+
+"mop_excerpthome" => "Full Post",
+"mop_excerptarchive" => "Full Post",
+"mop_excerptasides" => "Yes",
+"mop_excerptwords" => "50",
+"mop_excerptdots" => " &hellip;",
+"mop_excerptcont" => " Continue reading",
+
+"mop_facebook" => "",
+"mop_tweeter" => "",
+"mop_rss" => "");
+
+
+	return apply_filters( 'ma_options', $mantra_defaults );
 }
+
+function mantra_get_theme_options() {
+	return get_option( 'ma_options', mantra_get_default_options() );
+}
+
+function mantra_set_theme_defaults() {
+	return update_option( 'ma_options', mantra_get_default_options());
+}
+
+
+add_option('ma_options', mantra_get_theme_options());
+
+
+if( is_admin() )
+require_once(dirname(__FILE__) . "/mantra-admin-functions.php");
 
 $options = get_option('ma_options');
 
@@ -17,7 +94,6 @@ $mop_excerptwords = $options['mop_excerptwords'];
 $mop_excerptdots = $options['mop_excerptdots'];
 $mop_excerptcont = $options['mop_excerptcont'];
 
-$exerpt_n=$mop_excerptwords;
 
 add_action('wp_print_styles', 'mantra_style');
 
@@ -44,7 +120,7 @@ function mantra_style() {
  * is designed for, generally via the style.css stylesheet.
  */
 if ( ! isset( $content_width ) )
-	$content_width = 1050;
+	$content_width = $mop_sidewidth;
 
 /** Tell WordPress to run mantra_setup() when the 'after_setup_theme' hook is run. */
 add_action( 'after_setup_theme', 'mantra_setup' );
@@ -86,10 +162,10 @@ function mantra_setup() {
 
 	// Make theme available for translation
 	// Translations can be filed in the /languages/ directory
-	load_theme_textdomain( 'mantra', TEMPLATEPATH . '/languages' );
+	load_theme_textdomain( 'mantra', get_template_directory_uri()  . '/languages' );
 
 	$locale = get_locale();
-	$locale_file = TEMPLATEPATH . "/languages/$locale.php";
+	$locale_file = get_template_directory_uri()  . "/languages/$locale.php";
 	if ( is_readable( $locale_file ) )
 		require_once( $locale_file );
 
@@ -191,8 +267,8 @@ add_filter( 'wp_page_menu_args', 'mantra_page_menu_args' );
  * @return int
  */
 function mantra_excerpt_length( $length ) {
-	global $exerpt_n;
-	return $exerpt_n;
+	global $mop_excerptwords;
+	return $mop_excerptwords;
 }
 add_filter( 'excerpt_length', 'mantra_excerpt_length' );
 
@@ -303,7 +379,7 @@ function mantra_comment( $comment, $args, $depth ) {
 		case 'trackback' :
 	?>
 	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'mantra' ); ?><?php comment_author_link(); ?><?php edit_comment_link( __('(Edit)', 'mantra'), ' ' ); ?></p>
+		<p><?php _e( 'Pingback: ', 'mantra' ); ?><?php comment_author_link(); ?><?php edit_comment_link( __('(Edit)', 'mantra'), ' ' ); ?></p>
 	<?php
 			break;
 	endswitch;
