@@ -10,7 +10,7 @@
      </div>
    
      <div class="chip-life-tabs-content">
-       <p><strong>Version:</strong> 1.4.1 &sdot; <strong>Released:</strong> September 01, 2011 &sdot; <strong>Author:</strong> <a href="http://www.tutorialchip.com/" target="_blank">TutorialChip</a></p>
+       <p><strong>Version:</strong> 1.4.2 &sdot; <strong>Released:</strong> September 02, 2011 &sdot; <strong>Author:</strong> <a href="http://www.tutorialchip.com/" target="_blank">TutorialChip</a></p>
        <?php
        $chip_life_current_theme = get_current_theme();
 	   $chip_life_theme_info = 'You are using <strong>Chip Life Framework</strong>.';

@@ -92,6 +92,12 @@ function chip_life_pings_init() {
 		<ol class="commentlist">
 			<?php do_action( 'chip_life_list_pings' ); ?>
 		</ol>
+        <div class="navigation">
+			<div class="alignleft"><?php previous_comments_link( '&laquo; Older Trackbacks' ) ?></div>
+			<div class="alignright"><?php next_comments_link( 'Newer Trackbacks &raquo;' ) ?></div>
+		<div class="clear"></div>
+        </div>
+        
 	</div><!-- end #pings -->
 
 	<?php else : // this is displayed if there are no pings ?>
