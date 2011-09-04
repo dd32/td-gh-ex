@@ -1,0 +1,25 @@
+/**
+ * @package Babylog
+ */
+
+body {
+	background-color: #86afbf;
+	background-image:url('images/background-blue.png');
+}
+.post_date a,
+.tagline {
+	color: #b1d8e5;
+}
+ul.post-categories li a,
+.comments-link a,
+.comments-link span,
+h2.widgettitle,
+.tabmenu,
+.post_header,
+th {
+	background-color: #518c9e;
+}
+ul.post-categories li a:hover,
+.comments-link a:hover {
+	background-color: #b1d8e5;
+}

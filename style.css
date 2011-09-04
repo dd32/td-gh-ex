@@ -1,0 +1,567 @@
+/*
+Theme Name: Babylog
+Theme URI: 
+Description: A sweet, illustrated theme for baby blogs.
+Version: 1.0
+Author: Caroline Moore
+Author URI: http://www.carolinemoore.net
+License: CC0 1.0 Universal
+License URI: http://creativecommons.org/publicdomain/zero/1.0/legalcode
+Tags: two-columns, fixed-width, right-sidebar, theme-options, custom-background, custom-menu, pink, purple, green, blue
+*/
+
+body,
+td,
+th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #666;
+	line-height: 21px;
+}
+a,
+a:visited {
+	text-decoration: none;
+	font-weight: bold;
+	color: #9b6745;
+}
+a:hover,
+a:active {
+	text-decoration: none;
+	font-weight: bold;
+	color: #9b6745;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #9b6745;
+	font-family: Vidaloka, Georgia, "Times New Roman", Times, serif;
+	font-weight: normal;
+}
+td,
+th {
+	vertical-align: top;
+	padding: 5px;
+	border: 1px solid #666;
+}
+th {
+	font-weight: bold;
+	text-align: center;
+	color: #fff;
+}
+hr {
+	clear: both;
+	width: 100%;
+	height: 1px;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #9b6745;
+	border-top-style: none;
+	border-right-style: none;
+	border-left-style: none;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	display: block;
+}
+.sticky {
+	
+}
+.wrapper {
+	width: 920px;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	z-index: 10;
+}
+.comments-link a,
+.comments-link a:visited,
+.comments-link span {
+	display: block;
+	text-transform: uppercase;
+	font-size: 11px;
+	border-radius: 3px;
+	float: right;
+	margin-right: 5px;
+	padding: 3px;
+	color: #fff;
+	font-weight: bold;
+	line-height: normal;
+	position: relative;
+}
+.content {
+	float: left;
+	clear: left;
+	position: relative;
+	width: 690px;
+	margin-top: 0px;
+}
+.navigation {
+	clear: both;
+	width: 100%;
+	display: inline-block;
+	margin-bottom: 30px;
+}
+.navigation .alignleft,
+.navigation .alignright {
+	width: 50%;
+}
+.navigation .alignright {
+	text-align: right;
+}
+.navigation a,
+.navigation a:visited {
+	color: #fff;
+}
+.post_header {
+	font-family: Vidaloka, Georgia, "Times New Roman", Times, serif;
+	color: #fff;
+	margin: 0px;
+	line-height: normal;
+	padding: 8px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	display: inline-block;
+	width: 674px;
+}
+.post_header a {
+	color: #fff;
+}
+h2.page_title {
+	line-height: normal;
+	margin: 0px;
+	padding: 0px;
+	color: #fff;
+}
+h2.page_title a {
+	font-size: 20px;
+	float: left;
+	position: relative;
+	margin: 0px;
+	padding: 0px;
+	width: 75%;
+	color: #fff;
+	font-weight: normal;
+}
+.post_date a {
+	font-family: Arial, Helvetica, sans-serif;
+	position: relative;
+	float: right;
+	font-size: 14px;
+	width: 25%;
+	text-align: right;
+	margin-top: 5px;
+}
+.entry {
+	background-color: #fff;
+	margin-bottom: 30px;
+	padding: 8px;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	display: block;
+	overflow: hidden;
+}
+.post {
+	width: 100%;
+	clear: both;
+}
+.postmetadata {
+	font-style: italic;
+}
+small,
+.commentmetadata {
+	text-transform: uppercase;
+	color: #666;
+	font-size: 11px;
+	margin-bottom: 5px;
+}
+ul.post-categories {
+	list-style: none;
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	width: 75%;
+}
+ul.post-categories li a,
+ul.post-categories li a:visited {
+	display: block;
+	text-transform: uppercase;
+	font-size: 11px;
+	border-radius: 3px;
+	float: left;
+	margin-right: 5px;
+	padding: 3px;
+	color: #fff;
+	font-weight: bold;
+	line-height: normal;
+	position: relative;
+	margin-bottom: 5px;
+}
+ul.sidebar {
+	float: right;
+	width: 200px;
+	margin-left: 20px;
+	margin-top: 0px;
+	list-style: none;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+	display: block;
+}
+
+
+/* =Alignment 
+--------------------------------------------------------------*/
+.aligncenter {
+	margin-left: auto;
+	margin-right: auto;
+	display:block;
+}
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
+}
+.clear {
+	clear: both;
+	width: 100%;
+}
+/* End Alignment */
+
+
+/* =Header 
+--------------------------------------------------------------*/
+.header {
+	width: 100%;
+	display: inline-block;
+	padding: 0px;
+	margin-top: 10px;
+}
+.tagline {
+	font-style:italic;
+	font-size: 18px;
+	font-family: Arial, Helvetica, sans-serif;
+	float: left;
+	position: relative;
+}
+.title a,
+.title a:visited {
+	font-family: Vidaloka, Georgia, "Times New Roman", Times, serif;
+	font-size: 50px;
+	font-weight: bold;
+	color: #fff;
+	position: relative;
+	width: 100%;
+	line-height: normal;
+	margin-top: 15px;
+	letter-spacing: -1px;
+	float: left;
+	width: 75%;
+}
+.baby-graphic {
+	float: right;
+	margin: 0px;
+	padding: 0px;
+	background-repeat: no-repeat;
+	width: 162px;
+	height: 119px;
+	position: relative;
+}
+
+
+/* =Tabbed Navigation Menu 
+--------------------------------------------------------------*/
+.tabmenu {
+	position: relative;
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0px;
+	width: 100%;
+	border-radius: 8px;
+	margin-bottom: 30px;
+}
+.tabmenu ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+.tabmenu li.menu-item {	
+	margin-right: 10px;
+	padding: 8px;
+	clear: none;
+	display: block;
+	float: left;
+	font-family: Vidaloka, Georgia, "Times New Roman", Times, serif;
+	font-size: 20px;
+	line-height: normal;
+	text-decoration: none;
+	border-radius: 8px;
+}
+.tabmenu li.menu-item a:link, 
+.tabmenu li.menu-item a:visited, 
+.tabmenu li.menu-item a:hover, 
+.tabmenu li.menu-item a:active {
+	color: #fff;
+	font-weight: normal;
+}
+/* End Tabbed Navigation Menu */
+
+
+/* =Footer 
+--------------------------------------------------------------*/
+.duckies {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	background-image:url('images/duckies.png');
+	background-repeat: no-repeat;
+	height: 74px;
+	width: 431px;
+	position: relative;
+	margin-bottom: 10px;
+	padding: 0px;
+	margin-top: 0px;
+}
+.footer {
+	font-size: 11px;
+	color: #fff;
+	width: 100%;
+	text-align: center;
+	clear: both;
+	position: relative;
+	padding: 5px;
+	margin-bottom: 30px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.footer a,
+.footer a:visited {
+	color: #fff;
+}
+/* End Footer */
+
+
+/* =Widgets 
+--------------------------------------------------------------*/
+.widget {
+	margin-bottom: 30px;
+	display: block;
+}
+.widget a,
+.widget a:visited,
+.widget a:hover,
+.widget a:active {
+	color: #9b6745;
+}
+.widget ul {
+	background-color: #fff;
+	border-bottom-right-radius: 8px;
+	border-bottom-left-radius: 8px;
+	padding-left: 30px;
+	padding-bottom: 10px;
+	padding-top: 5px;
+	padding-right: 8px;
+}
+.widget .tagcloud,
+.widget .textwidget,
+.widget #calendar_wrap,
+.widget #akismetwrap,
+.widget.widget_search {
+	background-color: #fff;
+	border-bottom-right-radius: 8px;
+	border-bottom-left-radius: 8px;
+	padding-bottom: 10px;
+	padding-top: 5px;
+	padding-left: 8px;
+	padding-right: 8px;
+}
+.widget.widget_search {
+	background-color: #fff;
+	border-top-right-radius: 8px;
+	border-top-left-radius: 8px;
+}
+h2.widgettitle {
+	font-family: Vidaloka, Georgia, "Times New Roman", Times, serif;
+	font-size: 20px;
+	color: #fff;
+	padding: 8px;
+	line-height: normal;
+	border-top-right-radius: 8px;
+	border-top-left-radius: 8px;
+	margin: 0px;
+	font-weight: normal;
+}
+h2.widgettitle a,
+h2.widgettitle a:visited,
+h2.widgettitle a:hover,
+h2.widgettitle a:active {
+	color: #fff;
+	font-weight: normal;
+}
+li.widget ul li {
+	list-style: disc;
+}
+li.widget ul li a:link,
+li.widget ul li a:visited,
+li.widget ul li a:hover,
+li.widget ul li a:active {
+	font-weight: normal;
+}
+/* End Widgets */
+
+
+/* =Calendar 
+--------------------------------------------------------------*/
+#wp-calendar {
+	width: 100%;
+}
+#wp-calendar caption {
+	font-weight: bold;
+}
+#wp-calendar td {
+	border: 0px none;
+	text-align: center;
+	padding: 2px;
+}
+#wp-calendar th {
+	text-align: center;
+	padding: 2px;
+}
+#prev {
+	text-align: left;
+}
+#next {
+	text-align: right;
+}
+/* End Calendar */
+
+
+/* =Images 
+--------------------------------------------------------------*/
+.entry img {
+	max-width: 670px;
+	height: auto;
+}
+img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}	
+a img {
+	border: none 0px;
+}
+/* End Images */
+
+
+/* =Captions 
+--------------------------------------------------------------*/
+dd.wp-caption-text {
+	font-size: 11px;
+}
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	border-radius: 3px;
+	max-width: 600px;
+}
+.wp-caption.aligncenter {
+	margin-left: auto;
+	margin-right: auto;
+}
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+	max-width: 590px;
+}
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+	color: #333;
+}
+/* End Captions */
+
+
+/* =Gallery 
+--------------------------------------------------------------*/
+#gallery {
+	margin: auto;
+	clear: both;
+	position: relative;
+}			
+#gallery img {
+	border: 2px solid #f3f3f3;
+}
+#gallery .gallery-caption {
+	margin-left: 0;
+}
+.attachment-thumbnail {
+	border: solid 3px #fff;
+}
+/* End Gallery */
+
+
+/* =Comments 
+--------------------------------------------------------------*/
+#commentform label {
+	display: block;
+	width: 65px;
+	float: left;
+}
+#commentform .required {
+	display: inline-block;
+	margin-left: -5px;
+	color: #c4513f;
+	font-weight: bold;
+}
+.alt {
+	background-color: #efefef;
+}
+.avatar {
+	float: right;
+	margin-left: 5px;
+	margin-bottom: 5px;
+}
+.bypostauthor {
+	background-color: #efefef;
+}
+.comments-area {
+	padding: 8px;
+	background-color: #fff;
+	border-radius: 8px;
+	margin-bottom: 10px;
+}
+.comments-area .navigation a,
+.comments-area .navigation a:visited {
+	color: #9b6745;
+}
+li.comment,
+li.pingback {
+	padding: 8px;
+	border-radius: 8px;
+}
+ol.commentlist {
+	padding-left: 30px;
+}
+.says {
+	font-style: italic;
+}
+/* End Comments */
