@@ -40,65 +40,14 @@
 
 $options = get_option('ma_options');
 
-$mop_tables = $options['mop_tables'];
-$mop_side = $options['mop_side'];
-$mop_sidewidth = $options['mop_sidewidth'];
-$mop_sidebar = $options['mop_sidebar'];
-if($mop_sidebar=='') $mop_sidebar='250';
+foreach ($options as $key => $value) {
+	
+     ${"$key"} = $value ;
+
+}
+
+
 $totalwidth= $mop_sidewidth+$mop_sidebar+50;
-$mop_colpad = $options['mop_colpad'];
-$mop_fontsize = $options['mop_fontsize'];
-$mop_textalign = $options['mop_textalign'];
-$mop_fontfamily = $options['mop_fontfamily'];
-$mop_caption = $options['mop_caption'];
-$mop_title = $options['mop_title'];
-$mop_pagetitle = $options['mop_pagetitle'];
-$mop_categtitle = $options['mop_categtitle'];
-$mop_postdate = $options['mop_postdate'];
-$mop_postauthor = $options['mop_postauthor'];
-$mop_postcateg = $options['mop_postcateg'];
-$mop_postbook = $options['mop_postbook'];
-$mop_parindent = $options['mop_parindent'];
-$mop_posttime = $options['mop_posttime'];
-
-$mop_headfontsize = $options['mop_headfontsize'];
-$mop_sidefontsize = $options['mop_sidefontsize'];
-$mop_lineheight = $options['mop_lineheight'];
-$mop_wordspace = $options['mop_wordspace'];
-$mop_letterspace = $options['mop_letterspace'];
-
-$mop_backcolor = $options['mop_backcolor'];
-$mop_headercolor = $options['mop_headercolor'];
-$mop_prefootercolor = $options['mop_prefootercolor'];
-$mop_footercolor = $options['mop_footercolor'];
-$mop_titlecolor = $options['mop_titlecolor'];
-$mop_descriptioncolor = $options['mop_descriptioncolor'];
-$mop_contentcolor = $options['mop_contentcolor'];
-$mop_linkscolor = $options['mop_linkscolor'];
-$mop_hovercolor = $options['mop_hovercolor'];
-$mop_headtextcolor = $options['mop_headtextcolor'];
-$mop_headtexthover = $options['mop_headtexthover'];
-$mop_sideheadbackcolor = $options['mop_sideheadbackcolor'];
-$mop_sideheadtextcolor = $options['mop_sideheadtextcolor'];
-
-$mop_footerheader = $options['mop_footerheader'];
-$mop_footertext = $options['mop_footertext'];
-$mop_footerhover = $options['mop_footerhover'];
-
-$mop_pin = $options['mop_pin'];
-$mop_sidebullet = $options['mop_sidebullet'];
-$mop_contentlist = $options['mop_contentlist'];
-
-$mop_excerpthome = $options['mop_excerpthome'];
-$mop_excerptarchive = $options['mop_excerptarchive'];
-$mop_excerptwords = $options['mop_excerptwords'];
-
-$mop_comtext = $options['mop_comtext'];
-$mop_backtop = $options['mop_backtop'];
-
-$mop_facebook = $options['mop_facebook'];
-$mop_tweeter = $options['mop_tweeter'];
-$mop_rss = $options['mop_rss'];
 
 
 	if ( !is_admin() ) {

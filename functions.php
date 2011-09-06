@@ -79,7 +79,7 @@ function mantra_set_theme_defaults() {
 }
 
 
-add_option('ma_options', mantra_get_theme_options());
+update_option('ma_options', mantra_get_theme_options());
 
 
 if( is_admin() )
@@ -87,12 +87,15 @@ require_once(dirname(__FILE__) . "/mantra-admin-functions.php");
 
 $options = get_option('ma_options');
 
-$mop_sidewidth = $options['mop_sidewidth'];
-$mop_sidebar = $options['mop_sidebar'];
-$totalSize = $mop_sidebar + $mop_sidewidth+50;
-$mop_excerptwords = $options['mop_excerptwords'];
-$mop_excerptdots = $options['mop_excerptdots'];
-$mop_excerptcont = $options['mop_excerptcont'];
+
+foreach ($options as $key => $value) {
+     ${"$key"} = $value ;
+
+}
+
+
+ $totalSize = $mop_sidebar + $mop_sidewidth+50;
+
 
 
 add_action('wp_print_styles', 'mantra_style');

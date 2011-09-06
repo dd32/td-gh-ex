@@ -21,12 +21,9 @@
 
 $options = get_option('ma_options');
 
-$mop_excerpthome = $options['mop_excerpthome'];
-$mop_excerptasides = $options['mop_excerptasides'];
-$mop_excerptarchive = $options['mop_excerptarchive'];
-if($mop_excerpthome=='') $mop_excerpthome='Full Post';
-if($mop_excerptarchive=='') $mop_excerptarchive='Full Post';
-if($mop_excerptasides=='') $mop_excerptasides='Yes';
+foreach ($options as $key => $value) {	
+     ${"$key"} = $value ;
+}
 
 
 ?>
