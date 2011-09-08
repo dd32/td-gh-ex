@@ -22,7 +22,8 @@
 
 	<div class="entry-content">
 		<?php the_content(); ?>
-		<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'asokay' ), 'after' => '</div>' ) ); ?>
+		<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'asokay' ), 'after' => '</div>' ) ); ?>	
+	  <br class="clear-content" />
 	</div><!-- .entry-content -->
 
 	<footer class="entry-meta">

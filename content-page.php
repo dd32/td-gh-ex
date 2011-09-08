@@ -11,5 +11,6 @@
 		<?php the_content(); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'asokay' ), 'after' => '</div>' ) ); ?>
 		<?php edit_post_link( __( 'Edit', 'asokay' ), '<span class="edit-link">', '</span>' ); ?>
+	<br class="clear-content" />
 	</div><!-- .entry-content -->
 </article><!-- #post-<?php the_ID(); ?> -->

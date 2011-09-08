@@ -69,4 +69,84 @@ function asokay_widgets_init() {
 		'after_title' => '</h1>',
 	) );	
 }
-add_action( 'init', 'asokay_widgets_init' );
+add_action( 'widgets_init', 'asokay_widgets_init' );
+
+/*
+ * Custom header image
+ */
+
+define('HEADER_TEXTCOLOR', '333333');
+define('HEADER_IMAGE', '%s/images/header.jpg');
+define('HEADER_IMAGE_WIDTH', 1000);
+define('HEADER_IMAGE_HEIGHT', 250);
+ 
+function header_style() {
+    ?><style type="text/css">
+        #headerimage {
+            background: url(<?php header_image(); ?>);
+        }
+    </style><?php
+}
+
+function admin_header_style() {
+    ?><style type="text/css">
+        #headimg {
+            width: <?php echo HEADER_IMAGE_WIDTH; ?>px;
+            height: <?php echo HEADER_IMAGE_HEIGHT; ?>px;
+            background: no-repeat;
+        }
+    </style><?php
+}
+
+add_custom_image_header('header_style', 'admin_header_style');
+
+/*
+ * Asokay comments
+ */
+
+function asokay_comment( $comment, $args, $depth ) {
+	$GLOBALS['comment'] = $comment;
+	switch ( $comment->comment_type ) :
+		case '' :
+	?>
+	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+		<article id="comment-<?php comment_ID(); ?>" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<?php echo get_avatar( $comment, 40 ); ?>
+					<?php printf( __( '%s <span class="says">says:</span>', 'asokay' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+				</div><!-- .comment-author .vcard -->
+				<?php if ( $comment->comment_approved == '0' ) : ?>
+					<em><?php _e( 'Your comment is awaiting moderation.', 'asokay' ); ?></em>
+					<br />
+				<?php endif; ?>
+
+				<div class="comment-meta commentmetadata">
+					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time pubdate datetime="<?php comment_time( 'c' ); ?>">
+					<?php
+						/* translators: 1: date, 2: time */
+						printf( __( '%1$s at %2$s', 'asokay' ), get_comment_date(),  get_comment_time() ); ?>
+					</time></a>
+					<?php edit_comment_link( __( '(Edit)', 'asokay' ), ' ' );
+					?>
+				</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><?php comment_text(); ?></div>
+
+			<div class="reply">
+				<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+			</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	<?php
+			break;
+		case 'pingback'  :
+		case 'trackback' :
+	?>
+	<li class="post pingback">
+		<p><?php _e( 'Pingback:', 'asokay' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __('(Edit)', 'asokay'), ' ' ); ?></p>
+	<?php
+			break;
+	endswitch;
+}

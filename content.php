@@ -30,6 +30,7 @@
 	<div class="entry-content">
 		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'asokay' ) ); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'asokay' ), 'after' => '</div>' ) ); ?>
+	<br class="clear-content" />
 	</div><!-- .entry-content -->
 	<?php endif; ?>
 

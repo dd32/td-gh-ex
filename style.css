@@ -4,10 +4,10 @@ Theme URI: http://andreasviklund.com/wordpress-themes/asokay/
 Author: Andreas Viklund
 Author URI: http://andreasviklund.com/
 Description: A full-featured but still simple and easy-to-use blog/website theme, built from the <a href="http://wordpress.org/extend/themes/toolbox/">Toolbox</a> theme by Automattic and styled by <a href="http://andreasviklund.com/">Andreas Viklund</a>.
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License
 License URI: license.txt
-Tags: custom-menu, sticky-post, microformats, translation-ready
+Tags: custom-menu, sticky-post, microformats, translation-ready,post-formats,two-columns,one-column
 */
 
 /* Structure */
@@ -78,11 +78,14 @@ h4{font-size:1.4em;}
 #content nav .nav-previous{float:left;width:50%;}
 #content nav .nav-next{float:right;text-align:right;width:50%;}
 #content #nav-above{display:none;}
+#content table {width:90%;}
 .paged #content #nav-above,.single #content #nav-above{display:block;}
 #nav-below{margin:1em 0 0;}
-.page-link{margin:0 0 1em;}
+.page-link{margin:1em 0 1em; clear:both;}
+.clear-content{clear:both;}
 
 /* Secondary */
+#secondary {width:240px;}
 #secondary .widget{margin:0 0 20px 0;}
 #secondary h1{font-size:1.6em;}
 #secondary ul{list-style:none;margin:0 0 15px 0;padding:0;}
