@@ -80,7 +80,7 @@ define('HEADER_IMAGE', '%s/images/header.jpg');
 define('HEADER_IMAGE_WIDTH', 1000);
 define('HEADER_IMAGE_HEIGHT', 250);
  
-function header_style() {
+function asokay_header_style() {
     ?><style type="text/css">
         #headerimage {
             background: url(<?php header_image(); ?>);
@@ -88,7 +88,7 @@ function header_style() {
     </style><?php
 }
 
-function admin_header_style() {
+function asokay_admin_header_style() {
     ?><style type="text/css">
         #headimg {
             width: <?php echo HEADER_IMAGE_WIDTH; ?>px;
@@ -98,7 +98,7 @@ function admin_header_style() {
     </style><?php
 }
 
-add_custom_image_header('header_style', 'admin_header_style');
+add_custom_image_header('asokay_header_style', 'asokay_admin_header_style');
 
 /*
  * Asokay comments
