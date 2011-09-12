@@ -35,6 +35,7 @@
 	?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" />
 <?php
 /* This  retrieves  admin options. */
 
@@ -120,7 +121,7 @@ font-size:<?php echo $mop_fontsize ?>;
 #content thead th {background:none;} #content tr td {border:none;}<?php }
 
 ?><?php if ($mop_headfontsize != "Default") { ?> h2.entry-title { font-size:<?php echo $mop_headfontsize; ?> !important ;}<?php }
-?><?php if ($mop_sidefontsize != "Default") { ?> .widget-area a { font-size:<?php echo $mop_sidefontsize; ?> !important ;}<?php }
+?><?php if ($mop_sidefontsize != "Default") { ?> .widget-area a:link, .widget-area a:visited { font-size:<?php echo $mop_sidefontsize; ?> ;}<?php }
 
 ?><?php if ($mop_backcolor != "444444") { ?> body { background-color:<?php echo $mop_backcolor; ?> !important ;}<?php }
 ?><?php if ($mop_headercolor != "333333") { ?> #header { background-color:<?php echo $mop_headercolor; ?> !important ;}<?php }

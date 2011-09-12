@@ -36,9 +36,9 @@ $mop_copyright = $options['mop_copyright'];
 				<a href="<?php echo home_url( '/' ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 			| <b title="Mantra 1.0" >Mantra</b> Theme designed by <a href="http://www.cryoutcreations.com" target="_blank" title="Cryout Creations" >Cryout Creations</a> | Powered by
 			<?php do_action( 'mantra_credits' ); ?>
-				<a href="<?php echo esc_url( __('http://wordpress.org/', 'mantra') ); ?>"
+				<a href="<?php echo esc_url('http://wordpress.org/' ); ?>"
 						title="<?php esc_attr_e('Semantic Personal Publishing Platform', 'mantra'); ?>" rel="generator">
-					<?php printf( __(' %s.', 'mantra'), 'WordPress' ); ?>
+					<?php printf(' %s.', 'WordPress' ); ?>
 				</a>
 
 			</div>

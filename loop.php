@@ -31,8 +31,8 @@ foreach ($options as $key => $value) {
 <?php /* Display navigation to next/previous pages when applicable */ ?>
 <?php if ( $wp_query->max_num_pages > 1 ) : ?>
 	<div id="nav-above" class="navigation">
-		<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav"></span> Older posts', 'mantra' ) ); ?></div>
-		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav"></span>', 'mantra' ) ); ?></div>
+		<div class="nav-previous"><?php next_posts_link('<span class="meta-nav"></span>&laquo;'. __( ' Older posts', 'mantra' ) ); ?></div>
+		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts', 'mantra' ).'&raquo;<span class="meta-nav"></span>' ); ?></div>
 	</div><!-- #nav-above -->
 <?php endif; ?>
 
@@ -116,7 +116,7 @@ foreach ($options as $key => $value) {
 			</div><!-- .entry-summary -->
 		<?php else : ?>
 			<div class="entry-content">
-				<?php if ($mop_excerpthome != "Full Post" && $mop_excerptasides=="Yes") {the_excerpt(); } else { the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'mantra' ) );}  ?>
+				<?php if ($mop_excerpthome != "Full Post" && $mop_excerptasides=="Yes") {the_excerpt(); } else { the_content( __( 'Continue reading','mantra').' <span class="meta-nav">&rarr;</span>');}  ?>
 			</div><!-- .entry-content -->
 		<?php endif; ?>
 
@@ -153,7 +153,7 @@ foreach ($options as $key => $value) {
 
 		<?php if ( function_exists("has_post_thumbnail") && has_post_thumbnail() ) { the_post_thumbnail(array(250,190), array("class" => "alignleft post_thumbnail")); } ?>
 		<?php /* <img src="<?php echo get_image() ?>" alt="<?php the_title_attribute();  ?>" title="" /> */ ?>
-				<?php if ($mop_excerpthome != "Full Post") {the_excerpt(); } else { the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'mantra' ) );}  ?>
+				<?php if ($mop_excerpthome != "Full Post") {the_excerpt(); } else { the_content( __( 'Continue reading','mantra').' <span class="meta-nav">&rarr;</span>');}  ?>
 				<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'mantra' ), 'after' => '</div>' ) ); ?>
 			</div><!-- .entry-content -->
 	<?php endif; ?>
@@ -168,7 +168,7 @@ foreach ($options as $key => $value) {
 					if ( $tags_list ):
 				?>
 					<span class="tag-links">
-						<?php printf( __( '<span class="%1$s">Tagged</span> %2$s', 'mantra' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list ); ?>
+						<?php printf( '<span class="%1$s">'.__( 'Tagged','mantra').'</span> %2$s', 'entry-utility-prep entry-utility-prep-tag-links', $tags_list ); ?>
 					</span>
 				<?php endif; ?>
 		<?php edit_post_link( __( 'Edit', 'mantra' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
@@ -184,7 +184,7 @@ foreach ($options as $key => $value) {
 <?php /* Display navigation to next/previous pages when applicable */ ?>
 <?php if (  $wp_query->max_num_pages > 1 ) : ?>
 				<div id="nav-below" class="navigation">
-					<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav"></span> Older posts', 'mantra' ) ); ?></div>
-					<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav"></span>', 'mantra' ) ); ?></div>
+		<div class="nav-previous"><?php next_posts_link('<span class="meta-nav"></span>&laquo;'. __( ' Older posts', 'mantra' ) ); ?></div>
+		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts', 'mantra' ).'&raquo;<span class="meta-nav"></span>' ); ?></div>
 				</div><!-- #nav-below -->
 <?php endif; ?>

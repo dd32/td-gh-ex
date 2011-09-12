@@ -283,7 +283,7 @@ add_filter( 'excerpt_length', 'mantra_excerpt_length' );
  */
 function mantra_continue_reading_link() {
 	global $mop_excerptcont;
-	return ' <a href="'. get_permalink() . '">' . __( $mop_excerptcont.' <span class="meta-nav">&rarr;</span>', 'mantra' ) . '</a>';
+	return ' <a href="'. get_permalink() . '">' .$mop_excerptcont.' <span class="meta-nav">&rarr; </span>' . '</a>';
 }
 
 /**
@@ -352,7 +352,7 @@ function mantra_comment( $comment, $args, $depth ) {
 		<div id="comment-<?php comment_ID(); ?>">
 		<div class="comment-author vcard">
 			<?php echo get_avatar( $comment, 40 );
-		?><?php printf( __( '%s <span class="says">says:</span>', 'mantra' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+		?><?php printf(  '%s <span class="says">'.__('says:', 'mantra' ).'</span>', sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
 
 
 
@@ -365,7 +365,7 @@ function mantra_comment( $comment, $args, $depth ) {
 		<div class="comment-meta commentmetadata"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 			<?php
 				/* translators: 1: date, 2: time */
-				printf( __( '%1$s at %2$s', 'mantra' ), get_comment_date(),  get_comment_time() ); ?></a><?php edit_comment_link( __( '(Edit)', 'mantra' ), ' ' );
+				printf(  '%1$s '.__('at', 'mantra' ).' %2$s', get_comment_date(),  get_comment_time() ); ?></a><?php edit_comment_link( __( '(Edit)', 'mantra' ), ' ' );
 			?>
 		</div><!-- .comment-meta .commentmetadata -->
 
@@ -490,7 +490,7 @@ if ( ! function_exists( 'mantra_posted_on' ) ) :
  */
 function mantra_posted_on() {
 
-	printf( __('&nbsp; %4$s <span class="onDate"> %3$s <span class="bl_sep">|</span> </span>  <span class="bl_categ"> %2$s </span>  ', 'mantra' ),
+	printf( '&nbsp; %4$s <span class="onDate"> %3$s <span class="bl_sep">|</span> </span>  <span class="bl_categ"> %2$s </span>  ',
 		'meta-prep meta-prep-author',
 		get_the_category_list( ', ' ),
 		sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span> <span class="entry-time"> - %2$s</span></a>',
@@ -498,7 +498,7 @@ function mantra_posted_on() {
 			esc_attr( get_the_time() ),
 			get_the_date()
 		),
-		sprintf( '<span class="author vcard" >By <a class="url fn n" href="%1$s" title="%2$s">%3$s</a> <span class="bl_sep">|</span></span>',
+		sprintf( '<span class="author vcard" >'.__( 'By ','mantra'). ' <a class="url fn n" href="%1$s" title="%2$s">%3$s</a> <span class="bl_sep">|</span></span>',
 			get_author_posts_url( get_the_author_meta( 'ID' ) ),
 			sprintf( esc_attr__( 'View all posts by %s', 'mantra' ), get_the_author() ),
 			get_the_author()
@@ -517,11 +517,11 @@ function mantra_posted_in() {
 	// Retrieves tag list of current post, separated by commas.
 	$tag_list = get_the_tag_list( '', ', ' );
 	if ( $tag_list ) {
-		$posted_in = __( '<span class="bl_posted">  Tagged %2$s.</span><span class="bl_bookmark"> Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.</span>', 'mantra' );
+		$posted_in =  '<span class="bl_posted">'.__( 'Tagged','mantra').' %2$s.</span><span class="bl_bookmark">'.__('Bookmark the ','mantra').' <a href="%3$s" title="Permalink to %4$s" rel="bookmark"> '.__('permalink','mantra').'</a>.</span>';
 	} elseif ( is_object_in_taxonomy( get_post_type(), 'category' ) ) {
-		$posted_in = __( '<span class="bl_bookmark">Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.</span>', 'mantra' );
+		$posted_in = '<span class="bl_bookmark">'.__( 'Bookmark the ','mantra'). ' <a href="%3$s" title="Permalink to %4$s" rel="bookmark">'.__('permalink','mantra').'</a>.</span>';
 	} else {
-		$posted_in = __( '<span class="bl_bookmark">Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.</span>', 'mantra' );
+		$posted_in = '<span class="bl_bookmark">'.__( 'Bookmark the ','mantra'). ' <a href="%3$s" title="Permalink to %4$s" rel="bookmark">'.__('permalink','mantra').'</a>.</span>';
 	}
 	// Prints the string, replacing the placeholders.
 	printf(

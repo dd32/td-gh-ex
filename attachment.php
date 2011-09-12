@@ -17,7 +17,7 @@ get_header(); ?>
 				<?php if ( ! empty( $post->post_parent ) ) : ?>
 					<p class="page-title"><a href="<?php echo get_permalink( $post->post_parent ); ?>" title="<?php esc_attr( printf( __( 'Return to %s', 'mantra' ), get_the_title( $post->post_parent ) ) ); ?>" rel="gallery"><?php
 						/* translators: %s - title of parent post */
-						printf( __( '<span class="meta-nav">&larr;</span> %s', 'mantra' ), get_the_title( $post->post_parent ) );
+						printf( '<span class="meta-nav">&larr;</span> %s', get_the_title( $post->post_parent ) );
 					?></a></p>
 				<?php endif; ?>
 
@@ -26,7 +26,7 @@ get_header(); ?>
 
 					<div class="entry-meta">
 						<?php
-							printf(__('<span class="%1$s">By</span> %2$s', 'mantra'),
+							printf('<span class="%1$s">'.__('By','mantra').'</span> %2$s',
 								'meta-prep meta-prep-author',
 								sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>',
 									get_author_posts_url( get_the_author_meta( 'ID' ) ),
@@ -37,7 +37,7 @@ get_header(); ?>
 						?>
 						<span class="meta-sep">|</span>
 						<?php
-							printf( __('<span class="%1$s">Published</span> %2$s', 'mantra'),
+							printf( '<span class="%1$s">'.__('Published','mantra').'</span> %2$s',
 								'meta-prep meta-prep-entry-date',
 								sprintf( '<span class="entry-date"><abbr class="published" title="%1$s">%2$s</abbr></span>',
 									esc_attr( get_the_time() ),
@@ -97,7 +97,7 @@ get_header(); ?>
 						</div><!-- .entry-attachment -->
 						<div class="entry-caption"><?php if ( !empty( $post->post_excerpt ) ) the_excerpt(); ?></div>
 
-<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'mantra' ) ); ?>
+<?php the_content( __( 'Continue reading','mantra').' <span class="meta-nav">&rarr;</span>' ); ?>
 <?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'mantra' ), 'after' => '</div>' ) ); ?>
 
 					</div><!-- .entry-content -->
