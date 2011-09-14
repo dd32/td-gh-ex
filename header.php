@@ -107,13 +107,13 @@ $options = get_option('p2h_theme_options');
 		
 		<?php if ( isset($options['twitterid']) && ($options['twitterid']!="") ){ ?>
 		<li>
-			<a class="twittericon" href="http://twitter.com/<?php echo $options['twitterid'];?>" title="<?php _e('Follow ', 'shaan'); ?><?php bloginfo('name'); ?><?php _e(' on Twitter', 'shaan'); ?>"><?php _e('Twitter', 'shaan'); ?></a>
+			<a class="twittericon" href="http://twitter.com/<?php echo $options['twitterid'];?>" title="<?php _e('Follow ', 'undedicated'); ?><?php bloginfo('name'); ?><?php _e(' on Twitter', 'undedicated'); ?>"><?php _e('Twitter', 'undedicated'); ?></a>
 		</li>
 		<?php } ?>
 
 		<?php if ( isset($options['facebookid']) && ($options['facebookid']!="") ){ ?>
 		<li>
-			<a class="facebookicon" href="<?php echo(stripslashes ($options['facebookid']));?>" title="<?php _e('Find ', 'shaan'); ?><?php bloginfo('name'); ?><?php _e(' on Facebook', 'shaan'); ?>"><?php _e('Facebook', 'shaan'); ?></a>
+			<a class="facebookicon" href="<?php echo(stripslashes ($options['facebookid']));?>" title="<?php _e('Find ', 'undedicated'); ?><?php bloginfo('name'); ?><?php _e(' on Facebook', 'undedicated'); ?>"><?php _e('Facebook', 'undedicated'); ?></a>
 		</li>
 		<?php } ?>
 		

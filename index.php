@@ -36,7 +36,7 @@
 			<div class="post-meta">
 				<ul>
 					<?php the_tags( __('<li>Tags: ', 'undedicated'), ', ', '</li>'); ?>
-					<li>Posted in <?php the_category(', ');?> | <?php comments_popup_link( __('Leave your comment', 'undedicated'), __( '1 comment', 'undedicated'), __('% comments', 'undedicated')); ?></li>
+					<li><?php _e('Posted in ', 'undedicated'); ?><?php the_category(', ');?> | <?php comments_popup_link( __('Leave your comment', 'undedicated'), __( '1 comment', 'undedicated'), __('% comments', 'undedicated')); ?></li>
 					<li><?php _e('Share on ', 'undedicated'); ?><a href="http://twitter.com/home?status=Currently reading: <?php the_title_attribute(); ?> <?php the_permalink(); ?>"><?php _e('Twitter','undedicated'); ?></a>, <a href="http://www.facebook.com/share.php?u=<?php the_permalink(); ?>&amp;t=<?php the_title_attribute(); ?>"><?php _e('Facebook', 'undedicated'); ?></a>, <a href="http://del.icio.us/post?v=4;url=<?php the_permalink(); ?>"><?php _e('Delicious', 'undedicated'); ?></a>, <a href="http://digg.com/submit?url=<?php the_permalink(); ?>"><?php _e('Digg', 'undedicated'); ?></a>, <a href="http://www.reddit.com/submit?url=<?php the_permalink(); ?>&amp;title=<?php the_title_attribute(); ?>"><?php _e('Reddit', 'undedicated'); ?></a></li>
 					<?php edit_post_link(__('Edit this post','undedicated'), '<li>', '</li>'); ?>
 				</ul>
@@ -49,8 +49,8 @@
 		
 		<div class="post-navigation">
 			<ul>
-				<li><?php next_posts_link( __('&laquo; Previous Page')) ?></li>
-				<li><?php previous_posts_link( __('Next Page &raquo;')) ?></li>
+				<li><?php next_posts_link( __('&laquo; Previous Page','undedicated')) ?></li>
+				<li><?php previous_posts_link( __('Next Page &raquo;','undedicated')) ?></li>
 			</ul>
 		</div>
 		

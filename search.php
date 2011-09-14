@@ -10,8 +10,8 @@
 		
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<div class="post-header">
-				<h2><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-				<p><?php _e('By ','undedicated'); ?><?php the_author_posts_link(); ?> | <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_time('F j, Y') ?></a></p>
+				<h2><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php _e('Permanent Link to ', 'undedicated'); ?><?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+				<p><?php _e('By ','undedicated'); ?><?php the_author_posts_link(); ?> | <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_time( get_option( 'date_format' ) ); ?></a></p>
 			</div>
 			
 			<?php the_post_thumbnail(array( 150, 150 ), array( 'class' => 'alignleft' )); ?>
@@ -34,8 +34,8 @@
 		
 		<div class="post-navigation">
 			<ul>
-				<li><?php next_posts_link( __('&laquo; Previous Page')) ?></li>
-				<li><?php previous_posts_link( __('Next Page &raquo;')) ?></li>
+				<li><?php next_posts_link( __('&laquo; Previous Page','undedicated')) ?></li>
+				<li><?php previous_posts_link( __('Next Page &raquo;','undedicated')) ?></li>
 			</ul>
 		</div>
 		

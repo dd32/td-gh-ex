@@ -82,7 +82,7 @@
 						</ul><!-- #nav-below -->
 						
 						<?php if ( ! empty( $post->post_parent ) ) : ?>
-						<p class="return-attachment">Return to <a href="<?php echo get_permalink( $post->post_parent ); ?>" title="<?php esc_attr( printf( __( 'Return to %s', 'undedicated' ), get_the_title( $post->post_parent ) ) ); ?>" rel="gallery"><?php
+						<p class="return-attachment"><?php _e('Return to ', 'undedicated'); ?><a href="<?php echo get_permalink( $post->post_parent ); ?>" title="<?php esc_attr( printf( __( 'Return to %s', 'undedicated' ), get_the_title( $post->post_parent ) ) ); ?>" rel="gallery"><?php
 								printf( __( '%s', 'undedicated' ), get_the_title( $post->post_parent ) );
 							?></a></p>
 						

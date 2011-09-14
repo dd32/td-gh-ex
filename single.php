@@ -7,7 +7,7 @@
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<div class="post-header">
 				<h1><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-				<p class="metadata"><span class="capitalize"><?php the_author_posts_link(); ?></span> | <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_time('F j, Y') ?></a> | <?php comments_popup_link( __('Leave your comment', 'undedicated'), __( '1 comment', 'undedicated'), __('% comments', 'undedicated')); ?></p>
+				<p class="metadata"><span class="capitalize"><?php the_author_posts_link(); ?></span> | <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_time( get_option( 'date_format' ) ); ?></a> | <?php comments_popup_link( __('Leave your comment', 'undedicated'), __( '1 comment', 'undedicated'), __('% comments', 'undedicated')); ?></p>
 			</div>
 			
 			<!--Show Ads Below Post Title -->
@@ -24,7 +24,7 @@
 			<?php } ?>
 			
 			<div class="post-meta">
-				<p><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a> <?php _e('was posted on','undedicated'); ?> <strong><?php the_time('F j, Y') ?></strong> <?php _e('at','undedicated'); ?> <strong><?php the_time() ?></strong> <?php _e('in','undedicated'); ?> <?php the_category(', ');?> <?php _e('and','undedicated'); ?><?php the_tags( __(' tagged as ', 'undedicated'), ', ', ''); ?>.
+				<p><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a> <?php _e('was posted on','undedicated'); ?> <strong><?php the_time( get_option( 'date_format' ) ) ?></strong> <?php _e('at','undedicated'); ?> <strong><?php the_time() ?></strong> <?php _e('in','undedicated'); ?> <?php the_category(', ');?> <?php _e('and','undedicated'); ?><?php the_tags( __(' tagged as ', 'undedicated'), ', ', ''); ?>.
 				<?php _e('It was last modified on','undedicated'); ?> <strong><?php the_modified_date('F j, Y'); ?></strong> <?php _e('at','undedicated'); ?> <strong><?php the_modified_time(); ?></strong>. 
 				<?php _e('You can follow any responses to this entry through the','undedicated'); ?> <?php post_comments_feed_link(__('RSS 2.0','undedicated')); ?> <?php _e('feed.','undedicated'); ?>				
 						<?php if (('open' == $post-> comment_status) && ('open' == $post->ping_status)) {
@@ -108,8 +108,8 @@
 		
 	<?php else : ?>
 		
-			<h2 class="page-title">Not Found</h2>
-			<p>Sorry, but you are looking for something that isn't here.</p>
+			<h2 class="page-title"><?php _e('Not Found','undedicated');?></h2>
+			<p><?php _e('Sorry, but you are looking for something that is not here','undedicated');?></p>
 			<?php get_search_form(); ?>
 				
 			<script type="text/javascript">
