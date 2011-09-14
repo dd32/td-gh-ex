@@ -4,7 +4,7 @@ Donate link: http://www.contextureintl.com/wordpress/adventure-journal-wordpress
 Tags: brown, tan, yellow, light, dark, one-column, custom-header, custom-background, custom-menu, theme-options, threaded-comments, sticky-post, holiday, photoblogging
 Requires at least: 3.0.0
 Tested up to: 3.3
-Stable tag: 1.7.1
+Stable tag: 1.7.2
 
 
 == Description ==
@@ -38,6 +38,12 @@ http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Changelog ==
+
+= 1.7.2 =
+* FIX: Updated attribution links to comply with WordPress standards (one link)
+* FIX: The default background can now be removed and/or restored via WordPress admin
+* FIX: Updated Browser Helper to function correctly regardless of theme location
+* UPDATE: Replaced widget textures with better quality ones
 
 = 1.7.1 =
 * UPDATE: Added Brazilian Portugese translation (thanks Fernando)

@@ -4,10 +4,11 @@
  * @subpackage Adventure_Journal
  */
 
+ //Define default background image
+define('BACKGROUND_IMAGE',get_template_directory_uri().'/images/mp-background-tile.jpg');
+
 //define('WP_DEBUG', true);
 
-//Adds the code into the footer
-add_action('wp_footer', 'ctx_attribution');
 // Remove message about IP blocking
 add_filter('login_errors', 'ctx_aj_login_error_mess');
 //Run initial setup for the theme
@@ -28,7 +29,6 @@ add_action('admin_init','ctx_aj_help_theme_options');
  ************************************************************************************************/
 //Get the URL of the active theme directory
 $themeDir = get_template_directory_uri();
-
 
 add_action('wp_print_styles','ctx_aj_stylesheets');
 function ctx_aj_stylesheets(){
@@ -149,7 +149,7 @@ function ctx_aj_setup() {
             switch ($themeOpts['layout']) {
                 case 'col-2-left':
                 case 'col-2-right':
-                    set_post_thumbnail_size( ctx_aj_customwidth('content',false)-40, 130, true ); //FEATURED IMAGE (665)
+                    set_post_thumbnail_size( ctx_aj_customwidth('content',false)-40, 130, true ); //FEATURED IMAGE (665) - content div is 40px wider than 'actual' content
                 break;
                 case 'col-3':
                 case 'col-3-left':
@@ -260,6 +260,25 @@ function ctx_aj_setup() {
         }
 
 }
+
+/**
+ * SHOULD add theme options to admin bar. Not working tho. Low priority.
+ */
+function ctx_aj_admin_bar_themeopts() {
+	global $wp_admin_bar;
+		
+	if ( !is_super_admin() || !is_admin_bar_showing() )
+		return;
+		
+	$wp_admin_bar->add_menu( array(
+		'id' => 'theme_options',
+		'parent' => 'appearance',
+		'title' => __( 'Theme Options','adventurejournal' ),
+		'href' => admin_url( 'themes.php?page=z-adventurejournal' )
+	));
+}
+add_action('admin_bar_menu', 'ctx_aj_admin_bar_themeopts');
+
 
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
@@ -394,23 +413,6 @@ function ctx_aj_get_relationships($postID='',$extraclass=''){
 
 
 /**
- * This snippet echos/displays a link in the wp_footer section with a link back back to the theme's creator and WordPress.
- *
- * You can remove this from footer.php if you really want to, but we'd REALLY appreciate if you left it in there. ;-)
- *
- * @return Prints HTML for the footer's attribution.
- */
-function ctx_attribution() {
-    $themeOpts = get_option('ctx-adventurejournal-options');
-    ?>
-    <div id="site-generator" style="<?php if($themeOpts['attrib']=='false'){ echo 'display:none'; } ?>">
-        <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'adventurejournal' ) ); ?>" title="<?php esc_attr_e( 'Simply the best CMS & blog platform out there', 'adventurejournal' ); ?>" rel="generator"><?php printf( __( 'Powered by %s', 'adventurejournal' ), 'WordPress' ); ?></a>
-    </div>
-    <div id="attrition"><a href="http://www.contextureintl.com/wordpress/adventure-journal-wordpress-theme/" title="Adventure Journal Wordpress Theme">Adventure Journal Theme</a> is Proudly Designed By <a href="http://www.contextureintl.com" id="contexture" title="Contexture International">Contexture International</a></div>
-    <?php
-}
-
-/**
  * Determines the html layout/order and components of the comments section. This function is called by
  * wp_list_comments() located in comments.php. Without this function Wordpress would use the default layout
  * and components. This function allows you to customize everything comments related
@@ -508,7 +510,7 @@ function ctx_aj_customwidth($column='sidebar',$css=true){
     $ajOpts = get_option('ctx-adventurejournal-options');
     $width = $ajOpts['sidebar-width'];
     $layout = $ajOpts['layout'];
-    
+	    
     /*WE NEED TO DISABLE CUSTOM SIDEBAR WIDTH FOR 3 COLUMN LAYOUTS*/
     if($column==='content-3' || $layout==='col-3' || $layout==='col-3-left' || $layout==='col-3-right'){
         return '';
@@ -526,13 +528,15 @@ function ctx_aj_customwidth($column='sidebar',$css=true){
                 case 'col-3':
                 case 'col-3-left':
                 case 'col-3-right':
-                    $diff = 220-$width; //Whats the sidebar different from default?
+                    $diff = 220-$width; //Whats the sidebar size difference from default?
                     $width = 720+($diff*2); //Adjust the content by the difference
                     return ($css)?'width:'.$width.'px;':$width;
                     break;
                 //2 COLS
                 case 'col-2':
-                    $diff = 220-$width; //Whats the sidebar different from default?
+				case 'col-2-left':
+				case 'col-2-right':
+                    $diff = 220-$width; //Whats the sidebar size difference from default?
                     $width = 720+$diff; //Adjust the content by the difference
                     return ($css)?'width:'.$width.'px;':$width;
                     break;

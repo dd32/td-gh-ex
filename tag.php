@@ -9,7 +9,7 @@ get_header(); ?>
   <div id="col-main" style="<?php echo ctx_aj_customwidth('content'); ?>">
     <div id="main-content" <?php ctx_aj_crinkled_paper(); ?>>
         <!-- BEGIN Main Content-->
-        <h1 class="page-title"><?php printf( __( 'Posts Tagged With: %s', 'adventurejournal' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?></h1>
+        <h1 class="page-title"><?php printf( __( 'Tagged With: %s', 'adventurejournal' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?></h1>
 
         <?php get_template_part( 'loop', 'tag' ); ?>
         <!-- END Main Content-->

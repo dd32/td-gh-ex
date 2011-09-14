@@ -24,6 +24,7 @@ $AJOpts = get_option('ctx-adventurejournal-options');
                     echo ' | ' . sprintf( __( 'Page %s', 'adventurejournal' ), max( $paged, $page ) );
     ?></title>
     <meta name="author" content="Designed by Contexture International | http://www.contextureintl.com" />
+	<meta name="iconpath" id="iconpath" content="<?php echo get_bloginfo( 'template_directory', 'raw' ); ?>/images/bh" />
     <link rel="profile" href="http://gmpg.org/xfn/11" />
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
     <?php

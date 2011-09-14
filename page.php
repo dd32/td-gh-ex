@@ -3,6 +3,7 @@
  * @package WordPress
  * @subpackage Adventure_Journal
  */
+global $multipage;
 get_header();
 ?>
 <div class="content" <?php ctx_aj_getlayout(); ?>>
@@ -28,13 +29,15 @@ get_header();
                         <?php the_content(__('(more...)')); ?>
                     </div>
 
+					<?php if ( comments_open() || have_comments() || $multipage ) : ?>
                     <div class="feedback">
                         <?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'adventurejournal' ), 'after' => '</div>' ) ); ?>
                         <?php if ( comments_open() || have_comments() ) : ?>
                         <?php comments_popup_link(__('Comments (0)'), __('Comments (1)'), __('Comments (%)')); ?>
                         <?php endif; ?>
                     </div>
-
+					<?php endif; ?>
+					
                  </div>
                 <br/>
                 <?php if ( comments_open() || have_comments() ) : ?>
