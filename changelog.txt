@@ -2,6 +2,11 @@
 For detailed documentation and support please visit: http://www.elmastudio.de/wordpress-themes/ari/
 ------------------------------------------------------------------------------------------------------------
 
+Version 1.1.1 - September 16th 2011
+-----------------------------------
+1. Removed hidden .ds_store (Mac) file in theme folder
+
+
 Version 1.1 - September 1th 2011
 --------------------------------
 1. Bugfix for searchform widget beacuse the searchform widget was breaking the layout (had to delete unneeded closing div in line 99 of functions.php)
