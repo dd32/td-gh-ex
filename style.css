@@ -4,7 +4,7 @@ Theme URI: http://wp-ultra.com/admired/
 Author: Brad Thomas
 Author URI: http://wp-ultra.com/
 Description: The Admired theme is a stylish and fully customizable WordPress theme. Make it yours with the easy customizable theme options with a simple check-box interface to easily change colors, fonts, skins, menus, sidebars, and much more. Uses Superfish menu effects and it has built-in pagination for post pages. It has special styles for six different post formats and an option to show post excerpts with thumbnails. Admired also has a HTML sitemap template, four extra widgets, and Google fonts.
-Version: 1.0
+Version: 1.0.1
 License: GNU General Public License
 License URI: license.txt
 Tags: dark, light, white, black, silver, gray, blue, one-column, two-columns, three-columns, left-sidebar, right-sidebar, flexible-width, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
@@ -599,7 +599,8 @@ li.sfHover  a  .sf-sub-indicator {
 }
 /* =Menu
 -------------------------------------------------------------- */
-.menu-main-container{
+.menu-main-container,
+.menu-sub-container{
 	margin: 0 auto;
 	width: 1010px;
 }
