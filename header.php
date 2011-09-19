@@ -22,7 +22,7 @@
 	wp_enqueue_script( 'comment-reply' );
 ?>
 <?php wp_head(); ?> 
-</head>
+</head><?php flush(); ?>
 <body <?php body_class(); ?>>
 
 <div class="wrapper">
@@ -35,12 +35,21 @@
 </div>
 
 <div class="ads468-60">
-<?php dynamic_sidebar('text-widget-area-for-ads468x60-in-header'); ?> 
-</div>
+<?php echo adt_get_option('adt_a468x60'); ?>
 </div>
 
+</div>
+
+<?php if (get_option('adt_show_main_menu', '1') != '0') : ?>
 <div id="access" role="navigation">			  
   <?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
 </div>
+<?php endif; ?>
+
+<?php if (adt_get_option('adt_a728x15-top', '') != '' ): ?>
+<div class="ads_728-15-top">			  
+<?php echo adt_get_option('adt_a728x15-top'); ?>
+</div>
+<?php endif; ?>
 
 <div class="middle">

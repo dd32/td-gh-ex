@@ -1,10 +1,15 @@
 </div>
 
+<?php if (adt_get_option('adt_a728x15-footer', '') != '' ): ?>
+<div class="ads_728-15-footer">			  
+<?php echo adt_get_option('adt_a728x15-footer'); ?>
+</div>
+<?php endif; ?>
+
 <div class="footer">
 
 <div class="fl">
-&copy;<?php echo date('Y'); ?> <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>.
-Powered by <a href="http://wordpress.org">WordPress</a>. 
+  <?php global $adt_footer_text; echo adt_get_option('adt_footer_text', $adt_footer_text); ?>
 </div>
 
 <div class="fr">

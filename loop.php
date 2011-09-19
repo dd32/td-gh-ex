@@ -21,9 +21,8 @@
 <?php while ( have_posts() ) : the_post(); ?>
 		
   <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-   
-  <!-- <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1> -->
   
+<?php if (!is_page()): ?>
   <h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'adsticle' ), 
     the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
 	<?php if (trim(get_the_title()) != '') { the_title(); } else { echo '&nbsp;'; }; ?></a></h1>
@@ -35,14 +34,21 @@
   | <?php _e('Categories', 'adsticle'); ?>: <?php the_category(', '); ?>    
   <?php endif; ?>
   </div>
-  
+<?php endif; ?>  
 
   <div class="post_content">
   <?php 
     if (!is_single() && !is_page()):   
       the_excerpt();
-    else:
-	  the_content();
+    else:  	  	  
+      if (is_single() && adt_get_option('ads_250-250-post', '') != '' ): ?>
+<div style="float:left; margin:10px;">
+<?php echo adt_get_option('ads_250-250-post'); ?>
+</div>
+<?php 
+      endif;
+
+      the_content();		  
     endif; 
   ?>
   </div>  
@@ -58,8 +64,8 @@
   <?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'adsticle' ), 'after' => '</div>' ) ); ?>  
   <?php endif; ?>
 
-  <?php if (get_the_tag_list()) : ?>				   
-  <div class="tags">
+  <?php if (get_the_tag_list()) : ?>  
+  <div class="taggs">  
   <?php _e('Tags', 'adsticle'); ?>: <?php echo get_the_tag_list('',', ',''); ?>
   </div>  
   <?php endif; ?>

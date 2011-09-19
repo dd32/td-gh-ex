@@ -1,12 +1,12 @@
 /*
 Theme Name: Adsticle
 Author URI: http://wpmole.com
-Description: Adsticle is simple WordPress templates which can be used on blogs or article site. Theme markup is convenient for your visitors to concentrate on content. Different features give you unlimited possibilities when you set blog configuration.
+Description: Adsticle is a simple wordpress theme. Adsticle supports 6 widget area, custom header, custom background, custom theme colors, options for AdSense code(Adsticle=Adsense+Article) and some other featuring.
 Author: WPMOLE
-Version: 1.0.7
+Version: 2.0.0
 License: GNU/GPL Version 3 or later. 
 License URI: http://www.gnu.org/licenses/gpl.html
-Tags: white, two-columns, right-sidebar, fixed-width, custom-menu, translation-ready
+Tags: sticky-post, threaded-comments, theme-options, rtl-language-support, editor-style, custom-header, custom-colors, blavatar, custom-background, two-columns, right-sidebar, fixed-width, custom-menu, translation-ready, black, blue, brown, gray, green, orange, pink, purple, red, silver, tan, white, yellow, dark, light
 Copyright: (c) 2011 WPMOLE
 */
 
@@ -14,7 +14,7 @@ html,body,p,h1,h2,h3,h4,h5,em,i,table,tr,td,th,form,input,textarea,select,li,ol,
 html{font-size:62.5%;}
 em,i{font-style:normal;}
 li{list-style-type:none;}
-h1,h2,h3,h4,h5{font-weight:400;padding:5px 0; font-weight: none; line-height: 1.6em;}
+h1,h2,h3,h4,h5{font-weight:400;padding:5px 0; font-weight: none; line-height: 1.3em;}
 p{padding:5px 0;}
 a:active,a:focus,img,input,select{outline:0;}
 a,a:link,a:active,a:visited{color:red;cursor:pointer;text-decoration:underline;}
@@ -27,12 +27,12 @@ body{background-color:gray;font-size:14px;line-height: 1.4em;color:green;font-fa
 
 ::selection {background:blue; color:yellow;}
 
-.header  {width:100%; background:red;  height: 80px; }
+.header  {width:100%; height: 80px;}
 .header  .title {position:absolute; top: 5px; left: 10px; width:500px; height: 80px; }
 .header  .title  h1 {margin-left: 10px; font-size: 30px; margin: 0px; padding:0px}
 .header  .title  h1 a {text-decoration: none;}
 .header  .title  span {font-size: 14px; margin:0px; padding:0px; text-transform:uppercase;}
-.header .ads468-60 {position:absolute; top: 10px; left: 522px; width:468px; height: 60px; background:red; overflow: hidden;}
+.header .ads468-60 {position:absolute; top: 10px; left: 522px; width:468px; height: 60px; overflow: hidden;}
 
 .footer{clear:left; width:100%;height:60px;background-color:red; border-top: 3px solid green;}
 .footer .fl, .footer .fr {display:inline;}
@@ -51,7 +51,7 @@ body{background-color:gray;font-size:14px;line-height: 1.4em;color:green;font-fa
 .sidebar-2column2{width:150px; float: right; overflow:hidden;}
 
 .widget {padding-bottom: 5px; padding-top: 15px;}
-.widget h3 {font-size: 16px; font-weight: none; text-transform:uppercase; padding-bottom:5px; margin-bottom:5px;}
+.widget h3, .widget h2 {font-size: 16px; font-weight: none; text-transform:uppercase; padding-bottom:5px; margin-bottom:5px;}
 .widget {padding-top: 20px; padding-bottom: 10px}
 .widget, .widget p, .widget li {font-size: 14px;}
 .widget p {padding: 0px; margin-bottom: 5px; }
@@ -63,15 +63,14 @@ body{background-color:gray;font-size:14px;line-height: 1.4em;color:green;font-fa
 .post  h1{font-size: 30px; color: red; margin-top: 15px; padding: 0px}
 .post  h1 a{text-decoration:none;}
 .meta{font-size: 12px; color: gray; text-transform:uppercase; padding-bottom: 10px; }
-.post_content {font-size: 16px;}
+.post_content {font-size: 16px; padding-top: 10px;}
 .post_content  p{padding-bottom: 15px}
 .post .addcomment, .footer .readmore {display:inline;}
 .post .readmore {float:left;}
 .post .addcomment {float:right;}
 
-.page-link{clear:both; padding-bottom:10px; padding-top:5px;};
-
-.tags{clear:both; padding-top:10px;} 
+.page-link{clear:both; padding-bottom:10px; padding-top:5px;}
+.taggs {clear:both; padding-top:10px;} 
 
 .navigation {text-align: center; padding-top: 25px;}
 
@@ -91,6 +90,27 @@ body{background-color:gray;font-size:14px;line-height: 1.4em;color:green;font-fa
 	
 .post_content ul ul {border: none; margin-left: 1.3em; padding: 0; }
 .post_content ol ol {border: none; margin-left: 1.3em; padding: 0; }
+
+.ads_728-15-top {
+	display: block;
+	float: left;
+	margin: 0 auto;
+	width: 1000px;
+	height: 25px;
+	padding-top:7px;
+	text-align: center;
+}
+
+.ads_728-15-footer {
+	display: block;
+	float: left;
+	margin: 0 auto;
+	width: 1000px;
+	text-align: center;
+	height: 25px;
+	padding-bottom:7px;
+	text-align: center;
+}
 
 #comments {
 	clear: both;
@@ -393,8 +413,6 @@ img.aligncenter {
 	margin: 0 auto;
 }
 
-
-
 #access {
 	background: #000;
 	display: block;
@@ -444,7 +462,7 @@ div.menu li {
 	top: 0;
 }
 #access ul ul a {
-	background: gray;
+	background: red;
 	line-height: 1em;
 	padding: 10px;
 	width: 160px;
@@ -452,7 +470,7 @@ div.menu li {
 }
 #access li:hover > a,
 #access ul ul :hover > a {
-	background: gray;
+	background: red;
 	color: #fff;
 }
 #access ul li:hover > ul {
@@ -511,19 +529,3 @@ div.menu li {
 	width: 11px;
 	height: 11px;
 }
-
-/* --- */
-
-body, .header .ads468-60 {background-color:white; color: black}
-.middle{background-color:white }  
-.sticky {background: #CEE3FF}
-a, a:hover, a:link, a:active, a:visited {color:#008000}
-.header{background:white;}
-.footer{background:white;}
-
-#access {background:white; border-top: 2px solid black; border-bottom: 2px solid black}
-
-.footer {border-top: 2px solid black}
-.widget h3 {border-bottom: 2px solid black}
-.header .title span {color: gray; }
-h1,h2,h3,h4,h5, .widget_rss a.rsswidget, .post h1 a, .header .title h1 a, #comments h3 {color: #0000FF;}
