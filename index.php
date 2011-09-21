@@ -1,8 +1,7 @@
 <?php get_header(); ?>
 
-
 				<!-- content -->
-				<div class="content">
+			<div class="content">
 
 			<?php if (have_posts()) : ?>
 		
@@ -28,11 +27,11 @@
 		
 			<?php else : ?>
 		
-				<h2 class="center">Not Found</h2>
-				<p class="center">Sorry, but you are looking for something that isn't here.</p>
+				<h2>Not Found</h2>
+				<p>Sorry, but you are looking for something that isn't here.</p>
 				<?php get_search_form(); ?>
 		
 			<?php endif; ?>
-		      </div>
+			</div>
 <?php get_sidebar(); ?>		      
 <?php get_footer(); ?>

@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 
-
 	<!-- Start: Left Panel -->
 	<div class="content">
 

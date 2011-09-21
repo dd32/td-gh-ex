@@ -4,7 +4,7 @@ Theme URI: http://www.baza-noclegowa.pl/
 Author URI: http://webm.pl/
 Description: Clean, clear and light theme for blogs, corporate websites and big portals as well.
 Author: webm.pl
-Version: 1.7
+Version: 1.8
 Tags: white, light, two-columns, fixed-width, editor-style
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -71,22 +71,7 @@ body {
 .container {background:#fff url(images/frame.png) 0 0 repeat-y;}
 
 /* frames */
-.frameT, .frameB, .frameT i, .frameB i {background:url(images/b_edf1f2.gif) no-repeat;}
-.frameT, .frameB {
-	height:5px;
-	position:relative; left:-1px;
-	width:100%;
-}
-	.frameT i, .frameB i {
-		font-size:0;
-		line-height:0;
-		position:absolute; top:0; left:-3px; margin-left:100%; 
-		height:5px;
-		width:5px;
-	}
-.frameT {background-position:-5px 0; top:-1px;}
-.frameB {background-position:-5px -5px; height:5px; bottom:-1px;}
-	.frameB i {background-position:0 -5px;}
+
 .bFrameT, .bFrameB, .bFrameT i, .bFrameB i {background:url(images/b_d7dadc.gif) no-repeat;}
 .bFrameT, .bFrameB {
 	height:5px;
@@ -331,36 +316,6 @@ body {
 		.content h2 {
 			padding:0 0px 7px;
 		}
-		.content .linkList {overflow:hidden; padding:0 0 24px 15px;}
-			.content .linkList div {clear:right; float:left; width:33%;}
-				.content .linkList .quarter {width:25%;}
-				.content .linkList h3 {font-size:1.5em; padding-bottom:9px;}
-				.content .linkList li {padding:0 0 4px 0;}
-					.content .linkList li a {font-size:1.17em;}
-					.content .linkList li span {color:#777e81;}
-			
-		.content .news {padding:5px 0 35px;}
-			.content .news h3 {
-				border-bottom:2px solid #D7DADC;
-				padding:0 110px 9px 15px;
-			}
-				.content .news .all {
-					margin-top:-2.4em;
-					padding-right:15px;
-					text-align:right;
-				}
-					.content .news .all a {text-decoration:underline;}
-			.content .news li {
-				padding:0;
-				position:relative;
-				margin-top:15px;
-				min-height:115px;
-				height:auto !important;
-				height:130px;
-			}
-				.content .news li h4 {font-size:1.5em; padding:8px 15px 8px 144px;}
-				.content .news li p {line-height:1.35; padding:0 15px 0 144px;}
-				.content .news li .photo {position:absolute; top:0; left:10px;}
 		
 		.content .gallery {overflow:hidden; padding:5px 0 8px 11px;}
 			.content .gallery li {
@@ -380,12 +335,6 @@ body {
 		.content .mainTxt {padding:5px 15px 18px;}
 			.content .mainTxt h3 {padding-bottom:15px;}
 			.content .mainTxt p {font-size:1.08em; line-height:1.3;}
-		.content .fanBlockWrap {border:1px solid #D7DADC; margin-bottom:20px;}
-			.content .fanBlock {padding:4px 15px 7px;}
-				.content .fanBlock h3 {font-size:1.5em; padding-bottom:3px;}
-				.content .fanBlock p {font-size:1.08em; line-height:1.3;}
-				.content .fanBlock .socialBtns {overflow:hidden;}
-					.content .fanBlock .btn {float:left; margin-right:5px;}
 		
 		.comments {padding:5px 0 9px;}
 			.comments h3 {
