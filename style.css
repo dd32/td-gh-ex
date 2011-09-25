@@ -4,7 +4,7 @@ Theme URI: http://www.elmastudio.de/wordpress-themes/ari/
 Description: Ari is a minimalistic, flexible three-column blog theme. The theme uses CSS3 media queries for its responsive layout and is therefore optimized for tablet pcs and smart phones (the theme switches to a two-column layout when viewed on a horizontal iPad screen, and to a one-column layout on iPhones). You can also choose a dark color scheme and the backgound-, text- and link-colors can be customized in the theme options page.
 Author: Elmastudio
 Author URI: http://www.elmastudio.de/wordpress-themes/
-Version: 1.1.1
+Version: 1.1.2
 Tags: white, dark, three-columns, left-sidebar, right-sidebar, flexible-width, custom-colors, custom-menu, theme-options, threaded-comments, sticky-post, translation-ready
 License: GNU/GPL Version 2 or later
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -73,6 +73,8 @@ body {
 	float:right;
 }
 #footer {
+	width:70%;
+	float:right;
 	padding: 0px 0px 30px 0px;
 	clear: both;
 	font-size: 12px;
@@ -539,18 +541,27 @@ a.post-edit-link {
 	font-style:italic;
 	color:#999;
 }
-#content .post #comments-content ol {
+#content .post #comments-content ol,
+#content #page #comments-content ol {
 	padding:0px;
 }
-#content .post #comments-content ol li ul.children {
+#content .post #comments-content ol li ul.children,
+#content #page #comments-content ol li ul.children  {
 	padding:0px;
 }
-#content .post #comments-content ol li.depth-1  {
+#content .post #comments-content ol li.depth-1 {
 	padding:25px 0px 10px 0px;
 	border-bottom:1px dotted #4C4C4C;
 	overflow:hidden;
 }
-#comments-content ol li.depth-2, #comments-content ol li.depth-3, #comments-content ol li.depth-4, #comments-content ol li.depth-5 {
+#comments-content ol li.depth-2,
+#content #page #comments-content ol li.depth-2,
+#comments-content ol li.depth-3,
+#content #page #comments-content ol li.depth-3,
+#comments-content ol li.depth-4,
+#content #page #comments-content ol li.depth-4,
+#comments-content ol li.depth-5,
+#content #page #comments-content ol li.depth-5 {
 	margin:10px 0px 0px 30px;
 	padding:25px 0px 0px 0px;
 	border-top:1px dotted #4C4C4C;
@@ -856,7 +867,8 @@ input.wpcf7-submit {
 }
 /* --- Footer --- */
 #footer {
-	float:none;
+	width: 62.5%;
+	float:right;
 	overflow:hidden;
 }
 }
@@ -887,10 +899,6 @@ input.wpcf7-submit {
 	width: 88.5%;
 	margin:0px 0px 50px 0px;
 	padding:50px 0px 0px 60px;
-	float:none;
-	overflow:hidden;
-}
-#footer {
 	float:none;
 	overflow:hidden;
 }
@@ -987,6 +995,11 @@ a#cancel-comment-reply-link {
 	padding:0;
 	float:none;
 	font-size:12px;
+}
+/* --- Footer --- */
+#footer {
+	width: 100%;
+	float:none;
 }
 }
 
