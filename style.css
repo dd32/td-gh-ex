@@ -2,7 +2,7 @@
 Theme Name: Graphene
 Theme URI: http://www.khairul-syahir.com/wordpress-dev/graphene-theme
 Description: The Graphene theme for WordPress is a stylish, neat, and tight WordPress theme supporting configurable columns layout options and 4 widget areas, with the ability to determine the number of columns to display in the footer widget area. It includes a buckload of action hooks for greater customisability through child theme, and a jQuery slider for your featured posts. It has built-in Twitter widget, allows for customisable colours, header and background through the WordPress admin, built-in AdSense placement and social sharing buttons, supports custom menu with drop-down navigation, and threaded comments of up to 10 levels deep! You can hide post parameters, show post author's gravatar, use different widgets for the front page than the rest of the website, and specify font styles for header and content texts. The codes are written so that you can easily override or add functionality to the theme by using your own child theme without altering the parent theme's code. Seriously, there's too many features for this theme to describe them all here! This theme has been tested and confirmed compatible with IE7 and above, Mozilla Firefox, Google Chrome, Opera, and Safari. The theme currently has been translated into 20 languages, and fully supports right-to-left languages. See the <a href="http://www.khairul-syahir.com/wordpress-dev/graphene-theme#changelog">theme's changelog</a>.
-Version: 1.4.1
+Version: 1.5
 Author: Syahir Hakim
 Author URI: http://www.khairul-syahir.com
 Tags: black, blue, white, one-column, two-columns, three-columns, right-sidebar, left-sidebar, fixed-width, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, rtl-language-support, post-formats, featured-image-header, featured-images, full-width-template, microformats
@@ -59,6 +59,7 @@ body {
 	color: #2c2b2b;
 	font: normal 12px arial;
 	line-height: 18px;
+	position: relative;
 }
 a,
 a:visited {
@@ -467,7 +468,7 @@ a:hover {
 .three-col-center.three-columns #content-main {
 	width: 445px;
 }
-h1.page-title {
+.page-title {
 	background: #2070B7;
 	background: linear-gradient(left top, #0F2D4D, #2880C3);
 	background: -moz-linear-gradient(left top, #0F2D4D, #2880C3);
@@ -478,9 +479,9 @@ h1.page-title {
 	margin: 0 auto 10px;
 	padding: 8px 0;
 	text-align: center;
-	text-shadow: 0 -1px 0 #333333;
+	text-shadow: 0 -1px 0 #333;
 }
-h1.page-title span {
+.page-title span {
 	color: #fff;
 }
 .cat-desc{
@@ -579,6 +580,12 @@ h1.page-title span {
 	position: relative;
 	width: 890px;
 	height: 200px;
+}
+.fade .slider_post {
+	position: absolute !important;
+	left: 0;
+	top: 0;
+	display: none;
 }
 .slider_post_entry p{
 	margin-bottom: 10px;
@@ -695,36 +702,7 @@ h1.page-title span {
 .two-col-right .full-sized .slider_nav,
 .three-col-right .full-sized .slider_nav {
 	right: 15px;
-}/*
-.two-col-right .full-sized .slider_nav,
-.three-col-right .full-sized .slider_nav {
-	margin-right: 15px;
 }
-.one-column .slider_nav {
-	width: 940px;
-}
-.one-column .full-sized .slider_nav {
-	width: 945px;
-}
-.two-columns .slider_nav {
-	width: 650px;
-}
-.two-columns .full-sized .slider_nav {
-	width: 675px;
-}
-.three-columns .slider_nav {
-	width: 437px;
-}
-.three-columns .full-sized .slider_nav {
-	width: 460px;
-}
-.three-col-center .full-sized .slider_nav,
-.three-col-right .full-sized .slider_nav {
-	width: 445px;
-}
-.three-col-center .slider_nav {
-	width: 422px;
-}*/
 .slider_nav a span {
 	display: none;
 }
@@ -1327,7 +1305,7 @@ pre.block {
 
 	padding: 0;
 	position: relative;
-	width: 100%;
+	width: 100% !important;
 	margin: 10px auto;
 }
 .post-format .entry-header{
@@ -1957,6 +1935,9 @@ h3.author-post-list {
 	margin-left: -10px;
 	width: 104%;
 }
+.homepage_pane .excerpt-thumb {
+	text-align: center;
+}
 .homepage_pane img{
 	-moz-box-shadow: -2px 2px 5px #777;
 	-webkit-box-shadow: -2px 2px 5px #999;
@@ -1964,11 +1945,11 @@ h3.author-post-list {
 	margin: 0 auto 5px auto;
 }
 .two-columns .homepage_pane img{
-	width: 317px;
+	max-width: 317px;
 	height: auto;
 }
 .three-columns .homepage_pane img{
-	width: 216px;
+	max-width: 216px;
 	height: auto;
 }
 .homepage_pane .post-title{
@@ -1998,14 +1979,13 @@ h3.author-post-list {
 	background: url(images/sprite_h.png) left -952px repeat-x #111;
 	border-top: 1px solid #d5d5d5;
 	padding-top: 50px;
-	margin-bottom: 50px;
-	min-height: 100px;
+	margin-bottom: 30px;
+	min-height: 80px;
 	position: relative;
 	color: #999;
-	padding-bottom: 20px;
 }
 #copyright {
-	margin: 0 20px;
+	margin: 0 20px 20px;
 	float: left;
 	width: 300px;
 }
@@ -2071,7 +2051,7 @@ h3.author-post-list {
 #developer {
     text-align: right;
     clear: right;
-    padding: 20px 20px 0 20px;
+    padding: 20px;
 	float: right;
 }
 
@@ -2187,5 +2167,11 @@ h3.author-post-list {
 	background: none;
 }
 
+/* WPStats */
+#wpstats {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
 
 .hide { display: none; }

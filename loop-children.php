@@ -12,66 +12,34 @@ if ( $graphene_settings['child_page_listing'] == 'show_always' ||
     
     /* Get the child pages */
     $args = array(
-        'child_of' => $post->ID,
-        'sort_order' => 'ASC',
-        'sort_column' => 'menu_order, post_title',
-        'hierarchical' => 0,
-        'parent' => $post->ID,
-        'post_type' => 'page',
-        'post_status' => 'publish'
+        'post_parent' 		=> $post->ID,
+        'orderby' 			=> 'menu_order, title',
+		'order' 			=> 'ASC',
+        'post_type' 		=> 'page',
+		'posts_per_page' 	=> -1
     );
-    $pages = get_pages(apply_filters('graphene_child_pages_args', $args));
+    $pages = new WP_Query( apply_filters('graphene_child_pages_args', $args ) );
 
-    if ($pages) :
-
-    /*
-    stdClass Object
-    (
-        [ID] => 144
-        [post_author] => 3
-        [post_date] => 2007-09-04 09:51:50
-        [post_date_gmt] => 2007-09-03 23:51:50
-        [post_content] => This page has a parent and child.
-        [post_title] => Child page 1
-        [post_excerpt] => 
-        [post_status] => publish
-        [comment_status] => closed
-        [ping_status] => closed
-        [post_password] => 
-        [post_name] => child-page-1
-        [to_ping] => 
-        [pinged] => 
-        [post_modified] => 2007-09-04 09:51:50
-        [post_modified_gmt] => 2007-09-03 23:51:50
-        [post_content_filtered] => 
-        [post_parent] => 143
-        [guid] => http://wpthemetestdata.wordpress.com/parent-page/child-page-1/
-        [menu_order] => 0
-        [post_type] => page
-        [post_mime_type] => 
-        [comment_count] => 0
-        [filter] => raw
-    )
-    */
+    if ( $pages->have_posts() ) :
     ?>
     <div class="child-pages-wrap">
-            <?php foreach ($pages as $page) : setup_postdata($page); ?>
-        <div class="post child-page page">
+        <?php while ( $pages->have_posts() ) : $pages->the_post(); ?>
+        <div class="post child-page page" id="page-<?php the_ID(); ?>">
             <div class="entry">
                     <div class="entry-content clearfix">
                     <?php /* The post thumbnail */
-                    if (has_post_thumbnail($page->ID)) {
-                        echo '<div class="excerpt-thumb">';
-                        echo get_the_post_thumbnail($page->ID, apply_filters('graphene_excerpt_thumbnail_size', 'thumbnail'));
-                        echo '</div>';
+                    if ( has_post_thumbnail( get_the_ID() ) ) {
+                        echo '<div class="excerpt-thumb"><a href="' . get_permalink( get_the_ID() ) . '">';
+                        echo get_the_post_thumbnail( get_the_ID(), apply_filters( 'graphene_excerpt_thumbnail_size', 'thumbnail' ) );
+                        echo '</a></div>';
                     } else {
-                        echo graphene_get_post_image($page->ID, apply_filters('graphene_excerpt_thumbnail_size', 'thumbnail'), 'excerpt');	
+                        echo graphene_get_post_image( get_the_ID(), apply_filters( 'graphene_excerpt_thumbnail_size', 'thumbnail' ), 'excerpt' );	
                     }
                     ?>
 
                     <?php /* The title */ ?>
                     <h2 class="post-title">
-                        <a href="<?php echo get_permalink($page->ID) ?>" rel="bookmark" title="<?php printf(esc_attr__('Permalink to %s', 'graphene'), $page->post_title); ?>"><?php if ($page->post_title == '') {_e('(No title)','graphene');} else {echo $page->post_title;} ?></a>
+                        <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php printf( esc_attr__( 'Permalink to %s', 'graphene' ), get_the_title() ); ?>"><?php if ( get_the_title() == '' ) { _e( '(No title)','graphene' ); } else { the_title(); } ?></a>
                     </h2>
 
                     <?php /* The excerpt */ 
@@ -79,13 +47,13 @@ if ( $graphene_settings['child_page_listing'] == 'show_always' ||
                     ?>
 
                     <?php /* View page link */ ?>
-                    <p><a href="<?php echo get_permalink($page->ID) ?>" class="block-button" rel="bookmark" title="<?php printf(esc_attr__('Permalink to %s', 'graphene'), $page->post_title); ?>"><?php _e('View page &raquo;', 'graphene'); ?></a></p>
+                    <p><a href="<?php the_permalink(); ?>" class="block-button" rel="bookmark" title="<?php printf( esc_attr__( 'Permalink to %s', 'graphene' ), get_the_title() ); ?>"><?php _e( 'View page &raquo;', 'graphene' ); ?></a></p>
                 </div>
             </div>
         </div>
-        <?php endforeach; ?>
+        <?php endwhile; ?>
     </div>
 <?php 
-        endif; 
+        endif; wp_reset_postdata(); 
     endif;
 ?>

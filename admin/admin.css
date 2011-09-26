@@ -212,3 +212,27 @@ tr.new-social-media-name, tr.social-media-custom-name{
 	cursor: pointer;
 	text-decoration: none;
 }
+
+.archive-title-preview {
+	width: 500px;
+}
+.page-title {
+	background: #2070B7;
+	background: linear-gradient(left top, #0F2D4D, #2880C3);
+	background: -moz-linear-gradient(left top, #0F2D4D, #2880C3);
+	background: -webkit-linear-gradient(left top, #0F2D4D, #2880C3);
+	-pie-background: linear-gradient(left top, #0F2D4D, #2880C3);
+	color: #e3e3e3;
+	font-size: 16px;
+	margin: 0 auto 10px;
+	padding: 8px 0;
+	text-align: center;
+	text-shadow: 0 -1px 0 #333;
+	display: block;
+	font-weight: bold;
+}
+.page-title span {
+	color: #fff;
+}
+
+.hide { display: none; }

@@ -13,7 +13,7 @@ function graphene_faq(){ ?>
         <ol>
         	<li>
             	<p><strong><?php _e("Where should I go for the theme's support?", 'graphene'); ?></strong></p>
-                <p><?php _e("Please direct all support requests for the theme at the theme's <a href=\"http://forum.khairul-syahir.com/forum/graphene-wordpress-theme\">Support Forum</a>.", 'graphene'); ?></p>
+                <p><?php _e("Please direct all support requests for the theme at the theme's <a href=\"http://forum.khairul-syahir.com/graphene-wordpress-theme/\">Support Forum</a>.", 'graphene'); ?></p>
             </li>
             <li>
             	<p><strong><?php _e("The post's featured image is replacing my header image. Help!", 'graphene'); ?></strong></p>

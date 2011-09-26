@@ -212,13 +212,14 @@ a:hover {
 */
 #nav li {
 	float: right;
-}/*
+}
 #nav li ul {
 	position: absolute;
 	width: 200px;
-	left: -999em;
+	right: -999em;
+	left: auto;
 }
-
+/*
 #nav li:hover ul {
 	left: auto;
 }*/

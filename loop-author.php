@@ -42,58 +42,60 @@
             <?php /* Lists the author's latest posts */ ?>
             <?php 
 			$args = array(
-						'numberposts' => 5,
+						'posts_per_page' => 5,
 						'author' => get_the_author_meta('ID'),
 						'orderby' => 'date',
 						'suppress_filters' => 0,
 						);
-			$posts = get_posts(apply_filters('graphene_author_latest_posts_args', $args)); 
-			if (!empty($posts)) : ?>
-            
+                        $postsQuery = new WP_Query(apply_filters('graphene_author_latest_posts_args', $args));
+                        if ($postsQuery->have_posts()) : ?>            
             <h4><?php _e('Latest posts', 'graphene'); ?></h4>
-			<ol>	
-			<?php foreach ($posts as $post) { ?>
+            <ol>	
+            <?php while ($postsQuery->have_posts()) : $postsQuery->the_post(); ?>
                 <li><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(esc_attr__('Permalink Link to %s', 'graphene'), the_title_attribute('echo=0')); ?>"><?php if (get_the_title() == '') {_e('(No title)','graphene');} else {the_title();} ?></a> &mdash; <?php echo get_the_date(); ?></li>    
-            <?php } wp_reset_query(); ?>
+            <?php endwhile;  ?>
             </ol>
             <?php do_action('graphene_author_latestposts'); ?>
             
-            <?php endif; ?>
+            <?php endif; wp_reset_postdata(); ?>
             
             
             <?php /* Lists the author's most commented posts */ ?>
             <?php 
 			$args = array(
-						'numberposts' => 5,
+						'posts_per_page' => 5,
 						'author' => get_the_author_meta('ID'),
 						'orderby' => 'comment_count',
 						'suppress_filters' => 0,
 						);
-			$posts = get_posts(apply_filters('graphene_author_popular_posts_args', $args)); 
+			$postsQuery = new WP_Query(apply_filters('graphene_author_popular_posts_args', $args)); 
 			
 			// Check if at least one of the author's post has comments
 			$have_comments = NULL;
-			foreach ($posts as $post) {
-				setup_postdata($post);
-				if (get_comments_number() != 0)
-					$have_comments = TRUE;
-			}
+                        $comments_ol_html = '';
+                        while ($postsQuery->have_posts()){
+                            $postsQuery->the_post();
+                            setup_postdata($post);
+                            $nr_comments = get_comments_number();
+                            /* List the post only if comment is open 
+                             * and there's comment(s) 
+                             * and the post is not password-protected */
+                            if (comments_open() && empty($post->post_password) && $nr_comments != 0){
+                                $have_comments = TRUE;
+                                $comments_ol_html .= '<li><a href="'. get_permalink() .'" rel="bookmark" title="'. sprintf(esc_attr__('Permalink Link to %s', 'graphene'), the_title_attribute('echo=0')) .'">'. ( get_the_title() == '' ? __('(No title)','graphene') : get_the_title() ) . '</a> &mdash; '. ( $nr_comments == 1 ? __('1 comment','graphene') : str_replace('%', number_format_i18n($nr_comments), __("% comments",'graphene')) ). '</li>';
+                            }
+                        }
 			
 			if ($have_comments) :
 			?>
                 
             <h4><?php _e('Most commented posts', 'graphene'); ?></h4>
             <ol>
-            <?php foreach ($posts as $post) { setup_postdata($post); ?>
-                <?php /* List the post only if comment is open and there's comment(s) and the post is not password-protected */ ?>
-                <?php if (comments_open() && empty($post->post_password) && get_comments_number() != 0) : ?>
-                <li><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(esc_attr__('Permalink Link to %s', 'graphene'), the_title_attribute('echo=0')); ?>"><?php if (get_the_title() == '') {_e('(No title)','graphene');} else {the_title();} ?></a> &mdash; <?php comments_number(__('Leave comment','graphene'), __('1 comment','graphene'), __("% comments",'graphene')); ?></li>
-                <?php endif; ?>
-            <?php } ?>
+            <?php echo $comments_ol_html; ?>
             </ol>
             <?php do_action('graphene_author_popularposts'); ?>
             
-            <?php endif; wp_reset_query(); ?>
+            <?php endif; wp_reset_postdata(); ?>
             
         </div>
         

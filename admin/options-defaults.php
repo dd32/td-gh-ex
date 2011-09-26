@@ -9,8 +9,9 @@ $graphene_defaults = array(
 	'db_version' => '1.0',
 
 	/* Slider options */
-	'slider_cat' => '',
+	'slider_type' => 'latest_posts', // latest_posts | random | posts_pages | categories
 	'slider_specific_posts' => '',
+    'slider_specific_categories' => '',
 	'slider_postcount' => '',
 	'slider_img' => 'featured_image', // disabled | featured_image | post_image | custom_url
 	'slider_display_style' => 'thumbnail-excerpt', // thumbnail-excerpt | bgimage-excerpt | full-post
@@ -20,14 +21,15 @@ $graphene_defaults = array(
 	'slider_trans_speed' => '400',
 	'slider_position' => false,
 	'slider_disable' => false,
+    'slider_animation' => 'horizontal-slide', // horizontal-slide | vertical-slide | fade | none
 	
 	/* Front page options */
-	'frontpage_posts_cats' => array( 'disabled' ),
+	'frontpage_posts_cats' => array(),
 	
 	/* Homepage panes */
 	'show_post_type' => 'latest-posts', // latest-posts | cat-latest-posts | posts
 	'homepage_panes_count' => '2',
-	'homepage_panes_cat' => '1',
+	'homepage_panes_cat' => array( '1' ),
 	'homepage_panes_posts' => '1',
 	'disable_homepage_panes' => false,
     
@@ -38,9 +40,11 @@ $graphene_defaults = array(
     'hide_parent_content_if_empty' => false,
     'child_page_listing' => 'show_always', // hide | show_always | show_if_parent_empty
 	
-	/* Syndication options */
+	/* Top bar options(Syndication) */
+    'hide_top_bar' => false,
 	'custom_feed_url' => '',
 	'hide_feed_icon' => false,
+	'social_media_new_window' => false,
 	'twitter_url' => '',
 	'facebook_url' => '',
 	'social_media' => array(),
@@ -82,7 +86,6 @@ $graphene_defaults = array(
 	'link_header_img' => false,
 	'featured_img_header' => false,
 	'use_random_header_img' => false,
-	'hide_top_bar' => false,
 	'hide_feed_icon' => false,
 	'search_box_location' => 'top_bar', // top_bar | nav_bar | disabled
 	
@@ -112,6 +115,7 @@ $graphene_defaults = array(
 	/* Navigation menu options */
 	'navmenu_child_width' => '',
 	'navmenu_home_desc' => '',
+	'disable_menu_desc' => false,
 	
 	/* Colour options */
 	'bg_content_wrapper' => '#e3e3e3',
@@ -131,7 +135,13 @@ $graphene_defaults = array(
 	'bg_button' => '#2982C5',
 	'bg_button_label' => '#fff',
 	'bg_button_label_textshadow' => '#444',
-	
+	'bg_archive_left' => '#0F2D4D',
+	'bg_archive_right' => '#2880C3',
+	'bg_archive_label' => '#E3E3E3',
+	'bg_archive_text' => '#fff',
+	'bg_archive_textshadow' => '#333',
+       
+    
 	/* Header Text options */
 	'header_title_font_type' => '',
 	'header_title_font_size' => '',
@@ -163,5 +173,10 @@ $graphene_defaults = array(
 	'custom_site_title_content' => '',
 	'favicon_url' => '',
 	'custom_css' => '',
+    
+    
+	/* Advanced options */
+	'enable_preview' => false,
+	'widget_hooks' => array(),
 );
 ?>

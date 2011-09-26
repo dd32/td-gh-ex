@@ -67,7 +67,8 @@ global $graphene_settings;
          * define graphene_comment() and that will be used instead.
          * See graphene_comment() in functions.php for more.
          */
-         wp_list_comments(array('callback' => 'graphene_comment', 'style' => 'ol', 'type' => 'comment')); ?>
+		 $args = array( 'callback' => 'graphene_comment', 'style' => 'ol', 'type' => 'comment' );
+         wp_list_comments( apply_filters( 'graphene_comments_list_args', $args ) ); ?>
          
         <?php // Are there comments to navigate through? ?>
 		<?php if (get_comment_pages_count() > 1 && get_option('page_comments')) : ?>
@@ -87,7 +88,8 @@ global $graphene_settings;
         /* Loop through and list the pings. Use the same callback function as
 		 * listing comments above, graphene_comment() to format the pings.
          */
-		 wp_list_comments(array('callback' => 'graphene_comment', 'style' => 'ol', 'type' => 'pings', 'per_page' => 0)); ?>
+		 $args = array( 'callback' => 'graphene_comment', 'style' => 'ol', 'type' => 'pings', 'per_page' => 0 );
+		 wp_list_comments( apply_filters( 'graphene_pings_list_args', $args ) ); ?>
     </ol>
     
     <?php do_action('graphene_after_comments'); ?>

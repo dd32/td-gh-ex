@@ -43,6 +43,8 @@ global $graphene_settings;
 <div class="bg-gradient">
 <?php endif; ?>
 
+<?php do_action( 'graphene_container_before' ); ?>
+
 <div id="container">
     
     <?php if ($graphene_settings['hide_top_bar'] != true) : ?>
@@ -51,7 +53,7 @@ global $graphene_settings;
                 <div id="rss" class="clearfix">
                 	<?php if ($graphene_settings['hide_feed_icon'] != true) : ?>
 						<?php $custom_feed_url = ($graphene_settings['custom_feed_url']) ? $graphene_settings['custom_feed_url'] : get_bloginfo('rss2_url'); ?>
-                        <a href="<?php echo $custom_feed_url; ?>" title="<?php printf(esc_attr__("Subscribe to %s's RSS feed", 'graphene'), get_bloginfo('name')); ?>" class="rss_link"><span><?php _e('Subscribe to RSS feed', 'graphene'); ?></span></a>
+                        <a href="<?php echo $custom_feed_url; ?>" title="<?php printf(esc_attr__("Subscribe to %s's RSS feed", 'graphene'), get_bloginfo('name')); ?>" class="rss_link" <?php if ( $graphene_settings['social_media_new_window'] ) { echo 'target="_blank"'; } ?>><span><?php _e('Subscribe to RSS feed', 'graphene'); ?></span></a>
                     <?php endif; ?>
                     <?php do_action('graphene_feed_icon'); ?>
                 </div>
@@ -133,14 +135,15 @@ global $graphene_settings;
                 'fallback_cb' => 'graphene_default_menu',
                 'depth' => 5,
                 'theme_location' => 'Header Menu',
-                'walker' => new Graphene_Description_Walker(),
             );
+			if ( ! $graphene_settings['disable_menu_desc'] )
+				$args = array_merge( $args, array( 'walker' => new Graphene_Description_Walker() ) );
             wp_nav_menu(apply_filters('graphene_header_menu_args', $args)); ?>
         
 			<?php if (($search_box_location = $graphene_settings['search_box_location']) && $search_box_location == 'nav_bar') : ?>
                 <div id="top_search">
                     <?php get_search_form(); ?>
-                    <?php do_action('graphene_top_search'); ?>
+                    <?php do_action('graphene_nav_search'); ?>
                 </div>
             <?php endif; ?>
         
@@ -160,7 +163,7 @@ global $graphene_settings;
         wp_nav_menu(apply_filters('graphene_secondary_menu_args', $args));
         ?>
         
-        <div class="menu-bottom-shadow"></div>
+        <div class="menu-bottom-shadow">&nbsp;</div>
 
 
         <?php do_action('graphene_top_menu'); ?>

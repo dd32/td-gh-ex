@@ -58,10 +58,15 @@ function graphene_save_custom_meta($post_id){
 	update_post_meta($post_id, '_graphene_slider_imgurl', $_POST['graphene_slider_imgurl']);
 	update_post_meta($post_id, '_graphene_show_addthis', $_POST['graphene_show_addthis']);
         
-        /* For a page there are more options! */
-        if ('page' == $_POST['post_type']) {
-            update_post_meta($post_id, '_graphene_nav_description', $_POST['graphene_nav_description']);        
-        }
+	/* Post-specific options */
+	if ( 'post' == $_POST['post_type'] ) {
+		update_post_meta($post_id, '_graphene_post_date_display', $_POST['graphene_post_date_display'] );
+	}
+		
+	/* Page-specific options */
+	if ('page' == $_POST['post_type']) {
+		update_post_meta($post_id, '_graphene_nav_description', $_POST['graphene_nav_description']);        
+	}
 }
 add_action('save_post', 'graphene_save_custom_meta');
 
@@ -81,9 +86,13 @@ function graphene_custom_meta($post){
 	$slider_imgurl = (get_post_meta($post->ID, '_graphene_slider_imgurl', true)) ? get_post_meta($post->ID, '_graphene_slider_imgurl', true) : '';
 	$show_addthis = (get_post_meta($post->ID, '_graphene_show_addthis', true)) ? get_post_meta($post->ID, '_graphene_show_addthis', true) : 'global';
         
-        if ('page' == $post->post_type){
-            $nav_description = (get_post_meta($post->ID, '_graphene_nav_description', true)) ? get_post_meta($post->ID, '_graphene_nav_description', true) : '';
-        }
+	if ( 'post' == $post->post_type ){
+		$post_date_display = ( get_post_meta($post->ID, '_graphene_post_date_display', true)) ? get_post_meta( $post->ID, '_graphene_post_date_display', true ) : '';
+	}
+
+	if ('page' == $post->post_type){
+		$nav_description = (get_post_meta($post->ID, '_graphene_nav_description', true)) ? get_post_meta($post->ID, '_graphene_nav_description', true) : '';
+	}
 	?>
     
 	<p><?php _e("These settings will only be applied to this particular post or page you're editing. They will override the global settings set in the Graphene Options or Graphene Display options page.", 'graphene'); ?></p>
@@ -127,6 +136,21 @@ function graphene_custom_meta($post){
                 </select>
             </td>
         </tr>
+        
+        <?php if ( 'post' == $post->post_type) : ?>
+        <tr>
+            <th scope="row">
+                <label><?php _e('Post date display', 'graphene'); ?></label>
+            </th>
+            <td>
+                <select name="graphene_post_date_display">
+                	<option value="global" <?php if ( $post_date_display == 'global') {echo 'selected="selected"';} ?>><?php _e( 'Use global setting', 'graphene' ); ?></option>
+                    <option value="hide" <?php if ( $post_date_display == 'hide') {echo 'selected="selected"';} ?>><?php _e( 'Hide date', 'graphene' ); ?></option>
+                </select>
+            </td>
+        </tr>
+        <?php endif; ?>
+        
     </table>
     <?php if ('page' == $post->post_type): ?>
     <h4><?php _e('Navigation options', 'graphene'); ?></h4>

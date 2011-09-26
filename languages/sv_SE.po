@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graphene 1.0 theme for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-02 12:15+1200\n"
-"PO-Revision-Date: 2011-07-03 16:05+0100\n"
+"POT-Creation-Date: 2011-07-09 16:49+1200\n"
+"PO-Revision-Date: 2011-07-16 11:28+0100\n"
 "Last-Translator: Syahir Hakim <khairulsyahir@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -116,7 +116,7 @@ msgid "Your email address will not be published."
 msgstr "Din e-post adress kommer inte att offentliggöras."
 
 #: comments.php:124
-#: functions.php:1109
+#: functions.php:1237
 msgid "Submit Comment"
 msgstr "Skicka kommentar"
 
@@ -128,253 +128,228 @@ msgstr "Copyright"
 msgid "Except where otherwise noted, content on this site is licensed under a <a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/\">Creative Commons Licence</a>."
 msgstr "Förutom där det specifik omnämns, är innehållet av denna webbplats licensierat under <a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/\">Creative Commons</a>."
 
-#: footer.php:69
+#: footer.php:70
 msgid "Return to top"
-msgstr "Tillbaks till början"
+msgstr "Åter till början"
 
-#: footer.php:76
+#: footer.php:78
 #, php-format
 msgid "Powered by %1$s and the %2$s."
 msgstr "Drivs med %1$s and the %2$s."
 
-#: footer.php:76
+#: footer.php:78
 msgid "Graphene Theme"
 msgstr "Graphene tema"
 
-#: functions.php:189
+#: functions.php:169
 msgid "Header Menu"
 msgstr "Huvudmeny"
 
-#: functions.php:190
+#: functions.php:170
 msgid "Secondary Menu"
 msgstr "Sekundärmeny"
 
-#: functions.php:191
+#: functions.php:171
 msgid "Footer Menu"
 msgstr "Sidfot meny"
 
-#: functions.php:235
+#: functions.php:215
 msgid "Header image by Syahir Hakim"
 msgstr "Huvudbild av Syahir Hakim"
 
-#: functions.php:241
+#: functions.php:221
 msgid "This is the default Graphene theme header image, cropped from image by Quantin Houyoux at sxc.hu"
 msgstr "Detta är standard huvudbild för Graphene temat, beskurit från en bild av Quantin Houyoux vid sxc.hu"
 
-#: functions.php:247
-#: functions.php:253
-#: functions.php:259
-#: functions.php:265
-#: functions.php:271
+#: functions.php:227
+#: functions.php:233
+#: functions.php:239
+#: functions.php:245
+#: functions.php:251
 msgid "Header image cropped from image by Ilco at sxc.hu"
 msgstr "Huvudbild beskurit från bild av Ilco vid sxc.hu"
 
-#: functions.php:577
+#: functions.php:704
 msgid "Home"
 msgstr "Hem"
 
-#: functions.php:681
+#: functions.php:809
 msgid "says:"
 msgstr "säger:"
 
-#: functions.php:687
+#: functions.php:815
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s vid %2$s"
 
-#: functions.php:689
+#: functions.php:817
 msgid "Edit comment"
 msgstr "Redigera kommentar"
 
-#: functions.php:693
+#: functions.php:821
 msgid "Reply"
 msgstr "Svar"
 
-#: functions.php:704
+#: functions.php:832
 msgid "Your comment is awaiting moderation."
 msgstr "Din kommentar väntar godkännande."
 
-#: functions.php:802
+#: functions.php:930
 msgid "Sidebar Widget Area"
 msgstr "Sidopanel widget-område"
 
-#: functions.php:804
+#: functions.php:932
 msgid "The first sidebar widget area (available in two and three column layouts)."
 msgstr "Första sidopanel widget-område (visas i två- och tre-kolumnslayout)."
 
-#: functions.php:812
+#: functions.php:940
 msgid "Sidebar Two Widget Area"
 msgstr "Sidopanel Två widget-område"
 
-#: functions.php:814
+#: functions.php:942
 msgid "The second sidebar widget area (only available in three column layouts)."
 msgstr "Den andra sidopanel widget-område (visas enbart i tre-kolumnslayout)."
 
-#: functions.php:822
+#: functions.php:950
 msgid "Footer Widget Area"
 msgstr "Sidfot widget-område"
 
-#: functions.php:824
+#: functions.php:952
 msgid "The footer widget area. Leave empty to disable. Set the number of columns to display at the theme's Display Options page."
 msgstr "Sidfot widget-område. Lämnas blankt för att inaktivera. Antalet kolumner anges på temats sida för Visningsinställningar."
 
-#: functions.php:840
+#: functions.php:968
 msgid "Front Page Sidebar Widget Area"
 msgstr "Huvudsida sidopanel widget-område"
 
-#: functions.php:842
+#: functions.php:970
 msgid "The first sidebar widget area that will only be displayed on the front page."
 msgstr "Första sidopanel widget-område visas enbart på huvudsidan."
 
-#: functions.php:850
+#: functions.php:978
 msgid "Front Page Sidebar Two Widget Area"
 msgstr "Huvudsida sidopanel två widget-område"
 
-#: functions.php:852
+#: functions.php:980
 msgid "The second sidebar widget area that will only be displayed on the front page."
 msgstr "Den andra sidopanel widget-område visas enbart på huvudsidan."
 
-#: functions.php:862
+#: functions.php:990
 msgid "Front Page Footer Widget Area"
 msgstr "Huvudsida sidfot widget-område"
 
-#: functions.php:864
+#: functions.php:992
 msgid "The footer widget area that will only be displayed on the front page. Leave empty to disable. Set the number of columns to display at the theme's Display Options page."
 msgstr "Sidfot widget-område som visas enbart på huvudsidan. Lämnas blankt för att inaktivera. Antalet kolumner anges på temats sida för Visningsinställningar."
 
-#: functions.php:875
+#: functions.php:1003
 msgid "Header Widget Area"
 msgstr "Sidhuvud widget-område"
 
-#: functions.php:877
+#: functions.php:1005
 msgid "The header widget area."
 msgstr "Sidohuvud widget-området"
 
-#: functions.php:904
+#: functions.php:1032
 msgid "Display the latest Twitter status updates."
 msgstr "Visa senaste Twitter statusuppdateringar."
 
-#: functions.php:929
+#: functions.php:1057
 msgid "Follow me on Twitter"
 msgstr "Följ mig på Twitter"
 
-#: functions.php:955
+#: functions.php:1083
 msgid "Latest tweets"
 msgstr "Senaste tweets"
 
-#: functions.php:960
+#: functions.php:1088
 msgid "Title:"
 msgstr "Titel:"
 
-#: functions.php:964
+#: functions.php:1092
 msgid "Twitter Username:"
 msgstr "Twitter-användarnamn:"
 
-#: functions.php:968
+#: functions.php:1096
 msgid "Number of tweets to display:"
 msgstr "Antal tweets som skall visas:"
 
-#: functions.php:1016
+#: functions.php:1144
 msgid "Graphene Options"
 msgstr "Graphene inställningar"
 
-#: functions.php:1020
+#: functions.php:1148
 msgid "Graphene FAQs"
 msgstr "Graphene Frågor & Svar"
 
-#: functions.php:1057
+#: functions.php:1185
 msgid "Toggle all tabs"
 msgstr "Växla mellan flikar"
 
-#: functions.php:1090
+#: functions.php:1218
 msgid "Name:"
 msgstr "Namn:"
 
-#: functions.php:1091
+#: functions.php:1219
 msgid "Email:"
 msgstr "E-post:"
 
-#: functions.php:1092
+#: functions.php:1220
 msgid "Website:"
 msgstr "Webbplats:"
 
-#: functions.php:1102
+#: functions.php:1230
 msgid "Message:"
 msgstr "Meddelande:"
 
-#: functions.php:1131
+#: functions.php:1259
 msgid "Continue reading &raquo;"
 msgstr "Fortsätt läsa &raquo;"
 
-#: functions.php:1183
+#: functions.php:1311
 msgid "Older posts &laquo;"
 msgstr "Äldre inlägg &laquo;"
 
-#: functions.php:1184
+#: functions.php:1312
 msgid "&raquo; Newer posts"
 msgstr "&raquo; Nyare inlägg"
 
-#: functions.php:1186
+#: functions.php:1314
 msgid "Next page &raquo;"
 msgstr "Nästa sida &raquo;"
 
-#: functions.php:1187
+#: functions.php:1315
 msgid "&laquo; Previous page"
 msgstr "&laquo; Föregående sida"
 
-#: functions.php:1363
+#: functions.php:1491
 msgid "View full post"
 msgstr "Visa hela inlägget"
 
-#: functions.php:1508
+#: functions.php:1630
 msgid "<strong>ERROR: You must supply the post ID to get the image from as an argument when calling the graphene_get_post_image() function.</strong>"
 msgstr "<strong>FEL: Vid anrop av funktionen graphene_get_post_image(), måste du ange ID för det objekt varifrån bilden hämtas.</strong>"
 
-#: functions.php:1700
-msgid "Social Media name"
-msgstr "Namn på Sociala media"
-
-#: functions.php:1703
-msgid "Name of the social media, e.g. LinkedIn, etc."
-msgstr "Namn på Social media, t.ex. LinkedIn, osv."
-
-#: functions.php:1707
-msgid "Social Media profile URL"
-msgstr "Social media profil URL"
-
-#: functions.php:1710
-msgid "URL to your page for the social media."
-msgstr "URL to din sida för social media."
-
-#: functions.php:1714
-msgid "Social Media icon URL"
-msgstr "Social media ikon URL"
-
-#: functions.php:1717
-#, php-format
-msgid "URL to the social media icon. <strong>Note:</strong> the theme uses the %s icon set for the social media icons. Please do not hotlink the icons on the site. Download the icons you need and upload them to your server instead."
-msgstr "URL till den sociala mediaikonen. <strong>Notera:</strong> temat använder %s ikonpaketet för de sociala media ikonerna. Vänligen länka ej till ikonerna på webbplatsen. Du kan istället ladda ner de ikoner du behöver och sedan ladda upp till din server."
-
-#: functions.php:1944
+#: functions.php:1977
 msgid "Template preview not found."
 msgstr "Förhandsvisnings mallen finns ej"
 
-#: functions.php:1947
+#: functions.php:1980
 msgid "default"
 msgstr "standard"
 
-#: functions.php:2003
-#: functions.php:2007
+#: functions.php:2036
+#: functions.php:2040
 msgid "Theme default"
 msgstr "Tema standard"
 
-#: functions.php:2073
+#: functions.php:2106
 msgid "ERROR: You are not authorised to perform that operation"
 msgstr "FEL: Du saknad behörighet till att genomföra denna operation"
 
-#: functions.php:2236
-#: functions.php:2247
-#: functions.php:2256
+#: functions.php:2269
+#: functions.php:2280
+#: functions.php:2289
 #: loop-children.php:74
 #: loop-children.php:82
 #: loop-post-formats.php:32
@@ -384,21 +359,21 @@ msgstr "FEL: Du saknad behörighet till att genomföra denna operation"
 msgid "Permalink to %s"
 msgstr "Permalänk till %s"
 
-#: functions.php:2256
+#: functions.php:2289
 msgid "Read more"
 msgstr "Läs mer"
 
-#: functions.php:2325
+#: functions.php:2358
 #, php-format
 msgid "Follow %s on Twitter"
 msgstr "Följ %s på Twitter"
 
-#: functions.php:2328
+#: functions.php:2361
 #, php-format
 msgid "Visit %s's Facebook page"
 msgstr "Besök %s's Facebook sida"
 
-#: functions.php:2335
+#: functions.php:2368
 #, php-format
 msgid "Visit %1$s's %2$s page"
 msgstr "Besök %1$s's %2$s sida"
@@ -783,951 +758,1105 @@ msgstr "Den uppladdade filen stöds ej."
 msgid "File is empty. Please upload something more substantial. This error could also be caused by uploads being disabled in your php.ini or by post_max_size being defined as smaller than upload_max_filesize in php.ini."
 msgstr "Filen är tom. Vänligen ladda upp någonting mer användbart. Felet kan bero på att uppladdning har inaktiverats i php.ini eller pga definerad post_max_size är mindre än upload_max_filesize i php.ini."
 
-#: admin/options.php:57
-#: admin/uninstall.php:22
+#: admin/options-presets.php:36
+msgid "The \"Normal website\" settings preset has been applied."
+msgstr "Webbplatsens inställningar för \"Normal webbplats\" har tillämpats."
+
+#: admin/options-presets.php:41
+msgid "Settings have been reset."
+msgstr "Inställningarna har återställts."
+
+#: admin/options.php:63
+#: admin/uninstall.php:21
 msgid "Uninstall Graphene"
 msgstr "Avinstallera Graphene"
 
-#: admin/options.php:58
+#: admin/options.php:64
 msgid "Please confirm that you would like to uninstall the Graphene theme. All of the theme's options in the database will be deleted."
 msgstr "Vänligen bekräfta att vill avinstallera Graphene temat. Alla temainställningar i databasen kommer att raderas."
 
-#: admin/options.php:59
+#: admin/options.php:65
 msgid "This action is not reversible."
 msgstr "denna handling går inte att ångra."
 
-#: admin/options.php:63
-#: admin/options.php:277
+#: admin/options.php:69
+#: admin/options.php:283
 msgid "Uninstall Theme"
 msgstr "Avinstallera tema"
 
-#: admin/options.php:77
+#: admin/options.php:83
 msgid "Graphene Theme Options"
 msgstr "Graphene temainställningar"
 
-#: admin/options.php:79
+#: admin/options.php:85
 msgid "These are the global settings for the theme. You may override some of the settings in individual posts and pages."
 msgstr "Dessa är de globala inställningar för temat. Du kan överskrida vissa inställningar i individuella inlägg och sidor."
 
-#: admin/options.php:84
+#: admin/options.php:90
 msgid "Settings saved."
 msgstr "Inställningarna har uppdaterats."
 
-#: admin/options.php:96
+#: admin/options.php:102
 msgid "General"
 msgstr "Generellt"
 
-#: admin/options.php:97
+#: admin/options.php:103
 msgid "Display"
 msgstr "Visining"
 
-#: admin/options.php:129
+#: admin/options.php:135
 msgid "Save Options"
 msgstr "Sparainställningar"
 
-#: admin/options.php:141
+#: admin/options.php:147
 msgid "Support the developer"
 msgstr "Stöd utvecklaren"
 
-#: admin/options.php:144
+#: admin/options.php:150
 msgid "Developing this awesome theme took a lot of effort and time, months and months of continuous voluntary unpaid work. If you like this theme or if you are using it for commercial websites, please consider a donation to the developer to help support future updates and development."
 msgstr "Att utveckla detta fantastiska tema har krävt mycket tid och veckor av frivillig obetalt arbete. Om du gillar detta tema eller om du använder det för kommersiellt bruk, vänligen överväga att donera en summa pengar till utvecklaren som stöd till framtida utveckling och uppdaterar."
 
-#: admin/options.php:158
+#: admin/options.php:164
 msgid "Graphene Usage Survey"
 msgstr "Graphene Användnings undersökning"
 
-#: admin/options.php:161
+#: admin/options.php:167
 msgid "Help us to get to know you better. Take the Graphene theme usage survey now! Every opinion counts towards making the theme better. The survey is very short, and is completely anonymous."
 msgstr "Hjälp oss lära känna dig bättre. Genomför undersökningen av Graphene temats användning nu. Varje åsikt räknas. Undersökningen är anonym och går väldigt snabbt."
 
-#: admin/options.php:162
+#: admin/options.php:168
 msgid "Take the survey"
 msgstr "Genomför undersökningen"
 
-#: admin/options.php:171
+#: admin/options.php:177
 msgid "Add-ons and plugins"
 msgstr "Add-ons and tillägg"
 
-#: admin/options.php:174
+#: admin/options.php:180
 msgid "Add-ons"
 msgstr "Add-ons"
 
-#: admin/options.php:175
+#: admin/options.php:181
 msgid "Add-ons are not shipped with the theme, but can be installed separately to extend the theme's capability."
 msgstr "Add-ons följer inte med temat, men kan installeras enskilt för att utöka temats möjligheter."
 
-#: admin/options.php:179
+#: admin/options.php:185
 msgid "Installed"
 msgstr "Installerad"
 
-#: admin/options.php:180
-#: admin/options.php:199
+#: admin/options.php:186
+#: admin/options.php:205
 msgid "Not installed"
 msgstr "ej installerad"
 
-#: admin/options.php:180
+#: admin/options.php:186
 msgid "Learn more"
 msgstr "Lär mera"
 
-#: admin/options.php:181
+#: admin/options.php:187
 msgid "Mobile extension developed specifically for optimised display of your site on mobile devices, such as iPhone and Android devices."
 msgstr "Mobiltillägget utvecklad just för att optimera visning av din webbplats på mobila enheter, såsom iPhone eller Android enheter."
 
-#: admin/options.php:184
+#: admin/options.php:190
 msgid "Plugins"
 msgstr "Tillägg"
 
-#: admin/options.php:185
+#: admin/options.php:191
 msgid "The plugins listed here are natively supported by the theme. All you need to do is install the plugins and activate them."
 msgstr "Temat har inbyggt stöd för de tillägg som visas här. Du behöver bara installera och sedan aktivera dem."
 
-#: admin/options.php:198
+#: admin/options.php:204
 msgid "Activated"
 msgstr "Aktiverad"
 
-#: admin/options.php:211
+#: admin/options.php:217
 msgid "Options Presets"
 msgstr "Inställningar Förinställningar"
 
-#: admin/options.php:214
+#: admin/options.php:220
 msgid "The default settings for the theme is preconfigured for use in blogs. If you're using this theme primarily for a normal website, or if you want to reset the settings to their default values, you can apply one of the available options presets below."
 msgstr "Standardinställning för detta tema är för användning av blogg. Använder du detta tema främst för en webbsajt, eller om du vill återgå till standardinställningar, kan du välja någon nedanstående alternativ."
 
-#: admin/options.php:215
+#: admin/options.php:221
 msgid "Note that you can still configure the individual settings after you apply any preset."
 msgstr "Notera att du kan konfigurera enskilda inställningar efter val av förinställningar."
 
-#: admin/options.php:220
+#: admin/options.php:226
 msgid "Select Options Preset"
 msgstr "Välj Inställningar Förinställningar"
 
-#: admin/options.php:223
+#: admin/options.php:229
 msgid "Normal website"
 msgstr "Normal webbplats"
 
-#: admin/options.php:226
+#: admin/options.php:232
 msgid "Reset to default settings"
 msgstr "Återgå till standardinställningar"
 
-#: admin/options.php:231
+#: admin/options.php:237
 msgid "Apply Options Preset"
 msgstr "Tillämpa Inställningar Förinställningar"
 
-#: admin/options.php:241
+#: admin/options.php:247
 msgid "Import/export theme options"
 msgstr "Importera/Exportera temainställningar"
 
-#: admin/options.php:245
+#: admin/options.php:251
 msgid "Import"
 msgstr "Import"
 
-#: admin/options.php:248
+#: admin/options.php:254
 msgid "Import Theme options"
 msgstr "Importera Tema inställningar"
 
-#: admin/options.php:250
+#: admin/options.php:256
 msgid "Export"
 msgstr "Export"
 
-#: admin/options.php:254
+#: admin/options.php:260
 msgid "Export Theme options"
 msgstr "Exportera Tema inställningar"
 
-#: admin/options.php:257
+#: admin/options.php:263
 #, php-format
 msgid "Import and export is only available for to users with PHP version 5.2.1 and higher. You are using PHP version %s."
 msgstr "Import och export är tillgängliga enbart för dem som använder PHP version 5.2.1 eller högre. Du använder PHP version %s."
 
-#: admin/options.php:267
+#: admin/options.php:273
 msgid "Uninstall theme"
 msgstr "Avinstallera tema"
 
-#: admin/options.php:270
+#: admin/options.php:276
 msgid "<strong>Be careful!</strong> Uninstalling the theme will remove all of the theme's options from the database. Do this only if you decide not to use the theme anymore."
 msgstr "<strong>Var försiktig!</strong> Avinstallation av detta tema komma att radera alla inställningar från databasen. Gör detta enbart om du har bestämt att inte använda temat mera."
 
-#: admin/options.php:271
+#: admin/options.php:277
 msgid "If you just want to try another theme, there is no need to uninstall this theme. Simply activate the other theme in the Appearance > Themes admin page."
 msgstr "Om du villl bara prova ett nytt tema, behöver du inte avinstallera detta tema. Bara aktivera det andra temat under Utseende > Teman administrationssida."
 
-#: admin/options.php:272
+#: admin/options.php:278
 msgid "Note that uninstalling this theme <strong>does not remove</strong> the theme's files. To delete the files after you have uninstalled this theme, go to Appearances > Themes and delete the theme from there."
 msgstr "Notera att avinstallation av temat <strong>inte raderar</strong> temafilerna. För att radera filerna, gå till Utseende > Teman och radera temat där."
 
-#: admin/options.php:299
+#: admin/options.php:305
 msgid "Slider Options"
 msgstr "Visningsreglage inställningar"
 
-#: admin/options.php:305
+#: admin/options.php:311
 msgid "Category to show in slider"
 msgstr "Kategorier för visningsreglage"
 
-#: admin/options.php:306
+#: admin/options.php:312
 msgid "All posts within the category selected here will be displayed on the slider. Usage example: create a new category \"Featured\" and assign all posts to be displayed on the slider to that category, and then select that category here."
 msgstr "Alla inlägg inom vald kategori visas i visningsreglaget. Exemple på användning: skapa en ny kategori \"Utvalda\" och tilldela alla inlägg som skall visas denna kategori, välj sedan kategorin här."
 
-#: admin/options.php:310
+#: admin/options.php:316
 msgid "Show latest posts"
 msgstr "Visa sista inlägg"
 
-#: admin/options.php:311
+#: admin/options.php:317
 msgid "Show specific posts/pages"
 msgstr "Visa specifika inlägg/sidor"
 
-#: admin/options.php:312
+#: admin/options.php:318
 msgid "Show random posts"
 msgstr "Visa inlägg slumpmässigt"
 
-#: admin/options.php:325
-#: admin/options.php:503
+#: admin/options.php:331
+#: admin/options.php:509
 msgid "Posts and/or pages to display"
 msgstr "Inlägg och/eller sidor att visas:"
 
-#: admin/options.php:330
-#: admin/options.php:508
+#: admin/options.php:336
+#: admin/options.php:514
 msgid "Enter ID of posts and/or pages to be displayed, separated by comma. Example: <code>1,13,45,33</code>"
 msgstr "Ange inläggsID och/eller sidorna som skall visas, separerade med komma. T.ex. : <code>1,13,45,33</code>"
 
-#: admin/options.php:331
+#: admin/options.php:337
 msgid "Applicable only if <strong>Show specific posts/pages</strong> is selected above."
 msgstr "Gäller enbart om <strong>Visa specifika inlägg/sidor</strong> är vald här ovan."
 
-#: admin/options.php:337
+#: admin/options.php:343
 msgid "Number of posts to display"
 msgstr "Antal inlägg som skall visas:"
 
-#: admin/options.php:367
+#: admin/options.php:373
 msgid "Slider display style"
 msgstr "Visningsreglage stil"
 
-#: admin/options.php:371
+#: admin/options.php:377
 msgid "Thumbnail and excerpt"
 msgstr "Tumnaglar och utdrag"
 
-#: admin/options.php:372
+#: admin/options.php:378
 msgid "Background image and excerpt"
 msgstr "Bakgrundsbild och utdrag"
 
-#: admin/options.php:373
+#: admin/options.php:379
 msgid "Full post content"
 msgstr "Hela inläggsinnehåll"
 
-#: admin/options.php:379
+#: admin/options.php:385
 msgid "Slider height"
 msgstr "Visiningsreglagehöjd"
 
-#: admin/options.php:387
+#: admin/options.php:393
 msgid "Slider speed"
 msgstr "Visningsreglagehastighet"
 
-#: admin/options.php:390
-#: admin/options.php:399
+#: admin/options.php:396
+#: admin/options.php:405
 msgid "milliseconds"
 msgstr "millisekonder"
 
-#: admin/options.php:391
+#: admin/options.php:397
 msgid "This is the duration that each slider item will be shown"
 msgstr "Detta är hur länge varje visningsreglage post kommer att visas."
 
-#: admin/options.php:396
+#: admin/options.php:402
 msgid "Slider transition speed"
 msgstr "Visningsreglagehastighet"
 
-#: admin/options.php:400
+#: admin/options.php:406
 msgid "This is the speed of the slider transition. Lower values = higher speed."
 msgstr "Detta anger hastigheten för visningsreglage. Lågt värde = högre hastighet."
 
-#: admin/options.php:405
+#: admin/options.php:411
 msgid "Move slider to bottom of page"
 msgstr "Flytta visningsreglaget till botten av sidan"
 
-#: admin/options.php:411
+#: admin/options.php:417
 msgid "Disable slider"
 msgstr "Inaktivera reglagevisning"
 
-#: admin/options.php:424
+#: admin/options.php:430
 msgid "Front Page Options"
 msgstr "Huvudsida inställningar"
 
-#: admin/options.php:430
+#: admin/options.php:436
 msgid "Front page posts categories"
 msgstr "Huvudsida inläggskategorier"
 
-#: admin/options.php:432
+#: admin/options.php:438
 msgid "Only posts that belong to the categories selected here will be displayed on the front page. Does not affect Static Front Page."
 msgstr "Enbart inlägg som tillhör kategorin som valts här kommer att visas på huvudsidan. Påverkar ej Statisk huvudsida."
 
-#: admin/options.php:437
+#: admin/options.php:443
 msgid "--Disabled--"
 msgstr "--Inaktiverad--"
 
-#: admin/options.php:445
+#: admin/options.php:451
 msgid "You may select multiple categories by holding down the CTRL key."
 msgstr "Multipla kategorier kan välja genom att samtidigt hålla nere CTRL-tangenten."
 
-#: admin/options.php:457
+#: admin/options.php:463
 msgid "Homepage Panes"
 msgstr "Hemsida Fönster"
 
-#: admin/options.php:460
+#: admin/options.php:466
 msgid "<strong>Note:</strong> homepage panes are only displayed when using a <a href=\"http://codex.wordpress.org/Creating_a_Static_Front_Page\">static front page</a>."
 msgstr "<strong>Notera:</strong> hemsida fönster visas enbart när <a href=\"http://codex.wordpress.org/Creating_a_Static_Front_Page\">statisk huvudsida</a> används."
 
-#: admin/options.php:464
+#: admin/options.php:470
 msgid "Type of content to show"
 msgstr "Typ av innehåll"
 
-#: admin/options.php:471
+#: admin/options.php:477
 msgid "Latest posts by category"
 msgstr "Senaste inlägg per kategori"
 
-#: admin/options.php:474
+#: admin/options.php:480
 msgid "Posts and/or pages"
 msgstr "Inlägg och/eller sidor"
 
-#: admin/options.php:479
+#: admin/options.php:485
 msgid "Number of latest posts to display"
 msgstr "Antalet senaste inlägg som skall visas"
 
-#: admin/options.php:483
+#: admin/options.php:489
 msgid "Applicable only if <strong>Latest posts</strong> or <strong>Latest posts by category</strong> is selected above."
 msgstr "Användbart enbart om <strong>Senaste inlägg</strong> eller <strong>Senaste inlägg per kategori</strong> har valts här ovan."
 
-#: admin/options.php:488
+#: admin/options.php:494
 msgid "Category to show latest posts from"
 msgstr "Kategorier för senaste inlägg"
 
-#: admin/options.php:498
+#: admin/options.php:504
 msgid "Applicable only if <strong>Latest posts by category</strong> is selected above."
 msgstr "Användbart enbart om <strong>Senaste inlägg per kategori</strong> har valts här ovan."
 
-#: admin/options.php:509
+#: admin/options.php:515
 msgid "Applicable only if <strong>Posts and/or pages</strong> is selected above."
 msgstr "Användbart enbart om <strong>Inlägg och/eller sidor</strong> har valts här ovan."
 
-#: admin/options.php:515
+#: admin/options.php:521
 msgid "Disable homepage panes"
 msgstr "Inaktivera hemsida fönster"
 
-#: admin/options.php:530
+#: admin/options.php:536
 msgid "Comments Options"
 msgstr "Kommentarinställningar"
 
-#: admin/options.php:536
+#: admin/options.php:542
 msgid "Commenting"
 msgstr "Kommenterande"
 
-#: admin/options.php:540
+#: admin/options.php:546
 msgid "Use WordPress settings"
 msgstr "Använd WordPress inställningar"
 
-#: admin/options.php:541
+#: admin/options.php:547
 msgid "Disabled for pages"
 msgstr "Inaktiverad för sidor"
 
-#: admin/options.php:542
+#: admin/options.php:548
 msgid "Disabled completely"
 msgstr "Inaktivera helt"
 
-#: admin/options.php:544
+#: admin/options.php:550
 msgid "Note: this setting overrides the global WordPress Discussion Setting called \"Allow people to post comments on new articles\" and also the \"Allow comments\" option for individual posts/pages."
 msgstr "OBS: denna inställning upphäver den globala Wordpress Diskussionsinställning, \"Allow people to post comments on new articles\" och \"Allow comments\" alternativ för individuella inlägg/sidor."
 
-#: admin/options.php:556
+#: admin/options.php:562
 msgid "Child Page Options"
 msgstr "Undersida inställningar"
 
-#: admin/options.php:562
+#: admin/options.php:568
 msgid "Hide parent box if content is empty"
 msgstr "Göm huvudfönster om tomt på innehåll"
 
-#: admin/options.php:568
+#: admin/options.php:574
 msgid "Child page listings"
 msgstr "Undersida lista"
 
-#: admin/options.php:572
+#: admin/options.php:578
 msgid "Hide listing"
 msgstr "Göm lista"
 
-#: admin/options.php:573
+#: admin/options.php:579
 msgid "Show listing"
 msgstr "Visa lista"
 
-#: admin/options.php:574
+#: admin/options.php:580
 msgid "Only show listing if parent content is empty"
 msgstr "Visa lista enbart om huvudfönster är tomt på innehåll"
 
-#: admin/options.php:587
+#: admin/options.php:593
 msgid "Widget Area Options"
 msgstr "Widget-område inställningar"
 
-#: admin/options.php:590
+#: admin/options.php:596
 msgid "Header widget area"
 msgstr "Sidhuvud widget-område"
 
-#: admin/options.php:591
+#: admin/options.php:597
 msgid "<strong>Important:</strong> This widget area is unstyled, as it is often used for advertisement banners, etc. If you enable it, make sure you style it to your needs using the Custom CSS option."
 msgstr "<strong>Viktigt:</strong> Denna Widget-area saknar specifik stil, som ofta är när det gäller annonsrubriker, etc. Om du aktiverar detta, se till att du anger stil genom att använda Anpassad CSS inställningar."
 
-#: admin/options.php:595
+#: admin/options.php:601
 msgid "Enable header widget area"
 msgstr "Aktivera sidohuvud widget-område "
 
-#: admin/options.php:604
+#: admin/options.php:610
 msgid "Alternate Widgets"
 msgstr "Alternativa Widgets"
 
-#: admin/options.php:605
+#: admin/options.php:611
 msgid "You can enable the theme to show different widget areas in the front page than the rest of the website. If you enable this option, additional widget areas that will only be displayed on the front page will be added to the Widget settings page."
 msgstr "Här kan du aktivera temat för att visa olika widget-områden på enbart huvudsidan. Om du aktiverar denna inställning, kommer extra widget-områden som enbart visas på huvudsidan att adderas till Widget inställningssidan."
 
-#: admin/options.php:608
+#: admin/options.php:614
 msgid "Enable alternate front page sidebar widget area"
 msgstr "Aktivera alternativt huvudsida sidopanel widget-område "
 
-#: admin/options.php:612
+#: admin/options.php:618
 msgid "Enable alternate front page footer widget area"
 msgstr "Aktivera alternativt huvudsida sidfot widget-område"
 
-#: admin/options.php:613
+#: admin/options.php:619
 msgid "You can also specify different column counts for the front page footer widget and the rest-of-site footer widget if you enable this option."
 msgstr "Genom att aktivera denna inställning kan du specificera olika kolumnantal för huvudsida sidfot widget samt resterande sidfot widget."
 
-#: admin/options.php:626
+#: admin/options.php:632
 msgid "Top Bar Options"
 msgstr "Huvud reglage inställningar"
 
-#: admin/options.php:632
+#: admin/options.php:638
 msgid "Hide feed icon"
 msgstr "Göm matningsikon"
 
-#: admin/options.php:636
+#: admin/options.php:642
 msgid "Use custom feed URL"
 msgstr "Använd anpassad ladda URL"
 
-#: admin/options.php:639
+#: admin/options.php:645
 msgid "This custom feed URL will replace the default WordPress RSS feed URL."
 msgstr "Denna anpassad laddnings URL ersätter Wordpress standard RSS URL."
 
-#: admin/options.php:643
+#: admin/options.php:649
 msgid "Twitter URL"
 msgstr "Twitter-URL"
 
-#: admin/options.php:646
+#: admin/options.php:652
 msgid "Enter the URL to your Twitter page."
 msgstr "Vänligen ange URL till din Twittersida."
 
-#: admin/options.php:650
+#: admin/options.php:656
 msgid "Facebook URL"
 msgstr "Facebook URL"
 
-#: admin/options.php:653
+#: admin/options.php:659
 msgid "Enter the URL to your Facebook profile page."
 msgstr "Vänligen ange URL till din Facebook profilbild."
 
-#: admin/options.php:664
+#: admin/options.php:670
 #, php-format
 msgid "%s URL"
 msgstr "%s URL"
 
-#: admin/options.php:669
+#: admin/options.php:675
 #, php-format
 msgid "%s icon URL"
 msgstr "%s ikon URL"
 
-#: admin/options.php:672
+#: admin/options.php:678
 msgid "Delete"
 msgstr "Radera"
 
-#: admin/options.php:681
+#: admin/options.php:687
 msgid "Add new social media icon"
 msgstr "Addera ny social media ikon"
 
-#: admin/options.php:692
+#: admin/options.php:698
 msgid "Social Sharing Buttons"
 msgstr "Social-delningsknapp"
 
-#: admin/options.php:697
+#: admin/options.php:703
 msgid "Show social sharing button"
 msgstr "Visa Social-delningsknapp"
 
-#: admin/options.php:701
+#: admin/options.php:707
 msgid "Show in Pages as well?"
 msgstr "Visa Sidor också?"
 
-#: admin/options.php:705
+#: admin/options.php:711
 msgid "Social sharing buttons location"
 msgstr "Plats för Social-delningsknapp"
 
-#: admin/options.php:708
+#: admin/options.php:714
 msgid "Bottom of posts"
 msgstr "Slutet på inlägg"
 
-#: admin/options.php:709
+#: admin/options.php:715
 msgid "Top of posts"
 msgstr "Början av inlägg"
 
-#: admin/options.php:710
+#: admin/options.php:716
 msgid "Both top and bottom"
 msgstr "Både början och slutet"
 
-#: admin/options.php:716
+#: admin/options.php:722
 msgid "Your social sharing button code"
 msgstr "Visa Social-delningsknapp"
 
-#: admin/options.php:717
+#: admin/options.php:723
 msgid "You can use codes from any popular social sharing sites, like Facebook, Digg, AddThis, etc."
 msgstr "Här liknande kod som hittas på sociala mediewebbplatser, såsom Facebook, Digg eller AddThis användas."
 
-#: admin/options.php:720
+#: admin/options.php:726
 msgid "You may use these tags to get the post's URL and title:"
 msgstr "Du kan använda dessa etiketter för att fånga inläggens URL och titel:"
 
-#: admin/options.php:733
+#: admin/options.php:739
 msgid "Adsense Options"
 msgstr "Adsense inställningar"
 
-#: admin/options.php:739
+#: admin/options.php:745
 msgid "Show Adsense advertising"
 msgstr "Visa Adsense-reklam"
 
-#: admin/options.php:745
+#: admin/options.php:751
 msgid "Show ads on front page as well"
 msgstr "Visa reklam även på huvudsidan"
 
-#: admin/options.php:751
+#: admin/options.php:757
 msgid "Your Adsense code"
 msgstr "Din Adsense-kod"
 
-#: admin/options.php:764
+#: admin/options.php:770
 msgid "Google Analytics Options"
 msgstr "Google Analytics inställningar"
 
-#: admin/options.php:767
+#: admin/options.php:773
 msgid "<strong>Note:</strong> the theme now places the Google Analytics script in the <code>&lt;head&gt;</code> element to better support the new asynchronous Google Analytics script. Please make sure you update your script to use the new asynchronous script from Google Analytics."
 msgstr "<strong>OBS:</strong> nu placerar temat Google Analytics skriptet i <code>&lt;head&gt;</code> delen för att bättre stödja det nya asynkrona Google Analytics skriptet. Vänligen uppdatera ditt skript för att kunna nyttja det nya asynkrona skriptet från Google Analytics."
 
-#: admin/options.php:770
+#: admin/options.php:776
 msgid "Enable Google Analytics tracking"
 msgstr "Aktivera Google Analytics-spårning"
 
-#: admin/options.php:774
+#: admin/options.php:780
 msgid "Google Analytics tracking code"
 msgstr "Google Analytics spårningskod"
 
-#: admin/options.php:775
+#: admin/options.php:781
 msgid "Make sure you include the full tracking code (including the <code>&lt;script&gt;</code> and <code>&lt;/script&gt;</code> tags) and not just the <code>UA-#######-#</code> code."
 msgstr "Säkerställ att du inkluderar hela spårningskod (inkluderat <code>&lt;script&gt;</code> och <code>&lt;/script&gt;</code>-etiketten) och inte enbart <code>UA-#######-#</code>-koden."
 
-#: admin/options.php:788
+#: admin/options.php:794
 msgid "Footer Options"
 msgstr "Sidfot inställningar"
 
-#: admin/options.php:793
+#: admin/options.php:799
 msgid "Show Creative Commons logo"
 msgstr "Visa Creative Commons-logo"
 
-#: admin/options.php:798
+#: admin/options.php:804
 msgid "Copyright text (html allowed)"
 msgstr "Copyright-text (html tillåtet)"
 
-#: admin/options.php:799
+#: admin/options.php:805
 msgid "If this field is empty, the following default copyright text will be displayed:"
 msgstr "Lämnas detta fält tomt, visas följande standard copyright text:"
 
-#: admin/options.php:805
+#: admin/options.php:811
 msgid "Do not show copyright info"
 msgstr "Visa ej copyright information"
 
-#: admin/options.php:816
+#: admin/options.php:815
+msgid "Do not show the \"Return to top\" link"
+msgstr "Visa ej länken \"Åter till början\""
+
+#: admin/options.php:826
 msgid "Print Options"
 msgstr "Utskrifts inställningar"
 
-#: admin/options.php:821
+#: admin/options.php:831
 msgid "Enable print CSS for single posts and pages?"
 msgstr "Aktivera utskrift av CSS för enskilda inlägg och sidor?"
 
-#: admin/options.php:825
+#: admin/options.php:835
 msgid "Show print button as well?"
 msgstr "Visa utskriftsknapp också?"
 
-#: admin/options.php:845
+#: admin/options.php:855
 msgid "Header Display Options"
 msgstr "Sidhuvud visningsinställningar"
 
-#: admin/options.php:851
+#: admin/options.php:861
 msgid "Use light-coloured header bars"
 msgstr "Använd ljusfärgade sidhuvudslister"
 
-#: admin/options.php:857
+#: admin/options.php:867
 msgid "Link header image to front page"
 msgstr "Länkhuvud bild till huvudsida"
 
-#: admin/options.php:860
+#: admin/options.php:870
 msgid "Check this if you disable the header texts and want the header image to be linked to the front page."
 msgstr "Markera här om du inaktiverar huvudtexterna och vill att huvudbild skall länkas till huvudsidan."
 
-#: admin/options.php:865
+#: admin/options.php:875
 msgid "Disable Featured Image replacing header image"
 msgstr "Inaktiviera att Special Bild ersätter huvudbild"
 
-#: admin/options.php:868
+#: admin/options.php:878
 msgid "Check this to prevent the posts Featured Image replacing the header image regardless of the featured image dimension."
 msgstr "Markera här för att hindra att Special Bild ersätter huvudbilden trots special bild dimensioner."
 
-#: admin/options.php:873
+#: admin/options.php:883
 msgid "Use random header image"
 msgstr "Välj sidhuvudsbild slumpmässigt"
 
-#: admin/options.php:877
+#: admin/options.php:887
 msgid "Check this to show a random header image (random image taken from the available default header images)."
 msgstr "Välj för att aktivera slumpmässigt val av sidhuvudsbild (bilder väljs slumpmässigt från tillgängliga standard bilder)."
 
-#: admin/options.php:878
+#: admin/options.php:888
 msgid "<strong>Note:</strong> only works on pages where a specific header image is not defined."
 msgstr "<strong>Notering:</strong> fungerar enbart på sidor där specifik sidhuvudsbild ej definierat."
 
-#: admin/options.php:883
+#: admin/options.php:893
 msgid "Hide the top bar"
 msgstr "Göm huvudreglage"
 
-#: admin/options.php:889
+#: admin/options.php:899
 msgid "Search box location"
 msgstr "Sökrutans placering"
 
-#: admin/options.php:893
+#: admin/options.php:903
 msgid "Top bar"
 msgstr "Huvudreglage"
 
-#: admin/options.php:894
+#: admin/options.php:904
 msgid "Navigation bar"
 msgstr "Navigationsreglage"
 
-#: admin/options.php:895
+#: admin/options.php:905
 msgid "Disable search box"
 msgstr "Inaktivera sökningsfönster"
 
-#: admin/options.php:908
+#: admin/options.php:918
 msgid "Column Options"
 msgstr "Kolumninställningar"
 
-#: admin/options.php:914
+#: admin/options.php:924
 msgid "Column mode"
 msgstr "Kolumnläge"
 
-#: admin/options.php:964
+#: admin/options.php:974
 msgid "Posts Display Options"
 msgstr "Inlägg visiningsinställningar"
 
-#: admin/options.php:970
+#: admin/options.php:980
 msgid "Hide post author"
 msgstr "Göm författare"
 
-#: admin/options.php:976
+#: admin/options.php:986
 msgid "Post date display"
 msgstr "Inläggsdatum visas:"
 
-#: admin/options.php:980
+#: admin/options.php:990
 msgid "Hidden"
 msgstr "Gömd"
 
-#: admin/options.php:981
+#: admin/options.php:991
 msgid "As an icon (without the year)"
 msgstr "Som ikon (utan år)"
 
-#: admin/options.php:982
+#: admin/options.php:992
 msgid "As an icon (including the year)"
 msgstr "Som ikon (med år)"
 
-#: admin/options.php:983
+#: admin/options.php:993
 msgid "As inline text"
 msgstr "Som inline text"
 
-#: admin/options.php:985
+#: admin/options.php:995
 msgid "Note: displaying date as inline text allows more space for the content area, especially useful for a three-column layout configuration."
 msgstr "Notera att genom att visa datum som inline text, kan mer plats för innehållet skapas. Speciellt användbart vid tre-kolumnslayout."
 
-#: admin/options.php:990
+#: admin/options.php:1000
 msgid "Hide post categories"
 msgstr "Göm kategorier"
 
-#: admin/options.php:996
+#: admin/options.php:1006
 msgid "Hide post tags"
 msgstr "Göm etiketter"
 
-#: admin/options.php:1002
+#: admin/options.php:1012
 msgid "Hide post comment count"
 msgstr "Göm kommentarantal"
 
-#: admin/options.php:1003
+#: admin/options.php:1013
 msgid "Only affects posts listing (such as the front page) and not single post view."
 msgstr "Påverkar endast inläggslistor (lik dem på huvudsidan) och inte enkel-inläggsvyer."
 
-#: admin/options.php:1008
+#: admin/options.php:1018
 msgid "Show post author's gravatar"
 msgstr "Visa författarens gravatar"
 
-#: admin/options.php:1012
+#: admin/options.php:1022
 msgid "Show post author's info"
 msgstr "Visa inläggförfattarens info"
 
-#: admin/options.php:1024
+#: admin/options.php:1034
 msgid "Excerpts Display Options"
 msgstr "Utdrags visiningsinställningar"
 
-#: admin/options.php:1030
+#: admin/options.php:1040
 msgid "Show excerpts in front page"
 msgstr "Visa utdrag på huvudsidan"
 
-#: admin/options.php:1036
+#: admin/options.php:1046
 msgid "Show full content in archive pages"
 msgstr "Visa all innehåll av arkivsidor"
 
-#: admin/options.php:1040
+#: admin/options.php:1050
 msgid "Note: Archive pages include the archive for category, tags, time, and search results pages. Enabling this option will cause the full content of posts and pages listed in those archives to displayed instead of the excerpt, and truncated by the Read More tag if used."
 msgstr "OBS: Arkivet för kategori, etiketter, tid och sökresultat sidorna inkluderas i Arkivsidor. Att aktivera denna inställning innebär att all innehåll av inläggen och sidor visas till skillnad från enbart korta utdrag, dessutom kortas av om Läs Mer-etiketten används."
 
-#: admin/options.php:1044
+#: admin/options.php:1054
 msgid "Show More link for manual excerpts"
 msgstr "Visa Flera länk för manuella utdrag"
 
-#: admin/options.php:1048
+#: admin/options.php:1058
 msgid "Retain these HTML tags in excerpts"
 msgstr "Behåll dessa HTML etiketter i utdragen"
 
-#: admin/options.php:1051
+#: admin/options.php:1061
 msgid "Enter the HTML tags you'd like to retain in excerpts. For example, enter <code>&lt;p&gt;&lt;ul&gt;&lt;li&gt;</code> to retain <code>&lt;p&gt;</code>, <code>&lt;ul&gt;</code>, and <code>&lt;li&gt;</code> HTML tags."
 msgstr "Ange vilka HTML etiketter du vill behålla i utdragen. Ange t.ex. <code>&lt;p&gt;&lt;ul&gt;&lt;li&gt;</code> att behålla <code>&lt;p&gt;</code>, <code>&lt;ul&gt;</code>, och <code>&lt;li&gt;</code> HTML etiketter."
 
-#: admin/options.php:1064
+#: admin/options.php:1074
 msgid "Comments Display Options"
 msgstr "Visiningsinställningar för Kommentarer"
 
-#: admin/options.php:1070
+#: admin/options.php:1080
 msgid "Hide allowed tags in comment form"
 msgstr "Göm tillåtna etiketter i kommentar"
 
-#: admin/options.php:1083
+#: admin/options.php:1093
+msgid "Colours Options"
+msgstr "Färginställningar"
+
+#: admin/options.php:1096
+msgid "Changing colours for your website involves a lot more than just trial and error. Simply mixing and matching colours without regard to their compatibility may do more damage than good to your site's aesthetics."
+msgstr "Det kan krävas mer än att enbart prova sig fram då det gäller att förändra webbplatsens färger. Att blanda färger utan hänsyn till hur de passar ihop kan göra mer skada än nytta för webbplatsens estetik."
+
+#: admin/options.php:1097
+#, php-format
+msgid "It's generally a good idea to stick to colours from colour pallettes that are aesthetically pleasing. Try the %s website for a kickstart on some colour palettes you can use."
+msgstr "Det är i allmänhet en bra idé att använda färger från en färgpalett som är estetiskt tilltalande. Titta på %s webbplatsen för att se några färgpaletter  att använda."
+
+#: admin/options.php:1098
+msgid "When you've got the perfect combination, you can even share it with fellow Graphene theme users through the <a href=\"http://forum.khairul-syahir.com/\">Support Forum</a>."
+msgstr "När du har fått ihop en bra kombination, dela gärna den med andra Graphene tema användare genom <a href=\"http://forum.khairul-syahir.com/\">Hjälpforum</a> länken."
+
+#: admin/options.php:1099
+msgid "<strong>Note:</strong> The previews work best on modern Gecko- and Webkit-based browsers, such as Mozilla Firefox and Google Chrome."
+msgstr "<strong>OBS:</strong> Förhandsvisningen fungerar bäst hos moderna Gecko- eller Webkit-baserade webbläsare. så som Mozilla Firefox och Google Chrome."
+
+#: admin/options.php:1100
+msgid "Content area"
+msgstr "Innehållsområde"
+
+#: admin/options.php:1104
+msgid "Main content wrapper background"
+msgstr ""
+
+#: admin/options.php:1105
+msgid "Post and pages content background"
+msgstr "Innehållbakgrund för inlägg och sidor"
+
+#: admin/options.php:1106
+msgid "Post meta and footer border"
+msgstr "Meta och sidfotskantlinje för inlägg"
+
+#: admin/options.php:1107
+msgid "Post and pages top border"
+msgstr "Inlägg och sidor övre kantlinje"
+
+#: admin/options.php:1108
+msgid "Post and pages bottom border"
+msgstr "Inlägg och sidor nedre kantlinje"
+
+#: admin/options.php:1118
+#: admin/options.php:1148
+#: admin/options.php:1174
+#: admin/options.php:1201
+#: admin/options.php:1338
+#: admin/options.php:1359
+msgid "Clear"
+msgstr "Ta bort"
+
+#: admin/options.php:1125
+msgid "Widgets"
+msgstr "Widgets"
+
+#: admin/options.php:1128
+msgid "Widget preview"
+msgstr "Widget förhandsvisning"
+
+#: admin/options.php:1129
+msgid "Widget title"
+msgstr "Widget titel"
+
+#: admin/options.php:1129
+msgid "List item"
+msgstr "Listpost"
+
+#: admin/options.php:1133
+msgid "Widget item background"
+msgstr "Widget post bakgrund"
+
+#: admin/options.php:1134
+msgid "Widget item list border"
+msgstr "Kantlinje för widget post lista"
+
+#: admin/options.php:1135
+msgid "Widget header border"
+msgstr "Kantlinje för widgetrubrik"
+
+#: admin/options.php:1136
+msgid "Widget title colour"
+msgstr "Widget titelfärg"
+
+#: admin/options.php:1137
+msgid "Widget title text shadow colour"
+msgstr "Skuggfärg för widget titeltext"
+
+#: admin/options.php:1138
+msgid "Widget header gradient bottom colour"
+msgstr ""
+
+#: admin/options.php:1139
+msgid "Widget header gradient top colour"
+msgstr ""
+
+#: admin/options.php:1156
+#, fuzzy
+msgid "Slider"
+msgstr "Sidreglage"
+
+#: admin/options.php:1159
+msgid "Slider background preview"
+msgstr "Bakgrund förhandsvisning för sidreglage"
+
+#: admin/options.php:1164
+msgid "Slider top left colour"
+msgstr "Visningsreglage färg överst vänster"
+
+#: admin/options.php:1165
+msgid "Slider bottom right colour"
+msgstr "Färg för sidreglage höger botten"
+
+#: admin/options.php:1182
+msgid "Block buttons"
+msgstr "Blockera knapp"
+
+#: admin/options.php:1185
+msgid "Block button preview"
+msgstr "Förhandsvisning Blockera-knapp"
+
+#: admin/options.php:1186
+msgid "Button label"
+msgstr "Knappetikett"
+
+#: admin/options.php:1190
+msgid "Button background colour"
+msgstr "Bakgrundsfärg för knapp"
+
+#: admin/options.php:1191
+msgid "Button label colour"
+msgstr "Etikettfärg för knapp"
+
+#: admin/options.php:1192
+msgid "Button label text shadow"
+msgstr "Textskugga för knappetikett"
+
+#: admin/options.php:1216
 msgid "Text Style Options"
 msgstr "Inställningar för textstilar"
 
-#: admin/options.php:1086
+#: admin/options.php:1219
 msgid "Note that these are CSS properties, so any valid CSS values for each particular property can be used."
 msgstr "Observera att dessa är CSS egenskaper, så alla giltiga CSS värden för varje respektive egenskap kan användas."
 
-#: admin/options.php:1087
+#: admin/options.php:1220
 msgid "Some example CSS properties values:"
 msgstr "Några exempel på CSS egenskaper:"
 
-#: admin/options.php:1090
+#: admin/options.php:1223
 msgid "Text font:"
 msgstr "Typsnitt:"
 
-#: admin/options.php:1094
+#: admin/options.php:1227
 msgid "Text size and line height:"
 msgstr "Textstorlek och linjehöjd:"
 
-#: admin/options.php:1098
+#: admin/options.php:1231
 msgid "Text weight:"
 msgstr "Texttjocklek:"
 
-#: admin/options.php:1102
+#: admin/options.php:1235
 msgid "Text style:"
 msgstr "Textstil:"
 
-#: admin/options.php:1106
+#: admin/options.php:1239
 msgid "Text colour:"
 msgstr "Textfärg:"
 
-#: admin/options.php:1110
-#: admin/options.php:1251
-#: admin/options.php:1280
+#: admin/options.php:1243
+#: admin/options.php:1389
 msgid "Leave field empty to use the default value."
 msgstr "Låt fältet stå tomt för att använda standardvärdet."
 
-#: admin/options.php:1112
+#: admin/options.php:1245
 msgid "Header Text"
 msgstr "Sidhuvud text"
 
-#: admin/options.php:1116
+#: admin/options.php:1249
 msgid "Title text font"
 msgstr "Titel typsnitt"
 
-#: admin/options.php:1122
+#: admin/options.php:1255
 msgid "Title text size"
 msgstr "Titel textstorlek"
 
-#: admin/options.php:1128
+#: admin/options.php:1261
 msgid "Title text weight"
 msgstr "Titel texttjocklek"
 
-#: admin/options.php:1134
+#: admin/options.php:1267
 msgid "Title text line height"
 msgstr "Titel textlinjehöjd"
 
-#: admin/options.php:1140
+#: admin/options.php:1273
 msgid "Title text style"
 msgstr "Titel textstil"
 
-#: admin/options.php:1149
+#: admin/options.php:1282
 msgid "Description text font"
 msgstr "Beskrivning typsnitt"
 
-#: admin/options.php:1155
+#: admin/options.php:1288
 msgid "Description text size"
 msgstr "Beskrivning textstorlek"
 
-#: admin/options.php:1161
+#: admin/options.php:1294
 msgid "Description text weight"
 msgstr "Beskrivning texttjocklek"
 
-#: admin/options.php:1167
+#: admin/options.php:1300
 msgid "Description text line height"
 msgstr "Beskrivning textlinjehöjd"
 
-#: admin/options.php:1173
+#: admin/options.php:1306
 msgid "Description text style"
 msgstr "Beskrivning textstil"
 
-#: admin/options.php:1179
+#: admin/options.php:1312
 msgid "Content Text"
 msgstr "Brödtext"
 
-#: admin/options.php:1183
+#: admin/options.php:1316
 msgid "Text font"
 msgstr "Typsnitt"
 
-#: admin/options.php:1189
+#: admin/options.php:1322
 msgid "Text size"
 msgstr "Textstorlek"
 
-#: admin/options.php:1195
+#: admin/options.php:1328
 msgid "Text line height"
 msgstr "Linjehöjd"
 
-#: admin/options.php:1201
+#: admin/options.php:1334
 msgid "Text colour"
 msgstr "Textfärg"
 
-#: admin/options.php:1207
+#: admin/options.php:1344
 msgid "Link Text"
 msgstr "Länk Text"
 
-#: admin/options.php:1211
+#: admin/options.php:1348
 msgid "Link colour (normal state)"
 msgstr "Länkfärg (normal)"
 
-#: admin/options.php:1217
+#: admin/options.php:1349
 msgid "Link colour (visited state)"
 msgstr "Länkfärg (besökt)"
 
-#: admin/options.php:1223
+#: admin/options.php:1350
 msgid "Link colour (hover state)"
 msgstr "Länkfärg (markör ovan)"
 
-#: admin/options.php:1229
+#: admin/options.php:1367
 msgid "Text decoration (normal state)"
 msgstr "Text dekoration (normal)"
 
-#: admin/options.php:1235
+#: admin/options.php:1373
 msgid "Text decoration (hover state)"
 msgstr "Text dekoration (markör ovan)"
 
-#: admin/options.php:1248
+#: admin/options.php:1386
 msgid "Footer Widget Display Options"
 msgstr "Sidfot widget-område visningsinställningar"
 
-#: admin/options.php:1256
+#: admin/options.php:1394
 msgid "Number of columns to display"
 msgstr "Antal kolumner att visa"
 
-#: admin/options.php:1263
+#: admin/options.php:1401
 msgid "Number of columns to display for front page footer widget"
 msgstr "Antal kolumner att visa inom huvudsida widget-område"
 
-#: admin/options.php:1277
+#: admin/options.php:1415
 msgid "Navigation Menu Display Options"
 msgstr "Navigeringsmeny visningsinställningar"
 
-#: admin/options.php:1285
+#: admin/options.php:1421
 msgid "Dropdown menu item width"
 msgstr "Bredd på rullgardinsmenypost"
 
-#: admin/options.php:1298
+#: admin/options.php:1427
+msgid "Description for default menu \"Home\" item"
+msgstr "Beskrivning för standardmeny \"Hem\" post"
+
+#: admin/options.php:1443
 msgid "Miscellaneous Display Options"
 msgstr "Övriga visningsinställningar"
 
-#: admin/options.php:1301
+#: admin/options.php:1446
 msgid "Site title options"
 msgstr "Webbplatstitelinställningar"
 
-#: admin/options.php:1302
+#: admin/options.php:1447
 msgid "Use these tags to customise your own site title structure: <code>#site-name</code>, <code>#site-desc</code>, <code>#post-title</code>"
 msgstr "Använd dessa etiketter för anpassa din webbplat's titelstruktur: <code>#site-name</code>, <code>#site-desc</code>, <code>#post-title</code>"
 
-#: admin/options.php:1306
+#: admin/options.php:1451
 msgid "Custom front page site title"
 msgstr "Anpassa webbplatsen's title på huvudsidan"
 
-#: admin/options.php:1310
+#: admin/options.php:1455
 msgid "Defaults to <code>#site-name &raquo; #site-desc</code>. The <code>#post-title</code> tag cannot be used here."
 msgstr "Ger standard <code>#site-name &raquo; #site-desc</code>. Etiketten <code>#post-title</code> kan inte användas här."
 
-#: admin/options.php:1315
+#: admin/options.php:1460
 msgid "Custom content pages site title"
 msgstr "Anpassa webbplatsen's title på innehållssidan."
 
-#: admin/options.php:1319
+#: admin/options.php:1464
 msgid "Defaults to <code>#post-title &raquo; #site-name</code>."
 msgstr "Ger standard <code>#post-title &raquo; #site-name</code>."
 
-#: admin/options.php:1324
+#: admin/options.php:1469
 msgid "Favicon options"
 msgstr "Faviconinställningar"
 
-#: admin/options.php:1328
+#: admin/options.php:1473
 msgid "Favicon URL"
 msgstr "Favicon URL"
 
-#: admin/options.php:1332
+#: admin/options.php:1477
 msgid "Simply enter the full URL to your favicon file here to enable favicon. Make sure you include the <code>http://</code> in front of the URL as well."
 msgstr "Ange helt enkelt full URL till din favicon-fil här, för att aktivera favicon. Se till att inkludera <code>http://</code> framför din URL."
 
-#: admin/options.php:1344
+#: admin/options.php:1489
 msgid "Custom CSS"
 msgstr "Anpassad CSS"
 
-#: admin/options.php:1349
+#: admin/options.php:1494
 msgid "Custom CSS styles"
 msgstr "Anpassade CSS stilar"
 
-#: admin/options.php:1351
+#: admin/options.php:1496
 msgid "You can enter your own CSS codes below to modify any other aspects of the theme's appearance that is not included in the options."
 msgstr "Du kan ange din egen CSS kod här nedan för att modifiera andra delar av temats utseende som inte inkluderas bland inställningarna."
 
-#: admin/options.php:1367
+#: admin/options.php:1512
 msgid "Before you can upload your import file, you will need to fix the following error:"
 msgstr "Följande fel behöver åtgärdas innan uppladdning av din importfil:"
 
-#: admin/options.php:1375
+#: admin/options.php:1520
 msgid "<strong>Note:</strong> This is an experimental feature. Please report any problem at the <a href=\"http://forum.khairul-syahir.com/forum/bug-report\">Support Forum</a>."
 msgstr "<strong>Notera:</strong> Denna feature är under test. Vänligen rapportera eventuella fel till <a href=\"http://forum.khairul-syahir.com/forum/bug-report\">Hjälpforum</a>."
 
-#: admin/options.php:1377
+#: admin/options.php:1522
 msgid "Choose a file from your computer:"
 msgstr "Välj fil från din dator:"
 
-#: admin/options.php:1377
+#: admin/options.php:1522
 #, php-format
 msgid "Maximum size: %s"
 msgstr "Max storlek: %s"
 
-#: admin/options.php:1384
+#: admin/options.php:1529
 msgid "Upload file and import"
 msgstr "Uppladdning fil och import"
 
-#: admin/uninstall.php:23
+#: admin/uninstall.php:22
 #, php-format
 msgid "Theme uninstalled. Redirecting to %s"
 msgstr "Temat avinstallerat. Omdirigerar till %s"
@@ -1756,105 +1885,138 @@ msgstr "Vänligen ange full URL (including <code>http://</code>) till din profil
 msgid "<strong>Important: </strong>Image width must be less than or equal to <strong>150px</strong>."
 msgstr "<strong>Viktigt: </strong>Bildbredd skall vara mindre eller lika med <strong>150px</strong>."
 
-#: admin/validator.php:22
+#: admin/validator.php:24
 msgid "ERROR: Invalid category to show in slider."
 msgstr "ERROR: Invalid category to show in slider."
 
-#: admin/validator.php:25
+#: admin/validator.php:27
 msgid "ERROR: You must specify the posts/pages to be displayed when you have \"Show specific posts/pages\" selected for the slider category."
 msgstr ""
 
-#: admin/validator.php:34
+#: admin/validator.php:36
 msgid "ERROR: The number of posts to displayed in the slider must be a an integer value."
 msgstr ""
 
-#: admin/validator.php:37
+#: admin/validator.php:39
 msgid "ERROR: Invalid option for the slider image is specified."
 msgstr ""
 
-#: admin/validator.php:39
+#: admin/validator.php:41
 msgid "ERROR: Bad URL entered for the custom slider image URL."
 msgstr ""
 
-#: admin/validator.php:41
+#: admin/validator.php:43
 msgid "ERROR: Invalid option for the slider display style is specified."
 msgstr ""
 
-#: admin/validator.php:43
+#: admin/validator.php:45
 msgid "ERROR: The value for slider height must be an integer."
 msgstr ""
 
-#: admin/validator.php:45
+#: admin/validator.php:47
 msgid "ERROR: The value for slider speed must be an integer."
 msgstr ""
 
-#: admin/validator.php:47
+#: admin/validator.php:49
 msgid "ERROR: The value for slider transition speed must be an integer."
 msgstr ""
 
-#: admin/validator.php:61
+#: admin/validator.php:63
 msgid "ERROR: Invalid category selected for the front page posts categories."
 msgstr ""
 
-#: admin/validator.php:72
+#: admin/validator.php:74
 msgid "ERROR: Invalid option for the type of content to show in homepage panes."
 msgstr ""
 
-#: admin/validator.php:74
+#: admin/validator.php:76
 msgid "ERROR: The value for the number of latest posts to display in homepage panes must be an integer."
 msgstr ""
 
-#: admin/validator.php:76
+#: admin/validator.php:78
 msgid "ERROR: Invalid category selected for the latest posts to show from in the homepage panes."
 msgstr ""
 
-#: admin/validator.php:88
+#: admin/validator.php:90
 msgid "ERROR: Invalid option for the comments option."
 msgstr ""
 
-#: admin/validator.php:97
+#: admin/validator.php:99
 msgid "ERROR: Invalid option for the child page listings."
 msgstr ""
 
-#: admin/validator.php:114
+#: admin/validator.php:116
 msgid "ERROR: Bad URL entered for the custom feed URL."
 msgstr ""
 
-#: admin/validator.php:116
+#: admin/validator.php:118
 msgid "ERROR: Bad URL entered for the Twitter URL."
 msgstr ""
 
-#: admin/validator.php:118
+#: admin/validator.php:120
 msgid "ERROR: Bad URL entered for the Facebook URL."
 msgstr ""
 
-#: admin/validator.php:129
+#: admin/validator.php:131
 msgid "ERROR: Bad URL entered for the social media icon URL."
 msgstr ""
 
-#: admin/validator.php:130
+#: admin/validator.php:132
 msgid "ERROR: Bad URL entered for the social media URL."
 msgstr ""
 
-#: admin/validator.php:145
+#: admin/validator.php:147
 msgid "ERROR: Invalid option for the social sharing buttons location."
 msgstr ""
 
-#: admin/validator.php:204
+#: admin/validator.php:208
 msgid "ERROR: Invalid option for the Search box location."
 msgstr ""
 
-#: admin/validator.php:209
+#: admin/validator.php:213
 msgid "ERROR: Invalid option for the column mode."
 msgstr ""
 
-#: admin/validator.php:215
+#: admin/validator.php:219
 msgid "ERROR: Invalid option for the post date display."
 msgstr ""
 
-#: admin/validator.php:238
+#: admin/validator.php:278
 msgid "ERROR: The number of columns to be displayed in the footer widget must be a an integer value."
 msgstr "ERROR: The number of columns to be displayed in the footer widget must be a an integer value."
+
+#: admin/validator.php:283
+msgid "ERROR: The width of the submenu must be a an integer value."
+msgstr "ERROR: The width of the submenu must be a an integer value."
+
+#: admin/validator.php:290
+msgid "ERROR: Bad URL entered for the favicon URL."
+msgstr ""
+
+#: admin/js/admin.js.php:20
+msgid "Social Media name"
+msgstr "Namn på Sociala media"
+
+#: admin/js/admin.js.php:23
+msgid "Name of the social media, e.g. LinkedIn, etc."
+msgstr "Namn på Social media, t.ex. LinkedIn, osv."
+
+#: admin/js/admin.js.php:27
+msgid "Social Media profile URL"
+msgstr "Social media profil URL"
+
+#: admin/js/admin.js.php:30
+msgid "URL to your page for the social media."
+msgstr "URL to din sida för social media."
+
+#: admin/js/admin.js.php:34
+msgid "Social Media icon URL"
+msgstr "Social media ikon URL"
+
+#: admin/js/admin.js.php:37
+#, php-format
+msgid "URL to the social media icon. <strong>Note:</strong> the theme uses the %s icon set for the social media icons. Please do not hotlink the icons on the site. Download the icons you need and upload them to your server instead."
+msgstr "URL till den sociala mediaikonen. <strong>Notera:</strong> temat använder %s ikonpaketet för de sociala media ikonerna. Vänligen länka ej till ikonerna på webbplatsen. Du kan istället ladda ner de ikoner du behöver och sedan ladda upp till din server."
 
 #~ msgid "No comment yet"
 #~ msgstr "Ingen kommentarer angivna"
@@ -1901,9 +2063,6 @@ msgstr "ERROR: The number of columns to be displayed in the footer widget must b
 
 #~ msgid "ERROR:"
 #~ msgstr "FEL:"
-
-#~ msgid "Sidebar"
-#~ msgstr "Sidreglage"
 
 #~ msgid "Sidebar Options"
 #~ msgstr "Sidreglage alternativ"

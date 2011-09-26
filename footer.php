@@ -57,6 +57,7 @@ global $graphene_settings;
     </div>
 <?php endif; ?>
 
+	<?php if ( has_nav_menu( 'footer-menu' ) || ! $graphene_settings['hide_return_top'] ) : ?>
 	<div class="footer-menu-wrap">
     	<ul id="footer-menu" class="clearfix">
 			<?php /* Footer menu */
@@ -74,11 +75,12 @@ global $graphene_settings;
             <?php endif; ?>
         </ul>
     </div>
+    <?php endif; ?>
 
     <div id="developer">
         <p>
         <?php /* translators: %1$s is the link to WordPress.org, %2$s is the theme's name */ ?>
-<?php printf(__('Powered by %1$s and the %2$s.', 'graphene'), '<a href="http://wordpress.org/">WordPress</a>', '<a href="http://www.khairul-syahir.com/wordpress-dev/graphene-theme">' . __('Graphene Theme', 'graphene') . '</a>'); ?>
+<?php printf( __('Powered by %1$s and the %2$s.', 'graphene'), '<a href="http://wordpress.org/">WordPress</a>', '<a href="http://www.khairul-syahir.com/wordpress-dev/graphene-theme">' . __('Graphene Theme', 'graphene') . '</a>'); ?>
         </p>
 
 	<?php do_action('graphene_developer'); ?>

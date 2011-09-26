@@ -4,6 +4,44 @@ http://www.khairul-syahir.com
 
 CHANGELOG
 
+Version 1.5
+	* Added option to disable date display on a per-post basis
+	* Added option to display followers count in the Graphene Twitter widget
+	* Added option to make links open in new window in the Graphene Twitter widget and social media icons in the top bar
+	* Added filter to the comments type in the graphene_comment_count() function
+	* Added filters to the arguments passed to wp_list_comments() function in comments.php
+	* Added option to disable description in Header Menu
+	* Added filter to the theme's default options. This will enable modification of the theme's default values via a child theme.
+	* Added Russian (ru_RU) translation by Andreas Beraz
+	* Added colour options for archive titles
+	* Added "Advanced" options page
+	* Added option to add widget area to any of the theme's action hooks
+	* Added option to preview the site in the options page
+	* Added option to customise the title of custom social media icons
+	* Added option to select multiple categories for the homepage panes
+	* Added page.php template file so it may be overridden in child themes
+	* Added some CSS for WPStats smiley at the bottom so that the default background gradient won't be pushed up
+	* Added "vertical slide", "fade", and "no effect" slider transition effect options
+	* Added the ability to select multiple categories for the slider
+	* Added the ability to use multiple instances of the Twitter widget on the same page
+	* Added link to the thumbnails in child page listing when the child page has a featured image set
+	* Added option labels-input field associations in options page, so that clicking the label will check/uncheck radio buttons and checkboxes
+	* Added the ability for options pages to remember opened sections
+	* Added automatic links to hashtags in the Twitter widget
+	* Fixed video size in post format exceeding the content area when inline post date display is used
+	* Fixed digit-type settings reverting to previous saved value when left empty
+	* Fixed the submenus of custom menus everywhere having box shadow when using light-coloured header bars
+	* Fixed the author profile image URL of the current admin user being displayed in the author profile field instead of the current user being edited.
+	* Fixed the issue where posts are sometimes being repeated on the home page
+	* Fixed an issue where the dropdown menu causes a very wide width of the page in RTL website, triggering the browser's horizontal scrollbar
+	* Fixed an issue with homepage panes where smaller image is upsized to fit the width of the pane
+	* Fixed an issue with the theme's rtl.css file not being loaded when using a child theme with RTL language
+	* Replaced get_pages() call with WP_Query() for listing of child pages
+	* Migrated all get_posts() calls with the WP_Query() equivalents
+	* Several options in the theme's options page are now hidden when they're irrelevant
+	* Moved the option Hide Top Bar to General tab because this already has a pane called Top Bar Options
+	* Changed comments/pings tabbing from using jQuery Tools library to using the native jQuery library
+
 Version 1.4.1
 	* Fixed a bug in the validator script where the second argument for wp_kses() was missing
 	* Removed kses check for social sharing button code due to various social sharing providers using non-standard html tags

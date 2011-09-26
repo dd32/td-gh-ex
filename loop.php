@@ -6,20 +6,22 @@
 		 * Check if the post has a post format. Load a post-format specific loop file,
 		 * if it has. Continue with standard loop otherwise.
 		*/ 
-		global $post_format;
-		$post_format = get_post_format();
-		
-		// Get the post formats supported by the theme
-		$supported_formats = get_theme_support( 'post-formats' );
-		if (is_array($supported_formats)) $supported_formats = $supported_formats[0]; 
-		
-		if (in_array($post_format, $supported_formats)) {
+		if ( function_exists( 'get_post_format' ) ) {
+			global $post_format;
+			$post_format = get_post_format();
 			
-			// Get the post format loop file
-			get_template_part('loop-post-formats', $post_format);
+			// Get the post formats supported by the theme
+			$supported_formats = get_theme_support( 'post-formats' );
+			if ( is_array( $supported_formats ) ) $supported_formats = $supported_formats[0]; 
 			
-			// Stop this default posts loop
-			continue;
+			if ( in_array( $post_format, $supported_formats ) ) {
+				
+				// Get the post format loop file
+				get_template_part( 'loop-post-formats', $post_format );
+				
+				// Stop this default posts loop
+				continue;
+			}
 		}
 		?>
     
@@ -40,7 +42,7 @@
         <div id="post-<?php the_ID(); ?>" <?php post_class('clearfix post'); ?>>
             
             <?php /* Post date is not shown if this is a Page post */ ?>
-            <?php if (( strpos($graphene_settings['post_date_display'], 'icon_') === 0 ) && get_post_type($post) != 'page') : ?>
+            <?php if (( strpos($graphene_settings['post_date_display'], 'icon_') === 0 ) && graphene_should_show_date() ) : ?>
             <div class="date updated">
                 <p class="default_date"><?php the_time('M'); ?><br /><span><?php the_time('d') ?></span>
                     <?php if ($graphene_settings['post_date_display'] == 'icon_plus_year') : ?>
@@ -102,7 +104,7 @@
                     <?php endif; ?>
                     
                     <?php /* Inline post date */ ?>
-                    <?php if ($graphene_settings['post_date_display'] == 'text' && !is_page()) : ?>
+                    <?php if ( $graphene_settings['post_date_display'] == 'text' && graphene_should_show_date() ) : ?>
                     <p class="post-date-inline updated">
                         <abbr class="published" title="<?php the_date('c'); ?>"><?php the_time(get_option('date_format')); ?></abbr>
                     </p>
@@ -121,7 +123,7 @@
                     <?php endif; ?>
                                         
                     <?php /* For printing: the date of the post */
-                        if ($graphene_settings['print_css'] && !is_page() && $graphene_settings['post_date_display'] != 'hidden') {
+                        if ($graphene_settings['print_css'] && graphene_should_show_date() ) {
                              echo graphene_print_only_text(get_the_time(get_option('date_format')));  
                         } 
                     ?>
@@ -177,9 +179,9 @@
                          * See the graphene_addthis() function in functions.php
                         */ 
                     ?>
-                    <?php if (is_single() || is_page()) : ?>
+                    <?php if ( is_single() || is_page() ) : ?>
                         <?php if (stripos($graphene_settings['addthis_location'], 'bottom') !== false) {graphene_addthis(get_the_ID());} ?>
-                    <?php elseif ($graphene_settings['hide_post_commentcount'] != true && comments_open() && graphene_should_show_comments() ) : ?>
+                    <?php elseif ( $graphene_settings['hide_post_commentcount'] != true && comments_open() && graphene_should_show_comments() ) : ?>
                         <p class="comment-link"><?php comments_popup_link(__('Leave comment','graphene'), __('1 comment','graphene'), __("% comments",'graphene')); ?></p>
                     <?php endif; ?>
                     
@@ -235,7 +237,7 @@
 	<?php endwhile; ?>
     
     <?php /* Display posts navigation if this is not a single post page */ ?>
-    <?php if (!is_single()) : ?>
+    <?php if (!is_singular()) : ?>
         <?php /* Posts navigation. See functions.php for the function definition */ ?>
     	<?php graphene_posts_nav(); ?>
     <?php endif; ?>

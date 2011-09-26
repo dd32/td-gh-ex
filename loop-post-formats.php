@@ -1,4 +1,4 @@
-<?php /* Posts navigation for single post pages, but not for Page post */ ?>
+<?php /* Posts navigation for single post pages, but not for Page post */ global $graphene_settings; ?>
 <?php if (is_single() && !is_page()) : ?>
 <div class="post-nav clearfix">
 	<p id="previous"><?php previous_post_link(); ?></p>
@@ -54,7 +54,10 @@
         <?php /* Modify the content_width var for video post format */ 
 			if ($post_format == 'video'){
 				global $content_width; 
-				$content_width -= 25; 
+				if (strpos($graphene_settings['post_date_display'], 'icon') === 0)
+					$content_width -= 25;
+				else
+					$content_width -= 80;
 			}
 		?>
         
@@ -63,7 +66,10 @@
         
         <?php /* Revert the content_width var for video post format */ 
 			if ($post_format == 'video'){
-				$content_width += 25; 
+				if (strpos($graphene_settings['post_date_display'], 'icon') === 0)
+					$content_width += 25;
+				else
+					$content_width += 80;	
 			}
 		?>
         

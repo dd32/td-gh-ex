@@ -5,7 +5,7 @@
  * This file defines the function that validates the theme's options
  * upon submission.
 */
-function graphene_settings_validator($input){
+function graphene_settings_validator( $input ){
 	
 	if (!isset($_POST['graphene_uninstall'])) {
 		global $graphene_defaults, $allowedposttags;
@@ -19,17 +19,27 @@ function graphene_settings_validator($input){
 			--------------------------------------------------------------------------------------*/
 			
 			// Slider category
-			if (!in_array($input['slider_cat'], array('', 'posts_pages', 'random')) && !ctype_digit($input['slider_cat'])){
-				unset($input['slider_cat']);
+			if ( isset($input['slider_type']) && !in_array($input['slider_type'], array('latest_posts', 'random', 'posts_pages', 'categories' ) ) ){
+				unset($input['slider_type']);
 				add_settings_error('graphene_options', 2, __('ERROR: Invalid category to show in slider.', 'graphene'));
-			} elseif ( $input['slider_cat'] == 'posts_pages' && empty ( $input['slider_specific_posts'] ) ) {
-				unset($input['slider_cat']);
-				add_settings_error('graphene_options', 2, __('ERROR: You must specify the posts/pages to be displayed when you have "Show specific posts/pages" selected for the slider category.', 'graphene'));
-			}
+			} elseif ( $input['slider_type'] == 'posts_pages' && empty ( $input['slider_specific_posts'] ) ) {
+				unset($input['slider_type']);
+				add_settings_error('graphene_options', 2, __('ERROR: You must specify the posts/pages to be displayed when you have "Show specific posts/pages" selected for the slider.', 'graphene'));
+                        } elseif ( $input['slider_type'] == 'categories' && empty ( $input['slider_specific_categories'] ) ) {
+				unset($input['slider_type']);
+				add_settings_error('graphene_options', 2, __('ERROR: You must have selected at least one category when you have "Show posts from categories" selected for the slider.', 'graphene'));
+			}                        
 			// Posts and/or pages to display
-			if (isset($input['slider_specific_posts'])) {
+			if (isset($input['slider_type']) && $input['slider_type'] == 'posts_pages' && isset($input['slider_specific_posts'])) {
 				$input['slider_specific_posts'] = str_replace(' ', '', $input['slider_specific_posts']);
 			}
+                        // Categories to display posts from
+                        if (isset($input['slider_type']) && $input['slider_type'] == 'categories' && isset($input['slider_specific_categories']) && is_array($input['slider_specific_categories'])){
+                            if ( in_array ( false, array_map( 'ctype_digit', (array) $input['slider_specific_categories'] ) ) ) {
+                                unset($input['slider_specific_categories']);
+                                add_settings_error('graphene_options', 2, __('ERROR: Invalid category selected for the slider categories.', 'graphene'));
+                            }
+                        }
 			// Number of posts to display
 			if (!empty($input['slider_postcount']) && !ctype_digit($input['slider_postcount'])){
 				unset($input['slider_postcount']);
@@ -47,7 +57,9 @@ function graphene_settings_validator($input){
 			$input = graphene_validate_digits( $input, 'slider_speed', __('ERROR: The value for slider speed must be an integer.', 'graphene'));
 			// Slider transition speed
 			$input = graphene_validate_digits( $input, 'slider_trans_speed', __('ERROR: The value for slider transition speed must be an integer.', 'graphene'));
-			// Slider position
+			// Slider animation
+			$input = graphene_validate_dropdown( $input, 'slider_animation', array( 'horizontal-slide', 'vertical-slide', 'fade', 'none' ), __( 'ERROR: Invalid slider animation.', 'graphene' ) );
+                        // Slider position
 			$input['slider_position'] = (isset($input['slider_position'])) ? true : false;
 			// Slider disable switch
 			$input['slider_disable'] = (isset($input['slider_disable'])) ? true : false;
@@ -74,10 +86,15 @@ function graphene_settings_validator($input){
 			$input = graphene_validate_dropdown( $input, 'show_post_type', array('latest-posts', 'cat-latest-posts', 'posts'), __('ERROR: Invalid option for the type of content to show in homepage panes.', 'graphene') );
 			// Number of latest posts to display
 			$input = graphene_validate_digits( $input, 'homepage_panes_count', __('ERROR: The value for the number of latest posts to display in homepage panes must be an integer.', 'graphene') );
-			// Category to show latest posts from
-			$input = graphene_validate_digits( $input, 'homepage_panes_cat', __('ERROR: Invalid category selected for the latest posts to show from in the homepage panes.', 'graphene') );
+			// Categories to show latest posts from
+                        if ($input['show_post_type'] == 'cat-latest-posts' && isset($input['homepage_panes_cat']) && is_array($input['homepage_panes_cat'])) {
+                            if ( in_array ( false, array_map( 'ctype_digit', (array) $input['homepage_panes_cat'] ) ) ) {
+                                unset($input['slider_specific_categories']);
+                                add_settings_error('graphene_options', 2, __('ERROR: Invalid category selected for the latest posts to show from in the homepage panes.', 'graphene'));
+                            }
+                        }			
 			// Posts and/or pages to display
-			if (isset($input['homepage_panes_posts'])) {
+			if ($input['show_post_type'] == 'posts' && isset($input['homepage_panes_posts'])) {
 				$input['homepage_panes_posts'] = str_replace(' ', '', $input['homepage_panes_posts']);
 			}
 			// Disable switch
@@ -109,11 +126,14 @@ function graphene_settings_validator($input){
                         
 			/* =Top Bar Options
 			--------------------------------------------------------------------------------------*/
-			
+			// Hide top bar
+                        $input['hide_top_bar'] = (isset($input['hide_top_bar'])) ? true : false;
 			// Hide feed icon switch
 			$input['hide_feed_icon'] = (isset($input['hide_feed_icon'])) ? true : false;
 			// Custom feed URL
 			$input = graphene_validate_url( $input, 'custom_feed_url', __('ERROR: Bad URL entered for the custom feed URL.', 'graphene') );
+			// Open in new window
+			$input['social_media_new_window'] = (isset($input['social_media_new_window'])) ? true : false;
 			// Twitter URL
 			$input = graphene_validate_url( $input, 'twitter_url', __('ERROR: Bad URL entered for the Twitter URL.', 'graphene') );
 			// Facebook URL
@@ -128,6 +148,7 @@ function graphene_settings_validator($input){
 						$input['social_media'][$slug]['name'] = $social_medium['name'];
 						$input['social_media'][$slug]['icon'] = $social_medium['icon'];
 						$input['social_media'][$slug]['url'] = $social_medium['url'];
+                                                $input['social_media'][$slug]['title'] = $social_medium['title'];
 						$input['social_media'][$slug] = graphene_validate_url( $input['social_media'][$slug], 'icon', __('ERROR: Bad URL entered for the social media icon URL.', 'graphene') );
 						$input['social_media'][$slug] = graphene_validate_url( $input['social_media'][$slug], 'url', __('ERROR: Bad URL entered for the social media URL.', 'graphene') );
 						$i++;
@@ -203,8 +224,7 @@ function graphene_settings_validator($input){
 			$input['light_header'] = (isset($input['light_header'])) ? true : false;
 			$input['link_header_img'] = (isset($input['link_header_img'])) ? true : false;
 			$input['featured_img_header'] = (isset($input['featured_img_header'])) ? true : false;
-			$input['use_random_header_img'] = (isset($input['use_random_header_img'])) ? true : false;
-			$input['hide_top_bar'] = (isset($input['hide_top_bar'])) ? true : false;
+			$input['use_random_header_img'] = (isset($input['use_random_header_img'])) ? true : false;			
 			$input = graphene_validate_dropdown( $input, 'search_box_location', array('top_bar', 'nav_bar', 'disabled'), __('ERROR: Invalid option for the Search box location.', 'graphene') );
 			
 			
@@ -262,6 +282,13 @@ function graphene_settings_validator($input){
 			if ( empty($input['bg_button']) ) $input['bg_button'] = $graphene_defaults['bg_button'];
 			if ( empty($input['bg_button_label']) ) $input['bg_button_label'] = $graphene_defaults['bg_button_label'];
 			if ( empty($input['bg_button_label_textshadow']) ) $input['bg_button_label_textshadow'] = $graphene_defaults['bg_button_label_textshadow'];
+                        
+            // Archive
+			if ( empty($input['bg_archive_left']) ) $input['bg_archive_left'] = $graphene_defaults['bg_archive_left'];
+            if ( empty($input['bg_archive_right']) ) $input['bg_archive_right'] = $graphene_defaults['bg_archive_right'];
+			if ( empty($input['bg_archive_label']) ) $input['bg_archive_label'] = $graphene_defaults['bg_archive_label'];
+			if ( empty($input['bg_archive_text']) ) $input['bg_archive_text'] = $graphene_defaults['bg_archive_text'];
+            if ( empty($input['bg_archive_textshadow']) ) $input['bg_archive_textshadow'] = $graphene_defaults['bg_archive_textshadow'];
 
 			
 			/* =Text Style Options
@@ -282,6 +309,7 @@ function graphene_settings_validator($input){
 			--------------------------------------------------------------------------------------*/
 			$input = graphene_validate_digits( $input, 'navmenu_child_width', __('ERROR: The width of the submenu must be a an integer value.', 'graphene' ) );
 			$input['navmenu_home_desc'] = wp_kses_post( $input['navmenu_home_desc'] );
+			$input['disable_menu_desc'] = (isset($input['disable_menu_desc'])) ? true : false;
 			
 			/* =Miscellaneous Display Options
 			--------------------------------------------------------------------------------------*/
@@ -294,15 +322,28 @@ function graphene_settings_validator($input){
 			$input['custom_css'] = strip_tags( $input['custom_css'] );
 		
 		} // Ends the Display options
+                
+		if ( isset($_POST['graphene_advanced'] ) ) {
+			$input['enable_preview'] = ( isset( $input['enable_preview'] ) ) ? true : false; 
+			
+			if ( isset( $input['widget_hooks'] ) && is_array( $input['widget_hooks'] ) ) {
+				if ( ! ( array_intersect( $input['widget_hooks'], graphene_get_action_hooks( true ) ) === $input['widget_hooks'] ) ) {
+					unset( $input['widget_hooks'] );
+					add_settings_error( 'graphene_options', 2, __( 'ERROR: Invalid action hook selected widget action hooks.', 'graphene' ) );
+				}
+			} else {
+				$input['widget_hooks'] = $graphene_defaults['widget_hooks'];
+			}
+		} // Ends the Advanced options
 		
 		
 		// Merge the new settings with the previous one (if exists) before saving
 		$input = array_merge( get_option('graphene_settings', array() ), $input );
-			
+		
 		/* Only save options that have different values than the default values */
-		foreach ($input as $key => $value){
-			if ( $graphene_defaults[$key] === $value || $value == '' ) {
-				unset($input[$key]);
+		foreach ( $input as $key => $value ){
+			if ( $graphene_defaults[$key] === $value || $value === '' ) {
+				unset( $input[$key] );
 			}
 		}
 		
@@ -322,14 +363,14 @@ function graphene_settings_validator($input){
  * Define the data validation functions
 */
 function graphene_validate_digits( $input, $option_name, $error_message ){
-	
+	global $graphene_defaults;
 	if ( '0' === $input[$option_name] || ! empty($input[$option_name] ) ){
 		if (!ctype_digit($input[$option_name])) {
-			unset($input[$option_name]);
+			$input[$option_name] = $graphene_defaults[$option_name];
 			add_settings_error('graphene_options', 2, $error_message);
 		}
 	} else {
-		unset($input[$option_name]);
+		$input[$option_name] = $graphene_defaults[$option_name];
 	}
 	
 	return $input;
@@ -346,11 +387,11 @@ function graphene_validate_dropdown( $input, $option_name, $possible_values, $er
 }
 
 function graphene_validate_url( $input, $option_name, $error_message ) {
-	
+	global $graphene_defaults;
 	if (!empty($input[$option_name])){
 		$input[$option_name] = esc_url_raw($input[$option_name]);
 		if ($input[$option_name] == '') {
-			unset($input[$option_name]);
+			$input[$option_name] = $graphene_defaults[$option_name];
 			add_settings_error('graphene_options', 2, $error_message);
 		}	
 	}	
