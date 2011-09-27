@@ -865,8 +865,7 @@ if (!function_exists( 'graphene_comment' ) ) :
                 
                 <?php do_action( 'graphene_after_comment' ); ?>
 	<?php
-	
-	do_action( 'graphene_after_comment' );
+
 	}
 
 endif;
@@ -1028,8 +1027,9 @@ function graphene_widgets_init() {
 		endif;
                 
 		/* Action hooks widget areas */
-		if (count($graphene_settings['widget_hooks']) > 0) {
-			$available_hooks = graphene_get_action_hooks(true); 
+		if ( count( $graphene_settings['widget_hooks'] ) > 0 ) {
+			$available_hooks = graphene_get_action_hooks( true );
+			
 			foreach ($graphene_settings['widget_hooks'] as $hook) {
 				if (in_array($hook, $available_hooks)) {
 					register_sidebar(array(
@@ -1050,6 +1050,7 @@ function graphene_widgets_init() {
 	}
 	
 	do_action( 'graphene_widgets_init' );
+	do_action( 'graphene_widgets_init' );
 }
 /** Register sidebars by running graphene_widgets_init() on the widgets_init hook. */
 add_action( 'widgets_init', 'graphene_widgets_init' );
@@ -1059,39 +1060,52 @@ add_action( 'widgets_init', 'graphene_widgets_init' );
  * @param boolean $hooksonly
  * @return array 
  */
-function graphene_get_action_hooks($hooksonly = false) {    
+function graphene_get_action_hooks( $hooksonly = false ) {    
 
-	// Get filesystem permission first
-	global $creds;
-	if ( ! WP_Filesystem( $creds ) ) {
-		// request_filesystem_credentials( $url, 'ftp', true, false, null );
-		
-		if ( strstr( $_SERVER["REQUEST_URI"], 'page=graphene_options&tab=advanced' ) ) {
-			_e( "Sorry, this feature is not available since the WordPress does not have permission to read in the contents of the theme's files", 'graphene' );
-		}
-		
-		return;
-	}
+	/* Delete transients. For dev purposes only, to force action hooks scan everytime. */
+	// delete_transient( 'graphene-action-hooks-list' );
+	// delete_transient( 'graphene-action-hooks' );
 	
-	global $wp_filesystem;
+	// Get the cached action hooks list, if available
+	if ( $hooksonly )
+		$hooks = get_transient( 'graphene-action-hooks-list' );
+	else
+		$hooks = get_transient( 'graphene-action-hooks' );
+		
+	if ( $hooks ) 
+		return $hooks;
+	else
+		$hooks = array();
 	
-    $hooks = array();
     // as all the hooks are defined in php files get a list of the themes php files
     $files = @glob(get_template_directory() . "/*.php");
+
     if ($files !== false) {
         foreach ($files as $file) {
+
             // read the file and scan it's contents for do_action();
-            $content = $wp_filesystem->get_contents( $file );
+            $content = file( $file );
+			$content = implode( '', $content );
+			
             if ($content !== false) {
-                if (preg_match_all("/do_action\('(graphene_[^']*)'\)/", $content, $matches) > 0) {                    
-                    if ($hooksonly){ $hooks = array_merge( $hooks, $matches[1]); }
-                    else { $hooks[] = array('file' => basename($file), 'hooks' => $matches[1]); }                    
+                if (preg_match_all("/do_action\([ ]*'(graphene_[^']*)'[ ]*\)/", $content, $matches) > 0) {
+					$matches = array_unique( $matches[1] );
+                    if ( $hooksonly ){ $hooks = array_merge( $hooks, $matches ); }
+                    else { $hooks[] = array( 'file' => basename( $file ), 'hooks' => $matches ); }                    
                 }                                
             }
         }
-    }    
+    }
+	
+	// Cache the found action hooks as WordPress transients
+	if ( $hooksonly )
+		set_transient( 'graphene-action-hooks-list', $hooks, 60*60*24 );
+	else
+		set_transient( 'graphene-action-hooks', $hooks, 60*60*24 );
+		
     return $hooks;
 } // Closes the graphene_get_action_hooks() function definition
+
 
 /**
  * Display a dynamic widget area, this is hooked to the user selected do_action() hooks available in Graphene.

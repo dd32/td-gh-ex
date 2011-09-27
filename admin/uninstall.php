@@ -14,6 +14,8 @@ if ( ! current_user_can( 'edit_theme_options' ) ) {
 if ( $authorised ) {
 
 	delete_option( 'graphene_settings' );
+	delete_transient( 'graphene-action-hooks-list' );
+	delete_transient( 'graphene-action-hooks' );
 	switch_theme( 'twentyten', 'twentyten' );
 	wp_cache_flush(); ?>
 	

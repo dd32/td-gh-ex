@@ -4,6 +4,9 @@ http://www.khairul-syahir.com
 
 CHANGELOG
 
+Version 1.5.1
+	* Added caching for action hooks scan using Transients API
+
 Version 1.5
 	* Added option to disable date display on a per-post basis
 	* Added option to display followers count in the Graphene Twitter widget
