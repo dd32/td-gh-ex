@@ -1,13 +1,12 @@
 <?php
 
-function mantra_get_default_options() {
-
 $mantra_defaults = array(
 
 "mop_side" => "Right",
 "mop_sidewidth" => 800,
 "mop_sidebar" => 250,
-"mop_colpad" => "10",
+"mop_colpad" => "10px",
+"mop_hheight" => "120px",
 
 "mop_fontsize" => "15px",
 "mop_headfontsize" => "Default",
@@ -38,6 +37,7 @@ $mantra_defaults = array(
 "mop_footerhover" => "#888888",
 
 "mop_caption" => "Light",
+"mop_image" => "Seven",
 "mop_pin" => "Pin2",
 "mop_sidebullet" => "arrow_white",
 "mop_contentlist" => "Show",
@@ -67,34 +67,23 @@ $mantra_defaults = array(
 "mop_rss" => "");
 
 
-	return apply_filters( 'ma_options', $mantra_defaults );
-}
-
 function mantra_get_theme_options() {
-	return get_option( 'ma_options', mantra_get_default_options() );
+	global $mantra_defaults;
+	$optionsMantra = get_option( 'ma_options', $mantra_defaults );
+	$optionsMantra = array_merge($mantra_defaults, $optionsMantra);
+return $optionsMantra;
 }
 
-function mantra_set_theme_defaults() {
-	return update_option( 'ma_options', mantra_get_default_options());
-}
-
-
-update_option('ma_options', mantra_get_theme_options());
-
-
-if( is_admin() )
-require_once(dirname(__FILE__) . "/mantra-admin-functions.php");
-
-$options = get_option('ma_options');
-
-
+$options= mantra_get_theme_options();
 foreach ($options as $key => $value) {
      ${"$key"} = $value ;
 
 }
 
-
  $totalSize = $mop_sidebar + $mop_sidewidth+50;
+
+if( is_admin() )
+require_once(dirname(__FILE__) . "/mantra-admin-functions.php");
 
 
 
@@ -187,12 +176,14 @@ function mantra_setup() {
 
 	// The height and width of your custom header. You can hook into the theme's own filters to change these values.
 	// Add a filter to mantra_header_image_width and mantra_header_image_height to change these values.
+	global $mop_hheight;
+	$mop_hheight=(int)$mop_hheight;
 	global $totalSize;
 	define( 'HEADER_IMAGE_WIDTH', apply_filters( 'mantra_header_image_width', $totalSize ) );
-	define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'mantra_header_image_height', 90 ) );
+	define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'mantra_header_image_height', $mop_hheight) );
 
 	// We'll be using post thumbnails for custom header images on posts and pages.
-	// We want them to be 1100 pixels wide by 200 pixels tall.
+	// We want them to be the same size as the header.
 	// Larger images will be auto-cropped to fit, smaller ones will be ignored. See header.php.
 	set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );
 

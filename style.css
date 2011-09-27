@@ -4,10 +4,10 @@ Theme URI: http://www.riotreactions.com/mantra
 Description: Mantra is a general purpose WordPress theme, featuring a whole pack of over 50 customizable options and easy to use tweaks, capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (sidebar position), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 20 font-families to choose from),text and header sizes, post metas, post excerpts, header image and background image, menus, social media links and icons, pins, bullets and more. With 7 widget areas, subtle animations, modern graphics and an easy and responsive admin section, you can start creating your dream site right now.
 Author: Cryout Creations
 Author URI: http://www.cryoutcreations.com
-Version: 1.5.7
+Version: 1.6.1
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: black, red, blue, white, light, two-columns, right-sidebar, left-sidebar, theme-options, dark, flexible-width, custom-header, custom-menu, threaded-comments, sticky-post, translation-ready, microformats, rtl-language-support
+Tags: black, red, blue, white, light, two-columns, right-sidebar, left-sidebar, theme-options, dark, flexible-width, custom-header, custom-menu, threaded-comments, sticky-post, translation-ready, microformats, custom-colors, fixed-width, one-column, silver, rtl-language-support
 */
 
 
@@ -980,16 +980,10 @@ body.page .edit-link {
 	margin: 0;
 	height: auto;
 	max-width: 790px;
-	border:6px solid #EEE;
-	padding:3px;
-	background-color:#FFF;
-	-moz-border-radius:5px;
-	-webkit-border-radius:5px;
-	border-radius:5px;
 }
 
 #content img:hover {
-	background:#EEE;
+	
 }
 
 #content p {
@@ -1970,8 +1964,9 @@ height:45px;
 
 #toTop {
 width:100px;
-border:1px solid #999;
-background-image:url(js/img/top_back.png);
+border:1px solid #444;
+/*background-image:url(images/top_back.png);*/
+background:#666;
 text-align:center;
 padding:5px;
 position:fixed;
@@ -1979,13 +1974,74 @@ bottom:10px;
 right:10px;
 cursor:pointer;
 display:none;
-color:#AAA;
+color:#eee;
 font-family:verdana;
 font-size:11px;
+-moz-text-shadow:-1px -1px 0px #000;
+-webkit-text-shadow:-1px -1px 0px #000;
+text-shadow:-1px -1px 0px #000;
 }
 
 #toTop:hover {
-color:#BBB;
+color:#fff;
+}
+
+/* Custom image border */
+
+.imageOne {
+border:1px solid #DDD !important;
+padding:3px;
+ height: auto;
+}
+
+.imageTwo{
+	background-color: #FFFFFF;
+    border: 1px solid #EEE;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    padding: 3px;
+	-moz-box-shadow:0px 0px 4px #CCC;
+	-webkit-box-shadow:0px 0px 4px #CCC;
+	box-shadow:0px 0px 4px #CCC;
+}
+
+.imageThree{
+    background-color: #FFFFFF;
+    border: 6px solid #EEEEEE;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    padding: 3px;
+}
+
+
+
+.imageFour{
+border:1px solid #666 !important;
+	-moz-box-shadow:0px 0px 4px #666;
+	-webkit-box-shadow:0px 0px 4px #666;
+	box-shadow:0px 3px 4px #999;
+}
+
+.imageFive{
+border:3px solid #DDD !important;
+}
+
+.imageSix{
+border:8px solid #BBB !important;
+	-moz-box-shadow:0px 0px 5px #333;
+	-webkit-box-shadow:0px 0px 5px #333;
+	box-shadow: 0px 0px 5px #333;
+}
+
+.imageSeven{
+    background-color: #FFFFFF;
+    border: 1px solid #CCC;
+    padding: 7px;
+	-moz-box-shadow:2px 2px 2px #CCC;
+	-webkit-box-shadow:2px 2px 2px #CCC;
+	box-shadow:inset 0px 0px 7px #CCC;
 }
 
 /* FIN! */

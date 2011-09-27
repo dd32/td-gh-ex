@@ -11,6 +11,7 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
+<meta http-equiv="X-UA-Compatible" content="IE=9" /> 
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <title><?php
 	/*
@@ -39,8 +40,7 @@
 <?php
 /* This  retrieves  admin options. */
 
-$options = get_option('ma_options');
-
+$options= mantra_get_theme_options();
 foreach ($options as $key => $value) {
 	
      ${"$key"} = $value ;
@@ -59,7 +59,11 @@ $totalwidth= $mop_sidewidth+$mop_sidebar+50;
 							wp_enqueue_script('top');}	
   						}
 
-?><?php
+?>
+
+
+
+<?php
 
 	/* We add some JavaScript to pages with the comment form
 	 * to support sites with threaded comments (when in use).
@@ -79,6 +83,12 @@ $totalwidth= $mop_sidewidth+$mop_sidebar+50;
 </head>
 
 <body <?php body_class(); ?>>
+<script>
+    jQuery(document).ready(function() {
+    jQuery("#content img").addClass("<?php echo 'image'.$mop_image;?>");
+    });
+
+</script>
 	 <style type="text/css">
 .single-attachment #content,#wrapper, #access, #colophon, #branding, #main,  .attachment img { width:<?php echo ($totalwidth) ?>px !important;} 
 #access .menu-header, div.menu {width:<?php echo ($totalwidth-12) ?>px !important;}<?php 

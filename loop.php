@@ -19,10 +19,11 @@
  */
 
 
-$options = get_option('ma_options');
-
-foreach ($options as $key => $value) {	
+$options= mantra_get_theme_options();
+foreach ($options as $key => $value) {
+	
      ${"$key"} = $value ;
+
 }
 
 
@@ -151,7 +152,7 @@ foreach ($options as $key => $value) {
 	<?php else : ?>
 			<div class="entry-content">
 
-		<?php if ( function_exists("has_post_thumbnail") && has_post_thumbnail() ) { the_post_thumbnail(array(250,190), array("class" => "alignleft post_thumbnail")); } ?>
+		<?php if ( function_exists("has_post_thumbnail") && has_post_thumbnail() && $mop_fpost=='Enable' ) { the_post_thumbnail(array(250,190), array("class" => "alignleft post_thumbnail")); } ?>
 		<?php /* <img src="<?php echo get_image() ?>" alt="<?php the_title_attribute();  ?>" title="" /> */ ?>
 				<?php if ($mop_excerpthome != "Full Post") {the_excerpt(); } else { the_content( __( 'Continue reading','mantra').' <span class="meta-nav">&rarr;</span>');}  ?>
 				<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'mantra' ), 'after' => '</div>' ) ); ?>
