@@ -9,7 +9,7 @@
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" /> 
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-<!--[if IE 6]><style type="text/css">#bottombar li {width: 200px;}</style><![endif]-->
+<!--[if IE 6]><style type="text/css">#bar li{width: 200px;}</style><![endif]-->
 <!--[if lte IE 7]><style type="text/css"> #title {margin: 14px 14px 0px 10px;} #slogan {margin: 18px 18px 0px 0px;}</style><![endif]-->
 
 <style type="text/css" media="screen"></style>
@@ -17,7 +17,6 @@
 <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 
 <?php wp_head(); ?>
-
 </head>
 
 <body <?php body_class(); ?> >

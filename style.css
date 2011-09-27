@@ -1,33 +1,18 @@
 /*  
 Theme Name: Adventure
-
 Theme URI: http://schwarttzy.com/?page_id=551
-
-Description: Inspired by a certain GPS Manufacture, I designed this theme to feel like you're looking through a window out into the wilderness. Version 1.4.6 Added some code for browsers that support it to perfectly stretch the background image. I still recommend that you have a 1920by1080 image for browsers that don't support it. Version 1.4.3 Fixed IE6 stretch images errors. Version 1.4.3 Fixed 404 error page issues, I have done the best I can with the menu bar on IE 6 browser. Version 1.4.2 fixes an issue when you have to many links in the bottom bar where the link would disappear entirely if you had to many. Now the slogan goes first, then the title, and finally the links one by one.
-
-Version: 1.4.6
-
+Description: Inspired by a certain GPS Manufacture, I designed this theme to feel like you're looking through a window out into the wilderness. Version 1.5.0 Is a huge leap forward using the Adventure+ code, a premium version of this theme with more features. Be sure to check out the "theme options" where you can change the link colors and choose from five different menu bars. Version 1.4.6 Added some code for browsers that support it to perfectly stretch the background image. I still recommend that you have a 1920by1080 image for browsers that don't support it. Version 1.4.3 Fixed IE6 stretch images errors. Version 1.4.3 Fixed 404 error page issues, I have done the best I can with the menu bar on IE 6 browser. Version 1.4.2 fixes an issue when you have to many links in the bottom bar where the link would disappear entirely if you had to many. Now the slogan goes first, then the title, and finally the links one by one.
+Version: 1.5.0
 Author: Eric Schwarz
-
-Author URI: http://schwarttzy.com/?page_id=225
-
-Tags:  white, purple, two-columns, fixed-width
-
+Author URI: http://schwarttzy.com/web-design/adventure/
+Tags:  white, purple, red, green, brown, black, two-columns, fixed-width
 License: GPL
-
 License URI: http://www.opensource.org/licenses/gpl-2.0.php
-
 */
-
 /************************************************
 				Defaults          
 ************************************************/
 
-h1, h2, h3, h4, h5, h6 {
-	font-family: sans-serif;
-	padding: 0;
-	clear:both;
-}
 body {
 	font-size:13px;
 	background: fixed center center url(images/02.jpg) #000;
@@ -39,6 +24,11 @@ body {
 	-moz-background-size: cover;
 	-webkit-background-size: cover;
 	background-size: cover;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: sans-serif;
+	padding: 0;
+	clear:both;
 }
 
 /************************************************
@@ -55,9 +45,8 @@ body {
 	width: 1000px;
 	margin: 50px auto;
 	position: relative;
-	
 }
-
+.top #center {margin: 100px auto;	}
 #endspacer {
 	height: 150px;
 	width: 900px;
@@ -74,7 +63,7 @@ a {
 	font-weight: bold;
 }
 a:hover{
-	color: #392026;
+	color: #FFF;
 	text-decoration: none;
 	font-weight: bold;
 }
@@ -88,7 +77,24 @@ h1 a:hover{
 /************************************************
 				Header          
 ************************************************/
-
+.header{
+	width:994px;
+	height:175px;
+	overflow:hidden;
+	float:left;
+	margin-bottom:15px;
+	border: 3px solid #4a4646;
+	-moz-border-radius: 6px;
+	-khtml-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+}
+.eighty .header{border: 3px solid #454141;}
+.eightyfive .header{border: 3px solid #343131;}
+.header img {
+	height: auto;
+	max-width: 1000px;
+}
 #title {	
 	color: #FFF;
 	float: left;
@@ -115,7 +121,9 @@ h1 a:hover{
 /************************************************
 				Navigation          
 ************************************************/
-#bottombar {
+
+
+#bar {
 	background: url(images/bars.png);
 	width: 100%;
 	height: 50px;
@@ -123,9 +131,9 @@ h1 a:hover{
 	text-align: left;
 	bottom: 0;
 	left: 0;
-	overflow:hidden;
 }
-#bottombar ul {
+.top #bar {top: 0;}
+#bar ul {
 	float: right;
 	margin: 0;
 	padding: 0;
@@ -133,7 +141,7 @@ h1 a:hover{
 	line-height: 50px;
 	font-weight: bold;
 }
-#bottombar li {
+#bar li {
 	font-size: 14px;
 	font-weight: bold;
 	font-family: sans-serif;
@@ -141,22 +149,49 @@ h1 a:hover{
 	float: left;
 	border-left: 1px solid #575253;
 }
-#bottombar li a { 
+#bar li a:hover {background:url(images/bars.png) bottom;}
+#bar li .sub-menu a:hover {background:none;}
+#bar li a { 
 	height: 50px;
 	display: block;
 	padding: 0px 12px 0px 12px;
 	color: #FFF;
 	text-decoration: none;
-	background-image: url(images/bars.png);
 }
-#bottombar a:hover {
-	background-position: bottom;
-	color: #FFF;
-}
-#bottombar ul li li {
+#bar ul.children, #bar ul.sub-menu {
+	float: right;
+	list-style-type: none;
+	position: absolute;
 	display:none;
-	padding:0;
-	margin:0;
+	left: 0;
+	width:100%;
+	background: url(images/blacktrans3.png);
+}
+.bottom #bar ul.children, .bottom #bar ul.children{
+	bottom:50px;
+	box-shadow:0 -2px 2px #000;
+	-moz-box-shadow: 0 -2px 2px #000;
+	-webkit-box-shadow: 0 -2px 2px #000;
+}
+.top #bar ul.children, .top #bar ul.sub-menu {
+	top:50px;
+	box-shadow:0 2px 2px #000;
+	-moz-box-shadow: 0 2px 2px #000;
+	-webkit-box-shadow: 0 2px 2px #000;
+}
+#bar li ul li { float:right}
+#bar li ul li:hover {
+	background: #FFF;
+	display:block;
+}
+#bar li:hover .children, #bar li .children:hover, #bar li:hover .sub-menu, #bar li .sub-menu:hover {display:block;}
+#bar li ul li:hover a {display:block;color:#000;}
+#bar li ul li:hover a:active {
+	color:#FFF;
+	text-shadow:0 0 2px #999;
+	-moz-text-shadow:0 0 2px #999;
+	-webkit-text-shadow:0 0 2px #999;
+	display:block;
 }
 #title a{
 	color: #FFF;
@@ -165,12 +200,13 @@ h1 a:hover{
 	font-variant: small-caps;
 }
 #title a:hover{ color: #0b6492;}
+
 /************************************************
 				Content          
 ************************************************/
 
 .content {
-	background: url(images/75.png);
+	background:url(images/75.png);
 	font-family: sans-serif;
 	font-size: 13px;
 	line-height: 20px;
@@ -186,17 +222,20 @@ h1 a:hover{
 	border-radius: 6px;
 	float: left;
 }
+.left-sidebar .content{float:right;}
+.eighty .content{background:url(images/80.png); border: 3px solid #454141;}
+.eightyfive .content{background:url(images/85.png); border: 3px solid #343131;}
 object {z-index: -1}
 .label {
-	padding-top: 5px;
-	text-transform: uppercase;
-	font-weight: 100;
-	font-size: 18px;
+	padding-top:5px;
+	text-transform:uppercase;
+	font-weight:100;
+	font-size:18px;
 	top: 10px;
 }
 .label a {
 	color:#000;
-	text-transform: uppercase;
+	text-transform:uppercase;
 	font-weight: 100;
 	font-size: 18px;
 }
@@ -220,7 +259,7 @@ object {z-index: -1}
 				Sidebar          
 ************************************************/
 
-#sidebar{
+.sidebar{
 	text-shadow:0 0 4px #444;
 	color: #FFF;
 	font-size: 14px;
@@ -232,33 +271,81 @@ object {z-index: -1}
 	width: 200px;
 	padding: 10px;
 	float: right;
-	text-align: left;
+	text-align: justify;
 }
-#sidebar h1, #sidebar h2, #sidebar h3, #sidebar h4, #sidebar h5, #sidebar h6{
+.left-sidebar .sidebar{float:left;}
+.sidebar h1, .sidebar h2, .sidebar h3, .sidebar h4, .sidebar h5, .sidebar h6{
 	text-transform: uppercase;
 	border-bottom: 1px solid #FFF;
 	padding-bottom: 5px;
-	float: left;
 }
-#sidebar ul, #sidebar li{
+.sidebar ul, .sidebar li{
 	list-style-type: none;
 	color: #cccbc4;
 	padding: 0;
 	margin: 0;
 }
-#sidebar ul ul ul{ display:none;float: left;
+.sidebar ul ul ul{ display:none;float: left;
 } 
-#sidebar h2{
+.sidebar h2{
 	color: #FFF;
 	margin: 25px 0 10px 0;
 	width:200px;
 }	
-#sidebar a {
+.sidebar a {
 	color: #cccbc4;
 }
-#sidebar a:hover {
+.sidebar a:hover {
 	color: #FFF;
 }
+
+/************************************************
+				Widgets          
+************************************************/
+
+.widgetbox {
+	text-shadow:0 0 4px #444;
+	color: #FFF;
+	font-size: 14px;
+	background: url(images/blacktrans.png);
+	-moz-border-radius: 6px;
+	-khtml-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	width: 990px;
+	padding: 10px 0 10px 10px;
+	margin: 15px 0 0 0;
+	float: right;
+}
+.widget {
+	width:237px;
+	margin:0px 10px 0px 0px;
+	float:left;
+	height:100%;
+	min-height:300px;
+	
+}
+.widget h1, .widget h2, .widget h3, .widget h4, .widget h5, .widget h6{
+	text-transform: uppercase;
+	border-bottom: 1px solid #FFF;
+	padding-bottom: 5px;
+}
+.widget ul, .widget li{
+	list-style-type: none;
+	color: #cccbc4;
+	padding: 0;
+	margin: 0;
+	text-align:left;
+}
+.widget ul ul ul{ display:none;float: left;} 
+.widget h2{
+	color: #FFF;
+	margin: 15px 0 0 0;
+	width:100%;
+}	
+.widget a {color: #cccbc4;}
+.widget a:hover {color: #FFF;}
+.widget form { padding-top:10px;}
 
 /************************************************
 				Footer          
@@ -280,7 +367,7 @@ object {z-index: -1}
 	-khtml-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	border-radius: 6px;
-	width: 975px;
+	width: 980px;
 	padding: 10px;
 	margin: 15px 0 20px 0;
 	float: right;
@@ -505,7 +592,6 @@ img.alignnone {
 	margin: 10px 0 10px;	
 }
 .wp-caption {
-	background: url(images/blacktrans.png);
 	margin: 5px;
 	padding:5px;
 	text-align: center;
@@ -514,6 +600,10 @@ img.alignnone {
 	-webkit-border-radius: 6px;
 	border-radius: 6px;
 	background: url(images/blacktrans.png);
+}
+html > body .wp-caption img {
+	height: auto;
+	max-width: 700px;
 }
 .wp-caption-text{
 	color:#FFF;
@@ -563,21 +653,38 @@ hr {
 }
 .sticky{}
 .bypostauthor{}
-table {margin: 0 0 10px 0;}
-#sidebar table{ float:left;}
+table {margin: 0 0 10px 0;background: url(images/blacktrans.png);}
+.sidebar table {margin-left:4px;}
+.sidebar #wp-calendar caption {
+	font-size:16px;
+	font-family: sans-serif;
+	font-weight:bold;
+	margin: 15px 0 0 0;
+	text-transform: uppercase;
+	padding-bottom: 5px;}
 table th {color: #0b6492;}
 table td, table th {
 	padding: 3px 6px;
 	font-size: 12px;
 }
+.widgetbox #wp-calendar caption {
+	font-size:22px;
+	font-family: sans-serif;
+	font-weight:bold;
+	margin: 15px 0 0 0;
+	text-transform: uppercase;
+	padding-bottom: 5px;}
+.widgetbox table {margin-left:10px;}
+.widgetbox table td, table th {
+	padding: 3px 6px;
+	font-size: 16px;
+}
 table th {
 	color:#FFF;
-	background: url(images/blacktrans.png);
 	font-weight:bold;
 	text-transform: uppercase;
 	border-bottom: 1px transparent;
 }
-table td {background: url(images/blacktrans.png);}
 table td  a {color:#FFF;}
 
 
