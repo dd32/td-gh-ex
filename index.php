@@ -9,7 +9,7 @@
     
 <?php if (have_posts()) : ?>
 <?php while (have_posts()) : the_post(); ?>
-<?php if ( function_exists('is_sidebar_active') && is_sidebar_active('left-side') ) : if ( is_sidebar_active('right-side') && is_sidebar_active('left-side') ) : ?><div class="content"><?php else : ?><div class="content right"><?php endif; ?><?php else : ?><div class="content"><?php endif; ?>
+<div class="content">
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 <div class="imagez">
 <?php if ( has_post_thumbnail()) : ?><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_post_thumbnail('page-thumbnail'); ?></a><?php endif; ?>
