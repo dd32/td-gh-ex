@@ -488,11 +488,6 @@ function new_excerpt_more($more) { return '....'; }
 add_filter('excerpt_more', 'new_excerpt_more');
 function new_excerpt_length($length) {return 250;}
 add_filter('excerpt_length', 'new_excerpt_length');
-add_custom_image_header( $header_callback, $admin_header_callback, $admin_image_div_callback );
-define('HEADER_TEXTCOLOR', '');
-define('HEADER_IMAGE_WIDTH', 994);
-define('HEADER_IMAGE_HEIGHT', 175);
-define('NO_HEADER_TEXT', true );
 add_custom_background();
 add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
 add_image_size( 'page-thumbnail', 740, 9999, true );
