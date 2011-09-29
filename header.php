@@ -6,7 +6,6 @@
 
 <title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
 
-<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" /> 
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <!--[if IE 6]><style type="text/css">#bar li{width: 200px;}</style><![endif]-->

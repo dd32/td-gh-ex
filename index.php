@@ -1,12 +1,15 @@
 <?php get_header(); ?>
+<div id="center">
 
-<?php if ( has_nav_menu('topbar') ) : ?><div id="center2"><?php else : ?><div id="center"><?php endif; ?>
+<?php if ( get_header_image() == '') : ?><?php else : ?>
+<div class="header"><a href="<?php echo home_url(); ?>/"><img class="left title" title="<?php bloginfo('name'); ?>" src="<?php header_image(); ?>" alt="<?php bloginfo('description');?>" /></a></div>
+<?php endif; ?>
 
-<?php if (is_sidebar_active('sidebar') ) : ?>
-<div class="sidebar"><?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar') ) : ?><?php endif; ?></div>
+<?php if (is_active_sidebar('sidebar') ) : ?>
+<div class="sidebar"><?php if ( !dynamic_sidebar('sidebar') ) : endif; ?></div>
 <?php else : get_sidebar(); ?>
 <?php endif; ?>
-    
+
 <?php if (have_posts()) : ?>
 <?php while (have_posts()) : the_post(); ?>
 <div class="content">
@@ -26,17 +29,17 @@ Written on <?php the_time('F jS, Y') ?> <?php if ( is_page()) : ?><?php else : ?
 </div></div></div></div>
 <?php if ('open' == $post->comment_status) : ?>
 <?php comments_template(); ?>
-<?php endif; ?>  
+<?php endif; ?>
 <?php endwhile; ?>
 
 <?php $max_page = $wp_query->max_num_pages; ?>
 <?php if ( $max_page >=  2 ) : ?>
 <div class="content" >
-<div class="label"><div class="left"><?php next_posts_link('&lt;&lt; Older Entries', 0); ?></div></div>    
+<div class="label"><div class="left"><?php next_posts_link('&lt;&lt; Older Entries', 0); ?></div></div>
 <div class="label"><div class="right"><?php previous_posts_link('Newer Entries &gt;&gt;', '0') ?></div></div>
 </div>
 <?php endif; ?>
-    
+
 <?php else : ?>
 <div class="content">
 <div class="label">Not Found</div>
@@ -62,10 +65,10 @@ Written on <?php the_time('F jS, Y') ?> <?php if ( is_page()) : ?><?php else : ?
 
 <div id="bar">
 <?php if ( has_nav_menu('bar') ) : wp_nav_menu('bar' ); else : ?>
-<ul><?php wp_list_pages('title_li=&depth=2'); ?></ul>
+<ul><?php wp_list_pages('title_li=&depth=1'); ?></ul>
 <?php endif; ?>
-<div id="title"><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a></div>   
-<div id="slogan"><h2><?php bloginfo('description');?></h2></div>      
+<div id="title"><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a></div>
+<div id="slogan"><h2><?php bloginfo('description');?></h2></div>  
 </div>
 
 <?php get_footer(); ?>
