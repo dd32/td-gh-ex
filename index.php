@@ -18,7 +18,7 @@ get_header(); ?>
 	<?php
 	
 	/* Check if the user selects specific category for the front page */
-	if ( is_home() && $graphene_settings['frontpage_posts_cats'] ) {
+	if ( is_home() && $graphene_settings['frontpage_posts_cats'] && ! in_array( 'disabled', $graphene_settings['frontpage_posts_cats'] ) ) {
 		global $wp_query;
 		$cats = $graphene_settings['frontpage_posts_cats'];
 		

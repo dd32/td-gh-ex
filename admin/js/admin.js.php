@@ -91,7 +91,7 @@
 		
 		<?php if ( strstr( $_SERVER["REQUEST_URI"], 'page=graphene_options&tab=display' ) ) : ?>
 		/* Farbtastic colour picker */ 
-		<?php for ($i = 1; $i < 23; $i++) : ?>
+		<?php for ($i = 1; $i < 27; $i++) : ?>
 		$('#colorpicker-<?php echo $i; ?>').hide();
 		color_<?php echo $i; ?> = $.farbtastic('#colorpicker-<?php echo $i; ?>', ".color-<?php echo $i; ?>");
 		$(".color-<?php echo $i; ?>").focusin(function(){$('#colorpicker-<?php echo $i; ?>').show()});

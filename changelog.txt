@@ -4,6 +4,14 @@ http://www.khairul-syahir.com
 
 CHANGELOG
 
+Version 1.5.2
+	* Fixed colour picker not available for the text style colour options
+	* Fixed an issue with the footer widget custom column count CSS that causes colour settings to not be applied
+	* Fixed an issue with the Twitter widget that causes it to not display any tweets at all if the number of available tweets is less than the number of tweets to be displayed
+	* Fixed posts not being displayed on the home page due to invalid settings carry-over from previous version
+	* Fixed submenu not being displayed when the parent menu item is hovered over in RTL sites
+	* Posts and pages in the slider are now ordered according to the order of the IDs entered when using the "Show specific posts/pages" option
+
 Version 1.5.1
 	* Added caching for action hooks scan using Transients API
 

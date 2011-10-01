@@ -219,10 +219,9 @@ a:hover {
 	right: -999em;
 	left: auto;
 }
-/*
 #nav li:hover ul {
-	left: auto;
-}*/
+	right: auto;
+}
 #header-menu li ul ul {
 	margin: -34px 200px 0 0;
 }

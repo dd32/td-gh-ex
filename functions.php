@@ -339,7 +339,7 @@ $style = '';
 	/* Set the width of the bottom widget items if number of columns is specified */
 	if ( $widgetcolumn ) {
 		$widget_width = floor( (apply_filters( 'graphene_container_width', 960) - (15+25+2)*$widgetcolumn)/$widgetcolumn);
-		$style .= '#sidebar_bottom .sidebar-wrap{width:'.$widget_width.'px';
+		$style .= '#sidebar_bottom .sidebar-wrap{width:'.$widget_width.'px}';
 	}
         
 	/* Set the width of the nav menu dropdown menu item width if specified */
@@ -1600,10 +1600,10 @@ function graphene_slider(){
 		if ($slidertype && $slidertype == 'posts_pages') {                    
 			$post_ids = $graphene_settings['slider_specific_posts'];
                         $post_ids = preg_split("/[\s]*[,][\s]*/", $post_ids, -1, PREG_SPLIT_NO_EMPTY); // post_ids are comma seperated, the query needs a array                        
-                        $args = array_merge($args, array('post__in' => $post_ids, 'posts_per_page' => -1, 'orderby' => '', 'order' => ''));
+                        $args = array_merge($args, array('post__in' => $post_ids, 'posts_per_page' => -1, 'orderby' => 'post__in' ) );
 		}
-                if ($slidertype && $slidertype == 'categories' && is_array($graphene_settings['slider_specific_categories'])) {                        
-                        $args = array_merge($args, array( 'category__in' => $graphene_settings['slider_specific_categories']));
+		if ($slidertype && $slidertype == 'categories' && is_array($graphene_settings['slider_specific_categories'])) {                        
+			$args = array_merge($args, array( 'category__in' => $graphene_settings['slider_specific_categories']));
 		}
 		
 		/* Get the posts */
@@ -2644,4 +2644,20 @@ function graphene_should_show_date(){
 }
 
 endif;
+
+
+/**
+ * Allows post queries to sort the results by the order specified in the post__in parameter. 
+ * Just set the orderby parameter to post__in!
+ *
+ * Based on the Sort Query by Post In plugin by Jake Goldman (http://www.get10up.com)
+*/
+add_filter( 'posts_orderby', 'sort_query_by_post_in', 10, 2 );
+	
+function sort_query_by_post_in( $sortby, $thequery ) {
+	if ( ! empty( $thequery->query['post__in'] ) && isset( $thequery->query['orderby'] ) && $thequery->query['orderby'] == 'post__in' )
+		$sortby = "find_in_set(ID, '" . implode( ',', $thequery->query['post__in'] ) . "')";
+	
+	return $sortby;
+}
 ?>
