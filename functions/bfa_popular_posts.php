@@ -50,6 +50,8 @@ and the modification Last X days by DJ Chuang www.djchuang.com
 		$bfa_pp_request .= " ORDER BY comment_count DESC LIMIT $bfa_pp_no_posts";
 		$bfa_pp_posts = $wpdb->get_results($bfa_pp_request);
 
+		$widget_mdv_most_commented = '';
+		
 		if ($bfa_pp_posts) {
 			foreach ($bfa_pp_posts as $bfa_pp_post) {
 				$bfa_pp_post_title = stripslashes($bfa_pp_post->post_title);

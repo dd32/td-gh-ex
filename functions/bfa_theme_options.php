@@ -125,10 +125,10 @@ $options1 = array(
             "id" => "start_here",
             "type" => "info",
 			"lastoption" => "yes", 
-            "info" => "<br />New in 3.6.6: <ul><li>Import settings by copying &amp; pasting the content of the settings file into the textarea in the theme options -  instead of uploading the settings file directly.</li>
+            "info" => "<br />Since 3.6.6: <ul><li>Import settings by copying &amp; pasting the content of the settings file into the textarea in the theme options -  instead of uploading the settings file directly.</li>
 			<li>PHP code cannot be put into the textareas in the theme options anymore.</li>
 			</ul>
-			These changes had to be made to comply with the new tightened rules for themes listed at wordpress.org (No file operations, no processing of dynamic PHP code).
+			This is due to changed rules for themes listed at wordpress.org (No file operations, no processing of dynamic PHP code).
 			<h3 class='infohighlight-header'>Join for free:</h3>
 			<div class='infohighlight'>
 			<img src=\"" . $templateURI . "/images/comment_icon.png\" style=\"float: left; margin: 0px 10px 5px 0;\">
@@ -875,7 +875,7 @@ $options1 = array(
 			-> BFA Subscribe.</li><li>In the footer area: Text links.<br />Configuration: Menu tab 
 			<a href=\"javascript: myflowers.expandit('footer-style-tab')\">Style & edit FOOTER</a> -> Footer: Content.</li><li>
 			Above or below a post: Buttons and/or Text links<br />Configuration: Menu tab 
-			<a href=\"javascript: myflowers.expandit('postinfos-tab')\">Edit POST/PAGE INFO ITEMS</a> -> any of the 12 text areas.</li></ul>
+			'Edit POST/PAGE INFO ITEMS' -> any of the 12 text areas.</li></ul>
 			After you've configured everything...<ul><li>... the \"Subscribe by Email\" link will go to Feedburner</li><li>... 
 			the \"Subscribe by Email\" form field will be submitted to Feedburner</li><li>... but all Posts and Comments
 			Feed links will still go to the default WordPress RSS links</li></ul><strong>If you want to redirect all the 

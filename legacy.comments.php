@@ -72,7 +72,7 @@ if ($comments) : ?>
 			<?php if ($comment->comment_approved == '0') : _e('Your comment is awaiting moderation.','atahualpa'); endif; ?>
 		
 			<br /><span class="commentdate">
-			<?php printf(__('%1$s at %2$s'), get_comment_date(__('F jS, Y','atahualpa')),  get_comment_time()) ?></span>
+			<?php printf(__('%1$s at %2$s','atahualpa'), get_comment_date(__('F jS, Y','atahualpa')),  get_comment_time()) ?></span>
 			
 			<?php comment_text(); ?>
 			
@@ -103,7 +103,7 @@ if ($comments) : ?>
 					
 					<?php comment_author_link() ?>:<br />
 					
-					<?php printf(__('%1$s at %2$s'), get_comment_date(__('F jS, Y','atahualpa')),  get_comment_time()) ?>
+					<?php printf(__('%1$s at %2$s','atahualpa'), get_comment_date(__('F jS, Y','atahualpa')),  get_comment_time()) ?>
 					
 					<?php edit_comment_link(__('Edit','atahualpa'),'&nbsp;&nbsp;',''); ?>
 					

@@ -25,12 +25,24 @@ function bfa_post_kicker($before = '<div class="post-kicker">', $after = '</div>
     }
 }
 
-
-
 function bfa_post_headline($before = '<div class="post-headline">', $after = '</div>') 
 {
 	global $bfa_ata, $post;
 
+//  Case 1 - 'Use Post / Page Options' is no, then just use the post/page title
+	if ($bfa_ata['page_post_options'] == 'No') {
+		echo $before; 
+		?><h<?php echo $bfa_ata['h_posttitle']; ?>><?php 
+			if ( is_single() OR is_page() ) {
+				the_title(); ?></h<?php echo $bfa_ata['h_posttitle']; ?>><?php
+			} else { ?>
+				<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute('echo=1') ?>">
+				<?php the_title(); ?></a></h<?php echo $bfa_ata['h_posttitle']; ?>><?php
+			}
+		echo $after;
+		return;
+	}
+//  Case 2 - 'Use Post / Page Options' is Yes, then use the BFA title
 	if ( is_single() OR is_page() ) {
 		$bfa_ata_body_title = get_post_meta($post->ID, 'bfa_ata_body_title', true);
 		$bfa_ata_display_body_title = get_post_meta($post->ID, 'bfa_ata_display_body_title', true);
@@ -42,29 +54,31 @@ function bfa_post_headline($before = '<div class="post-headline">', $after = '</
 	// Since 3.6.1: Display a link to the full post if there is no post title and the post is too short
 	// for a read more link.
 	
-	// some plugins hook into 'the_title()' so we only want it called once. But it must aslo be called 
-	// when using the bfa_ata titles so we use a dummy call ($bfa_toss = the_title();) in those cases
+	// some plugins hook into 'the_title()' so we only want it called once. But it must also be called 
+	// when using the bfa_ata titles so we use a dummy call:
+	//		$bfa_toss = the_title('','',false); 
+	// in those cases
 	$bfa_temp_title = get_the_title();
 	if ( $bfa_temp_title == '' ) { ?>
 		<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link">Permalink</a><?php 
 		
-	} else if ( (!is_single() AND !is_page()) OR $bfa_ata_display_body_title == '' ) {
+	} elseif ( (!is_single() AND !is_page()) OR $bfa_ata_display_body_title == '' ) {
 		
 		echo $before; ?>
 		<h<?php echo $bfa_ata['h_posttitle']; ?>><?php 
 			
 		if( !is_single() AND !is_page() ) { ?>
-			<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php $bfa_temp_title ?>"><?php 
+			<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute('echo=1') ?>"><?php 
 		} 
 
 		if ( (is_single() OR is_page()) AND $bfa_ata_body_title != "" ) {
 			echo htmlentities($bfa_ata_body_title,ENT_QUOTES,'UTF-8');
-			$bfa_toss = the_title();
+			$bfa_toss = the_title('','',false);
 		} else {
 			if ( $bfa_ata_body_title_multi != '' ) {
 				echo htmlentities($bfa_ata_body_title_multi,ENT_QUOTES,'UTF-8');  
-			$bfa_toss = the_title(); }
-			else 
+				$bfa_toss = the_title('','',false);
+			} else 
 				echo $bfa_temp_title; 
 		}
 

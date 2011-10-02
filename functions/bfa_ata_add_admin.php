@@ -2,30 +2,27 @@
 function bfa_ata_add_admin() {
 	global $options, $bfa_ata;
 
-#    if ( $_GET['page'] == basename(__FILE__) ) {
+	// Since 3.6.8:
+	if ( get_magic_quotes_gpc() ) {
+		$_POST      = array_map( 'stripslashes_deep', $_POST );
+		$_GET       = array_map( 'stripslashes_deep', $_GET );
+		$_COOKIE    = array_map( 'stripslashes_deep', $_COOKIE );
+		$_REQUEST   = array_map( 'stripslashes_deep', $_REQUEST );
+	}
 
 	if ( isset($_GET['page'])) {
-	   if ( $_GET['page'] == "functions.php" ) {
+	   if ( $_GET['page'] == "atahualpa-options" ) {
 		
 			if ( isset($_REQUEST['action']) ) {
 				if ( 'save' == $_REQUEST['action'] ) {
-		 /*
-					foreach ($options as $value) {
-						if ( $value['category'] == $_REQUEST['category'] ) {
-							if ( $value['escape'] == "yes" )  
-								$bfa_ata[ $value['id'] ] = stripslashes(bfa_escape($_REQUEST[ $value['id'] ] )); 
-							elseif ( $value['stripslashes'] == "no" )    
-								$bfa_ata[ $value['id'] ] = $_REQUEST[ $value['id'] ] ; 
-							else 
-								$bfa_ata[ $value['id'] ] = stripslashes($_REQUEST[ $value['id'] ] ); 
-						}
-					}
-		*/				
+			
 					foreach ($options as $value) {
 						if ( $value['category'] == $_REQUEST['category'] ) {
 							if ( isset($value['escape']) ) {
 								if( isset( $_REQUEST[ $value['id'] ] ) ) 
-									$bfa_ata[ $value['id'] ] = stripslashes(bfa_escape($_REQUEST[ $value['id'] ]  )); 
+									// Since 3.6.8 removed bfa_escape
+									//$bfa_ata[ $value['id'] ] = stripslashes(bfa_escape($_REQUEST[ $value['id'] ]  )); 
+									$bfa_ata[ $value['id'] ] =  stripslashes($_REQUEST[ $value['id'] ]); 
 								else 
 									unset ($bfa_ata[ $value['id'] ]); 
 							} elseif ( isset($value['stripslashes']) ) { 
@@ -44,7 +41,7 @@ function bfa_ata_add_admin() {
 						}
 					} 
 					update_option('bfa_ata4', $bfa_ata);	
-					header("Location: themes.php?page=functions.php&saved=true");
+					header("Location: themes.php?page=atahualpa-options&saved=true");
 					die;
 
 				} else if( 'reset' == $_REQUEST['action'] ) {
@@ -59,7 +56,7 @@ function bfa_ata_add_admin() {
 						update_option('bfa_ata4', $bfa_ata);
 					}
 					
-					header("Location: themes.php?page=functions.php&reset=true");
+					header("Location: themes.php?page=atahualpa-options&reset=true");
 					die;
 				}
 			}
@@ -67,7 +64,8 @@ function bfa_ata_add_admin() {
 		}
 	}
 
-    add_theme_page("Atahualpa Options", "Atahualpa Theme Options", 'edit_theme_options', 'functions.php', 'bfa_ata_admin');	
-    // add_theme_page("Atahualpa Options", "Atahualpa Theme Options", 'switch_themes', 'functions.php', 'bfa_ata_admin');	
+	$atapage = add_theme_page("Atahualpa Options", "Atahualpa Theme Options", 'edit_theme_options', 'atahualpa-options', 'bfa_ata_admin');	
+	// Since 3.6.8:
+	add_action( "admin_print_styles-$atapage", 'bfa_ata_admin_enqueue' );
 }
 ?>

@@ -9,10 +9,11 @@ function bfa_meta_tags() {
 	   no matter what the option "Use Bytes For All SEO options?" is set to. */
 
 	// if "All-In-One_SEO" Plugin (http://semperfiwebdesign.com) is installed
-	if(class_exists('All_in_One_SEO_Pack') OR
-
+	if(class_exists('All_in_One_SEO_Pack'))
+	{ ?> <title><?php wp_title(''); ?></title> <?php }
+	
 	// if "WpSEO" Plugin (http://www.wpseo.de/) is installed
-	class_exists('wpSEO') OR
+	elseif (class_exists('wpSEO') OR
 
 	// if "HeadSpace2" Plugin (http://urbangiraffe.com/plugins/headspace2/) is installed
 	class_exists('HeadSpace2_Admin') OR

@@ -100,8 +100,8 @@ and the modification Last X days by DJ Chuang www.djchuang.com
 	  }
 
 	  // Default options to the parameters
-	  if ( !$bfa_pic_options['bfa_pic_no_posts'] ) $bfa_pic_options['bfa_pic_no_posts'] = 10;
-	  if ( !$bfa_pic_options['bfa_pic_min_amount_comments'] OR $bfa_pic_options['bfa_pic_min_amount_comments'] == 0) $bfa_pic_options['bfa_pic_min_amount_comments'] = 1;
+	  if ( !isset($bfa_pic_options['bfa_pic_no_posts']) ) $bfa_pic_options['bfa_pic_no_posts'] = 10;
+	  if ( !isset($bfa_pic_options['bfa_pic_min_amount_comments']) ) $bfa_pic_options['bfa_pic_min_amount_comments'] = 1;
 
 	  $bfa_pic_no_posts = $bfa_pic_options['bfa_pic_no_posts'];
 	  $bfa_pic_duration = $bfa_pic_options['bfa_pic_duration'];

@@ -76,7 +76,9 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 	  $post_em = $bfa_rc_options['post_em'];
 	  $author_nofollow = $bfa_rc_options['author_nofollow'];	
 	  if(isset($bfa_rc_options['bfa_rc_pre_HTML'])) $bfa_rc_pre_HTML = $bfa_rc_options['bfa_rc_pre_HTML'];
+		else $bfa_rc_pre_HTML = '';
 	  if(isset($bfa_rc_options['bfa_rc_post_HTML'])) $bfa_rc_post_HTML = $bfa_rc_options['bfa_rc_post_HTML'];
+		else $bfa_rc_post_HTML = '';
 	  $bfa_rc_display_homepage = $bfa_rc_options['bfa_rc_display_homepage'];
 	  $bfa_rc_display_category = $bfa_rc_options['bfa_rc_display_category'];
 	  $bfa_rc_display_post = $bfa_rc_options['bfa_rc_display_post'];

@@ -11,7 +11,7 @@ if( $user_ID ) {
 		// Since 3.5.2, use JSON 
 		if ( json_decode($import_options) != NULL AND strpos($import_options, 'use_bfa_seo') !== FALSE ) {
 			update_option('bfa_ata4', json_decode($import_options, TRUE));
-			echo "<strong><span style='color:green'>Successfully imported </span><code>" . 
+			echo "<strong><span style='color:green'>Successfully imported. Reloading admin area in 2 seconds... </span><code>" . 
 				basename($_FILES['userfile']['name']) . "</code></strong><br />";		
 		
 		// Probably not a valid settings file:

@@ -2071,10 +2071,12 @@ include (WP_PLUGIN_DIR.'/wp-pagenavi/pagenavi-css.css');
 
 	td#left, td#right, td#left-inner, td#right-inner {
 		width: 0;
+		display: none;
 		}
 
 	td#middle {
-		width: 100%;
+		width: 100% !important;
+		display: block;
 		}
 
 	/* 8 hacks for display:none for all sidebars for all browsers except IE. */
@@ -2942,11 +2944,11 @@ Also, adding height and font-size for IE6 */
 bfa_incl('html_inserts_css'); 
 
 if ( $bfa_ata['css_compress'] == "Yes" AND 
-!( isset($bfa_ata_debug) AND $bfa_ata['allow_debug'] == "Yes" ) ) {
+!($bfa_ata_debug==1 AND $bfa_ata['allow_debug'] == "Yes" ) ) {
 	ob_end_flush();
 }	
 if ( isset($bfa_ata_preview) OR $bfa_ata['css_external'] == "Inline" OR 
-( isset($bfa_ata_debug) AND $bfa_ata['allow_debug'] == "Yes" ) ) {
+($bfa_ata_debug==1 AND $bfa_ata['allow_debug'] == "Yes" ) ) {
 	echo "</style>\n"; 
 }
 ?>

@@ -18,63 +18,60 @@ echo $bfa_ata_version; ?>" width="98%" height="40" scrolling="no" frameborder="0
 <td valign="top" width="200">
 
 <ul id="bfaoptiontabs" class="shadetabs">
-	<li><a href="#" id="start-here-tab" rel="start-here" class="selected">START</a></li>
+	<li><a href="#" rel="start-here" class="selected">START</a></li>
 	
 	<strong>Export/Import Settings</strong>
-	<li><a href="#" id="export-import-tab" rel="export-import">Export/Import Settings</a></li>
+	<li><a href="#" rel="export-import">Export/Import Settings</a></li>
 	
 	<strong>Search Engine Optimization</strong>
-	<li><a href="#" id="seo-tab" rel="seo">Configure SEO</a></li>
+	<li><a href="#" rel="seo">Configure SEO</a></li>
 	
 	<strong>Overall Style & Config.</strong>
-	<li><a href="#" id="body-font-links-tab" rel="body-font-links">Body, Text &amp; Links</a></li>
-	<li><a href="#" id="layout-tab" rel="layout">Style & configure LAYOUT</a></li>
-	<li><a href="#" id="favicon-tab" rel="favicon">Add a FAVICON</a></li>
+	<li><a href="#" rel="body-font-links">Body, Text &amp; Links</a></li>
+	<li><a href="#" rel="layout">Style & configure LAYOUT</a></li>
+	<li><a href="#" rel="favicon">Add a FAVICON</a></li>
 	
 	<strong>Header Area</strong>
-	<li><a href="#" id="header-tab" rel="header">Style & edit HEADER AREA</a></li>
-	<li><a href="#" id="header-image-tab" rel="header-image">Header Image</a></li>
-	<li><a href="#" id="feed-links-tab" rel="feed-links">RSS Settings</a></li>
-	<li><a href="#" id="page-menu-bar-tab" rel="page-menu-bar"><?php 
-	if (function_exists('wp_nav_menu')) { ?>MENU 1 (Page Menu)<?php } else { ?>Page Menu Bar<?php } ?></a></li>
-	<li><a href="#" id="cat-menu-bar-tab" rel="cat-menu-bar"><?php 
-	if (function_exists('wp_nav_menu')) { ?>MENU 2 (Category Menu)<?php } else { ?>Category Menu Bar<?php } ?></a></li>
+	<li><a href="#" rel="header">Style & edit HEADER AREA</a></li>
+	<li><a href="#" rel="header-image">Header Image</a></li>
+	<li><a href="#" rel="feed-links">RSS Settings</a></li>
+	<li><a href="#" rel="page-menu-bar">MENU 1 (Page Menu)</a></li>
+	<li><a href="#" rel="cat-menu-bar">MENU 2 (Category Menu)</a></li>
 	
 	<strong>Center Column</strong>
-	<li><a href="#" id="center-tab" rel="center">Style & edit CENTER COLUMN</a></li>
-	<li><a href="#" id="next-prev-nav-tab" rel="next-prev-nav">Next/Previous Navigation</a></li>
+	<li><a href="#" rel="center">Style & edit CENTER COLUMN</a></li>
+	<li><a href="#" rel="next-prev-nav">Next/Previous Navigation</a></li>
 	
 	<strong>Sidebars & Widgets</strong>
-	<li><a href="#" id="sidebars-tab" rel="sidebars">Style & configure SIDEBARS</a></li>
-	<li><a href="#" id="widgets-tab" rel="widgets">Style WIDGETS</a></li>
-	<li><a href="#" id="widget-areas-tab" rel="widget-areas">Add new WIDGET AREAS</a></li>
+	<li><a href="#" rel="sidebars">Style & configure SIDEBARS</a></li>
+	<li><a href="#" rel="widgets">Style WIDGETS</a></li>
+	<li><a href="#" rel="widget-areas">Add new WIDGET AREAS</a></li>
 	
 	<strong>Post & Pages</strong>
-	<li><a href="#" id="postinfos-tab" rel="postinfos">Edit POST/PAGE INFO ITEMS</a></li>
-	<li><a href="#" id="posts-tab" rel="posts">Style POSTS & PAGES</a></li>
-	<li><a href="#" id="posts-or-excerpts-tab" rel="posts-or-excerpts">Configure EXCERPTS</a></li>
-	<li><a href="#" id="post-thumbnails-tab" rel="post-thumbnails">Post THUMBNAILS</a></li>
-	<li><a href="#" id="more-tag-tab" rel="more-tag">"Read More" tag</a></li>
+	<li><a href="#" rel="postinfos">Edit POST/PAGE INFO ITEMS</a></li>
+	<li><a href="#" rel="posts">Style POSTS & PAGES</a></li>
+	<li><a href="#" rel="posts-or-excerpts">Configure EXCERPTS</a></li>
+	<li><a href="#" rel="post-thumbnails">Post THUMBNAILS</a></li>
+	<li><a href="#" rel="more-tag">"Read More" tag</a></li>
 	
 	<strong>Comments</strong>
-	<li><a href="#" id="comments-tab" rel="comments">Style & configure COMMENTS</a></li>
+	<li><a href="#" rel="comments">Style & configure COMMENTS</a></li>
 	
 	<strong>Footer</strong>
-	<li><a href="#" id="footer-style-tab" rel="footer-style">Style & edit FOOTER</a></li>
+	<li><a href="#" rel="footer-style">Style & edit FOOTER</a></li>
 	
 	<strong>Various Content Items</strong>
-	<li><a href="#" id="tables-tab" rel="tables">Style TABLES</a></li>
-	<li><a href="#" id="forms-tab" rel="forms">Style FORMS</a></li>
-	<li><a href="#" id="blockquotes-tab" rel="blockquotes">Style BLOCKQUOTES</a></li>
-	<li><a href="#" id="images-tab" rel="images">Style IMAGES</a></li>
-	<li><a href="#" id="html-inserts-tab" rel="html-inserts">Add HTML/CSS Inserts</a></li>
+	<li><a href="#" rel="tables">Style TABLES</a></li>
+	<li><a href="#" rel="forms">Style FORMS</a></li>
+	<li><a href="#" rel="blockquotes">Style BLOCKQUOTES</a></li>
+	<li><a href="#" rel="images">Style IMAGES</a></li>
+	<li><a href="#" rel="html-inserts">Add HTML/CSS Inserts</a></li>
 	
 	<strong>Archives Page</strong>
-	<li><a href="#" id="archives-page-tab" rel="archives-page">Create ARCHIVES PAGE</a></li>
+	<li><a href="#" rel="archives-page">Create ARCHIVES PAGE</a></li>
 	
 	<strong>CSS & Javascript</strong>
-	<li><a href="#" id="css-javascript-tab" rel="css-javascript">
-	<!-- <span style="background:white;color:red">NEW</span> -->Configure CSS & JS</a></li>
+	<li><a href="#" rel="css-javascript">Configure CSS & JS</a></li>
 </ul>
 
 </td>
@@ -343,10 +340,12 @@ if($value['category'] == "postinfos" AND isset($value['switch'])) { ?>
 			&lt;ul&gt;&lt;li&gt;..&lt;/li&gt;&lt;li&gt;..&lt;/li&gt;&lt;/ul&gt;
 			<hr><code>%meta('fieldname')%</code> - Displays the value of the custom field with the field name "fieldname".
 			<br /><strong>Example:</strong> <code>%meta('<i>price</i>')%</code>
+			<!--
 			<hr><code>&lt;?php echo "Hello world!"; ?&gt;</code> - In regular WordPress (but not in WPMU), you can use PHP code, too. 
 			Write the PHP code in the usual way, with opening and closing PHP tags.
 			<br /><strong>Example:</strong> 
 			<code>&lt;?php if ( is_page('17') ) { if ( function_exists('some_plugin_function') ) { some_plugin_function(); } } ?&gt;</code>
+			-->
 		</div>
 	</div>
 <?php } // End of "Postinfo" instructions
@@ -360,7 +359,7 @@ if($value['category'] == "postinfos" AND isset($value['switch'])) { ?>
 if ($value['type'] == "text") { 
 
 	echo '<div class="bfa-container"><div class="bfa-container-left">
-	<label for="' . $value['name'] . '">' . $value['name'] . '</label><input ';
+	<label for="' . $value['id'] . '">' . $value['name'] . '</label><input ';
 	
 	if ( isset($value['size'])) 
 		echo "size=" . $value['size'] . ($value['size'] > 20 ? ' style="width: 95%;"' : ' '); 
@@ -544,7 +543,7 @@ elseif ($value['type'] == "displayon") {
 elseif ($value['type'] == "textarea") { 
 
 	echo '<div class="bfa-container clearfix">
-    <div class="bfa-container-left"><label for="' . $value['name'] . '">' . 
+    <div class="bfa-container-left"><label for="' . $value['id'] . '">' . 
 	$value['name'] . '</label><textarea name="' . $value['id'] . '" id="' .
 	$value['id'] . '" class="growing">';
 	
@@ -688,12 +687,7 @@ elseif ($value['type'] == "select") {
 
 ?>
 </div> <!-- closing the last tab content div //-->
-<script type="text/javascript">
-var myflowers=new ddtabcontent("bfaoptiontabs") //enter ID of Tab Container
-myflowers.setpersist(true) //toogle persistence of the tabs' state
-myflowers.setselectedClassTarget("link") //"link" or "linkparent"
-myflowers.init()
-</script>
+
 <!-- "reset all" button -->
 <br /><br />
 	<form method="post">

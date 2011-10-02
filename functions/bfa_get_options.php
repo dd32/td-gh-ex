@@ -321,32 +321,7 @@
 						$bfa_ata4[ $value['id'] ] = get_option( 'bfa_ata_' . $value['id'] );
 					}
 				}
-			}
-
-			
-			/*
-				foreach ($options as $value) {
-					if ($value['type'] != 'info') {
-							if ( $value['escape'] == "yes" ) {
-								if( get_option( 'bfa_ata_' . $value['id'] ) === FALSE ) 
-									$bfa_ata[ $value['id'] ] = stripslashes(bfa_escape($_REQUEST[ $value['id'] ]  )); 
-								else 
-									unset ($bfa_ata[ $value['id'] ]); 
-							} elseif ($value['stripslashes'] == "no") { 
-								if( get_option( 'bfa_ata_' . $value['id'] ) === FALSE ) 
-									$bfa_ata[ $value['id'] ] = $_REQUEST[ $value['id'] ]  ; 
-								else 
-									unset ($bfa_ata[ $value['id'] ]);  
-							} else { 
-								if( get_option( 'bfa_ata_' . $value['id'] ) === FALSE ) 
-									$bfa_ata[ $value['id'] ] = stripslashes($_REQUEST[ $value['id'] ]  ); 
-								else 
-									unset ($bfa_ata[ $value['id'] ]); 
-							} 
-					}
-				} 
-			*/		
-					
+			}				
 			
 			// Separate option bfa_widget_areas
 			$bfa_ata4['bfa_widget_areas'] = get_option('bfa_widget_areas');

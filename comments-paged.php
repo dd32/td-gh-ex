@@ -76,7 +76,7 @@ if ($comments) : ?>
 			
 			<span class="commentdate">
 			<?php // Comment Date and Time
-			printf(__('%1$s at %2$s'), get_comment_date(__('F jS, Y','atahualpa')),  get_comment_time()) ?>
+			printf(__('%1$s at %2$s','atahualpa'), get_comment_date(__('F jS, Y','atahualpa')),  get_comment_time()) ?>
 			</span>
 			
 			<?php // Comment Text
@@ -110,7 +110,7 @@ if ($comments) : ?>
 			<br />
 			
 			<?php // Comment Date and Time
-			printf(__('%1$s at %2$s'), get_comment_date(__('F jS, Y','atahualpa')),  get_comment_time()) ?>
+			printf(__('%1$s at %2$s','atahualpa'), get_comment_date(__('F jS, Y','atahualpa')),  get_comment_time()) ?>
 			
 			<?php // Edit Comment Link
 			edit_comment_link(__('Edit','atahualpa'),'&nbsp;&nbsp;',''); ?>

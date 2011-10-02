@@ -1,5 +1,5 @@
 <?php
-$bfa_ata_version = "3.6.7";
+$bfa_ata_version = "3.6.8";
 
 // Load translation file above
 load_theme_textdomain('atahualpa');
@@ -401,7 +401,7 @@ function bfa_widget_area($args = '') {
 		$colgroup = 'no'; // If all table cells have the same width, this can be achieved by table-layout:fixed alone, without the colgroup element.
 		// Check if any of the cells have a set width
 		for ( $i = 1; $i <= $r['cells']; $i++ ) { 
-			if ( array_key_exists('width_' . $i, $args) AND !empty($args['width_' . $i]) ) {
+			if ( array_key_exists('width_' . $i, $r) AND !empty($r['width_' . $i]) ) {
 					$colgroup = 'yes';
 			}
 		}
@@ -534,7 +534,7 @@ function bfa_ata_import_settings() {
 	// Since 3.5.2, use JSON 
 	if ( json_decode($import_options) != NULL AND strpos($import_options, 'use_bfa_seo') !== FALSE ) {
 		update_option('bfa_ata4', json_decode($import_options, TRUE));
-		echo "<strong><span style='color:green'>Successfully imported </span></strong><br />";		
+		echo "<strong><span style='color:green'>Success! Reloading admin area in 2 seconds... </span></strong><br />";		
 	
 	// Probably not a valid settings file:
 	} else {
@@ -752,8 +752,8 @@ add_action( 'init', 'register_new_menus' );
 	function register_new_menus() {
 		register_nav_menus(
 			array(
-				'menu1' => __( 'Menu 1' ),
-				'menu2' => __( 'Menu 2' )
+				'menu1' => __( 'Menu 1','atahualpa' ),
+				'menu2' => __( 'Menu 2','atahualpa' )
 			)
 		);
 	}
