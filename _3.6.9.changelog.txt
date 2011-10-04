@@ -1,3 +1,7 @@
+Atahualpa 3.6.9 changelog:
+
+- Active menu tab on theme options was not remembered after page reload: Added cookie javascript to /options/ata-admin.js
+
 Atahualpa 3.6.8 changelog:
 
 - esc_js added to get_search_query, XSS vulnerability

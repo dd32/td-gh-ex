@@ -4,15 +4,25 @@ jQuery(document).ready(function($){
 		type:	'post',
 		url: 	'admin-ajax.php'
 	});
-	
-	$("ul#bfaoptiontabs li a").live("click", function() {
-		var curTab = $(this).attr('rel');
+
+	var atahualpacookie=new RegExp("atahualpatabposition=[^;]+", "i"); 
+	if( document.cookie.match(atahualpacookie) ) {
+		var curTab = document.cookie.match(atahualpacookie)[0].split("=")[1];
 		$("div.tabcontent").css("display", "none");
 		$("div#" + curTab).css("display", "block");
 		$("ul#bfaoptiontabs li a").removeClass("selected");
-		$(this).addClass("selected");
-	});
+		$("ul#bfaoptiontabs li a[rel=" + curTab +"]").addClass("selected");
+	}
 	
+	$("ul#bfaoptiontabs li a").live("click", function() {
+		var newTab = $(this).attr('rel');
+		$("div.tabcontent").css("display", "none");
+		$("div#" + newTab).css("display", "block");
+		$("ul#bfaoptiontabs li a").removeClass("selected");
+		$(this).addClass("selected");
+		document.cookie = 'atahualpatabposition=' + newTab + ';path=/';
+	});
+
 	$("a#import-settings").live("click", function() { 
 		var dataString = encodeURIComponent($("textarea#import-textarea").val());
 		$.ajax({
