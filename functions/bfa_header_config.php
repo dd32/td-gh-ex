@@ -273,14 +273,14 @@ function bfa_header_config() {
 			if ( $bfa_ata['show_search_box'] == "Yes" ) 
 			{ 
 				echo '<td valign="bottom" class="search-box" align="right"><div class="searchbox">
-					<form method="get" class="searchform" action="' . home_url() . '/">
+					<form method="get" class="searchform" action="' . $homeURL . '/">
 					<div class="searchbox-form">' . 
 					// Since 3.6.8: Removed check whether get_search_query() exists and added esc_js 
 						'<input type="text" class="text inputblur" onfocus="this.value=\'' .
 						( get_search_query() ? esc_js(get_search_query()) : '' ) . '\'" 
-						value="' . ( get_search_query() ? esc_js(get_search_query()) : $bfa_ata['searchbox_text'] ) . 
+						value="' . ( get_search_query() ? esc_js(get_search_query()) : esc_attr($bfa_ata['searchbox_text']) ) . 
 						'" onblur="this.value=\'' . ( get_search_query() ? esc_js(get_search_query()) : 
-						$bfa_ata['searchbox_text'] ) . '\'" name="s" />' .
+						esc_attr($bfa_ata['searchbox_text']) ) . '\'" name="s" />' .
 					'</div>
 					</form>
 				</div>

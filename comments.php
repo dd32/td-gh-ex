@@ -76,7 +76,7 @@ if ( ('open' == $post->comment_status) ) : ?>
 
 	<?php else : // If comments are closed: ?>
 
-		<?php echo $bfa_ata['comments_are_closed_text']; ?>
+		<?php echo  $bfa_ata['comments_are_closed_text'] ; ?>
 
 	<?php endif; ?>
 

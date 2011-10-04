@@ -1,5 +1,5 @@
 <?php
-$bfa_ata_version = "3.6.9";
+$bfa_ata_version = "3.7.0";
 
 // Load translation file above
 load_theme_textdomain('atahualpa');
@@ -869,7 +869,8 @@ foreach($bfa_ata as $key => $value) {
 
 // Since 3.6: New variables using newer WP functions
 $templateURI = get_template_directory_uri(); 
-$homeURL = home_url();
+// Since 3.7.0: Escape home_url, too
+$homeURL = esc_url( home_url() );
 
 // Since 3.6: Include Javascripts here and with wp_enqueue instead of header.php
 $isIE6 = (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE 6.') !== FALSE);
