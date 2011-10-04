@@ -11,8 +11,6 @@ get_header(); ?>
 		<section id="primary">
 			<div id="content" role="main">
 
-				<?php the_post(); ?>
-
 				<header class="page-header">
 					<h1 class="page-title"><?php
 						printf( __( 'Tag Archives: %s', 'beach' ), '<span>' . single_tag_title( '', false ) . '</span>' );
@@ -24,7 +22,7 @@ get_header(); ?>
 				<?php beach_content_nav( 'nav-above' ); ?>
 
 				<?php /* Start the Loop */ ?>
-				<?php while ( have_posts() ) : the_post(); ?>				
+				<?php while ( have_posts() ) : the_post(); ?>
 
 					<?php get_template_part( 'content', get_post_format() ); ?>
 
