@@ -5,23 +5,15 @@ add_action('admin_init', 'mantra_init_fn' );
 add_action('admin_menu', 'mantra_add_page_fn');
 
 add_action('init', 'mantra_init');
-function mantra_init() {	
+function mantra_init() {
 
 	wp_enqueue_script("farbtastic");
-	wp_register_script('jqueryui',get_template_directory_uri() . '/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js', array('jquery') );
-	wp_enqueue_script('jqueryui');
+	wp_register_script('accord',get_template_directory_uri() . '/js/accordion-slider.js', array('jquery','jquery-ui-core', 'jquery-ui-widget',) );
+	wp_enqueue_script('accord');	
 	load_theme_textdomain( 'mantra', get_template_directory_uri() . '/languages' );
-
 }
 
 $options= mantra_get_theme_options();
-/*function mantra_set_default_options() {
-		$options = mantra_get_theme_options();
-		$default_options = mantra_get_default_options();
-				foreach($options as $id=>$item) {
-					$options[$id] = $default_options[$id];
-												}
-										}*/
 
 
 // The settings
@@ -190,8 +182,9 @@ $items = array("Left", "Right", "Disable");
 $itemsare = array( __("Left","mantra"), __("Right","mantra"), __("Disable","mantra"));
 echo "<select id='mop_side' name='ma_options[mop_side]'>";
 foreach($items as $id=>$item) {
-	$selected = ($options['mop_side']==$item) ? 'selected="selected"' : '';
-	echo "<option value='$item' $selected>$itemsare[$id]</option>";
+	echo "<option value='$item'";
+	selected($options['mop_side'],$itemsare[$id]);
+	echo ">$item</option>";
 }
 echo "</select>";
 
@@ -281,8 +274,9 @@ function  setting_colpad_fn() {
 	$items =array ("0", "10px" , "15px" , "20px" , "25px", "30px");
 	echo "<select id='mop_colpad' name='ma_options[mop_colpad]'>";
 foreach($items as $item) {
-	$selected = ($options['mop_colpad']==$item) ? 'selected="selected"' : '';
-	echo "<option value='$item' $selected>$item</option>";
+	echo "<option value='$item'";
+	selected($options['mop_colpad'],$item);
+	echo ">$item</option>";
 }
 	echo "</select>";
 echo "<div><small>".__("Select the padding between the content and the sidebar.","mantra")."</small></div>";
@@ -294,8 +288,9 @@ function  setting_hheight_fn() {
 	$items =array ("90px", "120px" , "150px" , "180px" , "200px", "240px", "300px");
 	echo "<select id='mop_hheight' name='ma_options[mop_hheight]'>";
 foreach($items as $item) {
-	$selected = ($options['mop_hheight']==$item) ? 'selected="selected"' : '';
-	echo "<option value='$item' $selected>$item</option>";
+	echo "<option value='$item'";
+	selected($options['mop_hheight'],$item);
+	echo ">$item</option>";
 }
 	echo "</select>";
 echo "<div><small>".__("Select the header's height. After saving the settings go and upload your new header image. The header's width will be equal to the Total Site Width.","mantra")."</small></div>";
@@ -313,9 +308,9 @@ function  setting_fontsize_fn() {
 	$items =array ("12px", "13px" , "14px" , "15px" , "16px", "17px", "18px");
 	echo "<select id='mop_fontsize' name='ma_options[mop_fontsize]'>";
 		foreach($items as $item) {
-
-	$selected = ($options['mop_fontsize']==$item) ? 'selected="selected"' : '';
-	echo "<option value='$item' $selected>$item</option>";
+	echo "<option value='$item'";
+	selected($options['mop_fontsize'],$item);
+	echo ">$item</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Select the font size you'll use in your blog. Pages, posts and comments will be affected. Buttons, Headers and Side menus will remain the same.","mantra")."</small></div>";
@@ -353,33 +348,34 @@ function  setting_fontfamily_fn() {
 	echo "<select id='mop_fontfamily' name='ma_options[mop_fontfamily]'>";
 	echo "<optgroup label='Sans-Serif'>";
 foreach($itemsans as $item) {
-
-	$selected = ( $options['mop_fontfamily']==$item) ? 'selected="selected"' : '';
-	echo "<option style='font-family:$item;' value='$item' $selected>$item</option>";
+	echo "<option style='font-family:$item;' value='$item'";
+	selected($options['mop_fontfamily'],$item);
+	echo ">$item</option>";
 }
 	echo "</optgroup>";
 
 	echo "<optgroup label='Serif'>";
 foreach($itemserif as $item) {
 
-	$selected = ( $options['mop_fontfamily']==$item) ? 'selected="selected"' : '';
-	echo "<option style='font-family:$item;' value='$item' $selected>$item</option>";
+	echo "<option style='font-family:$item;' value='$item'";
+	selected($options['mop_fontfamily'],$item);
+	echo ">$item</option>";
 }
 	echo "</optgroup>";
 
 	echo "<optgroup label='MonoSpace'>";
 foreach($itemsmono as $item) {
-
-	$selected = ( $options['mop_fontfamily']==$item) ? 'selected="selected"' : '';
-	echo "<option style='font-family:$item;' value='$item' $selected>$item</option>";
+	echo "<option style='font-family:$item;' value='$item'";
+	selected($options['mop_fontfamily'],$item);
+	echo ">$item</option>";
 }
 	echo "</optgroup>";
 
 	echo "<optgroup label='Cursive'>";
 foreach($itemscursive as $item) {
-
-	$selected = ( $options['mop_fontfamily']==$item) ? 'selected="selected"' : '';
-	echo "<option style='font-family:$item;' value='$item' $selected>$item</option>";
+	echo "<option style='font-family:$item;' value='$item'";
+	selected($options['mop_fontfamily'],$item);
+	echo ">$item</option>";
 }
 	echo "</optgroup>";
 	echo "</select>";
@@ -393,8 +389,9 @@ function  setting_headfontsize_fn() {
 	$itemsare = array( __("Default","mantra") ,"14px" , "16px" , "18px" , "20px", "22px" , "24px" , "26px" , "28px" , "30px" , "32px" , "34px" , "36px", "38px" , "40px");
 	echo "<select id='mop_headfontsize' name='ma_options[mop_headfontsize]'>";
 foreach($items as $id=>$item) {
-	$selected = ($options['mop_headfontsize']==$item) ? 'selected="selected"' : '';
-	echo "<option value='$item' $selected>$itemsare[$id]</option>";
+	echo "<option value='$item'";
+	selected($options['mop_headfontsize'],$itemsare[$id]);
+	echo ">$item</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Post Header Font size. Leave 'Default' for normal settings (size value will be as set in the CSS).","mantra")."</small></div>";
@@ -407,8 +404,9 @@ function  setting_sidefontsize_fn() {
 	$itemsare = array( __("Default","mantra") , "8px" , "9px" , "10px" , "11px", "12px" , "13px" , "14px" , "15px" , "16px" , "17px" , "18px");
 	echo "<select id='mop_sidefontsize' name='ma_options[mop_sidefontsize]'>";
 foreach($items as $id=>$item) {
-	$selected = ($options['mop_sidefontsize']==$item) ? 'selected="selected"' : '';
-	echo "<option value='$item' $selected>$itemsare[$id]</option>";
+	echo "<option value='$item'";
+	selected($options['mop_sidefontsize'],$itemsare[$id]);
+	echo ">$item</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Sidebar Font size. Leave 'Default' for normal settings (size value will be as set in the CSS).","mantra")."</small></div>";
@@ -421,8 +419,9 @@ function  setting_textalign_fn() {
 	$itemsare = array( __("Default","mantra"), __("Left","mantra"), __("Right","mantra"), __("Justify","mantra"), __("Center","mantra"));
 	echo "<select id='mop_textalign' name='ma_options[mop_textalign]'>";
 foreach($items as $id=>$item) {
-	$selected = ($options['mop_textalign']==$item) ? 'selected="selected"' : '';
-	echo "<option value='$item' $selected>$itemsare[$id]</option>";
+	echo "<option value='$item'";
+	selected($options['mop_textalign'],$itemsare[$id]);
+	echo ">$item</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("This overwrites the text alignment in posts and pages. Leave 'Default' for normal settings (alignment will remain as declared in posts, comments etc.).","mantra")."</small></div>";
@@ -434,8 +433,9 @@ function  setting_parindent_fn() {
 	$items = array ("0px" , "5px" , "10px" , "15px" , "20px");
 	echo "<select id='mop_parindent' name='ma_options[mop_parindent]'>";
 foreach($items as $item) {
-	$selected = ($options['mop_parindent']==$item) ? 'selected="selected"' : '';
-	echo "<option value='$item' $selected>$item</option>";
+	echo "<option value='$item'";
+	selected($options['mop_parindent'],$item);
+	echo ">$item</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Choose the indent for your paragraphs.","mantra")."</small></div>";
@@ -448,8 +448,9 @@ function  setting_lineheight_fn() {
 	$itemsare = array( __("Default","mantra"),"0.8em" , "0.9em", "1.0em" , "1.1em" , "1.2em" , "1.3em", "1.4em" , "1.5em" , "1.6em" , "1.7em" , "1.8em" , "1.9em" , "2.0em");
 	echo "<select id='mop_lineheight' name='ma_options[mop_lineheight]'>";
 foreach($items as $id=>$item) {
-	$selected = ($options['mop_lineheight']==$item) ? 'selected="selected"' : '';
-	echo "<option value='$item' $selected>$itemsare[$id]</option>";
+	echo "<option value='$item'";
+	selected($options['mop_lineheight'],$itemsare[$id]);
+	echo ">$item</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Text line height. The height between 2 rows of text. Leave 'Default' for normal settings (size value will be as set in the CSS).","mantra")."</small></div>";
@@ -462,8 +463,9 @@ function  setting_wordspace_fn() {
 	$itemsare = array( __("Default","mantra"),"-3px" , "-2px", "-1px" , "0px" , "1px" , "2px", "3px" , "4px" , "5px" , "10px");
 	echo "<select id='mop_wordspace' name='ma_options[mop_wordspace]'>";
 foreach($items as $id=>$item) {
-	$selected = ($options['mop_wordspace']==$item) ? 'selected="selected"' : '';
-	echo "<option value='$item' $selected>$itemsare[$id]</option>";
+	echo "<option value='$item'";
+	selected($options['mop_wordspace'],$itemsare[$id]);
+	echo ">$item</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("The space between <i>words</i>. Leave 'Default' for normal settings (size value will be as set in the CSS).","mantra")."</small></div>";
@@ -476,8 +478,9 @@ function  setting_letterspace_fn() {
 	$itemsare = array( __("Default","mantra"),"-0.05em" , "-0.04em", "-0.03em" , "-0.02em" , "-0.01em" , "0.01em", "0.02em" , "0.03em" , "0.04em" , "0.05em");
 	echo "<select id='mop_letterspace' name='ma_options[mop_letterspace]'>";
 foreach($items as $id=>$item) {
-	$selected = ($options['mop_letterspace']==$item) ? 'selected="selected"' : '';
-	echo "<option value='$item' $selected>$itemsare[$id]</option>";
+	echo "<option value='$item'";
+	selected($options['mop_letterspace'],$itemsare[$id]);
+	echo ">$item</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("The space between <i>letters</i>. Leave 'Default' for normal settings (size value will be as set in the CSS).","mantra")."</small></div>";
@@ -490,7 +493,7 @@ foreach($items as $id=>$item) {
 //TEXT - Name: ma_options[backcolor]
 function  setting_backcolor_fn() {
 	global $options;
-	echo '<input type="text" id="mop_backcolor" name="ma_options[mop_backcolor]" value="'.$options['mop_backcolor'].'">';
+	echo '<input type="text" id="mop_backcolor" name="ma_options[mop_backcolor]" value="'.esc_attr( $options['mop_backcolor'] ).'"  />';
     echo '<div id="mop_backcolor2"></div>';
 	echo "<div><small>".__("Background color (Default value is 444444).","mantra")."</small></div>";
 }
@@ -498,7 +501,7 @@ function  setting_backcolor_fn() {
 //TEXT - Name: ma_options[headercolor]
 function  setting_headercolor_fn() {
 	global $options;
-	echo '<input type="text" id="mop_headercolor" name="ma_options[mop_headercolor]" value="'.$options['mop_headercolor'].'">';
+	echo '<input type="text" id="mop_headercolor" name="ma_options[mop_headercolor]" value="'.esc_attr( $options['mop_headercolor'] ).'"  />';
 	echo '<div id="mop_headercolor2"></div>';
 	echo "<div><small>".__("Header background color (Default value is 333333). You can delete all insde text for no background color.","mantra")."</small></div>";
 }
@@ -506,7 +509,7 @@ function  setting_headercolor_fn() {
 //TEXT - Name: ma_options[prefootercolor]
 function  setting_prefootercolor_fn() {
 	global $options;
-	echo '<input type="text" id="mop_prefootercolor" name="ma_options[mop_prefootercolor]" value="'.$options['mop_prefootercolor'].'">';
+	echo '<input type="text" id="mop_prefootercolor" name="ma_options[mop_prefootercolor]" value="'.esc_attr( $options['mop_prefootercolor'] ).'"  />';
 	echo '<div id="mop_prefootercolor2"></div>';
 	echo "<div><small>".__("Footer widget-area background color. (Default value is 171717).","mantra")."</small></div>";
 }
@@ -514,7 +517,7 @@ function  setting_prefootercolor_fn() {
 //TEXT - Name: ma_options[footercolor]
 function  setting_footercolor_fn() {
 	global $options;
-	echo '<input type="text" id="mop_footercolor" name="ma_options[mop_footercolor]" value="'.$options['mop_footercolor'].'">';
+	echo '<input type="text" id="mop_footercolor" name="ma_options[mop_footercolor]" value="'.esc_attr( $options['mop_footercolor'] ).'"  />';
 	echo '<div id="mop_footercolor2"></div>';
 	echo "<div><small>".__("Footer background color (Default value is 222222).","mantra")."</small></div>";
 }
@@ -522,7 +525,7 @@ function  setting_footercolor_fn() {
 //TEXT - Name: ma_options[titlecolor]
 function  setting_titlecolor_fn() {
 	global $options;
-	echo '<input type="text" id="mop_titlecolor" name="ma_options[mop_titlecolor]" value="'.$options['mop_titlecolor'].'">';
+	echo '<input type="text" id="mop_titlecolor" name="ma_options[mop_titlecolor]" value="'.esc_attr( $options['mop_titlecolor'] ).'"  />';
 	echo '<div id="mop_titlecolor2"></div>';
 	echo "<div><small>".__("Your blog's title color (Default value is 0D85CC).","mantra")."</small></div>";
 }
@@ -530,7 +533,7 @@ function  setting_titlecolor_fn() {
 //TEXT - Name: ma_options[descriptioncolor]
 function  setting_descriptioncolor_fn() {
 	global $options;
-	echo '<input type="text" id="mop_descriptioncolor" name="ma_options[mop_descriptioncolor]" value="'.$options['mop_descriptioncolor'].'">';
+	echo '<input type="text" id="mop_descriptioncolor" name="ma_options[mop_descriptioncolor]" value="'.esc_attr( $options['mop_descriptioncolor'] ).'"  />';
 	echo '<div id="mop_descriptioncolor2"></div>';
 	echo "<div><small>".__("Your blog's description color(Default value is 222222).","mantra")."</small></div>";
 }
@@ -538,7 +541,7 @@ function  setting_descriptioncolor_fn() {
 //TEXT - Name: ma_options[contentcolor]
 function  setting_contentcolor_fn() {
 	global $options;
-	echo '<input type="text" id="mop_contentcolor" name="ma_options[mop_contentcolor]" value="'.$options['mop_contentcolor'].'">';
+	echo '<input type="text" id="mop_contentcolor" name="ma_options[mop_contentcolor]" value="'.esc_attr( $options['mop_contentcolor'] ).'"  />';
 	echo '<div id="mop_contentcolor2"></div>';
 	echo "<div><small>".__("Content Text Color (Default value is 333333).","mantra")."</small></div>";
 }
@@ -546,7 +549,7 @@ function  setting_contentcolor_fn() {
 //TEXT - Name: ma_options[linkscolor]
 function  setting_linkscolor_fn() {
 	global $options;
-	echo '<input type="text" id="mop_linkscolor" name="ma_options[mop_linkscolor]" value="'.$options['mop_linkscolor'].'">';
+	echo '<input type="text" id="mop_linkscolor" name="ma_options[mop_linkscolor]" value="'.esc_attr( $options['mop_linkscolor'] ).'"  />';
 	echo '<div id="mop_linkscolor2"></div>';
 	echo "<div><small>".__("Links color (Default value is 0D85CC).","mantra")."</small></div>";
 }
@@ -554,7 +557,7 @@ function  setting_linkscolor_fn() {
 //TEXT - Name: ma_options[hovercolor]
 function  setting_hovercolor_fn() {
 	global $options;
-	echo '<input type="text" id="mop_hovercolor" name="ma_options[mop_hovercolor]" value="'.$options['mop_hovercolor'].'">';
+	echo '<input type="text" id="mop_hovercolor" name="ma_options[mop_hovercolor]" value="'.esc_attr( $options['mop_hovercolor'] ).'"  />';
 	echo '<div id="mop_hovercolor2"></div>';
 	echo "<div><small>".__("Links color on mouse over (Default value is 333333).","mantra")."</small></div>";
 }
@@ -562,7 +565,7 @@ function  setting_hovercolor_fn() {
 //TEXT - Name: ma_options[headtextcolor]
 function  setting_headtextcolor_fn() {
 	global $options;
-	echo '<input type="text" id="mop_headtextcolor" name="ma_options[mop_headtextcolor]" value="'.$options['mop_headtextcolor'].'">';
+	echo '<input type="text" id="mop_headtextcolor" name="ma_options[mop_headtextcolor]" value="'.esc_attr( $options['mop_headtextcolor'] ).'"  />';
 	echo '<div id="mop_headtextcolor2"></div>';
 	echo "<div><small>".__("Post Header Text Color (Default value is 333333).","mantra")."</small></div>";
 }
@@ -570,7 +573,7 @@ function  setting_headtextcolor_fn() {
 //TEXT - Name: ma_options[headtexthover]
 function  setting_headtexthover_fn() {
 	global $options;
-	echo '<input type="text" id="mop_headtexthover" name="ma_options[mop_headtexthover]" value="'.$options['mop_headtexthover'].'">';
+	echo '<input type="text" id="mop_headtexthover" name="ma_options[mop_headtexthover]" value="'.esc_attr( $options['mop_headtexthover'] ).'"  />';
 	echo '<div id="mop_headtexthover2"></div>';
 	echo "<div><small>".__("Post Header Text Color on Mouse over (Default value is 000000).","mantra")."</small></div>";
 }
@@ -578,7 +581,7 @@ function  setting_headtexthover_fn() {
 //TEXT - Name: ma_options[sideheadbackcolor]
 function  setting_sideheadbackcolor_fn() {
 	global $options;
-	echo '<input type="text" id="mop_sideheadbackcolor" name="ma_options[mop_sideheadbackcolor]" value="'.$options['mop_sideheadbackcolor'].'">';
+	echo '<input type="text" id="mop_sideheadbackcolor" name="ma_options[mop_sideheadbackcolor]" value="'.esc_attr( $options['mop_sideheadbackcolor'] ).'"  />';
 	echo '<div id="mop_sideheadbackcolor2"></div>';
 	echo "<div><small>".__("Sidebar Header Background color (Default value is 444444).","mantra")."</small></div>";
 
@@ -587,7 +590,7 @@ function  setting_sideheadbackcolor_fn() {
 //TEXT - Name: ma_options[sideheadtextcolor]
 function  setting_sideheadtextcolor_fn() {
 	global $options;
-	echo '<input type="text" id="mop_sideheadtextcolor" name="ma_options[mop_sideheadtextcolor]" value="'.$options['mop_sideheadtextcolor'].'">';
+	echo '<input type="text" id="mop_sideheadtextcolor" name="ma_options[mop_sideheadtextcolor]" value="'.esc_attr( $options['mop_sideheadtextcolor'] ).'"  />';
 	echo '<div id="mop_sideheadtextcolor2"></div>';
 	echo "<div><small>".__("Sidebar Header Text Color(Default value is 2EA5FD).","mantra")."</small></div>";
 }
@@ -595,7 +598,7 @@ function  setting_sideheadtextcolor_fn() {
 //TEXT - Name: ma_options[footerheader]
 function  setting_footerheader_fn() {
 	global $options;
-	echo '<input type="text" id="mop_footerheader" name="ma_options[mop_footerheader]" value="'.$options['mop_footerheader'].'">';
+	echo '<input type="text" id="mop_footerheader" name="ma_options[mop_footerheader]" value="'.esc_attr( $options['mop_footerheader'] ).'"  />';
 	echo '<div id="mop_footerheader2"></div>';
 	echo "<div><small>".__("Footer Widget Text Color (Default value is 0D85CC).","mantra")."</small></div>";
 }
@@ -603,7 +606,7 @@ function  setting_footerheader_fn() {
 //TEXT - Name: ma_options[footertext]
 function  setting_footertext_fn() {
 	global $options;
-	echo '<input type="text" id="mop_footertext" name="ma_options[mop_footertext]" value="'.$options['mop_footertext'].'">';
+	echo '<input type="text" id="mop_footertext" name="ma_options[mop_footertext]" value="'.esc_attr( $options['mop_footertext'] ).'"  />';
 	echo '<div id="mop_footertext2"></div>';
 	echo "<div><small>".__("Footer Widget Link Color (Default value is 666666).","mantra")."</small></div>";
 }
@@ -611,7 +614,7 @@ function  setting_footertext_fn() {
 //TEXT - Name: ma_options[footerhover]
 function  setting_footerhover_fn() {
 	global $options;
-	echo '<input type="text" id="mop_footerhover" name="ma_options[mop_footerhover]" value="'.$options['mop_footerhover'].'">';
+	echo '<input type="text" id="mop_footerhover" name="ma_options[mop_footerhover]" value="'.esc_attr( $options['mop_footerhover'] ).'"  />';
 	echo '<div id="mop_footerhover2"></div>';
 	echo "<div><small>".__("Footer Widget Link Color on Mouse Over (Default value is 888888).","mantra")."</small></div>";
 }
@@ -628,8 +631,9 @@ global $options;
 	$itemsare = array( __("White","mantra"), __("Light","mantra"), __("Light Gray","mantra"), __("Gray","mantra"), __("Dark Gray","mantra"), __("Black","mantra"));
 	echo "<select id='mop_caption' name='ma_options[mop_caption]'>";
 foreach($items as $id=>$item) {
-	$selected = ($options['mop_caption']==$item) ? 'selected="selected"' : '';
-	echo "<option value='$item' $selected>$itemsare[$id]</option>";
+	echo "<option value='$item'";
+	selected($options['mop_caption'],$itemsare[$id]);
+	echo ">$item</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("This setting changes the look of your captions. Images that are not inserted through captions will not be affected.","mantra")."</small></div>";
@@ -641,13 +645,14 @@ function setting_image_fn() {
 	$items = array("None", "One", "Two", "Three" , "Four", "Five", "Six", "Seven");
 	foreach($items as $item) {
 		
-		$checked = ($options['mop_image']==$item) ? ' checked="checked" ' : '';
 		$checkedClass = ($options['mop_image']==$item) ? ' checkedClass' : '';
 	
-		echo " <label id='$item' class='images $checkedClass'><input  ".$checked." value='$item' onchange=\"changeBorder('$item','images');\" name='ma_options[mop_image]' type='radio' /><img id='image$item'  src='".get_template_directory_uri()."/images/testimg.png'/></label>";
+		echo " <label id='$item' for='$item$item' class='images $checkedClass'><input  ";
+		 checked($options['mop_image'],$item);
+	echo "value='$item' id='$item$item' onClick=\"changeBorder('$item','images');\" name='ma_options[mop_image]' type='radio' /><img id='image$item'  src='".get_template_directory_uri()."/images/testimg.png'/></label>";
 	}
 		
-		echo "<div><br /><p><small>".__("The image on top of your captions. ","mantra")."</small></p></div>";
+		echo "<div><br /><p><small>".__("The border around your inserted images. ","mantra")."</small></p></div>";
 }
 
 // RADIO-BUTTON - Name: ma_options[pin]
@@ -657,9 +662,10 @@ global $options;
 	foreach($items as $item) {
 		$none='';
 		if ($item == 'mantra_dot') { $none='None'; }
-		$checked = ($options['mop_pin']==$item) ? ' checked="checked" ' : '';
 		$checkedClass = ($options['mop_pin']==$item) ? ' checkedClass' : '';
-		echo "<label id='$item' class='pins  $checkedClass'><input ".$checked." value='$item' onchange=\"changeBorder('$item','pins');\" name='ma_options[mop_pin]' type='radio' />$none<img style='display:inline-block;height:auto;padding-top:0px;margin-left:5px;margin-right:20px;' src='".get_template_directory_uri()."/images/pins/".$item.".png'/></label>";
+		echo "<label id='$item' class='pins  $checkedClass'><input ";
+		checked($options['mop_pin'],$item);
+		echo " value='$item' onClick=\"changeBorder('$item','pins');\" name='ma_options[mop_pin]' type='radio' />$none<img style='margin-left:10px;margin-right:10px;' src='".get_template_directory_uri()."/images/pins/".$item.".png'/></label>";
 	}
 		echo "<div><small>".__("The image on top of your captions. ","mantra")."</small></div>";
 }
@@ -671,9 +677,10 @@ function setting_sidebullet_fn() {
 	foreach($items as $item) {
 		$none='';
 		if ($item == 'mantra_dot') { $none='None'; }
-		$checked = ($options['mop_sidebullet']==$item) ? ' checked="checked" ' : '';
 		$checkedClass = ($options['mop_sidebullet']==$item) ? ' checkedClass' : '';
-		echo "<label id='$item' class='sidebullets  $checkedClass'><input ".$checked." value='$item' onchange=\"changeBorder('$item','sidebullets');\" name='ma_options[mop_sidebullet]' type='radio' />$none<img style='display:inline-block;height:auto;padding-top:0px;margin-left:5px;margin-right:20px;' src='".get_template_directory_uri()."/images/bullets/".$item.".png'/></label>";
+		echo "<label id='$item' class='sidebullets  $checkedClass'><input ";
+		checked($options['mop_sidebullet'],$item);
+		echo " value='$item' onClick=\"changeBorder('$item','sidebullets');\" name='ma_options[mop_sidebullet]' type='radio' />$none<img style='margin-left:10px;margin-right:10px;' src='".get_template_directory_uri()."/images/bullets/".$item.".png'/></label>";
 	}
 	echo "<div><small>".__("The sidebar list bullets. ","mantra")."</small></div>";
 }
@@ -686,8 +693,9 @@ function setting_contentlist_fn() {
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
 	echo "<select id='mop_contentlist' name='ma_options[mop_contentlist]'>";
 foreach($items as $id=>$item) {
-	$selected = ($options['mop_contentlist']==$item) ? 'selected="selected"' : '';
-	echo "<option value='$item' $selected>$itemsare[$id]</option>";
+	echo "<option value='$item'";
+	selected($options['mop_contentlist'],$itemsare[$id]);
+	echo ">$item</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Hide or show  bullets next to lists that are in your content area (posts, pages etc.).","mantra")."</small></div>";
@@ -702,8 +710,9 @@ function setting_title_fn() {
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
 	echo "<select id='mop_title' name='ma_options[mop_title]'>";
 foreach($items as $id=>$item) {
-	$selected = ($options['mop_title']==$item) ? 'selected="selected"' : '';
-	echo "<option value='$item' $selected>$itemsare[$id]</option>";
+	echo "<option value='$item'";
+	selected($options['mop_title'],$itemsare[$id]);
+	echo ">$item</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Hide or show your blog's Title and Description in the header (recommended if you have a custom header image with text).","mantra")."</small></div>";
@@ -716,8 +725,9 @@ function setting_pagetitle_fn() {
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
 	echo "<select id='mop_pagetitle' name='ma_options[mop_pagetitle]'>";
 foreach($items as $id=>$item) {
-	$selected = ($options['mop_pagetitle']==$item) ? 'selected="selected"' : '';
-	echo "<option value='$item' $selected>$itemsare[$id]</option>";
+	echo "<option value='$item'";
+	selected($options['mop_pagetitle'],$itemsare[$id]);
+	echo ">$item</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Hide or show Page titles on any <i>created</i> pages. ","mantra")."</small></div>";
@@ -730,8 +740,9 @@ function setting_categtitle_fn() {
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
 	echo "<select id='mop_categtitle' name='ma_options[mop_categtitle]'>";
 foreach($items as $id=>$item) {
-	$selected = ($options['mop_categtitle']==$item) ? 'selected="selected"' : '';
-	echo "<option value='$item' $selected>$itemsare[$id]</option>";
+	echo "<option value='$item'";
+	selected($options['mop_categtitle'],$itemsare[$id]);
+	echo ">$item</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Hide or show Page titles on <i>Category</i> Pages. ","mantra")."</small></div>";
@@ -744,8 +755,9 @@ function setting_tables_fn() {
 	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
 	echo "<select id='mop_tables' name='ma_options[mop_tables]'>";
 foreach($items as $id=>$item) {
-	$selected = ($options['mop_tables']==$item) ? 'selected="selected"' : '';
-	echo "<option value='$item' $selected>$itemsare[$id]</option>";
+	echo "<option value='$item'";
+	selected($options['mop_tables'],$itemsare[$id]);
+	echo ">$item</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Hide table borders and background color.","mantra")."</small></div>";
@@ -758,8 +770,9 @@ function setting_comtext_fn() {
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
 	echo "<select id='mop_comtext' name='ma_options[mop_comtext]'>";
 foreach($items as $id=>$item) {
-	$selected = ($options['mop_comtext']==$item) ? 'selected="selected"' : '';
-	echo "<option value='$item' $selected>$itemsare[$id]</option>";
+	echo "<option value='$item'";
+	selected($options['mop_comtext'],$itemsare[$id]);
+	echo ">$item</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Hide the explanatory text under the comments form. (starts with  <i>You may use these HTML tags and attributes:...</i>).","mantra")."</small></div>";
@@ -773,8 +786,9 @@ function setting_backtop_fn() {
 	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
 	echo "<select id='mop_backtop' name='ma_options[mop_backtop]'>";
 foreach($items as $id=>$item) {
-	$selected = ($options['mop_backtop']==$item) ? 'selected="selected"' : '';
-	echo "<option value='$item' $selected>$itemsare[$id]</option>";
+	echo "<option value='$item'";
+	selected($options['mop_backtop'],$itemsare[$id]);
+	echo ">$item</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Enable the Back to Top button. The button appears after scrolling the page down.","mantra")."</small></div>";
@@ -783,7 +797,7 @@ foreach($items as $id=>$item) {
 // TEXTBOX - Name: ma_options[copyright]
 function setting_copyright_fn() {
 	global $options;
-	echo "<input id='mop_copyright' name='ma_options[mop_copyright]' size='40' type='text' value='{$options['mop_copyright']}' />";
+	echo "<input id='mop_copyright' name='ma_options[mop_copyright]' size='40' type='text' value='".esc_attr( $options['mop_copyright'] )."'  />";
 	echo "<div><small>".__("Insert custom text that will appear on the left side of the footer. Leave blank if that's not necessary.<br /> You can use HTML tags and any special characters like &copy .","mantra")."</small></div>";
 }
 
@@ -799,8 +813,9 @@ function setting_postdate_fn() {
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
 	echo "<select id='mop_postdate' name='ma_options[mop_postdate]'>";
 foreach($items as $id=>$item) {
-	$selected = ($options['mop_postdate']==$item) ? 'selected="selected"' : '';
-	echo "<option value='$item' $selected>$itemsare[$id]</option>";
+	echo "<option value='$item'";
+	selected($options['mop_postdate'],$itemsare[$id]);
+	echo ">$item</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Hide or show the post date.","mantra")."</small></div>";
@@ -813,8 +828,9 @@ function setting_posttime_fn() {
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
 	echo "<select id='mop_posttime' name='ma_options[mop_posttime]'>";
 foreach($items as $id=>$item) {
-	$selected = ($options['mop_posttime']==$item) ? 'selected="selected"' : '';
-	echo "<option value='$item' $selected>$itemsare[$id]</option>";
+	echo "<option value='$item'";
+	selected($options['mop_posttime'],$itemsare[$id]);
+	echo ">$item</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Show the post time with the date. Time will not be visible if the Post Date is hidden.","mantra")."</small></div>";
@@ -827,8 +843,9 @@ function setting_postauthor_fn() {
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
 	echo "<select id='mop_postauthor' name='ma_options[mop_postauthor]'>";
 foreach($items as $id=>$item) {
-	$selected = ($options['mop_postauthor']==$item) ? 'selected="selected"' : '';
-	echo "<option value='$item' $selected>$itemsare[$id]</option>";
+	echo "<option value='$item'";
+	selected($options['mop_postauthor'],$itemsare[$id]);
+	echo ">$item</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Hide or show the post author.","mantra")."</small></div>";
@@ -841,8 +858,9 @@ function setting_postcateg_fn() {
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
 	echo "<select id='mop_postcateg' name='ma_options[mop_postcateg]'>";
 foreach($items as $id=>$item) {
-	$selected = ($options['mop_postcateg']==$item) ? 'selected="selected"' : '';
-	echo "<option value='$item' $selected>$itemsare[$id]</option>";
+	echo "<option value='$item'";
+	selected($options['mop_postcateg'],$itemsare[$id]);
+	echo ">$item</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Hide the post category (and tags if available).","mantra")."</small></div>";
@@ -855,8 +873,9 @@ function setting_postbook_fn() {
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
 	echo "<select id='mop_postbook' name='ma_options[mop_postbook]'>";
 foreach($items as $id=>$item) {
-	$selected = ($options['mop_postbook']==$item) ? 'selected="selected"' : '';
-	echo "<option value='$item' $selected>$itemsare[$id]</option>";
+	echo "<option value='$item'";
+	selected($options['mop_postbook'],$itemsare[$id]);
+	echo ">$item</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Hide the 'Bookmark permalink'.","mantra")."</small></div>";
@@ -875,8 +894,9 @@ function setting_excerpthome_fn() {
 	$itemsare = array( __("Excerpt","mantra"), __("Full Post","mantra"));
 	echo "<select id='mop_excerpthome' name='ma_options[mop_excerpthome]'>";
 foreach($items as $id=>$item) {
-	$selected = ($options['mop_excerpthome']==$item) ? 'selected="selected"' : '';
-	echo "<option value='$item' $selected>$itemsare[$id]</option>";
+	echo "<option value='$item'";
+	selected($options['mop_excerpthome'],$itemsare[$id]);
+	echo ">$item</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Excerpts on the main page.","mantra")."</small></div>";
@@ -889,8 +909,9 @@ function setting_excerptasides_fn() {
 	$itemsare = array( __("Yes","mantra"), __("No","mantra"));
 	echo "<select id='mop_excerptasides' name='ma_options[mop_excerptasides]'>";
 foreach($items as $id=>$item) {
-	$selected = ($options['mop_excerptasides']==$item) ? 'selected="selected"' : '';
-	echo "<option value='$item' $selected>$itemsare[$id]</option>";
+	echo "<option value='$item'";
+	selected($options['mop_excerptasides'],$itemsare[$id]);
+	echo ">$item</option>";
 
 }
 	echo "</select>";
@@ -904,8 +925,9 @@ function setting_excerptarchive_fn() {
 	$itemsare = array( __("Excerpt","mantra"), __("Full Post","mantra"));
 	echo "<select id='mop_excerptarchive' name='ma_options[mop_excerptarchive]'>";
 foreach($items as $id=>$item) {
-	$selected = ($options['mop_excerptarchive']==$item) ? 'selected="selected"' : '';
-	echo "<option value='$item' $selected>$itemsare[$id]</option>";
+	echo "<option value='$item'";
+	selected($options['mop_excerptarchive'],$itemsare[$id]);
+	echo ">$item</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Excerpts on archive, categroy and search pages.","mantra")."</small></div>";
@@ -917,8 +939,9 @@ function setting_excerptwords_fn() {
 	$items = array ("200" , "150", "120", "100", "75", "60", "50", "40", "30", "20", "10", "0");
 	echo "<select id='mop_excerptwords' name='ma_options[mop_excerptwords]'>";
 foreach($items as $item) {
-	$selected = ($options['mop_excerptwords']==$item) ? 'selected="selected"' : '';
-	echo "<option value='$item' $selected>$item</option>";
+	echo "<option value='$item'";
+	selected($options['mop_excerptwords'],$item);
+	echo ">$item</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Number of words for an excerpt.","mantra")."</small></div>";
@@ -927,14 +950,14 @@ foreach($items as $item) {
 // TEXTBOX - Name: ma_options[excerptdots]
 function setting_excerptdots_fn() {
 	global $options;
-	echo "<input id='mop_excerptdots' name='ma_options[mop_excerptdots]' size='40' type='text' value='{$options['mop_excerptdots']}' />";
+	echo "<input id='mop_excerptdots' name='ma_options[mop_excerptdots]' size='40' type='text' value='".esc_attr( $options['mop_excerptdots'] )."'  />";
 	echo "<div><small>".__("Replaces the three dots ('[...])' that are appended automatically to excerpts.","mantra")."</small></div>";
 }
 
 // TEXTBOX - Name: ma_options[excerptcont]
 function setting_excerptcont_fn() {
 	global $options;
-	echo "<input id='mop_excerptcont' name='ma_options[mop_excerptcont]' size='40' type='text' value='{$options['mop_excerptcont']}' />";
+	echo "<input id='mop_excerptcont' name='ma_options[mop_excerptcont]' size='40' type='text' value='".esc_attr( $options['mop_excerptcont'] )."'  />";
 	echo "<div><small>".__("Edit the 'Continue Reading' link added to your post excerpts.","mantra")."</small></div>";
 }
 
@@ -951,8 +974,9 @@ function setting_fpost_fn() {
 	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
 	echo "<select id='mop_fpost' name='ma_options[mop_fpost]'>";
 foreach($items as $id=>$item) {
-	$selected = ($options['mop_fpost']==$item) ? 'selected="selected"' : '';
-	echo "<option value='$item' $selected>$itemsare[$id]</option>";
+	echo "<option value='$item'";
+	selected($options['mop_fpost'],$itemsare[$id]);
+	echo ">$item</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Show featured imaged on posts. Default image size is 250 x 190 px.","mantra")."</small></div>";
@@ -966,21 +990,21 @@ foreach($items as $id=>$item) {
 // TEXTBOX - Name: ma_options[facebook]
 function setting_facebook_fn() {
 	global $options;
-	echo "<input id='mop_facebook' name='ma_options[mop_facebook]' size='40' type='text' value='{$options['mop_facebook']}' />";
+	echo "<input id='mop_facebook' name='ma_options[mop_facebook]' size='40' type='text'  value='".esc_attr( $options['mop_facebook'] )."'  />";
 	echo "<div><small>".__("Insert your Facebook address. ","mantra")."</small></div>";
 }
 
 // TEXTBOX - Name: ma_options[tweeter]
 function setting_tweeter_fn() {
 	global $options;
-	echo "<input id='mop_tweeter' name='ma_options[mop_tweeter]' size='40' type='text' value='{$options['mop_tweeter']}' />";
+	echo "<input id='mop_tweeter' name='ma_options[mop_tweeter]' size='40' type='text'  value='".esc_attr( $options['mop_tweeter'] )."'  />";
 	echo "<div><small>".__("Insert your Twitter address.","mantra")."</small></div> ";
 }
 
 // TEXTBOX - Name: ma_options[rss]
 function setting_rss_fn() {
 	global $options;
-	echo "<input id='mop_rss' name='ma_options[mop_rss]' size='40' type='text' value='{$options['mop_rss']}' />";
+	echo "<input id='mop_rss' name='ma_options[mop_rss]' size='40' type='text'  value='".esc_attr( $options['mop_rss'] )."'  />";
 	echo "<div><small>".__("Insert your RSS Feed Link. ","mantra")."</small></div>";
 }
 
@@ -1053,6 +1077,7 @@ function mantra_page_fn() {
 <div class="wrap">
 	<div class="icon32" id="icon-options-general"><br></div>
 	<h2><?php _e("Mantra Settings","mantra"); ?></h2>
+<div class="lefty">
 <?php if ( isset( $_GET['settings-updated'] ) ) {
     echo "<div class='updated'><p>";
 	echo _e('Mantra settings updated successfully.','mantra');
@@ -1073,7 +1098,8 @@ function mantra_page_fn() {
 
 	<span> Mantra v. 1.6 - by <a href="http://www.cryoutcreations.eu">Cryout Creations</a></span>
 </div>
-<div class="wrap2" >
+
+<div class="righty" >
 	<div class="postbox donate"> 
 	<h3 class="hndle"> Support the developer </h3>
 	<div class="inside"><?php _e("<p>Here at Cryout Creations (the developers of yours truly Mantra Theme), we spend night after night improving the Mantra Theme. We fix a lot of bugs (that we previously created); we add more and more customization options while also trying to keep things as simple as possible; then... we might play a game or two but rest assured that we return to read and (in most cases) reply to your late night emails and comments, take notes and draw dashboards of things to implement in future versions.</p>
@@ -1089,8 +1115,8 @@ uGoJV/7kErByS98U5Gze/kUo5OvpezDjckdR0TJfoNFDKiAit+Qf9+ToViM/CmY2cONArejftWlnEKik
 </div>
 
 <div class="postbox support"> 
-<h3 class="hndle"> Mantra Help </h3>
-<br />
+	<h3 class="hndle"> Mantra Help </h3>
+	<br />
 <div class="inside">
 	<?php _e("
 <ul>
@@ -1101,16 +1127,14 @@ uGoJV/7kErByS98U5Gze/kUo5OvpezDjckdR0TJfoNFDKiAit+Qf9+ToViM/CmY2cONArejftWlnEKik
 <li>- Want a setting implemented?</li>
 <li>- Want to modify something yourself?</li>
 </ul>
-
-
 <p>Then pay us a visit at Mantra's support page.</p>
-
 ","mantra"); ?>
 	<a style="display:block;float:none;margin:0 auto;text-align:center;padding-bottom:10px;" href='http://www.riotreactions.com/mantra'>Mantra Help Page</a>
 </div>
 </div>
 
 
+</div>
 
 </div>
 <script type="text/javascript">
@@ -1153,9 +1177,15 @@ startfarb("#mop_footerhover","#mop_footerhover2");
 		jQuery( "#accordion" ).accordion({
 				 header: 'h3',
 			autoHeight: false,
-			navigation: true });
-	});
+			collapsible: true,
+			navigation: true,
+			active: false });
 
+
+
+
+
+	});
 
 function changeBorder (idName, className) {
 jQuery('.'+className).css('borderColor','#FFF');
@@ -1175,6 +1205,7 @@ return 0;
 
 // Validate user data
 function ma_options_validate($input) {
+global $mantra_defaults;
 	// Sanitize the texbox input
 	$input['mop_copyright'] =  wp_kses_data($input['mop_copyright']);
 	$input['mop_facebook'] =  wp_kses_data($input['mop_facebook']);
@@ -1204,6 +1235,13 @@ function ma_options_validate($input) {
 	$input['mop_facebook'] =  wp_kses_data($input['mop_facebook']);
 	$input['mop_tweeter'] =  wp_kses_data($input['mop_tweeter']);
 	$input['mop_rss'] =  wp_kses_data($input['mop_rss']);
+
+$itemsSide = array("Left", "Right", "Disable");
+if ( !in_array ($input['mop_side'],$itemsSide) ) {
+ $input['mop_side']= $mantra_defaults['mop_side'];
+}
+
+
 
 
 	return $input; // return validated input
