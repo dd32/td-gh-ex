@@ -45,9 +45,7 @@
 
 <?php if ('open' == $post->comment_status) : ?>
 	
-		<?php comment_form(); ?>
-	
-	<?php endif; // If registration required and not logged in ?>
-	
+	<?php comment_form(); ?>
+
 <?php endif; // if you delete this the sky will fall on your head ?>
 </div>
