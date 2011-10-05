@@ -45,10 +45,6 @@
 
 <?php if ('open' == $post->comment_status) : ?>
 	
-	<?php if ( get_option('comment_registration') && !$user_ID ) : ?>
-	<p>You must be <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>">logged in</a> to post a comment.</p>
-	<?php else : ?>
-	
 		<?php comment_form(); ?>
 	
 	<?php endif; // If registration required and not logged in ?>

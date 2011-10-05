@@ -1,8 +1,8 @@
 /*
 Theme Name: Babylog
 Theme URI: 
-Description: A sweet, illustrated theme for baby blogs.
-Version: 1.0
+Description: A sweet, illustrated theme for baby blogs featuring four color palettes and a customizable header graphic.
+Version: 1.2
 Author: Caroline Moore
 Author URI: http://www.carolinemoore.net
 License: CC0 1.0 Universal
@@ -113,6 +113,12 @@ hr {
 .navigation a,
 .navigation a:visited {
 	color: #fff;
+}
+.page-template-page-nosidebar-php .content,
+.page-template-page-nosidebar-php .post_header
+ {
+	width: auto;
+	display: block;
 }
 .post_header {
 	font-family: Vidaloka, Georgia, "Times New Roman", Times, serif;

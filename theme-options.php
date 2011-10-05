@@ -4,7 +4,7 @@ add_action( 'admin_init', 'theme_options_init' );
 add_action( 'admin_menu', 'theme_options_add_page' );
 
 /**
- * Init plugin options to white list our options
+ * Init theme options to white list our options
  */
 function theme_options_init(){
 	register_setting( 'babylog_options', 'babylog_theme_options', 'theme_options_validate' );
@@ -14,63 +14,63 @@ function theme_options_init(){
  * Load up the menu page
  */
 function theme_options_add_page() {
-	add_theme_page( __( 'Theme Options', 'babylogtheme' ), __( 'Theme Options', 'babylogtheme' ), 'edit_theme_options', 'theme_options', 'theme_options_do_page' );
+	add_theme_page( 'Theme Options', 'Theme Options', 'edit_theme_options', 'theme_options', 'theme_options_do_page' );
 } 
  
 /**
  * Create arrays for our theme options
  */
 
-$radio_options = array(
+$blogcolor_options = array(
 	'blue' => array(
 		'value' => 'blue',
-		'label' => __( 'Blue', 'babylogtheme' )
+		'label' => 'Blue'
 	),
 	'pink' => array(
 		'value' => 'pink',
-		'label' => __( 'Pink', 'babylogtheme' )
+		'label' => 'Pink'
 	),
 	'green' => array(
 		'value' => 'green',
-		'label' => __( 'Green', 'babylogtheme' )
+		'label' => 'Green'
 	),
 	'purple' => array(
 		'value' => 'purple',
-		'label' => __( 'Purple', 'babylogtheme' )
+		'label' => 'Purple'
 	)
 );
 
-$radio2_options = array(
+$skincolor_options = array(
 	'light' => array(
 		'value' => 'light',
-		'label' => __( 'Light', 'babylogtheme' )
+		'label' => 'Light'
 	),
 	'medium' => array(
 		'value' => 'medium',
-		'label' => __( 'Medium', 'babylogtheme' )
+		'label' => 'Medium'
 	),
 	'dark' => array(
 		'value' => 'dark',
-		'label' => __( 'Dark', 'babylogtheme' )
+		'label' => 'Dark'
 	)
 );
 
-$radio3_options = array(
+$haircolor_options = array(
 	'brown' => array(
 		'value' => 'brown',
-		'label' => __( 'Brown', 'babylogtheme' )
+		'label' => 'Brown'
 	),
 	'black' => array(
 		'value' => 'black',
-		'label' => __( 'Black', 'babylogtheme' )
+		'label' => 'Black'
 	),
 	'blonde' => array(
 		'value' => 'blonde',
-		'label' => __( 'Blonde', 'babylogtheme' )
+		'label' => 'Blonde'
 	),
 	'red' => array(
 		'value' => 'red',
-		'label' => __( 'Red', 'babylogtheme' )
+		'label' => 'Red'
 	)
 );
 
@@ -79,7 +79,7 @@ $radio3_options = array(
  */
 function theme_options_do_page() {
 		
-	global $radio_options, $radio2_options, $radio3_options;
+	global $blogcolor_options, $skincolor_options, $haircolor_options;
 
 	if ( ! isset( $_REQUEST['settings-updated'] ) )
 		$_REQUEST['settings-updated'] = false;
@@ -87,10 +87,10 @@ function theme_options_do_page() {
 	?>
 	<div class="wrap">
 
-		<?php screen_icon(); echo "<h2>" . get_current_theme() . __( ' Theme Options', 'babylogtheme' ) . "</h2>"; ?>
+		<?php screen_icon(); echo "<h2>" . get_current_theme() . ' Theme Options' . "</h2>"; ?>
 
 		<?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
-		<div class="updated fade"><p><strong><?php _e( 'Options saved', 'babylogtheme' ); ?></strong></p></div>
+		<div class="updated fade"><p><strong>Options saved</strong></p></div>
 		<?php endif; ?>
 
 		<form method="post" action="options.php">
@@ -104,24 +104,16 @@ function theme_options_do_page() {
 				 * Color Scheme
 				 */
 				?>
-				<tr valign="top"><th scope="row"><strong><?php _e( 'Color Scheme', 'babylogtheme' ); ?></strong></th>
+				<tr valign="top"><th scope="row"><strong>Color Scheme</strong></th>
 					<td>
-						<fieldset><legend class="screen-reader-text"><span><?php _e( 'Color Scheme', 'babylogtheme' ); ?></span></legend>
+						<fieldset><legend class="screen-reader-text"><span>Color Scheme</span></legend>
 						<?php
-							if ( ! isset( $checked ) )
-								$checked = '';
-							foreach ( $radio_options as $option ) {
-								$radio_setting = $options['radioinput'];
-
-								if ( '' != $radio_setting ) {
-									if ( $options['radioinput'] == $option['value'] ) {
-										$checked = "checked=\"checked\"";
-									} else {
-										$checked = '';
-									}
-								}
-								?>
-								<label class="description"><input type="radio" name="babylog_theme_options[radioinput]" value="<?php esc_attr_e( $option['value'] ); ?>" <?php echo $checked; ?> /> <?php echo $option['label']; ?></label><br />
+							
+							foreach ( $blogcolor_options as $option ) {
+								$radio_setting = $options['blogcolorinput'];
+								
+						?>
+								<label class="description"><input type="radio" name="babylog_theme_options[blogcolorinput]" value="<?php echo esc_attr( $option['value'] ); ?>" <?php checked ( $option['value'], $options['blogcolorinput'] ); ?> /> <?php echo $option['label']; ?></label><br />
 								<?php
 							}
 						?>
@@ -134,24 +126,16 @@ function theme_options_do_page() {
 				 * Skin Tone
 				 */
 				?>
-				<tr valign="top"><th scope="row"><strong><?php _e( 'Skin Tone', 'babylogtheme' ); ?></strong></th>
+				<tr valign="top"><th scope="row"><strong>Skin Tone</strong></th>
 					<td>
-						<fieldset><legend class="screen-reader-text"><span><?php _e( 'Skin Tone', 'babylogtheme' ); ?></span></legend>
+						<fieldset><legend class="screen-reader-text"><span>Skin Tone</span></legend>
 						<?php
-							if ( ! isset( $checked ) )
-								$checked = '';
-							foreach ( $radio2_options as $option ) {
-								$radio_setting = $options['radioinput2'];
+							
+							foreach ( $skincolor_options as $option ) {
+								$radio_setting = $options['skincolorinput'];
 
-								if ( '' != $radio_setting ) {
-									if ( $options['radioinput2'] == $option['value'] ) {
-										$checked = "checked=\"checked\"";
-									} else {
-										$checked = '';
-									}
-								}
 								?>
-								<label class="description"><input type="radio" name="babylog_theme_options[radioinput2]" value="<?php esc_attr_e( $option['value'] ); ?>" <?php echo $checked; ?> /> <?php echo $option['label']; ?></label><br />
+								<label class="description"><input type="radio" name="babylog_theme_options[skincolorinput]" value="<?php echo esc_attr( $option['value'] ); ?>" <?php checked ( $option['value'] , $options['skincolorinput'] ); ?> /> <?php echo $option['label']; ?></label><br />
 						<?php
 							}
 						?>
@@ -164,46 +148,26 @@ function theme_options_do_page() {
 				 * Hair Color
 				 */
 				?>
-				<tr valign="top"><th scope="row"><strong><?php _e( 'Hair Color', 'babylogtheme' ); ?></strong></th>
+				<tr valign="top"><th scope="row"><strong>Hair Color</strong></th>
 					<td>
-						<fieldset><legend class="screen-reader-text"><span><?php _e( 'Hair Color', 'babylogtheme' ); ?></span></legend>
+						<fieldset><legend class="screen-reader-text"><span>Hair Color</span></legend>
 						<?php
-							if ( ! isset( $checked ) )
-								$checked = '';
-							foreach ( $radio3_options as $option ) {
-								$radio_setting = $options['radioinput3'];
+							
+							foreach ( $haircolor_options as $option ) {
+								$radio_setting = $options['haircolorinput'];
 
-								if ( '' != $radio_setting ) {
-									if ( $options['radioinput3'] == $option['value'] ) {
-										$checked = "checked=\"checked\"";
-									} else {
-										$checked = '';
-									}
-								}
 								?>
-								<label class="description"><input type="radio" name="babylog_theme_options[radioinput3]" value="<?php esc_attr_e( $option['value'] ); ?>" <?php echo $checked; ?> /> <?php echo $option['label']; ?></label><br />
+								<label class="description"><input type="radio" name="babylog_theme_options[haircolorinput]" value="<?php echo esc_attr( $option['value'] ); ?>" <?php checked ( $option['value'] , $options['haircolorinput'] ); ?> /> <?php echo $option['label']; ?></label><br />
 						<?php
 							}
 						?>
 						</fieldset>
 					</td>
 				</tr>
-
-				<?php
-				/**
-				 * Custom CSS
-				 */
-				?>
-				<tr valign="top"><th scope="row"><strong><?php _e( 'Custom CSS', 'babylogtheme' ); ?></strong></th>
-					<td>
-						<textarea id="babylog_theme_options[sometextarea]" class="large-text" cols="50" rows="10" name="babylog_theme_options[sometextarea]"><?php echo esc_textarea( $options['sometextarea'] ); ?></textarea>
-						<label class="description" for="babylog_theme_options[sometextarea]"><?php _e( 'Add any custom CSS here so it will persist through theme updates.', 'babylogtheme' ); ?></label>
-					</td>
-				</tr>
 			</table>
 
 			<p class="submit">
-				<input type="submit" class="button-primary" value="<?php _e( 'Save Options', 'babylogtheme' ); ?>" />
+				<input type="submit" class="button-primary" value="Save Options" />
 			</p>
 		</form>
 	</div>
@@ -214,28 +178,25 @@ function theme_options_do_page() {
  * Sanitize and validate input. Accepts an array, return a sanitized array.
  */
 function theme_options_validate( $input ) {
-	global $radio_options, $radio2_options, $radio3_options;
+	global $blogcolor_options, $skincolor_options, $haircolor_options;
 
 	// Our Color Scheme must actually be in our array of radio options
-	if ( ! isset( $input['radioinput'] ) )
-		$input['radioinput'] = null;
-	if ( ! array_key_exists( $input['radioinput'], $radio_options ) )
-		$input['radioinput'] = null;
+	if ( ! isset( $input['blogcolorinput'] ) )
+		$input['blogcolorinput'] = null;
+	if ( ! array_key_exists( $input['blogcolorinput'], $blogcolor_options ) )
+		$input['blogcolorinput'] = null;
 		
 	// Our Skin Tone must actually be in our array of radio options
-	if ( ! isset( $input['radioinput2'] ) )
-		$input['radioinput2'] = null;
-	if ( ! array_key_exists( $input['radioinput2'], $radio2_options ) )
-		$input['radioinput2'] = null;
+	if ( ! isset( $input['skincolorinput'] ) )
+		$input['skincolorinput'] = null;
+	if ( ! array_key_exists( $input['skincolorinput'], $skincolor_options ) )
+		$input['skincolorinput'] = null;
 		
 	// Our Hair Color must actually be in our array of radio options
-	if ( ! isset( $input['radioinput3'] ) )
-		$input['radioinput3'] = null;
-	if ( ! array_key_exists( $input['radioinput3'], $radio3_options ) )
-		$input['radioinput3'] = null;
-
-	// Say our textarea option must be safe text with the allowed tags for posts
-	$input['sometextarea'] = wp_filter_post_kses( $input['sometextarea'] );
+	if ( ! isset( $input['haircolorinput'] ) )
+		$input['haircolorinput'] = null;
+	if ( ! array_key_exists( $input['haircolorinput'], $haircolor_options ) )
+		$input['haircolorinput'] = null;
 
 	return $input;
 }

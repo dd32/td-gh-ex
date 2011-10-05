@@ -7,11 +7,18 @@ require_once ( get_template_directory() . '/theme-options.php' );
 
 add_action( 'wp_print_styles', 'bbl_print_styles' );
 
+
 function bbl_print_styles() {
 	if ( ! is_admin() ) {
+		
+		wp_register_style('googleFonts', 'http://fonts.googleapis.com/css?family=Vidaloka');
+		wp_enqueue_style( 'googleFonts');
+ 
 		$options = get_option('babylog_theme_options');
-
-		$bbl_themestyle = $options['radioinput'];
+		
+		$bbl_themestyle = $options['blogcolorinput'];
+		$bbl_skin = $options['skincolorinput'];
+		$bbl_hair = $options['haircolorinput'];
 
 		if ( file_exists( get_template_directory() . '/pink.css' ) && 'pink' == $bbl_themestyle ) {
 			wp_register_style( 'bbl_pink', get_template_directory_uri() . '/pink.css' );
@@ -26,7 +33,28 @@ function bbl_print_styles() {
 			wp_register_style( 'bbl_purple', get_template_directory_uri() . '/purple.css' );
 			wp_enqueue_style( 'bbl_purple' );
 		}
-	}
+		
+		if ( $bbl_themestyle ) { 
+			$color = $options['blogcolorinput'];
+		} else {
+			$color = "purple";
+		}
+		
+		if ( $bbl_skin ) { 
+			$skin = $options['skincolorinput'];
+		} else {
+			$skin = "light";
+		}
+		
+		if ( $bbl_hair ) { 
+			$hair = $options['haircolorinput'];
+		} else {
+			$hair = "brown";
+		}
+		
+		echo "<style type='text/css'>";
+		echo ".baby-graphic { background-image:url(" . get_template_directory_uri() . "/images/" . $color . "-" . $skin . "-" . $hair . '.png) }';
+		echo "</style>";	}
 }
 
 register_sidebar( array(
