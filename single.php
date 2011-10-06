@@ -13,28 +13,26 @@ get_header();
 		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 			<div class="post_header">
 				<h2 class="page_title">
-					<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+					<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permanent Link to' , 'babylog' ) ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 				</h2>
 				<span class="post_date">
-					<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_time( get_option( 'date_format' ) ); ?></a>
+					<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permanent Link to' , 'babylog' ) ?> <?php the_title_attribute(); ?>"><?php the_time( get_option( 'date_format' ) ); ?></a>
 				</span>
 			</div> 
 			
 			<div class="entry">
-				<small>by <?php the_author() ?></small>
+				<small><?php _e( 'by' , 'babylog' ); ?> <?php the_author() ?></small>
 
-				<?php the_content('<p class="serif">Read the rest of this entry &raquo;</p>'); ?>
+				<?php the_content( __( 'Read the rest of this entry' , 'babylog' ) . ' &raquo;'); ?>
 
-				<?php wp_link_pages(array('before' => '<p class="clear"><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
+				<?php wp_link_pages( array( 'before' => '<p class="clear"><strong>' . __( 'Pages:' , 'babylog' ) . '</strong> ', 'after' => '</p>', 'next_or_number' => 'number' ) ); ?>
 
-				
-
-				<p><?php edit_post_link('Edit This Entry'); ?></p>
+				<p><?php edit_post_link( __( 'Edit this entry' , 'babylog' ) ); ?></p>
 				
 				<?php the_tags( '<p class="clear">Tags: ', ', ', '</p>'); ?><hr />					
 					<?php the_category() ?>
 				
-					<div class="comments-link"><?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?></div>
+					<div class="comments-link"><?php comments_popup_link( __( 'No Comments' , 'babylog' ) . ' &#187;', '1 ' . __( 'Comment' , 'babylog' ) . ' &#187;', '% ' . __( 'Comments' , 'babylog' ) . ' &#187;'); ?></div>
 					<div class="clear"></div>
 			</div>
 			
@@ -48,7 +46,9 @@ get_header();
 	</div>
 	<?php endwhile; else: ?>
 
-		<p>Sorry, no posts matched your criteria.</p>
+		<h2 class="page_title"><?php _e( 'Not Found' , 'babylog' ) ?></h2>
+		<p class="aligncenter"><?php _e( 'Sorry, no posts matched your criteria.', 'babylog' ) ?></p>
+		<?php get_search_form(); ?>
 
 <?php endif; ?>
 

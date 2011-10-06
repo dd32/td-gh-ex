@@ -22,12 +22,12 @@
 
 <div class="wrapper">
 	<div class="header">
-    	<div class="title"><a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a></div>
+    	<div class="title"><a href="<?php echo home_url(); ?>" title="<?php bloginfo( 'name' ); ?>"><?php bloginfo('name'); ?></a></div>
 	  	<div class="baby-graphic">&nbsp;</div>
-	  	<div class="tagline"><?php bloginfo('description'); ?></div>
+	  	<div class="tagline"><?php bloginfo( 'description' ); ?></div>
 	  	<div class="tabmenu">
 	      	<?php 
-	      		$menu = has_nav_menu('tabmenu');
+	      		$menu = has_nav_menu( 'tabmenu' );
 	      		if ( $menu ) { 
 	      			wp_nav_menu( array( 'theme_location' => 'tabmenu', 'depth' => '1' ) ); 
 	      		} ?>

@@ -6,16 +6,17 @@
 // Do not delete these lines
 
 	if ( post_password_required() ) { ?>
-		<p class="nocomments">This post is password protected. Enter the password to view comments.</p>
+		<p class="nocomments"><?php _e( 'This post is password protected. Enter the password to view comments.' , 'babylog' ) ?></p>
 	<?php
 		return;
 	}
 ?>
 
 <!-- You can start editing here. -->
-<div class="comments-area">
 <?php if ( have_comments() ) : ?>
-	<h3 id="comments" class="page_title"><?php comments_number('No Responses', 'One Response', '% Responses' );?> to &#8220;<?php the_title(); ?>&#8221;</h3>
+	<h3 id="comments" class="page_title">
+		<?php comments_number( __( 'No Responses' , 'babylog' ) , __( 'One Response' , 'babylog' ) , '% ' . __( 'Responses' , 'babylog' ) );?> <?php _e( 'to' , 'babylog' ) ?> &#8220;<?php the_title(); ?>&#8221;
+	</h3>
 
 	<div class="navigation">
 		<div class="alignleft"><?php previous_comments_link() ?></div>
@@ -23,7 +24,7 @@
 	</div>
 
 	<ol class="commentlist">
-	<?php wp_list_comments(); ?>
+		<?php wp_list_comments(); ?>
 	</ol>
 
 	<div class="navigation">
@@ -37,7 +38,7 @@
 
 	 <?php else : // comments are closed ?>
 		<!-- If comments are closed. -->
-		<p class="nocomments">Comments are closed.</p>
+		<p class="nocomments"><?php _e( 'Comments are closed.' , 'babylog' ) ?></p>
 
 	<?php endif; ?>
 <?php endif; ?>
@@ -48,4 +49,3 @@
 	<?php comment_form(); ?>
 
 <?php endif; // if you delete this the sky will fall on your head ?>
-</div>

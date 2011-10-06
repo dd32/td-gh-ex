@@ -7,7 +7,6 @@ require_once ( get_template_directory() . '/theme-options.php' );
 
 add_action( 'wp_print_styles', 'bbl_print_styles' );
 
-
 function bbl_print_styles() {
 	if ( ! is_admin() ) {
 		
@@ -19,6 +18,7 @@ function bbl_print_styles() {
 		$bbl_themestyle = $options['blogcolorinput'];
 		$bbl_skin = $options['skincolorinput'];
 		$bbl_hair = $options['haircolorinput'];
+		$bbl_customcss = $options['customcss'];
 
 		if ( file_exists( get_template_directory() . '/pink.css' ) && 'pink' == $bbl_themestyle ) {
 			wp_register_style( 'bbl_pink', get_template_directory_uri() . '/pink.css' );
@@ -54,12 +54,17 @@ function bbl_print_styles() {
 		
 		echo "<style type='text/css'>";
 		echo ".baby-graphic { background-image:url(" . get_template_directory_uri() . "/images/" . $color . "-" . $skin . "-" . $hair . '.png) }';
+		echo "\n";
+		if ( $bbl_customcss ) { 
+			echo $bbl_customcss; 
+		}
 		echo "</style>";	}
+		 
 }
 
 register_sidebar( array(
 	'id' => 'right-sidebar',
-	'name' => 'Right Sidebar',
+	'name' => __( 'Right Sidebar', 'babylog' ),
 	'before_widget' => '<li id="%1$s" class="widget %2$s">',
 	'after_widget' => '</li>',
 	'before_title' => '<h2 class="widgettitle">',
@@ -77,5 +82,13 @@ if ( ! isset( $content_width ) )
 add_theme_support('automatic-feed-links');
 
 add_custom_background();
+
+load_theme_textdomain( 'babylog', get_template_directory() . '/languages' );
+
+$locale = get_locale();
+$locale_file = get_template_directory() . "/languages/$locale.php";
+if ( is_readable( $locale_file ) ) {
+	require_once( $locale_file );
+}
 
 ?>
