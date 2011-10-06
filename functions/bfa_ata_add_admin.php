@@ -2,14 +2,6 @@
 function bfa_ata_add_admin() {
 	global $options, $bfa_ata;
 
-	// Since 3.6.8:
-	if ( get_magic_quotes_gpc() ) {
-		$_POST      = array_map( 'stripslashes_deep', $_POST );
-		$_GET       = array_map( 'stripslashes_deep', $_GET );
-		$_COOKIE    = array_map( 'stripslashes_deep', $_COOKIE );
-		$_REQUEST   = array_map( 'stripslashes_deep', $_REQUEST );
-	}
-
 	if ( isset($_GET['page'])) {
 	   if ( $_GET['page'] == "atahualpa-options" ) {
 		
