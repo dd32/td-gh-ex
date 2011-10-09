@@ -77,8 +77,8 @@ add_action( 'widgets_init', 'asokay_widgets_init' );
 
 define('HEADER_TEXTCOLOR', '333333');
 define('HEADER_IMAGE', '%s/images/header.jpg');
-define('HEADER_IMAGE_WIDTH', 1000);
-define('HEADER_IMAGE_HEIGHT', 250);
+define('HEADER_IMAGE_WIDTH', 940);
+define('HEADER_IMAGE_HEIGHT', 240);
  
 function asokay_header_style() {
     ?><style type="text/css">

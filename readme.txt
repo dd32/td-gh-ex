@@ -23,4 +23,6 @@ Support is available at the <a href='http://forum.andreasviklund.com/'>andreasvi
 
 == Changelog ==
 
-Version 1.0.1 - initial release.
+Version 1.0.4 - Fixed a header image size bug.
+
+Version 1.0.3 - Initial release.
