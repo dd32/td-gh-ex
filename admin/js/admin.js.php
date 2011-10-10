@@ -44,31 +44,31 @@
 		$('#social-media-new').click(function(){
 			$('.social-media-table tbody').append('\
 					<tr class="new-social-media new-social-media-name">\
-						<th scope="row"><label for="social_media_new_'+count+'_name"><?php _e('Social Media name', 'graphene'); ?></label></th>\
+						<th scope="row"><label for="social_media_new_'+count+'_name"><?php echo esc_js( __( 'Social Media name', 'graphene' ) ); ?></label></th>\
 						<td>\
 							<input type="text" name="graphene_settings[social_media_new]['+count+'][name]" id="social_media_new_'+count+'_name" value="" size="60" class="widefat code" /><br />\
-							<span class="description"><?php _e('Name of the social media, e.g. LinkedIn, etc.', 'graphene'); ?></span>\
+							<span class="description"><?php echo esc_js( __( 'Name of the social media, e.g. LinkedIn, etc.', 'graphene' ) ); ?></span>\
 						</td>\
 					</tr>\
                                         <tr class="new-social-media">\
-						<th scope="row"><label for="social_media_new_'+count+'_title"><?php _e('Social Media title', 'graphene'); ?></label></th>\
+						<th scope="row"><label for="social_media_new_'+count+'_title"><?php echo esc_js( __( 'Social Media title', 'graphene' ) ); ?></label></th>\
 						<td>\
 							<input type="text" name="graphene_settings[social_media_new]['+count+'][title]" id="social_media_new_'+count+'_title" value="" size="60" class="widefat code" /><br />\
-							<span class="description"><?php _e('Title for the social media, leave empty for generated title.', 'graphene'); ?></span>\
+							<span class="description"><?php echo esc_js( __( 'Title for the social media, leave empty for generated title.', 'graphene' ) ); ?></span>\
 						</td>\
 					</tr>\
 					<tr class="new-social-media">\
-						<th scope="row"><label for="social_media_new_'+count+'_url"><?php _e('Social Media profile URL', 'graphene'); ?></label></th>\
+						<th scope="row"><label for="social_media_new_'+count+'_url"><?php echo esc_js( __('Social Media profile URL', 'graphene' ) ); ?></label></th>\
 						<td>\
 							<input type="text" name="graphene_settings[social_media_new]['+count+'][url]" id="social_media_new_'+count+'_url" value="" size="60" class="widefat code" /><br />\
-							<span class="description"><?php _e('URL to your page for the social media.', 'graphene'); ?></span>\
+							<span class="description"><?php echo esc_js( __( 'URL to your page for the social media.', 'graphene' ) ); ?></span>\
 						</td>\
 					</tr>\
 					<tr class="new-social-media">\
-						<th scope="row"><label for="social_media_new_'+count+'_icon"><?php echo esc_js( __('Social Media icon URL', 'graphene') ); ?></label></th>\
+						<th scope="row"><label for="social_media_new_'+count+'_icon"><?php echo esc_js( __( 'Social Media icon URL', 'graphene' ) ); ?></label></th>\
 						<td>\
 							<input type="text" name="graphene_settings[social_media_new]['+count+'][icon]" id="social_media_new_'+count+'_icon" value="" size="60" class="widefat code" /><br />\
-							<span class="description"><?php printf(__('URL to the social media icon. <strong>Note:</strong> the theme uses the %s icon set for the social media icons. Please do not hotlink the icons on the site. Download the icons you need and upload them to your server instead.', 'graphene'), '<a href="http://www.iconfinder.com/search/?q=iconset%3Asocialmediabookmark">Social Media Bookmark</a>'); ?></span>\
+							<span class="description"><?php printf( esc_js( __( 'URL to the social media icon. <strong>Note:</strong> the theme uses the %s icon set for the social media icons. Please do not hotlink the icons on the site. Download the icons you need and upload them to your server instead.', 'graphene' ) ), '<a href="http://www.iconfinder.com/search/?q=iconset%3Asocialmediabookmark">Social Media Bookmark</a>' ); ?></span>\
 						</td>\
 					</tr>\
 			');

@@ -4,6 +4,13 @@ http://www.khairul-syahir.com
 
 CHANGELOG
 
+Version 1.5.3
+	* Fixed Custom CSS being applied on admin pages
+	* Fixed broken admin javascript when French translation is being used due to inline single quotes in the translation
+	* Fixed an issue with comments/pings jQuery tabbing
+	* Fixed an issue with using the <!--nextpage--> tag in sites using the French translation
+	* Fixed the orderby parameter of custom queries
+
 Version 1.5.2
 	* Fixed colour picker not available for the text style colour options
 	* Fixed an issue with the footer widget custom column count CSS that causes colour settings to not be applied

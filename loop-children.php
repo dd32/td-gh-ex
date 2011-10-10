@@ -13,7 +13,7 @@ if ( $graphene_settings['child_page_listing'] == 'show_always' ||
     /* Get the child pages */
     $args = array(
         'post_parent' 		=> $post->ID,
-        'orderby' 			=> 'menu_order, title',
+        'orderby' 			=> 'menu_order title',
 		'order' 			=> 'ASC',
         'post_type' 		=> 'page',
 		'posts_per_page' 	=> -1

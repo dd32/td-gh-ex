@@ -160,7 +160,7 @@
                         <?php the_excerpt(); ?>
                     <?php endif; ?>
                     
-                    <?php wp_link_pages(array('before' => __('<div class="link-pages"><p><strong>Pages:</strong> ','graphene'), 'after' => '</p></div>', 'next_or_number' => 'number')); ?>
+                    <?php wp_link_pages( array( 'before' => '<div class="link-pages"><p><strong>' . __( 'Pages:','graphene' ) . '</strong> ', 'after' => '</p></div>', 'next_or_number' => 'number' ) ); ?>
                     
                     <?php do_action('graphene_after_post_content'); ?>
                     

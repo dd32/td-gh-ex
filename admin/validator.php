@@ -69,7 +69,7 @@ function graphene_settings_validator( $input ){
 			--------------------------------------------------------------------------------------*/
 			
 			// Front page posts categories
-			if ( ! in_array ( 'disabled', (array) $input['frontpage_posts_cats'] ) ) {
+			if ( ! in_array ( '', (array) $input['frontpage_posts_cats'] ) ) {
 				if ( in_array ( false, array_map( 'ctype_digit', (array) $input['frontpage_posts_cats'] ) ) ) {
 					unset($input['frontpage_posts_cats']);
 					add_settings_error('graphene_options', 2, __('ERROR: Invalid category selected for the front page posts categories.', 'graphene'));

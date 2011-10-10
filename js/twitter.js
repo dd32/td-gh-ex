@@ -10,11 +10,8 @@ function grapheneTwitter( target, options ) {
   
     var statusHTML = [];
     var twitters = window['grapheneTweets-' + window.grapheneTweetsCount];
-	
-	tweetcount = twitters.length;
-	if ( tweetcount > options.count ) tweetcount = options.count;
-	
-    for (var i = 0; i < tweetcount; i++){
+    
+    for (var i = 0; i < options.count; i++){
         var username = twitters[i].user.screen_name;
         var status = twitters[i].text
         
@@ -42,15 +39,13 @@ function grapheneTwitter( target, options ) {
       
         if ( options.followercount ) {
             followerCount = twitters[i].user.followers_count;
-            if ( followerCount == 0 ){
+            if ( followerCount == 0 )
                 followerCount = '';
-			} else if ( followerCount == 1 ){
+            else if ( followerCount == 1 )
                 followerCount += ' ' + options.followersingle;
-				followerCount += ' | ';
-			} else {
+            else
                 followerCount += ' ' + options.followerplural;
-				followerCount += ' | ';
-			}
+            followerCount += ' | ';
             
             document.getElementById('#follower-count-' + target).innerHTML = followerCount;
         }

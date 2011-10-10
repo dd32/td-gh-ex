@@ -500,7 +500,7 @@ function graphene_options_general() {
                         </th>
                         <td>
                             <select name="graphene_settings[frontpage_posts_cats][]" id="frontpage_posts_cats" multiple="multiple" class="select-multiple">
-                                <option value="disabled" <?php if ( ! $graphene_settings['frontpage_posts_cats'] ) {echo 'selected="selected"';} ?>><?php _e( '--Disabled--', 'graphene' ); ?></option>
+                                <option value="" <?php if ( empty( $graphene_settings['frontpage_posts_cats'] ) ) {echo 'selected="selected"';} ?>><?php _e( '--Disabled--', 'graphene' ); ?></option>
                                 <?php /* Get the list of categories */ 
                                     $categories = get_categories();
                                     foreach ($categories as $category) :

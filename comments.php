@@ -51,7 +51,7 @@ global $graphene_settings;
 		$tabbed = ($comment_count && $ping_count) ? true : false;
 	?>
     <?php if ($comment_count) : ?>
-    	<h4 class="comments"><?php if ($tabbed) {echo '<a href="#">'.$comment_count.'</a>';} else {echo $comment_count;}?></h4>
+    	<h4 class="comments current"><?php if ($tabbed) {echo '<a href="#">'.$comment_count.'</a>';} else {echo $comment_count;}?></h4>
 	<?php endif; ?>
     <?php if ($ping_count) : ?>
 	    <h4 class="pings"><?php if ($tabbed) {echo '<a href="#">'.$ping_count.'</a>';} else {echo $ping_count;}?></h4>
@@ -83,6 +83,7 @@ global $graphene_settings;
         </div>
         <?php endif; // Ends the comment navigation ?>
     </ol>
+    
     <ol class="clearfix" id="pings_list">
         <?php
         /* Loop through and list the pings. Use the same callback function as

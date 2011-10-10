@@ -308,6 +308,7 @@ add_action( 'init', 'graphene_register_scripts' );
 */
 function graphene_enqueue_scripts(){
 	if ( ! is_admin() ) { // Front-end only
+		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'graphene-jquery-tools' ); // jQuery Tools, required for slider
 	}	
 }
@@ -559,16 +560,17 @@ function graphene_custom_style(){
     global $graphene_settings;
 	$style = '';
     
-    // only get the custom css styles when were not in the admin mode
-    if ( ! is_admin() ) {
-        $style .= graphene_get_custom_style();
-    }
     // the custom colours are needed in both the display and admin mode
     $style .= graphene_get_custom_colours();
     
-    // always the custom css at the end, this is the most important
-    if ( $graphene_settings['custom_css']) { $style .= $graphene_settings['custom_css']; }
-    
+	// only get the custom css styles when were not in the admin mode
+    if ( ! is_admin() ) {
+        $style .= graphene_get_custom_style();
+		
+		// always the custom css at the end, this is the most important
+	    if ( $graphene_settings['custom_css']) { $style .= $graphene_settings['custom_css']; }
+    }
+	    
     if ( $style ){ echo '<style type="text/css">'."\n".$style."\n".'</style>'."\n"; }
     do_action( 'graphene_custom_style' ); 
 }
@@ -734,7 +736,7 @@ if (!function_exists( 'graphene_default_menu' ) ) :
             <?php endif; ?>
             <?php 
 				$args = array( 'echo' => 1,
-							'sort_column' => 'menu_order, post_title',
+							'sort_column' => 'menu_order post_title',
 							'depth' => 5,
 							'title_li' => '',
                             'walker' => new Walker_PageDescription() );
@@ -1599,8 +1601,8 @@ function graphene_slider(){
 		}		
 		if ($slidertype && $slidertype == 'posts_pages') {                    
 			$post_ids = $graphene_settings['slider_specific_posts'];
-                        $post_ids = preg_split("/[\s]*[,][\s]*/", $post_ids, -1, PREG_SPLIT_NO_EMPTY); // post_ids are comma seperated, the query needs a array                        
-                        $args = array_merge($args, array('post__in' => $post_ids, 'posts_per_page' => -1, 'orderby' => 'post__in' ) );
+            $post_ids = preg_split("/[\s]*[,][\s]*/", $post_ids, -1, PREG_SPLIT_NO_EMPTY); // post_ids are comma seperated, the query needs a array                        
+            $args = array_merge($args, array('post__in' => $post_ids, 'posts_per_page' => -1, 'orderby' => 'post__in' ) );
 		}
 		if ($slidertype && $slidertype == 'categories' && is_array($graphene_settings['slider_specific_categories'])) {                        
 			$args = array_merge($args, array( 'category__in' => $graphene_settings['slider_specific_categories']));
@@ -1927,21 +1929,19 @@ function graphene_tabs_js(){
 		//<![CDATA[
 		jQuery(document).ready(function( $){
 			$(function(){                                
-				// to initialize the first tab
-				$("div#comments h4:first").addClass('current');
-				$("div#comments ol:not(:first)").hide();
 				// to allow the user to switch tabs
-				$("div#comments h4 a").click(function(){
-					if (!$(this).hasClass('current')){ 
-						// determine which index the clicked tab has
-						var index = $("div#comments h4").index($(this).parent());
-						// hide the visible tab content
-						$("div#comments ol:visible").fadeOut(200, function(){
-							// show the ol that has the same index as the clicked tab
-							$("div#comments ol:eq("+index+")").fadeIn(300);
-							$("div#comments h4").toggleClass('current');
-						});                                        
-					}
+				$("div#comments h4.comments a").click(function(){
+					$("div#comments .comments").addClass( 'current' );
+					$("div#comments .pings").removeClass( 'current' );
+					$("div#comments #pings_list").hide();
+					$("div#comments #comments_list").fadeIn(300);
+					return false;
+				});
+				$("div#comments h4.pings a").click(function(){
+					$("div#comments .pings").addClass( 'current' );
+					$("div#comments .comments").removeClass( 'current' );
+					$("div#comments #comments_list").hide();
+					$("div#comments #pings_list").fadeIn(300);
 					return false;
 				});
 			});
