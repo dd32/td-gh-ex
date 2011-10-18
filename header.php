@@ -143,7 +143,7 @@
 	
 		<?php  
 		if ($options['if_font'] == "")
-			$font = 'Lucida Grande';
+			$font = 'Arial';
 		else
 			$font = $options[('if_font')]; ?>
 	
@@ -155,7 +155,7 @@
 
 </head>
 
-<body style="font-family:'<?php echo $font ?>', Arial, serif" <?php body_class(); ?> >
+<body style="font-family:'<?php echo $font ?>', Helvetica, serif" <?php body_class(); ?> >
 	
 	<div id="page-wrap">
 		
@@ -169,7 +169,7 @@
 						
 							<?php if ($headercontact == '' ):?>
 							<div id="header_contact">
-								Enter Contact Information Here
+								<?php printf( __( 'Enter Contact Information Here', 'ifeature' )); ?>
 							</div>
 							<?php endif;?>
 							<?php if ($headercontact != 'hide' && $logo != '' ):?>

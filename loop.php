@@ -41,8 +41,9 @@
 					 ?>
 				</div><!--end entry-->
 				
-			<?php edit_post_link('Edit', '<p>', '</p>'); ?>	
-			<?php wp_link_pages(array('before' => 'Pages: ', 'next_or_number' => 'number')); ?>		
+			<?php wp_link_pages(array('before' => __('Pages:', 'ifeature' ), 'next_or_number' => 'number')); ?>		
+			<?php edit_post_link ( __( 'Edit this entry.' , 'ifeature' ) , '<p>', '</p>'); ?>
+			
 			<?php if ($showgplus == "1"):?>
 				<div class="gplusone" >	
 					<g:plusone size="standard" count="true"></g:plusone>
@@ -60,7 +61,7 @@
 			<!--end fb-->
 				<div class="tags">
 					<?php if ($tags != '1'):?>
-						<?php the_tags('Tags: ', ', ', '<br />'); ?>
+						<?php the_tags( __( 'Tags:', 'ifeature' ), ', ', '<br />'); ?>
 					<?php endif;?>
 				</div><!--end tags-->	
 
@@ -71,7 +72,7 @@
 
 				<div class="comments">
 					<?php if ($comments != '1'):?>
-						<?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>
+						<?php comments_popup_link( __('No Comments &#187;', 'ifeature' ), __('1 Comment &#187;', 'ifeature' ), __('% Comments &#187;' , 'ifeature' )); ?>
 					<?php endif;?>
 				</div><!--end comments-->	
 				</div><!--end postmetadata-->

@@ -34,8 +34,8 @@ get_header(); ?>
 								<?php the_content(); ?>
 							</div><!--end entry-->
 							<div style=clear:both;></div>
-							<?php wp_link_pages(array('before' => 'Pages: ', 'next_or_number' => 'number')); ?>
-						<?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
+							<?php wp_link_pages(array('before' => __('Pages:', 'ifeature' ), 'next_or_number' => 'number')); ?>	
+						<?php edit_post_link ( __( 'Edit this entry.' , 'ifeature' ) , '<p>', '</p>'); ?>
 						
 							<?php if ($showfblike == "1" ):?>
 							<div class="fb" >
@@ -45,13 +45,13 @@ get_header(); ?>
 							<!--end fb-->
 						
 							<div class="tags">
-								<?php the_tags('Tags: ', ', ', '<br />'); ?>
+								<?php the_tags( __( 'Tags:', 'ifeature' ), ', ', '<br />'); ?>
 							</div><!--end tags-->
 
 							<div class="postmetadata">
 									<?php get_template_part ('share', 'single' ); ?>
 								<div class="comments">
-									<?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>
+									<?php comments_popup_link( __('No Comments &#187;', 'ifeature' ), __('1 Comment &#187;', 'ifeature' ), __('% Comments &#187;' , 'ifeature' )); ?>
 								</div><!--end comments-->	
 							</div><!--end postmetadata-->
 							
