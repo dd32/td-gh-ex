@@ -68,7 +68,7 @@
 						<th scope="row"><label for="social_media_new_'+count+'_icon"><?php echo esc_js( __( 'Social Media icon URL', 'graphene' ) ); ?></label></th>\
 						<td>\
 							<input type="text" name="graphene_settings[social_media_new]['+count+'][icon]" id="social_media_new_'+count+'_icon" value="" size="60" class="widefat code" /><br />\
-							<span class="description"><?php printf( esc_js( __( 'URL to the social media icon. <strong>Note:</strong> the theme uses the %s icon set for the social media icons. Please do not hotlink the icons on the site. Download the icons you need and upload them to your server instead.', 'graphene' ) ), '<a href="http://www.iconfinder.com/search/?q=iconset%3Asocialmediabookmark">Social Media Bookmark</a>' ); ?></span>\
+							<span class="description"><?php printf( esc_js( __( 'URL to the social media icon. Note: the theme uses the %s icon set for the social media icons. Please do not hotlink the icons on the site. Download the icons you need and upload them to your server instead.', 'graphene' ) ), '<a href="http://www.iconfinder.com/search/?q=iconset%3Asocialmediabookmark">Social Media Bookmark</a>' ); ?></span>\
 						</td>\
 					</tr>\
 			');

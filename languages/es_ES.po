@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tema Graphene para WordPress en español (versión 1.0.8a)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-06 10:34+1200\n"
-"PO-Revision-Date: 2011-09-18 13:45+0100\n"
+"POT-Creation-Date: 2011-10-17 22:20+0100\n"
+"PO-Revision-Date: 2011-10-17 22:21+0100\n"
 "Last-Translator: Eduardo Larequi <elarequi@gmail.com>\n"
 "Language-Team: PNTE <blogs@educacion.navarra.es>\n"
 "MIME-Version: 1.0\n"
@@ -104,21 +104,21 @@ msgstr "Un ping"
 msgid "% pings"
 msgstr "% pings"
 
-#: comments.php:103
+#: comments.php:104
 msgid "Comments have been disabled."
 msgstr "Los comentarios han sido desactivados."
 
-#: comments.php:118
+#: comments.php:119
 #, php-format
 msgid "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags and attributes: %s"
 msgstr "Puedes utilizar las siguientes etiquetas y atributos <abbr title=\"HyperText Markup Language\">HTML</abbr>: %s"
 
-#: comments.php:123
+#: comments.php:124
 msgid "Your email address will not be published."
 msgstr "Tu email nunca se publicará."
 
-#: comments.php:126
-#: functions.php:1341
+#: comments.php:127
+#: functions.php:1375
 msgid "Submit Comment"
 msgstr "Enviar"
 
@@ -175,214 +175,214 @@ msgstr "Esta es la imagen de cabecera por defecto del tema Graphene, recortada a
 msgid "Header image cropped from image by Ilco at sxc.hu"
 msgstr "Imagen de cabecera recortada a partir de una imagen de Ilco en sxc.hu"
 
-#: functions.php:727
+#: functions.php:732
 msgid "Home"
 msgstr "Inicio"
 
-#: functions.php:830
+#: functions.php:835
 msgid "says:"
 msgstr "escribió:"
 
-#: functions.php:836
+#: functions.php:841
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s, a las %2$s"
 
-#: functions.php:838
+#: functions.php:843
 msgid "Edit comment"
 msgstr "Editar comentario"
 
-#: functions.php:842
+#: functions.php:847
 msgid "Reply"
 msgstr "Responder"
 
-#: functions.php:853
+#: functions.php:858
 msgid "Your comment is awaiting moderation."
 msgstr "Tu comentario está a la espera de ser aprobado."
 
-#: functions.php:950
+#: functions.php:954
 msgid "Sidebar Widget Area"
 msgstr "Barra lateral principal"
 
-#: functions.php:952
+#: functions.php:956
 msgid "The first sidebar widget area (available in two and three column layouts)."
 msgstr "La primera área de widgets de la barra lateral (disponible en las disposiciones de dos y tres columnas)"
 
-#: functions.php:959
+#: functions.php:963
 msgid "Sidebar Two Widget Area"
 msgstr "Segunda barra lateral"
 
-#: functions.php:961
+#: functions.php:965
 msgid "The second sidebar widget area (only available in three column layouts)."
 msgstr "La segunda área de widgets de la barra lateral (solo disponible en las disposiciones de tres columnas)."
 
-#: functions.php:968
+#: functions.php:972
 msgid "Footer Widget Area"
 msgstr "Pie de página"
 
-#: functions.php:970
+#: functions.php:974
 msgid "The footer widget area. Leave empty to disable. Set the number of columns to display at the theme's Display Options page."
 msgstr "Área de widgets del pie de página. Si deseas desactivarla, déjala vacía. Puedes establecer el número de columnas que deseas mostrar en la página de opciones de visualización."
 
-#: functions.php:985
+#: functions.php:989
 msgid "Front Page Sidebar Widget Area"
 msgstr "Barra lateral de la página de inicio"
 
-#: functions.php:987
+#: functions.php:991
 msgid "The first sidebar widget area that will only be displayed on the front page."
 msgstr "La primera área de widgets de la barra lateral, que solo se mostrará en la página principal."
 
-#: functions.php:994
+#: functions.php:998
 msgid "Front Page Sidebar Two Widget Area"
 msgstr "Segunda barra lateral de la página de inicio"
 
-#: functions.php:996
+#: functions.php:1000
 msgid "The second sidebar widget area that will only be displayed on the front page."
 msgstr "La segunda área de widgets de la barra lateral, que solo se mostrará en la página principal."
 
-#: functions.php:1005
+#: functions.php:1009
 msgid "Front Page Footer Widget Area"
 msgstr "Pie de la página de inicio"
 
-#: functions.php:1007
+#: functions.php:1011
 msgid "The footer widget area that will only be displayed on the front page. Leave empty to disable. Set the number of columns to display at the theme's Display Options page."
 msgstr "El área de widgets del pie de página, que solo se mostrará en la página de inicio. Si deseas desactivarla, déjala vacía. Desde la página de opciones del tema puedes establecer el número de columnas que deseas mostrar en esta área."
 
-#: functions.php:1017
+#: functions.php:1021
 msgid "Header Widget Area"
 msgstr "Cabecera"
 
-#: functions.php:1019
+#: functions.php:1023
 msgid "The header widget area."
 msgstr "El área de widgets de la cabecera"
 
-#: functions.php:1035
+#: functions.php:1040
 #, php-format
 msgid "Dynamically added widget area. This widget area is attached to the %s action hook."
 msgstr "Área de widgets añadida de forma dinámica. Esta área de widgets se adjuntará al \"action hook\" %s"
 
-#: functions.php:1105
+#: functions.php:1139
 msgid "Display the latest Twitter status updates."
 msgstr "Mostrar las últimas intervenciones en Twitter."
 
-#: functions.php:1137
+#: functions.php:1171
 msgid "Loading tweets..."
 msgstr "Cargando tweets..."
 
-#: functions.php:1141
+#: functions.php:1175
 msgid "Follow me on Twitter"
 msgstr "Sígueme en Twitter"
 
-#: functions.php:1153
+#: functions.php:1187
 msgid "follower"
 msgstr "seguidor"
 
-#: functions.php:1154
+#: functions.php:1188
 msgid "followers"
 msgstr "seguidores"
 
-#: functions.php:1185
+#: functions.php:1219
 msgid "Latest tweets"
 msgstr "Últimos tweets"
 
-#: functions.php:1192
+#: functions.php:1226
 msgid "Title:"
 msgstr "Título:"
 
-#: functions.php:1196
+#: functions.php:1230
 msgid "Twitter Username:"
 msgstr "Nombre de usuario de Twitter:"
 
-#: functions.php:1200
+#: functions.php:1234
 msgid "Number of tweets to display:"
 msgstr "Número de tweets que mostrar:"
 
-#: functions.php:1204
+#: functions.php:1238
 msgid "Show followers count"
 msgstr "Mostrar el total de seguidores"
 
-#: functions.php:1208
+#: functions.php:1242
 msgid "Open links in new window"
 msgstr "Abrir enlaces en una nueva ventana"
 
-#: functions.php:1256
+#: functions.php:1290
 msgid "Graphene Options"
 msgstr "Opciones del tema Graphene"
 
-#: functions.php:1257
+#: functions.php:1291
 msgid "Graphene FAQs"
 msgstr "Preguntas más frecuentes (FAQ) del tema Graphene"
 
-#: functions.php:1290
+#: functions.php:1324
 msgid "Toggle all tabs"
 msgstr "Desplegar/contraer las pestañas"
 
-#: functions.php:1322
+#: functions.php:1356
 msgid "Name:"
 msgstr "Nombre:"
 
-#: functions.php:1323
+#: functions.php:1357
 msgid "Email:"
 msgstr "Email:"
 
-#: functions.php:1324
+#: functions.php:1358
 msgid "Website:"
 msgstr "Sitio web:"
 
-#: functions.php:1334
+#: functions.php:1368
 msgid "Message:"
 msgstr "Mensaje:"
 
-#: functions.php:1363
+#: functions.php:1397
 msgid "Continue reading &raquo;"
 msgstr "Continuar leyendo &raquo;"
 
-#: functions.php:1415
+#: functions.php:1449
 msgid "Older posts &laquo;"
 msgstr "Entradas más antiguas &laquo;"
 
-#: functions.php:1416
+#: functions.php:1450
 msgid "&raquo; Newer posts"
 msgstr "&raquo; Entradas más recientes"
 
-#: functions.php:1418
+#: functions.php:1452
 msgid "Next page &raquo;"
 msgstr "Página siguiente &raquo;"
 
-#: functions.php:1419
+#: functions.php:1453
 msgid "&laquo; Previous page"
 msgstr "&laquo; Página anterior"
 
-#: functions.php:1633
+#: functions.php:1667
 msgid "View full post"
 msgstr "Ver entrada completa"
 
-#: functions.php:1772
+#: functions.php:1806
 msgid "<strong>ERROR: You must supply the post ID to get the image from as an argument when calling the graphene_get_post_image() function.</strong>"
 msgstr "<strong>ERROR: cuando llames a la función graphene_get_post_image(), debes proporcionar el ID de la entrada de la que desees obtener la imagen como un argumento.</strong>"
 
-#: functions.php:2135
+#: functions.php:2167
 msgid "Template preview not found."
 msgstr "Vista previa de la plantilla no encontrada"
 
-#: functions.php:2138
+#: functions.php:2170
 msgid "default"
 msgstr "por defecto"
 
-#: functions.php:2194
-#: functions.php:2198
+#: functions.php:2226
+#: functions.php:2230
 msgid "Theme default"
 msgstr "Tema por defecto"
 
-#: functions.php:2264
+#: functions.php:2296
 msgid "ERROR: You are not authorised to perform that operation"
 msgstr "ERROR: No tienes permiso para llevar a cabo esta operación"
 
-#: functions.php:2437
-#: functions.php:2448
-#: functions.php:2457
-#: loop-children.php:41
-#: loop-children.php:49
+#: functions.php:2469
+#: functions.php:2480
+#: functions.php:2489
+#: loop-children.php:42
+#: loop-children.php:50
 #: loop-post-formats.php:32
 #: loop.php:71
 #: loop.php:150
@@ -390,21 +390,21 @@ msgstr "ERROR: No tienes permiso para llevar a cabo esta operación"
 msgid "Permalink to %s"
 msgstr "Enlace permanente a %s"
 
-#: functions.php:2457
+#: functions.php:2489
 msgid "Read more"
 msgstr "Continuar leyendo"
 
-#: functions.php:2526
+#: functions.php:2558
 #, php-format
 msgid "Follow %s on Twitter"
 msgstr "Seguir a %s en Twitter"
 
-#: functions.php:2529
+#: functions.php:2561
 #, php-format
 msgid "Visit %s's Facebook page"
 msgstr "Visita la página en Facebook de %s"
 
-#: functions.php:2551
+#: functions.php:2583
 #, php-format
 msgid "Visit %1$s's %2$s page"
 msgstr "Visita la página %2$s de %1$s"
@@ -454,7 +454,7 @@ msgstr "Enlace permanente a %s"
 
 #: loop-author.php:55
 #: loop-author.php:85
-#: loop-children.php:41
+#: loop-children.php:42
 #: loop-post-formats.php:32
 #: loop.php:39
 #: loop.php:71
@@ -465,7 +465,7 @@ msgstr "(Sin título)"
 msgid "Most commented posts"
 msgstr "Entradas más comentadas"
 
-#: loop-children.php:49
+#: loop-children.php:50
 msgid "View page &raquo;"
 msgstr "Ver página &raquo;"
 
@@ -528,8 +528,8 @@ msgid "Read the rest of this entry &raquo;"
 msgstr "Continuar leyendo &raquo;"
 
 #: loop.php:163
-msgid "<div class=\"link-pages\"><p><strong>Pages:</strong> "
-msgstr "<div class=\"link-pages\"><p><strong>Páginas:</strong> "
+msgid "Pages:"
+msgstr "Páginas:"
 
 #: loop.php:173
 msgid "Tags:"
@@ -812,7 +812,7 @@ msgid "Settings have been reset."
 msgstr "La configuración ha sido devuelta a sus valores por defecto."
 
 #: admin/options.php:84
-#: admin/uninstall.php:21
+#: admin/uninstall.php:23
 msgid "Uninstall Graphene"
 msgstr "Desinstalar el tema Graphene"
 
@@ -2036,7 +2036,7 @@ msgstr "tamaño máximo: %s"
 msgid "Upload file and import"
 msgstr "Subir fichero e importar"
 
-#: admin/uninstall.php:22
+#: admin/uninstall.php:24
 #, php-format
 msgid "Theme uninstalled. Redirecting to %s"
 msgstr "Tema desinstalado. Redirigiendo a %s"
@@ -2222,3 +2222,5 @@ msgstr "URL del icono del servicio de medios sociales"
 msgid "URL to the social media icon. <strong>Note:</strong> the theme uses the %s icon set for the social media icons. Please do not hotlink the icons on the site. Download the icons you need and upload them to your server instead."
 msgstr "URL del icono de tu servicio de medios sociales. <strong>Aviso:</strong> el tema utiliza el juego de iconos %s para los servicios de medios sociales. Por favor, no enlaces directamente a los iconos de este sitio. En su lugar, descarga los iconos que necesites y súbelos a tu servidor."
 
+#~ msgid "<div class=\"link-pages\"><p><strong>Pages:</strong> "
+#~ msgstr "<div class=\"link-pages\"><p><strong>Páginas:</strong> "

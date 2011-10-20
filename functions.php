@@ -251,11 +251,13 @@ if (!function_exists( 'graphene_get_default_headers' ) ) {
  * Register and print the main theme stylesheet
 */
 function graphene_main_stylesheet(){
-	wp_register_style( 'graphene-stylesheet', get_stylesheet_uri(), array(), false, 'screen' );
-	wp_enqueue_style( 'graphene-stylesheet' );
-	
-	wp_register_style( 'graphene-stylesheet-rtl', get_template_directory_uri() . '/rtl.css', array(), false, 'screen' );
-	if ( is_rtl() ) wp_enqueue_style( 'graphene-stylesheet-rtl' );
+	if ( ! is_admin() ) {
+		wp_register_style( 'graphene-stylesheet', get_stylesheet_uri(), array(), false, 'screen' );
+		wp_register_style( 'graphene-stylesheet-rtl', get_template_directory_uri() . '/rtl.css', array(), false, 'screen' );
+		
+		wp_enqueue_style( 'graphene-stylesheet' );	
+		if ( is_rtl() ) wp_enqueue_style( 'graphene-stylesheet-rtl' );
+	}
 }
 add_action( 'wp_print_styles', 'graphene_main_stylesheet' );
 
@@ -735,8 +737,8 @@ if (!function_exists( 'graphene_default_menu' ) ) :
             </li>
             <?php endif; ?>
             <?php 
-				$args = array( 'echo' => 1,
-							'sort_column' => 'menu_order post_title',
+				$args = array( 
+							'echo' => 1,
 							'depth' => 5,
 							'title_li' => '',
                             'walker' => new Walker_PageDescription() );
@@ -794,9 +796,12 @@ class Walker_PageDescription extends Walker_Page {
 		$title = apply_filters( 'the_title', $page->post_title, $page->ID );
 		
 		// get the graphene description if it is set otherwise the wordpress default -> title
-		$menu_title = '<strong>'.apply_filters( 'the_title', $page->post_title, $page->ID ).'</strong>';
-		$menu_title .= (get_post_meta( $page->ID, '_graphene_nav_description', true) && !$depth) ? 
-						'<span>'.get_post_meta( $page->ID, '_graphene_nav_description', true).'</span>' : 
+		$menu_title = apply_filters( 'the_title', $page->post_title, $page->ID );
+		if ( ! $depth ){
+			$menu_title = '<strong>' . $menu_title . '</strong>';
+		}
+		$menu_title .= ( get_post_meta( $page->ID, '_graphene_nav_description', true ) && ! $depth ) ? 
+						'<span>' . get_post_meta( $page->ID, '_graphene_nav_description', true ) . '</span>' : 
 						'';
                 
 		$output .= $indent . '<li class="' . $css_class . '"><a href="' . get_permalink( $page->ID) . '">' . $link_before . $menu_title . $link_after . '</a>';
@@ -1211,10 +1216,11 @@ class Graphene_Widget_Twitter extends WP_Widget{
 		return $instance;
 	}
 	
-	function form( $instance){		// This function sets up the settings form
+	function form( $instance ){		// This function sets up the settings form
 		
 		// Set up default widget settings
-		$defaults = array( 'twitter_username' => 'username',
+		$defaults = array( 
+						'twitter_username' => 'username',
 						'twitter_tweetcount' => 5,
 						'twitter_title' => __( 'Latest tweets', 'graphene' ),
 						'twitter_followercount' => false,
@@ -1236,11 +1242,11 @@ class Graphene_Widget_Twitter extends WP_Widget{
         </p>
         <p>
         	<label for="<?php echo $this->get_field_id( 'twitter_followercount' ); ?>"><?php _e( 'Show followers count', 'graphene' ); ?></label>
-			<input id="<?php echo $this->get_field_id( 'twitter_followercount' ); ?>" type="checkbox" name="<?php echo $this->get_field_name( 'twitter_followercount' ); ?>" value="true" <?php if ( $instance['twitter_followercount'] == true ) echo 'checked="checked"'; ?> />
+			<input id="<?php echo $this->get_field_id( 'twitter_followercount' ); ?>" type="checkbox" name="<?php echo $this->get_field_name( 'twitter_followercount' ); ?>" value="true" <?php checked( $instance['twitter_followercount'] ); ?> />
         </p>
         <p>
         	<label for="<?php echo $this->get_field_id( 'new_window' ); ?>"><?php _e( 'Open links in new window', 'graphene' ); ?></label>
-			<input id="<?php echo $this->get_field_id( 'new_window' ); ?>" type="checkbox" name="<?php echo $this->get_field_name( 'new_window' ); ?>" value="true" <?php if ( $instance['new_window'] == true ) echo 'checked="checked"'; ?> />
+			<input id="<?php echo $this->get_field_id( 'new_window' ); ?>" type="checkbox" name="<?php echo $this->get_field_name( 'new_window' ); ?>" value="true" <?php checked( $instance['new_window'] ); ?> />
         </p>
         <?php
 	}
@@ -1358,7 +1364,7 @@ function graphene_comment_form_fields(){
 		'url'    => '<p class="comment-form-url clearfix"><label for="url" class="graphene_form_label">'.__( 'Website:','graphene' ).'</label><input id="url" name="url" type="text" class="graphene-form-field" /></p>',
 	);
 	
-	do_action( 'graphene_comment_form_fields' );
+	$fields = apply_filters( 'graphene_comment_form_fields', $fields );
 	
 	return $fields;
 }
@@ -1593,7 +1599,7 @@ function graphene_slider(){
 					'order' 			=> 'DESC',
 					'suppress_filters' 	=> 0,
 					'post_type' 		=> $slider_post_type,
-                                        'ignore_sticky_posts' => 1, // otherwise the sticky posts show up undesired*/
+                    'ignore_sticky_posts' => 1, // otherwise the sticky posts show up undesired*/
 					 );		
 		
 		if ($slidertype && $slidertype == 'random') {
@@ -1648,7 +1654,7 @@ function graphene_slider(){
 					if ( $image ) :
 					?>
                     <div class="sliderpost_featured_image">
-                        <?php echo $image;	?>
+                        <a href="<?php the_permalink(); ?>"><?php echo $image;	?></a>
                     </div>
                     <?php endif; endif; ?>
                 <?php endif; ?>
@@ -2442,11 +2448,11 @@ function graphene_homepage_panes(){
                 $post_ids = preg_split("/[\s]*[,][\s]*/", $post_ids, -1, PREG_SPLIT_NO_EMPTY); // post_ids are comma seperated, the query needs a array                        
           
 		$args_merge = array(	
-                                        'posts_per_page' => $pane_count,
-                                        'post__in' => $post_ids,
-                                        'ignore_sticky_posts' => 1
-                                    );
-		$args = array_merge( $args, $args_merge);
+							'posts_per_page' => $pane_count,
+							'post__in' => $post_ids,
+							'ignore_sticky_posts' => 1
+							);
+		$args = array_merge( $args, $args_merge );
 	}
 	
 	global $post;

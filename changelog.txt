@@ -4,6 +4,14 @@ http://www.khairul-syahir.com
 
 CHANGELOG
 
+Version 1.5.4
+	* Fixed unrelated options being hidden when slider is disabled in the theme's options page
+	* Fixed default menu not being ordered according to page order
+	* Fixed the theme's stylesheet being printed to admin page when using Gravity Forms
+	* Removed <strong> wrapping elements from dropdown menu items when using the default menu
+	* Replaced conditionals for checked and selected to use WP checked() and selected() functions
+	* Added link to the post for the slider's image
+
 Version 1.5.3
 	* Fixed Custom CSS being applied on admin pages
 	* Fixed broken admin javascript when French translation is being used due to inline single quotes in the translation
