@@ -88,6 +88,7 @@ switch( chip_life_undefined_index_fix ( $_REQUEST['tab'] ) ) {
       <p>Chip Life is an advanced and fully documented Framework intended to serve as a base for Child Themes. Chip Life theme supports 8 Widget Areas, Post Formats, Navigation Menus, Post Thumbnails, Custom Backgrounds, Custom Image Headers, and Custom Editor Style. It includes styles for the Visual Editor, special styles for for six different Post Formats, and has one-column, two-column layout. The Theme includes plug-and-play support for the WP-Pagenavi plugin. Requires WordPress 3.1 and higher.</p>
       <h1>Support</h1>
       <ul>
+        <li><a href="http://www.tutorialchip.com/chip-life-guide-book/">Chip Life Guide Book</a></li>
         <li><a href="http://forums.tutorialchip.com/">TutorialChip Forums</a></li>
         <li><a href="http://www.tutorialchip.com/contact/">Contact Us</a></li>
       </ul>

@@ -29,10 +29,18 @@ function chip_life_js_logic_init() {
 jQuery(document).ready(function($) {
 	
   $( '.menu1 ul,.menu2 ul' ).supersubs( {   	
+	
 	minWidth: 12,
   	maxWidth: 15,
   	extraWidth: 1
-  } ).superfish();
+  
+  } ).superfish({
+  	
+	delay: 100,
+	speed: 'fast',
+	animation: { opacity:'show', height:'show' }
+  
+  });
   <!-- end .menu's -->
 	
 });

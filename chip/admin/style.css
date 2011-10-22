@@ -13,6 +13,12 @@
 	font-weight: bold;
 }
 
+.chip-life-hr {
+	margin: 10px 0;
+	border: none;	
+	border-top: solid 1px #dfdfdf;
+}
+
 /*  Tabs
 ------------------------ */
 

@@ -42,8 +42,9 @@ function chip_life_loop_init() {
 function chip_life_custom_loop_init( $args = array() ) {
 	
 	/** For forward compatibility **/
-	$defaults = array(); 
-	$args = apply_filters( 'chip_life_custom_loop_args', wp_parse_args( $args, $defaults ), $args, $defaults );
+	$defaults = array();
+	$defaults = apply_filters( 'chip_life_custom_loop_defaults', $defaults );	
+	$args = wp_parse_args( $args, $defaults );
 	$custom_query = new WP_Query( $args );
 	
 	if ( $custom_query->have_posts() ):	
@@ -67,20 +68,21 @@ function chip_life_custom_loop_init( $args = array() ) {
         </div><!-- end .entry-content -->
         <?php do_action( 'chip_life_post_content_after' ); ?>
     
+    <div class="clear"></div>
     </div> <!-- end .postclass -->
 
 <?php
 	
 	do_action( 'chip_life_post_wrap_after' );		
 	endwhile; /** end loop */	
-	
-	/** restore original query **/
-	wp_reset_query();
 	do_action( 'chip_life_while_after' );
 	
 	else : /** if no posts exist **/	
 	do_action( 'chip_life_have_posts_else_before' );	
 	endif;
+	
+	/** restore original query **/
+	wp_reset_query();
 
-} /** function chip_life_loop_init() */
+} /** function chip_life_custom_loop_init() */
 ?>

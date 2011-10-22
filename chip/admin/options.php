@@ -40,6 +40,8 @@ class Chip_Life_Options {
 			
 			add_settings_field( 'chip_life_field_post_style', 'Post Style', array( 'Chip_Life_Options', 'chip_life_field_post_style_fn' ), 'chip_life_section_post_page', 'chip_life_section_post' );
 			
+			add_settings_field( 'chip_life_field_post_navigation_style', 'Post Navigation Style', array( 'Chip_Life_Options', 'chip_life_field_post_navigation_style_fn' ), 'chip_life_section_post_page', 'chip_life_section_post' );
+			
 			add_settings_field( 'chip_life_field_related_post', 'Use Related Posts at the Bottom of Post', array( 'Chip_Life_Options', 'chip_life_field_related_post_fn' ), 'chip_life_section_post_page', 'chip_life_section_post' );
 			add_settings_field( 'chip_life_field_related_post_number', 'How many Related Posts to Execute', array( 'Chip_Life_Options', 'chip_life_field_related_post_number_fn' ), 'chip_life_section_post_page', 'chip_life_section_post' );
 			
@@ -134,6 +136,8 @@ class Chip_Life_Options {
 					
 					'chip_life_post_style' => 'content',
 					
+					'chip_life_post_navigation_style' => 'numeric',
+					
 					'chip_life_related_post' => 0,
 					'chip_life_related_post_number' => 3,
 					
@@ -177,8 +181,14 @@ class Chip_Life_Options {
 		/* Valid Post Style Range */		
 		
 		function chip_life_post_style_pd() {			
-			return array( 'excerpt' => 'excerpt', 'content' => 'content' );			
+			return array( 'excerpt' => 'Excerpt', 'content' => 'Content' );			
 		}
+		
+		/* Valid Post Navigation Style Range */		
+		
+		function chip_life_post_navigation_style_pd() {			
+			return array( 'numeric' => 'Numeric', 'prev-next' => 'Prev / Next' );			
+		}		
 		
 		/* Valid Header Styles */		
 		
@@ -267,7 +277,13 @@ class Chip_Life_Options {
 			$chip_life_post_style_pd = Chip_Life_Options::chip_life_post_style_pd();
 			if ( ! array_key_exists( $input['chip_life_post_style'], $chip_life_post_style_pd ) ) {
 				 $input['chip_life_post_style'] = "excerpt";
-			}								
+			}
+			
+			/* Validation: chip_life_field_post_navigation_style */
+			$chip_life_post_navigation_style_pd = Chip_Life_Options::chip_life_post_navigation_style_pd();
+			if ( ! array_key_exists( $input['chip_life_post_navigation_style'], $chip_life_post_navigation_style_pd ) ) {
+				 $input['chip_life_post_navigation_style'] = "numeric";
+			}												
 			
 			/* Validation: chip_life_related_post */
 			$chip_life_boolean_pd = Chip_Life_Options::chip_life_boolean_pd();
@@ -497,6 +513,23 @@ class Chip_Life_Options {
             	<label><input type="radio" id="chip_life_post_style[]" name="chip_life_options[chip_life_post_style]" value="<?php echo $key; ?>" <?php checked( $key, $chip_life_options['chip_life_post_style'] ); ?> /><?php echo $val; ?></label><br />
             <?php
 			}
+		
+		}
+		
+		/* Chip Post Navigation Style */		
+		function  chip_life_field_post_navigation_style_fn() {
+			
+			$chip_life_options = get_option( 'chip_life_options' );
+			$items = Chip_Life_Options::chip_life_post_navigation_style_pd();
+			
+			echo '<select id="chip_life_post_navigation_style" name="chip_life_options[chip_life_post_navigation_style]">';
+			foreach( $items as $key => $val ) {
+			?>
+            	<option value="<?php echo $key; ?>" <?php selected( $key, $chip_life_options['chip_life_post_navigation_style'] ); ?>><?php echo $val; ?></option>
+            <?php
+			}
+			echo '</select>';
+			echo '<div><small>Select post navigation style.</small></div>';
 		
 		}
 		

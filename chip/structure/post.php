@@ -388,20 +388,43 @@ function chip_life_author_box( $context = '' ) {
 function chip_life_posts_navigation_init() {	
 	
 	global $wp_query;
+	$chip_life_options = get_chip_life_options();
 	
 	if ( $wp_query->max_num_pages > 1 ) :
 	
-		if ( function_exists( 'wp_pagenavi' ) ):
-			chip_life_wp_pagenavi_navigation();
-		else:
+		if ( $chip_life_options['chip_life_post_navigation_style'] == 'prev-next' ):
 			chip_life_prev_next_posts_navigation();
+		else:
+			chip_life_paginate_links();
 		endif;
 	
 	endif;
+	
+	//chip_life_post_navigation_style
 				
 }
 
-/** Chip Life Wp-Pagenavi Plugin Support */
+/** Chip Life Paginate Links */
+function chip_life_paginate_links() {
+	
+	global $wp_query;
+	$big = 999999999; // need an unlikely integer
+	
+	$args = array(
+    'base'         => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
+    'format'       => '?paged=%#%',
+    'total'        => $wp_query->max_num_pages,
+    'current'      => max( 1, get_query_var('paged') )
+	);
+	
+	echo '<div class="pages paginate-links">' . paginate_links( $args ) . '<div class="clear"></div></div><!-- end .navigation -->';
+	
+}
+
+/** 
+ * Chip Life Wp-Pagenavi Plugin Support
+ * Deprecated since 1.4.3
+ */
 function chip_life_wp_pagenavi_navigation() {
 
 	ob_start();

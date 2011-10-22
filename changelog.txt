@@ -1,6 +1,15 @@
+= 1.4.3 [2011.10.22] =
+
+* Advancement in Additional Image Sizes Logic.
+* Advancement in Menus.
+* Pagination support has integrated.
+* Wp_Pagenavi plugin support has deprecated.
+* A detail documentaion has been written.
+
 = 1.4.2 [2011.09.02] =
 
 * Trackbacks pagination has been integrated.
+* Advancement in the Custom Loop.
 
 = 1.4.1 [2011.09.01] =
 

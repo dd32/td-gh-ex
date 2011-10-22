@@ -71,7 +71,10 @@ function chip_life_get_image( $args = array() ) {
 	return apply_filters( 'chip_life_get_image_output', $output, $args, $id, $html, $url, $src );
 }
 
-/** Chip Life Image Sizes */
+/**
+ * Chip Life Image Sizes
+ * get_intermediate_image_sizes();
+ */
 function chip_life_get_image_sizes() {
 	
 	$default_sizes = array(
