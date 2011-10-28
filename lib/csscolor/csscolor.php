@@ -1,4 +1,13 @@
 <?php
+/**
+ * class CSS_Color extends PEAR
+ *
+ *
+ * @package CSS_Color
+ * @subpackage Raindrops
+ */
+?>
+<?php
 /*
  csscolor.php
  Copyright 2004 Patrick Fitzgerald
@@ -18,10 +27,24 @@
  along with this program; if not, write to the Free Software
  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
+/**
+ * Include PEAR.php
+ *
+ *
+ *
+ *
+ */
+
 require_once 'PEAR.php';
 
 define('CSS_COLOR_ERROR', 100);
-
+/**
+ * Class CSS_Color
+ *
+ *
+ *
+ * @package CSS_Color
+ */
 class CSS_Color extends PEAR
 {
   //==================================================

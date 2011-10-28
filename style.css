@@ -5,11 +5,12 @@ Description: This theme file has the automatic arrangement of color function in 
 An automatic arrangement of color and the layout can be changed to the expression who you further seem by your instruction. 
 Author: Tenman
 Author URI: http://www.tenman.info/wp3/
-Version: 0.930
+Version: 0.932
 Tags:black, blue, brown, green, orange, pink, purple, red, silver, tan, white, yellow, dark, light,two-columns,three-columns,four-columns,left-sidebar,right-sidebar ,fixed-width ,flexible-width, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
+
 /*-----------------------------------------------------
 Yahoo UI Library Font-size Adjustment
 Copyright (c) 2006, Yahoo! Inc. All rights reserved.
@@ -1541,6 +1542,7 @@ div.category-blog div.blog-main{
 	margin:0 .3em;
 	max-width:99%;
 }
+#archives-title,
 .archives-list{margin-left:1em;}
 /* YUI nest grid add*/
 #nest .yui-ga,
@@ -1665,7 +1667,15 @@ height:100%;
 body.page .nocomments{
 	display:none;
 }
-.yui-g,.gecko .yui-gf{width:100%!important;margin:0;position:relative;left:0;}
+.yui-g,.gecko .yui-gf{
+	width:100%!important;
+	/*margin:0;*/ 
+	position:relative;
+	left:0;
+}
+.yui-g{
+	margin:0;
+}
 .yui-gb div.yui-u{
 	width:32%;
 }
