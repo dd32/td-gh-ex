@@ -4,7 +4,7 @@ Theme URI: http://wp-ultra.com/admired/
 Author: Brad Thomas
 Author URI: http://wp-ultra.com/
 Description: The Admired theme is a stylish and fully customizable WordPress theme. Make it yours with the easy customizable theme options with a simple check-box interface to easily change colors, fonts, skins, menus, sidebars, and much more. Uses Superfish menu effects and it has built-in pagination for post pages. It has special styles for six different post formats and an option to show post excerpts with thumbnails. Admired also has a HTML sitemap template, four extra widgets, and Google fonts.
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License
 License URI: license.txt
 Tags: dark, light, white, black, silver, gray, blue, one-column, two-columns, three-columns, left-sidebar, right-sidebar, flexible-width, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
@@ -622,6 +622,7 @@ li.sfHover  a  .sf-sub-indicator {
 #nav-menu li {
 	float: left;
 	position: relative;
+	word-wrap: break-word;
 }
 #nav-menu a {
 	color: #eee;
@@ -721,6 +722,7 @@ li.sfHover  a  .sf-sub-indicator {
 #nav-menu2 li {
 	float: left;
 	position: relative;
+	word-wrap: break-word;
 }
 #nav-menu2 a {
 	color: #fff;
@@ -1117,7 +1119,7 @@ img[class*="wp-image-"] {
 }
 img.size-full {
 	max-width: 97.5%;
-	width: auto; /* Prevent stretching of full-size images with height and width attributes in IE8 */
+	/* width: auto; */ /* Prevent stretching of full-size images with height and width attributes in IE8 */
 }
 .entry-content img.wp-smiley {
 	border: none;
@@ -1193,6 +1195,13 @@ img#wpstats {
 	padding: 3px;
 	width: expression(document.body.clientWidth < 742? '100px' : document.body.clientWidth > 1000? '100px' : 'auto');
 }
+
+.entry-content object, 
+.entry-content embed, 
+.entry-content iframe { 
+	max-width: 100% !important; 
+}
+
 /* Image borders */
 img[class*="align"],
 img[class*="wp-image-"],
@@ -1602,6 +1611,7 @@ section.recent-posts .other-recent-posts li:after {
 
 /* =Attachments
 ----------------------------------------------- */
+
 .image-attachment div.attachment {
 	background: #f9f9f9;
 	border: 1px solid #ddd;
@@ -1632,6 +1642,10 @@ section.recent-posts .other-recent-posts li:after {
 	line-height: 2.6em;
 	margin: 0 0 2.6em;
 	text-transform: uppercase;
+}
+embed,
+object {
+	max-width: 100%;
 }
 /* =Navigation
 -------------------------------------------------------------- */
