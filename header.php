@@ -68,6 +68,18 @@ if (!empty($options['abs_twitter_id'])) { ?><a target="_blank" href="http://twit
 
 
         <?php $options = get_option('absolum');
+if (!empty($options['abs_linkedin_id'])) { ?><a target="_blank" href="<?php echo stripslashes($options['abs_linkedin_id']);?>" title="LinkedIn" >
+
+<img src="<?php echo get_template_directory_uri(); ?>/images/linkedin.png" width="48" height="70" alt="LinkedIn" />
+</a><?php } ?>
+
+        <?php $options = get_option('absolum');
+if (!empty($options['abs_googleplus_id'])) { ?><a target="_blank" href="<?php echo stripslashes($options['abs_googleplus_id']);?>" title="Google+" >
+
+<img src="<?php echo get_template_directory_uri(); ?>/images/googleplus.png" width="45" height="69" alt="Google+" />
+</a><?php } ?>
+
+        <?php $options = get_option('absolum');
 if (!empty($options['abs_newsletter'])) { ?><a target="_blank" href="<?php echo stripslashes($options['abs_newsletter']);?>" title="Newsletter" >
 
 <img src="<?php echo get_template_directory_uri(); ?>/images/newsletter.png" width="40" height="66" alt="Newsletter" />

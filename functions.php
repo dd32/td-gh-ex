@@ -7,10 +7,12 @@ add_action( 'init', 'absolum_media' );
 function absolum_theme_options_init() {
 	register_setting( 'absolum_options', 'absolum', 'absolum_theme_options_validate' );
   wp_register_style('mycss', WP_CONTENT_URL . '/themes/absolum/css/theme-options.css');
+  wp_register_script('myjqueryui', WP_CONTENT_URL . '/themes/absolum/js/jquery-ui.js');
 }
 
 function absolum_styles() {
        wp_enqueue_style('mycss');
+       wp_enqueue_script('myjqueryui');
 }     
    
 function absolum_media() {
@@ -34,7 +36,7 @@ if ($options['abs_header_slider'] == "disable" || $options['abs_header_slider'] 
 }   
  
 
-$themename = "Absolum";
+$absthemename = "Absolum";
 $template_url = get_template_directory_uri();
 
 /* Redirect after activation */
@@ -48,205 +50,216 @@ if ( is_admin() && isset($_GET['activated'] ) && $pagenow ==	"themes.php" )
  */
  
 function absolum_theme_options_add_page() {
-global $themename, $shortname, $options;
-  $page = add_theme_page($themename." Settings", "".$themename." Settings", 'edit_theme_options', 'theme_options', 'absolum_theme_options_do_page');  
+global $absthemename, $absshortname, $options;
+  $page = add_theme_page($absthemename." Settings", "".$absthemename." Settings", 'edit_theme_options', 'theme_options', 'absolum_theme_options_do_page');  
     add_action('admin_print_styles-' . $page, 'absolum_styles'); 
 
 }
 
-$select_scheme = array(
+$absselect_scheme = array(
 	'0' => array(
 		'value' =>	'silver',
-		'label' => __( 'Silver &nbsp;&nbsp;&nbsp;(default)' )
+		'label' => __( 'Silver &nbsp;&nbsp;&nbsp;(default)', 'absolum' )
 	),
 	'1' => array(
 		'value' =>	'grey',
-		'label' => __( 'Grey' )
+		'label' => __( 'Grey', 'absolum'  )
 	),
 	'2' => array(
 		'value' =>	'black',
-		'label' => __( 'Black' )
+		'label' => __( 'Black', 'absolum'  )
 	),
 	'3' => array(
 		'value' =>	'purple',
-		'label' => __( 'Purple' )
+		'label' => __( 'Purple', 'absolum'  )
 	),
 	'4' => array(
 		'value' =>	'orange',
-		'label' => __( 'Orange' )
+		'label' => __( 'Orange', 'absolum'  )
 	),
 	'5' => array(
 		'value' =>	'red',
-		'label' => __( 'Red' )
+		'label' => __( 'Red', 'absolum'  )
 	),
 	'6' => array(
 		'value' =>	'green',
-		'label' => __( 'Green' )
+		'label' => __( 'Green', 'absolum'  )
 	),
 	'7' => array(
 		'value' =>	'blue',
-		'label' => __( 'Blue' )
+		'label' => __( 'Blue', 'absolum'  )
 	)                     
 ); 
 
 
-$select_content_font = array(
+$absselect_content_font = array(
 	'0' => array(
 		'value' =>	'georgia',
-		'label' => __( 'Trebuchet MS &nbsp;&nbsp;&nbsp;(default)' )
+		'label' => __( 'Trebuchet MS &nbsp;&nbsp;&nbsp;(default)', 'absolum'  )
 	),
 	'1' => array(
 		'value' =>	'segoe',
-		'label' => __( 'Segoe UI' )
+		'label' => __( 'Segoe UI', 'absolum'  )
 	),
 	'2' => array(
 		'value' =>	'arial',
-		'label' => __( 'Arial' )
+		'label' => __( 'Arial', 'absolum'  )
 	),
 	'3' => array(
 		'value' =>	'times',
-		'label' => __( 'Times' )
+		'label' => __( 'Times', 'absolum'  )
 	),  
 	'4' => array(
 		'value' =>	'courier',
-		'label' => __( 'Courier New' )
+		'label' => __( 'Courier New', 'absolum'  )
 	),
 	'5' => array(
 		'value' =>	'calibri',
-		'label' => __( 'Calibri' )
+		'label' => __( 'Calibri', 'absolum'  )
 	)
 );
 
 
-$select_slider = array(
+$absselect_slider = array(
 	'0' => array(
 		'value' =>	'disable',
-		'label' => __( 'Disable &nbsp;&nbsp;&nbsp;(default)' )
+		'label' => __( 'Disable &nbsp;&nbsp;&nbsp;(default)', 'absolum'  )
 	),
 	'1' => array(
 		'value' =>	'one',
-		'label' => __( 'Last post - static' )
+		'label' => __( 'Last post - static', 'absolum'  )
 	),
 	'2' => array(
 		'value' =>	'slow',
-		'label' => __( 'Slow slideshow' )
+		'label' => __( 'Slow slideshow', 'absolum'  )
 	),
 	'3' => array(
 		'value' =>	'normal',
-		'label' => __( 'Normal slideshow' )
+		'label' => __( 'Normal slideshow', 'absolum'  )
 	),
 	'4' => array(
 		'value' =>	'fast',
-		'label' => __( 'Fast slideshow' )
+		'label' => __( 'Fast slideshow', 'absolum'  )
 )     
                      
 );
 
 
-$select_title = array(
+$absselect_title = array(
 	'0' => array(
 		'value' =>	'black',
-		'label' => __( 'Black &nbsp;&nbsp;&nbsp;(default)' )
+		'label' => __( 'Black &nbsp;&nbsp;&nbsp;(default)', 'absolum'  )
 	),
 	'1' => array(
 		'value' =>	'blue',
-		'label' => __( 'Blue' )
+		'label' => __( 'Blue', 'absolum'  )
 	),
 	'2' => array(
 		'value' =>	'silver',
-		'label' => __( 'Silver' )
+		'label' => __( 'Silver', 'absolum'  )
 	),
 	'3' => array(
 		'value' =>	'brown',
-		'label' => __( 'Brown' )
+		'label' => __( 'Brown', 'absolum'  )
 	),
 	'4' => array(
 		'value' =>	'red',
-		'label' => __( 'Red' )
+		'label' => __( 'Red', 'absolum'  )
 	),
 	'5' => array(
 		'value' =>	'green',
-		'label' => __( 'Green' )
+		'label' => __( 'Green', 'absolum'  )
 	)                  
 ); 
 
 
-$select_background = array(
+$absselect_background = array(
 	'0' => array(
 		'value' =>	'blue',
-		'label' => __( 'Blue &nbsp;&nbsp;&nbsp;(default)' )
+		'label' => __( 'Blue &nbsp;&nbsp;&nbsp;(default)', 'absolum'  )
 	),
 	'1' => array(
 		'value' =>	'green',
-		'label' => __( 'Green' )
+		'label' => __( 'Green', 'absolum'  )
 	),
 	'2' => array(
 		'value' =>	'silver',
-		'label' => __( 'Silver' )
+		'label' => __( 'Silver', 'absolum'  )
 	),
 	'3' => array(
 		'value' =>	'black',
-		'label' => __( 'Black' )
+		'label' => __( 'Black', 'absolum'  )
 	),
 	'4' => array(
 		'value' =>	'red',
-		'label' => __( 'Red' )
+		'label' => __( 'Red', 'absolum'  )
 	),
 	'5' => array(
 		'value' =>	'yellow',
-		'label' => __( 'Yellow' )
+		'label' => __( 'Yellow', 'absolum'  )
 	),
 	'6' => array(
 		'value' =>	'brown',
-		'label' => __( 'Brown' )
+		'label' => __( 'Brown', 'absolum'  )
 	)                     
 ); 
 
 
-$select_sidebar = array(
+$absselect_sidebar = array(
 	'0' => array(
 		'value' =>	'right',
-		'label' => __( 'Right &nbsp;&nbsp;&nbsp;(default)' )
+		'label' => __( 'Right &nbsp;&nbsp;&nbsp;(default)', 'absolum'  )
 	),
 	'1' => array(
 		'value' =>	'left',
-		'label' => __( 'Left' )
+		'label' => __( 'Left', 'absolum'  )
 	),
 	'2' => array(
 		'value' =>	'disable',
-		'label' => __( 'Disable' )
+		'label' => __( 'Disable', 'absolum'  )
 	)                 
 ); 
 
 
 
-$shortname = "abs";
+$absshortname = "abs";
 
-$optionlist = array (
+$absoptionlist = array (
+
+array( "id" => $absshortname,
+	"type" => "open-tab"),
+
+array( "type" => "open"),
+array( "type" => "close"),
+
+array( "type" => "close-tab"),
 
 // Design
 
+
+array( "id" => $absshortname."-tab-1",
+	"type" => "open-tab"),
 
 array( "type" => "open"),
 
 
 array(  "name" => "Blog title color scheme",
         "desc" => "",
-        "id" => $shortname."_title_scheme",
+        "id" => $absshortname."_title_scheme",
         "type" => "select4",
         "std" => "false"
 ),  
 
 array(  "name" => "Menu color scheme",
         "desc" => "",
-        "id" => $shortname."_color_scheme",
+        "id" => $absshortname."_color_scheme",
         "type" => "select1",
         "std" => "false"
 ),  
 
 array(  "name" => "Background color scheme",
         "desc" => "",
-        "id" => $shortname."_back_scheme",
+        "id" => $absshortname."_back_scheme",
         "type" => "select5",
         "std" => "false"
 ), 
@@ -254,7 +267,7 @@ array(  "name" => "Background color scheme",
 
 array(  "name" => "Sidebar position",
         "desc" => "",
-        "id" => $shortname."_pos_sidebar",
+        "id" => $absshortname."_pos_sidebar",
         "type" => "select6",
         "std" => "false"
 ),
@@ -262,7 +275,7 @@ array(  "name" => "Sidebar position",
 
 array(  "name" => "Display last post static/slideshow",
         "desc" => "Choose if you want to display last post or last 10 posts in a slideshow",
-        "id" => $shortname."_header_slider",
+        "id" => $absshortname."_header_slider",
         "type" => "select3",
         "std" => "false"
 ),       
@@ -278,7 +291,7 @@ array(  "name" => "Display last post static/slideshow",
 
 array(  "name" => "RSS Feed",
         "desc" => "Insert custom RSS Feed URL, e.g. <strong>http://feeds.feedburner.com/Example</strong>",
-        "id" => $shortname."_rss_feed",
+        "id" => $absshortname."_rss_feed",
         "type" => "text",
         "std" => ""),  
 
@@ -290,7 +303,7 @@ array(  "name" => "RSS Feed",
 
 array(  "name" => "Newsletter",
         "desc" => "Insert custom newsletter URL, e.g. <strong>http://feedburner.google.com/fb/a/mailverify?uri=Example&amp;loc=en_US</strong>",
-        "id" => $shortname."_newsletter",
+        "id" => $absshortname."_newsletter",
         "type" => "text",
         "std" => ""),  
 
@@ -302,7 +315,7 @@ array(  "name" => "Newsletter",
 
 array(  "name" => "Facebook",
         "desc" => "Insert your Facebook ID",
-        "id" => $shortname."_facebook",
+        "id" => $absshortname."_facebook",
         "type" => "text",
         "std" => ""),  
 
@@ -313,9 +326,31 @@ array(  "name" => "Facebook",
 
 array(  "name" => "Twitter",
         "desc" => "Insert your Twitter ID",
-        "id" => $shortname."_twitter_id",
+        "id" => $absshortname."_twitter_id",
         "type" => "text",
         "std" => ""),  
+        
+        
+// LinkedIn
+
+
+
+array(  "name" => "LinkedIn",
+        "desc" => "Insert your LinkedIn profile URI",
+        "id" => $absshortname."_linkedin_id",
+        "type" => "text",
+        "std" => ""),   
+        
+        
+// Google+
+
+
+
+array(  "name" => "Google+",
+        "desc" => "Insert your Google+ profile URI",
+        "id" => $absshortname."_googleplus_id",
+        "type" => "text",
+        "std" => ""),                  
 
 
 
@@ -326,25 +361,51 @@ array(  "name" => "Content font",
         "desc" => "Examples: <span style='font-style:normal;font-size:23px;font-weight:bold;letter-spacing:-1px;'><span style='font-family:Trebuchet MS;'>Trebuchet MS</span> <span style='font-family:Segoe UI,Calibri,Myriad Pro,Myriad,Trebuchet MS,Helvetica,Arial,sans-serif;'>Segoe UI</span> <span style='font-family:arial;'>Arial</span>
         <span style='font-family:times new roman;'>Times</span> <span style='font-family:courier new;'>Courier New</span> <span style='font-family:Calibri,Segoe UI,Myriad Pro,Myriad,Trebuchet MS,Helvetica,Arial,sans-serif;'>Calibri</span>
         </span>",
-        "id" => $shortname."_content_font",
+        "id" => $absshortname."_content_font",
         "type" => "select2",
         "std" => "false"),        
 
 array(  "name" => "Custom CSS",
         "desc" => '<strong>For advanced users only</strong>: insert custom CSS, default <a href="'.$template_url.'/style.css" target="_blank">style.css</a> file',
-        "id" => $shortname."_css_content",
+        "id" => $absshortname."_css_content",
         "type" => "textarea",
         "std" => "false"),
 
 array( "type" => "close"),
 
-);  
+array( "type" => "close-tab"),
+
+
+
+ 
+  
+// Themes Page
+
+
+array( "id" => $absshortname."-tab-2",
+	"type" => "open-tab"),     
+
+array( "name" => "Theme4Press Themes",
+	"type" => "title"),
+ 
+array( "type" => "open"),
+
+array( "type" => "t4pthemes"),
+
+array( "type" => "close"),
+
+array( "type" => "close-tab"),  
+);   
+
+
+
+  
 
 /**
  * Create the options page
  */
 function absolum_theme_options_do_page() {
-	global $themename, $shortname, $optionlist, $select_scheme, $select_slider, $select_content_font, $select_title, $select_background, $select_sidebar; 
+	global $absthemename, $absshortname, $absoptionlist, $absselect_scheme, $absselect_slider, $absselect_content_font, $absselect_title, $absselect_background, $absselect_sidebar; 
 	if ( ! isset( $_REQUEST['updated'] ) ) {
 		$_REQUEST['updated'] = false; 
 } 
@@ -364,36 +425,16 @@ if( isset( $_REQUEST['reset'] )) {
 	<div class="wrap">
   
  
-<h2><?php echo $themename; ?> Settings</h2><br />
+<h2><?php echo $absthemename; ?> Settings</h2><br />
 
 
- <div style="margin-bottom:15px;padding:0 20px;clear:both;float:right;background:#FBFBFB;border:2px solid #ccc;-moz-border-radius:4px;-moz-box-shadow:0 1px 8px #bbb;">
-  
-   <?php $theme_data = get_theme_data(get_bloginfo( 'stylesheet_url' ));?>  
-    
-   <div style="float:right;font-weight:bold;position:relative;top:20px;">Developed by <?php echo $theme_data['Author']; ?></div>
-    
-    
-    <h2 style="font-size:18px;float:left;">Thanks for using Absolum</h2>
-   
-   <div style="position:relative;top:14px;float:left;">
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="XD9JU39SQUEPW">
-<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form>
-</div>
+<a href="http://theme4press.com/affiliates/" target="_blank"><img style="margin:0 0 30px 0;float:left;position:relative;top:10px;" width="321" height="82" border="0" alt="Theme4Press Affiliates" src="<?php echo get_template_directory_uri(); ?>/images/affiliates.png"></a>
 
-     <p style="clear:both;">Do you enjoy this theme? <a rel="bookmark" href="http://theme4press.com/absolum">Send your ideas - issues - wishes</a> or help in development by a donation. Thank you!</p>
-     
-    
-    </div>  
 
 		<?php if ( false !== $_REQUEST['updated'] ) { ?>
-		<?php echo '<div id="message" class="updated fade" style="float:left;"><p><strong>'.$themename.' settings saved</strong></p></div>'; ?>
+		<?php echo '<div id="message" class="updated fade" style="float:left;"><p><strong>'.$absthemename.' settings saved</strong></p></div>'; ?>
     
-    <?php } if( isset( $_REQUEST['reset'] )) { echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings reset</strong></p></div>'; } ?>  
+    <?php } if( isset( $_REQUEST['reset'] )) { echo '<div id="message" class="updated fade"><p><strong>'.$absthemename.' settings reset</strong></p></div>'; } ?>  
 
 
  
@@ -407,20 +448,21 @@ if( isset( $_REQUEST['reset'] )) {
     
       
 
+        <div id="tabs" style="clear:both;">   
+    <ul class="tabNavigation">
+        <li><a href="#abs-tab-1"><span>Settings</span></a></li>
+        <li><a href="#abs-tab-2"><span>Theme4Press Themes</span></a></li>
+    </ul>
+    
+    <div id="tabContainer">
  
     
-    <div id="setContainer">
-
-
-
-
-		
-			<?php settings_fields( 'absolum_options' ); ?>
+  		<?php settings_fields( 'absolum_options' ); ?>
 			<?php $options = get_option( 'absolum' ); ?>
 
 			<table class="form-table">   
 
-      <?php foreach ($optionlist as $value) {
+      <?php foreach ($absoptionlist as $value) {
 switch ( $value['type'] ) {
  
 case "open":
@@ -436,6 +478,82 @@ case "close":
 
 
 </table><br />
+
+
+
+<?php break;
+
+
+case "open-tab":
+?>
+
+<div id="<?php echo $value['id']; ?>">
+
+ 
+<?php break;
+ 
+case "close-tab":
+?>   
+
+
+
+</div>
+
+
+
+<?php break;
+ 
+case "t4pthemes":
+?>
+
+
+			<?php // Get RSS Feed(s)
+	        include_once(ABSPATH . WPINC . '/feed.php' );
+	        $rss = fetch_feed( 'http://www.theme4press.com/feed' );
+	        // If the RSS is failed somehow.
+	        if ( is_wp_error($rss) ) {
+	            $error = $rss->get_error_code();
+	            if($error == 'simplepie-error') {
+	                //Simplepie Error
+	                echo "<div class='updated fade'><p>An error has occured with the RSS feed. (<code>". $error ."</code>)</p></div>";
+	            }
+	            return;
+	         }
+	        ?>
+	        <div class="info">
+		        <a href="http://theme4press.com/tag/free/">FREE Themes</a>
+            <a href="http://theme4press.com/tag/premium/">Premium Themes</a>
+	        </div>
+
+	        <?php
+
+	        $maxitems = $rss->get_item_quantity(10);
+	        $items = $rss->get_items(0, 10);
+
+	        ?>
+	        <ul class="themes">
+	        <?php if (empty($items)) echo '<li>No items</li>';
+	        else
+	        foreach ( $items as $item ) : ?>
+	            <li class="theme">
+             <div>
+              <h2><a href="<?php echo $item->get_permalink();?>"><?php echo $item->get_title();?></a></h2>
+              
+                 <?php echo $item->get_description();?>
+                 
+                <br /> 
+              <a class="view-theme" href="<?php echo $item->get_permalink();?>">VIEW THEME</a>   
+                 
+       
+                 
+             </div> 
+	            </li>
+              
+	        <?php
+	        endforeach; ?>
+	        </ul>
+          </div>
+
 
  
 <?php break;
@@ -493,7 +611,7 @@ case 'select1':
 								$p = '';
 								$r = '';
 
-								foreach ( $select_scheme as $option ) {
+								foreach ( $absselect_scheme as $option ) {
 									$label = $option['label'];
 									if ( $selected == $option['value'] ) // Make default first in list
 										$p = "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . selected( esc_attr( $option['value'] ), $label ). "'>$label</option>";
@@ -526,7 +644,7 @@ case 'select2':
 								$p = '';
 								$r = '';
 
-								foreach ( $select_content_font as $option ) {
+								foreach ( $absselect_content_font as $option ) {
 									$label = $option['label'];
 									if ( $selected == $option['value'] ) // Make default first in list
 										$p = "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . selected( esc_attr( $option['value'] ), $label ). "'>$label</option>";
@@ -557,7 +675,7 @@ case 'select3':
 								$p = '';
 								$r = '';
 
-								foreach ( $select_slider as $option ) {
+								foreach ( $absselect_slider as $option ) {
 									$label = $option['label'];
 									if ( $selected == $option['value'] ) // Make default first in list
 										$p = "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . selected( esc_attr( $option['value'] ), $label ). "'>$label</option>";
@@ -589,7 +707,7 @@ case 'select4':
 								$p = '';
 								$r = '';
 
-								foreach ( $select_title as $option ) {
+								foreach ( $absselect_title as $option ) {
 									$label = $option['label'];
 									if ( $selected == $option['value'] ) // Make default first in list
 										$p = "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . selected( esc_attr( $option['value'] ), $label ). "'>$label</option>";
@@ -620,7 +738,7 @@ case 'select5':
 								$p = '';
 								$r = '';
 
-								foreach ( $select_background as $option ) {
+								foreach ( $absselect_background as $option ) {
 									$label = $option['label'];
 									if ( $selected == $option['value'] ) // Make default first in list
 										$p = "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . selected( esc_attr( $option['value'] ), $label ). "'>$label</option>";
@@ -651,7 +769,7 @@ case 'select6':
 								$p = '';
 								$r = '';
 
-								foreach ( $select_sidebar as $option ) {
+								foreach ( $absselect_sidebar as $option ) {
 									$label = $option['label'];
 									if ( $selected == $option['value'] ) // Make default first in list
 										$p = "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . selected( esc_attr( $option['value'] ), $label ). "'>$label</option>";
@@ -700,9 +818,9 @@ case "checkbox":
       
     
     
-      </div>  
   
-      
+  
+         </div>
 
 			<p class="submit">
 				<input type="submit" class="button-primary" value="Save Settings" />   
@@ -726,7 +844,7 @@ case "checkbox":
  * Sanitize and validate input. Accepts an array, return a sanitized array.
  */
 function absolum_theme_options_validate( $input ) {
-	global $select_scheme, $select_slider, $select_content_font, $select_title, $select_background, $select_sidebar;
+	global $absselect_scheme, $absselect_slider, $absselect_content_font, $absselect_title, $absselect_background, $absselect_sidebar;
   
   $input['abs_rss_feed'] = wp_filter_nohtml_kses( $input['abs_rss_feed'] );
   
@@ -736,7 +854,9 @@ function absolum_theme_options_validate( $input ) {
   
   $input['abs_twitter_id'] = wp_filter_nohtml_kses( $input['abs_twitter_id'] );
   
-  $input['abs_twitter_id'] = wp_filter_nohtml_kses( $input['abs_twitter_id'] );
+  $input['abs_googleplus_id'] = wp_filter_nohtml_kses( $input['abs_googleplus_id'] );
+  
+  $input['abs_linkedin_id'] = wp_filter_nohtml_kses( $input['abs_linkedin_id'] );
   
  	$input['abs_css_content'] = wp_filter_post_kses( $input['abs_css_content'] );
   
