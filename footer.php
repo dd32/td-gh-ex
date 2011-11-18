@@ -4,12 +4,12 @@
  *
  * Closes the <div> for #content, #content-main and #container, <body> and <html> tags.
  *
- * @package WordPress
- * @subpackage Graphene
+ * @package Graphene
  * @since Graphene 1.0
  */
 global $graphene_settings;
-?>    
+?>  
+<?php do_action( 'graphene_bottom_content' ); ?>
     </div><!-- #content-main -->
     
     <?php
@@ -35,21 +35,25 @@ global $graphene_settings;
 
 <div id="footer" class="clearfix">
     
-    <?php if (!$graphene_settings['hide_copyright']) : ?>
+    <?php if ( ! $graphene_settings['hide_copyright'] ) : ?>
     <div id="copyright">
     	<h3><?php _e('Copyright', 'graphene'); ?></h3>
-		<?php if ($graphene_settings['copy_text'] == '') : ?>
+		<?php if ( $graphene_settings['copy_text'] == '' && ! $graphene_settings['show_cc'] ) : ?>
             <p>
-            <?php _e('Except where otherwise noted, content on this site is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Creative Commons Licence</a>.', 'graphene'); ?>
+            <?php printf( '&copy; %1$s %2$s.', date( 'Y' ), get_bloginfo( 'name' ) ); ?>
             </p>
-        <?php else : ?>
+        <?php elseif ( ! $graphene_settings['show_cc'] ) : ?>
         	<?php 
 				if ( ! stristr( $graphene_settings['copy_text'], '</p>' ) ) { $graphene_settings['copy_text'] = wpautop( $graphene_settings['copy_text'] ); }
 				echo $graphene_settings['copy_text']; 
 			?>
  	    <?php endif; ?>
         
-        <?php if ($graphene_settings['show_cc']) : ?>
+        <?php if ( $graphene_settings['show_cc'] ) : ?>
+        	<?php /* translators: %s will replaced by a link to the Creative Commons licence page, with "Creative Commons Licence" as the link text. */?>
+        	<p>
+				<?php printf( __( 'Except where otherwise noted, content on this site is licensed under a %s.', 'graphene' ), '<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/">' . __( 'Creative Commons Licence', 'graphene' ) . '</a>' ); ?>
+            </p>
         	<p class="cc-logo"><span><?php _e( 'Creative Commons Licence BY-NC-ND', 'graphene' ); ?></span></p>
         <?php endif; ?>
 

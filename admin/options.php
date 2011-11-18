@@ -891,14 +891,14 @@ function graphene_options_general() {
             <div class="panel-wrap inside">
                 <table class="form-table">       	
                     <tr>
-                        <th scope="row"><label for="show_cc"><?php _e( 'Show Creative Commons logo', 'graphene' ); ?></label><br />
+                        <th scope="row"><label for="show_cc"><?php _e( 'Use Creative Commons licence for content', 'graphene' ); ?></label><br />
                         <span class="cc-logo">&nbsp;</span>
                         <td><input type="checkbox" name="graphene_settings[show_cc]" id="show_cc" <?php checked( $graphene_settings['show_cc'] ); ?> value="true" /></td>
                     </tr>
                     <tr>
-                        <th scope="row"><label for="copy_text"><?php _e("Copyright text (html allowed)", 'graphene' ); ?></label>
+                        <th scope="row"><label for="copy_text"><?php _e( "Copyright text (html allowed)", 'graphene' ); ?></label>
                         <br /><small><?php _e( 'If this field is empty, the following default copyright text will be displayed:', 'graphene' ); ?></small>
-                        <p style="background-color:#fff;padding:5px;border:1px solid #ddd;"><small><?php _e( 'Except where otherwise noted, content on this site is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Creative Commons Licence</a>.','graphene' ); ?></small></p>
+                        <p style="background-color:#fff;padding:5px;border:1px solid #ddd;"><small><?php printf( '&copy; %1$s %2$s.', date( 'Y' ), get_bloginfo( 'name' ) ); ?></small></p>
                         </th>
                         <td><textarea name="graphene_settings[copy_text]" id="copy_text" cols="60" rows="7"><?php echo stripslashes( $graphene_settings['copy_text'] ); ?></textarea></td>
                     </tr>
@@ -912,7 +912,7 @@ function graphene_options_general() {
                     </tr>
                 </table>
             </div>
-        </div> 
+        </div>
         
         
         <?php /* Print Options */ ?>

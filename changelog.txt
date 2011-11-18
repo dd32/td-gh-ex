@@ -1,9 +1,13 @@
-GRAPHENE WORDPRESS THEME CHANGELOG
+﻿GRAPHENE WORDPRESS THEME CHANGELOG
 by Syahir Hakim
 http://www.khairul-syahir.com
 
 CHANGELOG
 
+Version 1.5.5
+	* Fixed XSS vulnerability (thanks to Joshua from secureserver.net for the notification)
+	* Changed the default content copyright text in the footer to a more generic copyright text (Creative Commons licence still available via the theme's options)
+	
 Version 1.5.4
 	* Fixed unrelated options being hidden when slider is disabled in the theme's options page
 	* Fixed default menu not being ordered according to page order

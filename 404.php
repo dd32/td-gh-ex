@@ -5,6 +5,11 @@ $find = array("'.html'", "'.+/'", "'[-/_]'");
 $replace = " ";
 $search_term = trim(preg_replace($find, $replace, $search_term));
 $search_term_q = preg_replace('/ /', '%20', $search_term);
+
+// Sanitise the search term
+global $wpdb;
+$search_term_q = esc_js( $wpdb->escape( urlencode( strip_tags( $search_term_q ) ) ) );
+
 $redirect_location = get_home_url().'?s='.$search_term_q.'&search_404=1';
 get_header();
 ?>
