@@ -2417,73 +2417,63 @@ function graphene_homepage_panes(){
 	}
 	
 	// Build the common WP_Query() parameter first
-	$args = array( 'orderby' => 'date',
-				  'order' => 'DESC',
-				  'suppress_filters' => 0,
-				  'post_type' => array( 'post', 'page' ),
+	$args = array( 
+				  'orderby' 			=> 'date',
+				  'order' 				=> 'DESC',
+				  'post_type' 			=> array( 'post', 'page' ),
+				  'posts_per_page'		=> $pane_count,
+				  'ignore_sticky_posts' => 1,
 				 );
 	
 	// args specific to latest posts
-	if ($graphene_settings['show_post_type'] == 'latest-posts' ){
+	if ( $graphene_settings['show_post_type'] == 'latest-posts' ){
 		$args_merge = array(
-							'posts_per_page' => $pane_count,
-							'post_type' => array('post'),
+							'post_type' => array( 'post' ),
 							);
-		$args = array_merge( $args, $args_merge);
+		$args = array_merge( $args, $args_merge );
 	}
 	
 	// args specific to latest posts by category
 	if ($graphene_settings['show_post_type'] == 'cat-latest-posts' ){
 		$args_merge = array(
-							'posts_per_page' => $pane_count,
 							'category__in' => $graphene_settings['homepage_panes_cat'],
 							);
-		$args = array_merge( $args, $args_merge);
+		$args = array_merge( $args, $args_merge );
 	}
 	
 	// args specific to posts/pages
 	if ( $graphene_settings['show_post_type'] == 'posts' ){
 		
-                $post_ids = $graphene_settings['homepage_panes_posts'];
-                $post_ids = preg_split("/[\s]*[,][\s]*/", $post_ids, -1, PREG_SPLIT_NO_EMPTY); // post_ids are comma seperated, the query needs a array                        
+         $post_ids = $graphene_settings['homepage_panes_posts'];
+         $post_ids = preg_split("/[\s]*[,][\s]*/", $post_ids, -1, PREG_SPLIT_NO_EMPTY); // post_ids are comma seperated, the query needs a array                        
           
 		$args_merge = array(	
-							'posts_per_page' => $pane_count,
 							'post__in' => $post_ids,
-							'ignore_sticky_posts' => 1
 							);
 		$args = array_merge( $args, $args_merge );
 	}
 	
-	global $post;
-	
 	// Get the posts to display as homepage panes
-	$postsQuery = new WP_Query(apply_filters('graphene_homepage_panes_args', $args));
+	$panes = new WP_Query( apply_filters( 'graphene_homepage_panes_args', $args ) );
 	?>
     
     <div class="homepage_panes">
 	
-	<?php 
-            while ($postsQuery->have_posts()) : 
-                $postsQuery->the_post(); 
-                setup_postdata($post);
-                
-                   
-		 ?>
+	<?php while ( $panes->have_posts() ) : $panes->the_post();	?>
 		<div class="homepage_pane clearfix">
         
-        	<a href="<?php the_permalink(); ?>" title="<?php printf(__( 'Permalink to %s', 'graphene' ), esc_attr(get_the_title() )); ?>">
+        	<a href="<?php the_permalink(); ?>" title="<?php printf( __( 'Permalink to %s', 'graphene' ), esc_attr( get_the_title() ) ); ?>">
         	<?php /* Get the post's image */ 
-			if (has_post_thumbnail( $post->ID) ) {
+			if ( has_post_thumbnail( get_the_ID() ) ) {
 				the_post_thumbnail( 'graphene-homepage-pane' );
 			} else {
-				echo graphene_get_post_image( $post->ID, 'graphene-homepage-pane', 'excerpt' );
+				echo graphene_get_post_image( get_the_ID(), 'graphene-homepage-pane', 'excerpt' );
 			}
 			?>
             </a>
             
             <?php /* The post title */ ?>
-            <h3 class="post-title"><a href="<?php the_permalink(); ?>" title="<?php printf(__( 'Permalink to %s', 'graphene' ), esc_attr(get_the_title() )); ?>"><?php the_title(); ?></a></h3>
+            <h3 class="post-title"><a href="<?php the_permalink(); ?>" title="<?php printf( __( 'Permalink to %s', 'graphene' ), esc_attr( get_the_title() ) ); ?>"><?php the_title(); ?></a></h3>
             
             <?php /* The post excerpt */ ?>
             <div class="post-excerpt">
@@ -2492,7 +2482,7 @@ function graphene_homepage_panes(){
             
             <?php /* Read more button */ ?>
             <p class="post-comments">
-            	<a href="<?php the_permalink(); ?>" title="<?php printf(__( 'Permalink to %s', 'graphene' ), esc_attr(get_the_title() )); ?>" class="block-button"><?php _e( 'Read more', 'graphene' ); ?></a>
+            	<a href="<?php the_permalink(); ?>" title="<?php printf( __( 'Permalink to %s', 'graphene' ), esc_attr( get_the_title() ) ); ?>" class="block-button"><?php _e( 'Read more', 'graphene' ); ?></a>
             </p>
         </div>
     <?php endwhile; wp_reset_postdata(); ?>
@@ -2504,7 +2494,7 @@ function graphene_homepage_panes(){
 /* Helper function to control when the homepage panes should be displayed. */
 function graphene_display_homepage_panes(){
 	global $graphene_settings;
-	if (get_option( 'show_on_front' ) == 'page' && !$graphene_settings['disable_homepage_panes'] && is_front_page() ) {
+	if ( get_option( 'show_on_front' ) == 'page' && ! $graphene_settings['disable_homepage_panes'] && is_front_page() ) {
 		graphene_homepage_panes();
 	}	
 }

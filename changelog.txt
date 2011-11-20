@@ -1,8 +1,11 @@
-﻿GRAPHENE WORDPRESS THEME CHANGELOG
+GRAPHENE WORDPRESS THEME CHANGELOG
 by Syahir Hakim
 http://www.khairul-syahir.com
 
 CHANGELOG
+
+Version 1.5.6
+	* Fixed homepage panes posts being repeated (and other issues related to double action hook)
 
 Version 1.5.5
 	* Fixed XSS vulnerability (thanks to Joshua from secureserver.net for the notification)

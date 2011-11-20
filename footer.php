@@ -9,7 +9,6 @@
  */
 global $graphene_settings;
 ?>  
-<?php do_action( 'graphene_bottom_content' ); ?>
     </div><!-- #content-main -->
     
     <?php
