@@ -184,7 +184,7 @@
 	}
 	else {
 		echo(".sf-menu a.sf-with-ul { padding-right: 2.25em;} \n");
-		echo("#nav-menu2 a{ line-height: 32px;} \n");
+		echo("#nav-menu2 a{ line-height: 33px;} \n");
 	}
 
 	$img_SuperFish = get_template_directory_uri() . '/js/superfish/images/';      

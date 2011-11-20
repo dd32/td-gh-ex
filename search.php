@@ -24,7 +24,7 @@ get_header(); ?>
 					<?php
 						/* Include the Post-Format-specific template for the content.
 						 -----------------------------------------------------------*/
-						get_template_part( 'content', get_post_format() );
+						get_template_part( 'loop', get_post_format() );
 					?>
 
 				<?php endwhile; ?>

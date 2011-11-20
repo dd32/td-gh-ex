@@ -4,7 +4,7 @@ Theme URI: http://wp-ultra.com/admired/
 Author: Brad Thomas
 Author URI: http://wp-ultra.com/
 Description: The Admired theme is a stylish and fully customizable WordPress theme. Make it yours with the easy customizable theme options with a simple check-box interface to easily change colors, fonts, skins, menus, sidebars, and much more. Uses Superfish menu effects and it has built-in pagination for post pages. It has special styles for six different post formats and an option to show post excerpts with thumbnails. Admired also has a HTML sitemap template, four extra widgets, and Google fonts.
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License
 License URI: license.txt
 Tags: dark, light, white, black, silver, gray, blue, one-column, two-columns, three-columns, left-sidebar, right-sidebar, flexible-width, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
@@ -540,8 +540,9 @@ a:hover {
 }
 
 #site-title,
- #site-description { 
+#site-description { 
     font-family: Garamond, serif;
+	text-shadow: 0 -1px 0 #555;
 }
 /* =superfish helpers
 -------------------------------------------------------------- */
@@ -2481,6 +2482,24 @@ p.comment-form-comment {
 		margin: 0 7.6%;
 		width: auto;
 	}
+	.blog .sticky, .post, #page .page {
+		width: 69%;
+	}
+	#head-wrapper, #footer {
+		margin: 0px;
+		width: 1080px;
+	}
+	#branding #header-group {
+		padding-bottom: 30px;
+	}
+	#header-logo {
+		width:97%;
+	}
+	
+	#top-scroll , #footer-html, #footer-info {
+		width: 95%;
+	}
+
 
 	section.featured-post .attachment-small-feature,
 	.one-column section.featured-post .attachment-small-feature {
