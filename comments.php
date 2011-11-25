@@ -93,7 +93,7 @@ global $aria_req, $post_id, $required_text;
 // author, email and url fields are set in a separate variable first:
 $fields =  array(
 	'author' => '<p><input class="text author" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' tabindex="1" />' . 
-				'&nbsp;&nbsp;<label for="author"><strong>' . __( 'Name ' ,'atahualpa') . '</strong> ' . ( $req ? __('(required)','atahualpa') : '' ) . '</label></p>',
+				'&nbsp;&nbsp;<label for="author"><strong>' . __( 'Name' ,'atahualpa') . '</strong> ' . ( $req ? __('(required)','atahualpa') : '' ) . '</label></p>',
 	'email'  => '<p><input class="text email" id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . '  tabindex="2" />' . 
 				'&nbsp;&nbsp;<label for="email"><strong>' . __( 'Email' ,'atahualpa') . '</strong> ' . ( $req ? __('(will not be published) (required)','atahualpa') : '' ) . '</label></p>',
 	'url'    => '<p><input class="text url" id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30"  tabindex="3" />' . 

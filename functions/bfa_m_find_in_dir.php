@@ -1,12 +1,12 @@
 <?php
-function bfa_m_find_in_dir( $base, $pattern, $recursive = true, $case_sensitive = false ) {
+function m_find_in_dir( $root, $pattern, $recursive = true, $case_sensitive = false ) {
     $result = array();
     if( $case_sensitive ) {
-        if( false === bfa_m_find_in_dir_( $base, $pattern, $recursive, $result )) {
+        if( false === m_find_in_dir__( $root, $pattern, $recursive, $result )) {
             return false;
         }
     } else {
-        if( false === bfa_m_find_in_dir_i_( $base, $pattern, $recursive, $result )) {
+        if( false === m_find_in_dir_i__( $root, $pattern, $recursive, $result )) {
             return false;
         }
     }
@@ -17,8 +17,8 @@ function bfa_m_find_in_dir( $base, $pattern, $recursive = true, $case_sensitive 
 /**
  * @access private
  */
-function bfa_m_find_in_dir_( $base, $pattern, $recursive, &$result ) {
-    $dh = @opendir( $base );
+function m_find_in_dir__( $root, $pattern, $recursive, &$result ) {
+    $dh = @opendir( $root );
     if( false === $dh ) {
         return false;
     }
@@ -26,13 +26,11 @@ function bfa_m_find_in_dir_( $base, $pattern, $recursive, &$result ) {
         if( "." == $file || ".." == $file ){
             continue;
         }
-//		Note: ereg() is depreciated in php 5.3
-//      if( false !== @ereg( $pattern, "{$base}/{$file}" )) { 
-        if( false !== @preg_match( '/'.$pattern.'/', "{$base}/{$file}" )) {
-            $result[] = "{$base}/{$file}";
+        if( false !== @ereg( $pattern, "{$root}/{$file}" )) {
+            $result[] = "{$root}/{$file}";
         }
-        if( false !== $recursive && is_dir( "{$base}/{$file}" )) {
-            bfa_m_find_in_dir_( "{$base}/{$file}", $pattern, $recursive, $result );
+        if( false !== $recursive && is_dir( "{$root}/{$file}" )) {
+            m_find_in_dir__( "{$root}/{$file}", $pattern, $recursive, $result );
         }
     }
     closedir( $dh );
@@ -42,8 +40,8 @@ function bfa_m_find_in_dir_( $base, $pattern, $recursive, &$result ) {
 /**
  * @access private
  */
-function bfa_m_find_in_dir_i_( $base, $pattern, $recursive, &$result ) {
-    $dh = @opendir( $base );
+function m_find_in_dir_i__( $root, $pattern, $recursive, &$result ) {
+    $dh = @opendir( $root );
     if( false === $dh ) {
         return false;
     }
@@ -51,13 +49,11 @@ function bfa_m_find_in_dir_i_( $base, $pattern, $recursive, &$result ) {
         if( "." == $file || ".." == $file ){
             continue;
         }
-//		Note: ergi() is depreciated in php 5.3
-//      if( false !== @eregi( $pattern, "{$base}/{$file}" )) { 
-        if( false !== @preg_match( '/'.$pattern.'/i', "{$base}/{$file}" )) {
-            $result[] = "{$base}/{$file}";
+        if( false !== @eregi( $pattern, "{$root}/{$file}" )) {
+            $result[] = "{$root}/{$file}";
         }
-        if( false !== $recursive && is_dir( "{$base}/{$file}" )) {
-            bfa_m_find_in_dir_( "{$base}/{$file}", $pattern, $recursive, $result );
+        if( false !== $recursive && is_dir( "{$root}/{$file}" )) {
+            m_find_in_dir__( "{$root}/{$file}", $pattern, $recursive, $result );
         }
     }
     closedir( $dh );

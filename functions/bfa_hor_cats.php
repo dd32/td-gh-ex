@@ -22,7 +22,7 @@ function bfa_hor_cats($sort_order = "ID", $order = "ASC", $levels = "", $titles 
 	global $bfa_ata; 
 	
 	if ( $bfa_ata['add_descr_cat_menu_links'] == "Yes" ) { 
-		$list_cat_string = preg_replace_callback("| title=\"(.*?)\">(.*?)</a>|","bfa_add_descr_cat_menu_links",$list_cat_string); 
+		$list_cat_string = preg_replace_callback("| title=\"(.*?)\">(.*?)</a>|","add_descr_cat_menu_links",$list_cat_string); 
 	}
 	
 	if ( $titles == "No" ) { 
@@ -34,7 +34,7 @@ function bfa_hor_cats($sort_order = "ID", $order = "ASC", $levels = "", $titles 
 
 
 
-function bfa_add_descr_cat_menu_links($matches) {
+function add_descr_cat_menu_links($matches) {
 	
 	global $bfa_ata; 
 	

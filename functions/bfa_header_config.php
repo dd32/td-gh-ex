@@ -1,9 +1,7 @@
 <?php
 function bfa_header_config() {
 
-	global $bfa_ata, $post;
-	$templateURI = get_template_directory_uri(); 
-	$homeURL = get_home_url();  
+	global $bfa_ata, $post, $templateURI, $homeURL;
 
 	// Since 3.6: bfa_header_config() instead of bfa_header_config($header_items)
 	$header_items = $bfa_ata['configure_header'];
@@ -16,7 +14,7 @@ function bfa_header_config() {
 	OR strpos($header_items,'%page-right') !== FALSE ) {
 
 		// Since 3.5.2: New WP 3 menu system:
-		if ( has_nav_menu('menu1') ) 
+		if ( function_exists('wp_nav_menu') AND has_nav_menu('menu1') ) 
 		{
 			if ( strpos($header_items,'%pages') !== FALSE ) 
 				$alignment = "left";
@@ -46,7 +44,11 @@ function bfa_header_config() {
 			if ( $bfa_ata['home_page_menu_bar'] != '' ) 
 			{
 				echo '<li class="page_item';
-				if ( is_front_page() OR is_home() ) { 
+				if ( function_exists('is_front_page') ) {
+					if ( is_front_page() ) { 
+						echo ' current_page_item';
+					}
+				} elseif ( is_home() ) { 
 					echo ' current_page_item';	
 				}
 				echo '"><a href="' . $homeURL . '/" title="'; bloginfo('name'); echo '"><span>' . 
@@ -77,7 +79,7 @@ function bfa_header_config() {
 	OR strpos($header_items,'%cat-right') !== FALSE ) {
 
 		// Since 3.5.2: New WP 3 menu system:
-		if ( has_nav_menu('menu2') ) 
+		if ( function_exists('wp_nav_menu') AND has_nav_menu('menu2') ) 
 		{
 			if ( strpos($header_items,'%cats') !== FALSE ) 
 				$alignment = "left";
@@ -107,8 +109,12 @@ function bfa_header_config() {
 			if ( $bfa_ata['home_cat_menu_bar'] != '' ) 
 			{
 				echo '<li class="cat-item';
-				if ( is_front_page() OR is_home() )  
+				if ( function_exists('is_front_page') ) {
+					if ( is_front_page() OR is_home() )  
 						echo ' current-cat';
+				} elseif ( is_home() ) { 
+					echo ' current-cat';	
+				}
 				echo '"><a href="' . $homeURL . '/" title="'; bloginfo('name'); echo '">' . 
 				$bfa_ata['home_cat_menu_bar'] . '</a></li>' . "\n";	
 			}	
@@ -144,26 +150,54 @@ function bfa_header_config() {
 		else  
 			$header_rowspan = ''; 
 
-		// Logo Icon
-		if ( $bfa_ata['logo'] != "" ) {
-			if($bfa_ata['images_root'] == "atahualpa") {
-				$imgdir  = get_template_directory_uri() . '/images/';
-			} else {
-				if(!isset($bfa_ata['ata_images_dir']) 
-				OR ($bfa_ata['ata_images_dir'] == '') ) {	
-					$img_folder = 'ata-images';  
-					$imgdir  = content_url() . '/ata-images/';
-				} else {
-					$imgdir  = content_url() . '/' . $bfa_ata['ata_images_dir'] . '/';
-				}
-			}
-			$logo = $imgdir.$bfa_ata['logo'];
+			// Logo Icon for Wordpress and WPMU
+			if ( $bfa_ata['logo'] != "" ) 
+			{ 
+				echo '<td ' . $header_rowspan . 'valign="middle" class="logoarea-logo"><a href="' 
+				. $homeURL . '/"><img class="logo" src="';
 
-			echo '<td ' . $header_rowspan . 'valign="middle" class="logoarea-logo"><a href="' 
-				. $homeURL . '/">';
-			echo '<img class="logo" src="'.$logo . '" alt="';
-			bloginfo('name'); 
-			echo '" /></a></td>';
+				// if this is WordPress MU 
+				if ( file_exists(ABSPATH."/wpmu-settings.php") ) 
+				{
+					// two ways to figure out the upload path on WPMU, first try easy version 1, :
+					$upload_path1 = ABSPATH . get_option('upload_path');
+					
+					// Try the hard way, version 2: 
+					$upload_path2 = str_replace('themes/' . get_option('stylesheet') . 
+					'/functions', '', $_SERVER['DOCUMENT_ROOT']) . 
+					'/wp-content/blogs.dir/' . $wpdb->blogid . '/files';
+					
+					// see if user has uploaded his own "logosymbol.gif" somewhere into his upload folder, version 1:
+					$wpmu_logosymbol = m_find_in_dir($upload_path1,$bfa_ata['logo']); $upload_path = $upload_path1;
+					
+					// try version 2 if no logosymbol.gif was found:
+					if ( !$wpmu_logosymbol ) 
+						$wpmu_logosymbol = m_find_in_dir($upload_path2,$bfa_ata['logo']); $upload_path = $upload_path2;
+					
+					// if we found logosymbol.gif one way or another, figure out the public URL
+					if ( $wpmu_logosymbol ) 
+					{
+						$new_logosymbol = str_replace($upload_path,
+						get_option('fileupload_url'), $wpmu_logosymbol); 
+						echo $new_logosymbol[0] . '" alt="'; bloginfo('name');
+					} 
+					
+					// otherwise: print the one in the theme folder
+					else 
+					{ 
+						echo $templateURI . '/images/' . $bfa_ata['logo'] . 
+						'" alt="'; bloginfo('name'); 
+					}
+				} 
+				
+				// if this is Wordpress and not WPMU, print the logosymbol.gif in the theme folder right away				
+				else 
+				{ 
+					echo $templateURI . '/images/' . $bfa_ata['logo'] . '" alt="';
+					bloginfo('name'); 
+				} 
+
+				echo '" /></a></td>';
 			} 
 
 
@@ -261,21 +295,13 @@ function bfa_header_config() {
 	// Header Image
 	if ( strpos($header_items,'%image') !== FALSE ) {
 
-		// force 'top left' alignment if rotating and fading is on
-		if (($bfa_ata['header_image_javascript'] !== "0") AND
-		($bfa_ata['crossslide_fade'] !== "0")) {
-			$bfa_ata['headerimage_alignment'] = 'top left';
-		}
-		
 		ob_start();
 		$bfa_header_images = bfa_rotating_header_images();
 		
-		echo '<div id="imagecontainer-pre" class="header-image-container-pre">';
-
-		echo '    <div id="imagecontainer" class="header-image-container" style="background: url(' . 
+		echo '<div id="imagecontainer" class="header-image-container" style="background: url(' . 
 		$bfa_header_images[array_rand($bfa_header_images)] . ') ' . $bfa_ata['headerimage_alignment'] . 
 		' no-repeat;">';
-		echo '</div>';
+		
 		if ( $bfa_ata['header_image_clickable'] == "Yes" ) {
 			echo '<div class="clickable"><a class="divclick" title="'; 
 			bloginfo('name'); echo '" href ="' . $homeURL . '/">&nbsp;</a></div>';
@@ -353,7 +379,7 @@ function bfa_header_config() {
 	
 	// Parse widget areas:
 	$final_header = bfa_parse_widget_areas($final_header);
-
+	
 	return $final_header;
 }
 ?>

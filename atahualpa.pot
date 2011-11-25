@@ -1,249 +1,272 @@
+# This file is distributed under the same license as the Atahualpa package.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: Atahualpa\n"
-"POT-Creation-Date: 2014-08-23 02:49+0100\n"
-"PO-Revision-Date: 2014-08-23 02:49+0100\n"
-"Last-Translator: BytesForAll <lmmmuc@gmail.com>\n"
-"Language-Team: \n"
+"Project-Id-Version: Atahualpa 3.3.3\n"
+"Report-Msgid-Bugs-To: http://forum.bytesforall.com/\n"
+"POT-Creation-Date: 2009-07-05 02:02+0100\n"
+"PO-Revision-Date: 2009-07-05 02:06+0100\n"
+"Last-Translator: Bytes For All <lmmmuc@gmail.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
-"X-Poedit-KeywordsList: __;_e\n"
-"X-Poedit-Basepath: .\n"
-"X-Poedit-SearchPath-0: .\n"
+"Language-Team: \n"
 
-#: comments-paged.php:3 comments.php:4
+#: comments-paged.php:3
+#: comments.php:4
+#: legacy.comments.php:3
 msgid "Please do not load this page directly. Thanks!"
 msgstr ""
 
-#: comments-paged.php:7 comments.php:7
+#: comments-paged.php:7
+#: comments.php:7
+#: legacy.comments.php:6
 msgid "This post is password protected. Enter the password to view comments."
 msgstr ""
 
-#: comments-paged.php:25 comments.php:26
+#: comments-paged.php:25
+#: comments.php:20
+#: legacy.comments.php:23
 msgid "No comments yet to "
 msgstr ""
 
-#: comments-paged.php:25 comments.php:27
+#: comments-paged.php:25
+#: comments.php:21
+#: legacy.comments.php:23
 msgid "1 comment to "
 msgstr ""
 
-#: comments-paged.php:26 comments.php:27
+#: comments-paged.php:26
+#: comments.php:21
+#: legacy.comments.php:24
 #, php-format
 msgid "% comments to "
 msgstr ""
 
-#: comments-paged.php:30 comments-paged.php:125 index.php:36
-#: template_multi_column_custom_query.php:227
+#: comments-paged.php:30
+#: comments-paged.php:136
 msgid "Pages:"
 msgstr ""
 
-#: comments-paged.php:61 functions/bfa_theme_options.php:2681
+#: comments-paged.php:58
+#: legacy.comments.php:62
+msgid "Gravatar"
+msgstr ""
+
+#: comments-paged.php:72
+#: legacy.comments.php:72
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: comments-paged.php:68 comments-paged.php:102
-#: functions/bfa_custom_comments.php:22
+#: comments-paged.php:79
+#: comments-paged.php:113
+#: legacy.comments.php:75
+#: legacy.comments.php:106
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: comments-paged.php:68 comments-paged.php:102
+#: comments-paged.php:79
+#: comments-paged.php:113
+#: legacy.comments.php:75
+#: legacy.comments.php:106
 msgid "F jS, Y"
 msgstr ""
 
-#: comments-paged.php:75 comments-paged.php:105
+#: comments-paged.php:86
+#: comments-paged.php:116
+#: legacy.comments.php:79
+#: legacy.comments.php:108
 msgid "Edit"
 msgstr ""
 
-#: comments-paged.php:140
+#: comments-paged.php:151
+#: legacy.comments.php:137
 msgid "Comments are closed."
 msgstr ""
 
-#: comments-paged.php:153 comments.php:124
+#: comments-paged.php:164
+#: comments.php:96
+#: legacy.comments.php:149
 msgid "Leave a Reply"
 msgstr ""
 
-#: comments-paged.php:157
+#: comments-paged.php:168
+#: comments.php:86
+#: legacy.comments.php:153
 #, php-format
 msgid "You must be %slogged in</a> to post a comment."
 msgstr ""
 
-#: comments-paged.php:169
+#: comments-paged.php:180
+#: comments.php:109
+#: legacy.comments.php:164
 #, php-format
 msgid "Logged in as %s."
 msgstr ""
 
-#: comments-paged.php:172
+#: comments-paged.php:183
+#: comments.php:113
+#: legacy.comments.php:167
 msgid "Log out of this account"
 msgstr ""
 
-#: comments-paged.php:172
+#: comments-paged.php:183
+#: comments.php:114
+#: legacy.comments.php:167
 msgid "Logout &raquo;"
 msgstr ""
 
-#: comments-paged.php:179
+#: comments-paged.php:190
+#: comments.php:121
+#: legacy.comments.php:173
 msgid "author"
 msgstr ""
 
-#: comments-paged.php:179 comments.php:96
+#: comments-paged.php:190
+#: comments.php:122
+#: legacy.comments.php:173
 msgid "Name "
 msgstr ""
 
-#: comments-paged.php:180 comments-paged.php:185 comments.php:96
+#: comments-paged.php:191
+#: comments-paged.php:196
+#: comments.php:123
+#: comments.php:130
+#: legacy.comments.php:173
+#: legacy.comments.php:179
 msgid "(required)"
 msgstr ""
 
-#: comments-paged.php:184
+#: comments-paged.php:195
+#: comments.php:128
+#: legacy.comments.php:178
 msgid "email"
 msgstr ""
 
-#: comments-paged.php:184
+#: comments-paged.php:195
+#: legacy.comments.php:178
 msgid "Mail (will not be published) "
 msgstr ""
 
-#: comments-paged.php:189
+#: comments-paged.php:200
+#: comments.php:135
+#: legacy.comments.php:183
 msgid "url"
 msgstr ""
 
-#: comments-paged.php:189 comments.php:100
+#: comments-paged.php:200
+#: comments.php:136
+#: legacy.comments.php:183
 msgid "Website"
 msgstr ""
 
-#: comments-paged.php:196 comments.php:106
+#: comments-paged.php:207
+#: comments.php:150
+#: legacy.comments.php:193
 #, php-format
 msgid "You can use %1$sthese HTML tags</a>"
 msgstr ""
 
-#: comments-paged.php:205
+#: comments-paged.php:216
+#: comments.php:164
+#: legacy.comments.php:204
 msgid "Submit Comment"
 msgstr ""
 
-#: comments.php:40 comments.php:48 comments.php:58
-#: functions/bfa_theme_options.php:2664
+#: comments.php:34
+#: comments.php:42
+#: comments.php:52
 msgid " &middot; Reply"
 msgstr ""
 
-#: comments.php:41 comments.php:49 comments.php:59
+#: comments.php:35
+#: comments.php:43
+#: comments.php:53
 msgid "Log in to Reply"
 msgstr ""
 
-#: comments.php:98
-msgid "Email"
-msgstr ""
-
-#: comments.php:98
-msgid "(will not be published) (required)"
-msgstr ""
-
-#: comments.php:118
-#, php-format
-msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
-msgstr ""
-
-#: comments.php:119
-#, php-format
-msgid ""
-"Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
-"this account\">Log out?</a>"
-msgstr ""
-
-#: comments.php:125
+#: comments.php:97
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr ""
 
-#: comments.php:126
-msgid "Cancel reply"
+#: comments.php:100
+msgid "Cancel"
 msgstr ""
 
-#: comments.php:127
-msgid "Post Comment"
+#: comments.php:129
+msgid "Mail</strong> (will not be published) "
 msgstr ""
 
-#: footer.php:16 header.php:108
-msgid "Categories"
-msgstr ""
-
-#: footer.php:22 header.php:115
-msgid "Archives"
-msgstr ""
-
-#: footer.php:71
+#: footer.php:53
 msgid "Meta"
 msgstr ""
 
-#: footer.php:77
-msgid ""
-"Powered by WordPress, state-of-the-art semantic personal publishing platform."
+#: footer.php:59
+msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
 msgstr ""
 
-#: footer.php:78
+#: footer.php:60
 msgid "WordPress"
 msgstr ""
 
-#: footer.php:100 footer.php:106 footer.php:126 footer.php:132
+#: footer.php:83
+#: footer.php:89
 msgid " queries. "
 msgstr ""
 
-#: footer.php:100 footer.php:106 footer.php:126 footer.php:132
+#: footer.php:83
+#: footer.php:89
 msgid " seconds."
 msgstr ""
 
-#: functions.php:555
+#: functions.php:392
 msgid "Atahualpa Post Options"
 msgstr ""
 
-#: functions.php:557
+#: functions.php:394
 msgid "Atahualpa Page Options"
 msgstr ""
 
-#: functions.php:597
-msgid "Body Title Single Pages"
+#: functions.php:429
+msgid "Body Title"
 msgstr ""
 
-#: functions.php:599
-msgid "Body Title Multi Post Pages"
-msgstr ""
-
-#: functions.php:603
+#: functions.php:435
 msgid "Meta Title"
 msgstr ""
 
-#: functions.php:607
+#: functions.php:439
 msgid "Meta Keywords"
 msgstr ""
 
-#: functions.php:611
+#: functions.php:443
 msgid "Meta Description"
 msgstr ""
 
-#: functions.php:624
+#: functions.php:456
 msgid "Body copy title"
 msgstr ""
 
-#: functions.php:707
-msgid "Menu 1"
+#: header.php:64
+msgid "Categories"
 msgstr ""
 
-#: functions.php:708
-msgid "Menu 2"
+#: header.php:72
+msgid "Archives"
 msgstr ""
 
-#: index.php:61 template_multi_column_custom_query.php:266
-msgid "Not Found"
+#: legacy.comments.php:133
+msgid "There are no comments yet."
 msgstr ""
 
-#: index.php:62 template_multi_column_custom_query.php:267
-msgid "Sorry, but you are looking for something that isn't here."
-msgstr ""
-
-#: functions/bfa_calendar_widget.php:12
+#: functions/bfa_calendar_widget.php:13
 msgid "A calendar of your blog's posts"
 msgstr ""
 
-#: functions/bfa_calendar_widget.php:13 functions/bfa_calendar_widget.php:14
+#: functions/bfa_calendar_widget.php:14
+#: functions/bfa_calendar_widget.php:15
 msgid "Calendar"
 msgstr ""
 
@@ -251,161 +274,158 @@ msgstr ""
 msgid "View all posts filed under"
 msgstr ""
 
-#: functions/bfa_meta_tags.php:98
+#: functions/bfa_meta_tags.php:86
 msgid "l, F jS, Y"
 msgstr ""
 
-#: functions/bfa_meta_tags.php:101
+#: functions/bfa_meta_tags.php:89
 msgid "F Y"
 msgstr ""
 
-#: functions/bfa_meta_tags.php:110
+#: functions/bfa_meta_tags.php:98
 msgid "404 - Page not found"
 msgstr ""
 
-#: functions/bfa_popular_in_cat.php:130
-msgid "Lists most commented posts of given category"
-msgstr ""
-
-#: functions/bfa_popular_in_cat.php:132 functions/bfa_popular_in_cat.php:133
-msgid "BFA Popular in Cat"
-msgstr ""
-
-#: functions/bfa_popular_posts.php:146
-msgid "Lists most commented posts overall"
-msgstr ""
-
-#: functions/bfa_popular_posts.php:148 functions/bfa_popular_posts.php:149
-msgid "BFA Popular posts"
-msgstr ""
-
-#: functions/bfa_postinfo.php:295
-#, php-format
-msgid "View all posts in %s"
-msgstr ""
-
-#: functions/bfa_post_parts.php:39 functions/bfa_post_parts.php:71
-msgid "Permanent Link to "
-msgstr ""
-
-#: functions/bfa_post_parts.php:63
-msgid "Permanent Link"
-msgstr ""
-
-#: functions/bfa_recent_comments.php:163 functions/bfa_recent_comments.php:165
-#: functions/bfa_recent_comments.php:167 functions/bfa_recent_comments.php:169
+#: functions/bfa_recent_comments.php:161
+#: functions/bfa_recent_comments.php:163
+#: functions/bfa_recent_comments.php:165
+#: functions/bfa_recent_comments.php:167
 msgid "On: "
 msgstr ""
 
-#: functions/bfa_recent_comments.php:171 functions/bfa_recent_comments.php:173
-#: functions/bfa_recent_comments.php:175 functions/bfa_recent_comments.php:177
+#: functions/bfa_recent_comments.php:169
+#: functions/bfa_recent_comments.php:171
+#: functions/bfa_recent_comments.php:173
+#: functions/bfa_recent_comments.php:175
 msgid " on: "
 msgstr ""
 
-#: functions/bfa_recent_comments.php:334
-msgid "Lists the most recent comments"
+#: functions/bfa_search_widget.php:14
+msgid "Search for:"
 msgstr ""
 
-#: functions/bfa_recent_comments.php:336 functions/bfa_recent_comments.php:337
-msgid "BFA Recent Comments"
+#: functions/bfa_search_widget.php:16
+#: functions/bfa_search_widget.php:24
+#: functions/bfa_search_widget.php:25
+msgid "Search"
 msgstr ""
 
-#: functions/bfa_theme_options.php:954
+#: functions/bfa_search_widget.php:23
+msgid "A search form for your blog"
+msgstr ""
+
+#: functions/bfa_text_widget.php:90
+msgid "Arbitrary text or HTML"
+msgstr ""
+
+#: functions/bfa_text_widget.php:92
+msgid "Text"
+msgstr ""
+
+#: functions/bfa_theme_options.php:795
 msgid "Posts"
 msgstr ""
 
-#: functions/bfa_theme_options.php:962
+#: functions/bfa_theme_options.php:803
 msgid "Subscribe to the POSTS feed"
 msgstr ""
 
-#: functions/bfa_theme_options.php:980
+#: functions/bfa_theme_options.php:821
 msgid "Comments"
 msgstr ""
 
-#: functions/bfa_theme_options.php:988
+#: functions/bfa_theme_options.php:829
 msgid "Subscribe to the COMMENTS feed"
 msgstr ""
 
-#: functions/bfa_theme_options.php:1006
+#: functions/bfa_theme_options.php:847
 msgid "By Email"
 msgstr ""
 
-#: functions/bfa_theme_options.php:1014
+#: functions/bfa_theme_options.php:855
 msgid "Subscribe by EMAIL"
 msgstr ""
 
-#: functions/bfa_theme_options.php:1067
+#: functions/bfa_theme_options.php:900
 msgid "Home"
 msgstr ""
 
-#: functions/bfa_theme_options.php:1545
+#: functions/bfa_theme_options.php:1335
 msgid "&laquo; Newer Entries"
 msgstr ""
 
-#: functions/bfa_theme_options.php:1564
+#: functions/bfa_theme_options.php:1354
 msgid "Older Entries &raquo;"
 msgstr ""
 
-#: functions/bfa_theme_options.php:1604
+#: functions/bfa_theme_options.php:1385
 msgid "Newer Comments &raquo;"
 msgstr ""
 
-#: functions/bfa_theme_options.php:1614
+#: functions/bfa_theme_options.php:1395
 msgid "&laquo; Older Comments"
 msgstr ""
 
-#: functions/bfa_theme_options.php:2245 functions/bfa_theme_options.php:2259
-#: functions/bfa_theme_options.php:2272
+#: functions/bfa_theme_options.php:1986
+#: functions/bfa_theme_options.php:2000
+#: functions/bfa_theme_options.php:2013
 msgid "Tags: "
 msgstr ""
 
-#: functions/bfa_theme_options.php:2246 functions/bfa_theme_options.php:2260
-#: functions/bfa_theme_options.php:2273
+#: functions/bfa_theme_options.php:1987
+#: functions/bfa_theme_options.php:2001
+#: functions/bfa_theme_options.php:2014
 msgid "Category:"
 msgstr ""
 
-#: functions/bfa_theme_options.php:2246 functions/bfa_theme_options.php:2260
+#: functions/bfa_theme_options.php:1987
+#: functions/bfa_theme_options.php:2001
 msgid "Leave a comment"
 msgstr ""
 
-#: functions/bfa_theme_options.php:2247 functions/bfa_theme_options.php:2261
+#: functions/bfa_theme_options.php:1988
+#: functions/bfa_theme_options.php:2002
 msgid "One comment"
 msgstr ""
 
-#: functions/bfa_theme_options.php:2247 functions/bfa_theme_options.php:2261
+#: functions/bfa_theme_options.php:1988
+#: functions/bfa_theme_options.php:2002
 #, php-format
 msgid "% comments"
 msgstr ""
 
-#: functions/bfa_theme_options.php:2247 functions/bfa_theme_options.php:2261
+#: functions/bfa_theme_options.php:1988
+#: functions/bfa_theme_options.php:2002
 msgid "Comments are closed"
 msgstr ""
 
-#: functions/bfa_theme_options.php:2248 functions/bfa_theme_options.php:2262
-#: functions/bfa_theme_options.php:2273
+#: functions/bfa_theme_options.php:1989
+#: functions/bfa_theme_options.php:2003
+#: functions/bfa_theme_options.php:2014
 msgid "Edit this post"
 msgstr ""
 
-#: functions/bfa_theme_options.php:2578
+#: functions/bfa_theme_options.php:2278
 msgid "Continue reading %post-title%"
 msgstr ""
 
-#: functions/bfa_theme_options.php:2672
+#: functions/bfa_theme_options.php:2372
 msgid " &middot; Edit"
 msgstr ""
 
-#: functions/bfa_theme_options.php:2690
+#: functions/bfa_theme_options.php:2390
 msgid "<p>Comments are closed.</p>"
 msgstr ""
 
-#: functions/bfa_theme_options.php:2792
+#: functions/bfa_theme_options.php:2492
 msgid "Copyright &copy; %current-year% %home% - All Rights Reserved"
 msgstr ""
 
-#: functions/bfa_theme_options.php:3119
+#: functions/bfa_theme_options.php:2790
 msgid "Archives by Month"
 msgstr ""
 
-#: functions/bfa_theme_options.php:3158
+#: functions/bfa_theme_options.php:2829
 msgid "Archives by Category"
 msgstr ""
+

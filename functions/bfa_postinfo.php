@@ -1,8 +1,7 @@
 <?php
 // Callback function for image replacement
 function bfa_image_files($matches) {
-	$templateURI = get_template_directory_uri(); 
-
+	global $templateURI;
 	return '<img src="' . $templateURI . 
 	'/images/icons/' . $matches[1] . '" alt="" />';
 }
@@ -23,16 +22,7 @@ function bfa_parse_date_callback( $matches ) {
 	return $date;
 }
 
-// Date modified callback
-function bfa_parse_date_modified_callback( $matches ) {
-	ob_start(); 
-		the_modified_time($matches[2]); 
-		$date_modified = ob_get_contents(); 
-	ob_end_clean();	
-	return $date_modified;
-}
-
-function bfa_postinfo($postinfo_string) {
+function postinfo($postinfo_string) {
 
 	// one theme option needed below for nofollow trackback / RSS links yes/no
 	global $bfa_ata, $post;
@@ -198,12 +188,6 @@ function bfa_postinfo($postinfo_string) {
 		$postinfo = str_replace("%author-yim%", $author_yim, $postinfo);
 	}
 
-    // Author Gravatar 
-    if (strpos($postinfo_string, '%gravatar%') !== FALSE) { 
-        $gravatar = get_avatar(get_the_author_meta('ID'), 30); 
-        $postinfo = str_replace("%gravatar%", $gravatar, $postinfo); 
-    }  
-	
 	// Date & Time
 	if ( strpos($postinfo_string,'%date(') !== FALSE ) {
 		$postinfo = preg_replace_callback("/%date\((.*?)'(.*?)'(.*?)\)%/is","bfa_parse_date_callback",$postinfo);
@@ -211,7 +195,7 @@ function bfa_postinfo($postinfo_string) {
 
 	// Date & Time, last modified
 	if ( strpos($postinfo_string,'%date-modified(') !== FALSE ) {
-		$postinfo = preg_replace_callback("/%date-modified\((.*?)'(.*?)'(.*?)\)%/is","bfa_parse_date_modified_callback",$postinfo);
+		$postinfo = preg_replace_callback("/%date-modified\((.*?)'(.*?)'(.*?)\)%/is","bfa_parse_date_callback",$postinfo);
 	}	
 
 	// Tags, linked - since WP 2.3
@@ -275,32 +259,19 @@ function bfa_postinfo($postinfo_string) {
 	if ( strpos($postinfo_string,'%category-linked%') !== FALSE ) {
 		$all_categories = get_the_category(); 
 		$category = $all_categories[0]->cat_name;
-		$category_linked = '<a class="'.$category . '" href="' . get_category_link($all_categories[0]->cat_ID) .
+		$category_linked = '<a href="' . get_category_link($all_categories[0]->cat_ID) .
         '">' . $category . '</a>';
 		$postinfo = str_replace("%category-linked%", $category_linked, $postinfo);
 	}
 
-	// Categories, linked with class name added 
-	$categories_linked = '';
+	// Categories, linked
 	if ( strpos($postinfo_string,'%categories-linked') !== FALSE ) {
 		while ( strpos($postinfo,'%categories-linked') !== FALSE ) {
 			$category_linked_separator = preg_match("/(.*)%categories-linked\('(.*?)'\)(.*)/i",
 	        $postinfo_string,$category_linked_matches);
 			ob_start(); 
-			$categories = get_the_category();
-			$items_in_categories = count($categories);
-			$output = '';
-			$categories_count = $items_in_categories;
-			if($categories){
-				foreach($categories as $category) { 
-					$categories_count -= 1;
-					if ($categories_count) { 
-					  $seperator = $category_linked_matches[2];
-					  }
-					else {$seperator = '';}
-					$categories_linked .= '<a class="'.$category->slug . '" href="'.get_category_link( $category->term_id ).'" title="' . esc_attr( $category->name ) . '">'.$category->cat_name.$seperator.'</a>';
-				}
-			}
+				the_category($category_linked_matches[2]);
+	      		$categories_linked = ob_get_contents();
 			ob_end_clean();
 			$postinfo = preg_replace("/(.*)%categories-linked\((.*?)\)%(.*)/i", "\${1}" .
     	    $categories_linked. "\${3}", $postinfo);
@@ -490,10 +461,8 @@ function bfa_postinfo($postinfo_string) {
 
 	// For the "Sociable" plugin
 	if ( strpos($postinfo_string,'%sociable%') !== FALSE ) {
-		ob_start(); 
-			$sociable = ( (function_exists('sociable_html2') AND function_exists( do_sociable() ) ) ? do_sociable() : "");
-			$sociable = ob_get_contents();
-		ob_end_clean();
+		$sociable = ( (function_exists('sociable_html2') AND
+		function_exists( do_sociable() ) ) ? do_sociable() : "");
 		$postinfo = str_replace("%sociable%", $sociable, $postinfo);
 	}
 
@@ -536,7 +505,7 @@ function bfa_postinfo($postinfo_string) {
 	return $postinfo;
 }
 
-function bfa_getH() {
+function getH() {
 	global $bfa_ata, $post;
 	return('#');
 }
