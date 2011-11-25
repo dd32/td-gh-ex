@@ -1,7 +1,6 @@
 <?php # error_reporting(E_ALL & ~E_NOTICE);
-$templateURI = get_template_directory_uri(); 
-$homeURL = get_home_url();  
-
+#include_once (TEMPLATEPATH . '/functions.php'); 
+global $templateURI,  $homeURL; 
 if ( isset($bfa_ata_preview) OR $bfa_ata['css_external'] == "Inline" OR 
 ( isset($bfa_ata_debug) AND $bfa_ata['allow_debug'] == "Yes" ) ) {
 	echo '<style type="text/css">'; 
@@ -210,10 +209,9 @@ table#layout {
 ---------- HEADER ---------------------------------------------------
 ------------------------------------------------------------------ */
 
-div#header.full-width {width: 100%;}
+
 /*-------------------- HEADER CONTAINER -------------------*/
 
-div#header,
 td#header {
 	width: auto;
 	padding: 0;
@@ -392,6 +390,7 @@ div.horbar2 {
 	position: relative;
 	padding: 0; 
 	margin: 0;
+	width: 100%; 
 	}
 
 div.horbar1 {
@@ -403,34 +402,18 @@ div.horbar2 {
 	}	
 
 <?php if (strpos($bfa_ata['configure_header'],'%image')!==false) { ?>
-div.header-image-container-pre {
-	position: relative; 
-	margin: 0; 
-	padding: 0; 
-	height: <?php echo $bfa_ata['headerimage_height']; ?>px; 
-	}
-
 div.header-image-container {
 	position: relative; 
 	margin: 0; 
 	padding: 0; 
 	height: <?php echo $bfa_ata['headerimage_height']; ?>px; 
 	}
-
-div.codeoverlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
 <?php } ?>
 	
 <?php if ( $bfa_ata['overlay_blog_title'] == "Yes" OR $bfa_ata['overlay_blog_tagline'] == "Yes" ) { ?>
 div.titleoverlay {
 	z-index: 4;
-	position: absolute; 
-	top: 0; 
+	position: relative;
 	float: left;
 	width: auto;
 	<?php echo $bfa_ata['overlay_box_style']; ?>
@@ -538,20 +521,16 @@ td#middle {
 /* ------------------------------------------------------------------
 ---------- FOOTER ---------------------------------------------------
 ------------------------------------------------------------------ */
-div#footer.full-width {width: 100%;}
 
-div#footer,
 td#footer {
 	width: auto;
 	<?php bfa_incl('footer_style') ?>
 	}
 
-div#footer a:link, div#footer a:visited, div#footer a:active,
 td#footer a:link, td#footer a:visited, td#footer a:active {
 	<?php bfa_incl('footer_style_links') ?>
 	}
 
-div#footer a:hover,
 td#footer a:hover {
 	<?php bfa_incl('footer_style_links_hover') ?>
 	}
@@ -1845,7 +1824,6 @@ required as jQuery sets the height for caption'ed images too */
    	border: 0 none !important;
 	}
 	
-.wp-caption-text,	
 .wp-caption p.wp-caption-text {
 	<?php bfa_incl('image_caption_text') ?>
 	}
@@ -2061,10 +2039,8 @@ include (WP_PLUGIN_DIR.'/wp-pagenavi/pagenavi-css.css');
 	#header, 
 	#footer, 
 	.colone, 
-	.colone-inner,
-	.colthree-inner,
 	.colthree,
-	.navigation,
+	.navigation, 
 	.navigation-top,
 	.navigation-middle,
 	.navigation-bottom,

@@ -1,8 +1,6 @@
 <?php
 function widget_bfa_subscribe($args) {
-	global $bfa_ata;
-	$templateURI = get_template_directory_uri(); 
-	
+	global $bfa_ata, $templateURI;
 	extract($args);
 	$options = get_option('widget_bfa_subscribe');
 	$title = apply_filters('widget_title', $options['title']);

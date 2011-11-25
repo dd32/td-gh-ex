@@ -47,8 +47,19 @@ if ($comments) : ?>
 			} ?> id="comment-<?php comment_ID() ?>">
 			
 			<?php // GRAVATAR
-			if( get_comment_type() == 'comment' AND $bfa_ata['avatar_size'] != 0 AND $bfa_ata['avatar_size'] != "" ) 
-					echo get_avatar($comment -> comment_author_email, $size=$bfa_ata['avatar_size']);
+			if (get_comment_type() == 'comment') {
+			if ($bfa_ata['avatar_size'] != 0 AND $bfa_ata['avatar_size'] != "") {
+			if (function_exists('get_avatar')) {
+			echo get_avatar($comment -> comment_author_email, $size=$bfa_ata['avatar_size']);} 
+			# if this WP version has no gravatars, use the theme's custom gravatar function:
+			else { if(!empty($comment -> comment_author_email)) {
+				$md5 = md5($comment -> comment_author_email);
+				$default = urlencode(get_template_directory_uri() . '/images/no-gravatar.gif');
+				echo '<img class="avatar" src="http://www.gravatar.com/avatar.php?gravatar_id='.$md5.'&size='.$bfa_ata['avatar_size'].'&default='.$default.' alt="'. __('Gravatar','atahualpa') .'" />';
+				}
+			}
+			}
+			}
 			?>
 		
 			<div class="comment-number"><a href="<?php echo paged_comments_url('comment-'.get_comment_ID()); ?>" title=""><?php echo $comment_number; $comment_number += $comment_delta; ?></a></div>
