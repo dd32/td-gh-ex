@@ -20,6 +20,9 @@ th {
 	background-color: #9c6aaa;
 }
 ul.post-categories li a:hover,
-.comments-link a:hover {
+.comments-link a:hover,
+ul.menu ul.sub-menu li,
+ul.menu li.hover,
+ul.menu li:hover {
 	background-color: #e1cfe5;
 }

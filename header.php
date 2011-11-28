@@ -14,7 +14,6 @@
 
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-<?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
 
 <?php wp_head(); ?>
 </head>
@@ -29,7 +28,7 @@
 	      	<?php 
 	      		$menu = has_nav_menu( 'tabmenu' );
 	      		if ( $menu ) { 
-	      			wp_nav_menu( array( 'theme_location' => 'tabmenu', 'depth' => '1' ) ); 
+	      			wp_nav_menu( array( 'theme_location' => 'tabmenu' ) ); 
 	      		} ?>
 	  	</div>
 	</div>

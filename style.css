@@ -1,8 +1,8 @@
 /*
 Theme Name: Babylog
-Theme URI: 
+Theme URI: http://babylog-demo.calobeedoodles.com/
 Description: A sweet, illustrated theme for baby blogs featuring four color palettes and a customizable header graphic.
-Version: 1.3
+Version: 1.4.2
 Author: Caroline Moore
 Author URI: http://www.carolinemoore.net
 License: CC0 1.0 Universal
@@ -278,43 +278,109 @@ ul.sidebar {
 }
 
 
-/* =Tabbed Navigation Menu 
+/* =Drop-down Menu
 --------------------------------------------------------------*/
 .tabmenu {
+	width: 100%;
+	clear: both;
 	position: relative;
+	margin-bottom: 30px;
+	border-radius: 8px;
 	display: inline-block;
+}
+ul.menu,
+ul.menu li,
+ul.menu ul {
+ 	list-style: none;
+ 	margin: 0px;
+ 	padding: 0px;
+}
+ul.menu {
+	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 0px;
 	width: 100%;
-	border-radius: 8px;
-	margin-bottom: 30px;
+ 	position: relative;
+ 	z-index: 597;
 }
-.tabmenu ul {
-	list-style: none;
-	margin: 0px;
-	padding: 0px;
-}
-.tabmenu li.menu-item {	
-	margin-right: 10px;
-	padding: 8px;
-	clear: none;
-	display: block;
+ul.menu li {
 	float: left;
+ 	line-height: 1.3em;
+ 	vertical-align: middle;
+ 	zoom: 1;
+ 	font-family: Vidaloka, Georgia, "Times New Roman", Times, serif;
+	font-size: 20px;
+	line-height: normal;
+	text-decoration: none;
+	padding: 8px;
+	border-radius: 8px;
+}
+ul.menu ul.sub-menu li {
+ 	float: left;
+ 	line-height: 1.3em;
+ 	vertical-align: middle;
+ 	zoom: 1;
+ 	width: 170px;
+	padding: 8px;
 	font-family: Vidaloka, Georgia, "Times New Roman", Times, serif;
 	font-size: 20px;
 	line-height: normal;
 	text-decoration: none;
 	border-radius: 8px;
+	margin-bottom: 3px;
 }
-.tabmenu li.menu-item a:link, 
-.tabmenu li.menu-item a:visited, 
-.tabmenu li.menu-item a:hover, 
-.tabmenu li.menu-item a:active {
+ul.menu ul.sub-menu {
+	margin-top: 3px;
+}
+ul.menu ul.sub-menu ul.sub-menu {
+	margin-top: 0px;
+}
+ul.menu ul.sub-menu ul.sub-menu li {
+	margin-left: 3px;
+	margin-bottom: 3px;
+}
+ul.menu li a:link,
+ul.menu li a:visited,
+ul.menu ul.sub-menu li a:link,
+ul.menu ul.sub-menu li a:visited {
 	color: #fff;
 	font-weight: normal;
 }
-/* End Tabbed Navigation Menu */
+ul.menu li a:hover,
+ul.menu li a:active,
+ul.menu ul.sub-menu li a:hover,
+ul.menu ul.sub-menu li a:active {
+	color: #fff;
+	font-weight: normal;
+}
+ul.menu li.hover,
+ul.menu li:hover {
+	position: relative;
+	z-index: 599;
+	cursor: default;
+	color: #fff;
+	font-weight: normal;
+}
+ul.menu ul {
+	visibility: hidden;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 598;
+	margin: 0px;
+}
+ul.menu ul li {
+	float: none;
+}
+ul.menu ul ul {
+	top: 0px;
+	left: 100%;
+}
+ul.menu li:hover > ul {
+	visibility: visible;
+}
+/* End Drop-down Menu */
 
 
 /* =Footer 

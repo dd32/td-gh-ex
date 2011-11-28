@@ -61,16 +61,40 @@ function bbl_print_styles() {
 		echo "</style>";	}
 		 
 }
+function babylog_sidebars() {
+	
+	register_sidebar( array(
+		'id' => 'right-sidebar',
+		'name' => __( 'Right Sidebar', 'babylog' ),
+		'before_widget' => '<li id="%1$s" class="widget %2$s">',
+		'after_widget' => '</li>',
+		'before_title' => '<h2 class="widgettitle">',
+		'after_title' => '</h2>'
+		) 
+	);
+}
 
-register_sidebar( array(
-	'id' => 'right-sidebar',
-	'name' => __( 'Right Sidebar', 'babylog' ),
-	'before_widget' => '<li id="%1$s" class="widget %2$s">',
-	'after_widget' => '</li>',
-	'before_title' => '<h2 class="widgettitle">',
-	'after_title' => '</h2>'
-	) 
-);
+add_action( 'widgets_init', 'babylog_sidebars' );
+
+function babylog_scripts(){
+	if ( !is_admin() && is_singular() && get_option( 'thread_comments' ) ) 
+		wp_enqueue_script( 'comment-reply' ); 
+}
+
+add_action( 'wp_enqueue_scripts', 'babylog_scripts' );
+
+function babylog_admin_scripts() { 
+	
+	if ( is_admin() ) {
+		wp_register_script( 'admin-controls', get_template_directory_uri() . '/admin.js' );	
+		$babylogdirectory = array( 'directory' => get_template_directory_uri() . "/images/" );
+		wp_localize_script( 'admin-controls', 'template', $babylogdirectory );
+		
+		wp_enqueue_script( 'admin-controls' );
+	}
+}
+		
+add_action( 'admin_init', 'babylog_admin_scripts' );
 
 if ( function_exists( 'register_nav_menu' ) ) {
 	register_nav_menu( 'tabmenu', 'Top Navigation Menu' );
