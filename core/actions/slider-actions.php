@@ -42,13 +42,15 @@ echo "<div id='slider-wrapper'>";
 		
 /* Define blog category */
 
-	if ($category != 'all') {
-		$blogcategory = $category;
+	if ($category == 'all' OR $category == 'All' OR $category == '') {
+		$blogcategory = '';
 	}
 	
 	else {
-		$blogcategory = "";
+		$blogcategory = $category;
 	}
+	
+
 	
 /* End blog category */
 		
@@ -107,15 +109,16 @@ echo "<div id='slider-wrapper'>";
 	    	$delay = '3500';
 	    else $delay = $options->get($themeslug.'_slider_delay');
 	  
-	    if ($options->get($themeslug.'_slider_navigation') == '1') {
+	    if ($options->get($themeslug.'hide_slider_navigation') != '0' OR $options->get($themeslug.'hide_slider_navigation') == '' ) {
 	    	$navigation = 'true';
 	    }
 	    else {
 	    
 	     $navigation = 'false'; 
 	    	echo '<style type="text/css">';
-			echo '.nivo-controlNav {display: none;}';
-			echo '#slider {margin-bottom: 5px;}';
+			echo ".nivo-controlNav {display: none;}";
+		echo ".slider_nav {display: none;}";
+		echo '#slider-wrapper {margin-bottom: 20px;}';
 			echo '</style>';
 	    
 	    }

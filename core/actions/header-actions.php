@@ -177,8 +177,8 @@ function chimps_link_rel() {
 	else {
 		$font = $options->get($themeslug.'_font'); 
 	} 
-	if ($options->get($themeslug.'_color_scheme') == '') {
-		$color = 'blue';
+	if ($options->get($themeslug.'_color_scheme') != 'green') {
+		$color = 'grey';
 	}
 	else {
 		$color = $options->get($themeslug.'_color_scheme');
@@ -193,6 +193,11 @@ function chimps_link_rel() {
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css" type="text/css" />
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/color/<?php echo $color; ?>.css" type="text/css" />
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/elements.css" type="text/css" />
+
+<?php if (is_child_theme()) :  //add support for child themes?>
+	<link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory') ; ?>/style.css" type="text/css" />
+<?php endif; ?>
+
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
 <link href='http://fonts.googleapis.com/css?family=<?php echo $font ; ?>' rel='stylesheet' type='text/css' /> <?php
@@ -260,11 +265,11 @@ function chimps_header_social_icons_content() {
 	global $options, $themeslug; //call globals
 	
 	$facebook		= $options->get($themeslug.'_facebook');
-	$hidefacebook   = $options->get($themeslug.'_hide_facebook');
+	$hidefacebook   = $options->get($themeslug.'_hide_facebook_icon');
 	$twitter		= $options->get($themeslug.'_twitter');;
-	$hidetwitter    = $options->get($themeslug.'_hide_twitter');;
+	$hidetwitter    = $options->get($themeslug.'_hide_twitter_icon');;
 	$gplus		    = $options->get($themeslug.'_gplus');
-	$hidegplus      = $options->get($themeslug.'_hide_gplus');
+	$hidegplus      = $options->get($themeslug.'_hide_gplus_icon');
 	$flickr		    = $options->get($themeslug.'_flickr');
 	$hideflickr     = $options->get($themeslug.'_hide_flickr');
 	$myspace	    = $options->get($themeslug.'_myspace');
@@ -278,7 +283,7 @@ function chimps_header_social_icons_content() {
 	$email			= $options->get($themeslug.'_email');
 	$hideemail      = $options->get($themeslug.'_hide_email');
 	$rss			= $options->get($themeslug.'_rsslink');
-	$hiderss   		= $options->get($themeslug.'_hide_rss');
+	$hiderss   		= $options->get($themeslug.'_hide_rss_icon');
 	
 	if ($options->get($themeslug.'_icon_style') == '') {
 	
@@ -296,22 +301,22 @@ function chimps_header_social_icons_content() {
 
 	<div class="icons">
 
-		<?php if ($hidefacebook == '1' AND $facebook != '' ):?>
+		<?php if ($hidefacebook == '1' AND $facebook != '' OR $hidefacebook == '' AND $facebook != '' ):?>
 			<a href="<?php echo $facebook ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/<?php echo $folder; ?>/facebook.png" alt="Facebook" /></a>
 		<?php endif;?>
-		<?php if ($hidefacebook == '1' AND $facebook == '' ):?>
+		<?php if ($hidefacebook == '1' AND $facebook == '' OR $hidefacebook == '' AND $facebook == '' ):?>
 			<a href="http://facebook.com" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/<?php echo $folder; ?>/facebook.png" alt="Facebook" /></a>
 		<?php endif;?>
-		<?php if ($hidetwitter == '1' AND $twitter != '' ):?>
+		<?php if ($hidetwitter == '1' AND $twitter != '' OR $hidetwitter == '' AND $twitter != '' ):?>
 			<a href="<?php echo $twitter ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/<?php echo $folder; ?>/twitter.png" alt="Twitter" /></a>
 		<?php endif;?>
-		<?php if ($hidetwitter == '1' AND $twitter == '' ):?>
+		<?php if ($hidetwitter == '1' AND $twitter == '' OR $hidetwitter == '' AND $twitter == '' ):?>
 			<a href="http://twitter.com" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/<?php echo $folder; ?>/twitter.png" alt="Twitter" /></a>
 		<?php endif;?>
-		<?php if ($hidegplus == '1' AND $gplus != '' ):?>
+		<?php if ($hidegplus == '1' AND $gplus != ''  OR $hidegplus == '' AND $gplus != '' ):?>
 			<a href="<?php echo $gplus ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/<?php echo $folder; ?>/gplus.png" alt="Gplus" /></a>
 		<?php endif;?>
-		<?php if ($hidegplus == '1' AND $gplus == '' ):?>
+		<?php if ($hidegplus == '1' AND $gplus == '' OR $hidegplus == '' AND $gplus == '' ):?>
 			<a href="https://plus.google.com" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/<?php echo $folder; ?>/gplus.png" alt="Gplus" /></a>
 		<?php endif;?>
 		<?php if ($hideflickr == '1' AND $flickr != '' ):?>
@@ -350,10 +355,10 @@ function chimps_header_social_icons_content() {
 		<?php if ($hideemail == '1' AND $email == ''):?>
 			<a href="mailto:no@way.com" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/<?php echo $folder; ?>/email.png" alt="E-mail" /></a>
 		<?php endif;?>
-		<?php if ($hiderss == '1' and $rss != '' ):?>
+		<?php if ($hiderss == '1' and $rss != '' OR $hiderss == '' and $rss != '' ):?>
 			<a href="<?php echo $rss ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/<?php echo $folder; ?>/rss.png" alt="RSS" /></a>
 		<?php endif;?>
-		<?php if ($hiderss == '1' and $rss == ''  ):?>
+		<?php if ($hiderss == '1' and $rss == '' OR $hiderss == '' and $rss == '' ):?>
 			<a href="<?php bloginfo('rss2_url'); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/<?php echo $folder; ?>/rss.png" alt="RSS" /></a>
 		<?php endif;?>
 	
@@ -369,12 +374,12 @@ function chimps_header_social_icons_content() {
 function chimps_nav() {
 	global $options, $themeslug; //call globals 
 	
-	if ($options->get($themeslug.'_hide_home_icon') != "1" && $options->get($themeslug.'_hide_search') != "1") {
-		$grid = 'grid_12';
+	if ($options->get($themeslug.'_hide_home_icon') != "0" && $options->get($themeslug.'_hide_search') != "0") {
+		$grid = 'grid_9';
 	}
 	
 	else {
-		$grid = 'grid_9';
+		$grid = 'grid_12';
 	}
 	
 	?>
@@ -384,7 +389,7 @@ function chimps_nav() {
 	<div class="grid_12" id="imenu">
 
 		<div id="nav" class="<?php echo $grid; ?>">
-			<?php if ($options->get($themeslug.'_hide_home_icon') == "1"):?><div id="home"><a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri() ;?>/images/home.png" alt="home" /></a></div><?php endif;?>
+			<?php if ($options->get($themeslug.'_hide_home_icon') != "0"):?><div id="home"><a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri() ;?>/images/home.png" alt="home" /></a></div><?php endif;?>
 		    <?php wp_nav_menu( array(
 		    'theme_location' => 'header-menu', // Setting up the location for the main-menu, Main Navigation.
 		    'fallback_cb' => 'chimps_menu_fallback', //if wp_nav_menu is unavailable, WordPress displays wp_page_menu function, which displays the pages of your blog.
@@ -392,7 +397,7 @@ function chimps_nav() {
 		);
     	?>
    		</div>
-   		<?php if ($options->get($themeslug.'_hide_search') == "1"):?>
+   		<?php if ($options->get($themeslug.'_hide_search') != "0"):?>
 		<div class="grid_2">
 			<?php get_search_form(); ?>
 		</div>
