@@ -2,7 +2,7 @@
 <div id="center">
 
 <?php if ( get_header_image() == '') : ?><?php else : ?>
-<div class="header"><a href="<?php echo home_url(); ?>/"><img class="left title" title="<?php bloginfo('name'); ?>" src="<?php header_image(); ?>" alt="<?php bloginfo('description');?>" /></a></div>
+<div class="wpheader"><a href="<?php echo home_url(); ?>/"><img class="left title" title="<?php bloginfo('name'); ?>" src="<?php header_image(); ?>" alt="<?php bloginfo('description');?>" /></a></div>
 <?php endif; ?>
 
 <?php if (is_active_sidebar('sidebar') ) : ?>

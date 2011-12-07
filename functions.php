@@ -83,7 +83,8 @@ $color_scheme_options = array(
 'green' => array('value' => 'green','label' => __( 'Green', 'adventure' ),'thumbnail' => get_template_directory_uri() . '/images/green.png','default_link_color' => '#542912',),
 'blue' => array('value' => 'blue','label' => __( 'Blue', 'adventure' ),'thumbnail' => get_template_directory_uri() . '/images/blue.png','default_link_color' => '#c63b00',),
 'teal' => array('value' => 'teal','label' => __( 'Teal', 'adventure' ),'thumbnail' => get_template_directory_uri() . '/images/teal.png','default_link_color' => '#e6e600',),
-'pink' => array('value' => 'pink','label' => __( 'Pink', 'adventure' ),'thumbnail' => get_template_directory_uri() . '/images/pink.png','default_link_color' => '#650898',),);
+'pink' => array('value' => 'pink','label' => __( 'Pink', 'adventure' ),'thumbnail' => get_template_directory_uri() . '/images/pink.png','default_link_color' => '#650898',),
+'christmas' => array('value' => 'christmas','label' => __( 'Christmas', 'adventure' ),'thumbnail' => get_template_directory_uri() . '/images/christmas.png','default_link_color' => '#FFF',),);
 return apply_filters( 'adventure_color_schemes', $color_scheme_options );}
 
 /**
@@ -102,7 +103,7 @@ function adventure_layouts() {
 			'thumbnail' => get_template_directory_uri() . '/images/sidebar-content.png',),
 		'content' => array(
 			'value' => 'content',
-			'label' => __( 'One-column, no sidebar (Coming Soon)', 'adventure' ),
+			'label' => __( 'One-column, no sidebar', 'adventure' ),
 			'thumbnail' => get_template_directory_uri() . '/images/content.png',),
 	);
 	return apply_filters( 'adventure_layouts', $layout_options );
@@ -201,19 +202,21 @@ function adventure_theme_options_render_page() {
 
 <table class="form-table">
 <tr valign="top"><th scope="row">Information</th>
-<td><p>Thank you for supporting my WordPress Theme Adventure.</p>
-<p>I would like to encourage you to regularly check for updates because I spend a lot of time improving and fixing the code so that it just simply keeps working better. If you would really like to show me your support of the Adventure theme or would like to be able to use the additional features below, just quick pick up your own copy by visiting the <a href="http://schwarttzy.com/shop/adventure/" target="_blank">Adventure+ Page</a>.</p>
+<td><p>Thank you for supporting my WordPress Theme "Adventure."</p>
+<p>I would like to encourage you to regularly check for updates because I spend a lot of time improving and fixing the code so that it just simply keeps working better. You'll find the blead-edge downloads <a href="http://schwarttzy.com/web-design/adventure/" target="_blank">Here</a>.</p>
+<p>If you would really like to show me your support of the Adventure theme or would like to be able to use the additional features below, just quick pick up your own copy by visiting the <a href="http://schwarttzy.com/shop/adventure/" target="_blank">Adventure+ Page</a>.</p>
 <ol>
 <li>Menu at top or bottom.</li>
 <li>A Drop down-menu is built in</li>
 <li>The ability to upload header images</li>
-<li>Move the content to the left or the right</li>
-<li>An addition Widget area below content can be used</li>
+<li>Move the content to the left, the right, or just remove it</li>
+<li>An additional widget area below content can be used</li>
 <li>Choose from 3 different contrast ratios for readability</li>
 </ol>
+</br>
 <p>With the addition of all the features from purchasing Adventure+, I also help out with small customizations of the theme and I lend my knowledge of WordPress to you for any question or support you may need.</p>
-<p>Finally, I would like to get the word out on my Premium Theme &quot;<a href="http://schwarttzy.com/shop/adventure-bound/" target="_blank">Adventure Bound</a>.&quot; This very theme is the same theme that runs my own personal website right now (9/26/2011). So, if you want, hop on over to my website, <a href="http://schwarttzy.com/" target="_blank">http://Schwarttzy.com/</a>, check out the theme in action, and if you like it be sure to put a copy in your shopping cart.</p>
-<a href="http://schwarttzy.com/shop/adventure-bound/" target="_blank"><img src="http://schwarttzy.com/wp-content/shoppimages/cache_400_400_ab.jpg" width="200" height="200" alt="" /></a>
+<p>Finally, I would like to get the word out on my Premium Theme &quot;<a href="http://schwarttzy.com/shop/adventure-bound/" target="_blank">Adventure Bound</a>.&quot; This very theme is the same that runs my own personal website right now (9/26/2011). So, if you want, hop on over to my website, <a href="http://schwarttzy.com/" target="_blank">http://Schwarttzy.com/</a>, check out the theme in action, and if you like it be sure to put a copy in your shopping cart.</p>
+<a href="http://schwarttzy.com/shop/adventure-bound/" target="_blank"><img src="http://schwarttzy.com/shop/images/6" width="200" height="200" alt="" /></a>
 <p>If you have any questions, comments, problems, or suggestions please feel free to <a href="http://schwarttzy.com/contact-me/" target="_blank">Contact Me Here.</a></p>
 <p>Thank you again for your Support,</p>
 <a href="http://schwarttzy.com/about-2/" target="_blank"><P>Eric J. Schwarz</P></a>
@@ -347,24 +350,6 @@ function adventure_theme_options_validate( $input ) {
 }
 
 /**
- * Enqueue the styles for the current color scheme.
- *
- */
-function adventure_enqueue_color_scheme() {
-	$options = adventure_get_theme_options();
-	$color_scheme = $options['color_scheme'];
-
-	if ( 'red' == $color_scheme ) wp_enqueue_style( 'red', get_template_directory_uri() . '/red.css', array(), null );
-	if ( 'green' == $color_scheme ) wp_enqueue_style( 'green', get_template_directory_uri() . '/green.css', array(), null );
-	if ( 'blue' == $color_scheme ) wp_enqueue_style( 'blue', get_template_directory_uri() . '/blue.css', array(), null );
-	if ( 'teal' == $color_scheme ) wp_enqueue_style( 'teal', get_template_directory_uri() . '/teal.css', array(), null );
-	if ( 'pink' == $color_scheme ) wp_enqueue_style( 'pink', get_template_directory_uri() . '/pink.css', array(), null );
-
-	do_action( 'adventure_enqueue_color_scheme', $color_scheme );
-}
-add_action( 'wp_enqueue_scripts', 'adventure_enqueue_color_scheme' );
-
-/**
  * Add a style block to the theme for the current link color.
  *
  * This function is attached to the wp_head action hook.
@@ -380,32 +365,34 @@ function adventure_print_link_color_style() {
 	if ( $default_options['link_color'] == $link_color )
 		return;
 ?>
-	<style>
-		/* Link color */
-		a,
-		.label a:hover,
-		#title a:hover,
-		#site-title a:focus,
-		#site-title a:hover,
-		#site-title a:active,
-		.entry-title a:hover,
-		.entry-title a:focus,
-		.entry-title a:active,
-		.comments-link a:hover,
-		section.recent-posts .other-recent-posts a[rel="bookmark"]:hover,
-		section.recent-posts .other-recent-posts .comments-link a:hover,
-		.format-image footer.entry-meta a:hover,
-		#site-generator a:hover {color: <?php echo $link_color; ?>;}
-		section.recent-posts .other-recent-posts .comments-link a:hover {border-color: <?php echo $link_color; ?>;}
-		article.feature-image.small .entry-summary p a:hover,
-		.entry-header .comments-link a:hover,
-		.entry-header .comments-link a:focus,
-		.entry-header .comments-link a:active,
-		.feature-slider a.active {background-color: <?php echo $link_color; ?>;}
-	</style>
+<style>
+/* Link color */
+a, .label a:hover, #title a:hover, #site-title a:focus, #site-title a:hover, #site-title a:active, .entry-title a:hover, .entry-title a:focus, .entry-title a:active, .comments-link a:hover, section.recent-posts .other-recent-posts a[rel="bookmark"]:hover, section.recent-posts .other-recent-posts .comments-link a:hover, 	.format-image footer.entry-meta a:hover, #site-generator a:hover {color: <?php echo $link_color; ?>;}
+section.recent-posts .other-recent-posts .comments-link a:hover {border-color: <?php echo $link_color; ?>;}
+article.feature-image.small .entry-summary p a:hover, .entry-header .comments-link a:hover, .entry-header .comments-link a:focus,.entry-header .comments-link a:active, .feature-slider a.active {background-color: <?php echo $link_color; ?>;}
+</style>
 <?php
 }
 add_action( 'wp_head', 'adventure_print_link_color_style' );
+
+/**
+ * Enqueue the styles for the current color scheme.
+ *
+ */
+function adventure_enqueue_color_scheme() {
+	$options = adventure_get_theme_options();
+	$color_scheme = $options['color_scheme'];
+
+	if ( 'red' == $color_scheme ) wp_enqueue_style( 'red', get_template_directory_uri() . '/red.css', array(), null );
+	if ( 'green' == $color_scheme ) wp_enqueue_style( 'green', get_template_directory_uri() . '/green.css', array(), null );
+	if ( 'blue' == $color_scheme ) wp_enqueue_style( 'blue', get_template_directory_uri() . '/blue.css', array(), null );
+	if ( 'teal' == $color_scheme ) wp_enqueue_style( 'teal', get_template_directory_uri() . '/teal.css', array(), null );
+	if ( 'pink' == $color_scheme ) wp_enqueue_style( 'pink', get_template_directory_uri() . '/pink.css', array(), null );
+	if ( 'christmas' == $color_scheme ) wp_enqueue_style( 'christmas', get_template_directory_uri() . '/christmas.css', array(), null );
+
+	do_action( 'adventure_enqueue_color_scheme', $color_scheme );
+}
+add_action( 'wp_enqueue_scripts', 'adventure_enqueue_color_scheme' );
 
 /**
  * Adds Twenty Eleven layout classes to the array of body classes.
@@ -415,13 +402,14 @@ function adventure_layout_classes( $existing_classes ) {
 	$options = adventure_get_theme_options();
 	$current_layout = $options['theme_layout'];
 
-	if ( in_array( $current_layout, array( 'content-sidebar', 'sidebar-content' ) ) )
-		$classes = array( 'two-column' );
+	if ( in_array( $current_layout, array( 'content-sidebar', 'sidebar-content', 'none-sidebar' ) ) )
+		$classes = array( 'selected' );
 	else
-		$classes = array( 'one-column' );
-
+		$classes[] = $current_layout;
 	if ( 'content-sidebar' == $current_layout )
 		$classes[] = 'right-sidebar';
+	if ( 'none-sidebar' == $current_layout )
+		$classes[] = 'none-sidebar';
 	elseif ( 'sidebar-content' == $current_layout )
 		$classes[] = 'left-sidebar';
 	else
@@ -463,7 +451,7 @@ function adventure_layout_contrast( $existing_classes ) {
 
 	return array_merge( $existing_classes, $classes );
 }
-if ( !isset( $content_width ) ) $content_width = 760;
+if ( ! isset( $content_width ) ) $content_width = 760;
 add_theme_support( 'automatic-feed-links' );
 register_nav_menu( 'bar', 'The Menu Bar' );
 register_sidebar(array(

@@ -1,1 +1,2 @@
-#bar, .top #bar {background: url(images/pink.png);} #bar li a:hover {background: url(images/pink.png) bottom;}
+#bar{background:#ff0091;}#bar li a:hover{background:#ae00ff;}
+html > body #bar{background:#ff0091 url(images/overlay60.png);}html > body #bar li a:hover{background:#ae00ff url(images/overlay.png);}

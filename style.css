@@ -3,8 +3,8 @@ Theme Name: Adventure
 Theme URI: http://schwarttzy.com/web-design/adventure/
 Author: Eric Schwarz
 Author URI: http://schwarttzy.com/about-2/
-Description: Inspired by a certain GPS Manufacture, I designed this theme to feel like you're looking through a window out into the wilderness.Version 1.5.5-3 Minor errors. Version 1.5.2 Found some left over code. Version 1.5.0 Is a huge leap forward using the Adventure+ code, a premium version of this theme with more features. Be sure to check out the "theme options" where you can change the link colors and choose from five different menu bars. Version 1.4.6 Added some code for browsers that support it to perfectly stretch the background image. I still recommend that you have a 1920by1080 image for browsers that don't support it. Version 1.4.3 Fixed IE6 stretch images errors. Version 1.4.3 Fixed 404 error page issues, I have done the best I can with the menu bar on IE 6 browser. Version 1.4.2 fixes an issue when you have to many links in the bottom bar where the link would disappear entirely if you had to many. Now the slogan goes first, then the title, and finally the links one by one.
-Version: 1.5.5
+Description: Inspired by a certain GPS Manufacture, I designed this theme to feel like you're looking through a window out into the wilderness. Version 1.5.6 Adds some CSS3 for browsers that support it and Christmas Colored menu bar. Version 1.5.5-3 Minor errors. Version 1.5.2 Found some left over code. Version 1.5.0 Is a huge leap forward using the Adventure+ code, a premium version of this theme with more features. Be sure to check out the "theme options" where you can change the link colors and choose from five different menu bars. Version 1.4.6 Added some code for browsers that support it to perfectly stretch the background image. I still recommend that you have a 1920by1080 image for browsers that don't support it. Version 1.4.3 Fixed IE6 stretch images errors. Version 1.4.3 Fixed 404 error page issues, I have done the best I can with the menu bar on IE 6 browser. Version 1.4.2 fixes an issue when you have to many links in the bottom bar where the link would disappear entirely if you had to many. Now the slogan goes first, then the title, and finally the links one by one.
+Version: 1.5.6
 License: GNU General Public License
 License URI: license.txt
 Tags:  white, purple, two-columns, fixed-width, custom-menu, featured-images, custom-background, custom-colors, featured-images, theme-options
@@ -59,6 +59,7 @@ h1, h2, h3, h4, h5, h6 {
 ************************************************/
 
 a {
+	-webkit-transition: color 0.25s ease-in-out;-moz-transition: color 0.25s ease-in-out;transition: color 0.25s ease-in-out;
 	color: #0b6492;
 	text-decoration: none;
 	font-weight: bold;
@@ -78,7 +79,7 @@ h1 a:hover{
 /************************************************
 				Header          
 ************************************************/
-.header{
+.wpheader{
 	width:994px;
 	height:175px;
 	overflow:hidden;
@@ -123,9 +124,8 @@ h1 a:hover{
 				Navigation          
 ************************************************/
 
-
-#bar {
-	background: url(images/bars.png);
+#bar{
+	background:#512e36;
 	width: 100%;
 	height: 50px;
 	position: fixed;
@@ -133,7 +133,10 @@ h1 a:hover{
 	bottom: 0;
 	left: 0;
 }
-.top #bar {top: 0;}
+#bar li a:hover{background:#0b6492;}
+html > body #bar{background:#512e36 url(images/overlay.png);}
+html > body #bar li a:hover{background:#0b6492 url(images/overlay.png);}
+.top #bar{top: 0;}
 #bar ul {
 	float: right;
 	margin: 0;
@@ -150,8 +153,6 @@ h1 a:hover{
 	float: left;
 	border-left: 1px solid #575253;
 }
-#bar li a:hover {background:url(images/bars.png) bottom;}
-#bar li .sub-menu a:hover {background:none;}
 #bar li a { 
 	height: 50px;
 	display: block;
@@ -163,7 +164,8 @@ h1 a:hover{
 	float: right;
 	list-style-type: none;
 	position: absolute;
-	display:none;
+	visibility:hidden;
+	opacity: 0;
 	left: 0;
 	width:100%;
 	background: url(images/blacktrans3.png);
@@ -180,12 +182,9 @@ h1 a:hover{
 	-moz-box-shadow: 0 2px 2px #000;
 	-webkit-box-shadow: 0 2px 2px #000;
 }
-#bar li ul li { float:right}
-#bar li ul li:hover {
-	background: #FFF;
-	display:block;
-}
-#bar li:hover .children, #bar li .children:hover, #bar li:hover .sub-menu, #bar li .sub-menu:hover {display:block;}
+#bar li ul li {float:right}
+#bar ul.children a:hover, #bar ul.sub-menu a:hover {background:#FFF;visibility:visible;opacity: 1;}
+#bar li:hover .children, #bar li .children:hover, #bar li:hover .sub-menu, #bar li .sub-menu:hover {visibility:visible;opacity: 1;}
 #bar li ul li:hover a {display:block;color:#000;}
 #bar li ul li:hover a:active {
 	color:#FFF;
@@ -200,7 +199,8 @@ h1 a:hover{
 	font-weight: bold;
 	font-variant: small-caps;
 }
-#title a:hover{ color: #0b6492;}
+#title a:hover{color: #0b6492;}
+html > body #bar li a:hover {-webkit-transition: color 0.4s ease-in-out;-moz-transition: 0.4s ease-in-out;transition: 0.4s ease-in-out;}
 
 /************************************************
 				Content          
