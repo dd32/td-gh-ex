@@ -28,7 +28,8 @@
 	};
 		
 	add_theme_support( 'automatic-feed-links' );	
-	
+	add_theme_support('post-thumbnails');
+	set_post_thumbnail_size( 100, 100, true );
 	add_custom_background();	
 		
 	if ( ! defined( 'HEADER_TEXTCOLOR' ) )
@@ -332,6 +333,14 @@ name="<?php echo $Aname; ?>" value="<?php echo get_option($Aoption, $Adefault); 
 	  update_option('adt_show_main_menu', '0');	  
 	};	
 	
+	if ($_POST['adt_show_featured_image'] != '')
+	{
+	  update_option('adt_show_featured_image', $_POST['adt_show_featured_image']);
+	} else 
+	{
+	  update_option('adt_show_featured_image', '0');	  
+	};	
+	
 	update_option('ADT_COLOR_H', $_POST['ADT_COLOR_H']);
 	update_option('ADT_COLOR_LINK', $_POST['ADT_COLOR_LINK']);
 	update_option('ADT_COLOR_TEXT', $_POST['ADT_COLOR_TEXT']);	
@@ -377,6 +386,14 @@ name="<?php echo $Aname; ?>" value="<?php echo get_option($Aoption, $Adefault); 
 					  if (get_option('adt_show_main_menu', '1') == '0') $s = '';
 					?>
                     <td><input type="checkbox" name="adt_show_main_menu" value="1"<?php echo $s; ?>><?php _e('Show', 'adsticle'); ?></td>
+                </tr> 	
+				<tr valign="top">
+                    <th scope="row"><label for="adt_show_featured_image"><?php _e('Show featured image for post:', 'adsticle'); ?></label></th>
+                    <?php 
+                      $s = ' checked="true" ';
+					  if (get_option('adt_show_featured_image', '1') == '0') $s = '';
+					?>
+                    <td><input type="checkbox" name="adt_show_featured_image" value="1"<?php echo $s; ?>><?php _e('Show', 'adsticle'); ?></td>
                 </tr> 				
                 <tr valign="top">
                     <th scope="row"><label for="adt_footer_text"><?php _e('Footer copyright text:', 'adsticle'); ?></label></th>

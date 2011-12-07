@@ -21,38 +21,60 @@
 <?php while ( have_posts() ) : the_post(); ?>
 		
   <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-  
-<?php if (!is_page()): ?>
+
+  <div class="post_content">
+  <?php 
+    if (!is_single() && !is_page()): ?> 
+<div class="thumbnail"> 
+<?php the_post_thumbnail(); ?>  </div> 
+<div class="center"> 
   <h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'adsticle' ), 
     the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
 	<?php if (trim(get_the_title()) != '') { the_title(); } else { echo '&nbsp;'; }; ?></a></h1>
-  
+   
   <div class="meta">  
   <?php _e('By', 'adsticle'); ?>: <?php the_author_link(); ?> | 
   <?php _e('Date', 'adsticle'); ?>: <?php the_date(); ?> 
   <?php if (!is_page()): ?>
-  | <?php _e('Categories', 'adsticle'); ?>: <?php the_category(', '); ?>    
+  | <?php _e('Categories', 'adsticle'); ?>: <?php the_category(', '); ?> <br/>
   <?php endif; ?>
   </div>
-<?php endif; ?>  
-
-  <div class="post_content">
-  <?php 
-    if (!is_single() && !is_page()):   
-      the_excerpt();
-    else:  	  	  
+</div>
+	     <?php  the_excerpt();
+    else:  
+	
       if (is_single() && adt_get_option('ads_250-250-post', '') != '' ): ?>
 <div style="float:left; margin:10px;">
 <?php echo adt_get_option('ads_250-250-post'); ?>
 </div>
 <?php 
-      endif;
-
+      endif;?>
+<?php if (get_option('adt_show_featured_image', '1') != '0') : ?>	  
+	  <div class="thumbnail"> 
+<?php the_post_thumbnail(); ?>  </div> 
+<?php endif; ?>
+<?php if (!is_page()): ?>
+<div class="center"> 
+  <h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'adsticle' ), 
+    the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
+	<?php if (trim(get_the_title()) != '') { the_title(); } else { echo '&nbsp;'; }; ?></a></h1>
+   
+  <div class="meta">  
+  <?php _e('By', 'adsticle'); ?>: <?php the_author_link(); ?> | 
+  <?php _e('Date', 'adsticle'); ?>: <?php the_date(); ?> 
+  <?php if (!is_page()): ?>
+  | <?php _e('Categories', 'adsticle'); ?>: <?php the_category(', '); ?> <br/>
+  <?php endif; ?>
+  </div>
+</div>
+<?php
+ endif;
       the_content();		  
     endif; 
+
   ?>
   </div>  
-
+  
   <?php if (!is_single() && !is_page()): ?>
   <div class="readmore">
   <a href="<?php the_permalink() ?>#more" class="more-link"><?php _e('Read more', 'adsticle'); ?></a>
