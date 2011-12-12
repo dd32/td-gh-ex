@@ -58,7 +58,7 @@
             require_once(get_template_directory().'/lib/csscolor.css.php');
         }
 
-        add_filter('contextual_help','raindrops_edit_help');
+       add_filter('contextual_help','raindrops_edit_help');
    // }
 /**
  * It has alias functions.
@@ -716,7 +716,6 @@
     if ( !is_admin()) {
        add_action('wp_print_styles', 'add_raindrops_stylesheet');
     }
-
 /**
  *
  *
@@ -733,7 +732,185 @@
  *
  *
  */
-    add_action('admin_menu', array($is_submenu, 'add_menus'));
+ add_action('admin_menu', array($is_submenu, 'add_menus'));
+
+  //$hook_suffix = $is_submenu->add_menus();
+
+if($_GET['page'] == 'raindrops_settings'){
+    add_action('admin_print_styles', 'raindrops_admin_print_styles');
+}
+if(!function_exists('raindrops_admin_print_styles')){
+    function raindrops_admin_print_styles(){
+$css =<<<CSS
+<style type="text/css">
+#wpwrap>#wpcontent>#wpbody>#wpbody-content{font-size:14px;}
+#wpwrap>#wpcontent>#wpbody>#wpbody-content a,
+#wpwrap>#wpcontent>#wpbody>#wpbody-content #adminmenu a,
+#wpwrap>#wpcontent>#wpbody>#wpbody-content #the-comment-list p.comment-author strong a,
+#wpwrap>#wpcontent>#wpbody>#wpbody-content #media-upload a.del-link,
+#wpwrap>#wpcontent>#wpbody>#wpbody-content #media-items a.delete,
+#wpwrap>#wpcontent>#wpbody>#wpbody-content .plugins a.delete,
+#wpwrap>#wpcontent>#wpbody>#wpbody-content .ui-tabs-nav a {
+text-decoration:none;
+}
+#wpwrap>#wpcontent>#wpbody>#wpbody-content>#raindrops_navigation_list .ui-tabs-nav a{}
+h3.raindrops.color.scheme{
+
+}
+#raindrops_upload_form{
+margin:1em 1em 1em -40px;
+color:#339999;
+padding:20px;
+
+}
+#raindrops-style-type{
+padding:0.6em;
+text-indent:1em;cursor:auto;
+background:none;
+height:32px;
+
+}
+.raindrops-excerpt{
+/*margin:2em;*/
+line-height:2;
+padding:.5em 3em;
+}
+#title-raindrops-header{
+padding:.5em;
+}
+#title-raindrops-header h2{
+font-size:32px;
+color:#21759B;
+}
+#title-raindrops-header #message p{
+text-align:left;
+}
+
+#title-raindrops-header p{
+text-align:right;
+color:#21759B;
+margin-right:10%;
+}
+
+#wpwrap>#wpcontent>#wpbody>#wpbody-content .postbox h3,
+#wpwrap>#wpcontent>#wpbody>#wpbody-content .sidebar-name:hover h3,
+.raindrops-options-title{
+cursor:default;
+text-indent:1em;
+background:none;
+margin:0;
+padding:0;
+font-size:23px;
+}
+.raindrops-navigation-title{
+margin:0;
+margin-left:-30px;
+font-size:23px;
+background:#5589AA;
+height:35px;
+padding:20px 20px 7px 20px;
+color:#fff;
+border-radius: 5px 5px 0px 0px;
+-moz-border-radius: 5px 5px 0px 0px;
+-webkit-border-radius: 5px 5px 0px 0px;
+}
+.raindrops-option-footer-infomation{
+margin:0;
+color:#fff;
+padding:10px;
+background:#5589AA;
+text-align:center;
+margin-left:-30px;
+border-radius: 0px 0px 5px 5px;
+-moz-border-radius: 0px 0px 5px 5px;
+-webkit-border-radius: 0px 0px 5px 5px;
+}
+.raindrops-option-footer-infomation a{
+color:#fff;
+}
+
+.raindrops-navigation-wrapper{
+padding:0px 60px 20px;
+margin:1em;
+}
+.raindrops-navigation-wrapper ul{
+margin:0;
+padding:10px 0;
+margin-left:-30px;
+background:#eef;
+}
+.raindrops-navigation-wrapper li{
+padding:.4em;
+font-weight:bold;
+margin-left:30px;
+}
+
+#wpwrap>#wpcontent>#wpbody>#wpbody-content .postbox h3{
+border-bottom-color: #D1E5EE;
+text-shadow: white 0 1px 0;
+-moz-box-shadow: 0 1px 0 #fff;
+-webkit-box-shadow: 0 1px 0 #fff;
+box-shadow: 0 1px 0 #fff;
+}
+.raindrops-value-set-tables{
+min-width:320px;
+
+}
+#wpwrap>#wpcontent>#wpbody>#wpbody-content .widefat table td{
+margin:1em;
+}
+
+#wpwrap>#wpcontent>#wpbody>#wpbody-content .widefat tr td input,
+#wpwrap>#wpcontent>#wpbody>#wpbody-content .widefat tr td,
+#wpwrap>#wpcontent>#wpbody>#wpbody-content .widefat thead tr th,
+#wpwrap>#wpcontent>#wpbody>#wpbody-content .widefat tfoot tr th,
+#wpwrap>#wpcontent>#wpbody>#wpbody-content h3.dashboard-widget-title,
+#wpwrap>#wpcontent>#wpbody>#wpbody-content h3.dashboard-widget-title span,
+#wpwrap>#wpcontent>#wpbody>#wpbody-content h3.dashboard-widget-title small,
+#wpwrap>#wpcontent>#wpbody>#wpbody-content .find-box-head {
+
+}
+#wpwrap>#wpcontent>#wpbody>#wpbody-content .widefat table td{
+}
+#wpwrap>#wpcontent>#wpbody>#wpbody-content .widefat tr td select{
+min-width:130px;
+vertical-align:bottom;
+margin-bottom:0px;
+
+}
+#wpwrap>#wpcontent>#wpbody>#wpbody-content .widefat tr td select option{
+}
+
+#wpwrap>#wpcontent>#wpbody>#wpbody-content .go-top span{
+visibility:hidden;
+margin:0;
+}
+#wpwrap>#wpcontent>#wpbody>#wpbody-content a.go-top {
+display:block;
+width:16px;
+height:16px;
+padding:0;
+background: #000 url(images/arrows-vs.png) no-repeat 0 -36px;
+margin-bottom:20px;
+}
+#wpwrap>#wpcontent>#wpbody>#wpbody-content #icon-themes,
+#wpwrap>#wpcontent>#wpbody>#wpbody-content #icon-raindrops_settings{
+position:relative;
+top:5px;
+left:5px;
+width:48px;
+height:40px;
+background: url(images/icons32-vs.png) no-repeat 0 0;
+}
+
+</style>
+CSS;
+
+echo $css;
+
+
+    }
+}
 /**
  *
  *
@@ -743,7 +920,7 @@
  */
     $install_once = get_option('raindrops_theme_settings');
 
-        if (!array_key_exists('install', $install_once) ) {
+        if ($install_once == false or !array_key_exists('install', $install_once) ) {
 
             add_action('admin_init', 'setup_raindrops');
         }
@@ -777,36 +954,36 @@
  */
     if (!function_exists('raindrops_add_body_class')) {
         function raindrops_add_body_class($class) {
-		global $post;
-            $lang 				= get_locale();
-            $raindrops_options 	= get_option("raindrops_theme_settings");
-	        $color_type = "rd-type-".$raindrops_options["raindrops_style_type"];
-						
-			if(is_single() or is_page()){				
-				$raindrops_content_check = get_post($post->ID);
-				$raindrops_content_check = $raindrops_content_check->post_content;
-				
-				if(preg_match("!\[raindrops[^\]]+(color_type)=(\"|')*?([^\"' ]+)(\"|')*?[^\]]*\]!si",$raindrops_content_check,$regs)){	
-			
-					$color_type = "rd-type-".trim($regs[3]);
-				}
-				if(preg_match("!\[raindrops[^\]]+(col)=(\"|')*?([^\"' ]+)(\"|')*?[^\]]*\]!si",$raindrops_content_check,$regs)){
-					$color_type .= ' ';
-					$color_type .= "rd-col-".$regs[3];				
-				}
+        global $post;
+            $lang               = get_locale();
+            $raindrops_options  = get_option("raindrops_theme_settings");
+            $color_type = "rd-type-".$raindrops_options["raindrops_style_type"];
 
-			}
+            if(is_single() or is_page()){
+                $raindrops_content_check = get_post($post->ID);
+                $raindrops_content_check = $raindrops_content_check->post_content;
 
-			if(isset($_SERVER["HTTP_ACCEPT_LANGUAGE"])){
-				$browser_lang = $_SERVER["HTTP_ACCEPT_LANGUAGE"];
-				$browser_lang = explode( ",", $browser_lang );
-				$browser_lang = esc_html($browser_lang[0]);
-				$browser_lang = 'accept-lang-'.$browser_lang;
-				$classes= array($lang,$color_type,$browser_lang);
-			}else{
-             	$classes= array($lang,$color_type);
-			}
-			
+                if(preg_match("!\[raindrops[^\]]+(color_type)=(\"|')*?([^\"' ]+)(\"|')*?[^\]]*\]!si",$raindrops_content_check,$regs)){
+
+                    $color_type = "rd-type-".trim($regs[3]);
+                }
+                if(preg_match("!\[raindrops[^\]]+(col)=(\"|')*?([^\"' ]+)(\"|')*?[^\]]*\]!si",$raindrops_content_check,$regs)){
+                    $color_type .= ' ';
+                    $color_type .= "rd-col-".$regs[3];
+                }
+
+            }
+
+            if(isset($_SERVER["HTTP_ACCEPT_LANGUAGE"])){
+                $browser_lang = $_SERVER["HTTP_ACCEPT_LANGUAGE"];
+                $browser_lang = explode( ",", $browser_lang );
+                $browser_lang = esc_html($browser_lang[0]);
+                $browser_lang = 'accept-lang-'.$browser_lang;
+                $classes= array($lang,$color_type,$browser_lang);
+            }else{
+                $classes= array($lang,$color_type);
+            }
+
              $classes= array_merge($classes,$class);
                 global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
             switch(true){
@@ -1099,7 +1276,7 @@
             $result .= "<dl><dd><p>".__('image width and height aspect ratio is 3:1. another aspect ratio will be trimming center','Raindrops').'</p></dd>';
 
             $result .= "</dl>";
-
+            $result .= $text;
 
             return $result;
         }else{
@@ -1441,7 +1618,7 @@ if(!function_exists("add_raindrops_stylesheet")){
 
         $install = get_option('raindrops_theme_settings');
 
-        if (!array_key_exists('install', $install)) {
+        if ($install == false or !array_key_exists('install', $install)) {
             add_action('admin_notices', create_function(null, 'echo raindrops_first_only_msg(1);'));
             $install['install'] = true;
             update_option('raindrops_theme_settings',$install);
@@ -2474,9 +2651,9 @@ a.raindrops-comment-link {
   position: relative;
 }
 .raindrops-comment-link .point {
-  border-left: 0.45em solid %c_border%; 
+  border-left: 0.45em solid %c_border%;
   border-bottom: 0.45em solid #FFF; /* IE fix */
-  border-bottom: 0.45em solid %c_border%; 
+  border-bottom: 0.45em solid %c_border%;
   overflow: hidden; /* IE fix */
 }
 a.raindrops-comment-link:hover {
@@ -2553,7 +2730,7 @@ if ( ! function_exists( 'raindrops_admin_header_style' ) ){
 
         $raindrops_options  = get_option("raindrops_theme_settings");
         $css                = $raindrops_options['_raindrops_indv_css'];
-		$css 				= raindrops_color_type_custom($css);
+        $css                = raindrops_color_type_custom($css);
         $background         = get_background_image();
         $color              = get_background_color();
         $text_color         = get_header_textcolor();
@@ -3011,23 +3188,23 @@ if ( ! function_exists( 'raindrops_admin_header_image' ) ){
  *
  */
 if(!function_exists("raindrops_show_one_column")){
-	function raindrops_show_one_column(){
-		global $post;
-		if(isset($post)){
-			$raindrops_content_check = get_post($post->ID);
-			$raindrops_content_check = $raindrops_content_check->post_content;
-			
-			if(preg_match("!\[raindrops[^\]]+(col)=(\"|')*?([^\"' ]+)(\"|')*?[^\]]*\]!si",$raindrops_content_check,$regs)){
-				return $regs[3];
-			}else{
-				return false;
-			}
-		}elseif(raindrops_warehouse_clone('raindrops_show_right_sidebar') == 'hide'){
-				return 2;
-		}elseif(raindrops_warehouse_clone('raindrops_show_right_sidebar') == 'show'){
-				return 3;
-		}
-	}
+    function raindrops_show_one_column(){
+        global $post;
+        if(isset($post)){
+            $raindrops_content_check = get_post($post->ID);
+            $raindrops_content_check = $raindrops_content_check->post_content;
+
+            if(preg_match("!\[raindrops[^\]]+(col)=(\"|')*?([^\"' ]+)(\"|')*?[^\]]*\]!si",$raindrops_content_check,$regs)){
+                return $regs[3];
+            }else{
+                return false;
+            }
+        }elseif(raindrops_warehouse_clone('raindrops_show_right_sidebar') == 'hide'){
+                return 2;
+        }elseif(raindrops_warehouse_clone('raindrops_show_right_sidebar') == 'show'){
+                return 3;
+        }
+    }
 }
 
 /**
@@ -3039,20 +3216,20 @@ if(!function_exists("raindrops_show_one_column")){
  */
 if(!function_exists("raindrops_color_type_custom")){
 
-	function raindrops_color_type_custom($css){
-		global $post;
-		if(isset($post)){
-			$raindrops_content_check = get_post($post->ID);
-			$raindrops_content_check = $raindrops_content_check->post_content;
-			if(preg_match("!\[raindrops[^\]]+(color_type)=(\"|')*?([^\"' ]+)(\"|')*?[^\]]*\]!si",$raindrops_content_check,$regs)){	
-		
-			$color_type = trim($regs[3]);
-			return raindrops_design_output($color_type).raindrops_color_base();
-			}
-		}else{
-			return $css;
-		}
-	}
+    function raindrops_color_type_custom($css){
+        global $post;
+        if(isset($post)){
+            $raindrops_content_check = get_post($post->ID);
+            $raindrops_content_check = $raindrops_content_check->post_content;
+            if(preg_match("!\[raindrops[^\]]+(color_type)=(\"|')*?([^\"' ]+)(\"|')*?[^\]]*\]!si",$raindrops_content_check,$regs)){
+
+            $color_type = trim($regs[3]);
+            return raindrops_design_output($color_type).raindrops_color_base();
+            }
+        }else{
+            return $css;
+        }
+    }
 
 }
 
