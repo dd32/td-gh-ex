@@ -23,9 +23,10 @@
 	 */
 	get_sidebar( 'footer' );
 ?><?php
-/* This  retrieves  admin options. */
-$options = get_option('ma_options');
-$mop_copyright = $options['mop_copyright'];
+$options= mantra_get_theme_options();
+foreach ($options as $key => $value) {	
+     ${"$key"} = $value ;
+}
 ?>
 
 
@@ -44,7 +45,7 @@ $mop_copyright = $options['mop_copyright'];
 			</div>
 
 			<!-- #site-info -->
-	<?php if ($mop_copyright != '') { ?><div id="site-copyright"><?php echo $mop_copyright; ?> </div> <?php } ?>
+	<?php if ($mantra_copyright != '') { ?><div id="site-copyright"><?php echo $mantra_copyright; ?> </div> <?php } ?>
 </div>
 
 	</div><!-- #footer -->

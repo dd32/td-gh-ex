@@ -44,7 +44,7 @@ $options= mantra_get_theme_options();
 foreach ($options as $key => $value) {	
      ${"$key"} = $value ;
 }
-$totalwidth= $mop_sidewidth+$mop_sidebar+50;
+$totalwidth= $mantra_sidewidth+$mantra_sidebar+50;
 
 
 	/* Always have wp_head() just before the closing </head>
@@ -60,7 +60,7 @@ $totalwidth= $mop_sidewidth+$mop_sidebar+50;
 <body <?php body_class(); ?>>
 <script>
     jQuery(document).ready(function() {
-    jQuery("#content img").addClass("<?php echo 'image'.$mop_image;?>");
+    jQuery("#content img").addClass("<?php echo 'image'.$mantra_image;?>");
     });
 
 </script>
@@ -115,9 +115,9 @@ $totalwidth= $mop_sidewidth+$mop_sidebar+50;
 	<div id="main">
 	<div  id="forbottom" >
 			<div id="socials">
-<?php if ($mop_rss) {  ?><a href="<?php echo $mop_rss ?>" id="srss" title="RSS"><span>RSS</span></a><?php }
-?><?php if ($mop_tweeter) {  ?><a href="<?php echo $mop_tweeter ?>" id="stweet" title="Twitter"><span>Twitter</span></a><?php }
-?><?php if ($mop_facebook) {  ?> <a href="<?php echo $mop_facebook ?>" id="sface" title="Facebook"><span>FaceBook</span></a> <?php }?>
+<?php if ($mantra_rss) {  ?><a href="<?php echo $mantra_rss ?>" id="srss" title="RSS"><span>RSS</span></a><?php }
+?><?php if ($mantra_tweeter) {  ?><a href="<?php echo $mantra_tweeter ?>" id="stweet" title="Twitter"><span>Twitter</span></a><?php }
+?><?php if ($mantra_facebook) {  ?> <a href="<?php echo $mantra_facebook ?>" id="sface" title="Facebook"><span>FaceBook</span></a> <?php }?>
 
 
 

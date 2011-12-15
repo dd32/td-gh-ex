@@ -4,7 +4,7 @@ Theme URI: http://www.riotreactions.com/mantra
 Description: Mantra is a general purpose WordPress theme, featuring a whole pack of over 50 customizable options and easy to use tweaks, capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (sidebar position), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 20 font-families to choose from),text and header sizes, post metas, post excerpts, header image and background image, menus, social media links and icons, pins, bullets and more. With 7 widget areas, subtle animations, modern graphics and an easy and responsive admin section, you can start creating your dream site right now.
 Author: Cryout Creations
 Author URI: http://www.cryoutcreations.com
-Version: 1.6.2
+Version: 1.6.3
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, red, blue, white, light, two-columns, right-sidebar, left-sidebar, theme-options, dark, flexible-width, custom-header, custom-menu, threaded-comments, sticky-post, translation-ready, microformats, custom-colors, fixed-width, one-column, silver, rtl-language-support
@@ -1049,6 +1049,7 @@ body.page .edit-link {
 	font-size: 12px;
 	margin: 5px;
 	text-align:center;
+	text-indent:0px;
 }
 #content .wp-smiley {
 	margin: 0;
@@ -1195,7 +1196,6 @@ background:#F8F8F8;
 }
 #comments .comment-body ul,
 #comments .comment-body ol {
-	margin-bottom: 18px;
 }
 #comments .comment-body p:last-child {
 	margin-bottom: 6px;

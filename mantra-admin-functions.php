@@ -33,73 +33,73 @@ function mantra_init_fn(){
 	add_settings_section('featured_section', __('Featured Image Settings','mantra') , 'section_featured_fn', __FILE__);
 	add_settings_section('socials_section', __('Social Sites Settings','mantra') , 'section_social_fn', __FILE__);
 
-	add_settings_field('mop_side', __('Sidemenu Position','mantra') , 'setting_side_fn', __FILE__, 'layout_section');
-	add_settings_field('mop_sidewidth', __('Content / Sidebar Width','mantra') , 'setting_sidewidth_fn', __FILE__, 'layout_section');
-	add_settings_field('mop_sidebar', __('Total Site Width','mantra') , 'setting_sidebar_fn', __FILE__, 'layout_section');
-	add_settings_field('mop_colpad', __('Padding between Columns','mantra') , 'setting_colpad_fn', __FILE__, 'layout_section');
-	add_settings_field('mop_hheight', __('Header Image Height','mantra') , 'setting_hheight_fn', __FILE__, 'layout_section');
+	add_settings_field('mantra_side', __('Sidemenu Position','mantra') , 'setting_side_fn', __FILE__, 'layout_section');
+	add_settings_field('mantra_sidewidth', __('Content / Sidebar Width','mantra') , 'setting_sidewidth_fn', __FILE__, 'layout_section');
+	add_settings_field('mantra_sidebar', __('Total Site Width','mantra') , 'setting_sidebar_fn', __FILE__, 'layout_section');
+	add_settings_field('mantra_colpad', __('Padding between Columns','mantra') , 'setting_colpad_fn', __FILE__, 'layout_section');
+	add_settings_field('mantra_hheight', __('Header Image Height','mantra') , 'setting_hheight_fn', __FILE__, 'layout_section');
 
-	add_settings_field('mop_fontfamily', __('Select Font Type','mantra') , 'setting_fontfamily_fn', __FILE__, 'text_section');
-	add_settings_field('mop_fontsize', __('Select General Font Size','mantra') , 'setting_fontsize_fn', __FILE__, 'text_section');
-	add_settings_field('mop_headfontsize', __('Select Post Header Font Size','mantra') , 'setting_headfontsize_fn', __FILE__, 'text_section');
-	add_settings_field('mop_sidefontsize', __('Select SideBar Font Size','mantra') , 'setting_sidefontsize_fn', __FILE__, 'text_section');
-	add_settings_field('mop_textalign', __('Force Text Align','mantra') , 'setting_textalign_fn', __FILE__, 'text_section');
-	add_settings_field('mop_parindent', __('Paragraph indent','mantra') , 'setting_parindent_fn', __FILE__, 'text_section');
-	add_settings_field('mop_lineheight', __('Line Height','mantra') , 'setting_lineheight_fn', __FILE__, 'text_section');
-	add_settings_field('mop_wordspace', __('Word spacing','mantra') , 'setting_wordspace_fn', __FILE__, 'text_section');
-	add_settings_field('mop_letterspace', __('Letter spacing','mantra') , 'setting_letterspace_fn', __FILE__, 'text_section');
+	add_settings_field('mantra_fontfamily', __('Select Font Type','mantra') , 'setting_fontfamily_fn', __FILE__, 'text_section');
+	add_settings_field('mantra_fontsize', __('Select General Font Size','mantra') , 'setting_fontsize_fn', __FILE__, 'text_section');
+	add_settings_field('mantra_headfontsize', __('Select Post Header Font Size','mantra') , 'setting_headfontsize_fn', __FILE__, 'text_section');
+	add_settings_field('mantra_sidefontsize', __('Select SideBar Font Size','mantra') , 'setting_sidefontsize_fn', __FILE__, 'text_section');
+	add_settings_field('mantra_textalign', __('Force Text Align','mantra') , 'setting_textalign_fn', __FILE__, 'text_section');
+	add_settings_field('mantra_parindent', __('Paragraph indent','mantra') , 'setting_parindent_fn', __FILE__, 'text_section');
+	add_settings_field('mantra_lineheight', __('Line Height','mantra') , 'setting_lineheight_fn', __FILE__, 'text_section');
+	add_settings_field('mantra_wordspace', __('Word spacing','mantra') , 'setting_wordspace_fn', __FILE__, 'text_section');
+	add_settings_field('mantra_letterspace', __('Letter spacing','mantra') , 'setting_letterspace_fn', __FILE__, 'text_section');
 
 
-	add_settings_field('mop_backcolor', __('Background Color','mantra') , 'setting_backcolor_fn', __FILE__, 'appereance_section');
-	add_settings_field('mop_headercolor', __('Header Color','mantra') , 'setting_headercolor_fn', __FILE__, 'appereance_section');
-	add_settings_field('mop_prefootercolor', __('Pre-Footer Color','mantra') , 'setting_prefootercolor_fn', __FILE__, 'appereance_section');
-	add_settings_field('mop_footercolor', __('Footer Color','mantra') , 'setting_footercolor_fn', __FILE__, 'appereance_section');
+	add_settings_field('mantra_backcolor', __('Background Color','mantra') , 'setting_backcolor_fn', __FILE__, 'appereance_section');
+	add_settings_field('mantra_headercolor', __('Header Color','mantra') , 'setting_headercolor_fn', __FILE__, 'appereance_section');
+	add_settings_field('mantra_prefootercolor', __('Pre-Footer Color','mantra') , 'setting_prefootercolor_fn', __FILE__, 'appereance_section');
+	add_settings_field('mantra_footercolor', __('Footer Color','mantra') , 'setting_footercolor_fn', __FILE__, 'appereance_section');
 
-	add_settings_field('mop_titlecolor', __('Title Color','mantra') , 'setting_titlecolor_fn', __FILE__, 'appereance_section');
-	add_settings_field('mop_descriptioncolor', __('Description Color','mantra') , 'setting_descriptioncolor_fn', __FILE__, 'appereance_section');
+	add_settings_field('mantra_titlecolor', __('Title Color','mantra') , 'setting_titlecolor_fn', __FILE__, 'appereance_section');
+	add_settings_field('mantra_descriptioncolor', __('Description Color','mantra') , 'setting_descriptioncolor_fn', __FILE__, 'appereance_section');
 
-	add_settings_field('mop_contentcolor', __('Content Text Color','mantra') , 'setting_contentcolor_fn', __FILE__, 'appereance_section');
-	add_settings_field('mop_linkscolor', __('Links Color','mantra') , 'setting_linkscolor_fn', __FILE__, 'appereance_section');
-	add_settings_field('mop_hovercolor', __('Links Hover Color','mantra') , 'setting_hovercolor_fn', __FILE__, 'appereance_section');
-	add_settings_field('mop_headtextcolor',__( 'Entry Title Color','mantra') , 'setting_headtextcolor_fn', __FILE__, 'appereance_section');
-	add_settings_field('mop_headtexthover', __('Entry Title Hover Color','mantra') , 'setting_headtexthover_fn', __FILE__, 'appereance_section');
-	add_settings_field('mop_sideheadbackcolor', __('Sidebar Header Background Color','mantra') , 'setting_sideheadbackcolor_fn', __FILE__, 'appereance_section');
-	add_settings_field('mop_sideheadtextcolor', __('Sidebar Header Text Color','mantra') , 'setting_sideheadtextcolor_fn', __FILE__, 'appereance_section');
-	add_settings_field('mop_footerheader', __('Footer Widget Header Text Color','mantra') , 'setting_footerheader_fn', __FILE__, 'appereance_section');
-	add_settings_field('mop_footertext', __('Footer Widget Link Color','mantra') , 'setting_footertext_fn', __FILE__, 'appereance_section');
-	add_settings_field('mop_footerhover', __('Footer Widget Hover Color','mantra') , 'setting_footerhover_fn', __FILE__, 'appereance_section');
+	add_settings_field('mantra_contentcolor', __('Content Text Color','mantra') , 'setting_contentcolor_fn', __FILE__, 'appereance_section');
+	add_settings_field('mantra_linkscolor', __('Links Color','mantra') , 'setting_linkscolor_fn', __FILE__, 'appereance_section');
+	add_settings_field('mantra_hovercolor', __('Links Hover Color','mantra') , 'setting_hovercolor_fn', __FILE__, 'appereance_section');
+	add_settings_field('mantra_headtextcolor',__( 'Entry Title Color','mantra') , 'setting_headtextcolor_fn', __FILE__, 'appereance_section');
+	add_settings_field('mantra_headtexthover', __('Entry Title Hover Color','mantra') , 'setting_headtexthover_fn', __FILE__, 'appereance_section');
+	add_settings_field('mantra_sideheadbackcolor', __('Sidebar Header Background Color','mantra') , 'setting_sideheadbackcolor_fn', __FILE__, 'appereance_section');
+	add_settings_field('mantra_sideheadtextcolor', __('Sidebar Header Text Color','mantra') , 'setting_sideheadtextcolor_fn', __FILE__, 'appereance_section');
+	add_settings_field('mantra_footerheader', __('Footer Widget Header Text Color','mantra') , 'setting_footerheader_fn', __FILE__, 'appereance_section');
+	add_settings_field('mantra_footertext', __('Footer Widget Link Color','mantra') , 'setting_footertext_fn', __FILE__, 'appereance_section');
+	add_settings_field('mantra_footerhover', __('Footer Widget Hover Color','mantra') , 'setting_footerhover_fn', __FILE__, 'appereance_section');
 
-	add_settings_field('mop_caption', __('Caption Border','mantra') , 'setting_caption_fn', __FILE__, 'graphics_section');
-	add_settings_field('mop_image', __('Post Images Border','mantra') , 'setting_image_fn', __FILE__, 'graphics_section');
-	add_settings_field('mop_pin', __('Caption Pin','mantra') , 'setting_pin_fn', __FILE__, 'graphics_section');
-	add_settings_field('mop_sidebullet', __('Sidebar Menu Bullets','mantra') , 'setting_sidebullet_fn', __FILE__, 'graphics_section');
-	add_settings_field('mop_contentlist', __('Content List Bullets','mantra') , 'setting_contentlist_fn', __FILE__, 'graphics_section');
-	add_settings_field('mop_title', __('Title and Description','mantra') , 'setting_title_fn', __FILE__, 'graphics_section');
-	add_settings_field('mop_pagetitle', __('Page Titles','mantra') , 'setting_pagetitle_fn', __FILE__, 'graphics_section');
-	add_settings_field('mop_categetitle', __('Category Page Titles','mantra') , 'setting_categtitle_fn', __FILE__, 'graphics_section');
-	add_settings_field('mop_tables', __('Invisible Tables','mantra') , 'setting_tables_fn', __FILE__, 'graphics_section');
-	add_settings_field('mop_backtop', __('Enable Back to Top button','mantra') , 'setting_backtop_fn', __FILE__, 'graphics_section');
-	add_settings_field('mop_comtext', __('Text Under Comments','mantra') , 'setting_comtext_fn', __FILE__, 'graphics_section');
-	add_settings_field('mop_copyright', __('Insert footer copyright','mantra') , 'setting_copyright_fn', __FILE__, 'graphics_section');
+	add_settings_field('mantra_caption', __('Caption Border','mantra') , 'setting_caption_fn', __FILE__, 'graphics_section');
+	add_settings_field('mantra_image', __('Post Images Border','mantra') , 'setting_image_fn', __FILE__, 'graphics_section');
+	add_settings_field('mantra_pin', __('Caption Pin','mantra') , 'setting_pin_fn', __FILE__, 'graphics_section');
+	add_settings_field('mantra_sidebullet', __('Sidebar Menu Bullets','mantra') , 'setting_sidebullet_fn', __FILE__, 'graphics_section');
+	add_settings_field('mantra_contentlist', __('Content List Bullets','mantra') , 'setting_contentlist_fn', __FILE__, 'graphics_section');
+	add_settings_field('mantra_title', __('Title and Description','mantra') , 'setting_title_fn', __FILE__, 'graphics_section');
+	add_settings_field('mantra_pagetitle', __('Page Titles','mantra') , 'setting_pagetitle_fn', __FILE__, 'graphics_section');
+	add_settings_field('mantra_categetitle', __('Category Page Titles','mantra') , 'setting_categtitle_fn', __FILE__, 'graphics_section');
+	add_settings_field('mantra_tables', __('Invisible Tables','mantra') , 'setting_tables_fn', __FILE__, 'graphics_section');
+	add_settings_field('mantra_backtop', __('Enable Back to Top button','mantra') , 'setting_backtop_fn', __FILE__, 'graphics_section');
+	add_settings_field('mantra_comtext', __('Text Under Comments','mantra') , 'setting_comtext_fn', __FILE__, 'graphics_section');
+	add_settings_field('mantra_copyright', __('Insert footer copyright','mantra') , 'setting_copyright_fn', __FILE__, 'graphics_section');
 
-	add_settings_field('mop_postdate', __('Post Date','mantra') , 'setting_postdate_fn', __FILE__, 'post_section');
-	add_settings_field('mop_posttime', __('Post Time','mantra') , 'setting_posttime_fn', __FILE__, 'post_section');
-	add_settings_field('mop_postauthor', __('Post Author','mantra') , 'setting_postauthor_fn', __FILE__, 'post_section');
-	add_settings_field('mop_postcateg', __('Post Category','mantra') , 'setting_postcateg_fn', __FILE__, 'post_section');
-	add_settings_field('mop_postbook', __('Post Permalink','mantra') , 'setting_postbook_fn', __FILE__, 'post_section');
+	add_settings_field('mantra_postdate', __('Post Date','mantra') , 'setting_postdate_fn', __FILE__, 'post_section');
+	add_settings_field('mantra_posttime', __('Post Time','mantra') , 'setting_posttime_fn', __FILE__, 'post_section');
+	add_settings_field('mantra_postauthor', __('Post Author','mantra') , 'setting_postauthor_fn', __FILE__, 'post_section');
+	add_settings_field('mantra_postcateg', __('Post Category','mantra') , 'setting_postcateg_fn', __FILE__, 'post_section');
+	add_settings_field('mantra_postbook', __('Post Permalink','mantra') , 'setting_postbook_fn', __FILE__, 'post_section');
 
-	add_settings_field('mop_excerpthome', __('Post Excerpts on Home Page','mantra') , 'setting_excerpthome_fn', __FILE__, 'excerpt_section');
-	add_settings_field('mop_excerptarchive', __('Post Excerpts on Arhive and Category Pages','mantra') , 'setting_excerptarchive_fn', __FILE__, 'excerpt_section');
-	add_settings_field('mop_excerptasides', __('Affect posts in Asides Category','mantra') , 'setting_excerptasides_fn', __FILE__, 'excerpt_section');
-	add_settings_field('mop_excerptwords', __('Number of Words for Post Excerpts ','mantra') , 'setting_excerptwords_fn', __FILE__, 'excerpt_section');
-	add_settings_field('mop_excerptdots', __('Excerpt suffix','mantra') , 'setting_excerptdots_fn', __FILE__, 'excerpt_section');
-	add_settings_field('mop_excerptcont', __('Continue reading link text ','mantra') , 'setting_excerptcont_fn', __FILE__, 'excerpt_section');
+	add_settings_field('mantra_excerpthome', __('Post Excerpts on Home Page','mantra') , 'setting_excerpthome_fn', __FILE__, 'excerpt_section');
+	add_settings_field('mantra_excerptarchive', __('Post Excerpts on Arhive and Category Pages','mantra') , 'setting_excerptarchive_fn', __FILE__, 'excerpt_section');
+	add_settings_field('mantra_excerptasides', __('Affect posts in Asides Category','mantra') , 'setting_excerptasides_fn', __FILE__, 'excerpt_section');
+	add_settings_field('mantra_excerptwords', __('Number of Words for Post Excerpts ','mantra') , 'setting_excerptwords_fn', __FILE__, 'excerpt_section');
+	add_settings_field('mantra_excerptdots', __('Excerpt suffix','mantra') , 'setting_excerptdots_fn', __FILE__, 'excerpt_section');
+	add_settings_field('mantra_excerptcont', __('Continue reading link text ','mantra') , 'setting_excerptcont_fn', __FILE__, 'excerpt_section');
 
-	add_settings_field('mop_fpost', __('Featured Images on Posts ','mantra') , 'setting_fpost_fn', __FILE__, 'featured_section');
+	add_settings_field('mantra_fpost', __('Featured Images on Posts ','mantra') , 'setting_fpost_fn', __FILE__, 'featured_section');
 
-	add_settings_field('mop_facebook', __('Facebook Link','mantra') , 'setting_facebook_fn', __FILE__, 'socials_section');
-	add_settings_field('mop_tweeter', __('Tweeter Link','mantra') , 'setting_tweeter_fn', __FILE__, 'socials_section');
-	add_settings_field('mop_rss', __('RSS Feed Link','mantra') , 'setting_rss_fn', __FILE__, 'socials_section');
+	add_settings_field('mantra_facebook', __('Facebook Link','mantra') , 'setting_facebook_fn', __FILE__, 'socials_section');
+	add_settings_field('mantra_tweeter', __('Tweeter Link','mantra') , 'setting_tweeter_fn', __FILE__, 'socials_section');
+	add_settings_field('mantra_rss', __('RSS Feed Link','mantra') , 'setting_rss_fn', __FILE__, 'socials_section');
 
 }
 
@@ -176,14 +176,14 @@ function  section_social_fn() {
  //SELECT - Name: ma_options[side]
 function  setting_side_fn() {
 global $options;
-	if (!isset($options['mop_side'])) { $options['mop_side'] ="Right";	}
+	if (!isset($options['mantra_side'])) { $options['mantra_side'] ="Right";	}
 
 $items = array("Left", "Right", "Disable");
 $itemsare = array( __("Left","mantra"), __("Right","mantra"), __("Disable","mantra"));
-echo "<select id='mop_side' name='ma_options[mop_side]'>";
+echo "<select id='mantra_side' name='ma_options[mantra_side]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mop_side'],$itemsare[$id]);
+	selected($options['mantra_side'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 echo "</select>";
@@ -209,15 +209,15 @@ function setting_sidewidth_fn()
 			step:10,
 			min: 0,
 			max: 1440,
-			values: [ <?php echo $options['mop_sidewidth'] ?>, <?php echo ($options['mop_sidewidth']+$options['mop_sidebar']); ?> ],
+			values: [ <?php echo $options['mantra_sidewidth'] ?>, <?php echo ($options['mantra_sidewidth']+$options['mantra_sidebar']); ?> ],
 			slide: function( event, ui ) {
 		
 											}
 	
 										});
 
-			jQuery( "#mop_sidewidth" ).val( <?php echo $options['mop_sidewidth'];?> );
-			jQuery( "#mop_sidebar" ).val( <?php echo $options['mop_sidebar'];?> );
+			jQuery( "#mantra_sidewidth" ).val( <?php echo $options['mantra_sidewidth'];?> );
+			jQuery( "#mantra_sidebar" ).val( <?php echo $options['mantra_sidebar'];?> );
 	var	percentage =parseInt(	jQuery( "#slider-range .ui-slider-range" ).css('width'));
 	var leftwidth =	parseInt(jQuery( "#slider-range .ui-slider-range" ).position().left);
 			jQuery( "#barb" ).css('left',150+leftwidth+percentage/2+"px");
@@ -228,10 +228,10 @@ function setting_sidewidth_fn()
 			range=ui.values[ 1 ] - ui.values[ 0 ];
 
  			if (ui.values[ 0 ]<500) {ui.values[ 0 ]=500; return false;};
-			if(	range<220 || range>500 ){ ui.values[ 1 ] =  <?php echo $options['mop_sidebar']+$options['mop_sidewidth'];?>; return false;  };			
+			if(	range<220 || range>500 ){ ui.values[ 1 ] =  <?php echo $options['mantra_sidebar']+$options['mantra_sidewidth'];?>; return false;  };			
 																	
-			jQuery( "#mop_sidewidth" ).val( ui.values[ 0 ] );
-			jQuery( "#mop_sidebar" ).val( ui.values[ 1 ] - ui.values[ 0 ] );
+			jQuery( "#mantra_sidewidth" ).val( ui.values[ 0 ] );
+			jQuery( "#mantra_sidebar" ).val( ui.values[ 1 ] - ui.values[ 0 ] );
 			jQuery( "#totalwidth" ).html( ui.values[ 1 ]);
 			jQuery( "#contentsize" ).html( ui.values[ 0 ]);jQuery( "#barsize" ).html( ui.values[ 1 ]-ui.values[ 0 ]);
 
@@ -244,10 +244,10 @@ function setting_sidewidth_fn()
 
 <div class="hereitis">
 
-	<b id="contentb" style="display:block;float:left;position:absolute;margin-top:-20px;">Content = <span id="contentsize"><?php echo $options['mop_sidewidth'];?></span>px</b>
-	<b id="barb" style="margin-left:40px;color:#F6A828;display:block;float:left;position:absolute;margin-top:-20px;" >Sidebar = <span id="barsize"><?php echo $options['mop_sidebar'];?></span>px</b>
+	<b id="contentb" style="display:block;float:left;position:absolute;margin-top:-20px;">Content = <span id="contentsize"><?php echo $options['mantra_sidewidth'];?></span>px</b>
+	<b id="barb" style="margin-left:40px;color:#F6A828;display:block;float:left;position:absolute;margin-top:-20px;" >Sidebar = <span id="barsize"><?php echo $options['mantra_sidebar'];?></span>px</b>
 <p>
-	<?php echo  "<input type='hidden'  name='ma_options[mop_sidewidth]' id='mop_sidewidth'   />";?>
+	<?php echo  "<input type='hidden'  name='ma_options[mantra_sidewidth]' id='mantra_sidewidth'   />";?>
 </p>
 <div id="slider-range"></div>
 </div><!-- End hereitsis -->
@@ -261,8 +261,8 @@ function setting_sidewidth_fn()
 function setting_sidebar_fn()
    {
    global $options;
-   ?><?php echo  "<input type='hidden'  name='ma_options[mop_sidebar]' id='mop_sidebar'   />";?>
-<b><span id="totalwidth"><?php echo $options['mop_sidebar']+$options['mop_sidewidth'];?></span> px</b>
+   ?><?php echo  "<input type='hidden'  name='ma_options[mantra_sidebar]' id='mantra_sidebar'   />";?>
+<b><span id="totalwidth"><?php echo $options['mantra_sidebar']+$options['mantra_sidewidth'];?></span> px</b>
 
    <?php  echo "<div><small>".__("This will be the <b>total width</b> of your site. This is not an editable field; it is calculated automatically after the content/sidebar slider. The absolute maximum is 1440.","mantra")."</small></div>";
 
@@ -272,10 +272,10 @@ function setting_sidebar_fn()
 function  setting_colpad_fn() {
 	global $options;
 	$items =array ("0", "10px" , "15px" , "20px" , "25px", "30px");
-	echo "<select id='mop_colpad' name='ma_options[mop_colpad]'>";
+	echo "<select id='mantra_colpad' name='ma_options[mantra_colpad]'>";
 foreach($items as $item) {
 	echo "<option value='$item'";
-	selected($options['mop_colpad'],$item);
+	selected($options['mantra_colpad'],$item);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -286,10 +286,10 @@ echo "<div><small>".__("Select the padding between the content and the sidebar."
 function  setting_hheight_fn() {
 	global $options;
 	$items =array ("90px", "120px" , "150px" , "180px" , "200px", "240px", "300px");
-	echo "<select id='mop_hheight' name='ma_options[mop_hheight]'>";
+	echo "<select id='mantra_hheight' name='ma_options[mantra_hheight]'>";
 foreach($items as $item) {
 	echo "<option value='$item'";
-	selected($options['mop_hheight'],$item);
+	selected($options['mantra_hheight'],$item);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -306,10 +306,10 @@ echo "<div><small>".__("Select the header's height. After saving the settings go
 function  setting_fontsize_fn() {
 	global $options;
 	$items =array ("12px", "13px" , "14px" , "15px" , "16px", "17px", "18px");
-	echo "<select id='mop_fontsize' name='ma_options[mop_fontsize]'>";
+	echo "<select id='mantra_fontsize' name='ma_options[mantra_fontsize]'>";
 		foreach($items as $item) {
 	echo "<option value='$item'";
-	selected($options['mop_fontsize'],$item);
+	selected($options['mantra_fontsize'],$item);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -345,11 +345,11 @@ function  setting_fontfamily_fn() {
 					 "\"Lucida Handwriting\",cursive",
 					  "\"Comic Sans MS\", cursive");
 
-	echo "<select id='mop_fontfamily' name='ma_options[mop_fontfamily]'>";
+	echo "<select id='mantra_fontfamily' name='ma_options[mantra_fontfamily]'>";
 	echo "<optgroup label='Sans-Serif'>";
 foreach($itemsans as $item) {
 	echo "<option style='font-family:$item;' value='$item'";
-	selected($options['mop_fontfamily'],$item);
+	selected($options['mantra_fontfamily'],$item);
 	echo ">$item</option>";
 }
 	echo "</optgroup>";
@@ -358,7 +358,7 @@ foreach($itemsans as $item) {
 foreach($itemserif as $item) {
 
 	echo "<option style='font-family:$item;' value='$item'";
-	selected($options['mop_fontfamily'],$item);
+	selected($options['mantra_fontfamily'],$item);
 	echo ">$item</option>";
 }
 	echo "</optgroup>";
@@ -366,7 +366,7 @@ foreach($itemserif as $item) {
 	echo "<optgroup label='MonoSpace'>";
 foreach($itemsmono as $item) {
 	echo "<option style='font-family:$item;' value='$item'";
-	selected($options['mop_fontfamily'],$item);
+	selected($options['mantra_fontfamily'],$item);
 	echo ">$item</option>";
 }
 	echo "</optgroup>";
@@ -374,7 +374,7 @@ foreach($itemsmono as $item) {
 	echo "<optgroup label='Cursive'>";
 foreach($itemscursive as $item) {
 	echo "<option style='font-family:$item;' value='$item'";
-	selected($options['mop_fontfamily'],$item);
+	selected($options['mantra_fontfamily'],$item);
 	echo ">$item</option>";
 }
 	echo "</optgroup>";
@@ -387,10 +387,10 @@ function  setting_headfontsize_fn() {
 	global $options;
 	$items = array ("Default" , "14px" , "16px" , "18px" , "20px", "22px" , "24px" , "26px" , "28px" , "30px" , "32px" , "34px" , "36px", "38px" , "40px");
 	$itemsare = array( __("Default","mantra") ,"14px" , "16px" , "18px" , "20px", "22px" , "24px" , "26px" , "28px" , "30px" , "32px" , "34px" , "36px", "38px" , "40px");
-	echo "<select id='mop_headfontsize' name='ma_options[mop_headfontsize]'>";
+	echo "<select id='mantra_headfontsize' name='ma_options[mantra_headfontsize]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mop_headfontsize'],$itemsare[$id]);
+	selected($options['mantra_headfontsize'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -402,10 +402,10 @@ function  setting_sidefontsize_fn() {
 	global $options;
 	$items = array ("Default" , "8px" , "9px" , "10px" , "11px", "12px" , "13px" , "14px" , "15px" , "16px" , "17px" , "18px");
 	$itemsare = array( __("Default","mantra") , "8px" , "9px" , "10px" , "11px", "12px" , "13px" , "14px" , "15px" , "16px" , "17px" , "18px");
-	echo "<select id='mop_sidefontsize' name='ma_options[mop_sidefontsize]'>";
+	echo "<select id='mantra_sidefontsize' name='ma_options[mantra_sidefontsize]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mop_sidefontsize'],$itemsare[$id]);
+	selected($options['mantra_sidefontsize'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -417,10 +417,10 @@ function  setting_textalign_fn() {
 	global $options;
 	$items = array ("Default" , "Left" , "Right" , "Justify" , "Center");
 	$itemsare = array( __("Default","mantra"), __("Left","mantra"), __("Right","mantra"), __("Justify","mantra"), __("Center","mantra"));
-	echo "<select id='mop_textalign' name='ma_options[mop_textalign]'>";
+	echo "<select id='mantra_textalign' name='ma_options[mantra_textalign]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mop_textalign'],$itemsare[$id]);
+	selected($options['mantra_textalign'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -431,10 +431,10 @@ foreach($items as $id=>$item) {
 function  setting_parindent_fn() {
 	global $options;
 	$items = array ("0px" , "5px" , "10px" , "15px" , "20px");
-	echo "<select id='mop_parindent' name='ma_options[mop_parindent]'>";
+	echo "<select id='mantra_parindent' name='ma_options[mantra_parindent]'>";
 foreach($items as $item) {
 	echo "<option value='$item'";
-	selected($options['mop_parindent'],$item);
+	selected($options['mantra_parindent'],$item);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -446,10 +446,10 @@ function  setting_lineheight_fn() {
 	global $options;
 	$items = array ("Default" ,"0.8em" , "0.9em", "1.0em" , "1.1em" , "1.2em" , "1.3em", "1.4em" , "1.5em" , "1.6em" , "1.7em" , "1.8em" , "1.9em" , "2.0em");
 	$itemsare = array( __("Default","mantra"),"0.8em" , "0.9em", "1.0em" , "1.1em" , "1.2em" , "1.3em", "1.4em" , "1.5em" , "1.6em" , "1.7em" , "1.8em" , "1.9em" , "2.0em");
-	echo "<select id='mop_lineheight' name='ma_options[mop_lineheight]'>";
+	echo "<select id='mantra_lineheight' name='ma_options[mantra_lineheight]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mop_lineheight'],$itemsare[$id]);
+	selected($options['mantra_lineheight'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -461,10 +461,10 @@ function  setting_wordspace_fn() {
 	global $options;
 	$items = array ("Default" ,"-3px" , "-2px", "-1px" , "0px" , "1px" , "2px", "3px" , "4px" , "5px" , "10px");
 	$itemsare = array( __("Default","mantra"),"-3px" , "-2px", "-1px" , "0px" , "1px" , "2px", "3px" , "4px" , "5px" , "10px");
-	echo "<select id='mop_wordspace' name='ma_options[mop_wordspace]'>";
+	echo "<select id='mantra_wordspace' name='ma_options[mantra_wordspace]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mop_wordspace'],$itemsare[$id]);
+	selected($options['mantra_wordspace'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -476,10 +476,10 @@ function  setting_letterspace_fn() {
 	global $options;
 	$items = array ("Default" ,"-0.05em" , "-0.04em", "-0.03em" , "-0.02em" , "-0.01em" , "0.01em", "0.02em" , "0.03em" , "0.04em" , "0.05em");
 	$itemsare = array( __("Default","mantra"),"-0.05em" , "-0.04em", "-0.03em" , "-0.02em" , "-0.01em" , "0.01em", "0.02em" , "0.03em" , "0.04em" , "0.05em");
-	echo "<select id='mop_letterspace' name='ma_options[mop_letterspace]'>";
+	echo "<select id='mantra_letterspace' name='ma_options[mantra_letterspace]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mop_letterspace'],$itemsare[$id]);
+	selected($options['mantra_letterspace'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -493,96 +493,96 @@ foreach($items as $id=>$item) {
 //TEXT - Name: ma_options[backcolor]
 function  setting_backcolor_fn() {
 	global $options;
-	echo '<input type="text" id="mop_backcolor" name="ma_options[mop_backcolor]" value="'.esc_attr( $options['mop_backcolor'] ).'"  />';
-    echo '<div id="mop_backcolor2"></div>';
+	echo '<input type="text" id="mantra_backcolor" name="ma_options[mantra_backcolor]" value="'.esc_attr( $options['mantra_backcolor'] ).'"  />';
+    echo '<div id="mantra_backcolor2"></div>';
 	echo "<div><small>".__("Background color (Default value is 444444).","mantra")."</small></div>";
 }
 
 //TEXT - Name: ma_options[headercolor]
 function  setting_headercolor_fn() {
 	global $options;
-	echo '<input type="text" id="mop_headercolor" name="ma_options[mop_headercolor]" value="'.esc_attr( $options['mop_headercolor'] ).'"  />';
-	echo '<div id="mop_headercolor2"></div>';
+	echo '<input type="text" id="mantra_headercolor" name="ma_options[mantra_headercolor]" value="'.esc_attr( $options['mantra_headercolor'] ).'"  />';
+	echo '<div id="mantra_headercolor2"></div>';
 	echo "<div><small>".__("Header background color (Default value is 333333). You can delete all insde text for no background color.","mantra")."</small></div>";
 }
 
 //TEXT - Name: ma_options[prefootercolor]
 function  setting_prefootercolor_fn() {
 	global $options;
-	echo '<input type="text" id="mop_prefootercolor" name="ma_options[mop_prefootercolor]" value="'.esc_attr( $options['mop_prefootercolor'] ).'"  />';
-	echo '<div id="mop_prefootercolor2"></div>';
+	echo '<input type="text" id="mantra_prefootercolor" name="ma_options[mantra_prefootercolor]" value="'.esc_attr( $options['mantra_prefootercolor'] ).'"  />';
+	echo '<div id="mantra_prefootercolor2"></div>';
 	echo "<div><small>".__("Footer widget-area background color. (Default value is 171717).","mantra")."</small></div>";
 }
 
 //TEXT - Name: ma_options[footercolor]
 function  setting_footercolor_fn() {
 	global $options;
-	echo '<input type="text" id="mop_footercolor" name="ma_options[mop_footercolor]" value="'.esc_attr( $options['mop_footercolor'] ).'"  />';
-	echo '<div id="mop_footercolor2"></div>';
+	echo '<input type="text" id="mantra_footercolor" name="ma_options[mantra_footercolor]" value="'.esc_attr( $options['mantra_footercolor'] ).'"  />';
+	echo '<div id="mantra_footercolor2"></div>';
 	echo "<div><small>".__("Footer background color (Default value is 222222).","mantra")."</small></div>";
 }
 
 //TEXT - Name: ma_options[titlecolor]
 function  setting_titlecolor_fn() {
 	global $options;
-	echo '<input type="text" id="mop_titlecolor" name="ma_options[mop_titlecolor]" value="'.esc_attr( $options['mop_titlecolor'] ).'"  />';
-	echo '<div id="mop_titlecolor2"></div>';
+	echo '<input type="text" id="mantra_titlecolor" name="ma_options[mantra_titlecolor]" value="'.esc_attr( $options['mantra_titlecolor'] ).'"  />';
+	echo '<div id="mantra_titlecolor2"></div>';
 	echo "<div><small>".__("Your blog's title color (Default value is 0D85CC).","mantra")."</small></div>";
 }
 
 //TEXT - Name: ma_options[descriptioncolor]
 function  setting_descriptioncolor_fn() {
 	global $options;
-	echo '<input type="text" id="mop_descriptioncolor" name="ma_options[mop_descriptioncolor]" value="'.esc_attr( $options['mop_descriptioncolor'] ).'"  />';
-	echo '<div id="mop_descriptioncolor2"></div>';
+	echo '<input type="text" id="mantra_descriptioncolor" name="ma_options[mantra_descriptioncolor]" value="'.esc_attr( $options['mantra_descriptioncolor'] ).'"  />';
+	echo '<div id="mantra_descriptioncolor2"></div>';
 	echo "<div><small>".__("Your blog's description color(Default value is 222222).","mantra")."</small></div>";
 }
 
 //TEXT - Name: ma_options[contentcolor]
 function  setting_contentcolor_fn() {
 	global $options;
-	echo '<input type="text" id="mop_contentcolor" name="ma_options[mop_contentcolor]" value="'.esc_attr( $options['mop_contentcolor'] ).'"  />';
-	echo '<div id="mop_contentcolor2"></div>';
+	echo '<input type="text" id="mantra_contentcolor" name="ma_options[mantra_contentcolor]" value="'.esc_attr( $options['mantra_contentcolor'] ).'"  />';
+	echo '<div id="mantra_contentcolor2"></div>';
 	echo "<div><small>".__("Content Text Color (Default value is 333333).","mantra")."</small></div>";
 }
 
 //TEXT - Name: ma_options[linkscolor]
 function  setting_linkscolor_fn() {
 	global $options;
-	echo '<input type="text" id="mop_linkscolor" name="ma_options[mop_linkscolor]" value="'.esc_attr( $options['mop_linkscolor'] ).'"  />';
-	echo '<div id="mop_linkscolor2"></div>';
+	echo '<input type="text" id="mantra_linkscolor" name="ma_options[mantra_linkscolor]" value="'.esc_attr( $options['mantra_linkscolor'] ).'"  />';
+	echo '<div id="mantra_linkscolor2"></div>';
 	echo "<div><small>".__("Links color (Default value is 0D85CC).","mantra")."</small></div>";
 }
 
 //TEXT - Name: ma_options[hovercolor]
 function  setting_hovercolor_fn() {
 	global $options;
-	echo '<input type="text" id="mop_hovercolor" name="ma_options[mop_hovercolor]" value="'.esc_attr( $options['mop_hovercolor'] ).'"  />';
-	echo '<div id="mop_hovercolor2"></div>';
+	echo '<input type="text" id="mantra_hovercolor" name="ma_options[mantra_hovercolor]" value="'.esc_attr( $options['mantra_hovercolor'] ).'"  />';
+	echo '<div id="mantra_hovercolor2"></div>';
 	echo "<div><small>".__("Links color on mouse over (Default value is 333333).","mantra")."</small></div>";
 }
 
 //TEXT - Name: ma_options[headtextcolor]
 function  setting_headtextcolor_fn() {
 	global $options;
-	echo '<input type="text" id="mop_headtextcolor" name="ma_options[mop_headtextcolor]" value="'.esc_attr( $options['mop_headtextcolor'] ).'"  />';
-	echo '<div id="mop_headtextcolor2"></div>';
+	echo '<input type="text" id="mantra_headtextcolor" name="ma_options[mantra_headtextcolor]" value="'.esc_attr( $options['mantra_headtextcolor'] ).'"  />';
+	echo '<div id="mantra_headtextcolor2"></div>';
 	echo "<div><small>".__("Post Header Text Color (Default value is 333333).","mantra")."</small></div>";
 }
 
 //TEXT - Name: ma_options[headtexthover]
 function  setting_headtexthover_fn() {
 	global $options;
-	echo '<input type="text" id="mop_headtexthover" name="ma_options[mop_headtexthover]" value="'.esc_attr( $options['mop_headtexthover'] ).'"  />';
-	echo '<div id="mop_headtexthover2"></div>';
+	echo '<input type="text" id="mantra_headtexthover" name="ma_options[mantra_headtexthover]" value="'.esc_attr( $options['mantra_headtexthover'] ).'"  />';
+	echo '<div id="mantra_headtexthover2"></div>';
 	echo "<div><small>".__("Post Header Text Color on Mouse over (Default value is 000000).","mantra")."</small></div>";
 }
 
 //TEXT - Name: ma_options[sideheadbackcolor]
 function  setting_sideheadbackcolor_fn() {
 	global $options;
-	echo '<input type="text" id="mop_sideheadbackcolor" name="ma_options[mop_sideheadbackcolor]" value="'.esc_attr( $options['mop_sideheadbackcolor'] ).'"  />';
-	echo '<div id="mop_sideheadbackcolor2"></div>';
+	echo '<input type="text" id="mantra_sideheadbackcolor" name="ma_options[mantra_sideheadbackcolor]" value="'.esc_attr( $options['mantra_sideheadbackcolor'] ).'"  />';
+	echo '<div id="mantra_sideheadbackcolor2"></div>';
 	echo "<div><small>".__("Sidebar Header Background color (Default value is 444444).","mantra")."</small></div>";
 
 }
@@ -590,32 +590,32 @@ function  setting_sideheadbackcolor_fn() {
 //TEXT - Name: ma_options[sideheadtextcolor]
 function  setting_sideheadtextcolor_fn() {
 	global $options;
-	echo '<input type="text" id="mop_sideheadtextcolor" name="ma_options[mop_sideheadtextcolor]" value="'.esc_attr( $options['mop_sideheadtextcolor'] ).'"  />';
-	echo '<div id="mop_sideheadtextcolor2"></div>';
+	echo '<input type="text" id="mantra_sideheadtextcolor" name="ma_options[mantra_sideheadtextcolor]" value="'.esc_attr( $options['mantra_sideheadtextcolor'] ).'"  />';
+	echo '<div id="mantra_sideheadtextcolor2"></div>';
 	echo "<div><small>".__("Sidebar Header Text Color(Default value is 2EA5FD).","mantra")."</small></div>";
 }
 
 //TEXT - Name: ma_options[footerheader]
 function  setting_footerheader_fn() {
 	global $options;
-	echo '<input type="text" id="mop_footerheader" name="ma_options[mop_footerheader]" value="'.esc_attr( $options['mop_footerheader'] ).'"  />';
-	echo '<div id="mop_footerheader2"></div>';
+	echo '<input type="text" id="mantra_footerheader" name="ma_options[mantra_footerheader]" value="'.esc_attr( $options['mantra_footerheader'] ).'"  />';
+	echo '<div id="mantra_footerheader2"></div>';
 	echo "<div><small>".__("Footer Widget Text Color (Default value is 0D85CC).","mantra")."</small></div>";
 }
 
 //TEXT - Name: ma_options[footertext]
 function  setting_footertext_fn() {
 	global $options;
-	echo '<input type="text" id="mop_footertext" name="ma_options[mop_footertext]" value="'.esc_attr( $options['mop_footertext'] ).'"  />';
-	echo '<div id="mop_footertext2"></div>';
+	echo '<input type="text" id="mantra_footertext" name="ma_options[mantra_footertext]" value="'.esc_attr( $options['mantra_footertext'] ).'"  />';
+	echo '<div id="mantra_footertext2"></div>';
 	echo "<div><small>".__("Footer Widget Link Color (Default value is 666666).","mantra")."</small></div>";
 }
 
 //TEXT - Name: ma_options[footerhover]
 function  setting_footerhover_fn() {
 	global $options;
-	echo '<input type="text" id="mop_footerhover" name="ma_options[mop_footerhover]" value="'.esc_attr( $options['mop_footerhover'] ).'"  />';
-	echo '<div id="mop_footerhover2"></div>';
+	echo '<input type="text" id="mantra_footerhover" name="ma_options[mantra_footerhover]" value="'.esc_attr( $options['mantra_footerhover'] ).'"  />';
+	echo '<div id="mantra_footerhover2"></div>';
 	echo "<div><small>".__("Footer Widget Link Color on Mouse Over (Default value is 888888).","mantra")."</small></div>";
 }
 
@@ -629,10 +629,10 @@ function  setting_caption_fn() {
 global $options;
 	$items = array ("White" , "Light" , "Light Gray" , "Gray" , "Dark Gray" , "Black");
 	$itemsare = array( __("White","mantra"), __("Light","mantra"), __("Light Gray","mantra"), __("Gray","mantra"), __("Dark Gray","mantra"), __("Black","mantra"));
-	echo "<select id='mop_caption' name='ma_options[mop_caption]'>";
+	echo "<select id='mantra_caption' name='ma_options[mantra_caption]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mop_caption'],$itemsare[$id]);
+	selected($options['mantra_caption'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -645,11 +645,11 @@ function setting_image_fn() {
 	$items = array("None", "One", "Two", "Three" , "Four", "Five", "Six", "Seven");
 	foreach($items as $item) {
 		
-		$checkedClass = ($options['mop_image']==$item) ? ' checkedClass' : '';
+		$checkedClass = ($options['mantra_image']==$item) ? ' checkedClass' : '';
 	
 		echo " <label id='$item' for='$item$item' class='images $checkedClass'><input  ";
-		 checked($options['mop_image'],$item);
-	echo "value='$item' id='$item$item' onClick=\"changeBorder('$item','images');\" name='ma_options[mop_image]' type='radio' /><img id='image$item'  src='".get_template_directory_uri()."/images/testimg.png'/></label>";
+		 checked($options['mantra_image'],$item);
+	echo "value='$item' id='$item$item' onClick=\"changeBorder('$item','images');\" name='ma_options[mantra_image]' type='radio' /><img id='image$item'  src='".get_template_directory_uri()."/images/testimg.png'/></label>";
 	}
 		
 		echo "<div><br /><p><small>".__("The border around your inserted images. ","mantra")."</small></p></div>";
@@ -662,10 +662,10 @@ global $options;
 	foreach($items as $item) {
 		$none='';
 		if ($item == 'mantra_dot') { $none='None'; }
-		$checkedClass = ($options['mop_pin']==$item) ? ' checkedClass' : '';
+		$checkedClass = ($options['mantra_pin']==$item) ? ' checkedClass' : '';
 		echo "<label id='$item' class='pins  $checkedClass'><input ";
-		checked($options['mop_pin'],$item);
-		echo " value='$item' onClick=\"changeBorder('$item','pins');\" name='ma_options[mop_pin]' type='radio' />$none<img style='margin-left:10px;margin-right:10px;' src='".get_template_directory_uri()."/images/pins/".$item.".png'/></label>";
+		checked($options['mantra_pin'],$item);
+		echo " value='$item' onClick=\"changeBorder('$item','pins');\" name='ma_options[mantra_pin]' type='radio' />$none<img style='margin-left:10px;margin-right:10px;' src='".get_template_directory_uri()."/images/pins/".$item.".png'/></label>";
 	}
 		echo "<div><small>".__("The image on top of your captions. ","mantra")."</small></div>";
 }
@@ -677,10 +677,10 @@ function setting_sidebullet_fn() {
 	foreach($items as $item) {
 		$none='';
 		if ($item == 'mantra_dot') { $none='None'; }
-		$checkedClass = ($options['mop_sidebullet']==$item) ? ' checkedClass' : '';
+		$checkedClass = ($options['mantra_sidebullet']==$item) ? ' checkedClass' : '';
 		echo "<label id='$item' class='sidebullets  $checkedClass'><input ";
-		checked($options['mop_sidebullet'],$item);
-		echo " value='$item' onClick=\"changeBorder('$item','sidebullets');\" name='ma_options[mop_sidebullet]' type='radio' />$none<img style='margin-left:10px;margin-right:10px;' src='".get_template_directory_uri()."/images/bullets/".$item.".png'/></label>";
+		checked($options['mantra_sidebullet'],$item);
+		echo " value='$item' onClick=\"changeBorder('$item','sidebullets');\" name='ma_options[mantra_sidebullet]' type='radio' />$none<img style='margin-left:10px;margin-right:10px;' src='".get_template_directory_uri()."/images/bullets/".$item.".png'/></label>";
 	}
 	echo "<div><small>".__("The sidebar list bullets. ","mantra")."</small></div>";
 }
@@ -688,13 +688,13 @@ function setting_sidebullet_fn() {
 //CHECKBOX - Name: ma_options[contentlist]
 function setting_contentlist_fn() {
 	global $options;
-	if (!isset($options['mop_contentlist'])) { $options['mop_contentlist'] ="Show";	}
+	if (!isset($options['mantra_contentlist'])) { $options['mantra_contentlist'] ="Show";	}
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
-	echo "<select id='mop_contentlist' name='ma_options[mop_contentlist]'>";
+	echo "<select id='mantra_contentlist' name='ma_options[mantra_contentlist]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mop_contentlist'],$itemsare[$id]);
+	selected($options['mantra_contentlist'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -708,10 +708,10 @@ function setting_title_fn() {
 	global $options;
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
-	echo "<select id='mop_title' name='ma_options[mop_title]'>";
+	echo "<select id='mantra_title' name='ma_options[mantra_title]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mop_title'],$itemsare[$id]);
+	selected($options['mantra_title'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -723,10 +723,10 @@ function setting_pagetitle_fn() {
 	global $options;
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
-	echo "<select id='mop_pagetitle' name='ma_options[mop_pagetitle]'>";
+	echo "<select id='mantra_pagetitle' name='ma_options[mantra_pagetitle]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mop_pagetitle'],$itemsare[$id]);
+	selected($options['mantra_pagetitle'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -738,10 +738,10 @@ function setting_categtitle_fn() {
 	global $options;
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
-	echo "<select id='mop_categtitle' name='ma_options[mop_categtitle]'>";
+	echo "<select id='mantra_categtitle' name='ma_options[mantra_categtitle]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mop_categtitle'],$itemsare[$id]);
+	selected($options['mantra_categtitle'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -753,10 +753,10 @@ function setting_tables_fn() {
 	global $options;
 	$items = array ("Enable" , "Disable");
 	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
-	echo "<select id='mop_tables' name='ma_options[mop_tables]'>";
+	echo "<select id='mantra_tables' name='ma_options[mantra_tables]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mop_tables'],$itemsare[$id]);
+	selected($options['mantra_tables'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -768,10 +768,10 @@ function setting_comtext_fn() {
 	global $options;
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
-	echo "<select id='mop_comtext' name='ma_options[mop_comtext]'>";
+	echo "<select id='mantra_comtext' name='ma_options[mantra_comtext]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mop_comtext'],$itemsare[$id]);
+	selected($options['mantra_comtext'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -784,10 +784,10 @@ function setting_backtop_fn() {
 	global $options;
 	$items = array ("Enable" , "Disable");
 	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
-	echo "<select id='mop_backtop' name='ma_options[mop_backtop]'>";
+	echo "<select id='mantra_backtop' name='ma_options[mantra_backtop]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mop_backtop'],$itemsare[$id]);
+	selected($options['mantra_backtop'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -797,7 +797,7 @@ foreach($items as $id=>$item) {
 // TEXTBOX - Name: ma_options[copyright]
 function setting_copyright_fn() {
 	global $options;
-	echo "<input id='mop_copyright' name='ma_options[mop_copyright]' size='40' type='text' value='".esc_attr( $options['mop_copyright'] )."'  />";
+	echo "<input id='mantra_copyright' name='ma_options[mantra_copyright]' size='40' type='text' value='".esc_attr( $options['mantra_copyright'] )."'  />";
 	echo "<div><small>".__("Insert custom text that will appear on the left side of the footer. Leave blank if that's not necessary.<br /> You can use HTML tags and any special characters like &copy .","mantra")."</small></div>";
 }
 
@@ -811,10 +811,10 @@ function setting_postdate_fn() {
 	global $options;
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
-	echo "<select id='mop_postdate' name='ma_options[mop_postdate]'>";
+	echo "<select id='mantra_postdate' name='ma_options[mantra_postdate]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mop_postdate'],$itemsare[$id]);
+	selected($options['mantra_postdate'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -826,10 +826,10 @@ function setting_posttime_fn() {
 	global $options;
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
-	echo "<select id='mop_posttime' name='ma_options[mop_posttime]'>";
+	echo "<select id='mantra_posttime' name='ma_options[mantra_posttime]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mop_posttime'],$itemsare[$id]);
+	selected($options['mantra_posttime'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -841,10 +841,10 @@ function setting_postauthor_fn() {
 	global $options;
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
-	echo "<select id='mop_postauthor' name='ma_options[mop_postauthor]'>";
+	echo "<select id='mantra_postauthor' name='ma_options[mantra_postauthor]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mop_postauthor'],$itemsare[$id]);
+	selected($options['mantra_postauthor'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -856,10 +856,10 @@ function setting_postcateg_fn() {
 	global $options;
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
-	echo "<select id='mop_postcateg' name='ma_options[mop_postcateg]'>";
+	echo "<select id='mantra_postcateg' name='ma_options[mantra_postcateg]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mop_postcateg'],$itemsare[$id]);
+	selected($options['mantra_postcateg'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -871,10 +871,10 @@ function setting_postbook_fn() {
 	global $options;
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
-	echo "<select id='mop_postbook' name='ma_options[mop_postbook]'>";
+	echo "<select id='mantra_postbook' name='ma_options[mantra_postbook]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mop_postbook'],$itemsare[$id]);
+	selected($options['mantra_postbook'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -892,10 +892,10 @@ function setting_excerpthome_fn() {
 	global $options;
 	$items = array ("Excerpt" , "Full Post");
 	$itemsare = array( __("Excerpt","mantra"), __("Full Post","mantra"));
-	echo "<select id='mop_excerpthome' name='ma_options[mop_excerpthome]'>";
+	echo "<select id='mantra_excerpthome' name='ma_options[mantra_excerpthome]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mop_excerpthome'],$itemsare[$id]);
+	selected($options['mantra_excerpthome'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -907,10 +907,10 @@ function setting_excerptasides_fn() {
 	global $options;
 	$items = array ("Yes" , "No");
 	$itemsare = array( __("Yes","mantra"), __("No","mantra"));
-	echo "<select id='mop_excerptasides' name='ma_options[mop_excerptasides]'>";
+	echo "<select id='mantra_excerptasides' name='ma_options[mantra_excerptasides]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mop_excerptasides'],$itemsare[$id]);
+	selected($options['mantra_excerptasides'],$itemsare[$id]);
 	echo ">$item</option>";
 
 }
@@ -923,10 +923,10 @@ function setting_excerptarchive_fn() {
 	global $options;
 	$items = array ("Excerpt" , "Full Post");
 	$itemsare = array( __("Excerpt","mantra"), __("Full Post","mantra"));
-	echo "<select id='mop_excerptarchive' name='ma_options[mop_excerptarchive]'>";
+	echo "<select id='mantra_excerptarchive' name='ma_options[mantra_excerptarchive]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mop_excerptarchive'],$itemsare[$id]);
+	selected($options['mantra_excerptarchive'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -937,10 +937,10 @@ foreach($items as $id=>$item) {
 function setting_excerptwords_fn() {
 	global $options;
 	$items = array ("200" , "150", "120", "100", "75", "60", "50", "40", "30", "20", "10", "0");
-	echo "<select id='mop_excerptwords' name='ma_options[mop_excerptwords]'>";
+	echo "<select id='mantra_excerptwords' name='ma_options[mantra_excerptwords]'>";
 foreach($items as $item) {
 	echo "<option value='$item'";
-	selected($options['mop_excerptwords'],$item);
+	selected($options['mantra_excerptwords'],$item);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -950,14 +950,14 @@ foreach($items as $item) {
 // TEXTBOX - Name: ma_options[excerptdots]
 function setting_excerptdots_fn() {
 	global $options;
-	echo "<input id='mop_excerptdots' name='ma_options[mop_excerptdots]' size='40' type='text' value='".esc_attr( $options['mop_excerptdots'] )."'  />";
+	echo "<input id='mantra_excerptdots' name='ma_options[mantra_excerptdots]' size='40' type='text' value='".esc_attr( $options['mantra_excerptdots'] )."'  />";
 	echo "<div><small>".__("Replaces the three dots ('[...])' that are appended automatically to excerpts.","mantra")."</small></div>";
 }
 
 // TEXTBOX - Name: ma_options[excerptcont]
 function setting_excerptcont_fn() {
 	global $options;
-	echo "<input id='mop_excerptcont' name='ma_options[mop_excerptcont]' size='40' type='text' value='".esc_attr( $options['mop_excerptcont'] )."'  />";
+	echo "<input id='mantra_excerptcont' name='ma_options[mantra_excerptcont]' size='40' type='text' value='".esc_attr( $options['mantra_excerptcont'] )."'  />";
 	echo "<div><small>".__("Edit the 'Continue Reading' link added to your post excerpts.","mantra")."</small></div>";
 }
 
@@ -972,10 +972,10 @@ function setting_fpost_fn() {
 	global $options;
 	$items = array ("Enable" , "Disable");
 	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
-	echo "<select id='mop_fpost' name='ma_options[mop_fpost]'>";
+	echo "<select id='mantra_fpost' name='ma_options[mantra_fpost]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mop_fpost'],$itemsare[$id]);
+	selected($options['mantra_fpost'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -990,21 +990,21 @@ foreach($items as $id=>$item) {
 // TEXTBOX - Name: ma_options[facebook]
 function setting_facebook_fn() {
 	global $options;
-	echo "<input id='mop_facebook' name='ma_options[mop_facebook]' size='40' type='text'  value='".esc_attr( $options['mop_facebook'] )."'  />";
+	echo "<input id='mantra_facebook' name='ma_options[mantra_facebook]' size='40' type='text'  value='".esc_attr( $options['mantra_facebook'] )."'  />";
 	echo "<div><small>".__("Insert your Facebook address. ","mantra")."</small></div>";
 }
 
 // TEXTBOX - Name: ma_options[tweeter]
 function setting_tweeter_fn() {
 	global $options;
-	echo "<input id='mop_tweeter' name='ma_options[mop_tweeter]' size='40' type='text'  value='".esc_attr( $options['mop_tweeter'] )."'  />";
+	echo "<input id='mantra_tweeter' name='ma_options[mantra_tweeter]' size='40' type='text'  value='".esc_attr( $options['mantra_tweeter'] )."'  />";
 	echo "<div><small>".__("Insert your Twitter address.","mantra")."</small></div> ";
 }
 
 // TEXTBOX - Name: ma_options[rss]
 function setting_rss_fn() {
 	global $options;
-	echo "<input id='mop_rss' name='ma_options[mop_rss]' size='40' type='text'  value='".esc_attr( $options['mop_rss'] )."'  />";
+	echo "<input id='mantra_rss' name='ma_options[mantra_rss]' size='40' type='text'  value='".esc_attr( $options['mantra_rss'] )."'  />";
 	echo "<div><small>".__("Insert your RSS Feed Link. ","mantra")."</small></div>";
 }
 
@@ -1014,7 +1014,7 @@ function setting_rss_fn() {
 function  setting_dmopdown_fn() {
 	global $options;
 	$items = array("Red", "Green", "Blue", "Orange", "White", "Violet", "Yellow");
-	echo "<select id='dmop_down1' name='ma_options[dmopdown1]'>";
+	echo "<select id='dmantra_down1' name='ma_options[dmopdown1]'>";
 	foreach($items as $item) {
 		$selected = ($options['dmopdown1']==$item) ? 'selected="selected"' : '';
 		echo "<option value='$item' $selected>$item</option>";
@@ -1153,22 +1153,22 @@ jQuery(b).css('display','none');
 		});
 }
 
-startfarb("#mop_backcolor","#mop_backcolor2");
-startfarb("#mop_headercolor","#mop_headercolor2");
-startfarb("#mop_prefootercolor","#mop_prefootercolor2");
-startfarb("#mop_footercolor","#mop_footercolor2");
-startfarb("#mop_titlecolor","#mop_titlecolor2");
-startfarb("#mop_descriptioncolor","#mop_descriptioncolor2");
-startfarb("#mop_contentcolor","#mop_contentcolor2");
-startfarb("#mop_linkscolor","#mop_linkscolor2");
-startfarb("#mop_hovercolor","#mop_hovercolor2");
-startfarb("#mop_headtextcolor","#mop_headtextcolor2");
-startfarb("#mop_headtexthover","#mop_headtexthover2");
-startfarb("#mop_sideheadbackcolor","#mop_sideheadbackcolor2");
-startfarb("#mop_sideheadtextcolor","#mop_sideheadtextcolor2");
-startfarb("#mop_footerheader","#mop_footerheader2");
-startfarb("#mop_footertext","#mop_footertext2");
-startfarb("#mop_footerhover","#mop_footerhover2");
+startfarb("#mantra_backcolor","#mantra_backcolor2");
+startfarb("#mantra_headercolor","#mantra_headercolor2");
+startfarb("#mantra_prefootercolor","#mantra_prefootercolor2");
+startfarb("#mantra_footercolor","#mantra_footercolor2");
+startfarb("#mantra_titlecolor","#mantra_titlecolor2");
+startfarb("#mantra_descriptioncolor","#mantra_descriptioncolor2");
+startfarb("#mantra_contentcolor","#mantra_contentcolor2");
+startfarb("#mantra_linkscolor","#mantra_linkscolor2");
+startfarb("#mantra_hovercolor","#mantra_hovercolor2");
+startfarb("#mantra_headtextcolor","#mantra_headtextcolor2");
+startfarb("#mantra_headtexthover","#mantra_headtexthover2");
+startfarb("#mantra_sideheadbackcolor","#mantra_sideheadbackcolor2");
+startfarb("#mantra_sideheadtextcolor","#mantra_sideheadtextcolor2");
+startfarb("#mantra_footerheader","#mantra_footerheader2");
+startfarb("#mantra_footertext","#mantra_footertext2");
+startfarb("#mantra_footerhover","#mantra_footerhover2");
 
   });
 
@@ -1207,38 +1207,38 @@ return 0;
 function ma_options_validate($input) {
 global $mantra_defaults;
 	// Sanitize the texbox input
-	$input['mop_copyright'] =  wp_kses_data($input['mop_copyright']);
-	$input['mop_facebook'] =  wp_kses_data($input['mop_facebook']);
-	$input['mop_tweeter'] =  wp_kses_data($input['mop_tweeter']);
-	$input['mop_rss'] =  wp_kses_data($input['mop_rss']);
+	$input['mantra_copyright'] =  wp_kses_data($input['mantra_copyright']);
+	$input['mantra_facebook'] =  wp_kses_data($input['mantra_facebook']);
+	$input['mantra_tweeter'] =  wp_kses_data($input['mantra_tweeter']);
+	$input['mantra_rss'] =  wp_kses_data($input['mantra_rss']);
 
-	$input['mop_backcolor'] =  wp_kses_data($input['mop_backcolor']);
-	$input['mop_headercolor'] =  wp_kses_data($input['mop_headercolor']);
-	$input['mop_prefootercolor'] =  wp_kses_data($input['mop_prefootercolor']);
-	$input['mop_footercolor'] =  wp_kses_data($input['mop_footercolor']);
-	$input['mop_titlecolor'] =  wp_kses_data($input['mop_titlecolor']);
-	$input['mop_descriptioncolor'] =  wp_kses_data($input['mop_descriptioncolor']);
-	$input['mop_contentcolor'] =  wp_kses_data($input['mop_contentcolor']);
-	$input['mop_linkscolor'] =  wp_kses_data($input['mop_linkscolor']);
-	$input['mop_hovercolor'] =  wp_kses_data($input['mop_hovercolor']);
-	$input['mop_headtextcolor'] =  wp_kses_data($input['mop_headtextcolor']);
-	$input['mop_headtexthover'] =  wp_kses_data($input['mop_headtexthover']);
-	$input['mop_sideheadbackcolor'] =  wp_kses_data($input['mop_sideheadbackcolor']);
-	$input['mop_sideheadtextcolor'] =  wp_kses_data($input['mop_sideheadtextcolor']);
-	$input['mop_footerheader'] =  wp_kses_data($input['mop_footerheader']);
-	$input['mop_footertext'] =  wp_kses_data($input['mop_footertext']);
-	$input['mop_footerhover'] =  wp_kses_data($input['mop_footerhover']);
+	$input['mantra_backcolor'] =  wp_kses_data($input['mantra_backcolor']);
+	$input['mantra_headercolor'] =  wp_kses_data($input['mantra_headercolor']);
+	$input['mantra_prefootercolor'] =  wp_kses_data($input['mantra_prefootercolor']);
+	$input['mantra_footercolor'] =  wp_kses_data($input['mantra_footercolor']);
+	$input['mantra_titlecolor'] =  wp_kses_data($input['mantra_titlecolor']);
+	$input['mantra_descriptioncolor'] =  wp_kses_data($input['mantra_descriptioncolor']);
+	$input['mantra_contentcolor'] =  wp_kses_data($input['mantra_contentcolor']);
+	$input['mantra_linkscolor'] =  wp_kses_data($input['mantra_linkscolor']);
+	$input['mantra_hovercolor'] =  wp_kses_data($input['mantra_hovercolor']);
+	$input['mantra_headtextcolor'] =  wp_kses_data($input['mantra_headtextcolor']);
+	$input['mantra_headtexthover'] =  wp_kses_data($input['mantra_headtexthover']);
+	$input['mantra_sideheadbackcolor'] =  wp_kses_data($input['mantra_sideheadbackcolor']);
+	$input['mantra_sideheadtextcolor'] =  wp_kses_data($input['mantra_sideheadtextcolor']);
+	$input['mantra_footerheader'] =  wp_kses_data($input['mantra_footerheader']);
+	$input['mantra_footertext'] =  wp_kses_data($input['mantra_footertext']);
+	$input['mantra_footerhover'] =  wp_kses_data($input['mantra_footerhover']);
 
-	$input['mop_excerptdots'] =  wp_kses_data($input['mop_excerptdots']);
-	$input['mop_excerptcont'] =  wp_kses_data($input['mop_excerptcont']);
+	$input['mantra_excerptdots'] =  wp_kses_data($input['mantra_excerptdots']);
+	$input['mantra_excerptcont'] =  wp_kses_data($input['mantra_excerptcont']);
 
-	$input['mop_facebook'] =  wp_kses_data($input['mop_facebook']);
-	$input['mop_tweeter'] =  wp_kses_data($input['mop_tweeter']);
-	$input['mop_rss'] =  wp_kses_data($input['mop_rss']);
+	$input['mantra_facebook'] =  wp_kses_data($input['mantra_facebook']);
+	$input['mantra_tweeter'] =  wp_kses_data($input['mantra_tweeter']);
+	$input['mantra_rss'] =  wp_kses_data($input['mantra_rss']);
 
 $itemsSide = array("Left", "Right", "Disable");
-if ( !in_array ($input['mop_side'],$itemsSide) ) {
- $input['mop_side']= $mantra_defaults['mop_side'];
+if ( !in_array ($input['mantra_side'],$itemsSide) ) {
+ $input['mantra_side']= $mantra_defaults['mantra_side'];
 }
 
 
