@@ -102,6 +102,7 @@ foreach ($options as $key => $value) {
 		wp_register_script('menu',get_template_directory_uri() . '/js/menu.js', array('jquery') );
 		wp_enqueue_script('menu');
 		add_action('wp_print_styles', 'mantra_style' );
+		add_action('wp_head', 'mantra_custom_styles' );
 		if($mantra_backtop!="Disable") {
 							wp_register_script('top',get_template_directory_uri() . '/js/top.js', array('jquery'));
 							wp_enqueue_script('top');}	
@@ -120,7 +121,6 @@ add_action('wp_enqueue_scripts', 'mantra_scripts_method');
 
 if( is_admin() ) {
 require_once(dirname(__FILE__) . "/mantra-admin-functions.php");
-add_action( 'wp_head', 'mantra_custom_styles' );
 }
 
 function mantra_style() {
