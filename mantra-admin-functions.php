@@ -51,10 +51,8 @@ function mantra_init_fn(){
 
 
 	add_settings_field('mantra_backcolor', __('Background Color','mantra') , 'setting_backcolor_fn', __FILE__, 'appereance_section');
-	add_settings_field('mantra_headercolor', __('Header Color','mantra') , 'setting_headercolor_fn', __FILE__, 'appereance_section');
-	add_settings_field('mantra_prefootercolor', __('Pre-Footer Color','mantra') , 'setting_prefootercolor_fn', __FILE__, 'appereance_section');
-	add_settings_field('mantra_footercolor', __('Footer Color','mantra') , 'setting_footercolor_fn', __FILE__, 'appereance_section');
-
+	add_settings_field('mantra_headercolor', __('Header Background Color','mantra') , 'setting_headercolor_fn', __FILE__, 'appereance_section');
+	
 	add_settings_field('mantra_titlecolor', __('Title Color','mantra') , 'setting_titlecolor_fn', __FILE__, 'appereance_section');
 	add_settings_field('mantra_descriptioncolor', __('Description Color','mantra') , 'setting_descriptioncolor_fn', __FILE__, 'appereance_section');
 
@@ -65,6 +63,8 @@ function mantra_init_fn(){
 	add_settings_field('mantra_headtexthover', __('Entry Title Hover Color','mantra') , 'setting_headtexthover_fn', __FILE__, 'appereance_section');
 	add_settings_field('mantra_sideheadbackcolor', __('Sidebar Header Background Color','mantra') , 'setting_sideheadbackcolor_fn', __FILE__, 'appereance_section');
 	add_settings_field('mantra_sideheadtextcolor', __('Sidebar Header Text Color','mantra') , 'setting_sideheadtextcolor_fn', __FILE__, 'appereance_section');
+	add_settings_field('mantra_prefootercolor', __('Footer Widget Background Color','mantra') , 'setting_prefootercolor_fn', __FILE__, 'appereance_section');
+	add_settings_field('mantra_footercolor', __('Footer Background Color','mantra') , 'setting_footercolor_fn', __FILE__, 'appereance_section');
 	add_settings_field('mantra_footerheader', __('Footer Widget Header Text Color','mantra') , 'setting_footerheader_fn', __FILE__, 'appereance_section');
 	add_settings_field('mantra_footertext', __('Footer Widget Link Color','mantra') , 'setting_footertext_fn', __FILE__, 'appereance_section');
 	add_settings_field('mantra_footerhover', __('Footer Widget Hover Color','mantra') , 'setting_footerhover_fn', __FILE__, 'appereance_section');
@@ -78,7 +78,7 @@ function mantra_init_fn(){
 	add_settings_field('mantra_pagetitle', __('Page Titles','mantra') , 'setting_pagetitle_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_categetitle', __('Category Page Titles','mantra') , 'setting_categtitle_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_tables', __('Invisible Tables','mantra') , 'setting_tables_fn', __FILE__, 'graphics_section');
-	add_settings_field('mantra_backtop', __('Enable Back to Top button','mantra') , 'setting_backtop_fn', __FILE__, 'graphics_section');
+	add_settings_field('mantra_backtop', __('Back to Top button','mantra') , 'setting_backtop_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_comtext', __('Text Under Comments','mantra') , 'setting_comtext_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_copyright', __('Insert footer copyright','mantra') , 'setting_copyright_fn', __FILE__, 'graphics_section');
 
@@ -95,10 +95,15 @@ function mantra_init_fn(){
 	add_settings_field('mantra_excerptdots', __('Excerpt suffix','mantra') , 'setting_excerptdots_fn', __FILE__, 'excerpt_section');
 	add_settings_field('mantra_excerptcont', __('Continue reading link text ','mantra') , 'setting_excerptcont_fn', __FILE__, 'excerpt_section');
 
-	add_settings_field('mantra_fpost', __('Featured Images on Posts ','mantra') , 'setting_fpost_fn', __FILE__, 'featured_section');
+	add_settings_field('mantra_fpost', __('Featured POST Images ','mantra') , 'setting_fpost_fn', __FILE__, 'featured_section');
+	add_settings_field('mantra_fauto', __('Auto Select Images From Posts ','mantra') , 'setting_fauto_fn', __FILE__, 'featured_section'); 
+	add_settings_field('mantra_falign', __('Featured Post Images Alignment ','mantra') , 'setting_falign_fn', __FILE__, 'featured_section');
+	add_settings_field('mantra_fwidth', __('Featured Post Images Width ','mantra') , 'setting_fwidth_fn', __FILE__, 'featured_section');
+	add_settings_field('mantra_fheight', __('Featured Post Images Height ','mantra') , 'setting_fheight_fn', __FILE__, 'featured_section');
+	add_settings_field('mantra_fheader', __('Featured HEADER Images ','mantra') , 'setting_fheader_fn', __FILE__, 'featured_section');
 
 	add_settings_field('mantra_facebook', __('Facebook Link','mantra') , 'setting_facebook_fn', __FILE__, 'socials_section');
-	add_settings_field('mantra_tweeter', __('Tweeter Link','mantra') , 'setting_tweeter_fn', __FILE__, 'socials_section');
+	add_settings_field('mantra_tweeter', __('Twitter Link','mantra') , 'setting_tweeter_fn', __FILE__, 'socials_section');
 	add_settings_field('mantra_rss', __('RSS Feed Link','mantra') , 'setting_rss_fn', __FILE__, 'socials_section');
 
 }
@@ -285,7 +290,7 @@ echo "<div><small>".__("Select the padding between the content and the sidebar."
  //SELECT - Name: ma_options[hheight]
 function  setting_hheight_fn() {
 	global $options;
-	$items =array ("90px", "120px" , "150px" , "180px" , "200px", "240px", "300px");
+	$items =array ("90px", "120px" , "150px" , "180px" , "200px", "240px", "300px","350px", "400px", "450px", "500px");
 	echo "<select id='mantra_hheight' name='ma_options[mantra_hheight]'>";
 foreach($items as $item) {
 	echo "<option value='$item'";
@@ -293,7 +298,8 @@ foreach($items as $item) {
 	echo ">$item</option>";
 }
 	echo "</select>";
-echo "<div><small>".__("Select the header's height. After saving the settings go and upload your new header image. The header's width will be equal to the Total Site Width.","mantra")."</small></div>";
+$totally = $options['mantra_sidebar']+$options['mantra_sidewidth'];
+echo "<div><small>".__("Select the header's height. After saving the settings go and upload your new header image. The header's width will be equal to the Total Site Width = ","mantra").$totally."px.</small></div>";
 }
 
 
@@ -503,7 +509,7 @@ function  setting_headercolor_fn() {
 	global $options;
 	echo '<input type="text" id="mantra_headercolor" name="ma_options[mantra_headercolor]" value="'.esc_attr( $options['mantra_headercolor'] ).'"  />';
 	echo '<div id="mantra_headercolor2"></div>';
-	echo "<div><small>".__("Header background color (Default value is 333333). You can delete all insde text for no background color.","mantra")."</small></div>";
+	echo "<div><small>".__("Header background color (Default value is 333333). You can delete all inside text for no background color.","mantra")."</small></div>";
 }
 
 //TEXT - Name: ma_options[prefootercolor]
@@ -979,8 +985,72 @@ foreach($items as $id=>$item) {
 	echo ">$item</option>";
 }
 	echo "</select>";
-	echo "<div><small>".__("Show featured imaged on posts. Default image size is 250 x 190 px.","mantra")."</small></div>";
+	echo "<div><small>".__("Show featured images on posts. The images must be selected for each post in the Featured Image section.","mantra")."</small></div>";
 }
+
+//CHECKBOX - Name: ma_options[fauto]
+function setting_fauto_fn() {
+	global $options;
+	$items = array ("Enable" , "Disable");
+	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
+	echo "<select id='mantra_fauto' name='ma_options[mantra_fauto]'>";
+foreach($items as $id=>$item) {
+	echo "<option value='$item'";
+	selected($options['mantra_fauto'],$itemsare[$id]);
+	echo ">$item</option>";
+}
+	echo "</select>";
+	echo "<div><small>".__("Show the first image that you inserted in a post as a featured image. If you elable this option, the first image in your post will be used even if you selected a Featured Image in you post.","mantra")."</small></div>";
+}
+
+
+//CHECKBOX - Name: ma_options[falign]
+function setting_falign_fn() {
+	global $options;
+	$items = array ("Left" , "Center", "Right");
+	$itemsare = array( __("Left","mantra"), __("Center","mantra"), __("Right","mantra"));
+	echo "<select id='mantra_falign' name='ma_options[mantra_falign]'>";
+foreach($items as $id=>$item) {
+	echo "<option value='$item'";
+	selected($options['mantra_falign'],$itemsare[$id]);
+	echo ">$item</option>";
+}
+	echo "</select>";
+	echo "<div><small>".__("Featured images alignment. Centered images won't allow any text next to them.","mantra")."</small></div>";
+}
+
+
+// TEXTBOX - Name: ma_options[fwidth]
+function setting_fwidth_fn() {
+	global $options;
+	echo "<input id='mantra_fwidth' name='ma_options[mantra_fwidth]' size='6' type='text' value='".esc_attr( $options['mantra_fwidth'] )."'  /> px";
+	echo "<div><small>".__("The width you want the featured image to have in pixels.","mantra")."</small></div>";
+}
+
+// TEXTBOX - Name: ma_options[fheight]
+function setting_fheight_fn() {
+	global $options;
+	echo "<input id='mantra_fheight' name='ma_options[mantra_fheight]' size='6' type='text' value='".esc_attr( $options['mantra_fheight'] )."'  /> px";
+	echo "<div><small>".__("The height you want the featured image to have in pixels.","mantra")."</small></div>";
+}
+
+//CHECKBOX - Name: ma_options[fheader]
+function setting_fheader_fn() {
+	global $options;
+	$items = array ("Enable" , "Disable");
+	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
+	echo "<select id='mantra_fheader' name='ma_options[mantra_fheader]'>";
+foreach($items as $id=>$item) {
+	echo "<option value='$item'";
+	selected($options['mantra_fheader'],$itemsare[$id]);
+	echo ">$item</option>";
+}
+	echo "</select>";
+	echo "<div><small>".__("Show featured images on headers. Images will show if the're >= than the header.","mantra")."</small></div>";
+}
+
+
+
 
 
 ////////////////////////
@@ -1231,6 +1301,9 @@ global $mantra_defaults;
 
 	$input['mantra_excerptdots'] =  wp_kses_data($input['mantra_excerptdots']);
 	$input['mantra_excerptcont'] =  wp_kses_data($input['mantra_excerptcont']);
+
+	$input['mantra_fwidth'] =  intval(wp_kses_data($input['mantra_fwidth']));
+	$input['mantra_fheight'] =  intval(wp_kses_data($input['mantra_fheight']));
 
 	$input['mantra_facebook'] =  wp_kses_data($input['mantra_facebook']);
 	$input['mantra_tweeter'] =  wp_kses_data($input['mantra_tweeter']);

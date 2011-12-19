@@ -152,8 +152,14 @@ foreach ($options as $key => $value) {
 	<?php else : ?>
 			<div class="entry-content">
 
-		<?php if ( function_exists("has_post_thumbnail") && has_post_thumbnail() && $mantra_fpost=='Enable' ) { the_post_thumbnail(array(250,190), array("class" => "alignleft post_thumbnail")); } ?>
-		<?php /* <img src="<?php echo get_image() ?>" alt="<?php the_title_attribute();  ?>" title="" /> */ ?>
+		<?php 
+			
+		if ( $mantra_fauto=="Enable" && get_image()!="/images/default.jpg" ) {
+		if ( function_exists("has_post_thumbnail") && has_post_thumbnail() && $mantra_fpost=='Enable' ) { the_post_thumbnail(array($mantra_fwidth,$mantra_fheight), array("class" => "align".strtolower($mantra_falign)." post_thumbnail" , "src" =>  get_image() )); } 
+		}
+		else if ( function_exists("has_post_thumbnail") && has_post_thumbnail() && $mantra_fpost=='Enable') { the_post_thumbnail(array($mantra_fwidth,$mantra_fheight), array("class" => "align".strtolower($mantra_falign)." post_thumbnail"  )); } 
+	 ?>	
+
 				<?php if ($mantra_excerpthome != "Full Post") {the_excerpt(); } else { the_content( __( 'Continue reading','mantra').' <span class="meta-nav">&rarr;</span>');}  ?>
 				<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'mantra' ), 'after' => '</div>' ) ); ?>
 			</div><!-- .entry-content -->

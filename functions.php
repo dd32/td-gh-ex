@@ -65,6 +65,11 @@ $mantra_defaults = array(
 "mantra_excerptcont" => " Continue reading",
 
 "mantra_fpost" => "Disable",
+"mantra_fauto" => "Disable",
+"mantra_fpost" => "Left",
+"mantra_fwidth" => "250",
+"mantra_fheight" => "150",
+"mantra_fheader" => "Disable",
 
 "mantra_facebook" => "",
 "mantra_tweeter" => "",
@@ -276,12 +281,18 @@ function mantra_setup() {
 
 	// Make theme available for translation
 	// Translations can be filed in the /languages/ directory
-	load_theme_textdomain( 'mantra', get_template_directory_uri()  . '/languages' );
+/**
+ * Make theme available for translation
+ * Translations can be filed in the /languages/ directory
+ */
+load_theme_textdomain( 'mantra', get_template_directory() . '/languages' );
 
-	$locale = get_locale();
-	$locale_file = get_template_directory_uri()  . "/languages/$locale.php";
+$locale = get_locale();
+$locale_file = get_template_directory() . "/languages/$locale.php";
 	if ( is_readable( $locale_file ) )
 		require_once( $locale_file );
+
+
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
