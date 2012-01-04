@@ -1,67 +1,41 @@
 <?php 
-
-/*
-	Page
-	Establishes the core iFeature page tempate.
-	Version: 2.0
-	Copyright (C) 2011 CyberChimps
-
+/**
+* Page template used by the iFeature theme.
+*
+* Authors: Tyler Cunningham, Trent Lapinski.
+* Copyright: © 2011
+* {@link http://cyberchimps.com/ CyberChimps LLC}
+*
+* Released under the terms of the GNU General Public License.
+* You should have received a copy of the GNU General Public License,
+* along with this software. In the main directory, see: license.txt.
+* If not, see: {@link http://www.gnu.org/licenses/}.
+*
+* @package iFeature
+* @since 3.1
 */
 
-/* Header call. */
+/**
+* Variable definition.
+*/	
+	global $options, $themeslug, $post; // call globals
+	$page_section_order = get_post_meta($post->ID, 'page_section_order' , true);
 
+/**
+* Call the header.
+*/
 	get_header(); 
 	
-/* End header. */	
-
-/* Define global variables. */
-
-	$enable = get_post_meta($post->ID, 'page_enable_slider' , true);
-	$size = get_post_meta($post->ID, 'page_slider_size' , true);
-	$hidetitle = get_post_meta($post->ID, 'hide_page_title' , true);
-	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);
-	$callout = get_post_meta($post->ID, 'enable_callout_section' , true);
-	$twitterbar = get_post_meta($post->ID, 'enable_twitter_bar' , true);
-	$enableboxes = get_post_meta($post->ID, 'enable_box_section' , true);
-	$pagecontent = get_post_meta($post->ID, 'hide_page_content' , true);
-	$page_section_order = get_post_meta($post->ID, 'page_section_order' , true);
-	if(!$page_section_order) {
-		$page_section_order = 'page_section';
-	}
-	$test = get_post_meta($post->ID, 'page_section_order' , true);
-
-/* End define global variables. */
-
-/* Adjust Post Meta Data bar width.  NEED TO FIGURE SOMETHING TO REPLACE THIS */
-
-if ($sidebar == "1" OR $sidebar == "2") {
-	
-		echo '<style type="text/css">';
-		echo ".postmetadata {width: 480px;}";
-		echo '</style>';
-		
-	}
-	
-
-
-if ($size == "0") {
-
-add_action ('chimps_page_slider', 'chimps_page_slider_content' );
-
-}
-
-if (preg_match("/page_slider/", $test ) && $size == "1" ) {
-
-add_action ('chimps_page_content_slider', 'chimps_page_slider_content' );
-
-}
-
-
 ?>
 
 <div class="container_12">
+<?php if (function_exists('chimps_breadcrumbs') && ($options->get($themeslug.'_disable_breadcrumbs') == "1")) { chimps_breadcrumbs(); }?>
 
-<?php
+	<!--Begin @Core before page content hook-->
+		<?php chimps_before_page_content(); ?>
+	<!--End @Core before page content hook-->
+
+<?php //calls the Page Elements
 	foreach(explode(",", $page_section_order) as $key) {
 		$fn = 'chimps_' . $key;
 		if(function_exists($fn)) {
@@ -69,8 +43,12 @@ add_action ('chimps_page_content_slider', 'chimps_page_slider_content' );
 		}
 	}
 ?>
+
+	<!--Begin @Core after page content hook-->
+		<?php chimps_after_page_content(); ?>
+	<!--End @Core after page content hook-->
 	
 </div>
 
-<div style=clear:both;></div>
+<div style="clear:both;"></div>
 <?php get_footer(); ?>

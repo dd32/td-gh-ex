@@ -30,18 +30,16 @@ require_once ( get_template_directory() . '/core/actions/global-actions.php' );
 require_once ( get_template_directory() . '/core/actions/header-actions.php' );
 require_once ( get_template_directory() . '/core/actions/footer-actions.php' );
 require_once ( get_template_directory() . '/core/actions/pagination-actions.php' );
+require_once ( get_template_directory() . '/core/actions/twitterbar-actions.php' );
 require_once ( get_template_directory() . '/core/actions/page-actions.php' );
 require_once ( get_template_directory() . '/core/actions/search-actions.php' );
 require_once ( get_template_directory() . '/core/actions/slider-actions.php' );
-require_once ( get_template_directory() . '/core/actions/twitterbar-actions.php' );
 
-//Options
+//Call metabox class file
+require_once ( get_template_directory() . '/core/metabox/meta-box-class.php' );
 
+//CyberChimps Themes Page
 require_once ( get_template_directory() . '/core/classy-options/options-themes.php' );
-
-
-
-
 
 /**
 * End

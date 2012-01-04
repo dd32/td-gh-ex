@@ -1,24 +1,35 @@
 <?php 
-
-/*
-	Single
-	
-	Establishes the single post template of iFeature. 
-	
-	Copyright (C) 2011 CyberChimps
+/**
+* Single post template used by the iFeature theme.
+*
+* Authors: Tyler Cunningham, Trent Lapinski.
+* Copyright: © 2011
+* {@link http://cyberchimps.com/ CyberChimps LLC}
+*
+* Released under the terms of the GNU General Public License.
+* You should have received a copy of the GNU General Public License,
+* along with this software. In the main directory, see: license.txt.
+* If not, see: {@link http://www.gnu.org/licenses/}.
+*
+* @package iFeature
+* @since 3.1
 */
 
+/**
+* Variable definition.
+*/
+global $options, $themeslug, $post;
 
+/**
+* Call the header.
+*/
+get_header(); 
 
-/* End variable definition. */	
-
-
-get_header(); ?>
+?>
 
 <div class="container_12">
-<?php if (function_exists('chimps_breadcrumbs')) chimps_breadcrumbs(); ?>
+<?php if (function_exists('chimps_breadcrumbs') && ($options->get($themeslug.'_disable_breadcrumbs') == "1")) { chimps_breadcrumbs(); }?>
 
-	
 		<div id="content" class="grid_8">
 
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -27,7 +38,7 @@ get_header(); ?>
 				<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 		
 				<!--Begin @Core index loop hook-->
-					<?php chimps_index_loop(); ?>
+					<?php chimps_loop(); ?>
 				<!--End @Core index loop hook-->	
 			
 				<!--Begin @Core link pages hook-->
@@ -39,7 +50,7 @@ get_header(); ?>
 				<!--End @Core post edit link hook-->
 			
 				<!--Begin @Core FB like hook-->
-					<?php chimps_fb_like_plus_one(); ?>
+					<?php ifeature_fb_like_plus_one(); ?>
 				<!--End @Core FB like hook-->
 			
 				<!--Begin @Core post tags hook-->
@@ -51,7 +62,7 @@ get_header(); ?>
 				<!--End @Core post pagination hook-->				
 								
 				<!--Begin @Core post bar hook-->
-					<?php chimps_post_bar(); ?>
+					<?php ifeature_post_bar(); ?>
 				<!--End @Core post bar hook-->
 			
 				</div><!--end post_class-->	
@@ -70,7 +81,7 @@ get_header(); ?>
 		</div><!--end content-->
 
 	<!--Begin @Core index after entry hook-->
-	<?php chimps_index_after_entry(); ?>
+	<?php chimps_after_entry(); ?>
 	<!--End @Core index after entry hook-->
 
 
