@@ -1,0 +1,308 @@
+/*
+Theme Name: Azure Basic 
+Theme URI: http://silverglass.net/
+Author: C. A. Brown
+Author URI: http://cabrown.net/
+Description: A lightweight, two-column layout blog theme, with 6 widget areas and customizable header image. Valid HTML5 and CSS3 that can be modified. Compatiable with Wordpress 3.2 and above. Compatable IE7+, Opera 10+, Safari 5+, FireFox 3.5+.   
+Tags: blue, white, two-columns, custom-menu, custom-background, custom-header, right-sidebar
+
+Version: 1.0
+
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+ *
+ *
+ *
+ * CSS resets and layout uses modified version of the Blueprint CSS Framework 1.0.1
+ * http://blueprintcss.org
+ * Copyright (c) 2007-Present. See LICENSE for more info.
+ *
+ *
+ *
+*/
+
+/*    BlurePrint Reset and Framework        */
+/*------------------------------------------*/
+@import url('css/screen.css');
+
+
+
+/*        Global Syles                 */
+/*------------------------------------*/
+
+details, figcaption, figure { border: 0; font-size:100%; font: inherit; vertical-align: baseline; margin: 0; padding: 0; }
+audio, canvas, video { border: 0; vertical-align: baseline; margin: 0; padding: 0; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+
+html { height: 100%; }
+
+body { height: 100%; 
+       font-family: Verdana, Geneva, sans-serif; 
+	   background: none repeat 0 0 scroll #eaf8ff; }
+
+:focus { outline: 0; }
+
+ol, ul { list-style: none; }
+
+a { text-decoration: none; }
+
+table { border-collapse: separate;
+        border-spacing: 0; }
+
+
+
+/*      Global WordPress Styles       */
+/*-----------------------------------*/
+
+.entry-content img {
+	margin: 0 0 1.5em 0;
+	}
+.alignleft, img.alignleft {
+	margin-right: 1.5em;
+	display: inline;
+	float: left;
+	}
+.alignright, img.alignright {
+	margin-left: 1.5em;
+	display: inline;
+	float: right;
+	}
+.aligncenter, img.aligncenter {
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+	clear: both;
+	}
+.wp-caption {
+	margin-bottom: 1.5em;
+	text-align: center;
+	padding-top: 5px;
+	}
+.wp-caption img {
+	border: 0 none;
+	padding: 0;
+	margin: 0;
+	}
+.wp-caption p.wp-caption-text {
+	line-height: 1.5;
+	font-size: 10px;
+	margin: 0;
+	}
+.wp-smiley {
+	margin: 0 !important;
+	max-height: 1em;
+	}
+blockquote.left {
+	margin-right: 20px;
+	text-align: right;
+	margin-left: 0;
+	width: 33%;
+	float: left;
+	}
+blockquote.right {
+	margin-left: 20px;
+	text-align: left;
+	margin-right: 0;
+	width: 33%;
+	float: right;
+	}
+.gallery dl {}
+.gallery dt {}
+.gallery dd {}
+.gallery dl a {}
+.gallery dl img {}
+.gallery-caption {}
+
+.size-full {}
+.size-large {}
+.size-medium {}
+.size-thumbnail {}
+
+.sticky {}
+
+.bypostauthor {}
+
+
+/*      Basic Two-Column (Right) Lyouout       */
+/*--------------------------------------------*/
+
+#primary { float: left;
+           overflow: hidden;
+           width: 720px; }
+
+#content { width: 680px; }
+
+#sidebar { overflow: hidden;
+           float: right;
+           width: 230px; }
+
+#footer-bottom { clear: both;
+                 width: 100%; }
+
+
+
+/*    Framework Styles        */
+/*---------------------------*/
+
+#top-header { padding: 0 0 30px 0; }
+
+#main { padding: 0 0 30px 0; 
+        font-size: 12px; }
+
+#footer-bottom { padding: 0 0 10px 0; }
+
+.entry-header { margin: 0 0 25px 0; }
+
+
+
+/*             Azure Basic Styles             */
+/*-------------------------------------------*/
+
+#container-full { padding: 20px 0 20px 0; }
+
+#top-header { background: none repeat scroll 0 0 #fff; 
+              box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset; }
+			  
+
+/* Top Navigation */
+
+nav[role="navigation"] { background: none repeat scroll 0 0 #6da0d3; 
+                         min-height: 37px; 
+						 margin-bottom: 20px; }
+
+nav[role="navigation"] .menu { padding: 7px 0 0 1.5em; 
+                               font-size: 10pt; }
+
+nav[role="navigation"] .menu ul { margin: 0 0 0 0; }
+
+nav[role="navigation"] .menu ul li { display: inline; 
+                                     padding-right: 30px; }
+
+nav[role="navigation"] .menu a { color: #fff; 
+                                 text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1); }
+
+nav[role="navigation"] .menu a:hover { color: #01152a; }
+
+
+
+/* Header Title Section */
+
+#top-header-section { width: 100%; }
+
+#main-title { float: left;
+              position: relative;
+              width: 350px;
+		      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+		      padding-left: 1.5em;
+              z-index: 25; }
+
+#site-title { text-transform: uppercase;
+              margin-bottom: 10px; 
+              font-size: 48px; }
+
+#site-description { font-variant: small-caps; 
+                    font-size: 14px; 
+					margin-bottom: 20px; }
+
+#header-sidebar-section { float: right;
+                          text-align: right;
+                          position: relative;
+			              padding-right: 15px;
+                          width: 560px;
+				          font-size: 12px;
+			              text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+			              padding-top: 10px;
+                          z-index: 35;	}
+
+#header-sidebar-section ul { list-style-type: none;
+                             margin: 0;
+				             text-align: right;
+				             width: 560px; 
+                             padding-left: 0; }
+							 
+#header-sidebar-section ul ul li { display: inline; 
+                                   padding-right: 15px; }
+
+
+/* Header Image */
+
+#header-image { width: 986px; 
+                height: 300px;
+				border: 2px solid #6da0d3; }
+
+
+/* Main Content Section */
+
+#main { background: none repeat scroll 0 0 #fff; 
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset; }
+
+article { margin-bottom: 25px;
+	      padding-top: 10px;
+	      padding-left: 25px; }
+
+.entry-title { font-size: 28px; 
+               text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1); }
+
+.entry-meta { font-size: 10px; 
+	          color: #8E8C84; }
+
+.entry-meta a:hover { text-decoration: underline; }
+
+.entry-content a:hover { text-decoration: underline; }
+
+
+
+/* Sidebar Section */
+
+#sidebar { color: #545350; }
+
+#sidebar-widget-title { color: #545350; }
+
+
+
+/* Single Page and Comments */
+
+.assistive-text { color: #545350; }
+
+#nav-single { padding-left: 25px; }
+
+#comments #comments-title { padding-left: 25px; }
+
+#comments #respond { padding-left: 25px; }
+
+.comment-meta { margin-bottom: 10px; }
+
+.comment-author img { padding-right: 10px; }
+
+
+
+/* Footer Section */
+
+#footer-bottom { background: none repeat scroll 0 0 #6da0d3; }
+
+.column { float: left;
+          margin: 0 80px 0 0;
+          width: 170px; }
+
+.column.last { margin: 0; }
+
+#footer-content { padding-top: 25px; }
+
+#footer-content .column ul h4 { color: #000;
+                                font-size: 10.5pt; 
+                                border-bottom: 1px solid #000; }
+
+#footer-content .column ul ul { font-size: 9pt;  
+                                padding-left: 0 !important;}
+
+#footer-content .column ul ul li a { color: #28598A; }
+
+#footer-content .column ul ul li a:hover { color: #00F; }
+
+#site-credits { border-top: 1px solid #eaf8ff; 
+                padding: 15px 0 0 0; }
+
+#theme-credit { padding: 0 0 5px 0; 
+                text-align: center; }
