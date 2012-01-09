@@ -33,7 +33,7 @@ function mantra_init_fn(){
 	add_settings_section('featured_section', __('Featured Image Settings','mantra') , 'section_featured_fn', __FILE__);
 	add_settings_section('socials_section', __('Social Sites Settings','mantra') , 'section_social_fn', __FILE__);
 
-	add_settings_field('mantra_side', __('Sidemenu Position','mantra') , 'setting_side_fn', __FILE__, 'layout_section');
+	add_settings_field('mantra_side', __('Sidebar Position','mantra') , 'setting_side_fn', __FILE__, 'layout_section');
 	add_settings_field('mantra_sidewidth', __('Content / Sidebar Width','mantra') , 'setting_sidewidth_fn', __FILE__, 'layout_section');
 	add_settings_field('mantra_sidebar', __('Total Site Width','mantra') , 'setting_sidebar_fn', __FILE__, 'layout_section');
 	add_settings_field('mantra_colpad', __('Padding between Columns','mantra') , 'setting_colpad_fn', __FILE__, 'layout_section');
@@ -80,6 +80,7 @@ function mantra_init_fn(){
 	add_settings_field('mantra_tables', __('Invisible Tables','mantra') , 'setting_tables_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_backtop', __('Back to Top button','mantra') , 'setting_backtop_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_comtext', __('Text Under Comments','mantra') , 'setting_comtext_fn', __FILE__, 'graphics_section');
+	add_settings_field('mantra_comclosed', __('Comments are closed text','mantra') , 'setting_comclosed_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_copyright', __('Insert footer copyright','mantra') , 'setting_copyright_fn', __FILE__, 'graphics_section');
 
 	add_settings_field('mantra_postdate', __('Post Date','mantra') , 'setting_postdate_fn', __FILE__, 'post_section');
@@ -90,7 +91,6 @@ function mantra_init_fn(){
 
 	add_settings_field('mantra_excerpthome', __('Post Excerpts on Home Page','mantra') , 'setting_excerpthome_fn', __FILE__, 'excerpt_section');
 	add_settings_field('mantra_excerptarchive', __('Post Excerpts on Arhive and Category Pages','mantra') , 'setting_excerptarchive_fn', __FILE__, 'excerpt_section');
-	add_settings_field('mantra_excerptasides', __('Affect posts in Asides Category','mantra') , 'setting_excerptasides_fn', __FILE__, 'excerpt_section');
 	add_settings_field('mantra_excerptwords', __('Number of Words for Post Excerpts ','mantra') , 'setting_excerptwords_fn', __FILE__, 'excerpt_section');
 	add_settings_field('mantra_excerptdots', __('Excerpt suffix','mantra') , 'setting_excerptdots_fn', __FILE__, 'excerpt_section');
 	add_settings_field('mantra_excerptcont', __('Continue reading link text ','mantra') , 'setting_excerptcont_fn', __FILE__, 'excerpt_section');
@@ -784,6 +784,21 @@ foreach($items as $id=>$item) {
 	echo "<div><small>".__("Hide the explanatory text under the comments form. (starts with  <i>You may use these HTML tags and attributes:...</i>).","mantra")."</small></div>";
 }
 
+//CHECKBOX - Name: ma_options[comclosed]
+function setting_comclosed_fn() {
+	global $options;
+	$items = array ("Show" , "Hide in posts", "Hide in pages", "Hide everywhere");
+	$itemsare = array( __("Show","mantra"), __("Hide in posts","mantra"), __("Hide in pages","mantra"), __("Hide everywhere","mantra"));
+	echo "<select id='mantra_comclosed' name='ma_options[mantra_comclosed]'>";
+foreach($items as $id=>$item) {
+	echo "<option value='$item'";
+	selected($options['mantra_comclosed'],$itemsare[$id]);
+	echo ">$item</option>";
+}
+	echo "</select>";
+	echo "<div><small>".__("Hide the  <b>Comments are closed</b> text that by default shows up on pages or posts with the comments disabled.","mantra")."</small></div>";
+}
+
 
 //CHECKBOX - Name: ma_options[backtop]
 function setting_backtop_fn() {
@@ -803,8 +818,8 @@ foreach($items as $id=>$item) {
 // TEXTBOX - Name: ma_options[copyright]
 function setting_copyright_fn() {
 	global $options;
-	echo "<input id='mantra_copyright' name='ma_options[mantra_copyright]' size='40' type='text' value='".esc_attr( $options['mantra_copyright'] )."'  />";
-	echo "<div><small>".__("Insert custom text that will appear on the left side of the footer. Leave blank if that's not necessary.<br /> You can use HTML tags and any special characters like &copy .","mantra")."</small></div>";
+	echo "<textarea id='mantra_copyright' name='ma_options[mantra_copyright]' rows='3' cols='40' type='textarea' >{$options['mantra_copyright']}  </textarea>";
+	echo "<div><small>".__("Insert custom text or HTML code that will appear last in you footer. <br /> You can use HTML to insert links, images and special characters like &copy .","mantra")."</small></div>";
 }
 
 
@@ -905,24 +920,9 @@ foreach($items as $id=>$item) {
 	echo ">$item</option>";
 }
 	echo "</select>";
-	echo "<div><small>".__("Excerpts on the main page.","mantra")."</small></div>";
+	echo "<div><small>".__("Excerpts on the main page. Only standard posts will be affected. All other post formats (aside, image, chat, quote etc.) have their specific formating.","mantra")."</small></div>";
 }
 
-//CHECKBOX - Name: ma_options[excerptasides]
-function setting_excerptasides_fn() {
-	global $options;
-	$items = array ("Yes" , "No");
-	$itemsare = array( __("Yes","mantra"), __("No","mantra"));
-	echo "<select id='mantra_excerptasides' name='ma_options[mantra_excerptasides]'>";
-foreach($items as $id=>$item) {
-	echo "<option value='$item'";
-	selected($options['mantra_excerptasides'],$itemsare[$id]);
-	echo ">$item</option>";
-
-}
-	echo "</select>";
-	echo "<div><small>".__("Also affect posts in the Asides Category (if you don't know what Asides are then leave it to Yes). More info on asides <a href='http://codex.wordpress.org/Adding_Asides'>here</a> ","mantra")."</small></div>";
-}
 
 //CHECKBOX - Name: ma_options[excerptarchive]
 function setting_excerptarchive_fn() {
@@ -936,21 +936,16 @@ foreach($items as $id=>$item) {
 	echo ">$item</option>";
 }
 	echo "</select>";
-	echo "<div><small>".__("Excerpts on archive, categroy and search pages.","mantra")."</small></div>";
+	echo "<div><small>".__("Excerpts on archive, categroy and search pages. Same as above, only standard posts will be affected.","mantra")."</small></div>";
 }
 
-//CHECKBOX - Name: ma_options[excerptwords]
+
+// TEXTBOX - Name: ma_options[excerptwords]
 function setting_excerptwords_fn() {
 	global $options;
-	$items = array ("200" , "150", "120", "100", "75", "60", "50", "40", "30", "20", "10", "0");
-	echo "<select id='mantra_excerptwords' name='ma_options[mantra_excerptwords]'>";
-foreach($items as $item) {
-	echo "<option value='$item'";
-	selected($options['mantra_excerptwords'],$item);
-	echo ">$item</option>";
-}
-	echo "</select>";
-	echo "<div><small>".__("Number of words for an excerpt.","mantra")."</small></div>";
+	echo "<input id='mantra_excerptwords' name='ma_options[mantra_excerptwords]' size='6' type='text' value='".esc_attr( $options['mantra_excerptwords'] )."'  />";
+	echo "<div><small>".__("The number of words an excerpt will have. When that number is reached the post will be interrupted by a <i>Continue reading</i> link that
+							will take the reader to the full post page.","mantra")."</small></div>";
 }
 
 // TEXTBOX - Name: ma_options[excerptdots]
@@ -1000,7 +995,7 @@ foreach($items as $id=>$item) {
 	echo ">$item</option>";
 }
 	echo "</select>";
-	echo "<div><small>".__("Show the first image that you inserted in a post as a featured image. If you elable this option, the first image in your post will be used even if you selected a Featured Image in you post.","mantra")."</small></div>";
+	echo "<div><small>".__("Show the first image that you inserted in a post as a featured image. If you enable this option, the first image in your post will be used even if you selected a Featured Image in you post.","mantra")."</small></div>";
 }
 
 
@@ -1061,7 +1056,7 @@ foreach($items as $id=>$item) {
 function setting_facebook_fn() {
 	global $options;
 	echo "<input id='mantra_facebook' name='ma_options[mantra_facebook]' size='40' type='text'  value='".esc_attr( $options['mantra_facebook'] )."'  />";
-	echo "<div><small>".__("Insert your Facebook address. ","mantra")."</small></div>";
+	echo "<div><small>".__("Insert your Facebook address. (ex: <i>http://www.facebook.com/yourname</i> )","mantra")."</small></div>";
 }
 
 // TEXTBOX - Name: ma_options[tweeter]
@@ -1277,7 +1272,7 @@ return 0;
 function ma_options_validate($input) {
 global $mantra_defaults;
 	// Sanitize the texbox input
-	$input['mantra_copyright'] =  wp_kses_data($input['mantra_copyright']);
+	$input['mantra_copyright'] =  wp_kses_post($input['mantra_copyright']);
 	$input['mantra_facebook'] =  wp_kses_data($input['mantra_facebook']);
 	$input['mantra_tweeter'] =  wp_kses_data($input['mantra_tweeter']);
 	$input['mantra_rss'] =  wp_kses_data($input['mantra_rss']);
@@ -1299,6 +1294,7 @@ global $mantra_defaults;
 	$input['mantra_footertext'] =  wp_kses_data($input['mantra_footertext']);
 	$input['mantra_footerhover'] =  wp_kses_data($input['mantra_footerhover']);
 
+	$input['mantra_excerptwords'] =  intval(wp_kses_data($input['mantra_excerptwords']));
 	$input['mantra_excerptdots'] =  wp_kses_data($input['mantra_excerptdots']);
 	$input['mantra_excerptcont'] =  wp_kses_data($input['mantra_excerptcont']);
 

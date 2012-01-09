@@ -33,9 +33,11 @@ get_header(); ?>
 					</div><!-- .entry-content -->
 				</div><!-- #post-## -->
 
-				<?php if ( comments_open() ) { comments_template( '', true );} ?>
+				<?php if ( comments_open() ) { comments_template( '', true );} else { ?>
+														<p class="nocomments2"><?php _e( 'Comments are closed.', 'mantra' ); ?></p>
 
-<?php endwhile; ?>
+
+<?php } endwhile; ?>
 
 			</div><!-- #content -->
 		</div><!-- #container -->

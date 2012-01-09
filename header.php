@@ -88,7 +88,7 @@ $totalwidth= $mantra_sidewidth+$mantra_sidebar+50;
 							$image[1] >= HEADER_IMAGE_WIDTH ) :
 						// Houston, we have a new header image!
 						echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
-?> <style> #access {margin-top:<?php echo $image[2];?>px !important;}  </style> <?php
+?> <style> #access {margin-top:<?php echo $image[2]+10;?>px !important;}  </style> <?php
 					else : ?><?php if (get_header_image() != '') { ?>
 
 						<style> #branding { background:url(<?php header_image(); ?>) no-repeat;

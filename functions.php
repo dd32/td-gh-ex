@@ -49,6 +49,7 @@ $mantra_defaults = array(
 "mantra_tables" => "Disable",
 "mantra_backtop" => "Enable",
 "mantra_comtext" => "Show",
+"mantra_comclosed" => "Show",
 "mantra_copyright" => "",
 
 "mantra_postdate" => "Show",
@@ -59,7 +60,6 @@ $mantra_defaults = array(
 
 "mantra_excerpthome" => "Full Post",
 "mantra_excerptarchive" => "Full Post",
-"mantra_excerptasides" => "Yes",
 "mantra_excerptwords" => "50",
 "mantra_excerptdots" => " &hellip;",
 "mantra_excerptcont" => " Continue reading",
@@ -110,7 +110,7 @@ foreach ($options as $key => $value) {
 		add_action('wp_head', 'mantra_custom_styles' );
 		if($mantra_backtop!="Disable") {
 							wp_register_script('top',get_template_directory_uri() . '/js/top.js', array('jquery'));
-							wp_enqueue_script('top');}	
+							wp_enqueue_script('top');}
   									}
 
 	/* We add some JavaScript to pages with the comment form
@@ -118,8 +118,8 @@ foreach ($options as $key => $value) {
 	 */
 	if ( is_singular() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
-}    
- 
+}
+
 add_action('wp_enqueue_scripts', 'mantra_scripts_method');
 
 // Loading the mantra admin functions if admin section
@@ -138,7 +138,7 @@ function mantra_custom_styles() {
 
 /* This  retrieves  admin options. */
 $options= mantra_get_theme_options();
-foreach ($options as $key => $value) {	
+foreach ($options as $key => $value) {
      ${"$key"} = esc_attr($value) ;
 }
 $totalwidth= $mantra_sidewidth+$mantra_sidebar+50;
@@ -146,8 +146,8 @@ $totalwidth= $mantra_sidewidth+$mantra_sidebar+50;
 ?>
 
 <style>
-.single-attachment #content,#wrapper, #access, #colophon, #branding, #main,  .attachment img { width:<?php echo ($totalwidth) ?>px !important;} 
-#access .menu-header, div.menu {width:<?php echo ($totalwidth-12) ?>px !important;}<?php 
+.single-attachment #content,#wrapper, #access, #colophon, #branding, #main,  .attachment img { width:<?php echo ($totalwidth) ?>px !important;}
+#access .menu-header, div.menu {width:<?php echo ($totalwidth-12) ?>px !important;}<?php
  if ($mantra_side == "Disable") { ?>#content {width:<?php echo ($totalwidth-50) ?>px !important;margin:20px;} #primary, #secondary {display:none;} <?php }
 ?><?php
 if ($mantra_side == "Right") { ?>
@@ -183,9 +183,9 @@ font-size:<?php echo $mantra_fontsize ?>;
 ?><?php if ($mantra_contentlist == "Hide") { ?> #content ul li { background-image:none ; padding-left:0;} <?php }
 ?><?php if ($mantra_title == "Hide") { ?> #site-title, #site-description { visibility:hidden;} <?php }
 ?><?php if ($mantra_comtext == "Hide") { ?> #respond .form-allowed-tags { display:none;} <?php }
+?><?php if ($mantra_comclosed == "Hide in posts") { ?> .nocomments { display:none;} <?php } elseif ($mantra_comclosed == "Hide in pages") { ?> .nocomments2 {display:none;} <?php } elseif ($mantra_comclosed == "Hide everywhere") { ?> .nocomments, .nocomments2 {display:none;} <?php }
 ?><?php if ($mantra_tables == "Enable") { ?> #content table {border:none;} #content tr {background:none;} #content table {border:none;} #content tr th,
 #content thead th {background:none;} #content tr td {border:none;}<?php }
-
 ?><?php if ($mantra_headfontsize != "Default") { ?> h2.entry-title { font-size:<?php echo $mantra_headfontsize; ?> !important ;}<?php }
 ?><?php if ($mantra_sidefontsize != "Default") { ?> .widget-area a:link, .widget-area a:visited { font-size:<?php echo $mantra_sidefontsize; ?> ;}<?php }
 
@@ -211,7 +211,7 @@ font-size:<?php echo $mantra_fontsize ?>;
 ?><?php if ($mantra_sidebullet != "arrow_white") { ?>.widget-area ul ul li{ background-image:url(<?php echo get_template_directory_uri()."/images/bullets/".$mantra_sidebullet; ?>.png) !important;
 <?php if($mantra_sidebullet == "folder_black" || $mantra_sidebullet == "folder_light") {?> padding-top:5px;padding-left:20px; } <?php } ?><?php }
 
-?><?php if ($mantra_pagetitle == "Hide") { ?> .page h1.entry-title { display:none;} <?php }
+?><?php if ($mantra_pagetitle == "Hide") { ?> .page h1.entry-title, .home .page h2.entry-title { display:none;} <?php }
 ?><?php if ($mantra_categtitle == "Hide") { ?> h1.page-title { display:none;} <?php }
 ?><?php if (($mantra_postdate == "Hide" && $mantra_postcateg == "Hide") || ($mantra_postauthor == "Hide" && $mantra_postcateg == "Hide") ) { ?>.bl_sep {display:none;} <?php }
 ?><?php if ($mantra_postdate == "Hide") { ?> span.entry-date, span.onDate {display:none;} <?php }
@@ -278,6 +278,7 @@ function mantra_setup() {
 	// Add default posts and comments RSS feed links to head
 
 	add_theme_support( 'automatic-feed-links' );
+	add_theme_support('post-formats', array( 'aside', 'chat', 'gallery', 'image', 'link', 'quote', 'status'));
 
 	// Make theme available for translation
 	// Translations can be filed in the /languages/ directory
@@ -390,7 +391,7 @@ add_filter( 'wp_page_menu_args', 'mantra_page_menu_args' );
  * To override this length in a child theme, remove the filter and add your own
  * function tied to the excerpt_length filter hook.
  *
- * @since Twenty Ten 1.0
+ * @since Mantra 1.0
  * @return int
  */
 function mantra_excerpt_length( $length ) {
@@ -446,7 +447,7 @@ add_filter( 'get_the_excerpt', 'mantra_custom_excerpt_more' );
 /**
  * Remove inline styles printed when the gallery shortcode is used.
  *
- * Galleries are styled by the theme in Twenty Ten's style.css.
+ * Galleries are styled by the theme in Mantra's style.css.
  *
  * @since mantra 0.5
  * @return string The gallery style filter, with the styles themselves removed.
@@ -631,6 +632,18 @@ function mantra_posted_on() {
 }
 endif;
 
+function mantra_comments_on() {
+
+printf ( comments_popup_link( __( 'Leave a comment', 'mantra' ), __( '<b>1</b> Comment', 'mantra' ), __( '<b>%</b> Comments', 'mantra' ) ));
+
+}
+
+
+
+
+
+
+
 if ( ! function_exists( 'mantra_posted_in' ) ) :
 /**
  * Prints HTML with meta information for the current post (category, tags and permalink).
@@ -641,11 +654,11 @@ function mantra_posted_in() {
 	// Retrieves tag list of current post, separated by commas.
 	$tag_list = get_the_tag_list( '', ', ' );
 	if ( $tag_list ) {
-		$posted_in =  '<span class="bl_posted">'.__( 'Tagged','mantra').' %2$s.</span><span class="bl_bookmark">'.__('Bookmark the ','mantra').' <a href="%3$s" title="Permalink to %4$s" rel="bookmark"> '.__('permalink','mantra').'</a>.</span>';
+		$posted_in =  '<span class="bl_posted">'.__( 'Tagged','mantra').' %2$s.</span><span class="bl_bookmark">'.__(' Bookmark the ','mantra').' <a href="%3$s" title="Permalink to %4$s" rel="bookmark"> '.__('permalink','mantra').'</a>.</span>';
 	} elseif ( is_object_in_taxonomy( get_post_type(), 'category' ) ) {
-		$posted_in = '<span class="bl_bookmark">'.__( 'Bookmark the ','mantra'). ' <a href="%3$s" title="Permalink to %4$s" rel="bookmark">'.__('permalink','mantra').'</a>.</span>';
+		$posted_in = '<span class="bl_bookmark">'.__( 'Bookmark the ','mantra'). ' <a href="%3$s" title="Permalink to %4$s" rel="bookmark">'.__('permalink','mantra').'</a>. </span>';
 	} else {
-		$posted_in = '<span class="bl_bookmark">'.__( 'Bookmark the ','mantra'). ' <a href="%3$s" title="Permalink to %4$s" rel="bookmark">'.__('permalink','mantra').'</a>.</span>';
+		$posted_in = '<span class="bl_bookmark">'.__( 'Bookmark the ','mantra'). ' <a href="%3$s" title="Permalink to %4$s" rel="bookmark">'.__('permalink','mantra').'</a>. </span>';
 	}
 	// Prints the string, replacing the placeholders.
 	printf(
@@ -658,6 +671,23 @@ function mantra_posted_in() {
 }
 endif;
 
+if ( ! function_exists( 'mantra_content_nav' ) ) :
+/**
+ * Display navigation to next/previous pages when applicable
+ */
+function mantra_content_nav( $nav_id ) {
+	global $wp_query;
+
+	if ( $wp_query->max_num_pages > 1 ) : ?>
+		<nav id="<?php echo $nav_id; ?>" class="navigation">
+			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&laquo;</span> Older posts', 'mantra' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&raquo;</span>', 'mantra' ) ); ?></div>
+		</nav><!-- #nav-above -->
+	<?php endif;
+}
+endif; // mantra_content_nav
+
+
 function get_image() {
 global $post, $posts;
 $first_img = '';
@@ -669,5 +699,18 @@ if(empty($first_img)){ //Defines a default image
 $first_img = "/images/default.jpg";
 }
 return $first_img;
+
 }
 
+function set_featured_thumb() {
+	global $options;
+	foreach ($options as $key => $value) {
+     ${"$key"} = $value ;
+
+}
+	if ( $mantra_fauto=="Enable" && get_image()!="/images/default.jpg" ) {
+	if ( function_exists("has_post_thumbnail") && has_post_thumbnail() && $mantra_fpost=='Enable' ) { the_post_thumbnail(array($mantra_fwidth,$mantra_fheight), array("class" => "align".strtolower($mantra_falign)." post_thumbnail" , "src" =>  get_image() )); }
+																								}
+	else if ( function_exists("has_post_thumbnail") && has_post_thumbnail() && $mantra_fpost=='Enable') { the_post_thumbnail(array($mantra_fwidth,$mantra_fheight), array("class" => "align".strtolower($mantra_falign)." post_thumbnail"  )); }
+								
+	}

@@ -2,54 +2,64 @@
 /**
  * The template for displaying Category Archive pages.
  *
- * @package Cryout Creations
- * @subpackage mantra
- * @since mantra 0.5
+ * @package WordPress
+ * @subpackage Mantra
+ * @since Mantra 1.0
  */
 
 get_header(); ?>
 
-		<div id="container">
+		<section id="content">
 			<div id="content" role="main">
-<?php // static page hookup start ?>
-<?php /*$cattitle = single_cat_title( '', false );?>
-      <div id="welcome">
-           <div>
-     	  <h1><?php the_title(); ?></h1>
-     	  <?php the_content(); ?>
-           </div>
-      </div>
 
-<?php */ // static page hookup end ?>
+			<?php if ( have_posts() ) : ?>
 
-				<h1 class="page-title"><?php
-					printf( __( 'Category Archive: %s', 'mantra' ), '<span>' . single_cat_title( '', false ) . '</span>' );
-				?></h1>
+				<header class="page-header">
+					<h1 class="page-title"><?php
+						printf( __( 'Category Archives: %s', 'mantra' ), '<span>' . single_cat_title( '', false ) . '</span>' );
+					?></h1>
 
-                    <?php   // display subcategories mod start
-                         if (is_category()) {
-                         $this_category = get_category($cat);
-                           if (get_term_children($this_category->cat_ID, 'category') != "") { ?>
-                               <h1 class="page-title"><?php
-                               $cats = wp_list_categories('orderby=name&show_count=0&echo=0&style=none&title_li=&use_desc_for_title=1&child_of='.$this_category->cat_ID);
-                               printf( __( 'Subcategories: %s', 'mantra' ), '<span>' . str_replace("<br />","&nbsp;",$cats) . '</span>' );
-                           }
-                         } ?></h1>
-                    <?php // display subcategories mod end ?>
+					<?php
+						$category_description = category_description();
+						if ( ! empty( $category_description ) )
+							echo apply_filters( 'category_archive_meta', '<div class="category-archive-meta">' . $category_description . '</div>' );
+					?>
+				</header>
 
-                         <?php $category_description = category_description();
-					if ( ! empty( $category_description ) )
-						echo '<div class="archive-meta">' . $category_description . '</div>';
+				<?php mantra_content_nav( 'nav-above' ); ?>
 
-				/* Run the loop for the category page to output the posts.
-				 * If you want to overload this in a child theme then include a file
-				 * called loop-category.php and that will be used instead.
-				 */
-				get_template_part( 'loop', 'category' );
-				?>
+				<?php /* Start the Loop */ ?>
+				<?php while ( have_posts() ) : the_post(); ?>
+
+					<?php
+						/* Include the Post-Format-specific template for the content.
+						 * If you want to overload this in a child theme then include a file
+						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+						 */
+						get_template_part( 'content', get_post_format() );
+					?>
+
+				<?php endwhile; ?>
+
+				<?php mantra_content_nav( 'nav-below' ); ?>
+
+			<?php else : ?>
+
+				<article id="post-0" class="post no-results not-found">
+					<header class="entry-header">
+						<h1 class="entry-title"><?php _e( 'Nothing Found', 'mantra' ); ?></h1>
+					</header><!-- .entry-header -->
+
+					<div class="entry-content">
+						<p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'mantra' ); ?></p>
+						<?php get_search_form(); ?>
+					</div><!-- .entry-content -->
+				</article><!-- #post-0 -->
+
+			<?php endif; ?>
 
 			</div><!-- #content -->
-		</div><!-- #container -->
+		</section><!-- #primary -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

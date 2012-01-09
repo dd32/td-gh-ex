@@ -1,10 +1,10 @@
 /*
 Theme Name: Mantra
 Theme URI: http://www.riotreactions.com/mantra
-Description: Mantra is a general purpose WordPress theme, featuring a whole pack of over 50 customizable options and easy to use tweaks, capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (sidebar position), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 20 font-families to choose from),text and header sizes, post metas, post excerpts, header image and background image, menus, social media links and icons, pins, bullets and more. With 7 widget areas, subtle animations, modern graphics and an easy and responsive admin section, you can start creating your dream site right now.
+Description: Mantra is a general purpose WordPress theme, featuring a whole pack of over 60 options and easy to use tweaks, capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (columns position), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 20 font-families to choose from),text and header sizes, post metas, post excerpts, header and background images, menus, social media links and icons, pins, bullets and more. With 7 widget areas, subtle animations, modern graphics and an easy and responsive admin section, you can start creating your dream site right now.
 Author: Cryout Creations
 Author URI: http://www.cryoutcreations.com
-Version: 1.6.5
+Version: 1.6.6
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, red, blue, white, light, two-columns, right-sidebar, left-sidebar, theme-options, dark, flexible-width, custom-header, custom-menu, threaded-comments, sticky-post, translation-ready, microformats, custom-colors, fixed-width, one-column, silver, rtl-language-support
@@ -46,13 +46,26 @@ h1, h2, h3, h4, h5, h6 {
 ol, ul {
 	list-style: none;
 }
+
+
 blockquote {
-	quotes: none;
-}
-blockquote:before, blockquote:after {
-	content: '';
-	content: none;
-}
+ border : 2px solid #EEE;
+padding:30px !important;
+display:block;
+ background-color: #FAFAFA;
+ quotes: "\201C" "\201D";
+	font-style: italic;
+	padding: 0 3em;
+width:75% !important;
+margin:0 auto;
+clear:both;
+float:none;
+color:#999;
+ }
+blockquote:before { content: open-quote; font-weight: bold;font-size:1.5em; }
+ blockquote:after { content: close-quote; font-weight: bold;float:right;font-size:1.5em;} 
+
+
 del {
 	text-decoration: line-through;
 }
@@ -192,7 +205,7 @@ height:60px;
 padding-top:0;
 margin-top:20px;
 padding-top:10px;
-padding-bottom:20px;
+padding-bottom:0px;
 }
 
 #forbottom, #forbottom2 {min-height:530px;}
@@ -332,10 +345,7 @@ ins {
 	background: #D9EFFD;
 	text-decoration: none;
 }
-blockquote {
-	font-style: italic;
-	padding: 0 3em;
-}
+
 blockquote cite,
 blockquote em,
 blockquote i {
@@ -705,7 +715,7 @@ text-shadow:2px 2px 0px #FFF,-2px -2px 0px #FFF,3px 3px 1px #ccc;
 	background: #f2f7fc;
 }
 .hentry {
-	margin: 0 0 48px 0;
+	margin: 0 0 38px 0;
 }
 .home .sticky {
 	background: #fff;
@@ -775,13 +785,22 @@ text-shadow:2px 2px 0px #FFF,-2px -2px 0px #FFF,3px 3px 1px #ccc;
     box-shadow:1px 1px 3px #CCC;
    -moz-box-shadow:1px 1px 3px #CCC;
     -webkit-box-shadow:1px 1px 3px #CCC;
+	clear:both;
 }
 
-.comments-link {
+#content .entry-meta2, #content .entry-meta3 {
+font-size:12px ;
+padding: 0 10px;
+clear:both;
+display:block;
+}
+
+.entry-meta .comments-link {
 	float:right;
 	background:#FFF;
 	padding:0px 10px;
 	padding-bottom:0px;
+	font-size:12px;
 	border-radius: 10px;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -789,6 +808,29 @@ text-shadow:2px 2px 0px #FFF,-2px -2px 0px #FFF,3px 3px 1px #ccc;
 	-moz-box-shadow: inset 1px 1px 2px  #CCC;
 	-webkit-box-shadow: inset 1px 1px 2px   #CCC;
 }
+
+#content h3.entry-format {
+margin-left:10px;
+display:inline;
+float:left;
+font-size:14px;
+line-height:24px;
+color:#666 !important;
+text-decoration:underline;
+text-transform: uppercase;
+   	text-shadow: none;
+	-moz-text-shadow: none;
+	-webkit-text-shadow:none;
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.entry-meta2 .comments-link {
+    border-bottom: 1px solid #EEEEEE;
+    float: right;
+    font-size: 12px;
+    padding: 0 10px;
+}
+
 
 .entry-meta abbr,
 .entry-utility abbr {
@@ -801,7 +843,7 @@ text-shadow:2px 2px 0px #FFF,-2px -2px 0px #FFF,3px 3px 1px #ccc;
 .entry-content,
 .entry-summary {
 	clear: both;
-	padding: 12px 0 0 0;
+	padding: 8px 10px 10px;
 }
 #content .entry-summary p:last-child {
 	margin-bottom: 12px;
@@ -935,39 +977,87 @@ body.page .edit-link {
 }
 
 
+
 /* =Asides
 -------------------------------------------------------------- */
 
+.home #content .format-aside p,
 .home #content .category-asides p {
 	font-size: 14px;
 	line-height: 20px;
 	margin-bottom: 10px;
 	margin-top: 0;
 }
+.home .hentry.format-aside,
 .home .hentry.category-asides {
 	padding: 0;
 }
+.home #content .format-aside .entry-content,
 .home #content .category-asides .entry-content {
 	padding-top: 0;
 }
 
 
+#content .format-aside .entry-title {
+display:none;
+}
+
+#content .format-aside .author ,#content .format-aside  .bl_categ,#content .format-aside .bl_sep {
+display:none;
+}
+
 /* =Gallery listing
 -------------------------------------------------------------- */
 
+.format-gallery .size-thumbnail img,
 .category-gallery .size-thumbnail img {
 	border: 10px solid #f1f1f1;
 	margin-bottom: 0;
 }
+.format-gallery .gallery-thumb,
 .category-gallery .gallery-thumb {
 	float: left;
 	margin-right: 20px;
 	margin-top: -4px;
 }
+.home #content .format-gallery .entry-utility,
 .home #content .category-gallery .entry-utility {
 	padding-top: 4px;
 }
 
+
+/* =Chat
+-------------------------------------------------------------- */
+.format-chat  {
+font-family:Monaco, Courier New, monospace;
+}
+
+/* =Quote
+-------------------------------------------------------------- */
+.format-quote {
+font-family: Georgia,"Bitstream Charter",serif;
+font-size:1.5em !important;
+}
+
+
+/* =Status
+-------------------------------------------------------------- */
+
+.format-status .entry-title {display:none;}
+
+#content .format-status .entry-meta2 {float:left;clear:right;}
+
+.status_content {display:block;
+float:left;
+}
+
+#content .format-status h3.entry-format { margin-left:0px;padding-left:0px;text-indent:0;}
+
+.format-status .avatar {
+display:block;
+float:left;
+margin-right:10px;
+}
 
 /* =Attachment pages
 -------------------------------------------------------------- */
@@ -1293,7 +1383,7 @@ a.comment-edit-link:hover {
 
 
 .nopassword,
-.nocomments {
+.nocomments, .nocomments2 {
 /*	display: block;*/
 
 }
@@ -2057,5 +2147,7 @@ border:8px solid #BBB !important;
 	-webkit-box-shadow:2px 2px 2px #CCC;
 	box-shadow:inset 0px 0px 7px #CCC;
 }
+
+
 
 /* FIN! */
