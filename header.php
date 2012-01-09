@@ -77,6 +77,12 @@ if (!empty($options['abs_linkedin_id'])) { ?><a target="_blank" href="<?php echo
 if (!empty($options['abs_googleplus_id'])) { ?><a target="_blank" href="<?php echo stripslashes($options['abs_googleplus_id']);?>" title="Google+" >
 
 <img src="<?php echo get_template_directory_uri(); ?>/images/googleplus.png" width="45" height="69" alt="Google+" />
+</a><?php } ?>    
+
+        <?php $options = get_option('absolum');
+if (!empty($options['abs_youtube_id'])) { ?><a target="_blank" href="<?php echo stripslashes($options['abs_youtube_id']);?>" title="YouTube" >
+
+<img src="<?php echo get_template_directory_uri(); ?>/images/youtube.png" width="42" height="66" alt="YouTube" />
 </a><?php } ?>
 
         <?php $options = get_option('absolum');

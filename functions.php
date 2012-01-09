@@ -350,7 +350,17 @@ array(  "name" => "Google+",
         "desc" => "Insert your Google+ profile URI",
         "id" => $absshortname."_googleplus_id",
         "type" => "text",
-        "std" => ""),                  
+        "std" => ""),       
+        
+// YouTube
+
+
+
+array(  "name" => "YouTube",
+        "desc" => "Insert your YouTube profile URI",
+        "id" => $absshortname."_youtube_id",
+        "type" => "text",
+        "std" => ""),                     
 
 
 
@@ -428,7 +438,16 @@ if( isset( $_REQUEST['reset'] )) {
 <h2><?php echo $absthemename; ?> Settings</h2><br />
 
 
-<a href="http://theme4press.com/affiliates/" target="_blank"><img style="margin:0 0 30px 0;float:left;position:relative;top:10px;" width="321" height="82" border="0" alt="Theme4Press Affiliates" src="<?php echo get_template_directory_uri(); ?>/images/affiliates.png"></a>
+<map id="sign" name="sign">
+        <area href="http://theme4press.com/tag/premium/" alt="Premium Themes" coords="4,4,356,75" />
+        <area target="_blank" rel="nofollow" href="http://www.facebook.com/pages/Theme4Press/100642700004832" alt="Like Us" coords="374,15,502,60" />
+        <area target="_blank" rel="nofollow" href="http://twitter.com/theme4press/" alt="Follow Us" coords="521,15,671,60" />
+</map>
+
+<img src="<?php echo get_template_directory_uri(); ?>/images/themes-follow.png" alt=""
+          width="683" height="79" usemap="#sign" />
+
+
 
 
 		<?php if ( false !== $_REQUEST['updated'] ) { ?>
@@ -857,6 +876,8 @@ function absolum_theme_options_validate( $input ) {
   $input['abs_googleplus_id'] = wp_filter_nohtml_kses( $input['abs_googleplus_id'] );
   
   $input['abs_linkedin_id'] = wp_filter_nohtml_kses( $input['abs_linkedin_id'] );
+  
+  $input['abs_youtube_id'] = wp_filter_nohtml_kses( $input['abs_youtube_id'] );
   
  	$input['abs_css_content'] = wp_filter_post_kses( $input['abs_css_content'] );
   
