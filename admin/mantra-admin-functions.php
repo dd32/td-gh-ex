@@ -13,12 +13,12 @@ function mantra_init() {
 	load_theme_textdomain( 'mantra', get_template_directory_uri() . '/languages' );
 }
 
-$options= mantra_get_theme_options();
+$mantra_options= mantra_get_theme_options();
 
 
 // The settings
 function mantra_init_fn(){
-	wp_register_style( 'mantra',get_template_directory_uri() . '/mantra-admin.css' );
+	wp_register_style( 'mantra',get_template_directory_uri() . '/admin/mantra-admin.css' );
 	wp_register_style( 'mantra2',get_template_directory_uri() . '/js/farbtastic/farbtastic.css' );
 	wp_register_style( 'jqueryui',get_template_directory_uri() . '/js/jqueryui/css/ui-lightness/jquery-ui-1.8.16.custom.css' );
 
@@ -95,12 +95,12 @@ function mantra_init_fn(){
 	add_settings_field('mantra_excerptdots', __('Excerpt suffix','mantra') , 'setting_excerptdots_fn', __FILE__, 'excerpt_section');
 	add_settings_field('mantra_excerptcont', __('Continue reading link text ','mantra') , 'setting_excerptcont_fn', __FILE__, 'excerpt_section');
 
-	add_settings_field('mantra_fpost', __('Featured POST Images ','mantra') , 'setting_fpost_fn', __FILE__, 'featured_section');
+	add_settings_field('mantra_fpost', __('Featured Images as POST Thumbnails ','mantra') , 'setting_fpost_fn', __FILE__, 'featured_section');
 	add_settings_field('mantra_fauto', __('Auto Select Images From Posts ','mantra') , 'setting_fauto_fn', __FILE__, 'featured_section'); 
-	add_settings_field('mantra_falign', __('Featured Post Images Alignment ','mantra') , 'setting_falign_fn', __FILE__, 'featured_section');
-	add_settings_field('mantra_fwidth', __('Featured Post Images Width ','mantra') , 'setting_fwidth_fn', __FILE__, 'featured_section');
-	add_settings_field('mantra_fheight', __('Featured Post Images Height ','mantra') , 'setting_fheight_fn', __FILE__, 'featured_section');
-	add_settings_field('mantra_fheader', __('Featured HEADER Images ','mantra') , 'setting_fheader_fn', __FILE__, 'featured_section');
+	add_settings_field('mantra_falign', __('Thumbnails Alignment ','mantra') , 'setting_falign_fn', __FILE__, 'featured_section');
+	add_settings_field('mantra_fwidth', __('Thumbnails Width ','mantra') , 'setting_fwidth_fn', __FILE__, 'featured_section');
+	add_settings_field('mantra_fheight', __('Thumbnails Height ','mantra') , 'setting_fheight_fn', __FILE__, 'featured_section');
+	add_settings_field('mantra_fheader', __('Featured Images as HEADER Images ','mantra') , 'setting_fheader_fn', __FILE__, 'featured_section');
 
 	add_settings_field('mantra_facebook', __('Facebook Link','mantra') , 'setting_facebook_fn', __FILE__, 'socials_section');
 	add_settings_field('mantra_tweeter', __('Twitter Link','mantra') , 'setting_tweeter_fn', __FILE__, 'socials_section');
@@ -180,15 +180,15 @@ function  section_social_fn() {
 
  //SELECT - Name: ma_options[side]
 function  setting_side_fn() {
-global $options;
-	if (!isset($options['mantra_side'])) { $options['mantra_side'] ="Right";	}
+global $mantra_options;
+	if (!isset($mantra_options['mantra_side'])) { $mantra_options['mantra_side'] ="Right";	}
 
 $items = array("Left", "Right", "Disable");
 $itemsare = array( __("Left","mantra"), __("Right","mantra"), __("Disable","mantra"));
 echo "<select id='mantra_side' name='ma_options[mantra_side]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mantra_side'],$itemsare[$id]);
+	selected($mantra_options['mantra_side'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 echo "</select>";
@@ -202,7 +202,7 @@ echo "<div><small>".__("Select the side on which to display the sidebar. You can
 
  //SLIDER - Name: ma_options[sidewidth]
 function setting_sidewidth_fn()
-   {global $options;
+   {global $mantra_options;
 
 
    ?><script>
@@ -214,15 +214,15 @@ function setting_sidewidth_fn()
 			step:10,
 			min: 0,
 			max: 1440,
-			values: [ <?php echo $options['mantra_sidewidth'] ?>, <?php echo ($options['mantra_sidewidth']+$options['mantra_sidebar']); ?> ],
+			values: [ <?php echo $mantra_options['mantra_sidewidth'] ?>, <?php echo ($mantra_options['mantra_sidewidth']+$mantra_options['mantra_sidebar']); ?> ],
 			slide: function( event, ui ) {
 		
 											}
 	
 										});
 
-			jQuery( "#mantra_sidewidth" ).val( <?php echo $options['mantra_sidewidth'];?> );
-			jQuery( "#mantra_sidebar" ).val( <?php echo $options['mantra_sidebar'];?> );
+			jQuery( "#mantra_sidewidth" ).val( <?php echo $mantra_options['mantra_sidewidth'];?> );
+			jQuery( "#mantra_sidebar" ).val( <?php echo $mantra_options['mantra_sidebar'];?> );
 	var	percentage =parseInt(	jQuery( "#slider-range .ui-slider-range" ).css('width'));
 	var leftwidth =	parseInt(jQuery( "#slider-range .ui-slider-range" ).position().left);
 			jQuery( "#barb" ).css('left',150+leftwidth+percentage/2+"px");
@@ -233,7 +233,7 @@ function setting_sidewidth_fn()
 			range=ui.values[ 1 ] - ui.values[ 0 ];
 
  			if (ui.values[ 0 ]<500) {ui.values[ 0 ]=500; return false;};
-			if(	range<220 || range>500 ){ ui.values[ 1 ] =  <?php echo $options['mantra_sidebar']+$options['mantra_sidewidth'];?>; return false;  };			
+			if(	range<220 || range>500 ){ ui.values[ 1 ] =  <?php echo $mantra_options['mantra_sidebar']+$mantra_options['mantra_sidewidth'];?>; return false;  };			
 																	
 			jQuery( "#mantra_sidewidth" ).val( ui.values[ 0 ] );
 			jQuery( "#mantra_sidebar" ).val( ui.values[ 1 ] - ui.values[ 0 ] );
@@ -249,8 +249,8 @@ function setting_sidewidth_fn()
 
 <div class="hereitis">
 
-	<b id="contentb" style="display:block;float:left;position:absolute;margin-top:-20px;">Content = <span id="contentsize"><?php echo $options['mantra_sidewidth'];?></span>px</b>
-	<b id="barb" style="margin-left:40px;color:#F6A828;display:block;float:left;position:absolute;margin-top:-20px;" >Sidebar = <span id="barsize"><?php echo $options['mantra_sidebar'];?></span>px</b>
+	<b id="contentb" style="display:block;float:left;position:absolute;margin-top:-20px;">Content = <span id="contentsize"><?php echo $mantra_options['mantra_sidewidth'];?></span>px</b>
+	<b id="barb" style="margin-left:40px;color:#F6A828;display:block;float:left;position:absolute;margin-top:-20px;" >Sidebar = <span id="barsize"><?php echo $mantra_options['mantra_sidebar'];?></span>px</b>
 <p>
 	<?php echo  "<input type='hidden'  name='ma_options[mantra_sidewidth]' id='mantra_sidewidth'   />";?>
 </p>
@@ -265,9 +265,9 @@ function setting_sidewidth_fn()
  //SLIDER - Name: ma_options[sidebar]
 function setting_sidebar_fn()
    {
-   global $options;
+   global $mantra_options;
    ?><?php echo  "<input type='hidden'  name='ma_options[mantra_sidebar]' id='mantra_sidebar'   />";?>
-<b><span id="totalwidth"><?php echo $options['mantra_sidebar']+$options['mantra_sidewidth'];?></span> px</b>
+<b><span id="totalwidth"><?php echo $mantra_options['mantra_sidebar']+$mantra_options['mantra_sidewidth'];?></span> px</b>
 
    <?php  echo "<div><small>".__("This will be the <b>total width</b> of your site. This is not an editable field; it is calculated automatically after the content/sidebar slider. The absolute maximum is 1440.","mantra")."</small></div>";
 
@@ -275,12 +275,12 @@ function setting_sidebar_fn()
 
  //SELECT - Name: ma_options[colpad]
 function  setting_colpad_fn() {
-	global $options;
+	global $mantra_options;
 	$items =array ("0", "10px" , "15px" , "20px" , "25px", "30px");
 	echo "<select id='mantra_colpad' name='ma_options[mantra_colpad]'>";
 foreach($items as $item) {
 	echo "<option value='$item'";
-	selected($options['mantra_colpad'],$item);
+	selected($mantra_options['mantra_colpad'],$item);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -289,16 +289,16 @@ echo "<div><small>".__("Select the padding between the content and the sidebar."
 
  //SELECT - Name: ma_options[hheight]
 function  setting_hheight_fn() {
-	global $options;
+	global $mantra_options;
 	$items =array ("90px", "120px" , "150px" , "180px" , "200px", "240px", "300px","350px", "400px", "450px", "500px");
 	echo "<select id='mantra_hheight' name='ma_options[mantra_hheight]'>";
 foreach($items as $item) {
 	echo "<option value='$item'";
-	selected($options['mantra_hheight'],$item);
+	selected($mantra_options['mantra_hheight'],$item);
 	echo ">$item</option>";
 }
 	echo "</select>";
-$totally = $options['mantra_sidebar']+$options['mantra_sidewidth'];
+$totally = $mantra_options['mantra_sidebar']+$mantra_options['mantra_sidewidth'];
 echo "<div><small>".__("Select the header's height. After saving the settings go and upload your new header image. The header's width will be equal to the Total Site Width = ","mantra").$totally."px.</small></div>";
 }
 
@@ -310,12 +310,12 @@ echo "<div><small>".__("Select the header's height. After saving the settings go
 
 //SELECT - Name: ma_options[fontsize]
 function  setting_fontsize_fn() {
-	global $options;
+	global $mantra_options;
 	$items =array ("12px", "13px" , "14px" , "15px" , "16px", "17px", "18px");
 	echo "<select id='mantra_fontsize' name='ma_options[mantra_fontsize]'>";
 		foreach($items as $item) {
 	echo "<option value='$item'";
-	selected($options['mantra_fontsize'],$item);
+	selected($mantra_options['mantra_fontsize'],$item);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -325,37 +325,37 @@ function  setting_fontsize_fn() {
 
 //SELECT - Name: ma_options[fontfamily]
 function  setting_fontfamily_fn() {
-	global $options;
-	$itemsans = array("\"Segoe UI\", Arial, sans-serif",
+	global $mantra_options;
+	$itemsans = array("Segoe UI, Arial, sans-serif",
 					 "Verdana, Geneva, sans-serif " ,
 					 "Calibri, Arian, sans-serif",
-				     "\"Myriad Pro\",Myriad,Arial, sans-serif",
-					 "\"Trebuchet MS\", Arial, Helvetica, sans-serif" ,
+				     "Myriad Pro,Myriad,Arial, sans-serif",
+					 "Trebuchet MS, Arial, Helvetica, sans-serif" ,
 					 "Tahoma, Geneva, sans-serif" ,
 					 "Arial, Helvetica, sans-serif" ,
-					 "\"Arial Black\", Gadget, sans-serif",
-					 "\"Lucida Sans Unicode\", \"Lucida Grande\", sans-serif ");
+					 "Arial Black, Gadget, sans-serif",
+					 "Lucida Sans Unicode, Lucida Grande, sans-serif ");
 
-	$itemserif = array("Georgia, \"Times New Roman\", Times, serif" ,
-					  "\"Times New Roman\", Times, serif",
-					  "\"Palatino Linotype\", \"Book Antiqua\", Palatino, serif",
-					  "Garamond, \"Times New Roman\", Times, serif");
+	$itemserif = array("Georgia, Times New Roman, Times, serif" ,
+					  "Times New Roman, Times, serif",
+					  "Palatino Linotype, Book Antiqua, Palatino, serif",
+					  "Garamond, Times New Roman, Times, serif");
 
-	$itemsmono = array( "\"Courier New\", Courier, monospace" ,
-					 "\"Lucida Console\", Monaco, monospace",
+	$itemsmono = array( "Courier New, Courier, monospace" ,
+					 "Lucida Console, Monaco, monospace",
 					 "Monaco, monospace");
 
-	$itemscursive = array( "\"Lucida Casual\", \"Comic Sans MS\" , cursive ",
-				     "\"Brush Script MT\",Phyllis,\"Lucida Handwriting\",cursive",
-					 "Phyllis,\"Lucida Handwriting\",cursive",
-					 "\"Lucida Handwriting\",cursive",
-					  "\"Comic Sans MS\", cursive");
+	$itemscursive = array( "Lucida Casual, Comic Sans MS , cursive ",
+				     "Brush Script MT,Phyllis,Lucida Handwriting,cursive",
+					 "Phyllis,Lucida Handwriting,cursive",
+					 "Lucida Handwriting,cursive",
+					 "Comic Sans MS, cursive");
 
 	echo "<select id='mantra_fontfamily' name='ma_options[mantra_fontfamily]'>";
 	echo "<optgroup label='Sans-Serif'>";
 foreach($itemsans as $item) {
 	echo "<option style='font-family:$item;' value='$item'";
-	selected($options['mantra_fontfamily'],$item);
+	selected($mantra_options['mantra_fontfamily'],$item);
 	echo ">$item</option>";
 }
 	echo "</optgroup>";
@@ -364,7 +364,7 @@ foreach($itemsans as $item) {
 foreach($itemserif as $item) {
 
 	echo "<option style='font-family:$item;' value='$item'";
-	selected($options['mantra_fontfamily'],$item);
+	selected($mantra_options['mantra_fontfamily'],$item);
 	echo ">$item</option>";
 }
 	echo "</optgroup>";
@@ -372,7 +372,7 @@ foreach($itemserif as $item) {
 	echo "<optgroup label='MonoSpace'>";
 foreach($itemsmono as $item) {
 	echo "<option style='font-family:$item;' value='$item'";
-	selected($options['mantra_fontfamily'],$item);
+	selected($mantra_options['mantra_fontfamily'],$item);
 	echo ">$item</option>";
 }
 	echo "</optgroup>";
@@ -380,7 +380,7 @@ foreach($itemsmono as $item) {
 	echo "<optgroup label='Cursive'>";
 foreach($itemscursive as $item) {
 	echo "<option style='font-family:$item;' value='$item'";
-	selected($options['mantra_fontfamily'],$item);
+	selected($mantra_options['mantra_fontfamily'],$item);
 	echo ">$item</option>";
 }
 	echo "</optgroup>";
@@ -390,13 +390,13 @@ foreach($itemscursive as $item) {
 
 //SELECT - Name: ma_options[headfontsize]
 function  setting_headfontsize_fn() {
-	global $options;
+	global $mantra_options;
 	$items = array ("Default" , "14px" , "16px" , "18px" , "20px", "22px" , "24px" , "26px" , "28px" , "30px" , "32px" , "34px" , "36px", "38px" , "40px");
 	$itemsare = array( __("Default","mantra") ,"14px" , "16px" , "18px" , "20px", "22px" , "24px" , "26px" , "28px" , "30px" , "32px" , "34px" , "36px", "38px" , "40px");
 	echo "<select id='mantra_headfontsize' name='ma_options[mantra_headfontsize]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mantra_headfontsize'],$itemsare[$id]);
+	selected($mantra_options['mantra_headfontsize'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -405,13 +405,13 @@ foreach($items as $id=>$item) {
 
 //SELECT - Name: ma_options[sidefontsize]
 function  setting_sidefontsize_fn() {
-	global $options;
+	global $mantra_options;
 	$items = array ("Default" , "8px" , "9px" , "10px" , "11px", "12px" , "13px" , "14px" , "15px" , "16px" , "17px" , "18px");
 	$itemsare = array( __("Default","mantra") , "8px" , "9px" , "10px" , "11px", "12px" , "13px" , "14px" , "15px" , "16px" , "17px" , "18px");
 	echo "<select id='mantra_sidefontsize' name='ma_options[mantra_sidefontsize]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mantra_sidefontsize'],$itemsare[$id]);
+	selected($mantra_options['mantra_sidefontsize'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -420,13 +420,13 @@ foreach($items as $id=>$item) {
 
 //SELECT - Name: ma_options[textalign]
 function  setting_textalign_fn() {
-	global $options;
+	global $mantra_options;
 	$items = array ("Default" , "Left" , "Right" , "Justify" , "Center");
 	$itemsare = array( __("Default","mantra"), __("Left","mantra"), __("Right","mantra"), __("Justify","mantra"), __("Center","mantra"));
 	echo "<select id='mantra_textalign' name='ma_options[mantra_textalign]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mantra_textalign'],$itemsare[$id]);
+	selected($mantra_options['mantra_textalign'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -435,12 +435,12 @@ foreach($items as $id=>$item) {
 
 //SELECT - Name: ma_options[parindent]
 function  setting_parindent_fn() {
-	global $options;
+	global $mantra_options;
 	$items = array ("0px" , "5px" , "10px" , "15px" , "20px");
 	echo "<select id='mantra_parindent' name='ma_options[mantra_parindent]'>";
 foreach($items as $item) {
 	echo "<option value='$item'";
-	selected($options['mantra_parindent'],$item);
+	selected($mantra_options['mantra_parindent'],$item);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -449,13 +449,13 @@ foreach($items as $item) {
 
 //SELECT - Name: ma_options[lineheight]
 function  setting_lineheight_fn() {
-	global $options;
+	global $mantra_options;
 	$items = array ("Default" ,"0.8em" , "0.9em", "1.0em" , "1.1em" , "1.2em" , "1.3em", "1.4em" , "1.5em" , "1.6em" , "1.7em" , "1.8em" , "1.9em" , "2.0em");
 	$itemsare = array( __("Default","mantra"),"0.8em" , "0.9em", "1.0em" , "1.1em" , "1.2em" , "1.3em", "1.4em" , "1.5em" , "1.6em" , "1.7em" , "1.8em" , "1.9em" , "2.0em");
 	echo "<select id='mantra_lineheight' name='ma_options[mantra_lineheight]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mantra_lineheight'],$itemsare[$id]);
+	selected($mantra_options['mantra_lineheight'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -464,13 +464,13 @@ foreach($items as $id=>$item) {
 
 //SELECT - Name: ma_options[wordspace]
 function  setting_wordspace_fn() {
-	global $options;
+	global $mantra_options;
 	$items = array ("Default" ,"-3px" , "-2px", "-1px" , "0px" , "1px" , "2px", "3px" , "4px" , "5px" , "10px");
 	$itemsare = array( __("Default","mantra"),"-3px" , "-2px", "-1px" , "0px" , "1px" , "2px", "3px" , "4px" , "5px" , "10px");
 	echo "<select id='mantra_wordspace' name='ma_options[mantra_wordspace]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mantra_wordspace'],$itemsare[$id]);
+	selected($mantra_options['mantra_wordspace'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -479,13 +479,13 @@ foreach($items as $id=>$item) {
 
 //SELECT - Name: ma_options[letterspace]
 function  setting_letterspace_fn() {
-	global $options;
+	global $mantra_options;
 	$items = array ("Default" ,"-0.05em" , "-0.04em", "-0.03em" , "-0.02em" , "-0.01em" , "0.01em", "0.02em" , "0.03em" , "0.04em" , "0.05em");
 	$itemsare = array( __("Default","mantra"),"-0.05em" , "-0.04em", "-0.03em" , "-0.02em" , "-0.01em" , "0.01em", "0.02em" , "0.03em" , "0.04em" , "0.05em");
 	echo "<select id='mantra_letterspace' name='ma_options[mantra_letterspace]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mantra_letterspace'],$itemsare[$id]);
+	selected($mantra_options['mantra_letterspace'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -498,96 +498,96 @@ foreach($items as $id=>$item) {
 
 //TEXT - Name: ma_options[backcolor]
 function  setting_backcolor_fn() {
-	global $options;
-	echo '<input type="text" id="mantra_backcolor" name="ma_options[mantra_backcolor]" value="'.esc_attr( $options['mantra_backcolor'] ).'"  />';
+	global $mantra_options;
+	echo '<input type="text" id="mantra_backcolor" name="ma_options[mantra_backcolor]" value="'.esc_attr( $mantra_options['mantra_backcolor'] ).'"  />';
     echo '<div id="mantra_backcolor2"></div>';
 	echo "<div><small>".__("Background color (Default value is 444444).","mantra")."</small></div>";
 }
 
 //TEXT - Name: ma_options[headercolor]
 function  setting_headercolor_fn() {
-	global $options;
-	echo '<input type="text" id="mantra_headercolor" name="ma_options[mantra_headercolor]" value="'.esc_attr( $options['mantra_headercolor'] ).'"  />';
+	global $mantra_options;
+	echo '<input type="text" id="mantra_headercolor" name="ma_options[mantra_headercolor]" value="'.esc_attr( $mantra_options['mantra_headercolor'] ).'"  />';
 	echo '<div id="mantra_headercolor2"></div>';
 	echo "<div><small>".__("Header background color (Default value is 333333). You can delete all inside text for no background color.","mantra")."</small></div>";
 }
 
 //TEXT - Name: ma_options[prefootercolor]
 function  setting_prefootercolor_fn() {
-	global $options;
-	echo '<input type="text" id="mantra_prefootercolor" name="ma_options[mantra_prefootercolor]" value="'.esc_attr( $options['mantra_prefootercolor'] ).'"  />';
+	global $mantra_options;
+	echo '<input type="text" id="mantra_prefootercolor" name="ma_options[mantra_prefootercolor]" value="'.esc_attr( $mantra_options['mantra_prefootercolor'] ).'"  />';
 	echo '<div id="mantra_prefootercolor2"></div>';
 	echo "<div><small>".__("Footer widget-area background color. (Default value is 171717).","mantra")."</small></div>";
 }
 
 //TEXT - Name: ma_options[footercolor]
 function  setting_footercolor_fn() {
-	global $options;
-	echo '<input type="text" id="mantra_footercolor" name="ma_options[mantra_footercolor]" value="'.esc_attr( $options['mantra_footercolor'] ).'"  />';
+	global $mantra_options;
+	echo '<input type="text" id="mantra_footercolor" name="ma_options[mantra_footercolor]" value="'.esc_attr( $mantra_options['mantra_footercolor'] ).'"  />';
 	echo '<div id="mantra_footercolor2"></div>';
 	echo "<div><small>".__("Footer background color (Default value is 222222).","mantra")."</small></div>";
 }
 
 //TEXT - Name: ma_options[titlecolor]
 function  setting_titlecolor_fn() {
-	global $options;
-	echo '<input type="text" id="mantra_titlecolor" name="ma_options[mantra_titlecolor]" value="'.esc_attr( $options['mantra_titlecolor'] ).'"  />';
+	global $mantra_options;
+	echo '<input type="text" id="mantra_titlecolor" name="ma_options[mantra_titlecolor]" value="'.esc_attr( $mantra_options['mantra_titlecolor'] ).'"  />';
 	echo '<div id="mantra_titlecolor2"></div>';
 	echo "<div><small>".__("Your blog's title color (Default value is 0D85CC).","mantra")."</small></div>";
 }
 
 //TEXT - Name: ma_options[descriptioncolor]
 function  setting_descriptioncolor_fn() {
-	global $options;
-	echo '<input type="text" id="mantra_descriptioncolor" name="ma_options[mantra_descriptioncolor]" value="'.esc_attr( $options['mantra_descriptioncolor'] ).'"  />';
+	global $mantra_options;
+	echo '<input type="text" id="mantra_descriptioncolor" name="ma_options[mantra_descriptioncolor]" value="'.esc_attr( $mantra_options['mantra_descriptioncolor'] ).'"  />';
 	echo '<div id="mantra_descriptioncolor2"></div>';
 	echo "<div><small>".__("Your blog's description color(Default value is 222222).","mantra")."</small></div>";
 }
 
 //TEXT - Name: ma_options[contentcolor]
 function  setting_contentcolor_fn() {
-	global $options;
-	echo '<input type="text" id="mantra_contentcolor" name="ma_options[mantra_contentcolor]" value="'.esc_attr( $options['mantra_contentcolor'] ).'"  />';
+	global $mantra_options;
+	echo '<input type="text" id="mantra_contentcolor" name="ma_options[mantra_contentcolor]" value="'.esc_attr( $mantra_options['mantra_contentcolor'] ).'"  />';
 	echo '<div id="mantra_contentcolor2"></div>';
 	echo "<div><small>".__("Content Text Color (Default value is 333333).","mantra")."</small></div>";
 }
 
 //TEXT - Name: ma_options[linkscolor]
 function  setting_linkscolor_fn() {
-	global $options;
-	echo '<input type="text" id="mantra_linkscolor" name="ma_options[mantra_linkscolor]" value="'.esc_attr( $options['mantra_linkscolor'] ).'"  />';
+	global $mantra_options;
+	echo '<input type="text" id="mantra_linkscolor" name="ma_options[mantra_linkscolor]" value="'.esc_attr( $mantra_options['mantra_linkscolor'] ).'"  />';
 	echo '<div id="mantra_linkscolor2"></div>';
 	echo "<div><small>".__("Links color (Default value is 0D85CC).","mantra")."</small></div>";
 }
 
 //TEXT - Name: ma_options[hovercolor]
 function  setting_hovercolor_fn() {
-	global $options;
-	echo '<input type="text" id="mantra_hovercolor" name="ma_options[mantra_hovercolor]" value="'.esc_attr( $options['mantra_hovercolor'] ).'"  />';
+	global $mantra_options;
+	echo '<input type="text" id="mantra_hovercolor" name="ma_options[mantra_hovercolor]" value="'.esc_attr( $mantra_options['mantra_hovercolor'] ).'"  />';
 	echo '<div id="mantra_hovercolor2"></div>';
 	echo "<div><small>".__("Links color on mouse over (Default value is 333333).","mantra")."</small></div>";
 }
 
 //TEXT - Name: ma_options[headtextcolor]
 function  setting_headtextcolor_fn() {
-	global $options;
-	echo '<input type="text" id="mantra_headtextcolor" name="ma_options[mantra_headtextcolor]" value="'.esc_attr( $options['mantra_headtextcolor'] ).'"  />';
+	global $mantra_options;
+	echo '<input type="text" id="mantra_headtextcolor" name="ma_options[mantra_headtextcolor]" value="'.esc_attr( $mantra_options['mantra_headtextcolor'] ).'"  />';
 	echo '<div id="mantra_headtextcolor2"></div>';
 	echo "<div><small>".__("Post Header Text Color (Default value is 333333).","mantra")."</small></div>";
 }
 
 //TEXT - Name: ma_options[headtexthover]
 function  setting_headtexthover_fn() {
-	global $options;
-	echo '<input type="text" id="mantra_headtexthover" name="ma_options[mantra_headtexthover]" value="'.esc_attr( $options['mantra_headtexthover'] ).'"  />';
+	global $mantra_options;
+	echo '<input type="text" id="mantra_headtexthover" name="ma_options[mantra_headtexthover]" value="'.esc_attr( $mantra_options['mantra_headtexthover'] ).'"  />';
 	echo '<div id="mantra_headtexthover2"></div>';
 	echo "<div><small>".__("Post Header Text Color on Mouse over (Default value is 000000).","mantra")."</small></div>";
 }
 
 //TEXT - Name: ma_options[sideheadbackcolor]
 function  setting_sideheadbackcolor_fn() {
-	global $options;
-	echo '<input type="text" id="mantra_sideheadbackcolor" name="ma_options[mantra_sideheadbackcolor]" value="'.esc_attr( $options['mantra_sideheadbackcolor'] ).'"  />';
+	global $mantra_options;
+	echo '<input type="text" id="mantra_sideheadbackcolor" name="ma_options[mantra_sideheadbackcolor]" value="'.esc_attr( $mantra_options['mantra_sideheadbackcolor'] ).'"  />';
 	echo '<div id="mantra_sideheadbackcolor2"></div>';
 	echo "<div><small>".__("Sidebar Header Background color (Default value is 444444).","mantra")."</small></div>";
 
@@ -595,32 +595,32 @@ function  setting_sideheadbackcolor_fn() {
 
 //TEXT - Name: ma_options[sideheadtextcolor]
 function  setting_sideheadtextcolor_fn() {
-	global $options;
-	echo '<input type="text" id="mantra_sideheadtextcolor" name="ma_options[mantra_sideheadtextcolor]" value="'.esc_attr( $options['mantra_sideheadtextcolor'] ).'"  />';
+	global $mantra_options;
+	echo '<input type="text" id="mantra_sideheadtextcolor" name="ma_options[mantra_sideheadtextcolor]" value="'.esc_attr( $mantra_options['mantra_sideheadtextcolor'] ).'"  />';
 	echo '<div id="mantra_sideheadtextcolor2"></div>';
 	echo "<div><small>".__("Sidebar Header Text Color(Default value is 2EA5FD).","mantra")."</small></div>";
 }
 
 //TEXT - Name: ma_options[footerheader]
 function  setting_footerheader_fn() {
-	global $options;
-	echo '<input type="text" id="mantra_footerheader" name="ma_options[mantra_footerheader]" value="'.esc_attr( $options['mantra_footerheader'] ).'"  />';
+	global $mantra_options;
+	echo '<input type="text" id="mantra_footerheader" name="ma_options[mantra_footerheader]" value="'.esc_attr( $mantra_options['mantra_footerheader'] ).'"  />';
 	echo '<div id="mantra_footerheader2"></div>';
 	echo "<div><small>".__("Footer Widget Text Color (Default value is 0D85CC).","mantra")."</small></div>";
 }
 
 //TEXT - Name: ma_options[footertext]
 function  setting_footertext_fn() {
-	global $options;
-	echo '<input type="text" id="mantra_footertext" name="ma_options[mantra_footertext]" value="'.esc_attr( $options['mantra_footertext'] ).'"  />';
+	global $mantra_options;
+	echo '<input type="text" id="mantra_footertext" name="ma_options[mantra_footertext]" value="'.esc_attr( $mantra_options['mantra_footertext'] ).'"  />';
 	echo '<div id="mantra_footertext2"></div>';
 	echo "<div><small>".__("Footer Widget Link Color (Default value is 666666).","mantra")."</small></div>";
 }
 
 //TEXT - Name: ma_options[footerhover]
 function  setting_footerhover_fn() {
-	global $options;
-	echo '<input type="text" id="mantra_footerhover" name="ma_options[mantra_footerhover]" value="'.esc_attr( $options['mantra_footerhover'] ).'"  />';
+	global $mantra_options;
+	echo '<input type="text" id="mantra_footerhover" name="ma_options[mantra_footerhover]" value="'.esc_attr( $mantra_options['mantra_footerhover'] ).'"  />';
 	echo '<div id="mantra_footerhover2"></div>';
 	echo "<div><small>".__("Footer Widget Link Color on Mouse Over (Default value is 888888).","mantra")."</small></div>";
 }
@@ -632,13 +632,13 @@ function  setting_footerhover_fn() {
 
 //SELECT - Name: ma_options[caption]
 function  setting_caption_fn() {
-global $options;
+global $mantra_options;
 	$items = array ("White" , "Light" , "Light Gray" , "Gray" , "Dark Gray" , "Black");
 	$itemsare = array( __("White","mantra"), __("Light","mantra"), __("Light Gray","mantra"), __("Gray","mantra"), __("Dark Gray","mantra"), __("Black","mantra"));
 	echo "<select id='mantra_caption' name='ma_options[mantra_caption]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mantra_caption'],$itemsare[$id]);
+	selected($mantra_options['mantra_caption'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -647,14 +647,14 @@ foreach($items as $id=>$item) {
 
 // RADIO-BUTTON - Name: ma_options[image]
 function setting_image_fn() {
-	global $options;
+	global $mantra_options;
 	$items = array("None", "One", "Two", "Three" , "Four", "Five", "Six", "Seven");
 	foreach($items as $item) {
 		
-		$checkedClass = ($options['mantra_image']==$item) ? ' checkedClass' : '';
+		$checkedClass = ($mantra_options['mantra_image']==$item) ? ' checkedClass' : '';
 	
 		echo " <label id='$item' for='$item$item' class='images $checkedClass'><input  ";
-		 checked($options['mantra_image'],$item);
+		 checked($mantra_options['mantra_image'],$item);
 	echo "value='$item' id='$item$item' onClick=\"changeBorder('$item','images');\" name='ma_options[mantra_image]' type='radio' /><img id='image$item'  src='".get_template_directory_uri()."/images/testimg.png'/></label>";
 	}
 		
@@ -663,14 +663,14 @@ function setting_image_fn() {
 
 // RADIO-BUTTON - Name: ma_options[pin]
 function setting_pin_fn() {
-global $options;
+global $mantra_options;
 	$items = array("mantra_dot", "Pin1", "Pin2", "Pin3" , "Pin4", "Pin5");
 	foreach($items as $item) {
 		$none='';
 		if ($item == 'mantra_dot') { $none='None'; }
-		$checkedClass = ($options['mantra_pin']==$item) ? ' checkedClass' : '';
+		$checkedClass = ($mantra_options['mantra_pin']==$item) ? ' checkedClass' : '';
 		echo "<label id='$item' class='pins  $checkedClass'><input ";
-		checked($options['mantra_pin'],$item);
+		checked($mantra_options['mantra_pin'],$item);
 		echo " value='$item' onClick=\"changeBorder('$item','pins');\" name='ma_options[mantra_pin]' type='radio' />$none<img style='margin-left:10px;margin-right:10px;' src='".get_template_directory_uri()."/images/pins/".$item.".png'/></label>";
 	}
 		echo "<div><small>".__("The image on top of your captions. ","mantra")."</small></div>";
@@ -678,14 +678,14 @@ global $options;
 
 // RADIO-BUTTON - Name: ma_options[sidebullet]
 function setting_sidebullet_fn() {
-	global $options;
+	global $mantra_options;
 	$items = array("mantra_dot", "arrow_black", "arrow_white", "bullet_dark" , "bullet_gray", "bullet_light", "square_dark", "square_white", "triangle_dark" , "triangle_gray", "triangle_white", "folder_black", "folder_light");
 	foreach($items as $item) {
 		$none='';
 		if ($item == 'mantra_dot') { $none='None'; }
-		$checkedClass = ($options['mantra_sidebullet']==$item) ? ' checkedClass' : '';
+		$checkedClass = ($mantra_options['mantra_sidebullet']==$item) ? ' checkedClass' : '';
 		echo "<label id='$item' class='sidebullets  $checkedClass'><input ";
-		checked($options['mantra_sidebullet'],$item);
+		checked($mantra_options['mantra_sidebullet'],$item);
 		echo " value='$item' onClick=\"changeBorder('$item','sidebullets');\" name='ma_options[mantra_sidebullet]' type='radio' />$none<img style='margin-left:10px;margin-right:10px;' src='".get_template_directory_uri()."/images/bullets/".$item.".png'/></label>";
 	}
 	echo "<div><small>".__("The sidebar list bullets. ","mantra")."</small></div>";
@@ -693,14 +693,14 @@ function setting_sidebullet_fn() {
 
 //CHECKBOX - Name: ma_options[contentlist]
 function setting_contentlist_fn() {
-	global $options;
-	if (!isset($options['mantra_contentlist'])) { $options['mantra_contentlist'] ="Show";	}
+	global $mantra_options;
+	if (!isset($mantra_options['mantra_contentlist'])) { $mantra_options['mantra_contentlist'] ="Show";	}
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
 	echo "<select id='mantra_contentlist' name='ma_options[mantra_contentlist]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mantra_contentlist'],$itemsare[$id]);
+	selected($mantra_options['mantra_contentlist'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -711,13 +711,13 @@ foreach($items as $id=>$item) {
 
 //CHECKBOX - Name: ma_options[title]
 function setting_title_fn() {
-	global $options;
+	global $mantra_options;
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
 	echo "<select id='mantra_title' name='ma_options[mantra_title]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mantra_title'],$itemsare[$id]);
+	selected($mantra_options['mantra_title'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -726,13 +726,13 @@ foreach($items as $id=>$item) {
 }
 //CHECKBOX - Name: ma_options[pagetitle]
 function setting_pagetitle_fn() {
-	global $options;
+	global $mantra_options;
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
 	echo "<select id='mantra_pagetitle' name='ma_options[mantra_pagetitle]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mantra_pagetitle'],$itemsare[$id]);
+	selected($mantra_options['mantra_pagetitle'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -741,13 +741,13 @@ foreach($items as $id=>$item) {
 
 //CHECKBOX - Name: ma_options[categtitle]
 function setting_categtitle_fn() {
-	global $options;
+	global $mantra_options;
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
 	echo "<select id='mantra_categtitle' name='ma_options[mantra_categtitle]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mantra_categtitle'],$itemsare[$id]);
+	selected($mantra_options['mantra_categtitle'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -756,13 +756,13 @@ foreach($items as $id=>$item) {
 
 //CHECKBOX - Name: ma_options[tables]
 function setting_tables_fn() {
-	global $options;
+	global $mantra_options;
 	$items = array ("Enable" , "Disable");
 	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
 	echo "<select id='mantra_tables' name='ma_options[mantra_tables]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mantra_tables'],$itemsare[$id]);
+	selected($mantra_options['mantra_tables'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -771,13 +771,13 @@ foreach($items as $id=>$item) {
 
 //CHECKBOX - Name: ma_options[comtext]
 function setting_comtext_fn() {
-	global $options;
+	global $mantra_options;
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
 	echo "<select id='mantra_comtext' name='ma_options[mantra_comtext]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mantra_comtext'],$itemsare[$id]);
+	selected($mantra_options['mantra_comtext'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -786,13 +786,13 @@ foreach($items as $id=>$item) {
 
 //CHECKBOX - Name: ma_options[comclosed]
 function setting_comclosed_fn() {
-	global $options;
+	global $mantra_options;
 	$items = array ("Show" , "Hide in posts", "Hide in pages", "Hide everywhere");
 	$itemsare = array( __("Show","mantra"), __("Hide in posts","mantra"), __("Hide in pages","mantra"), __("Hide everywhere","mantra"));
 	echo "<select id='mantra_comclosed' name='ma_options[mantra_comclosed]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mantra_comclosed'],$itemsare[$id]);
+	selected($mantra_options['mantra_comclosed'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -802,13 +802,13 @@ foreach($items as $id=>$item) {
 
 //CHECKBOX - Name: ma_options[backtop]
 function setting_backtop_fn() {
-	global $options;
+	global $mantra_options;
 	$items = array ("Enable" , "Disable");
 	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
 	echo "<select id='mantra_backtop' name='ma_options[mantra_backtop]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mantra_backtop'],$itemsare[$id]);
+	selected($mantra_options['mantra_backtop'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -817,8 +817,8 @@ foreach($items as $id=>$item) {
 
 // TEXTBOX - Name: ma_options[copyright]
 function setting_copyright_fn() {
-	global $options;
-	echo "<textarea id='mantra_copyright' name='ma_options[mantra_copyright]' rows='3' cols='40' type='textarea' >{$options['mantra_copyright']}  </textarea>";
+	global $mantra_options;
+	echo "<textarea id='mantra_copyright' name='ma_options[mantra_copyright]' rows='3' cols='40' type='textarea' >{$mantra_options['mantra_copyright']}  </textarea>";
 	echo "<div><small>".__("Insert custom text or HTML code that will appear last in you footer. <br /> You can use HTML to insert links, images and special characters like &copy .","mantra")."</small></div>";
 }
 
@@ -829,13 +829,13 @@ function setting_copyright_fn() {
 
 //CHECKBOX - Name: ma_options[postdate]
 function setting_postdate_fn() {
-	global $options;
+	global $mantra_options;
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
 	echo "<select id='mantra_postdate' name='ma_options[mantra_postdate]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mantra_postdate'],$itemsare[$id]);
+	selected($mantra_options['mantra_postdate'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -844,13 +844,13 @@ foreach($items as $id=>$item) {
 
 //CHECKBOX - Name: ma_options[posttime]
 function setting_posttime_fn() {
-	global $options;
+	global $mantra_options;
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
 	echo "<select id='mantra_posttime' name='ma_options[mantra_posttime]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mantra_posttime'],$itemsare[$id]);
+	selected($mantra_options['mantra_posttime'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -859,13 +859,13 @@ foreach($items as $id=>$item) {
 
 //CHECKBOX - Name: ma_options[postauthor]
 function setting_postauthor_fn() {
-	global $options;
+	global $mantra_options;
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
 	echo "<select id='mantra_postauthor' name='ma_options[mantra_postauthor]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mantra_postauthor'],$itemsare[$id]);
+	selected($mantra_options['mantra_postauthor'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -874,13 +874,13 @@ foreach($items as $id=>$item) {
 
 //CHECKBOX - Name: ma_options[postcateg]
 function setting_postcateg_fn() {
-	global $options;
+	global $mantra_options;
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
 	echo "<select id='mantra_postcateg' name='ma_options[mantra_postcateg]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mantra_postcateg'],$itemsare[$id]);
+	selected($mantra_options['mantra_postcateg'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -889,13 +889,13 @@ foreach($items as $id=>$item) {
 
 //CHECKBOX - Name: ma_options[postbook]
 function setting_postbook_fn() {
-	global $options;
+	global $mantra_options;
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
 	echo "<select id='mantra_postbook' name='ma_options[mantra_postbook]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mantra_postbook'],$itemsare[$id]);
+	selected($mantra_options['mantra_postbook'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -910,13 +910,13 @@ foreach($items as $id=>$item) {
 
 //CHECKBOX - Name: ma_options[excerpthome]
 function setting_excerpthome_fn() {
-	global $options;
+	global $mantra_options;
 	$items = array ("Excerpt" , "Full Post");
 	$itemsare = array( __("Excerpt","mantra"), __("Full Post","mantra"));
 	echo "<select id='mantra_excerpthome' name='ma_options[mantra_excerpthome]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mantra_excerpthome'],$itemsare[$id]);
+	selected($mantra_options['mantra_excerpthome'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -926,13 +926,13 @@ foreach($items as $id=>$item) {
 
 //CHECKBOX - Name: ma_options[excerptarchive]
 function setting_excerptarchive_fn() {
-	global $options;
+	global $mantra_options;
 	$items = array ("Excerpt" , "Full Post");
 	$itemsare = array( __("Excerpt","mantra"), __("Full Post","mantra"));
 	echo "<select id='mantra_excerptarchive' name='ma_options[mantra_excerptarchive]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mantra_excerptarchive'],$itemsare[$id]);
+	selected($mantra_options['mantra_excerptarchive'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -942,23 +942,23 @@ foreach($items as $id=>$item) {
 
 // TEXTBOX - Name: ma_options[excerptwords]
 function setting_excerptwords_fn() {
-	global $options;
-	echo "<input id='mantra_excerptwords' name='ma_options[mantra_excerptwords]' size='6' type='text' value='".esc_attr( $options['mantra_excerptwords'] )."'  />";
+	global $mantra_options;
+	echo "<input id='mantra_excerptwords' name='ma_options[mantra_excerptwords]' size='6' type='text' value='".esc_attr( $mantra_options['mantra_excerptwords'] )."'  />";
 	echo "<div><small>".__("The number of words an excerpt will have. When that number is reached the post will be interrupted by a <i>Continue reading</i> link that
 							will take the reader to the full post page.","mantra")."</small></div>";
 }
 
 // TEXTBOX - Name: ma_options[excerptdots]
 function setting_excerptdots_fn() {
-	global $options;
-	echo "<input id='mantra_excerptdots' name='ma_options[mantra_excerptdots]' size='40' type='text' value='".esc_attr( $options['mantra_excerptdots'] )."'  />";
+	global $mantra_options;
+	echo "<input id='mantra_excerptdots' name='ma_options[mantra_excerptdots]' size='40' type='text' value='".esc_attr( $mantra_options['mantra_excerptdots'] )."'  />";
 	echo "<div><small>".__("Replaces the three dots ('[...])' that are appended automatically to excerpts.","mantra")."</small></div>";
 }
 
 // TEXTBOX - Name: ma_options[excerptcont]
 function setting_excerptcont_fn() {
-	global $options;
-	echo "<input id='mantra_excerptcont' name='ma_options[mantra_excerptcont]' size='40' type='text' value='".esc_attr( $options['mantra_excerptcont'] )."'  />";
+	global $mantra_options;
+	echo "<input id='mantra_excerptcont' name='ma_options[mantra_excerptcont]' size='40' type='text' value='".esc_attr( $mantra_options['mantra_excerptcont'] )."'  />";
 	echo "<div><small>".__("Edit the 'Continue Reading' link added to your post excerpts.","mantra")."</small></div>";
 }
 
@@ -970,78 +970,79 @@ function setting_excerptcont_fn() {
 
 //CHECKBOX - Name: ma_options[fpost]
 function setting_fpost_fn() {
-	global $options;
+	global $mantra_options;
 	$items = array ("Enable" , "Disable");
 	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
 	echo "<select id='mantra_fpost' name='ma_options[mantra_fpost]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mantra_fpost'],$itemsare[$id]);
+	selected($mantra_options['mantra_fpost'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
-	echo "<div><small>".__("Show featured images on posts. The images must be selected for each post in the Featured Image section.","mantra")."</small></div>";
+	echo "<div><small>".__("Show featured images as thumbnails on posts. The images must be selected for each post in the Featured Image section.","mantra")."</small></div>";
 }
 
 //CHECKBOX - Name: ma_options[fauto]
 function setting_fauto_fn() {
-	global $options;
+	global $mantra_options;
 	$items = array ("Enable" , "Disable");
 	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
 	echo "<select id='mantra_fauto' name='ma_options[mantra_fauto]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mantra_fauto'],$itemsare[$id]);
+	selected($mantra_options['mantra_fauto'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
-	echo "<div><small>".__("Show the first image that you inserted in a post as a featured image. If you enable this option, the first image in your post will be used even if you selected a Featured Image in you post.","mantra")."</small></div>";
+	echo "<div><small>".__("Show the first image that you inserted in a post as a thumbnail. If you enable this option, the first image in your post will be used even if you selected a Featured Image in you post.","mantra")."</small></div>";
 }
 
 
 //CHECKBOX - Name: ma_options[falign]
 function setting_falign_fn() {
-	global $options;
+	global $mantra_options;
 	$items = array ("Left" , "Center", "Right");
 	$itemsare = array( __("Left","mantra"), __("Center","mantra"), __("Right","mantra"));
 	echo "<select id='mantra_falign' name='ma_options[mantra_falign]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mantra_falign'],$itemsare[$id]);
+	selected($mantra_options['mantra_falign'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
-	echo "<div><small>".__("Featured images alignment. Centered images won't allow any text next to them.","mantra")."</small></div>";
+	echo "<div><small>".__("Thumbnail alignment.","mantra")."</small></div>";
 }
 
 
 // TEXTBOX - Name: ma_options[fwidth]
 function setting_fwidth_fn() {
-	global $options;
-	echo "<input id='mantra_fwidth' name='ma_options[mantra_fwidth]' size='6' type='text' value='".esc_attr( $options['mantra_fwidth'] )."'  /> px";
-	echo "<div><small>".__("The width you want the featured image to have in pixels.","mantra")."</small></div>";
+	global $mantra_options;
+	echo "<input id='mantra_fwidth' name='ma_options[mantra_fwidth]' size='6' type='text' value='".esc_attr( $mantra_options['mantra_fwidth'] )."'  /> px";
+	echo "<div><small>".__("The width you want the thumbnails to have in pixels.","mantra")."</small></div>";
 }
 
 // TEXTBOX - Name: ma_options[fheight]
 function setting_fheight_fn() {
-	global $options;
-	echo "<input id='mantra_fheight' name='ma_options[mantra_fheight]' size='6' type='text' value='".esc_attr( $options['mantra_fheight'] )."'  /> px";
-	echo "<div><small>".__("The height you want the featured image to have in pixels.","mantra")."</small></div>";
+	global $mantra_options;
+	echo "<input id='mantra_fheight' name='ma_options[mantra_fheight]' size='6' type='text' value='".esc_attr( $mantra_options['mantra_fheight'] )."'  /> px";
+	echo "<div><small>".__("The height you want the thumbnails to have in pixels.","mantra")."</small></div>";
 }
 
 //CHECKBOX - Name: ma_options[fheader]
 function setting_fheader_fn() {
-	global $options;
+	global $mantra_options;
 	$items = array ("Enable" , "Disable");
 	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
 	echo "<select id='mantra_fheader' name='ma_options[mantra_fheader]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($options['mantra_fheader'],$itemsare[$id]);
+	selected($mantra_options['mantra_fheader'],$itemsare[$id]);
 	echo ">$item</option>";
 }
 	echo "</select>";
-	echo "<div><small>".__("Show featured images on headers. Images will show if the're >= than the header.","mantra")."</small></div>";
+	echo "<div><small>".__("Show featured images on headers. The header will be replaced with a featured image if you selected it as a Featured Image in the post and
+							and if it is bigger or at least equal to the current header size.","mantra")."</small></div>";
 }
 
 
@@ -1054,22 +1055,22 @@ foreach($items as $id=>$item) {
 
 // TEXTBOX - Name: ma_options[facebook]
 function setting_facebook_fn() {
-	global $options;
-	echo "<input id='mantra_facebook' name='ma_options[mantra_facebook]' size='40' type='text'  value='".esc_attr( $options['mantra_facebook'] )."'  />";
+	global $mantra_options;
+	echo "<input id='mantra_facebook' name='ma_options[mantra_facebook]' size='40' type='text'  value='".esc_attr( $mantra_options['mantra_facebook'] )."'  />";
 	echo "<div><small>".__("Insert your Facebook address. (ex: <i>http://www.facebook.com/yourname</i> )","mantra")."</small></div>";
 }
 
 // TEXTBOX - Name: ma_options[tweeter]
 function setting_tweeter_fn() {
-	global $options;
-	echo "<input id='mantra_tweeter' name='ma_options[mantra_tweeter]' size='40' type='text'  value='".esc_attr( $options['mantra_tweeter'] )."'  />";
+	global $mantra_options;
+	echo "<input id='mantra_tweeter' name='ma_options[mantra_tweeter]' size='40' type='text'  value='".esc_attr( $mantra_options['mantra_tweeter'] )."'  />";
 	echo "<div><small>".__("Insert your Twitter address.","mantra")."</small></div> ";
 }
 
 // TEXTBOX - Name: ma_options[rss]
 function setting_rss_fn() {
-	global $options;
-	echo "<input id='mantra_rss' name='ma_options[mantra_rss]' size='40' type='text'  value='".esc_attr( $options['mantra_rss'] )."'  />";
+	global $mantra_options;
+	echo "<input id='mantra_rss' name='ma_options[mantra_rss]' size='40' type='text'  value='".esc_attr( $mantra_options['mantra_rss'] )."'  />";
 	echo "<div><small>".__("Insert your RSS Feed Link. ","mantra")."</small></div>";
 }
 
@@ -1077,11 +1078,11 @@ function setting_rss_fn() {
 // FOR FURTHER
 // Dmop-DOWN-BOX - Name: ma_options[dmopdown1]
 function  setting_dmopdown_fn() {
-	global $options;
+	global $mantra_options;
 	$items = array("Red", "Green", "Blue", "Orange", "White", "Violet", "Yellow");
 	echo "<select id='dmantra_down1' name='ma_options[dmopdown1]'>";
 	foreach($items as $item) {
-		$selected = ($options['dmopdown1']==$item) ? 'selected="selected"' : '';
+		$selected = ($mantra_options['dmopdown1']==$item) ? 'selected="selected"' : '';
 		echo "<option value='$item' $selected>$item</option>";
 	}
 	echo "</select>";
@@ -1089,42 +1090,42 @@ function  setting_dmopdown_fn() {
 
 // TEXTAREA - Name: ma_options[text_area]
 function setting_textarea_fn() {
-	global $options;
-	echo "<textarea id='ma_textarea_string' name='ma_options[text_area]' rows='7' cols='50' type='textarea'>{$options['text_area']}</textarea>";
+	global $mantra_options;
+	echo "<textarea id='ma_textarea_string' name='ma_options[text_area]' rows='7' cols='50' type='textarea'>{$mantra_options['text_area']}</textarea>";
 }
 
 // TEXTBOX - Name: ma_options[text_string]
 function setting_string_fn() {
-	global $options;
-	echo "<input id='ma_text_string' name='ma_options[text_string]' size='40' type='text' value='{$options['text_string']}' />";
+	global $mantra_options;
+	echo "<input id='ma_text_string' name='ma_options[text_string]' size='40' type='text' value='{$mantra_options['text_string']}' />";
 }
 
 // PASSWORD-TEXTBOX - Name: ma_options[pass_string]
 function setting_pass_fn() {
-	global $options;
-	echo "<input id='ma_text_pass' name='ma_options[pass_string]' size='40' type='password' value='{$options['pass_string']}' />";
+	global $mantra_options;
+	echo "<input id='ma_text_pass' name='ma_options[pass_string]' size='40' type='password' value='{$mantra_options['pass_string']}' />";
 }
 
 // CHECKBOX - Name: ma_options[chkbox1]
 function setting_chk1_fn() {
-	global $options; $checked ="";
-	if(isset($options['chkbox1'])&& $options['chkbox1']) { $checked = ' checked="checked" '; }
+	global $mantra_options; $checked ="";
+	if(isset($mantra_options['chkbox1'])&& $mantra_options['chkbox1']) { $checked = ' checked="checked" '; }
 	echo "<input ".$checked." id='ma_chk1' name='ma_options[chkbox1]' type='checkbox' />";
 }
 
 // CHECKBOX - Name: ma_options[chkbox2]
 function setting_chk2_fn() {
-	global $options;$checked ="";
-	if(isset($options['chkbox2'])&&$options['chkbox2']) { $checked = ' checked="checked" '; }
+	global $mantra_options;$checked ="";
+	if(isset($mantra_options['chkbox2'])&&$mantra_options['chkbox2']) { $checked = ' checked="checked" '; }
 	echo "<input ".$checked." id='ma_chk2' name='ma_options[chkbox2]' type='checkbox' />";
 }
 
 // RADIO-BUTTON - Name: ma_options[option_set1]
 function setting_radio_fn() {
-	global $options;
+	global $mantra_options;
 	$items = array("Square", "Triangle", "Circle");
 	foreach($items as $item) {
-		$checked = ($options['option_set1']==$item) ? ' checked="checked" ' : '';
+		$checked = ($mantra_options['option_set1']==$item) ? ' checked="checked" ' : '';
 		echo "<label><input ".$checked." value='$item' name='ma_options[option_set1]' type='radio' /> $item</label><br />";
 	}
 }
@@ -1140,6 +1141,11 @@ function mantra_page_fn() {
 
 
 <div class="wrap">
+<php 
+///// Get options previous to and including 1.6.6 into the new options
+$mantra_options= mantra_get_theme_options();
+if ($options) $mantra_options = $options;
+?>
 	<div class="icon32" id="icon-options-general"><br></div>
 	<h2><?php _e("Mantra Settings","mantra"); ?></h2>
 <div class="lefty">
@@ -1149,19 +1155,21 @@ function mantra_page_fn() {
 	echo "</p></div>";
 } ?>
 	
-	<form action="options.php" method="post">
+	<form name="mantra_form" action="options.php" method="post">
 		<div id="accordion">	
 			<?php settings_fields('ma_options'); ?>
 			<?php do_settings_sections(__FILE__); ?>
 		</div>
-	<p class="submit">
-			<input name="Submit" type="submit"  value="<?php _e('Save Changes','mantra'); ?>" />
-		</p>
+	<div id="submitDiv">
+			<input name="ma_options[mantra_defaults]" id="mantra_defaults" type="submit" style="float:left;" value="<?php _e('Reset to Defaults','mantra'); ?>" />
+			<input name="ma_options[mantra_submit]" type="submit" style="float:right;"   value="<?php _e('Save Changes','mantra'); ?>" />
+			
+		</div>
 
 
 	</form>
 
-	<span> Mantra v. 1.6 - by <a href="http://www.cryoutcreations.eu">Cryout Creations</a></span>
+	<span id="version"> Mantra v. 1.6.7 - by <a href="http://www.cryoutcreations.eu">Cryout Creations</a></span>
 </div>
 
 <div class="righty" >
@@ -1304,6 +1312,11 @@ global $mantra_defaults;
 	$input['mantra_facebook'] =  wp_kses_data($input['mantra_facebook']);
 	$input['mantra_tweeter'] =  wp_kses_data($input['mantra_tweeter']);
 	$input['mantra_rss'] =  wp_kses_data($input['mantra_rss']);
+
+	 $resetDefault = ( ! empty( $input['mantra_defaults']) ? true : false );
+
+	if ($resetDefault) {$input=$mantra_defaults;}
+
 
 $itemsSide = array("Left", "Right", "Disable");
 if ( !in_array ($input['mantra_side'],$itemsSide) ) {

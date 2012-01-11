@@ -30,7 +30,7 @@ foreach ($options as $key => $value) {
 
 			<?php if ( 'post' == get_post_type() ) : ?>
 			<div class="entry-meta">
-	<?php if ( is_sticky() ) { ?>  	<h3 class="entry-format" style="margin-top:2px;"><?php _e( 'Featured', 'mantra' ); ?></h3> <?php } ?>
+	<?php if ( is_sticky() ) { ?>  	<h3 class="entry-format"><?php _e( 'Featured', 'mantra' ); ?></h3> <?php } ?>
 				<?php mantra_posted_on(); ?>
 	<?php /* if ( comments_open() && ! post_password_required() ) :*/ ?>
 			<div class="comments-link">

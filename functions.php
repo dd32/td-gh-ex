@@ -1,80 +1,18 @@
 <?php
 
-// DEFAULT OPTIONS ARRAY
+// Loading Default values
 
-$mantra_defaults = array(
+require_once(dirname(__FILE__) . "/admin/mantra-defaults.php"); 
 
-"mantra_side" => "Right",
-"mantra_sidewidth" => 800,
-"mantra_sidebar" => 250,
-"mantra_colpad" => "10px",
-"mantra_hheight" => "120px",
+// Loading function that generates the custom css
 
-"mantra_fontsize" => "15px",
-"mantra_headfontsize" => "Default",
-"mantra_sidefontsize" => "Default",
-"mantra_fontfamily" => '"Segoe UI", Arial, sans-serif',
-"mantra_textalign" => "Default",
-"mantra_parindent" => "0px",
-"mantra_lineheight" => "Default",
-"mantra_wordspace" => "Default",
-"mantra_letterspace" => "Default",
+require_once(dirname(__FILE__) . "/admin/mantra-custom-styles.php"); 
 
-"mantra_backcolor" => "#444444",
-"mantra_headercolor" => "#333333",
-"mantra_prefootercolor" => "#222222",
-"mantra_footercolor" => "#171717",
-"mantra_titlecolor" => "#0D85CC",
-"mantra_descriptioncolor" => "#999999",
-"mantra_contentcolor" => "#333333",
-"mantra_linkscolor" => "#0D85CC",
-"mantra_hovercolor" => "#333333",
-"mantra_headtextcolor" => "#333333",
-"mantra_headtexthover" => "#000000",
-"mantra_sideheadbackcolor" => "#444444",
-"mantra_sideheadtextcolor" => "#2EA5FD",
+// Loading the mantra admin functions if admin section
 
-"mantra_footerheader" => "#0C85CD",
-"mantra_footertext" => "#666666",
-"mantra_footerhover" => "#888888",
-
-"mantra_caption" => "Light",
-"mantra_image" => "Seven",
-"mantra_pin" => "Pin2",
-"mantra_sidebullet" => "arrow_white",
-"mantra_contentlist" => "Show",
-"mantra_title" => "Show",
-"mantra_pagetitle" => "Show",
-"mantra_categtitle" => "Show",
-"mantra_tables" => "Disable",
-"mantra_backtop" => "Enable",
-"mantra_comtext" => "Show",
-"mantra_comclosed" => "Show",
-"mantra_copyright" => "",
-
-"mantra_postdate" => "Show",
-"mantra_posttime" => "Hide",
-"mantra_postauthor" => "Show",
-"mantra_postcateg" => "Show",
-"mantra_postbook" => "Show",
-
-"mantra_excerpthome" => "Full Post",
-"mantra_excerptarchive" => "Full Post",
-"mantra_excerptwords" => "50",
-"mantra_excerptdots" => " &hellip;",
-"mantra_excerptcont" => " Continue reading",
-
-"mantra_fpost" => "Disable",
-"mantra_fauto" => "Disable",
-"mantra_fpost" => "Left",
-"mantra_fwidth" => "250",
-"mantra_fheight" => "150",
-"mantra_fheader" => "Disable",
-
-"mantra_facebook" => "",
-"mantra_tweeter" => "",
-"mantra_rss" => "");
-
+if( is_admin() ) {
+require_once(dirname(__FILE__) . "/admin/mantra-admin-functions.php");
+}
 
 // Getting the theme options and making sure defaults are used if no values are set
 
@@ -85,8 +23,8 @@ function mantra_get_theme_options() {
 return $optionsMantra;
 }
 
-$options= mantra_get_theme_options();
-foreach ($options as $key => $value) {
+$mantra_options= mantra_get_theme_options();
+foreach ($mantra_options as $key => $value) {
      ${"$key"} = $value ;
 
 }
@@ -96,8 +34,8 @@ foreach ($options as $key => $value) {
 // Scripts loading and hook into wp_enque_scripts
 
 function mantra_scripts_method() {
-global $options;
-foreach ($options as $key => $value) {
+global $mantra_options;
+foreach ($mantra_options as $key => $value) {
     							 ${"$key"} = $value ;
 									}
 
@@ -122,107 +60,10 @@ foreach ($options as $key => $value) {
 
 add_action('wp_enqueue_scripts', 'mantra_scripts_method');
 
-// Loading the mantra admin functions if admin section
-
-if( is_admin() ) {
-require_once(dirname(__FILE__) . "/mantra-admin-functions.php");
-}
-
 function mantra_style() {
 	wp_register_style( 'mantras', get_stylesheet_uri() );
 	wp_enqueue_style( 'mantras');
 }
-
-
-function mantra_custom_styles() {
-
-/* This  retrieves  admin options. */
-$options= mantra_get_theme_options();
-foreach ($options as $key => $value) {
-     ${"$key"} = esc_attr($value) ;
-}
-$totalwidth= $mantra_sidewidth+$mantra_sidebar+50;
-
-?>
-
-<style>
-.single-attachment #content,#wrapper, #access, #colophon, #branding, #main,  .attachment img { width:<?php echo ($totalwidth) ?>px !important;}
-#access .menu-header, div.menu {width:<?php echo ($totalwidth-12) ?>px !important;}<?php
- if ($mantra_side == "Disable") { ?>#content {width:<?php echo ($totalwidth-50) ?>px !important;margin:20px;} #primary, #secondary {display:none;} <?php }
-?><?php
-if ($mantra_side == "Right") { ?>
-#container {margin-right:<?php echo (-$mantra_sidebar-$mantra_colpad-30) ?>px;}
-#content { width:<?php echo ($mantra_sidewidth- $mantra_colpad) ?>px;}
-#primary,#secondary {width:<?php echo ($mantra_sidebar  ) ?>px;}
-#content img {	max-width:<?php echo ($mantra_sidewidth-40) ?>px;}
-#content .wp-caption{	max-width:<?php echo ($mantra_sidewidth-30) ?>px;} <?php }
-?><?php if ($mantra_side == "Left") { ?>
-#container {margin:0 0 0 <?php echo (-$mantra_sidebar-$mantra_colpad-30) ?>px;float:right;}
-#content { width:<?php echo ($mantra_sidewidth - $mantra_colpad) ?>px;float:right;margin:0 20px 0 0;}
-#primary,#secondary {width:<?php echo ($mantra_sidebar ) ?>px;float:left;padding-left:0px;clear:left;border:none;border-right:1px dashed #EEE;padding-right:20px;}
-.widget-title { -moz-border-radius-topleft:0px; -webkit-border-radius:0px;border-radius-topleft:0px ; -moz-border-radius-topright:10px ;border-radius-topright:10px ;	border-top-right-radius:10px;
-	-webkit-border-top-right-radius:10px;text-align:right;padding-right:5%;width:100%;}
-#content img {	max-width:<?php echo ($mantra_sidewidth-40) ?>px;}
-#content .wp-caption{	max-width:<?php echo ($mantra_sidewidth-30) ?>px;} <?php } ?>
-
-#content p, #content ul, #content ol {
-font-size:<?php echo $mantra_fontsize ?>;
-<?php if ($mantra_lineheight != "Default") { ?>line-height:<?php echo $mantra_lineheight ?>; <?php }
-?><?php if ($mantra_wordspace != "Default") { ?>word-spacing:<?php echo $mantra_wordspace ?>;<?php }
-?><?php if ($mantra_letterspace != "Default") { ?>letter-spacing:<?php echo $mantra_letterspace ?>;<?php }
-?><?php if ($mantra_textalign != "Default") { ?>text-align:<?php echo $mantra_textalign;  ?> ; <?php } ?>}
-<?php if (stripslashes($mantra_fontfamily) != '"Segoe UI", Arial, sans-serif') { ?>
-* {font-family:<?php echo stripslashes($mantra_fontfamily);  ?> !important; }<?php }
-?><?php if ($mantra_caption != "Light") { ?> #content .wp-caption { <?php }
-?><?php if ($mantra_caption == "White") { ?> background-color:#FFF;}
- <?php } else if ($mantra_caption == "Light Gray") {?> background-color:#EEE; }
- <?php } else if ($mantra_caption == "Gray") {?> background-color:#CCC;}
- <?php } else if ($mantra_caption == "Dark Gray") {?> background-color:#444;color:#CCC;}
- <?php } else if ($mantra_caption == "Black") {?> background-color:#000;color:#CCC;}
-<?php }
-?><?php if ($mantra_contentlist == "Hide") { ?> #content ul li { background-image:none ; padding-left:0;} <?php }
-?><?php if ($mantra_title == "Hide") { ?> #site-title, #site-description { visibility:hidden;} <?php }
-?><?php if ($mantra_comtext == "Hide") { ?> #respond .form-allowed-tags { display:none;} <?php }
-?><?php if ($mantra_comclosed == "Hide in posts") { ?> .nocomments { display:none;} <?php } elseif ($mantra_comclosed == "Hide in pages") { ?> .nocomments2 {display:none;} <?php } elseif ($mantra_comclosed == "Hide everywhere") { ?> .nocomments, .nocomments2 {display:none;} <?php }
-?><?php if ($mantra_tables == "Enable") { ?> #content table {border:none;} #content tr {background:none;} #content table {border:none;} #content tr th,
-#content thead th {background:none;} #content tr td {border:none;}<?php }
-?><?php if ($mantra_headfontsize != "Default") { ?> h2.entry-title { font-size:<?php echo $mantra_headfontsize; ?> !important ;}<?php }
-?><?php if ($mantra_sidefontsize != "Default") { ?> .widget-area a:link, .widget-area a:visited { font-size:<?php echo $mantra_sidefontsize; ?> ;}<?php }
-
-?><?php if ($mantra_backcolor != "444444") { ?> body { background-color:<?php echo $mantra_backcolor; ?> !important ;}<?php }
-?><?php if ($mantra_headercolor != "333333") { ?> #header { background-color:<?php echo $mantra_headercolor; ?> !important ;}<?php }
-?><?php if ($mantra_prefootercolor != "222222") { ?> #footer { background-color:<?php echo $mantra_prefootercolor; ?> !important ;}<?php }
-?><?php if ($mantra_footercolor != "171717") { ?> #footer2 { background-color:<?php echo $mantra_footercolor; ?> !important ;}<?php }
-?><?php if ($mantra_titlecolor != "0D85CC") { ?> #site-title span a { color:<?php echo $mantra_titlecolor; ?> !important ;}<?php }
-?><?php if ($mantra_descriptioncolor != "0D85CC") { ?> #site-description { color:<?php echo $mantra_descriptioncolor; ?> !important ;}<?php }
-?><?php if ($mantra_contentcolor != "333333") { ?> #content p, #content ul, #content ol { color:<?php echo $mantra_contentcolor; ?> !important ;}<?php }
-?><?php if ($mantra_linkscolor != "0D85CC") { ?> a, #content h1, #content h2, #content h3, #content h4, #content h5, #content h6,#searchform #s:hover , #container #s:hover, #site-title a:hover, #access a:hover { color:<?php echo $mantra_linkscolor; ?> !important ;}<?php }
-?><?php if ($mantra_hovercolor != "333333") { ?> a:hover { color:<?php echo $mantra_hovercolor; ?> !important ;}<?php }
-?><?php if ($mantra_headtextcolor != "333333") { ?> #content .entry-title a { color:<?php echo $mantra_headtextcolor; ?> !important ;}<?php }
-?><?php if ($mantra_headtexthover != "000000") { ?> #content .entry-title a:hover { color:<?php echo $mantra_headtexthover; ?> !important ;}<?php }
-?><?php if ($mantra_sideheadbackcolor != "444444") { ?> .widget-title { background-color:<?php echo $mantra_sideheadbackcolor; ?> !important ;}<?php }
-?><?php if ($mantra_sideheadtextcolor != "2EA5FD") { ?> .widget-title { color:<?php echo $mantra_sideheadtextcolor; ?> !important ;}<?php }
-
-?><?php if (1) { ?> #footer-widget-area .widget-title { color:<?php echo $mantra_footerheader; ?> !important ;}<?php }
-?><?php if (1) { ?> #footer-widget-area a { color:<?php echo $mantra_footertext; ?> !important ;}<?php }
-?><?php if (1) { ?> #footer-widget-area a:hover { color:<?php echo $mantra_footerhover; ?> !important ;}<?php }
-
-?><?php if ($mantra_pin != "Pin2") { ?> #content .wp-caption { background-image:url(<?php echo get_template_directory_uri()."/images/pins/".$mantra_pin; ?>.png) !important ;} <?php }
-?><?php if ($mantra_sidebullet != "arrow_white") { ?>.widget-area ul ul li{ background-image:url(<?php echo get_template_directory_uri()."/images/bullets/".$mantra_sidebullet; ?>.png) !important;
-<?php if($mantra_sidebullet == "folder_black" || $mantra_sidebullet == "folder_light") {?> padding-top:5px;padding-left:20px; } <?php } ?><?php }
-
-?><?php if ($mantra_pagetitle == "Hide") { ?> .page h1.entry-title, .home .page h2.entry-title { display:none;} <?php }
-?><?php if ($mantra_categtitle == "Hide") { ?> h1.page-title { display:none;} <?php }
-?><?php if (($mantra_postdate == "Hide" && $mantra_postcateg == "Hide") || ($mantra_postauthor == "Hide" && $mantra_postcateg == "Hide") ) { ?>.bl_sep {display:none;} <?php }
-?><?php if ($mantra_postdate == "Hide") { ?> span.entry-date, span.onDate {display:none;} <?php }
-?><?php if ($mantra_postauthor == "Hide") { ?> .author {display:none;} <?php }
-?><?php if ($mantra_postcateg == "Hide") { ?> span.bl_categ {display:none;} <?php }
-?><?php if ($mantra_postbook == "Hide") { ?>  span.bl_bookmark {display:none;} <?php }
-?><?php if ($mantra_parindent != "0px") { ?>  p {text-indent:<?php echo $mantra_parindent;?> ;} <?php }
-?><?php if ($mantra_posttime == "Hide") { ?>  .entry-time {display:none;} <?php } ?>
-</style>
-
-<?php  }
 
 /**
 
@@ -703,8 +544,8 @@ return $first_img;
 }
 
 function set_featured_thumb() {
-	global $options;
-	foreach ($options as $key => $value) {
+	global $mantra_options;
+	foreach ($mantra_options as $key => $value) {
      ${"$key"} = $value ;
 
 }

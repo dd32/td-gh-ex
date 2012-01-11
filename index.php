@@ -11,8 +11,8 @@
  * @package WordPress
  * @subpackage Mantra
  */
-$options= mantra_get_theme_options();
-foreach ($options as $key => $value) {
+$mantra_options= mantra_get_theme_options();
+foreach ($mantra_options as $key => $value) {
 
      ${"$key"} = $value ;
 

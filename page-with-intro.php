@@ -45,7 +45,16 @@ Template Name: page-with-intro
 <?php endwhile; // end of the loop. ?>
 */ ?>
 
-<?php get_template_part( 'loop', 'index' ); ?>
+
+				<?php /* Start the Loop */ ?>
+				<?php while ( have_posts() ) : the_post(); ?>
+
+					<?php get_template_part( 'content', get_post_format() ); ?>
+
+				<?php endwhile; ?>
+
+				<?php mantra_content_nav( 'nav-below' ); ?>
+
 
 
 

@@ -52,6 +52,23 @@ margin-bottom:5px;
 width:95% ;
 margin:0px auto;
 font-family:Segoe UI,Calibri, Arial !important;
+display:block;
+float:none;
+}
+
+#submitDiv {
+display:block;
+float:none;
+height:30px;
+margin:10px 40px;
+font-family:Segoe UI,Calibri, Arial !important;
+}
+
+#version {
+display:block;
+float:none;
+margin-left:10px;
+color:#999;
 }
 
 #accordion h3 {

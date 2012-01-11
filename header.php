@@ -40,8 +40,8 @@
 <?php
 /* This  retrieves  admin options. */
 
-$options= mantra_get_theme_options();
-foreach ($options as $key => $value) {	
+$mantra_options= mantra_get_theme_options();
+foreach ($mantra_options as $key => $value) {	
      ${"$key"} = $value ;
 }
 $totalwidth= $mantra_sidewidth+$mantra_sidebar+50;
