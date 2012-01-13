@@ -24,7 +24,7 @@ get_header(); ?>
 					?>
 				</header>
 
-				<?php admired_content_nav( 'nav-above' ); ?>
+				<?php admired_pagination(); ?>
 
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>

@@ -37,7 +37,7 @@ get_header(); ?>
 
 				<?php endwhile; ?>
 
-				<?php admired_content_nav( 'nav-below' ); ?>
+				<?php admired_pagination(); ?>
 
 			<?php else : ?>
 

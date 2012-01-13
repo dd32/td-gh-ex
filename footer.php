@@ -17,7 +17,7 @@ $options = get_option('admired_theme_options'); ?>
 			<a href="#top" class="scroll" title="Scroll to Top"><div id="scroll-top"></div></a>
 		</div>
 			<?php }
-				get_sidebar( 'footer' );
+				if ( ! is_404() ) get_sidebar( 'footer' );
 				$date = getdate();
 	            $year = $date['year']; ?>
 			<div id="footer-html">

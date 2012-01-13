@@ -3,11 +3,20 @@ Contributors: wp-ultra
 Tags: dark, light, white, black, silver, gray, blue, one-column, two-columns, three-columns, left-sidebar,
 	  right-sidebar, flexible-width, custom-background, custom-colors, custom-menu, editor-style, featured-images,
       full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
-Requires at least: 3.0
-Tested up to: 3.2.1
+Requires at least: 3.2
+Tested up to: 3.3.1
 
 == Change Log ==
 This change log was started beginning with Version 1.0
+
+= Changes Version 1.0.5 =
+
+* small bug fixes with CSS.
+* wide browser fixes.
+* validate check boxes for the option panel.
+* added thick box media upload to the opion panel and validate.
+* update .pot file
+
 
 = Changes Version 1.0 =
 * Lets Do This!

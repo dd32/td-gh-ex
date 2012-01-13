@@ -11,6 +11,7 @@ add_action('admin_init', 'admired_add_init');
 function admired_add_init() {
 
     $file_dir = get_template_directory_uri();
+	wp_enqueue_style('thickbox');
 	wp_enqueue_style("admired-Opt-Css", $file_dir."/admin/admired-options.css");
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script("admired-jq-ui", $file_dir."/admin/js/jquery-ui.js");
@@ -19,6 +20,8 @@ function admired_add_init() {
 	wp_enqueue_script('admired-jq-select', $file_dir.'/admin/js/jquery.selectBox.js');
 	wp_enqueue_script("admired-color-Script", $file_dir."/admin/js/jquery.colorpicker.js");
 	wp_enqueue_script("admired-Opt-Script", $file_dir."/admin/js/admired-options.js");
+	wp_enqueue_script('media-upload');
+	wp_enqueue_script('thickbox');
 }
 
 // Create custom settings menu
@@ -97,7 +100,7 @@ $admired_settings = array (
 	array("type" => "open"),
 	
 	array("name" => __( "Post Excerpt with Thumbnail",'admired'), "id" => $admired_shortname."_thumbnail_excerpt", "type" => "checkbox",
-			"desc" => __( "Show thumbnail and excerpt on post.",'admired')),
+			"desc" => __( "Show thumbnail and excerpt on post. Uses the featured image.",'admired')),
 
 	array(  'name' => __('Standard Link','admired'), 'id' => $admired_shortname.'_link_color', 'type' => 'ctext',
 			"desc" => __( 'Color for most links. (#1982d1)','admired'),
@@ -246,10 +249,12 @@ $admired_settings = array (
 			"type" => "section-desc"),
 			
 	array("type" => "open"),
-
-	array(  "name" => __( 'Custom Logo','admired'), 'id' => $admired_shortname.'_header_logo', 'type' => 'text',
-			"desc" => __( 'Add a custom logo to the header. Enter the url to the path of the image you would like to use in the textbox. Size => 1010px X 105px','admired'),
-			'std' => ''),
+	
+	array( "name" => __( 'Custom Logo','admired'),
+			"desc" => __( "Add a custom logo to the header. Click on Choose Image and upload a logo or select one out of your Media Library and click insert into post."),
+			"id" => $admired_shortname."_header_logo",
+			"type" => "upload",
+			"std" => ""),
 	
 	array("name" => __( 'Main Menu Bar','admired'), "id" => $admired_shortname."_main_menubar_color", "type" => "ctext",
 			"desc" => __( 'Color of the Primary menu bar. (#0281D4)','admired'),
@@ -652,6 +657,30 @@ function admired_settings_page() {
 									$('input[type=checkbox]').Checkbox({labels:['Enable','Disable']});
 								}
 							});
+							// Media Uploader
+							jQuery(document).ready(function() {
+							window.formfield = '';
+
+							jQuery('.upload_image_button').live('click', function() {
+								window.formfield = jQuery('.upload_field',jQuery(this).parent());
+								tb_show('', 'media-upload.php?type=image&TB_iframe=true');
+								return false;
+							});
+
+							window.original_send_to_editor = window.send_to_editor;
+							window.send_to_editor = function(html) {
+								if (window.formfield) {
+									imgurl = jQuery('img',html).attr('src');
+									window.formfield.val(imgurl);
+									tb_remove();
+								}
+								else {
+									window.original_send_to_editor(html);
+								}
+								window.formfield = '';
+								window.imagefield = false;
+							}
+							});
 							
 						</script>
 
@@ -770,6 +799,20 @@ function admired_settings_page() {
 										<?php
 										break;
 										
+										case "upload":			
+										?>
+								
+										<div class="options_input options_text">
+											<div class="options_desc"><?php if ( isset( $options[$valueid])&& $options[$valueid] !="" ){ ?>
+											<img src="<?php echo $options[$valueid]; ?>" alt="logo" height="80" width="120" style="float:left; margin: 0 7px 7px 0;" />
+											<?php } ?><?php echo $value['desc']; ?></div>
+											<span class="labels"><label for="<?php echo $admired_option_name.'['.$valueid.']'; ?>"><?php echo $value['name']; ?></label></span>
+											<input name="<?php echo $admired_option_name.'['.$valueid.']'; ?>" class="upload_field" type="<?php echo $value['type']; ?>" value="<?php if ( isset( $options[$valueid]) ){ esc_attr_e( stripslashes($options[$valueid])); } else { esc_attr_e( stripslashes($value['std'])); } ?>" />
+											<input class="upload_image_button button-secondary" type="button" value="Choose Image" />
+										</div>
+										
+										<?php break;
+										
 										case "checkbox":		// Check Boxes
 										?>
 										<div class="options_input options_checkbox">
@@ -859,6 +902,16 @@ function admired_theme_options_validate( $input ) {
 				$input[$value['id']] = wp_filter_post_kses( $input[$value['id']] );
 				break;
 			case 'textarea':
+				$input[$value['id']] = wp_filter_post_kses( $input[$value['id']] );
+				break;
+			case 'checkbox':
+				if (!isset($input[$value['id']])) {  
+                        $input[$value['id']] = null;  
+                    }  
+                    // Our checkbox value is either 0 or 1  
+                    $input[$value['id']] = ( $input[$value['id']] == 1 ? 1 : 0 );
+				break;
+			case 'upload':
 				$input[$value['id']] = wp_filter_post_kses( $input[$value['id']] );
 				break;
 		}

@@ -21,13 +21,13 @@ if ( ! function_exists( 'admired_setup' ) ):
 function admired_setup() {
 
 	// Available for translation.
-	load_theme_textdomain( 'admired', TEMPLATEPATH . '/languages' );
+	load_theme_textdomain( 'admired', get_template_directory() . '/languages' );
 
 	$locale = get_locale();
-	$locale_file = TEMPLATEPATH . "/languages/$locale.php";
+	$locale_file = get_template_directory() . "/languages/$locale.php";
 	if ( is_readable( $locale_file ) )
-		require_once( $locale_file );
-
+		require_once( $locale_file );	
+		
 	add_editor_style();   // Style the visual editor.
 	add_theme_support( 'automatic-feed-links' );
 	register_nav_menus( array(  // Register both nav menus.
