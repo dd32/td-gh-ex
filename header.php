@@ -15,9 +15,9 @@
 	
 	if ( $paged >= 2 || $page >= 2 )
 		echo ' | ' . sprintf( __( 'Page %s', 'theme-adamsrazor' ), max( $paged, $page ) );
-	?>
-	<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+	?>	
 </title>
+<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
