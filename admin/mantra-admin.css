@@ -29,6 +29,9 @@ font-style:sans-serif;
 
 .form-table small {
 font-style:italic;
+display:block;
+float:none;
+clear:both;
 }
 
  .donate, .support {
@@ -182,18 +185,22 @@ border:8px solid #BBB !important;
 
 label {
 display:inline-block;
-height:auto;
 width:auto;
-border:5px solid #FFF;
-margin:0 auto;
+border:2px solid #FFF;
 text-align:center;
 background-color:#FFF;
-padding:10px 5px;
+padding:5px 2px;
+-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+filter: alpha(opacity=80);
+opacity:0.8;
 
 }
 
 label:hover {
-	border:5px solid #4599BB !important ; 
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	opacity:1;
+background-color:#EEE;
 }
 
 
@@ -201,8 +208,39 @@ label input {
 display:none;
 }
 
+.layouts {
+display:block;
+float:left;
+}
+
+label.layouts {
+padding:10px 2px;
+margin:0;
+}
+
+
+.borderful {
+border-color:#F6A828 ;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	opacity:1;
+}
+
+.layouts span {
+display:block;
+float:none;
+width:114px;
+font-size:11px;
+clear:both;
+background:#EEE;
+}
+
+
 .checkedClass {
-border-color:#666;
+border-color:#F6A828;
+-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+filter: alpha(opacity=100);
+opacity:1;
 }
 
 #accordion input[type="text"] {

@@ -29,6 +29,22 @@ foreach ($mantra_options as $key => $value) {
 
 }
 
+function mantra_header() {
+    do_action('mantra_header');
+}
+
+function mantra_style() {
+	wp_register_style( 'mantras', get_stylesheet_uri() );
+	wp_enqueue_style( 'mantras');
+}
+
+// CSS loading and hook into wp_enque_scripts
+
+		add_action('wp_print_styles', 'mantra_style',1 );
+		add_action('wp_head', 'mantra_custom_styles' ,8);
+		add_action('wp_head', 'mantra_customcss',8);
+		
+
  $totalSize = $mantra_sidebar + $mantra_sidewidth+50;
 
 // Scripts loading and hook into wp_enque_scripts
@@ -44,9 +60,7 @@ foreach ($mantra_options as $key => $value) {
 	if ( !is_admin() ) {
 		wp_register_script('menu',get_template_directory_uri() . '/js/menu.js', array('jquery') );
 		wp_enqueue_script('menu');
-		add_action('wp_print_styles', 'mantra_style' );
-		add_action('wp_head', 'mantra_custom_styles' );
-		if($mantra_backtop!="Disable") {
+			if($mantra_backtop!="Disable") {
 							wp_register_script('top',get_template_directory_uri() . '/js/top.js', array('jquery'));
 							wp_enqueue_script('top');}
   									}
@@ -60,10 +74,7 @@ foreach ($mantra_options as $key => $value) {
 
 add_action('wp_enqueue_scripts', 'mantra_scripts_method');
 
-function mantra_style() {
-	wp_register_style( 'mantras', get_stylesheet_uri() );
-	wp_enqueue_style( 'mantras');
-}
+
 
 /**
 

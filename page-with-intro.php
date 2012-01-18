@@ -6,6 +6,7 @@ Template Name: page-with-intro
 <?php get_header(); ?>
 
 		<div id="container">
+		<?php get_sidebar(); ?>
 			<div id="content" role="main">
 
 	 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -61,5 +62,4 @@ Template Name: page-with-intro
 			</div><!-- #content -->
 		</div><!-- #container -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

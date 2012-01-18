@@ -10,6 +10,7 @@
 get_header(); ?>
 
 	<div id="container">
+	<?php get_sidebar(); ?>
 		<div id="content" role="main">
 
 			<div id="post-0" class="post error404 not-found">
@@ -26,5 +27,5 @@ get_header(); ?>
 		// focus on search field after it has loaded
 		document.getElementById('s') && document.getElementById('s').focus();
 	</script>
-<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>

@@ -21,6 +21,7 @@ get_header(); ?>
 
 
 		<div id="container">
+			<?php get_sidebar(); ?>
 			<div id="content" role="main">
 
 			<?php if ( have_posts() ) : ?>
@@ -54,5 +55,5 @@ get_header(); ?>
 			</div><!-- #content -->
 		</div><!-- #container -->
 
-<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>

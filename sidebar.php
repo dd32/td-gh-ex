@@ -6,7 +6,14 @@
  * @subpackage mantra
  * @since mantra 0.5
  */
-?>
+
+/* This  retrieves  admin options. */
+$mantra_options= mantra_get_theme_options();
+foreach ($mantra_options as $key => $value) {
+     ${"$key"} = esc_attr($value) ;
+}
+
+if ($mantra_side != "1c") { ?>
 		<div id="primary" class="widget-area" role="complementary">
 
 			<ul class="xoxo">
@@ -45,7 +52,7 @@
 
 <?php
 	// A second sidebar for widgets, just because.
-	if ( is_active_sidebar( 'secondary-widget-area' ) ) : ?>
+	if ( is_active_sidebar( 'secondary-widget-area' ) && !( $mantra_side == "2cSr" ||  $mantra_side == "2cSl" )) : ?>
 
 		<div id="secondary" class="widget-area" role="complementary" >
 			<ul class="xoxo">
@@ -53,4 +60,5 @@
 			</ul>
 		</div><!-- #secondary .widget-area -->
 
-<?php endif; ?>
+<?php endif; 
+?><?php } ?> <!-- 1c -->

@@ -52,7 +52,7 @@ $totalwidth= $mantra_sidewidth+$mantra_sidebar+50;
 	 * generally use this hook to add elements to <head> such
 	 * as styles, scripts, and meta tags.
 	 */
-
+ 	mantra_header(); 
 	wp_head(); ?>
 
 </head>
@@ -116,11 +116,10 @@ $totalwidth= $mantra_sidewidth+$mantra_sidebar+50;
 	<div id="main">
 	<div  id="forbottom" >
 			<div id="socials">
-<?php if ($mantra_rss) {  ?><a href="<?php echo $mantra_rss ?>" id="srss" title="RSS"><span>RSS</span></a><?php }
-?><?php if ($mantra_tweeter) {  ?><a href="<?php echo $mantra_tweeter ?>" id="stweet" title="Twitter"><span>Twitter</span></a><?php }
-?><?php if ($mantra_facebook) {  ?> <a href="<?php echo $mantra_facebook ?>" id="sface" title="Facebook"><span>FaceBook</span></a> <?php }?>
 
-
-
+<?php if ($mantra_social1 && $mantra_social2) {  ?><a href="<?php echo $mantra_social2; ?>" class="socialicons" id="<?php echo $mantra_social1; ?>" title="<?php echo $mantra_social1; ?>"><img alt="<?php echo $mantra_social1; ?>" src="<?php echo get_template_directory_uri().'/images/socials/'.$mantra_social1.'.png'; ?>" /></a><?php }
+?><?php if ($mantra_social3 && $mantra_social4) {  ?><a href="<?php echo $mantra_social4 ?>" class="socialicons" id="<?php echo $mantra_social3 ?>" title="<?php echo $mantra_social3 ?>"><img alt="<?php echo $mantra_social3; ?>" src="<?php echo get_template_directory_uri().'/images/socials/'.$mantra_social3.'.png'; ?>" /></a><?php }
+?><?php if ($mantra_social5 && $mantra_social6) {  ?> <a href="<?php echo $mantra_social6 ?>" class="socialicons" id="<?php echo $mantra_social5 ?>" title="<?php echo $mantra_social5 ?>"><img alt="<?php echo $mantra_social5; ?>" src="<?php echo get_template_directory_uri().'/images/socials/'.$mantra_social5.'.png'; ?>" /></a> <?php }
+?><?php if ($mantra_social7 && $mantra_social8) {  ?> <a href="<?php echo $mantra_social8 ?>" class="socialicons" id="<?php echo $mantra_social7 ?>" title="<?php echo $mantra_social7 ?>"><img alt="<?php echo $mantra_social7; ?>" src="<?php echo get_template_directory_uri().'/images/socials/'.$mantra_social7.'.png'; ?>" /></a> <?php }?>
 </div>
 <div style="clear:both;"> </div>

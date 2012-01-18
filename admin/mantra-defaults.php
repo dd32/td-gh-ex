@@ -4,10 +4,9 @@
 
 $mantra_defaults = array(
 
-"mantra_side" => "Right",
+"mantra_side" => "2cSr",
 "mantra_sidewidth" => 800,
 "mantra_sidebar" => 250,
-"mantra_colpad" => "10px",
 "mantra_hheight" => "120px",
 
 "mantra_fontsize" => "15px",
@@ -56,6 +55,7 @@ $mantra_defaults = array(
 "mantra_posttime" => "Hide",
 "mantra_postauthor" => "Show",
 "mantra_postcateg" => "Show",
+"mantra_posttag" => "Show",
 "mantra_postbook" => "Show",
 
 "mantra_excerpthome" => "Full Post",
@@ -71,8 +71,16 @@ $mantra_defaults = array(
 "mantra_fheight" => "150",
 "mantra_fheader" => "Disable",
 
-"mantra_facebook" => "",
-"mantra_tweeter" => "",
-"mantra_rss" => "");
+"mantra_social1" => "",
+"mantra_social2" => "",
+"mantra_social3" => "",
+"mantra_social4" => "",
+"mantra_social5" => "",
+"mantra_social6" => "",
+"mantra_social7" => "",
+"mantra_social8" => "",
+
+
+"mantra_customcss" => "/* Mantra Custom CSS */  ");
 
 ?>

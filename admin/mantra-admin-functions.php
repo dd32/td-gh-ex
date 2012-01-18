@@ -32,11 +32,11 @@ function mantra_init_fn(){
 	add_settings_section('excerpt_section', __('Post Excerpt Settings','mantra') , 'section_excerpt_fn', __FILE__);
 	add_settings_section('featured_section', __('Featured Image Settings','mantra') , 'section_featured_fn', __FILE__);
 	add_settings_section('socials_section', __('Social Sites Settings','mantra') , 'section_social_fn', __FILE__);
+	add_settings_section('misc_section', __('Miscellaneous Settings','mantra') , 'misc_social_fn', __FILE__);
 
-	add_settings_field('mantra_side', __('Sidebar Position','mantra') , 'setting_side_fn', __FILE__, 'layout_section');
+	add_settings_field('mantra_side', __('Main Layout','mantra') , 'setting_side_fn', __FILE__, 'layout_section');
 	add_settings_field('mantra_sidewidth', __('Content / Sidebar Width','mantra') , 'setting_sidewidth_fn', __FILE__, 'layout_section');
 	add_settings_field('mantra_sidebar', __('Total Site Width','mantra') , 'setting_sidebar_fn', __FILE__, 'layout_section');
-	add_settings_field('mantra_colpad', __('Padding between Columns','mantra') , 'setting_colpad_fn', __FILE__, 'layout_section');
 	add_settings_field('mantra_hheight', __('Header Image Height','mantra') , 'setting_hheight_fn', __FILE__, 'layout_section');
 
 	add_settings_field('mantra_fontfamily', __('Select Font Type','mantra') , 'setting_fontfamily_fn', __FILE__, 'text_section');
@@ -87,6 +87,7 @@ function mantra_init_fn(){
 	add_settings_field('mantra_posttime', __('Post Time','mantra') , 'setting_posttime_fn', __FILE__, 'post_section');
 	add_settings_field('mantra_postauthor', __('Post Author','mantra') , 'setting_postauthor_fn', __FILE__, 'post_section');
 	add_settings_field('mantra_postcateg', __('Post Category','mantra') , 'setting_postcateg_fn', __FILE__, 'post_section');
+	add_settings_field('mantra_posttag', __('Post Tags','mantra') , 'setting_posttag_fn', __FILE__, 'post_section');
 	add_settings_field('mantra_postbook', __('Post Permalink','mantra') , 'setting_postbook_fn', __FILE__, 'post_section');
 
 	add_settings_field('mantra_excerpthome', __('Post Excerpts on Home Page','mantra') , 'setting_excerpthome_fn', __FILE__, 'excerpt_section');
@@ -102,9 +103,12 @@ function mantra_init_fn(){
 	add_settings_field('mantra_fheight', __('Thumbnails Height ','mantra') , 'setting_fheight_fn', __FILE__, 'featured_section');
 	add_settings_field('mantra_fheader', __('Featured Images as HEADER Images ','mantra') , 'setting_fheader_fn', __FILE__, 'featured_section');
 
-	add_settings_field('mantra_facebook', __('Facebook Link','mantra') , 'setting_facebook_fn', __FILE__, 'socials_section');
-	add_settings_field('mantra_tweeter', __('Twitter Link','mantra') , 'setting_tweeter_fn', __FILE__, 'socials_section');
-	add_settings_field('mantra_rss', __('RSS Feed Link','mantra') , 'setting_rss_fn', __FILE__, 'socials_section');
+	add_settings_field('mantra_socials1', __('Link 1','mantra') , 'setting_socials1_fn', __FILE__, 'socials_section');
+	add_settings_field('mantra_socials2', __('Link 2','mantra') , 'setting_socials2_fn', __FILE__, 'socials_section');
+	add_settings_field('mantra_socials3', __('Link 3','mantra') , 'setting_socials3_fn', __FILE__, 'socials_section');
+	add_settings_field('mantra_socials4', __('Link 4','mantra') , 'setting_socials4_fn', __FILE__, 'socials_section');
+
+	add_settings_field('mantra_customcss', __('Custom CSS','mantra') , 'setting_customcss_fn', __FILE__, 'misc_section');
 
 }
 
@@ -170,6 +174,10 @@ function  section_social_fn() {
 //	Please type the whole address (including <i>http://</i> ) Example : <u>http://www.facebook.com</u>.", "mantra")."</p>";
 }
 
+function  misc_social_fn() {
+
+}
+
 
 
 
@@ -178,24 +186,32 @@ function  section_social_fn() {
 //// LAYOUT SETTINGS ///////////
 ////////////////////////////////
 
- //SELECT - Name: ma_options[side]
-function  setting_side_fn() {
+
+// RADIO-BUTTON - Name: ma_options[side]
+function setting_side_fn() {
 global $mantra_options;
-	if (!isset($mantra_options['mantra_side'])) { $mantra_options['mantra_side'] ="Right";	}
+	$items = array("1c", "2cSr", "2cSl", "3cSr" , "3cSl", "3cSs");
+	$layout_text["1c"] = __("One column (no sidebars)","mantra");
+	$layout_text["2cSr"] = __("Two columns,  sidebar on the right","mantra");
+	$layout_text["2cSl"] = __("Two columns,  sidebar on the left","mantra");
+	$layout_text["3cSr"] = __("Three columns, sidebars on the right","mantra");
+	$layout_text["3cSl"] = __("Three columns, sidebars on the left","mantra");
+	$layout_text["3cSs"] = __("Three columns, one sidebar on each side","mantra");
 
-$items = array("Left", "Right", "Disable");
-$itemsare = array( __("Left","mantra"), __("Right","mantra"), __("Disable","mantra"));
-echo "<select id='mantra_side' name='ma_options[mantra_side]'>";
-foreach($items as $id=>$item) {
-	echo "<option value='$item'";
-	selected($mantra_options['mantra_side'],$itemsare[$id]);
-	echo ">$item</option>";
-}
-echo "</select>";
+// For backward compatibility;
+	if ($mantra_options['mantra_side'] == 'Disable') $mantra_options['mantra_side'] = '1c';
+	if ($mantra_options['mantra_side'] == 'Right') $mantra_options['mantra_side'] = '2cSr';
+	if ($mantra_options['mantra_side'] == 'Left') $mantra_options['mantra_side'] = '2cSl';
 
-echo "<div><small>".__("Select the side on which to display the sidebar. You can also choose to disable it altogether and have only one column for a presentation-like design.
-			Disabling the sidemenu also disables the Content/Sidemenu Width option.","mantra")."</small></div>";
 
+	foreach($items as $item) {
+
+		$checkedClass = ($mantra_options['mantra_side']==$item) ? ' checkedClass' : '';
+		echo "<label id='$item' class='layouts  $checkedClass'><input ";
+		checked($mantra_options['mantra_side'],$item);
+		echo " value='$item' onClick=\"changeBorder('$item','layouts');\" name='ma_options[mantra_side]' type='radio' /><img src='".get_template_directory_uri()."/admin/images/".$item.".png'/><span> $layout_text[$item]</span></label>";
+	}
+		echo "<div><small>".__("Choose your layout ","mantra")."</small></div>";
 }
 
 
@@ -213,7 +229,7 @@ function setting_sidewidth_fn()
 			range: true,
 			step:10,
 			min: 0,
-			max: 1440,
+			max: 1980,
 			values: [ <?php echo $mantra_options['mantra_sidewidth'] ?>, <?php echo ($mantra_options['mantra_sidewidth']+$mantra_options['mantra_sidebar']); ?> ],
 			slide: function( event, ui ) {
 		
@@ -233,7 +249,7 @@ function setting_sidewidth_fn()
 			range=ui.values[ 1 ] - ui.values[ 0 ];
 
  			if (ui.values[ 0 ]<500) {ui.values[ 0 ]=500; return false;};
-			if(	range<220 || range>500 ){ ui.values[ 1 ] =  <?php echo $mantra_options['mantra_sidebar']+$mantra_options['mantra_sidewidth'];?>; return false;  };			
+			if(	range<220 || range>800 ){ ui.values[ 1 ] =  <?php echo $mantra_options['mantra_sidebar']+$mantra_options['mantra_sidewidth'];?>; return false;  };			
 																	
 			jQuery( "#mantra_sidewidth" ).val( ui.values[ 0 ] );
 			jQuery( "#mantra_sidebar" ).val( ui.values[ 1 ] - ui.values[ 0 ] );
@@ -250,7 +266,7 @@ function setting_sidewidth_fn()
 <div class="hereitis">
 
 	<b id="contentb" style="display:block;float:left;position:absolute;margin-top:-20px;">Content = <span id="contentsize"><?php echo $mantra_options['mantra_sidewidth'];?></span>px</b>
-	<b id="barb" style="margin-left:40px;color:#F6A828;display:block;float:left;position:absolute;margin-top:-20px;" >Sidebar = <span id="barsize"><?php echo $mantra_options['mantra_sidebar'];?></span>px</b>
+	<b id="barb" style="margin-left:40px;color:#F6A828;display:block;float:left;position:absolute;margin-top:-20px;" >Sidebar(s) = <span id="barsize"><?php echo $mantra_options['mantra_sidebar'];?></span>px</b>
 <p>
 	<?php echo  "<input type='hidden'  name='ma_options[mantra_sidewidth]' id='mantra_sidewidth'   />";?>
 </p>
@@ -258,8 +274,9 @@ function setting_sidewidth_fn()
 </div><!-- End hereitsis -->
 
    <?php
-   echo "<div><small>".__("Select the width of your <b>content</b> and <b>sidebar</b>. <br />
- 		While the content cannot be less than 550px wide, the sidebar is at least 220px and no more than 500px.","mantra")."</small></div>";
+   echo "<div><small>".__("Select the width of your <b>content</b> and <b>sidebar(s)</b>. 
+ 		While the content cannot be less than 500px wide, the sidebar area is at least 220px and no more than 800px.<br />
+	If you went for a 3 column area ( with 2 sidebars) they will each have half the selected width.","mantra")."</small></div>";
    }
 
  //SLIDER - Name: ma_options[sidebar]
@@ -273,19 +290,6 @@ function setting_sidebar_fn()
 
    }
 
- //SELECT - Name: ma_options[colpad]
-function  setting_colpad_fn() {
-	global $mantra_options;
-	$items =array ("0", "10px" , "15px" , "20px" , "25px", "30px");
-	echo "<select id='mantra_colpad' name='ma_options[mantra_colpad]'>";
-foreach($items as $item) {
-	echo "<option value='$item'";
-	selected($mantra_options['mantra_colpad'],$item);
-	echo ">$item</option>";
-}
-	echo "</select>";
-echo "<div><small>".__("Select the padding between the content and the sidebar.","mantra")."</small></div>";
-}
 
  //SELECT - Name: ma_options[hheight]
 function  setting_hheight_fn() {
@@ -655,7 +659,7 @@ function setting_image_fn() {
 	
 		echo " <label id='$item' for='$item$item' class='images $checkedClass'><input  ";
 		 checked($mantra_options['mantra_image'],$item);
-	echo "value='$item' id='$item$item' onClick=\"changeBorder('$item','images');\" name='ma_options[mantra_image]' type='radio' /><img id='image$item'  src='".get_template_directory_uri()."/images/testimg.png'/></label>";
+	echo "value='$item' id='$item$item' onClick=\"changeBorder('$item','images');\" name='ma_options[mantra_image]' type='radio' /><img id='image$item'  src='".get_template_directory_uri()."/admin/images/testimg.png'/></label>";
 	}
 		
 		echo "<div><br /><p><small>".__("The border around your inserted images. ","mantra")."</small></p></div>";
@@ -679,10 +683,10 @@ global $mantra_options;
 // RADIO-BUTTON - Name: ma_options[sidebullet]
 function setting_sidebullet_fn() {
 	global $mantra_options;
-	$items = array("mantra_dot", "arrow_black", "arrow_white", "bullet_dark" , "bullet_gray", "bullet_light", "square_dark", "square_white", "triangle_dark" , "triangle_gray", "triangle_white", "folder_black", "folder_light");
+	$items = array("mantra_dot2", "arrow_black", "arrow_white", "bullet_dark" , "bullet_gray", "bullet_light", "square_dark", "square_white", "triangle_dark" , "triangle_gray", "triangle_white", "folder_black", "folder_light");
 	foreach($items as $item) {
 		$none='';
-		if ($item == 'mantra_dot') { $none='None'; }
+		if ($item == 'mantra_dot2') { $none='None'; }
 		$checkedClass = ($mantra_options['mantra_sidebullet']==$item) ? ' checkedClass' : '';
 		echo "<label id='$item' class='sidebullets  $checkedClass'><input ";
 		checked($mantra_options['mantra_sidebullet'],$item);
@@ -884,7 +888,22 @@ foreach($items as $id=>$item) {
 	echo ">$item</option>";
 }
 	echo "</select>";
-	echo "<div><small>".__("Hide the post category (and tags if available).","mantra")."</small></div>";
+	echo "<div><small>".__("Hide the post category.","mantra")."</small></div>";
+}
+
+//CHECKBOX - Name: ma_options[posttag]
+function setting_posttag_fn() {
+	global $mantra_options;
+	$items = array ("Show" , "Hide");
+	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
+	echo "<select id='mantra_posttag' name='ma_options[mantra_posttag]'>";
+foreach($items as $id=>$item) {
+	echo "<option value='$item'";
+	selected($mantra_options['mantra_posttag'],$itemsare[$id]);
+	echo ">$item</option>";
+}
+	echo "</select>";
+	echo "<div><small>".__("Hide the post tags.","mantra")."</small></div>";
 }
 
 //CHECKBOX - Name: ma_options[postbook]
@@ -1053,25 +1072,78 @@ foreach($items as $id=>$item) {
 /// SOCIAL SETTINGS ////
 ////////////////////////
 
-// TEXTBOX - Name: ma_options[facebook]
-function setting_facebook_fn() {
+// TEXTBOX - Name: ma_options[social1]
+function setting_socials1_fn() {
 	global $mantra_options;
-	echo "<input id='mantra_facebook' name='ma_options[mantra_facebook]' size='40' type='text'  value='".esc_attr( $mantra_options['mantra_facebook'] )."'  />";
-	echo "<div><small>".__("Insert your Facebook address. (ex: <i>http://www.facebook.com/yourname</i> )","mantra")."</small></div>";
+	$items = array ("Facebook" , "Twitter","RSS", "LinkedIn","Digg", "StumbleUpon","Delicious", "Reddit","Flickr", "Google","Yahoo" );
+	echo "<select id='mantra_social1' name='ma_options[mantra_social1]'>";
+foreach($items as $item) {
+	echo "<option value='$item'";
+	selected($mantra_options['mantra_social1'],$item);
+	echo ">$item</option>";
+}
+	echo "</select><span class='address_span'> -> </span>";
+
+	echo "<input id='mantra_social2' name='ma_options[mantra_social2]' size='32' type='text'  value='".esc_attr( $mantra_options['mantra_social2'] )."'  />";
+	echo "<div><small>".__("Select your desired Social network from the left dropdown menu and insert your corresponding address in the right input field. (ex: <i>http://www.facebook.com/yourname</i> )","mantra")."</small></div>";
 }
 
-// TEXTBOX - Name: ma_options[tweeter]
-function setting_tweeter_fn() {
+// TEXTBOX - Name: ma_options[social2]
+function setting_socials2_fn() {
 	global $mantra_options;
-	echo "<input id='mantra_tweeter' name='ma_options[mantra_tweeter]' size='40' type='text'  value='".esc_attr( $mantra_options['mantra_tweeter'] )."'  />";
-	echo "<div><small>".__("Insert your Twitter address.","mantra")."</small></div> ";
+	$items = array ("Facebook" , "Twitter","RSS", "LinkedIn","Digg", "StumbleUpon","Delicious", "Reddit","Flickr", "Google","Yahoo" );
+	echo "<select id='mantra_social3' name='ma_options[mantra_social3]'>";
+foreach($items as $item) {
+	echo "<option value='$item'";
+	selected($mantra_options['mantra_social3'],$item);
+	echo ">$item</option>";
+}
+	echo "</select><span class='address_span'> -> </span>";
+	echo "<input id='mantra_tweeter' name='ma_options[mantra_social4]' size='32' type='text'  value='".esc_attr( $mantra_options['mantra_social4'] )."'  />";
+	echo "<div><small>".__("You can insert up to 4 different social sites and addresses.","mantra")."</small></div> ";
 }
 
-// TEXTBOX - Name: ma_options[rss]
-function setting_rss_fn() {
+// TEXTBOX - Name: ma_options[social3]
+function setting_socials3_fn() {
 	global $mantra_options;
-	echo "<input id='mantra_rss' name='ma_options[mantra_rss]' size='40' type='text'  value='".esc_attr( $mantra_options['mantra_rss'] )."'  />";
-	echo "<div><small>".__("Insert your RSS Feed Link. ","mantra")."</small></div>";
+	$items = array ("Facebook" , "Twitter","RSS", "LinkedIn","Digg", "StumbleUpon","Delicious", "Reddit","Flickr", "Google","Yahoo" );
+	echo "<select id='mantra_social5' name='ma_options[mantra_social5]'>";
+	foreach($items as $item) {
+	echo "<option value='$item'";
+	selected($mantra_options['mantra_social5'],$item);
+	echo ">$item</option>";
+}
+	echo "</select><span class='address_span'> -> </span>";
+	echo "<input id='mantra_rss' name='ma_options[mantra_social6]' size='32' type='text'  value='".esc_attr( $mantra_options['mantra_social6'] )."'  />";
+	echo "<div><small>".__("There are a total of 11 social networks to choose from. ","mantra")."</small></div>";
+}
+
+// TEXTBOX - Name: ma_options[social4]
+function setting_socials4_fn() {
+	global $mantra_options;
+	$items = array ("Facebook" , "Twitter","RSS", "LinkedIn","Digg", "StumbleUpon","Delicious", "Reddit","Flickr", "Google","Yahoo" );
+	echo "<select id='mantra_social7' name='ma_options[mantra_social7]'>";
+	foreach($items as $item) {
+	echo "<option value='$item'";
+	selected($mantra_options['mantra_social7'],$item);
+	echo ">$item</option>";
+}
+	echo "</select><span class='address_span'> -> </span>";
+	echo "<input id='mantra_rss' name='ma_options[mantra_social8]' size='32' type='text'  value='".esc_attr( $mantra_options['mantra_social8'] )."'  />";
+	echo "<div><small>".__("You can leave any number of inputs empty. They just won't appear in the frontend.  ","mantra")."</small></div>";
+}
+
+
+
+////////////////////////
+/// MISC SETTINGS ////
+////////////////////////
+
+// TEXTBOX - Name: ma_options[customcss]
+function setting_customcss_fn() {
+	global $mantra_options;
+	echo "<textarea id='mantra_customcss' name='ma_options[mantra_customcss]' rows='8' cols='70' type='textarea' >{$mantra_options['mantra_customcss']}  </textarea>";
+	echo "<div><small>".__("Insert your custom CSS here. Any CSS declarations made here will overwrite Mantra's (even the custom options specified right here in the Mantra Settings page). <br /> Your custom CSS will be preserved when updating the theme.","mantra")."</small></div>";
 }
 
 
@@ -1169,7 +1241,7 @@ if ($options) $mantra_options = $options;
 
 	</form>
 
-	<span id="version"> Mantra v. 1.6.7 - by <a href="http://www.cryoutcreations.eu">Cryout Creations</a></span>
+	<span id="version"> Mantra v. 1.7.0 - by <a href="http://www.cryoutcreations.eu">Cryout Creations</a></span>
 </div>
 
 <div class="righty" >
@@ -1182,7 +1254,7 @@ if ($options) $mantra_options = $options;
 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
-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-----END PKCS7-----"><input type="image" src="<?php echo get_template_directory_uri() . '/images/coffee.png' ?>" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"><img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"></form>		</div>
+uGoJV/7kErByS98U5Gze/kUo5OvpezDjckdR0TJfoNFDKiAit+Qf9+ToViM/CmY2cONArejftWlnEKikB7UxCFuA3uPj8lXq5KXvukDTdrDJicqh+vZvjDr2ipMsrEl+BgRsUsYamXRosq6U/bT/zcmXcdgdbg44pJQ==-----END PKCS7-----"><input type="image" src="<?php echo get_template_directory_uri() . '/admin/images/coffee.png' ?>" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"><img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"></form>		</div>
 
 	</div>
 </div>
@@ -1193,16 +1265,16 @@ uGoJV/7kErByS98U5Gze/kUo5OvpezDjckdR0TJfoNFDKiAit+Qf9+ToViM/CmY2cONArejftWlnEKik
 <div class="inside">
 	<?php _e("
 <ul>
-<li>- Need help?</li>
-<li>- New to the Mantra Theme?</li>
-<li>- Something doesn't work as expected?</li>
+<li>- Need any Mantra or WordPress help?</li>
+<li>- Want to know what changes are made to the theme with each new version?</li>
+<li>- Found a bug or maybe something doesn't work exactly as expected?</li>
 <li>- Got an idea on how to improve the Mantra Theme to better suit your needs?</li>
 <li>- Want a setting implemented?</li>
-<li>- Want to modify something yourself?</li>
+<li>- Do you have or would you like to make a translation of the Mantra Theme?</li>
 </ul>
-<p>Then pay us a visit at Mantra's support page.</p>
+<p>Then come visit us at Mantra's support page.</p>
 ","mantra"); ?>
-	<a style="display:block;float:none;margin:0 auto;text-align:center;padding-bottom:10px;" href='http://www.riotreactions.com/mantra'>Mantra Help Page</a>
+	<a style="display:block;float:none;margin:0 auto;text-align:center;padding-bottom:10px;" href='http://www.riotreactions.com/mantra'>Mantra Support Page</a>
 </div>
 </div>
 
@@ -1261,8 +1333,9 @@ startfarb("#mantra_footerhover","#mantra_footerhover2");
 	});
 
 function changeBorder (idName, className) {
-jQuery('.'+className).css('borderColor','#FFF');
-jQuery('#'+idName).css('border-color','#666');
+jQuery('.'+className).removeClass( 'checkedClass' );
+jQuery('.'+className).removeClass( 'borderful' );
+jQuery('#'+idName).addClass( 'borderful' );
 
 return 0;
 }
@@ -1309,21 +1382,16 @@ global $mantra_defaults;
 	$input['mantra_fwidth'] =  intval(wp_kses_data($input['mantra_fwidth']));
 	$input['mantra_fheight'] =  intval(wp_kses_data($input['mantra_fheight']));
 
-	$input['mantra_facebook'] =  wp_kses_data($input['mantra_facebook']);
-	$input['mantra_tweeter'] =  wp_kses_data($input['mantra_tweeter']);
-	$input['mantra_rss'] =  wp_kses_data($input['mantra_rss']);
+	$input['mantra_social2'] =  wp_kses_data($input['mantra_social2']);
+	$input['mantra_social4'] =  wp_kses_data($input['mantra_social4']);
+	$input['mantra_social6'] =  wp_kses_data($input['mantra_social6']);
+	$input['mantra_social8'] =  wp_kses_data($input['mantra_social8']);
+
+	$input['mantra_customcss'] =  wp_kses_post($input['mantra_customcss']);
 
 	 $resetDefault = ( ! empty( $input['mantra_defaults']) ? true : false );
 
 	if ($resetDefault) {$input=$mantra_defaults;}
-
-
-$itemsSide = array("Left", "Right", "Disable");
-if ( !in_array ($input['mantra_side'],$itemsSide) ) {
- $input['mantra_side']= $mantra_defaults['mantra_side'];
-}
-
-
 
 
 	return $input; // return validated input

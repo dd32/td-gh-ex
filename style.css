@@ -1,13 +1,13 @@
 /*
 Theme Name: Mantra
 Theme URI: http://www.riotreactions.com/mantra
-Description: Mantra is a general purpose WordPress theme, featuring a whole pack of over 60 options and easy to use tweaks, capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (columns position), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 20 font-families to choose from),text and header sizes, post metas, post excerpts, header and background images, menus, social media links and icons, pins, bullets and more. With 7 widget areas, subtle animations, modern graphics and an easy and responsive admin section, you can start creating your dream site right now.
+Description: Mantra is a general purpose WordPress theme, featuring a whole pack of over 60 options and easy to use tweaks, capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (columns position), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 20 font-families to choose from), text and header sizes, post metas, post excerpts, post formats, header and background images, menus, social media links and icons, pins, bullets and more. With 7 widget areas, subtle animations, modern graphics and an easy and responsive admin section, you can start creating your dream site right now.
 Author: Cryout Creations
 Author URI: http://www.cryoutcreations.com
-Version: 1.6.7
+Version: 1.7.0
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: black, red, blue, white, light, two-columns, right-sidebar, left-sidebar, theme-options, dark, flexible-width, custom-header, custom-menu, threaded-comments, sticky-post, translation-ready, microformats, custom-colors, fixed-width, one-column, silver, rtl-language-support
+Tags: black, red, blue, white, silver, light, dark, one-column, two-columns, three-columns, right-sidebar, left-sidebar, flexible-width, fixed-width, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, front-page-post-form, full-width-template,  microformats, post-formats, rtl-language-support,  sticky-post, theme-options, threaded-comments, translation-ready
 */
 
 
@@ -86,7 +86,7 @@ a img {
 LAYOUT: Two columns
 DESCRIPTION: Two-column fixed layout with one sidebar right of content
 */
-
+/*
 #container {
 	float: left;
 	margin: 0 -310px 0 0;
@@ -117,6 +117,44 @@ min-height:200px;
 	clear: both;
 	width: 100%;
 }
+*/
+
+
+#container {
+	float: none;
+	margin:0;
+	width: 100%;
+}
+#content {
+	display:block;
+	float:left;
+	margin: 0 0px 0 20px;
+	width:790px;
+}
+#primary,
+#secondary {
+	display:block;
+	float: right;
+	overflow: hidden;
+	width:125px;
+	border-left:1px dashed #EAEAEA;
+	padding-left:12px;
+	margin-top:10px;
+
+}
+#primary {
+min-height:200px;
+}
+
+#secondary {
+	/*clear: right;*/
+}
+#footer {
+	clear: both;
+	width: 100%;
+}
+
+
 
 /*
 LAYOUT: One column, no sidebar
@@ -203,7 +241,6 @@ float:none;
 clear:both;
 height:60px;
 padding-top:0;
-margin-top:20px;
 padding-top:10px;
 padding-bottom:0px;
 }
@@ -213,7 +250,8 @@ padding-bottom:0px;
 
 
 #wrapper {
-	padding: 0 20px;
+	padding: 20px 20px 0;
+	
 }
 
 /* Structure the footer area */
@@ -483,15 +521,15 @@ div.menu li {
 }
 
  #access   li.current_page_item {
-background:url(images/mantra_menu_current.png) top left no-repeat !important;
+background:url(images/mantra_menu_current.png) top left no-repeat;
 }
 
  #access  li.current-menu-item {
-background:url(images/mantra_menu_current.png) top left no-repeat !important;
+background:url(images/mantra_menu_current.png) top left no-repeat;
 }
 
 #access a {
-	color: #5F5B5B !important;
+	color: #5F5B5B;
 	display: block;
 	height: 27px;
 	margin-left:10px;
@@ -503,12 +541,11 @@ background:url(images/mantra_menu_current.png) top left no-repeat !important;
 	background:url(images/mantra_menu.png) top right no-repeat;
 	position:relative;
 	right:-10px;
-	/*text-shadow: 1px 1px 1px #EEE !important;*/
 }
 
 #access .menu-header li:hover,
 div.menu li:hover, #access a:hover {
-color:#0C85CD !important;
+color:#0C85CD ;
 }
 
 #access ul ul {
@@ -527,7 +564,8 @@ color:#0C85CD !important;
 	background:#FFF !important;
 /*	border-left:1px solid #CCC;
 	border-right:1px solid #CCC;*/
-	margin-left:0 !important;margin-right:0px !important;
+	margin-left:0 !important;
+	margin-right:0px !important;
 	/*padding-left:10px;
 	padding-right:10px;*/ /* disabled for submenu width fix */
 	padding-top:6px;
@@ -653,9 +691,12 @@ color:#0C85CD !important;
 #content var {
 	font-size: 15px;
 	line-height: 21px;
+	overflow:auto;
+	font-family: "Courier New",Courier,monospace !important;
 }
 #content code {
 	font-size: 13px;
+	font-family: "Courier New",Courier,monospace !important;
 }
 #content dt,
 #content th {
@@ -1144,11 +1185,11 @@ margin-right:10px;
 }
 #content .wp-caption img {
 	margin: 5px 5px 0;
-	border:none;
+	border:none !important;
 	padding:0px;
-    box-shadow: none ;
-	-moz-box-shadow: none;
-    -webkit-box-shadow: none ;
+    box-shadow: none !important;
+	-moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
 
 }
 #content .wp-caption p.wp-caption-text {
@@ -1159,11 +1200,11 @@ margin-right:10px;
 }
 #content .wp-smiley {
 	margin: 0;
-     -moz-box-shadow: none;
-	-webkit-box-shadow: none ;
-	 box-shadow: none ;
-     background: none;
-     border: 0;
+     -moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important ;
+	 box-shadow: none !important;
+     background: none !important;
+     border: 0 !important;
      vertical-align: middle;
 }
 #content .gallery {
@@ -1738,7 +1779,7 @@ margin-left:0;
 }
 
 #wp-calendar tbody td:hover {
-	background: #D9EFFD;
+	background: #EEE;
 	opacity:0.8;
 }
 
@@ -2049,22 +2090,22 @@ float:right;
 float:right;
 position:relative;
 margin-right:10px;
-height:30px;
+padding-left:10px;
+height:auto;
+min-height:20px;
+overflow: hidden;
+top:-5px;
 }
 
 #socials a {
-background:url(images/mantra_socials.png) left -40px no-repeat;
 display:block;
 float:right;
-width:63px;
+width:50px;
 margin-right:5px;
-height:45px;
+height:50px;
+position:relative;
 }
 
-#socials a span {display:none;}
-
-#socials a#stweet {background-position:center  -40px; }
-#socials a#srss {background-position:right  -40px; }
 
 /* BACK TO TOP BUTTON */
 
@@ -2151,6 +2192,12 @@ border:8px solid #BBB !important;
 	-moz-box-shadow:2px 2px 2px #CCC;
 	-webkit-box-shadow:2px 2px 2px #CCC;
 	box-shadow:inset 0px 0px 7px #CCC;
+}
+
+.edit-link a {
+background:#EEE;
+border-bottom:1px solid #DDD;
+padding:0px 10px;
 }
 
 
