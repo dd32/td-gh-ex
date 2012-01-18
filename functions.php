@@ -2,7 +2,7 @@
 
 //Azure Basic functions and definitions
 
-// Version 1.0
+// Version 1.0.1
 
 // Set the content width based on the theme's design and stylesheet.
 
@@ -91,7 +91,7 @@ endif; // azurebasic_setup
 	
 
 // Sets the post excerpt length to 40 words.
-// To override this length in a child theme, remove the filter and add your own function tied to the excerpt_length filter hook.
+
 
 function azurebasic_excerpt_length( $length ) {
 

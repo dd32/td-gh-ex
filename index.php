@@ -9,10 +9,6 @@
 			<?php if ( have_posts() ) : ?>
 
 
-
-				<?php azurebasic_content_nav( 'nav-above' ); ?>
-
-
 				<?php /* Start the Loop */ ?>
 
 				<?php while ( have_posts() ) : the_post(); ?>
@@ -47,7 +43,7 @@
 
 					<div class="entry-content">
 
-						<p><?php _e( 'Sorry, but the what you are looking for is not here. Please try using the search form below to find what you are looking for', 'azurebasic' ); ?></p>
+						<p><?php _e( 'Sorry, but the what you are looking for is not here. Please try using the search form below to find what you are looking for.', 'azurebasic' ); ?></p>
 
 						<?php get_search_form(); ?>
 

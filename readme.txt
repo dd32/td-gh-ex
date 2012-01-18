@@ -1,5 +1,5 @@
 
-                                                 || AZURE BASIC 1.0 -- A Basic WordPress Theme ||
+                                                 || AZURE BASIC 1.0.1 -- A Basic WordPress Theme ||
 												 
 || About ||
 
@@ -36,4 +36,9 @@ If you have an questions, or need support, please contact me at contact@silvergl
 
 silverglass.net
   -- home page for this design
+  
+ 
+|| Changelog ||
+
+v1.0.1 - Fix of search.php page.
    

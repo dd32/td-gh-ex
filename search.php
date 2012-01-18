@@ -24,7 +24,7 @@ get_header(); ?>
 
 
 
-				<?php twentyeleven_content_nav( 'nav-above' ); ?>
+				<?php azurebasic_content_nav( 'nav-above' ); ?>
 
 
 
@@ -49,7 +49,7 @@ get_header(); ?>
 
 
 
-				<?php twentyeleven_content_nav( 'nav-below' ); ?>
+				<?php azurebasic_content_nav( 'nav-below' ); ?>
 
 
 
