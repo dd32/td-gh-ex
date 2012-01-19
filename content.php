@@ -1,8 +1,10 @@
 <?php //The default template for displaying content ?>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    
+       <?php if ( has_post_thumbnail() ) { /* loades the post's featured thumbnail, requires Wordpress 3.0+ */ echo '<div class="featured-thumb">'; the_post_thumbnail(); echo '</div>'; } ?>
 
-		<header class="entry-header">
+		<header class="blog-entry-header">
 
 			<?php if ( is_sticky() ) : ?>
 
@@ -16,7 +18,7 @@
 
 			<?php else : ?>
 
-			<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'azurebasic' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+			<h1 class="blog-entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'azurebasic' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
 			<?php endif; ?>
 
@@ -133,3 +135,4 @@
 
 	</article><!-- #post-<?php the_ID(); ?> -->
 
+<div class="clear"></div><!-- .clear all the floats -->

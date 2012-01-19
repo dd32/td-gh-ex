@@ -1,35 +1,63 @@
-<div id="sidebar" class="clearfix">
+<?php
 
-	<?php if ( ! dynamic_sidebar( 'Sidebar' )) : ?>
+//The Sidebar containing the main widget area.
 
-		<li id="sidebar-search" class="widget">
-			<h3>Search</h3>
+
+?>
+
+<div id="sidebar" class="widget-area clearfix" role="complementary">
+
+
+        <aside id="sidebar-search" class="widget">
+        
 			<?php get_search_form(); /* outputs the default Wordpress search form */ ?>
-		</li>
-		
-		<li id="sidebar-nav" class="widget menu">
-			<h3>Navigation</h3>
-			<ul>
-				<?php wp_nav_menu( array( 'theme_location' => 'sidebar-menu' ) ); /* editable within the Wordpress backend */ ?>
-			</ul>
-		</li>
-		
-		<li id="sidebar-archives" class="widget">
-			<h3>Archives</h3>
-			<ul>
-				<?php wp_get_archives( 'type=monthly' ); ?>
-			</ul>
-		</li>
+            
+		</aside>
+        
+        
+        
+       <?php if ( ! dynamic_sidebar( 'Sidebar' )) : ?><!-- Wigitized Sidebar --><?php endif; // end sidebar widget area ?>
+        
+        
 
-		<li id="sidebar-meta" class="widget">
-			<h3>Meta</h3>
-			<ul>
-				<?php wp_register(); ?>
-				<li><?php wp_loginout(); ?></li>
-				<?php wp_meta(); ?>
-			</ul>
-		</li>
+		<aside id="sidebar-archives" class="widget">
+        
+              <ul>
 
-	<?php endif; ?>
-    
-</div><!--sidebar-->
+					<h4 class="widget-title-archives"><?php _e( 'Archives', 'azurebasic' ); ?></h4>
+
+					<ul>
+
+						<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
+
+					</ul>
+              
+               </ul>
+
+		 </aside>
+
+
+
+		 <aside id="sidebar-meta" class="widget">
+         
+                <ul>
+
+				    <h4 class="widget-title-meta"><?php _e( 'Meta', 'azurebasic' ); ?></h4>
+
+					<ul>
+
+						<li><?php wp_register(); ?></li>
+
+						<li><?php wp_loginout(); ?></li>
+
+						<li><?php wp_meta(); ?></li>
+
+					</ul>
+                    
+                 </ul>
+
+		   </aside>
+			
+
+		</div><!-- #sidebar .widget-area -->
+

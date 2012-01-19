@@ -6,7 +6,7 @@ Author URI: http://cabrown.net/
 Description: A lightweight, two-column layout blog theme, with 6 widget areas and customizable header image. Valid HTML5 and CSS3 that can be modified. Compatiable with Wordpress 3.2 and above. Compatable IE7+, Opera 10+, Safari 5+, FireFox 3.5+.   
 Tags: blue, white, two-columns, custom-menu, custom-background, custom-header, right-sidebar
 
-Version: 1.0.1
+Version: 2.0
 
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -25,7 +25,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /*    BlurePrint Reset and Framework        */
 /*------------------------------------------*/
 @import url('css/screen.css');
-
 
 
 /*        Global Syles                 */
@@ -155,6 +154,64 @@ blockquote.right {
 
 .entry-header { margin: 0 0 25px 0; }
 
+article { padding: 0 0 30px 0; }
+
+
+
+
+/*    Primary Menu (Dropdown) Styles       */
+/*----------------------------------------*/
+
+#access { padding: 15px 0; }
+
+nav[role="navigation"] .menu { position: relative; }
+
+nav[role="navigation"] .menu ul { margin: 0 0 0 0;
+                                  padding: 0 0 0 0; 
+								  display: block; }
+
+nav[role="navigation"] .menu ul li { height: 2em; clear: both; display: inline-block; }
+nav[role="navigation"] .menu ul li a { padding: 4px 8px; }
+
+nav[role="navigation"] .menu ul li ul  { display: none; } 
+nav[role="navigation"] .menu ul li:hover ul  { display: block; } 
+nav[role="navigation"] .menu ul li ul  { position: absolute;
+                                         z-index: 1000; 
+                                         padding: 10px 0 0 0; }
+
+nav[role="navigation"] .menu ul li ul li { display: block;
+                                           position: relative; }
+
+nav[role="navigation"] .menu ul li ul li ul  { display: none !important; }
+nav[role="navigation"] .menu ul li ul li:hover ul  { display: inline-block !important; 
+                                                     position: relative !important; }
+nav[role="navigation"] .menu ul li ul li ul { padding: 0 0 0 0 !important; 
+                                              z-index: 1100 !important;}
+
+nav[role="navigation"] .menu ul li ul li ul li { display: block !important;
+                                                 position: relative; } 
+												 
+
+/*    Static Sidebar Widget Styles       */
+/*---------------------------------------*/											 
+
+#sidebar-search { padding: 0 0 25px 0 ; }
+
+
+
+/*    Navigation       */
+/*--------------------*/
+
+
+.nav-next { float: left; }
+.nav-previous { float: right; }
+
+
+
+/*    Theme Credit Text      */
+/*--------------------------*/
+
+#theme-credit { text-align: center; }
 
 
 /*             Azure Basic Styles             */
@@ -168,24 +225,14 @@ blockquote.right {
 
 /* Top Navigation */
 
-nav[role="navigation"] { background: none repeat scroll 0 0 #6da0d3; 
-                         min-height: 37px; 
-						 margin-bottom: 20px; }
-
-nav[role="navigation"] .menu { padding: 7px 0 0 1.5em; 
-                               font-size: 10pt; }
-
-nav[role="navigation"] .menu ul { margin: 0 0 0 0; }
-
-nav[role="navigation"] .menu ul li { display: inline; 
-                                     padding-right: 30px; }
-
+nav[role="navigation"] { background: none repeat scroll 0 0 #6da0d3; }
+		  
 nav[role="navigation"] .menu a { color: #fff; 
                                  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1); }
 
 nav[role="navigation"] .menu a:hover { color: #01152a; }
 
-
+nav[role="navigation"] .menu ul li:hover ul  { background: none repeat scroll 0 0 #6da0d3; }
 
 /* Header Title Section */
 
@@ -196,6 +243,7 @@ nav[role="navigation"] .menu a:hover { color: #01152a; }
               width: 350px;
 		      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 		      padding-left: 1.5em;
+			  padding-top: 10px;
               z-index: 25; }
 
 #site-title { text-transform: uppercase;
@@ -260,6 +308,8 @@ article { margin-bottom: 25px;
 
 #sidebar-widget-title { color: #545350; }
 
+.screen-reader-text[for="s"] { display: none; }
+
 
 
 /* Single Page and Comments */
@@ -276,6 +326,7 @@ article { margin-bottom: 25px;
 
 .comment-author img { padding-right: 10px; }
 
+#nav-below { padding-left: 25px; }
 
 
 /* Footer Section */
@@ -304,5 +355,4 @@ article { margin-bottom: 25px;
 #site-credits { border-top: 1px solid #eaf8ff; 
                 padding: 15px 0 0 0; }
 
-#theme-credit { padding: 0 0 5px 0; 
-                text-align: center; }
+#theme-credit { padding: 0 0 5px 0; }

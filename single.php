@@ -12,20 +12,7 @@ get_header(); ?>
 			<div id="content" role="main">
 
 
-
 				<?php while ( have_posts() ) : the_post(); ?>
-
-
-
-					<nav id="nav-single">
-
-						<h4 class="assistive-text"><?php _e( 'Post Navigation', 'azurebasic' ); ?></h4>
-
-						<span class="nav-previous"><?php previous_post_link( '%link', __( '<span class="meta-nav">&larr;</span> Previous', 'azurebasic' ) ); ?></span>
-
-						<span class="nav-next"><?php next_post_link( '%link', __( 'Next <span class="meta-nav">&rarr;</span>', 'azurebasic' ) ); ?></span>
-
-					</nav><!-- #nav-single -->
 
 
 
@@ -34,6 +21,17 @@ get_header(); ?>
 
 
 					<?php comments_template( '', true ); ?>
+                    
+                    
+                    <nav id="nav-single">
+
+						<h4 class="assistive-text"><?php _e( 'Post Navigation', 'azurebasic' ); ?></h4>
+                        
+                        <span class="nav-next"><?php next_post_link( '%link', __( '<span class="meta-nav">&larr;</span> Next', 'azurebasic' ) ); ?></span>
+
+						<span class="nav-previous"><?php previous_post_link( '%link', __( 'Previous <span class="meta-nav">&rarr;</span>', 'azurebasic' ) ); ?></span>
+
+					</nav><!-- #nav-single -->
 
 
 
@@ -47,5 +45,4 @@ get_header(); ?>
 
 
 <?php get_sidebar(); ?>
-
 <?php get_footer(); ?>

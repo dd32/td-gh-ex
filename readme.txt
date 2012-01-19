@@ -1,5 +1,5 @@
 
-                                                 || AZURE BASIC 1.0.1 -- A Basic WordPress Theme ||
+                                                 || AZURE BASIC 2.0 -- A Basic WordPress Theme ||
 												 
 || About ||
 
@@ -40,5 +40,12 @@ silverglass.net
  
 || Changelog ||
 
-v1.0.1 - Fix of search.php page.
+v2.0 - Addded content-page.php
+     - changed structure of sidebar.php
+	 - fixed dropdowns in navigation menu
+	 - changed/updated php framework
+	 - updated css framework
+	 - added in missing thumbnail codes
+
+v1.0.1 - Fix the search.php page.
    

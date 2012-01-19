@@ -7,6 +7,7 @@
 
 
 			<?php if ( have_posts() ) : ?>
+            
 
 
 				<?php /* Start the Loop */ ?>
@@ -43,7 +44,7 @@
 
 					<div class="entry-content">
 
-						<p><?php _e( 'Sorry, but the what you are looking for is not here. Please try using the search form below to find what you are looking for.', 'azurebasic' ); ?></p>
+						<p><?php _e( 'Sorry, but no results were found. Maybe searching will help find a related post.', 'azurebasic' ); ?></p>
 
 						<?php get_search_form(); ?>
 

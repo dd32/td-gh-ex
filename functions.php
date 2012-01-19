@@ -2,7 +2,7 @@
 
 //Azure Basic functions and definitions
 
-// Version 1.0.1
+// Version 2.0
 
 // Set the content width based on the theme's design and stylesheet.
 
@@ -57,7 +57,7 @@ function azurebasic_setup() {
 	add_custom_background();
 	
 	
-	// This theme styles the visual editor with editor-style.css to match the theme style.
+	// This theme styles the visual editor with an editor-style.css file to match the theme style.
 	add_editor_style();
 
 
@@ -72,8 +72,8 @@ endif; // azurebasic_setup
 
 
     // custom header image support
-    define('NO_HEADER_TEXT', true );
 	define('HEADER_TEXTCOLOR', '');
+    define('NO_HEADER_TEXT', true );
 	define('HEADER_IMAGE', '%s/images/Pixar-Brave-990x300.jpg'); // %s is the template dir uri
 	define('HEADER_IMAGE_WIDTH', 986); // use width and height appropriate for your theme
 	define('HEADER_IMAGE_HEIGHT', 300);
@@ -89,8 +89,7 @@ endif; // azurebasic_setup
 	add_custom_image_header( '', 'admin_header_style' );
 	
 	
-
-// Sets the post excerpt length to 40 words.
+//Sets the post excerpt length to 40 words.
 
 
 function azurebasic_excerpt_length( $length ) {
@@ -103,6 +102,7 @@ add_filter( 'excerpt_length', 'azurebasic_excerpt_length' );
 
 
 
+
 //Returns a "Read More" link for excerpts
 function azurebasic_continue_reading_link() {
 
@@ -111,7 +111,9 @@ function azurebasic_continue_reading_link() {
 }
 
 
-// Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and azurebasic_continue_reading_link().
+
+
+//Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and azurebasic_continue_reading_link().
 
 
 function azurebasic_auto_excerpt_more( $more ) {
@@ -124,7 +126,10 @@ add_filter( 'excerpt_more', 'azurebasic_auto_excerpt_more' );
 
 
 
-// Adds a "Read More" link to custom post excerpts.
+
+
+//Adds a nice "Read More" link to custom post excerpts.
+
 
 function azurebasic_custom_excerpt_more( $output ) {
 
@@ -141,7 +146,6 @@ function azurebasic_custom_excerpt_more( $output ) {
 add_filter( 'get_the_excerpt', 'azurebasic_custom_excerpt_more' );
 
 
-
 //Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
 
 function azurebasic_page_menu_args( $args ) {
@@ -156,7 +160,8 @@ add_filter( 'wp_page_menu_args', 'azurebasic_page_menu_args' );
 
 
 
-//Register sidebars and widgetized areas. 
+
+//Register our sidebars and widgetized areas. 
 
 function azurebasic_widgets_init() {
 	
@@ -234,12 +239,12 @@ function azurebasic_content_nav( $nav_id ) {
 		<nav id="<?php echo $nav_id; ?>">
 
 			<h4 class="assistive-text"><?php _e( 'Post Navigation', 'azurebasic' ); ?></h4>
+            
+            <div class="nav-next"><?php previous_posts_link( __( '<span class="meta-nav">&larr;</span> Newer posts', 'azurebasic' ) ); ?></div>
 
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'azurebasic' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( __( 'Older posts <span class="meta-nav">&rarr;</span>', 'azurebasic' ) ); ?></div>
 
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'azurebasic' ) ); ?></div>
-
-		</nav><!-- #nav-above -->
+		</nav><!-- #nav-below -->
 
 	<?php endif;
 
@@ -283,7 +288,7 @@ function azurebasic_comment( $comment, $args, $depth ) {
 
 	<li class="post pingback">
 
-		<p><?php _e( 'Pingback:', 'azurebasic' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'azurebasic' ), '<span class="edit-link">', '</span>' ); ?></p>
+		<p><?php _e( 'Pingback:', 'azurebasic' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'sgframeowrk' ), '<span class="edit-link">', '</span>' ); ?></p>
 
 	<?php
 

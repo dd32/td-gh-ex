@@ -23,11 +23,6 @@ get_header(); ?>
 				</header>
 
 
-
-				<?php azurebasic_content_nav( 'nav-above' ); ?>
-
-
-
 				<?php /* Start the Loop */ ?>
 
 				<?php while ( have_posts() ) : the_post(); ?>
@@ -37,7 +32,7 @@ get_header(); ?>
 					<?php
 
 						// Include the Post-Format-specific template for the content.
-						
+
 
 						get_template_part( 'content', get_post_format() );
 
