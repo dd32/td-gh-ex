@@ -4,6 +4,10 @@ Awesome Google Web Font: Vidaloka by Cyreal - https://profiles.google.com/alexei
 
 Version history:
 
+v1.4.4 - Fixed CSS display of custom menu widget.
+
+v1.4.3 - Changed hook for enqueing stylesheets from wp_print_styles to wp_enqueue_scripts as suggested by WP devs.
+
 v1.4.2 - Changed Theme URI. Code updates as required by theme review process.
 
 v1.4.1 - Changed support contact in readme.txt. Added quick preview to administration area.

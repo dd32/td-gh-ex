@@ -5,7 +5,7 @@
 
 require_once ( get_template_directory() . '/theme-options.php' );
 
-add_action( 'wp_print_styles', 'bbl_print_styles' );
+add_action( 'wp_enqueue_scripts', 'bbl_print_styles' );
 
 function bbl_print_styles() {
 	if ( ! is_admin() ) {

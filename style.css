@@ -2,7 +2,7 @@
 Theme Name: Babylog
 Theme URI: http://babylog-demo.calobeedoodles.com/
 Description: A sweet, illustrated theme for baby blogs featuring four color palettes and a customizable header graphic.
-Version: 1.4.2
+Version: 1.4.4
 Author: Caroline Moore
 Author URI: http://www.carolinemoore.net
 License: CC0 1.0 Universal
@@ -288,14 +288,14 @@ ul.sidebar {
 	border-radius: 8px;
 	display: inline-block;
 }
-ul.menu,
-ul.menu li,
-ul.menu ul {
+.tabmenu ul.menu,
+.tabmenu ul.menu li,
+.tabmenu ul.menu ul {
  	list-style: none;
  	margin: 0px;
  	padding: 0px;
 }
-ul.menu {
+.tabmenu ul.menu {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -304,7 +304,7 @@ ul.menu {
  	position: relative;
  	z-index: 597;
 }
-ul.menu li {
+.tabmenu ul.menu li {
 	float: left;
  	line-height: 1.3em;
  	vertical-align: middle;
@@ -316,7 +316,7 @@ ul.menu li {
 	padding: 8px;
 	border-radius: 8px;
 }
-ul.menu ul.sub-menu li {
+.tabmenu ul.menu ul.sub-menu li {
  	float: left;
  	line-height: 1.3em;
  	vertical-align: middle;
@@ -330,39 +330,39 @@ ul.menu ul.sub-menu li {
 	border-radius: 8px;
 	margin-bottom: 3px;
 }
-ul.menu ul.sub-menu {
+.tabmenu ul.menu ul.sub-menu {
 	margin-top: 3px;
 }
-ul.menu ul.sub-menu ul.sub-menu {
+.tabmenu ul.menu ul.sub-menu ul.sub-menu {
 	margin-top: 0px;
 }
-ul.menu ul.sub-menu ul.sub-menu li {
+.tabmenu ul.menu ul.sub-menu ul.sub-menu li {
 	margin-left: 3px;
 	margin-bottom: 3px;
 }
-ul.menu li a:link,
-ul.menu li a:visited,
-ul.menu ul.sub-menu li a:link,
-ul.menu ul.sub-menu li a:visited {
+.tabmenu ul.menu li a:link,
+.tabmenu ul.menu li a:visited,
+.tabmenu ul.menu ul.sub-menu li a:link,
+.tabmenu ul.menu ul.sub-menu li a:visited {
 	color: #fff;
 	font-weight: normal;
 }
-ul.menu li a:hover,
-ul.menu li a:active,
-ul.menu ul.sub-menu li a:hover,
-ul.menu ul.sub-menu li a:active {
+.tabmenu ul.menu li a:hover,
+.tabmenu ul.menu li a:active,
+.tabmenu ul.menu ul.sub-menu li a:hover,
+.tabmenu ul.menu ul.sub-menu li a:active {
 	color: #fff;
 	font-weight: normal;
 }
-ul.menu li.hover,
-ul.menu li:hover {
+.tabmenu ul.menu li.hover,
+.tabmenu ul.menu li:hover {
 	position: relative;
 	z-index: 599;
 	cursor: default;
 	color: #fff;
 	font-weight: normal;
 }
-ul.menu ul {
+.tabmenu ul.menu ul {
 	visibility: hidden;
 	position: absolute;
 	top: 100%;
@@ -370,14 +370,14 @@ ul.menu ul {
 	z-index: 598;
 	margin: 0px;
 }
-ul.menu ul li {
+.tabmenu ul.menu ul li {
 	float: none;
 }
-ul.menu ul ul {
+.tabmenu ul.menu ul ul {
 	top: 0px;
 	left: 100%;
 }
-ul.menu li:hover > ul {
+.tabmenu ul.menu li:hover > ul {
 	visibility: visible;
 }
 /* End Drop-down Menu */
