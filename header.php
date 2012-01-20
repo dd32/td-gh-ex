@@ -45,6 +45,11 @@
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
+<?php /* IE7 specific styles */ ?>
+<!--[if IE 7]>
+      <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/ie7.css" type="text/css" media="screen" />
+<![endif]-->
+
 <?php wp_enqueue_script("jquery"); /* Loads jQuery if it hasn't been loaded already */ ?>
 
 <?php /* The HTML5 Shim is required for older browsers, mainly older versions IE */ ?>

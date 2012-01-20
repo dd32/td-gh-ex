@@ -1,5 +1,5 @@
 
-                                                 || AZURE BASIC 2.0 -- A Basic WordPress Theme ||
+                                                 || AZURE BASIC 2.1 -- A Basic WordPress Theme ||
 												 
 || About ||
 
@@ -39,6 +39,10 @@ silverglass.net
   
  
 || Changelog ||
+
+v2.1 - added ie7.css to fix bugs in layout when viewed in IE7.
+       -- menu layout
+	   -- clearfix ie7 hack added
 
 v2.0 - Addded content-page.php
      - changed structure of sidebar.php

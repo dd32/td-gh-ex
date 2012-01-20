@@ -2,7 +2,7 @@
 
 //Azure Basic functions and definitions
 
-// Version 2.0
+// Version 2.1
 
 // Set the content width based on the theme's design and stylesheet.
 
