@@ -3,7 +3,7 @@ Contributors:  maikunari
 Donate link:  http://maikunari.com
 Tags: two-columns, light, featured-images, fixed-width, custom-menu
 Requires: 3.0
-Tested up to: 3.2.1
+Tested up to: 3.3.1
 
 Minimal theme focussed on simplicity, putting your writing front and center. 
 
@@ -68,6 +68,13 @@ Internet Explorer 7,8,9
 
 
 === Release Notes ===
+
+Version 1.1.5 :
+- New submit button & form styling.
+- Default styles for Contact Form 7 plugin: http://wordpress.org/extend/plugins/contact-form-7/ 
+- Added borders & css3 drop shadows on comment avatars.
+- Removed underline from links.
+
 
 Version 1.1.4 : 
 - Removed fixed sidebar & header, fixed some css that caused problems on smaller screen sizes.  

@@ -7,7 +7,7 @@ Description: Minimal theme focussed on simplicity, putting your writing front an
 License: GNU General Public License
 License URI: license.txt
 Tags: two-columns, light, featured-images, fixed-width, custom-menu
-Version: 1.1.4
+Version: 1.1.5
 */
 
 /* = CONTENTS
@@ -299,6 +299,7 @@ textarea {
 a:link,
 a:visited{
 	color: #9C0001;
+	text-decoration: none;
 }
 a:active,
 a:hover{
@@ -414,7 +415,6 @@ a:hover{
 #content h4,
 #content h5,
 #content h6 {
-	color: #9d9b91;
 	line-height: 1.5em;
 	margin: 0 0 20px 0;
 }
@@ -482,6 +482,7 @@ a:hover{
 	padding-bottom: 5px;
 	font-weight: 600;
 	color: #7b7a79;
+	text-shadow: 0 1px 0 #fff;
 }
 
 /* entry title links */
@@ -878,7 +879,7 @@ h3#comments-title {
 	margin: 0;
 }
 .commentlist li.comment {
-	border-bottom: 1px solid #e7e7e7;
+	border-bottom: 1px solid #a6a6a6;
 	line-height: 24px;
 	margin: 0 0 24px 0;
 	padding: 0 0 0 56px;
@@ -905,6 +906,9 @@ h3#comments-title {
 	position: absolute;
 	top: 4px;
 	left: 0;
+	border: 1px solid #a6a6a6;
+	box-shadow: 0px 3px 5px #444;
+	box-shadow: 0px 3px 5px rgba(0,0,0,0.3);
 }
 .comment-author {
 }
@@ -1075,6 +1079,7 @@ h3#reply-title {
 	color: #7B7A79;
 	font-size: 1.5em;
 	font-weight: bold;
+	margin-bottom: 10px;
 }
 .widget-area a:link,
 .widget-area a:visited {
@@ -1148,6 +1153,96 @@ h3#reply-title {
 #main ul.children {
 	margin: 0 0 0 10px !important;
 }
+
+/*  
+Contact Form 7 & Submit button styling 
+http://wordpress.org/extend/plugins/contact-form-7/ 
+*/
+
+
+.wpcf7 input[type="text"],
+.wpcf7 textarea,
+#respond input[type="text"],
+#respond textarea,
+#respond input[type="email"]{
+	text-align: center;
+	border-radius: 3px;
+	border: 1px solid #ccc;
+	color: #bbb !important;
+	font-style: italic;
+	font-size: 18px !important;
+	line-height: 24px;
+	background: #fff !important;
+}
+.wpcf7 input[type="text"]{
+	width: 60%;
+}
+
+
+#respond input[type="text"],
+#respond input[type="email"]{
+	width: 60%;
+	display: block;
+}
+.wpcf7 textarea{
+	width: 80%;
+	padding-top: 5px;
+}
+#respond textarea{
+	width: 80%;
+	padding-top: 5px;
+	display: block;
+}
+
+/* -- submit buttons -- */
+
+.wpcf7 input[type="submit"],
+#respond input[type="submit"]{
+	background: #7b7a79;
+	-webkit-transition: background 0.5s ease-in;
+	-moz-transition: background 0.5s ease-in;
+	-o-transition: background 0.5s ease-in;
+	transition: background 0.5s ease-in;
+	color: #fff !important;
+	border: none;
+	font-size: 18px;
+	padding: 5px 25px 3px 25px;
+	border-radius: 3px;
+	border-bottom: 1px solid #acc5cf;
+	border-top: 1px solid #F0F5F8;
+	border-top: 1px solid rgba(250,250,250,0.3);
+	box-shadow: 0px 0px 3px #8e8e8e;
+	box-shadow: 0px 0px 3px rgba(0,0,0,0.2);
+}
+
+.wpcf7 input[type="submit"]:hover,
+#respond input[type="submit"]:hover{
+	background: #9C0001;
+	-webkit-transition: background 0.25s ease-in;
+	-moz-transition: background 0.25s ease-in;
+	-o-transition: background 0.25s ease-in;
+	transition: background 0.25s ease-in;
+}
+
+/* -- CF7 Error Message Styles -- */
+.wpcf7-response-output, 
+.wpcf7-display-none,
+.wpcf7-validation-errors,
+.wpcf7-mail-sent-ng,
+.wpcf7-not-valid-tip{
+	background: #fff;
+	border-radius: 5px;
+	box-shadow: 0 3px 6px #000;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+	border-width: 1px !important;
+}
+.wpcf7-not-valid-tip{
+	left: 2% !important;
+	width: 98% !important;
+}
+
+
+
 
 
 /* =Footer

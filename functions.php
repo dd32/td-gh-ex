@@ -54,7 +54,6 @@ wp_register_style('OFL+Sorts+Mill+Goudy+TT', 'http://fonts.googleapis.com/css?fa
 wp_enqueue_style('OFL+Sorts+Mill+Goudy+TT'); // print the stylesheet into page
 }
 
-
 /*
 Various Post Thumbnail Sizes
 */
@@ -66,7 +65,6 @@ add_image_size( 'small', 150, 150, true ); // Small thumbnails
 /*
 Register widgetized areas, including two sidebars and four widget-ready columns in the footer.
 */
-
 function sutra_widgets_init() {
 	// Area 1, located at the top of the sidebar.
 	register_sidebar( array(
@@ -93,7 +91,6 @@ function sutra_category_id_class($classes) {
 			return $classes;
 	endif;
 }
-
 
 /*
 Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
@@ -146,8 +143,6 @@ function sutra_remove_gallery_css( $css ) {
 }
 add_filter( 'gallery_style', 'sutra_remove_gallery_css' );
 
-
-
 /*
 Template for comments and pingbacks.
 Used as a callback by wp_list_comments() for displaying the comments.
@@ -194,7 +189,6 @@ function sutra_comment( $comment, $args, $depth ) {
 	endswitch;
 }
 
-
 /*
 Removes the default styles that are packaged with the Recent Comments widget.
 */
@@ -203,7 +197,6 @@ function sutra_remove_recent_comments_style() {
 	remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
 }
 add_action( 'widgets_init', 'sutra_remove_recent_comments_style' );
-
 
 /*
 Prints HTML with meta information for the current post—date/time and author.
@@ -224,7 +217,6 @@ function sutra_posted_on() {
 	);
 }
 
-
 function sutra_posted_in() {
 	// Retrieves tag list of current post, separated by commas.
 	$tag_list = get_the_tag_list( '', ', ' );
@@ -244,6 +236,20 @@ function sutra_posted_in() {
 		the_title_attribute( 'echo=0' )
 	);
 }
+
+/*
+Styling body classes:
+- Adds classes to <body> for unique page styles. ie. Contact page gets body class 'page-contact'.
+*/
+function add_body_class( $classes )
+{
+    global $post;
+    if ( isset( $post ) ) {
+        $classes[] = $post->post_type . '-' . $post->post_name;
+    }
+    return $classes;
+}
+add_filter( 'body_class', 'add_body_class' );
 
 /*
 Pagination 
