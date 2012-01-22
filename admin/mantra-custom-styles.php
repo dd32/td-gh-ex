@@ -67,6 +67,7 @@ font-size:<?php echo $mantra_fontsize ?>;
 ?><?php if ($mantra_title == "Hide") { ?> #site-title, #site-description { visibility:hidden;} <?php }
 ?><?php if ($mantra_comtext == "Hide") { ?> #respond .form-allowed-tags { display:none;} <?php }
 ?><?php if ($mantra_comclosed == "Hide in posts") { ?> .nocomments { display:none;} <?php } elseif ($mantra_comclosed == "Hide in pages") { ?> .nocomments2 {display:none;} <?php } elseif ($mantra_comclosed == "Hide everywhere") { ?> .nocomments, .nocomments2 {display:none;} <?php }
+?><?php if ($mantra_comoff == "Hide") { ?> .comments-link span { display:none;} <?php }
 ?><?php if ($mantra_tables == "Enable") { ?> #content table {border:none;} #content tr {background:none;} #content table {border:none;} #content tr th,
 #content thead th {background:none;} #content tr td {border:none;}<?php }
 ?><?php if ($mantra_headfontsize != "Default") { ?> h2.entry-title { font-size:<?php echo $mantra_headfontsize; ?> ;}<?php }
@@ -100,7 +101,7 @@ font-size:<?php echo $mantra_fontsize ?>;
 ?><?php if ($mantra_postdate == "Hide") { ?> span.entry-date, span.onDate {display:none;} <?php }
 ?><?php if ($mantra_postauthor == "Hide") { ?> .author {display:none;} <?php }
 ?><?php if ($mantra_postcateg == "Hide") { ?> span.bl_categ {display:none;} <?php }
-?><?php if ($mantra_posttag == "Hide") { ?> span.bl_posted {display:none;} <?php }
+?><?php if ($mantra_posttag == "Hide") { ?> span.bl_posted, span.bl_tagg {display:none;} <?php }
 ?><?php if ($mantra_postbook == "Hide") { ?>  span.bl_bookmark {display:none;} <?php }
 ?><?php if ($mantra_parindent != "0px") { ?>  p {text-indent:<?php echo $mantra_parindent;?> ;} <?php }
 ?><?php if ($mantra_posttime == "Hide") { ?>  .entry-time {display:none;} <?php } ?>

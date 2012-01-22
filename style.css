@@ -4,7 +4,7 @@ Theme URI: http://www.riotreactions.com/mantra
 Description: Mantra is a general purpose WordPress theme, featuring a whole pack of over 60 options and easy to use tweaks, capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (columns position), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 20 font-families to choose from), text and header sizes, post metas, post excerpts, post formats, header and background images, menus, social media links and icons, pins, bullets and more. With 7 widget areas, subtle animations, modern graphics and an easy and responsive admin section, you can start creating your dream site right now.
 Author: Cryout Creations
 Author URI: http://www.cryoutcreations.com
-Version: 1.7.0
+Version: 1.7.1
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, red, blue, white, silver, light, dark, one-column, two-columns, three-columns, right-sidebar, left-sidebar, flexible-width, fixed-width, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, front-page-post-form, full-width-template,  microformats, post-formats, rtl-language-support,  sticky-post, theme-options, threaded-comments, translation-ready
@@ -1470,6 +1470,7 @@ input[type=submit] {
 #respond .comment-notes {
 	margin-bottom: 0.2em;
 	font-size:0.8em;
+color:#999;
 }
 .form-allowed-tags {
 	line-height: 1em;
@@ -1503,7 +1504,7 @@ h3#reply-title {
 
 #commentform  {
 width:90%;
-max-width:500px;
+max-width:550px;
 display:block;
 float:left;
 margin:0 auto;
@@ -1512,24 +1513,23 @@ margin:0 auto;
 #respond label {
 	color: #666;
 	font-size: 12px;
-		display:block;
-	float:left;
-	clear:both;
-	padding-top:3px;
-	width:10%;
+	
 }
+
+
+
 #respond input {
 	margin: 0 0 9px;
-	width:80%;
+
 	border-color:#EEE;
-	display:block;
-	float:right;
-	margin-left:12px;
+
 	border-width:1px;
 
 }
 
-#respond textarea {
+
+
+.comment-form-comment textarea {
 	width:80%;
 	border-color:#EEE;
 	display:block;
@@ -1538,8 +1538,24 @@ margin:0 auto;
 	height:150px;
 }
 
+.comment-form-author label, .comment-form-email label, .comment-form-email label, .comment-form-url label, .comment-form-comment label {
+display:block;
+	float:left;
+	clear:both;
+	padding-top:3px;
+	width:10%;
+}
+
+.comment-form-author input, .comment-form-email input, .comment-form-email input, .comment-form-url input, .comment-form-comment input {
+	width:80%;
+	display:block;
+	float:right;
+	margin-left:12px;
+}
+
+
 #respond input:hover, #respond textarea:hover {
-border-color:#DDD;
+border-color:#D7D7D7;
 }
 
 #respond .form-allowed-tags {
@@ -1557,6 +1573,7 @@ border-color:#DDD;
 }
 #respond .form-submit {
 	margin: 12px 0;
+	text-align:right;
 }
 #respond .form-submit input {
 	font-size: 14px;
@@ -2195,9 +2212,15 @@ border:8px solid #BBB !important;
 }
 
 .edit-link a {
-background:#EEE;
+background:#F3F3F3;
+border:1px solid #FFF;
 border-bottom:1px solid #DDD;
 padding:0px 10px;
+}
+
+.edit-link a:hover {
+border:1px solid #CCC;
+
 }
 
 

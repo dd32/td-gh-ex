@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-		<div id="container">
+		<section id="container">
 			<?php get_sidebar(); ?>
 			<div id="content" role="main">
 
@@ -65,6 +65,6 @@ get_header(); ?>
 <?php endwhile; // end of the loop. ?>
 
 			</div><!-- #content -->
-		</div><!-- #container -->
+		</section><!-- #container -->
 
 <?php get_footer(); ?>

@@ -3,13 +3,13 @@
 //  Hooks/Filters
 add_action('admin_init', 'mantra_init_fn' );
 add_action('admin_menu', 'mantra_add_page_fn');
-
 add_action('init', 'mantra_init');
-function mantra_init() {
 
+function mantra_init() {
 	wp_enqueue_script("farbtastic");
-	wp_register_script('accord',get_template_directory_uri() . '/js/accordion-slider.js', array('jquery','jquery-ui-core', 'jquery-ui-widget',) );
-	wp_enqueue_script('accord');	
+	wp_enqueue_style( 'farbtastic' );
+    wp_enqueue_script('jquery-ui-accordion');
+	wp_enqueue_script('jquery-ui-slider');	
 	load_theme_textdomain( 'mantra', get_template_directory_uri() . '/languages' );
 }
 
@@ -81,6 +81,7 @@ function mantra_init_fn(){
 	add_settings_field('mantra_backtop', __('Back to Top button','mantra') , 'setting_backtop_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_comtext', __('Text Under Comments','mantra') , 'setting_comtext_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_comclosed', __('Comments are closed text','mantra') , 'setting_comclosed_fn', __FILE__, 'graphics_section');
+	add_settings_field('mantra_comoff', __('Comments off','mantra') , 'setting_comoff_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_copyright', __('Insert footer copyright','mantra') , 'setting_copyright_fn', __FILE__, 'graphics_section');
 
 	add_settings_field('mantra_postdate', __('Post Date','mantra') , 'setting_postdate_fn', __FILE__, 'post_section');
@@ -804,6 +805,22 @@ foreach($items as $id=>$item) {
 }
 
 
+//CHECKBOX - Name: ma_options[comoff]
+function setting_comoff_fn() {
+	global $mantra_options;
+	$items = array ("Show" , "Hide");
+	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
+	echo "<select id='mantra_comoff' name='ma_options[mantra_comoff]'>";
+foreach($items as $id=>$item) {
+	echo "<option value='$item'";
+	selected($mantra_options['mantra_comoff'],$itemsare[$id]);
+	echo ">$item</option>";
+}
+	echo "</select>";
+	echo "<div><small>".__("Hide the <b>Comments off</b> text next to posts that have comments disabled.","mantra")."</small></div>";
+}
+
+
 //CHECKBOX - Name: ma_options[backtop]
 function setting_backtop_fn() {
 	global $mantra_options;
@@ -1241,7 +1258,7 @@ if ($options) $mantra_options = $options;
 
 	</form>
 
-	<span id="version"> Mantra v. 1.7.0 - by <a href="http://www.cryoutcreations.eu">Cryout Creations</a></span>
+	<span id="version"> Mantra v. 1.7.1 - by <a href="http://www.cryoutcreations.eu">Cryout Creations</a></span>
 </div>
 
 <div class="righty" >

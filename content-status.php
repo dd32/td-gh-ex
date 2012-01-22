@@ -40,6 +40,10 @@
 		<?php endif; ?>
 
 		<footer class="entry-meta3">
+	<?php	$tag_list = get_the_tag_list( '', ', ' ); 
+if ( $tag_list ) { ?>
+	<span class="bl_tagg"><?php _e( 'Tagged','mantra'); print ' '.$tag_list; ?></span>
+ 				<?php } ?>
 			<?php edit_post_link( __( 'Edit', 'mantra' ), '<span class="edit-link">', '</span>' ); ?>
 		</footer><!-- #entry-meta -->
 	</article><!-- #post-<?php the_ID(); ?> -->

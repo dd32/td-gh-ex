@@ -49,6 +49,7 @@ $mantra_defaults = array(
 "mantra_backtop" => "Enable",
 "mantra_comtext" => "Show",
 "mantra_comclosed" => "Show",
+"mantra_comoff" => "Show",
 "mantra_copyright" => "",
 
 "mantra_postdate" => "Show",
