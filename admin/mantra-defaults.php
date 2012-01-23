@@ -81,7 +81,6 @@ $mantra_defaults = array(
 "mantra_social7" => "",
 "mantra_social8" => "",
 
-
 "mantra_customcss" => "/* Mantra Custom CSS */  ");
 
 ?>

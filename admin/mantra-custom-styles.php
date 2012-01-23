@@ -119,4 +119,3 @@ foreach ($mantra_options as $key => $value) {
 if ($mantra_customcss != "") { echo '<style>'.$mantra_customcss.'</style>';}
 							}
 ?>
-

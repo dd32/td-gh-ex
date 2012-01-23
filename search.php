@@ -2,7 +2,7 @@
 /**
  * The template for displaying Search results pages.
  *
- * @package WordPress
+ * @package Cryout Creations
  * @subpackage Mantra
  * @since Mantra 1.0
  */

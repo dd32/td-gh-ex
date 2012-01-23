@@ -1258,7 +1258,7 @@ if ($options) $mantra_options = $options;
 
 	</form>
 
-	<span id="version"> Mantra v. 1.7.1 - by <a href="http://www.cryoutcreations.eu">Cryout Creations</a></span>
+	<span id="version"> Mantra v. 1.7.2 - by <a href="http://www.cryoutcreations.eu">Cryout Creations</a></span>
 </div>
 
 <div class="righty" >
@@ -1371,9 +1371,6 @@ function ma_options_validate($input) {
 global $mantra_defaults;
 	// Sanitize the texbox input
 	$input['mantra_copyright'] =  wp_kses_post($input['mantra_copyright']);
-	$input['mantra_facebook'] =  wp_kses_data($input['mantra_facebook']);
-	$input['mantra_tweeter'] =  wp_kses_data($input['mantra_tweeter']);
-	$input['mantra_rss'] =  wp_kses_data($input['mantra_rss']);
 
 	$input['mantra_backcolor'] =  wp_kses_data($input['mantra_backcolor']);
 	$input['mantra_headercolor'] =  wp_kses_data($input['mantra_headercolor']);
