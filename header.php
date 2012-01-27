@@ -116,9 +116,18 @@ if (!empty($options['abs_newsletter'])) { ?><a target="_blank" href="<?php echo 
 <div id="back-left"></div>
 <div id="back-right"></div>
 
-	<div id="header">              
-    
+	<div id="header">   
+  
  <?php $options = get_option('absolum');
+ if ($options['abs_slider_placement'] == "all" || $options['abs_slider_placement'] == "" ||
+ ($options['abs_slider_placement'] == "home" && is_home()) ||
+ ($options['abs_slider_placement'] == "single" && is_single()) )
+  { ?>
+    
+ <?php 
+ 
+ $number_items = '';
+ $options = get_option('absolum');
  if ($options['abs_header_slider'] == "disable" || $options['abs_header_slider'] == "") {
  
  } else {
@@ -129,7 +138,57 @@ if (!empty($options['abs_newsletter'])) { ?><a target="_blank" href="<?php echo 
    } else { $number_items = 10; } } ?>    	
 
     <?php $options = get_option('absolum');
- if ($options['abs_header_slider'] == "disable" || $options['abs_header_slider'] == "") { } else { ?>
+ if ($options['abs_header_slider'] == "disable" || $options['abs_header_slider'] == "") { } else {
+ 
+ 
+ if ($options['abs_header_slider'] == "nivo") { ?>
+ 
+ 
+    <div class="slider-wrapper theme-default">
+            <div class="ribbon"></div>
+            <div id="nivo_slider" class="nivoSlider">
+            
+            
+            
+               <?php
+
+    $args=array(
+   'showposts'=> 5,
+   'post__not_in' =>get_option("sticky_posts"),
+   );
+   
+?>  
+
+<?php if (have_posts()) : $featured = new WP_Query($args); while($featured->have_posts()) : $featured->the_post(); ?>
+
+  
+
+<?php $image = absolum_get_first_image();  
+                      if ($image):
+                      echo '<a href="'; the_permalink(); echo'" title="';the_title();echo'"><img src="'.$image.'" alt="';the_title();echo'" />
+                      <h2>'.get_the_title().'</h2></a>';
+                      endif;
+            ?>
+   
+ 
+<?php endwhile; ?>  
+
+<?php else: ?>
+
+<li>
+Oops, please try to refresh the page
+</li>
+
+<?php endif; ?>     
+   
+<?php wp_reset_query(); ?>
+ 
+            
+            
+         
+        </div> </div>
+ 
+ <?php } else { ?>
  
      <div id="slide_holder" <?php if( get_header_image() ) { echo 'style="margin-bottom:-250px;"'; } ?> >
 
@@ -140,7 +199,6 @@ if (!empty($options['abs_newsletter'])) { ?><a target="_blank" href="<?php echo 
    <?php
 
     $args=array(
-   'cat'=>-5981,
    'showposts'=>$number_items,
    'post__not_in' =>get_option("sticky_posts"),
    );
@@ -196,7 +254,10 @@ Oops, please try to refresh the page
    </ul>        
 </div></div>
        
-<?php } ?>
+<?php } } ?>
+
+
+<?php if ($options['abs_header_slider'] == "disable" || $options['abs_header_slider'] == "nivo" || $options['abs_header_slider'] == "") { echo '<br />'; } else { ?>
 
 		<div id="masthead">
 			<div id="branding" role="banner"> 
@@ -211,7 +272,7 @@ Oops, please try to refresh the page
 						echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
 					else : ?>
           <?php if( get_header_image() ) { ?>
-						<img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="" />
+						<div class="image-wrapper"><img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="" />
             <?php } else { ?>
               <hr style="color:#f3f3f3;" />
             <?php } ?>
@@ -220,6 +281,15 @@ Oops, please try to refresh the page
 			</div><!-- #branding -->
 	
 		</div><!-- #masthead -->
-	</div><!-- #header -->
+    
+    <?php } ?>
+    
+    
+	</div>
+  
+
+  <!-- #header -->
+  
+  <?php } else { echo '<br />'; }?>
 
 <div id="main">

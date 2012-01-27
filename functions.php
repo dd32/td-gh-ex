@@ -28,11 +28,16 @@ if( !is_admin()){
 $options = get_option('absolum');  
 if ($options['abs_header_slider'] == "disable" || $options['abs_header_slider'] == "" || $options['abs_header_slider'] == "one") { 
 
+} if ($options['abs_header_slider'] == "nivo") {
+
+ wp_enqueue_script( 'nivo', WP_CONTENT_URL . '/themes/absolum/js/nivo.slider.js' );
+ wp_enqueue_style('nivo_css', WP_CONTENT_URL . '/themes/absolum/images/nivo/default.css');
+
  } else { 
   
-  wp_enqueue_script( 'carousel', WP_CONTENT_URL . '/themes/absolum/js/carousel.js' );
+ wp_enqueue_script( 'carousel', WP_CONTENT_URL . '/themes/absolum/js/carousel.js' );
   
-  }   
+ }   
 }   
  
 
@@ -140,9 +145,27 @@ $absselect_slider = array(
 	'4' => array(
 		'value' =>	'fast',
 		'label' => __( 'Fast slideshow', 'absolum'  )
-)     
-                     
+  ),
+	'5' => array(
+		'value' =>	'nivo',
+		'label' => __( 'Nivo Slider', 'absolum'  )
+)                     
 );
+
+$absselect_slider_placement = array(
+	'0' => array(
+		'value' =>	'all',
+		'label' => __( 'All pages &nbsp;&nbsp;&nbsp;(default)', 'absolum'  )
+	),
+	'1' => array(
+		'value' =>	'home',
+		'label' => __( 'Home page only', 'absolum'  )
+	),
+	'2' => array(
+		'value' =>	'single',
+		'label' => __( 'Single post only', 'absolum'  )
+	)               
+); 
 
 
 $absselect_title = array(
@@ -273,12 +296,19 @@ array(  "name" => "Sidebar position",
 ),
 
 
-array(  "name" => "Display last post static/slideshow",
-        "desc" => "Choose if you want to display last post or last 10 posts in a slideshow",
+array(  "name" => "Display last post static / slideshow / Nivo Slider",
+        "desc" => "Choose if you want to display last post, last 10 posts in a slideshow or 5 last posts with Nivo Slider",
         "id" => $absshortname."_header_slider",
         "type" => "select3",
         "std" => "false"
-),       
+),     
+
+array(  "name" => "Slideshow placement",
+        "desc" => "Choose where to display the slideshow effects",
+        "id" => $absshortname."_slider_placement",
+        "type" => "select7",
+        "std" => "false"
+),     
 
 
 
@@ -415,7 +445,7 @@ array( "type" => "close-tab"),
  * Create the options page
  */
 function absolum_theme_options_do_page() {
-	global $absthemename, $absshortname, $absoptionlist, $absselect_scheme, $absselect_slider, $absselect_content_font, $absselect_title, $absselect_background, $absselect_sidebar; 
+	global $absthemename, $absshortname, $absoptionlist, $absselect_scheme, $absselect_slider, $absselect_content_font, $absselect_title, $absselect_background, $absselect_sidebar, $absselect_slider_placement; 
 	if ( ! isset( $_REQUEST['updated'] ) ) {
 		$_REQUEST['updated'] = false; 
 } 
@@ -803,7 +833,37 @@ case 'select6':
 <tr>
 <td><small><?php echo $value['desc']; ?></small></td>
 </tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
-                             
+         
+<?php
+break;
+ 
+case 'select7':
+?>
+<tr>
+<td width="15%" rowspan="2" valign="middle"><strong><?php echo $value['name']; ?></strong></td>
+<td width="85%"><select style="width:300px;" name="<?php echo 'absolum['.$value['id'].']'; ?>">
+
+<?php
+								$selected = $options[$value['id']];
+								$p = '';
+								$r = '';
+
+								foreach ( $absselect_slider_placement as $option ) {
+									$label = $option['label'];
+									if ( $selected == $option['value'] ) // Make default first in list
+										$p = "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . selected( esc_attr( $option['value'] ), $label ). "'>$label</option>";
+									else
+										$r .= "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . "'>$label</option>";
+								}
+								echo $p . $r;
+							?>
+</select></td>
+</tr> 
+ 
+<tr>
+<td><small><?php echo $value['desc']; ?></small></td>
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+                                  
                     
 <?php
 break;
@@ -863,7 +923,7 @@ case "checkbox":
  * Sanitize and validate input. Accepts an array, return a sanitized array.
  */
 function absolum_theme_options_validate( $input ) {
-	global $absselect_scheme, $absselect_slider, $absselect_content_font, $absselect_title, $absselect_background, $absselect_sidebar;
+	global $absselect_scheme, $absselect_slider, $absselect_content_font, $absselect_title, $absselect_background, $absselect_sidebar, $absselect_slider_placement;
   
   $input['abs_rss_feed'] = wp_filter_nohtml_kses( $input['abs_rss_feed'] );
   
@@ -1353,6 +1413,17 @@ var $j = jQuery.noConflict();
 		});
 	});
 </script>
+
+
+<?php } if ($options['abs_header_slider'] == "nivo") { ?>
+
+      <script type="text/javascript">
+      var $nivo = jQuery.noConflict();
+    $nivo(window).load(function() {
+        $nivo('#nivo_slider').nivoSlider();
+    });
+    </script>   
+    
 
 <?php 
 } 
