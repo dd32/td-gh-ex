@@ -31,7 +31,7 @@ function mantra_init_fn(){
 	add_settings_section('post_section', __('Post Information Settings','mantra') , 'section_post_fn', __FILE__);
 	add_settings_section('excerpt_section', __('Post Excerpt Settings','mantra') , 'section_excerpt_fn', __FILE__);
 	add_settings_section('featured_section', __('Featured Image Settings','mantra') , 'section_featured_fn', __FILE__);
-	add_settings_section('socials_section', __('Social Sites Settings','mantra') , 'section_social_fn', __FILE__);
+	add_settings_section('socials_section', __('Social Media Settings','mantra') , 'section_social_fn', __FILE__);
 	add_settings_section('misc_section', __('Miscellaneous Settings','mantra') , 'misc_social_fn', __FILE__);
 
 	add_settings_field('mantra_side', __('Main Layout','mantra') , 'setting_side_fn', __FILE__, 'layout_section');
@@ -39,10 +39,13 @@ function mantra_init_fn(){
 	add_settings_field('mantra_sidebar', __('Total Site Width','mantra') , 'setting_sidebar_fn', __FILE__, 'layout_section');
 	add_settings_field('mantra_hheight', __('Header Image Height','mantra') , 'setting_hheight_fn', __FILE__, 'layout_section');
 
-	add_settings_field('mantra_fontfamily', __('Select Font Type','mantra') , 'setting_fontfamily_fn', __FILE__, 'text_section');
-	add_settings_field('mantra_fontsize', __('Select General Font Size','mantra') , 'setting_fontsize_fn', __FILE__, 'text_section');
-	add_settings_field('mantra_headfontsize', __('Select Post Header Font Size','mantra') , 'setting_headfontsize_fn', __FILE__, 'text_section');
-	add_settings_field('mantra_sidefontsize', __('Select SideBar Font Size','mantra') , 'setting_sidefontsize_fn', __FILE__, 'text_section');
+	add_settings_field('mantra_fontfamily', __('General Font','mantra') , 'setting_fontfamily_fn', __FILE__, 'text_section');
+	add_settings_field('mantra_fontsize', __('General Font Size','mantra') , 'setting_fontsize_fn', __FILE__, 'text_section');
+	add_settings_field('mantra_fonttitle', __('Post Title Font ','mantra') , 'setting_fonttitle_fn', __FILE__, 'text_section');
+	add_settings_field('mantra_headfontsize', __('Post Title Font Size','mantra') , 'setting_headfontsize_fn', __FILE__, 'text_section');
+	add_settings_field('mantra_fontside', __('Sidebar Font','mantra') , 'setting_fontside_fn', __FILE__, 'text_section');
+	add_settings_field('mantra_sidefontsize', __('SideBar Font Size','mantra') , 'setting_sidefontsize_fn', __FILE__, 'text_section');
+	add_settings_field('mantra_fontsubheader', __('Sub-Headers Font','mantra') , 'setting_fontsubheader_fn', __FILE__, 'text_section');
 	add_settings_field('mantra_textalign', __('Force Text Align','mantra') , 'setting_textalign_fn', __FILE__, 'text_section');
 	add_settings_field('mantra_parindent', __('Paragraph indent','mantra') , 'setting_parindent_fn', __FILE__, 'text_section');
 	add_settings_field('mantra_lineheight', __('Line Height','mantra') , 'setting_lineheight_fn', __FILE__, 'text_section');
@@ -51,16 +54,16 @@ function mantra_init_fn(){
 
 
 	add_settings_field('mantra_backcolor', __('Background Color','mantra') , 'setting_backcolor_fn', __FILE__, 'appereance_section');
-	add_settings_field('mantra_headercolor', __('Header Background Color','mantra') , 'setting_headercolor_fn', __FILE__, 'appereance_section');
+	add_settings_field('mantra_headercolor', __('Header (Banner and Menu) Background Color','mantra') , 'setting_headercolor_fn', __FILE__, 'appereance_section');
 	
-	add_settings_field('mantra_titlecolor', __('Title Color','mantra') , 'setting_titlecolor_fn', __FILE__, 'appereance_section');
-	add_settings_field('mantra_descriptioncolor', __('Description Color','mantra') , 'setting_descriptioncolor_fn', __FILE__, 'appereance_section');
+	add_settings_field('mantra_titlecolor', __('Site Title Color','mantra') , 'setting_titlecolor_fn', __FILE__, 'appereance_section');
+	add_settings_field('mantra_descriptioncolor', __('Site Description Color','mantra') , 'setting_descriptioncolor_fn', __FILE__, 'appereance_section');
 
 	add_settings_field('mantra_contentcolor', __('Content Text Color','mantra') , 'setting_contentcolor_fn', __FILE__, 'appereance_section');
 	add_settings_field('mantra_linkscolor', __('Links Color','mantra') , 'setting_linkscolor_fn', __FILE__, 'appereance_section');
 	add_settings_field('mantra_hovercolor', __('Links Hover Color','mantra') , 'setting_hovercolor_fn', __FILE__, 'appereance_section');
-	add_settings_field('mantra_headtextcolor',__( 'Entry Title Color','mantra') , 'setting_headtextcolor_fn', __FILE__, 'appereance_section');
-	add_settings_field('mantra_headtexthover', __('Entry Title Hover Color','mantra') , 'setting_headtexthover_fn', __FILE__, 'appereance_section');
+	add_settings_field('mantra_headtextcolor',__( 'Post Title Color','mantra') , 'setting_headtextcolor_fn', __FILE__, 'appereance_section');
+	add_settings_field('mantra_headtexthover', __('Post Title Hover Color','mantra') , 'setting_headtexthover_fn', __FILE__, 'appereance_section');
 	add_settings_field('mantra_sideheadbackcolor', __('Sidebar Header Background Color','mantra') , 'setting_sideheadbackcolor_fn', __FILE__, 'appereance_section');
 	add_settings_field('mantra_sideheadtextcolor', __('Sidebar Header Text Color','mantra') , 'setting_sideheadtextcolor_fn', __FILE__, 'appereance_section');
 	add_settings_field('mantra_prefootercolor', __('Footer Widget Background Color','mantra') , 'setting_prefootercolor_fn', __FILE__, 'appereance_section');
@@ -77,7 +80,7 @@ function mantra_init_fn(){
 	add_settings_field('mantra_title', __('Title and Description','mantra') , 'setting_title_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_pagetitle', __('Page Titles','mantra') , 'setting_pagetitle_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_categetitle', __('Category Page Titles','mantra') , 'setting_categtitle_fn', __FILE__, 'graphics_section');
-	add_settings_field('mantra_tables', __('Invisible Tables','mantra') , 'setting_tables_fn', __FILE__, 'graphics_section');
+	add_settings_field('mantra_tables', __('Hide Tables','mantra') , 'setting_tables_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_backtop', __('Back to Top button','mantra') , 'setting_backtop_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_comtext', __('Text Under Comments','mantra') , 'setting_comtext_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_comclosed', __('Comments are closed text','mantra') , 'setting_comclosed_fn', __FILE__, 'graphics_section');
@@ -331,30 +334,7 @@ function  setting_fontsize_fn() {
 //SELECT - Name: ma_options[fontfamily]
 function  setting_fontfamily_fn() {
 	global $mantra_options;
-	$itemsans = array("Segoe UI, Arial, sans-serif",
-					 "Verdana, Geneva, sans-serif " ,
-					 "Calibri, Arian, sans-serif",
-				     "Myriad Pro,Myriad,Arial, sans-serif",
-					 "Trebuchet MS, Arial, Helvetica, sans-serif" ,
-					 "Tahoma, Geneva, sans-serif" ,
-					 "Arial, Helvetica, sans-serif" ,
-					 "Arial Black, Gadget, sans-serif",
-					 "Lucida Sans Unicode, Lucida Grande, sans-serif ");
-
-	$itemserif = array("Georgia, Times New Roman, Times, serif" ,
-					  "Times New Roman, Times, serif",
-					  "Palatino Linotype, Book Antiqua, Palatino, serif",
-					  "Garamond, Times New Roman, Times, serif");
-
-	$itemsmono = array( "Courier New, Courier, monospace" ,
-					 "Lucida Console, Monaco, monospace",
-					 "Monaco, monospace");
-
-	$itemscursive = array( "Lucida Casual, Comic Sans MS , cursive ",
-				     "Brush Script MT,Phyllis,Lucida Handwriting,cursive",
-					 "Phyllis,Lucida Handwriting,cursive",
-					 "Lucida Handwriting,cursive",
-					 "Comic Sans MS, cursive");
+	global $itemsans, $itemserif, $itemsmono, $itemscursive;
 
 	echo "<select id='mantra_fontfamily' name='ma_options[mantra_fontfamily]'>";
 	echo "<optgroup label='Sans-Serif'>";
@@ -390,7 +370,143 @@ foreach($itemscursive as $item) {
 }
 	echo "</optgroup>";
 	echo "</select>";
-	echo "<div><small>".__("Select the font family you'll use in your blog. All text will be affected (including header text, menu buttons, side menu text etc.).","mantra")."</small></div>";
+	echo "<div><small>".__("Select the font family you'll use in your blog. All content text will be affected (including menu buttons).","mantra")."</small></div>";
+}
+
+//SELECT - Name: ma_options[fonttitle]
+function  setting_fonttitle_fn() {
+	global $mantra_options;
+	global $itemsans, $itemserif, $itemsmono, $itemscursive;
+
+	echo "<select id='mantra_fonttitle' name='ma_options[mantra_fonttitle]'>";
+	echo "<option value='Default'";
+	selected($mantra_options['mantra_fonttitle'],'Defaut');
+	echo ">Default</option>";
+	echo "<optgroup label='Sans-Serif'>";
+foreach($itemsans as $item) {
+	echo "<option style='font-family:$item;' value='$item'";
+	selected($mantra_options['mantra_fonttitle'],$item);
+	echo ">$item</option>";
+}
+	echo "</optgroup>";
+
+	echo "<optgroup label='Serif'>";
+foreach($itemserif as $item) {
+
+	echo "<option style='font-family:$item;' value='$item'";
+	selected($mantra_options['mantra_fonttitle'],$item);
+	echo ">$item</option>";
+}
+	echo "</optgroup>";
+
+	echo "<optgroup label='MonoSpace'>";
+foreach($itemsmono as $item) {
+	echo "<option style='font-family:$item;' value='$item'";
+	selected($mantra_options['mantra_fonttitle'],$item);
+	echo ">$item</option>";
+}
+	echo "</optgroup>";
+
+	echo "<optgroup label='Cursive'>";
+foreach($itemscursive as $item) {
+	echo "<option style='font-family:$item;' value='$item'";
+	selected($mantra_options['mantra_fonttitle'],$item);
+	echo ">$item</option>";
+}
+	echo "</optgroup>";
+	echo "</select>";
+	echo "<div><small>".__("Select the font family you want for your titles. It will affect post titles and page titles. Leave 'Default' and the general font you selected will be used.","mantra")."</small></div>";
+}
+
+//SELECT - Name: ma_options[fontside]
+function  setting_fontside_fn() {
+	global $mantra_options;
+	global $itemsans, $itemserif, $itemsmono, $itemscursive;
+
+	echo "<select id='mantra_fontside' name='ma_options[mantra_fontside]'>";
+	echo "<option value='Default'";
+	selected($mantra_options['mantra_fonttitle'],'Defaut');
+	echo ">Default</option>";
+	echo "<optgroup label='Sans-Serif'>";
+foreach($itemsans as $item) {
+	echo "<option style='font-family:$item;' value='$item'";
+	selected($mantra_options['mantra_fontside'],$item);
+	echo ">$item</option>";
+}
+	echo "</optgroup>";
+
+	echo "<optgroup label='Serif'>";
+foreach($itemserif as $item) {
+
+	echo "<option style='font-family:$item;' value='$item'";
+	selected($mantra_options['mantra_fontside'],$item);
+	echo ">$item</option>";
+}
+	echo "</optgroup>";
+
+	echo "<optgroup label='MonoSpace'>";
+foreach($itemsmono as $item) {
+	echo "<option style='font-family:$item;' value='$item'";
+	selected($mantra_options['mantra_fontside'],$item);
+	echo ">$item</option>";
+}
+	echo "</optgroup>";
+
+	echo "<optgroup label='Cursive'>";
+foreach($itemscursive as $item) {
+	echo "<option style='font-family:$item;' value='$item'";
+	selected($mantra_options['mantra_fontside'],$item);
+	echo ">$item</option>";
+}
+	echo "</optgroup>";
+	echo "</select>";
+	echo "<div><small>".__("Select the font family you want your sidebar(s) to have. Text in sidebars will be affexted, including any widgets. Leave 'Default' and the general font you selected will be used.","mantra")."</small></div>";
+}
+
+
+//SELECT - Name: ma_options[fontsubheader]
+function  setting_fontsubheader_fn() {
+	global $mantra_options;
+	global $itemsans, $itemserif, $itemsmono, $itemscursive;
+
+	echo "<select id='mantra_fontsubheader' name='ma_options[mantra_fontsubheader]'>";
+	echo "<option value='Default'";
+	selected($mantra_options['mantra_fonttitle'],'Defaut');
+	echo ">Default</option>";
+	echo "<optgroup label='Sans-Serif'>";
+foreach($itemsans as $item) {
+	echo "<option style='font-family:$item;' value='$item'";
+	selected($mantra_options['mantra_fontsubheader'],$item);
+	echo ">$item</option>";
+}
+	echo "</optgroup>";
+
+	echo "<optgroup label='Serif'>";
+foreach($itemserif as $item) {
+
+	echo "<option style='font-family:$item;' value='$item'";
+	selected($mantra_options['mantra_fontsubheader'],$item);
+	echo ">$item</option>";
+}
+	echo "</optgroup>";
+
+	echo "<optgroup label='MonoSpace'>";
+foreach($itemsmono as $item) {
+	echo "<option style='font-family:$item;' value='$item'";
+	selected($mantra_options['mantra_fontsubheader'],$item);
+	echo ">$item</option>";
+}
+	echo "</optgroup>";
+
+	echo "<optgroup label='Cursive'>";
+foreach($itemscursive as $item) {
+	echo "<option style='font-family:$item;' value='$item'";
+	selected($mantra_options['mantra_fontsubheader'],$item);
+	echo ">$item</option>";
+}
+	echo "</optgroup>";
+	echo "</select>";
+	echo "<div><small>".__("Select the font family you want your subheaders to have (h2 - h6 tags will be affected). Leave 'Default' and the general font you selected will be used.","mantra")."</small></div>";
 }
 
 //SELECT - Name: ma_options[headfontsize]
@@ -1091,15 +1207,14 @@ foreach($items as $id=>$item) {
 
 // TEXTBOX - Name: ma_options[social1]
 function setting_socials1_fn() {
-	global $mantra_options;
-	$items = array ("Facebook" , "Twitter","RSS", "LinkedIn","Digg", "StumbleUpon","Delicious", "Reddit","Flickr", "Google","Yahoo" );
+	global $mantra_options, $mantra_global_socials;
 	echo "<select id='mantra_social1' name='ma_options[mantra_social1]'>";
-foreach($items as $item) {
+foreach($mantra_global_socials as $item) {
 	echo "<option value='$item'";
 	selected($mantra_options['mantra_social1'],$item);
 	echo ">$item</option>";
 }
-	echo "</select><span class='address_span'> -> </span>";
+	echo "</select><span class='address_span'> &raquo; </span>";
 
 	echo "<input id='mantra_social2' name='ma_options[mantra_social2]' size='32' type='text'  value='".esc_attr( $mantra_options['mantra_social2'] )."'  />";
 	echo "<div><small>".__("Select your desired Social network from the left dropdown menu and insert your corresponding address in the right input field. (ex: <i>http://www.facebook.com/yourname</i> )","mantra")."</small></div>";
@@ -1107,45 +1222,42 @@ foreach($items as $item) {
 
 // TEXTBOX - Name: ma_options[social2]
 function setting_socials2_fn() {
-	global $mantra_options;
-	$items = array ("Facebook" , "Twitter","RSS", "LinkedIn","Digg", "StumbleUpon","Delicious", "Reddit","Flickr", "Google","Yahoo" );
+	global $mantra_options, $mantra_global_socials;
 	echo "<select id='mantra_social3' name='ma_options[mantra_social3]'>";
-foreach($items as $item) {
+foreach($mantra_global_socials as $item) {
 	echo "<option value='$item'";
 	selected($mantra_options['mantra_social3'],$item);
 	echo ">$item</option>";
 }
-	echo "</select><span class='address_span'> -> </span>";
+	echo "</select><span class='address_span'> &raquo; </span>";
 	echo "<input id='mantra_tweeter' name='ma_options[mantra_social4]' size='32' type='text'  value='".esc_attr( $mantra_options['mantra_social4'] )."'  />";
 	echo "<div><small>".__("You can insert up to 4 different social sites and addresses.","mantra")."</small></div> ";
 }
 
 // TEXTBOX - Name: ma_options[social3]
 function setting_socials3_fn() {
-	global $mantra_options;
-	$items = array ("Facebook" , "Twitter","RSS", "LinkedIn","Digg", "StumbleUpon","Delicious", "Reddit","Flickr", "Google","Yahoo" );
+	global $mantra_options, $mantra_global_socials;
 	echo "<select id='mantra_social5' name='ma_options[mantra_social5]'>";
-	foreach($items as $item) {
+	foreach($mantra_global_socials as $item) {
 	echo "<option value='$item'";
 	selected($mantra_options['mantra_social5'],$item);
 	echo ">$item</option>";
 }
-	echo "</select><span class='address_span'> -> </span>";
+	echo "</select><span class='address_span'> &raquo; </span>";
 	echo "<input id='mantra_rss' name='ma_options[mantra_social6]' size='32' type='text'  value='".esc_attr( $mantra_options['mantra_social6'] )."'  />";
 	echo "<div><small>".__("There are a total of 11 social networks to choose from. ","mantra")."</small></div>";
 }
 
 // TEXTBOX - Name: ma_options[social4]
 function setting_socials4_fn() {
-	global $mantra_options;
-	$items = array ("Facebook" , "Twitter","RSS", "LinkedIn","Digg", "StumbleUpon","Delicious", "Reddit","Flickr", "Google","Yahoo" );
+	global $mantra_options, $mantra_global_socials;
 	echo "<select id='mantra_social7' name='ma_options[mantra_social7]'>";
-	foreach($items as $item) {
+	foreach($mantra_global_socials as $item) {
 	echo "<option value='$item'";
 	selected($mantra_options['mantra_social7'],$item);
 	echo ">$item</option>";
 }
-	echo "</select><span class='address_span'> -> </span>";
+	echo "</select><span class='address_span'> &raquo; </span>";
 	echo "<input id='mantra_rss' name='ma_options[mantra_social8]' size='32' type='text'  value='".esc_attr( $mantra_options['mantra_social8'] )."'  />";
 	echo "<div><small>".__("You can leave any number of inputs empty. They just won't appear in the frontend.  ","mantra")."</small></div>";
 }
@@ -1365,6 +1477,50 @@ return 0;
 <?php
 }
 
+/* Font family array */
+
+	$itemsans = array("Segoe UI, Arial, sans-serif",
+					 "Verdana, Geneva, sans-serif " ,
+					 "Geneva, sans-serif ", 
+					 "Helvetica Neue, Arial, Helvetica, sans-serif",
+					 "Helvetica, sans-serif" ,
+					 "Century Gothic, AppleGothic, sans-serif",
+				     "Futura, Century Gothic, AppleGothic, sans-serif",
+					 "Calibri, Arian, sans-serif",
+				     "Myriad Pro, Myriad,Arial, sans-serif",
+					 "Trebuchet MS, Arial, Helvetica, sans-serif" ,
+					 "Gill Sans, Calibri, Trebuchet MS, sans-serif",
+					 "Impact, Haettenschweiler, Arial Narrow Bold, sans-serif ",
+					 "Tahoma, Geneva, sans-serif" ,
+					 "Arial, Helvetica, sans-serif" ,
+					 "Arial Black, Gadget, sans-serif",
+					 "Lucida Sans Unicode, Lucida Grande, sans-serif ");
+
+	$itemserif = array("Georgia, Times New Roman, Times, serif" ,
+					  "Times New Roman, Times, serif",
+					  "Cambria, Georgia, Times, Times New Roman, serif",	
+					  "Palatino Linotype, Book Antiqua, Palatino, serif",
+					  "Book Antiqua, Palatino, serif",
+					  "Palatino, serif",
+				      "Baskerville, Times New Roman, Times, serif",
+ 					  "Bodoni MT, serif",
+					  "Copperplate Light, Copperplate Gothic Light, serif",
+					  "Garamond, Times New Roman, Times, serif");
+
+	$itemsmono = array( "Courier New, Courier, monospace" ,
+					 "Lucida Console, Monaco, monospace",
+					 "Consolas, Lucida Console, Monaco, monospace",
+					 "Monaco, monospace");
+
+	$itemscursive = array( "Lucida Casual, Comic Sans MS , cursive ",
+				     "Brush Script MT,Phyllis,Lucida Handwriting,cursive",
+					 "Phyllis,Lucida Handwriting,cursive",
+					 "Lucida Handwriting,cursive",
+					 "Comic Sans MS, cursive");
+
+/* Social media links */
+
+	$mantra_global_socials = array ("Delicious", "Digg", "Facebook", "Flickr", "Google", "LinkedIn", "Reddit", "RSS", "StumbleUpon", "Twitter", "Yahoo" );
 
 // Validate user data
 function ma_options_validate($input) {

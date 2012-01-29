@@ -12,7 +12,8 @@ $totalwidth= $mantra_sidewidth+$mantra_sidebar+50;
 ?>
 
 <style>
-.single-attachment #content,#wrapper, #access, #colophon, #branding, #main,  .attachment img { width:<?php echo ($totalwidth) ?>px ;}
+#wrapper, #access, #colophon, #branding, #main,  .attachment img { width:<?php echo ($totalwidth) ?>px ;}
+.single-attachment #content {width:<?php echo ($totalwidth-40) ?>px ;}
 #access .menu-header, div.menu {width:<?php echo ($totalwidth-12) ?>px ;}
 #content img {	max-width:<?php echo ($mantra_sidewidth-40) ?>px;}
 #content .wp-caption{	max-width:<?php echo ($mantra_sidewidth-30) ?>px;}
@@ -55,7 +56,10 @@ font-size:<?php echo $mantra_fontsize ?>;
 ?><?php if ($mantra_letterspace != "Default") { ?>letter-spacing:<?php echo $mantra_letterspace ?>;<?php }
 ?><?php if ($mantra_textalign != "Default") { ?>text-align:<?php echo $mantra_textalign;  ?> ; <?php } ?>}
 <?php if (stripslashes($mantra_fontfamily) != '"Segoe UI", Arial, sans-serif') { ?>
-* {font-family:<?php echo $mantra_fontfamily;  ?> ; }<?php }
+ * , .widget-title {font-family:<?php echo $mantra_fontfamily;  ?> ; }<?php }
+?><?php if ($mantra_fonttitle != "Default") { ?> #content h1.entry-title a, #content h2.entry-title a {font-family:<?php echo $mantra_fonttitle;  ?> ; }<?php }
+?><?php if ($mantra_fontside != "Default") { ?> .widget-area *  {font-family:<?php echo $mantra_fontside;  ?> ; }<?php }
+?><?php if ($mantra_fontsubheader != "Default") { ?> .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6  {font-family:<?php echo $mantra_fontsubheader;  ?> ; }<?php }
 ?><?php if ($mantra_caption != "Light") { ?> #content .wp-caption { <?php }
 ?><?php if ($mantra_caption == "White") { ?> background-color:#FFF;}
  <?php } else if ($mantra_caption == "Light Gray") {?> background-color:#EEE; }
@@ -70,7 +74,7 @@ font-size:<?php echo $mantra_fontsize ?>;
 ?><?php if ($mantra_comoff == "Hide") { ?> .comments-link span { display:none;} <?php }
 ?><?php if ($mantra_tables == "Enable") { ?> #content table {border:none;} #content tr {background:none;} #content table {border:none;} #content tr th,
 #content thead th {background:none;} #content tr td {border:none;}<?php }
-?><?php if ($mantra_headfontsize != "Default") { ?> h2.entry-title { font-size:<?php echo $mantra_headfontsize; ?> ;}<?php }
+?><?php if ($mantra_headfontsize != "Default") { ?> #content h1.entry-title, #content h2.entry-title { font-size:<?php echo $mantra_headfontsize; ?> ;}<?php }
 ?><?php if ($mantra_sidefontsize != "Default") { ?> .widget-area a:link, .widget-area a:visited { font-size:<?php echo $mantra_sidefontsize; ?> ;}<?php }
 
 ?><?php if ($mantra_backcolor != "444444") { ?> body { background-color:<?php echo $mantra_backcolor; ?> ;}<?php }

@@ -7,7 +7,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package WordPress
+ * @package Cryout Creations
  * @subpackage Mantra
  * @since Mantra 1.0
  */
