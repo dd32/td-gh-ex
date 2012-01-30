@@ -8,7 +8,10 @@ global $post, $graphene_settings;
 if ( $graphene_settings['child_page_listing'] == 'show_always' ||
      ( $graphene_settings['child_page_listing'] == 'show_if_parent_empty' && $post->post_content == '' )) :
 
-    
+	/* 	Don't list the child pages if the global $post variable is empty, which usually
+		indicates it's not the standard WordPress pages */
+    if ( ! $post )
+		return;
     
     /* Get the child pages */
     $args = array(
@@ -22,7 +25,7 @@ if ( $graphene_settings['child_page_listing'] == 'show_always' ||
 
     if ( $pages->have_posts() ) :
     ?>
-    <div class="child-pages-wrap">
+    <div <?php graphene_grid( 'child-pages-wrap', 16, 11, 8, true ); ?>>
         <?php while ( $pages->have_posts() ) : $pages->the_post(); ?>
         <div class="post child-page page" id="page-<?php the_ID(); ?>">
             <div class="entry">

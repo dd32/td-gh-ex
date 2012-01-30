@@ -3,7 +3,7 @@
 /**
  * This is the function to display the custom user field in the user admin page
 */
-function graphene_show_custom_user_fields( $user ){ global $current_user; ?>
+function graphene_show_custom_user_fields($user){ global $current_user; ?>
 	<h3><?php _e('Graphene-specific User Profile Information', 'graphene'); ?></h3>
     <p><?php _e('The settings defined here are used only with the Graphene theme.', 'graphene'); ?></p>
     <table class="form-table">
@@ -13,7 +13,7 @@ function graphene_show_custom_user_fields( $user ){ global $current_user; ?>
                 <small><?php _e("You can specify the image to be displayed as the author's profile image in the Author's page. If no URL is defined here, the author's <a href=\"http://www.gravatar.com\">Gravatar</a> will be used.", 'graphene'); ?></small>
             </th>
             <td>
-            	<input type="text" name="author_imgurl" class="code" id="author_imgurl" value="<?php echo esc_attr( get_user_meta( $user->ID, 'graphene_author_imgurl', true ) ); ?>" size="75" /><br />
+            	<input type="text" name="author_imgurl" id="author_imgurl" value="<?php echo esc_attr( get_user_meta( $user->ID, 'graphene_author_imgurl', true ) ); ?>" size="50" /><br />
                 <span class="description"><?php _e("Please enter the full URL (including <code>http://</code>) to your profile image.", 'graphene'); ?><br /> <?php _e("<strong>Important: </strong>Image width must be less than or equal to <strong>150px</strong>.", 'graphene'); ?></span>
             </td>
         </tr>

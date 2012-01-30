@@ -4,6 +4,41 @@ http://www.khairul-syahir.com
 
 CHANGELOG
 
+Version 1.6
+	* Added option to customise columns widths
+	* Added support for bbPress plugin
+	* Added comments and adsense for non-standard post formats posts
+	* Added proper archive title for custom taxonomy archive pages
+	* Added Graphene Theme news RSS feed in the options page
+	* Added option to include excerpt in social sharing buttons
+	* Added option to display print button even when the print CSS is not enabled
+	* Added Bulgarian (bg_BG) translation by Nikolay Boyukliev
+	* Added Urdu (ur_UR) translation by Selftest Engine
+	* Added Serbian (sr_RS) translation by Balkanboy Media
+	* Added option to rescan action hooks for newly added hooks
+	* Added option to disable the theme's custom WordPress Editor styles
+	* Added ID attribute to homepage panes
+	* Major reorganisation of theme's files
+	* Increased the spacing in sprite image so that primary menu can span over two lines
+	* Updated the editor style to reflect the theme's front-end style
+	* The width of the content area in the editor now reflects the column mode being used
+	* Applied the_content filter to message block contents
+	* Uses _n() wrapper for proper plural form translation of strings
+	* Removed permalink from singular pages post title
+	* Modified sidebar placement so that sidebar1 will always be on the right in three-column layouts
+	* Hidden non-essential options by default in the theme's options page
+	* Some style and layout refresh
+	* Moved script enqueue for comment-reply into the proper script enqueueing callback
+	* Modified the site title implementation into filtering the wp_title() output
+	* Removed function_exists() check for json_encode() and json_decode()
+	* Fixed an issue with the Twitter widget that causes it to not display any tweets at all if the number of available tweets is less than the number of tweets to be displayed
+	* Fixed custom social media icons in the top bar can't be completely removed
+	* Fixed pings list being hidden if there are no comments
+	* Fixed incorrect content width for automatically-embedded videos
+	* Fixed custom CSS for .page-title being printed to the theme's <head> regardless of whether or not the colour settings are changed
+	* Fixed an issue with WordPress 3.3 new media uploader not working in the theme's options pages
+	
+	
 Version 1.5.6
 	* Fixed homepage panes posts being repeated (and other issues related to double action hook)
 

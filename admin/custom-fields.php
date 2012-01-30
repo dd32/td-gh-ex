@@ -3,8 +3,7 @@
  * This file adds a new meta box to the Edit Post and Edit Page screens that contain
  * additional post- and page-specific options for use with the theme
  *
- * @package WordPress
- * @subpackage Graphene
+ * @package Graphene
  * @since Graphene 1.1
 */
 

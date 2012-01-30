@@ -33,13 +33,13 @@ function graphene_settings_validator( $input ){
 			if (isset($input['slider_type']) && $input['slider_type'] == 'posts_pages' && isset($input['slider_specific_posts'])) {
 				$input['slider_specific_posts'] = str_replace(' ', '', $input['slider_specific_posts']);
 			}
-                        // Categories to display posts from
-                        if (isset($input['slider_type']) && $input['slider_type'] == 'categories' && isset($input['slider_specific_categories']) && is_array($input['slider_specific_categories'])){
-                            if ( in_array ( false, array_map( 'ctype_digit', (array) $input['slider_specific_categories'] ) ) ) {
-                                unset($input['slider_specific_categories']);
-                                add_settings_error('graphene_options', 2, __('ERROR: Invalid category selected for the slider categories.', 'graphene'));
-                            }
-                        }
+			// Categories to display posts from
+			if (isset($input['slider_type']) && $input['slider_type'] == 'categories' && isset($input['slider_specific_categories']) && is_array($input['slider_specific_categories'])){
+				if ( in_array ( false, array_map( 'ctype_digit', (array) $input['slider_specific_categories'] ) ) ) {
+					unset($input['slider_specific_categories']);
+					add_settings_error('graphene_options', 2, __('ERROR: Invalid category selected for the slider categories.', 'graphene'));
+				}
+			}
 			// Number of posts to display
 			if (!empty($input['slider_postcount']) && !ctype_digit($input['slider_postcount'])){
 				unset($input['slider_postcount']);
@@ -139,22 +139,23 @@ function graphene_settings_validator( $input ){
 			// Facebook URL
 			$input = graphene_validate_url( $input, 'facebook_url', __('ERROR: Bad URL entered for the Facebook URL.', 'graphene') );
             /* Social media */
-			$social_media_new = (!empty($input['social_media_new'])) ? $input['social_media_new'] : array();
-			if (!empty($social_media_new)){
+			$social_media_new = ( ! empty( $input['social_media_new'] ) ) ? $input['social_media_new'] : array();
+			if ( ! empty( $social_media_new ) ){
 				$i = 0;
-				foreach ($social_media_new as $social_medium){
-					if (!empty($social_medium['name'])){
+				foreach ( $social_media_new as $social_medium ){
+					if ( ! empty( $social_medium['name'] ) ){
 						$slug = sanitize_title($social_medium['name'], $i);
 						$input['social_media'][$slug]['name'] = $social_medium['name'];
 						$input['social_media'][$slug]['icon'] = $social_medium['icon'];
 						$input['social_media'][$slug]['url'] = $social_medium['url'];
-                                                $input['social_media'][$slug]['title'] = $social_medium['title'];
+                        $input['social_media'][$slug]['title'] = $social_medium['title'];
 						$input['social_media'][$slug] = graphene_validate_url( $input['social_media'][$slug], 'icon', __('ERROR: Bad URL entered for the social media icon URL.', 'graphene') );
 						$input['social_media'][$slug] = graphene_validate_url( $input['social_media'][$slug], 'url', __('ERROR: Bad URL entered for the social media URL.', 'graphene') );
 						$i++;
 					}
 				}
 			}
+			if ( empty( $input['social_media'] ) ) $input['social_media'] = $graphene_defaults['social_media'];
 			            
                         
 			/* =Social Sharing Options
@@ -230,7 +231,17 @@ function graphene_settings_validator( $input ){
 			
 			/* =Column Options
 			--------------------------------------------------------------------------------------*/
-			$input = graphene_validate_dropdown( $input, 'column_mode', array('one-column', 'two-col-left', 'two-col-right', 'three-col-left', 'three-col-right', 'three-col-center'), __('ERROR: Invalid option for the column mode.', 'graphene') ); 
+			$input = graphene_validate_dropdown( $input, 'column_mode', array('one-column', 'two-col-left', 'two-col-right', 'three-col-left', 'three-col-right', 'three-col-center'), __('ERROR: Invalid option for the column mode.', 'graphene') );
+			$input = graphene_validate_dropdown( $input, 'bbp_column_mode', array('one-column', 'two-col-left', 'two-col-right', 'three-col-left', 'three-col-right', 'three-col-center'), __('ERROR: Invalid option for the bbPress column mode.', 'graphene') );
+			
+			
+			/* =Column Width Options
+			--------------------------------------------------------------------------------------*/
+			foreach( $input['column_width'] as $column_mode => $columns ){
+				foreach( $columns as $column => $width ){
+					$input = graphene_validate_column_width( $input, $column_mode, $column, sprintf( __( 'ERROR: Invalid width for %s. Width value must be positive number without units.', 'graphene' ), $column_mode . ' ' . $column ) );
+				}
+			}
                         
                         
 			/* =Post Display Options
@@ -316,6 +327,7 @@ function graphene_settings_validator( $input ){
 			$input['custom_site_title_frontpage'] = strip_tags( $input['custom_site_title_frontpage'] );
 			$input['custom_site_title_content'] = strip_tags( $input['custom_site_title_content'] );
 			$input = graphene_validate_url( $input, 'favicon_url', __( 'ERROR: Bad URL entered for the favicon URL.', 'graphene' ) );
+			$input['disable_editor_style'] = (isset($input['disable_editor_style'])) ? true : false;
 			
 			/* =Custom CSS Options 
 			--------------------------------------------------------------------------------------*/
@@ -371,6 +383,23 @@ function graphene_validate_digits( $input, $option_name, $error_message ){
 		}
 	} else {
 		$input[$option_name] = $graphene_defaults[$option_name];
+	}
+	
+	return $input;
+}
+
+function graphene_validate_column_width( $input, $column_mode, $option_name, $error_message ){
+	global $graphene_defaults;
+	if ( '0' === $input['column_width'][$column_mode][$option_name] || ! empty($input['column_width'][$column_mode][$option_name] ) ){
+		$width = $input['column_width'][$column_mode][$option_name];
+		if ( ! ( is_numeric( $width ) && $width >= 0 ) ) {
+			$input['column_width'] = $graphene_defaults['column_width'];
+			$input['container_width'] = $graphene_defaults['container_width'];
+			add_settings_error('graphene_options', 2, $error_message);
+		}
+	} else {
+		$input['column_width'] = $graphene_defaults['column_width'];
+		$input['container_width'] = $graphene_defaults['container_width'];
 	}
 	
 	return $input;

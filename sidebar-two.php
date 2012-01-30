@@ -3,14 +3,13 @@
  * The Sidebar 2 for display in the content page.
  * Is only called by header.php or footer.php if the sidebar is needed, so no checking is required!
  *
- * @package WordPress
- * @subpackage Graphene
+ * @package Graphene
  * @since graphene 1.0
  */
 global $graphene_settings;
 ?>
     
-<div id="sidebar2" class="sidebar">
+<div id="sidebar2" <?php graphene_grid( 'sidebar', 1, 5, 4 ); ?>>
 
 	<?php do_action('graphene_before_sidebar2'); ?>
 

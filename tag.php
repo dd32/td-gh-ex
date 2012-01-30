@@ -2,14 +2,13 @@
 /**
  * The tag archive template file
  *
- * @package WordPress
- * @subpackage Graphene
+ * @package Graphene
  * @since Graphene 1.1.5
  */
 get_header();
 ?>
 
-<h1 class="page-title">
+<h1 class="page-title archive-title">
     <?php
         printf(__('Tag Archive: <span>%s</span>', 'graphene'), single_tag_title('', false));
     ?>

@@ -2,8 +2,7 @@
 /**
  * The Sidebar for display in the content page. 
  *
- * @package WordPress
- * @subpackage Graphene
+ * @package Graphene
  * @since graphene 1.0.8
  */
 global $graphene_settings;

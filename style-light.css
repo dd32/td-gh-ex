@@ -8,8 +8,8 @@
 
 
 /* Top level header menu, default state */
-#header-menu {
-	background: url(images/sprite_h.png) left -100px repeat-x #070707;
+#header-menu-wrap {
+	background: url(images/sprite_h.png) left -300px repeat-x #ddd;
 }
 #header-menu > li > a {
 	color: #000;
@@ -56,9 +56,7 @@
 /* Top level, default state */
 #secondary-menu-wrap {
 	border-top: 1px solid #fff;
-}
-#secondary-menu {
-	background: url(images/sprite_h.png) left -614px repeat-x #222;
+	background: url(images/sprite_h.png) left -1014px repeat-x #222;
 }
 #secondary-menu > li > a {
 	color: #000;
@@ -74,7 +72,7 @@
 #secondary-menu > li:hover,
 #secondary-menu > li.current-menu-item,
 #secondary-menu > li.current-menu-ancestor {
-	background: url(images/sprite_h.png) left -540px repeat-x #eee;
+	background: url(images/sprite_h.png) left -940px repeat-x #eee;
 }
 #secondary-menu > li:hover > a,
 #secondary-menu > li.current-menu-item > a,

@@ -9,17 +9,19 @@
  */
 global $graphene_settings;
 ?>  
+<?php do_action( 'graphene_bottom_content' ); ?>
     </div><!-- #content-main -->
     
     <?php
     
-        /* Sidebar 1 on the right side? */
-        if ( in_array(graphene_column_mode(), array('two-col-left', 'three-col-left')) ){
-            get_sidebar();
-        }
         /* Sidebar 2 on the right side? */
-        if ( in_array(graphene_column_mode(), array('three-col-left', 'three-col-center')) ){
-            get_sidebar('two');
+        if ( graphene_column_mode() == 'three-col-left' ){
+            get_sidebar( 'two' );
+        }
+		
+		/* Sidebar 1 on the right side? */
+        if ( in_array( graphene_column_mode(), array( 'two-col-left', 'three-col-left', 'three-col-center' ) ) ){
+            get_sidebar();
         }
     
     ?>
@@ -71,7 +73,7 @@ global $graphene_settings;
                 'theme_location' => 'footer-menu',
                 'items_wrap' => '%3$s'
             );
-            wp_nav_menu(apply_filters('graphene_secondary_menu_args', $args));
+            wp_nav_menu(apply_filters('graphene_footer_menu_args', $args));
             ?>
             <?php if ( ! $graphene_settings['hide_return_top'] ) : ?>
         	<li class="menu-item return-top"><a href="#"><?php _e('Return to top', 'graphene'); ?></a></li>
@@ -79,8 +81,9 @@ global $graphene_settings;
         </ul>
     </div>
     <?php endif; ?>
-
-    <div id="developer">
+	
+    <?php if ( ! $graphene_settings['disable_credit'] ) : ?>
+    <div id="developer" class="grid_7">
         <p>
         <?php /* translators: %1$s is the link to WordPress.org, %2$s is the theme's name */ ?>
 <?php printf( __('Powered by %1$s and the %2$s.', 'graphene'), '<a href="http://wordpress.org/">WordPress</a>', '<a href="http://www.khairul-syahir.com/wordpress-dev/graphene-theme">' . __('Graphene Theme', 'graphene') . '</a>'); ?>
@@ -88,6 +91,7 @@ global $graphene_settings;
 
 	<?php do_action('graphene_developer'); ?>
     </div>
+    <?php endif; ?>
     
     <?php do_action('graphene_footer'); ?>
 </div><!-- #footer -->
