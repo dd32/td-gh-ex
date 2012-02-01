@@ -1,8 +1,8 @@
 <?php
 /**
- * The default template for displaying content
+ * The default template for displaying posts in the Quote Post Format on index and archive pages
  *
- * @package WordPress
+ * @package Cryout Creations
  * @subpackage Mantra
  * @since Mantra 1.0
  */

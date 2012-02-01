@@ -378,9 +378,9 @@ endif;
 function mantra_widgets_init() {
 	// Area 1, located at the top of the sidebar.
 	register_sidebar( array(
-		'name' => __( 'Primary Widget Area', 'mantra' ),
+		'name' => __( 'Primary Widget Area - Sidebar 1', 'mantra' ),
 		'id' => 'primary-widget-area',
-		'description' => __( 'The primary widget area', 'mantra' ),
+		'description' => __( 'Primary widget area - Sidebar 1', 'mantra' ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',
@@ -389,31 +389,31 @@ function mantra_widgets_init() {
 
 	// Area 2, located below the Primary Widget Area in the sidebar. Empty by default.
 	register_sidebar( array(
-		'name' => __( 'Secondary Widget Area', 'mantra' ),
+		'name' => __( 'Secondary Widget Area - Sidebar 1', 'mantra' ),
 		'id' => 'secondary-widget-area',
-		'description' => __( 'The secondary widget area', 'mantra' ),
+		'description' => __( 'Secondary widget area - Sidebar 1', 'mantra' ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
 
-	// Area 3, located in the footer. Empty by default.
+	// Area 3 for the second sidebar. Empty be default
 	register_sidebar( array(
-		'name' => __( 'First Footer Widget Area', 'mantra' ),
-		'id' => 'first-footer-widget-area',
-		'description' => __( 'The first footer widget area', 'mantra' ),
+		'name' => __( 'Third Widget Area - Sidebar 2', 'mantra' ),
+		'id' => 'third-widget-area',
+		'description' => __( 'Third widget area - Sidebar 2', 'mantra' ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
 
-	// Area 4, located in the footer. Empty by default.
+	// Area 4, located below the Third Widget Area in the second sidebar. Empty by default.
 	register_sidebar( array(
-		'name' => __( 'Second Footer Widget Area', 'mantra' ),
-		'id' => 'second-footer-widget-area',
-		'description' => __( 'The second footer widget area', 'mantra' ),
+		'name' => __( 'Fourth Widget Area - Sidebar 2', 'mantra' ),
+		'id' => 'fourth-widget-area',
+		'description' => __( 'Fourth widget area  - Sidebar 2', 'mantra' ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',
@@ -421,6 +421,28 @@ function mantra_widgets_init() {
 	) );
 
 	// Area 5, located in the footer. Empty by default.
+	register_sidebar( array(
+		'name' => __( 'First Footer Widget Area', 'mantra' ),
+		'id' => 'first-footer-widget-area',
+		'description' => __( 'First footer widget area', 'mantra' ),
+		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</li>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+
+	// Area 6, located in the footer. Empty by default.
+	register_sidebar( array(
+		'name' => __( 'Second Footer Widget Area', 'mantra' ),
+		'id' => 'second-footer-widget-area',
+		'description' => __( 'Second footer widget area', 'mantra' ),
+		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</li>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+
+	// Area 7, located in the footer. Empty by default.
 	register_sidebar( array(
 		'name' => __( 'Third Footer Widget Area', 'mantra' ),
 		'id' => 'third-footer-widget-area',
@@ -431,7 +453,7 @@ function mantra_widgets_init() {
 		'after_title' => '</h3>',
 	) );
 
-	// Area 6, located in the footer. Empty by default.
+	// Area 8, located in the footer. Empty by default.
 	register_sidebar( array(
 		'name' => __( 'Fourth Footer Widget Area', 'mantra' ),
 		'id' => 'fourth-footer-widget-area',
@@ -540,19 +562,33 @@ function mantra_content_nav( $nav_id ) {
 endif; // mantra_content_nav
 
 
-function get_image() {
-global $post, $posts;
-$first_img = '';
-ob_start();
-ob_end_clean();
-$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-$first_img = $matches [1] [0];
-if(empty($first_img)){ //Defines a default image
-$first_img = "/images/default.jpg";
+function echo_first_image ($postID)
+{				
+	$args = array(
+	'numberposts' => 1,
+	'order'=> 'ASC',
+	'post_mime_type' => 'image',
+	'post_parent' => $postID,
+	'post_status' => 'any',
+	'post_type' => 'any'
+	);
+	
+	$attachments = get_children( $args );
+	
+	//print_r($attachments);
+	
+	if ($attachments) {
+		foreach($attachments as $attachment) {
+			$image_attributes = wp_get_attachment_image_src( $attachment->ID, 'thumbnail' )  ? wp_get_attachment_image_src( $attachment->ID, 'thumbnail' ) : wp_get_attachment_image_src( $attachment->ID, 'full' );
+				
+			return wp_get_attachment_thumb_url( $attachment->ID );
+			
+		}
+	}
 }
-return $first_img;
 
-}
+
+
 
 function set_featured_thumb() {
 	global $mantra_options;
@@ -560,9 +596,15 @@ function set_featured_thumb() {
      ${"$key"} = $value ;
 
 }
-	if ( $mantra_fauto=="Enable" && get_image()!="/images/default.jpg" ) {
-	if ( function_exists("has_post_thumbnail") && has_post_thumbnail() && $mantra_fpost=='Enable' ) { the_post_thumbnail(array($mantra_fwidth,$mantra_fheight), array("class" => "align".strtolower($mantra_falign)." post_thumbnail" , "src" =>  get_image() )); }
-																								}
-	else if ( function_exists("has_post_thumbnail") && has_post_thumbnail() && $mantra_fpost=='Enable') { the_post_thumbnail(array($mantra_fwidth,$mantra_fheight), array("class" => "align".strtolower($mantra_falign)." post_thumbnail"  )); }
+global $post;
+$image_src = echo_first_image($post->ID);
+
+
+	 if ( function_exists("has_post_thumbnail") && has_post_thumbnail() && $mantra_fpost=='Enable') { the_post_thumbnail( array($mantra_fwidth,$mantra_fheight), array("class" => "align".strtolower($mantra_falign)." post_thumbnail" ) ); }
+
+
+	else	if ($mantra_fpost=='Enable' && $mantra_fauto=="Enable" && $image_src && ($mantra_excerptarchive != "Full Post" || $mantra_excerpthome != "Full Post")) { 
+ echo '<img width='.$mantra_fwidth.' height='.$mantra_fheight.' title="" alt="" class="align'.strtolower($mantra_falign).' post_thumbnail" src="'.$image_src.'">' ;
+																							}
 								
-	}
+	}	 

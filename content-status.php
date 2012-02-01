@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Post_Formats
  *
- * @package WordPress
+ * @package Cryout Creations
  * @subpackage Mantra
  */
 ?>

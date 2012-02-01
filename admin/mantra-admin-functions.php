@@ -1370,7 +1370,7 @@ if ($options) $mantra_options = $options;
 
 	</form>
 
-	<span id="version"> Mantra v. 1.7.2 - by <a href="http://www.cryoutcreations.eu">Cryout Creations</a></span>
+	<span id="version"> Mantra v. 1.7.4 - by <a href="http://www.cryoutcreations.eu">Cryout Creations</a></span>
 </div>
 
 <div class="righty" >

@@ -2,7 +2,7 @@
 /**
  * The template used to display Tag Archive pages
  *
- * @package WordPress
+ * @package Cryout Creations
  * @subpackage Mantra
  * @since Mantra 1.0
  */

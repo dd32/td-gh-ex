@@ -48,6 +48,10 @@ if ($mantra_side != "1c") { ?>
 
 		<?php endif; // end primary widget area ?>
 			</ul>
+
+			<ul class="xoxo">
+				<?php dynamic_sidebar( 'secondary-widget-area' ); ?>
+			</ul>
 		</div><!-- #primary .widget-area -->
 
 <?php
@@ -56,7 +60,10 @@ if ($mantra_side != "1c") { ?>
 
 		<div id="secondary" class="widget-area" role="complementary" >
 			<ul class="xoxo">
-				<?php dynamic_sidebar( 'secondary-widget-area' ); ?>
+				<?php dynamic_sidebar( 'third-widget-area' ); ?>
+			</ul>
+			<ul class="xoxo">
+				<?php dynamic_sidebar( 'fourth-widget-area' ); ?>
 			</ul>
 		</div><!-- #secondary .widget-area -->
 

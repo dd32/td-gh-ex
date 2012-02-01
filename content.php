@@ -2,7 +2,7 @@
 /**
  * The default template for displaying content
  *
- * @package WordPress
+ * @package Cryout Creations
  * @subpackage Mantra
  * @since Mantra 1.0
  */
@@ -67,7 +67,7 @@ foreach ($options as $key => $value) {
 						<?php } else { ?>
 						<div class="entry-content">
 						<?php set_featured_thumb(); ?>
-						<?php if ($mantra_excerpthome != "Full Post" ) {the_excerpt(); } else { the_content( __( 'Continue reading','mantra').' <span class="meta-nav">&rarr;</span>');}  ?>
+						<?php	the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'mantra' ) . '</span>', 'after' => '</div>' ) ); ?>
 						</div><!-- .entry-content --> 
 						<?php }   ?>

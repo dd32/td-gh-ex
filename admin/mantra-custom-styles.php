@@ -12,18 +12,19 @@ $totalwidth= $mantra_sidewidth+$mantra_sidebar+50;
 ?>
 
 <style>
-#wrapper, #access, #colophon, #branding, #main,  .attachment img { width:<?php echo ($totalwidth) ?>px ;}
+#wrapper, #access, #colophon, #branding, #main { width:<?php echo ($totalwidth) ?>px ;}
+.attachment img{  max-width:<?php echo ($totalwidth-40) ?>px ;}
 .single-attachment #content {width:<?php echo ($totalwidth-40) ?>px ;}
 #access .menu-header, div.menu {width:<?php echo ($totalwidth-12) ?>px ;}
 #content img {	max-width:<?php echo ($mantra_sidewidth-40) ?>px;}
 #content .wp-caption{	max-width:<?php echo ($mantra_sidewidth-30) ?>px;}
 
 <?php if ($mantra_side == "1c" || $mantra_side =="Disable") { ?>
-#content {width:<?php echo ($totalwidth-50) ?>px; margin:20px;} <?php }
+#content {width:<?php echo ($totalwidth-50) ?>px; margin:20px;}  <?php }
 
 ?><?php if ($mantra_side == "2cSr" || $mantra_side == "Right") { ?>
 #content { width:<?php echo ($mantra_sidewidth- 10) ?>px;}
-#primary,#secondary {width:<?php echo ($mantra_sidebar  ) ?>px;} <?php }
+#primary,#secondary {width:<?php echo ($mantra_sidebar  ) ?>px;}<?php }
 
 ?><?php if ($mantra_side == "2cSl" || $mantra_side == "Left") { ?>
 #content { width:<?php echo ($mantra_sidewidth - 10) ?>px;float:right;margin:0 20px 0 0;}
@@ -88,10 +89,10 @@ font-size:<?php echo $mantra_fontsize ?>;
 ?><?php if ($mantra_hovercolor != "333333") { ?>  a:hover, .entry-meta a:hover, .entry-utility a:hover , .widget-area a:hover { color:<?php echo $mantra_hovercolor; ?> ;}<?php }
 ?><?php if ($mantra_headtextcolor != "333333") { ?> #content .entry-title a, #content .entry-title, #content h1, #content h2, #content h3, #content h4, #content h5, #content h6{ color:<?php echo $mantra_headtextcolor; ?> ;}<?php }
 ?><?php if ($mantra_headtexthover != "000000") { ?> #content .entry-title a:hover { color:<?php echo $mantra_headtexthover; ?> ;}<?php }
-?><?php if ($mantra_sideheadbackcolor != "444444") { ?> .widget-title { background-color:<?php echo $mantra_sideheadbackcolor; ?> ;}<?php }
+?><?php if ($mantra_sideheadbackcolor != "444444") { ?> .widget-title,#footer-widget-area .widget-title { background-color:<?php echo $mantra_sideheadbackcolor; ?> ;}<?php }
 ?><?php if ($mantra_sideheadtextcolor != "2EA5FD") { ?> .widget-title { color:<?php echo $mantra_sideheadtextcolor; ?>  ;}<?php }
 
-?><?php if (1) { ?> #footer-widget-area .widget-title { color:<?php echo $mantra_footerheader; ?> ;}<?php }
+?><?php if (1) { ?> #footer-widget-area .widget-title { color:<?php echo $mantra_footerheader; ?> ; ;}<?php }
 ?><?php if (1) { ?> #footer-widget-area a { color:<?php echo $mantra_footertext; ?>  ;}<?php }
 ?><?php if (1) { ?> #footer-widget-area a:hover { color:<?php echo $mantra_footerhover; ?>  ;}<?php }
 
