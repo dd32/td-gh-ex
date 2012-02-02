@@ -101,7 +101,7 @@ if (!empty($options['abs_newsletter'])) { ?><a target="_blank" href="<?php echo 
 <div id="nav-back">
 		<div id="access" role="navigation">
 			
-			<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary', 'link_before' => '<span class="item-left"></span><span class="icon">' , 'link_after' => '</span><span class="item-right"></span>' ) ); ?>
+			<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
 			</div><!-- #access -->
       </div>
       
@@ -257,7 +257,7 @@ Oops, please try to refresh the page
 <?php } } ?>
 
 
-<?php if ($options['abs_header_slider'] == "disable" || $options['abs_header_slider'] == "nivo" || $options['abs_header_slider'] == "") { echo '<br />'; } else { ?>
+<?php if ($options['abs_header_background'] == "disable") { echo '<br />'; } else { ?>
 
 		<div id="masthead">
 			<div id="branding" role="banner"> 
@@ -272,7 +272,7 @@ Oops, please try to refresh the page
 						echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
 					else : ?>
           <?php if( get_header_image() ) { ?>
-						<div class="image-wrapper"><img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="" />
+						<div class="image-wrapper"><img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="" /></div>
             <?php } else { ?>
               <hr style="color:#f3f3f3;" />
             <?php } ?>
@@ -285,11 +285,13 @@ Oops, please try to refresh the page
     <?php } ?>
     
     
-	</div>
+
   
 
   <!-- #header -->
   
   <?php } else { echo '<br />'; }?>
+  
+  </div>
 
 <div id="main">

@@ -243,6 +243,17 @@ $absselect_sidebar = array(
 	)                 
 ); 
 
+$absselect_header_background = array(
+	'0' => array(
+		'value' =>	'display',
+		'label' => __( 'Display &nbsp;&nbsp;&nbsp;(default)', 'absolum'  )
+	),
+	'1' => array(
+		'value' =>	'disable',
+		'label' => __( 'Disable', 'absolum'  )
+	)              
+); 
+
 
 
 $absshortname = "abs";
@@ -292,6 +303,14 @@ array(  "name" => "Sidebar position",
         "desc" => "",
         "id" => $absshortname."_pos_sidebar",
         "type" => "select6",
+        "std" => "false"
+),
+
+
+array(  "name" => "Display custom header",
+        "desc" => "Choose if you want to display custom header image",
+        "id" => $absshortname."_header_background",
+        "type" => "select8",
         "std" => "false"
 ),
 
@@ -445,7 +464,7 @@ array( "type" => "close-tab"),
  * Create the options page
  */
 function absolum_theme_options_do_page() {
-	global $absthemename, $absshortname, $absoptionlist, $absselect_scheme, $absselect_slider, $absselect_content_font, $absselect_title, $absselect_background, $absselect_sidebar, $absselect_slider_placement; 
+	global $absthemename, $absshortname, $absoptionlist, $absselect_scheme, $absselect_slider, $absselect_content_font, $absselect_title, $absselect_background, $absselect_sidebar, $absselect_slider_placement, $absselect_header_background; 
 	if ( ! isset( $_REQUEST['updated'] ) ) {
 		$_REQUEST['updated'] = false; 
 } 
@@ -863,7 +882,38 @@ case 'select7':
 <tr>
 <td><small><?php echo $value['desc']; ?></small></td>
 </tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
-                                  
+
+
+<?php
+break;
+ 
+case 'select8':
+?>
+<tr>
+<td width="15%" rowspan="2" valign="middle"><strong><?php echo $value['name']; ?></strong></td>
+<td width="85%"><select style="width:300px;" name="<?php echo 'absolum['.$value['id'].']'; ?>">
+
+<?php
+								$selected = $options[$value['id']];
+								$p = '';
+								$r = '';
+
+								foreach ( $absselect_header_background as $option ) {
+									$label = $option['label'];
+									if ( $selected == $option['value'] ) // Make default first in list
+										$p = "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . selected( esc_attr( $option['value'] ), $label ). "'>$label</option>";
+									else
+										$r .= "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . "'>$label</option>";
+								}
+								echo $p . $r;
+							?>
+</select></td>
+</tr> 
+ 
+<tr>
+<td><small><?php echo $value['desc']; ?></small></td>
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+                                         
                     
 <?php
 break;
@@ -923,7 +973,7 @@ case "checkbox":
  * Sanitize and validate input. Accepts an array, return a sanitized array.
  */
 function absolum_theme_options_validate( $input ) {
-	global $absselect_scheme, $absselect_slider, $absselect_content_font, $absselect_title, $absselect_background, $absselect_sidebar, $absselect_slider_placement;
+	global $absselect_scheme, $absselect_slider, $absselect_content_font, $absselect_title, $absselect_background, $absselect_sidebar, $absselect_slider_placement, $absselect_header_background;
   
   $input['abs_rss_feed'] = wp_filter_nohtml_kses( $input['abs_rss_feed'] );
   
