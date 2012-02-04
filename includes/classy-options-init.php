@@ -39,23 +39,28 @@ $terms2 = get_terms('category', 'hide_empty=0');
 
 $options
 		->section("Welcome")
-		->info("<h1>iFeature 3</h1>
-		<h2>A Different Kind of WordPress Theme</h2>
-<strong>Intuitive New Theme Options. New Design. Post Formats.</strong>
+		->info("<h1>iFeature 4</h1>
+		
+<p><strong>A Responsive Drag & Drop Free WordPress Theme</strong></p>
 
-<p>iFeature 3 is one of the most advanced personal content management WordPress Themes in the world and now offers intuitive theme options which make using iFeature even more personal and fun than ever before.</p>
+<div id='upgrade2'><strong><a href='http://cyberchimps.com/ifeaturepro/' target='_blank' class='upgrade'>Upgrade to iFeature Pro 4</a></strong></div>
+
+<p>If you want even more amazing new features <a href='http://cyberchimps.com/ifeaturepro/' target='_blank'>upgrade to iFeature Pro 4</a> which includes dozens of more feautres such as more Drag & Drop Header, Blog and Page Elements, the Responsive iFeature Pro Slider with full-width custom slides, 8 beautiful preselected color schemes, custom color pickers, amazing background images, a responsive featured posts section, callout section, more widgetized boxes, expanded typography including TypeKit support, and many more powerful new features. Please visit <a href='http://cyberchimps.com/ifeaturepro/' target='_blank'>CyberChimps.com</a> to learn more!</p>
+
+<p>iFeature 4 includes a Responsive Apple-like design (which magically adjusts to mobile devices such as the iPhone and iPad), Responsive iFeature Slider, New Drag & Drop Header Elements, Page and Blog Elements, intuitive Theme Options, and is built with HTML5 and CSS3.</p>
 
 <p>To get started simply work your way through the menus to the left, select your options, add your content, and always remember to hit save after making any changes.</p>
 
-<p>If you want even more amazing new features <a href='http://cyberchimps.com/ifeaturepro/' target='_blank'>upgrade to iFeature Pro 3</a> which includes Drag & Drop Page Elements, the iFeature Pro Slider with full-width custom slides, 8 beautiful preselected color schemes, more custom color pickers, amazing new background images, a featured posts section, callout section, more widgetized boxes, expanded typography including TypeKit support, and many more powerful new features please visit <a href='http://cyberchimps.com/ifeaturepro/' target='_blank'>CyberChimps.com</a> to learn more!</p>
+<p>We tried to make iFeature 4 as easy to use as possible, but if you still need help please read the <a href='http://cyberchimps.com/ifeature-free/docs/' target='_blank'>documentation</a>, and visit our <a href='http://cyberchimps.com/forum/' target='_blank'>support forum</a>.</p>
 
-<div id='upgrade2'><strong><a href='http://cyberchimps.com/ifeaturepro/' target='_blank' class='upgrade'>Upgrade to iFeature Pro 3</a></strong></div>
+<p>Thank you for using iFeature 4.</p>
 
-<p>We tried to make iFeature 3 as easy to use as possible, but if you still need help please read the <a href='http://cyberchimps.com/ifeature-free/docs/' target='_blank'>documentation</a>, and visit our <a href='http://cyberchimps.com/forum/' target='_blank'>support forum</a>.</p>
+<h4>A Different Kind of WordPress Theme</h4>
 
-<p>Thank you for using iFeature 3, a <a href='http://cyberchimps.com' target='_blank'>CyberChimps WordPress Theme</a>.</p>")
+<p><a href='http://cyberchimps.com' target='_blank'>A CyberChimps WordPress Theme</a></p>")
 		->section("Design")
 		->open_outersection()
+			->checkbox($themeslug."_responsive_design", "Responsive Design", array('default' => true))
 			->select($themeslug."_color_scheme", "Select a Color Scheme", array( 'options' => array("grey" => "Grey (default)", "green" => "Green"), 'default' => 'grey'))
 		->close_outersection()
 		->subsection("Typopgraphy")
@@ -76,6 +81,11 @@ $options
 			->color($themeslug."_link_color", "Link Color")
 		->subsection_end()
 	->section("Header")
+		->open_outersection()
+			->section_order("header_section_order", "Drag drop sections for the Header", array('options' => array("ifeature_header_content" => "Logo + Icons", "ifeature_sitename_contact" => "Logo + Contact", "ifeature_description_icons" => "Description + Icons", "ifeature_logo_Description" => "Logo + Description", "synapse_navigation" => "iMenu"), 'default' => 'ifeature_header_content,synapse_navigation'))
+			->upload($themeslug."_banner", "Banner Image")
+			->textarea($themeslug."_header_contact", "Contact Information")
+		->close_outersection()
 		->subsection("Header Options")
 			->upload($themeslug."_logo", "Custom Logo")
 			->checkbox($themeslug."_enable_header_contact", "Header Contact Area")
@@ -117,6 +127,9 @@ TEMPLATE_URL . '/images/social/thumbs/icons-default.png' ), 'default' => 'defaul
 			->textarea($themeslug."_ga_code", "Google Analytics Code")
 		->subsection_end()
 	->section("Blog")
+		->open_outersection()
+			->section_order($themeslug."_blog_section_order", "Blog Page Re-Order", array('options' => array("synapse_index" => "Post Page", "synapse_blog_slider" => "iFeature Slider", "synapse_twitterbar_section" => "Twitter Bar"), "default" => 'synapse_blog_slider,synapse_index'))
+		->close_outersection()
 		->subsection("Blog Options")
 			->checkbox($themeslug."_post_formats", "Post Format Icons",  array('default' => true))
 			->checkbox($themeslug."_show_excerpts", "Post Excerpts")
@@ -130,18 +143,43 @@ TEMPLATE_URL . '/images/social/thumbs/icons-default.png' ), 'default' => 'defaul
 			->checkbox($themeslug."_show_fb_like", "Show Facebook Like Button")
 			->checkbox($themeslug."_show_gplus", "Show Google Plus One Button")
 			->checkbox($themeslug."_post_pagination", "Post Pagination Links",  array('default' => true))
-		->subsection_end()->subsection("Blog Slider")
+		->subsection_end()
+		->subsection("Blog Slider")
 			->checkbox($themeslug."_hide_slider_blog", "Index iFeature Slider" , array('default' => true))
 			->select($themeslug.'_slider_category', 'Select the post category', array( 'options' => $blogoptions ))
 			->text($themeslug."_slider_posts_number", "Number of Featured Blog Posts")
 			->text($themeslug."_slider_delay", "Slider Delay")
 			->checkbox($themeslug."hide_slider_navigation", "Slider Navigation" , array('default' => true))
-		->subsection_end()->subsection("SEO")
+		->subsection_end()
+		->subsection("Twtterbar Options")
+			->text($themeslug."_blog_twitter", "Enter your Twitter handle")
+		->subsection_end()
+		->subsection("SEO")
 			->textarea($themeslug."_home_description", "Home Description")
 			->textarea($themeslug."_home_keywords", "Home Keywords")
 			->text($themeslug."_home_title", "Optional Home Title")
 		->subsection_end()
-	
+		->section("Templates")
+		->subsection("Single Post")
+			->checkbox($themeslug."_single_post_formats", "Post Format Icons",  array('default' => true))
+			->multicheck($themeslug."_single_hide_byline", "Post Byline Elements", array( 'options' => array($themeslug."_hide_author" => "Author" , $themeslug."_hide_categories" => "Categories", $themeslug."_hide_date" => "Date", $themeslug."_hide_comments" => "Comments", $themeslug."_hide_share" => "Share", $themeslug."_hide_tags" => "Tags"), 'default' => array( $themeslug."_hide_tags" => true, $themeslug."_hide_share" => true, $themeslug."_hide_author" => true, $themeslug."_hide_date" => true, $themeslug."_hide_comments" => true, $themeslug."_hide_categories" => true ) ) )
+			->checkbox($themeslug."_single_show_fb_like", "Facebook Like Button")
+			->checkbox($themeslug."_single_show_gplus", "Google Plus One Button")
+			->checkbox($themeslug."_post_pagination", "Post Pagination Links",  array('default' => true))
+		->subsection_end()	
+		->subsection("Archive")
+			->checkbox($themeslug."_archive_show_excerpts", "Post Excerpts", array('default' => true))
+			->checkbox($themeslug."_archive_post_formats", "Post Format Icons",  array('default' => true))
+			->multicheck($themeslug."_archive_hide_byline", "Post Byline Elements", array( 'options' => array($themeslug."_hide_author" => "Author" , $themeslug."_hide_categories" => "Categories", $themeslug."_hide_date" => "Date", $themeslug."_hide_comments" => "Comments", $themeslug."_hide_share" => "Share", $themeslug."_hide_tags" => "Tags"), 'default' => array( $themeslug."_hide_tags" => true, $themeslug."_hide_share" => true, $themeslug."_hide_author" => true, $themeslug."_hide_date" => true, $themeslug."_hide_comments" => true, $themeslug."_hide_categories" => true ) ) )
+			->checkbox($themeslug."_archive_show_fb_like", "Facebook Like Button")
+			->checkbox($themeslug."_archive_show_gplus", "Google Plus One Button")
+			->subsection_end()
+		->subsection("Search")
+			->checkbox($themeslug."_search_show_excerpts", "Post Excerpts", array('default' => true))
+		->subsection_end()
+		->subsection("404")
+			->textarea($themeslug."_custom_404", "Custom 404 Content")
+		->subsection_end()
 	->section("Footer")
 		->open_outersection()
 			->text($themeslug."_footer_text", "Footer Copyright Text")

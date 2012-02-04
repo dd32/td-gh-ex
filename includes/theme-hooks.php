@@ -26,28 +26,34 @@ function ifeature_header_content() {
 }
 
 /**
-* Hook for the post bar
-*
-* @since 3.1
-*/
-function ifeature_post_bar() {
-	do_action('ifeature_post_bar');
-}
-
-/**
-* Hook for the Facebook and Plus One buttons
-*
-* @since 3.1
-*/
-function ifeature_fb_like_plus_one() { //this will be renamed I promise
-	do_action('ifeature_fb_like_plus_one');
-}
-
-/**
 * Hook for the Header Contact Area
 *
-* @since 3.1
+* @since 3.0.5
 */
 function ifeature_header_contact_area() {
 	do_action('ifeature_header_contact_area');
+}
+
+function ifeature_sitename_register() {
+	do_action('ifeature_sitename_register');
+}
+
+function ifeature_sitename_contact() {
+	do_action('ifeature_sitename_contact');
+}
+
+function ifeature_description_icons() {
+	do_action('ifeature_description_icons');
+}
+
+function ifeature_logo_menu() {
+	do_action('ifeature_logo_menu');
+}
+
+function ifeature_logo_description() {
+	do_action('ifeature_logo_description');
+}
+
+function ifeature_banner() {
+	do_action('ifeature_banner');
 }

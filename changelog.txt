@@ -2,6 +2,13 @@ iFeature Changelog
 
 ****************************
 
+Version 4.0 (02-03-12)
+-Added Foundation CSS grid, offering both responsive and static design.
+-Drag and Drop Header and Blog elements added.
+-Added WordPress Template Options (404, Search, Archive, Single)
+-Replaced NivoSlider with Orbit.
+-General bug and style fixes.
+
 Version 3.1.4 (01-25-12)
 -Moved scripts into unified function, hooking into wp_enqueue_script.
 
@@ -288,4 +295,4 @@ Version 1.0.1 (4-6-2011)
 -Updated Theme URI in style.css 
 
 Version 1.0 (4-5-2011)
--Initial release}
+-Initial release
