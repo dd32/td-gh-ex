@@ -5,23 +5,17 @@
  * @since admired 1.0
  */
 ?><!DOCTYPE html>
-<!--[if IE 6]>
-<html id="ie6" <?php language_attributes(); ?>>
-<![endif]-->
-<!--[if IE 7]>
-<html id="ie7" <?php language_attributes(); ?>>
-<![endif]-->
-<!--[if IE 8]>
-<html id="ie8" <?php language_attributes(); ?>>
-<![endif]-->
+<!--[if IE 6]> <html id="ie6" class="no-js" <?php language_attributes(); ?>> <![endif]-->
+<!--[if IE 7]> <html id="ie7" class="no-js" <?php language_attributes(); ?>> <![endif]-->
+<!--[if IE 8]> <html id="ie8" class="no-js" <?php language_attributes(); ?>> <![endif]-->
 <!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
-<html <?php language_attributes(); ?>>
+<html class="no-js" <?php language_attributes(); ?>>
 <!--<![endif]-->
 <?php global $options;
 $options = get_option('admired_theme_options'); ?>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta name="viewport" content="width=device-width" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?php
 	if ( isset ($options['admired_hide_metainfo'])) {
 		wp_title('');	/* this is compatible with SEO plugins */
@@ -42,17 +36,7 @@ $options = get_option('admired_theme_options'); ?>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<!--[if lt IE 9]>
-<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
-<![endif]-->
-<?php	//* load the script needed for the superfish menu bar 
-    if ( isset ($options['admired_remove_superfish']) &&  ($options['admired_remove_superfish']!="") ) {
-		echo ' ';}
-	else {
-		wp_enqueue_script( 'jquery' );
-		wp_enqueue_script('admiredSFhoverIntent', get_template_directory_uri().'/js/superfish/hoverIntent.js');
-		wp_enqueue_script('admiredSF', get_template_directory_uri().'/js/superfish/superfish.js');
-	}
+<?php
 	/* JavaScript for threaded comments.
 	 ----------------------------------*/
 	if ( is_singular() && get_option( 'thread_comments' ) )
@@ -70,14 +54,22 @@ $options = get_option('admired_theme_options'); ?>
 		if ( isset ($options['admired_show_secondary_menu'])&&  ($options['admired_show_secondary_menu'] != "") ) {
 		get_template_part('top','menu'); } else { echo "";}?>
 		<header id="branding" role="banner">
-			<div id="header-group"> <?php // can't have a <div> inside of <hgroup> probably a future fix ?>
+			<div id="header-group" class="clearfix">
 				<div id="header-logo">
-					<h1 id="site-title"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>
-					<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
-					<?php if ( isset ($options['admired_show_social_icons'])&&  ($options['admired_show_social_icons'] != "") ) {
-					get_template_part('header','social');} else { echo "";}
+					<?php
+					if ( ! empty( $options['admired_hide_title_discription'] ) && $options['admired_header_logo'] ) { ?>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><span id="header-link"> </span></a>
+					<?php } ?>
+					<hgroup>
+						<h1 id="site-title"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>
+						<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
+					</hgroup>
+					<?php
 					if ( isset ($options['admired_search_placement'])&&  ($options['admired_search_placement'] == "Header") ) {
-					get_search_form(); } ?>
+					get_search_form(); } 
+					if ( isset ($options['admired_show_social_icons'])&&  ($options['admired_show_social_icons'] != "") ) {
+					get_template_part('header','social');} else { echo "";}
+					?>
 				</div>
 			</div>
 		</header><!-- #branding -->

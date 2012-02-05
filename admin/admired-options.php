@@ -5,25 +5,6 @@ $admired_shortname = "admired";
 $admired_option_group = $admired_shortname.'_theme_option_group';
 $admired_option_name = $admired_shortname.'_theme_options';
 
-// Load stylesheet and jscript
-add_action('admin_init', 'admired_add_init');
-
-function admired_add_init() {
-
-    $file_dir = get_template_directory_uri();
-	wp_enqueue_style('thickbox');
-	wp_enqueue_style("admired-Opt-Css", $file_dir."/admin/admired-options.css");
-	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script("admired-jq-ui", $file_dir."/admin/js/jquery-ui.js");
-	wp_enqueue_script("admired-jq-cookie", $file_dir."/admin/js/jquery-cookie.js");
-	wp_enqueue_script('admired-jq-checkboxs', $file_dir.'/admin/js/jquery.Checkbox.js');
-	wp_enqueue_script('admired-jq-select', $file_dir.'/admin/js/jquery.selectBox.js');
-	wp_enqueue_script("admired-color-Script", $file_dir."/admin/js/jquery.colorpicker.js");
-	wp_enqueue_script("admired-Opt-Script", $file_dir."/admin/js/admired-options.js");
-	wp_enqueue_script('media-upload');
-	wp_enqueue_script('thickbox');
-}
-
 // Create custom settings menu
 add_action('admin_menu', 'admired_create_menu');
 
@@ -31,7 +12,26 @@ function admired_create_menu() {
 
 	global $admired_themename;
 	//create new top-level menu
-	add_theme_page( __( $admired_themename.' Admired Options' ), __( 'Admired Options','admired' ), 'edit_theme_options', basename(__FILE__), 'admired_settings_page' );
+	$page = add_theme_page( __( $admired_themename.' Admired Options' ), __( 'Admired Options','admired' ), 'edit_theme_options', basename(__FILE__), 'admired_settings_page' );
+	/* Using registered $page handle to hook script load */
+	add_action('admin_print_styles-' . $page, 'admired_add_init');
+}
+
+// Load stylesheet and jscript
+function admired_add_init() {
+
+    $file_dir = get_template_directory_uri();
+	wp_enqueue_style('thickbox');
+	wp_enqueue_style("admired-Opt-Css", $file_dir."/admin/admired-options.css");
+	wp_enqueue_script( 'jquery' );
+	wp_enqueue_script( 'jquery-ui-tabs' );
+	wp_enqueue_script("admired-jq-cookie", $file_dir."/admin/js/jquery-cookie.js");
+	wp_enqueue_script('admired-jq-checkboxs', $file_dir.'/admin/js/jquery.Checkbox.js');
+	wp_enqueue_script('admired-jq-select', $file_dir.'/admin/js/jquery.selectBox.js');
+	wp_enqueue_script("admired-color-Script", $file_dir."/admin/js/jquery.colorpicker.js");
+	wp_enqueue_script("admired-Opt-Script", $file_dir."/admin/js/admired-options.js");
+	wp_enqueue_script('media-upload');
+	wp_enqueue_script('thickbox');
 }
 
 // Register settings
@@ -70,7 +70,8 @@ $admired_settings = array (
         "type" => "radio1",
         "desc" => __("Which skin would you like to use?",'admired'),
 		"std" => "default",
-        "options" => array("default" => "Default", "charcoal" => "Charcoal", "light" => "Light", "metal" => "Heavy Metal"),
+        "options" => array("default" => "Default", "charcoal" => "Charcoal", "light" => "Light", "metal" => "Heavy Metal", "orange" => "Kiss of Orange",
+					"blue" => "Blue Diamond", "redline" => "Redline", "white" => "Simple White"),
     	),
 	
 	array("name" => __("Sidebar Position",'admired'),
@@ -195,9 +196,9 @@ $admired_settings = array (
 			'desc' => __('Google Font for the title and description.','admired'),
 			'std' => 'Raleway',
 			'value' => array( __('Raleway','admired'),
-			'Arvo', 'Calligraffitti','Copse','Covered By Your Grace','Crafty Girls','Droid Sans','Droid Serif', 'Lobster','Nobile',
-			'Old Standard TT','Open Sans','Oswald','Pacifico','Permanent Marker','PT Sans','Quattrocento',
-			'Redressed','Reenie Beanie','Rock Salt', 'Shadows Into Light','Slackey','Sniglet','Special Elite','Tangerine',
+			'Arvo', 'Caesar Dressing', 'Calligraffitti','Copse','Covered By Your Grace','Crafty Girls', 'Diplomata SC', 'Droid Sans','Droid Serif', 'Flavors', 'Fredericka the Great', 'Lobster',
+			'Macondo Swash Caps', 'Monoton', 'Nobile','Old Standard TT','Open Sans','Oswald','Pacifico','Permanent Marker','PT Sans','Quattrocento',
+			'Redressed','Reenie Beanie','Rock Salt', 'Shadows Into Light', 'Shojumaru', 'Slackey','Sniglet','Special Elite','Tangerine',
 			'Ubuntu','UnifrakturCook','Vollkorn','Yanone Kaffeesatz','Yellowtail')),
 
 	array("name" => __("Content Font Type",'admired'),
@@ -225,9 +226,9 @@ $admired_settings = array (
 			'desc' => __('Google Font used for the content','admired'),
 			'std' => 'Lobster',
 			'value' => array( __('Lobster','admired'),
-			'Arvo', 'Calligraffitti','Copse','Covered By Your Grace','Crafty Girls','Droid Sans','Droid Serif','Nobile',
-			'Old Standard TT','Open Sans','Oswald','Pacifico','Permanent Marker','PT Sans','Quattrocento','Raleway',
-			'Redressed','Reenie Beanie','Rock Salt', 'Shadows Into Light','Slackey','Sniglet','Special Elite','Tangerine',
+			'Arvo', 'Caesar Dressing', 'Calligraffitti','Copse','Covered By Your Grace','Crafty Girls', 'Diplomata SC', 'Droid Sans','Droid Serif', 'Flavors', 'Fredericka the Great', 'Macondo Swash Caps',
+			'Monoton', 'Nobile','Old Standard TT','Open Sans','Oswald','Pacifico','Permanent Marker','PT Sans','Quattrocento','Raleway',
+			'Redressed','Reenie Beanie','Rock Salt', 'Shadows Into Light', 'Shojumaru', 'Slackey','Sniglet','Special Elite','Tangerine',
 			'Ubuntu','UnifrakturCook','Vollkorn','Yanone Kaffeesatz','Yellowtail')),
 		
 	array("type" => "close"),
@@ -251,7 +252,7 @@ $admired_settings = array (
 	array("type" => "open"),
 	
 	array( "name" => __( 'Custom Logo','admired'),
-			"desc" => __( "Add a custom logo to the header. Click on Choose Image and upload a logo or select one out of your Media Library and click insert into post."),
+			"desc" => __( "Add a custom logo to the header. Click on Choose Image and upload a logo or select one out of your Media Library and click insert into post. Max: 1010px X 105px",'admired'),
 			"id" => $admired_shortname."_header_logo",
 			"type" => "upload",
 			"std" => ""),
@@ -313,6 +314,10 @@ $admired_settings = array (
 	array( "name" => __( 'Site Title','admired'), 'id' => $admired_shortname.'_title_color', 'type' => 'ctext',
 			"desc" => __( "Color of the blog's main title in header. (#F7F7F7)",'admired'),
 			'std' => '#F7F7F7'),
+			
+	array( "name" => __( 'Site Title Hover','admired'), 'id' => $admired_shortname.'_title_hover_color', 'type' => 'ctext',
+			"desc" => __( "Color of the blog's main title in header on mouse hover. (#1982D1)",'admired'),
+			'std' => '#1982D1'),
 			
 	array( "name" => __( 'Site Description','admired'), 'id' => $admired_shortname.'_description_color', 'type' => 'ctext',
 			"desc" => __( "Color of the blog's description in header. (#C4C4C4)",'admired'),
@@ -504,12 +509,16 @@ $admired_settings = array (
 			"desc" => __( 'Place your Google Plus ID in the textbox.','admired'),
 			'std' => ''),
 			
-	array(  "name" => __( 'Google Buzz','admired'), 'id' => $admired_shortname.'_google_buzz_id', 'type' => 'text',
-			"desc" => __( 'Place your Google Buzz ID in the textbox.','admired'),
+	array(  "name" => __( 'Vimeo','admired'), 'id' => $admired_shortname.'_vimeo_id', 'type' => 'text',
+			"desc" => __( 'Place your Vimeo ID in the textbox.','admired'),
 			'std' => ''),
 			
 	array(  "name" => __( 'Youtube','admired'), 'id' => $admired_shortname.'_youtube_id', 'type' => 'text',
 			"desc" => __( 'Place your Youtube ID in the textbox.','admired'),
+			'std' => ''),
+			
+	array(  "name" => __( 'Pinterest','admired'), 'id' => $admired_shortname.'_pinterest_id', 'type' => 'text',
+			"desc" => __( 'Place your Pinterest ID in the textbox.','admired'),
 			'std' => ''),
 			
 	array("type" => "close"),
@@ -861,11 +870,11 @@ function admired_settings_page() {
 	
 			<?php // admired Donate Button   ?>
 			<div class="donate-box">
-				<form action="https://www.paypal.com/cgi-bin/webscr" TARGET="_blank" method="post">
+				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 					<input type="hidden" name="cmd" value="_s-xclick">
-					<input type="hidden" name="hosted_button_id" value="63CVZ2AP6V3ZS">
-					<input type="image" src="https://www.paypalobjects.com/WEBSCR-640-20110429-1/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-					<img alt="" border="0" src="https://www.paypalobjects.com/WEBSCR-640-20110429-1/en_US/i/scr/pixel.gif" width="1" height="1">
+					<input type="hidden" name="hosted_button_id" value="FJA4KZTFMXQG8">
+					<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+					<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 				</form>
 				<p style="color: #777; margin-top: -5px;">Like the Theme? Help it stay up to date.<p>
 			</div>
@@ -933,6 +942,18 @@ function admired_enqueue_skin_scheme() {
 		
 	if ( 'metal' == $skin_scheme )
 		wp_enqueue_style( 'metal', get_template_directory_uri() . '/skins/metal.css', array(), null );
+		
+	if ( 'orange' == $skin_scheme )
+		wp_enqueue_style( 'orange', get_template_directory_uri() . '/skins/orange.css', array(), null );
+		
+	if ( 'blue' == $skin_scheme )
+		wp_enqueue_style( 'blue', get_template_directory_uri() . '/skins/blue.css', array(), null );
+		
+	if ( 'redline' == $skin_scheme )
+		wp_enqueue_style( 'redline', get_template_directory_uri() . '/skins/redline.css', array(), null );
+		
+	if ( 'white' == $skin_scheme )
+		wp_enqueue_style( 'white', get_template_directory_uri() . '/skins/white.css', array(), null );
 
 	do_action( 'admired_enqueue_color_scheme', $skin_scheme );
 }
@@ -948,14 +969,14 @@ function admired_layout_classes( $existing_classes ) {
 		$classes = array( 'two-column' );
 	elseif ( in_array( $current_layout, array( 'sidebar-content-sidebar' ) ) )
 		$classes = array( 'three-column' );
-	elseif ( in_array( $current_layout, array( 'content' ) ) )
+	elseif ( in_array( $current_layout, array( 'content' ) ) && !is_page_template ( 'tmp-threecolumn.php' ) )
 		$classes = array( 'one-column' );
 	else 
 		$classes = array( 'two-column' );
 
 	if ( 'content-sidebar' == $current_layout )
 		$classes[] = 'right-sidebar';
-	elseif ( 'sidebar-content' == $current_layout )
+	elseif ( 'sidebar-content' == $current_layout && !is_page_template ( 'tmp-onecolumn.php' ))
 		$classes[] = 'left-sidebar';
 	elseif ( 'sidebar-content-sidebar' == $current_layout )
 		$classes[] = 'two-sidebars';

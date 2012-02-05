@@ -8,7 +8,7 @@
 $options = get_option('admired_theme_options');
 $current_layout = $options['admired_column'];
 
-if ( 'content' != $current_layout ) :
+if ( 'content' != $current_layout || is_page_template ( 'tmp-threecolumn.php' ) ) :
 
 ?>
 		<div id="secondary" class="widget-area" role="complementary">

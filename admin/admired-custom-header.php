@@ -124,12 +124,11 @@
 	/* options to change the primary menu bar colors */
 	$optColor = ($options['admired_main_menubar_color']);
 	if ( isset ($options['admired_main_menubar_color']) &&  ($options['admired_main_menubar_color'] !="#0281D4") ) {
-	echo ("#nav-bottom-wrap {background: $optColor; border: 1px solid $optColor;} #nav-menu2 .menu-header li, div.menu li { border-right: 2px groove $optColor;}\n");
-	}
+	echo ("#nav-bottom-wrap {background: $optColor; border: 1px solid $optColor;} #nav-menu2 .menu-header li, div.menu li { border-right: 2px groove $optColor;} #nav-menu2 {text-shadow: none;}\n");}
 
 	$optColor = ($options['admired_main_menubar_hoverbg_color']);
 	if ( isset ($options['admired_main_menubar_hoverbg_color']) &&  ($options['admired_main_menubar_hoverbg_color'] !="#026BB0") ) {
-		echo ("#nav-menu2 li:hover > a,#nav-menu2 a:focus {background: $optColor;}\n");
+		echo ('#nav-menu2 li:hover > a,#nav-menu2 a:focus {-ms-filter: "progid:DXImageTransform.Microsoft.gradient(enabled=false)"; background: $optColor;}\n');
 	}
 
 	$optColor = ($options['admired_main_menubar_dropbg_color']);
@@ -187,9 +186,9 @@
 		echo("#nav-menu2 a{ line-height: 33px;} \n");
 	}
 
-	$img_SuperFish = get_template_directory_uri() . '/js/superfish/images/';      
+	$img_SuperFish = get_template_directory_uri() . '/js/superfish/images/';
 	$imgoption = ($options['admired_superfish_arrow_color']);
-	if ( isset ($options['admired_superfish_arrow_color'])) { 
+	if ( isset ($options['admired_superfish_arrow_color'])&&  ($options['admired_superfish_arrow_color'] !="White") ) { 
 	    echo (".sf-sub-indicator{ background: url(");
 		echo ("$img_SuperFish");
 		echo ("$imgoption.png);}\n"); 
@@ -199,6 +198,11 @@
 	$optColor = ($options['admired_title_color']);
 	if ( isset ($options['admired_title_color'])&&  ($options['admired_title_color'] !="#F7F7F7") ) {
 		echo("#site-title a { color: $optColor;}\n");
+	}
+	
+	$optColor = ($options['admired_title_hover_color']);
+	if ( isset ($options['admired_title_hover_color'])&&  ($options['admired_title_hover_color'] !="#1982D1") ) {
+		echo("#site-title a:hover, #site-title a:focus, #site-title a:active { color: $optColor;}\n");
 	}
 
 	$optColor = ($options['admired_description_color']);
@@ -210,7 +214,7 @@
 		echo("#site-title, #site-description{ visibility: hidden;}\n");
 	}
 	if ( isset ($options['admired_search_placement'])&&  ($options['admired_search_placement'] !="Menu") ) {
-		echo("#nav-menu2, #nav-menu2 .menu-header, div.menu { width: 1010px;}\n");
+		echo("#nav-menu2, #nav-menu2 .menu-header, div.menu { width: 91.61%; max-width: 1050px; margin-left: 10px; }\n");
 	}
 
 	//*********************************************************** Sidebar
@@ -295,8 +299,11 @@
 	}
 	
 	// Social
+	if ( isset ($options['admired_search_placement'])&&  ($options['admired_search_placement'] == "Header") ) {
+		echo("div.admired-social { top: 47px;}\n");
+	}
 	if ( isset ($options['admired_show_social_icons'])&&  ($options['admired_show_social_icons'] != "") ) {
-		echo("#branding #searchform { top: -8.0em;}\n");
+		echo("#branding #searchform { top: 0;}\n");
 	}
 	
 ?></style><!-- end of style section -->

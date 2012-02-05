@@ -12,5 +12,6 @@ Help forum: http://wp-ultra.com/forum/
 * One, two, and three column template
 * Pagination
 * SEO plugin support
-* Four different skins
+* Eight different skins
 * Social follow icons
+* Responsive

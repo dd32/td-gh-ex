@@ -46,6 +46,30 @@ $functions_path = TEMPLATEPATH . '/admin/';
 require_once ($functions_path . 'admired-options.php');
 require_once ($functions_path . 'admired-custom-header.php');
 
+/* Register Assets */
+if( ! function_exists( 'admired_register_assets') ):
+	function admired_register_assets(){
+		$options = get_option('admired_theme_options');
+		/*----------------------------------------
+		# REGISTER SCRIPTS
+		----------------------------------------*/
+		/* Register Scripts */
+		if(!is_admin()) wp_enqueue_script('jquery');
+		
+		/* Modernizr */
+		wp_register_script('modernizr', get_template_directory_uri() . '/js/modernizr-2.0.6.js', array(), '2.0.6' );
+		if( !is_admin() ){ wp_enqueue_script('modernizr'); }
+		
+		/* Superfish Scripts */
+		wp_register_script('admired-SFhoverIntent', get_template_directory_uri() . '/js/superfish/hoverIntent.js', array());
+		if ( empty( $options['admired_remove_superfish'] ) && !is_admin()) { wp_enqueue_script('admired-SFhoverIntent'); }
+		wp_register_script('admired-SF', get_template_directory_uri() . '/js/superfish/superfish.js', array());
+		if ( empty( $options['admired_remove_superfish'] ) && !is_admin()) { wp_enqueue_script('admired-SF'); }
+		
+	}
+endif;
+add_action('init','admired_register_assets');
+
 /**
  * Display pagination when applicable
  *
@@ -134,7 +158,7 @@ function admired_scroll_top() {
 	if ( isset ($options['admired_remove_scroll_top']) &&  ($options['admired_remove_scroll_top'] != "")) { echo "";} else { ?>
 
 <script type="text/javascript">
-	jQuery('a[href^="#"]').live('click',function(event){
+	jQuery('a[href^="#admired-top"]').live('click',function(event){
 		event.preventDefault();
 		var target_offset = jQuery(this.hash).offset() ? jQuery(this.hash).offset().top : 0;
 		jQuery('html, body').animate({scrollTop:target_offset}, 800);
@@ -344,6 +368,17 @@ function admired_wp_admin_bar_theme_options(){
 							));
 }
 add_action( 'admin_bar_menu', 'admired_wp_admin_bar_theme_options', 61 );
+
+
+/*
+Plugin Name: Add X-Autocomplete Fields to Comment Form. by: Samuel “Otto” Wood
+*/
+add_filter('comment_form_default_fields','add_x_autocompletetype');
+function add_x_autocompletetype($fields) {
+	$fields['author'] = str_replace('<input', '<input x-autocompletetype="name-full"', $fields['author']);
+	$fields['email'] = str_replace('<input', '<input x-autocompletetype="email"', $fields['email']);
+	return $fields;
+}
 
 /* Adding Google Analytics - Thank You Garinungkadol
  * Define the variable for the google analytics user id

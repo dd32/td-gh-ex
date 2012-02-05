@@ -9,6 +9,23 @@ Tested up to: 3.3.1
 == Change Log ==
 This change log was started beginning with Version 1.0
 
+= Changes Version 1.0.8 =
+
+* Four new skins - Kiss of Orange, Blue Diamond, Redline, and Simple White.
+* Two new social buttons - Pinterest and replaced Google Buzz with Vimeo.
+* Added an option to change the title color on hover.
+* Added a Comment Form Autocomplete filter for Chrome users - Thanks to Otto.
+* Added a couple more Google fonts that users suggested.
+* Fixed IE7 z-index bug for superfish.
+* Fixed the "scroll to top".
+* changed the line-height for the content.
+* Stopped the styles and scripts from the option page from showing on other admin pages.
+* Moved to WP core bundled JQuery UI Tabs for the Option Page.
+* Removed wp_enqueue JQuery and SuperFish from the header and placed in functions.php
+* update .pot file
+* Made Responsive!
+
+
 = Changes Version 1.0.5 =
 
 * small bug fixes with CSS.

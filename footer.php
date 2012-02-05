@@ -10,11 +10,11 @@ $options = get_option('admired_theme_options'); ?>
 	</div><!-- #main -->
 	
 </div><!-- #page -->
-<footer id="footer" role="contentinfo">
-	<section id="colophon">
+<footer id="footer" class="clearfix" role="contentinfo">
+	<section id="colophon" class="clearfix">
 		<?php if ( isset ($options['admired_remove_scroll_top']) &&  ($options['admired_remove_scroll_top'] != "")) { echo "";} else { ?>
 		<div id="top-scroll">
-			<a href="#top" class="scroll" title="Scroll to Top"><div id="scroll-top"></div></a>
+			<a href="#admired-top" class="scroll" title="Scroll to Top"><div id="scroll-top"></div></a>
 		</div>
 			<?php }
 				if ( ! is_404() ) get_sidebar( 'footer' );

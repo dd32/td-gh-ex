@@ -10,17 +10,23 @@ $options = get_option('admired_theme_options');
 
 		<ul class="admired-social">
 
-			<?php // Youtube
+			<?php // Pinterest
+			if ( isset ($options['admired_pinterest_id']) &&  ($options['admired_pinterest_id']!="") ) {
+				$output = '<li><a target="_blank" href="http://pinterest.com/'."";
+				$output .= $options['admired_pinterest_id'] ."";
+				$output .= '" id="admired-pinterest" title="Pinterest"></a></li>'."";
+				echo stripslashes($output);
+			} // Youtube
 			if ( isset ($options['admired_youtube_id']) &&  ($options['admired_youtube_id']!="") ) {
 				$output = '<li><a target="_blank" href="http://youtube.com/user/'."";
 				$output .= $options['admired_youtube_id'] ."";
 				$output .= '" id="admired-youtube" title="Youtube"></a></li>'."";
 				echo stripslashes($output);
-			} // Google Buzz
-			if ( isset ($options['admired_google_buzz_id']) &&  ($options['admired_google_buzz_id']!="") ) {
-				$output = '<li><a target="_blank" href="http://google.com/profiles/'."";
-				$output .= $options['admired_google_buzz_id'] ."";
-				$output .= '" id="admired-buzz" title="Google buzz"></a></li>'."";
+			} // Vimeo
+			if ( isset ($options['admired_vimeo_id']) &&  ($options['admired_vimeo_id']!="") ) {
+				$output = '<li><a target="_blank" href="http://vimeo.com/'."";
+				$output .= $options['admired_vimeo_id'] ."";
+				$output .= '" id="admired-buzz" title="Vimeo"></a></li>'."";
 				echo stripslashes($output);
 			} // Google Plus
 			if ( isset ($options['admired_google_plus_id']) &&  ($options['admired_google_plus_id']!="") ) {
