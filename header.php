@@ -71,7 +71,7 @@ $totalwidth= $mantra_sidewidth+$mantra_sidebar+50;
 <div id="header">
 
 		<div id="masthead">
-			<div id="branding" role="banner">
+			<div id="branding" role="banner"> 
 				<?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
 				<<?php echo $heading_tag; ?> id="site-title">
 					<span>
@@ -79,6 +79,8 @@ $totalwidth= $mantra_sidewidth+$mantra_sidebar+50;
 					</span>
 				</<?php echo $heading_tag; ?>>
 				<div id="site-description"><?php bloginfo( 'description' ); ?></div>
+
+				<div class="socials" id="sheader"><?php if($mantra_socialsdisplay0) set_social_icons(); ?></div>
 
 				<?php
 					// Check if this is a post or page, if it has a thumbnail, and if it's a big one
@@ -115,11 +117,10 @@ $totalwidth= $mantra_sidewidth+$mantra_sidebar+50;
 	</div><!-- #header -->
 	<div id="main">
 	<div  id="forbottom" >
-			<div id="socials">
-
-<?php if ($mantra_social1 && $mantra_social2) {  ?><a href="<?php echo $mantra_social2; ?>" class="socialicons" id="<?php echo $mantra_social1; ?>" title="<?php echo $mantra_social1; ?>"><img alt="<?php echo $mantra_social1; ?>" src="<?php echo get_template_directory_uri().'/images/socials/'.$mantra_social1.'.png'; ?>" /></a><?php }
-?><?php if ($mantra_social3 && $mantra_social4) {  ?><a href="<?php echo $mantra_social4 ?>" class="socialicons" id="<?php echo $mantra_social3 ?>" title="<?php echo $mantra_social3 ?>"><img alt="<?php echo $mantra_social3; ?>" src="<?php echo get_template_directory_uri().'/images/socials/'.$mantra_social3.'.png'; ?>" /></a><?php }
-?><?php if ($mantra_social5 && $mantra_social6) {  ?> <a href="<?php echo $mantra_social6 ?>" class="socialicons" id="<?php echo $mantra_social5 ?>" title="<?php echo $mantra_social5 ?>"><img alt="<?php echo $mantra_social5; ?>" src="<?php echo get_template_directory_uri().'/images/socials/'.$mantra_social5.'.png'; ?>" /></a> <?php }
-?><?php if ($mantra_social7 && $mantra_social8) {  ?> <a href="<?php echo $mantra_social8 ?>" class="socialicons" id="<?php echo $mantra_social7 ?>" title="<?php echo $mantra_social7 ?>"><img alt="<?php echo $mantra_social7; ?>" src="<?php echo get_template_directory_uri().'/images/socials/'.$mantra_social7.'.png'; ?>" /></a> <?php }?>
+			<div class="socials" id="smenul">
+<?php if($mantra_socialsdisplay1) set_social_icons(); ?>
+</div>
+			<div class="socials" id="smenur">
+<?php if($mantra_socialsdisplay2) set_social_icons(); ?>
 </div>
 <div style="clear:both;"> </div>

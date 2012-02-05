@@ -14,6 +14,8 @@ if( is_admin() ) {
 require_once(dirname(__FILE__) . "/admin/mantra-admin-functions.php");
 }
 
+
+
 // Getting the theme options and making sure defaults are used if no values are set
 
 function mantra_get_theme_options() {
@@ -607,4 +609,18 @@ $image_src = echo_first_image($post->ID);
  echo '<img width='.$mantra_fwidth.' height='.$mantra_fheight.' title="" alt="" class="align'.strtolower($mantra_falign).' post_thumbnail" src="'.$image_src.'">' ;
 																							}
 								
-	}	 
+	}	
+
+function set_social_icons() {
+	global $mantra_options;
+	foreach ($mantra_options as $key => $value) {
+     ${"$key"} = $value ;
+
+}
+if ($mantra_social1 && $mantra_social2) {  ?><a target="_blank" href="<?php echo $mantra_social2; ?>" class="socialicons" id="<?php echo $mantra_social1; ?>" title="<?php echo $mantra_social1; ?>"><img alt="<?php echo $mantra_social1; ?>" src="<?php echo get_template_directory_uri().'/images/socials/'.$mantra_social1.'.png'; ?>" /></a><?php }
+?><?php if ($mantra_social3 && $mantra_social4) {  ?><a target="_blank" href="<?php echo $mantra_social4 ?>" class="socialicons" id="<?php echo $mantra_social3 ?>" title="<?php echo $mantra_social3 ?>"><img alt="<?php echo $mantra_social3; ?>" src="<?php echo get_template_directory_uri().'/images/socials/'.$mantra_social3.'.png'; ?>" /></a><?php }
+?><?php if ($mantra_social5 && $mantra_social6) {  ?> <a target="_blank" href="<?php echo $mantra_social6 ?>" class="socialicons" id="<?php echo $mantra_social5 ?>" title="<?php echo $mantra_social5 ?>"><img alt="<?php echo $mantra_social5; ?>" src="<?php echo get_template_directory_uri().'/images/socials/'.$mantra_social5.'.png'; ?>" /></a> <?php }
+?><?php if ($mantra_social7 && $mantra_social8) {  ?> <a target="_blank" href="<?php echo $mantra_social8 ?>" class="socialicons" id="<?php echo $mantra_social7 ?>" title="<?php echo $mantra_social7 ?>"><img alt="<?php echo $mantra_social7; ?>" src="<?php echo get_template_directory_uri().'/images/socials/'.$mantra_social7.'.png'; ?>" /></a> <?php }
+?><?php if ($mantra_social9 && $mantra_social10) {  ?> <a target="_blank" href="<?php echo $mantra_social10 ?>" class="socialicons" id="<?php echo $mantra_social9 ?>" title="<?php echo $mantra_social9 ?>"><img alt="<?php echo $mantra_social9; ?>" src="<?php echo get_template_directory_uri().'/images/socials/'.$mantra_social9.'.png'; ?>" /></a> <?php }
+ 
+}

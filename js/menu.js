@@ -16,26 +16,26 @@ jQuery("#access li").hover(function(){
 jQuery(".socialicons").hover(
 function(){
 	jQuery(this).animate({"top": "-5px" },{ queue: false, duration:200});
-	 jQuery(this).css({
+/*	 jQuery(this).css({
                         '-webkit-transform': 'rotate(5deg)',
                         '-moz-transform': 'rotate(5deg)',
                         '-ms-transform': 'rotate(5deg)',
                         '-o-transform': 'rotate(5deg)',
                         'transform': 'rotate(5deg)',
                         'zoom': 1
-            });
+            });*/
 
 					},
 function(){
 	jQuery(this).animate({ "top": "0px" }, { queue: false, duration:200 });
- jQuery(this).css({
+/* jQuery(this).css({
                         '-webkit-transform': 'rotate(0deg)',
                         '-moz-transform': 'rotate(0deg)',
                         '-ms-transform': 'rotate(0deg)',
                         '-o-transform': 'rotate(0deg)',
                         'transform': 'rotate(0deg)',
                         'zoom': 1
-            });
+            });*/
 
 					});
 
@@ -43,13 +43,3 @@ function(){
 });
 
 
- function rotate(degree) {
-            jQuery(this).animate({
-                        '-webkit-transform': 'rotate(' + degree + 'deg)',
-                        '-moz-transform': 'rotate(' + degree + 'deg)',
-                        '-ms-transform': 'rotate(' + degree + 'deg)',
-                        '-o-transform': 'rotate(' + degree + 'deg)',
-                        'transform': 'rotate(' + degree + 'deg)',
-                        'zoom': 1
-            }, 5000);
-        }

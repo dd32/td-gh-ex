@@ -1,10 +1,10 @@
 /*
 Theme Name: Mantra
 Theme URI: http://www.riotreactions.com/mantra
-Description: Mantra is a general purpose WordPress theme, featuring a whole pack of over 60 options and easy to use tweaks, capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (columns position), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 20 font-families to choose from), text and header sizes, post metas, post excerpts, post formats, header and background images, menus, social media links and icons, pins, bullets and more. With 7 widget areas, subtle animations, modern graphics and an easy and responsive admin section, you can start creating your dream site right now.
+Description: Mantra is a do-it-yourself WordPress theme, featuring a whole pack of over 70 options and easy to use tweaks, capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (1,2 or 3 columns), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 35 font-families to choose from), text and header sizes, post metas, post excerpts, post formats, header and background images, custom menus,11 social media links and icons, pins, bullets and more. With 8 widget areas, subtle animations, modern graphics and an easy and responsive admin section, you can start creating your dream site right now.
 Author: Cryout Creations
 Author URI: http://www.cryoutcreations.com
-Version: 1.7.4
+Version: 1.7.5
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, red, blue, white, silver, light, dark, one-column, two-columns, three-columns, right-sidebar, left-sidebar, flexible-width, fixed-width, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, front-page-post-form, full-width-template,  microformats, post-formats, rtl-language-support,  sticky-post, theme-options, threaded-comments, translation-ready
@@ -128,8 +128,7 @@ DESCRIPTION: One centered column with no sidebar
 */
 
 .one-column #content {
-	margin: 0 auto;
-	width: 95%;
+	margin: 0 20px;
 }
 
 /*
@@ -138,7 +137,7 @@ DESCRIPTION: Full width content with no sidebar; used for attachment pages
 */
 
 .single-attachment #content {
-	margin: 0px autp;
+	margin: 0px auto;
 
 }
 
@@ -1840,6 +1839,7 @@ margin-top:10px;
 display:block;
 background:#171717;
 padding-bottom:10px;
+overflow:visible;
 }
 
 #colophon {
@@ -2065,25 +2065,53 @@ float:right;
 
 .access ul.sub-menu { visibility:hidden;}
 
-#socials {
+.socials {
 float:right;
 position:relative;
 margin-right:10px;
 padding-left:10px;
-height:auto;
 min-height:20px;
 overflow: hidden;
-top:-5px;
+padding-top:5px;
 }
 
-#socials a {
+.socials a {
 display:block;
 float:right;
-width:50px;
 margin-right:5px;
-height:50px;
 position:relative;
 }
+
+.socials img {
+width:42px;
+}
+
+#smenul, #smenur {
+margin-top:-10px;
+margin-bottom:-10px;
+}
+
+#smenul {
+float:left;
+}
+
+#sfooter {
+float:right;
+padding-top:5px;
+top:-24px;
+}
+
+#sfooter img {
+width:25px;
+}
+
+#sfooter a {
+width:25px;
+height:25px;
+margin-left:5px;
+}
+
+
 
 
 /* BACK TO TOP BUTTON */

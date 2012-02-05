@@ -231,7 +231,7 @@ background-color:#EEE;
 }
 
 
-label input {
+label input[type=radio] {
 display:none;
 }
 
@@ -263,7 +263,7 @@ background:#EEE;
 }
 
 
-.checkedClass {
+label input[type=radio] .checkedClass {
 border-color:#F6A828;
 -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 filter: alpha(opacity=100);

@@ -83,6 +83,12 @@ $mantra_defaults = array(
 "mantra_social6" => "",
 "mantra_social7" => "",
 "mantra_social8" => "",
+"mantra_social9" => "",
+"mantra_social10" => "",
+"mantra_socialsdisplay0" => "",
+"mantra_socialsdisplay1" => "",
+"mantra_socialsdisplay2" => "",
+"mantra_socialsdisplay3" => "",
 
 "mantra_customcss" => "/* Mantra Custom CSS */  ");
 

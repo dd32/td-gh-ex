@@ -107,10 +107,13 @@ function mantra_init_fn(){
 	add_settings_field('mantra_fheight', __('Thumbnails Height ','mantra') , 'setting_fheight_fn', __FILE__, 'featured_section');
 	add_settings_field('mantra_fheader', __('Featured Images as HEADER Images ','mantra') , 'setting_fheader_fn', __FILE__, 'featured_section');
 
-	add_settings_field('mantra_socials1', __('Link 1','mantra') , 'setting_socials1_fn', __FILE__, 'socials_section');
-	add_settings_field('mantra_socials2', __('Link 2','mantra') , 'setting_socials2_fn', __FILE__, 'socials_section');
-	add_settings_field('mantra_socials3', __('Link 3','mantra') , 'setting_socials3_fn', __FILE__, 'socials_section');
-	add_settings_field('mantra_socials4', __('Link 4','mantra') , 'setting_socials4_fn', __FILE__, 'socials_section');
+	add_settings_field('mantra_socials1', __('Link nr. 1','mantra') , 'setting_socials1_fn', __FILE__, 'socials_section');
+	add_settings_field('mantra_socials2', __('Link nr. 2','mantra') , 'setting_socials2_fn', __FILE__, 'socials_section');
+	add_settings_field('mantra_socials3', __('Link nr. 3','mantra') , 'setting_socials3_fn', __FILE__, 'socials_section');
+	add_settings_field('mantra_socials4', __('Link nr. 4','mantra') , 'setting_socials4_fn', __FILE__, 'socials_section');
+	add_settings_field('mantra_socials5', __('Link nr. 5','mantra') , 'setting_socials5_fn', __FILE__, 'socials_section');
+	add_settings_field('mantra_socialshow', __('Socials display','mantra') , 'setting_socialsdisplay_fn', __FILE__, 'socials_section');
+
 
 	add_settings_field('mantra_customcss', __('Custom CSS','mantra') , 'setting_customcss_fn', __FILE__, 'misc_section');
 
@@ -1262,6 +1265,50 @@ function setting_socials4_fn() {
 	echo "<div><small>".__("You can leave any number of inputs empty. They just won't appear in the frontend.  ","mantra")."</small></div>";
 }
 
+// TEXTBOX - Name: ma_options[social5]
+function setting_socials5_fn() {
+	global $mantra_options, $mantra_global_socials;
+	echo "<select id='mantra_social9' name='ma_options[mantra_social9]'>";
+	foreach($mantra_global_socials as $item) {
+	echo "<option value='$item'";
+	selected($mantra_options['mantra_social9'],$item);
+	echo ">$item</option>";
+}
+	echo "</select><span class='address_span'> &raquo; </span>";
+	echo "<input id='mantra_rss' name='ma_options[mantra_social10]' size='32' type='text'  value='".esc_attr( $mantra_options['mantra_social10'] )."'  />";
+	echo "<div><small>".__("You can leave any number of inputs empty. They just won't appear in the frontend.  ","mantra")."</small></div>";
+}
+
+// TEXTBOX - Name: ma_options[socialsdisplay]
+function setting_socialsdisplay_fn() {
+global $mantra_options;
+		$items = array( "Header", "CLeft", "CRight" , "Footer");
+
+		$checkedClass = ($mantra_options['mantra_socialsdisplay0']=='1') ? ' checkedClass' : '';
+		$checkedClass = ($mantra_options['mantra_socialsdisplay1']=='1') ? ' checkedClass' : '';
+		$checkedClass = ($mantra_options['mantra_socialsdisplay2']=='1') ? ' checkedClass' : '';
+		$checkedClass = ($mantra_options['mantra_socialsdisplay3']=='1') ? ' checkedClass' : '';
+
+		echo " <label id='$items[0]' for='$items[0]$items[0]' class='socialsdisplay $checkedClass'><input  ";
+		 checked($mantra_options['mantra_socialsdisplay0'],'1');
+	echo "value='1' id='$items[0]$items[0]'  name='ma_options[mantra_socialsdisplay0]' type='checkbox' /> Top right corner of header </label>";
+
+		echo " <label id='$items[1]' for='$items[1]$items[1]' class='socialsdisplay $checkedClass'><input  ";
+		 checked($mantra_options['mantra_socialsdisplay1'],'1');
+	echo "value='1' id='$items[1]$items[1]'  name='ma_options[mantra_socialsdisplay1]' type='checkbox' /> Under menu - left side </label>";
+
+		echo " <label id='$items[2]' for='$items[2]$items[2]' class='socialsdisplay $checkedClass'><input  ";
+		 checked($mantra_options['mantra_socialsdisplay2'],'1');
+	echo "value='1' id='$items[2]$items[2]'  name='ma_options[mantra_socialsdisplay2]' type='checkbox' /> Under menu - right side </label>";
+
+		echo " <label id='$items[3]' for='$items[3]$items[3]' class='socialsdisplay $checkedClass'><input  ";
+		 checked($mantra_options['mantra_socialsdisplay3'],'1');
+	echo "value='1' id='$items[3]$items[3]'  name='ma_options[mantra_socialsdisplay3]' type='checkbox' /> In the footer (smaller icons) </label>";
+		
+
+		
+		echo "<div><p><small>".__(" Choose where to display the social icons.","mantra")."</small></p></div>";
+}
 
 
 ////////////////////////
@@ -1370,7 +1417,7 @@ if ($options) $mantra_options = $options;
 
 	</form>
 
-	<span id="version"> Mantra v. 1.7.4 - by <a href="http://www.cryoutcreations.eu">Cryout Creations</a></span>
+	<span id="version"> Mantra v. 1.7.5 - by <a href="http://www.cryoutcreations.eu">Cryout Creations</a></span>
 </div>
 
 <div class="righty" >
@@ -1520,7 +1567,7 @@ return 0;
 
 /* Social media links */
 
-	$mantra_global_socials = array ("Delicious", "Digg", "Facebook", "Flickr", "Google", "LinkedIn", "Reddit", "RSS", "StumbleUpon", "Twitter", "Yahoo" );
+	$mantra_global_socials = array ("Delicious", "Digg", "Facebook", "Flickr", "Google", "GooglePlus" , "LinkedIn", "Reddit", "RSS", "StumbleUpon", "Twitter", "Yahoo" );
 
 // Validate user data
 function ma_options_validate($input) {
@@ -1556,6 +1603,7 @@ global $mantra_defaults;
 	$input['mantra_social4'] =  wp_kses_data($input['mantra_social4']);
 	$input['mantra_social6'] =  wp_kses_data($input['mantra_social6']);
 	$input['mantra_social8'] =  wp_kses_data($input['mantra_social8']);
+	$input['mantra_social10'] =  wp_kses_data($input['mantra_social8']);
 
 	$input['mantra_customcss'] =  wp_kses_post($input['mantra_customcss']);
 
