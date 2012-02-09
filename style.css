@@ -2,7 +2,7 @@
 Theme Name: Babylog
 Theme URI: http://babylog-demo.calobeedoodles.com/
 Description: A sweet, illustrated theme for baby blogs featuring four color palettes and a customizable header graphic.
-Version: 1.4.4
+Version: 1.4.5
 Author: Caroline Moore
 Author URI: http://www.carolinemoore.net
 License: CC0 1.0 Universal
@@ -98,21 +98,72 @@ hr {
 	margin-top: 0px;
 }
 .navigation {
-	clear: both;
 	width: 100%;
+	clear: both;
 	display: inline-block;
-	margin-bottom: 30px;
 }
-.navigation .alignleft,
+.navigation .alignleft {
+	width: 50%;
+	float: left;
+}
 .navigation .alignright {
 	width: 50%;
-}
-.navigation .alignright {
+	float: right;
 	text-align: right;
 }
-.navigation a,
-.navigation a:visited {
-	color: #fff;
+.navigation a:link,
+.navigation a:visited,
+.navigation a:hover,
+.navigation a:active {
+	color: #fff !important;
+	text-decoration: none;
+}
+.home .navigation .previous-link,
+.home .navigation .next-link {
+	width: 100px;
+}
+.navigation .previous-link,
+.navigation .next-link {
+	background-color: rgba(0, 0, 0, 0.7);
+    font-family: Poly,"Times New Roman",Times,serif;
+    font-size: 18px;
+    padding: 4px 6px 4px 6px;
+    display: block;
+    position: relative;
+}
+.navigation .previous-link {
+	float: left;
+	max-width: 50%;
+}
+.navigation .next-link {
+	float: right;
+	max-width: 50%;
+	text-align: right;
+}
+.home .navigation .next-link {
+	right: -7px;
+    text-align: center;
+}
+.home .navigation .previous-link {
+	text-align: center;
+}
+.navigation .prev-corner {
+	border-bottom: 8px solid #000000;
+    border-left: 8px solid transparent;
+    top: 8px;
+    width: 1px;
+}
+.navigation .next-corner {
+	border-bottom: 8px solid #000000;
+    border-right: 8px solid transparent;
+    float: right;
+    position: relative;
+    right: 8px;
+    top: -8px;
+    width: 1px;
+}
+.home .navigation .next-corner {
+    right: 1px;
 }
 .page-template-page-nosidebar-php .content,
 .page-template-page-nosidebar-php .post_header

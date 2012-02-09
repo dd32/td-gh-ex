@@ -4,6 +4,8 @@ Awesome Google Web Font: Vidaloka by Cyreal - https://profiles.google.com/alexei
 
 Version history:
 
+v1.4.5 - Added contextual help menus in the Theme Options page; added donation button to Theme Options page with option to hide it if desired.
+
 v1.4.4 - Fixed CSS display of custom menu widget.
 
 v1.4.3 - Changed hook for enqueing stylesheets from wp_print_styles to wp_enqueue_scripts as suggested by WP devs.

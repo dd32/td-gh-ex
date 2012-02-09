@@ -14,9 +14,47 @@ function bbl_theme_options_init(){
  * Load up the menu page
  */
 function bbl_theme_options_add_page() {
-	add_theme_page( __( 'Theme Options' , 'babylog' ), __( 'Theme Options' , 'babylog' ), 'edit_theme_options', 'theme_options', 'bbl_theme_options_do_page' );
+	global $babylog_options_hook;
+	$babylog_options_hook = add_theme_page( __( 'Theme Options' , 'babylog' ), __( 'Theme Options' , 'babylog' ), 'edit_theme_options', 'theme_options', 'bbl_theme_options_do_page' );
+	
+	add_action('load-'.$babylog_options_hook, 'babylog_contextual_help', 10, 3);
 } 
- 
+
+
+/**
+ * Add a contextual help menu to the Theme Options panel
+ */
+function babylog_contextual_help() {
+
+	global $babylog_options_hook;
+	
+	$screen = get_current_screen();
+
+	if ( $screen->id == $babylog_options_hook ) {
+		
+		//Store Theme Options tab in variable
+		$theme_options_content = '<p><a href="http://wordpress.org/tags/babylog?forum_id=5" target="_blank">' . __( 'For basic support, please post in the WordPress forums.', 'babylog' ) . '</a></p>';
+		$theme_options_content .= '<p><strong>' . __( 'Color Scheme', 'babylog' ) . '</strong> - ' . __( 'This is where you can choose the overall look and feel of your blog. Defaults to Purple.', 'babylog' ) . '</p>';
+		$theme_options_content .= '<p><strong>' . __( 'Skin Tone', 'babylog' ) . '</strong> - ' . __( 'Choose the skin tone that most closely matches your child\'s. A preview will be shown to the right. Defaults to Medium.', 'babylog' ) . '</p>';
+		$theme_options_content .= '<p><strong>' . __( 'Hair Color', 'babylog' ) . '</strong> - ' . __( 'Choose the hair color that most closely matches your child\'s. A preview will be shown to the right. Defaults to Brown.', 'babylog' ) . '</p>';
+		$theme_options_content .= '<p><strong>' . __( 'Custom CSS', 'babylog' ) . '</strong> - ' . __( 'You can override the theme\'s default CSS by putting your own code here.  It should be in the format:', 'babylog' ) . '</p>';
+		$theme_options_content .= '<blockquote><pre>.some-class { width: 100px; }</pre>';
+		$theme_options_content .= '<pre>#some-id { background-color: #fff; }</pre></blockquote>';
+		$theme_options_content .= '<p>' . __( 'Replacing any classes, ID\'s, etc. with the ones you want to override, and within them the attributes you want to change.', 'babylog' ) . '</p>';
+		$theme_options_content .= '<p><strong>' . __( 'Support Caroline Themes/Hide Donate Button', 'babylog' ) . '</strong> - ' . __( 'If you like my themes and find them useful, please donate!  Checking the box will hide this information.', 'babylog' ) . '</p>';
+		$theme_options_content .= '<p><a href="http://www.carolinethemes.com" target="_blank">' . __( 'Visit Caroline Themes for more free WordPress themes!', 'babylog' ) . '</a></p>';
+		
+		$screen->add_help_tab( array ( 
+				'id' => 'babylog-theme-options',
+				'title' => __( 'Theme Options', 'babylog' ),
+				'content' => $theme_options_content
+				)
+		);
+		
+	}
+}
+
+
 /**
  * Create arrays for our theme options
  */
@@ -181,6 +219,42 @@ function bbl_theme_options_do_page() {
 						</label>
 					</td>
 				</tr>
+				<?php
+				/**
+				 * Pitiful begging. ;)
+				 */
+				 
+				 if ( $options['support'] !== 1 ) {
+				?>
+				<tr valign="top" style="background-color: rgb(255, 255, 224);"><th scope="row"><strong><?php _e( 'Support Caroline Themes', 'babylog' ); ?></strong></th>
+					<td>
+						<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+							<input type="hidden" name="cmd" value="_s-xclick">
+							<input type="hidden" name="hosted_button_id" value="U34MBRZTKTX38">
+							<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" class="alignright">
+							<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+						</form>
+						<?php _e( 'If you enjoy my themes, please consider making a secure donation using the PayPal button to your right. Anything is appreciated!', 'babylog' ); ?>
+						
+						<br /><input id="babylog_theme_options[support]" name="babylog_theme_options[support]" type="checkbox" value="1" <?php checked( '1', $options['support'] ); ?> />
+						<label class="description" for="babylog_theme_options[support]">
+							<?php _e( 'No, thank you! Dismiss this message.', 'babylog' ); ?>
+						</label>
+						
+					</td>
+				</tr>
+				<?php } 
+				else { ?>
+				<tr valign="top"><th scope="row"><strong>
+						<label class="description" for="babylog_theme_options[support]">
+							<?php _e( 'Hide Donate Button', 'babylog' ); ?>
+						</label></strong></th>
+					<td>
+						<input id="babylog_theme_options[support]" name="babylog_theme_options[support]" type="checkbox" value="1" <?php checked( '1', $options['support'] ); ?> />
+						
+					</td>
+				</tr>	
+				<?php } ?>
 			</table>
 			<img id="preview-image" style="float: right;" src="" />
 			<p class="submit">
@@ -214,6 +288,11 @@ function bbl_theme_options_validate( $input ) {
 		$input['haircolorinput'] = null;
 	if ( ! array_key_exists( $input['haircolorinput'], $bbl_haircolor_options ) )
 		$input['haircolorinput'] = null;
+	
+	// Our Support value is either 0 or 1
+	if ( ! isset( $input['support'] ) )
+		$input['support'] = null;
+	$input['support'] = ( $input['support'] == 1 ? 1 : 0 );
 		
 	// Say our textarea option must be safe text with the allowed tags for posts
 	$input['customcss'] = wp_filter_nohtml_kses( $input['customcss'] );
