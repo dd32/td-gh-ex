@@ -1,0 +1,131 @@
+.jqueryslidemenu{
+font: bold 14px "Helvetica Neue", Arial, Helvetica, serif;
+background: #414141;
+margin-bottom:0;padding-bottom:0;
+position: relative;
+z-index:9999;
+}
+
+.jqueryslidemenu ul{
+margin: 0;
+padding: 0;
+list-style-type: none;
+margin-bottom:0;padding-bottom:0;
+}
+
+/*Top level list items*/
+.jqueryslidemenu ul li{
+position: relative;
+display: inline;
+float: left;
+}
+
+/*Top level menu link items style*/
+.jqueryslidemenu ul li a{
+	display: block;
+	background: #E0E0E0; /*background of tabs (default state)*/
+	background: -moz-linear-gradient(#E0E0E0, #D0D0D0);
+	background: -o-linear-gradient(#E0E0E0, #D0D0D0);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(27,65,103,0.85)), to(#003366)); /* older webkit syntax */
+	background: -webkit-linear-gradient(#E0E0E0, #D0D0D0);
+	color: white;
+	padding: 18px 10px;
+	/*border-right: 1px solid #778;*/
+	color: #d2691e;
+	text-decoration: none;
+	text-shadow:#fff 1px 1px 1px; 
+
+}
+
+* html .jqueryslidemenu ul li a{ /*IE6 hack to get sub menu links to behave correctly*/
+display: inline-block;
+}
+
+.jqueryslidemenu ul li a:link, .jqueryslidemenu ul li a:visited{
+color: #336699;
+}
+
+.jqueryslidemenu ul li a:hover{
+background: #D0D0D0; /*tab link background during hover state*/
+	background: -moz-linear-gradient(#D0D0D0, #E0E0E0);
+	background: -o-linear-gradient(#D0D0D0, #E0E0E0);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(27,65,103,0.85)), to(#003366)); /* older webkit syntax */
+	background: -webkit-linear-gradient(#D0D0D0, #E0E0E0);
+color: #336699;
+}
+	
+/*1st sub level menu*/
+.jqueryslidemenu ul li ul{
+	position: absolute;
+	left: 0;
+	display: block;
+	visibility: hidden;
+}
+.jqueryslidemenu ul ul {
+	-moz-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+	box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+	position: absolute;
+	top: 3.333em;
+	z-index: 99999;
+}
+
+/*Sub level menu list items (undo style from Top level List Items)*/
+.jqueryslidemenu ul li ul li{
+display: list-item;
+float: none;
+}
+
+/*All subsequent sub menu levels vertical offset after 1st level sub menu */
+.jqueryslidemenu ul li ul li ul{
+top: 0;
+}
+
+/* Sub level menu links style */
+.jqueryslidemenu ul li ul li a{
+	font-weight: normal;
+	font-size:13px;
+	width: 180px; /*width of sub menus*/
+	padding: 5px;
+	margin: 0;
+	border-top-width: 0;
+	border-bottom: 1px solid #ccc;
+	background: #E0E0E0;
+}
+.jqueryslidemenu li:hover > a,
+.jqueryslidemenu ul ul :hover > a,
+.jqueryslidemenu a:focus {
+	background: -moz-linear-gradient(#D0D0D0, #E0E0E0);
+	background: -o-linear-gradient(#D0D0D0, #E0E0E0);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(27,65,103,0.85)), to(#003366)); /* older webkit syntax */
+	background: -webkit-linear-gradient(#D0D0D0, #E0E0E0);
+}
+.jqueryslidemenu li:hover > a,
+.jqueryslidemenu a:focus {
+	background: #D0D0D0		; /* Show a solid color for older browsers */
+	background: -moz-linear-gradient(#D0D0D0, #E0E0E0);
+	background: -o-linear-gradient(#D0D0D0, #E0E0E0);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(27,65,103,0.85)), to(#003366)); /* older webkit syntax */
+	background: -webkit-linear-gradient(#D0D0D0, #E0E0E0);
+	color: #373737;
+}
+.jqueryslidemenu ul li:hover > ul {
+	display: block;
+}
+
+
+
+
+/* ######### CSS classes applied to down and right arrow images  ######### */
+
+.downarrowclass{
+position: absolute;
+top: 12px;
+right: 7px;
+}
+
+.rightarrowclass{
+position: absolute;
+top: 6px;
+right: 5px;
+}

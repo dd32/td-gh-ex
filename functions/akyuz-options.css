@@ -1,0 +1,91 @@
+
+#akyuz-options-panel{
+	margin-top:15px;
+	width: 730px;
+	background-color: #f0f0f0;
+
+}
+#akyuz-options-panel-header{
+	background-color: #ddd;
+	border-radius: 4px 4px 0 0;
+	border: 1px solid #abb5c0;
+	padding:10px;
+	width: 708px;
+}
+#akyuz-options-panel-header h2{
+	color:#336699
+}
+#akyuz-options-panel-header h2 span{
+	font-size:12px;
+}
+#akyuz-options-panel-container{
+	background:#fff;
+	border-bottom: 1px solid #abb5c0;
+	border-right: 1px solid #abb5c0;
+	border-left: 1px solid #abb5c0;
+	border-top: 0px solid #abb5c0;
+}
+#akyuz-options-panel-container-menu{
+	background:#eee;
+	width:209px;
+	padding:0;
+	margin:0;
+	float:left;
+		z-index: 1;
+		position: relative;
+}
+#akyuz-options-panel-container-content h3{
+	color:#336699;
+	font-size:16px;
+}
+#akyuz-options-panel-container-content{
+	width:499px;
+	padding:10px;
+	margin:0;
+	float: right;
+	border-left: 1px solid #adb7bf;
+	margin-left: -1px;	
+}
+			#akyuz-options-panel-container-menu ul{
+			margin: 0px;
+			list-style: none;
+			padding: 0px;
+			}
+				#akyuz-options-panel-container-menu ul li{ margin: 0;}
+
+					#akyuz-options-panel-container-menu ul li a{
+					font-size: 13px;
+					line-height: 13px;
+					padding: 10px;
+					display: block;
+					font-weight: bold;
+					border-top: 1px solid white;
+					border-bottom: 1px solid #adb7bf;
+					border-right: 1px solid #adb7bf;
+					color: #717171;
+					text-decoration: none;
+					text-shadow: 1px 1px white;
+					font-family: "Trebuchet MS";
+					}
+
+					#akyuz-options-panel-container-menu ul li a:focus{outline: 0;}
+					#akyuz-options-panel-container-menu ul li a:hover{color: #cc0000;background:#ddd;border-right: 1px solid #adb7bf;}
+
+					#akyuz-options-panel-container-menu ul li .visible	{
+					background-color: #fff;
+					color: #336699;
+					border-right: 0px;
+					background-image: none;
+					}
+#akyuz-options-panel-footer{
+	width: 708px;
+	padding:10px;
+	background:#d6d6d6;
+	border-bottom: 1px solid #adb7bf;
+	border-left: 1px solid #adb7bf;
+	border-right: 1px solid #adb7bf;
+}
+
+#akyuz-options-panel-container .nonvisible	{display: none;}
+
+.clear{clear: both;}
