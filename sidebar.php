@@ -22,7 +22,6 @@
 
 		<aside id="sidebar-archives" class="widget">
         
-              <ul>
 
 					<h4 class="widget-title-archives"><?php _e( 'Archives', 'azurebasic' ); ?></h4>
 
@@ -31,16 +30,12 @@
 						<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
 
 					</ul>
-              
-               </ul>
 
 		 </aside>
 
 
 
 		 <aside id="sidebar-meta" class="widget">
-         
-                <ul>
 
 				    <h4 class="widget-title-meta"><?php _e( 'Meta', 'azurebasic' ); ?></h4>
 
@@ -53,8 +48,6 @@
 						<li><?php wp_meta(); ?></li>
 
 					</ul>
-                    
-                 </ul>
 
 		   </aside>
 			

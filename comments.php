@@ -1,7 +1,7 @@
 <?php //The template for displaying Comments. ?>
 
 
-	<div id="comments">
+	<div id="comments" class="clearfix">
 
 	<?php if ( post_password_required() ) : ?>
 
@@ -27,7 +27,7 @@
 
 	<?php if ( have_comments() ) : ?>
 
-		<h2 id="comments-title">
+		<h2 id="comments-title" class="clearfix">
 
 			<?php
 
@@ -43,7 +43,7 @@
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 
-		<nav id="comment-nav-above">
+		<nav id="comment-nav-above" class="clearfix">
 
 			<h4 class="assistive-text"><?php _e( 'Comment Navigation', 'azurebasic' ); ?></h4>
             
@@ -57,7 +57,7 @@
 
 
 
-		<ol class="commentlist">
+		<ol class="commentlist clearfix">
 
 			<?php
 
@@ -72,13 +72,13 @@
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 
-		<nav id="comment-nav-below">
+		<nav id="comment-nav-below" class="clearfix">
 
-			<h4 class="assistive-text"><?php _e( 'Comment navigation', 'azurebasic' ); ?></h4>
+			<h4 class="assistive-text"><?php _e( 'Comment Navigation', 'azurebasic' ); ?></h4>
 
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'azurebasic' ) ); ?></div>
+			<div class="nav-previous"><?php previous_comments_link( __( 'Older Comments &rarr;', 'azurebasic' ) ); ?></div>
 
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'azurebasic' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( '&larr; Newer Comments', 'azurebasic' ) ); ?></div>
 
 		</nav>
 

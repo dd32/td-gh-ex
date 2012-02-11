@@ -1,5 +1,5 @@
-
-                                                 || AZURE BASIC 2.1 -- A Basic WordPress Theme ||
+﻿
+                                                 || AZURE BASIC 2.5 -- A Basic WordPress Theme ||
 												 
 || About ||
 
@@ -37,8 +37,23 @@ If you have an questions, or need support, please contact me at contact@silvergl
 silverglass.net
   -- home page for this design
   
- 
+|| Notes ||
+
+Default Header Image: "Brave" - ©Disney/Pixar. All Rights Reserved.
+
+   
 || Changelog ||
+
+v2.5 - fixed right side of sidebar alignment
+     - cleared floats on single.php, comments.php, page.php
+	 - added clearfix to div elements on content.php, content-page.php
+	 - added styling for calendar widget
+	 - updated styling for main menu navigation
+	 - updated widget stylings
+	 - updated Theme URI link
+	 - changed footer credit link 
+
+v2.1.1 - fixed langugage text typo
 
 v2.1 - added ie7.css to fix bugs in layout when viewed in IE7.
        -- menu layout

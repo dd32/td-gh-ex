@@ -2,7 +2,7 @@
 
          <div id="primary" class="clearfix">
 
-			<div id="content" role="main">
+			<div id="content" role="main" class="clearfix">
 
 
 
@@ -32,7 +32,7 @@
 
 
 
-				<article id="post-0" class="post no-results not-found">
+				<article id="post-0" class="post no-results not-found clearfix">
 
 					<header class="entry-header">
 
@@ -42,7 +42,7 @@
 
 
 
-					<div class="entry-content">
+					<div class="entry-content clearfix">
 
 						<p><?php _e( 'Sorry, but no results were found. Maybe searching will help find a related post.', 'azurebasic' ); ?></p>
 
@@ -65,5 +65,7 @@
 
 
 <?php get_sidebar(); ?>
+
+<div class="clear"></div><!-- .clear the floats -->
 
 <?php get_footer(); ?>

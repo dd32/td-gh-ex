@@ -1,12 +1,12 @@
 /*
 Theme Name: Azure Basic 
-Theme URI: http://silverglass.net/
+Theme URI: http://silverglass.net/2012/01/02/azure-basic-free-wordpress-blog-theme/
 Author: C. A. Brown
 Author URI: http://cabrown.net/
-Description: A lightweight, two-column layout blog theme, with 6 widget areas and customizable header image. Valid HTML5 and CSS3 that can be modified. Compatiable with Wordpress 3.2 and above. Compatable IE7+, Opera 10+, Safari 5+, FireFox 3.5+.   
+Description: A lightweight, two-column layout blog theme, with 6 widget areas and customizable header image. Valid HTML5 and CSS3 that can be modified. Compatiable with Wordpress 3.2 and above. Compatable IE7+, Opera 10+, Safari 5+, Firefox 3.5+.   
 Tags: blue, white, two-columns, custom-menu, custom-background, custom-header, right-sidebar
 
-Version: 2.1
+Version: 2.5
 
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -129,13 +129,13 @@ blockquote.right {
 
 #primary { float: left;
            overflow: hidden;
-           width: 720px; }
+           width: 700px; }
 
 #content { width: 680px; }
 
 #sidebar { overflow: hidden;
            float: right;
-           width: 230px; }
+           width: 250px; }
 
 #footer-bottom { clear: both;
                  width: 100%; }
@@ -162,35 +162,34 @@ article { padding: 0 0 30px 0; }
 /*    Primary Menu (Dropdown) Styles       */
 /*----------------------------------------*/
 
-#access { padding: 15px 0; }
+#access { padding: 15px 10px 5px 18px; 
+          z-index: 500; }
 
-nav[role="navigation"] .menu { position: relative; }
+nav[role="navigation"] { position: relative; }
 
-nav[role="navigation"] .menu ul { margin: 0 0 0 0;
-                                  padding: 0 0 0 0; 
-								  display: block; }
+nav[role="navigation"] ul { margin: 0 0 0 0;
+                            padding: 0 0 0 0; 
+						    display: block; }
 
-nav[role="navigation"] .menu ul li { height: 2em; clear: both; display: inline-block; }
-nav[role="navigation"] .menu ul li a { padding: 4px 8px; }
+nav[role="navigation"] ul li { height: 2em; clear: both; display: inline-block; }
+nav[role="navigation"] ul li a { padding: 4px 8px; }
 
-nav[role="navigation"] .menu ul li ul  { display: none; } 
-nav[role="navigation"] .menu ul li:hover ul  { display: block; } 
-nav[role="navigation"] .menu ul li ul  { position: absolute;
-                                         z-index: 1000; 
-                                         padding: 10px 0 0 0; }
+nav[role="navigation"] ul li ul  { display: none; } 
+nav[role="navigation"] ul li:hover ul  { display: block; } 
+nav[role="navigation"] ul li ul  { position: absolute;
+                                   padding: 10px 0 0 0; }
 
-nav[role="navigation"] .menu ul li ul li { display: block;
-                                           position: relative; }
+nav[role="navigation"] ul li ul li { display: block;
+                                     position: relative; }
 
-nav[role="navigation"] .menu ul li ul li ul  { display: none !important; }
-nav[role="navigation"] .menu ul li ul li:hover ul  { display: inline-block !important; 
-                                                     position: relative !important; }
-nav[role="navigation"] .menu ul li ul li ul { padding: 0 0 0 0 !important; 
-                                              z-index: 1100 !important;}
+nav[role="navigation"] ul li ul li ul  { display: none !important; }
+nav[role="navigation"] ul li ul li:hover ul  { display: inline !important; 
+                                               position: relative !important; }
+nav[role="navigation"] ul li ul li ul { padding: 0 0 0 0 !important;}
 
-nav[role="navigation"] .menu ul li ul li ul li { display: block !important;
-                                                 position: relative; } 
-												 
+nav[role="navigation"] ul li ul li ul li { display: inline-block !important;
+                                           position: relative; } 
+
 
 /*    Static Sidebar Widget Styles       */
 /*---------------------------------------*/											 
@@ -217,6 +216,8 @@ nav[role="navigation"] .menu ul li ul li ul li { display: block !important;
 /*             Azure Basic Styles             */
 /*-------------------------------------------*/
 
+h1 { font-size: 2.5em; }
+
 #container-full { padding: 20px 0 20px 0; }
 
 #top-header { background: none repeat scroll 0 0 #fff; 
@@ -225,14 +226,15 @@ nav[role="navigation"] .menu ul li ul li ul li { display: block !important;
 
 /* Top Navigation */
 
-nav[role="navigation"] { background: none repeat scroll 0 0 #6da0d3; }
+#access { background: url('images/azurebg.png') repeat scroll 100% 0 #6da0d3; }
 		  
-nav[role="navigation"] .menu a { color: #fff; 
-                                 text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1); }
+#access a { color: #fff; 
+            text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1); }
 
-nav[role="navigation"] .menu a:hover { color: #01152a; }
+#access a:hover { color: #01152a; }
 
-nav[role="navigation"] .menu ul li:hover ul  { background: none repeat scroll 0 0 #6da0d3; }
+#access ul li:hover ul  { background: url('images/azurebg.png') repeat scroll 100% 0 #6da0d3; }
+
 
 /* Header Title Section */
 
@@ -289,6 +291,8 @@ nav[role="navigation"] .menu ul li:hover ul  { background: none repeat scroll 0 
 article { margin-bottom: 25px;
 	      padding-top: 10px;
 	      padding-left: 25px; }
+		  
+.entry-content { padding-top: 5px; }
 
 .entry-title { font-size: 28px; 
                text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1); }
@@ -300,15 +304,25 @@ article { margin-bottom: 25px;
 
 .entry-content a:hover { text-decoration: underline; }
 
-
+.entry-content embed { width: 675px; }
 
 /* Sidebar Section */
 
-#sidebar { color: #545350; }
+#sidebar { color: #545350; 
+           padding-right: 10px; }
 
 #sidebar-widget-title { color: #545350; }
 
 .screen-reader-text[for="s"] { display: none; }
+
+#wp-calendar { width: 100%; }
+
+#calendar_wrap #wp-calendar caption { text-align: center; }
+
+#wp-calendar #prev, #wp-calendar #next { font-style: normal;
+                                         font-size: 9pt; }
+
+#wp-calendar #next { text-align: right; }
 
 
 
@@ -318,15 +332,64 @@ article { margin-bottom: 25px;
 
 #nav-single { padding-left: 25px; }
 
+#comments { padding-left: 25px; }
+
 #comments #comments-title { padding-left: 25px; }
 
 #comments #respond { padding-left: 25px; }
 
 .comment-meta { margin-bottom: 10px; }
 
-.comment-author img { padding-right: 10px; }
+.comment-author img { padding-right: 5px; }
 
 #nav-below { padding-left: 25px; }
+
+.comment-author a { color: #6fa2d6; }
+
+.comment-author a:hover { color: #28598A; 
+                          text-decoration: underline; }
+
+.comment-author img { margin: 0 10px 0 0; }
+
+.comment-form-author input[type="text"] { margin-left: 27px; 
+                                          background: none repeat scroll 0 0 #FFFFFF;
+                                          color: #7E7E7E;
+                                          outline: 0 none;
+                                          padding: 5px 10px;
+                                          position: relative;
+                                          width: 175px; }
+
+.comment-form-email input[type="text"] { margin-left: 30px; 
+                                         background: none repeat scroll 0 0 #FFFFFF;
+                                         color: #7E7E7E;
+                                         outline: 0 none;
+                                         padding: 5px 10px;
+                                         position: relative;
+                                         width: 175px; }
+
+.comment-form-url input[type="text"] { margin-left: 25px; 
+                                       background: none repeat scroll 0 0 #FFFFFF;
+                                       color: #7E7E7E;
+                                       outline: 0 none;
+                                       padding: 5px 10px;
+                                       position: relative;
+                                       width: 175px; }
+
+.comment-form-comment label { float: left; 
+                              clear: both; }
+
+.comment-form-comment textarea { margin-left: 15px;
+                                 margin-top: 0; 
+                                 background: none repeat scroll 0 0 #FFFFFF;
+                                 color: #7E7E7E;
+                                 outline: 0 none;
+                                 padding: 5px 10px;
+								 width: 500px;
+                                 position: relative; }
+
+#commentform p.form-allowed-tags { font-size: 9pt; }
+
+#comment-nav-above, #comment-nav-below { margin-bottom: 15px; }
 
 
 /* Footer Section */
@@ -339,20 +402,24 @@ article { margin-bottom: 25px;
 
 .column.last { margin: 0; }
 
-#footer-content { padding-top: 25px; }
+#footer-content { padding-top: 25px; 
+                  padding-left: 25px; 
+				  padding-right: 10px; }
 
-#footer-content .column ul h4 { color: #000;
-                                font-size: 10.5pt; 
-                                border-bottom: 1px solid #000; }
+#footer-content .column h4 { color: #000;
+                             font-size: 10.5pt; 
+                             border-bottom: 1px solid #000; }
 
-#footer-content .column ul ul { font-size: 9pt;  
-                                padding-left: 0 !important;}
+#footer-content .column ul { font-size: 9pt;  
+                             padding-left: 0 !important;}
 
-#footer-content .column ul ul li a { color: #28598A; }
+#footer-content .column ul li a { color: #28598A; }
 
-#footer-content .column ul ul li a:hover { color: #00F; }
+#footer-content .column ul li a:hover { color: #00F; }
 
 #site-credits { border-top: 1px solid #eaf8ff; 
                 padding: 15px 0 0 0; }
 
 #theme-credit { padding: 0 0 5px 0; }
+
+#theme-credit p { margin: 0 0 0 0; }

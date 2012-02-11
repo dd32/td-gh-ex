@@ -9,7 +9,7 @@ get_header(); ?>
 
 		<div id="primary" class="clearfix">
 
-			<div id="content" role="main">
+			<div id="content" role="main" class="clearfix">
 
 
 				<?php while ( have_posts() ) : the_post(); ?>
@@ -23,7 +23,7 @@ get_header(); ?>
 					<?php comments_template( '', true ); ?>
                     
                     
-                    <nav id="nav-single">
+                    <nav id="nav-single" class="clearfix">
 
 						<h4 class="assistive-text"><?php _e( 'Post Navigation', 'azurebasic' ); ?></h4>
                         
@@ -45,4 +45,7 @@ get_header(); ?>
 
 
 <?php get_sidebar(); ?>
+
+<div class="clear"></div><!-- .clear the floats -->
+
 <?php get_footer(); ?>

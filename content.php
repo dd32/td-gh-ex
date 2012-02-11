@@ -2,9 +2,9 @@
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     
-       <?php if ( has_post_thumbnail() ) { /* loades the post's featured thumbnail, requires Wordpress 3.0+ */ echo '<div class="featured-thumb">'; the_post_thumbnail(); echo '</div>'; } ?>
+       <?php if ( has_post_thumbnail() ) { /* loades the post's featured thumbnail, requires Wordpress 3.0+ */ echo '<div class="featured-thumb clearfix">'; the_post_thumbnail(); echo '</div>'; } ?>
 
-		<header class="blog-entry-header">
+		<header class="blog-entry-header clearfix">
 
 			<?php if ( is_sticky() ) : ?>
 
@@ -18,7 +18,7 @@
 
 			<?php else : ?>
 
-			<h1 class="blog-entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'azurebasic' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+			<h1 class="blog-entry-title clearfix"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'azurebasic' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
 			<?php endif; ?>
 
@@ -26,7 +26,7 @@
 
 			<?php if ( 'post' == get_post_type() ) : ?>
 
-			<div class="entry-meta">
+			<div class="entry-meta clearfix">
 
 				<?php azurebasic_posted_on(); ?>
 
@@ -41,7 +41,7 @@
 
 		<?php if ( is_search() ) : // Only display Excerpts for Search ?>
 
-		<div class="entry-summary">
+		<div class="entry-summary clearfix">
 
 			<?php the_excerpt(); ?>
 
@@ -49,9 +49,9 @@
 
 		<?php else : ?>
 
-		<div class="entry-content">
+		<div class="entry-content clearfix">
 
-			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'azurebasic' ) ); ?>
+			<?php the_content( __( 'Continue Reading <span class="meta-nav">&rarr;</span>', 'azurebasic' ) ); ?>
 
 			<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'azurebasic' ) . '</span>', 'after' => '</div>' ) ); ?>
 
@@ -61,7 +61,7 @@
 
 
 
-		<footer class="entry-meta">
+		<footer class="entry-meta clearfix">
 
 			<?php $show_sep = false; ?>
 

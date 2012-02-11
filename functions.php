@@ -2,7 +2,7 @@
 
 //Azure Basic functions and definitions
 
-// Version 2.1
+// Version 2.5
 
 // Set the content width based on the theme's design and stylesheet.
 
@@ -169,8 +169,8 @@ function azurebasic_widgets_init() {
 	// Location: the sidebar
 	register_sidebar(array(
 	    'name'=>__('Sidebar', 'azurebasic'),
-		'before_widget' => '<div class="widget-area widget-sidebar"><ul>',
-		'after_widget' => '</ul></div>',
+		'before_widget' => '<div class="widget-area widget-sidebar">',
+		'after_widget' => '</div>',
 		'before_title' => '<h3 id="sidebar-widget-title">',
 		'after_title' => '</h3>',
 	));
@@ -178,8 +178,8 @@ function azurebasic_widgets_init() {
 	// Location: right after the navigation
 	register_sidebar(array(
 	    'name'=>__('Header', 'azurebasic'),
-		'before_widget' => '<div class="widget-area widget-header"><ul>',
-		'after_widget' => '</ul></div>',
+		'before_widget' => '<div class="widget-area widget-header">',
+		'after_widget' => '</div>',
 		'before_title' => '<h4 id="header-widget-title">',
 		'after_title' => '</h4>',
 	));
@@ -187,8 +187,8 @@ function azurebasic_widgets_init() {
 	// Location: at the top of the footer, above the copyright
 	register_sidebar(array(
 	    'name'=>__('Footer One', 'azurebasic'),
-		'before_widget' => '<div class="widget-area widget-footer-one"><ul>',
-		'after_widget' => '</ul></div>',
+		'before_widget' => '<div class="widget-area widget-footer-one">',
+		'after_widget' => '</div>',
 		'before_title' => '<h4 id="footer-one-widget-title">',
 		'after_title' => '</h4>',
 	));
@@ -196,8 +196,8 @@ function azurebasic_widgets_init() {
 	// Location: at the top of the footer, above the copyright
 	register_sidebar(array(
 	    'name'=>__('Footer Two', 'azurebasic'),
-		'before_widget' => '<div class="widget-area widget-footer-two"><ul>',
-		'after_widget' => '</ul></div>',
+		'before_widget' => '<div class="widget-area widget-footer-two">',
+		'after_widget' => '</div>',
 		'before_title' => '<h4 id="footer-two-widget-title">',
 		'after_title' => '</h4>',
 	));
@@ -205,8 +205,8 @@ function azurebasic_widgets_init() {
 	// Location: at the top of the footer, above the copyright
 	register_sidebar(array(
 	    'name'=>__('Footer Three', 'azurebasic'),
-		'before_widget' => '<div class="widget-area widget-footer-three"><ul>',
-		'after_widget' => '</ul></div>',
+		'before_widget' => '<div class="widget-area widget-footer-three">',
+		'after_widget' => '</div>',
 		'before_title' => '<h4 id="footer-three-widget-title">',
 		'after_title' => '</h4>',
 	));
@@ -214,8 +214,8 @@ function azurebasic_widgets_init() {
 	// Location: at the top of the footer, above the copyright
 	register_sidebar(array(
 	    'name'=>__('Footer Four', 'azurebasic'),
-		'before_widget' => '<div class="widget-area widget-footer-four"><ul>',
-		'after_widget' => '</ul></div>',
+		'before_widget' => '<div class="widget-area widget-footer-four">',
+		'after_widget' => '</div>',
 		'before_title' => '<h4 id="footer-four-widget-title">',
 		'after_title' => '</h4>',
 	));
@@ -236,7 +236,7 @@ function azurebasic_content_nav( $nav_id ) {
 
 	if ( $wp_query->max_num_pages > 1 ) : ?>
 
-		<nav id="<?php echo $nav_id; ?>">
+		<nav class="clearfix" id="<?php echo $nav_id; ?>">
 
 			<h4 class="assistive-text"><?php _e( 'Post Navigation', 'azurebasic' ); ?></h4>
             
@@ -286,9 +286,9 @@ function azurebasic_comment( $comment, $args, $depth ) {
 
 	?>
 
-	<li class="post pingback">
+	<li class="post pingback clearfix">
 
-		<p><?php _e( 'Pingback:', 'azurebasic' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'sgframeowrk' ), '<span class="edit-link">', '</span>' ); ?></p>
+		<p><?php _e( 'Pingback:', 'azurebasic' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'azurebasic' ), '<span class="edit-link">', '</span>' ); ?></p>
 
 	<?php
 
@@ -302,7 +302,7 @@ function azurebasic_comment( $comment, $args, $depth ) {
 
 		<article id="comment-<?php comment_ID(); ?>" class="comment">
 
-			<footer class="comment-meta">
+			<footer class="comment-meta clearfix">
 
 				<div class="comment-author vcard">
 
@@ -365,7 +365,7 @@ function azurebasic_comment( $comment, $args, $depth ) {
 
 
 
-			<div class="comment-content"><?php comment_text(); ?></div>
+			<div class="comment-content clearfix"><?php comment_text(); ?></div>
 
 
 

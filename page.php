@@ -30,4 +30,7 @@ get_header(); ?>
 
 
 <?php get_sidebar(); ?>
+
+<div class="clear"></div><!-- .clear the floats -->
+
 <?php get_footer(); ?>
