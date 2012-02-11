@@ -18,9 +18,12 @@ $mantra_defaults = array(
 "mantra_fontsubheader" => 'Default',
 "mantra_textalign" => "Default",
 "mantra_parindent" => "0px",
+"mantra_headerindent" => "Enable",
 "mantra_lineheight" => "Default",
 "mantra_wordspace" => "Default",
 "mantra_letterspace" => "Default",
+"mantra_textshadow" => "Enable",
+
 
 "mantra_backcolor" => "#444444",
 "mantra_headercolor" => "#333333",
@@ -44,6 +47,7 @@ $mantra_defaults = array(
 "mantra_image" => "Seven",
 "mantra_pin" => "Pin2",
 "mantra_sidebullet" => "arrow_white",
+"mantra_metaback" => "Gray",
 "mantra_contentlist" => "Show",
 "mantra_title" => "Show",
 "mantra_pagetitle" => "Show",

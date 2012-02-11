@@ -1,10 +1,10 @@
 /*
 Theme Name: Mantra
 Theme URI: http://www.riotreactions.com/mantra
-Description: Mantra is a do-it-yourself WordPress theme, featuring a whole pack of over 70 options and easy to use tweaks, capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (1,2 or 3 columns), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 35 font-families to choose from), text and header sizes, post metas, post excerpts, post formats, header and background images, custom menus,11 social media links and icons, pins, bullets and more. With 8 widget areas, subtle animations, modern graphics and an easy and responsive admin section, you can start creating your dream site right now.
+Description: Mantra is a do-it-yourself WordPress theme, featuring a pack of over 70 customization options and easy to use tweaks capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (1,2 or 3 columns), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 35 font-families to choose from), text and header sizes, post metas, post excerpts, post formats, header and background images, custom menus, 12 social media links and icons, pins, bullets and more. With 8 widget areas, subtle animations, modern graphics and an easy and responsive admin section, you can start creating your dream site right now.
 Author: Cryout Creations
 Author URI: http://www.cryoutcreations.com
-Version: 1.7.5
+Version: 1.7.6
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, red, blue, white, silver, light, dark, one-column, two-columns, three-columns, right-sidebar, left-sidebar, flexible-width, fixed-width, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, front-page-post-form, full-width-template,  microformats, post-formats, rtl-language-support,  sticky-post, theme-options, threaded-comments, translation-ready
@@ -675,10 +675,8 @@ color:#0C85CD ;
 	color: #0E85CD;
 	line-height: 1.5em;
 	padding-left:10px;
-	margin:0px 0 10px 20px;
-	/*text-shadow: 0 1px 2px #BBB;
-	-moz-text-shadow:0 1px 2px #BBB;
-	-webkit-text-shadow:0 1px 2px #BBB;*/
+	margin:0px 0 10px 0px;
+
 
 -moz-text-shadow:2px 2px 0px #FFF,-2px -2px 0px #FFF,3px 3px 1px #ccc;
 -webkit-text-shadow:2px 2px 0px #FFF,-2px -2px 0px #FFF,3px 3px 1px #ccc;
@@ -792,7 +790,7 @@ text-shadow:2px 2px 0px #FFF,-2px -2px 0px #FFF,3px 3px 1px #ccc;
     display: block;
     font-size: 12px;
     margin-left: 0px;
-    padding: 0 10px;
+    padding: 0 6px;
     box-shadow:1px 1px 3px #CCC;
    -moz-box-shadow:1px 1px 3px #CCC;
     -webkit-box-shadow:1px 1px 3px #CCC;
@@ -821,7 +819,8 @@ display:block;
 }
 
 #content h3.entry-format {
-margin-left:10px;
+margin-left:0px;
+padding-left:4px;
 display:inline;
 float:left;
 font-size:14px;
@@ -910,7 +909,6 @@ margin-left:30px;
 
 .page-link {
 	color: #000;
-	font-weight: bold;
 	margin: 0 0 22px 0;
 	word-spacing: 0.5em;
 	clear:both;
@@ -920,19 +918,20 @@ margin-left:30px;
  .page-link a {
 	color: #333;
 	font-weight: normal;
-	padding: 0px 3px;
+	padding: 0px 6px;
 	text-decoration: none;
 	background: #fff;
 	border:1px solid #DDD;
-	-moz-box-shadow:1px -1px 1px #EEE, inset 0px -6px 3px #EEE;
-	-webkit-box-shadow:1px -1px 1px #EEE, inset 0px -6px 3px #EEE;
-		box-shadow:1px -1px 1px #EEE, inset 0px -6px 3px #EEE;
+	border-radius:5px;
+	-moz-box-shadow:1px -1px 0px #EEE, inset 0px -6px 3px #EEE;
+	-webkit-box-shadow:1px -1px 0px #EEE, inset 0px -6px 3px #EEE;
+	box-shadow:1px -1px 0px #EEE, inset 0px -6px 3px #EEE;
 }
 .home .sticky .page-link a:active,
 .home .sticky .page-link a:hover,
  .page-link a:active,
  .page-link a:hover{
-background-color:#EEE;
+background-color:#F6F6F6;
 
 }
 body.page .edit-link {
@@ -2166,9 +2165,9 @@ padding:3px;
 .imageThree{
     background-color: #FFFFFF;
     border: 6px solid #EEEEEE;
-    -moz-border-radius: 5px 5px 5px 5px;
-    -webkit-border-radius: 5px 5px 5px 5px;
-    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius:5px;
     padding: 3px;
 }
 
@@ -2203,14 +2202,16 @@ border:8px solid #BBB !important;
 
 .edit-link a {
 background:#F3F3F3;
-border:1px solid #FFF;
-border-bottom:1px solid #DDD;
+border:1px solid #DDD;
 padding:0px 10px;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
 }
 
 .edit-link a:hover {
 border:1px solid #CCC;
-
+background:#FAFAFA;
 }
 
 

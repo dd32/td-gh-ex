@@ -48,10 +48,11 @@ function mantra_init_fn(){
 	add_settings_field('mantra_fontsubheader', __('Sub-Headers Font','mantra') , 'setting_fontsubheader_fn', __FILE__, 'text_section');
 	add_settings_field('mantra_textalign', __('Force Text Align','mantra') , 'setting_textalign_fn', __FILE__, 'text_section');
 	add_settings_field('mantra_parindent', __('Paragraph indent','mantra') , 'setting_parindent_fn', __FILE__, 'text_section');
+	add_settings_field('mantra_headerindent', __('Header indent','mantra') , 'setting_headerindent_fn', __FILE__, 'text_section');
 	add_settings_field('mantra_lineheight', __('Line Height','mantra') , 'setting_lineheight_fn', __FILE__, 'text_section');
 	add_settings_field('mantra_wordspace', __('Word spacing','mantra') , 'setting_wordspace_fn', __FILE__, 'text_section');
 	add_settings_field('mantra_letterspace', __('Letter spacing','mantra') , 'setting_letterspace_fn', __FILE__, 'text_section');
-
+	add_settings_field('mantra_textshadow', __('Text shadow','mantra') , 'setting_textshadow_fn', __FILE__, 'text_section');
 
 	add_settings_field('mantra_backcolor', __('Background Color','mantra') , 'setting_backcolor_fn', __FILE__, 'appereance_section');
 	add_settings_field('mantra_headercolor', __('Header (Banner and Menu) Background Color','mantra') , 'setting_headercolor_fn', __FILE__, 'appereance_section');
@@ -76,6 +77,7 @@ function mantra_init_fn(){
 	add_settings_field('mantra_image', __('Post Images Border','mantra') , 'setting_image_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_pin', __('Caption Pin','mantra') , 'setting_pin_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_sidebullet', __('Sidebar Menu Bullets','mantra') , 'setting_sidebullet_fn', __FILE__, 'graphics_section');
+	add_settings_field('mantra_metaback', __('Meta Area Background','mantra') , 'setting_metaback_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_contentlist', __('Content List Bullets','mantra') , 'setting_contentlist_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_title', __('Title and Description','mantra') , 'setting_title_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_pagetitle', __('Page Titles','mantra') , 'setting_pagetitle_fn', __FILE__, 'graphics_section');
@@ -463,7 +465,7 @@ foreach($itemscursive as $item) {
 }
 	echo "</optgroup>";
 	echo "</select>";
-	echo "<div><small>".__("Select the font family you want your sidebar(s) to have. Text in sidebars will be affexted, including any widgets. Leave 'Default' and the general font you selected will be used.","mantra")."</small></div>";
+	echo "<div><small>".__("Select the font family you want your sidebar(s) to have. Text in sidebars will be affected, including any widgets. Leave 'Default' and the general font you selected will be used.","mantra")."</small></div>";
 }
 
 
@@ -571,6 +573,22 @@ foreach($items as $item) {
 	echo "<div><small>".__("Choose the indent for your paragraphs.","mantra")."</small></div>";
 }
 
+
+//CHECKBOX - Name: ma_options[headerindent]
+function setting_headerindent_fn() {
+	global $mantra_options;
+	$items = array ("Enable" , "Disable");
+	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
+	echo "<select id='mantra_headerindent' name='ma_options[mantra_headerindent]'>";
+foreach($items as $id=>$item) {
+	echo "<option value='$item'";
+	selected($mantra_options['mantra_headerindent'],$itemsare[$id]);
+	echo ">$item</option>";
+}
+	echo "</select>";
+	echo "<div><small>".__("Disable the default header and title indent (left margin).","mantra")."</small></div>";
+}
+
 //SELECT - Name: ma_options[lineheight]
 function  setting_lineheight_fn() {
 	global $mantra_options;
@@ -614,6 +632,23 @@ foreach($items as $id=>$item) {
 }
 	echo "</select>";
 	echo "<div><small>".__("The space between <i>letters</i>. Leave 'Default' for normal settings (size value will be as set in the CSS).","mantra")."</small></div>";
+}
+
+
+
+//CHECKBOX - Name: ma_options[textshadow]
+function setting_textshadow_fn() {
+	global $mantra_options;
+	$items = array ("Enable" , "Disable");
+	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
+	echo "<select id='mantra_textshadow' name='ma_options[mantra_textshadow]'>";
+foreach($items as $id=>$item) {
+	echo "<option value='$item'";
+	selected($mantra_options['mantra_textshadow'],$itemsare[$id]);
+	echo ">$item</option>";
+}
+	echo "</select>";
+	echo "<div><small>".__("Disable the default text shadow on headers and titles.","mantra")."</small></div>";
 }
 
 ////////////////////////////////
@@ -815,10 +850,25 @@ function setting_sidebullet_fn() {
 	echo "<div><small>".__("The sidebar list bullets. ","mantra")."</small></div>";
 }
 
+//CHECKBOX - Name: ma_options[metaback]
+function setting_metaback_fn() {
+	global $mantra_options;
+	$items = array ("Gray" , "White", "None");
+	$itemsare = array( __("Gray","mantra"), __("White","mantra"), __("None","mantra"));
+	echo "<select id='mantra_metaback' name='ma_options[mantra_metaback]'>";
+foreach($items as $id=>$item) {
+	echo "<option value='$item'";
+	selected($mantra_options['mantra_metaback'],$itemsare[$id]);
+	echo ">$item</option>";
+}
+	echo "</select>";
+	echo "<div><small>".__("The background for your post-metas area (under your post tiltes). Gray by default.","mantra")."</small></div>";
+
+}
+
 //CHECKBOX - Name: ma_options[contentlist]
 function setting_contentlist_fn() {
 	global $mantra_options;
-	if (!isset($mantra_options['mantra_contentlist'])) { $mantra_options['mantra_contentlist'] ="Show";	}
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
 	echo "<select id='mantra_contentlist' name='ma_options[mantra_contentlist]'>";
@@ -1234,7 +1284,7 @@ foreach($mantra_global_socials as $item) {
 }
 	echo "</select><span class='address_span'> &raquo; </span>";
 	echo "<input id='mantra_tweeter' name='ma_options[mantra_social4]' size='32' type='text'  value='".esc_attr( $mantra_options['mantra_social4'] )."'  />";
-	echo "<div><small>".__("You can insert up to 4 different social sites and addresses.","mantra")."</small></div> ";
+	echo "<div><small>".__("You can insert up to 5 different social sites and addresses.","mantra")."</small></div> ";
 }
 
 // TEXTBOX - Name: ma_options[social3]
@@ -1248,7 +1298,7 @@ function setting_socials3_fn() {
 }
 	echo "</select><span class='address_span'> &raquo; </span>";
 	echo "<input id='mantra_rss' name='ma_options[mantra_social6]' size='32' type='text'  value='".esc_attr( $mantra_options['mantra_social6'] )."'  />";
-	echo "<div><small>".__("There are a total of 11 social networks to choose from. ","mantra")."</small></div>";
+	echo "<div><small>".__("There are a total of 12 social networks to choose from. ","mantra")."</small></div>";
 }
 
 // TEXTBOX - Name: ma_options[social4]
@@ -1262,7 +1312,7 @@ function setting_socials4_fn() {
 }
 	echo "</select><span class='address_span'> &raquo; </span>";
 	echo "<input id='mantra_rss' name='ma_options[mantra_social8]' size='32' type='text'  value='".esc_attr( $mantra_options['mantra_social8'] )."'  />";
-	echo "<div><small>".__("You can leave any number of inputs empty. They just won't appear in the frontend.  ","mantra")."</small></div>";
+	echo "<div><small>".__("You can leave any number of inputs empty. ","mantra")."</small></div>";
 }
 
 // TEXTBOX - Name: ma_options[social5]
@@ -1276,7 +1326,7 @@ function setting_socials5_fn() {
 }
 	echo "</select><span class='address_span'> &raquo; </span>";
 	echo "<input id='mantra_rss' name='ma_options[mantra_social10]' size='32' type='text'  value='".esc_attr( $mantra_options['mantra_social10'] )."'  />";
-	echo "<div><small>".__("You can leave any number of inputs empty. They just won't appear in the frontend.  ","mantra")."</small></div>";
+	echo "<div><small>".__("You can choose the same social media any number of times.  ","mantra")."</small></div>";
 }
 
 // TEXTBOX - Name: ma_options[socialsdisplay]
@@ -1284,30 +1334,30 @@ function setting_socialsdisplay_fn() {
 global $mantra_options;
 		$items = array( "Header", "CLeft", "CRight" , "Footer");
 
-		$checkedClass = ($mantra_options['mantra_socialsdisplay0']=='1') ? ' checkedClass' : '';
-		$checkedClass = ($mantra_options['mantra_socialsdisplay1']=='1') ? ' checkedClass' : '';
-		$checkedClass = ($mantra_options['mantra_socialsdisplay2']=='1') ? ' checkedClass' : '';
-		$checkedClass = ($mantra_options['mantra_socialsdisplay3']=='1') ? ' checkedClass' : '';
+		$checkedClass0 = ($mantra_options['mantra_socialsdisplay0']=='1') ? ' checkedClass0' : '';
+		$checkedClass1 = ($mantra_options['mantra_socialsdisplay1']=='1') ? ' checkedClass1' : '';
+		$checkedClass2 = ($mantra_options['mantra_socialsdisplay2']=='1') ? ' checkedClass2' : '';
+		$checkedClass3 = ($mantra_options['mantra_socialsdisplay3']=='1') ? ' checkedClass3' : '';
 
-		echo " <label id='$items[0]' for='$items[0]$items[0]' class='socialsdisplay $checkedClass'><input  ";
+		echo " <label id='$items[0]' for='$items[0]$items[0]' class='socialsdisplay $checkedClass0'><input  ";
 		 checked($mantra_options['mantra_socialsdisplay0'],'1');
 	echo "value='1' id='$items[0]$items[0]'  name='ma_options[mantra_socialsdisplay0]' type='checkbox' /> Top right corner of header </label>";
 
-		echo " <label id='$items[1]' for='$items[1]$items[1]' class='socialsdisplay $checkedClass'><input  ";
+		echo " <label id='$items[1]' for='$items[1]$items[1]' class='socialsdisplay $checkedClass1'><input  ";
 		 checked($mantra_options['mantra_socialsdisplay1'],'1');
 	echo "value='1' id='$items[1]$items[1]'  name='ma_options[mantra_socialsdisplay1]' type='checkbox' /> Under menu - left side </label>";
 
-		echo " <label id='$items[2]' for='$items[2]$items[2]' class='socialsdisplay $checkedClass'><input  ";
+		echo " <label id='$items[2]' for='$items[2]$items[2]' class='socialsdisplay $checkedClass2'><input  ";
 		 checked($mantra_options['mantra_socialsdisplay2'],'1');
 	echo "value='1' id='$items[2]$items[2]'  name='ma_options[mantra_socialsdisplay2]' type='checkbox' /> Under menu - right side </label>";
 
-		echo " <label id='$items[3]' for='$items[3]$items[3]' class='socialsdisplay $checkedClass'><input  ";
+		echo " <label id='$items[3]' for='$items[3]$items[3]' class='socialsdisplay $checkedClass3'><input  ";
 		 checked($mantra_options['mantra_socialsdisplay3'],'1');
 	echo "value='1' id='$items[3]$items[3]'  name='ma_options[mantra_socialsdisplay3]' type='checkbox' /> In the footer (smaller icons) </label>";
 		
 
 		
-		echo "<div><p><small>".__(" Choose where to display the social icons.","mantra")."</small></p></div>";
+		echo "<div><p><small>".__(" Choose the <b>areas</b> where to display the social icons.","mantra")."</small></p></div>";
 }
 
 
@@ -1383,7 +1433,7 @@ function setting_radio_fn() {
 function mantra_page_fn() {
 
  if (!current_user_can('edit_theme_options'))  {
-    wp_die( __('Sorry, but you do not have sufficient permissions to access this page.') );
+    wp_die( __('Sorry, but you do not have sufficient permissions to access this page.','mantra') );
   }?>
 
 
@@ -1417,7 +1467,7 @@ if ($options) $mantra_options = $options;
 
 	</form>
 
-	<span id="version"> Mantra v. 1.7.5 - by <a href="http://www.cryoutcreations.eu">Cryout Creations</a></span>
+	<span id="version"> Mantra v. 1.7.6 - by <a href="http://www.cryoutcreations.eu">Cryout Creations</a></span>
 </div>
 
 <div class="righty" >
@@ -1603,7 +1653,7 @@ global $mantra_defaults;
 	$input['mantra_social4'] =  wp_kses_data($input['mantra_social4']);
 	$input['mantra_social6'] =  wp_kses_data($input['mantra_social6']);
 	$input['mantra_social8'] =  wp_kses_data($input['mantra_social8']);
-	$input['mantra_social10'] =  wp_kses_data($input['mantra_social8']);
+	$input['mantra_social10'] =  wp_kses_data($input['mantra_social10']);
 
 	$input['mantra_customcss'] =  wp_kses_post($input['mantra_customcss']);
 
