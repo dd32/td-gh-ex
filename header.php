@@ -17,7 +17,7 @@ $options = get_option('admired_theme_options'); ?>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?php
-	if ( isset ($options['admired_hide_metainfo'])) {
+	if ( !empty ($options['admired_hide_metainfo'])) {
 		wp_title('');	/* this is compatible with SEO plugins */
     } else {
 	/* Else Print the <title> tag.
@@ -32,7 +32,7 @@ $options = get_option('admired_theme_options'); ?>
 	// Add page number:
 	if ( $paged >= 2 || $page >= 2 )
 		echo ' | ' . sprintf( __( 'Page %s', 'admired' ), max( $paged, $page ) );
-	} ?></title>
+	} ?> </title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />

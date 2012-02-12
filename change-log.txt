@@ -9,7 +9,14 @@ Tested up to: 3.3.1
 == Change Log ==
 This change log was started beginning with Version 1.0
 
-= Changes Version 1.0.8 =
+= Changes Version 1.1 =
+
+* simple bug fixes
+* options was echoing variable instead of color
+* fixed wp_title
+* last version was supposed to be 1.8 but forgot to change it in the style sheet before upload. 
+
+= Changes Version 1.0.71 =
 
 * Four new skins - Kiss of Orange, Blue Diamond, Redline, and Simple White.
 * Two new social buttons - Pinterest and replaced Google Buzz with Vimeo.
@@ -22,7 +29,6 @@ This change log was started beginning with Version 1.0
 * Stopped the styles and scripts from the option page from showing on other admin pages.
 * Moved to WP core bundled JQuery UI Tabs for the Option Page.
 * Removed wp_enqueue JQuery and SuperFish from the header and placed in functions.php
-* update .pot file
 * Made Responsive!
 
 

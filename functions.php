@@ -4,7 +4,7 @@
  *
  * @since admired 1.0
  */
-
+	 
 // Set the content width.
 if ( ! isset( $content_width ) )
 	$content_width = 688;

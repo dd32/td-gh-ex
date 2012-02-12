@@ -128,7 +128,7 @@
 
 	$optColor = ($options['admired_main_menubar_hoverbg_color']);
 	if ( isset ($options['admired_main_menubar_hoverbg_color']) &&  ($options['admired_main_menubar_hoverbg_color'] !="#026BB0") ) {
-		echo ('#nav-menu2 li:hover > a,#nav-menu2 a:focus {-ms-filter: "progid:DXImageTransform.Microsoft.gradient(enabled=false)"; background: $optColor;}\n');
+		echo ("#nav-menu2 li:hover > a,#nav-menu2 a:focus {-ms-filter: 'progid:DXImageTransform.Microsoft.gradient(enabled=false)'; background: $optColor;}\n");
 	}
 
 	$optColor = ($options['admired_main_menubar_dropbg_color']);
