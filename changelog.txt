@@ -2,7 +2,17 @@ iFeature Changelog
 
 ****************************
 
-Version 4.0.2 (02-05-12)
+Version 4.0.3 (02-13-12)
+-jQuery no-conflict fix for better plugin compatibility. 
+-Removed slider timer animation.
+-Adjustment to mobile menu js to fix conflict issue.
+-Adjustment to slider arrows.
+-Moved custom responsive CSS out of general style sheet to avoid conflict with responsive design disabled.
+-Removed several unecessary options.
+-Fixed description color option.
+-Adjustment to home button.
+
+Version 4.0.2 (02-06-12)
 -Fixed slider image filename.
 -Fixed postbar bug on single pages.
 -Removing slider from active blog elements now hides it.
