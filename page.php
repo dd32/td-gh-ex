@@ -5,7 +5,7 @@ get_header(); ?>
 
 		<div id="primary" class="clearfix">
 
-			<div id="content" role="main">
+			<div id="content" role="main" class="clearfix">
 
 
 				<?php while ( have_posts() ) : the_post(); ?>

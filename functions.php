@@ -74,7 +74,7 @@ endif; // azurebasic_setup
     // custom header image support
 	define('HEADER_TEXTCOLOR', '');
     define('NO_HEADER_TEXT', true );
-	define('HEADER_IMAGE', '%s/images/Pixar-Brave-990x300.jpg'); // %s is the template dir uri
+	define('HEADER_IMAGE', '%s/images/undersea.png'); // %s is the template dir uri
 	define('HEADER_IMAGE_WIDTH', 986); // use width and height appropriate for your theme
 	define('HEADER_IMAGE_HEIGHT', 300);
 	// gets included in the admin header
@@ -169,8 +169,8 @@ function azurebasic_widgets_init() {
 	// Location: the sidebar
 	register_sidebar(array(
 	    'name'=>__('Sidebar', 'azurebasic'),
-		'before_widget' => '<div class="widget-area widget-sidebar">',
-		'after_widget' => '</div>',
+		'before_widget' => '<aside class="widget-area widget-sidebar">',
+		'after_widget' => '</aside>',
 		'before_title' => '<h3 id="sidebar-widget-title">',
 		'after_title' => '</h3>',
 	));

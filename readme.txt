@@ -1,5 +1,5 @@
 ﻿
-                                                 || AZURE BASIC 2.5 -- A Basic WordPress Theme ||
+                                                 || AZURE BASIC 2.5.5 -- A Basic WordPress Theme ||
 												 
 || About ||
 
@@ -36,13 +36,22 @@ If you have an questions, or need support, please contact me at contact@silvergl
 
 silverglass.net
   -- home page for this design
-  
-|| Notes ||
 
-Default Header Image: "Brave" - ©Disney/Pixar. All Rights Reserved.
+  
+|| Image Notes ||
+
+Default Header Image: Royalty Free, from Stock.XCHNG (SXC.hu), HAAP Media Ltd. Free to use with credit given. 
+License URI: http://www.sxc.hu/txt/license.html
+Credit: Photo by Maurizio Carta, Iglesias, CI, Italy. 
 
    
 || Changelog ||
+
+v2.5.5 - Header image change
+       - content and sidebar padding adjusted
+	   - margins set for "Edit" link.
+	   - Pagination margins and float cleared
+	   - fixed comments header padding
 
 v2.5 - fixed right side of sidebar alignment
      - cleared floats on single.php, comments.php, page.php

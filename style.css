@@ -6,7 +6,7 @@ Author URI: http://cabrown.net/
 Description: A lightweight, two-column layout blog theme, with 6 widget areas and customizable header image. Valid HTML5 and CSS3 that can be modified. Compatiable with Wordpress 3.2 and above. Compatable IE7+, Opera 10+, Safari 5+, Firefox 3.5+.   
 Tags: blue, white, two-columns, custom-menu, custom-background, custom-header, right-sidebar
 
-Version: 2.5
+Version: 2.5.5
 
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -24,7 +24,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 /*    BlurePrint Reset and Framework        */
 /*------------------------------------------*/
-@import url('css/screen.css');
+@import url('css/screen.css'); /* DO NOT REMOVE! */
 
 
 /*        Global Syles                 */
@@ -49,6 +49,8 @@ a { text-decoration: none; }
 
 table { border-collapse: separate;
         border-spacing: 0; }
+
+img { clear: both; }
 
 
 
@@ -135,7 +137,7 @@ blockquote.right {
 
 #sidebar { overflow: hidden;
            float: right;
-           width: 250px; }
+           width: 220px; }
 
 #footer-bottom { clear: both;
                  width: 100%; }
@@ -288,6 +290,8 @@ h1 { font-size: 2.5em; }
 #main { background: none repeat scroll 0 0 #fff; 
         box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset; }
 
+.featured-thumb { margin-bottom: 10px; }
+ 
 article { margin-bottom: 25px;
 	      padding-top: 10px;
 	      padding-left: 25px; }
@@ -306,10 +310,13 @@ article { margin-bottom: 25px;
 
 .entry-content embed { width: 675px; }
 
+.page-link { margin-bottom: 10px; }
+
 /* Sidebar Section */
 
 #sidebar { color: #545350; 
-           padding-right: 10px; }
+           padding-right: 25px; 
+		   padding-left: 10px; }
 
 #sidebar-widget-title { color: #545350; }
 
@@ -334,8 +341,6 @@ article { margin-bottom: 25px;
 
 #comments { padding-left: 25px; }
 
-#comments #comments-title { padding-left: 25px; }
-
 #comments #respond { padding-left: 25px; }
 
 .comment-meta { margin-bottom: 10px; }
@@ -343,6 +348,8 @@ article { margin-bottom: 25px;
 .comment-author img { padding-right: 5px; }
 
 #nav-below { padding-left: 25px; }
+
+.pingback .edit-link { margin-left: 10px; }
 
 .comment-author a { color: #6fa2d6; }
 

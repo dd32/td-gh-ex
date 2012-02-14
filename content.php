@@ -3,6 +3,8 @@
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     
        <?php if ( has_post_thumbnail() ) { /* loades the post's featured thumbnail, requires Wordpress 3.0+ */ echo '<div class="featured-thumb clearfix">'; the_post_thumbnail(); echo '</div>'; } ?>
+       
+       <div class="clear"></div><!-- .clear all the floats -->
 
 		<header class="blog-entry-header clearfix">
 
@@ -37,7 +39,7 @@
 
 		</header><!-- .entry-header -->
 
-
+<div class="clear"></div><!-- .clear all the floats -->
 
 		<?php if ( is_search() ) : // Only display Excerpts for Search ?>
 
@@ -52,14 +54,16 @@
 		<div class="entry-content clearfix">
 
 			<?php the_content( __( 'Continue Reading <span class="meta-nav">&rarr;</span>', 'azurebasic' ) ); ?>
+            
+            <div class="clear"></div><!-- .clear all the floats -->
 
-			<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'azurebasic' ) . '</span>', 'after' => '</div>' ) ); ?>
+			<?php wp_link_pages( array( 'before' => '<div class="page-link clearfix"><span>' . __( 'Pages:', 'azurebasic' ) . '</span>', 'after' => '</div>' ) ); ?>
 
 		</div><!-- .entry-content -->
 
 		<?php endif; ?>
-
-
+        
+<div class="clear"></div><!-- .clear all the floats -->
 
 		<footer class="entry-meta clearfix">
 
