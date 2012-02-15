@@ -69,7 +69,6 @@ function akyuz_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	// The default header text color
-	define( 'HEADER_TEXTCOLOR', '000' );
 
 	register_nav_menus( array(
 		'primary'   => __( 'Main Navigation', AKYUZ_TEXT_DOMAIN ),
@@ -77,11 +76,12 @@ function akyuz_setup() {
 	) );
 
 	// By leaving empty, we allow for random image rotation.
-	//define( 'HEADER_IMAGE', get_template_directory().'/images/headers/hanoi.jpg' );
 
 	// The height and width of your custom header.
 	define( 'HEADER_IMAGE_WIDTH', apply_filters( 'twentyeleven_header_image_width', 943 ) );
 	define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'twentyeleven_header_image_height', 190 ) );
+	define( 'NO_HEADER_TEXT', false );
+	define( 'HEADER_TEXTCOLOR', '');
 
 	set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );
 
@@ -90,7 +90,7 @@ function akyuz_setup() {
 	add_image_size( 'small-feature', 573, 320 ); // Used for featured posts if a large-feature doesn't exist
 
 	// Turn on random header image rotation by default.
-	add_theme_support( 'custom-header', array( 'random-default' => true ) );
+	add_theme_support( 'custom-header' );
 
 	// Add a way for the custom header to be styled in the admin panel that controls
 	add_custom_image_header( 'akyuz_header_style', 'akyuz_admin_header_style', 'akyuz_admin_header_image' );
@@ -558,15 +558,15 @@ if ( ! function_exists( 'akyuz_get_social_bar' ) ) :
 
 		$my_options = get_option( AKYUZ_OPTIONSNAME );
 		
-		if ( isset($my_options[AKYUZ_SHORTNAME.'_social_enable']))?> <a href="<?php echo $my_options[AKYUZ_SHORTNAME.'_social_rss_url'];?>" title="Feedburner"><img class="top_social_bar" src="<?php echo get_template_directory_uri(); ?>/images/social/rss_16.png" alt="<?php bloginfo( 'name' );?>- Feedburner" title="<?php bloginfo('name');?>- Feedburner" /></a>
+		if ( isset($my_options[AKYUZ_SHORTNAME.'_social_enable']))?> <a href="<?php echo $my_options[AKYUZ_SHORTNAME.'_social_rss_url'];?>" title="Feedburner"><img class="top_social_bar" src="<?php echo get_template_directory_uri(); ?>/images/social/rss_16.png" alt="<?php bloginfo( 'name' );?>- Feedburner" width="16px" height="16px" title="<?php bloginfo('name');?>- Feedburner" /></a>
 		<?php
 		if (isset($my_options[AKYUZ_SHORTNAME.'_social_enable'])) {
-			      if ( $my_options[AKYUZ_SHORTNAME.'_social_facebook_url'] !='http://'): ?> <a href="<?php echo $my_options[AKYUZ_SHORTNAME.'_social_facebook_url'];?>"  title="Facebook" ><img class="top_social_bar" src="<?php echo get_template_directory_uri(); ?>/images/social/facebook.png"  alt="<?php bloginfo( 'name' );?>- Facebook"  title="<?php bloginfo('name');?>- Facebook" /></a><?php endif; ?>
-			<?php if ( $my_options[AKYUZ_SHORTNAME.'_social_twitter_url']  !='http://'): ?> <a href="<?php echo $my_options[AKYUZ_SHORTNAME.'_social_twitter_url'];?>"   title="Twitter"  ><img class="top_social_bar" src="<?php echo get_template_directory_uri(); ?>/images/social/twitter.png"   alt="<?php bloginfo( 'name' );?>- Twitter"   title="<?php bloginfo('name');?>- Twitter" /></a><?php endif; ?>
-			<?php if ( $my_options[AKYUZ_SHORTNAME.'_social_youtube_url']  !='http://'): ?> <a href="<?php echo $my_options[AKYUZ_SHORTNAME.'_social_youtube_url'];?>"   title="Youtube"  ><img class="top_social_bar" src="<?php echo get_template_directory_uri(); ?>/images/social/youtube.png"   alt="<?php bloginfo( 'name' );?>- Youtube"   title="<?php bloginfo('name');?>- Youtube" /></a><?php endif; ?>
-			<?php if ( $my_options[AKYUZ_SHORTNAME.'_social_flickr_url']   !='http://'): ?> <a href="<?php echo $my_options[AKYUZ_SHORTNAME.'_social_flickr_url'];?>"    title="Flickr"   ><img class="top_social_bar" src="<?php echo get_template_directory_uri(); ?>/images/social/flickr.png"    alt="<?php bloginfo( 'name' );?>- Flickr"    title="<?php bloginfo('name');?>- Flickr" /></a><?php endif; ?>
-			<?php if ( $my_options[AKYUZ_SHORTNAME.'_social_linkedin_url'] !='http://'): ?> <a href="<?php echo $my_options[AKYUZ_SHORTNAME.'_social_linkedin_url'];?>"  title="Linkedin" ><img class="top_social_bar" src="<?php echo get_template_directory_uri(); ?>/images/social/linkedin.png"  alt="<?php bloginfo( 'name' );?>- Linkedin"  title="<?php bloginfo('name');?>- Linkedin" /></a><?php endif; ?>
-			<?php if ( $my_options[AKYUZ_SHORTNAME.'_social_delicious_url']!='http://'): ?> <a href="<?php echo $my_options[AKYUZ_SHORTNAME.'_social_delicious_url'];?>" title="Delicious"><img class="top_social_bar" src="<?php echo get_template_directory_uri(); ?>/images/social/delicious.png" alt="<?php bloginfo( 'name' );?>- Delicious" title="<?php bloginfo('name');?>- Delicious" /></a><?php endif; ?>
+			      if ( $my_options[AKYUZ_SHORTNAME.'_social_facebook_url'] !='http://'): ?> <a href="<?php echo $my_options[AKYUZ_SHORTNAME.'_social_facebook_url'];?>"  title="Facebook" ><img class="top_social_bar" src="<?php echo get_template_directory_uri(); ?>/images/social/facebook.png"  alt="<?php bloginfo( 'name' );?>- Facebook"  width="16px" height="16px" title="<?php bloginfo('name');?>- Facebook" /></a><?php endif; ?>
+			<?php if ( $my_options[AKYUZ_SHORTNAME.'_social_twitter_url']  !='http://'): ?> <a href="<?php echo $my_options[AKYUZ_SHORTNAME.'_social_twitter_url'];?>"   title="Twitter"  ><img class="top_social_bar" src="<?php echo get_template_directory_uri(); ?>/images/social/twitter.png"   alt="<?php bloginfo( 'name' );?>- Twitter"   width="16px" height="16px" title="<?php bloginfo('name');?>- Twitter" /></a><?php endif; ?>
+			<?php if ( $my_options[AKYUZ_SHORTNAME.'_social_youtube_url']  !='http://'): ?> <a href="<?php echo $my_options[AKYUZ_SHORTNAME.'_social_youtube_url'];?>"   title="Youtube"  ><img class="top_social_bar" src="<?php echo get_template_directory_uri(); ?>/images/social/youtube.png"   alt="<?php bloginfo( 'name' );?>- Youtube"   width="16px" height="16px" title="<?php bloginfo('name');?>- Youtube" /></a><?php endif; ?>
+			<?php if ( $my_options[AKYUZ_SHORTNAME.'_social_flickr_url']   !='http://'): ?> <a href="<?php echo $my_options[AKYUZ_SHORTNAME.'_social_flickr_url'];?>"    title="Flickr"   ><img class="top_social_bar" src="<?php echo get_template_directory_uri(); ?>/images/social/flickr.png"    alt="<?php bloginfo( 'name' );?>- Flickr"    width="16px" height="16px" title="<?php bloginfo('name');?>- Flickr" /></a><?php endif; ?>
+			<?php if ( $my_options[AKYUZ_SHORTNAME.'_social_linkedin_url'] !='http://'): ?> <a href="<?php echo $my_options[AKYUZ_SHORTNAME.'_social_linkedin_url'];?>"  title="Linkedin" ><img class="top_social_bar" src="<?php echo get_template_directory_uri(); ?>/images/social/linkedin.png"  alt="<?php bloginfo( 'name' );?>- Linkedin"  width="16px" height="16px" title="<?php bloginfo('name');?>- Linkedin" /></a><?php endif; ?>
+			<?php if ( $my_options[AKYUZ_SHORTNAME.'_social_delicious_url']!='http://'): ?> <a href="<?php echo $my_options[AKYUZ_SHORTNAME.'_social_delicious_url'];?>" title="Delicious"><img class="top_social_bar" src="<?php echo get_template_directory_uri(); ?>/images/social/delicious.png" alt="<?php bloginfo( 'name' );?>- Delicious" width="16px" height="16px" title="<?php bloginfo('name');?>- Delicious" /></a><?php endif; ?>
 			<?php 
 		}
 	}
@@ -718,4 +718,5 @@ function akyuz_scripts_function() {
 
 }
 
+//add_filter( 'use_default_gallery_style', '__return_false' );
 ?>

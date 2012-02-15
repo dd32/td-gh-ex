@@ -205,7 +205,7 @@ class Akyuz_Theme_Administration_Options {
 	public function display_section_akyuz_tab_about() {
 		
 		// This displays on the "About" tab. Echo regular HTML here, like so:
-		 echo '<p>Copyright 2011 me@example.com</p>';
+		 echo '<p>Copyright 2010 Selim AKYUZ</p>';
 		
 	}
 	
@@ -468,17 +468,7 @@ class Akyuz_Theme_Administration_Options {
 		
 	}
 	
-	/**
-	* jQuery Tabs
-	*
-	* @since 1.0
-	*/
-	public function scripts() {
-		
-		//wp_print_scripts( 'jquery-ui-tabs' );
-		
-	}
-	
+
 	/**
 	* Styling for the theme options page
 	*

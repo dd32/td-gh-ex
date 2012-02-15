@@ -37,7 +37,7 @@
 						$image_img_tag = wp_get_attachment_image( $image->ID, 'thumbnail' );
 				?>
 
-				<figure class="gallery-thumb">
+				<figure class="gallery-thumb span-15 last">
 					<a href="<?php the_permalink(); ?>"><?php echo $image_img_tag; ?></a>
 				</figure><!-- .gallery-thumb -->
 

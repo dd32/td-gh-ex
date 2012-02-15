@@ -51,4 +51,6 @@ buildmenu:function(menuid, arrowsvar){
 }
 
 //build menu with ID="myslidemenu" on page:
-jqueryslidemenu.buildmenu("sa_main_menu")
+jqueryslidemenu.buildmenu("sa_main_menu_bar div.menu");
+jqueryslidemenu.buildmenu("sa_main_menu_bar div.jqueryslidemenu");
+
