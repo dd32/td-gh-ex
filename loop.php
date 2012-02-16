@@ -2,9 +2,9 @@
 
 <?php if ( ! have_posts() ) : ?>
 	<div id="post-0" class="post error404 not-found">
-		<h1 class="entry-title"><?php _e( 'Not Found', 'theme-adamsrazor' ); ?></h1>
+		<h1 class="entry-title"><?php _e( 'Not Found', 'adams-razor' ); ?></h1>
 		<div class="entry-content">
-			<p><?php _e( 'No results were found for the requested archive.', 'theme-adamsrazor' ); ?></p>
+			<p><?php _e( 'No results were found for the requested archive.', 'adams-razor' ); ?></p>
 			<?php get_search_form(); ?>
 		</div>
 	</div>
@@ -19,7 +19,7 @@
 					$ar_title = the_title('', '', false);
 					if ($ar_title == '') $ar_title = "Untitled";					
 				?>
-				<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'theme-adamsrazor' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php echo $ar_title; ?></a>
+				<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'adams-razor' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php echo $ar_title; ?></a>
 			</<?php echo $article_heading_tag; ?>>
 			
 	<?php if ( is_archive() || is_search() ) :  ?>
@@ -28,8 +28,8 @@
 			</div>
 	<?php else : ?>
 			<div class="entry-content">
-				<?php the_content( __( 'Continue reading <span class="meta-nav">&raquo;</span>', 'theme-adamsrazor' ) ); ?>
-				<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'theme-adamsrazor' ), 'after' => '</div>' ) ); ?>
+				<?php the_content( __( 'Continue reading <span class="meta-nav">&raquo;</span>', 'adams-razor' ) ); ?>
+				<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'adams-razor' ), 'after' => '</div>' ) ); ?>
 			</div>
 	<?php endif; ?>
 
@@ -41,7 +41,7 @@
 
 <?php if (  $wp_query->max_num_pages > 1 ) : ?>
 				<div id="nav-below" class="navigation">
-					<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&laquo;</span> Older posts', 'theme-adamsrazor' ) ); ?></div>
-					<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&raquo;</span>', 'theme-adamsrazor' ) ); ?></div>
+					<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&laquo;</span> Older posts', 'adams-razor' ) ); ?></div>
+					<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&raquo;</span>', 'adams-razor' ) ); ?></div>
 				</div>
 <?php endif; ?>

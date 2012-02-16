@@ -1,8 +1,8 @@
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
 				<?php if ( ! empty( $post->post_parent ) ) : ?>
-					<p class="page-title"><a href="<?php echo get_permalink( $post->post_parent ); ?>" title="<?php esc_attr( printf( __( 'Return to %s', 'theme-adamsrazor' ), get_the_title( $post->post_parent ) ) ); ?>" rel="gallery"><?php						
-						printf( __( '<span class="meta-nav">&laquo;</span> %s', 'theme-adamsrazor' ), get_the_title( $post->post_parent ) );
+					<p class="page-title"><a href="<?php echo get_permalink( $post->post_parent ); ?>" title="<?php esc_attr( printf( __( 'Return to %s', 'adams-razor' ), get_the_title( $post->post_parent ) ) ); ?>" rel="gallery"><?php						
+						printf( __( '<span class="meta-nav">&laquo;</span> %s', 'adams-razor' ), get_the_title( $post->post_parent ) );
 					?></a></p>
 				<?php endif; ?>
 
@@ -13,10 +13,10 @@
 						<?php							
 							if ( wp_attachment_is_image() ) {								
 								$metadata = wp_get_attachment_metadata();
-								printf( __( 'Full size is %s pixels', 'theme-adamsrazor' ),
+								printf( __( 'Full size is %s pixels', 'adams-razor' ),
 									sprintf( '<a href="%1$s" title="%2$s">%3$s &times; %4$s</a>',
 										wp_get_attachment_url(),
-										esc_attr( __( 'Link to full-size image', 'theme-adamsrazor' ) ),
+										esc_attr( __( 'Link to full-size image', 'adams-razor' ) ),
 										$metadata['width'],
 										$metadata['height']
 									)
@@ -55,8 +55,8 @@
 						?></a></p>
 
 						<div id="nav-below" class="navigation">
-							<div class="nav-previous"><?php previous_image_link( false, __('&laquo; Previous image', 'theme-adamsrazor' ) ); ?></div>
-							<div class="nav-next"><?php next_image_link( false, __('Next image &raquo;', 'theme-adamsrazor' ) ); ?></div>
+							<div class="nav-previous"><?php previous_image_link( false, __('&laquo; Previous image', 'adams-razor' ) ); ?></div>
+							<div class="nav-next"><?php next_image_link( false, __('Next image &raquo;', 'adams-razor' ) ); ?></div>
 						</div><!-- #nav-below -->
 <?php else : ?>
 						<a href="<?php echo wp_get_attachment_url(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="attachment"><?php echo basename( get_permalink() ); ?></a>
@@ -64,8 +64,8 @@
 						</div><!-- .entry-attachment -->
 						<div class="entry-caption"><?php if ( !empty( $post->post_excerpt ) ) the_excerpt(); ?></div>
 
-<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'theme-adamsrazor' ) ); ?>
-<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'theme-adamsrazor' ), 'after' => '</div>' ) ); ?>
+<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'adams-razor' ) ); ?>
+<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'adams-razor' ), 'after' => '</div>' ) ); ?>
 
 					</div><!-- .entry-content -->
 					

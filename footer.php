@@ -9,7 +9,7 @@
 			
 				<?php if ( count( get_the_category() ) ) : ?>
 					<span class="cat-links">
-						<?php printf( __( '<span class="%1$s">In categories: </span> %2$s', 'theme-adamsrazor' ), 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list( ', ' ) ); ?>
+						<?php printf( __( '<span class="%1$s">In categories: </span> %2$s', 'adams-razor' ), 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list( ', ' ) ); ?>
 					</span>					
 				<?php endif; ?>
 				<?php
@@ -17,7 +17,7 @@
 					if ( $tags_list ):
 				?>
 					<span class="tag-links">
-						<?php printf( __( '<span class="%1$s">Tagged:</span> %2$s', 'theme-adamsrazor' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list ); ?>
+						<?php printf( __( '<span class="%1$s">Tagged:</span> %2$s', 'adams-razor' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list ); ?>
 					</span>					
 				<?php endif; ?>
 				
@@ -33,12 +33,14 @@
 		</div>
 
 		<div id="site-generator">				
-			<?php echo __( 'Powered by', 'theme-adamsrazor' ); ?> <a href="http://wordpress.org/">Wordpress</a>. <?php echo __( 'Design made simple with', 'theme-adamsrazor' ); ?> <a href="http://www.adamlofting.com/adams-razor/" title="very simple wordpress theme">Adam's Razor</a>.
+			<?php echo __( 'Powered by', 'adams-razor' ); ?> <a href="http://wordpress.org/">Wordpress</a>. <?php echo __( 'Design made simple with', 'adams-razor' ); ?> <a href="http://adamlofting.com/adams-razor/">Adam's Razor</a>.
 		</div>
 	</div>
 
 </div><!-- #wrapper -->
 
-<?php wp_footer(); ?>
+<?php 	$options = get_option('adamsrazor_theme_options');
+		echo $options['preclosebodytag'];		
+		wp_footer(); ?>
 </body>
 </html>
