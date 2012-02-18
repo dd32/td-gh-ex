@@ -34,9 +34,6 @@
 		echo ' | ' . sprintf( __( 'Page %s', 'mantra' ), max( $paged, $page ) );
 
 	?></title>
-<link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<link rel="shortcut icon" href="<?php echo home_url( '/' ); ?>favicon.ico" />
 <?php
 /* This  retrieves  admin options. */
 
@@ -45,7 +42,11 @@ foreach ($mantra_options as $key => $value) {
      ${"$key"} = $value ;
 }
 $totalwidth= $mantra_sidewidth+$mantra_sidebar+50;
-
+?>
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<?php if ($mantra_options['mantra_favicon']) { ?> <link rel="shortcut icon" href="<?php echo get_template_directory_uri().'/uploads/'.$mantra_options['mantra_favicon']; ?>" />
+<?php }
 
 	/* Always have wp_head() just before the closing </head>
 	 * tag of your theme, or you will break many plugins, which
@@ -70,15 +71,16 @@ $totalwidth= $mantra_sidewidth+$mantra_sidebar+50;
 <div id="wrapper" class="hfeed">
 <div id="header">
 
-		<div id="masthead">
-			<div id="branding" role="banner"> 
+		<div id="masthead"> 
+		<?php if ($mantra_options['mantra_linkheader']=="Enable") { ?><a href="<?php echo home_url( '/' ); ?>" id="linky"> </a><?php } ?>
+			<div id="branding" role="banner" > 
 				<?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
 				<<?php echo $heading_tag; ?> id="site-title">
 					<span>
-						<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+				<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a> 
 					</span>
 				</<?php echo $heading_tag; ?>>
-				<div id="site-description"><?php bloginfo( 'description' ); ?></div>
+				<div id="site-description" ><?php bloginfo( 'description' ); ?></div>
 
 				<div class="socials" id="sheader"><?php if($mantra_socialsdisplay0) set_social_icons(); ?></div>
 
@@ -95,12 +97,26 @@ $totalwidth= $mantra_sidewidth+$mantra_sidebar+50;
 
 						<style> #branding { background:url(<?php header_image(); ?>) no-repeat;
 								 width:<?php echo HEADER_IMAGE_WIDTH; ?>px;
-								 height:<?php echo HEADER_IMAGE_HEIGHT; ?>px; }	}
+								 height:<?php echo HEADER_IMAGE_HEIGHT; ?>px;}
+<?php if ($mantra_options['mantra_linkheader']=="Enable") { ?>
+#linky {
+display:block;
+position:absolute;
+width:<?php echo HEADER_IMAGE_WIDTH; ?>px;
+height:<?php echo HEADER_IMAGE_HEIGHT; ?>px;
+z-index:1;
+}
+#site-title , #site-description, #sheader {
+position:relative;
+z-index:2
+}
+<?php } ?>
 </style>
 									<?php } else { ?><?php } ?><?php endif; ?>
 				<div style="clear:both;"></div>
-			</div><!-- #branding -->
-		
+			
+			</div><!-- #branding --> 
+	
 			<div id="access" role="navigation">
 			  <?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
 				<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'mantra' ); ?>"><?php _e( 'Skip to content', 'mantra' ); ?></a></div>

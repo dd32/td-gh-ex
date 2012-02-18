@@ -100,19 +100,19 @@ font-size:<?php echo $mantra_fontsize ?>;
 ?><?php if (1) { ?> #footer-widget-area a:hover { color:<?php echo $mantra_footerhover; ?>  ;}<?php }
 
 ?><?php if ($mantra_pin != "Pin2") { ?> #content .wp-caption { background-image:url(<?php echo get_template_directory_uri()."/images/pins/".$mantra_pin; ?>.png)  ;} <?php }
-?><?php if ($mantra_sidebullet != "arrow_white") { ?>.widget-area ul ul li{ background-image:url(<?php echo get_template_directory_uri()."/images/bullets/".$mantra_sidebullet; ?>.png);
+?><?php if ($mantra_sidebullet != "arrow_white") { ?>.widget-area ul ul li{ background-image:url(<?php echo get_template_directory_uri()."/images/bullets/".$mantra_sidebullet; ?>.png);}
 <?php if($mantra_sidebullet == "folder_black" || $mantra_sidebullet == "folder_light") {?> padding-top:5px;padding-left:20px; } <?php } ?><?php }
 
 ?><?php if ($mantra_pagetitle == "Hide") { ?> .page h1.entry-title, .home .page h2.entry-title { display:none;} <?php }
 ?><?php if ($mantra_categtitle == "Hide") { ?> h1.page-title { display:none;} <?php }
-?><?php if (($mantra_postdate == "Hide" && $mantra_postcateg == "Hide") || ($mantra_postauthor == "Hide" && $mantra_postcateg == "Hide") ) { ?>.bl_sep {display:none;} <?php }
-?><?php if ($mantra_postdate == "Hide") { ?> span.entry-date, span.onDate {display:none;} <?php }
-?><?php if ($mantra_postauthor == "Hide") { ?> .author {display:none;} <?php }
-?><?php if ($mantra_postcateg == "Hide") { ?> span.bl_categ {display:none;} <?php }
-?><?php if ($mantra_posttag == "Hide") { ?> span.bl_posted, span.bl_tagg {display:none;} <?php }
-?><?php if ($mantra_postbook == "Hide") { ?>  span.bl_bookmark {display:none;} <?php }
+?><?php if (($mantra_postdate == "Hide" && $mantra_postcateg == "Hide") || ($mantra_postauthor == "Hide" && $mantra_postcateg == "Hide") ) { ?>.entry-meta .bl_sep {display:none;} <?php }
+?><?php if ($mantra_postdate == "Hide") { ?>.entry-meta span.entry-date,.entry-meta span.onDate {display:none;} <?php }
+?><?php if ($mantra_postauthor == "Hide") { ?>.entry-meta .author {display:none;} <?php }
+?><?php if ($mantra_postcateg == "Hide") { ?>.entry-meta span.bl_categ {display:none;} <?php }
+?><?php if ($mantra_posttag == "Hide") { ?> .entry-utility span.bl_posted, .entry-meta2 span.bl_tagg {display:none;} <?php }
+?><?php if ($mantra_postbook == "Hide") { ?> .entry-utility span.bl_bookmark {display:none;} <?php }
 ?><?php if ($mantra_parindent != "0px") { ?>  p {text-indent:<?php echo $mantra_parindent;?> ;} <?php }
-?><?php if ($mantra_posttime == "Hide") { ?>  .entry-time {display:none;} <?php } ?>
+?><?php if ($mantra_posttime == "Hide") { ?> .entry-meta .entry-time {display:none;} <?php } ?>
 </style>
 
 <?php  } 

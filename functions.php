@@ -58,7 +58,6 @@ foreach ($mantra_options as $key => $value) {
 									}
 
 
-
 	if ( !is_admin() ) {
 		wp_register_script('menu',get_template_directory_uri() . '/js/menu.js', array('jquery') );
 		wp_enqueue_script('menu');

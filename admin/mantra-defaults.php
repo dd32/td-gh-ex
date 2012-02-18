@@ -94,6 +94,8 @@ $mantra_defaults = array(
 "mantra_socialsdisplay2" => "",
 "mantra_socialsdisplay3" => "",
 
+"mantra_linkheader" => "Disable",
+"mantra_favicon" => "",
 "mantra_customcss" => "/* Mantra Custom CSS */  ");
 
 ?>

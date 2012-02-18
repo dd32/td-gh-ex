@@ -4,7 +4,7 @@ Theme URI: http://www.riotreactions.com/mantra
 Description: Mantra is a do-it-yourself WordPress theme, featuring a pack of over 70 customization options and easy to use tweaks capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (1,2 or 3 columns), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 35 font-families to choose from), text and header sizes, post metas, post excerpts, post formats, header and background images, custom menus, 12 social media links and icons, pins, bullets and more. With 8 widget areas, subtle animations, modern graphics and an easy and responsive admin section, you can start creating your dream site right now.
 Author: Cryout Creations
 Author URI: http://www.cryoutcreations.com
-Version: 1.7.6
+Version: 1.7.7
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, red, blue, white, silver, light, dark, one-column, two-columns, three-columns, right-sidebar, left-sidebar, flexible-width, fixed-width, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, front-page-post-form, full-width-template,  microformats, post-formats, rtl-language-support,  sticky-post, theme-options, threaded-comments, translation-ready
@@ -129,6 +129,8 @@ DESCRIPTION: One centered column with no sidebar
 
 .one-column #content {
 	margin: 0 20px;
+	width:auto;
+	float:none;
 }
 
 /*
@@ -207,6 +209,7 @@ height:60px;
 padding-top:0;
 padding-top:10px;
 padding-bottom:0px;
+
 }
 
 #forbottom, #forbottom2 {min-height:530px;}
@@ -214,7 +217,7 @@ padding-bottom:0px;
 
 
 #wrapper {
-	padding: 20px 20px 0;
+	padding: 10px 20px 0;
 	
 }
 
@@ -1692,7 +1695,7 @@ margin-left:0;
 	text-decoration: none;
 	color:#0D85CC;
 	font-size:14px;
-	/*text-shadow: 0 -1px 0 #E7E7E7;*/
+	word-wrap:break-word;
 
 /*
 		background:#F6F6F6;
@@ -2207,6 +2210,7 @@ padding:0px 10px;
 -moz-border-radius: 10px;
 -webkit-border-radius: 10px;
 border-radius: 10px;
+font-size:12px;
 }
 
 .edit-link a:hover {

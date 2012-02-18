@@ -6,6 +6,8 @@ add_action('admin_menu', 'mantra_add_page_fn');
 add_action('init', 'mantra_init');
 
 function mantra_init() {
+	wp_register_script('uploader',get_template_directory_uri() . '/admin/js/ajaxupload.js', array('jquery') );
+	wp_enqueue_script('uploader');
 	wp_enqueue_script("farbtastic");
 	wp_enqueue_style( 'farbtastic' );
     wp_enqueue_script('jquery-ui-accordion');
@@ -116,7 +118,8 @@ function mantra_init_fn(){
 	add_settings_field('mantra_socials5', __('Link nr. 5','mantra') , 'setting_socials5_fn', __FILE__, 'socials_section');
 	add_settings_field('mantra_socialshow', __('Socials display','mantra') , 'setting_socialsdisplay_fn', __FILE__, 'socials_section');
 
-
+	add_settings_field('mantra_linkheader', __('Make Site Header a Link','mantra') , 'setting_linkheader_fn', __FILE__, 'misc_section');
+	add_settings_field('mantra_favicon', __('Upload Fav Icon','mantra') , 'setting_favicon_fn', __FILE__, 'misc_section');
 	add_settings_field('mantra_customcss', __('Custom CSS','mantra') , 'setting_customcss_fn', __FILE__, 'misc_section');
 
 }
@@ -1365,67 +1368,84 @@ global $mantra_options;
 /// MISC SETTINGS ////
 ////////////////////////
 
+
+//CHECKBOX - Name: ma_options[linkheader]
+function setting_linkheader_fn() {
+	global $mantra_options;
+	$items = array ("Enable" , "Disable");
+	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
+	echo "<select id='mantra_linkheader' name='ma_options[mantra_linkheader]'>";
+foreach($items as $id=>$item) {
+	echo "<option value='$item'";
+	selected($mantra_options['mantra_linkheader'],$itemsare[$id]);
+	echo ">$item</option>";
+}
+	echo "</select>";
+	echo "<div><small>".__("Make the site header into a clickable link that links to your index page.","mantra")."</small></div>";
+}
+
+// TEXTBOX - Name: ma_options[favicon]
+function setting_favicon_fn() {
+	global $mantra_options;
+?>
+
+<!-- Upload Button-->  
+<div id="upload" >Upload File</div><span id="status" ></span>  
+
+<img id="uploadpreview" src="<?php echo get_template_directory_uri().'/uploads/'.$mantra_options['mantra_favicon'] ?>" alt=""  />
+<?php
+	echo '<p id="filename"> Filename: '.$mantra_options['mantra_favicon'].'</p>';
+	echo "<div><small>".__("Upload your Fav Icon<br />Limitations: It has to be an image and it can't be bigger than 20Kb. All uploaded files will 
+be found in the <b>mantra/uploads/</b> folder.","mantra")."</small></div>";
+
+?>
+
+<!--List Files-->  
+<ul id="files" ></ul> 
+
+<script>
+
+    jQuery(function(){  
+        var btnUpload=jQuery('#upload');  
+        var status=jQuery('#status');  
+        new AjaxUpload(btnUpload, {  
+            action: '<?php echo get_template_directory_uri() . "/admin/upload-file.php"; ?>',  
+            //Name of the file input box  
+            name: 'uploadfile',  
+            onSubmit: function(file, ext){  
+                if (! (ext && /^(jpg|png|jpeg|gif|ico)$/.test(ext))){  
+                      // check for valid file extension  
+                  alert('Only ICO, JPG, PNG or GIF files are allowed');  
+                    return false;  
+                }  
+                status.text('Uploading...');  
+            },  
+            onComplete: function(file, response){  
+                //On completion clear the status  
+                status.text('');
+                //Add uploaded file to list  
+                if(response==="success"){  
+                    jQuery('#uploadpreview').attr("src", "<?php echo get_template_directory_uri(); ?>/uploads/"+file);
+				jQuery('#filename').text('Filename: '+file);
+					jQuery('input[id="mantra_favicon"]').val(file); 
+                } else{  
+					
+                     alert (response);   
+                }  
+            }  
+        });  
+    });  
+
+</script>
+<input id="mantra_favicon" type="hidden" name='ma_options[mantra_favicon]' value="<?php echo $mantra_options['mantra_favicon'] ?>" />
+<?php
+}
+
 // TEXTBOX - Name: ma_options[customcss]
 function setting_customcss_fn() {
 	global $mantra_options;
 	echo "<textarea id='mantra_customcss' name='ma_options[mantra_customcss]' rows='8' cols='70' type='textarea' >{$mantra_options['mantra_customcss']}  </textarea>";
 	echo "<div><small>".__("Insert your custom CSS here. Any CSS declarations made here will overwrite Mantra's (even the custom options specified right here in the Mantra Settings page). <br /> Your custom CSS will be preserved when updating the theme.","mantra")."</small></div>";
-}
-
-
-// FOR FURTHER
-// Dmop-DOWN-BOX - Name: ma_options[dmopdown1]
-function  setting_dmopdown_fn() {
-	global $mantra_options;
-	$items = array("Red", "Green", "Blue", "Orange", "White", "Violet", "Yellow");
-	echo "<select id='dmantra_down1' name='ma_options[dmopdown1]'>";
-	foreach($items as $item) {
-		$selected = ($mantra_options['dmopdown1']==$item) ? 'selected="selected"' : '';
-		echo "<option value='$item' $selected>$item</option>";
-	}
-	echo "</select>";
-}
-
-// TEXTAREA - Name: ma_options[text_area]
-function setting_textarea_fn() {
-	global $mantra_options;
-	echo "<textarea id='ma_textarea_string' name='ma_options[text_area]' rows='7' cols='50' type='textarea'>{$mantra_options['text_area']}</textarea>";
-}
-
-// TEXTBOX - Name: ma_options[text_string]
-function setting_string_fn() {
-	global $mantra_options;
-	echo "<input id='ma_text_string' name='ma_options[text_string]' size='40' type='text' value='{$mantra_options['text_string']}' />";
-}
-
-// PASSWORD-TEXTBOX - Name: ma_options[pass_string]
-function setting_pass_fn() {
-	global $mantra_options;
-	echo "<input id='ma_text_pass' name='ma_options[pass_string]' size='40' type='password' value='{$mantra_options['pass_string']}' />";
-}
-
-// CHECKBOX - Name: ma_options[chkbox1]
-function setting_chk1_fn() {
-	global $mantra_options; $checked ="";
-	if(isset($mantra_options['chkbox1'])&& $mantra_options['chkbox1']) { $checked = ' checked="checked" '; }
-	echo "<input ".$checked." id='ma_chk1' name='ma_options[chkbox1]' type='checkbox' />";
-}
-
-// CHECKBOX - Name: ma_options[chkbox2]
-function setting_chk2_fn() {
-	global $mantra_options;$checked ="";
-	if(isset($mantra_options['chkbox2'])&&$mantra_options['chkbox2']) { $checked = ' checked="checked" '; }
-	echo "<input ".$checked." id='ma_chk2' name='ma_options[chkbox2]' type='checkbox' />";
-}
-
-// RADIO-BUTTON - Name: ma_options[option_set1]
-function setting_radio_fn() {
-	global $mantra_options;
-	$items = array("Square", "Triangle", "Circle");
-	foreach($items as $item) {
-		$checked = ($mantra_options['option_set1']==$item) ? ' checked="checked" ' : '';
-		echo "<label><input ".$checked." value='$item' name='ma_options[option_set1]' type='radio' /> $item</label><br />";
-	}
 }
 
 
@@ -1443,6 +1463,7 @@ function mantra_page_fn() {
 ///// Get options previous to and including 1.6.6 into the new options
 $mantra_options= mantra_get_theme_options();
 if ($options) $mantra_options = $options;
+
 ?>
 	<div class="icon32" id="icon-options-general"><br></div>
 	<h2><?php _e("Mantra Settings","mantra"); ?></h2>
@@ -1453,7 +1474,7 @@ if ($options) $mantra_options = $options;
 	echo "</p></div>";
 } ?>
 	
-	<form name="mantra_form" action="options.php" method="post">
+	<form name="mantra_form" action="options.php" method="post" enctype="multipart/form-data">
 		<div id="accordion">	
 			<?php settings_fields('ma_options'); ?>
 			<?php do_settings_sections(__FILE__); ?>
@@ -1466,8 +1487,10 @@ if ($options) $mantra_options = $options;
 
 
 	</form>
-
-	<span id="version"> Mantra v. 1.7.6 - by <a href="http://www.cryoutcreations.eu">Cryout Creations</a></span>
+<?php   $theme_data =get_theme_data( get_template_directory_uri().'/style.css'  ); ?>
+<span id="version"> 
+<?php echo $theme_data['Name'].' v. '.$theme_data['Version'].' by '.$theme_data['Author']; ?>
+</span>
 </div>
 
 <div class="righty" >
@@ -1504,6 +1527,7 @@ uGoJV/7kErByS98U5Gze/kUo5OvpezDjckdR0TJfoNFDKiAit+Qf9+ToViM/CmY2cONArejftWlnEKik
 </div>
 </div>
 
+<?php $mantra_options= mantra_get_theme_options(); print_r ($mantra_options);?>
 
 </div>
 
@@ -1617,7 +1641,7 @@ return 0;
 
 /* Social media links */
 
-	$mantra_global_socials = array ("Delicious", "Digg", "Facebook", "Flickr", "Google", "GooglePlus" , "LinkedIn", "Reddit", "RSS", "StumbleUpon", "Twitter", "Yahoo" );
+	$mantra_global_socials = array ("Delicious", "Digg", "Facebook", "Flickr", "Google", "GooglePlus" ,"LastFM", "LinkedIn", "Mail", "MySpace", "Picasa", "Reddit", "RSS", "Skype", "StumbleUpon", "Technorati", "Twitter","WordPress", "Yahoo", "YouTube" );
 
 // Validate user data
 function ma_options_validate($input) {
