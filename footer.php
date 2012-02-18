@@ -39,8 +39,6 @@
 
 </div><!-- #wrapper -->
 
-<?php 	$options = get_option('adamsrazor_theme_options');
-		echo $options['preclosebodytag'];		
-		wp_footer(); ?>
+<?php wp_footer(); ?>
 </body>
 </html>

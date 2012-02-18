@@ -5,6 +5,10 @@
 
 == ABOUT ADAM'S RAZOR ==
 
+Features:
+
+* Option to include code (such as analytics javascript) before the </head> tag or </body> tag. See Appearance > Adam's Razor Options.
+
 There are some deliberate functional limitations in this theme:
 
 * Does not support multi-level menus with drop-down menus. For child pages I recommend using a Sub Pages Widget in the Primary Widget Area.

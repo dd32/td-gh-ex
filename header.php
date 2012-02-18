@@ -20,10 +20,7 @@
 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_uri(); ?>" />
-<?php 	if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); 
-		$options = get_option('adamsrazor_theme_options');
-		echo $options['precloseheadtag'];
-		wp_head(); ?>
+<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>

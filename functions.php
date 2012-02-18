@@ -210,4 +210,22 @@ function adamsrazor_comment( $comment, $args, $depth ) {
 			break;
 	endswitch;
 }
+
+function adamsrazor_enqueue_scripts(){
+	if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); 	
+}
+add_action( 'wp_enqueue_scripts', 'adamsrazor_enqueue_scripts');
+
+function adamsrazor_custom_head(){
+	$options = get_option('adamsrazor_theme_options');	
+	echo htmlspecialchars_decode($options['precloseheadtag']);
+}
+add_action( 'wp_head', 'adamsrazor_custom_head' );
+
+function adamsrazor_custom_footer(){
+	$options = get_option('adamsrazor_theme_options');	
+	echo htmlspecialchars_decode($options['preclosebodytag']);			
+}
+add_action( 'wp_footer', 'adamsrazor_custom_footer' );
+
 endif;
