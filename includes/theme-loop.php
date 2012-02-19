@@ -289,6 +289,10 @@ function graphene_improved_excerpt( $text ){
 			$text = implode( ' ', $words);
 		}
 	}
+	
+	// Try to balance the HTML tags
+	$text = force_balance_tags( $text );
+	
 	return apply_filters( 'wp_trim_excerpt', $text, $raw_excerpt);
 }
 

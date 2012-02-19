@@ -15,12 +15,12 @@ global $graphene_settings;
 
 <?php 
     /* Only show comments depending on the theme setting */
-    if (!graphene_should_show_comments()) : 
+    if ( ! graphene_should_show_comments() ) : 
         return;
     endif;
 ?>
 
-<?php if (post_password_required() && (comments_open() || have_comments())) : ?>
+<?php if ( post_password_required() && ( comments_open() || have_comments() ) ) : ?>
 			<div id="comments">
 				<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'graphene' ); ?></p>
                 
@@ -113,7 +113,7 @@ global $graphene_settings;
 
 
 <?php /* Display the comment form if comment is open */ ?>
-<?php if (comments_open()) : ?>
+<?php if ( comments_open() ) : ?>
 
 	<div id="comment-form-wrap" class="clearfix">
 		<?php do_action( 'graphene_before_commentform' );
@@ -128,7 +128,6 @@ global $graphene_settings;
 		}
         
         $args = array(
-                    'comment_notes_before' => '<p class="comment-notes">'.__( 'Your email address will not be published.', 'graphene' ).'</p>',
                     'comment_notes_after'  => $allowedtags,
                     'id_form'              => 'commentform',
                     'label_submit'         => __( 'Submit Comment', 'graphene' ),

@@ -18,7 +18,13 @@ get_header();
      * If you want to overload this in a child theme then include a file
      * called loop-tag.php and that will be used instead.
      */
-    get_template_part('loop', 'tag');
+    while ( have_posts() ) {
+		the_post(); 
+		get_template_part( 'loop', 'tag' );
+	}
+	
+	/* Posts navigation. */ 
+    graphene_posts_nav();
 ?>
 
 <?php get_footer(); ?>

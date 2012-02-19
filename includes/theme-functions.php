@@ -111,14 +111,14 @@ function graphene_determine_social_medium_title( $social_medium ) {
  * @package Graphene
  * @since 1.6
 */
-function graphene_grid_width( $mod = '', $grid_one = 1, $grid_two = '', $grid_three = '' ){
+function graphene_grid_width( $mod = '', $grid_one = 1, $grid_two = '', $grid_three = '', $post_id = NULL ){
 	$grid_two = ( ! $grid_two ) ? $grid_one : $grid_two ;
 	$grid_three = ( ! $grid_three ) ? $grid_one : $grid_three ;
 	
 	global $graphene_settings;
 	$grid_width = $graphene_settings['grid_width'];
 	$gutter_width = $graphene_settings['gutter_width'] * 2;
-	$column_mode = graphene_column_mode();
+	$column_mode = graphene_column_mode( $post_id );
 	
 	$width = $grid_width;
 	

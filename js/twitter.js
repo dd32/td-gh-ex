@@ -39,21 +39,6 @@ function grapheneTwitter( target, options ) {
             status = status.replace( /<a href=/gi, '<a target="_blank" href=' );
         
         statusHTML.push(status);
-      
-        if ( options.followercount ) {
-            followerCount = twitters[i].user.followers_count;
-            if ( followerCount == 0 ){
-                followerCount = '';
-			} else if ( followerCount == 1 ){
-                followerCount += ' ' + options.followersingle;
-				followerCount += ' | ';
-			} else {
-                followerCount += ' ' + options.followerplural;
-				followerCount += ' | ';
-			}
-            
-            document.getElementById('#follower-count-' + target).innerHTML = followerCount;
-        }
     }
     document.getElementById( target ).innerHTML = statusHTML.join('');
 }

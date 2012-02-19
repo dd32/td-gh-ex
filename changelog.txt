@@ -4,6 +4,25 @@ http://www.khairul-syahir.com
 
 CHANGELOG
 
+Version 1.6.1
+	* Replaced the follow link in Graphene Twitter widget with Twitter's follow button
+	* Fixed the tag archive page not properly listing all posts that belongs to that tag
+	* Fixed issue with comment form fields that do not retain commenter's info
+	* Fixed comment count being displayed in archive pages even when comments are disabled completely
+	* Fixed issue where the comments area overlay the child pages listing, causing links to be unclickable
+	* Fixed issue with site title in XML feed causing errors with feed parsers
+	* Fixed custom button colour not being applied to the Submit Comment button
+	* Fixed the repeated titles in feeds
+	* Fixed Adsense ad missing in Pages
+	* Fixed slider background image being tiled if the static front page uses other than the global column mode
+	* Fixed only a single author post is listed in the author page
+	* Fixed slider not displaying pages when configured to show posts by categories
+	* Increased the maximum width of the header title and description text
+	* Reduced the z-index values of the nav menu to minimise the chances of it appearing above lightboxes
+	* Removed the_content filter from the shortcodes and replaced is with do_shortcode() call instead
+	* Added markup to indicate required fields in the comments form
+	* The theme will now attempt to balance the HTML tags in excerpt with retained HTML tags
+
 Version 1.6
 	* Added option to customise columns widths
 	* Added support for bbPress plugin

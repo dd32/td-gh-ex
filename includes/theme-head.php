@@ -182,7 +182,7 @@ function graphene_get_custom_colours(){
 		$font_color = $graphene_settings['bg_button_label'];
 		$font_shadow = $graphene_settings['bg_button_label_textshadow'];
 		if ( $grad_top != $graphene_defaults['bg_button']) {
-			$style .= '.block-button, .block-button:visited, .Button, .button {
+			$style .= '.block-button, .block-button:visited, .Button, .button, #commentform #submit {
 							background: ' . $grad_top . ';
 							background: -moz-linear-gradient( ' . $grad_top . ', ' . $grad_bottom . ' );
 							background: -webkit-linear-gradient(top, ' . $grad_top . ', ' . $grad_bottom . ' );
@@ -191,7 +191,7 @@ function graphene_get_custom_colours(){
 							text-shadow: 0 -1px 1px ' . $font_shadow . ';
 							color: ' . $font_color . ';
 						}';
-			$style .= '.block-button:hover, .button:hover {
+			$style .= '.block-button:hover, .button:hover, #commentform #submit:hover {
 							background: ' . $grad_top . ';
 							background: -moz-linear-gradient( ' . $grad_top . ', ' . $grad_bottom_hover . ' );
 							background: -webkit-linear-gradient(top, ' . $grad_top . ', ' . $grad_bottom_hover . ' );
@@ -435,11 +435,16 @@ add_action( 'wp_head', 'graphene_google_analytics', 1000);
  * This function prints out the title for the website.
  * If present, the theme will display customised site title structure.
 */
-function graphene_title( $title, $sep, $location ){
+function graphene_title( $title, $sep = '&raquo;', $seplocation = '' ){
 	global $graphene_settings;
 	$default_title = $title;
 	
-	if ( is_front_page() ) { 
+	if ( is_feed() ){
+		
+		$title = $default_title;
+		
+	} elseif ( is_front_page() ) { 
+	
 		if ( $graphene_settings['custom_site_title_frontpage']) {
 			$title = $graphene_settings['custom_site_title_frontpage'];
 			$title = str_replace( '#site-name', get_bloginfo( 'name' ), $title);
@@ -449,6 +454,7 @@ function graphene_title( $title, $sep, $location ){
 		}
 		
 	} else {
+		
 		if ( $graphene_settings['custom_site_title_content'] ) {
 			$title = $graphene_settings['custom_site_title_content'];
 			$title = str_replace( '#site-name', get_bloginfo( 'name' ), $title );
@@ -459,7 +465,7 @@ function graphene_title( $title, $sep, $location ){
 		}
 	}
 	
-	return $title;
+	return ent2ncr( apply_filters( 'graphene_title', $title ) );
 }
 add_filter( 'wp_title', 'graphene_title', 10, 3 );
 ?>

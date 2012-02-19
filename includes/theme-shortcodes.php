@@ -3,22 +3,22 @@
  * Shortcode handlers
  */
 function warning_block_shortcode_handler( $atts, $content=null, $code="" ) {
-    return '<div class="warning_block message-block">' . graphene_print_only_text( '<strong>Warning!</strong>' ) . graphene_first_p( apply_filters( 'the_content', $content ) ) . '</div>';
+    return '<div class="warning_block message-block">' . graphene_print_only_text( '<strong>Warning!</strong>' ) . graphene_first_p( do_shortcode( $content ) ) . '</div>';
 }
 add_shortcode( 'warning', 'warning_block_shortcode_handler' );
 
 function error_block_shortcode_handler( $atts, $content=null, $code="" ) {
-    return '<div class="error_block message-block">' . graphene_print_only_text( '<strong>Error!</strong>' ) . graphene_first_p( apply_filters( 'the_content', $content ) ) . '</div>';
+    return '<div class="error_block message-block">' . graphene_print_only_text( '<strong>Error!</strong>' ) . graphene_first_p( do_shortcode( $content ) ) . '</div>';
 }
 add_shortcode( 'error', 'error_block_shortcode_handler' );
 
 function notice_block_shortcode_handler( $atts, $content=null, $code="" ) {
-    return '<div class="notice_block message-block">' . graphene_print_only_text( '<strong>Notice</strong>' ) . graphene_first_p( apply_filters( 'the_content', $content ) ) . '</div>';
+    return '<div class="notice_block message-block">' . graphene_print_only_text( '<strong>Notice</strong>' ) . graphene_first_p( do_shortcode( $content ) ) . '</div>';
 }
 add_shortcode( 'notice', 'notice_block_shortcode_handler' );
 
 function important_block_shortcode_handler( $atts, $content=null, $code="" ) {
-    return '<div class="important_block message-block">' . graphene_print_only_text( '<strong>Important!</strong>' ) . graphene_first_p( apply_filters( 'the_content', $content ) ) . '</div>';
+    return '<div class="important_block message-block">' . graphene_print_only_text( '<strong>Important!</strong>' ) . graphene_first_p( do_shortcode( $content ) ) . '</div>';
 }
 add_shortcode( 'important', 'important_block_shortcode_handler' );
 

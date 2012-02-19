@@ -101,13 +101,13 @@ global $graphene_settings;
 				$desc_tag = 'h2';
 			}
 		?>
-		<?php echo '<'.$title_tag; ?> <?php echo $style; ?> class="header_title push_1 grid_10">
+		<?php echo '<'.$title_tag; ?> <?php echo $style; ?> class="header_title push_1 grid_15">
         	<?php if ( ! is_front_page() ) : ?><a <?php echo $style; ?> href="<?php echo home_url(); ?>" title="<?php esc_attr_e('Go back to the front page', 'graphene'); ?>"><?php endif; ?>
 				<?php bloginfo('name'); ?>
             <?php if ( ! is_front_page() ) : ?></a><?php endif; ?>
         </<?php echo $title_tag; ?>>
         
-		<?php echo '<'.$desc_tag; ?> <?php echo $style; ?> class="header_desc push_1 grid_10">
+		<?php echo '<'.$desc_tag; ?> <?php echo $style; ?> class="header_desc push_1 grid_15">
 			<?php bloginfo('description'); ?>
         </<?php echo $desc_tag; ?>>
         

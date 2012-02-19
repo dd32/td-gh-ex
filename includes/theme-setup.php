@@ -61,7 +61,8 @@ function graphene_setup() {
 	// Add custom image sizes selectively
 	if ( $graphene_settings['slider_display_style'] == 'bgimage-excerpt' ) {
 		$height = ( $graphene_settings['slider_height']) ? $graphene_settings['slider_height'] : 240;
-		$slider_width = graphene_grid_width( '', 16, 11, 8 );
+		$frontpage_id = get_option( 'page_on_front' );
+		$slider_width = graphene_grid_width( '', 16, 11, 8, $frontpage_id );
 		add_image_size( 'graphene_slider', apply_filters( 'graphene_slider_image_width', $slider_width ), $height, true);
 	}
 	if (get_option( 'show_on_front' ) == 'page' && !$graphene_settings['disable_homepage_panes']) {

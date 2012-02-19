@@ -108,11 +108,11 @@ function graphene_get_action_hooks( $hooksonly = false ) {
 }
 
 
-function graphene_column_mode(){
+function graphene_column_mode( $post_id = NULL ){
     global $graphene_settings;
     
     // Check the front-end template
-	if ( ! is_admin() ){
+	if ( ! is_admin() && ! $post_id){
 		if ( is_page_template( 'template-onecolumn.php' ) )
 			return 'one-column';
 		elseif ( is_page_template( 'template-twocolumnsleft.php' ) )
@@ -128,9 +128,11 @@ function graphene_column_mode(){
 	}
 		
 	/* Check the template in Edit Page screen in admin */
-	if ( is_admin() ){
+	if ( is_admin() || $post_id ){
 		
-		$post_id = ( isset( $_GET['post'] ) ) ? $_GET['post'] : NULL;
+		if ( ! $post_id ){
+			$post_id = ( isset( $_GET['post'] ) ) ? $_GET['post'] : NULL;
+		}
 		
 		$page_template = get_post_meta( $post_id, '_wp_page_template', true );
 		

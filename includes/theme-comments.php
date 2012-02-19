@@ -70,21 +70,27 @@ endif;
  * Customise the comment form
 */
 function graphene_comment_form_fields(){
+	
+	$req = get_option( 'require_name_email' );
+	$aria_req = ( $req ? ' aria-required="true"' : '' );
+	$req_mark = ( $req ? ' <span class="required">*</span>' : '' );
+	$commenter = wp_get_current_commenter();
+	
 	$fields =  array( 
 		'author' => 
 					'<p class="comment-form-author clearfix">
-						<label for="author" class="graphene_form_label">' . __( 'Name:', 'graphene' ) . '</label>
-						<input id="author" name="author" type="text" class="graphene-form-field" />
+						<label for="author" class="graphene_form_label">' . __( 'Name:', 'graphene' ) . $req_mark . '</label>
+						<input id="author" name="author" type="text" class="graphene-form-field"' . $aria_req . ' value="' . esc_attr( $commenter['comment_author'] ) . '" />
 					</p>',
 		'email'  => 
 					'<p class="comment-form-email clearfix">
-						<label for="email" class="graphene_form_label">' . __( 'Email:', 'graphene' ) . '</label>
-						<input id="email" name="email" type="text" class="graphene-form-field" />
+						<label for="email" class="graphene_form_label">' . __( 'Email:', 'graphene' ) . $req_mark . '</label>
+						<input id="email" name="email" type="text" class="graphene-form-field"' . $aria_req . ' value="' . esc_attr( $commenter['comment_author_email'] ) . '" />
 					</p>',
 		'url'    => 
 					'<p class="comment-form-url clearfix">
-						<label for="url" class="graphene_form_label">' . __( 'Website:', 'graphene' ) . '</label>
-						<input id="url" name="url" type="text" class="graphene-form-field" />
+						<label for="url" class="graphene_form_label">' . __( 'Website:', 'graphene' ) . ' </label>
+						<input id="url" name="url" type="text" class="graphene-form-field" value="' . esc_attr( $commenter['comment_author_url'] ) . '" />
 					</p>',
 	);
 	
@@ -97,8 +103,8 @@ function graphene_comment_form_fields(){
 function graphene_comment_textarea(){
 	echo 
 		'<p class="comment-form-message clearfix">
-			<label class="graphene_form_label">' . __( 'Message:', 'graphene' ) . '</label>
-			<textarea name="comment" id="comment" cols="40" rows="10" class="graphene-form-field"></textarea>
+			<label class="graphene_form_label">' . __( 'Message:', 'graphene' ) . ' <span class="required">*</span></label>
+			<textarea name="comment" id="comment" cols="40" rows="10" class="graphene-form-field" aria-required="true"></textarea>
 		 </p>';
 	
 	do_action( 'graphene_comment_textarea' );
@@ -221,12 +227,19 @@ if ( ! function_exists( 'graphene_should_show_comments' ) ) :
 
 function graphene_should_show_comments() {
     global $graphene_settings, $post;
-    if ( $graphene_settings['comments_setting'] == 'disabled_completely' ){
+    
+	if ( $graphene_settings['comments_setting'] == 'disabled_completely' )
         return false;
-    }
-    if ( $graphene_settings['comments_setting'] == 'disabled_pages' && get_post_type( $post->ID) == 'page' ){
+    
+	if ( $graphene_settings['comments_setting'] == 'disabled_pages' && get_post_type( $post->ID) == 'page' )
         return false;
-    }
+	
+	if ( ! is_singular() && $graphene_settings['hide_post_commentcount'] )
+		return false;
+	
+	if ( ! comments_open() && have_comments() && ! is_singular() )
+		return false;
+	
     return true;
 }
 

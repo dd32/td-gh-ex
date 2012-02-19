@@ -87,6 +87,13 @@
 	}
 ?>
 
+<?php 
+/**
+ * Display Adsense advertising for single post pages 
+ * See graphene_adsense() function in functions.php
+*/ 
+graphene_adsense(); ?>
+
 <?php /* List the child pages */ ?>
 <?php get_template_part( 'loop', 'children' ); ?>
 

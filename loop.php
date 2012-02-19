@@ -159,7 +159,7 @@ if ( function_exists( 'get_post_format' ) && $post_type->name != 'page' ) {
 			<?php endif; ?>
 			
 			<?php /* Display comments popup link. */ ?>
-            <?php if ( ! ( $post_type->name == 'page' && ! comments_open() ) && ! $graphene_settings['hide_post_commentcount'] ) : ?>
+            <?php if ( graphene_should_show_comments() ) : ?>
 			<p class="comment-link">
 				<?php 
 				$comments_num = get_comments_number();

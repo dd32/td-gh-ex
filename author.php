@@ -31,9 +31,16 @@ get_header(); ?>
     
     <h3 class="author-post-list"><?php _e("Author's posts listings", 'graphene'); ?></h3>
     <?php 
-	/* Start another loop that lists all of the author's posts with excerpt */
-	query_posts( array( 'author' => get_the_author_meta('ID'), 'paged' => get_query_var('paged') ) ); 
-	get_template_part( 'loop', 'archive' ); 
+	/* Start the loop again to list all of the author's posts with excerpt */
+	rewind_posts();
+	
+	while ( have_posts() ) {
+		the_post();
+		get_template_part( 'loop', 'archive' );
+	}
+	
+	/* Posts navigation. */ 
+    graphene_posts_nav();
 	?>
     
     <?php do_action('graphene_after_authorpostlist'); ?>

@@ -40,14 +40,16 @@ class Graphene_Widget_Twitter extends WP_Widget{
 		$graphene_twitter_newwindow = $new_window;
 		$wrapper_id = 'tweet-wrap-' . $args['widget_id'];
 		
+		$follower_count_attr = ( $twitter_followercount ) ? 'data-show-count="true"' : 'data-show-count="false"';
+		
 		echo $args['before_widget'].$args['before_title'].$twitter_title.$args['after_title'];
 		?>
         	<ul id="<?php echo $wrapper_id; ?>">
             	<li><img src="<?php echo get_template_directory_uri(); ?>/images/ajax-loader.gif" width="16" height="16" alt="" /> <?php _e( 'Loading tweets...', 'graphene' ); ?></li>
             </ul>
             <p id="tweetfollow">
-                <?php if ( $twitter_followercount ) : ?><span id="#follower-count-<?php echo $wrapper_id; ?>"></span><?php endif; ?>
-                <a <?php if ( $new_window ) { echo 'target="_blank"'; } ?> href="http://twitter.com/#!/<?php echo $twitter_username; ?>"><?php _e( 'Follow me on Twitter', 'graphene' ) ?></a>
+            	<a href="https://twitter.com/<?php echo $twitter_username; ?>" class="twitter-follow-button" <?php echo $follower_count_attr; ?> data-width="100%" data-align="right">Follow @<?php echo $twitter_username; ?></a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
             </p>
             
             <script src="http://api.twitter.com/1/statuses/user_timeline.json?screen_name=<?php echo $twitter_username; ?>&count=<?php echo $twitter_tweetcount; ?>&page=1&include_rts=true&include_entities=true&callback=grapheneGetTweet" type="text/javascript"></script>
@@ -55,11 +57,6 @@ class Graphene_Widget_Twitter extends WP_Widget{
 				grapheneTwitter( '<?php echo $wrapper_id; ?>', 
 									{
 										<?php if ( $new_window ) echo 'newwindow: true,' ?>
-										<?php if ( $twitter_followercount ) : ?>
-										followercount: true,
-										followersingle: '<?php _e( 'follower', 'graphene' ); ?>',
-										followerplural: '<?php _e( 'followers', 'graphene' ); ?>',
-										<?php endif; ?>
 										id: '<?php echo $twitter_username; ?>',
 										count: <?php echo $twitter_tweetcount; ?>
 									});

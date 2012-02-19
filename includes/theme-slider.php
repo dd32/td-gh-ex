@@ -280,7 +280,7 @@ function graphene_get_slider_posts(){
 	$slidertype = ( $graphene_settings['slider_type'] != '' ) ? $graphene_settings['slider_type'] : false;
 	
 	/* Set the post types to be displayed */
-	$slider_post_type = ( $slidertype == 'posts_pages' ) ? array( 'post', 'page' ) : array( 'post' ) ;
+	$slider_post_type = ( in_array( $slidertype, array( 'posts_pages', 'categories' ) ) ) ? array( 'post', 'page' ) : array( 'post' ) ;
 	$slider_post_type = apply_filters( 'graphene_slider_post_type', $slider_post_type );
 		
 	/* Get the number of posts to show */
