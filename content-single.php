@@ -5,7 +5,6 @@
  * @since Akyuz 1.0
  */
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<?php akyuz_get_post_header_bar();?>		
@@ -44,7 +43,7 @@
 		<?php do_sociable(); ?>
 	</div>
 	<?php } ?>
-	
+
 	<?php 
 	$orig_post = $post;
 	global $post;
@@ -79,6 +78,11 @@
 			echo '</div>';
 		}
 	}
+	
+?>
+
+<?php
+
 	$post = $orig_post;
 	wp_reset_query(); ?>
 	

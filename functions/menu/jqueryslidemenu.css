@@ -1,19 +1,25 @@
 nav div.jqueryslidemenu,
 nav div.menu{
-font: bold 14px "Helvetica Neue", Arial, Helvetica, serif;
-background: #414141;
-margin-bottom:0;padding-bottom:0;
-position: relative;
-z-index:9999;
+	font: bold 14px "Helvetica Neue", Arial, Helvetica, serif;
+	background: #414141;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	position: relative;
+	z-index: 9999;
+	background: #E0E0E0; /*background of tabs (default state)*/
 }
 
 nav div.jqueryslidemenu ul,
 nav div.menu ul{
-margin: 0;
-padding: 0;
-list-style-type: none;
-margin-bottom:0;padding-bottom:0;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	background: #E0E0E0;
+	width:100%;
 }
+
 
 /*Top level list items*/
 nav div.jqueryslidemenu ul li ,
@@ -32,7 +38,6 @@ nav div.menu ul li a{
 	background: -o-linear-gradient(#E0E0E0, #D0D0D0);
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(27,65,103,0.85)), to(#003366)); /* older webkit syntax */
 	background: -webkit-linear-gradient(#E0E0E0, #D0D0D0);
-	color: white;
 	padding: 18px 10px;
 	/*border-right: 1px solid #778;*/
 	color: #d2691e;
@@ -118,7 +123,7 @@ nav div.jqueryslidemenu li:hover > a,
 nav div.jqueryslidemenu a:focus,
 nav div.menu li:hover > a,
 nav div.menu a:focus {
-	background: #D0D0D0		; /* Show a solid color for older browsers */
+	background: #D0D0D0; /* Show a solid color for older browsers */
 	background: -moz-linear-gradient(#D0D0D0, #E0E0E0);
 	background: -o-linear-gradient(#D0D0D0, #E0E0E0);
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(27,65,103,0.85)), to(#003366)); /* older webkit syntax */
@@ -133,3 +138,18 @@ nav div.menu ul li:hover > ul {
 /* ######### CSS classes applied to down and right arrow images  ######### */
 .downarrowclass{position: absolute;top:12px;right:7px;}
 .rightarrowclass{position: absolute;top: 6px;right: 5px;}
+
+
+
+#sa_main_menu_bar {
+	background-color: #E0E0E0 !important;
+}
+#sa_main_menu_bar .navi{
+	background-color: #E0E0E0 !important;
+}
+#sa_main_menu_bar .navi .menu{
+	background-color: #E0E0E0 !important;
+}
+#sa_main_menu_bar .menu ul{
+	background-color: #E0E0E0 !important;
+}

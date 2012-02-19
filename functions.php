@@ -78,16 +78,18 @@ function akyuz_setup() {
 	// By leaving empty, we allow for random image rotation.
 
 	// The height and width of your custom header.
-	define( 'HEADER_IMAGE_WIDTH', apply_filters( 'twentyeleven_header_image_width', 943 ) );
-	define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'twentyeleven_header_image_height', 190 ) );
+	define( 'HEADER_IMAGE_WIDTH', apply_filters( 'akyuz_header_image_width', 943 ) );
+	define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'akyuz_header_image_height', 190 ) );
 	define( 'NO_HEADER_TEXT', false );
-	define( 'HEADER_TEXTCOLOR', '');
+	define( 'HEADER_TEXTCOLOR', 'd2691e');
+	define( 'HEADER_IMAGE', get_header_image() );
 
 	set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );
 
 	// Add Akyuz's custom image sizes
 	add_image_size( 'large-feature', HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true ); // Used for large feature (header) images
 	add_image_size( 'small-feature', 573, 320 ); // Used for featured posts if a large-feature doesn't exist
+	add_image_size( 'size-full', 573, 320, true ); // Used for featured posts if a large-feature doesn't exist
 
 	// Turn on random header image rotation by default.
 	add_theme_support( 'custom-header' );
@@ -157,6 +159,13 @@ if ( ! function_exists( 'akyuz_header_style' ) ) :
  */
 function akyuz_header_style() {
 	
+	if(HEADER_IMAGE) {
+		?>
+		<style type="text/css">
+			#sa_branding {background:url(<?php echo header_image(); ?>) top left no-repeat;background-position:center;}
+		</style>
+	<?php }
+
 	// If no custom options for text are set, let's bail
 	if ( HEADER_TEXTCOLOR == get_header_textcolor() )
 		return;
@@ -171,15 +180,6 @@ function akyuz_header_style() {
 		#site-description {
 			color: #<?php echo get_header_textcolor(); ?> !important;
 		}
-	</style>
-	<?php endif; ?>
-	<?php
-		// Has the text been hidden?
-		if ( '' != header_image() ) :
-		// If the user has set a custom color for the text use that
-	?>
-	<style type="text/css">
-		#sa_branding {background:url(<?php echo header_image(); ?>) top left no-repeat;background-position:center;}
 	</style>
 	<?php endif; ?>
 	
@@ -212,20 +212,6 @@ function akyuz_admin_header_style() {
 		font-size: 14px;
 		line-height: 23px;
 		padding: 0 0 3em;
-	}
-	<?php
-		// If the user has set a custom color for the text use that
-		if ( get_header_textcolor() != HEADER_TEXTCOLOR ) :
-	?>
-		#site-title a,
-		#site-description {
-			color: #<?php echo get_header_textcolor(); ?>;
-		}
-	<?php endif; ?>
-	#headimg img {
-		max-width: 978px;
-		height: auto;
-		width: 100%;
 	}
 	</style>
 <?php
@@ -369,22 +355,6 @@ function akyuz_widgets_init() {
 }
 add_action( 'widgets_init', 'akyuz_widgets_init' );
 
-if ( ! function_exists( 'akyuz_content_nav' ) ) :
-/**
- * Display navigation to next/previous pages when applicable
- */
-function akyuz_content_nav( $nav_id ) {
-	global $wp_query;
-
-	if ( $wp_query->max_num_pages > 1 ) : ?>
-		<nav id="<?php echo $nav_id; ?>" class="span-24 last">
-			<h3 class="assistive-text"><?php _e( 'Post navigation', AKYUZ_TEXT_DOMAIN ); ?></h3>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', AKYUZ_TEXT_DOMAIN ) ); ?></div>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', AKYUZ_TEXT_DOMAIN ) ); ?></div>
-		</nav><!-- #nav-above -->
-	<?php endif;
-}
-endif; // akyuz_content_nav
 
 /**
  * Return the URL for the first link found in the post content.
@@ -468,10 +438,9 @@ function akyuz_comment( $comment, $args, $depth ) {
 				<div class="comment-author vcard">
 					<?php
 						printf(__( '%1$s <span class="says">said:</span>', AKYUZ_TEXT_DOMAIN ),
-							sprintf( '<cite class="fn" title="%1$s"><a href="%1$s" title="%2$s" class="url" rel="external nofollow">%3$s</a></cite>', 
+							sprintf( '<cite class="fn" title="">'.get_comment_author_link().'</cite>', 
 								get_comment_author_link(),
-								esc_url( get_comment_link( $comment->comment_ID ) ),
-								get_comment_author_link()
+								esc_url( get_comment_link( $comment->comment_ID ) )
 							)
 						);
 					?>
@@ -715,6 +684,7 @@ function akyuz_scripts_function() {
 	wp_enqueue_script("jquery");
 	wp_register_script('jqslidemenu_scr', get_stylesheet_directory_uri() . '/functions/menu/jqueryslidemenu.js', false);
 	wp_enqueue_script('jqslidemenu_scr');
+	wp_enqueue_style('AkyuzCSS',  get_stylesheet_directory_uri() . '/style.css', false);
 
 }
 

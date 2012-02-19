@@ -1,12 +1,5 @@
 /*
-Theme Name: Twenty Eleven
-
-Adding support for language written in a Right To Left (RTL) direction is easy -
-it's just a matter of overwriting all the horizontal positioning attributes
-of your CSS stylesheet in a separate stylesheet file named rtl.css.
-
-http://codex.wordpress.org/Right_to_Left_Language_Support
-
+Theme Name: Akyuz
 */
 
 /* =Reset reset
@@ -32,46 +25,6 @@ body {
 .page-template-showcase-php #main .widget-area {
 	float: right;
 	margin: 0 0 0 -22.15%;
-}
-
-/* One column */
-
-.one-column article.feature-image.small .entry-summary a {
-	left: auto;
-	right: -9%;
-}
-
-/* Simplify the pullquotes and pull styles */
-.one-column.singular .entry-meta .edit-link a {
-	right: 0px;
-	left: auto;
-}
-/* Make sure we have room for our comment avatars */
-.one-column .commentlist > li.comment {
-	margin-left: 0;
-	margin-right: 102px;
-}
-/* Make sure the logo and search form don't collide */
-.one-column #branding #searchform {
-	right: auto;
-	left: 40px;
-}
-/* Talking avatars take up too much room at this size */
-.one-column .commentlist > li.comment {
-	margin-right: 0;
-}
-.one-column .commentlist > li.comment .comment-meta,
-.one-column .commentlist > li.comment .comment-content {
-	margin-right: 0;
-	margin-left: 85px;
-}
-.one-column .commentlist .avatar {
-	right: auto;
-	left: 1.625em;
-}
-.one-column .commentlist .children .avatar {
-	left: auto;
-	right: 2.2em;
 }
 
 /* =Global
@@ -218,22 +171,6 @@ input#s {
 	background-image: url(images/comment-bubble-rtl.png);
 	right: auto;
 	left: 0;
-}
-
-/*
-	Post Formats Headings
-*/
-.singular .entry-title,
-.singular .entry-header .entry-meta {
-	padding-left: 0;
-}
-.singular .entry-header .entry-meta {
-	left: auto;
-	right: 0;
-}
-.singular .entry-meta .edit-link a {
-	left: auto;
-	right: 50px;
 }
 
 
@@ -574,10 +511,3 @@ section.recent-posts .other-recent-posts .comments-link > span {
 	}
 }
 
-/* =IE7
------------------------------------------------ */
-
-#ie7 section.recent-posts {
-	margin-right: 0;
-	margin-left: 7.6%;
-}

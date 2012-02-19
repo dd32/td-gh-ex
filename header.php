@@ -49,10 +49,8 @@
 	<?php
 		if ( is_singular() && get_option( 'thread_comments' ) )
 			wp_enqueue_script( 'comment-reply' );
-
-		wp_head();
 	?>
-	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+
 	<!--[if lt IE 9]>
 		<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 	<![endif]-->
@@ -72,7 +70,8 @@
 	<?php endif; ?>
 
 	<?php echo akyuz_get_options_value(AKYUZ_SHORTNAME.'_tracking_header');?>
-	
+
+	<?php wp_head();?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -103,7 +102,7 @@
 	</section>
 
 	<section id="sa_main_menu_bar" >
-		<nav role="navigation">
+		<nav role="navigation" class="navi">
 			<h3 class="assistive-text"><?php _e( 'Main menu', AKYUZ_TEXT_DOMAIN ); ?></h3>
 			<?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?>
 			<div class="skip-link"><a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to primary content', AKYUZ_TEXT_DOMAIN ); ?>"><?php _e( 'Skip to primary content', AKYUZ_TEXT_DOMAIN ); ?></a></div>
