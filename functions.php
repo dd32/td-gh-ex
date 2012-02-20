@@ -20,7 +20,9 @@ function adamsrazor_setup() {
 		'primary' => __( 'Primary Navigation', 'adams-razor' ),
 	) );			
 	
-	remove_action('wp_head', 'wp_generator');
+	$options = get_option('adamsrazor_theme_options');	
+	if ($options['supress_wp_generator']==1)
+		remove_action('wp_head', 'wp_generator');
 }
 endif;
 
@@ -210,6 +212,7 @@ function adamsrazor_comment( $comment, $args, $depth ) {
 			break;
 	endswitch;
 }
+endif;
 
 function adamsrazor_enqueue_scripts(){
 	if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); 	
@@ -227,5 +230,3 @@ function adamsrazor_custom_footer(){
 	echo htmlspecialchars_decode($options['preclosebodytag']);			
 }
 add_action( 'wp_footer', 'adamsrazor_custom_footer' );
-
-endif;

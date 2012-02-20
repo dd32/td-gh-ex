@@ -33,7 +33,7 @@
 		</div>
 
 		<div id="site-generator">				
-			<?php echo __( 'Powered by', 'adams-razor' ); ?> <a href="http://wordpress.org/">Wordpress</a>. <?php echo __( 'Design made simple with', 'adams-razor' ); ?> <a href="http://adamlofting.com/adams-razor/">Adam's Razor</a>.
+			<?php echo __( 'Powered by', 'adams-razor' ); ?> <a href="http://wordpress.org/">WordPress</a>. <?php echo __( 'Design made simple with', 'adams-razor' ); ?> <a href="http://adamlofting.com/adams-razor/">Adam's Razor</a>.
 		</div>
 	</div>
 

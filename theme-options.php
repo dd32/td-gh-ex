@@ -23,7 +23,8 @@ function adamsrazor_options_create_page() {
 		<div class="updated fade"><p><strong><?php _e( 'Options saved', 'adams-razor' ); ?></strong></p></div>
 		<?php endif; ?>
 		
-		<div class="updated"><p><strong>Be careful:</strong> script tags with errors can break your website.</p></div>
+		<div class="updated"><p><strong><?php echo __( 'Be careful:', 'adams-razor' ); ?></strong> 
+		<?php echo __( 'script tags with errors can break your website.', 'adams-razor' ); ?></p></div>
 
 		<form method="post" action="options.php">
 			<?php settings_fields( 'adamsrazor_options' ); ?>
@@ -45,6 +46,13 @@ function adamsrazor_options_create_page() {
 					</td>
 				</tr>
 				
+				<tr valign="top"><th scope="row"><?php _e( 'Supress wp_generator output in &lt;head&gt;' ); ?></th>
+					<td>
+						<input id="adamsrazor_theme_options[supress_wp_generator]" name="adamsrazor_theme_options[supress_wp_generator]" type="checkbox" value="1" <?php checked( '1', $options['supress_wp_generator'] ); ?> />
+						<label class="description" for="adamsrazor_theme_options[supress_wp_generator]"><?php _e( 'Tick this box if you would prefer to hide which version of WordPress your website is currently running. Some consider this a minor security improvement.' ); ?></label>
+					</td>
+				</tr>
+				
 			</table>
 
 			<p class="submit">
@@ -58,5 +66,10 @@ function adamsrazor_options_create_page() {
 function adamsrazor_options_validate( $input ) {
 	$input['precloseheadtag'] = htmlspecialchars( $input['precloseheadtag'] );
 	$input['preclosebodytag'] = htmlspecialchars( $input['preclosebodytag'] );
+	
+	if ( ! isset( $input['supress_wp_generator'] ) )
+		$input['supress_wp_generator'] = null;
+	$input['supress_wp_generator'] = ( $input['supress_wp_generator'] == 1 ? 1 : 0 );
+	
 	return $input;
 }
