@@ -1,13 +1,13 @@
 f/*
 Theme Name: Akyuz 
 Theme URI: http://www.selimakyuz.com/akyuz-theme
-Description: Akyuz for WordPress.
+Description: A simple, clean and framework-like theme. It supports 2 menu areas, custom header, custom background, two-column fixed-width. HTML5. include WP-PageNavi.
 Author: Selim AKYUZ
 Author URI: http://www.selimakyuz.com
-Version: 1.1.15
+Version: 1.1.16
 License: GNU General Public License
 License URI: license.txt
-Tags: microformats, black, blue, white, orange, custom-background, custom-header, custom-colors, fixed-width, green, one-column, two-columns, custom-menu, full-width-template, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: microformats, black, blue, white, orange, custom-background, custom-header, custom-colors, fixed-width, green, one-column, two-columns, custom-menu, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready
 */
 
 /* =Global
@@ -100,12 +100,19 @@ blockquote cite {
 	text-transform: uppercase;
 }
 pre {
-	background: #f4f4f4;
-	font: 13px "Courier 10 Pitch", Courier, monospace;
+	font: 12px "Courier 10 Pitch", Courier, monospace;
 	line-height: 1.5;
-	margin-bottom: 1.625em;
+	display: inline-block;
 	overflow: auto;
-	padding: 0.75em 1.625em;
+	text-align:left;
+	background-color: #F8F8F8;
+	overflow-x: auto; 
+	white-space: pre-wrap; 
+	white-space: -moz-pre-wrap !important; 
+	word-wrap: break-word; 
+	margin-bottom: 1.625em;
+	padding:0.625em 1.625em;
+	
 }
 code, 
 kbd {
@@ -770,16 +777,22 @@ ol.commentlist li.thread-odd {
 	margin-bottom: 3.625em;
 }
 .widget-title {
+	padding-left:5px;
 	color: #003366;
-	font-size: 16px;
+	font-size: 17px;
 	font-weight: 500;
 	letter-spacing: 0.1em;
 	line-height: 1.625em;
 	text-transform: uppercase;
-	border-bottom: 10px solid #CCC;
+	border-bottom: 3px solid #336699;
 	vertical-align: middle;
-	text-shadow: 1px 1px #EEE;
+	text-shadow: 1px 1px 1px #666;
+	background: url(images/stripe_2.png);
 }
+#colophon .widget-title {
+	background: none;
+}
+
 .widget ul {
 	margin: 0;padding: 0;
 	}
@@ -794,13 +807,13 @@ ol.commentlist li.thread-odd {
     vertical-align: middle;
 	background-image: url(images/tag.png);
 	background-repeat: no-repeat;
-	background-position: 0 0.4em;
+	background-position: 0 0.1em;
 	padding: 3px 0 3px 20px;
 }
 
 .widget_recent_comments ul li {
 	background-image: url(images/comment.png);
-	background-position: 0 0.5em;
+	background-position: 0 0.3em;
 }
 
 .widget a {
@@ -1020,13 +1033,13 @@ input#searchsubmit {
 #colophon{
 	text-shadow: 1px 1px #fefefe;
 	font-size: 12px;
-	border-top: 1px solid #ccc;
+	border-top: 1px solid #336699;
 	background: #e8e8e8;
 	background: url('images/stripe_footer.png')
 }
 .footer-top-wrap{
 	padding-top: 1.625em;
-	border-top: 3px solid #ccc;
+	border-top: 3px solid #336699;
 }
 .footer-bottom-wrap{
 	vertical-align: middle;
