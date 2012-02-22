@@ -1,13 +1,13 @@
-f/*
+/*
 Theme Name: Akyuz 
 Theme URI: http://www.selimakyuz.com/akyuz-theme
 Description: A simple, clean and framework-like theme. It supports 2 menu areas, custom header, custom background, two-column fixed-width. HTML5. include WP-PageNavi.
 Author: Selim AKYUZ
 Author URI: http://www.selimakyuz.com
-Version: 1.1.16
+Version: 1.1.17
 License: GNU General Public License
 License URI: license.txt
-Tags: microformats, black, blue, white, orange, custom-background, custom-header, custom-colors, fixed-width, green, one-column, two-columns, custom-menu, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: microformats, black, blue, white, orange, custom-background, custom-header, custom-colors, fixed-width, green, one-column, two-columns, custom-menu, full-width-template, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready
 */
 
 /* =Global
@@ -152,7 +152,10 @@ sub {
 /* =Header
 ----------------------------------------------- */
 #main-wrap{
-	background-color: #fff;
+	background-color: #fff; 
+}
+#content{
+	padding-left:10px;
 }
 #sa_header_top{
 	border: 1px solid #ccc;
@@ -322,7 +325,6 @@ a:hover {
 }
 
 
-
 /* ENTRY 
 ----------------------------------------------- */
 .entry-title {
@@ -379,7 +381,6 @@ a:hover {
 	margin-bottom: 1.625em;
 	background: url(images/stripe_2.png);
 }
-
 
 .entry-meta{
 	font-size: 10px;
@@ -610,14 +611,12 @@ ol.commentlist li.comment ul {
 	list-style: square; 
 	margin: 0 0 1em 2em;
 }
-
 ol.commentlist li.comment .comment-content ul {
 	margin: 0;
 }
 ol.commentlist li.comment .comment-content li {
 	margin: 0;
 }
-
 ol.commentlist li.comment .comment-reply-link {
 	background: #DDD;
 	-moz-border-radius: 3px;
@@ -641,7 +640,6 @@ ol.commentlist li.comment .comment-reply-link > span {
 	position: relative;
 	top: -1px;
 }
-
 ol.commentlist li.comment ul.children { 
 	list-style: none; 
 	margin: 1em 0 0; 
@@ -764,12 +762,12 @@ ol.commentlist li.thread-odd {
 	padding: 8px;
 }
 
-
-
-
 /* =Widgets
 ----------------------------------------------- */
 
+#secondary .widget{
+	padding-right:10px;
+}
 .widget-area {
 	font-size: 12px;
 }
@@ -777,29 +775,22 @@ ol.commentlist li.thread-odd {
 	margin-bottom: 3.625em;
 }
 .widget-title {
-	padding-left:5px;
 	color: #003366;
-	font-size: 17px;
+	font-size: 16px;
 	font-weight: 500;
 	letter-spacing: 0.1em;
 	line-height: 1.625em;
 	text-transform: uppercase;
-	border-bottom: 3px solid #336699;
+	border-bottom: 10px solid #CCC;
 	vertical-align: middle;
-	text-shadow: 1px 1px 1px #666;
-	background: url(images/stripe_2.png);
+	text-shadow: 1px 1px #EEE;
 }
-#colophon .widget-title {
-	background: none;
-}
-
 .widget ul {
 	margin: 0;padding: 0;
 	}
 .widget ul ul {
 	margin-left: 0em;
 }
-
 .widget ul li {
 	color: #777;
 	font-size: 13px;
@@ -810,12 +801,10 @@ ol.commentlist li.thread-odd {
 	background-position: 0 0.1em;
 	padding: 3px 0 3px 20px;
 }
-
 .widget_recent_comments ul li {
 	background-image: url(images/comment.png);
-	background-position: 0 0.3em;
+	background-position: 0 0.5em;
 }
-
 .widget a {
 	font-weight: bold;
 	text-decoration: none;
@@ -876,7 +865,6 @@ footer .widget_search #s {
 }
 
 /* Calendar Widget */
-
 .widget_calendar #wp-calendar {
 	color: #555;
 	width: 95%;
@@ -905,7 +893,6 @@ text-align: center;
 	border-bottom: 1px solid #ccc;
 }
 
-
 #content .gallery {
 	margin: 0 auto 1.625em;
 }
@@ -926,32 +913,27 @@ img#wpstats {
 }
 
 
-
 /* Image borders */
 img[class*="align"],
 img[class*="wp-image-"],
 #content .gallery .gallery-icon img {
 	border:3px solid #ddd;
 }
-
 #content .gallery .gallery-icon a:focus img,
 #content .gallery .gallery-icon a:hover img,
 #content .gallery .gallery-icon a:active img {
 	background: #eee;
 	border-color: #bbb;
 }
-
 .wp-caption img {
 	border-color: #eee;
 }
-
 .wp-caption a:focus img,
 .wp-caption a:active img,
 .wp-caption a:hover img {
 	background: #fff;
 	border-color: #ddd;
 }
-
 
 embed,
 iframe,
@@ -1013,7 +995,6 @@ input#searchsubmit {
 	box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.1);
 	color: #bfddf3;
 }
-
 .widget_tag_cloud a:hover{
 	color: #fefefe;
 	background: #336699;
@@ -1025,21 +1006,18 @@ input#searchsubmit {
 }
 
 
-
-
 /*FOOTER
 ----------------------------------------------- */
-
 #colophon{
 	text-shadow: 1px 1px #fefefe;
 	font-size: 12px;
-	border-top: 1px solid #336699;
+	border-top: 1px solid #ccc;
 	background: #e8e8e8;
 	background: url('images/stripe_footer.png')
 }
 .footer-top-wrap{
 	padding-top: 1.625em;
-	border-top: 3px solid #336699;
+	border-top: 3px solid #ccc;
 }
 .footer-bottom-wrap{
 	vertical-align: middle;
@@ -1053,7 +1031,8 @@ input#searchsubmit {
 #generator{
 	text-align: right;
 }
-
+#supplementary .widget-content-wrap{margin-right:10px;}
+#supplementary .widget-content-wrap:first-child{padding-left:10px;padding-right:0px;}
 
 /* PAGINATION
 ----------------------------------------------- */
@@ -1086,7 +1065,6 @@ input#searchsubmit {
 }
 
 
-
 /*POST FORMAT : STATUS 
 ----------------------------------------------- */
 .status-avatar{
@@ -1102,7 +1080,6 @@ input#searchsubmit {
 
 
 /* Alignment */
-
 img[class*="wp-image-"],
 img.size-full,
 .gallery-thumb img{

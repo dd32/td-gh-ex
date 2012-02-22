@@ -18,25 +18,33 @@
 <div id="supplementary" <?php akyuz_footer_sidebar_class(); ?> >
 	<?php if ( is_active_sidebar( 'sidebar-3' ) ) : ?>
 	<div id="first" class="widget-area span-6" role="complementary">
-		<?php dynamic_sidebar( 'sidebar-3' ); ?>
+		<div class="widget-content-wrap">
+			<?php dynamic_sidebar( 'sidebar-3' ); ?>
+		</div>
 	</div><!-- #first .widget-area -->
 	<?php endif; ?>
 
 	<?php if ( is_active_sidebar( 'sidebar-4' ) ) : ?>
 	<div id="second" class="widget-area span-6" role="complementary">
-		<?php dynamic_sidebar( 'sidebar-4' ); ?>
+		<div class="widget-content-wrap">
+			<?php dynamic_sidebar( 'sidebar-4' ); ?>
+		</div>
 	</div><!-- #second .widget-area -->
 	<?php endif; ?>
 
 	<?php if ( is_active_sidebar( 'sidebar-5' ) ) : ?>
 	<div id="third" class="widget-area span-6" role="complementary">
-		<?php dynamic_sidebar( 'sidebar-5' ); ?>
+		<div class="widget-content-wrap">
+			<?php dynamic_sidebar( 'sidebar-5' ); ?>
+		</div>
 	</div><!-- #third .widget-area -->
 	<?php endif; ?>
 
 	<?php if ( is_active_sidebar( 'sidebar-6' ) ) : ?>
 	<div id="fourty" class="widget-area span-6 last" role="complementary">
-		<?php dynamic_sidebar( 'sidebar-6' ); ?>
+		<div class="widget-content-wrap">
+			<?php dynamic_sidebar( 'sidebar-6' ); ?>
+		</div>
 	</div><!-- #third .widget-area -->
 	<?php endif; ?>
 	

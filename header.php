@@ -115,6 +115,6 @@
 
 </header>
 
-<div class="container" id="main-wrap">
+<div class="container" id="main-wrap" >
 
 	<div id="main">
