@@ -4,6 +4,8 @@ Awesome Google Web Font: Vidaloka by Cyreal - https://profiles.google.com/alexei
 
 Version history:
 
+v1.4.7 - Cleaned up functions.php
+
 v1.4.6 - Removed subpage link list and back-to-previous-page links in page.php and page-nosidebar.php (this should be optional plugin functionality).
 
 v1.4.5 - Added contextual help menus in the Theme Options page; added donation button to Theme Options page with option to hide it if desired.
