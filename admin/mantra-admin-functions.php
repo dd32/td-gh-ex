@@ -38,7 +38,6 @@ function mantra_init_fn(){
 
 	add_settings_field('mantra_side', __('Main Layout','mantra') , 'setting_side_fn', __FILE__, 'layout_section');
 	add_settings_field('mantra_sidewidth', __('Content / Sidebar Width','mantra') , 'setting_sidewidth_fn', __FILE__, 'layout_section');
-	add_settings_field('mantra_sidebar', __('Total Site Width','mantra') , 'setting_sidebar_fn', __FILE__, 'layout_section');
 	add_settings_field('mantra_hheight', __('Header Image Height','mantra') , 'setting_hheight_fn', __FILE__, 'layout_section');
 
 	add_settings_field('mantra_fontfamily', __('General Font','mantra') , 'setting_fontfamily_fn', __FILE__, 'text_section');
@@ -97,6 +96,7 @@ function mantra_init_fn(){
 	add_settings_field('mantra_postcateg', __('Post Category','mantra') , 'setting_postcateg_fn', __FILE__, 'post_section');
 	add_settings_field('mantra_posttag', __('Post Tags','mantra') , 'setting_posttag_fn', __FILE__, 'post_section');
 	add_settings_field('mantra_postbook', __('Post Permalink','mantra') , 'setting_postbook_fn', __FILE__, 'post_section');
+	add_settings_field('mantra_postmetas', __('All Post Metas','mantra') , 'setting_postmetas_fn', __FILE__, 'post_section');
 
 	add_settings_field('mantra_excerpthome', __('Post Excerpts on Home Page','mantra') , 'setting_excerpthome_fn', __FILE__, 'excerpt_section');
 	add_settings_field('mantra_excerptarchive', __('Post Excerpts on Arhive and Category Pages','mantra') , 'setting_excerptarchive_fn', __FILE__, 'excerpt_section');
@@ -119,7 +119,7 @@ function mantra_init_fn(){
 	add_settings_field('mantra_socialshow', __('Socials display','mantra') , 'setting_socialsdisplay_fn', __FILE__, 'socials_section');
 
 	add_settings_field('mantra_linkheader', __('Make Site Header a Link','mantra') , 'setting_linkheader_fn', __FILE__, 'misc_section');
-	add_settings_field('mantra_favicon', __('Upload Fav Icon','mantra') , 'setting_favicon_fn', __FILE__, 'misc_section');
+	add_settings_field('mantra_favicon', __('FavIcon','mantra') , 'setting_favicon_fn', __FILE__, 'misc_section');
 	add_settings_field('mantra_customcss', __('Custom CSS','mantra') , 'setting_customcss_fn', __FILE__, 'misc_section');
 
 }
@@ -230,8 +230,17 @@ global $mantra_options;
 
  //SLIDER - Name: ma_options[sidewidth]
 function setting_sidewidth_fn()
-   {global $mantra_options;
-
+   {
+global $mantra_options;
+	$items = array ("Absolute" , "Relative");
+	$itemsare = array( __("Absolute","mantra"), __("Relative","mantra"));
+	echo "Use <select id='mantra_dimselect' name='ma_options[mantra_dimselect]'>";
+foreach($items as $id=>$item) {
+	echo "<option value='$item'";
+	selected($mantra_options['mantra_dimselect'],$itemsare[$id]);
+	echo ">$item</option>";
+}
+echo "</select> dimmensions";
 
    ?><script>
 
@@ -255,6 +264,7 @@ function setting_sidewidth_fn()
 	var leftwidth =	parseInt(jQuery( "#slider-range .ui-slider-range" ).position().left);
 			jQuery( "#barb" ).css('left',150+leftwidth+percentage/2+"px");
 			jQuery( "#contentb" ).css('left',210+leftwidth/2+"px");
+			jQuery( "#totalb" ).css('left',100+(percentage+leftwidth)/2+"px");
 							});
 
 		jQuery( "#slider-range" ).bind( "slide", function(event, ui) {
@@ -265,42 +275,105 @@ function setting_sidewidth_fn()
 																	
 			jQuery( "#mantra_sidewidth" ).val( ui.values[ 0 ] );
 			jQuery( "#mantra_sidebar" ).val( ui.values[ 1 ] - ui.values[ 0 ] );
-			jQuery( "#totalwidth" ).html( ui.values[ 1 ]);
+			jQuery( "#totalsize" ).html( ui.values[ 1 ]);
 			jQuery( "#contentsize" ).html( ui.values[ 0 ]);jQuery( "#barsize" ).html( ui.values[ 1 ]-ui.values[ 0 ]);
 
 	var	percentage =parseInt(	jQuery( "#slider-range .ui-slider-range" ).css('width'));
 	var leftwidth =	parseInt(jQuery( "#slider-range .ui-slider-range" ).position().left);
 			jQuery( "#barb" ).css('left',180+leftwidth+percentage/2+"px");
 			jQuery( "#contentb" ).css('left',220+leftwidth/2+"px");	
-																	});									
+			jQuery( "#totalb" ).css('left',100+(percentage+leftwidth)/2+"px");
+																	});		
+
+
+
+
+jQuery(function() {
+
+		jQuery( "#slider-rangeRel" ).slider({
+			range: true,
+			step:1,
+			min: 0,
+			max: 100,
+			values: [ <?php echo $mantra_options['mantra_sidewidthRel'] ?>, <?php echo ($mantra_options['mantra_sidewidthRel']+$mantra_options['mantra_sidebarRel']); ?> ],
+			slide: function( event, ui ) {
+		
+											}
+	
+										});
+
+			jQuery( "#mantra_sidewidthRel" ).val( <?php echo $mantra_options['mantra_sidewidthRel'];?> );
+			jQuery( "#mantra_sidebarRel" ).val( <?php echo $mantra_options['mantra_sidebarRel'];?> );
+	var	percentageRel =parseInt(	jQuery( "#slider-rangeRel .ui-slider-range" ).css('width'));
+	var leftwidthRel =	parseInt(jQuery( "#slider-rangeRel .ui-slider-range" ).position().left);
+			jQuery( "#barbRel" ).css('left',150+leftwidthRel+percentageRel/2+"px");
+			jQuery( "#contentbRel" ).css('left',210+leftwidthRel/2+"px");
+			jQuery( "#totalbRel" ).css('left',100+(percentageRel+leftwidthRel)/2+"px");
+							});
+
+		jQuery( "#slider-rangeRel" ).bind( "slide", function(event, ui) {
+			range=ui.values[ 1 ] - ui.values[ 0 ];
+
+ 			if (ui.values[ 0 ]<40) {ui.values[ 0 ]=40; return false;};
+			if(	range<20 || range>50 ){ ui.values[ 1 ] =  <?php echo $mantra_options['mantra_sidebarRel']+$mantra_options['mantra_sidewidthRel'];?>; return false;  };			
+																	
+			jQuery( "#mantra_sidewidthRel" ).val( ui.values[ 0 ] );
+			jQuery( "#mantra_sidebarRel" ).val( ui.values[ 1 ] - ui.values[ 0 ] );
+			jQuery( "#totalsizeRel" ).html( ui.values[ 1 ]);
+			jQuery( "#contentsizeRel" ).html( ui.values[ 0 ]);jQuery( "#barsizeRel" ).html( ui.values[ 1 ]-ui.values[ 0 ]);
+
+	var	percentageRel =parseInt(	jQuery( "#slider-rangeRel .ui-slider-range" ).css('width'));
+	var leftwidthRel =	parseInt(jQuery( "#slider-rangeRel .ui-slider-range" ).position().left);
+			jQuery( "#barbRel" ).css('left',180+leftwidthRel+percentageRel/2+"px");
+			jQuery( "#contentbRel" ).css('left',220+leftwidthRel/2+"px");	
+			jQuery( "#totalbRel" ).css('left',100+(percentageRel+leftwidthRel)/2+"px");
+																	});	
+							
 	</script>
 
-<div class="hereitis">
+<div id="absolutedim">
 
 	<b id="contentb" style="display:block;float:left;position:absolute;margin-top:-20px;">Content = <span id="contentsize"><?php echo $mantra_options['mantra_sidewidth'];?></span>px</b>
 	<b id="barb" style="margin-left:40px;color:#F6A828;display:block;float:left;position:absolute;margin-top:-20px;" >Sidebar(s) = <span id="barsize"><?php echo $mantra_options['mantra_sidebar'];?></span>px</b>
+	<b id="totalb" style="margin-left:40px;color:#999;display:block;float:left;position:absolute;margin-top:12px;" >^&mdash;&mdash;&mdash; Total width = <span id="totalsize"><?php echo $mantra_options['mantra_sidewidth']+ $mantra_options['mantra_sidebar'];?></span>px &mdash;&mdash;&mdash;^</b>
+
 <p>
-	<?php echo  "<input type='hidden'  name='ma_options[mantra_sidewidth]' id='mantra_sidewidth'   />";?>
+	<?php echo  "<input type='hidden'  name='ma_options[mantra_sidewidth]' id='mantra_sidewidth'   />";
+	 echo  "<input type='hidden'  name='ma_options[mantra_sidebar]' id='mantra_sidebar'   />";?>
 </p>
 <div id="slider-range"></div>
-</div><!-- End hereitsis -->
 
-   <?php
+ <?php
    echo "<div><small>".__("Select the width of your <b>content</b> and <b>sidebar(s)</b>. 
  		While the content cannot be less than 500px wide, the sidebar area is at least 220px and no more than 800px.<br />
-	If you went for a 3 column area ( with 2 sidebars) they will each have half the selected width.","mantra")."</small></div>";
+	If you went for a 3 column area ( with 2 sidebars) they will each have half the selected width.","mantra")."</small></div>"; ?>
+
+
+</div><!-- End absolutedim -->
+
+<div id="relativedim">
+
+	<b id="contentbRel" style="display:block;float:left;position:absolute;margin-top:-20px;">Content = <span id="contentsizeRel"><?php echo $mantra_options['mantra_sidewidthRel'];?></span>%</b>
+	<b id="barbRel" style="margin-left:40px;color:#F6A828;display:block;float:left;position:absolute;margin-top:-20px;" >Sidebar(s) = <span id="barsizeRel"><?php echo $mantra_options['mantra_sidebarRel'];?></span>%</b>
+	<b id="totalbRel" style="margin-left:40px;color:#999;display:block;float:left;position:absolute;margin-top:12px;" >^&mdash;&mdash;&mdash; Total width = <span id="totalsizeRel"><?php echo $mantra_options['mantra_sidewidthRel']+$mantra_options['mantra_sidebarRel'];?></span>% &mdash;&mdash;&mdash;^</b>
+
+<p>
+	<?php echo  "<input type='hidden'  name='ma_options[mantra_sidewidthRel]' id='mantra_sidewidthRel'   />";
+	echo  "<input type='hidden'  name='ma_options[mantra_sidebarRel]' id='mantra_sidebarRel'   />";?>
+
+</p>
+<div id="slider-rangeRel"></div>
+ <?php
+   echo "<div><small>".__("Select the width of your <b>content</b> and <b>sidebar(s)</b>. 
+ 		These are realtive dimmensions - relative to the user's browser. The total width is a percentage of the browser's width.<br />
+	 While the content cannot be less than 40% wide, the sidebar area is at least 20% and no more than 50%.<br />
+	If you went for a 3 column area ( with 2 sidebars) they will each have half the selected width.","mantra")."</small></div>"; ?>
+</div><!-- End relativedim -->
+<?php
+  
    }
 
- //SLIDER - Name: ma_options[sidebar]
-function setting_sidebar_fn()
-   {
-   global $mantra_options;
-   ?><?php echo  "<input type='hidden'  name='ma_options[mantra_sidebar]' id='mantra_sidebar'   />";?>
-<b><span id="totalwidth"><?php echo $mantra_options['mantra_sidebar']+$mantra_options['mantra_sidewidth'];?></span> px</b>
 
-   <?php  echo "<div><small>".__("This will be the <b>total width</b> of your site. This is not an editable field; it is calculated automatically after the content/sidebar slider. The absolute maximum is 1440.","mantra")."</small></div>";
-
-   }
 
 
  //SELECT - Name: ma_options[hheight]
@@ -865,7 +938,7 @@ foreach($items as $id=>$item) {
 	echo ">$item</option>";
 }
 	echo "</select>";
-	echo "<div><small>".__("The background for your post-metas area (under your post tiltes). Gray by default.","mantra")."</small></div>";
+	echo "<div><small>".__("The background for your post-metas area (under your post tiltes). Gray by default.<","mantra")."</small></div>";
 
 }
 
@@ -1108,6 +1181,21 @@ foreach($items as $id=>$item) {
 }
 	echo "</select>";
 	echo "<div><small>".__("Hide the 'Bookmark permalink'.","mantra")."</small></div>";
+}
+
+//CHECKBOX - Name: ma_options[postmetas]
+function setting_postmetas_fn() {
+	global $mantra_options;
+	$items = array ("Show" , "Hide");
+	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
+	echo "<select id='mantra_postmetas' name='ma_options[mantra_postmetas]'>";
+foreach($items as $id=>$item) {
+	echo "<option value='$item'";
+	selected($mantra_options['mantra_postmetas'],$itemsare[$id]);
+	echo ">$item</option>";
+}
+	echo "</select>";
+	echo "<div><small>".__("Hide all the post metas. All meta info and meta areas will be hidden.","mantra")."</small></div>";
 }
 
 
@@ -1387,9 +1475,19 @@ foreach($items as $id=>$item) {
 // TEXTBOX - Name: ma_options[favicon]
 function setting_favicon_fn() {
 	global $mantra_options;
+	$items = array ("Enable" , "Disable");
+	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
+	echo "<select id='mantra_faviconshow' name='ma_options[mantra_faviconshow]'>";
+foreach($items as $id=>$item) {
+	echo "<option value='$item'";
+	selected($mantra_options['mantra_faviconshow'],$itemsare[$id]);
+	echo ">$item</option>";
+}
+echo "</select>";
 ?>
 
-<!-- Upload Button-->  
+<!-- Upload Button-->
+<div id="uploadarea">  
 <div id="upload" >Upload File</div><span id="status" ></span>  
 
 <img id="uploadpreview" src="<?php echo get_template_directory_uri().'/uploads/'.$mantra_options['mantra_favicon'] ?>" alt=""  />
@@ -1437,6 +1535,7 @@ be found in the <b>mantra/uploads/</b> folder.","mantra")."</small></div>";
     });  
 
 </script>
+</div>
 <input id="mantra_favicon" type="hidden" name='ma_options[mantra_favicon]' value="<?php echo $mantra_options['mantra_favicon'] ?>" />
 <?php
 }
@@ -1527,13 +1626,34 @@ uGoJV/7kErByS98U5Gze/kUo5OvpezDjckdR0TJfoNFDKiAit+Qf9+ToViM/CmY2cONArejftWlnEKik
 </div>
 </div>
 
-<?php $mantra_options= mantra_get_theme_options(); print_r ($mantra_options);?>
+<?php /* $mantra_options= mantra_get_theme_options(); print_r ($mantra_options); */?>
 
 </div>
 
 </div>
 <script type="text/javascript">
   jQuery(document).ready(function() {
+
+// Hide or show favicon upload form
+
+jQuery('#mantra_faviconshow').change(function() {
+ if(jQuery('#mantra_faviconshow option:selected').text()=="Disable") {jQuery('#uploadarea').hide("normal");}
+else {jQuery('#uploadarea').show("normal");}
+});
+if(jQuery('#mantra_faviconshow option:selected').text()=="Disable") {jQuery('#uploadarea').hide("normal");}
+else {jQuery('#uploadarea').show("normal");}
+
+// Hide or show dimmensions
+
+jQuery('#mantra_dimselect').change(function() {
+ if(jQuery('#mantra_dimselect option:selected').text()=="Absolute") {jQuery('#relativedim').hide("normal");jQuery('#absolutedim').show("normal");}
+else {jQuery('#relativedim').show("normal");jQuery('#absolutedim').hide("normal");}
+});
+if(jQuery('#mantra_dimselect option:selected').text()=="Absolute") {jQuery('#relativedim').hide("normal");jQuery('#absolutedim').show("normal");}
+else {jQuery('#relativedim').show("normal");jQuery('#absolutedim').hide("normal");}
+
+
+// Color selector enabler
 
 function startfarb(a,b) {
 jQuery(b).css('display','none');
@@ -1641,7 +1761,7 @@ return 0;
 
 /* Social media links */
 
-	$mantra_global_socials = array ("Delicious", "Digg", "Facebook", "Flickr", "Google", "GooglePlus" ,"LastFM", "LinkedIn", "Mail", "MySpace", "Picasa", "Reddit", "RSS", "Skype", "StumbleUpon", "Technorati", "Twitter","WordPress", "Yahoo", "YouTube" );
+	$mantra_global_socials = array ("Delicious","DeviantArt", "Digg", "Facebook", "Flickr", "Google", "GoodReads", "GooglePlus" ,"LastFM", "LinkedIn", "Mail", "MySpace", "Picasa", "Reddit", "RSS", "Skype", "StumbleUpon", "Technorati","Tumblr", "Twitter","Vimeo","WordPress", "Yahoo", "YouTube" );
 
 // Validate user data
 function ma_options_validate($input) {

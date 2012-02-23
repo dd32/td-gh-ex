@@ -5,8 +5,11 @@
 $mantra_defaults = array(
 
 "mantra_side" => "2cSr",
+"mantra_dimselect" => 'Absolute',
 "mantra_sidewidth" => 800,
 "mantra_sidebar" => 250,
+"mantra_sidewidthRel" => 60,
+"mantra_sidebarRel" => 20,
 "mantra_hheight" => "120px",
 
 "mantra_fontfamily" => 'Segoe UI, Arial, sans-serif',
@@ -65,6 +68,7 @@ $mantra_defaults = array(
 "mantra_postcateg" => "Show",
 "mantra_posttag" => "Show",
 "mantra_postbook" => "Show",
+"mantra_postmetas" => "Show",
 
 "mantra_excerpthome" => "Full Post",
 "mantra_excerptarchive" => "Full Post",
@@ -95,6 +99,7 @@ $mantra_defaults = array(
 "mantra_socialsdisplay3" => "",
 
 "mantra_linkheader" => "Disable",
+"mantra_faviconshow" => "Disable",
 "mantra_favicon" => "",
 "mantra_customcss" => "/* Mantra Custom CSS */  ");
 

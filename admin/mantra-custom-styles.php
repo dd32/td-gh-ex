@@ -7,48 +7,98 @@ $mantra_options= mantra_get_theme_options();
 foreach ($mantra_options as $key => $value) {
      ${"$key"} = esc_attr($value) ;
 }
+if ($mantra_dimselect=="Absolute") {
 $totalwidth= $mantra_sidewidth+$mantra_sidebar+50;
+$contentSize = $mantra_sidewidth;
+$sidebarSize= $mantra_sidebar;
+}
+else if ($mantra_dimselect=="Relative") {
+$totalwidth= $mantra_sidewidthRel+$mantra_sidebarRel;
+$contentSize = intval(($mantra_sidewidthRel/$totalwidth*100)-2);
+$sidebarSize= intval(($mantra_sidebarRel/$totalwidth*100)-2);
+}
 
 ?>
 
 <style>
+<?php if ($mantra_dimselect=="Absolute") { ?>
 #wrapper, #access, #colophon, #branding, #main { width:<?php echo ($totalwidth) ?>px ;}
 .attachment img{  max-width:<?php echo ($totalwidth-40) ?>px ;}
 .single-attachment #content {width:<?php echo ($totalwidth-40) ?>px ;}
 #access .menu-header, div.menu {width:<?php echo ($totalwidth-12) ?>px ;}
-#content img {	max-width:<?php echo ($mantra_sidewidth-40) ?>px;}
-#content .wp-caption{	max-width:<?php echo ($mantra_sidewidth-30) ?>px;}
+#content img {	max-width:<?php echo ($contentSize-40) ?>px;}
+#content .wp-caption{	max-width:<?php echo ($contentSize-30) ?>px;}
 
 <?php if ($mantra_side == "1c" || $mantra_side =="Disable") { ?>
 #content {width:<?php echo ($totalwidth-50) ?>px; margin:20px;}  <?php }
 
 ?><?php if ($mantra_side == "2cSr" || $mantra_side == "Right") { ?>
-#content { width:<?php echo ($mantra_sidewidth- 10) ?>px;}
-#primary,#secondary {width:<?php echo ($mantra_sidebar  ) ?>px;}<?php }
+#content { width:<?php echo ($contentSize- 10) ?>px;}
+#primary,#secondary {width:<?php echo ($sidebarSize  ) ?>px;}<?php }
 
 ?><?php if ($mantra_side == "2cSl" || $mantra_side == "Left") { ?>
-#content { width:<?php echo ($mantra_sidewidth - 10) ?>px;float:right;margin:0 20px 0 0;}
-#primary,#secondary {width:<?php echo ($mantra_sidebar ) ?>px;float:left;padding-left:0px;clear:left;border:none;border-right:1px dashed #EEE;padding-right:20px;}
+#content { width:<?php echo ($contentSize - 10) ?>px;float:right;margin:0 20px 0 0;}
+#primary,#secondary {width:<?php echo ($sidebarSize ) ?>px;float:left;padding-left:0px;clear:left;border:none;border-right:1px dashed #EEE;padding-right:20px;}
 .widget-title { -moz-border-radius-topleft:0px; -webkit-border-radius:0px;border-radius-topleft:0px ; -moz-border-radius-topright:10px ;border-radius-topright:10px ;	border-top-right-radius:10px;
 	-webkit-border-top-right-radius:10px;text-align:right;padding-right:5%;width:100%;} <?php } 
 
 ?><?php if ($mantra_side == "3cSr" ) { ?>
-#content { width:<?php echo ($mantra_sidewidth- 20) ?>px;}
+#content { width:<?php echo ($contentSize- 20) ?>px;}
 #primary,#secondary {width:<?php echo ($mantra_sidebar/2  ) ?>px;} <?php } 
 
 ?><?php if ($mantra_side == "3cSl" ) { ?>
-#content { width:<?php echo ($mantra_sidewidth - 20) ?>px;float:right;margin:0 20px 0 0;display:block;}
-#primary,#secondary {width:<?php echo ($mantra_sidebar/2 ) ?>px;float:left;padding-left:0px;;border:none;border-right:1px dashed #EEE;padding-right:20px;}
+#content { width:<?php echo ($contentSize - 20) ?>px;float:right;margin:0 20px 0 0;display:block;}
+#primary,#secondary {width:<?php echo ($sidebarSize/2 ) ?>px;float:left;padding-left:0px;;border:none;border-right:1px dashed #EEE;padding-right:20px;}
 .widget-title { -moz-border-radius-topleft:0px; -webkit-border-radius:0px;border-radius-topleft:0px ; -moz-border-radius-topright:10px ;border-radius-topright:10px ;	border-top-right-radius:10px;
 	-webkit-border-top-right-radius:10px;text-align:right;padding-right:5%;width:100%;} <?php } 
 
 ?><?php if ($mantra_side == "3cSs" ) { ?>
-#content { width:<?php echo ($mantra_sidewidth - 20) ?>px;float:right;margin:0 20px 0 0;display:block;}
-#primary {width:<?php echo ($mantra_sidebar/2 ) ?>px;float:left;padding-left:0px;border:none;border-right:1px dashed #EEE;padding-right:20px;}
-#secondary {width:<?php echo ($mantra_sidebar/2 ) ?>px;float:right;}
+#content { width:<?php echo ($contentSize - 20) ?>px;float:right;margin:0 20px 0 0;display:block;}
+#primary {width:<?php echo ($sidebarSize/2 ) ?>px;float:left;padding-left:0px;border:none;border-right:1px dashed #EEE;padding-right:20px;}
+#secondary {width:<?php echo ($sidebarSize/2 ) ?>px;float:right;}
 #primary .widget-title { -moz-border-radius-topleft:0px; -webkit-border-radius:0px;border-radius-topleft:0px ; -moz-border-radius-topright:10px ;border-radius-topright:10px ;	border-top-right-radius:10px;
-	-webkit-border-top-right-radius:10px;text-align:right;padding-right:5%;width:100%;} <?php } ?>
+	-webkit-border-top-right-radius:10px;text-align:right;padding-right:5%;width:100%;} <?php } ?><?php 
 
+}
+
+else if ($mantra_dimselect=="Relative") { ?>
+#wrapper { width:<?php echo ($totalwidth) ?>% ;}
+.attachment img{  max-width:<?php echo ($totalwidth) ?>% ;}
+.single-attachment #content {width:96% ;display:block;float:none;}
+#access .menu-header, div.menu {width:96% ;}
+#content img {	max-width:<?php echo ($contentSize) ?>%;}
+#content .wp-caption{	max-width:<?php echo ($contentSize) ?>%;}
+
+<?php if ($mantra_side == "1c" || $mantra_side =="Disable") { ?>
+#content {width:96%; margin:20px;}  <?php }
+
+?><?php if ($mantra_side == "2cSr" || $mantra_side == "Right") { ?>
+#content { width:<?php echo ($contentSize) ?>%;}
+#primary,#secondary {width:<?php echo ($sidebarSize ) ?>%;}<?php }
+
+?><?php if ($mantra_side == "2cSl" || $mantra_side == "Left") { ?>
+#content { width:<?php echo ($contentSize ) ?>%;float:right;margin:0 20px 0 0;}
+#primary,#secondary {width:<?php echo ($sidebarSize ) ?>%;float:left;padding-left:0px;clear:left;border:none;border-right:1px dashed #EEE;padding-right:20px;}
+.widget-title { -moz-border-radius-topleft:0px; -webkit-border-radius:0px;border-radius-topleft:0px ; -moz-border-radius-topright:10px ;border-radius-topright:10px ;	border-top-right-radius:10px;
+	-webkit-border-top-right-radius:10px;text-align:right;padding-right:5%;width:95%;} <?php } 
+
+?><?php if ($mantra_side == "3cSr" ) { ?>
+#content { width:<?php echo ($contentSize-2) ?>%;}
+#primary,#secondary {width:<?php echo ($sidebarSize/2  ) ?>%;} <?php } 
+
+?><?php if ($mantra_side == "3cSl" ) { ?>
+#content { width:<?php echo ($contentSize-2) ?>%;float:right;margin:0 20px 0 0;display:block;}
+#primary,#secondary {width:<?php echo ($sidebarSize/2 ) ?>%;float:left;padding-left:0px;;border:none;border-right:1px dashed #EEE;padding-right:10px;}
+.widget-title { -moz-border-radius-topleft:0px; -webkit-border-radius:0px;border-radius-topleft:0px ; -moz-border-radius-topright:10px ;border-radius-topright:10px ;	border-top-right-radius:10px;
+	-webkit-border-top-right-radius:10px;text-align:right;padding-right:5%;width:95%;} <?php } 
+
+?><?php if ($mantra_side == "3cSs" ) { ?>
+#content { width:<?php echo ($contentSize-2) ?>%;float:right;margin:0 20px 0 0;display:block;}
+#primary {width:<?php echo ($sidebarSize/2 ) ?>%;float:left;padding-left:0px;border:none;border-right:1px dashed #EEE;padding-right:20px;}
+#secondary {width:<?php echo ($sidebarSize/2 ) ?>%;float:right;}
+#primary .widget-title { -moz-border-radius-topleft:0px; -webkit-border-radius:0px;border-radius-topleft:0px ; -moz-border-radius-topright:10px ;border-radius-topright:10px ;	border-top-right-radius:10px;
+	-webkit-border-top-right-radius:10px;text-align:right;padding-right:5%;width:100%;} <?php } ?><?php
+} ?>
 
 #content p, #content ul, #content ol {
 font-size:<?php echo $mantra_fontsize ?>;
@@ -112,7 +162,8 @@ font-size:<?php echo $mantra_fontsize ?>;
 ?><?php if ($mantra_posttag == "Hide") { ?> .entry-utility span.bl_posted, .entry-meta2 span.bl_tagg {display:none;} <?php }
 ?><?php if ($mantra_postbook == "Hide") { ?> .entry-utility span.bl_bookmark {display:none;} <?php }
 ?><?php if ($mantra_parindent != "0px") { ?>  p {text-indent:<?php echo $mantra_parindent;?> ;} <?php }
-?><?php if ($mantra_posttime == "Hide") { ?> .entry-meta .entry-time {display:none;} <?php } ?>
+?><?php if ($mantra_posttime == "Hide") { ?> .entry-meta .entry-time {display:none;} <?php } 
+?><?php if ($mantra_postmetas == "Hide") { ?> #content .entry-meta, #content .entry-meta2, #content .entry-meta3, .entry-utility {display:none;} <?php } ?>
 </style>
 
 <?php  } 

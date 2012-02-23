@@ -45,7 +45,7 @@ $totalwidth= $mantra_sidewidth+$mantra_sidebar+50;
 ?>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<?php if ($mantra_options['mantra_favicon']) { ?> <link rel="shortcut icon" href="<?php echo get_template_directory_uri().'/uploads/'.$mantra_options['mantra_favicon']; ?>" />
+<?php if ($mantra_options['mantra_faviconshow']=="Show" && $mantra_options['mantra_favicon']) { ?> <link rel="shortcut icon" href="<?php echo get_template_directory_uri().'/uploads/'.$mantra_options['mantra_favicon']; ?>" />
 <?php }
 
 	/* Always have wp_head() just before the closing </head>
@@ -96,8 +96,11 @@ $totalwidth= $mantra_sidewidth+$mantra_sidebar+50;
 					else : ?><?php if (get_header_image() != '') { ?>
 
 						<style> #branding { background:url(<?php header_image(); ?>) no-repeat;
-								 width:<?php echo HEADER_IMAGE_WIDTH; ?>px;
-								 height:<?php echo HEADER_IMAGE_HEIGHT; ?>px;}
+								<?php if ($mantra_dimselect=="Absolute") { ?>
+								 width:<?php echo HEADER_IMAGE_WIDTH; ?>px; <?php } ?>
+								 height:<?php echo HEADER_IMAGE_HEIGHT; ?>px;}'
+									
+
 <?php if ($mantra_options['mantra_linkheader']=="Enable") { ?>
 #linky {
 display:block;
