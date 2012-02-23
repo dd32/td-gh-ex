@@ -4,10 +4,10 @@ Theme URI: http://www.selimakyuz.com/akyuz-theme
 Description: A simple, clean and framework-like theme. It supports 2 menu areas, custom header, custom background, two-column fixed-width. HTML5. include WP-PageNavi.
 Author: Selim AKYUZ
 Author URI: http://www.selimakyuz.com
-Version: 1.1.17
+Version: 1.1.18
 License: GNU General Public License
 License URI: license.txt
-Tags: microformats, black, blue, white, orange, custom-background, custom-header, custom-colors, fixed-width, green, one-column, two-columns, custom-menu, full-width-template, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: microformats, black, blue, white, orange, custom-background, custom-header, custom-colors, fixed-width, green, one-column, two-columns, custom-menu, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready
 */
 
 /* =Global
@@ -225,7 +225,7 @@ sub {
 
 #site-title {
 	overflow: hidden;
-	height: 50px;
+	min-height: 50px;
 }
 
 #site-title a {
@@ -781,10 +781,14 @@ ol.commentlist li.thread-odd {
 	letter-spacing: 0.1em;
 	line-height: 1.625em;
 	text-transform: uppercase;
-	border-bottom: 10px solid #CCC;
+	border-bottom: 3px solid #336699;
 	vertical-align: middle;
-	text-shadow: 1px 1px #EEE;
-}
+	text-shadow: 1px 1px 1px #666;  
+	background: url(images/stripe_2.png);  
+}  
+#colophon .widget-title {
+	background: none;
+}  
 .widget ul {
 	margin: 0;padding: 0;
 	}
@@ -798,12 +802,12 @@ ol.commentlist li.thread-odd {
     vertical-align: middle;
 	background-image: url(images/tag.png);
 	background-repeat: no-repeat;
-	background-position: 0 0.1em;
+	background-position: 0 0.4em;
 	padding: 3px 0 3px 20px;
 }
 .widget_recent_comments ul li {
 	background-image: url(images/comment.png);
-	background-position: 0 0.5em;
+	background-position: 0 0.3em;
 }
 .widget a {
 	font-weight: bold;
@@ -1011,13 +1015,13 @@ input#searchsubmit {
 #colophon{
 	text-shadow: 1px 1px #fefefe;
 	font-size: 12px;
-	border-top: 1px solid #ccc;
+	border-top: 1px solid #336699; 
 	background: #e8e8e8;
 	background: url('images/stripe_footer.png')
 }
 .footer-top-wrap{
 	padding-top: 1.625em;
-	border-top: 3px solid #ccc;
+	border-top: 3px solid #336699; 
 }
 .footer-bottom-wrap{
 	vertical-align: middle;

@@ -17,7 +17,6 @@ nav div.menu ul{
 	margin-bottom: 0;
 	padding-bottom: 0;
 	background: #E0E0E0;
-	width:100%;
 }
 
 
@@ -27,6 +26,7 @@ nav div.menu ul li{
 position: relative;
 display: inline;
 float: left;
+text-align:left;
 }
 
 /*Top level menu link items style*/
@@ -34,10 +34,6 @@ nav div.jqueryslidemenu ul li a,
 nav div.menu ul li a{
 	display: block;
 	background: #E0E0E0; /*background of tabs (default state)*/
-	background: -moz-linear-gradient(#E0E0E0, #D0D0D0);
-	background: -o-linear-gradient(#E0E0E0, #D0D0D0);
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(27,65,103,0.85)), to(#003366)); /* older webkit syntax */
-	background: -webkit-linear-gradient(#E0E0E0, #D0D0D0);
 	padding: 18px 10px;
 	/*border-right: 1px solid #778;*/
 	color: #d2691e;

@@ -16,12 +16,10 @@ get_header(); ?>
 
 					<nav id="nav-single">
 						<h3 class="assistive-text"><?php _e( 'Post navigation', AKYUZ_TEXT_DOMAIN ); ?></h3>
-						<span class="nav-previous span-8">
-							<h4><?php _e( 'Previous Post', AKYUZ_TEXT_DOMAIN ); ?></h4>
+						<span class="nav-previous span-7">
 							<?php previous_post_link( ); ?>
 						</span>
 						<span class="nav-next span-7 last">
-							<h4><?php _e( 'Next Post', AKYUZ_TEXT_DOMAIN ); ?></h4>
 							<?php next_post_link( ); ?>
 						</span>
 					</nav><!-- #nav-single -->
