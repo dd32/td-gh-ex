@@ -16,6 +16,38 @@ input[type=reset]{font-size: 12px;padding: 2px;margin-top: 5px;border: 1px solid
 a img{border:none}
 a{outline:none}
 
+.pagination {
+clear:both;
+padding:2px 0;
+position:relative;
+font-size:11px;
+line-height:13px;
+margin-bottom: 38px;
+}
+
+.pagination span, .pagination a {
+display:block;
+float:left;
+margin: 2px 2px 2px 0;
+padding:6px 9px 5px 9px;
+text-decoration:none;
+width:auto;
+color:#fff;
+background: #555;
+}
+
+.pagination a:hover{
+color:#fff;
+background: #3279BB;
+}
+
+.pagination .current{
+padding:6px 9px 5px 9px;
+background: #3279BB;
+color:#fff;
+}
+
+
 #sidebar {right: -2px;}
 
 #register {text-align: right; list-style: none;}
@@ -43,7 +75,7 @@ a{outline:none}
 	margin-bottom: 15px;
 }
 
-.featured-image {float: inherit\0/ !important;}
+.featured-image { float : inherit\9 !important; }
 
 /* Fonts  */
 
@@ -223,7 +255,19 @@ header {margin-top: 15px;}
 
 .prev-posts { float: right;padding: 5px 0 5px 0; }
 
-#crumbs {padding: 0px 5px 5px 5px;}
+#crumbs {border: 1px solid;
+	border-top: 1px solid #CCC;
+	border-left: 1px solid #CCC;
+	border-right: 1px solid #BBB;
+	border-bottom: 1px solid #BBB;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	box-shadow:inset 0 0 2px #ccc;
+	background: #fff;
+	margin-bottom: 15px;
+}
+
+.crumbs_text {padding: 2px 0 7px 15px;}
 
 .pagnext-posts {float: left;padding: 5px;margin-bottom: 10px;}
 
@@ -239,7 +283,7 @@ ul, ol { margin: 0 0 10px 0; }
 
 th {padding-right: 20px; padding-bottom: 10px;}
 
-td {border-top: 1px solid #DDD;padding: 6px 100px 6px 0;}
+td {border-top: 1px solid #DDD;padding: 6px 10px 6px 0;}
 
 table {border-bottom: 1px solid #DDD;}
 

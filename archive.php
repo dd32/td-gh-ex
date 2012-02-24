@@ -19,9 +19,7 @@
 ?>
 
 <div class="container">
-	<div class="row">
-		<?php if (function_exists('synapse_breadcrumbs') && ($options->get($themeslug.'_disable_breadcrumbs') == "1")) { synapse_breadcrumbs(); }?>
-	</div>
+	<?php if ($options->get($themeslug.'_archive_breadcrumbs') == "1") { synapse_breadcrumbs();}?>
 	<div class="row">
 	<!--Begin @synapse before content sidebar hook-->
 		<?php synapse_before_content_sidebar(); ?>
@@ -29,10 +27,6 @@
 	<?php if (have_posts()) : ?>
 	
 		<div id="content" class="<?php echo $content_grid; ?>">
-		
-			<!--Begin @synapse archive hook-->
-			<?php synapse_archive_title(); ?>
-			<!--End @synapse archive hook-->
 		
 		<!--Begin @synapse before_archive hook-->
 			<?php synapse_before_archive(); ?>
