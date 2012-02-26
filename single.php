@@ -9,12 +9,12 @@
 			<h1><?php the_title(); ?></h1>
 
 			<div class="entryContent">
-				<?php the_content('<p class="serif">Read the rest of this entry &raquo;</p>'); ?>
+				<?php the_content('<p class="serif">'.__("Read the rest of this entry", "baza_noclegowa").' &raquo;</p>'); ?>
                 <div class="clear"></div>
-				<?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
-				<?php the_tags( '<p>Tags: ', ', ', '</p>'); ?>
-				<p>Posted in <?php the_category(', ') ?></p>
-				<?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
+				<?php wp_link_pages(array('before' => '<p><strong>'.__("Pages", "baza_noclegowa").':</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
+				<?php the_tags( '<p class="postmeta"><span class="tags">', ', ', '</span></p>'); ?>
+				<p class="postmeta"><span class="cats"><?php the_category(', ') ?></span></p>
+				<?php edit_post_link(__("Edit this entry", "baza_noclegowa"), '<p>', '</p>'); ?>
 
 			</div>
 		</div>

@@ -1,5 +1,5 @@
 /*
-Theme Name: Twenty Ten
+Theme Name: Baza Noclegowa
 */
 /*
 Used to style the TinyMCE editor.
@@ -8,8 +8,8 @@ html .mceContentBody {
 	max-width:640px;
 }
 * {
-	font-family: Georgia, "Bitstream Charter", serif;
-	color: #444;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #4c5356;
 	line-height: 1.5;
 }
 p,

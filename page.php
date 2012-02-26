@@ -9,7 +9,7 @@
 			<div class="entryContent">
 				<?php the_content(); ?>	
 				<div class="clear"></div>			
-				<?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
+				<?php edit_post_link(__("Edit this entry", "baza_noclegowa"), '<p>', '</p>'); ?>
 			</div>
 		</div>
 		

@@ -13,10 +13,10 @@
 		<!-- FOOTER -->
 		<div id="footer">
 		<p class="footer-menu">
-         <?php wp_nav_menu( array( 'menu' => 'Footer Navigation', 'container' => 'div','container_id' => 'footer-nav', 'depth' => '1', 'theme_location' => 'footer-menu') ); ?>
+         <?php wp_nav_menu( array('menu' => 'Footer Navigation', 'container' => 'div','container_id' => 'footer-nav', 'depth' => '1', 'theme_location' => 'footer-menu') ); ?>
         </p>
 			
-<div class="credits">Powered by <a href="http://wordpress.org/">WordPress</a>. Design: <a href="http://www.baza-noclegowa.pl/">Baza Noclegowa</a>.</div>
+<div class="credits"><?php _e("Powered by", "baza_noclegowa"); ?> <a href="http://wordpress.org/">WordPress</a>. Design: <a href="http://www.baza-noclegowa.pl/">Baza Noclegowa</a>.</div>
 			
 		</div>
 		<!-- /FOOTER -->

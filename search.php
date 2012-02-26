@@ -4,30 +4,31 @@
 
 	<?php if (have_posts()) : ?>
 
-		<h2 class="pageTitle">Search Results</h2>
+		<h2 class="pageTitle"><?php _e("Search Results", "baza_noclegowa"); ?></h2>
 
 
 		<?php while (have_posts()) : the_post(); ?>
 
 			<div class="post">
-				<h2 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-				<p class="postmeta"><?php the_time('l, F jS, Y') ?></small>
+				<h2 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e('Permanent Link to', 'baza_noclegowa'); ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 				<div class="entryContent">
-					<?php the_excerpt(); ?>
-				</div>
-				<p><?php the_tags('Tags: ', ', ', '<br />'); ?> Posted in <?php the_category(', ') ?> | <?php edit_post_link('Edit', '', ' | '); ?>  <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?></p>
+						    <?php the_post_thumbnail(); ?>
+							<?php the_excerpt(); ?>
+						</div>
+						<p class="postmeta"><span class="cats"><?php the_category(', ') ?></span> <span class="tags"><?php the_tags( '', ', ', ''); ?></span>, <span class="comments"><?php comments_popup_link('0', '1', '%'); ?></span> <?php edit_post_link(_('Edit', 'baza_noclegowa')); ?> </p>
+						<p class="more"><a href="<?php the_permalink() ?>"></a></p>
 			</div>
 
 		<?php endwhile; ?>
 
 		<div class="navigation">
-			<div class="alignleft"><?php next_posts_link('&laquo; Previous Posts') ?></div>
-			<div class="alignright"><?php previous_posts_link('Next posts &raquo;') ?></div>
+			<div class="alignright prev"><?php next_posts_link(_('&laquo; Previous posts', 'baza_noclegowa')) ?></div>
+			<div class="alignleft next"><?php previous_posts_link(_('Next posts &raquo;', 'baza_noclegowa')) ?></div>
 		</div>
 
 	<?php else : ?>
 
-		<h2 class="pageTitle">No posts found. Try a different search?</h2>
+		<h2 class="pageTitle"><?php _e("No posts found. Try a different search?", "baza_noclegowa"); ?></h2>
 		<?php get_search_form(); ?>
 
 	<?php endif; ?>
