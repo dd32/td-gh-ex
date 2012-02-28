@@ -3,8 +3,8 @@ Theme Name: Adventure
 Theme URI: http://schwarttzy.com/web-design/adventure/
 Author: Eric Schwarz
 Author URI: http://schwarttzy.com/about-2/
-Description: Inspired by a certain GPS Manufacture, I designed this theme to feel like you're looking through a window out into the wilderness. Version 1.5.7 Admin Bar fix. Version 1.5.6 Adds some CSS3 for browsers that support it and Christmas Colored menu bar. Version 1.5.5-3 Minor errors. Version 1.5.2 Found some left over code. Version 1.5.0 Is a huge leap forward using the Adventure+ code, a premium version of this theme with more features. Be sure to check out the "theme options" where you can change the link colors and choose from five different menu bars. Version 1.4.6 Added some code for browsers that support it to perfectly stretch the background image. I still recommend that you have a 1920by1080 image for browsers that don't support it. Version 1.4.3 Fixed IE6 stretch images errors. Version 1.4.3 Fixed 404 error page issues, I have done the best I can with the menu bar on IE 6 browser. Version 1.4.2 fixes an issue when you have to many links in the bottom bar where the link would disappear entirely if you had to many. Now the slogan goes first, then the title, and finally the links one by one.
-Version: 1.5.7
+Description: Inspired by a certain GPS Manufacture, I designed this theme to feel like you're looking through a window out into the wilderness. Version 1.6.0 Using rewritten functions file. Version 1.5.7 Admin Bar fix. Version 1.5.6 Adds some CSS3 for browsers that support it and Christmas Colored menu bar. Version 1.5.5-3 Minor errors. Version 1.5.2 Found some left over code. Version 1.5.0 Is a huge leap forward using the Adventure+ code, a premium version of this theme with more features. Be sure to check out the "theme options" where you can change the link colors and choose from five different menu bars. Version 1.4.6 Added some code for browsers that support it to perfectly stretch the background image. I still recommend that you have a 1920by1080 image for browsers that don't support it. Version 1.4.3 Fixed IE6 stretch images errors. Version 1.4.3 Fixed 404 error page issues, I have done the best I can with the menu bar on IE 6 browser. Version 1.4.2 fixes an issue when you have to many links in the bottom bar where the link would disappear entirely if you had to many. Now the slogan goes first, then the title, and finally the links one by one.
+Version: 1.6.0
 License: GNU General Public License
 License URI: license.txt
 Tags:  white, purple, two-columns, fixed-width, custom-menu, featured-images, custom-background, custom-colors, featured-images, theme-options
@@ -20,6 +20,7 @@ body {
 	margin: 0;
 	padding: 0;
 	width: 100%;
+	color:#111;
 	text-align: center;
 	-o-background-size: cover;
 	-moz-background-size: cover;
@@ -45,7 +46,6 @@ h1, h2, h3, h4, h5, h6 {
 #center {
 	width: 1000px;
 	margin: 50px auto;
-	position: relative;
 }
 .top #center {margin: 100px auto;	}
 #endspacer {
@@ -91,9 +91,9 @@ h1 a:hover{
 	-webkit-border-radius: 6px;
 	border-radius: 6px;
 }
-.eighty .header{border: 3px solid #454141;}
-.eightyfive .header{border: 3px solid #343131;}
-.header img {
+.eighty .wpheader{border: 3px solid #454141;}
+.eightyfive .wpheader{border: 3px solid #343131;}
+.wpheader img {
 	height: auto;
 	max-width: 1000px;
 }
@@ -137,6 +137,7 @@ h1 a:hover{
 html > body #bar{background:#512e36 url(images/overlay.png);}
 html > body #bar li a:hover{background:#0b6492 url(images/overlay.png);}
 .top #bar{top: 0;}
+.admin-bar.top #bar{top: 25px;}
 #bar ul {
 	float: right;
 	margin: 0;
@@ -222,11 +223,14 @@ html > body #bar li a:hover {-webkit-transition: color 0.4s ease-in-out;-moz-tra
 	-webkit-border-radius: 6px;
 	border-radius: 6px;
 	float: left;
+	box-shadow: 0 0 2px #111;
+	-moz-box-shadow: 0 0 2px #111;
+	-webkit-box-shadow: 0 0 2px #111;
 }
 .left-sidebar .content{float:right;}
+.none-sidebar .content{width:974px;}
 .eighty .content{background:url(images/80.png); border: 3px solid #454141;}
 .eightyfive .content{background:url(images/85.png); border: 3px solid #343131;}
-object {z-index: -1}
 .label {
 	padding-top:5px;
 	text-transform:uppercase;
@@ -244,7 +248,7 @@ object {z-index: -1}
 	color:#0b6492;
 }
 .clearz{
-	width: 600px;
+	width: 100%;
 	float: right;
 }
 .tags{ 
@@ -273,8 +277,12 @@ object {z-index: -1}
 	padding: 10px;
 	float: right;
 	text-align: justify;
+	box-shadow: 0 0 1px #111;
+	-moz-box-shadow: 0 0 1px #111;
+	-webkit-box-shadow: 0 0 1px #111;
 }
 .left-sidebar .sidebar{float:left;}
+.none-sidebar .sidebar{display:none;visibility:hidden;opacity:0;}
 .sidebar h1, .sidebar h2, .sidebar h3, .sidebar h4, .sidebar h5, .sidebar h6{
 	text-transform: uppercase;
 	border-bottom: 1px solid #FFF;
@@ -380,7 +388,6 @@ object {z-index: -1}
 #notfooter a:hover {
 	color: #FFF;
 }
-
 /************************************************
 				Comments          
 ************************************************/
@@ -391,6 +398,7 @@ object {z-index: -1}
 	margin: 10px 0 5px 0;
 	padding:5px;
 }
+.none-sidebar .comment{width:964px;}
 .children {list-style: none;}
 #reply-title {
 	text-transform: uppercase;
@@ -449,6 +457,7 @@ object {z-index: -1}
 	margin-bottom:5px;
 	color:#FFF;
 }
+.none-sidebar .trackback, .none-sidebar .pingback {width:964px;}
 .form-allowed-tags {display:none;}
 .trackback a, .pingback a {color:#392026;}
 .trackback a:hover, .pingback a:hover {color:#0b6492;}
@@ -459,6 +468,13 @@ object {z-index: -1}
 .depth-6 {width: 530px;}
 .depth-7 {width: 490px;}
 .depth-8 {width: 450px;}
+.none-sidebar .depth-2 {width: 924px;}
+.none-sidebar .depth-3 {width: 884px;}
+.none-sidebar .depth-4 {width: 844px;}
+.none-sidebar .depth-5 {width: 804px;}
+.none-sidebar .depth-6 {width: 764px;}
+.none-sidebar .depth-7 {width: 724px;}
+.none-sidebar .depth-8 {width: 684px;}
 
 /************************************************
 				Forms          
@@ -527,19 +543,23 @@ blockquote {
 	float:left;
 	width:700px;
 }
+.none-sidebar blockquote {width:934px;}
 blockquote blockquote {
 	background: none;
 	width:670px;
 	border: 1px solid #FFF;
 }
+.none-sidebar blockquote blockquote {width:904px;}
 blockquote blockquote blockquote {
 	background: none;
-	width:630px;
+	width:640px;
 }
+.none-sidebar blockquote blockquote blockquote {width:874px;}
 blockquote blockquote blockquote blockquote {
 	background: none;
-	width:600px;
+	width:610px;
 }
+.none-sidebar blockquote blockquote blockquote blockquote {width:844px;}
 cite { float:right;}
 address {font-weight:bold;}
 pre {
@@ -548,7 +568,9 @@ pre {
 	padding:5px;
 	width:680px;
 	margin: 10px 25px ;
+	overflow:auto;
 }
+.none-sidebar pre {width:914px;}
 .page-link {
 	color: #000;
 	font-weight: bold;
@@ -567,9 +589,13 @@ pre {
 .page-link a:hover {
 	color: #ff4b33;
 }
-html > body img {
+html > body content img {
 	height: auto;
 	max-width: 740px;
+}
+html > body.none-sidebar content img {
+	height: auto;
+	max-width: 974px;
 }
 a img {border: none; }
 .alignleft {float:left;}
@@ -605,6 +631,7 @@ html > body .wp-caption img {
 	height: auto;
 	max-width: 700px;
 }
+html > body.none-sidebar .wp-caption img {height: auto;max-width: 934px;}
 .wp-caption-text{
 	color:#FFF;
 	font-weight:bold;
@@ -686,7 +713,6 @@ table th {
 	border-bottom: 1px transparent;
 }
 table td  a {color:#FFF;}
-
 
 /************************************************
 				Fortitudo Et Honos         
