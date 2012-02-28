@@ -251,8 +251,8 @@ function adventure_theme_options_help() {
 '</ol>' .
 '<p>' . __( 'Remember to click "Save Changes" to save any changes you have made to the theme options.', 'adventure' ) . '</p>' .
 '<p><strong>' . __( 'For more information:', 'adventure' ) . '</strong></p>' .
-'<p>' . __( '<a href="http://schwarttzy.com/web-design/adventure-bound/" target="_blank">Adventure Bound Basic Home Page</a>', 'adventure' ) . '</p>' .
-'<p>' . __( '<a href="http://schwarttzy.com/shop/adventure-bound/" target="_blank">The Premium Adventure Bound Home Page</a>', 'adventure' ) . '</p>' .
+'<p>' . __( '<a href="http://schwarttzy.com/web-design/adventure/" target="_blank">Adventure Home Page</a>', 'adventure' ) . '</p>' .
+'<p>' . __( '<a href="http://schwarttzy.com/shop/adventureplus/" target="_blank">The Adventure PlusHome Page</a>', 'adventure' ) . '</p>' .
 '<p>' . __( '<a href="http://schwarttzy.com/contact-me/" target="_blank">Contact Eric Schwarz</a>', 'adventure' ) . '</p>';
 
 
@@ -671,7 +671,7 @@ function adventure_thank_you() {
     
 <p>Thank you for supporting my WordPress Theme "Adventure."</p>
 <p>I would like to encourage you to regularly check for updates because I spend a lot of time improving and fixing the code so that it just simply keeps working better. You'll find the blead-edge downloads <a href="http://schwarttzy.com/web-design/adventure/" target="_blank">Here</a>.</p>
-<p>If you would really like to show me your support of the Adventure theme or would like to be able to use the additional features below, just quick pick up your own copy by visiting the <a href="http://schwarttzy.com/shop/adventure/" target="_blank">Adventure+ Page</a>.</p>
+<p>If you would really like to show me your support of the Adventure theme or would like to be able to use the additional features below, just quick pick up your own copy by visiting the <a href="http://schwarttzy.com/shop/adventureplus/" target="_blank">Adventure+ Page</a>.</p>
 <ol>
 <li>Menu at top or bottom.</li>
 <li>A Drop down-menu is built in</li>
