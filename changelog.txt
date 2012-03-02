@@ -2,6 +2,15 @@ iFeature Changelog
 
 ****************************
 
+Version 4.0.6 (03-01-12)
+-Additional margin fix for HTML tables.
+-Updated Foundation CSS.
+-Adjusted doctype. 
+-Removed legacy icon margin option.
+-CSS tweaks.
+-Removed HTML comment before doctype call, fixes IE quirks mode issue. 
+-Adjusted image upload preview style.
+
 Version 4.0.5 (02-23-12)
 -Fix for HTML tables.
 -Added align:none option for featured images.
