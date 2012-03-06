@@ -17,7 +17,7 @@
 			<?php do_action( 'history_credits' ); ?>
 			<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'history' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'history' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'history' ), 'History', '<a href="http://generalthem.com/" rel="designer">General Themes</a>' ); ?>
+			<?php printf( __( 'Theme: %1$s by %2$s.', 'history' ), 'History', '<a href="http://generalthemes.com/" rel="designer">General Themes</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- .site-footer .site-footer -->
 
