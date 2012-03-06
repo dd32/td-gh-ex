@@ -17,6 +17,14 @@
 				<?php edit_post_link(__("Edit this entry", "baza_noclegowa"), '<p>', '</p>'); ?>
 
 			</div>
+		
+		<p><?php posts_nav_link(); ?></p>
+		
+		<div class="navigation2">
+			<div class="alignright prev"><?php previous_post_link('%link'); ?></div>
+			<div class="alignleft next"><?php next_post_link('%link'); ?></div>
+		</div>	
+			
 		</div>
 
 	<?php comments_template(); ?>

@@ -19,15 +19,14 @@
 		echo " | $site_description";
 
 	// Add a page number if necessary:
-	if ( $paged >= 2 || $page >= 2 )
-		echo ' | ' . sprintf( __( _("Page", "baza_noclegowa").' %s'), max( $paged, $page ) );
+	if ( $paged >= 2 || $page >= 2 ) echo ' | ' . sprintf( __( 'Page %s', 'baza_noclegowa'), max( $paged, $page ) );
 
 	?></title>
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
-<?php wp_head(); ?>
-<!--[if lte IE 7]><link href="<?php echo get_template_directory_uri(); ?>/ie.css" rel="stylesheet" media="screen" type="text/css" /><![endif]-->
+<?php wp_head(); ?>	
+<!--[if IE 6]><script src="<?php echo get_template_directory_uri(); ?>/js/DD_belatedPNG.js"></script><![endif]-->
 </head>
 <body <?php body_class(); ?>>
 	<div class="all-page">

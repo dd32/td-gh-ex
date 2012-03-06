@@ -15,15 +15,15 @@
 						    <?php the_post_thumbnail(); ?>
 							<?php the_excerpt(); ?>
 						</div>
-						<p class="postmeta"><span class="cats"><?php the_category(', ') ?></span> <span class="tags"><?php the_tags( '', ', ', ''); ?></span>, <span class="comments"><?php comments_popup_link('0', '1', '%'); ?></span> <?php edit_post_link(_('Edit', 'baza_noclegowa')); ?> </p>
+						<p class="postmeta"><span class="cats"><?php the_category(', ') ?></span> <span class="tags"><?php the_tags( '', ', ', ''); ?></span>, <span class="comments"><?php comments_popup_link('0', '1', '%'); ?></span> <?php edit_post_link(__('Edit', 'baza_noclegowa')); ?> </p>
 						<p class="more"><a href="<?php the_permalink() ?>"></a></p>
 			</div>
 
 		<?php endwhile; ?>
 
 		<div class="navigation">
-			<div class="alignright prev"><?php next_posts_link(_('&laquo; Previous posts', 'baza_noclegowa')) ?></div>
-			<div class="alignleft next"><?php previous_posts_link(_('Next posts &raquo;', 'baza_noclegowa')) ?></div>
+			<div class="alignright prev"><?php next_posts_link(__('&laquo; Previous posts', 'baza_noclegowa')) ?></div>
+			<div class="alignleft next"><?php previous_posts_link(__('Next posts &raquo;', 'baza_noclegowa')) ?></div>
 		</div>
 
 	<?php else : ?>

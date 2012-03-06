@@ -4,7 +4,7 @@ Theme URI: http://www.baza-noclegowa.pl/
 Author URI: http://webm.pl/
 Description: Clean, clear and light theme for blogs, corporate websites and big portals as well.
 Author: webm.pl
-Version: 2.0
+Version: 2.1
 Tags: white, black, light, two-columns, fixed-width, editor-style, sticky-post
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -74,6 +74,8 @@ textarea {width: 430px; min-width: 430px; max-width: 430px; height: 100px; margi
 p.form-submit, p.form-allowed-tags {margin-left: 150px;}
 button, input[type="submit"] {height: 24px; padding: 0 15px; border: 1px solid #686e71; background: #cacaca; color: #686e71; font-weight: bold; line-height: 24px; vertical-align: middle; cursor: pointer;}
 
+.post-password-required .entryContent input[type="submit"] {float: none; argin-top: 5px; vertical-align: bottom;}
+.post-password-required .entryContent label { float: none; width: 330px;}
 
 .all-page {
 	margin:0 auto;
@@ -165,33 +167,33 @@ button, input[type="submit"] {height: 24px; padding: 0 15px; border: 1px solid #
 
 
 /* current menu item */
-#mainNav .current-menu-item a, 
-#mainNav .current-menu-item a:hover {background:#04a6c8 url(images/nav_li_bg.png) 0 0 no-repeat;}
-#mainNav .current-menu-item a span,
-#mainNav .current-menu-item a:hover span {background:url(images/nav_li_bg.png) 100% 0 no-repeat;}
+#mainNav .current-menu-item>a, 
+#mainNav .current-menu-item>a:hover {background:#04a6c8 url(images/nav_li_bg.png) 0 0 no-repeat;}
+#mainNav .current-menu-item>a span,
+#mainNav .current-menu-item>a:hover span {background:url(images/nav_li_bg.png) 100% 0 no-repeat;}
 
-#mainNav .current_page_item a, 
-#mainNav .current_page_item a:hover {background:#04a6c8 url(images/nav_li_bg.png) 0 0 no-repeat;}
-#mainNav .current_page_item a span,
-#mainNav .current_page_item  a:hover span {background:url(images/nav_li_bg.png) 100% 0 no-repeat;}				
+#mainNav .current_page_item>a, 
+#mainNav .current_page_item>a:hover {background:#04a6c8 url(images/nav_li_bg.png) 0 0 no-repeat;}
+#mainNav .current_page_item>a span,
+#mainNav .current_page_item>a:hover span {background:url(images/nav_li_bg.png) 100% 0 no-repeat;}				
 				
-ul.menu {list-style: none; margin: 0; padding: 0; font-size: 1.33em;}
-ul.menu>li {float: left; position: relative; overflow: hidden; height: 28px; margin: 0; padding:5px 7px 5px 8px;  background: url("images/mm-separator.png") 0 50% no-repeat; line-height:28px;}
-ul.menu>li:hover {overflow: visible; z-index: 150;}
-ul.menu>li:first-child {background: none;}
-ul.menu>li>a {float: left; height: 28px; padding: 0 0 0 10px; color: #fff; line-height: 28px;}
-ul.menu>li>a span {float:left; height:28px; padding: 0 10px 0 0; color: #fff; line-height: 28px;}
-ul.menu>li>a:hover, ul.menu>li:hover>a {background:#606a6f url("images/nav_li_bg.png") 0 -28px no-repeat;}
-ul.menu>li>a:hover span, ul.menu>li:hover>a span {background:#606a6f url("images/nav_li_bg.png") 100% -28px no-repeat;}
-ul.menu>li.current-menu-item>a, ul.menu>li.current_page_item>a {background: #606a6f url("images/nav_li_bg.png") 0 0 no-repeat;}
-ul.menu>li.current-menu-item>a span, ul.menu>li.current_page_item>a span {background: url("images/nav_li_bg.png") 100% 0 no-repeat;}
+#mainNav ul.menu {list-style: none; margin: 0; padding: 0; font-size: 1.33em;}
+#mainNav ul.menu>li {float: left; position: relative; overflow: hidden; height: 28px; margin: 0; padding:5px 7px 5px 8px;  background: url("images/mm-separator.png") 0 50% no-repeat; line-height:28px;}
+#mainNav ul.menu>li:hover {overflow: visible; z-index: 150;}
+#mainNav ul.menu>li:first-child {background: none;}
+#mainNav ul.menu>li>a {float: left; height: 28px; padding: 0 0 0 10px; color: #fff; line-height: 28px;}
+#mainNav ul.menu>li>a span {float:left; height:28px; padding: 0 10px 0 0; color: #fff; line-height: 28px;}
+#mainNav ul.menu>li>a:hover, #mainNav ul.menu>li:hover>a {background:#606a6f url("images/nav_li_bg.png") 0 -28px no-repeat;}
+#mainNav ul.menu>li>a:hover span, #mainNav ul.menu>li:hover>a span {background:#606a6f url("images/nav_li_bg.png") 100% -28px no-repeat;}
+#mainNav ul.menu>li.current-menu-item>a, #mainNav ul.menu>li.current_page_item>a {background: #606a6f url("images/nav_li_bg.png") 0 0 no-repeat;}
+#mainNav ul.menu>li.current-menu-item>a span, #mainNav ul.menu>li.current_page_item>a span {background: url("images/nav_li_bg.png") 100% 0 no-repeat;}
 
-ul.menu>li ul {position: absolute; left: 0; top: 38px; width: 215px; list-style: none; margin: 0; background: #3a3f42; font-size: 1em;}
-ul.menu>li ul li {float: none; position: relative; overflow: hidden; margin: 0; padding: 0; background: none;}
-ul.menu>li ul li:hover {overflow: visible;}
-ul.menu>li ul li a {display: block; padding: 5px 10px; color: #fff;}
-ul.menu>li ul li a:hover, ul.menu>li ul li:hover>a {background: #606a6f; color: #fff; text-decoration: none;}
-ul.menu>li ul li ul {top: 0; left: 215px; font-size: 1em;}
+#mainNav ul.menu>li ul {position: absolute; left: 0; top: 38px; width: 215px; list-style: none; margin: 0; background: #3a3f42; font-size: 1em;}
+#mainNav ul.menu>li ul li {float: none; position: relative; overflow: hidden; margin: 0; padding: 3px; background: none;}
+#mainNav ul.menu>li ul li:hover {overflow: visible;}
+#mainNav ul.menu>li ul li a {display: block; padding: 0 10px; border-radius: 3px; color: #fff; }
+#mainNav ul.menu>li ul li a:hover, #mainNav ul.menu>li ul li:hover>a {background: #606a6f; color: #fff; text-decoration: none;}
+#mainNav ul.menu>li ul li ul {top: 0; left: 215px; font-size: 1em;}
 				
 /* CONTENT *************/
 
@@ -210,17 +212,13 @@ ul.menu>li ul li ul {top: 0; left: 215px; font-size: 1em;}
 		.sideBar .nav select {width: 220px;}
 			.sideBar .nav .bFrameB {margin-top:0;}
 			.sideBar .nav h3 {
-				background:#e2f2c0 url(images/sidebar_title_bg.gif) no-repeat 100% 100%;
+				background:#e2f2c0;
+				border-radius: 4px;
 				font-size:1.33em;
 				line-height:1.6;
 				margin:10px 0;
+				padding: 0 5px;
 			}
-				.sideBar .nav h3 span {
-					background:url(images/sidebar_title_bg.gif) no-repeat 0 0;
-					display:block;
-					height:28px;
-					padding:0 10px;
-				}
 			.sideBar .nav ul {color:#7cb500; margin:3px 15px 18px;}
 			.sideBar .nav ul ul {margin: 0 15px;}
 				.sideBar .nav li {
@@ -230,6 +228,8 @@ ul.menu>li ul li ul {top: 0; left: 215px; font-size: 1em;}
 				}
 					.sideBar .nav li a {font-size:1.25em;}
 					.sideBar .nav li span {color:#777e81;}
+.sideBar ul li.current-menu-item>a, .sideBar ul li.current_page_item>a, .sideBar ul li.current-cat>a,
+.sideBar ul li.current-menu-item>a:visited, .sideBar ul li.current_page_item>a:visited, .sideBar ul li.current-cat>a:visited {color: #666;}
 			
 	/* content *************/
 	.content {
@@ -309,7 +309,7 @@ ul.commentlist li .comment-body li {overflow: visible; margin: 0 0 0 20px; paddi
 				text-align:center;
 				width:161px;
 			}
-				#bottomNav .btns a:hover {text-decoration:none;}
+			#bottomNav .btns a:hover {text-decoration:none;}
 			#bottomNav .btns .addBtn {background:url(images/btn_green.png) 0 0 no-repeat; padding-left:8px; width:153px;}
 			#bottomNav .btns .promBtn {background:url(images/btn_blue.png) 0 0 no-repeat;}
 
@@ -322,13 +322,14 @@ ul.commentlist li .comment-body li {overflow: visible; margin: 0 0 0 20px; paddi
 	padding:12px 0 10px;
 }
 	#footer .copyright {float:left;}
-	#footer .menu ul  {overflow:hidden;}
-		#footer .menu ul li {
-			border-left:1px solid #c5c9cb;
-			float:left;
-			padding:0 9px;
-			margin-left:-1px;
-		}
+	#footer ul.menu {overflow:hidden;}
+	#footer ul.menu  li {
+		border-left:1px solid #c5c9cb;
+		float:left;
+		padding:0 9px;
+		margin-left:-1px;
+	}
+	#footer ul.menu  li.current_page_item a, #footer ul.menu  li.current-menu-item>a {color: #666;}
 
 /* Comment Closed */
 p.nocomments {	
@@ -389,7 +390,7 @@ s {color: #000;}
 	font-size: 12px;
 }
 .bypostauthor {font-size: 12px;}
-.clear {clear: both;}
+.clear {clear: both; height: 0; overflow: hidden;}
 img {margin: 0; max-width: 700px; height: auto;}
 .gallery-caption {
 	color: #888;
@@ -452,27 +453,21 @@ text-align:center;
 
 
 /*search form*/
-		form.searchForm {
-			margin: 0;
-			padding:14px 5px 14px 5px;
-			overflow:hidden;
-			background: none;
-			border: none;
-		}	
-			.searchForm p {
-				border-top:#909090 1px solid;
-			}
-			.searchForm input { float:left; width: auto; height: auto; margin: 0; border: none; padding: 0;}
-			.searchForm input.field {
-				border-color:#909090;
-				border-style:solid;
-				border-width:0 0 0 1px;
-				padding:3px 3px;
-				height:15px;
-				width:180px; 
-				color:#575757;
-				background-color:#fff;
-			}
+form.searchForm {overflow:hidden; margin: 0; padding:14px 5px 14px 5px;	background: none; border: none;}	
+.searchForm p {border-top:#909090 1px solid;}
+.searchForm input { float:left; width: auto; height: auto; margin: 0; border: none; padding: 0;}
+.searchForm input.field {
+	border-color:#909090;
+	border-style:solid;
+	border-width:0 0 0 1px;
+	padding:3px 3px;
+	height:15px;
+	width:180px; 
+	color:#575757;
+	background-color:#fff;
+}
+.content form.searchForm {width: 320px;}
+.content form.searchForm input.field {width: 290px;}
 .entryContent h1 {font-size:2.2em;}
 .entryContent ul {margin: 5px 0 7px 25px; list-style-type:disc;}
 .entryContent ol {margin: 5px 0 7px 25px; list-style-type:decimal;}
@@ -579,7 +574,10 @@ p.postmeta span.cats {background-position: 3px -42px;}
 p.postmeta span.comments {background-position: 3px -63px;}
 p.postmeta span.comments span {padding: 0; background: none;}
 p.postmeta span.tags {background-position: 0 -144px;}
-p.more a {float: right; height: 20px; padding: 0 25px 0 0; background: url("images/icons.png") no-repeat 100% -100px; line-height: 20px; }
+p.more a {float: right; height: 20px; padding: 0 25px 0 0; background: url("images/icons.png") no-repeat 100% -160px; line-height: 20px; }
 
 .navigation .next a {float: left; overflow: hidden; width: 20px; height: 20px; padding: 0; background: url("images/icons.png") no-repeat 0 -120px; line-height: 20px; text-indent: -50em;}
 .navigation .prev a {float: right; overflow: hidden; width: 20px; height: 20px; padding: 0; background: url("images/icons.png") no-repeat 100% -100px; line-height: 20px; text-indent: -50em;}
+
+.navigation2 .next a {float: left;}
+.navigation2 .prev a {float: right;}
