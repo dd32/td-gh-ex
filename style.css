@@ -2,15 +2,13 @@
  * Theme Name: Ascetica
  * Theme URI: http://themehybrid.com/themes/ascetica
  * Description: Simple portfolio and blog theme with responsive layout, sticky posts slider, and a widget for presenting your work. The theme settings include options for uploading favicon and logo images, color picker, typography settings, and a nice selection of Google fonts.
- * Version: 0.1.5
+ * Version: 0.1.6
  * Author: Galin Simeonov
  * Author URI: http://alienwp.com
  * Tags: flexible-width, theme-options, threaded-comments, microformats, translation-ready, rtl-language-support, two-columns, three-columns, right-sidebar, sticky-post, custom-background, featured-images
  * License: GNU General Public License v2.0
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  *
- * Copyright (c) 2011 - 2012 Galin Simeonov.  All rights reserved.
- * http://alienwp.com
  */
 
 /* Normalize
@@ -778,9 +776,9 @@ input[type="submit"]:hover { cursor: pointer }
 	color: #bbb;
 	line-height: 1.692307em;
 	word-spacing: 2px;
-	margin: 0 0 1.3em 0;	
+	margin: 0 0 1.5em 0;	
 }
-.singular .byline { margin-bottom: 1.7em; }
+.singular .byline { margin-bottom: 2.1em; }
 .byline a { color: #999; }
 .byline a:hover { color: #000; }
 .author, .published, .category, .edit {
@@ -869,7 +867,7 @@ input[type="submit"]:hover { cursor: pointer }
 .pagination.loop-pagination {
 	float: right;
 	clear: both;
-	margin-top: 7px;
+	margin-top: 15px;
 }
 .pagination .page-numbers, .comment-navigation .page-numbers {
 	display: inline-block;
@@ -986,6 +984,10 @@ input[type="submit"]:hover { cursor: pointer }
 	list-style: none;
 	margin: 0 0 25px 0;
 }
+.comment-list .comment-content ol {
+	margin-left: 2.8em;
+	list-style-type: decimal;
+}
 .comment-list { margin-bottom: 40px; }
 .comment-list li {
 	padding: 20px 0 0 0;
@@ -1039,6 +1041,9 @@ input[type="submit"]:hover { cursor: pointer }
 }
 .comment-list .comment-content ul, .comment-list .comment-content ol {
 	margin-bottom: 1.692307em;
+}
+.comment-list .comment-content li ul, .comment-list .comment-content li ol {
+	margin-bottom: 0.3em;
 }
 
 /* Comment form 

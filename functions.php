@@ -2,10 +2,7 @@
 /**
  * @package Ascetica
  * @subpackage Functions
- * @version 0.1.5
- * @author Galin Simeonov
- * @copyright Copyright (c) 2011, Galin Simeonov
- * @link http://alienwp.com
+ * @version 0.1.6
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
