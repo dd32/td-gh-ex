@@ -4,6 +4,16 @@ http://www.khairul-syahir.com
 
 CHANGELOG
 
+Version 1.6.2
+	* Fixed XSS vulnerability (thanks to Kenneth D for the notification)
+	* Fixed incorrect slider background image width when the content column has custom width
+	* Fixed Russian translation for singular form of comments and pings count
+	* Further reduced the z-index for multiple elements to further reduce the chances they appear above lightboxes
+	* Reduced the excerpt length in slider to 35 words, when set to display as background image and excerpt style
+	* jQuery Tools library (v1.2.5) is now included in the theme and loaded from the site rather than the (unreliable) CDN
+	* Added action hooks to the homepage panes
+	* Removed the nonexistent generic post image from the markup
+
 Version 1.6.1
 	* Replaced the follow link in Graphene Twitter widget with Twitter's follow button
 	* Fixed the tag archive page not properly listing all posts that belongs to that tag

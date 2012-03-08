@@ -2,7 +2,7 @@
 Theme Name: Graphene
 Theme URI: http://www.khairul-syahir.com/wordpress-dev/graphene-theme
 Description: The Graphene theme for WordPress is a stylish, neat, and tight WordPress theme supporting configurable columns layout and columns widths options. It includes 4 predefined widget areas, with the ability to add countless more widget areas, as well as determine the number of columns to display in the footer widget area. It includes action hooks for unprecendeted customisability, and jQuery slider for your featured posts. Compatibility support has been added for the bbPress plugin. It has built-in Twitter widget, allows for customisable colours, header and background, as well as built-in AdSense placement and social sharing buttons. It also supports custom menu with drop-down navigation, and threaded comments of up to 10 levels deep! The codes are written so that you can easily override or add functionality to the theme by using your own child theme without altering the parent theme's code. Seriously, there's too many features for this theme to describe them all here! This theme has been tested and confirmed compatible with IE7 and above, Mozilla Firefox, Google Chrome, Opera, and Safari. The theme currently has been translated into more than 25 languages, and fully supports right-to-left languages. See the <a href="http://www.khairul-syahir.com/wordpress-dev/graphene-theme#changelog">theme's changelog</a>.
-Version: 1.6.1
+Version: 1.6.2
 Author: Syahir Hakim
 Author URI: http://www.khairul-syahir.com
 Tags: black, blue, white, one-column, two-columns, three-columns, right-sidebar, left-sidebar, fixed-width, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, rtl-language-support, post-formats, featured-image-header, featured-images, full-width-template, microformats
@@ -353,7 +353,7 @@ fieldset {
 .container_16 .pull_15 {
     left: -900px
 }
-/* `Clear Floated Elements
+/* Clear Floated Elements
 ----------------------------------------------------------------------------------------------------*/
 .clear {
     clear: both;
@@ -516,7 +516,7 @@ a:hover {
 }
 #header .sidebar-wrap {
 	position: absolute;
-	z-index: 1000;
+	z-index: 50;
 }
 .sidebar-wrap #searchsubmit {
 	float: right;
@@ -556,7 +556,7 @@ a:hover {
 	padding: 0;
 	list-style: none; 
 	line-height: 1;
-	z-index: 200;
+	z-index: 20;
 }
 #nav li:hover ul ul,
 #nav li:hover ul ul ul,
@@ -588,7 +588,7 @@ a:hover {
 #header-menu-wrap {
 	position: relative;	
 	background: url(images/sprite_h.png) left -3px repeat-x #101010;
-	z-index: 190;
+	z-index: 15;
 }
 #header-menu,
 #secondary-menu {
@@ -866,7 +866,7 @@ a:hover {
 	bottom: 0;
 	width: 100%;
 	margin: 0;
-	z-index: 110;
+	z-index: 10;
 }
 .slider_post .permalink-overlay {
 	display: block;
@@ -875,7 +875,7 @@ a:hover {
 	top: 0;
 	width: 100%;
 	height: 100%;
-	z-index: 100;
+	z-index: 5;
 }
 .slider_post .permalink-overlay span {
 	display: none;
@@ -1849,7 +1849,7 @@ h3.author-post-list {
 }
 #respond {
 	left: 0;
-	z-index: 200;
+	z-index: 10;
 	min-width: 100%;
 	margin-bottom: 20px;
 }

@@ -43,7 +43,7 @@ add_action( 'wp_enqueue_scripts', 'graphene_enqueue_styles' );
 function graphene_register_scripts(){
 	global $graphene_settings;
 	
-	wp_register_script( 'graphene-jquery-tools', 'http://cdn.jquerytools.org/1.2.5/all/jquery.tools.min.js', array( 'jquery' ), '', true);
+	wp_register_script( 'graphene-jquery-tools', get_template_directory_uri() . '/js/jquery-tools-1.2.5.min.js', array( 'jquery' ), '', true);
 	
 	// Register scripts for older versions of WordPress
 	if ( ! graphene_is_wp_version( '3.3' ) ){

@@ -22,7 +22,7 @@ get_header();
 
 <h1 class="page-title">
     <?php
-        printf(__('Searching for: <span>%s</span>', 'graphene'), $search_term);
+        printf(__('Searching for: <span>%s</span>', 'graphene'), $search_term_q );
     ?>
 </h1>
 
@@ -42,7 +42,7 @@ get_header();
 	<h2><?php _e('Automated search', 'graphene'); ?></h2>   
         <div class="entry-content clearfix">
             <p>
-            <?php printf(__('Searching for the terms <strong>%s</strong> ...', 'graphene'), $search_term); ?>
+            <?php printf(__('Searching for the terms <strong>%s</strong> ...', 'graphene'), $search_term_q ); ?>
             </p>
         </div>
     </div>

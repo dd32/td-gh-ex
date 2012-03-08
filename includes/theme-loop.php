@@ -236,7 +236,8 @@ if ( ! function_exists( 'graphene_get_post_image' ) ) :
 		
 		/* Returns generic image if there is no image to show */
 		if ( empty( $images ) && $context != 'excerpt' && ! $urlonly ) {
-			$html .= apply_filters( 'graphene_generic_slider_img', '<img alt="" src="'.get_template_directory_uri().'/images/img_slider_generic.png" />' );
+			$html .= apply_filters( 'graphene_generic_slider_img', '' ); // For backward compatibility
+			$html .= apply_filters( 'graphene_generic_post_img', '' );
 		}
 		
 		/* Build the <img> tag if there is an image */

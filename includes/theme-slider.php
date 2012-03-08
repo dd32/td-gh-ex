@@ -76,6 +76,8 @@ function graphene_slider(){
 	global $graphene_settings, $in_slider;
 	
 	$in_slider = true;
+	if ( $graphene_settings['slider_display_style'] == 'bgimage-excerpt' )
+		graphene_set_excerpt_length( 35 );
 	
 	do_action( 'graphene_before_slider' ); ?>
     <?php 
@@ -167,6 +169,8 @@ function graphene_slider(){
     </div>
     <?php
 	do_action( 'graphene_after_slider' );
+	
+	graphene_reset_excerpt_length();
 	$in_slider = false;
 }
 /* Create an intermediate function that controls where the slider should be displayed */

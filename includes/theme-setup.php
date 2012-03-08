@@ -56,13 +56,26 @@ if ( ! function_exists( 'graphene_setup' ) ):
  * support post thumbnails.
  */
 function graphene_setup() {
-	global $graphene_settings;
+	global $graphene_settings, $graphene_defaults;
 		
 	// Add custom image sizes selectively
 	if ( $graphene_settings['slider_display_style'] == 'bgimage-excerpt' ) {
 		$height = ( $graphene_settings['slider_height']) ? $graphene_settings['slider_height'] : 240;
-		$frontpage_id = get_option( 'page_on_front' );
-		$slider_width = graphene_grid_width( '', 16, 11, 8, $frontpage_id );
+		$frontpage_id = ( get_option( 'show_on_front' ) == 'posts' ) ? NULL : get_option( 'page_on_front' );
+		$column_mode = graphene_column_mode( $frontpage_id );
+		
+		if ( strpos( $column_mode, 'two-col' ) === 0 )
+			$column_mode = 'two-col';
+		elseif ( strpos( $column_mode, 'three-col' ) === 0 )
+			$column_mode = 'three-col';
+		else 
+			$column_mode = NULL;
+			
+		if ( $column_mode )
+			$slider_width = $graphene_settings['column_width'][$column_mode]['content'];
+		else 
+			$slider_width = graphene_grid_width( '', 16, 11, 8, $frontpage_id );
+		
 		add_image_size( 'graphene_slider', apply_filters( 'graphene_slider_image_width', $slider_width ), $height, true);
 	}
 	if (get_option( 'show_on_front' ) == 'page' && !$graphene_settings['disable_homepage_panes']) {

@@ -48,7 +48,7 @@ class Graphene_Widget_Twitter extends WP_Widget{
             	<li><img src="<?php echo get_template_directory_uri(); ?>/images/ajax-loader.gif" width="16" height="16" alt="" /> <?php _e( 'Loading tweets...', 'graphene' ); ?></li>
             </ul>
             <p id="tweetfollow">
-            	<a href="https://twitter.com/<?php echo $twitter_username; ?>" class="twitter-follow-button" <?php echo $follower_count_attr; ?> data-width="100%" data-align="right">Follow @<?php echo $twitter_username; ?></a>
+            	<a href="https://twitter.com/<?php echo $twitter_username; ?>" class="twitter-follow-button" <?php echo $follower_count_attr; ?> data-width="100%" data-align="right"><?php printf( __( 'Follow %s', 'graphene' ), '@' . $twitter_username ); ?></a>
 			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
             </p>
             

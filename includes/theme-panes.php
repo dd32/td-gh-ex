@@ -57,6 +57,8 @@ function graphene_homepage_panes(){
 	$count = 0;
 	?>
     
+    <?php do_action( 'graphene_before_homepage_panes' ); ?>
+    
     <div class="homepage_panes">
 	
 	<?php while ( $panes->have_posts() ) : $panes->the_post(); 
@@ -69,6 +71,7 @@ function graphene_homepage_panes(){
 		}
 	?>
 		<div <?php graphene_grid( 'homepage_pane clearfix', 8, 5, 4, $alpha, $omega ); ?> id="homepage-pane-<?php the_ID(); ?>">
+        	<?php do_action( 'graphene_homepage_pane_top' ); ?>
         
         	<a href="<?php the_permalink(); ?>" title="<?php printf( __( 'Permalink to %s', 'graphene' ), esc_attr( get_the_title() ) ); ?>">
         	<?php /* Get the post's image */ 
@@ -85,18 +88,26 @@ function graphene_homepage_panes(){
             
             <?php /* The post excerpt */ ?>
             <div class="post-excerpt">
-            	<?php the_excerpt(); ?>
+            	<?php 
+					the_excerpt();
+					
+					do_action( 'graphene_homepage_pane_content' );
+				?>
             </div>
             
             <?php /* Read more button */ ?>
             <p class="post-comments">
             	<a href="<?php the_permalink(); ?>" title="<?php printf( __( 'Permalink to %s', 'graphene' ), esc_attr( get_the_title() ) ); ?>" class="block-button"><?php _e( 'Read more', 'graphene' ); ?></a>
             </p>
+            
+            <?php do_action( 'graphene_homepage_pane_bottom' ); ?>
+            
         </div>
     <?php endwhile; wp_reset_postdata(); ?>
 	</div>
 	
 	<?php
+	do_action( 'graphene_after_homepage_panes' );
 }
 
 /* Helper function to control when the homepage panes should be displayed. */
