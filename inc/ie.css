@@ -1,0 +1,17 @@
+/*
+Theme Name: Skylark
+Theme URI: http://blankthemes.com/skylark/
+*/
+
+/* Begin slider styling. Be careful what you adjust in this section. */
+
+
+#sliderwrapper{
+	width:920px;
+	margin:0 auto;
+	clear:left;
+	height:364px;
+	top:49px !important;  /* adjusted for IE 7 */
+	display:block;
+	position:relative;
+}

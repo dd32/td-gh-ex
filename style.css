@@ -1,0 +1,1204 @@
+/*
+Theme Name: Skylark
+Theme URI: http://blankthemes.com/skylark/
+Author: Blank Themes
+Author URI: http://blankthemes.com/
+Description: Skylark is the perfect starter theme for portfolio / business sites
+Version: 1.0
+License: GNU General Public License
+License URI: license.txt
+Tags: white, blue, fixed-width, custom-menu, translation-ready
+*/
+
+
+/* =Reset
+-------------------------------------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+html {
+	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+	overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
+	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+}
+body {
+	font-family:"Droid Sans", helvetica, arial, tahoma, sans-serif;
+	color:#7d7d7d;
+	line-height:22px;
+	background:#141414;
+	font-size:14px;
+	}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+table { /* tables still need 'cellspacing="0"' in the markup */
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	font-weight: normal;
+	text-align: left;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+a:focus {
+	outline: thin dotted;
+}
+a:hover,
+a:active { /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
+	outline: 0;
+}
+a img {
+	border: 0;
+}
+
+
+/* =Global
+----------------------------------------------- */
+
+
+button,
+input,
+select,
+textarea {
+	color: #404040;
+	font-family: sans-serif;
+	font-size: 16px;
+	font-size: 1.6rem;
+	line-height: 1.5;
+}
+
+/* Headings */
+h1,h2,h3,h4,h5,h6 {
+	color:#000;
+}
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+/* Text elements */
+p {
+	margin-bottom: 1.5em;
+}
+ul, ol {
+	margin: 0 0 1.5em 3em;
+}
+ul {
+	list-style: disc;
+}
+ol {
+	list-style: decimal;
+}
+ul ul, ol ol, ul ol, ol ul {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+dt {
+	font-weight: bold;
+}
+dd {
+	margin: 0 1.5em 1.5em;
+}
+b, strong {
+	font-weight: bold;
+}
+dfn, cite, em, i {
+	font-style: italic;
+}
+blockquote {
+	margin: 0 1.5em;
+}
+address {
+	margin: 0 0 1.5em;
+}
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 15px;
+	font-size: 1.5rem;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	padding: 1.6em;
+	overflow: auto;
+	max-width: 100%;
+}
+code, kbd, tt, var {
+	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+abbr, acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+mark, ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+sup,
+sub {
+	font-size: 75%;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	bottom: 1ex;
+}
+sub {
+	top: .5ex;
+}
+small {
+	font-size: 75%;
+}
+big {
+	font-size: 125%;
+}
+figure {
+	margin: 0;
+}
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+th {
+	font-weight: bold;
+}
+
+input,
+select,
+textarea {
+	font-size: 100%; /* Corrects font size not being inherited in all browsers */
+	margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+	vertical-align: baseline; /* Improves appearance and consistency in all browsers */
+	*vertical-align: middle; /* Improves appearance and consistency in all browsers */
+	background: #f3f3f3;
+	border: 1px solid #dcdcdc;
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
+	-moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
+	-webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
+	padding:6px;
+}
+input:focus,
+select:focus,
+textarea:focus {
+	background:#fff;
+}
+button,
+input {
+	line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
+	*overflow: visible;  /* Corrects inner spacing displayed oddly in IE6/7 */
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 1px solid #ccc;
+	border-color: #ccc #ccc #bbb #ccc;
+	border-radius: 3px;
+	background: #fafafa; /* Old browsers */
+	background: -moz-linear-gradient(top,  #fafafa 60%, #e6e6e6 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(60%,#fafafa), color-stop(100%,#e6e6e6)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #fafafa 60%,#e6e6e6 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #fafafa 60%,#e6e6e6 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #fafafa 60%,#e6e6e6 100%); /* IE10+ */
+	background: linear-gradient(top,  #fafafa 60%,#e6e6e6 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#e6e6e6',GradientType=0 ); /* IE6-9 */
+	box-shadow: inset 0 2px 1px #fff;
+	color: rgba(0,0,0,.8);
+	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
+	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
+	font-size: 12px;
+	font-size: 1.4rem;
+	line-height: 2;
+	padding:12px;
+	text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+button:hover,
+html input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+	background: #f5f5f5; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f5f5f5 60%, #dcdcdc 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(60%,#f5f5f5), color-stop(100%,#dcdcdc)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #f5f5f5 60%,#dcdcdc 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #f5f5f5 60%,#dcdcdc 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #f5f5f5 60%,#dcdcdc 100%); /* IE10+ */
+	background: linear-gradient(top,  #f5f5f5 60%,#dcdcdc 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#dcdcdc',GradientType=0 ); /* IE6-9 */
+	border-color: #bbb #bbb #aaa #bbb;
+}
+button:focus,
+html input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+button:active,
+html input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+	border-color: #aaa #bbb #bbb #bbb;
+	box-shadow: inset 0 2px 3px rgba(0,0,0,.15);
+	box-shadow: inset 0 2px 2px rgba(0,0,0,.15);
+}
+input[type="checkbox"],
+input[type="radio"] {
+	box-sizing: border-box; /* Addresses box sizing set to content-box in IE8/9 */
+	padding: 0; /* Addresses excess padding in IE8/9 */
+}
+input[type="search"] {
+	-webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
+	box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+	-webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+	border: 0;
+	padding: 0;
+}
+input[type=text],
+textarea {
+	color: #666;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+input[type=text]:focus,
+textarea:focus {
+	color: #111;
+}
+input[type=text] {
+	padding: 3px;
+}
+textarea {
+	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
+	padding-left: 3px;
+	vertical-align: top; /* Improves readability and alignment in all browsers */
+	width: 98%;
+}
+
+/* Links */
+a{color:#CC6A22; text-decoration:none;}
+
+a:hover{text-decoration: none; color:#000;}
+
+a img{border:none;}
+
+/* Alignment */
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 0 auto;
+}
+
+/* Text meant only for screen readers */
+.assistive-text {
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+}
+
+
+/* container */
+
+
+#page{
+	width:100%; 
+	background:#fff; 
+	overflow:hidden;
+}
+
+
+#main{
+	width:920px;
+	margin: 0 auto 20px;
+	padding:0;
+	overflow:hidden;
+}
+
+	
+/* header */
+
+#frontpageheader {
+  	width:100%;
+	background:#fff url(images/header.png) top left repeat-x;
+	height:462px;
+	clear:left;
+	border-top:4px solid #4286cc;
+	overflow:hidden;
+	}
+#header{
+	width:100%;
+	height:72px;
+	background:#1d5ea0 url(images/header.png) repeat-x;
+	clear:left;
+	border-top:4px solid #4286cc;
+	}
+
+.header-wrapper{
+	width:920px;
+	margin:0 auto;
+}
+
+#logo{
+	float:left;
+	padding:0;
+}
+
+
+
+#sitetitle {
+	font:normal 30px "Maven Pro", helvetica neue, helvetica, arial, times;
+	color: #fff;
+	text-shadow:1px 1px #527ca7;
+	float:left;
+}
+#sitetitle a{
+	color: #fff;
+	text-decoration: none;
+	border-bottom:none;
+	top:14px;
+	position:relative;
+	margin-right:14px;
+	letter-spacing:-1px;
+}
+#sitetitle a:hover{
+	filter:alpha(opacity=90);
+	-moz-opacity:0.9;
+	-khtml-opacity: 0.9;
+	opacity: 0.9;
+}
+#sitetitle a:active{
+	top:15px;
+}
+
+#sitedesc {
+	font:normal 13px "droid sans", arial, times !important;
+	position:relative;
+	top:25px;
+	color:#A7D2FF !important;
+	float:left;
+}
+
+/* Begin slider styling. Be careful what you adjust in this section. */
+
+#sliderwrapper{
+	width:920px;
+	margin:0 auto;
+	clear:left;
+	height:364px;
+	top:64px;
+	display:block;
+	position:relative;
+}
+
+#slider div{width:920px; height:364px; }
+
+#slider .header-post-thumb img{
+	width:504px;
+	float:left;
+	border:none;
+	padding:0 !important;
+}
+
+#slider .slider-content{
+	width:390px;
+	float:right;
+	color:#E1F0FF;
+}	
+
+#slider .slider-content h2.slider-title{
+	font-size:20px;
+	margin-bottom:12px;
+}
+
+#slider .slider-content h2.slider-title a{
+	color:#fff !important;
+}
+
+#slider .more-link{
+	background:url(images/sliderreadmore.png) no-repeat;
+	text-align:center;
+	color:#fff;
+	width:160px;
+	height:34px;
+	font-size:14px;
+	display:block;
+	line-height:34px;
+	font-weight:normal;
+	text-shadow:1px 1px #3e79b9;
+	margin-top:14px;
+}
+
+#slider .more-link:hover{
+	filter:alpha(opacity=80);
+	-moz-opacity:0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;
+}
+
+.bx-prev{
+	position:absolute;
+	top:150px;
+	left:-40px;
+	width:24px;
+	height:32px;
+	background:url(images/prev.png);
+	text-indent:-9999px;
+}
+
+.bx-next{
+	position:absolute;
+	top:150px;
+	right:-40px;
+	width:24px;
+	height:32px;
+	background:url(images/next.png);
+	text-indent:-9999px;
+}
+
+/* End slider styling */
+
+
+
+/* =Menu
+----------------------------------------------- */
+
+.main-navigation {
+	display: block;
+	float: right;
+	margin: 0;
+	padding:15px 0 0 0;
+	font:normal 13px "helvetica neue", helvetica, arial;
+}
+.main-navigation ul {
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
+.main-navigation li {
+	float: left;
+	margin:0 0 0 20px;
+	position: relative;
+}
+.main-navigation a {
+	color: #fff;
+	display:block;
+	padding: 10px 0;
+	text-decoration: none;
+}
+.main-navigation a:focus {
+	padding: 11px 0 10px 0;
+}
+.main-navigation ul ul {
+	background:#4188d4;
+	display: none;
+	float: left;
+	position: absolute;
+		top: 30px;
+		left: 0;
+	z-index: 99999;
+}
+.main-navigation ul ul ul {
+	left: 100%;
+	top: 0;
+}
+.main-navigation ul ul a {
+	width: 200px;
+}
+.main-navigation ul ul a:focus {
+	padding: 10px 0 10px 0;
+}
+.main-navigation ul ul li {
+}
+.main-navigation li:hover > a {
+	color: #E3F0FF;
+}
+.main-navigation ul ul :hover > a {
+	color: #E3F0FF;
+}
+.main-navigation ul ul a:hover {
+}
+.main-navigation ul li:hover > ul {
+	display: block;
+}
+.main-navigation li.current_page_item a,
+.main-navigation li.current-menu-item a {
+	color: #E3F0FF;
+}
+
+
+
+
+/* =Content
+----------------------------------------------- */
+
+#primary{
+	width:670px;
+	margin:0;
+	float:left;
+}
+
+.sticky {
+}
+.post {
+	margin:0 0 20px 0;
+	padding:0 0 20px 0;
+	line-height:20px;
+	border-bottom:1px solid #e3e3e3;
+	}
+	
+.pagetitle{
+	font:normal 18px "helvetica neue", helvetica, arial, times;
+	margin:0 0 20px 0;
+	color:#777;
+	}
+	
+#content h1, #middle h1{
+	font:bold 22px "helvetica neue", helvetica, arial, times;
+	}
+	
+#content h1 a, #middle h1 a{
+	color: #000;
+	text-decoration: none;
+	}
+	
+#content h1 a:hover,#middle h1 a:hover{
+	color: #777;
+	text-decoration: none;
+	}
+	
+#content h2{
+	font:normal 12px "arial", times;
+	padding:4px 0 15px 0;
+	margin:0;
+	color:#505050;
+	}
+.entry, .entry-summary, .entry-content{
+	margin:14px 0 0 0;
+}
+.hentry {
+	margin: 0 0 1.5em;
+}
+.entry-meta {
+	clear: both;
+}
+.byline {
+	display: none;
+}
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+.post .wp-post-image{margin:14px 0;}
+
+/* Homepage Latest Posts */
+
+#latestposts{
+	width:100%;
+	border-top:1px solid #e9e9e9;
+	margin:0;
+	padding:0;
+	}
+
+.latestpostswrap{
+	width:920px;
+	margin:0 auto;
+	overflow:hidden;
+}
+
+#latestposts h2{
+	font:normal 13px "helvetica neue", helvetica, arial, times;
+	padding:0;
+	}
+	
+#latestposts h2 a{
+	color:#333;
+	}
+	
+#latestposts .posts1{
+	margin:0 21px 0 0;
+	float:left;
+	}
+	
+#latestposts .posts2{
+	margin:0 21px 0 0;
+	float:left;
+	}
+	
+#latestposts .posts3{
+	margin:0;
+	float:left;
+	}
+	
+#latestposts .posts4{
+	margin:0 6px 0 0;
+	float:right;
+	}
+
+	
+#latestposts .posts1, #latestposts .posts2, #latestposts .posts3, #latestposts .posts4{
+	width:213px;
+	}
+
+#latestposts .posts1 p, #latestposts .posts2 p, #latestposts .posts3 p, #latestposts .posts4 p{
+	font-size:13px;
+	text-align:left;
+	}
+
+#latestposts span{
+	font-size:12px;
+	color:#8A8A8A;
+	border-bottom:1px solid #e2e2e2;
+	width:100%;
+	display:block;
+}
+#latestposts span a{
+	font-size:12px;
+	color:#8A8A8A;
+}
+#latestposts span a:hover{
+	font-size:12px;
+	color:#333;
+}
+
+/* Homepage Latest Work */
+
+#latestwork{
+	width:100%;
+	border-top:1px solid #e9e9e9;
+	padding:0;
+	}
+
+.latestworkswrap{
+	width:920px;
+	margin:0 auto;
+	overflow:hidden;
+}
+
+#latestwork h2{
+	font:normal 13px "helvetica neue", helvetica, arial, times;
+	}
+	
+#latestwork h2 a{
+	color:#333;
+	font-weight:bold;
+	}
+
+	
+#latestwork .posts1{
+	margin:0 21px 0 0;
+	float:left;
+	}
+	
+#latestwork .posts2{
+	margin:0 21px 0 0;
+	float:left;
+	}
+	
+#latestwork .posts3{
+	margin:0;
+	float:left;
+	}
+	
+#latestwork .posts4{
+	margin:0 6px 0 0;
+	float:right;
+	}
+	
+#latestwork .posts1, #latestwork .posts2, #latestwork .posts3, #latestwork .posts4{
+	width:213px;
+	padding-bottom:20px;
+	}
+
+#latestwork .posts1 p, #latestwork .posts2 p, #latestwork .posts3 p, #latestwork .posts4 p{
+	font-size:13px;
+	text-align:left;
+	}
+	
+.latestdescription{
+	margin:0;
+	padding:20px 0;
+}
+
+.latestdescription h2{
+	font-size:18px !important;
+}
+.latestdescription p{
+	font-size:13px;
+	margin:0;
+	padding:0;
+}
+
+
+#middle{overflow:hidden;}
+
+.action p{
+	font:normal 20px "georgia", helvetica, arial !important;
+	text-align:center;
+	color:#2A2A2A;
+	font-style:italic !important;
+}
+.action{width:920px; margin:0 auto; padding:20px 0 0 0; line-height:18px !important;}
+
+/* site title */
+
+.site-title{ width:920px; margin:20px auto; padding:0 0 20px 0; border-bottom:1px solid #f0f0f0; overflow:hidden; clear:both;}
+.site-title h1{float:left; font:normal 30px "helvetica neue", helvetica, arial !important;}
+
+/* Filter Section */
+
+#filter{width:100%; overflow:hidden; clear:all; margin:0 0 18px 0; padding:0; font-size:12px; height: 55px; border-bottom:1px solid #f0f0f0;}
+
+#filter li{list-style-type:none; float:left; margin:14px 0 0 0;}
+#filter li a{margin:0 6px 0 0;}
+
+
+#filter .current a{background:#6aa3df; padding:2px 10px; display:block; color:#fff;}
+
+#filter .current a:hover{background:#ddd; display:block; color:#777;}
+
+#filter li a{background:#ddd; padding:2px 10px; display:block; color:#777;}
+#filter li a:hover{background:#6aa3df; display:block; color:#fff;}
+
+#filter li a:active{margin-top:1px;}
+
+/* Portfolio section four column */
+
+#fourcolumnportfolio{width:100%; overflow:hidden; clear:all;}
+
+#fourcolumnportfolio h1.portfolio-title{font:bold 16px "helvetica neue", helvetica, arial !important; margin:8px 0 4px 0;}
+
+
+#fourcolumnportfolio #portfolio{margin:0; padding:0;}
+
+#fourcolumnportfolio #portfolio li{list-style-type:none; float:left;}
+
+#fourcolumnportfolio #portfolio li{width:210px; margin:0 20px 40px 0;}
+
+
+	
+/* Portfolio section three column */
+
+#threecolumnportfolio{width:100%; overflow:hidden; clear:all;}
+
+#threecolumnportfolio h1.portfolio-title{font:bold 16px "helvetica neue", helvetica, arial !important; margin:8px 0 4px 0;}
+
+
+#threecolumnportfolio #portfolio{margin:0; padding:0;}
+
+#threecolumnportfolio #portfolio li{list-style-type:none; float:left;}
+
+#threecolumnportfolio #portfolio li{width:280px; height:350px; margin:0 22px 25px 0;}
+
+
+/* Portfolio section two column */
+
+#twocolumnportfolio{width:100%; overflow:hidden;}
+
+#twocolumnportfolio h1.portfolio-title{font:bold 16px "helvetica neue", helvetica, arial !important; margin:8px 0 4px 0;}
+
+
+#twocolumnportfolio #portfolio{margin:0; padding:0;}
+
+#twocolumnportfolio #portfolio li{list-style-type:none; float:left; width:440px; height:430px; margin:0 18px 25px 0;}
+
+
+
+
+
+.port-content{width:960px; padding:20px 0; margin: 0 0 20px 0; overflow:hidden;}
+
+.port-content h1{
+	font:bold 22px "helvetica neue", helvetica, arial, times;
+	margin:0 0 14px 0;
+	}
+	
+.port-entry{
+	width:212px;
+	float:left;
+	}
+
+.featured-image{
+	width:712px;
+	float:right;
+	margin-right:6px;
+	}
+
+.featured-image iframe{
+	width:712px;
+	height:476px;
+}
+
+
+
+
+
+
+/* =Asides
+----------------------------------------------- */
+
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+	display: none;
+}
+
+
+/* =Media
+----------------------------------------------- */
+
+.site-header img,
+.entry-content img,
+.comment-content img,
+.widget img {
+	max-width: 100%; /* Fluid images for posts, comments, and widgets */
+}
+.site-header img,
+.entry-content img,
+img[class*="align"],
+img[class*="wp-image-"] {
+	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+}
+.site-header img,
+.entry-content img,
+img.size-full {
+	max-width: 100%;
+	width: auto; /* Prevent stretching of full-size images with height and width attributes in IE8 */
+}
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+.wp-caption {
+	border: 1px solid #ccc;
+	max-width: 100%;
+}
+.wp-caption.aligncenter,
+.wp-caption.alignleft,
+.wp-caption.alignright {
+	margin-bottom: 1.5em;
+}
+.wp-caption img {
+	display: block;
+	margin: 1.2% auto 0;
+	max-width: 98%;
+}
+.wp-caption-text {
+	text-align: center;
+}
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+#content .gallery {
+	margin-bottom: 1.5em;
+}
+.gallery-caption {
+}
+#content .gallery a img {
+	border: none;
+	height: auto;
+	max-width: 90%;
+}
+#content .gallery dd {
+	margin: 0;
+}
+#content .gallery-columns-4 .gallery-item {
+}
+#content .gallery-columns-4 .gallery-item img {
+}
+
+/* Make sure embeds and iframes fit their containers */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+
+/* =Navigation
+----------------------------------------------- */
+
+#content .site-navigation {
+	margin: 0 0 1.5em;
+	overflow: hidden;
+}
+#content .nav-previous {
+	float: left;
+	width: 50%;
+}
+#content .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
+/* =Comments
+----------------------------------------------- */
+
+
+#comments {
+	word-wrap: break-word;
+}
+#comments h2 {
+	border-bottom: 1px solid #f0f0f0;
+	font-family: "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	letter-spacing: 0.025em;
+	margin: 0 0 14px 0;
+	padding: 2px;
+	text-transform: uppercase;
+}
+#comments ol {
+	list-style: none;
+	margin-left: 0;
+}
+#comments ul {
+	list-style: none;
+	margin-left: 0.425em;
+}
+#comments li {
+	position: relative;
+}
+#comments li.pingback {
+	background: #eee;
+	margin: 0 0 1.7em;
+	padding: 0.85em;
+}
+#comments li.pingback + li.pingback {
+	margin-top: -1.65em;
+}
+#comments li.pingback p {
+	font: 12px "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+	margin: 0;
+}
+#comments ul li {
+	border-left: 1px solid #ccc;
+	border-bottom: none;
+	padding: 0 0 0 0.85em;
+	margin:20px;
+}
+#comments .comment-author {
+	margin: 0 66px 0 0;
+}
+#comments .comment-author cite {
+	font-style: normal;
+	margin:0;
+	padding:0;
+}
+#comments .comment-meta,
+#comments .comment-meta a {
+	color: #888;
+	font: 12px "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+	margin:0 0 20px 0;
+	padding:0;
+}
+#comments .comment-meta a:hover {
+	color: #df0000;
+}
+#comments .avatar {
+	border: 1px solid #ccc;
+	padding: 3px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+#comments .comment-body {
+	margin-right: 66px;
+}
+#respond input[type=text] {
+	float: left;
+	margin: 0 10px 0 0;
+}
+#respond .comment-form-comment {
+	margin: 0;
+}
+#respond .comment-form-comment label {
+	display: none;
+}
+#respond .form-allowed-tags {
+	color: #888;
+	font-size: 12px;
+}
+#respond .form-allowed-tags code {
+	font-size: 11px;
+}
+.bypostauthor {
+}
+
+
+
+
+
+/* =Widgets
+----------------------------------------------- */
+
+#secondary{
+	width:213px; 
+	float:right;
+	margin:0;
+}
+.widget-area {
+}
+.widget-area,
+.widget-area input {
+	line-height: 18px;
+}
+.widget-area ul ul a {
+	text-decoration: none;
+}
+.widget-area ul ul a:hover {
+	text-decoration: none;
+}
+.widget-area ul {
+	list-style: none;
+	margin: 0 0 14px 0!important;
+	padding:0;
+}
+.widget-area ul li {
+	padding:0 0 0 14px;
+	background:url(images/bulletone.png) top left no-repeat;
+	background-position:0 6px;
+	border-bottom:1px dotted #dadada;
+	line-height:22px;
+}
+.widget-area ul ul {
+	list-style: none;
+}
+.widget-area ul ul ul {
+	margin: 0;
+}
+.widget-area ul ul li {
+	padding:0;
+	background:none;
+	border-bottom:1px dotted #dadada;
+	line-height:22px;
+}
+.widget-title {
+	color: #2a2a2a;
+	font-size: 16px;
+	font-weight: bold;
+	font-family:"helvetica neue", helvetica, arial;
+	margin:0 0 12px 0;
+}
+.widget-title a{
+	color: #2a2a2a;
+}
+.widget-container {
+	margin: 0 0 22px 0;
+}
+	
+
+.twitter li{
+	padding:0 !important;
+	margin-bottom:14px;
+	background:none !important;
+	background-position:0 0 !important;
+	border-bottom:none !important;
+	line-height:22px !important;
+}
+
+
+/* search */
+
+#searchform {
+	width:213px;
+	height:30px;
+	background:#fff url(images/search.png) top left no-repeat;
+	float:right;
+}
+
+#searchform input#s {
+	font-size: 14px;
+	color:#a9a9a9;
+	background:none;
+	border:none;
+	box-shadow:none;
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+	padding:6px 0 0 6px;
+	width:175px;
+}
+
+
+/* =Footer
+----------------------------------------------- */
+
+#colophon {
+	clear: both;
+	width: 100%;
+	margin:0 auto;
+	padding:20px 0;
+	background:#141414;
+	border-top:1px solid #202020;
+	overflow:hidden;
+	font-size:12px !important; 
+	}
+.site-info{
+	margin:0 auto;
+	width:920px;
+	text-align:center;
+	color:#afafaf;
+}
+.site-info a{color:#fff;}
+.site-info a:hover{color:#b4b4b4;}
