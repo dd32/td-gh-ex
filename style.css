@@ -1,14 +1,15 @@
 /*
 Theme Name: atheros
-Theme URI: http://www.sparlaxy.de/atheros-theme/
-Description: The atheros theme for WordPress 3.5+ is modern, customizable, clean, and readable with nice smooth shadow effects. Create your own custom menu, choose between 8 different header images and custom background (image or color). atheros supports six widgetized areas (two in the sidebar, four in the footer) and featured images. Stylesheet for print and the admin Visual Editor, special styles for posts in the "Asides" and "Gallery" categories, and has an optional one-column page template that removes the sidebar.
+Theme URI: http://www.themes-for-wp.com/atheros/
+Description: The atheros theme for WordPress 3.1+ is modern, customizable, clean, and readable with nice smooth shadow effects. Create your own custom menu, choose between 8 different header images and custom background (image or color). atheros supports six widgetized areas (two in the sidebar, four in the footer) and featured images. Stylesheet for print and the admin Visual Editor, special styles for posts in the "Asides" and "Gallery" categories, and has an optional one-column page template that removes the sidebar.
 Author: themesforwp
-Author URI: http://www.sparlaxy.de/
-Version: 1.0.13
+Author URI: http://www.themes-for-wp.com/
+Version: 1.0.2
 License: GNU General Public License
 License URI: license.txt
 Tags: black, blue, white, two-columns, fixed-width, custom-header, custom-background, threaded-comments, sticky-post, translation-ready, microformats, rtl-language-support, editor-style, custom-menu
 */
+
 
 /* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
 -------------------------------------------------------------- */
@@ -86,27 +87,32 @@ DESCRIPTION: Two-column fixed layout with one sidebar right of content
 	clear: both;
 	width: 100%;
 }
+
 #footerbottom {
-	width:940px;
-	font-family:arial;
-	font-size:10px;
-	margin:0px auto;
-	text-align:right;
-	color:#999;
+width:940px;
+font-family:arial;
+font-size:10px;
+margin:0px auto;
+text-align:right;
+color:#999;
 }
+
 #footerbottom a:link, 
 #footerbottom a:visited {
-	color:#999;
-	text-decoration:none;
+color:#999;
+text-decoration:none;
 }
+
 /*
 LAYOUT: One column, no sidebar
 DESCRIPTION: One centered column with no sidebar
 */
+
 .one-column #content {
 	margin: 0 auto;
 	width: 640px;
 }
+
 /*
 LAYOUT: Full width, no sidebar
 DESCRIPTION: Full width content with no sidebar; used for attachment pages
@@ -116,6 +122,8 @@ DESCRIPTION: Full width content with no sidebar; used for attachment pages
 	margin: 0 auto;
 	width: 900px;
 }
+
+
 /* =Fonts
 -------------------------------------------------------------- */
 body,
@@ -161,18 +169,26 @@ pre {
 code {
 	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
+
+
 /* =Structure
 -------------------------------------------------------------- */
 
 /* The main theme structure */
+
 #branding {
+    background-image: url("images/headerbg.jpg");
     height: 198px;
     margin: 0 auto;
     position: relative;
     width: 940px;
 	background-color:#fff;
-} 
+}
+
+
+ 
 #colophon,
+
 #main,
 #wrapper {
 	margin: 0 auto;
@@ -183,22 +199,25 @@ code {
 	padding: 0 20px;	
 	position:relative;
 }
+
 #leftstripe {
-background-image:url(images/left.png);
+background-image:url(images/left.jpg);
 width:71px;
 height:377px;
 position:absolute;
 left:-71px;
 top:-70px;
 }
+
 #rightstripe {
-background-image:url(images/right.png);
+background-image:url(images/right.jpg);
 width:71px;
 height:377px;
 position:absolute;
 right:-71px;
 top:-70px;
 }
+
 /* Structure the footer area */
 #footer-widget-area {
 	overflow: hidden;
@@ -206,7 +225,7 @@ top:-70px;
 #footer-widget-area .widget-area {
 	float: left;
 	margin-right: 20px;
-	width: 210px;
+	width: 220px;
 }
 #footer-widget-area #fourth {
 	margin-right: 0;
@@ -221,6 +240,8 @@ top:-70px;
 	float: right;
 	width: 220px;
 }
+
+
 /* =Global Elements
 -------------------------------------------------------------- */
 
@@ -341,25 +362,31 @@ a:link,
 a:visited {
 	color: #0066cc;
 }
+
 a:active,
 a:hover {
-	color: #2b90f4;
+	color: #ff4b33;
 }
+
 /* Text meant only for screen readers */
 .screen-reader-text {
 	position: absolute;
 	left: -9000px;
 }
+
+
 /* =Header
 -------------------------------------------------------------- */
 
 #headerscreen { 
-    background-image: url("images/headbg.png");
+    background-image: url("images/headbg.jpg");
     background-repeat: repeat-x;
     border-top: 1px solid #E0E0E0;
     padding-top: 30px;
     width: 100%;
 }
+
+
 #header {
 	padding: 30px 0 0 0;
 }
@@ -368,6 +395,7 @@ a:hover {
     background-repeat: repeat-x;
     border-bottom: 1px solid #666666;
 }
+
 #site-title { 
     font-size: 30px;
     line-height: 36px;
@@ -377,6 +405,7 @@ a:hover {
 	background-color:#fff;
 	padding:5px 15px;
 }
+
 #cornerleft {
 background-image:url(images/cornerleft.png);
 background-repeat:no-repeat;
@@ -386,6 +415,7 @@ background-repeat:no-repeat;
 	height:59px;
 	width:16px;
 }
+
 #site-title a {
     color: #525252;
     font-size: 31px;
@@ -403,13 +433,19 @@ position:absolute;
     font-style: italic;
  	padding:4px 15px;
 }
+
+
+
 /* This is the custom header image */
 #branding img { 
 	display: block;
 	float: left;
 }
+
+
 /* =Menu
 -------------------------------------------------------------- */
+
 #access { 
 	display: block; 
 	margin: 0 auto;
@@ -483,8 +519,11 @@ div.menu li {
 * html #access ul li a:hover {
 	color: #fff;
 }
+
+
 /* =Content
 -------------------------------------------------------------- */
+
 #main {
 	clear: both;
 	overflow: hidden;
@@ -743,8 +782,11 @@ body.page .edit-link {
 #content .video-player {
 	padding: 0;
 }
+
+
 /* =Asides
 -------------------------------------------------------------- */
+
 .home #content .format-aside p,
 .home #content .category-asides p {
 	font-size: 14px;
@@ -760,8 +802,11 @@ body.page .edit-link {
 .home #content .category-asides .entry-content {
 	padding-top: 0;
 }
+
+
 /* =Gallery listing
 -------------------------------------------------------------- */
+
 .format-gallery .size-thumbnail img,
 .category-gallery .size-thumbnail img {
 	border: 10px solid #f1f1f1;
@@ -777,8 +822,11 @@ body.page .edit-link {
 .home #content .category-gallery .entry-utility {
 	padding-top: 4px;
 }
+
+
 /* =Attachment pages
 -------------------------------------------------------------- */
+
 .attachment .entry-content .entry-caption {
 	font-size: 140%;
 	margin-top: 24px;
@@ -789,6 +837,8 @@ body.page .edit-link {
 .attachment .entry-content .nav-next a:after {
 	content: '\00a0\2192';
 }
+
+
 /* =Images
 -------------------------------------------------------------- */
 
@@ -831,14 +881,16 @@ img.alignright,
 img.aligncenter {
 	margin-bottom: 12px;
 }
-.wp-caption { 
+.wp-caption {
+	background: #f1f1f1;
 	line-height: 18px;
 	margin-bottom: 20px;
 	max-width: 632px !important; /* prevent too-wide images from breaking layout */
+	padding: 4px;
 	text-align: center;
 }
 .wp-caption img {
- border:7px solid #f1f1f1;
+	margin: 5px 5px 0;
 }
 .wp-caption p.wp-caption-text {
 	color: #888;
@@ -893,6 +945,7 @@ img.aligncenter {
 	margin: 0 auto;
 }
 
+
 /* =Navigation
 -------------------------------------------------------------- */
 
@@ -934,9 +987,9 @@ img.aligncenter {
 	margin: -18px 0 0 0;
 }
 
+
 /* =Comments
 -------------------------------------------------------------- */
-
 #comments {
 	clear: both;
 }
@@ -1058,7 +1111,6 @@ a.comment-edit-link:hover {
 }
 
 /* Comments form */
-
 input[type=submit] {
 	color: #333;
 }
@@ -1124,6 +1176,7 @@ h3#reply-title {
 	font-size: 14px;
 	width: auto;
 }
+
 
 /* =Widget Areas
 -------------------------------------------------------------- */
@@ -1208,7 +1261,6 @@ h3#reply-title {
 }
 
 /* Main sidebars */
-
 #main .widget-area ul {
 	margin-left: 0;
 	padding: 0 20px 0 0;
@@ -1224,9 +1276,9 @@ h3#reply-title {
 }
 
 /* Footer widget areas */
-
 #footer-widget-area {
 }
+
 
 /* =Footer
 -------------------------------------------------------------- */
@@ -1267,6 +1319,7 @@ img#wpstats {
 	margin: 0 auto 10px;
 }
 
+
 /* =Mobile Safari ( iPad, iPhone and iPod Touch )
 -------------------------------------------------------------- */
 
@@ -1286,6 +1339,7 @@ code {
 #site-description {
 	-webkit-text-size-adjust: none;
 }
+
 
 /* =Print Style
 -------------------------------------------------------------- */

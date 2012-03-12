@@ -43,6 +43,8 @@
 </div><!-- #wrapper -->
 
 <div id="footerbottom">
+
+
 	<?php 
 		/**
 		 * This is where the credit for the theme is placed. 
@@ -50,10 +52,10 @@
 		 * Seriously, developing this awesome theme took a lot
 		 * of effort and time, weeks and weeks of voluntary unpaid work. I only ask 
 		 * that you retain this link here, and you can use and/or modify the theme
-		 * however you like to. Of course you can remove the whole line. :-)
+		 * however you like to.
 		*/
 		?>
-		 <?php _e( 'By', 'atheros' ); ?> <a href="<?php echo esc_url( __( 'http://www.sparlaxy.de', 'atheros' ) ); ?>"><?php printf( 'sparlaxy.de' ); ?></a>
+		  By <a href="http://www.themes-for-wp.com/" title="Themes for WP">Themes for WP</a> 
 
 </div>
 <?php
