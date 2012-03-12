@@ -90,6 +90,7 @@ function skylark_setup() {
 	add_theme_support( 'post-formats', array( 'aside', ) );
 	
 	add_editor_style();
+	add_custom_background();
 }
 endif; // skylark_setup
 add_action( 'after_setup_theme', 'skylark_setup' );
