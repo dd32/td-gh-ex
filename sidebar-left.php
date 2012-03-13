@@ -17,7 +17,7 @@
         <div id="widgets" class="grid-right col-300">
         <?php responsive_widgets(); // above widgets hook ?>
             
-            <?php if (!dynamic_sidebar('right-left')) : ?>
+            <?php if (!dynamic_sidebar('left-sidebar')) : ?>
             
                 <div class="widget-title"><?php _e('In Archive', 'responsive'); ?></div>
 					<ul>

@@ -1,2 +1,8 @@
+Legend:
+
+[+] = Added
+[-] = Removed
+[*] = Bugs
+
 (03/12/2012)
-- Initial Public Release
+- Initial Release
