@@ -3,10 +3,10 @@ Theme Name: Responsive
 Theme URI: http://themeid.com/responsive-theme 
 Description: Responsive WordPress Theme that features 9 page Templates such as Blog, Blog Summary and Template based layout designs: sidebar/content, sidebar/content half, content/sidebar and content/sidebar half. There is also full width page, sitemap Template as well as landing page for your PPC or any other purposes. Responsive also supports 9 widget areas and best of all this Theme is crafted with fluid proportion-based grid system of our own to adapt the design to the viewing environment. There are also Theme Options to control the content, webaster tools, logo managament and social icons and 4 navigation menus. Everything is backed by our dedicated support forums: <a href="http://themeid.com/forum">support forum</a>.
 
-Version: 1.1 
+Version: 1.2.0 
 Author: ThemeID 
 Author URI: http://themeid.com
-Tags: white, black, gray, custom-menu, custom-header, custom-background, two-columns, fixed-width, theme-options, threaded-comments, translation-ready 
+Tags: white, black, gray, light, custom-menu, custom-header, custom-background, one-column, two-columns, left-sidebar, right-sidebar, flexible-width, theme-options, threaded-comments, full-width-template, sticky-post
 
 Copyright (C) 2003-2012 ThemeID 
 License: GNU General Public License, version 3 (GPLv3)
@@ -98,7 +98,7 @@ body {
 	-webkit-font-smoothing:antialiased;
 	background:#efefef url(images/bg.png) repeat;
 	color:#404040;
-	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: 'Droid Sans', sans-serif;
 	font-size:14px;
 	line-height:1.5em;
 	text-rendering:optimizeLegibility;
@@ -296,20 +296,23 @@ input[type="text"], input[type="password"], select {
 	outline:none;
 	padding:8px 10px;
 	vertical-align:middle;
-	width:200px;
+	width:70%;
 }
 
 select {
 	height:auto;
-	width:312px;
+	width:70%;
 }
 
 textarea, .area {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     -moz-border-radius:6px;
 	-webkit-border-radius:6px;
     -webkit-box-shadow:0 1px 0 #fff, inset 0 1px 1px rgba(0,0,0,0.2); 
     -moz-box-shadow:0 1px 0 #fff, inset 0 1px 1px rgba(0,0,0,0.2);
     box-shadow:0 1px 0 #fff, inset 0 1px 1px rgba(0,0,0,0.2);
+	box-sizing: border-box;
 	background:#f4f4f4;
 	border:1px solid #aaa;
 	border-bottom-color:#ccc;
@@ -318,8 +321,8 @@ textarea, .area {
 	overflow:auto;
 	margin:0;
 	outline:none;
-	padding:4px 14px;
-	width:400px;
+	padding:8px 10px;
+	width:100%;
 }
 
 input, select {
@@ -1087,9 +1090,9 @@ form div {
 }
 
 #header #search-box {
-	clear:right;
 	float:right;
-	margin-top:20px;
+	margin-top:10px;
+	width:30%;
 }
 
 #header #search-box input {

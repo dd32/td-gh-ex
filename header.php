@@ -28,8 +28,12 @@
 <title><?php wp_title('&#124;', true, 'right'); ?><?php bloginfo('name'); ?></title>
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="all" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+
+<?php
+wp_enqueue_style('fonts','http://fonts.googleapis.com/css?family=Droid+Sans:400,700');
+wp_enqueue_style('responsive-style', get_stylesheet_uri(), false, '1.2.0');
+?>
 
 <?php wp_head(); ?>
 </head>
@@ -69,13 +73,6 @@
         </div><!-- end of #logo -->  
 
     <?php endif; // header image was removed (again) ?>
-        
-		<?php $options = get_option('responsive_theme_options'); ?>
-		<?php if ($options['search_box'] == 0): ?>
-        <div id="search-box">
-            <?php get_search_form(); ?>
-        </div><!-- end of #search-box -->
-        <?php endif; ?>
 			    
 				<?php wp_nav_menu(array(
 				    'container'       => '',

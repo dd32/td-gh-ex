@@ -111,11 +111,11 @@ function responsive_theme_options_do_page() {
             <?php settings_fields('responsive_options'); ?>
             <?php $options = get_option('responsive_theme_options'); ?>
             
-            <div id="wf" class="grid col-940">
+            <div id="rwd" class="grid col-940">
 
-            <h3 class="wf-toggle"><a href="#">Theme Elements</a></h3>
-            <div class="wf-container">
-                <div class="wf-block"> 
+            <h3 class="rwd-toggle"><a href="#">Theme Elements</a></h3>
+            <div class="rwd-container">
+                <div class="rwd-block"> 
                                
                 <?php
                 /**
@@ -138,27 +138,13 @@ function responsive_theme_options_do_page() {
 					    <input id="responsive_theme_options[cta_button]" name="responsive_theme_options[cta_button]" type="checkbox" value="1" <?php isset($options['cta_button']) ? checked( '1', $options['cta_button'] ) : checked('0', '1'); ?> />
 						<label class="description" for="responsive_theme_options[cta_button]"><?php _e('Check to disable', 'responsive'); ?></label>
                     </div><!-- end of .grid col-620 -->
-                    
-                <?php
-                /**
-                 * Search Box
-                 */
-                ?>
-                <div class="grid col-300"><?php _e('Show Header Search Box?', 'responsive'); ?></div><!-- end of .grid col-300 -->
-                    <div class="grid col-620 fit">
-					    <input id="responsive_theme_options[search_box]" name="responsive_theme_options[search_box]" type="checkbox" value="1" <?php isset($options['search_box']) ? checked( '1', $options['search_box'] ) : checked('0', '1'); ?> />
-						<label class="description" for="responsive_theme_options[search_box]"><?php _e('Check to disable', 'responsive'); ?></label>
-                        <p class="submit">
-                        <input type="submit" class="button-primary" value="<?php _e('Save Options', 'responsive'); ?>" />
-                        </p>			
-                    </div><!-- end of .grid col-620 -->
                                     
-                </div><!-- end of .wf-block -->
-            </div><!-- end of .wf-container -->
+                </div><!-- end of .rwd-block -->
+            </div><!-- end of .rwd-container -->
 
-            <h3 class="wf-toggle"><a href="#">Logo Upload</a></h3>
-            <div class="wf-container">
-                <div class="wf-block">
+            <h3 class="rwd-toggle"><a href="#">Logo Upload</a></h3>
+            <div class="rwd-container">
+                <div class="rwd-block">
                 <?php
                 /**
                  * Logo Upload
@@ -171,12 +157,12 @@ function responsive_theme_options_do_page() {
                      			
                     </div><!-- end of .grid col-620 -->
                     
-                </div><!-- end of .wf-block -->
-            </div><!-- end of .wf-container -->
+                </div><!-- end of .rwd-block -->
+            </div><!-- end of .rwd-container -->
                         
-            <h3 class="wf-toggle"><a href="#">Homepage</a></h3>
-            <div class="wf-container">
-                <div class="wf-block">
+            <h3 class="rwd-toggle"><a href="#">Homepage</a></h3>
+            <div class="rwd-container">
+                <div class="rwd-block">
                 <?php
                 /**
                  * Homepage Headline
@@ -246,12 +232,12 @@ function responsive_theme_options_do_page() {
                         </p>
                     </div><!-- end of .grid col-620 -->
                     
-                </div><!-- end of .wf-block -->
-            </div><!-- end of .wf-container -->
+                </div><!-- end of .rwd-block -->
+            </div><!-- end of .rwd-container -->
 
-            <h3 class="wf-toggle"><a href="#">Webmaster Tools</a></h3>
-            <div class="wf-container">
-                <div class="wf-block"> 
+            <h3 class="rwd-toggle"><a href="#">Webmaster Tools</a></h3>
+            <div class="rwd-container">
+                <div class="rwd-block"> 
                                
                 <?php
                 /**
@@ -300,12 +286,12 @@ function responsive_theme_options_do_page() {
                         </p>
                     </div><!-- end of .grid col-620 -->
                 
-                </div><!-- end of .wf-block -->
-            </div><!-- end of .wf-container -->
+                </div><!-- end of .rwd-block -->
+            </div><!-- end of .rwd-container -->
 
-            <h3 class="wf-toggle"><a href="#">Social Icons</a></h3>
-            <div class="wf-container">
-                <div class="wf-block"> 
+            <h3 class="rwd-toggle"><a href="#">Social Icons</a></h3>
+            <div class="rwd-container">
+                <div class="rwd-block"> 
                             
                 <?php
                 /**
@@ -357,8 +343,8 @@ function responsive_theme_options_do_page() {
                         </p>
                     </div><!-- end of .grid col-620 -->
 
-                </div><!-- end of .wf-block -->
-            </div><!-- end of .wf-container -->
+                </div><!-- end of .rwd-block -->
+            </div><!-- end of .rwd-container -->
             
             </div><!-- end of .grid col-940 -->
 
@@ -378,8 +364,7 @@ function responsive_theme_options_validate($input) {
 	// checkbox value is either 0 or 1
 	foreach (array(
 		'breadcrumb',
-		'cta_button',
-		'search_box'
+		'cta_button'
 		) as $checkbox) {
 		if (!isset( $input[$checkbox]))
 			$input[$checkbox] = null;

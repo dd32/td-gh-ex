@@ -1,9 +1,9 @@
 // JavaScript Document
 jQuery(document).ready(function($){
 	
-	$(".wf-container").hide();
+	$(".rwd-container").hide();
 
-	$("h3.wf-toggle").click(function(){
+	$("h3.rwd-toggle").click(function(){
 	$(this).toggleClass("active").next().slideToggle("fast");
 		return false; //Prevent the browser jump to the link anchor
 	});
