@@ -7,7 +7,7 @@ if ((($_FILES["uploadfile"]["type"] == "image/gif")
 || ($_FILES["uploadfile"]["type"] == "image/jpeg")
 || ($_FILES["uploadfile"]["type"] == "image/pjpeg")
 || ($_FILES["uploadfile"]["type"] == "image/png")
-|| ($_FILES["uploadfile"]["type"] == "image/ico"))
+|| ($_FILES["uploadfile"]["type"] == "image/x-icon"))
 && ($_FILES["uploadfile"]["size"] < 20000))
  	{
 

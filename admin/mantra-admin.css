@@ -101,6 +101,10 @@ margin-left:10px;
 color:#999;
 }
 
+.ui-accordion .ui-accordion-content {
+padding:1em !important;
+}
+
 #accordion h3 {
 border:none !important;
 background-image:none !important;
@@ -352,5 +356,63 @@ margin-top:10px;
 margin-top:30px;}
 #absolutedim small, #relativedim small{
 margin-top:20px;}
+
+#sdimensions, #cdimensions  {
+display:block;
+float:none;
+margin:10px;
+}
+
+.slidebox {
+background:#F7F7F7;
+border:1px solid #E9E9E9;
+-moz-box-shadow: 0 1px 0 #FFFFFF;
+-webkit-box-shadow: 0 1px 0 #FFFFFF;
+box-shadow: 0 1px 0 #FFFFFF;
+-moz-border-radius:3px;
+-webkit-border-radius:3px;
+border-radius:3px;
+margin-bottom:5px;
+padding:0;
+}
+
+.slidercontent{
+display:none;
+padding:10px;
+}
+
+
+.slidetitle{
+color:#555;
+background:#EAEAEA;
+padding-left:10px;
+-moz-border-radius:3px;
+-webkit-border-radius:3px;
+border-radius:3px;
+margin:3px;
+}
+
+.slidetitle:hover{
+background:#F6F6F6;
+}
+
+.slidebox h5 {
+display:block;
+float:none;
+margin-left:10px;
+font-size:12px;
+text-decoration:underline;
+margin:10px 0px 0 0px;
+}
+
+.slidebox .description {
+display:block;
+float:none;
+}
+
+.slidebox input[type="text"] {
+width:100%;
+}
+
 
 

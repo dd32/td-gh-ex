@@ -2,6 +2,8 @@
 
 jQuery(document).ready(function() {
 
+
+
 // Menu animation
 
 jQuery("#access ul ul").css({display: "none"}); // Opera Fix
@@ -40,6 +42,9 @@ function(){
 					});
 
 
-});
 
 
+
+
+
+}); // ready 

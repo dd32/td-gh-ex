@@ -61,9 +61,13 @@ foreach ($mantra_options as $key => $value) {
 	if ( !is_admin() ) {
 		wp_register_script('menu',get_template_directory_uri() . '/js/menu.js', array('jquery') );
 		wp_enqueue_script('menu');
-			if($mantra_backtop!="Disable") {
+			if($mantra_backtop =="Enable") {
 							wp_register_script('top',get_template_directory_uri() . '/js/top.js', array('jquery'));
 							wp_enqueue_script('top');}
+  									
+		if($mantra_frontpage =="Enable") {
+							wp_register_script('easySlider',get_template_directory_uri() . '/js/easySlider1.7.js', array('jquery'));
+							wp_enqueue_script('easySlider');}
   									}
 
 	/* We add some JavaScript to pages with the comment form

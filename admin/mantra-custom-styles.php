@@ -23,11 +23,8 @@ $sidebarSize= intval(($mantra_sidebarRel/$totalwidth*100)-2);
 <style>
 <?php if ($mantra_dimselect=="Absolute") { ?>
 #wrapper, #access, #colophon, #branding, #main { width:<?php echo ($totalwidth) ?>px ;}
-.attachment img{  max-width:<?php echo ($totalwidth-40) ?>px ;}
-.single-attachment #content {width:<?php echo ($totalwidth-40) ?>px ;}
 #access .menu-header, div.menu {width:<?php echo ($totalwidth-12) ?>px ;}
-#content img {	max-width:<?php echo ($contentSize-40) ?>px;}
-#content .wp-caption{	max-width:<?php echo ($contentSize-30) ?>px;}
+
 
 <?php if ($mantra_side == "1c" || $mantra_side =="Disable") { ?>
 #content {width:<?php echo ($totalwidth-50) ?>px; margin:20px;}  <?php }
@@ -63,11 +60,8 @@ $sidebarSize= intval(($mantra_sidebarRel/$totalwidth*100)-2);
 
 else if ($mantra_dimselect=="Relative") { ?>
 #wrapper { width:<?php echo ($totalwidth) ?>% ;}
-.attachment img{  max-width:<?php echo ($totalwidth) ?>% ;}
-.single-attachment #content {width:96% ;display:block;float:none;}
 #access .menu-header, div.menu {width:96% ;}
-#content img {	max-width:<?php echo ($contentSize) ?>%;}
-#content .wp-caption{	max-width:<?php echo ($contentSize) ?>%;}
+
 
 <?php if ($mantra_side == "1c" || $mantra_side =="Disable") { ?>
 #content {width:96%; margin:20px;}  <?php }
@@ -144,6 +138,8 @@ font-size:<?php echo $mantra_fontsize ?>;
 ?><?php if ($mantra_headtexthover != "000000") { ?> #content .entry-title a:hover { color:<?php echo $mantra_headtexthover; ?> ;}<?php }
 ?><?php if ($mantra_sideheadbackcolor != "444444") { ?> .widget-title,#footer-widget-area .widget-title { background-color:<?php echo $mantra_sideheadbackcolor; ?> ;}<?php }
 ?><?php if ($mantra_sideheadtextcolor != "2EA5FD") { ?> .widget-title { color:<?php echo $mantra_sideheadtextcolor; ?>  ;}<?php }
+
+?><?php if ($mantra_magazinelayout == "Enable") { ?> article.post{float:left;width:47%;margin-right:3%; } .home article.sticky { margin-right:3% }<?php }
 
 ?><?php if (1) { ?> #footer-widget-area .widget-title { color:<?php echo $mantra_footerheader; ?> ; ;}<?php }
 ?><?php if (1) { ?> #footer-widget-area a { color:<?php echo $mantra_footertext; ?>  ;}<?php }

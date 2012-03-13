@@ -13,6 +13,9 @@ function mantra_init() {
     wp_enqueue_script('jquery-ui-accordion');
 	wp_enqueue_script('jquery-ui-slider');	
 	load_theme_textdomain( 'mantra', get_template_directory_uri() . '/languages' );
+wp_enqueue_script('media-upload');
+wp_enqueue_script('thickbox');
+	wp_enqueue_style('thickbox');
 }
 
 $mantra_options= mantra_get_theme_options();
@@ -27,6 +30,7 @@ function mantra_init_fn(){
 
 	register_setting('ma_options', 'ma_options', 'ma_options_validate' );
 	add_settings_section('layout_section', __('Layout Settings','mantra'), 'section_layout_fn', __FILE__);
+	add_settings_section('presentation_section', __('Presentation Page','mantra'), 'section_presentation_fn', __FILE__);
 	add_settings_section('text_section', __('Text Settings','mantra'), 'section_text_fn', __FILE__);
 	add_settings_section('appereance_section',__('Color Settings','mantra') , 'section_appereance_fn', __FILE__);
 	add_settings_section('graphics_section', __('Graphics Settings','mantra') , 'section_graphics_fn', __FILE__);
@@ -39,6 +43,10 @@ function mantra_init_fn(){
 	add_settings_field('mantra_side', __('Main Layout','mantra') , 'setting_side_fn', __FILE__, 'layout_section');
 	add_settings_field('mantra_sidewidth', __('Content / Sidebar Width','mantra') , 'setting_sidewidth_fn', __FILE__, 'layout_section');
 	add_settings_field('mantra_hheight', __('Header Image Height','mantra') , 'setting_hheight_fn', __FILE__, 'layout_section');
+
+	add_settings_field('mantra_frontpage', __('Enable Presentation Page','mantra') , 'setting_frontpage_fn', __FILE__, 'presentation_section');
+	add_settings_field('mantra_frontslider', __('Presentation Page Slider','mantra') , 'setting_frontslider_fn', __FILE__, 'presentation_section');
+	add_settings_field('mantra_frontcolumns', __('Presentation Page Columns','mantra') , 'setting_frontcolumns_fn', __FILE__, 'presentation_section');
 
 	add_settings_field('mantra_fontfamily', __('General Font','mantra') , 'setting_fontfamily_fn', __FILE__, 'text_section');
 	add_settings_field('mantra_fontsize', __('General Font Size','mantra') , 'setting_fontsize_fn', __FILE__, 'text_section');
@@ -101,6 +109,7 @@ function mantra_init_fn(){
 	add_settings_field('mantra_excerpthome', __('Post Excerpts on Home Page','mantra') , 'setting_excerpthome_fn', __FILE__, 'excerpt_section');
 	add_settings_field('mantra_excerptarchive', __('Post Excerpts on Arhive and Category Pages','mantra') , 'setting_excerptarchive_fn', __FILE__, 'excerpt_section');
 	add_settings_field('mantra_excerptwords', __('Number of Words for Post Excerpts ','mantra') , 'setting_excerptwords_fn', __FILE__, 'excerpt_section');
+	add_settings_field('mantra_magazinelayout', __('Magazine Layout','mantra') , 'setting_magazinelayout_fn', __FILE__, 'excerpt_section');
 	add_settings_field('mantra_excerptdots', __('Excerpt suffix','mantra') , 'setting_excerptdots_fn', __FILE__, 'excerpt_section');
 	add_settings_field('mantra_excerptcont', __('Continue reading link text ','mantra') , 'setting_excerptcont_fn', __FILE__, 'excerpt_section');
 
@@ -155,6 +164,13 @@ function  section_layout_fn() {
 
 //	echo "<p>".__("Settings for adjusting your blog's layout.", "mantra")."</p>";
 }
+
+function  section_presentation_fn() {
+
+//	echo "<p>".__("Settings for adjusting your blog's layout.", "mantra")."</p>";
+}
+
+
 function  section_text_fn() {
 	//echo "<p>".__("All text related customization options.", "mantra")."</p>";
 }
@@ -391,6 +407,243 @@ $totally = $mantra_options['mantra_sidebar']+$mantra_options['mantra_sidewidth']
 echo "<div><small>".__("Select the header's height. After saving the settings go and upload your new header image. The header's width will be equal to the Total Site Width = ","mantra").$totally."px.</small></div>";
 }
 
+
+////////////////////////////////
+//// PRESENTATION SETTINGS /////////////
+////////////////////////////////
+
+
+//CHECKBOX - Name: ma_options[frontpage]
+function setting_frontpage_fn() {
+	global $mantra_options;
+	$items = array ("Enable" , "Disable");
+	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
+	echo "<select id='mantra_frontpage' name='ma_options[mantra_frontpage]'>";
+foreach($items as $id=>$item) {
+	echo "<option value='$item'";
+	selected($mantra_options['mantra_frontpage'],$itemsare[$id]);
+	echo ">$item</option>";
+}
+	echo "</select>";
+	echo "<div><small>".__("Enable the presentation front-page. This will become your default page that opens up fist. It has a slider and columns for presentation
+		text and images.","mantra")."</small></div>";
+
+}
+
+//CHECKBOX - Name: ma_options[frontslider]
+function setting_frontslider_fn() {
+	global $mantra_options;
+?>
+
+
+<script type="text/javascript">
+	jQuery(document).ready(function() {
+		var uploadparent = 0;
+		var old_send_to_editor = window.send_to_editor;
+		var old_tb_remove = window.tb_remove;
+		
+		jQuery('.upload_image_button').click(function(){
+			uploadparent = jQuery(this).closest('.slidebox');
+			tb_show('', 'media-upload.php?post_id=0&amp;type=image&amp;TB_iframe=true');
+			return false;
+		});
+		
+		window.tb_remove = function() {
+			uploadparent = 0;
+			old_tb_remove();
+		}
+		
+		window.send_to_editor = function(html) {
+			if(uploadparent){              
+				imgurl = jQuery('img',html).attr('src');
+				uploadparent.find('.slideimages').attr('value', imgurl);
+				tb_remove();
+			} else {
+				old_send_to_editor();
+			}
+		}
+	});
+jQuery('.slidetitle').click(function() {
+ 
+jQuery(this).next().toggle();
+});
+
+</script>
+
+
+<?php
+	echo "<div id='sdimensions'><b>Slider Dimmensions:</b> ";
+	echo "<input id='mantra_fpsliderwidth' name='ma_options[mantra_fpsliderwidth]' size='4' type='text' value='".esc_attr( $mantra_options['mantra_fpsliderwidth'] )."'  /> px (width) X ";
+	echo "<input id='mantra_fpsliderheight' name='ma_options[mantra_fpsliderheight]' size='4' type='text' value='".esc_attr( $mantra_options['mantra_fpsliderheight'] )."'  /> px (height) </div>";
+
+
+
+
+/*
+// The Query
+query_posts('' );
+
+// The Loop
+while ( have_posts() ) : the_post();
+	echo '<li>';
+	the_title();
+echo get_the_post_thumbnail();
+	echo '</li>';
+endwhile;
+
+// Reset Query
+wp_reset_query();
+*/
+?>
+<div class="slidebox"> 
+<h4 class="slidetitle" > Slide 1 </h4>
+<div class="slidercontent">
+<h5>Image</h5>
+<input type="text" value="<?php echo  $mantra_options['mantra_sliderimg1']; ?>" name="ma_options[mantra_sliderimg1]" id="mantra_sliderimg1" class="slideimages" />
+<span class="description"><a href="#" class="upload_image_button"><?php _e( 'Upload or select image from gallery', 'mantra' );?></a> </span>                                
+<h5> Title </h5>
+<input id='mantra_slidertitle1' name='ma_options[mantra_slidertitle1]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_slidertitle1'] ) ?>'  />            
+<h5> Text </h5>
+<textarea id='mantra_slidertext1' name='ma_options[mantra_slidertext1]' rows='3' cols='50' type='textarea' ><?php echo $mantra_options['mantra_slidertext1'] ?></textarea>
+<h5> Link </h5>
+<input id='mantra_sliderlink1' name='ma_options[mantra_sliderlink1]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_sliderlink1'] ) ?>'  />            
+</div>
+</div>
+
+<div class="slidebox"> 
+<h4 class="slidetitle" > Slide 2 </h4>
+<div class="slidercontent">
+<h5>Image</h5>
+<input type="text" value="<?php echo  $mantra_options['mantra_sliderimg2']; ?>" name="ma_options[mantra_sliderimg2]" id="mantra_sliderimg2" class="slideimages" />
+<span class="description"><a href="#" class="upload_image_button"><?php _e( 'Upload or select image from gallery', 'mantra' );?></a> </span>     
+<h5> Title </h5>
+<input id='mantra_slidertitle2' name='ma_options[mantra_slidertitle2]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_slidertitle2'] ) ?>'  />                            
+<h5> Text </h5>
+<textarea id='mantra_slidertext2' name='ma_options[mantra_slidertext2]' rows='3' cols='50' type='textarea' ><?php echo $mantra_options['mantra_slidertext2'] ?></textarea>
+<h5> Link </h5>
+<input id='mantra_sliderlink2' name='ma_options[mantra_sliderlink2]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_sliderlink2'] ) ?>'  />            
+</div>
+</div>
+
+<div class="slidebox"> 
+<h4 class="slidetitle" > Slide 3 </h4>
+<div class="slidercontent">
+<h5>Image</h5>
+<input type="text" value="<?php echo  $mantra_options['mantra_sliderimg3']; ?>" name="ma_options[mantra_sliderimg3]" id="mantra_sliderimg3" class="slideimages" />
+<span class="description"><a href="#" class="upload_image_button"><?php _e( 'Upload or select image from gallery', 'mantra' );?></a> </span>   
+<h5> Title </h5>
+<input id='mantra_slidertitle3' name='ma_options[mantra_slidertitle3]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_slidertitle3'] ) ?>'  />                              
+<h5> Text </h5>
+<textarea id='mantra_slidertext3' name='ma_options[mantra_slidertext3]' rows='3' cols='50' type='textarea' ><?php echo $mantra_options['mantra_slidertext3'] ?></textarea>
+<h5> Link </h5>
+<input id='mantra_sliderlink3' name='ma_options[mantra_sliderlink3]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_sliderlink3'] ) ?>'  />            
+</div>
+</div>
+
+<div class="slidebox"> 
+<h4 class="slidetitle" > Slide 4 </h4>
+<div class="slidercontent">
+<h5>Image</h5>
+<input type="text" value="<?php echo  $mantra_options['mantra_sliderimg4']; ?>" name="ma_options[mantra_sliderimg4]" id="mantra_sliderimg4" class="slideimages" />
+<span class="description"><a href="#" class="upload_image_button"><?php _e( 'Upload or select image from gallery', 'mantra' );?></a> </span>   
+<h5> Title </h5>
+<input id='mantra_slidertitle4' name='ma_options[mantra_slidertitle4]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_slidertitle4'] ) ?>'  />                              
+<h5> Text </h5>
+<textarea id='mantra_slidertext4' name='ma_options[mantra_slidertext4]' rows='3' cols='50' type='textarea' ><?php echo $mantra_options['mantra_slidertext4'] ?></textarea>
+<h5> Link </h5>
+<input id='mantra_sliderlink4' name='ma_options[mantra_sliderlink4]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_sliderlink4'] ) ?>'  />            
+</div>
+</div>
+
+<div class="slidebox"> 
+<h4 class="slidetitle" > Slide 5 </h4>
+<div class="slidercontent">
+<h5>Image</h5>
+<input type="text" value="<?php echo  $mantra_options['mantra_sliderimg5']; ?>" name="ma_options[mantra_sliderimg5]" id="mantra_sliderimg5" class="slideimages" />
+<span class="description"><a href="#" class="upload_image_button"><?php _e( 'Upload or select image from gallery', 'mantra' );?></a> </span>
+<h5> Title </h5>
+<input id='mantra_slidertitle5' name='ma_options[mantra_slidertitle5]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_slidertitle5'] ) ?>'  />                                 
+<h5> Text </h5>
+<textarea id='mantra_slidertext5' name='ma_options[mantra_slidertext5]' rows='3' cols='50' type='textarea' ><?php echo $mantra_options['mantra_slidertext5'] ?></textarea>
+<h5> Link </h5>
+<input id='mantra_sliderlink5' name='ma_options[mantra_sliderlink5]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_sliderlink5'] ) ?>'  />            
+</div>
+</div>
+
+<?php
+}
+
+//CHECKBOX - Name: ma_options[frontcolumns]
+function setting_frontcolumns_fn() {
+	global $mantra_options;
+
+echo "<div id='cdimensions'><b>Image Height:</b> ";
+	echo "<input id='mantra_colimageheight' name='ma_options[mantra_colimageheight]' size='4' type='text' value='".esc_attr( $mantra_options['mantra_colimageheight'] )."'  /> px </div>";
+
+
+?>
+<div class="slidebox"> 
+<h4 class="slidetitle" > 1st Column </h4>
+<div class="slidercontent">
+<h5>Image</h5>
+<input type="text" value="<?php echo  $mantra_options['mantra_columnimg1']; ?>" name="ma_options[mantra_columnimg1]" id="mantra_columnimg1" class="slideimages" />
+<span class="description"><a href="#" class="upload_image_button"><?php _e( 'Upload or select image from gallery', 'mantra' );?></a> </span>                                
+<h5> Title </h5>
+<input id='mantra_columntitle1' name='ma_options[mantra_columntitle1]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_columntitle1'] ) ?>'  />            
+<h5> Text </h5>
+<textarea id='mantra_columntext1' name='ma_options[mantra_columntext1]' rows='3' cols='50' type='textarea' ><?php echo $mantra_options['mantra_columntext1'] ?></textarea>
+<h5> Link </h5>
+<input id='mantra_columnlink1' name='ma_options[mantra_columnlink1]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_columnlink1'] ) ?>'  />            
+</div>
+</div>
+
+<div class="slidebox"> 
+<h4 class="slidetitle" >  2nd Column </h4>
+<div class="slidercontent">
+<h5>Image</h5>
+<input type="text" value="<?php echo  $mantra_options['mantra_columnimg2']; ?>" name="ma_options[mantra_columnimg2]" id="mantra_columnimg2" class="slideimages" />
+<span class="description"><a href="#" class="upload_image_button"><?php _e( 'Upload or select image from gallery', 'mantra' );?></a> </span>     
+<h5> Title </h5>
+<input id='mantra_columntitle2' name='ma_options[mantra_columntitle2]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_columntitle2'] ) ?>'  />                            
+<h5> Text </h5>
+<textarea id='mantra_columntext2' name='ma_options[mantra_columntext2]' rows='3' cols='50' type='textarea' ><?php echo $mantra_options['mantra_columntext2'] ?></textarea>
+<h5> Link </h5>
+<input id='mantra_columnlink2' name='ma_options[mantra_columnlink2]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_columnlink2'] ) ?>'  />            
+</div>
+</div>
+
+<div class="slidebox"> 
+<h4 class="slidetitle" >  3rd Column  </h4>
+<div class="slidercontent">
+<h5>Image</h5>
+<input type="text" value="<?php echo  $mantra_options['mantra_columnimg3']; ?>" name="ma_options[mantra_columnimg3]" id="mantra_columnimg3" class="slideimages" />
+<span class="description"><a href="#" class="upload_image_button"><?php _e( 'Upload or select image from gallery', 'mantra' );?></a> </span>   
+<h5> Title </h5>
+<input id='mantra_columntitle3' name='ma_options[mantra_columntitle3]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_columntitle3'] ) ?>'  />                              
+<h5> Text </h5>
+<textarea id='mantra_columntext3' name='ma_options[mantra_columntext3]' rows='3' cols='50' type='textarea' ><?php echo $mantra_options['mantra_columntext3'] ?></textarea>
+<h5> Link </h5>
+<input id='mantra_columnlink3' name='ma_options[mantra_columnlink3]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_columnlink3'] ) ?>'  />            
+</div>
+</div>
+
+<div class="slidebox"> 
+<h4 class="slidetitle" >  4th Column  </h4>
+<div class="slidercontent">
+<h5>Image</h5>
+<input type="text" value="<?php echo  $mantra_options['mantra_columnimg4']; ?>" name="ma_options[mantra_columnimg4]" id="mantra_columnimg4" class="slideimages" />
+<span class="description"><a href="#" class="upload_image_button"><?php _e( 'Upload or select image from gallery', 'mantra' );?></a> </span>   
+<h5> Title </h5>
+<input id='mantra_columntitle4' name='ma_options[mantra_columntitle4]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_columntitle4'] ) ?>'  />                              
+<h5> Text </h5>
+<textarea id='mantra_columntext4' name='ma_options[mantra_columntext4]' rows='3' cols='50' type='textarea' ><?php echo $mantra_options['mantra_columntext4'] ?></textarea>
+<h5> Link </h5>
+<input id='mantra_columnlink4' name='ma_options[mantra_columnlink4]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_columnlink4'] ) ?>'  />            
+</div>
+</div>
+
+<?php
+}
 
 
 ////////////////////////////////
@@ -1244,6 +1497,21 @@ function setting_excerptwords_fn() {
 							will take the reader to the full post page.","mantra")."</small></div>";
 }
 
+//CHECKBOX - Name: ma_options[magazinelayout]
+function setting_magazinelayout_fn() {
+	global $mantra_options;
+	$items = array ("Enable" , "Disable");
+	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
+	echo "<select id='mantra_magazinelayout' name='ma_options[mantra_magazinelayout]'>";
+foreach($items as $id=>$item) {
+	echo "<option value='$item'";
+	selected($mantra_options['mantra_magazinelayout'],$itemsare[$id]);
+	echo ">$item</option>";
+}
+	echo "</select>";
+	echo "<div><small>".__("Enable the Magazine Layout. This layout applies to pages with posts and shows 2 posts per row.","mantra")."</small></div>";
+}
+
 // TEXTBOX - Name: ma_options[excerptdots]
 function setting_excerptdots_fn() {
 	global $mantra_options;
@@ -1800,6 +2068,51 @@ global $mantra_defaults;
 	$input['mantra_social10'] =  wp_kses_data($input['mantra_social10']);
 
 	$input['mantra_customcss'] =  wp_kses_post($input['mantra_customcss']);
+
+	$input['mantra_fpsliderwidth'] =  intval(wp_kses_data($input['mantra_fpsliderwidth']));
+	$input['mantra_fpsliderheight'] = intval(wp_kses_data($input['mantra_fpsliderheight']));
+
+	$input['mantra_sliderimg1'] =  wp_kses_data($input['mantra_sliderimg1']);
+	$input['mantra_slidertitle1'] =  wp_kses_data($input['mantra_slidertitle1']);
+	$input['mantra_slidertext1'] =  wp_kses_post($input['mantra_slidertext1']);
+	$input['mantra_sliderlink1'] =  wp_kses_data($input['mantra_sliderlink1']);
+	$input['mantra_sliderimg2'] =  wp_kses_data($input['mantra_sliderimg2']);
+	$input['mantra_slidertitle2'] =  wp_kses_data($input['mantra_slidertitle2']);
+	$input['mantra_slidertext2'] =  wp_kses_post($input['mantra_slidertext2']);
+	$input['mantra_sliderlink2'] =  wp_kses_data($input['mantra_sliderlink2']);
+	$input['mantra_sliderimg3'] =  wp_kses_data($input['mantra_sliderimg3']);
+	$input['mantra_slidertitle3'] =  wp_kses_data($input['mantra_slidertitle3']);
+	$input['mantra_slidertext3'] =  wp_kses_post($input['mantra_slidertext3']);
+	$input['mantra_sliderlink3'] =  wp_kses_data($input['mantra_sliderlink3']);
+	$input['mantra_sliderimg4'] =  wp_kses_data($input['mantra_sliderimg4']);
+	$input['mantra_slidertitle4'] =  wp_kses_data($input['mantra_slidertitle4']);
+	$input['mantra_slidertext4'] =  wp_kses_post($input['mantra_slidertext4']);
+	$input['mantra_sliderlink4'] =  wp_kses_data($input['mantra_sliderlink4']);
+	$input['mantra_sliderimg5'] =  wp_kses_data($input['mantra_sliderimg5']);
+	$input['mantra_slidertitle5'] =  wp_kses_data($input['mantra_slidertitle5']);
+	$input['mantra_slidertext5'] =  wp_kses_post($input['mantra_slidertext5']);
+	$input['mantra_sliderlink5'] =  wp_kses_data($input['mantra_sliderlink5']);
+	$input['mantra_social2'] =  wp_kses_data($input['mantra_social2']);
+	$input['mantra_social2'] =  wp_kses_data($input['mantra_social2']);
+
+	$input['mantra_colimageheight'] = intval(wp_kses_data($input['mantra_colimageheight']));
+
+	$input['mantra_columnimg1'] =  wp_kses_data($input['mantra_columnimg1']);
+	$input['mantra_columntitle1'] =  wp_kses_data($input['mantra_columntitle1']);
+	$input['mantra_columntext1'] =  wp_kses_post($input['mantra_columntext1']);
+	$input['mantra_columnlink1'] =  wp_kses_data($input['mantra_columnlink1']);
+	$input['mantra_columnimg2'] =  wp_kses_data($input['mantra_columnimg2']);
+	$input['mantra_columntitle2'] =  wp_kses_data($input['mantra_columntitle2']);
+	$input['mantra_columntext2'] =  wp_kses_post($input['mantra_columntext2']);
+	$input['mantra_columnlink2'] =  wp_kses_data($input['mantra_columnlink2']);
+	$input['mantra_columnimg3'] =  wp_kses_data($input['mantra_columnimg3']);
+	$input['mantra_columntitle3'] =  wp_kses_data($input['mantra_columntitle3']);
+	$input['mantra_columntext3'] =  wp_kses_post($input['mantra_columntext3']);
+	$input['mantra_columnlink3'] =  wp_kses_data($input['mantra_columnlink3']);
+	$input['mantra_columnimg4'] =  wp_kses_data($input['mantra_columnimg4']);
+	$input['mantra_columntitle4'] =  wp_kses_data($input['mantra_columntitle4']);
+	$input['mantra_columntext4'] =  wp_kses_post($input['mantra_columntext4']);
+	$input['mantra_columnlink4'] =  wp_kses_data($input['mantra_columnlink4']);
 
 	 $resetDefault = ( ! empty( $input['mantra_defaults']) ? true : false );
 

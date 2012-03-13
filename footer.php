@@ -27,6 +27,7 @@ $mantra_options= mantra_get_theme_options();
 foreach ($mantra_options as $key => $value) {	
      ${"$key"} = $value ;
 }
+  $theme_data =get_theme_data( get_template_directory_uri().'/style.css'  ); 
 ?>
 
 
@@ -35,7 +36,7 @@ foreach ($mantra_options as $key => $value) {
 		<div id="footer2">
 			<div id="site-info" >
 				<a href="<?php echo home_url( '/' ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-			| <b title="Mantra 1.0" >Mantra</b> Theme by <a href="http://www.cryoutcreations.com" target="_blank" title="Cryout Creations" >Cryout Creations</a> | Powered by
+			| <?php echo '<b title="'.$theme_data['Version'].'">'.$theme_data['Name'].'</b> Theme by '.$theme_data['Author']; ?> | Powered by
 			<?php do_action( 'mantra_credits' ); ?>
 				<a href="<?php echo esc_url('http://wordpress.org/' ); ?>"
 						title="<?php esc_attr_e('Semantic Personal Publishing Platform', 'mantra'); ?>" rel="generator">
