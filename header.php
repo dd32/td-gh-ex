@@ -68,12 +68,17 @@ $totalwidth= $mantra_sidewidth+$mantra_sidebar+50;
 
 <div id="toTop"> </div>
 
+
 <div id="wrapper" class="hfeed">
+
+<?php if ( has_nav_menu( 'top' ) ) wp_nav_menu( array( 'container_class' => 'topmenu', 'theme_location' => 'top' ) ); ?>
+
 <div id="header">
 
 		<div id="masthead"> 
-		<?php if ($mantra_options['mantra_linkheader']=="Enable") { ?><a href="<?php echo home_url( '/' ); ?>" id="linky"> </a><?php } ?>
+		
 			<div id="branding" role="banner" > 
+<?php if ($mantra_options['mantra_linkheader']=="Enable") { ?><a href="<?php echo home_url( '/' ); ?>" id="linky"> </a><?php } ?>
 				<?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
 				<<?php echo $heading_tag; ?> id="site-title">
 					<span>
@@ -93,15 +98,17 @@ $totalwidth= $mantra_sidewidth+$mantra_sidebar+50;
 						// Houston, we have a new header image!
 						echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
 ?> <style> #access {margin-top:<?php echo $image[2]+10;?>px !important;}  </style> <?php
-					else : ?><?php if (get_header_image() != '') { ?>
+					else :  if (get_header_image() != '') { ?>
 
 						<style> #branding { background:url(<?php header_image(); ?>) no-repeat;
 								<?php if ($mantra_dimselect=="Absolute") { ?>
 								 width:<?php echo HEADER_IMAGE_WIDTH; ?>px; <?php } ?>
 								 height:<?php echo HEADER_IMAGE_HEIGHT; ?>px;}'
-									
+						</style>
+									<?php } else { ?><?php } ?><?php endif; 
 
-<?php if ($mantra_options['mantra_linkheader']=="Enable") { ?>
+ if ($mantra_options['mantra_linkheader']=="Enable") { ?>
+<style>
 #linky {
 display:block;
 position:absolute;
@@ -113,9 +120,8 @@ z-index:1;
 position:relative;
 z-index:2
 }
-<?php } ?>
 </style>
-									<?php } else { ?><?php } ?><?php endif; ?>
+<?php } ?>
 				<div style="clear:both;"></div>
 			
 			</div><!-- #branding --> 
@@ -124,7 +130,7 @@ z-index:2
 			  <?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
 				<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'mantra' ); ?>"><?php _e( 'Skip to content', 'mantra' ); ?></a></div>
 				<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */
-				?><?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
+				 wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
 			</div><!-- #access -->
 		</div><!-- #masthead -->
 

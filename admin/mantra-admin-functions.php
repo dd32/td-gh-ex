@@ -465,7 +465,7 @@ function setting_frontslider_fn() {
 	});
 jQuery('.slidetitle').click(function() {
  
-jQuery(this).next().toggle();
+jQuery(this).next().toggle("fast");
 });
 
 </script>
@@ -1854,7 +1854,7 @@ if ($options) $mantra_options = $options;
 
 
 	</form>
-<?php   $theme_data =get_theme_data( get_template_directory_uri().'/style.css'  ); ?>
+<?php      $theme_data = get_theme_data( get_theme_root() . '/mantra/style.css' );  ?>
 <span id="version"> 
 <?php echo $theme_data['Name'].' v. '.$theme_data['Version'].' by '.$theme_data['Author']; ?>
 </span>

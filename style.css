@@ -4,7 +4,7 @@ Theme URI: http://www.riotreactions.com/mantra
 Description: Mantra is a do-it-yourself WordPress theme, featuring a pack of over 100 customization options and easy to use tweaks capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (1,2 or 3 columns), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 35 font-families to choose from), text and header sizes, post metas, post excerpts, post formats, header and background images, custom menus, 24 social media links and icons, pins, bullets and much much more. With a customizable presentation page, animated slider, magazine and blog layouts, 8 widget areas, modern graphics and an easy and responsive admin section, you can start creating your dream site right now.
 Author: Cryout Creations
 Author URI: http://www.cryoutcreations.com
-Version: 1.8.1
+Version: 1.8.2
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, red, blue, white, silver, light, dark, one-column, two-columns, three-columns, right-sidebar, left-sidebar, flexible-width, fixed-width, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, front-page-post-form, full-width-template,  microformats, post-formats, rtl-language-support,  sticky-post, theme-options, threaded-comments, translation-ready
@@ -465,7 +465,7 @@ background:none;
 
 
 
-/* =Menu
+/* =Menu -PRIMARY
 -------------------------------------------------------------- */
 
 #access {
@@ -625,6 +625,42 @@ color:#0C85CD ;
 	color: #5F5B5B ;
 	background:url(images/mantra_menu_current.png) top right no-repeat;
 }
+
+
+/* =Menu -SECONDARY
+-------------------------------------------------------------- */
+
+.footermenu {
+display:block;
+overflow:visible;
+float:none;
+}
+
+
+.topmenu ul li{
+display:block;
+float:right;
+margin:3px 5px;
+}
+
+.footermenu {
+text-align:center;
+overflow:hidden;
+display:table;
+float:none;
+margin:0 auto;
+}
+
+
+.footermenu ul li{
+display:block;
+float:left;
+margin:0px 5px;
+text-align:center;
+}
+
+
+
 
 /* =Content
 -------------------------------------------------------------- */
@@ -1109,6 +1145,7 @@ margin-right:10px;
 #content img {
 	margin: 0;
 	height: auto;
+	max-width:100%;
 }
 
 #content img:hover {
@@ -2386,6 +2423,14 @@ box-shadow:0 0 3px #333;
 font-size:20px;
 margin:7px 0;
 }
+
+.columnmore  {
+font-size:14px;
+text-align:right;
+padding-right:10px;
+margin-top:10px;
+}
+
 
 
 

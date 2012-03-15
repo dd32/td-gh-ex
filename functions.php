@@ -152,9 +152,11 @@ $locale_file = get_template_directory() . "/languages/$locale.php";
 
 
 
-	// This theme uses wp_nav_menu() in one location.
+	// This theme uses wp_nav_menu() in 3 locations.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Navigation', 'mantra' ),
+		'top' => __( 'Top Navigation', 'mantra' ),
+		'footer' => __( 'Footer Navigation', 'mantra' ),
 	) );
 
 	// This theme allows users to set a custom background

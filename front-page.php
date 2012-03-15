@@ -105,15 +105,20 @@ height:<?php echo $mantra_colimageheight ?>px;
 <div id="front-columns"> 
 	<div id="column1">
 	<a  href="<?php echo $mantra_columnlink1 ?>">	<div class="column-image" ><img  src="<?php echo $mantra_columnimg1 ?>" id="column1" alt="" /> </div> <h3><?php echo $mantra_columntitle1 ?></h3> </a><div class="column-text"><?php echo $mantra_columntext1 ?></div>
+	<div class="columnmore"> <a href="<?php echo $mantra_columnlink1 ?>">Read more &raquo;</a> </div>
 	</div>
 	<div id="column2">
 		<a  href="<?php echo $mantra_columnlink2 ?>">	<div class="column-image" ><img  src="<?php echo $mantra_columnimg2 ?>" id="column2" alt="" /> </div> <h3><?php echo $mantra_columntitle2 ?></h3> </a><div class="column-text"><?php echo $mantra_columntext2 ?></div>
+	<div class="columnmore"> <a href="<?php echo $mantra_columnlink2 ?>">Read more &raquo;</a> </div>
 	</div>
 	<div id="column3">
 		<a  href="<?php echo $mantra_columnlink3 ?>">	<div class="column-image" ><img  src="<?php echo $mantra_columnimg3 ?>" id="column3" alt="" /> </div> <h3><?php echo $mantra_columntitle3 ?></h3> </a><div class="column-text"><?php echo $mantra_columntext3 ?></div>
+	<div class="columnmore"> <a href="<?php echo $mantra_columnlink3 ?>">Read more &raquo;</a> </div>
 	</div>
+
 	<div id="column4">
 		<a  href="<?php echo $mantra_columnlink4 ?>">	<div class="column-image" ><img  src="<?php echo $mantra_columnimg4 ?>" id="column4" alt="" /> </div> <h3><?php echo $mantra_columntitle4 ?></h3> </a><div class="column-text"><?php echo $mantra_columntext4 ?></div>
+	<div class="columnmore"> <a href="<?php echo $mantra_columnlink4 ?>">Read more &raquo;</a> </div>
 	</div>
 
 </div>

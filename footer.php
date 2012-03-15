@@ -27,13 +27,14 @@ $mantra_options= mantra_get_theme_options();
 foreach ($mantra_options as $key => $value) {	
      ${"$key"} = $value ;
 }
-  $theme_data =get_theme_data( get_template_directory_uri().'/style.css'  ); 
+   $theme_data = get_theme_data( get_theme_root() . '/mantra/style.css' ); 
 ?>
 
 
 		</div><!-- #colophon -->
 
 		<div id="footer2">
+<?php if ( has_nav_menu( 'footer' ) ) wp_nav_menu( array( 'container_class' => 'footermenu', 'theme_location' => 'footer' ) ); ?>
 			<div id="site-info" >
 				<a href="<?php echo home_url( '/' ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 			| <?php echo '<b title="'.$theme_data['Version'].'">'.$theme_data['Name'].'</b> Theme by '.$theme_data['Author']; ?> | Powered by
