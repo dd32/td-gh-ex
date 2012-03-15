@@ -15,16 +15,15 @@
 				<?php the_tags( '<p class="postmeta"><span class="tags">', ', ', '</span></p>'); ?>
 				<p class="postmeta"><span class="cats"><?php the_category(', ') ?></span></p>
 				<?php edit_post_link(__("Edit this entry", "baza_noclegowa"), '<p>', '</p>'); ?>
+				
+			<p><?php posts_nav_link(); ?></p>
+		
+			<div class="navigation2">
+				<div class="alignright prev"><?php previous_post_link('%link'); ?></div>
+				<div class="alignleft next"><?php next_post_link('%link'); ?></div>
+			</div>		
 
 			</div>
-		
-		<p><?php posts_nav_link(); ?></p>
-		
-		<div class="navigation2">
-			<div class="alignright prev"><?php previous_post_link('%link'); ?></div>
-			<div class="alignleft next"><?php next_post_link('%link'); ?></div>
-		</div>	
-			
 		</div>
 
 	<?php comments_template(); ?>

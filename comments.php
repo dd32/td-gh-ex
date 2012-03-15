@@ -1,7 +1,7 @@
 <?php
 
 		if ( post_password_required() ) : ?>
-			<p class="nocomments"><?php _e("This post is password protected. Enter the password to view comments.", "baza_noclegowa"); ?></p>
+			<p class="nocomments"><?php _e("This post is password protected. Enter the password to view comments.", "blog_n1"); ?></p>
 
 			<?php
 				return;
