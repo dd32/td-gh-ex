@@ -9,18 +9,19 @@ get_header();
 <article <?php post_class(); ?>>
 <h3 class="storytitle" id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(''); ?></a></h3>
 <section class="meta">
-<?php edit_post_link(__('Edit This')); ?>
+<?php edit_post_link(__('Edit This', 'nwc')); ?>
 <ul>
-<li><?php printf(_e("Publish on:")); ?> <a href="<?php the_permalink() ?>" rel="bookmark"><?php echo the_time("l - d F Y"); ?></a></li>
-<li><?php printf(_e("Categories:")); ?> <?php the_category(', ') ?> <?php the_tags(__('Tags:&nbsp;'), ' , ' , ''); ?></li> 
+<li><?php printf(_e("You are here:", 'nwc')); ?> <?php the_breadcrumb(); ?></li>
+<li><?php printf(_e("Publish on:", 'nwc')); ?> <a href="<?php the_permalink() ?>" rel="bookmark"><?php echo the_time("l - d F Y"); ?></a></li>
+<li><?php printf(_e("Categories:", 'nwc')); ?> <?php the_category(', ') ?> <?php the_tags(__('Tags:&nbsp;', 'nwc'), ' , ' , ''); ?></li>
 </ul>
 </section>
 
-<?php the_content(__('(more...)')); ?>
+<?php the_content(__('(more...)', 'nwc')); ?>
 
 <section class="commentlink">
 <?php wp_link_pages(); ?>
-<?php comments_popup_link(__('No Comments'), __('1 Comment'), __('% Comments'), '', __('Comments are closed.') ); ?>
+<?php comments_popup_link(__('No Comments', 'nwc'), __('1 Comment', 'nwc'), __('% Comments', 'nwc'), '', __('Comments are closed.', 'nwc') ); ?>
 </section>
 
 </article>
