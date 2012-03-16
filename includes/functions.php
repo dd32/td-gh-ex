@@ -179,7 +179,7 @@ add_filter('excerpt_more', 'responsive_auto_excerpt_more');
  * Adds a pretty "Read more" link to custom post excerpts.
  */
 function responsive_custom_excerpt_more($output) {
-    if (has_excerpt() && !is_attachment()) the_excerpt(); {
+    if (has_excerpt() && !is_attachment()) {
         $output .= responsive_read_more();
     }
     return $output;
