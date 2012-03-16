@@ -88,10 +88,10 @@ function atheros_setup() {
 
 	// Make theme available for translation
 	// Translations can be filed in the /languages/ directory
-	load_theme_textdomain( 'atheros', TEMPLATEPATH . '/languages' );
+	load_theme_textdomain( 'atheros', get_template_directory() . '/languages' );
 
 	$locale = get_locale();
-	$locale_file = TEMPLATEPATH . "/languages/$locale.php";
+	$locale_file = get_template_directory() . "/languages/$locale.php";
 	if ( is_readable( $locale_file ) )
 		require_once( $locale_file );
 
@@ -457,12 +457,40 @@ function atheros_remove_recent_comments_style() {
 }
 add_action( 'widgets_init', 'atheros_remove_recent_comments_style' );
 
-if ( ! function_exists( 'atheros_posted_on' ) ) :
+/**
+ * Footer script
+ * focus on search field after it has loaded
+*/
+ 
+function atheros_footer_script(){
+  ?>
+	<script type="text/javascript">
+		document.getElementById('s') && document.getElementById('s').focus();
+	</script>
+<?php	
+  }
+  add_action( 'wp_footer', 'atheros_footer_script' );
+  
+/**
+ * We add some JavaScript to pages with the comment form
+ * to support sites with threaded comments (when in use).
+ *
+*/
+ 
+ function atheroscomment_scripts(){
+	if ( is_singular() && get_option( 'thread_comments' ) )
+		wp_enqueue_script( 'comment-reply' );
+  }
+  add_action( 'wp_enqueue_scripts', 'atheroscomment_scripts' );
+  
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  *
  * @since atheros 1.0
  */
+ 
+if ( ! function_exists( 'atheros_posted_on' ) ) :
+
 function atheros_posted_on() {
 	printf( __( '<span class="%1$s">Posted on</span> %2$s <span class="meta-sep">by</span> %3$s', 'atheros' ),
 		'meta-prep meta-prep-author',

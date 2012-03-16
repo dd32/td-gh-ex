@@ -43,8 +43,6 @@
 </div><!-- #wrapper -->
 
 <div id="footerbottom">
-
-
 	<?php 
 		/**
 		 * This is where the credit for the theme is placed. 
@@ -55,7 +53,7 @@
 		 * however you like to.
 		*/
 		?>
-		  By <a href="http://www.themes-for-wp.com/" title="Themes for WP">Themes for WP</a> 
+		 <?php _e( 'By', 'atheros' ); ?> <a href="<?php echo esc_url( __( 'http://www.themes-for-wp.com/', 'atheros' ) ); ?>" title="<?php esc_attr_e( 'themes-for-wp.com', 'atheros' ); ?>"><?php printf( 'Themes for WP' ); ?></a>
 
 </div>
 <?php
