@@ -70,44 +70,44 @@ msgstr "Antwort abbrechen"
 msgid "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of this account\">Log out?</a>"
 msgstr "Eingeloggt als <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Ausloggen\">Ausloggen?</a>"
 
-#: functions.php:154
+#: functions.php:179
 #@ nwc
 msgid "Name"
 msgstr "Name"
 
-#: functions.php:157
+#: functions.php:182
 #@ nwc
 msgid "E-Mail"
 msgstr "E-Mail"
 
-#: functions.php:160
+#: functions.php:185
 #@ nwc
 msgid "Website"
 msgstr "Website"
 
-#: functions.php:172
+#: functions.php:197
 #, php-format
 #@ nwc
 msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">says:</span>"
 msgstr "<cite class=\"fn\">%s</cite> <span class=\"says\">sagte:</span>"
 
-#: functions.php:175
+#: functions.php:200
 #@ nwc
 msgid "Your comment is awaiting moderation."
 msgstr "Dein Kommentar wartet auf Moderation."
 
-#: functions.php:179
+#: functions.php:204
 #, php-format
 #@ nwc
 msgid "%1$s at %2$s"
 msgstr "%1$s um %2$s"
 
-#: functions.php:180
+#: functions.php:205
 #@ nwc
 msgid "(Edit)"
 msgstr "(Bearbeiten)"
 
-#: functions.php:184
+#: functions.php:209
 #@ nwc
 msgid "Reply"
 msgstr "Antworten"

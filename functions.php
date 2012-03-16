@@ -1,14 +1,39 @@
 <?php
 /* Make theme available for translation */
 /* Translations can be filed in the /languages/ directory */
-load_theme_textdomain( 'nwc', TEMPLATEPATH . '/languages' );
-
+load_theme_textdomain('nwc', get_template_directory() . '/languages');
 	$locale = get_locale();
-	$locale_file = TEMPLATEPATH . "/languages/$locale.php";
+	$locale_file = get_template_directory() . "/languages/$locale.php";
 	if ( is_readable( $locale_file ) )
 		require_once( $locale_file );
 
 $content_width =400;
+
+// Scripts
+function nwc_enqueue_scripts() {  
+	if (!is_admin()) {
+	  wp_deregister_script( 'jquery' );	
+        
+	  wp_register_script( 'jquery', 'http://code.jquery.com/jquery-latest.js');
+	  wp_register_script('superfish', get_template_directory_uri() . '/js/superfish.js');
+      wp_register_script('hover-Intent', get_template_directory_uri() . '/js/hoverIntent.js');
+      wp_register_script('custom', get_template_directory_uri() . '/js/custom.js');
+      wp_enqueue_script( 'jquery' );  	     
+	  wp_enqueue_script('superfish');   
+      wp_enqueue_script('hover-Intent'); 
+      wp_enqueue_script('custom'); 
+	}
+}
+
+add_action('init', 'nwc_enqueue_scripts');
+ 
+function add_ie_html5_shim () {
+     echo '<!--[if lt IE 9]>' . "\n";
+     echo '<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>' . "\n";
+     echo '<![endif]-->' . "\n";
+}
+
+add_action('wp_head', 'add_ie_html5_shim');
 
 add_theme_support('automatic-feed-links');
 
