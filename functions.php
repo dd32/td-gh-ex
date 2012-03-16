@@ -12,16 +12,13 @@ $content_width =400;
 // Scripts
 function nwc_enqueue_scripts() {  
 	if (!is_admin()) {
-	  wp_deregister_script( 'jquery' );	
-        
-	  wp_register_script( 'jquery', 'http://code.jquery.com/jquery-latest.js');
 	  wp_register_script('superfish', get_template_directory_uri() . '/js/superfish.js');
       wp_register_script('hover-Intent', get_template_directory_uri() . '/js/hoverIntent.js');
-      wp_register_script('custom', get_template_directory_uri() . '/js/custom.js');
-      wp_enqueue_script( 'jquery' );  	     
+      wp_register_script('nwc-custom', get_template_directory_uri() . '/js/nwc-custom.js');
+      wp_enqueue_script('jquery');  	     
 	  wp_enqueue_script('superfish');   
       wp_enqueue_script('hover-Intent'); 
-      wp_enqueue_script('custom'); 
+      wp_enqueue_script('nwc-custom'); 
 	}
 }
 
@@ -53,21 +50,24 @@ define('NO_HEADER_TEXT', true );
 
 // gets included in the site header
 function header_style() {
-    ?><style type="text/css">
-        header {
-            background: url(<?php header_image(); ?>) no-repeat;
-        }
-    </style><?php
+    ?>
+<style type="text/css">
+header {
+    background: url(<?php header_image(); ?>) no-repeat;
+}
+</style>
+<?php
 }
 
 // gets included in the admin header
 function admin_header_style() {
-    ?><style type="text/css">
-        header {
-            width: <?php echo HEADER_IMAGE_WIDTH; ?>%;
-            height: <?php echo HEADER_IMAGE_HEIGHT; ?>px;
-            background: no-repeat;
-        }
+    ?>
+<style type="text/css">
+header {
+    width: <?php echo HEADER_IMAGE_WIDTH; ?>%;
+    height: <?php echo HEADER_IMAGE_HEIGHT; ?>px;
+    background: no-repeat;
+}
     </style><?php
 }
 
