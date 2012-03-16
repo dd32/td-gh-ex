@@ -113,7 +113,7 @@ function responsive_theme_options_do_page() {
             
             <div id="rwd" class="grid col-940">
 
-            <h3 class="rwd-toggle"><a href="#">Theme Elements</a></h3>
+            <h3 class="rwd-toggle"><a href="#"><?php _e('Theme Elements', 'responsive'); ?></a></h3>
             <div class="rwd-container">
                 <div class="rwd-block"> 
                                
@@ -122,7 +122,7 @@ function responsive_theme_options_do_page() {
                  * Breadcrumb Lists
                  */
                 ?>
-                <div class="grid col-300"><?php _e('Show Breadcrumb Lists?', 'responsive'); ?></div><!-- end of .grid col-300 -->
+                <div class="grid col-300"><?php _e('Disable Breadcrumb Lists?', 'responsive'); ?></div><!-- end of .grid col-300 -->
                     <div class="grid col-620 fit">
 					    <input id="responsive_theme_options[breadcrumb]" name="responsive_theme_options[breadcrumb]" type="checkbox" value="1" <?php isset($options['breadcrumb']) ? checked( '1', $options['breadcrumb'] ) : checked('0', '1'); ?> />
 						<label class="description" for="responsive_theme_options[breadcrumb]"><?php _e('Check to disable', 'responsive'); ?></label>
@@ -133,7 +133,7 @@ function responsive_theme_options_do_page() {
                  * CTA Button
                  */
                 ?>
-                <div class="grid col-300"><?php _e('Show CTA Button?', 'responsive'); ?></div><!-- end of .grid col-300 -->
+                <div class="grid col-300"><?php _e('Disable Call to Action Button?', 'responsive'); ?></div><!-- end of .grid col-300 -->
                     <div class="grid col-620 fit">
 					    <input id="responsive_theme_options[cta_button]" name="responsive_theme_options[cta_button]" type="checkbox" value="1" <?php isset($options['cta_button']) ? checked( '1', $options['cta_button'] ) : checked('0', '1'); ?> />
 						<label class="description" for="responsive_theme_options[cta_button]"><?php _e('Check to disable', 'responsive'); ?></label>
@@ -145,7 +145,7 @@ function responsive_theme_options_do_page() {
                 </div><!-- end of .rwd-block -->
             </div><!-- end of .rwd-container -->
 
-            <h3 class="rwd-toggle"><a href="#">Logo Upload</a></h3>
+            <h3 class="rwd-toggle"><a href="#"><?php _e('Logo Upload', 'responsive'); ?></a></h3>
             <div class="rwd-container">
                 <div class="rwd-block">
                 <?php
@@ -163,7 +163,7 @@ function responsive_theme_options_do_page() {
                 </div><!-- end of .rwd-block -->
             </div><!-- end of .rwd-container -->
                         
-            <h3 class="rwd-toggle"><a href="#">Homepage</a></h3>
+            <h3 class="rwd-toggle"><a href="#"><?php _e('Home Page', 'responsive'); ?></a></h3>
             <div class="rwd-container">
                 <div class="rwd-block">
                 <?php
@@ -201,24 +201,24 @@ function responsive_theme_options_do_page() {
                                 
                 <?php
                 /**
-                 * Homepage Featured Button Link
+                 * Homepage Call to Action URL
                  */
                 ?>
-                <div class="grid col-300"><?php _e('Featured Button (Link)', 'responsive'); ?></div><!-- end of .grid col-300 -->
+                <div class="grid col-300"><?php _e('Call to Action (URL)', 'responsive'); ?></div><!-- end of .grid col-300 -->
                     <div class="grid col-620 fit">
-                        <input id="responsive_theme_options[featured_button_link]" class="regular-text" type="text" name="responsive_theme_options[featured_button_link]" value="<?php if (!empty($options['featured_button_link'])) esc_attr_e($options['featured_button_link']); ?>" />
-                        <label class="description" for="responsive_theme_options[featured_button_link]"><?php _e('Enter your featured button link', 'responsive'); ?></label>
+                        <input id="responsive_theme_options[cta_url]" class="regular-text" type="text" name="responsive_theme_options[cta_url]" value="<?php if (!empty($options['cta_url'])) esc_attr_e($options['cta_url']); ?>" />
+                        <label class="description" for="responsive_theme_options[cta_url]"><?php _e('Enter your call to action URL', 'responsive'); ?></label>
                     </div><!-- end of .grid col-620 -->
                 
                 <?php
                 /**
-                 * Homepage Featured Button Text
+                 * Homepage Call to Action Text
                  */
                 ?>
-                <div class="grid col-300"><?php _e('Featured Button (Text)', 'responsive'); ?></div><!-- end of .grid col-300 -->
+                <div class="grid col-300"><?php _e('Call to Action (Text)', 'responsive'); ?></div><!-- end of .grid col-300 -->
                     <div class="grid col-620 fit">
-                        <input id="responsive_theme_options[featured_button_text]" class="regular-text" type="text" name="responsive_theme_options[featured_button_text]" value="<?php if (!empty($options['featured_button_text'])) esc_attr_e($options['featured_button_text']); ?>" />
-                        <label class="description" for="responsive_theme_options[featured_button_text]"><?php _e('Enter your featured button text', 'responsive'); ?></label>
+                        <input id="responsive_theme_options[cta_text]" class="regular-text" type="text" name="responsive_theme_options[cta_text]" value="<?php if (!empty($options['cta_text'])) esc_attr_e($options['cta_text']); ?>" />
+                        <label class="description" for="responsive_theme_options[cta_text]"><?php _e('Enter your call to action text', 'responsive'); ?></label>
                     </div><!-- end of .grid col-620 -->
 
                 <?php
@@ -238,7 +238,7 @@ function responsive_theme_options_do_page() {
                 </div><!-- end of .rwd-block -->
             </div><!-- end of .rwd-container -->
 
-            <h3 class="rwd-toggle"><a href="#">Webmaster Tools</a></h3>
+            <h3 class="rwd-toggle"><a href="#"><?php _e('Webmaster Tools', 'responsive'); ?></a></h3>
             <div class="rwd-container">
                 <div class="rwd-block"> 
                                
@@ -292,7 +292,7 @@ function responsive_theme_options_do_page() {
                 </div><!-- end of .rwd-block -->
             </div><!-- end of .rwd-container -->
 
-            <h3 class="rwd-toggle"><a href="#">Social Icons</a></h3>
+            <h3 class="rwd-toggle"><a href="#"><?php _e('Social Icons', 'responsive'); ?></a></h3>
             <div class="rwd-container">
                 <div class="rwd-block"> 
                             
@@ -377,8 +377,8 @@ function responsive_theme_options_validate($input) {
     $input['home_headline'] = wp_kses_stripslashes($input['home_headline']);
     $input['home_content_area'] = wp_kses_stripslashes($input['home_content_area']);
 	$input['home_subheadline'] = wp_kses_stripslashes($input['home_subheadline']);
-    $input['featured_button_text'] = wp_kses_stripslashes($input['featured_button_text']);
-    $input['featured_button_link'] = wp_filter_post_kses($input['featured_button_link']);
+    $input['cta_text'] = wp_kses_stripslashes($input['cta_text']);
+    $input['cta_url'] = esc_url_raw($input['cta_url']);
     $input['featured_content'] = wp_kses_stripslashes($input['featured_content']);
     $input['google_site_verification'] = wp_filter_post_kses($input['google_site_verification']);
     $input['bing_site_verification'] = wp_filter_post_kses($input['bing_site_verification']);

@@ -16,7 +16,7 @@
  */
 ?>
 <?php get_header(); ?>
-
+<?php global $more; $more = 0; ?>
         <div id="content-blog" class="grid col-620">
 <?php
     $limit = get_option('posts_per_page');
@@ -61,7 +61,7 @@
                     <?php the_post_thumbnail(); ?>
                         </a>
                     <?php endif; ?>
-                    <?php the_content(__('See more &#8250;', 'responsive')); ?>
+                    <?php the_content(__('Read more &#8250;', 'responsive')); ?>
                     <?php wp_link_pages(array('before' => '<div class="pagination">' . __('Pages:', 'responsive'), 'after' => '</div>')); ?>
                 </div><!-- end of .post-entry -->
                 

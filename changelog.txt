@@ -1,8 +1,39 @@
-Legend:
+Changelog Legend:
 
 [+] = Added
 [-] = Removed
-[*] = Bugs
+[^] = Moved
+[=] = No Changes
+[x] = Deleted
+[!] = Bugs
+
+(03/15/2012) - Version 1.3.0
+[!] Prefix inconstancy for comment reply function
+[+] wp_enqueue_scripts instead of wp_print_scripts
+[+] wp_enqueue_style for Google Fonts replaced with a static link
+[+] translation function in:
+    - comments.php
+	- functions.php
+	- home.php
+	- sidebar-home.php
+	- sidebar-gallery.php
+	- single.php
+	- search.php
+[+] wp_filter_post_kses changed to esc_url_raw in theme-options.php
+[+] CTA references changed to Call to Action followed 
+    by option renaming for the same in theme-option.php
+	and home.php
+[+] class for home #widgets
+[^] titles just after #widgets
+[^] widget-title-home h3 in .widget-title
+[x] widget-title-home h3 a
+[*] read more
+[-] gallery-meta
+[+] CSS source formatting
+[+] social-icons center align for responsive layout
+[-] post thumbnail CSS
+[+] See more to Read more in all files
+[+] global $more; $more = 0; for pages with _excerpt
 
 (03/12/2012)
-- Initial Release
+Initial Release

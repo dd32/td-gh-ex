@@ -14,14 +14,14 @@
  * @since          available since Release 1.0
  */
 ?>
-    <div id="widgets">
+    <div id="widgets" class="home-widgets">
         <div class="grid col-300">
         <?php responsive_widgets(); // above widgets hook ?>
             
             <?php if (!dynamic_sidebar('home-widget-1')) : ?>
             
                 <div class="widget-title-home"><h3><?php _e('Home Widget 1', 'responsive'); ?></h3></div>
-                <p>This is your first home widget box. To edit please go to Appearance > Widgets and choose 6th widget from the top in area 7 called Home Widget 1. Title is also managable from widget area as well.</p>
+                <p><?php _e('This is your first home widget box. To edit please go to Appearance > Widgets and choose 6th widget from the top in area six called Home Widget 1. Title is also managable from widgets as well.','responsive'); ?></p>
             
 			<?php endif; //end of home-widget-1 ?>
 
@@ -34,7 +34,7 @@
 			<?php if (!dynamic_sidebar('home-widget-2')) : ?>
             
                 <div class="widget-title-home"><h3><?php _e('Home Widget 2', 'responsive'); ?></h3></div>
-                <p>This is your second home widget box. To edit please go to Appearance > Widgets and choose 7th widget from the top in area 7 called Home Widget 1. Title is also managable from widget area as well.</p>
+                <p><?php _e('This is your second home widget box. To edit please go to Appearance > Widgets and choose 7th widget from the top in area seven called Home Widget 2. Title is also managable from widgets as well.','responsive'); ?></p>
             
 			<?php endif; //end of home-widget-2 ?>
             
@@ -47,7 +47,7 @@
             <?php if (!dynamic_sidebar('home-widget-3')) : ?>
             
                 <div class="widget-title-home"><h3><?php _e('Home Widget 3', 'responsive'); ?></h3></div>
-                <p>This is your third home widget box. To edit please go to Appearance > Widgets and choose 8th widget from the top in area 7 called Home Widget 1. Title is also managable from widget area as well.</p>
+                <p><?php _e('This is your third home widget box. To edit please go to Appearance > Widgets and choose 8th widget from the top in area eight called Home Widget 3. Title is also managable from widgets as well.','responsive'); ?></p>
         
 		    <?php endif; //end of home-widget-3 ?>
             

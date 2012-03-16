@@ -54,13 +54,13 @@
                 </div><!-- end of .post-meta -->
                                 
                 <div class="post-entry">
-                    <?php the_content(__('See more &#8250;', 'responsive')); ?>
+                    <?php the_content(__('Read more &#8250;', 'responsive')); ?>
                     
                     <?php if ( get_the_author_meta('description') != '' ) : ?>
                     
                     <div id="author-meta">
                     <?php if (function_exists('get_avatar')) { echo get_avatar( get_the_author_meta('email'), '80' ); }?>
-                        <div class="about-author">About <?php the_author_posts_link(); ?></div>
+                        <div class="about-author"><?php _e('About','responsive'); ?> <?php the_author_posts_link(); ?></div>
                         <p><?php the_author_meta('description') ?></p>
                     </div><!-- end of #author-meta -->
                     

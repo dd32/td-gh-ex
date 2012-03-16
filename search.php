@@ -17,7 +17,7 @@
 <?php get_header(); ?>
 
         <div id="content" class="grid col-620">
-            <h6>We found 
+            <h6><?php _e('We found','responsive'); ?> 
 			<?php
                 $allsearch = &new WP_Query("s=$s&showposts=-1");
                 $key = esc_html($s, 1);

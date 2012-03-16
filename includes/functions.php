@@ -179,8 +179,8 @@ add_filter('excerpt_more', 'responsive_auto_excerpt_more');
  * Adds a pretty "Read more" link to custom post excerpts.
  */
 function responsive_custom_excerpt_more($output) {
-    if (has_excerpt() && !is_attachment()) {
-        $output .= responsive_see_more();
+    if (has_excerpt() && !is_attachment()) the_excerpt(); {
+        $output .= responsive_read_more();
     }
     return $output;
 }
@@ -217,7 +217,7 @@ add_action( 'widgets_init', 'responsive_remove_recent_comments_style' );
 function responsive_breadcrumb_lists() {
 
     $chevron = '<span>&#8250;</span>';
-    $name = 'Home'; //text for the 'Home' link
+    $name = __('Home','responsive'); //text for the 'Home' link
     $currentBefore = '<span class="current">';
     $currentAfter = '</span>';
 
@@ -275,17 +275,17 @@ function responsive_breadcrumb_lists() {
         the_title();
         echo $currentAfter;
     } elseif (is_search()) {
-        echo $currentBefore . 'Search results for &#39;' . get_search_query() . '&#39;' . $currentAfter;
+        echo $currentBefore . __('Search results for &#39;','responsive') . get_search_query() . __('&#39;','responsive') . $currentAfter;
     } elseif (is_tag()) {
-        echo $currentBefore . 'Posts tagged &#39;';
+        echo $currentBefore . __('Posts tagged &#39;','responsive');
         single_tag_title();
         echo '&#39;' . $currentAfter;
     } elseif (is_author()) {
         global $author;
         $userdata = get_userdata($author);
-        echo $currentBefore . 'Articles posted by ' . $userdata->display_name . $currentAfter;
+        echo $currentBefore . __('Articles posted by ','responsive') . $userdata->display_name . $currentAfter;
     } elseif (is_404()) {
-        echo $currentBefore . 'Error 404' . $currentAfter;
+        echo $currentBefore . __('Error 404','responsive') . $currentAfter;
     }
 
     if (get_query_var('paged')) {
@@ -303,7 +303,7 @@ function responsive_breadcrumb_lists() {
      * A safe way of adding javascripts to a WordPress generated page.
      */
     if (!is_admin())
-        add_action('wp_print_scripts', 'responsive_js');
+        add_action('wp_enqueue_scripts', 'responsive_js');
 
     if (!function_exists('responsive_js')) {
 
@@ -319,13 +319,13 @@ function responsive_breadcrumb_lists() {
     /**
      * A comment reply.
      */
-        function shell_enqueue_comment_reply() {
+        function responsive_enqueue_comment_reply() {
     if ( is_singular() && comments_open() && get_option('thread_comments')) { 
             wp_enqueue_script('comment-reply'); 
         }
     }
 
-    add_action( 'wp_enqueue_scripts', 'shell_enqueue_comment_reply' );
+    add_action( 'wp_enqueue_scripts', 'responsive_enqueue_comment_reply' );
 	
     /**
      * Where the post has no post title, but must still display a link to the single-page post view.
@@ -334,7 +334,7 @@ function responsive_breadcrumb_lists() {
 
     function responsive_title($title) {
         if ($title == '') {
-            return 'Untitled';
+            return __('Untitled','responsive');
         } else {
             return $title;
         }

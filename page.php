@@ -56,7 +56,7 @@
                 <?php endif; ?> 
                 
                 <div class="post-entry">
-                    <?php the_content(__('See more &#8250;', 'responsive')); ?>
+                    <?php the_content(__('Read more &#8250;', 'responsive')); ?>
                     <?php wp_link_pages(array('before' => '<div class="pagination">' . __('Pages:', 'responsive'), 'after' => '</div>')); ?>
                 </div><!-- end of .post-entry -->
                 

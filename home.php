@@ -32,7 +32,7 @@
 			// If not display dummy headline for preview purposes
 			      } else { 
 			        echo '<h1 class="featured-title">';
-				    echo 'Hello, World!';
+				    echo __('Hello, World!','responsive');
 				    echo '</h1>';
 				  }
 			?>
@@ -46,7 +46,7 @@
 			// If not display dummy headline for preview purposes
 			      } else { 
 			        echo '<h2 class="featured-subtitle">';
-				    echo 'Your H2 subheadline here';
+				    echo __('Your H2 subheadline here','responsive');
 				    echo '</h2>';
 				  }
 			?>
@@ -60,9 +60,9 @@
 			// If not let's show dummy content for demo purposes
 			      } else { 
 			        echo '<p>';
-				    echo 'Your title, subtitle and this very content is editable from Theme Option. 
+				    echo __('Your title, subtitle and this very content is editable from Theme Option. 
 					      Call to Action button and its destination link as well. Image on your right 
-						  can be an image or even YouTube video if you like.';
+						  can be an image or even YouTube video if you like.','responsive');
 				    echo '</p>';
 				  }
 			?>
@@ -73,14 +73,14 @@
 
             <?php $options = get_option('responsive_theme_options');
 			// First let's check if headline was set
-			    if ($options['featured_button_link'] && $options['featured_button_text']) {
-					echo '<a href="'.$options['featured_button_link'].'" class="blue button">'; 
-					echo $options['featured_button_text'];
+			    if (!empty($options['cta_url']) && $options['cta_text']) {
+					echo '<a href="'.$options['cta_url'].'" class="blue button">'; 
+					echo $options['cta_text'];
 				    echo '</a>';
 			// If not display dummy headline for preview purposes
 			      } else { 
 					echo '<a href="#nogo" class="blue button">'; 
-					echo 'Call to Action';
+					echo __('Call to Action','responsive');
 				    echo '</a>';
 				  }
 			?>  
