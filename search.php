@@ -66,7 +66,7 @@
 				    <?php the_tags(__('Tagged with:', 'responsive') . ' ', ', ', '<br />'); ?> 
 					<?php printf(__('Posted in %s', 'responsive'), get_the_category_list(', ')); ?> | 
 					<?php edit_post_link(__('Edit', 'responsive'), '', ' &#124; '); ?>  
-					<?php comments_popup_link(__('No Comments &#187;', 'responsive'), __('1 Comment &#187;', 'responsive'), __('% Comments &#187;', 'responsive'), '', __('Comments Closed', 'responsive') ); ?>
+					<?php comments_popup_link(__('No Comments &darr;', 'responsive'), __('1 Comment &darr;', 'responsive'), __('% Comments &darr;', 'responsive')); ?>
                 </div><!-- end of .post-data -->             
             
             </div><!-- end of #post-<?php the_ID(); ?> -->

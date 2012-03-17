@@ -308,10 +308,11 @@ function responsive_breadcrumb_lists() {
     if (!function_exists('responsive_js')) {
 
         function responsive_js() {
-			// JavaScript at the bottom for fast page loading. 
+			// JS at the bottom for fast page loading. 
 			// except for Modernizr which enables HTML5 elements & feature detects.
 			wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/responsive-modernizr.js', array('jquery'), '2.5.3', false);
-            wp_enqueue_script('scripts', get_template_directory_uri() . '/js/responsive-scripts.js', array('jquery'), '1.0.0', true);
+            wp_enqueue_script('responsive-scripts', get_template_directory_uri() . '/js/responsive-scripts.js', array('jquery'), '1.1.0', true);
+			wp_enqueue_script('responsive-plugins', get_template_directory_uri() . '/js/responsive-plugins.js', array('jquery'), '1.1.0', true);
         }
 
     }

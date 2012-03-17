@@ -34,47 +34,29 @@
                 <div class="post-entry">
                 <div id="widgets">
                 
-                    <div class="grid col-140">
-                        <div class="widget-title"><?php _e('Pages', 'responsive'); ?></div>
-                            <ul><?php wp_list_pages("title_li=" ); ?></ul>
-                    </div><!-- end of .col-140 -->
-                    
-                    <div class="grid col-140">
-                        <div class="widget-title"><?php _e('RSS Feed', 'responsive'); ?></div>
-                            <ul>
-                                <li><a href="<?php bloginfo('rss2_url'); ?>" title="<?php esc_attr_e( 'RSS', 'responsive' ); ?>"><?php _e( 'RSS Feed', 'responsive' ); ?></a></li>
-                                <li><a href="<?php bloginfo('comments_rss2_url'); ?>" title="<?php esc_attr_e( 'Comments RSS', 'responsive' ); ?>"><?php _e( 'Comments', 'responsive' ); ?></a></li>
-                            </ul>
-                    </div><!-- end of .col-140 -->
-                    
-                    <div class="grid col-140">
+                    <div class="grid col-300">
                         <div class="widget-title"><?php _e('Categories', 'responsive'); ?></div>
                             <ul><?php wp_list_categories('sort_column=name&optioncount=1&hierarchical=0&title_li='); ?></ul>
-                    </div><!-- end of .col-140 -->
+                    </div><!-- end of .col-300 -->
                     
-                    <div class="grid col-140">
-                    
-                        <div class="widget-title"><?php _e('In Archive', 'responsive'); ?></div>
-                            <ul>
-                                <?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
-                            </ul>
-                     </div><!-- end of col-140 -->
-                     
-                     <div class="grid col-300 fit">
-
-                        <div class="widget-title"><?php _e('Blog', 'responsive'); ?></div>
+                    <div class="grid col-300">
+                        <div class="widget-title"><?php _e('Latest Posts', 'responsive'); ?></div>
                             <ul><?php $archive_query = new WP_Query('showposts=1000&cat=-8');
                                     while ($archive_query->have_posts()) : $archive_query->the_post(); ?>
                                         <li>
                                             <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s', 'responsive'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a>
                                         </li>
                                     <?php endwhile; ?>
-                            </ul>                   
-                    <?php wp_link_pages(array('before' => '<div class="pagination">' . __('Pages:', 'responsive'), 'after' => '</div>')); ?>
-                      
-                      </div><!-- end of .col-140 fit -->
+                            </ul>  
+                    </div><!-- end of .col-300 -->
+                     
+                    <div class="grid col-300 fit">
+                          <div class="widget-title"><?php _e('Pages', 'responsive'); ?></div>
+                            <ul><?php wp_list_pages("title_li=" ); ?></ul>               
+                    </div><!-- end of .col-300 fit -->
                 
-                </div><!-- end of #widgets -->      
+                </div><!-- end of #widgets --> 
+                <?php wp_link_pages(array('before' => '<div class="pagination">' . __('Pages:', 'responsive'), 'after' => '</div>')); ?>     
                 </div><!-- end of .post-entry -->             
             
             <div class="post-edit"><?php edit_post_link(__('Edit', 'responsive')); ?></div>  
@@ -82,17 +64,18 @@
             
         <?php endwhile; ?> 
         
-        <?php // numbers 6 and 4 are translated into < left and > right arrow using font-face via IconicStroke ?>        
+        <?php if (  $wp_query->max_num_pages > 1 ) : ?>
         <div class="navigation">
-			<div class="previous"><?php previous_posts_link(__('6', 'responsive')) ?></div>
-            <div class="next"><?php next_posts_link(__('4', 'responsive')) ?></div>
-		</div>  
+			<div class="previous"><?php next_posts_link( __( '&#8249; Older posts', 'responsive' ) ); ?></div>
+            <div class="next"><?php previous_posts_link( __( 'Newer posts &#8250;', 'responsive' ) ); ?></div>
+		</div><!-- end of .navigation -->
+        <?php endif; ?> 
 
 	    <?php else : ?>
 
         <h1 class="title-404"><?php _e('404 &#8212; Fancy meeting you here!', 'responsive'); ?></h1>
-        <p><?php _e('Don\'t panic, we\'ll get through this together. Let\'s explore our options here.', 'responsive'); ?></p>
-        <h6><?php _e( 'You can return', 'responsive' ); ?> <a href="<?php echo home_url(); ?>/" title="<?php esc_attr_e( 'home', 'responsive' ); ?>"><?php _e( '&#9166; Home', 'responsive' ); ?></a> <?php _e( 'or search for the page you were looking for', 'responsive' ); ?></h6>
+        <p><?php _e('Don&#39;t panic, we&#39;ll get through this together. Let&#39;s explore our options here.', 'responsive'); ?></p>
+        <h6><?php _e( 'You can return', 'responsive' ); ?> <a href="<?php echo home_url(); ?>/" title="<?php esc_attr_e( 'Home', 'responsive' ); ?>"><?php _e( '&#9166; Home', 'responsive' ); ?></a> <?php _e( 'or search for the page you were looking for', 'responsive' ); ?></h6>
         <?php get_search_form(); ?>
 
 <?php endif; ?>  

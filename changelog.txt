@@ -1,15 +1,30 @@
 Changelog Legend:
 
 [+] = Added
-[-] = Removed
+[*] = Changed
 [^] = Moved
 [=] = No Changes
 [x] = Deleted
 [!] = Bugs
 
+(03/17/2012) - Maintenance Version 1.3.2
+[+] jquery.fitvids.js for responsive videos
+[*] respond.js for responsive videos
+[^] CSS featured to featured Content
+[+] Additional JS authors added
+[*] CSS featured-image
+[*] comments_popup_link search.php
+[*] CSS heading word-wrap:break-word
+[*] CSS aligncenter margins
+[*] sitemap.php
+[+] CSS pre margin
+[*] comments cite
+[*] CSS forms
+
+
 (03/15/2012) - Version 1.3.1
 [+] CSS formatting
-[x] has_excerpt
+[x] the_excerpt
 
 (03/15/2012) - Version 1.3.0
 [!] Prefix inconstancy for comment reply function
@@ -32,10 +47,10 @@ Changelog Legend:
 [^] widget-title-home h3 in .widget-title
 [x] widget-title-home h3 a
 [*] read more
-[-] gallery-meta
+[x] gallery-meta
 [+] CSS source formatting
 [+] social-icons center align for responsive layout
-[-] post thumbnail CSS
+[x] post thumbnail CSS
 [+] See more to Read more in all files
 [+] global $more; $more = 0; for pages with _excerpt
 
