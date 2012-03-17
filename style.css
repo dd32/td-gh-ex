@@ -2,7 +2,7 @@
 Theme Name: Northern-Web-Coders
 Theme URI: http://northern-web-coders.de/test/wordpress/
 Description: Northern-Web-Coders - HTML5 Theme
-Version: 2.6.2
+Version: 2.6.3
 Author: Kai Ackermann | jaman
 Author URI: http://www.design-coding.de
 Tags: gray, two-columns, flexible-width, translation-ready
@@ -136,7 +136,7 @@ section.footerbox
    float: left;
    width: 23%;
    background: #fff;
-   margin: 0 1% 1% 10px;
+   margin: 0 1% 1% 1%;
    padding: 15px 0 10px 0;
    -moz-border-radius: 15px;
    border-radius: 15px;
@@ -152,6 +152,11 @@ section#copy
    clear: both;
 }
 
+.footerbox #searchform
+{
+   margin: 0 6px;
+}
+
 .footerbox #searchform label
 {
    display: none
@@ -162,7 +167,7 @@ section.footerbox a
     color: #495865;
 }
 
-section.footerbox ul
+section.footerbox ul , section.footerbox div.tagcloud
 {
    margin: 0 10px 10px 10px;
 
@@ -171,7 +176,8 @@ section.footerbox ul
 
 section.footerbox ul li
 {
-   font-size: 13px;    list-style: none
+   font-size: 13px;    
+   list-style: none
 }
 
 section.footerbox ul ul
@@ -186,6 +192,8 @@ section.footerbox h4
    border-bottom: 1px solid #DFDFDF;
    margin: 0 5px
 }
+
+
 
 /*content*/
 article
@@ -948,8 +956,11 @@ section.footerbox
 {
    float: none;
    width: 97.3%;
-   margin: 10px auto;
-
+   margin: 10px auto;   
+}
+section#copy
+{
+   width: 98%;
 }
 }
 
@@ -996,10 +1007,11 @@ article,
 article.sticky,
 div#respond,
 ol.commentlist li.comment,
-ol.commentlist li.pingback ,
+ol.commentlist li.pingback,
+ol.commentlist li.trackback,
 section.footerbox
 {
-	-moz-border-radius: 0;
+    -moz-border-radius: 0;
     border-radius: 0;
 }
 
@@ -1026,10 +1038,13 @@ article h3.storytitle a
     width: 100%;
 }
 
+
 section.footerbox
 {
-   width: 95.5%;
+   width: 94.4%;
 }
+
+
 }
 
 @media screen and (max-width: 320px) {
@@ -1045,7 +1060,7 @@ header h1#header a
 }
 section.footerbox
 {
-   width: 93%;
+   width: 91.9%;
 }
 }
 
@@ -1062,7 +1077,7 @@ header h1#header a
 
 section.footerbox
 {
-   width: 90%;
+   width: 89.9%;
 }
 
 .footerbox #searchform input
@@ -1079,13 +1094,13 @@ header
 
 section.footerbox
 {
-   width: 89%;
+   width: 88.8%;
 }
 }
 
 @media screen and (max-width: 176px) {
 section.footerbox
 {
-   width: 87%;
+   width: 86.3%;
 }
 }
