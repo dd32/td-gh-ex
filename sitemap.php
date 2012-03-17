@@ -41,7 +41,7 @@
                     
                     <div class="grid col-300">
                         <div class="widget-title"><?php _e('Latest Posts', 'responsive'); ?></div>
-                            <ul><?php $archive_query = new WP_Query('showposts=1000&cat=-8');
+                            <ul><?php $archive_query = new WP_Query('posts_per_page=-1');
                                     while ($archive_query->have_posts()) : $archive_query->the_post(); ?>
                                         <li>
                                             <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s', 'responsive'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a>
