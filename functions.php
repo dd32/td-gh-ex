@@ -12,6 +12,7 @@ require_once(dirname(__FILE__) . "/admin/mantra-custom-styles.php");
 
 if( is_admin() ) {
 require_once(dirname(__FILE__) . "/admin/mantra-admin-functions.php");
+require_once(dirname(__FILE__) . "/admin/mantra-sanitize.php");
 }
 
 
@@ -302,6 +303,45 @@ function mantra_custom_excerpt_more( $output ) {
 	return $output;
 }
 add_filter( 'get_the_excerpt', 'mantra_custom_excerpt_more' );
+
+
+
+
+function mantra_trim_excerpt($text) {
+global $mantra_excerptwords;
+global $mantra_excerptcont;
+global $mantra_excerptdots;
+$raw_excerpt = $text;
+if ( '' == $text ) {
+    //Retrieve the post content.
+    $text = get_the_content('');
+ 
+    //Delete all shortcode tags from the content.
+    $text = strip_shortcodes( $text );
+ 
+    $text = apply_filters('the_content', $text);
+    $text = str_replace(']]>', ']]&gt;', $text);
+ 
+    $allowed_tags = '<a>,<img>,<b>,<strong>,<ul>,<li>,<i>,<h1>,<h2>,<h3>,<h4>,<h5>,<h6>,<pre>,<code>,<em>,<u>';
+    $text = strip_tags($text, $allowed_tags);
+ 
+    $words = preg_split("/[\n\r\t ]+/", $text, $mantra_excerptwords + 1, PREG_SPLIT_NO_EMPTY);
+    if ( count($words) > $mantra_excerptwords ) {
+        array_pop($words);
+        $text = implode(' ', $words);
+        $text = $text .' '.$mantra_excerptdots. ' <a href="'. get_permalink() . '">' .$mantra_excerptcont.' <span class="meta-nav">&rarr; </span>' . '</a>';
+    } else {
+        $text = implode(' ', $words);
+    }
+}
+return apply_filters('wp_trim_excerpt', $text, $raw_excerpt);
+}
+if ($mantra_excerpttags=='Enable') {
+remove_filter('get_the_excerpt', 'wp_trim_excerpt');
+add_filter('get_the_excerpt', 'mantra_trim_excerpt');
+}
+
+
 
 /**
  * Remove inline styles printed when the gallery shortcode is used.
@@ -628,4 +668,13 @@ if ($mantra_social1 && $mantra_social2) {  ?><a target="_blank" href="<?php echo
 ?><?php if ($mantra_social7 && $mantra_social8) {  ?> <a target="_blank" href="<?php echo $mantra_social8 ?>" class="socialicons" id="<?php echo $mantra_social7 ?>" title="<?php echo $mantra_social7 ?>"><img alt="<?php echo $mantra_social7; ?>" src="<?php echo get_template_directory_uri().'/images/socials/'.$mantra_social7.'.png'; ?>" /></a> <?php }
 ?><?php if ($mantra_social9 && $mantra_social10) {  ?> <a target="_blank" href="<?php echo $mantra_social10 ?>" class="socialicons" id="<?php echo $mantra_social9 ?>" title="<?php echo $mantra_social9 ?>"><img alt="<?php echo $mantra_social9; ?>" src="<?php echo get_template_directory_uri().'/images/socials/'.$mantra_social9.'.png'; ?>" /></a> <?php }
  
+						}
+
+
+// Get any existing copy of our transient data
+if ( false === ( $theme_info = get_transient( 'theme_info' ) ) ) {
+    // It wasn't there, so regenerate the data and save the transient
+     $theme_info = get_theme_data( get_theme_root() . '/mantra/style.css' );
+     set_transient( 'theme_info',  $theme_info );
 }
+

@@ -27,7 +27,7 @@ $mantra_options= mantra_get_theme_options();
 foreach ($mantra_options as $key => $value) {	
      ${"$key"} = $value ;
 }
-   $theme_data = get_theme_data( get_theme_root() . '/mantra/style.css' ); 
+        $theme_data = get_transient( 'theme_info'); 
 ?>
 
 

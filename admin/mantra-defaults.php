@@ -120,6 +120,7 @@ $mantra_defaults = array(
 "mantra_magazinelayout" => "Disable",
 "mantra_excerptdots" => " &hellip;",
 "mantra_excerptcont" => " Continue reading",
+"mantra_excerpttags" => "Disable",
 
 "mantra_fpost" => "Disable",
 "mantra_fauto" => "Disable",

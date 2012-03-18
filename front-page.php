@@ -18,7 +18,41 @@ foreach ($mantra_options as $key => $value) {
 }
 get_header(); 
 if ($mantra_frontpage!="Enable") {
+
+if (is_page()) {
 ?>
+
+	<section id="container">
+		<?php get_sidebar(); ?>
+
+	<div id="content" role="main">
+
+<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+
+				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<?php if ( is_front_page() ) { ?>
+						<h2 class="entry-title"><?php the_title(); ?></h2>
+					<?php } else { ?>
+						<h1 class="entry-title"><?php the_title(); ?></h1>
+					<?php } ?>
+
+					<div class="entry-content">
+						<?php the_content(); ?>
+						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'mantra' ), 'after' => '</div>' ) ); ?>
+						<?php edit_post_link( __( 'Edit', 'mantra' ), '<span class="edit-link">', '</span>' ); ?>
+					</div><!-- .entry-content -->
+				</div><!-- #post-## -->
+
+				<?php if ( comments_open() ) { comments_template( '', true );} else { ?>
+														<p class="nocomments2"><?php _e( 'Comments are closed.', 'mantra' ); ?></p>
+
+
+<?php } endwhile; ?>
+
+			</div><!-- #content -->
+		</section><!-- #container -->
+
+<?php } else { ?>
 
 
 
@@ -58,7 +92,7 @@ if ($mantra_frontpage!="Enable") {
 			</div><!-- #content -->
 		</div><!-- #container -->
 
-<?php }
+<?php } }
 else { ?>
 	<script type="text/javascript">
 		jQuery(document).ready(function(){	
