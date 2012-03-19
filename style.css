@@ -2,7 +2,7 @@
 Theme Name: Northern-Web-Coders
 Theme URI: http://northern-web-coders.de/test/wordpress/
 Description: Northern-Web-Coders - HTML5 Theme
-Version: 2.6.3
+Version: 2.6.4
 Author: Kai Ackermann | jaman
 Author URI: http://www.design-coding.de
 Tags: gray, two-columns, flexible-width, translation-ready
@@ -35,7 +35,7 @@ header
 {
     width: 100%;
     height: 207px;
-    float: left;
+    float: left; 
 }
 
 header h1#header
@@ -65,15 +65,11 @@ header em
     margin: 48px 0 0 20px
 }
 
-
-
-
 section.column-left
 {
     float: left;
     width: 50%;
     margin: 0;
-
 }
 
 section.column-right
@@ -110,7 +106,6 @@ section.meta a.post-edit-link
 {
     font-weight: bold;
 }
-
 
 footer
 {
@@ -154,7 +149,7 @@ section#copy
 
 .footerbox #searchform
 {
-   margin: 0 6px;
+   margin: 0 6px 10px 6px;
 }
 
 .footerbox #searchform label
@@ -167,16 +162,15 @@ section.footerbox a
     color: #495865;
 }
 
-section.footerbox ul , section.footerbox div.tagcloud
+section.footerbox ul ,
+section.footerbox div.tagcloud
 {
    margin: 0 10px 10px 10px;
-
-
 }
 
 section.footerbox ul li
 {
-   font-size: 13px;    
+   font-size: 13px;
    list-style: none
 }
 
@@ -192,8 +186,6 @@ section.footerbox h4
    border-bottom: 1px solid #DFDFDF;
    margin: 0 5px
 }
-
-
 
 /*content*/
 article
@@ -219,7 +211,7 @@ article:after {
     display: block;
     clear: both;
     visibility: hidden;
-    background: red;
+    height: 0;
 }
 
 * html .page article
@@ -239,16 +231,20 @@ article p
     padding: 0 0 5px 0;
 }
 
+article#nopost p
+{
+    padding:0;
+}
+
 article a
 {
     color: #ff9f00
 }
 
-
 section.meta
 {
     font-size: 11px;
-clear: both;
+    clear: both;
 }
 
 section.meta ul
@@ -266,7 +262,6 @@ section.meta a
 {
     color: #FF9F00
 }
-
 
 h1, h2, h3, h4, h5, h6
 {
@@ -308,7 +303,9 @@ article code:hover, div.comment-body code:hover
     color: #fff
 }
 
-article ul, article ol, article dl,
+article ul,
+article ol,
+article dl,
 div.comment-body ul,
 div.comment-body ol,
 div.comment-body dl
@@ -317,7 +314,9 @@ div.comment-body dl
     clear: both;
 }
 
-article ul a, article ol a, article dl a,
+article ul a,
+article ol a,
+article dl a,
 div.comment-body ul a,
 div.comment-body ol a,
 div.comment-body dl a
@@ -395,39 +394,39 @@ section#pagenav a:hover
    margin: 0 auto 18px;
 }
 .gallery .gallery-item {
-   float: left;
-   margin-top: 0;
-   text-align: center;
-   width: 33%;
+    float: left;
+    margin-top: 0;
+    text-align: center;
+    width: 33%;
 }
 .gallery-columns-2 .gallery-item {
-   width: 50%;
+    width: 50%;
 }
 .gallery-columns-4 .gallery-item {
-   width: 25%;
+    width: 25%;
 }
 
 .gallery-columns-2 .attachment-medium {
-   max-width: 92%;
-   height: auto;
+    max-width: 92%;
+    height: auto;
 }
 .gallery-columns-4 .attachment-thumbnail {
-   max-width: 84%;
-   height: auto;
+    max-width: 84%;
+    height: auto;
 }
 .gallery .gallery-caption {
-   color: #888;
-   font-size: 12px;
-   margin: 0 0 12px;
+    color: #888;
+    font-size: 12px;
+    margin: 0 0 12px;
 }
 .gallery dl {
-   margin: 0 0 10px 0;
-   clear: none;
+    margin: 0 0 10px 0;
+    clear: none;
 }
 
 #content .attachment img {
-   display: block;
-   margin: 0 auto;
+    display: block;
+    margin: 0 auto;
 }
 
 /*images*/
@@ -554,7 +553,7 @@ div#comments a
     color: #4E4E4E
 }
 
-ol.commentlist li.comment, ol.commentlist li.pingback, ol.commentlist li.trackback 
+ol.commentlist li.comment, ol.commentlist li.pingback, ol.commentlist li.trackback
 {
     -moz-border-radius: 15px;
     border-radius: 15px;
@@ -622,9 +621,6 @@ div#comments p.nopassword
     color: #fff;
 }
 
-
-
-
 p.form-allowed-tags
 {
     color: #2F2F2F;
@@ -669,7 +665,6 @@ p.form-allowed-tags code
 	background: #F0F0F0;
 	font-size: 12px;
 	color: #666;
-
 }
 
 .pingback a, .trackback a {
@@ -761,7 +756,7 @@ div.menu ul li,
 ul.menu li
 {
 	float: left;
-margin-right: 3px;
+    margin-right: 3px;
 	position: relative;
 	list-style: none;
 }
@@ -841,7 +836,7 @@ nav ul li.sfHover a,
 nav ul li:hover a
 {
     color: #464646;
-    background: #fff;
+    background: #fff; 
 }
 
 nav ul ul li a
@@ -855,7 +850,7 @@ nav ul ul li a
 nav ul ul li a:hover
 {
     color: #464646;
-    background: #EBEBEB;
+    background: #EBEBEB;  
 }
 
 nav ul li.current_page_item > a,
@@ -864,7 +859,7 @@ nav ul li.current-menu-item > a,
 nav ul li.current_page_ancestor > a
 {
 	color: #fff;
-    background: #ff9f00;
+    background: #ff9f00;  
 }
 
 /*** arrows **/
@@ -956,7 +951,7 @@ section.footerbox
 {
    float: none;
    width: 97.3%;
-   margin: 10px auto;   
+   margin: 10px auto;
 }
 section#copy
 {
