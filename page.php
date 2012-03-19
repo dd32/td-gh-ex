@@ -24,6 +24,7 @@
 						<div class="info-bar">
 							<p class="edit-link"><?php edit_post_link('Edit','&nbsp;|&nbsp;',''); ?></p>
         	 		<?php if(function_exists('the_ratings')) { ?><div class="rating"><?php the_ratings();?> </div> <?php } ?>
+              <div class="clear"></div>
 	         	</div>	
             <div class="info-bar-bottom"></div>
             <div class="clear"></div>
