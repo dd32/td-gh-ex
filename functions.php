@@ -238,8 +238,8 @@ function autoshow_home_page_settings()
 }
 
 ### CUSTOM FRONT PAGE MENU IN DASHBOARD ###
-add_settings_field( 'custom_frontpage', '', 'autoshow_frontpage_function', 'reading', 'default' );
-register_setting( 'reading', 'custom_frontpage');
+//add_settings_field( 'custom_frontpage', '', 'autoshow_frontpage_function', 'reading', 'default' );
+//register_setting( 'reading', 'custom_frontpage');
 
 function autoshow_frontpage_function() 
 {?>
@@ -278,7 +278,7 @@ function autoshow_frontpage_function()
 function autoshow_the_category()
 {
 	$categories = get_the_category( get_the_ID() );
-	if(count( $categories) > 3 )
+	/*if(count( $categories) > 3 )
 	{
 		echo '<p class="category">&nbsp;|&nbsp;Category: &nbsp;';
 		
@@ -295,11 +295,11 @@ function autoshow_the_category()
 		echo '</p>';
 	}
 	else
-	{
-	echo '<p class="category single-row">&nbsp;|&nbsp;Category: &nbsp;';
+	{*/
+	echo '<p class="category single-row">Category: &nbsp;';
 		the_category( ', ' );
 		echo '</p>';
-	}
+	/*}*/
 }
 
 ### DISPLAY LSIT OF MANY TAGS AS A DROPDOWN ###
@@ -308,7 +308,7 @@ function autoshow_the_tags()
 	$tags = get_the_tags();
 	if( ! empty( $tags ) )
 	{
-		$dropdown_tags = "<select class=\"dropdown-tags\" onchange=\"document.location.href=this.options[this.selectedIndex].value;\">";
+		/*$dropdown_tags = "<select class=\"dropdown-tags\" onchange=\"document.location.href=this.options[this.selectedIndex].value;\">";
 		$dropdown_tags .= '<option selected="selected" value="">Click to enlarge.</option>';
 		foreach ( $tags as $tag ) {
       $dropdown_tags .= "<option value=\"";
@@ -323,11 +323,11 @@ function autoshow_the_tags()
 	   	echo '</p>';
 	  }
 	  else
-	  {
+	  {*/
 	  echo '<p class="tag single-row">&nbsp;|&nbsp; Tags: &nbsp;';
 	  the_tags( '' ,', ' );
 	  echo '</p>';
-		}
+		/*}*/
 	}
 }
 
@@ -361,6 +361,7 @@ function autoshow_check_if_home()
 ### CUSTOM 'HEADER' MENU STYLE IN DASHBOARD ###
 function autoshow_admin_header_style() 
 { ?>
+  
 <style type="text/css">
 
 #headimg {
@@ -378,7 +379,9 @@ add_action( 'after_setup_theme', 'autoshow_setup' );
 
 function autoshow_setup()
 {
-  wp_enqueue_script( 'jquery' );
+  wp_deregister_script('jquery');
+  wp_register_script('jquery' , 'https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js');
+  wp_enqueue_script('jquery');
 
 	if ( is_singular() ) 
 		wp_enqueue_script( 'comment-reply' );

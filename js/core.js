@@ -12,8 +12,12 @@ jQuery(document).ready(function($) {
 			this.value = '';
 		});
 		
-	$('.searchform').submit(function() {
-		if( $('.search-text').val() == 'Search for...' || $('.search-text').val() == '') 
+	$('#header .searchform').submit(function() {
+		if( $('.search-text',$(this)).val() == 'Search for...' || $('.search-text',$(this)).val() == '') 
+			return false;
+	});
+  $('.sidebar .searchform').submit(function() {
+		if( $('.search-text',$(this)).val() == 'Search for...' || $('.search-text',$(this)).val() == '') 
 			return false;
 	});
 
@@ -31,5 +35,6 @@ jQuery(document).ready(function($) {
 	
 	$('#main-menu ul li').mouseleave(function() {
 		$(this).children('ul').hide();
-	});    		
+	});
+  //$('.info-bar-right').css('margin-top',(($('.info-bar').height()+9-$('.info-bar-right').height())/2)+'px');
 });

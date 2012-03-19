@@ -1,8 +1,8 @@
 /*
 Theme Name: Auto Dezmembrari
 Theme URI: http://auto.dezmembrari.ro/?page_id=143
-Description: Developing website dezmembrari.ro using Wordpress I crafted a complex website which contains various plugins like B2B and others usuefull stuffs.  We want to share with you some of our work so we created this theme for everyone. We hope that you will appreciate our work. <strong>Auto Dezmembrari</strong> is compatible Wordpress 3.0.x in all Browsers. You can select the logo image, the 4 images and the categories from page's footer, the images to be displayed on <em>Home page</em>, the <em>About page</em> wich will be shown to the right side of Home. Please visit Appearance from your Dashboard and you will see next menus: 'Header', 'Footer' and 'Home page'. The theme supports <strong>WP-PageNavi</strong> plug-in and <strong>WP-PostRatings</strong> plug-in. PS: This is not a new wp theme, it is a newer version of Ticket #5416. 
-Version: 1.2.3
+Description: Developing website dezmembrari.ro using Wordpress I crafted a complex website which contains various plugins like B2B and others usuefull stuffs.  We want to share with you some of our work so we created this theme for everyone. We hope that you will appreciate our work. <strong>Auto Dezmembrari</strong> is compatible Wordpress 3.0.x in all Browsers. You can select the logo image, the 4 images and the categories from page's footer, the images to be displayed on <em>Home page</em>, the <em>About page</em> wich will be shown to the right side of Home. Please visit Appearance from your Dashboard and you will see next menus: 'Header', 'Footer' and 'Home page'. The theme supports <strong>WP-PageNavi</strong> plug-in and <strong>WP-PostRatings</strong> plug-in.
+Version: 1.2.4
 Author: Dezmembrari
 Author URI: http://auto.dezmembrari.ro
 Tags: black, blue, orange, white, one-column, fixed-width, threaded-comments, sticky-post, custom-header, custom-background
@@ -221,7 +221,6 @@ h1 {
 	font-weight: normal;
 	letter-spacing: -1px;
 	text-transform: uppercase;
-	white-space: nowrap;
 }
 
 h1 a {
@@ -451,8 +450,8 @@ blockquote {
 	margin-bottom: 3px;
 	position: relative;
 	width: 980px;
-	height: 70px;
 	z-index: 1;
+  padding:5px 0px;
 }
 
 #logo {
@@ -484,6 +483,8 @@ blockquote {
 	color: #555;
 	float: left;
 	margin-top: 14px;
+  margin-left: 15px;
+  max-width:700px;
 }
 
 #header-searchform {
@@ -669,6 +670,8 @@ blockquote {
 .type-page {
 	float: left;
 	width: 730px;
+  padding-top:15px;
+  padding-bottom:15px;
 }
 
 .post h2,
@@ -696,22 +699,48 @@ blockquote {
 
 .post .info-bar,
 .type-page .info-bar {
-	background: url('images/bar.png') center no-repeat;
+	background: url('images/bar-middle.png') center repeat-y;
 	color: #aaa;
 	font-size: 11px;
 	overflow: hidden;
-	padding-top: 5px;
-	padding-bottom: 5px;
 	padding-left: 10px;
 	width: 720px;
-	height: 24px;
+  padding-top:3px;
+  overflow:visible;
+}
+.info-bar-top {
+  background:url('images/bar-top.png') no-repeat top;
+  width:730px;
+  height:9px;
+}
+.info-bar-bottom {
+  background:url('images/bar-bottom.png') no-repeat bottom;
+  width:730px;
+  height:9px;
+}
+.info-bar-left{
+  float:left;
+  max-width:566px;
+}
+.info-bar-right {
+  float:right;
+  background:url('images/date.png') 5px 0px no-repeat;
+  font-size:14px;
+  font-weight:bold;
+  width:118px;
+  margin-right:2px;
+  padding-left:30px;
+}
+#content .info-bar p{
+  margin-bottom:0px;
 }
 
 .post .info-bar .date,
 .type-page .info-bar .date {
 	color: rgb(14, 113, 200);
-	float: left;
-	padding-top: 4px;
+  display:inline;
+  text-align:center;
+  float:none;
 }
 
 .post .info-bar .category,
@@ -724,7 +753,7 @@ blockquote {
 
 .post .info-bar .single-row,
 .type-page .info-bar .single-row {
-	padding-top: 4px;
+	padding-top:2px;
 }
 
 .post .info-bar .category .dropdown-categories,
@@ -742,8 +771,8 @@ blockquote {
 .type-page .info-bar .comments {
 	background: url('images/postcomment.gif') left no-repeat;
 	float: left;
-	padding-top: 4px;
 	padding-left: 13px;
+  padding-top:2px;
 }
 
 .post .info-bar .rating,
@@ -774,7 +803,7 @@ blockquote {
 .post .info-bar .edit-link,
 .type-page .info-bar .edit-link {
 	float: left;
-	padding-top: 4px;
+	padding-top: 2px;
 	padding-left: 5px;
 }
 
@@ -821,7 +850,6 @@ blockquote {
 
 .info-bar-list {
 	float: left;
-	margin-top: 10px;
 }
 
 /* =Navigation
@@ -1171,7 +1199,9 @@ h3#reply-title {
 	width: 116px;
 	height: 16px;	
 }
-
+.searchform .search-text:focus{
+  outline:none;
+}
 .searchform .search-submit {
 	background: url('images/submit.jpg') scroll 0 bottom no-repeat;
 	border: 0 none;

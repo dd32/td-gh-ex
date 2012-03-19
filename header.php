@@ -39,7 +39,7 @@
 				<div id="header-searchform">
 					<?php get_search_form(); ?>
 				</div>
-		
+        <div class="clear"></div>
 			</div> <!-- end header -->
 			<!-- begin top menu -->
 			<?php if ( function_exists( 'wp_nav_menu' ) ) 

@@ -1,4 +1,6 @@
-<?php get_header(); ?>
+<?php
+/* Template Name: Custom Home Page */
+get_header(); ?>
 <div id="archive-title"></div>
 <div id="content" class="clear" > <!-- begin content -->	
 	<div id="left-column" style="width:610px;"> <!-- begin left-column -->

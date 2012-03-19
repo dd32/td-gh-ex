@@ -69,16 +69,24 @@
 							<div class="more"><a href="<?php the_permalink() ?>">More</a></div>
 							<div class="clear"></div>
 						</div>
-						<div class="info-bar info-bar-list">
-							<p class="comments"><?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?> &nbsp;|&nbsp;</p>
-							<p class="date"><?php the_time(get_option('date_format')) ?></p>
-							<?php autoshow_the_category(); ?>
-							<?php autoshow_the_tags(); ?>
-							<p class="edit-link"><?php edit_post_link('Edit','&nbsp;|&nbsp;',''); ?></p>
-        	 		<?php if(function_exists('the_ratings')) { ?><div class="rating"><?php the_ratings();?> </div> <?php } ?>
-            </div>	
+            <div class="clear"></div>
+            <div class="info-bar-top"></div>
+            <div class="clear"></div>
+            <div class="info-bar info-bar-list">
+              <div class="info-bar-left">
+                <p class="comments"><?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>&nbsp;|&nbsp;</p>
+                <?php autoshow_the_category(); ?>
+                <?php autoshow_the_tags(); ?>
+                <p class="edit-link"><?php edit_post_link('Edit','&nbsp;|&nbsp;',''); ?></p>
+                <?php if(function_exists('the_ratings')) { ?><div class="rating"><?php the_ratings();?> </div> <?php } ?>
+              </div>
+              <div class="info-bar-right"><p class="date"><?php the_time(get_option('date_format')) ?></p></div>
+              <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+            <div class="info-bar-bottom"></div>
 					</div>
-					<?php wp_link_pages(); ?>
+					<?php wp_link_pages('before=<div>&after=</div>'); ?>
         <?php endwhile; ?>
 				<?php if (  $wp_query->max_num_pages > 1 )
 				{ 
