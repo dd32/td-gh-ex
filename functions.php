@@ -62,10 +62,8 @@ function believe_setup() {
 	// Enable post thumbnails
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 50, 50, true );
-	add_image_size( 'single-post-thumbnail', 610, 220, true );
+	add_image_size( 'single-post-thumbnail', 615, 220, true );
 
-
-    
 	/**
 	 * This theme uses wp_nav_menu() in one location.
 	 */

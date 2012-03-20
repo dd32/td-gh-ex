@@ -39,6 +39,7 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
 
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans|Judson' rel='stylesheet' type='text/css'>
 
 <?php wp_head(); ?>
 </head>
