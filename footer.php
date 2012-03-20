@@ -28,8 +28,8 @@
             <a href="http://d5creation.com/about/tos/" target="_blank">Terms of Use</a> |
 <a href="http://d5creation.com/about/pp/" target="_blank">Privacy Policy</a> |  <a href="#" target="_blank">Sitemap</a>&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;
             
-<!-- You are not allowed to edit or modify the following codes. If you want to modify the codes please contact to sales@d5creation.com" -->            
-&copy; Copyright 2011-<script type="text/javascript">document.write(new Date().getFullYear())</script>: <a href="http://d5creation.com" target="_blank">D5 Creation</a>, All Rights Reserved. &nbsp;
+        
+&copy; Copyright 2011-<script type="text/javascript">document.write(new Date().getFullYear())</script>: <a href="http://d5creation.com" target="_blank">D5 SOCIALIA</a>, All Rights Reserved. &nbsp;
 
 Theme by: <a href="http://d5creation.com" target="_blank"><img  width="30px" src="http://d5creation.com/wp-content/d5/d5logofooter.png" /> <strong>D5 Creation</strong></a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a> 
 
