@@ -7,6 +7,13 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(03/21/2012) - Maintenance Version 1.3.4
+[!] #widgets p border bug
+[x] #widgets p
+[+] .textwidget for demo only
+[x] .widget-title, .widget-title-home h3 height:23px
+[!] Responsive videos
+
 (03/17/2012) - Maintenance Version 1.3.2
 [+] jquery.fitvids.js for responsive videos
 [*] respond.js for responsive videos
