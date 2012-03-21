@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<body <?php body_class(); ?> >
 <div id="center">
 
 <?php if ( get_header_image() == '') : ?><?php else : ?>
@@ -64,11 +65,22 @@ Written on <?php the_time('F jS, Y') ?> <?php if ( is_page()) : ?><?php else : ?
 </div>
 
 <div id="bar">
-<?php if ( has_nav_menu('bar') ) : wp_nav_menu('bar' ); else : ?>
+<?php 
+$options = adventure_get_theme_options();
+if ( $options['active'] == 'active' ) {	
+if ( has_nav_menu( 'bar' ) ) :  wp_nav_menu( array( 'theme_location' => 'bar', 'depth' => 2 ) ); else : ?>
+<ul><?php wp_list_pages('title_li=&depth=2'); ?></ul>
+<?php endif; } else {
+if ( has_nav_menu( 'bar' ) ) :  wp_nav_menu( array( 'theme_location' => 'bar', 'depth' => 1 ) ); else : ?>
 <ul><?php wp_list_pages('title_li=&depth=1'); ?></ul>
-<?php endif; ?>
+<?php endif; }?>
 <div id="title"><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a></div>
 <div id="slogan"><h2><?php bloginfo('description');?></h2></div>  
 </div>
 
-<?php get_footer(); ?>
+<div id="footer">
+	<!-- If you'd like to support WordPress, having the "powered by" link somewhere on your blog is the best way; it's our only promotion or advertising. -->
+    <?php wp_footer(); ?>
+</div>
+</body>
+</html>

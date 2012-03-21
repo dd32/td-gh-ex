@@ -113,8 +113,8 @@ function adventure_theme_options_init() {
 
 
 	// Register our individual settings fields
-	
-		add_settings_field(
+
+	add_settings_field(
 
 		'thank_you',  // Unique identifier for the field for this section
 
@@ -128,7 +128,9 @@ function adventure_theme_options_init() {
 
 	);
 
-		add_settings_field(
+	add_settings_field( 'premium_options', __( '<b>Activate Adenture+</br>Features</b>', 'adventure' ), 'adventure_active_premium_options', 'theme_options', 'general' );
+
+	add_settings_field(
 
 		'color_scheme',  // Unique identifier for the field for this section
 
@@ -142,13 +144,15 @@ function adventure_theme_options_init() {
 
 	);
 
-	add_settings_field( 'link_color', __( '<b>Menu Location</b>',     'adventure' ), 'adventure_settings_field_link_color', 'theme_options', 'general' );
-	
-	add_settings_field( 'sidebar_options',     __( '<b>Sidebar Options</b></br>(Only Avaliable</br> with Purchase)', 'adventure' ), 'adventure_settings_sidebar_options',     'theme_options', 'general' );
+	add_settings_field( 'active', __( '', 'adventure' ), 'adventure_is_active', 'theme_options', 'general' );
 
-	add_settings_field( 'menu_layout',     __( '<b>Menu Layout</b></br>(Only Avaliable</br> with Purchase)', 'adventure' ), 'adventure_settings_menu',     'theme_options', 'general' );
-	
-	add_settings_field( 'contrast_options',     __( '<b>Contrast</b></br>(Only Avaliable</br> with Purchase)', 'adventure' ), 'adventure_settings_contrast',     'theme_options', 'general' );
+	add_settings_field( 'link_color', __( '<b>Menu Location</b>', 'adventure' ), 'adventure_settings_field_link_color', 'theme_options', 'general' );
+
+	add_settings_field( 'sidebar_options',     __( '<b>Sidebar Options</b></br>(Only Avaliable</br> with Activation)', 'adventure' ), 'adventure_settings_sidebar_options', 'theme_options', 'general' );
+
+	add_settings_field( 'menu_layout',     __( '<b>Menu Layout</b></br>(Only Avaliable</br> with Activation)', 'adventure' ), 'adventure_settings_menu', 'theme_options', 'general' );
+
+	add_settings_field( 'contrast_options',     __( '<b>Contrast</b></br>(Only Avaliable</br> with Activation)', 'adventure' ), 'adventure_settings_contrast', 'theme_options', 'general' );
 
 }
 
@@ -579,6 +583,10 @@ function adventure_get_default_theme_options() {
 
 		'link_color'   => adventure_get_default_link_color( 'purple' ),
 		
+		'premium_options' => 'Paste Transaction Code',
+		
+		'active' => 'deactive',
+		
 		'sidebar_options' => 'content-sidebar',
 
 		'menu_layout' => 'bottom',
@@ -671,19 +679,17 @@ function adventure_thank_you() {
     
 <p>Thank you for supporting my WordPress Theme "Adventure."</p>
 <p>I would like to encourage you to regularly check for updates because I spend a lot of time improving and fixing the code so that it just simply keeps working better. You'll find the blead-edge downloads <a href="http://schwarttzy.com/web-design/adventure/" target="_blank">Here</a>.</p>
-<p>If you would really like to show me your support of the Adventure theme or would like to be able to use the additional features below, just quick pick up your own copy by visiting the <a href="http://schwarttzy.com/shop/adventureplus/" target="_blank">Adventure+ Page</a>.</p>
+<p>If you would really like to show me your support of the Adventure theme or would like to be able to use the additional features below, just quick pick up your own Activation Code by visiting the <a href="http://schwarttzy.com/shop/adventureplus/" target="_blank">Adventure+ Page</a>.</p>
 <ol>
 <li>Menu at top or bottom.</li>
 <li>A Drop down-menu is built in</li>
 <li>The ability to upload header images</li>
-<li>Move the content to the left, the right, or just remove it</li>
+<li>Move the content to the left, the right, or just remove the sidebar</li>
 <li>An additional widget area below content can be used</li>
 <li>Choose from 3 different contrast ratios for readability</li>
 <li>Custom Google Font's in the next release</li>
 </ol>
 <p>With the addition of all the features from purchasing Adventure+, I also help out with small customizations of the theme and I lend my knowledge of WordPress to you for any question or support you may need.</p>
-<p>Finally, I would like to get the word out on my Premium Theme &quot;<a href="http://schwarttzy.com/shop/adventure-bound/" target="_blank">Adventure Bound</a>.&quot; This very theme is the same that runs my own personal website right now (9/26/2011). So, if you want, hop on over to my website, <a href="http://schwarttzy.com/" target="_blank">http://Schwarttzy.com/</a>, check out the theme in action, and if you like it be sure to put a copy in your shopping cart.</p>
-<a href="http://schwarttzy.com/shop/adventure-bound/" target="_blank"><img src="http://schwarttzy.com/shop/images/6" width="200" height="200" alt="" /></a>
 <p>If you have any questions, comments, problems, or suggestions please feel free to <a href="http://schwarttzy.com/contact-me/" target="_blank">Contact Me Here.</a></p>
 <p>Thank you again for your Support,</p>
 <a href="http://schwarttzy.com/about-2/" target="_blank"><P>Eric J. Schwarz</P></a>
@@ -775,7 +781,19 @@ function adventure_settings_field_link_color() {
 
 }
 
+function adventure_active_premium_options() {
+	
+	$options = adventure_get_theme_options();
+	
+	?>
+	
+    <input type="text" name="adventure_theme_options[premium_options]" id="premium-options" value="<?php echo $options['premium_options']; ?>" /> <b><?php echo strtoupper ($options['active']);?></b><?php if ($options['active'] != 'active'){ ?></br><?php echo ' Paste the Transaction Code from the in the email you receive from Schwarttzy.com in the box above and click "Save" at the bottom to enable the premium features.';?> <a href="http://Schwarttzy.com/transaction.png">Click Here to see a sample.</a> <?php }
+}
 
+function adventure_is_active() {
+	
+	$options = adventure_get_theme_options();
+}
 
 /**
 
@@ -1019,8 +1037,6 @@ function adventure_theme_options_validate( $input ) {
 
 	$output = $defaults = adventure_get_default_theme_options();
 
-
-
 	// Color scheme must be in our array of color scheme options
 
 	if ( isset( $input['color_scheme'] ) && array_key_exists( $input['color_scheme'], adventure_color_schemes() ) )
@@ -1030,13 +1046,25 @@ function adventure_theme_options_validate( $input ) {
 	// Our defaults for the link color may have changed, based on the color scheme.
 
 	$output['link_color'] = $defaults['link_color'] = adventure_get_default_link_color( $output['color_scheme'] );
-
+	
 	// Link color must be 3 or 6 hexadecimal characters
 
 	if ( isset( $input['link_color'] ) && preg_match( '/^#?([a-f0-9]{3}){1,2}$/i', $input['link_color'] ) )
 
 		$output['link_color'] = '#' . strtolower( ltrim( $input['link_color'], '#' ) );
 		
+	if ( isset( $input['premium_options'] ) )
+	
+		$options = adventure_get_theme_options();
+
+		$actives = "schwarttzy.com/varify.php?actives=".$options['premium_options'];
+
+		$homepage = wp_remote_request('http://'.$actives);
+
+		if ($homepage[body] != 'active') { $output['active'] = 'deactive';} elseif ($homepage[body] == 'active') {$output['active'] = 'active';}
+
+		$output['premium_options'] = strtoupper ( ltrim( $input['premium_options'] ) );
+
 	// Theme layout must be in our array of theme layout options
 
 	if ( isset( $input['sidebar_options'] ) && array_key_exists( $input['sidebar_options'], adventure_layouts() ) )
@@ -1077,8 +1105,6 @@ function adventure_enqueue_color_scheme() {
 	$options = adventure_get_theme_options();
 
 	$color_scheme = $options['color_scheme'];
-
-
 
 	if ( 'red' == $color_scheme )
 
@@ -1125,13 +1151,13 @@ add_action( 'wp_enqueue_scripts', 'adventure_enqueue_color_scheme' );
  * @since Twenty Eleven 1.0
 
  */
+ 
 
 function adventure_print_link_color_style() {
 
 	$options = adventure_get_theme_options();
 
 	$link_color = $options['link_color'];
-
 
 
 	$default_options = adventure_get_default_theme_options();
@@ -1171,6 +1197,7 @@ add_action( 'wp_head', 'adventure_print_link_color_style' );
 
  */
 
+			
 function adventure_layout_classes( $existing_classes ) {
 
 	$options = adventure_get_theme_options();
@@ -1238,10 +1265,35 @@ function adventure_layout_contrast( $existing_classes ) {
 
 	return array_merge( $existing_classes, $classes );
 }
-/** add_filter( 'body_class', 'adventure_layout_classes' );
+function adventure_active_final() {
+$options = adventure_get_theme_options();
+if ( $options['active'] == 'active' ) {	
+add_filter( 'body_class', 'adventure_layout_classes' );
 add_filter( 'body_class', 'adventure_layout_menu' );
-add_filter( 'body_class', 'adventure_layout_contrast' );*/
-if ( ! isset( $content_width ) ) $content_width = 760;
+add_filter( 'body_class', 'adventure_layout_contrast' );
+
+register_sidebars(4, array(
+'name'=>'widget%d',
+'id' => 'widget',
+'description' => 'Widgets in this area will be shown below the the content of every page.',
+'before_widget' => '',
+'after_widget' => '',
+'before_title' => '<h2>',
+'after_title' => '</h2>',
+    ));
+	
+define('HEADER_TEXTCOLOR', '');
+define('HEADER_IMAGE_WIDTH', 994);
+define('HEADER_IMAGE_HEIGHT', 175);
+define('NO_HEADER_TEXT', true );
+add_custom_image_header( 'adventure_header_style', 'adventure_admin_header_style', 'adventure_admin_header_image');
+if ( ! function_exists( 'adventure_header_style' ) ) : function adventure_header_style() {}endif;
+if ( ! function_exists( 'adventure_admin_header_style' ) ) : function adventure_admin_header_style() {}endif;
+if ( ! function_exists( 'adventure_admin_header_image' ) ) : function adventure_admin_header_image() {?><img class="left title" title="<?php bloginfo('name'); ?>" src="<?php header_image(); ?>" alt="<?php bloginfo('description');?>" ><?php }endif;
+}
+}
+add_action( 'widgets_init', 'adventure_active_final' );
+if ( ! isset( $content_width ) ) $content_width = 740;
 add_theme_support( 'automatic-feed-links' );
 register_nav_menu( 'bar', 'The Menu Bar' );
 register_sidebar(array(
@@ -1253,23 +1305,10 @@ register_sidebar(array(
 'before_title' => '<h2>',
 'after_title' => '</h2>',
 ));
-/**register_sidebars(4, array(
-'name'=>'widget%d',
-'id' => 'widget',
-'description' => 'Widgets in this area will be shown below the the content of every page.',
-'before_widget' => '',
-'after_widget' => '',
-'before_title' => '<h2>',
-'after_title' => '</h2>',
-    ));*/
-function new_excerpt_more($more) { return '....'; }
-add_filter('excerpt_more', 'new_excerpt_more');
-function new_excerpt_length($length) {return 250;}
-add_filter('excerpt_length', 'new_excerpt_length');
 add_custom_background();
 add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
 add_image_size( 'page-thumbnail', 740, 9999, true );
-function print_comment($comment, $args, $depth) { $GLOBALS['comment'] = $comment; ?> 
+function print_comment($comment, $args, $depth) { $GLOBALS['comment'] = $comment; ?>
 <div id="comment-<?php comment_ID() ?>" <?php comment_class(); ?>>
 <div class="avatar"><?php echo get_avatar( $comment, 100 ); ?></div>
 <div class="commentinfo"><?php comment_author_link() ?> commented</div>
