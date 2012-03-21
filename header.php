@@ -40,7 +40,7 @@
 
 </div>
 
-<?php if (get_option('adt_show_main_menu', '1') != '0') : ?>
+<?php if (get_option('adt_show_main_menu', '0') == '1') : ?>
 <div id="access" role="navigation">			  
   <?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
 </div>

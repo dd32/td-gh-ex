@@ -4,9 +4,9 @@
     return stripslashes(get_option($Aoption_name, $default));
   };
 
-  function template_setup() 
+  function adt_template_setup() 
   {	
-    global $content_width, $adt_favicon_url, $adt_footer_text; 
+    global $adt_content_width, $adt_favicon_url, $adt_footer_text; 
 	
     if ( ! isset( $content_width ) ) 
       $content_width = 630;
@@ -32,15 +32,15 @@
 	set_post_thumbnail_size( 100, 100, true );
 	add_custom_background();	
 		
-	if ( ! defined( 'HEADER_TEXTCOLOR' ) )
-	  define( 'HEADER_TEXTCOLOR', '87fda1' );
-	if ( ! defined( 'HEADER_IMAGE' ) )
-	  define( 'HEADER_IMAGE', '%s/img/top-default1.png' );
-	define( 'HEADER_IMAGE_WIDTH', apply_filters( 'adsticle_header_image_width', 1000 ) );
-	define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'adsticle_header_image_height', 80 ) );
+	if ( ! defined( 'ADT_HEADER_TEXTCOLOR' ) )
+	  define( 'ADT_HEADER_TEXTCOLOR', '87fda1' );
+	if ( ! defined( 'ADT_HEADER_IMAGE' ) )
+	  define( 'ADT_HEADER_IMAGE', '%s/img/top-default1.png' );
+	define( 'ADT_HEADER_IMAGE_WIDTH', apply_filters( 'adsticle_header_image_width', 1000 ) );
+	define( 'ADT_HEADER_IMAGE_HEIGHT', apply_filters( 'adsticle_header_image_height', 80 ) );
 	//set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );
-	if ( ! defined( 'NO_HEADER_TEXT' ) )
-	  define( 'NO_HEADER_TEXT', false );
+	if ( ! defined( 'ADT_NO_HEADER_TEXT' ) )
+	  define( 'ADT_NO_HEADER_TEXT', false );
 	add_custom_image_header( '', 'adsticle_admin_header_style' );
 	register_default_headers( array(
 		'default1' => array(
@@ -49,8 +49,8 @@
 			'description' => __( 'Default', 'adsticle' )
 		)));
 	
-    if ( ! defined( 'BACKGROUND_COLOR' ) )
-	  define( 'BACKGROUND_COLOR', '#14253e' );	
+    if ( ! defined( 'ADT_BACKGROUND_COLOR' ) )
+	  define( 'ADT_BACKGROUND_COLOR', '#14253e' );	
     if ( ! defined( 'ADT_COLOR_H' ) )
 	  define( 'ADT_COLOR_H', '#1152c0' );
 	if ( ! defined( 'ADT_COLOR_LINK' ) )
@@ -74,10 +74,10 @@
 	  define( 'ADT_WIDTH_LINE_FOOTER', '1' );  
   };
   
-  add_action('after_setup_theme', 'template_setup');
+  add_action('after_setup_theme', 'adt_template_setup');
   
-  add_action('init', 'ilc_farbtastic_script');
-  function ilc_farbtastic_script() 
+  add_action('init', 'adt_ilc_farbtastic_script');
+  function adt_ilc_farbtastic_script() 
   { 
     if (is_admin())
 	{
@@ -221,7 +221,7 @@
 <?php	
 	  $background = get_theme_mod('background_image', false);
 	  $bgcolor = get_theme_mod('background_color', false);
-	  $textcolor = get_theme_mod('header_textcolor', HEADER_TEXTCOLOR);
+	  $textcolor = get_theme_mod('adt_header_textcolor', ADT_HEADER_TEXTCOLOR);
 ?>
 <style type="text/css"> 
 body, .header  {background-color:#14253e; color: <?php echo get_option('ADT_COLOR_TEXT', ADT_COLOR_TEXT); ?>}
@@ -260,15 +260,15 @@ body{background-image:none;}
 	};
   };
   
-  function options_admin_menu() 
+  function adt_options_admin_menu() 
   {	    
 	add_theme_page(__("Adsticle Options", 'adsticle'), __("Adsticle Options", 'adsticle'), 
 	  'edit_theme_options', 'adsticle_general_options_page', 'adsticle_general_options_page');	  
   };
   
-  add_action('admin_menu', 'options_admin_menu');
+  add_action('admin_menu', 'adt_options_admin_menu');
 
-  function show_color_picker($Aname, $Aoption, $Adefault)
+  function adt_show_color_picker($Aname, $Aoption, $Adefault)
   {  
 ?>  
 <label for="<?php echo $Aname; ?>">
@@ -287,7 +287,7 @@ name="<?php echo $Aname; ?>" value="<?php echo get_option($Aoption, $Adefault); 
 <?php
    };
    
-  function show_number_select($Aname, $Adef, $Amax = 5)
+  function adt_show_number_select($Aname, $Adef, $Amax = 5)
   {
 	echo '<select name="'.$Aname.'">';
     for ($i=0; $i<=$Amax; $i++)
@@ -300,7 +300,7 @@ name="<?php echo $Aname; ?>" value="<?php echo get_option($Aoption, $Adefault); 
   };
 				  
   
-   function options_update() 
+   function adt_options_update() 
    {
      global $_POST, $adt_favicon_url, $adt_footer_text;
 		
@@ -333,6 +333,7 @@ name="<?php echo $Aname; ?>" value="<?php echo get_option($Aoption, $Adefault); 
 	  update_option('adt_show_main_menu', '0');	  
 	};	
 	
+	
 	if ($_POST['adt_show_featured_image'] != '')
 	{
 	  update_option('adt_show_featured_image', $_POST['adt_show_featured_image']);
@@ -350,22 +351,24 @@ name="<?php echo $Aname; ?>" value="<?php echo get_option($Aoption, $Adefault); 
 	update_option('ADT_WIDTH_LINE_MAINMENU', $_POST['ADT_WIDTH_LINE_MAINMENU']);	
 	update_option('ADT_WIDTH_LINE_WIDGET', $_POST['ADT_WIDTH_LINE_WIDGET']);	
 	update_option('ADT_WIDTH_LINE_FOOTER', $_POST['ADT_WIDTH_LINE_FOOTER']);	
-	update_option('ADT_COLOR_MENUBACKGROUND', $_POST['ADT_COLOR_MENUBACKGROUND']);		
+	update_option('ADT_COLOR_MENUBACKGROUND', $_POST['ADT_COLOR_MENUBACKGROUND']);
+		
   };
   
   function adsticle_general_options_page()
   {
     global  $_POST, $adt_favicon_url, $adt_footer_text; 
 	
-    if ( $_POST['update_options'] == 'true' ) { options_update(); };
+ if ( isset($_POST['update_options']) && $_POST['update_options'] == 'true' )
 	?>
     <div class="wrap">
         <div id="icon-options-general" class="icon32"><br /></div>
 		<h2><?php _e('Adsticle General Options', 'adsticle'); ?></h2>
 
-        <form method="post" action="<?php echo $_SERVER['REQUEST_URI'];?>">
-			<input type="hidden" name="update_options" value="true" />
+        <form method="post" action="options.php">
+<?php wp_nonce_field('update-options'); ?>
 
+			
             <table class="form-table">			    		
 			    <tr valign="top">
                     <th scope="row"><label for="adt_favicon_url"><?php _e('Favicon:', 'adsticle'); ?></label></th>
@@ -379,23 +382,8 @@ name="<?php echo $Aname; ?>" value="<?php echo get_option($Aoption, $Adefault); 
 					<img src="<?php echo adt_get_option('adt_favicon_url', $adt_favicon_url); ?>" alt=""/>
 					</td>
                 </tr>
+				
 				<tr valign="top">
-                    <th scope="row"><label for="adt_show_main_menu"><?php _e('Show main menu:', 'adsticle'); ?></label></th>
-                    <?php 
-                      $s = ' checked="true" ';
-					  if (get_option('adt_show_main_menu', '1') == '0') $s = '';
-					?>
-                    <td><input type="checkbox" name="adt_show_main_menu" value="1"<?php echo $s; ?>><?php _e('Show', 'adsticle'); ?></td>
-                </tr> 	
-				<tr valign="top">
-                    <th scope="row"><label for="adt_show_featured_image"><?php _e('Show featured image for post:', 'adsticle'); ?></label></th>
-                    <?php 
-                      $s = ' checked="true" ';
-					  if (get_option('adt_show_featured_image', '1') == '0') $s = '';
-					?>
-                    <td><input type="checkbox" name="adt_show_featured_image" value="1"<?php echo $s; ?>><?php _e('Show', 'adsticle'); ?></td>
-                </tr> 				
-                <tr valign="top">
                     <th scope="row"><label for="adt_footer_text"><?php _e('Footer copyright text:', 'adsticle'); ?></label></th>
                     <td><textarea style="width:100%" name="adt_footer_text"><?php echo adt_get_option('adt_footer_text', 
 					  $adt_footer_text); ?></textarea></td>
@@ -417,56 +405,70 @@ name="<?php echo $Aname; ?>" value="<?php echo get_option($Aoption, $Adefault); 
                     <th scope="row"><label for="ads_250-250-post"><?php _e('250x250 adsense code for post at top:', 'adsticle'); ?></label></th>
                     <td><textarea style="width:100%" name="ads_250-250-post"><?php echo adt_get_option('ads_250-250-post'); ?></textarea></td>
                 </tr>
-
+				
+				<tr valign="top">
+					<th scope="row"><label for="adt_show_main_menu"><?php _e('Show main menu:', 'adsticle'); ?></label></th>
+				    <td><input name="adt_show_main_menu" type="checkbox" id="adt_show_main_menu" value="1" <?php checked('1', get_option('adt_show_main_menu')); ?> />
+					<?php _e('Show', 'adsticle'); ?>
+					</td>
+                </tr> 	
+				
+				<tr valign="top">
+                    <th scope="row"><label for="adt_show_featured_image"><?php _e('Show featured image for post:', 'adsticle'); ?></label></th>
+                    <td><input type="checkbox" id="adt_show_featured_image" name="adt_show_featured_image" value="1"<?php checked('1', get_option('adt_show_featured_image')); ?> />
+					<?php _e('Show', 'adsticle'); ?></td>
+                </tr> 				
                 <tr valign="top">
                   <th scope="row"><label><?php _e('H color'); ?></label></th>
-                  <td><?php show_color_picker('ADT_COLOR_H', 'ADT_COLOR_H', ADT_COLOR_H); ?></td>
+                  <td><?php adt_show_color_picker('ADT_COLOR_H', 'ADT_COLOR_H', ADT_COLOR_H); ?></td>
                 </tr>				
 				<tr valign="top">
                   <th scope="row"><label><?php _e('Links color'); ?></label></th>
-                  <td><?php show_color_picker('ADT_COLOR_LINK', 'ADT_COLOR_LINK', ADT_COLOR_LINK); ?></td>
+                  <td><?php adt_show_color_picker('ADT_COLOR_LINK', 'ADT_COLOR_LINK', ADT_COLOR_LINK); ?></td>
                 </tr>
 				<tr valign="top">
                   <th scope="row"><label><?php _e('Text color'); ?></label></th>
-                  <td><?php show_color_picker('ADT_COLOR_TEXT', 'ADT_COLOR_TEXT', ADT_COLOR_TEXT); ?></td>				  
+                  <td><?php adt_show_color_picker('ADT_COLOR_TEXT', 'ADT_COLOR_TEXT', ADT_COLOR_TEXT); ?></td>				  
                 </tr>				
 				<tr valign="top">
                   <th scope="row"><label><?php _e('Sticky post background color'); ?></label></th>
-                  <td><?php show_color_picker('ADT_COLOR_STICKY', 'ADT_COLOR_STICKY', ADT_COLOR_STICKY); ?></td>				  
+                  <td><?php adt_show_color_picker('ADT_COLOR_STICKY', 'ADT_COLOR_STICKY', ADT_COLOR_STICKY); ?></td>				  
                 </tr>							
 				<tr valign="top">
                   <th scope="row"><label><?php _e('Body background color'); ?></label></th>
-                  <td><?php show_color_picker('ADT_COLOR_BACKGROUND1', 'ADT_COLOR_BACKGROUND1', ADT_COLOR_BACKGROUND1); ?></td>				  
+                  <td><?php adt_show_color_picker('ADT_COLOR_BACKGROUND1', 'ADT_COLOR_BACKGROUND1', ADT_COLOR_BACKGROUND1); ?></td>				  
                 </tr>
 				<tr valign="top">
                   <th scope="row"><label><?php _e('Line color'); ?></label></th>
-                  <td><?php show_color_picker('ADT_COLOR_LINE', 'ADT_COLOR_LINE', ADT_COLOR_LINE); ?></td>				  
+                  <td><?php adt_show_color_picker('ADT_COLOR_LINE', 'ADT_COLOR_LINE', ADT_COLOR_LINE); ?></td>				  
                 </tr>				
 				<tr valign="top">
                   <th scope="row"><label><?php _e('Main menu dropdown background color'); ?></label></th>
-                  <td><?php show_color_picker('ADT_COLOR_MENUBACKGROUND', 'ADT_COLOR_MENUBACKGROUND', ADT_COLOR_MENUBACKGROUND); ?></td>				  
+                  <td><?php adt_show_color_picker('ADT_COLOR_MENUBACKGROUND', 'ADT_COLOR_MENUBACKGROUND', ADT_COLOR_MENUBACKGROUND); ?></td>				  
                 </tr>				
 				
 				<tr valign="top">
                   <th scope="row"><label><?php _e('Main menu line width'); ?></label></th>
                   <td>
-				    <?php show_number_select('ADT_WIDTH_LINE_MAINMENU', get_option('ADT_WIDTH_LINE_MAINMENU', ADT_WIDTH_LINE_MAINMENU)); ?>									  			  
+				    <?php adt_show_number_select('ADT_WIDTH_LINE_MAINMENU', get_option('ADT_WIDTH_LINE_MAINMENU', ADT_WIDTH_LINE_MAINMENU)); ?>									  			  
 				  </td>
                 </tr>				
 				<tr valign="top">
                   <th scope="row"><label><?php _e('Widget line width'); ?></label></th>
                   <td>
-				    <?php show_number_select('ADT_WIDTH_LINE_WIDGET', get_option('ADT_WIDTH_LINE_WIDGET', ADT_WIDTH_LINE_WIDGET)); ?>
+				    <?php adt_show_number_select('ADT_WIDTH_LINE_WIDGET', get_option('ADT_WIDTH_LINE_WIDGET', ADT_WIDTH_LINE_WIDGET)); ?>
 				  </td>
                 </tr>	
 				<tr valign="top">
                   <th scope="row"><label><?php _e('Footer line width'); ?></label></th>
                   <td>
-				    <?php show_number_select('ADT_WIDTH_LINE_FOOTER', get_option('ADT_WIDTH_LINE_FOOTER', ADT_WIDTH_LINE_FOOTER)); ?>
+				    <?php adt_show_number_select('ADT_WIDTH_LINE_FOOTER', get_option('ADT_WIDTH_LINE_FOOTER', ADT_WIDTH_LINE_FOOTER)); ?>
 				  </td>
                 </tr>	
             </table>
-
+	<input type="hidden" name="action" value="update" />
+	<input type="hidden" name="page_options" value="adt_favicon_url,adt_footer_text,adt_a468x60,adt_a728x15-top,adt_a728x15-footer,ads_250-250-post,
+ADT_COLOR_H,ADT_COLOR_LINK,ADT_COLOR_TEXT,ADT_COLOR_STICKY,ADT_COLOR_LINE,ADT_COLOR_BACKGROUND1,ADT_COLOR_MENUBACKGROUND,ADT_WIDTH_LINE_MAINMENU,ADT_WIDTH_LINE_WIDGET,ADT_WIDTH_LINE_FOOTER, adt_show_main_menu, adt_show_featured_image" />
             <p><input type="submit" value="<?php _e('Save', 'adsticle'); ?>" class="button button-primary" /></p>
         </form>
     </div>

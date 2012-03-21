@@ -49,7 +49,7 @@
 </div>
 <?php 
       endif;?>
-<?php if (get_option('adt_show_featured_image', '1') != '0') : ?>	  
+<?php if (get_option('adt_show_featured_image', '0') == '1') : ?>	  
 	  <div class="thumbnail"> 
 <?php the_post_thumbnail(); ?>  </div> 
 <?php endif; ?>
