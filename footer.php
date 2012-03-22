@@ -20,7 +20,10 @@
 <?php responsive_container_end(); // after container hook ?>
 
 <div id="footer" class="clearfix">
+
     <div id="footer-wrapper">
+    
+    <div class="grid col-940">
     
         <div class="grid col-620">
 		<?php if (has_nav_menu('footer-menu', 'responsive')) { ?>
@@ -31,7 +34,7 @@
 					); 
 				?>
          <?php } ?>
-         </div>
+         </div><!-- end of col-620 -->
          
          <div class="grid col-300 fit">
          <?php $options = get_option('responsive_theme_options');
@@ -70,7 +73,7 @@
              
                 echo '</ul><!-- end of .social-icons -->';
          ?>
-         </div>
+         </div><!-- end of col-300 fit -->
                 
         <div class="grid col-300 copyright">
             <?php esc_attr_e('&copy;', 'responsive'); ?> <?php _e(date('Y')); ?><a href="<?php echo home_url('/') ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>">
@@ -86,7 +89,10 @@
             powered by <a href="<?php echo esc_url(__('http://wordpress.org','responsive')); ?>" title="<?php esc_attr_e('WordPress', 'responsive'); ?>">
                     <?php printf('WordPress'); ?></a>
         </div><!-- end .powered -->
+        
+    </div><!-- end of col-940 -->
     </div><!-- end #footer-wrapper -->
+    
 </div><!-- end #footer -->
 
 <?php wp_footer(); ?>

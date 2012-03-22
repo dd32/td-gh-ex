@@ -101,7 +101,7 @@ function responsive_theme_options_do_page() {
     
     <div class="wrap">
         <?php screen_icon();
-        echo "<h2>" . get_current_theme() . __(' Theme Elements', 'responsive') . "</h2>"; ?>
+        echo "<h2>" . get_current_theme() . __(' Theme Options', 'responsive') . "</h2>"; ?>
 
 		<?php if (false !== $_REQUEST['settings-updated']) : ?>
 		<div class="updated fade"><p><strong><?php _e('Options Saved', 'responsive'); ?></strong></p></div>
@@ -179,17 +179,6 @@ function responsive_theme_options_do_page() {
 
                 <?php
                 /**
-                 * Homepage Content Area
-                 */
-                ?>
-                <div class="grid col-300"><?php _e('Content Area', 'responsive'); ?></div><!-- end of .grid col-300 -->
-                    <div class="grid col-620 fit">
-                        <textarea id="responsive_theme_options[home_content_area]" class="large-text" cols="50" rows="10" name="responsive_theme_options[home_content_area]"><?php if (!empty($options['home_content_area'])) esc_attr_e($options['home_content_area']); ?></textarea>
-                        <label class="description" for="responsive_theme_options[home_content_area]"><?php _e('Enter your content', 'responsive'); ?></label>
-                    </div><!-- end of .grid col-620 -->
-
-                <?php
-                /**
                  * Homepage Subheadline
                  */
                 ?>
@@ -197,6 +186,17 @@ function responsive_theme_options_do_page() {
                     <div class="grid col-620 fit">
                         <input id="responsive_theme_options[home_subheadline]" class="regular-text" type="text" name="responsive_theme_options[home_subheadline]" value="<?php if (!empty($options['home_subheadline'])) esc_attr_e($options['home_subheadline']); ?>" />
                         <label class="description" for="responsive_theme_options[home_subheadline]"><?php _e('Enter your subheadline', 'responsive'); ?></label>
+                    </div><!-- end of .grid col-620 -->
+                    
+                <?php
+                /**
+                 * Homepage Content Area
+                 */
+                ?>
+                <div class="grid col-300"><?php _e('Content Area', 'responsive'); ?></div><!-- end of .grid col-300 -->
+                    <div class="grid col-620 fit">
+                        <textarea id="responsive_theme_options[home_content_area]" class="large-text" cols="50" rows="10" name="responsive_theme_options[home_content_area]"><?php if (!empty($options['home_content_area'])) esc_attr_e($options['home_content_area']); ?></textarea>
+                        <label class="description" for="responsive_theme_options[home_content_area]"><?php _e('Enter your content', 'responsive'); ?></label>
                     </div><!-- end of .grid col-620 -->
                                 
                 <?php
@@ -375,8 +375,8 @@ function responsive_theme_options_validate($input) {
 	}
 	
     $input['home_headline'] = wp_kses_stripslashes($input['home_headline']);
-    $input['home_content_area'] = wp_kses_stripslashes($input['home_content_area']);
 	$input['home_subheadline'] = wp_kses_stripslashes($input['home_subheadline']);
+    $input['home_content_area'] = wp_kses_stripslashes($input['home_content_area']);
     $input['cta_text'] = wp_kses_stripslashes($input['cta_text']);
     $input['cta_url'] = esc_url_raw($input['cta_url']);
     $input['featured_content'] = wp_kses_stripslashes($input['featured_content']);
