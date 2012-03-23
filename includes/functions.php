@@ -31,7 +31,18 @@ if (!function_exists('responsive_setup')):
          */
         if (!isset($content_width))
             $content_width = 550;
-			
+
+        /**
+         * Responsive is now available for translations.
+         * Add your files into /languages/ directory.
+         */
+	    load_theme_textdomain('responsive', TEMPLATEPATH . '/languages');
+
+	    $locale = get_locale();
+	    $locale_file = TEMPLATEPATH . "/languages/$locale.php";
+	    if ( is_readable( $locale_file ) )
+		    require_once( $locale_file );
+						
         /**
          * Add callback for custom TinyMCE editor stylesheets. (editor-style.css)
          * @see http://codex.wordpress.org/Function_Reference/add_editor_style
@@ -213,6 +224,8 @@ add_action( 'widgets_init', 'responsive_remove_recent_comments_style' );
  * Allows visitors to quickly navigate back to a previous section or the root page.
  *
  * Courtesy of Dimox
+ *
+ * bbPress compatibility patch by Dan Smith
  */
 function responsive_breadcrumb_lists() {
 
@@ -250,11 +263,14 @@ function responsive_breadcrumb_lists() {
     } elseif (is_year()) {
         echo $currentBefore . get_the_time('Y') . $currentAfter;
     } elseif (is_single()) {
-        $cat = get_the_category();
-        $cat = $cat[0];
-        echo get_category_parents($cat, TRUE, ' ' . $chevron . ' ');
-        echo $currentBefore;
-        the_title();
+        $pid = $post->ID;
+        $pdata = get_the_category($pid);
+        $adata = get_post($pid);
+        if(!empty($pdata)){
+            echo get_category_parents($pdata[0]->cat_ID, TRUE, " $chevron ");
+            echo $currentBefore;
+        }
+        echo $adata->post_title;
         echo $currentAfter;
     } elseif (is_page() && !$post->post_parent) {
         echo $currentBefore;
@@ -298,6 +314,7 @@ function responsive_breadcrumb_lists() {
 
     echo '</div>';
 }
+
 
     /**
      * A safe way of adding javascripts to a WordPress generated page.
