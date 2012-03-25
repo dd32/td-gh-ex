@@ -14,7 +14,7 @@ add_action( 'after_setup_theme', 'admired_setup' );
 /**
  * Sets up Admired defaults.
  *
- * @since admired 1.0
+ * @since admired 1.0 
  */
 if ( ! function_exists( 'admired_setup' ) ):
 
@@ -373,8 +373,8 @@ add_action( 'admin_bar_menu', 'admired_wp_admin_bar_theme_options', 61 );
 /*
 Plugin Name: Add X-Autocomplete Fields to Comment Form. by: Samuel “Otto” Wood
 */
-add_filter('comment_form_default_fields','add_x_autocompletetype');
-function add_x_autocompletetype($fields) {
+add_filter('comment_form_default_fields','admired_add_x_autocompletetype');
+function admired_add_x_autocompletetype($fields) {
 	$fields['author'] = str_replace('<input', '<input x-autocompletetype="name-full"', $fields['author']);
 	$fields['email'] = str_replace('<input', '<input x-autocompletetype="email"', $fields['email']);
 	return $fields;

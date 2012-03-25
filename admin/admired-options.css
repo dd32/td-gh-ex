@@ -98,9 +98,9 @@
 	height: 75px;
 }
 
- #tabs{
+#tabs{
 	position: relative;
-	padding-left: 8.5em;
+	padding-left: 10em;
 	margin-left: 15px;
 }
 #tabs .ui-tabs-nav {
@@ -109,7 +109,7 @@
 	left: -1px;
 	top: 0px;
 	bottom: 0px;
-	width: 115px;
+	width: 135px;
 	padding: 0.2em 0 0.2em 0.2em;
 	border-left: 1px solid #444;
 }
@@ -139,7 +139,7 @@
 	border-right: none;
 	left: -3px;
 	top: -3px;
-	width: 790px;
+	width: 770px;
 	position: relative;
 	margin-bottom: -6px;
 }
@@ -323,8 +323,8 @@ label{
 	color:#000000;
 	padding:5px;
 	margin-top:20px;
-	width:585px;
-	height:135px;
+	width:700px;
+	height:200px;
 }
 
 .options_text .ctext-color:focus {

@@ -9,6 +9,12 @@ Tested up to: 3.3.1
 == Change Log ==
 This change log was started beginning with Version 1.0
 
+= Changes Version 1.2 =
+
+* Fixed for internationalization
+* widened option tabs for translation
+* Thanks to - Lord-Kamina, Polov, Andrea, and Otto for help
+
 = Changes Version 1.1 =
 
 * simple bug fixes

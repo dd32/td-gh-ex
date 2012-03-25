@@ -79,7 +79,7 @@ $admired_settings = array (
         "type" => "radio1",
         "desc" => __("Where would you like your sidebar to be?",'admired'),
 		"std" => "content-sidebar",
-        "options" => array("content-sidebar" => "Right Sidebar", "sidebar-content" => "Left Sidebar", "sidebar-content-sidebar" => "Three Column", "content" => "One Column"),
+        "options" => array("content-sidebar" => __('Right Sidebar','admired'), "sidebar-content" => __('Left Sidebar','admired'), "sidebar-content-sidebar" => __('Three Column','admired'), "content" => __('One Column','admired')),
 		),
 	
 	array("type" => "close"),
@@ -329,7 +329,7 @@ $admired_settings = array (
 	array( "name" => __( 'Search Bar Placement','admired'), 'id' => $admired_shortname.'_search_placement', 'type' => 'select',
 			"desc" => __( 'Where would you like the search bar? Menu, header, or none at all.','admired'),
 			'std' => 'Menu',
-			'value' => array( 'Menu', 'Header', 'None')),		
+			'value' => array( __('Menu','admired'), __('Header','admired'), __('None','admired'))),		
 			
 	array("type" => "close"),
 	
@@ -361,8 +361,8 @@ $admired_settings = array (
 	array( "name" => __( 'widget List Bullet','admired'), 'id' => $admired_shortname.'_widget_bullet_color', 'type' => 'select',
 			"desc" => __( 'Bullet used for Unorderd Lists in sidebar area.','admired'),
 			'std' => 'default',
-			'value' => array( 'default', 'circle', 'disc', 'square', 'circle-black', 'circle-blue', 'circle-white', 'star-black', 'star-blue', 'star-yellow', 'square-black', 'square-blue',
-						'square-white', 'check-black', 'check-green', 'check-blue', 'heart-red', 'paw-print', 'radiation-black')),
+			'value' => array( __('default','admired'), __('circle','admired'), __('disc','admired'), __('square','admired'), __('circle-black','admired'), __('circle-blue','admired'), __('circle-white','admired'), __('star-black','admired'), __('star-blue','admired'), __('star-yellow','admired'), __('square-black','admired'), __('square-blue','admired'),
+						__('square-white','admired'), __('check-black','admired'), __('check-blue','admired'), __('check-green','admired'), __('check-white','admired'), __('heart-red','admired'), __('paw-print','admired'), __('radiation-black','admired'))),
 						
 	array("type" => "close"),
 	
@@ -419,14 +419,13 @@ $admired_settings = array (
 			"desc" => __( 'It is completely optional, but if you like the Theme I would appreciate it if you keep the credit link at the bottom, or else consider making a contribution to help future development of this Theme.','admired')),
 		
 	array(  "name" => __( 'Site Copyright','admired'), 'id' => $admired_shortname.'_add_custom_copyright', 'type' => 'text',
-			"desc" => __( 'If you enter anything here, the default copyright notice in the footer will be replaced with the text here. It will not
-		automatically update from year to year. Use <code>&amp;copy;</code> to display &copy;. You can use other HTML as well.','admired'),
+			"desc" => __( 'If you enter anything here, the default copyright notice in the footer will be replaced with the text here. It will not automatically update from year to year. Use <code>&amp;copy;</code> to display &copy;. You can use other HTML as well.','admired'),
 			'std' => ''),
 			
-	array( "name" => __( 'Footer HTML','admired'),
-			"desc" => __( '<a href="http://www.w3schools.com/html/html_links.asp" TARGET="_blank"><div class="admired-help-img" title="Help with HTML links"></div></a>
-					This code will be inserted into the footer area, right after the Footer widgets, but right before the before the Site Copyright. This
-					could include extra information, Links, visit counters, etc.','admired'),
+	array( "name" => __( 'Footer HTML','admired'),		
+			"desc" => '<a href="http://www.w3schools.com/html/html_links.asp" TARGET="_blank"><div class="admired-help-img" title="'
+					. __('Help with HTML links','admired') .'"></div></a>' .
+					__( 'This code will be inserted into the footer area, right after the Footer widgets, but right before the before the Site Copyright. This could include extra information, Links, visit counters, etc.','admired'),	
 			'id' => $admired_shortname.'_footer_opts',
 			'type' => 'textarea'),
 			
@@ -540,16 +539,13 @@ $admired_settings = array (
 	array("type" => "open"),
 	
 	array( "name" => __( '! Use SEO Plugin Instead','admired'), 'id' => $admired_shortname.'_hide_metainfo', 'type' => 'checkbox',
-			"desc" => __( 'Check this box if using an SEO plugin to stop from getting duplicate META tags. Recommended: 
-					<a href="http://wordpress.org/extend/plugins/wordpress-seo/" TARGET="_blank"><div class="wp-seo-img" title="WordPress SEO by Yoast"></div></a>','admired')),
+			"desc" => __( 'Check this box if using an SEO plugin to stop from getting duplicate META tags. Recommended:', 'admired') . 
+					'<a href="http://wordpress.org/extend/plugins/wordpress-seo/" TARGET="_blank"><div class="wp-seo-img" title="' . __('WordPress SEO by Yoast', 'admired') . '"></div></a>'),
 	
 	array( "name" => __( 'Custom CSS ','admired'),
-			"desc" => __( '<a href="http://www.w3schools.com/css/default.asp" TARGET="_blank"><div class="admired-help-img" title="Help with CSS"></div></a>
-					This input area is one of the most important options in admired for customizing your site.
-					Code entered into this box is included right before the &lt;/HEAD&gt; tag on each page of your site. The most important
-					use for this area is to enter custom CSS rules to control the look of your site. <b>!Do Not Use</b> &lt;style&gt; tags.
-					If you need to style something for Internet Explorer, simply add <code>#ie6</code>, <code>#ie7</code>, or <code>#ie8</code>
-					before the selector your styling. ( eg. <code>#ie7 #site-title { margin-top: 0px;}</code> )','admired'),
+			"desc" => '<a href="http://www.w3schools.com/css/default.asp" TARGET="_blank"><div class="admired-help-img" title="'
+					. __('Help with CSS','admired') .'"></div></a>' .
+					__( 'This input area is one of the most important options in admired for customizing your site. Code entered into this box is included right before the &lt;/HEAD&gt; tag on each page of your site. The most important use for this area is to enter custom CSS rules to control the look of your site. <strong>!Do Not Use</strong> &lt;style&gt; tags. If you need to style something for Internet Explorer, simply add <code>#ie6</code>, <code>#ie7</code>, or <code>#ie8</code> before the selector your styling. ( eg. <code>#ie7 #site-title { margin-top: 0px;}</code> )','admired'),
 			'id' => $admired_shortname.'_header_css',
 			'type' => 'textarea'),
 	
@@ -571,17 +567,18 @@ $admired_settings = array (
 			
 	array("type" => "open"),
 	
-	array( "name" => __( 'Google Analytics- Web Property ID','admired'),
-			"desc" => __( '<a href="http://www.google.com/analytics/" TARGET="_blank"><div class="google-analytics-img" title="Google Analytics"></div></a>
-						<font color=#444>Note:</font> the Google Analytics script now goes in the &lt;head&gt; element to better support the new Google Analytics script.
-						Only put the Web Property ID (eg. "<b>UA-XXXXXXXX-X</b>") in the textbox.','admired'),
+	array( "name" => __( 'Google Analytics- Web Property ID','admired'),			
+			"desc" => '<a href="http://www.google.com/analytics/" TARGET="_blank"><div class="google-analytics-img" title="'
+					. __('Google Analytics','admired') .'"></div></a>' .
+					__( '<font color=#444>Note:</font> the Google Analytics script now goes in the &lt;head&gt; element to better support the new Google Analytics script. Only put the Web Property ID (eg. "<b>UA-XXXXXXXX-X</b>") in the textbox.','admired'),		
 			'id' => $admired_shortname.'_google_analytics',
 			'type' => 'text',
 			'std' => ''),
 			
 	array(  "name" => __( 'Clicky Analytics- Site ID','admired'), 'id' => $admired_shortname.'_clicky_site_id', 'type' => 'text',
-			"desc" => __( '<a href="http://getclicky.com/" TARGET="_blank"><div class="clicky-analytics-img" title="Clicky Analytics"></div></a>
-						What is your site ID? Go to your Clicky dashboard and look at the URL. You should see a "?site_id=123" (example) on the end. In this case, 123 would be your site ID.','admired'),
+			"desc" => '<a href="http://getclicky.com/" TARGET="_blank"><div class="clicky-analytics-img" title="'
+					. __('Clicky Analytics','admired') .'"></div></a>' .
+					__( 'What is your site ID? Go to your Clicky dashboard and look at the URL. You should see a "?site_id=123" (example) on the end. In this case, 123 would be your site ID.','admired'),
 			'std' => ''),
 	
 	array("type" => "close"),
@@ -608,25 +605,25 @@ function admired_settings_page() {
 
 			wp_cache_flush(); ?>
 
-			<div class="updated fade"><p><strong><?php _e( $admired_themename. ' options reset.' ); ?></strong></p></div>
+			<div class="updated fade"><p><strong><?php _e( 'Admired options reset.','admired' ); ?></strong></p></div>
 			<?php elseif ( isset ( $_REQUEST['updated'] ) ): ?>
-			<div class="updated fade"><p><strong><?php _e( $admired_themename. ' options saved.' ); ?></strong></p></div>
+			<div class="updated fade"><p><strong><?php _e( 'Admired options saved.','admired' ); ?></strong></p></div>
 			<?php endif; ?>
 
 			<div id="ultra-header"><div id="ultra-logo"></div></div>
 			<div id="tabs" style="clear:both;">   
 				<ul class="tabNavigation">
-					<li><a href="#admired-tab-1"><span>Layout</span></a></li>
-					<li><a href="#admired-tab-2"><span>General</span></a></li>
-					<li><a href="#admired-tab-3"><span>Fonts</span></a></li>
-					<li><a href="#admired-tab-4"><span>Header</span></a></li>
-					<li><a href="#admired-tab-5"><span>Sidebar</span></a></li>
-					<li><a href="#admired-tab-6"><span>Comments</span></a></li>
-					<li><a href="#admired-tab-7"><span>Footer</span></a></li>
-					<li><a href="#admired-tab-8"><span>Pagination</span></a></li>
-					<li><a href="#admired-tab-9"><span>Social</span></a></li>
-					<li><a href="#admired-tab-10"><span>Advanced</span></a></li>
-					<li><a href="#admired-tab-11"><span>Analytics</span></a></li>
+					<li><a href="#admired-tab-1"><span><?php _e('Layout','admired'); ?></span></a></li>
+					<li><a href="#admired-tab-2"><span><?php _e('General','admired'); ?></span></a></li>
+					<li><a href="#admired-tab-3"><span><?php _e('Fonts','admired'); ?></span></a></li>
+					<li><a href="#admired-tab-4"><span><?php _e('Header','admired'); ?></span></a></li>
+					<li><a href="#admired-tab-5"><span><?php _e('Sidebar','admired'); ?></span></a></li>
+					<li><a href="#admired-tab-6"><span><?php _e('Comments','admired'); ?></span></a></li>
+					<li><a href="#admired-tab-7"><span><?php _e('Footer','admired'); ?></span></a></li>
+					<li><a href="#admired-tab-8"><span><?php _e('Pagination','admired'); ?></span></a></li>
+					<li><a href="#admired-tab-9"><span><?php _e('Social','admired'); ?></span></a></li>
+					<li><a href="#admired-tab-10"><span><?php _e('Advanced','admired'); ?></span></a></li>
+					<li><a href="#admired-tab-11"><span><?php _e('Analytics','admired'); ?></span></a></li>
 				</ul>
 		
 				<div class="tabContainer">
@@ -863,8 +860,8 @@ function admired_settings_page() {
 					<input class="button" style="background: #483FFC; border-color:#241E94; color:#FFF; font-weight: bold;text-shadow: rgba(0, 0, 0, 0.3) 0 -1px 0;
 					"type="submit" name="forum" value="Support Forum" />
 				</form>
-				<p style="color: #777; margin-top: 5px;">Need Help? Got a Suggestion? Let me help you.<p>
-				<p style="color: #555; margin-top: -8px;">Forum password is:<p>
+				<p style="color: #777; margin-top: 5px;"><?php _e('Need Help? Got a Suggestion? Let me help you.','admired'); ?><p>
+				<p style="color: #555; margin-top: -8px;"><?php _e('Forum password is:','admired'); ?><p>
 				<p style="color: #483FFC; margin-top: -10px; font-size:14px;"><b> WordPress </b></p>
 			</div>
 	
@@ -876,7 +873,7 @@ function admired_settings_page() {
 					<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
 					<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 				</form>
-				<p style="color: #777; margin-top: -5px;">Like the Theme? Help it stay up to date.<p>
+				<p style="color: #777; margin-top: -5px;"><?php _e('Like the Theme? Help it stay up to date.','admired'); ?><p>
 			</div>
 					
 			<?php // Reset admired Options   ?>
