@@ -6,9 +6,6 @@
 'Believe' is a WordPress theme that was built off the _s theme by Automattic.com. Background pattern by DinPattern.com.
 
 
-== License ==
-'Believe' is released under the GPL license.
-
 
 == Changelog ==
 
