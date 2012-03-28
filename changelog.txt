@@ -7,7 +7,12 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
-(03/22/2012) - Maintenance Version 1.3.5
+(03/27/2012) - Maintenance Version 1.3.7
+[*] description typo in style.css
+[+] link color in style.css for better visibility
+[*] load_theme_textdomain in /includes/functions.php
+
+(03/22/2012) - Maintenance Version 1.3.6
 [x] #widgets #s padding in style.css
 [+] bbPress breadcrumb compatibility patch by Dan Smith keystonedatabase.com
 [+] localization support

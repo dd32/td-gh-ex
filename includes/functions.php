@@ -35,13 +35,14 @@ if (!function_exists('responsive_setup')):
         /**
          * Responsive is now available for translations.
          * Add your files into /languages/ directory.
+		 * @see http://codex.wordpress.org/Function_Reference/load_theme_textdomain
          */
-	    load_theme_textdomain('responsive', TEMPLATEPATH . '/languages');
+	    load_theme_textdomain('responsive', get_template_directory_uri() . '/languages');
 
-	    $locale = get_locale();
-	    $locale_file = TEMPLATEPATH . "/languages/$locale.php";
-	    if ( is_readable( $locale_file ) )
-		    require_once( $locale_file );
+            $locale = get_locale();
+            $locale_file = get_template_directory_uri() . "/languages/$locale.php";
+            if (is_readable( $locale_file))
+	            require_once( $locale_file);
 						
         /**
          * Add callback for custom TinyMCE editor stylesheets. (editor-style.css)
