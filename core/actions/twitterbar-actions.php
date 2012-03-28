@@ -26,7 +26,7 @@ add_action( 'synapse_twitterbar_section', 'synapse_twitterbar_section_content' )
 function synapse_twitterbar_section_content() {
 	global $options, $themeslug, $post; //call globals
 	$root = get_template_directory_uri();
-	
+
 	if (is_page()) {
 	$handle = get_post_meta($post->ID, 'twitter_handle' , true); 
 	}
