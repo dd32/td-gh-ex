@@ -1,19 +1,24 @@
 <?php
 /**
- * @package WordPress
- * @subpackage Skirmish
- * @since Skirmish 0.1
+ * @package Skirmish
+ * @since Skirmish 1.5
  */
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="postedon" onclick="location.href='<?php the_permalink(); ?>';" style="cursor: pointer;"><?php the_post_thumbnail('index-post-thumbnail'); ?><div class="time"><?php the_time('m/j/y') ?></div></div>
-	<div class="entry">
+		<div class="postedon">
+		<div class="time"><?php the_time('m/j/y') ?></div>
+ 		<?php if ( has_post_thumbnail()) : ?>
+   		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+   		<?php the_post_thumbnail('index-post-thumbnail'); ?>
+   		</a>
+ 		<?php endif; ?>
+		</div>
+	
+	
+	<div class="entry">	
 	<header class="entry-header">
 		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'skirmish' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
-
-
-			
 
 	</header><!-- .entry-header -->
 
@@ -23,12 +28,12 @@
 	</div><!-- .entry-summary -->
 	<?php else : ?>
 	<div class="entry-content">
-		<?php the_excerpt( __( 'Read More', 'skirmish' ) ); ?>
-		<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'skirmish' ), 'after' => '</div>' ) ); ?>
+		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'skirmish' ) ); ?>
+		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'skirmish' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
 	<?php endif; ?>
-	
-<footer class="entry-meta">
+
+	<footer class="entry-meta">
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 			<?php
 				/* translators: used between list items, there is a space after the comma */
@@ -57,7 +62,7 @@
 		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'skirmish' ), __( '1 Comment', 'skirmish' ), __( '% Comments', 'skirmish' ) ); ?></span>
 		<?php endif; ?>
 
-		<?php edit_post_link( __( 'Edit', 'skirmish' ), '<span class="sep"> | </span> <span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( '<span class="sep"> | </span> Edit', 'skirmish' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- #entry-meta -->
-	</div>	
+</div><!-- end .entry -->
 </article><!-- #post-<?php the_ID(); ?> -->

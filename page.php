@@ -7,24 +7,25 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package WordPress
- * @subpackage Skirmish
- * @since Skirmish 0.1
+ * @package Skirmish
+ * @since Skirmish 1.5
  */
 
 get_header(); ?>
 
-		<div id="primary">
+		<div id="primary" class="site-content">
 			<div id="content" role="main">
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
 					<?php get_template_part( 'content', 'page' ); ?>
 
+					<?php comments_template( '', true ); ?>
+
 				<?php endwhile; // end of the loop. ?>
 
 			</div><!-- #content -->
-		</div><!-- #primary -->
+		</div><!-- #primary .site-content -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

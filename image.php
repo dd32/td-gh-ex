@@ -2,14 +2,14 @@
 /**
  * The template for displaying image attachments.
  *
- * @package WordPress
- * @subpackage Skirmish
- * @since Skirmish 0.1
+ * @package Skirmish
+ * @since Skirmish 1.5
  */
 
-get_header(); ?>
+get_header();
+?>
 
-		<div id="primary" class="image-attachment">
+		<div id="primary" class="site-content image-attachment">
 			<div id="content" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -21,9 +21,9 @@ get_header(); ?>
 						<div class="entry-meta">
 							<?php
 								$metadata = wp_get_attachment_metadata();
-								printf( __( 'Published <span class="entry-date"><abbr class="published" title="%1$s">%2$s</abbr></span> at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%7$s</a>', 'skirmish' ),
-									esc_attr( get_the_time() ),
-									get_the_date(),
+								printf( __( 'Published <span class="entry-date"><time class="entry-date" datetime="%1$s" pubdate>%2$s</time></span> at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%7$s</a>', 'skirmish' ),
+									esc_attr( get_the_date( 'c' ) ),
+									esc_html( get_the_date() ),
 									wp_get_attachment_url(),
 									$metadata['width'],
 									$metadata['height'],
@@ -35,8 +35,8 @@ get_header(); ?>
 						</div><!-- .entry-meta -->
 
 						<nav id="image-navigation">
-							<span class="previous-image"><?php previous_image_link( false, __( '&larr; Previous' , 'skirmish' ) ); ?></span>
-							<span class="next-image"><?php next_image_link( false, __( 'Next &rarr;' , 'skirmish' ) ); ?></span>
+							<span class="previous-image"><?php previous_image_link( false, __( '&larr; Previous', 'skirmish' ) ); ?></span>
+							<span class="next-image"><?php next_image_link( false, __( 'Next &rarr;', 'skirmish' ) ); ?></span>
 						</nav><!-- #image-navigation -->
 					</header><!-- .entry-header -->
 
@@ -83,7 +83,7 @@ get_header(); ?>
 						</div><!-- .entry-attachment -->
 
 						<?php the_content(); ?>
-						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'skirmish' ), 'after' => '</div>' ) ); ?>
+						<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'skirmish' ), 'after' => '</div>' ) ); ?>
 
 					</div><!-- .entry-content -->
 
@@ -106,6 +106,6 @@ get_header(); ?>
 			<?php endwhile; // end of the loop. ?>
 
 			</div><!-- #content -->
-		</div><!-- #primary -->
+		</div><!-- #primary .site-content -->
 
 <?php get_footer(); ?>

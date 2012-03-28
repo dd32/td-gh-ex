@@ -1,8 +1,7 @@
 <?php
 /**
- * @package WordPress
- * @subpackage Skirmish
- * @since Skirmish 0.1
+ * @package Skirmish
+ * @since Skirmish 1.5
  */
 ?>
 
@@ -17,8 +16,9 @@
 
 	<div class="entry-content">
 		<?php the_post_thumbnail('single-post-thumbnail'); ?>
+		
 		<?php the_content(); ?>
-		<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'skirmish' ), 'after' => '</div>' ) ); ?>
+		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'skirmish' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-meta">

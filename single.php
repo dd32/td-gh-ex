@@ -2,14 +2,13 @@
 /**
  * The Template for displaying all single posts.
  *
- * @package WordPress
- * @subpackage Skirmish
- * @since Skirmish 0.1
+ * @package Skirmish
+ * @since Skirmish 1.5
  */
 
 get_header(); ?>
 
-		<div id="primary">
+		<div id="primary" class="site-content">
 			<div id="content" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -17,13 +16,19 @@ get_header(); ?>
 
 				<?php get_template_part( 'content', 'single' ); ?>
 
+				<?php skirmish_content_nav('below'); ?>
 
-				<?php comments_template( '', true ); ?>
+				<?php
+					// If comments are open or we have at least one comment, load up the comment template
+					if ( comments_open() || '0' != get_comments_number() )
+						comments_template( '', true );
+				?>
 
 			<?php endwhile; // end of the loop. ?>
 
 			</div><!-- #content -->
-		</div><!-- #primary -->
+		</div><!-- #primary .site-content -->
+
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

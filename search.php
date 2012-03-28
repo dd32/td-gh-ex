@@ -2,14 +2,13 @@
 /**
  * The template for displaying Search Results pages.
  *
- * @package WordPress
- * @subpackage Skirmish
- * @since Skirmish 0.1
+ * @package Skirmish
+ * @since Skirmish 1.5
  */
 
 get_header(); ?>
 
-		<section id="primary">
+		<section id="primary" class="site-content">
 			<div id="content" role="main">
 
 			<?php if ( have_posts() ) : ?>
@@ -18,7 +17,6 @@ get_header(); ?>
 					<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'skirmish' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 				</header>
 
-				<?php skirmish_content_nav( 'nav-above' ); ?>
 
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
@@ -27,7 +25,7 @@ get_header(); ?>
 
 				<?php endwhile; ?>
 
-				<?php skirmish_content_nav( 'nav-below' ); ?>
+				<?php skirmish_content_nav('below'); ?>
 
 			<?php else : ?>
 
@@ -45,7 +43,7 @@ get_header(); ?>
 			<?php endif; ?>
 
 			</div><!-- #content -->
-		</section><!-- #primary -->
+		</section><!-- #primary .site-content -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

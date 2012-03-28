@@ -8,17 +8,18 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package WordPress
- * @subpackage Skirmish
- * @since Skirmish 0.1
+ * @package Skirmish
+ * @since Skirmish 1.5
  */
 
 get_header(); ?>
 
-		<div id="primary">
+
+		<div id="primary" class="site-content">
 			<div id="content" role="main">
 
 			<?php if ( have_posts() ) : ?>
+
 
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
@@ -32,27 +33,25 @@ get_header(); ?>
 					?>
 
 				<?php endwhile; ?>
-				
-				<?php if(function_exists('wp_pagenavi')) { wp_pagenavi(); } else { ?>
-				<?php skirmish_content_nav( 'nav-below' ); ?>
-				<?php } ?>
-			<?php else : ?>
+
+				<?php skirmish_content_nav('below'); ?>
+
+			<?php elseif ( current_user_can( 'edit_posts' ) ) : ?>
 
 				<article id="post-0" class="post no-results not-found">
 					<header class="entry-header">
-						<h1 class="entry-title"><?php _e( 'Nothing Found', 'skirmish' ); ?></h1>
+						<h1 class="entry-title"><?php _e( 'No posts to display', 'skirmish' ); ?></h1>
 					</header><!-- .entry-header -->
 
 					<div class="entry-content">
-						<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'skirmish' ); ?></p>
-						<?php get_search_form(); ?>
+						<p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'skirmish' ), admin_url( 'post-new.php' ) ); ?></p>
 					</div><!-- .entry-content -->
 				</article><!-- #post-0 -->
 
 			<?php endif; ?>
 
 			</div><!-- #content -->
-		</div><!-- #primary -->
+		</div><!-- #primary .site-content -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
