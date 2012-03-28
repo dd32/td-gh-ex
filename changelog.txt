@@ -7,7 +7,7 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
-(03/27/2012) - Maintenance Version 1.3.7
+(03/27/2012) - Maintenance Version 1.3.8
 [*] description typo in style.css
 [+] link color in style.css for better visibility
 [*] load_theme_textdomain in /includes/functions.php
