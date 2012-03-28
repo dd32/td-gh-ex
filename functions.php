@@ -377,8 +377,6 @@ function autoshow_admin_header_style()
 ### INITIALIZE THE THEME ###
 add_action( 'after_setup_theme', 'autoshow_setup' );
 function my_scripts_method() {
-    wp_deregister_script( 'jquery' );
-    wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js');
     wp_enqueue_script( 'jquery' );
 	if ( is_singular() ) 
 		wp_enqueue_script( 'comment-reply' );
