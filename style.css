@@ -4,7 +4,7 @@ Theme URI: http://generalthemes.com/believe/
 Author: General Themes
 Author URI: http://generalthemes.com/
 Description: a theme for religious blogs
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License
 License URI: license.txt
 Tags: dark, two-columns, translation-ready, right-sidebar, custom-header, custom-background, featured-images, post-formats, microformats
@@ -19,6 +19,9 @@ Header image by Ludolf Bakhuizen (1631–1708). "Christ in the Storm on the Sea 
 License: public domain.
 
 */
+
+/* Google Web Fonts */
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans|Judson);
 
 
 /* =Reset
@@ -81,8 +84,8 @@ q:before, q:after {
 blockquote, q, .format-aside {
 	quotes: "" "";
 	font-style:italic;
-	padding-left:30px;
 	font-family:georgia, arial;
+	padding-left:40px;
 }
 a:focus {
 	outline: thin dotted;
@@ -111,6 +114,12 @@ textarea {
 }
 
 /* Headings */
+h1{font-size:28px; font-family:"Judson", georgia, helvetica, arial;}
+h2{font-size:26px; font-family:"Judson", georgia, helvetica, arial;}
+h3{font-size:24px; font-family:"georgia", helvetica, arial;}
+h4{font-size:22px; font-family:"georgia", helvetica, arial;}
+h5{font-size:18px; font-family:"georgia", helvetica, arial;}
+h6{font-size:16px; font-family:"georgia", helvetica, arial;}
 h1,h2,h3,h4,h5,h6 {
 	clear: both;
 }
@@ -208,7 +217,7 @@ table {
 th {
 	font-weight: bold;
 }
-button,
+
 input,
 select,
 textarea {
@@ -216,13 +225,24 @@ textarea {
 	margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
 	vertical-align: baseline; /* Improves appearance and consistency in all browsers */
 	*vertical-align: middle; /* Improves appearance and consistency in all browsers */
+	background: #f3f3f3;
+	border: 1px solid #dcdcdc;
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
+	-moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
+	-webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
+	padding:6px;
+}
+input:focus,
+select:focus,
+textarea:focus {
+	background:#fff;
+	outline: none;
 }
 button,
 input {
 	line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
 	*overflow: visible;  /* Corrects inner spacing displayed oddly in IE6/7 */
 }
-
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -337,7 +357,18 @@ a:hover{text-decoration: none; color:#333;}
 	display: block;
 	margin: 10px auto;
 }
-.alignnone{clear:left; display:block; margin:10px 0;}
+.alignnone{
+	clear:left; 
+	display:block; 
+	margin:10px 0;
+	}
+.block{
+	display:block;
+}
+
+.clear{
+	clear:both;
+}
 /* Text meant only for screen readers */
 .assistive-text {
 	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
@@ -366,6 +397,7 @@ a:hover{text-decoration: none; color:#333;}
 	width:620px;
 	margin:0;
 	padding:0;
+	overflow:hidden;
 }
 
 #secondary{
@@ -392,7 +424,7 @@ a:hover{text-decoration: none; color:#333;}
 }
 
 #masthead h1.site-title{
-	font:normal 34px "Judson", georgia, arial, times;
+	font-size:32px;
 	padding:12px 12px 0 12px;
 	margin:0;	
 	text-align:center;
@@ -534,7 +566,8 @@ a:hover{text-decoration: none; color:#333;}
 	padding-bottom:15px;
 	}
 .entry-title{
-	font:normal 28px "judson", georgia, arial;
+	font-size:28px;
+	font-weight:normal;
 }
 .archive-title{margin-bottom:20px; text-transform:uppercase;}
 .entry-meta {
@@ -573,8 +606,9 @@ a:hover{text-decoration: none; color:#333;}
 .site-header img,
 .entry-content img,
 .comment-content img,
-.widget img {}
-	
+.widget img {
+
+}
 .site-header img,
 .entry-content img,
 img[class*="align"],
@@ -671,7 +705,7 @@ img{
 }
 #comments .comments-title {
 	border-bottom: 1px solid #ccc;
-	font-family: "georgia", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+	font-family: "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-serif;
 	font-size: 13px;
 	font-weight: bold;
 	letter-spacing: 0.025em;
@@ -771,6 +805,7 @@ img{
 
 .widget-title{
 	text-transform:uppercase;
+	font-size:14px;
 }
 .widget {
 	padding:0 20px;
