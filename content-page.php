@@ -3,7 +3,7 @@
  * The template used for displaying page content in page.php
  *
  * @package Skirmish
- * @since Skirmish 1.5
+ * @since Skirmish 1.6
  */
 ?>
 
@@ -15,6 +15,9 @@
 	<div class="entry-content">
 		<?php the_content(); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'skirmish' ), 'after' => '</div>' ) ); ?>
-		<?php edit_post_link( __( 'Edit', 'skirmish' ), '<span class="edit-link">', '</span>' ); ?>
 	</div><!-- .entry-content -->
+	
+	<footer class="entry-meta">
+		<?php edit_post_link( __( 'Edit', 'skirmish' ), '<span class="edit-link">', '</span>' ); ?>
+	</footer><!-- .entry-meta -->
 </article><!-- #post-<?php the_ID(); ?> -->

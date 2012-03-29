@@ -8,7 +8,7 @@
  * located in the functions.php file.
  *
  * @package Skirmish
- * @since Skirmish 1.5
+ * @since Skirmish 1.6
  */
 ?>
 	<div id="comments" class="comments-area">

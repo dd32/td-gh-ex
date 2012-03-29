@@ -1,7 +1,7 @@
 <?php
 /**
  * @package Skirmish
- * @since Skirmish 1.5
+ * @since Skirmish 1.6
  */
 ?>
 

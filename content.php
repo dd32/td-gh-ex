@@ -1,7 +1,7 @@
 <?php
 /**
  * @package Skirmish
- * @since Skirmish 1.5
+ * @since Skirmish 1.6
  */
 ?>
 
@@ -60,9 +60,10 @@
 
 		<?php if ( comments_open() || ( '0' != get_comments_number() && ! comments_open() ) ) : ?>
 		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'skirmish' ), __( '1 Comment', 'skirmish' ), __( '% Comments', 'skirmish' ) ); ?></span>
+		<span class="sep"> | </span>
 		<?php endif; ?>
 
-		<?php edit_post_link( __( '<span class="sep"> | </span> Edit', 'skirmish' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'skirmish' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- #entry-meta -->
 </div><!-- end .entry -->
 </article><!-- #post-<?php the_ID(); ?> -->

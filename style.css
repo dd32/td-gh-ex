@@ -4,7 +4,7 @@ Theme URI: http://generalthemes.com/skirmish/
 Author: General Themes
 Author URI: http://generalthemes.com/
 Description: an elegant, HTML5 WordPress theme
-Version: 1.5
+Version: 1.6
 License: GNU General Public License
 License URI: license.txt
 Tags: white, three-columns, flexible-width, custom-header, custom-background, custom-menu, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
@@ -21,9 +21,12 @@ About the header image:
 Title: The Battle of Trafalgar
 By: Auguste Mayer (1805-1890).
 Source: http://commons.wikimedia.org/wiki/File:Trafalgar-Auguste_Mayer.jpg
-
+Image License: Public Domain
 
 */
+
+/* Google Web Fonts */
+@import url(http://fonts.googleapis.com/css?family=Lusitana|Droid+Sans);
 
 
 /* =Reset
@@ -124,7 +127,7 @@ h1, h2, h3 {
 	font-weight:normal;
 }
 h1{font-size:28px; font-family:"Lusitana", georgia, helvetica, arial;}
-h2{font-size:26px; font-family:"georgia", helvetica, arial;}
+h2{font-size:26px; font-family:"Lusitana", helvetica, arial;}
 h3{font-size:24px; font-family:"georgia", helvetica, arial;}
 h4{font-size:22px; font-family:"georgia", helvetica, arial;}
 h5{font-size:18px; font-family:"georgia", helvetica, arial;}
@@ -696,7 +699,7 @@ postedon img{
 .entry-content img,
 .comment-content img,
 .widget img {
-	max-width: 100%; /* Fluid images for posts, comments, and widgets */
+	height: auto;
 }
 .site-header img,
 .entry-content img,
@@ -707,8 +710,7 @@ img[class*="wp-image-"] {
 .site-header img,
 .entry-content img,
 img.size-full {
-	max-width: 100%;
-	width: auto; /* Prevent stretching of full-size images with height and width attributes in IE8 */
+height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
 }
 .entry-content img.wp-smiley,
 .comment-content img.wp-smiley {

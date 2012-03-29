@@ -6,7 +6,7 @@
  * You can add an optional custom header image to header.php like so ...
  *
  * @package Skirmish
- * @since Skirmish 1.5
+ * @since Skirmish 1.6
  */
 
 function skirmish_custom_header_setup() {
