@@ -94,47 +94,161 @@ if (is_page()) {
 
 <?php } }
 else { ?>
-	<script type="text/javascript">
-		jQuery(document).ready(function(){	
 
-			jQuery("#slider").easySlider({
-				auto: false, 
-				continuous: false,
-				numeric: true,
-			});
 
-jQuery("#slidertext1").css("margin-top",jQuery('#slidercontainer').height()/2-jQuery('#slider1').height()) ;
-jQuery("#slidertext2").css("margin-top",jQuery('#slidercontainer').height()/2-jQuery('#slider2').height()) ;
-jQuery("#slidertext3").css("margin-top",jQuery('#slidercontainer').height()/2-jQuery('#slider3').height()) ;
-jQuery("#slidertext5").css("margin-top",jQuery('#slidercontainer').height()/2-jQuery('#slider5').height()) ;
-jQuery("#slidertext4").css("margin-top",jQuery('#slidercontainer').height()/2-jQuery('#slider4').height()) ;
+		 <script type="text/javascript">
+
+function flash(id){
+
+             
+
+             jQuery(id)
+             .animate({opacity: 0.5}, 100) 
+             .fadeOut(100)
+			 .fadeIn(100)
+             .animate({opacity: 1}, 100)
+			
+			
+
+}
+
+    jQuery(window).load(function() {
+        jQuery('#slider').nivoSlider({
+
+			effect: '<?php  echo $mantra_fpslideranim; ?>',
+        animSpeed: <?php echo $mantra_fpslidertime ?>,
+        pauseTime: <?php echo $mantra_fpsliderpause ?>,
+	<?php	if($mantra_fpsliderarrows=="Hidden") { ?> directionNav: false, <?php }
+   	if($mantra_fpsliderarrows=="Always Visible") { ?>  directionNavHide: false, <?php } ?>
+
+});
+
+ 
+
+                jQuery('#front-columns > div img').mouseover(function(e) { flash(this); })
+
+
+
+
+
+
+   
 		});	
 	</script>
 
 <style>
-#slidercontainer , #slider li, #slider2 li{ 
-width:<?php echo $mantra_fpsliderwidth ?>px;
-height:<?php echo $mantra_fpsliderheight ?>px;
+
+<?php if ($mantra_fronthideheader) {?> #branding {display:none;} <?php }
+	  if ($mantra_fronthidemenu) {?> #access {display:none;} <?php }
+  	  if ($mantra_fronthidewidget) {?> #colophon {display:none;} <?php }
+	  if ($mantra_fronthidefooter) {?> #footer2 {display:none;} <?php }
+      if ($mantra_fronthideback) {?> #main {background:none;} <?php } ?>
+
+
+#slider{ 
+width:<?php echo $mantra_fpsliderwidth ?>px !important;
+height:<?php echo $mantra_fpsliderheight ?>px !important;
+margin:30px auto;
+display:block;
+}
+
+
+#front-text1 h1 , #front-text2 h1{
+display:block;
+float:none;
+margin:30px auto;
+text-align:center;
+font-size:32px;
+clear:both;
+line-height:32px;
+font-style:italic;
+font-weight:bold;
+font-variant:small-caps;
+-webkit-text-shadow:1px 1px 1px #CCC;
+-moz-text-shadow:1px 1px 1px #CCC;
+text-shadow:1px 1px 1px #CCC;
+font-weight:normal;
+}
+
+ #front-text2 h1{
+font-size:28px;
+line-height:28px;
+margin-top:40px;
+margin-bottom:15px;
+}
+
+
+#frontpage blockquote {
+width:88% ;
+max-width:88% !important;
+margin-bottom:20px;
+font-size:18px;
+line-height:22px;
+color:#444;
+}
+
+#frontpage #front-text4 blockquote {
+font-size:14px;
+line-height:18px;
+color:#666;
 }
 
 .column-image {
 height:<?php echo $mantra_colimageheight ?>px;
 }
-</style>
-	
-<div id="slidercontainer">
-<div id="slider">
-			<ul>				
-   	  <?php if($mantra_sliderimg1) {?>  <li><a  href="<?php echo $mantra_sliderlink1 ?>"><img width="<?php echo $mantra_fpsliderwidth ?>" src="<?php echo $mantra_sliderimg1 ?>" id="slider1" alt="" /><?php if($mantra_slidertext1 || $mantra_slidertitle1) {?><div class="slidertext" id="slidertext1"><h2><?php echo $mantra_slidertitle1 ?></h2><?php echo $mantra_slidertext1 ?></div><?php } ?></a></li><?php } 
-			if($mantra_sliderimg2) {?>	<li><a  href="<?php echo $mantra_sliderlink2 ?>"><img width="<?php echo $mantra_fpsliderwidth ?>" src="<?php echo $mantra_sliderimg2 ?>" id="slider2" alt="" /><?php if($mantra_slidertext2 || $mantra_slidertitle2) {?><div class="slidertext" id="slidertext2"><h2><?php echo $mantra_slidertitle2 ?></h2><?php echo $mantra_slidertext2 ?></div><?php } ?></a></li><?php } 
-			if($mantra_sliderimg3) {?>	<li><a  href="<?php echo $mantra_sliderlink3 ?>"><img width="<?php echo $mantra_fpsliderwidth ?>" src="<?php echo $mantra_sliderimg3 ?>" id="slider3" alt="" /><?php if($mantra_slidertext3 || $mantra_slidertitle3) {?><div class="slidertext" id="slidertext3"><h2><?php echo $mantra_slidertitle3 ?></h2><?php echo $mantra_slidertext3 ?></div><?php } ?></a></li><?php } 
-			if($mantra_sliderimg4) {?>	<li><a  href="<?php echo $mantra_sliderlink4 ?>"><img width="<?php echo $mantra_fpsliderwidth ?>" src="<?php echo $mantra_sliderimg4 ?>" id="slider4" alt="" /><?php if($mantra_slidertext4 || $mantra_slidertitle4) {?><div class="slidertext" id="slidertext4"><h2><?php echo $mantra_slidertitle4 ?></h2><?php echo $mantra_slidertext4 ?></div><?php } ?></a></li><?php } 
-			if($mantra_sliderimg5) {?>	<li><a  href="<?php echo $mantra_sliderlink5 ?>"><img width="<?php echo $mantra_fpsliderwidth ?>" src="<?php echo $mantra_sliderimg5 ?>" id="slider5" alt="" /><?php if($mantra_slidertext5 || $mantra_slidertitle5) {?><div class="slidertext" id="slidertext5"><h2><?php echo $mantra_slidertitle5 ?></h2><?php echo $mantra_slidertext5 ?></div><?php } ?></a></li><?php } ?>
-			
-			</ul>
-		</div>
 
-</div>
+<?php if ($mantra_fpslidernav!="Bullets") { 
+	if ($mantra_fpslidernav=="Numbers") {?>
+
+.theme-default .nivo-controlNav {bottom:-22px;}
+.theme-default .nivo-controlNav a {
+    background: none;
+	text-decoration:underline;
+	margin-right:5px;
+    display: block;
+    float: left;
+	text-align:center;
+    height: 16px;
+    text-indent:0;
+    width: 16px;
+}
+<?php } else if ($mantra_fpslidernav=="None") {?>
+.theme-default .nivo-controlNav {display:none;}
+
+<?php } } ?>
+</style>
+<div id="frontpage">
+<?php  if($mantra_fronttext1) {?><div id="front-text1"> <h1><?php echo $mantra_fronttext1 ?> </h1></div><?php } ?>
+
+ <div class="slider-wrapper theme-default">
+            <div class="ribbon"></div>
+            <div id="slider" class="nivoSlider">
+             <?php  if($mantra_sliderimg1) {?>    <a href="<?php echo $mantra_sliderlink1 ?>"><img width="<?php echo $mantra_fpsliderwidth ?>" src="<?php echo $mantra_sliderimg1 ?>" id="slider1" alt="" <?php if ($mantra_slidertitle1 || $mantra_slidertext1 ) { ?>title="#caption1" <?php }?> /></a><?php } 
+           			if($mantra_sliderimg2) {?>    <a href="<?php echo $mantra_sliderlink2 ?>"><img width="<?php echo $mantra_fpsliderwidth ?>" src="<?php echo $mantra_sliderimg2 ?>" id="slider2" alt="" <?php if ($mantra_slidertitle2 || $mantra_slidertext2 ) { ?>title="#caption2" <?php }?> /></a><?php } 
+ 					if($mantra_sliderimg3) {?>    <a href="<?php echo $mantra_sliderlink3 ?>"><img width="<?php echo $mantra_fpsliderwidth ?>" src="<?php echo $mantra_sliderimg3 ?>" id="slider3" alt="" <?php if ($mantra_slidertitle3 || $mantra_slidertext3 ) { ?>title="#caption3" <?php }?> /></a><?php } 
+ 		    		if($mantra_sliderimg4) {?>    <a href="<?php echo $mantra_sliderlink4 ?>"><img width="<?php echo $mantra_fpsliderwidth ?>" src="<?php echo $mantra_sliderimg4 ?>" id="slider4" alt="" <?php if ($mantra_slidertitle4 || $mantra_slidertext4 ) { ?>title="#caption4" <?php }?> /></a><?php } 
+			 		if($mantra_sliderimg5) {?>    <a href="<?php echo $mantra_sliderlink5 ?>"><img width="<?php echo $mantra_fpsliderwidth ?>" src="<?php echo $mantra_sliderimg5 ?>" id="slider5" alt="" <?php if ($mantra_slidertitle5 || $mantra_slidertext5 ) { ?>title="#caption5" <?php }?> /></a><?php } ?>
+              
+            </div>
+            <div id="caption1" class="nivo-html-caption">
+                <?php echo '<h2>'.$mantra_slidertitle1.'</h2>'.$mantra_slidertext1 ?>
+            </div>
+            <div id="caption2" class="nivo-html-caption">
+                <?php echo '<h2>'.$mantra_slidertitle2.'</h2>'.$mantra_slidertext2 ?>
+            </div>
+            <div id="caption3" class="nivo-html-caption">
+                <?php echo '<h2>'.$mantra_slidertitle3.'</h2>'.$mantra_slidertext3 ?>
+            </div>
+            <div id="caption4" class="nivo-html-caption">
+                <?php echo '<h2>'.$mantra_slidertitle4.'</h2>'.$mantra_slidertext4 ?>
+            </div>
+
+            <div id="caption5" class="nivo-html-caption">
+                <?php echo '<h2>'.$mantra_slidertitle5.'</h2>'.$mantra_slidertext5 ?>
+            </div>
+        </div>
+
+<?php  if($mantra_fronttext2) {?><div id="front-text2"> <h1><?php echo $mantra_fronttext2 ?> </h1></div><?php } ?>
 
 <div id="front-columns"> 
 	<div id="column1">
@@ -157,11 +271,10 @@ height:<?php echo $mantra_colimageheight ?>px;
 
 </div>
 
+<?php  if($mantra_fronttext3) {?><div id="front-text3"> <blockquote><?php echo $mantra_fronttext3 ?> </blockquote></div><?php } 
+  if($mantra_fronttext4) {?><div id="front-text4"> <blockquote><?php echo $mantra_fronttext4 ?> </blockquote></div><?php } 
 
+ } ?>
+</div> <!-- frontpage -->
 
-<?php }
-
-
-
-
- get_footer(); ?>
+ <?php get_footer(); ?>

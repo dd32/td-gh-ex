@@ -67,8 +67,8 @@ foreach ($mantra_options as $key => $value) {
 							wp_enqueue_script('top');}
   									
 		if($mantra_frontpage =="Enable") {
-							wp_register_script('easySlider',get_template_directory_uri() . '/js/easySlider1.7.js', array('jquery'));
-							wp_enqueue_script('easySlider');}
+							wp_register_script('nivoSlider',get_template_directory_uri() . '/js/nivo-slider.js', array('jquery'));
+							wp_enqueue_script('nivoSlider');}
   									}
 
 	/* We add some JavaScript to pages with the comment form
@@ -670,11 +670,11 @@ if ($mantra_social1 && $mantra_social2) {  ?><a target="_blank" href="<?php echo
  
 						}
 
-
 // Get any existing copy of our transient data
 if ( false === ( $theme_info = get_transient( 'theme_info' ) ) ) {
     // It wasn't there, so regenerate the data and save the transient
      $theme_info = get_theme_data( get_theme_root() . '/mantra/style.css' );
-     set_transient( 'theme_info',  $theme_info );
+
+     set_transient( 'theme_info',  $theme_info ,60*60*12);
 }
 

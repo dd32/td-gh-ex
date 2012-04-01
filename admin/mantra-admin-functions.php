@@ -45,8 +45,10 @@ function mantra_init_fn(){
 	add_settings_field('mantra_hheight', __('Header Image Height','mantra') , 'setting_hheight_fn', __FILE__, 'layout_section');
 
 	add_settings_field('mantra_frontpage', __('Enable Presentation Page','mantra') , 'setting_frontpage_fn', __FILE__, 'presentation_section');
-	add_settings_field('mantra_frontslider', __('Presentation Page Slider','mantra') , 'setting_frontslider_fn', __FILE__, 'presentation_section');
+	add_settings_field('mantra_frontslider', __('Slider Settings','mantra') , 'setting_frontslider_fn', __FILE__, 'presentation_section');
+	add_settings_field('mantra_frontslider2', __('Slides','mantra') , 'setting_frontslider2_fn', __FILE__, 'presentation_section');
 	add_settings_field('mantra_frontcolumns', __('Presentation Page Columns','mantra') , 'setting_frontcolumns_fn', __FILE__, 'presentation_section');
+	add_settings_field('mantra_fronttext', __('Extras','mantra') , 'setting_fronttext_fn', __FILE__, 'presentation_section');
 
 	add_settings_field('mantra_fontfamily', __('General Font','mantra') , 'setting_fontfamily_fn', __FILE__, 'text_section');
 	add_settings_field('mantra_fontsize', __('General Font Size','mantra') , 'setting_fontsize_fn', __FILE__, 'text_section');
@@ -253,8 +255,8 @@ global $mantra_options;
 	echo "Use <select id='mantra_dimselect' name='ma_options[mantra_dimselect]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_dimselect'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_dimselect'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 echo "</select> dimmensions";
 
@@ -395,7 +397,7 @@ jQuery(function() {
  //SELECT - Name: ma_options[hheight]
 function  setting_hheight_fn() {
 	global $mantra_options;
-	$items =array ("90px", "120px" , "150px" , "180px" , "200px", "240px", "300px","350px", "400px", "450px", "500px");
+	$items =array ("60px","90px", "120px" , "150px" , "180px" , "200px", "240px", "300px","350px", "400px", "450px", "500px");
 	echo "<select id='mantra_hheight' name='ma_options[mantra_hheight]'>";
 foreach($items as $item) {
 	echo "<option value='$item'";
@@ -421,11 +423,11 @@ function setting_frontpage_fn() {
 	echo "<select id='mantra_frontpage' name='ma_options[mantra_frontpage]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_frontpage'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_frontpage'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
-	echo "<div><small>".__("Enable the presentation front-page. This will become your default page that opens up fist. It has a slider and columns for presentation
+	echo "<div><small>".__("Enable the presentation front-page. This will become your new home page and it will replace whatever page you have selected as homepage. It has a slider and columns for presentation
 		text and images.","mantra")."</small></div>";
 
 }
@@ -433,9 +435,81 @@ foreach($items as $id=>$item) {
 //CHECKBOX - Name: ma_options[frontslider]
 function setting_frontslider_fn() {
 	global $mantra_options;
+
+	echo "<div class='slmini'><b>Slider Dimensions:</b> ";
+	echo "<input id='mantra_fpsliderwidth' name='ma_options[mantra_fpsliderwidth]' size='4' type='text' value='".esc_attr( $mantra_options['mantra_fpsliderwidth'] )."'  /> px (width) <strong>X</strong> ";
+	echo "<input id='mantra_fpsliderheight' name='ma_options[mantra_fpsliderheight]' size='4' type='text' value='".esc_attr( $mantra_options['mantra_fpsliderheight'] )."'  /> px (height)";
+	echo "<small>".__("The dimensions of your slider. Make sure your images are of the same size.","mantra")."</small></div>";
+
+
+	echo "<div class='slmini'><b>Animation:</b> ";
+	$items = array ("random" , "fold", "fade", "slideInRight", "slideInLeft", "sliceDown", "sliceDownLeft", "sliceUp", "sliceUpLeft", "sliceUpDown" , "sliceUpDownLeft", "boxRandom", "boxRain", "boxRainReverse", "boxRainGrow" , "boxRainGrowReverse");
+	$itemsare = array( __("Random","mantra"), __("Fold","mantra"), __("Fade","mantra"), __("SlideInRight","mantra"), __("SlideInLeft","mantra"), __("SliceDown","mantra"), __("SliceDownLeft","mantra"), __("SliceUp","mantra"), __("SliceUpLeft","mantra"), __("SliceUpDown","mantra"), __("SliceUpDownLeft","mantra"), __("BoxRandom","mantra"), __("BoxRain","mantra"), __("BoxRainReverse","mantra"), __("BoxRainGrow","mantra"), __("BoxRainGrowReverse","mantra"));
+	echo "<select id='mantra_fpslideranim' name='ma_options[mantra_fpslideranim]'>";
+	foreach($items as $id=>$item) {
+	echo "<option value='$item'";
+	selected($mantra_options['mantra_fpslideranim'],$item);
+	echo ">$itemsare[$id]</option>";
+}
+	echo "</select>";
+	echo "<small>".__("The transition effect your slider will have.","mantra")."</small></div>";
+
+	echo "<div class='slmini'><b>Animation Time:</b> ";
+	echo "<input id='mantra_fpslidertime' name='ma_options[mantra_fpslidertime]' size='4' type='text' value='".esc_attr( $mantra_options['mantra_fpslidertime'] )."'  /> miliseconds (1000ms = 1 second) ";
+	echo "<small>".__("The time in which the transition animation will take place.","mantra")."</small></div>";
+
+	echo "<div class='slmini'><b>Pause Time:</b> ";
+	echo "<input id='mantra_fpsliderpause' name='ma_options[mantra_fpsliderpause]' size='4' type='text' value='".esc_attr( $mantra_options['mantra_fpsliderpause'] )."'  /> miliseconds (1000ms = 1 second) ";
+	echo "<small>".__("The time in which a slide will be still and visible.","mantra")."</small></div>";
+
+
+	echo "<div class='slmini'><b>Slider navigation:</b> ";
+	$items = array ("Numbers" , "Bullets" ,"None");
+	$itemsare = array( __("Numbers","mantra"), __("Bullets","mantra"), __("None","mantra"));
+	echo "<select id='mantra_fpslidernav' name='ma_options[mantra_fpslidernav]'>";
+	foreach($items as $id=>$item) {
+	echo "<option value='$item'";
+	selected($mantra_options['mantra_fpslidernav'],$item);
+	echo ">$itemsare[$id]</option>";
+}
+	echo "</select>";
+	echo "<small>".__("Your slider navigation type. Shown under the slider.","mantra")."</small></div>";
+
+	echo "<div class='slmini'><b>Slider arrows:</b> ";
+	$items = array ("Always Visible" , "Visible on Hover" ,"Hidden");
+	$itemsare = array( __("Always Visible","mantra"), __("Visible on Hover","mantra"), __("Hidden","mantra"));
+	echo "<select id='mantra_fpsliderarrows' name='ma_options[mantra_fpsliderarrows]'>";
+	foreach($items as $id=>$item) {
+	echo "<option value='$item'";
+	selected($mantra_options['mantra_fpsliderarrows'],$item);
+	echo ">$itemsare[$id]</option>";
+}
+	echo "</select>";
+	echo "<small>".__("The Left and Right arrows on your slider","mantra")."</small></div>";
+
+
+/*
+// The Query
+query_posts('' );
+
+// The Loop
+while ( have_posts() ) : the_post();
+	echo '<li>';
+	the_title();
+echo get_the_post_thumbnail();
+	echo '</li>';
+endwhile;
+
+// Reset Query
+wp_reset_query();
+*/
+
+}
+
+//CHECKBOX - Name: ma_options[frontslider2]
+function setting_frontslider2_fn() {
+	global $mantra_options;
 ?>
-
-
 <script type="text/javascript">
 	jQuery(document).ready(function() {
 		var uploadparent = 0;
@@ -470,31 +544,6 @@ jQuery(this).next().toggle("fast");
 
 </script>
 
-
-<?php
-	echo "<div id='sdimensions'><b>Slider Dimmensions:</b> ";
-	echo "<input id='mantra_fpsliderwidth' name='ma_options[mantra_fpsliderwidth]' size='4' type='text' value='".esc_attr( $mantra_options['mantra_fpsliderwidth'] )."'  /> px (width) <b>X</b> ";
-	echo "<input id='mantra_fpsliderheight' name='ma_options[mantra_fpsliderheight]' size='4' type='text' value='".esc_attr( $mantra_options['mantra_fpsliderheight'] )."'  /> px (height) </div>";
-
-
-
-
-/*
-// The Query
-query_posts('' );
-
-// The Loop
-while ( have_posts() ) : the_post();
-	echo '<li>';
-	the_title();
-echo get_the_post_thumbnail();
-	echo '</li>';
-endwhile;
-
-// Reset Query
-wp_reset_query();
-*/
-?>
 <div class="slidebox"> 
 <h4 class="slidetitle" > Slide 1 </h4>
 <div class="slidercontent">
@@ -569,8 +618,10 @@ wp_reset_query();
 <input id='mantra_sliderlink5' name='ma_options[mantra_sliderlink5]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_sliderlink5'] ) ?>'  />            
 </div>
 </div>
+<?php	echo "<small>".__(" Your slides' content. Only the image is required, all other fields are optional. Only the slides with an image selected will become acitve and visible in the live slider.","mantra")."</small>"; 
 
-<?php
+
+?><?php
 }
 
 //CHECKBOX - Name: ma_options[frontcolumns]
@@ -644,6 +695,75 @@ echo "<div id='cdimensions'><b>Image Height:</b> ";
 
 <?php
 }
+
+
+
+//CHECKBOX - Name: ma_options[fronttext]
+function setting_fronttext_fn() {
+	global $mantra_options;
+
+echo "<div class='slidebox'><h4 class='slidetitle'> Extra Text </h4><div  class='slidercontent'><h5>Top Title</h5> ";
+	echo "<input id='mantra_fronttext1' name='ma_options[mantra_fronttext1]' size='50' type='text' value='".esc_attr( $mantra_options['mantra_fronttext1'] )."'  />";
+echo "<h5>Second Title</h5> ";
+	echo "<input id='mantra_fronttext2' name='ma_options[mantra_fronttext2]' size='50' type='text' value='".esc_attr( $mantra_options['mantra_fronttext2'] )."'  />";
+echo "<h5>Bottom Text 1</h5> ";
+	echo "<textarea id='mantra_fronttext3' name='ma_options[mantra_fronttext3]' rows='3' cols='50' type='textarea' >{$mantra_options['mantra_fronttext3']}  </textarea>";
+echo "<h5>Bottom Text 2 </h5> ";
+		echo "<textarea id='mantra_fronttext4' name='ma_options[mantra_fronttext4]' rows='3' cols='50' type='textarea' >{$mantra_options['mantra_fronttext4']}  </textarea></div></div>";
+
+echo "<div><small>".__("More text for your front page. The top title is above the slider, the second title between the slider and the columns and 2 more rows of text under the columns.
+		 It's all optional so leave any input field empty if it's not required. ","mantra")."</small></div>";
+
+
+
+
+echo "<br /><div class='slidebox'><h4 class='slidetitle'> Hide areas </h4><div  class='slidercontent'>";
+
+
+		$items = array( "FronHeader", "FrontMenu", "FrontWidget" , "FrontFooter","FrontBack");
+
+		$checkedClass0 = ($mantra_options['mantra_fronthideheader']=='1') ? ' checkedClass0' : '';
+		$checkedClass1 = ($mantra_options['mantra_fronthidemenu']=='1') ? ' checkedClass1' : '';
+		$checkedClass2 = ($mantra_options['mantra_fronthidewidget']=='1') ? ' checkedClass2' : '';
+		$checkedClass3 = ($mantra_options['mantra_fronthidefooter']=='1') ? ' checkedClass3' : '';
+		$checkedClass4 = ($mantra_options['mantra_fronthideback']=='1') ? ' checkedClass4' : '';
+
+		echo " <label id='$items[0]' for='$items[0]$items[0]' class='hideareas $checkedClass0'><input  ";
+		 checked($mantra_options['mantra_fronthideheader'],'1');
+	echo "value='1' id='$items[0]$items[0]'  name='ma_options[mantra_fronthideheader]' type='checkbox' /> Hide the header area (image or background color). </label>";
+
+		echo " <label id='$items[1]' for='$items[1]$items[1]' class='hideareas $checkedClass1'><input  ";
+		 checked($mantra_options['mantra_fronthidemenu'],'1');
+	echo "value='1' id='$items[1]$items[1]'  name='ma_options[mantra_fronthidemenu]' type='checkbox' /> Hide the main menu (the top navigation tabs). </label>";
+
+		echo " <label id='$items[2]' for='$items[2]$items[2]' class='hideareas $checkedClass2'><input  ";
+		 checked($mantra_options['mantra_fronthidewidget'],'1');
+	echo "value='1' id='$items[2]$items[2]'  name='ma_options[mantra_fronthidewidget]' type='checkbox' /> Hide the footer widgets.</label>";
+
+		echo " <label id='$items[3]' for='$items[3]$items[3]' class='hideareas $checkedClass3'><input  ";
+		 checked($mantra_options['mantra_fronthidefooter'],'1');
+	echo "value='1' id='$items[3]$items[3]'  name='ma_options[mantra_fronthidefooter]' type='checkbox' /> Hide the footer (copyright area) </label>";
+
+	echo " <label id='$items[4]' for='$items[4]$items[4]' class='hideareas $checkedClass4'><input  ";
+		 checked($mantra_options['mantra_fronthideback'],'1');
+	echo "value='1' id='$items[4]$items[4]'  name='ma_options[mantra_fronthideback]' type='checkbox' /> Hide the white color. Only the background color remains. </label>";
+		
+
+echo "</div></div>";		
+		echo "<div><p><small>".__(" Choose the areas to hide on the first page.","mantra")."</small></p></div>";
+
+
+
+
+
+
+
+
+
+
+}
+
+
 
 
 ////////////////////////////////
@@ -737,7 +857,7 @@ foreach($itemserif as $item) {
 foreach($itemsmono as $item) {
 	echo "<option style='font-family:$item;' value='$item'";
 	selected($mantra_options['mantra_fonttitle'],$item);
-	echo ">$item</option>";
+	echo ">$item";
 }
 	echo "</optgroup>";
 
@@ -851,7 +971,7 @@ function  setting_headfontsize_fn() {
 	echo "<select id='mantra_headfontsize' name='ma_options[mantra_headfontsize]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_headfontsize'],$itemsare[$id]);
+	selected($mantra_options['mantra_headfontsize'],$item);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -866,7 +986,7 @@ function  setting_sidefontsize_fn() {
 	echo "<select id='mantra_sidefontsize' name='ma_options[mantra_sidefontsize]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_sidefontsize'],$itemsare[$id]);
+	selected($mantra_options['mantra_sidefontsize'],$item);
 	echo ">$item</option>";
 }
 	echo "</select>";
@@ -881,8 +1001,8 @@ function  setting_textalign_fn() {
 	echo "<select id='mantra_textalign' name='ma_options[mantra_textalign]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_textalign'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_textalign'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("This overwrites the text alignment in posts and pages. Leave 'Default' for normal settings (alignment will remain as declared in posts, comments etc.).","mantra")."</small></div>";
@@ -911,8 +1031,8 @@ function setting_headerindent_fn() {
 	echo "<select id='mantra_headerindent' name='ma_options[mantra_headerindent]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_headerindent'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_headerindent'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Disable the default header and title indent (left margin).","mantra")."</small></div>";
@@ -926,8 +1046,8 @@ function  setting_lineheight_fn() {
 	echo "<select id='mantra_lineheight' name='ma_options[mantra_lineheight]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_lineheight'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_lineheight'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Text line height. The height between 2 rows of text. Leave 'Default' for normal settings (size value will be as set in the CSS).","mantra")."</small></div>";
@@ -941,8 +1061,8 @@ function  setting_wordspace_fn() {
 	echo "<select id='mantra_wordspace' name='ma_options[mantra_wordspace]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_wordspace'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_wordspace'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("The space between <i>words</i>. Leave 'Default' for normal settings (size value will be as set in the CSS).","mantra")."</small></div>";
@@ -956,8 +1076,8 @@ function  setting_letterspace_fn() {
 	echo "<select id='mantra_letterspace' name='ma_options[mantra_letterspace]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_letterspace'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_letterspace'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("The space between <i>letters</i>. Leave 'Default' for normal settings (size value will be as set in the CSS).","mantra")."</small></div>";
@@ -973,8 +1093,8 @@ function setting_textshadow_fn() {
 	echo "<select id='mantra_textshadow' name='ma_options[mantra_textshadow]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_textshadow'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_textshadow'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Disable the default text shadow on headers and titles.","mantra")."</small></div>";
@@ -1126,8 +1246,8 @@ global $mantra_options;
 	echo "<select id='mantra_caption' name='ma_options[mantra_caption]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_caption'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_caption'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("This setting changes the look of your captions. Images that are not inserted through captions will not be affected.","mantra")."</small></div>";
@@ -1187,8 +1307,8 @@ function setting_metaback_fn() {
 	echo "<select id='mantra_metaback' name='ma_options[mantra_metaback]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_metaback'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_metaback'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("The background for your post-metas area (under your post tiltes). Gray by default.<","mantra")."</small></div>";
@@ -1203,8 +1323,8 @@ function setting_contentlist_fn() {
 	echo "<select id='mantra_contentlist' name='ma_options[mantra_contentlist]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_contentlist'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_contentlist'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Hide or show  bullets next to lists that are in your content area (posts, pages etc.).","mantra")."</small></div>";
@@ -1220,8 +1340,8 @@ function setting_title_fn() {
 	echo "<select id='mantra_title' name='ma_options[mantra_title]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_title'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_title'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Hide or show your blog's Title and Description in the header (recommended if you have a custom header image with text).","mantra")."</small></div>";
@@ -1235,8 +1355,8 @@ function setting_pagetitle_fn() {
 	echo "<select id='mantra_pagetitle' name='ma_options[mantra_pagetitle]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_pagetitle'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_pagetitle'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Hide or show Page titles on any <i>created</i> pages. ","mantra")."</small></div>";
@@ -1250,8 +1370,8 @@ function setting_categtitle_fn() {
 	echo "<select id='mantra_categtitle' name='ma_options[mantra_categtitle]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_categtitle'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_categtitle'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Hide or show Page titles on <i>Category</i> Pages. ","mantra")."</small></div>";
@@ -1265,8 +1385,8 @@ function setting_tables_fn() {
 	echo "<select id='mantra_tables' name='ma_options[mantra_tables]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_tables'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_tables'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Hide table borders and background color.","mantra")."</small></div>";
@@ -1280,8 +1400,8 @@ function setting_comtext_fn() {
 	echo "<select id='mantra_comtext' name='ma_options[mantra_comtext]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_comtext'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_comtext'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Hide the explanatory text under the comments form. (starts with  <i>You may use these HTML tags and attributes:...</i>).","mantra")."</small></div>";
@@ -1295,8 +1415,8 @@ function setting_comclosed_fn() {
 	echo "<select id='mantra_comclosed' name='ma_options[mantra_comclosed]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_comclosed'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_comclosed'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Hide the  <b>Comments are closed</b> text that by default shows up on pages or posts with the comments disabled.","mantra")."</small></div>";
@@ -1311,8 +1431,8 @@ function setting_comoff_fn() {
 	echo "<select id='mantra_comoff' name='ma_options[mantra_comoff]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_comoff'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_comoff'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Hide the <b>Comments off</b> text next to posts that have comments disabled.","mantra")."</small></div>";
@@ -1327,8 +1447,8 @@ function setting_backtop_fn() {
 	echo "<select id='mantra_backtop' name='ma_options[mantra_backtop]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_backtop'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_backtop'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Enable the Back to Top button. The button appears after scrolling the page down.","mantra")."</small></div>";
@@ -1354,8 +1474,8 @@ function setting_postdate_fn() {
 	echo "<select id='mantra_postdate' name='ma_options[mantra_postdate]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_postdate'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_postdate'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Hide or show the post date.","mantra")."</small></div>";
@@ -1369,8 +1489,8 @@ function setting_posttime_fn() {
 	echo "<select id='mantra_posttime' name='ma_options[mantra_posttime]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_posttime'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_posttime'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Show the post time with the date. Time will not be visible if the Post Date is hidden.","mantra")."</small></div>";
@@ -1384,8 +1504,8 @@ function setting_postauthor_fn() {
 	echo "<select id='mantra_postauthor' name='ma_options[mantra_postauthor]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_postauthor'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_postauthor'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Hide or show the post author.","mantra")."</small></div>";
@@ -1399,8 +1519,8 @@ function setting_postcateg_fn() {
 	echo "<select id='mantra_postcateg' name='ma_options[mantra_postcateg]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_postcateg'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_postcateg'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Hide the post category.","mantra")."</small></div>";
@@ -1414,8 +1534,8 @@ function setting_posttag_fn() {
 	echo "<select id='mantra_posttag' name='ma_options[mantra_posttag]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_posttag'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_posttag'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Hide the post tags.","mantra")."</small></div>";
@@ -1429,8 +1549,8 @@ function setting_postbook_fn() {
 	echo "<select id='mantra_postbook' name='ma_options[mantra_postbook]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_postbook'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_postbook'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Hide the 'Bookmark permalink'.","mantra")."</small></div>";
@@ -1444,8 +1564,8 @@ function setting_postmetas_fn() {
 	echo "<select id='mantra_postmetas' name='ma_options[mantra_postmetas]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_postmetas'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_postmetas'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Hide all the post metas. All meta info and meta areas will be hidden.","mantra")."</small></div>";
@@ -1465,8 +1585,8 @@ function setting_excerpthome_fn() {
 	echo "<select id='mantra_excerpthome' name='ma_options[mantra_excerpthome]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_excerpthome'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_excerpthome'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Excerpts on the main page. Only standard posts will be affected. All other post formats (aside, image, chat, quote etc.) have their specific formating.","mantra")."</small></div>";
@@ -1481,8 +1601,8 @@ function setting_excerptarchive_fn() {
 	echo "<select id='mantra_excerptarchive' name='ma_options[mantra_excerptarchive]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_excerptarchive'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_excerptarchive'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Excerpts on archive, categroy and search pages. Same as above, only standard posts will be affected.","mantra")."</small></div>";
@@ -1505,8 +1625,8 @@ function setting_magazinelayout_fn() {
 	echo "<select id='mantra_magazinelayout' name='ma_options[mantra_magazinelayout]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_magazinelayout'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_magazinelayout'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Enable the Magazine Layout. This layout applies to pages with posts and shows 2 posts per row.","mantra")."</small></div>";
@@ -1534,8 +1654,8 @@ function setting_excerpttags_fn() {
 	echo "<select id='mantra_excerpttags' name='ma_options[mantra_excerpttags]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_excerpttags'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_excerpttags'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("By default WordPress excerpts remove all HTML tags (".htmlspecialchars('<pre>, <a>, <b>')." and all others) and only clean text is left in the excerpt. 
@@ -1557,8 +1677,8 @@ function setting_fpost_fn() {
 	echo "<select id='mantra_fpost' name='ma_options[mantra_fpost]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_fpost'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_fpost'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Show featured images as thumbnails on posts. The images must be selected for each post in the Featured Image section.","mantra")."</small></div>";
@@ -1572,8 +1692,8 @@ function setting_fauto_fn() {
 	echo "<select id='mantra_fauto' name='ma_options[mantra_fauto]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_fauto'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_fauto'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Show the first image that you inserted in a post as a thumbnail. If you enable this option, the first image in your post will be used even if you selected a Featured Image in you post.","mantra")."</small></div>";
@@ -1588,8 +1708,8 @@ function setting_falign_fn() {
 	echo "<select id='mantra_falign' name='ma_options[mantra_falign]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_falign'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_falign'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Thumbnail alignment.","mantra")."</small></div>";
@@ -1613,8 +1733,8 @@ function setting_fheader_fn() {
 	echo "<select id='mantra_fheader' name='ma_options[mantra_fheader]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_fheader'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_fheader'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Show featured images on headers. The header will be replaced with a featured image if you selected it as a Featured Image in the post and
@@ -1745,8 +1865,8 @@ function setting_linkheader_fn() {
 	echo "<select id='mantra_linkheader' name='ma_options[mantra_linkheader]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_linkheader'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_linkheader'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
 	echo "<div><small>".__("Make the site header into a clickable link that links to your index page.","mantra")."</small></div>";
@@ -1760,8 +1880,8 @@ function setting_favicon_fn() {
 	echo "<select id='mantra_faviconshow' name='ma_options[mantra_faviconshow]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
-	selected($mantra_options['mantra_faviconshow'],$itemsare[$id]);
-	echo ">$item</option>";
+	selected($mantra_options['mantra_faviconshow'],$item);
+	echo ">$itemsare[$id]</option>";
 }
 echo "</select>";
 ?>

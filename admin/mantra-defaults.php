@@ -10,11 +10,16 @@ $mantra_defaults = array(
 "mantra_sidebar" => 250,
 "mantra_sidewidthRel" => 60,
 "mantra_sidebarRel" => 20,
-"mantra_hheight" => "120px",
+"mantra_hheight" => "60px",
 
 "mantra_frontpage" => "Disable",
 "mantra_fpsliderwidth" => "800",
 "mantra_fpsliderheight" => "250",
+"mantra_fpslideranim" => "random",
+"mantra_fpslidertime" => "750",
+"mantra_fpsliderpause" => "5000",
+"mantra_fpslidernav" => "Bullets",
+"mantra_fpsliderarrows" => "Visible on Hover",
 
 "mantra_sliderimg1" => "",
 "mantra_slidertitle1" => "",
@@ -55,6 +60,17 @@ $mantra_defaults = array(
 "mantra_columntitle4" => "",
 "mantra_columntext4" => "",
 "mantra_columnlink4" => "",
+
+"mantra_fronttext1" => "",
+"mantra_fronttext2" => "",
+"mantra_fronttext3" => "",
+"mantra_fronttext4" => "",
+
+"mantra_fronthideheader" => "",
+"mantra_fronthidemenu" => "",
+"mantra_fronthidewidget" => "",
+"mantra_fronthidefooter" => "",
+"mantra_fronthideback" => "",
 
 "mantra_fontfamily" => 'Segoe UI, Arial, sans-serif',
 "mantra_fontsize" => "15px",

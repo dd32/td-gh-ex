@@ -78,50 +78,36 @@ $totalwidth= $mantra_sidewidth+$mantra_sidebar+50;
 		<div id="masthead"> 
 		
 			<div id="branding" role="banner" > 
-<?php if ($mantra_options['mantra_linkheader']=="Enable") { ?><a href="<?php echo home_url( '/' ); ?>" id="linky"> </a><?php } ?>
-				<?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
-				<<?php echo $heading_tag; ?> id="site-title">
-					<span>
-				<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a> 
-					</span>
+				<?php if ($mantra_options['mantra_linkheader']=="Enable") { ?><a href="<?php echo home_url( '/' ); ?>" id="linky"> </a><?php } ?>  
+				<?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?><<?php echo $heading_tag; ?> id="site-title">
+					<span> <a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a> </span>
 				</<?php echo $heading_tag; ?>>
 				<div id="site-description" ><?php bloginfo( 'description' ); ?></div>
-
-				<div class="socials" id="sheader"><?php if($mantra_socialsdisplay0) set_social_icons(); ?></div>
+				
+				<div class="socials" id="sheader"> <?php if($mantra_socialsdisplay0) set_social_icons(); ?> </div>
 
 				<?php
-					// Check if this is a post or page, if it has a thumbnail, and if it's a big one
+				// Check if this is a post or page, if it has a thumbnail, and if it's a big one
 					if ( is_singular() &&
 							has_post_thumbnail( $post->ID ) && $mantra_fheader == "Enable" &&
 							(  $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&
 							$image[1] >= HEADER_IMAGE_WIDTH ) :
-						// Houston, we have a new header image!
-						echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
-?> <style> #access {margin-top:<?php echo $image[2]+10;?>px !important;}  </style> <?php
-					else :  if (get_header_image() != '') { ?>
+					// Houston, we have a new header image!
+					echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' ); ?>   
+					<style> #access {margin-top:<?php echo $image[2]+10;?>px !important;}  </style>  
+				<?php else : if (get_header_image() != '') { ?>
+					<style> #branding { background:url(<?php header_image(); ?>) no-repeat; <?php if ($mantra_dimselect=="Absolute") { ?>width:<?php echo HEADER_IMAGE_WIDTH; ?>px; <?php } ?> height:<?php echo HEADER_IMAGE_HEIGHT; ?>px;} </style>
+				<?php } else { ?><?php } ?>
+				<?php endif; 
 
-						<style> #branding { background:url(<?php header_image(); ?>) no-repeat;
-								<?php if ($mantra_dimselect=="Absolute") { ?>
-								 width:<?php echo HEADER_IMAGE_WIDTH; ?>px; <?php } ?>
-								 height:<?php echo HEADER_IMAGE_HEIGHT; ?>px;}'
-						</style>
-									<?php } else { ?><?php } ?><?php endif; 
-
- if ($mantra_options['mantra_linkheader']=="Enable") { ?>
-<style>
-#linky {
-display:block;
-position:absolute;
-width:<?php echo HEADER_IMAGE_WIDTH; ?>px;
-height:<?php echo HEADER_IMAGE_HEIGHT; ?>px;
-z-index:1;
-}
-#site-title , #site-description, #sheader {
-position:relative;
-z-index:2
-}
-</style>
-<?php } ?>
+				if ($mantra_options['mantra_linkheader']=="Enable") { ?>  
+				<style>
+					#linky { display:block; position:absolute; width:<?php echo HEADER_IMAGE_WIDTH; ?>px; height:<?php echo HEADER_IMAGE_HEIGHT; ?>px; z-index:1; }
+					#branding { height:<?php echo HEADER_IMAGE_HEIGHT; ?>px; }
+					#site-title, #site-description, #sheader { position:relative; z-index:2 }
+				</style>
+				<?php } ?>
+				
 				<div style="clear:both;"></div>
 			
 			</div><!-- #branding --> 

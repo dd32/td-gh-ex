@@ -25,7 +25,6 @@ $sidebarSize= intval(($mantra_sidebarRel/$totalwidth*100)-2);
 #wrapper, #access, #colophon, #branding, #main { width:<?php echo ($totalwidth) ?>px ;}
 #access .menu-header, div.menu {width:<?php echo ($totalwidth-12) ?>px ;}
 
-
 <?php if ($mantra_side == "1c" || $mantra_side =="Disable") { ?>
 #content {width:<?php echo ($totalwidth-50) ?>px; margin:20px;}  <?php }
 
@@ -60,8 +59,8 @@ $sidebarSize= intval(($mantra_sidebarRel/$totalwidth*100)-2);
 
 else if ($mantra_dimselect=="Relative") { ?>
 #wrapper { width:<?php echo ($totalwidth) ?>% ;}
+ #access, #colophon, #branding, #main {width:100%;}
 #access .menu-header, div.menu {width:96% ;}
-
 
 <?php if ($mantra_side == "1c" || $mantra_side =="Disable") { ?>
 #content {width:96%; margin:20px;}  <?php }
@@ -146,8 +145,8 @@ font-size:<?php echo $mantra_fontsize ?>;
 ?><?php if (1) { ?> #footer-widget-area a:hover { color:<?php echo $mantra_footerhover; ?>  ;}<?php }
 
 ?><?php if ($mantra_pin != "Pin2") { ?> #content .wp-caption { background-image:url(<?php echo get_template_directory_uri()."/images/pins/".$mantra_pin; ?>.png)  ;} <?php }
-?><?php if ($mantra_sidebullet != "arrow_white") { ?>.widget-area ul ul li{ background-image:url(<?php echo get_template_directory_uri()."/images/bullets/".$mantra_sidebullet; ?>.png);}
-<?php if($mantra_sidebullet == "folder_black" || $mantra_sidebullet == "folder_light") {?> padding-top:5px;padding-left:20px; } <?php } ?><?php }
+?><?php if ($mantra_sidebullet != "arrow_white") { ?>.widget-area ul ul li{ background-image:url(<?php echo get_template_directory_uri()."/images/bullets/".$mantra_sidebullet; ?>.png);
+<?php if($mantra_sidebullet == "folder_black" || $mantra_sidebullet == "folder_light") {?> padding-top:5px;padding-left:20px; <?php } ?>}<?php }
 
 ?><?php if ($mantra_pagetitle == "Hide") { ?> .page h1.entry-title, .home .page h2.entry-title { display:none;} <?php }
 ?><?php if ($mantra_categtitle == "Hide") { ?> h1.page-title { display:none;} <?php }
@@ -171,6 +170,6 @@ $mantra_options= mantra_get_theme_options();
 foreach ($mantra_options as $key => $value) {
      ${"$key"} = esc_attr($value) ; }
 
-if ($mantra_customcss != "") { echo '<style>'.$mantra_customcss.'</style>';}
+if ($mantra_customcss != "") { echo '<style>'.htmlspecialchars_decode($mantra_customcss).'</style>';}
 							}
 ?>

@@ -131,6 +131,10 @@ margin-top:7px;
 background:#EEE;
 }
 
+#accordion select option {
+font-size:1.1em;
+}
+
 .form-table th, .form-wrap label {
  color: #222 !important;
 font-size: 16px;
@@ -228,6 +232,12 @@ padding:5px 2px;
 -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
 filter: alpha(opacity=80);
 opacity:0.8;
+}
+
+label.hideareas {
+display:block;
+float:none;
+text-align:left;
 
 }
 
@@ -357,11 +367,20 @@ margin-top:30px;}
 #absolutedim small, #relativedim small{
 margin-top:20px;}
 
-#sdimensions, #cdimensions  {
+.slmini, #cdimensions  {
 display:block;
 float:none;
 margin:10px;
 }
+
+.slmini {
+background:#F9F9F9;
+}
+
+.slmini b {
+width:130px;
+display:inline-block;
+float:left;}
 
 .slidebox {
 background:#F7F7F7;
