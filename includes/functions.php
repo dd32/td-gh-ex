@@ -8,7 +8,7 @@
  * @author         Emil Uzelac 
  * @copyright      2003 - 2012 ThemeID
  * @license        license.txt
- * @version        Release: 1.0
+ * @version        Release: 1.1
  * @filesource     wp-content/themes/responsive/includes/functions.php
  * @link           http://codex.wordpress.org/Theme_Development#Functions_File
  * @since          available since Release 1.0
@@ -105,7 +105,6 @@ if (!function_exists('responsive_setup')):
     }
 
 endif;
-
 
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
@@ -370,8 +369,8 @@ function responsive_breadcrumb_lists() {
             'id' => 'main-sidebar',
             'before_title' => '<div class="widget-title">',
             'after_title' => '</div>',
-            'before_widget' => '',
-            'after_widget' => ''
+            'before_widget' => '<div id="%1$s" class="widget-wrapper %2$s">',
+            'after_widget' => '</div>'
         ));
 
         register_sidebar(array(
@@ -380,8 +379,8 @@ function responsive_breadcrumb_lists() {
             'id' => 'right-sidebar',
             'before_title' => '<div class="widget-title">',
             'after_title' => '</div>',
-            'before_widget' => '',
-            'after_widget' => ''
+            'before_widget' => '<div id="%1$s" class="widget-wrapper %2$s">',
+            'after_widget' => '</div>'
         ));
 				
         register_sidebar(array(
@@ -390,8 +389,8 @@ function responsive_breadcrumb_lists() {
             'id' => 'left-sidebar',
             'before_title' => '<div class="widget-title">',
             'after_title' => '</div>',
-            'before_widget' => '',
-            'after_widget' => ''
+            'before_widget' => '<div id="%1$s" class="widget-wrapper-left %2$s">',
+            'after_widget' => '</div>'
         ));
 		
         register_sidebar(array(
@@ -400,8 +399,8 @@ function responsive_breadcrumb_lists() {
             'id' => 'left-sidebar-half',
             'before_title' => '<div class="widget-title">',
             'after_title' => '</div>',
-            'before_widget' => '',
-            'after_widget' => ''
+            'before_widget' => '<div id="%1$s" class="widget-wrapper-left %2$s">',
+            'after_widget' => '</div>'
         ));
 		
         register_sidebar(array(
@@ -410,38 +409,38 @@ function responsive_breadcrumb_lists() {
             'id' => 'right-sidebar-half',
             'before_title' => '<div class="widget-title">',
             'after_title' => '</div>',
-            'before_widget' => '',
-            'after_widget' => ''
+            'before_widget' => '<div id="%1$s" class="widget-wrapper %2$s">',
+            'after_widget' => '</div>'
         ));
 
         register_sidebar(array(
             'name' => __('Home Widget 1', 'responsive'),
             'description' => __('Area Six - sidebar-home.php', 'responsive'),
             'id' => 'home-widget-1',
-            'before_title' => '<div class="widget-title-home"><h3>',
+            'before_title' => '<div id="widget-title-one" class="widget-title-home"><h3>',
             'after_title' => '</h3></div>',
-            'before_widget' => '',
-            'after_widget' => ''
+            'before_widget' => '<div id="%1$s" class="%2$s">',
+            'after_widget' => '</div>'
         ));
 
         register_sidebar(array(
             'name' => __('Home Widget 2', 'responsive'),
             'description' => __('Area Seven - sidebar-home.php', 'responsive'),
             'id' => 'home-widget-2',
-            'before_title' => '<div class="widget-title-home"><h3>',
+            'before_title' => '<div id="widget-title-two" class="widget-title-home"><h3>',
             'after_title' => '</h3></div>',
-            'before_widget' => '',
-            'after_widget' => ''
+            'before_widget' => '<div id="%1$s" class="%2$s">',
+            'after_widget' => '</div>'
         ));
 
         register_sidebar(array(
             'name' => __('Home Widget 3', 'responsive'),
             'description' => __('Area Eight - sidebar-home.php', 'responsive'),
             'id' => 'home-widget-3',
-            'before_title' => '<div class="widget-title-home"><h3>',
+            'before_title' => '<div id="widget-title-three" class="widget-title-home"><h3>',
             'after_title' => '</h3></div>',
-            'before_widget' => '',
-            'after_widget' => ''
+            'before_widget' => '<div id="%1$s" class="%2$s">',
+            'after_widget' => '</div>'
         ));
 
         register_sidebar(array(
@@ -450,8 +449,8 @@ function responsive_breadcrumb_lists() {
             'id' => 'gallery-widget',
             'before_title' => '<div class="widget-title">',
             'after_title' => '</div>',
-            'before_widget' => '',
-            'after_widget' => ''
+            'before_widget' => '<div id="%1$s" class="widget-wrapper %2$s">',
+            'after_widget' => '</div>'
         ));
     }
 	

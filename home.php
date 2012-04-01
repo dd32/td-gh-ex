@@ -104,7 +104,7 @@
                                    
         </div><!-- end of .col-460 fit --> 
         
-        </div><!-- end of #content-home -->
+        </div><!-- end of #featured -->
                
 
 
