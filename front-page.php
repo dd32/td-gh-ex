@@ -182,7 +182,7 @@ margin-bottom:15px;
 width:88% ;
 max-width:88% !important;
 margin-bottom:20px;
-font-size:18px;
+font-size:16px;
 line-height:22px;
 color:#444;
 }
@@ -191,6 +191,10 @@ color:#444;
 font-size:14px;
 line-height:18px;
 color:#666;
+}
+
+#frontpage blockquote:before, #frontpage blockquote:after {
+content:none;
 }
 
 .column-image {
@@ -274,7 +278,9 @@ height:<?php echo $mantra_colimageheight ?>px;
 <?php  if($mantra_fronttext3) {?><div id="front-text3"> <blockquote><?php echo $mantra_fronttext3 ?> </blockquote></div><?php } 
   if($mantra_fronttext4) {?><div id="front-text4"> <blockquote><?php echo $mantra_fronttext4 ?> </blockquote></div><?php } 
 
- } ?>
+ ?>
 </div> <!-- frontpage -->
 
- <?php get_footer(); ?>
+ <?php  }// end if 
+
+ get_footer(); ?>
