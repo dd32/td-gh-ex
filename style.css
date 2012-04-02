@@ -3,7 +3,7 @@ Theme Name: Responsive
 Theme URI: http://themeid.com/responsive-theme 
 Description: Responsive WordPress Theme that features 9 page Templates such as Blog, Blog Summary and Template based layout designs: sidebar/content, sidebar/content half, content/sidebar and content/sidebar half. There is also full width page, sitemap Template as well as landing page for your PPC or any other purposes. Responsive also supports 9 widget areas and best of all this Theme is crafted with fluid proportion-based grid system of our own to adapt the design to the viewing environment. There are also Theme Options to control the content, webmaster tools, logo managament, social icons and 4 navigation menus. Everything is backed by our FREE dedicated support forums: <a href="http://themeid.com/forum">support forum</a>.
 
-Version: 1.4.0 
+Version: 1.4.1 
 Author: ThemeID 
 Author URI: http://themeid.com
 Tags: white, black, gray, light, custom-menu, custom-header, custom-background, one-column, two-columns, left-sidebar, right-sidebar, flexible-width, theme-options, threaded-comments, full-width-template, sticky-post, translation-ready
@@ -105,6 +105,10 @@ body {
 
 /* =Typography
 -------------------------------------------------------------- */
+p {  
+    word-wrap:break-word;
+}
+
 cite, em, dfn {
 	font-style:italic;
 }
@@ -120,7 +124,6 @@ strong {
 
 pre {
 	background:#fff;
-	border-left:4px solid #6ce26c;
 	margin-top:20px;
 	max-width:98%;
 	padding-left:1em;
@@ -798,7 +801,6 @@ a.black:hover {
 
 .address {
 	background-color:#f6f5ef;
-	;
 	border:1px solid #cdc9a5;
 	color:#212121;
 }
@@ -865,19 +867,17 @@ dt {
 /* =Blockquote
 -------------------------------------------------------------- */
 blockquote {
-	border:4px double #ddd;
-	border-left:none;
-	border-right:none;
+	background:#f9f9f9;
+	border:2px solid #d6d6d6;
 }
 
 blockquote p {
-	color:#999;
 	font-family:Georgia, "Times New Roman", Times, serif;
 	font-style:italic;
 	font-size:18px;
 	line-height:26px;
 	margin:20px;
-	padding:0 0 0 12px;
+	padding:0 0 10px 12px;
 }
 
 /* =Headings
@@ -885,7 +885,7 @@ blockquote p {
 h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 	font-weight:700;
 	line-height:1em;
-	word-wrap:break-word;
+    word-wrap:break-word;
 }
 
 h1 {
@@ -989,7 +989,6 @@ option {
 }
 
 a {
-	padding:.3em 0 .1em;
 	position:relative;
 }
 
@@ -1076,25 +1075,14 @@ form div {
 	padding-top:20px;
 }
 
+#header #logo .site-name a {
+	font-weight:700;
+}
+
 #header #logo .site-description {
 	display:block;
 	font-size:14px;
-	margin:10px 33px 0 0;
-}
-
-#header #search-box {
-	float:right;
-	margin-top:10px;
-	width:30%;
-}
-
-#header #search-box input {
-	padding:4px 10px;
-}
-
-.ie7 #header #search-box {
-	margin-top:10px;
-	text-align:right;
+	margin:10px 33px 10px 0;
 }
 
 /* =Content
@@ -1146,8 +1134,8 @@ form div {
 /* =Author Meta (Author's Box)
 -------------------------------------------------------------- */
 #author-meta {
-	background:#f5f5f5;
-	border:1px solid #f9f9f9;
+	background:#f9f9f9;
+	border:1px solid #d6d6d6;
 	clear:both;
 	display:block;
 	margin-bottom:20px;
@@ -1212,34 +1200,6 @@ form div {
 
 .featured-image img {
 	margin-top:44px;
-}
-
-.featured-button {
-	background:url(images/featured-button.png) 0 0 no-repeat;
-	border:none;
-	cursor:pointer;
-	display:block;
-	height:61px;
-	width:230px;
-}
-
-.featured-button a {
-	color:#fff;
-	text-decoration:none;
-}
-
-.featured-button:hover {
-	background-position:0 -61px;
-	color:#333;
-	text-decoration:none;
-}
-
-.featured-button p {
-	font-size:18px;
-	font-weight:400;
-	height:60px;
-	line-height:60px;
-	text-align:center;
 }
 
 /* =Post
@@ -1997,9 +1957,8 @@ ul.sub-menu .current_page_item a {
 }
 
 .pingback, .trackback {
-	border-bottom:1px solid #dcdcdc;
 	list-style:none;
-	margin-bottom:20px;
+	margin:20px 0;
 }
 
 .pingback cite, .trackback cite {

@@ -16,6 +16,17 @@ Changelog Legend:
 [*] WP-Core image alignments
 [*] top-menu CSS
 [*] featured div comments
+[!] extra ; in .address CSS
+[+] word-wrap to all p's and headings CSS
+[x] paddings for global a's CSS
+[+] margin-bottom for site-description CSS
+[+] font-weight for site-name CSS
+[x] header search-box CSS
+[x] featured-button CSS
+[*] jQuery version in theme-options.php
+[x] border in pre CSS
+[*] blockquote's CSS
+[*] author-meta CSS
 
 (03/27/2012) - Maintenance Version 1.3.8
 [*] description typo in style.css
