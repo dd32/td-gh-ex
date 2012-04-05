@@ -389,7 +389,7 @@ function responsive_breadcrumb_lists() {
             'id' => 'left-sidebar',
             'before_title' => '<div class="widget-title">',
             'after_title' => '</div>',
-            'before_widget' => '<div id="%1$s" class="widget-wrapper-left %2$s">',
+            'before_widget' => '<div id="%1$s" class="widget-wrapper %2$s">',
             'after_widget' => '</div>'
         ));
 		
@@ -399,7 +399,7 @@ function responsive_breadcrumb_lists() {
             'id' => 'left-sidebar-half',
             'before_title' => '<div class="widget-title">',
             'after_title' => '</div>',
-            'before_widget' => '<div id="%1$s" class="widget-wrapper-left %2$s">',
+            'before_widget' => '<div id="%1$s" class="widget-wrapper %2$s">',
             'after_widget' => '</div>'
         ));
 		
@@ -419,7 +419,7 @@ function responsive_breadcrumb_lists() {
             'id' => 'home-widget-1',
             'before_title' => '<div id="widget-title-one" class="widget-title-home"><h3>',
             'after_title' => '</h3></div>',
-            'before_widget' => '<div id="%1$s" class="%2$s">',
+            'before_widget' => '<div id="%1$s" class="widget-wrapper %2$s">',
             'after_widget' => '</div>'
         ));
 
@@ -429,7 +429,7 @@ function responsive_breadcrumb_lists() {
             'id' => 'home-widget-2',
             'before_title' => '<div id="widget-title-two" class="widget-title-home"><h3>',
             'after_title' => '</h3></div>',
-            'before_widget' => '<div id="%1$s" class="%2$s">',
+            'before_widget' => '<div id="%1$s" class="widget-wrapper %2$s">',
             'after_widget' => '</div>'
         ));
 
@@ -439,7 +439,7 @@ function responsive_breadcrumb_lists() {
             'id' => 'home-widget-3',
             'before_title' => '<div id="widget-title-three" class="widget-title-home"><h3>',
             'after_title' => '</h3></div>',
-            'before_widget' => '<div id="%1$s" class="%2$s">',
+            'before_widget' => '<div id="%1$s" class="widget-wrapper %2$s">',
             'after_widget' => '</div>'
         ));
 

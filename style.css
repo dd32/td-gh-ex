@@ -1,9 +1,9 @@
 /* 
 Theme Name: Responsive 
 Theme URI: http://themeid.com/responsive-theme 
-Description: Responsive WordPress Theme that features 9 page Templates such as Blog, Blog Summary and Template based layout designs: sidebar/content, sidebar/content half, content/sidebar and content/sidebar half. There is also full width page, sitemap Template as well as landing page for your PPC or any other purposes. Responsive also supports 9 widget areas and best of all this Theme is crafted with fluid proportion-based grid system of our own to adapt the design to the viewing environment. There are also Theme Options to control the content, webmaster tools, logo managament, social icons and 4 navigation menus. Everything is backed by our FREE dedicated support forums: <a href="http://themeid.com/forum">support forum</a>.
+Description: Responsive WordPress Theme that features 9 page Templates such as Blog, Blog Summary and Template based layout designs: sidebar/content, sidebar/content half, content/sidebar and content/sidebar half. There is also full width page, sitemap Template as well as landing page for your PPC or any other purposes. Responsive also supports 9 widget areas and best of all this Theme is crafted with fluid proportion-based grid system of our own to adapt the design to the viewing environment. There are also Theme Options to control the content, webmaster tools, logo managament, social icons and 4 navigation menus. Everything is backed by our FREE dedicated support forums @ http://themeid.com/forum
 
-Version: 1.4.1 
+Version: 1.4.2
 Author: ThemeID 
 Author URI: http://themeid.com
 Tags: white, black, gray, light, custom-menu, custom-header, custom-background, one-column, two-columns, left-sidebar, right-sidebar, flexible-width, theme-options, threaded-comments, full-width-template, sticky-post, translation-ready
@@ -257,7 +257,7 @@ a {
 
 a:hover {
 	color:#444;
-	text-decoration:underline;
+	text-decoration:none;
 }
 
 /* =Forms
@@ -1188,13 +1188,13 @@ form div {
 .featured-title {
 	font-size: 60px;
 	letter-spacing: -1px;
-	line-height: 1;
 	margin: 0;
 	padding-top:40px;
 	text-align:center;
 }
 
 .featured-subtitle {
+	padding:0 10px;
 	text-align:center;
 }
 
@@ -1215,7 +1215,12 @@ form div {
 .post-data {
 	clear:both;
 	font-size:11px;
+	font-weight:700;
 	margin-top:20px;
+}
+
+.post-data a {
+	color:#111;
 }
 
 .post-entry {
@@ -1242,6 +1247,7 @@ form div {
 
 .read-more {
 	clear:both;
+	font-weight:700;
 }
 
 .attachment-entry {
@@ -1260,11 +1266,14 @@ form div {
 /* =Widgets
 -------------------------------------------------------------- */
 .widget-wrapper {
-	padding-left:20px;
-}
-
-.widget-wrapper-left {
-	padding-right:20px;
+	-webkit-border-radius:6px;
+    -moz-border-radius:6px;
+	border:1px solid #d6d6d6;
+	border-radius:6px;
+	background-color:#f9f9f9;
+	font-size:13px;
+	margin:0 0 20px;
+	padding:20px;
 }
 
 #widgets {
@@ -1274,23 +1283,8 @@ form div {
 #widgets a {
 	display:inline-block;
 	margin:0;
-	padding:3px;
+	padding:0;
 	text-decoration:none;
-}
-
-#widgets ul, #widgets .textwidget, #widgets .tagcloud, #widgets #searchform, #widgets #calendar_wrap {
-	-webkit-border-bottom-right-radius: 6px;
-	-webkit-border-bottom-left-radius: 6px;
-	-moz-border-radius-bottomright: 6px;
-	-moz-border-radius-bottomleft: 6px;
-	border:1px solid #d6d6d6;
-	border-top:none;
-	border-bottom-right-radius: 6px;
-	border-bottom-left-radius: 6px;
-	background-color:#f9f9f9;
-	font-size:13px;
-	margin:0 0 20px;
-	padding:20px;
 }
 
 #widgets #s {
@@ -1298,7 +1292,7 @@ form div {
 }
 
 #widgets ul li {
-	margin-left:15px;
+	margin-left:10px;
 }
 
 #widgets ul li a {
@@ -1353,27 +1347,18 @@ form div {
 
 .widget_archive select, #cat {
 	display:block;
-	margin:20px 15px 0;
+	margin:0 15px 0 0;
 }
 
 /* =Titles
 -------------------------------------------------------------- */
 .widget-title, .widget-title-home h3 {
-	-webkit-border-top-left-radius: 6px;
-	-webkit-border-top-right-radius: 6px;
-	-moz-border-radius-topleft: 6px;
-	-moz-border-radius-topright: 6px;
-	background-color:#f9f9f9;
-	border:1px solid #d6d6d6;
-	border-bottom:none;
-	border-top-left-radius: 6px;
-	border-top-right-radius: 6px;
 	display:block;
 	font-size:24px;
 	font-weight:700;
 	line-height:23px;
 	margin:0;
-	padding:20px 20px 0 20px;
+	padding:0 0 20px 0;
 	text-align:left;
 }
 
@@ -1944,6 +1929,10 @@ ul.sub-menu .current_page_item a {
 	text-align:left;
 }
 
+.comment-body .comment-meta a {
+	font-size:11px;
+}
+
 .comment-body {
 	clear:both;
 }
@@ -2161,6 +2150,7 @@ img.wp-post-image, img.attachment-thumbnail, img.attachment-medium, img.attachme
 }
 
 #footer a {
+	color:#333;
 	font-weight:400;
 }
 
@@ -2212,7 +2202,7 @@ img.wp-post-image, img.attachment-thumbnail, img.attachment-medium, img.attachme
 
 /* =Clearfix
 -------------------------------------------------------------- */
-.clearfix:after, #container:after {
+.clearfix:after, #container:after, .widget-wrapper:after {
 	clear:both;
 	content:"\0020";
 	display:block;
@@ -2222,15 +2212,15 @@ img.wp-post-image, img.attachment-thumbnail, img.attachment-medium, img.attachme
 	visibility:hidden;
 }
 
-.clearfix, #container {
+.clearfix, #container, .widget-wrapper {
 	display:inline-block;
 }
 
-*html .clearfix, *html #container {
+*html .clearfix, *html #container, *html .widget-wrapper {
 	height:1%;
 }
 
-.clearfix, #container {
+.clearfix, #container, .widget-wrapper {
 	display:block;
 }
 
@@ -2293,14 +2283,6 @@ BDO[DIR="rtl"] {
 	#featured-image .fluid-width-video-wrapper {
 	    margin:20px 0 0 0;
     }
-	
-	.widget-wrapper {
-	    padding-left:0;
-    }
-
-    .widget-wrapper-left {
-	    padding-right:0;
-    }
 }
 
 @media screen and (max-width: 650px) {
@@ -2324,14 +2306,6 @@ BDO[DIR="rtl"] {
     .menu li, .top-menu, .footer-menu li, .sub-header-menu li {
 	    float:none;
 	    text-align:center;
-    }
-
-	.widget-wrapper {
-	    padding-left:0;
-    }
-
-    .widget-wrapper-left {
-	    padding-right:0;
     }
 	
     #footer {
@@ -2364,14 +2338,6 @@ BDO[DIR="rtl"] {
     .menu li, .top-menu, .footer-menu li, .sub-header-menu li {
 	    float:none;
 	    text-align:center;
-    }
-
-	.widget-wrapper {
-	    padding-left:0;
-    }
-
-    .widget-wrapper-left {
-	    padding-right:0;
     }
 	
     #footer {

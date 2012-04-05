@@ -7,7 +7,27 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
-(04/01/2012) - Maintenance Version 1.4.0
+(04/05/2012) - Maintenance Version 1.4.2
+[x] widgets ul styles CSS
+[*] widgets a padding CSS
+[^] widgets ul styles to widget-wrapper and widget-wrapper-left
+[!] widgets were breaking styles CSS/functions.php
+[!] main menu current_page_item CSS
+[*] margins for widget titles CSS
+[!] featured-title line-height CSS
+[*] featured-subtitle padding CSS
+[+] clearfix to widget-wrapper
+[+] footer a color CSS
+[+] post-data a color CSS and font-weight
+[+] comment-meta font-size CSS
+[x] global links underline
+[*] Theme description in style.css
+[*] headimg background-repeat none /includes/functions.php
+[*] read-more font-weight CSS
+[+] widget-wrapper DIV to all default sidebars
+
+
+(04/01/2012) - Maintenance Version 1.4.0/1
 [x] ul children for better CSS efficiancy
 [x] ul widget a color
 [x] form div margins
