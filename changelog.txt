@@ -7,7 +7,7 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
-(04/05/2012) - Maintenance Version 1.4.2
+(04/05/2012) - Maintenance Version 1.4.2/3
 [x] widgets ul styles CSS
 [*] widgets a padding CSS
 [^] widgets ul styles to widget-wrapper and widget-wrapper-left
