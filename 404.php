@@ -1,7 +1,11 @@
 <?php get_header(); ?>
-
+<body <?php body_class(); ?> >
 <div id="center">
-	
+
+<?php if ( get_header_image() == '') : ?><?php else : ?>
+<div class="wpheader"><a href="<?php echo home_url(); ?>/"><img class="left title" title="<?php bloginfo('name'); ?>" src="<?php header_image(); ?>" alt="<?php bloginfo('description');?>" /></a></div>
+<?php endif; ?>
+
 <?php if (is_active_sidebar('sidebar') ) : ?>
 <div class="sidebar"><?php if ( !dynamic_sidebar('sidebar') ) : endif; ?></div>
 <?php else : get_sidebar(); ?>
@@ -30,11 +34,19 @@
 </div>
     
 <div id="bar">
-<?php if ( has_nav_menu('bar') ) : wp_nav_menu('bar' ); else : ?>
+<?php 
+$options = adventure_get_theme_options();
+if ( $options['active'] == 'active' ) {	
+if ( has_nav_menu( 'bar' ) ) :  wp_nav_menu( array( 'theme_location' => 'bar', 'depth' => 2 ) ); else : ?>
 <ul><?php wp_list_pages('title_li=&depth=2'); ?></ul>
-<?php endif; ?>
+<?php endif; } else {
+if ( has_nav_menu( 'bar' ) ) :  wp_nav_menu( array( 'theme_location' => 'bar', 'depth' => 1 ) ); else : ?>
+<ul><?php wp_list_pages('title_li=&depth=1'); ?></ul>
+<?php endif; }?>
 <div id="title"><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a></div>
 <div id="slogan"><h2><?php bloginfo('description');?></h2></div>  
 </div>
 
-<?php get_footer(); ?>
+<?php wp_footer(); ?>
+</body>
+</html>

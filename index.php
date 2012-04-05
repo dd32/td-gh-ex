@@ -19,8 +19,8 @@
 <?php if ( has_post_thumbnail()) : ?><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_post_thumbnail('page-thumbnail'); ?></a><?php endif; ?>
 <div class="label"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php if ( get_the_title() ) { the_title();} else { echo '(No Title)';} ?></a></div></div>
 <?php the_content('Read the rest of this entry &raquo;'); ?>
-<?php wp_link_pages(); ?>
-<div class="clearz"><div class="tags">
+<div class="clearz">
+<?php wp_link_pages(); ?><div class="tags">
 <?php if ( is_home()) : ?>
 <?php if ('open' == $post->comment_status) : ?>
 <?php comments_popup_link('Leave A Comment', '1 Comment', '% Comments'); ?>,
@@ -28,10 +28,9 @@
 <?php endif; ?>
 Written on <?php the_time('F jS, Y') ?> <?php if ( is_page()) : ?><?php else : ?>, <?php the_category(', ') ?> <?php the_tags('Tags: ', ', ', '<br />'); ?><?php endif; ?>
 </div></div></div></div>
-<?php if ('open' == $post->comment_status) : ?>
 <?php comments_template(); ?>
-<?php endif; ?>
 <?php endwhile; ?>
+
 
 <?php $max_page = $wp_query->max_num_pages; ?>
 <?php if ( $max_page >=  2 ) : ?>
@@ -78,9 +77,6 @@ if ( has_nav_menu( 'bar' ) ) :  wp_nav_menu( array( 'theme_location' => 'bar', '
 <div id="slogan"><h2><?php bloginfo('description');?></h2></div>  
 </div>
 
-<div id="footer">
-	<!-- If you'd like to support WordPress, having the "powered by" link somewhere on your blog is the best way; it's our only promotion or advertising. -->
-    <?php wp_footer(); ?>
-</div>
+<?php wp_footer(); ?>
 </body>
 </html>

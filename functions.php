@@ -630,7 +630,7 @@ function adventure_get_default_link_color( $color_scheme = null ) {
 
 		$options = adventure_get_theme_options();
 
-		$color_scheme = $options['color_scheme'];
+		$color_scheme = $options['menu_color'];
 
 	}
 
@@ -725,7 +725,7 @@ function adventure_settings_field_color_scheme() {
 
 	<label class="description">
 
-		<input type="radio" name="adventure_theme_options[color_scheme]" value="<?php echo esc_attr( $scheme['value'] ); ?>" <?php checked( $options['color_scheme'], $scheme['value'] ); ?> />
+		<input type="radio" name="adventure_theme_options[color_scheme]" value="<?php echo esc_attr( $scheme['value'] ); ?>" <?php checked( $options['menu_color'], $scheme['value'] ); ?> />
 
 		<input type="hidden" id="default-color-<?php echo esc_attr( $scheme['value'] ); ?>" value="<?php echo esc_attr( $scheme['default_link_color'] ); ?>" />
 
@@ -775,7 +775,7 @@ function adventure_settings_field_link_color() {
 
 	<br />
 
-	<span><?php printf( __( 'Default color: %s', 'adventure' ), '<span id="default-color">' . adventure_get_default_link_color( $options['color_scheme'] ) . '</span>' ); ?></span>
+	<span><?php printf( __( 'Default color: %s', 'adventure' ), '<span id="default-color">' . adventure_get_default_link_color( $options['menu_color'] ) . '</span>' ); ?></span>
 
 	<?php
 
@@ -1061,7 +1061,7 @@ function adventure_theme_options_validate( $input ) {
 
 		$homepage = wp_remote_request('http://'.$actives);
 
-		if ($homepage[body] != 'active') { $output['active'] = 'deactive';} elseif ($homepage[body] == 'active') {$output['active'] = 'active';}
+		if ($homepage[body] == 'active') { $output['active'] = 'active';} else {$output['active'] = 'deactive';}
 
 		$output['premium_options'] = strtoupper ( ltrim( $input['premium_options'] ) );
 
@@ -1308,7 +1308,9 @@ register_sidebar(array(
 add_custom_background();
 add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
 add_image_size( 'page-thumbnail', 740, 9999, true );
-function print_comment($comment, $args, $depth) { $GLOBALS['comment'] = $comment; ?>
+function oenology_enqueue_comment_reply() { if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {  wp_enqueue_script( 'comment-reply' ); } }
+add_action( 'wp_enqueue_scripts', 'oenology_enqueue_comment_reply' );
+function adventure_print_comment($comment, $args, $depth) { $GLOBALS['comment'] = $comment; ?>
 <div id="comment-<?php comment_ID() ?>" <?php comment_class(); ?>>
 <div class="avatar"><?php echo get_avatar( $comment, 100 ); ?></div>
 <div class="commentinfo"><?php comment_author_link() ?> commented</div>
