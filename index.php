@@ -49,6 +49,15 @@ Written on <?php the_time('F jS, Y') ?> <?php if ( is_page()) : ?><?php else : ?
 
 <?php endif; ?>
 
+<?php if ( is_active_sidebar('widget') ) : ?>
+<div class="widgetbox">
+<div class="widget"><?php if ( !dynamic_sidebar('widget1') ) :  endif; ?></div>
+<div class="widget"><?php if ( !dynamic_sidebar('widget2') ) :  endif; ?></div>
+<div class="widget"><?php if ( !dynamic_sidebar('widget3') ) :  endif; ?></div>
+<div class="widget"><?php if ( !dynamic_sidebar('widget4') ) :  endif; ?></div>
+</div>
+<?php endif; ?>
+
 <div id="notfooter">
 <p>
 <?php bloginfo('name'); ?> is proudly powered by <a href="http://wordpress.org/">WordPress</a> and the Theme <a href="http://schwarttzy.com/web-design/adventure/">Adventure by Eric Schwarz</a>

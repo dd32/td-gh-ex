@@ -1,7 +1,4 @@
-
 <?php
-	if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
-		die ('Please do not load this page directly. Thanks!');
 	
 	if ( post_password_required() ) { ?>
 		<div class="content" ><p class="nocomments">This post is password protected. Enter the password to view comments.</p></div>
@@ -25,7 +22,7 @@
 <div class="content" >
 	<div class="label">COMMENTS</div>
 		<ol id="comments" class="comment">
-			<?php wp_list_comments('callback=print_comment'); ?>
+			<?php wp_list_comments('callback=adventure_print_comment'); ?>
 		</ol>
 		<div class="navigation">
 			<div class="alignleft"><?php previous_comments_link() ?></div>
@@ -36,7 +33,7 @@
 	<?php if ( comments_open() ) : ?>
         <!-- If comments are open, but there are no comments. -->
 	 <?php else : // comments are closed ?>
-		<!-- If comments are closed. -->
+		<div class="content" ><p>Comments are closed.</p></div>
 	<?php endif; ?>
 <?php endif; ?>
 

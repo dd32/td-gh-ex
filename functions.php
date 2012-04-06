@@ -2,7 +2,7 @@
 
 /**
 
- * Twenty Eleven Theme Options
+ * Adventure Theme Options
 
  *
 
@@ -10,7 +10,7 @@
 
  * @subpackage Adventure_Bound_Basic
 
- * @since Twenty Eleven 1.0
+ * @since Adventure 1.0
 
  */
 
@@ -26,7 +26,7 @@
 
  *
 
- * @since Twenty Eleven 1.0
+ * @since Adventure 1.0
 
  *
 
@@ -48,7 +48,7 @@ add_action( 'admin_print_styles-appearance_page_theme_options', 'adventure_admin
 
 /**
 
- * Register the form setting for our twentyeleven_options array.
+ * Register the form setting for our adventure_options array.
 
  *
 
@@ -56,7 +56,7 @@ add_action( 'admin_print_styles-appearance_page_theme_options', 'adventure_admin
 
  *
 
- * This call to register_setting() registers a validation callback, twentyeleven_theme_options_validate(),
+ * This call to register_setting() registers a validation callback, adventure_theme_options_validate(),
 
  * which is used when the option is saved, to ensure that our option values are complete, properly
 
@@ -68,7 +68,7 @@ add_action( 'admin_print_styles-appearance_page_theme_options', 'adventure_admin
 
  *
 
- * @since Twenty Eleven 1.0
+ * @since Adventure 1.0
 
  */
 
@@ -86,11 +86,11 @@ function adventure_theme_options_init() {
 
 	register_setting(
 
-		'adventure_options',       // Options group, see settings_fields() call in twentyeleven_theme_options_render_page()
+		'adventure_options',       // Options group, see settings_fields() call in adventure_theme_options_render_page()
 
-		'adventure_theme_options', // Database option, see twentyeleven_get_theme_options()
+		'adventure_theme_options', // Database option, see adventure_get_theme_options()
 
-		'adventure_theme_options_validate' // The sanitization callback, see twentyeleven_theme_options_validate()
+		'adventure_theme_options_validate' // The sanitization callback, see adventure_theme_options_validate()
 
 	);
 
@@ -106,7 +106,7 @@ function adventure_theme_options_init() {
 
 		'__return_false', // Section callback (we don't want anything)
 
-		'theme_options' // Menu slug, used to uniquely identify the page; see twentyeleven_theme_options_add_page()
+		'theme_options' // Menu slug, used to uniquely identify the page; see adventure_theme_options_add_page()
 
 	);
 
@@ -122,7 +122,7 @@ function adventure_theme_options_init() {
 
 		'adventure_thank_you', // Function that renders the settings field
 
-		'theme_options', // Menu slug, used to uniquely identify the page; see twentyeleven_theme_options_add_page()
+		'theme_options', // Menu slug, used to uniquely identify the page; see adventure_theme_options_add_page()
 
 		'general' // Settings section. Same as the first argument in the add_settings_section() above
 
@@ -138,7 +138,7 @@ function adventure_theme_options_init() {
 
 		'adventure_settings_field_color_scheme', // Function that renders the settings field
 
-		'theme_options', // Menu slug, used to uniquely identify the page; see twentyeleven_theme_options_add_page()
+		'theme_options', // Menu slug, used to uniquely identify the page; see adventure_theme_options_add_page()
 
 		'general' // Settings section. Same as the first argument in the add_settings_section() above
 
@@ -162,13 +162,13 @@ add_action( 'admin_init', 'adventure_theme_options_init' );
 
 /**
 
- * Change the capability required to save the 'twentyeleven_options' options group.
+ * Change the capability required to save the 'adventure_options' options group.
 
  *
 
- * @see twentyeleven_theme_options_init() First parameter to register_setting() is the name of the options group.
+ * @see adventure_theme_options_init() First parameter to register_setting() is the name of the options group.
 
- * @see twentyeleven_theme_options_add_page() The edit_theme_options capability is used for viewing the page.
+ * @see adventure_theme_options_add_page() The edit_theme_options capability is used for viewing the page.
 
  *
 
@@ -208,7 +208,7 @@ add_filter( 'option_page_capability_adventure_options', 'adventure_option_page_c
 
  *
 
- * @since Twenty Eleven 1.0
+ * @since Adventure 1.0
 
  */
 
@@ -307,11 +307,11 @@ function adventure_theme_options_help() {
 
 /**
 
- * Returns an array of color schemes registered for Twenty Eleven.
+ * Returns an array of color schemes registered for Adventure.
 
  *
 
- * @since Twenty Eleven 1.0
+ * @since Adventure 1.0
 
  */
 
@@ -415,11 +415,11 @@ function adventure_color_schemes() {
 
 /**
 
- * Returns an array of layout options registered for Twenty Eleven.
+ * Returns an array of layout options registered for Adventure.
 
  *
 
- * @since Twenty Eleven 1.0
+ * @since Adventure 1.0
 
  */
 
@@ -469,11 +469,11 @@ function adventure_layouts() {
 
 /**
 
- * Returns an array of layout options registered for Twenty Eleven.
+ * Returns an array of layout options registered for Adventure.
 
  *
 
- * @since Twenty Eleven 1.0
+ * @since Adventure 1.0
 
  */
 
@@ -513,11 +513,11 @@ function adventure_menu() {
 
 /**
 
- * Returns an array of layout options registered for Twenty Eleven.
+ * Returns an array of layout options registered for Adventure.
 
  *
 
- * @since Twenty Eleven 1.0
+ * @since Adventure 1.0
 
  */
 
@@ -567,11 +567,11 @@ function adventure_contrast() {
 
 /**
 
- * Returns the default options for Twenty Eleven.
+ * Returns the default options for Adventure.
 
  *
 
- * @since Twenty Eleven 1.0
+ * @since Adventure 1.0
 
  */
 
@@ -579,7 +579,7 @@ function adventure_get_default_theme_options() {
 
 	$default_theme_options = array(
 								   
-		'menu_color' => 'purple',
+		'color_scheme' => 'purple',
 
 		'link_color'   => adventure_get_default_link_color( 'purple' ),
 		
@@ -610,11 +610,11 @@ function adventure_get_default_theme_options() {
 
 /**
 
- * Returns the default link color for Twenty Eleven, based on color scheme.
+ * Returns the default link color for Adventure, based on color scheme.
 
  *
 
- * @since Twenty Eleven 1.0
+ * @since Adventure 1.0
 
  *
 
@@ -630,7 +630,7 @@ function adventure_get_default_link_color( $color_scheme = null ) {
 
 		$options = adventure_get_theme_options();
 
-		$color_scheme = $options['menu_color'];
+		$color_scheme = $options['color_scheme'];
 
 	}
 
@@ -650,11 +650,11 @@ function adventure_get_default_link_color( $color_scheme = null ) {
 
 /**
 
- * Returns the options array for Twenty Eleven.
+ * Returns the options array for Adventure.
 
  *
 
- * @since Twenty Eleven 1.0
+ * @since Adventure 1.0
 
  */
 
@@ -706,7 +706,7 @@ function adventure_thank_you() {
 
  *
 
- * @since Twenty Eleven 1.3
+ * @since Adventure 1.3
 
  */
 
@@ -725,7 +725,7 @@ function adventure_settings_field_color_scheme() {
 
 	<label class="description">
 
-		<input type="radio" name="adventure_theme_options[color_scheme]" value="<?php echo esc_attr( $scheme['value'] ); ?>" <?php checked( $options['menu_color'], $scheme['value'] ); ?> />
+		<input type="radio" name="adventure_theme_options[color_scheme]" value="<?php echo esc_attr( $scheme['value'] ); ?>" <?php checked( $options['color_scheme'], $scheme['value'] ); ?> />
 
 		<input type="hidden" id="default-color-<?php echo esc_attr( $scheme['value'] ); ?>" value="<?php echo esc_attr( $scheme['default_link_color'] ); ?>" />
 
@@ -755,7 +755,7 @@ function adventure_settings_field_color_scheme() {
 
  *
 
- * @since Twenty Eleven 1.3
+ * @since Adventure 1.3
 
  */
 
@@ -775,7 +775,7 @@ function adventure_settings_field_link_color() {
 
 	<br />
 
-	<span><?php printf( __( 'Default color: %s', 'adventure' ), '<span id="default-color">' . adventure_get_default_link_color( $options['menu_color'] ) . '</span>' ); ?></span>
+	<span><?php printf( __( 'Default color: %s', 'adventure' ), '<span id="default-color">' . adventure_get_default_link_color( $options['color_scheme'] ) . '</span>' ); ?></span>
 
 	<?php
 
@@ -801,7 +801,7 @@ function adventure_is_active() {
 
  *
 
- * @since Twenty Eleven 1.3
+ * @since Adventure 1.3
 
  */
 
@@ -845,15 +845,15 @@ function adventure_settings_sidebar_options() {
 
  *
 
- * @since Twenty Eleven 1.3
+ * @since Adventure 1.3
 
  */
 
-function adventure_settings_menu_color() {
+function adventure_settings_color_scheme() {
 
 	$options = adventure_get_theme_options();
 
-	foreach ( adventure_menu_color() as $layout ) {
+	foreach ( adventure_color_scheme() as $layout ) {
 
 		?>
 
@@ -889,7 +889,7 @@ function adventure_settings_menu_color() {
 
  *
 
- * @since Twenty Eleven 1.3
+ * @since Adventure 1.3
 
  */
 
@@ -934,7 +934,7 @@ function adventure_settings_menu() {
 
  *
 
- * @since Twenty Eleven 1.3
+ * @since Adventure 1.3
 
  */
 
@@ -973,11 +973,11 @@ function adventure_settings_contrast() {
 
 /**
 
- * Returns the options array for Twenty Eleven.
+ * Returns the options array for Adventure.
 
  *
 
- * @since Twenty Eleven 1.2
+ * @since Adventure 1.2
 
  */
 
@@ -1023,13 +1023,13 @@ function adventure_theme_options_render_page() {
 
  *
 
- * @see twentyeleven_theme_options_init()
+ * @see adventure_theme_options_init()
 
  * @todo set up Reset Options action
 
  *
 
- * @since Twenty Eleven 1.0
+ * @since Adventure 1.0
 
  */
 
@@ -1096,7 +1096,7 @@ function adventure_theme_options_validate( $input ) {
 
  *
 
- * @since Twenty Eleven 1.0
+ * @since Adventure 1.0
 
  */
 
@@ -1148,7 +1148,7 @@ add_action( 'wp_enqueue_scripts', 'adventure_enqueue_color_scheme' );
 
  *
 
- * @since Twenty Eleven 1.0
+ * @since Adventure 1.0
 
  */
  
@@ -1189,11 +1189,11 @@ add_action( 'wp_head', 'adventure_print_link_color_style' );
 
 /**
 
- * Adds Twenty Eleven layout classes to the array of body classes.
+ * Adds Adventure layout classes to the array of body classes.
 
  *
 
- * @since Twenty Eleven 1.0
+ * @since Adventure 1.0
 
  */
 
