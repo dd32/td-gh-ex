@@ -5,7 +5,7 @@
  * Displays all of the <head> section and everything up till <div id="main">
  *
  * @package BestCorporate
- * @since BestCorporate 1.0
+ * @since BestCorporate 1.1
  */
 ?>
 <!DOCTYPE html>
@@ -56,32 +56,34 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
 <?php global $cp_options;?>
-<?php wp_head(); ?></head>
+<?php wp_head(); ?><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
 <body <?php body_class(); ?>>
 <div id="headerimg">
-<header id="branding" role="banner">
-  <hgroup>
-    <h1 id="site-title">
-    <?php if ($cp_options['logo_src']!='') { ?>
-			<a class="logo_img" style="background-image: url(<?php echo get_template_directory_uri(); ?>/<?php echo $cp_options['logo_src']; ?>);" href="<?php echo home_url(); ?>"  title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></a>
-			<?php } else { ?>
-			 <a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></a>
-			<?php } ?></h1>
-    <h2 id="site-description">
-      <?php bloginfo( 'description' ); ?>
-    </h2>
-  </hgroup>
-  <nav id="access" role="navigation">
-    <h1 class="assistive-text section-heading">
-      <?php _e( 'Main menu', 'best_corporate' ); ?>
-    </h1>
-    <div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'best_corporate' ); ?>">
-      <?php _e( 'Skip to content', 'best_corporate' ); ?>
-      </a></div>
-    <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-  </nav>
-  <!-- #access -->
-</header>
+  <header id="branding" role="banner">
+    <hgroup>
+      <h1 id="site-title">
+        <?php if ( get_header_image() != '' ) { ?>
+        <a class="logo_img" style="background-image: url(<?php header_image(); ?>)" href="<?php echo home_url(); ?>"  title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></a>
+        <?php }
+			else { ?>
+        <a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></a>
+        <?php } ?>
+      </h1>
+      <h2 id="site-description">
+        <?php bloginfo( 'description' ); ?>
+      </h2>
+    </hgroup>
+    <nav id="access" role="navigation">
+      <h1 class="assistive-text section-heading">
+        <?php _e( 'Main menu', 'best_corporate' ); ?>
+      </h1>
+      <div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'best_corporate' ); ?>">
+        <?php _e( 'Skip to content', 'best_corporate' ); ?>
+        </a></div>
+      <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+    </nav>
+    <!-- #access -->
+  </header>
 </div>
 <div id="page" class="hfeed">
 <?php do_action( 'before' ); ?>

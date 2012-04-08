@@ -3,7 +3,7 @@
  * The Sidebar containing the main widget areas.
  *
  * @package BestCorporate
- * @since BestCorporate 1.0
+ * @since BestCorporate 1.1
  */
 ?>
 
@@ -11,24 +11,32 @@
   <?php do_action( 'before_sidebar' ); ?>
   <?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
   <aside id="archives" class="widget">
-    <h2 class="widget-title">
-      <?php _e( 'Archives', 'best_corporate' ); ?>
-    </h2>
-    <ul>
-      <?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
-    </ul>
+    <div class="widgetbox">
+      <div class="widgetbottom">
+        <h2 class="widget-title">
+          <?php _e( 'Archives', 'best_corporate' ); ?>
+        </h2>
+        <ul>
+          <?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
+        </ul>
+      </div>
+    </div>
   </aside>
   <aside id="meta" class="widget">
-    <h2 class="widget-title">
-      <?php _e( 'Meta', 'best_corporate' ); ?>
-    </h2>
-    <ul>
-      <?php wp_register(); ?>
-      <li>
-      <?php wp_loginout(); ?>
-      </li>
-      <?php wp_meta(); ?>
-    </ul>
+    <div class="widgetbox">
+      <div class="widgetbottom">
+        <h2 class="widget-title">
+          <?php _e( 'Meta', 'best_corporate' ); ?>
+        </h2>
+        <ul>
+          <?php wp_register(); ?>
+          <li>
+            <?php wp_loginout(); ?>
+          </li>
+          <?php wp_meta(); ?>
+        </ul>
+      </div>
+    </div>
   </aside>
   <?php endif; // end sidebar widget area ?>
 </div>

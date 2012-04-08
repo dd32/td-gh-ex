@@ -20,129 +20,119 @@ msgstr ""
 
 #: 404.php:16
 msgid "Well this is somewhat embarrassing, isn&rsquo;t it?"
-msgstr "哦！出问题了……"
-
-#: 404.php:20
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching, or one of the links below, can help."
-msgstr "没有找到相关内容，请尝试使用搜索功能。"
-
-#: 404.php:27
-msgid "热门目录"
 msgstr ""
 
 #. translators: %1$s: smilie
 #: 404.php:35
 msgid "Try looking in the monthly archives. %1$s"
-msgstr "按月份查找"
+msgstr ""
 
 #: archive.php:25
 msgid "Daily Archives: %s"
-msgstr "按日归档"
+msgstr ""
 
 #: archive.php:27
 msgid "Monthly Archives: %s"
-msgstr "按月归档"
+msgstr ""
 
 #: archive.php:29
 msgid "Yearly Archives: %s"
-msgstr "按年归档"
+msgstr ""
 
 #: archive.php:31 sidebar.php:18
 msgid "Archives"
-msgstr "归档"
+msgstr ""
 
 #: archive.php:50 author.php:49 category.php:41 index.php:41 search.php:26
 #: tag.php:51
 msgid "Nothing Found"
-msgstr "没有知道相关内容"
+msgstr ""
 
 #: archive.php:64 author.php:55 category.php:47 index.php:47 tag.php:49
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
-msgstr "没有找到相关内容，请尝试使用搜索功能。"
+msgstr ""
 
 
 #: category.php:18
 msgid "Category Archives: %s"
-msgstr "目录归档"
+msgstr ""
 
 #: comments.php:18
 msgid ""
 "This post is password protected. Enter the password to view any comments."
-msgstr "文章受密码保护，输入密码后才可以了查看评论内容。"
+msgstr ""
 
 #: comments.php:34
 msgid "One thought"
 msgid_plural "%1$s thoughts"
-msgstr[0] "1 条评论"
-msgstr[1] "%1$s 条评论"
+msgstr[0] ""
+msgstr[1] ""
 
 #: comments.php:41 comments.php:65
 msgid "Comment navigation"
-msgstr "评论导航"
+msgstr ""
 
 #: comments.php:43 comments.php:60
 msgid "&larr; Older Comments"
-msgstr "&larr; 较旧的评论"
+msgstr ""
 
 #: comments.php:47 comments.php:71
 msgid "Newer Comments &rarr;"
-msgstr "较新的评论 &rarr;"
+msgstr ""
 
 #: comments.php:81
 msgid "Comments are closed."
-msgstr "评论关闭"
+msgstr ""
 
 #: content-aside.php:14 content-gallery.php:14 content-gallery.php:65
 #: content-image.php:14 content.php:13
 msgid "Permalink to %s"
-msgstr "永久链接 %s"
+msgstr ""
 
 #: content-aside.php:45 content-gallery.php:46 content-image.php:20
 #: content.php:46
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr "详细内容 <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
 
 #: content-aside.php:46 content-gallery.php:71 content-image.php:21
 #: content-page.php:24 content-single.php:39 content.php:47 image.php:85
 msgid "Pages:"
-msgstr "页："
+msgstr "："
 
 #: content-aside.php:30 content-gallery.php:30 content-image.php:28
 #: content.php:30
 msgid "Leave a comment"
-msgstr "发表评论"
+msgstr ""
 
 #: content-aside.php:30 content-gallery.php:30 content-image.php:28
 #: content.php:30
 msgid "1 Comment"
-msgstr "1 条评论"
+msgstr ""
 
 #: content-aside.php:30 content-gallery.php:30 content-image.php:28
 #: content.php:55
 msgid "% Comments"
-msgstr "% 条评论"
+msgstr ""
 
 #: content-aside.php:34 content-gallery.php:33 content-image.php:31
 #: content-page.php:25 content-single.php:76 content.php:33 image.php:32
 #: image.php:98
 msgid "Edit"
-msgstr "编辑"
+msgstr ""
 
 #: content-gallery.php:64
 msgid "This gallery contains <a %1$s>%2$s photo</a>."
 msgid_plural "This gallery contains <a %1$s>%2$s photos</a>."
-msgstr[0] "此画册共包含 <a %1$s>%2$s 张图片</a>."
-msgstr[1] "此画册共包含 <a %1$s>%2$s 张图片</a>."
+msgstr[0] ""
+msgstr[1] ""
 
 #. translators: used between list items, there is a space after the comma
 #: content-gallery.php:22 content-single.php:45 content-single.php 48
 #: content.php:22
 msgid ", "
-msgstr "， "
+msgstr ""
 
 #. translators: used between list items, there is a space after the comma
 #: content-single.php:52
@@ -171,11 +161,11 @@ msgstr ""
 
 #: header.php:46
 msgid "Page %s"
-msgstr "第 %s 页"
+msgstr ""
 
 #: header.php:73
 msgid "Main menu"
-msgstr "主目录"
+msgstr ""
 
 #: image.php:22
 msgid ""
@@ -187,11 +177,11 @@ msgstr ""
 
 #: image.php:36
 msgid "&larr; Previous"
-msgstr "&larr; 上一张"
+msgstr ""
 
 #: image.php:38
 msgid "Next &rarr;"
-msgstr "下一张 &rarr;"
+msgstr ""
 
 #: image.php:90
 msgid ""
@@ -215,17 +205,17 @@ msgstr ""
 
 #: image.php:96
 msgid "Both comments and trackbacks are currently closed."
-msgstr "评论和trackbacks已关闭"
+msgstr ""
 
 #: search.php:14
 msgid "Search Results for: %s"
-msgstr "搜索结果"
+msgstr ""
 
 #: search.php:32
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
-msgstr "对不起，没有查找到相关内容，请尝试使用其他关键字。"
+msgstr ""
 
 #: sidebar.php:24
 msgid "Meta"
@@ -233,7 +223,7 @@ msgstr ""
 
 #: tag.php:17
 msgid "Tag Archives: %s"
-msgstr "标签归档"
+msgstr ""
 
 #. Theme Name of the plugin/theme
 msgid "Best Corporatee"
@@ -250,14 +240,14 @@ msgstr ""
 
 #. Author of the plugin/theme
 msgid "renniaofei"
-msgstr "任鸟飞网站设计博客"
+msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "http://webdesignwebtemplate.com/"
-msgstr "http://renniaofei.com/"
+msgstr ""
 
 #. Tags of the plugin/theme
 msgid ""
 " White, Custom-menu, Sticky-post, Microformats, rtl-language-support, translation-ready, Post-formats,"
 "custom-header, custom-background, threaded-comments"
-msgstr "白色,自定义导航,文章置顶,微格式,多语言支持,中文支持,格式化文章,自定义页眉,自定义背景,threaded-comments"
+msgstr ""

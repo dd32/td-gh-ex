@@ -5,7 +5,7 @@
  * Contains the closing of the id=main div and all content after
  *
  * @package BestCorporate
- * @since BestCorporate 1.0
+ * @since BestCorporate 1.1
  */
 ?>
 </div>

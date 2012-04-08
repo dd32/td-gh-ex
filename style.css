@@ -1,10 +1,10 @@
 /*
 Theme Name: Best Corporate
-Theme URI: http://webdesignwebtemplate.com/demo/?theme=Best-Corporate
+Theme URI: http://webdesignwebtemplate.com/
 Author: renniaofei
-Author URI: http://webdesignwebtemplate.com/
+Author URI: http://bestdesignmag.com/
 Description: HTML5 / Minimal / Corporate & Portfolio / Response Wordpress Theme.
-Version: 1.0
+Version: 1.1
 Tags: White, Custom-menu, Sticky-post, Microformats, rtl-language-support, translation-ready, Post-formats, custom-header, custom-background, threaded-comments,full-width-template
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -321,6 +321,7 @@ h4 {
 	-webkit-box-shadow:rgba(0, 0, 0, 0.3) 0 1px 4px;
 	box-shadow:rgba(0, 0, 0, 0.3) 0 1px 4px;
 	margin-bottom:40px;
+	background-color:#fff;
 }
 #branding {
 	height: 90px;
@@ -855,30 +856,35 @@ h3#reply-title {
 	background-image: url(images/top.png);
 	background-repeat: no-repeat;
 	background-position: center top;
-	padding-top: 60px;
+	padding-top: 70px;
 }
-.widget ul {
+.widgetbox {
+	padding:0 0 90px;
 	background-image: url(images/bottom.png);
 	background-repeat: no-repeat;
 	background-position: center bottom;
-	padding:0 0 90px;
+	min-height:120px;
+}
+.widgetbottom{
+	background-color: #F3F3F3;
+	padding: 0 20px;}
+.widget ul{
+	margin: 0px;
+	padding: 0px;
 }
 .widget ul li {
 	background-color:#f3f3f3;
 	margin: 0px;
 	display: block;
-	padding-left: 20px;
 }
 .widget ul li:hover {
 	background-color:#fff;
+	padding-left:10px;
 }
+
 .widget-title {
 	text-align: center;
-	border-bottom-width: 2px;
-	border-bottom-style: solid;
-	border-bottom-color: #000;
-	margin-right: 20px;
-	margin-left: 20px;
+	border-bottom:solid 2px #000;
 	line-height: 35px;
 	height: 35px;
 }

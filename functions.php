@@ -1,7 +1,7 @@
 <?php
 /**
  * @package BestCorporate
- * @since BestCorporate 1.0
+ * @since BestCorporate 1.1
  */
 
 /**
@@ -56,12 +56,13 @@ function best_corporate_setup() {
 	
 	// This theme allows users to set a custom background
 	add_custom_background();
-	
-	
-define('HEADER_TEXTCOLOR', 'ffffff');
-define('HEADER_IMAGE_WIDTH', 960); // use width and height appropriate for your theme
-define('HEADER_IMAGE_HEIGHT', 200);
-add_custom_image_header('header_style', 'admin_header_style');
+
+	define('HEADER_TEXTCOLOR', '');
+    define('HEADER_IMAGE', '%s/images/logo.png'); // %s is the template dir uri
+    define('HEADER_IMAGE_WIDTH', 220); // use width and height appropriate for your theme
+    define('HEADER_IMAGE_HEIGHT', 90);
+    define('NO_HEADER_TEXT', true);
+	add_custom_image_header('', 'admin_header_style');
 }
 endif; // best_corporate_setup
 
@@ -83,19 +84,6 @@ $themecolors = array(
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
  */
  
- 
- // gets included in the site header
-function header_style() {
-    ?>
-<style type="text/css">
-#headerimg {
- background: url(<?php header_image();
-?>);
-}
-</style>
-<?php
-}
- 
  if ( ! function_exists( 'admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
@@ -103,19 +91,8 @@ function header_style() {
  * Referenced via add_custom_image_header() in twentyten_setup().
 
  */
-function admin_header_style() {
-?>
-<style type="text/css">
-        #headimg {
-            width: <?php echo HEADER_IMAGE_WIDTH; ?>px;
-            height: <?php echo HEADER_IMAGE_HEIGHT; ?>px;
-            background: no-repeat;
-        }
-    </style>
-<?php
-}
+function admin_header_style() {}
 endif;
-
 
 function best_corporate_page_menu_args( $args ) {
 	$args['show_home'] = true;
@@ -130,8 +107,8 @@ function best_corporate_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Sidebar 1', 'best_corporate' ),
 		'id' => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
+		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="widgetbox"><div class="widgetbottom">',
+		'after_widget' => "</div></div></aside>",
 		'before_title' => '<h2 class="widget-title">',
 		'after_title' => '</h2>',
 	) );
@@ -148,8 +125,8 @@ function best_corporate_theme_options_items(){
 	$items = array (
 		array(
 			'id' => 'logo_src',
-			'name' => __('Logo image','best_corporate'),
-			'desc' => __('Put your logo image address here (max size: 200px*90px). If empty, display blog title with text.','best_corporate')
+			'name' => __('Logo Upload','best_corporate'),
+			'desc' => __('Need to replace or remove default logo? <a href="themes.php?page=custom-header">Click here</a>.')
 		)
 	);
 	return $items;
@@ -160,22 +137,8 @@ function best_corporate_theme_options_init(){
 	register_setting( 'best_corporate_options', 'best_corporate_theme_options', 'best_corporate_options_validate' );
 }
 function best_corporate_theme_options_add_page() {
-	add_theme_page( __( 'Theme Options' ), __( 'Set Logo Image' ), 'edit_theme_options', 'theme_options', 'best_corporate_theme_options_do_page' );
+	add_theme_page( __( 'Theme Options' ), __( 'Logo Upload' ), 'edit_theme_options', 'theme_options', 'best_corporate_theme_options_do_page' );
 }
-function best_corporate_default_options() {
-	$options = get_option( 'best_corporate_theme_options' );
-	foreach ( best_corporate_theme_options_items() as $item ) {
-		if ( ! isset( $options[$item['id']] ) ) {
-			if ( $options[$item['id']] == 'theme_style' ) {
-				$options[$item['id']] = 'default';
-			} else {
-				$options[$item['id']] = '';
-			}
-		}
-	}
-	update_option( 'best_corporate_theme_options', $options );
-}
-add_action( 'init', 'best_corporate_default_options' );
 function best_corporate_theme_options_do_page() {
 	if ( ! isset( $_REQUEST['updated'] ) )
 		$_REQUEST['updated'] = false;
@@ -184,10 +147,6 @@ function best_corporate_theme_options_do_page() {
 		<?php screen_icon(); echo "<h2>" . sprintf( __('%1$s Theme Options','best_corporate'), get_current_theme() )	 . "</h2>"; ?>
 		<?php settings_errors(); ?>
 		<div id="poststuff" class="metabox-holder">
-			<form method="post" action="options.php">
-				<p class="submit">
-					<input type="submit" class="button-primary" value="<?php _e('Save Options','best_corporate'); ?>" />
-				</p>
 				<div class="stuffbox">
 					<h3><label for="link_url"><?php _e('General settings','best_corporate'); ?></label></h3>
 					<div class="inside">
@@ -198,33 +157,19 @@ function best_corporate_theme_options_do_page() {
 							<tr valign="top" style="margin-bottom:5px;border-bottom:1px solid #e1e1e1;">
 								<th scope="row"><?php echo $item['name']; ?></th>
 								<td>
-									<input name="<?php echo 'best_corporate_theme_options['.$item['id'].']'; ?>" type="text" value="<?php if ( $options[$item['id']] != "") { echo $options[$item['id']]; } else { echo ''; } ?>" size="80" />
-									<br/>
-									<label class="description" for="<?php echo 'best_corporate_theme_options['.$item['id'].']'; ?>"><?php echo $item['desc']; ?></label>
+								<label class="description" for="<?php echo 'best_corporate_theme_options['.$item['id'].']'; ?>"><?php echo $item['desc']; ?></label>
 								</td>
 							</tr>
 						<?php } ?>
 						</table>
 					</div>
 				</div>
-				<p class="submit">
-					<input type="submit" class="button-primary" value="<?php _e('Save Options','best_corporate'); ?>" />
-				</p>
-			</form>
 		</div>
 	</div>
 <?php
 }
 function best_corporate_options_validate($input) {
 	return $input;
-}
-
-if ($cp_options['ajax_comment']==true) {
-	wp_deregister_script('jquery');
-	wp_register_script('jquery',
-	// ("http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"), false, '1.3.2');
-		(get_template_directory_uri()."/jquery-1.3.2.js"), false, '1.3.2');
-	wp_enqueue_script('jquery');
 }
 
 if ( ! function_exists( 'best_corporate_content_nav' ) ):
