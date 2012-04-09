@@ -1,9 +1,12 @@
-<?php  	
+<?php  
+if ( ! function_exists( 'adt_get_option' ) ) :	
   function adt_get_option($Aoption_name, $default = null)
   {
     return stripslashes(get_option($Aoption_name, $default));
   };
+endif;
 
+if ( ! function_exists( 'adt_template_setup' ) ) :	
   function adt_template_setup() 
   {	
     global $adt_content_width, $adt_favicon_url, $adt_footer_text; 
@@ -11,9 +14,9 @@
     if ( ! isset( $content_width ) ) 
       $content_width = 630;
   
-	load_theme_textdomain('adsticle', TEMPLATEPATH . '/languages');
+	load_theme_textdomain('adsticle', get_template_directory() . '/languages');
 	$locale = get_locale();
-	$locale_file = TEMPLATEPATH . "/languages/$locale.php";
+	$locale_file = get_template_directory() . "/languages/$locale.php";
 	if (is_readable($locale_file ))
 	  require_once($locale_file);	
 	  
@@ -73,10 +76,13 @@
 	if ( ! defined( 'ADT_WIDTH_LINE_FOOTER' ) )
 	  define( 'ADT_WIDTH_LINE_FOOTER', '1' );  
   };
+endif;
   
   add_action('after_setup_theme', 'adt_template_setup');
   
   add_action('init', 'adt_ilc_farbtastic_script');
+  
+if ( ! function_exists( 'adt_ilc_farbtastic_script' ) ) :	
   function adt_ilc_farbtastic_script() 
   { 
     if (is_admin())
@@ -85,6 +91,7 @@
       wp_enqueue_script( 'farbtastic' );
 	};
   };
+ endif;
  
   function adsticle_sidebars()
   {
@@ -150,7 +157,7 @@
   };
   
   add_action( 'widgets_init', 'adsticle_sidebars' );
-  
+  if ( ! function_exists( 'adsticle_comment' ) ) :	
   function adsticle_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
@@ -192,7 +199,7 @@
 			break;
 	endswitch;
   };
-  
+  endif; 
   if ( ! function_exists( 'adsticle_admin_header_style' ) ) :
 
   function adsticle_admin_header_style() {
@@ -210,7 +217,7 @@
   endif;
   
   add_action('wp_head', 'adsticle_head');
-  
+    if ( ! function_exists( 'adsticle_head' ) ) :
   function adsticle_head()
   {  
     if (!is_admin())
@@ -259,15 +266,17 @@ body{background-image:none;}
 <?php	  
 	};
   };
-  
+    endif;
+	    if ( ! function_exists( 'adt_options_admin_menu' ) ) :
   function adt_options_admin_menu() 
   {	    
 	add_theme_page(__("Adsticle Options", 'adsticle'), __("Adsticle Options", 'adsticle'), 
 	  'edit_theme_options', 'adsticle_general_options_page', 'adsticle_general_options_page');	  
   };
+  endif; 
   
   add_action('admin_menu', 'adt_options_admin_menu');
-
+if ( ! function_exists( 'adt_show_color_picker' ) ) :
   function adt_show_color_picker($Aname, $Aoption, $Adefault)
   {  
 ?>  
@@ -286,7 +295,8 @@ name="<?php echo $Aname; ?>" value="<?php echo get_option($Aoption, $Adefault); 
 </script>
 <?php
    };
-   
+    endif;  
+	if ( ! function_exists( 'adt_show_number_select' ) ) :
   function adt_show_number_select($Aname, $Adef, $Amax = 5)
   {
 	echo '<select name="'.$Aname.'">';
@@ -298,8 +308,27 @@ name="<?php echo $Aname; ?>" value="<?php echo get_option($Aoption, $Adefault); 
     };					
     echo '</select>';
   };
-				  
-  
+ endif;  	
+ $default_options = array(
+     'ADT_COLOR_H' => 'ADT_COLOR_H',
+     'ADT_COLOR_LINK' => 'ADT_COLOR_LINK',
+	 'ADT_COLOR_TEXT' => 'ADT_COLOR_TEXT',
+	 'ADT_COLOR_STICKY' => 'ADT_COLOR_STICKY',
+	 'ADT_COLOR_BACKGROUND1' => 'ADT_COLOR_BACKGROUND1',
+	 'ADT_COLOR_LINE' => 'ADT_COLOR_LINE',
+	 'ADT_WIDTH_LINE_MAINMENU' => 'ADT_WIDTH_LINE_MAINMENU',
+	 'ADT_WIDTH_LINE_WIDGET' => 'ADT_WIDTH_LINE_WIDGET',
+	 'ADT_WIDTH_LINE_FOOTER' => 'ADT_WIDTH_LINE_FOOTER',
+	 'ADT_COLOR_MENUBACKGROUND' => 'ADT_COLOR_MENUBACKGROUND',
+	 'adt_a468x60' => trim('adt_a468x60'),
+	 'adt_a728x15-top' => trim('adt_a728x15-top'),
+	 'adt_a728x15-footer' => trim('adt_a728x15-footer'),
+	 'ads_250-250-post' => trim('ads_250-250-post')
+);
+
+$adsticle_options = $default_options;
+update_option( 'adsticle_options', $adsticle_options );	
+   if ( ! function_exists( 'adt_options_update' ) ) :
    function adt_options_update() 
    {
      global $_POST, $adt_favicon_url, $adt_footer_text;
@@ -311,11 +340,7 @@ name="<?php echo $Aname; ?>" value="<?php echo get_option($Aoption, $Adefault); 
 	 {
 	   update_option('adt_favicon_url', $adt_favicon_url);	  
 	 };
-		
-	update_option('adt_a468x60', trim($_POST['adt_a468x60']));
-	update_option('adt_a728x15-top', trim($_POST['adt_a728x15-top']));
-	update_option('adt_a728x15-footer', trim($_POST['adt_a728x15-footer']));
-	update_option('ads_250-250-post', trim($_POST['ads_250-250-post']));
+
 				
 	if ($_POST['adt_footer_text'] != '')
 	{
@@ -341,20 +366,13 @@ name="<?php echo $Aname; ?>" value="<?php echo get_option($Aoption, $Adefault); 
 	{
 	  update_option('adt_show_featured_image', '0');	  
 	};	
-	
-	update_option('ADT_COLOR_H', $_POST['ADT_COLOR_H']);
-	update_option('ADT_COLOR_LINK', $_POST['ADT_COLOR_LINK']);
-	update_option('ADT_COLOR_TEXT', $_POST['ADT_COLOR_TEXT']);	
-	update_option('ADT_COLOR_STICKY', $_POST['ADT_COLOR_STICKY']);
-	update_option('ADT_COLOR_BACKGROUND1', $_POST['ADT_COLOR_BACKGROUND1']);	
-	update_option('ADT_COLOR_LINE', $_POST['ADT_COLOR_LINE']);
-	update_option('ADT_WIDTH_LINE_MAINMENU', $_POST['ADT_WIDTH_LINE_MAINMENU']);	
-	update_option('ADT_WIDTH_LINE_WIDGET', $_POST['ADT_WIDTH_LINE_WIDGET']);	
-	update_option('ADT_WIDTH_LINE_FOOTER', $_POST['ADT_WIDTH_LINE_FOOTER']);	
-	update_option('ADT_COLOR_MENUBACKGROUND', $_POST['ADT_COLOR_MENUBACKGROUND']);
+		
+
 		
   };
-  
+   endif;  
+   
+      if ( ! function_exists( 'adsticle_general_options_page' ) ) :
   function adsticle_general_options_page()
   {
     global  $_POST, $adt_favicon_url, $adt_footer_text; 
@@ -469,10 +487,10 @@ name="<?php echo $Aname; ?>" value="<?php echo get_option($Aoption, $Adefault); 
 	<input type="hidden" name="action" value="update" />
 	<input type="hidden" name="page_options" value="adt_favicon_url,adt_footer_text,adt_a468x60,adt_a728x15-top,adt_a728x15-footer,ads_250-250-post,
 ADT_COLOR_H,ADT_COLOR_LINK,ADT_COLOR_TEXT,ADT_COLOR_STICKY,ADT_COLOR_LINE,ADT_COLOR_BACKGROUND1,ADT_COLOR_MENUBACKGROUND,ADT_WIDTH_LINE_MAINMENU,ADT_WIDTH_LINE_WIDGET,ADT_WIDTH_LINE_FOOTER, adt_show_main_menu, adt_show_featured_image" />
-            <p><input type="submit" value="<?php _e('Save', 'adsticle'); ?>" class="button button-primary" /></p>
+     			<p><?php submit_button( $text=null, $type='submit', $name = 'submit', $wrap = true, $other_attributes = null) ?></p>
         </form>
     </div>
 <?php
   };
-  
+   endif; 
 ?>
