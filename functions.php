@@ -1057,13 +1057,18 @@ function adventure_theme_options_validate( $input ) {
 	
 		$options = adventure_get_theme_options();
 
-		$actives = "schwarttzy.com/varify.php?actives=".$options['premium_options'];
-
-		$homepage = wp_remote_request('http://'.$actives);
-
-		if ($homepage[body] == 'active') { $output['active'] = 'active';} else {$output['active'] = 'deactive';}
-
+		// Sanitize $input['premium_options']
 		$output['premium_options'] = strtoupper ( ltrim( $input['premium_options'] ) );
+		
+		// Determine if we need to poll the activation code server
+		if ( $output['premium_options'] != $options['premium_options'] && 'active' != $options['active'] ) {
+			// Build premium options activation server URL
+			$actives = 'schwarttzy.com/varify.php?actives=' . $output['premium_options'];
+			// Poll the activation server
+			$homepage = wp_remote_request( 'http://' . $actives );
+			// Set $output['active'] accordingly
+			$output['active'] = ( 'active' == $homepage[body] ? 'active' : 'deactive' );
+}
 
 	// Theme layout must be in our array of theme layout options
 
@@ -1281,15 +1286,6 @@ register_sidebars(4, array(
 'before_title' => '<h2>',
 'after_title' => '</h2>',
     ));
-	
-define('HEADER_TEXTCOLOR', '');
-define('HEADER_IMAGE_WIDTH', 994);
-define('HEADER_IMAGE_HEIGHT', 175);
-define('NO_HEADER_TEXT', true );
-add_custom_image_header( 'adventure_header_style', 'adventure_admin_header_style', 'adventure_admin_header_image');
-if ( ! function_exists( 'adventure_header_style' ) ) : function adventure_header_style() {}endif;
-if ( ! function_exists( 'adventure_admin_header_style' ) ) : function adventure_admin_header_style() {}endif;
-if ( ! function_exists( 'adventure_admin_header_image' ) ) : function adventure_admin_header_image() {?><img class="left title" title="<?php bloginfo('name'); ?>" src="<?php header_image(); ?>" alt="<?php bloginfo('description');?>" ><?php }endif;
 }
 }
 add_action( 'widgets_init', 'adventure_active_final' );
@@ -1309,10 +1305,18 @@ register_sidebar(array(
 add_custom_background();
 add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
 add_image_size( 'page-thumbnail', 740, 9999, true );
+define('HEADER_TEXTCOLOR', '');
+define('HEADER_IMAGE_WIDTH', 994);
+define('HEADER_IMAGE_HEIGHT', 175);
+define('NO_HEADER_TEXT', true );
+add_custom_image_header( 'adventure_header_style', 'adventure_admin_header_style', 'adventure_admin_header_image');
+if ( ! function_exists( 'adventure_header_style' ) ) : function adventure_header_style() {}endif;
+if ( ! function_exists( 'adventure_admin_header_style' ) ) : function adventure_admin_header_style() {}endif;
+if ( ! function_exists( 'adventure_admin_header_image' ) ) : function adventure_admin_header_image() {?><img class="left title" title="<?php bloginfo('name'); ?>" src="<?php header_image(); ?>" alt="<?php bloginfo('description');?>" ><?php }endif;
 }
 add_action( 'after_setup_theme', 'adventure_setup' );
 function adventure_enqueue_comment_reply() { if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {  wp_enqueue_script( 'comment-reply' ); } }
-add_action( 'wp_enqueue_scripts', 'oenology_enqueue_comment_reply' );
+add_action( 'wp_enqueue_scripts', 'adventure_enqueue_comment_reply' );
 function adventure_print_comment($comment, $args, $depth) { $GLOBALS['comment'] = $comment; ?>
 <div id="comment-<?php comment_ID() ?>" <?php comment_class(); ?>>
 <div class="avatar"><?php echo get_avatar( $comment, 100 ); ?></div>
