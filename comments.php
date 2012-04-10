@@ -30,11 +30,9 @@
 		</div>
 </div>
 <?php else : ?>
-	<?php if ( comments_open() ) : ?>
-        <!-- If comments are open, but there are no comments. -->
-	 <?php else : // comments are closed ?>
-		<div class="content" ><p>Comments are closed.</p></div>
-	<?php endif; ?>
+<?php if ( !comments_open() && !is_page() ) : ?>
+<div class="content" ><p>Comments are closed.</p></div>
+<?php endif; ?>
 <?php endif; ?>
 
  <!-- if ('open' == $post->comment_status) : -->

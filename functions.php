@@ -1294,6 +1294,7 @@ if ( ! function_exists( 'adventure_admin_header_image' ) ) : function adventure_
 }
 add_action( 'widgets_init', 'adventure_active_final' );
 if ( ! isset( $content_width ) ) $content_width = 740;
+function adventure_setup(){
 add_theme_support( 'automatic-feed-links' );
 register_nav_menu( 'bar', 'The Menu Bar' );
 register_sidebar(array(
@@ -1308,15 +1309,17 @@ register_sidebar(array(
 add_custom_background();
 add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
 add_image_size( 'page-thumbnail', 740, 9999, true );
-function oenology_enqueue_comment_reply() { if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {  wp_enqueue_script( 'comment-reply' ); } }
+}
+add_action( 'after_setup_theme', 'adventure_setup' );
+function adventure_enqueue_comment_reply() { if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {  wp_enqueue_script( 'comment-reply' ); } }
 add_action( 'wp_enqueue_scripts', 'oenology_enqueue_comment_reply' );
 function adventure_print_comment($comment, $args, $depth) { $GLOBALS['comment'] = $comment; ?>
 <div id="comment-<?php comment_ID() ?>" <?php comment_class(); ?>>
 <div class="avatar"><?php echo get_avatar( $comment, 100 ); ?></div>
 <div class="commentinfo"><?php comment_author_link() ?> commented</div>
-<?php if ($comment->comment_approved == '0') : ?><em><?php _e('Your comment is awaiting moderation.') ?></em><br /><?php endif; ?>
+<?php if ($comment->comment_approved == '0') : ?><em>Your comment is awaiting moderation.</em><br /><?php endif; ?>
 <?php comment_text() ?>
 <?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-<div class="right"><?php comment_date() ?> at <?php comment_time() ?> <?php edit_comment_link(__('(Edit)'),'  ','') ?></div>
+<div class="right"><?php comment_date() ?> at <?php comment_time() ?> <?php edit_comment_link('Edit','  ','') ?></div>
 </div>
 <?php } ?>
