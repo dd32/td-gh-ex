@@ -3,7 +3,7 @@
  * The Sidebar containing the main widget areas.
  *
  * @package BestCorporate
- * @since BestCorporate 1.1
+ * @since BestCorporate 1.2
  */
 ?>
 

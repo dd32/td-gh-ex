@@ -5,7 +5,7 @@
  * Learn more: http://codex.wordpress.org/Post_Formats
  *
  * @package BestCorporate
- * @since BestCorporate 1.1
+ * @since BestCorporate 1.2
  */
 ?>
 

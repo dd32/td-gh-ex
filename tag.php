@@ -3,7 +3,7 @@
  * The template used to display Tag Archive pages
  *
  * @package BestCorporate
- * @since BestCorporate 1.1
+ * @since BestCorporate 1.2
  */
 
 get_header(); ?>

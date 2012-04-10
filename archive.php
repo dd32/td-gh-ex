@@ -8,7 +8,7 @@
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
  * @package BestCorporate
- * @since BestCorporate 1.1
+ * @since BestCorporate 1.2
  */
 
 get_header(); ?>

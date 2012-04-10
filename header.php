@@ -5,7 +5,7 @@
  * Displays all of the <head> section and everything up till <div id="main">
  *
  * @package BestCorporate
- * @since BestCorporate 1.1
+ * @since BestCorporate 1.2
  */
 ?>
 <!DOCTYPE html>

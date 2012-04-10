@@ -1,7 +1,7 @@
 <?php
 /**
  * @package BestCorporate
- * @since BestCorporate 1.1
+ * @since BestCorporate 1.2
  */
 
 /**
@@ -134,7 +134,7 @@ function best_corporate_theme_options_items(){
 add_action( 'admin_init', 'best_corporate_theme_options_init' );
 add_action( 'admin_menu', 'best_corporate_theme_options_add_page' );
 function best_corporate_theme_options_init(){
-	register_setting( 'best_corporate_options', 'best_corporate_theme_options', 'best_corporate_options_validate' );
+	register_setting( 'best_corporate_options', 'best_corporate_theme_options' );
 }
 function best_corporate_theme_options_add_page() {
 	add_theme_page( __( 'Theme Options' ), __( 'Logo Upload' ), 'edit_theme_options', 'theme_options', 'best_corporate_theme_options_do_page' );
@@ -168,10 +168,6 @@ function best_corporate_theme_options_do_page() {
 	</div>
 <?php
 }
-function best_corporate_options_validate($input) {
-	return $input;
-}
-
 if ( ! function_exists( 'best_corporate_content_nav' ) ):
 /**
  * Display navigation to next/previous pages when applicable
