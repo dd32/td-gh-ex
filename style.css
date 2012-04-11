@@ -4,7 +4,7 @@ Theme URI: http://www.themes-for-wp.com/atheros/
 Description: The atheros theme for WordPress 3.1+ is modern, customizable, clean, and readable with nice smooth shadow effects. Create your own custom menu, choose between 8 different header images and custom background (image or color). atheros supports six widgetized areas (two in the sidebar, four in the footer) and featured images. Stylesheet for print and the admin Visual Editor, special styles for posts in the "Asides" and "Gallery" categories, and has an optional one-column page template that removes the sidebar.
 Author: themesforwp
 Author URI: http://www.themes-for-wp.com/
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License
 License URI: license.txt
 Tags: black, blue, white, two-columns, fixed-width, custom-header, custom-background, threaded-comments, sticky-post, translation-ready, microformats, rtl-language-support, editor-style, custom-menu
@@ -177,7 +177,6 @@ code {
 /* The main theme structure */
 
 #branding {
-    background-image: url("images/headerbg.jpg");
     height: 198px;
     margin: 0 auto;
     position: relative;
@@ -201,7 +200,7 @@ code {
 }
 
 #leftstripe {
-background-image:url(images/left.jpg);
+background-image:url(images/left.png);
 width:71px;
 height:377px;
 position:absolute;
@@ -210,7 +209,7 @@ top:-70px;
 }
 
 #rightstripe {
-background-image:url(images/right.jpg);
+background-image:url(images/right.png);
 width:71px;
 height:377px;
 position:absolute;
@@ -379,7 +378,7 @@ a:hover {
 -------------------------------------------------------------- */
 
 #headerscreen { 
-    background-image: url("images/headbg.jpg");
+    background-image: url("images/headbg.png");
     background-repeat: repeat-x;
     border-top: 1px solid #E0E0E0;
     padding-top: 30px;

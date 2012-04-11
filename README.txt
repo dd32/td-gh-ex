@@ -2,8 +2,8 @@ atheros
 
 ================================================================================
 
-Version: 1.0.3
-Release date: March 16 2011
+Version: 1.0.4
+Release date: April 11 2011
 
 Comments, Feedback and Bugs:
 http://www.themes-for-wp.com/atheros/
@@ -12,6 +12,10 @@ The CSS, XHTML and design is released under GPL:
 http://www.opensource.org/licenses/gpl-license.php
 
 ================================================================================
+
+Version: 1.0.4.  - April 11 2011
+Shadowimages changed to .png - so user can set custom backgroundcolor
+Footer title tag removed - there is no need for title tag
 
 Version: 1.0.3.  - March 16 2011
 Added some fixes
