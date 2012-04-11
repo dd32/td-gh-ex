@@ -1054,21 +1054,22 @@ function adventure_theme_options_validate( $input ) {
 		$output['link_color'] = '#' . strtolower( ltrim( $input['link_color'], '#' ) );
 		
 	if ( isset( $input['premium_options'] ) )
-	
-		$options = adventure_get_theme_options();
-
-		// Sanitize $input['premium_options']
-		$output['premium_options'] = strtoupper ( ltrim( $input['premium_options'] ) );
-		
 		// Determine if we need to poll the activation code server
+		
 		if ( $output['premium_options'] != $options['premium_options'] && 'active' != $options['active'] ) {
+			
+			$options = adventure_get_theme_options();
+
+			// Sanitize $input['premium_options']
+			$output['premium_options'] = strtoupper ( ltrim( $input['premium_options'] ) );
+		
 			// Build premium options activation server URL
 			$actives = 'schwarttzy.com/varify.php?actives=' . $output['premium_options'];
 			// Poll the activation server
 			$homepage = wp_remote_request( 'http://' . $actives );
 			// Set $output['active'] accordingly
 			$output['active'] = ( 'active' == $homepage[body] ? 'active' : 'deactive' );
-}
+			}
 
 	// Theme layout must be in our array of theme layout options
 
