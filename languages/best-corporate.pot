@@ -163,7 +163,7 @@ msgstr ""
 msgid "Page %s"
 msgstr ""
 
-#: header.php:73
+#: header.php:79
 msgid "Main menu"
 msgstr ""
 

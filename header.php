@@ -5,7 +5,7 @@
  * Displays all of the <head> section and everything up till <div id="main">
  *
  * @package BestCorporate
- * @since BestCorporate 1.2
+ * @since BestCorporate 1.3
  */
 ?>
 <!DOCTYPE html>
@@ -49,13 +49,14 @@
 </title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <meta name="viewport" content="width=device-width; initial-scale=1.0">
+<?php global $bc_options;?>
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-<?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
+<?php if ( is_singular()) wp_enqueue_script( 'comment-reply' ); ?>
+<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php if($bc_options['rss_url']!=''){echo $bc_options['rss_url'];} else { bloginfo('rss2_url'); }?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
-<?php global $cp_options;?>
 <?php wp_head(); ?><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
 <body <?php body_class(); ?>>
 <div id="headerimg">

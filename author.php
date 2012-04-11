@@ -3,7 +3,7 @@
  * The template for displaying Author Archive pages.
  *
  * @package BestCorporate
- * @since BestCorporate 1.2
+ * @since BestCorporate 1.3
  */
 
 get_header(); ?>

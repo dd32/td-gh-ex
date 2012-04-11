@@ -1,7 +1,7 @@
 <?php
 /**
  * @package BestCorporate
- * @since BestCorporate 1.2
+ * @since BestCorporate 1.3
  */
 
 /**
@@ -119,7 +119,7 @@ add_action( 'init', 'best_corporate_widgets_init' );
 /**
  * Theme Options
  */
-$cp_options = get_option('best_corporate_theme_options');
+$bc_options = get_option('best_corporate_theme_options');
 //Return array for theme options
 function best_corporate_theme_options_items(){
 	$items = array (
@@ -127,6 +127,11 @@ function best_corporate_theme_options_items(){
 			'id' => 'logo_src',
 			'name' => __('Logo Upload','best_corporate'),
 			'desc' => __('Need to replace or remove default logo? <a href="themes.php?page=custom-header">Click here</a>.')
+		),
+		array(
+			'id' => 'rss_url',
+			'name' => __('RSS URL','best_corporate'),
+			'desc' => __('Put your full rss subscribe address here.(with http://). If empty, auto-set system defaults.','best_corporate')
 		)
 	);
 	return $items;
@@ -134,40 +139,67 @@ function best_corporate_theme_options_items(){
 add_action( 'admin_init', 'best_corporate_theme_options_init' );
 add_action( 'admin_menu', 'best_corporate_theme_options_add_page' );
 function best_corporate_theme_options_init(){
-	register_setting( 'best_corporate_options', 'best_corporate_theme_options' );
+	register_setting( 'best_corporate_options', 'best_corporate_theme_options','best_corporate_options_validate' );
 }
 function best_corporate_theme_options_add_page() {
-	add_theme_page( __( 'Theme Options' ), __( 'Logo Upload' ), 'edit_theme_options', 'theme_options', 'best_corporate_theme_options_do_page' );
+	add_theme_page( __( 'Theme Options' ), __( 'Theme Options' ), 'edit_theme_options', 'theme_options', 'best_corporate_theme_options_do_page' );
 }
 function best_corporate_theme_options_do_page() {
 	if ( ! isset( $_REQUEST['updated'] ) )
 		$_REQUEST['updated'] = false;
 ?>
-	<div class="wrap">
-		<?php screen_icon(); echo "<h2>" . sprintf( __('%1$s Theme Options','best_corporate'), get_current_theme() )	 . "</h2>"; ?>
-		<?php settings_errors(); ?>
-		<div id="poststuff" class="metabox-holder">
-				<div class="stuffbox">
-					<h3><label for="link_url"><?php _e('General settings','best_corporate'); ?></label></h3>
-					<div class="inside">
-						<?php settings_fields( 'best_corporate_options' ); ?>
-						<?php $options = get_option( 'best_corporate_theme_options' ); ?>
-						<table class="form-table">
-						<?php foreach (best_corporate_theme_options_items() as $item) { ?>
-							<tr valign="top" style="margin-bottom:5px;border-bottom:1px solid #e1e1e1;">
-								<th scope="row"><?php echo $item['name']; ?></th>
-								<td>
-								<label class="description" for="<?php echo 'best_corporate_theme_options['.$item['id'].']'; ?>"><?php echo $item['desc']; ?></label>
-								</td>
-							</tr>
-						<?php } ?>
-						</table>
-					</div>
-				</div>
-		</div>
-	</div>
+
+<div class="wrap">
+  <?php screen_icon(); echo "<h2>" . sprintf( __('%1$s Theme Options','best_corporate'), get_current_theme() )	 . "</h2>"; ?>
+  <?php settings_errors(); ?>
+  <div id="poststuff" class="metabox-holder">
+    <form method="post" action="options.php">
+      <div class="stuffbox">
+        <h3>
+          <label for="link_url">
+          <?php _e('General settings','best_corporate'); ?>
+          </label>
+        </h3>
+        <div class="inside">
+          <?php settings_fields( 'best_corporate_options' ); ?>
+          <?php $options = get_option( 'best_corporate_theme_options' ); ?>
+          <table class="form-table">
+            <?php foreach (best_corporate_theme_options_items() as $item) { ?>
+            <?php if ($item['id'] == 'logo_src') { ?>
+           <tr valign="top">
+              <th scope="row"><?php echo $item['name']; ?></th>
+              <td><label class="description"><?php echo $item['desc']; ?></label>
+              </td>
+            </tr> 
+            <?php } 
+			else{?>
+            <tr valign="top" style="margin-top:5px;border-top:1px solid #e1e1e1;">
+              <th scope="row"><?php echo $item['name']; ?></th>
+              <td><input name="<?php echo 'best_corporate_theme_options['.$item['id'].']'; ?>" type="text" value="<?php if ( $options[$item['id']] != "") { echo $options[$item['id']]; } else { echo ''; } ?>" size="80" />
+                <br/>
+                <label class="description"><?php echo $item['desc']; ?></label>
+              </td>
+            </tr>
+            <?php } ?>
+            <?php } ?>
+          </table>
+        </div>
+      </div>
+      <p class="submit">
+        <input type="submit" class="button-primary" value="<?php _e('Save Options','best_corporate'); ?>" />
+      </p>
+    </form>
+  </div>
+</div>
 <?php
 }
+
+function best_corporate_options_validate($input) {
+	$input['logo_src'] = esc_url_raw($input['logo_src']);
+	$input['rss_url'] = esc_url_raw($input['rss_url']);
+	return $input;
+}
+
 if ( ! function_exists( 'best_corporate_content_nav' ) ):
 /**
  * Display navigation to next/previous pages when applicable
@@ -178,24 +210,24 @@ function best_corporate_content_nav( $nav_id ) {
 
 	?>
 <nav id="<?php echo $nav_id; ?>">
-<h1 class="assistive-text section-heading">
-  <?php _e( 'Post navigation', 'best_corporate' ); ?>
-</h1>
-<?php if ( is_single() ) : // navigation links for single posts ?>
-<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'best_corporate' ) . '</span> %title' ); ?>
-<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'best_corporate' ) . '</span>' ); ?>
-<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
-<?php if ( get_next_posts_link() ) : ?>
-<div class="nav-previous">
-  <?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'best_corporate' ) ); ?>
-</div>
-<?php endif; ?>
-<?php if ( get_previous_posts_link() ) : ?>
-<div class="nav-next">
-  <?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'best_corporate' ) ); ?>
-</div>
-<?php endif; ?>
-<?php endif; ?>
+  <h1 class="assistive-text section-heading">
+    <?php _e( 'Post navigation', 'best_corporate' ); ?>
+  </h1>
+  <?php if ( is_single() ) : // navigation links for single posts ?>
+  <?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'best_corporate' ) . '</span> %title' ); ?>
+  <?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'best_corporate' ) . '</span>' ); ?>
+  <?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
+  <?php if ( get_next_posts_link() ) : ?>
+  <div class="nav-previous">
+    <?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'best_corporate' ) ); ?>
+  </div>
+  <?php endif; ?>
+  <?php if ( get_previous_posts_link() ) : ?>
+  <div class="nav-next">
+    <?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'best_corporate' ) ); ?>
+  </div>
+  <?php endif; ?>
+  <?php endif; ?>
 </nav>
 <!-- #<?php echo $nav_id; ?> -->
 <?php
