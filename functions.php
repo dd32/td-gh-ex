@@ -1052,25 +1052,25 @@ function adventure_theme_options_validate( $input ) {
 	if ( isset( $input['link_color'] ) && preg_match( '/^#?([a-f0-9]{3}){1,2}$/i', $input['link_color'] ) )
 
 		$output['link_color'] = '#' . strtolower( ltrim( $input['link_color'], '#' ) );
-		
-	if ( isset( $input['premium_options'] ) )
-		// Determine if we need to poll the activation code server
-		
-		if ( $output['premium_options'] != $options['premium_options'] && 'active' != $options['active'] ) {
-			
-			$options = adventure_get_theme_options();
+	
+	$options = adventure_get_theme_options();
 
-			// Sanitize $input['premium_options']
-			$output['premium_options'] = strtoupper ( ltrim( $input['premium_options'] ) );
+	// Sanitize $input['premium_options']
+	$input['premium_options'] = strtoupper ( ltrim( $input['premium_options'] ) );
 		
-			// Build premium options activation server URL
-			$actives = 'schwarttzy.com/varify.php?actives=' . $output['premium_options'];
-			// Poll the activation server
-			$homepage = wp_remote_request( 'http://' . $actives );
-			// Set $output['active'] accordingly
-			$output['active'] = ( 'active' == $homepage[body] ? 'active' : 'deactive' );
-			}
-
+	// Determine if we need to poll the activation code server
+	if ( $input['premium_options'] != $options['premium_options'] && 'active' != $options['active'] ) {
+		// Build premium options activation server URL
+		$actives = 'http://schwarttzy.com/varify.php?actives=' . $input['premium_options'];
+		// Poll the activation server
+		$homepage = wp_remote_request( $actives );
+		// Set $output['active'] accordingly
+		$output['active'] = ( 'active' == $homepage[body] ? 'active' : 'deactive' );
+		$output['premium_options'] = $input['premium_options']; }
+	elseif ( $input['premium_options'] == $options['premium_options'] && 'active' == $options['active'] ) {
+		$output['active'] = 'active';
+		$output['premium_options'] = $input['premium_options']; }
+		
 	// Theme layout must be in our array of theme layout options
 
 	if ( isset( $input['sidebar_options'] ) && array_key_exists( $input['sidebar_options'], adventure_layouts() ) )
