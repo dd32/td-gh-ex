@@ -1,7 +1,7 @@
 <?php
 /**
  * @package BestCorporate
- * @since BestCorporate 1.3
+ * @since BestCorporate 1.4
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
