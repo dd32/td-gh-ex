@@ -7,6 +7,15 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(04/14/2012) - Maintenance Version 1.4.4
+[!] blog.php and blog-excerpt.php while frontpage fix
+[+] image dimensions for social icons
+[-] image dimension for social icons CSS 
+[*] PHP sidebar-left headings
+[x] unnececary theme options functions.php
+[x] sub-header-menu border-radius
+
+
 (04/05/2012) - Maintenance Version 1.4.2/3
 [x] widgets ul styles CSS
 [*] widgets a padding CSS

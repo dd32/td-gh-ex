@@ -3,7 +3,7 @@ Theme Name: Responsive
 Theme URI: http://themeid.com/responsive-theme 
 Description: Responsive WordPress Theme that features 9 page Templates such as Blog, Blog Summary and Template based layout designs: sidebar/content, sidebar/content half, content/sidebar and content/sidebar half. There is also full width page, sitemap Template as well as landing page for your PPC or any other purposes. Responsive also supports 9 widget areas and best of all this Theme is crafted with fluid proportion-based grid system of our own to adapt the design to the viewing environment. There are also Theme Options to control the content, webmaster tools, logo managament, social icons and 4 navigation menus. Everything is backed by our FREE dedicated support forums @ http://themeid.com/forum
 
-Version: 1.4.3
+Version: 1.4.4
 Author: ThemeID 
 Author URI: http://themeid.com
 Tags: white, black, gray, light, custom-menu, custom-header, custom-background, one-column, two-columns, left-sidebar, right-sidebar, flexible-width, theme-options, threaded-comments, full-width-template, sticky-post, translation-ready
@@ -1588,15 +1588,9 @@ ul.sub-menu .current_page_item a {
 /* =Sub Header Menu
 -------------------------------------------------------------- */
 .sub-header-menu {
-	-webkit-border-bottom-right-radius: 6px;
-	-webkit-border-bottom-left-radius: 6px;
-	-moz-border-radius-bottomright: 6px;
-	-moz-border-radius-bottomleft: 6px;
 	background-color:#fff;
 	border:1px solid #d6d6d6;
 	border-top:none;
-	border-bottom-right-radius: 6px;
-	border-bottom-left-radius: 6px;
 	clear:both;
 	margin:0 auto;
 }
@@ -2180,11 +2174,9 @@ img.wp-post-image, img.attachment-thumbnail, img.attachment-medium, img.attachme
 }
 
 #footer .twitter-icon, #footer .youtube-icon, #footer .facebook-icon, #footer .linkedin-icon, #footer .rss-feed-icon, #footer .google-plus-icon, #footer .stumble-upon-icon {
-	display: inline;
-	height: 24px;
-	margin: 1px;
-	padding-left: 3px;
-	width: 24px;
+	display:inline;
+	margin:1px;
+	padding-left:3px;
 }
 
 /* =Alignments Extras

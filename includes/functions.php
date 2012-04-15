@@ -73,7 +73,6 @@ if (!function_exists('responsive_setup')):
 		 * In our case we are using this to display logo.
          * @see http://codex.wordpress.org/Function_Reference/add_custom_image_header
          */
-        $options = get_option('responsive_theme_options');
 		
 		define('HEADER_TEXTCOLOR', '');
         define('HEADER_IMAGE', '%s/images/default-logo.png'); // %s is the template dir uri
