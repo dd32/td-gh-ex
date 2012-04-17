@@ -36,7 +36,7 @@ function bfa_post_headline($before = '<div class="post-headline">', $after = '</
 			if ( is_single() OR is_page() ) {
 				the_title(); ?></h<?php echo $bfa_ata['h_posttitle']; ?>><?php
 			} else { ?>
-				<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute('echo=1') ?>">
+				<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e('Permanent Link to ','atahualpa') . the_title_attribute('echo=1') ?>">
 				<?php the_title(); ?></a></h<?php echo $bfa_ata['h_posttitle']; ?>><?php
 			}
 		echo $after;
@@ -60,7 +60,7 @@ function bfa_post_headline($before = '<div class="post-headline">', $after = '</
 	// in those cases
 	$bfa_temp_title = get_the_title();
 	if ( $bfa_temp_title == '' ) { ?>
-		<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link">Permalink</a><?php 
+		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e('Permanent Link','atahualpa')?>">Permalink</a><?php 
 		
 	} elseif ( (!is_single() AND !is_page()) OR $bfa_ata_display_body_title == '' ) {
 		
@@ -68,7 +68,7 @@ function bfa_post_headline($before = '<div class="post-headline">', $after = '</
 		<h<?php echo $bfa_ata['h_posttitle']; ?>><?php 
 			
 		if( !is_single() AND !is_page() ) { ?>
-			<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute('echo=1') ?>"><?php 
+			<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e('Permanent Link to ','atahualpa') .  the_title_attribute('echo=1') ?>"><?php 
 		} 
 
 		if ( (is_single() OR is_page()) AND $bfa_ata_body_title != "" ) {
@@ -119,17 +119,28 @@ function bfa_post_byline($before = '<div class="post-byline">', $after = '</div>
 						
 function bfa_post_bodycopy($before = '<div class="post-bodycopy clearfix">', $after = '</div>') 
 {
-	global $bfa_ata, $post;
+	global $bfa_ata, $post, $bfa_pagetemplate_name, $bfa_pagetemplate_full_post_count;
 	
 	echo $before; 
-	if ( (is_home() AND $bfa_ata['excerpts_home'] == "Full Posts") OR 
-	(is_category() AND $bfa_ata['excerpts_category'] == "Full Posts") OR 
-	(is_date() AND $bfa_ata['excerpts_archive'] == "Full Posts") OR 
-	(is_tag() AND $bfa_ata['excerpts_tag'] == "Full Posts") OR 
-	(is_search() AND $bfa_ata['excerpts_search'] == "Full Posts") OR 
-	(is_author() AND $bfa_ata['excerpts_author'] == "Full Posts") OR 
-	is_single() OR is_page() OR 
-	(is_home() AND !is_paged() AND $bfa_ata['postcount'] <= $bfa_ata['full_posts_homepage']) ) { 
+	if ((is_home()     AND $bfa_ata['excerpts_home'] == "Full Posts") 
+	OR  (is_home()     AND !is_paged() AND $bfa_ata['postcount'] <= $bfa_ata['full_posts_homepage']) 
+	OR  (is_category() AND $bfa_ata['excerpts_category'] == "Full Posts") 
+	OR  (is_date()     AND $bfa_ata['excerpts_archive'] == "Full Posts") 
+	OR  (is_tag()      AND $bfa_ata['excerpts_tag'] == "Full Posts") 
+	OR  (is_search()   AND $bfa_ata['excerpts_search'] == "Full Posts") 
+	OR  (is_author()   AND $bfa_ata['excerpts_author'] == "Full Posts") 
+	OR   is_single() 
+	OR   is_page() 
+	) { $do_full_post = 1; }
+	
+	if (is_pagetemplate_active($bfa_pagetemplate_name)) {
+		if ($bfa_ata['postcount'] <= $bfa_pagetemplate_full_post_count) 
+			{ $do_full_post = 1; }
+		else 
+			{ $do_full_post = 0; }
+	}
+	
+	if ($do_full_post == 1) {
 		$bfa_ata_more_tag_final = str_replace("%post-title%", the_title('', '', false), $bfa_ata['more_tag']);
 		the_content($bfa_ata_more_tag_final); 
 	} else { 
@@ -137,8 +148,8 @@ function bfa_post_bodycopy($before = '<div class="post-bodycopy clearfix">', $af
 		     if(has_post_thumbnail()): ?>
                 <a href="<?php the_permalink() ?>"> <?php the_post_thumbnail(); ?></a>
 				<?php endif;
-			the_excerpt(); 
 		}
+		the_excerpt(); 
 	} 
 	echo $after;
 }

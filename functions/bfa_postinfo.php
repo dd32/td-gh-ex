@@ -22,6 +22,15 @@ function bfa_parse_date_callback( $matches ) {
 	return $date;
 }
 
+// Date modified callback
+function bfa_parse_date_modified_callback( $matches ) {
+	ob_start(); 
+		the_modified_time($matches[2]); 
+		$date_modified = ob_get_contents(); 
+	ob_end_clean();	
+	return $date_modified;
+}
+
 function postinfo($postinfo_string) {
 
 	// one theme option needed below for nofollow trackback / RSS links yes/no
@@ -195,7 +204,7 @@ function postinfo($postinfo_string) {
 
 	// Date & Time, last modified
 	if ( strpos($postinfo_string,'%date-modified(') !== FALSE ) {
-		$postinfo = preg_replace_callback("/%date-modified\((.*?)'(.*?)'(.*?)\)%/is","bfa_parse_date_callback",$postinfo);
+		$postinfo = preg_replace_callback("/%date-modified\((.*?)'(.*?)'(.*?)\)%/is","bfa_parse_date_modified_callback",$postinfo);
 	}	
 
 	// Tags, linked - since WP 2.3
@@ -461,8 +470,10 @@ function postinfo($postinfo_string) {
 
 	// For the "Sociable" plugin
 	if ( strpos($postinfo_string,'%sociable%') !== FALSE ) {
-		$sociable = ( (function_exists('sociable_html2') AND
-		function_exists( do_sociable() ) ) ? do_sociable() : "");
+		ob_start(); 
+			$sociable = ( (function_exists('sociable_html2') AND function_exists( do_sociable() ) ) ? do_sociable() : "");
+			$sociable = ob_get_contents();
+		ob_end_clean();
 		$postinfo = str_replace("%sociable%", $sociable, $postinfo);
 	}
 

@@ -2030,7 +2030,7 @@ database and automatically carried over to new Atahualpa versions when you upgra
 
 <h3>Usage</h3>
 The code to create new widget areas is a PHP function with parameters:<br />
-<code>&lt;?php bfa_widget_area('parameter=value&paramater=value&paramater=value'); ?&gt;</code>
+<code>&lt;?php bfa_widget_area('parameter=value&#38;paramater=value&#38;paramater=value'); ?&gt;</code>
 
 <h3>Min. required paramaters</h3>
 This is the shortest and most basic way you can create a widget area.<br />

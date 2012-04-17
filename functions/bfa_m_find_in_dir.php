@@ -26,7 +26,9 @@ function m_find_in_dir__( $root, $pattern, $recursive, &$result ) {
         if( "." == $file || ".." == $file ){
             continue;
         }
-        if( false !== @ereg( $pattern, "{$root}/{$file}" )) {
+//		Note: ereg() is depreciated in php 5.3
+//      if( false !== @ereg( $pattern, "{$root}/{$file}" )) { 
+        if( false !== @preg_match( '/'.$pattern.'/', "{$root}/{$file}" )) {
             $result[] = "{$root}/{$file}";
         }
         if( false !== $recursive && is_dir( "{$root}/{$file}" )) {
@@ -49,7 +51,9 @@ function m_find_in_dir_i__( $root, $pattern, $recursive, &$result ) {
         if( "." == $file || ".." == $file ){
             continue;
         }
-        if( false !== @eregi( $pattern, "{$root}/{$file}" )) {
+//		Note: ergi() is depreciated in php 5.3
+//      if( false !== @eregi( $pattern, "{$root}/{$file}" )) { 
+        if( false !== @preg_match( '/'.$pattern.'/i', "{$root}/{$file}" )) {
             $result[] = "{$root}/{$file}";
         }
         if( false !== $recursive && is_dir( "{$root}/{$file}" )) {

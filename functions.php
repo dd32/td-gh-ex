@@ -1,5 +1,5 @@
 <?php
-$bfa_ata_version = "3.7.3";
+$bfa_ata_version = "3.7.5";
 
 // Load translation file above
 load_theme_textdomain('atahualpa');
@@ -875,23 +875,31 @@ $homeURL = esc_url( home_url() );
 // Since 3.6: Include Javascripts here and with wp_enqueue instead of header.php
 $isIE6 = (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE 6.') !== FALSE);
  
-if ( !is_admin() ) { 
+// Since 3.7.4: Enqueue with add_action
+function ata_enqueue_scripts() {
+	global $isIE6, $templateURI, $bfa_ata;
 	
-	wp_enqueue_script('jquery');
+	if ( !is_admin() ) { 
+		
+		wp_enqueue_script('jquery');
 
-	if ($bfa_ata['pngfix_selectors'] != "" AND $isIE6 = TRUE) 
-	{
-		wp_register_script('ddroundies', $templateURI . '/js/DD_roundies.js', false, '0.0.2a' );
-		wp_enqueue_script('ddroundies');
-		add_action('wp_head', 'ddroundiesHead');
-	}
-	
-	if (strpos($bfa_ata['configure_header'],'%image')!== FALSE AND $bfa_ata['header_image_javascript'] != "0" 
-	AND $bfa_ata['crossslide_fade'] != "0") {
-		wp_register_script('crossslide', $templateURI . '/js/jquery.cross-slide.js', array('jquery'), '0.3.2' );
-		wp_enqueue_script('crossslide');
+		if ($bfa_ata['pngfix_selectors'] != "" AND $isIE6 = TRUE) 
+		{
+			wp_register_script('ddroundies', $templateURI . '/js/DD_roundies.js', false, '0.0.2a' );
+			wp_enqueue_script('ddroundies');
+			add_action('wp_head', 'ddroundiesHead');
+		}
+		
+		if (strpos($bfa_ata['configure_header'],'%image')!== FALSE AND $bfa_ata['header_image_javascript'] != "0" 
+		AND $bfa_ata['crossslide_fade'] != "0") {
+			wp_register_script('crossslide', $templateURI . '/js/jquery.cross-slide.js', array('jquery'), '0.3.2' );
+			wp_enqueue_script('crossslide');
+		}
 	}
 }
+add_action('wp_enqueue_scripts', 'ata_enqueue_scripts'); // For use on the Front end (ie. Theme)
+
+
 
 // Since 3.6.1: Add ddroundies script in head this way:
 function ddroundiesHead() {
@@ -1032,5 +1040,16 @@ function bfa_parse_widget_areas_callback($matches) {
 	return $widget_area;
 }
 
+function is_pagetemplate_active($pagetemplate = '') {
+
+	global $wpdb;
+	$sql = "select meta_key from $wpdb->postmeta where meta_key like '_wp_page_template' and meta_value like '" . $pagetemplate . "'";
+	$result = $wpdb->query($sql);
+	if ($result) {
+		return 1;
+	} else {
+		return 0;
+	}
+}
 
 ?>

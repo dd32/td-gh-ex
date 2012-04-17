@@ -92,9 +92,7 @@ list($bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2, $bfa_ata['
 
 <!-- Footer -->
 <td id="footer" colspan="<?php echo $cols; ?>">
-    <p>
     <?php echo bfa_footer(); ?>
-    </p>
     <?php if ($bfa_ata['footer_show_queries'] == "Yes - visible") { ?>
     <p>
     <?php echo $wpdb->num_queries; ?><?php _e(' queries. ','atahualpa'); ?><?php timer_stop(1); ?><?php _e(' seconds.','atahualpa'); ?>

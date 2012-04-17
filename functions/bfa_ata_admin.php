@@ -364,7 +364,9 @@ if ($value['type'] == "text") {
 	if ( isset($value['size'])) 
 		echo "size=" . $value['size'] . ($value['size'] > 20 ? ' style="width: 95%;"' : ' '); 
 	
-	echo ( eregi("color", $value['id']) ? 'class="color" ' : '' ) . 
+//	Note: eregi() is depreciated in php 5.3
+//	echo ( eregi("color", $value['id']) ? 'class="color" ' : '' ) . 
+	echo ( preg_match("/"."color"."/i", $value['id']) ? 'class="color" ' : '' ) . 
 	'name="' . $value['id'] . '" id="' . $value['id'] . '" type="' . $value['type'] . '" value="';
 	 
 	if ( isset($bfa_ata[ $value['id'] ]) ) 

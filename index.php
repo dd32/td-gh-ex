@@ -29,6 +29,7 @@ if (have_posts()) : $bfa_ata['postcount'] = 0; /* Postcount needed for option "X
 		<?php bfa_post_byline('<div class="post-byline">','</div>'); ?>
 		<?php bfa_post_bodycopy('<div class="post-bodycopy clearfix">','</div>'); ?>
 		<?php bfa_post_pagination('<p class="post-pagination"><strong>'.__('Pages:','atahualpa').'</strong>','</p>'); ?>
+		<?php bfa_archives_page('<div class="archives-page">','</div>'); // Archives Pages. Displayed on a specific static page, if configured at ATO -> Archives Pages: ?>
 		<?php bfa_post_footer('<div class="post-footer">','</div>'); ?>
 		</div><!-- / Post -->	
 						
@@ -40,7 +41,6 @@ if (have_posts()) : $bfa_ata['postcount'] = 0; /* Postcount needed for option "X
 	<?php bfa_next_previous_post_links('Middle'); // Displayed on SINGLE post pages if activated at ATO -> Next/Previous Navigation: ?>
 	<?php bfa_get_comments(); // Load Comments template (on single post pages, and static pages, if set on options page): ?>
 	<?php bfa_next_previous_post_links('Bottom'); // Displayed on SINGLE post pages if activated at ATO -> Next/Previous Navigation: ?>
-	<?php bfa_archives_page('<div class="archives-page">','</div>'); // Archives Pages. Displayed on a specific static page, if configured at ATO -> Archives Pages: ?>
 	<?php bfa_next_previous_page_links('Bottom'); // Displayed on MULTI post pages if activated at ATO -> Next/Previous Navigation: ?>
 
 <?php /* END of: If there are any posts */
