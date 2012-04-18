@@ -75,11 +75,11 @@ if (!function_exists('responsive_setup')):
 	    );
 
         // WordPress 3.4+
-		// if ( function_exists('get_custom_header')) {
+		if ( function_exists('get_custom_header')) {
 			
-        // add_theme_support('custom-background');
+        add_theme_support('custom-background');
 		
-		// } else {
+		} else {
 		
 		// Backward Compatibility
 		
@@ -90,7 +90,7 @@ if (!function_exists('responsive_setup')):
 		
         add_custom_background();
 		
-		// }
+		}
 
 		// WordPress 3.4+
 		if (function_exists('get_custom_header')) {
