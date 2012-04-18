@@ -63,5 +63,4 @@ good.
 - Modernizr - MIT/BSD Copyright (c) Faruk Ates, Paul Irish, Alex Sexton
 - Placeholder - MIT/BSD, and GPL (c) 2010, Daniel Stocks
 - Respond - MIT/BSD (c) 2012: Scott Jehl, Paul Irish, Nicholas Zakas
-- featured-image.png - MIT by John Bolacek - Copyright (c) 2011 John Polacek
 - FitVids - WTFPL license - http://sam.zoy.org/wtfpl/ (c) 2011, Chris Coyier and Dave Rupert

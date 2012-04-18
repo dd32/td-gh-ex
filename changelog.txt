@@ -7,6 +7,14 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(04/18/2012) - Maintenance Version 1.4.5
+[!] social icons px fix
+[+] WP 3.4 add_theme_support('custom-background') w/backward compatibilities (commented out for now)
+[+] WP 3.4 add_theme_support('custom-header') w/backward compatibilities
+[+] new breadcrumb lists
+[*] featured-image.png
+[*] screenshot.png
+
 (04/14/2012) - Maintenance Version 1.4.4
 [!] blog.php and blog-excerpt.php while frontpage fix
 [+] image dimensions for social icons
