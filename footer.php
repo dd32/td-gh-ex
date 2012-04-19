@@ -31,7 +31,7 @@
         
 &copy; Copyright <script type="text/javascript">document.write(new Date().getFullYear())</script>: <?php bloginfo('name'); ?>, All Rights Reserved. &nbsp;
 
-Theme by: <a href="http://d5creation.com" target="_blank"><img  width="30px" src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/d5socialia/images/d5logofooter.png" /> <strong>D5 Creation</strong></a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a> 
+Theme by: <a href="http://d5creation.com" target="_blank"><img  width="30px" src="<?php echo get_template_directory_uri(); ?>/images/d5logofooter.png" /> <strong>D5 Creation</strong></a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a> 
 
 				
 			</div>
