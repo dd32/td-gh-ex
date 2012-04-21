@@ -2,17 +2,18 @@
 list($bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2, $bfa_ata['h_blogtitle'], $bfa_ata['h_posttitle']) = bfa_get_options();
 get_header(); 
 extract($bfa_ata); 
+global $bfa_ata_postcount;
 ?>
 
 <?php /* If there are any posts: */
-if (have_posts()) : $bfa_ata['postcount'] = 0; /* Postcount needed for option "XX first posts full posts, rest excerpts" */ ?>
+if (have_posts()) : $bfa_ata_postcount = 0; /* Postcount needed for option "XX first posts full posts, rest excerpts" */ ?>
 
 	<?php // Deactivated since 3.6.5
 	# include 'bfa://content_above_loop'; 
 	// Uses the following static code instead: ?>
 	<?php bfa_next_previous_page_links('Top'); // For MULTI post pages if activated at ATO -> Next/Previous Navigation:  ?>
 
-	<?php while (have_posts()) : the_post(); $bfa_ata['postcount']++; ?>
+	<?php while (have_posts()) : the_post(); $bfa_ata_postcount++; ?>
 	
 		<?php // Deactivated since 3.6.5
 		#include 'bfa://content_inside_loop'; 

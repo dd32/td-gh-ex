@@ -1,5 +1,5 @@
 <?php
-$bfa_ata_version = "3.7.5";
+$bfa_ata_version = "3.7.6";
 
 // Load translation file above
 load_theme_textdomain('atahualpa');
@@ -1040,7 +1040,7 @@ function bfa_parse_widget_areas_callback($matches) {
 	return $widget_area;
 }
 
-function is_pagetemplate_active($pagetemplate = '') {
+function bfa_is_pagetemplate_active($pagetemplate = '') {
 
 	global $wpdb;
 	$sql = "select meta_key from $wpdb->postmeta where meta_key like '_wp_page_template' and meta_value like '" . $pagetemplate . "'";

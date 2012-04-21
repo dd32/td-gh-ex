@@ -37,10 +37,12 @@ LICENSE:
  <?php 
 
 list($bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2, $bfa_ata['h_blogtitle'], $bfa_ata['h_posttitle']) = bfa_get_options();
-global $bfa_pagetemplate_name, $bfa_pagetemplate_full_post_count;
+global $bfa_pagetemplate_name, $bfa_pagetemplate_full_post_count, $bfa_ata_postcount;
+
 get_header(); 
 extract($bfa_ata); 
 
+    $bfa_ata_postcount = 0;
 	$mccq_page = new WP_Query('page_id=' . $post->ID); /* save the page id */
 	$mccq_page->the_post();
 
@@ -178,7 +180,7 @@ extract($bfa_ata);
 <?php	query_posts($mccq_args); ?>
 
 <?php /* If there are any posts: */
-if (have_posts()) : $bfa_ata['postcount'] = 0; /* Postcount needed for option "XX first posts full posts, rest excerpts" */ ?>
+if (have_posts()) : $bfa_ata_postcount = 0; /* Postcount needed for option "XX first posts full posts, rest excerpts" */ ?>
 
 	<?php // Deactivated since 3.6.5
 	# include 'bfa://content_above_loop'; 
@@ -189,11 +191,11 @@ if (have_posts()) : $bfa_ata['postcount'] = 0; /* Postcount needed for option "X
     <table cellpadding="0" cellspacing="0" border="0">
     <?php $column_cnt = 1; ?>
     
-	<?php while (have_posts()) : the_post(); $bfa_ata['postcount']++; ?>
+	<?php while (have_posts()) : the_post(); $bfa_ata_postcount++; ?>
 	
   	<?php if ($column_cnt == 1) { echo "<tr>"; } 
 
-        if ($bfa_ata['postcount'] <= $posts_above_the_column) { ?>
+        if ($bfa_ata_postcount <= $posts_above_the_column) { ?>
 	   	     	<td id="mccq-header" colspan="<?php echo $number_of_columns;?>"> <?php 
 			} else { ?>
         		<td class="mccq_column<?php echo $column_cnt;?>" style="vertical-align: top"> <?php 
@@ -218,7 +220,7 @@ if (have_posts()) : $bfa_ata['postcount'] = 0; /* Postcount needed for option "X
 		</div><!-- / Post -->	
 						
         </td>
-        <?php if ($bfa_ata['postcount'] <= $posts_above_the_column) { ?>
+        <?php if ($bfa_ata_postcount <= $posts_above_the_column) { ?>
 	   	     	</tr> <?php
 	   	     	$column_cnt=0; 
 			} ?>

@@ -119,11 +119,12 @@ function bfa_post_byline($before = '<div class="post-byline">', $after = '</div>
 						
 function bfa_post_bodycopy($before = '<div class="post-bodycopy clearfix">', $after = '</div>') 
 {
-	global $bfa_ata, $post, $bfa_pagetemplate_name, $bfa_pagetemplate_full_post_count;
-	
+	global $bfa_ata, $post, $bfa_pagetemplate_name, $bfa_pagetemplate_full_post_count, $bfa_ata_postcount;
+
+	$do_full_post = 0;
 	echo $before; 
 	if ((is_home()     AND $bfa_ata['excerpts_home'] == "Full Posts") 
-	OR  (is_home()     AND !is_paged() AND $bfa_ata['postcount'] <= $bfa_ata['full_posts_homepage']) 
+	OR  (is_home()     AND !is_paged() AND $bfa_ata_postcount <= $bfa_ata['full_posts_homepage']) 
 	OR  (is_category() AND $bfa_ata['excerpts_category'] == "Full Posts") 
 	OR  (is_date()     AND $bfa_ata['excerpts_archive'] == "Full Posts") 
 	OR  (is_tag()      AND $bfa_ata['excerpts_tag'] == "Full Posts") 
@@ -133,8 +134,8 @@ function bfa_post_bodycopy($before = '<div class="post-bodycopy clearfix">', $af
 	OR   is_page() 
 	) { $do_full_post = 1; }
 	
-	if (is_pagetemplate_active($bfa_pagetemplate_name)) {
-		if ($bfa_ata['postcount'] <= $bfa_pagetemplate_full_post_count) 
+	if (bfa_is_pagetemplate_active($bfa_pagetemplate_name)) {
+		if ($bfa_ata_postcount <= $bfa_pagetemplate_full_post_count) 
 			{ $do_full_post = 1; }
 		else 
 			{ $do_full_post = 0; }
@@ -157,15 +158,17 @@ function bfa_post_bodycopy($before = '<div class="post-bodycopy clearfix">', $af
 						
 function bfa_post_pagination($before = '<p class="post-pagination"><strong>Pages:', $after = '</strong></p>') 
 {
-	global $bfa_ata;
+	global $bfa_ata, $bfa_ata_postcount;
 	
-	if ( (is_home() AND $bfa_ata['excerpts_home'] == "Full Posts") OR 
-	(is_category() AND $bfa_ata['excerpts_category'] == "Full Posts") OR 
-	(is_date() AND $bfa_ata['excerpts_archive'] == "Full Posts") OR 
-	(is_tag() AND $bfa_ata['excerpts_tag'] == "Full Posts") OR 
-	(is_search() AND $bfa_ata['excerpts_search'] == "Full Posts") OR 
-	(is_author() AND $bfa_ata['excerpts_author'] == "Full Posts") OR 
-	is_single() OR is_page() ) {
+	if ((is_home()     AND $bfa_ata['excerpts_home'] == "Full Posts") 
+	OR  (is_home()     AND !is_paged() AND $bfa_ata_postcount <= $bfa_ata['full_posts_homepage']) 
+	OR 	(is_category() AND $bfa_ata['excerpts_category'] == "Full Posts") 
+	OR 	(is_date()     AND $bfa_ata['excerpts_archive'] == "Full Posts") 
+	OR 	(is_tag()      AND $bfa_ata['excerpts_tag'] == "Full Posts") 
+	OR 	(is_search()   AND $bfa_ata['excerpts_search'] == "Full Posts") 
+	OR 	(is_author()   AND $bfa_ata['excerpts_author'] == "Full Posts") 
+	OR 	is_single() 
+	OR is_page() ) {
 		wp_link_pages('before='.$before.'&after='.$after.'&next_or_number=number'); 
 	} 
 }

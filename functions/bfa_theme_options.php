@@ -3010,7 +3010,12 @@ text-align: center;\ncolor: #777777;\nfont-size: 95%;",
 			<code>.newclass {<br />color: #123456;<br />border: solid 1px #000000;<br />
 			font-family: arial, \"comic sans ms\", sans-serif;<br />background: url(". $css_img_path ."images/myimage.gif);
             <br />}</code>
-			<br /><br />Since 3.6.5 <span style='color:red'>PHP code cannot be used anymore</span> in HTML/CSS Inserts."),
+			<br /><br /><strong>Example 2</strong><br /><code>h1 { font-size: 34px; line-height: 1.2; margin: 0.3em 0 10px; }<br />
+h2 { font-size: 28px; line-height: 1.3; margin: 1em 0 .2em; }<br />
+h3 { font-size: 24px; line-height: 1.3; margin: 1em 0 .2em; }<br />
+h4 { font-size: 19px; margin: 1.33em 0 .2em; }<br />
+h5 { font-size: 1.3em; margin: 1.67em 0; font-weight: bold; }<br />
+h6 { font-size: 1.15em; margin: 1.67em 0; font-weight: bold; }<br /></code><br />Since 3.6.5 <span style='color:red'>PHP code cannot be used anymore</span> in HTML/CSS Inserts."),
 
 
 // New category: Archives page
