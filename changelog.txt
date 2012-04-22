@@ -7,6 +7,10 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(04/21/2012) - Bug Fix
+[!] Breadcrumb List chevron was not displaying
+    correctly on Windows based systems
+
 (04/18/2012) - Maintenance Version 1.4.5/6
 [!] social icons px fix
 [+] WP 3.4 add_theme_support('custom-background') w/backward compatibilities

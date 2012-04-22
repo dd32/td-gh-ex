@@ -271,7 +271,7 @@ add_action( 'widgets_init', 'responsive_remove_recent_comments_style' );
 function responsive_breadcrumb_lists() {
  
   $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
-  $chevron = '&rang;'; // chevron between crumbs
+  $chevron = '&#8250;'; // chevron between crumbs
   $home = __('Home','responsive'); // text for the 'Home' link
   $showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
   $before = '<span class="current">'; // tag before the current crumb
