@@ -2,6 +2,14 @@ iFeature Changelog
 
 ****************************
 
+Version 4.1.5 (04-24-12)
+-Added missing $content_width global to theme setup function.
+-Added missing tags hook to archive template.
+-Updated pagination function with missing translation functions.
+-Updated core.pot.
+-Added Pinterest social icon option.
+-Removed several unused images.
+
 Version 4.1.4 (04-17-12)
 -CSS fix for menu in IE.
 -Removed ereg_replace from Google Font code for PHP 5.3 compatibility. 
