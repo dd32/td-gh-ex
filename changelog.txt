@@ -7,7 +7,7 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
-(04/24/2012) - Bug Fixes/Maintenance
+(04/24/2012) - Bug Fixes/Maintenance Version 1.4.8/9
 [!] dropdown menu clear background
 [!] no breadcrumb chevron on page levels
 [+] Class for breadcrumb lists CSS
@@ -16,6 +16,7 @@ Changelog Legend:
 [*] default logo
 [*] featured image 
 [*] localization
+[*] reset input class CSS
 
 
 (04/21/2012) - Bug Fix

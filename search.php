@@ -43,7 +43,7 @@
         <?php endif; ?> 
           
             <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                <h1><?php the_title(); ?></h1>
+                <h1><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s', 'responsive'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h1>
 
                 <div class="post-meta">
                 <?php 
