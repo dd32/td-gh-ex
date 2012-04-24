@@ -268,25 +268,20 @@ add_action( 'widgets_init', 'responsive_remove_recent_comments_style' );
  *
  * bbPress compatibility patch by Dan Smith
  */
-function responsive_breadcrumb_lists() {
- 
-  $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
-  $chevron = '&#8250;'; // chevron between crumbs
-  $home = __('Home','responsive'); // text for the 'Home' link
-  $showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
-  $before = '<span class="current">'; // tag before the current crumb
+function responsive_breadcrumb_lists () {
+  
+  $chevron = '<span class="chevron">&#8250;</span>';
+  $home = 'Home'; // text for the 'Home' link
+  $before = '<span class="breadcrumb-current">'; // tag before the current crumb
   $after = '</span>'; // tag after the current crumb
  
-  global $post;
-  $homeLink = home_url();
+  if ( !is_home() && !is_front_page() || is_paged() ) {
  
-  if (is_home() || is_front_page()) {
+    echo '<div class="breadcrumb-list">';
  
-    if ($showOnHome == 1) echo '<div class="breadcrumb-list"><a href="' . $homeLink . '">' . $home . '</a></div>';
- 
-  } else {
- 
-    echo '<div class="breadcrumb-list"><a href="' . $homeLink . '">' . $home . '</a> ' . $chevron . ' ';
+    global $post;
+    $homeLink = home_url();
+    echo '<a href="' . $homeLink . '">' . $home . '</a> ' . $chevron . ' ';
  
     if ( is_category() ) {
       global $wp_query;
@@ -295,10 +290,7 @@ function responsive_breadcrumb_lists() {
       $thisCat = get_category($thisCat);
       $parentCat = get_category($thisCat->parent);
       if ($thisCat->parent != 0) echo(get_category_parents($parentCat, TRUE, ' ' . $chevron . ' '));
-      echo $before . __('Archive by category "','responsive') . single_cat_title('', false) . '"' . $after;
- 
-    } elseif ( is_search() ) {
-      echo $before . __('Search results for "','responsive') . get_search_query() . '"' . $after;
+      echo $before . __('Archive for ','responsive') . single_cat_title('', false) . $after;
  
     } elseif ( is_day() ) {
       echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $chevron . ' ';
@@ -316,14 +308,12 @@ function responsive_breadcrumb_lists() {
       if ( get_post_type() != 'post' ) {
         $post_type = get_post_type_object(get_post_type());
         $slug = $post_type->rewrite;
-        echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
-        if ($showCurrent == 1) echo ' ' . $chevron . ' ' . $before . get_the_title() . $after;
+        echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a> ' . $chevron . ' ';
+        echo $before . get_the_title() . $after;
       } else {
         $cat = get_the_category(); $cat = $cat[0];
-        $cats = get_category_parents($cat, TRUE, ' ' . $chevron . ' ');
-        if ($showCurrent == 0) $cats = preg_replace("/^(.+)\s$chevron\s$/", "$1", $cats);
-        echo $cats;
-        if ($showCurrent == 1) echo $before . get_the_title() . $after;
+        echo get_category_parents($cat, TRUE, ' ' . $chevron . ' ');
+        echo $before . get_the_title() . $after;
       }
  
     } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
@@ -334,11 +324,11 @@ function responsive_breadcrumb_lists() {
       $parent = get_post($post->post_parent);
       $cat = get_the_category($parent->ID); $cat = $cat[0];
       echo get_category_parents($cat, TRUE, ' ' . $chevron . ' ');
-      echo '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a>';
-      if ($showCurrent == 1) echo ' ' . $chevron . ' ' . $before . get_the_title() . $after;
+      echo '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a> ' . $chevron . ' ';
+      echo $before . get_the_title() . $after;
  
     } elseif ( is_page() && !$post->post_parent ) {
-      if ($showCurrent == 1) echo $before . get_the_title() . $after;
+      echo $before . get_the_title() . $after;
  
     } elseif ( is_page() && $post->post_parent ) {
       $parent_id  = $post->post_parent;
@@ -349,19 +339,22 @@ function responsive_breadcrumb_lists() {
         $parent_id  = $page->post_parent;
       }
       $breadcrumbs = array_reverse($breadcrumbs);
-      foreach ($breadcrumbs as $crumb) echo $crumb;
-      if ($showCurrent == 1) echo ' ' . $chevron . ' ' . $before . get_the_title() . $after;
+      foreach ($breadcrumbs as $crumb) echo $crumb . ' ' . $chevron . ' ';
+      echo $before . get_the_title() . $after;
+ 
+    } elseif ( is_search() ) {
+      echo $before . __('Search results for ','responsive') . get_search_query() . $after;
  
     } elseif ( is_tag() ) {
-      echo $before . __('Posts tagged "','responsive') . single_tag_title('', false) . '"' . $after;
+      echo $before . __('Posts tagged ','responsive') . single_tag_title('', false) . $after;
  
     } elseif ( is_author() ) {
        global $author;
       $userdata = get_userdata($author);
-      echo $before . __('Articles posted by','responsive') . $userdata->display_name . $after;
+      echo $before . __('All posts by ','responsive') . $userdata->display_name . $after;
  
     } elseif ( is_404() ) {
-      echo $before . __('Error 404','responsive') . $after;
+      echo $before . __('Error 404 ','responsive') . $after;
     }
  
     if ( get_query_var('paged') ) {
@@ -374,6 +367,7 @@ function responsive_breadcrumb_lists() {
  
   }
 } 
+
 
     /**
      * A safe way of adding javascripts to a WordPress generated page.

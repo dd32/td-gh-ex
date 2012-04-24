@@ -3,7 +3,7 @@ Theme Name: Responsive
 Theme URI: http://themeid.com/responsive-theme 
 Description: Responsive WordPress Theme that features 9 page Templates such as Blog, Blog Summary and Template based layout designs: sidebar/content, sidebar/content half, content/sidebar and content/sidebar half. There is also full width page, sitemap Template as well as landing page for your PPC or any other purposes. Responsive also supports 9 widget areas and best of all this Theme is crafted with fluid proportion-based grid system of our own to adapt the design to the viewing environment. There are also Theme Options to control the content, webmaster tools, logo managament, social icons and 4 navigation menus. Everything is backed by our FREE dedicated support forums @ http://themeid.com/forum
 
-Version: 1.4.7
+Version: 1.4.8
 Author: ThemeID 
 Author URI: http://themeid.com
 Tags: white, black, gray, light, custom-menu, custom-header, custom-background, one-column, two-columns, left-sidebar, right-sidebar, flexible-width, theme-options, threaded-comments, full-width-template, sticky-post, translation-ready
@@ -339,7 +339,7 @@ input[type='text'], input[type='password'] {
 
 /* =Buttons
 -------------------------------------------------------------- */
-button, a.button, input[type='button'], input[type='submit'] {
+button, a.button, input[type='button'], input[type='submit'], input[type='reset'] {
 	-moz-border-radius:2px;
 	-webkit-border-radius:2px;
 	background-color:#eaeaea;
@@ -362,9 +362,10 @@ button, a.button, input[type='button'], input[type='submit'] {
 	text-decoration:none;
 	text-shadow:0 1px 0 #fff;
 	vertical-align:middle;
+	white-space:nowrap;
 }
 
-button:hover, a.button:hover, input[type='button']:hover, input[type='submit']:hover {
+button:hover, a.button:hover, input[type='button']:hover, input[type='submit']:hover, input[type='reset']:hover {
 	background-color:#ffffff;
 	background-image:-webkit-gradient(linear, left top, left bottom, from(#eaeaea), to(#ffffff));
 	background-image:-webkit-linear-gradient(top, #eaeaea, #ffffff);
@@ -1255,12 +1256,23 @@ form div {
 	text-align:center;
 }
 
+/* =bbPress
+    bbPress has its own breadcrumb lists
+-------------------------------------------------------------- */
+.bbPress .breadcrumb-list {
+	display:none;
+}
+
 /* =Symbols
 -------------------------------------------------------------- */
 .ellipsis {
 	color:#aaa;
 	font-size:18px;
 	margin-left:5px;
+}
+
+.form-allowed-tags {
+	font-size:10px;
 }
 
 /* =Widgets
@@ -1567,16 +1579,6 @@ form div {
 }
 
 .menu > li:first-child > a, .menu li + li + li li:first-child > a {
-}
-
-.menu ul.children a, .menu .current_page_ancestor, .menu .current_page_ancestor ul a {
-	background:none;
-	background-image:none;
-	filter:none;
-}
-
-ul.sub-menu .current_page_item a {
-	background:transparent !important;
 }
 
 /* =Primary Main Menu IE Fixes (Modernizr)

@@ -7,6 +7,17 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(04/24/2012) - Bug Fixes/Maintenance
+[!] dropdown menu clear background
+[!] no breadcrumb chevron on page levels
+[+] Class for breadcrumb lists CSS
+[+] form-allowed-tags element
+[*] search.php post-meta rearrangement 
+[*] default logo
+[*] featured image 
+[*] localization
+
+
 (04/21/2012) - Bug Fix
 [!] Breadcrumb List chevron was not displaying
     correctly on Windows based systems
