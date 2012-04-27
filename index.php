@@ -45,7 +45,7 @@
 
 <?php endwhile; ?>
 <?php else : ?>
-<h2 class="eror"><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'twentyeleven' ); ?></h2>
+<h2 class="eror"><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'artblogazine' ); ?></h2>
 						
 <?php endif; ?>
 </section>
