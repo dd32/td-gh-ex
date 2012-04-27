@@ -8,17 +8,15 @@
 <section id="container">
 <section class="header">
 <div class="title-blog">
-<h1 class="page-title">
-						<?php if ( is_day() ) : ?>
-							<?php printf( __( 'Daily Archives: %s', 'artblogazine' ), '<span>' . get_the_date() . '</span>' ); ?>
-						<?php elseif ( is_month() ) : ?>
-							<?php printf( __( 'Monthly Archives: %s', 'artblogazine' ), '<span>' . get_the_date( 'F Y' ) . '</span>' ); ?>
-						<?php elseif ( is_year() ) : ?>
-							<?php printf( __( 'Yearly Archives: %s', 'artblogazine' ), '<span>' . get_the_date( 'Y' ) . '</span>' ); ?>
-						<?php else : ?>
-							<?php _e( 'Blog Archives', 'artblogazine' ); ?>
-						<?php endif; ?>
-					</h1>
+<h1 class="page-title"><?php
+						printf( __( 'Category: %s', 'artblogazine' ), '<span>' . single_cat_title( '', false ) . '</span>' );
+					?></h1>
+
+					<?php
+						$category_description = category_description();
+						if ( ! empty( $category_description ) )
+							echo apply_filters( 'category_archive_meta', '<div class="category-archive-meta">' . $category_description . '</div>' );
+					?>
 
 </div>
 <div class="clearfix"></div>

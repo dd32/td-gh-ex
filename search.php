@@ -8,7 +8,7 @@
 <section id="container">
 <section class="header">
 <div class="title-blog">
-<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1><p class="description"><?php bloginfo('description'); ?></p>
+<h1><?php printf( __( 'Search Results for: %s', 'artblogazine' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 </div>
 <div class="clearfix"></div>
 </section>
@@ -29,7 +29,7 @@
 
 <?php endwhile; ?>
 <?php else : ?>
-<h2 class="eror"><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'twentyeleven' ); ?></h2>
+<h2 class="eror"><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'artblogazine' ); ?></h2>
 						
 <?php endif; ?>
 </section>
@@ -42,6 +42,5 @@
 <?php endif; ?>
 
                        </section>
-
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

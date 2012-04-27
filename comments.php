@@ -35,9 +35,7 @@ $oddcomment = 'alt';
 <?php if ( get_option('comment_registration') && !$user_ID ) : ?>
 <p><?php _e('You must','artblogazine'); ?> <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php the_permalink(); ?>"><?php _e('logged in','artblogazine'); ?></a></p>
 <?php else : ?>
-<div class="form-comment">
  <?php comment_form(); ?>
-</div>
 </div>
 <?php endif; ?>  
 <?php endif; ?> 

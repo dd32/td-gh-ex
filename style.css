@@ -4,7 +4,7 @@ Description: Simple and minimalist theme with HTML5 markup. You can create uniqu
 Theme URI:
 Author: Hendro Prayitno
 Author URI: http://amdhas.tk
-Version: 0.0.2
+Version: 0.0.3
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, one-column, flexible-width, threaded-comments, custom-menu, translation-ready
@@ -180,10 +180,9 @@ margin-right:auto;
 padding-left:10px;}
 /* =================================================
  Need Style for widget calendar 
- Edit your self....
 ================================================= */
 #calendar_wrap {background: #f6f6f6;
-color:black;padding:10px;border-radius:10px;}
+color:black;padding:10px;border-radius:5px;}
 #wp-calendar{width:100%;
 clear:both;}
 #wp-calendar a {}
@@ -379,7 +378,7 @@ margin-left:auto;
 margin-right:auto;
 padding-top:15px;
 }
-.form-comment{width:62%;
+#respond{width:62%;
 margin-left:auto;
 margin-right:auto;}
 #respond input[type=text] {float: left;margin-right:10px;}
@@ -603,7 +602,7 @@ font-size:1.1em;
 text-transform:uppercase;font-family: 'BodoniXT';}
 .title a:hover {color:#900;}
 .published{font-size:10px;}
-
+h1.page-title{font-size:3em;font-style:italic;}
 /* =================================================
  Clear your grid element
 ================================================= */
@@ -630,11 +629,10 @@ width:31.25%}
 .footer{
 text-align:right;
 font-size:12px;
-background:#234;
 color:#fff;
 padding:18px 20px 15px 8px;margin:0;
 }
-.footer a{color:red;}
+.footer a{color:#fff}
 .sidebar ul{margin-bottom:10px;}
 .sidebar ul li{
 padding-left:10px;
@@ -645,9 +643,9 @@ font-size:1em;
 border-bottom-style:solid;
 border-bottom-width:1px;
 border-bottom-color:#c0c0c0;}
-.sidebar ul li:hover{background:;color:#fff}
+.sidebar ul li:hover{color:#fff}
 .sidebar ul li p{font-size:0.8em;}
-.sidebar ul li a{color:#999}
+.sidebar ul li a{font-size:0.8em;color:#999}
 .sidebar ul li a:hover{color:#f4f4f4;
 text-decoration:none;
 }
@@ -660,8 +658,37 @@ font-size:130%;
 text-transform:uppercase;padding:8px 0 8px 10px;
 }
 .below{padding-top:15px;
-
+padding-bottom:15px;
         background: #234;
+}
+.social{
+        padding-top:10px;
+        background: #234;
+        border-top:solid 1px #c0c0c0;
+}
+.icons {
+	list-style:none;
+	line-height:normal;
+	margin:12px 0 12px 15px;
+	text-align:left;
+
+}
+
+.twitter,
+.youtube,  
+.facebook, 
+.linkedin,
+.rss,
+.google,
+.stumble,
+.blogger,
+.deviantart,
+.delicious {
+	display: inline;
+	
+	margin: 2px;
+	padding-left: 3px;
+	
 }
 /* =================================================
  CSS media query on 800px

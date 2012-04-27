@@ -15,20 +15,16 @@
 </div>
 <div class="clearfix"></div>
 </div>
-<div class="navigation">
-<p class="alignleft post-info-single"><?php artblogazine_posted_on(); ?></p> 
-
- <p class="alignright font-small"><?php _e('Categories :', 'artblogazine'); ?><?php the_category(' &bull; '); ?></p>
-
-</div>
-<section class="sumary">
 <?php while ( have_posts() ) : the_post(); ?>
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
+<div class="navigation">
+<p class="alignleft post-info-single"><?php artblogazine_posted_on(); ?></p> 
+ <p class="alignright font-small"><?php _e('Categories :', 'artblogazine'); ?><?php the_category(' &bull; '); ?></p>
+</div>
+<section class="sumary">
 	<div class="content-post">
 <?php the_content(); ?>	
 <?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'artblogazine' ) . '</span>', 'after' => '</div>' ) ); ?>
-</div>
 </div>
 </section>
 <aside id="authorarea">
@@ -39,17 +35,16 @@
 			
 		</div>
 	</aside>
-
 <div class="clearfix"></div>
+</div>
 <?php endwhile; ?>
 
 <div id="nav-below" class="navigation">
 <div class="aligncenter tagged">
-<?php
-$tags_list = the_tags( '', ',' );
-if ( $tags_list ): ?>
+<?php _e('Tagged:','artblogazine'); ?>
+<?php $tags_list = the_tags( '', ',' ); if ( $tags_list ): ?>
 <span class="tag-links">
-<?php printf( __( '<span class="%1$s">Tagged :</span> %2$s', 'artblogazine' ), '', $tags_list ); ?>
+<?php printf( __( '<span class="%1$s"></span> %2$s', 'artblogazine' ), '', $tags_list ); ?>
 </span>
 <?php endif; ?>
 </div>

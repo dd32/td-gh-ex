@@ -19,27 +19,24 @@ blogazine style: Blogazine no aside style
 </div>
 <div class="clearfix"></div>
 </section>
+<?php while ( have_posts() ) : the_post(); ?>
+<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 <div class="navigation">
 <p class="alignleft post-info-single"><?php artblogazine_posted_on(); ?></p> 
 <p class="alignright font-small"><?php _e('Categories :', 'artblogazine'); ?><?php the_category(' &bull; '); ?></p>
 </div>
-<?php while ( have_posts() ) : the_post(); ?>
-<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-	<?php the_content(); ?>	
+<?php the_content(); ?>	
 <div class="clearfix"></div>
 </div>
 <?php endwhile; ?>
 <div id="nav-below" class="navigation">
 <div class="aligncenter tagged">
-<?php
-					$tags_list = the_tags( '', ',' );
-					if ( $tags_list ):
-				?>
-					<span class="tag-links">
-						<?php printf( __( '<span class="%1$s">Tagged :</span> %2$s', 'artblogazine' ), '', $tags_list ); ?>
-					</span>
-				<?php endif; ?>
+<?php _e('Tagged:','artblogazine'); ?>
+<?php $tags_list = the_tags( '', ',' ); if ( $tags_list ): ?>
+<span class="tag-links">
+<?php printf( __( '<span class="%1$s"></span> %2$s', 'artblogazine' ), '', $tags_list ); ?>
+</span>
+<?php endif; ?>
 </div>
 <div class="meta-prev">
 <?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'artblogazine' ) . '</span> %title' ); ?>
