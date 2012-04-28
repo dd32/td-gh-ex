@@ -1,14 +1,14 @@
 <?php
 function artblogazine_setup(){
 load_theme_textdomain('artblogazine', get_template_directory() . '/translation');
-require( get_template_directory() . '/custom/costum-css.php' );
-require( get_template_directory() . '/custom/costum-template.php' );
-require( get_template_directory() . '/options/theme-options.php' );
 add_theme_support( 'post-thumbnails' ); 
 add_theme_support( 'automatic-feed-links' );
 add_editor_style(); 
 add_custom_background();
 add_custom_image_header('', 'artblogazine_admin_header_style');}
+require( get_template_directory() . '/custom/costum-css.php' );
+require( get_template_directory() . '/custom/costum-template.php' );
+require( get_template_directory() . '/options/theme-options.php' );
 add_action('admin_init', 'artblogazine_theme_options_init');
 add_action('admin_menu', 'artblogazine_theme_options_add_page');
 add_action('wp_head', 'artblogazine_google_verification');

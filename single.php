@@ -18,13 +18,29 @@
 <?php while ( have_posts() ) : the_post(); ?>
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 <div class="navigation">
-<p class="alignleft post-info-single"><?php artblogazine_posted_on(); ?></p> 
- <p class="alignright font-small"><?php _e('Categories :', 'artblogazine'); ?><?php the_category(' &bull; '); ?></p>
+<div class="meta-prev">
+<?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'artblogazine' ) . '</span>' ); ?>
+</div>
+<div class="meta-next">
+<?php next_post_link( '%link', '<span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'artblogazine' ) . '</span>' ); ?>
+</div>
 </div>
 <section class="sumary">
 	<div class="content-post">
-<?php the_content(); ?>	
+<?php the_content(); ?>
+<div class="clearfix"></div>
+<div class="alignleft"><?php previous_image_link() ?></div>
+<div class="alignright"><?php next_image_link() ?></div>
+<div class="clearfix"></div>	
+<?php artblogazine_posted_on(); ?> 
 <?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'artblogazine' ) . '</span>', 'after' => '</div>' ) ); ?>
+<div class="clearfix"></div>
+<div class="tagged">
+<span class="tag-links">
+<?php _e('Tagged :', 'artblogazine'); ?><?php the_tags(' &bull; '); ?></span>
+</div>
+<div class="clearfix"></div>
+<p class="tagged"><?php _e('Categories :', 'artblogazine'); ?><?php the_category(' &bull; '); ?></p>
 </div>
 </section>
 <aside id="authorarea">
@@ -40,14 +56,6 @@
 <?php endwhile; ?>
 
 <div id="nav-below" class="navigation">
-<div class="aligncenter tagged">
-<?php _e('Tagged:','artblogazine'); ?>
-<?php $tags_list = the_tags( '', ',' ); if ( $tags_list ): ?>
-<span class="tag-links">
-<?php printf( __( '<span class="%1$s"></span> %2$s', 'artblogazine' ), '', $tags_list ); ?>
-</span>
-<?php endif; ?>
-</div>
 <div class="meta-prev">
 <?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'artblogazine' ) . '</span> %title' ); ?>
 </div>

@@ -5,7 +5,14 @@
 -----------------------------------------------
 - GNU General Public License v2.0
 - http://www.gnu.org/licenses/gpl-2.0.html
-- Typeface Manfred Klein License 2001-2008
+
+Font chunkfive:
+- SIL Open Font License 1.1-update2 
+//location= wp-content/themes/artblogazine/font/SIL Open Font License 1.1-update2.txt
+
+Icon set:
+- GNU GENERAL PUBLIC LICENSE Version 2, June 1991
+//location= wp-content/themes/artblogazine/images/license.txt
 -----------------------------------------------
     =by Hendro prayitno, http://amdhas.tk/
 -----------------------------------------------

@@ -4,7 +4,7 @@ Description: Simple and minimalist theme with HTML5 markup. You can create uniqu
 Theme URI:
 Author: Hendro Prayitno
 Author URI: http://amdhas.tk
-Version: 0.0.4
+Version: 0.0.5
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, one-column, flexible-width, threaded-comments, custom-menu, translation-ready
@@ -60,11 +60,11 @@ table
  CSS font face
 ================================================= */
 @font-face {
-	font-family: 'BodoniXT';
-	src: url('font/BodoniXT-webfont.eot');
-	src: local('☺'), url('font/BodoniXT-webfont.woff') format('woff'), 
-        url('font/BodoniXT-webfont.ttf') format('truetype'), 
-        url('font/BodoniXT-webfont.svg#webfontB9LMdHvb') format('svg');
+	font-family: 'Chunkfive';
+	src: url('font/Chunkfive.eot');
+	src: local('☺'), url('font/Chunkfive.woff') format('woff'), 
+        url('font/Chunkfive.ttf') format('truetype'), 
+        url('font/Chunkfive.svg#webfontB9LMdHvb') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -176,8 +176,8 @@ margin-right:auto;
 .sticky{ color:red;}
 .form-allowed-tags{font-size:70%;}
 .tag-links{margin-bottom:10px;font-size:90%;}
-.tagged{height:30px;overflow:auto;width:60%;margin:0 auto;
-padding-left:10px;}
+.tagged{overflow:auto;
+padding:10px;}
 /* =================================================
  Need Style for widget calendar 
 ================================================= */
@@ -216,7 +216,7 @@ border-bottom: 1px solid #ccc;
 /* =================================================
  Navigation top menu or primary menu
 ================================================= */
-#navmenu{font-family: 'BodoniXT';
+#navmenu{font-family: 'Chunkfive';
 	background:#FFBE5D;
 	
 	-webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px;
@@ -241,7 +241,7 @@ border-bottom: 1px solid #ccc;
 #navmenu a {
         border-right:1px solid #999;
         text-transform:uppercase;
-	color: #222;
+	color: #777;
 	display: block;
 	line-height: 3.333em;
 	padding: 0 1.4125em;
@@ -267,7 +267,7 @@ border-bottom: 1px solid #ccc;
 #navmenu ul ul a {border-right:none;
 	background: #f9f9f9;
 	border-bottom: 1px dotted #ddd;
-	color: #444;
+	color: #999;
 	font-size: 13px;
 	font-weight: normal;
 	height: auto;
@@ -549,21 +549,17 @@ border-bottom: 1px solid #ddd;
 .title-blog h1{
 padding-left:15px;
 font-size:2.5em;
-font-weight: 300;
-font-family: 'BodoniXT';
+font-family: 'Chunkfive';
 text-transform:uppercase;
-font-weight:bold;
-color:#222;
+color:#888;
 }
 .title-blog-single h2{
 padding-right:15px;
 margin:0;
 font-size:1em;
-font-weight: 300;
-font-family: 'BodoniXT';
+font-family: 'Chunkfive';
 text-transform:uppercase;
-font-weight:bold;
-color:#222;
+color:#999;
 float:right;
 display:inline;
 }
@@ -577,12 +573,11 @@ color:;}
 .eror h1{color:#000;font-size:36px;}
 .eror h2{color:#000;font-size:21px;}
 .title-post a{
-color:#444;
-font-family: 'BodoniXT';
+color:#999;
+font-family: 'Chunkfive';
 margin:0;
 font-size:1.3em;
 text-transform:uppercase;
-font-weight:bold;
 float:left;
 display:inline;
 padding-left:15px;}
@@ -594,12 +589,12 @@ height:30px;
 overflow:auto;
 width:60.25%
 }
-.post-info{font-size:11px;margin:0;display:inline-block;}
-.post-info-single{font-size:11px;margin:0;display:inline-block;
+.post-info{font-size:11px;margin:0;}
+.post-info-single{font-size:11px;margin:0;
 padding-left:15px;}
-.title a{color:#444;
+.title a{color:#999;
 font-size:1.1em;
-text-transform:uppercase;font-family: 'BodoniXT';}
+text-transform:uppercase;font-family: 'Chunkfive';}
 .title a:hover {color:#900;}
 .published{font-size:10px;}
 h1.page-title{font-size:3em;font-style:italic;}
@@ -651,7 +646,7 @@ text-decoration:none;
 }
 .sidebar ul:last-child{border-style:none}
 .sidebar h3{
-font-family: 'BodoniXT';
+font-family: 'Chunkfive';
 margin-top:15px;
 color:#ffbe5d;
 font-size:130%;
@@ -685,7 +680,7 @@ padding-bottom:15px;
 .deviantart,
 .delicious {
 	display: inline;
-	
+	float:left;
 	margin: 2px;
 	padding-left: 3px;
 	

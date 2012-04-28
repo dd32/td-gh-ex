@@ -7,7 +7,5 @@
 <h2><?php _e('Apologies, but we were unable to find what you were looking for', 'artblogazine'); ?></h2>
 </hgroup>
 <div class="clear"></div>
-<?php get_sidebar('icon'); ?>
-<div class="clearfix"></div>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

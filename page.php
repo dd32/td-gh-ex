@@ -18,11 +18,17 @@
 <?php while ( have_posts() ) : the_post(); ?>
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 <div class="navigation">
-<p class="alignleft post-info-single"><?php artblogazine_posted_on(); ?></p> 
+<div class="meta-prev">
+<?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'artblogazine' ) . '</span>' ); ?>
+</div>
+<div class="meta-next">
+<?php next_post_link( '%link', '<span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'artblogazine' ) . '</span>' ); ?>
+</div>
 </div>
 <section class="sumary">
 	<div class="content-post">
 <?php the_content(); ?>	
+<?php artblogazine_posted_on(); ?>
 <?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'artblogazine' ) . '</span>', 'after' => '</div>' ) ); ?>
 </div>
 </section>

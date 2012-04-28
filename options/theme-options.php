@@ -1,6 +1,6 @@
 <?php
 function artblogazine_admin_enqueue_scripts( $hook_suffix ) {
-wp_enqueue_style( 'artblogazine-theme-options', get_template_directory_uri() . '/options/theme-options.css', '0.0.2' );
+wp_enqueue_style( 'artblogazine-theme-options', get_template_directory_uri() . '/options/theme-options.css', '0.0.5' );
 	
 }
 add_action( 'admin_print_styles-appearance_page_theme_options', 'artblogazine_admin_enqueue_scripts' );
@@ -175,7 +175,6 @@ function artblogazine_theme_options_do_page() {
 function artblogazine_theme_options_validate($input) {			
     $input['google_site_verification'] = wp_filter_post_kses($input['google_site_verification']);
     $input['bing_site_verification'] = wp_filter_post_kses($input['bing_site_verification']);
-    
     $input['twitter_uid'] = esc_url_raw($input['twitter_uid']);
     $input['facebook_uid'] = esc_url_raw($input['facebook_uid']);
     $input['linkedin_uid'] = esc_url_raw($input['linkedin_uid']);
