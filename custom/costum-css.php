@@ -192,7 +192,7 @@ function artblogazine_excerpt_more( $more ) {
 	return ' &hellip;' . artblogazine_continue_reading_link();
 }
 function artblogazine_enqueue_scripts_styles( ) {
-        wp_enqueue_style( 'default', get_template_directory_uri() . '/style.css', array(), '0.0.5');
+        wp_enqueue_style( 'default', get_template_directory_uri() . '/style.css', array(), '0.0.6');
      
     }
 function artblogazine_enqueue_comment_reply() {

@@ -28,7 +28,9 @@
 <section class="sumary">
 	<div class="content-post">
 <?php the_content(); ?>	
+<div class="clearfix"></div>
 <?php artblogazine_posted_on(); ?>
+<div class="clear"></div>
 <?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'artblogazine' ) . '</span>', 'after' => '</div>' ) ); ?>
 </div>
 </section>
