@@ -11,7 +11,8 @@ blogazine style: Blogazine no aside style
 <?php wp_nav_menu( array( 'theme_location' => 'primary') );?>
 </div>
 <section class="header">
-<div class="title-post">				
+<div class="title-post">
+<div class="clearfix"></div>				
 <h1><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 </div>
 <div class="title-blog-single">

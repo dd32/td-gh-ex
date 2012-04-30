@@ -8,11 +8,11 @@
 
 Font chunkfive:
 - SIL Open Font License 1.1-update2 
-//location= wp-content/themes/artblogazine/font/SIL Open Font License 1.1-update2.txt
+//location= wp-content/themes/art-blogazine/font/SIL Open Font License 1.1-update2.txt
 
 Icon set:
 - GNU GENERAL PUBLIC LICENSE Version 2, June 1991
-//location= wp-content/themes/artblogazine/images/license.txt
+//location= wp-content/themes/art-blogazine/images/license.txt
 -----------------------------------------------
     =by Hendro prayitno, http://amdhas.tk/
 -----------------------------------------------

@@ -3,8 +3,7 @@ function artblogazine_setup(){
 load_theme_textdomain('artblogazine', get_template_directory() . '/translation');
 add_theme_support( 'post-thumbnails' ); 
 add_theme_support( 'automatic-feed-links' );
-add_editor_style(); 
-add_custom_background();
+add_editor_style();
 add_custom_image_header('', 'artblogazine_admin_header_style');}
 require( get_template_directory() . '/custom/costum-css.php' );
 require( get_template_directory() . '/custom/costum-template.php' );

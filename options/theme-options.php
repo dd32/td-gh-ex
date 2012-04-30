@@ -1,6 +1,6 @@
 <?php
 function artblogazine_admin_enqueue_scripts( $hook_suffix ) {
-wp_enqueue_style( 'artblogazine-theme-options', get_template_directory_uri() . '/options/theme-options.css', '0.0.5' );
+wp_enqueue_style( 'artblogazine-theme-options', get_template_directory_uri() . '/options/theme-options.css', '1.0.0' );
 	
 }
 add_action( 'admin_print_styles-appearance_page_theme_options', 'artblogazine_admin_enqueue_scripts' );

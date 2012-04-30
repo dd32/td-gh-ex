@@ -3,8 +3,6 @@ width: 95%;
 margin: 0 auto;
 overflow: hidden;
 }
-
-
 .tiga{  width:22.916666666666664%}
 .enam{  width:47.91666666666667%}
 .sembilan{  width:72.91666666666666%}
@@ -14,9 +12,6 @@ overflow: hidden;
 .tiga, .enam, .sembilan
 {width:97.91666666666666%;
 display:inline; float:left;margin:0 1%}}
-
-
-
 h3.rwd-toggle {
 	
 	padding: 0 0 0 10px;
@@ -41,7 +36,6 @@ h3.rwd-toggle a {
 }
 
 h3.rwd-toggle a:hover {
-	background:url(images/arrow-dark.png) 99% 50% no-repeat;
 	color: #444;
 }
 
