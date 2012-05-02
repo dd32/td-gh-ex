@@ -1,0 +1,89 @@
+#theme-styles{
+    margin-top:10px;
+    margin-bottom: 10px
+}
+
+#theme-styles.loading{
+    background: url(../img/style-loader.gif) no-repeat center bottom;
+    padding-bottom: 40px
+}
+
+#theme-styles li{
+    display: inline-block;
+    margin: 10px;
+    border: 1px solid #C0C0C0;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    background: #EFEFEF;
+    padding:3px;
+    
+    position: relative;
+    line-height: 0;
+}
+
+#theme-styles li a.preview-style,
+#theme-styles li a.download-style{
+    position: absolute;
+    bottom:4px;
+    
+    width: 32px;
+    height: 28px;
+
+    background: rgba(0,0,0,0.15) no-repeat center center;
+}
+
+#theme-styles li a.preview-style{
+    right:4px;
+    background-image: url(../img/icons/view.png);
+}
+
+#theme-styles li a.download-style{
+    left:4px;
+    background-image: url(../img/icons/download.png);
+}
+
+#style-preview {
+    display: none;
+    
+    z-index:1001;
+    position: fixed;
+    width: 94%;
+    height: 86%;
+    
+    left: 3%;
+    top: 7%;
+    
+    background: #313131 url(../img/load-dark-big.gif) center center no-repeat;
+    border: 5px solid #000;
+}
+
+#style-preview .close{
+    position: absolute;
+    display: block;
+    
+    top: -20px;
+    left: -20px;
+    
+    width: 40px;
+    height: 40px;
+    
+    background: url(../img/modal-close.png) center center no-repeat;
+    cursor: pointer;
+}
+
+#style-preview iframe{
+    width:100%;
+    height:100%;
+}
+
+#style-preview-overlay{
+    display: none;
+    
+    z-index: 1000;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    background: black;
+    background: rgba(0,0,0,0.9);
+}

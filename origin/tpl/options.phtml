@@ -1,0 +1,108 @@
+<div class="wrap" id="origin-options-page">
+	
+	<form action="<?php print add_query_arg(null, null) ?>" method="post" enctype="multipart/form-data"  id="origin-options-form" >
+		
+	<div id="icon-options-general" class="icon32"><br></div>
+	
+	<h2 class="nav-tab-wrapper">
+		<?php _e('Theme Options', 'origin') ?> &nbsp;
+		<?php foreach((array) @ $this->options as $page_name => $page) : ?>
+			<a class="nav-tab" href="#<?php print $page_name ?>"><?php print $page['title'] ?></a>
+		<?php endforeach ?>
+		
+		<input type="submit" name="submit" id="submit" class="button-primary" value="Save Changes">
+	</h2>
+		
+	<?php if(!empty($this->error)) : ?>
+		<div id="message" class="error">
+			<p><strong><?php print $this->error->getMessage() ?></strong></p>
+		</div>
+	<?php elseif(!empty($this->updated)) : ?>
+		<div id="message" class="updated">
+			<p><?php printf(__('Theme Options Updated', 'origin')) ?></p>
+		</div>
+	<?php endif; ?>
+	
+		<?php foreach((array) @ $this->options as $page_name => $page) : ?>
+			
+			<div class="options-page-container" id="page-<?php print $page_name ?>">
+				<?php foreach($page['sections'] as $section_name => $section) : ?>
+					<?php if(!empty($section['title'])) : ?>
+						<h3 class="title"><?php print $section['title'] ?></h3>
+					<?php endif; ?>
+				
+					<table class="form-table origin-options">
+						<tbody>
+							<?php foreach((array)$section['fields'] as $field_name => $field) : ?>
+								<?php
+									$field_error = (
+										!empty($this->error) &&
+										$this->error->getSection() == $section_name &&
+										$this->error->getField() == $field_name
+									);						
+								?>
+								<tr valign="top" <?php if($field_error) print 'class="field-error"' ?>
+									<?php if(isset($field['show_if'])) print 'data-show-if="'.$field['show_if'].'"' ?>
+									>
+									<th scope="row">
+										<label for="<?php print 'field_'.$section_name.'_'.$field_name ?>">
+											<?php
+												print empty($field['title']) ? $field_name : $field['title'];
+												if(!empty($field['description'])) {
+													?><br /><small class="description"><?php print $field['description'] ?></small><?php
+												}
+											?>
+										</label>
+									</th>
+									<td class="type-<?php print $field['type'] ?>">
+										<?php
+										$name = 'options['.$page_name.']['.$section_name.']['.$field_name.']';
+										$value = null;
+										
+										if(isset($_POST['_options_nonce'])){
+											if($field['type'] == 'checkbox'){
+												$value = !empty($_POST['options'][$page_name][$section_name][$field_name]);
+											}
+											else{
+												$value = @ $_POST['options'][$page_name][$section_name][$field_name];
+											}
+											
+										}
+										elseif(!empty($values[$page_name])){
+											if($section_name == 'default'){
+												$value = @ $values[$page_name][$field_name];
+											}
+											else{
+												$value = @ $values[$page_name][$section_name][$field_name];
+											}
+										}
+										
+										if(empty($value) && !is_bool($value) && !empty($field['default'])){
+											$value = $field['default'];
+										}
+										
+										
+										if(method_exists('Origin_Options_Field_Renderer', $field['type'])){
+											call_user_func(
+												array('Origin_Options_Field_Renderer', $field['type']),
+												$name,
+												preg_replace('/[\[\]]+/', '_', 'field_' . $name),
+												$value,
+												$field
+											);
+										}
+										else{
+											?><strong>UNIMPLEMENTED TYPE: <?php print $field['type'] ?></strong><?php
+										}
+										?>
+									</td>
+								</tr>
+							<?php endforeach; ?>
+						</table>
+					</table>
+				<?php endforeach; ?>
+			</div>
+		<?php endforeach; ?>
+		<?php wp_nonce_field('save', '_options_nonce') ?>
+	</form>
+</div> 
