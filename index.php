@@ -9,7 +9,7 @@
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
  * @package BestCorporate
- * @since BestCorporate 1.4
+ * @since BestCorporate 1.5
  */
 
 get_header(); ?>
@@ -19,9 +19,9 @@ get_header(); ?>
     <?php if ( have_posts() ) : ?>
     <?php /* Start the Loop */ ?>
     <?php while ( have_posts() ) : the_post(); ?>
-    <?php if ( in_category( _x('gallery', 'gallery category slug', 'best_corporate') ) ) : 
+    <?php if ( in_category( _x('gallery', 'gallery category slug', 'best-corporate') ) ) : 
 				get_template_part( 'content', gallery );
-				elseif ( in_category( _x('asides', 'asides category slug', 'best_corporate') ) ) : 
+				elseif ( in_category( _x('asides', 'asides category slug', 'best-corporate') ) ) : 
 				get_template_part( 'content', aside );
 				else:?>
     <?php
@@ -38,13 +38,13 @@ get_header(); ?>
     <article id="post-0" class="post no-results not-found">
       <header class="entry-header">
         <h1 class="entry-title">
-          <?php _e( 'Nothing Found', 'best_corporate' ); ?>
+          <?php _e( 'Nothing Found', 'best-corporate' ); ?>
         </h1>
       </header>
       <!-- .entry-header -->
       <div class="entry-content">
         <p>
-          <?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'best_corporate' ); ?>
+          <?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'best-corporate' ); ?>
         </p>
         <?php get_search_form(); ?>
       </div>

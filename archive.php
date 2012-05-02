@@ -8,7 +8,7 @@
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
  * @package BestCorporate
- * @since BestCorporate 1.4
+ * @since BestCorporate 1.5
  */
 
 get_header(); ?>
@@ -20,13 +20,13 @@ get_header(); ?>
       <h4 class="page-title">
         <?php
 							if ( is_day() ) :
-								printf( __( 'Daily Archives: %s', 'best_corporate' ), '<span>' . get_the_date() . '</span>' );
+								printf( __( 'Daily Archives: %s', 'best-corporate' ), '<span>' . get_the_date() . '</span>' );
 							elseif ( is_month() ) :
-								printf( __( 'Monthly Archives: %s', 'best_corporate' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
+								printf( __( 'Monthly Archives: %s', 'best-corporate' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
 							elseif ( is_year() ) :
-								printf( __( 'Yearly Archives: %s', 'best_corporate' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
+								printf( __( 'Yearly Archives: %s', 'best-corporate' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
 							else :
-								_e( 'Archives', 'best_corporate' );
+								_e( 'Archives', 'best-corporate' );
 							endif;
 						?>
       </h4>
@@ -47,13 +47,13 @@ get_header(); ?>
     <article id="post-0" class="post no-results not-found">
       <header class="entry-header">
         <h1 class="entry-title">
-          <?php _e( 'Nothing Found', 'best_corporate' ); ?>
+          <?php _e( 'Nothing Found', 'best-corporate' ); ?>
         </h1>
       </header>
       <!-- .entry-header -->
       <div class="entry-content">
         <p>
-          <?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'best_corporate' ); ?>
+          <?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'best-corporate' ); ?>
         </p>
         <?php get_search_form(); ?>
       </div>

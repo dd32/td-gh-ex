@@ -1,7 +1,7 @@
 <?php
 /**
  * @package BestCorporate
- * @since BestCorporate 1.4
+ * @since BestCorporate 1.5
  */
 
 /**
@@ -23,7 +23,7 @@ function best_corporate_setup() {
 	 * Make theme available for translation
 	 * Translations can be filed in the /languages/ directory
 	 */
-	load_theme_textdomain( 'best_corporate', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'best-corporate', get_template_directory() . '/languages' );
 
 	$locale = get_locale();
 	$locale_file = get_template_directory() . "/languages/$locale.php";
@@ -39,7 +39,7 @@ function best_corporate_setup() {
 	 * This theme uses wp_nav_menu() in one location.
 	 */
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'best_corporate' ),
+		'primary' => __( 'Primary Menu', 'best-corporate' ),
 	) );
 
 	/**
@@ -66,6 +66,8 @@ function best_corporate_setup() {
 }
 endif; // best_corporate_setup
 
+
+
 /**
  * Tell WordPress to run best_corporate_setup() when the 'after_setup_theme' hook is run.
  */
@@ -80,9 +82,6 @@ $themecolors = array(
 	'text' => '444444',
 );
 
-/**
- * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
- */
  
  if ( ! function_exists( 'admin_header_style' ) ) :
 /**
@@ -105,7 +104,7 @@ add_filter( 'wp_page_menu_args', 'best_corporate_page_menu_args' );
  */
 function best_corporate_widgets_init() {
 	register_sidebar( array(
-		'name' => __( 'Sidebar 1', 'best_corporate' ),
+		'name' => __( 'Sidebar 1', 'best-corporate' ),
 		'id' => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="widgetbox"><div class="widgetbottom">',
 		'after_widget' => "</div></div></aside>",
@@ -115,6 +114,12 @@ function best_corporate_widgets_init() {
 }
 add_action( 'init', 'best_corporate_widgets_init' );
 
+function best_corporate_enqueue_comment_reply() {
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) { 
+		wp_enqueue_script( 'comment-reply' ); 
+	}
+}
+add_action( 'wp_enqueue_scripts', 'best_corporate_enqueue_comment_reply' );
 
 /**
  * Theme Options
@@ -125,13 +130,13 @@ function best_corporate_theme_options_items(){
 	$items = array (
 		array(
 			'id' => 'logo_src',
-			'name' => __('Logo Upload','best_corporate'),
-			'desc' => __('Need to replace or remove default logo? <a href="themes.php?page=custom-header">Click here</a>.')
+			'name' => __('Logo Upload','best-corporate'),
+			'desc' => __('Need to replace or remove default logo? <a href="themes.php?page=custom-header">Click here</a>.','best-corporate')
 		),
 		array(
 			'id' => 'rss_url',
-			'name' => __('RSS URL','best_corporate'),
-			'desc' => __('Put your full rss subscribe address here.(with http://). If empty, auto-set system defaults.','best_corporate')
+			'name' => __('RSS URL','best-corporate'),
+			'desc' => __('Put your full rss subscribe address here.(with http://). If empty, auto-set system defaults.','best-corporate')
 		)
 	);
 	return $items;
@@ -142,7 +147,7 @@ function best_corporate_theme_options_init(){
 	register_setting( 'best_corporate_options', 'best_corporate_theme_options','best_corporate_options_validate' );
 }
 function best_corporate_theme_options_add_page() {
-	add_theme_page( __( 'Theme Options' ), __( 'Theme Options' ), 'edit_theme_options', 'theme_options', 'best_corporate_theme_options_do_page' );
+	add_theme_page( __( 'Theme Options','best-corporate' ), __( 'Theme Options','best-corporate' ), 'edit_theme_options', 'theme_options', 'best_corporate_theme_options_do_page' );
 }
 function best_corporate_theme_options_do_page() {
 	if ( ! isset( $_REQUEST['updated'] ) )
@@ -150,14 +155,14 @@ function best_corporate_theme_options_do_page() {
 ?>
 
 <div class="wrap">
-  <?php screen_icon(); echo "<h2>" . sprintf( __('%1$s Theme Options','best_corporate'), get_current_theme() )	 . "</h2>"; ?>
+  <?php screen_icon(); echo "<h2>" . sprintf( __('%1$s Theme Options','best-corporate'), get_current_theme() )	 . "</h2>"; ?>
   <?php settings_errors(); ?>
   <div id="poststuff" class="metabox-holder">
     <form method="post" action="options.php">
       <div class="stuffbox">
         <h3>
           <label for="link_url">
-          <?php _e('General settings','best_corporate'); ?>
+          <?php _e('General settings','best-corporate'); ?>
           </label>
         </h3>
         <div class="inside">
@@ -167,17 +172,17 @@ function best_corporate_theme_options_do_page() {
             <?php foreach (best_corporate_theme_options_items() as $item) { ?>
             <?php if ($item['id'] == 'logo_src') { ?>
            <tr valign="top">
-              <th scope="row"><?php echo $item['name']; ?></th>
-              <td><label class="description"><?php echo $item['desc']; ?></label>
+              <th scope="row"><?php echo esc_attr($item['name']); ?></th>
+              <td><label class="description"><?php echo esc_attr($item['desc']); ?></label>
               </td>
             </tr> 
             <?php } 
 			else{?>
             <tr valign="top" style="margin-top:5px;border-top:1px solid #e1e1e1;">
-              <th scope="row"><?php echo $item['name']; ?></th>
-              <td><input name="<?php echo 'best_corporate_theme_options['.$item['id'].']'; ?>" type="text" value="<?php if ( $options[$item['id']] != "") { echo $options[$item['id']]; } else { echo ''; } ?>" size="80" />
+              <th scope="row"><?php echo esc_attr($item['name']); ?></th>
+              <td><input name="<?php echo 'best_corporate_theme_options['.esc_attr($item['id']).']'; ?>" type="text" value="<?php if ( $options[esc_attr($item['id'])] != "") { echo $options[esc_attr($item['id'])]; } else { echo ''; } ?>" size="80" />
                 <br/>
-                <label class="description"><?php echo $item['desc']; ?></label>
+                <label class="description"><?php echo esc_attr($item['desc']); ?></label>
               </td>
             </tr>
             <?php } ?>
@@ -186,7 +191,7 @@ function best_corporate_theme_options_do_page() {
         </div>
       </div>
       <p class="submit">
-        <input type="submit" class="button-primary" value="<?php _e('Save Options','best_corporate'); ?>" />
+        <input type="submit" class="button-primary" value="<?php _e('Save Options','best-corporate'); ?>" />
       </p>
     </form>
   </div>
@@ -200,6 +205,20 @@ function best_corporate_options_validate($input) {
 	return $input;
 }
 
+
+add_filter('feed_link','best_corporate_custom_feed_link',1,2);
+
+function best_corporate_custom_feed_link($output, $feed) {
+	$bc_options = get_option( 'best_corporate_theme_options' );	
+	if($bc_options['rss_url']!='')
+	{$feed_url = esc_url_raw($bc_options['rss_url']);
+	$feed_array = array('rss' => $feed_url, 'rss2' => $feed_url, 'atom' => $feed_url, 'rdf' => $feed_url, 'comments_rss2' => '');
+	$feed_array[$feed] = $feed_url;
+	$output = $feed_array[$feed];
+	}
+	return $output;
+}
+
 if ( ! function_exists( 'best_corporate_content_nav' ) ):
 /**
  * Display navigation to next/previous pages when applicable
@@ -211,20 +230,20 @@ function best_corporate_content_nav( $nav_id ) {
 	?>
 <nav id="<?php echo $nav_id; ?>">
   <h1 class="assistive-text section-heading">
-    <?php _e( 'Post navigation', 'best_corporate' ); ?>
+    <?php _e( 'Post navigation', 'best-corporate' ); ?>
   </h1>
   <?php if ( is_single() ) : // navigation links for single posts ?>
-  <?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'best_corporate' ) . '</span> %title' ); ?>
-  <?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'best_corporate' ) . '</span>' ); ?>
+  <?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'best-corporate' ) . '</span> %title' ); ?>
+  <?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'best-corporate' ) . '</span>' ); ?>
   <?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
   <?php if ( get_next_posts_link() ) : ?>
   <div class="nav-previous">
-    <?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'best_corporate' ) ); ?>
+    <?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'best-corporate' ) ); ?>
   </div>
   <?php endif; ?>
   <?php if ( get_previous_posts_link() ) : ?>
   <div class="nav-next">
-    <?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'best_corporate' ) ); ?>
+    <?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'best-corporate' ) ); ?>
   </div>
   <?php endif; ?>
   <?php endif; ?>
@@ -253,9 +272,9 @@ function best_corporate_comment( $comment, $args, $depth ) {
 	?>
 <li class="pingback">
   <p>
-    <?php _e( 'Pingback:', 'best_corporate' ); ?>
+    <?php _e( 'Pingback:', 'best-corporate' ); ?>
     <?php comment_author_link(); ?>
-    <?php edit_comment_link( __( '(Edit)', 'best_corporate' ), ' ' ); ?>
+    <?php edit_comment_link( __( '(Edit)', 'best-corporate' ), ' ' ); ?>
   </p>
   <?php
 			break;
@@ -264,21 +283,21 @@ function best_corporate_comment( $comment, $args, $depth ) {
 <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
   <article id="comment-<?php comment_ID(); ?>" class="comment">
     <footer>
-      <div class="comment-author vcard"> <?php echo get_avatar( $comment, 100 ); ?> <?php printf( __( '%s <span class="says">says:</span>', 'best_corporate' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?> </div>
+      <div class="comment-author vcard"> <?php echo get_avatar( $comment, 100 ); ?> <?php printf( __( '%s <span class="says">says:</span>', 'best-corporate' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?> </div>
       <!-- .comment-author .vcard -->
       <?php if ( $comment->comment_approved == '0' ) : ?>
       <em>
-      <?php _e( 'Your comment is awaiting moderation.', 'best_corporate' ); ?>
+      <?php _e( 'Your comment is awaiting moderation.', 'best-corporate' ); ?>
       </em> <br />
       <?php endif; ?>
       <div class="comment-meta commentmetadata"> <a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
         <time pubdate datetime="<?php comment_time( 'c' ); ?>">
           <?php
 						/* translators: 1: date, 2: time */
-						printf( __( '%1$s at %2$s', 'best_corporate' ), get_comment_date(), get_comment_time() ); ?>
+						printf( __( '%1$s at %2$s', 'best-corporate' ), get_comment_date(), get_comment_time() ); ?>
         </time>
         </a>
-        <?php edit_comment_link( __( '(Edit)', 'best_corporate' ), ' ' );
+        <?php edit_comment_link( __( '(Edit)', 'best-corporate' ), ' ' );
 					?>
       </div>
       <!-- .comment-meta .commentmetadata -->
@@ -305,13 +324,13 @@ if ( ! function_exists( 'best_corporate_posted_on' ) ) :
  *
  */
 function best_corporate_posted_on() {
-	printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'best_corporate' ),
+	printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'best-corporate' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() ),
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'best_corporate' ), get_the_author() ) ),
+		esc_attr( sprintf( __( 'View all posts by %s', 'best-corporate' ), get_the_author() ) ),
 		esc_html( get_the_author() )
 	);
 }

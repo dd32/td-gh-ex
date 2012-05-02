@@ -3,7 +3,7 @@
  * The template for displaying Category Archive pages.
  *
  * @package BestCorporate
- * @since BestCorporate 1.4
+ * @since BestCorporate 1.5
  */
 
 get_header(); ?>
@@ -14,7 +14,7 @@ get_header(); ?>
     <header class="page-header">
       <h2 class="page-title">
         <?php
-						printf( __( 'Category Archives: %s', 'best_corporate' ), '<span>' . single_cat_title( '', false ) . '</span>' );
+						printf( __( 'Category Archives: %s', 'best-corporate' ), '<span>' . single_cat_title( '', false ) . '</span>' );
 					?>
       </h2>
       <?php
@@ -38,13 +38,13 @@ get_header(); ?>
     <article id="post-0" class="post no-results not-found">
       <header class="entry-header">
         <h1 class="entry-title">
-          <?php _e( 'Nothing Found', 'best_corporate' ); ?>
+          <?php _e( 'Nothing Found', 'best-corporate' ); ?>
         </h1>
       </header>
       <!-- .entry-header -->
       <div class="entry-content">
         <p>
-          <?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'best_corporate' ); ?>
+          <?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'best-corporate' ); ?>
         </p>
         <?php get_search_form(); ?>
       </div>

@@ -1,6 +1,6 @@
 == Changelog ==
 
-= 1.0 - Mar 15 2012 =
+= 1.5 - Mar 15 2012 =
 * First release.
 
 

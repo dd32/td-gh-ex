@@ -4,7 +4,7 @@ Theme Name: Best Corporate
 Theme URI: http://renniaofei.com/freebies/best-corporate/
 Author: renniaofei
 Description: HTML5 / Minimal / Corporate & Portfolio / Response Wordpress Theme.
-Version: 1.4
+Version: 1.5
 Tags: White, Custom-menu, Sticky-post, Microformats, rtl-language-support, translation-ready, Post-formats, custom-header, custom-background, threaded-comments,full-width-template
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -324,7 +324,7 @@ h4 {
 	background-color:#fff;
 }
 #branding {
-	height: 90px;
+	height: 110px;
 	position: relative;
 	margin-bottom: 30px;
 	width: 960px;
@@ -338,19 +338,19 @@ h4 {
 	z-index: 1000;
 	left: 0px;
 	top: 0px;
-	height: 90px;
+	height: 110px;
 	width: 220px;
 	position:absolute;
 }
 #site-title a{
 	font-size: 16px;
 	font-weight: bold;
-	height: 90px;
+	height: 110px;
 	width: 220px;}
 #site-title a.logo_img {
 	text-indent: -9999px;
 	background-repeat: no-repeat;
-	background-position: center bottom;
+	background-position: center center;
 	display: block;
 }
 #site-description {
@@ -455,10 +455,13 @@ h4 {
 }
 .entry-content {
 	margin-bottom: 30px;
+	overflow:hidden;
 }
-.entry-content img, .entry-content p {
-	margin-bottom:20px;
+.entry-content img  {
+	max-width:650px;
 }
+.entry-content p{
+	margin-bottom:20px;}
 .entry-meta {
 	margin-bottom:20px;
 }
@@ -523,6 +526,8 @@ h4 {
 	margin: 0 auto;
 	text-align: center;
 }
+.size-thumbnail{
+	margin: 0 10px 10px 0;}
 /* Aside Posts */
 
 .single .format-aside .entry-header {
@@ -894,6 +899,36 @@ h3#reply-title {
 }
 .widget-area .widget_search input {
 	float: left;
+}
+#wp-calendar {
+	width:100%;
+}
+#wp-calendar caption {
+	font-weight: bold;
+	color: #222;
+	text-align: left;
+	font-size:14px;
+	padding-bottom: 4px;
+}
+#wp-calendar thead {
+	font-size:11px;
+}
+#wp-calendar thead th {
+}
+#wp-calendar tbody {
+	color: #aaa;
+}
+#wp-calendar tbody td {
+	padding: 3px 0 2px;
+	background: #f5f5f5;
+	border:1px solid #fff;
+	text-align: center;
+}
+#wp-calendar tbody .pad {
+	background: none;
+}
+#wp-calendar tfoot #next {
+	text-align: right;
 }
 #gotop {
 	float:left;
