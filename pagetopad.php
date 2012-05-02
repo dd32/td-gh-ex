@@ -1,0 +1,1 @@
+<p style="color:#CCC; padding:30px;">728 X 90 Ad Code Paste here in the pagetopad.php</p>
