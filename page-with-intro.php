@@ -18,7 +18,9 @@ Template Name: page-with-intro
 	<?php $slug = basename(get_permalink());
            // replace $slub with get_the_title() in the line below if you want to get posts based
            // on category name instead of slug  ?>
-	<?php query_posts('category_name='.$slug.'&post_status=publish,future&orderby=date&order=desc');?>
+	<?php 
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+query_posts('category_name='.$slug.'&post_status=publish,future&orderby=date&order=desc&posts_per_page='.get_option('posts_per_page').'&paged=' . $paged);?>
 <?php /*
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>

@@ -32,9 +32,20 @@ foreach ($mantra_options as $key => $value) {
 
 }
 
+// Bringing up Mantra Settings page after install
+
+if ( is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" )
+	wp_redirect( 'themes.php?page=mantra-page' );
+
+
+
+// Header hook
+
 function mantra_header() {
     do_action('mantra_header');
 }
+
+// Loading mantra css style
 
 function mantra_style() {
 	wp_register_style( 'mantras', get_stylesheet_uri() );

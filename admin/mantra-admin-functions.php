@@ -2034,6 +2034,12 @@ uGoJV/7kErByS98U5Gze/kUo5OvpezDjckdR0TJfoNFDKiAit+Qf9+ToViM/CmY2cONArejftWlnEKik
 <script type="text/javascript">
   jQuery(document).ready(function() {
 
+jQuery('#mantra_defaults').click (function() {
+if (!confirm('Reset Mantra Settings to Defaults?')) {
+                return false;}
+
+ });
+
 // Hide or show favicon upload form
 
 jQuery('#mantra_faviconshow').change(function() {
