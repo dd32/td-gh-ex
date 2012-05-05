@@ -88,34 +88,9 @@ $(document).ready(function(){
 	
          	
     <header id="branding" role="banner">
-	<div><a href="home"><img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/d5socialia/images/logo.png"></a></div> 
-    <div id="social">
-    
-    <!-- Please Chnage the following three lines according to your Pages. -->
-    
-    <a class="icon twitter" href="http://twitter.com/d5creation" target="_blank" rel="nofollow">Twitter</a>
-	<a class="icon facebook" href="http://facebook.com/d5creation" target="_blank" rel="nofollow">Facebook</a>
-	<a class="icon blog" href="http://d5creation.com/news" target="_blank">Blog</a>
-    
-    </div>       
-           
-    <nav id="access" role="navigation">
-				<h3 class="assistive-text"><?php _e( 'Main menu', 'd5socialia' ); ?></h3>
-				<?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?>
-				<div class="skip-link"><a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to primary content', 'd5socialia' ); ?>"><?php _e( 'Skip to primary content', 'd5socialia' ); ?></a></div>
-				<div class="skip-link"><a class="assistive-text" href="#secondary" title="<?php esc_attr_e( 'Skip to secondary content', 'd5socialia' ); ?>"><?php _e( 'Skip to secondary content', 'd5socialia' ); ?></a></div>
-				<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu. The menu assiged to the primary position is the one used. If none is assigned, the menu with the lowest ID is used. */ ?>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-			</nav><!-- #access -->          
+	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php bloginfo( 'name' ); ?> "/></a>
             
-
-<!-- 		<hgroup><h1 id="site-title"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>
-				<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
-			</hgroup>
-            
--->            
-            
-         <?php
+     		<?php
 				// Has the text been hidden?
 				if ( 'blank' == get_header_textcolor() ) :
 			?>
@@ -128,15 +103,26 @@ $(document).ready(function(){
 				<?php get_search_form(); ?>
 			<?php endif; ?>
 
-			
+	<div id="social">
+     <!-- Please Chnage the following 03 lines according to your Pages. -->
+    
+    <a class="icon twitter" href="http://twitter.com/d5creation" target="_blank" rel="nofollow">Twitter</a>
+	<a class="icon facebook" href="http://facebook.com/d5creation" target="_blank" rel="nofollow">Facebook</a>
+	<a class="icon blog" href="http://d5creation.com/news" target="_blank">Blog</a>
+    
+    </div> 
+    <h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>	
 	</header><!-- #branding -->   
        
- <?php include ("slide-image.php")  ?> 
-   
+               
+    <nav id="access" role="navigation">
+				<h3 class="assistive-text"><?php _e( 'Main menu', 'd5socialia' ); ?></h3>
+				<?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?>
+				<div class="skip-link"><a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to primary content', 'd5socialia' ); ?>"><?php _e( 'Skip to primary content', 'd5socialia' ); ?></a></div>
+				<div class="skip-link"><a class="assistive-text" href="#secondary" title="<?php esc_attr_e( 'Skip to secondary content', 'd5socialia' ); ?>"><?php _e( 'Skip to secondary content', 'd5socialia' ); ?></a></div>
+				<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu. The menu assiged to the primary position is the one used. If none is assigned, the menu with the lowest ID is used. */ ?>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+			</nav><!-- #access -->        
             
-            
-   
- 
-
-
+<?php include ("slide-image.php")  ?> 
 	<div id="main">

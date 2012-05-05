@@ -1,10 +1,10 @@
 /*
 Theme Name: D5 Socialia 
 Theme URI: http://d5creation.com/2012/03/25/d5socialia/
-Author: D5 Creation (Modification of Twenty Eleven Theme by The WordPress Team)
+Author: D5 Creation
 Author URI: http://d5creation.com/
-Description: The D5 Socialia theme for WordPress is sophisticated, lightweight, and adaptable. This theme is better for Social Organizations basically for the organizations working for Climate Change, Disaster Management, Natural Resources Management, Environment, Environmental Management, Social Works, Social Deveopemnt, Cultural Organizations etc. It can also be used for Personal Blog. Make it yours with a Custom Menu  D5 Socialia comes equipped with a Showcase page template that transforms your front page into a showcase to show off your best content, widget support galore (sidebar, Six footer areas, and a Showcase page widget area), and a custom "Ephemera" widget to display your Aside, Link, Quote, or Status posts. Included are styles for print and for the admin editor, support for featured images (as custom header images on posts and pages and as large images on featured "sticky" posts), and special styles for six different post formats. Please Visit <a href="http://d5creation.com" target="_blank">http://d5creation.com</a>. You Can find a Live Demo of D5 Socialia Theme in this link <a href="http://demo.d5creation.com/wp/themes/d5socialia/" target="_blank">http://demo.d5creation.com/wp/themes/d5socialia.</a>
-Version: 1.2.5
+Description: D5 Socialia Theme has been come from a Modification of Twenty Eleven Theme by The WordPress Team. The D5 Socialia theme for WordPress is sophisticated, lightweight, and adaptable. This theme is better for Social Organizations basically for the organizations working for Climate Change, Disaster Management, Natural Resources Management, Environment, Environmental Management, Social Works, Social Deveopemnt, Cultural Organizations etc. It can also be used for Personal Blog. Make it yours with a Custom Menu  D5 Socialia comes equipped with a Showcase page template that transforms your front page into a showcase to show off your best content, widget support galore (sidebar, Six footer areas, and a Showcase page widget area), and a custom "Ephemera" widget to display your Aside, Link, Quote, or Status posts. Included are styles for print and for the admin editor, support for featured images (as custom header images on posts and pages and as large images on featured "sticky" posts), and special styles for six different post formats. Please Visit <a href="http://d5creation.com" target="_blank">http://d5creation.com</a>. You Can find a Live Demo of D5 Socialia Theme in this link <a href="http://demo.d5creation.com/wp/themes/d5socialia/" target="_blank">http://demo.d5creation.com/wp/themes/d5socialia.</a>
+Version: 1.2.6
 License: GNU General Public License
 License URI: license.txt
 Tags: pink, green, orange, dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
@@ -173,15 +173,6 @@ body {
 	width: 22.15%;
 }
 
-/* error404 */
-.error404 #primary {
-	float: none;
-	margin: 0;
-}
-.error404 #primary #content {
-	margin: 0 7.6%;
-	width: auto;
-}
 
 /* Alignment */
 .alignleft {
@@ -554,19 +545,22 @@ a:hover {
 	color: #1982d1;
 }
 #site-description {
-	color: #7a7a7a;
-	font-size: 14px;
-	margin: 0 270px 3.65625em 0;
+	color: #158E09;
+    font-size: 21px;
+    margin: -20px 30px 0 0;
+    text-align: right;
+    text-shadow: -1px -1px 1px #EEEEEE;
 }
 #branding  img {
-	height: auto;
-	margin-bottom: -7px;
-	width: 100%;
 	border-radius: 0 0 7px 7px;
-}
-
-#branding img {
-	width: 35%;
+    color: #CCEEFC;
+    float: left;
+    font-size: 30px;
+    font-weight: bold;
+    height: auto;
+    text-shadow: 1px 1px 3px #000000;
+	max-width: 70%;
+	
 }
 
 #slider {
@@ -627,15 +621,13 @@ a:hover {
 
 #access {
 	background: url("images/nav.png") repeat scroll 0 0 transparent;
-	clear: both;
-	display: block;
-	float: left;
-	margin: 0 auto 6px;
-	width: 100%;
-	border-radius: 7px 7px 0 0;
-	margin: 3px auto 0;
-	position:absolute;
-	height: 41px;
+    border-radius: 7px 7px 0 0;
+    clear: both;
+    display: block;
+    float: left;
+    height: 41px;
+    position: absolute;
+    width: 1000px;
 }
 #access ul {
 	font-size: 12px;
@@ -1223,6 +1215,24 @@ blockquote.pull {
     text-decoration: none;
 }
 
+/* Image Gallery 
+---------------------------------------- */
+
+.clear {
+	clear:both
+}
+
+#gallery { 	position:relative; 	height:288px; background:#000000; margin-left:auto; margin-right:auto; width:1000px; top: 41px; margin-bottom:40px; order-radius:0 0 7px 7px; }
+#gallery.show { height:288px; margin:auto; width:1000px; top: 33px; }
+#gallery a { float:left; position:absolute; }
+#gallery a img { border:none; width:1000px; border-radius:0 0 7px 7px; }
+#gallery img { border:none; width:1000px; border-radius:0 0 7px 7px; }
+#gallery .caption { background-color:#02801A; color:#ffffff; height:60px; width:100%; position:absolute; bottom:0px; font-size:10px; border-radius:0 0 7px 7px; }
+#gallery .caption .content { margin:5px; text-align: center; }
+#gallery .caption .content h3 { margin:0; padding:0; color:#FFFFFF; font-weight:bold; font-size:12px; text-align:center; }
+.menuimage { background:no-repeat scroll center top transparent; display: block; height: 90px; }
+.menuimage:hover { background-position:bottom; }
+
 
 /* =Aside
 ----------------------------------------------- */
@@ -1366,42 +1376,6 @@ blockquote.pull {
 }
 .indexed.format-image a:hover img {
 	opacity: 0.8;
-}
-
-
-/* =error404
------------------------------------------------ */
-
-.error404 #main #searchform {
-	background: #f9f9f9;
-	border: 1px solid #ddd;
-	border-width: 1px 0;
-	margin: 0 -8.9% 1.625em;
-	overflow: hidden;
-	padding: 1.625em 8.9%;
-}
-.error404 #main #s {
-	width: 95%;
-}
-.error404 #main .widget {
-	clear: none;
-	float: left;
-	margin-right: 3.7%;
-	width: 30.85%;
-}
-.error404 #main .widget_archive {
-	margin-right: 0;
-}
-.error404 #main .widget_tag_cloud {
-	float: none;
-	margin-right: 0;
-	width: 100%;
-}
-.error404 .widgettitle {
-	font-size: 10px;
-	letter-spacing: 0.1em;
-	line-height: 2.6em;
-	text-transform: uppercase;
 }
 
 
@@ -2479,12 +2453,7 @@ background: none repeat scroll 0 0 rgba(0, 0, 0, 0.15);
 		margin-right: 0;
 		width: auto;
 	}
-	/* No need to float 404 widgets at this size */
-	.error404 #main .widget {
-		float: none;
-		margin-right: 0;
-		width: auto;
-	}
+	
 	/* Make sure embeds fit their containers */
 	embed,
 	object {
@@ -2805,3 +2774,4 @@ background: none repeat scroll 0 0 rgba(0, 0, 0, 0.15);
 #ie7 section.recent-posts {
 	margin-right: 7.6%;
 }
+

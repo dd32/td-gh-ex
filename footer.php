@@ -26,12 +26,12 @@
 			<div id="creditline">
             
             <a href="#" target="_blank">Terms of Use</a> |
-<a href="#" target="_blank">Privacy Policy</a> |  <a href="#" target="_blank">Sitemap</a>&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;
+<a href="#" target="_blank">Privacy Policy</a> |  <a href="#" target="_blank">Sitemap</a>&nbsp;&nbsp;&nbsp;
             
         
-&copy; Copyright <script type="text/javascript">document.write(new Date().getFullYear())</script>: <?php bloginfo('name'); ?>, All Rights Reserved. &nbsp;
+&copy; Copyright <script type="text/javascript">document.write(new Date().getFullYear())</script>: <?php bloginfo('name'); ?>.&nbsp;&nbsp;&nbsp;
 
-Theme by: <a href="http://d5creation.com" target="_blank"><img  width="30px" src="<?php echo get_template_directory_uri(); ?>/images/d5logofooter.png" /> <strong>D5 Creation</strong></a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a> 
+<strong>D5 Socialia</strong> Theme by: <a href="http://d5creation.com" target="_blank"><img  width="30px" src="<?php echo get_template_directory_uri(); ?>/images/d5logofooter.png" /> <strong>D5 Creation</strong></a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a> 
 
 				
 			</div>

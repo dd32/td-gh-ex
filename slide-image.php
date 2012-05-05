@@ -46,30 +46,6 @@ function gallery() {
 
 </script>
 
-<style type="text/css">
-.clear {
-	clear:both
-}
-
-#gallery { 	position:relative; 	height:288px; background:#000000; margin-left:auto; margin-right:auto; width:1000px; top: 33px; margin-bottom:40px; order-radius:0 0 7px 7px; }
-#gallery.show { height:288px; margin:auto; width:1000px; top: 33px; }
-#gallery a { float:left; position:absolute; }
-#gallery a img { border:none; width:1000px; border-radius:0 0 7px 7px; }
-#gallery img { border:none; width:1000px; border-radius:0 0 7px 7px; }
-#gallery .caption { background-color:#02801A; color:#ffffff; height:60px; width:100%; position:absolute; bottom:0px; font-size:10px; border-radius:0 0 7px 7px; }
-#gallery .caption .content { margin:5px; text-align: center; }
-#gallery .caption .content h3 { margin:0; padding:0; color:#FFFFFF; font-weight:bold; font-size:12px; text-align:center; }
-.menuimage { background:no-repeat scroll center top transparent; display: block; height: 90px; }
-.menuimage:hover { background-position:bottom; }
-</style>
-
-
-
-        
-
-        
-
-       
 <?php
 // Edit This Section. Point your Images, Titles and Captions Respectively
 ?>
@@ -80,7 +56,7 @@ function gallery() {
 
 	<a href="#" class="show">
 
-		<img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/d5socialia/images/slides/(1).jpg" alt="D5 Socialia by D5 Creation" rel="<h3>Welcome to D5 Socialia Theme Previewing, Visit D5 Creation for Details</h3>D5 Socialia is a WordPress Theme which is Ideal for Social Organizations, NGOs, CBOs, Environmental Organizations, Societies, Climate Change Related Progrms.You can Chnage these Images and Captions by Editing the <?php echo site_url(); ?>/wp-content/themes/d5socialia/slide-image.php"/>
+		<img src="<?php echo get_template_directory_uri(); ?>/images/slides/(1).jpg" alt="D5 Socialia by D5 Creation" rel="<h3>Welcome to D5 Socialia Theme Previewing, Visit D5 Creation for Details</h3>D5 Socialia is a WordPress Theme which is Ideal for Social Organizations, NGOs, CBOs, Environmental Organizations, Societies, Climate Change Related Progrms.You can Chnage these Images and Captions by Editing the <?php echo get_template_directory_uri(); ?>/slide-image.php"/>
 
 	</a>
 
@@ -88,7 +64,7 @@ function gallery() {
 
 	<a href="#" class="show">
 
-		<img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/d5socialia/images/slides/(2).jpg" alt="D5 Socialia by D5 Creation" rel="<h3>Welcome to D5 Socialia Theme Previewing, Visit D5 Creation for Details</h3>D5 Socialia is a WordPress Theme which is Ideal for Social Organizations, NGOs, CBOs, Environmental Organizations, Societies, Climate Change Related Progrms.You can Chnage these Images and Captions by Editing the <?php echo site_url(); ?>/wp-content/themes/d5socialia/slide-image.php"/>
+		<img src="<?php echo get_template_directory_uri(); ?>/images/slides/(2).jpg" alt="D5 Socialia by D5 Creation" rel="<h3>Welcome to D5 Socialia Theme Previewing, Visit D5 Creation for Details</h3>D5 Socialia is a WordPress Theme which is Ideal for Social Organizations, NGOs, CBOs, Environmental Organizations, Societies, Climate Change Related Progrms.You can Chnage these Images and Captions by Editing the <?php echo get_template_directory_uri(); ?>/slide-image.php"/>
 
 	</a>
 
@@ -96,7 +72,7 @@ function gallery() {
 
     <a href="#" class="show">
 
-		<img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/d5socialia/images/slides/(3).jpg" alt="D5 Socialia by D5 Creation" rel="<h3>Welcome to D5 Socialia Theme Previewing, Visit D5 Creation for Details</h3>D5 Socialia is a WordPress Theme which is Ideal for Social Organizations, NGOs, CBOs, Environmental Organizations, Societies, Climate Change Related Progrms.You can Chnage these Images and Captions by Editing the <?php echo site_url(); ?>/wp-content/themes/d5socialia/slide-image.php"/>
+		<img src="<?php echo get_template_directory_uri(); ?>/images/slides/(3).jpg" alt="D5 Socialia by D5 Creation" rel="<h3>Welcome to D5 Socialia Theme Previewing, Visit D5 Creation for Details</h3>D5 Socialia is a WordPress Theme which is Ideal for Social Organizations, NGOs, CBOs, Environmental Organizations, Societies, Climate Change Related Progrms.You can Chnage these Images and Captions by Editing the <?php echo get_template_directory_uri(); ?>/slide-image.php"/>
 
 	</a>
 
@@ -104,7 +80,7 @@ function gallery() {
 
     <a href="#" class="show">
 
-		<img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/d5socialia/images/slides/(4).jpg" alt="D5 Socialia by D5 Creation" rel="<h3>Welcome to D5 Socialia Theme Previewing, Visit D5 Creation for Details</h3>D5 Socialia is a WordPress Theme which is Ideal for Social Organizations, NGOs, CBOs, Environmental Organizations, Societies, Climate Change Related Progrms.You can Chnage these Images and Captions by Editing the <?php echo site_url(); ?>/wp-content/themes/d5socialia/slide-image.php"/>
+		<img src="<?php echo get_template_directory_uri(); ?>/images/slides/(4).jpg" alt="D5 Socialia by D5 Creation" rel="<h3>Welcome to D5 Socialia Theme Previewing, Visit D5 Creation for Details</h3>D5 Socialia is a WordPress Theme which is Ideal for Social Organizations, NGOs, CBOs, Environmental Organizations, Societies, Climate Change Related Progrms.You can Chnage these Images and Captions by Editing the <?php echo get_template_directory_uri(); ?>/slide-image.php"/>
 
 	</a>
 
@@ -112,7 +88,7 @@ function gallery() {
 
     <a href="#" class="show">
 
-		<img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/d5socialia/images/slides/(5).jpg" alt="D5 Socialia by D5 Creation" rel="<h3>Welcome to D5 Socialia Theme Previewing, Visit D5 Creation for Details</h3>D5 Socialia is a WordPress Theme which is Ideal for Social Organizations, NGOs, CBOs, Environmental Organizations, Societies, Climate Change Related Progrms.You can Chnage these Images and Captions by Editing the <?php echo site_url(); ?>/wp-content/themes/d5socialia/slide-image.php"/>
+		<img src="<?php echo get_template_directory_uri(); ?>/images/slides/(5).jpg" alt="D5 Socialia by D5 Creation" rel="<h3>Welcome to D5 Socialia Theme Previewing, Visit D5 Creation for Details</h3>D5 Socialia is a WordPress Theme which is Ideal for Social Organizations, NGOs, CBOs, Environmental Organizations, Societies, Climate Change Related Progrms.You can Chnage these Images and Captions by Editing the <?php echo get_template_directory_uri(); ?>/slide-image.php"/>
 
 	</a>
 
@@ -120,7 +96,7 @@ function gallery() {
 
 	<a href="#" class="show">
 
-		<img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/d5socialia/images/slides/(6).jpg" alt="D5 Socialia by D5 Creation" rel="<h3>Welcome to D5 Socialia Theme Previewing, Visit D5 Creation for Details</h3>D5 Socialia is a WordPress Theme which is Ideal for Social Organizations, NGOs, CBOs, Environmental Organizations, Societies, Climate Change Related Progrms.You can Chnage these Images and Captions by Editing the <?php echo site_url(); ?>/wp-content/themes/d5socialia/slide-image.php"/>
+		<img src="<?php echo get_template_directory_uri(); ?>/images/slides/(6).jpg" alt="D5 Socialia by D5 Creation" rel="<h3>Welcome to D5 Socialia Theme Previewing, Visit D5 Creation for Details</h3>D5 Socialia is a WordPress Theme which is Ideal for Social Organizations, NGOs, CBOs, Environmental Organizations, Societies, Climate Change Related Progrms.You can Chnage these Images and Captions by Editing the <?php echo get_template_directory_uri(); ?>/slide-image.php"/>
 
 	</a>
 
@@ -128,7 +104,7 @@ function gallery() {
 
     <a href="#" class="show">
 
-		<img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/d5socialia/images/slides/(7).jpg" alt="D5 Socialia by D5 Creation" rel="<h3>Welcome to D5 Socialia Theme Previewing, Visit D5 Creation for Details</h3>D5 Socialia is a WordPress Theme which is Ideal for Social Organizations, NGOs, CBOs, Environmental Organizations, Societies, Climate Change Related Progrms.You can Chnage these Images and Captions by Editing the <?php echo site_url(); ?>/wp-content/themes/d5socialia/slide-image.php"/>
+		<img src="<?php echo get_template_directory_uri(); ?>/images/slides/(7).jpg" alt="D5 Socialia by D5 Creation" rel="<h3>Welcome to D5 Socialia Theme Previewing, Visit D5 Creation for Details</h3>D5 Socialia is a WordPress Theme which is Ideal for Social Organizations, NGOs, CBOs, Environmental Organizations, Societies, Climate Change Related Progrms.You can Chnage these Images and Captions by Editing the <?php echo get_template_directory_uri(); ?>/slide-image.php"/>
 
 	</a>
 
@@ -136,31 +112,31 @@ function gallery() {
 
     <a href="#" class="show">
 
-		<img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/d5socialia/images/slides/(8).jpg" alt="D5 Socialia by D5 Creation" rel="<h3>Welcome to D5 Socialia Theme Previewing, Visit D5 Creation for Details</h3>D5 Socialia is a WordPress Theme which is Ideal for Social Organizations, NGOs, CBOs, Environmental Organizations, Societies, Climate Change Related Progrms.You can Chnage these Images and Captions by Editing the <?php echo site_url(); ?>/wp-content/themes/d5socialia/slide-image.php"/>
+		<img src="<?php echo get_template_directory_uri(); ?>/images/slides/(8).jpg" alt="D5 Socialia by D5 Creation" rel="<h3>Welcome to D5 Socialia Theme Previewing, Visit D5 Creation for Details</h3>D5 Socialia is a WordPress Theme which is Ideal for Social Organizations, NGOs, CBOs, Environmental Organizations, Societies, Climate Change Related Progrms.You can Chnage these Images and Captions by Editing the <?php echo get_template_directory_uri(); ?>/slide-image.php"/>
 
 	</a>
     
     <a href="#" class="show">
 
-		<img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/d5socialia/images/slides/(9).jpg" alt="D5 Socialia by D5 Creation" rel="<h3>Welcome to D5 Socialia Theme Previewing, Visit D5 Creation for Details</h3>D5 Socialia is a WordPress Theme which is Ideal for Social Organizations, NGOs, CBOs, Environmental Organizations, Societies, Climate Change Related Progrms.You can Chnage these Images and Captions by Editing the <?php echo site_url(); ?>/wp-content/themes/d5socialia/slide-image.php"/>
+		<img src="<?php echo get_template_directory_uri(); ?>/images/slides/(9).jpg" alt="D5 Socialia by D5 Creation" rel="<h3>Welcome to D5 Socialia Theme Previewing, Visit D5 Creation for Details</h3>D5 Socialia is a WordPress Theme which is Ideal for Social Organizations, NGOs, CBOs, Environmental Organizations, Societies, Climate Change Related Progrms.You can Chnage these Images and Captions by Editing the <?php echo get_template_directory_uri(); ?>/slide-image.php"/>
 
 	</a>
     
     <a href="#" class="show">
 
-		<img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/d5socialia/images/slides/(10).jpg" alt="D5 Socialia by D5 Creation" rel="<h3>Welcome to D5 Socialia Theme Previewing, Visit D5 Creation for Details</h3>D5 Socialia is a WordPress Theme which is Ideal for Social Organizations, NGOs, CBOs, Environmental Organizations, Societies, Climate Change Related Progrms.You can Chnage these Images and Captions by Editing the <?php echo site_url(); ?>/wp-content/themes/d5socialia/slide-image.php"/>
+		<img src="<?php echo get_template_directory_uri(); ?>/images/slides/(10).jpg" alt="D5 Socialia by D5 Creation" rel="<h3>Welcome to D5 Socialia Theme Previewing, Visit D5 Creation for Details</h3>D5 Socialia is a WordPress Theme which is Ideal for Social Organizations, NGOs, CBOs, Environmental Organizations, Societies, Climate Change Related Progrms.You can Chnage these Images and Captions by Editing the <?php echo get_template_directory_uri(); ?>/slide-image.php"/>
 
 	</a>
     
     <a href="#" class="show">
 
-		<img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/d5socialia/images/slides/(11).jpg" alt="D5 Socialia by D5 Creation" rel="<h3>Welcome to D5 Socialia Theme Previewing, Visit D5 Creation for Details</h3>D5 Socialia is a WordPress Theme which is Ideal for Social Organizations, NGOs, CBOs, Environmental Organizations, Societies, Climate Change Related Progrms.You can Chnage these Images and Captions by Editing the <?php echo site_url(); ?>/wp-content/themes/d5socialia/slide-image.php"/>
+		<img src="<?php echo get_template_directory_uri(); ?>/images/slides/(11).jpg" alt="D5 Socialia by D5 Creation" rel="<h3>Welcome to D5 Socialia Theme Previewing, Visit D5 Creation for Details</h3>D5 Socialia is a WordPress Theme which is Ideal for Social Organizations, NGOs, CBOs, Environmental Organizations, Societies, Climate Change Related Progrms.You can Chnage these Images and Captions by Editing the <?php echo get_template_directory_uri(); ?>/slide-image.php"/>
 
 	</a>
     
     <a href="#" class="show">
 
-		<img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/d5socialia/images/slides/(12).jpg" alt="D5 Socialia by D5 Creation" rel="<h3>Welcome to D5 Socialia Theme Previewing, Visit D5 Creation for Details</h3>D5 Socialia is a WordPress Theme which is Ideal for Social Organizations, NGOs, CBOs, Environmental Organizations, Societies, Climate Change Related Progrms.You can Chnage these Images and Captions by Editing the <?php echo site_url(); ?>/wp-content/themes/d5socialia/slide-image.php"/>
+		<img src="<?php echo get_template_directory_uri(); ?>/images/slides/(12).jpg" alt="D5 Socialia by D5 Creation" rel="<h3>Welcome to D5 Socialia Theme Previewing, Visit D5 Creation for Details</h3>D5 Socialia is a WordPress Theme which is Ideal for Social Organizations, NGOs, CBOs, Environmental Organizations, Societies, Climate Change Related Progrms.You can Chnage these Images and Captions by Editing the <?php echo get_template_directory_uri(); ?>/slide-image.php"/>
 
 	</a>
 
