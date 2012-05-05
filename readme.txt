@@ -1,5 +1,7 @@
-
+==============================================
     =Thank you for downloading Art Blogazine=
+==============================================
+
 -----------------------------------------------
     =License=
 -----------------------------------------------
@@ -13,10 +15,32 @@ Font chunkfive:
 Icon set:
 - GNU GENERAL PUBLIC LICENSE Version 2, June 1991
 //location= wp-content/themes/art-blogazine/images/license.txt
------------------------------------------------
-    =by Hendro prayitno, http://amdhas.tk/
+
 -----------------------------------------------
     ==Translations==
 -----------------------------------------------
 For a useful guide on creating translations, see:
 http://urbangiraffe.com/articles/translating-wordpress-themes-and-plugins/
+
+== translate available ==
+* Indonesian Language
+
+-----------------------------------------------
+    == Changelog ==
+-----------------------------------------------
+= 1.0.1 =
+* Valid HTML5 on home page
+* Remove pubdate atribute on functions [artblogazine_post_on] cause eror on W3C Validation result
+* Fixed image link
+* Add file .pot for translation
+* Remove background white on navigation CSS selector
+* Custom backgrounds active and fixed now
+* Add tag Custom background and theme options on default CSS file
+
+=====================================================
+Art Blogazine created by : Hendro prayitno - Amdhas
+
+Blogazine     = http://amdhas.tk/
+My community  = http://blogazinist.com/
+My Twitter    = http://twitter.com/amdhas
+=====================================================

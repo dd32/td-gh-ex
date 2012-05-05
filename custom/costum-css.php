@@ -2,7 +2,7 @@
 if ( ! isset( $content_width ) )
 	$content_width = 584;
 function artblogazine_posted_on() {
-	printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'artblogazine' ),
+	printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'artblogazine' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
@@ -14,11 +14,10 @@ function artblogazine_posted_on() {
 }
 
         $options = get_option('artblogazine_theme_options');	
-	define('HEADER_TEXTCOLOR', '');
+	  define('HEADER_TEXTCOLOR', '');
         define('HEADER_IMAGE', '%s/images/default-logo.png'); // %s is the template dir uri
         define('HEADER_IMAGE_WIDTH', 300); // use width and height appropriate for your theme
         define('HEADER_IMAGE_HEIGHT', 100);
-
         define('NO_HEADER_TEXT', true);
         function artblogazine_admin_header_style() {
             ?><style type="text/css">
@@ -29,6 +28,7 @@ function artblogazine_posted_on() {
                 }
             </style><?php
         }
+
 ob_start('artblogazine_save');
 function artblogazine_save($artd_buffer) {
 	global $global_styles, $single_styles;	
@@ -192,7 +192,7 @@ function artblogazine_excerpt_more( $more ) {
 	return ' &hellip;' . artblogazine_continue_reading_link();
 }
 function artblogazine_enqueue_scripts_styles( ) {
-        wp_enqueue_style( 'default', get_template_directory_uri() . '/style.css', array(), '1.0.0');
+        wp_enqueue_style( 'default', get_template_directory_uri() . '/style.css', array(), '1.0.1');
      
     }
 function artblogazine_enqueue_comment_reply() {

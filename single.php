@@ -28,9 +28,6 @@
 <section class="sumary">
 	<div class="content-post">
 <?php the_content(); ?>
-<div class="clearfix"></div>
-<div class="alignleft"><?php previous_image_link() ?></div>
-<div class="alignright"><?php next_image_link() ?></div>
 <div class="clearfix"></div>	
 <?php artblogazine_posted_on(); ?> 
 <?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'artblogazine' ) . '</span>', 'after' => '</div>' ) ); ?>
@@ -54,13 +51,12 @@
 <div class="clearfix"></div>
 </div>
 <?php endwhile; ?>
-
 <div id="nav-below" class="navigation">
 <div class="meta-prev">
-<?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'artblogazine' ) . '</span> %title' ); ?>
+<?php if (!is_attachment()) {previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'artblogazine' ) . '</span> %title' );} else {previous_image_link(array( 64, 64 ));}; ?>
 </div>
 <div class="meta-next">
-<?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'artblogazine' ) . '</span>' ); ?>
+<?php if (!is_attachment()) {next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'artblogazine' ) . '</span>' );} else { next_image_link(array( 64, 64 ));}; ?>
 </div>
 </div>
 <div id="comm">

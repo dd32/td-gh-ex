@@ -12,7 +12,7 @@ blogazine style: Blogazine no aside style
 </div>
 <section class="header">
 <div class="title-post">
-<div class="clearfix"></div>				
+<div class="clear"></div>				
 <h1><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 </div>
 <div class="title-blog-single">
@@ -31,14 +31,6 @@ blogazine style: Blogazine no aside style
 </div>
 <?php endwhile; ?>
 <div id="nav-below" class="navigation">
-<div class="aligncenter tagged">
-<?php _e('Tagged:','artblogazine'); ?>
-<?php $tags_list = the_tags( '', ',' ); if ( $tags_list ): ?>
-<span class="tag-links">
-<?php printf( __( '<span class="%1$s"></span> %2$s', 'artblogazine' ), '', $tags_list ); ?>
-</span>
-<?php endif; ?>
-</div>
 <div class="meta-prev">
 <?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'artblogazine' ) . '</span> %title' ); ?>
 </div>
