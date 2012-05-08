@@ -37,6 +37,11 @@ http://urbangiraffe.com/articles/translating-wordpress-themes-and-plugins/
 * Custom backgrounds active and fixed now
 * Add tag Custom background and theme options on default CSS file
 
+= 1.0.2 =
+* Remove the note "comment are closed" every pages or post types if do not support comments. See comments.php
+* Add echo for better translation on options/theme-options.php. the variable [$options = get_option('artblogazine_theme_options') ] 
+  and change [esc_attr_e] on input field become [echo esc_attr_e]
+
 =====================================================
 Art Blogazine created by : Hendro prayitno - Amdhas
 

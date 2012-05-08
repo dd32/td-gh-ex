@@ -1,6 +1,6 @@
 <?php
 function artblogazine_admin_enqueue_scripts( $hook_suffix ) {
-wp_enqueue_style( 'artblogazine-theme-options', get_template_directory_uri() . '/options/theme-options.css', '1.0.1' );
+wp_enqueue_style( 'artblogazine-theme-options', get_template_directory_uri() . '/options/theme-options.css', '1.0.2' );
 	
 }
 add_action( 'admin_print_styles-appearance_page_theme_options', 'artblogazine_admin_enqueue_scripts' );
@@ -48,7 +48,7 @@ function artblogazine_theme_options_do_page() {
 </div>
 
                     <div class="sembilan">
-                        <input id="artblogazine_theme_options[google_site_verification]" class="regular-text" type="text" name="artblogazine_theme_options[google_site_verification]" value="<?php if (!empty($options['google_site_verification'])) esc_attr_e($options['google_site_verification']); ?>" />
+                        <input id="artblogazine_theme_options[google_site_verification]" class="regular-text" type="text" name="artblogazine_theme_options[google_site_verification]" value="<?php if (!empty($options['google_site_verification'])) echo esc_attr_e($options['google_site_verification']); ?>" />
                         <label class="description" for="artblogazine_theme_options[google_site_verification]"><?php _e('Enter your Google ID number only', 'artblogazine'); ?></label>
                     </div>
 
@@ -58,7 +58,7 @@ function artblogazine_theme_options_do_page() {
 <?php _e('Bing Site Verification', 'artblogazine'); ?>
 </div>
                     <div class="sembilan">
-                        <input id="artblogazine_theme_options[bing_site_verification]" class="regular-text" type="text" name="artblogazine_theme_options[bing_site_verification]" value="<?php if (!empty($options['bing_site_verification'])) esc_attr_e($options['bing_site_verification']); ?>" />
+                        <input id="artblogazine_theme_options[bing_site_verification]" class="regular-text" type="text" name="artblogazine_theme_options[bing_site_verification]" value="<?php if (!empty($options['bing_site_verification'])) echo esc_attr_e($options['bing_site_verification']); ?>" />
                         <label class="description" for="artblogazine_theme_options[bing_site_verification]"><?php _e('Enter your Bing ID number only', 'artblogazine'); ?></label>
                <p class="submit">
                         <input type="submit" class="button-primary" value="<?php _e('Save Options', 'artblogazine'); ?>" />
@@ -75,7 +75,7 @@ function artblogazine_theme_options_do_page() {
 <?php _e('Twitter', 'artblogazine'); ?>
 </div>
                     <div class="sembilan">
-                        <input id="artblogazine_theme_options[twitter_uid]" class="regular-text" type="text" name="artblogazine_theme_options[twitter_uid]" value="<?php if (!empty($options['twitter_uid'])) esc_attr_e($options['twitter_uid']); ?>" />
+                        <input id="artblogazine_theme_options[twitter_uid]" class="regular-text" type="text" name="artblogazine_theme_options[twitter_uid]" value="<?php if (!empty($options['twitter_uid'])) echo esc_attr_e($options['twitter_uid']); ?>" />
                         <label class="description" for="artblogazine_theme_options[twitter_uid]"><?php _e('Enter your Twitter URL', 'artblogazine'); ?></label>
                     </div>
 
@@ -83,7 +83,7 @@ function artblogazine_theme_options_do_page() {
 <?php _e('Facebook', 'artblogazine'); ?>
 </div>
                     <div class="sembilan">
-                        <input id="artblogazine_theme_options[facebook_uid]" class="regular-text" type="text" name="artblogazine_theme_options[facebook_uid]" value="<?php if (!empty($options['facebook_uid'])) esc_attr_e($options['facebook_uid']); ?>" />
+                        <input id="artblogazine_theme_options[facebook_uid]" class="regular-text" type="text" name="artblogazine_theme_options[facebook_uid]" value="<?php if (!empty($options['facebook_uid'])) echo esc_attr_e($options['facebook_uid']); ?>" />
                         <label class="description" for="artblogazine_theme_options[facebook_uid]"><?php _e('Enter your Facebook URL', 'artblogazine'); ?></label>
                     </div>
 
@@ -93,7 +93,7 @@ function artblogazine_theme_options_do_page() {
 </div>
 
                     <div class="sembilan">
-                        <input id="artblogazine_theme_options[linkedin_uid]" class="regular-text" type="text" name="artblogazine_theme_options[linkedin_uid]" value="<?php if (!empty($options['linkedin_uid'])) esc_attr_e($options['linkedin_uid']); ?>" /> 
+                        <input id="artblogazine_theme_options[linkedin_uid]" class="regular-text" type="text" name="artblogazine_theme_options[linkedin_uid]" value="<?php if (!empty($options['linkedin_uid'])) echo esc_attr_e($options['linkedin_uid']); ?>" /> 
                         <label class="description" for="artblogazine_theme_options[linkedin_uid]"><?php _e('Enter your LinkedIn URL', 'artblogazine'); ?></label>
                     </div>
 
@@ -103,7 +103,7 @@ function artblogazine_theme_options_do_page() {
 </div>
 
                     <div class="sembilan">
-                        <input id="artblogazine_theme_options[youtube_uid]" class="regular-text" type="text" name="artblogazine_theme_options[youtube_uid]" value="<?php if (!empty($options['youtube_uid'])) esc_attr_e($options['youtube_uid']); ?>" /> 
+                        <input id="artblogazine_theme_options[youtube_uid]" class="regular-text" type="text" name="artblogazine_theme_options[youtube_uid]" value="<?php if (!empty($options['youtube_uid'])) echo esc_attr_e($options['youtube_uid']); ?>" /> 
                         <label class="description" for="artblogazine_theme_options[youtube_uid]"><?php _e('Enter your YouTube URL', 'artblogazine'); ?></label>
                     </div>
 
@@ -115,7 +115,7 @@ function artblogazine_theme_options_do_page() {
 </div>
 
                     <div class="sembilan">
-                        <input id="artblogazine_theme_options[stumble_uid]" class="regular-text" type="text" name="artblogazine_theme_options[stumble_uid]" value="<?php if (!empty($options['stumble_uid'])) esc_attr_e($options['stumble_uid']); ?>" /> 
+                        <input id="artblogazine_theme_options[stumble_uid]" class="regular-text" type="text" name="artblogazine_theme_options[stumble_uid]" value="<?php if (!empty($options['stumble_uid'])) echo esc_attr_e($options['stumble_uid']); ?>" /> 
                         <label class="description" for="artblogazine_theme_options[stumble_uid]"><?php _e('Enter your StumbleUpon URL', 'artblogazine'); ?></label>
                     </div>
 
@@ -125,7 +125,7 @@ function artblogazine_theme_options_do_page() {
 </div>
 
                     <div class="sembilan">
-                        <input id="artblogazine_theme_options[rss_uid]" class="regular-text" type="text" name="artblogazine_theme_options[rss_uid]" value="<?php if (!empty($options['rss_uid'])) esc_attr_e($options['rss_uid']); ?>" /> 
+                        <input id="artblogazine_theme_options[rss_uid]" class="regular-text" type="text" name="artblogazine_theme_options[rss_uid]" value="<?php if (!empty($options['rss_uid'])) echo esc_attr_e($options['rss_uid']); ?>" /> 
                         <label class="description" for="artblogazine_theme_options[rss_uid]"><?php _e('Enter your RSS Feed URL', 'artblogazine'); ?></label>
                     </div>
 
@@ -134,7 +134,7 @@ function artblogazine_theme_options_do_page() {
 </div>
 
                     <div class="sembilan">
-                        <input id="artblogazine_theme_options[google_plus_uid]" class="regular-text" type="text" name="artblogazine_theme_options[google_plus_uid]" value="<?php if (!empty($options['google_plus_uid'])) esc_attr_e($options['google_plus_uid']); ?>" />  
+                        <input id="artblogazine_theme_options[google_plus_uid]" class="regular-text" type="text" name="artblogazine_theme_options[google_plus_uid]" value="<?php if (!empty($options['google_plus_uid'])) echo esc_attr_e($options['google_plus_uid']); ?>" />  
                         <label class="description" for="artblogazine_theme_options[google_plus_uid]"><?php _e('Enter your Google+ URL', 'artblogazine'); ?></label>
                         
                     </div>
@@ -143,7 +143,7 @@ function artblogazine_theme_options_do_page() {
 </div>
 
                     <div class="sembilan">
-                        <input id="artblogazine_theme_options[blogger_uid]" class="regular-text" type="text" name="artblogazine_theme_options[blogger_uid]" value="<?php if (!empty($options['blogger_uid'])) esc_attr_e($options['blogger_uid']); ?>" /> 
+                        <input id="artblogazine_theme_options[blogger_uid]" class="regular-text" type="text" name="artblogazine_theme_options[blogger_uid]" value="<?php if (!empty($options['blogger_uid'])) echo esc_attr_e($options['blogger_uid']); ?>" /> 
                         <label class="description" for="artblogazine_theme_options[blogger_uid]"><?php _e('Enter your blogspot URL', 'artblogazine'); ?></label>
                     </div>
   <div class="tiga">
@@ -151,7 +151,7 @@ function artblogazine_theme_options_do_page() {
 </div>
 
                     <div class="sembilan">
-                        <input id="artblogazine_theme_options[deviantart_uid]" class="regular-text" type="text" name="artblogazine_theme_options[deviantart_uid]" value="<?php if (!empty($options['deviantart_uid'])) esc_attr_e($options['deviantart_uid']); ?>" />  
+                        <input id="artblogazine_theme_options[deviantart_uid]" class="regular-text" type="text" name="artblogazine_theme_options[deviantart_uid]" value="<?php if (!empty($options['deviantart_uid'])) echo esc_attr_e($options['deviantart_uid']); ?>" />  
                         <label class="description" for="artblogazine_theme_options[deviantart_uid]"><?php _e('Enter your Deviantart URL', 'artblogazine'); ?></label>
                         
                     </div>
@@ -160,7 +160,7 @@ function artblogazine_theme_options_do_page() {
 </div>
 
                     <div class="sembilan">
-                        <input id="artblogazine_theme_options[delicious_uid]" class="regular-text" type="text" name="artblogazine_theme_options[delicious_uid]" value="<?php if (!empty($options['delicious_uid'])) esc_attr_e($options['delicious_uid']); ?>" />  
+                        <input id="artblogazine_theme_options[delicious_uid]" class="regular-text" type="text" name="artblogazine_theme_options[delicious_uid]" value="<?php if (!empty($options['delicious_uid'])) echo esc_attr_e($options['delicious_uid']); ?>" />  
                         <label class="description" for="artblogazine_theme_options[delicious_uid]"><?php _e('Enter your Delicious URL', 'artblogazine'); ?></label>
                         <p class="submit">
                         <input type="submit" class="button-primary" value="<?php _e('Save Options', 'artblogazine'); ?>" />

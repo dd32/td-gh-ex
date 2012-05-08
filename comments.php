@@ -17,8 +17,8 @@ if (function_exists('wp_list_comments')) :
 	</ul>
 	
 <?php else : ?> 
-	<?php if ('open' == $post->comment_status) :
-	else : ?><p class="nocomments"><?php _e('Comment are closed','artblogazine'); ?></p>
+	<?php if ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) :
+	?><p class="nocomments"><?php _e('Comment are closed','artblogazine'); ?></p>
 	<?php endif;
 endif;
 else:
