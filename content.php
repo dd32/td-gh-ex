@@ -58,19 +58,22 @@ foreach ($options as $key => $value) {
 						</div><!-- .entry-content --> 
 						<?php }   ?>
 			
-		<?php else : ?>
-				<?php if ($mantra_excerpthome != "Full Post" ){ ?>
+		<?php else : 
+				if (is_sticky() && $mantra_excerptsticky == "Full Post")  $sticky_test=1; else $sticky_test=0;
+				if ($mantra_excerpthome != "Full Post" && $sticky_test==0){ ?>
+					
+					
 						<div class="entry-summary">
 						<?php set_featured_thumb(); ?>
 						<?php the_excerpt(); ?>
-						</div><!-- .entry-summary -->
+						</div><!-- .entry-summary --> 
 						<?php } else { ?>
 						<div class="entry-content">
 						<?php set_featured_thumb(); ?>
 						<?php	the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'mantra' ) . '</span>', 'after' => '</div>' ) ); ?>
 						</div><!-- .entry-content --> 
-						<?php }   ?>
+						<?php }  ?>
 
 		<?php endif; ?>
 

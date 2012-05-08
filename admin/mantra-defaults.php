@@ -131,6 +131,7 @@ $mantra_defaults = array(
 "mantra_postmetas" => "Show",
 
 "mantra_excerpthome" => "Full Post",
+"mantra_excerptsticky" => "Full Post",
 "mantra_excerptarchive" => "Full Post",
 "mantra_excerptwords" => "50",
 "mantra_magazinelayout" => "Disable",
@@ -161,6 +162,7 @@ $mantra_defaults = array(
 "mantra_socialsdisplay3" => "",
 
 "mantra_linkheader" => "Disable",
+"mantra_breadcrumbs" => "Disable",
 "mantra_faviconshow" => "Disable",
 "mantra_favicon" => "",
 "mantra_customcss" => "/* Mantra Custom CSS */  ");

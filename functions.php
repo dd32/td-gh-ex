@@ -665,7 +665,98 @@ $image_src = echo_first_image($post->ID);
  echo '<img width='.$mantra_fwidth.' height='.$mantra_fheight.' title="" alt="" class="align'.strtolower($mantra_falign).' post_thumbnail" src="'.$image_src.'">' ;
 																							}
 								
-	}	
+	}
+
+add_filter( 'post_thumbnail_html', 'thumbnail_link', 10, 3 );	
+
+function thumbnail_link( $html, $post_id, $post_image_id ) {
+
+  $html = '<a href="' . get_permalink( $post_id ) . '" title="' . esc_attr( get_post_field( 'post_title', $post_id ) ) . '" alt="' . esc_attr( get_post_field( 'post_title', $post_id ) ) . '">' . $html . '</a>';
+  return $html;
+
+}
+
+function footer_sidebar_class() {
+	$count = 0;
+
+	if ( is_active_sidebar( 'first-footer-widget-area' ) )
+		$count++;
+
+	if ( is_active_sidebar( 'second-footer-widget-area' ) )
+		$count++;
+
+	if ( is_active_sidebar( 'third-footer-widget-area' ) )
+		$count++;
+
+	if ( is_active_sidebar( 'forth-footer-widget-area' ) )
+		$count++;
+
+	$class = '';
+
+	switch ( $count ) {
+		case '1':
+			$class = 'one';
+			break;
+		case '2':
+			$class = 'two';
+			break;
+		case '3':
+			$class = 'three';
+			break;
+		case '4':
+			$class = 'four';
+			break;
+	}
+
+	if ( $class )
+		echo 'class="footer' . $class . '"';
+}
+
+function the_breadcrumbs() {
+global $post;
+echo '<div class="breadcrumbs">';
+if (is_page() && !is_front_page() || is_single() || is_category() || is_archive()) {
+        echo '<a href="'.get_bloginfo('url').'">'.get_bloginfo('name').' &raquo; </a>';
+ 
+        if (is_page()) {
+            $ancestors = get_post_ancestors($post);
+ 
+            if ($ancestors) {
+                $ancestors = array_reverse($ancestors);
+ 
+                foreach ($ancestors as $crumb) {
+                    echo '<a href="'.get_permalink($crumb).'">'.get_the_title($crumb).' &raquo; </a>';
+                }
+            }
+        }
+ 
+        if (is_single()) {
+            $category = get_the_category();
+            echo '<a href="'.get_category_link($category[0]->cat_ID).'">'.$category[0]->cat_name.' &raquo; </a>';
+        }
+ 
+        if (is_category()) {
+            $category = get_the_category();
+            echo ''.$category[0]->cat_name.'';
+        }
+
+
+ 
+        // Current page
+        if (is_page() || is_single()) {
+            echo ''.get_the_title().'';
+        }
+        echo '';
+    } elseif (is_front_page()) {
+        // Front page
+        /*echo '';
+        echo '<a href="'.get_bloginfo('url').'">'.get_bloginfo('name').'</a> ';
+        echo ' Home Page';
+        echo '';*/
+    }
+echo '</div>';
+}
+
 
 function set_social_icons() {
 	global $mantra_options;

@@ -69,7 +69,6 @@ $totalwidth= $mantra_sidewidth+$mantra_sidebar+50;
 
 <div id="toTop"> </div>
 
-
 <div id="wrapper" class="hfeed">
 
 <?php if ( has_nav_menu( 'top' ) ) wp_nav_menu( array( 'container_class' => 'topmenu', 'theme_location' => 'top' ) ); ?>
@@ -135,4 +134,5 @@ $totalwidth= $mantra_sidewidth+$mantra_sidebar+50;
 			<div class="socials" id="smenur">
 <?php if($mantra_socialsdisplay2) set_social_icons(); ?>
 </div>
-<div style="clear:both;"> </div>
+<div style="clear:both;"> </div> 
+<?php if($mantra_breadcrumbs=="Enable") { the_breadcrumbs();  }?>

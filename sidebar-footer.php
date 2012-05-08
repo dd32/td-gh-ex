@@ -23,7 +23,7 @@
 	// If we get this far, we have widgets. Let do this.
 ?>
 
-			<div id="footer-widget-area" role="complementary">
+			<div id="footer-widget-area"  role="complementary"  <?php footer_sidebar_class(); ?> >
 
 <?php if ( is_active_sidebar( 'first-footer-widget-area' ) ) : ?>
 				<div id="first" class="widget-area">

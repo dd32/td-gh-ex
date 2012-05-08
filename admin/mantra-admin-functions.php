@@ -109,6 +109,7 @@ function mantra_init_fn(){
 	add_settings_field('mantra_postmetas', __('All Post Metas','mantra') , 'setting_postmetas_fn', __FILE__, 'post_section');
 
 	add_settings_field('mantra_excerpthome', __('Post Excerpts on Home Page','mantra') , 'setting_excerpthome_fn', __FILE__, 'excerpt_section');
+	add_settings_field('mantra_excerptsticky', __('Affect Sticky Posts','mantra') , 'setting_excerptsticky_fn', __FILE__, 'excerpt_section');
 	add_settings_field('mantra_excerptarchive', __('Post Excerpts on Arhive and Category Pages','mantra') , 'setting_excerptarchive_fn', __FILE__, 'excerpt_section');
 	add_settings_field('mantra_excerptwords', __('Number of Words for Post Excerpts ','mantra') , 'setting_excerptwords_fn', __FILE__, 'excerpt_section');
 	add_settings_field('mantra_magazinelayout', __('Magazine Layout','mantra') , 'setting_magazinelayout_fn', __FILE__, 'excerpt_section');
@@ -130,6 +131,7 @@ function mantra_init_fn(){
 	add_settings_field('mantra_socialshow', __('Socials display','mantra') , 'setting_socialsdisplay_fn', __FILE__, 'socials_section');
 
 	add_settings_field('mantra_linkheader', __('Make Site Header a Link','mantra') , 'setting_linkheader_fn', __FILE__, 'misc_section');
+	add_settings_field('mantra_breadcrumbs', __('Breadcrumbs','mantra') , 'setting_breadcrumbs_fn', __FILE__, 'misc_section');
 	add_settings_field('mantra_favicon', __('FavIcon','mantra') , 'setting_favicon_fn', __FILE__, 'misc_section');
 	add_settings_field('mantra_customcss', __('Custom CSS','mantra') , 'setting_customcss_fn', __FILE__, 'misc_section');
 
@@ -1592,6 +1594,21 @@ foreach($items as $id=>$item) {
 	echo "<div><small>".__("Excerpts on the main page. Only standard posts will be affected. All other post formats (aside, image, chat, quote etc.) have their specific formating.","mantra")."</small></div>";
 }
 
+//CHECKBOX - Name: ma_options[excerptsticky]
+function setting_excerptsticky_fn() {
+	global $mantra_options;
+	$items = array ("Excerpt" , "Full Post");
+	$itemsare = array( __("Excerpt","mantra"), __("Full Post","mantra"));
+	echo "<select id='mantra_excerptsticky' name='ma_options[mantra_excerptsticky]'>";
+foreach($items as $id=>$item) {
+	echo "<option value='$item'";
+	selected($mantra_options['mantra_excerptsticky'],$item);
+	echo ">$itemsare[$id]</option>";
+}
+	echo "</select>";
+	echo "<div><small>".__("Choose if you want the sticky posts on your home page to be visible in full or just the excerpts. ","mantra")."</small></div>";
+}
+
 
 //CHECKBOX - Name: ma_options[excerptarchive]
 function setting_excerptarchive_fn() {
@@ -1870,6 +1887,21 @@ foreach($items as $id=>$item) {
 }
 	echo "</select>";
 	echo "<div><small>".__("Make the site header into a clickable link that links to your index page.","mantra")."</small></div>";
+}
+
+//CHECKBOX - Name: ma_options[breadcrumbs]
+function setting_breadcrumbs_fn() {
+	global $mantra_options;
+	$items = array ("Enable" , "Disable");
+	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
+	echo "<select id='mantra_breadcrumbs' name='ma_options[mantra_breadcrumbs]'>";
+foreach($items as $id=>$item) {
+	echo "<option value='$item'";
+	selected($mantra_options['mantra_breadcrumbs'],$item);
+	echo ">$itemsare[$id]</option>";
+}
+	echo "</select>";
+	echo "<div><small>".__("Show breadcrumbs at the top of the content area. Breadcrumbs are a form of navigation that keeps track of your location withtin the site.","mantra")."</small></div>";
 }
 
 // TEXTBOX - Name: ma_options[favicon]
