@@ -63,9 +63,9 @@ color:#fff;
 
 #register.five.columns {width: 40%; margin-left: 3.5%;}
 
-#content {*margin-left: 0px; *margin-top: 15px;}
+#content {*margin-left: 0px; *margin-top: 15px; margin-top: 10px;}
 
-#sidebar {*margin-top: 15px;}
+#sidebar {*margin-top: 15px; margin-top: 10px;}
 
 #container {
 	margin-left: auto;
@@ -204,7 +204,7 @@ header {margin-top: 15px;}
 	-moz-border-radius: 4px;
 	box-shadow:inset 0 0 2px #ccc;
 	background: #fff;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 }
 
 .post_container ul {list-style: disc;margin-left: 21px;list-style-position: inside;}
@@ -222,7 +222,7 @@ header {margin-top: 15px;}
 }
 
 #postbar {
-	margin: -33px 0px 0px 0px;
+	margin: -44px 0px 0px 0px;
 	width: 99.7%;
 	border-top: 1px #e5e5e5 solid;
 	border-left: 1px solid #CCC;
@@ -267,20 +267,6 @@ header {margin-top: 15px;}
 
 .prev-posts { float: right;padding: 5px 0 5px 0; }
 
-#crumbs {border: 1px solid;
-	border-top: 1px solid #CCC;
-	border-left: 1px solid #CCC;
-	border-right: 1px solid #BBB;
-	border-bottom: 1px solid #BBB;
-	border-radius: 4px;
-	-moz-border-radius: 4px;
-	box-shadow:inset 0 0 2px #ccc;
-	background: #fff;
-	margin-bottom: 15px;
-}
-
-.crumbs_text {padding: 2px 0 7px 15px;}
-
 .pagnext-posts {float: left;padding: 5px;margin-bottom: 10px;}
 
 .pagprev-posts { float: right;padding: 5px;margin-bottom: 10px; }
@@ -308,7 +294,7 @@ ol, ul {list-style-position: inside;margin-left: 21px;}
 
 .widget-container {
 	color: #222;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 	padding: 0px 10px 10px 10px;
 	border: 1px solid;
 	border-top: 1px solid #CCC;
