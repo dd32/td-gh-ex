@@ -3,14 +3,13 @@
  * The template for displaying 404 pages (Not Found).
  *
  * @package BestCorporate
- * @since BestCorporate 1.5
+ * @since BestCorporate 1.6
  */
 
 get_header(); ?>
 
 	<div id="primary">
 		<div id="content" role="main">
-
 			<article id="post-0" class="post error404 not-found">
 				<header class="entry-header">
 					<h1 class="entry-title"><?php _e( 'Well this is somewhat embarrassing, isn&rsquo;t it?', 'best-corporate' ); ?></h1>

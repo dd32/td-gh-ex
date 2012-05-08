@@ -8,7 +8,7 @@
  * located in the functions.php file.
  *
  * @package BestCorporate
- * @since BestCorporate 1.5
+ * @since BestCorporate 1.6
  */
 ?>
 
@@ -65,7 +65,7 @@
     <?php _e( 'Comment navigation', 'best-corporate' ); ?>
   </h1>
   <div class="nav-previous">
-    <?php previous_comments_link( __( '&larr; Older Comments', 'toolbox' ) ); ?>
+    <?php previous_comments_link( __( '&larr; Older Comments', 'best-corporate' ) ); ?>
   </div>
   <div class="nav-next">
     <?php next_comments_link( __( 'Newer Comments &rarr;', 'best-corporate' ) ); ?>

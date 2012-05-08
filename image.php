@@ -3,7 +3,7 @@
  * The template for displaying image attachments.
  *
  * @package BestCorporate
- * @since BestCorporate 1.5
+ * @since BestCorporate 1.6
  */
 
 get_header(); ?>

@@ -3,7 +3,7 @@
  * The Template for displaying all single posts.
  *
  * @package BestCorporate
- * @since BestCorporate 1.4
+ * @since BestCorporate 1.6
  */
 
 get_header(); ?>

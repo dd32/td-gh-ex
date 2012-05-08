@@ -3,7 +3,7 @@
  * The template used for displaying page content in page.php
  *
  * @package BestCorporate
- * @since BestCorporate 1.5
+ * @since BestCorporate 1.6
  */
 ?>
 

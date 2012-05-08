@@ -1,11 +1,8 @@
 <?php
 /**
  * The Header for our theme.
- *
- * Displays all of the <head> section and everything up till <div id="main">
- *
  * @package BestCorporate
- * @since BestCorporate 1.5
+ * @since BestCorporate 1.6
  */
 ?>
 <!DOCTYPE html>
@@ -25,31 +22,8 @@
 <?php global $bc_options;?>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
-<title>
-<?php
-	/*
-	 * Print the <title> tag based on what is being viewed.
-	 */
-	global $page, $paged;
-
-	wp_title( '|', true, 'right' );
-
-	// Add the blog name.
-	bloginfo( 'name' );
-
-	// Add the blog description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		echo " | $site_description";
-
-	// Add a page number if necessary:
-	if ( $paged >= 2 || $page >= 2 )
-		echo ' | ' . sprintf( __( 'Page %s', 'best-corporate' ), max( $paged, $page ) );
-
-	?>
-</title>
+<title><?php wp_title();?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<meta name="viewport" content="width=device-width; initial-scale=1.0">
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <!--[if lt IE 9]>

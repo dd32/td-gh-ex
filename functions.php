@@ -1,7 +1,7 @@
 <?php
 /**
  * @package BestCorporate
- * @since BestCorporate 1.5
+ * @since BestCorporate 1.6
  */
 
 /**
@@ -62,11 +62,40 @@ function best_corporate_setup() {
     define('HEADER_IMAGE_WIDTH', 220); // use width and height appropriate for your theme
     define('HEADER_IMAGE_HEIGHT', 90);
     define('NO_HEADER_TEXT', true);
-	add_custom_image_header('', 'admin_header_style');
+	add_custom_image_header('', 'best_corporate_admin_header_style');
 }
 endif; // best_corporate_setup
 
+// filter function for wp_title
+function best_corporate_filter_wp_title( $old_title, $sep, $sep_location ){
+ 
+// add padding to the sep
+$ssep = ' ' . $sep . ' ';
+ 
+// find the type of index page this is
+if( is_category() ) $insert = $ssep . 'Category';
+elseif( is_tag() ) $insert = $ssep . 'Tag';
+elseif( is_author() ) $insert = $ssep . 'Author';
+elseif( is_year() || is_month() || is_day() ) $insert = $ssep . 'Archives';
+else $insert = NULL;
+ 
+// get the page number we're on (index)
+if( get_query_var( 'paged' ) )
+$num = $ssep . 'page ' . get_query_var( 'paged' );
+ 
+// get the page number we're on (multipage post)
+elseif( get_query_var( 'page' ) )
+$num = $ssep . 'page ' . get_query_var( 'page' );
+ 
+// else
+else $num = NULL;
+ 
+// concoct and return new title
+return get_bloginfo( 'name' ) . $insert . $old_title . $num;
+}
 
+// call our custom wp_title filter, with normal (10) priority, and 3 args
+add_filter( 'wp_title', 'best_corporate_filter_wp_title', 10, 3 );
 
 /**
  * Tell WordPress to run best_corporate_setup() when the 'after_setup_theme' hook is run.
@@ -83,14 +112,14 @@ $themecolors = array(
 );
 
  
- if ( ! function_exists( 'admin_header_style' ) ) :
+ if ( ! function_exists( 'best_corporate_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
  * Referenced via add_custom_image_header() in twentyten_setup().
 
  */
-function admin_header_style() {}
+function best_corporate_admin_header_style() {}
 endif;
 
 function best_corporate_page_menu_args( $args ) {
