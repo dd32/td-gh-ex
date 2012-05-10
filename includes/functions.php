@@ -128,7 +128,7 @@ if (!function_exists('responsive_setup')):
 		
 		
 		// gets included in the admin header
-        function shell_admin_header_style() {
+        function responsive_admin_header_style() {
             ?><style type="text/css">
                 #headimg {
 	                background-repeat:no-repeat;
@@ -271,7 +271,7 @@ add_action( 'widgets_init', 'responsive_remove_recent_comments_style' );
 function responsive_breadcrumb_lists () {
   
   $chevron = '<span class="chevron">&#8250;</span>';
-  $home = 'Home'; // text for the 'Home' link
+  $home = __('Home','responsive'); // text for the 'Home' link
   $before = '<span class="breadcrumb-current">'; // tag before the current crumb
   $after = '</span>'; // tag after the current crumb
  

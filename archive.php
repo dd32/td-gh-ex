@@ -36,7 +36,7 @@
 					<?php _e( 'Blog Archives', 'responsive' ); ?>
 				<?php endif; ?>
 			</h6>
-        
+                    
         <?php while (have_posts()) : the_post(); ?>
         
             <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

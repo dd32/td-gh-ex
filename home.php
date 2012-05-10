@@ -75,7 +75,7 @@
 			// First let's check if headline was set
 			    if (!empty($options['cta_url']) && $options['cta_text']) {
 					echo '<a href="'.$options['cta_url'].'" class="blue button">'; 
-					echo $options['cta_text'];
+					echo __($options['cta_text'],'responsive');
 				    echo '</a>';
 			// If not display dummy headline for preview purposes
 			      } else { 

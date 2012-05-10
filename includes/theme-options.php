@@ -240,7 +240,7 @@ function responsive_theme_options_do_page() {
                 <div class="grid col-300">
 				    <?php _e('Featured Content', 'responsive'); ?>
                     <a class="help-links" href="<?php echo esc_url(__('http://themeid.com/forum/topic/510/theme-options-featured-content/','responsive')); ?>" title="<?php esc_attr_e('See Docs', 'responsive'); ?>" target="_blank">
-                    <?php printf('See Docs'); ?></a>
+                    <?php printf('See Docs','responsive'); ?></a>
                 </div><!-- end of .grid col-300 -->
                     <div class="grid col-620 fit">
                         <textarea id="responsive_theme_options[featured_content]" class="large-text" cols="50" rows="10" name="responsive_theme_options[featured_content]"><?php if (!empty($options['featured_content'])) esc_attr_e($options['featured_content']); ?></textarea>
@@ -392,7 +392,7 @@ function responsive_theme_options_do_page() {
                 <div class="grid col-300">
 				    <?php _e('Custom CSS Styles', 'responsive'); ?>
                     <a class="help-links" href="<?php echo esc_url(__('http://www.w3schools.com/css/default.asp','responsive')); ?>" title="<?php esc_attr_e('CSS Tutorial', 'responsive'); ?>" target="_blank">
-                    <?php printf('CSS Tutorial'); ?></a>
+                    <?php printf('CSS Tutorial','responsive'); ?></a>
                 </div><!-- end of .grid col-300 -->
                 
                     <div class="grid col-620 fit">

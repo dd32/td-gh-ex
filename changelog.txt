@@ -7,6 +7,22 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(05/10/2012) - Bug Fixes/Maintenance Version 1.5.1
+[!] missing textdomain in
+    - comments.php
+	- home.php (CTA button)
+	- /includes/functions.php
+	- /includes/theme-options.php
+[!] function prefix missmatch in
+    - /includes/functions.php
+[+] new .pot generated
+[*] new German language generated
+[+] new languages
+    - Portuguese
+	- French
+	- Italian
+[*] screenshot.png
+
 (05/01/2012) - Maintenance Version 1.5.0
 [+] missing textdomain for 'powered by' footer.php
 [*] featured-image DIV end (comment only) home.php
