@@ -1,7 +1,7 @@
 <?php /* Posts navigation for single post pages, but not for Page post */ global $graphene_settings; ?>
 <?php graphene_post_nav(); ?>
 
-<div id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix post-format' ); ?>>
+<div id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix post-format post' ); ?>>
 	<div class="entry-header">
     	<?php 
 		global $post_format;

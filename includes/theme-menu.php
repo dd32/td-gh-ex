@@ -62,7 +62,9 @@ if ( ! function_exists( 'graphene_default_menu' ) ) :
             <?php if (get_option( 'show_on_front' ) == 'posts' ) : ?>
             <li <?php if ( is_single() || is_front_page() ) { echo 'class="current_page_item current-menu-item"'; } ?>>
             	<a href="<?php echo get_home_url(); ?>">
+                	<?php if ( ! $graphene_settings['disable_menu_desc'] ) echo '<strong>'; ?>
                 	<?php _e( 'Home','graphene' ); ?>
+                    <?php if ( ! $graphene_settings['disable_menu_desc'] ) echo '</strong>'; ?>
                     <?php if ( $graphene_settings['navmenu_home_desc']) {echo '<span>'.$graphene_settings['navmenu_home_desc'].'</span>';} ?>
                 </a>
             </li>

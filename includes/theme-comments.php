@@ -107,9 +107,7 @@ function graphene_comment_textarea(){
 			<label class="graphene_form_label">' . __( 'Message:', 'graphene' ) . ' <span class="required">*</span></label>
 			<textarea name="comment" id="comment" cols="40" rows="10" class="graphene-form-field" aria-required="true"></textarea>
 		 </p>';
-	echo apply_filters( 'graphene_comment_textarea', $html );
-	
-	do_action( 'graphene_comment_textarea' );
+	return apply_filters( 'graphene_comment_textarea', $html );
 }
 	
 // Clear

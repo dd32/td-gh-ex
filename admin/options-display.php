@@ -394,6 +394,7 @@ function graphene_options_display() {
                 	<option value="default" <?php selected( $graphene_settings['colour_preset'], 'default' ); ?>><?php _e( 'Default', 'graphene' ); ?></option>
                     <option value="dream-magnet" <?php selected( $graphene_settings['colour_preset'], 'dream-magnet' ); ?>><?php _e( 'Dream Magnet', 'graphene' ); ?></option>
                     <option value="curiosity-killed" <?php selected( $graphene_settings['colour_preset'], 'curiosity-killed' ); ?>><?php _e( 'Curiosity Killed', 'graphene' ); ?></option>
+                    <option value="zesty-orange" <?php selected( $graphene_settings['colour_preset'], 'zesty-orange' ); ?>><?php _e( 'Zesty Orange', 'graphene' ); ?></option>
                 </select>
                 
             	<h4><?php _e( 'Content area', 'graphene' ); ?></h4>

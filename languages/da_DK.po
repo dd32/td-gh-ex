@@ -558,69 +558,69 @@ msgstr "Er temaet foreneligt med dette plugin eller dette plugin?"
 msgid "My suggestion is to just install the plugin and try it. If you stumble into problem, ask for support from the plugin author first. If the plugin author says that it's a problems with the theme, you know where to find support."
 msgstr "Mit forslag er at bare installere plugin og prøve det. Hvis du snubler ind i problemet, bede om støtte fra plugin forfatteren først. Hvis plugin forfatteren siger, at det er en problemer med tema, du ved hvor man kan finde support."
 
-#: admin/options.php:84
+#: admin/options.php:88
 #: admin/uninstall.php:23
 #@ graphene
 msgid "Uninstall Graphene"
 msgstr "Afinstaller Graphene"
 
-#: admin/options.php:85
+#: admin/options.php:89
 #@ graphene
 msgid "Please confirm that you would like to uninstall the Graphene theme. All of the theme's options in the database will be deleted."
 msgstr "Bekræft venligst, at du gerne vil afinstallere Graphene tema. Alle temaets muligheder i databasen vil blive slettet."
 
-#: admin/options.php:86
+#: admin/options.php:90
 #@ graphene
 msgid "This action is not reversible."
 msgstr "Denne handling kan ikke fortrydes."
 
-#: admin/options.php:90
-#: admin/options.php:342
+#: admin/options.php:94
+#: admin/options.php:346
 #@ graphene
 msgid "Uninstall Theme"
 msgstr "Afinstaller Tema"
 
-#: admin/options.php:104
+#: admin/options.php:108
 #@ graphene
 msgid "Graphene Theme Options"
 msgstr "Graphene Tema Indstillinger"
 
-#: admin/options.php:106
+#: admin/options.php:110
 #@ graphene
 msgid "These are the global settings for the theme. You may override some of the settings in individual posts and pages."
 msgstr "Disse er de globale indstillinger for temaet. Du kan tilsidesætte nogle af de indstillinger i de enkelte indlæg og sider."
 
-#: admin/options.php:114
+#: admin/options.php:118
 #@ graphene
 msgid "General"
 msgstr "Generelle"
 
-#: admin/options.php:115
+#: admin/options.php:119
 #@ graphene
 msgid "Display"
 msgstr "Visning"
 
-#: admin/options.php:155
+#: admin/options.php:159
 #@ graphene
 msgid "Save Options"
 msgstr "Gem indstillinger"
 
-#: admin/options.php:181
+#: admin/options.php:185
 #@ graphene
 msgid "Support the developer"
 msgstr "Support udvikleren"
 
-#: admin/options.php:184
+#: admin/options.php:188
 #@ graphene
 msgid "Developing this awesome theme took a lot of effort and time, months and months of continuous voluntary unpaid work. If you like this theme or if you are using it for commercial websites, please consider a donation to the developer to help support future updates and development."
 msgstr "Udviklingen af dette super tema tog en stor indsats og tid, måneder og måneder af kontinuerlig frivilligt ulønnet arbejde. Hvis du kan lide dette tema, eller hvis du bruger det til kommercielle hjemmesider, kan du overveje en donation til udvikleren at bidrage til at støtte fremtidige opdateringer og udvikling."
 
-#: admin/options.php:332
+#: admin/options.php:336
 #@ graphene
 msgid "Uninstall theme"
 msgstr "Afinstaller tema"
 
-#: admin/options.php:335
+#: admin/options.php:339
 #@ graphene
 msgid "<strong>Be careful!</strong> Uninstalling the theme will remove all of the theme's options from the database. Do this only if you decide not to use the theme anymore."
 msgstr "<strong>Vær forsigtig!</strong> Afinstallation temaet vil fjerne alle temaets indstillinger fra databasen. Kun gøre dette, hvis du beslutter ikke at bruge temaet længere."
@@ -766,92 +766,92 @@ msgstr "Aktiver alternativ forsiden sidefod widget område"
 msgid "You can also specify different column counts for the front page footer widget and the rest-of-site footer widget if you enable this option."
 msgstr "Du kan også angive forskellige kolonne tæller forsiden sidefod widget og resten-af-site sidefod widget, hvis du aktiverer denne indstilling."
 
-#: admin/options-general.php:527
+#: admin/options-general.php:534
 #@ graphene
 msgid "Social Sharing Buttons"
 msgstr "Social Deling Knapper"
 
-#: admin/options-general.php:532
+#: admin/options-general.php:539
 #@ graphene
 msgid "Show social sharing button"
 msgstr "Vis sociale deling knap"
 
-#: admin/options-general.php:538
+#: admin/options-general.php:545
 #@ graphene
 msgid "Show in Pages as well?"
 msgstr "Vis på sider også?"
 
-#: admin/options-general.php:560
+#: admin/options-general.php:567
 #@ graphene
 msgid "Your social sharing button code"
 msgstr "Deres sociale deling knap kode"
 
-#: admin/options-general.php:561
+#: admin/options-general.php:568
 #@ graphene
 msgid "You can use codes from any popular social sharing sites, like Facebook, Digg, AddThis, etc."
 msgstr "Du kan bruge koderne fra alle populære sociale sharing sites, som Facebook, Digg, AddThis mv"
 
-#: admin/options-general.php:576
+#: admin/options-general.php:583
 #@ graphene
 msgid "Adsense Options"
 msgstr "Adsense Indstillinger"
 
-#: admin/options-general.php:582
+#: admin/options-general.php:589
 #@ graphene
 msgid "Show Adsense advertising"
 msgstr "Vis Adsense reklamer"
 
-#: admin/options-general.php:590
+#: admin/options-general.php:597
 #@ graphene
 msgid "Show ads on front page as well"
 msgstr "Vis annoncer på forsiden også"
 
-#: admin/options-general.php:596
+#: admin/options-general.php:603
 #@ graphene
 msgid "Your Adsense code"
 msgstr "Din AdSense-kode"
 
-#: admin/options-general.php:609
+#: admin/options-general.php:616
 #@ graphene
 msgid "Google Analytics Options"
 msgstr "Google Analytics Indstillinger"
 
-#: admin/options-general.php:621
+#: admin/options-general.php:628
 #@ graphene
 msgid "<strong>Note:</strong> the theme now places the Google Analytics script in the <code>&lt;head&gt;</code> element to better support the new asynchronous Google Analytics script. Please make sure you update your script to use the new asynchronous script from Google Analytics."
 msgstr "<strong>Bemærk:</strong> temaet nu lægger Google Analytics script i <code>&lt;head&gt;</code> element for bedre at støtte den nye asynkrone Google Analytics script. Sørg for du opdaterer dit script til at bruge den nye asynkrone script fra Google Analytics."
 
-#: admin/options-general.php:614
+#: admin/options-general.php:621
 #@ graphene
 msgid "Enable Google Analytics tracking"
 msgstr "Aktiver Google Analytics"
 
-#: admin/options-general.php:625
+#: admin/options-general.php:632
 #@ graphene
 msgid "Google Analytics tracking code"
 msgstr "Google Analytics-sporingskode"
 
-#: admin/options-general.php:626
+#: admin/options-general.php:633
 #@ graphene
 msgid "Make sure you include the full tracking code (including the <code>&lt;script&gt;</code> and <code>&lt;/script&gt;</code> tags) and not just the <code>UA-#######-#</code> code."
 msgstr "Sørg for at medtage den fulde sporingskoden (herunder <code>&lt;script&gt;</code> og <code>&lt;/script&gt;</code> tags) og ikke kun de <code>UA-#######-#</code> kode."
 
-#: admin/options-general.php:639
+#: admin/options-general.php:646
 #@ graphene
 msgid "Footer Options"
 msgstr "Sidefod muligheder"
 
-#: admin/options-general.php:649
+#: admin/options-general.php:656
 #@ graphene
 msgid "Copyright text (html allowed)"
 msgstr "Copyright tekst (tilladt html)"
 
-#: admin/options-general.php:650
+#: admin/options-general.php:657
 #@ graphene
 msgid "If this field is empty, the following default copyright text will be displayed:"
 msgstr "Hvis dette felt er tomt, vil følgende standard copyright tekst blive vist:"
 
-#: admin/options-general.php:656
+#: admin/options-general.php:663
 #@ graphene
 msgid "Do not show copyright info"
 msgstr "Vis ikke ophavsret info"
@@ -1007,207 +1007,207 @@ msgstr "Kommentarer Visningsindstillinger"
 msgid "Hide allowed tags in comment form"
 msgstr "Skjul tilladt tags i kommentar form"
 
-#: admin/options-display.php:614
+#: admin/options-display.php:613
 #@ graphene
 msgid "Text Style Options"
 msgstr "Tekst Typografiindstillinger"
 
-#: admin/options-display.php:617
+#: admin/options-display.php:616
 #@ graphene
 msgid "Note that these are CSS properties, so any valid CSS values for each particular property can be used."
 msgstr "Bemærk, at der er tale om CSS egenskaber, så enhver gyldigt CSS værdier for hvert enkelt egenskab kan anvendes."
 
-#: admin/options-display.php:618
+#: admin/options-display.php:617
 #@ graphene
 msgid "Some example CSS properties values:"
 msgstr "Nogle eksempler CSS egenskabs værdier:"
 
-#: admin/options-display.php:621
+#: admin/options-display.php:620
 #@ graphene
 msgid "Text font:"
 msgstr "Skrift font:"
 
-#: admin/options-display.php:625
+#: admin/options-display.php:624
 #@ graphene
 msgid "Text size and line height:"
 msgstr "Tekststørrelse og linjehøjde:"
 
-#: admin/options-display.php:629
+#: admin/options-display.php:628
 #@ graphene
 msgid "Text weight:"
 msgstr "Tekst vægt:"
 
-#: admin/options-display.php:633
+#: admin/options-display.php:632
 #@ graphene
 msgid "Text style:"
 msgstr "Tekst stil:"
 
-#: admin/options-display.php:637
+#: admin/options-display.php:636
 #@ graphene
 msgid "Text colour:"
 msgstr "Tekstfarve:"
 
-#: admin/options-display.php:642
+#: admin/options-display.php:641
 #@ graphene
 msgid "Header Text"
 msgstr "Header tekst"
 
-#: admin/options-display.php:646
+#: admin/options-display.php:645
 #@ graphene
 msgid "Title text font"
 msgstr "Titel tekst font"
 
-#: admin/options-display.php:652
+#: admin/options-display.php:651
 #@ graphene
 msgid "Title text size"
 msgstr "Titel tekststørrelse"
 
-#: admin/options-display.php:658
+#: admin/options-display.php:657
 #@ graphene
 msgid "Title text weight"
 msgstr "Titeltekst vægt"
 
-#: admin/options-display.php:664
+#: admin/options-display.php:663
 #@ graphene
 msgid "Title text line height"
 msgstr "Titeltekst linje højde"
 
-#: admin/options-display.php:670
+#: admin/options-display.php:669
 #@ graphene
 msgid "Title text style"
 msgstr "Titeltekst stil"
 
-#: admin/options-display.php:679
+#: admin/options-display.php:678
 #@ graphene
 msgid "Description text font"
 msgstr "Beskrivende tekst font"
 
-#: admin/options-display.php:685
+#: admin/options-display.php:684
 #@ graphene
 msgid "Description text size"
 msgstr "Beskrivelse tekststørrelse"
 
-#: admin/options-display.php:691
+#: admin/options-display.php:690
 #@ graphene
 msgid "Description text weight"
 msgstr "Beskrivende tekst vægt"
 
-#: admin/options-display.php:697
+#: admin/options-display.php:696
 #@ graphene
 msgid "Description text line height"
 msgstr "Beskrivende tekst linjehøjde"
 
-#: admin/options-display.php:703
+#: admin/options-display.php:702
 #@ graphene
 msgid "Description text style"
 msgstr "Beskrivelse tekst stil"
 
-#: admin/options-display.php:709
+#: admin/options-display.php:708
 #@ graphene
 msgid "Content Text"
 msgstr "Indhold Tekst"
 
-#: admin/options-display.php:713
+#: admin/options-display.php:712
 #@ graphene
 msgid "Text font"
 msgstr "Skrift font"
 
-#: admin/options-display.php:719
+#: admin/options-display.php:718
 #@ graphene
 msgid "Text size"
 msgstr "Tekststørrelse"
 
-#: admin/options-display.php:725
+#: admin/options-display.php:724
 #@ graphene
 msgid "Text line height"
 msgstr "Tekst linjehøjde"
 
-#: admin/options-display.php:731
+#: admin/options-display.php:730
 #@ graphene
 msgid "Link Text"
 msgstr "Linktekst"
 
-#: admin/options-display.php:754
+#: admin/options-display.php:753
 #@ graphene
 msgid "Footer Widget Display Options"
 msgstr "Sidefod Widget Visningsindstillinger"
 
-#: admin/options-display.php:760
+#: admin/options-display.php:759
 #@ graphene
 msgid "Number of columns to display"
 msgstr "Antallet af kolonner der skal vises"
 
-#: admin/options-display.php:767
+#: admin/options-display.php:766
 #@ graphene
 msgid "Number of columns to display for front page footer widget"
 msgstr "Antallet af kolonner der skal vises på forside sidefod widget"
 
-#: admin/options-display.php:781
+#: admin/options-display.php:780
 #@ graphene
 msgid "Navigation Menu Display Options"
 msgstr "Navigation Menu Visningsindstillinger"
 
-#: admin/options-display.php:787
+#: admin/options-display.php:786
 #@ graphene
 msgid "Dropdown menu item width"
 msgstr "Dropdown menu bredde"
 
-#: admin/options-display.php:817
+#: admin/options-display.php:816
 #@ graphene
 msgid "Miscellaneous Display Options"
 msgstr "Diverse Visningsindstillinger"
 
-#: admin/options-display.php:820
+#: admin/options-display.php:819
 #@ graphene
 msgid "Site title options"
 msgstr "Site titel options"
 
-#: admin/options-display.php:821
+#: admin/options-display.php:820
 #@ graphene
 msgid "Use these tags to customise your own site title structure: <code>#site-name</code>, <code>#site-desc</code>, <code>#post-title</code>"
 msgstr "Bruge disse tags for at tilpasse din egen hjemmeside titel struktur: <code>#site-name</code> , <code>#site-desc</code> , <code>#post-title</code>"
 
-#: admin/options-display.php:825
+#: admin/options-display.php:824
 #@ graphene
 msgid "Custom front page site title"
 msgstr "Egen forside site titel"
 
-#: admin/options-display.php:829
+#: admin/options-display.php:828
 #@ graphene
 msgid "Defaults to <code>#site-name &raquo; #site-desc</code>. The <code>#post-title</code> tag cannot be used here."
 msgstr "Standard til <code>#site-name » #site-desc</code> . Den <code>#post-title</code> -tag kan ikke bruges her."
 
-#: admin/options-display.php:834
+#: admin/options-display.php:833
 #@ graphene
 msgid "Custom content pages site title"
 msgstr "Egne indholdssider websted titel"
 
-#: admin/options-display.php:838
+#: admin/options-display.php:837
 #@ graphene
 msgid "Defaults to <code>#post-title &raquo; #site-name</code>."
 msgstr "Standard til <code>#post-title » #site-name</code> ."
 
-#: admin/options-display.php:843
+#: admin/options-display.php:842
 #@ graphene
 msgid "Favicon options"
 msgstr "Favicon options"
 
-#: admin/options-display.php:847
+#: admin/options-display.php:846
 #@ graphene
 msgid "Favicon URL"
 msgstr "Favicon URL"
 
-#: admin/options-display.php:873
+#: admin/options-display.php:872
 #@ graphene
 msgid "Custom CSS"
 msgstr "Brugerdefineret CSS"
 
-#: admin/options-display.php:878
+#: admin/options-display.php:877
 #@ graphene
 msgid "Custom CSS styles"
 msgstr "Brugerdefinerede CSS styles"
 
-#: admin/options-display.php:880
+#: admin/options-display.php:879
 #@ graphene
 msgid "You can enter your own CSS codes below to modify any other aspects of the theme's appearance that is not included in the options."
 msgstr "Du kan indtaste dine egne CSS-koder nedenfor for at ændre andre aspekter af det tema, udseende, som ikke er inkluderet i de forskellige muligheder."
@@ -1267,52 +1267,52 @@ msgstr "Næste side »"
 msgid "&laquo; Previous page"
 msgstr "« Forrige side"
 
-#: admin/options.php:280
+#: admin/options.php:284
 #@ graphene
 msgid "Options Presets"
 msgstr "Valg Presets"
 
-#: admin/options.php:283
+#: admin/options.php:287
 #@ graphene
 msgid "The default settings for the theme is preconfigured for use in blogs. If you're using this theme primarily for a normal website, or if you want to reset the settings to their default values, you can apply one of the available options presets below."
 msgstr "Standardindstillingerne for temaet er prækonfigureret til brug i blogs. Hvis du bruger dette tema primært for en normal hjemmeside, eller hvis du ønsker at nulstille indstillingerne til deres standardværdier, kan du anvende en af ​​de tilgængelige valgmuligheder forudindstillinger nedenfor."
 
-#: admin/options.php:284
+#: admin/options.php:288
 #@ graphene
 msgid "Note that you can still configure the individual settings after you apply any preset."
 msgstr "Bemærk, at du stadig kan konfigurere de individuelle indstillinger, når du anvender enhver forudindstillet."
 
-#: admin/options.php:289
+#: admin/options.php:293
 #@ graphene
 msgid "Select Options Preset"
 msgstr "Vælg standard indstillinger"
 
-#: admin/options.php:292
+#: admin/options.php:296
 #@ graphene
 msgid "Normal website"
 msgstr "Normal hjemmeside"
 
-#: admin/options.php:295
+#: admin/options.php:299
 #@ graphene
 msgid "Reset to default settings"
 msgstr "Nulstil til standardindstillinger"
 
-#: admin/options.php:300
+#: admin/options.php:304
 #@ graphene
 msgid "Apply Options Preset"
 msgstr "Anvend standard indstillinger"
 
-#: admin/options.php:310
+#: admin/options.php:314
 #@ graphene
 msgid "Import/export theme options"
 msgstr "Import / eksport tema muligheder"
 
-#: admin/options.php:322
+#: admin/options.php:326
 #@ graphene
 msgid "Export Theme options"
 msgstr "Eksport Tema valgmuligheder"
 
-#: admin/options.php:316
+#: admin/options.php:320
 #@ graphene
 msgid "Import Theme options"
 msgstr "Import Tema valgmuligheder"
@@ -1419,12 +1419,12 @@ msgstr "Deaktiveres fuldstændigt"
 msgid "Child Page Options"
 msgstr "Child Sideindstillinger"
 
-#: admin/options-general.php:672
+#: admin/options-general.php:679
 #@ graphene
 msgid "Print Options"
 msgstr "Udskriftsindstillinger"
 
-#: admin/options-general.php:677
+#: admin/options-general.php:684
 #@ graphene
 msgid "Enable print CSS for single posts and pages?"
 msgstr "Aktiver udskrive CSS for enlige indlæg og sider?"
@@ -1544,12 +1544,12 @@ msgstr "Søger efter udtryk <strong>%s</strong> ..."
 msgid "I don't know. With so many plugins available for WordPress, there's no way that I (or anybody else for that matter) can test for compatibility for all of them. Having said that, the theme is built with all the necessary WordPress components included with it, so chances are most plugins will be compatible with the theme."
 msgstr "Jeg ved ikke. Med så mange plugins til rådighed for WordPress, er der ingen måde, at jeg (eller nogen anden for den sags skyld) kan teste for kompatibilitet for dem alle. Sagt, er temaet bygget med alle de nødvendige WordPress komponenter, der følger med det, så chancerne er mest plugins vil være kompatibel med temaet."
 
-#: admin/options.php:313
+#: admin/options.php:317
 #@ graphene
 msgid "Import"
 msgstr "Import"
 
-#: admin/options.php:318
+#: admin/options.php:322
 #@ graphene
 msgid "Export"
 msgstr "Eksport"
@@ -1589,29 +1589,29 @@ msgstr "Indtast HTML-tags du gerne vil beholde i uddrag. For eksempel, indtast <
 msgid "Please enter the full URL (including <code>http://</code>) to your profile image."
 msgstr "Angiv den fulde URL (inklusive <code>http://</code> ) til din profil billede."
 
-#: admin/options-init.php:128
+#: admin/options-init.php:148
 #@ graphene
 msgid "Template preview not found."
 msgstr "Skabelon preview ikke fundet."
 
-#: admin/options-init.php:131
+#: admin/options-init.php:151
 #@ graphene
 msgid "default"
 msgstr "default"
 
-#: admin/options-init.php:187
-#: admin/options-init.php:191
+#: admin/options-init.php:207
+#: admin/options-init.php:211
 #@ graphene
 msgid "Theme default"
 msgstr "Tema standard"
 
-#: admin/db-updater.php:227
+#: admin/db-updater.php:232
 #, php-format
 #@ graphene
 msgid "Follow %s on Twitter"
 msgstr "Følg %s på Twitter"
 
-#: admin/db-updater.php:238
+#: admin/db-updater.php:243
 #, php-format
 #@ graphene
 msgid "Visit %s's Facebook page"
@@ -1623,8 +1623,8 @@ msgstr "Besøg %s's Facebook side"
 msgid "Subscribe to %s's RSS feed"
 msgstr "Abonnere på %s's RSS-feed"
 
-#: admin/js/admin.js.php:114
 #: admin/options-general.php:467
+#: admin/options-general.php:487
 #@ graphene
 msgid "Delete"
 msgstr "Slet"
@@ -1652,73 +1652,73 @@ msgid "Description"
 msgstr "Beskrivelse"
 
 #: admin/custom-fields.php:174
-#: admin/options-display.php:805
+#: admin/options-display.php:804
 #@ graphene
 msgid "Only required if you need a description in the navigation menu and you are not using a custom menu."
 msgstr "Kun påkrævet, hvis du har brug for en beskrivelse i navigationsmenuen, og du ikke bruger en brugerdefineret menu."
 
-#: admin/options.php:226
+#: admin/options.php:230
 #@ graphene
 msgid "Graphene Usage Survey"
 msgstr "Graphene bruger undersøgelse"
 
-#: admin/options.php:229
+#: admin/options.php:233
 #@ graphene
 msgid "Help us to get to know you better. Take the Graphene theme usage survey now! Every opinion counts towards making the theme better. The survey is very short, and is completely anonymous."
 msgstr "Hjælp os med at lære dig at kende bedre. Tag Graphene temaet bruger undersøgelse nu! Hver mening tæller hen imod at gøre temaet bedre. Undersøgelsen er meget kort, og er helt anonym."
 
-#: admin/options.php:230
+#: admin/options.php:234
 #@ graphene
 msgid "Take the survey"
 msgstr "Tag undersøgelsen"
 
-#: admin/options.php:240
+#: admin/options.php:244
 #@ graphene
 msgid "Add-ons and plugins"
 msgstr "Add-on og plugins"
 
-#: admin/options.php:243
+#: admin/options.php:247
 #@ graphene
 msgid "Add-ons"
 msgstr "Add-on"
 
-#: admin/options.php:244
+#: admin/options.php:248
 #@ graphene
 msgid "Add-ons are not shipped with the theme, but can be installed separately to extend the theme's capability."
 msgstr "Add-ons der ikke leveres med temaet, men kan installeres separat for at udvide temaet evne."
 
-#: admin/options.php:248
+#: admin/options.php:252
 #@ graphene
 msgid "Installed"
 msgstr "Installeret"
 
-#: admin/options.php:249
-#: admin/options.php:268
+#: admin/options.php:253
+#: admin/options.php:272
 #@ graphene
 msgid "Not installed"
 msgstr "Ikke installeret"
 
-#: admin/options.php:249
+#: admin/options.php:253
 #@ graphene
 msgid "Learn more"
 msgstr "Lær mere"
 
-#: admin/options.php:250
+#: admin/options.php:254
 #@ graphene
 msgid "Mobile extension developed specifically for optimised display of your site on mobile devices, such as iPhone and Android devices."
 msgstr "Mobile Extension er udviklet specielt til optimeret visning af dit websted på mobile enheder, såsom iPhone og Android-enheder."
 
-#: admin/options.php:253
+#: admin/options.php:257
 #@ graphene
 msgid "Plugins"
 msgstr "Plugins"
 
-#: admin/options.php:254
+#: admin/options.php:258
 #@ graphene
 msgid "The plugins listed here are natively supported by the theme. All you need to do is install the plugins and activate them."
 msgstr "De plugins anført her, er oprindeligt støttet af temaet. Alt du skal gøre er at installere de nævnte plugins og aktivere dem."
 
-#: admin/options.php:267
+#: admin/options.php:271
 #@ graphene
 msgid "Activated"
 msgstr "Aktiveret"
@@ -1758,22 +1758,22 @@ msgstr "Vis liste"
 msgid "Only show listing if parent content is empty"
 msgstr "Vis kun liste, hvis forældre indholdet er tomt"
 
-#: admin/options-general.php:549
+#: admin/options-general.php:556
 #@ graphene
 msgid "Social sharing buttons location"
 msgstr "Social deling knapper placering"
 
-#: admin/options-general.php:552
+#: admin/options-general.php:559
 #@ graphene
 msgid "Bottom of posts"
 msgstr "Bunden af ​​indlæg"
 
-#: admin/options-general.php:553
+#: admin/options-general.php:560
 #@ graphene
 msgid "Top of posts"
 msgstr "Toppen af ​​indlæg"
 
-#: admin/options-general.php:554
+#: admin/options-general.php:561
 #@ graphene
 msgid "Both top and bottom"
 msgstr "Både top og bund"
@@ -1946,7 +1946,7 @@ msgstr "g:i A"
 msgid "F j, Y"
 msgstr "F j, Y"
 
-#: admin/options-general.php:660
+#: admin/options-general.php:667
 #@ graphene
 msgid "Do not show the \"Return to top\" link"
 msgstr "Vis ikke \"Tilbage til toppen\" link"
@@ -1986,125 +1986,125 @@ msgstr "Post og sider øverste kant"
 msgid "Post and pages bottom border"
 msgstr "Post og sider nederste kant"
 
-#: admin/options-display.php:417
-#: admin/options-display.php:448
-#: admin/options-display.php:474
-#: admin/options-display.php:502
-#: admin/options-display.php:531
-#: admin/options-display.php:558
-#: admin/options-display.php:573
-#: admin/options-display.php:583
-#: admin/options-display.php:600
+#: admin/options-display.php:416
+#: admin/options-display.php:447
+#: admin/options-display.php:473
+#: admin/options-display.php:501
+#: admin/options-display.php:530
+#: admin/options-display.php:557
+#: admin/options-display.php:572
+#: admin/options-display.php:582
+#: admin/options-display.php:599
 #@ graphene
 msgid "Clear"
 msgstr "Ryd"
 
-#: admin/options-display.php:424
+#: admin/options-display.php:423
 #@ graphene
 msgid "Widgets"
 msgstr "Widgets"
 
-#: admin/options-display.php:427
+#: admin/options-display.php:426
 #@ graphene
 msgid "Widget preview"
 msgstr "Widget forhåndsvisning"
 
-#: admin/options-display.php:428
+#: admin/options-display.php:427
 #@ graphene
 msgid "Widget title"
 msgstr "Widget titel"
 
-#: admin/options-display.php:428
+#: admin/options-display.php:427
 #@ graphene
 msgid "List item"
 msgstr "List Punkt"
 
-#: admin/options-display.php:432
+#: admin/options-display.php:431
 #@ graphene
 msgid "Widget item background"
 msgstr "Widget element baggrund"
 
-#: admin/options-display.php:433
+#: admin/options-display.php:432
 #@ graphene
 msgid "Widget item list border"
 msgstr "Widget element liste kant"
 
-#: admin/options-display.php:434
+#: admin/options-display.php:433
 #@ graphene
 msgid "Widget header border"
 msgstr "Widget header grænse"
 
-#: admin/options-display.php:435
+#: admin/options-display.php:434
 #@ graphene
 msgid "Widget title colour"
 msgstr "Widget titel farve"
 
-#: admin/options-display.php:436
+#: admin/options-display.php:435
 #@ graphene
 msgid "Widget title text shadow colour"
 msgstr "Widget titel tekst Skyggefarve"
 
-#: admin/options-display.php:437
+#: admin/options-display.php:436
 #@ graphene
 msgid "Widget header gradient bottom colour"
 msgstr "Widget header gradient bund farve"
 
-#: admin/options-display.php:438
+#: admin/options-display.php:437
 #@ graphene
 msgid "Widget header gradient top colour"
 msgstr "Widget header gradient top farve"
 
-#: admin/options-display.php:456
+#: admin/options-display.php:455
 #@ graphene
 msgid "Slider"
 msgstr "Slider"
 
-#: admin/options-display.php:459
+#: admin/options-display.php:458
 #@ graphene
 msgid "Slider background preview"
 msgstr "Slider baggrund forhåndsvisning"
 
-#: admin/options-display.php:464
+#: admin/options-display.php:463
 #@ graphene
 msgid "Slider top left colour"
 msgstr "Slider øverst til venstre farve"
 
-#: admin/options-display.php:465
+#: admin/options-display.php:464
 #@ graphene
 msgid "Slider bottom right colour"
 msgstr "Slider nederst til højre farve"
 
-#: admin/options-display.php:482
+#: admin/options-display.php:481
 #@ graphene
 msgid "Block buttons"
 msgstr "Blok knapper"
 
-#: admin/options-display.php:485
+#: admin/options-display.php:484
 #@ graphene
 msgid "Block button preview"
 msgstr "Blok knapper forhåndsvisning"
 
-#: admin/options-display.php:486
+#: admin/options-display.php:485
 #@ graphene
 msgid "Button label"
 msgstr "Knap label"
 
-#: admin/options-display.php:490
+#: admin/options-display.php:489
 #@ graphene
 msgid "Button background colour"
 msgstr "Knap baggrundsfarve"
 
-#: admin/options-display.php:491
+#: admin/options-display.php:490
 #@ graphene
 msgid "Button label colour"
 msgstr "Button label farve"
 
-#: admin/options-display.php:492
+#: admin/options-display.php:491
 #@ graphene
 msgid "Button label text shadow"
 msgstr "Knap label tekst skygge"
 
-#: admin/options-display.php:801
+#: admin/options-display.php:800
 #@ graphene
 msgid "Description for default menu \"Home\" item"
 msgstr "Beskrivelse af standard menu \"Hjem\" element"
@@ -2177,18 +2177,18 @@ msgstr "Skjul dato"
 msgid "Please direct all support requests for the theme at the theme's <a href=\"http://forum.khairul-syahir.com/graphene-wordpress-theme/\">Support Forum</a>."
 msgstr "Alle support anmodninger om temaet bedes rettet til temaets <a href=\"http://forum.khairul-syahir.com/graphene-wordpress-theme/\">Support Forum</a>."
 
-#: admin/options.php:116
+#: admin/options.php:120
 #@ graphene
 msgid "Advanced"
 msgstr "Avanceret"
 
 #: admin/options-advanced.php:12
-#: admin/options.php:353
+#: admin/options.php:357
 #@ graphene
 msgid "Preview"
 msgstr "Eksempel"
 
-#: admin/options.php:354
+#: admin/options.php:358
 #@ graphene
 msgid "The preview will be updated when the \"Save Options\" button above is clicked."
 msgstr "Forhåndsvisningen vil blive opdateret, når \"Gem Options\" knappen ovenfor er klikket."
@@ -2213,7 +2213,7 @@ msgstr "Kategorier til visning"
 msgid "All posts within the categories selected here will be displayed on the slider. Usage example: create a new category \"Featured\" and assign all posts to be displayed on the slider to that category, and then select that category here."
 msgstr "Alle indlæg af de valgte kategorier her vil blive vist i slideren. Eksempel: opret en ny kategori, \"Udvalgte\" og tildel alle indlæg, der skal vises i slideren til denne kategori, og vælg derefter denne kategori her."
 
-#: admin/options-display.php:851
+#: admin/options-display.php:850
 #: admin/options-general.php:118
 #@ graphene
 msgid "Upload or select image from gallery"
@@ -2254,57 +2254,57 @@ msgstr "Åbn sociale medie links i nyt vindue"
 msgid "<strong>Note:</strong> To reset any of the colours to their default value, just click on \"Clear\" beside the colour field and save the settings. The theme will automatically revert the value to the default colour."
 msgstr "<strong>Bemærk:</strong> Hvis du vil nulstille nogle af farverne til deres standard værdi, skal du blot klikke på \"Ryd\" ved siden af farve-feltet og gemme indstillingerne. Temaet vil automatisk vende tilbage værdien til standard farve."
 
-#: admin/options-display.php:510
+#: admin/options-display.php:509
 #@ graphene
 msgid "Archive title"
 msgstr "Arkiv titel"
 
-#: admin/options-display.php:513
+#: admin/options-display.php:512
 #@ graphene
 msgid "Archive title preview"
 msgstr "Arkiv titel forhåndsvisning"
 
-#: admin/options-display.php:514
+#: admin/options-display.php:513
 #@ graphene
 msgid "Archive title:"
 msgstr "Arkiv titel:"
 
-#: admin/options-display.php:514
+#: admin/options-display.php:513
 #@ graphene
 msgid "Sample title"
 msgstr "Eksempel på titel"
 
-#: admin/options-display.php:518
+#: admin/options-display.php:517
 #@ graphene
 msgid "Archive background gradient left colour"
 msgstr "Arkiv background gradient venstre farve"
 
-#: admin/options-display.php:519
+#: admin/options-display.php:518
 #@ graphene
 msgid "Archive background gradient right colour"
 msgstr "Arkiv background gradient højre farve"
 
-#: admin/options-display.php:520
+#: admin/options-display.php:519
 #@ graphene
 msgid "Archive label colour"
 msgstr "Arkiv label farve"
 
-#: admin/options-display.php:521
+#: admin/options-display.php:520
 #@ graphene
 msgid "Archive text colour"
 msgstr "Arkiv tekstfarve"
 
-#: admin/options-display.php:522
+#: admin/options-display.php:521
 #@ graphene
 msgid "Archive label and text shadow colour"
 msgstr "Arkiv label og tekst skygge farve"
 
-#: admin/options-display.php:793
+#: admin/options-display.php:792
 #@ graphene
 msgid "Disable description in Header Menu"
 msgstr "Deaktiver beskrivelse i Header Menu"
 
-#: admin/options-display.php:851
+#: admin/options-display.php:850
 #@ graphene
 msgid "Simply enter the full URL to your favicon file here to enable favicon. Make sure you include the <code>http://</code> in front of the URL as well. Or use the WordPress media uploader to upload an image, or select one from the media library."
 msgstr "Du skal blot indtaste den fulde URL til din favicon-fil her for at aktivere favicon. Sørg for at medtage <code>http://</code> foran URL adressen også. Eller brug WordPress medie uploaderen til at uploade et billede eller vælge et fra mediebiblioteket."
@@ -2416,32 +2416,32 @@ msgstr "Tre kolonner (med to sidebars til venstre)"
 msgid "Three columns (with sidebars left and right)"
 msgstr "Tre kolonner (med sidebar til venstre og højre)"
 
-#: admin/options-general.php:644
+#: admin/options-general.php:651
 #@ graphene
 msgid "Use Creative Commons licence for content"
 msgstr "Bruger Creative Commons licence for indhold"
 
-#: admin/options-display.php:589
+#: admin/options-display.php:588
 #@ graphene
 msgid "Link colour (normal state )"
 msgstr "Link farve (normal tilstand)"
 
-#: admin/options-display.php:590
+#: admin/options-display.php:589
 #@ graphene
 msgid "Link colour (visited state )"
 msgstr "Link farve (besøgt tilstand)"
 
-#: admin/options-display.php:591
+#: admin/options-display.php:590
 #@ graphene
 msgid "Link colour (hover state )"
 msgstr "Link farve (valgt tilstand)"
 
-#: admin/options-display.php:735
+#: admin/options-display.php:734
 #@ graphene
 msgid "Text decoration (normal state )"
 msgstr "Tekst attribut (normal tilstand)"
 
-#: admin/options-display.php:741
+#: admin/options-display.php:740
 #@ graphene
 msgid "Text decoration (hover state )"
 msgstr "Tekst attribut (valgt tilstand)"
@@ -2562,12 +2562,12 @@ msgstr "Påvirker kun indlæg listning (som f.eks forsiden) og ikke en enkelt po
 msgid "Show post author's <a href=\"http://en.gravatar.com/\">gravatar</a>"
 msgstr "Vis post forfatter's <a href=\"http://en.gravatar.com/\">gravatar</a>"
 
-#: admin/options-general.php:564
+#: admin/options-general.php:571
 #@ graphene
 msgid "You may use these tags to get the post's URL, title, and excerpt:"
 msgstr "Du kan bruge disse tags for at hente URL, titel og uddrag:"
 
-#: admin/options-general.php:683
+#: admin/options-general.php:690
 #@ graphene
 msgid "Show print button"
 msgstr "Vis print knap"
@@ -2577,48 +2577,48 @@ msgstr "Vis print knap"
 msgid "ERROR: Invalid option for the bbPress column mode."
 msgstr "FEJL: Ugyldig mulighed for at køre bbPress kolonne mode."
 
-#: admin/options.php:167
+#: admin/options.php:171
 #@ graphene
 msgid "Need help?"
 msgstr "Brug for hjælp?"
 
-#: admin/options.php:171
+#: admin/options.php:175
 #@ graphene
 msgid "Documentation Wiki"
 msgstr "Dokumentation Wiki"
 
-#: admin/options.php:172
+#: admin/options.php:176
 #@ graphene
 msgid "Support Forum"
 msgstr "Support Forum"
 
-#: admin/options.php:174
+#: admin/options.php:178
 #, php-format
 #@ graphene
 msgid "Also, find out how you can %s."
 msgstr "Også finde ud af hvordan du kan %s."
 
-#: admin/options.php:174
+#: admin/options.php:178
 #@ graphene
 msgid "support the Graphene theme"
 msgstr "support the Graphene theme"
 
-#: admin/options.php:198
+#: admin/options.php:202
 #@ graphene
 msgid "Graphene Theme news"
 msgstr "Graphene Theme nyheder"
 
-#: admin/options.php:209
+#: admin/options.php:213
 #@ graphene
 msgid "No news items."
 msgstr "Ingen nyheder."
 
-#: admin/options.php:336
+#: admin/options.php:340
 #@ graphene
 msgid "If you just want to try another theme, there is no need to uninstall this theme. Simply activate the other theme in the Appearance &gt; Themes admin page."
 msgstr "Hvis du bare har lyst til at prøve et andet tema, er der ingen grund til at afinstallere dette tema. Du skal blot aktivere det andet tema under Udseende> Temaer admin side."
 
-#: admin/options.php:337
+#: admin/options.php:341
 #@ graphene
 msgid "Note that uninstalling this theme <strong>does not remove</strong> the theme's files. To delete the files after you have uninstalled this theme, go to Appearances &gt; Themes and delete the theme from there."
 msgstr "Bemærk, at du afinstallerer dette tema <strong> ikke fjerner </strong> temaets filer. Hvis du vil slette de filer, når du har afinstalleret dette tema, skal du gå til Appearances> Temaer og slette temaet derfra."
@@ -2689,7 +2689,7 @@ msgstr "Det andet sidebar widget-område (vil altid blive vist i venstre side)."
 #, php-format
 #@ graphene
 msgid "Edit %s"
-msgstr "Redigeret %s"
+msgstr "Rediger %s"
 
 #. translators: this is for the author byline, such as 'by John Doe'
 #: loop-single.php:94
@@ -2711,17 +2711,17 @@ msgstr "Kommentarer fra"
 msgid "Search results for: %s"
 msgstr "Søgeresultat for: %s"
 
-#: admin/options-display.php:856
+#: admin/options-display.php:855
 #@ graphene
 msgid "WordPress Editor options"
 msgstr "WordPress Editor options"
 
-#: admin/options-display.php:860
+#: admin/options-display.php:859
 #@ graphene
 msgid "Disable custom editor styles"
 msgstr "Deaktiver brugerdefinerede editor stilarter"
 
-#: admin/options-init.php:86
+#: admin/options-init.php:106
 #@ graphene
 msgid "Toggle all options boxes"
 msgstr "Skift muligheder i alle bokse"
@@ -2742,40 +2742,35 @@ msgstr "Brugerdefineret skyder URL"
 msgid "Use this to override the link that is used in the slider."
 msgstr "Brug dette til at tilsidesætte det link, der bruges i skyderen."
 
-#: admin/faq.php:24
-#@ graphene
-msgid "The Graphene WordPress theme, along with all the other themes in the WordPress.org Official Free Themes Directory, is released under the GNU General Public License (GPL) Version 3. The full text of that licence is included with the theme in the <code>licence.txt</code> file in the theme's folder. Releasing the theme under that licence means, among others, that you are <em>free to modify the theme in any way for any purpose (including commercial)</em> without any obligation to the theme's author. However, if you decide to redistribute the theme, the licence dictates that you must release the theme under the same licence, GPLv3."
-msgstr "Graphene WordPress temaet, er sammen med alle de andre temaer i WordPress.org officielle Gratis Temaer Register, udgivet er under GNU General Public License (GPL) version 3. Den fulde ordlyd af denne licens er inkluderet med temaet i <code> licence.txt </ code> fil i temaets mappe. Frigørelse af temaet i henhold til licensen betyder blandt andet, at du er <em> velkommen til at ændre temaet på nogen måde til ethvert formål (herunder kommercielle) </ em> uden forpligtelse til temaet forfatter. Men hvis du beslutter at videredistribuere det tema, licensen dikterer, at du skal slippe tema under den samme licens, GPLv3."
-
 #: admin/faq.php:28
 #@ graphene
 msgid "If the theme is released under GPLv3, what is this Creative Commons licence in the theme's footer?"
 msgstr "Hvis temaet er frigivet under GPLv3, hvad er det Creative Commons-licens i temaets sidefod?"
 
-#: admin/js/admin.js.php:86
-#: admin/options-general.php:422
-#: admin/options-general.php:437
+#: admin/options-general.php:424
+#: admin/options-general.php:439
+#: admin/options-general.php:483
 #@ graphene
 msgid "Custom"
 msgstr "Brugerdefineret"
 
-#: admin/js/admin.js.php:93
 #: admin/options-general.php:463
-#: admin/options-general.php:509
+#: admin/options-general.php:484
+#: admin/options-general.php:516
 #@ graphene
 msgid "Icon URL"
 msgstr "Ikon URL"
 
-#: admin/js/admin.js.php:106
 #: admin/options-general.php:449
-#: admin/options-general.php:499
+#: admin/options-general.php:485
+#: admin/options-general.php:506
 #@ graphene
 msgid "Title attribute"
 msgstr "attributten Title"
 
-#: admin/js/admin.js.php:110
 #: admin/options-general.php:453
-#: admin/options-general.php:503
+#: admin/options-general.php:486
+#: admin/options-general.php:510
 #@ graphene
 msgid "URL"
 msgstr "URL"
@@ -2810,68 +2805,68 @@ msgstr "Dream Magnet"
 msgid "Curiosity Killed"
 msgstr "Curiosity Killed"
 
-#: admin/options-display.php:439
+#: admin/options-display.php:438
 #@ graphene
 msgid "Widget box shadow"
 msgstr "Widget boks skygge"
 
-#: admin/options-display.php:493
+#: admin/options-display.php:492
 #@ graphene
 msgid "Button box shadow"
 msgstr "Knap box skygge"
 
-#: admin/options-display.php:539
+#: admin/options-display.php:538
 #@ graphene
 msgid "Comments area"
 msgstr "Kommentarer område"
 
-#: admin/options-display.php:543
+#: admin/options-display.php:542
 #@ graphene
 msgid "Comments background"
 msgstr "Kommentarer baggrund"
 
-#: admin/options-display.php:544
+#: admin/options-display.php:543
 #@ graphene
 msgid "Comments text"
 msgstr "Kommentarer tekst"
 
-#: admin/options-display.php:545
+#: admin/options-display.php:544
 #@ graphene
 msgid "Threaded comments border"
 msgstr "Kommentarer kant"
 
-#: admin/options-display.php:546
+#: admin/options-display.php:545
 #@ graphene
 msgid "Author comments background"
 msgstr "Forfatter kommentarer baggrund"
 
-#: admin/options-display.php:547
+#: admin/options-display.php:546
 #@ graphene
 msgid "Author comments top border"
 msgstr "Forfatter kommentarer øverste kant"
 
-#: admin/options-display.php:548
+#: admin/options-display.php:547
 #@ graphene
 msgid "Author comments text"
 msgstr "Forfatter kommentarer tekst"
 
-#: admin/options-display.php:549
+#: admin/options-display.php:548
 #@ graphene
 msgid "Comment form background"
 msgstr "Kommentar formular baggrund"
 
-#: admin/options-display.php:550
+#: admin/options-display.php:549
 #@ graphene
 msgid "Comment form text"
 msgstr "Kommentar formular tekst"
 
-#: admin/options-display.php:565
-#: admin/options-display.php:569
+#: admin/options-display.php:564
+#: admin/options-display.php:568
 #@ graphene
 msgid "Content text"
 msgstr "Indhold tekst"
 
-#: admin/options-display.php:579
+#: admin/options-display.php:578
 #@ graphene
 msgid "Title text"
 msgstr "Titel tekst"
@@ -2912,7 +2907,7 @@ msgid "<strong>Hint:</strong> drag and drop to rearrange the placement of the so
 msgstr "<strong>Tip:</ strong> træk og slip for at omarrangere placeringen af ​​de sociale medie ikoner."
 
 #: admin/options-general.php:457
-#: admin/options-general.php:505
+#: admin/options-general.php:512
 #@ graphene
 msgid "Leave the URL empty to use the default RSS URL."
 msgstr "Efterlad URL tomt for at bruge standard RSS-URL."
@@ -2922,28 +2917,28 @@ msgstr "Efterlad URL tomt for at bruge standard RSS-URL."
 msgid "Add Social Media Profile"
 msgstr "Tilføj Social Media Profil"
 
-#: admin/options-general.php:484
+#: admin/options-general.php:491
 #@ graphene
 msgid "Type"
 msgstr "Type"
 
-#: admin/options-general.php:513
+#: admin/options-general.php:520
 #@ graphene
 msgid "Add new Social Media Profile"
 msgstr "Tilføj ny Social Media Profil"
 
-#: admin/options-general.php:542
+#: admin/options-general.php:549
 #@ graphene
 msgid "Show in home and archive pages?"
 msgstr "Vis i start og arkiv sider?"
 
-#: admin/options-general.php:545
+#: admin/options-general.php:552
 #, php-format
 #@ graphene
 msgid "Enabling this will cause the social sharing buttons to appear on posts listing pages, like the home page and archive pages. Use the available tags in the code below to get the post's URL, title, and excerpt. Otherwise, all your buttons will share the same URL and title. If you're using AddThis, see the %s."
 msgstr "Aktivering her vil medføre, at sociale deling knapper vises på indlæg liste sider, ligesom hjemmesiden og arkivere sider. Brug de tilgængelige mærker i koden nedenfor for at få posten URL, titel og uddrag. Ellers vil alle dine knapper deler den samme URL og titel. Hvis du bruger AddThis, se %s."
 
-#: admin/options-general.php:545
+#: admin/options-general.php:552
 #@ graphene
 msgid "AddThis Client API"
 msgstr "AddThis Client API"
@@ -3017,4 +3012,14 @@ msgstr "Link"
 #@ graphene
 msgid "I've done a courtesy search for the term %s for you. See if you can find what you're looking for in the list below."
 msgstr "Jeg har søgt efter ordet %s for dig. Se om du kan finde det, du leder efter i listen nedenfor."
+
+#: admin/faq.php:24
+#@ graphene
+msgid "The Graphene WordPress theme, along with all the other themes in the WordPress.org Official Free Themes Directory, is released under the GNU General Public License (GPL) Version 3. The full text of that licence is included with the theme in the <code>licence.txt</code> file in the theme's folder. Releasing the theme under that licence means, among others, that you are <em>free to modify the theme in any way for any purpose (including commercial)</em>. However, if you decide to redistribute the theme, the licence dictates that you must release the theme under the same licence, GPLv3, and attributes the copyright of the original theme to the original author."
+msgstr "en Graphene WordPress tema, sammen med alle de andre temaer i WordPress.org officielle Gratis Temaer Register, udgivet er under GNU General Public License (GPL) version 3. Den fulde ordlyd af denne licens er inkluderet med temaet i <code>licence.txt</code> fil i temaets mappe. Frigørelse af temaet i henhold til licensen betyder blandt andet, at du er <em> velkommen til at ændre temaet på nogen måde til ethvert formål (herunder kommercielle) </em>. Men hvis du beslutter at videredistribuere det tema, licensen dikterer, at du skal frigive temaet under den samme licens, GPLv3, og tilskriver ophavsretten til det originale tema til den oprindelige forfatter."
+
+#: admin/options-general.php:494
+#@ graphene
+msgid "Choose type"
+msgstr "Vælg type"
 

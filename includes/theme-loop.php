@@ -140,11 +140,11 @@ if (!function_exists( 'graphene_posts_nav' ) ) :
 		elseif ( $query->max_num_pages > 1) : ?>
             <div class="post-nav clearfix">
                 <?php if (!is_search() ) : ?>
-                    <p id="previous"><?php next_posts_link(__( 'Older posts &laquo;', 'graphene' ) ) ?></p>
-                    <p id="next-post"><?php previous_posts_link(__( '&raquo; Newer posts', 'graphene' ) ) ?></p>
+                    <p class="previous"><?php next_posts_link(__( 'Older posts &laquo;', 'graphene' ) ) ?></p>
+                    <p class="next-post"><?php previous_posts_link(__( '&raquo; Newer posts', 'graphene' ) ) ?></p>
                 <?php else : ?>
-                    <p id="next-post"><?php next_posts_link(__( 'Next page &raquo;', 'graphene' ) ) ?></p>
-                    <p id="previous"><?php previous_posts_link(__( '&laquo; Previous page', 'graphene' ) ) ?></p>
+                    <p class="next-post"><?php next_posts_link(__( 'Next page &raquo;', 'graphene' ) ) ?></p>
+                    <p class="previous"><?php previous_posts_link(__( '&laquo; Previous page', 'graphene' ) ) ?></p>
                 <?php endif; ?>
             </div>
          
@@ -461,5 +461,25 @@ function graphene_first_p( $text ){
 	$text = preg_replace('/<p([^>]+)?>/', '<p$1 class="first-p">', $text , 1);
 	
 	return apply_filters( 'graphene_first_p', $text );
+}
+
+
+/**
+ * Display a link to return to the parent page for child pages
+ *
+ * @param object $post The post object of the current page
+ */
+function graphene_parent_return_link( $post = '' ){
+	if ( function_exists( 'bcn_display' ) ) return;
+	if ( empty( $post ) ) return;
+	if ( ! $post->post_parent ) return;
+	
+	$title = get_the_title( $post->post_parent );
+	$permalink = get_permalink( $post->post_parent );
+	?>
+    <div class="parent-return parent-<?php echo $post->post_parent; ?>">
+    	<p>&uarr; <?php printf( __( 'Return to %s', 'graphene' ), '<a class="parent-return-link" href="' . $permalink . '">' . $title . '</a>' ); ?></p>
+    </div>
+    <?php
 }
 ?>

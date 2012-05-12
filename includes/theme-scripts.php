@@ -44,6 +44,7 @@ function graphene_register_scripts(){
 	global $graphene_settings;
 	
 	wp_register_script( 'graphene-jquery-tools', get_template_directory_uri() . '/js/jquery-tools-1.2.5.min.js', array( 'jquery' ), '', true);
+	wp_register_script( 'graphene-admin-js', get_template_directory_uri() . '/admin/js/admin.js', array( 'jquery' ), false, true );
 	
 	// Register scripts for older versions of WordPress
 	if ( ! graphene_is_wp_version( '3.3' ) ){

@@ -4,6 +4,32 @@ http://www.khairul-syahir.com
 
 CHANGELOG
 
+Version 1.7.1
+	* Added taxonomy archive template file
+	* Added link to return to parent page for child pages
+	* Added "Zesty Orange" colour preset, based on the colour scheme of warwickshirefitness.com website
+	* Made the graphene_column_mode() function pluggable
+	* Used proper $hook_suffix to enqueue styles and scripts on theme's options pages
+	* Replaced the bundled social media icons with the Elegant Media Icons set due to licence incompatibility
+	* Refactored header image and top bar social media icons to use <img> tags rather than background images
+	* Removed header text markup when disabled rather than hiding it using CSS
+	* Removed graphene_comment_textarea action hook for improper implementation. Use WordPress' own comment_form_after_fields action hook instead.
+	* When using specific posts/pages for homepage panes, they are now displayed according to the order specified
+	* Added explicit copyright declaration in functions.php and readme.txt
+	* Fixed post formats margin and background styling
+	* Fixed the width of the comment form when replying to threaded comments
+	* Fixed the Graphene Twitter widget being enqueued in the WordPress admin area
+	* Fixed the column width options UI slider
+	* Fixed the children pages listing not applying custom column widths
+	* Fixed comment count string for Russian translation
+	* Fixed comment form fields alignment when replying to existing comments
+	* Fixed the alignment of posts navigation links
+	* Fixed conflict with Jetpack plugin contact form due to the use of '.email' class
+	* Fixed grid width not automatically reset when the container width is reset
+	* Fixed inconsistent bold of menu title when using default (wp_list_pages) menu with menu description enabled
+	* Fixed an issue with adding custom social media icon when using languages other than English
+	* Fixed content width not being reflected in editor style in some servers
+
 Version 1.7
 	* Added the ability to reorder the social media icons in the top bar via drag and drop.
 	* Added option to specify custom URL for the RSS feed button

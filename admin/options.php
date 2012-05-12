@@ -13,37 +13,40 @@ add_action( 'admin_init', 'graphene_settings_init' );
 /**
  * Script required for the theme options page
  */
-function graphene_admin_scripts() {
+function graphene_admin_scripts( $hook_suffix ) {
 	
+	/* Only enqueue scripts on the theme's admin pages */
+	global $graphene_settings;
+	if ( $graphene_settings['hook_suffix'] != $hook_suffix ) return;
+	
+	/**
+	 * Enqueue scripts 
+	 */
     wp_enqueue_script( 'media-upload' );
     wp_enqueue_script( 'thickbox' );
+	wp_enqueue_script( 'graphene-admin-js' );
     // wp_enqueue_script( 'wp-pointer' );
 	
-    if ( strpos( $_SERVER['REQUEST_URI'], 'page=graphene_options' ) ) {
-        
-        wp_enqueue_script( 'graphene-admin', get_template_directory_uri() . '/admin/js/admin.js', array('jquery'), false, true );
-        
-        if ( strpos( $_SERVER["REQUEST_URI"], 'page=graphene_options&tab=display' ) ) {
+	if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'display' ) {
 		wp_enqueue_script( 'farbtastic' );
 		wp_enqueue_script( 'jquery-ui-slider' );
 	} else {
-            wp_enqueue_script( 'jquery-ui-sortable' );     
-        }
-        
-    }    	
-}
-function graphene_admin_styles() {
+		wp_enqueue_script( 'jquery-ui-sortable' );     
+	}
+
+	/**
+	 * Enqueue styles 
+	 */
     wp_enqueue_style( 'thickbox' );
     // wp_enqueue_style( 'wp-pointer' );
 
-    // Load the styles for the Display options tab
-    if ( strpos( $_SERVER["REQUEST_URI"], 'page=graphene_options&tab=display' ) ) {
-            wp_enqueue_style( 'farbtastic' );
-            wp_enqueue_style( 'jquery-ui-slider' );
+    if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'display' ) {
+		wp_enqueue_style( 'farbtastic' );
+		wp_enqueue_style( 'jquery-ui-slider' );
     }
 }
-add_action('admin_print_scripts-appearance_page_graphene_options', 'graphene_admin_scripts');
-add_action('admin_print_styles-appearance_page_graphene_options', 'graphene_admin_styles');
+add_action( 'admin_enqueue_scripts', 'graphene_admin_scripts' );
+
 
 /**
  * This function generates the theme's options page in WordPress administration.
@@ -172,7 +175,7 @@ function graphene_options(){
             </div>
             <div class="panel-wrap inside">
                 <ul>
-                	<li><a href="http://wiki.khairul-syahir.com/graphene-theme/wiki/Main_Page"><?php _e( 'Documentation Wiki', 'graphene' ); ?></a></li>
+                	<li><a href="http://docs.graphene-theme.com/"><?php _e( 'Documentation Wiki', 'graphene' ); ?></a></li>
                     <li><a href="http://forum.khairul-syahir.com/"><?php _e( 'Support Forum', 'graphene' ); ?></a></li>
                 </ul>
                 <p><?php printf( __( 'Also, find out how you can %s.', 'graphene' ), '<a href="http://wiki.khairul-syahir.com/graphene-theme/wiki/Ways_to_contribute">' . __( 'support the Graphene theme', 'graphene' ) . '</a>' ); ?></p>
@@ -203,7 +206,7 @@ function graphene_options(){
             </div>
             <div class="panel-wrap inside">
                 <?php
-				$graphene_news = fetch_feed( 'http://www.khairul-syahir.com/topics/tag/graphene-theme/feed/' );
+				$graphene_news = fetch_feed( array( 'http://www.khairul-syahir.com/topics/tag/graphene-theme/feed/', 'http://www.graphene-theme.com/feed/' ) );
 				if ( ! is_wp_error( $graphene_news ) ) {
 					$maxitems = $graphene_news->get_item_quantity( 3 );
 					$news_items = $graphene_news->get_items( 0, $maxitems );

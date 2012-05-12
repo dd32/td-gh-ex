@@ -4,7 +4,7 @@
 */
 if ( function_exists( 'bcn_display' ) ) :
 	function graphene_breadcrumb_navxt(){
-		echo '<div class="breadcrumb">';
+		echo '<div class="breadcrumb breadcrumb-navxt">';
 		bcn_display();
 		echo '</div>';
 	}

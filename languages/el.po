@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graphene 1.0 theme for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-03 08:27+1200\n"
-"PO-Revision-Date: 2012-04-18 13:20+0200\n"
-"Last-Translator: Nikos Karadimas <domnista@hotmail.com>\n"
+"POT-Creation-Date: 2012-04-30 11:27+1200\n"
+"PO-Revision-Date: 2012-04-30 10:11+0200\n"
+"Last-Translator: \n"
 "Language-Team: Nikos <domnista@hotmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -180,8 +180,8 @@ msgstr "Μόνιμος σύνδεσμος στο %s"
 #: loop-author.php:55
 #: loop-author.php:85
 #: loop-children.php:45
-#: loop-page.php:8
-#: loop-page.php:31
+#: loop-page.php:11
+#: loop-page.php:34
 #: loop-post-formats.php:31
 #: loop-single.php:63
 #: loop.php:31
@@ -194,7 +194,7 @@ msgid "Most commented posts"
 msgstr "Περισσότερο σχολιασμένα άρθρα"
 
 #: loop-children.php:45
-#: loop-children.php:53
+#: loop-children.php:54
 #: loop-post-formats.php:31
 #: loop.php:65
 #: loop.php:134
@@ -202,7 +202,7 @@ msgstr "Περισσότερο σχολιασμένα άρθρα"
 msgid "Permalink to %s"
 msgstr "Μόνιμος σύνδεσμος στο %s"
 
-#: loop-children.php:53
+#: loop-children.php:54
 msgid "View page &raquo;"
 msgstr "Δες τη σελίδα &raquo;"
 
@@ -218,20 +218,20 @@ msgstr "Συγνώμη, αλλά ψάχνετε για κάτι που δεν ε
 msgid "Sorry, but no results were found for that keyword. Wanna try an alternative keyword search?"
 msgstr "Συγνώμη, αλλά δεν βρέθηκαν αποτελέσματα. Μήπως θα θέλατε να δοκιμάστε με κάποια άλλη λέξη κλειδί; "
 
-#: loop-page.php:41
+#: loop-page.php:44
 #: loop-single.php:79
 #: loop.php:85
 #, php-format
 msgid "Edit %s"
 msgstr "Επεξεργασία %s"
 
-#: loop-page.php:62
+#: loop-page.php:65
 #: loop-single.php:118
 #: loop.php:152
 msgid "Pages:"
 msgstr "Σελίδες:"
 
-#: loop-page.php:86
+#: loop-page.php:89
 #: loop-post-formats.php:98
 #: loop-single.php:166
 #: loop.php:188
@@ -345,11 +345,11 @@ msgstr "Αναζήτηση για: %s"
 msgid "Search"
 msgstr "Αναζήτηση"
 
-#: sidebar-two.php:29
+#: sidebar-two.php:28
 msgid "Front Page Sidebar Two Widget Area"
 msgstr "Πλευρικό πάνελ με δύο περιοχές μονάδων πρώτης σελίδας"
 
-#: sidebar-two.php:31
+#: sidebar-two.php:30
 msgid "Sidebar Two Widget Area"
 msgstr "Πλευρικό πάνελ με δύο περιοχές μονάδων"
 
@@ -365,6 +365,11 @@ msgstr "Περιοχή μονάδων πλευρικού πάνελ"
 #, php-format
 msgid "Tag Archive: <span>%s</span>"
 msgstr "Αρχείο ετικετών: <span>%s</span>"
+
+#: taxonomy.php:15
+#, php-format
+msgid "%1$s Archive: %2$s"
+msgstr "%1$s Αρχείο: <span>%2$s</span>"
 
 #: admin/custom-fields.php:14
 msgid "Graphene post-specific options"
@@ -383,6 +388,7 @@ msgid "Slider options"
 msgstr "Επιλογές Slider"
 
 #: admin/custom-fields.php:104
+#: admin/options-general.php:101
 msgid "Slider image"
 msgstr "Φωτογραφία Slider"
 
@@ -393,26 +399,32 @@ msgid "Use global setting"
 msgstr "Χρήση γενικών ρυθμίσεων"
 
 #: admin/custom-fields.php:109
+#: admin/options-general.php:105
 msgid "Don't show image"
 msgstr "Μην εμφανίζεις φωτογραφία"
 
 #: admin/custom-fields.php:110
+#: admin/options-general.php:106
 msgid "Featured Image"
 msgstr "Προτεινόμενη φωτογραφία"
 
 #: admin/custom-fields.php:111
+#: admin/options-general.php:107
 msgid "First image in post"
 msgstr "Πρώτη φωτογραφία στο άρθρο"
 
 #: admin/custom-fields.php:112
+#: admin/options-general.php:108
 msgid "Custom URL"
 msgstr "Τροποποιημένο URL"
 
 #: admin/custom-fields.php:118
+#: admin/options-general.php:114
 msgid "Custom slider image URL"
 msgstr "Τροποποιημένο URL της φωτογραφίας του Slider"
 
 #: admin/custom-fields.php:122
+#: admin/options-general.php:118
 msgid "Make sure you select Custom URL in the slider image option above to use this custom url."
 msgstr "Βεβαιωθείτε ότι έχετε επιλέξει Τροποποιημένο URL στην παραπάνω επιλογή φωτογραφίας Slider για να χρησιμοποιήσετε αυτό το τροποποιημένο url."
 
@@ -441,6 +453,7 @@ msgid "Hide button"
 msgstr "Απόκρυψη κουμπιού"
 
 #: admin/custom-fields.php:153
+#: admin/options-display.php:273
 msgid "Post date display"
 msgstr "Εμφάνιση ημερομηνίας άρθρου"
 
@@ -457,15 +470,16 @@ msgid "Description"
 msgstr "Περιγραφή"
 
 #: admin/custom-fields.php:174
+#: admin/options-display.php:804
 msgid "Only required if you need a description in the navigation menu and you are not using a custom menu."
 msgstr "Απαιτείται μόνο εάν χρειάζεστε μια περιγραφή στο μενού πλοήγησης και δεν χρησιμοποιείτε ένα προσαρμοσμένο μενού."
 
-#: admin/db-updater.php:227
+#: admin/db-updater.php:232
 #, php-format
 msgid "Follow %s on Twitter"
 msgstr "Follow %s στο Twitter"
 
-#: admin/db-updater.php:238
+#: admin/db-updater.php:243
 #, php-format
 msgid "Visit %s's Facebook page"
 msgstr "Επισκεφτείτε %s τη σελίδα μας στο Facebook"
@@ -530,24 +544,24 @@ msgstr "Δεν ξέρω. Με τόσες διαθέσιμα πρόσθετα, δ
 msgid "My suggestion is to just install the plugin and try it. If you stumble into problem, ask for support from the plugin author first. If the plugin author says that it's a problems with the theme, you know where to find support."
 msgstr "Η γνώμη μου είναι να εγκαταστήσετε το πρόσθετο και να το δοκιμάσετε. Αν παρατηρήσετε πρόβλημα, ζητήστε αρχικά υποστήριξη από τον δημιουργό του πρόσθετου. Αν ο δημιουργός του πρόσθετου σας πει ότι το πρόβλημα είναι στο θέμα, τότε ξέρετε που να μας βρείτε."
 
-#: admin/feature-pointers.php:8
+#: admin/feature-pointers.php:9
 msgid "Where are all the options?!"
 msgstr "Που είναι όλες οι επιλογές;"
 
-#: admin/feature-pointers.php:9
+#: admin/feature-pointers.php:10
 msgid "We've decided to clean things up!"
 msgstr "Αποφασίσαμε να ξεκαθαρίσουμε τα πράγματα!"
 
-#: admin/feature-pointers.php:10
+#: admin/feature-pointers.php:11
 msgid "We know how too many options can really be daunting to new users, so we've hidden them."
 msgstr "Οι πολλές επιλογές παραμετροποίησης μπορεί να μπερδέψουν τους νέους χρήστες, γι' αυτό τις έχουμε αποκρύψει."
 
-#: admin/feature-pointers.php:11
+#: admin/feature-pointers.php:12
 msgid "But no worries! If you're a seasoned user of the Graphene theme, or whenever you feel ready to further customise your site, just click on the \"Show all options\" link, and they will magically appear to you."
 msgstr "Μην ανησυχείτε όμως! Όποτε θέλετε μπορείτε να τις εμφανίσετε με ένα απλό κλικ στο \"Εμφάνισε όλες τις επιλογές\"  και θα μπορείτε να τις δείτε. "
 
 #: admin/options-advanced.php:12
-#: admin/options.php:353
+#: admin/options.php:360
 msgid "Preview"
 msgstr "Προεπισκόπηση"
 
@@ -873,397 +887,397 @@ msgstr "Πάνω περίγραμμα άρθρων και σελίδων"
 msgid "Post and pages bottom border"
 msgstr "Κάτω περίγραμμα άρθρων και σελίδων"
 
-#: admin/options-display.php:417
-#: admin/options-display.php:448
-#: admin/options-display.php:474
-#: admin/options-display.php:502
-#: admin/options-display.php:531
-#: admin/options-display.php:558
-#: admin/options-display.php:573
-#: admin/options-display.php:583
-#: admin/options-display.php:600
+#: admin/options-display.php:416
+#: admin/options-display.php:447
+#: admin/options-display.php:473
+#: admin/options-display.php:501
+#: admin/options-display.php:530
+#: admin/options-display.php:557
+#: admin/options-display.php:572
+#: admin/options-display.php:582
+#: admin/options-display.php:599
 msgid "Clear"
 msgstr "Καθαρισμός"
 
-#: admin/options-display.php:424
+#: admin/options-display.php:423
 msgid "Widgets"
 msgstr "Μονάδες"
 
-#: admin/options-display.php:427
+#: admin/options-display.php:426
 msgid "Widget preview"
 msgstr "Προεπισκόπηση μονάδων"
 
-#: admin/options-display.php:428
+#: admin/options-display.php:427
 msgid "Widget title"
 msgstr "Τίτλος μονάδων"
 
-#: admin/options-display.php:428
+#: admin/options-display.php:427
 msgid "List item"
 msgstr "Λίστα στοιχείων"
 
-#: admin/options-display.php:432
+#: admin/options-display.php:431
 msgid "Widget item background"
 msgstr "Φόντο μονάδων"
 
-#: admin/options-display.php:433
+#: admin/options-display.php:432
 msgid "Widget item list border"
 msgstr "Περίγραμμα λίστας μονάδων"
 
-#: admin/options-display.php:434
+#: admin/options-display.php:433
 msgid "Widget header border"
 msgstr "Περίγραμμα κεφαλίδας μονάδων"
 
-#: admin/options-display.php:435
+#: admin/options-display.php:434
 msgid "Widget title colour"
 msgstr "Χρώμα τίτλου "
 
-#: admin/options-display.php:436
+#: admin/options-display.php:435
 msgid "Widget title text shadow colour"
 msgstr "Χρώμα σκιάς γραμματοσειράς του τίτλου μονάδων"
 
-#: admin/options-display.php:437
+#: admin/options-display.php:436
 msgid "Widget header gradient bottom colour"
 msgstr "Τελείωμα κλιμακωτού χρώματος της κεφαλίδας μονάδων"
 
-#: admin/options-display.php:438
+#: admin/options-display.php:437
 msgid "Widget header gradient top colour"
 msgstr "Αρχή κλιμακωτού χρώματος της κεφαλίδας μονάδων"
 
-#: admin/options-display.php:439
+#: admin/options-display.php:438
 msgid "Widget box shadow"
 msgstr "Σκιά κουτιού μονάδας"
 
-#: admin/options-display.php:456
+#: admin/options-display.php:455
 msgid "Slider"
 msgstr "Slider"
 
-#: admin/options-display.php:459
+#: admin/options-display.php:458
 msgid "Slider background preview"
 msgstr "Προεπισκόπηση φόντου του Slider"
 
-#: admin/options-display.php:464
+#: admin/options-display.php:463
 msgid "Slider top left colour"
 msgstr "Πάνω αριστερό χρώμα του Slider"
 
-#: admin/options-display.php:465
+#: admin/options-display.php:464
 msgid "Slider bottom right colour"
 msgstr "Κάτω δεξιό χρώμα του Slider"
 
-#: admin/options-display.php:482
+#: admin/options-display.php:481
 msgid "Block buttons"
 msgstr "Κουμπιά του μπλοκ"
 
-#: admin/options-display.php:485
+#: admin/options-display.php:484
 msgid "Block button preview"
 msgstr "Προεπισκόπηση κουμπιών του μπλοκ"
 
-#: admin/options-display.php:486
+#: admin/options-display.php:485
 msgid "Button label"
 msgstr "Κουμπί - ταμπέλα"
 
-#: admin/options-display.php:490
+#: admin/options-display.php:489
 msgid "Button background colour"
 msgstr "Κουμπί - χρώμα φόντου"
 
-#: admin/options-display.php:491
+#: admin/options-display.php:490
 msgid "Button label colour"
 msgstr "Κουμπί - χρώμα ταμπέλας"
 
-#: admin/options-display.php:492
+#: admin/options-display.php:491
 msgid "Button label text shadow"
 msgstr "Κουμπί - σκιά γραμματοσειράς ταμπέλας"
 
-#: admin/options-display.php:493
+#: admin/options-display.php:492
 msgid "Button box shadow"
 msgstr "Σκιά κουτιού κουμπιού"
 
-#: admin/options-display.php:510
+#: admin/options-display.php:509
 msgid "Archive title"
 msgstr "Τίτλος αρχείου"
 
-#: admin/options-display.php:513
+#: admin/options-display.php:512
 msgid "Archive title preview"
 msgstr "Προεπισκόπηση τίτλου αρχείου"
 
-#: admin/options-display.php:514
+#: admin/options-display.php:513
 msgid "Archive title:"
 msgstr "Τίτλος αρχείου:"
 
-#: admin/options-display.php:514
+#: admin/options-display.php:513
 msgid "Sample title"
 msgstr "Παράδειγμα τίτλου"
 
-#: admin/options-display.php:518
+#: admin/options-display.php:517
 msgid "Archive background gradient left colour"
 msgstr "Αριστερά κλιμακωτό χρώμα φόντου του αρχείου"
 
-#: admin/options-display.php:519
+#: admin/options-display.php:518
 msgid "Archive background gradient right colour"
 msgstr "Δεξιά κλιμακωτό χρώμα φόντου του αρχείου"
 
-#: admin/options-display.php:520
+#: admin/options-display.php:519
 msgid "Archive label colour"
 msgstr "Χρώμα ταμπέλας αρχείου"
 
-#: admin/options-display.php:521
+#: admin/options-display.php:520
 msgid "Archive text colour"
 msgstr "Χρώμα γραμματοσειράς αρχείου"
 
-#: admin/options-display.php:522
+#: admin/options-display.php:521
 msgid "Archive label and text shadow colour"
 msgstr "Χρώμα σκιάς γραμματοσειράς και ταμπέλας αρχείου"
 
-#: admin/options-display.php:539
+#: admin/options-display.php:538
 msgid "Comments area"
 msgstr "Περιοχή σχολίων"
 
-#: admin/options-display.php:543
+#: admin/options-display.php:542
 msgid "Comments background"
 msgstr "Φόντο σχολίων"
 
-#: admin/options-display.php:544
+#: admin/options-display.php:543
 msgid "Comments text"
 msgstr "Κείμενο σχολίων"
 
-#: admin/options-display.php:545
+#: admin/options-display.php:544
 msgid "Threaded comments border"
 msgstr "Περίγραμμα νήματος σχολίων"
 
-#: admin/options-display.php:546
+#: admin/options-display.php:545
 msgid "Author comments background"
 msgstr "Φόντο σχολίων του συντάκτη"
 
-#: admin/options-display.php:547
+#: admin/options-display.php:546
 msgid "Author comments top border"
 msgstr "Πάνω περίγραμμα σχολίων συντάκτη"
 
-#: admin/options-display.php:548
+#: admin/options-display.php:547
 msgid "Author comments text"
 msgstr "Κείμενο σχολίων συντάκτη"
 
-#: admin/options-display.php:549
+#: admin/options-display.php:548
 msgid "Comment form background"
 msgstr "Φόντο φόρμας σχολίων"
 
-#: admin/options-display.php:550
+#: admin/options-display.php:549
 msgid "Comment form text"
 msgstr "Κείμενο φόρμας σχολίων"
 
-#: admin/options-display.php:565
-#: admin/options-display.php:569
+#: admin/options-display.php:564
+#: admin/options-display.php:568
 msgid "Content text"
 msgstr "Κείμενο περιεχομένου"
 
-#: admin/options-display.php:579
+#: admin/options-display.php:578
 msgid "Title text"
 msgstr "Κείμενο τίτλου"
 
-#: admin/options-display.php:589
+#: admin/options-display.php:588
 msgid "Link colour (normal state )"
 msgstr "Χρώμα συνδέσμου (κανονική κατάσταση)"
 
-#: admin/options-display.php:590
+#: admin/options-display.php:589
 msgid "Link colour (visited state )"
 msgstr "Χρώμα συνδέσμου (όταν έχει επιλεχθεί ξανά αυτός ο σύνδεσμος)"
 
-#: admin/options-display.php:591
+#: admin/options-display.php:590
 msgid "Link colour (hover state )"
 msgstr "Χρώμα συνδέσμου (όταν βρίσκεται ο κέρσορας πάνω στον σύνδεσμο)"
 
-#: admin/options-display.php:614
+#: admin/options-display.php:613
 msgid "Text Style Options"
 msgstr "Επιλογές στυλ γραμματοσειράς"
 
-#: admin/options-display.php:617
+#: admin/options-display.php:616
 msgid "Note that these are CSS properties, so any valid CSS values for each particular property can be used."
 msgstr "Σημειώστε ότι αυτές είναι ιδιότητες του CSS, οπότε μπορούν να χρησιμοποιηθούν οποιεσδήποτε ειδικές τιμές του CSS."
 
-#: admin/options-display.php:618
+#: admin/options-display.php:617
 msgid "Some example CSS properties values:"
 msgstr "Περικά παραδείματα τιμών CSS:"
 
-#: admin/options-display.php:621
+#: admin/options-display.php:620
 msgid "Text font:"
 msgstr "Γραμματοσειρά:"
 
-#: admin/options-display.php:625
+#: admin/options-display.php:624
 msgid "Text size and line height:"
 msgstr "Μέγεθος γραμματοσειράς και ύψος γραμμής:"
 
-#: admin/options-display.php:629
+#: admin/options-display.php:628
 msgid "Text weight:"
 msgstr "Βάρος γραμματοσειράς:"
 
-#: admin/options-display.php:633
+#: admin/options-display.php:632
 msgid "Text style:"
 msgstr "Στύλ γραμματοσειράς:"
 
-#: admin/options-display.php:637
+#: admin/options-display.php:636
 msgid "Text colour:"
 msgstr "Χρώμα γραμματοσειράς:"
 
-#: admin/options-display.php:642
+#: admin/options-display.php:641
 msgid "Header Text"
 msgstr "Γραμματοσειρά Κεφαλίδας:"
 
-#: admin/options-display.php:646
+#: admin/options-display.php:645
 msgid "Title text font"
 msgstr "Τίτλος - γραμματοσειρά"
 
-#: admin/options-display.php:652
+#: admin/options-display.php:651
 msgid "Title text size"
 msgstr "Τίτλος - Μέγεθος γραμματοσειράς"
 
-#: admin/options-display.php:658
+#: admin/options-display.php:657
 msgid "Title text weight"
 msgstr "Τίτλος - Βάρος γραμματοσειράς"
 
-#: admin/options-display.php:664
+#: admin/options-display.php:663
 msgid "Title text line height"
 msgstr "Τίτλος - Ύψος γραμμής γραμματοσειράς"
 
-#: admin/options-display.php:670
+#: admin/options-display.php:669
 msgid "Title text style"
 msgstr "Τίτλος - Στυλ γραμματοσειράς"
 
-#: admin/options-display.php:679
+#: admin/options-display.php:678
 msgid "Description text font"
 msgstr "Περιγραφή - γραμματοσειρά"
 
-#: admin/options-display.php:685
+#: admin/options-display.php:684
 msgid "Description text size"
 msgstr "Περιγραφή - μέγεθος γραμματοσειράς"
 
-#: admin/options-display.php:691
+#: admin/options-display.php:690
 msgid "Description text weight"
 msgstr "Περιγραφή - βάρος γραμματοσειράς"
 
-#: admin/options-display.php:697
+#: admin/options-display.php:696
 msgid "Description text line height"
 msgstr "Περιγραφή - ύψος γραμμής γραμματοσειράς"
 
-#: admin/options-display.php:703
+#: admin/options-display.php:702
 msgid "Description text style"
 msgstr "Περιγραφή - στυλ γραμματοσειράς"
 
-#: admin/options-display.php:709
+#: admin/options-display.php:708
 msgid "Content Text"
 msgstr "Γραμματοσειρά περιεχομένου"
 
-#: admin/options-display.php:713
+#: admin/options-display.php:712
 msgid "Text font"
 msgstr "Γραμματοσειρά"
 
-#: admin/options-display.php:719
+#: admin/options-display.php:718
 msgid "Text size"
 msgstr "Μέγεθος γραμματοσειράς"
 
-#: admin/options-display.php:725
+#: admin/options-display.php:724
 msgid "Text line height"
 msgstr "Ύψος γραμμής γραμματοσειράς"
 
-#: admin/options-display.php:731
+#: admin/options-display.php:730
 msgid "Link Text"
 msgstr "Σύνδεσμος γραμματοσειράς"
 
-#: admin/options-display.php:735
+#: admin/options-display.php:734
 msgid "Text decoration (normal state )"
 msgstr "Διακόσμηση κειμένου (κανονική κατάσταση)"
 
-#: admin/options-display.php:741
+#: admin/options-display.php:740
 msgid "Text decoration (hover state )"
 msgstr "Διακόσμηση κειμένου (όταν βρίσκεται ο κέρσορας πάνω στον σύνδεσμο)"
 
-#: admin/options-display.php:754
+#: admin/options-display.php:753
 msgid "Footer Widget Display Options"
 msgstr "Επιλογές εμφάνισης μονάδων του υποσέλιδου"
 
-#: admin/options-display.php:760
+#: admin/options-display.php:759
 msgid "Number of columns to display"
 msgstr "Αριθμός στηλών που θα εμφανίζονται"
 
-#: admin/options-display.php:767
+#: admin/options-display.php:766
 msgid "Number of columns to display for front page footer widget"
 msgstr "Αριθμός στηλών που θα εμφανίζονται στο υποσέλιδο μονάδων της πρώτης σελίδας"
 
-#: admin/options-display.php:781
+#: admin/options-display.php:780
 msgid "Navigation Menu Display Options"
 msgstr "Επιλογές εμφάνισης του μενού πλοήγησης"
 
-#: admin/options-display.php:787
+#: admin/options-display.php:786
 msgid "Dropdown menu item width"
 msgstr "Πλάτος στοιχείου αναδυόμενου μενού"
 
-#: admin/options-display.php:793
+#: admin/options-display.php:792
 msgid "Disable description in Header Menu"
 msgstr "Απενεργοποίηση περιγραφής στο μενού της κεφαλίδας"
 
-#: admin/options-display.php:801
+#: admin/options-display.php:800
 msgid "Description for default menu \"Home\" item"
 msgstr "Περιγραφή για το προεπιλεγμένο στοιχείο μενού  \"Αρχική\""
 
-#: admin/options-display.php:817
+#: admin/options-display.php:816
 msgid "Miscellaneous Display Options"
 msgstr "Διάφορες επιλογές εμφάνισης"
 
-#: admin/options-display.php:820
+#: admin/options-display.php:819
 msgid "Site title options"
 msgstr "Επιλογές τίτλου ιστοσελίδας"
 
-#: admin/options-display.php:821
+#: admin/options-display.php:820
 msgid "Use these tags to customise your own site title structure: <code>#site-name</code>, <code>#site-desc</code>, <code>#post-title</code>"
 msgstr "Χρησιμοποιήστε αυτές τις ετικέτες για να καθορίσετε τη δική σας δομή του τίτλου ιστοσελίδας: <code>#site-name</code>, <code>#site-desc</code>, <code>#post-title</code>"
 
-#: admin/options-display.php:825
+#: admin/options-display.php:824
 msgid "Custom front page site title"
 msgstr "Τροποποιημένος τίτλος πρώτης σελίδας"
 
-#: admin/options-display.php:829
+#: admin/options-display.php:828
 msgid "Defaults to <code>#site-name &raquo; #site-desc</code>. The <code>#post-title</code> tag cannot be used here."
 msgstr "Αρχικοποίηση σε <code>#site-name &raquo; #site-desc</code> (όνομα ιστοσελίδας, περιγραφή ιστοσελίδας). Η <code>#post-title</code> (τίτλος άρθρου) ετικέτα δεν μπορεί να χρησιμοποιηθεί εδω."
 
-#: admin/options-display.php:834
+#: admin/options-display.php:833
 msgid "Custom content pages site title"
 msgstr "Τροποποιημένος τίτλος σελίδων περιεχομένου"
 
-#: admin/options-display.php:838
+#: admin/options-display.php:837
 msgid "Defaults to <code>#post-title &raquo; #site-name</code>."
 msgstr "Αρχικοποίηση σε <code>#post-title &raquo; #site-name</code> (τίτλος άρθρου, όνομα ιστοσελίδας)."
 
-#: admin/options-display.php:843
+#: admin/options-display.php:842
 msgid "Favicon options"
 msgstr "Επιλογές Favicon"
 
-#: admin/options-display.php:847
+#: admin/options-display.php:846
 msgid "Favicon URL"
 msgstr "Favicon URL"
 
-#: admin/options-display.php:851
+#: admin/options-display.php:850
 #: admin/options-general.php:118
 msgid "Upload or select image from gallery"
 msgstr "Μεταφόρτωσε ή επέλεξε φωτογραφία από την γκαλερί"
 
-#: admin/options-display.php:851
+#: admin/options-display.php:850
 msgid "Simply enter the full URL to your favicon file here to enable favicon. Make sure you include the <code>http://</code> in front of the URL as well. Or use the WordPress media uploader to upload an image, or select one from the media library."
 msgstr "Απλά δηλώστε το πλήρες URL του αρχείου favicon για να ενεργοποιηθεί. Σιγουρευτείτε ότι θα συμπεριλάβετε το <code>http://</code> μπροστά από το URL. Ή χρησιμοποιήστε τη μεταφόρτωση πολυμέσων του Wordpress για να μεταφορτώσετε μια εικόνα ή επιλέξτε μια από την βιβλιοθήκη πολυμέσων."
 
-#: admin/options-display.php:856
+#: admin/options-display.php:855
 msgid "WordPress Editor options"
 msgstr "Επλογές διαχειριστή του Wordpress"
 
-#: admin/options-display.php:860
+#: admin/options-display.php:859
 msgid "Disable custom editor styles"
 msgstr "Απενεργοποίηση τροποποιημένων στυλ του διαχειριστή"
 
-#: admin/options-display.php:873
+#: admin/options-display.php:872
 msgid "Custom CSS"
 msgstr "Τροποποιημένο CSS"
 
-#: admin/options-display.php:878
+#: admin/options-display.php:877
 msgid "Custom CSS styles"
 msgstr "Τροποποιημένα στυλ CSS"
 
-#: admin/options-display.php:880
+#: admin/options-display.php:879
 msgid "You can enter your own CSS codes below to modify any other aspects of the theme's appearance that is not included in the options."
 msgstr "Μπορείτε να δηλώσετε παρακάτω τον δικό σας κώδικα CSS για να τροποποιήσετε ότι άλλο θέλετε από την εμφάνιση του θέματος που δεν περιλαμβάνεται στις παραπάνω επιλογές."
 
@@ -1574,178 +1588,178 @@ msgstr "Άνοιγμα των συνδέσμων των κοινωνικών δ�
 msgid "<strong>Hint:</strong> drag and drop to rearrange the placement of the social media icons."
 msgstr "<strong>Συμβουλή:</strong> σύρτε και αφήστε, για να αλλάξετε την τοποθέτηση των εικονιδίων των μέσων κοινωνικής δικτύωσης."
 
-#: admin/options-general.php:422
-#: admin/options-general.php:437
-#: admin/js/admin.js.php:90
+#: admin/options-general.php:425
+#: admin/options-general.php:440
+#: admin/options-general.php:484
 msgid "Custom"
 msgstr "Τροποποιημένο"
 
-#: admin/options-general.php:449
-#: admin/options-general.php:499
-#: admin/js/admin.js.php:110
+#: admin/options-general.php:450
+#: admin/options-general.php:486
+#: admin/options-general.php:507
 msgid "Title attribute"
 msgstr "Ιδιότητες τίτλου"
 
-#: admin/options-general.php:453
-#: admin/options-general.php:503
-#: admin/js/admin.js.php:114
+#: admin/options-general.php:454
+#: admin/options-general.php:487
+#: admin/options-general.php:511
 msgid "URL"
 msgstr "URL"
 
-#: admin/options-general.php:457
-#: admin/options-general.php:505
+#: admin/options-general.php:458
+#: admin/options-general.php:513
 msgid "Leave the URL empty to use the default RSS URL."
 msgstr "Αφήστε το URL κενό για να γίνει χρήση του προεπιλεγμένου URL για το RSS κανάλι."
 
-#: admin/options-general.php:463
-#: admin/options-general.php:509
-#: admin/js/admin.js.php:97
+#: admin/options-general.php:464
+#: admin/options-general.php:485
+#: admin/options-general.php:517
 msgid "Icon URL"
 msgstr "URL εικονιδίου"
 
-#: admin/options-general.php:467
-#: admin/js/admin.js.php:118
+#: admin/options-general.php:468
+#: admin/options-general.php:488
 msgid "Delete"
 msgstr "Διαγραφή"
 
-#: admin/options-general.php:479
+#: admin/options-general.php:480
 msgid "Add Social Media Profile"
 msgstr "Προσθήκη προφίλ κοινωνικού δικτύου"
 
-#: admin/options-general.php:484
+#: admin/options-general.php:492
 msgid "Type"
 msgstr "Τύπος"
 
-#: admin/options-general.php:487
+#: admin/options-general.php:495
 msgid "Choose type"
 msgstr "Επέλεξε τύπο"
 
-#: admin/options-general.php:513
+#: admin/options-general.php:521
 msgid "Add new Social Media Profile"
 msgstr "Προσθήκη νέου προφίλ κοινωνικού δικτύου"
 
-#: admin/options-general.php:527
+#: admin/options-general.php:535
 msgid "Social Sharing Buttons"
 msgstr "Κουμπιά Κοινωνικής δικτύωσης"
 
-#: admin/options-general.php:532
+#: admin/options-general.php:540
 msgid "Show social sharing button"
 msgstr "Εμφάνιση κουμπιού Κοινωνικής δικτύωσης"
 
-#: admin/options-general.php:538
+#: admin/options-general.php:546
 msgid "Show in Pages as well?"
 msgstr "Εμφάνιση και στις σελίδες;"
 
-#: admin/options-general.php:542
+#: admin/options-general.php:550
 msgid "Show in home and archive pages?"
 msgstr "Εμφάνιση σε αρχική σελίδα και σελίδες αρχείου;"
 
-#: admin/options-general.php:545
+#: admin/options-general.php:553
 #, php-format
 msgid "Enabling this will cause the social sharing buttons to appear on posts listing pages, like the home page and archive pages. Use the available tags in the code below to get the post's URL, title, and excerpt. Otherwise, all your buttons will share the same URL and title. If you're using AddThis, see the %s."
 msgstr "Ενεργοποιώντας αυτό θα προκαλέσετε την εμφάνιση των κουμπιών κοινωνικής δικτύωσης στις σελίδες με λίστες άρθρων, όπως είναι η πρώτη σελίδα και οι σελίδες αρχείων. Χρησιμοποιήστε τις διαθέσιμες ετικέτες του παρακάτω κώδικα για να πάρετε το URL του άρθρου, τον τίτλο και τη σύνοψη. Διαφορετικά, όλα τα κουμπιά θα μοιράζονται το ίδιο URL και τον ίδιο τίτλο. Αν χρησιμοποιείτε το AddThis, δείτε το %s."
 
-#: admin/options-general.php:545
+#: admin/options-general.php:553
 msgid "AddThis Client API"
 msgstr "AddThis Client API"
 
-#: admin/options-general.php:549
+#: admin/options-general.php:557
 msgid "Social sharing buttons location"
 msgstr "Τοποθεσία κουμπιών Κοινωνικής δικτύωσης"
 
-#: admin/options-general.php:552
+#: admin/options-general.php:560
 msgid "Bottom of posts"
 msgstr "Κάτω μέρος άρθρων"
 
-#: admin/options-general.php:553
+#: admin/options-general.php:561
 msgid "Top of posts"
 msgstr "Πάνω μέρος άρθρων"
 
-#: admin/options-general.php:554
+#: admin/options-general.php:562
 msgid "Both top and bottom"
 msgstr "Και στα δύο μέρη (πάνω και κάτω)"
 
-#: admin/options-general.php:560
+#: admin/options-general.php:568
 msgid "Your social sharing button code"
 msgstr "Ο κώδικας των κουμπιών κοινωνικής δικτύωσης"
 
-#: admin/options-general.php:561
+#: admin/options-general.php:569
 msgid "You can use codes from any popular social sharing sites, like Facebook, Digg, AddThis, etc."
 msgstr "Μπορείτε να χρησιμοποιήσετε κώδικα από οποιαδήποτε σελίδα κοινωνικής δικτύωσης, όπως Facebook, Digg, AddThis, κλπ."
 
-#: admin/options-general.php:564
+#: admin/options-general.php:572
 msgid "You may use these tags to get the post's URL, title, and excerpt:"
 msgstr "Μπορείτε να χρησιμοποιήσετε αυτές τις ετικέτες για να \"τραβήξετε\" το URL του άρθρου, του τίτλου και της σύνοψης:"
 
-#: admin/options-general.php:576
+#: admin/options-general.php:584
 msgid "Adsense Options"
 msgstr "Επιλογές Adsense"
 
-#: admin/options-general.php:582
+#: admin/options-general.php:590
 msgid "Show Adsense advertising"
 msgstr "Εμφάνιση διαφημιστικού Adsense"
 
-#: admin/options-general.php:590
+#: admin/options-general.php:598
 msgid "Show ads on front page as well"
 msgstr "Εμφάνιση διαφημιστικών και στην πρώτη σελίδα"
 
-#: admin/options-general.php:596
+#: admin/options-general.php:604
 msgid "Your Adsense code"
 msgstr "Ο κώδικας του Adsense"
 
-#: admin/options-general.php:609
+#: admin/options-general.php:617
 msgid "Google Analytics Options"
 msgstr "Επιλογές του Google Analytics"
 
-#: admin/options-general.php:614
+#: admin/options-general.php:622
 msgid "Enable Google Analytics tracking"
 msgstr "Ενεργοποίηση παρακολούθησης του Google Analytics"
 
-#: admin/options-general.php:621
+#: admin/options-general.php:629
 msgid "<strong>Note:</strong> the theme now places the Google Analytics script in the <code>&lt;head&gt;</code> element to better support the new asynchronous Google Analytics script. Please make sure you update your script to use the new asynchronous script from Google Analytics."
 msgstr "<strong>Σημείωση:</strong> τώρα το θέμα τοποθετεί το Google Analytics script στο <code>&lt;head&gt;</code> στοιχείο για να υποστηρίζει καλύτερα τη νεότερη έκδοση του ασύγχρονου Google Analytics script. Βεβαιωθείτε ότι ανανεώσατε το script σας και έχετε τη νεότερη έκδοση του ασύγχρονου script από το Google Analytics."
 
-#: admin/options-general.php:625
+#: admin/options-general.php:633
 msgid "Google Analytics tracking code"
 msgstr "Κώδικας της παρακολούθησης του Google Analytics"
 
-#: admin/options-general.php:626
+#: admin/options-general.php:634
 msgid "Make sure you include the full tracking code (including the <code>&lt;script&gt;</code> and <code>&lt;/script&gt;</code> tags) and not just the <code>UA-#######-#</code> code."
 msgstr "Βεβαιωθείτε ότι συμπεριλάβατε τον πλήρη κώδικα παρακολούθησης (συμπεριλαμβανομένου του <code>&lt;script&gt;</code> και <code>&lt;/script&gt;</code> tags) και όχι μόνο του <code>UA-#######-#</code> κώδικα."
 
-#: admin/options-general.php:639
+#: admin/options-general.php:647
 msgid "Footer Options"
 msgstr "Επιλογές υποσέλιδου"
 
-#: admin/options-general.php:644
+#: admin/options-general.php:652
 msgid "Use Creative Commons licence for content"
 msgstr "Χρησιμοποιήστε άδεια Αδειοδοτημένων δημιουργικών για το περιεχόμενο"
 
-#: admin/options-general.php:649
+#: admin/options-general.php:657
 msgid "Copyright text (html allowed)"
 msgstr "Κείμενο Πνευματικών δικαιωμάτων (html επιτρέπεται)"
 
-#: admin/options-general.php:650
+#: admin/options-general.php:658
 msgid "If this field is empty, the following default copyright text will be displayed:"
 msgstr "Αν αυτό το πεδίο παραμείνει κενό, το παρακάτω κείμενο πνευματικών δικαιωμάτων θα εμφανιστεί:"
 
-#: admin/options-general.php:656
+#: admin/options-general.php:664
 msgid "Do not show copyright info"
 msgstr "Απόκρυψη πληροφοριών Πνευματικών δικαιωμάτων"
 
-#: admin/options-general.php:660
+#: admin/options-general.php:668
 msgid "Do not show the \"Return to top\" link"
 msgstr "Απόκρυψη συνδέσμου \"Επιστροφή στην κορυφή\""
 
-#: admin/options-general.php:672
+#: admin/options-general.php:680
 msgid "Print Options"
 msgstr "Επιλογές εκτύπωσης"
 
-#: admin/options-general.php:677
+#: admin/options-general.php:685
 msgid "Enable print CSS for single posts and pages?"
 msgstr "Ενεργοποίηση CSS εκτύπωσης για μεμονωμένα άρθρα και σελίδες;"
 
-#: admin/options-general.php:683
+#: admin/options-general.php:691
 msgid "Show print button"
 msgstr "Εμφάνιση κουμπιού για εκτύπωση"
 
@@ -1812,28 +1826,28 @@ msgstr "Το αρχείο που μεταφορτώθηκε δεν υποστη�
 msgid "File is empty. Please upload something more substantial. This error could also be caused by uploads being disabled in your php.ini or by post_max_size being defined as smaller than upload_max_filesize in php.ini."
 msgstr "Το αρχείο είναι κενό. Παρακαλούμε να αποστείλετε κάτι πιο ουσιαστικό. Αυτό το σφάλμα μπορεί επίσης να προκληθεί από απενεργοποίηση των μεταφορτώσεων στο php.ini ή το  post_max_size να έχει καθοριστεί μικρότερο από το upload_max_filesize στο php.ini."
 
-#: admin/options-init.php:35
+#: admin/options-init.php:37
 msgid "Graphene Options"
 msgstr "Επιλογές Graphene"
 
-#: admin/options-init.php:36
+#: admin/options-init.php:38
 msgid "Graphene FAQs"
 msgstr "Συχνές ερωτήσεις Graphene"
 
-#: admin/options-init.php:86
+#: admin/options-init.php:117
 msgid "Toggle all options boxes"
 msgstr "Ανάπτυξη όλων των κουτιών επιλογών"
 
-#: admin/options-init.php:128
+#: admin/options-init.php:159
 msgid "Template preview not found."
 msgstr "Δεν βρέθηκε παράδειγμα προεπισκόπησης."
 
-#: admin/options-init.php:131
+#: admin/options-init.php:162
 msgid "default"
 msgstr "Προεπιλεγμένο"
 
-#: admin/options-init.php:187
-#: admin/options-init.php:191
+#: admin/options-init.php:218
+#: admin/options-init.php:222
 msgid "Theme default"
 msgstr "Προεπιλογή θέματος"
 
@@ -1979,203 +1993,203 @@ msgstr "ΣΦΑΛΜΑ: Λάθος URL δηλώθηκε για το favicon URL."
 msgid "ERROR: Invalid action hook selected widget action hooks."
 msgstr "ΣΦΑΛΜΑ: Άκυρο action hook επιλέχθηκε για το action hook μονάδων."
 
-#: admin/options.php:84
+#: admin/options.php:91
 #: admin/uninstall.php:23
 msgid "Uninstall Graphene"
 msgstr "Απεγκατάσταση του Graphene"
 
-#: admin/options.php:85
+#: admin/options.php:92
 msgid "Please confirm that you would like to uninstall the Graphene theme. All of the theme's options in the database will be deleted."
 msgstr "Παρακαλώ επιβεβαιώστε ότι θέλετε να απεγκαταστήσετε το θέμα Graphene. Όλε οι επιλογές του θέματος θα διαγραφούν από την βάση δεδομένων."
 
-#: admin/options.php:86
+#: admin/options.php:93
 msgid "This action is not reversible."
 msgstr "Αυτή η ενέργεια δεν είναι αναστρέψιμη."
 
-#: admin/options.php:90
-#: admin/options.php:342
+#: admin/options.php:97
+#: admin/options.php:349
 msgid "Uninstall Theme"
 msgstr "Απεγκατάσταση θέματος"
 
-#: admin/options.php:104
+#: admin/options.php:111
 msgid "Graphene Theme Options"
 msgstr "Επιλογές θέματος Graphene"
 
-#: admin/options.php:106
+#: admin/options.php:113
 msgid "These are the global settings for the theme. You may override some of the settings in individual posts and pages."
 msgstr "Αυτές είναι οι γενικές ρυθμίσεις του θέματος. Μπορείτε να αλλάξετε κάποιες από τις ρυθμίσεις σε μεμονωμένα άρθρα και σελίδες."
 
-#: admin/options.php:114
+#: admin/options.php:121
 msgid "General"
 msgstr "Γενικά"
 
-#: admin/options.php:115
+#: admin/options.php:122
 msgid "Display"
 msgstr "Εμφάνιση"
 
-#: admin/options.php:116
+#: admin/options.php:123
 msgid "Advanced"
 msgstr "Για προχωρημένους"
 
-#: admin/options.php:155
+#: admin/options.php:162
 msgid "Save Options"
 msgstr "Αποθήκευση επιλογών"
 
-#: admin/options.php:167
+#: admin/options.php:174
 msgid "Need help?"
 msgstr "Χρειάζεστε βοήθεια;"
 
-#: admin/options.php:171
+#: admin/options.php:178
 msgid "Documentation Wiki"
 msgstr "Αρθρογραφία Wiki"
 
-#: admin/options.php:172
+#: admin/options.php:179
 msgid "Support Forum"
 msgstr "Φόρουμ υποστήριξης"
 
-#: admin/options.php:174
+#: admin/options.php:181
 #, php-format
 msgid "Also, find out how you can %s."
 msgstr "Επίσης, δες πως μπορείς %s."
 
-#: admin/options.php:174
+#: admin/options.php:181
 msgid "support the Graphene theme"
 msgstr "υποστήριξε το θέμα Graphene"
 
-#: admin/options.php:181
+#: admin/options.php:188
 msgid "Support the developer"
 msgstr "Υποστήριξε τον δημιουργό"
 
-#: admin/options.php:184
+#: admin/options.php:191
 msgid "Developing this awesome theme took a lot of effort and time, months and months of continuous voluntary unpaid work. If you like this theme or if you are using it for commercial websites, please consider a donation to the developer to help support future updates and development."
 msgstr "Η ανάπτυξη του θέματος απαιτεί πολύ προσπάθεια και αφιέρωση χρόνου, μήνες και μήνες εθελοντικής δουλειάς. Αν σας αρέσει το θέμα ή αν το χρησιμοποιείτε σε ιστοσελίδες εμπορικού χαρακτήρα, παρακαλώ τη πιθανότητα κάποιας δωρεάς προς τον δημιουργό για να βοηθήσετε στη συνέχιση της προσπάθειας για υποστήριξη και ανάπτυξη."
 
-#: admin/options.php:198
+#: admin/options.php:205
 msgid "Graphene Theme news"
 msgstr "Νέα του θέματος Graphene"
 
-#: admin/options.php:209
+#: admin/options.php:216
 msgid "No news items."
 msgstr "Κανένα νέο στοιχείο."
 
-#: admin/options.php:226
+#: admin/options.php:233
 msgid "Graphene Usage Survey"
 msgstr "Έρευνα χρήσης του Graphene"
 
-#: admin/options.php:229
+#: admin/options.php:236
 msgid "Help us to get to know you better. Take the Graphene theme usage survey now! Every opinion counts towards making the theme better. The survey is very short, and is completely anonymous."
 msgstr "Βοηθήστε μας να σας γνωρίσουμε καλύτερα. Συμπληρώστε την έρευνα για τη χρήση του θέματος Graphene! Κάθε γνώμη μετράει για να κάνουμε το θέμα καλύτερο. Η έρευνα είναι πολύ μικρή και απολύτως ανώνυμη."
 
-#: admin/options.php:230
+#: admin/options.php:237
 msgid "Take the survey"
 msgstr "Συμπλήρωσε την έρευνα"
 
-#: admin/options.php:240
+#: admin/options.php:247
 msgid "Add-ons and plugins"
 msgstr "Επεκτάσεις και πρόσθετα"
 
-#: admin/options.php:243
+#: admin/options.php:250
 msgid "Add-ons"
 msgstr "Επεκτάσεις"
 
-#: admin/options.php:244
+#: admin/options.php:251
 msgid "Add-ons are not shipped with the theme, but can be installed separately to extend the theme's capability."
 msgstr "Οι επεκτάσεις δεν είναι ενσωματωμένες με το θέμα, αλλά μπορούν να εγκατασταθούν ξεχωριστά για να αυξήσουν τις δυνατότητες του θέματος."
 
-#: admin/options.php:248
+#: admin/options.php:255
 msgid "Installed"
 msgstr "Εγκαταστάθηκε"
 
-#: admin/options.php:249
-#: admin/options.php:268
+#: admin/options.php:256
+#: admin/options.php:275
 msgid "Not installed"
 msgstr "Δεν έχει εγκατασταθεί"
 
-#: admin/options.php:249
+#: admin/options.php:256
 msgid "Learn more"
 msgstr "Μάθε περισσότερα"
 
-#: admin/options.php:250
+#: admin/options.php:257
 msgid "Mobile extension developed specifically for optimised display of your site on mobile devices, such as iPhone and Android devices."
 msgstr "Η επέκταση για κινητά αναπτύχθηκε ειδικά για βέλτιστη προβολή του site σας στις κινητές συσκευές, όπως το iPhone και Android συσκευές."
 
-#: admin/options.php:253
+#: admin/options.php:260
 msgid "Plugins"
 msgstr "Πρόσθετα"
 
-#: admin/options.php:254
+#: admin/options.php:261
 msgid "The plugins listed here are natively supported by the theme. All you need to do is install the plugins and activate them."
 msgstr "Τα πρόσθετα που φαίνονται εδώ υποστηρίζονται από το θέμα. Το μόνο που χρειάζεται είναι να τα εγκαταστήσετε και να τα ενεργοποιήσετε."
 
-#: admin/options.php:267
+#: admin/options.php:274
 msgid "Activated"
 msgstr "Ενεργοποιημένο"
 
-#: admin/options.php:280
+#: admin/options.php:287
 msgid "Options Presets"
 msgstr "Προκαθορισμένες επιλογές"
 
-#: admin/options.php:283
+#: admin/options.php:290
 msgid "The default settings for the theme is preconfigured for use in blogs. If you're using this theme primarily for a normal website, or if you want to reset the settings to their default values, you can apply one of the available options presets below."
 msgstr "Οι προεπιλεγμένες ρυθμίσεις για το θέμα είναι προ-ρυθμισμένες για χρήση στα blogs. Αν χρησιμοποιείτε αυτό το θέμα κατά κύριο λόγο για μια κανονική ιστοσελίδα ή αν θέλετε να επαναφέρετε τις ρυθμίσεις στις προεπιλεγμένες τιμές τους, μπορείτε να εφαρμόσετε μία από τις διαθέσιμες προκαθορισμένες επιλογές"
 
-#: admin/options.php:284
+#: admin/options.php:291
 msgid "Note that you can still configure the individual settings after you apply any preset."
 msgstr "Σημειώστε ότι μπορείτε ακόμη να ρυθμίσετε τις επιμέρους ρυθμίσεις, αφού εφαρμόσετε οποιαδήποτε προκαθορισμένη επιλογή."
 
-#: admin/options.php:289
+#: admin/options.php:296
 msgid "Select Options Preset"
 msgstr "Επιλογή Προκαθορισμένων Επιλογών"
 
-#: admin/options.php:292
+#: admin/options.php:299
 msgid "Normal website"
 msgstr "Απλή ιστοσελίδα"
 
-#: admin/options.php:295
+#: admin/options.php:302
 msgid "Reset to default settings"
 msgstr "Επαναφορά στις προεπιλεγμένες ρυθμίσεις"
 
-#: admin/options.php:300
+#: admin/options.php:307
 msgid "Apply Options Preset"
 msgstr "Εφαρμογή Προκαθορισμένων Επιλογών"
 
-#: admin/options.php:310
+#: admin/options.php:317
 msgid "Import/export theme options"
 msgstr "Εισαγωγή/εξαγωγή επιλογών του θέματος"
 
-#: admin/options.php:313
+#: admin/options.php:320
 msgid "Import"
 msgstr "Εισαγωγή"
 
-#: admin/options.php:316
+#: admin/options.php:323
 msgid "Import Theme options"
 msgstr "Εισαγωγή επιλογών του θέματος"
 
-#: admin/options.php:318
+#: admin/options.php:325
 msgid "Export"
 msgstr "Εξαγωγή"
 
-#: admin/options.php:322
+#: admin/options.php:329
 msgid "Export Theme options"
 msgstr "Εξαγωγή επιλογών του θέματος"
 
-#: admin/options.php:332
+#: admin/options.php:339
 msgid "Uninstall theme"
 msgstr "Απεγκατάσταση θέματος"
 
-#: admin/options.php:335
+#: admin/options.php:342
 msgid "<strong>Be careful!</strong> Uninstalling the theme will remove all of the theme's options from the database. Do this only if you decide not to use the theme anymore."
 msgstr "<strong>Προσοχή!</strong>  Η απεγκατάσταση του θέματος θα διαγράψει όλες τις επιλογές του θέματος από την βάση δεδομένων. Κάντε το μόνο αν έχετε αποφασίσει να μην χρησιμοποιήσετε άλλο πια αυτό το θέμα."
 
-#: admin/options.php:336
+#: admin/options.php:343
 msgid "If you just want to try another theme, there is no need to uninstall this theme. Simply activate the other theme in the Appearance &gt; Themes admin page."
 msgstr "Αν θέλετε να δοκιμάσετε κάποιο άλλο θέμα, δεν είναι ανάγκη να απεγκαταστήσετε το Graphene. Απλά ενεργοποιήστε το άλλο θέμα στη σελίδα Εμφάνιση &gt; Σελίδα θεμάτων διαχειριστή."
 
-#: admin/options.php:337
+#: admin/options.php:344
 msgid "Note that uninstalling this theme <strong>does not remove</strong> the theme's files. To delete the files after you have uninstalled this theme, go to Appearances &gt; Themes and delete the theme from there."
 msgstr "Σημειώστε ότι η απεγκατάσταση του θέματος <strong>δεν αφαιρεί</strong> τα αρχεία του θέματος. Για να τα διαγράψετε, αφού έχετε απεγκαταστήσει το θέμα, πηγαίνετε στο Εμφάνιση &gt; Θεμάτων και αφαιρέστε το θέμα από εκεί."
 
-#: admin/options.php:354
+#: admin/options.php:361
 msgid "The preview will be updated when the \"Save Options\" button above is clicked."
 msgstr "Η προεπισκόπηση θα ανανεωθεί όταν πατήσετε το παραπάνω κουμπί \"Αποθήκευση Επιλογών\" ."
 
@@ -2293,6 +2307,11 @@ msgstr "<strong>Σφάλμα: πρέπει να δηλώσετε το ID του 
 msgid "Print this %s"
 msgstr "Εκτύπωσέ το %s"
 
+#: includes/theme-loop.php:480
+#, php-format
+msgid "Return to %s"
+msgstr "Επιστροφή στη κορυφή"
+
 #: includes/theme-menu.php:65
 msgid "Home"
 msgstr "Αρχική"
@@ -2313,69 +2332,69 @@ msgstr "Υπομενού"
 msgid "Footer Menu"
 msgstr "Μενού υποσέλιδου"
 
-#: includes/theme-setup.php:134
+#: includes/theme-setup.php:147
 msgid "Header image by Syahir Hakim"
 msgstr "Φωτογραφία κεφαλίδας από τον Syahir Hakim"
 
-#: includes/theme-setup.php:138
+#: includes/theme-setup.php:151
 msgid "This is the default Graphene theme header image, cropped from image by Quantin Houyoux at sxc.hu"
 msgstr "Αυτή είναι η προεπιλεγμένη φωτογραφία κεφαλίδας του Graphene, από τη φωτογραφία του Quantin Houyoux στο sxc.hu"
 
-#: includes/theme-setup.php:142
-#: includes/theme-setup.php:146
-#: includes/theme-setup.php:150
-#: includes/theme-setup.php:154
-#: includes/theme-setup.php:158
+#: includes/theme-setup.php:155
+#: includes/theme-setup.php:159
+#: includes/theme-setup.php:163
+#: includes/theme-setup.php:167
+#: includes/theme-setup.php:171
 msgid "Header image cropped from image by Ilco at sxc.hu"
 msgstr "Φωτογραφία κεφαλίδας από την φωτογραφία του Ilco στο sxc.hu"
 
-#: includes/theme-setup.php:226
+#: includes/theme-setup.php:239
 msgid "The first sidebar widget area (will always be displayed on the right hand side)."
 msgstr "Το πρώτο πλευρικό πάνελ περιοχής μονάδων (θα εμφανίζεται πάντα στην δεξιά πλευρά)."
 
-#: includes/theme-setup.php:235
+#: includes/theme-setup.php:248
 msgid "The second sidebar widget area (will always be displayed on the left hand side)."
 msgstr "Το δεύτερο πλευρικό πάνελ περιοχής μονάδων (θα εμφανίζεται πάντα στην αριστερή πλευρά)."
 
-#: includes/theme-setup.php:242
+#: includes/theme-setup.php:255
 msgid "Footer Widget Area"
 msgstr "Περιοχή μονάδων υποσέλιδου"
 
-#: includes/theme-setup.php:244
+#: includes/theme-setup.php:257
 msgid "The footer widget area. Leave empty to disable. Set the number of columns to display at the theme's Display Options page."
 msgstr "Η περιοχή μονάδων του υποσέλιδου. Αφήστε το κενό για απενεργοποίηση. Καθορίστε τον αριθμό στηλών που θα εμφανίζονται στη σελίδα Επιλογές Εμφάνισης του θέματος."
 
-#: includes/theme-setup.php:261
+#: includes/theme-setup.php:274
 msgid "The first sidebar widget area that will only be displayed on the front page."
 msgstr "Η πρώτη περιοχή μονάδων πλευρικού πάνελ που θα εμφανίζεται μόνο στην πρώτη σελίδα."
 
-#: includes/theme-setup.php:270
+#: includes/theme-setup.php:283
 msgid "The second sidebar widget area that will only be displayed on the front page."
 msgstr "Η δεύτερη περιοχή μονάδων πλευρικού πάνελ που θα εμφανίζεται μόνο στην πρώτη σελίδα."
 
-#: includes/theme-setup.php:279
+#: includes/theme-setup.php:292
 msgid "Front Page Footer Widget Area"
 msgstr "Περιοχή μονάδων υποσέλιδου πρώτης σελίδας"
 
-#: includes/theme-setup.php:281
+#: includes/theme-setup.php:294
 msgid "The footer widget area that will only be displayed on the front page. Leave empty to disable. Set the number of columns to display at the theme's Display Options page."
 msgstr "Η περιοχή μονάδων υποσέλιδου που θα εμφανίζεται μόνο στην πρώτη σελίδα. Αφήστε το κενό για απενεργοποίηση. Καθορίστε τον αριθμό στηλών που θα εμφανίζονται στη σελίδα Επιλογές Εμφάνισης Θέματος."
 
-#: includes/theme-setup.php:291
+#: includes/theme-setup.php:304
 msgid "Header Widget Area"
 msgstr "Περιοχή μονάδων κεφαλίδας"
 
-#: includes/theme-setup.php:293
+#: includes/theme-setup.php:306
 msgid "The header widget area."
 msgstr "Η περιοχή μονάδων στη κεφαλίδα."
 
-#: includes/theme-setup.php:310
+#: includes/theme-setup.php:323
 #, php-format
 msgid "Dynamically added widget area. This widget area is attached to the %s action hook."
 msgstr "Δυναμικά προστιθέμενη περιοχή μονάδων. Αυτή η περιοχή μονάδων προέρχεται από το %s action hook."
 
-#: includes/theme-slider.php:128
-#: includes/theme-slider.php:156
+#: includes/theme-slider.php:129
+#: includes/theme-slider.php:157
 msgid "View full post"
 msgstr "Δες ολόκληρο το άρθρο"
 

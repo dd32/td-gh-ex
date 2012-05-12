@@ -39,12 +39,12 @@ function graphene_rgb2hex( $c ){
  * Perform adding (or subtracting) operation on a hexadecimal colour code
 */
 function graphene_hex_addition( $hex, $num ){
-	$rgb = graphene_rgb2hex( $hex);
-	foreach ( $rgb as $key => $val) {
+	$rgb = graphene_rgb2hex( $hex );
+	foreach ( $rgb as $key => $val ) {
 		$rgb[$key] += $num;
 		$rgb[$key] = ( $rgb[$key] < 0) ? 0 : $rgb[$key];
 	}
-	$hex = graphene_rgb2hex(implode( ',', $rgb) );
+	$hex = graphene_rgb2hex( implode( ',', $rgb ) );
 	
 	return $hex;
 }
@@ -108,6 +108,8 @@ function graphene_get_action_hooks( $hooksonly = false ) {
 }
 
 
+if ( ! function_exists( 'graphene_column_mode' ) ) :
+
 function graphene_column_mode( $post_id = NULL ){
     global $graphene_settings;
     
@@ -153,6 +155,8 @@ function graphene_column_mode( $post_id = NULL ){
 	// Return the settings as defined in the theme options 
     return $graphene_settings['column_mode']; 
 }
+
+endif;
 
 
 /**

@@ -97,7 +97,7 @@ global $graphene_settings;
     <?php endif; ?>
     
     <?php if ( $pings_num ) : ?>
-        <ol class="clearfix" id="pings_list" <?php if ( ! $comments_num ) echo 'style="display: block;"'; ?>>
+        <ol class="clearfix<?php if (!$comments_num) echo ' display-block'; ?>" id="pings_list">
             <?php
             /* Loop through and list the pings. Use the same callback function as
              * listing comments above, graphene_comment() to format the pings.
@@ -137,7 +137,7 @@ global $graphene_settings;
 		}
         
         $args = array(
-                    'comment_notes_after'  => $allowedtags,
+                    'comment_notes_after'  => apply_filters( 'graphene_comment_allowedtags', $allowedtags ),
                     'id_form'              => 'commentform',
                     'label_submit'         => __( 'Submit Comment', 'graphene' ),
                      );

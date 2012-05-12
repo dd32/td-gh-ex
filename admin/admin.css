@@ -1,3 +1,8 @@
+.appearance_page_graphene_options #icon-themes,
+.appearance_page_graphene_faq #icon-themes {
+	background: url(images/admin-icon.png) center center no-repeat;
+	width: 48px;
+}
 .form-table th {
 	width: 260px;
 }

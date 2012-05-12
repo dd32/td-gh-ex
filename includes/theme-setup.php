@@ -78,8 +78,7 @@ function graphene_setup() {
 	// Add support for editor syling
 	if ( ! $graphene_settings['disable_editor_style'] ){
 		global $content_width;
-		add_editor_style();
-		add_editor_style( 'admin/editor.css.php?content_width=' . $content_width );
+		add_editor_style( array( 'editor-style.css', 'admin/editor.css.php' ) );
 	}
 	
 	// Add default posts and comments RSS feed links to head
@@ -115,7 +114,7 @@ function graphene_setup() {
 		'admin-head-callback' => 'graphene_admin_header_style',
 	);
 
-	$args = apply_filters( 'p2_custom_header_args', $args );
+	$args = apply_filters( 'graphene_custom_header_args', $args );
 
 	if ( function_exists( 'get_custom_header' ) ) {
 		add_theme_support( 'custom-header', $args );

@@ -161,7 +161,7 @@ function graphene_settings_validator( $input ){
 						$input['social_profiles'][$ix]['title'] = esc_attr( $social_icon['title'] );
 						$social_icon['url'] = esc_url_raw( $social_icon['url'] );
 						if ( empty( $social_icon['url'] ) && $social_icon['type'] != 'rss' ){
-							add_settings_error( 'graphene_options', 2, sprintf( __( 'ERROR: Bad URL entered for the %s URL.'), $social_icon['name'] ) );
+							add_settings_error( 'graphene_options', 2, sprintf( __( 'ERROR: Bad URL entered for the %s URL.', 'graphene' ), $social_icon['name'] ) );
 						} else {
 							$input['social_profiles'][$ix]['url'] = $social_icon['url'];
 						}
@@ -425,11 +425,13 @@ function graphene_validate_column_width( $input, $column_mode, $option_name, $er
 		if ( ! ( is_numeric( $width ) && $width >= 0 ) ) {
 			$input['column_width'] = $graphene_defaults['column_width'];
 			$input['container_width'] = $graphene_defaults['container_width'];
+			$input['grid_width'] = $graphene_defaults['grid_width'];
 			add_settings_error('graphene_options', 2, $error_message);
 		}
 	} else {
 		$input['column_width'] = $graphene_defaults['column_width'];
 		$input['container_width'] = $graphene_defaults['container_width'];
+		$input['grid_width'] = $graphene_defaults['grid_width'];
 	}
 	return $input;
 }

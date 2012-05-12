@@ -32,17 +32,20 @@ include( get_template_directory() . '/admin/options-validator.php');
  * Adds the theme options page
 */
 function graphene_options_init() {
-	$graphene_options = add_theme_page( __( 'Graphene Options', 'graphene' ), __( 'Graphene Options', 'graphene' ), 'edit_theme_options', 'graphene_options', 'graphene_options' );
-	$graphene_faq = add_theme_page( __( 'Graphene FAQs', 'graphene' ), __( 'Graphene FAQs', 'graphene' ), 'edit_theme_options', 'graphene_faq', 'graphene_faq' );
+	global $graphene_settings;
+	
+	$graphene_settings['hook_suffix'] = add_theme_page( __( 'Graphene Options', 'graphene' ), __( 'Graphene Options', 'graphene' ), 'edit_theme_options', 'graphene_options', 'graphene_options' );
+	$graphene_settings['hook_suffix_faq'] = add_theme_page( __( 'Graphene FAQs', 'graphene' ), __( 'Graphene FAQs', 'graphene' ), 'edit_theme_options', 'graphene_faq', 'graphene_faq' );
 	
 	wp_register_style( 'graphene-admin-style', get_template_directory_uri() . '/admin/admin.css' );
 	if ( is_rtl() ) { wp_register_style( 'graphene-admin-style-rtl', get_template_directory_uri() . '/admin/admin-rtl.css' );}
 	
-	add_action( 'admin_print_styles-' . $graphene_options, 'graphene_admin_options_style' );
+	add_action( 'admin_print_styles-' . $graphene_settings['hook_suffix'], 'graphene_admin_options_style' );
+	add_action( 'admin_print_styles-' . $graphene_settings['hook_suffix_faq'], 'graphene_admin_options_style' );
 	
 	do_action( 'graphene_options_init' );
 }
-add_action( 'admin_menu', 'graphene_options_init', 8);
+add_action( 'admin_menu', 'graphene_options_init', 8 );
 
 
 /**
@@ -59,21 +62,30 @@ add_filter( 'option_page_capability_graphene_options', 'graphene_options_page_ca
 */
 function graphene_options_js(){ 
     global $graphene_settings;
-    if ( strpos( $_SERVER["REQUEST_URI"], 'page=graphene_options' ) ) {
-        $tab = 'general'; // default set the current tab to general
-        // detect any other allowed tabs
-        if ( isset( $_GET['tab'] ) && in_array($_GET['tab'], array('general', 'display', 'advanced')) ){ $tab = $_GET['tab']; }            
-        ?>
-<script type="text/javascript">
-//<![CDATA[
-    var graphene_tab = '<?php echo $tab; ?>';
-    var graphene_settings = <?php echo json_encode($graphene_settings); ?>;
-//]]>
-</script>
-        <?php
-    }
+	
+	$tab = 'general'; // default set the current tab to general
+	// detect any other allowed tabs
+	if ( isset( $_GET['tab'] ) && in_array($_GET['tab'], array('general', 'display', 'advanced')) ){ $tab = $_GET['tab']; }            
+	?>
+	<script type="text/javascript">
+	//<![CDATA[
+		var graphene_tab = '<?php echo $tab; ?>';
+		var graphene_settings = <?php echo json_encode($graphene_settings); ?>;
+	//]]>
+	</script>
+	<?php
 }
-add_action( 'admin_footer', 'graphene_options_js' );
+
+
+/**
+ * Admin footer
+ */
+function graphene_admin_footer(){
+	global $graphene_settings;
+	add_action( 'admin_footer-' . $graphene_settings['hook_suffix'], 'graphene_options_js' );
+}
+add_action( 'admin_menu', 'graphene_admin_footer' );
+
 
 /**
  * Enqueue style for admin page
@@ -218,4 +230,18 @@ function graphene_page_template_visualizer() {
     <?php
 }
 add_action( 'edit_page_form', 'graphene_page_template_visualizer' ); // only works on pages 
+
+
+/**
+ * Add content width parameter to the WordPress editor
+ */
+function graphene_editor_width( $mce_css ){
+	global $content_width, $graphene_settings;
+	
+	if ( ! $graphene_settings['disable_editor_style'] )
+		$mce_css = str_replace( 'admin/editor.css.php', add_query_arg( 'content_width', $content_width, 'admin/editor.css.php' ), $mce_css );
+	
+	return $mce_css;
+}
+add_filter( 'mce_css', 'graphene_editor_width' );
 ?>

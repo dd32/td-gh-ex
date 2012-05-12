@@ -72,18 +72,25 @@ function graphene_top_bar_social(){
     $social_profiles = $graphene_settings['social_profiles'];
 	if ( in_array( false, $social_profiles) ) return;
 	
+	$count = 1;
     foreach ( $social_profiles as $social_key => $social_profile ) : 
         if ( ! empty( $social_profile['url'] ) || $social_profile['type'] == 'rss' ) : 
             $title = graphene_determine_social_medium_title( $social_profile );
             $class = 'mysocial social-' . $social_profile['type'];
+			$id = 'social-id-' . $count;
             $extra = $graphene_settings['social_media_new_window'] ?  ' target="_blank"' : '';
             $url = ( $social_profile['type'] == 'rss' && empty( $social_profile['url'] ) ) ? get_bloginfo('rss2_url') : $social_profile['url'];
             if ( $social_profile['type'] == 'custom' ) {
-                $extra .= ' style="background-image:url(' . $social_profile['icon_url']. ')"';
-                $class = 'mysocial-icon';
-            } ?>
-            <a href="<?php echo $url; ?>" title="<?php echo $title; ?>" class="<?php echo $class; ?>"<?php echo $extra; ?>><span><?php echo $title; ?></span></a>                
-    <?php endif;
+				$icon_url = $social_profile['icon_url'];
+                $class = 'mysocial social-custom';
+            } else {
+				$icon_url = get_template_directory_uri() . '/images/social/' . $social_profile['type'] . '.png';
+			}
+		?>
+            <a href="<?php echo $url; ?>" title="<?php echo $title; ?>" id="<?php echo $id; ?>" class="<?php echo $class; ?>"<?php echo $extra; ?>>
+            	<img src="<?php echo $icon_url; ?>" alt="<?php echo $social_profile['name']; ?>" title="<?php echo $title; ?>" />
+            </a>
+    	<?php endif; $count++;
     endforeach;
 }
 add_action( 'graphene_social_profiles', 'graphene_top_bar_social' );

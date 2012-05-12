@@ -1,8 +1,8 @@
 /*
 Theme Name: Graphene
 Theme URI: http://www.khairul-syahir.com/wordpress-dev/graphene-theme
-Description: The Graphene theme for WordPress is a stylish, neat, and tight WordPress theme supporting configurable columns layout and columns widths options. It includes 4 predefined widget areas, with the ability to add countless more widget areas, as well as determine the number of columns to display in the footer widget area. It includes action hooks for unprecendeted customisability, and jQuery slider for your featured posts. Compatibility support has been added for the bbPress plugin. It has built-in Twitter widget, allows for customisable colours, header and background, as well as built-in AdSense placement and social sharing buttons. It also supports custom menu with drop-down navigation, and threaded comments of up to 10 levels deep! The codes are written so that you can easily override or add functionality to the theme by using your own child theme without altering the parent theme's code. Seriously, there's too many features for this theme to describe them all here! This theme has been tested and confirmed compatible with IE7 and above, Mozilla Firefox, Google Chrome, Opera, and Safari. The theme currently has been translated into more than 25 languages, and fully supports right-to-left languages. See the <a href="http://www.khairul-syahir.com/wordpress-dev/graphene-theme#changelog">theme's changelog</a>.
-Version: 1.7
+Description: The Graphene theme for WordPress is a stylish, neat, and tight WordPress theme supporting configurable columns layout and columns widths options. It includes 4 predefined widget areas, with the ability to add countless more widget areas, as well as determine the number of columns to display in the footer widget area. It includes action hooks for unprecedented customisability, and jQuery slider for your featured posts. Compatibility support has been added for the bbPress plugin. It has built-in Twitter widget, allows for customisable colours, header and background, as well as built-in AdSense placement and social sharing buttons. It also supports custom menu with drop-down navigation, and threaded comments of up to 10 levels deep! The codes are written so that you can easily override or add functionality to the theme by using your own child theme without altering the parent theme's code. Seriously, there's too many features for this theme to describe them all here! This theme has been tested and confirmed compatible with IE7 and above, Mozilla Firefox, Google Chrome, Opera, and Safari. The theme currently has been translated into more than 25 languages, and fully supports right-to-left languages. See the <a href="http://www.khairul-syahir.com/wordpress-dev/graphene-theme#changelog">theme's changelog</a>.
+Version: 1.7.1
 Author: Syahir Hakim
 Author URI: http://www.khairul-syahir.com
 Tags: black, blue, white, one-column, two-columns, three-columns, right-sidebar, left-sidebar, fixed-width, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, rtl-language-support, post-formats, featured-image-header, featured-images, full-width-template, microformats
@@ -42,6 +42,19 @@ fieldset {
     margin-right: auto;
     width: 960px;
 }
+
+
+/* Generic classes
+----------------------------------------------------------------------------------------------------*/
+
+.display-block {
+	display: block;
+}
+.hide {
+	display: none;
+}
+
+
 /* Grid >> Global
 ----------------------------------------------------------------------------------------------------*/
 .grid_1,
@@ -474,21 +487,29 @@ a:hover {
 	margin-top: -12px;
 }
 #header {
-	background-position: center top;
-	background-repeat: no-repeat;
-	border-top:1px solid #000;
+	border-top: 1px solid #000;
 	height: 198px;
 	width: 100%;
 	position: relative;
+	overflow: hidden;
+}
+.header-img {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -480px;
 }
 .header_title {
 	font: bold 28px "Trebuchet MS";
 	position: relative;
 	top: 110px;
 }
+.header_title,
 .header_title a,
-.header_title a:visited {
+.header_title a:visited,
+.header_title a:hover {
 	text-decoration: none;
+	color: #000;
 }
 .header_desc {
 	font-size: 18px;
@@ -850,6 +871,13 @@ a:hover {
 	position: relative;
 	height: 100%;
 }
+.slider-bgimage {
+	position: absolute;
+	left: 0;
+	top: 0;
+	max-width: 100%;
+	height: auto;
+}
 .thumbnail-excerpt .block-button {
 	position: absolute;
 	right: 15px;
@@ -1077,7 +1105,7 @@ a:hover {
 .post-meta .post-author,
 .post-meta .edit-post,
 .post-meta .post-date-inline,
-.email,
+.wp-email-button,
 .print {
 	display: block;
 	float: right;
@@ -1086,10 +1114,10 @@ a:hover {
 .post-meta .edit-post,
 .post-meta .post-date-inline,
 .print,
-.email {
+.wp-email-button {
 	margin-left: 5px;
 }
-.email img{
+.wp-email-button img{
 	vertical-align: bottom;
 }
 .print span {
@@ -1107,10 +1135,10 @@ a:hover {
 	border-left: 1px solid #ccc;
 	padding-left: 5px;
 }
-.email a:last-child {
+.wp-email-button a:last-child {
 	display: none;
 }
-.email a:first-child {
+.wp-email-button a:first-child {
 	display: inline;
 }
 .post-avatar-wrap {
@@ -1451,19 +1479,21 @@ pre.block {
 .comment-link a:visited {
 	font: normal 18px arial;
 }
-.post-nav {
+.post-nav,
+.parent-return {
 	margin-bottom: 10px;
 }
-.wp-pagenavi{
+.wp-pagenavi {
 	padding-top: 10px;
 	text-align: center;
 }
-.previous ,
+.previous,
 .previous a,
 .previous a:visited,
-.next-post ,
+.next-post,
 .next-post a,
-.next-post a:visited {
+.next-post a:visited,
+.parent-return {
 	color: #929292;
 	font: 12px tahoma;
 	text-decoration: none;
@@ -1827,7 +1857,11 @@ h3.author-post-list {
 	left: 10px;
 }
 #comments #commentform {
-	border: 1px solid #d8d8d8;
+	-moz-box-shadow: 0 0 3px #bbb;
+	-webkit-box-shadow: 0 0 3px #bbb;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=0, Color='#bbbbbb')";
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=0, Color='#bbbbbb');
+	box-shadow: 0 0 3px #bbb;
 }
 .two-col-right #comments_list > #respond #commentform {
 	margin-left: -2px;
@@ -1875,6 +1909,9 @@ h3.author-post-list {
 	z-index: 10;
 	min-width: 100%;
 	margin-bottom: 20px;
+}
+#comments #respond {
+	width: 640px;
 }
 #respond #cancel-comment-reply {
 	margin-bottom: 10px;
@@ -1992,6 +2029,9 @@ h3.author-post-list {
 .sidebar #tweetfollow {
 	margin-top: 10px;
 	text-align: right;
+}
+.tweet-rel-time {
+	font-size: 85%;
 }
 #sidebar_bottom {
 	background: #E3E3E3;
@@ -2304,27 +2344,24 @@ h3.author-post-list {
 	width: 250px;
 	height: 16px;
 }
-.wp-email #imageverify{
+.wp-email #imageverify {
 	width: 50px;
 }
-.wp-email .Forms{
+.wp-email .Forms {
 	height: 100px;
 }
 
 /* WP-CommentNavi*/
-.commentnavi-view-all{
+.commentnavi-view-all {
 	margin-top: 10px;
 }
 
 /* Breadcrumb NavXT */
-.breadcrumb{
-	padding: 5px 15px 5px 15px;
+.breadcrumb-navxt {
 	margin-bottom: 10px;
-	background: #eee;
 	font-size: 12px;
-	font-weight: bold;
 }
-.breadcrumb a{
+.breadcrumb-navxt a {
 	font-weight: normal;
 }
 
@@ -2332,11 +2369,11 @@ h3.author-post-list {
 #fancy_title table,
 #fancy_title table th,
 #fancy_title table tr,
-#fancy_title table td{
+#fancy_title table td {
 	border: none;
 	border-collapse: none;
 }
-#fancy_title table tr{
+#fancy_title table tr {
 	background: none;
 }
 
@@ -2347,59 +2384,8 @@ h3.author-post-list {
 	bottom: 0;
 }
 
-.hide { display: none; }
-
-
-.mysocial { background: url(images/social/rss.png) no-repeat top left; width: 32px; height: 32px; }
-.mysocial-icon { width: 32px; height: 32px; }
-.social-audioboo{ background-image: url(images/social/audioboo.png); } 
-.social-bebo{ background-image: url(images/social/bebo.png); } 
-.social-behance{ background-image: url(images/social/behance.png); } 
-.social-blogger{ background-image: url(images/social/blogger.png); } 
-.social-buzz{ background-image: url(images/social/buzz.png); } 
-.social-creativecommons{ background-image: url(images/social/creativecommons.png); } 
-.social-dailybooth{ background-image: url(images/social/dailybooth.png); } 
-.social-delicious{ background-image: url(images/social/delicious.png); } 
-.social-designfloat{ background-image: url(images/social/designfloat.png); } 
-.social-deviantart{ background-image: url(images/social/deviantart.png); } 
-.social-digg{ background-image: url(images/social/digg.png); } 
-.social-dopplr{ background-image: url(images/social/dopplr.png); } 
-.social-dribbble{ background-image: url(images/social/dribbble.png); } 
-.social-email{ background-image: url(images/social/email.png); } 
-.social-ember{ background-image: url(images/social/ember.png); } 
-.social-facebook{ background-image: url(images/social/facebook.png); } 
-.social-flickr{ background-image: url(images/social/flickr.png); } 
-.social-forrst{ background-image: url(images/social/forrst.png); } 
-.social-friendfeed{ background-image: url(images/social/friendfeed.png); } 
-.social-google{ background-image: url(images/social/google.png); } 
-.social-gowalla{ background-image: url(images/social/gowalla.png); } 
-.social-grooveshark{ background-image: url(images/social/grooveshark.png); } 
-.social-hyves{ background-image: url(images/social/hyves.png); } 
-.social-lastfm{ background-image: url(images/social/lastfm.png); } 
-.social-linkedin{ background-image: url(images/social/linkedin.png); } 
-.social-livejournal{ background-image: url(images/social/livejournal.png); } 
-.social-lockerz{ background-image: url(images/social/lockerz.png); } 
-.social-megavideo{ background-image: url(images/social/megavideo.png); } 
-.social-myspace{ background-image: url(images/social/myspace.png); } 
-.social-piano{ background-image: url(images/social/piano.png); } 
-.social-playfire{ background-image: url(images/social/playfire.png); } 
-.social-playstation{ background-image: url(images/social/playstation.png); } 
-.social-reddit{ background-image: url(images/social/reddit.png); } 
-.social-rss{ background-image: url(images/social/rss.png); } 
-.social-skype{ background-image: url(images/social/skype.png); } 
-.social-socialvibe{ background-image: url(images/social/socialvibe.png); } 
-.social-soundcloud{ background-image: url(images/social/soundcloud.png); } 
-.social-spotify{ background-image: url(images/social/spotify.png); } 
-.social-steam{ background-image: url(images/social/steam.png); } 
-.social-stumbleupon{ background-image: url(images/social/stumbleupon.png); } 
-.social-technorati{ background-image: url(images/social/technorati.png); } 
-.social-tumblr{ background-image: url(images/social/tumblr.png); } 
-.social-twitpic{ background-image: url(images/social/twitpic.png); } 
-.social-twitter{ background-image: url(images/social/twitter.png); } 
-.social-typepad{ background-image: url(images/social/typepad.png); } 
-.social-vimeo{ background-image: url(images/social/vimeo.png); } 
-.social-wakoopa{ background-image: url(images/social/wakoopa.png); } 
-.social-wordpress{ background-image: url(images/social/wordpress.png); } 
-.social-xing{ background-image: url(images/social/xing.png); } 
-.social-yahoo{ background-image: url(images/social/yahoo.png); } 
-.social-youtube{ background-image: url(images/social/youtube.png); } 
+.mysocial,
+.mysocial-icon {
+	width: 32px;
+	height: 32px; 
+}

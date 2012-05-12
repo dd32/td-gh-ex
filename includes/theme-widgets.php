@@ -20,7 +20,7 @@ class Graphene_Widget_Twitter extends WP_Widget{
 		$this->WP_Widget( 'graphene-twitter', 'Graphene Twitter', $widget_ops, $control_ops);
 		
 		/* Enqueue the twitter script if widget is active */
-		if ( is_active_widget( false, false, $this->id_base, true ) )
+		if ( is_active_widget( false, false, $this->id_base, true ) && ! is_admin() )
 			wp_enqueue_script( 'graphene-twitter', get_template_directory_uri() . '/js/twitter.js', array(), '', false );
 	}
 	

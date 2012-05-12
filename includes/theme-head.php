@@ -17,12 +17,17 @@ function graphene_get_custom_style(){
 	$gutter = $graphene_settings['gutter_width'];
 	$grid_width = $graphene_settings['grid_width'];
         
-$style = '';
+	$style = '';
 	
 	/* Disable default background if a custom background colour is defined */
 	if ( ! $background && $bgcolor ) {
 		$style .= 'body{background-image:none;}';
 	}
+	
+	/* Header text */
+	$header_textcolour = get_theme_mod( 'header_textcolor', HEADER_TEXTCOLOR );
+	if ( $header_textcolour != apply_filters( 'graphene_header_textcolor', '000000' ) )
+		$style .= '.header_title, .header_title a, .header_title a:hover, .header_desc {color:#' . $header_textcolour . ';}';
 		
 	/* Set the width of the bottom widget items if number of columns is specified */
 	if ( $widgetcolumn ) {
@@ -143,11 +148,12 @@ $style = '';
  * @global type $graphene_defaults
  * @return string 
  */
-function graphene_get_custom_colours(){
+function graphene_get_custom_colours( $hook_suffix = '' ){
 	global $graphene_settings, $graphene_defaults;
+	$tab = ( isset( $_GET['tab'] ) ) ? $_GET['tab'] : '';
     $style = '';
     
-	if ( ! is_admin() || strpos( $_SERVER["REQUEST_URI"], 'page=graphene_options&tab=display' ) ) {
+	if ( ! is_admin() || ( $graphene_settings['hook_suffix'] == $hook_suffix && $tab == 'display' ) ) {
 
     	/* Customised colours */
 		
@@ -257,7 +263,7 @@ function graphene_get_custom_colours(){
 	}
 	
 	// Admin only
-	if ( is_admin() && strpos( $_SERVER["REQUEST_URI"], 'page=graphene_options&tab=display' ) ) {
+	if ( is_admin() && ( $graphene_settings['hook_suffix'] == $hook_suffix && $tab == 'display' ) ) {
 		
 		// Widgets
 		if ( $graphene_settings['content_font_colour'] != $graphene_defaults['content_font_colour']) {$style .= '.graphene, .graphene li, .graphene p{color:'.$graphene_settings['content_font_colour'].';}';}
@@ -328,6 +334,9 @@ function graphene_get_custom_column_width(){
 			$style .= ( $grid * $i ) + ( $gutter * ( $i * 2 ) );
 			$style .= 'px}';
 		}
+		
+		/* Header image positioning */
+		$style .= '.header-img {margin-left: -' . $container / 2 . 'px;}';
 	}
 	
 	/* Custom column width - one-column mode */
@@ -346,7 +355,7 @@ function graphene_get_custom_column_width(){
 	if ( strpos( $column_mode, 'two_col' ) === 0 && ( $content != $content_default ) ){
 		$sidebar = $graphene_settings['column_width']['two_col']['sidebar'];
 
-		$style .= '#content-main, .container_16 .slider_post {width:' . $content . 'px}';
+		$style .= '#content-main, #content-main .grid_11, .container_16 .slider_post, #comments #respond {width:' . $content . 'px}';
 		$style .= '#sidebar1, #sidebar2 {width:' . $sidebar . 'px}';
 		$style .= '.comment-form-author, .comment-form-email, .comment-form-url {width:' . ( ( $content - $gutter * 6 ) / 3 ). 'px}';
 		$style .= '.graphene-form-field {width:' . ( ( ( $content - $gutter * 6 ) / 3 ) - 8 ) . 'px}';
@@ -363,7 +372,7 @@ function graphene_get_custom_column_width(){
 	
 	if ( strpos( $column_mode, 'three_col' ) === 0 && ( $content != $content_default || $sidebar_left != $sidebar_left_default || $sidebar_right != $sidebar_right_default ) ){
 
-		$style .= '#content-main, .container_16 .slider_post {width:' . $content . 'px}';
+		$style .= '#content-main, #content-main .grid_8, .container_16 .slider_post, #comments #respond {width:' . $content . 'px}';
 		$style .= '#sidebar1 {width:' . $sidebar_right . 'px}';
 		$style .= '#sidebar2 {width:' . $sidebar_left . 'px}';
 		$style .= '.three-columns .comment-form-author, .three-columns .comment-form-email, .three-columns .comment-form-url {width:' . ( ( $content - $gutter * 6 ) / 3 ). 'px}';
@@ -386,8 +395,8 @@ function graphene_custom_style(){
 	$style = '';
     
     // the custom colours are needed in both the display and admin mode
-    $style .= graphene_get_custom_colours();
-    
+    $style .= graphene_get_custom_colours( $graphene_settings['hook_suffix'] );
+	
 	// only get the custom css styles when were not in the admin mode
     if ( ! is_admin() ) {
         $style .= graphene_get_custom_style();
