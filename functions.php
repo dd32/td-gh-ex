@@ -2,7 +2,7 @@
 /**
  * @package Ascetica
  * @subpackage Functions
- * @version 0.1.6
+ * @version 0.1.8
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
@@ -85,6 +85,9 @@ function ascetica_theme_setup() {
 	
 	/* Widgets */
 	add_action( 'widgets_init', 'ascetica_register_widgets' );
+	
+	/* Undergister sidebar */
+	add_action( 'widgets_init', 'ascetica_unregister_sidebar', 999 );
 	
 	/* Add support for Post Formats */
 	add_theme_support( 'post-formats', array( 'gallery' ) );	
@@ -315,7 +318,13 @@ function ascetica_register_widgets() {
 	require_once( get_template_directory() . '/includes/widget-thumbnails.php' );
 	
 	/* Register widgets */
-	register_widget( 'Ascetica_Thumbnails_Widget' );	
+	register_widget( 'Ascetica_Thumbnails_Widget' );
+		
+}
+
+
+function ascetica_unregister_sidebar() {
+	unregister_sidebar( 'secondary' );
 }
 
 ?>
