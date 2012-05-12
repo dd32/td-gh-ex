@@ -1,0 +1,380 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: batik\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-12 14:29+0700\n"
+"PO-Revision-Date: 2012-05-12 14:30+0700\n"
+"Last-Translator: hendro prayitno\n"
+"Language-Team: blogaziner\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_x\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#:404.php:6
+msgid "Not Found"
+msgstr ""
+
+#:404.php:7
+msgid "Apologies, but we were unable to find what you were looking for"
+msgstr ""
+
+#:archive.php:12
+#, php-format
+msgid "Daily Archives: %s"
+msgstr ""
+
+#:archive.php:14
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#:archive.php:16
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#:archive.php:18
+msgid "Blog Archives"
+msgstr ""
+
+#:archive.php:35
+#:category.php:38
+#:index.php:39
+#:page.php:19
+#:search.php:24
+#:single.php:17
+#:tag.php:32
+msgid "Leave a comment"
+msgstr ""
+
+#:archive.php:35
+#:category.php:38
+#:index.php:39
+#:page.php:19
+#:search.php:24
+#:single.php:17
+#:tag.php:32
+msgid "1 comment"
+msgstr ""
+
+#:archive.php:35
+#:category.php:38
+#:index.php:39
+#:page.php:19
+#:search.php:24
+#:single.php:17
+#:tag.php:32
+#, php-format
+msgid "% comments"
+msgstr ""
+
+#:archive.php:39
+#:category.php:37
+#:single.php:24
+#:tag.php:36
+msgid "Categories :"
+msgstr ""
+
+#:archive.php:46
+#:tag.php:44
+#, php-format
+msgid "<span class=\"%1$s\">Tagged :</span> %2$s"
+msgstr ""
+
+#:archive.php:57
+#:category.php:49
+#:index.php:50
+#:page.php:49
+#:search.php:35
+#:single.php:56
+#:tag.php:55
+msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgstr ""
+
+#:category.php:11
+#, php-format
+msgid "Category: %s"
+msgstr ""
+
+#:comments.php:5
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#:comments.php:11
+msgid "No Comments"
+msgstr ""
+
+#:comments.php:11
+msgid "One Comment"
+msgstr ""
+
+#:comments.php:11
+msgid "% Comments"
+msgstr ""
+
+#:comments.php:22
+msgid "Comment are closed"
+msgstr ""
+
+#:comments.php:37
+msgid "You must"
+msgstr ""
+
+#:comments.php:37
+msgid "logged in"
+msgstr ""
+
+#:footer.php:4
+msgid "http://amdhas.tk"
+msgstr ""
+
+#:footer.php:4
+msgid "http://wordpress.org"
+msgstr ""
+
+#:functions.php:23
+msgid "Primary Menu"
+msgstr ""
+
+#:page.php:26
+#:single.php:35
+msgid "&larr;"
+msgstr ""
+
+#:page.php:29
+#:single.php:38
+msgid "&rarr;"
+msgstr ""
+
+#:search.php:10
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#:searchform.php:4
+msgid "Search"
+msgstr ""
+
+#:single.php:22
+msgid "Pages:"
+msgstr ""
+
+#:single.php:26
+msgid ", "
+msgstr ""
+
+#:single.php:29
+#, php-format
+msgid "<span class=\"%1$s\">Tagged : </span> %2$s"
+msgstr ""
+
+#:tag.php:11
+#, php-format
+msgid "Tag Archives: %s"
+msgstr ""
+
+#:custom/custom-function.php:5
+#, php-format
+msgid "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\">%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> by </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+msgstr ""
+
+#:custom/custom-function.php:35
+msgid "sidebar-right"
+msgstr ""
+
+#:custom/custom-function.php:36
+msgid "sidebar right area"
+msgstr ""
+
+#:custom/custom-function.php:43
+msgid "coloumn-one"
+msgstr ""
+
+#:custom/custom-function.php:44
+msgid "sidebar right column1"
+msgstr ""
+
+#:custom/custom-function.php:51
+msgid "coloumn-two"
+msgstr ""
+
+#:custom/custom-function.php:52
+msgid "sidebar right column2"
+msgstr ""
+
+#:custom/custom-function.php:59
+msgid "footer left"
+msgstr ""
+
+#:custom/custom-function.php:60
+msgid "footer left area"
+msgstr ""
+
+#:custom/custom-function.php:67
+msgid "footer midlle"
+msgstr ""
+
+#:custom/custom-function.php:68
+msgid "footer midle area"
+msgstr ""
+
+#:custom/custom-function.php:75
+msgid "footer right"
+msgstr ""
+
+#:custom/custom-function.php:76
+msgid "fotter right area"
+msgstr ""
+
+#:custom/custom-function.php:160
+msgid "Page"
+msgstr ""
+
+#:custom/custom-function.php:172
+msgid "Read more &raquo;"
+msgstr ""
+
+#:options/theme-options.php:10
+msgid "Theme Options"
+msgstr ""
+
+#:options/theme-options.php:32
+msgid "Options Saved"
+msgstr ""
+
+#:options/theme-options.php:39
+msgid "Welcome to batik theme"
+msgstr ""
+
+#:options/theme-options.php:40
+msgid "This your options page, you can choice and put your adds code, social media URL google site verification"
+msgstr ""
+
+#:options/theme-options.php:46
+msgid "adds one"
+msgstr ""
+
+#:options/theme-options.php:51
+#:options/theme-options.php:59
+#:options/theme-options.php:69
+#:options/theme-options.php:78
+msgid "Enter your adds content"
+msgstr ""
+
+#:options/theme-options.php:54
+msgid "adds two"
+msgstr ""
+
+#:options/theme-options.php:64
+msgid "adds three"
+msgstr ""
+
+#:options/theme-options.php:73
+msgid "adds four"
+msgstr ""
+
+#:options/theme-options.php:82
+#:options/theme-options.php:112
+#:options/theme-options.php:212
+msgid "Save Options"
+msgstr ""
+
+#:options/theme-options.php:91
+msgid "Google Site Verification"
+msgstr ""
+
+#:options/theme-options.php:96
+msgid "Enter your Google ID number only"
+msgstr ""
+
+#:options/theme-options.php:102
+msgid "Bing Site Verification"
+msgstr ""
+
+#:options/theme-options.php:106
+msgid "Enter your Bing ID number only"
+msgstr ""
+
+#:options/theme-options.php:119
+msgid "Twitter"
+msgstr ""
+
+#:options/theme-options.php:123
+msgid "Enter your Twitter URL"
+msgstr ""
+
+#:options/theme-options.php:127
+msgid "Facebook"
+msgstr ""
+
+#:options/theme-options.php:131
+msgid "Enter your Facebook URL"
+msgstr ""
+
+#:options/theme-options.php:136
+msgid "LinkedIn"
+msgstr ""
+
+#:options/theme-options.php:141
+msgid "Enter your LinkedIn URL"
+msgstr ""
+
+#:options/theme-options.php:146
+msgid "YouTube"
+msgstr ""
+
+#:options/theme-options.php:151
+msgid "Enter your YouTube URL"
+msgstr ""
+
+#:options/theme-options.php:158
+msgid "StumbleUpon"
+msgstr ""
+
+#:options/theme-options.php:163
+msgid "Enter your StumbleUpon URL"
+msgstr ""
+
+#:options/theme-options.php:168
+msgid "RSS Feed"
+msgstr ""
+
+#:options/theme-options.php:173
+msgid "Enter your RSS Feed URL"
+msgstr ""
+
+#:options/theme-options.php:177
+msgid "Google+"
+msgstr ""
+
+#:options/theme-options.php:182
+msgid "Enter your Google+ URL"
+msgstr ""
+
+#:options/theme-options.php:186
+msgid "blogger"
+msgstr ""
+
+#:options/theme-options.php:191
+msgid "Enter your blogspot URL"
+msgstr ""
+
+#:options/theme-options.php:194
+msgid "Deviantart"
+msgstr ""
+
+#:options/theme-options.php:199
+msgid "Enter your Deviantart URL"
+msgstr ""
+
+#:options/theme-options.php:203
+msgid "delicious"
+msgstr ""
+
+#:options/theme-options.php:208
+msgid "Enter your Delicious URL"
+msgstr ""
+
