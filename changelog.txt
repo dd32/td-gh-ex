@@ -7,6 +7,14 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(05/13/2012) - Quick Bug Fixes Version 1.5.2
+[*] comment counts in comments.php
+[*] help-links in /includes/theme-options.php
+[+] new .pot generated
+[+] new languages
+    - Swedish
+[*] CSS buttons
+
 (05/10/2012) - Bug Fixes/Maintenance Version 1.5.1
 [!] missing textdomain in
     - comments.php

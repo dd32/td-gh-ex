@@ -1,6 +1,6 @@
 <?php
 /**
- * Front Page
+ * Home Page
  *
  * Note: You can overwrite home.php as well as any other Template in Child Theme.
  * Create the same file (name) include in /responsive-child-theme/ and you're all set to go!
@@ -75,7 +75,7 @@
 			// First let's check if headline was set
 			    if (!empty($options['cta_url']) && $options['cta_text']) {
 					echo '<a href="'.$options['cta_url'].'" class="blue button">'; 
-					echo __($options['cta_text'],'responsive');
+					echo $options['cta_text'];
 				    echo '</a>';
 			// If not display dummy headline for preview purposes
 			      } else { 

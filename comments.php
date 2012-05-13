@@ -20,7 +20,12 @@
 	<?php return; } ?>
 
 <?php if (have_comments()) : ?>
-    <h6 id="comments"><?php comments_number(__('No Comments &#187;', 'responsive'), __('1 Comment &#187;', 'responsive'), __('% Comments &#187;', 'responsive'), __('for','responsive')); ?> <?php the_title(); ?></h6>
+    <h6 id="comments">
+			<?php
+				printf( _n('One comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', get_comments_number(), 'responsive'),
+					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>');
+			?>
+    </h6>
 
     <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
     <div class="navigation">

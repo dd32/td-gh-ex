@@ -3,19 +3,18 @@ msgstr ""
 "Project-Id-Version: Responsive Theme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-25 13:42:58 UTC\n"
-"PO-Revision-Date: 2012-05-10 17:39+0100\n"
-"Last-Translator: grappler <grappler.login@gmail.com>\n"
+"PO-Revision-Date: 2012-05-12 17:20+0100\n"
+"Last-Translator: grapplerulrich <grapplerulrich@gmail.com>\n"
 "Language-Team: French, France\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: WebTranslateIt.com\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\\n\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-Country: FRANCE\n"
+"X-Poedit-SourceCharset: utf-8\n"
 
-#: sitemap.php
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
-#: search.php
 #: page.php
 #: landing-page.php
 #: index.php
@@ -28,13 +27,8 @@ msgstr ""
 #: archive.php
 #: 404.php
 msgid "404 &#8212; Fancy meeting you here!"
-msgstr "404 - Heureux de vous voir ici !"
+msgstr "404 &#8212; Heureux de vous voir ici &#33;"
 
-#: sitemap.php
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
-#: search.php
 #: page.php
 #: landing-page.php
 #: full-width-page.php
@@ -45,13 +39,8 @@ msgstr "404 - Heureux de vous voir ici !"
 #: archive.php
 #: 404.php
 msgid "Don&#39;t panic, we&#39;ll get through this together. Let&#39;s explore our options here."
-msgstr "Ne paniquez pas, nous allons résoudre cela ensemble. Explorons ensemble les options possibles ici."
+msgstr "Ne paniquez pas&#44; nous allons r&#233;soudre cela ensemble&#46; Explorons les options possibles ici&#46;"
 
-#: sitemap.php
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
-#: search.php
 #: page.php
 #: landing-page.php
 #: index.php
@@ -64,14 +53,8 @@ msgstr "Ne paniquez pas, nous allons résoudre cela ensemble. Explorons ensemble
 #: archive.php
 #: 404.php
 msgid "You can return"
-msgstr "Vous pouvez revenir en arrière."
+msgstr "Vous pouvez revenir en arri&#232;re."
 
-#: sitemap.php
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
-#: search.php
-#: includes/functions.php
 #: page.php
 #: landing-page.php
 #: full-width-page.php
@@ -86,13 +69,8 @@ msgstr "Accueil"
 
 #: 404.php
 msgid "&larr; Home"
-msgstr "← Accueil"
+msgstr "&larr; Accueil"
 
-#: sitemap.php
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
-#: search.php
 #: page.php
 #: landing-page.php
 #: index.php
@@ -123,8 +101,6 @@ msgstr "Archives annuelles&nbsp;: %s"
 msgid "Blog Archives"
 msgstr "Archives du site"
 
-#: sitemap.php
-#: search.php
 #: index.php
 #: blog.php
 #: blog-excerpt.php
@@ -132,13 +108,9 @@ msgstr "Archives du site"
 msgid "Permanent Link to %s"
 msgstr "Lien permanent vers %s"
 
-#: search.php
 #: page.php
 #: index.php
 #: image.php
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
 #: full-width-page.php
 #: content-sidebar-page.php
 #: content-sidebar-half-page.php
@@ -146,12 +118,8 @@ msgstr "Lien permanent vers %s"
 #: blog-excerpt.php
 #: archive.php
 msgid "<span class=\"%1$s\">Posted on</span> %2$s by %3$s"
-msgstr "<span class=\"%1$s\">Posté le</span> %2$s par %3$s"
+msgstr "<span class=\"%1$s\">Post&#233; le</span> %2$s par %3$s"
 
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
-#: search.php
 #: page.php
 #: index.php
 #: image.php
@@ -164,10 +132,6 @@ msgstr "<span class=\"%1$s\">Posté le</span> %2$s par %3$s"
 msgid "View all posts by %s"
 msgstr "Afficher tous les articles par %s"
 
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
-#: search.php
 #: archive.php
 #: blog-excerpt.php
 #: blog.php
@@ -178,12 +142,8 @@ msgstr "Afficher tous les articles par %s"
 #: content-sidebar-page.php
 #: content-sidebar-half-page.php
 msgid "No Comments &darr;"
-msgstr "Aucun commentaire ↓"
+msgstr "Aucun commentaire &darr;"
 
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
-#: search.php
 #: page.php
 #: index.php
 #: image.php
@@ -194,12 +154,8 @@ msgstr "Aucun commentaire ↓"
 #: blog-excerpt.php
 #: archive.php
 msgid "1 Comment &darr;"
-msgstr "1 commentaire ↓"
+msgstr "1 commentaire &darr;"
 
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
-#: search.php
 #: page.php
 #: index.php
 #: image.php
@@ -210,13 +166,8 @@ msgstr "1 commentaire ↓"
 #: blog-excerpt.php
 #: archive.php
 msgid "% Comments &darr;"
-msgstr "% commentaires ↓"
+msgstr "% commentaires &darr;"
 
-#: sitemap.php
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
-#: search.php
 #: page.php
 #: landing-page.php
 #: index.php
@@ -230,10 +181,6 @@ msgstr "% commentaires ↓"
 msgid "Pages:"
 msgstr "Pages&nbsp;:"
 
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
-#: search.php
 #: page.php
 #: landing-page.php
 #: index.php
@@ -245,12 +192,8 @@ msgstr "Pages&nbsp;:"
 #: blog-excerpt.php
 #: archive.php
 msgid "Tagged with:"
-msgstr "Tagués avec&nbsp;:"
+msgstr "Tagu&#233;s avec&nbsp;:"
 
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
-#: search.php
 #: page.php
 #: landing-page.php
 #: index.php
@@ -262,13 +205,8 @@ msgstr "Tagués avec&nbsp;:"
 #: blog-excerpt.php
 #: archive.php
 msgid "Posted in %s"
-msgstr "Publié dans %s"
+msgstr "Publi&#233; dans %s"
 
-#: sitemap.php
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
-#: search.php
 #: page.php
 #: landing-page.php
 #: index.php
@@ -282,11 +220,6 @@ msgstr "Publié dans %s"
 msgid "Edit"
 msgstr "Editer"
 
-#: sitemap.php
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
-#: search.php
 #: page.php
 #: landing-page.php
 #: index.php
@@ -299,11 +232,6 @@ msgstr "Editer"
 msgid "&#8249; Older posts"
 msgstr "&#8249; Articles plus anciens"
 
-#: sitemap.php
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
-#: search.php
 #: page.php
 #: landing-page.php
 #: index.php
@@ -314,13 +242,8 @@ msgstr "&#8249; Articles plus anciens"
 #: blog-excerpt.php
 #: archive.php
 msgid "Newer posts &#8250;"
-msgstr "Articles plus récents &#8250;"
+msgstr "Articles plus r&#233;cents &#8250;"
 
-#: sitemap.php
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
-#: search.php
 #: page.php
 #: landing-page.php
 #: index.php
@@ -334,10 +257,6 @@ msgstr "Articles plus récents &#8250;"
 msgid "&#9166; Home"
 msgstr "&#9166; Accueil"
 
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
-#: search.php
 #: blog.php
 #: page.php
 #: landing-page.php
@@ -350,17 +269,20 @@ msgstr "Lire la suite &#8250;"
 
 #: comments.php
 msgid "This post is password protected. Enter the password to view any comments."
-msgstr "Cet article est protégé par mot de passe. Entrez le mot de passe pour accéder aux commentaires."
+msgstr "Cet article est prot&#233;g&#233; par mot de passe. Entrez le mot de passe pour acc&#233;der aux commentaires."
 
-#: comments.php
 msgid "No Comments &#187;"
 msgstr "Aucun Commentaire &#187;"
 
 #: comments.php
+msgid "One comment on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
+msgstr[0] "Un commentaire pour “%2$s”"
+msgstr[1] "%1$s commentaires pour “%2$s”"
+
 msgid "1 Comment &#187;"
 msgstr "1 Commentaire &#187;"
 
-#: comments.php
 msgid "% Comments &#187;"
 msgstr "% Commentaires &#187;"
 
@@ -370,7 +292,7 @@ msgstr "&#8249; Commentaires plus anciens"
 
 #: comments.php
 msgid "Newer comments &#8250;"
-msgstr "Commentaires plus récents &#8250;"
+msgstr "Commentaires plus r&#233;cents &#8250;"
 
 #: comments.php
 msgid "Pings&#47;Trackbacks"
@@ -390,7 +312,7 @@ msgstr "Courriel"
 
 #: comments.php
 msgid "Website"
-msgstr "Web"
+msgstr "Site Web"
 
 #: footer.php
 msgid "&copy;"
@@ -418,7 +340,7 @@ msgstr "Bonjour tout le monde&nbsp;!"
 
 #: home.php
 msgid "Your H2 subheadline here"
-msgstr "Votre sous-titre H2 ici"
+msgstr "Votre sous&#45;titre H2 ici"
 
 #: home.php
 msgid ""
@@ -426,24 +348,26 @@ msgid ""
 "\t\t\t\t\t      Call to Action button and its destination link as well. Image on your right \n"
 "\t\t\t\t\t\t  can be an image or even YouTube video if you like."
 msgstr ""
-"Votre titre, sous-titre et ce contenu sont modifiables via les options du thème.\n"
-"\t\t\t\t\t       Ainsi que le bouton Action et son lien. L'image sur votre droite\n"
-"\t\t\t\t\t  peut être une image et même vidéo sur YouTube si vous le souhaitez."
+"Votre titre, sous&#45;titre et contenu sont modifiables via les options du th&#232;me.\n"
+"\t\t\t\t\t       Ainsi que le bouton Action et son lien. L&#39;image sur votre droite\n"
+"\t\t\t\t\t  peut &#234;tre une image et m&#234;me vid&#233;o YouTube si vous le souhaitez."
 
 #: home.php
 msgid "Call to Action"
-msgstr "Appel à Action"
+msgstr "Appel &#224; Action"
 
+#: image.php
 msgid "&#8249; Return to"
-msgstr "&#8249; Retour à"
+msgstr "&#8249; Retour &#224;"
 
+#: image.php
 msgid "Read more &#8250;;"
-msgstr "Lire plus &#8250;;"
+msgstr "Lire la suite &#8250;"
 
 #: index.php
 #: image.php
 msgid "Don't panic, we'll get through this together. Let's explore our options here."
-msgstr "Ne paniquez pas, nous allons résoudre ceci ensemble. Explorons nos options ici."
+msgstr "Ne paniquez pas, nous allons r&#233;soudre ceci ensemble. Explorons nos options ici."
 
 #: index.php
 #: image.php
@@ -484,97 +408,116 @@ msgstr "Colonne principale"
 
 #: includes/functions.php
 msgid "Area One - sidebar.php"
-msgstr "Zone Une - sidebar.php"
+msgstr "Zone Une &#45; sidebar.php"
 
 #: includes/functions.php
 msgid "Right Sidebar"
-msgstr "Colonne latérale droite"
+msgstr "Colonne lat&#233;rale droite"
 
 #: includes/functions.php
 msgid "Area Two - sidebar-right.php"
-msgstr "Zone Deux - sidebar-right.php"
+msgstr "Zone Deux &#45; sidebar&#45;right.php"
 
 #: includes/functions.php
 msgid "Left Sidebar"
-msgstr "Colonne latérale gauche"
+msgstr "Colonne lat&#233;rale gauche"
 
 #: includes/functions.php
 msgid "Area Three - sidebar-left.php"
-msgstr "Zone Trois - sidebar-left.php"
+msgstr "Zone Trois &#45; sidebar&#45;left.php"
 
 #: includes/functions.php
 msgid "Left Sidebar Half Page"
-msgstr "Colonne latérale gauche Demi-Page"
+msgstr "Colonne lat&#233;rale gauche Demi&#45;Page"
 
 #: includes/functions.php
 msgid "Area Four - sidebar-left-half.php"
-msgstr "Zone Quatre - sidebar-left-half.php"
+msgstr "Zone Quatre &#45; sidebar-left&#45;half.php"
 
 #: includes/functions.php
 msgid "Right Sidebar Half Page"
-msgstr "Colonne latérale droite Demi-Page"
+msgstr "Colonne lat&#233;rale droite Demi&#45;Page"
 
 #: includes/functions.php
 msgid "Area Five - sidebar-right-half.php"
-msgstr "Zone Cinq - sidebar-right-half.php"
+msgstr "Zone Cinq &#45; sidebar-right&#45;half.php"
 
 #: includes/functions.php
 #: sidebar-home.php
 msgid "Home Widget 1"
 msgstr "Accueil Widget 1"
 
+#: sidebar-home.php
+msgid "This is your first home widget box. To edit please go to Appearance > Widgets and choose 6th widget from the top in area six called Home Widget 1. Title is also manageable from widgets as well."
+msgstr "Ceci est votre premier widget de page d&#39;accueil. Pour le modifier&#44; allez &#224; Apparence > Widgets et choisissez le 6&#232;me widget appel&#233; Accueil Widget 1. Le titre est &#233;galement &#233;ditable via la page d&#39;administration des widgets."
+
 #: includes/functions.php
 msgid "Area Six - sidebar-home.php"
-msgstr "Zone Six - sidebar-home.php"
+msgstr "Zone Six &#45; sidebar&#45;home.php"
 
 #: includes/functions.php
 #: sidebar-home.php
 msgid "Home Widget 2"
 msgstr "Accueil Widget 2"
 
+#: sidebar-home.php
+msgid "This is your second home widget box. To edit please go to Appearance > Widgets and choose 7th widget from the top in area seven called Home Widget 2. Title is also manageable from widgets as well."
+msgstr "Ceci est votre second widget de page d&#39;accueil. Pour le modifier&#44; allez &#224; Apparence > Widgets et choisissez le 7&#232;me widget appel&#233; Accueil Widget 2. Le titre est &#233;galement &#233;ditable via la page d&#39;administration des widgets."
+
 #: includes/functions.php
 msgid "Area Seven - sidebar-home.php"
-msgstr "Zone Sept - sidebar-home.php"
+msgstr "Zone Sept &#45; sidebar&#45;home.php"
 
 #: includes/functions.php
 #: sidebar-home.php
 msgid "Home Widget 3"
 msgstr "Accueil Widget 3"
 
+#: sidebar-home.php
+msgid "This is your third home widget box. To edit please go to Appearance > Widgets and choose 8th widget from the top in area eight called Home Widget 3. Title is also manageable from widgets as well."
+msgstr "Ceci est votre troisi&#232;me widget de page d&#39;accueil. Pour le modifier&#44; allez &#224; Apparence > Widgets et choisissez le 8&#232;me widget appel&#233; Accueil Widget 3. Le titre est &#233;galement &#233;ditable via la page d&#39;administration des widgets."
+
 #: includes/functions.php
 msgid "Area Eight - sidebar-home.php"
-msgstr "Zone Huit- sidebar-home.php"
+msgstr "Zone Huit &#45; sidebar&#45;home.php"
 
 #: includes/functions.php
 msgid "Gallery Sidebar"
-msgstr "Barre latérale Galerie"
+msgstr "Barre lat&#233;rale Galerie"
 
 #: includes/functions.php
 msgid "Area Nine - sidebar-gallery.php"
-msgstr "Zone Neuf - sidebar-gallery.php"
+msgstr "Zone Neuf &#45; sidebar&#45;gallery.php"
+
+#: sitemap.php
+msgid "Pages"
+msgstr "Pages"
 
 #: includes/theme-options.php
 msgid "Theme Options"
-msgstr "Options du thème"
+msgstr "Options du th&#232;me"
 
+#: includes/theme-options.php
 msgid " Theme Options"
-msgstr " Options du thème"
+msgstr " Options du th&#232;me"
 
+#: includes/theme-options.php
 msgid "Options Saved"
-msgstr "Options enregistrées"
+msgstr "Options enregistr&#233;es"
 
 #: includes/theme-options.php
 msgid "Theme Elements"
-msgstr "Eléments du Thème"
+msgstr "El&#233;ments du Th&#232;me"
 
 #: includes/theme-options.php
 msgid "Disable Breadcrumb Lists?"
-msgstr "Déactiver le chemin de navigation (Breadcrumb) ?"
+msgstr "D&#233;activer le chemin de navigation (Breadcrumb) ?"
 
 #: includes/theme-options.php
 msgid "Check to disable"
-msgstr "Validez pour désactiver"
+msgstr "Validez pour d&#233;sactiver"
 
+#: includes/theme-options.php
 msgid "Disable Call to Action Button?"
 msgstr "Désactiver le bouton Appel à action ?"
 
@@ -584,15 +527,15 @@ msgstr "Sauvegarder les options"
 
 #: includes/theme-options.php
 msgid "Logo Upload"
-msgstr "Télécharger un logo"
+msgstr "T&#233;l&#233;charger le Logo"
 
 #: includes/theme-options.php
 msgid "Custom Header"
-msgstr "Personnalisation de l&rsquo;en-tête"
+msgstr "En-tête Personnalis&#233;e"
 
 #: includes/theme-options.php
 msgid "Need to replace or remove default logo? <a href=\"%s\">Click here</a>."
-msgstr "Besoin de remplacer ou de supprimer le logo par défaut ? <a href=\"%s\">Cliquez ici</a>."
+msgstr "Besoin de remplacer ou de supprimer le logo par d&#233;faut ? <a href=\"%s\">Cliquez ici</a>."
 
 #: includes/theme-options.php
 msgid "Home Page"
@@ -612,7 +555,7 @@ msgstr "Sous-Titre"
 
 #: includes/theme-options.php
 msgid "Enter your subheadline"
-msgstr "Saisissez votre sous-titre"
+msgstr "Saisissez votre sous&#45;titre"
 
 #: includes/theme-options.php
 msgid "Content Area"
@@ -624,19 +567,19 @@ msgstr "Saisissez votre contenu"
 
 #: includes/theme-options.php
 msgid "Call to Action (URL)"
-msgstr "Appel à Action (URL)"
+msgstr "Appel &#224; Action (URL)"
 
 #: includes/theme-options.php
 msgid "Enter your call to action URL"
-msgstr "Saisissez votre lien pour l'Appel à Action"
+msgstr "Saisissez votre lien pour l&#39;Appel &#224; Action"
 
 #: includes/theme-options.php
 msgid "Call to Action (Text)"
-msgstr "Appel à Action (Texte)"
+msgstr "Appel &#224; Action (Texte)"
 
 #: includes/theme-options.php
 msgid "Enter your call to action text"
-msgstr "Saisissez votre texte pour l'Appel à Action"
+msgstr "Saisissez votre texte pour l&#39;Appel &#224; Action"
 
 #: includes/theme-options.php
 msgid "Featured Content"
@@ -652,7 +595,7 @@ msgstr "Outils Webmaster"
 
 #: includes/theme-options.php
 msgid "Google Site Verification"
-msgstr "Vérification Google Site"
+msgstr "V&#233;rification Google Site"
 
 #: includes/theme-options.php
 msgid "Enter your Google ID number only"
@@ -660,7 +603,7 @@ msgstr "Saisissez votre identifiant Google (chiffres uniquement)"
 
 #: includes/theme-options.php
 msgid "Bing Site Verification"
-msgstr "Vérification Bing"
+msgstr "V&#233;rification Bing"
 
 #: includes/theme-options.php
 msgid "Enter your Bing ID number only"
@@ -668,7 +611,7 @@ msgstr "Saisissez votre identifiant Bing (chiffres uniquement)"
 
 #: includes/theme-options.php
 msgid "Yahoo Site Verification"
-msgstr "Vérification du Site avec Yahoo"
+msgstr "V&#233;rification du Site avec Yahoo"
 
 #: includes/theme-options.php
 msgid "Enter your Yahoo ID number only"
@@ -692,7 +635,7 @@ msgstr "Twitter"
 
 #: includes/theme-options.php
 msgid "Enter your Twitter URL"
-msgstr "Saisissez l'url Twitter"
+msgstr "Saisissez l&#39;url Twitter"
 
 #: includes/theme-options.php
 msgid "Facebook"
@@ -700,7 +643,7 @@ msgstr "Facebook"
 
 #: includes/theme-options.php
 msgid "Enter your Facebook URL"
-msgstr "Saisissez l'url Facebook"
+msgstr "Saisissez l&#39;url Facebook"
 
 #: includes/theme-options.php
 msgid "LinkedIn"
@@ -708,7 +651,7 @@ msgstr "LinkedIn"
 
 #: includes/theme-options.php
 msgid "Enter your LinkedIn URL"
-msgstr "Saisissez l'url Linkedin"
+msgstr "Saisissez l&#39;url Linkedin"
 
 #: includes/theme-options.php
 msgid "YouTube"
@@ -716,7 +659,7 @@ msgstr "YouTube"
 
 #: includes/theme-options.php
 msgid "Enter your YouTube URL"
-msgstr "Saisissez l'url Youtube"
+msgstr "Saisissez l&#39;url Youtube"
 
 #: includes/theme-options.php
 msgid "StumbleUpon"
@@ -724,7 +667,7 @@ msgstr "StumbleUpon"
 
 #: includes/theme-options.php
 msgid "Enter your StumbleUpon URL"
-msgstr "Saisissez l'url StumbleUpon"
+msgstr "Saisissez l&#39;url StumbleUpon"
 
 #: includes/theme-options.php
 msgid "RSS Feed"
@@ -732,19 +675,19 @@ msgstr "Flux RSS"
 
 #: includes/theme-options.php
 msgid "Enter your RSS Feed URL"
-msgstr "Saisissez l'url du Flux RSS"
+msgstr "Saisissez l&#39;url du Flux RSS"
 
 #: includes/theme-options.php
 msgid "Google+"
-msgstr "Google+"
+msgstr "Google&#43;"
 
 #: includes/theme-options.php
 msgid "Enter your Google+ URL"
-msgstr "Saisissez l'url Google+"
+msgstr "Saisissez l&#39;url Google&#43;"
 
 #: search.php
 msgid "We found"
-msgstr "Nous avons trouvé"
+msgstr "Nous avons trouv&#233;"
 
 #: search.php
 msgid " &#8211; "
@@ -760,7 +703,7 @@ msgstr "Aller"
 
 #: sidebar-gallery.php
 msgid "Image Information"
-msgstr "Information relative à l'image"
+msgstr "Information relative &#224; l&#39;image"
 
 #: sidebar-gallery.php
 msgid "Full Size:"
@@ -768,11 +711,11 @@ msgstr "Taille originale :"
 
 #: sidebar-gallery.php
 msgid "Aperture: f&#47;"
-msgstr "Ouverture : f/"
+msgstr "Ouverture : f&#47;"
 
 #: sidebar-gallery.php
 msgid "Focal Length:"
-msgstr "Longueur focale :"
+msgstr "Focale :"
 
 #: sidebar-gallery.php
 msgid "mm"
@@ -780,10 +723,11 @@ msgstr "mn"
 
 #: sidebar-gallery.php
 msgid "ISO:"
-msgstr "ISO:"
+msgstr "ISO :"
 
+#: sidebar-gallery.php
 msgid "Shutter:"
-msgstr "Vitesse d’obturation :"
+msgstr "Vitesse d&#39;obturation :"
 
 #: sidebar-gallery.php
 msgid "Camera:"
@@ -798,51 +742,42 @@ msgstr "Appareil photo :"
 msgid "In Archive"
 msgstr "dans les archives"
 
-#: sidebar-home.php
-msgid "This is your first home widget box. To edit please go to Appearance > Widgets and choose 6th widget from the top in area six called Home Widget 1. Title is also managable from widgets as well."
-msgstr "Ceci est votre premier widget de page d'accueil. Pour le modifier, allez à Apparence > Widgets et choisissez le 6ème widget 6e en zone six appelé Accueil Widget 1. Le titre est également éditable à partir du panel d'administration des widgets."
-
-#: sidebar-home.php
-msgid "This is your second home widget box. To edit please go to Appearance > Widgets and choose 7th widget from the top in area seven called Home Widget 2. Title is also managable from widgets as well."
-msgstr "Ceci est votre second widget de page d'accueil. Pour le modifier, allez à Apparence > Widgets et choisissez le 7ème widget en zone sept appelé Accueil Widget 2. Le titre est également éditable à partir du panel d'administration des widgets. "
-
-#: sidebar-home.php
-msgid "This is your third home widget box. To edit please go to Appearance > Widgets and choose 8th widget from the top in area eight called Home Widget 3. Title is also managable from widgets as well."
-msgstr "Ceci est votre troisième widget de page d'accueil. Pour le modifier, allez à Apparence > Widgets et choisissez le 8ème widget en zone sept appelé Accueil Widget 3. Le titre est également éditable à partir du panel d'administration des widgets. "
-
 #: single.php
 #: search.php
 msgid "About"
-msgstr "À propos"
+msgstr "A propos"
 
 #: sitemap.php
 msgid "Categories"
-msgstr "Catégories"
+msgstr "Cat&#233;gories"
 
 #: sitemap.php
 msgid "Latest Posts"
-msgstr "Les derniers articles"
+msgstr "Les Derniers Articles"
 
+#: includes/functions.php
 msgid "Archive for "
 msgstr "Archive pour "
 
+#: includes/functions.php
 msgid "Search results for "
-msgstr "Résultats de recherche pour "
+msgstr "R&#233;sultats de recherche pour "
 
 #: includes/functions.php
 msgid "Posts tagged "
-msgstr "Publications taguées "
+msgstr "Publications tagu&#233;es "
 
 #: includes/functions.php
 msgid "All posts by "
 msgstr "Toutes les publications par "
 
+#: includes/functions.php
 msgid "Error 404 "
 msgstr "Erreur 404 "
 
 #: search.php
 msgid "results for "
-msgstr "résultats de la recherche pour "
+msgstr "r&#233;sultats de la recherche pour "
 
 #: footer.php
 msgid "http://themeid.com/responsive-theme/"
@@ -850,7 +785,7 @@ msgstr "http://themeid.com/responsive-theme/"
 
 #: footer.php
 msgid "powered by"
-msgstr "Propulsé par"
+msgstr "Propuls&#233; par"
 
 #: footer.php
 msgid "http://wordpress.org/"
@@ -866,7 +801,7 @@ msgstr "Voir la Documentation"
 
 #: includes/theme-options.php
 msgid "Leave blank if plugin handles your webmaster tools"
-msgstr "Laisser vide si des plugins assurent déjà ces fonction"
+msgstr "Laisser vide si des plugins assurent d&#233;jà ces fonctions"
 
 #: includes/theme-options.php
 msgid "Instagram"
@@ -874,7 +809,7 @@ msgstr "Instagram"
 
 #: includes/theme-options.php
 msgid "Enter your Instagram URL"
-msgstr "Saisissez l'url Instagram"
+msgstr "Saisissez l&#39;url Instagram"
 
 #: includes/theme-options.php
 msgid "Pinterest"
@@ -882,15 +817,15 @@ msgstr "Pinterest"
 
 #: includes/theme-options.php
 msgid "Enter your Pinterest URL"
-msgstr "Saisissez l'url Pinterest"
+msgstr "Saisissez l&#39;url Pinterest"
 
 #: includes/theme-options.php
 msgid "Custom CSS Styles"
-msgstr "CSS personnalisé"
+msgstr "CSS personnalis&#233;"
 
 #: includes/theme-options.php
 msgid "http://www.w3schools.com/css/default.asp"
-msgstr "http://www.cssdebutant.com/"
+msgstr "http://www.cssdebutant.com"
 
 #: includes/theme-options.php
 msgid "CSS Tutorial"
@@ -898,9 +833,5 @@ msgstr "Tutoriel CSS"
 
 #: includes/theme-options.php
 msgid "Enter your custom CSS styles."
-msgstr "Saisissez vos CSS personnalisés."
-
-#: sitemap.php
-msgid "Pages"
-msgstr "Pages"
+msgstr "Saisissez vos CSS personnalis&#233;s."
 

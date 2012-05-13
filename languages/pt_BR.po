@@ -3,19 +3,18 @@ msgstr ""
 "Project-Id-Version: Responsive Theme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-25 13:42:58 UTC\n"
-"PO-Revision-Date: 2012-05-10 17:39+0100\n"
-"Last-Translator: grappler <grappler.login@gmail.com>\n"
+"PO-Revision-Date: 2012-05-12 17:24+0100\n"
+"Last-Translator: grapplerulrich <grapplerulrich@gmail.com>\n"
 "Language-Team: Portuguese, Brazil\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: WebTranslateIt.com\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\\n\n"
+"X-Poedit-Language: Portuguese\n"
+"X-Poedit-Country: BRAZIL\n"
+"X-Poedit-SourceCharset: utf-8\n"
 
-#: sitemap.php
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
-#: search.php
 #: page.php
 #: landing-page.php
 #: index.php
@@ -30,11 +29,6 @@ msgstr ""
 msgid "404 &#8212; Fancy meeting you here!"
 msgstr "404 &#8212; Extravagante encontrar voc&#234; por aqui!"
 
-#: sitemap.php
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
-#: search.php
 #: page.php
 #: landing-page.php
 #: full-width-page.php
@@ -47,11 +41,6 @@ msgstr "404 &#8212; Extravagante encontrar voc&#234; por aqui!"
 msgid "Don&#39;t panic, we&#39;ll get through this together. Let&#39;s explore our options here."
 msgstr "N&#227;o entre em p&#226;nico, n&#243;s vamos passar por isso juntos. Vamos explorar nossas op&#231;&#245;es aqui."
 
-#: sitemap.php
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
-#: search.php
 #: page.php
 #: landing-page.php
 #: index.php
@@ -66,12 +55,6 @@ msgstr "N&#227;o entre em p&#226;nico, n&#243;s vamos passar por isso juntos. Va
 msgid "You can return"
 msgstr "Voc&#234; pode voltar"
 
-#: sitemap.php
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
-#: search.php
-#: includes/functions.php
 #: page.php
 #: landing-page.php
 #: full-width-page.php
@@ -88,11 +71,6 @@ msgstr "In&#237;cio"
 msgid "&larr; Home"
 msgstr "&larr; In&#237;cio"
 
-#: sitemap.php
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
-#: search.php
 #: page.php
 #: landing-page.php
 #: index.php
@@ -123,8 +101,6 @@ msgstr "Arquivos Anuais: %s"
 msgid "Blog Archives"
 msgstr "Arquivos do Blog"
 
-#: sitemap.php
-#: search.php
 #: index.php
 #: blog.php
 #: blog-excerpt.php
@@ -132,13 +108,9 @@ msgstr "Arquivos do Blog"
 msgid "Permanent Link to %s"
 msgstr "Link Permanente para %s"
 
-#: search.php
 #: page.php
 #: index.php
 #: image.php
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
 #: full-width-page.php
 #: content-sidebar-page.php
 #: content-sidebar-half-page.php
@@ -148,10 +120,6 @@ msgstr "Link Permanente para %s"
 msgid "<span class=\"%1$s\">Posted on</span> %2$s by %3$s"
 msgstr "<span class=\"%1$s\">Publicado em</span> %2$s por %3$s"
 
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
-#: search.php
 #: page.php
 #: index.php
 #: image.php
@@ -164,10 +132,6 @@ msgstr "<span class=\"%1$s\">Publicado em</span> %2$s por %3$s"
 msgid "View all posts by %s"
 msgstr "Ver todos os posts de %s"
 
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
-#: search.php
 #: archive.php
 #: blog-excerpt.php
 #: blog.php
@@ -180,10 +144,6 @@ msgstr "Ver todos os posts de %s"
 msgid "No Comments &darr;"
 msgstr "Sem Coment&#225;rios &darr;"
 
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
-#: search.php
 #: page.php
 #: index.php
 #: image.php
@@ -196,10 +156,6 @@ msgstr "Sem Coment&#225;rios &darr;"
 msgid "1 Comment &darr;"
 msgstr "1 Coment&#225;rio &darr;"
 
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
-#: search.php
 #: page.php
 #: index.php
 #: image.php
@@ -212,11 +168,6 @@ msgstr "1 Coment&#225;rio &darr;"
 msgid "% Comments &darr;"
 msgstr "% Coment&#225;rios &darr;"
 
-#: sitemap.php
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
-#: search.php
 #: page.php
 #: landing-page.php
 #: index.php
@@ -230,10 +181,6 @@ msgstr "% Coment&#225;rios &darr;"
 msgid "Pages:"
 msgstr "P&#225;ginas:"
 
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
-#: search.php
 #: page.php
 #: landing-page.php
 #: index.php
@@ -247,10 +194,6 @@ msgstr "P&#225;ginas:"
 msgid "Tagged with:"
 msgstr "Marcados com:"
 
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
-#: search.php
 #: page.php
 #: landing-page.php
 #: index.php
@@ -264,11 +207,6 @@ msgstr "Marcados com:"
 msgid "Posted in %s"
 msgstr "Publicado em %s"
 
-#: sitemap.php
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
-#: search.php
 #: page.php
 #: landing-page.php
 #: index.php
@@ -282,11 +220,6 @@ msgstr "Publicado em %s"
 msgid "Edit"
 msgstr "Editar"
 
-#: sitemap.php
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
-#: search.php
 #: page.php
 #: landing-page.php
 #: index.php
@@ -299,11 +232,6 @@ msgstr "Editar"
 msgid "&#8249; Older posts"
 msgstr "&#8249; Posts mais antigos"
 
-#: sitemap.php
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
-#: search.php
 #: page.php
 #: landing-page.php
 #: index.php
@@ -316,11 +244,6 @@ msgstr "&#8249; Posts mais antigos"
 msgid "Newer posts &#8250;"
 msgstr "Posts mais recentes &#8250;"
 
-#: sitemap.php
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
-#: search.php
 #: page.php
 #: landing-page.php
 #: index.php
@@ -334,10 +257,6 @@ msgstr "Posts mais recentes &#8250;"
 msgid "&#9166; Home"
 msgstr "&#9166; In&#237;cio"
 
-#: single.php
-#: sidebar-content-page.php
-#: sidebar-content-half-page.php
-#: search.php
 #: blog.php
 #: page.php
 #: landing-page.php
@@ -353,16 +272,9 @@ msgid "This post is password protected. Enter the password to view any comments.
 msgstr "Este post &#233; protegido por senha. Digite a senha para ver todos os coment&#225;rios."
 
 #: comments.php
-msgid "No Comments &#187;"
-msgstr "Sem Coment&#225;rios &#187;"
-
-#: comments.php
-msgid "1 Comment &#187;"
-msgstr "1 Coment&#225;rio &#187;"
-
-#: comments.php
-msgid "% Comments &#187;"
-msgstr "% Coment&#225;rios &#187;"
+msgid "One comment on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
 
 #: comments.php
 msgid "&#8249; Older comments"
@@ -525,6 +437,10 @@ msgstr "&#193;rea Cinco - sidebar-right-half.php"
 msgid "Home Widget 1"
 msgstr "P&#225;gina Inicial Widget 1"
 
+#: sidebar-home.php
+msgid "This is your first home widget box. To edit please go to Appearance > Widgets and choose 6th widget from the top in area six called Home Widget 1. Title is also manageable from widgets as well."
+msgstr "Esta &#233; a sua primeira caixa de widget da p&#225;gina inicial. Para editar acesse Apar&#234;ncia > Widgets e escolha o sexto Widget do topo na &#225;rea seis chamada P&#225;gina Inicial Widget 1. T&#237;tulo tamb&#233;m &#233; gerenci&#225;vel a partir dos widgets assim."
+
 #: includes/functions.php
 msgid "Area Six - sidebar-home.php"
 msgstr "&#193;rea Seis - sidebar-home.php"
@@ -534,6 +450,10 @@ msgstr "&#193;rea Seis - sidebar-home.php"
 msgid "Home Widget 2"
 msgstr "P&#225;gina Inicial Widget 2"
 
+#: sidebar-home.php
+msgid "This is your second home widget box. To edit please go to Appearance > Widgets and choose 7th widget from the top in area seven called Home Widget 2. Title is also manageable from widgets as well."
+msgstr "Esta &#233; a sua segunda caixa de widget da p&#225;gina inicial. Para editar acesse Apar&#234;ncia > Widgets e escolha o s&#233;timo Widget do topo na &#225;rea sete chamada P&#225;gina Inicial Widget 2. T&#237;tulo tamb&#233;m &#233; gerenci&#225;vel a partir dos widgets assim."
+
 #: includes/functions.php
 msgid "Area Seven - sidebar-home.php"
 msgstr "&#193;rea Sete - sidebar-home.php"
@@ -542,6 +462,10 @@ msgstr "&#193;rea Sete - sidebar-home.php"
 #: sidebar-home.php
 msgid "Home Widget 3"
 msgstr "P&#225;gina Inicial Widget 3"
+
+#: sidebar-home.php
+msgid "This is your third home widget box. To edit please go to Appearance > Widgets and choose 8th widget from the top in area eight called Home Widget 3. Title is also manageable from widgets as well."
+msgstr "Esta &#233; a sua terceira caixa de widget da p&#225;gina inicial. Para editar acesse Apar&#234;ncia > Widgets e escolha o oitavo Widget do topo na &#225;rea oito chamada P&#225;gina Inicial Widget 3. T&#237;tulo tamb&#233;m &#233; gerenci&#225;vel a partir dos widgets assim."
 
 #: includes/functions.php
 msgid "Area Eight - sidebar-home.php"
@@ -554,6 +478,10 @@ msgstr "Sidebar de Galeria"
 #: includes/functions.php
 msgid "Area Nine - sidebar-gallery.php"
 msgstr "&#193;rea Nove - sidebar-gallery.php"
+
+#: sitemap.php
+msgid "Pages"
+msgstr "P&#225;ginas"
 
 #: includes/theme-options.php
 msgid "Theme Options"
@@ -804,18 +732,6 @@ msgstr "C&#226;mera:"
 msgid "In Archive"
 msgstr "Em Arquivo"
 
-#: sidebar-home.php
-msgid "This is your first home widget box. To edit please go to Appearance > Widgets and choose 6th widget from the top in area six called Home Widget 1. Title is also managable from widgets as well."
-msgstr "Esta &#233; a sua primeira caixa de widget da p&#225;gina inicial. Para editar acesse Apar&#234;ncia > Widgets e escolha o sexto Widget do topo na &#225;rea seis chamada P&#225;gina Inicial Widget 1. T&#237;tulo tamb&#233;m &#233; gerenci&#225;vel a partir dos widgets assim."
-
-#: sidebar-home.php
-msgid "This is your second home widget box. To edit please go to Appearance > Widgets and choose 7th widget from the top in area seven called Home Widget 2. Title is also managable from widgets as well."
-msgstr "Esta &#233; a sua segunda caixa de widget da p&#225;gina inicial. Para editar acesse Apar&#234;ncia > Widgets e escolha o s&#233;timo Widget do topo na &#225;rea sete chamada P&#225;gina Inicial Widget 2. T&#237;tulo tamb&#233;m &#233; gerenci&#225;vel a partir dos widgets assim."
-
-#: sidebar-home.php
-msgid "This is your third home widget box. To edit please go to Appearance > Widgets and choose 8th widget from the top in area eight called Home Widget 3. Title is also managable from widgets as well."
-msgstr "Esta &#233; a sua terceira caixa de widget da p&#225;gina inicial. Para editar acesse Apar&#234;ncia > Widgets e escolha o oitavo Widget do topo na &#225;rea oito chamada P&#225;gina Inicial Widget 3. T&#237;tulo tamb&#233;m &#233; gerenci&#225;vel a partir dos widgets assim."
-
 #: single.php
 #: search.php
 msgid "About"
@@ -908,8 +824,4 @@ msgstr "Tutorial de CSS"
 #: includes/theme-options.php
 msgid "Enter your custom CSS styles."
 msgstr "Entre com seus estilos CSS personalizados."
-
-#: sitemap.php
-msgid "Pages"
-msgstr "P&#225;ginas"
 
