@@ -8,7 +8,7 @@
 
 Font neuton:
 - SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
-//location= wp-content/themes/batik/font/SIL Open Font License 1.1-update2.txt
+//location= wp-content/themes/batik/font/Neuton SIL OFL Font License 1.1.txt
 
 Icon set:
 - GNU GENERAL PUBLIC LICENSE Version 2, June 1991
@@ -25,6 +25,12 @@ http://urbangiraffe.com/articles/translating-wordpress-themes-and-plugins/
 -----------------------------------------------
 =0.0.1=
 * Released
+
+=0.0.2=
+* Floating to right image avatar on CSS file, to change better comment layout.
+* Add CSS for clearing float on options page
+* Change screenshot
+* Display:inline for image galery
 
 -----------------------------------------------
     ==Created by==

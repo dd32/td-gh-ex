@@ -4,7 +4,7 @@ Description: Simple, minimalist and elegant blog theme with responsive layout. T
 Theme URI:
 Author: Hendro Prayitno
 Author URI: http://amdhas.tk
-Version: 0.0.1
+Version: 0.0.2
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: flexible-width, theme-options, threaded-comments, translation-ready, two-columns, three-columns, right-sidebar, sticky-post
@@ -130,11 +130,12 @@ h1.page-title{font-size:2em;font-style:italic;}
 .wp-caption .wp-caption-text {margin-bottom: 0.6em;padding: 10px 0 5px 0;position: relative;}
 .wp-caption .wp-caption-text:before {color: #666;content: '';font-size: 14px;font-style: normal;font-weight: bold;margin-right: 5px;position: absolute;}
 .format-gallery .gallery-thumb {float: left;display: block;margin: .375em 1.625em 0 0;}
-.gallery { margin: 0 auto 18px; }
-.gallery .gallery-item {float: left;margin-top: 0;text-align: center;width: 33%;}
+.gallery { margin: 0 auto; }
+.gallery .gallery-item {margin-top: 0;text-align: center;width: 30%;}
 .gallery-columns-2 .gallery-item { width: 50%; }
 .gallery-columns-4 .gallery-item { width: 25%; }
-.gallery img {box-shadow: 0px 0px 4px #999;border: 1px solid white;padding: 8px;background: #f2f2f2;}
+.gallery .gallery-item, .gallery-columns-2 .gallery-item, .gallery-columns-4 .gallery-item {margin:0 1.0416666666666665%;float: left;display:inline;}
+.gallery img {box-shadow: 1px 2px 2px #999;background: #f2f2f2;}
 .gallery img:hover {background: white;}
 .gallery-columns-2 .attachment-medium {max-width: 92%;height: auto;}
 .gallery-columns-4 .attachment-thumbnail {max-width: 84%;height: auto;}
@@ -212,7 +213,7 @@ h1.page-title{font-size:2em;font-style:italic;}
 #navmenu ul li:hover > ul {display: block;}
 #navmenu.current_page_item > a,
 #navmenu.current_page_ancestor > a {font-weight: bold;}
-.navi{padding-bottom:25px;}
+.navi{padding-bottom:25px;padding-top:22px;}
 .page-numbers li{float:left;display:inline;list-style:none;padding: 4px 8px;margin-left:2px;line-height: 1em;color: #444;border:1px solid #444;}
 .page-numbers{padding: 6px 8px;}
 .navi .current{ color: #aaa; }
@@ -252,8 +253,8 @@ input[type="submit"]{cursor:pointer;background:#ffffff;color:#555;display:inline
 .comment-meta a:focus,
 .comment-meta a:active,
 .comment-meta a:hover {}
-.commentlist .avatar {-moz-border-radius: 3px;border-radius: 3px;-webkit-box-shadow: 0 1px 2px #ccc;-moz-box-shadow: 0 1px 2px #ccc;box-shadow: 0 1px 2px #ccc;left: -102px;padding: 0;position: absolute;top: 0;}
-.commentlist > li:before {content: url(images/comment-arrow.png);left: -21px;position: absolute;}
+.commentlist .avatar {-moz-border-radius: 3px;border-radius: 3px;-webkit-box-shadow: 0 1px 2px #ccc;-moz-box-shadow: 0 1px 2px #ccc;box-shadow: 0 1px 2px #ccc;padding: 0;top: 0;float:right;clear:both;margin-bottom:20px;}
+.commentlist > li:before {left: -21px;position: absolute;}
 .commentlist > li.pingback:before {content: '';}
 .commentlist .children .avatar {background: none;-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;left: 2.2em;padding: 0;top: 2.2em;}
 a.comment-reply-link {background: #eee;-moz-border-radius: 3px;border-radius: 3px;color: #666;display: inline-block;font-size: 12px;padding: 0 8px;text-decoration: none;}
@@ -261,12 +262,12 @@ a.comment-reply-link:hover,
 a.comment-reply-link:focus,
 a.comment-reply-link:active {background: #888;color: #fff;}
 a.comment-reply-link > span {display: inline-block;position: relative;top: -1px;}
-.commentlist > li.bypostauthor {}
+.commentlist > li.bypostauthor {float:left;}
 .commentlist > li.bypostauthor .comment-meta {color: #575757;}
 .commentlist > li.bypostauthor .comment-meta a:focus,
 .commentlist > li.bypostauthor .comment-meta a:active,
 .commentlist > li.bypostauthor .comment-meta a:hover {}
-.commentlist > li.bypostauthor:before {content:"Author comment";position:absolute;top:0;left:70%;color:#fff;background:#900;padding:5px;font-size:1.1em;}
+.commentlist > li.bypostauthor:before {content:"Author comment";position:absolute;top:0;left:1%;color:#fff;background:#900;padding:5px;font-size:1.1em;}
 .commentlist .children > li.bypostauthor {background: #ddd;border-color: #d3d3d3;}
 .page-template-sidebar-page-php .commentlist > li.comment,
 .page-template-sidebar-page-php.commentlist .pingback {margin-left: 102px;width: auto;}

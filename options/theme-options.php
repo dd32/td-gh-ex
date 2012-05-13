@@ -1,6 +1,6 @@
 <?php
 function batik_admin_enqueue_scripts( $hook_suffix ) {
-wp_enqueue_style( 'batik-theme-options', get_template_directory_uri() . '/options/batik-options.css', '0.0.1' );
+wp_enqueue_style( 'batik-theme-options', get_template_directory_uri() . '/options/batik-options.css', '0.0.2' );
 }
 add_action( 'admin_print_styles-appearance_page_theme_options', 'batik_admin_enqueue_scripts' );
 function batik_theme_options_init() {
@@ -40,8 +40,10 @@ function batik_theme_options_do_page() {
 <p><?php _e('This your options page, you can choice and put your adds code, social media URL google site verification', 'batik'); ?></p>
 </div>
 </div>
+<div class="clear"></div>
 <div class="row">
             <h2 class="rwd-toggle"><a href="#">Adds</a></h2>
+<div class="clear"></div>
 <div class="dua">
 <h3><?php _e('adds one', 'batik'); ?></h3>
 </div>
@@ -86,7 +88,7 @@ function batik_theme_options_do_page() {
 
            <div id="rwd" class="row">
             <h2 class="rwd-toggle"><a href="#">Webmaster Tools</a></h2>
-                                           
+<div class="clear"></div>                                           
 <div class="tiga">
 <?php _e('Google Site Verification', 'batik'); ?>
 </div>
@@ -114,7 +116,8 @@ function batik_theme_options_do_page() {
                 </div>
 
             <div class="row">
-            <h2 class="rwd-toggle"><a href="#">Social Icons</a></h2>                                                      
+            <h2 class="rwd-toggle"><a href="#">Social Icons</a></h2> 
+<div class="clear"></div>                                                     
  <div class="tiga">
 <?php _e('Twitter', 'batik'); ?>
 </div>

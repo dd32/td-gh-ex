@@ -10,6 +10,7 @@
 .tiga, .enam, .sembilan
 {width:97.91666666666666%;
 display:inline; float:left;margin:0 1%}}
+.clear{clear:both;display:block;overflow:hidden;margin-bottom:20px;}
 h2.rwd-toggle {	
 	padding: 0 0 0 10px;
 	margin: 20px 0 0 0;

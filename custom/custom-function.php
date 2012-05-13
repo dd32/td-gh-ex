@@ -171,7 +171,7 @@ function batik_excerpt_more( $more ) {
 	return ' &hellip;' . batik_continue_reading_link();
 }
 function batik_enqueue_scripts_styles( ) {
-        wp_enqueue_style( 'default', get_template_directory_uri() . '/style.css', array(), '0.0.1');
+        wp_enqueue_style( 'default', get_template_directory_uri() . '/style.css', array(), '0.0.2');
 }
 function the_batik_content_nav() {
 	global $wp_query;
