@@ -1,10 +1,5 @@
 <?php
 
-/**
-* Exit if file is directly accessed. 
-*/ 
-if ( !defined('ABSPATH')) exit;
-
  /*
 	Index
 	
@@ -23,7 +18,7 @@ if ( !defined('ABSPATH')) exit;
 	if (preg_match("/synapse_blog_slider/", $reorder )) {
 		add_action ( 'synapse_blog_content_slider', 'synapse_blog_slider_lite');
 	}
-		
+	
 /* End set slider hook*/
 
 ?>
@@ -39,5 +34,4 @@ if ( !defined('ABSPATH')) exit;
 			}
 		?>
 </div><!--end container-->
-
 <?php get_footer(); ?>

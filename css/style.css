@@ -1,4 +1,4 @@
-/* iFeature Style.css */
+/* iFeature Pro 3 Style.css */
 
 /* Reset and Design Constant Styles */
 
@@ -55,6 +55,8 @@ color:#fff;
 
 .next_image {float: right;}
 
+#sidebar {right: -2px;}
+
 #register {text-align: right; list-style: none;}
 
 #register li {float: right; display: block; padding-left: 5px;}
@@ -100,7 +102,7 @@ a:hover {color: #5ca9d6;}
 
 /* Header  */
 
-header {padding-top: 15px;}
+header {margin-top: 15px;}
 
 #header_contact{ text-align:right;}
 
@@ -131,7 +133,7 @@ header {padding-top: 15px;}
 #nav .menu > li:first-child a:hover{border-radius:0}
 #nav .menu .sub-menu li a:hover{border-radius:0}
 #nav ul li{position:relative}
-#nav li ul{display:none;position:absolute;top:27px;left:7px;z-index: 2147483647;}
+#nav li ul{display:none;position:absolute;top:27px;left:7px}
 #nav li ul a{background:#555}
 #nav ul ul li:hover ul, #nav ul ul ul li:hover ul{left:0;margin:-37px 0 11px 180px}
 #nav ul li:hover ul{display:inline-block}
@@ -146,7 +148,7 @@ header {padding-top: 15px;}
 
 /* Home Button */
 
-#home {float: left;border-right:#777 1px solid;margin-right:4px;margin-left:15px; height: 35px;}
+#home {float: left;border-right:#777 1px solid;margin-right:4px;margin-left:15px; height: 36px;}
 #home a:hover{opacity: .5}
 #nohome {float: left; margin-right:4px;margin-left:5px; height: 35px;}
 
@@ -179,10 +181,6 @@ header {padding-top: 15px;}
 	width:	130px;
 	color: #333;
 	overflow: hidden;
-}
-.phone-two .searchform {
-  width: 100%;
-  margin-right: 0;
 }
 
 #magnify {float:left;position:absolute;margin: 2px 0 0 5px;}
@@ -708,26 +706,4 @@ table,
 address,
 fieldset,
 figure {
-}
-
-/* ==========================	For sticky footer =======================================	*/
-* {
-	margin: 0;
-}
-
-html, body {
-	height: 100%;
-	margin:0px !important;
-}
-
-.wrapper {
-	min-height: 100%;
-	height: auto !important;
-	height: 100%;
-	margin: 0px auto -241px auto; /* the bottom margin is the negative value of the footer's height */
-}
-
-.footer, .push{
-	height: 241px;
-	clear:both;
 }

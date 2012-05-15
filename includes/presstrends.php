@@ -1,10 +1,5 @@
 <?php
 
-/**
-* Exit if file is directly accessed. 
-*/ 
-if ( !defined('ABSPATH')) exit;
-
 // Add PressTrends Option
 add_action('admin_menu', 'if_presstrends_theme_menu');
 
@@ -14,7 +9,7 @@ function if_presstrends_theme_menu() {
 
 function if_presstrends_theme_options() {
 	if (!current_user_can('manage_options'))  {
-		wp_die( __('You do not have sufficient permissions to access this page.', 'core') );
+		wp_die( __('You do not have sufficient permissions to access this page.') );
 	}
 ?>
 	<form action="options.php" method="post">
@@ -38,13 +33,13 @@ function if_presstrends_theme_init(){
 
 // PressTrends Section Text
 function if_presstrends_top_text() {
-    echo '<p style="width:190px;float:left;"><img src="http://presstrends.io/images/logo.png"/></p><p style="width:500px;float:left;color:#777;padding-top:2px;"><b>PressTrends</b> helps theme authors build better themes and provide awesome support by retrieving aggregated stats. PressTrends also provides a <a href="http://wordpress.org/extend/plugins/presstrends/" title="PressTrends Plugin for WordPress" target="_blank">plugin</a> that delivers stats on how your site is performing against the web and similar sites like yours. <a href="http://presstrends.io" title="PressTrends" target="_blank">Learn more&#8230;</a></p>';
+    echo '<p style="width:190px;float:left;"><img src="http://presstrends.io/images/logo.png"/></p><p style="width:500px;float:left;color:#777;padding-top:2px;"><b>PressTrends</b> helps theme authors build better themes and provide awesome support by retrieving aggregated stats. PressTrends also provides a <a href="http://wordpress.org/extend/plugins/presstrends/" title="PressTrends Plugin for WordPress" target="_blank">plugin</a> that delivers stats on how your site is performing against the web and similar sites like yours. <a href="http://presstrends.io" title="PressTrends" target="_blank">Learn more…</a></p>';
 }
 
 // PressTrends Opt-In Option
 function if_presstrends_opt_string() {
     $current_key = get_option('presstrends_theme_opt');
-    $opt = isset( $current_key['activated'] ) ? $current_key['activated'] : false;
+    $opt = $current_key['activated'];
 	if($opt == 'on') {
 	      echo "<input id='presstrends_opt_in' name='presstrends_theme_opt[activated]' checked type='checkbox' />";
 	} else {
@@ -111,13 +106,8 @@ function if_presstrends() {
         $count_posts = wp_count_posts();
         $count_pages = wp_count_posts('page');
         $comments_count = wp_count_comments();
-        if ( function_exists('get_custom_header')) {
-	        $theme_data = wp_get_theme();
-	       } 
-	    else {
-		       $theme_data = get_theme_data(get_stylesheet_directory() . '/style.css');	
-		}        
-		$plugin_count = count(get_option('active_plugins'));
+        $theme_data = get_theme_data(get_stylesheet_directory() . '/style.css');
+        $plugin_count = count(get_option('active_plugins'));
         $all_plugins = get_plugins();
         foreach($all_plugins as $plugin_file => $plugin_data) {
             $plugin_name .= $plugin_data['Name'];
@@ -129,8 +119,8 @@ function if_presstrends() {
         $data['comments'] = $comments_count->total_comments;
         $data['approved'] = $comments_count->approved;
         $data['spam'] = $comments_count->spam;
-        $data['theme_version'] = is_array( $theme_data ) ? $theme_data['Version'] : $theme_data->Version;
-        $data['theme_name'] = is_array( $theme_data ) ? $theme_data['Name'] : $theme_data->Name;
+        $data['theme_version'] = $theme_data['Version'];
+        $data['theme_name'] = $theme_data['Name'];
         $data['site_name'] = str_replace( ' ', '', get_bloginfo( 'name' ));
         $data['plugins'] = $plugin_count;
         $data['plugin'] = urlencode($plugin_name);
@@ -144,7 +134,7 @@ function if_presstrends() {
 }
 
 $current_key = get_option('presstrends_theme_opt');
-$opt = isset( $current_key['activated'] ) ? $current_key['activated'] : false;
+$opt = $current_key['activated'];
 if($opt == 'on') {
     add_action('admin_init', 'if_presstrends');
 }

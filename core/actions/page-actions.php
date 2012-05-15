@@ -1,10 +1,4 @@
 <?php
-
-/**
-* Exit if file is directly accessed. 
-*/ 
-if ( !defined('ABSPATH')) exit;
-
 /**
 * Page actions used by the CyberChimps Synapse Core Framework
 *
@@ -37,7 +31,7 @@ function synapse_page_section_content() {
 	
 	synapse_sidebar_init();
 	
-	$hidetitle = get_post_meta($post->ID, $themeslug.'_hide_page_title' , true);
+	$hidetitle = get_post_meta($post->ID, 'hide_page_title' , true);
 
 
 ?>

@@ -1,10 +1,5 @@
 <?php
 /**
-* Exit if file is directly accessed. 
-*/ 
-if ( !defined('ABSPATH')) exit;
-
-/**
 * 404 actions used by the CyberChimps Synapse Core Framework
 *
 * Author: Tyler Cunningham
@@ -39,7 +34,7 @@ function synapse_404_content() {
 	else {
 		$message_text = apply_filters( 'synapse_404_message', 'Error 404' );
 	} ?>
-	<div class="error"><?php printf( $message_text ); ?><br />	</div> 
+	<div class="error"><?php printf( __( $message_text, 'core' )); ?><br />	</div> 
 	<?php
 }
 

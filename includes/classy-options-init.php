@@ -1,15 +1,9 @@
 <?php
-
-/**
-* Exit if file is directly accessed. 
-*/ 
-if ( !defined('ABSPATH')) exit;
-
 /**
 * Initializes the iFeature Theme Options
 *
 * Author: Tyler Cunningham
-* Copyright: &#169; 2011
+* Copyright: © 2011
 * {@link http://cyberchimps.com/ CyberChimps LLC}
 *
 * Released under the terms of the GNU General Public License.
@@ -95,17 +89,16 @@ $options
 		->close_outersection()
 		->subsection("Header Options")
 			->upload($themeslug."_logo", "Custom Logo")
-			->text($themeslug."_logo_url", "Logo Custom URL", array('default' => home_url()))
-			->checkbox($themeslug."_favicon_toggle", "Favicon" , array('default' => false))
-			->upload($themeslug."_favicon", "Custom Favicon", array('default' => array('url' => TEMPLATE_URL . '/images/favicon.ico')))
-			->checkbox($themeslug."_apple_touch_toggle", "Apple Touch Icon" , array('default' => false))
-			->upload($themeslug."_apple_touch", "Apple Touch Icon", array('default' => array('url' => TEMPLATE_URL . '/images/apple-icon.png')))
+			->checkbox($themeslug."_enable_header_contact", "Header Contact Area")
+			->textarea($themeslug."_header_contact", "Enter Your Information")
+			->checkbox($themeslug."_show_description", "Show Site Description")
+			->upload($themeslug."_favicon", "Custom Favicon")
+			->checkbox($themeslug."_disable_breadcrumbs", "Breadcrumbs" , array('default' => true))
 		->subsection_end()
 		->subsection("iMenu Options")
 			->select($themeslug."_menu_font", "Choose a Menu Font", array( 'options' => array("Arial" => "Arial (default)", "Courier New" => "Courier New", "Georgia" => "Georgia", "Helvetica" => "Helvetica", "Lucida Grande" => "Lucida Grande", "Tahoma" => "Tahoma", "Times New Roman" => "Times New Roman", "Verdana" => "Verdana", "Maven+Pro" => "Maven Pro", "Ubuntu" => "Ubuntu")))
 			->checkbox($themeslug."_hide_home_icon", "Home Icon", array('default' => true))
 			->checkbox($themeslug."_hide_search", "Searchbar", array('default' => true))
-			->checkbox($themeslug."_hide_mobile_search", "Mobile Searchbar", array('default' => true))
 		
 		->subsection_end()
 		->subsection("Social")
@@ -142,7 +135,7 @@ TEMPLATE_URL . '/images/social/thumbs/icons-default.png' ), 'default' => 'defaul
 		->subsection("Blog Options")
 			->checkbox($themeslug."_post_formats", "Post Format Icons",  array('default' => true))
 			->checkbox($themeslug."_show_excerpts", "Post Excerpts")
-			->text($themeslug."_excerpt_link_text", "Excerpt Link Text", array('default' => 'Read More&#8230;'))
+			->text($themeslug."_excerpt_link_text", "Excerpt Link Text", array('default' => 'Read More…'))
 			->text($themeslug."_excerpt_length", "Excerpt Character Length", array('default' => '55'))
 			->checkbox($themeslug."_show_featured_images", "Enable Featured Images")
 			->select($themeslug."_featured_image_align", "Featured Image Alignment", array( 'options' => array("key1" => "Left", "key2" => "Center", "key3" => "Right", "key4" => "None")))

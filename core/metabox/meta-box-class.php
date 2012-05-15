@@ -1,10 +1,5 @@
 <?php
 
-/**
-* Exit if file is directly accessed. 
-*/ 
-if ( !defined('ABSPATH')) exit;
-
 class Chimps_Metabox {
 	function __construct($id, $title, $options) {
 		$this->id = $id;

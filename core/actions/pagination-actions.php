@@ -1,11 +1,4 @@
 <?php
-
-/**
-* Exit if file is directly accessed. 
-*/ 
-if ( !defined('ABSPATH')) exit;
-
-
 /**
 * Pagination actions used by the CyberChimps Synapse Core Framework
 *
@@ -80,7 +73,7 @@ function synapse_previous_posts() {
 	$previous_text = apply_filters('synapse_previous_posts_text', '&laquo; Older Entries' ); 
 	
 	echo "<div class='pagnext-posts'>";
-	next_posts_link( $previous_text );
+	next_posts_link( __( $previous_text, 'core' ));
 	echo "</div>";
 }
 
@@ -93,7 +86,7 @@ function synapse_newer_posts() {
 	$newer_text = apply_filters('synapse_newer_posts_text', 'Newer Entries &raquo;' );
 	
 	echo "<div class='pagprev-posts'>";
-	previous_posts_link( $newer_text );
+	previous_posts_link( __( $newer_text, 'core' ));
 	echo "</div>";
 }
 
