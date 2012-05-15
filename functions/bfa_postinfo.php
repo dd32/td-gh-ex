@@ -31,7 +31,7 @@ function bfa_parse_date_modified_callback( $matches ) {
 	return $date_modified;
 }
 
-function postinfo($postinfo_string) {
+function bfa_postinfo($postinfo_string) {
 
 	// one theme option needed below for nofollow trackback / RSS links yes/no
 	global $bfa_ata, $post;
@@ -516,7 +516,7 @@ function postinfo($postinfo_string) {
 	return $postinfo;
 }
 
-function getH() {
+function bfa_getH() {
 	global $bfa_ata, $post;
 	return('#');
 }

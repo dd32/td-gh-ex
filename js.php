@@ -1,5 +1,4 @@
 <?php 
-# global $bfa_ata; if ($bfa_ata == "") include_once (TEMPLATEPATH . '/functions/bfa_get_options.php'); 
 if ( isset($bfa_ata_preview) OR $bfa_ata['javascript_external'] == "Inline" OR 
 ( isset($bfa_ata_debug) AND $bfa_ata['allow_debug'] == "Yes" ) ) {
 	echo '<script type="text/javascript">'; 

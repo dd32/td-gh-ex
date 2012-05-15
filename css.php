@@ -1,5 +1,4 @@
 <?php # error_reporting(E_ALL & ~E_NOTICE);
-#include_once (TEMPLATEPATH . '/functions.php'); 
 global $templateURI,  $homeURL; 
 if ( isset($bfa_ata_preview) OR $bfa_ata['css_external'] == "Inline" OR 
 ( isset($bfa_ata_debug) AND $bfa_ata['allow_debug'] == "Yes" ) ) {

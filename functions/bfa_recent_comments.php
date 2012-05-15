@@ -49,10 +49,10 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 
 
-	// Check for the required plugin functions. This will prevent fatal
-	// errors occurring when you deactivate the dynamic-sidebar plugin.
-	if ( !function_exists('register_sidebar_widget') )
-		return;
+
+
+
+
 
 	// This is the function that outputs our little widget
 	function widget_simple_recent_comments($args) {

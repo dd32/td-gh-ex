@@ -1,3 +1,11 @@
+Changelog 3.7.7:
+
+Based on http://themes.trac.wordpress.org/ticket/7485#comment:2
+- removed 'function_exists' for get_avatar, dynamic_sidebar, 
+  is_front_page, is_tag, wp_list_comments, wp_nav_menu, register_sidebar_widget
+- removed files /legacy.coments.php, /functions/bfa_body_class.php, /functions/bfa_bodyclasses.php
+- namespaced many functions with 'bfa_', mainly in functions.php
+
 Changelog 3.7.6:
 
 - renamed is_pagetemplate_active() to bfa_is_pagetemplate_active() - http://themes.trac.wordpress.org/ticket/7404

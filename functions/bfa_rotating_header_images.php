@@ -5,7 +5,7 @@ global $bfa_ata, $templateURI;
 
 		################### images in WP upload folder (on WPMU)
 		
-		$files = m_find_in_dir(get_option('upload_path'),
+		$files = bfa_m_find_in_dir(get_option('upload_path'),
 			'atahualpa_header_[0-9]+\.(jpe?g|png|gif|bmp)$');
 
 		if ($files) {
@@ -25,7 +25,7 @@ global $bfa_ata, $templateURI;
 		################### images in /images/header/ (on regular WordPress)
 
 		$files = "";
-		$imgpath = TEMPLATEPATH . '/images/header/';
+		$imgpath = get_template_directory() . '/images/header/';
 		$imgdir = $templateURI . '/images/header/';
 		$dh  = opendir($imgpath);
 

@@ -104,18 +104,18 @@ if (defined('ABSPATH')) {
 	}
 }
 
-// different options text for different WP versions
-if( function_exists('wp_list_comments') ) {
-	// WP 2.7+
-	$go_to_pages = "go to Site Admin -> Pages -> Edit";
-	$go_to_cats = "go to Site Admin -> Posts -> Categories";
-	$path_to_widgets = "Appearance";
-} else {
-	// WP 2.6 and older
-	$go_to_pages = "go to Site Admin -> Manage -> Pages";
-	$go_to_cats = "go to Site Admin -> Manage -> Categories";
-	$path_to_widgets = "Design (\"Presentation\" in WP 2.3 and older)";
-}
+
+$go_to_pages = "go to Site Admin -> Manage -> Pages";
+$go_to_cats = "go to Site Admin -> Manage -> Categories";
+$path_to_widgets = "Design (\"Presentation\" in WP 2.3 and older)";
+
+
+
+
+
+
+
+
 
 // array of theme options starts here. Set the category of the first option of every new option category to "category_name", except for the very first option, which will be hard coded in functions.php
 $options1 = array(

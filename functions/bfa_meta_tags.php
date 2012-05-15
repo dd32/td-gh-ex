@@ -83,7 +83,7 @@ function bfa_meta_tags() {
 			// cat titles don't get a filter, so htmlentities is required
 			$bfa_ata_page_title = htmlentities(single_cat_title('', false),ENT_QUOTES,'UTF-8');
 
-		} elseif ( function_exists('is_tag') AND is_tag() ) {
+		} elseif ( is_tag() ) {
 			// tag titles get their own filter from WP
 			$bfa_ata_page_title = htmlentities(single_tag_title('', false),ENT_QUOTES,'UTF-8');
 
@@ -147,8 +147,8 @@ function bfa_meta_tags() {
 	<?php 
 
 	// META DESCRIPTION & KEYWORDS for (only) the HOMEPAGE.
-	if ( function_exists('is_front_page') ? is_front_page() : is_home() ) {
-	#if ( is_home() ) {
+	if ( is_front_page() ) {
+
 		if ( trim($bfa_ata['homepage_meta_description'] ) != "" ) {
 			echo "<meta name=\"description\" content=\"" .
 			htmlentities($bfa_ata['homepage_meta_description'],ENT_QUOTES,'UTF-8') . "\" />\n";

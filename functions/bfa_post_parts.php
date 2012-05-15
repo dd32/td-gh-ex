@@ -18,7 +18,7 @@ function bfa_post_kicker($before = '<div class="post-kicker">', $after = '</div>
 			elseif ( is_single() ) 	$kickertype = 'post_kicker_single'; 
 			else 					$kickertype = 'post_kicker_multi'; 
 			
-			echo postinfo($bfa_ata[$kickertype]);
+			echo bfa_postinfo($bfa_ata[$kickertype]);
 			
 			echo $after;		
     	}
@@ -109,7 +109,7 @@ function bfa_post_byline($before = '<div class="post-byline">', $after = '</div>
 			elseif ( is_single() )	$bylinetype = 'post_byline_single'; 
 			else 					$bylinetype = 'post_byline_multi'; 
 			
-			echo postinfo($bfa_ata[$bylinetype]);
+			echo bfa_postinfo($bfa_ata[$bylinetype]);
 					
     		echo $after;
     	}
@@ -225,7 +225,7 @@ function bfa_post_footer($before = '<div class="post-footer">', $after = '</div>
 			elseif ( is_single() )		$footertype = 'post_footer_single'; 
 			else 						$footertype = 'post_footer_multi'; 
 			
-			echo postinfo($bfa_ata[$footertype]);
+			echo bfa_postinfo($bfa_ata[$footertype]);
 					
     		echo $after;
     	}
