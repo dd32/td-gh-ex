@@ -42,7 +42,9 @@ $mantra_defaults = array(
 "mantra_slidertext5" => "",
 "mantra_sliderlink5" => "",
 
+"mantra_nrcolumns" => "4",
 "mantra_colimageheight" => "120",
+"mantra_columnreadmore" => "Read more",
 
 "mantra_columnimg1" => get_template_directory_uri()."/images/slider/mantra-column.jpg",
 "mantra_columntitle1" => "Hi there!",
@@ -63,6 +65,7 @@ $mantra_defaults = array(
 
 "mantra_fronttext1" => "This could be a tile",
 "mantra_fronttext2" => "And this another one",
+"mantra_fronttitlecolor" => "#333333",
 "mantra_fronttext3" => "And here you could have a whole lot of text. Or not. It's all up to you. Deleting all text inside the appropriate input in the Mantra Settings will remove this whole text zone. It can also contain all HTML tags.<br /> Just try everything out and see what suits you. Have fun and good luck! ",
 "mantra_fronttext4" => "",
 
@@ -87,7 +90,6 @@ $mantra_defaults = array(
 "mantra_letterspace" => "Default",
 "mantra_textshadow" => "Enable",
 
-
 "mantra_backcolor" => "#444444",
 "mantra_headercolor" => "#333333",
 "mantra_prefootercolor" => "#222222",
@@ -111,6 +113,7 @@ $mantra_defaults = array(
 "mantra_pin" => "Pin2",
 "mantra_sidebullet" => "arrow_white",
 "mantra_metaback" => "Gray",
+"mantra_postseparator" => "Hide",
 "mantra_contentlist" => "Show",
 "mantra_title" => "Show",
 "mantra_pagetitle" => "Show",
@@ -118,7 +121,7 @@ $mantra_defaults = array(
 "mantra_tables" => "Disable",
 "mantra_backtop" => "Enable",
 "mantra_comtext" => "Show",
-"mantra_comclosed" => "Show",
+"mantra_comclosed" => "Hide everywhere",
 "mantra_comoff" => "Show",
 "mantra_copyright" => "",
 
@@ -163,6 +166,7 @@ $mantra_defaults = array(
 
 "mantra_linkheader" => "Disable",
 "mantra_breadcrumbs" => "Disable",
+"mantra_pagination" => "Enable",
 "mantra_faviconshow" => "Disable",
 "mantra_favicon" => "",
 "mantra_customcss" => "/* Mantra Custom CSS */  ");

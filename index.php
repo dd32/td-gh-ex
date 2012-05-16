@@ -20,8 +20,8 @@ foreach ($mantra_options as $key => $value) {
 get_header(); ?>
 
 
-		<div id="container">
-			<?php get_sidebar(); ?>
+		<section id="container">
+			
 			<div id="content" role="main">
 
 			<?php if ( have_posts() ) : ?>
@@ -35,7 +35,7 @@ get_header(); ?>
 
 				<?php endwhile; ?>
 
-				<?php mantra_content_nav( 'nav-below' ); ?>
+					<?php if($mantra_pagination=="Enable") the_pagination(); else mantra_content_nav( 'nav-below' ); ?>
 
 			<?php else : ?>
 
@@ -53,7 +53,8 @@ get_header(); ?>
 			<?php endif; ?>
 
 			</div><!-- #content -->
-		</div><!-- #container -->
+		<?php get_sidebar(); ?>
+		</section><!-- #container -->
 
 
 <?php get_footer(); ?>

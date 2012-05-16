@@ -5,8 +5,8 @@ Template Name: page-with-intro
 
 <?php get_header(); ?>
 
-		<div id="container">
-		<?php get_sidebar(); ?>
+		<section id="container">
+	
 			<div id="content" role="main">
 
 	 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -56,12 +56,13 @@ query_posts('category_name='.$slug.'&post_status=publish,future&orderby=date&ord
 
 				<?php endwhile; ?>
 
-				<?php mantra_content_nav( 'nav-below' ); ?>
+				<?php if($mantra_pagination=="Enable") the_pagination(); else mantra_content_nav( 'nav-below' ); ?>
 
 
 
 
 			</div><!-- #content -->
-		</div><!-- #container -->
+		<?php get_sidebar(); ?>
+		</section><!-- #container -->
 
 <?php get_footer(); ?>

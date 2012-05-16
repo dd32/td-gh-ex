@@ -15,7 +15,7 @@
 get_header(); ?>
 
 		<section id="container">
-		<?php get_sidebar(); ?>
+	
 			<div id="content" role="main">
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
@@ -41,7 +41,7 @@ get_header(); ?>
 <?php } endwhile; ?>
 
 			</div><!-- #content -->
-
+			<?php get_sidebar(); ?>
 		</section><!-- #container -->
 
 

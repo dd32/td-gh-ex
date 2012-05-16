@@ -20,7 +20,7 @@ $sidebarSize= intval(($mantra_sidebarRel/$totalwidth*100)-2);
 
 ?>
 
-<style>
+<style type="text/css">
 <?php if ($mantra_dimselect=="Absolute") { ?>
 #wrapper, #access, #colophon, #branding, #main { width:<?php echo ($totalwidth) ?>px ;}
 #access .menu-header, div.menu {width:<?php echo ($totalwidth-12) ?>px ;}
@@ -49,7 +49,7 @@ $sidebarSize= intval(($mantra_sidebarRel/$totalwidth*100)-2);
 	-webkit-border-top-right-radius:10px;text-align:right;padding-right:5%;width:100%;} <?php } 
 
 ?><?php if ($mantra_side == "3cSs" ) { ?>
-#content { width:<?php echo ($contentSize - 20) ?>px;float:right;margin:0 20px 0 0;display:block;}
+#content { width:<?php echo ($contentSize - 20) ?>px;float:right;margin:0 <?php echo $sidebarSize/2+40 ?>px 0 <?php echo -($contentSize+$sidebarSize) ?>px;display:block;}
 #primary {width:<?php echo ($sidebarSize/2 ) ?>px;float:left;padding-left:0px;border:none;border-right:1px dashed #EEE;padding-right:20px;}
 #secondary {width:<?php echo ($sidebarSize/2 ) ?>px;float:right;}
 #primary .widget-title { -moz-border-radius-topleft:0px; -webkit-border-radius:0px;border-radius-topleft:0px ; -moz-border-radius-topright:10px ;border-radius-topright:10px ;	border-top-right-radius:10px;
@@ -86,7 +86,7 @@ else if ($mantra_dimselect=="Relative") { ?>
 	-webkit-border-top-right-radius:10px;text-align:right;padding-right:5%;width:95%;} <?php } 
 
 ?><?php if ($mantra_side == "3cSs" ) { ?>
-#content { width:<?php echo ($contentSize-2) ?>%;float:right;margin:0 20px 0 0;display:block;}
+#content { width:<?php echo ($contentSize ) ?>%;float:right;margin:0 <?php echo $sidebarSize/2+2 ?>% 0 <?php echo -($contentSize+$sidebarSize) ?>%;display:block;}
 #primary {width:<?php echo ($sidebarSize/2 ) ?>%;float:left;padding-left:0px;border:none;border-right:1px dashed #EEE;padding-right:20px;}
 #secondary {width:<?php echo ($sidebarSize/2 ) ?>%;float:right;}
 #primary .widget-title { -moz-border-radius-topleft:0px; -webkit-border-radius:0px;border-radius-topleft:0px ; -moz-border-radius-topright:10px ;border-radius-topright:10px ;	border-top-right-radius:10px;
@@ -112,6 +112,7 @@ font-size:<?php echo $mantra_fontsize ?>;
  <?php } else if ($mantra_caption == "Black") {?> background-color:#000;color:#CCC;}
 <?php }
 ?><?php if ($mantra_metaback == "White") { ?> .entry-meta { background:#FFF;} <?php } else if ($mantra_metaback == "None") { ?> .entry-meta { background:#FFF;border:none;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;} <?php }
+?><?php if ($mantra_postseparator == "Show") { ?> article.post { padding-bottom:10px;border-bottom:3px solid #EEE} <?php }
 ?><?php if ($mantra_contentlist == "Hide") { ?> #content ul li { background-image:none ; padding-left:0;} <?php }
 ?><?php if ($mantra_title == "Hide") { ?> #site-title, #site-description { visibility:hidden;} <?php }
 ?><?php if ($mantra_comtext == "Hide") { ?> #respond .form-allowed-tags { display:none;} <?php }

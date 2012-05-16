@@ -1,6 +1,8 @@
 jQuery(function() {
 	jQuery(window).scroll(function() {
-		if(jQuery(this).scrollTop() != 0) {
+
+var x=jQuery(this).scrollTop();
+		if(x != 0) {
 			jQuery('#toTop').fadeIn(3000);	
 		} else {
 			jQuery('#toTop').fadeOut();

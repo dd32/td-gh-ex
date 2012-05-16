@@ -6,7 +6,6 @@ Template Name: page-blog
 <?php get_header(); ?>
 
 		<div id="container">
-		<?php get_sidebar(); ?>
 			<div id="content" role="main">
 
 	
@@ -28,7 +27,7 @@ query_posts('post_status=publish,future&orderby=date&order=desc&posts_per_page='
 
 				<?php endwhile; ?>
 
-				<?php mantra_content_nav( 'nav-below' ); ?>
+				<?php if($mantra_pagination=="Enable") the_pagination(); else mantra_content_nav( 'nav-below' ); ?>
 
 			<?php else : ?>
 
@@ -49,6 +48,7 @@ query_posts('post_status=publish,future&orderby=date&order=desc&posts_per_page='
 
 
 			</div><!-- #content -->
+	<?php get_sidebar(); ?>
 		</div><!-- #container -->
 
 <?php get_footer(); ?>

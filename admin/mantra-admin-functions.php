@@ -89,6 +89,7 @@ function mantra_init_fn(){
 	add_settings_field('mantra_pin', __('Caption Pin','mantra') , 'setting_pin_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_sidebullet', __('Sidebar Menu Bullets','mantra') , 'setting_sidebullet_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_metaback', __('Meta Area Background','mantra') , 'setting_metaback_fn', __FILE__, 'graphics_section');
+	add_settings_field('mantra_postseparator', __('Post Separator','mantra') , 'setting_postseparator_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_contentlist', __('Content List Bullets','mantra') , 'setting_contentlist_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_title', __('Title and Description','mantra') , 'setting_title_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_pagetitle', __('Page Titles','mantra') , 'setting_pagetitle_fn', __FILE__, 'graphics_section');
@@ -132,6 +133,7 @@ function mantra_init_fn(){
 
 	add_settings_field('mantra_linkheader', __('Make Site Header a Link','mantra') , 'setting_linkheader_fn', __FILE__, 'misc_section');
 	add_settings_field('mantra_breadcrumbs', __('Breadcrumbs','mantra') , 'setting_breadcrumbs_fn', __FILE__, 'misc_section');
+	add_settings_field('mantra_pagination', __('Pagination','mantra') , 'setting_pagination_fn', __FILE__, 'misc_section');
 	add_settings_field('mantra_favicon', __('FavIcon','mantra') , 'setting_favicon_fn', __FILE__, 'misc_section');
 	add_settings_field('mantra_customcss', __('Custom CSS','mantra') , 'setting_customcss_fn', __FILE__, 'misc_section');
 
@@ -630,9 +632,24 @@ jQuery(this).next().toggle("fast");
 function setting_frontcolumns_fn() {
 	global $mantra_options;
 
-echo "<div id='cdimensions'><b>Image Height:</b> ";
-	echo "<input id='mantra_colimageheight' name='ma_options[mantra_colimageheight]' size='4' type='text' value='".esc_attr( $mantra_options['mantra_colimageheight'] )."'  /> px </div>";
 
+echo "<div class='slmini'><b>Number of columns:</b> ";
+	$items = array ("0" , "2" , "3" , "4");
+	echo "<select id='mantra_nrcolumns'  name='ma_options[mantra_nrcolumns]'>";
+foreach($items as $item) {
+	echo "<option value='$item'";
+	selected($mantra_options['mantra_nrcolumns'],$item);
+	echo ">$item</option>";
+}
+	echo "</select></div>";
+
+echo "<div class='slmini'><b>Image Height:</b> ";
+	echo "<input id='mantra_colimageheight' name='ma_options[mantra_colimageheight]' size='4' type='text' value='".esc_attr( $mantra_options['mantra_colimageheight'] )."'  /> px </div>";
+?>
+<div class='slmini'><b>Read more text:</b>  
+<input id='mantra_columnreadmore' name='ma_options[mantra_columnreadmore]' size='30' type='text' value='<?php echo esc_attr( $mantra_options['mantra_columnreadmore'] ) ?>'  />                              
+<?php
+	echo "<small>".__("The linked text that appears at the bottom of all the columns. You can delete all text inside if you don't want it.","mantra")."</small></div>";
 
 ?>
 <div class="slidebox"> 
@@ -708,6 +725,12 @@ echo "<div class='slidebox'><h4 class='slidetitle'> Extra Text </h4><div  class=
 	echo "<input id='mantra_fronttext1' name='ma_options[mantra_fronttext1]' size='50' type='text' value='".esc_attr( $mantra_options['mantra_fronttext1'] )."'  />";
 echo "<h5>Second Title</h5> ";
 	echo "<input id='mantra_fronttext2' name='ma_options[mantra_fronttext2]' size='50' type='text' value='".esc_attr( $mantra_options['mantra_fronttext2'] )."'  />";
+
+echo "<h5>Title color</h5> ";
+	echo '<input type="text" id="mantra_fronttitlecolor" name="ma_options[mantra_fronttitlecolor]"  style="width:100px;display:block;float:none;" value="'.esc_attr( $mantra_options['mantra_fronttitlecolor'] ).'"  />';
+	echo '<div id="mantra_fronttitlecolor2"></div>';
+	echo "<div><small>".__("The titles' color (Default value is 333333).","mantra")."</small></div>";
+
 echo "<h5>Bottom Text 1</h5> ";
 	echo "<textarea id='mantra_fronttext3' name='ma_options[mantra_fronttext3]' rows='3' cols='50' type='textarea' >{$mantra_options['mantra_fronttext3']}  </textarea>";
 echo "<h5>Bottom Text 2 </h5> ";
@@ -1317,6 +1340,22 @@ foreach($items as $id=>$item) {
 
 }
 
+//CHECKBOX - Name: ma_options[postseparator]
+function setting_postseparator_fn() {
+	global $mantra_options;
+	$items = array ("Show" , "Hide");
+	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
+	echo "<select id='mantra_postseparator' name='ma_options[mantra_postseparator]'>";
+foreach($items as $id=>$item) {
+	echo "<option value='$item'";
+	selected($mantra_options['mantra_postseparator'],$item);
+	echo ">$itemsare[$id]</option>";
+}
+	echo "</select>";
+	echo "<div><small>".__("Hide or show a horizontal rule to separate posts.","mantra")."</small></div>";
+
+}
+
 //CHECKBOX - Name: ma_options[contentlist]
 function setting_contentlist_fn() {
 	global $mantra_options;
@@ -1806,7 +1845,7 @@ function setting_socials3_fn() {
 }
 	echo "</select><span class='address_span'> &raquo; </span>";
 	echo "<input id='mantra_rss' name='ma_options[mantra_social6]' size='32' type='text'  value='".esc_attr( $mantra_options['mantra_social6'] )."'  />";
-	echo "<div><small>".__("There are a total of 12 social networks to choose from. ","mantra")."</small></div>";
+	echo "<div><small>".__("There are a total of 27 social networks to choose from. ","mantra")."</small></div>";
 }
 
 // TEXTBOX - Name: ma_options[social4]
@@ -1902,6 +1941,21 @@ foreach($items as $id=>$item) {
 }
 	echo "</select>";
 	echo "<div><small>".__("Show breadcrumbs at the top of the content area. Breadcrumbs are a form of navigation that keeps track of your location withtin the site.","mantra")."</small></div>";
+}
+
+//CHECKBOX - Name: ma_options[pagination]
+function setting_pagination_fn() {
+	global $mantra_options;
+	$items = array ("Enable" , "Disable");
+	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
+	echo "<select id='mantra_pagination' name='ma_options[mantra_pagination]'>";
+foreach($items as $id=>$item) {
+	echo "<option value='$item'";
+	selected($mantra_options['mantra_pagination'],$item);
+	echo ">$itemsare[$id]</option>";
+}
+	echo "</select>";
+	echo "<div><small>".__("Show numbered pagination. Where there is more than one page, instead of the bottom <b>Older Posts</b> and <b>Newer posts</b> links you have a numbered pagination. ","mantra")."</small></div>";
 }
 
 // TEXTBOX - Name: ma_options[favicon]
@@ -2123,6 +2177,8 @@ startfarb("#mantra_footerheader","#mantra_footerheader2");
 startfarb("#mantra_footertext","#mantra_footertext2");
 startfarb("#mantra_footerhover","#mantra_footerhover2");
 
+startfarb("#mantra_fronttitlecolor","#mantra_fronttitlecolor2");
+
   });
 
 	jQuery('.form-table').wrap('<div>');
@@ -2199,5 +2255,5 @@ return 0;
 
 /* Social media links */
 
-	$mantra_global_socials = array ("Delicious","DeviantArt", "Digg", "Facebook", "Flickr", "Google", "GoodReads", "GooglePlus" ,"LastFM", "LinkedIn", "Mail", "MySpace", "Picasa", "Reddit", "RSS", "Skype", "StumbleUpon", "Technorati","Tumblr", "Twitter","Vimeo","WordPress", "Yahoo", "YouTube" );
+	$mantra_global_socials = array ("Delicious","DeviantArt", "Digg","Etsy", "Facebook", "Flickr", "Google", "GoodReads", "GooglePlus" ,"LastFM", "LinkedIn", "Mail", "MySpace", "Picasa","Pinterest", "Reddit", "RSS", "Skype", "SoundCloud", "StumbleUpon", "Technorati","Tumblr", "Twitter","Vimeo","WordPress", "Yahoo", "YouTube" );
 

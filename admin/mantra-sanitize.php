@@ -82,8 +82,11 @@ global $mantra_defaults;
 	$input['mantra_columntext4'] =  wp_kses_post($input['mantra_columntext4']);
 	$input['mantra_columnlink4'] =  wp_kses_data($input['mantra_columnlink4']);
 
+	$input['mantra_columnreadmore'] =  wp_kses($input['mantra_columnreadmore']);
+
 	$input['mantra_fronttext1'] =  wp_kses_data($input['mantra_fronttext1']);
 	$input['mantra_fronttext2'] =  wp_kses_data($input['mantra_fronttext2']);
+	$input['mantra_fronttitlecolor'] =  wp_kses_data($input['mantra_fronttitlecolor']);
 	$input['mantra_fronttext3'] = trim( wp_kses_post($input['mantra_fronttext3']));
 	$input['mantra_fronttext4'] = trim (wp_kses_post($input['mantra_fronttext4']));
 

@@ -10,7 +10,6 @@
 get_header(); ?>
 
 		<section id="container">
-			<?php get_sidebar(); ?>
 			<div id="content" role="main">
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
@@ -29,7 +28,7 @@ get_header(); ?>
 
 					<div class="entry-content">
 						<?php the_content(); ?>
-						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'mantra' ), 'after' => '</div>' ) ); ?>
+						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( '<span>Pages:</span>', 'mantra' ), 'after' => '</div>' ) ); ?>
 					</div><!-- .entry-content -->
 
 <?php if ( get_the_author_meta( 'description' ) ) : // If a user has filled out their description, show a bio on their entries  ?>
@@ -65,6 +64,7 @@ get_header(); ?>
 <?php endwhile; // end of the loop. ?>
 
 			</div><!-- #content -->
+	<?php get_sidebar(); ?>
 		</section><!-- #container -->
 
 <?php get_footer(); ?>

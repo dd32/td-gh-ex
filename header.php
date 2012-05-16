@@ -11,7 +11,8 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta http-equiv="X-UA-Compatible" content="IE=9" /> 
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <title><?php
 	/*
@@ -111,7 +112,7 @@ $totalwidth= $mantra_sidewidth+$mantra_sidebar+50;
 				<div style="clear:both;"></div>
 			
 			</div><!-- #branding --> 
-	
+
 			<div id="access" role="navigation">
 			  <?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
 				<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'mantra' ); ?>"><?php _e( 'Skip to content', 'mantra' ); ?></a></div>

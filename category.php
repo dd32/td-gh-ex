@@ -10,7 +10,6 @@
 get_header(); ?>
 
 		<section id="container">
-		<?php get_sidebar(); ?>
 			<div id="content" role="main">
 
 			<?php if ( have_posts() ) : ?>
@@ -42,7 +41,7 @@ get_header(); ?>
 
 				<?php endwhile; ?>
 
-				<?php mantra_content_nav( 'nav-below' ); ?>
+					<?php if($mantra_pagination=="Enable") the_pagination(); else mantra_content_nav( 'nav-below' ); ?>
 
 			<?php else : ?>
 
@@ -60,6 +59,7 @@ get_header(); ?>
 			<?php endif; ?>
 
 			</div><!-- #content -->
+		<?php get_sidebar(); ?>
 		</section><!-- #primary -->
 
 <?php get_footer(); ?>
