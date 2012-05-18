@@ -1,23 +1,24 @@
-﻿=== simplecatch ===
+=== simplecatch ===
 
-Contributors: CatchThemes
-Donate link: http://catchthemes.com/demo/simplecatch
-Requires at least: 2.0.2
-Tested up to: 3.3.2
+Theme Name: Simple Catch
+Theme URI: http://catchthemes.com/simple-catch
+Author: Catch Themes Team
+Author URI: http://catchthemes.com
+Version: 1.0
 License: GNU General Public License
 License URI: license.txt
 
 == Theme Description ==
 
-SimpleCatch is a simple and clean WordPress Theme. Easy Customize through Theme Options and Custom Widgets. 
+SimpleCatch is a simple and clean WordPress Theme. Easy Customize through Theme Options and Custom Widgets. Features: Featured Image Slider, Custom Menu, Theme Options, Custom Widgets and Support for popular plugins.
 
 == Features ==  
-Featured Image Slider, Custom Drop-down Menu, Theme Options, Custom Widgets and Support for popular plugins.
+Featured Image Slider, Custom Drop-down Menu, Theme Options, Custom Widgets, flexible position of sidebar and Support for popular plugins.
 
 
 == Tags ==
 
-Tags Used: gray, white, black, one-column, two-columns, right-sidebar, fixed-width, flexible-width, custom-menu, featured-images, sticky-post, theme-options.
+Tags Used: black, gray, silver, white, light, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, custom-menu, featured-images, full-width-template, theme-options, threaded-comments
 
 == Installation ==
 

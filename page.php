@@ -5,7 +5,7 @@
  * This is the template that displays all pages by default.
  *
  * @package WordPress
- * @subpackage Simple Catch
+ * @subpackage Simple_Catch
  * @since Simple Catch 1.0
  */
 get_header(); ?>

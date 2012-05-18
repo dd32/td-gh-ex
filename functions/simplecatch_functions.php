@@ -5,18 +5,18 @@
  * @register jquery cycle and custom-script
  * hooks action wp_enqueue_scripts
  */
-function ci_scripts_method() {	
+function simplecatch_scripts_method() {	
 	//registering JQuery circle all and JQuery set up as dependent on Jquery-cycle
 	wp_register_script( 'jquery-cycle', get_stylesheet_directory_uri() . '/js/jquery.cycle.all.js', '2.9999' );
 	
 	// registering custom scrtips
-	wp_register_script( 'custom-script', get_stylesheet_directory_uri() . '/js/ci_custom_scripts.js', array( 'jquery', 'jquery-cycle' ), '1.0' );
+	wp_register_script( 'custom-script', get_stylesheet_directory_uri() . '/js/simplecatch_custom_scripts.js', array( 'jquery', 'jquery-cycle' ), '1.0' );
 	
 	// enqueue JQuery Scripts	
 	wp_enqueue_script( 'custom-script' );	
 	
-} // ci_scripts_method
-add_action( 'wp_enqueue_scripts', 'ci_scripts_method' );
+} // simplecatch_scripts_method
+add_action( 'wp_enqueue_scripts', 'simplecatch_scripts_method' );
 
 
 /**
@@ -27,11 +27,11 @@ add_action( 'wp_enqueue_scripts', 'ci_scripts_method' );
  * @uses wp_register_script
  * @action admin_enqueue_scripts
  */
-function ci_register_js() {
+function simplecatch_register_js() {
 	//jQuery Cookie
 	wp_register_script( 'jquery-cookie', get_stylesheet_directory_uri() . '/js/jquery.cookie.min.js', array( 'jquery' ), '1.0', true );
 }
-add_action( 'admin_enqueue_scripts', 'ci_register_js' );
+add_action( 'admin_enqueue_scripts', 'simplecatch_register_js' );
 
 
 /**
@@ -40,11 +40,11 @@ add_action( 'admin_enqueue_scripts', 'ci_register_js' );
  * @uses wp_register_style and wp_enqueue_style
  * @action wp_print_styles
  */
-function ci_load_google_fonts() {
+function simplecatch_load_google_fonts() {
     wp_register_style('google-fonts', 'http://fonts.googleapis.com/css?family=Lobster');
 	wp_enqueue_style( 'google-fonts');
 }
-add_action('wp_print_styles', 'ci_load_google_fonts');
+add_action('wp_print_styles', 'simplecatch_load_google_fonts');
 
 /**
  * Sets the post excerpt length to 40 words.
@@ -52,20 +52,38 @@ add_action('wp_print_styles', 'ci_load_google_fonts');
  * function tied to the excerpt_length filter hook.
  * @uses filter excerpt_length
  */
-function ci_excerpt_length( $length ) {
+function simplecatch_excerpt_length( $length ) {
 	return 30;
 }
-add_filter( 'excerpt_length', 'ci_excerpt_length' );
+add_filter( 'excerpt_length', 'simplecatch_excerpt_length' );
 
 /**
  * Remove [...] from excerpt
  *
  * @uses filter get_the_excerpt
  */
-function ci_trim_excerpt($text) {
+function simplecatch_trim_excerpt($text) {
   return rtrim($text,'[...]');
 }
-add_filter('get_the_excerpt', 'ci_trim_excerpt');
+add_filter('get_the_excerpt', 'simplecatch_trim_excerpt');
+
+/** 
+ * Allows post queries to sort the results by the order specified in the post__in parameter. 
+ * Just set the orderby parameter to post__in
+ *
+ * uses action filter posts_orderby
+ */
+if ( !function_exists('simplecatch_sort_query_by_post_in') ) : //simple WordPress 3.0+ version, now across VIP
+
+	add_filter('posts_orderby', 'simplecatch_sort_query_by_post_in', 10, 2);
+	
+	function simplecatch_sort_query_by_post_in($sortby, $thequery) {
+		if ( isset($thequery->query['post__in']) && !empty($thequery->query['post__in']) && isset($thequery->query['orderby']) && $thequery->query['orderby'] == 'post__in' )
+			$sortby = "find_in_set(ID, '" . implode( ',', $thequery->query['post__in'] ) . "')";
+		return $sortby;
+	}
+
+endif;
 
 /**
  * Get the header logo Image from theme options
@@ -78,29 +96,29 @@ add_filter('get_the_excerpt', 'ci_trim_excerpt');
  *
  * @uses set_transient and delete_transient 
  */
-function ci_header_logo() {
-	//delete_transient( 'ci_header_logo' );
+function simplecatch_headerlogo() {
+	//delete_transient( 'simplecatch_headerlogo' );
 	
-	// get data value from catch_options through theme options
-	$options = get_option( 'catch_options' );	
+	// get data value from simplecatch_options through theme options
+	$options = get_option( 'simplecatch_options' );	
 		
-	if ( !$ci_header_logo = get_transient( 'ci_header_logo' ) ) {
+	if ( !$simplecatch_headerlogo = get_transient( 'simplecatch_headerlogo' ) ) {
 		echo '<!-- refreshing cache -->';
 		if ( $options[ 'remove_header_logo' ] == "0" ) :
 		// if not empty featured_logo_header on theme options
 			if ( !empty( $options[ 'featured_logo_header' ] ) ):
-				$ci_header_logo = 
+				$simplecatch_headerlogo = 
 					'<img src="'.$options['featured_logo_header'].'" alt="'.get_bloginfo( 'name' ).'" />';
 			else:
 				// if empty featured_logo_header on theme options, display default logo
-				$ci_header_logo ='<img src="'. get_template_directory_uri().'/images/logo.png" alt="logo" />';
+				$simplecatch_headerlogo ='<img src="'. get_template_directory_uri().'/images/logo.png" alt="logo" />';
 			endif;
 		endif;
 		
-	set_transient( 'ci_header_logo', $ci_header_logo, 86940 );
+	set_transient( 'simplecatch_headerlogo', $simplecatch_headerlogo, 86940 );
 	}
-	echo $ci_header_logo;	
-} // ci_header_logo
+	echo $simplecatch_headerlogo;	
+} // simplecatch_headerlogo
 
 /**
  * Get the footer logo Image from theme options
@@ -113,69 +131,73 @@ function ci_header_logo() {
  *
  * @uses set_transient and delete_transient 
  */
-function ci_footer_logo() {
-	//delete_transient('ci_footer_logo');
+function simplecatch_footerlogo() {
+	//delete_transient('simplecatch_footerlogo');
 	
 	// get data value from catch_options through theme options
-	$options = get_option( 'catch_options' );
+	$options = get_option( 'simplecatch_options' );
 	
-	if ( !$ci_footer_logo = get_transient( 'ci_footer_logo' ) ) {
+	if ( !$simplecatch_footerlogo = get_transient( 'simplecatch_footerlogo' ) ) {
 		echo '<!-- refreshing cache -->';
 		if ( $options[ 'remove_footer_logo' ] == "0" ) :
 		
 			// if not empty featured_logo_footer on theme options
 			if ( !empty( $options[ 'featured_logo_footer' ] ) ) :
-				$ci_footer_logo = 
+				$simplecatch_footerlogo = 
 					'<img src="'.$options[ 'featured_logo_footer' ].'" alt="'.get_bloginfo( 'name' ).'" />';
 			else:
 				// if empty featured_logo_footer on theme options, display default fav icon
-				$ci_footer_logo ='
+				$simplecatch_footerlogo ='
 					<img src="'. get_template_directory_uri().'/images/logo-foot.png" alt="footerlogo" />';
 			endif;
 		endif;
 
 		
-	set_transient( 'ci_footer_logo', $ci_footer_logo, 86940 );										  
+	set_transient( 'simplecatch_footerlogo', $simplecatch_footerlogo, 86940 );										  
 	}
-	echo $ci_footer_logo;
-} // ci_footer_logo
+	echo $simplecatch_footerlogo;
+} // simplecatch_footerlogo
 
 
 /**
- * Get the fav icon Image from theme options
+ * Get the favicon Image from theme options
  *
- * @uses fav icon 
+ * @uses favicon 
  * @get the data value of image from theme options
- * @display fav icon
+ * @display favicon
  *
- * @uses default fav icon if fav icon field on theme options is empty
+ * @uses default favicon if favicon field on theme options is empty
  *
  * @uses set_transient and delete_transient 
  */
-function ci_fav_icon() {
-	//delete_transient( 'ci_fav_icon' );
+function simplecatch_favicon() {
+	//delete_transient( 'simplecatch_favicon' );
 	
-	// get data value from catch_options through theme options
-	$options = get_option( 'catch_options' );
+	// get data value from simplecatch_options through theme options
+	$options = get_option( 'simplecatch_options' );
 	
-	if( ( !$ci_fav_icon = get_transient( 'ci_fav_icon' ) ) ) {
+	if( ( !$simplecatch_favicon = get_transient( 'simplecatch_favicon' ) ) ) {
 		echo '<!-- refreshing cache -->';
 		if ( $options[ 'remove_favicon' ] == "0" ) :
 			// if not empty fav_icon on theme options
 			if ( !empty( $options[ 'fav_icon' ] ) ) :
-				$ci_fav_icon = '<link rel="shortcut icon" href="'.$options[ 'fav_icon' ].'" type="image/x-icon" />'; 	
+				$simplecatch_favicon = '<link rel="shortcut icon" href="'.$options[ 'fav_icon' ].'" type="image/x-icon" />'; 	
 			else:
 				// if empty fav_icon on theme options, display default fav icon
-				$ci_fav_icon = '<link rel="shortcut icon" href="'. get_template_directory_uri() .'/images/favicon.ico" type="image/x-icon" />';
+				$simplecatch_favicon = '<link rel="shortcut icon" href="'. get_template_directory_uri() .'/images/favicon.ico" type="image/x-icon" />';
 			endif;
 		endif;
 		
-	set_transient( 'ci_fav_icon', $ci_fav_icon, 86940 );	
+	set_transient( 'simplecatch_favicon', $simplecatch_favicon, 86940 );	
 	}	
-	echo $ci_fav_icon ;	
-} // ci_fav_icon
-add_action( 'admin_head', 'ci_fav_icon' );
+	echo $simplecatch_favicon ;	
+} // simplecatch_favicon
 
+//Load Favicon in Header Section
+add_action('wp_head', 'simplecatch_favicon');
+
+//Load Favicon in Admin Section
+add_action( 'admin_head', 'simplecatch_favicon' );
 
 /**
  * This function to display featured posts on homepage header
@@ -188,19 +210,19 @@ add_action( 'admin_head', 'ci_fav_icon' );
  * @uses set_transient and delete_transient
  */
 
-function ci_featured_sliders() {	
+function simplecatch_sliders() {	
 	global $post;
-	//delete_transient( 'ci_featured_sliders' );
+	//delete_transient( 'simplecatch_sliders' );
 		
-	// get data value from catch_options_slider through theme options
-	$options = get_option( 'catch_options_slider' );
+	// get data value from simplecatch_options_slider through theme options
+	$options = get_option( 'simplecatch_options_slider' );
 	// get slider_qty from theme options
 	$postperpage = $options[ 'slider_qty' ];
 	
-	if( ( !$ci_featured_sliders = get_transient( 'ci_featured_sliders' ) ) && !empty( $options[ 'featured_slider' ] ) ) {
+	if( ( !$simplecatch_sliders = get_transient( 'simplecatch_sliders' ) ) && !empty( $options[ 'featured_slider' ] ) ) {
 		echo '<!-- refreshing cache -->';
 		
-		$ci_featured_sliders = '
+		$simplecatch_sliders = '
 		<div class="featured-slider">';
 			$get_featured_posts = new WP_Query( array(
 				'posts_per_page' => $postperpage,
@@ -212,7 +234,7 @@ function ci_featured_sliders() {
 			while ( $get_featured_posts->have_posts()) : $get_featured_posts->the_post();
 				$title_attribute = esc_attr( apply_filters( 'the_title', get_the_title( $post->ID ) ) );
 				$excerpt = str_replace('[...]','<a href="'.get_permalink().'" title="'.get_permalink().'" target="_blank">Continue reading</a>', get_the_excerpt() ) ; //str_replace to remove [...] from excerpt
-				$ci_featured_sliders .= '
+				$simplecatch_sliders .= '
 				<div class="slides">
 					<div class="featured">
 						<div class="img-effect pngfix"></div>
@@ -222,20 +244,20 @@ function ci_featured_sliders() {
 					</div> <!-- .featured -->
 					<div class="featured-text">';
 					if( $excerpt !='')
-						$ci_featured_sliders .= the_title( '<span>','</span>', false ).' : '.$excerpt; 
-					$ci_featured_sliders .=
+						$simplecatch_sliders .= the_title( '<span>','</span>', false ).' : '.$excerpt; 
+					$simplecatch_sliders .=
 					'</div><!-- .featured-text -->
 				</div> <!-- .slides -->';
 			endwhile; wp_reset_query();
-		$ci_featured_sliders .= '
+		$simplecatch_sliders .= '
 		</div> <!-- .featured-slider -->
 			<div id="controllers">
 			</div><!-- #controllers -->';
 			
-	set_transient( 'ci_featured_sliders', $ci_featured_sliders, 86940 );
+	set_transient( 'simplecatch_sliders', $simplecatch_sliders, 86940 );
 	}
-	echo $ci_featured_sliders;	
-} // ci_featured_sliders
+	echo $simplecatch_sliders;	
+} // simplecatch_sliders
 
 /**
  * Display slider or breadcrumb on header
@@ -243,13 +265,13 @@ function ci_featured_sliders() {
  * If the page is home or front page, slider is displayed.
  * In other pages, breadcrumb will display if exist bread
  */
-function ci_display_breadcrumb_or_slider() {
+function simplecatch_sliderbreadcrumb() {
 	
 	// If the page is home or front page  
 	if ( is_home() || is_front_page() ) :
 		// display featured slider
-		if ( function_exists( 'ci_featured_sliders' ) ):
-			ci_featured_sliders();
+		if ( function_exists( 'simplecatch_sliders' ) ):
+			simplecatch_sliders();
 		endif;
 	else : 
 		// if breadcrumb is not empty, display breadcrumb
@@ -263,7 +285,7 @@ function ci_display_breadcrumb_or_slider() {
 		endif; 
 		
   	endif;
-} // ci_display_breadcrumb_or_slider
+} // simplecatch_sliderbreadcrumb
 
 
 /**
@@ -273,127 +295,116 @@ function ci_display_breadcrumb_or_slider() {
  * @use in widget
  * @social links, Facebook, Twitter and RSS
   */
-function ci_header_social_networks() {
-	//delete_transient( 'ci_header_social_networks' );
+function simplecatch_headersocialnetworks() {
+	//delete_transient( 'simplecatch_headersocialnetworks' );
 	
 	// get the data value from theme options
-	$options = get_option( 'catch_options' );
+	$options = get_option( 'simplecatch_options' );
 	
-	if ( ( !$ci_header_social_networks = get_transient( 'ci_header_social_networks' ) ) &&  ( !empty( $options[ 'social_twitter' ] ) || !empty( $options[ 'social_youtube' ] )  || !empty( $options[ 'social_facebook' ] ) ) )  {
+	if ( ( !$simplecatch_headersocialnetworks = get_transient( 'simplecatch_headersocialnetworks' ) ) &&  ( !empty( $options[ 'social_twitter' ] ) || !empty( $options[ 'social_youtube' ] )  || !empty( $options[ 'social_facebook' ] ) ) )  {
 	
 		echo '<!-- refreshing cache -->';
 		
-		$ci_header_social_networks .='
+		$simplecatch_headersocialnetworks .='
 			<ul class="social-profile">';
 		
 				//facebook
 				if ( !empty( $options[ 'social_facebook' ] ) ) {
-					$ci_header_social_networks .=
+					$simplecatch_headersocialnetworks .=
 						'<li class="facebook"><a href="'.$options[ 'social_facebook' ].'" title="'.sprintf( esc_attr__( '%s in Facebook', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Facebook </a></li>';
 				}
 				
 				//Twitter
 				if ( !empty( $options[ 'social_twitter' ] ) ) {
-					$ci_header_social_networks .=
+					$simplecatch_headersocialnetworks .=
 						'<li class="twitter"><a href="'.$options[ 'social_twitter' ].'" title="'.sprintf( esc_attr__( '%s in Twitter', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Twitter </a></li>';
 				}
 				
 				//Youtube
 				if ( !empty( $options[ 'social_youtube' ] ) ) {
-					$ci_header_social_networks .=
+					$simplecatch_headersocialnetworks .=
 						'<li class="you-tube"><a href="'.$options[ 'social_youtube' ].'" title="'.sprintf( esc_attr__( '%s in YouTube', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' YouTube </a></li>';
 				}
 				
 				//RSS
 				if ( !empty( $options[ 'social_rss' ] ) ) {
-					$ci_header_social_networks .=
+					$simplecatch_headersocialnetworks .=
 						'<li class="rss"><a href="'.$options[ 'social_rss' ].'" title="'.sprintf( esc_attr__( '%s in RSS', 'simplecatch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' RSS </a></li>';
 				}
 		
-		$ci_header_social_networks .='
+		$simplecatch_headersocialnetworks .='
 			</ul>
 			<div class="row-end"></div>';
 		
-	set_transient( 'ci_header_social_networks', $ci_header_social_networks, 86940 );	 
+	set_transient( 'simplecatch_headersocialnetworks', $simplecatch_headersocialnetworks, 86940 );	 
 	}
-	echo $ci_header_social_networks;
-} // ci_header_social_networks
+	echo $simplecatch_headersocialnetworks;
+} // simplecatch_headersocialnetworks
 
 
 /**
- * This function to load scripts on header
+ * This function loads the Header Code such as google analytics code from the Theme Option
  *
  * @get the data value from theme options
- * @load on the header ONLY
- *
- * @uses set_transient and delete_transient
+ * @uses wp_head action to add the code in the header
+ * @uses set_transient and delete_transient API for cache
  */
-function ci_header_scripts() {
-	//delete_transient( 'ci_header_scripts' );
+function simplecatch_headercode() {
+	//delete_transient( 'simplecatch_headercode' );
 	
 	// get the data value from theme options
-	$options = get_option( 'catch_options' );
+	$options = get_option( 'simplecatch_options' );
 	
-	if ( ( !$ci_header_scripts = get_transient( 'ci_header_scripts' ) ) && !empty( $options[ 'analytic_header' ] ) ) {
+	if ( ( !$simplecatch_headercode = get_transient( 'simplecatch_headercode' ) ) && !empty( $options[ 'analytic_header' ] ) ) {
 		echo '<!-- refreshing cache -->';
 		
-		$ci_header_scripts = $options[ 'analytic_header' ];
+		$simplecatch_headercode = $options[ 'analytic_header' ];
 			
-	set_transient( 'ci_header_scripts', $ci_header_scripts, 86940 );
+	set_transient( 'simplecatch_headercode', $simplecatch_headercode, 86940 );
 	}
-	echo $ci_header_scripts;
+	echo $simplecatch_headercode;
 }
+add_action('wp_head', 'simplecatch_headercode');
+
 
 /**
- * This function to load scripts on footer
+ * This function loads the Footer Code such as Add this code from the Theme Option
  *
  * @get the data value from theme options
  * @load on the footer ONLY
- *
+ * @uses wp_footer action to add the code in the footer
  * @uses set_transient and delete_transient
  */
-function ci_footer_scripts() {
-	//delete_transient( 'ci_footer_scripts' );
+function simplecatch_footercode() {
+	//delete_transient( 'simplecatch_footercode' );
 	
 	// get the data value from theme options
-	$options = get_option( 'catch_options' );
+	$options = get_option( 'simplecatch_options' );
 	
-	if ( ( !$ci_footer_scripts = get_transient( 'ci_footer_scripts' ) ) && !empty( $options[ 'analytic_footer' ] ) ) {
+	if ( ( !$simplecatch_footercode = get_transient( 'simplecatch_footercode' ) ) && !empty( $options[ 'analytic_footer' ] ) ) {
 		echo '<!-- refreshing cache -->';
 			
-		$ci_footer_scripts = $options[ 'analytic_footer' ];
+		$simplecatch_footercode = $options[ 'analytic_footer' ];
 			
-	set_transient( 'ci_footer_scripts', $ci_footer_scripts, 86940 );
+	set_transient( 'simplecatch_footercode', $simplecatch_footercode, 86940 );
 	}
-	echo $ci_footer_scripts;
+	echo $simplecatch_footercode;
 }
+add_action('wp_footer', 'simplecatch_headercode');
 
 /*
  * Function for showing custom tag cloud
  */
-function ci_custom_tag_cloud() {
+function simplecatch_custom_tag_cloud() {
 ?>
 	<div class="custom-tagcloud"><?php wp_tag_cloud('smallest=12&largest=12px&unit=px'); ?></div>
 <?php	
 }
 
 /**
- * Remove pages from search
- * Displays only post related search only
- * @uses filter pre_get_posts
- */
-function ci_SearchFilter($query) {
-	if ( $query->is_search ) {
-  		$query->set('post_type', 'post');
- 	}
- 	return $query;
-}
-add_filter( 'pre_get_posts','ci_SearchFilter' );
-
-/**
  * shows footer credits
  */
-function ci_footer() {
+function simplecatch_footer() {
 ?>
 	<div class="col5 powered-by"> 
 		<?php _e( 'Design by:', 'simplecatch');?> <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'simplecatch' ) ); ?>" target="_blank" title="<?php esc_attr_e( 'Catch Themes', 'simplecatch' ); ?>"><?php _e( 'Catch Themes', 'simplecatch' ); ?></a> | <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'simplecatch' ) ); ?>" title="<?php esc_attr_e( 'WordPress', 'simplecatch' ); ?>" rel="generator" target="_blank" ><?php printf( __( 'Proudly powered by %s.', 'simplecatch' ), 'WordPress' ); ?></a>
@@ -401,12 +412,12 @@ function ci_footer() {
 
 <?php
 }
-add_filter( 'simplecatch_credits', 'ci_footer' );
+add_filter( 'simplecatch_credits', 'simplecatch_footer' );
 
 /**
  * function that displays frquently asked question in theme option
  */
-function ci_faq() {
+function simplecatch_faq() {
 ?>
 		<h2>FAQ: Frequently Asked Questions</h2>
 		<h3>1. How to change logo on Header and Footer? </h3>

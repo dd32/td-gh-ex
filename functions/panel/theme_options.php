@@ -3,44 +3,73 @@
  * Simple Catch Theme Options
  *
  * @package WordPress
- * @subpackage Simple Catch
+ * @subpackage Simple_Catch
  * @since Simple Catch 1.0
  */
 
+ 
+/**
+ * Enqueue admin script
+ *
+ * @uses wp_enqueue_script 
+ * @Calling jquery, jquery-ui-tabs,jquery-cookie, jquery-ui-sortable, jquery-ui-draggable
+ */
+function simplecatch_admin_scripts() {
+	//jquery-cookie registered in functions.php
+	wp_register_script( 'simplecatch_admin', get_template_directory_uri().'/functions/panel/admin.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable' ), '1.0', false );
+	wp_enqueue_script ( 'simplecatch_admin' );
+	//registering add_image_script.js and enqueue
+	wp_register_script( 'simplecatch_upload', get_template_directory_uri().'/functions/panel/add_image_scripts.js', array( 'jquery','media-upload','thickbox' ) );
+	wp_enqueue_script( 'simplecatch_upload' );
+}
+
+
+/**
+ * Enqueue admin stylesheet
+ *
+ * @uses wp_enqueue_style
+ */
+function simplecatch_admin_styles() {
+	wp_enqueue_style( 'simplecatch_admin',get_template_directory_uri().'/functions/panel/admin.css', array(), '1.0', 'screen' );
+	//Enqueue thickbox.css
+	wp_enqueue_style( 'thickbox' );
+}
+
+
 /*
- * Create a function for content options pages
+ * Create a function for Theme Options Page
  *
  * @uses add_menu_page
  * @add action admin_menu 
  */
-add_action( 'admin_menu', 'catch_options_menu' );
-function catch_options_menu() {
+add_action( 'admin_menu', 'simplecatch_options_menu' );
+function simplecatch_options_menu() {
 	
-	$catch_options = add_theme_page( 
+	$simplecatch_options = add_theme_page( 
 		sprintf( esc_html__( '%s Theme Options', 'simplecatch' ), get_bloginfo( 'name') ), // Name of page
 		__( 'Theme Options', 'simplecatch' ),		// Label in menu
 		'edit_theme_options', 						// Capability required
-		'catch_options', 							// Menu slug, used to uniquely identify the page
-		'catch_options_page'
+		'simplecatch_options', 							// Menu slug, used to uniquely identify the page
+		'simplecatch_options_page'
 	);						// Function that renders the options page
 	
 	$slider_options = add_theme_page( 
 		sprintf( esc_html__( '%s Slider', 'simplecatch' ), get_bloginfo( 'name') ), // Name of page
 		__( 'Featured Slider', 'simplecatch' ),		// Label in menu
 		'edit_theme_options', 						// Capability required
-		'catch_options_slider', 							// Menu slug, used to uniquely identify the page
-		'catch_options_slider_page'	// Function that renders the options page
+		'simplecatch_options_slider', 							// Menu slug, used to uniquely identify the page
+		'simplecatch_options_slider_page'	// Function that renders the options page
 	);
 			
 	// admin_print_scripts-(hookname) and add_print_styles-(hookname)
-	add_action( 'admin_print_scripts-' . $catch_options, 'catch_admin_scripts' );
-	add_action( 'admin_print_styles-' . $catch_options, 'catch_admin_styles' );
+	add_action( 'admin_print_scripts-' . $simplecatch_options, 'simplecatch_admin_scripts' );
+	add_action( 'admin_print_styles-' . $simplecatch_options, 'simplecatch_admin_styles' );
 	
 	// admin_print_scripts-(hookname) and add_print_styles-(hookname)
-	add_action( 'admin_print_scripts-' . $slider_options, 'catch_admin_scripts' );
-	add_action( 'admin_print_styles-' . $slider_options, 'catch_admin_styles' );
+	add_action( 'admin_print_scripts-' . $slider_options, 'simplecatch_admin_scripts' );
+	add_action( 'admin_print_styles-' . $slider_options, 'simplecatch_admin_styles' );
 }
-add_action( 'admin_menu', 'catch_options_menu' );
+add_action( 'admin_menu', 'simplecatch_options_menu' );
 
 /*
  * Register options and validation callbacks
@@ -48,59 +77,32 @@ add_action( 'admin_menu', 'catch_options_menu' );
  * @uses register_setting
  * @action admin_init
  */
-function catch_register_settings(){
-	register_setting( 'catch_options', 'catch_options', 'catch_options_validation' );
-	register_setting( 'catch_options_slider', 'catch_options_slider', 'catch_options_validation' );
+function simplecatch_register_settings(){
+	register_setting( 'simplecatch_options', 'simplecatch_options', 'simplecatch_options_validation' );
+	register_setting( 'simplecatch_options_slider', 'simplecatch_options_slider', 'simplecatch_options_validation' );
 }
-add_action( 'admin_init', 'catch_register_settings' );
-
-
-/**
- * Enqueue admin script
- *
- * @uses wp_enqueue_script 
- * @Calling jquery, jquery-ui-tabs,jquery-cookie, jquery-ui-sortable, jquery-ui-draggable
- */
-function catch_admin_scripts() {
-	//jquery-cookie registered in functions.php
-	wp_register_script( 'catch-admin', get_template_directory_uri().'/functions/panel/admin.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable' ), '1.0', false );
-	wp_enqueue_script ( 'catch-admin' );
-	//registering add_image_script.js and enqueue
-	wp_register_script( 'ci_upload', get_template_directory_uri().'/functions/panel/add_image_scripts.js', array( 'jquery','media-upload','thickbox' ) );
-	wp_enqueue_script( 'ci_upload' );
-}
-
-/**
- * Enqueue admin stylesheet
- *
- * @uses wp_enqueue_style
- */
-function catch_admin_styles() {
-	wp_enqueue_style( 'catch-admin',get_template_directory_uri().'/functions/panel/admin.css', array(), '1.0', 'screen' );
-	//Enqueue thickbox.css
-	wp_enqueue_style( 'thickbox' );
-}
+add_action( 'admin_init', 'simplecatch_register_settings' );
 
 /*
- * Render catch options page
+ * Render Simple Catch Theme Options page
  *
  * @uses settings_fields, get_option, bloginfo
  * @Settings Updated
  */
-function catch_options_page() {
+function simplecatch_options_page() {
 ?>
 	<div class="wrap">
     	
         <form method="post" action="options.php">
 			<?php
-                settings_fields( 'catch_options' );
-                $options = get_option( 'catch_options' );
+                settings_fields( 'simplecatch_options' );
+                $options = get_option( 'simplecatch_options' );
                 
                 if( is_array( $options ) && ( !array_key_exists( 'slider_qty', $options ) || !is_numeric( $options[ 'slider_qty' ] ) ) ) $options[ 'slider_qty' ] = 4;
                 elseif( !is_array( $options ) ) $options = array( 'slider_qty' => 4);
 				
             ?>   
-            <h2><?php bloginfo( 'name' ) ._e( ' Options By ', 'simplecatch' ); ?><a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'simplecatch' ) ); ?>" title="<?php echo esc_attr( 'Catch Themes', 'simplecatch' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'simplecatch' ); ?></a></h2>
+            <h2><?php bloginfo( 'name' ) ._e( ' Theme Options By ', 'simplecatch' ); ?><a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'simplecatch' ) ); ?>" title="<?php echo esc_attr( 'Catch Themes', 'simplecatch' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'simplecatch' ); ?></a></h2>
             
             <?php if( isset( $_GET [ 'settings-updated' ] ) && $_GET[ 'settings-updated' ] == 'true' ): ?>
                     <div class="updated" id="message">
@@ -108,20 +110,20 @@ function catch_options_page() {
                     </div>
             <?php endif; ?>
             
-            <div id="catch_ad_tabs">
+            <div id="simplecatch_ad_tabs">
                 <ul class="tabNavigation" id="mainNav">
                     <li><a href="#faq"><?php _e( 'FAQ', 'simplecatch' );?></a></li>
                     <li><a href="#logo"><?php _e( 'Logo', 'simplecatch' );?></a></li>
                     <li><a href="#favicon"><?php _e( 'Fav Icon', 'simplecatch' );?></a></li>
                     <li><a href="#sociallinks"><?php _e( 'Social Links', 'simplecatch' );?></a></li>
-                   	<li><a href="#analytic"><?php _e( 'Script Option', 'simplecatch' );?></a></li>
+                   	<li><a href="#analytic"><?php _e( 'Code Option', 'simplecatch' );?></a></li>
                 </ul><!-- .tabsNavigation #mainNav -->
                 
                 <div id="faq">
                    <?php 
-                    //Displays FAQ information witten in ci_faq of  ci_functions.php 
-                     if( function_exists( 'ci_faq' ) ): 
-					 	ci_faq(); 
+                    //Displays FAQ information witten in simplecatch_faq of simplecatch_functions.php 
+                     if( function_exists( 'simplecatch_faq' ) ): 
+					 	simplecatch_faq(); 
 					 endif;
                      ?>                
               	</div><!-- #faq -->
@@ -132,15 +134,15 @@ function catch_options_page() {
                     	<table class="form-table">
                             <tr>                            
                                 <th scope="row"><h4><?php _e( 'Disable Header Logo:', 'simplecatch' ); ?></h4></th>
-                                <td><input type="checkbox" id="headerlogo" name="catch_options[remove_header_logo]" value="1" <?php isset($options['remove_header_logo']) ? checked( '1', $options['remove_header_logo'] ) : checked('0', '1'); ?> /></td>
+                                <td><input type="checkbox" id="headerlogo" name="simplecatch_options[remove_header_logo]" value="1" <?php isset($options['remove_header_logo']) ? checked( '1', $options['remove_header_logo'] ) : checked('0', '1'); ?> /></td>
                             </tr>
                             <tr>                            
                                 <th scope="row"><h4><?php _e( 'Header logo url:', 'simplecatch' ); ?></h4></th>
                                 <td>
 									<?php  if ( !empty ( $options[ 'featured_logo_header' ] ) ) { ?>
-                                        <input size="65" type="text" name="catch_options[featured_logo_header]" value="<?php if( isset( $options [ 'featured_logo_header' ] ) ) echo esc_attr( $options [ 'featured_logo_header' ], 'simplecatch' ); ?>" class="upload" />
+                                        <input size="65" type="text" name="simplecatch_options[featured_logo_header]" value="<?php if( isset( $options [ 'featured_logo_header' ] ) ) echo esc_attr( $options [ 'featured_logo_header' ], 'simplecatch' ); ?>" class="upload" />
                                          <?php } else { ?>
-                                         <input size="65" type="text" name="catch_options[featured_logo_header]" value="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="logo" />
+                                         <input size="65" type="text" name="simplecatch_options[featured_logo_header]" value="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="logo" />
                                          <?php }  ?>
                                         
                                         <input class="upload-button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Header Logo','simplecatch' ); ?>" />
@@ -162,15 +164,15 @@ function catch_options_page() {
                         <table class="form-table">
                             <tr>                            
                                 <th scope="row"><h4><?php _e( 'Disable Footer Logo:', 'simplecatch' ); ?></h4></th>
-                                <td><input type="checkbox" id="headerlogo" name="catch_options[remove_footer_logo]" value="1" <?php isset($options['remove_footer_logo']) ? checked( '1', $options['remove_footer_logo'] ) : checked('0', '1'); ?> /></td>
+                                <td><input type="checkbox" id="headerlogo" name="simplecatch_options[remove_footer_logo]" value="1" <?php isset($options['remove_footer_logo']) ? checked( '1', $options['remove_footer_logo'] ) : checked('0', '1'); ?> /></td>
                             </tr>
                             <tr>   
                             	<th scope="row"><h4><?php _e( 'Footer logo url: ', 'simplecatch' ); ?></h4></th>
                     			<td>
 									<?php  if ( !empty ( $options[ 'featured_logo_footer' ] ) ) { ?>
-                                        <input size="65" type="text" name="catch_options[featured_logo_footer]" value="<?php if( isset( $options[ 'featured_logo_footer' ] ) ) echo esc_attr( $options[ 'featured_logo_footer' ] ); ?>" class="upload" />
+                                        <input size="65" type="text" name="simplecatch_options[featured_logo_footer]" value="<?php if( isset( $options[ 'featured_logo_footer' ] ) ) echo esc_attr( $options[ 'featured_logo_footer' ] ); ?>" class="upload" />
                                     <?php } else { ?>
-                                        <input size="65" type="text" name="catch_options[featured_logo_footer]" value="<?php echo get_template_directory_uri(); ?>/images/logo-foot.png" alt="logo" />
+                                        <input size="65" type="text" name="simplecatch_options[featured_logo_footer]" value="<?php echo get_template_directory_uri(); ?>/images/logo-foot.png" alt="logo" />
                                     <?php }  ?>                            
                                         <input class="upload-button button" name="wsl-image-add" type="button" value="Change Footer Logo" />  
                             	</td>
@@ -196,14 +198,14 @@ function catch_options_page() {
                 	<h2><?php _e( 'Fav icon options', 'simplecatch' ); ?></h2> 
                     <tr>
                     	<th scope="row"><h4><?php _e( 'Disable Favicon:', 'simplecatch' ); ?></h4></th>
-                        <td><input type="checkbox" id="favicon" name="catch_options[remove_favicon]" value="1" <?php isset($options['remove_favicon']) ? checked( '1', $options['remove_favicon'] ) : checked('0', '1'); ?> /></td>
+                        <td><input type="checkbox" id="favicon" name="simplecatch_options[remove_favicon]" value="1" <?php isset($options['remove_favicon']) ? checked( '1', $options['remove_favicon'] ) : checked('0', '1'); ?> /></td>
                     </tr>
                     <tr>                            
                      	<th scope="row"><h4><?php _e( 'Fav Icon URL:', 'simplecatch' ); ?></h4></th>
 						<td><?php if ( !empty ( $options[ 'fav_icon' ] ) ) { ?>
-                            	<input size="65" type="text" name="catch_options[fav_icon]" value="<?php if( isset( $options [ 'fav_icon' ] ) ) echo esc_attr( $options [ 'fav_icon' ] ); ?>" class="upload" />
+                            	<input size="65" type="text" name="simplecatch_options[fav_icon]" value="<?php if( isset( $options [ 'fav_icon' ] ) ) echo esc_attr( $options [ 'fav_icon' ] ); ?>" class="upload" />
 							<?php } else { ?>
-								<input size="65" type="text" name="catch_options[fav_icon]" value="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" alt="fav" />
+								<input size="65" type="text" name="simplecatch_options[fav_icon]" value="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" alt="fav" />
 							<?php }  ?> 
                             <input class="upload-button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Fav Icon','simplecatch' );?>" />
                         </td>
@@ -231,22 +233,22 @@ function catch_options_page() {
                         <tbody>
                             <tr>
                                 <th scope="row"><h4><?php _e( 'Facebook', 'simplecatch' ); ?></h4></th>
-                                <td><input type="text" size="45" name="catch_options[social_facebook]" value="<?php if( isset( $options[ 'social_facebook' ] ) ) echo esc_url( $options[ 'social_facebook' ] ); ?>" />
+                                <td><input type="text" size="45" name="simplecatch_options[social_facebook]" value="<?php if( isset( $options[ 'social_facebook' ] ) ) echo esc_url( $options[ 'social_facebook' ] ); ?>" />
                                 </td>
                             </tr>
                             <tr> 
                                 <th scope="row"><h4><?php _e( 'Twitter', 'simplecatch' ); ?> </h4></th>
-                                <td><input type="text" size="45" name="catch_options[social_twitter]" value="<?php if ( isset( $options[ 'social_twitter' ] ) ) echo esc_url( $options[ 'social_twitter'] ); ?>" />
+                                <td><input type="text" size="45" name="simplecatch_options[social_twitter]" value="<?php if ( isset( $options[ 'social_twitter' ] ) ) echo esc_url( $options[ 'social_twitter'] ); ?>" />
                                 </td>
                             </tr>
                             <tr>
                                 <th scope="row"><h4><?php _e( 'Youtube', 'simplecatch' ); ?></h4></th>
-                                <td><input type="text" size="45" name="catch_options[social_youtube]" value="<?php if ( isset( $options[ 'social_youtube' ] ) ) echo esc_url( $options[ 'social_youtube' ] ); ?>" />
+                                <td><input type="text" size="45" name="simplecatch_options[social_youtube]" value="<?php if ( isset( $options[ 'social_youtube' ] ) ) echo esc_url( $options[ 'social_youtube' ] ); ?>" />
                                 </td>
                             </tr>
                             <tr>
                                 <th scope="row"><h4><?php _e( 'RSS', 'simplecatch' ); ?> </h4></th>
-                                <td><input type="text" size="45" name="catch_options[social_rss]" value="<?php if ( isset( $options[ 'social_rss' ] ) ) echo esc_url( $options[ 'social_rss' ] ); ?>" />
+                                <td><input type="text" size="45" name="simplecatch_options[social_rss]" value="<?php if ( isset( $options[ 'social_rss' ] ) ) echo esc_url( $options[ 'social_rss' ] ); ?>" />
                                 </td>
                             </tr>
 							<tr>
@@ -258,32 +260,32 @@ function catch_options_page() {
                 </div> <!-- #sociallinks -->
                 
                	<div id="analytic">
-                		<h2><?php _e( 'Script for header/footer', 'simplecatch' ); ?></h2>
+                		<h2><?php _e( 'Code for header and footer', 'simplecatch' ); ?></h2>
                         <table class="form-table">         
                             <tr>
-                                <th scope="row"><h4><?php _e( 'Script to display on Header', 'simplecatch' ); ?></h4></th>
+                                <th scope="row"><h4><?php _e( 'Code to display on Header', 'simplecatch' ); ?></h4></th>
                                 <td>
-                                <textarea name="catch_options[analytic_header]" id="analytics" rows="7" cols="80" ><?php if ( isset( $options [ 'analytic_header' ] ) )  echo esc_html( $options[ 'analytic_header' ] ); ?></textarea>
+                                <textarea name="simplecatch_options[analytic_header]" id="analytics" rows="7" cols="80" ><?php if ( isset( $options [ 'analytic_header' ] ) )  echo esc_html( $options[ 'analytic_header' ] ); ?></textarea>
                                 </td>
                             </tr>
 							<tr>
 								<td></td><td><?php _e('Note: Here you can put scripts from Google, Facebook etc. which will load on Header', 'simplecatch' ); ?></td>
 							</tr>
 							<tr>
-                                <th scope="row"><h4><?php _e('Script to display on Footer', 'simplecatch' ); ?></h4></th>
+                                <th scope="row"><h4><?php _e('Code to display on Footer', 'simplecatch' ); ?></h4></th>
                                 <td>
-                                 <textarea name="catch_options[analytic_footer]" id="analytics" rows="7" cols="80" ><?php if ( isset( $options [ 'analytic_footer' ] ) )  echo esc_html( $options[ 'analytic_footer' ] ); ?></textarea>
+                                 <textarea name="simplecatch_options[analytic_footer]" id="analytics" rows="7" cols="80" ><?php if ( isset( $options [ 'analytic_footer' ] ) )  echo esc_html( $options[ 'analytic_footer' ] ); ?></textarea>
                      
                                 </td>
                             </tr>
 							<tr>
-								<td></td><td><?php _e( 'Note: Here you can put scripts from Google, Facebook etc. which will load on footer', 'simplecatch' ); ?></td>
+								<td></td><td><?php _e( 'Note: Here you can put scripts from Google, Facebook, Add This etc. which will load on footer', 'simplecatch' ); ?></td>
 							</tr>
                         </table>
 						<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
                    </div> <!-- #analytic -->  
                    
-            </div><!-- #catch_ad_tabs -->
+            </div><!-- #simplecatch_ad_tabs -->
 		</form>
 	</div><!-- .wrap -->
 <?php
@@ -294,20 +296,20 @@ function catch_options_page() {
  * @uses settings_fields, get_option, bloginfo
  * @Settings Updated
  */
-function catch_options_slider_page(){
+function simplecatch_options_slider_page(){
 ?>
 	<div class="wrap">
     	
         <form method="post" action="options.php">
 			<?php
-                settings_fields( 'catch_options_slider' );
-                $options = get_option( 'catch_options_slider' );
+                settings_fields( 'simplecatch_options_slider' );
+                $options = get_option( 'simplecatch_options_slider' );
                 
                 if( is_array( $options ) && ( !array_key_exists( 'slider_qty', $options ) || !is_numeric( $options[ 'slider_qty' ] ) ) ) $options[ 'slider_qty' ] = 4;
                 elseif( !is_array( $options ) ) $options = array( 'slider_qty' => 4);
 				
             ?>   
-            <h2><?php bloginfo( 'name' ) ._e( ' Options By ', 'simplecatch' ); ?><a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'simplecatch' ) ); ?>" title="<?php echo esc_attr( 'Catch Themes', 'simplecatch' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'simplecatch' ); ?></a></h2>
+            <h2><?php bloginfo( 'name' ) ._e( ' Featured Slider By ', 'simplecatch' ); ?><a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'simplecatch' ) ); ?>" title="<?php echo esc_attr( 'Catch Themes', 'simplecatch' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'simplecatch' ); ?></a></h2>
             
             <?php if( isset( $_GET [ 'settings-updated' ] ) && $_GET[ 'settings-updated' ] == 'true' ): ?>
                     <div class="updated" id="message">
@@ -320,13 +322,13 @@ function catch_options_slider_page(){
                     <table class="form-table">
                         <tr>
                             <th scope="row"><h4><?php _e( 'Number of Slides', 'simplecatch' ); ?></h4></th>
-                            <td><input type="text" name="catch_options_slider[slider_qty]" value="<?php if ( array_key_exists ( 'slider_qty', $options ) ) echo intval( $options[ 'slider_qty' ] ); ?>" /></td>
+                            <td><input type="text" name="simplecatch_options_slider[slider_qty]" value="<?php if ( array_key_exists ( 'slider_qty', $options ) ) echo intval( $options[ 'slider_qty' ] ); ?>" /></td>
                         </tr>
                         <tbody class="sortable">
                             <?php for ( $i = 1; $i <= $options[ 'slider_qty' ]; $i++ ): ?>
                             <tr>
                                 <th scope="row"><label class="handle"><?php _e( 'Featured Col #', 'simplecatch' ); ?><span class="count"><?php echo absint( $i ); ?></span></label></th>
-                                <td><input type="text" name="catch_options_slider[featured_slider][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'featured_slider', $options ) && array_key_exists( $i, $options[ 'featured_slider' ] ) ) echo absint( $options[ 'featured_slider' ][ $i ] ); ?>" />
+                                <td><input type="text" name="simplecatch_options_slider[featured_slider][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'featured_slider', $options ) && array_key_exists( $i, $options[ 'featured_slider' ] ) ) echo absint( $options[ 'featured_slider' ][ $i ] ); ?>" />
                                 <a href="<?php bloginfo ( 'url' );?>/wp-admin/post.php?post=<?php if( array_key_exists ( 'featured_slider', $options ) && array_key_exists ( $i, $options[ 'featured_slider' ] ) ) echo absint( $options[ 'featured_slider' ][ $i ] ); ?>&action=edit" class="button" title="<?php esc_attr_e('Click Here To Edit'); ?>" target="_blank"><?php _e( 'Click Here To Edit', 'simplecatch' ); ?></a>
                                 </td>
                             </tr> 							
@@ -345,10 +347,10 @@ function catch_options_slider_page(){
 /**
  * Validate content options
  * @param array $options
- * @uses esc_url_raw, absint, esc_textarea, sanitize_text_field, catch_invalidate_caches
+ * @uses esc_url_raw, absint, esc_textarea, sanitize_text_field, simplecatch_invalidate_caches
  * @return array
  */
-function catch_options_validation( $options ){
+function simplecatch_options_validation( $options ){
 	$options_validated = array();
 	
 	// data validation for logo
@@ -409,7 +411,7 @@ function catch_options_validation( $options ){
 		$options_validated[ 'analytic_footer' ] = wp_kses_stripslashes( $options[ 'analytic_footer' ] );	
 	
 	//Clearing the theme option cache
-	if( function_exists( 'ci_themeoption_invalidate_caches' ) ) ci_themeoption_invalidate_caches();
+	if( function_exists( 'simplecatch_themeoption_invalidate_caches' ) ) simplecatch_themeoption_invalidate_caches();
 	
 	return $options_validated;
 }
@@ -417,25 +419,22 @@ function catch_options_validation( $options ){
 /*
  * Clearing the cache if any changes in Admin Theme Option
  */
-function ci_themeoption_invalidate_caches(){
-	delete_transient( 'ci_header_logo' ); 	// header logo on header
-	delete_transient( 'ci_footer_logo' );  // footer logo on footer
-	delete_transient( 'ci_fav_icon' );	  // fav icon on cpanel/ backend and frontend
-	
-	delete_transient( 'ci_featured_sliders' ); // featured slider
-	delete_transient( 'ci_header_social_networks' );  // Social links on header
-	
-	delete_transient( 'ci_header_scripts' ); // scripts which loads on header	
-	delete_transient( 'ci_footer_scripts' ); // scripts which loads on footer
-	
+function simplecatch_themeoption_invalidate_caches(){
+	delete_transient( 'simplecatch_headerlogo' ); 	// header logo on header
+	delete_transient( 'simplecatch_footerlogo' );  // footer logo on footer
+	delete_transient( 'simplecatch_favicon' );	  // favicon on cpanel/ backend and frontend
+	delete_transient( 'simplecatch_sliders' ); // featured slider
+	delete_transient( 'simplecatch_headersocialnetworks' );  // Social links on header
+	delete_transient( 'simplecatch_headercode' ); // scripts which loads on header	
+	delete_transient( 'simplecatch_footercode' ); // scripts which loads on footer
 }
 
 /*
  * Clearing the cache if any changes in post or page
  */
-function ci_themeoption_post_invalidate_caches(){
-	delete_transient( 'ci_featured_sliders' );
+function simplecatch_post_invalidate_caches(){
+	delete_transient( 'simplecatch_sliders' );
 }
 //Add action hook here save post
-add_action( 'save_post', 'ci_themeoption_post_invalidate_caches' );
+add_action( 'save_post', 'simplecatch_post_invalidate_caches' );
 ?>

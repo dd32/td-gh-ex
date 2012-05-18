@@ -3,7 +3,7 @@
  * The Template for displaying all single posts.
  *
  * @package WordPress
- * @subpackage Simple Catch
+ * @subpackage Simple_Catch
  * @since Simple Catch 1.0
  */
  

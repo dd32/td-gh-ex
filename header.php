@@ -5,7 +5,7 @@
  * Displays all of the <head> section 
  *
  * @package WordPress
- * @subpackage Simple Catch
+ * @subpackage Simple_Catch
  * @since Simple Catch 1.0
  */
 ?>
@@ -24,12 +24,7 @@
 	if ( $site_description && ( is_home() || is_front_page() ) )		
 		echo " | $site_description"; ?>
 </title>
-<?php 
-	//Displays the fav icon
-	if( function_exists( 'ci_fav_icon' ) ) :
-		ci_fav_icon();
-	endif; 
- ?>
+
 <!--[if lt IE 7]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/pngfix.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" media="screen" href="<?php echo get_template_directory_uri(); ?>/css/ie6.css" />
@@ -50,9 +45,6 @@
 	 * as styles, scripts, and meta tags.
 	 */
 	wp_head();
-	if( function_exists( 'ci_header_scripts' ) ):
-		ci_header_scripts();
-	endif;
 ?>
 </head>
 <body <?php body_class(); ?>>
@@ -64,8 +56,8 @@
                 	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
 						<?php
 							//Displays the header logo 	
-							if( function_exists( 'ci_header_logo' ) ) :
-								ci_header_logo();
+							if( function_exists( 'simplecatch_headerlogo' ) ) :
+								simplecatch_headerlogo();
 							endif; 
 				
 							echo esc_attr( get_bloginfo( 'name', 'display' ) ); 
@@ -76,9 +68,9 @@
         	</div><!-- .logo-wrap -->
         	<div class="social-search">
             		<?php
-						// ci_header_social_networks displays social links given from theme option in header 
-						if ( function_exists( 'ci_header_social_networks' ) ) :
-							ci_header_social_networks(); 
+						// simplecatch_headersocialnetworks displays social links given from theme option in header 
+						if ( function_exists( 'simplecatch_headersocialnetworks' ) ) :
+							simplecatch_headersocialnetworks(); 
 						endif;
 						// get search form
 						get_search_form();
@@ -86,21 +78,13 @@
         	</div><!-- .social-search -->
     		<div class="row-end"></div>
             <div id="mainmenu">
-			<?php 
-				// Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.
-				wp_nav_menu( array( 
-					'container' => false,
-					'depth' => 0,  
-					'echo' => true,
-					'theme_location' => 'primary'  
-				) );    
-			?> 
+            	<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
             </div><!-- #mainmenu-->  
             <div class="row-end"></div>   
         <?php    	
 		// Display slider in home page and breadcrumb in other pages 
-		if ( function_exists( 'ci_display_breadcrumb_or_slider' ) ) :
-			ci_display_breadcrumb_or_slider(); 
+		if ( function_exists( 'simplecatch_sliderbreadcrumb' ) ) :
+			simplecatch_sliderbreadcrumb(); 
 		endif;
 		?> 
 	</div><!-- .layout-978 -->

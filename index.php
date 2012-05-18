@@ -8,7 +8,7 @@
  * E.g., it puts together the home page when no home.php file exists.
  *
  * @package WordPress
- * @subpackage Simple Catch
+ * @subpackage Simple_Catch
  * @since Simple Catch 1.0
  */
 
@@ -46,7 +46,7 @@ get_header(); ?>
                         <hr />
                     
   			 <?php endwhile;
-            
+            		// Checking WP Page Numbers plugin fucntion exist and if it exist then load the page numbers accordingly
 					 if ( function_exists('wp_page_numbers' ) ) : 
 					 	wp_page_numbers();
 					   

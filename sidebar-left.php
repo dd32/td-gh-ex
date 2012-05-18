@@ -5,7 +5,7 @@
  * This is the template that displays page with sidebar
  *
  * @package WordPress
- * @subpackage Simple Catch
+ * @subpackage Simple_Catch
  * @since Simple Catch 1.0
  */
 get_header(); ?>

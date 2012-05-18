@@ -1,15 +1,15 @@
 jQuery( document ).ready( function() {
 	var selected = 0;
-	if( jQuery.cookie( 'catch_ad_tab' ) ) {
-		selected = jQuery.cookie( 'catch_ad_tab' );
-		jQuery.cookie( 'catch_ad_tab', null );
+	if( jQuery.cookie( 'simplecatch_ad_tab' ) ) {
+		selected = jQuery.cookie( 'simplecatch_ad_tab' );
+		jQuery.cookie( 'simplecatch_ad_tab', null );
 	}
 	
-	var tabs = jQuery( '#catch_ad_tabs' ).tabs( { selected: selected } );
+	var tabs = jQuery( '#simplecatch_ad_tabs' ).tabs( { selected: selected } );
 	
 	jQuery( '#wpbody-content form' ).submit( function() {
 		var selected = tabs.tabs( 'option', 'selected' );
-		jQuery.cookie( 'catch_ad_tab', selected );
+		jQuery.cookie( 'simplecatch_ad_tab', selected );
 	} );
 	
 	jQuery( '.sortable' ).sortable( {

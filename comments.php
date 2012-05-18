@@ -6,7 +6,7 @@
  * and the comment form. 
  *
  * @package WordPress
- * @subpackage Simple Catch
+ * @subpackage Simple_Catch
  * @since Simple Catch 1.0
  */
  ?>

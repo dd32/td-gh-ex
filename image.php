@@ -3,7 +3,7 @@
  * The template for displaying image attachments.
  *
  * @package WordPress
- * @subpackage Simple Catch
+ * @subpackage Simple_Catch
  * @since Simple Catch 1.0
  */
 
@@ -76,10 +76,10 @@ get_header(); ?>
 							</div><!-- .entry-description -->
 
 					</div><!-- .entry-content -->
-						<ul id="nav-image" class="default-wp-page">            
-					<li class="previous"><?php previous_image_link( false, __( 'Previous Image' , 'simplecatch' ) ); ?></li>
-					<li class="next"><?php next_image_link( false, __( 'Next Image' , 'simplecatch' ) ); ?></li>
-				</ul><!-- #nav-image -->
+					<ul id="nav-image" class="default-wp-page">            
+						<li class="previous"><?php previous_image_link( false, __( 'Previous Image' , 'simplecatch' ) ); ?></li>
+						<li class="next"><?php next_image_link( false, __( 'Next Image' , 'simplecatch' ) ); ?></li>
+					</ul><!-- #nav-image -->
 				</div><!-- .post -->
 
         <?php endwhile; ?>

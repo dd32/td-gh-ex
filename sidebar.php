@@ -3,7 +3,7 @@
  * The Sidebar containing the main widget area.
  *
  * @package WordPress
- * @subpackage Simple Catch
+ * @subpackage Simple_Catch
  * @since Simple Catch 1.0
  */
  

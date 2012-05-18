@@ -29,8 +29,8 @@ class CustomTagWidget extends WP_Widget {
 				echo $before_title . $title . $after_title;
 			endif;
 			
-			if ( function_exists( 'ci_custom_tag_cloud' ) ):
-				ci_custom_tag_cloud();
+			if ( function_exists( 'simplecatch_custom_tag_cloud' ) ):
+				simplecatch_custom_tag_cloud();
 			endif;
 			
 			echo $after_widget;

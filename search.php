@@ -3,7 +3,7 @@
  * The template for displaying Search Results pages.
  *
  * @package WordPress
- * @subpackage Simple Catch
+ * @subpackage Simple_Catch
  * @since Simple Catch 1.0
  */
 
@@ -20,15 +20,12 @@ get_header(); ?>
             	<div <?php post_class();?>>
                 	
                 	<h3><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>"><?php the_title(); ?></a></h3>
-					<?php //str_replace to remove [...] from excerpt ?>	
-                    <p class="cat-content"><?php $excerpt = str_replace('[...]','', get_the_excerpt() ) ; 
-                    echo $excerpt; ?></p>
-                
+                    <?php the_excerpt(); ?>
                   	<div class="row-end"></div>
                 </div> <!-- .post -->
             
             <?php endwhile; 
-			
+				// Checking WP Page Numbers plugin fucntion exist and if it exist then load the page numbers accordingly
 				if ( function_exists( 'wp_page_numbers' ) ) : 
 					wp_page_numbers();
 					 

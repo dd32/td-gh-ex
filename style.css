@@ -1,10 +1,10 @@
 /*
 Theme Name: Simple Catch
-Theme URI: http://catchthemes.com/demo/simplecatch
+Theme URI: http://catchthemes.com/simple-catch
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
 Description: SimpleCatch is a simple and clean WordPress Theme. Easy Customize through Theme Options and Custom Widgets. Features: Featured Image Slider, Custom Menu, Theme Options, Custom Widgets and Support for popular plugins.
-Version: 1.0
+Version: 1.1
 License: GNU General Public License
 License URI: license.txt
 Tags: black, gray, silver, white, light, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, custom-menu, featured-images, full-width-template, theme-options, threaded-comments
@@ -393,7 +393,7 @@ h1#site-title a:hover {
 h2#site-description {
 	font:14px Arial, Helvetica, sans-serif;
 	color:#666;
-	padding:8px 0 0 90px;
+	padding:8px 0 0 0;
 }
 #header .logo-wrap {
 	padding-left:20px;
