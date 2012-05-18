@@ -1,0 +1,11 @@
+@charset "utf-8";
+/* CSS Document */
+
+#controllers ul li a {
+	width:13px;
+	height:13px;
+	background:url(../images/controllers.png) right top no-repeat;
+}
+#controllers ul li a:hover, #controllers ul li.active a {
+	background-position:left top;
+}
