@@ -7,6 +7,14 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(05/17/2012) - Version 1.5.3
+[+] new languages
+    - Malay
+    - Catalan
+    - Spanish
+[*] CSS tutorial link changed to
+    https://developer.mozilla.org/en/CSS
+
 (05/13/2012) - Quick Bug Fixes Version 1.5.2
 [*] comment counts in comments.php
 [*] help-links in /includes/theme-options.php

@@ -391,7 +391,7 @@ function responsive_theme_options_do_page() {
                 ?>
                 <div class="grid col-300">
 				    <?php _e('Custom CSS Styles', 'responsive'); ?>
-                    <a class="help-links" href="<?php echo esc_url(__('http://www.w3schools.com/css/default.asp','responsive')); ?>" title="<?php esc_attr_e('CSS Tutorial', 'responsive'); ?>" target="_blank">
+                    <a class="help-links" href="<?php echo esc_url(__('https://developer.mozilla.org/en/CSS','responsive')); ?>" title="<?php esc_attr_e('CSS Tutorial', 'responsive'); ?>" target="_blank">
                     <?php printf(__('CSS Tutorial','responsive')); ?></a>
                 </div><!-- end of .grid col-300 -->
                 
