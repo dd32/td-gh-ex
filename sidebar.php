@@ -3,7 +3,7 @@
  * The Sidebar containing the main widget areas.
  *
  * @package BestCorporate
- * @since BestCorporate 1.6
+ * @since BestCorporate 1.7
  */
 ?>
 
@@ -14,7 +14,7 @@
     <div class="widgetbox">
       <div class="widgetbottom">
         <h2 class="widget-title">
-          <?php _e( 'Archives', 'best-corporate' ); ?>
+          <?php _e( 'Archives', 'bestcorporate' ); ?>
         </h2>
         <ul>
           <?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
@@ -26,7 +26,7 @@
     <div class="widgetbox">
       <div class="widgetbottom">
         <h2 class="widget-title">
-          <?php _e( 'Meta', 'best-corporate' ); ?>
+          <?php _e( 'Meta', 'bestcorporate' ); ?>
         </h2>
         <ul>
           <?php wp_register(); ?>

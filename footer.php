@@ -3,14 +3,14 @@
  * The template for displaying the footer.
  *
  * @package BestCorporate
- * @since BestCorporate 1.6
+ * @since BestCorporate 1.7
  */
 ?>
 </div>
 <!-- #main -->
 <footer id="colophon" role="contentinfo">
-  <div id="gotop"><a href="#branding"><?php _e('TOP OF PAGE','best-corporate');?></a></div>
-  <div id="site-generator"><?php _e('Powered by','best-corporate');?> <a href="<?php echo esc_url(__('http://wordpress.org','best-corporate')); ?>" title="<?php esc_attr_e('WordPress', 'best-corporate'); ?>"><?php _e('WordPress','best-corporate'); ?></a> and <a href="<?php echo esc_url(__('http://renniaofei.com/freebies/best-corporate/','best-corporate')); ?>" title="<?php esc_attr_e('Best Corporate Theme', 'best-corporate'); ?>" target="_blank"><?php _e('Best Corporate Theme','best-corporate'); ?></a></div>
+  <div id="gotop"><a href="#branding"><?php _e('TOP OF PAGE','bestcorporate');?></a></div>
+  <div id="site-generator"><?php _e('Powered by','bestcorporate');?> <a href="<?php echo esc_url(__('http://wordpress.org','bestcorporate')); ?>" title="<?php esc_attr_e('WordPress', 'bestcorporate'); ?>"><?php _e('WordPress','bestcorporate'); ?></a> and <a href="<?php echo esc_url(__('http://renniaofei.com/freebies/bestcorporate/','bestcorporate')); ?>" title="<?php esc_attr_e('Best Corporate Theme', 'bestcorporate'); ?>" target="_blank"><?php _e('Best Corporate Theme','bestcorporate'); ?></a></div>
 </footer>
 <!-- #colophon -->
 </div>

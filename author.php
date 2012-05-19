@@ -3,7 +3,7 @@
  * The template for displaying Author Archive pages.
  *
  * @package BestCorporate
- * @since BestCorporate 1.6
+ * @since BestCorporate 1.7
  */
 
 get_header(); ?>
@@ -30,7 +30,7 @@ get_header(); ?>
 					 */
 					rewind_posts();
 				?>
-    <?php best_corporate_content_nav( 'nav-above' ); ?>
+    <?php bestcorporate_content_nav( 'nav-above' ); ?>
     <?php /* Start the Loop */ ?>
     <?php while ( have_posts() ) : the_post(); ?>
     <?php
@@ -41,18 +41,18 @@ get_header(); ?>
 						get_template_part( 'content', get_post_format() );
 					?>
     <?php endwhile; ?>
-    <?php best_corporate_content_nav( 'nav-below' ); ?>
+    <?php bestcorporate_content_nav( 'nav-below' ); ?>
     <?php else : ?>
     <article id="post-0" class="post no-results not-found">
       <header class="entry-header">
         <h1 class="entry-title">
-          <?php _e( 'Nothing Found', 'best-corporate' ); ?>
+          <?php _e( 'Nothing Found', 'bestcorporate' ); ?>
         </h1>
       </header>
       <!-- .entry-header -->
       <div class="entry-content">
         <p>
-          <?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'best-corporate' ); ?>
+          <?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'bestcorporate' ); ?>
         </p>
         <?php get_search_form(); ?>
       </div>

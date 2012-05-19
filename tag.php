@@ -2,8 +2,8 @@
 /**
  * The template used to display Tag Archive pages
  *
- * @package BestCorporate
- * @since BestCorporate 1.6
+ * @package bestcorporate
+ * @since bestcorporate 1.7
  */
 
 get_header(); ?>
@@ -14,7 +14,7 @@ get_header(); ?>
     <header class="page-header">
       <h1 class="page-title">
         <?php
-						printf( __( 'Tag Archives: %s', 'best-corporate' ), '<span>' . single_tag_title( '', false ) . '</span>' );
+						printf( __( 'Tag Archives: %s', 'bestcorporate' ), '<span>' . single_tag_title( '', false ) . '</span>' );
 					?>
       </h1>
       <?php
@@ -24,7 +24,7 @@ get_header(); ?>
 					?>
     </header>
     <?php rewind_posts(); ?>
-    <?php best_corporate_content_nav( 'nav-above' ); ?>
+    <?php bestcorporate_content_nav( 'nav-above' ); ?>
     <?php /* Start the Loop */ ?>
     <?php while ( have_posts() ) : the_post(); ?>
     <?php
@@ -35,18 +35,18 @@ get_header(); ?>
 						get_template_part( 'content', get_post_format() );
 					?>
     <?php endwhile; ?>
-    <?php best_corporate_content_nav( 'nav-below' ); ?>
+    <?php bestcorporate_content_nav( 'nav-below' ); ?>
     <?php else : ?>
     <article id="post-0" class="post no-results not-found">
       <header class="entry-header">
         <h1 class="entry-title">
-          <?php _e( 'Nothing Found', 'best-corporate' ); ?>
+          <?php _e( 'Nothing Found', 'bestcorporate' ); ?>
         </h1>
       </header>
       <!-- .entry-header -->
       <div class="entry-content">
         <p>
-          <?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'best-corporate' ); ?>
+          <?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'bestcorporate' ); ?>
         </p>
         <?php get_search_form(); ?>
       </div>

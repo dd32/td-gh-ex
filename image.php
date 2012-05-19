@@ -19,7 +19,7 @@ get_header(); ?>
         <div class="entry-meta">
           <?php
 								$metadata = wp_get_attachment_metadata();
-								printf( __( 'Published <span class="entry-date"><abbr class="published" title="%1$s">%2$s</abbr></span> at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%7$s</a>', 'best-corporate' ),
+								printf( __( 'Published <span class="entry-date"><abbr class="published" title="%1$s">%2$s</abbr></span> at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%7$s</a>', 'bestcorporate' ),
 									esc_attr( get_the_time() ),
 									get_the_date(),
 									wp_get_attachment_url(),
@@ -29,13 +29,13 @@ get_header(); ?>
 									get_the_title( $post->post_parent )
 								);
 							?>
-          <?php edit_post_link( __( 'Edit', 'best-corporate' ), '<span class="sep">|</span> <span class="edit-link">', '</span>' ); ?>
+          <?php edit_post_link( __( 'Edit', 'bestcorporate' ), '<span class="sep">|</span> <span class="edit-link">', '</span>' ); ?>
         </div>
         <!-- .entry-meta -->
         <nav id="image-navigation"> <span class="previous-image">
-          <?php previous_image_link( false, __( '&larr; Previous' , 'best-corporate' ) ); ?>
+          <?php previous_image_link( false, __( '&larr; Previous' , 'bestcorporate' ) ); ?>
           </span> <span class="next-image">
-          <?php next_image_link( false, __( 'Next &rarr;' , 'best-corporate' ) ); ?>
+          <?php next_image_link( false, __( 'Next &rarr;' , 'bestcorporate' ) ); ?>
           </span> </nav>
         <!-- #image-navigation -->
       </header>
@@ -69,7 +69,7 @@ get_header(); ?>
 								?>
             <a href="<?php echo $next_attachment_url; ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="attachment">
             <?php
-								$attachment_size = apply_filters( 'best_corporate_attachment_size', 1200 );
+								$attachment_size = apply_filters( 'bestcorporate_attachment_size', 1200 );
 								echo wp_get_attachment_image( $post->ID, array( $attachment_size, $attachment_size ) ); // filterable image width with, essentially, no limit for image height.
 								?>
             </a> </div>
@@ -82,20 +82,20 @@ get_header(); ?>
         </div>
         <!-- .entry-attachment -->
         <?php the_content(); ?>
-        <?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'best-corporate' ), 'after' => '</div>' ) ); ?>
+        <?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'bestcorporate' ), 'after' => '</div>' ) ); ?>
       </div>
       <!-- .entry-content -->
       <footer class="entry-meta">
         <?php if ( comments_open() && pings_open() ) : // Comments and trackbacks open ?>
-        <?php printf( __( '<a class="comment-link" href="#respond" title="Post a comment">Post a comment</a> or leave a trackback: <a class="trackback-link" href="%s" title="Trackback URL for your post" rel="trackback">Trackback URL</a>.', 'best-corporate' ), get_trackback_url() ); ?>
+        <?php printf( __( '<a class="comment-link" href="#respond" title="Post a comment">Post a comment</a> or leave a trackback: <a class="trackback-link" href="%s" title="Trackback URL for your post" rel="trackback">Trackback URL</a>.', 'bestcorporate' ), get_trackback_url() ); ?>
         <?php elseif ( ! comments_open() && pings_open() ) : // Only trackbacks open ?>
-        <?php printf( __( 'Comments are closed, but you can leave a trackback: <a class="trackback-link" href="%s" title="Trackback URL for your post" rel="trackback">Trackback URL</a>.', 'best-corporate' ), get_trackback_url() ); ?>
+        <?php printf( __( 'Comments are closed, but you can leave a trackback: <a class="trackback-link" href="%s" title="Trackback URL for your post" rel="trackback">Trackback URL</a>.', 'bestcorporate' ), get_trackback_url() ); ?>
         <?php elseif ( comments_open() && ! pings_open() ) : // Only comments open ?>
-        <?php _e( 'Trackbacks are closed, but you can <a class="comment-link" href="#respond" title="Post a comment">post a comment</a>.', 'best-corporate' ); ?>
+        <?php _e( 'Trackbacks are closed, but you can <a class="comment-link" href="#respond" title="Post a comment">post a comment</a>.', 'bestcorporate' ); ?>
         <?php elseif ( ! comments_open() && ! pings_open() ) : // Comments and trackbacks closed ?>
-        <?php _e( 'Both comments and trackbacks are currently closed.', 'best-corporate' ); ?>
+        <?php _e( 'Both comments and trackbacks are currently closed.', 'bestcorporate' ); ?>
         <?php endif; ?>
-        <?php edit_post_link( __( 'Edit', 'best-corporate' ), ' <span class="edit-link">', '</span>' ); ?>
+        <?php edit_post_link( __( 'Edit', 'bestcorporate' ), ' <span class="edit-link">', '</span>' ); ?>
       </footer>
       <!-- .entry-meta -->
     </article>

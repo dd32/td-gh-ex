@@ -3,7 +3,7 @@
  * The Template for displaying all single posts.
  *
  * @package BestCorporate
- * @since BestCorporate 1.6
+ * @since BestCorporate 1.7
  */
 
 get_header(); ?>
@@ -12,7 +12,7 @@ get_header(); ?>
   <div id="content" role="main">
     <?php while ( have_posts() ) : the_post(); ?>
     <?php get_template_part( 'content', 'single' ); ?>
-    <?php best_corporate_content_nav( 'nav-below' ); ?>
+    <?php bestcorporate_content_nav( 'nav-below' ); ?>
     <?php
 					// If comments are open or we have at least one comment, load up the comment template
 					if ( comments_open() || '0' != get_comments_number() )

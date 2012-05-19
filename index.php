@@ -9,7 +9,7 @@
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
  * @package BestCorporate
- * @since BestCorporate 1.6
+ * @since BestCorporate 1.7
  */
 
 get_header(); ?>
@@ -19,9 +19,9 @@ get_header(); ?>
     <?php if ( have_posts() ) : ?>
     <?php /* Start the Loop */ ?>
     <?php while ( have_posts() ) : the_post(); ?>
-    <?php if ( in_category( _x('gallery', 'gallery category slug', 'best-corporate') ) ) : 
+    <?php if ( in_category( _x('gallery', 'gallery category slug', 'bestcorporate') ) ) : 
 				get_template_part( 'content', gallery );
-				elseif ( in_category( _x('asides', 'asides category slug', 'best-corporate') ) ) : 
+				elseif ( in_category( _x('asides', 'asides category slug', 'bestcorporate') ) ) : 
 				get_template_part( 'content', aside );
 				else:?>
     <?php
@@ -33,18 +33,18 @@ get_header(); ?>
 				endif
 					?>
     <?php endwhile; ?>
-    <?php best_corporate_content_nav( 'nav-below' ); ?>
+    <?php bestcorporate_content_nav( 'nav-below' ); ?>
     <?php else : ?>
     <article id="post-0" class="post no-results not-found">
       <header class="entry-header">
         <h1 class="entry-title">
-          <?php _e( 'Nothing Found', 'best-corporate' ); ?>
+          <?php _e( 'Nothing Found', 'bestcorporate' ); ?>
         </h1>
       </header>
       <!-- .entry-header -->
       <div class="entry-content">
         <p>
-          <?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'best-corporate' ); ?>
+          <?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'bestcorporate' ); ?>
         </p>
         <?php get_search_form(); ?>
       </div>

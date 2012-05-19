@@ -2,7 +2,7 @@
 /**
  * The Header for our theme.
  * @package BestCorporate
- * @since BestCorporate 1.6
+ * @since BestCorporate 1.7
  */
 ?>
 <!DOCTYPE html>
@@ -24,12 +24,12 @@
 <meta name="viewport" content="width=device-width" />
 <title><?php wp_title();?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_uri(); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
-<?php wp_head(); ?></head>
+<?php wp_head(); ?><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
 <body <?php body_class(); ?>>
 <div id="headerimg">
   <header id="branding" role="banner">
@@ -48,10 +48,10 @@
     </hgroup>
     <nav id="access" role="navigation">
       <h1 class="assistive-text section-heading">
-        <?php _e( 'Main menu', 'best-corporate' ); ?>
+        <?php _e( 'Main menu', 'bestcorporate' ); ?>
       </h1>
-      <div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'best-corporate' ); ?>">
-        <?php _e( 'Skip to content', 'best-corporate' ); ?>
+      <div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'bestcorporate' ); ?>">
+        <?php _e( 'Skip to content', 'bestcorporate' ); ?>
         </a></div>
       <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
     </nav>

@@ -1,10 +1,10 @@
 @charset "utf-8";
 /*
 Theme Name: Best Corporate
-Theme URI: http://renniaofei.com/freebies/best-corporate/
+Theme URI: http://renniaofei.com/blog/freebies/bestcorporate/
 Author: renniaofei
 Description: HTML5 / Minimal / Corporate & Portfolio / Response Wordpress Theme.
-Version: 1.6
+Version: 1.7
 Tags: White, Custom-menu, Sticky-post, Microformats, rtl-language-support, translation-ready, Post-formats, custom-header, custom-background, threaded-comments,full-width-template
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -186,16 +186,10 @@ input[type=text] {
 	padding: 3px;
 }
 input#s {
-	background: url(images/search.png) no-repeat 5px 6px;
 	-moz-border-radius: 2px;
 	border-radius: 2px;
 	font-size: 14px;
-	height: 22px;
-	line-height: 1.2em;
-	padding: 4px 10px 4px 28px;
-}
-input#searchsubmit {
-	display: none;
+	padding: 4px;
 }
 table {
 	border-collapse:collapse;
@@ -346,7 +340,9 @@ h4 {
 	font-size: 16px;
 	font-weight: bold;
 	height: 110px;
-	width: 220px;}
+	width: 220px;
+	text-align:center;
+	display:block;}
 #site-title a.logo_img {
 	text-indent: -9999px;
 	background-repeat: no-repeat;
@@ -703,7 +699,7 @@ h3#comments-title, h3#reply-title {
 	border-bottom: 1px solid #e7e7e7;
 	line-height: 24px;
 	margin: 0 0 24px 0;
-	padding: 0 0 0 120px;
+	padding: 0 0 0 60px;
 	position: relative;
 }
 .commentlist li:last-child {
@@ -765,6 +761,7 @@ h3#comments-title, h3#reply-title {
 .commentlist .children {
 	list-style: none;
 	margin: 0;
+	padding-left:0;
 }
 .commentlist .children li {
 	border: none;
@@ -897,12 +894,11 @@ h3#reply-title {
 	height: 35px;
 }
 .widget-area .widget_search {
-	overflow: hidden;
-	background-color: #F3F3F3;
+	text-align:center;
 }
-.widget-area .widget_search input {
-	float: left;
-}
+.widget_search input#s{
+	margin-bottom:10px;
+	}
 #wp-calendar {
 	width:100%;
 }

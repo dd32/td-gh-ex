@@ -3,7 +3,7 @@
  * The template used for displaying page content in page.php
  *
  * @package BestCorporate
- * @since BestCorporate 1.6
+ * @since BestCorporate 1.7
  */
 ?>
 
@@ -21,8 +21,8 @@
   <!-- .entry-header -->
   <div class="entry-content">
     <?php the_content(); ?>
-    <?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'best-corporate' ), 'after' => '</div>' ) ); ?>
-    <?php edit_post_link( __( 'Edit', 'best-corporate' ), '<span class="edit-link">', '</span>' ); ?>
+    <?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'bestcorporate' ), 'after' => '</div>' ) ); ?>
+    <?php edit_post_link( __( 'Edit', 'bestcorporate' ), '<span class="edit-link">', '</span>' ); ?>
   </div>
   <!-- .entry-content -->
 </article>
