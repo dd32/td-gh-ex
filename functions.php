@@ -1,10 +1,4 @@
 <?php
-
-/**
-* Exit if file is directly accessed. 
-*/ 
-if ( !defined('ABSPATH')) exit;
-
 /*
 	Functions
 	Author: Tyler Cunningham
@@ -25,46 +19,12 @@ if ( !defined('ABSPATH')) exit;
 	$sliderdocs = 'http://cyberchimps.com/question/using-the-ifeature-3-slider/';
 
 /**
-* Content width.
-*/ 
-if ( ! isset( $content_width ) ) $content_width = 608; //Set content width
-
-/**
-* Establishes 'core' as the textdomain, sets $locale and file path
-*
-* @since 1.0
-*/
-function synapse_text_domain() {
-	load_theme_textdomain( 'core', get_template_directory() . '/core/languages' );
-
-	    $locale = get_locale();
-	    $locale_file = get_template_directory() . "/core/languages/$locale.php";
-	    if ( is_readable( $locale_file ) )
-		    require_once( $locale_file );
-		
-		return;    
-}
-add_action('after_setup_theme', 'synapse_text_domain');
-
-/**
 * Basic theme setup.
 */ 
 function if_theme_setup() {
+	global $content_width; 
 	
-/**
-* Initialize Synapse Core Framework and Pro Extension.
-*/ 
-	require_once ( get_template_directory() . '/core/core-init.php' );
-
-/**
-* Call additional files required by theme.
-*/ 
-	require_once ( get_template_directory() . '/includes/classy-options-init.php' ); // Theme options markup.
-	require_once ( get_template_directory() . '/includes/options-functions.php' ); // Custom functions based on theme options.
-	require_once ( get_template_directory() . '/includes/meta-box.php' ); // Meta options markup.
-	require_once ( get_template_directory() . '/includes/theme-hooks.php' ); // Theme specific hooks.
-	require_once ( get_template_directory() . '/includes/theme-actions.php' ); // Actions for theme specific hooks.
-	require_once ( get_template_directory() . '/includes/presstrends.php' ); // Opt-in PressTrends option.
+	if ( ! isset( $content_width ) ) $content_width = 608; //Set content width
 	
 	add_theme_support(
 		'post-formats',
@@ -168,7 +128,7 @@ function if_new_excerpt_more($more) {
     		$linktext = $options->get($themeslug.'_excerpt_link_text');
    		}
 
-	return '</p><p><a href="'. get_permalink($post->ID) . '">'.$linktext.'</a></p>';
+	return '<a href="'. get_permalink($post->ID) . '"> <br /><br /> '.$linktext.'</a>';
 }
 add_filter('excerpt_more', 'if_new_excerpt_more');
 
@@ -224,7 +184,7 @@ function if_render_ie_pie() { ?>
 		#wrapper input, textarea, #twitterbar, input[type=submit], input[type=reset], #imenu, .searchform, .post_container, .postformats, .postbar, .post-edit-link, .widget-container, .widget-title, .footer-widget-title, .comments_container, ol.commentlist li.even, ol.commentlist li.odd, .slider_nav, ul.metabox-tabs li, .tab-content, .list_item, .section-info, #of_container #header, .menu ul li a, .submit input, #of_container textarea, #of_container input, #of_container select, #of_container .screenshot img, #of_container .of_admin_bar, #of_container .subsection > h3, .subsection, #of_container #content .outersection .section
   		
   	{
-  		behavior: url('<?php echo get_stylesheet_directory_uri(); ?>/core/library/pie/PIE.php');
+  		behavior: url('<?php bloginfo('stylesheet_directory'); ?>/core/library/pie/PIE.htc');
 	}
 	</style>
 <?php
@@ -248,7 +208,7 @@ add_action('wp_head', 'if_google_analytics');
 */ 
 function if_register_menus() {
 	register_nav_menus(
-	array( 'header-menu' => __( 'Header Menu', 'core' ), 'footer-menu' => __( 'Footer Menu', 'core' ))
+	array( 'header-menu' => __( 'Header Menu' ), 'footer-menu' => __( 'Footer Menu' ))
   );
 }
 add_action( 'init', 'if_register_menus' );
@@ -288,14 +248,31 @@ function if_widgets_init() {
 }
 add_action ('widgets_init', 'if_widgets_init');
 
+/**
+* Initialize Synapse Core Framework and Pro Extension.
+*/ 
+require_once ( get_template_directory() . '/core/core-init.php' );
+
+/**
+* Call additional files required by theme.
+*/ 
+require_once ( get_template_directory() . '/includes/classy-options-init.php' ); // Theme options markup.
+require_once ( get_template_directory() . '/includes/options-functions.php' ); // Custom functions based on theme options.
+require_once ( get_template_directory() . '/includes/meta-box.php' ); // Meta options markup.
+require_once ( get_template_directory() . '/includes/theme-hooks.php' ); // Theme specific hooks.
+require_once ( get_template_directory() . '/includes/theme-actions.php' ); // Actions for theme specific hooks.
+require_once ( get_template_directory() . '/includes/presstrends.php' ); // Opt-in PressTrends option.
+
+/**
+* End
+*/
+
 function ifeature_meta_update() {
 	global $theme_version;
-	
 	// Get last used theme version
-	$prev_theme_version = (get_option('if_theme_version')) ? get_option('if_theme_version') : 0;
+	$theme_version = (get_option('if_theme_version')) ? get_option('if_theme_version') : '0';
 	
-	if ( $prev_theme_version < '4.5.3') {
-
+	if ( $theme_version < '4.5.3') {
 		// Update post meta_key values
 		$prev_post_meta_keys = array(
 			'slider_image' => 'if_slider_image',
@@ -330,11 +307,9 @@ function ifeature_meta_update() {
 		foreach ($prev_page_meta_keys as $prev_key => $updated_key) {
 			ifeature_update_meta_key('post', $updated_key, $prev_key);
 		}
-	}
-	
-	if ( $prev_theme_version < $theme_version) {
+
 		// Set new theme version
-		update_option('if_theme_version', $theme_version);
+		update_option('if_theme_version', '4.5.3');
 	}
 }
 
@@ -354,8 +329,4 @@ function ifeature_update_meta_key($meta_type, $meta_key, $prev_meta_key) {
 	
 	$wpdb->update( $table, array( 'meta_key' => $meta_key), array( 'meta_key' => $prev_meta_key ) );
 }
-
-/**
-* End
-*/
 ?>

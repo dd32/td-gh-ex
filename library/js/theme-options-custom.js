@@ -6,14 +6,6 @@
 jQuery(document).ready(function($) {
 
 	
-	$("#if_logo_url_toggle").change(function() {
-    var toShow = $("#section-if_logo_url");
-    if($(this).is(':checked')) {
-      toShow.show();
-    } else {
-      toShow.hide();
-    }
-  }).change();
   $("#if_show_excerpts").change(function() {
     var toShow = $("#section-if_excerpt_link_text, #section-if_excerpt_length");
     if($(this).is(':checked')) {
@@ -22,22 +14,6 @@ jQuery(document).ready(function($) {
       toShow.hide();
     }
   }).change();
-	$("#if_favicon_toggle").change(function() {
-    var toShow = $("#section-if_favicon");
-    if($(this).is(':checked')) {
-      toShow.show();
-    } else {
-      toShow.hide();
-    }
-		}).change();
-	$("#if_apple_touch_toggle").change(function() {
-    var toShow = $("#section-if_apple_touch");
-    if($(this).is(':checked')) {
-      toShow.show();
-    } else {
-      toShow.hide();
-    }
-		}).change();
   $("#if_show_featured_images").change(function() {
     var toShow = $("#section-if_featured_image_align, #section-if_featured_image_height, #section-if_featured_image_width");
     if($(this).is(':checked')) {

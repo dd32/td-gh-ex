@@ -1,10 +1,4 @@
 <?php
-
-/**
-* Exit if file is directly accessed. 
-*/ 
-if ( !defined('ABSPATH')) exit;
-
 /**
 * Custom actions used by the iFeature Pro WordPress Theme
 *
@@ -56,7 +50,7 @@ function custom_sidebar_init_content() {
 	global $options, $themeslug, $post, $sidebar, $content_grid;
 
 	if (is_page()) {
-	$sidebar = get_post_meta($post->ID, $themeslug.'_page_sidebar' , true);
+	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);
 	}
 	
 	if ($sidebar == "1") {
@@ -92,10 +86,20 @@ function custom_after_content_sidebar_markup() {
 function ifeature_header_contact_area_content() { 
 	global $themeslug, $options; 
 	$contactdefault = apply_filters( 'synapse_header_contact_default_text', 'Enter Contact Information Here' ); 
-			
+	
+	if ($options->get($themeslug.'_header_contact') == '' ) {
 		echo "<div id='header_contact'>";
+			printf( __( $contactdefault, 'core' )); 
+		echo "</div>";
+	}
+	if ($options->get($themeslug.'_header_contact') != 'hide' ) {
+		echo "<div id='header_contact1'>";
 		echo stripslashes ($options->get($themeslug.'_header_contact')); 
 		echo "</div>";
+	}	
+	if ($options->get($themeslug.'_header_contact') == 'hide' ) {
+		echo "<div style ='height: 10%;'>&nbsp;</div> ";
+	}
 }
 
 /**
@@ -106,20 +110,44 @@ function ifeature_header_contact_area_content() {
 function ifeature_link_rel() {
 	global $themeslug, $options; //Call global variables
 	$favicon = $options->get($themeslug.'_favicon'); //Calls the favicon URL from the theme options 
-  
-	if( $options->get( $themeslug.'_favicon_toggle' )	== true ): ?>
-	<link rel="shortcut icon" href="<?php echo stripslashes($favicon['url']); ?>" type="image/x-icon" />
-<?php endif; ?>
+	
+	if ($options->get($themeslug.'_font') == "" AND $options->get($themeslug.'_custom_font') == "") {
+		$font = apply_filters( 'synapse_default_font', 'Arial' );
+	}		
+	elseif ($options->get($themeslug.'_custom_font') != "" && $options->get($themeslug.'_font') == 'custom') {
+		$font = $options->get($themeslug.'_custom_font');	
+	}	
+	else {
+		$font = $options->get($themeslug.'_font'); 
+	} 
+	if ($options->get($themeslug.'_color_scheme') == '') {
+		$color = 'grey';
+	}
+	else {
+		$color = $options->get($themeslug.'_color_scheme');
+	}?>
+	
+<link rel="shortcut icon" href="<?php echo stripslashes($favicon['url']); ?>" type="image/x-icon" />
 
-<?php if( $options->get($themeslug.'_apple_touch_toggle') == true && is_array( $options->get($themeslug.'_apple_touch') ) ): ?>
-<!--  For apple touch icon -->
-<?php $apple_icon = $options->get($themeslug.'_apple_touch'); ?>
-<link rel="apple-touch-icon" href="<?php echo $apple_icon['url']; ?>"/>
+<?php if ($options->get($themeslug.'_responsive_design') == '1') : ?>
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/core/css/foundation.css" type="text/css" />
+<?php endif; ?>
+<?php if ($options->get($themeslug.'_responsive_design') == '0') : ?>
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/core/css/foundation-static.css" type="text/css" />
+<?php endif; ?>
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/core/css/app.css" type="text/css" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/core/css/ie.css" type="text/css" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/style.css" type="text/css" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/color/<?php echo $color; ?>.css" type="text/css" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/elements.css" type="text/css" />
+
+<?php if (is_child_theme()) :  //add support for child themes?>
+	<link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory') ; ?>/style.css" type="text/css" />
 <?php endif; ?>
 
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
-<?php
+<link href='//fonts.googleapis.com/css?family=<?php echo $font ; ?>' rel='stylesheet' type='text/css' /> <?php
 }
 
 /**

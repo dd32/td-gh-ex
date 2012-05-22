@@ -1,10 +1,5 @@
 <?php 
 
-/**
-* Exit if file is directly accessed. 
-*/ 
-if ( !defined('ABSPATH')) exit;
-
 /*
 	Page
 	Establishes the iFeature Pro page tempate.
@@ -51,5 +46,4 @@ if ( !defined('ABSPATH')) exit;
 	
 	</div><!--end row-->
 </div><!--end container-->
-
 <?php get_footer(); ?>

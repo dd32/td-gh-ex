@@ -1,10 +1,5 @@
 <?php 
 
-/**
-* Exit if file is directly accessed. 
-*/ 
-if ( !defined('ABSPATH')) exit;
-
 /*
 	Header
 	Authors: Tyler Cunningham, Trent Lapinski
@@ -22,6 +17,7 @@ if ( !defined('ABSPATH')) exit;
 ?>
 	<?php synapse_head_tag(); ?>
 
+<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?> <!-- wp_enqueue_script( 'comment-reply' );-->
 <?php wp_head(); ?> <!-- wp_head();-->
 	
 </head><!-- closing head tag-->
@@ -33,9 +29,6 @@ if ( !defined('ABSPATH')) exit;
 <!-- Begin @synapse before_header hook  content-->
 	<?php synapse_before_header(); ?> 
 <!-- End @synapse before_header hook content -->
-
-<!-- Adding wrapper class for sticky footer -->
-<div class="wrapper">
 			
 <header>		
 	<?php

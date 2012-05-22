@@ -1,10 +1,4 @@
 <?php
-
-/**
-* Exit if file is directly accessed. 
-*/ 
-if ( !defined('ABSPATH')) exit;
-
 /**
 * Header actions used by the CyberChimps Synapse Core Framework
 *
@@ -88,7 +82,7 @@ function synapse_meta_tags() {?>
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 <meta name="distribution" content="global" />
 
-<meta name="language" content="<?php bloginfo( 'language' ); ?>" /> 
+<meta name="language" content="en" /> 
 <!-- Set the viewport width to device width for mobile -->
 <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; width=device-width"/><?php
 
@@ -106,7 +100,7 @@ function synapse_meta_tags() {?>
 		echo "<meta name='title' content='$title' />";
 	}
 	if ($pagedescription != '' AND !is_front_page()) {
-		echo "<meta name='description' content='$pagedescription'/>";
+		echo "<meta name='description' content='echo $pagedescription'/>";
 	}
 	if ($keywords != '' AND !is_front_page()) {
 		echo "<meta name='keywords' content='$keywords'/>";
@@ -119,9 +113,57 @@ function synapse_meta_tags() {?>
 * @since 1.0
 */
 function synapse_title_tag() {
-	echo '<title>'; 
-	wp_title( ' - ' );
-	echo '</title>';   
+	global $options, $themeslug, $query, $post; 
+	$blogtitle = ($options->get($themeslug.'_home_title'));
+	if (!is_404()) {
+		$title = get_post_meta($post->ID, 'seo_title' , true);
+	}
+	else {
+		$title = '';
+	}
+
+	echo "<title>";
+	
+	if (function_exists('is_tag') && is_tag()) { /*Title for tags */
+		bloginfo('name'); echo ' - '; single_tag_title("Tag Archive for &quot;"); echo '&quot;  ';
+	}
+	elseif (is_archive()) { /*Title for archives */ 
+		bloginfo('name'); echo ' - '; wp_title(''); echo ' Archive '; 
+	}    
+	elseif (is_search()) { /*Title for search */ 
+		bloginfo('name'); echo ' - '; echo 'Search for &quot;'.get_search_query().'&quot;  '; 
+	}    
+	elseif (is_404()) { /*Title for 404 */
+		bloginfo('name'); echo ' - '; echo 'Not Found '; 
+	}
+	elseif (is_front_page() AND !is_page() AND $blogtitle == '') { /*Title if front page is latest posts and no custom title */
+		bloginfo('name'); echo ' - '; bloginfo('description'); 
+	}
+	elseif (is_front_page() AND !is_page() AND $blogtitle != '') { /*Title if front page is latest posts with custom title */
+		bloginfo('name'); echo ' - '; echo $blogtitle ; 
+	}
+	elseif (is_front_page() AND is_page() AND $title == '') { /*Title if front page is static page and no custom title */
+		bloginfo('name'); echo ' - '; bloginfo('description'); 
+	}
+	elseif (is_front_page() AND is_page() AND $title != '') { /*Title if front page is static page with custom title */
+		bloginfo('name'); echo ' - '; echo $title ; 
+	}
+	elseif (is_page() AND $title == '') { /*Title if static page is static page with no custom title */
+		bloginfo('name'); echo ' - '; wp_title(''); 
+	}
+	elseif (is_page() AND $title != '') { /*Title if static page is static page with custom title */
+		bloginfo('name'); echo ' - '; echo $title ; 
+	}
+	elseif (is_page() AND is_front_page() AND $blogtitle == '') { /*Title if blog page with no custom title */
+		bloginfo('name'); echo ' - '; wp_title(''); 
+	}
+	elseif ($blogtitle != '') { /*Title if blog page with custom title */ 
+		bloginfo('name'); echo ' - '; echo $blogtitle ; 
+	}
+	else { /*Title if blog page without custom title */
+		bloginfo('name'); echo ' - '; wp_title(''); 
+	}
+	echo "</title>";    
 }
 
 /**
@@ -129,11 +171,34 @@ function synapse_title_tag() {
 *
 * @since 1.0
 */
-function synapse_link_rel() {	
+function synapse_link_rel() {
+	global $themeslug, $options; //Call global variables
+	$favicon = $options->get($themeslug.'_favicon'); //Calls the favicon URL from the theme options 
 	
-?>
+	if ($options->get($themeslug.'_font') == "" AND $options->get($themeslug.'_custom_font') == "") {
+		$font = apply_filters( 'synapse_default_font', 'Arial' );
+	}		
+	elseif ($options->get($themeslug.'_custom_font') != "" && $options->get($themeslug.'_font') == 'custom') {
+		$font = $options->get($themeslug.'_custom_font');	
+	}	
+	else {
+		$font = $options->get($themeslug.'_font'); 
+	}?>
+	
+<link rel="shortcut icon" href="<?php echo stripslashes($favicon['url']); ?>" type="image/x-icon" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/core/css/app.css" type="text/css" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/core/css/ie.css" type="text/css" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/style.css" type="text/css" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/core/css/foundation.css" type="text/css" />
+
+<?php if (is_child_theme()) :  //add support for child themes?>
+	<link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory') ; ?>/style.css" type="text/css" />
+<?php endif; ?>
+
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-<?php }
+
+<link href='//fonts.googleapis.com/css?family=<?php echo $font ; ?>' rel='stylesheet' type='text/css' /> <?php
+}
 
 
 /**
@@ -144,22 +209,15 @@ function synapse_link_rel() {
 function synapse_header_sitename_content() {
 	global $themeslug, $options; //Call global variables
 	$logo = $options->get($themeslug.'_logo'); //Calls the logo URL from the theme options
-	if( $url = $options->get($themeslug.'_logo_url_toggle' ) == 1 )
-	{
-		$url = $options->get($themeslug.'_logo_url') != '' ? $options->get($themeslug.'_logo_url') : get_home_url();
-	}
-	else {
-		$url = get_home_url();
-	}
 
 	if ($logo != '') { ?>
 	<div id="logo">
-		<a href="<?php echo $url; ?>/"><img src="<?php echo stripslashes($logo['url']); ?>" alt="logo"></a>
+		<a href="<?php echo home_url(); ?>/"><img src="<?php echo stripslashes($logo['url']); ?>" alt="logo"></a>
 	</div> <?php
 	}
 						
 	if ($logo == '' ) { ?>
-		<h1 class="sitename"><a href="<?php echo $url; ?>/"><?php bloginfo('name'); ?> </a></h1>
+		<h1 class="sitename"><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?> </a></h1>
 		<?php
 	}						 
 }
@@ -287,7 +345,6 @@ function synapse_header_social_icons_content() {
 */
 function synapse_nav() {
 	global $options, $themeslug; //call globals 
-	$url = $options->get($themeslug.'_logo_url') != '' ? $options->get($themeslug.'_logo_url') : get_home_url();
 	
 	if ($options->get($themeslug.'_hide_home_icon') == "0" && $options->get($themeslug.'_hide_search') == "0" OR $options->get($themeslug.'_hide_home_icon') == "1" && $options->get($themeslug.'_hide_search') == "0" ) {
 		$grid = 'twelve columns';
@@ -305,7 +362,7 @@ function synapse_nav() {
 			<div class="twelve columns" id="imenu">
 
 			<div id="nav" class="<?php echo $grid; ?>">
-			<?php if ($options->get($themeslug.'_hide_home_icon') != "0"):?><div id="home"><a href="<?php echo $url; ?>"><img src="<?php echo get_template_directory_uri() ;?>/images/home.png" alt="home" /></a></div><?php endif;?>
+			<?php if ($options->get($themeslug.'_hide_home_icon') != "0"):?><div id="home"><a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri() ;?>/images/home.png" alt="home" /></a></div><?php endif;?>
 			<?php if ($options->get($themeslug.'_hide_home_icon') == "0"):?>
 			<div id="nohome"></div>
 			<?php endif;?>
@@ -318,24 +375,13 @@ function synapse_nav() {
 	    	?>
    			</div>
    			<?php if ($options->get($themeslug.'_hide_search') != "0"):?>
-			<div class="three columns hide-on-phones">
+			<div class="three columns">
 				<?php get_search_form(); ?>
 			</div>
 			<?php endif;?>
 		</div>
 	</div>
 </div>
-<?php if ( $options->get($themeslug.'_hide_mobile_search') != "0" && $options->get($themeslug."_responsive_design") != "0" ):?>
-<div class="show-on-phones">
-	<div class="container">
-		<div class="row">
-			<div class="push-one-phone phone-two columns">
-					<?php get_search_form(); ?>
-      </div>
-    </div>
-   </div>
-  </div>
-<?php endif;?>
  <?php
 }
 
