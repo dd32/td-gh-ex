@@ -3,7 +3,7 @@
  * The template for displaying the footer.
  *
  * @package BestCorporate
- * @since BestCorporate 1.7
+ * @since BestCorporate 1.8
  */
 ?>
 </div>

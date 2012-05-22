@@ -2,7 +2,7 @@
 /**
  * The template for displaying Search Results pages.
  * @package BestCorporate
- * @since BestCorporate 1.7
+ * @since BestCorporate 1.8
  */
 
 get_header(); ?>

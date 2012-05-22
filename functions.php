@@ -1,7 +1,7 @@
 <?php
 /**
  * @package BestCorporate
- * @since BestCorporate 1.7
+ * @since BestCorporate 1.8
  */
 
 /**
@@ -51,6 +51,22 @@ function bestcorporate_setup() {
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'add_editor_style' );
 	
+	add_theme_support( 'add_custom_image_header' );
+	add_theme_support( 'add_custom_background' );
+	
+	
+	// This theme allows users to set a custom background
+	add_custom_background();
+
+	define('HEADER_TEXTCOLOR', '000');
+    define('HEADER_IMAGE', '%s/images/logo.png'); // %s is the template dir uri
+    define('HEADER_IMAGE_WIDTH', 220); // use width and height appropriate for your theme
+    define('HEADER_IMAGE_HEIGHT', 90);
+    define('NO_HEADER_TEXT', false);
+	add_custom_image_header();
+	
+	//WordPress 3.4 custom-background, custom-header
+
 	add_theme_support( 'custom-background', array(
 	// Background color default
 	'default-color' => 'fff',
@@ -278,69 +294,20 @@ function bestcorporate_content_nav( $nav_id ) {
 <?php
 }
 endif; // bestcorporate_content_nav
-
-
-if ( ! function_exists( 'bestcorporate_comment' ) ) :
-/**
- * Template for comments and pingbacks.
- *
- * To override this walker in a child theme without modifying the comments template
- * simply create your own bestcorporate_comment(), and that function will be used instead.
- *
- * Used as a callback by wp_list_comments() for displaying the comments.
- *
+ 
+ /**
+ * Where the post has no post title, but must still display a link to the single-page post view.
  */
-function bestcorporate_comment( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
-	switch ( $comment->comment_type ) :
-		case 'pingback' :
-		case 'trackback' :
-	?>
-<li class="pingback">
-  <p>
-    <?php _e( 'Pingback:', 'bestcorporate' ); ?>
-    <?php comment_author_link(); ?>
-    <?php edit_comment_link( __( '(Edit)', 'bestcorporate' ), ' ' ); ?>
-  </p></li>
-  <?php
-			break;
-		default :
-	?>
-<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-  <article id="comment-<?php comment_ID(); ?>" class="comment">
-    <footer>
-      <div class="comment-author vcard"> <?php echo get_avatar( $comment, 100 ); ?> <?php printf( __( '%s <span class="says">says:</span>', 'bestcorporate' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?> </div>
-      <!-- .comment-author .vcard -->
-      <?php if ( $comment->comment_approved == '0' ) : ?>
-      <em>
-      <?php _e( 'Your comment is awaiting moderation.', 'bestcorporate' ); ?>
-      </em> <br />
-      <?php endif; ?>
-      <div class="comment-meta commentmetadata"> <a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
-        <time pubdate datetime="<?php comment_time( 'c' ); ?>">
-          <?php
-						/* translators: 1: date, 2: time */
-						printf( __( '%1$s at %2$s', 'bestcorporate' ), get_comment_date(), get_comment_time() ); ?>
-        </time>
-        <?php edit_comment_link( __( '(Edit)', 'bestcorporate' ), ' ' );
-		?>
-      </div>
-      <!-- .comment-meta .commentmetadata -->
-    </footer>
-    <div class="comment-content">
-      <?php comment_text(); ?>
-    </div>
-    <div class="reply">
-      <?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-    </div>
-    <!-- .reply -->
-  </article>
-</li>
-<?php
-	break;
-	endswitch;
+add_filter('the_title', 'bestcorporate_title');
+
+function bestcorporate_title($title) {
+    if ($title == '') {
+        return 'Untitled';
+    } else {
+        return $title;
+    }
 }
-endif; // ends check for bestcorporate_comment()
+ 
 
 if ( ! function_exists( 'bestcorporate_posted_on' ) ) :
 /**

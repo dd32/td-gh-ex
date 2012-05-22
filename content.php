@@ -1,7 +1,7 @@
 <?php
 /**
  * @package BestCorporate
- * @since BestCorporate 1.7
+ * @since BestCorporate 1.8
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -47,6 +47,27 @@
       <?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'bestcorporate'), 'after' => '</div>' ) ); ?>
     </div>
     <!-- .entry-content -->
+    <footer class="entry-meta">
+      <?php
+			$tag_list = get_the_tag_list( '', ', ' );
+
+				if ( '' != $tag_list ) {
+					$meta_text = __( 'Tags: %1$s.', 'bestcorporate' );
+				} 
+				else
+				{
+				$meta_text='';	
+				}
+			printf(
+				$meta_text,
+				$tag_list,
+				get_permalink(),
+				the_title_attribute( 'echo=0' )
+			);
+		?>
+      <?php edit_post_link( __( 'Edit', 'bestcorporate' ), '<span class="edit-link">', '</span>' ); ?>
+    </footer>
+    <!-- .entry-meta -->
     <?php endif; ?>
 </article>
 <!-- #post-<?php the_ID(); ?> -->

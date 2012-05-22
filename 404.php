@@ -3,7 +3,7 @@
  * The template for displaying 404 pages (Not Found).
  *
  * @package BestCorporate
- * @since BestCorporate 1.7
+ * @since BestCorporate 1.8
  */
 
 get_header(); ?>
