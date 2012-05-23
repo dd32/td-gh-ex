@@ -71,8 +71,8 @@
 <div id="page" class="hfeed">
 	<header id="branding" role="banner">
 			
-			<div style="width:180px; height:150px; background: #545151; margin: 10px 0 0 30px; float:left;"><?php include("bannerad1.php") ?></div>
-            <div style="width:180px; height:150px; background: #545151; margin: 10px 30px 0 0; float:right;"><?php include("bannerad2.php") ?></div>
+			<div class="bannerad1"><?php include("bannerad1.php") ?></div>
+            <div class="bannerad2"><?php include("bannerad2.php") ?></div>
             <hgroup>
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php bloginfo( 'name' ); ?>"/></a>
             

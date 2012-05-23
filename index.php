@@ -17,7 +17,7 @@ get_header(); ?>
 		<div id="primary">
 			<div id="content" role="main">
 
-			<div style="width:728px; height:90px; display: block; background: #545151;"><?php include("pagetopad.php") ?></div>
+			<div class="pagetopad"><?php include("pagetopad.php") ?></div>
             
 			<?php if ( have_posts() ) : ?>
 

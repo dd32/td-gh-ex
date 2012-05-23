@@ -52,9 +52,9 @@ function d5smartia_setup() {
 }
 endif; // d5smartia_setup
 
+if ( ! isset( $content_width ) )
+	$content_width = 584;
  
-if ( ! isset( $content_width ) ) $content_width = 728; 
-
  /* To override this length in a child theme, remove the filter and add your own
  * function tied to the excerpt_length filter hook.
  */
