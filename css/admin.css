@@ -1,0 +1,23 @@
+/*
+    Document   : admin
+    Created on : 13-mag-2012, 18.57.55
+    Author     : Aurelio De Rosa <aurelioderosa@gmail.com>
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+#menu-posts-annarita_review .wp-menu-image
+{
+   background: url('../images/review_menu_icon.png') no-repeat 6px 6px !important;
+}
+
+#menu-posts-annarita_review:hover .wp-menu-image,
+#menu-posts-annarita_review.wp-has-current-submenu .wp-menu-image
+{
+   background-position: 6px -19px !important;
+}
+
+#icon-edit.icon32-posts-annarita_review
+{
+   background: url('../images/review_icon_32x32.png') no-repeat;
+}

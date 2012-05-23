@@ -1,0 +1,673 @@
+/*
+    Theme Name: Annarita
+    Theme URI: http://wordpress.org/extend/themes/annarita
+    Description: Annarita is a very lightweight and adaptable theme based on HTML5 and CSS3. It lets you to create custom menu, sidebars, header image, background and support for featured images and it shows a special ribbon for "sticky" posts. It has the support to customize some settings of the theme. The sidebars can be hidden by the users with a click and this status can be persistent (if the admin enables the relative setting saving the preference using cookie in the Settings page). Basically it supports related posts and microformats as hcard and hreview (using a custom post type). For the reviews the theme has a custom widget to best show them. Annarita has two dedicated areas to publish advertisements, one above the header and one in the footer.
+    Author: Aurelio De Rosa
+    Author URI: http://www.audero.it
+    Version: 1.0
+    Tags: blue, gray, black, red, white, two-columns, three-columns, fixed-width, custom-background, custom-header, custom-menu, featured-images, sticky-post, threaded-comments, translation-ready
+
+    License: GNU General Public License version 3
+    License URI: http://www.gnu.org/licenses/gpl-3.0.html
+
+    To my girlfriend, Annarita, with love.
+*/
+
+/******************
+       BASE
+*******************/
+.alignnone
+{
+   margin: 5px 20px 20px 0px;
+}
+
+.aligncenter, div.aligncenter
+{
+   display: block;
+   margin: 5px auto 5px auto;
+}
+
+.alignright
+{
+   float: right;
+   margin: 0px 0px 5px 10px;
+}
+
+.alignleft
+{
+   float: left;
+   margin: 0px 10px 5px 0px;
+}
+
+.aligncenter
+{
+   display: block;
+   margin: 5px auto 5px auto;
+}
+
+a img.alignright
+{
+   float: right;
+   margin: 5px 0 20px 20px;
+}
+
+a img.alignnone
+{
+   margin: 5px 20px 20px 0px;
+}
+
+a img.alignleft
+{
+   float: left;
+   margin: 5px 20px 20px 0px;
+}
+
+a img.aligncenter
+{
+   display: block;
+   margin-left: auto;
+   margin-right: auto
+}
+
+.wp-caption
+{
+   border: 1px solid #F0F0F0;
+   max-width: 96%;
+   padding: 5px 3px 10px;
+   text-align: center;
+}
+
+.wp-caption.alignnone
+{
+   margin: 5px 20px 20px 0px;
+}
+
+.wp-caption.alignleft
+{
+   margin: 5px 20px 20px 0px;
+}
+
+.wp-caption.alignright
+{
+   margin: 5px 0px 20px 20px;
+}
+
+.wp-caption img
+{
+   border: 0px none;
+   height: auto;
+   margin: 0px;
+   max-width: 98.5%;
+   padding: 0px;
+   width: auto;
+}
+
+.wp-caption p.wp-caption-text
+{
+   font-size: 11px;
+   line-height: 17px;
+   margin: 0px;
+   padding: 0px 4px 5px;
+}
+
+.gallery-caption
+{
+
+}
+
+.sticky
+{
+   position: relative;
+}
+
+.bypostauthor
+{
+   background-color: #D1FFE0 !important;
+}
+
+/******************
+      GENERAL
+*******************/
+header,
+hgroup,
+nav,
+section,
+article,
+aside,
+footer
+{
+   display: block;
+}
+
+html
+{
+   background-color: #85B4FF;
+}
+
+body
+{
+   width: 980px;
+   margin: 0px auto;
+   border: 2px solid black;
+   border-radius: 5px;
+   background-color: #FFFFFF;
+   font-family: helvetica,arial;
+   font-size: 13px;
+   word-wrap: break-word;
+}
+
+.clear-both
+{
+   clear: both;
+}
+
+h1,
+h2,
+h3,
+h4
+{
+   font-family: 'Amethysta',serif,arial;
+}
+
+a
+{
+   color: #C92920;
+   text-decoration: none;
+}
+
+a:hover
+{
+   text-decoration: underline;
+}
+
+a:visited
+{
+   color: #336699;
+}
+
+img
+{
+   border: 0px;
+}
+
+hr.separator
+{
+   margin: 1em;
+}
+
+.hidden
+{
+   display: none;
+}
+
+.property
+{
+   font-weight: bold;
+   float: left;
+   clear: left;
+   margin-bottom: 2px;
+}
+
+.value
+{
+   float: left;
+   margin-left: 5px;
+}
+
+pre
+{
+   border: 2px dotted #808080;
+   background-color: #FFFFFF;
+}
+
+/******************
+      HEADER
+*******************/
+
+header.main-header
+{
+   min-height: 150px;
+   position: relative;
+}
+
+header.main-header hgroup
+{
+   width: 65%;
+}
+
+header.main-header hgroup h1,
+header.main-header hgroup h2
+{
+   margin: 0px;
+}
+
+div#meta a
+{
+   margin-left: 10px;
+   color: #FFFFFF;
+}
+
+.rss-icon
+{
+   vertical-align: middle;
+}
+
+header.main-header > form#search
+{
+   float: right;
+   clear: right;
+   margin: 0px 0px 5px 10px;
+   position: absolute;
+   bottom: 0px;
+   right: 5px;
+}
+
+input#search-query
+{
+   width: 130px;
+   -webkit-transition: all 1s;
+   -moz-transition: width 1s;
+   -o-transition: width 1s;
+   -ms-transition: width 1s;
+   transition: width 1s;
+}
+
+input#search-query:focus
+{
+   width: 200px;
+}
+
+nav.main-menu
+{
+   background-color: #85B4FF;
+   margin: 10px 0px;
+   float: left;
+   width: 100%;
+}
+
+nav.main-menu ul
+{
+   list-style-type: none;
+}
+
+nav.main-menu li
+{
+   background-color: #85B4FF;
+   float: left;
+   position: relative;
+   border-bottom: 1px solid #CCCCCC;
+
+   -webkit-transition: background-color 1s;
+   -moz-transition: background-color 1s;
+   -o-transition: background-color 1s;
+   -ms-transition: background-color 1s;
+   transition: background-color 1s;
+}
+
+nav.main-menu li:hover
+{
+   background-color: #C92920;
+}
+
+nav.main-menu a
+{
+   color: #FFFFFF;
+   display: block;
+   padding: 5px 10px;
+}
+
+nav.main-menu a:hover
+{
+   text-decoration: none;
+}
+
+#menu-header
+{
+   padding: 0px;
+   margin: 0px;
+}
+
+#menu-header > li
+{
+   border-top: 1px solid #CCCCCC;
+   border-right: 1px solid #CCCCCC;
+}
+
+aside#header-space
+{
+   background-color: #85B4FF;
+   border-bottom: 2px solid black;
+}
+
+/******************
+      SIDEBAR
+*******************/
+
+.sidebar
+{
+   width: 150px;
+}
+
+#left-sidebar-wrapper
+{
+   margin: 0px 12px 5px 5px;
+   position: relative;
+}
+
+#right-sidebar-wrapper
+{
+   margin: 0px 10px 5px 0px;
+   position: relative;
+}
+
+.widget
+{
+   margin-bottom: 10px;
+   border: 2px solid black;
+   border-top: 10px solid black;
+   border-radius: 20px 20px 5px 5px;
+   box-shadow: 10px 10px 5px #888888;
+   background-color: #E8E8E8;
+}
+
+.widgettitle
+{
+   background-color: #85B4FF;
+   margin: 0px;
+   text-align: center;
+   font-size: 15px;
+   border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
+}
+
+.widget ul
+{
+   list-style: none;
+   padding: 0px 5px;
+}
+
+.widget ul > li
+{
+   margin-bottom: 0.5em;
+   padding-bottom: 0.2em;
+   border-bottom:  1px solid #CCCCCC;
+}
+
+.widget .tagcloud
+{
+   padding: 5px;
+}
+
+.hide-sidebar
+{
+   font-size: 22px;
+   font-weight: bold;
+   text-decoration: none;
+   color: #C92920;
+}
+
+#hide-left
+{
+   position: absolute;
+   top: -15px;
+   right: -10px;
+}
+
+#hide-right
+{
+   position: absolute;
+   top: -15px;
+   left: -10px;
+}
+
+/******************
+      CONTENT
+*******************/
+
+div#content
+{
+   width: 630px;
+   padding: 0px 5px;
+}
+
+article.hentry,
+article.annarita_review
+{
+   background-color: #E8E8E8;
+   margin-bottom: 10px;
+   padding: 0.5em 1em;
+   border-width: 10px 2px 2px 2px;
+   border-style: solid;
+   border-color: black;
+   border-radius: 20px 20px 5px 5px;
+   box-shadow: 10px 10px 5px #888888;
+}
+
+.post-title
+{
+   margin-top: 0px;
+   margin-bottom: 2px;
+}
+
+.post-title a
+{
+   display:block;
+   width: 95%;
+
+   -webkit-transform-origin: left;
+   -moz-transform-origin: left;
+   -o-transform-origin: left;
+   -ms-transform-origin: left;
+   transform-origin: left;
+
+   -webkit-transition: all 1s;
+   -moz-transition: all 1s;
+   -o-transition: all 1s;
+   -ms-transition: all 1s;
+   transition: all 1s;
+}
+
+.post-title a:hover
+{
+   text-decoration: none;
+   text-shadow: 4px 4px 3px #999999;
+
+   -webkit-transform: scale(1.05);
+   -moz-transform: scale(1.05);
+   -o-transform: scale(1.05);
+   -ms-transform: scale(1.05);
+   transform: scale(1.05);
+}
+
+.post-category,
+.post-tags,
+.post-author
+{
+   margin: 0.5em 0em;
+}
+
+article.hentry > footer
+{
+   margin-bottom: 10px;
+}
+
+div.pagination
+{
+   margin: 1em 0em 0.5em 0em;
+}
+
+.navigation
+{
+   margin-top: 2em;
+}
+
+div#navigation-next,
+div#navigation-previous
+{
+   width: 30%;
+}
+
+div#navigation-next
+{
+   text-align: left;
+}
+
+div#navigation-previous
+{
+   text-align: right;
+}
+
+div.comment-list
+{
+   margin-bottom: 10px;
+   padding: 0.5em;
+   border-width: 10px 2px 2px 2px;
+   border-style: solid;
+   border-color: black;
+   border-radius: 20px 20px 5px 5px;
+   box-shadow: 10px 10px 5px #888888;
+}
+
+article.comment
+{
+   margin-bottom: 10px;
+   padding: 0.5em 1em;
+   border: 2px solid black;
+   border-radius: 5px;
+}
+
+article.comment.odd
+{
+   background-color: #F8FFDE;
+}
+
+article.comment.even
+{
+   background-color: #E8E8E8;
+}
+
+.avatar
+{
+   float: left;
+   margin: 0px 5px 5px 0px;
+   vertical-align: top;
+}
+
+article.comment > p
+{
+   margin-top: 0.5em;
+}
+
+div.meta
+{
+   clear: both;
+}
+
+article summary
+{
+   font-weight: bold;
+}
+
+#commentform input,
+#commentform textarea
+{
+   display: block;
+}
+
+.post-meta-key
+{
+   font-weight: bold;
+   font-style: italic;
+}
+
+.sticky-label
+{
+   text-align: center;
+   position: absolute;
+   right: -30px;
+   top: 25px;
+   width: 120px;
+   height: 1px;
+   border-left: 48px solid transparent;
+   border-right: 26px solid transparent;
+   border-bottom: 36px solid yellow;
+   border-top: none;
+
+   -webkit-transform: rotate(37deg);
+   -moz-transform: rotate(37deg);
+   -ms-transform: rotate(37deg);
+   transform: rotate(37deg);
+}
+
+.sticky-text
+{
+   display: block;
+   font-size: 20px;
+   padding-top: 0.3em;
+}
+
+div.user-card
+{
+   margin-bottom: 20px;
+}
+
+/******************
+      FOOTER
+*******************/
+
+footer.main-footer
+{
+   background-color: #ADADAD;
+}
+
+footer.main-footer a
+{
+   color: #FFFFFF;
+}
+
+nav.menu-footer-container
+{
+   text-align: center;
+}
+
+nav.menu-footer-container > ul
+{
+   width: 80%;
+   margin: 0px auto;
+}
+
+nav.menu-footer-container > ul > li
+{
+   list-style-type: none;
+   padding: 5px 10px;
+   float: left;
+   width: 30%;
+}
+
+small#copyright
+{
+   margin-top: 5px;
+   padding-left: 10px;
+}
+
+a#go-to-top
+{
+   margin-top: 10px;
+   margin-right: 5px;
+   font-size: 16px;
+}
+
+aside#footer-space
+{
+   padding: 10px 0px;
+}
+
+/******************
+      WIDGET
+*******************/
+
+img.annarita-review-widget-thumbnail
+{
+   width: 95%;
+   height: 100%;
+}

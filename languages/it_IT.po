@@ -1,0 +1,436 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Annarita\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-23 03:43+0100\n"
+"PO-Revision-Date: 2012-05-23 03:43+0100\n"
+"Last-Translator: Aurelio De Rosa <aurelioderosa@gmail.com>\n"
+"Language-Team: Aurelio De Rosa <aurelioderosa@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;_e;__;_ex\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: Italian\n"
+"X-Poedit-Country: ITALY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:17
+msgid "Page not found"
+msgstr "Pagina non trovata"
+
+#: ../404.php:20
+msgid ""
+"What a shame! The page you were looking for isn&apos;t available anymore. Oh, wait! Could this be your typo?\n"
+"\n"
+msgstr ""
+"Che imbarazzo! La pagina che stavi cercando non &egrave; pi&ugrave; disponibile. Oh, aspetta! Potrebbe esere un tuo errore di battitura?\n"
+"\n"
+
+#: ../404.php:21
+msgid "Anyway...feel free to continue navigating into our website or try searching some cool stuff."
+msgstr "Ad ogni modo...sentiti libero di continuare a navigare nel nostro sito o di cercare qualcosa."
+
+#: ../404.php:25
+msgid "Search in our website"
+msgstr "Cerca nel nostro sito"
+
+#: ../404.php:27
+#: ../404.php:28
+#: ../searchform.php:15
+#: ../searchform.php:16
+msgid "Search"
+msgstr "Cerca"
+
+#: ../404.php:37
+msgid "Most recent posts"
+msgstr "Post pi&ugrave; recenti"
+
+#: ../404.php:46
+#: ../404.php:74
+#: ../author.php:59
+#: ../index.php:34
+#: ../page.php:21
+#: ../search.php:38
+#: ../single.php:108
+#: ../includes/Annarita_review_widget.php:90
+msgid "Permalink to: "
+msgstr "Permalink a:"
+
+#: ../404.php:65
+msgid "Most commented posts"
+msgstr "Post pi&ugrave; commentati"
+
+#: ../author.php:22
+msgid "avatar"
+msgstr "Immagine dell&apos;autore"
+
+#: ../author.php:23
+msgid "Full name"
+msgstr "Nome completo"
+
+#: ../author.php:25
+msgid "Nickname"
+msgstr "Nickname"
+
+#: ../author.php:27
+msgid "Website"
+msgstr "Sito web"
+
+#: ../author.php:34
+msgid "Description"
+msgstr "Descrizione"
+
+#: ../author.php:42
+#: ../index.php:21
+msgid "Nothing there"
+msgstr "Niente qui"
+
+#: ../author.php:43
+msgid "I am sorry. This user has not written a post yet."
+msgstr "Sono spiacente. Questo utente non ha ancora scritto post."
+
+#: ../author.php:49
+msgid "Posts by"
+msgstr "Post di"
+
+#: ../author.php:66
+#: ../index.php:41
+#: ../search.php:45
+#: ../single.php:24
+msgid "Post written by"
+msgstr "Post scritto da"
+
+#: ../author.php:66
+#: ../functions.php:215
+#: ../index.php:41
+#: ../search.php:45
+#: ../single-annarita_review.php:33
+#: ../single.php:24
+msgid "at"
+msgstr "il"
+
+#: ../author.php:68
+#: ../index.php:43
+#: ../search.php:47
+#: ../single-annarita_review.php:35
+#: ../single.php:26
+#, php-format
+msgid "Posts of the %s"
+msgstr "Post del %s"
+
+#: ../author.php:74
+#: ../index.php:49
+#: ../search.php:53
+#: ../single-annarita_review.php:69
+#: ../single.php:32
+msgid "Categories"
+msgstr "Categorie"
+
+#: ../author.php:74
+#: ../functions.php:160
+#: ../index.php:49
+#: ../search.php:53
+#: ../single-annarita_review.php:69
+#: ../single.php:32
+msgid "Category"
+msgstr "Categoria"
+
+#: ../author.php:75
+#: ../index.php:50
+#: ../search.php:54
+#: ../single-annarita_review.php:70
+#: ../single.php:33
+msgid "Tags"
+msgstr "Tags"
+
+#: ../author.php:77
+#: ../functions.php:233
+#: ../index.php:52
+#: ../page.php:49
+#: ../search.php:56
+#: ../single-annarita_review.php:72
+#: ../single.php:35
+msgid "Edit"
+msgstr "Modifica"
+
+#: ../author.php:78
+#: ../index.php:53
+#: ../page.php:50
+#: ../search.php:57
+#: ../single-annarita_review.php:73
+#: ../single.php:36
+msgid "No Comments"
+msgstr "Nessun commento"
+
+#: ../author.php:78
+#: ../index.php:53
+#: ../page.php:50
+#: ../search.php:57
+#: ../single-annarita_review.php:73
+#: ../single.php:36
+msgid "1 Comment"
+msgstr "1 Commento"
+
+#: ../author.php:78
+#: ../index.php:53
+#: ../page.php:50
+#: ../search.php:57
+#: ../single-annarita_review.php:73
+#: ../single.php:36
+msgid "% Comments"
+msgstr "% Commenti"
+
+#: ../author.php:88
+#: ../functions.php:150
+#: ../index.php:63
+msgid "Read more"
+msgstr "Continua a leggere"
+
+#: ../author.php:95
+#: ../index.php:70
+#: ../search.php:68
+msgid "&laquo; Older posts"
+msgstr "&laquo; Vecchi post"
+
+#: ../author.php:96
+#: ../index.php:71
+#: ../search.php:69
+msgid "Newer posts &raquo;"
+msgstr "Nuovi post &raquo;"
+
+#: ../comments.php:18
+msgid "This post is protected by a password. Please, enter the password to view the comments."
+msgstr "Questo post è protetto da una password. Per favore, inseriscila per vedere i commenti."
+
+#: ../comments.php:28
+msgid "Trackbacks"
+msgstr "Trackbacks"
+
+#: ../comments.php:39
+msgid "Comments"
+msgstr "Commenti"
+
+#: ../comments.php:42
+msgid "I am sorry but there are no comment yet."
+msgstr "Sono spiacente ma non ci sono ancora commenti."
+
+#: ../footer.php:35
+#: ../footer.php:36
+msgid "Template"
+msgstr "Template"
+
+#: ../footer.php:39
+msgid "created by"
+msgstr "creato da"
+
+#: ../footer.php:44
+msgid "Go to top"
+msgstr "Vai in cima"
+
+#: ../functions.php:34
+msgid "Sticky post"
+msgstr "In evidenza"
+
+#: ../functions.php:63
+msgid "Sidebar left"
+msgstr "Barra laterale sinistra"
+
+#: ../functions.php:69
+msgid "Sidebar right"
+msgstr "Barra laterale destra"
+
+#: ../functions.php:75
+msgid "Header space"
+msgstr "Spazio nello header"
+
+#: ../functions.php:81
+msgid "Footer space"
+msgstr "Spazio nel footer"
+
+#: ../functions.php:103
+#: ../includes/Annarita_review_widget.php:30
+msgid "Reviews"
+msgstr "Recensioni"
+
+#: ../functions.php:104
+msgid "Review"
+msgstr "Recensione"
+
+#: ../functions.php:106
+msgid "Use this post type to create reviews"
+msgstr "Usa questo tipo di post per creare recensioni"
+
+#: ../functions.php:109
+msgid "reviews"
+msgstr "recensioni"
+
+#: ../functions.php:139
+msgid "Header Menu"
+msgstr "Header Menu"
+
+#: ../functions.php:140
+msgid "Footer Menu"
+msgstr "Footer Menu"
+
+#: ../functions.php:162
+msgid "Tag"
+msgstr "Tag"
+
+#: ../functions.php:164
+msgid "Author"
+msgstr "Autore"
+
+#: ../functions.php:166
+msgid "Archive"
+msgstr "Archivio"
+
+#: ../functions.php:214
+msgid "Author avatar"
+msgstr "Immagine dell&apos;autore"
+
+#: ../functions.php:217
+msgid "Comment written at"
+msgstr "Commento scritto il"
+
+#: ../functions.php:222
+msgid "wrote"
+msgstr "ha scritto"
+
+#: ../functions.php:227
+msgid "Your comment is awaiting moderation."
+msgstr "Il tuo commento è in attesa di moderazione."
+
+#: ../index.php:22
+msgid "I am sorry. There are not posts yet."
+msgstr "Sono spiacente. Non ci sono ancora post."
+
+#: ../page.php:40
+#: ../single.php:70
+msgid "Extra data"
+msgstr "Dati extra"
+
+#: ../search.php:17
+msgid "Search again"
+msgstr "Cerca di nuovo"
+
+#: ../search.php:20
+#, php-format
+msgid "Search results for: %s"
+msgstr "Risultati per: %s"
+
+#: ../search.php:25
+msgid "No match found"
+msgstr "Nessun risultato trovato"
+
+#: ../search.php:26
+msgid "Unbelievable! It seems that you searched for something we have not written about yet."
+msgstr "Incredibile! Sembra che hai cercato qualcosa di cui non abbiamo ancora scritto."
+
+#: ../sidebar-right.php:20
+#: ../sidebar.php:20
+msgid "Hide/Show sidebar"
+msgstr "Nascondi/Mostra sidebar"
+
+#: ../single-annarita_review.php:27
+msgid "Review written by"
+msgstr "Post scritto da"
+
+#: ../single.php:45
+msgid "Summary"
+msgstr "Riassunto"
+
+#: ../single.php:100
+msgid "Related posts"
+msgstr "Post correlati"
+
+#: ../includes/Annarita_review_widget.php:24
+msgid "This widget lets you to show your own reviews with the related image if provided"
+msgstr "Questo widget ti consente di mostrare le tue recensioni con l&apos;immagine correlata se è stata fornita"
+
+#: ../includes/Annarita_review_widget.php:34
+msgid "Title"
+msgstr "Titolo"
+
+#: ../includes/Annarita_review_widget.php:39
+msgid "Number of reviews to show"
+msgstr "Numero di recensioni da mostrare"
+
+#: ../includes/meta_box.php:24
+msgid "product"
+msgstr "prodotto"
+
+#: ../includes/meta_box.php:25
+msgid "business"
+msgstr "azienda"
+
+#: ../includes/meta_box.php:26
+msgid "event"
+msgstr "evento"
+
+#: ../includes/meta_box.php:27
+msgid "person"
+msgstr "persona"
+
+#: ../includes/meta_box.php:28
+msgid "place"
+msgstr "luogo"
+
+#: ../includes/meta_box.php:29
+msgid "website"
+msgstr "sito web"
+
+#: ../includes/meta_box.php:30
+msgid "url"
+msgstr "url"
+
+#: ../includes/meta_box.php:38
+msgid "Review info"
+msgstr "Informazioni recensione"
+
+#: ../includes/meta_box.php:46
+msgid "Select the type of your review"
+msgstr "Seleziona il tipo di recensione"
+
+#: ../includes/meta_box.php:66
+msgid "Write you rate for the reviewed item. The value must be between 1 and 5. Decimal numbers are allowed (i.e. 4.5)"
+msgstr "Scrivi il voto per l'elemento recensito. Il valore deve essere compreso tra 1 e 5. I valori decimali sono ammessi (ad esempio 4.5)"
+
+#: ../includes/settings.php:18
+msgid "Settings"
+msgstr "Impostazioni"
+
+#: ../includes/settings.php:21
+msgid "General settings"
+msgstr "Impostazioni generali"
+
+#: ../includes/settings.php:23
+msgid "Sidebars cookie"
+msgstr "Cookie per le barre laterali"
+
+#: ../includes/settings.php:42
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Non hai i permessi necessari per accedere a questa pagina."
+
+#: ../includes/settings.php:48
+msgid "Annarita options"
+msgstr "Opzioni Annarita"
+
+#: ../includes/settings.php:50
+msgid "Use this page to customize the template based on your preferences."
+msgstr "Usa questa pagina per personalizzare il template in base alle tue preferenze."
+
+#: ../includes/settings.php:77
+msgid "Display related posts"
+msgstr "Mostra post correlati"
+
+#: ../includes/settings.php:89
+msgid "Use cookies to save the preference of the users to show or hide sidebars"
+msgstr "Usa i cookie per salvare le preferenze degli utenti nel mostrare o nascondere le barre laterali"
+
+#~ msgid "Most recent posts by"
+#~ msgstr "Post pi&ugrave; recenti di"
+
+#~ msgid "Read more about"
+#~ msgstr "Continua a leggere su"
