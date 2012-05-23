@@ -34,10 +34,7 @@
 			<?php
 			// List comments
 			wp_list_comments(array(
-				'callback' => create_function(
-					'$this_comment, $args, $depth',
-					'the_comment(); global $comment; $comment = $this_comment; include("' . dirname(__FILE__) . '/comment-single.php");'
-				)
+				'callback' => 'origami_comment'
 			));
 			?>
 		</ol>
@@ -51,20 +48,12 @@
 				'url' => sprintf('<input name="author" type="text" placeholder="%s" />', __('Website', 'origami')),
 			),
 			'comment_field' => '<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>',
-			'title_reply' => sprintf(
-				'<h3 class="comments-title">%s</h3>',
-				__( 'Leave a Reply' , 'origami')
-			),
-			'title_reply_to' => sprintf(
-				'<div class="section-title decorated-title"><div class="wrap"><div class="title">%s</div><div class="after-pattern"><div></div></div></div></div>',
-				__( 'Leave a Reply To %s' , 'origami')
-			)
 		));
 		?>
 	</div>
 <?php endif; ?>
 
-<?php if(!comments_open()) : ?>
+<?php if(!comments_open() && !is_page() && post_type_supports(get_post_type(), 'comments')) : ?>
 	<div id="comments" class="comments-disabled content">
 		<p><?php _e('Comments are Disabled', 'origami') ?></p>
 	</div>

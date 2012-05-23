@@ -5,7 +5,7 @@ Description: Origami is a simple, responsive media blogging theme that places st
 Tags: one-column, flexible-width, post-formats, custom-menu, theme-options, threaded-comments, translation-ready, photoblogging
 Author: SiteOrigin
 Author URI: http://siteorigin.com
-Version: 1.0
+Version: 1.0.1
 License: GPL
 License URI: http://wordpress.org/about/gpl/
 */
@@ -315,7 +315,8 @@ h1.archive-title {
 	font-size: 2.2em;
 	font-size: 28px;
 	font-weight: 200;
-	margin: 1em 0 0.5em 0;
+	line-height: 1.25em;
+	margin: 1em 0 0.4em 0;
 	text-align: center;
 }
 
@@ -575,9 +576,6 @@ a img.aligncenter {
 .gallery-caption {
 }
 
-.bypostauthor {
-}
-
 .content *:first-child {
 	margin-top: 0px;
 }
@@ -597,16 +595,17 @@ a img.aligncenter {
 
 .content p,
 .content ul,
-.content ol {
+.content ol,
+.content dl {
 	line-height: 1.6em;
 	margin: 2em 0;
 }
 
 .content ul li {
-	background: url(images/bullet.png) no-repeat left center;
-	display: block;
-	margin-bottom: 0.5em;
-	padding-left: 1.5em;
+	display: list-item;
+	line-height: 1.75em;
+	list-style: url(images/bullet.png);
+	list-style-position: outside;
 }
 
 .content ol {
@@ -617,7 +616,12 @@ a img.aligncenter {
 
 .content ol li {
 	display: list-item;
-	margin-bottom: 0.5em;
+	line-height: 1.75em;
+}
+
+.content ul ul,
+.content ol ol {
+	margin-bottom: 0;
 }
 
 .content blockquote {
@@ -627,6 +631,11 @@ a img.aligncenter {
 	color: #666;
 	font-style: italic;
 	padding: 1.5em 20px 1.5em 60px;
+}
+
+.content blockquote cite {
+	color: #333;
+	font-weight: bold;
 }
 
 .content blockquote p:first-child {
@@ -657,6 +666,41 @@ a img.aligncenter {
 	border: 0px;
 	border-top: 1px solid #CCC;
 }
+
+.content sup,
+.content sub {
+	position: relative;
+	height: 0;
+	
+	font-size: 10px;
+	line-height: 1;
+	vertical-align: baseline;
+}
+
+.content sup {
+	bottom: 1ex;
+	
+}
+
+.content sub {
+	top: .5ex;
+	
+}
+
+/* =Content  : Definition list 
+-------------------------------------------------------------- */
+
+.content dl dt {
+	font-weight: bold;
+}
+
+.content dl dd {
+	margin-bottom: 1.5em;
+	padding-left: 1.5em;
+}
+
+/* =Content  : Headings 
+-------------------------------------------------------------- */
 
 .content h1,
 .content h2,
@@ -730,43 +774,43 @@ a img.aligncenter {
 /* =Comments  : Comments 
 -------------------------------------------------------------- */
 
-.comment-wrapper {
+.comment {
 	margin-bottom: 45px;
 }
 
-.comment-wrapper .avatar-container {
+.comment .avatar-container {
 	float: left;
 }
 
-.comment-wrapper.comment-depth-1 .avatar-container {
+.comment.depth-1 .avatar-container {
 	background: #F2F2F2;
 	border: 1px solid #E8E8E8;
 	line-height: 0;
 	padding: 2px;
 }
 
-.comment-wrapper .comment-container {
-	margin-left: 55px;
+.comment .comment-container {
+	margin-left: 86px;
 }
 
-.comment-wrapper.comment-depth-1 .comment-container {
-	margin-left: 80px;
+.comment .children .comment .comment-container {
+	margin-left: 71px;
 }
 
-.comment-wrapper {
-	margin-left: 55px;
+.comment {
 }
 
-.comment-wrapper.comment-type-pingback .comment-container {
+.comment .children {
+	margin-left: 86px;
+	margin-top: 45px;
+}
+
+.comment .children .children {
+	margin-left: 71px;
+}
+
+.comment.type-pingback .comment-container {
 	margin-left: 0;
-}
-
-.comment-wrapper.comment-depth-2 {
-	margin-left: 80px;
-}
-
-.comment-wrapper.comment-depth-1 {
-	margin-left: 0px;
 }
 
 /* =Comments  : Comments  : Comment Style 
@@ -786,8 +830,13 @@ a img.aligncenter {
 .comment-container .info .author {
 	color: #444;
 	display: block;
-	font-weight: 400;
-	margin-bottom: 0.25em;
+	font-size: 13px;
+	font-weight: bold;
+	margin-bottom: 0.5em;
+}
+
+.bypostauthor .info .author {
+	font-style: italic;
 }
 
 .comment-container .info .author a {
@@ -797,6 +846,7 @@ a img.aligncenter {
 .comment-container .info .date {
 	color: #888;
 	display: block;
+	margin-bottom: 1em;
 }
 
 .comment-container a.comment-reply-link {
@@ -811,6 +861,60 @@ a img.aligncenter {
 
 /* =Comments  : Respond 
 -------------------------------------------------------------- */
+
+#comments .commentlist #respond {
+	background: #F9F9F9;
+	border: 1px solid #EEEEEE; /* Style comment for when replying to another post */ 
+	margin-bottom: 45px;
+	margin-left: 86px;
+	padding: 30px;
+}
+
+#comments .commentlist .children #respond {
+	margin-left: 71px;
+}
+
+#respond #reply-title {
+	position: relative;
+	
+	color: #333;
+	font-size: 16px;
+	font-weight: 400;
+	margin: 20px 0;
+}
+
+#comments .commentlist #respond #reply-title {
+	margin-top: 0;
+}
+
+#respond #reply-title #cancel-comment-reply-link {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	
+	background: rgb(249,249,249);
+	background: -moz-linear-gradient(top, rgba(249,249,249,1) 0%, rgba(237,237,237,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(249,249,249,1)), color-stop(100%,rgba(237,237,237,1)));
+	background: -webkit-linear-gradient(top, rgba(249,249,249,1) 0%,rgba(237,237,237,1) 100%);
+	background: -o-linear-gradient(top, rgba(249,249,249,1) 0%,rgba(237,237,237,1) 100%);
+	background: -ms-linear-gradient(top, rgba(249,249,249,1) 0%,rgba(237,237,237,1) 100%);
+	background: linear-gradient(top, rgba(249,249,249,1) 0%,rgba(237,237,237,1) 100%);
+	border: 1px solid #c3c3c3;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0px 1px 1px rgba(0,0,0,0.1), inset 0px -1px 0px rgba(255,255,255,0.5);
+	-moz-box-shadow: 0px 1px 1px rgba(0,0,0,0.1), inset 0px -1px 0px rgba(255,255,255,0.5);
+	box-shadow: 0px 1px 1px rgba(0,0,0,0.1), inset 0px -1px 0px rgba(255,255,255,0.5);
+	color: #666;
+	cursor: pointer;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#ededed',GradientType=0 );
+	font-size: 11px;
+	margin-top: -10px;
+	padding: 4px 18px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px rgba(255,255,255,0.75);
+}
 
 #respond .logged-in-as,
 #respond .comment-notes {
@@ -871,9 +975,9 @@ a img.aligncenter {
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
-	-webkit-box-shadow: 0px 1px 1px rgba(0,0,0,0.15), inset 0px -1px 0px rgba(255,255,255,0.5);
-	-moz-box-shadow: 0px 1px 1px rgba(0,0,0,0.15), inset 0px -1px 0px rgba(255,255,255,0.5);
-	box-shadow: 0px 1px 1px rgba(0,0,0,0.15), inset 0px -1px 0px rgba(255,255,255,0.5);
+	-webkit-box-shadow: 0px 1px 1px rgba(0,0,0,0.1), inset 0px -1px 0px rgba(255,255,255,0.5);
+	-moz-box-shadow: 0px 1px 1px rgba(0,0,0,0.1), inset 0px -1px 0px rgba(255,255,255,0.5);
+	box-shadow: 0px 1px 1px rgba(0,0,0,0.1), inset 0px -1px 0px rgba(255,255,255,0.5);
 	color: #666;
 	cursor: pointer;
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#ededed',GradientType=0 );
@@ -899,14 +1003,24 @@ a img.aligncenter {
 -------------------------------------------------------------- */
 
 #footer-widgets {
+	width: 100%;
+	
 	background-color: #F9F9F9;
 	border-top: 1px solid #EEEEEE;
+	display: table;
 	margin-top: 30px;
 	padding: 20px 0;
 }
 
+#footer-widgets-wrapper {
+	display: table-row;
+	margin: 0 -15px;
+}
+
 #footer-widgets .widget {
 	color: #777;
+	display: table-cell;
+	padding: 0 15px;
 }
 
 #footer-widgets h2.widgettitle {
@@ -914,7 +1028,7 @@ a img.aligncenter {
 	font-family: "Terminal Dosis";
 	font-size: 1.2em;
 	font-weight: 400;
-	margin-bottom: 15px;
+	margin-bottom: 20px;
 }
 
 #footer-widgets a {
@@ -933,7 +1047,7 @@ a img.aligncenter {
 	color: #999999;
 	font-size: 0.85em;
 	margin-bottom: 35px;
-	padding: 0px 20px;
+	padding: 0px 5px;
 	text-align: center;
 }
 

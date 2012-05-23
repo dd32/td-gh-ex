@@ -1,14 +1,13 @@
 <?php
 
-define('SO_THEME_VERSION', '1.0');
+define('SO_THEME_VERSION', '1.0.1');
 
-// Inlude all the SiteOrigine extras
-require_once(dirname(__FILE__).'/extras/firstrun/firstrun.php');
+// Include all the SiteOrigin extras
+require_once(dirname(__FILE__).'/extras/admin/admin.php');
 require_once(dirname(__FILE__).'/extras/simple-options-lite.php');
-require_once(dirname(__FILE__).'/extras/responsive.php');
 
 // Initialize all the options
-require_once(dirname(__FILE__).'/simple-options.php'); 
+require_once(dirname(__FILE__).'/functions/options.php'); 
 
 if(!function_exists('origami_setup')) :
 /**
@@ -23,7 +22,7 @@ function origami_setup(){
 	add_theme_support( 'automatic-feed-links' );
 	
 	// Origami supports post formats
-	add_theme_support( 'post-formats', array( 'gallery', 'image', 'video' , 'aside', 'link', 'quote', 'status') );
+	add_theme_support( 'post-formats', array( 'gallery', 'image', 'video' , 'aside', 'link', 'quote', 'status', 'chat') );
 	
 	// Origami supports post thumbnails
 	add_theme_support( 'post-thumbnails');
@@ -32,7 +31,8 @@ function origami_setup(){
 	register_nav_menu( 'primary', 'Primary Menu' );
 
 	// Add support for custom backgrounds.
-	add_theme_support( 'custom-background' );
+	// TODO change for WordPress 3.4 - add_theme_support( 'custom-background' );
+	add_custom_background();
 	
 	global $content_width;
 	if ( ! isset( $content_width ) ) $content_width = 980;
@@ -59,13 +59,6 @@ function origami_widgets_init(){
 
 		'before_widget' => '<div id="%1$s" class="cell widget %2$s">',
 		'after_widget'  => '</div>',
-
-		// Responsive stuff, from the grid engine
-		'responsive' => true,
-		'grid_selector' => '#footer-widgets',
-		'grid_responds' => '640=50%&420=1',
-		'cell_margin' => 25,
-		'cell_padding' => 10,
 	));
 }
 endif;
@@ -118,6 +111,8 @@ function origami_enqueue_scripts(){
 	wp_enqueue_script('flexslider', get_template_directory_uri().'/js/jquery.flexslider.min.js', array('jquery'), '1.8');
 	wp_enqueue_style('flexslider', get_template_directory_uri().'/css/flexslider.css', array(), '1.8');
 
+	if ( is_singular() ) wp_enqueue_script( "comment-reply" );
+
 	wp_localize_script('origami', 'origami', array(
 		'polyfills' => get_template_directory_uri().'/js/polyfills'
 	));
@@ -144,10 +139,7 @@ if(!function_exists('origami_render_metabox_columns')) :
  * Render the columns metabox.
  */
 function origami_render_metabox_columns(){
-	global $post;
-	$columns = get_post_meta($post->ID, 'content_columns', true);
-	if(empty($columns)) $columns = 2;
-	include(dirname(__FILE__).'/admin/metabox-columns.php');
+	get_template_part('admin/metabox', 'columns');
 }
 endif;
 
@@ -222,3 +214,104 @@ function origami_attribution_footer($before, $after){
 	print $after;
 }
 endif;
+
+
+if(!function_exists('origami_comment')) :
+/**
+ * Display a comment
+ * 
+ * @param $comment The comment
+ * @param $args The arguments
+ * @param $depth The depth
+ */
+function origami_comment($comment, $args, $depth){
+	$GLOBALS['comment'] = $comment;
+	?>
+	<li <?php comment_class() ?> id="comment-<?php comment_ID() ?>">
+		<div class="comment-wrapper">
+			<?php if(empty($comment->comment_type)) : ?>
+			<div class="avatar-container">
+				<?php print get_avatar(get_comment_author_email(), $depth == 1 ? 60 : 45) ?>
+			</div>
+			<?php endif; ?>
+	
+			<div class="comment-container">
+				<?php if($depth <= $args['max_depth']) : ?>
+					<?php comment_reply_link(array('depth' => $depth, 'max_depth' => $args['max_depth'])) ?>
+				<?php endif; ?>
+	
+				<div class="info">
+					<span class="author"><?php comment_author_link() ?></span>
+					<span class="date"><?php comment_date() ?></span>
+				</div>
+	
+				<div class="comment-content content">
+					<?php comment_text() ?>
+				</div>
+			</div>
+	
+			<div class="clear"></div>
+		</div>
+	<?php
+}
+endif;
+
+
+if(!function_exists('pitch_footer_widget_params')) :
+function origami_footer_widget_params($params){
+	// Check that this is the footer
+	if($params[0]['id'] != 'site-footer') return $params;
+
+	$sidebars_widgets = wp_get_sidebars_widgets();
+	$count = count($sidebars_widgets[$params[0]['id']]);
+	$params[0]['before_widget'] = preg_replace('/\>$/', 'style="width:'.round(100/$count,4).'%" >', $params[0]['before_widget']);
+
+	return $params;
+}
+endif;
+add_action('dynamic_sidebar_params', 'origami_footer_widget_params');
+
+
+if(!function_exists('origami_gallery')) :
+function origami_gallery($atts){
+	if(empty($atts['id'])) $atts['id'] = get_the_ID();
+
+	$attachments = get_children(array(
+		'post_parent' => $atts['id'],
+		'post_type' => 'attachment',
+		'post_mime_type' => 'image',
+		'orderby' => 'menu_order ASC, ID',
+		'order' => 'DESC'
+	));
+	
+	// Create the gallery content
+	$return = '</div>'; // close the content div
+	$return .= '<div class="flexslider">';
+	$return .= '<ul class="slides">';
+	foreach($attachments as $attachment){
+		$return .= '<li>';
+		$return .= wp_get_attachment_image($attachment->ID, 'origami-slider', false, array('class' => 'slide-image'));
+		$return .= '</li>';
+	}
+	$return .= '</ul>';
+	$return .= '</div>';
+	$return .= '<div class="content">'; // Reopen the content div
+	
+	return $return;
+}
+endif;
+add_filter('post_gallery', 'origami_gallery', 10);
+
+
+if(!function_exists('origami_content_filter')):
+function origami_content_filter($content){
+	global $post;
+	switch(get_post_format($post->ID)){
+		case 'chat':
+			$content = preg_replace('/(.*)\:/', '<strong>$1</strong>: ', $content);
+	}
+	
+	return $content;
+}
+endif;
+add_filter('the_content', 'origami_content_filter', 8);
