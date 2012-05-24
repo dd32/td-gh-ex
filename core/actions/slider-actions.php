@@ -1,10 +1,4 @@
 <?php
-
-/**
-* Exit if file is directly accessed. 
-*/ 
-if ( !defined('ABSPATH')) exit;
-
 /**
 * Slider actions used by the CyberChimps Synapse Core Framework
 *
@@ -128,8 +122,8 @@ function synapse_blog_slider_lite_content() {
 	    wp_reset_query();
 /* Begin NivoSlider javascript */ 
     
-    $out .= 
-"<script type='text/javascript'>
+    $out .= <<<OUT
+<script type="text/javascript">
 	jQuery(document).ready(function ($) {
    	$(window).load(function() {
     $('#orbitDemo').orbit({
@@ -140,7 +134,8 @@ function synapse_blog_slider_lite_content() {
      });
      });
      });
-</script>";
+</script>
+OUT;
 
 /* End NivoSlider javascript */ 
 

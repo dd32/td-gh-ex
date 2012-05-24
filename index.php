@@ -1,10 +1,5 @@
 <?php
 
-/**
-* Exit if file is directly accessed. 
-*/ 
-if ( !defined('ABSPATH')) exit;
-
  /*
 	Index
 	
@@ -39,5 +34,4 @@ if ( !defined('ABSPATH')) exit;
 			}
 		?>
 </div><!--end container-->
-
 <?php get_footer(); ?>

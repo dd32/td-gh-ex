@@ -1,10 +1,4 @@
 <?php
-
-/**
-* Exit if file is directly accessed. 
-*/ 
-if ( !defined('ABSPATH')) exit;
-
 /**
 * Custom hooks used by the iFeature Pro WordPress Theme
 *

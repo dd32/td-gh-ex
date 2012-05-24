@@ -1,10 +1,4 @@
 <?php
-
-/**
-* Exit if file is directly accessed. 
-*/ 
-if ( !defined('ABSPATH')) exit;
-
 /**
 * Index actions used by the CyberChimps Synapse Core Framework
 *

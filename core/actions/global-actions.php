@@ -1,15 +1,9 @@
 <?php
-
-/**
-* Exit if file is directly accessed. 
-*/ 
-if ( !defined('ABSPATH')) exit;
-
 /**
 * Global actions used by the CyberChimps Synapse Core Framework
 *
 * Author: Tyler Cunningham
-* Copyright: &#169; 2011
+* Copyright: © 2011
 * {@link http://cyberchimps.com/ CyberChimps LLC}
 *
 * Released under the terms of the GNU General Public License.
@@ -83,13 +77,13 @@ function synapse_loop_content($content) {
   					echo '</div>';
 				}
 			?>	
-				<div class="entry">
+				<div class="entry" <?php if ( has_post_thumbnail() && $featured_images == '1' ) { echo 'style="min-height: 115px;" '; }?>>
 					<?php 
 						if ($excerpts == '1' && !is_single() ) {
 						the_excerpt();
 						}
 						else {
-							the_content(__('Read more&#8230;', 'core'));
+							the_content(__('Read more…', 'core'));
 						}
 					 ?>
 				</div><!--end entry-->
