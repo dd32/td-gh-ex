@@ -1,7 +1,7 @@
 <?php
 /**
  * @package BestCorporate
- * @since BestCorporate 1.8
+ * @since BestCorporate 1.9
  */
 
 /**
@@ -58,12 +58,25 @@ function bestcorporate_setup() {
 	// This theme allows users to set a custom background
 	add_custom_background();
 
-	define('HEADER_TEXTCOLOR', '000');
+	define('HEADER_TEXTCOLOR', '');
     define('HEADER_IMAGE', '%s/images/logo.png'); // %s is the template dir uri
     define('HEADER_IMAGE_WIDTH', 220); // use width and height appropriate for your theme
     define('HEADER_IMAGE_HEIGHT', 90);
-    define('NO_HEADER_TEXT', false);
-	add_custom_image_header();
+    define('NO_HEADER_TEXT', true);
+	// gets included in the admin header
+    function bestcorporate_admin_header_style() {
+    ?>
+	<style type="text/css">
+    	#headimg h1 {
+        font-size: 16px;
+		font-weight: bold;
+		text-align:center;
+		line-height: 20px;
+		vertical-align: bottom;
+                }
+     </style><?php
+        }
+	add_custom_image_header('', 'bestcorporate_admin_header_style');
 	
 	//WordPress 3.4 custom-background, custom-header
 
@@ -78,9 +91,9 @@ function bestcorporate_setup() {
 	// Header image default
 	'default-image'			=> get_template_directory_uri() . '/images/logo.png',
 	// Header text display default
-	'header-text'			=> true,
+	'header-text'			=> false,
 	// Header text color default
-	'default-text-color'		=> '000',
+	'default-text-color'		=> '',
 	// Header image width (in pixels)
 	'width'				=> 220,
 	// Header image height (in pixels)
