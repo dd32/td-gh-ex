@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: Responsive Theme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-25 13:42:58 UTC\n"
-"PO-Revision-Date: 2012-05-15 20:44+0100\n"
+"PO-Revision-Date: 2012-05-22 23:22+0100\n"
 "Last-Translator: grapplerulrich <grapplerulrich@gmail.com>\n"
 "Language-Team: Malay, Malaysia (Latin)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: WebTranslateIt.com\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: page.php
 #: landing-page.php
@@ -316,8 +316,20 @@ msgid "&uarr;"
 msgstr "&uarr;"
 
 #: footer.php
+msgid "http://themeid.com/responsive-theme/"
+msgstr "http://themeid.com/responsive-theme/"
+
+#: footer.php
 msgid "Responsive Theme"
 msgstr "Responsive Theme"
+
+#: footer.php
+msgid "powered by"
+msgstr "menggunakan"
+
+#: footer.php
+msgid "http://wordpress.org/"
+msgstr "http://wordpress.org/"
 
 #: footer.php
 msgid "WordPress"
@@ -363,6 +375,111 @@ msgstr "Jangan risau. Mari kita buat pilihan lain."
 msgid "home"
 msgstr "laman utama"
 
+#: search.php
+msgid "We found"
+msgstr "Kami telah jumpa"
+
+#: search.php
+msgid " &#8211; "
+msgstr " &#8211; "
+
+#: search.php
+msgid "results for "
+msgstr "keputusan carian untuk "
+
+#: single.php
+#: search.php
+msgid "About"
+msgstr "Perihal"
+
+#: searchform.php
+msgid "search here &hellip;"
+msgstr "mulakan carian di sini ..."
+
+#: searchform.php
+msgid "Go"
+msgstr "Pergi"
+
+#: sidebar-gallery.php
+msgid "Image Information"
+msgstr "Maklumat Gambar"
+
+#: sidebar-gallery.php
+msgid "Full Size:"
+msgstr "Saiz Penuh:"
+
+#: sidebar-gallery.php
+msgid "Aperture: f&#47;"
+msgstr "Aperture: f/"
+
+#: sidebar-gallery.php
+msgid "Focal Length:"
+msgstr "Jarak Fokal:"
+
+#: sidebar-gallery.php
+msgid "mm"
+msgstr "mm"
+
+#: sidebar-gallery.php
+msgid "ISO:"
+msgstr "ISO:"
+
+#: sidebar-gallery.php
+msgid "Shutter:"
+msgstr "Shutter:"
+
+#: sidebar-gallery.php
+msgid "Camera:"
+msgstr "Kamera:"
+
+#: sidebar.php
+#: sidebar-right.php
+#: sidebar-right-half.php
+#: sidebar-left.php
+#: sidebar-left-half.php
+#: sidebar-half-left.php
+msgid "In Archive"
+msgstr "Dalam Arkib"
+
+#: includes/functions.php
+#: sidebar-home.php
+msgid "Home Widget 1"
+msgstr "Widget Laman Utama 1"
+
+#: sidebar-home.php
+msgid "This is your first home widget box. To edit please go to Appearance > Widgets and choose 6th widget from the top in area six called Home Widget 1. Title is also manageable from widgets as well."
+msgstr "Ini adalah kotak widget pertama anda. Bagi membuat perubahan, sila pergi ke Appearance > Widgets dan pilih widget ke-6 dari atas di kawasan ke-enam yang bertajuk Widget Laman Utama 1. Tajuk kotak ini juga boleh diubah."
+
+#: includes/functions.php
+#: sidebar-home.php
+msgid "Home Widget 2"
+msgstr "Widget Laman Utama 2"
+
+#: sidebar-home.php
+msgid "This is your second home widget box. To edit please go to Appearance > Widgets and choose 7th widget from the top in area seven called Home Widget 2. Title is also manageable from widgets as well."
+msgstr "Ini adalah kotak widget kedua anda. Bagi membuat perubahan, sila pergi ke Appearance > Widgets dan pilih widget ke-7 dari atas di kawasan ke-tujuh yang bertajuk Widget Laman Utama 2. Tajuk kotak ini juga boleh diubah."
+
+#: includes/functions.php
+#: sidebar-home.php
+msgid "Home Widget 3"
+msgstr "Widget Laman Utama 3"
+
+#: sidebar-home.php
+msgid "This is your third home widget box. To edit please go to Appearance > Widgets and choose 8th widget from the top in area eight called Home Widget 3. Title is also manageable from widgets as well."
+msgstr "Ini adalah kotak widget ketiga anda. Bagi membuat perubahan, sila pergi ke Appearance > Widgets dan pilih widget ke-8 dari atas di kawasan ke-lapan yang bertajuk Widget Laman Utama 3. Tajuk kotak ini juga boleh diubah."
+
+#: sitemap.php
+msgid "Categories"
+msgstr "Kategori"
+
+#: sitemap.php
+msgid "Latest Posts"
+msgstr "Artikel Terkini"
+
+#: sitemap.php
+msgid "Pages"
+msgstr "Laman"
+
 #: includes/functions.php
 msgid "Top Menu"
 msgstr "Menu Atas"
@@ -382,6 +499,26 @@ msgstr "Menu Bahagian Bawah"
 #: includes/functions.php
 msgid "<div class=\"read-more\">Read more &#8250;</div><!-- end of .read-more -->"
 msgstr "<div class=\"read-more\">Sambung lagi ›</div><!-- hujung .read-more -->"
+
+#: includes/functions.php
+msgid "Archive for "
+msgstr "Arkib bagi "
+
+#: includes/functions.php
+msgid "Search results for "
+msgstr "Keputusan carian bagi "
+
+#: includes/functions.php
+msgid "Posts tagged "
+msgstr "Artikel ditag dengan "
+
+#: includes/functions.php
+msgid "All posts by "
+msgstr "Semua artikel yang ditulis oleh "
+
+#: includes/functions.php
+msgid "Error 404 "
+msgstr "Ralat 404 "
 
 #: includes/functions.php
 msgid "Page"
@@ -432,39 +569,12 @@ msgid "Area Five - sidebar-right-half.php"
 msgstr "Kawasan Lima - sidebar-right-half.php"
 
 #: includes/functions.php
-#: sidebar-home.php
-msgid "Home Widget 1"
-msgstr "Widget Laman Utama 1"
-
-#: sidebar-home.php
-msgid "This is your first home widget box. To edit please go to Appearance > Widgets and choose 6th widget from the top in area six called Home Widget 1. Title is also manageable from widgets as well."
-msgstr "Ini adalah kotak widget pertama anda. Bagi membuat perubahan, sila pergi ke Appearance > Widgets dan pilih widget ke-6 dari atas di kawasan ke-enam yang bertajuk Widget Laman Utama 1. Tajuk kotak ini juga boleh diubah."
-
-#: includes/functions.php
 msgid "Area Six - sidebar-home.php"
 msgstr "Kawasan Enam - sidebar-home.php"
 
 #: includes/functions.php
-#: sidebar-home.php
-msgid "Home Widget 2"
-msgstr "Widget Laman Utama 2"
-
-#: sidebar-home.php
-msgid "This is your second home widget box. To edit please go to Appearance > Widgets and choose 7th widget from the top in area seven called Home Widget 2. Title is also manageable from widgets as well."
-msgstr "Ini adalah kotak widget kedua anda. Bagi membuat perubahan, sila pergi ke Appearance > Widgets dan pilih widget ke-7 dari atas di kawasan ke-tujuh yang bertajuk Widget Laman Utama 2. Tajuk kotak ini juga boleh diubah."
-
-#: includes/functions.php
 msgid "Area Seven - sidebar-home.php"
 msgstr "Kawasan Tujuh - sidebar-home.php"
-
-#: includes/functions.php
-#: sidebar-home.php
-msgid "Home Widget 3"
-msgstr "Widget Laman Utama 3"
-
-#: sidebar-home.php
-msgid "This is your third home widget box. To edit please go to Appearance > Widgets and choose 8th widget from the top in area eight called Home Widget 3. Title is also manageable from widgets as well."
-msgstr "Ini adalah kotak widget ketiga anda. Bagi membuat perubahan, sila pergi ke Appearance > Widgets dan pilih widget ke-8 dari atas di kawasan ke-lapan yang bertajuk Widget Laman Utama 3. Tajuk kotak ini juga boleh diubah."
 
 #: includes/functions.php
 msgid "Area Eight - sidebar-home.php"
@@ -477,10 +587,6 @@ msgstr "Sidebar Galeri"
 #: includes/functions.php
 msgid "Area Nine - sidebar-gallery.php"
 msgstr "Kawasan Sembilan - sidebar-gallery.php"
-
-#: sitemap.php
-msgid "Pages"
-msgstr "Laman"
 
 #: includes/theme-options.php
 msgid "Theme Options"
@@ -575,6 +681,14 @@ msgid "Featured Content"
 msgstr "Kandungan Istimewa"
 
 #: includes/theme-options.php
+msgid "http://themeid.com/forum/topic/510/theme-options-featured-content/"
+msgstr "http://themeid.com/forum/topic/510/theme-options-featured-content/"
+
+#: includes/theme-options.php
+msgid "See Docs"
+msgstr "Lihat Dokumen"
+
+#: includes/theme-options.php
 msgid "Paste your video or image source"
 msgstr "Masukkan URL asal video atau gambar"
 
@@ -609,6 +723,10 @@ msgstr "Masukkan nombor ID yahoo sahaja"
 #: includes/theme-options.php
 msgid "Site Statistics Tracker"
 msgstr "Penjejak statistik laman web"
+
+#: includes/theme-options.php
+msgid "Leave blank if plugin handles your webmaster tools"
+msgstr "Biarkan kosong jika alat-alat pengurus laman web anda dikawal oleh \"plugin\""
 
 #: includes/theme-options.php
 msgid "Google Analytics, StatCounter, any other or all of them."
@@ -674,124 +792,6 @@ msgstr "Google+"
 msgid "Enter your Google+ URL"
 msgstr "Sila masukkan URL Google+ anda"
 
-#: search.php
-msgid "We found"
-msgstr "Kami telah jumpa"
-
-#: search.php
-msgid " &#8211; "
-msgstr " &#8211; "
-
-#: searchform.php
-msgid "search here &hellip;"
-msgstr "mulakan carian di sini ..."
-
-#: searchform.php
-msgid "Go"
-msgstr "Pergi"
-
-#: sidebar-gallery.php
-msgid "Image Information"
-msgstr "Maklumat Gambar"
-
-#: sidebar-gallery.php
-msgid "Full Size:"
-msgstr "Saiz Penuh:"
-
-#: sidebar-gallery.php
-msgid "Aperture: f&#47;"
-msgstr "Aperture: f/"
-
-#: sidebar-gallery.php
-msgid "Focal Length:"
-msgstr "Jarak Fokal:"
-
-#: sidebar-gallery.php
-msgid "mm"
-msgstr "mm"
-
-#: sidebar-gallery.php
-msgid "ISO:"
-msgstr "ISO:"
-
-#: sidebar-gallery.php
-msgid "Shutter:"
-msgstr "Shutter:"
-
-#: sidebar-gallery.php
-msgid "Camera:"
-msgstr "Kamera:"
-
-#: sidebar.php
-#: sidebar-right.php
-#: sidebar-right-half.php
-#: sidebar-left.php
-#: sidebar-left-half.php
-#: sidebar-half-left.php
-msgid "In Archive"
-msgstr "Dalam Arkib"
-
-#: single.php
-#: search.php
-msgid "About"
-msgstr "Perihal"
-
-#: sitemap.php
-msgid "Categories"
-msgstr "Kategori"
-
-#: sitemap.php
-msgid "Latest Posts"
-msgstr "Artikel Terkini"
-
-#: includes/functions.php
-msgid "Archive for "
-msgstr "Arkib bagi "
-
-#: includes/functions.php
-msgid "Search results for "
-msgstr "Keputusan carian bagi "
-
-#: includes/functions.php
-msgid "Posts tagged "
-msgstr "Artikel ditag dengan "
-
-#: includes/functions.php
-msgid "All posts by "
-msgstr "Semua artikel yang ditulis oleh "
-
-#: includes/functions.php
-msgid "Error 404 "
-msgstr "Ralat 404 "
-
-#: search.php
-msgid "results for "
-msgstr "keputusan carian untuk"
-
-#: footer.php
-msgid "http://themeid.com/responsive-theme/"
-msgstr "http://themeid.com/responsive-theme/"
-
-#: footer.php
-msgid "powered by"
-msgstr "menggunakan"
-
-#: footer.php
-msgid "http://wordpress.org/"
-msgstr "http://wordpress.org/"
-
-#: includes/theme-options.php
-msgid "http://themeid.com/forum/topic/510/theme-options-featured-content/"
-msgstr "http://themeid.com/forum/topic/510/theme-options-featured-content/"
-
-#: includes/theme-options.php
-msgid "See Docs"
-msgstr "Lihat Dokumen"
-
-#: includes/theme-options.php
-msgid "Leave blank if plugin handles your webmaster tools"
-msgstr "Biarkan kosong jika alat-alat pengurus laman web anda dikawal oleh \"plugin\""
-
 #: includes/theme-options.php
 msgid "Instagram"
 msgstr "Instagram"
@@ -812,9 +812,9 @@ msgstr "Sila masukkan URL Pinterest anda"
 msgid "Custom CSS Styles"
 msgstr "Kod CSS tersendiri"
 
-#: includes/theme-options.php
-msgid "http://www.w3schools.com/css/default.asp"
-msgstr "http://www.w3schools.com/css/default.asp"
+#. Check if there is a link in your language
+msgid "https://developer.mozilla.org/en/CSS"
+msgstr "https://developer.mozilla.org/en/CSS"
 
 #: includes/theme-options.php
 msgid "CSS Tutorial"

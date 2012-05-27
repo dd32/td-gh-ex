@@ -129,8 +129,9 @@ h3.active {
 	border-top:none;
 	background: #fcfcfc;
 	overflow: hidden;
-	font-size: 1.2em;
+	font-size: 12px;
 	clear: both;
+	color:#333;
 	width:990px;
 }
 

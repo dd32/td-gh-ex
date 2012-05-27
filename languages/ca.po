@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Responsive Theme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-25 13:42:58 UTC\n"
-"PO-Revision-Date: 2012-05-16 21:52+0100\n"
-"Last-Translator: Eduard Ereza Martínez <eduard@eduardereza.com>\n"
+"PO-Revision-Date: 2012-05-22 23:21+0100\n"
+"Last-Translator: grapplerulrich <grapplerulrich@gmail.com>\n"
 "Language-Team: Catalan\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -500,18 +500,23 @@ msgstr "Menú del peu"
 msgid "<div class=\"read-more\">Read more &#8250;</div><!-- end of .read-more -->"
 msgstr "<div class=\"read-more\">Continua llegint &#8250;</div><!-- end of .read-more -->"
 
+#: includes/functions.php
 msgid "Archive for "
 msgstr "Arxiu de "
 
+#: includes/functions.php
 msgid "Search results for "
 msgstr "Resultats de la cerca de "
 
+#: includes/functions.php
 msgid "Posts tagged "
 msgstr "Publicacions etiquetades amb "
 
+#: includes/functions.php
 msgid "All posts by "
 msgstr "Totes les publicacions de "
 
+#: includes/functions.php
 msgid "Error 404 "
 msgstr "Error 404 "
 
@@ -807,9 +812,9 @@ msgstr "Introdueix la teva URL del Pinterest"
 msgid "Custom CSS Styles"
 msgstr "Estils CSS personalitzats"
 
-#: includes/theme-options.php
-msgid "http://www.w3schools.com/css/default.asp"
-msgstr "http://www.w3schools.com/css/default.asp"
+#. Check if there is a link in your language
+msgid "https://developer.mozilla.org/en/CSS"
+msgstr "https://developer.mozilla.org/ca/CSS"
 
 #: includes/theme-options.php
 msgid "CSS Tutorial"

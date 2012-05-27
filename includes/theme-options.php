@@ -1,4 +1,8 @@
 <?php
+
+// Exit if accessed directly
+if ( !defined('ABSPATH')) exit;
+
 /**
  * Theme Options
  *
@@ -111,8 +115,7 @@ function responsive_theme_options_do_page() {
 	?>
     
     <div class="wrap">
-        <?php screen_icon();
-        echo "<h2>" . get_current_theme() . __(' Theme Options', 'responsive') . "</h2>"; ?>
+        <?php screen_icon(); echo "<h2>" . get_current_theme() ." ". __('Theme Options', 'responsive') . "</h2>"; ?>
 
 		<?php if (false !== $_REQUEST['settings-updated']) : ?>
 		<div class="updated fade"><p><strong><?php _e('Options Saved', 'responsive'); ?></strong></p></div>

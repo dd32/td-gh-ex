@@ -7,6 +7,22 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(05/26/2012) - Version 1.5.4
+[+] new language
+    - Bulgarian
+[*] all* language updates
+[+] direct script access disallowed
+[*] featured-image.png
+[*] screenshot.png
+[x] Google Font removed for non-English
+    language compatibility
+[+] all* "Helvetica Neue", Helvetica, Arial, sans-serif;
+[*] search.php text
+[*] all* not found arrows
+[x] breadcrumbs for search.php
+[*] reduced font-size in theme-options.css
+[*] more precise responsive grids
+
 (05/17/2012) - Version 1.5.3
 [+] new languages
     - Malay

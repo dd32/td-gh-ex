@@ -3,17 +3,14 @@ msgstr ""
 "Project-Id-Version: Responsive Theme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-25 13:42:58 UTC\n"
-"PO-Revision-Date: 2012-05-13 20:30-0300\n"
+"PO-Revision-Date: 2012-05-23 06:35-0300\n"
 "Last-Translator: Lucas S. B. Mastella <lucas@bello.li>\n"
 "Language-Team: Portuguese, Brazil\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: WebTranslateIt.com\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\\n\n"
-"X-Poedit-Language: Portuguese\n"
-"X-Poedit-Country: BRAZIL\n"
-"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: page.php
 #: landing-page.php
@@ -271,11 +268,12 @@ msgstr "Leia mais &#8250;"
 msgid "This post is password protected. Enter the password to view any comments."
 msgstr "Este post &#233; protegido por senha. Digite a senha para ver todos os coment&#225;rios."
 
+#. Don't translate the zero value there is no point
 #: comments.php
 msgid "One comment on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
-msgstr[0] "Um coment&#225;rio sobre &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s coment&#225;rios sobre &ldquo;%2$s&rdquo;"
+msgstr[0] "Um coment&#225;rio sobre “%2$s”"
+msgstr[1] "%1$s coment&#225;rios sobre “%2$s”"
 
 #: comments.php
 msgid "&#8249; Older comments"
@@ -318,8 +316,20 @@ msgid "&uarr;"
 msgstr "&uarr;"
 
 #: footer.php
+msgid "http://themeid.com/responsive-theme/"
+msgstr "http://themeid.com/responsive-theme/"
+
+#: footer.php
 msgid "Responsive Theme"
 msgstr "Responsive Theme"
+
+#: footer.php
+msgid "powered by"
+msgstr "desenvolvido com"
+
+#: footer.php
+msgid "http://wordpress.org/"
+msgstr "http://br.wordpress.org/"
 
 #: footer.php
 msgid "WordPress"
@@ -365,6 +375,111 @@ msgstr "N&#227;o entre em p&#226;nico, n&#243;s vamos passar por isso juntos. Va
 msgid "home"
 msgstr "in&#237;cio"
 
+#: search.php
+msgid "We found"
+msgstr "Encontramos"
+
+#: search.php
+msgid " &#8211; "
+msgstr " &#8211; "
+
+#: search.php
+msgid "results for "
+msgstr "resultados para "
+
+#: single.php
+#: search.php
+msgid "About"
+msgstr "Sobre"
+
+#: searchform.php
+msgid "search here &hellip;"
+msgstr "busque aqui &hellip;"
+
+#: searchform.php
+msgid "Go"
+msgstr "Ir"
+
+#: sidebar-gallery.php
+msgid "Image Information"
+msgstr "Informa&#231;&#245;es da Imagem"
+
+#: sidebar-gallery.php
+msgid "Full Size:"
+msgstr "Tamanho Total:"
+
+#: sidebar-gallery.php
+msgid "Aperture: f&#47;"
+msgstr "Abertura: f&#47;"
+
+#: sidebar-gallery.php
+msgid "Focal Length:"
+msgstr "Dist&#226;ncia Focal:"
+
+#: sidebar-gallery.php
+msgid "mm"
+msgstr "mm"
+
+#: sidebar-gallery.php
+msgid "ISO:"
+msgstr "ISO:"
+
+#: sidebar-gallery.php
+msgid "Shutter:"
+msgstr "Obturador:"
+
+#: sidebar-gallery.php
+msgid "Camera:"
+msgstr "C&#226;mera:"
+
+#: sidebar.php
+#: sidebar-right.php
+#: sidebar-right-half.php
+#: sidebar-left.php
+#: sidebar-left-half.php
+#: sidebar-half-left.php
+msgid "In Archive"
+msgstr "Em Arquivo"
+
+#: includes/functions.php
+#: sidebar-home.php
+msgid "Home Widget 1"
+msgstr "P&#225;gina Inicial Widget 1"
+
+#: sidebar-home.php
+msgid "This is your first home widget box. To edit please go to Appearance > Widgets and choose 6th widget from the top in area six called Home Widget 1. Title is also manageable from widgets as well."
+msgstr "Esta &#233; a sua primeira caixa de widget da p&#225;gina inicial. Para editar acesse Apar&#234;ncia > Widgets e escolha o sexto Widget do topo na &#225;rea seis chamada P&#225;gina Inicial Widget 1. T&#237;tulo tamb&#233;m &#233; gerenci&#225;vel a partir dos widgets desta maneira."
+
+#: includes/functions.php
+#: sidebar-home.php
+msgid "Home Widget 2"
+msgstr "P&#225;gina Inicial Widget 2"
+
+#: sidebar-home.php
+msgid "This is your second home widget box. To edit please go to Appearance > Widgets and choose 7th widget from the top in area seven called Home Widget 2. Title is also manageable from widgets as well."
+msgstr "Esta &#233; a sua segunda caixa de widget da p&#225;gina inicial. Para editar acesse Apar&#234;ncia > Widgets e escolha o s&#233;timo Widget do topo na &#225;rea sete chamada P&#225;gina Inicial Widget 2. T&#237;tulo tamb&#233;m &#233; gerenci&#225;vel a partir dos widgets desta maneira."
+
+#: includes/functions.php
+#: sidebar-home.php
+msgid "Home Widget 3"
+msgstr "P&#225;gina Inicial Widget 3"
+
+#: sidebar-home.php
+msgid "This is your third home widget box. To edit please go to Appearance > Widgets and choose 8th widget from the top in area eight called Home Widget 3. Title is also manageable from widgets as well."
+msgstr "Esta &#233; a sua terceira caixa de widget da p&#225;gina inicial. Para editar acesse Apar&#234;ncia > Widgets e escolha o oitavo Widget do topo na &#225;rea oito chamada P&#225;gina Inicial Widget 3. T&#237;tulo tamb&#233;m &#233; gerenci&#225;vel a partir dos widgets desta maneira."
+
+#: sitemap.php
+msgid "Categories"
+msgstr "Categorias"
+
+#: sitemap.php
+msgid "Latest Posts"
+msgstr "&#218;ltimos Posts"
+
+#: sitemap.php
+msgid "Pages"
+msgstr "P&#225;ginas"
+
 #: includes/functions.php
 msgid "Top Menu"
 msgstr "Menu Superior"
@@ -384,6 +499,26 @@ msgstr "Menu do Rodap&#233;"
 #: includes/functions.php
 msgid "<div class=\"read-more\">Read more &#8250;</div><!-- end of .read-more -->"
 msgstr "<div class=\"read-more\">Leia mais &#8250;</div><!-- end of .read-more -->"
+
+#: includes/functions.php
+msgid "Archive for "
+msgstr "Arquivos para "
+
+#: includes/functions.php
+msgid "Search results for "
+msgstr "Resultados de busca para "
+
+#: includes/functions.php
+msgid "Posts tagged "
+msgstr "Artigos marcados com "
+
+#: includes/functions.php
+msgid "All posts by "
+msgstr "Todos os posts por "
+
+#: includes/functions.php
+msgid "Error 404 "
+msgstr "Erro 404 "
 
 #: includes/functions.php
 msgid "Page"
@@ -434,39 +569,12 @@ msgid "Area Five - sidebar-right-half.php"
 msgstr "&#193;rea Cinco - sidebar-right-half.php"
 
 #: includes/functions.php
-#: sidebar-home.php
-msgid "Home Widget 1"
-msgstr "P&#225;gina Inicial Widget 1"
-
-#: sidebar-home.php
-msgid "This is your first home widget box. To edit please go to Appearance > Widgets and choose 6th widget from the top in area six called Home Widget 1. Title is also manageable from widgets as well."
-msgstr "Esta &#233; a sua primeira caixa de widget da p&#225;gina inicial. Para editar acesse Apar&#234;ncia > Widgets e escolha o sexto Widget do topo na &#225;rea seis chamada P&#225;gina Inicial Widget 1. T&#237;tulo tamb&#233;m &#233; gerenci&#225;vel a partir dos widgets assim."
-
-#: includes/functions.php
 msgid "Area Six - sidebar-home.php"
 msgstr "&#193;rea Seis - sidebar-home.php"
 
 #: includes/functions.php
-#: sidebar-home.php
-msgid "Home Widget 2"
-msgstr "P&#225;gina Inicial Widget 2"
-
-#: sidebar-home.php
-msgid "This is your second home widget box. To edit please go to Appearance > Widgets and choose 7th widget from the top in area seven called Home Widget 2. Title is also manageable from widgets as well."
-msgstr "Esta &#233; a sua segunda caixa de widget da p&#225;gina inicial. Para editar acesse Apar&#234;ncia > Widgets e escolha o s&#233;timo Widget do topo na &#225;rea sete chamada P&#225;gina Inicial Widget 2. T&#237;tulo tamb&#233;m &#233; gerenci&#225;vel a partir dos widgets assim."
-
-#: includes/functions.php
 msgid "Area Seven - sidebar-home.php"
 msgstr "&#193;rea Sete - sidebar-home.php"
-
-#: includes/functions.php
-#: sidebar-home.php
-msgid "Home Widget 3"
-msgstr "P&#225;gina Inicial Widget 3"
-
-#: sidebar-home.php
-msgid "This is your third home widget box. To edit please go to Appearance > Widgets and choose 8th widget from the top in area eight called Home Widget 3. Title is also manageable from widgets as well."
-msgstr "Esta &#233; a sua terceira caixa de widget da p&#225;gina inicial. Para editar acesse Apar&#234;ncia > Widgets e escolha o oitavo Widget do topo na &#225;rea oito chamada P&#225;gina Inicial Widget 3. T&#237;tulo tamb&#233;m &#233; gerenci&#225;vel a partir dos widgets assim."
 
 #: includes/functions.php
 msgid "Area Eight - sidebar-home.php"
@@ -479,10 +587,6 @@ msgstr "Sidebar de Galeria"
 #: includes/functions.php
 msgid "Area Nine - sidebar-gallery.php"
 msgstr "&#193;rea Nove - sidebar-gallery.php"
-
-#: sitemap.php
-msgid "Pages"
-msgstr "P&#225;ginas"
 
 #: includes/theme-options.php
 msgid "Theme Options"
@@ -577,6 +681,14 @@ msgid "Featured Content"
 msgstr "Conte&#250;do em Destaque"
 
 #: includes/theme-options.php
+msgid "http://themeid.com/forum/topic/510/theme-options-featured-content/"
+msgstr "http://themeid.com/forum/topic/510/theme-options-featured-content/"
+
+#: includes/theme-options.php
+msgid "See Docs"
+msgstr "Ver Documentos"
+
+#: includes/theme-options.php
 msgid "Paste your video or image source"
 msgstr "Cole a fonte do seu v&#237;deo ou imagem"
 
@@ -611,6 +723,10 @@ msgstr "Digite apenas seu n&#250;mero de ID do Yahoo"
 #: includes/theme-options.php
 msgid "Site Statistics Tracker"
 msgstr "Rastreador de Estat&#237;sticas do Site"
+
+#: includes/theme-options.php
+msgid "Leave blank if plugin handles your webmaster tools"
+msgstr "Deixe em branco se um plugin trata de suas ferramentas para webmasters"
 
 #: includes/theme-options.php
 msgid "Google Analytics, StatCounter, any other or all of them."
@@ -676,124 +792,6 @@ msgstr "Google+"
 msgid "Enter your Google+ URL"
 msgstr "Digite sua URL do Google+"
 
-#: search.php
-msgid "We found"
-msgstr "Encontramos"
-
-#: search.php
-msgid " &#8211; "
-msgstr " &#8211; "
-
-#: searchform.php
-msgid "search here &hellip;"
-msgstr "busque aqui &hellip;"
-
-#: searchform.php
-msgid "Go"
-msgstr "Ir"
-
-#: sidebar-gallery.php
-msgid "Image Information"
-msgstr "Informa&#231;&#245;es da Imagem"
-
-#: sidebar-gallery.php
-msgid "Full Size:"
-msgstr "Tamanho Total:"
-
-#: sidebar-gallery.php
-msgid "Aperture: f&#47;"
-msgstr "Abertura: f&#47;"
-
-#: sidebar-gallery.php
-msgid "Focal Length:"
-msgstr "Dist&#226;ncia Focal:"
-
-#: sidebar-gallery.php
-msgid "mm"
-msgstr "mm"
-
-#: sidebar-gallery.php
-msgid "ISO:"
-msgstr "ISO:"
-
-#: sidebar-gallery.php
-msgid "Shutter:"
-msgstr "Obturador:"
-
-#: sidebar-gallery.php
-msgid "Camera:"
-msgstr "C&#226;mera:"
-
-#: sidebar.php
-#: sidebar-right.php
-#: sidebar-right-half.php
-#: sidebar-left.php
-#: sidebar-left-half.php
-#: sidebar-half-left.php
-msgid "In Archive"
-msgstr "Em Arquivo"
-
-#: single.php
-#: search.php
-msgid "About"
-msgstr "Sobre"
-
-#: sitemap.php
-msgid "Categories"
-msgstr "Categorias"
-
-#: sitemap.php
-msgid "Latest Posts"
-msgstr "&#218;ltimos Posts"
-
-#: includes/functions.php
-msgid "Archive for "
-msgstr "Arquivos para "
-
-#: includes/functions.php
-msgid "Search results for "
-msgstr "Resultados de busca para "
-
-#: includes/functions.php
-msgid "Posts tagged "
-msgstr "Artigos marcados com "
-
-#: includes/functions.php
-msgid "All posts by "
-msgstr "Todos os posts por "
-
-#: includes/functions.php
-msgid "Error 404 "
-msgstr "Erro 404 "
-
-#: search.php
-msgid "results for "
-msgstr "resultados para "
-
-#: footer.php
-msgid "http://themeid.com/responsive-theme/"
-msgstr "http://themeid.com/responsive-theme/"
-
-#: footer.php
-msgid "powered by"
-msgstr "desenvolvido com"
-
-#: footer.php
-msgid "http://wordpress.org/"
-msgstr "http://br.wordpress.org/"
-
-#: includes/theme-options.php
-msgid "http://themeid.com/forum/topic/510/theme-options-featured-content/"
-msgstr "http://themeid.com/forum/topic/510/theme-options-featured-content/"
-
-#: includes/theme-options.php
-msgid "See Docs"
-msgstr "Ver Documentos"
-
-#: includes/theme-options.php
-msgid "Leave blank if plugin handles your webmaster tools"
-msgstr "Deixe em branco se um plugin trata de suas ferramentas para webmasters"
-
 #: includes/theme-options.php
 msgid "Instagram"
 msgstr "Instagram"
@@ -814,9 +812,9 @@ msgstr "Digite sua URL do Pinterest"
 msgid "Custom CSS Styles"
 msgstr "Estilos CSS personalizados"
 
-#: includes/theme-options.php
-msgid "http://www.w3schools.com/css/default.asp"
-msgstr "http://www.w3schools.com/css/default.asp"
+#. Check if there is a link in your language
+msgid "https://developer.mozilla.org/en/CSS"
+msgstr "https://developer.mozilla.org/pt/CSS"
 
 #: includes/theme-options.php
 msgid "CSS Tutorial"

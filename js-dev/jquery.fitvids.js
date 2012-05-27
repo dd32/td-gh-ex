@@ -59,6 +59,7 @@
       }
       
       var $allVideos = $(this).find(selectors.join(','));
+	  $allVideos = $allVideos.not("object object"); // SwfObj conflict patch by Oriol Arcas
 
       $allVideos.each(function(){
         var $this = $(this);

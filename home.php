@@ -1,4 +1,8 @@
 <?php
+
+// Exit if accessed directly
+if ( !defined('ABSPATH')) exit;
+
 /**
  * Home Page
  *
@@ -106,7 +110,5 @@
         
         </div><!-- end of #featured -->
                
-
-
 <?php get_sidebar('home'); ?>
 <?php get_footer(); ?>
