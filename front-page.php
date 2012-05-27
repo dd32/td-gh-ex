@@ -73,7 +73,7 @@ if (is_page()) {
 
 				<?php endwhile; ?>
 
-				<?php if($mantra_pagination=="Enable") the_pagination(); else mantra_content_nav( 'nav-below' ); ?>
+				<?php if($mantra_pagination=="Enable") mantra_pagination(); else mantra_content_nav( 'nav-below' ); ?>
 
 
 			<?php else : ?>
@@ -119,9 +119,9 @@ function flash(id){
 
 			effect: '<?php  echo $mantra_fpslideranim; ?>',
         animSpeed: <?php echo $mantra_fpslidertime ?>,
-        pauseTime: <?php echo $mantra_fpsliderpause ?>,
 	<?php	if($mantra_fpsliderarrows=="Hidden") { ?> directionNav: false, <?php }
    	if($mantra_fpsliderarrows=="Always Visible") { ?>  directionNavHide: false, <?php } ?>
+	pauseTime: <?php echo $mantra_fpsliderpause ?>
 
 });
 

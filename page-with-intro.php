@@ -56,7 +56,7 @@ query_posts('category_name='.$slug.'&post_status=publish,future&orderby=date&ord
 
 				<?php endwhile; ?>
 
-				<?php if($mantra_pagination=="Enable") the_pagination(); else mantra_content_nav( 'nav-below' ); ?>
+				<?php if($mantra_pagination=="Enable") mantra_pagination(); else mantra_content_nav( 'nav-below' ); ?>
 
 
 

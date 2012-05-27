@@ -27,7 +27,7 @@ query_posts('post_status=publish,future&orderby=date&order=desc&posts_per_page='
 
 				<?php endwhile; ?>
 
-				<?php if($mantra_pagination=="Enable") the_pagination(); else mantra_content_nav( 'nav-below' ); ?>
+				<?php if($mantra_pagination=="Enable") mantra_pagination(); else mantra_content_nav( 'nav-below' ); ?>
 
 			<?php else : ?>
 

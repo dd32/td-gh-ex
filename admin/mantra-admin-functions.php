@@ -507,7 +507,23 @@ endwhile;
 // Reset Query
 wp_reset_query();
 */
+?>
+<select name="event-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> 
+ <option value=""><?php echo esc_attr(__('Select Category')); ?></option> 
+ <?php 
+  $categories=  get_categories(); 
+  foreach ($categories as $category) {
+  	$option = '<option value="/category/archives/'.$category->category_nicename.'">';
+	$option .= $category->cat_name;
+	$option .= ' ('.$category->category_count.')';
+	$option .= '</option>';
+	echo $option;
+  }
+ ?>
+</select>
+<?php
 
+query_posts('category_name="aciform"&showposts=9999');
 }
 
 //CHECKBOX - Name: ma_options[frontslider2]

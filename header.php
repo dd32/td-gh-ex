@@ -18,21 +18,7 @@
 	/*
 	 * Print the <title> tag based on what is being viewed.
 	 */
-	global $page, $paged;
-
-	wp_title( '|', true, 'right' );
-
-	// Add the blog name.
-	bloginfo( 'name' );
-
-	// Add the blog description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		echo " | $site_description";
-
-	// Add a page number if necessary:
-	if ( $paged >= 2 || $page >= 2 )
-		echo ' | ' . sprintf( __( 'Page %s', 'mantra' ), max( $paged, $page ) );
+	wp_title( '', true, 'right' );
 
 	?></title>
 <?php
@@ -44,7 +30,7 @@ foreach ($mantra_options as $key => $value) {
 }
 $totalwidth= $mantra_sidewidth+$mantra_sidebar+50;
 ?>
-<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php if ($mantra_options['mantra_faviconshow']=="Enable" && $mantra_options['mantra_favicon']) { ?> <link rel="shortcut icon" href="<?php echo get_template_directory_uri().'/uploads/'.$mantra_options['mantra_favicon']; ?>" />
@@ -85,7 +71,7 @@ $totalwidth= $mantra_sidewidth+$mantra_sidebar+50;
 				</<?php echo $heading_tag; ?>>
 				<div id="site-description" ><?php bloginfo( 'description' ); ?></div>
 				
-				<div class="socials" id="sheader"> <?php if($mantra_socialsdisplay0) set_social_icons(); ?> </div>
+				<div class="socials" id="sheader"> <?php if($mantra_socialsdisplay0) mantra_set_social_icons(); ?> </div>
 
 				<?php
 				// Check if this is a post or page, if it has a thumbnail, and if it's a big one
@@ -130,10 +116,10 @@ $totalwidth= $mantra_sidewidth+$mantra_sidebar+50;
 	<div id="main">
 	<div  id="forbottom" >
 			<div class="socials" id="smenul">
-<?php if($mantra_socialsdisplay1) set_social_icons(); ?>
+<?php if($mantra_socialsdisplay1) mantra_set_social_icons(); ?>
 </div>
 			<div class="socials" id="smenur">
-<?php if($mantra_socialsdisplay2) set_social_icons(); ?>
+<?php if($mantra_socialsdisplay2) mantra_set_social_icons(); ?>
 </div>
 <div style="clear:both;"> </div> 
-<?php if($mantra_breadcrumbs=="Enable") { the_breadcrumbs();  }?>
+<?php if($mantra_breadcrumbs=="Enable") { mantra_breadcrumbs();  }?>

@@ -49,7 +49,7 @@ foreach ($mantra_options as $key => $value) {
 	<?php if ($mantra_copyright != '') { ?><div id="site-copyright"><?php echo $mantra_copyright; ?> </div> <?php } ?>
 
 			<div class="socials" id="sfooter">
-<?php if($mantra_socialsdisplay3) set_social_icons(); ?>
+<?php if($mantra_socialsdisplay3) mantra_social_icons(); ?>
 </div>
 
 </div>

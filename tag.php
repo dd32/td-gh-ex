@@ -42,7 +42,7 @@ get_header(); ?>
 
 				<?php endwhile; ?>
 
-				<?php mantra_content_nav( 'nav-below' ); ?>
+				<?php if($mantra_pagination=="Enable") mantra_pagination(); else mantra_content_nav( 'nav-below' ); ?>
 
 			<?php else : ?>
 

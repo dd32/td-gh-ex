@@ -47,12 +47,12 @@ foreach ($options as $key => $value) {
 			
 						<?php if ($mantra_excerptarchive != "Full Post" ){ ?>
 						<div class="entry-summary">
-						<?php set_featured_thumb(); ?>
+						<?php mantra_set_featured_thumb(); ?>
 						<?php the_excerpt(); ?>
 						</div><!-- .entry-summary -->
 						<?php } else { ?>
 						<div class="entry-content">
-						<?php set_featured_thumb(); ?>
+						<?php mantra_set_featured_thumb(); ?>
 						<?php	the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'mantra' ) . '</span>', 'after' => '</div>' ) ); ?>
 						</div><!-- .entry-content --> 
@@ -64,12 +64,12 @@ foreach ($options as $key => $value) {
 					
 					
 						<div class="entry-summary">
-						<?php set_featured_thumb(); ?>
+						<?php mantra_set_featured_thumb(); ?>
 						<?php the_excerpt(); ?>
 						</div><!-- .entry-summary --> 
 						<?php } else { ?>
 						<div class="entry-content">
-						<?php set_featured_thumb(); ?>
+						<?php mantra_set_featured_thumb(); ?>
 						<?php	the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'mantra' ) . '</span>', 'after' => '</div>' ) ); ?>
 						</div><!-- .entry-content --> 

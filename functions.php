@@ -648,7 +648,7 @@ function echo_first_image ($postID)
 
 
 
-function set_featured_thumb() {
+function mantra_set_featured_thumb() {
 	global $mantra_options;
 	foreach ($mantra_options as $key => $value) {
      ${"$key"} = $value ;
@@ -667,16 +667,16 @@ $image_src = echo_first_image($post->ID);
 								
 	}
 
-add_filter( 'post_thumbnail_html', 'thumbnail_link', 10, 3 );	
+add_filter( 'post_thumbnail_html', 'mantra_thumbnail_link', 10, 3 );	
 
-function thumbnail_link( $html, $post_id, $post_image_id ) {
+function mantra_thumbnail_link( $html, $post_id, $post_image_id ) {
 
   $html = '<a href="' . get_permalink( $post_id ) . '" title="' . esc_attr( get_post_field( 'post_title', $post_id ) ) . '" alt="' . esc_attr( get_post_field( 'post_title', $post_id ) ) . '">' . $html . '</a>';
   return $html;
 
 }
 
-function footer_sidebar_class() {
+function mantra_footer_sidebar_class() {
 	$count = 0;
 
 	if ( is_active_sidebar( 'first-footer-widget-area' ) )
@@ -688,7 +688,7 @@ function footer_sidebar_class() {
 	if ( is_active_sidebar( 'third-footer-widget-area' ) )
 		$count++;
 
-	if ( is_active_sidebar( 'forth-footer-widget-area' ) )
+	if ( is_active_sidebar( 'fourth-footer-widget-area' ) )
 		$count++;
 
 	$class = '';
@@ -712,7 +712,7 @@ function footer_sidebar_class() {
 		echo 'class="footer' . $class . '"';
 }
 
-function the_breadcrumbs() {
+function mantra_breadcrumbs() {
 global $post;
 echo '<div class="breadcrumbs">';
 if (is_page() && !is_front_page() || is_single() || is_category() || is_archive()) {
@@ -757,7 +757,7 @@ if (is_page() && !is_front_page() || is_single() || is_category() || is_archive(
 echo '</div>';
 }
 
-function the_pagination($pages = '', $range = 1)
+function mantra_pagination($pages = '', $range = 1)
 {  
      $showitems = ($range * 2)+1;  
 
@@ -794,8 +794,32 @@ function the_pagination($pages = '', $range = 1)
      }
 }
 
+function mantra_filter_wp_title( $title ) {
+    // Get the Site Name
+    $site_name = get_bloginfo( 'name' );
+    // Prepend name
+    $filtered_title = $site_name .' | '. $title;
+	// Get the Site Description
+ 	$site_description = get_bloginfo( 'description' );
+    // If site front page, append description
+    if ( (is_home() || is_front_page()) && $site_description ) {       
+        // Append Site Description to title
+        $filtered_title .= " | ".$site_description;
+    }
+	// Add pagination if that's the case
+	global $page, $paged;
+	if ( $paged >= 2 || $page >= 2 )
+	$filtered_title .=	 ' | ' . sprintf( __( 'Page %s', 'mantra' ), max( $paged, $page ) );
 
-function set_social_icons() {
+    // Return the modified title
+    return $filtered_title;
+}
+// Hook into 'wp_title'
+add_filter( 'wp_title', 'mantra_filter_wp_title' );
+
+
+
+function mantra_set_social_icons() {
 	global $mantra_options;
 	foreach ($mantra_options as $key => $value) {
      ${"$key"} = $value ;
