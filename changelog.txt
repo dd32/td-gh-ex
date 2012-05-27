@@ -7,9 +7,10 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
-(05/26/2012) - Version 1.5.4
+(05/26/2012) - Version 1.5.4/5
 [+] new language
     - Bulgarian
+	- Norwegian
 [*] all* language updates
 [+] direct script access disallowed
 [*] featured-image.png
@@ -22,6 +23,7 @@ Changelog Legend:
 [x] breadcrumbs for search.php
 [*] reduced font-size in theme-options.css
 [*] more precise responsive grids
+[*] style.css maintenance
 
 (05/17/2012) - Version 1.5.3
 [+] new languages

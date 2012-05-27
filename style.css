@@ -1,9 +1,9 @@
 /* 
 Theme Name: Responsive 
 Theme URI: http://themeid.com/responsive-theme/ 
-Description: Responsive WordPress Theme that features 9 page Templates such as Blog, Blog Summary and Template based layout designs: sidebar/content, sidebar/content half, content/sidebar and content/sidebar half. There is also full width page, sitemap Template as well as landing page for your PPC or any other purposes. Responsive also supports 9 widget areas and best of all this Theme is crafted with fluid proportion-based grid system of our own to adapt the design to the viewing environment. There are also Theme Options to control the content, webmaster tools, logo managament, social icons and 4 navigation menus. Currently translated in German, French, Portuguese, Italian, Swedish, Malay, Catalan, Spanish and Bulgarian. Everything is backed by our FREE dedicated support forums @ http://themeid.com/forum
+Description: Responsive WordPress Theme that features 9 page Templates such as Blog, Blog Summary and Template based layout designs: sidebar/content, sidebar/content half, content/sidebar and content/sidebar half. There is also full width page, sitemap Template as well as landing page for your PPC or any other purposes. Responsive also supports 9 widget areas and best of all this Theme is crafted with fluid proportion-based grid system of our own to adapt the design to the viewing environment. There are also Theme Options to control the content, webmaster tools, logo managament, social icons and 4 navigation menus. Currently translated in German, French, Portuguese, Italian, Swedish, Malay, Catalan, Spanish, Bulgarian and Norwegian. Everything is backed by our FREE dedicated support forums @ http://themeid.com/forum
 
-Version: 1.5.4
+Version: 1.5.5
 Author: ThemeID 
 Author URI: http://themeid.com
 Tags: white, black, gray, light, custom-menu, custom-header, custom-background, one-column, two-columns, left-sidebar, right-sidebar, flexible-width, theme-options, threaded-comments, full-width-template, sticky-post, translation-ready
@@ -171,63 +171,63 @@ sub {
 -------------------------------------------------------------- */
 .grid {
 	float:left;
-	margin-bottom:2.083%;
+	margin-bottom:2.127659574468%;
 	padding-top:0;
 }
 
 .grid-right {
 	float:right;
-	margin-bottom:2.083%;
+	margin-bottom:2.127659574468%;
 	padding-top:0;
 }
 
 .col-60, .col-140, .col-220, .col-300, .col-380, .col-460, .col-540, .col-620, .col-700, .col-780, .col-860 {
 	display:inline;
-	margin-right:2.083%;
+	margin-right:2.127659574468%;
 }
 
 .col-60 {
-	width:6.38297%;
+	width:6.382978723404%;
 }
 
 .col-140 {
-	width:14.89361%;
+	width:14.893617021277%;
 }
 
 .col-220 {
-	width:23.40425%;
+	width:23.404255319149%;
 }
 
 .col-300 {
-	width:31.91489%;
+	width:31.914893617021%;
 }
 
 .col-380 {
-	width:40.42553%;
+	width:40.425531914894%;
 }
 
 .col-460 {
-	width:48.82978%;
+	width:48.936170212766%;
 }
 
 .col-540 {
-	width:57.4468%;
+	width:57.446808510638%;
 }
 
 .col-620 {
-	width:65.95744%;
+	width:65.957446808511%;
 }
 
 .col-700 {
-	width:74.46808%;
+	width:74.468085106383%;
 }
 
 .col-780 {
-	width:82.97872%;
+	width:82.978723404255%;
 }
 
 .col-860 {
-	width:91.48936%;
+	width:91.489361702128%;
 }
 
 .col-940 {
@@ -240,7 +240,6 @@ sub {
 .fit {
 	margin-left:0!important;
 	margin-right:0!important;
-	float:right;
 }
 
 img {
@@ -1163,6 +1162,7 @@ form div {
 	border:1px solid #d6d6d6;
 	border-radius: 6px;
 	padding-bottom: 40px;
+	width:99.893617021277%;
 }
 
 #featured p {

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Responsive Theme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-25 13:42:58 UTC\n"
-"PO-Revision-Date: 2012-05-22 23:21+0100\n"
+"PO-Revision-Date: 2012-05-27 06:29+0100\n"
 "Last-Translator: grapplerulrich <grapplerulrich@gmail.com>\n"
 "Language-Team: Bulgarian, Bulgaria\n"
 "MIME-Version: 1.0\n"
@@ -64,6 +64,16 @@ msgstr "Може да се върнете към"
 msgid "Home"
 msgstr "Начало"
 
+#: page.php
+#: landing-page.php
+#: index.php
+#: image.php
+#: full-width-page.php
+#: content-sidebar-page.php
+#: content-sidebar-half-page.php
+#: blog.php
+#: blog-excerpt.php
+#: archive.php
 #: 404.php
 msgid "&larr; Home"
 msgstr "← Начало"
@@ -94,6 +104,7 @@ msgstr "Архив за месец: %s"
 msgid "Yearly Archives: %s"
 msgstr "Архив за година: %s"
 
+#: archive.php
 msgid "Blog Archives"
 msgstr "Архиви на блога"
 
@@ -203,6 +214,16 @@ msgstr "С етикет:"
 msgid "Posted in %s"
 msgstr "Публикувано в %s"
 
+#: page.php
+#: landing-page.php
+#: index.php
+#: image.php
+#: full-width-page.php
+#: content-sidebar-page.php
+#: content-sidebar-half-page.php
+#: blog.php
+#: blog-excerpt.php
+#: archive.php
 msgid "Edit"
 msgstr "Редактиране"
 
@@ -229,19 +250,6 @@ msgstr "‹ По-стари публикации"
 #: archive.php
 msgid "Newer posts &#8250;"
 msgstr "По-нови публикации ›"
-
-#: page.php
-#: landing-page.php
-#: index.php
-#: image.php
-#: full-width-page.php
-#: content-sidebar-page.php
-#: content-sidebar-half-page.php
-#: blog.php
-#: blog-excerpt.php
-#: archive.php
-msgid "&#9166; Home"
-msgstr "⏎ Начало"
 
 #: blog.php
 #: page.php
@@ -292,6 +300,7 @@ msgstr "Е-адрес"
 msgid "Website"
 msgstr "Уебсайт"
 
+#: footer.php
 msgid "&copy;"
 msgstr "©"
 
@@ -299,25 +308,19 @@ msgstr "©"
 msgid "scroll to top"
 msgstr "към началото"
 
+#: footer.php
 msgid "&uarr;"
 msgstr "↑"
 
-msgid "http://themeid.com/responsive-theme/"
-msgstr "http://themeid.com/responsive-theme/"
-
+#: footer.php
 msgid "Responsive Theme"
 msgstr "Responsive Theme"
 
-msgid "powered by"
-msgstr "задвижвана от"
-
 #: footer.php
-msgid "http://wordpress.org/"
-msgstr "http://wordpress.org/"
-
 msgid "WordPress"
 msgstr "WordPress"
 
+#: home.php
 msgid "Hello, World!"
 msgstr "Здравей свят"
 
@@ -357,94 +360,6 @@ msgstr "Без паника, ще се справим заедно. Нека д�
 msgid "home"
 msgstr "начало"
 
-#: search.php
-msgid "We found"
-msgstr "Открихме"
-
-msgid " &#8211; "
-msgstr " – "
-
-msgid "results for "
-msgstr "резултата за "
-
-#: single.php
-#: search.php
-msgid "About"
-msgstr "Относно"
-
-#: searchform.php
-msgid "search here &hellip;"
-msgstr "търсене..."
-
-#: searchform.php
-msgid "Go"
-msgstr "ОК"
-
-#: sidebar-gallery.php
-msgid "Image Information"
-msgstr "Информация за снимката"
-
-#: sidebar-gallery.php
-msgid "Full Size:"
-msgstr "Размер на файла:"
-
-#: sidebar-gallery.php
-msgid "Aperture: f&#47;"
-msgstr "Бленда: f/"
-
-#: sidebar-gallery.php
-msgid "Focal Length:"
-msgstr "Фокусно разстояние:"
-
-#: sidebar-gallery.php
-msgid "mm"
-msgstr "мм"
-
-#: sidebar-gallery.php
-msgid "ISO:"
-msgstr "ISO:"
-
-#: sidebar-gallery.php
-msgid "Shutter:"
-msgstr "Скорост на затвора:"
-
-#: sidebar-gallery.php
-msgid "Camera:"
-msgstr "Модел на фотоапарата:"
-
-msgid "In Archive"
-msgstr "В архив"
-
-msgid "Home Widget 1"
-msgstr "Начална джаджа 1"
-
-msgid "This is your first home widget box. To edit please go to Appearance > Widgets and choose 6th widget from the top in area six called Home Widget 1. Title is also manageable from widgets as well."
-msgstr "Това е първата джаджа в началната страница. За да я редактирате отворете Външен вид > Джаджи и изберете шеста област, наречена \"Начална джаджа 1\". Заглавието също може да се редактира."
-
-msgid "Home Widget 2"
-msgstr "Начална джаджа 2"
-
-msgid "This is your second home widget box. To edit please go to Appearance > Widgets and choose 7th widget from the top in area seven called Home Widget 2. Title is also manageable from widgets as well."
-msgstr "Това е втората джаджа в началната страница. За да я редактирате отворете Външен вид > Джаджи и изберете седма област, наречена \"Начална джаджа 2\". Заглавието също може да се редактира."
-
-msgid "Home Widget 3"
-msgstr "Начална джаджа 3"
-
-msgid "This is your third home widget box. To edit please go to Appearance > Widgets and choose 8th widget from the top in area eight called Home Widget 3. Title is also manageable from widgets as well."
-msgstr "Това е третата джаджа в началната страница. За да я редактирате отворете Външен вид > Джаджи и изберете осма област, наречена \"Начална джаджа 3\". Заглавието също може да се редактира."
-
-#: sitemap.php
-msgid "Categories"
-msgstr "Категории"
-
-#: sitemap.php
-msgid "Latest Posts"
-msgstr "Последни публикации"
-
-#: sitemap.php
-msgid "Pages"
-msgstr "Страници"
-
 #: includes/functions.php
 msgid "Top Menu"
 msgstr "Горно меню"
@@ -452,6 +367,10 @@ msgstr "Горно меню"
 #: includes/functions.php
 msgid "Header Menu"
 msgstr "Заглавно меню"
+
+#: search.php
+msgid "Search Results for: %s"
+msgstr "Резултати от търсенето на: %s"
 
 #: includes/functions.php
 msgid "Sub-Header Menu"
@@ -465,25 +384,13 @@ msgstr "Меню във фуутъра"
 msgid "<div class=\"read-more\">Read more &#8250;</div><!-- end of .read-more -->"
 msgstr "<div class=\"read-more\">Прочетете още ›</div><!-- end of .read-more -->"
 
-#: includes/functions.php
-msgid "Archive for "
-msgstr "Архив за "
+#: search.php
+msgid "Your search for"
+msgstr "Търсенето за"
 
-#: includes/functions.php
-msgid "Search results for "
-msgstr "Резултати от търсенето на "
-
-#: includes/functions.php
-msgid "Posts tagged "
-msgstr "Публикации с етикет "
-
-#: includes/functions.php
-msgid "All posts by "
-msgstr "Всички публикации от "
-
-#: includes/functions.php
-msgid "Error 404 "
-msgstr "Грешка 404 "
+#: search.php
+msgid "did not match any entries"
+msgstr "не откри съвпадения"
 
 #: includes/functions.php
 msgid "Page"
@@ -517,6 +424,7 @@ msgstr "Лява странична лента"
 msgid "Area Three - sidebar-left.php"
 msgstr "Трета област - sidebar-left.php"
 
+#: includes/functions.php
 msgid "Left Sidebar Half Page"
 msgstr "Лява лента на половин страница"
 
@@ -524,6 +432,7 @@ msgstr "Лява лента на половин страница"
 msgid "Area Four - sidebar-left-half.php"
 msgstr "Четвърта област - sidebar-left-half.php"
 
+#: includes/functions.php
 msgid "Right Sidebar Half Page"
 msgstr "Дясна лента на половин страница"
 
@@ -532,12 +441,39 @@ msgid "Area Five - sidebar-right-half.php"
 msgstr "Пета област - sidebar-right-half.php"
 
 #: includes/functions.php
+#: sidebar-home.php
+msgid "Home Widget 1"
+msgstr "Начална джаджа 1"
+
+#: sidebar-home.php
+msgid "This is your first home widget box. To edit please go to Appearance > Widgets and choose 6th widget from the top in area six called Home Widget 1. Title is also manageable from widgets as well."
+msgstr "Това е първата джаджа в началната страница. За да я редактирате отворете Външен вид > Джаджи и изберете шеста област, наречена \"Начална джаджа 1\". Заглавието също може да се редактира."
+
+#: includes/functions.php
 msgid "Area Six - sidebar-home.php"
 msgstr "Шеста област - sidebar-home.php"
 
 #: includes/functions.php
+#: sidebar-home.php
+msgid "Home Widget 2"
+msgstr "Начална джаджа 2"
+
+#: sidebar-home.php
+msgid "This is your second home widget box. To edit please go to Appearance > Widgets and choose 7th widget from the top in area seven called Home Widget 2. Title is also manageable from widgets as well."
+msgstr "Това е втората джаджа в началната страница. За да я редактирате отворете Външен вид > Джаджи и изберете седма област, наречена \"Начална джаджа 2\". Заглавието също може да се редактира."
+
+#: includes/functions.php
 msgid "Area Seven - sidebar-home.php"
 msgstr "Седма област - sidebar-home.php"
+
+#: includes/functions.php
+#: sidebar-home.php
+msgid "Home Widget 3"
+msgstr "Начална джаджа 3"
+
+#: sidebar-home.php
+msgid "This is your third home widget box. To edit please go to Appearance > Widgets and choose 8th widget from the top in area eight called Home Widget 3. Title is also manageable from widgets as well."
+msgstr "Това е третата джаджа в началната страница. За да я редактирате отворете Външен вид > Джаджи и изберете осма област, наречена \"Начална джаджа 3\". Заглавието също може да се редактира."
 
 #: includes/functions.php
 msgid "Area Eight - sidebar-home.php"
@@ -551,17 +487,19 @@ msgstr "Странична лента \"Галерия\""
 msgid "Area Nine - sidebar-gallery.php"
 msgstr "Девета област - sidebar-gallery.php"
 
+#: sitemap.php
+msgid "Pages"
+msgstr "Страници"
+
 #: includes/theme-options.php
 msgid "Theme Options"
 msgstr "Настройки на темата"
-
-msgid " Theme Options"
-msgstr " Настройки на темата"
 
 #: includes/theme-options.php
 msgid "Options Saved"
 msgstr "Настройките са записани"
 
+#: includes/theme-options.php
 msgid "Theme Elements"
 msgstr "Елементи на темата"
 
@@ -625,6 +563,7 @@ msgstr "Въведете съдържание"
 msgid "Call to Action (URL)"
 msgstr "Действие (уеб адрес)"
 
+#: includes/theme-options.php
 msgid "Enter your call to action URL"
 msgstr "Уеб адрес за бутон Действие"
 
@@ -640,13 +579,6 @@ msgstr "Въведете текст за бутона"
 msgid "Featured Content"
 msgstr "Избрано съдържание"
 
-msgid "http://themeid.com/forum/topic/510/theme-options-featured-content/"
-msgstr "http://themeid.com/forum/topic/510/theme-options-featured-content/"
-
-#: includes/theme-options.php
-msgid "See Docs"
-msgstr "Вижте документацията"
-
 #: includes/theme-options.php
 msgid "Paste your video or image source"
 msgstr "Поставете източника на видеото или снимката"
@@ -655,30 +587,35 @@ msgstr "Поставете източника на видеото или сни�
 msgid "Webmaster Tools"
 msgstr "Инструменти за уебмастери"
 
+#: includes/theme-options.php
 msgid "Google Site Verification"
 msgstr "Google Site Verification"
 
+#: includes/theme-options.php
 msgid "Enter your Google ID number only"
 msgstr "Въведете само номера (Google ID)"
 
+#: includes/theme-options.php
 msgid "Bing Site Verification"
 msgstr "Bing Site Verification"
 
+#: includes/theme-options.php
 msgid "Enter your Bing ID number only"
 msgstr "Въведете само номера (Bing ID)"
 
+#: includes/theme-options.php
 msgid "Yahoo Site Verification"
 msgstr "Yahoo Site Verification"
 
+#: includes/theme-options.php
 msgid "Enter your Yahoo ID number only"
 msgstr "Въведете само номера (Yahoo ID)"
 
+#: includes/theme-options.php
 msgid "Site Statistics Tracker"
-msgstr "Site Statistics Tracker"
+msgstr "Друг сайт за статистистика"
 
-msgid "Leave blank if plugin handles your webmaster tools"
-msgstr "Оставете полето празно ако използвате плъгин за вашите инструменти"
-
+#: includes/theme-options.php
 msgid "Google Analytics, StatCounter, any other or all of them."
 msgstr "Google Analytics, StatCounter и всеки друг от тях."
 
@@ -686,33 +623,43 @@ msgstr "Google Analytics, StatCounter и всеки друг от тях."
 msgid "Social Icons"
 msgstr "Социални мрежи"
 
+#: includes/theme-options.php
 msgid "Twitter"
 msgstr "Twitter"
 
+#: includes/theme-options.php
 msgid "Enter your Twitter URL"
 msgstr "Адрес на профила Ви в Twitter"
 
+#: includes/theme-options.php
 msgid "Facebook"
 msgstr "Facebook"
 
+#: includes/theme-options.php
 msgid "Enter your Facebook URL"
 msgstr "Адрес на профила Ви във Facebook"
 
+#: includes/theme-options.php
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
+#: includes/theme-options.php
 msgid "Enter your LinkedIn URL"
 msgstr "Адрес на профила Ви в LinkedIn"
 
+#: includes/theme-options.php
 msgid "YouTube"
 msgstr "YouTube"
 
+#: includes/theme-options.php
 msgid "Enter your YouTube URL"
 msgstr "Адрес на профила Ви в YouTube"
 
+#: includes/theme-options.php
 msgid "StumbleUpon"
 msgstr "StumbleUpon"
 
+#: includes/theme-options.php
 msgid "Enter your StumbleUpon URL"
 msgstr "Адрес на профила Ви в StumbleUpon"
 
@@ -720,24 +667,137 @@ msgstr "Адрес на профила Ви в StumbleUpon"
 msgid "RSS Feed"
 msgstr "Емисия RSS"
 
+#: includes/theme-options.php
 msgid "Enter your RSS Feed URL"
 msgstr "Адрес на RSS емисията"
 
+#: includes/theme-options.php
 msgid "Google+"
 msgstr "Google+"
 
+#: includes/theme-options.php
 msgid "Enter your Google+ URL"
 msgstr "Адрес на Google+ профила Ви"
 
+#: searchform.php
+msgid "search here &hellip;"
+msgstr "търсене..."
+
+#: searchform.php
+msgid "Go"
+msgstr "ОК"
+
+#: sidebar-gallery.php
+msgid "Image Information"
+msgstr "Информация за снимката"
+
+#: sidebar-gallery.php
+msgid "Full Size:"
+msgstr "Размер на файла:"
+
+#: sidebar-gallery.php
+msgid "Aperture: f&#47;"
+msgstr "Бленда: f/"
+
+#: sidebar-gallery.php
+msgid "Focal Length:"
+msgstr "Фокусно разстояние:"
+
+#: sidebar-gallery.php
+msgid "mm"
+msgstr "мм"
+
+#: sidebar-gallery.php
+msgid "ISO:"
+msgstr "ISO:"
+
+#: sidebar-gallery.php
+msgid "Shutter:"
+msgstr "Скорост на затвора:"
+
+#: sidebar-gallery.php
+msgid "Camera:"
+msgstr "Модел на фотоапарата:"
+
+#: sidebar.php
+#: sidebar-right.php
+#: sidebar-right-half.php
+#: sidebar-left.php
+#: sidebar-left-half.php
+#: sidebar-half-left.php
+msgid "In Archive"
+msgstr "В архив"
+
+#: single.php
+#: search.php
+msgid "About"
+msgstr "Относно"
+
+#: sitemap.php
+msgid "Categories"
+msgstr "Категории"
+
+#: sitemap.php
+msgid "Latest Posts"
+msgstr "Последни публикации"
+
+#: includes/functions.php
+msgid "Archive for "
+msgstr "Архив за "
+
+#: includes/functions.php
+msgid "Search results for "
+msgstr "Резултати от търсенето на "
+
+#: includes/functions.php
+msgid "Posts tagged "
+msgstr "Публикации с етикет "
+
+#: includes/functions.php
+msgid "All posts by "
+msgstr "Всички публикации от "
+
+#: includes/functions.php
+msgid "Error 404 "
+msgstr "Грешка 404 "
+
+#: footer.php
+msgid "http://themeid.com/responsive-theme/"
+msgstr "http://themeid.com/responsive-theme/"
+
+#: footer.php
+msgid "powered by"
+msgstr "задвижвана от"
+
+#: footer.php
+msgid "http://wordpress.org/"
+msgstr "http://bg.wordpress.org/"
+
+#: includes/theme-options.php
+msgid "http://themeid.com/forum/topic/510/theme-options-featured-content/"
+msgstr "http://themeid.com/forum/topic/510/theme-options-featured-content/"
+
+#: includes/theme-options.php
+msgid "See Docs"
+msgstr "Вижте документацията"
+
+#: includes/theme-options.php
+msgid "Leave blank if plugin handles your webmaster tools"
+msgstr "Оставете полето празно ако използвате плъгин за вашите инструменти"
+
+#: includes/theme-options.php
 msgid "Instagram"
 msgstr "Instagram"
 
+#: includes/theme-options.php
 msgid "Enter your Instagram URL"
 msgstr "Адрес на Instagram профила Ви"
 
+#: includes/theme-options.php
 msgid "Pinterest"
 msgstr "Pinterest"
 
+#: includes/theme-options.php
 msgid "Enter your Pinterest URL"
 msgstr "Адрес на Pinterest профила Ви"
 
@@ -745,10 +805,11 @@ msgstr "Адрес на Pinterest профила Ви"
 msgid "Custom CSS Styles"
 msgstr "Потребителски CSS стилове"
 
-#. Check if there is a link in your language
+#: includes/theme-options.php
 msgid "https://developer.mozilla.org/en/CSS"
 msgstr "https://developer.mozilla.org/en/CSS"
 
+#: includes/theme-options.php
 msgid "CSS Tutorial"
 msgstr "Обяснение на CSS (на английски)"
 

@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Responsive 1.5.4\n"
+"Project-Id-Version: Responsive 1.5.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-25 21:24+0100\n"
-"PO-Revision-Date: 2012-05-25 21:26+0100\n"
+"POT-Creation-Date: 2012-05-27 06:06+0100\n"
+"PO-Revision-Date: 2012-05-27 06:06+0100\n"
 "Last-Translator: grapplerulrich <grapplerulrich@gmail.com>\n"
 "Language-Team: Theme ID\n"
 "MIME-Version: 1.0\n"
@@ -12,7 +12,6 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_x;_ex;_n;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"Plural-Forms: \"Plural-Forms: nplurals=2; plural=n != 1;\\n\"\n"
 "X-Poedit-Language: English\n"
 "X-Poedit-Country: UNITED STATES\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -435,16 +434,16 @@ msgid "Search Results for: %s"
 msgstr ""
 
 # @ responsive
-#: search.php:69
+#: search.php:64
 #: single.php:67
 msgid "About"
 msgstr ""
 
-#: search.php:99
+#: search.php:94
 msgid "Your search for"
 msgstr ""
 
-#: search.php:99
+#: search.php:94
 msgid "did not match any entries"
 msgstr ""
 
@@ -690,304 +689,300 @@ msgstr ""
 
 # @ responsive
 #: includes/theme-options.php:45
+#: includes/theme-options.php:118
 msgid "Theme Options"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:119
-msgid " Theme Options"
-msgstr ""
-
-# @ responsive
-#: includes/theme-options.php:122
+#: includes/theme-options.php:121
 msgid "Options Saved"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:131
+#: includes/theme-options.php:130
 msgid "Theme Elements"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:140
+#: includes/theme-options.php:139
 msgid "Disable Breadcrumb Lists?"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:143
-#: includes/theme-options.php:154
+#: includes/theme-options.php:142
+#: includes/theme-options.php:153
 msgid "Check to disable"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:151
+#: includes/theme-options.php:150
 msgid "Disable Call to Action Button?"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:156
-#: includes/theme-options.php:253
-#: includes/theme-options.php:311
-#: includes/theme-options.php:380
-#: includes/theme-options.php:406
+#: includes/theme-options.php:155
+#: includes/theme-options.php:252
+#: includes/theme-options.php:310
+#: includes/theme-options.php:379
+#: includes/theme-options.php:405
 msgid "Save Options"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:163
+#: includes/theme-options.php:162
 msgid "Logo Upload"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:171
+#: includes/theme-options.php:170
 msgid "Custom Header"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:174
+#: includes/theme-options.php:173
 #, php-format
 msgid "Need to replace or remove default logo? <a href=\"%s\">Click here</a>."
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:181
+#: includes/theme-options.php:180
 msgid "Home Page"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:189
+#: includes/theme-options.php:188
 msgid "Headline"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:192
+#: includes/theme-options.php:191
 msgid "Enter your headline"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:200
+#: includes/theme-options.php:199
 msgid "Subheadline"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:203
+#: includes/theme-options.php:202
 msgid "Enter your subheadline"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:211
+#: includes/theme-options.php:210
 msgid "Content Area"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:214
+#: includes/theme-options.php:213
 msgid "Enter your content"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:222
+#: includes/theme-options.php:221
 msgid "Call to Action (URL)"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:225
+#: includes/theme-options.php:224
 msgid "Enter your call to action URL"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:233
+#: includes/theme-options.php:232
 msgid "Call to Action (Text)"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:236
+#: includes/theme-options.php:235
 msgid "Enter your call to action text"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:245
+#: includes/theme-options.php:244
 msgid "Featured Content"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:246
+#: includes/theme-options.php:245
 msgid "http://themeid.com/forum/topic/510/theme-options-featured-content/"
 msgstr ""
 
 # @ responsive
+#: includes/theme-options.php:245
 #: includes/theme-options.php:246
-#: includes/theme-options.php:247
 msgid "See Docs"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:251
+#: includes/theme-options.php:250
 msgid "Paste your video or image source"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:260
+#: includes/theme-options.php:259
 msgid "Webmaster Tools"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:269
+#: includes/theme-options.php:268
 msgid "Google Site Verification"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:272
+#: includes/theme-options.php:271
 msgid "Enter your Google ID number only"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:280
+#: includes/theme-options.php:279
 msgid "Bing Site Verification"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:283
+#: includes/theme-options.php:282
 msgid "Enter your Bing ID number only"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:291
+#: includes/theme-options.php:290
 msgid "Yahoo Site Verification"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:294
+#: includes/theme-options.php:293
 msgid "Enter your Yahoo ID number only"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:303
+#: includes/theme-options.php:302
 msgid "Site Statistics Tracker"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:304
+#: includes/theme-options.php:303
 msgid "Leave blank if plugin handles your webmaster tools"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:309
+#: includes/theme-options.php:308
 msgid "Google Analytics, StatCounter, any other or all of them."
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:318
+#: includes/theme-options.php:317
 msgid "Social Icons"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:327
+#: includes/theme-options.php:326
 msgid "Twitter"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:330
+#: includes/theme-options.php:329
 msgid "Enter your Twitter URL"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:333
+#: includes/theme-options.php:332
 msgid "Facebook"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:336
+#: includes/theme-options.php:335
 msgid "Enter your Facebook URL"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:339
+#: includes/theme-options.php:338
 msgid "LinkedIn"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:342
+#: includes/theme-options.php:341
 msgid "Enter your LinkedIn URL"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:345
+#: includes/theme-options.php:344
 msgid "YouTube"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:348
+#: includes/theme-options.php:347
 msgid "Enter your YouTube URL"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:351
+#: includes/theme-options.php:350
 msgid "StumbleUpon"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:354
+#: includes/theme-options.php:353
 msgid "Enter your StumbleUpon URL"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:357
+#: includes/theme-options.php:356
 msgid "RSS Feed"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:360
+#: includes/theme-options.php:359
 msgid "Enter your RSS Feed URL"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:363
+#: includes/theme-options.php:362
 msgid "Google+"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:366
+#: includes/theme-options.php:365
 msgid "Enter your Google+ URL"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:369
+#: includes/theme-options.php:368
 msgid "Instagram"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:372
+#: includes/theme-options.php:371
 msgid "Enter your Instagram URL"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:375
+#: includes/theme-options.php:374
 msgid "Pinterest"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:378
+#: includes/theme-options.php:377
 msgid "Enter your Pinterest URL"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:387
-#: includes/theme-options.php:397
+#: includes/theme-options.php:386
+#: includes/theme-options.php:396
 msgid "Custom CSS Styles"
 msgstr ""
 
-#: includes/theme-options.php:398
+#: includes/theme-options.php:397
 msgid "https://developer.mozilla.org/en/CSS"
 msgstr ""
 
 # @ responsive
+#: includes/theme-options.php:397
 #: includes/theme-options.php:398
-#: includes/theme-options.php:399
 msgid "CSS Tutorial"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:404
+#: includes/theme-options.php:403
 msgid "Enter your custom CSS styles."
 msgstr ""
 
