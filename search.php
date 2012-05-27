@@ -2,7 +2,7 @@
 /**
  * The template for displaying Search Results pages.
  * @package BestCorporate
- * @since BestCorporate 1.9
+ * @since BestCorporate 2.0
  */
 
 get_header(); ?>
@@ -29,9 +29,9 @@ get_header(); ?>
       <!-- .entry-header -->
       <div class="entry-content">
         <p>
-          <?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'bestcorporate' ); ?>
+        	<?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'bestcorporate' ); ?>
         </p>
-        <?php get_search_form(); ?>
+        	<?php get_search_form(); ?>
       </div>
       <!-- .entry-content -->
     </article>

@@ -1,17 +1,16 @@
 <?php
 /**
  * @package BestCorporate
- * @since BestCorporate 1.9
+ * @since BestCorporate 2.0
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <header class="entry-header">
     <?php if (has_post_thumbnail()){?>
-    
     <div class="thumbImg"><a href="<?php the_permalink() ?>"><?php echo the_post_thumbnail('thumbnail');?></a></div>
     <?php }?>
     <h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'bestcorporate'), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
-      <?php the_title(); ?>
+    <?php the_title(); ?>
       </a></h1>
     <?php if ( 'post' == get_post_type() ) : ?>
     <div class="entry-meta">
@@ -50,7 +49,6 @@
     <footer class="entry-meta">
       <?php
 			$tag_list = get_the_tag_list( '', ', ' );
-
 				if ( '' != $tag_list ) {
 					$meta_text = __( 'Tags: %1$s.', 'bestcorporate' );
 				} 

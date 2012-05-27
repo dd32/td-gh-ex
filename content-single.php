@@ -1,14 +1,13 @@
 <?php
 /**
  * @package BestCorporate
- * @since BestCorporate 1.9
+ * @since BestCorporate 2.0
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <header class="entry-header">
     <?php if (has_post_thumbnail()){?>
-    
-    <div class="thumbImg"><a href="<?php the_permalink() ?>"><?php echo the_post_thumbnail('thumbnail');?></a></div>
+    	<div class="thumbImg"><a href="<?php the_permalink() ?>"><?php echo the_post_thumbnail('thumbnail');?></a></div>
     <?php }?>
     <h1 class="entry-title">
       <?php the_title(); ?>
@@ -17,10 +16,10 @@
       <?php bestcorporate_posted_on(); ?>
       <?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
       <?php
-				/* translators: used between list items, there is a space after the comma */
-				$categories_list = get_the_category_list( __( ', ', 'bestcorporate' ) );
-				if ( $categories_list && bestcorporate_categorized_blog() ) :
-			?>
+      	/* translators: used between list items, there is a space after the comma */
+		$categories_list = get_the_category_list( __( ', ', 'bestcorporate' ) );
+		if ( $categories_list && bestcorporate_categorized_blog() ) :
+		?>
       <span class="cat-links"> <?php printf( __( 'in %1$s', 'bestcorporate' ), $categories_list ); ?> </span> <span class="sep"> | </span>
       <?php endif; // End if categories ?>
       <?php endif; // End if 'post' == get_post_type() ?>

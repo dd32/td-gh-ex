@@ -8,7 +8,7 @@
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
  * @package BestCorporate
- * @since BestCorporate 1.9
+ * @since BestCorporate 2.0
  */
 
 get_header(); ?>
@@ -19,28 +19,28 @@ get_header(); ?>
     <header class="page-header">
       <h4 class="page-title">
         <?php
-							if ( is_day() ) :
-								printf( __( 'Daily Archives: %s', 'bestcorporate' ), '<span>' . get_the_date() . '</span>' );
-							elseif ( is_month() ) :
-								printf( __( 'Monthly Archives: %s', 'bestcorporate' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
-							elseif ( is_year() ) :
-								printf( __( 'Yearly Archives: %s', 'bestcorporate' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
-							else :
-								_e( 'Archives', 'bestcorporate' );
-							endif;
-						?>
+			if ( is_day() ) :
+				printf( __( 'Daily Archives: %s', 'bestcorporate' ), '<span>' . get_the_date() . '</span>' );
+			elseif ( is_month() ) :
+				printf( __( 'Monthly Archives: %s', 'bestcorporate' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
+			elseif ( is_year() ) :
+				printf( __( 'Yearly Archives: %s', 'bestcorporate' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
+			else :
+				_e( 'Archives', 'bestcorporate' );
+			endif;
+		?>
       </h4>
     </header>
     <?php rewind_posts(); ?>
     <?php /* Start the Loop */ ?>
     <?php while ( have_posts() ) : the_post(); ?>
     <?php
-						/* Include the Post-Format-specific template for the content.
-						 * If you want to overload this in a child theme then include a file
-						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-						 */
-						get_template_part( 'content', get_post_format() );
-					?>
+		/* Include the Post-Format-specific template for the content.
+		* If you want to overload this in a child theme then include a file
+		* called content-___.php (where ___ is the Post Format name) and that will be used instead.
+		*/
+		get_template_part( 'content', get_post_format() );
+	?>
     <?php endwhile; ?>
     <?php bestcorporate_content_nav( 'nav-below' ); ?>
     <?php else : ?>

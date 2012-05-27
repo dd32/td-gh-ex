@@ -1,7 +1,7 @@
 <?php
 /**
  * @package BestCorporate
- * @since BestCorporate 1.9
+ * @since BestCorporate 2.0
  */
 
 /**
@@ -66,15 +66,16 @@ function bestcorporate_setup() {
 	// gets included in the admin header
     function bestcorporate_admin_header_style() {
     ?>
-	<style type="text/css">
-    	#headimg h1 {
-        font-size: 16px;
-		font-weight: bold;
-		text-align:center;
-		line-height: 20px;
-		vertical-align: bottom;
-                }
-     </style><?php
+<style type="text/css">
+#headimg h1 {
+	font-size: 16px;
+	font-weight: bold;
+	text-align:center;
+	line-height: 20px;
+	vertical-align: bottom;
+}
+</style>
+<?php
         }
 	add_custom_image_header('', 'bestcorporate_admin_header_style');
 	
@@ -152,6 +153,7 @@ function bestcorporate_page_menu_args( $args ) {
 	$args['show_home'] = true;
 	return $args;
 }
+
 add_filter( 'wp_page_menu_args', 'bestcorporate_page_menu_args' );
 
 /**
@@ -186,11 +188,11 @@ function bestcorporate_theme_options_items(){
 		array(
 			'id' => 'logo_src',
 			'name' => 'Logo Upload',
-			'desc' => 'Need to replace or remove default logo? <a href="themes.php?page=custom-header">Click here</a>.'
+			'desc' => 'Custom Header, Need to replace or remove default logo? <a href="themes.php?page=custom-header">Click here</a>.'
 		),
 		array(
 			'id' => 'rss_url',
-			'name' => 'RSS URL','bestcorporate',
+			'name' => 'RSS URL',
 			'desc' => 'Put your full rss subscribe address here.(with http://). If empty, auto-set system defaults.'
 		)
 	);
@@ -208,7 +210,6 @@ function bestcorporate_theme_options_do_page() {
 	if ( ! isset( $_REQUEST['updated'] ) )
 		$_REQUEST['updated'] = false;
 ?>
-
 <div class="wrap">
   <?php screen_icon(); echo "<h2>" . sprintf( __('%1$s Theme Options','bestcorporate'), get_current_theme() )	 . "</h2>"; ?>
   <?php settings_errors(); ?>
@@ -217,7 +218,7 @@ function bestcorporate_theme_options_do_page() {
       <div class="stuffbox">
         <h3>
           <label for="link_url">
-          <?php _e('General settings','bestcorporate'); ?>
+          <?php _e('General settings', 'bestcorporate'); ?>
           </label>
         </h3>
         <div class="inside">
@@ -226,11 +227,11 @@ function bestcorporate_theme_options_do_page() {
           <table class="form-table">
             <?php foreach (bestcorporate_theme_options_items() as $item) { ?>
             <?php if ($item['id'] == 'logo_src') { ?>
-           <tr valign="top">
+            <tr valign="top">
               <th scope="row"><?php echo esc_attr($item['name']); ?></th>
               <td><label class="description"><?php echo $item['desc']; ?></label>
               </td>
-            </tr> 
+            </tr>
             <?php } 
 			else{?>
             <tr valign="top" style="margin-top:5px;border-top:1px solid #e1e1e1;">
@@ -260,16 +261,16 @@ function bestcorporate_options_validate($input) {
 	return $input;
 }
 
-
 add_filter('feed_link','bestcorporate_custom_feed_link',1,2);
 
 function bestcorporate_custom_feed_link($output, $feed) {
-	$bc_options = get_option( 'bestcorporate_theme_options' );	
+	$bc_options = get_option( 'bestcorporate_theme_options' );
 	if($bc_options['rss_url']!='')
-	{$feed_url = esc_url_raw($bc_options['rss_url']);
-	$feed_array = array('rss' => $feed_url, 'rss2' => $feed_url, 'atom' => $feed_url, 'rdf' => $feed_url, 'comments_rss2' => '');
-	$feed_array[$feed] = $feed_url;
-	$output = $feed_array[$feed];
+	{
+		$feed_url = esc_url_raw($bc_options['rss_url']);
+		$feed_array = array('rss' => $feed_url, 'rss2' => $feed_url, 'atom' => $feed_url, 'rdf' => $feed_url, 'comments_rss2' => '');
+		$feed_array[$feed] = $feed_url;
+		$output = $feed_array[$feed];
 	}
 	return $output;
 }
@@ -388,7 +389,7 @@ function bestcorporate_categorized_blog() {
   $object = get_post( $id );
   if ( wp_attachment_is_image( $post->ID ) && ( $wp_rewrite->using_permalinks() && ( $object->post_parent > 0 ) && ( $object->post_parent != $id ) ) )
   $url = $url . '#main';
-  
   return $url;
   }
-  add_filter( 'attachment_link', 'bestcorporate_enhanced_image_navigation' );
+  
+  add_filter( 'attachment_link', 'bestcorporate_enhanced_image_navigation' ); 

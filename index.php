@@ -9,7 +9,7 @@
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
  * @package BestCorporate
- * @since BestCorporate 1.9
+ * @since BestCorporate 2.0
  */
 
 get_header(); ?>
@@ -25,13 +25,13 @@ get_header(); ?>
 				get_template_part( 'content', aside );
 				else:?>
     <?php
-						/* Include the Post-Format-specific template for the content.
-						 * If you want to overload this in a child theme then include a file
-						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-						 */
-						get_template_part( 'content', get_post_format() );
+				/* Include the Post-Format-specific template for the content.
+				* If you want to overload this in a child theme then include a file
+				* called content-___.php (where ___ is the Post Format name) and that will be used instead.
+				*/
+				get_template_part( 'content', get_post_format() );
 				endif
-					?>
+	?>
     <?php endwhile; ?>
     <?php bestcorporate_content_nav( 'nav-below' ); ?>
     <?php else : ?>

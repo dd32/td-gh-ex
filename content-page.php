@@ -3,7 +3,7 @@
  * The template used for displaying page content in page.php
  *
  * @package BestCorporate
- * @since BestCorporate 1.9
+ * @since BestCorporate 2.0
  */
 ?>
 
@@ -11,7 +11,7 @@
   <header class="entry-header">
     <div class="thumbImg">
       <?php if (has_post_thumbnail()){    
-	  echo the_post_thumbnail('thumbnail');}
+	  	echo the_post_thumbnail('thumbnail');}
 	  ?>
       </a></div>
     <h1 class="entry-title">

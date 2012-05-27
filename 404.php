@@ -3,7 +3,7 @@
  * The template for displaying 404 pages (Not Found).
  *
  * @package BestCorporate
- * @since BestCorporate 1.9
+ * @since BestCorporate 2.0
  */
 
 get_header(); ?>
@@ -20,7 +20,7 @@ get_header(); ?>
         <p>
           <?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching, or one of the links below, can help.', 'bestcorporate' ); ?>
         </p>
-        <?php get_search_form(); ?>         
+        <?php get_search_form(); ?>
       </div>
       <!-- .entry-content -->
     </article>
@@ -28,5 +28,4 @@ get_header(); ?>
   <!-- #content -->
 </div>
 <!-- #primary -->
-
 <?php get_footer(); ?>

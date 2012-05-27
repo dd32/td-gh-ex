@@ -5,7 +5,7 @@
  * Learn more: http://codex.wordpress.org/Post_Formats
  *
  * @package BestCorporate
- * @since BestCorporate 1.9
+ * @since BestCorporate 2.0
  */
 ?>
 
@@ -18,10 +18,10 @@
       <?php bestcorporate_posted_on(); ?>
       <?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
       <?php
-				/* translators: used between list items, there is a space after the comma */
-				$categories_list = get_the_category_list( __( ', ', 'bestcorporate' ) );
-				if ( $categories_list && bestcorporate_categorized_blog() ) :
-			?>
+      	/* translators: used between list items, there is a space after the comma */
+		$categories_list = get_the_category_list( __( ', ', 'bestcorporate' ) );
+		if ( $categories_list && bestcorporate_categorized_blog() ) :
+		?>
       <span class="cat-links"> <?php printf( __( 'in %1$s', 'bestcorporate' ), $categories_list ); ?> </span> <span class="sep"> | </span>
       <?php endif; // End if categories ?>
       <?php endif; // End if 'post' == get_post_type() ?>
@@ -46,19 +46,19 @@
     <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'bestcorporate' ) ); ?>
     <?php else : ?>
     <?php
-					$images = get_children( array( 'post_parent' => $post->ID, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order', 'order' => 'ASC' ) );
-					if ( $images ) :
-						$total_images = count( $images );
-						$image = array_shift( $images );
-						$image_img_tag = wp_get_attachment_image( $image->ID, 'thumbnail' );
-				?>
+		$images = get_children( array( 'post_parent' => $post->ID, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order', 'order' => 'ASC' ) );
+		if ( $images ) :
+			$total_images = count( $images );
+			$image = array_shift( $images );
+			$image_img_tag = wp_get_attachment_image( $image->ID, 'thumbnail' );
+	?>
     <figure class="gallery-thumb">
       <?php
-	$images = get_children( array( 'post_parent' => $post->ID, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order', 'order' => 'ASC', 'numberposts' => 999 ) );
-	$total_images = count( $images );
-	$image = array_shift( $images );
-	$image_img_tag = wp_get_attachment_image( $image->ID, 'thumbnail' );
-?>
+      	$images = get_children( array( 'post_parent' => $post->ID, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order', 'order' => 'ASC', 'numberposts' => 999 ) );
+		$total_images = count( $images );
+		$image = array_shift( $images );
+		$image_img_tag = wp_get_attachment_image( $image->ID, 'thumbnail' );
+		?>
       <a class="size-thumbnail" href="<?php the_permalink(); ?>"><?php echo $image_img_tag; ?></a> </figure>
     <!-- .gallery-thumb -->
     <p><em><?php printf( _n( 'This gallery contains <a %1$s>%2$s photo</a>.', 'This gallery contains <a %1$s>%2$s photos</a>.', $total_images, 'bestcorporate' ),

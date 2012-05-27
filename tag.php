@@ -3,7 +3,7 @@
  * The template used to display Tag Archive pages
  *
  * @package bestcorporate
- * @since bestcorporate 1.9
+ * @since bestcorporate 2.0
  */
 
 get_header(); ?>
@@ -14,26 +14,26 @@ get_header(); ?>
     <header class="page-header">
       <h1 class="page-title">
         <?php
-						printf( __( 'Tag Archives: %s', 'bestcorporate' ), '<span>' . single_tag_title( '', false ) . '</span>' );
-					?>
+			printf( __( 'Tag Archives: %s', 'bestcorporate' ), '<span>' . single_tag_title( '', false ) . '</span>' );
+		?>
       </h1>
       <?php
-						$tag_description = tag_description();
-						if ( ! empty( $tag_description ) )
-							echo apply_filters( 'tag_archive_meta', '<div class="tag-archive-meta">' . $tag_description . '</div>' );
-					?>
+			$tag_description = tag_description();
+			if ( ! empty( $tag_description ) )
+				echo apply_filters( 'tag_archive_meta', '<div class="tag-archive-meta">' . $tag_description . '</div>' );
+		?>
     </header>
     <?php rewind_posts(); ?>
     <?php bestcorporate_content_nav( 'nav-above' ); ?>
     <?php /* Start the Loop */ ?>
     <?php while ( have_posts() ) : the_post(); ?>
     <?php
-						/* Include the Post-Format-specific template for the content.
-						 * If you want to overload this in a child theme then include a file
-						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-						 */
-						get_template_part( 'content', get_post_format() );
-					?>
+		/* Include the Post-Format-specific template for the content.
+		* If you want to overload this in a child theme then include a file
+		* called content-___.php (where ___ is the Post Format name) and that will be used instead.
+		*/
+		get_template_part( 'content', get_post_format() );
+	?>
     <?php endwhile; ?>
     <?php bestcorporate_content_nav( 'nav-below' ); ?>
     <?php else : ?>

@@ -2,7 +2,7 @@
 /**
  * The Header for our theme.
  * @package BestCorporate
- * @since BestCorporate 1.9
+ * @since BestCorporate 2.0
  */
 ?>
 <!DOCTYPE html>
@@ -22,14 +22,17 @@
 <?php global $bc_options;?>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
-<title><?php wp_title();?></title>
+<title>
+<?php wp_title();?>
+</title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_uri(); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
-<?php wp_head(); ?></head>
+<?php wp_head(); ?>
+</head>
 <body <?php body_class(); ?>>
 <div id="headerimg">
   <header id="branding" role="banner">
