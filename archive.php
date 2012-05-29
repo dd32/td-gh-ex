@@ -17,7 +17,7 @@ get_header(); ?>
 		<section id="primary">
        
 			<div id="content" role="main">
-            <div class="pagetopad"><?php include("pagetopad.php") ?></div>
+            <div class="pagetopad"><?php get_template_part('pagetopad'); ?></div>
 			
 			<?php if ( have_posts() ) : ?>
 

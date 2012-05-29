@@ -11,7 +11,7 @@ get_header(); ?>
 
 	<div id="primary">
 		<div id="content" role="main">
-<div class="pagetopad"><?php include("pagetopad.php") ?></div>
+<div class="pagetopad"><?php get_template_part('pagetopad'); ?></div>
 			
 				<header class="entry-header">
 					<h1 class="entry-title"><?php _e( 'This is somewhat embarrassing, isn&rsquo;t it?', 'd5smartia' ); ?></h1>

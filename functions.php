@@ -2,7 +2,10 @@
 /**
  * D5 Smartia functions and definitions
  *
- 
+
+/**
+ * Set the content width based on the theme's design and stylesheet.
+ */
 if ( ! isset( $content_width ) )
 	$content_width = 584;
 
@@ -52,9 +55,23 @@ function d5smartia_setup() {
 }
 endif; // d5smartia_setup
 
-if ( ! isset( $content_width ) )
-	$content_width = 584;
- 
+// Load up our awesome D5 Smartia Options
+require_once ( get_stylesheet_directory() . '/inc/theme-options.php' );
+
+/**
+ * Tell WordPress for wp_title in order to modify document title content
+ */
+function d5smartia_filter_wp_title( $title ) {
+    // Get the Site Name
+    $site_name = get_bloginfo( 'name' );
+    // Prepend it to the default output
+    $filtered_title = $site_name . $title;
+    // Return the modified title
+    return $filtered_title;
+}
+// Hook into 'wp_title'
+add_filter( 'wp_title', 'd5smartia_filter_wp_title' );
+
  /* To override this length in a child theme, remove the filter and add your own
  * function tied to the excerpt_length filter hook.
  */

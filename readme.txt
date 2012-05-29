@@ -7,7 +7,8 @@
 	Twenty Eleven is distributed under the terms of the GNU GPL
 -------------------------------------------------------------- */
 
-/* If Advertisements or other contents used with the theme their copyright will be applicable to the respective copyright owners. */
+/* SolaimanLipi  Font is designed by Solaiman Karim. Later, Saif Hassan updated the font. The font is distributed under GPL v2. */
+
 
 == ABOUT D5 Smartia ==
 

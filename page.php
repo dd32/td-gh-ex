@@ -16,7 +16,7 @@ get_header(); ?>
 
 		<div id="primary">
 			<div id="content" role="main">
-            <div class="pagetopad"><?php include("pagetopad.php") ?></div>
+            <div class="pagetopad"><?php get_template_part('pagetopad'); ?></div>
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
