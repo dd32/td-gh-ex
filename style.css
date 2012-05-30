@@ -4,10 +4,10 @@ Description: Simple, minimalist and elegant blog theme with responsive layout. T
 Theme URI:
 Author: Hendro Prayitno
 Author URI: http://amdhas.tk
-Version: 0.0.2
+Version: 0.0.3
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: flexible-width, theme-options, threaded-comments, translation-ready, two-columns, three-columns, right-sidebar, sticky-post
+Tags: white, light, flexible-width, theme-options, threaded-comments, translation-ready, two-columns, three-columns, right-sidebar, sticky-post
 */
 /* =================================================
  Global settings
@@ -54,9 +54,9 @@ hgroup,
 menu, 
 nav, 
 section {display: block;}
-a{color:#a00;text-decoration:none}
-a:visited{color:#456;text-decoration:none}
-a:hover{text-decoration:none;color:#f00}
+a{color:#2361a1;text-decoration:none}
+a:visited{color:#777;text-decoration:none}
+a:hover{text-decoration:none;color:#41b7d8}
 .alignleft {display: inline;float: left;margin-right: 1.625em;}
 .alignright {display: inline;float: right;margin-left: 1.625em;}
 .aligncenter {clear: both;display:inline-block;margin-left: auto;margin-right: auto;margin-bottom:0;}
@@ -115,13 +115,14 @@ h6 { font-size:100%}
 .title-post a{color:#999;font-family: 'Neuton';margin:0;font-size:1.3em;text-transform:uppercase;float:left;display:inline;padding-left:15px;}
 .title-post a:hover {color:#ffbe5d;}
 .post-info{font-size:11px;margin-bottom:0;}
-.title a{color:#999;font-size:1.1em;text-transform:uppercase;}
-.title a:hover {color:#900;}
+.title a{color:#999;font-size:1.1em;text-transform:uppercase;line-height:1;word-wrap:break-word;}
+.title a:hover {color:#41b7d8;}
 .published{font-size:10px;}
-h1.page-title{font-size:2em;font-style:italic;}
+h1.page-title{font-size:2em;font-style:italic;line-height:1;word-wrap:break-word;padding-bottom:15px;}
 /* =================================================
  Caption and image
 ================================================= */
+.wp-post-image {padding: 5px;border: 1px solid #ddd;margin-top:5px;}
 .wp-caption {margin-top: 0.4em;}
 .wp-caption {background: #f4f4f4;margin-bottom: 1.625em;max-width: 96%;padding: 9px;}
 .wp-caption img {display: block;margin: 0 auto;max-width: 98%;}
@@ -164,7 +165,7 @@ h1.page-title{font-size:2em;font-style:italic;}
 #searchsubmit:hover{background:#f5f5f5;}
 .ekserp ol,
 .ekserp ul{margin-left:1.0888em}
-.ekserp{color:#333;border-top:2px solid #999;padding-top:8px;padding-left:15px;padding-right:15px;margin-top:4px;font-size:1.02555em;line-height:1.3em;}
+.ekserp{padding-bottom:15px;color:#333;border-top:2px solid #999;padding-top:8px;padding-left:15px;padding-right:15px;margin-top:4px;font-size:1.02555em;line-height:1.3em;}
 .home-content{line-height:1.3em;width:52%;float:left;display:inline;background:#fff;}
 .breadcrumb{font-size:1.1em;padding:10px;margin-bottom:20px;}
 .side-depan{width:48%;float:left;display:inline;}
@@ -173,10 +174,11 @@ h1.page-title{font-size:2em;font-style:italic;}
 .adds-1 img{*width:80%;}
 .header img{*width:400px;*height:50px;}
 .side-padding2{padding:15px;width:87%;background:#eee;margin-top:35px;border-radius: 0 15px 0 0;}
-.sticky{background: #f6f6f6;color:red;padding-bottom:15px;margin-bottom:15px;}
+.sticky{background: #f6f6f6;padding-bottom:10px;margin-bottom:15px;}
 .tag-links{margin-bottom:10px;font-size:90%;}
 .tagged{overflow:auto;padding:10px;}
 .entry-meta{margin-top:20px;padding-left:15px;}
+
 /* =================================================
  Need Style for widget calendar 
 ================================================= */
@@ -308,6 +310,7 @@ a.comment-reply-link > span {display: inline-block;position: relative;top: -1px;
 #respond p {font-size: 12px;}
 p.comment-form-comment {margin: 0;}
 .form-allowed-tags {display: none;}
+.says{display:none}
 /* =================================================
  Navigation page
 ================================================= */
@@ -408,8 +411,11 @@ p.comment-form-comment {margin: 0;}
 ================================================= */
 @media screen and (max-width:767px){
 body{background:white;color:black}
+.commentlist > li.comment, 
+.commentlist > li.pingback {margin-left: 0 !important;}
+.commentlist .avatar {background: transparent;display: block;padding: 0;position: static;}
+.commentlist .children .avatar {background: none;left: 2.2em;padding: 0;position: absolute;top: 2.2em;}
 .commentlist {width: 100%;}
-.commentlist > li.comment, .pingback, .trackback {margin-left: 102px;width: auto;}	
 #respond {width: auto;}
 #authorarea,
 .side-footer,

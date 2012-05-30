@@ -51,7 +51,7 @@
 <?php comments_template('', true); ?>
 <div class="clearfix"></div>
 <?php endwhile; ?>
-<?php the_batik_content_nav();?>
+
 <?php else : ?>
 <h2 class="eror"><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'batik' ); ?></h2>
 

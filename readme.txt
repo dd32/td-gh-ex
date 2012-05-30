@@ -23,8 +23,11 @@ http://urbangiraffe.com/articles/translating-wordpress-themes-and-plugins/
 -----------------------------------------------
     ==Changelog==
 -----------------------------------------------
-=0.0.1=
-* Released
+=0.0.3=
+* Change link color on CSS file
+* Change the_batik_content_nav become batik_content_nav
+* More responsive media query on CSS file for commentlist
+* word-wrap:break-word for heading tag H1 
 
 =0.0.2=
 * Floating to right image avatar on CSS file, to change better comment layout.
@@ -32,6 +35,8 @@ http://urbangiraffe.com/articles/translating-wordpress-themes-and-plugins/
 * Change screenshot
 * Display:inline for image galery
 
+=0.0.1=
+* Released
 -----------------------------------------------
     ==Created by==
 -----------------------------------------------

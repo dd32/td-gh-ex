@@ -1,6 +1,6 @@
 <?php
 function batik_admin_enqueue_scripts( $hook_suffix ) {
-wp_enqueue_style( 'batik-theme-options', get_template_directory_uri() . '/options/batik-options.css', '0.0.2' );
+wp_enqueue_style( 'batik-theme-options', get_template_directory_uri() . '/options/batik-options.css', '0.0.3' );
 }
 add_action( 'admin_print_styles-appearance_page_theme_options', 'batik_admin_enqueue_scripts' );
 function batik_theme_options_init() {

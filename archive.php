@@ -37,7 +37,7 @@
 <div class="ekserp">
 <div class="alignleft">
 <?php _e('Categories :', 'batik'); ?> <?php the_category(' &bull; '); ?>
-<div class="clearfix"></div>
+<div class="clear"></div>
 <?php
 					$tags_list = get_the_tag_list( '', ', ' );
 					if ( $tags_list ):
@@ -52,7 +52,7 @@
 </div>
 <div class="clearfix"></div>
 <?php endwhile; ?>
-<?php the_batik_content_nav();?>
+<?php batik_content_nav();?>
 <?php else : ?>
 <h2 class="eror"><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'batik' ); ?></h2>
 
