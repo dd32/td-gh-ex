@@ -2,6 +2,11 @@ iFeature Changelog
 
 ****************************
 
+Version 4.5.5 (05-30-12)
+-Added Hindi language files.
+-Removed unused theme options and cleaned up related theme code.
+-Code cleanup in comments-actions.php.
+
 Version 4.5.4 (05-24-12)
 -Bug fix for sidebars related to last update. 
 
