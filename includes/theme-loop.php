@@ -242,11 +242,8 @@ function graphene_reset_excerpt_length(){
 if ( ! function_exists( 'graphene_get_post_image' ) ) :
 	function graphene_get_post_image( $post_id = NULL, $size = 'thumbnail', $context = '', $urlonly = false ){
 		
-		/* Display error message if no post ID is supplied */
-		if ( $post_id == NULL ){
-			_e( '<strong>ERROR: You must supply the post ID to get the image from as an argument when calling the graphene_get_post_image() function.</strong>', 'graphene' );
-			return;
-		}
+		/* Don't do anything if no post ID is supplied */
+		if ( $post_id == NULL )	return;
 		
 		/* Get the images */
 		$images = get_children( array( 
@@ -481,5 +478,23 @@ function graphene_parent_return_link( $post = '' ){
     	<p>&uarr; <?php printf( __( 'Return to %s', 'graphene' ), '<a class="parent-return-link" href="' . $permalink . '">' . $title . '</a>' ); ?></p>
     </div>
     <?php
+}
+
+
+/**
+ * Display the term description in a taxonomy archive page
+ */
+function graphene_tax_description(){
+	global $wp_query;
+	$tax = $wp_query->tax_query->queries[0]['taxonomy'];
+	$term = $wp_query->tax_query->queries[0]['terms'][0];
+	$term = get_term_by( 'slug', $term, $tax );
+
+	if ( $term->description ) : 
+	?>
+        <div id="term-desc-<?php echo $term->term_id; ?>" class="<?php echo $tax; ?>-desc term-desc">
+            <?php echo $term->description; ?>
+        </div>
+	<?php endif;
 }
 ?>

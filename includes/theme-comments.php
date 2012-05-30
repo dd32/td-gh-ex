@@ -244,4 +244,20 @@ function graphene_should_show_comments() {
 }
 
 endif;
+
+
+/**
+ * Add script to show/hide comment permalink
+ */
+function graphene_comment_permalink_script(){
+	?>
+	<script type="text/javascript">
+		jQuery(document).ready(function($){
+			$('li.comment .comment-permalink').hide();
+			$('.comment-wrap').hover( function(){ $('.comment-permalink', this).fadeIn(200); }, function(){ $('.comment-permalink:eq(0)', this).fadeOut(200); });
+		});
+	</script>
+    <?php
+}
+add_action( 'wp_footer', 'graphene_comment_permalink_script' );
 ?>

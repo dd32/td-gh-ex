@@ -27,7 +27,7 @@ function graphene_get_custom_style(){
 	/* Header text */
 	$header_textcolour = get_theme_mod( 'header_textcolor', HEADER_TEXTCOLOR );
 	if ( $header_textcolour != apply_filters( 'graphene_header_textcolor', '000000' ) )
-		$style .= '.header_title, .header_title a, .header_title a:hover, .header_desc {color:#' . $header_textcolour . ';}';
+		$style .= '.header_title, .header_title a, .header_title a:visited, .header_title a:hover, .header_desc {color:#' . $header_textcolour . ';}';
 		
 	/* Set the width of the bottom widget items if number of columns is specified */
 	if ( $widgetcolumn ) {
@@ -101,11 +101,6 @@ function graphene_get_custom_style(){
 	$font_style .= ( $graphene_settings['content_font_colour'] != $graphene_defaults['content_font_colour']) ? 'color:'.$graphene_settings['content_font_colour'].';' : '';
 	if ( $font_style ) { $style .= '.entry-content, .sidebar, .comment-entry { '.$font_style.' }'; }
 	
-	/* Title text colour */
-	$font_style = '';
-	$font_style .= ( $graphene_settings['title_font_colour'] != $graphene_defaults['title_font_colour']) ? 'color:'.$graphene_settings['title_font_colour'].';' : '';
-	if ( $font_style ) { $style .= '.post-title, .post-title a { '.$font_style.' }'; }
-	
     /* Adjust post title if author's avatar is shown */
 	if ( $graphene_settings['show_post_avatar']) {
 		$tmp_margin = !is_rtl() ? 'margin-right' : 'margin-left';
@@ -133,6 +128,11 @@ function graphene_get_custom_style(){
 	if ( $graphene_settings['link_colour_hover'] != $graphene_defaults['link_colour_hover']) { $style.='a:hover,.post-title a:hover{color:'.$graphene_settings['link_colour_hover'].';}';}
 	if ( $graphene_settings['link_decoration_normal']) { $style.='a,.post-title a{text-decoration:'.$graphene_settings['link_decoration_normal'].';}';}
 	if ( $graphene_settings['link_decoration_hover']) { $style.='a:hover,.post-title a:hover{text-decoration:'.$graphene_settings['link_decoration_hover'].';}';}
+	
+	/* Title text colour */
+	$font_style = '';
+	$font_style .= ( $graphene_settings['title_font_colour'] != $graphene_defaults['title_font_colour']) ? 'color:'.$graphene_settings['title_font_colour'].';' : '';
+	if ( $font_style ) { $style .= '.post-title, .post-title a, .post-title a:hover, .post-title a:visited { '.$font_style.' }'; }
 	
 	// Custom column width
 	$style .= graphene_get_custom_column_width();
@@ -238,7 +238,7 @@ function graphene_get_custom_colours( $hook_suffix = '' ){
 		$grad_right = $graphene_settings['bg_archive_right'];
 		if ( $grad_left != $graphene_defaults['bg_archive_left'] || $grad_right != $graphene_defaults['bg_archive_right']) {$style .= '.page-title {
 				-pie-background: linear-gradient(left top, ' . $grad_left . ', ' . $grad_right . ' );
-				background: ' . $grad_top . ';
+				background: ' . $grad_left . ';
 				background: -moz-linear-gradient(left top, ' . $grad_left . ', ' . $grad_right . ' );
 				background: -webkit-linear-gradient(left top, ' . $grad_left . ', ' . $grad_right . ' );
 				-ms-filter: "progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColorStr=\'' . $grad_left . '\', EndColorStr=\'' . $grad_right . '\')";

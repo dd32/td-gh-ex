@@ -8,7 +8,7 @@ if ( ! function_exists( 'graphene_scrollable' ) ) :
 		global $graphene_settings;
 		
 		$interval = ( $graphene_settings['slider_speed'] ) ? $graphene_settings['slider_speed'] : 7000;
-                $speed = $graphene_settings['slider_trans_speed'];
+        $speed = $graphene_settings['slider_trans_speed'];
 		?>
             <!-- Scrollable -->
             <script type="text/javascript">
@@ -107,25 +107,27 @@ function graphene_slider(){
         $i = 0;
         while ( $sliderposts->have_posts() ) : $sliderposts->the_post();
 			
-			$style = '';
 			/* Slider background image*/
 			if ( $graphene_settings['slider_display_style'] == 'bgimage-excerpt' ) {
-				$image = graphene_get_slider_image( get_the_ID(), 'graphene_slider', true);
+				$image = graphene_get_slider_image( get_the_ID(), 'graphene_slider', true );
 				if ( $image ){
-					$style .= 'style="background-image:url( ';
-					$style .= ( is_array( $image) ) ? $image[0] : $image;
-					$style .= ' );"';
+					$image = ( is_array( $image ) ) ? $image[0] : $image;
+					$image = apply_filters( 'graphene_slider_bgimage', $image );
+					$image = '<img src="' . $image . '" alt="" class="slider-bgimage" />';
 				}
 			}
-                        
-            $slider_link_url = get_post_meta( get_the_ID(), '_graphene_slider_url', true) == '' ? get_permalink() : get_post_meta( get_the_ID(), '_graphene_slider_url', true);
+            
+			$slider_link_url = esc_url( get_post_meta( get_the_ID(), '_graphene_slider_url', true ) );
+			if ( ! $slider_link_url )
+				$slider_link_url = get_permalink();
                         
 			?>
             
-            <div <?php graphene_grid( 'slider_post clearfix', 16, 11, 8, true, true ); ?> id="slider-post-<?php the_ID(); ?>" <?php echo $style; ?>>
+            <div <?php graphene_grid( 'slider_post clearfix', 16, 11, 8, true, true ); ?> id="slider-post-<?php the_ID(); ?>">
                 <?php do_action( 'graphene_before_sliderpost' ); ?>
                 
                 <?php if ( $graphene_settings['slider_display_style'] == 'bgimage-excerpt' ) : ?>
+                	<?php echo $image; ?>
                 	<a href="<?php echo $slider_link_url; ?>" class="permalink-overlay"><span><?php _e( 'View full post', 'graphene' ); ?></span></a>
                 <?php endif; ?>
                 

@@ -5,47 +5,9 @@
 */
 function graphene_settings_init(){
     // register options set and store it in graphene_settings db entry
-    register_setting('graphene_options', 'graphene_settings', 'graphene_settings_validator');
+    register_setting( 'graphene_options', 'graphene_settings', 'graphene_settings_validator' );
 }
 add_action( 'admin_init', 'graphene_settings_init' );
-
-
-/**
- * Script required for the theme options page
- */
-function graphene_admin_scripts( $hook_suffix ) {
-	
-	/* Only enqueue scripts on the theme's admin pages */
-	global $graphene_settings;
-	if ( $graphene_settings['hook_suffix'] != $hook_suffix ) return;
-	
-	/**
-	 * Enqueue scripts 
-	 */
-    wp_enqueue_script( 'media-upload' );
-    wp_enqueue_script( 'thickbox' );
-	wp_enqueue_script( 'graphene-admin-js' );
-    // wp_enqueue_script( 'wp-pointer' );
-	
-	if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'display' ) {
-		wp_enqueue_script( 'farbtastic' );
-		wp_enqueue_script( 'jquery-ui-slider' );
-	} else {
-		wp_enqueue_script( 'jquery-ui-sortable' );     
-	}
-
-	/**
-	 * Enqueue styles 
-	 */
-    wp_enqueue_style( 'thickbox' );
-    // wp_enqueue_style( 'wp-pointer' );
-
-    if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'display' ) {
-		wp_enqueue_style( 'farbtastic' );
-		wp_enqueue_style( 'jquery-ui-slider' );
-    }
-}
-add_action( 'admin_enqueue_scripts', 'graphene_admin_scripts' );
 
 
 /**
@@ -262,16 +224,17 @@ function graphene_options(){
                 <ul class="add-ons native-plugins">
                 	<?php 
 						$plugins = array(
-										array( 'name' => 'WP-PageNavi', 'function' => 'wp_pagenavi'),
-										array( 'name' => 'WP-CommentNavi', 'function' => 'wp_commentnavi'),
-										array( 'name' => 'WP-Email', 'function' => 'wp_email'),
-										array( 'name' => 'Breadcrumb NavXT', 'function' => 'bcn_display'),
+										array( 'name' => 'Ultimate TinyMCE', 'function' => '', 'class' => 'jwl_metabox_admin' ),
+										array( 'name' => 'WP-PageNavi', 'function' => 'wp_pagenavi', 'class' => '' ),
+										array( 'name' => 'WP-CommentNavi', 'function' => 'wp_commentnavi', 'class' => '' ),
+										array( 'name' => 'WP-Email', 'function' => 'wp_email', 'class' => '' ),
+										array( 'name' => 'Breadcrumb NavXT', 'function' => 'bcn_display', 'class' => '' ),
 									);
 						foreach ($plugins as $plugin) :
 					?>
                 	<li>
                     	<span class="title"><?php echo $plugin['name']; ?>: </span>
-                        <?php if (function_exists($plugin['function'])) : ?><span class="activated"><?php _e('Activated', 'graphene'); ?></span>
+                        <?php if (function_exists($plugin['function']) || class_exists($plugin['class'])) : ?><span class="activated"><?php _e('Activated', 'graphene'); ?></span>
                         <?php else : ?><span class="not-active"><?php _e('Not installed', 'graphene'); ?></span><?php endif; ?>
                     </li>
                     <?php endforeach; ?>

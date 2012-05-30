@@ -45,32 +45,36 @@ function graphene_save_custom_meta( $post_id ){
   
 	/* Check permissions */
 	if ( 'page' == $_POST['post_type']) {
-	  if ( ! current_user_can( 'edit_page', $post_id) )
-		return $post_id;
+		if ( ! current_user_can( 'edit_page', $post_id) )
+			return $post_id;
 	} else {
-	  if ( ! current_user_can( 'edit_post', $post_id) )
-		return $post_id;
+		if ( ! current_user_can( 'edit_post', $post_id) )
+			return $post_id;
 	}
 
 	/* OK, we're authenticated: saving the data */
-	update_post_meta( $post_id, '_graphene_slider_img', $_POST['graphene_slider_img']);        
-	update_post_meta( $post_id, '_graphene_slider_imgurl', $_POST['graphene_slider_imgurl']);
-        update_post_meta( $post_id, '_graphene_slider_url', $_POST['graphene_slider_url']);
-	update_post_meta( $post_id, '_graphene_show_addthis', $_POST['graphene_show_addthis']);
+	if ( in_array( $_POST['graphene_slider_img'], array( 'disabled', 'featured_image', 'post_image', 'custom_url' ) ) )
+		update_post_meta( $post_id, '_graphene_slider_img', $_POST['graphene_slider_img']);
+	if ( in_array( $_POST['graphene_show_addthis'], array( 'show', 'hide' ) ) )
+		update_post_meta( $post_id, '_graphene_show_addthis', $_POST['graphene_show_addthis']);
+	if ( $_POST['graphene_slider_imgurl'] )
+		update_post_meta( $post_id, '_graphene_slider_imgurl', esc_url_raw( $_POST['graphene_slider_imgurl'] ) );
+	if ( $_POST['graphene_slider_url'] )
+	    update_post_meta( $post_id, '_graphene_slider_url', esc_url_raw( $_POST['graphene_slider_url'] ) );
         
 	/* Post-specific options */
 	if ( 'post' == $_POST['post_type'] ) {
-		update_post_meta( $post_id, '_graphene_post_date_display', $_POST['graphene_post_date_display'] );
+		if ( in_array( $_POST['graphene_post_date_display'], array( 'hide' ) ) )
+			update_post_meta( $post_id, '_graphene_post_date_display', $_POST['graphene_post_date_display'] );
 	}
 		
 	/* Page-specific options */
 	if ( 'page' == $_POST['post_type']) {
-		update_post_meta( $post_id, '_graphene_nav_description', $_POST['graphene_nav_description']);        
+		if ( $_POST['graphene_nav_description'] )
+			update_post_meta( $post_id, '_graphene_nav_description', wp_kses( $_POST['graphene_nav_description'] ) );
 	}
 }
 add_action( 'save_post', 'graphene_save_custom_meta' );
-
-
 
 
 /**
@@ -82,10 +86,15 @@ function graphene_custom_meta( $post){
 	wp_nonce_field( 'graphene_save_custom_meta', 'graphene_save_custom_meta' );
 	
 	/* Get the current settings */
-	$slider_img = ( get_post_meta( $post->ID, '_graphene_slider_img', true ) ) ? get_post_meta( $post->ID, '_graphene_slider_img', true ) : 'global';
-        $slider_url = ( get_post_meta( $post->ID, '_graphene_slider_url', true ) ) ? get_post_meta( $post->ID, '_graphene_slider_url', true ) : '';
-	$slider_imgurl = ( get_post_meta( $post->ID, '_graphene_slider_imgurl', true ) ) ? get_post_meta( $post->ID, '_graphene_slider_imgurl', true ) : '';
-	$show_addthis = ( get_post_meta( $post->ID, '_graphene_show_addthis', true ) ) ? get_post_meta( $post->ID, '_graphene_show_addthis', true ) : 'global';
+	$slider_img = get_post_meta( $post->ID, '_graphene_slider_img', true );
+    $slider_url = get_post_meta( $post->ID, '_graphene_slider_url', true );
+	$slider_imgurl = get_post_meta( $post->ID, '_graphene_slider_imgurl', true );
+	$show_addthis = get_post_meta( $post->ID, '_graphene_show_addthis', true );
+	
+	if ( ! $slider_img ) $slider_img = 'global';
+	if ( ! $slider_url ) $slider_url = '';
+	if ( ! $slider_imgurl ) $slider_imgurl = '';
+	if ( ! $show_addthis ) $slider_addthis = 'global';
         
 	if ( 'post' == $post->post_type ){
 		$post_date_display = ( get_post_meta( $post->ID, '_graphene_post_date_display', true ) ) ? get_post_meta( $post->ID, '_graphene_post_date_display', true ) : '';
@@ -118,7 +127,7 @@ function graphene_custom_meta( $post){
                 <label for="graphene_slider_imgurl"><?php _e( 'Custom slider image URL', 'graphene' ); ?></label>
             </th>
             <td>
-                <input type="text" id="graphene_slider_imgurl" name="graphene_slider_imgurl" value="<?php echo $slider_imgurl; ?>" size="60" /><br />
+                <input type="text" id="graphene_slider_imgurl" name="graphene_slider_imgurl" class="widefat code" value="<?php echo $slider_imgurl; ?>" size="60" /><br />
                 <span class="description"><?php _e( 'Make sure you select Custom URL in the slider image option above to use this custom url.', 'graphene' ); ?></span>                        
             </td>
         </tr>
@@ -127,7 +136,7 @@ function graphene_custom_meta( $post){
                 <label for="graphene_slider_url"><?php _e( 'Custom slider URL', 'graphene' ); ?></label>
             </th>
             <td>
-                <input type="text" id="graphene_slider_url" name="graphene_slider_url" value="<?php echo $slider_url; ?>" size="60" /><br />
+                <input type="text" id="graphene_slider_url" name="graphene_slider_url" class="widefat code" value="<?php echo $slider_url; ?>" size="60" /><br />
                 <span class="description"><?php _e( 'Use this to override the link that is used in the slider.', 'graphene' ); ?></span>                        
             </td>
         </tr>
@@ -178,5 +187,4 @@ function graphene_custom_meta( $post){
      <?php endif; ?>
 <?php	
 }
-
 ?>

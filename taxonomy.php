@@ -15,13 +15,8 @@ get_header();
         printf( __( '%1$s Archive: %2$s', 'graphene' ), $tax->labels->singular_name, '<span>' . single_term_title( '', false ) . '</span>' );
     ?>
 </h1>
-<?php /* The category description */
-	$desc = term_description();
-	if ( $desc ) : ?>
-    <div class="cat-desc term-desc">
-        <?php echo $desc; ?>
-    </div>
-<?php endif; ?>
+
+<?php graphene_tax_description(); ?>
 
 <?php
     /**

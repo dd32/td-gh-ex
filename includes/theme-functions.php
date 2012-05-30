@@ -63,7 +63,7 @@ add_filter( 'post_class', 'graphene_sticky_post_class' );
 
 
 /**
- * Add Facebook and Twitter icon to top bar
+ * Add Social Media icons in top bar
 */
 function graphene_top_bar_social(){
     global $graphene_settings;
@@ -87,8 +87,8 @@ function graphene_top_bar_social(){
 				$icon_url = get_template_directory_uri() . '/images/social/' . $social_profile['type'] . '.png';
 			}
 		?>
-            <a href="<?php echo $url; ?>" title="<?php echo $title; ?>" id="<?php echo $id; ?>" class="<?php echo $class; ?>"<?php echo $extra; ?>>
-            	<img src="<?php echo $icon_url; ?>" alt="<?php echo $social_profile['name']; ?>" title="<?php echo $title; ?>" />
+            <a href="<?php echo esc_url( $url ); ?>" title="<?php echo esc_attr( $title ); ?>" id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $class ); ?>"<?php echo $extra; ?>>
+            	<img src="<?php echo esc_url( $icon_url ); ?>" alt="<?php echo esc_attr( $social_profile['name'] ); ?>" title="<?php echo esc_attr( $title ); ?>" />
             </a>
     	<?php endif; $count++;
     endforeach;
@@ -102,9 +102,8 @@ add_action( 'graphene_social_profiles', 'graphene_top_bar_social' );
  */
 function graphene_determine_social_medium_title( $social_medium ) {
     if ( isset( $social_medium['title'] ) && ! empty( $social_medium['title']) ) {
-        return esc_attr__( $social_medium['title'] );
-    }
-    else {
+        return esc_attr( $social_medium['title'] );
+    } else {
         /* translators: %1$s is the website's name, %2$s is the social media name */
         return sprintf( esc_attr__( 'Visit %1$s\'s %2$s page', 'graphene' ), get_bloginfo( 'name' ), ucfirst( $social_profile['type'] ) );
     }

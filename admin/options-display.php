@@ -847,7 +847,7 @@ function graphene_options_display() {
                         	<label for="favicon_url"><?php _e( 'Favicon URL', 'graphene' ); ?></label>
                         </th>
                         <td>
-                        	<input type="text" class="widefat code" value="<?php echo $graphene_settings['favicon_url']; ?>" name="graphene_settings[favicon_url]" id="favicon_url" />
+                        	<input type="text" class="widefat code" value="<?php echo esc_url( $graphene_settings['favicon_url'] ); ?>" name="graphene_settings[favicon_url]" id="favicon_url" />
                                 <span class="description"><a href="#" class="upload_image_button"><?php _e( 'Upload or select image from gallery', 'graphene' );?></a> - <?php _e( 'Simply enter the full URL to your favicon file here to enable favicon. Make sure you include the <code>http://</code> in front of the URL as well. Or use the WordPress media uploader to upload an image, or select one from the media library.', 'graphene' ); ?></span>                                
                         </td>
                     </tr>
@@ -857,7 +857,7 @@ function graphene_options_display() {
                 <table class="form-table">
                     <tr>
                         <th scope="row" style="width:250px;">
-                        	<label for="favicon_url"><?php _e( 'Disable custom editor styles', 'graphene' ); ?></label>
+                        	<label for="disable_editor_style"><?php _e( 'Disable custom editor styles', 'graphene' ); ?></label>
                         </th>
                         <td><input type="checkbox" name="graphene_settings[disable_editor_style]" id="disable_editor_style" <?php checked( $graphene_settings['disable_editor_style'] ); ?> value="true" /></td>
                     </tr>

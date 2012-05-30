@@ -4,6 +4,19 @@ http://www.khairul-syahir.com
 
 CHANGELOG
 
+Version 1.7.2
+	* Added data validation for custom fields in posts and pages
+	* Added Ultimate TinyMCE by Josh Lobe to the list of natively-supported plugins
+	* Added data sanitation before being output to theme's options fields and template files
+	* Added term description display for all taxonomies
+	* Removed header image link in front page
+	* Fixed a bug in archive title colour customisation
+	* Fixed a bug in post title colour customisation
+	* Fixed the missing link icon for Link post format
+	* Fixed the header title link defaulting to black for visited link
+	* Fixed header image link not working in IE
+	* Fixed a bug in colour presets script for IE 
+
 Version 1.7.1
 	* Added taxonomy archive template file
 	* Added link to return to parent page for child pages

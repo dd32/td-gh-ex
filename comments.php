@@ -40,13 +40,6 @@ global $graphene_settings;
 <?php /* Lists all the comments for the current post */ ?>
 <?php if ( have_comments() ) : ?>
 
-<script type="text/javascript">
-	jQuery(document).ready(function($){
-		$('li.comment .comment-permalink').hide();
-		$('.comment-wrap').hover( function(){ $('.comment-permalink', this).fadeIn(200); }, function(){ $('.comment-permalink:eq(0)', this).fadeOut(200); });
-	});
-</script>
-
 <div id="comments" class="clearfix">
 	<?php /* Get the comments and pings count */ 
 		global $tabbed;

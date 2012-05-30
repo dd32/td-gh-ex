@@ -114,7 +114,7 @@ function graphene_options_general() {
                             <label for="slider_imgurl"><?php _e( 'Custom slider image URL', 'graphene' ); ?></label>
                         </th>
                         <td>
-                            <input type="text" name="graphene_settings[slider_imgurl]" id="slider_imgurl" value="<?php echo $graphene_settings['slider_imgurl']; ?>" size="60" class="widefat code" /><br />
+                            <input type="text" name="graphene_settings[slider_imgurl]" id="slider_imgurl" value="<?php echo esc_url( $graphene_settings['slider_imgurl'] ); ?>" size="60" class="widefat code" /><br />
                             <span class="description"><a href="#" class="upload_image_button"><?php _e( 'Upload or select image from gallery', 'graphene' );?></a> - <?php _e( 'Make sure you select Custom URL in the slider image option above to use this custom url.', 'graphene' ); ?></span>
                             
                         </td>
@@ -431,22 +431,24 @@ function graphene_options_general() {
                             ?>
                             <?php 
 								if ( ! in_array( false, $social_profiles) ) : 
-								foreach ($social_profiles as $profile_key => $profile_data) : 
+								foreach ($social_profiles as $profile_key => $profile_data) :
+									$profile_data['url'] = esc_url( $profile_data['url'] );
+									$profile_data['icon_url'] = esc_url( $profile_data['icon_url'] );
 							?>
                                 <table class="form-table socialprofile-table">
                                     <tr>
                                         <th scope="row" rowspan="<?php echo $profile_data['type'] == 'custom' ? '3' : '2'; ?>" class="small-row">                            
                                             <?php if ( $profile_data['type'] == 'custom' ) _e( 'Custom', 'graphene' ); else echo $profile_data['name']; ?><br />
-                                            <input type="hidden" name="graphene_settings[social_profiles][<?php echo $profile_key; ?>][type]" value="<?php echo $profile_data['type']; ?>" />
-                                            <input type="hidden" name="graphene_settings[social_profiles][<?php echo $profile_key; ?>][name]" value="<?php echo $profile_data['name']; ?>" />
+                                            <input type="hidden" name="graphene_settings[social_profiles][<?php echo $profile_key; ?>][type]" value="<?php echo esc_attr( $profile_data['type'] ); ?>" />
+                                            <input type="hidden" name="graphene_settings[social_profiles][<?php echo $profile_key; ?>][name]" value="<?php echo esc_attr( $profile_data['name'] ); ?>" />
                                             <?php if ( $profile_data['type'] == 'custom' ) : ?>
                                             <img class="mysocial-icon" src="<?php echo $profile_data['icon_url']; ?>" alt="" />
                                             <?php else : ?>
-                                            <div class="mysocial social-<?php echo $profile_data['type']; ?>">&nbsp;</div>
+                                            <div class="mysocial social-<?php echo esc_attr( $profile_data['type'] ); ?>">&nbsp;</div>
                                             <?php endif; ?>
                                         </th>
                                         <th class="small-row"><?php _e( 'Title attribute', 'graphene' ); ?></th>
-                                        <td><input type="text" name="graphene_settings[social_profiles][<?php echo $profile_key; ?>][title]" value="<?php echo $profile_data['title']; ?>" class="widefat code" /></td>
+                                        <td><input type="text" name="graphene_settings[social_profiles][<?php echo $profile_key; ?>][title]" value="<?php echo esc_attr( $profile_data['title'] ); ?>" class="widefat code" /></td>
                                     </tr>
                                     <tr>
                                         <th class="small-row"><?php _e('URL', 'graphene'); ?></th>
@@ -478,7 +480,7 @@ function graphene_options_general() {
                                         <strong><?php _e( 'Add Social Media Profile', 'graphene' ); ?></strong>
                                         <input type="hidden" id="socialprofile-next-index" value="<?php echo count($social_profiles)+1; ?>" />                                                                                
                                         <input type="hidden" id="new-socialprofile-data" 
-                                                data-icon-url="<?php echo get_template_directory_uri() . '/images/social/'; ?>"
+                                                data-icon-url="<?php echo esc_attr( get_template_directory_uri() . '/images/social/' ); ?>"
                                                 data-custom-title="custom"
                                                 data-text-icon-url="<?php _e('Icon URL', 'graphene'); ?>"
                                                 data-text-title-attr="<?php _e('Title attribute', 'graphene'); ?>"

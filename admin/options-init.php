@@ -37,11 +37,9 @@ function graphene_options_init() {
 	$graphene_settings['hook_suffix'] = add_theme_page( __( 'Graphene Options', 'graphene' ), __( 'Graphene Options', 'graphene' ), 'edit_theme_options', 'graphene_options', 'graphene_options' );
 	$graphene_settings['hook_suffix_faq'] = add_theme_page( __( 'Graphene FAQs', 'graphene' ), __( 'Graphene FAQs', 'graphene' ), 'edit_theme_options', 'graphene_faq', 'graphene_faq' );
 	
-	wp_register_style( 'graphene-admin-style', get_template_directory_uri() . '/admin/admin.css' );
-	if ( is_rtl() ) { wp_register_style( 'graphene-admin-style-rtl', get_template_directory_uri() . '/admin/admin-rtl.css' );}
-	
 	add_action( 'admin_print_styles-' . $graphene_settings['hook_suffix'], 'graphene_admin_options_style' );
 	add_action( 'admin_print_styles-' . $graphene_settings['hook_suffix_faq'], 'graphene_admin_options_style' );
+	add_action( 'admin_print_scripts-' . $graphene_settings['hook_suffix'], 'graphene_admin_scripts' );
 	
 	do_action( 'graphene_options_init' );
 }
@@ -65,7 +63,7 @@ function graphene_options_js(){
 	
 	$tab = 'general'; // default set the current tab to general
 	// detect any other allowed tabs
-	if ( isset( $_GET['tab'] ) && in_array($_GET['tab'], array('general', 'display', 'advanced')) ){ $tab = $_GET['tab']; }            
+	if ( isset( $_GET['tab'] ) && in_array( $_GET['tab'], array('general', 'display', 'advanced')) ){ $tab = $_GET['tab']; }
 	?>
 	<script type="text/javascript">
 	//<![CDATA[
@@ -92,10 +90,42 @@ add_action( 'admin_menu', 'graphene_admin_footer' );
 */
 if ( ! function_exists( 'graphene_admin_options_style' ) ) :
 	function graphene_admin_options_style() {
+	
+		wp_register_style( 'graphene-admin-style', get_template_directory_uri() . '/admin/admin.css' );
+		if ( is_rtl() ) { wp_register_style( 'graphene-admin-style-rtl', get_template_directory_uri() . '/admin/admin-rtl.css' );}
+	
 		wp_enqueue_style( 'graphene-admin-style' );
 		if ( is_rtl() ) { wp_enqueue_style( 'graphene-admin-style-rtl' ); }
+		
+		wp_enqueue_style( 'thickbox' );
+		// wp_enqueue_style( 'wp-pointer' );
+		
+		if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'display' ) {
+			wp_enqueue_style( 'farbtastic' );
+			wp_enqueue_style( 'jquery-ui-slider' );
+		}
 	}
 endif;
+
+
+/**
+ * Script required for the theme options page
+ */
+function graphene_admin_scripts() {
+		
+	/* Enqueue scripts */
+    wp_enqueue_script( 'media-upload' );
+    wp_enqueue_script( 'thickbox' );
+	wp_enqueue_script( 'graphene-admin-js' );
+    // wp_enqueue_script( 'wp-pointer' );
+	
+	if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'display' ) {
+		wp_enqueue_script( 'farbtastic' );
+		wp_enqueue_script( 'jquery-ui-slider' );
+	} else {
+		wp_enqueue_script( 'jquery-ui-sortable' );     
+	}
+}
 
 
 /**
@@ -147,7 +177,7 @@ function graphene_wp_admin_bar_theme_options(){
 								'parent' 	=> 'appearance',
 								'id' 		=> 'graphene-options',
 								'title' 	=> 'Graphene Options',
-								'href' 		=> admin_url( 'themes.php?page=graphene_options' ) ));
+								'href' 		=> admin_url( 'themes.php?page=graphene_options' ) ) );
 }
 add_action( 'admin_bar_menu', 'graphene_wp_admin_bar_theme_options', 61 );
 

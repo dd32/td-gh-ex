@@ -60,11 +60,19 @@ global $graphene_settings;
         }
     ?>
     <div id="header">
-    	<img src="<?php echo $header_img; ?>" alt="" class="header-img" />
-        <?php if ( $graphene_settings['link_header_img'] ) : ?>
-        	<a href="<?php echo home_url(); ?>" id="header_img_link" title="<?php esc_attr_e( 'Go back to the front page', 'graphene' ); ?>">&nbsp;</a>
-        <?php endif; ?>
-        
+    	
+        <?php 
+			$header_img = '<img src="' . $header_img . '" alt="" class="header-img" />';
+			if ( ! is_front_page() && $graphene_settings['link_header_img'] ) {
+				$header_img_tag = '<a href="' . home_url() . '" id="header_img_link" title="' . esc_attr__( 'Go back to the front page', 'graphene' ) . '">';
+				$header_img_tag .= $header_img;
+				$header_img_tag .= '</a>';
+				
+				$header_img = $header_img_tag;
+			}
+			echo $header_img;
+		?>
+        	       
         <?php /* Header widget area */
 		if ( $graphene_settings['enable_header_widget'] && is_active_sidebar( 'header-widget-area' ) ) {
 			echo '<div class="header-widget">';
