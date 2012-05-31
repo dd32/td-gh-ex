@@ -2,7 +2,7 @@
 Theme Name: QuickChic
 Theme URI: http://www.quickonlinetips.com/archives/quickchic/
 Description: 2-columns minimalistic, widget ready, SEO optimized, fast loading, easy to customize wordpress theme by <a href="http://www.quickonlinetips.com/">Quick Online Tips</a>.
-Version: 1.2.8
+Version: 1.2.9
 Author: Quick Online Tips
 Author URI: http://www.quickonlinetips.com/
 Tags: white, pink, fixed-width, two-columns, right-sidebar, threaded-comments, sticky-post
@@ -252,7 +252,7 @@ body {
 	background-color: white;
 	margin: 20px auto 0 auto;
 	padding: 0;
-	width: 950px; 
+	width: 1000px; 
 	}
 
 #header { 
@@ -272,9 +272,9 @@ body {
  
 .narrowcolumn {
 	float: left;
-	padding: 0 0 20px 45px;
+	padding: 0 0 20px 0;
 	margin: 0px 0 0;
-	width: 470px;
+	width: 540px;
         background: #fff;
 	} 
 

@@ -26,12 +26,7 @@
 		<h2 class="pagetitle">Blog Archives</h2>
  	  <?php } ?>
 
- 
-		<div class="navigation">
-			<div class="alignleft"><?php next_posts_link('&laquo; Older Entries') ?></div>
-			<div class="alignright"><?php previous_posts_link('Newer Entries &raquo;') ?></div>
-		</div>
-
+  
 		<?php while (have_posts()) : the_post(); ?>
 			<div <?php post_class() ?>>
  
