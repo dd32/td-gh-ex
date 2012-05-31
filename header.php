@@ -14,9 +14,7 @@
  
 <meta name="robots" content="index,follow" />
 
-<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
-
-<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?> 
 
 <?php wp_head(); ?>
 
@@ -39,21 +37,16 @@
 
 <?php get_search_form(); ?>
 
-
-<a href="<?php bloginfo('rss2_url'); ?>" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="XML, RSS"  style="vertical-align:middle;border:0;" /> Subscribe RSS Feed</a>
-
-
-
  </td>
 </tr></table>
 	 
 	</div>
 
-<div id="navbar">
+<div id="adsbar">
 <a href="<?php echo home_url(); ?>">Home</a>
 
+&nbsp; 
 &nbsp;
- &nbsp; 
-<a href="<?php bloginfo('rss2_url'); ?>" rel="alternate" type="application/rss+xml">RSS</a>
 
+<a   href="<?php bloginfo('rss2_url'); ?>" rel="alternate" type="application/rss+xml"><img src="<?php echo get_template_directory_uri(); ?>/images/rss16.png" title="RSS" alt="RSS" height="16" width="16" style="vertical-align:middle;border:0;padding-right:5px;" />RSS</a>
 </div>
