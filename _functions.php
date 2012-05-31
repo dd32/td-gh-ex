@@ -38,7 +38,6 @@ if ( ! function_exists( 'artblog_setup' ) ):
  * @uses register_default_headers() To register the default custom header images provided with the theme.
  * @uses set_post_thumbnail_size() To set a custom post thumbnail size.
  *
- * @since Twenty Ten 1.0
  */
 function artblog_setup() {
     
@@ -119,7 +118,6 @@ if ( ! function_exists( 'artblog_admin_header_style' ) ) :
  *
  * Referenced via add_custom_image_header() in artblog_setup().
  *
- * @since Twenty Ten 1.0
  */
 function artblog_admin_header_style() {
 ?>
@@ -144,7 +142,6 @@ endif;
  * To override this in a child theme, remove the filter and optionally add
  * your own function tied to the wp_page_menu_args filter hook.
  *
- * @since Twenty Ten 1.0
  */
 function artblog_page_menu_args( $args ) {
 	$args['show_home'] = true;
@@ -158,7 +155,6 @@ add_filter( 'wp_page_menu_args', 'artblog_page_menu_args' );
  * To override this length in a child theme, remove the filter and add your own
  * function tied to the excerpt_length filter hook.
  *
- * @since Twenty Ten 1.0
  * @return int
  */
 function artblog_excerpt_length( $length ) {
@@ -169,7 +165,6 @@ add_filter( 'excerpt_length', 'artblog_excerpt_length' );
 /**
  * Returns a "Continue Reading" link for excerpts
  *
- * @since Twenty Ten 1.0
  * @return string "Continue Reading" link
  */
 function artblog_continue_reading_link() {
@@ -182,7 +177,6 @@ function artblog_continue_reading_link() {
  * To override this in a child theme, remove the filter and add your own
  * function tied to the excerpt_more filter hook.
  *
- * @since Twenty Ten 1.0
  * @return string An ellipsis
  */
 function artblog_auto_excerpt_more( $more ) {
@@ -196,7 +190,6 @@ add_filter( 'excerpt_more', 'artblog_auto_excerpt_more' );
  * To override this link in a child theme, remove the filter and add your own
  * function tied to the get_the_excerpt filter hook.
  *
- * @since Twenty Ten 1.0
  * @return string Excerpt with a pretty "Continue Reading" link
  */
 function artblog_custom_excerpt_more( $output ) {
@@ -210,10 +203,9 @@ add_filter( 'get_the_excerpt', 'artblog_custom_excerpt_more' );
 /**
  * Remove inline styles printed when the gallery shortcode is used.
  *
- * Galleries are styled by the theme in Twenty Ten's style.css. This is just
+ * Galleries are styled by the theme in Artblog's style.css. This is just
  * a simple filter call that tells WordPress to not use the default styles.
  *
- * @since Twenty Ten 1.2
  */
 add_filter( 'use_default_gallery_style', '__return_false' );
 
@@ -223,8 +215,6 @@ add_filter( 'use_default_gallery_style', '__return_false' );
  * This function is no longer needed or used. Use the use_default_gallery_style
  * filter instead, as seen above.
  *
- * @since Twenty Ten 1.0
- * @deprecated Deprecated in Twenty Ten 1.2 for WordPress 3.1
  *
  * @return string The gallery style filter, with the styles themselves removed.
  */
@@ -244,7 +234,6 @@ if ( ! function_exists( 'artblog_comment' ) ) :
  *
  * Used as a callback by wp_list_comments() for displaying the comments.
  *
- * @since Twenty Ten 1.0
  */
 function artblog_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
@@ -295,7 +284,6 @@ endif;
  * To override artblog_widgets_init() in a child theme, remove the action hook and add your own
  * function tied to the init hook.
  *
- * @since Twenty Ten 1.0
  * @uses register_sidebar
  */
 function artblog_widgets_init() {
@@ -374,11 +362,7 @@ add_action( 'widgets_init', 'artblog_widgets_init' );
  * To override this in a child theme, remove the filter and optionally add your own
  * function tied to the widgets_init action hook.
  *
- * This function uses a filter (show_recent_comments_widget_style) new in WordPress 3.1
- * to remove the default style. Using Twenty Ten 1.2 in WordPress 3.0 will show the styles,
- * but they won't have any effect on the widget in default Twenty Ten styling.
  *
- * @since Twenty Ten 1.0
  */
 function artblog_remove_recent_comments_style() {
 	add_filter( 'show_recent_comments_widget_style', '__return_false' );
@@ -389,7 +373,6 @@ if ( ! function_exists( 'artblog_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  *
- * @since Twenty Ten 1.0
  */
 function artblog_posted_on() {
 	printf( __( '<span class="%1$s">Posted on</span> %2$s <span class="meta-sep">by</span> %3$s', 'artblog' ),
@@ -412,7 +395,6 @@ if ( ! function_exists( 'artblog_posted_in' ) ) :
 /**
  * Prints HTML with meta information for the current post (category, tags and permalink).
  *
- * @since Twenty Ten 1.0
  */
 function artblog_posted_in() {
 	// Retrieves tag list of current post, separated by commas.

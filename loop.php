@@ -41,7 +41,7 @@
 <?php
 	/* Start the Loop.
 	 *
-	 * In Twenty Ten we use the same loop in multiple contexts.
+	 * In Artblog we use the same loop in multiple contexts.
 	 * It is broken into three main parts: when we're displaying
 	 * posts that are in the gallery category, when we're displaying
 	 * posts in the asides category, and finally all other posts.
