@@ -6,7 +6,7 @@
 
 			<div class="post" id="post-<?php the_ID(); ?>">
 			<h1><?php the_title(); ?></h1>
-<small><a href="<?php the_permalink() ?>"><?php the_time('F jS, Y') ?></a> by <?php the_author() ?> | Filed under <?php the_category(', ') ?>. <?php edit_post_link('Edit'); ?>  </small>
+<small><a href="<?php the_permalink() ?>"><?php the_time(get_option('date_format')); ?></a> by <?php the_author() ?> | Filed under <?php the_category(', ') ?>. <?php edit_post_link('Edit'); ?>  </small>
 
 <!-- Insert banner 468x60 ad here --> 
 

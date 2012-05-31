@@ -2,7 +2,7 @@
 Theme Name: QuickPic
 Theme URI: http://www.quickonlinetips.com/archives/quickpic/
 Description: 1-column photoblogging theme, widget ready, fast loading, SEO optimized, easy to customize by <a href="http://www.quickonlinetips.com/">Quick Online Tips</a>.
-Version: 1.3.3
+Version: 1.3.4
 Author: Quick Online Tips
 Author URI: http://www.quickonlinetips.com/
 Tags: fixed-width, one-column, white, photoblogging, threaded-comments, sticky-post
@@ -17,16 +17,16 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 ------------------------------------- */
 body {
 	font-size: 75%;  
-	font-family: Georgia, "Times New Roman", Times, serif;  
-	background: #666;
-	color: #333; 
+        font-family: arial, sans-serif;
+	background: #444;
+	color: #000; 
 	}
 
 #navbar {
 	font-family: Arial, Helvetica, Sans-Serif;
 	font-size: 1.2em;
 	line-height: 1.3em;
-        background: #ddd;
+        background: #CCC;
         padding: 7px;
         margin: 0 0 20px 0;
         color: #666; 
@@ -82,7 +82,7 @@ small {
 	}
 
 h1, h2, h3, h4 {
-        font-family: 'PT Serif Caption', arial, serif; 
+        font-family: arial, sans-serif;
 	font-weight: bold;
 	}
 
@@ -102,7 +102,7 @@ h1, h2, h3, h4 {
 	}
 
 .blogtitle {
-	font-family: 'PT Serif Caption', arial, serif; 
+        font-family: arial, sans-serif;
         font-size: 2.8em !important; 
 	text-align: center;
  	font-weight: bold; 
@@ -127,7 +127,7 @@ h2.pagetitle {
 	}
 
 #bottombox h2 { 
-	font-family: Arial, Helvetica, Sans-Serif;
+	font-family: Arial, Sans-Serif;
 	font-size: 1.2em;
 	}
  
@@ -193,7 +193,7 @@ small, #sidebar ul ul li, #sidebar ul ol li, .nocomments, .postmetadata, blockqu
 
 pre  {  
    font: 1em 'Courier New', Courier, Fixed;
-   color: #008000;
+   color: #666;
    background: #F8F8F8;
    padding: 5px;
    line-height:1.5em;
@@ -209,7 +209,7 @@ pre  {
 
 code  {
    font: 1.1em 'Courier New', Courier, Fixed;
-   color: #008000;
+   color: #666;
    padding: 0 2px;
    background: #fff; 
    line-height:1.5em;
@@ -222,8 +222,7 @@ acronym, abbr, span.caps {
 	}
 
 a, a:visited, h2 a:hover, h3 a:hover {
-	color: #088000;
-        font-weight:bold;
+	color: #088000; 
 	text-decoration: none;
 	}
 
@@ -232,17 +231,21 @@ a:hover {
 	}
  
 .sticky {
-        background: #FFF8DC !important; 
+        background: #f9f9f9 !important; 
         padding: 15px;
         margin: 10px 0;
+        border: 1px solid #DDD;
+        border-radius: 8px; 
+        -moz-border-radius: 8px;
         }
 
 
 #bottombox a { 
-        color: #CCC;
+        color: #DDD;
         font-weight:bold;
 	text-decoration: none;
-	}
+	text-shadow: black 0.1em 0.1em;
+         }
 
 #bottombox a:hover { 
 	text-decoration: underline;
@@ -257,9 +260,12 @@ body {
 
 #page {
 	background-color: #fff;
-	margin: 20px auto 0px auto;
+	margin: 20px auto 20px auto;
 	padding: 0;
-	width: 610px; 
+	width: 650px; 
+        border:20px #333 solid;
+        border-radius: 15px; 
+        -moz-border-radius: 15px;
 	}
 
 #header { 
@@ -278,19 +284,17 @@ body {
 	}
 
 .narrowcolumn {
-	float: left;
-	padding: 0 0 20px 45px;
-	margin: 0px 0 0;
+	padding: 0 0 20px 0px;
+	margin: 0px auto;
 	width: 520px;
         background: #fff;
 	} 
 
 .post {
-	margin: 0 0 10px;
+	margin: 0 10px;
 	text-align: left;
         background: #fff;
-        padding: 10px;
-        overflow:hidden;
+        padding: 10px; 
 	}
 
 .post hr {
@@ -299,6 +303,11 @@ body {
 
 .entry{ 
         border-top: 1px solid #ddd;  
+        overflow:auto; 
+        }
+
+.entry p { 
+        clear:both;	
         }
 
 .narrowcolumn .postmetadata {
@@ -317,15 +326,14 @@ body {
         font-size: 1.1em;
         line-height: 1.5em;
 	margin: 0 auto ;
-	width: 610px;
+	width: 650px;
 	clear: both;
         background: #333;
 	}
 
 #footer a {  
-	color: #f3f3f3;
-	text-decoration: none;
-        border-bottom: 1px dotted #ccc;
+	color: #FF0;
+	text-decoration: none; 
 	}
 
 #footer a:hover { 
@@ -343,11 +351,11 @@ body {
 /*	Begin Headers
 ------------------------------------- */
 #content h1   {
-	margin: 30px 0 0;
+	margin: 30px 0 5px 0;
 	}
 
 h2 {
-	margin: 10px 0 0;
+	margin: 10px 0 5px 0;
 	}
 
 h2.pagetitle, h2.pagetitle {
@@ -364,8 +372,7 @@ h2.pagetitle, h2.pagetitle {
 	margin: 10px 0 0;
 	padding: 2px;
         color: #FF0;
-        text-transform:uppercase;
-        border-bottom: 1px dotted #666;       
+        text-transform:uppercase;      
 	}
 
 h3 {
@@ -390,7 +397,7 @@ p img {
 .entry img {
         padding:0px;
         margin: 5px 0; 
-        border: 5px solid #ddd;
+        height:auto;
         }
 
 img.centered {
@@ -493,24 +500,51 @@ select {
 	width: 130px;
 	}
 
+#searchform #s {
+	width: 400px;
+	padding: 2px;
+        margin: 15px 0;      
+	}
+
+#searchsubmit {
+   cursor:pointer;
+   border: solid 1px #333;
+   background:#333;
+   color:#fff;
+   font-weight:bold;
+   padding: 5px 7px;
+   border-radius: 10px; 
+  -moz-border-radius: 10px;
+	}
+
+.screen-reader-text {display: none;}
+
 #commentform input {
 	width: 170px;
 	padding: 2px;
 	margin: 5px 5px 1px 0;
-        border: 3px solid #ccc;
+        border: 1px solid #ccc;
 	}
 
 #commentform textarea {
 	width: 100%;
 	padding: 2px;
-        border: 3px solid #ccc;
+        border: 1px solid #ccc;
 	}
 
 #commentform #submit {
-	margin: 0;
-	float: left;
+        background: #005500;
+	padding; 5px;
         font-size: 0.9em;
+        color: #fff;
+        margin: 0;
+	float: left;
+        border: 0px;
+        text-transform:uppercase;
+        border-radius: 8px; 
+        -moz-border-radius: 8px;
 	} 
+ 
 
 /* Begin Comments
 ------------------------------------- */
@@ -558,6 +592,8 @@ img.avatar {
         vertical-align:middle;
         }
 
+#respond {margin-bottom: 20px;} 
+#reply-title a {color: #088000 !important;}
 
 .bypostauthor {background: #E6FFE2 !important; }
  
@@ -567,26 +603,31 @@ ol.commentlist li div.comment-meta a:hover { color:#06c !important;  text-decora
 ol.commentlist li p { font-size:1em; margin:0 0 1em; }
 ol.commentlist li ul { font-size:1em; list-style:square; margin:0 0 1em 2em; }
 ol.commentlist li div.reply { font-size:1em; } 
-ol.commentlist li div.reply a { text-decoration:none; background: #f3f3f3; padding: 5px;} 
+ol.commentlist li div.reply a { text-decoration:none; padding: 5px;} 
 ol.commentlist li ul.children { list-style:none; margin:1em 0 0; text-indent:0; }
 ol.commentlist { list-style:none; margin:0 0 1em; padding:0; text-indent:0; }
-ol.commentlist li.comment { border:1px solid #d5d5d5; padding:1em; }
-ol.commentlist li.even { background:#fff; }
-ol.commentlist li.odd { background:#f6f6f6; }
-ol.commentlist li ul.children li.depth-2 { border-left:3px solid #999; margin:0 0 .25em .25em; }
-ol.commentlist li ul.children li.depth-3 { border-left:3px solid #999; margin:0 0 .25em .25em; }
-ol.commentlist li ul.children li.depth-4 { border-left:3px solid #999; margin:0 0 .25em .25em; }
 
+ol.commentlist li.comment { 
+        border:1px solid #d5d5d5; 
+        padding:1em; 
+        border-radius: 8px; 
+        -moz-border-radius: 8px; }
+
+ol.commentlist li.even { background:#fff; }
+ol.commentlist li.odd { background:#f9f9f9; }
+ol.commentlist li ul.children li.depth-2 { border-left:1px solid #ccc; margin:0 0 .25em .25em; }
+ol.commentlist li ul.children li.depth-3 { border-left:1px solid #ccc; margin:0 0 .25em .25em; }
+ol.commentlist li ul.children li.depth-4 { border-left:1px solid #ccc; margin:0 0 .25em .25em; }
 
 /* Begin bottom box
 ------------------------------------- */
 #bottombox {
 	font-family: Arial, Helvetica, Sans-Serif;
 	padding: 10px;
-        margin: 0 0;
+        margin: 15px 0 0 0;
         background: #005500;
         color: #ddd;
-	font-size: 1em; 
+	font-size: 1em;  
         clear: both;
         }
 
@@ -594,8 +635,10 @@ ol.commentlist li ul.children li.depth-4 { border-left:3px solid #999; margin:0 
         text-align: left;
         padding: 5px;
         background: #666;
-        margin: 0 0 5px 0; 
+        margin: 10px 0 5px 0; 
         text-align: center;
+        border-radius: 15px; 
+        -moz-border-radius: 15px;
         }
 
 
@@ -607,14 +650,12 @@ ol.commentlist li ul.children li.depth-4 { border-left:3px solid #999; margin:0 
 
 #box2 {
         padding: 5px;
-        margin:2px;  
-        border-left: 1px solid #333;
+        margin:2px;   
         }
 
 #box3 {
         padding: 5px;
-        margin:2px;  
-        border-left: 1px solid #333;
+        margin:2px;   
         }
      
 #l_box {
@@ -681,6 +722,15 @@ a img {
         font-size: 1em;
 	} 
 
+
+.mainnav a {
+       background: #005500;
+       color:#FFF !important;
+       padding: 10px;
+       border-radius: 8px; 
+       -moz-border-radius: 8px;
+        }
+
 /* Captions 
 ------------------------------------- */
 .aligncenter,
@@ -732,7 +782,7 @@ div.aligncenter {
 	margin: 0;
 }
 #content .gallery img {
-	border: 10px solid #f1f1f1;
+	border: 0px solid #f1f1f1;
 }
 #content .gallery br+br {
 	display: none;
