@@ -1,11 +1,11 @@
 /*  
 Theme Name: QuickChic
 Theme URI: http://www.quickonlinetips.com/archives/quickchic/
-Description: 2-columns minimalistic, widget ready, SEO optimized, fast loading, east to customize wordpress theme by <a href="http://www.quickonlinetips.com/">Quick Online Tips</a>.
-Version: 1.2.7
+Description: 2-columns minimalistic, widget ready, SEO optimized, fast loading, easy to customize wordpress theme by <a href="http://www.quickonlinetips.com/">Quick Online Tips</a>.
+Version: 1.2.8
 Author: Quick Online Tips
 Author URI: http://www.quickonlinetips.com/
-Tags: white, pink, fixed-width, two-columns, right-sidebar, photoblogging, threaded-comments, sticky-post
+Tags: white, pink, fixed-width, two-columns, right-sidebar, threaded-comments, sticky-post
 
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -16,8 +16,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /* Begin Typography & Colors 
 ------------------------------------- */
 body {
-	font-size: 70%;  
-        font-family: Georgia, serif;
+	font-size: 75%;  
+        font-family: arial, sans serif;
 	background: #fff;
 	color: #333;
         border-top: 10px solid #C32364;
@@ -179,7 +179,7 @@ small, #sidebar ul ul li, #sidebar ul ol li, .nocomments, .postmetadata, blockqu
 	}
 pre  {  
    font: 1em 'Courier New', Courier, Fixed;
-   color: #008000;
+   color: #666;
    background: #F8F8F8;
    padding: 5px;
    line-height:1.5em;
@@ -195,7 +195,7 @@ pre  {
 
 code  {
    font: 1.1em 'Courier New', Courier, Fixed;
-   color: #008000;
+   color: #666;
    padding: 0 2px;
    background: #fff; 
    line-height:1.5em;
@@ -235,6 +235,9 @@ a:hover {
         background: #f9f9f9 !important; 
         padding: 5px 10px;
         margin: 10px 0;
+        border: 1px solid #DDD;
+        border-radius: 8px; 
+        -moz-border-radius: 8px;
         }
 
 
@@ -308,7 +311,7 @@ body {
 	margin: 20px auto 10px auto;
 	width: 100%;
 	clear: both;
-        border-top: 5px dotted #ddd;
+        border-top: 2px dotted #ddd;
 	}
 
 #footer p {
@@ -465,7 +468,7 @@ ol li, #sidebar ul ol li {
 	}
 
 #searchform input {
-	border: 1px solid #C32364;
+	border: 1px solid #CCC;
        }
 
 #searchform #s {
@@ -475,11 +478,12 @@ ol li, #sidebar ul ol li {
 
 #searchsubmit {
    cursor:pointer;
-   border: solid 1px #ccc;
    background:#C32364;
    color:#fff;
-   font-weight:bold;
-   padding: 2px;
+   padding: 4px 7px; 
+   border-radius:8px;
+   text-transform:uppercase;
+   -moz-border-radius: 8px;
 	}
 
 .screen-reader-text {display: none;}
@@ -506,23 +510,26 @@ select {
 	width: 170px;
 	padding: 2px;
 	margin: 5px 5px 1px 0;
-        border: 1px solid #C32364;
+        border: 1px solid #CCC;
 	}
 
 #commentform textarea {
 	width: 100%;
 	padding: 2px;
-        border: 1px solid #C32364;
+        border: 1px solid #CCC;
 	}
 
 #commentform #submit {
         background: #C32364;
-	padding; 5px;
+	padding; 7px;
+        font-size: 0.9em;
         color: #fff;
         margin: 0;
 	float: left;
+        text-transform:uppercase;
+        border-radius: 8px; 
+        -moz-border-radius: 8px;
 	} 
-
 
 
 /* Begin Comments
@@ -573,7 +580,7 @@ img.avatar {
 #respond {margin-bottom: 20px;} 
 #reply-title a {color: #C32364 !important;}
 
-.bypostauthor {background: #E6FFE2 !important; }
+.bypostauthor {background: #FFF8FE !important; }
 
 ol.commentlist li div.comment-meta { font-size:9px; margin-bottom:10px; }
 ol.commentlist li div.comment-meta a { color:#999 !important; }
@@ -581,15 +588,21 @@ ol.commentlist li div.comment-meta a:hover { color:#06c !important;  text-decora
 ol.commentlist li p { font-size:1em; margin:0 0 1em; }
 ol.commentlist li ul { font-size:1em; list-style:square; margin:0 0 1em 2em; }
 ol.commentlist li div.reply { font-size:1em; } 
-ol.commentlist li div.reply a { text-decoration:none; background: #f3f3f3; padding: 5px;} 
+ol.commentlist li div.reply a { text-decoration:none; padding: 5px;} 
 ol.commentlist li ul.children { list-style:none; margin:1em 0 0; text-indent:0; }
 ol.commentlist { list-style:none; margin:0 0 1em; padding:0; text-indent:0; }
-ol.commentlist li.comment { border:1px solid #d5d5d5; padding:1em; }
+
+ol.commentlist li.comment { 
+        border:1px solid #d5d5d5; 
+        padding:1em; 
+        border-radius: 8px; 
+        -moz-border-radius: 8px; }
+
 ol.commentlist li.even { background:#fff; }
-ol.commentlist li.odd { background:#f6f6f6; }
-ol.commentlist li ul.children li.depth-2 { border-left:3px solid #999; margin:0 0 .25em .25em; }
-ol.commentlist li ul.children li.depth-3 { border-left:3px solid #999; margin:0 0 .25em .25em; }
-ol.commentlist li ul.children li.depth-4 { border-left:3px solid #999; margin:0 0 .25em .25em; }
+ol.commentlist li.odd { background:#f9f9f9; }
+ol.commentlist li ul.children li.depth-2 { border-left:1px solid #ccc; margin:0 0 .25em .25em; }
+ol.commentlist li ul.children li.depth-3 { border-left:1px solid #ccc; margin:0 0 .25em .25em; }
+ol.commentlist li ul.children li.depth-4 { border-left:1px solid #ccc; margin:0 0 .25em .25em; }
 
 
 /* Begin Sidebar 
@@ -600,7 +613,7 @@ ol.commentlist li ul.children li.depth-4 { border-left:3px solid #999; margin:0 
 	width: 370px;
         background: #fff;
 	font-size: 1.1em; 
-        border-left: 3px dotted #ddd;          
+        border-left: 2px dotted #ddd;          
         }
 
 #adbox { 
@@ -626,32 +639,21 @@ ol.commentlist li ul.children li.depth-4 { border-left:3px solid #999; margin:0 
 #r_sidebar {
 	width:170px;
 	float: right; 
-
-
         padding: 5px;
-
-
         background: #f6f6f6;
         border: 1px solid #DDD;
         }
 
-
-
 #sidebar form {
-
 	margin: 0;
 	} 
 
 
-
 /* Begin Tags & Classes 
-
-
 ------------------------------------- */
 
 acronym, abbr, span.caps {
 	cursor: help;
-
 	}
 
 acronym, abbr {
@@ -661,7 +663,7 @@ acronym, abbr {
 blockquote {
 	margin: 15px 30px 0 10px;
 	padding-left: 20px;
-	border-left: 3px solid #C32364;
+	border-left: 3px solid #CCC;
 	}
 
 blockquote cite {
@@ -687,6 +689,14 @@ a img {
 	margin-top: 10px;
 	margin-bottom: 60px;
         font-size: 1em; 	 
+        }
+
+.mainnav a {
+       background: #C32364;
+       color:#FFF !important;
+       padding: 5px;
+       border-radius: 8px; 
+       -moz-border-radius: 8px;
         }
 
 /* Captions 

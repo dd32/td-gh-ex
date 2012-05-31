@@ -21,7 +21,7 @@ register_sidebar(array(
 add_action( 'init', 'quickchic_widgets_init' );
 
 /* Add feeds */
-add_theme_support('automatic-feed-links');
+add_theme_support('automatic-feed-links'); 
 
 /* Content width */
 if ( ! isset( $content_width ) )

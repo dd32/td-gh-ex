@@ -2,9 +2,9 @@
 
 	<div id="content" class="narrowcolumn">
 
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+ 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-			<div class="post" id="post-<?php the_ID(); ?>">
+ 			<div class="post" id="post-<?php the_ID(); ?>">
 			<h1><?php the_title(); ?></h1>
 <small><a href="<?php the_permalink() ?>">
  <?php the_time(get_option('date_format')); ?></a>  by <?php the_author() ?> | Filed under <?php the_category(', ') ?>. <?php edit_post_link('Edit'); ?>  </small>

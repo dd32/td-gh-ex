@@ -34,7 +34,8 @@
 
 		<?php while (have_posts()) : the_post(); ?>
 			<div <?php post_class() ?>>
-				<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+ 
+		<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 				<small><a href="<?php the_permalink() ?>"><?php the_time(get_option('date_format')); ?>	</a>  by <?php the_author() ?> |  <?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?> | Filed in <?php the_category(', ') ?> <?php edit_post_link('Edit'); ?>  </small>
 
 				<div class="entry">
@@ -46,8 +47,8 @@
 		<?php endwhile; ?>
 
 		<div class="navigation">
-			<div class="alignleft"><?php next_posts_link('&laquo; Older Entries') ?></div>
-			<div class="alignright"><?php previous_posts_link('Newer Entries &raquo;') ?></div>
+			<div class="alignleft mainnav"><?php next_posts_link('&laquo; Older Entries') ?></div>
+			<div class="alignright mainnav"><?php previous_posts_link('Newer Entries &raquo;') ?></div>
 		</div>
 
 	<?php else : ?>
