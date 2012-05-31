@@ -4,9 +4,9 @@
     *
     * Displays all of the <head> section and everything up till <div id="main">
     *
-    * @package WordPress
-    * @subpackage Twenty_Ten
-    * @since Twenty Ten 1.0
+    * @package Artblog
+    * @author  Simon Hansen
+    * @since Artblog 1.0
     */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -30,7 +30,7 @@
 
             // Add a page number if necessary:
             if ( $paged >= 2 || $page >= 2 )
-                echo ' | ' . sprintf( __( 'Page %s', 'twentyten' ), max( $paged, $page ) );
+                echo ' | ' . sprintf( __( 'Page %s', 'artblog' ), max( $paged, $page ) );
 
     ?></title>
     <link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -60,7 +60,7 @@
 
 <div id="wrapper" class="hfeed">
 
-<div id="rightCol" >
+<div id="left-column" >
 
 
 
@@ -81,27 +81,27 @@
 
 
     <?php    
-                  echo "<div id=\"rightMenu\">";
+        echo "<div id=\"rightMenu\">";
 
         wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) );
 
 
-$artmenu=artist_menu();
-if($artmenu==''){
-      echo  ' <div id="portfolie-menu"><ul class="menu">
-      <li class="groupHeading">2011 Music</li>
-      <li><a href="#">Go ahead (2011)</a></li>
-      <li><a href="#">2011 guitar</a></li>
-      <li class="groupHeading">Contact</li>
-      <li><a href="#">Contact</a></li>
-      <li class="groupHeading">Gallery</li>
-      <li><a href="#">galleri gammel</a></li>
-      </ul>
-      </div></div>';
-}else{
-    echo $artmenu;
-}
-?>
+        $artmenu=artist_menu();
+        if($artmenu==''){
+            echo  ' <div id="portfolie-menu"><ul class="menu">
+            <li class="groupHeading">2011 Music</li>
+            <li><a href="#">Go ahead (2011)</a></li>
+            <li><a href="#">2011 guitar</a></li>
+            <li class="groupHeading">Contact</li>
+            <li><a href="#">Contact</a></li>
+            <li class="groupHeading">Gallery</li>
+            <li><a href="#">galleri gammel</a></li>
+            </ul>
+            </div></div>';
+        }else{
+            echo $artmenu;
+        }
+    ?>
 
 
  </div>

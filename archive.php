@@ -7,9 +7,9 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package WordPress
- * @subpackage Twenty_Ten
- * @since Twenty Ten 1.0
+ * @package Artblog
+ * @author  Simon Hansen
+ * @since Artblog 1.0
  */
 
 get_header(); ?>
@@ -30,13 +30,13 @@ get_header(); ?>
 
 			<h1 class="page-title">
 <?php if ( is_day() ) : ?>
-				<?php printf( __( 'Daily Archives: <span>%s</span>', 'twentyten' ), get_the_date() ); ?>
+				<?php printf( __( 'Daily Archives: <span>%s</span>', 'artblog' ), get_the_date() ); ?>
 <?php elseif ( is_month() ) : ?>
-				<?php printf( __( 'Monthly Archives: <span>%s</span>', 'twentyten' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'twentyten' ) ) ); ?>
+				<?php printf( __( 'Monthly Archives: <span>%s</span>', 'artblog' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'artblog' ) ) ); ?>
 <?php elseif ( is_year() ) : ?>
-				<?php printf( __( 'Yearly Archives: <span>%s</span>', 'twentyten' ), get_the_date( _x( 'Y', 'yearly archives date format', 'twentyten' ) ) ); ?>
+				<?php printf( __( 'Yearly Archives: <span>%s</span>', 'artblog' ), get_the_date( _x( 'Y', 'yearly archives date format', 'artblog' ) ) ); ?>
 <?php else : ?>
-				<?php _e( 'Blog Archives', 'twentyten' ); ?>
+				<?php _e( 'Blog Archives', 'artblog' ); ?>
 <?php endif; ?>
 			</h1>
 

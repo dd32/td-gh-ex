@@ -11,9 +11,16 @@ Hope you find it usefull. It is simple and therefore good for artist
 - Theme Options
 you can change header image
 
+-Languages
+English
+Danish
+German
+Frensh
+Italian
+
 
 - Page Templates
 one page template
 
-- Menus
-A special content type called portfolie. And a menu for that
+- Content types
+A special content type called portfolie. And a menu for that type.

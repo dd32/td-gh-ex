@@ -2,9 +2,9 @@
 /**
  * The template for displaying Category Archive pages.
  *
- * @package WordPress
- * @subpackage Twenty_Ten
- * @since Twenty Ten 1.0
+ * @package Artblog
+ * @author  Simon Hansen
+ * @since Artblog 1.0
  */
 
 get_header(); ?>
@@ -13,7 +13,7 @@ get_header(); ?>
 			<div id="content" role="main">
 
 				<h1 class="page-title"><?php
-					printf( __( 'Category Archives: %s', 'twentyten' ), '<span>' . single_cat_title( '', false ) . '</span>' );
+					printf( __( 'Category Archives: %s', 'artblog' ), '<span>' . single_cat_title( '', false ) . '</span>' );
 				?></h1>
 				<?php
 					$category_description = category_description();

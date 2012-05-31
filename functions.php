@@ -1,15 +1,15 @@
 <?php
 
     // The height and width of your custom header. You can hook into the theme's own filters to change these values.
-    // Add a filter to twentyten_header_image_width and twentyten_header_image_height to change these values.
-  //  define( 'HEADER_IMAGE_WIDTH', apply_filters( 'twentyten_header_image_width', 200 ) );
-//    define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'twentyten_header_image_height', 198 ) );
+    // Add a filter to artblog_header_image_width and artblog_header_image_height to change these values.
+  //  define( 'HEADER_IMAGE_WIDTH', apply_filters( 'artblog_header_image_width', 200 ) );
+//    define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'artblog_header_image_height', 198 ) );
 
 
 
 
 
-    function movie_taxonomy() {
+    function portfolie_taxonomy() {
         register_taxonomy(
         'group',
         'portfolie',
@@ -22,7 +22,7 @@
         );
     }
 
-    add_action( 'init', 'movie_taxonomy' );
+    add_action( 'init', 'portfolie_taxonomy' );
 
     function create_post_type2() {
         register_post_type( 'portfolie',
@@ -134,53 +134,12 @@
 
     }
 
-define('MY_CHILD_THEME_URL', get_theme_root_uri() . "/" . basename(dirname(__FILE__)) );
 
-add_filter( 'twentyten_header_image_width', 'my_child_theme_header_image_width' );
-add_filter( 'twentyten_header_image_height', 'my_child_theme_header_image_height' );
-
-function my_child_theme_header_image_width () {
-    return 200;
-}
-function my_child_theme_header_image_height () {
-    return 200;
-}
-
-add_action( 'after_setup_theme', 'my_child_theme_setup_0', 0 );
-function my_child_theme_setup_0 () {
-    define( 'HEADER_IMAGE', MY_CHILD_THEME_URL . '/images/headers/ugle.jpg' );
-}
-
-add_action( 'after_setup_theme', 'ana_lagragna_theme_setup_99', 99 );
-function ana_lagragna_theme_setup_99 () {
-
-    register_default_headers( array(
-        'newname' => array(
-            'url' => MY_CHILD_THEME_URL . '/images/headers/newimage.jpg',
-            'thumbnail_url' => MY_CHILD_THEME_URL . '/images/headers/newimage-thumbnail.jpg',
-            /* translators: header image description */
-            'description' => __( 'New Name', 'twentyten' )
-        ),
-        'anothername' => array(
-            'url' => MY_CHILD_THEME_URL . '/images/headers/anotherimage.jpg',
-            'thumbnail_url' => MY_CHILD_THEME_URL . '/images/headers/anotherimage-thumbnail.jpg',
-            /* translators: header image description */
-            'description' => __( 'Another Name', 'twentyten' )
-        ),
-    ) );
-    unregister_default_headers( array(
-        'berries',
-        'cherryblossom',
-        'concave',
-        'fern',
-        'forestfloor',
-        'inkwell',
-        'path',
-        'sunset'
-    ) );
-}
+include(dirname(__FILE__).'/_functions.php');
 
 
-include('_functions.php');
+
+
+
     
     ?>

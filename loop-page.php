@@ -9,9 +9,9 @@
  *
  * This can be overridden in child themes with loop-page.php.
  *
- * @package WordPress
- * @subpackage Twenty_Ten
- * @since Twenty Ten 1.2
+ * @package Artblog
+ * @author  Simon Hansen
+ * @since Artblog 1.0
  */
 ?>
 
@@ -26,11 +26,11 @@
 
 					<div class="entry-content">
 						<?php the_content(); ?>
-						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'twentyten' ), 'after' => '</div>' ) ); ?>
-						<?php edit_post_link( __( 'Edit', 'twentyten' ), '<span class="edit-link">', '</span>' ); ?>
+						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'artblog' ), 'after' => '</div>' ) ); ?>
+						<?php edit_post_link( __( 'Edit', 'artblog' ), '<span class="edit-link">', '</span>' ); ?>
 					</div><!-- .entry-content -->
 				</div><!-- #post-## -->
 
-				<?php //comments_template( '', true ); ?>
+				<?php comments_template( '', true ); ?>
 
 <?php endwhile; // end of the loop. ?>

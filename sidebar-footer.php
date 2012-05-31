@@ -2,9 +2,9 @@
 /**
  * The Footer widget areas.
  *
- * @package WordPress
- * @subpackage Twenty_Ten
- * @since Twenty Ten 1.0
+ * @package Artblog
+ * @author  Simon Hansen
+ * @since Artblog 1.0
  */
 ?>
 

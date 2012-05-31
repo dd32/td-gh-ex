@@ -2,9 +2,9 @@
 /**
  * The template for displaying Tag Archive pages.
  *
- * @package WordPress
- * @subpackage Twenty_Ten
- * @since Twenty Ten 1.0
+ * @package Artblog
+ * @author  Simon Hansen
+ * @since Artblog 1.0
  */
 
 get_header(); ?>
@@ -13,7 +13,7 @@ get_header(); ?>
 			<div id="content" role="main">
 
 				<h1 class="page-title"><?php
-					printf( __( 'Tag Archives: %s', 'twentyten' ), '<span>' . single_tag_title( '', false ) . '</span>' );
+					printf( __( 'Tag Archives: %s', 'artblog' ), '<span>' . single_tag_title( '', false ) . '</span>' );
 				?></h1>
 
 <?php
