@@ -2,7 +2,7 @@
 Theme Name: QuickPic
 Theme URI: http://www.quickonlinetips.com/archives/quickpic/
 Description: 1-column photoblogging theme, widget ready, fast loading, SEO optimized, easy to customize by <a href="http://www.quickonlinetips.com/">Quick Online Tips</a>.
-Version: 1.3.4
+Version: 1.3.5
 Author: Quick Online Tips
 Author URI: http://www.quickonlinetips.com/
 Tags: fixed-width, one-column, white, photoblogging, threaded-comments, sticky-post
@@ -291,7 +291,7 @@ body {
 	} 
 
 .post {
-	margin: 0 10px;
+	margin: 0 0 20px;
 	text-align: left;
         background: #fff;
         padding: 10px; 
