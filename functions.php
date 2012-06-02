@@ -1,7 +1,7 @@
 <?php
 /**
  * @package BestCorporate
- * @since BestCorporate 2.0
+ * @since BestCorporate 2.1
  */
 
 /**
