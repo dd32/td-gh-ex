@@ -8,7 +8,7 @@
  * located in the functions.php file.
  *
  * @package BestCorporate
- * @since BestCorporate 2.1
+ * @since BestCorporate 2.2
  */
 ?>
 

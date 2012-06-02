@@ -8,7 +8,7 @@
  * different template.
  *
  * @package BestCorporate
- * @since BestCorporate 2.1
+ * @since BestCorporate 2.2
  */
 
 get_header(); ?>

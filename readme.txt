@@ -1,34 +1,29 @@
-=== Chocolate-pro Wordpress Theme ===
-Author: zwwooooo & schiy
-Tags:brown,white,translation-ready,custom-menu,threaded-comments,two-columns,fixed-width,right-sidebar,theme-options
-Requires at least: 3.0.0
-Tested up to: 3.2.1
+=== Best Corporate Wordpress Theme ===
+Author: renniaofei
+Tags: white, light, two-columns, left-sidebar, flexible-width, custom-header, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, photoblogging
+
 
 
 == Description ==
-This theme designed by schiy,functioned by zwwooooo. It is a simple style theme without any plugin needed (support plugin WP-PageNavi,WP-PostViews,wp-utf8-excerpt,WP-RecentComments),custom-menu,widgets,threaded-comments. For WordPress version 3.0+.
-
-For questions, comments or bug reports, please go to
-http://zww.me/themes
+HTML5 / Minimal / Corporate & Portfolio / Response Wordpress Theme.
 
 
-== Installation ==
+== Theme Options ==
+From here you can Upload your Logo and customize your RSS URL.
 
-= Via WordPress Admin =
-1. From your sites admin, go to Themes > Install Themes
-2. In the search box, type 'Chocolate-pro' and press enter
-3. Locate the entry for 'Chocolate-pro' (there should be only one) and click the 'Install' link
-4. When installation is finished, click the 'Activate' link
+= How to upload your logo =
+Find "Click here" and click it, the page will redirect to "Custom Header", you can upload your logo here.
 
-= Manual Install =
-1. Unzip this file into your mywebsite.com/wp-content/themes/ directory, should look like mywebsite.com/wp-content/themes/Chocolate-pro/
-2. Go into your Wordpress Admin, navigate to 'Appearance > Themes'
-3. Find the Chocolate-pro listing on this page and click 'Activate'
+= How to customize your RSS URL =
+Put your full rss subscribe address here.(with http://). If empty, auto-set system defaults.
 
-= Note =
-AJAX comment code by willin kan: http://kan.willin.org/?p=1271
+
 
 == Changelog ==
+= 2.2 - June 2, 2012 =
+First release.
 
-= 1.0.0 =
-1.0.0 release.
+
+
+For questions, comments or bug reports, please go to
+http://renniaofei.com/blog/freebies/bestcorporate/
