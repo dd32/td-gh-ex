@@ -24,6 +24,8 @@ if ( !defined('ABSPATH')) exit;
 
 <?php if (have_posts()) : ?>
 
+    <h6><?php printf(__('Search Results for: %s', 'responsive' ), '<span>' . get_search_query() . '</span>'); ?></h6>
+
 		<?php while (have_posts()) : the_post(); ?>
         
             <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
