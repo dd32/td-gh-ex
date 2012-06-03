@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Responsive Theme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-25 13:42:58 UTC\n"
-"PO-Revision-Date: 2012-05-27 06:33+0100\n"
+"PO-Revision-Date: 2012-05-27 21:55+0100\n"
 "Last-Translator: grapplerulrich <grapplerulrich@gmail.com>\n"
 "Language-Team: Portuguese, Brazil\n"
 "MIME-Version: 1.0\n"
@@ -368,8 +368,9 @@ msgstr "Menu Superior"
 msgid "Header Menu"
 msgstr "Menu do Cabe&#231;alho"
 
+#: search.php
 msgid "Search Results for: %s"
-msgstr "Resultados da Pesquisa para:%s"
+msgstr "Resultados da Pesquisa para: %s"
 
 #: includes/functions.php
 msgid "Sub-Header Menu"
@@ -385,11 +386,11 @@ msgstr "<div class=\"read-more\">Leia mais &#8250;</div><!-- end of .read-more -
 
 #: search.php
 msgid "Your search for"
-msgstr ""
+msgstr "Sua pesquisa para"
 
 #: search.php
 msgid "did not match any entries"
-msgstr ""
+msgstr "não encontrou nada"
 
 #: includes/functions.php
 msgid "Page"

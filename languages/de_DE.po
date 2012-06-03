@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Responsive Theme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-25 13:42:58 UTC\n"
-"PO-Revision-Date: 2012-05-27 06:39+0100\n"
+"PO-Revision-Date: 2012-05-31 21:58+0100\n"
 "Last-Translator: grapplerulrich <grapplerulrich@gmail.com>\n"
 "Language-Team: German, Germany\n"
 "MIME-Version: 1.0\n"
@@ -12,19 +12,8 @@ msgstr ""
 "X-Generator: WebTranslateIt.com\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: page.php
-#: landing-page.php
-#: index.php
-#: image.php
-#: full-width-page.php
-#: content-sidebar-page.php
-#: content-sidebar-half-page.php
-#: blog.php
-#: blog-excerpt.php
-#: archive.php
-#: 404.php
 msgid "404 &#8212; Fancy meeting you here!"
-msgstr "404 &#8212; Es erstaunt mich dich hier zu treffen."
+msgstr "404 &#8212; Lustig dich hier zu treffen."
 
 #: page.php
 #: landing-page.php
@@ -304,9 +293,8 @@ msgstr "Webseite"
 msgid "&copy;"
 msgstr "©"
 
-#: footer.php
 msgid "scroll to top"
-msgstr "Nach oben scrollen"
+msgstr "hochscrollen"
 
 #: footer.php
 msgid "&uarr;"
@@ -320,9 +308,8 @@ msgstr "Responsive Theme"
 msgid "WordPress"
 msgstr "WordPress"
 
-#: home.php
 msgid "Hello, World!"
-msgstr "Hallo, Welt!"
+msgstr "Hallo Welt!"
 
 #: home.php
 msgid "Your H2 subheadline here"
@@ -335,7 +322,6 @@ msgid ""
 "\t\t\t\t\t\t  can be an image or even YouTube video if you like."
 msgstr ""
 "Dein Titel, Untertitel und auch dieser Inhalt ist von den Theme-Options aus bearbeitbar. \n"
-"\n"
 "\t\t\t\t\t      Call-to-Action Knopf und sein Ziel-link auch. Das Bild auf der rechten Seite \n"
 "\n"
 "\t\t\t\t\t\t  kann auch ein Bild oder YouTube-Video sein falls du möchtest."
@@ -374,9 +360,8 @@ msgstr "Kopfzeilenmenü"
 msgid "Search Results for: %s"
 msgstr "Suchergebnisse für: %s"
 
-#: includes/functions.php
 msgid "Sub-Header Menu"
-msgstr "Unterkopfzeilemenü"
+msgstr "Unterkopfzeilenmenü"
 
 #: includes/functions.php
 msgid "Footer Menu"
@@ -386,12 +371,11 @@ msgstr "Fußzeilenmenü"
 msgid "<div class=\"read-more\">Read more &#8250;</div><!-- end of .read-more -->"
 msgstr "<div class=\"read-more\">Weiter lesen &#8250; </div><!-- end of .read-more -->"
 
-#: search.php
 msgid "Your search for"
-msgstr "Ihre Suche für"
+msgstr "Deine Suche für"
 
 msgid "did not match any entries"
-msgstr "gab keine Ergebnis"
+msgstr "gab kein Ergebnis"
 
 #: includes/functions.php
 msgid "Page"
@@ -504,13 +488,11 @@ msgstr "Optionen gespeichert"
 msgid "Theme Elements"
 msgstr "Elemente des Theme"
 
-#: includes/theme-options.php
 msgid "Disable Breadcrumb Lists?"
-msgstr "Brotkrümellisten deaktivieren?"
+msgstr "Navigationsleisten deaktivieren?"
 
-#: includes/theme-options.php
 msgid "Check to disable"
-msgstr "Zum deaktivieren klicken"
+msgstr "Zum Deaktivieren klicken"
 
 #: includes/theme-options.php
 msgid "Disable Call to Action Button?"
@@ -520,9 +502,8 @@ msgstr "Call-to-Action Knopf deaktivieren?"
 msgid "Save Options"
 msgstr "Optionen speichern"
 
-#: includes/theme-options.php
 msgid "Logo Upload"
-msgstr "Logo Hochladen"
+msgstr "Logo hochladen"
 
 #: includes/theme-options.php
 msgid "Custom Header"
@@ -590,7 +571,7 @@ msgstr "Webmaster-Tools"
 
 #: includes/theme-options.php
 msgid "Google Site Verification"
-msgstr "Google Website Bestätigung "
+msgstr "Google Website Verifikation"
 
 #: includes/theme-options.php
 msgid "Enter your Google ID number only"
@@ -598,7 +579,7 @@ msgstr "Nur deine Google ID-Nummer eingeben"
 
 #: includes/theme-options.php
 msgid "Bing Site Verification"
-msgstr "Bing Website Bestätigung"
+msgstr "Bing Website Verifikation"
 
 #: includes/theme-options.php
 msgid "Enter your Bing ID number only"
@@ -606,7 +587,7 @@ msgstr "Nur deine Bing ID-Nummer eingeben"
 
 #: includes/theme-options.php
 msgid "Yahoo Site Verification"
-msgstr "Yahoo Website Bestätigung"
+msgstr "Yahoo Website Verifikation"
 
 #: includes/theme-options.php
 msgid "Enter your Yahoo ID number only"
@@ -616,9 +597,8 @@ msgstr "Nur deine Yahoo ID-Nummer eingeben"
 msgid "Site Statistics Tracker"
 msgstr "Website-Statistik Tracker"
 
-#: includes/theme-options.php
 msgid "Google Analytics, StatCounter, any other or all of them."
-msgstr "Google Analytics, StatCounter, eine andere oder alle von ihnen."
+msgstr "Google Analytics, StatCounter, etc."
 
 #: includes/theme-options.php
 msgid "Social Icons"
@@ -782,9 +762,8 @@ msgstr "http://themeid.com/forum/topic/510/theme-options-featured-content/"
 msgid "See Docs"
 msgstr "Siehe Dokumente"
 
-#: includes/theme-options.php
 msgid "Leave blank if plugin handles your webmaster tools"
-msgstr "Leer lassen, wenn ein Plugin Ihre Webmaster-Tools verwaltet"
+msgstr "Leer lassen, wenn ein Plugin deine Webmaster-Tools verwaltet"
 
 #: includes/theme-options.php
 msgid "Instagram"

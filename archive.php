@@ -70,6 +70,11 @@ if ( !defined('ABSPATH')) exit;
                 </div><!-- end of .post-meta -->
                 
                 <div class="post-entry">
+                    <?php if ( has_post_thumbnail()) : ?>
+                        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+                    <?php the_post_thumbnail('thumbnail', array('class' => 'alignleft')); ?>
+                        </a>
+                    <?php endif; ?>
                     <?php the_excerpt(); ?>
                     <?php wp_link_pages(array('before' => '<div class="pagination">' . __('Pages:', 'responsive'), 'after' => '</div>')); ?>
                 </div><!-- end of .post-entry -->

@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: Responsive Theme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-25 13:42:58 UTC\n"
-"PO-Revision-Date: 2012-05-27 06:33+0100\n"
+"PO-Revision-Date: 2012-05-28 21:14+0100\n"
 "Last-Translator: grapplerulrich <grapplerulrich@gmail.com>\n"
 "Language-Team: Malay, Malaysia (Latin)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: WebTranslateIt.com\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: page.php
 #: landing-page.php
@@ -368,6 +368,7 @@ msgstr "Menu Atas"
 msgid "Header Menu"
 msgstr "Menu Bahagian Atas"
 
+#: search.php
 msgid "Search Results for: %s"
 msgstr "Keputusan Carian untuk: %s"
 
@@ -385,11 +386,10 @@ msgstr "<div class=\"read-more\">Sambung lagi ›</div><!-- hujung .read-more --
 
 #: search.php
 msgid "Your search for"
-msgstr ""
+msgstr "Carian anda untuk"
 
-#: search.php
 msgid "did not match any entries"
-msgstr ""
+msgstr "tidak padan dengan mana-mana artikel"
 
 #: includes/functions.php
 msgid "Page"

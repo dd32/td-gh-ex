@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Responsive Theme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-25 13:42:58 UTC\n"
-"PO-Revision-Date: 2012-05-27 06:33+0100\n"
+"PO-Revision-Date: 2012-05-27 21:55+0100\n"
 "Last-Translator: grapplerulrich <grapplerulrich@gmail.com>\n"
 "Language-Team: Swedish, Sweden\n"
 "MIME-Version: 1.0\n"
@@ -368,6 +368,7 @@ msgstr "Topp Meny"
 msgid "Header Menu"
 msgstr "Sidhuvud Meny"
 
+#: search.php
 msgid "Search Results for: %s"
 msgstr "Sökresultat för: %s"
 
@@ -385,11 +386,11 @@ msgstr "<div class=\"read-more\">Läs mer &#8250;</div><!-- end of .read-more --
 
 #: search.php
 msgid "Your search for"
-msgstr ""
+msgstr "Din sökning av"
 
 #: search.php
 msgid "did not match any entries"
-msgstr ""
+msgstr "matchade inte några poster"
 
 #: includes/functions.php
 msgid "Page"
@@ -588,7 +589,7 @@ msgstr "Webbadministratörsverktyg"
 
 #: includes/theme-options.php
 msgid "Google Site Verification"
-msgstr "Google Site Verification"
+msgstr "Google: Verifiering av webbplatsen"
 
 #: includes/theme-options.php
 msgid "Enter your Google ID number only"
@@ -596,7 +597,7 @@ msgstr "Ange endast ditt Google ID-nummer"
 
 #: includes/theme-options.php
 msgid "Bing Site Verification"
-msgstr "Bing Site Verification"
+msgstr "Bing: Verifiering av webbplatsen"
 
 #: includes/theme-options.php
 msgid "Enter your Bing ID number only"
@@ -604,7 +605,7 @@ msgstr "Ange endast ditt Bing ID-nummer"
 
 #: includes/theme-options.php
 msgid "Yahoo Site Verification"
-msgstr "Yahoo Site Verification"
+msgstr "Yahoo: Verifiering av webbplatsen"
 
 #: includes/theme-options.php
 msgid "Enter your Yahoo ID number only"
@@ -806,7 +807,7 @@ msgstr "Anpassade CSS-stilar"
 
 #: includes/theme-options.php
 msgid "https://developer.mozilla.org/en/CSS"
-msgstr ""
+msgstr "http://www.webdesignskolan.com/css/css.php"
 
 #: includes/theme-options.php
 msgid "CSS Tutorial"
