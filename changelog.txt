@@ -7,14 +7,14 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
-(06/02/2012) - Version 1.5.6
+(06/02/2012) - Version 1.5.6/7
 [*] all* language updates
 [+] new languages
     - Croatian
 	- Serbian (Latin)
 [+] featured image support for archive.php
-[+] featured images classes
 [+] overflow auto for blockquote
+[*] improved search.php
 
 (05/26/2012) - Version 1.5.4/5
 [+] new languages
