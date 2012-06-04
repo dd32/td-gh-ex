@@ -233,7 +233,7 @@ function simplecatch_sliders() {
 				
 			while ( $get_featured_posts->have_posts()) : $get_featured_posts->the_post();
 				$title_attribute = esc_attr( apply_filters( 'the_title', get_the_title( $post->ID ) ) );
-				$excerpt = str_replace('[...]','<a href="'.get_permalink().'" title="'.get_permalink().'" target="_blank">Continue reading</a>', get_the_excerpt() ) ; //str_replace to remove [...] from excerpt
+				$excerpt = get_the_excerpt();
 				$simplecatch_sliders .= '
 				<div class="slides">
 					<div class="featured">

@@ -16,13 +16,10 @@
  */
 function simplecatch_admin_scripts() {
 	//jquery-cookie registered in functions.php
-	wp_register_script( 'simplecatch_admin', get_template_directory_uri().'/functions/panel/admin.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable' ), '1.0', false );
-	wp_enqueue_script ( 'simplecatch_admin' );
-	//registering add_image_script.js and enqueue
-	wp_register_script( 'simplecatch_upload', get_template_directory_uri().'/functions/panel/add_image_scripts.js', array( 'jquery','media-upload','thickbox' ) );
-	wp_enqueue_script( 'simplecatch_upload' );
+	wp_enqueue_script( 'simplecatch_admin', get_template_directory_uri().'/functions/panel/admin.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable' ), '1.0', false );
+	wp_enqueue_script( 'simplecatch_upload', get_template_directory_uri().'/functions/panel/add_image_scripts.js', array( 'jquery','media-upload','thickbox' ) );
 }
-
+ 
 
 /**
  * Enqueue admin stylesheet
@@ -47,18 +44,18 @@ function simplecatch_options_menu() {
 	
 	$simplecatch_options = add_theme_page( 
 		sprintf( esc_html__( '%s Theme Options', 'simplecatch' ), get_bloginfo( 'name') ), // Name of page
-		__( 'Theme Options', 'simplecatch' ),		// Label in menu
-		'edit_theme_options', 						// Capability required
-		'simplecatch_options', 							// Menu slug, used to uniquely identify the page
-		'simplecatch_options_page'
-	);						// Function that renders the options page
+		__( 'Theme Options', 'simplecatch' ),	// Label in menu
+		'edit_theme_options', 					// Capability required
+		'simplecatch_options', 					// Menu slug, used to uniquely identify the page
+		'simplecatch_options_page'				// Function that renders the options page
+	);						
 	
 	$slider_options = add_theme_page( 
 		sprintf( esc_html__( '%s Slider', 'simplecatch' ), get_bloginfo( 'name') ), // Name of page
-		__( 'Featured Slider', 'simplecatch' ),		// Label in menu
-		'edit_theme_options', 						// Capability required
-		'simplecatch_options_slider', 							// Menu slug, used to uniquely identify the page
-		'simplecatch_options_slider_page'	// Function that renders the options page
+		__( 'Featured Slider', 'simplecatch' ),	// Label in menu
+		'edit_theme_options', 					// Capability required
+		'simplecatch_options_slider', 			// Menu slug, used to uniquely identify the page
+		'simplecatch_options_slider_page'		// Function that renders the options page
 	);
 			
 	// admin_print_scripts-(hookname) and add_print_styles-(hookname)

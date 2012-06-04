@@ -1,20 +1,19 @@
 === simplecatch ===
 
 Theme Name: Simple Catch
-Theme URI: http://catchthemes.com/simple-catch
+Theme URI: http://catchthemes.com/wp-themes/simplecatch
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
-Version: 1.0
+Description: SimpleCatch is a simple and clean WordPress Theme. Easy Customize through Theme Options and Custom Widgets. Features: Featured Image Slider, Custom Menu, Theme Options, Custom Widgets and Support for popular plugins. It is based on popular 978 Grid System CSS Framework.
+Version: 1.2
 License: GNU General Public License
-License URI: license.txt
 
 == Theme Description ==
 
-SimpleCatch is a simple and clean WordPress Theme. Easy Customize through Theme Options and Custom Widgets. Features: Featured Image Slider, Custom Menu, Theme Options, Custom Widgets and Support for popular plugins.
+SimpleCatch is a simple and clean WordPress Theme. Easy Customize through Theme Options and Custom Widgets. Features: Featured Image Slider, Custom Menu, Theme Options, Custom Widgets and Support for popular plugins. It is based on popular 978 Grid System CSS Framework.
 
 == Features ==  
 Featured Image Slider, Custom Drop-down Menu, Theme Options, Custom Widgets, flexible position of sidebar and Support for popular plugins.
-
 
 == Tags ==
 

@@ -1,10 +1,10 @@
 /*
 Theme Name: Simple Catch
-Theme URI: http://catchthemes.com/simple-catch
+Theme URI: http://catchthemes.com/wp-themes/simplecatch
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
-Description: SimpleCatch is a simple and clean WordPress Theme. Easy Customize through Theme Options and Custom Widgets. Features: Featured Image Slider, Custom Menu, Theme Options, Custom Widgets and Support for popular plugins.
-Version: 1.1
+Description: SimpleCatch is a simple and clean WordPress Theme. Easy Customize through Theme Options and Custom Widgets. Features: Featured Image Slider, Custom Menu, Theme Options, Custom Widgets and Support for popular plugins. It is based on popular 978 Grid System CSS Framework.
+Version: 1.2
 License: GNU General Public License
 License URI: license.txt
 Tags: black, gray, silver, white, light, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, custom-menu, featured-images, full-width-template, theme-options, threaded-comments
@@ -930,6 +930,22 @@ input[type=submit] {
 	text-align: left;
 	clear:left;
 	width: 54px;
+}
+#respond #commentform .comment-subscription-form {
+	margin: 20px 0 0 84px;
+	padding-bottom:0;
+	}
+#respond #commentform .comment-subscription-form label {
+	float: none;
+	line-height: 33px;
+	margin: 0;
+	text-align: left;
+	clear:left;
+	width: auto;
+}
+#respond #commentform .comment-subscription-form input {
+	margin:0 10px 0 0;
+	padding-bottom:0;
 }
 #respond #commentform .text {
 	background-color:#fff;
