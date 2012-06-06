@@ -47,7 +47,7 @@ function simplecatch_load_google_fonts() {
 add_action('wp_print_styles', 'simplecatch_load_google_fonts');
 
 /**
- * Sets the post excerpt length to 40 words.
+ * Sets the post excerpt length to 30 words.
  *
  * function tied to the excerpt_length filter hook.
  * @uses filter excerpt_length
@@ -58,14 +58,35 @@ function simplecatch_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'simplecatch_excerpt_length' );
 
 /**
- * Remove [...] from excerpt
- *
- * @uses filter get_the_excerpt
+ * Returns a "Continue Reading" link for excerpts
  */
-function simplecatch_trim_excerpt($text) {
-  return rtrim($text,'[...]');
+function simplecatch_continue_reading() {
+	return ' <a class="readmore" href="'. esc_url( get_permalink() ) . '">' . __( 'Continue reading &rarr;', 'simplecatch' ) . '</a>';
 }
-add_filter('get_the_excerpt', 'simplecatch_trim_excerpt');
+
+/**
+ * Replaces "[...]" (appended to automatically generated excerpts) with simplecatch_continue_reading().
+ *
+ */
+function simplecatch_excerpt_more( $more ) {
+	return ' &hellip;' . simplecatch_continue_reading();
+}
+add_filter( 'excerpt_more', 'simplecatch_excerpt_more' );
+
+
+/**
+ * Adds Continue Reading link to post excerpts.
+ *
+ * function tied to the get_the_excerpt filter hook.
+ */
+function simplecatch_custom_excerpt( $output ) {
+	if ( has_excerpt() && ! is_attachment() ) {
+		$output .= simplecatch_continue_reading();
+	}
+	return $output;
+}
+add_filter( 'get_the_excerpt', 'simplecatch_custom_excerpt' );
+
 
 /** 
  * Allows post queries to sort the results by the order specified in the post__in parameter. 
@@ -230,23 +251,28 @@ function simplecatch_sliders() {
 				'orderby' 		 => 'post__in',
 				'ignore_sticky_posts' => 1 // ignore sticky posts
 			));
-				
 			while ( $get_featured_posts->have_posts()) : $get_featured_posts->the_post();
 				$title_attribute = esc_attr( apply_filters( 'the_title', get_the_title( $post->ID ) ) );
 				$excerpt = get_the_excerpt();
 				$simplecatch_sliders .= '
 				<div class="slides">
 					<div class="featured">
-						<div class="img-effect pngfix"></div>
-						<div>
-							'.get_the_post_thumbnail( $post->ID, 'slider', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class'	=> 'pngfix' ) ).'
-						</div>
+						<div class="slide-image">';
+							if( has_post_thumbnail() ) {
+								$simplecatch_sliders .= '<a href="' . get_permalink() . '" title="Permalink to '.the_title('','',false).'"><span class="img-effect pngfix"></span>'.get_the_post_thumbnail( $post->ID, 'slider', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class'	=> 'pngfix' ) ).'</a>';
+							}
+							else {
+								$simplecatch_sliders .= '<span class="img-effect pngfix"></span>';	
+							}
+							$simplecatch_sliders .= '
+						</div> <!-- .slide-image -->
 					</div> <!-- .featured -->
 					<div class="featured-text">';
-					if( $excerpt !='')
-						$simplecatch_sliders .= the_title( '<span>','</span>', false ).' : '.$excerpt; 
-					$simplecatch_sliders .=
-					'</div><!-- .featured-text -->
+						if( $excerpt !='') {
+							$simplecatch_sliders .= the_title( '<span>','</span>', false ).': '.$excerpt;
+						}
+						$simplecatch_sliders .= '
+					</div><!-- .featured-text -->
 				</div> <!-- .slides -->';
 			endwhile; wp_reset_query();
 		$simplecatch_sliders .= '
@@ -301,7 +327,7 @@ function simplecatch_headersocialnetworks() {
 	// get the data value from theme options
 	$options = get_option( 'simplecatch_options' );
 	
-	if ( ( !$simplecatch_headersocialnetworks = get_transient( 'simplecatch_headersocialnetworks' ) ) &&  ( !empty( $options[ 'social_twitter' ] ) || !empty( $options[ 'social_youtube' ] )  || !empty( $options[ 'social_facebook' ] ) ) )  {
+	if ( ( !$simplecatch_headersocialnetworks = get_transient( 'simplecatch_headersocialnetworks' ) ) &&  ( !empty( $options[ 'social_twitter' ] ) || !empty( $options[ 'social_youtube' ] )  || !empty( $options[ 'social_facebook' ] ) || !empty( $options[ 'social_googleplus' ] )  || !empty( $options[ 'social_pinterest' ] ) ) )  {
 	
 		echo '<!-- refreshing cache -->';
 		
@@ -319,6 +345,18 @@ function simplecatch_headersocialnetworks() {
 					$simplecatch_headersocialnetworks .=
 						'<li class="twitter"><a href="'.$options[ 'social_twitter' ].'" title="'.sprintf( esc_attr__( '%s in Twitter', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Twitter </a></li>';
 				}
+				
+				//Google+
+				if ( !empty( $options[ 'social_googleplus' ] ) ) {
+					$simplecatch_headersocialnetworks .=
+						'<li class="google-plus"><a href="'.$options[ 'social_googleplus' ].'" title="'.sprintf( esc_attr__( '%s in Google+', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Google+ </a></li>';
+				}
+				
+				//Pinterest
+				if ( !empty( $options[ 'social_pinterest' ] ) ) {
+					$simplecatch_headersocialnetworks .=
+						'<li class="pinterest"><a href="'.$options[ 'social_pinterest' ].'" title="'.sprintf( esc_attr__( '%s in Pinterest', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Twitter </a></li>';
+				}				
 				
 				//Youtube
 				if ( !empty( $options[ 'social_youtube' ] ) ) {

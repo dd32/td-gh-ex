@@ -36,7 +36,6 @@ get_header(); ?>
                                         <li class="last"><?php comments_popup_link( 'No Comments ', '1 Comment ', '% Comments ' ); ?></li>
                                     </ul>
                                		<?php the_excerpt(); ?>
-                                    <a href="<?php the_permalink(); ?>" title="Continue Reading" class="readmore">Continue Reading</a>
                                 </div>   
                              
                                 <div class="row-end"></div>
@@ -44,9 +43,13 @@ get_header(); ?>
                         <hr />
                     
   			 <?php endwhile;
-            		 // Checking WP Page Numbers plugin fucntion exist and if it exist then load the page numbers accordingly
-					 if ( function_exists('wp_page_numbers' ) ) : 
-					 	wp_page_numbers();
+					 // Checking WP Page Numbers plugin exist
+					if ( function_exists('wp_pagenavi' ) ) : 
+						wp_pagenavi();
+					
+					// Checking WP-PageNaviplugin exist
+					elseif ( function_exists('wp_page_numbers' ) ) : 
+						wp_page_numbers();
 					   
 					 else: 
 						global $wp_query;

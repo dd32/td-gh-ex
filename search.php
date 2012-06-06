@@ -25,8 +25,12 @@ get_header(); ?>
                 </div> <!-- .post -->
             
             <?php endwhile; 
-				// Checking WP Page Numbers plugin fucntion exist and if it exist then load the page numbers accordingly
-				if ( function_exists( 'wp_page_numbers' ) ) : 
+				// Checking WP Page Numbers plugin exist
+				if ( function_exists('wp_pagenavi' ) ) : 
+                 	wp_pagenavi();
+				
+				// Checking WP-PageNaviplugin exist
+				elseif ( function_exists('wp_page_numbers' ) ) : 
 					wp_page_numbers();
 					 
 				else: ?>

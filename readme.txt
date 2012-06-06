@@ -4,8 +4,8 @@ Theme Name: Simple Catch
 Theme URI: http://catchthemes.com/wp-themes/simplecatch
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
-Description: SimpleCatch is a simple and clean WordPress Theme. Easy Customize through Theme Options and Custom Widgets. Features: Featured Image Slider, Custom Menu, Theme Options, Custom Widgets and Support for popular plugins. It is based on popular 978 Grid System CSS Framework.
-Version: 1.2
+Description: Simple Catch is a simple and clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Featured Image Slider, Custom Menu, Theme Options, Custom Widgets, Three Custom Page Template for Layout and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework.
+Version: 1.2.1
 License: GNU General Public License
 
 == Theme Description ==
@@ -95,4 +95,8 @@ Tags Used: black, gray, silver, white, light, one-column, two-columns, left-side
 
 
 == Changelog ==
-Release Version 1
+Version 1.2.1
+* Fixed the Slider Image Link
+* Modify the Continue Reading Link
+* Added the Social Icon for Pinterest and Google+
+* Added CSS to Support WP-PageNavi and Contact Form 7 Plugins

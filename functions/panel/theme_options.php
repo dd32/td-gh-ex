@@ -238,6 +238,16 @@ function simplecatch_options_page() {
                                 <td><input type="text" size="45" name="simplecatch_options[social_twitter]" value="<?php if ( isset( $options[ 'social_twitter' ] ) ) echo esc_url( $options[ 'social_twitter'] ); ?>" />
                                 </td>
                             </tr>
+                            <tr> 
+                                <th scope="row"><h4><?php _e( 'Google+', 'simplecatch' ); ?> </h4></th>
+                                <td><input type="text" size="45" name="simplecatch_options[social_googleplus]" value="<?php if ( isset( $options[ 'social_googleplus' ] ) ) echo esc_url( $options[ 'social_googleplus'] ); ?>" />
+                                </td>
+                            </tr>
+                            <tr> 
+                                <th scope="row"><h4><?php _e( 'Pinterest', 'simplecatch' ); ?> </h4></th>
+                                <td><input type="text" size="45" name="simplecatch_options[social_pinterest]" value="<?php if ( isset( $options[ 'social_pinterest' ] ) ) echo esc_url( $options[ 'social_pinterest'] ); ?>" />
+                                </td>
+                            </tr>
                             <tr>
                                 <th scope="row"><h4><?php _e( 'Youtube', 'simplecatch' ); ?></h4></th>
                                 <td><input type="text" size="45" name="simplecatch_options[social_youtube]" value="<?php if ( isset( $options[ 'social_youtube' ] ) ) echo esc_url( $options[ 'social_youtube' ] ); ?>" />
@@ -370,10 +380,11 @@ function simplecatch_options_validation( $options ){
 	if ( isset( $options[ 'fav_icon' ] ) ) {
 		$options_validated[ 'fav_icon' ] = esc_url_raw( $options[ 'fav_icon' ] );
 	}
-	if ( !isset( $options['remove_favicon'] ) )
+	if ( !isset( $options['remove_favicon'] ) ) {
 		$options['remove_favicon'] = null;
-	// Our checkbox value is either 0 or 1 
-	$options_validated[ 'remove_favicon' ] = $options[ 'remove_favicon' ] == 1 ? 1 : 0 ;
+		// Our checkbox value is either 0 or 1 
+		$options_validated[ 'remove_favicon' ] = $options[ 'remove_favicon' ] == 1 ? 1 : 0 ;
+	}
 	
 	//data validation for Featured Slider
 	if ( isset( $options[ 'slider_qty' ] ) ) {
@@ -381,31 +392,41 @@ function simplecatch_options_validation( $options ){
 	}
 	if ( isset( $options[ 'featured_slider' ] ) ) {
 		$options_validated[ 'featured_slider' ] = array();
-	}
-		
+	}	
  	if( isset( $options[ 'slider_qty' ] ) )	
 	for ( $i = 1; $i <= $options [ 'slider_qty' ]; $i++ ) {
 		if ( intval( $options[ 'featured_slider' ][ $i ] ) ) $options_validated[ 'featured_slider' ][ $i ] = absint($options[ 'featured_slider' ][ $i ] );
 	}
 	
-	// data validation for Sociallinks
+	// data validation for Social links
 	if( isset( $options[ 'social_facebook' ] ) ) {
 		$options_validated[ 'social_facebook' ] = esc_url_raw( $options[ 'social_facebook' ] );
 	}
-	if( isset( $options[ 'social_twitter' ] ) )
+	if( isset( $options[ 'social_twitter' ] ) ) {
 		$options_validated[ 'social_twitter' ] = esc_url_raw( $options[ 'social_twitter' ] );
-	if( isset( $options[ 'social_youtube' ] ) )
+	}
+	if( isset( $options[ 'social_googleplus' ] ) ) {
+		$options_validated[ 'social_googleplus' ] = esc_url_raw( $options[ 'social_googleplus' ] );
+	}
+	if( isset( $options[ 'social_pinterest' ] ) ) {
+		$options_validated[ 'social_pinterest' ] = esc_url_raw( $options[ 'social_pinterest' ] );
+	}	
+	if( isset( $options[ 'social_youtube' ] ) ) {
 		$options_validated[ 'social_youtube' ] = esc_url_raw( $options[ 'social_youtube' ] );
-	if( isset( $options[ 'social_rss' ] ) )
+	}
+	if( isset( $options[ 'social_rss' ] ) ) {
 		$options_validated[ 'social_rss' ] = esc_url_raw( $options[ 'social_rss' ] );
+	}
 	
 	//data validation for analytics
-	if( isset( $options[ 'analytic_header' ] ) )
+	if( isset( $options[ 'analytic_header' ] ) ) {
 		$options_validated[ 'analytic_header' ] = wp_kses_stripslashes( $options[ 'analytic_header' ] );
-		
+	}
+	
 	//data validation for footer
-	if( isset( $options[ 'analytic_footer' ] ) )
+	if( isset( $options[ 'analytic_footer' ] ) ) {
 		$options_validated[ 'analytic_footer' ] = wp_kses_stripslashes( $options[ 'analytic_footer' ] );	
+	}
 	
 	//Clearing the theme option cache
 	if( function_exists( 'simplecatch_themeoption_invalidate_caches' ) ) simplecatch_themeoption_invalidate_caches();

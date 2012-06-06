@@ -26,7 +26,7 @@ get_header(); ?>
                 <?php the_content();
 					// copy this <!--nextpage--> and paste at the post content where you want to break the page
 					 wp_link_pages(array( 
-						'before'			=> '<div class="pagination">',
+						'before'			=> '<div class="pagination">Pages: ',
 						'after' 			=> '</div>',
 						'link_before' 		=> '<span>',
 						'link_after'       	=> '</span>',
