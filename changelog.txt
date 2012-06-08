@@ -7,9 +7,17 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(06/07/2012) - Maintenance - Version 1.5.9
+[x] Theme Option redirect upon activation
+[*] /includes/version.php 3.4 compatibility
+[*] Theme Option name < 3.4 compatibility
+[+] menu hover color
+[+] antialiased CSS
+[x] body background image CSS
+[+] minimized responsive menu
+
 (06/03/2012) - Version 1.5.8
 [!] missing search query from search.php
-
 
 (06/02/2012) - Version 1.5.6/7
 [*] all* language updates

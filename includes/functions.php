@@ -78,14 +78,13 @@ if (!function_exists('responsive_setup')):
 		    )
 	    );
 
-        // WordPress 3.4+
 		if ( function_exists('get_custom_header')) {
 			
         add_theme_support('custom-background');
 		
 		} else {
 		
-		// Backward Compatibility
+		// < 3.4 Backward Compatibility
 		
 		/**
          * This feature allows users to use custom background for a theme.
@@ -114,6 +113,7 @@ if (!function_exists('responsive_setup')):
 	       'height'			        => 100,
 	        // Admin header style callback
 	       'admin-head-callback'	=> 'responsive_admin_header_style'));
+		   
 	   
 	   } else {
 		   
@@ -374,7 +374,7 @@ function responsive_breadcrumb_lists () {
 
 
     /**
-     * A safe way of adding javascripts to a WordPress generated page.
+     * A safe way of adding JavaScripts to a WordPress generated page.
      */
     if (!is_admin())
         add_action('wp_enqueue_scripts', 'responsive_js');

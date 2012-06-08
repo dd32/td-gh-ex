@@ -46,12 +46,6 @@ function responsive_theme_options_add_page() {
 }
 
 /**
- * Redirect users to Theme Options after activation
- */
-if ( is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" )
-	wp_redirect( 'themes.php?page=theme_options' );
-
-/**
  * Site Verification and Webmaster Tools
  * If user sets the code we're going to display meta verification
  * And if left blank let's not display anything at all in case there is a plugin that does this
@@ -115,7 +109,14 @@ function responsive_theme_options_do_page() {
 	?>
     
     <div class="wrap">
-        <?php screen_icon(); echo "<h2>" . get_current_theme() ." ". __('Theme Options', 'responsive') . "</h2>"; ?>
+        <?php
+        /**
+         * < 3.4 Backward Compatibility
+         */
+        ?>
+        <?php $theme_name = function_exists('wp_get_theme') ? wp_get_theme() : get_current_theme(); ?>
+        <?php screen_icon(); echo "<h2>" . $theme_name ." ". __('Theme Options', 'responsive') . "</h2>"; ?>
+        
 
 		<?php if (false !== $_REQUEST['settings-updated']) : ?>
 		<div class="updated fade"><p><strong><?php _e('Options Saved', 'responsive'); ?></strong></p></div>

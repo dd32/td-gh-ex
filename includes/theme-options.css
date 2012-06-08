@@ -145,8 +145,9 @@ div.updated {
 /* =Inline CSS
 -------------------------------------------------------------- */
 .inline-css {
-	color:#1e1eff;
+	background:#f9f9f9;
 	font-family:Consolas, "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important;
+	outline:none;
 }
 
 /* =Help Links
