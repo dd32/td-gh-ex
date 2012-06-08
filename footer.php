@@ -8,9 +8,10 @@
   
 </div>
 
-<table cellpadding="0" cellspacing="2" width="100%" border="0"><tr>
+<div style="clear:both;"></div>
 
-<td valign="top" width="33%">
+<div id="boxes">
+
  <div id="box1">
  
 <!-- Widgetized sidebar 1 --> 
@@ -23,9 +24,7 @@
 </ul> 
 
 </div>
-</td>
 
-<td valign="top" width="33%">
 <div id="box2"> 
  
 <!-- Widgetized sidebar 2 --> 
@@ -38,24 +37,13 @@
 </ul>
  
 </div>
-</td>
 
-<td valign="top" width="33%">
-<div id="box3">
- 
-  
 
-<!-- Widgetized sidebar 3 --> 
-<ul>
-  <li>
-<?php if ( is_active_sidebar( 'sidebar-3' ) ) : ?>
- <?php dynamic_sidebar( 'sidebar-3' ); ?>
-<?php endif; ?> 
-  </li>
-</ul>
- 
-</div>
-</td></tr></table>
+<div style="clear:both;"></div>
+
+</div><!-- /Boxes --> 
+
+
  
 </div><!-- /Bottom Box --> 
 
