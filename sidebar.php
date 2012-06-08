@@ -9,7 +9,7 @@
 <?php get_search_form(); ?>
  <br />
 
-<a href="<?php bloginfo('rss2_url'); ?>" rel="alternate" type="application/rss+xml"><img src="<?php echo get_template_directory_uri(); ?>/images/rss16.png" title="RSS" alt="RSS" height="16" width="16" style="vertical-align:middle;border:0;padding-right:5px;" />Subscribe Feed (RSS)</a>
+<a href="<?php bloginfo('rss2_url'); ?>" rel="alternate" type="application/rss+xml"><img src="<?php echo get_template_directory_uri(); ?>/images/rss16.png" class="rssicon" title="RSS" alt="RSS" height="16" width="16" />Subscribe Feed (RSS)</a>
  <br /><br />
   
 <!-- Widgetized sidebar 1 --> 

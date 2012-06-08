@@ -23,7 +23,18 @@ add_action( 'init', 'quickchic_widgets_init' );
 /* Add feeds */
 add_theme_support('automatic-feed-links'); 
 
+/* Title filter */
+function quick_title( $title ) {
+    // Get the Site Name
+    $site_name = get_bloginfo( 'name' );
+    // Prepend it to the default output
+    $filtered_title = $title . $site_name;
+    // Return the modified title
+    return $filtered_title;
+}
+add_filter( 'wp_title', 'quick_title');
+
 /* Content width */
 if ( ! isset( $content_width ) )
-	$content_width = 470;
+	$content_width = 540;
 ?>
