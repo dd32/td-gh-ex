@@ -21,4 +21,8 @@ Version 1.0.1
 * Fixed undefined index for feed_url and moved the function catchbox_rss_redirect() from function.php to theme-options.php
 * Fixed undefined index for custom_css in theme-options.php
 * Added margin left for sub level list in widget lists. 
+* Added function catchbox_filter_wp_title() to finger the wp_title() 
 
+Version 1.0.2
+* Removed extra register_nav_menu( 'primary', __( 'Primary Menu', 'catchbox' ) );
+* Removed Extra add_custom_background();

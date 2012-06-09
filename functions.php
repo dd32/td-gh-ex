@@ -69,16 +69,23 @@ if ( ! function_exists( 'catchbox_setup' ) ):
 function catchbox_setup() {
 
 	/**
+	 * Global content width.
+	 *
 	 * Set the content width based on the theme's design and stylesheet.
 	 * making it large as we have template without sidebar which is large
 	 */
 	if ( ! isset( $content_width ) )
 	$content_width = 818;
 	
-	// Loading Text Domain Catch Box
+	/**
+	 * Loading Text Domain Catch Box
+	 */
 	load_theme_textdomain( 'catchbox' );
 
-	// This theme styles the visual editor with editor-style.css to match the theme style.
+	/**
+     * Add callback for custom TinyMCE editor stylesheets. (editor-style.css)
+     * @see http://codex.wordpress.org/Function_Reference/add_editor_style
+     */
 	add_editor_style();
 
 	// Load up our theme options page and related code.
@@ -90,18 +97,17 @@ function catchbox_setup() {
 	// Add default posts and comments RSS feed links to <head>.
 	add_theme_support( 'automatic-feed-links' );
 
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menu( 'primary', __( 'Primary Menu', 'catchbox' ) );
-	
+	/**
+     * This feature enables custom-menus support for a theme.
+     * @see http://codex.wordpress.org/Function_Reference/register_nav_menus
+     */		
 	register_nav_menus(array(
 		'primary' 	=> __( 'Primary Menu', 'catchbox' ),
 	   	'secondary'	=> __( 'Secondary Menu', 'catchbox' ),
 		'footer'	=> __( 'Footer Menu', 'catchbox' )
 	) );
 
-	// Add support for custom backgrounds
-	add_custom_background();
-	
+	// Add support for custom backgrounds	
 	// WordPress 3.4+
 	if ( function_exists( 'get_custom_header') ) {
 		add_theme_support( 'custom-background' );
@@ -115,7 +121,10 @@ function catchbox_setup() {
 		add_custom_background();
 	}
 
-	// This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images
+	/**
+     * This feature enables post-thumbnail support for a theme.
+     * @see http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+     */
 	add_theme_support( 'post-thumbnails' );
 
 	// The next four constants set how Catch Boxsupports custom headers.
