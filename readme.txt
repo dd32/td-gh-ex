@@ -60,11 +60,7 @@ are however some parts of this Theme which are not
 GPL, however they are GPL-Compatible and thats still
 good.
 
-- Icons - GPL work of our very own
-- Modernizr - MIT/BSD Copyright (c) Faruk Ates, Paul Irish, Alex Sexton
-- Placeholder - MIT/BSD, and GPL (c) 2010, Daniel Stocks
-- Respond - MIT/BSD (c) 2012: Scott Jehl, Paul Irish, Nicholas Zakas
-- FitVids - WTFPL license - http://sam.zoy.org/wtfpl/ (c) 2011, Chris Coyier and Dave Rupert
+See headers of JS files for further details.
 
 -------------------------------------------------------
     Adopting Responsive Theme (Theme Re-Distribution):
@@ -73,7 +69,7 @@ good.
 It's GPL so yes you can base your Themes from Responsive
 please note that if you do the GPLv3 License needs to stay
 as well as all copyright notices included in all parts of
-this Theme as well as third-party addons as listed above.
+this Theme as well as third-party add-ons as listed above.
 
 All derivative Themes must be much different from the original
 work, which includes the Theme design as well as all the codes

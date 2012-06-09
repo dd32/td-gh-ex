@@ -50,6 +50,7 @@ if ( !defined('ABSPATH')) exit;
         <?php if (has_nav_menu('top-menu', 'responsive')) { ?>
 	        <?php wp_nav_menu(array(
 				    'container'       => '',
+					'fallback_cb'	  =>  false,
 					'menu_class'      => 'top-menu',
 					'theme_location'  => 'top-menu')
 					); 

@@ -33,6 +33,7 @@ if ( !defined('ABSPATH')) exit;
 		<?php if (has_nav_menu('footer-menu', 'responsive')) { ?>
 	        <?php wp_nav_menu(array(
 				    'container'       => '',
+					'fallback_cb'	  =>  false,
 					'menu_class'      => 'footer-menu',
 					'theme_location'  => 'footer-menu')
 					); 

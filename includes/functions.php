@@ -71,10 +71,10 @@ if (!function_exists('responsive_setup')):
          * @see http://codex.wordpress.org/Function_Reference/register_nav_menus
          */	
         register_nav_menus(array(
-			'top-menu' => __('Top Menu', 'responsive'),
-	        'header-menu'  => __('Header Menu', 'responsive'),
+			'top-menu'         => __('Top Menu', 'responsive'),
+	        'header-menu'      => __('Header Menu', 'responsive'),
 	        'sub-header-menu'  => __('Sub-Header Menu', 'responsive'),
-			'footer-menu'  => __('Footer Menu', 'responsive')
+			'footer-menu'      => __('Footer Menu', 'responsive')
 		    )
 	    );
 
@@ -95,7 +95,7 @@ if (!function_exists('responsive_setup')):
 		
 		}
 
-		// WordPress 3.4+
+		// WordPress 3.4 >
 		if (function_exists('get_custom_header')) {
 			
 		add_theme_support('custom-header', array (
@@ -114,8 +114,16 @@ if (!function_exists('responsive_setup')):
 	        // Admin header style callback
 	       'admin-head-callback'	=> 'responsive_admin_header_style'));
 		   
+		// gets included in the admin header
+        function responsive_admin_header_style() {
+            ?><style type="text/css">
+                .appearance_page_custom-header #headimg {
+					border:none;
+				}
+             </style><?php
+        }		  
 	   
-	   } else {
+	    } else {
 		   
         // Backward Compatibility
 		
@@ -149,7 +157,6 @@ if (!function_exists('responsive_setup')):
     }
 
 endif;
-
 
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
