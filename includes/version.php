@@ -22,15 +22,19 @@ if ( !defined('ABSPATH')) exit;
 <?php
 if ( function_exists('wp_get_theme')) {
 	
- function responsive_template_data() {
+function responsive_template_data() {
     echo '<!-- We need this for debugging -->' . "\n";
     echo '<meta name="template" content="' . get_responsive_template_name() . ' ' . get_responsive_template_version() . '" />' . "\n";
-    if ( is_child_theme() ) {
-        echo '<meta name="theme" content="' . get_responsive_theme_name() . ' ' . get_responsive_theme_version() . '" />' . "\n";
-     }
- }
+}
  
 add_action('wp_head', 'responsive_template_data');
+
+function responsive_theme_data() {
+    if ( is_child_theme() ) {
+        echo '<meta name="theme" content="' . get_responsive_theme_name() . ' ' . get_responsive_theme_version() . '" />' . "\n";
+    }
+}
+
 add_action('wp_head', 'responsive_theme_data');
 
 function get_responsive_theme_name() {
@@ -90,4 +94,7 @@ function responsive_theme_data() {
 
         echo '<meta name="theme" content="' . $responsive_theme_name . ' ' . $responsive_theme_version . '" />' . "\n";
     }
-}}
+}
+
+add_action('wp_head', 'responsive_theme_data');
+}
