@@ -16,5 +16,9 @@ dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-si
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 
 == Changelog ==
+Version 1.0.1
+* Added text domain $beginning[ 'postid' ] = __( 'ID' ); in function catchbox_post_id_column()
+* Fixed undefined index for feed_url and moved the function catchbox_rss_redirect() from function.php to theme-options.php
+* Fixed undefined index for custom_css in theme-options.php
+* Added margin left for sub level list in widget lists. 
 
-Release Version 1.0

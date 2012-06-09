@@ -419,7 +419,11 @@ function catchbox_settings_field_feed_redirect() {
 function catchbox_settings_field_custom_css() {
 	$options = catchbox_get_theme_options();
 	?>
-     <textarea id="custom-css" cols="90" rows="12" name="catchbox_theme_options[custom_css]"><?php if (!empty($options['custom_css'])) esc_attr_e($options['custom_css']); ?></textarea>
+     <textarea id="custom-css" cols="90" rows="12" name="catchbox_theme_options[custom_css]">
+     
+     <?php if (!empty($options['custom_css'])) esc_attr_e($options['custom_css']); ?>
+     
+     </textarea>
 	<?php
 }
 
@@ -892,15 +896,14 @@ add_action( 'wp_enqueue_scripts', 'catchbox_enqueue_color_scheme' );
  * @since Catch Box 1.0
  */
 function catchbox_inline_css() {
-	$options = catchbox_get_theme_options();
+    $options = get_option('catchbox_get_theme_options');
     if ($options['custom_css']) {
 		echo '<!-- '.get_bloginfo('name').' Custom CSS Styles -->' . "\n";
         echo '<style type="text/css" media="screen">' . "\n";
 		echo $options['custom_css'] . "\n";
 		echo '</style>' . "\n";
-	}
+	}	
 }
-
 add_action('wp_head', 'catchbox_inline_css');
 
 /**
@@ -1128,6 +1131,23 @@ function catchbox_socialprofile() {
 	echo $catchbox_socialprofile;	
 } // catchbox_socialprofile	
 add_action('catchbox_startgenerator_open', 'catchbox_socialprofile');
+
+
+/**
+ * Redirect WordPress Feeds To FeedBurner
+ */
+function catchbox_rss_redirect() {
+	$options = get_option('catchbox_get_theme_options');
+    if ($options['feed_url']) {
+		$url = 'Location: '.$options['feed_url'];
+		if ( is_feed() && !preg_match('/feedburner|feedvalidator/i', $_SERVER['HTTP_USER_AGENT']))
+		{
+			header($url);
+			header('HTTP/1.1 302 Temporary Redirect');
+		}
+	}
+}
+add_action('template_redirect', 'catchbox_rss_redirect');
 
 /* Clearing Theme Option Cache 
  *

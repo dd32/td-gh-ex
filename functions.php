@@ -68,11 +68,13 @@ if ( ! function_exists( 'catchbox_setup' ) ):
  */
 function catchbox_setup() {
 
-    //Global content width.
-	global $content_width;
-	if (!isset($content_width))
-		$content_width = 584;
-			
+	/**
+	 * Set the content width based on the theme's design and stylesheet.
+	 * making it large as we have template without sidebar which is large
+	 */
+	if ( ! isset( $content_width ) )
+	$content_width = 818;
+	
 	// Loading Text Domain Catch Box
 	load_theme_textdomain( 'catchbox' );
 
@@ -92,17 +94,17 @@ function catchbox_setup() {
 	register_nav_menu( 'primary', __( 'Primary Menu', 'catchbox' ) );
 	
 	register_nav_menus(array(
-		'primary' 	=> __('Primary Menu', 'catchbox'),
-	   	'secondary'	=> __('Secondary Menu', 'catchbox'),
-		'footer'	=> __('Footer Menu', 'catchbox')
+		'primary' 	=> __( 'Primary Menu', 'catchbox' ),
+	   	'secondary'	=> __( 'Secondary Menu', 'catchbox' ),
+		'footer'	=> __( 'Footer Menu', 'catchbox' )
 	) );
 
 	// Add support for custom backgrounds
 	add_custom_background();
 	
 	// WordPress 3.4+
-	if ( function_exists('get_custom_header')) {
-		add_theme_support('custom-background');
+	if ( function_exists( 'get_custom_header') ) {
+		add_theme_support( 'custom-background' );
 	} else {
 		// Backward Compatibility
 	
@@ -290,6 +292,42 @@ function catchbox_admin_header_image() { ?>
 	</div>
 <?php }
 endif; // catchbox_admin_header_image
+
+
+/**
+ * Modifying the Title
+ *
+ * function tied to the wp_title filter hook.
+ * @uses filter wp_title
+ */
+function catchbox_filter_wp_title( $title ) {
+	global $page, $paged;
+	
+	// Get the Site Name
+    $site_name = get_bloginfo( 'name' );
+    
+	// Prepend name
+    $filtered_title = $site_name . $title;
+    
+	// If site front page, append description
+	$site_description = get_bloginfo( 'description' );
+    if ( $site_description && ( is_home() || is_front_page() ) ) {
+        // Get the Site Description
+        $site_description = get_bloginfo( 'description' );
+        // Append Site Description to title
+        $filtered_title .= ' &raquo; '.$site_description;
+    }
+
+	// Add a page number if necessary:
+	if ( $paged >= 2 || $page >= 2 ) {
+		$filtered_title .= ' &raquo; ' . sprintf( __( 'Page %s', 'catchbox' ), max( $paged, $page ) );
+	}
+	
+	// Return the modified title
+    return $filtered_title;
+
+}
+add_filter( 'wp_title', 'catchbox_filter_wp_title', 10, 3 );
 
 /**
  * Sets the post excerpt length to 40 words.
@@ -573,7 +611,7 @@ add_filter( 'body_class', 'catchbox_body_classes' );
  */
 function catchbox_post_id_column( $post_columns ) {
 	$beginning = array_slice( $post_columns, 0 ,1 );
-	$beginning[ 'postid' ] = __( 'ID' );
+	$beginning[ 'postid' ] = __( 'ID', 'catchbox'  );
 	$ending = array_slice( $post_columns, 1 );
 	$post_columns = array_merge( $beginning, $ending );
 	return $post_columns;
@@ -686,19 +724,9 @@ function catchbox_scripts_method() {
 } // catchbox_scripts_method
 add_action( 'wp_enqueue_scripts', 'catchbox_scripts_method' );
 
-
-/**
- * Redirect WordPress Feeds To FeedBurner
- */
-add_action('template_redirect', 'catchbox_rss_redirect');
-function catchbox_rss_redirect() {
-	$options = catchbox_get_theme_options();
-	if( $options['feed_url'] ):
-		$url = 'Location: '.$options['feed_url'];
-		if ( is_feed() && !preg_match('/feedburner|feedvalidator/i', $_SERVER['HTTP_USER_AGENT']))
-		{
-			header($url);
-			header('HTTP/1.1 302 Temporary Redirect');
-		}
-	endif;
+function catchbox_enqueue_comment_reply_script() {
+	if ( comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
 }
+add_action( 'comment_form_before', 'catchbox_enqueue_comment_reply_script' );
