@@ -2,7 +2,7 @@
 Theme Name: QuickPress 
 Theme URI: http://www.quickonlinetips.com/archives/quickpress/
 Description: 2-3 columns, widget ready, SEO optimized, fast loading, easy to customize wordpress theme by <a href="http://www.quickonlinetips.com/">Quick Online Tips</a>.
-Version: 1.6.5
+Version: 1.6.6
 Author: Quick Online Tips
 Author URI: http://www.quickonlinetips.com/
 Tags: blue, fixed-width, right-sidebar, two-columns, three-columns, threaded-comments, sticky-post
@@ -532,7 +532,7 @@ ol li, #sidebar ul ol li {
 ------------------------------------- */
 
 #searchform #s {
-	width: 300px;
+	width:240px;
 	padding: 2px;
         margin: 15px 0;      
 	}
@@ -662,9 +662,9 @@ ol.commentlist li div.comment-meta a { color:#999 !important; }
 ol.commentlist li div.comment-meta a:hover { color:#06c !important;  text-decoration:underline; }
 ol.commentlist li p { font-size:1em; margin:0 0 1em; }
 
-ol.commentlist li ul { font-size:1em; margin:0 0 1em 2em; }
-ol.commentlist li ul li { font-size:1em; list-style:square;margin:0 0 1em 2em; }
-ol.commentlist li ol li { font-size:1em; margin:0 0 1em 2em;list-style:upper-roman; }
+ol.commentlist li ul { font-size:1em; margin:0; }
+ol.commentlist li ul li { font-size:1em; list-style:square;margin:0; }
+ol.commentlist li ol li { font-size:1em; margin:0;list-style:upper-roman; }
 
 ol.commentlist li div.reply { font-size:1em; } 
 ol.commentlist li div.reply a { text-decoration:none; background: #FFF; padding: 5px;} 
@@ -682,6 +682,29 @@ ol.commentlist li.odd { background:#f9f9f9; }
 ol.commentlist li ul.children li.depth-2 {list-style:none; border-left:1px solid #ccc; margin:0 0 .25em .25em; }
 ol.commentlist li ul.children li.depth-3 {list-style:none; border-left:1px solid #ccc; margin:0 0 .25em .25em; }
 ol.commentlist li ul.children li.depth-4 {list-style:none; border-left:1px solid #ccc; margin:0 0 .25em .25em; }
+
+.commentlist table td {
+	background: #FFF;
+	border: 1px solid #CCC;
+	padding: 10px;
+	}
+
+dl, dt, dd {
+	list-style:none;
+	padding: 0;
+	margin:0
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+  	}
+dt {
+	font-weight:bold; 
+	padding-top:5px;
+	margin-left:40px;
+	}
+dd {
+	padding-bottom: 15px;
+	}
 
 
 /* Begin Sidebar 
