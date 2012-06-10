@@ -1,0 +1,1 @@
+QuickChic is a 2-columns clean, minimalistic, widget ready, SEO optimized, fast loading, easy to customize wordpress theme by QuickOnlineTips.com
