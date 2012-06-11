@@ -29,6 +29,8 @@
 
 <td width="40%" valign="top" align="right">
 
+
+<!-- Search --> 
 <?php get_search_form(); ?>
 
  </td>
@@ -42,5 +44,6 @@
 &nbsp; 
 &nbsp;
 
+<!-- RSS Links --> 
 <a href="<?php bloginfo('rss2_url'); ?>" rel="alternate" type="application/rss+xml"><img src="<?php echo get_template_directory_uri(); ?>/images/rss16.png" title="RSS" class="rssicon" alt="RSS" height="16" width="16" />RSS</a>
 </div>

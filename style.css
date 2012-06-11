@@ -1,15 +1,14 @@
 /*  
 Theme Name: QuickPress 
 Theme URI: http://www.quickonlinetips.com/archives/quickpress/
-Description: 2-3 columns, widget ready, SEO optimized, fast loading, easy to customize wordpress theme by <a href="http://www.quickonlinetips.com/">Quick Online Tips</a>.
-Version: 1.6.6
-Author: Quick Online Tips
-Author URI: http://www.quickonlinetips.com/
-Tags: blue, fixed-width, right-sidebar, two-columns, three-columns, threaded-comments, sticky-post
-.
+Description: A lightweight, 2-3 columns, widget ready, SEO optimized, fast loading, easy to customize wordpress theme.
+Version: 1.6.7
+Author: QuickOnlineTips
+Author URI: http://www.quickonlinetips.com/archives/wordpress-themes/
+Tags: white, blue, gray, silver, light, two-columns, three-columns, right-sidebar, fixed-width, threaded-comments, sticky-post
+
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-.
 */
 
 
@@ -816,7 +815,7 @@ div.aligncenter {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-}
+	}
 
 .wp-caption {
 	border: 1px solid #ddd;
@@ -834,42 +833,42 @@ div.aligncenter {
 	margin: 0;
 	padding: 0;
 	border: 0 none;
-}
+	}
 
 .wp-caption p.wp-caption-text {
 	font-size: 11px;
 	line-height: 17px;
 	padding: 0 4px 5px;
 	margin: 0;
-} 
+	} 
 
 #content .gallery {
 	margin: 0 auto 18px;
-}
+	}
 #content .gallery .gallery-item {
 	float: left;
 	margin-top: 5px;
 	text-align: center;
 	width: 33%;
-}
+	}
 #content .gallery img {
 	border: 0px solid #cfcfcf;
-}
+	}
 #content .gallery .gallery-caption {
 	color: #888;
 	font-size: 11px;
 	margin: 0 0 12px;
-}
+	}
 #content .gallery dl {
 	margin: 0;
-}
+	}
 #content .gallery img {
 	border: 0px solid #f1f1f1;
-}
+	}
 #content .gallery br+br {
 	display: none;
-}
+	}
 #content .attachment img { /* single attachment images should be centered */
 	display: block;
 	margin: 0 auto;
-}
+	}
