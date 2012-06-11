@@ -20,7 +20,6 @@ jQuery(function(){
     // Main Menu
     jQuery('.menu').tinyNav({
         active: 'selected', // Set the "active" class
-		header: true
     });
     // Subheader Menu (uncomment to use)
     //jQuery('.sub-header-menu').tinyNav({

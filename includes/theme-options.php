@@ -53,7 +53,7 @@ function responsive_theme_options_add_page() {
  
 function responsive_google_verification() {
     $options = get_option('responsive_theme_options');
-    if ($options['google_site_verification']) {
+    if (!empty($options['google_site_verification'])) {
 		echo '<meta name="google-site-verification" content="' . $options['google_site_verification'] . '" />' . "\n";
 	}
 }
@@ -62,7 +62,7 @@ add_action('wp_head', 'responsive_google_verification');
 
 function responsive_bing_verification() {
     $options = get_option('responsive_theme_options');
-    if ($options['bing_site_verification']) {
+    if (!empty($options['bing_site_verification'])) {
         echo '<meta name="msvalidate.01" content="' . $options['bing_site_verification'] . '" />' . "\n";
 	}
 }
@@ -71,7 +71,7 @@ add_action('wp_head', 'responsive_bing_verification');
 
 function responsive_yahoo_verification() {
     $options = get_option('responsive_theme_options');
-    if ($options['yahoo_site_verification']) {
+    if (!empty($options['yahoo_site_verification'])) {
         echo '<meta name="y_key" content="' . $options['yahoo_site_verification'] . '" />' . "\n";
 	}
 }
@@ -80,7 +80,7 @@ add_action('wp_head', 'responsive_yahoo_verification');
 
 function responsive_site_statistics_tracker() {
     $options = get_option('responsive_theme_options');
-    if ($options['site_statistics_tracker']) {
+    if (!empty($options['site_statistics_tracker'])) {
         echo $options['site_statistics_tracker'];
 	}
 }
@@ -89,7 +89,7 @@ add_action('wp_head', 'responsive_site_statistics_tracker');
 
 function responsive_inline_css() {
     $options = get_option('responsive_theme_options');
-    if ($options['responsive_inline_css']) {
+    if (!empty($options['responsive_inline_css'])) {
 		echo '<!-- Custom CSS Styles -->' . "\n";
         echo '<style type="text/css" media="screen">' . "\n";
 		echo $options['responsive_inline_css'] . "\n";
@@ -411,10 +411,6 @@ function responsive_theme_options_do_page() {
             </div><!-- end of .rwd-container -->
             
             </div><!-- end of .grid col-940 -->
-
-            <div class="grid col-940">
-
-            </div>
         </form>
     </div>
     <?php
@@ -430,9 +426,9 @@ function responsive_theme_options_validate($input) {
 		'breadcrumb',
 		'cta_button'
 		) as $checkbox) {
-		if (!isset( $input[$checkbox]))
+		if (!isset($input[$checkbox]))
 			$input[$checkbox] = null;
-		$input[$checkbox] = ( $input[$checkbox] == 1 ? 1 : 0 );
+		    $input[$checkbox] = ( $input[$checkbox] == 1 ? 1 : 0 );
 	}
 	
     $input['home_headline'] = wp_kses_stripslashes($input['home_headline']);

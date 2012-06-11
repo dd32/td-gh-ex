@@ -7,6 +7,11 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(06/11/2012)
+[*] Improvement in Theme Options
+[*] Tinynav to show Home instead of Navigation
+
+
 (06/08/2012) - Maintenance - Version 1.6.0/1
 [!] /includes/version.php
 [!] fallback_cb for all but main menu
@@ -121,7 +126,7 @@ Changelog Legend:
 [+] image dimensions for social icons
 [-] image dimension for social icons CSS 
 [*] PHP sidebar-left headings
-[x] unnececary theme options functions.php
+[x] unnecessary theme options functions.php
 [x] sub-header-menu border-radius
 
 
@@ -146,7 +151,7 @@ Changelog Legend:
 
 
 (04/01/2012) - Maintenance Version 1.4.0/1
-[x] ul children for better CSS efficiancy
+[x] ul children for better CSS efficiency
 [x] ul widget a color
 [x] form div margins
 [+] ID/class for all widgetized areas
