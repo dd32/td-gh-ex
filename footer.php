@@ -2,8 +2,8 @@
 <div id="bottombox">
 
 <div id="adbox">
+
 <!-- Search --> 
- 
 <?php get_search_form(); ?>
   
 </div>

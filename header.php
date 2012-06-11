@@ -22,7 +22,7 @@
 		
 <?php if (is_home()) { ?><h1><?php } ?>
 <a class="blogtitle" href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a><?php if (is_home()) { ?></h1><?php } ?><div class="description"><?php bloginfo('description'); ?></div>
- 
+  
 	</div>
 
 <div id="navbar">
@@ -31,6 +31,7 @@
 &nbsp; 
 &nbsp;
 
+<!-- RSS Links --> 
 <a   href="<?php bloginfo('rss2_url'); ?>" rel="alternate" type="application/rss+xml"><img src="<?php echo get_template_directory_uri(); ?>/images/rss16.png" title="RSS" alt="RSS" height="16" width="16" class="rssicon"  />RSS</a>
 
 &nbsp;
