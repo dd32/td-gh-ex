@@ -3,7 +3,7 @@
     * The template for displaying the header of the theme.
     *
     * @author Aurelio De Rosa <aurelioderosa@gmail.com>
-    * @version 1.0
+    * @version 1.0.1
     * @link http://wordpress.org/extend/themes/annarita
     * @package AurelioDeRosa
     * @subpackage Annarita
@@ -16,11 +16,12 @@
    <head>
       <meta charset="<?php bloginfo('charset'); ?>" />
       <title><?php wp_title(); ?></title>
-      <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />
-      <meta name="description" content="<?php echo (is_single() && has_excerpt()) ? get_the_excerpt() : bloginfo('description'); ?>" />
-      <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" />
+      <?php
+         $options = get_option('annarita_options');
+         if (isset($options['favicon_checkbox']) && $options['favicon_checkbox'] == true)
+            echo '<link rel="shortcut icon" href="' . $options['favicon_url'] . '" />';
+      ?>
       <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
-      <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
       <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
       <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Amethysta" type="font/woff">
       <!--[if lt IE 9]>
@@ -31,44 +32,6 @@
             wp_enqueue_script('comment-reply');
          wp_head();
       ?>
-      <script>
-         jQuery(document).ready(
-            function()
-            {
-               resizeOverflow('left-sidebar');
-               resizeOverflow('right-sidebar');
-               initContentWidth();
-               jQuery('ul#menu-header').superfish();
-               jQuery('article.sticky').prepend(createStickyLabel());
-               jQuery('.post-title a').hover(
-                  function()
-                  {
-                     jQuery(this).closest('article').children('.sticky-label').toggle();
-                  }
-               );
-               jQuery('#hide-left').click(
-                  function()
-                  {
-                     toggleHiderLabel(this.id);
-                     toggleSidebar('left-sidebar');
-                  }
-               );
-               jQuery('#hide-right').click(
-                  function()
-                  {
-                     toggleHiderLabel(this.id);
-                     toggleSidebar('right-sidebar');
-                  }
-               );
-               setRateWidth();
-               <?php
-               $options = get_option('annarita_options');
-               if (isset($options['sidebars_cookie']) && $options['sidebars_cookie'] == true)
-                  annarita_show_hide_sidebar();
-               ?>
-            }
-         );
-      </script>
    </head>
    <body <?php body_class(); ?>>
       <?php
@@ -81,7 +44,7 @@
             <?php
          }
       ?>
-      <header id="top" class="main-header" role="banner">
+      <header class="main-header" role="banner">
          <a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>" class="header-link">
             <hgroup class="alignleft">
                <h1 id="site-title"><?php bloginfo('name'); ?></h1>

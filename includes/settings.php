@@ -4,7 +4,7 @@
     * Settings page of the theme.
     *
     * @author Aurelio De Rosa <aurelioderosa@gmail.com>
-    * @version 1.0
+    * @version 1.0.1
     * @link http://wordpress.org/extend/themes/annarita
     * @package AurelioDeRosa
     * @subpackage Annarita
@@ -19,6 +19,8 @@
       register_setting('annarita_options', 'annarita_options', 'annarita_validate_options');
 
       add_settings_section('general-settings', __('General settings', 'annarita'), 'annarita_general_settings', __FILE__);
+      add_settings_field('favicon_checkbox', __('Favicon', 'annarita'), 'annarita_favicon_checkbox', __FILE__, 'general-settings');
+      add_settings_field('favicon_url', __('Favicon URL', 'annarita'), 'annarita_favicon_url', __FILE__, 'general-settings');
       add_settings_field('related_posts', __('Related posts', 'annarita'), 'annarita_related_posts', __FILE__, 'general-settings');
       add_settings_field('sidebars_cookie', __('Sidebars cookie', 'annarita'), 'annarita_sidebars_cookie', __FILE__, 'general-settings');
    }
@@ -30,7 +32,8 @@
          add_option(
                  'annarita_options',
                  array(
-                     'related_posts' => 'true'
+                     'related_posts' => 'true',
+                     'favicon_url' => get_template_directory_uri() . '/images/default_favicon.ico'
                  )
          );
       }
@@ -63,11 +66,37 @@
 
    function annarita_validate_options($annarita_options)
    {
+      $annarita_options['favicon_url'] = esc_url_raw($annarita_options['favicon_url']);
+
       return $annarita_options;
    }
 
    function annarita_general_settings()
    {
+   }
+
+   function annarita_favicon_checkbox()
+   {
+      $options = get_option('annarita_options');
+      ?>
+      <label for="favicon-checkbox"><?php _e('Display favicon', 'annarita'); ?>: </label>
+      <?php
+         echo '<input name="annarita_options[favicon_checkbox]" type="checkbox" value="true" ';
+         if (isset($options['favicon_checkbox']) && $options['favicon_checkbox'] == 'true')
+            echo 'checked="checked"';
+         echo ' />';
+   }
+
+   function annarita_favicon_url()
+   {
+      $options = get_option('annarita_options');
+      ?>
+      <label for="favicon-url"><?php _e('Write here the URL to your favicon', 'annarita'); ?>: </label>
+      <?php
+      echo '<input type="text" name=annarita_options[favicon_url]" size="100" ';
+      if (isset($options['favicon_url']))
+         echo 'value="' . $options['favicon_url'] . '"';
+      echo '/>';
    }
 
    function annarita_related_posts()

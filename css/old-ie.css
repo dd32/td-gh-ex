@@ -1,0 +1,30 @@
+/*
+    Document   : old-ie
+    Created on : 13-mag-2012, 18.57.55
+    Author     : Aurelio De Rosa <aurelioderosa@gmail.com>
+    Description:
+        Stylesheet for the old versions of IE
+*/
+
+.sticky-label
+{
+   border: 0px solid yellow;
+   right: 0px;
+}
+
+.sticky-text
+{
+   background-color: yellow;
+}
+
+
+.widget
+{
+   border: 2px solid black;
+}
+
+article.hentry,
+article.annarita_review
+{
+   border-width: 2px;
+}

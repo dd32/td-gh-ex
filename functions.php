@@ -5,7 +5,7 @@
  * Others are attached to action and filter hooks in WordPress to change core functionality.
  *
  * @author Aurelio De Rosa <aurelioderosa@gmail.com>
- * @version 1.0
+ * @version 1.0.1
  * @link http://wordpress.org/extend/themes/annarita
  * @package AurelioDeRosa
  * @subpackage Annarita
@@ -15,16 +15,15 @@
 function annarita_setup()
 {
    global $content_width;
-   if ( ! isset( $content_width ) )
+   if (!isset($content_width))
       $content_width = 630;
    load_theme_textdomain('annarita', get_template_directory() . '/languages');
 }
 
 function annarita_setup_scripts()
 {
-   wp_enqueue_script('jquery');
-   wp_enqueue_script('superfish-hover', get_template_directory_uri() . '/js/hoverIntent.js');
-   wp_enqueue_script('superfish', get_template_directory_uri() . '/js/superfish.js');
+   wp_enqueue_script('superfish-hover', get_template_directory_uri() . '/js/hoverIntent.js', array('jquery'));
+   wp_enqueue_script('superfish', get_template_directory_uri() . '/js/superfish.js', array('jquery'));
    wp_enqueue_script('jquery-cookie', get_template_directory_uri() . '/js/jquery.cookie.js', array('jquery'));
    wp_enqueue_script('annarita-functions', get_template_directory_uri() . '/js/functions.js', array('jquery'));
    wp_localize_script(
@@ -38,13 +37,18 @@ function annarita_setup_scripts()
 
 function annarita_setup_styles()
 {
+   global $wp_styles;
+
    if (is_admin())
       wp_enqueue_style('annarita-admin', get_template_directory_uri() . '/css/admin.css');
    else
    {
+      wp_enqueue_style('annarita-old-ie-style', get_template_directory_uri() . '/css/old-ie.css');
       wp_enqueue_style('annarita-print', get_template_directory_uri() . '/css/print.css', array(), false, 'print');
       wp_enqueue_style('superfish', get_template_directory_uri() . '/css/superfish.css');
       wp_enqueue_style('annarita-rating', get_template_directory_uri() . '/css/rating.css');
+
+      $wp_styles->add_data('annarita-old-ie-style', 'conditional', 'lt IE 9');
    }
 }
 
@@ -315,6 +319,50 @@ function annarita_admin_header_style()
     </style><?php
 }
 
+function annarita_init_theme_script()
+{
+   ?>
+   <script>
+      jQuery(document).ready(
+         function()
+         {
+            resizeOverflow('left-sidebar');
+            resizeOverflow('right-sidebar');
+            initContentWidth();
+            jQuery('ul#menu-header').superfish();
+            jQuery('article.sticky').prepend(createStickyLabel());
+            jQuery('.post-title a').hover(
+               function()
+               {
+                  jQuery(this).closest('article').children('.sticky-label').toggle();
+               }
+            );
+            jQuery('#hide-left').click(
+               function()
+               {
+                  toggleHiderLabel(this.id);
+                  toggleSidebar('left-sidebar');
+               }
+            );
+            jQuery('#hide-right').click(
+               function()
+               {
+                  toggleHiderLabel(this.id);
+                  toggleSidebar('right-sidebar');
+               }
+            );
+            setRateWidth();
+            <?php
+            $options = get_option('annarita_options');
+            if (isset($options['sidebars_cookie']) && $options['sidebars_cookie'] == true)
+               annarita_show_hide_sidebar();
+            ?>
+         }
+      );
+   </script>
+   <?php
+}
+
 function annarita_init_sidebar()
 {
    ?>
@@ -366,6 +414,7 @@ add_action('admin_head', 'annarita_setup_styles');
 add_action('add_meta_boxes', 'annarita_add_custom_box');
 add_action('save_post', 'annarita_save_review_data');
 add_action('widgets_init', create_function('', 'register_widget("annarita_review_widget");'));
+add_action('wp_head', 'annarita_init_theme_script');
 
 $options = get_option('annarita_options');
 if (isset($options['sidebars_cookie']) && $options['sidebars_cookie'] == true)

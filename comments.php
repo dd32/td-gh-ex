@@ -3,7 +3,7 @@
     * The template for displaying the comments.
     *
     * @author Aurelio De Rosa <aurelioderosa@gmail.com>
-    * @version 1.0
+    * @version 1.0.1
     * @link http://wordpress.org/extend/themes/annarita
     * @package AurelioDeRosa
     * @subpackage Annarita
@@ -24,37 +24,53 @@
 
    comment_form();
 ?>
-<section>
-   <h3><?php _e('Trackbacks', 'annarita'); ?></h3>
-   <ul id="pings" class="pings-list">
+
+<?php
+   if ( count(get_comments(array('type' => 'pings', 'post_id' => get_the_ID()))) > 0 )
+   {
+?>
+   <section>
+      <h3><?php _e('Trackbacks', 'annarita'); ?></h3>
+      <ul id="pings" class="pings-list">
+         <?php
+            wp_list_comments(array(
+               'callback' => 'annarita_ping_template',
+               'type' => 'pings'
+            ));
+         ?>
+      </ul>
+   </section>
+<?php
+   }
+?>
+
+<?php
+   if ( count(get_comments(array('type' => 'comment', 'post_id' => get_the_ID()))) > 0 )
+   {
+?>
+   <section>
+      <h3><?php _e('Comments', 'annarita'); ?></h3>
       <?php
-         wp_list_comments(array(
-            'callback' => 'annarita_ping_template',
-            'type' => 'pings'
-         ));
-      ?>
-   </ul>
-</section>
-<section>
-   <h3><?php _e('Comments', 'annarita'); ?></h3>
-   <?php
-      if (! have_comments())
-         echo _e('I am sorry but there are no comment yet.', 'annarita');
-      else
-      {
-      ?>
-         <div id="comments" class="comment-list">
-            <?php
-               wp_list_comments(array(
-                  'callback' => 'annarita_comment_template',
-                  'type' => 'comment'
-               ));
-            ?>
-            <div class="pagination">
-               <?php paginate_comments_links(); ?>
+         if (! have_comments())
+            echo _e('I am sorry but there are no comment yet.', 'annarita');
+         else
+         {
+         ?>
+            <div id="comments" class="comment-list">
+               <?php
+                  wp_list_comments(array(
+                     'callback' => 'annarita_comment_template',
+                     'type' => 'comment'
+                  ));
+               ?>
+               <div class="pagination">
+                  <?php paginate_comments_links(); ?>
+               </div>
             </div>
-         </div>
-      <?php
-      }
-   ?>
-</section>
+         <?php
+         }
+      ?>
+   </section>
+<?php
+   }
+?>
