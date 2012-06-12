@@ -25,6 +25,8 @@
  * @uses previous_posts_link()
  * @uses get_sidebar()
  * @uses get_footer( $raindrops_document_type )
+ * @uses get_attachment_link( )
+ * @uses get_post_thumbnail_id()
  *
  *
  */
@@ -85,7 +87,6 @@ if($raindrops_current_column == 3){
  *
  *
  */
-
     $thumb = get_the_post_thumbnail($post->ID,'single-post-thumbnail');
 
     if(has_post_thumbnail() and isset($thumb) and $is_IE){
@@ -113,15 +114,38 @@ if($raindrops_current_column == 3){
             echo $thumb;
             echo '</div>';
         }
-
     }else{
+		$raindrops_post_thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full', false, '' );
+
         if(!empty($thumb)){
             echo '<div class="single-post-thumbnail">';
+			echo '<a href="#raindrops-light-box" class="raindrops-light-box">';
             echo $thumb;
+			echo '</a>';
             echo '</div>';
+			/* for light box */
+			echo '<div class="raindrops-lightbox-overlay" id="raindrops-light-box">';
+			echo '<a href="#page" class="lb-close">Close</a>';
+			echo '<img src="'.$raindrops_post_thumbnail_src[0].'" alt="single post thumbnail" />';
+			echo '</div>';
+			
         }
     }
-
+/**
+ *　Add navigation link for post thumbnail 
+ *
+ *
+ *
+ *
+ */
+if ( has_post_thumbnail() ) {
+	$raindrops_html_piece = '<p style="text-align:center;font-size:small;"><a href="%1$s">%2$s</a></p>';
+			
+	printf( $raindrops_html_piece
+		,  get_attachment_link( get_post_thumbnail_id() )
+		, __( 'Go to Attachment page', 'Raindrops')
+	);
+} 
 /**
  * Show Category base special layout and default single template part
  *
@@ -152,7 +176,6 @@ if($cat == "blog" or $cat == "gallery"){?>
 <?php
 }
 }//　endwhile             ?>
-
 <?php
 /**
  * Next Previous post link

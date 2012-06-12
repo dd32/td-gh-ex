@@ -9,7 +9,7 @@
 add_action( 'after_setup_theme', 'raindrops_theme_setup' );
 
 function raindrops_theme_setup(){
-
+    global $raindrops_wp_version;
     add_filter( 'use_default_gallery_style', '__return_false' );
 /**
  * Custom image header
@@ -19,33 +19,43 @@ function raindrops_theme_setup(){
  *
  *
  */
-if( function_exists('wp_get_theme') ){ // WordPress 3.4 check
-    $args = array(
-                'default-text-color' => HEADER_TEXTCOLOR
-                ,'width' => HEADER_IMAGE_WIDTH
-                ,'height' => HEADER_IMAGE_HEIGHT
-                ,'header-text' => NO_HEADER_TEXT
-                ,'default-image' => HEADER_IMAGE
-            );
-    //they are "suggested" when flex-width and flex-height are set
+    if(file_exists(get_stylesheet_directory().'/images/headers/wp3.jpg')){
+        $raindrops_site_image = get_stylesheet_directory_uri().'/images/headers/wp3.jpg';
+        $raindrops_site_thumbnail_image = get_stylesheet_directory_uri().'/images/headers/wp3-thumbnail.jpg';
+    }else{
+        $raindrops_site_image = get_template_directory_uri().'/images/headers/wp3.jpg';
+        $raindrops_site_thumbnail_image = get_template_directory_uri().'/images/headers/wp3-thumbnail.jpg';
+    }
 
-    add_theme_support( 'custom-header', $args );
+    if( $raindrops_wp_version >= '3.4' ){
+        $args = array( 'default-text-color' => 'ddd'
+                    , 'width' => apply_filters( 'raindrops_header_image_width', '950' )
+                    , 'flex-width' => true
+                    , 'height' => apply_filters( 'raindrops_header_image_height', '198' )
+                    , 'flex-height' => true
+                    , 'header-text' => true
+                    , 'header-textcolor' => 'dddddd'
+                    , 'default-image' => $raindrops_site_image
+                    , 'wp-head-callback' => 'raindrops_embed_meta'
+                );
+        //they are "suggested" when flex-width and flex-height are set
+        add_theme_support( 'custom-header', $args );
 
-}else{
-    add_custom_image_header(
-        'raindrops_header_style',
-        'raindrops_admin_header_style',
-        'raindrops_admin_header_image'
-    );
-    register_default_headers( array(
-        'default' => array(
-            'url' => get_stylesheet_directory_uri().'/images/headers/wp3.jpg',
-            'thumbnail_url' => get_stylesheet_directory_uri().'/images/headers/wp3-thumbnail.jpg',
-            /* translators: header image description */
-            'description' => __( 'Raindrops', 'Raindrops')
-        )
-    ) );
-}
+    }else{
+        add_custom_image_header(
+            'raindrops_header_style',
+            'raindrops_admin_header_style',
+            'raindrops_admin_header_image'
+        );
+        register_default_headers( array(
+            'default' => array(
+                'url' => $raindrops_site_image,
+                'thumbnail_url' => $raindrops_site_thumbnail_image,
+                /* translators: header image description */
+                'description' => __( 'Raindrops', 'Raindrops')
+            )
+        ) );
+    }
 /**
  *
  *
@@ -77,14 +87,23 @@ if( function_exists('wp_get_theme') ){ // WordPress 3.4 check
  *
  *
  *
+ * thanks ison
+ */
+    add_filter( 'wp_page_menu_args', 'raindrops_page_menu_args' );
+/**
+ *
+ *
+ *
+ *
  *
  */
-if( function_exists('wp_get_theme') ){ // WordPress 3.4 check
-    $args = array('default-color' => RAINDROPS_HEADER_BACKGROUND_COLOR
-                ,'default-image' => RAINDROPS_HEADER_BACKGROUND_IMAGE
+if( $raindrops_wp_version >= '3.4' ){
+    $args = array('default-color' => ''
+                , 'default-image' => ''
+                , 'wp-head-callback' => 'raindrops_embed_meta'
             );
     add_theme_support( 'custom-background', $args );
-}else{
+}elseif( ! function_exists( 'get_custom_header' ) ){
     add_custom_background();
 }
 /**
@@ -94,8 +113,11 @@ if( function_exists('wp_get_theme') ){ // WordPress 3.4 check
  *
  *
  */
-    add_theme_support( 'post-thumbnails' );
-    set_post_thumbnail_size( 48, 48, true );
+ $args = array( 'width' => apply_filters( 'raindrops_post_thumbnails_width', 'flex-width' ), 'height' => apply_filters( 'raindrops_post_thumbnails_height', 'flex-height' )
+
+                );
+    add_theme_support( 'post-thumbnails');
+   /* set_post_thumbnail_size( 48, 48, true );*/
 /**
  *
  *
@@ -119,7 +141,10 @@ if( function_exists('wp_get_theme') ){ // WordPress 3.4 check
  *
  *
  */
-    add_filter("wp_head","raindrops_embed_meta",'99');
+if( $raindrops_wp_version < '3.4' ){
+
+    add_filter("wp_head","raindrops_embed_meta",'90');
+    }
 /**
  *
  *
@@ -191,9 +216,9 @@ if( function_exists('wp_get_theme') ){ // WordPress 3.4 check
  *
  *
  */
-    if ( !is_admin()) {
-       add_action('wp_print_styles', 'add_raindrops_stylesheet');
-    }
+//    if ( !is_admin() ) {
+    add_action('wp_print_styles', 'add_raindrops_stylesheet');
+//    }
 /**
  *
  *
@@ -220,4 +245,14 @@ if( function_exists('wp_get_theme') ){ // WordPress 3.4 check
     add_action( 'wp_enqueue_scripts', 'raindrops_enqueue_comment_reply' );
 
 }
+/**
+ *
+ *
+ *
+ *
+ * @since 0.964 ?
+ */
+ add_filter('widget_text', 'do_shortcode');
+
+
 ?>
