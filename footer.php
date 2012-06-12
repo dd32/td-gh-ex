@@ -53,7 +53,7 @@
 		 * however you like to.
 		*/
 		?>
-		 <?php _e( 'By', 'atheros' ); ?> <a href="<?php echo esc_url( __( 'http://www.themes-for-wp.com/', 'atheros' ) ); ?>"><?php printf( 'Themes for WP' ); ?></a>
+		 <?php _e( 'By', 'atheros' ); ?> <a href="<?php echo esc_url( __( 'http://www.crowthemes.com/', 'atheros' ) ); ?>"><?php printf( 'crowthemes.com' ); ?></a>
 
 </div>
 <?php
