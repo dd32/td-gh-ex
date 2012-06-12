@@ -4,6 +4,8 @@
 
 $mantra_defaults = array(
 
+"mantra_db" => "1.0",
+
 "mantra_side" => "2cSr",
 "mantra_dimselect" => 'Absolute',
 "mantra_sidewidth" => 800,
@@ -76,12 +78,20 @@ $mantra_defaults = array(
 "mantra_fronthideback" => "",
 
 "mantra_fontfamily" => 'Segoe UI, Arial, sans-serif',
+"mantra_googlefont" => '',
+"mantra_googlefont2" => '',
 "mantra_fontsize" => "15px",
 "mantra_fonttitle" => 'Default',
+"mantra_googlefonttitle" => '',
+"mantra_googlefonttitle2" => '',
 "mantra_headfontsize" => "Default",
 "mantra_fontside" => 'Default',
+"mantra_googlefontside" => '',
+"mantra_googlefontside2" => '',
 "mantra_sidefontsize" => "Default",
 "mantra_fontsubheader" => 'Default',
+"mantra_googlefontsubheader" => '',
+"mantra_googlefontsubheader2" => '',
 "mantra_textalign" => "Default",
 "mantra_parindent" => "0px",
 "mantra_headerindent" => "Enable",
@@ -167,7 +177,7 @@ $mantra_defaults = array(
 "mantra_linkheader" => "Disable",
 "mantra_breadcrumbs" => "Disable",
 "mantra_pagination" => "Enable",
-"mantra_faviconshow" => "Disable",
+"mantra_mobile" => "Disable",
 "mantra_favicon" => "",
 "mantra_customcss" => "/* Mantra Custom CSS */  ");
 

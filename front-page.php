@@ -59,7 +59,7 @@ if (is_page()) {
 
 
 		<div id="container">
-			<?php get_sidebar(); ?>
+		
 			<div id="content" role="main">
 
 			<?php if ( have_posts() ) : ?>
@@ -92,6 +92,7 @@ if (is_page()) {
 			<?php endif; ?>
 
 			</div><!-- #content -->
+	<?php get_sidebar(); ?>
 		</div><!-- #container -->
 
 <?php } }
@@ -280,21 +281,21 @@ border:3px solid #eee;
 <?php  if($mantra_nrcolumns) { ?>
 <div id="front-columns"> 
 	<div id="column1">
-	<a  href="<?php echo $mantra_columnlink1 ?>">	<div class="column-image" ><img  src="<?php echo $mantra_columnimg1 ?>" id="column1" alt="" /> </div> <h3><?php echo $mantra_columntitle1 ?></h3> </a><div class="column-text"><?php echo $mantra_columntext1 ?></div>
+	<a  href="<?php echo $mantra_columnlink1 ?>">	<div class="column-image" ><img  src="<?php echo $mantra_columnimg1 ?>" id="columnImage1" alt="" /> </div> <h3><?php echo $mantra_columntitle1 ?></h3> </a><div class="column-text"><?php echo $mantra_columntext1 ?></div>
 	<?php if($mantra_columnreadmore) {?>	<div class="columnmore"> <a href="<?php echo $mantra_columnlink1 ?>"><?php echo $mantra_columnreadmore ?> &raquo;</a> </div><?php } ?>
 	</div>
 	<div id="column2">
-		<a  href="<?php echo $mantra_columnlink2 ?>">	<div class="column-image" ><img  src="<?php echo $mantra_columnimg2 ?>" id="column2" alt="" /> </div> <h3><?php echo $mantra_columntitle2 ?></h3> </a><div class="column-text"><?php echo $mantra_columntext2 ?></div>
+		<a  href="<?php echo $mantra_columnlink2 ?>">	<div class="column-image" ><img  src="<?php echo $mantra_columnimg2 ?>" id="columnImage2" alt="" /> </div> <h3><?php echo $mantra_columntitle2 ?></h3> </a><div class="column-text"><?php echo $mantra_columntext2 ?></div>
 	<?php if($mantra_columnreadmore) {?>	<div class="columnmore"> <a href="<?php echo $mantra_columnlink2 ?>"><?php echo $mantra_columnreadmore ?> &raquo;</a> </div><?php } ?>
 	</div>
 <?php  if($mantra_nrcolumns != '2') { ?>
 	<div id="column3">
-		<a  href="<?php echo $mantra_columnlink3 ?>">	<div class="column-image" ><img  src="<?php echo $mantra_columnimg3 ?>" id="column3" alt="" /> </div> <h3><?php echo $mantra_columntitle3 ?></h3> </a><div class="column-text"><?php echo $mantra_columntext3 ?></div>
+		<a  href="<?php echo $mantra_columnlink3 ?>">	<div class="column-image" ><img  src="<?php echo $mantra_columnimg3 ?>" id="columnImage3" alt="" /> </div> <h3><?php echo $mantra_columntitle3 ?></h3> </a><div class="column-text"><?php echo $mantra_columntext3 ?></div>
 	<?php if($mantra_columnreadmore) {?>	<div class="columnmore"> <a href="<?php echo $mantra_columnlink3 ?>"><?php echo $mantra_columnreadmore ?> &raquo;</a> </div><?php } ?>
 	</div>
 <?php  if($mantra_nrcolumns == '4') { ?>
 	<div id="column4">
-		<a  href="<?php echo $mantra_columnlink4 ?>">	<div class="column-image" ><img  src="<?php echo $mantra_columnimg4 ?>" id="column4" alt="" /> </div> <h3><?php echo $mantra_columntitle4 ?></h3> </a><div class="column-text"><?php echo $mantra_columntext4 ?></div>
+		<a  href="<?php echo $mantra_columnlink4 ?>">	<div class="column-image" ><img  src="<?php echo $mantra_columnimg4 ?>" id="columnImage4" alt="" /> </div> <h3><?php echo $mantra_columntitle4 ?></h3> </a><div class="column-text"><?php echo $mantra_columntext4 ?></div>
 	<?php if($mantra_columnreadmore) {?>	<div class="columnmore"> <a href="<?php echo $mantra_columnlink4 ?>"><?php echo $mantra_columnreadmore ?> &raquo;</a> </div><?php } ?>
 	</div>
 <?php } } ?>

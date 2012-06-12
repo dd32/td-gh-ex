@@ -33,7 +33,7 @@ $totalwidth= $mantra_sidewidth+$mantra_sidebar+50;
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<?php if ($mantra_options['mantra_faviconshow']=="Enable" && $mantra_options['mantra_favicon']) { ?> <link rel="shortcut icon" href="<?php echo get_template_directory_uri().'/uploads/'.$mantra_options['mantra_favicon']; ?>" />
+<?php if ($mantra_options['mantra_favicon']) { ?> <link rel="shortcut icon" href="<?php echo $mantra_options['mantra_favicon']; ?>" />
 <?php }
 
 	/* Always have wp_head() just before the closing </head>
@@ -58,12 +58,12 @@ $totalwidth= $mantra_sidewidth+$mantra_sidebar+50;
 
 <div id="wrapper" class="hfeed">
 
-<?php if ( has_nav_menu( 'top' ) ) wp_nav_menu( array( 'container_class' => 'topmenu', 'theme_location' => 'top' ) ); ?>
+<?php if ( has_nav_menu( 'top' ) ) wp_nav_menu( array( 'container' => 'nav', 'container_class' => 'topmenu', 'theme_location' => 'top' ) ); ?>
 
-<div id="header">
+<header id="header">
 
 		<div id="masthead"> 
-		
+	
 			<div id="branding" role="banner" > 
 				<?php if ($mantra_options['mantra_linkheader']=="Enable") { ?><a href="<?php echo home_url( '/' ); ?>" id="linky"> </a><?php } ?>  
 				<?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?><<?php echo $heading_tag; ?> id="site-title">
@@ -99,12 +99,12 @@ $totalwidth= $mantra_sidewidth+$mantra_sidebar+50;
 			
 			</div><!-- #branding --> 
 
-			<div id="access" role="navigation">
+			<nav id="access" role="navigation">
 			  <?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
 				<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'mantra' ); ?>"><?php _e( 'Skip to content', 'mantra' ); ?></a></div>
 				<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */
 				 wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
-			</div><!-- #access -->
+			</nav><!-- #access -->
 		</div><!-- #masthead -->
 
 <div style="clear:both;"> </div>
@@ -112,7 +112,7 @@ $totalwidth= $mantra_sidewidth+$mantra_sidebar+50;
 
 
 
-	</div><!-- #header -->
+	</header><!-- #header -->
 	<div id="main">
 	<div  id="forbottom" >
 			<div class="socials" id="smenul">

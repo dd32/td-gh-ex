@@ -21,7 +21,7 @@ get_header(); ?>
 
 
 		<section id="container">
-			
+				
 			<div id="content" role="main">
 
 			<?php if ( have_posts() ) : ?>
@@ -53,7 +53,7 @@ get_header(); ?>
 			<?php endif; ?>
 
 			</div><!-- #content -->
-		<?php get_sidebar(); ?>
+	<?php get_sidebar(); ?>
 		</section><!-- #container -->
 
 

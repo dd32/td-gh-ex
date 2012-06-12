@@ -6,6 +6,7 @@ Template Name: page-with-intro
 <?php get_header(); ?>
 
 		<section id="container">
+
 	
 			<div id="content" role="main">
 
@@ -62,7 +63,7 @@ query_posts('category_name='.$slug.'&post_status=publish,future&orderby=date&ord
 
 
 			</div><!-- #content -->
-		<?php get_sidebar(); ?>
+	<?php get_sidebar(); ?>
 		</section><!-- #container -->
 
 <?php get_footer(); ?>

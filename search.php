@@ -17,7 +17,7 @@ get_header(); ?>
 				
 				<?php mantra_content_nav( 'nav-above' ); ?>
 				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'mantra' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-	
+	<div class="contentsearch"><?php get_search_form(); ?></div>
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 
@@ -35,14 +35,17 @@ get_header(); ?>
 			<?php else : ?>
 
 				<article id="post-0" class="post no-results not-found">
+	<h1 class="page-title"><?php printf( __( 'No search results for: %s', 'mantra' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 					<header class="entry-header">
 						<h1 class="entry-title"><?php _e( 'Nothing Found', 'mantra' ); ?></h1>
 					</header><!-- .entry-header -->
 
 					</article><!-- #post-0 -->
-<?php get_search_form(); ?>
+	<br /><div class="contentsearch"><?php get_search_form(); ?></div>
+				<?php endif; ?>
 
-			<?php endif; ?>
+
+		
 
 			</div><!-- #content -->
 		<?php get_sidebar(); ?>

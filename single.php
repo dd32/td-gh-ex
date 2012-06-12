@@ -15,8 +15,8 @@ get_header(); ?>
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
 				<div id="nav-above" class="navigation">
-					<div class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">&laquo;' . _x( '', 'Previous post link', 'mantra' ) . '</span> %title' ); ?></div>
-					<div class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '', 'Next post link', 'mantra' ) . '&raquo;</span>' ); ?></div>
+					<div class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">&laquo;' . __('Previous post link', 'mantra' ) . '</span> %title' ); ?></div>
+					<div class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . __('Next post link', 'mantra' ) . '&raquo;</span>' ); ?></div>
 				</div><!-- #nav-above -->
 
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -28,7 +28,7 @@ get_header(); ?>
 
 					<div class="entry-content">
 						<?php the_content(); ?>
-						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( '<span>Pages:</span>', 'mantra' ), 'after' => '</div>' ) ); ?>
+						<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'mantra' ), 'after' => '</span></div>' ) ); ?>
 					</div><!-- .entry-content -->
 
 <?php if ( get_the_author_meta( 'description' ) ) : // If a user has filled out their description, show a bio on their entries  ?>
@@ -55,8 +55,8 @@ get_header(); ?>
 				</div><!-- #post-## -->
 
 				<div id="nav-below" class="navigation">
-					<div class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">&laquo;' . _x( '', 'Previous post link', 'mantra' ) . '</span> %title' ); ?></div>
-					<div class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '', 'Next post link', 'mantra' ) . '&raquo;</span>' ); ?></div>
+					<div class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">&laquo;' . __('Previous post link', 'mantra' ) . '</span> %title' ); ?></div>
+					<div class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . __('Next post link', 'mantra' ) . '&raquo;</span>' ); ?></div>
 				</div><!-- #nav-below -->
 
 				<?php comments_template( '', true ); ?>

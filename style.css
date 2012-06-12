@@ -1,10 +1,10 @@
 /*
 Theme Name: Mantra
 Theme URI: http://www.riotreactions.com/mantra
-Description: Mantra is a do-it-yourself WordPress theme, featuring a pack of over 100 customization options and easy to use tweaks capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (1,2 or 3 columns), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 35 font-families to choose from), text and header sizes, post metas, post excerpts, post formats, header and background images, custom menus, 24 social media links and icons, pins, bullets and much much more. With a customizable presentation page, animated slider, magazine and blog layouts, 8 widget areas, modern graphics and an easy and responsive admin section, you can start creating your dream site right now.
+Description: Mantra is a do-it-yourself WordPress theme, featuring a pack of over 100 customization options and easy to use tweaks capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (1,2 or 3 columns), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 35 font-families plus all Google Fonts), text and header sizes, post metas, post excerpts, post formats, header and background images, custom menus, 27 social media links and icons, pins, bullets and much much more. With a fully responsive layout,a customizable showcase presentation page, animated slider, magazine and blog layouts, 8 widget areas, modern graphics and an easy and intuitive admin section, you can start creating your dream site right now.
 Author: Cryout Creations
 Author URI: http://www.cryoutcreations.com
-Version: 1.8.9.1
+Version: 1.9.0
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, red, blue, white, silver, light, dark, one-column, two-columns, three-columns, right-sidebar, left-sidebar, flexible-width, fixed-width, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, front-page-post-form, full-width-template,  microformats, post-formats, rtl-language-support,  sticky-post, theme-options, threaded-comments, translation-ready
@@ -42,6 +42,9 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
 	font-weight: normal;
+}
+#content h1,#content h2,#content h3,#content h4,#content h5,#content h6 {
+	clear: none;
 }
 ol, ul {
 	list-style: none;
@@ -493,7 +496,8 @@ div.menu ul {
 #access .menu-header ul.sub-menu li { 
 	box-shadow: 3px 3px 3px #999; 
 	-moz-box-shadow: 3px 3px 3px #999; 
-	-webkit-box-shadow: 3px 3px 3px #999; }
+	-webkit-box-shadow: 3px 3px 3px #999; 
+}
 
 #access .menu-header li,
 div.menu li {
@@ -529,7 +533,7 @@ div.menu li {
 }
 
 #access .menu-header li:hover,
-	div.menu li:hover, #access a:hover {
+div.menu li:hover, #access a:hover {
 	color:#0C85CD ;
 }
 
@@ -537,7 +541,7 @@ div.menu li {
 	display: none;
 	position: absolute;
 	top: 29px;
-	left: 0px !important;
+	left: 0px important;
 	float: left;
 	z-index: 99999;
 	background:url(images/mantra_menu_down.png)  0px 0px no-repeat;
@@ -560,8 +564,7 @@ div.menu li {
 #access ul { }
 #access ul li { }
 #access ul li ul {
-      display: none; /* submenu width fix */ 
-}
+      display: none; /* submenu width fix */ }
 
 #access ul ul li {  /* level 2 */
       border: 0;
@@ -570,24 +573,23 @@ div.menu li {
       border-right: 1px solid #EEE;
       border-bottom: 1px solid #EEE;
       white-space: pre;
-       }
 
+       }
 #access ul ul ul li { /* level 3 */
-	border: 0;
-	/* width: 100%;*/
-	width: auto;
-	display: block;
-	float: none;
-	border-top: 1px solid #EEE;
-	border-right: 1px solid #EEE;
-	border-bottom: 1px solid #EEE;
-	white-space: pre; /* submenu width fix */ 
-}
-#access ul ul a {
-	 display: block; 
-	padding: 3px 20px 0 10px !important;
- /* submenu width fix */   
-}
+      border: 0;
+     /* width: 100%;*/
+	  width: auto;
+	  display: block;
+      float: none;
+      border-top: 1px solid #EEE;
+      border-right: 1px solid #EEE;
+      border-bottom: 1px solid #EEE;
+      white-space: pre; /* submenu width fix */
+ }
+#access ul ul a { 
+	display: block; 
+	padding: 3px 20px 0 10px !important; /* submenu width fix */  
+ }
 
 #access ul ul a, #access ul ul ul a {
 	margin:0 !important;
@@ -623,6 +625,7 @@ div.menu li {
 }
 #access ul li.current_page_item > a,
 #access ul li.current-menu-item > a{
+
 	color: #000 !important;
 	background:url(images/mantra_menu_current.png) top right no-repeat;
 }
@@ -1635,12 +1638,39 @@ display:block;
 	padding-left:12px;
 }
 
-.entry-content .widget_search #s  {/* This keeps the search inputs in line This is the on page Search */
-	width: 80%;display:block;float:left;
+.contentsearch {
+display:block;
+float:none;
+overflow:hidden;
+}
+
+.contentsearch  #s  {/* This keeps the search inputs in line This is the on page Search */
+	width: 50%;display:block;float:left;
 	margin-bottom:20px;
-	padding-top:4px;
-	padding-bottom:4px;
+	padding-top:5px;
+	padding-bottom:5px;
 	padding-left:10px;
+	margin-left:20px;
+	font-family:Arial !important;
+	font-size:22px;
+}
+.contentsearch #searchsubmit {
+display:block;
+float:left;
+padding:0;
+margin:0;
+position:relative;
+left:-37px; top:0px;
+background: #777;
+width:37px;height:37px;
+border:none;
+cursor:pointer;
+font-size:12px;
+color:#EEE;
+text-shadow:0px -1px 0px #000;
+-moz-text-shadow:0px -1px 0px #000;
+-webkit-text-shadow:0px -1px 0px #000;
+font-family:Arial !important;
 }
 
 .widget_search #s, #search #s  {/* This keeps the search inputs in line This is the Sidebar Search*/
@@ -1913,17 +1943,8 @@ img#wpstats {
 
 /*  Extras                                    */
 
-#container #s  {/* This keeps the search inputs in line */
-	display:block;float:left;
-	margin-bottom:20px;
-	font-family:Arial !important;
-	font-size:14px;
-    padding-bottom: 4px;
-    padding-left: 10px;
-    padding-top: 4px;
-}
 
-#container #searchsubmit, .widget_search #searchsubmit {
+.widget_search #searchsubmit {
 display:block;
 float:left;
 padding:0;
@@ -1940,10 +1961,6 @@ text-shadow:0px -1px 0px #000;
 -moz-text-shadow:0px -1px 0px #000;
 -webkit-text-shadow:0px -1px 0px #000;
 font-family:Arial !important;
-
-}
-
-.widget_search #searchsubmit {
 left:-28px;
 top:0px;
 width:27px;
@@ -2471,126 +2488,5 @@ Author URI: http://dev7studios.com
 	padding-right:10px;
 	margin-top:10px;
 }
-
-/* =Responsive Structure
------------------------------------------------ */
-
-@media (max-width: 800px) {
-
-	#content {
-		float:none !important;
-		margin:0 20px !important;
-		width:98% !important;
-	}
-	#wrapper, #access, #colophon, #branding, #main, article.post, #container {
-    	width: auto !important;
- 	}
-	#wrapper {
-		margin:10px !important;
-	}
-	#access .menu-header, div.menu {
-		width:95% !important;
-	}
-	article.post {
-   		width:98% !important;
- 	}
-	#primary, #secondary {
-		width:100% !important;
-	}
-	#slider, #slider img {
-		width:95% !important;
-	}
-	#front-columns > div {
-		width:45% !important;
-	}
-	#content img, content article.post img, #content article .wp-caption, article embed {
-		max-width:90% !important;
-	}
-	#content {
-		margin:0 10px !important
-	}
-
-}
-
-@media (max-width: 650px) {
-	/* @media (max-width: 650px) Reduce font-sizes for better readability on smaller devices */
-	body, #content p, #content ul, #content ol,#content code, #content pre, #content blockquote {
-		font-size: 13px !important;
-	}
-	#site-title  {
-		line-height:30px;
-	}
-	#site-title a {
-		font-size: 24px;
-	}
-	#site-description {
-		font-size: 12px;
-		line-height:40px;
-	}
-	#access ul {
-		font-size: 12px;
-	}
-	article.intro .entry-content {
-		font-size: 12px;
-	}
-	.entry-title {
-		font-size: 21px;
-	}
-	.featured-post .entry-title {
-		font-size: 14px;
-	}
-	.singular .entry-title {
-		font-size: 28px;
-	}
-	.entry-meta a , .entry-meta, .comments-link{
-		font-size: 10px !important;
-		background:none !important;
-		-moz-box-shadow:none !important;
-		-webkit-box-shadow:none !important;	
-		box-shadow:none !important;
-	}
-	#content .entry-title {
-		font-size:20px !important;
-	}
-	#content h1, #content h2, #content h3, #content h4, #content h5, #content h6 {
-		margin-left:0 !important;
-	}
-	.widget-area a:link, .widget-area a:visited {
-		font-size:10px !important;
-	}
-
-}
-
-@media (max-width: 450px) {
-
-body, #content p, #content ul, #content ol,#content code, #content pre, #content blockquote {
-		font-size: 12px !important;
-	}
-	#site-title a {
-		font-size: 18px;
-	}
-	#site-description {
-		font-size: 10px;
-	}
-	#front-columns > div {
-		width:90% !important;
-	}
-
-}
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-	body {
-		padding: 0;
-	}
-	#page {
-		margin-top: 0;
-	}
-	#branding {
-		border-top: none;
-	}
-
-}
-
-
 
 /* FIN! */

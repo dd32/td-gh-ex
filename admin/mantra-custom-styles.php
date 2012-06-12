@@ -21,7 +21,10 @@ $sidebarSize= intval(($mantra_sidebarRel/$totalwidth*100)-2);
 ?>
 
 <style type="text/css">
-<?php if ($mantra_dimselect=="Absolute") { ?>
+<?php 
+/* ABSOLUTE DIMENSIONS. */
+
+if ($mantra_dimselect=="Absolute") { ?>
 #wrapper, #access, #colophon, #branding, #main { width:<?php echo ($totalwidth) ?>px ;}
 #access .menu-header, div.menu {width:<?php echo ($totalwidth-12) ?>px ;}
 
@@ -56,6 +59,8 @@ $sidebarSize= intval(($mantra_sidebarRel/$totalwidth*100)-2);
 	-webkit-border-top-right-radius:10px;text-align:right;padding-right:5%;width:100%;} <?php } ?><?php 
 
 }
+
+/* RELATIVE DIMENSIONS. */
 
 else if ($mantra_dimselect=="Relative") { ?>
 #wrapper { width:<?php echo ($totalwidth) ?>% ;}
@@ -99,11 +104,10 @@ font-size:<?php echo $mantra_fontsize ?>;
 ?><?php if ($mantra_wordspace != "Default") { ?>word-spacing:<?php echo $mantra_wordspace ?>;<?php }
 ?><?php if ($mantra_letterspace != "Default") { ?>letter-spacing:<?php echo $mantra_letterspace ?>;<?php }
 ?><?php if ($mantra_textalign != "Default") { ?>text-align:<?php echo $mantra_textalign;  ?> ; <?php } ?>}
-<?php if (stripslashes($mantra_fontfamily) != '"Segoe UI", Arial, sans-serif') { ?>
- * , .widget-title {font-family:<?php echo $mantra_fontfamily;  ?> ; }<?php }
-?><?php if ($mantra_fonttitle != "Default") { ?> #content h1.entry-title a, #content h2.entry-title a, #content h1.entry-title , #content h2.entry-title {font-family:<?php echo $mantra_fonttitle;  ?> ; }<?php }
-?><?php if ($mantra_fontside != "Default") { ?> .widget-area *  {font-family:<?php echo $mantra_fontside;  ?> ; }<?php }
-?><?php if ($mantra_fontsubheader != "Default") { ?> .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6  {font-family:<?php echo $mantra_fontsubheader;  ?> ; }<?php }
+<?php if (stripslashes($mantra_fontfamily) != '"Segoe UI", Arial, sans-serif' || $mantra_googlefont) { ?> * , .widget-title {font-family:<?php if (!$mantra_googlefont) echo $mantra_fontfamily; else echo $mantra_googlefont;  ?> ; }<?php }
+?><?php if ($mantra_fonttitle != "Default" || $mantra_googlefonttitle) { ?> #content h1.entry-title a, #content h2.entry-title a, #content h1.entry-title , #content h2.entry-title {font-family:<?php if (!$mantra_googlefonttitle) echo $mantra_fonttitle; else echo $mantra_googlefonttitle;  ?> ; }<?php }
+?><?php if ($mantra_fontside != "Default" || $mantra_googlefontside) { ?> .widget-area *  {font-family:<?php if (!$mantra_googlefontside) echo $mantra_fontside; else echo $mantra_googlefontside;  ?> ; }<?php }
+?><?php if ($mantra_fontsubheader != "Default"  || $mantra_googlefontsubheader ) { ?> .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6  {font-family:<?php if (!$mantra_googlefontsubheader) echo $mantra_fontsubheader; else echo $mantra_googlefontsubheader;  ?> ; }<?php }
 ?><?php if ($mantra_caption != "Light") { ?> #content .wp-caption { <?php }
 ?><?php if ($mantra_caption == "White") { ?> background-color:#FFF;}
  <?php } else if ($mantra_caption == "Light Gray") {?> background-color:#EEE; }

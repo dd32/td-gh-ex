@@ -35,7 +35,41 @@ global $mantra_defaults;
 	$input['mantra_social8'] =  wp_kses_data($input['mantra_social8']);
 	$input['mantra_social10'] =  wp_kses_data($input['mantra_social10']);
 
+	$input['mantra_favicon'] =  wp_kses_data($input['mantra_favicon']);
 	$input['mantra_customcss'] =  wp_kses_post($input['mantra_customcss']);
+
+	$input['mantra_googlefont'] = 	trim(wp_kses_data($input['mantra_googlefont']));
+	$input['mantra_googlefonttitle'] = 	trim(wp_kses_data($input['mantra_googlefonttitle']));
+	$input['mantra_googlefontside'] = 	trim(wp_kses_data($input['mantra_googlefontside']));
+	$input['mantra_googlefontsubheader'] = 	trim(wp_kses_data($input['mantra_googlefontsubheader']));
+
+	if($input['mantra_googlefont']) {
+	$mantra_googlefont2 = $input['mantra_googlefont'];
+	$mantra_googlefont2=  preg_replace( '/\s+/', '+', $mantra_googlefont2 );
+	$mantra_googlefont2= "http://fonts.googleapis.com/css?family=".$mantra_googlefont2;
+							}
+	if($input['mantra_googlefonttitle']) {
+	$mantra_googlefonttitle2 = $input['mantra_googlefonttitle'];
+	$mantra_googlefonttitle2=  preg_replace( '/\s+/', '+', $mantra_googlefonttitle2 );
+	$mantra_googlefonttitle2= "http://fonts.googleapis.com/css?family=".$mantra_googlefonttitle2;
+							}
+	if($input['mantra_googlefontside']) {
+	$mantra_googlefontside2 = $input['mantra_googlefontside'];
+	$mantra_googlefontside2=  preg_replace( '/\s+/', '+', $mantra_googlefontside2 );
+	$mantra_googlefontside2= "http://fonts.googleapis.com/css?family=".$mantra_googlefontside2;
+							}
+	if($input['mantra_googlefontsubheader']) {
+	$mantra_googlefontsubheader2 = $input['mantra_googlefontsubheader'];
+	$mantra_googlefontsubheader2=  preg_replace( '/\s+/', '+', $mantra_googlefontsubheader2 );
+	$mantra_googlefontsubheader2= "http://fonts.googleapis.com/css?family=".$mantra_googlefontsubheader2;
+							}
+
+	$input['mantra_googlefont2'] = 	$mantra_googlefont2;
+	$input['mantra_googlefonttitle2'] = $mantra_googlefonttitle2;
+	$input['mantra_googlefontside2'] = $mantra_googlefontside2;
+	$input['mantra_googlefontsubheader2'] = $mantra_googlefontsubheader2;
+
+
 
 	$input['mantra_fpsliderwidth'] =  intval(wp_kses_data($input['mantra_fpsliderwidth']));
 	$input['mantra_fpsliderheight'] = intval(wp_kses_data($input['mantra_fpsliderheight']));
@@ -93,7 +127,6 @@ global $mantra_defaults;
 	 $resetDefault = ( ! empty( $input['mantra_defaults']) ? true : false );
 
 	if ($resetDefault) {$input=$mantra_defaults;}
-
 
 	return $input; // return validated input
 

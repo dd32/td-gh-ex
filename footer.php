@@ -14,7 +14,7 @@
 	</div><!-- #main -->
 
 
-	<div id="footer" role="contentinfo">
+	<footer id="footer" role="contentinfo">
 		<div id="colophon">
 
 <?php
@@ -34,7 +34,7 @@ foreach ($mantra_options as $key => $value) {
 		</div><!-- #colophon -->
 
 		<div id="footer2">
-<?php if ( has_nav_menu( 'footer' ) ) wp_nav_menu( array( 'container_class' => 'footermenu', 'theme_location' => 'footer' ) ); ?>
+<?php if ( has_nav_menu( 'footer' ) ) wp_nav_menu( array( 'container' => 'nav', 'container_class' => 'footermenu', 'theme_location' => 'footer' ) ); ?>
 			<div id="site-info" >
 				<a href="<?php echo home_url( '/' ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 			| <?php echo '<b title="'.$theme_data['Version'].'">'.$theme_data['Name'].'</b> Theme by '.$theme_data['Author']; ?> | Powered by
@@ -49,12 +49,12 @@ foreach ($mantra_options as $key => $value) {
 	<?php if ($mantra_copyright != '') { ?><div id="site-copyright"><?php echo $mantra_copyright; ?> </div> <?php } ?>
 
 			<div class="socials" id="sfooter">
-<?php if($mantra_socialsdisplay3) mantra_social_icons(); ?>
+<?php if($mantra_socialsdisplay3) mantra_set_social_icons(); ?>
 </div>
 
 </div>
 
-	</div><!-- #footer -->
+	</footer><!-- #footer -->
 
 </div><!-- #wrapper -->
 
