@@ -18,7 +18,7 @@ get_header(); ?>
                 
                 <div <?php post_class(); ?> >
                 
-                    <h1><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
+                    <h2 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
                     <?php the_content(); ?>
                     
                 </div><!-- .post -->

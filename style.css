@@ -3,8 +3,8 @@ Theme Name: Simple Catch
 Theme URI: http://catchthemes.com/wp-themes/simplecatch
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
-Description: Simple Catch is a simple and clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Featured Image Slider, Custom Menu, Theme Options, Custom Widgets, Three Custom Page Template for Layout and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework.
-Version: 1.2.2
+Description: Simple Catch is a simple and clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Page Template for Layout, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework.
+Version: 1.2.3
 License: GNU General Public License
 License URI: license.txt
 Tags: black, gray, silver, white, light, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, custom-menu, featured-images, full-width-template, theme-options, threaded-comments
@@ -194,6 +194,7 @@ blockquote p {
 	line-height: 23px;
 	padding: 0 15px;
 }
+
 /* Form */
 input[type=text], input.text, input.title, textarea, select {
 	background-color:#fff;
@@ -384,6 +385,7 @@ a.readmore:hover {
 }
 #header .top-bg, #footer {
 	background:url(images/header-top-footer-bg.jpg) repeat-x;
+	clear: both;
 }
 #header .top-bg {
 	background-position:center bottom;
@@ -391,91 +393,161 @@ a.readmore:hover {
 	border-bottom:4px solid #ccc;
 }
 /* Logo Tile */
+#header .logo-wrap {
+	padding-left:20px;
+	float:left;
+	margin-top:54px;
+}
 h1#site-title {
 	font-size: 45px;
 	font-family: 'Lobster';
 	font-weight:normal;
 	padding-bottom:0px;
 }
+h1#site-title a {
+	line-height:54px;
+}
 h1#site-title a:hover {
 	color: #444444;
+}
+h1#site-title a img {
+	max-height: 90px;
+	float:left;
+	padding-right:20px;
 }
 h2#site-description {
 	font:14px Arial, Helvetica, sans-serif;
 	color:#666;
 	padding:8px 0 0 0;
 }
-#header .logo-wrap {
-	padding-left:20px;
-	float:left;
-	margin-top:54px;
-}
-#header .logo-wrap h1 a {
-	line-height:54px;
-}
-#header .logo-wrap h1 a img {
-	max-height: 90px;
-	float:left;
-	padding-right:20px;
-}
+
 /* Social-Search */
 #header .social-search ul.social-profile li a {
 	text-indent: -99999px;
 }
 #header .social-search {
-	float:right;
-	width:306px;
-	padding-right:20px;
-	margin-top:40px;
+	float: right;
+	width: 306px;
+	padding-right: 20px;
+	margin-top: 40px;
 }
 #header .social-search ul.social-profile {
-	list-style:none;
-	margin:0px;
-	float:right;
+	float: right;
+	list-style: none;
+	margin: -10px 0 0;
 }
 #header .social-search ul.social-profile li {
-	margin-left:10px;
-	float:left;
+	float: left;
+    margin-left: 10px;
+	margin-top: 10px;
 }
 #header .social-search ul.social-profile li a {
-	display:block;
-	background:url(images/social-profile.png) no-repeat;
-	width:33px;
-	height:33px;
+	background: url(images/social-profile.png) right bottom no-repeat;
+    display: block;
+	height: 33px;
+    width: 33px;
+	text-indent: -99999px;
+
 }
-#header .social-search ul.social-profile li a:hover {
-	background-position: 0 -35px;
+#header .social-search ul.social-profile li.facebook a {
+	background-position: 0 0;
+}
+#header .social-search ul.social-profile li.facebook a:hover {
+	background-position: 0 -43px;
 }
 #header .social-search ul.social-profile li.twitter a {
-	background-position: -35px 0;
+	background-position: -44px 0;
 }
 #header .social-search ul.social-profile li.twitter a:hover {
-	background-position: -35px -35px;
-}
-#header .social-search ul.social-profile li.google-plus a {
-       background-position: -140px 0;
-}
-#header .social-search ul.social-profile li.google-plus a:hover {
-       background-position: -140px -35px;
-}
-#header .social-search ul.social-profile li.pinterest a {
-       background-position: -175px 0;
-}
-#header .social-search ul.social-profile li.pinterest a:hover {
-       background-position: -175px -35px;
+	background-position: -44px -43px;
 }
 #header .social-search ul.social-profile li.you-tube a {
-	background-position: -70px 0;
+	background-position: -87px 0;
 }
 #header .social-search ul.social-profile li.you-tube a:hover {
-	background-position: -70px -35px;
+	background-position: -87px -43px;
 }
 #header .social-search ul.social-profile li.rss a {
-	background-position: -105px 0;
+	background-position: -130px 0;
 }
 #header .social-search ul.social-profile li.rss a:hover {
-	background-position: -105px -35px;
+	background-position: -130px -43px;
 }
+#header .social-search ul.social-profile li.google-plus a {
+	background-position: -173px 0;
+}
+#header .social-search ul.social-profile li.google-plus a:hover {
+	background-position: -173px -43px;
+}
+#header .social-search ul.social-profile li.pinterest a {
+	background-position: -216px 0;
+}
+#header .social-search ul.social-profile li.pinterest a:hover {
+	background-position: -216px -43px;
+}
+#header .social-search ul.social-profile li.slideshare a {
+	background-position: -259px 0;
+}
+#header .social-search ul.social-profile li.slideshare a:hover {
+	background-position: -259px -43px;
+}
+#header .social-search ul.social-profile li.foursquare a {
+	background-position: -302px 0;
+}
+#header .social-search ul.social-profile li.foursquare a:hover {
+	background-position: -302px -43px;
+}
+#header .social-search ul.social-profile li.viemo a {
+	background-position: -345px 0;
+}
+#header .social-search ul.social-profile li.viemo a:hover {
+	background-position: -345px -43px;
+}
+#header .social-search ul.social-profile li.myspace a {
+	background-position: -388px 0;
+}
+#header .social-search ul.social-profile li.myspace a:hover {
+	background-position: -388px -43px;
+}
+#header .social-search ul.social-profile li.flickr a {
+	background-position: -431px 0;
+}
+#header .social-search ul.social-profile li.flickr a:hover {
+	background-position: -431px -43px;
+}
+#header .social-search ul.social-profile li.dribbble a {
+	background-position: -474px 0;
+}
+#header .social-search ul.social-profile li.dribbble a:hover {
+	background-position: -474px -43px;
+}
+#header .social-search ul.social-profile li.wordpress a {
+	 background-position: -517px 0;
+}
+#header .social-search ul.social-profile li.wordpress a:hover {
+	background-position: -517px -43px;
+}
+#header .social-search ul.social-profile li.deviantart a {
+	background-position: -560px 0;
+}
+#header .social-search ul.social-profile li.deviantart a:hover {
+	background-position: -560px -43px;
+}
+#header .social-search ul.social-profile li.linkedin a {
+	background-position: -603px 0;
+}
+#header .social-search ul.social-profile li.linkedin a:hover {
+	background-position: -603px -43px;
+}
+#header .social-search ul.social-profile li.tumblr a {
+   	background-position: -646px 0;
+
+}
+#header .social-search ul.social-profile li.tumblr a:hover {
+	background-position: -646px -43px;
+}
+
+
 /* Search Form */
 #header .social-search form.searchform {
 	padding-top:30px;
@@ -552,6 +624,7 @@ h2#site-description {
 #header #mainmenu ul li ul, #header #mainmenu ul li:hover ul li ul {
 	display:none;
 	list-style:none none;
+	z-index: 9999;
 }
 #header #mainmenu ul li:hover ul, #header #mainmenu ul li ul li:hover ul {
 	display:block;
@@ -670,7 +743,9 @@ h2#site-description {
 #main #content .post {
 	padding-bottom:30px;
 }
-#main #content .post h1 {
+#main #content .post h1,
+#main #content .post h2.entry-title
+{
 	line-height:45px;
 	padding-bottom:6px;
 }
@@ -763,7 +838,8 @@ h2#site-description {
 	border-top: 1px solid #ddd;
 	padding: 6px 10px 6px 0;
 }
-.page-template-default div.col8 {
+.page-template-default div.col8,
+.error404 div.col8 {
 	margin: 0 auto;
 	float: none;
 }
@@ -1026,7 +1102,17 @@ input[type=submit] {
 }
 /* =Caption, Images and Alignments
 -------------------------------------------------------------- */
-div.post .new-post .aligncenter, .aligncenter {
+.alignright {
+	display: inline;
+	float: right;
+}
+.alignleft {
+	display: inline;
+	float: left;
+}
+.aligncenter,
+div.post .new-post .aligncenter {
+	clear: both;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -1036,7 +1122,7 @@ div.post .new-post .aligncenter, .aligncenter {
 	border: 1px solid #BBBBBB;
 	padding: 5px;
 	margin-bottom: 15px;
-	max-width:630px;
+	max-width: 630px;
 }
 .wp-caption.alignleft {
 	margin: 0px 10px 10px 0px;
@@ -1050,29 +1136,23 @@ div.post .new-post .aligncenter, .aligncenter {
 	border: 0 none;
 }
 .wp-caption p.wp-caption-text {
-	padding:10px 10px 5px;
-	color:#666;
-	font-style:italic;
-}
-.alignright {
-	float: right;
-}
-.alignleft {
-	float: left;
+	color: #666;
+	font-style: italic;
+	padding: 10px 10px 5px;
 }
 img.alignleft {
-	margin-right:20px;
-	margin-bottom:20px;
-	display:inline;
-	float:right;
+	margin-right: 20px;
+	margin-bottom: 20px;
 }
 img.alignright {
-	display:inline;
-	float:right;
-	margin-left:20px;
-	margin-bottom:20px;
+	margin-left: 20px;
+	margin-bottom: 20px;
 }
-img.size-auto, img.size-full, img.size-large, img.size-medium, .attachment img {
+img.size-auto, 
+img.size-full, 
+img.size-large, 
+img.size-medium, 
+.attachment img {
 	max-width: 100%; /* When images are too wide for containing element, force them to fit. */
 	height: auto; /* Override height to match resized width for correct aspect ratio. */
 }

@@ -46,6 +46,64 @@ function simplecatch_load_google_fonts() {
 }
 add_action('wp_print_styles', 'simplecatch_load_google_fonts');
 
+
+/**
+ * Enqueue Comment Reply Script
+ *
+ * We add some JavaScript to pages with the comment form
+ * to support sites with threaded comments (when in use).
+ * @used comment_form_before action hook 
+ */	 
+function simplecatch_enqueue_comment_reply_script() {
+	if ( comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
+}
+add_action( 'comment_form_before', 'simplecatch_enqueue_comment_reply_script' );
+
+
+/**
+ * Modifying the Title
+ *
+ * function tied to the wp_title filter hook.
+ * @uses filter wp_title
+ */
+function simplecatch_filter_wp_title( $title ) {
+	global $page, $paged;
+	
+	// Get the Site Name
+    $site_name = get_bloginfo( 'name' );
+    
+
+	// For Homepage
+    if (  is_home() || is_front_page() ) {
+		
+		$filtered_title .= $site_name;
+		
+        // Get the Site Description
+        $site_description = get_bloginfo( 'description' );
+		if ( $site_description )  {
+        	// Append Site Description to title
+        	$filtered_title .= ' &#124; '. $site_description;
+		}
+    }
+	else {	
+		// Prepend name
+		$filtered_title = $title .' &#124; '. $site_name;
+	}
+
+	// Add a page number if necessary:
+	if ( $paged >= 2 || $page >= 2 ) {
+		$filtered_title .= ' &#124; ' . sprintf( __( 'Page %s', 'simplecatch' ), max( $paged, $page ) );
+	}
+	
+	// Return the modified title
+    return $filtered_title;
+
+}
+add_filter( 'wp_title', 'simplecatch_filter_wp_title' );
+
+
 /**
  * Sets the post excerpt length to 30 words.
  *
@@ -106,6 +164,7 @@ if ( !function_exists('simplecatch_sort_query_by_post_in') ) : //simple WordPres
 
 endif;
 
+
 /**
  * Get the header logo Image from theme options
  *
@@ -140,6 +199,7 @@ function simplecatch_headerlogo() {
 	}
 	echo $simplecatch_headerlogo;	
 } // simplecatch_headerlogo
+
 
 /**
  * Get the footer logo Image from theme options
@@ -220,6 +280,7 @@ add_action('wp_head', 'simplecatch_favicon');
 //Load Favicon in Admin Section
 add_action( 'admin_head', 'simplecatch_favicon' );
 
+
 /**
  * This function to display featured posts on homepage header
  *
@@ -285,6 +346,7 @@ function simplecatch_sliders() {
 	echo $simplecatch_sliders;	
 } // simplecatch_sliders
 
+
 /**
  * Display slider or breadcrumb on header
  *
@@ -327,7 +389,7 @@ function simplecatch_headersocialnetworks() {
 	// get the data value from theme options
 	$options = get_option( 'simplecatch_options' );
 	
-	if ( ( !$simplecatch_headersocialnetworks = get_transient( 'simplecatch_headersocialnetworks' ) ) &&  ( !empty( $options[ 'social_twitter' ] ) || !empty( $options[ 'social_youtube' ] )  || !empty( $options[ 'social_facebook' ] ) || !empty( $options[ 'social_googleplus' ] )  || !empty( $options[ 'social_pinterest' ] ) ) )  {
+	if ( ( !$simplecatch_headersocialnetworks = get_transient( 'simplecatch_headersocialnetworks' ) ) &&  ( !empty( $options[ 'social_facebook' ] ) || !empty( $options[ 'social_twitter' ] ) || !empty( $options[ 'social_googleplus' ] ) || !empty( $options[ 'social_pinterest' ] ) || !empty( $options[ 'social_youtube' ] ) || !empty( $options[ 'social_linkedin' ] ) || !empty( $options[ 'social_slideshare' ] )  || !empty( $options[ 'social_foursquare' ] ) || !empty( $options[ 'social_rss' ] )   || !empty( $options[ 'social_vimeo' ] ) || !empty( $options[ 'social_flickr' ] ) || !empty( $options[ 'social_tumblr' ] ) || !empty( $options[ 'social_deviantart' ] ) || !empty( $options[ 'social_dribbble' ] ) || !empty( $options[ 'social_myspace' ] ) || !empty( $options[ 'social_wordpress' ] ) ) )  {
 	
 		echo '<!-- refreshing cache -->';
 		
@@ -352,6 +414,12 @@ function simplecatch_headersocialnetworks() {
 						'<li class="google-plus"><a href="'.$options[ 'social_googleplus' ].'" title="'.sprintf( esc_attr__( '%s in Google+', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Google+ </a></li>';
 				}
 				
+				//Linkedin
+				if ( !empty( $options[ 'social_linkedin' ] ) ) {
+					$simplecatch_headersocialnetworks .=
+						'<li class="linkedin"><a href="'.$options[ 'social_linkedin' ].'" title="'.sprintf( esc_attr__( '%s in Linkedin', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Linkedin </a></li>';
+				}
+				
 				//Pinterest
 				if ( !empty( $options[ 'social_pinterest' ] ) ) {
 					$simplecatch_headersocialnetworks .=
@@ -364,45 +432,111 @@ function simplecatch_headersocialnetworks() {
 						'<li class="you-tube"><a href="'.$options[ 'social_youtube' ].'" title="'.sprintf( esc_attr__( '%s in YouTube', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' YouTube </a></li>';
 				}
 				
+				//Vimeo
+				if ( !empty( $options[ 'social_vimeo' ] ) ) {
+					$simplecatch_headersocialnetworks .=
+						'<li class="viemo"><a href="'.$options[ 'social_vimeo' ].'" title="'.sprintf( esc_attr__( '%s in Vimeo', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Vimeo </a></li>';
+				}				
+				
+				//Slideshare
+				if ( !empty( $options[ 'social_slideshare' ] ) ) {
+					$simplecatch_headersocialnetworks .=
+						'<li class="slideshare"><a href="'.$options[ 'social_slideshare' ].'" title="'.sprintf( esc_attr__( '%s in Slideshare', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Slideshare </a></li>';
+				}				
+				
+				//Foursquare
+				if ( !empty( $options[ 'social_foursquare' ] ) ) {
+					$simplecatch_headersocialnetworks .=
+						'<li class="foursquare"><a href="'.$options[ 'social_foursquare' ].'" title="'.sprintf( esc_attr__( '%s in Foursquare', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' foursquare </a></li>';
+				}
+				
+				//Flickr
+				if ( !empty( $options[ 'social_flickr' ] ) ) {
+					$simplecatch_headersocialnetworks .=
+						'<li class="flickr"><a href="'.$options[ 'social_flickr' ].'" title="'.sprintf( esc_attr__( '%s in Flickr', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Flickr </a></li>';
+				}
+				//Tumblr
+				if ( !empty( $options[ 'social_tumblr' ] ) ) {
+					$simplecatch_headersocialnetworks .=
+						'<li class="tumblr"><a href="'.$options[ 'social_tumblr' ].'" title="'.sprintf( esc_attr__( '%s in Tumblr', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Tumblr </a></li>';
+				}
+				//deviantART
+				if ( !empty( $options[ 'social_deviantart' ] ) ) {
+					$simplecatch_headersocialnetworks .=
+						'<li class="deviantart"><a href="'.$options[ 'social_deviantart' ].'" title="'.sprintf( esc_attr__( '%s in deviantART', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' deviantART </a></li>';
+				}
+				//Dribbble
+				if ( !empty( $options[ 'social_dribbble' ] ) ) {
+					$simplecatch_headersocialnetworks .=
+						'<li class="dribbble"><a href="'.$options[ 'social_dribbble' ].'" title="'.sprintf( esc_attr__( '%s in Dribbble', 'simplecatch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Dribbble </a></li>';
+				}
+				//MySpace
+				if ( !empty( $options[ 'social_myspace' ] ) ) {
+					$simplecatch_headersocialnetworks .=
+						'<li class="myspace"><a href="'.$options[ 'social_myspace' ].'" title="'.sprintf( esc_attr__( '%s in MySpace', 'simplecatch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' MySpace </a></li>';
+				}
+				//WordPress
+				if ( !empty( $options[ 'social_wordpress' ] ) ) {
+					$simplecatch_headersocialnetworks .=
+						'<li class="wordpress"><a href="'.$options[ 'social_wordpress' ].'" title="'.sprintf( esc_attr__( '%s in WordPress', 'simplecatch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' WordPress </a></li>';
+				}				
 				//RSS
 				if ( !empty( $options[ 'social_rss' ] ) ) {
 					$simplecatch_headersocialnetworks .=
 						'<li class="rss"><a href="'.$options[ 'social_rss' ].'" title="'.sprintf( esc_attr__( '%s in RSS', 'simplecatch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' RSS </a></li>';
 				}
 		
-		$simplecatch_headersocialnetworks .='
+				$simplecatch_headersocialnetworks .='
 			</ul>
 			<div class="row-end"></div>';
 		
-	set_transient( 'simplecatch_headersocialnetworks', $simplecatch_headersocialnetworks, 86940 );	 
+		set_transient( 'simplecatch_headersocialnetworks', $simplecatch_headersocialnetworks, 86940 );	 
 	}
 	echo $simplecatch_headersocialnetworks;
 } // simplecatch_headersocialnetworks
 
 
 /**
- * This function loads the Header Code such as google analytics code from the Theme Option
+ * Site Verification  and Webmaster Tools
  *
+ * If user sets the code we're going to display meta verification
  * @get the data value from theme options
  * @uses wp_head action to add the code in the header
  * @uses set_transient and delete_transient API for cache
  */
-function simplecatch_headercode() {
-	//delete_transient( 'simplecatch_headercode' );
+ 
+function simplecatch_site_verification() {
+	//delete_transient( 'simplecatch_site_verification' );
 	
 	// get the data value from theme options
 	$options = get_option( 'simplecatch_options' );
 	
-	if ( ( !$simplecatch_headercode = get_transient( 'simplecatch_headercode' ) ) && !empty( $options[ 'analytic_header' ] ) ) {
-		echo '<!-- refreshing cache -->';
-		
-		$simplecatch_headercode = $options[ 'analytic_header' ];
-			
-	set_transient( 'simplecatch_headercode', $simplecatch_headercode, 86940 );
+	if ( ( !$simplecatch_site_verification = get_transient( 'simplecatch_site_verification' ) ) &&  ( !empty( $options[ 'google_verification' ] ) || !empty( $options[ 'bing_verification' ] )  || !empty( $options[ 'yahoo_verification' ] )  || !empty( $options[ 'analytic_header' ] ) ) )  {
+	
+		echo '<!-- refreshing cache -->';	
+	
+		//google
+		if ( $options['google_verification'] ) {
+			$simplecatch_site_verification .= '<meta name="google-site-verification" content="' . $options['google_verification'] . '" />' . "\n";
+		}
+	
+		//bing
+		if ( $options['bing_verification'] ) {
+			$simplecatch_site_verification .= '<meta name="msvalidate.01" content="' . $options['bing_verification'] . '" />' . "\n";
+		}
+	
+		//yahoo
+		 if ( $options['yahoo_verification'] ) {
+			$simplecatch_site_verification .= '<meta name="y_key" content="' . $options['yahoo_verification'] . '" />' . "\n";
+		}
+	
+		//site stats, analytics header code
+		if ( $options['analytic_header'] ) {
+			$simplecatch_site_verification .= $options[ 'analytic_header' ];
+		}
 	}
-	echo $simplecatch_headercode;
 }
-add_action('wp_head', 'simplecatch_headercode');
+add_action('wp_head', 'simplecatch_site_verification');
 
 
 /**
@@ -429,6 +563,32 @@ function simplecatch_footercode() {
 	echo $simplecatch_footercode;
 }
 add_action('wp_footer', 'simplecatch_headercode');
+
+
+/**
+ * Hooks the Custom Inline CSS to head section
+ *
+ * @since Simple Catch 1.2.3
+ */
+function simplecatch_inline_css() {
+	//delete_transient( 'simplecatch_inline_css' );
+	
+	// get the data value from theme options
+	$options = get_option( 'simplecatch_options' );
+	
+	if ( ( !$simplecatch_inline_css = get_transient( 'simplecatch_inline_css' ) ) && !empty( $options[ 'custom_css' ] ) ) {
+		echo '<!-- refreshing cache -->' . "\n";
+		$simplecatch_inline_css	= '<!-- '.get_bloginfo('name').' Custom CSS Styles -->' . "\n";
+        $simplecatch_inline_css .= '<style type="text/css" media="screen">' . "\n";
+		$simplecatch_inline_css .= $options['custom_css'] . "\n";
+		$simplecatch_inline_css .= '</style>' . "\n";
+			
+	set_transient( 'simplecatch_inline_css', $simplecatch_inline_css, 86940 );
+	}
+	echo $simplecatch_inline_css;
+}
+add_action('wp_head', 'simplecatch_inline_css');
+
 
 /*
  * Function for showing custom tag cloud
@@ -518,4 +678,3 @@ function simplecatch_faq() {
                     
 <?php
 }
-?>

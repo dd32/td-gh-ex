@@ -13,7 +13,7 @@ get_header(); ?>
 	<div id="content" class="col8 no-margin-left">
       
     	<?php if (have_posts()): ?>
-       		<h1><?php printf( 'Showing results for: <span class="img-title">%s</span>', get_search_query() ); ?></h1>
+       		<h2 class="entry-title"><?php printf( 'Showing results for: <span class="img-title">%s</span>', get_search_query() ); ?></h2>
        		
             <?php while (have_posts()) : the_post(); ?>
             

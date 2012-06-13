@@ -31,7 +31,7 @@ get_header(); ?>
                             <?php else : ?>
                             	<div class="col8">
                             <?php endif; ?> 
-                                    <h1><a href="<?php the_permalink() ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="bookmark" ><?php the_title(); ?></a></h1>
+                                    <h2 class="entry-title"><a href="<?php the_permalink() ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="bookmark" ><?php the_title(); ?></a></h2>
                                     <ul class="post-by">
                                         <li class="no-padding-left"><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" title="<?php echo esc_attr(get_the_author_meta( 'display_name' ) ); ?>">By &nbsp;<?php the_author_meta( 'display_name' );?></a></li>
                                         <li><?php the_time( 'j F, Y' ); ?></li>

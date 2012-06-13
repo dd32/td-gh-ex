@@ -4,8 +4,8 @@ Theme Name: Simple Catch
 Theme URI: http://catchthemes.com/wp-themes/simplecatch
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
-Description: Simple Catch is a simple and clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Featured Image Slider, Custom Menu, Theme Options, Custom Widgets, Three Custom Page Template for Layout and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework.
-Version: 1.2.2
+Description: Simple Catch is a simple and clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Page Template for Layout, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework.
+Version: 1.2.3
 License: GNU General Public License
 
 == Theme Description ==
@@ -98,7 +98,26 @@ Tags Used: black, gray, silver, white, light, one-column, two-columns, left-side
 Version 1.2.1
 * Fixed the Slider Image Link
 * Modify the Continue Reading Link
-* Added the Social Icon for Pinterest and Google+
+* Added Social Icons for Pinterest and Google+
 * Added CSS to Support WP-PageNavi and Contact Form 7 Plugins
+
 Version 1.2.2
 * Fixed css for Pinterest
+
+Version 1.2.3
+* Fixed css for alignment and footer clear
+* Fixed the layout and css for error404 page
+* Change the Heading from H1 to h2 class entry title 
+* Remove title modification from header.php and added function simplecatch_filter_wp_title() to filter the wp_title
+* Added Enqueue Comment Reply Script in function simplecatch_enqueue_comment_reply_script and removed it from header
+* Added Social Icons for Linkedin, Slideshare, Foursquare, Vimeo, Flickr, Tumblr, DeviantArt,  Dribbble, MySpace and WordPress
+* Added Custom CSS Styles option in Theme Options
+* Added Webmaster Tools and verification of Google, Yahoo and Bing
+
+== Upcoming Plan ==
+* Add more option in theme option for feed redirect, excerpt length
+* Add option in Featured Slider to remove duplicate post in the homepage, feature slider image height option, gradient add and remove option, slide effects option
+* Option to change the search text
+* Option to change continue reading
+* Footer Copyright Change Option
+* Responsive Design 

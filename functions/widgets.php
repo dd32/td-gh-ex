@@ -11,7 +11,7 @@ class CustomTagWidget extends WP_Widget {
 		function CustomTagWidget() {
 			$widget_ops = array('description' => 'Displays Custom Tag Cloud');
 			$control_ops = array('width' => 400, 'height' => 500);
-			parent::WP_Widget(false,$name='CI: Custom Tag Cloud',$widget_ops,$control_ops);
+			parent::WP_Widget(false,$name='Custom Tag Cloud',$widget_ops,$control_ops);
 		}
 		
 		/** Displays the Widget in the front-end.
