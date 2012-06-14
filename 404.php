@@ -14,32 +14,18 @@ get_header(); ?>
 
 			<article id="post-0" class="post error404 not-found">
 				<header class="entry-header">
-					<h1 class="entry-title"><?php _e( 'This is somewhat embarrassing, isn&rsquo;t it?', 'catchbox' ); ?></h1>
+					<h1 class="entry-title"><?php _e( 'Error 404 - Page Not Found.', 'catchbox' ); ?></h1>
 				</header>
 
 				<div class="entry-content">
-					<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching, or one of the links below, can help.', 'catchbox' ); ?></p>
-
-					<?php get_search_form(); ?>
-
-					<?php the_widget( 'WP_Widget_Recent_Posts', array( 'number' => 10 ), array( 'widget_id' => '404' ) ); ?>
-
-					<div class="widget">
-						<h2 class="widgettitle"><?php _e( 'Most Used Categories', 'catchbox' ); ?></h2>
-						<ul>
-						<?php wp_list_categories( array( 'orderby' => 'count', 'order' => 'DESC', 'show_count' => 1, 'title_li' => '', 'number' => 10 ) ); ?>
-						</ul>
-					</div>
-
-					<?php
-					/* translators: %1$s: smilie */
-					$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'catchbox' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', array('count' => 0 , 'dropdown' => 1 ), array( 'after_title' => '</h2>'.$archive_content ) );
-					?>
-
-					<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
-
+					<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for.', 'catchbox' ); ?></p>
+                    <h2><?php _e( 'This might be because:', 'catchbox' ); ?></h2>
+               	 	<p><?php _e( 'You have typed the web address incorrectly, or the page you were looking for may have been moved, updated or deleted.', 'catchbox' ); ?></p>
+                	<h2><?php _e( 'Please try the following options instead:', 'catchbox' ); ?></h2>
+                	<p><?php _e( 'Check for a mis-typed URL error, then press the refresh button on your browser or Use the search box below.', 'catchbox' ); ?></p>
+					<?php get_search_form(); ?>                  
 				</div><!-- .entry-content -->
+                
 			</article><!-- #post-0 -->
 
 		</div><!-- #content -->

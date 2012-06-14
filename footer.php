@@ -17,13 +17,12 @@
 				/* A sidebar in the footer? Yep. You can can customize
 				 * your footer with three columns of widgets.
 				 */
-				if ( ! is_404() )
-					get_sidebar( 'footer' );
+				get_sidebar( 'footer' );
 			?>
            <?php if ( has_nav_menu( 'footer', 'catchbox' ) ) { ?>
                 <nav id="access-footer" role="navigation">
                 	<h3 class="assistive-text"><?php _e( 'Footer menu', 'catchbox' ); ?></h3>
-                    <?php wp_nav_menu( array( 'theme_location'  => 'footer' ) );  ?>
+                    <?php wp_nav_menu( array( 'theme_location'  => 'footer', 'depth' => 1 ) );  ?>
                 </nav>
             <?php } ?>
 			<div id="site-generator" class="clearfix">

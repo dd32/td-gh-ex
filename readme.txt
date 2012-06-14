@@ -3,7 +3,10 @@
 * by the Catch Themes team, http://catchthemes.com/
 
 == ABOUT Catch Box==
-Catch Box is simple, lightweight, box shaped, and adaptable WordPress theme for bloggers and professionals. It is based on HTML5, CSS3 and Responsive Web Design to view in various devices. Easy customization through 1. Custom Menus (Primary, Secondary and Footer menus), 2. Theme Options for light or dark color scheme, custom link colors, three layout choices, two content choices between excerpt and content option in homepage, feed redirection, custom css styles, 3. Featured Sliders where you can define number of slides and post IDs, 4. Social Links (Facebook, Twitter, RSS, Linkedin, Pinterest, etc), 5. Webmaster Tools (Google, Yahoo and Bing site verification ID, Header and footer codes, 6. Custom Backgrounds, 7. Custom Header, 8. Catchbox Adspace widget to add any type of Advertisements.
+Catch Box is simple, lightweight, box shaped, and adaptable WordPress theme for bloggers and professionals. It is based on HTML5, CSS3 and Responsive Web Design to view in various devices. 10 Best reason to use Catch Box. 1. Responsive Web Design, 2. Custom Menus (Primary, Secondary and Footer menus), 3. Theme Options for light or dark color scheme, custom link colors, three layout choices, two content choices between excerpt and content option in homepage, feed redirection, custom css styles, 4. Featured Sliders where you can define number of slides and post IDs, 6. Social Links (Facebook, Twitter, RSS, Linkedin, Pinterest, etc), 7. Webmaster Tools (Google, Yahoo and Bing site verification ID, Header and footer codes, 6. Custom Backgrounds, 8. Custom Header, 9. Catchbox Adspace widget to add any type of Advertisements, 10) Support popular plugins
+
+== Menus ===
+There are 3 Menus registered in this theme. Primary, Secondary and Footer Menu. Primary and Secondary menu is dull drop down menu while the Footer menu displays only parent menu and no drop down.
 
 == Tags ==
 dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options
@@ -21,8 +24,20 @@ Version 1.0.1
 * Fixed undefined index for feed_url and moved the function catchbox_rss_redirect() from function.php to theme-options.php
 * Fixed undefined index for custom_css in theme-options.php
 * Added margin left for sub level list in widget lists. 
-* Added function catchbox_filter_wp_title() to finger the wp_title() 
+* Added function catchbox_filter_wp_title() to filter the wp_title() 
 
 Version 1.0.2
 * Removed extra register_nav_menu( 'primary', __( 'Primary Menu', 'catchbox' ) );
 * Removed Extra add_custom_background();
+
+Version 1.0;.3
+* Fixed DEBUG ERROR 
+  ** theme-options.php Undefined index: feed_url on line 410
+* Fixed UNIT TEST
+  ** Footer menu: Now only display parent menu in footer menu. I have describe it in readme.txt
+  ** Fixed css for menu widget
+  ** Fixed the css for Layout Test h1, h2, h3, h4, h5, h6
+  ** Fixed css for Gallery Post: Remove extra space and center it.
+  ** Fixed css for Image Test: Wide Image, resize in editor
+  ** Fixed 404 Error Page and search box in it
+* Added CSS to support plugin WP-PageNavi and WP Page Numbers Plugins

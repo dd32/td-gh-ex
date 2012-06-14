@@ -206,10 +206,7 @@ function catchbox_theme_options_help() {
 		);
 
 		$screen->set_help_sidebar( $sidebar );
-	} else {
-		// WordPress 3.2
-		add_contextual_help( $screen, $help . $sidebar );
-	}
+	} 
 }
 
 function catchbox_slider_options_help() {
@@ -232,9 +229,6 @@ function catchbox_slider_options_help() {
 			'content' => $help,
 			)
 		);
-	} else {
-		// WordPress 3.2
-		add_contextual_help( $screen );
 	}
 }
 
@@ -407,7 +401,7 @@ function catchbox_settings_field_link_color() {
 function catchbox_settings_field_feed_redirect() {
 	$options = catchbox_get_theme_options();
 	?>
-	<input type="text" name="catchbox_theme_options[feed_url]" id="feed-url" size="65" value="<?php echo esc_attr( $options['feed_url'] ); ?>" />
+	<input type="text" name="catchbox_theme_options[feed_url]" id="feed-url" size="65" value="<?php if ( isset( $options[ 'feed_url' ] ) ) echo esc_attr( $options[ 'feed_url'] ); ?>" />
 	<?php
 }
 
@@ -480,7 +474,7 @@ function catchbox_theme_options_render_page() {
 	?>
 	<div class="wrap">
 		<?php screen_icon(); ?>
-		<h2><?php printf( __( '%s Theme Options By', 'catchbox' ), get_current_theme() ); ?> <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catchbox' ) ); ?>" title="<?php echo esc_attr( 'Catch Themes', 'catchbox' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'catchbox' ); ?></a></h2>
+		<h2><?php printf( __( '%s Theme Options By', 'catchbox' ), wp_get_theme() ); ?> <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catchbox' ) ); ?>" title="<?php echo esc_attr( 'Catch Themes', 'catchbox' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'catchbox' ); ?></a></h2>
 		<?php settings_errors(); ?>
 
 		<form method="post" action="options.php">
@@ -503,7 +497,7 @@ function catchbox_options_slider_page() {
 	?>
 	<div class="wrap">
     	<?php screen_icon(); ?>
-		<h2><?php printf( __( '%s Featured Slider By', 'catchbox' ), get_current_theme() ); ?> <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catchbox' ) ); ?>" title="<?php echo esc_attr( 'Catch Themes', 'catchbox' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'catchbox' ); ?></a></h2>
+		<h2><?php printf( __( '%s Featured Slider By', 'catchbox' ), wp_get_theme() ); ?> <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catchbox' ) ); ?>" title="<?php echo esc_attr( 'Catch Themes', 'catchbox' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'catchbox' ); ?></a></h2>
     	
         <form method="post" action="options.php">
 			<?php
@@ -553,7 +547,7 @@ function catchbox_options_social_links() {
 	?>
 	<div class="wrap">
     	<?php screen_icon(); ?>
-		<h2><?php printf( __( '%s Social Links By', 'catchbox' ), get_current_theme() ); ?> <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catchbox' ) ); ?>" title="<?php echo esc_attr( 'Catch Themes', 'catchbox' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'catchbox' ); ?></a></h2>
+		<h2><?php printf( __( '%s Social Links By', 'catchbox' ), wp_get_theme() ); ?> <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catchbox' ) ); ?>" title="<?php echo esc_attr( 'Catch Themes', 'catchbox' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'catchbox' ); ?></a></h2>
         
 		<form method="post" action="options.php">
 			<?php
@@ -668,7 +662,7 @@ function catchbox_options_webmaster_tools() {
 	?>
     <div class="wrap">
     	<?php screen_icon(); ?>
-		<h2><?php printf( __( '%s Webmaster Tools By', 'catchbox' ), get_current_theme() ); ?> <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catchbox' ) ); ?>" title="<?php echo esc_attr( 'Catch Themes', 'catchbox' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'catchbox' ); ?></a></h2>
+		<h2><?php printf( __( '%s Webmaster Tools By', 'catchbox' ), wp_get_theme() ); ?> <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catchbox' ) ); ?>" title="<?php echo esc_attr( 'Catch Themes', 'catchbox' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'catchbox' ); ?></a></h2>
 
 		<form method="post" action="options.php">
 			<?php
@@ -1030,7 +1024,7 @@ add_filter( 'body_class', 'catchbox_layout_classes' );
  * @since Catch Box 1.0
  */
 function catchbox_socialprofile() {
-	
+
 	//delete_transient( 'catchbox_socialprofile' );
 	
     $options = get_option('catchbox_options_social_links');
