@@ -1,8 +1,8 @@
 </div>
 
-<?php if (adt_get_option('adt_a728x15-footer', '') != '' ): ?>
+<?php if (adt_get_option('adt_a728x15_footer', '') != '' ): ?>
 <div class="ads_728-15-footer">			  
-<?php echo adt_get_option('adt_a728x15-footer'); ?>
+<?php echo adt_get_option('adt_a728x15_footer'); ?>
 </div>
 <?php endif; ?>
 

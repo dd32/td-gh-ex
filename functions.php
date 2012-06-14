@@ -2,7 +2,7 @@
 if ( ! function_exists( 'adt_get_option' ) ) :	
   function adt_get_option($Aoption_name, $default = null)
   {
-    return stripslashes(get_option($Aoption_name, $default));
+    return strip_tags(stripslashes(get_option($Aoption_name, $default)));
   };
 endif;
 
@@ -35,15 +35,15 @@ if ( ! function_exists( 'adt_template_setup' ) ) :
 	set_post_thumbnail_size( 100, 100, true );
 	add_custom_background();	
 		
-	if ( ! defined( 'ADT_HEADER_TEXTCOLOR' ) )
-	  define( 'ADT_HEADER_TEXTCOLOR', '87fda1' );
-	if ( ! defined( 'ADT_HEADER_IMAGE' ) )
-	  define( 'ADT_HEADER_IMAGE', '%s/img/top-default1.png' );
-	define( 'ADT_HEADER_IMAGE_WIDTH', apply_filters( 'adsticle_header_image_width', 1000 ) );
-	define( 'ADT_HEADER_IMAGE_HEIGHT', apply_filters( 'adsticle_header_image_height', 80 ) );
+	if ( ! defined( 'HEADER_TEXTCOLOR' ) )
+	  define( 'HEADER_TEXTCOLOR', '87fda1' );
+	if ( ! defined( 'HEADER_IMAGE' ) )
+	  define( 'HEADER_IMAGE', '%s/img/top-default1.png' );
+	define( 'HEADER_IMAGE_WIDTH', apply_filters( 'adsticle_header_image_width', 1000 ) );
+	define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'adsticle_header_image_height', 80 ) );
 	//set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );
-	if ( ! defined( 'ADT_NO_HEADER_TEXT' ) )
-	  define( 'ADT_NO_HEADER_TEXT', false );
+	if ( ! defined( 'NO_HEADER_TEXT' ) )
+	  define( 'NO_HEADER_TEXT', false );
 	add_custom_image_header( '', 'adsticle_admin_header_style' );
 	register_default_headers( array(
 		'default1' => array(
@@ -92,7 +92,8 @@ if ( ! function_exists( 'adt_ilc_farbtastic_script' ) ) :
 	};
   };
  endif;
- 
+  add_action( 'admin_print_styles-appearance_page_theme_options', 'adt_ilc_farbtastic_script' );
+  
   function adsticle_sidebars()
   {
   
@@ -166,7 +167,7 @@ if ( ! function_exists( 'adt_ilc_farbtastic_script' ) ) :
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 		<div id="comment-<?php comment_ID(); ?>">
 		<div class="comment-author vcard">
-			<?php echo get_avatar( $comment, 40 ); ?>
+			<?php echo sanitize_text_field(get_avatar( $comment, 40 )); ?>
 			<?php printf( __( '%s <span class="says">says:</span>', 'adsticle' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
 		</div><!-- .comment-author .vcard -->
 		<?php if ( $comment->comment_approved == '0' ) : ?>
@@ -174,14 +175,14 @@ if ( ! function_exists( 'adt_ilc_farbtastic_script' ) ) :
 			<br />
 		<?php endif; ?>
 
-		<div class="comment-meta commentmetadata"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
+		<div class="comment-meta commentmetadata"><a href="<?php echo sanitize_text_field(esc_url( get_comment_link( $comment->comment_ID ) )); ?>">
 			<?php
 				/* translators: 1: date, 2: time */
 				printf( __( '%1$s at %2$s', 'adsticle' ), get_comment_date(),  get_comment_time() ); ?></a><?php edit_comment_link( __( '(Edit)', 'adsticle' ), ' ' );
 			?>
 		</div><!-- .comment-meta .commentmetadata -->
 
-		<div class="comment-body"><?php comment_text(); ?></div>
+		<div class="comment-body"><?php sanitize_text_field(comment_text()); ?></div>
 
 		<div class="reply">
 			<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
@@ -207,7 +208,7 @@ if ( ! function_exists( 'adt_ilc_farbtastic_script' ) ) :
 <style type="text/css">      
   #headimg #name {position:relative; left: 10px; top: -5px; font-size: 35px;
     text-decoration: none; font-weight:400; line-height: 1.3em; margin:0px; padding: 0px;
-	font-family:"Verdana", "Adobe Garamond", "Georgia", "Times New Roman", "serif";}	
+	font-family: Verdana, Adobe Garamond, Georgia, Times New Roman, serif;}	
 	
   #headimg #desc { position:relative; left: 10px; top: -8px;
   font-size: 14px; margin:0px; padding:0px; text-transform:uppercase;}
@@ -224,11 +225,11 @@ if ( ! function_exists( 'adt_ilc_farbtastic_script' ) ) :
 	{
 	  global $adt_favicon_url;
 ?>	
-<link rel="shortcut icon" href="<?php echo adt_get_option('adt_favicon_url', $adt_favicon_url); ?>" type="image/x-icon" />
+<link rel="shortcut icon" href="<?php echo sanitize_text_field(adt_get_option('adt_favicon_url', $adt_favicon_url)); ?>" type="image/x-icon" />
 <?php	
 	  $background = get_theme_mod('background_image', false);
 	  $bgcolor = get_theme_mod('background_color', false);
-	  $textcolor = get_theme_mod('adt_header_textcolor', ADT_HEADER_TEXTCOLOR);
+	  $textcolor = get_theme_mod('header_textcolor', HEADER_TEXTCOLOR);
 ?>
 <style type="text/css"> 
 body, .header  {background-color:#14253e; color: <?php echo get_option('ADT_COLOR_TEXT', ADT_COLOR_TEXT); ?>}
@@ -282,7 +283,7 @@ if ( ! function_exists( 'adt_show_color_picker' ) ) :
 ?>  
 <label for="<?php echo $Aname; ?>">
 <input type="text" id="<?php echo $Aname; ?>" 
-name="<?php echo $Aname; ?>" value="<?php echo get_option($Aoption, $Adefault); ?>" /> 
+name="<?php echo $Aname; ?>" value="<?php echo sanitize_text_field(get_option($Aoption, $Adefault)); ?>" /> 
 <?php _e('Pick link color', 'adsticle'); ?></label>
 <div id="<?php echo $Aname.'_p'; ?>"></div>
 
@@ -308,26 +309,24 @@ name="<?php echo $Aname; ?>" value="<?php echo get_option($Aoption, $Adefault); 
     };					
     echo '</select>';
   };
- endif;  	
- $default_options = array(
-     'ADT_COLOR_H' => 'ADT_COLOR_H',
-     'ADT_COLOR_LINK' => 'ADT_COLOR_LINK',
-	 'ADT_COLOR_TEXT' => 'ADT_COLOR_TEXT',
-	 'ADT_COLOR_STICKY' => 'ADT_COLOR_STICKY',
-	 'ADT_COLOR_BACKGROUND1' => 'ADT_COLOR_BACKGROUND1',
-	 'ADT_COLOR_LINE' => 'ADT_COLOR_LINE',
-	 'ADT_WIDTH_LINE_MAINMENU' => 'ADT_WIDTH_LINE_MAINMENU',
-	 'ADT_WIDTH_LINE_WIDGET' => 'ADT_WIDTH_LINE_WIDGET',
-	 'ADT_WIDTH_LINE_FOOTER' => 'ADT_WIDTH_LINE_FOOTER',
-	 'ADT_COLOR_MENUBACKGROUND' => 'ADT_COLOR_MENUBACKGROUND',
-	 'adt_a468x60' => trim('adt_a468x60'),
-	 'adt_a728x15-top' => trim('adt_a728x15-top'),
-	 'adt_a728x15-footer' => trim('adt_a728x15-footer'),
-	 'ads_250-250-post' => trim('ads_250-250-post')
-);
+ endif;  
 
-$adsticle_options = $default_options;
-update_option( 'adsticle_options', $adsticle_options );	
+	$adsticle_options = get_option( 'adsticle_options' );
+	$ADT_COLOR_H = $adsticle_options['ADT_COLOR_H'];
+	$ADT_COLOR_LINK = $adsticle_options['ADT_COLOR_LINK'];
+	 $ADT_COLOR_TEXT = $adsticle_options['ADT_COLOR_TEXT'];
+	 $ADT_COLOR_STICKY = $adsticle_options['ADT_COLOR_STICKY'];
+	 $ADT_COLOR_BACKGROUND1 = $adsticle_options['ADT_COLOR_BACKGROUND1'];
+	 $ADT_COLOR_LINE = $adsticle_options['ADT_COLOR_LINE'];
+	 $ADT_WIDTH_LINE_MAINMENU = $adsticle_options['ADT_WIDTH_LINE_MAINMENU'];
+	 $ADT_WIDTH_LINE_WIDGET = $adsticle_options['ADT_WIDTH_LINE_WIDGET'];
+	 $ADT_WIDTH_LINE_FOOTER = $adsticle_options['ADT_WIDTH_LINE_FOOTER'];
+	 $ADT_COLOR_MENUBACKGROUND = $adsticle_options['ADT_COLOR_MENUBACKGROUND'];
+	 $adt_a468x60 = $adsticle_options[trim('adt_a468x60')];
+	 $adt_a728x15_top = $adsticle_options[trim('adt_a728x15-top')];
+	 $adt_a728x15_footer = $adsticle_options[trim('adt_a728x15-footer')];
+	 $ads_250_250_post = $adsticle_options[trim('ads_250-250-post')];
+
    if ( ! function_exists( 'adt_options_update' ) ) :
    function adt_options_update() 
    {
@@ -391,13 +390,13 @@ update_option( 'adsticle_options', $adsticle_options );
 			    <tr valign="top">
                     <th scope="row"><label for="adt_favicon_url"><?php _e('Favicon:', 'adsticle'); ?></label></th>
                     <td><input type="text" name="adt_favicon_url" size="95" 
-					  value="<?php echo adt_get_option('adt_favicon_url', $adt_favicon_url); ?>"/>
+					  value="<?php echo sanitize_text_field(adt_get_option('adt_favicon_url', $adt_favicon_url)); ?>"/>
 					<br/>
 					<span class="description"> 
 					<?php printf(__('<a href="%s" target="_blank">Upload your favicon</a> using WordPress Media Library and insert its URL here', 
 					  'adsticle'), bloginfo("url").'/wp-admin/media-new.php'); ?>
 					</span><br/><br/>
-					<img src="<?php echo adt_get_option('adt_favicon_url', $adt_favicon_url); ?>" alt=""/>
+					<img src="<?php echo sanitize_text_field(adt_get_option('adt_favicon_url', $adt_favicon_url)); ?>" alt=""/>
 					</td>
                 </tr>
 				
@@ -412,16 +411,16 @@ update_option( 'adsticle_options', $adsticle_options );
                     <td><textarea style="width:100%" name="adt_a468x60"><?php echo adt_get_option('adt_a468x60'); ?></textarea></td>					
                 </tr>	
 				<tr valign="top">
-                    <th scope="row"><label for="adt_a728x15-top"><?php _e('728x15 adsense code for head:', 'adsticle'); ?></label></th>
-                    <td><textarea style="width:100%" name="adt_a728x15-top"><?php echo adt_get_option('adt_a728x15-top'); ?></textarea></td>					
+                    <th scope="row"><label for="adt_a728x15_top"><?php _e('728x15 adsense code for head:', 'adsticle'); ?></label></th>
+                    <td><textarea style="width:100%" name="adt_a728x15_top"><?php echo adt_get_option('adt_a728x15_top'); ?></textarea></td>					
                 </tr>				
 				<tr valign="top">
-                    <th scope="row"><label for="adt_a728x15-footer"><?php _e('728x15 adsense code for footer:', 'adsticle'); ?></label></th>
-                    <td><textarea style="width:100%" name="adt_a728x15-footer"><?php echo adt_get_option('adt_a728x15-footer'); ?></textarea></td>
+                    <th scope="row"><label for="adt_a728x15_footer"><?php _e('728x15 adsense code for footer:', 'adsticle'); ?></label></th>
+                    <td><textarea style="width:100%" name="adt_a728x15_footer"><?php echo adt_get_option('adt_a728x15_footer'); ?></textarea></td>
                 </tr>				
 				<tr valign="top">
-                    <th scope="row"><label for="ads_250-250-post"><?php _e('250x250 adsense code for post at top:', 'adsticle'); ?></label></th>
-                    <td><textarea style="width:100%" name="ads_250-250-post"><?php echo adt_get_option('ads_250-250-post'); ?></textarea></td>
+                    <th scope="row"><label for="ads_250_250_post"><?php _e('250x250 adsense code for post at top:', 'adsticle'); ?></label></th>
+                    <td><textarea style="width:100%" name="ads_250_250_post"><?php echo adt_get_option('ads_250_250_post'); ?></textarea></td>
                 </tr>
 				
 				<tr valign="top">
@@ -485,12 +484,17 @@ update_option( 'adsticle_options', $adsticle_options );
                 </tr>	
             </table>
 	<input type="hidden" name="action" value="update" />
-	<input type="hidden" name="page_options" value="adt_favicon_url,adt_footer_text,adt_a468x60,adt_a728x15-top,adt_a728x15-footer,ads_250-250-post,
-ADT_COLOR_H,ADT_COLOR_LINK,ADT_COLOR_TEXT,ADT_COLOR_STICKY,ADT_COLOR_LINE,ADT_COLOR_BACKGROUND1,ADT_COLOR_MENUBACKGROUND,ADT_WIDTH_LINE_MAINMENU,ADT_WIDTH_LINE_WIDGET,ADT_WIDTH_LINE_FOOTER, adt_show_main_menu, adt_show_featured_image" />
+	<input type="hidden" name="page_options" value="adt_favicon_url,adt_footer_text,adt_a468x60,adt_a728x15_top,adt_a728x15_footer,ads_250_250_post,
+ADT_COLOR_H,ADT_COLOR_LINK,ADT_COLOR_TEXT,ADT_COLOR_STICKY,ADT_COLOR_LINE,ADT_COLOR_BACKGROUND1,ADT_COLOR_MENUBACKGROUND,ADT_WIDTH_LINE_MAINMENU,ADT_WIDTH_LINE_WIDGET,ADT_WIDTH_LINE_FOOTER, HEADER_TEXTCOLOR, HEADER_IMAGE, adt_show_main_menu, adt_show_featured_image" />
      			<p><?php submit_button( $text=null, $type='submit', $name = 'submit', $wrap = true, $other_attributes = null) ?></p>
         </form>
+		
     </div>
-<?php
+	<?php
+
+if ( !empty($_POST) && check_admin_referer( 'update-options') ) {
+}
+
   };
    endif; 
 ?>

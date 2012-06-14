@@ -43,9 +43,9 @@
 	     <?php  the_excerpt();
     else:  
 	
-      if (is_single() && adt_get_option('ads_250-250-post', '') != '' ): ?>
+      if (is_single() && adt_get_option('ads_250_250_post', '') != '' ): ?>
 <div style="float:left; margin:10px;">
-<?php echo adt_get_option('ads_250-250-post'); ?>
+<?php echo adt_get_option('ads_250_250_post'); ?>
 </div>
 <?php 
       endif;?>
