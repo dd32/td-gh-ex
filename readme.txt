@@ -113,6 +113,8 @@ Version 1.2.3
 * Added Social Icons for Linkedin, Slideshare, Foursquare, Vimeo, Flickr, Tumblr, DeviantArt,  Dribbble, MySpace and WordPress
 * Added Custom CSS Styles option in Theme Options
 * Added Webmaster Tools and verification of Google, Yahoo and Bing
+Version 1.2.4
+Fixed the action hook for simplecatch_haedercode to simplecatch_footercode
 
 == Upcoming Plan ==
 * Add more option in theme option for feed redirect, excerpt length

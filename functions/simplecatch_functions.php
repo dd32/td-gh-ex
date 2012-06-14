@@ -562,7 +562,7 @@ function simplecatch_footercode() {
 	}
 	echo $simplecatch_footercode;
 }
-add_action('wp_footer', 'simplecatch_headercode');
+add_action('wp_footer', 'simplecatch_footercode');
 
 
 /**
