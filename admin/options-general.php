@@ -433,7 +433,8 @@ function graphene_options_general() {
 								if ( ! in_array( false, $social_profiles) ) : 
 								foreach ($social_profiles as $profile_key => $profile_data) :
 									$profile_data['url'] = esc_url( $profile_data['url'] );
-									$profile_data['icon_url'] = esc_url( $profile_data['icon_url'] );
+									if ( $profile_data['type'] == 'custom' ) 
+										$profile_data['icon_url'] = esc_url( $profile_data['icon_url'] );
 							?>
                                 <table class="form-table socialprofile-table">
                                     <tr>

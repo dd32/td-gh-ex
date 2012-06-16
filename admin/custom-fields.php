@@ -53,7 +53,7 @@ function graphene_save_custom_meta( $post_id ){
 	}
 
 	/* OK, we're authenticated: saving the data */
-	if ( in_array( $_POST['graphene_slider_img'], array( 'disabled', 'featured_image', 'post_image', 'custom_url' ) ) )
+	if ( in_array( $_POST['graphene_slider_img'], array( 'global', 'disabled', 'featured_image', 'post_image', 'custom_url' ) ) )
 		update_post_meta( $post_id, '_graphene_slider_img', $_POST['graphene_slider_img']);
 	if ( in_array( $_POST['graphene_show_addthis'], array( 'show', 'hide' ) ) )
 		update_post_meta( $post_id, '_graphene_show_addthis', $_POST['graphene_show_addthis']);
@@ -71,7 +71,7 @@ function graphene_save_custom_meta( $post_id ){
 	/* Page-specific options */
 	if ( 'page' == $_POST['post_type']) {
 		if ( $_POST['graphene_nav_description'] )
-			update_post_meta( $post_id, '_graphene_nav_description', wp_kses( $_POST['graphene_nav_description'] ) );
+			update_post_meta( $post_id, '_graphene_nav_description', wp_kses_post( $_POST['graphene_nav_description'] ) );
 	}
 }
 add_action( 'save_post', 'graphene_save_custom_meta' );

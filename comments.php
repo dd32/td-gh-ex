@@ -40,25 +40,36 @@ global $graphene_settings;
 <?php /* Lists all the comments for the current post */ ?>
 <?php if ( have_comments() ) : ?>
 
-<div id="comments" class="clearfix">
-	<?php /* Get the comments and pings count */ 
-		global $tabbed;
-		$comments_num = graphene_get_comment_count();
-		// to also show comments awaiting approval
-		$allcomments_num = graphene_get_comment_count( 'comments', false );
-		$pings_num = graphene_get_comment_count( 'pings' );
-		if ( $comments_num )
-			$comment_count = sprintf( _n( '1 comment', '%d comments', $comments_num, 'graphene' ), number_format_i18n( $comments_num ) );
-		if ( $pings_num ) 
-			$ping_count = sprintf( _n( '1 ping', '%d pings', $pings_num, 'graphene' ), number_format_i18n( $pings_num ) );
-		$tabbed = ( $comments_num && $pings_num ) ? true : false;
-	?>
+<?php /* Get the comments and pings count */ 
+	global $tabbed;
+	$comments_num = graphene_get_comment_count();
+	// to also show comments awaiting approval
+	$allcomments_num = graphene_get_comment_count( 'comments', false );
+	$pings_num = graphene_get_comment_count( 'pings' );
+	if ( $comments_num )
+		$comment_count = sprintf( _n( '1 comment', '%d comments', $comments_num, 'graphene' ), number_format_i18n( $comments_num ) );
+	if ( $pings_num ) 
+		$ping_count = sprintf( _n( '1 ping', '%d pings', $pings_num, 'graphene' ), number_format_i18n( $pings_num ) );
+	$tabbed = ( $comments_num && $pings_num ) ? true : false;
+	
+	$class = 'clearfix';
+	if ( ! $comments_num ) $class .= ' no-comment';
+	if ( ! $pings_num ) $class .= ' no-ping';
+	
+	$is_paginated = get_option( 'page_comments' );
+?>
+
+<div id="comments" class="<?php echo $class; ?>">
     <?php if ( $comments_num ) : ?>
     	<h4 class="comments gutter-left current"><?php if ($tabbed) {echo '<a href="#">'.$comment_count.'</a>';} else {echo $comment_count;}?></h4>
 	<?php endif; ?>
     <?php if ( $pings_num ) : ?>
 	    <h4 class="pings gutter-left"><?php if ($tabbed) {echo '<a href="#">'.$ping_count.'</a>';} else {echo $ping_count;}?></h4>
     <?php endif; ?>
+    
+    <?php if ( ( ( $is_paginated && get_option( 'comments_per_page' ) > 3 ) || ! $is_paginated ) && ( $comments_num > 3 || $pings_num > 6 ) ) : ?>
+    	<p class="comment-form-jump"><a href="#respond"><?php _e( 'Skip to comment form', 'graphene' ); ?></a> &darr;</p>
+	<?php endif; ?>
 
 	<?php do_action( 'graphene_before_comments' ); ?>
 
@@ -75,7 +86,7 @@ global $graphene_settings;
              wp_list_comments( apply_filters( 'graphene_comments_list_args', $args ) ); ?>
              
             <?php // Are there comments to navigate through? ?>
-            <?php if (get_comment_pages_count() > 1 && get_option( 'page_comments' )) : ?>
+            <?php if ( get_comment_pages_count() > 1 && $is_paginated ) : ?>
             <div class="comment-nav clearfix">
                 <?php if ( function_exists( 'wp_commentnavi' ) ) : ?>
                     <?php wp_commentnavi(); ?>

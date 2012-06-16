@@ -4,6 +4,23 @@ http://www.khairul-syahir.com
 
 CHANGELOG
 
+Version 1.7.3
+	* Replaced the deprecated add_custom_background() function call with the add_theme_support() replacement
+	* Added filter hook for header image link
+	* Added skip to comment form link
+	* Added pullquote shortcode
+	* Added theme-webfonts.php for handling Google webfonts addition to the <head> element
+	* Changed the font for header title and description from Trebuchet MS to Pontano Sans
+	* Reverted change to slider background image so that the background image can repeat
+	* Fixed pings not being displayed if there is no comments
+	* Fixed "Undefined index" error notice for the theme's options pages hook suffixes
+	* Fixed the excluded slider categories settings being applied when slider type has been changed
+	* Fixed slider link overlay not working in IE
+	* Fixed double link element for slider's thumbnail image
+	* Fixed slider image in-post setting not being able to revert to "Use global setting"
+	* Fixed missing argument for wp_kses in theme's custom fields validation
+	* Fixed header title and description being outside the header when the header height is modified
+
 Version 1.7.2
 	* Added data validation for custom fields in posts and pages
 	* Added Ultimate TinyMCE by Josh Lobe to the list of natively-supported plugins

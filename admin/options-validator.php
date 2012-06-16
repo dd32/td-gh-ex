@@ -346,7 +346,10 @@ function graphene_settings_validator( $input ){
 			
 			$input = graphene_validate_colours( $input, $colour_opts );
 			
-                        
+            /* =Text style options
+			--------------------------------------------------------------------------------------*/ 
+			$input['webfont_families'] = trim( str_replace( "'", '', strip_tags( $input['webfont_families'] ) ) );
+			
 			/* =Footer Widget Display Options
 			--------------------------------------------------------------------------------------*/
 			// Number of columns to display
@@ -391,11 +394,17 @@ function graphene_settings_validator( $input ){
 		
 		/* Only save options that have different values than the default values */
 		foreach ( $input as $key => $value ){
-			if ( ( $graphene_defaults[$key] === $value || $value === '' ) && $key != 'db_version' ) {
+			if ( ( $graphene_defaults[$key] === $value || $value === '' ) )
 				unset( $input[$key] );
-			}
 		}
-		
+
+		if ( $input ) {
+			$input = array_merge( array( 'db_version' => $graphene_defaults['db_version'] ), $input );
+		} else {
+			delete_option( 'graphene_settings' );
+			return false;
+		}
+
 	} // Closes the uninstall conditional
 	
 	return $input;

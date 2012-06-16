@@ -249,15 +249,19 @@ endif;
 /**
  * Add script to show/hide comment permalink
  */
-function graphene_comment_permalink_script(){
+function graphene_comment_script(){
 	?>
 	<script type="text/javascript">
 		jQuery(document).ready(function($){
+			/* Comment permalink */
 			$('li.comment .comment-permalink').hide();
 			$('.comment-wrap').hover( function(){ $('.comment-permalink', this).fadeIn(200); }, function(){ $('.comment-permalink:eq(0)', this).fadeOut(200); });
+			
+			/* Jump to comment form */
+			$('.comment-form-jump a').click(function(){ $('html,body').animate({scrollTop: $("#respond").offset().top - 200},'slow'); return false;});
 		});
 	</script>
     <?php
 }
-add_action( 'wp_footer', 'graphene_comment_permalink_script' );
+add_action( 'wp_footer', 'graphene_comment_script' );
 ?>

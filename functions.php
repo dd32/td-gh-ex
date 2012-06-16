@@ -32,6 +32,7 @@ require( 'includes/theme-slider.php' );		// Functions for the slider
 require( 'includes/theme-panes.php' );		// Functions for the homepage panes
 require( 'includes/theme-plugins.php' );	// Native plugins support
 require( 'includes/theme-shortcodes.php' );	// Theme shortcodes
+require( 'includes/theme-webfonts.php' );	// Theme webfonts
 require( 'includes/theme-functions.php' );	// Other functions that are not categorised above
 require( 'includes/theme-setup.php' );		// Theme setup
 ?>

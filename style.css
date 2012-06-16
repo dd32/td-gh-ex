@@ -2,7 +2,7 @@
 Theme Name: Graphene
 Theme URI: http://www.khairul-syahir.com/wordpress-dev/graphene-theme
 Description: The Graphene theme for WordPress is a stylish, neat, and tight WordPress theme supporting configurable columns layout and columns widths options. It includes 4 predefined widget areas, with the ability to add countless more widget areas, as well as determine the number of columns to display in the footer widget area. It includes action hooks for unprecedented customisability, and jQuery slider for your featured posts. Compatibility support has been added for the bbPress plugin. It has built-in Twitter widget, allows for customisable colours, header and background, as well as built-in AdSense placement and social sharing buttons. It also supports custom menu with drop-down navigation, and threaded comments of up to 10 levels deep! The codes are written so that you can easily override or add functionality to the theme by using your own child theme without altering the parent theme's code. Seriously, there's too many features for this theme to describe them all here! This theme has been tested and confirmed compatible with IE7 and above, Mozilla Firefox, Google Chrome, Opera, and Safari. The theme currently has been translated into more than 25 languages, and fully supports right-to-left languages. See the <a href="http://www.khairul-syahir.com/wordpress-dev/graphene-theme#changelog">theme's changelog</a>.
-Version: 1.7.2
+Version: 1.7.3
 Author: Syahir Hakim
 Author URI: http://www.khairul-syahir.com
 Tags: black, blue, white, one-column, two-columns, three-columns, right-sidebar, left-sidebar, fixed-width, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, rtl-language-support, post-formats, featured-image-header, featured-images, full-width-template, microformats
@@ -500,9 +500,10 @@ a:hover {
 	margin-left: -480px;
 }
 .header_title {
-	font: bold 28px "Trebuchet MS";
-	position: relative;
-	top: 110px;
+	font: normal 32px "Pontano Sans", arial, sans-serif;
+	letter-spacing: -1px;
+	position: absolute;
+	bottom: 30%;
 }
 .header_title,
 .header_title a,
@@ -516,8 +517,9 @@ a:hover {
 	border-bottom: none;
 	color: #000;
 	position: relative;
-	top: 110px;
+	top: 68%;
 	width: 852px;
+	font: normal 22px "Pontano Sans", arial, sans-serif;
 }
 #header_img_link {
 	display: block;
@@ -1300,11 +1302,11 @@ a.more-link span {
 }
 .alignright {
 	float: right;
-	margin: 4px 0 12px 1em !important;
+	margin: 4px 0 12px 10px !important;
 }
 .alignleft {
 	float: left;
-	margin: 4px 1em 12px 0 !important;
+	margin: 4px 10px 12px 0 !important;
 }
 .aligncenter {
 	display: block;
@@ -1761,6 +1763,10 @@ h3.author-post-list {
 #comments > h4.current a {
 	color: #1772AF;
 }
+.comment-form-jump {
+	float: right;
+	margin-top: 28px;
+}
 #respond h3#reply-title {
 	background-position: -880px -17px;
 	margin-left: 10px;
@@ -1779,6 +1785,9 @@ h3.author-post-list {
 }
 #pings_list {
 	display: none;
+}
+.no-comment #pings_list {
+	display: block;
 }
 #comments ol {
 	list-style-position: outside;
@@ -2268,9 +2277,12 @@ h3.author-post-list {
     padding: 20px 0;
 	float: right;
 }
+.printonly {
+    display: none;
+}
 
 
-/* =Shortcode blocks
+/* =Shortcodes
 -------------------------------------------------------------- */
 
 .message-block {
@@ -2306,9 +2318,15 @@ h3.author-post-list {
     border: 1px solid #A3C159;
     color: #5E6F33;
 }
-
-.printonly {
-    display: none;
+.pullquote {
+	border-top: 5px solid #000;
+	border-bottom: 5px solid #000;
+	font: normal 22px "Pontano Sans", arial, sans-serif;
+	padding-bottom: 10px;
+	margin-top: 15px !important;
+	margin-bottom: 5px !important;
+	width: 30%;
+	color: #000;
 }
 
 

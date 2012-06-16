@@ -614,7 +614,19 @@ function graphene_options_display() {
         		<h3 class="hndle"><?php _e( 'Text Style Options', 'graphene' ); ?></h3>
             </div>
             <div class="panel-wrap inside">
-                <p><?php _e( 'Note that these are CSS properties, so any valid CSS values for each particular property can be used.', 'graphene' ); ?></p>
+            	<h4><?php _e( 'Google Webfonts', 'graphene' ); ?></h4>
+                <table class="form-table">
+                        <tr>
+                            <th scope="row"><label for="graphene-webfont-families"><?php _e( 'Font families', 'graphene' ); ?></label></th>
+                            <td>
+                            	<textarea class="code" cols="40" rows="7" id="graphene-webfont-families" name="graphene_settings[webfont_families]"><?php echo $graphene_settings['webfont_families']; ?></textarea><br />
+								<span class="description"><?php _e( 'Enter the Google Webfont font family string in the format that is used in the Webfont Loader, one font family per line.', 'graphene' ); ?></span><br />
+				                <span class="description"><?php _e( 'Example:', 'graphene' ); ?> <code>Pontano+Sans::latin,latin-ext</code></span>
+                            </td>
+                        </tr>
+                </table>
+                
+                <p><?php _e( 'The following options are CSS properties, so any valid CSS values for each particular property can be used.', 'graphene' ); ?></p>
                 <p><?php _e( 'Some example CSS properties values:', 'graphene' ); ?></p>
                 <table class="graphene-code-example">
                     <tr>

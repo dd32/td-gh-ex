@@ -486,9 +486,15 @@ function graphene_parent_return_link( $post = '' ){
  */
 function graphene_tax_description(){
 	global $wp_query;
-	$tax = $wp_query->tax_query->queries[0]['taxonomy'];
-	$term = $wp_query->tax_query->queries[0]['terms'][0];
-	$term = get_term_by( 'slug', $term, $tax );
+	if ( $wp_query->queried_object ){
+		$term = $wp_query->queried_object;
+	} else {
+		$tax = $wp_query->tax_query->queries[0]['taxonomy'];
+		$term = $wp_query->tax_query->queries[0]['terms'][0];
+		$term = get_term_by( 'slug', $term, $tax );
+	}
+	
+	if ( ! $term ) return;
 
 	if ( $term->description ) : 
 	?>

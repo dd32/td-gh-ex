@@ -7,9 +7,13 @@ if ( ! function_exists( 'graphene_db_init' ) ) :
 		global $graphene_settings, $graphene_defaults;
 		
 		/* Run DB updater if needed */
-                include( get_template_directory() . '/admin/db-updater.php' );
-                graphene_update_db();
-                $graphene_settings = array_merge( $graphene_defaults, get_option( 'graphene_settings', array() ) );        
+		include( get_template_directory() . '/admin/db-updater.php' );
+		graphene_update_db();
+		$graphene_settings = get_option( 'graphene_settings', array() );
+		if ( $graphene_settings )
+			$graphene_settings = array_merge( $graphene_defaults, $graphene_settings );
+		else
+			$graphene_settings = $graphene_defaults;
 	}
 endif;
 add_action( 'init', 'graphene_db_init' );
@@ -101,7 +105,10 @@ function graphene_setup() {
 	) );
 
 	// Add support for custom background
-	add_custom_background();
+	if ( graphene_is_wp_version( '3.4' ) )
+		add_theme_support( 'custom-background' );
+	else
+		add_custom_background();
 
 	/* Add support for custom header */
 	$args = array(
@@ -185,14 +192,17 @@ function graphene_admin_header_style(){
 	<style type="text/css">
 	.appearance_page_custom-header #headimg {
 		min-height: 0;
+		height: <?php echo $graphene_settings['header_img_height']; ?>px !important;
+		position: relative;
 	}
     #headimg h1 {
-		position: relative;
-		top: 110px;
+		position: absolute;
+		bottom: 30%;
 		left: <?php echo graphene_grid_width( '', 1 ) + $graphene_settings['gutter_width'] * 2; ?>px;
 		width: <?php echo (graphene_grid_width( -5, 13 ) + $graphene_settings['gutter_width'] * 13); ?>px;
 		margin: 0 <?php echo $graphene_settings['gutter_width']; ?>px;
-		font: bold 28px "Trebuchet MS";
+		font: normal 32px "Pontano Sans", arial, sans-serif;
+		letter-spacing: -1px;
 		text-decoration: none;
     }
 	#headimg h1 a {
@@ -202,11 +212,11 @@ function graphene_admin_header_style(){
         color: #000;
         border-bottom: none;
         position: relative;
-        top: 110px;
+        top: 68%;
         width: <?php echo graphene_grid_width( -5, 13 ) + $graphene_settings['gutter_width'] * 13; ?>px;
 		margin: 0 <?php echo $graphene_settings['gutter_width']; ?>px;
         left: <?php echo graphene_grid_width( '', 1 ) + $graphene_settings['gutter_width'] * 2; ?>px;
-        font: 18px arial;
+        font: normal 22px "Pontano Sans", arial, sans-serif;
     }
 	#headimg {
 		background-position: center top;

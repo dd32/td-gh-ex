@@ -395,7 +395,7 @@ function graphene_custom_style(){
 	$style = '';
     
     // the custom colours are needed in both the display and admin mode
-    $style .= graphene_get_custom_colours( $graphene_settings['hook_suffix'] );
+    $style .= graphene_get_custom_colours();
 	
 	// only get the custom css styles when were not in the admin mode
     if ( ! is_admin() ) {

@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graphene theme for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-04 17:53+1200\n"
-"PO-Revision-Date: 2012-05-04 17:54+1200\n"
+"POT-Creation-Date: 2012-05-30 16:14+1200\n"
+"PO-Revision-Date: 2012-05-30 16:14+1200\n"
 "Last-Translator: Syahir Hakim <syahir@khairul-syahir.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;esc_attr_e;esc_attr__\n"
-"X-Poedit-Basepath: D:\\MyVault\\MyProjects\\Websites\\theme-graphene\\site\\wp-content\\themes\\graphene-1.7.1\\\n"
+"X-Poedit-Basepath: D:\\MyVault\\MyProjects\\Websites\\theme-graphene\\site\\wp-content\\themes\\graphene\\\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -60,12 +60,7 @@ msgstr ""
 msgid "Yearly Archive: %s"
 msgstr ""
 
-#: archive.php:40
-#, php-format
-msgid "%1$s Archive: <span>%2$s</span>"
-msgstr ""
-
-#: archive.php:43
+#: archive.php:32
 msgid "Blog Archive"
 msgstr ""
 
@@ -82,7 +77,7 @@ msgstr ""
 msgid "This post is password protected. Enter the password to view any comments."
 msgstr ""
 
-#: comments.php:58
+#: comments.php:51
 #: loop-author.php:85
 #: loop-post-formats.php:47
 #: loop.php:170
@@ -92,23 +87,23 @@ msgid_plural "%d comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:60
+#: comments.php:53
 #, php-format
 msgid "1 ping"
 msgid_plural "%d pings"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:118
+#: comments.php:111
 msgid "Comments have been disabled."
 msgstr ""
 
-#: comments.php:135
+#: comments.php:128
 #, php-format
 msgid "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags and attributes: %s"
 msgstr ""
 
-#: comments.php:142
+#: comments.php:135
 msgid "Submit Comment"
 msgstr ""
 
@@ -142,8 +137,8 @@ msgstr ""
 msgid "Graphene Theme"
 msgstr ""
 
-#: header.php:77
-#: header.php:98
+#: header.php:67
+#: header.php:95
 msgid "Go back to the front page"
 msgstr ""
 
@@ -377,97 +372,97 @@ msgstr ""
 msgid "Graphene page-specific options"
 msgstr ""
 
-#: admin/custom-fields.php:99
+#: admin/custom-fields.php:108
 msgid "These settings will only be applied to this particular post or page you're editing. They will override the global settings set in the Graphene Options or Graphene Display options page."
 msgstr ""
 
-#: admin/custom-fields.php:100
+#: admin/custom-fields.php:109
 msgid "Slider options"
 msgstr ""
 
-#: admin/custom-fields.php:104
+#: admin/custom-fields.php:113
 #: admin/options-general.php:101
 msgid "Slider image"
 msgstr ""
 
-#: admin/custom-fields.php:108
-#: admin/custom-fields.php:143
-#: admin/custom-fields.php:157
+#: admin/custom-fields.php:117
+#: admin/custom-fields.php:152
+#: admin/custom-fields.php:166
 msgid "Use global setting"
 msgstr ""
 
-#: admin/custom-fields.php:109
+#: admin/custom-fields.php:118
 #: admin/options-general.php:105
 msgid "Don't show image"
 msgstr ""
 
-#: admin/custom-fields.php:110
+#: admin/custom-fields.php:119
 #: admin/options-general.php:106
 msgid "Featured Image"
 msgstr ""
 
-#: admin/custom-fields.php:111
+#: admin/custom-fields.php:120
 #: admin/options-general.php:107
 msgid "First image in post"
 msgstr ""
 
-#: admin/custom-fields.php:112
+#: admin/custom-fields.php:121
 #: admin/options-general.php:108
 msgid "Custom URL"
 msgstr ""
 
-#: admin/custom-fields.php:118
+#: admin/custom-fields.php:127
 #: admin/options-general.php:114
 msgid "Custom slider image URL"
 msgstr ""
 
-#: admin/custom-fields.php:122
+#: admin/custom-fields.php:131
 #: admin/options-general.php:118
 msgid "Make sure you select Custom URL in the slider image option above to use this custom url."
 msgstr ""
 
-#: admin/custom-fields.php:127
+#: admin/custom-fields.php:136
 msgid "Custom slider URL"
 msgstr ""
 
-#: admin/custom-fields.php:131
+#: admin/custom-fields.php:140
 msgid "Use this to override the link that is used in the slider."
 msgstr ""
 
-#: admin/custom-fields.php:135
+#: admin/custom-fields.php:144
 msgid "Display options"
 msgstr ""
 
-#: admin/custom-fields.php:139
+#: admin/custom-fields.php:148
 msgid "AddThis Social Sharing button"
 msgstr ""
 
-#: admin/custom-fields.php:144
+#: admin/custom-fields.php:153
 msgid "Show button"
 msgstr ""
 
-#: admin/custom-fields.php:145
+#: admin/custom-fields.php:154
 msgid "Hide button"
 msgstr ""
 
-#: admin/custom-fields.php:153
+#: admin/custom-fields.php:162
 #: admin/options-display.php:273
 msgid "Post date display"
 msgstr ""
 
-#: admin/custom-fields.php:158
+#: admin/custom-fields.php:167
 msgid "Hide date"
 msgstr ""
 
-#: admin/custom-fields.php:166
+#: admin/custom-fields.php:175
 msgid "Navigation options"
 msgstr ""
 
-#: admin/custom-fields.php:170
+#: admin/custom-fields.php:179
 msgid "Description"
 msgstr ""
 
-#: admin/custom-fields.php:174
+#: admin/custom-fields.php:183
 #: admin/options-display.php:805
 msgid "Only required if you need a description in the navigation menu and you are not using a custom menu."
 msgstr ""
@@ -559,7 +554,7 @@ msgid "But no worries! If you're a seasoned user of the Graphene theme, or whene
 msgstr ""
 
 #: admin/options-advanced.php:12
-#: admin/options.php:360
+#: admin/options.php:323
 msgid "Preview"
 msgstr ""
 
@@ -1590,32 +1585,31 @@ msgstr ""
 msgid "<strong>Hint:</strong> drag and drop to rearrange the placement of the social media icons."
 msgstr ""
 
-#: admin/options-general.php:425
-#: admin/options-general.php:440
-#: admin/options-general.php:484
+#: admin/options-general.php:441
+#: admin/options-general.php:500
 msgid "Custom"
 msgstr ""
 
 #: admin/options-general.php:450
 #: admin/options-general.php:486
-#: admin/options-general.php:507
+#: admin/options-general.php:509
 msgid "Title attribute"
 msgstr ""
 
 #: admin/options-general.php:454
 #: admin/options-general.php:487
-#: admin/options-general.php:511
+#: admin/options-general.php:513
 msgid "URL"
 msgstr ""
 
 #: admin/options-general.php:458
-#: admin/options-general.php:513
+#: admin/options-general.php:515
 msgid "Leave the URL empty to use the default RSS URL."
 msgstr ""
 
 #: admin/options-general.php:464
 #: admin/options-general.php:485
-#: admin/options-general.php:517
+#: admin/options-general.php:519
 msgid "Icon URL"
 msgstr ""
 
@@ -1636,132 +1630,132 @@ msgstr ""
 msgid "Choose type"
 msgstr ""
 
-#: admin/options-general.php:521
+#: admin/options-general.php:523
 msgid "Add new Social Media Profile"
 msgstr ""
 
-#: admin/options-general.php:535
+#: admin/options-general.php:537
 msgid "Social Sharing Buttons"
 msgstr ""
 
-#: admin/options-general.php:540
+#: admin/options-general.php:542
 msgid "Show social sharing button"
 msgstr ""
 
-#: admin/options-general.php:546
+#: admin/options-general.php:548
 msgid "Show in Pages as well?"
 msgstr ""
 
-#: admin/options-general.php:550
+#: admin/options-general.php:552
 msgid "Show in home and archive pages?"
 msgstr ""
 
-#: admin/options-general.php:553
+#: admin/options-general.php:555
 #, php-format
 msgid "Enabling this will cause the social sharing buttons to appear on posts listing pages, like the home page and archive pages. Use the available tags in the code below to get the post's URL, title, and excerpt. Otherwise, all your buttons will share the same URL and title. If you're using AddThis, see the %s."
 msgstr ""
 
-#: admin/options-general.php:553
+#: admin/options-general.php:555
 msgid "AddThis Client API"
 msgstr ""
 
-#: admin/options-general.php:557
+#: admin/options-general.php:559
 msgid "Social sharing buttons location"
 msgstr ""
 
-#: admin/options-general.php:560
+#: admin/options-general.php:562
 msgid "Bottom of posts"
 msgstr ""
 
-#: admin/options-general.php:561
+#: admin/options-general.php:563
 msgid "Top of posts"
 msgstr ""
 
-#: admin/options-general.php:562
+#: admin/options-general.php:564
 msgid "Both top and bottom"
 msgstr ""
 
-#: admin/options-general.php:568
+#: admin/options-general.php:570
 msgid "Your social sharing button code"
 msgstr ""
 
-#: admin/options-general.php:569
+#: admin/options-general.php:571
 msgid "You can use codes from any popular social sharing sites, like Facebook, Digg, AddThis, etc."
 msgstr ""
 
-#: admin/options-general.php:572
+#: admin/options-general.php:574
 msgid "You may use these tags to get the post's URL, title, and excerpt:"
 msgstr ""
 
-#: admin/options-general.php:584
+#: admin/options-general.php:586
 msgid "Adsense Options"
 msgstr ""
 
-#: admin/options-general.php:590
+#: admin/options-general.php:592
 msgid "Show Adsense advertising"
 msgstr ""
 
-#: admin/options-general.php:598
+#: admin/options-general.php:600
 msgid "Show ads on front page as well"
 msgstr ""
 
-#: admin/options-general.php:604
+#: admin/options-general.php:606
 msgid "Your Adsense code"
 msgstr ""
 
-#: admin/options-general.php:617
+#: admin/options-general.php:619
 msgid "Google Analytics Options"
 msgstr ""
 
-#: admin/options-general.php:622
+#: admin/options-general.php:624
 msgid "Enable Google Analytics tracking"
 msgstr ""
 
-#: admin/options-general.php:629
+#: admin/options-general.php:631
 msgid "<strong>Note:</strong> the theme now places the Google Analytics script in the <code>&lt;head&gt;</code> element to better support the new asynchronous Google Analytics script. Please make sure you update your script to use the new asynchronous script from Google Analytics."
 msgstr ""
 
-#: admin/options-general.php:633
+#: admin/options-general.php:635
 msgid "Google Analytics tracking code"
 msgstr ""
 
-#: admin/options-general.php:634
+#: admin/options-general.php:636
 msgid "Make sure you include the full tracking code (including the <code>&lt;script&gt;</code> and <code>&lt;/script&gt;</code> tags) and not just the <code>UA-#######-#</code> code."
 msgstr ""
 
-#: admin/options-general.php:647
+#: admin/options-general.php:649
 msgid "Footer Options"
 msgstr ""
 
-#: admin/options-general.php:652
+#: admin/options-general.php:654
 msgid "Use Creative Commons licence for content"
 msgstr ""
 
-#: admin/options-general.php:657
+#: admin/options-general.php:659
 msgid "Copyright text (html allowed)"
 msgstr ""
 
-#: admin/options-general.php:658
+#: admin/options-general.php:660
 msgid "If this field is empty, the following default copyright text will be displayed:"
 msgstr ""
 
-#: admin/options-general.php:664
+#: admin/options-general.php:666
 msgid "Do not show copyright info"
 msgstr ""
 
-#: admin/options-general.php:668
+#: admin/options-general.php:670
 msgid "Do not show the \"Return to top\" link"
 msgstr ""
 
-#: admin/options-general.php:680
+#: admin/options-general.php:682
 msgid "Print Options"
 msgstr ""
 
-#: admin/options-general.php:685
+#: admin/options-general.php:687
 msgid "Enable print CSS for single posts and pages?"
 msgstr ""
 
-#: admin/options-general.php:691
+#: admin/options-general.php:693
 msgid "Show print button"
 msgstr ""
 
@@ -1836,20 +1830,20 @@ msgstr ""
 msgid "Graphene FAQs"
 msgstr ""
 
-#: admin/options-init.php:117
+#: admin/options-init.php:148
 msgid "Toggle all options boxes"
 msgstr ""
 
-#: admin/options-init.php:159
+#: admin/options-init.php:190
 msgid "Template preview not found."
 msgstr ""
 
-#: admin/options-init.php:162
+#: admin/options-init.php:193
 msgid "default"
 msgstr ""
 
-#: admin/options-init.php:218
-#: admin/options-init.php:222
+#: admin/options-init.php:249
+#: admin/options-init.php:253
 msgid "Theme default"
 msgstr ""
 
@@ -1995,203 +1989,203 @@ msgstr ""
 msgid "ERROR: Invalid action hook selected widget action hooks."
 msgstr ""
 
-#: admin/options.php:91
+#: admin/options.php:53
 #: admin/uninstall.php:23
 msgid "Uninstall Graphene"
 msgstr ""
 
-#: admin/options.php:92
+#: admin/options.php:54
 msgid "Please confirm that you would like to uninstall the Graphene theme. All of the theme's options in the database will be deleted."
 msgstr ""
 
-#: admin/options.php:93
+#: admin/options.php:55
 msgid "This action is not reversible."
 msgstr ""
 
-#: admin/options.php:97
-#: admin/options.php:349
+#: admin/options.php:59
+#: admin/options.php:312
 msgid "Uninstall Theme"
 msgstr ""
 
-#: admin/options.php:111
+#: admin/options.php:73
 msgid "Graphene Theme Options"
 msgstr ""
 
-#: admin/options.php:113
+#: admin/options.php:75
 msgid "These are the global settings for the theme. You may override some of the settings in individual posts and pages."
 msgstr ""
 
-#: admin/options.php:121
+#: admin/options.php:83
 msgid "General"
 msgstr ""
 
-#: admin/options.php:122
+#: admin/options.php:84
 msgid "Display"
 msgstr ""
 
-#: admin/options.php:123
+#: admin/options.php:85
 msgid "Advanced"
 msgstr ""
 
-#: admin/options.php:162
+#: admin/options.php:124
 msgid "Save Options"
 msgstr ""
 
-#: admin/options.php:174
+#: admin/options.php:136
 msgid "Need help?"
 msgstr ""
 
-#: admin/options.php:178
+#: admin/options.php:140
 msgid "Documentation Wiki"
 msgstr ""
 
-#: admin/options.php:179
+#: admin/options.php:141
 msgid "Support Forum"
 msgstr ""
 
-#: admin/options.php:181
+#: admin/options.php:143
 #, php-format
 msgid "Also, find out how you can %s."
 msgstr ""
 
-#: admin/options.php:181
+#: admin/options.php:143
 msgid "support the Graphene theme"
 msgstr ""
 
-#: admin/options.php:188
+#: admin/options.php:150
 msgid "Support the developer"
 msgstr ""
 
-#: admin/options.php:191
+#: admin/options.php:153
 msgid "Developing this awesome theme took a lot of effort and time, months and months of continuous voluntary unpaid work. If you like this theme or if you are using it for commercial websites, please consider a donation to the developer to help support future updates and development."
 msgstr ""
 
-#: admin/options.php:205
+#: admin/options.php:167
 msgid "Graphene Theme news"
 msgstr ""
 
-#: admin/options.php:216
+#: admin/options.php:178
 msgid "No news items."
 msgstr ""
 
-#: admin/options.php:233
+#: admin/options.php:195
 msgid "Graphene Usage Survey"
 msgstr ""
 
-#: admin/options.php:236
+#: admin/options.php:198
 msgid "Help us to get to know you better. Take the Graphene theme usage survey now! Every opinion counts towards making the theme better. The survey is very short, and is completely anonymous."
 msgstr ""
 
-#: admin/options.php:237
+#: admin/options.php:199
 msgid "Take the survey"
 msgstr ""
 
-#: admin/options.php:247
+#: admin/options.php:209
 msgid "Add-ons and plugins"
 msgstr ""
 
-#: admin/options.php:250
+#: admin/options.php:212
 msgid "Add-ons"
 msgstr ""
 
-#: admin/options.php:251
+#: admin/options.php:213
 msgid "Add-ons are not shipped with the theme, but can be installed separately to extend the theme's capability."
 msgstr ""
 
-#: admin/options.php:255
+#: admin/options.php:217
 msgid "Installed"
 msgstr ""
 
-#: admin/options.php:256
-#: admin/options.php:275
+#: admin/options.php:218
+#: admin/options.php:238
 msgid "Not installed"
 msgstr ""
 
-#: admin/options.php:256
+#: admin/options.php:218
 msgid "Learn more"
 msgstr ""
 
-#: admin/options.php:257
+#: admin/options.php:219
 msgid "Mobile extension developed specifically for optimised display of your site on mobile devices, such as iPhone and Android devices."
 msgstr ""
 
-#: admin/options.php:260
+#: admin/options.php:222
 msgid "Plugins"
 msgstr ""
 
-#: admin/options.php:261
+#: admin/options.php:223
 msgid "The plugins listed here are natively supported by the theme. All you need to do is install the plugins and activate them."
 msgstr ""
 
-#: admin/options.php:274
+#: admin/options.php:237
 msgid "Activated"
 msgstr ""
 
-#: admin/options.php:287
+#: admin/options.php:250
 msgid "Options Presets"
 msgstr ""
 
-#: admin/options.php:290
+#: admin/options.php:253
 msgid "The default settings for the theme is preconfigured for use in blogs. If you're using this theme primarily for a normal website, or if you want to reset the settings to their default values, you can apply one of the available options presets below."
 msgstr ""
 
-#: admin/options.php:291
+#: admin/options.php:254
 msgid "Note that you can still configure the individual settings after you apply any preset."
 msgstr ""
 
-#: admin/options.php:296
+#: admin/options.php:259
 msgid "Select Options Preset"
 msgstr ""
 
-#: admin/options.php:299
+#: admin/options.php:262
 msgid "Normal website"
 msgstr ""
 
-#: admin/options.php:302
+#: admin/options.php:265
 msgid "Reset to default settings"
 msgstr ""
 
-#: admin/options.php:307
+#: admin/options.php:270
 msgid "Apply Options Preset"
 msgstr ""
 
-#: admin/options.php:317
+#: admin/options.php:280
 msgid "Import/export theme options"
 msgstr ""
 
-#: admin/options.php:320
+#: admin/options.php:283
 msgid "Import"
 msgstr ""
 
-#: admin/options.php:323
+#: admin/options.php:286
 msgid "Import Theme options"
 msgstr ""
 
-#: admin/options.php:325
+#: admin/options.php:288
 msgid "Export"
 msgstr ""
 
-#: admin/options.php:329
+#: admin/options.php:292
 msgid "Export Theme options"
 msgstr ""
 
-#: admin/options.php:339
+#: admin/options.php:302
 msgid "Uninstall theme"
 msgstr ""
 
-#: admin/options.php:342
+#: admin/options.php:305
 msgid "<strong>Be careful!</strong> Uninstalling the theme will remove all of the theme's options from the database. Do this only if you decide not to use the theme anymore."
 msgstr ""
 
-#: admin/options.php:343
+#: admin/options.php:306
 msgid "If you just want to try another theme, there is no need to uninstall this theme. Simply activate the other theme in the Appearance &gt; Themes admin page."
 msgstr ""
 
-#: admin/options.php:344
+#: admin/options.php:307
 msgid "Note that uninstalling this theme <strong>does not remove</strong> the theme's files. To delete the files after you have uninstalled this theme, go to Appearances &gt; Themes and delete the theme from there."
 msgstr ""
 
-#: admin/options.php:361
+#: admin/options.php:324
 msgid "The preview will be updated when the \"Save Options\" button above is clicked."
 msgstr ""
 
@@ -2261,21 +2255,21 @@ msgstr ""
 msgid "Message:"
 msgstr ""
 
-#: includes/theme-functions.php:102
+#: includes/theme-functions.php:108
 #, php-format
 msgid "Visit %1$s's %2$s page"
 msgstr ""
 
-#: includes/theme-functions.php:264
+#: includes/theme-functions.php:270
 #, php-format
 msgid "You haven't placed any widget into this widget area. Go to %1$s and place some widgets in the widget area called %2$s."
 msgstr ""
 
-#: includes/theme-functions.php:264
+#: includes/theme-functions.php:270
 msgid "WP Admin > Appearance > Widgets"
 msgstr ""
 
-#: includes/theme-functions.php:265
+#: includes/theme-functions.php:271
 msgid "This notice will not be displayed to your site's visitors."
 msgstr ""
 
@@ -2299,104 +2293,100 @@ msgstr ""
 msgid "&laquo; Previous page"
 msgstr ""
 
-#: includes/theme-loop.php:247
-msgid "<strong>ERROR: You must supply the post ID to get the image from as an argument when calling the graphene_get_post_image() function.</strong>"
-msgstr ""
-
-#: includes/theme-loop.php:442
-#: includes/theme-loop.php:443
+#: includes/theme-loop.php:439
+#: includes/theme-loop.php:440
 #, php-format
 msgid "Print this %s"
 msgstr ""
 
-#: includes/theme-loop.php:481
+#: includes/theme-loop.php:478
 #, php-format
 msgid "Return to %s"
 msgstr ""
 
-#: includes/theme-menu.php:65
+#: includes/theme-menu.php:66
 msgid "Home"
 msgstr ""
 
-#: includes/theme-panes.php:100
+#: includes/theme-panes.php:101
 msgid "Read more"
 msgstr ""
 
-#: includes/theme-setup.php:99
+#: includes/theme-setup.php:98
 msgid "Header Menu"
 msgstr ""
 
-#: includes/theme-setup.php:100
+#: includes/theme-setup.php:99
 msgid "Secondary Menu"
 msgstr ""
 
-#: includes/theme-setup.php:101
+#: includes/theme-setup.php:100
 msgid "Footer Menu"
 msgstr ""
 
-#: includes/theme-setup.php:147
+#: includes/theme-setup.php:146
 msgid "Header image by Syahir Hakim"
 msgstr ""
 
-#: includes/theme-setup.php:151
+#: includes/theme-setup.php:150
 msgid "This is the default Graphene theme header image, cropped from image by Quantin Houyoux at sxc.hu"
 msgstr ""
 
-#: includes/theme-setup.php:155
-#: includes/theme-setup.php:159
-#: includes/theme-setup.php:163
-#: includes/theme-setup.php:167
-#: includes/theme-setup.php:171
+#: includes/theme-setup.php:154
+#: includes/theme-setup.php:158
+#: includes/theme-setup.php:162
+#: includes/theme-setup.php:166
+#: includes/theme-setup.php:170
 msgid "Header image cropped from image by Ilco at sxc.hu"
 msgstr ""
 
-#: includes/theme-setup.php:239
+#: includes/theme-setup.php:238
 msgid "The first sidebar widget area (will always be displayed on the right hand side)."
 msgstr ""
 
-#: includes/theme-setup.php:248
+#: includes/theme-setup.php:247
 msgid "The second sidebar widget area (will always be displayed on the left hand side)."
 msgstr ""
 
-#: includes/theme-setup.php:255
+#: includes/theme-setup.php:254
 msgid "Footer Widget Area"
 msgstr ""
 
-#: includes/theme-setup.php:257
+#: includes/theme-setup.php:256
 msgid "The footer widget area. Leave empty to disable. Set the number of columns to display at the theme's Display Options page."
 msgstr ""
 
-#: includes/theme-setup.php:274
+#: includes/theme-setup.php:273
 msgid "The first sidebar widget area that will only be displayed on the front page."
 msgstr ""
 
-#: includes/theme-setup.php:283
+#: includes/theme-setup.php:282
 msgid "The second sidebar widget area that will only be displayed on the front page."
 msgstr ""
 
-#: includes/theme-setup.php:292
+#: includes/theme-setup.php:291
 msgid "Front Page Footer Widget Area"
 msgstr ""
 
-#: includes/theme-setup.php:294
+#: includes/theme-setup.php:293
 msgid "The footer widget area that will only be displayed on the front page. Leave empty to disable. Set the number of columns to display at the theme's Display Options page."
 msgstr ""
 
-#: includes/theme-setup.php:304
+#: includes/theme-setup.php:303
 msgid "Header Widget Area"
 msgstr ""
 
-#: includes/theme-setup.php:306
+#: includes/theme-setup.php:305
 msgid "The header widget area."
 msgstr ""
 
-#: includes/theme-setup.php:323
+#: includes/theme-setup.php:322
 #, php-format
 msgid "Dynamically added widget area. This widget area is attached to the %s action hook."
 msgstr ""
 
-#: includes/theme-slider.php:129
-#: includes/theme-slider.php:157
+#: includes/theme-slider.php:131
+#: includes/theme-slider.php:159
 msgid "View full post"
 msgstr ""
 

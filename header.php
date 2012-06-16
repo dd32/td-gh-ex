@@ -64,7 +64,7 @@ global $graphene_settings;
         <?php 
 			$header_img = '<img src="' . $header_img . '" alt="" class="header-img" />';
 			if ( ! is_front_page() && $graphene_settings['link_header_img'] ) {
-				$header_img_tag = '<a href="' . home_url() . '" id="header_img_link" title="' . esc_attr__( 'Go back to the front page', 'graphene' ) . '">';
+				$header_img_tag = '<a href="' . apply_filters( 'graphene_header_link' , home_url() ) . '" id="header_img_link" title="' . esc_attr__( 'Go back to the front page', 'graphene' ) . '">';
 				$header_img_tag .= $header_img;
 				$header_img_tag .= '</a>';
 				
@@ -92,7 +92,7 @@ global $graphene_settings;
 			}
 			?>
 			<?php echo "<$title_tag class=\"header_title push_1 grid_15\">"; ?>
-				<?php if ( ! is_front_page() ) : ?><a <?php echo $style; ?> href="<?php echo home_url(); ?>" title="<?php esc_attr_e( 'Go back to the front page', 'graphene' ); ?>"><?php endif; ?>
+				<?php if ( ! is_front_page() ) : ?><a href="<?php echo apply_filters( 'graphene_header_link' , home_url() ); ?>" title="<?php esc_attr_e( 'Go back to the front page', 'graphene' ); ?>"><?php endif; ?>
 					<?php bloginfo( 'name' ); ?>
 				<?php if ( ! is_front_page() ) : ?></a><?php endif; ?>
 			<?php echo "</$title_tag>"; ?>

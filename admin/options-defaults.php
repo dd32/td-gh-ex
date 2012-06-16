@@ -6,7 +6,11 @@
 global $graphene_defaults;
 $graphene_defaults = array(
 	/* Theme's DB version */
-	'db_version' 		=> '1.1',
+	'db_version' 		=> '1.2',
+	
+	/* Theme's options page hook suffix */
+	'hook_suffix'		=> '',
+	'hook_suffix_faq'	=> '',
 	
 	/* All options toggle */
 	'show_all_options' 	=> false,
@@ -35,6 +39,7 @@ $graphene_defaults = array(
 	'slider_specific_posts' 	=> '',
     'slider_specific_categories'=> '',
 	'slider_exclude_categories'	=> 'disabled',
+	'slider_random_category_posts' => false,
 	'slider_postcount' 			=> '',
 	'slider_img' 				=> 'featured_image', // disabled | featured_image | post_image | custom_url
 	'slider_display_style' 		=> 'thumbnail-excerpt', // thumbnail-excerpt | bgimage-excerpt | full-post
@@ -70,13 +75,13 @@ $graphene_defaults = array(
 	/* Top bar options(Syndication) */
 	'hide_top_bar' 				=> false,        		
 	'social_media_new_window'   => false,	
-	'social_profiles'           => array( 
-										0 => array( 
-												'type'	=> 'rss',
-												'name'	=> 'RSS',
-												'title'	=> sprintf( __( "Subscribe to %s's RSS feed", 'graphene' ), get_bloginfo( 'name' ) ),
-												'url'	=> '',
-											)
+	'social_profiles'           => array ( 
+										array ( 
+											'type'	=> 'rss',
+											'name'	=> 'RSS',
+											'title'	=> sprintf( __( "Subscribe to %s's RSS feed", 'graphene' ), get_bloginfo( 'name' ) ),
+											'url'	=> '',
+										)
 									),
 	
 	/* Adsense Options */
@@ -87,6 +92,7 @@ $graphene_defaults = array(
 	/* Social Sharing options */
 	'show_addthis' 				=> false,
 	'show_addthis_page'         => false,
+	'show_addthis_archive'		=> false,
 	'addthis_location' 			=> 'post-bottom', // post-bottom | post-top | top-bottom
 	'addthis_code' 				=> '',
 	
@@ -179,6 +185,9 @@ $graphene_defaults = array(
 	'link_colour_normal' 		=> '#1772af',
 	'link_colour_visited' 		=> '#1772af',
 	'link_colour_hover' 		=> '#074d7c',
+	
+	/* Google Webfonts */
+	'webfont_families'			=> '',
 	
 	/* Comments colour options */
 	'bg_comments' 				=> '#E9ECF5',

@@ -5,19 +5,20 @@
 */
 function graphene_update_db(){
 	global $graphene_defaults;
-        
+    return;    
 	if ( get_option( 'graphene_ga_code' ) === '' ){       
-		wp_die('updating to 1.0');
 		graphene_update_db_to_1_0();
 	}
 	
 	$current_settings = get_option( 'graphene_settings', array() );
-	if ( empty( $current_settings['db_version'] ) || $current_settings['db_version'] === '1.0') {            
-		graphene_update_db_to_1_1();
+	if ( $current_settings && array_key_exists( 'db_version', $current_settings ) ) {
+		if ( $current_settings['db_version'] === '1.0' )
+			graphene_update_db_to_1_1();
 	}
         
-        $current_settings = get_option( 'graphene_settings', array() );
-	if ( empty( $current_settings['db_version'] ) || $current_settings['db_version'] === '1.1') {            
+	$current_settings = get_option( 'graphene_settings', array() );
+	if ( $current_settings && array_key_exists( 'db_version', $current_settings ) ) {
+		if ( $current_settings['db_version'] === '1.1' )
 		graphene_update_db_to_1_2();
 	}
 }
