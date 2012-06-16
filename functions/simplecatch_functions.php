@@ -76,13 +76,11 @@ function simplecatch_filter_wp_title( $title ) {
     
 
 	// For Homepage
-    if (  is_home() || is_front_page() ) {
-		
-		$filtered_title .= $site_name;
-		
+    if (  is_home() || is_front_page() ) {		
+		$filtered_title = $site_name;		
         // Get the Site Description
         $site_description = get_bloginfo( 'description' );
-		if ( $site_description )  {
+		if ( !empty( $site_description ) )  {
         	// Append Site Description to title
         	$filtered_title .= ' &#124; '. $site_description;
 		}
@@ -181,6 +179,9 @@ function simplecatch_headerlogo() {
 	
 	// get data value from simplecatch_options through theme options
 	$options = get_option( 'simplecatch_options' );	
+	if( !isset( $options[ 'remove_header_logo' ] ) ) {
+		$options[ 'remove_header_logo' ] = "0";
+	}
 		
 	if ( !$simplecatch_headerlogo = get_transient( 'simplecatch_headerlogo' ) ) {
 		echo '<!-- refreshing cache -->';
@@ -217,6 +218,9 @@ function simplecatch_footerlogo() {
 	
 	// get data value from catch_options through theme options
 	$options = get_option( 'simplecatch_options' );
+	if( !isset( $options[ 'remove_footer_logo' ] ) ) {
+		$options[ 'remove_footer_logo' ] = "0";
+	}
 	
 	if ( !$simplecatch_footerlogo = get_transient( 'simplecatch_footerlogo' ) ) {
 		echo '<!-- refreshing cache -->';
@@ -256,6 +260,9 @@ function simplecatch_favicon() {
 	
 	// get data value from simplecatch_options through theme options
 	$options = get_option( 'simplecatch_options' );
+	if( !isset( $options[ 'remove_favicon' ] ) ) {
+		$options[ 'remove_favicon' ] = "0";
+	}
 	
 	if( ( !$simplecatch_favicon = get_transient( 'simplecatch_favicon' ) ) ) {
 		echo '<!-- refreshing cache -->';
@@ -299,7 +306,9 @@ function simplecatch_sliders() {
 	// get data value from simplecatch_options_slider through theme options
 	$options = get_option( 'simplecatch_options_slider' );
 	// get slider_qty from theme options
-	$postperpage = $options[ 'slider_qty' ];
+	if( isset( $options[ 'slider_qty' ] ) ) {
+		$postperpage = $options[ 'slider_qty' ];
+	}
 	
 	if( ( !$simplecatch_sliders = get_transient( 'simplecatch_sliders' ) ) && !empty( $options[ 'featured_slider' ] ) ) {
 		echo '<!-- refreshing cache -->';
@@ -389,7 +398,7 @@ function simplecatch_headersocialnetworks() {
 	// get the data value from theme options
 	$options = get_option( 'simplecatch_options' );
 	
-	if ( ( !$simplecatch_headersocialnetworks = get_transient( 'simplecatch_headersocialnetworks' ) ) &&  ( !empty( $options[ 'social_facebook' ] ) || !empty( $options[ 'social_twitter' ] ) || !empty( $options[ 'social_googleplus' ] ) || !empty( $options[ 'social_pinterest' ] ) || !empty( $options[ 'social_youtube' ] ) || !empty( $options[ 'social_linkedin' ] ) || !empty( $options[ 'social_slideshare' ] )  || !empty( $options[ 'social_foursquare' ] ) || !empty( $options[ 'social_rss' ] )   || !empty( $options[ 'social_vimeo' ] ) || !empty( $options[ 'social_flickr' ] ) || !empty( $options[ 'social_tumblr' ] ) || !empty( $options[ 'social_deviantart' ] ) || !empty( $options[ 'social_dribbble' ] ) || !empty( $options[ 'social_myspace' ] ) || !empty( $options[ 'social_wordpress' ] ) ) )  {
+	if ( ( !$simplecatch_headersocialnetworks = get_transient( 'simplecatch_headersocialnetworks' ) ) &&  ( !empty( $options[ 'social_facebook' ] ) || !empty( $options[ 'social_twitter' ] ) || !empty( $options[ 'social_googleplus' ] ) || !empty( $options[ 'social_pinterest' ] ) || !empty( $options[ 'social_youtube' ] ) || !empty( $options[ 'social_linkedin' ] ) || !empty( $options[ 'social_slideshare' ] )  || !empty( $options[ 'social_foursquare' ] ) || !empty( $options[ 'social_rss' ] )   || !empty( $options[ 'social_vimeo' ] ) || !empty( $options[ 'social_flickr' ] ) || !empty( $options[ 'social_tumblr' ] ) || !empty( $options[ 'social_deviantart' ] ) || !empty( $options[ 'social_dribbble' ] ) || !empty( $options[ 'social_myspace' ] ) || !empty( $options[ 'social_wordpress' ] ) || !empty( $options[ 'social_delicious' ] ) || !empty( $options[ 'social_lastfm' ] ) ) )  {
 	
 		echo '<!-- refreshing cache -->';
 		
@@ -485,6 +494,16 @@ function simplecatch_headersocialnetworks() {
 					$simplecatch_headersocialnetworks .=
 						'<li class="rss"><a href="'.$options[ 'social_rss' ].'" title="'.sprintf( esc_attr__( '%s in RSS', 'simplecatch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' RSS </a></li>';
 				}
+				//Delicious
+				if ( !empty( $options[ 'social_delicious' ] ) ) {
+					$simplecatch_headersocialnetworks .=
+						'<li class="delicious"><a href="'.$options[ 'social_delicious' ].'" title="'.sprintf( esc_attr__( '%s in Delicious', 'simplecatch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Delicious </a></li>';
+				}				
+				//Last.fm
+				if ( !empty( $options[ 'social_lastfm' ] ) ) {
+					$simplecatch_headersocialnetworks .=
+						'<li class="lastfm"><a href="'.$options[ 'social_lastfm' ].'" title="'.sprintf( esc_attr__( '%s in Last.fm', 'simplecatch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Last.fm </a></li>';
+				}				
 		
 				$simplecatch_headersocialnetworks .='
 			</ul>
@@ -516,25 +535,26 @@ function simplecatch_site_verification() {
 		echo '<!-- refreshing cache -->';	
 	
 		//google
-		if ( $options['google_verification'] ) {
+		if ( !empty( $options['google_verification'] ) ) {
 			$simplecatch_site_verification .= '<meta name="google-site-verification" content="' . $options['google_verification'] . '" />' . "\n";
 		}
 	
 		//bing
-		if ( $options['bing_verification'] ) {
+		if ( !empty( $options['bing_verification'] ) ) {
 			$simplecatch_site_verification .= '<meta name="msvalidate.01" content="' . $options['bing_verification'] . '" />' . "\n";
 		}
 	
 		//yahoo
-		 if ( $options['yahoo_verification'] ) {
+		 if ( !empty( $options['yahoo_verification'] ) ) {
 			$simplecatch_site_verification .= '<meta name="y_key" content="' . $options['yahoo_verification'] . '" />' . "\n";
 		}
 	
 		//site stats, analytics header code
-		if ( $options['analytic_header'] ) {
+		if ( !empty( $options['analytic_header'] ) ) {
 			$simplecatch_site_verification .= $options[ 'analytic_header' ];
 		}
 	}
+	echo $simplecatch_site_verification;
 }
 add_action('wp_head', 'simplecatch_site_verification');
 
@@ -554,8 +574,8 @@ function simplecatch_footercode() {
 	$options = get_option( 'simplecatch_options' );
 	
 	if ( ( !$simplecatch_footercode = get_transient( 'simplecatch_footercode' ) ) && !empty( $options[ 'analytic_footer' ] ) ) {
-		echo '<!-- refreshing cache -->';
-			
+		echo '<!-- refreshing cache -->';	
+		
 		$simplecatch_footercode = $options[ 'analytic_footer' ];
 			
 	set_transient( 'simplecatch_footercode', $simplecatch_footercode, 86940 );

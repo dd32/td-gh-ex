@@ -114,7 +114,11 @@ Version 1.2.3
 * Added Custom CSS Styles option in Theme Options
 * Added Webmaster Tools and verification of Google, Yahoo and Bing
 Version 1.2.4
-Fixed the action hook for simplecatch_haedercode to simplecatch_footercode
+*Fixed the action hook for simplecatch_haedercode to simplecatch_footercode
+Version 1.2.5
+* Cleaning and fixing the theme_options.php
+* Cleaning and fixing the Simplecatch_functins.php
+* Added Social Icons for Delicious and Last.fm
 
 == Upcoming Plan ==
 * Add more option in theme option for feed redirect, excerpt length

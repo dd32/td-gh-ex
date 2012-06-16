@@ -317,6 +317,16 @@ function simplecatch_options_page() {
                                 </td>
                             </tr>
                             <tr>
+                                <th scope="row"><h4><?php _e( 'Delicious', 'simplecatch' ); ?></h4></th>
+                                <td><input type="text" size="45" name="simplecatch_options[social_delicious]" value="<?php if ( isset( $options[ 'social_delicious' ] ) ) echo esc_url( $options[ 'social_delicious' ] ); ?>" />
+                                </td>
+                            </tr>                           
+                            <tr>
+                                <th scope="row"><h4><?php _e( 'Last.fm', 'simplecatch' ); ?> </h4></th>
+                                <td><input type="text" size="45" name="simplecatch_options[social_lastfm]" value="<?php if ( isset( $options[ 'social_lastfm' ] ) ) echo esc_url( $options[ 'social_lastfm' ] ); ?>" />
+                                </td>
+                            </tr>
+                            <tr>
                                 <td></td><td><?php _e( 'Note: You can add your social links.', 'simplecatch' ); ?></td>
                             </tr>
                         </tbody>
@@ -351,19 +361,19 @@ function simplecatch_options_page() {
                     <table class="form-table">  
                     	<tbody>    
                             <tr>
-                                <th scope="row"><label><h4><?php _e( 'Google Site Verification ID', 'catchbox' ); ?></h4></label></th>
+                                <th scope="row"><label><h4><?php _e( 'Google Site Verification ID', 'simplecatch' ); ?></h4></label></th>
                                 <td><input type="text" size="45" name="simplecatch_options[google_verification]" value="<?php if( isset( $options[ 'google_verification' ] ) ) echo esc_attr( $options[ 'google_verification' ] ); ?>" />
                                 </td>
                             </tr>
                             
                             <tr> 
-                                <th scope="row"><label><h4><?php _e( 'Yahoo Site Verification ID', 'catchbox' ); ?></h4></label></th>
+                                <th scope="row"><label><h4><?php _e( 'Yahoo Site Verification ID', 'simplecatch' ); ?></h4></label></th>
                                 <td><input type="text" size="45" name="simplecatch_options[yahoo_verification]" value="<?php if ( isset( $options[ 'yahoo_verification' ] ) ) echo esc_attr( $options[ 'yahoo_verification'] ); ?>" />
                                 </td>
                             </tr>
                             
                             <tr>
-                                <th scope="row"><label><h4><?php _e( 'Bing Site Verification ID', 'catchbox' ); ?></h4></label></th>
+                                <th scope="row"><label><h4><?php _e( 'Bing Site Verification ID', 'simplecatch' ); ?></h4></label></th>
                                 <td><input type="text" size="45" name="simplecatch_options[bing_verification]" value="<?php if ( isset( $options[ 'bing_verification' ] ) ) echo esc_attr( $options[ 'bing_verification' ] ); ?>" />
                                 </td>
                             </tr>
@@ -555,6 +565,12 @@ function simplecatch_options_validation( $options ){
 	if( isset( $options[ 'social_rss' ] ) ) {
 		$options_validated[ 'social_rss' ] = esc_url_raw( $options[ 'social_rss' ] );
 	}
+	if( isset( $options[ 'social_delicious' ] ) ) {
+		$options_validated[ 'social_delicious' ] = esc_url_raw( $options[ 'social_delicious' ] );
+	}	
+	if( isset( $options[ 'social_lastfm' ] ) ) {
+		$options_validated[ 'social_lastfm' ] = esc_url_raw( $options[ 'social_lastfm' ] );
+	}	
 	
 	//Custom CSS Style Validation
 	if ( isset( $options['custom_css'] ) ) {
@@ -576,14 +592,7 @@ function simplecatch_options_validation( $options ){
 	}
 	if( isset( $options[ 'analytic_footer' ] ) ) {
 		$options_validated[ 'analytic_footer' ] = wp_kses_stripslashes( $options[ 'analytic_footer' ] );	
-	}
-			
-	// data validation for tracking code
-	if( isset( $options[ 'tracker_header' ] ) )
-		$options_validated[ 'tracker_header' ] = wp_kses_stripslashes( $options[ 'tracker_header' ] );
-	if( isset( $options[ 'tracker_footer' ] ) )
-		$options_validated[ 'tracker_footer' ] = wp_kses_stripslashes( $options[ 'tracker_footer' ] );
-		
+	}		
 	
 	//Clearing the theme option cache
 	if( function_exists( 'simplecatch_themeoption_invalidate_caches' ) ) simplecatch_themeoption_invalidate_caches();
