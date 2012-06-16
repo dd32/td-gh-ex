@@ -34,7 +34,10 @@
 
     ?></title>
     <link rel="profile" href="http://gmpg.org/xfn/11" />
-    <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+
+    <?php wp_enqueue_style('artblog-style', get_stylesheet_uri(), false);?>
+
+
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
     <?php
         /* We add some JavaScript to pages with the comment form
@@ -64,43 +67,49 @@
 
 
 
-    <?php
-        // Check if this is a post or page, if it has a thumbnail, and if it's a big one
-        if ( is_singular() && current_theme_supports( 'post-thumbnails' ) &&
-        has_post_thumbnail( $post->ID ) &&
-        ( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&
-        $image[1] >= HEADER_IMAGE_WIDTH ) :
-            // Houston, we have a new header image!
-            echo get_the_post_thumbnail( $post->ID );
-            elseif ( get_header_image() ) : ?>
+<?php
+    // Check if this is a post or page, if it has a thumbnail, and if it's a big one
+    if ( is_singular() && current_theme_supports( 'post-thumbnails' ) &&
+    has_post_thumbnail( $post->ID ) &&
+    ( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&
+    $image[1] >= HEADER_IMAGE_WIDTH ) :
+        // Houston, we have a new header image!
+        echo get_the_post_thumbnail( $post->ID );
+        elseif ( get_header_image() ) : ?>
 
-        <img  src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="" />
-        <?php endif; ?>
-
-
+    <img  src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="" />
+    <?php endif; ?>
 
 
+
+
+
+<div id="logo">
+<span class="site-name"><a href="<?php echo home_url('/'); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home"><?php bloginfo('name'); ?></a></span><br />
+<span class="site-description"><?php bloginfo('description'); ?></span>
+</div>
+
+
+<div id="rightMenu">
     <?php    
-        echo "<div id=\"rightMenu\">";
 
         wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) );
 
 
-        $artmenu=artist_menu();
-        if($artmenu==''){
-            echo  ' <div id="portfolie-menu"><ul class="menu">
-            <li class="groupHeading">2011 Music</li>
-            <li><a href="#">Go ahead (2011)</a></li>
-            <li><a href="#">2011 guitar</a></li>
-            <li class="groupHeading">Contact</li>
-            <li><a href="#">Contact</a></li>
-            <li class="groupHeading">Gallery</li>
-            <li><a href="#">galleri gammel</a></li>
+        echo '    </div>';
+
+        // A second sidebar for widgets, just because.
+        if ( is_active_sidebar( 'secondary-widget-area' ) ) : ?>
+
+        <div id="secondary" class="widget-area" role="complementary">
+            <ul class="xoxo">
+                <?php dynamic_sidebar( 'secondary-widget-area' ); ?>
             </ul>
-            </div></div>';
-        }else{
-            echo $artmenu;
-        }
+        </div><!-- #secondary .widget-area -->
+
+        <?php endif; 
+
+
     ?>
 
 

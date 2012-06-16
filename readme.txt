@@ -20,7 +20,6 @@ Italian
 
 
 - Page Templates
-one page template
+one 3 collumn page template
+one 2 collumn page template
 
-- Content types
-A special content type called portfolie. And a menu for that type.
