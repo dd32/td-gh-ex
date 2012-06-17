@@ -2,8 +2,8 @@
 # This file is distributed under the GNU General Public License 2.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: origami 1.0.1\n"
-"POT-Creation-Date: 2012-05-23T15:32:15+02:00\n"
+"Project-Id-Version: origami 1.0.2\n"
+"POT-Creation-Date: 2012-06-17T10:53:24+02:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -84,25 +84,10 @@ msgstr ""
 msgid "Hi! I'm Greg from SiteOrigin."
 msgstr ""
 
-msgid "I hope you enjoy my theme."
+msgid "I hope you enjoy my free WordPress theme."
 msgstr ""
 
-msgid "Feel free to %scontact me%s if you need any help."
-msgstr ""
-
-msgid "Remember to follow me on Twitter and Facebook for updates and new free themes."
-msgstr ""
-
-msgid "Theme Options"
-msgstr ""
-
-msgid "Install Simple Options"
-msgstr ""
-
-msgid "%s uses the Simple Options plugin to handle theme options."
-msgstr ""
-
-msgid "It's a free plugin that only takes a few seconds to install."
+msgid "Please follow me on Twitter and Facebook for updates."
 msgstr ""
 
 msgid "General"
@@ -153,6 +138,18 @@ msgid "Use Content Columns"
 msgstr ""
 
 msgid "use"
+msgstr ""
+
+msgid "Theme Options"
+msgstr ""
+
+msgid "Install Simple Options"
+msgstr ""
+
+msgid "%s uses the Simple Options plugin to handle theme options."
+msgstr ""
+
+msgid "It's a free plugin that only takes a few seconds to install."
 msgstr ""
 
 msgid "Footer"

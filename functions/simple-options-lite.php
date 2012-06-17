@@ -15,7 +15,7 @@ if(!function_exists('simple_options_get')) :
 		do_action('simple_options_init');
 	}
 	add_action('init', 'simple_options_init');
-	
+
 	/**
 	 * Add an admin page for Simple options installation info
 	 * @action admin_menu
@@ -27,12 +27,12 @@ if(!function_exists('simple_options_get')) :
 			__('Theme Options', 'siteorigin'),
 			__('Theme Options', 'siteorigin'),
 			'edit_theme_options',
-			'simple-options-install',
+			'simple-options',
 			'_simple_options_install_info_render'
 		);
 	}
 	add_action('admin_menu', 'simple_options_install_info');
-	
+
 	/**
 	 * Render the page that displays Simple Options installation info.
 	 */
@@ -47,32 +47,32 @@ if(!function_exists('simple_options_get')) :
 			'width' => 640,
 			'height' => 773
 		), $url);
-		
+
 		$info = get_theme_data(get_template_directory().'/style.css');
-		
+
 		?>
-		<div class="wrap">
-			<div id="icon-themes" class="icon32"><br></div>
-			<h2><?php _e('Install Simple Options', 'siteorigin') ?></h2>
-			<p>
-				<?php printf(__('%s uses the Simple Options plugin to handle theme options.', 'siteorigin'), $info['Name']) ?>
-				<?php _e("It's a free plugin that only takes a few seconds to install.", 'siteorigin') ?>
-			</p>
-			<br/>
-			<p>
-				<a href="<?php print $url ?>" class="thickbox button-primary"><?php _e('Install Simple Options', 'siteorigin') ?></a>
-			</p>
-		</div>
-		<?php
+	<div class="wrap">
+		<div id="icon-themes" class="icon32"><br></div>
+		<h2><?php _e('Install Simple Options', 'siteorigin') ?></h2>
+		<p>
+			<?php printf(__('%s uses the Simple Options plugin to handle theme options.', 'siteorigin'), $info['Name']) ?>
+			<?php _e("It's a free plugin that only takes a few seconds to install.", 'siteorigin') ?>
+		</p>
+		<br/>
+		<p>
+			<a href="<?php print $url ?>" class="thickbox button-primary"><?php _e('Install Simple Options', 'siteorigin') ?></a>
+		</p>
+	</div>
+	<?php
 	}
-	
+
 	/**
 	 * Enqueue scripts for the Simple Options install page.
-	 * 
+	 *
 	 * @param $suffix
 	 */
 	function _simple_options_admin_enqueue($suffix){
-		if($suffix != 'appearance_page_simple-options-install') return;
+		if($suffix != 'appearance_page_simple-options') return;
 		wp_enqueue_script('plugin-install');
 		add_thickbox();
 	}
@@ -87,7 +87,7 @@ if(!function_exists('simple_options_get')) :
 	function simple_options_add_page($page, $settings){
 		// We'll just ignore this
 	}
-	
+
 	/**
 	 * Add a section title before $page, $field
 	 * @param $page
@@ -124,11 +124,11 @@ if(!function_exists('simple_options_get')) :
 		if(is_null($simple_options_fields)){
 			$simple_options_values = get_option('simple-options-'.basename(get_template_directory()), array());
 		}
-		
+
 		if(!isset($simple_options_fields[$page])) return new WP_Error('', 'Unknown options page');
 		if(!isset($simple_options_fields[$page][$field])) return new WP_Error('', 'Unknown field');
 		if(!isset($simple_options_fields[$page][$field]['default'])) return false;
-		
+
 		return isset($simple_options_values[$page][$field]) ? $simple_options_values[$page][$field] : $simple_options_fields[$page][$field]['default'];
 	}
 
