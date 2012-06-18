@@ -57,10 +57,8 @@ if ( ! function_exists( 'catchbox_setup' ) ):
  *
  * @uses load_theme_textdomain() For translation/localization support.
  * @uses add_editor_style() To style the visual editor.
- * @uses add_theme_support() To add support for post thumbnails, automatic feed links, and Post Formats.
+ * @uses add_theme_support() To add support for post thumbnails, automatic feed links,custom headers and backgrounds.
  * @uses register_nav_menus() To add support for navigation menus.
- * @uses add_custom_background() To add support for a custom background.
- * @uses add_custom_image_header() To add support for a custom header.
  * @uses register_default_headers() To register the default custom header images provided with the theme.
  * @uses set_post_thumbnail_size() To set a custom post thumbnail size.
  *
@@ -112,12 +110,7 @@ function catchbox_setup() {
 	if ( function_exists( 'get_custom_header') ) {
 		add_theme_support( 'custom-background' );
 	} else {
-		// Backward Compatibility
-	
-		/**
-		 * This feature allows users to use custom background for a theme.
-		 * @see http://codex.wordpress.org/Function_Reference/add_custom_background
-		 */	
+		// Backward Compatibility for WordPress Version 3.3
 		add_custom_background();
 	}
 
@@ -149,13 +142,28 @@ function catchbox_setup() {
 	add_image_size( 'featured-header', HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true ); // Used for logo (header) images
 	add_image_size( 'featured-slider', 560, 270, true ); // Used for featured posts if a large-feature doesn't exist
 
-	// Turn off random header image rotation by default.
-	add_theme_support( 'custom-header', array( 'random-default' => false ) );
-	
 
-	// Add a way for the custom header to be styled in the admin panel that controls
-	// custom headers. See catchbox_admin_header_style(), below.
-	add_custom_image_header( 'catchbox_header_style', 'catchbox_admin_header_style', 'catchbox_admin_header_image' );
+	// Add support for custom backgrounds	
+	// WordPress 3.4+
+	if ( function_exists( 'get_custom_header') ) {
+		add_theme_support( 'custom-header', array( 
+			// Header image random rotation default
+			'random-default'			=> false,
+			// Template header style callback
+			'wp-head-callback'			=> catchbox_header_style,
+			// Admin header style callback
+			'admin-head-callback'		=> catchbox_admin_header_style,
+			// Admin preview style callback
+			'admin-preview-callback'	=> catchbox_admin_header_image
+		) );
+	} else {
+		// Backward Compatibility for WordPress Version 3.3
+
+		// Add a way for the custom header to be styled in the admin panel that controls
+		// custom headers. See catchbox_admin_header_style(), below.
+		
+		add_custom_image_header( 'catchbox_header_style', 'catchbox_admin_header_style', 'catchbox_admin_header_image' );
+	}
 
 	// ... and thus ends the changeable header business.
 
@@ -230,8 +238,6 @@ if ( ! function_exists( 'catchbox_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
- * Referenced via add_custom_image_header() in catchbox_setup().
- *
  * @since Catch Box 1.0
  */
 function catchbox_admin_header_style() {
@@ -279,8 +285,6 @@ endif; // catchbox_admin_header_style
 if ( ! function_exists( 'catchbox_admin_header_image' ) ) :
 /**
  * Custom header image markup displayed on the Appearance > Header admin panel.
- *
- * Referenced via add_custom_image_header() in catchbox_setup().
  *
  * @since Catch Box 1.0
  */

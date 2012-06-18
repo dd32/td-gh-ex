@@ -30,7 +30,7 @@ Version 1.0.2
 * Removed extra register_nav_menu( 'primary', __( 'Primary Menu', 'catchbox' ) );
 * Removed Extra add_custom_background();
 
-Version 1.0;.3
+Version 1.0.3
 * Fixed DEBUG ERROR 
   ** theme-options.php Undefined index: feed_url on line 410
 * Fixed UNIT TEST
@@ -41,3 +41,7 @@ Version 1.0;.3
   ** Fixed css for Image Test: Wide Image, resize in editor
   ** Fixed 404 Error Page and search box in it
 * Added CSS to support plugin WP-PageNavi and WP Page Numbers Plugins
+
+Version 1.0.4
+* Fixed footer Navigation widget
+* Added Style for Single Page Navigation

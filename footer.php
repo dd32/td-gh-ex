@@ -28,9 +28,11 @@
 			<div id="site-generator" class="clearfix">
             	<?php do_action( 'catchbox_startgenerator_open' ); ?>
             	<div class="copyright">
-                	<?php esc_attr_e('&copy;', 'catchbox'); ?> <?php _e(date('Y')); ?><a href="<?php echo home_url('/') ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>">
-                		<?php bloginfo('name'); ?>
+                	<?php esc_attr_e('Copyright &copy;', 'catchbox'); ?> <?php _e(date('Y')); ?>
+                    <a href="<?php echo home_url('/') ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>">
+						<?php bloginfo('name'); ?>
             		</a>
+                    <?php esc_attr_e('. All Rights Reserved.', 'catchbox'); ?>
                 </div>
                 <div class="powered">
                 	<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'catchbox' ) ); ?>" title="<?php esc_attr_e( 'Powered by WordPress', 'catchbox' ); ?>" rel="generator"><?php printf( __( 'Powered by %s', 'catchbox' ), 'WordPress' ); ?></a>

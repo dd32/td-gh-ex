@@ -415,9 +415,10 @@ function catchbox_settings_field_custom_css() {
 	?>
      <textarea id="custom-css" cols="90" rows="12" name="catchbox_theme_options[custom_css]">
      
-     <?php if (!empty($options['custom_css'])) esc_attr_e($options['custom_css']); ?>
+     <?php if (!empty($options['custom_css'])) esc_attr($options['custom_css']); ?>
      
      </textarea>
+
 	<?php
 }
 

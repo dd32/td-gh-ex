@@ -20,7 +20,13 @@ global $feature_class;
 
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
-		<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'catchbox' ) . '</span>', 'after' => '</div>' ) ); ?>
+		<?php wp_link_pages( array( 
+			'before'		=> '<div class="page-link"><span class="pages">' . __( 'Pages:', 'catchbox' ) . '</span>',
+			'after'			=> '</div>',
+			'link_before' 	=> '<span>',
+			'link_after'   	=> '</span>',
+		) ); 
+		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-meta">
