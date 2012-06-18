@@ -150,11 +150,11 @@ function catchbox_setup() {
 			// Header image random rotation default
 			'random-default'			=> false,
 			// Template header style callback
-			'wp-head-callback'			=> catchbox_header_style,
+			'wp-head-callback'			=> 'catchbox_header_style',
 			// Admin header style callback
-			'admin-head-callback'		=> catchbox_admin_header_style,
+			'admin-head-callback'		=> 'catchbox_admin_header_style',
 			// Admin preview style callback
-			'admin-preview-callback'	=> catchbox_admin_header_image
+			'admin-preview-callback'	=> 'catchbox_admin_header_image',
 		) );
 	} else {
 		// Backward Compatibility for WordPress Version 3.3
@@ -199,16 +199,18 @@ if ( ! function_exists( 'catchbox_header_style' ) ) :
  */
 function catchbox_header_style() {
 
-	// If no custom options for text are set, let's bail
-	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
-	if ( HEADER_TEXTCOLOR == get_header_textcolor() )
+	$text_color = get_header_textcolor();
+	
+	// If no custom options for text are set, let's bail.
+	if ( $text_color == HEADER_TEXTCOLOR )
 		return;
+
 	// If we get this far, we have custom styles. Let's do this.
 	?>
 	<style type="text/css">
 	<?php
 		// Has the text been hidden?
-		if ( 'blank' == get_header_textcolor() ) :
+		if ( 'blank' == $text_color ) :
 	?>
 		#site-title,
 		#site-description {
@@ -291,16 +293,18 @@ if ( ! function_exists( 'catchbox_admin_header_image' ) ) :
 function catchbox_admin_header_image() { ?>
 	<div id="headimg">
 		<?php
-		if ( 'blank' == get_theme_mod( 'header_textcolor', HEADER_TEXTCOLOR ) || '' == get_theme_mod( 'header_textcolor', HEADER_TEXTCOLOR ) )
-			$style = ' style="display:none;"';
+		$color = get_header_textcolor();
+		$image = get_header_image();
+		if ( $color && $color != 'blank' )
+			$style = ' style="color:#' . $color . '"';
 		else
-			$style = ' style="color:#' . get_theme_mod( 'header_textcolor', HEADER_TEXTCOLOR ) . ';"';
+			$style = ' style="display:none"';
 		?>
+		
 		<h1><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 		<div id="desc"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></div>
-		<?php $header_image = get_header_image();
-		if ( ! empty( $header_image ) ) : ?>
-			<img src="<?php echo esc_url( $header_image ); ?>" alt="" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" />
+		<?php if ( $image ) : ?>
+			<img src="<?php echo esc_url( $image ); ?>" alt="" />
 		<?php endif; ?>
 	</div>
 <?php }

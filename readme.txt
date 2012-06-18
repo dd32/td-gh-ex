@@ -45,3 +45,6 @@ Version 1.0.3
 Version 1.0.4
 * Fixed footer Navigation widget
 * Added Style for Single Page Navigation
+
+Version 1.0.4
+* Fixed 'wp-head-callback', 'admin-head-callback', 'admin-preview-callback'
