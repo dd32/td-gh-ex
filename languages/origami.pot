@@ -2,8 +2,8 @@
 # This file is distributed under the GNU General Public License 2.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: origami 1.0.2\n"
-"POT-Creation-Date: 2012-06-17T10:53:24+02:00\n"
+"Project-Id-Version: origami 1.0.3\n"
+"POT-Creation-Date: 2012-06-20T19:27:17+02:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -73,12 +73,6 @@ msgid "Comments are Disabled"
 msgstr ""
 
 msgid "dismiss"
-msgstr ""
-
-msgid "Create tiled backgrounds with SiteOrigin's free %s"
-msgstr ""
-
-msgid "background image composer"
 msgstr ""
 
 msgid "Hi! I'm Greg from SiteOrigin."
@@ -162,6 +156,18 @@ msgid "Powered By %s"
 msgstr ""
 
 msgid "Theme By %s"
+msgstr ""
+
+msgid "Theme Help"
+msgstr ""
+
+msgid "Origami Help"
+msgstr ""
+
+msgid "Origami's full, PDF documentation is available for free download from SiteOrigin."
+msgstr ""
+
+msgid "Download"
 msgstr ""
 
 msgid "Newer Entries"
