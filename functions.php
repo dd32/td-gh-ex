@@ -45,6 +45,16 @@ function mantra_header() {
     do_action('mantra_header');
 }
 
+add_action('wp_head', 'mantra_mobile_meta');
+
+function mantra_mobile_meta() {
+global $mantra_options;
+foreach ($mantra_options as $key => $value) {
+    							 ${"$key"} = $value ;
+									}
+if($mantra_mobile=="Enable") echo '<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">';
+}
+
 
 // Loading mantra css style
 
@@ -80,7 +90,7 @@ foreach ($mantra_options as $key => $value) {
 		add_action('wp_print_styles', 'mantra_style',1 );
 		add_action('wp_head', 'mantra_custom_styles' ,8);
 		add_action('wp_head', 'mantra_customcss',9);
-		add_action('wp_head', 'mantra_google_styles');
+		add_action('wp_enqueue_script', 'mantra_google_styles');
 		
 
  $totalSize = $mantra_sidebar + $mantra_sidewidth+50;
@@ -196,32 +206,37 @@ $locale_file = get_template_directory() . "/languages/$locale.php";
 	) );
 
 	// This theme allows users to set a custom background
-	add_custom_background();
+	add_theme_support( 'custom-background' );
 
-	// Your changeable header business starts here
-	define( 'HEADER_TEXTCOLOR', '' );
-	// No CSS, just IMG call. The %s is a placeholder for the theme template directory URI.
-	define( 'HEADER_IMAGE', '' );
+// Backwards compatibility with pre 3.4 versions
 
-	// The height and width of your custom header. You can hook into the theme's own filters to change these values.
-	// Add a filter to mantra_header_image_width and mantra_header_image_height to change these values.
+	if ( ! function_exists( 'get_custom_header' ) ) {
+	global $mantra_hheight;
+	$mantra_hheight=(int)$mantra_hheight;
+	global $totalSize;
+		define( 'HEADER_TEXTCOLOR', '' );
+		define( 'HEADER_IMAGE', '' );
+		define( 'HEADER_IMAGE_WIDTH', apply_filters( 'mantra_header_image_width', $totalSize ) );
+		define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'mantra_header_image_height', $mantra_hheight) );
+		add_custom_image_header( '', 'mantra_admin_header_style' );
+		add_custom_background();
+	}
+
+
+	// We'll be using post thumbnails for custom header images on posts and pages.
+	// We want them to be the same size as the header.
+	// Larger images will be auto-cropped to fit, smaller ones will be ignored. See header.php.
 	global $mantra_hheight;
 	$mantra_hheight=(int)$mantra_hheight;
 	global $totalSize;
 	define( 'HEADER_IMAGE_WIDTH', apply_filters( 'mantra_header_image_width', $totalSize ) );
 	define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'mantra_header_image_height', $mantra_hheight) );
-
-	// We'll be using post thumbnails for custom header images on posts and pages.
-	// We want them to be the same size as the header.
-	// Larger images will be auto-cropped to fit, smaller ones will be ignored. See header.php.
 	set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );
-
-	// Don't support text inside the header image.
-	define( 'NO_HEADER_TEXT', true );
 
 	// Add a way for the custom header to be styled in the admin panel that controls
 	// custom headers. See mantra_admin_header_style(), below.
-	add_custom_image_header( '', 'mantra_admin_header_style' );
+	define( 'NO_HEADER_TEXT', true );
+	add_theme_support( 'custom-header' );
 
 	// ... and thus ends the changeable header business.
 
@@ -755,8 +770,9 @@ if (is_page() && !is_front_page() || is_single() || is_category() || is_archive(
         }
  
         if (is_single()) {
-            $category = get_the_category();
+       if(has_category())    { $category = get_the_category();
             echo '<a href="'.get_category_link($category[0]->cat_ID).'">'.$category[0]->cat_name.' &raquo; </a>';
+								}
         }
  
         if (is_category()) {

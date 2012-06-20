@@ -23,6 +23,11 @@ $mantra_defaults = array(
 "mantra_fpslidernav" => "Bullets",
 "mantra_fpsliderarrows" => "Visible on Hover",
 
+"mantra_slideType" => "Custom Slides",
+"mantra_slideCateg" => "",
+"mantra_slideNumber" => "5",
+"mantra_slideSpecific" => "",
+
 "mantra_sliderimg1" => get_template_directory_uri()."/images/slider/mantra-slide1.jpg",
 "mantra_slidertitle1" => "This is your caption's title",
 "mantra_slidertext1" => "And this is the text that could accompany it. It is all optional so if you delete it in the Mantra Settings there will be no more caption with the black background.",

@@ -24,7 +24,6 @@ $mantra_options= mantra_get_theme_options();
 // The settings
 function mantra_init_fn(){
 	wp_register_style( 'mantra',get_template_directory_uri() . '/admin/mantra-admin.css' );
-	wp_register_style( 'mantra2',get_template_directory_uri() . '/js/farbtastic/farbtastic.css' );
 	wp_register_style( 'jqueryui',get_template_directory_uri() . '/js/jqueryui/css/ui-lightness/jquery-ui-1.8.16.custom.css' );
 
 	register_setting('ma_options', 'ma_options', 'ma_options_validate' );
@@ -500,7 +499,36 @@ function setting_frontslider_fn() {
 
 <script>
 var $categoryName;
+
 jQuery(document).ready(function(){
+
+
+
+$sliderNr=jQuery('#mantra_slideType').val();
+
+if ($sliderNr=="Latest Posts from Category" || $sliderNr=="Random Posts from Category" )
+jQuery('#slider-category').show();
+else jQuery('#slider-category').hide();
+
+
+if ($sliderNr=="Latest Posts" || $sliderNr =="Random Posts" || $sliderNr =="Sticky Posts" ||  $sliderNr=="Latest Posts from Category" || $sliderNr=="Random Posts from Category" )
+jQuery('#slider-post-number').show();
+else jQuery('#slider-post-number').hide();
+
+
+jQuery('#mantra_slideType').change(function(){
+$sliderNr=jQuery('#mantra_slideType').val();
+
+if ($sliderNr=="Latest Posts from Category" || $sliderNr=="Random Posts from Category" )
+jQuery('#slider-category').show();
+else jQuery('#slider-category').hide();
+
+if ($sliderNr=="Latest Posts" || $sliderNr =="Random Posts" || $sliderNr =="Sticky Posts" || $sliderNr=="Latest Posts from Category" || $sliderNr=="Random Posts from Category" )
+jQuery('#slider-post-number').show();
+else jQuery('#slider-post-number').hide();
+     });
+
+
      jQuery('#categ-dropdown').change(function(){
 	$categoryName=this.options[this.selectedIndex].value.replace(/\/category\/archives\//i,"");
           doAjaxRequest();
@@ -591,7 +619,71 @@ jQuery(this).next().toggle("fast");
 });
 
 </script>
+<?php
+$items = array("Custom Slides", "Latest Posts", "Random Posts", "Sticky Posts", "Latest Posts from Category" , "Random Posts from Category", "Specific Posts");
+	$itemsare = array( __("Custom Slides","mantra"), __("Latest Posts","mantra"), __("Random Posts","mantra"),__("Sticky Posts","mantra"), __("Latest Posts from Category","mantra"), __("Random Posts from Category","mantra"), __("Specific Posts","mantra"));
+	echo "<p><strong> Select the content you want to load in your slides: </strong> ";
+	echo "<select id='mantra_slideType' name='ma_options[mantra_slideType]'>";
+foreach($items as $id=>$item) {
+	echo "<option value='$item'";
+	selected($mantra_options['mantra_slideType'],$item);
+	echo ">$itemsare[$id]</option>";
+}
+	echo "</select></p>";
+	
+?>
 
+
+
+<div id="sliderLatestPosts" class="slideDivs">
+<span><?php _e('Latest posts will be loaded into the slider.','mantra'); ?> </span> 
+</div>
+
+<div id="sliderRandomPosts" class="slideDivs">
+<span><?php _e('Random  posts will be loaded into the slider.','mantra'); ?> </span> 
+</div>
+
+<div id="sliderLatestCateg" class="slideDivs">
+<span><?php _e('Latest posts from the category you choose will be loaded in the slider.','mantra'); ?> </span>
+
+</div>
+
+<div id="sliderRandomCateg" class="slideDivs">
+<span><?php _e('Random posts from the category you choose will be loaded into the slider.','mantra'); ?> </span>
+</div>
+
+<div id="sliderStickyPosts" class="slideDivs">
+<span><?php _e('Only sticky posts will be loaded into the slider.','mantra'); ?> </span>
+</div>
+
+<div id="sliderSpecificPosts" class="slideDivs">
+<span><?php _e('List the post IDs you want to display (separated by a comma): ','mantra'); ?> </span> 
+ <input id='mantra_slideSpecific' name='ma_options[mantra_slideSpecific]' size='44' type='text' value='<?php echo esc_attr( $mantra_options['mantra_slideSpecific'] ) ?>'  /> 
+</div>
+
+<div id="slider-category">
+<span><?php _e('<br> Choose the cateogry: ','mantra'); ?> </span>
+<select id="mantra_slideCateg" name='ma_options[mantra_slideCateg]' > 
+ <option value=""><?php echo esc_attr(__('Select Category','mantra')); ?></option> 
+ <?php  echo $mantra_options["mantra_slideCateg"];
+  $categories=  get_categories(); 
+  foreach ($categories as $category) {
+  	$option = '<option value="'.$category->category_nicename.'" ';
+	$option .= selected($mantra_options["mantra_slideCateg"], $category->category_nicename, false).' >';
+	$option .= $category->cat_name;
+	$option .= ' ('.$category->category_count.')';
+	$option .= '</option>';
+	echo $option;
+  }
+ ?>
+</select>
+</div>
+
+<span id="slider-post-number"><?php _e('Number of posts to show:','mantra'); ?>
+ <input id='mantra_slideNumber' name='ma_options[mantra_slideNumber]' size='3' type='text' value='<?php echo esc_attr( $mantra_options['mantra_slideNumber'] ) ?>'  /> 
+ </span>
+
+<div id="sliderCustomSlides" class="slideDivs">
 <div class="slidebox"> 
 <h4 class="slidetitle" ><?php _e("Slide 1","mantra");?> </h4>
 <div class="slidercontent">
@@ -667,9 +759,9 @@ jQuery(this).next().toggle("fast");
 </div>
 </div>
 <?php	echo "<small>".__("Your slides' content. Only the image is required, all other fields are optional. Only the slides with an image selected will become acitve and visible in the live slider.","mantra")."</small>"; 
-
-
-?><?php
+?>
+</div> <!-- customSlides -->
+<?php
 }
 
 //CHECKBOX - Name: ma_options[frontcolumns]
@@ -678,7 +770,7 @@ function setting_frontcolumns_fn() {
 
 
 echo "<div class='slmini'><b>".__("Number of columns:","mantra")."</b> ";
-	$items = array ("0" , "2" , "3" , "4");
+	$items = array ("0" ,"1", "2" , "3" , "4");
 	echo "<select id='mantra_nrcolumns'  name='ma_options[mantra_nrcolumns]'>";
 foreach($items as $item) {
 	echo "<option value='$item'";
@@ -760,7 +852,6 @@ echo "<div class='slmini'><b>".__("Image Height:","mantra")."</b> ";
 }
 
 
-
 //CHECKBOX - Name: ma_options[fronttext]
 function setting_fronttext_fn() {
 	global $mantra_options;
@@ -799,11 +890,11 @@ echo "<br /><div class='slidebox'><h4 class='slidetitle'>".__("Hide areas","mant
 
 		echo " <label id='$items[0]' for='$items[0]$items[0]' class='hideareas $checkedClass0'><input  ";
 		 checked($mantra_options['mantra_fronthideheader'],'1');
-	echo "value='1' id='$items[0]$items[0]'  name='ma_options[mantra_fronthideheader]' type='checkbox' />".__("Hide the header area (image or background color).","mantra")." </label>";
+	echo "value='1' id='$items[0]$items[0]'  name='ma_options[mantra_fronthideheader]' type='checkbox' /> ".__("Hide the header area (image or background color).","mantra")." </label>";
 
 		echo " <label id='$items[1]' for='$items[1]$items[1]' class='hideareas $checkedClass1'><input  ";
 		 checked($mantra_options['mantra_fronthidemenu'],'1');
-	echo "value='1' id='$items[1]$items[1]'  name='ma_options[mantra_fronthidemenu]' type='checkbox' />".__("Hide the main menu (the top navigation tabs).","mantra")." </label>";
+	echo "value='1' id='$items[1]$items[1]'  name='ma_options[mantra_fronthidemenu]' type='checkbox' /> ".__("Hide the main menu (the top navigation tabs).","mantra")." </label>";
 
 		echo " <label id='$items[2]' for='$items[2]$items[2]' class='hideareas $checkedClass2'><input  ";
 		 checked($mantra_options['mantra_fronthidewidget'],'1');
@@ -811,7 +902,7 @@ echo "<br /><div class='slidebox'><h4 class='slidetitle'>".__("Hide areas","mant
 
 		echo " <label id='$items[3]' for='$items[3]$items[3]' class='hideareas $checkedClass3'><input  ";
 		 checked($mantra_options['mantra_fronthidefooter'],'1');
-	echo "value='1' id='$items[3]$items[3]'  name='ma_options[mantra_fronthidefooter]' type='checkbox' />".__("Hide the footer (copyright area).","mantra")." </label>";
+	echo "value='1' id='$items[3]$items[3]'  name='ma_options[mantra_fronthidefooter]' type='checkbox' /> ".__("Hide the footer (copyright area).","mantra")." </label>";
 
 	echo " <label id='$items[4]' for='$items[4]$items[4]' class='hideareas $checkedClass4'><input  ";
 		 checked($mantra_options['mantra_fronthideback'],'1');
@@ -2227,6 +2318,79 @@ else {jQuery('#relativedim').show("normal");jQuery('#absolutedim').hide("normal"
 });
 if(jQuery('#mantra_dimselect option:selected').val()=="Absolute") {jQuery('#relativedim').hide("normal");jQuery('#absolutedim').show("normal");}
 else {jQuery('#relativedim').show("normal");jQuery('#absolutedim').hide("normal");}
+
+// Hide or show slider settings
+
+jQuery('#mantra_slideType').change(function() {
+jQuery('.slideDivs').hide("normal");
+	switch (jQuery('#mantra_slideType option:selected').val()) {
+
+		case "Custom Slides" :
+ 		jQuery('#sliderCustomSlides').show("normal");
+		break;
+
+		case "Latest Posts" :
+ 		jQuery('#sliderLatestPosts').show("normal");
+		break;
+
+		case "Random Posts" :
+ 		jQuery('#sliderRandomPosts').show("normal");
+		break;
+
+		case "Sticky Posts" :
+ 		jQuery('#sliderStickyPosts').show("normal");
+		break;
+
+		case "Latest Posts from Category" :
+ 		jQuery('#sliderLatestCateg').show("normal");
+		break;
+
+		case "Random Posts from Category" :
+ 		jQuery('#sliderRandomCateg').show("normal");
+		break;
+
+		case "Specific Posts" :
+ 		jQuery('#sliderSpecificPosts').show("normal");
+		break;
+
+}
+
+});
+
+jQuery('.slideDivs').hide("normal");
+	switch (jQuery('#mantra_slideType option:selected').val()) {
+
+		case "Custom Slides" :
+ 		jQuery('#sliderCustomSlides').show("normal");
+		break;
+
+		case "Latest Posts" :
+ 		jQuery('#sliderLatestPosts').show("normal");
+		break;
+
+		case "Random Posts" :
+ 		jQuery('#sliderRandomPosts').show("normal");
+		break;
+
+		case "Sticky Posts" :
+ 		jQuery('#sliderStickyPosts').show("normal");
+		break;
+
+		case "Latest Posts from Category" :
+ 		jQuery('#sliderLatestCateg').show("normal");
+		break;
+
+		case "Random Posts from Category" :
+ 		jQuery('#sliderRandomCateg').show("normal");
+		break;
+
+		case "Specific Posts" :
+ 		jQuery('#sliderSpecificPosts').show("normal");
+		break;
+
+
+};
+
 
 
 // Color selector enabler

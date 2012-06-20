@@ -175,6 +175,6 @@ $mantra_options= mantra_get_theme_options();
 foreach ($mantra_options as $key => $value) {
      ${"$key"} = esc_attr($value) ; }
 
-if ($mantra_customcss != "") { echo '<style>'.htmlspecialchars_decode($mantra_customcss).'</style>';}
+if ($mantra_customcss != "") { echo '<style>'.htmlspecialchars_decode($mantra_customcss, ENT_QUOTES).'</style>';}
 							}
 ?>

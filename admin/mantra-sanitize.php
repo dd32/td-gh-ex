@@ -69,7 +69,8 @@ global $mantra_defaults;
 	$input['mantra_googlefontside2'] = $mantra_googlefontside2;
 	$input['mantra_googlefontsubheader2'] = $mantra_googlefontsubheader2;
 
-
+	$input['mantra_slideNumber'] =  intval(wp_kses_data($input['mantra_slideNumber']));
+	$input['mantra_slideSpecific'] = wp_kses_data($input['mantra_slideSpecific']);
 
 	$input['mantra_fpsliderwidth'] =  intval(wp_kses_data($input['mantra_fpsliderwidth']));
 	$input['mantra_fpsliderheight'] = intval(wp_kses_data($input['mantra_fpsliderheight']));
