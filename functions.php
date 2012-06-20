@@ -44,7 +44,7 @@ if ( is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" ) {
 function mantra_header() {
     do_action('mantra_header');
 }
-
+// Adding the viewport meta if the mobile view has been enabled
 add_action('wp_head', 'mantra_mobile_meta');
 
 function mantra_mobile_meta() {
@@ -63,12 +63,16 @@ global $mantra_options;
 foreach ($mantra_options as $key => $value) {
     							 ${"$key"} = $value ;
 									}
+// Loading the style.css
 	wp_register_style( 'mantras', get_stylesheet_uri() );
 	wp_enqueue_style( 'mantras');
+// Loading the style-mobile.css if the mobile view is enabled
 if($mantra_mobile=="Enable") {	wp_register_style( 'mantra-mobile', get_template_directory_uri() . '/style-mobile.css' );
 	wp_enqueue_style( 'mantra-mobile');}
 }
 
+
+// Loading google font styles
 function mantra_google_styles() {
 global $mantra_options;
 foreach ($mantra_options as $key => $value) {
@@ -103,15 +107,16 @@ foreach ($mantra_options as $key => $value) {
     							 ${"$key"} = $value ;
 									}
 
-
+// If frontend - load the js for the menu and the social icons animations
 	if ( !is_admin() ) {
 		wp_register_script('menu',get_template_directory_uri() . '/js/menu.js', array('jquery') );
 		wp_enqueue_script('menu');
+		// If the back to top button is enabled - load it's js
 			if($mantra_backtop =="Enable") {
 							wp_register_script('top',get_template_directory_uri() . '/js/top.js', array('jquery'));
 							wp_enqueue_script('top');}
-  									
-		if($mantra_frontpage =="Enable") {
+  		// If mantra from page is enabled and the current page is home page - load the nivo slider js							
+		if($mantra_frontpage =="Enable" && is_home()) {
 							wp_register_script('nivoSlider',get_template_directory_uri() . '/js/nivo-slider.js', array('jquery'));
 							wp_enqueue_script('nivoSlider');}
   									}
@@ -208,21 +213,6 @@ $locale_file = get_template_directory() . "/languages/$locale.php";
 	// This theme allows users to set a custom background
 	add_theme_support( 'custom-background' );
 
-// Backwards compatibility with pre 3.4 versions
-
-	if ( ! function_exists( 'get_custom_header' ) ) {
-	global $mantra_hheight;
-	$mantra_hheight=(int)$mantra_hheight;
-	global $totalSize;
-		define( 'HEADER_TEXTCOLOR', '' );
-		define( 'HEADER_IMAGE', '' );
-		define( 'HEADER_IMAGE_WIDTH', apply_filters( 'mantra_header_image_width', $totalSize ) );
-		define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'mantra_header_image_height', $mantra_hheight) );
-		add_custom_image_header( '', 'mantra_admin_header_style' );
-		add_custom_background();
-	}
-
-
 	// We'll be using post thumbnails for custom header images on posts and pages.
 	// We want them to be the same size as the header.
 	// Larger images will be auto-cropped to fit, smaller ones will be ignored. See header.php.
@@ -239,6 +229,19 @@ $locale_file = get_template_directory() . "/languages/$locale.php";
 	add_theme_support( 'custom-header' );
 
 	// ... and thus ends the changeable header business.
+
+
+// Backwards compatibility with pre 3.4 versions for custom background and header 
+
+	if ( ! function_exists( 'get_custom_header' ) ) {
+		define( 'HEADER_TEXTCOLOR', '' );
+		define( 'HEADER_IMAGE', '' );
+		add_custom_image_header( '', 'mantra_admin_header_style' );
+		add_custom_background();
+	}
+
+
+
 
 	// Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI.
 	register_default_headers( array(
@@ -352,10 +355,14 @@ function mantra_custom_excerpt_more( $output ) {
 	}
 	return $output;
 }
+
 add_filter( 'get_the_excerpt', 'mantra_custom_excerpt_more' );
 
-
-
+/**
+ * Allows post excerpts to contain HTML tags
+ * @since mantra 1.8.7
+ * @return string Excerpt with most HTML tags intact
+ */
 
 function mantra_trim_excerpt($text) {
 global $mantra_excerptwords;
@@ -372,7 +379,7 @@ if ( '' == $text ) {
     $text = apply_filters('the_content', $text);
     $text = str_replace(']]>', ']]&gt;', $text);
  
-    $allowed_tags = '<a>,<img>,<b>,<strong>,<ul>,<li>,<i>,<h1>,<h2>,<h3>,<h4>,<h5>,<h6>,<pre>,<code>,<em>,<u>';
+    $allowed_tags = '<a>,<img>,<b>,<strong>,<ul>,<li>,<i>,<h1>,<h2>,<h3>,<h4>,<h5>,<h6>,<pre>,<code>,<em>,<u>,<br>,<p>';
     $text = strip_tags($text, $allowed_tags);
  
     $words = preg_split("/[\n\r\t ]+/", $text, $mantra_excerptwords + 1, PREG_SPLIT_NO_EMPTY);
@@ -390,7 +397,6 @@ if ($mantra_excerpttags=='Enable') {
 remove_filter('get_the_excerpt', 'wp_trim_excerpt');
 add_filter('get_the_excerpt', 'mantra_trim_excerpt');
 }
-
 
 
 /**
@@ -610,11 +616,6 @@ printf ( comments_popup_link( __( 'Leave a comment', 'mantra' ), __( '<b>1</b> C
 }
 
 
-
-
-
-
-
 if ( ! function_exists( 'mantra_posted_in' ) ) :
 /**
  * Prints HTML with meta information for the current post (category, tags and permalink).
@@ -685,7 +686,9 @@ function echo_first_image ($postID)
 }
 
 
-
+/**
+ * Adds a post thumbnail and if one doesn't exist the first image from the post is used.
+ */
 
 function mantra_set_featured_thumb() {
 	global $mantra_options;
@@ -708,12 +711,21 @@ $image_src = echo_first_image($post->ID);
 
 add_filter( 'post_thumbnail_html', 'mantra_thumbnail_link', 10, 3 );	
 
+/**
+ * The thumbnail gets a link to the post's page
+ */
+
 function mantra_thumbnail_link( $html, $post_id, $post_image_id ) {
 
   $html = '<a href="' . get_permalink( $post_id ) . '" title="' . esc_attr( get_post_field( 'post_title', $post_id ) ) . '" alt="' . esc_attr( get_post_field( 'post_title', $post_id ) ) . '">' . $html . '</a>';
   return $html;
 
 }
+
+/**
+ * Creates different class names for footer widgets depending on their number.
+ * This way they can fit the footer area.
+ */
 
 function mantra_footer_sidebar_class() {
 	$count = 0;
@@ -750,6 +762,10 @@ function mantra_footer_sidebar_class() {
 	if ( $class )
 		echo 'class="footer' . $class . '"';
 }
+
+/**
+ * Creates breadcrumns with page sublevels and category sublevels.
+ */
 
 function mantra_breadcrumbs() {
 global $post;
@@ -797,6 +813,10 @@ if (is_page() && !is_front_page() || is_single() || is_category() || is_archive(
 echo '</div>';
 }
 
+/**
+ * Creates pagination for blog pages.
+ */
+
 function mantra_pagination($pages = '', $range = 1)
 {  
      $showitems = ($range * 2)+1;  
@@ -834,6 +854,10 @@ function mantra_pagination($pages = '', $range = 1)
      }
 }
 
+/**
+ * Filter for page meta title.
+ */
+
 function mantra_filter_wp_title( $title ) {
     // Get the Site Name
     $site_name = get_bloginfo( 'name' );
@@ -857,7 +881,9 @@ function mantra_filter_wp_title( $title ) {
 // Hook into 'wp_title'
 add_filter( 'wp_title', 'mantra_filter_wp_title' );
 
-
+/**
+ * Show the social icons in case they are enabled.
+ */
 
 function mantra_set_social_icons() {
 	global $mantra_options;
@@ -876,9 +902,8 @@ if ($mantra_social1 && $mantra_social2) {  ?><a target="_blank" href="<?php echo
 // Get any existing copy of our transient data
 if ( false === ( $theme_info = get_transient( 'theme_info' ) ) ) {
     // It wasn't there, so regenerate the data and save the transient
-     $theme_info = get_theme_data( get_theme_root() . '/mantra/style.css' );
-
-     set_transient( 'theme_info',  $theme_info ,60*60);
+     $theme_info = wp_get_theme( );
+     set_transient( 'theme_info',  $theme_info ,1);
 }
 
 add_action('wp_ajax_nopriv_do_ajax', 'mantrra_ajax_function');
@@ -930,6 +955,10 @@ wp_reset_query();
 return $testVar;
 }
 
+/**
+ * Export Mantra settings to file
+ */
+
 function mantra_export_options(){
 
     ob_clean();
@@ -977,6 +1006,7 @@ if ( isset( $_POST['mantra_export'] ) ){
 
 /**
  * This file manages the theme settings uploading and import operations.
+ * Uses the theme page to create a new form for uplaoding the settings
  * Uses WP_Filesystem
 */
 function mantra_import_form(){            
@@ -1013,6 +1043,10 @@ function mantra_import_form(){
     endif;
 } // Closes the mantra_import_form() function definition 
 
+
+/**
+ * This actual import of the options from the file to the settings array.
+*/
 function mantra_import_file() {
     global $mantra_options;
     
@@ -1106,10 +1140,299 @@ function mantra_import_file() {
     }           
 } // Closes the mantra_import_file() function definition 
 
-
+// Truncate function for use in the Admin RSS feed 
 function mantra_truncate_words($string,$words=20, $ellipsis=' ...') {
  $new = preg_replace('/((\w+\W+\'*){'.($words-1).'}(\w+))(.*)/', '${1}', $string);
-  return $new.$ellipsis;
+ return $new.$ellipsis;
+}
+
+// Front page generator
+function mantra_frontpage_generator() {
+$mantra_options= mantra_get_theme_options();
+foreach ($mantra_options as $key => $value) {
+     ${"$key"} = $value ;
+}
+?>
+
+<script type="text/javascript">
+
+	// Flash animation for columns
+	function flash(id){
+             jQuery(id)
+             .animate({opacity: 0.5}, 100) 
+             .fadeOut(100)
+			 .fadeIn(100)
+             .animate({opacity: 1}, 100)
+					}
+
+    jQuery(window).load(function() {
+	// Slider creation
+        jQuery('#slider').nivoSlider({
+
+			effect: '<?php  echo $mantra_fpslideranim; ?>',
+       		animSpeed: <?php echo $mantra_fpslidertime ?>,
+			<?php	if($mantra_fpsliderarrows=="Hidden") { ?> directionNav: false, <?php }
+   			if($mantra_fpsliderarrows=="Always Visible") { ?>  directionNavHide: false, <?php } ?>
+			pauseTime: <?php echo $mantra_fpsliderpause ?>
+	
+						});
+
+    jQuery('#front-columns > div img').mouseover(function(e) { flash(this); })
+
+		});	
+	</script>
+
+<style>
+
+<?php if ($mantra_fronthideheader) {?> #branding {display:none;} <?php }
+	  if ($mantra_fronthidemenu) {?> #access {display:none;} <?php }
+  	  if ($mantra_fronthidewidget) {?> #colophon {display:none;} <?php }
+	  if ($mantra_fronthidefooter) {?> #footer2 {display:none;} <?php }
+      if ($mantra_fronthideback) {?> #main {background:none;} <?php } ?>
+
+
+#slider{ 
+	width:<?php echo $mantra_fpsliderwidth ?>px ;
+	height:<?php echo $mantra_fpsliderheight ?>px !important;
+	margin:30px auto;
+	display:block;
+	border:10px solid #eee;
+}
+
+#front-text1 h1 , #front-text2 h1{
+	display:block;
+	float:none;
+	margin:30px auto;
+	text-align:center;
+	font-size:32px;
+	clear:both;
+	line-height:32px;
+	font-style:italic;
+	font-weight:bold;
+	color:<?php echo $mantra_fronttitlecolor; ?>;
+}
+
+ #front-text2 h1{
+	font-size:28px;
+	line-height:28px;
+	margin-top:40px;
+	margin-bottom:15px;
+}
+
+#frontpage blockquote {
+	width:88% ;
+	max-width:88% !important;
+	margin-bottom:20px;
+	font-size:16px;
+	line-height:22px;
+	color:#444;
+}
+
+#frontpage #front-text4 blockquote {
+	font-size:14px;
+	line-height:18px;
+	color:#666;
+}
+
+#frontpage blockquote:before, #frontpage blockquote:after {
+	content:none;
+}
+
+#front-columns > div {
+display:block;
+width:<?php
+switch ($mantra_nrcolumns) {
+    case 0:
+        break;
+	case 1:
+        echo "95";
+		break;
+    case 2:
+        echo "45";
+		break;
+    case 3:
+        echo "29";
+        break;
+    case 4:
+        echo "21";
+        break;
+} ?>%;
+height:auto;
+margin-left:2%;margin-right:2%;
+margin-top:20px;
+margin-bottom:20px;
+float:left;
+}
+
+.column-image {
+	height:<?php echo $mantra_colimageheight ?>px;
+	border:3px solid #eee;
+}
+
+.theme-default .nivo-controlNav {margin-left:-<?php echo $mantra_slideNumber*11; ?>px}
+
+<?php if ($mantra_fpslidernav!="Bullets") { 
+	if ($mantra_fpslidernav=="Numbers") {?>
+
+.theme-default .nivo-controlNav {bottom:-40px;}
+.theme-default .nivo-controlNav a {
+    background: none;
+	text-decoration:underline;
+	margin-right:5px;
+    display: block;
+    float: left;
+	text-align:center;
+    height: 16px;
+    text-indent:0;
+    width: 16px;
+}
+<?php } else if ($mantra_fpslidernav=="None") {?>
+.theme-default .nivo-controlNav {display:none;}
+
+<?php } } ?>
+</style>
+
+<div id="frontpage">
+<?php  
+
+// First FrontPage Title
+if($mantra_fronttext1) {?><div id="front-text1"> <h1><?php echo $mantra_fronttext1 ?> </h1></div><?php }
+
+// When a post query has been selected from the Slider type in the admin area
+if ($mantra_slideType != 'Custom Slides') { 
+global $post;
+// Initiating query
+$custom_query = new WP_query();
+
+// Switch for Query type
+switch ($mantra_slideType) {
+
+ case 'Latest Posts' :
+$custom_query->query('showposts='.$mantra_slideNumber.'&ignore_sticky_posts=1');
+break;
+
+ case 'Random Posts' :
+$custom_query->query('showposts='.$mantra_slideNumber.'&orderby=rand&ignore_sticky_posts=1');
+break;
+
+ case 'Latest Posts from Category' :
+$custom_query->query('showposts='.$mantra_slideNumber.'&category_name='.$mantra_slideCateg.'&ignore_sticky_posts=1');
+break;
+
+ case 'Random Posts from Category' :
+$custom_query->query('showposts='.$mantra_slideNumber.'&category_name='.$mantra_slideCateg.'&orderby=rand&ignore_sticky_posts=1');
+break;
+
+ case 'Sticky Posts' :
+$custom_query->query(array('post__in'  => get_option( 'sticky_posts' ), 'showposts' =>$mantra_slideNumber,'ignore_sticky_posts' => 1));
+break;
+
+ case 'Specific Posts' :
+ // Transofm string separated by commas into array
+$pieces_array = explode(",", $mantra_slideSpecific);
+$custom_query->query(array( 'post__in' => $pieces_array,'ignore_sticky_posts' => 1 ));
+break;
 
 }
+ // Variables i and j for matching slider number with caption number
+$i=0;	$j=0;?>
+ <div class="slider-wrapper theme-default">
+            <div class="ribbon"></div>
+  <div id="slider" class="nivoSlider">
+
+	<?php 
+	 // Loop for creating the slides
+	if ( $custom_query->have_posts() ) while ( $custom_query->have_posts()) : $custom_query->the_post();  
+
+ 		 $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ),array($mantra_fpsliderwidth,$mantra_fpsliderheight)); 
+		 $i++; ?>
+         <a href="<?php the_permalink(); ?>"><img width="<?php echo $mantra_fpsliderwidth ?>" src="<?php echo $image[0]; ?>"  alt="" <?php if ($mantra_slidertitle1 || $mantra_slidertext1 ) { ?> title="#caption<?php echo $i;?>" <?php }?> /></a> 
+
+	<?php endwhile; // end of the loop.   
+?> 
+</div>
+	<?php 
+	// Loop for creating the captions
+	if ($custom_query->have_posts() ) while ( $custom_query->have_posts() ) : $custom_query->the_post();  
+					$j++; ?>
+					
+            <div id="caption<?php echo $j;?>" class="nivo-html-caption">
+                <?php the_title("<h2>","</h2>");the_excerpt(); ?>
+            </div>
+ 
+	<?php endwhile; // end of the loop. ?>        
+            
+        </div>
+
+<?php } else { 
+
+// If Custom Slides have been selected
+?>
+ <div class="slider-wrapper theme-default">
+            <div class="ribbon"></div>
+            <div id="slider" class="nivoSlider">
+             <?php  if($mantra_sliderimg1) {?>    <a href="<?php echo $mantra_sliderlink1 ?>"><img width="<?php echo $mantra_fpsliderwidth ?>" src="<?php echo $mantra_sliderimg1 ?>" id="slider1" alt="" <?php if ($mantra_slidertitle1 || $mantra_slidertext1 ) { ?>title="#caption1" <?php }?> /></a><?php } 
+           			if($mantra_sliderimg2) {?>    <a href="<?php echo $mantra_sliderlink2 ?>"><img width="<?php echo $mantra_fpsliderwidth ?>" src="<?php echo $mantra_sliderimg2 ?>" id="slider2" alt="" <?php if ($mantra_slidertitle2 || $mantra_slidertext2 ) { ?>title="#caption2" <?php }?> /></a><?php } 
+ 					if($mantra_sliderimg3) {?>    <a href="<?php echo $mantra_sliderlink3 ?>"><img width="<?php echo $mantra_fpsliderwidth ?>" src="<?php echo $mantra_sliderimg3 ?>" id="slider3" alt="" <?php if ($mantra_slidertitle3 || $mantra_slidertext3 ) { ?>title="#caption3" <?php }?> /></a><?php } 
+ 		    		if($mantra_sliderimg4) {?>    <a href="<?php echo $mantra_sliderlink4 ?>"><img width="<?php echo $mantra_fpsliderwidth ?>" src="<?php echo $mantra_sliderimg4 ?>" id="slider4" alt="" <?php if ($mantra_slidertitle4 || $mantra_slidertext4 ) { ?>title="#caption4" <?php }?> /></a><?php } 
+			 		if($mantra_sliderimg5) {?>    <a href="<?php echo $mantra_sliderlink5 ?>"><img width="<?php echo $mantra_fpsliderwidth ?>" src="<?php echo $mantra_sliderimg5 ?>" id="slider5" alt="" <?php if ($mantra_slidertitle5 || $mantra_slidertext5 ) { ?>title="#caption5" <?php }?> /></a><?php } ?>
+              
+            </div>
+            <div id="caption1" class="nivo-html-caption">
+                <?php echo '<h2>'.$mantra_slidertitle1.'</h2>'.$mantra_slidertext1 ?>
+            </div>
+            <div id="caption2" class="nivo-html-caption">
+                <?php echo '<h2>'.$mantra_slidertitle2.'</h2>'.$mantra_slidertext2 ?>
+            </div>
+            <div id="caption3" class="nivo-html-caption">
+                <?php echo '<h2>'.$mantra_slidertitle3.'</h2>'.$mantra_slidertext3 ?>
+            </div>
+            <div id="caption4" class="nivo-html-caption">
+                <?php echo '<h2>'.$mantra_slidertitle4.'</h2>'.$mantra_slidertext4 ?>
+            </div>
+
+            <div id="caption5" class="nivo-html-caption">
+                <?php echo '<h2>'.$mantra_slidertitle5.'</h2>'.$mantra_slidertext5 ?>
+            </div>
+        </div>
+<?php } 
+
+// Second FrontPage title
+ if($mantra_fronttext2) {?><div id="front-text2"> <h1><?php echo $mantra_fronttext2 ?> </h1></div><?php } 
+ 
+// Frontpage columns
+  if($mantra_nrcolumns) { ?>
+<div id="front-columns"> 
+	<div id="column1">
+	<a  href="<?php echo $mantra_columnlink1 ?>">	<div class="column-image" ><img  src="<?php echo $mantra_columnimg1 ?>" id="columnImage1" alt="" /> </div> <h3><?php echo $mantra_columntitle1 ?></h3> </a><div class="column-text"><?php echo $mantra_columntext1 ?></div>
+	<?php if($mantra_columnreadmore) {?>	<div class="columnmore"> <a href="<?php echo $mantra_columnlink1 ?>"><?php echo $mantra_columnreadmore ?> &raquo;</a> </div><?php } ?>
+	</div>
+<?php  if($mantra_nrcolumns != '1') { ?>
+	<div id="column2">
+		<a  href="<?php echo $mantra_columnlink2 ?>">	<div class="column-image" ><img  src="<?php echo $mantra_columnimg2 ?>" id="columnImage2" alt="" /> </div> <h3><?php echo $mantra_columntitle2 ?></h3> </a><div class="column-text"><?php echo $mantra_columntext2 ?></div>
+	<?php if($mantra_columnreadmore) {?>	<div class="columnmore"> <a href="<?php echo $mantra_columnlink2 ?>"><?php echo $mantra_columnreadmore ?> &raquo;</a> </div><?php } ?>
+	</div>
+<?php  if($mantra_nrcolumns != '2') { ?>
+	<div id="column3">
+		<a  href="<?php echo $mantra_columnlink3 ?>">	<div class="column-image" ><img  src="<?php echo $mantra_columnimg3 ?>" id="columnImage3" alt="" /> </div> <h3><?php echo $mantra_columntitle3 ?></h3> </a><div class="column-text"><?php echo $mantra_columntext3 ?></div>
+	<?php if($mantra_columnreadmore) {?>	<div class="columnmore"> <a href="<?php echo $mantra_columnlink3 ?>"><?php echo $mantra_columnreadmore ?> &raquo;</a> </div><?php } ?>
+	</div>
+<?php  if($mantra_nrcolumns == '4') { ?>
+	<div id="column4">
+		<a  href="<?php echo $mantra_columnlink4 ?>">	<div class="column-image" ><img  src="<?php echo $mantra_columnimg4 ?>" id="columnImage4" alt="" /> </div> <h3><?php echo $mantra_columntitle4 ?></h3> </a><div class="column-text"><?php echo $mantra_columntext4 ?></div>
+	<?php if($mantra_columnreadmore) {?>	<div class="columnmore"> <a href="<?php echo $mantra_columnlink4 ?>"><?php echo $mantra_columnreadmore ?> &raquo;</a> </div><?php } ?>
+	</div>
+<?php } } }?>
+</div>
+<?php } 
+
+ // Frontpage text areas
+  if($mantra_fronttext3) {?><div id="front-text3"> <blockquote><?php echo $mantra_fronttext3 ?> </blockquote></div><?php } 
+  if($mantra_fronttext4) {?><div id="front-text4"> <blockquote><?php echo $mantra_fronttext4 ?> </blockquote></div><?php } 
+
+ ?>
+</div> <!-- frontpage -->
+
+ <?php  } // End of mantra_frontpage_generator
+
 ?>
