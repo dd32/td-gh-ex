@@ -4,8 +4,9 @@
 <head profile="http://gmpg.org/xfn/11">
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 
-<title><?php wp_title('|', true, 'right'); ?></title> 
+<title><?php wp_title(); ?></title> 
 
+<?php load_theme_textdomain( 'quickpic', get_template_directory() . '/languages' ); ?> 
 <link rel="stylesheet" href="<?php echo get_stylesheet_uri() ?>" type="text/css" media="screen" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
@@ -32,7 +33,7 @@
 &nbsp;
 
 <!-- RSS Links --> 
-<a   href="<?php bloginfo('rss2_url'); ?>" rel="alternate" type="application/rss+xml"><img src="<?php echo get_template_directory_uri(); ?>/images/rss16.png" title="RSS" alt="RSS" height="16" width="16" class="rssicon"  />RSS</a>
+<a   href="<?php bloginfo('rss2_url'); ?>" rel="alternate" type="application/rss+xml"><img src="<?php echo get_template_directory_uri(); ?>/images/rss16.png" title="RSS" alt="RSS" class="rssicon"  />RSS</a>
 
 &nbsp;
 &nbsp;
