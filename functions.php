@@ -1,6 +1,6 @@
 <?php
 
-define('SO_THEME_VERSION', '1.0.3');
+define('SO_THEME_VERSION', '1.0.4');
 
 // Include all the SiteOrigin extras
 require_once(get_template_directory().'/extras/admin/admin.php');
