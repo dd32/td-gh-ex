@@ -65,7 +65,11 @@
             	<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
             </div><!-- #mainmenu-->  
             <div class="row-end"></div>   
-        <?php    	
+        <?php 
+        // This functions passes the value of slider effect to js file 
+        if( function_exists( 'simplecatch_pass_slider_value' ) ) {
+        	simplecatch_pass_slider_value();
+        }
 		// Display slider in home page and breadcrumb in other pages 
 		if ( function_exists( 'simplecatch_sliderbreadcrumb' ) ) :
 			simplecatch_sliderbreadcrumb(); 

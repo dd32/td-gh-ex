@@ -3,8 +3,8 @@ Theme Name: Simple Catch
 Theme URI: http://catchthemes.com/wp-themes/simplecatch
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
-Description: Simple Catch is a simple and clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Page Template for Layout, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework.
-Version: 1.2.5
+Description: Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Page Template for Layout, Advance Featured Slider, Theme Options for Header Logo, Footer Logo, Fav Icon, more then 2 Dozens of Social Icons, Custom CSS Styles and Webmaster Tools, Threaded Comments, and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework.
+Version: 1.2.6
 License: GNU General Public License
 License URI: license.txt
 Tags: black, gray, silver, white, light, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, custom-menu, featured-images, full-width-template, theme-options, threaded-comments
@@ -606,11 +606,11 @@ h2#site-description {
 	box-shadow:0 1px 0px #fff;
 }
 .home #header #mainmenu {
-	box-shadow:none;
+	box-shadow: none;
 }
 #header #mainmenu ul {
-	margin:0px;
-	list-style:none;
+	margin: 0px;
+	list-style: none;
 }
 #header #mainmenu ul li {
 	border-bottom: 1px solid #CCCCCC;
@@ -621,17 +621,16 @@ h2#site-description {
 }
 #header #mainmenu ul li a {
 	padding: 0 15px;
-	height: 48px;
 	display: block;
-	color:#fff;
-	font-size:15px;
-	line-height:48px;
-	color:#444;
-	float:left;
+	color: #fff;
+	font-size: 15px;
+	line-height: 48px;
+	color: #444;
+	float: left;
 }
 #header #mainmenu ul li a:hover, #header #mainmenu ul li.current_page_item a, #header #mainmenu ul li:hover > a {
-	background-color:#444;
-	color:#fff;
+	background-color: #444;
+	color: #fff;
 }
 
 /* Dropdown menu */
@@ -665,13 +664,12 @@ h2#site-description {
 	border-right:0 none;
 }
 #header #mainmenu ul li ul li a {
-	padding:0 10px;
-	color:#999;
-	height:35px;
+	padding: 7px 10px;
+	color: #999;
 	float:none;
-	line-height:36px;
-	font-size:13px;
-	font-weight:normal;
+	line-height: 18px;
+	font-size: 13px;
+	font-weight: normal;
 }
 #header #mainmenu ul li ul li a:hover, #header #mainmenu ul li ul li:hover > a {
 	background-color:#333;

@@ -115,6 +115,7 @@ function simplecatch_options_page() {
                     <li><a href="#socialicons"><?php _e( 'Social Icons', 'simplecatch' );?></a></li>
                     <li><a href="#customstyle"><?php _e( 'Custom CSS Styles', 'simplecatch' );?></a></li>
                    	<li><a href="#webmaster"><?php _e( 'Webmaster Tools', 'simplecatch' );?></a></li>
+                    <li><a href="#layout"><?php _e( 'Layout Settings', 'simplecatch' );?></a></li>
                 </ul><!-- .tabsNavigation #mainNav -->
                 
                 <div id="faq">
@@ -405,7 +406,40 @@ function simplecatch_options_page() {
                         </tbody>
                     </table>
                     <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
-              	</div> <!-- #analytic -->  
+              	</div> <!-- #webmaster --> 
+
+                <div id="layout">
+                    <h2><?php _e( 'Customize Layout Settings', 'simplecatch' ); ?></h2>
+                    <table class="form-table">  
+                        <tbody> 
+                            <?php if( !isset( $options[ 'more_tag_text' ] ) ) { $options[ 'more_tag_text' ] = "Continue Reading &rarr;"; } ?>   
+                            <tr>
+                                <th scope="row"><label><h4><?php _e( 'More Tag Text', 'simplecatch' ); ?></h4></label></th>
+                                <td><input type="text" size="45" name="simplecatch_options[more_tag_text]" value="<?php if( isset( $options[ 'more_tag_text' ] ) ) echo esc_attr( $options[ 'more_tag_text' ] ); ?>" />
+                                </td>
+                            </tr>
+                            <?php if( !isset( $options[ 'search_display_text' ] ) ) { $options[ 'search_display_text' ] = "Type KeyWord"; } ?>  
+                            <tr> 
+                                <th scope="row"><label><h4><?php _e( 'Default Display Text in Search', 'simplecatch' ); ?></h4></label></th>
+                                <td><input type="text" size="45" name="simplecatch_options[search_display_text]" value="<?php if ( isset( $options[ 'search_display_text' ] ) ) echo esc_attr( $options[ 'search_display_text'] ); ?>" />
+                                </td>
+                            </tr>
+                            <?php if( !isset( $options[ 'search_button_text' ] ) ) { $options[ 'search_button_text' ] = "Search"; } ?> 
+                            <tr>
+                                <th scope="row"><label><h4><?php _e( 'Search Button\'s text', 'simplecatch' ); ?></h4></label></th>
+                                <td><input type="text" size="45" name="simplecatch_options[search_button_text]" value="<?php if ( isset( $options[ 'search_button_text' ] ) ) echo esc_attr( $options[ 'search_button_text' ] ); ?>" />
+                                </td>
+                            </tr>
+
+                            <tr>                            
+                            <th scope="row"><h4><?php _e( 'Reset Settings:', 'simplecatch' ); ?></h4></th>
+                            <td><input type="checkbox" id="headerlogo" name="simplecatch_options[reset_settings]" value="1" <?php isset($options['reset_settings']) ? checked( '1', $options['reset_settings'] ) : checked('0', '1'); ?> /></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
+                </div> <!-- #layout -->   
                    
             </div><!-- #simplecatch_ad_tabs -->
 		</form>
@@ -437,10 +471,15 @@ function simplecatch_options_slider_page(){
                     <div class="updated" id="message">
                         <p><strong><?php _e( 'Settings saved.', 'simplecatch' );?></strong></p>
                     </div>
-            <?php endif; ?>            
+            <?php endif; ?>  
+            <div id="simplecatch_ad_tabs">
+                <ul class="tabNavigation" id="mainNav">
+                    <li><a href="#featuredslider"><?php _e( 'Add Slider', 'simplecatch' );?></a></li>
+                    <li><a href="#moreslideroptions"><?php _e( 'More Slider Options', 'simplecatch' );?></a></li> 
+                </ul>       
             
                 <div id="featuredslider">
-                    <h3><?php _e( 'Featured Slider Options', 'simplecatch' ); ?></h3>
+                    <h2><?php _e( 'Featured Slider Options', 'simplecatch' ); ?></h2>
                     <table class="form-table">
                         <tr>
                             <th scope="row"><h4><?php _e( 'Number of Slides', 'simplecatch' ); ?></h4></th>
@@ -458,9 +497,62 @@ function simplecatch_options_slider_page(){
 							</tbody>
                     </table>
 					<p><?php _e( 'Note: Here You can put your Post IDs which displays on Homepage as slider.', 'simplecatch' ); ?> </p>
-                </div> <!-- #featuredslider -->           
-                    
-                <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
+                    <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
+                </div> <!-- #featuredslider --> 
+
+                <!-- Option for More Slider Options -->
+                <div id="moreslideroptions">
+                    <h2><?php _e( 'Slider Other Options', 'simplecatch' ); ?></h2> 
+                    <table class="form-table">   
+                        <tr>                            
+                            <th scope="row"><h4><?php _e( 'Disable Slider Background Effect:', 'simplecatch' ); ?></h4></th>
+                            <td><input type="checkbox" id="headerlogo" name="simplecatch_options_slider[remove_noise_effect]" value="1" <?php isset($options['remove_noise_effect']) ? checked( '1', $options['remove_noise_effect'] ) : checked('0', '1'); ?> /></td>
+                        </tr>
+
+                        <tr>
+                            <th>
+                                <label for="simplecatch_cycle_style"><h4><?php _e( 'Transition Effect:', 'simplecatch' ); ?></label></h4>
+                            </th>
+                            <?php if( !isset( $options['transition_effect'] ) ) { $options['transition_effect'] = "fade"; } ?>
+                            <td>
+                                <select id="simplecatch_cycle_style" name="simplecatch_options_slider[transition_effect]">
+                                    <option value="fade" <?php selected('fade', $options['transition_effect']); ?>><?php _e( 'fade', 'simplecatch' ); ?></option>
+                                    <option value="wipe" <?php selected('wipe', $options['transition_effect']); ?>><?php _e( 'wipe', 'simplecatch' ); ?></option>
+                                    <option value="scrollUp" <?php selected('scrollUp', $options['transition_effect']); ?>><?php _e( 'scrollUp', 'simplecatch' ); ?></option>
+                                    <option value="scrollDown" <?php selected('scrollDown', $options['transition_effect']); ?>><?php _e( 'scrollDown', 'simplecatch' ); ?></option>
+                                    <option value="scrollLeft" <?php selected('scrollLeft', $options['transition_effect']); ?>><?php _e( 'scrollLeft', 'simplecatch' ); ?></option>
+                                    <option value="scrollRight" <?php selected('scrollRight', $options['transition_effect']); ?>><?php _e( 'scrollRight', 'simplecatch' ); ?></option>
+                                    <option value="blindX" <?php selected('blindX', $options['transition_effect']); ?>><?php _e( 'blindX', 'simplecatch' ); ?></option>
+                                    <option value="blindY" <?php selected('blindY', $options['transition_effect']); ?>><?php _e( 'blindY', 'simplecatch' ); ?></option>
+                                    <option value="blindZ" <?php selected('blindZ', $options['transition_effect']); ?>><?php _e( 'blindZ', 'simplecatch' ); ?></option>
+                                    <option value="cover" <?php selected('cover', $options['transition_effect']); ?>><?php _e( 'cover', 'simplecatch' ); ?></option>
+                                    <option value="shuffle" <?php selected('shuffle', $options['transition_effect']); ?>><?php _e( 'shuffle', 'simplecatch' ); ?></option>
+                                </select>
+                            </td>
+                        </tr>
+                        <?php if( !isset( $options['transition_delay'] ) ) { $options['transition_delay'] = 4; } ?>
+                        <tr>
+                            <th scope="row"><h4><?php _e( 'Transition Delay', 'simplecatch' ); ?></h4></th>
+                            <td>
+                                <input type="text" name="simplecatch_options_slider[transition_delay]" value="<?php if( isset( $options [ 'transition_delay' ] ) ) echo $options[ 'transition_delay' ]; ?>" size="4" />
+                               <span class="description"><?php _e( 'second(s)', 'simplecatch' ); ?></span>
+                            </td>
+                        </tr>
+
+                        <?php if( !isset( $options['transition_duration'] ) ) { $options['transition_duration'] = 1; } ?>
+                        <tr>
+                            <th scope="row"><h4><?php _e( 'Transition Length', 'simplecatch' ); ?></h4></th>
+                            <td>
+                                <input type="text" name="simplecatch_options_slider[transition_duration]" value="<?php if( isset( $options [ 'transition_duration' ] ) ) echo $options[ 'transition_duration' ]; ?>" size="4" />
+                                <span class="description"><?php _e( 'second(s)', 'simplecatch' ); ?></span>
+                            </td>
+                        </tr>                      
+
+                    </table>
+                    <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
+                </div> <!-- #moreslideroptions -->
+
+            </div><!-- #simplecatch_ad_tabs -->
 		</form>
 	</div><!-- .wrap -->
 <?php
@@ -515,6 +607,26 @@ function simplecatch_options_validation( $options ){
 	for ( $i = 1; $i <= $options [ 'slider_qty' ]; $i++ ) {
 		if ( intval( $options[ 'featured_slider' ][ $i ] ) ) $options_validated[ 'featured_slider' ][ $i ] = absint($options[ 'featured_slider' ][ $i ] );
 	}
+
+    if ( !isset( $options['remove_noise_effect'] ) ) {
+        $options['remove_noise_effect'] = null;
+    }
+    // Our checkbox value is either 0 or 1 
+    $options_validated[ 'remove_noise_effect' ] = $options[ 'remove_noise_effect' ] == 1 ? 1 : 0 ;
+
+    if( isset( $options[ 'transition_effect' ] ) ) {
+        $options_validated['transition_effect'] = wp_filter_nohtml_kses( $options['transition_effect'] );
+    }
+
+    // data validation for transition delay
+    if ( isset( $options[ 'transition_delay' ] ) && is_numeric( $options[ 'transition_delay' ] ) ) {
+        $options_validated[ 'transition_delay' ] = $options[ 'transition_delay' ];
+    }
+
+    // data validation for transition length
+    if ( isset( $options[ 'transition_duration' ] ) && is_numeric( $options[ 'transition_duration' ] ) ) {
+        $options_validated[ 'transition_duration' ] = $options[ 'transition_duration' ];
+    }
 	
 	// data validation for Social Icons
 	if( isset( $options[ 'social_facebook' ] ) ) {
@@ -594,6 +706,26 @@ function simplecatch_options_validation( $options ){
 		$options_validated[ 'analytic_footer' ] = wp_kses_stripslashes( $options[ 'analytic_footer' ] );	
 	}		
 	
+    // Layout settings verification
+    if( isset( $options[ 'more_tag_text' ] ) ) {
+        $options_validated[ 'more_tag_text' ] = sanitize_text_field( $options[ 'more_tag_text' ] );
+    }   
+    if( isset( $options[ 'search_display_text' ] ) ) {
+        $options_validated[ 'search_display_text' ] = sanitize_text_field( $options[ 'search_display_text' ] );
+    }
+    if( isset( $options[ 'search_button_text' ] ) ) {
+        $options_validated[ 'search_button_text' ] = sanitize_text_field( $options[ 'search_button_text' ] );    
+    }   
+    if ( !isset( $options['reset_settings'] ) ) {
+        $options['reset_settings'] = null;
+    }    
+    $options_validated[ 'reset_settings' ] = $options[ 'reset_settings' ] == 1 ? 1 : 0 ;
+    if( $options[ 'reset_settings' ] == 1 ) {
+        $options_validated[ 'more_tag_text' ] = "Continue Reading &rarr;";
+        $options_validated[ 'search_display_text' ] = "Type Keyword";
+        $options_validated[ 'search_button_text' ] = "Search"; 
+    }
+
 	//Clearing the theme option cache
 	if( function_exists( 'simplecatch_themeoption_invalidate_caches' ) ) simplecatch_themeoption_invalidate_caches();
 	

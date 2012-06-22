@@ -10,7 +10,7 @@ function simplecatch_scripts_method() {
 	wp_register_script( 'jquery-cycle', get_stylesheet_directory_uri() . '/js/jquery.cycle.all.js', '2.9999' );
 	
 	// registering custom scrtips
-	wp_register_script( 'custom-script', get_stylesheet_directory_uri() . '/js/simplecatch_custom_scripts.js', array( 'jquery', 'jquery-cycle' ), '1.0' );
+	wp_register_script( 'custom-script', get_stylesheet_directory_uri() . '/js/simplecatch_custom_scripts.js', array( 'jquery', 'jquery-cycle' ), '1.0', true );
 	
 	// enqueue JQuery Scripts	
 	wp_enqueue_script( 'custom-script' );	
@@ -117,7 +117,12 @@ add_filter( 'excerpt_length', 'simplecatch_excerpt_length' );
  * Returns a "Continue Reading" link for excerpts
  */
 function simplecatch_continue_reading() {
-	return ' <a class="readmore" href="'. esc_url( get_permalink() ) . '">' . __( 'Continue reading &rarr;', 'simplecatch' ) . '</a>';
+	$options = get_option( 'simplecatch_options' );
+	if( !isset( $options[ 'more_tag_text' ] ) ) {
+		$options[ 'more_tag_text' ] = "Continue Reading &rarr;";
+	}
+	$more_tag_text = $options[ 'more_tag_text' ];
+	return ' <a class="readmore" href="'. esc_url( get_permalink() ) . '">' . sprintf( __( '%s', 'simplecatch' ), $more_tag_text ) . '</a>';
 }
 
 /**
@@ -329,7 +334,16 @@ function simplecatch_sliders() {
 					<div class="featured">
 						<div class="slide-image">';
 							if( has_post_thumbnail() ) {
-								$simplecatch_sliders .= '<a href="' . get_permalink() . '" title="Permalink to '.the_title('','',false).'"><span class="img-effect pngfix"></span>'.get_the_post_thumbnail( $post->ID, 'slider', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class'	=> 'pngfix' ) ).'</a>';
+								$simplecatch_sliders .= '<a href="' . get_permalink() . '" title="Permalink to '.the_title('','',false).'">';
+
+								if( !isset( $options[ 'remove_noise_effect'] ) ) {
+									$options[ 'remove_noise_effect' ] = "0";
+								}
+								if( $options[ 'remove_noise_effect' ] == "0" ) {
+									$simplecatch_sliders .= '<span class="img-effect pngfix"></span>';
+								}
+
+								$simplecatch_sliders .= get_the_post_thumbnail( $post->ID, 'slider', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class'	=> 'pngfix' ) ).'</a>';
 							}
 							else {
 								$simplecatch_sliders .= '<span class="img-effect pngfix"></span>';	
@@ -631,6 +645,34 @@ function simplecatch_footer() {
 <?php
 }
 add_filter( 'simplecatch_credits', 'simplecatch_footer' );
+
+
+/**
+ * Function to pass the slider value
+ */
+function simplecatch_pass_slider_value() {
+	$options = get_option( 'simplecatch_options_slider' );
+	if( !isset( $options[ 'transition_effect' ] ) ) {
+		$options[ 'transition_effect' ] = "fade";
+	}
+	if( !isset( $options[ 'transition_delay' ] ) ) {
+		$options[ 'transition_delay' ] = 4;
+	}
+	if( !isset( $options[ 'transition_duration' ] ) ) {
+		$options[ 'transition_duration' ] = 1;
+	}
+	$transition_effect = $options[ 'transition_effect' ];
+	$transition_delay = $options[ 'transition_delay' ] * 1000;
+	$transition_duration = $options[ 'transition_duration' ] * 1000;
+	?>
+	<script>
+		var transition_effect, transition_delay, transition_duration;
+		transition_effect = "<?php echo $transition_effect; ?>";	
+		transition_delay = "<?php echo $transition_delay; ?>";
+		transition_duration = "<?php echo $transition_duration; ?>";
+	</script>
+	<?php
+}// simplecatch_pass_slider_value
 
 /**
  * function that displays frquently asked question in theme option
