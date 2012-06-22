@@ -1,20 +1,7 @@
 <?php
 
-// Loading Default values
-
-require_once(dirname(__FILE__) . "/admin/mantra-defaults.php"); 
-
-// Loading function that generates the custom css
-
-require_once(dirname(__FILE__) . "/admin/mantra-custom-styles.php"); 
-
-// Loading the mantra admin functions if admin section
-
-if( is_admin() ) {
-require_once(dirname(__FILE__) . "/admin/mantra-admin-functions.php");
-require_once(dirname(__FILE__) . "/admin/mantra-sanitize.php");
-}
-
+// Loading Admin files
+require_once(dirname(__FILE__) . "/admin/main.php"); 
 
 
 // Getting the theme options and making sure defaults are used if no values are set
@@ -94,10 +81,10 @@ foreach ($mantra_options as $key => $value) {
 		add_action('wp_print_styles', 'mantra_style',1 );
 		add_action('wp_head', 'mantra_custom_styles' ,8);
 		add_action('wp_head', 'mantra_customcss',9);
-		add_action('wp_enqueue_script', 'mantra_google_styles');
+		add_action('wp_head', 'mantra_google_styles');
 		
 
- $totalSize = $mantra_sidebar + $mantra_sidewidth+50;
+ $mantra_totalSize = $mantra_sidebar + $mantra_sidewidth+50;
 
 // Scripts loading and hook into wp_enque_scripts
 
@@ -218,8 +205,8 @@ $locale_file = get_template_directory() . "/languages/$locale.php";
 	// Larger images will be auto-cropped to fit, smaller ones will be ignored. See header.php.
 	global $mantra_hheight;
 	$mantra_hheight=(int)$mantra_hheight;
-	global $totalSize;
-	define( 'HEADER_IMAGE_WIDTH', apply_filters( 'mantra_header_image_width', $totalSize ) );
+	global $mantra_totalSize;
+	define( 'HEADER_IMAGE_WIDTH', apply_filters( 'mantra_header_image_width', $mantra_totalSize ) );
 	define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'mantra_header_image_height', $mantra_hheight) );
 	set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );
 
@@ -659,6 +646,12 @@ function mantra_content_nav( $nav_id ) {
 }
 endif; // mantra_content_nav
 
+// Custom image size for use with post thumbnails
+if($mantra_fcrop)
+add_image_size( 'custom', $mantra_fwidth, $mantra_fheight, true ); 
+else
+add_image_size( 'custom', $mantra_fwidth, $mantra_fheight ); 
+
 
 function echo_first_image ($postID)
 {				
@@ -672,14 +665,13 @@ function echo_first_image ($postID)
 	);
 	
 	$attachments = get_children( $args );
-	
 	//print_r($attachments);
 	
 	if ($attachments) {
 		foreach($attachments as $attachment) {
-			$image_attributes = wp_get_attachment_image_src( $attachment->ID, 'thumbnail' )  ? wp_get_attachment_image_src( $attachment->ID, 'thumbnail' ) : wp_get_attachment_image_src( $attachment->ID, 'full' );
+			$image_attributes = wp_get_attachment_image_src( $attachment->ID, 'full' )  ? wp_get_attachment_image_src( $attachment->ID, 'full' ) : wp_get_attachment_image_src( $attachment->ID, 'full' );
 				
-			return wp_get_attachment_thumb_url( $attachment->ID );
+			return $image_attributes[0];
 			
 		}
 	}
@@ -694,19 +686,16 @@ function mantra_set_featured_thumb() {
 	global $mantra_options;
 	foreach ($mantra_options as $key => $value) {
      ${"$key"} = $value ;
-
 }
 global $post;
 $image_src = echo_first_image($post->ID);
 
+	 if ( function_exists("has_post_thumbnail") && has_post_thumbnail() && $mantra_fpost=='Enable') 
+			the_post_thumbnail( 'custom', array("class" => "align".strtolower($mantra_falign)." post_thumbnail" ) ); 
 
-	 if ( function_exists("has_post_thumbnail") && has_post_thumbnail() && $mantra_fpost=='Enable') { the_post_thumbnail( array($mantra_fwidth,$mantra_fheight), array("class" => "align".strtolower($mantra_falign)." post_thumbnail" ) ); }
-
-
-	else	if ($mantra_fpost=='Enable' && $mantra_fauto=="Enable" && $image_src && ($mantra_excerptarchive != "Full Post" || $mantra_excerpthome != "Full Post")) { 
- echo '<img width='.$mantra_fwidth.' height='.$mantra_fheight.' title="" alt="" class="align'.strtolower($mantra_falign).' post_thumbnail" src="'.$image_src.'">' ;
-																							}
-								
+	else if ($mantra_fpost=='Enable' && $mantra_fauto=="Enable" && $image_src && ($mantra_excerptarchive != "Full Post" || $mantra_excerpthome != "Full Post")) 
+			echo '<a title="'.the_title_attribute('echo=0').'" href="'.get_permalink().'" ><img   width='.$mantra_fwidth.' height='.$mantra_fheight.' title="" alt="" class="align'.strtolower($mantra_falign).' post_thumbnail" src="'.$image_src.'"></a>' ;
+							
 	}
 
 add_filter( 'post_thumbnail_html', 'mantra_thumbnail_link', 10, 3 );	
@@ -902,9 +891,12 @@ if ($mantra_social1 && $mantra_social2) {  ?><a target="_blank" href="<?php echo
 // Get any existing copy of our transient data
 if ( false === ( $theme_info = get_transient( 'theme_info' ) ) ) {
     // It wasn't there, so regenerate the data and save the transient
-     $theme_info = wp_get_theme( );
-     set_transient( 'theme_info',  $theme_info ,1);
+ if ( ! function_exists( 'get_custom_header' ) ) {  $theme_info = get_theme_data( get_theme_root() . '/mantra/style.css' ); }
+else { $theme_info = wp_get_theme( );}
+
+     set_transient( 'theme_info',  $theme_info ,60*60);
 }
+
 
 add_action('wp_ajax_nopriv_do_ajax', 'mantrra_ajax_function');
 add_action('wp_ajax_do_ajax', 'mantra_ajax_function');

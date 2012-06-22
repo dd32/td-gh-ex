@@ -17,7 +17,6 @@ $totalwidth= $mantra_sidewidthRel+$mantra_sidebarRel;
 $contentSize = intval(($mantra_sidewidthRel/$totalwidth*100)-2);
 $sidebarSize= intval(($mantra_sidebarRel/$totalwidth*100)-2);
 }
-
 ?>
 
 <style type="text/css">
@@ -57,7 +56,6 @@ if ($mantra_dimselect=="Absolute") { ?>
 #secondary {width:<?php echo ($sidebarSize/2 ) ?>px;float:right;}
 #primary .widget-title { -moz-border-radius-topleft:0px; -webkit-border-radius:0px;border-radius-topleft:0px ; -moz-border-radius-topright:10px ;border-radius-topright:10px ;	border-top-right-radius:10px;
 	-webkit-border-top-right-radius:10px;text-align:right;padding-right:5%;width:100%;} <?php } ?><?php 
-
 }
 
 /* RELATIVE DIMENSIONS. */
@@ -157,6 +155,7 @@ font-size:<?php echo $mantra_fontsize ?>;
 ?><?php if ($mantra_categtitle == "Hide") { ?> h1.page-title { display:none;} <?php }
 ?><?php if (($mantra_postdate == "Hide" && $mantra_postcateg == "Hide") || ($mantra_postauthor == "Hide" && $mantra_postcateg == "Hide") ) { ?>.entry-meta .bl_sep {display:none;} <?php }
 ?><?php if ($mantra_postdate == "Hide") { ?>.entry-meta span.entry-date,.entry-meta span.onDate {display:none;} <?php }
+?><?php if ($mantra_postcomlink == "Hide") { ?>.entry-meta .comments-link,.entry-meta2 .comments-link{display:none;} <?php }
 ?><?php if ($mantra_postauthor == "Hide") { ?>.entry-meta .author {display:none;} <?php }
 ?><?php if ($mantra_postcateg == "Hide") { ?>.entry-meta span.bl_categ {display:none;} <?php }
 ?><?php if ($mantra_posttag == "Hide") { ?> .entry-utility span.bl_posted, .entry-meta2 span.bl_tagg {display:none;} <?php }

@@ -27,7 +27,6 @@ $mantra_options= mantra_get_theme_options();
 foreach ($mantra_options as $key => $value) {	
      ${"$key"} = $value ;
 }
-$totalwidth= $mantra_sidewidth+$mantra_sidebar+50;
 ?>
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -79,10 +78,15 @@ $totalwidth= $mantra_sidewidth+$mantra_sidebar+50;
 							(  $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&
 							$image[1] >= HEADER_IMAGE_WIDTH ) :
 					// Houston, we have a new header image!
-					echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' ); ?>   
-					<style> #access {margin-top:<?php echo $image[2]+10;?>px !important;}  </style>  
+					//echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' ); 
+					 $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), array(HEADER_IMAGE_WIDTH,HEADER_IMAGE_HEIGHT) ); 
+	 ?><style>
+	 #header { background:url(<?php echo $image[0]; ?>) no-repeat;height:<?php echo HEADER_IMAGE_HEIGHT; ?>px;}
+	 #branding { height:<?php echo HEADER_IMAGE_HEIGHT-36; ?>px; }
+      </style>  
 				<?php else : if (get_header_image() != '') { ?>
-					<style> #branding { background:url(<?php header_image(); ?>) no-repeat; <?php if ($mantra_dimselect=="Absolute") { ?>width:<?php echo HEADER_IMAGE_WIDTH; ?>px; <?php } ?> height:<?php echo HEADER_IMAGE_HEIGHT; ?>px;} </style>
+					<style> #branding { <?php if ($mantra_dimselect=="Absolute") { ?>width:<?php echo HEADER_IMAGE_WIDTH; ?>px; <?php } ?> height:<?php echo HEADER_IMAGE_HEIGHT-36; ?>px;} 
+							#header { background:url(<?php header_image(); ?>) no-repeat;height:<?php echo HEADER_IMAGE_HEIGHT; ?>px;} </style>
 				<?php } else { ?><?php } ?>
 				<?php endif; 
 

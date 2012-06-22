@@ -140,6 +140,7 @@ $mantra_defaults = array(
 "mantra_comoff" => "Show",
 "mantra_copyright" => "",
 
+"mantra_postcomlink" => "Show",
 "mantra_postdate" => "Show",
 "mantra_posttime" => "Hide",
 "mantra_postauthor" => "Show",
@@ -162,6 +163,7 @@ $mantra_defaults = array(
 "mantra_falign" => "Left",
 "mantra_fwidth" => "250",
 "mantra_fheight" => "150",
+"mantra_fcrop" => "",
 "mantra_fheader" => "Disable",
 
 "mantra_social1" => "",
