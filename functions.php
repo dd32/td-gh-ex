@@ -18,18 +18,6 @@ if ( ! function_exists( 'd5smartia_setup' ) ):
 
 function d5smartia_setup() {
 
-	/* Make D5 Smartia available for translation.
-	 * Translations can be added to the /languages/ directory.
-	 * If you're building a theme based on D5 Smartia, use a find and replace
-	 * to change 'd5smartia' to the name of your theme in all the template files.
-	 */
-	load_theme_textdomain( 'd5smartia', get_template_directory() . '/languages' );
-
-	$locale = get_locale();
-	$locale_file = get_template_directory() . "/languages/$locale.php";
-	if ( is_readable( $locale_file ) )
-		require_once( $locale_file );
-
 	// This theme styles the visual editor with editor-style.css to match the theme style.
 	add_editor_style();
 
@@ -352,3 +340,28 @@ function d5smartia_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'd5smartia_body_classes' );
 
+function add_headcode() { 
+$d5smartiaoptionhead = get_option('d5smartia_theme_options'); 
+if ( $d5smartiaoptionhead['d5smartia_headcode'] != null ) 
+echo '<hiddencode>' . $d5smartiaoptionhead['d5smartia_headcode'] . '</hiddencode>';
+// Paste your Google Analytics code from Step 6 here
+ } 
+add_action('wp_head', 'add_headcode');
+
+
+
+$logoimage = array(
+	'width'         => 340,
+	'height'        => 159,
+	'default-image' => get_template_directory_uri() . '/images/logo.png',
+	'uploads'       => true,
+	'header-text'   => false,
+	'default-text-color'     => '',
+);
+add_theme_support( 'custom-header', $logoimage );
+
+$backg= array(
+	'default-color' => '3C4A5A',
+	'default-image' => get_template_directory_uri() . '/images/background.png',
+);
+add_theme_support( 'custom-background', $backg );

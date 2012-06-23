@@ -5,7 +5,7 @@ Author: D5 Creation
 Author URI: http://d5creation.com/
 Description: The D5 Smartia Theme for WordPress is sophisticated, lightweight, and adaptable. It is Simple and Simple is the Best. Make it yours with a custom menu,custom logo, and other custom features. D5 Smartia comes equipped with a Showcase page template that transforms your front page into a showcase to show off your best content, widget support galore (sidebar, three footer areas, and a Showcase page widget area), and a custom "Ephemera" widget to display your Aside, Link, Quote, or Status posts. Included are styles for print and for the admin editor, support for featured images (as custom header images on posts and pages and as large images on featured "sticky" posts), and special styles for six different post formats. You can use D5 Smartia for Black and White looking Smart Blogging. You can use your advertisements with this theme. So you can put your ad codes in 3 places and can earn money from Online. You can also use your own logo and advertisements from the D5 Smartia Theme Options. You may contact us through www.d5creation.com for any kind of problems.
  
-Version: 1.4
+Version: 1.5
 License: GNU General Public License
 License URI: license.txt
 Tags: dark, light, white, black, gray, two-columns, right-sidebar, fixed-width, custom-menu, editor-style, full-width-template, microformats, post-formats, rtl-language-support, sticky-post
@@ -40,8 +40,10 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 :focus {/* remember to define focus styles! */
 	outline: 0;
 }
+head {
+	display:none;
+}
 body {
-	background: #fff;
 	line-height: 1;
 }
 ol, ul {
@@ -330,7 +332,7 @@ body, input, textarea {
 	line-height: 1.625;
 }
 body {
-	background: url("images/background.png") repeat scroll 0 0 #3C4A5A; /*#3C4A5A #e2e2e2; */
+	/* background: url("images/background.png") repeat scroll 0 0 #3C4A5A; /*#3C4A5A #e2e2e2; */
 }
 #page {
 	background: #fff;
