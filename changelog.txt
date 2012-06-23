@@ -7,6 +7,15 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(06/23/2012) - Improvements - Version 1.6.3
+[+] Theme Options
+[+] Serbian and Persian languages
+[+] New media queries 240 and 320
+[x] JS Dev removal of duplicates
+[+] Tinynav CSS
+[+] Icons Yelp, Vimeo and foursquare
+[*] FitVids support for Wistia
+
 (06/11/2012)
 [*] Improvement in Theme Options
 [*] Tinynav to show Home instead of Navigation

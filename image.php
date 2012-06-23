@@ -56,7 +56,7 @@ if ( !defined('ABSPATH')) exit;
                 <div class="attachment-entry">
                     <a href="<?php echo wp_get_attachment_url($post->ID); ?>"><?php echo wp_get_attachment_image( $post->ID, 'large' ); ?></a>
 					<?php if ( !empty($post->post_excerpt) ) the_excerpt(); ?>
-                    <?php the_content(__('Read more &#8250;;', 'responsive')); ?>
+                    <?php the_content(__('Read more &#8250;', 'responsive')); ?>
                     <?php wp_link_pages(array('before' => '<div class="pagination">' . __('Pages:', 'responsive'), 'after' => '</div>')); ?>
                 </div><!-- end of .post-entry -->
 

@@ -1,9 +1,9 @@
 /* 
 Theme Name: Responsive 
 Theme URI: http://themeid.com/responsive-theme/ 
-Description: Responsive WordPress Theme that features 9 page Templates such as Blog, Blog Summary and Template based layout designs: sidebar/content, sidebar/content half, content/sidebar and content/sidebar half. There is also full width page, sitemap Template as well as landing page for your PPC or any other purposes. Responsive also supports 9 widget areas and best of all this Theme is crafted with fluid proportion-based grid system of our own to adapt the design to the viewing environment. There are also Theme Options to control the content, webmaster tools, logo managament, social icons and 4 navigation menus. Currently translated in German, French, Portuguese, Italian, Swedish, Malay, Catalan, Spanish, Bulgarian, Norwegian, Croatian and Serbian (Latin) language. Everything is backed by our FREE dedicated support forums @ http://themeid.com/forum
+Description: Responsive WordPress Theme that features 9 page Templates such as Blog, Blog Summary and Template based layout designs: sidebar/content, sidebar/content half, content/sidebar and content/sidebar half. There is also full width page, sitemap Template as well as landing page for your PPC or any other purposes. Responsive also supports 9 widget areas and best of all this Theme is crafted with fluid proportion-based grid system of our own to adapt the design to the viewing environment. There are also Theme Options to control the content, webmaster tools, logo managament, social icons and 4 navigation menus. Currently translated in German, French, Portuguese, Italian, Swedish, Malay, Catalan, Spanish, Bulgarian, Norwegian, Croatian, Serbian and Persian language. Everything is backed by our FREE dedicated support forums @ http://themeid.com/support
 
-Version: 1.6.2
+Version: 1.6.3
 Author: ThemeID 
 Author URI: http://themeid.com
 Tags: white, black, gray, light, custom-menu, custom-header, custom-background, one-column, two-columns, left-sidebar, right-sidebar, flexible-width, theme-options, threaded-comments, full-width-template, sticky-post, translation-ready
@@ -78,7 +78,6 @@ hr {
 	color:#ddd;
 	float:none;
 	height:.1em;
-	margin:0 0 1.45em;
 	width:100%;
 }
 
@@ -284,6 +283,10 @@ form div {
 	clear:both;
 }
 
+form br {
+	display:none;
+}
+
 input[type="text"], input[type="password"], select {
 	-moz-border-radius:2px;
 	-webkit-border-radius:2px;
@@ -357,6 +360,7 @@ button, a.button, input[type='button'], input[type='submit'], input[type='reset'
 	border-bottom-color:#aaa;
 	border-radius:2px;
 	color:#555;
+	cursor:pointer;
 	display:inline-block;
 	font-size:12px;
 	font-weight:700;
@@ -872,8 +876,11 @@ dt {
 -------------------------------------------------------------- */
 blockquote {
 	background:#f9f9f9;
-	border:2px solid #d6d6d6;
+	border:none;
+	border-left:4px solid #d6d6d6;
+	margin:20px;
 	overflow:auto;
+	padding:0 0 10px 12px;
 }
 
 blockquote p {
@@ -881,8 +888,6 @@ blockquote p {
 	font-style:italic;
 	font-size:18px;
 	line-height:26px;
-	margin:20px;
-	padding:0 0 10px 12px;
 }
 
 /* =Headings
@@ -926,8 +931,8 @@ blockquote:first-child {
 	margin:.8em 0;
 }
 
-hr, p, ul, ol, dl, pre, blockquote, address, table, form {
-	margin-bottom:1.6em;
+hr, p, dl, pre, blockquote, address, table, form {
+	margin:1.6em 0;
 }
 
 h1 {
@@ -963,7 +968,6 @@ caption {
 }
 
 blockquote {
-	margin:1.6em 0;
 	padding:0 1em;
 }
 
@@ -2184,7 +2188,7 @@ img.wp-post-image, img.attachment-thumbnail, img.attachment-medium, img.attachme
 	text-align:right;
 }
 
-#footer .twitter-icon, #footer .youtube-icon, #footer .facebook-icon, #footer .linkedin-icon, #footer .rss-feed-icon, #footer .google-plus-icon, #footer .stumble-upon-icon, #footer .instagram-icon, #footer .pinterest-icon {
+#footer .twitter-icon, #footer .youtube-icon, #footer .facebook-icon, #footer .linkedin-icon, #footer .rss-feed-icon, #footer .google-plus-icon, #footer .stumble-upon-icon, #footer .instagram-icon, #footer .pinterest-icon, #footer .yelp-icon, #footer .vimeo-icon, #footer .foursquare-icon {
 	display:inline;
 	margin:1px;
 	padding-left:3px;
@@ -2324,6 +2328,25 @@ BDO[DIR="rtl"] {
 		width:100%;
 	}
 	
+	.tinynav {
+		-moz-appearance:none;
+		-webkit-appearance:none;
+		appearance:none;
+		background: #fff url(images/bg-select.png) no-repeat right center;
+		border:none;
+		overflow:hidden;
+		padding:0.5em 1em 0.5em 0.75em;
+	}
+	
+	.ie7 .tinynav,
+	.ie8 .tinynav {
+		padding-right:10px;
+	}
+	
+	.ie9 .tinynav  {
+		padding-right:8px;
+	}
+	
     #footer {
 	    text-align:center;
     }
@@ -2349,9 +2372,14 @@ BDO[DIR="rtl"] {
 	
 	#featured-image .fluid-width-video-wrapper {
 	    margin:20px 0 0 0;
+	}
+	
+	.featured-title {
+	    font-size:40px;
+	    padding:40px 20px 0 20px
     }
-
-    .menu li, .top-menu, .footer-menu li, .sub-header-menu li {
+	
+    .menu ul, .menu li, .top-menu, .footer-menu li, .sub-header-menu li {
 	    float:none;
 	    text-align:center;
     }
@@ -2362,6 +2390,48 @@ BDO[DIR="rtl"] {
 
     #footer .social-icons {
 	    text-align:center;
+    }
+}
+
+@media screen and (max-width: 320px) {
+	
+	#featured p {
+	    font-size:12px;
+		line-height:1.2em;
+    }
+
+    .featured-title {
+	    font-size:35px;
+    }
+	
+	.featured-subtitle {
+		font-size:15px;
+	}
+
+    .call-to-action a.button {
+	    font-size:14px;
+	    padding:7px 17px;
+    }
+}
+
+@media screen and (max-width: 240px) {
+	
+	#featured p {
+	    font-size:11px;
+		line-height:1.1em;
+    }
+
+    .featured-title {
+	    font-size:20px;
+    }
+	
+	.featured-subtitle {
+		font-size:11px;
+	}
+
+    .call-to-action a.button {
+	    font-size:12px;
+	    padding:5px 15px;
     }
 }
 /*"The last 29 days of the month are the hardest."- Nikola Tesla*/

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Responsive Theme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-25 13:42:58 UTC\n"
-"PO-Revision-Date: 2012-06-02 08:36+0100\n"
+"PO-Revision-Date: 2012-06-19 22:55+0100\n"
 "Last-Translator: grapplerulrich <grapplerulrich@gmail.com>\n"
 "Language-Team: Croatian, Croatia\n"
 "MIME-Version: 1.0\n"
@@ -251,6 +251,7 @@ msgstr "&#8249; Stariji postovi"
 msgid "Newer posts &#8250;"
 msgstr "Noviji postovi &#8250;"
 
+#: image.php
 #: blog.php
 #: page.php
 #: landing-page.php
@@ -265,6 +266,10 @@ msgstr "Više &#8250;"
 msgid "This post is password protected. Enter the password to view any comments."
 msgstr "Ovaj post je zaštićen lozinkom. Unesi lozinku da vidiš komentare."
 
+#: comments.php
+msgid "&#8249; Older comments"
+msgstr "&#8249; Stariji komentari"
+
 #. Don't translate the zero value there is no point
 #: comments.php
 msgid "One comment on &ldquo;%2$s&rdquo;"
@@ -272,10 +277,6 @@ msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
 msgstr[0] "%1$s komentara u &ldquo;%2$s&rdquo;"
 msgstr[1] "%1$s komentara u &ldquo;%2$s&rdquo;"
 msgstr[2] "Jedan komentar u &ldquo;%2$s&rdquo;"
-
-#: comments.php
-msgid "&#8249; Older comments"
-msgstr "&#8249; Stariji komentari"
 
 #: comments.php
 msgid "Newer comments &#8250;"
@@ -314,8 +315,20 @@ msgid "&uarr;"
 msgstr "&uarr;"
 
 #: footer.php
+msgid "http://themeid.com/responsive-theme/"
+msgstr "http://themeid.com/responsive-theme/"
+
+#: footer.php
 msgid "Responsive Theme"
 msgstr "Responsive Theme"
+
+#: footer.php
+msgid "powered by"
+msgstr "izrađeno u"
+
+#: footer.php
+msgid "http://wordpress.org/"
+msgstr "http://hr.wordpress.org/"
 
 #: footer.php
 msgid "WordPress"
@@ -349,10 +362,6 @@ msgstr "Call to Action"
 msgid "&#8249; Return to"
 msgstr "&#8249; Vrati"
 
-#: image.php
-msgid "Read more &#8250;;"
-msgstr "Više &#8250;"
-
 #: index.php
 #: image.php
 msgid "Don't panic, we'll get through this together. Let's explore our options here."
@@ -363,6 +372,110 @@ msgstr "Nema mjesta za paniku, zajedno ćemo riješiti problem. Da vidimo, koje 
 msgid "home"
 msgstr "početna"
 
+#: search.php
+msgid "Search Results for: %s"
+msgstr "Rezultati pretrage za: %s"
+
+#: search.php
+msgid "Your search for"
+msgstr "Pretraga za"
+
+#: search.php
+msgid "did not match any entries"
+msgstr "ne podudara se s ničim"
+
+#: searchform.php
+msgid "search here &hellip;"
+msgstr "tražilica &hellip;"
+
+#: searchform.php
+msgid "Go"
+msgstr "Traži"
+
+#: sidebar-gallery.php
+msgid "Image Information"
+msgstr "Info o fotografiji"
+
+#: sidebar-gallery.php
+msgid "Full Size:"
+msgstr "Velika:"
+
+#: sidebar-gallery.php
+msgid "Aperture: f&#47;"
+msgstr "Otvor objektiva: f/"
+
+#: sidebar-gallery.php
+msgid "Focal Length:"
+msgstr "Žarišna duljina:"
+
+#: sidebar-gallery.php
+msgid "mm"
+msgstr "mm"
+
+#: sidebar-gallery.php
+msgid "ISO:"
+msgstr "ISO:"
+
+#: sidebar-gallery.php
+msgid "Shutter:"
+msgstr "Zatvarač:"
+
+#: sidebar-gallery.php
+msgid "Camera:"
+msgstr "Kamera:"
+
+#: sidebar.php
+#: sidebar-right.php
+#: sidebar-right-half.php
+#: sidebar-left.php
+#: sidebar-left-half.php
+#: sidebar-half-left.php
+msgid "In Archive"
+msgstr "U Arhivi"
+
+#: includes/functions.php
+#: sidebar-home.php
+msgid "Home Widget 1"
+msgstr "Početna - widget 1"
+
+#: sidebar-home.php
+msgid "This is your first home widget box. To edit please go to Appearance > Widgets and choose 6th widget from the top in area six called Home Widget 1. Title is also manageable from widgets as well."
+msgstr "Ovo je prvi widget box početne. Za izmjenu idi na Izgled > Widgeti i odaberi 6ti widget sa vrha na šestom mjestu koji se zove Home Widget 1. Naslov se može također mijenjati u widgetima."
+
+#: includes/functions.php
+#: sidebar-home.php
+msgid "Home Widget 2"
+msgstr "Početna - widget 2"
+
+#: sidebar-home.php
+msgid "This is your second home widget box. To edit please go to Appearance > Widgets and choose 7th widget from the top in area seven called Home Widget 2. Title is also manageable from widgets as well."
+msgstr "Ovo je drugi widget box početne. Za izmjenu idi na Izgled > Widgeti i odaberi 7mi widget sa vrha na sedmom mjestu koji se zove Home Widget 2. Naslov se može također mijenjati u widgetima."
+
+#: includes/functions.php
+#: sidebar-home.php
+msgid "Home Widget 3"
+msgstr "Početna - widget 3"
+
+#: sidebar-home.php
+msgid "This is your third home widget box. To edit please go to Appearance > Widgets and choose 8th widget from the top in area eight called Home Widget 3. Title is also manageable from widgets as well."
+msgstr "Ovo je treći widget box početne. Za izmjenu idi na Izgled > Widgeti i odaberi 8mi widget sa vrha na osmom mjestu koji se zove Home Widget 3. Naslov se može također mijenjati u widgetima."
+
+#: single.php
+msgid "About"
+msgstr "O nama"
+
+#: sitemap.php
+msgid "Categories"
+msgstr "Kategorije"
+
+#: sitemap.php
+msgid "Latest Posts"
+msgstr "Posljednji postovi"
+
+#: sitemap.php
+msgid "Pages"
+msgstr "Stranice"
+
 #: includes/functions.php
 msgid "Top Menu"
 msgstr "Gornji izbornik"
@@ -370,10 +483,6 @@ msgstr "Gornji izbornik"
 #: includes/functions.php
 msgid "Header Menu"
 msgstr "Naslov izbornik"
-
-#: search.php
-msgid "Search Results for: %s"
-msgstr "Rezultati pretrage za: %s"
 
 #: includes/functions.php
 msgid "Sub-Header Menu"
@@ -384,16 +493,24 @@ msgid "Footer Menu"
 msgstr "Footer izbornik"
 
 #: includes/functions.php
-msgid "<div class=\"read-more\">Read more &#8250;</div><!-- end of .read-more -->"
-msgstr "<div class=\"read-more\">Više &#8250;</div><!-- end of .read-more -->"
+msgid "Archive for "
+msgstr "Arhiva za "
 
-#: search.php
-msgid "Your search for"
-msgstr "Pretraga za"
+#: includes/functions.php
+msgid "Search results for "
+msgstr "Pretraga za "
 
-#: search.php
-msgid "did not match any entries"
-msgstr "ne podudara se s ničim"
+#: includes/functions.php
+msgid "Posts tagged "
+msgstr "Postovi oznake "
+
+#: includes/functions.php
+msgid "All posts by "
+msgstr "Svi postovi od "
+
+#: includes/functions.php
+msgid "Error 404 "
+msgstr "Error 404 "
 
 #: includes/functions.php
 msgid "Page"
@@ -444,39 +561,12 @@ msgid "Area Five - sidebar-right-half.php"
 msgstr "Peto mjesto - sidebar-right-half.php"
 
 #: includes/functions.php
-#: sidebar-home.php
-msgid "Home Widget 1"
-msgstr "Početna - widget 1"
-
-#: sidebar-home.php
-msgid "This is your first home widget box. To edit please go to Appearance > Widgets and choose 6th widget from the top in area six called Home Widget 1. Title is also manageable from widgets as well."
-msgstr "Ovo je prvi widget box početne. Za izmjenu idi na Izgled > Widgeti i odaberi 6ti widget sa vrha na šestom mjestu koji se zove Home Widget 1. Naslov se može također mijenjati u widgetima."
-
-#: includes/functions.php
 msgid "Area Six - sidebar-home.php"
 msgstr "Šesto mjesto - sidebar-home.php"
 
 #: includes/functions.php
-#: sidebar-home.php
-msgid "Home Widget 2"
-msgstr "Početna - widget 2"
-
-#: sidebar-home.php
-msgid "This is your second home widget box. To edit please go to Appearance > Widgets and choose 7th widget from the top in area seven called Home Widget 2. Title is also manageable from widgets as well."
-msgstr "Ovo je drugi widget box početne. Za izmjenu idi na Izgled > Widgeti i odaberi 7mi widget sa vrha na sedmom mjestu koji se zove Home Widget 2. Naslov se može također mijenjati u widgetima."
-
-#: includes/functions.php
 msgid "Area Seven - sidebar-home.php"
 msgstr "Sedmo mjesto - sidebar-home.php"
-
-#: includes/functions.php
-#: sidebar-home.php
-msgid "Home Widget 3"
-msgstr "Početna - widget 3"
-
-#: sidebar-home.php
-msgid "This is your third home widget box. To edit please go to Appearance > Widgets and choose 8th widget from the top in area eight called Home Widget 3. Title is also manageable from widgets as well."
-msgstr "Ovo je treći widget box početne. Za izmjenu idi na Izgled > Widgeti i odaberi 8mi widget sa vrha na osmom mjestu koji se zove Home Widget 3. Naslov se može također mijenjati u widgetima."
 
 #: includes/functions.php
 msgid "Area Eight - sidebar-home.php"
@@ -489,10 +579,6 @@ msgstr "Galerija sidebar"
 #: includes/functions.php
 msgid "Area Nine - sidebar-gallery.php"
 msgstr "Deveto mjesto - sidebar-gallery.php"
-
-#: sitemap.php
-msgid "Pages"
-msgstr "Stranice"
 
 #: includes/theme-options.php
 msgid "Theme Options"
@@ -583,6 +669,14 @@ msgid "Featured Content"
 msgstr "Istaknuti sadržaj"
 
 #: includes/theme-options.php
+msgid "http://themeid.com/forum/topic/510/theme-options-featured-content/"
+msgstr "http://themeid.com/forum/topic/510/theme-options-featured-content/"
+
+#: includes/theme-options.php
+msgid "See Docs"
+msgstr "Dokumentacija"
+
+#: includes/theme-options.php
 msgid "Paste your video or image source"
 msgstr "Pastiraj video ili sliku"
 
@@ -617,6 +711,10 @@ msgstr "Unesi samo Yahoo ID broj"
 #: includes/theme-options.php
 msgid "Site Statistics Tracker"
 msgstr "Statistike sajta"
+
+#: includes/theme-options.php
+msgid "Leave blank if plugin handles your webmaster tools"
+msgstr "Ostavi prazno ako ti plugin uređuje webmaster tools"
 
 #: includes/theme-options.php
 msgid "Google Analytics, StatCounter, any other or all of them."
@@ -681,112 +779,6 @@ msgstr "Google+"
 #: includes/theme-options.php
 msgid "Enter your Google+ URL"
 msgstr "Tvoj Google+ URL"
-
-#: searchform.php
-msgid "search here &hellip;"
-msgstr "tražilica &hellip;"
-
-#: searchform.php
-msgid "Go"
-msgstr "Traži"
-
-#: sidebar-gallery.php
-msgid "Image Information"
-msgstr "Info o fotografiji"
-
-#: sidebar-gallery.php
-msgid "Full Size:"
-msgstr "Velika:"
-
-#: sidebar-gallery.php
-msgid "Aperture: f&#47;"
-msgstr "Otvor objektiva: f/"
-
-#: sidebar-gallery.php
-msgid "Focal Length:"
-msgstr "Žarišna duljina:"
-
-#: sidebar-gallery.php
-msgid "mm"
-msgstr "mm"
-
-#: sidebar-gallery.php
-msgid "ISO:"
-msgstr "ISO:"
-
-#: sidebar-gallery.php
-msgid "Shutter:"
-msgstr "Zatvarač:"
-
-#: sidebar-gallery.php
-msgid "Camera:"
-msgstr "Kamera:"
-
-#: sidebar.php
-#: sidebar-right.php
-#: sidebar-right-half.php
-#: sidebar-left.php
-#: sidebar-left-half.php
-#: sidebar-half-left.php
-msgid "In Archive"
-msgstr "U Arhivi"
-
-#: single.php
-#: search.php
-msgid "About"
-msgstr "O nama"
-
-#: sitemap.php
-msgid "Categories"
-msgstr "Kategorije"
-
-#: sitemap.php
-msgid "Latest Posts"
-msgstr "Posljednji postovi"
-
-#: includes/functions.php
-msgid "Archive for "
-msgstr "Arhiva za "
-
-#: includes/functions.php
-msgid "Search results for "
-msgstr "Pretraga za "
-
-#: includes/functions.php
-msgid "Posts tagged "
-msgstr "Postovi oznake "
-
-#: includes/functions.php
-msgid "All posts by "
-msgstr "Svi postovi od "
-
-#: includes/functions.php
-msgid "Error 404 "
-msgstr "Error 404 "
-
-#: footer.php
-msgid "http://themeid.com/responsive-theme/"
-msgstr "http://themeid.com/responsive-theme/"
-
-#: footer.php
-msgid "powered by"
-msgstr "izrađeno u"
-
-#: footer.php
-msgid "http://wordpress.org/"
-msgstr "http://hr.wordpress.org/"
-
-#: includes/theme-options.php
-msgid "http://themeid.com/forum/topic/510/theme-options-featured-content/"
-msgstr "http://themeid.com/forum/topic/510/theme-options-featured-content/"
-
-#: includes/theme-options.php
-msgid "See Docs"
-msgstr "Dokumentacija"
-
-#: includes/theme-options.php
-msgid "Leave blank if plugin handles your webmaster tools"
-msgstr "Ostavi prazno ako ti plugin uređuje webmaster tools"
 
 #: includes/theme-options.php
 msgid "Instagram"

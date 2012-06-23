@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Responsive Theme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-25 13:42:58 UTC\n"
-"PO-Revision-Date: 2012-05-27 21:33+0100\n"
+"PO-Revision-Date: 2012-06-19 22:53+0100\n"
 "Last-Translator: grapplerulrich <grapplerulrich@gmail.com>\n"
 "Language-Team: Catalan\n"
 "MIME-Version: 1.0\n"
@@ -251,6 +251,7 @@ msgstr "&#8249; Publicacions més antigues"
 msgid "Newer posts &#8250;"
 msgstr "Publicacions més noves &#8250;"
 
+#: image.php
 #: blog.php
 #: page.php
 #: landing-page.php
@@ -265,16 +266,16 @@ msgstr "Continua llegint &#8250;"
 msgid "This post is password protected. Enter the password to view any comments."
 msgstr "Aquesta publicació està protegida per contrasenya. Introdueix la contrasenya per veure els comentaris."
 
+#: comments.php
+msgid "&#8249; Older comments"
+msgstr "&#8249; Comentaris més antics"
+
 #. Don't translate the zero value there is no point
 #: comments.php
 msgid "One comment on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
 msgstr[0] "Un comentari a &ldquo;%2$s&rdquo;"
 msgstr[1] "%1$s comentaris a &ldquo;%2$s&rdquo;"
-
-#: comments.php
-msgid "&#8249; Older comments"
-msgstr "&#8249; Comentaris més antics"
 
 #: comments.php
 msgid "Newer comments &#8250;"
@@ -313,8 +314,20 @@ msgid "&uarr;"
 msgstr "&uarr;"
 
 #: footer.php
+msgid "http://themeid.com/responsive-theme/"
+msgstr "http://themeid.com/responsive-theme/"
+
+#: footer.php
 msgid "Responsive Theme"
 msgstr "Responsive Theme"
+
+#: footer.php
+msgid "powered by"
+msgstr "potenciat per"
+
+#: footer.php
+msgid "http://wordpress.org/"
+msgstr "http://ca.wordpress.org/"
 
 #: footer.php
 msgid "WordPress"
@@ -346,10 +359,6 @@ msgstr "Crida a l'acció"
 msgid "&#8249; Return to"
 msgstr "&#8249; Torna a"
 
-#: image.php
-msgid "Read more &#8250;;"
-msgstr "Continua llegint &#8250;;"
-
 #: index.php
 #: image.php
 msgid "Don't panic, we'll get through this together. Let's explore our options here."
@@ -360,6 +369,110 @@ msgstr "No t'espantis, ens espavilarem. Vegem les opcions a continuació."
 msgid "home"
 msgstr "inici"
 
+#: search.php
+msgid "Search Results for: %s"
+msgstr "Resultats de la cerca per a: %s"
+
+#: search.php
+msgid "Your search for"
+msgstr "La teva cerca per a"
+
+#: search.php
+msgid "did not match any entries"
+msgstr "no ha obtingut cap resultat"
+
+#: searchform.php
+msgid "search here &hellip;"
+msgstr "cerca aquí &hellip;"
+
+#: searchform.php
+msgid "Go"
+msgstr "Vés"
+
+#: sidebar-gallery.php
+msgid "Image Information"
+msgstr "Informació de la imatge"
+
+#: sidebar-gallery.php
+msgid "Full Size:"
+msgstr "Mida completa:"
+
+#: sidebar-gallery.php
+msgid "Aperture: f&#47;"
+msgstr "Obertura: f&#47;"
+
+#: sidebar-gallery.php
+msgid "Focal Length:"
+msgstr "Distància focal:"
+
+#: sidebar-gallery.php
+msgid "mm"
+msgstr "mm"
+
+#: sidebar-gallery.php
+msgid "ISO:"
+msgstr "ISO:"
+
+#: sidebar-gallery.php
+msgid "Shutter:"
+msgstr "Obturador:"
+
+#: sidebar-gallery.php
+msgid "Camera:"
+msgstr "Càmera:"
+
+#: sidebar.php
+#: sidebar-right.php
+#: sidebar-right-half.php
+#: sidebar-left.php
+#: sidebar-left-half.php
+#: sidebar-half-left.php
+msgid "In Archive"
+msgstr "A l'arxiu"
+
+#: includes/functions.php
+#: sidebar-home.php
+msgid "Home Widget 1"
+msgstr "Giny de l'inici 1"
+
+#: sidebar-home.php
+msgid "This is your first home widget box. To edit please go to Appearance > Widgets and choose 6th widget from the top in area six called Home Widget 1. Title is also manageable from widgets as well."
+msgstr "Aquesta és la capsa del teu primer giny de l'inici. Per editar-lo, vés a Aparença > Ginys i escull el sisè giny des de dalt, a la sisena àrea, anomenat Giny de l'inici 1. El títol també es pot administrar des dels ginys."
+
+#: includes/functions.php
+#: sidebar-home.php
+msgid "Home Widget 2"
+msgstr "Giny de l'inici 2"
+
+#: sidebar-home.php
+msgid "This is your second home widget box. To edit please go to Appearance > Widgets and choose 7th widget from the top in area seven called Home Widget 2. Title is also manageable from widgets as well."
+msgstr "Aquesta és la capsa del teu segon giny de l'inici. Per editar-lo, vés a Aparença > Ginys i escull el setè giny des de dalt, a la setena àrea, anomenat Giny de l'inici 2. El títol també es pot administrar des dels ginys."
+
+#: includes/functions.php
+#: sidebar-home.php
+msgid "Home Widget 3"
+msgstr "Giny de l'inici 3"
+
+#: sidebar-home.php
+msgid "This is your third home widget box. To edit please go to Appearance > Widgets and choose 8th widget from the top in area eight called Home Widget 3. Title is also manageable from widgets as well."
+msgstr "Aquesta és la capsa del teu tercer giny de l'inici. Per editar-lo, vés a Aparença > Ginys i escull el vuitè giny des de dalt, a la vuitena àrea, anomenat Giny de l'inici 3. El títol també es pot administrar des dels ginys."
+
+#: single.php
+msgid "About"
+msgstr "Quant a"
+
+#: sitemap.php
+msgid "Categories"
+msgstr "Categories"
+
+#: sitemap.php
+msgid "Latest Posts"
+msgstr "Últimes publicacions"
+
+#: sitemap.php
+msgid "Pages"
+msgstr "Pàgines"
+
 #: includes/functions.php
 msgid "Top Menu"
 msgstr "Menú superior"
@@ -367,10 +480,6 @@ msgstr "Menú superior"
 #: includes/functions.php
 msgid "Header Menu"
 msgstr "Menú de la capçalera"
-
-#: search.php
-msgid "Search Results for: %s"
-msgstr "Resultats de la cerca per a: %s"
 
 #: includes/functions.php
 msgid "Sub-Header Menu"
@@ -381,16 +490,24 @@ msgid "Footer Menu"
 msgstr "Menú del peu"
 
 #: includes/functions.php
-msgid "<div class=\"read-more\">Read more &#8250;</div><!-- end of .read-more -->"
-msgstr "<div class=\"read-more\">Continua llegint &#8250;</div><!-- end of .read-more -->"
+msgid "Archive for "
+msgstr "Arxiu de "
 
-#: search.php
-msgid "Your search for"
-msgstr "La teva cerca per a"
+#: includes/functions.php
+msgid "Search results for "
+msgstr "Resultats de la cerca de "
 
-#: search.php
-msgid "did not match any entries"
-msgstr "no ha obtingut cap resultat"
+#: includes/functions.php
+msgid "Posts tagged "
+msgstr "Publicacions etiquetades amb "
+
+#: includes/functions.php
+msgid "All posts by "
+msgstr "Totes les publicacions de "
+
+#: includes/functions.php
+msgid "Error 404 "
+msgstr "Error 404 "
 
 #: includes/functions.php
 msgid "Page"
@@ -441,39 +558,12 @@ msgid "Area Five - sidebar-right-half.php"
 msgstr "Àrea 5 - sidebar-right-half.php"
 
 #: includes/functions.php
-#: sidebar-home.php
-msgid "Home Widget 1"
-msgstr "Giny de l'inici 1"
-
-#: sidebar-home.php
-msgid "This is your first home widget box. To edit please go to Appearance > Widgets and choose 6th widget from the top in area six called Home Widget 1. Title is also manageable from widgets as well."
-msgstr "Aquesta és la capsa del teu primer giny de l'inici. Per editar-lo, vés a Aparença > Ginys i escull el sisè giny des de dalt, a la sisena àrea, anomenat Giny de l'inici 1. El títol també es pot administrar des dels ginys."
-
-#: includes/functions.php
 msgid "Area Six - sidebar-home.php"
 msgstr "Àrea 6 - sidebar-home.php"
 
 #: includes/functions.php
-#: sidebar-home.php
-msgid "Home Widget 2"
-msgstr "Giny de l'inici 2"
-
-#: sidebar-home.php
-msgid "This is your second home widget box. To edit please go to Appearance > Widgets and choose 7th widget from the top in area seven called Home Widget 2. Title is also manageable from widgets as well."
-msgstr "Aquesta és la capsa del teu segon giny de l'inici. Per editar-lo, vés a Aparença > Ginys i escull el setè giny des de dalt, a la setena àrea, anomenat Giny de l'inici 2. El títol també es pot administrar des dels ginys."
-
-#: includes/functions.php
 msgid "Area Seven - sidebar-home.php"
 msgstr "Àrea 7 - sidebar-home.php"
-
-#: includes/functions.php
-#: sidebar-home.php
-msgid "Home Widget 3"
-msgstr "Giny de l'inici 3"
-
-#: sidebar-home.php
-msgid "This is your third home widget box. To edit please go to Appearance > Widgets and choose 8th widget from the top in area eight called Home Widget 3. Title is also manageable from widgets as well."
-msgstr "Aquesta és la capsa del teu tercer giny de l'inici. Per editar-lo, vés a Aparença > Ginys i escull el vuitè giny des de dalt, a la vuitena àrea, anomenat Giny de l'inici 3. El títol també es pot administrar des dels ginys."
 
 #: includes/functions.php
 msgid "Area Eight - sidebar-home.php"
@@ -486,10 +576,6 @@ msgstr "Barra lateral de la galeria"
 #: includes/functions.php
 msgid "Area Nine - sidebar-gallery.php"
 msgstr "Àrea 9 - sidebar-gallery.php"
-
-#: sitemap.php
-msgid "Pages"
-msgstr "Pàgines"
 
 #: includes/theme-options.php
 msgid "Theme Options"
@@ -580,6 +666,14 @@ msgid "Featured Content"
 msgstr "Contingut destacat"
 
 #: includes/theme-options.php
+msgid "http://themeid.com/forum/topic/510/theme-options-featured-content/"
+msgstr "http://themeid.com/forum/topic/510/theme-options-featured-content/"
+
+#: includes/theme-options.php
+msgid "See Docs"
+msgstr "Vegeu la documentació"
+
+#: includes/theme-options.php
 msgid "Paste your video or image source"
 msgstr "Enganxa el codi de la imatge o el vídeo"
 
@@ -589,7 +683,7 @@ msgstr "Eines per a desenvolupadors web"
 
 #: includes/theme-options.php
 msgid "Google Site Verification"
-msgstr "Verificació de llocs de Google"
+msgstr "Verificació de lloc del Google"
 
 #: includes/theme-options.php
 msgid "Enter your Google ID number only"
@@ -597,7 +691,7 @@ msgstr "Només l'identificador de Google"
 
 #: includes/theme-options.php
 msgid "Bing Site Verification"
-msgstr "Verificació de llocs de Bing"
+msgstr "Verificació de lloc del Bing"
 
 #: includes/theme-options.php
 msgid "Enter your Bing ID number only"
@@ -605,7 +699,7 @@ msgstr "Només l'identificador de Bing"
 
 #: includes/theme-options.php
 msgid "Yahoo Site Verification"
-msgstr "Verificació de llocs de Yahoo"
+msgstr "Verificació de lloc del Yahoo"
 
 #: includes/theme-options.php
 msgid "Enter your Yahoo ID number only"
@@ -614,6 +708,10 @@ msgstr "Només l'identificador de Yahoo"
 #: includes/theme-options.php
 msgid "Site Statistics Tracker"
 msgstr "Rastrejador d'estadístiques del lloc"
+
+#: includes/theme-options.php
+msgid "Leave blank if plugin handles your webmaster tools"
+msgstr "Deixa-ho en blanc si hi ha una extensió que s'encarrega de les eines de desenvolupador"
 
 #: includes/theme-options.php
 msgid "Google Analytics, StatCounter, any other or all of them."
@@ -678,112 +776,6 @@ msgstr "Google+"
 #: includes/theme-options.php
 msgid "Enter your Google+ URL"
 msgstr "Introdueix la teva URL del Google+"
-
-#: searchform.php
-msgid "search here &hellip;"
-msgstr "cerca aquí &hellip;"
-
-#: searchform.php
-msgid "Go"
-msgstr "Vés"
-
-#: sidebar-gallery.php
-msgid "Image Information"
-msgstr "Informació de la imatge"
-
-#: sidebar-gallery.php
-msgid "Full Size:"
-msgstr "Mida completa:"
-
-#: sidebar-gallery.php
-msgid "Aperture: f&#47;"
-msgstr "Obertura: f&#47;"
-
-#: sidebar-gallery.php
-msgid "Focal Length:"
-msgstr "Distància focal:"
-
-#: sidebar-gallery.php
-msgid "mm"
-msgstr "mm"
-
-#: sidebar-gallery.php
-msgid "ISO:"
-msgstr "ISO:"
-
-#: sidebar-gallery.php
-msgid "Shutter:"
-msgstr "Obturador:"
-
-#: sidebar-gallery.php
-msgid "Camera:"
-msgstr "Càmera:"
-
-#: sidebar.php
-#: sidebar-right.php
-#: sidebar-right-half.php
-#: sidebar-left.php
-#: sidebar-left-half.php
-#: sidebar-half-left.php
-msgid "In Archive"
-msgstr "A l'arxiu"
-
-#: single.php
-#: search.php
-msgid "About"
-msgstr "Quant a"
-
-#: sitemap.php
-msgid "Categories"
-msgstr "Categories"
-
-#: sitemap.php
-msgid "Latest Posts"
-msgstr "Últimes publicacions"
-
-#: includes/functions.php
-msgid "Archive for "
-msgstr "Arxiu de "
-
-#: includes/functions.php
-msgid "Search results for "
-msgstr "Resultats de la cerca de "
-
-#: includes/functions.php
-msgid "Posts tagged "
-msgstr "Publicacions etiquetades amb "
-
-#: includes/functions.php
-msgid "All posts by "
-msgstr "Totes les publicacions de "
-
-#: includes/functions.php
-msgid "Error 404 "
-msgstr "Error 404 "
-
-#: footer.php
-msgid "http://themeid.com/responsive-theme/"
-msgstr "http://themeid.com/responsive-theme/"
-
-#: footer.php
-msgid "powered by"
-msgstr "potenciat per"
-
-#: footer.php
-msgid "http://wordpress.org/"
-msgstr "http://ca.wordpress.org/"
-
-#: includes/theme-options.php
-msgid "http://themeid.com/forum/topic/510/theme-options-featured-content/"
-msgstr "http://themeid.com/forum/topic/510/theme-options-featured-content/"
-
-#: includes/theme-options.php
-msgid "See Docs"
-msgstr "Vegeu la documentació"
-
-#: includes/theme-options.php
-msgid "Leave blank if plugin handles your webmaster tools"
-msgstr "Deixa-ho en blanc si hi ha una extensió que s'encarrega de les eines de desenvolupador"
 
 #: includes/theme-options.php
 msgid "Instagram"

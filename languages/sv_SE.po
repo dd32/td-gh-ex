@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Responsive Theme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-25 13:42:58 UTC\n"
-"PO-Revision-Date: 2012-05-27 21:55+0100\n"
+"PO-Revision-Date: 2012-06-19 22:57+0100\n"
 "Last-Translator: grapplerulrich <grapplerulrich@gmail.com>\n"
 "Language-Team: Swedish, Sweden\n"
 "MIME-Version: 1.0\n"
@@ -251,6 +251,7 @@ msgstr "&#8249; Äldre inlägg"
 msgid "Newer posts &#8250;"
 msgstr "Nyare inlägg &#8250;"
 
+#: image.php
 #: blog.php
 #: page.php
 #: landing-page.php
@@ -265,16 +266,16 @@ msgstr "Läs mer &#8250;"
 msgid "This post is password protected. Enter the password to view any comments."
 msgstr "Detta inlägg är lösenordsskyddad. Ange lösenordet för att se kommentarer."
 
+#: comments.php
+msgid "&#8249; Older comments"
+msgstr "&#8249; Äldre kommentarer"
+
 #. Don't translate the zero value there is no point
 #: comments.php
 msgid "One comment on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
 msgstr[0] "En kommentar på “%2$s”"
 msgstr[1] "%1$s kommentarer på “%2$s”"
-
-#: comments.php
-msgid "&#8249; Older comments"
-msgstr "&#8249; Äldre kommentarer"
 
 #: comments.php
 msgid "Newer comments &#8250;"
@@ -313,8 +314,20 @@ msgid "&uarr;"
 msgstr "&uarr;"
 
 #: footer.php
+msgid "http://themeid.com/responsive-theme/"
+msgstr "http://themeid.com/responsive-theme/"
+
+#: footer.php
 msgid "Responsive Theme"
 msgstr "Responsive Theme"
+
+#: footer.php
+msgid "powered by"
+msgstr "drivs av"
+
+#: footer.php
+msgid "http://wordpress.org/"
+msgstr "http://sv.wordpress.org/"
 
 #: footer.php
 msgid "WordPress"
@@ -346,10 +359,6 @@ msgstr "Call to Action"
 msgid "&#8249; Return to"
 msgstr "&#8249; Gå tillbaka till"
 
-#: image.php
-msgid "Read more &#8250;;"
-msgstr "Läs mer &#8250;;"
-
 #: index.php
 #: image.php
 msgid "Don't panic, we'll get through this together. Let's explore our options here."
@@ -360,6 +369,110 @@ msgstr "Få inte panik, vi tar oss igenom detta tillsammans. Låt oss utforska v
 msgid "home"
 msgstr "hem"
 
+#: search.php
+msgid "Search Results for: %s"
+msgstr "Sökresultat för: %s"
+
+#: search.php
+msgid "Your search for"
+msgstr "Din sökning av"
+
+#: search.php
+msgid "did not match any entries"
+msgstr "matchade inte några poster"
+
+#: searchform.php
+msgid "search here &hellip;"
+msgstr "sök här &hellip;"
+
+#: searchform.php
+msgid "Go"
+msgstr "Gå"
+
+#: sidebar-gallery.php
+msgid "Image Information"
+msgstr "Bildinformation"
+
+#: sidebar-gallery.php
+msgid "Full Size:"
+msgstr "Fullstorlek:"
+
+#: sidebar-gallery.php
+msgid "Aperture: f&#47;"
+msgstr "Bländaröppning: f&#47;"
+
+#: sidebar-gallery.php
+msgid "Focal Length:"
+msgstr "Brännvidd:"
+
+#: sidebar-gallery.php
+msgid "mm"
+msgstr "mm"
+
+#: sidebar-gallery.php
+msgid "ISO:"
+msgstr "ISO:"
+
+#: sidebar-gallery.php
+msgid "Shutter:"
+msgstr "Slutare:"
+
+#: sidebar-gallery.php
+msgid "Camera:"
+msgstr "Kamera:"
+
+#: sidebar.php
+#: sidebar-right.php
+#: sidebar-right-half.php
+#: sidebar-left.php
+#: sidebar-left-half.php
+#: sidebar-half-left.php
+msgid "In Archive"
+msgstr "I Arkiv"
+
+#: includes/functions.php
+#: sidebar-home.php
+msgid "Home Widget 1"
+msgstr "Hem Widget 1"
+
+#: sidebar-home.php
+msgid "This is your first home widget box. To edit please go to Appearance > Widgets and choose 6th widget from the top in area six called Home Widget 1. Title is also manageable from widgets as well."
+msgstr "Detta är din första hem-widget-box. För att redigera, gå till Utseende > Widgets och välj sjätte widgeten från toppen i område sex vid namn Hem Widget 1. Rubriken är också hanterbar från Widgets."
+
+#: includes/functions.php
+#: sidebar-home.php
+msgid "Home Widget 2"
+msgstr "Hem Widget 2"
+
+#: sidebar-home.php
+msgid "This is your second home widget box. To edit please go to Appearance > Widgets and choose 7th widget from the top in area seven called Home Widget 2. Title is also manageable from widgets as well."
+msgstr "Detta är din andra hem-widget-box. För att redigera, gå till Utseende > Widgets och välj sjunde widgeten från toppen i område sju vid namn Hem Widget 2. Rubriken är också hanterbar från Widgets."
+
+#: includes/functions.php
+#: sidebar-home.php
+msgid "Home Widget 3"
+msgstr "Hem Widget 3"
+
+#: sidebar-home.php
+msgid "This is your third home widget box. To edit please go to Appearance > Widgets and choose 8th widget from the top in area eight called Home Widget 3. Title is also manageable from widgets as well."
+msgstr "Detta är din tredje hem-widget-box. För att redigera, gå till Utseende > Widgets och välj åttonde widgeten från toppen i område åtta vid namn Hem Widget 3. Rubriken är också hanterbar från Widgets."
+
+#: single.php
+msgid "About"
+msgstr "Om"
+
+#: sitemap.php
+msgid "Categories"
+msgstr "Kategorier"
+
+#: sitemap.php
+msgid "Latest Posts"
+msgstr "Senaste Inlägg"
+
+#: sitemap.php
+msgid "Pages"
+msgstr "Sidor"
+
 #: includes/functions.php
 msgid "Top Menu"
 msgstr "Topp Meny"
@@ -367,10 +480,6 @@ msgstr "Topp Meny"
 #: includes/functions.php
 msgid "Header Menu"
 msgstr "Sidhuvud Meny"
-
-#: search.php
-msgid "Search Results for: %s"
-msgstr "Sökresultat för: %s"
 
 #: includes/functions.php
 msgid "Sub-Header Menu"
@@ -381,16 +490,24 @@ msgid "Footer Menu"
 msgstr "Sidfot Meny"
 
 #: includes/functions.php
-msgid "<div class=\"read-more\">Read more &#8250;</div><!-- end of .read-more -->"
-msgstr "<div class=\"read-more\">Läs mer &#8250;</div><!-- end of .read-more -->"
+msgid "Archive for "
+msgstr "Arkiv för "
 
-#: search.php
-msgid "Your search for"
-msgstr "Din sökning av"
+#: includes/functions.php
+msgid "Search results for "
+msgstr "Sökresultat för "
 
-#: search.php
-msgid "did not match any entries"
-msgstr "matchade inte några poster"
+#: includes/functions.php
+msgid "Posts tagged "
+msgstr "Inlägg taggade "
+
+#: includes/functions.php
+msgid "All posts by "
+msgstr "Alla inlägg av "
+
+#: includes/functions.php
+msgid "Error 404 "
+msgstr "Fel 404 "
 
 #: includes/functions.php
 msgid "Page"
@@ -441,39 +558,12 @@ msgid "Area Five - sidebar-right-half.php"
 msgstr "Område Fem - sidebar-right-half.php"
 
 #: includes/functions.php
-#: sidebar-home.php
-msgid "Home Widget 1"
-msgstr "Hem Widget 1"
-
-#: sidebar-home.php
-msgid "This is your first home widget box. To edit please go to Appearance > Widgets and choose 6th widget from the top in area six called Home Widget 1. Title is also manageable from widgets as well."
-msgstr "Detta är din första hem-widget-box. För att redigera, gå till Utseende > Widgets och välj sjätte widgeten från toppen i område sex vid namn Hem Widget 1. Rubriken är också hanterbar från Widgets."
-
-#: includes/functions.php
 msgid "Area Six - sidebar-home.php"
 msgstr "Område Sex - sidebar-home.php"
 
 #: includes/functions.php
-#: sidebar-home.php
-msgid "Home Widget 2"
-msgstr "Hem Widget 2"
-
-#: sidebar-home.php
-msgid "This is your second home widget box. To edit please go to Appearance > Widgets and choose 7th widget from the top in area seven called Home Widget 2. Title is also manageable from widgets as well."
-msgstr "Detta är din andra hem-widget-box. För att redigera, gå till Utseende > Widgets och välj sjunde widgeten från toppen i område sju vid namn Hem Widget 2. Rubriken är också hanterbar från Widgets."
-
-#: includes/functions.php
 msgid "Area Seven - sidebar-home.php"
 msgstr "Område Sju - sidebar-home.php"
-
-#: includes/functions.php
-#: sidebar-home.php
-msgid "Home Widget 3"
-msgstr "Hem Widget 3"
-
-#: sidebar-home.php
-msgid "This is your third home widget box. To edit please go to Appearance > Widgets and choose 8th widget from the top in area eight called Home Widget 3. Title is also manageable from widgets as well."
-msgstr "Detta är din tredje hem-widget-box. För att redigera, gå till Utseende > Widgets och välj åttonde widgeten från toppen i område åtta vid namn Hem Widget 3. Rubriken är också hanterbar från Widgets."
 
 #: includes/functions.php
 msgid "Area Eight - sidebar-home.php"
@@ -486,10 +576,6 @@ msgstr "Galleri Sidopanel"
 #: includes/functions.php
 msgid "Area Nine - sidebar-gallery.php"
 msgstr "Område Nio - sidebar-gallery.php"
-
-#: sitemap.php
-msgid "Pages"
-msgstr "Sidor"
 
 #: includes/theme-options.php
 msgid "Theme Options"
@@ -580,6 +666,14 @@ msgid "Featured Content"
 msgstr "Presenterat Innehåll"
 
 #: includes/theme-options.php
+msgid "http://themeid.com/forum/topic/510/theme-options-featured-content/"
+msgstr "http://themeid.com/forum/topic/510/theme-options-featured-content/"
+
+#: includes/theme-options.php
+msgid "See Docs"
+msgstr "Se Dokumentation"
+
+#: includes/theme-options.php
 msgid "Paste your video or image source"
 msgstr "Klistra in video- eller bildkälla"
 
@@ -614,6 +708,10 @@ msgstr "Ange endast ditt Yahoo ID-nummer"
 #: includes/theme-options.php
 msgid "Site Statistics Tracker"
 msgstr "Site Statistics Tracker"
+
+#: includes/theme-options.php
+msgid "Leave blank if plugin handles your webmaster tools"
+msgstr "Lämna blankt om plugin hanterar dina webbadministratörsverktyg"
 
 #: includes/theme-options.php
 msgid "Google Analytics, StatCounter, any other or all of them."
@@ -678,112 +776,6 @@ msgstr "Google+"
 #: includes/theme-options.php
 msgid "Enter your Google+ URL"
 msgstr "Ange din Google+-URL"
-
-#: searchform.php
-msgid "search here &hellip;"
-msgstr "sök här &hellip;"
-
-#: searchform.php
-msgid "Go"
-msgstr "Gå"
-
-#: sidebar-gallery.php
-msgid "Image Information"
-msgstr "Bildinformation"
-
-#: sidebar-gallery.php
-msgid "Full Size:"
-msgstr "Fullstorlek:"
-
-#: sidebar-gallery.php
-msgid "Aperture: f&#47;"
-msgstr "Bländaröppning: f&#47;"
-
-#: sidebar-gallery.php
-msgid "Focal Length:"
-msgstr "Brännvidd:"
-
-#: sidebar-gallery.php
-msgid "mm"
-msgstr "mm"
-
-#: sidebar-gallery.php
-msgid "ISO:"
-msgstr "ISO:"
-
-#: sidebar-gallery.php
-msgid "Shutter:"
-msgstr "Slutare:"
-
-#: sidebar-gallery.php
-msgid "Camera:"
-msgstr "Kamera:"
-
-#: sidebar.php
-#: sidebar-right.php
-#: sidebar-right-half.php
-#: sidebar-left.php
-#: sidebar-left-half.php
-#: sidebar-half-left.php
-msgid "In Archive"
-msgstr "I Arkiv"
-
-#: single.php
-#: search.php
-msgid "About"
-msgstr "Om"
-
-#: sitemap.php
-msgid "Categories"
-msgstr "Kategorier"
-
-#: sitemap.php
-msgid "Latest Posts"
-msgstr "Senaste Inlägg"
-
-#: includes/functions.php
-msgid "Archive for "
-msgstr "Arkiv för "
-
-#: includes/functions.php
-msgid "Search results for "
-msgstr "Sökresultat för "
-
-#: includes/functions.php
-msgid "Posts tagged "
-msgstr "Inlägg taggade "
-
-#: includes/functions.php
-msgid "All posts by "
-msgstr "Alla inlägg av "
-
-#: includes/functions.php
-msgid "Error 404 "
-msgstr "Fel 404 "
-
-#: footer.php
-msgid "http://themeid.com/responsive-theme/"
-msgstr "http://themeid.com/responsive-theme/"
-
-#: footer.php
-msgid "powered by"
-msgstr "drivs av"
-
-#: footer.php
-msgid "http://wordpress.org/"
-msgstr "http://sv.wordpress.org/"
-
-#: includes/theme-options.php
-msgid "http://themeid.com/forum/topic/510/theme-options-featured-content/"
-msgstr "http://themeid.com/forum/topic/510/theme-options-featured-content/"
-
-#: includes/theme-options.php
-msgid "See Docs"
-msgstr "Se Dokumentation"
-
-#: includes/theme-options.php
-msgid "Leave blank if plugin handles your webmaster tools"
-msgstr "Lämna blankt om plugin hanterar dina webbadministratörsverktyg"
 
 #: includes/theme-options.php
 msgid "Instagram"

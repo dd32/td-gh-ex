@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Responsive Theme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-25 13:42:58 UTC\n"
-"PO-Revision-Date: 2012-05-27 21:33+0100\n"
+"PO-Revision-Date: 2012-06-19 22:53+0100\n"
 "Last-Translator: grapplerulrich <grapplerulrich@gmail.com>\n"
 "Language-Team: Spanish, Spain\n"
 "MIME-Version: 1.0\n"
@@ -251,6 +251,7 @@ msgstr "‹ Entradas m&aacute;s antiguas"
 msgid "Newer posts &#8250;"
 msgstr "Entradas m&aacute;s recientes ›"
 
+#: image.php
 #: blog.php
 #: page.php
 #: landing-page.php
@@ -265,16 +266,16 @@ msgstr "Leer más ›"
 msgid "This post is password protected. Enter the password to view any comments."
 msgstr "Esta entrada est&aacute; protegida. Introduce la contraseña para ver los comentarios."
 
+#: comments.php
+msgid "&#8249; Older comments"
+msgstr "‹ Comentarios m&aacute;s antiguos"
+
 #. Don't translate the zero value there is no point
 #: comments.php
 msgid "One comment on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
 msgstr[0] "Un comentario sobre “%2$s”"
 msgstr[1] "%1$s comentarios sobre “%2$s”"
-
-#: comments.php
-msgid "&#8249; Older comments"
-msgstr "‹ Comentarios m&aacute;s antiguos"
 
 #: comments.php
 msgid "Newer comments &#8250;"
@@ -313,8 +314,20 @@ msgid "&uarr;"
 msgstr "&uarr;"
 
 #: footer.php
+msgid "http://themeid.com/responsive-theme/"
+msgstr "http://themeid.com/responsive-theme/"
+
+#: footer.php
 msgid "Responsive Theme"
 msgstr "Responsive Theme"
+
+#: footer.php
+msgid "powered by"
+msgstr "Funciona con"
+
+#: footer.php
+msgid "http://wordpress.org/"
+msgstr "http://es.wordpress.org/"
 
 #: footer.php
 msgid "WordPress"
@@ -346,10 +359,6 @@ msgstr "Llamada a la acci&oacute;n"
 msgid "&#8249; Return to"
 msgstr "&#8249; Volver a"
 
-#: image.php
-msgid "Read more &#8250;;"
-msgstr "Leer m&aacute;s &#8250;;"
-
 #: index.php
 #: image.php
 msgid "Don't panic, we'll get through this together. Let's explore our options here."
@@ -360,6 +369,110 @@ msgstr "No te preocupes, vamos a salir de esto juntos. Vamos a explorar nuestras
 msgid "home"
 msgstr "inicio"
 
+#: search.php
+msgid "Search Results for: %s"
+msgstr "Resultados de la b&uacute;squeda para: %s"
+
+#: search.php
+msgid "Your search for"
+msgstr "Tu b&uacute;squeda para"
+
+#: search.php
+msgid "did not match any entries"
+msgstr "no ha encontrado ninguna entrada"
+
+#: searchform.php
+msgid "search here &hellip;"
+msgstr "buscar aqu&iacute;..."
+
+#: searchform.php
+msgid "Go"
+msgstr "Ir"
+
+#: sidebar-gallery.php
+msgid "Image Information"
+msgstr "Datos de la imagen"
+
+#: sidebar-gallery.php
+msgid "Full Size:"
+msgstr "Tama&ntilde;o completo:"
+
+#: sidebar-gallery.php
+msgid "Aperture: f&#47;"
+msgstr "Apertura: f&#47;"
+
+#: sidebar-gallery.php
+msgid "Focal Length:"
+msgstr "Distancia focal:"
+
+#: sidebar-gallery.php
+msgid "mm"
+msgstr "mm"
+
+#: sidebar-gallery.php
+msgid "ISO:"
+msgstr "ISO:"
+
+#: sidebar-gallery.php
+msgid "Shutter:"
+msgstr "Obturador:"
+
+#: sidebar-gallery.php
+msgid "Camera:"
+msgstr "C&aacute;mara:"
+
+#: sidebar.php
+#: sidebar-right.php
+#: sidebar-right-half.php
+#: sidebar-left.php
+#: sidebar-left-half.php
+#: sidebar-half-left.php
+msgid "In Archive"
+msgstr "En archivo"
+
+#: includes/functions.php
+#: sidebar-home.php
+msgid "Home Widget 1"
+msgstr "Widget 1 de la p&aacute;gina inicial"
+
+#: sidebar-home.php
+msgid "This is your first home widget box. To edit please go to Appearance > Widgets and choose 6th widget from the top in area six called Home Widget 1. Title is also manageable from widgets as well."
+msgstr "Este es tu primer widget de la p&aacute;gina de inicio. Para editarlo, por favor, vete a Apariencia> Widgets y elige el sexto widget, llamado Widget 1 de la p&aacute;gina inicial. Su t&iacute;tulo tambi&eacute;n es editable."
+
+#: includes/functions.php
+#: sidebar-home.php
+msgid "Home Widget 2"
+msgstr "Widget 2 de la p&aacute;gina inicial"
+
+#: sidebar-home.php
+msgid "This is your second home widget box. To edit please go to Appearance > Widgets and choose 7th widget from the top in area seven called Home Widget 2. Title is also manageable from widgets as well."
+msgstr "Este es tu segundo widget de la p&aacute;gina de inicio. Para editarlo, por favor, vete a Apariencia> Widgets y elige el s&eacute;ptimo widget, llamado Widget 2 de la p&aacute;gina inicial. Su t&iacute;tulo tambi&eacute;n es editable."
+
+#: includes/functions.php
+#: sidebar-home.php
+msgid "Home Widget 3"
+msgstr "Widget 3 de la p&aacute;gina inicial"
+
+#: sidebar-home.php
+msgid "This is your third home widget box. To edit please go to Appearance > Widgets and choose 8th widget from the top in area eight called Home Widget 3. Title is also manageable from widgets as well."
+msgstr "Este es tu tercer widget de la p&aacute;gina de inicio. Para editarlo, por favor, vete a Apariencia> Widgets y elige el octavo widget, llamado Widget 3 de la p&aacute;gina inicial. Su t&iacute;tulo tambi&eacute;n es editable."
+
+#: single.php
+msgid "About"
+msgstr "Sobre nosotros"
+
+#: sitemap.php
+msgid "Categories"
+msgstr "Categor&iacute;as"
+
+#: sitemap.php
+msgid "Latest Posts"
+msgstr "&Uacute;ltimas entradas"
+
+#: sitemap.php
+msgid "Pages"
+msgstr "P&aacute;ginas"
+
 #: includes/functions.php
 msgid "Top Menu"
 msgstr "Men&uacute; superior"
@@ -367,10 +480,6 @@ msgstr "Men&uacute; superior"
 #: includes/functions.php
 msgid "Header Menu"
 msgstr "Men&uacute; de la cabecera"
-
-#: search.php
-msgid "Search Results for: %s"
-msgstr "Resultados de la b&uacute;squeda para: %s"
 
 #: includes/functions.php
 msgid "Sub-Header Menu"
@@ -381,16 +490,24 @@ msgid "Footer Menu"
 msgstr "Men&uacute; del pie de p&aacute;gina"
 
 #: includes/functions.php
-msgid "<div class=\"read-more\">Read more &#8250;</div><!-- end of .read-more -->"
-msgstr "<div class=\"read-more\">Leer m&aacute;s &#8250;</div><!-- end of .read-more -->"
+msgid "Archive for "
+msgstr "Archivos de "
 
-#: search.php
-msgid "Your search for"
-msgstr "Tu b&uacute;squeda para"
+#: includes/functions.php
+msgid "Search results for "
+msgstr "Resultados de b&uacute;squeda para "
 
-#: search.php
-msgid "did not match any entries"
-msgstr "no ha encontrado ninguna entrada"
+#: includes/functions.php
+msgid "Posts tagged "
+msgstr "Entradas etiquetadas con "
+
+#: includes/functions.php
+msgid "All posts by "
+msgstr "Todas las entradas de "
+
+#: includes/functions.php
+msgid "Error 404 "
+msgstr "Error 404 "
 
 #: includes/functions.php
 msgid "Page"
@@ -441,39 +558,12 @@ msgid "Area Five - sidebar-right-half.php"
 msgstr "&Aacute;rea cinco - sidebar-right-half.php"
 
 #: includes/functions.php
-#: sidebar-home.php
-msgid "Home Widget 1"
-msgstr "Widget 1 de la p&aacute;gina inicial"
-
-#: sidebar-home.php
-msgid "This is your first home widget box. To edit please go to Appearance > Widgets and choose 6th widget from the top in area six called Home Widget 1. Title is also manageable from widgets as well."
-msgstr "Este es tu primer widget de la p&aacute;gina de inicio. Para editarlo, por favor, vete a Apariencia> Widgets y elige el sexto widget, llamado Widget 1 de la p&aacute;gina inicial. Su t&iacute;tulo tambi&eacute;n es editable."
-
-#: includes/functions.php
 msgid "Area Six - sidebar-home.php"
 msgstr "&Aacute;rea seis - sidebar-home.php"
 
 #: includes/functions.php
-#: sidebar-home.php
-msgid "Home Widget 2"
-msgstr "Widget 2 de la p&aacute;gina inicial"
-
-#: sidebar-home.php
-msgid "This is your second home widget box. To edit please go to Appearance > Widgets and choose 7th widget from the top in area seven called Home Widget 2. Title is also manageable from widgets as well."
-msgstr "Este es tu primer widget de la p&aacute;gina de inicio. Para editarlo, por favor, vete a Apariencia> Widgets y elige el s&eacute;ptimo widget, llamado Widget 2 de la p&aacute;gina inicial. Su t&iacute;tulo tambi&eacute;n es editable."
-
-#: includes/functions.php
 msgid "Area Seven - sidebar-home.php"
 msgstr "&Aacute;rea siete - sidebar-home.php"
-
-#: includes/functions.php
-#: sidebar-home.php
-msgid "Home Widget 3"
-msgstr "Widget 3 de la p&aacute;gina inicial"
-
-#: sidebar-home.php
-msgid "This is your third home widget box. To edit please go to Appearance > Widgets and choose 8th widget from the top in area eight called Home Widget 3. Title is also manageable from widgets as well."
-msgstr "Este es tu primer widget de la p&aacute;gina de inicio. Para editarlo, por favor, vete a Apariencia> Widgets y elige el octavo widget, llamado Widget 3 de la p&aacute;gina inicial. Su t&iacute;tulo tambi&eacute;n es editable."
 
 #: includes/functions.php
 msgid "Area Eight - sidebar-home.php"
@@ -486,10 +576,6 @@ msgstr "Galer&iacute;a en barra lateral"
 #: includes/functions.php
 msgid "Area Nine - sidebar-gallery.php"
 msgstr "&Aacute;rea nueve - sidebar-home.php"
-
-#: sitemap.php
-msgid "Pages"
-msgstr "P&aacute;ginas"
 
 #: includes/theme-options.php
 msgid "Theme Options"
@@ -580,6 +666,14 @@ msgid "Featured Content"
 msgstr "Contenido destacado"
 
 #: includes/theme-options.php
+msgid "http://themeid.com/forum/topic/510/theme-options-featured-content/"
+msgstr "http://themeid.com/forum/topic/510/theme-options-featured-content/"
+
+#: includes/theme-options.php
+msgid "See Docs"
+msgstr "Ver documentaci&oacute;n"
+
+#: includes/theme-options.php
 msgid "Paste your video or image source"
 msgstr "Pega el c&oacute;digo de tu v&iacute;deo o imagen"
 
@@ -614,6 +708,10 @@ msgstr "Introduce s&oacute;lo tu n&uacute;mero de ID de Yahoo"
 #: includes/theme-options.php
 msgid "Site Statistics Tracker"
 msgstr "Gestor de estad&iacute;sticas del sitio"
+
+#: includes/theme-options.php
+msgid "Leave blank if plugin handles your webmaster tools"
+msgstr "Deja en blanco si un plugin gestiona tus herramientas de webm&aacute;ster"
 
 #: includes/theme-options.php
 msgid "Google Analytics, StatCounter, any other or all of them."
@@ -678,112 +776,6 @@ msgstr "Google+"
 #: includes/theme-options.php
 msgid "Enter your Google+ URL"
 msgstr "Introduce tu URL de Google+"
-
-#: searchform.php
-msgid "search here &hellip;"
-msgstr "buscar aqu&iacute;..."
-
-#: searchform.php
-msgid "Go"
-msgstr "Ir"
-
-#: sidebar-gallery.php
-msgid "Image Information"
-msgstr "Datos de la imagen"
-
-#: sidebar-gallery.php
-msgid "Full Size:"
-msgstr "Tama&ntilde;o completo:"
-
-#: sidebar-gallery.php
-msgid "Aperture: f&#47;"
-msgstr "Apertura: f&#47;"
-
-#: sidebar-gallery.php
-msgid "Focal Length:"
-msgstr "Distancia focal:"
-
-#: sidebar-gallery.php
-msgid "mm"
-msgstr "mm"
-
-#: sidebar-gallery.php
-msgid "ISO:"
-msgstr "ISO:"
-
-#: sidebar-gallery.php
-msgid "Shutter:"
-msgstr "Obturador:"
-
-#: sidebar-gallery.php
-msgid "Camera:"
-msgstr "C&aacute;mara:"
-
-#: sidebar.php
-#: sidebar-right.php
-#: sidebar-right-half.php
-#: sidebar-left.php
-#: sidebar-left-half.php
-#: sidebar-half-left.php
-msgid "In Archive"
-msgstr "En archivo"
-
-#: single.php
-#: search.php
-msgid "About"
-msgstr "Sobre nosotros"
-
-#: sitemap.php
-msgid "Categories"
-msgstr "Categor&iacute;as"
-
-#: sitemap.php
-msgid "Latest Posts"
-msgstr "&Uacute;ltimas entradas"
-
-#: includes/functions.php
-msgid "Archive for "
-msgstr "Archivos de "
-
-#: includes/functions.php
-msgid "Search results for "
-msgstr "Resultados de b&uacute;squeda para "
-
-#: includes/functions.php
-msgid "Posts tagged "
-msgstr "Entradas etiquetadas con "
-
-#: includes/functions.php
-msgid "All posts by "
-msgstr "Todas las entradas de "
-
-#: includes/functions.php
-msgid "Error 404 "
-msgstr "Error 404 "
-
-#: footer.php
-msgid "http://themeid.com/responsive-theme/"
-msgstr "http://themeid.com/responsive-theme/"
-
-#: footer.php
-msgid "powered by"
-msgstr "Funciona con"
-
-#: footer.php
-msgid "http://wordpress.org/"
-msgstr "http://es.wordpress.org/"
-
-#: includes/theme-options.php
-msgid "http://themeid.com/forum/topic/510/theme-options-featured-content/"
-msgstr "http://themeid.com/forum/topic/510/theme-options-featured-content/"
-
-#: includes/theme-options.php
-msgid "See Docs"
-msgstr "Ver documentaci&oacute;n"
-
-#: includes/theme-options.php
-msgid "Leave blank if plugin handles your webmaster tools"
-msgstr "Deja en blanco si un plugin gestiona tus herramientas de webm&aacute;ster"
 
 #: includes/theme-options.php
 msgid "Instagram"

@@ -29,7 +29,7 @@ if ( !defined('ABSPATH')) exit;
     
     <div class="grid col-940">
     
-        <div class="grid col-620">
+        <div class="grid col-540">
 		<?php if (has_nav_menu('footer-menu', 'responsive')) { ?>
 	        <?php wp_nav_menu(array(
 				    'container'       => '',
@@ -39,9 +39,9 @@ if ( !defined('ABSPATH')) exit;
 					); 
 				?>
          <?php } ?>
-         </div><!-- end of col-620 -->
+         </div><!-- end of col-540 -->
          
-         <div class="grid col-300 fit">
+         <div class="grid col-380 fit">
          <?php $options = get_option('responsive_theme_options');
 					
             // First let's check if any of this was set
@@ -83,10 +83,22 @@ if ( !defined('ABSPATH')) exit;
                 if (!empty($options['pinterest_uid'])) echo '<li class="pinterest-icon"><a href="' . $options['pinterest_uid'] . '">'
                     .'<img src="' . get_stylesheet_directory_uri() . '/icons/pinterest-icon.png" width="24" height="24" alt="Pinterest">'
                     .'</a></li>';
+					
+                if (!empty($options['yelp_uid'])) echo '<li class="yelp-icon"><a href="' . $options['yelp_plus_uid'] . '">'
+                    .'<img src="' . get_stylesheet_directory_uri() . '/icons/yelp-icon.png" width="24" height="24" alt="Yelp!">'
+                    .'</a></li>';
+					
+                if (!empty($options['vimeo_uid'])) echo '<li class="vimeo-icon"><a href="' . $options['vimeo_uid'] . '">'
+                    .'<img src="' . get_stylesheet_directory_uri() . '/icons/vimeo-icon.png" width="24" height="24" alt="Vimeo">'
+                    .'</a></li>';
+					
+                if (!empty($options['foursquare_uid'])) echo '<li class="foursquare-icon"><a href="' . $options['foursquare_uid'] . '">'
+                    .'<img src="' . get_stylesheet_directory_uri() . '/icons/foursquare-icon.png" width="24" height="24" alt="foursquare">'
+                    .'</a></li>';
              
                 echo '</ul><!-- end of .social-icons -->';
          ?>
-         </div><!-- end of col-300 fit -->
+         </div><!-- end of col-380 fit -->
                 
         <div class="grid col-300 copyright">
             <?php esc_attr_e('&copy;', 'responsive'); ?> <?php _e(date('Y')); ?><a href="<?php echo home_url('/') ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>">
