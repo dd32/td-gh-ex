@@ -1,5 +1,4 @@
 = Catch Box=
-
 * by the Catch Themes team, http://catchthemes.com/
 
 == ABOUT Catch Box==
@@ -46,5 +45,10 @@ Version 1.0.4
 * Fixed footer Navigation widget
 * Added Style for Single Page Navigation
 
-Version 1.0.4
+Version 1.0.5
 * Fixed 'wp-head-callback', 'admin-head-callback', 'admin-preview-callback'
+
+Version 1.0.6
+* Fixed CSS for Navigation
+* Fixed CSS for widget heading link
+* Changed Screenshot to showcase the Responsive design and Sample Ads Widget
