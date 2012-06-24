@@ -376,6 +376,24 @@ function responsive_theme_options_do_page() {
                     <div class="grid col-620 fit">
                         <input id="responsive_theme_options[pinterest_uid]" class="regular-text" type="text" name="responsive_theme_options[pinterest_uid]" value="<?php if (!empty($options['pinterest_uid'])) echo esc_url($options['pinterest_uid']); ?>" />  
                         <label class="description" for="responsive_theme_options[pinterest_uid]"><?php _e('Enter your Pinterest URL', 'responsive'); ?></label>
+                    </div><!-- end of .grid col-620 -->
+                    
+                <div class="grid col-300"><?php _e('Yelp!', 'responsive'); ?></div><!-- end of .grid col-300 -->
+                    <div class="grid col-620 fit">
+                        <input id="responsive_theme_options[yelp_uid]" class="regular-text" type="text" name="responsive_theme_options[yelp_uid]" value="<?php if (!empty($options['yelp_uid'])) echo esc_url($options['yelp_uid']); ?>" />  
+                        <label class="description" for="responsive_theme_options[yelp_uid]"><?php _e('Enter your Yelp! URL', 'responsive'); ?></label>
+                    </div><!-- end of .grid col-620 -->
+                    
+                <div class="grid col-300"><?php _e('Vimeo', 'responsive'); ?></div><!-- end of .grid col-300 -->
+                    <div class="grid col-620 fit">
+                        <input id="responsive_theme_options[vimeo_uid]" class="regular-text" type="text" name="responsive_theme_options[vimeo_uid]" value="<?php if (!empty($options['vimeo_uid'])) echo esc_url($options['vimeo_uid']); ?>" />  
+                        <label class="description" for="responsive_theme_options[vimeo_uid]"><?php _e('Enter your Vimeo URL', 'responsive'); ?></label>
+                    </div><!-- end of .grid col-620 -->
+                    
+                <div class="grid col-300"><?php _e('foursquare', 'responsive'); ?></div><!-- end of .grid col-300 -->
+                    <div class="grid col-620 fit">
+                        <input id="responsive_theme_options[foursquare_uid]" class="regular-text" type="text" name="responsive_theme_options[foursquare_uid]" value="<?php if (!empty($options['foursquare_uid'])) echo esc_url($options['foursquare_uid']); ?>" />  
+                        <label class="description" for="responsive_theme_options[foursquare_uid]"><?php _e('Enter your foursquare URL', 'responsive'); ?></label>
                         <p class="submit">
                         <input type="submit" class="button-primary" value="<?php _e('Save Options', 'responsive'); ?>" />
                         </p>
@@ -450,6 +468,9 @@ function responsive_theme_options_validate($input) {
 	$input['google_plus_uid'] = esc_url_raw($input['google_plus_uid']);
 	$input['instagram_uid'] = esc_url_raw($input['instagram_uid']);
 	$input['pinterest_uid'] = esc_url_raw($input['pinterest_uid']);
+	$input['yelp_uid'] = esc_url_raw($input['yelp_uid']);
+	$input['vimeo_uid'] = esc_url_raw($input['vimeo_uid']);
+	$input['foursquare_uid'] = esc_url_raw($input['foursquare_uid']);
 	$input['responsive_inline_css'] = wp_kses_stripslashes($input['responsive_inline_css']);
 	
     return $input;

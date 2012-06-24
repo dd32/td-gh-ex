@@ -7,6 +7,11 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(06/24/2012) - Improvements - Version 1.6.6
+[+] missing social icons added in previous version
+[!] tinynav.js 
+
+
 (06/23/2012) - Improvements - Version 1.6.3/4/5
 [+] Theme Options
 [+] Serbian and Persian languages
