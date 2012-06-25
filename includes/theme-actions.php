@@ -1,4 +1,10 @@
 <?php
+
+/**
+* Exit if file is directly accessed. 
+*/ 
+if ( !defined('ABSPATH')) exit;
+
 /**
 * Custom actions used by the iFeature Pro WordPress Theme
 *
@@ -50,7 +56,7 @@ function custom_sidebar_init_content() {
 	global $options, $themeslug, $post, $sidebar, $content_grid;
 
 	if (is_page()) {
-	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);
+	$sidebar = get_post_meta($post->ID, $themeslug.'_page_sidebar' , true);
 	}
 	
 	if ($sidebar == "1") {
@@ -86,20 +92,10 @@ function custom_after_content_sidebar_markup() {
 function ifeature_header_contact_area_content() { 
 	global $themeslug, $options; 
 	$contactdefault = apply_filters( 'synapse_header_contact_default_text', 'Enter Contact Information Here' ); 
-	
-	if ($options->get($themeslug.'_header_contact') == '' ) {
+			
 		echo "<div id='header_contact'>";
-			printf( __( $contactdefault, 'core' )); 
-		echo "</div>";
-	}
-	if ($options->get($themeslug.'_header_contact') != 'hide' ) {
-		echo "<div id='header_contact1'>";
 		echo stripslashes ($options->get($themeslug.'_header_contact')); 
 		echo "</div>";
-	}	
-	if ($options->get($themeslug.'_header_contact') == 'hide' ) {
-		echo "<div style ='height: 10%;'>&nbsp;</div> ";
-	}
 }
 
 /**
