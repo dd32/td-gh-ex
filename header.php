@@ -73,7 +73,6 @@
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="<?php bloginfo( 'name' ); ?>"/></a>
         <?php endif; ?>    
         <h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>        	
-            <?php echo get_custom_header(); ?>
             </hgroup> 
 					
 			<nav id="access" role="navigation">
