@@ -876,17 +876,17 @@ add_filter( 'wp_title', 'mantra_filter_wp_title' );
 
 function mantra_set_social_icons() {
 	global $mantra_options;
-	foreach ($mantra_options as $key => $value) {
-     ${"$key"} = $value ;
-
+		foreach ($mantra_options as $key => $value) {
+		${"$key"} = $value ;
+					}
+					
+for ($i=1; $i<=9; $i+=2) {
+	$j=$i+1;
+	if ( ${"mantra_social$j"} ) {?>
+		<a target="_blank" href="<?php echo ${"mantra_social$j"}; ?>" class="socialicons" id="<?php echo ${"mantra_social$i"}; ?>" title="<?php echo ${"mantra_social$i"}; ?>"><img alt="<?php echo ${"mantra_social$i"}; ?>" src="<?php echo get_template_directory_uri().'/images/socials/'.${"mantra_social$i"}.'.png'; ?>" /></a><?php 
+				} 
+		}
 }
-if ($mantra_social1 && $mantra_social2) {  ?><a target="_blank" href="<?php echo $mantra_social2; ?>" class="socialicons" id="<?php echo $mantra_social1; ?>" title="<?php echo $mantra_social1; ?>"><img alt="<?php echo $mantra_social1; ?>" src="<?php echo get_template_directory_uri().'/images/socials/'.$mantra_social1.'.png'; ?>" /></a><?php }
-?><?php if ($mantra_social3 && $mantra_social4) {  ?><a target="_blank" href="<?php echo $mantra_social4 ?>" class="socialicons" id="<?php echo $mantra_social3 ?>" title="<?php echo $mantra_social3 ?>"><img alt="<?php echo $mantra_social3; ?>" src="<?php echo get_template_directory_uri().'/images/socials/'.$mantra_social3.'.png'; ?>" /></a><?php }
-?><?php if ($mantra_social5 && $mantra_social6) {  ?> <a target="_blank" href="<?php echo $mantra_social6 ?>" class="socialicons" id="<?php echo $mantra_social5 ?>" title="<?php echo $mantra_social5 ?>"><img alt="<?php echo $mantra_social5; ?>" src="<?php echo get_template_directory_uri().'/images/socials/'.$mantra_social5.'.png'; ?>" /></a> <?php }
-?><?php if ($mantra_social7 && $mantra_social8) {  ?> <a target="_blank" href="<?php echo $mantra_social8 ?>" class="socialicons" id="<?php echo $mantra_social7 ?>" title="<?php echo $mantra_social7 ?>"><img alt="<?php echo $mantra_social7; ?>" src="<?php echo get_template_directory_uri().'/images/socials/'.$mantra_social7.'.png'; ?>" /></a> <?php }
-?><?php if ($mantra_social9 && $mantra_social10) {  ?> <a target="_blank" href="<?php echo $mantra_social10 ?>" class="socialicons" id="<?php echo $mantra_social9 ?>" title="<?php echo $mantra_social9 ?>"><img alt="<?php echo $mantra_social9; ?>" src="<?php echo get_template_directory_uri().'/images/socials/'.$mantra_social9.'.png'; ?>" /></a> <?php }
- 
-						}
 
 // Get any existing copy of our transient data
 if ( false === ( $theme_info = get_transient( 'theme_info' ) ) ) {
@@ -1149,13 +1149,7 @@ foreach ($mantra_options as $key => $value) {
 <script type="text/javascript">
 
 	// Flash animation for columns
-	function flash(id){
-             jQuery(id)
-             .animate({opacity: 0.5}, 100) 
-             .fadeOut(100)
-			 .fadeIn(100)
-             .animate({opacity: 1}, 100)
-					}
+
 
     jQuery(window).load(function() {
 	// Slider creation
@@ -1169,7 +1163,14 @@ foreach ($mantra_options as $key => $value) {
 	
 						});
 
-    jQuery('#front-columns > div img').mouseover(function(e) { flash(this); })
+    jQuery('#front-columns > div img').hover( function() { 
+	      jQuery(this)
+			 .stop()
+             .animate({opacity: 0.5}, 100) 
+             .fadeOut(100)
+			 .fadeIn(100)
+             .animate({opacity: 1}, 100) ;
+	}, function() {jQuery(this).stop();} )
 
 		});	
 	</script>
@@ -1322,7 +1323,7 @@ break;
  case 'Specific Posts' :
  // Transofm string separated by commas into array
 $pieces_array = explode(",", $mantra_slideSpecific);
-$custom_query->query(array( 'post__in' => $pieces_array,'ignore_sticky_posts' => 1 ));
+$custom_query->query(array( 'post_type' => 'any', 'post__in' => $pieces_array, 'ignore_sticky_posts' => 1 ));
 break;
 
 }
@@ -1363,30 +1364,15 @@ $i=0;	$j=0;?>
  <div class="slider-wrapper theme-default">
             <div class="ribbon"></div>
             <div id="slider" class="nivoSlider">
-             <?php  if($mantra_sliderimg1) {?>    <a href="<?php echo $mantra_sliderlink1 ?>"><img width="<?php echo $mantra_fpsliderwidth ?>" src="<?php echo $mantra_sliderimg1 ?>" id="slider1" alt="" <?php if ($mantra_slidertitle1 || $mantra_slidertext1 ) { ?>title="#caption1" <?php }?> /></a><?php } 
-           			if($mantra_sliderimg2) {?>    <a href="<?php echo $mantra_sliderlink2 ?>"><img width="<?php echo $mantra_fpsliderwidth ?>" src="<?php echo $mantra_sliderimg2 ?>" id="slider2" alt="" <?php if ($mantra_slidertitle2 || $mantra_slidertext2 ) { ?>title="#caption2" <?php }?> /></a><?php } 
- 					if($mantra_sliderimg3) {?>    <a href="<?php echo $mantra_sliderlink3 ?>"><img width="<?php echo $mantra_fpsliderwidth ?>" src="<?php echo $mantra_sliderimg3 ?>" id="slider3" alt="" <?php if ($mantra_slidertitle3 || $mantra_slidertext3 ) { ?>title="#caption3" <?php }?> /></a><?php } 
- 		    		if($mantra_sliderimg4) {?>    <a href="<?php echo $mantra_sliderlink4 ?>"><img width="<?php echo $mantra_fpsliderwidth ?>" src="<?php echo $mantra_sliderimg4 ?>" id="slider4" alt="" <?php if ($mantra_slidertitle4 || $mantra_slidertext4 ) { ?>title="#caption4" <?php }?> /></a><?php } 
-			 		if($mantra_sliderimg5) {?>    <a href="<?php echo $mantra_sliderlink5 ?>"><img width="<?php echo $mantra_fpsliderwidth ?>" src="<?php echo $mantra_sliderimg5 ?>" id="slider5" alt="" <?php if ($mantra_slidertitle5 || $mantra_slidertext5 ) { ?>title="#caption5" <?php }?> /></a><?php } ?>
-              
+				<?php  for ($i=1;$i<=5;$i++)
+					if(${"mantra_sliderimg$i"}) {?>    <a href='<?php echo ${"mantra_sliderlink$i"} ?>'><img width='<?php echo $mantra_fpsliderwidth ?>' src='<?php echo ${"mantra_sliderimg$i"} ?>'  alt="" <?php if (${"mantra_slidertitle$i"} || ${"mantra_slidertext$i"} ) { ?>title="#caption<?php echo $i;?>" <?php }?> /></a><?php }  ?> 
+            </div> 
+			<?php for ($i=1;$i<=5;$i++) { ?>
+            <div id="caption<?php echo $i;?>" class="nivo-html-caption">
+                <?php echo '<h2>'.${"mantra_slidertitle$i"}.'</h2>'.${"mantra_slidertext$i"} ?>
             </div>
-            <div id="caption1" class="nivo-html-caption">
-                <?php echo '<h2>'.$mantra_slidertitle1.'</h2>'.$mantra_slidertext1 ?>
-            </div>
-            <div id="caption2" class="nivo-html-caption">
-                <?php echo '<h2>'.$mantra_slidertitle2.'</h2>'.$mantra_slidertext2 ?>
-            </div>
-            <div id="caption3" class="nivo-html-caption">
-                <?php echo '<h2>'.$mantra_slidertitle3.'</h2>'.$mantra_slidertext3 ?>
-            </div>
-            <div id="caption4" class="nivo-html-caption">
-                <?php echo '<h2>'.$mantra_slidertitle4.'</h2>'.$mantra_slidertext4 ?>
-            </div>
-
-            <div id="caption5" class="nivo-html-caption">
-                <?php echo '<h2>'.$mantra_slidertitle5.'</h2>'.$mantra_slidertext5 ?>
-            </div>
-        </div>
+			<?php } ?>
+</div>
 <?php } 
 
 // Second FrontPage title

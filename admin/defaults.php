@@ -12,7 +12,7 @@ $mantra_defaults = array(
 "mantra_sidebar" => 250,
 "mantra_sidewidthRel" => 60,
 "mantra_sidebarRel" => 20,
-"mantra_hheight" => "60px",
+"mantra_hheight" => "60",
 
 "mantra_frontpage" => "Disable",
 "mantra_fpsliderwidth" => "800",

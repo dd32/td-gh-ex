@@ -18,7 +18,7 @@ foreach ($mantra_options as $key => $value) {
 
 }
 get_header(); 
-if ($mantra_frontpage!="Enable") {
+if ($mantra_frontpage!="Enable" || !is_front_page() ) {
 ?>
 
 

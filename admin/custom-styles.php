@@ -64,6 +64,8 @@ else if ($mantra_dimselect=="Relative") { ?>
 #wrapper { width:<?php echo ($totalwidth) ?>% ;}
  #access, #colophon, #branding, #main {width:100%;}
 #access .menu-header, div.menu {width:96% ;}
+#content {margin-left:2%;}
+#primary, #secondary {padding-left:1%;}
 
 <?php if ($mantra_side == "1c" || $mantra_side =="Disable") { ?>
 #content {width:96%; margin:20px;}  <?php }
@@ -125,7 +127,7 @@ font-size:<?php echo $mantra_fontsize ?>;
 ?><?php if ($mantra_headfontsize != "Default") { ?> #content h1.entry-title, #content h2.entry-title { font-size:<?php echo $mantra_headfontsize; ?> ;}<?php }
 ?><?php if ($mantra_sidefontsize != "Default") { ?> .widget-area a:link, .widget-area a:visited { font-size:<?php echo $mantra_sidefontsize; ?> ;}<?php }
 ?><?php if ($mantra_textshadow != "Enable") { ?> #content h1, #content h2, #content h3, #content h4, #content h5, #content h6, #site-title a , #site-description { text-shadow:none; moz-text-shadow:none; -webkit-text-shadow:none ;}<?php }
-?><?php if ($mantra_headerindent == "Enable") { ?> #content h1, #content h2, #content h3, #content h4, #content h5, #content h6 { margin-left:20px;}<?php }
+?><?php if ($mantra_headerindent == "Enable") { ?> #content h1, #content h2, #content h3, #content h4, #content h5, #content h6 { margin-left:20px;} .sticky hgroup { background: url(<?php echo get_template_directory_uri().'/images/icon-featured.png' ; ?>) no-repeat 12px 10px transparent; padding-left: 15px;}<?php }
 
 ?><?php if ($mantra_backcolor != "444444") { ?> body { background-color:<?php echo $mantra_backcolor; ?> !important ;}<?php }
 ?><?php if ($mantra_headercolor != "333333") { ?> #header { background-color:<?php echo $mantra_headercolor; ?>  ;}<?php }
@@ -141,7 +143,7 @@ font-size:<?php echo $mantra_fontsize ?>;
 ?><?php if ($mantra_sideheadbackcolor != "444444") { ?> .widget-title,#footer-widget-area .widget-title { background-color:<?php echo $mantra_sideheadbackcolor; ?> ;}<?php }
 ?><?php if ($mantra_sideheadtextcolor != "2EA5FD") { ?> .widget-title { color:<?php echo $mantra_sideheadtextcolor; ?>  ;}<?php }
 
-?><?php if ($mantra_magazinelayout == "Enable") { ?> article.post{float:left;width:47%;margin-right:3%; } .home article.sticky { margin-right:3% }<?php }
+?><?php if ($mantra_magazinelayout == "Enable") { ?> article.post{float:left;width:47%;margin-right:3%; }  article.sticky { margin-right:3%;padding:0; }<?php }
 
 ?><?php if (1) { ?> #footer-widget-area .widget-title { color:<?php echo $mantra_footerheader; ?> ; ;}<?php }
 ?><?php if (1) { ?> #footer-widget-area a { color:<?php echo $mantra_footertext; ?>  ;}<?php }

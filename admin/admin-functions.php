@@ -229,17 +229,11 @@ jQuery(function() {
 
  //SELECT - Name: ma_options[hheight]
 function  setting_hheight_fn() {
-	global $mantra_options;
-	$items =array ("60px","90px", "120px" , "150px" , "180px" , "200px", "240px", "300px","350px", "400px", "450px", "500px");
-	echo "<select id='mantra_hheight' name='ma_options[mantra_hheight]'>";
-foreach($items as $item) {
-	echo "<option value='$item'";
-	selected($mantra_options['mantra_hheight'],$item);
-	echo ">$item</option>";
-}
-	echo "</select>";
-$totally = $mantra_options['mantra_sidebar']+$mantra_options['mantra_sidewidth'];
-echo "<div><small>".__("Select the header's height. After saving the settings go and upload your new header image. The header's width will be equal to the Total Site Width = ","mantra").$totally."px.</small></div>";
+	global $mantra_options;?>
+<input id='mantra_hheight' name='ma_options[mantra_hheight]' size='4' type='text' value='<?php echo esc_attr( intval($mantra_options['mantra_hheight'] )) ?>'  />  px
+<?php
+$totally = $mantra_options['mantra_sidebar']+$mantra_options['mantra_sidewidth']+50;
+echo "<div><small>".__("Select the header's height. After saving the settings go and upload your new header image. The header's width will be = ","mantra").$totally."px.</small></div>";
 }
 
 
