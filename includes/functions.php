@@ -226,7 +226,7 @@ add_filter('excerpt_length', 'responsive_excerpt_length');
  * Returns a "Read more" link for excerpts
  */
 function responsive_read_more() {
-    return ' <a href="' . get_permalink() . '">' . __('<div class="read-more">Read more &#8250;</div><!-- end of .read-more -->', 'responsive') . '</a>';
+    return '<div class="read-more"><a href="' . get_permalink() . '">' . __('Read more &#8250;', 'responsive') . '</a></div><!-- end of .read-more -->';
 }
 
 /**

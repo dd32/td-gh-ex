@@ -1,9 +1,9 @@
 /* 
 Theme Name: Responsive 
 Theme URI: http://themeid.com/responsive-theme/ 
-Description: Responsive WordPress Theme that features 9 page Templates such as Blog, Blog Summary and Template based layout designs: sidebar/content, sidebar/content half, content/sidebar and content/sidebar half. There is also full width page, sitemap Template as well as landing page for your PPC or any other purposes. Responsive also supports 9 widget areas and best of all this Theme is crafted with fluid proportion-based grid system of our own to adapt the design to the viewing environment. There are also Theme Options to control the content, webmaster tools, logo managament, social icons and 4 navigation menus. Currently translated in German, French, Portuguese, Italian, Swedish, Malay, Catalan, Spanish, Bulgarian, Norwegian, Croatian, Serbian and Persian language. Everything is backed by our FREE dedicated support forums @ http://themeid.com/support
+Description: Responsive WordPress Theme that features 9 page Templates such as Blog, Blog Summary and Template based layout designs: sidebar/content, sidebar/content half, content/sidebar and content/sidebar half. There is also full width page, sitemap Template as well as landing page for your PPC or any other purposes. Responsive also supports 9 widget areas and best of all this Theme is crafted with fluid proportion-based grid system of our own to adapt the design to the viewing environment. There are also Theme Options to control the content, webmaster tools, logo managament, social icons and 4 navigation menus. Currently translated in German, French, Portuguese, Italian, Swedish, Malay, Catalan, Spanish, Bulgarian, Norwegian, Croatian, Serbian, Persian and Polish language. Everything is backed by our FREE dedicated support forums @ http://themeid.com/support
 
-Version: 1.6.6
+Version: 1.6.7
 Author: ThemeID 
 Author URI: http://themeid.com
 Tags: white, black, gray, light, custom-menu, custom-header, custom-background, one-column, two-columns, left-sidebar, right-sidebar, flexible-width, theme-options, threaded-comments, full-width-template, sticky-post, translation-ready
@@ -281,10 +281,6 @@ label {
 
 form div {
 	clear:both;
-}
-
-form br {
-	display:none;
 }
 
 input[type="text"], input[type="password"], select {
