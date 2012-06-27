@@ -1,4 +1,17 @@
 Changelog -----------------------------------
+version:0.977
+    This version changes Bug fixed for Child theme
+fixed
+    raindrops_fallback_title()
+        When child theme fallback image uri missing.
+    raindrops_small_device_helper()
+        When child theme script error.
+    raindrops_design_output()
+        When child theme image uri missing.
+    theme options page textarea remove for CSS edit
+        please readme.txt
+----------------------------------------------
+Changelog -----------------------------------
 version:0.975
 modified
     typo
