@@ -10,10 +10,20 @@ function simplecatch_scripts_method() {
 	wp_register_script( 'jquery-cycle', get_stylesheet_directory_uri() . '/js/jquery.cycle.all.js', '2.9999' );
 	
 	// registering custom scrtips
-	wp_register_script( 'custom-script', get_stylesheet_directory_uri() . '/js/simplecatch_custom_scripts.js', array( 'jquery', 'jquery-cycle' ), '1.0', true );
+	wp_register_script( 'pass_js_value', get_stylesheet_directory_uri() . '/js/simplecatch_custom_scripts.js', array( 'jquery', 'jquery-cycle' ), '1.0', true );
 	
 	// enqueue JQuery Scripts	
-	wp_enqueue_script( 'custom-script' );	
+	wp_enqueue_script( 'pass_js_value' );	
+
+
+	//browser specific queuing i.e. for IE 1-6
+	$ua = strtolower($_SERVER['HTTP_USER_AGENT']);
+	if(preg_match('/(?i)msie [1-6]/',$_SERVER['HTTP_USER_AGENT'])) {
+		wp_enqueue_script( 'pngfix', get_stylesheet_directory_uri() . '/js/pngfix.js' );	  
+	}
+	 if(preg_match('/(?i)msie [1-8]/',$_SERVER['HTTP_USER_AGENT'])) {
+	 	wp_enqueue_style( 'iebelow8', get_stylesheet_directory_uri() . '/css/ie.css', true );
+	}
 	
 } // simplecatch_scripts_method
 add_action( 'wp_enqueue_scripts', 'simplecatch_scripts_method' );
@@ -122,7 +132,7 @@ function simplecatch_continue_reading() {
 		$options[ 'more_tag_text' ] = "Continue Reading &rarr;";
 	}
 	$more_tag_text = $options[ 'more_tag_text' ];
-	return ' <a class="readmore" href="'. esc_url( get_permalink() ) . '">' . sprintf( __( '%s', 'simplecatch' ), $more_tag_text ) . '</a>';
+	return ' <a class="readmore" href="'. esc_url( get_permalink() ) . '">' . sprintf( __( '%s', 'simplecatch' ), esc_attr( $more_tag_text ) ) . '</a>';
 }
 
 /**
@@ -180,21 +190,20 @@ endif;
  * @uses set_transient and delete_transient 
  */
 function simplecatch_headerlogo() {
-	//delete_transient( 'simplecatch_headerlogo' );
-	
-	// get data value from simplecatch_options through theme options
-	$options = get_option( 'simplecatch_options' );	
-	if( !isset( $options[ 'remove_header_logo' ] ) ) {
-		$options[ 'remove_header_logo' ] = "0";
-	}
+	//delete_transient( 'simplecatch_headerlogo' );	
 		
 	if ( !$simplecatch_headerlogo = get_transient( 'simplecatch_headerlogo' ) ) {
+		// get data value from simplecatch_options through theme options
+		$options = get_option( 'simplecatch_options' );	
+		if( !isset( $options[ 'remove_header_logo' ] ) ) {
+			$options[ 'remove_header_logo' ] = "0";
+		}
 		echo '<!-- refreshing cache -->';
 		if ( $options[ 'remove_header_logo' ] == "0" ) :
 		// if not empty featured_logo_header on theme options
 			if ( !empty( $options[ 'featured_logo_header' ] ) ):
 				$simplecatch_headerlogo = 
-					'<img src="'.$options['featured_logo_header'].'" alt="'.get_bloginfo( 'name' ).'" />';
+					'<img src="'.esc_url( $options['featured_logo_header'] ).'" alt="'.get_bloginfo( 'name' ).'" />';
 			else:
 				// if empty featured_logo_header on theme options, display default logo
 				$simplecatch_headerlogo ='<img src="'. get_template_directory_uri().'/images/logo.png" alt="logo" />';
@@ -219,22 +228,21 @@ function simplecatch_headerlogo() {
  * @uses set_transient and delete_transient 
  */
 function simplecatch_footerlogo() {
-	//delete_transient('simplecatch_footerlogo');
-	
-	// get data value from catch_options through theme options
-	$options = get_option( 'simplecatch_options' );
-	if( !isset( $options[ 'remove_footer_logo' ] ) ) {
-		$options[ 'remove_footer_logo' ] = "0";
-	}
+	//delete_transient('simplecatch_footerlogo');	
 	
 	if ( !$simplecatch_footerlogo = get_transient( 'simplecatch_footerlogo' ) ) {
+		// get data value from catch_options through theme options
+		$options = get_option( 'simplecatch_options' );
+		if( !isset( $options[ 'remove_footer_logo' ] ) ) {
+			$options[ 'remove_footer_logo' ] = "0";
+		}
 		echo '<!-- refreshing cache -->';
 		if ( $options[ 'remove_footer_logo' ] == "0" ) :
 		
 			// if not empty featured_logo_footer on theme options
 			if ( !empty( $options[ 'featured_logo_footer' ] ) ) :
 				$simplecatch_footerlogo = 
-					'<img src="'.$options[ 'featured_logo_footer' ].'" alt="'.get_bloginfo( 'name' ).'" />';
+					'<img src="'.esc_url( $options[ 'featured_logo_footer' ] ).'" alt="'.get_bloginfo( 'name' ).'" />';
 			else:
 				// if empty featured_logo_footer on theme options, display default fav icon
 				$simplecatch_footerlogo ='
@@ -261,20 +269,19 @@ function simplecatch_footerlogo() {
  * @uses set_transient and delete_transient 
  */
 function simplecatch_favicon() {
-	//delete_transient( 'simplecatch_favicon' );
-	
-	// get data value from simplecatch_options through theme options
-	$options = get_option( 'simplecatch_options' );
-	if( !isset( $options[ 'remove_favicon' ] ) ) {
-		$options[ 'remove_favicon' ] = "0";
-	}
+	//delete_transient( 'simplecatch_favicon' );	
 	
 	if( ( !$simplecatch_favicon = get_transient( 'simplecatch_favicon' ) ) ) {
+		// get data value from simplecatch_options through theme options
+		$options = get_option( 'simplecatch_options' );
+		if( !isset( $options[ 'remove_favicon' ] ) ) {
+			$options[ 'remove_favicon' ] = "0";
+		}
 		echo '<!-- refreshing cache -->';
 		if ( $options[ 'remove_favicon' ] == "0" ) :
 			// if not empty fav_icon on theme options
 			if ( !empty( $options[ 'fav_icon' ] ) ) :
-				$simplecatch_favicon = '<link rel="shortcut icon" href="'.$options[ 'fav_icon' ].'" type="image/x-icon" />'; 	
+				$simplecatch_favicon = '<link rel="shortcut icon" href="'.esc_url( $options[ 'fav_icon' ] ).'" type="image/x-icon" />'; 	
 			else:
 				// if empty fav_icon on theme options, display default fav icon
 				$simplecatch_favicon = '<link rel="shortcut icon" href="'. get_template_directory_uri() .'/images/favicon.ico" type="image/x-icon" />';
@@ -327,7 +334,7 @@ function simplecatch_sliders() {
 				'ignore_sticky_posts' => 1 // ignore sticky posts
 			));
 			while ( $get_featured_posts->have_posts()) : $get_featured_posts->the_post();
-				$title_attribute = esc_attr( apply_filters( 'the_title', get_the_title( $post->ID ) ) );
+				$title_attribute = apply_filters( 'the_title', get_the_title( $post->ID ) );
 				$excerpt = get_the_excerpt();
 				$simplecatch_sliders .= '
 				<div class="slides">
@@ -343,7 +350,7 @@ function simplecatch_sliders() {
 									$simplecatch_sliders .= '<span class="img-effect pngfix"></span>';
 								}
 
-								$simplecatch_sliders .= get_the_post_thumbnail( $post->ID, 'slider', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class'	=> 'pngfix' ) ).'</a>';
+								$simplecatch_sliders .= get_the_post_thumbnail( $post->ID, 'slider', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class'	=> 'pngfix' ) ).'</a>';
 							}
 							else {
 								$simplecatch_sliders .= '<span class="img-effect pngfix"></span>';	
@@ -422,101 +429,101 @@ function simplecatch_headersocialnetworks() {
 				//facebook
 				if ( !empty( $options[ 'social_facebook' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="facebook"><a href="'.$options[ 'social_facebook' ].'" title="'.sprintf( esc_attr__( '%s in Facebook', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Facebook </a></li>';
+						'<li class="facebook"><a href="'.esc_url( $options[ 'social_facebook' ] ).'" title="'.sprintf( esc_attr__( '%s in Facebook', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Facebook </a></li>';
 				}
 				
 				//Twitter
 				if ( !empty( $options[ 'social_twitter' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="twitter"><a href="'.$options[ 'social_twitter' ].'" title="'.sprintf( esc_attr__( '%s in Twitter', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Twitter </a></li>';
+						'<li class="twitter"><a href="'.esc_url( $options[ 'social_twitter' ] ).'" title="'.sprintf( esc_attr__( '%s in Twitter', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Twitter </a></li>';
 				}
 				
 				//Google+
 				if ( !empty( $options[ 'social_googleplus' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="google-plus"><a href="'.$options[ 'social_googleplus' ].'" title="'.sprintf( esc_attr__( '%s in Google+', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Google+ </a></li>';
+						'<li class="google-plus"><a href="'.esc_url( $options[ 'social_googleplus' ] ).'" title="'.sprintf( esc_attr__( '%s in Google+', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Google+ </a></li>';
 				}
 				
 				//Linkedin
 				if ( !empty( $options[ 'social_linkedin' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="linkedin"><a href="'.$options[ 'social_linkedin' ].'" title="'.sprintf( esc_attr__( '%s in Linkedin', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Linkedin </a></li>';
+						'<li class="linkedin"><a href="'.esc_url( $options[ 'social_linkedin' ] ).'" title="'.sprintf( esc_attr__( '%s in Linkedin', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Linkedin </a></li>';
 				}
 				
 				//Pinterest
 				if ( !empty( $options[ 'social_pinterest' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="pinterest"><a href="'.$options[ 'social_pinterest' ].'" title="'.sprintf( esc_attr__( '%s in Pinterest', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Twitter </a></li>';
+						'<li class="pinterest"><a href="'.esc_url( $options[ 'social_pinterest' ] ).'" title="'.sprintf( esc_attr__( '%s in Pinterest', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Twitter </a></li>';
 				}				
 				
 				//Youtube
 				if ( !empty( $options[ 'social_youtube' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="you-tube"><a href="'.$options[ 'social_youtube' ].'" title="'.sprintf( esc_attr__( '%s in YouTube', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' YouTube </a></li>';
+						'<li class="you-tube"><a href="'.esc_url( $options[ 'social_youtube' ] ).'" title="'.sprintf( esc_attr__( '%s in YouTube', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' YouTube </a></li>';
 				}
 				
 				//Vimeo
 				if ( !empty( $options[ 'social_vimeo' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="viemo"><a href="'.$options[ 'social_vimeo' ].'" title="'.sprintf( esc_attr__( '%s in Vimeo', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Vimeo </a></li>';
+						'<li class="viemo"><a href="'.esc_url( $options[ 'social_vimeo' ] ).'" title="'.sprintf( esc_attr__( '%s in Vimeo', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Vimeo </a></li>';
 				}				
 				
 				//Slideshare
 				if ( !empty( $options[ 'social_slideshare' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="slideshare"><a href="'.$options[ 'social_slideshare' ].'" title="'.sprintf( esc_attr__( '%s in Slideshare', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Slideshare </a></li>';
+						'<li class="slideshare"><a href="'.esc_url( $options[ 'social_slideshare' ] ).'" title="'.sprintf( esc_attr__( '%s in Slideshare', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Slideshare </a></li>';
 				}				
 				
 				//Foursquare
 				if ( !empty( $options[ 'social_foursquare' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="foursquare"><a href="'.$options[ 'social_foursquare' ].'" title="'.sprintf( esc_attr__( '%s in Foursquare', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' foursquare </a></li>';
+						'<li class="foursquare"><a href="'.esc_url( $options[ 'social_foursquare' ] ).'" title="'.sprintf( esc_attr__( '%s in Foursquare', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' foursquare </a></li>';
 				}
 				
 				//Flickr
 				if ( !empty( $options[ 'social_flickr' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="flickr"><a href="'.$options[ 'social_flickr' ].'" title="'.sprintf( esc_attr__( '%s in Flickr', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Flickr </a></li>';
+						'<li class="flickr"><a href="'.esc_url( $options[ 'social_flickr' ] ).'" title="'.sprintf( esc_attr__( '%s in Flickr', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Flickr </a></li>';
 				}
 				//Tumblr
 				if ( !empty( $options[ 'social_tumblr' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="tumblr"><a href="'.$options[ 'social_tumblr' ].'" title="'.sprintf( esc_attr__( '%s in Tumblr', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Tumblr </a></li>';
+						'<li class="tumblr"><a href="'.esc_url( $options[ 'social_tumblr' ] ).'" title="'.sprintf( esc_attr__( '%s in Tumblr', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Tumblr </a></li>';
 				}
 				//deviantART
 				if ( !empty( $options[ 'social_deviantart' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="deviantart"><a href="'.$options[ 'social_deviantart' ].'" title="'.sprintf( esc_attr__( '%s in deviantART', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' deviantART </a></li>';
+						'<li class="deviantart"><a href="'.esc_url( $options[ 'social_deviantart' ] ).'" title="'.sprintf( esc_attr__( '%s in deviantART', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' deviantART </a></li>';
 				}
 				//Dribbble
 				if ( !empty( $options[ 'social_dribbble' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="dribbble"><a href="'.$options[ 'social_dribbble' ].'" title="'.sprintf( esc_attr__( '%s in Dribbble', 'simplecatch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Dribbble </a></li>';
+						'<li class="dribbble"><a href="'.esc_url( $options[ 'social_dribbble' ] ).'" title="'.sprintf( esc_attr__( '%s in Dribbble', 'simplecatch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Dribbble </a></li>';
 				}
 				//MySpace
 				if ( !empty( $options[ 'social_myspace' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="myspace"><a href="'.$options[ 'social_myspace' ].'" title="'.sprintf( esc_attr__( '%s in MySpace', 'simplecatch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' MySpace </a></li>';
+						'<li class="myspace"><a href="'.esc_url( $options[ 'social_myspace' ] ).'" title="'.sprintf( esc_attr__( '%s in MySpace', 'simplecatch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' MySpace </a></li>';
 				}
 				//WordPress
 				if ( !empty( $options[ 'social_wordpress' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="wordpress"><a href="'.$options[ 'social_wordpress' ].'" title="'.sprintf( esc_attr__( '%s in WordPress', 'simplecatch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' WordPress </a></li>';
+						'<li class="wordpress"><a href="'.esc_url( $options[ 'social_wordpress' ] ).'" title="'.sprintf( esc_attr__( '%s in WordPress', 'simplecatch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' WordPress </a></li>';
 				}				
 				//RSS
 				if ( !empty( $options[ 'social_rss' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="rss"><a href="'.$options[ 'social_rss' ].'" title="'.sprintf( esc_attr__( '%s in RSS', 'simplecatch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' RSS </a></li>';
+						'<li class="rss"><a href="'.esc_url( $options[ 'social_rss' ] ).'" title="'.sprintf( esc_attr__( '%s in RSS', 'simplecatch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' RSS </a></li>';
 				}
 				//Delicious
 				if ( !empty( $options[ 'social_delicious' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="delicious"><a href="'.$options[ 'social_delicious' ].'" title="'.sprintf( esc_attr__( '%s in Delicious', 'simplecatch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Delicious </a></li>';
+						'<li class="delicious"><a href="'.esc_url( $options[ 'social_delicious' ] ).'" title="'.sprintf( esc_attr__( '%s in Delicious', 'simplecatch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Delicious </a></li>';
 				}				
 				//Last.fm
 				if ( !empty( $options[ 'social_lastfm' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="lastfm"><a href="'.$options[ 'social_lastfm' ].'" title="'.sprintf( esc_attr__( '%s in Last.fm', 'simplecatch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Last.fm </a></li>';
+						'<li class="lastfm"><a href="'.esc_url( $options[ 'social_lastfm' ] ).'" title="'.sprintf( esc_attr__( '%s in Last.fm', 'simplecatch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Last.fm </a></li>';
 				}				
 		
 				$simplecatch_headersocialnetworks .='
@@ -541,31 +548,31 @@ function simplecatch_headersocialnetworks() {
 function simplecatch_site_verification() {
 	//delete_transient( 'simplecatch_site_verification' );
 	
-	// get the data value from theme options
-	$options = get_option( 'simplecatch_options' );
 	
-	if ( ( !$simplecatch_site_verification = get_transient( 'simplecatch_site_verification' ) ) &&  ( !empty( $options[ 'google_verification' ] ) || !empty( $options[ 'bing_verification' ] )  || !empty( $options[ 'yahoo_verification' ] )  || !empty( $options[ 'analytic_header' ] ) ) )  {
 	
+	if ( ( !$simplecatch_site_verification = get_transient( 'simplecatch_site_verification' ) ) )  {
+		// get the data value from theme options
+		$options = get_option( 'simplecatch_options' );
 		echo '<!-- refreshing cache -->';	
 	
 		//google
 		if ( !empty( $options['google_verification'] ) ) {
-			$simplecatch_site_verification .= '<meta name="google-site-verification" content="' . $options['google_verification'] . '" />' . "\n";
+			$simplecatch_site_verification .= '<meta name="google-site-verification" content="' .  $options['google_verification'] . '" />' . "\n";
 		}
 	
 		//bing
 		if ( !empty( $options['bing_verification'] ) ) {
-			$simplecatch_site_verification .= '<meta name="msvalidate.01" content="' . $options['bing_verification'] . '" />' . "\n";
+			$simplecatch_site_verification .= '<meta name="msvalidate.01" content="' .  $options['bing_verification']  . '" />' . "\n";
 		}
 	
 		//yahoo
 		 if ( !empty( $options['yahoo_verification'] ) ) {
-			$simplecatch_site_verification .= '<meta name="y_key" content="' . $options['yahoo_verification'] . '" />' . "\n";
+			$simplecatch_site_verification .= '<meta name="y_key" content="' .  $options['yahoo_verification']  . '" />' . "\n";
 		}
 	
 		//site stats, analytics header code
 		if ( !empty( $options['analytic_header'] ) ) {
-			$simplecatch_site_verification .= $options[ 'analytic_header' ];
+			$simplecatch_site_verification .=  $options[ 'analytic_header' ] ;
 		}
 	}
 	echo $simplecatch_site_verification;
@@ -582,15 +589,17 @@ add_action('wp_head', 'simplecatch_site_verification');
  * @uses set_transient and delete_transient
  */
 function simplecatch_footercode() {
-	//delete_transient( 'simplecatch_footercode' );
+	//delete_transient( 'simplecatch_footercode' );	
 	
-	// get the data value from theme options
-	$options = get_option( 'simplecatch_options' );
-	
-	if ( ( !$simplecatch_footercode = get_transient( 'simplecatch_footercode' ) ) && !empty( $options[ 'analytic_footer' ] ) ) {
+	if ( ( !$simplecatch_footercode = get_transient( 'simplecatch_footercode' ) ) ) {
+		// get the data value from theme options
+		$options = get_option( 'simplecatch_options' );
 		echo '<!-- refreshing cache -->';	
 		
-		$simplecatch_footercode = $options[ 'analytic_footer' ];
+		//site stats, analytics header code
+		if ( !empty( $options['analytic_footer'] ) ) {
+			$simplecatch_footercode =  $options[ 'analytic_footer' ] ;
+		}
 			
 	set_transient( 'simplecatch_footercode', $simplecatch_footercode, 86940 );
 	}
@@ -605,17 +614,18 @@ add_action('wp_footer', 'simplecatch_footercode');
  * @since Simple Catch 1.2.3
  */
 function simplecatch_inline_css() {
-	//delete_transient( 'simplecatch_inline_css' );
+	//delete_transient( 'simplecatch_inline_css' );	
 	
-	// get the data value from theme options
-	$options = get_option( 'simplecatch_options' );
-	
-	if ( ( !$simplecatch_inline_css = get_transient( 'simplecatch_inline_css' ) ) && !empty( $options[ 'custom_css' ] ) ) {
+	if ( ( !$simplecatch_inline_css = get_transient( 'simplecatch_inline_css' ) ) ) {
+		// get the data value from theme options
+		$options = get_option( 'simplecatch_options' );
 		echo '<!-- refreshing cache -->' . "\n";
-		$simplecatch_inline_css	= '<!-- '.get_bloginfo('name').' Custom CSS Styles -->' . "\n";
-        $simplecatch_inline_css .= '<style type="text/css" media="screen">' . "\n";
-		$simplecatch_inline_css .= $options['custom_css'] . "\n";
-		$simplecatch_inline_css .= '</style>' . "\n";
+		if( !empty( $options[ 'custom_css' ] ) ) {
+			$simplecatch_inline_css	= '<!-- '.get_bloginfo('name').' Custom CSS Styles -->' . "\n";
+	        $simplecatch_inline_css .= '<style type="text/css" media="screen">' . "\n";
+			$simplecatch_inline_css .=  $options['custom_css'] . "\n";
+			$simplecatch_inline_css .= '</style>' . "\n";
+		}
 			
 	set_transient( 'simplecatch_inline_css', $simplecatch_inline_css, 86940 );
 	}
@@ -664,14 +674,15 @@ function simplecatch_pass_slider_value() {
 	$transition_effect = $options[ 'transition_effect' ];
 	$transition_delay = $options[ 'transition_delay' ] * 1000;
 	$transition_duration = $options[ 'transition_duration' ] * 1000;
-	?>
-	<script>
-		var transition_effect, transition_delay, transition_duration;
-		transition_effect = "<?php echo $transition_effect; ?>";	
-		transition_delay = "<?php echo $transition_delay; ?>";
-		transition_duration = "<?php echo $transition_duration; ?>";
-	</script>
-	<?php
+	wp_localize_script( 
+		'pass_js_value',
+		'js_value',
+		array(
+			'transition_effect' => $transition_effect,
+			'transition_delay' => $transition_delay,
+			'transition_duration' => $transition_duration
+		)
+	);
 }// simplecatch_pass_slider_value
 
 /**

@@ -49,7 +49,7 @@ get_header(); ?>
 	}
 ?>
 									<a href="<?php echo esc_url( $next_attachment_url ); ?>" title="<?php the_title_attribute(); ?>" rel="attachment"><?php
-									$attachment_size = apply_filters( 'simplecatch_attachment_size', 848 );
+									$attachment_size = apply_filters( 'simplecatch_attachment_size', 642 );
 									echo wp_get_attachment_image( $post->ID, array( $attachment_size, 1024 ) ); // filterable image width with 1024px limit for image height.
 									?></a>
 

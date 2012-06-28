@@ -14,11 +14,6 @@
 <head profile="http://gmpg.org/xfn/11">
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 <title><?php wp_title(''); ?></title>
-
-<!--[if lt IE 7]>
-<script src="<?php echo get_template_directory_uri(); ?>/js/pngfix.js" type="text/javascript"></script>
-<link rel="stylesheet" type="text/css" media="screen" href="<?php echo get_template_directory_uri(); ?>/css/ie6.css" />
-<![endif]-->
  
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />

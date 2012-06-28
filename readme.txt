@@ -4,7 +4,7 @@ Theme Name: Simple Catch
 Theme URI: http://catchthemes.com/wp-themes/simplecatch
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
-Description: Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Page Template for Layout, Advance Featured Slider, Theme Options for Header Logo, Footer Logo, Fav Icon, more then 2 Dozens of Social Icons, Custom CSS Styles and Webmaster Tools, Threaded Comments, and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework.
+Description: Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Page Template for Layout, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework.
 Version: 1.2.3
 License: GNU General Public License
 
@@ -122,13 +122,19 @@ Version 1.2.5
 Version 1.2.6
 * Fixed CSS for Dropdown menu height to accept longer titles
 * Added Layout Options under Theme Options 
-* Added Advance Slider Options under Slider Options
+* Added more slider options under Slider Options
+
+Version 1.2.7
+* Cleaning and arranging simpecatch_functions.php
+* Cleaning and fixing searchform.php
+* Cleaning Header.php file
+* Fixing slider to make compatible with ie7 and ie8
+* Fixing css to make compatible with ie8
+* Fixing image.php file
+* ul,next and previous bullet changed from jpg image format to png image format
 
 
 == Upcoming Plan ==
 * Add more option in theme option for feed redirect, excerpt length
-* Add option in Featured Slider to remove duplicate post in the homepage, feature slider image height option, gradient add and remove option, slide effects option
-* Option to change the search text
-* Option to change continue reading
-* Footer Copyright Change Option
+* Add option in Featured Slider to remove duplicate post in the homepage, feature slider image height option
 * Responsive Design 

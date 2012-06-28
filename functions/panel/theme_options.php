@@ -140,7 +140,7 @@ function simplecatch_options_page() {
                                 <th scope="row"><h4><?php _e( 'Header logo url:', 'simplecatch' ); ?></h4></th>
                                 <td>
                                     <?php  if ( !empty ( $options[ 'featured_logo_header' ] ) ) { ?>
-                                        <input size="65" type="text" name="simplecatch_options[featured_logo_header]" value="<?php if( isset( $options [ 'featured_logo_header' ] ) ) echo esc_attr( $options [ 'featured_logo_header' ], 'simplecatch' ); ?>" class="upload" />
+                                        <input size="65" type="text" name="simplecatch_options[featured_logo_header]" value="<?php if( isset( $options [ 'featured_logo_header' ] ) ) echo esc_url ( $options [ 'featured_logo_header' ], 'simplecatch' ); ?>" class="upload" />
                                          <?php } else { ?>
                                          <input size="65" type="text" name="simplecatch_options[featured_logo_header]" value="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="logo" />
                                          <?php }  ?>
@@ -172,7 +172,7 @@ function simplecatch_options_page() {
                                 <th scope="row"><h4><?php _e( 'Footer logo url: ', 'simplecatch' ); ?></h4></th>
                                 <td>
                                     <?php  if ( !empty ( $options[ 'featured_logo_footer' ] ) ) { ?>
-                                        <input size="65" type="text" name="simplecatch_options[featured_logo_footer]" value="<?php if( isset( $options[ 'featured_logo_footer' ] ) ) echo esc_attr( $options[ 'featured_logo_footer' ] ); ?>" class="upload" />
+                                        <input size="65" type="text" name="simplecatch_options[featured_logo_footer]" value="<?php if( isset( $options[ 'featured_logo_footer' ] ) ) echo esc_url( $options[ 'featured_logo_footer' ] ); ?>" class="upload" />
                                     <?php } else { ?>
                                         <input size="65" type="text" name="simplecatch_options[featured_logo_footer]" value="<?php echo get_template_directory_uri(); ?>/images/logo-foot.png" alt="logo" />
                                     <?php }  ?>                            
@@ -207,7 +207,7 @@ function simplecatch_options_page() {
                             <tr>                            
                                 <th scope="row"><h4><?php _e( 'Fav Icon URL:', 'simplecatch' ); ?></h4></th>
                                 <td><?php if ( !empty ( $options[ 'fav_icon' ] ) ) { ?>
-                                        <input size="65" type="text" name="simplecatch_options[fav_icon]" value="<?php if( isset( $options [ 'fav_icon' ] ) ) echo esc_attr( $options [ 'fav_icon' ] ); ?>" class="upload" />
+                                        <input size="65" type="text" name="simplecatch_options[fav_icon]" value="<?php if( isset( $options [ 'fav_icon' ] ) ) echo esc_url ( $options [ 'fav_icon' ] ); ?>" class="upload" />
                                     <?php } else { ?>
                                         <input size="65" type="text" name="simplecatch_options[fav_icon]" value="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" alt="fav" />
                                     <?php }  ?> 
@@ -342,7 +342,7 @@ function simplecatch_options_page() {
                             <tr>
                                 <th scope="row"><h4><?php _e( 'Enter your custom CSS styles.', 'simplecatch' ); ?></h4></th>
                                 <td>
-                                    <textarea name="simplecatch_options[custom_css]" id="custom-css" cols="90" rows="12"><?php if ( isset( $options [ 'custom_css' ] ) )  echo esc_html( $options[ 'custom_css' ] ); ?></textarea>
+                                    <textarea name="simplecatch_options[custom_css]" id="custom-css" cols="90" rows="12"><?php if ( isset( $options [ 'custom_css' ] ) )  echo esc_attr( $options[ 'custom_css' ] ); ?></textarea>
                                 </td>
                             </tr>
                            

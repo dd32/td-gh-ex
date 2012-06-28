@@ -17,7 +17,7 @@ $search_display_text = $options[ 'search_display_text' ];
 $search_button_text = $options[ 'search_button_text' ];
 ?>
     <form method="get" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-    	<input type="text" value="<?php printf( __( '%s', 'simplecatch' ), $search_display_text ); ?>" name="s" id="s" title="Type Keyword" onblur="if ('' == this.value) this.value = this.defaultValue;" onfocus="if (this.defaultValue == this.value) this.value='';"/>
-        <button><?php printf( __( '%s', 'simplecatch' ), $search_button_text ); ?></button>
+    	<input type="text" value="<?php echo esc_attr( $search_display_text ); ?>" name="s" id="s" title="Type Keyword" onblur="if ('' == this.value) this.value = this.defaultValue;" onfocus="if (this.defaultValue == this.value) this.value='';"/>
+        <button><?php printf( __( '%s', 'simplecatch' ), esc_attr( $search_button_text ) ); ?></button>
         <div class="CL"></div>
     </form>
