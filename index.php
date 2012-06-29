@@ -3,7 +3,7 @@
     * The template for displaying the index page.
     *
     * @author Aurelio De Rosa <aurelioderosa@gmail.com>
-    * @version 1.0.2
+    * @version 1.0.3
     * @link http://wordpress.org/extend/themes/annarita
     * @package AurelioDeRosa
     * @subpackage Annarita

@@ -5,7 +5,7 @@
  * Others are attached to action and filter hooks in WordPress to change core functionality.
  *
  * @author Aurelio De Rosa <aurelioderosa@gmail.com>
- * @version 1.0.2
+ * @version 1.0.3
  * @link http://wordpress.org/extend/themes/annarita
  * @package AurelioDeRosa
  * @subpackage Annarita
@@ -396,11 +396,6 @@ require_once get_template_directory() . '/includes/settings.php';
 require_once get_template_directory() . '/includes/meta_box.php';
 require_once get_template_directory() . '/includes/Annarita_review_widget.php';
 
-define('HEADER_TEXTCOLOR', 'FFFFFF');
-define('HEADER_IMAGE', '%s/images/header.jpg');
-define('HEADER_IMAGE_WIDTH', 980);
-define('HEADER_IMAGE_HEIGHT', 200);
-
 add_action('after_setup_theme', 'annarita_setup');
 add_action('wp_enqueue_scripts', 'annarita_setup_scripts');
 add_action('wp_enqueue_scripts', 'annarita_setup_styles');
@@ -421,12 +416,25 @@ if (isset($options['sidebars_cookie']) && $options['sidebars_cookie'] == true)
 add_theme_support('automatic-feed-links');
 add_theme_support('post-thumbnails');
 add_theme_support('custom-background');
-add_theme_support('custom-header', array(
+$custom_header_support = array(
       'default-image' => get_template_directory_uri() . '/images/header.jpg',
-      'width' => 1000,
+      'width' => 980,
       'height' => 200,
-      'default-text-color' => '#000000'
-));
+      'default-text-color' => 'FFFFFF',
+      'wp-head-callback' => 'annarita_header_style',
+      'admin-head-callback' => 'annarita_admin_header_style'
+);
+add_theme_support('custom-header', $custom_header_support);
+
+if (! function_exists('get_custom_header'))
+{
+   define('HEADER_TEXTCOLOR', $custom_header_support['default-text-color']);
+   define('HEADER_IMAGE', get_template_directory_uri() . '/images/header.jpg');
+   define('HEADER_IMAGE_WIDTH', $custom_header_support['width']);
+   define('HEADER_IMAGE_HEIGHT', $custom_header_support['height']);
+   add_custom_image_header($custom_header_support['wp-head-callback'], $custom_header_support['admin-head-callback']);
+   add_custom_background();
+}
 
 add_filter('excerpt_more', 'annarita_excerpt_more');
 add_filter('wp_title', 'annarita_title_filter');
