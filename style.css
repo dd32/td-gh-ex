@@ -4,7 +4,7 @@
     Description: Annarita is a very lightweight and adaptable theme based on HTML5 and CSS3. It lets you to create custom menu, sidebars, header image, background and support for featured images and it shows a special ribbon for "sticky" posts. It has the support to customize some settings of the theme. The sidebars can be hidden by the users with a click and this status can be persistent (if the admin enables the relative setting saving the preference using cookie in the Settings page). Basically it supports related posts and microformats as hcard and hreview (using a custom post type). For the reviews the theme has a custom widget to best show them. Annarita has two dedicated areas to publish advertisements, one above the header and one in the footer.
     Author: Aurelio De Rosa
     Author URI: http://www.audero.it
-    Version: 1.0.1
+    Version: 1.0.2
     Tags: blue, gray, black, red, white, two-columns, three-columns, fixed-width, custom-background, custom-header, custom-menu, featured-images, sticky-post, threaded-comments, translation-ready
 
     License: GNU General Public License version 3
@@ -139,12 +139,28 @@ footer
    display: block;
 }
 
-html
+embed,
+iframe,
+object,
+img,
+video
 {
-   background-color: #85B4FF;
+   max-width: 100%;
+}
+
+input,
+textarea
+{
+   max-width: 95%;
 }
 
 body
+{
+   background-color: #85B4FF;
+   margin: 0px;
+}
+
+div#body-wrapper
 {
    width: 980px;
    margin: 0px auto;
@@ -218,6 +234,12 @@ pre
 {
    border: 2px dotted #808080;
    background-color: #FFFFFF;
+}
+
+abbr
+{
+   border-bottom: 1px #ADADAD dashed;
+   cursor: help;
 }
 
 /******************
@@ -625,23 +647,27 @@ footer.main-footer a
    color: #FFFFFF;
 }
 
-nav.menu-footer-container
-{
-   text-align: center;
-}
-
 nav.menu-footer-container > ul
 {
-   width: 80%;
+   padding: 0px;
+   width: 90%;
    margin: 0px auto;
+   font-weight: bold;
 }
 
 nav.menu-footer-container > ul > li
 {
-   list-style-type: none;
-   padding: 5px 10px;
+   list-style-type: circle;
    float: left;
-   width: 30%;
+   width: 32%;
+   margin-right: 1%;
+}
+
+nav.menu-footer-container > ul ul
+{
+   padding-left: 10px;
+   font-weight: normal;
+   list-style-type: none;
 }
 
 small#copyright
@@ -659,7 +685,23 @@ a#go-to-top
 
 aside#footer-space
 {
-   padding: 10px 0px;
+   width: 100%;
+   margin: 0px auto;
+   padding: 0px 5px;
+}
+
+.footer-widget
+{
+   width: 32%;
+   margin-right: 1%;
+   margin-bottom: 5px;
+   float: left;
+   border: 2px #000000 solid;
+}
+
+.footer-widget > .widgettitle
+{
+   border-radius: 0px;
 }
 
 /******************

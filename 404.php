@@ -3,7 +3,7 @@
     * The template for displaying 404 pages (Not Found).
     *
     * @author Aurelio De Rosa <aurelioderosa@gmail.com>
-    * @version 1.0.1
+    * @version 1.0.2
     * @link http://wordpress.org/extend/themes/annarita
     * @package AurelioDeRosa
     * @subpackage Annarita
@@ -23,8 +23,8 @@
    </p>
 
    <h3><?php _e('Search in our website', 'annarita'); ?></h3>
-   <form role="search" action="/index.php" method="get" >
-      <input type="text" name="s" id="search-query" placeholder="<?php echo __('Search', 'annarita') . '...'; ?>" accesskey="s"/>
+   <form role="search" action="<?php echo home_url(); ?>" method="get" >
+      <input type="search" name="s" id="search-query" placeholder="<?php echo __('Search', 'annarita') . '...'; ?>" accesskey="s"/>
       <input type="submit" value="<?php _e('Search', 'annarita'); ?>" />
    </form>
 

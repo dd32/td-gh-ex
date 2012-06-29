@@ -3,7 +3,7 @@
     * The template for displaying the header of the theme.
     *
     * @author Aurelio De Rosa <aurelioderosa@gmail.com>
-    * @version 1.0.1
+    * @version 1.0.2
     * @link http://wordpress.org/extend/themes/annarita
     * @package AurelioDeRosa
     * @subpackage Annarita
@@ -21,7 +21,7 @@
          if (isset($options['favicon_checkbox']) && $options['favicon_checkbox'] == true)
             echo '<link rel="shortcut icon" href="' . $options['favicon_url'] . '" />';
       ?>
-      <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
+      <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" media="screen" />
       <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
       <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Amethysta" type="font/woff">
       <!--[if lt IE 9]>
@@ -34,58 +34,59 @@
       ?>
    </head>
    <body <?php body_class(); ?>>
-      <?php
-         if (function_exists('dynamic_sidebar') && is_active_sidebar('header-space'))
-         {
-            ?>
-            <aside id="header-space" role="complementary">
-               <?php dynamic_sidebar('header-space'); ?>
-            </aside>
-            <?php
-         }
-      ?>
-      <header class="main-header" role="banner">
-         <a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>" class="header-link">
-            <hgroup class="alignleft">
-               <h1 id="site-title"><?php bloginfo('name'); ?></h1>
-               <h2 id="site-description"><?php bloginfo('description'); ?></h2>
-            </hgroup>
-         </a>
-         <div id="meta" class="alignright">
-            <?php wp_register('', ''); ?>
-            <?php wp_loginout(get_home_url()); ?>
-
-            <a href="<?php bloginfo('rss2_url'); ?>" title="<?php bloginfo('name'); ?> RSS Feed">
-               <img class="rss-icon" src="<?php echo get_template_directory_uri(); ?>/images/rss.png" alt="RSS Feed" />
-            </a>
-         </div>
-
-         <?php get_search_form(); ?>
-      </header>
-      <nav class="main-menu clear-both">
+      <div id="body-wrapper">
          <?php
-         if (function_exists('wp_nav_menu') && has_nav_menu('header-menu'))
-         {
-            wp_nav_menu(array(
-                'theme_location' => 'header-menu',
-                'container' => ''
-            ));
-         }
-         else
-         {
-            ?>
-            <ul id="menu-header" class="menu">
-               <?php
-                  echo '<li class="page_item';
-                  if (is_home())
-                     echo ' current_page_item';
-                  echo '">';
+            if (function_exists('dynamic_sidebar') && is_active_sidebar('header-space'))
+            {
                ?>
-                  <a href="/" title="Homepage">Home</a>
-               </li>
-               <?php wp_list_pages('title_li='); ?>
-            </ul>
-            <?php
-         }
+               <aside id="header-space" role="complementary">
+                  <?php dynamic_sidebar('header-space'); ?>
+               </aside>
+               <?php
+            }
          ?>
-      </nav>
+         <header class="main-header" role="banner">
+            <a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>" class="header-link">
+               <hgroup class="alignleft">
+                  <h1 id="site-title"><?php bloginfo('name'); ?></h1>
+                  <h2 id="site-description"><?php bloginfo('description'); ?></h2>
+               </hgroup>
+            </a>
+            <div id="meta" class="alignright">
+               <?php wp_register('', ''); ?>
+               <?php wp_loginout(get_home_url()); ?>
+
+               <a href="<?php bloginfo('rss2_url'); ?>" title="<?php bloginfo('name'); ?> RSS Feed">
+                  <img class="rss-icon" src="<?php echo get_template_directory_uri(); ?>/images/rss.png" alt="RSS Feed" />
+               </a>
+            </div>
+
+            <?php get_search_form(); ?>
+         </header>
+         <nav class="main-menu clear-both">
+            <?php
+            if (function_exists('wp_nav_menu') && has_nav_menu('header-menu'))
+            {
+               wp_nav_menu(array(
+                  'theme_location' => 'header-menu',
+                  'container' => ''
+               ));
+            }
+            else
+            {
+               ?>
+               <ul id="menu-header" class="menu">
+                  <?php
+                     echo '<li class="page_item';
+                     if (is_home())
+                        echo ' current_page_item';
+                     echo '">';
+                  ?>
+                     <a href="/" title="Homepage">Home</a>
+                  </li>
+                  <?php wp_list_pages('title_li='); ?>
+               </ul>
+               <?php
+            }
+            ?>
+         </nav>

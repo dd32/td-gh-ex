@@ -5,7 +5,7 @@
  * Others are attached to action and filter hooks in WordPress to change core functionality.
  *
  * @author Aurelio De Rosa <aurelioderosa@gmail.com>
- * @version 1.0.1
+ * @version 1.0.2
  * @link http://wordpress.org/extend/themes/annarita
  * @package AurelioDeRosa
  * @subpackage Annarita
@@ -78,14 +78,14 @@ function annarita_register_sidebars()
        array(
            'name' => __('Header space', 'annarita'),
            'id' => 'header-space',
-           'before_widget' => '',
-           'after_widget' => ''
+           'before_widget' => '<div id="%1$s" class="header-widget %2$s">',
+           'after_widget' => '</div>'
        ),
        array(
            'name' => __('Footer space', 'annarita'),
            'id' => 'footer-space',
-           'before_widget' => '',
-           'after_widget' => ''
+           'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
+           'after_widget' => '</div>'
        )
    );
    if (function_exists('register_sidebars'))
@@ -326,8 +326,6 @@ function annarita_init_theme_script()
       jQuery(document).ready(
          function()
          {
-            resizeOverflow('left-sidebar');
-            resizeOverflow('right-sidebar');
             initContentWidth();
             jQuery('ul#menu-header').superfish();
             jQuery('article.sticky').prepend(createStickyLabel());
@@ -394,9 +392,9 @@ function annarita_show_hide_sidebar()
    <?php
 }
 
-require_once TEMPLATEPATH . '/includes/settings.php';
-require_once TEMPLATEPATH . '/includes/meta_box.php';
-require_once TEMPLATEPATH . '/includes/Annarita_review_widget.php';
+require_once get_template_directory() . '/includes/settings.php';
+require_once get_template_directory() . '/includes/meta_box.php';
+require_once get_template_directory() . '/includes/Annarita_review_widget.php';
 
 define('HEADER_TEXTCOLOR', 'FFFFFF');
 define('HEADER_IMAGE', '%s/images/header.jpg');
@@ -422,19 +420,16 @@ if (isset($options['sidebars_cookie']) && $options['sidebars_cookie'] == true)
 
 add_theme_support('automatic-feed-links');
 add_theme_support('post-thumbnails');
-//add_theme_support('custom-background');
-//add_theme_support('custom-header', array(
-//      'default-image' => get_template_directory_uri() . '/images/header.jpg',
-//      'width' => 1000,
-//      'height' => 200,
-//      'default-text-color' => '#000000'
-//));
+add_theme_support('custom-background');
+add_theme_support('custom-header', array(
+      'default-image' => get_template_directory_uri() . '/images/header.jpg',
+      'width' => 1000,
+      'height' => 200,
+      'default-text-color' => '#000000'
+));
 
 add_filter('excerpt_more', 'annarita_excerpt_more');
 add_filter('wp_title', 'annarita_title_filter');
 add_filter('pre_get_posts', 'annarita_get_posts');
 add_filter('post_class', 'annarita_get_post_class');
-
-add_custom_background();
-add_custom_image_header('annarita_header_style', 'annarita_admin_header_style');
 ?>

@@ -3,7 +3,7 @@
     * The template for displaying a single page.
     *
     * @author Aurelio De Rosa <aurelioderosa@gmail.com>
-    * @version 1.0.1
+    * @version 1.0.2
     * @link http://wordpress.org/extend/themes/annarita
     * @package AurelioDeRosa
     * @subpackage Annarita
@@ -27,7 +27,7 @@
          if (has_post_thumbnail())
          {
             ?>
-            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" ><?php the_post_thumbnail('medium'); ?></a>
+            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail('medium'); ?></a>
             <?php
          }
 
@@ -44,7 +44,20 @@
          <?php
          }
       ?>
-      <footer>
+      <div class="pagination clear-both">
+         <?php
+            wp_link_pages();
+            if (wp_attachment_is_image(get_the_ID()))
+            {
+            ?>
+               <div id="navigation-previous" class="alignleft"><?php previous_image_link(0); ?></div>
+               <div id="navigation-next" class="alignright"><?php next_image_link(0); ?></div>
+               <br class="clear-both" />
+            <?php
+            }
+         ?>
+      </div>
+      <footer class="clear-both">
          <?php
             edit_post_link(__('Edit', 'annarita'), '', ' | ');
             comments_popup_link(__('No Comments', 'annarita') . ' &raquo;', __('1 Comment', 'annarita') . ' &raquo;', __('% Comments', 'annarita') . ' &raquo;');

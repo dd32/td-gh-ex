@@ -3,7 +3,7 @@
     * The form used to search the content of the website.
     *
     * @author Aurelio De Rosa <aurelioderosa@gmail.com>
-    * @version 1.0.1
+    * @version 1.0.2
     * @link http://wordpress.org/extend/themes/annarita
     * @package AurelioDeRosa
     * @subpackage Annarita
@@ -12,6 +12,6 @@
     */
 ?>
 <form role="search" name="search" id="search" action="<?php echo home_url(); ?>" method="get">
-   <input type="text" name="s" id="search-query" placeholder="<?php echo __('Search', 'annarita') . '...'; ?>" accesskey="s" />
+   <input type="search" name="s" id="search-query" placeholder="<?php echo __('Search', 'annarita') . '...'; ?>" accesskey="s" />
    <input type="submit" value="<?php _e('Search', 'annarita'); ?>" />
 </form>

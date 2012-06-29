@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Annarita\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-09 18:05+0100\n"
-"PO-Revision-Date: 2012-06-09 18:05+0100\n"
+"POT-Creation-Date: 2012-06-28 03:33+0100\n"
+"PO-Revision-Date: 2012-06-28 03:34+0100\n"
 "Last-Translator: Aurelio De Rosa <aurelioderosa@gmail.com>\n"
 "Language-Team: Aurelio De Rosa <aurelioderosa@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -53,7 +53,7 @@ msgstr "Post pi&ugrave; recenti"
 #: ../index.php:34
 #: ../page.php:21
 #: ../search.php:38
-#: ../single.php:108
+#: ../single.php:118
 #: ../includes/Annarita_review_widget.php:90
 msgid "Permalink to: "
 msgstr "Permalink a:"
@@ -148,7 +148,7 @@ msgstr "Tags"
 #: ../author.php:77
 #: ../functions.php:237
 #: ../index.php:52
-#: ../page.php:49
+#: ../page.php:62
 #: ../search.php:56
 #: ../single-annarita_review.php:72
 #: ../single.php:35
@@ -157,7 +157,7 @@ msgstr "Modifica"
 
 #: ../author.php:78
 #: ../index.php:53
-#: ../page.php:50
+#: ../page.php:63
 #: ../search.php:57
 #: ../single-annarita_review.php:73
 #: ../single.php:36
@@ -166,7 +166,7 @@ msgstr "Nessun commento"
 
 #: ../author.php:78
 #: ../index.php:53
-#: ../page.php:50
+#: ../page.php:63
 #: ../search.php:57
 #: ../single-annarita_review.php:73
 #: ../single.php:36
@@ -175,7 +175,7 @@ msgstr "1 Commento"
 
 #: ../author.php:78
 #: ../index.php:53
-#: ../page.php:50
+#: ../page.php:63
 #: ../search.php:57
 #: ../single-annarita_review.php:73
 #: ../single.php:36
@@ -216,16 +216,17 @@ msgstr "Commenti"
 msgid "I am sorry but there are no comment yet."
 msgstr "Sono spiacente ma non ci sono ancora commenti."
 
-#: ../footer.php:35
 #: ../footer.php:36
+#: ../footer.php:39
 msgid "Template"
 msgstr "Template"
 
-#: ../footer.php:39
-msgid "created by"
-msgstr "creato da"
+#: ../footer.php:41
+#, php-format
+msgid "created by %s"
+msgstr "creato da %s"
 
-#: ../footer.php:44
+#: ../footer.php:43
 msgid "Go to top"
 msgstr "Vai in cima"
 
@@ -307,7 +308,7 @@ msgid "I am sorry. There are not posts yet."
 msgstr "Sono spiacente. Non ci sono ancora post."
 
 #: ../page.php:40
-#: ../single.php:70
+#: ../single.php:80
 msgid "Extra data"
 msgstr "Dati extra"
 
@@ -341,7 +342,7 @@ msgstr "Post scritto da"
 msgid "Summary"
 msgstr "Riassunto"
 
-#: ../single.php:100
+#: ../single.php:110
 msgid "Related posts"
 msgstr "Post correlati"
 

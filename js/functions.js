@@ -1,3 +1,13 @@
+/**
+ * @author Aurelio De Rosa <aurelioderosa@gmail.com>
+ * @version 1.0.2
+ * @link http://wordpress.org/extend/themes/annarita
+ * @package AurelioDeRosa
+ * @subpackage Annarita
+ * @since Annarita 1.0
+ * @license http://www.gnu.org/licenses/gpl-3.0.html GNU General Public License version 3
+ */
+
 function createStickyLabel()
 {
    return jQuery('<div>')
@@ -100,18 +110,4 @@ function setRateWidth()
          );
       }
    );
-}
-
-function resizeOverflow(id)
-{
-   var elemWidth = jQuery('#' + id).width();
-   jQuery('#' + id + ' *')
-   .filter(
-      function()
-      {
-         if (jQuery(this).width() > elemWidth)
-            return jQuery(this);
-      }
-   )
-   .width('90%');
 }

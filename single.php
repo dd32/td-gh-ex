@@ -3,7 +3,7 @@
     * The template for displaying a single post.
     *
     * @author Aurelio De Rosa <aurelioderosa@gmail.com>
-    * @version 1.0.1
+    * @version 1.0.2
     * @link http://wordpress.org/extend/themes/annarita
     * @package AurelioDeRosa
     * @subpackage Annarita
@@ -58,8 +58,18 @@
 
       the_content();
       ?>
-         <div class="pagination">
-            <?php wp_link_pages(); ?>
+         <div class="pagination clear-both">
+            <?php
+               wp_link_pages();
+               if (wp_attachment_is_image(get_the_ID()))
+               {
+               ?>
+                  <div id="navigation-previous" class="alignleft"><?php previous_image_link(0); ?></div>
+                  <div id="navigation-next" class="alignright"><?php next_image_link(0); ?></div>
+                  <br class="clear-both" />
+               <?php
+               }
+            ?>
          </div>
       <?php
          $meta = annarita_get_real_meta(get_post_custom());
@@ -74,7 +84,7 @@
                   {
                      ?>
                      <dt class="property"><?php echo $key; ?>:</dt>
-                     <dd class="value"><?php echo implode($value, ', '); ?></dd>
+                     <dd class="value"><?php echo implode($value, '<br />'); ?></dd>
                      <?php
                   }
                ?>
