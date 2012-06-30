@@ -2,7 +2,7 @@
 * by the Catch Themes team, http://catchthemes.com/
 
 == ABOUT Catch Box==
-Catch Box is simple, lightweight, box shaped, and adaptable WordPress theme for bloggers and professionals. It is based on HTML5, CSS3 and Responsive Web Design to view in various devices. 10 Best reason to use Catch Box. 1. Responsive Web Design, 2. Custom Menus (Primary, Secondary and Footer menus), 3. Theme Options for light or dark color scheme, custom link colors, three layout choices, two content choices between excerpt and content option in homepage, feed redirection, custom css styles, 4. Featured Sliders where you can define number of slides and post IDs, 6. Social Links (Facebook, Twitter, RSS, Linkedin, Pinterest, etc), 7. Webmaster Tools (Google, Yahoo and Bing site verification ID, Header and footer codes, 6. Custom Backgrounds, 8. Custom Header, 9. Catchbox Adspace widget to add any type of Advertisements, 10) Support popular plugins
+Catch Box is simple, lightweight, box shaped, and adaptable WordPress Theme for bloggers and professionals. It is based on HTML5, CSS3 and Responsive Web Design to view in various devices. 10 Best Reasons to use Catch Box Theme. 1. Responsive Web Design, 2. Custom Menus (Primary, Secondary and Footer menus), 3. Theme Options for light or dark color scheme, custom link colors, three layout choices, two content choices between excerpt and content option in homepage, feed redirection, custom css styles, 4. Featured Sliders where you can define number of slides and post IDs, 6. Social Links (Facebook, Twitter, RSS, Linkedin, Pinterest, etc), 7. Webmaster Tools (Google, Yahoo and Bing site verification ID, Header and footer codes, 6. Custom Backgrounds, 8. Custom Header, 9. Catchbox Adspace widget to add any type of Advertisements, 10) Support popular plugins
 
 == Menus ===
 There are 3 Menus registered in this theme. Primary, Secondary and Footer Menu. Primary and Secondary menu is dull drop down menu while the Footer menu displays only parent menu and no drop down.
@@ -52,3 +52,9 @@ Version 1.0.6
 * Fixed CSS for Navigation
 * Fixed CSS for widget heading link
 * Changed Screenshot to showcase the Responsive design and Sample Ads Widget
+
+Version 1.0.7
+* Fixed cycle_setup.js file.
+* Cleaned header.php file.
+* Fixed functions.php file.
+* Fixed theme_options.php file

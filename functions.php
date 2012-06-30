@@ -743,14 +743,30 @@ function catchbox_scripts_method() {
 	// registering custom scrtips
 	wp_register_script( 'cycle-setup', get_template_directory_uri() . '/js/cycle_setup.js', array( 'jquery', 'jquery-cycle' ), '1.0' );
 	
+	// enqueue JQuery Cycle Scripts	only in Homepage
 	if(is_home() || is_front_page()) {
-		// enqueue JQuery Scripts	
 		wp_enqueue_script( 'cycle-setup' );	
+	}
+
+	//browser specific queuing i.e. for IE 1-6
+	$catchbox_ua = strtolower($_SERVER['HTTP_USER_AGENT']);
+	if(preg_match('/(?i)msie [1-6]/',$catchbox_ua)) {
+		wp_enqueue_script( 'catchbox-pngfix', get_stylesheet_directory_uri() . '/js/pngfix.js' );	  
+	}
+	//browser specific queuing i.e. for IE 1-8
+	if(preg_match('/(?i)msie [1-8]/',$catchbox_ua)) {
+	 	wp_enqueue_script( 'catchbox-html5', get_stylesheet_directory_uri() . '/js/html5.js' );
 	}
 	
 } // catchbox_scripts_method
 add_action( 'wp_enqueue_scripts', 'catchbox_scripts_method' );
 
+/**
+ * Enqueue Comment Reply Script
+ *
+ * @used wp_enqueue_script
+ * hooks action comment_form_before
+ */
 function catchbox_enqueue_comment_reply_script() {
 	if ( comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

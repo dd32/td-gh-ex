@@ -28,12 +28,6 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_uri(); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<!--[if lt IE 9]>
-<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
-<![endif]-->
-<!--[if lt IE 7]>
-<script src="<?php echo get_template_directory_uri(); ?>/js/pngfix.js" type="text/javascript"></script>
-<![endif]-->
 <?php
 	/* Always have wp_head() just before the closing </head>
 	 * tag of your theme, or you will break many plugins, which
@@ -60,13 +54,9 @@
                             
 				<h1 id="site-title"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>
 				<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
-                
 			</hgroup>
 
-			
-			
-				<?php get_search_form(); ?>
-			
+			<?php get_search_form(); ?>
 
 			<nav id="access" role="navigation">
 				<h3 class="assistive-text"><?php _e( 'Primary menu', 'catchbox' ); ?></h3>
@@ -79,8 +69,7 @@
 				} else { ?>
 					<?php wp_page_menu( array( 'menu_class'  => 'default-menu' ) ); ?>
 				<?php
-                } ?>
-                   
+                } ?>   
 			</nav><!-- #access -->
             
 			<?php if ( has_nav_menu( 'secondary', 'catchbox' ) ) { ?>
@@ -93,6 +82,5 @@
                 </nav>
             <?php } ?>
 	</header><!-- #branding -->
-
-
+    
 	<div id="main" class="clearfix">

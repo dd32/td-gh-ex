@@ -19,6 +19,6 @@ jQuery('#slider-wrap').cycle({
 	fit:           		1,
 	after: function (){
         jQuery(this).parent().css("height", jQuery(this).height());
-     }, 		
+     }		
 	
 });

@@ -1027,18 +1027,20 @@ add_filter( 'body_class', 'catchbox_layout_classes' );
 function catchbox_socialprofile() {
 
 	//delete_transient( 'catchbox_socialprofile' );
-	
+
     $options = get_option('catchbox_options_social_links');
-	$flag = 0;
-	foreach( $options as $option ) {
-		if( $option ) {
-			$flag = 1;
-		}
-		else { 
-			$flag = 0;
-		}
-		if( $flag == 1) {
-			break;
+	$flag = 0;	
+	if( !empty( $options ) ) {
+		foreach( $options as $option ) {
+			if( $option ) {
+				$flag = 1;
+			}
+			else { 
+				$flag = 0;
+			}
+			if( $flag == 1) {
+				break;
+			}
 		}
 	}
 				
@@ -1145,8 +1147,7 @@ function catchbox_rss_redirect() {
 add_action('template_redirect', 'catchbox_rss_redirect');
 
 /* Clearing Theme Option Cache 
- *
- * uses delete_transient
+ * @uses delete_transient
  */
 function catchbox_themeoption_invalidate_caches() {
 	delete_transient( 'catchbox_sliders' ); // Featured Slider
@@ -1154,8 +1155,7 @@ function catchbox_themeoption_invalidate_caches() {
 }
 
 /* Clearing Theme Option Cache 
- *
- * uses delete_transient and action publish_post
+ * @uses delete_transient and action publish_post
  */
 function catchbox_posts_invalidate_caches() {
 	delete_transient( 'catchbox_sliders' ); // Featured Slider
