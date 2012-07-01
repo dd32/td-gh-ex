@@ -13,9 +13,7 @@
  */
 $mantra_options= mantra_get_theme_options();
 foreach ($mantra_options as $key => $value) {
-
      ${"$key"} = $value ;
-
 }
 get_header(); 
 if ($mantra_frontpage!="Enable" || !is_front_page() ) {

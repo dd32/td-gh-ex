@@ -4,7 +4,7 @@ Theme URI: http://www.riotreactions.com/mantra
 Description: Mantra is a do-it-yourself WordPress theme, featuring a pack of over 100 customization options and easy to use tweaks capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (1,2 or 3 columns), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 35 font-families plus all Google Fonts), text and header sizes, post metas, post excerpts, post formats, header and background images, custom menus, 27 social media links and icons, pins, bullets and much much more. With a fully responsive layout,a customizable showcase presentation page, animated slider, magazine and blog layouts, 8 widget areas, modern graphics and an easy and intuitive admin section, you can start creating your dream site right now.
 Author: Cryout Creations
 Author URI: http://www.cryoutcreations.com
-Version: 1.9.2.2
+Version: 1.9.2.3
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, red, blue, white, silver, light, dark, one-column, two-columns, three-columns, right-sidebar, left-sidebar, flexible-width, fixed-width, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, front-page-post-form, full-width-template,  microformats, post-formats, rtl-language-support,  sticky-post, theme-options, threaded-comments, translation-ready
@@ -1127,6 +1127,8 @@ body.page .edit-link {
 	clear:right;
 }
 
+
+
 .status_content {
 	display:block;
 	float:left;
@@ -1141,6 +1143,7 @@ body.page .edit-link {
 
 .format-status .avatar {
 	display:block;
+	width:auto;
 	float:left;
 	margin-right:10px;
 }
@@ -2512,5 +2515,31 @@ Author URI: http://dev7studios.com
 	padding-right:10px;
 	margin-top:10px;
 }
+/* Style HTML5 tags for IE8 and lower */
+header
+,nav
+,section
+,article
+,aside
+,footer
+,hgroup 
+{ 
+display: block;
+}
+
+.tinynav {
+display:block;
+float:none
+margin:0 auto;
+display:none;
+min-width:320px;
+width:100%;
+padding:10px;
+}
+
+.tinynav  option {
+
+}
+
 
 /* FIN! */

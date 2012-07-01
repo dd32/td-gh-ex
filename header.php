@@ -8,7 +8,8 @@
  * @subpackage mantra
  * @since mantra 0.5
  */
-?><!DOCTYPE html>
+?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html <?php language_attributes(); ?>>
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -31,6 +32,18 @@ foreach ($mantra_options as $key => $value) {
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<!--[if lt IE 9]>
+<script>
+document.createElement('header');
+document.createElement('nav');
+document.createElement('section');
+document.createElement('article');
+document.createElement('aside');
+document.createElement('footer');
+document.createElement('hgroup');
+</script>
+<![endif]-->
+
 <?php if ($mantra_options['mantra_favicon']) { ?> <link rel="shortcut icon" href="<?php echo $mantra_options['mantra_favicon']; ?>" />
 <?php }
 
@@ -39,6 +52,7 @@ foreach ($mantra_options as $key => $value) {
 	 * generally use this hook to add elements to <head> such
 	 * as styles, scripts, and meta tags.
 	 */
+	 
  	mantra_header(); 
 	wp_head(); ?>
 
@@ -48,6 +62,11 @@ foreach ($mantra_options as $key => $value) {
 <script>
     jQuery(document).ready(function() {
     jQuery("#content img").addClass("<?php echo 'image'.$mantra_image;?>");
+	  jQuery(function () {
+    jQuery("#prime_nav").tinyNav({
+	header: true // Show header instead of the active item
+					});
+  });
     });
 
 </script>
@@ -81,12 +100,11 @@ foreach ($mantra_options as $key => $value) {
 					//echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' ); 
 					 $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), array(HEADER_IMAGE_WIDTH,HEADER_IMAGE_HEIGHT) ); 
 	 ?><style>
-	 #header { background:url(<?php echo $image[0]; ?>) no-repeat;height:<?php echo HEADER_IMAGE_HEIGHT; ?>px;}
-	 #branding { height:<?php echo HEADER_IMAGE_HEIGHT-36; ?>px; }
+	 #branding {background:url(<?php echo $image[0]; ?>) no-repeat;height:<?php echo HEADER_IMAGE_HEIGHT; ?>px;}
       </style>  
 				<?php else : if (get_header_image() != '') { ?>
-					<style> #branding { <?php if ($mantra_dimselect=="Absolute") { ?>width:<?php echo HEADER_IMAGE_WIDTH; ?>px; <?php } ?> height:<?php echo HEADER_IMAGE_HEIGHT-36; ?>px;} 
-							#header { background:url(<?php header_image(); ?>) no-repeat;height:<?php echo HEADER_IMAGE_HEIGHT; ?>px;} </style>
+					<style> #branding {background:url("<?php header_image(); ?>") no-repeat; <?php if ($mantra_dimselect=="Absolute") { ?>width:<?php echo HEADER_IMAGE_WIDTH; ?>px; <?php } ?> height:<?php echo HEADER_IMAGE_HEIGHT; ?>px;} 
+						 </style>
 				<?php } else { ?><?php } ?>
 				<?php endif; 
 
@@ -106,7 +124,7 @@ foreach ($mantra_options as $key => $value) {
 			  <?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
 				<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'mantra' ); ?>"><?php _e( 'Skip to content', 'mantra' ); ?></a></div>
 				<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */
-				 wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
+				 wp_nav_menu( array( 'container_class' => 'menu-header', 'menu_id' =>'prime_nav', 'theme_location' => 'primary' ) ); ?>
 			</nav><!-- #access -->
 		</div><!-- #masthead -->
 

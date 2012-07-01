@@ -54,8 +54,7 @@ foreach ($mantra_options as $key => $value) {
 	wp_register_style( 'mantras', get_stylesheet_uri() );
 	wp_enqueue_style( 'mantras');
 // Loading the style-mobile.css if the mobile view is enabled
-if($mantra_mobile=="Enable") {	wp_register_style( 'mantra-mobile', get_template_directory_uri() . '/style-mobile.css' );
-	wp_enqueue_style( 'mantra-mobile');}
+
 }
 
 
@@ -73,6 +72,8 @@ foreach ($mantra_options as $key => $value) {
 	wp_enqueue_style( 'mantra_googlefonttitle');
 	wp_enqueue_style( 'mantra_googlefontside');
 	wp_enqueue_style( 'mantra_googlefontsubheader');
+	if($mantra_mobile=="Enable") {	wp_register_style( 'mantra-mobile', get_template_directory_uri() . '/style-mobile.css' );
+	wp_enqueue_style( 'mantra-mobile');}
 
 }
 
@@ -116,7 +117,6 @@ foreach ($mantra_options as $key => $value) {
 }
 
 add_action('wp_enqueue_scripts', 'mantra_scripts_method');
-
 
 
 /**
@@ -380,6 +380,10 @@ if ( '' == $text ) {
 }
 return apply_filters('wp_trim_excerpt', $text, $raw_excerpt);
 }
+
+
+
+
 if ($mantra_excerpttags=='Enable') {
 remove_filter('get_the_excerpt', 'wp_trim_excerpt');
 add_filter('get_the_excerpt', 'mantra_trim_excerpt');
@@ -757,6 +761,10 @@ function mantra_footer_sidebar_class() {
  */
 
 function mantra_breadcrumbs() {
+$mantra_options= mantra_get_theme_options();
+foreach ($mantra_options as $key => $value) {
+     ${"$key"} = $value ;
+}
 global $post;
 echo '<div class="breadcrumbs">';
 if (is_page() && !is_front_page() || is_single() || is_category() || is_archive()) {
@@ -792,12 +800,12 @@ if (is_page() && !is_front_page() || is_single() || is_category() || is_archive(
             echo ''.get_the_title().'';
         }
         echo '';
-    } elseif (is_front_page()) {
+    } elseif (is_home() && $mantra_frontpage!="Enable" ) {
         // Front page
-        /*echo '';
-        echo '<a href="'.get_bloginfo('url').'">'.get_bloginfo('name').'</a> ';
-        echo ' Home Page';
-        echo '';*/
+        echo '';
+        echo '<a href="'.get_bloginfo('url').'">'.get_bloginfo('name').'</a> '."&raquo; ";
+        _e('Home Page','mantra');
+        echo '';
     }
 echo '</div>';
 }
@@ -806,7 +814,7 @@ echo '</div>';
  * Creates pagination for blog pages.
  */
 
-function mantra_pagination($pages = '', $range = 1)
+function mantra_pagination($pages = '', $range = 2, $prefix ='')
 {  
      $showitems = ($range * 2)+1;  
 
@@ -825,7 +833,8 @@ function mantra_pagination($pages = '', $range = 1)
 
      if(1 != $pages)
      {
-         echo "<nav class='pagination'>";
+		echo "<nav class='pagination'>";
+         if ($prefix) {echo "<span id='paginationPrefix'>$prefix </span>";}
          if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo "<a href='".get_pagenum_link(1)."'>&laquo;</a>";
          if($paged > 1 && $showitems < $pages) echo "<a href='".get_pagenum_link($paged - 1)."'>&lsaquo;</a>";
 

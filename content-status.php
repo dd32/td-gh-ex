@@ -24,16 +24,18 @@
 		</div><!-- .entry-summary -->
 		<?php else : ?>
 		<div class="entry-content">
-			<div class="avatar"><?php echo get_avatar( get_the_author_meta( 'ID' ), apply_filters( 'mantra_status_avatar', '65' ) ); ?></div>
+				<div class="avatar">
+					<?php echo get_avatar( get_the_author_meta( 'ID' ), apply_filters( 'mantra_status_avatar', '65' ) ); ?>
+				</div>
 				<div class="entry-meta2">
-			<h3 class="entry-format"><?php _e( 'Status', 'mantra' ); ?></h3>
-				<?php mantra_posted_on(); ?>
+					<h3 class="entry-format"><?php _e( 'Status', 'mantra' ); ?></h3>
+					<?php mantra_posted_on(); ?>
 	<?php /* if ( comments_open() && ! post_password_required() ) :*/ ?>
-			<div class="comments-link">
-				<?php mantra_comments_on(); ?>
-			</div>
+					<div class="comments-link">
+						<?php mantra_comments_on(); ?>
+					</div>
 			<?php /* endif; */ ?>
-			</div><!-- .entry-meta -->
+			</div><!-- .entry-meta2 -->
 		<div class="status_content">	<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'mantra' ) ); ?> </div>
 			<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'mantra' ) . '</span>', 'after' => '</div>' ) ); ?>
 		</div><!-- .entry-content -->

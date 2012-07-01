@@ -28,6 +28,7 @@ $mantra_options= mantra_get_theme_options();
 
 // Registering and enqueuing all scripts and styles for the init hook
 function mantra_init() {
+if (is_admin() ) {
 	wp_register_script('adminjs',get_template_directory_uri() . '/admin/js/admin.js', array('jquery') );
 	wp_enqueue_script('adminjs');
 	wp_enqueue_script("farbtastic");
@@ -39,11 +40,11 @@ function mantra_init() {
 		wp_register_script('cr2_accordion',get_template_directory_uri() . '/admin/js/accordion-slider.js', array('jquery') );
 		wp_enqueue_script('cr2_accordion');
 		}	
-
-	load_theme_textdomain( 'mantra', get_template_directory_uri() . '/languages' );
 	wp_enqueue_script('media-upload');
 	wp_enqueue_script('thickbox');
 	wp_enqueue_style('thickbox');
+	}
+		load_theme_textdomain( 'mantra', get_template_directory_uri() . '/languages' );
 }
 
 // Creating the mantra subpage
@@ -54,10 +55,12 @@ $page = add_theme_page('Mantra Settings', 'Mantra Settings', 'edit_theme_options
 
 // Adding the styles for the Mantra admin page used when mantra_add_page_fn() is launched
 function mantra_admin_styles() {
+if (is_admin() ) {
 	wp_register_style( 'mantra-admin-style',get_template_directory_uri() . '/admin/css/admin.css' );
 	wp_register_style( 'jquery-ui-style',get_template_directory_uri() . '/js/jqueryui/css/ui-lightness/jquery-ui-1.8.16.custom.css' );
 	wp_enqueue_style( 'mantra-admin-style' );
 	wp_enqueue_style( 'jquery-ui-style' );
+	}
 }
 
 // The settings sectoions. All the referenced functions are found in admin-functions.php
@@ -147,7 +150,7 @@ function mantra_init_fn(){
 
 	add_settings_field('mantra_excerpthome', __('Post Excerpts on Home Page','mantra') , 'setting_excerpthome_fn', __FILE__, 'excerpt_section');
 	add_settings_field('mantra_excerptsticky', __('Affect Sticky Posts','mantra') , 'setting_excerptsticky_fn', __FILE__, 'excerpt_section');
-	add_settings_field('mantra_excerptarchive', __('Post Excerpts on Arhive and Category Pages','mantra') , 'setting_excerptarchive_fn', __FILE__, 'excerpt_section');
+	add_settings_field('mantra_excerptarchive', __('Post Excerpts on Archive and Category Pages','mantra') , 'setting_excerptarchive_fn', __FILE__, 'excerpt_section');
 	add_settings_field('mantra_excerptwords', __('Number of Words for Post Excerpts ','mantra') , 'setting_excerptwords_fn', __FILE__, 'excerpt_section');
 	add_settings_field('mantra_magazinelayout', __('Magazine Layout','mantra') , 'setting_magazinelayout_fn', __FILE__, 'excerpt_section');
 	add_settings_field('mantra_excerptdots', __('Excerpt suffix','mantra') , 'setting_excerptdots_fn', __FILE__, 'excerpt_section');

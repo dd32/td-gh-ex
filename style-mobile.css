@@ -9,7 +9,8 @@
 		margin:0 20px !important;
 		width:98% !important;
 	}
-	#wrapper, #access, #colophon, #branding, #main, article.post, #container {
+	#access {width:100%;}
+	#wrapper, #colophon, #branding, #main, article.post, #container {
     	width: auto !important;
  	}
 	#wrapper {
@@ -35,6 +36,9 @@
 	}
 	#content {
 		margin:0 10px !important
+	}
+	#access {
+	background:#ddd;
 	}
 
 }
@@ -85,6 +89,11 @@
 	.widget-area a:link, .widget-area a:visited {
 		font-size:10px !important;
 	}
+	.theme-default .nivo-controlNav {
+	display:none;
+	}
+	.tinynav	{ display: block }
+    #prime_nav { display: none }
 
 }
 
@@ -101,6 +110,12 @@ body, #content p, #content ul, #content ol,#content code, #content pre, #content
 	}
 	#front-columns > div {
 		width:90% !important;
+	}
+		#slider, #slider img {
+		width:80% !important;
+	}
+	.theme-default .nivo-controlNav {
+	display:none;
 	}
 
 }
