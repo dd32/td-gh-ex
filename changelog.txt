@@ -7,6 +7,10 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(07/02/2012) - Footer Bug Fix - Version 1.6.8
+[!] footer items did not align properly
+    while there was no menu or icons
+
 (07/01/2012) - Improvements, Maintenance - Version 1.6.8
 [+] New Languages
     - Russian
