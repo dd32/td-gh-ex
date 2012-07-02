@@ -19,7 +19,7 @@ jQuery(document).ready(function(){
 jQuery(function(){
     // Main Menu
     jQuery('.menu').tinyNav({
-        active: 'selected', // Set the "active" class
+        active: 'selected' // Set the "active" class
     });
     // Subheader Menu (uncomment to use)
     //jQuery('.sub-header-menu').tinyNav({

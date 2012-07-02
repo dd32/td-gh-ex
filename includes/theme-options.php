@@ -26,10 +26,10 @@ add_action('admin_menu', 'responsive_theme_options_add_page');
  * A safe way of adding javascripts to a WordPress generated page.
  */
 function responsive_admin_enqueue_scripts( $hook_suffix ) {
-	wp_enqueue_style( 'responsive-theme-options', get_template_directory_uri() . '/includes/theme-options.css', false, '1.0' );
-	wp_enqueue_script( 'responsive-theme-options', get_template_directory_uri() . '/includes/theme-options.js', array( 'jquery' ), '1.0' );
+	wp_enqueue_style('responsive-theme-options', get_template_directory_uri() . '/includes/theme-options.css', false, '1.0');
+	wp_enqueue_script('responsive-theme-options', get_template_directory_uri() . '/includes/theme-options.js', array('jquery'), '1.0');
 }
-add_action( 'admin_print_styles-appearance_page_theme_options', 'responsive_admin_enqueue_scripts' );
+add_action('admin_print_styles-appearance_page_theme_options', 'responsive_admin_enqueue_scripts');
 
 /**
  * Init plugin options to white list our options
@@ -171,7 +171,7 @@ function responsive_theme_options_do_page() {
                 <div class="grid col-300"><?php _e('Custom Header', 'responsive'); ?></div><!-- end of .grid col-300 -->
                     <div class="grid col-620 fit">
                         
-                        <p><?php printf(__('Need to replace or remove default logo? <a href="%s">Click here</a>.', 'responsive'), admin_url('themes.php?page=custom-header')); ?></p>
+                        <p><?php printf(__('Need to replace or remove default logo?','responsive')); ?> <?php printf(__('<a href="%s">Click here</a>.', 'responsive'), admin_url('themes.php?page=custom-header')); ?></p>
                      			
                     </div><!-- end of .grid col-620 -->
                     

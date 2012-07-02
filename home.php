@@ -64,9 +64,7 @@ if ( !defined('ABSPATH')) exit;
 			// If not let's show dummy content for demo purposes
 			      } else { 
 			        echo '<p>';
-				    echo __('Your title, subtitle and this very content is editable from Theme Option. 
-					      Call to Action button and its destination link as well. Image on your right 
-						  can be an image or even YouTube video if you like.','responsive');
+				    echo __('Your title, subtitle and this very content is editable from Theme Option. Call to Action button and its destination link as well. Image on your right can be an image or even YouTube video if you like.','responsive');
 				    echo '</p>';
 				  }
 			?>
@@ -97,10 +95,10 @@ if ( !defined('ABSPATH')) exit;
         <div id="featured-image" class="grid col-460 fit"> 
                            
             <?php $options = get_option('responsive_theme_options');
-			// First let's check if headline was set
+			// First let's check if image was set
 			    if (!empty($options['featured_content'])) {
 					echo $options['featured_content'];
-		    // If not display dummy headline for preview purposes
+		    // If not display dummy image for preview purposes
 			      } else {             
                     echo '<img class="aligncenter" src="'.get_stylesheet_directory_uri().'/images/featured-image.png" width="440" height="300" alt="" />'; 
  				  }

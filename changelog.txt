@@ -7,6 +7,19 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(07/01/2012) - Improvements, Maintenance - Version 1.6.8
+[+] New Languages
+    - Russian
+    - Lithuanian
+    - Danish
+    - Slovenian
+[!] Yelp icon
+[*] CSS page load improvements
+[*] Icons optimizations
+[+] FitVids support for HTTPS
+[!] IE7 JS tinynav
+[*] Dummy content revisions
+
 (06/24/2012) - Bug fix - Version 1.6.7
 [!] Unformatted form fields
 [+] Polish Language

@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Responsive 1.6.3\n"
+"Project-Id-Version: Responsive 1.6.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-19 22:46+0100\n"
-"PO-Revision-Date: 2012-06-19 22:46+0100\n"
+"POT-Creation-Date: 2012-06-30 23:06+0100\n"
+"PO-Revision-Date: 2012-06-30 23:06+0100\n"
 "Last-Translator: grapplerulrich <grapplerulrich@gmail.com>\n"
-"Language-Team: ThemeID\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,8 +13,6 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Poedit-Language: English\n"
-"X-Poedit-Country: UNITED STATES\n"
 "X-Poedit-SearchPath-0: .\n"
 
 # @ responsive
@@ -346,42 +344,42 @@ msgid "Website"
 msgstr ""
 
 # @ responsive
-#: footer.php:92
+#: footer.php:104
 msgid "&copy;"
 msgstr ""
 
 # @ responsive
-#: footer.php:97
+#: footer.php:109
 msgid "scroll to top"
 msgstr ""
 
 # @ responsive
-#: footer.php:97
+#: footer.php:109
 msgid "&uarr;"
 msgstr ""
 
 # @ responsive
-#: footer.php:100
+#: footer.php:112
 msgid "http://themeid.com/responsive-theme/"
 msgstr ""
 
 # @ responsive
-#: footer.php:100
+#: footer.php:112
 msgid "Responsive Theme"
 msgstr ""
 
 # @ responsive
-#: footer.php:102
+#: footer.php:114
 msgid "powered by"
 msgstr ""
 
 # @ responsive
-#: footer.php:102
+#: footer.php:114
 msgid "http://wordpress.org/"
 msgstr ""
 
 # @ responsive
-#: footer.php:102
+#: footer.php:114
 msgid "WordPress"
 msgstr ""
 
@@ -395,16 +393,12 @@ msgstr ""
 msgid "Your H2 subheadline here"
 msgstr ""
 
-# @ responsive
 #: home.php:67
-msgid ""
-"Your title, subtitle and this very content is editable from Theme Option. \n"
-"\t\t\t\t\t      Call to Action button and its destination link as well. Image on your right \n"
-"\t\t\t\t\t\t  can be an image or even YouTube video if you like."
+msgid "Your title, subtitle and this very content is editable from Theme Option. Call to Action button and its destination link as well. Image on your right can be an image or even YouTube video if you like."
 msgstr ""
 
 # @ responsive
-#: home.php:87
+#: home.php:85
 msgid "Call to Action"
 msgstr ""
 
@@ -714,8 +708,8 @@ msgstr ""
 #: includes/theme-options.php:156
 #: includes/theme-options.php:253
 #: includes/theme-options.php:311
-#: includes/theme-options.php:380
-#: includes/theme-options.php:406
+#: includes/theme-options.php:398
+#: includes/theme-options.php:424
 msgid "Save Options"
 msgstr ""
 
@@ -729,10 +723,13 @@ msgstr ""
 msgid "Custom Header"
 msgstr ""
 
-# @ responsive
+#: includes/theme-options.php:174
+msgid "Need to replace or remove default logo?"
+msgstr ""
+
 #: includes/theme-options.php:174
 #, php-format
-msgid "Need to replace or remove default logo? <a href=\"%s\">Click here</a>."
+msgid "<a href=\"%s\">Click here</a>."
 msgstr ""
 
 # @ responsive
@@ -956,24 +953,48 @@ msgstr ""
 msgid "Enter your Pinterest URL"
 msgstr ""
 
-# @ responsive
+#: includes/theme-options.php:381
+msgid "Yelp!"
+msgstr ""
+
+#: includes/theme-options.php:384
+msgid "Enter your Yelp! URL"
+msgstr ""
+
 #: includes/theme-options.php:387
-#: includes/theme-options.php:397
+msgid "Vimeo"
+msgstr ""
+
+#: includes/theme-options.php:390
+msgid "Enter your Vimeo URL"
+msgstr ""
+
+#: includes/theme-options.php:393
+msgid "foursquare"
+msgstr ""
+
+#: includes/theme-options.php:396
+msgid "Enter your foursquare URL"
+msgstr ""
+
+# @ responsive
+#: includes/theme-options.php:405
+#: includes/theme-options.php:415
 msgid "Custom CSS Styles"
 msgstr ""
 
-#: includes/theme-options.php:398
+#: includes/theme-options.php:416
 msgid "https://developer.mozilla.org/en/CSS"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:398
-#: includes/theme-options.php:399
+#: includes/theme-options.php:416
+#: includes/theme-options.php:417
 msgid "CSS Tutorial"
 msgstr ""
 
 # @ responsive
-#: includes/theme-options.php:404
+#: includes/theme-options.php:422
 msgid "Enter your custom CSS styles."
 msgstr ""
 

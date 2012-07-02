@@ -5,12 +5,12 @@ msgstr ""
 "POT-Creation-Date: 2012-04-25 13:42:58 UTC\n"
 "PO-Revision-Date: 2012-07-01 21:01+0100\n"
 "Last-Translator: grapplerulrich <grapplerulrich@gmail.com>\n"
-"Language-Team: Norwegian Bokmål, Norway\n"
+"Language-Team: Lithuanian, Lithuania\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: WebTranslateIt.com\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #: page.php
 #: landing-page.php
@@ -24,7 +24,7 @@ msgstr ""
 #: archive.php
 #: 404.php
 msgid "404 &#8212; Fancy meeting you here!"
-msgstr "404 &#8212; Hyggelig å se deg her!"
+msgstr "404 - Smagu Jus sutikti čia!"
 
 #: page.php
 #: landing-page.php
@@ -36,7 +36,7 @@ msgstr "404 &#8212; Hyggelig å se deg her!"
 #: archive.php
 #: 404.php
 msgid "Don&#39;t panic, we&#39;ll get through this together. Let&#39;s explore our options here."
-msgstr "Ikke få panikk, vi skal få til dette sammen. La oss se på alternativene."
+msgstr "Nepanikuok, mes kartu tai įveiksim. Panagrinėkime galimus sprendimus."
 
 #: page.php
 #: landing-page.php
@@ -50,7 +50,7 @@ msgstr "Ikke få panikk, vi skal få til dette sammen. La oss se på alternative
 #: archive.php
 #: 404.php
 msgid "You can return"
-msgstr "Du kan gå tilbake"
+msgstr "Jūs galite grįžti"
 
 #: page.php
 #: landing-page.php
@@ -62,7 +62,7 @@ msgstr "Du kan gå tilbake"
 #: archive.php
 #: 404.php
 msgid "Home"
-msgstr "Hjem"
+msgstr "Pradinis"
 
 #: 404.php
 #: page.php
@@ -76,7 +76,7 @@ msgstr "Hjem"
 #: blog-excerpt.php
 #: archive.php
 msgid "&larr; Home"
-msgstr "&larr; Hjem"
+msgstr "← Į pradinį"
 
 #: page.php
 #: landing-page.php
@@ -90,30 +90,30 @@ msgstr "&larr; Hjem"
 #: archive.php
 #: 404.php
 msgid "or search for the page you were looking for"
-msgstr "eller søke etter siden du leter etter"
+msgstr "arba, naudodamiesi paieška, raskite ieškomą puslapį"
 
 #: archive.php
 msgid "Daily Archives: %s"
-msgstr "Daglige Arkiv: %s"
+msgstr "Dienos archyvas: %s"
 
 #: archive.php
 msgid "Monthly Archives: %s"
-msgstr "Månedlige Arkiv: %s"
+msgstr "Mėnesio archyvas: %s"
 
 #: archive.php
 msgid "Yearly Archives: %s"
-msgstr "Årlige Arkiv: %s"
+msgstr "Metų archyvas: %s"
 
 #: archive.php
 msgid "Blog Archives"
-msgstr "Bloggarkiv"
+msgstr "Blog'o archyvas"
 
 #: index.php
 #: blog.php
 #: blog-excerpt.php
 #: archive.php
 msgid "Permanent Link to %s"
-msgstr "Permanent Link til %s"
+msgstr "Pastovi nuoroda į %s"
 
 #: page.php
 #: index.php
@@ -125,7 +125,7 @@ msgstr "Permanent Link til %s"
 #: blog-excerpt.php
 #: archive.php
 msgid "<span class=\"%1$s\">Posted on</span> %2$s by %3$s"
-msgstr "<span class=\"%1$s\">Publisert</span> %2$s av %3$s"
+msgstr "<span class=\"%1$s\"> Paskelbta </span> %2$s paskelbė %3$s"
 
 #: page.php
 #: index.php
@@ -137,7 +137,7 @@ msgstr "<span class=\"%1$s\">Publisert</span> %2$s av %3$s"
 #: blog-excerpt.php
 #: archive.php
 msgid "View all posts by %s"
-msgstr "Vis alle innlegg av %s"
+msgstr "Žiūrėti visus skelbimus nuo %s"
 
 #: page.php
 #: index.php
@@ -149,7 +149,7 @@ msgstr "Vis alle innlegg av %s"
 #: blog-excerpt.php
 #: archive.php
 msgid "No Comments &darr;"
-msgstr "Ingen Kommentarer &darr;"
+msgstr "Nėra komentarų ↓"
 
 #: page.php
 #: index.php
@@ -161,7 +161,7 @@ msgstr "Ingen Kommentarer &darr;"
 #: blog-excerpt.php
 #: archive.php
 msgid "1 Comment &darr;"
-msgstr "1 Kommentar &darr;"
+msgstr "1 komentaras ↓"
 
 #: page.php
 #: index.php
@@ -173,7 +173,7 @@ msgstr "1 Kommentar &darr;"
 #: blog-excerpt.php
 #: archive.php
 msgid "% Comments &darr;"
-msgstr "% Kommentarer &darr;"
+msgstr "% komentarų ↓"
 
 #: page.php
 #: landing-page.php
@@ -186,7 +186,7 @@ msgstr "% Kommentarer &darr;"
 #: blog-excerpt.php
 #: archive.php
 msgid "Pages:"
-msgstr "Sider:"
+msgstr "Puslapiai:"
 
 #: page.php
 #: landing-page.php
@@ -199,7 +199,7 @@ msgstr "Sider:"
 #: blog-excerpt.php
 #: archive.php
 msgid "Tagged with:"
-msgstr "Tagget med:"
+msgstr "Pažymėti:"
 
 #: page.php
 #: landing-page.php
@@ -212,7 +212,7 @@ msgstr "Tagget med:"
 #: blog-excerpt.php
 #: archive.php
 msgid "Posted in %s"
-msgstr "Postet i %s"
+msgstr "Skelbta %s"
 
 #: page.php
 #: landing-page.php
@@ -225,7 +225,7 @@ msgstr "Postet i %s"
 #: blog-excerpt.php
 #: archive.php
 msgid "Edit"
-msgstr "Rediger"
+msgstr "Redaguoti"
 
 #: page.php
 #: landing-page.php
@@ -237,7 +237,7 @@ msgstr "Rediger"
 #: blog-excerpt.php
 #: archive.php
 msgid "&#8249; Older posts"
-msgstr "&#8249; Eldre innlegg"
+msgstr "‹ Ankstesni skelbimai"
 
 #: page.php
 #: landing-page.php
@@ -249,7 +249,7 @@ msgstr "&#8249; Eldre innlegg"
 #: blog-excerpt.php
 #: archive.php
 msgid "Newer posts &#8250;"
-msgstr "Nyere innlegg &#8250;"
+msgstr "Nauji skelbimai ›"
 
 #: page.php
 #: landing-page.php
@@ -260,58 +260,59 @@ msgstr "Nyere innlegg &#8250;"
 #: blog.php
 #: image.php
 msgid "Read more &#8250;"
-msgstr "Les mer &#8250;"
+msgstr "Skaityti plačiau ›"
 
 #: comments.php
 msgid "This post is password protected. Enter the password to view any comments."
-msgstr "Dette innlegget er passord beskyttet. Skriv inn passordet for å se kommentarer."
+msgstr "Šis skelbimas yra apsaugotas slaptažodžiu. Norėdami pažiūrėti komentarus įveskite slaptažodį."
 
 #: comments.php
 msgid "&#8249; Older comments"
-msgstr "&#8249; Eldre kommentarer"
+msgstr "‹ Ankstesni komentarai"
 
 #. Don't translate the zero value there is no point
 #: comments.php
 msgid "One comment on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
-msgstr[0] "En kommentar på “%2$s”"
-msgstr[1] "%1$s kommentarer på “%2$s”"
+msgstr[0] "%1$s komentarų iš “%2$s”"
+msgstr[1] "Vienas komentaras iš “%2$s”"
+msgstr[2] "%1$s komentarų iš “%2$s”"
 
 #: comments.php
 msgid "Newer comments &#8250;"
-msgstr "Nyere kommentarer &#8250;"
+msgstr "Nauji komentarai ›"
 
 #: comments.php
 msgid "Pings&#47;Trackbacks"
-msgstr "Pinger&#47;Trashbacks"
+msgstr "Pingai/Grįžimo nuorodos"
 
 #: comments.php
 msgid "for"
-msgstr "for"
+msgstr "kam:"
 
 #: comments.php
 msgid "Name"
-msgstr "Navn"
+msgstr "Vardas"
 
 #: comments.php
 msgid "E-mail"
-msgstr "E-post"
+msgstr "E-paštas"
 
 #: comments.php
 msgid "Website"
-msgstr "Hjemmeside"
+msgstr "Tinklapis"
 
 #: footer.php
 msgid "&copy;"
-msgstr "&copy;"
+msgstr "©"
 
 #: footer.php
 msgid "scroll to top"
-msgstr "Scroll til toppen"
+msgstr "slinkite į viršų"
 
 #: footer.php
 msgid "&uarr;"
-msgstr "&uarr;"
+msgstr "↑"
 
 #: footer.php
 msgid "http://themeid.com/responsive-theme/"
@@ -319,15 +320,15 @@ msgstr "http://themeid.com/responsive-theme/"
 
 #: footer.php
 msgid "Responsive Theme"
-msgstr "Responsive Theme"
+msgstr "Šablonas \"Responsive\""
 
 #: footer.php
 msgid "powered by"
-msgstr "drevet av"
+msgstr "powered by"
 
 #: footer.php
 msgid "http://wordpress.org/"
-msgstr "http://sv.wordpress.org/"
+msgstr "http://wordpress.org/"
 
 #: footer.php
 msgid "WordPress"
@@ -335,69 +336,69 @@ msgstr "WordPress"
 
 #: home.php
 msgid "Hello, World!"
-msgstr "Hei, Verden!"
+msgstr "Sveikas, Pasauli!"
 
 #: home.php
 msgid "Your H2 subheadline here"
-msgstr "Din H2 - overskrift her"
+msgstr "Jūsų H2 sub-antraštė čia"
 
 #: home.php
 msgid "Your title, subtitle and this very content is editable from Theme Option. Call to Action button and its destination link as well. Image on your right can be an image or even YouTube video if you like."
-msgstr "Din title, mellomtittel og dette viktige innholdet kan redigeres fra Temainstillninger. Call to Action og dens destinasjons link også. Kan være et bilde eller en Youtube video."
+msgstr "Jūsų pavadinimas, sub-pavadinimas ir turinys yra redaguojami Šablono pasirinktyse. Taip pat Kvietimo veikti mygtukas ir jo paskirties nuoroda. Paveikslėlis dešinėje gali būti paveikslėlis arba net YouTube filmukas, jei to pageidaujate."
 
 #: home.php
 msgid "Call to Action"
-msgstr "Call to Action"
+msgstr "Kvietimas veikti"
 
 #: image.php
 msgid "&#8249; Return to"
-msgstr "&#8249; Gå tilbake til"
+msgstr "‹ Grįžti į"
 
 #: index.php
 #: image.php
 msgid "Don't panic, we'll get through this together. Let's explore our options here."
-msgstr "Ikke få panikk, vi skal gå igjennom dette i sammen. La os utforske dine alternativ her."
+msgstr "Nepanikuok, mes kartu tai įveiksim. Panagrinėkime galimus sprendimus."
 
 #: index.php
 #: image.php
 msgid "home"
-msgstr "Hjem"
+msgstr "pradinis"
 
 #: search.php
 msgid "Search Results for: %s"
-msgstr "Søkeresultatet for: %s"
+msgstr "%s paieškos rezultatai."
 
 #: search.php
 msgid "Your search for"
-msgstr "Du søkte etter"
+msgstr "Jūs ieškote:"
 
 #: search.php
 msgid "did not match any entries"
-msgstr "samsvarte ikke med noen oppføringer"
+msgstr "neatitiko jokių įrašų"
 
 #: searchform.php
 msgid "search here &hellip;"
-msgstr "Søk her &hellip;"
+msgstr "ieškokite čia …"
 
 #: searchform.php
 msgid "Go"
-msgstr "Gå"
+msgstr "Pirmyn"
 
 #: sidebar-gallery.php
 msgid "Image Information"
-msgstr "Bildeinnformasjon"
+msgstr "Paveiksliuko informacija"
 
 #: sidebar-gallery.php
 msgid "Full Size:"
-msgstr "Full størrelse:"
+msgstr "Visas dydis:"
 
 #: sidebar-gallery.php
 msgid "Aperture: f&#47;"
-msgstr " Blender:f&#47;"
+msgstr "Diafragrma: f/"
 
 #: sidebar-gallery.php
 msgid "Focal Length:"
-msgstr "Brennvidde:"
+msgstr "Fokusavimas:"
 
 #: sidebar-gallery.php
 msgid "mm"
@@ -409,11 +410,11 @@ msgstr "ISO:"
 
 #: sidebar-gallery.php
 msgid "Shutter:"
-msgstr "Shutter:"
+msgstr "Išlaikymas:"
 
 #: sidebar-gallery.php
 msgid "Camera:"
-msgstr "Kamera:"
+msgstr "Fotoaparatas:"
 
 #: sidebar.php
 #: sidebar-right.php
@@ -422,246 +423,246 @@ msgstr "Kamera:"
 #: sidebar-left-half.php
 #: sidebar-half-left.php
 msgid "In Archive"
-msgstr "I Arkiv"
+msgstr "Archyve"
 
 #: includes/functions.php
 #: sidebar-home.php
 msgid "Home Widget 1"
-msgstr "Hjem Widget 1"
+msgstr "Pradinio Valdiklis Nr.1"
 
 #: sidebar-home.php
 msgid "This is your first home widget box. To edit please go to Appearance > Widgets and choose 6th widget from the top in area six called Home Widget 1. Title is also manageable from widgets as well."
-msgstr "Dette er din første hjem-widget-box For å redigere, gå til Utseende > Widgets og velg den sjette widget fra toppen i område seks navngitt \"Home Widget 1\". Tittelen er også håndterbar fra widgeten."
+msgstr "Čia yra Jūsų pirmo Pradinio valdiklio sritis. Norėdami paredaguoti prašome eiti į Išvaizda > Valdikliai ir pasirinkti 6-ąjį valdiklį nuo viršaus esantį šeštoje srityje pavadintoje Pradinio valdiklis Nr.1. Valdiklių pavadinimas taip pat yra redaguojamas."
 
 #: includes/functions.php
 #: sidebar-home.php
 msgid "Home Widget 2"
-msgstr "Hjem Widget 2"
+msgstr "Pradinio Valdiklis Nr.2"
 
 #: sidebar-home.php
 msgid "This is your second home widget box. To edit please go to Appearance > Widgets and choose 7th widget from the top in area seven called Home Widget 2. Title is also manageable from widgets as well."
-msgstr "Dette er din andre hjem.widget-box. For å redigere, gå til Utseesnde > Widgets og velg den sjuende widgeten fra toppen i omrede sju ved navn Hjem Widget 2. Tittelen er også håndterbar fra widgeten."
+msgstr "Čia yra Jūsų antro Pradinio valdiklio sritis. Norėdami paredaguoti prašome eiti į Išvaizda > Valdikliai ir pasirinkti 7-ąjį valdiklį nuo viršaus esantį septintoje srityje pavadintoje Pradinio valdiklis Nr.2. Valdiklių pavadinimas taip pat yra redaguojamas."
 
 #: includes/functions.php
 #: sidebar-home.php
 msgid "Home Widget 3"
-msgstr "Hjem Widget 3"
+msgstr "Pradinio Valdiklis Nr.3"
 
 #: sidebar-home.php
 msgid "This is your third home widget box. To edit please go to Appearance > Widgets and choose 8th widget from the top in area eight called Home Widget 3. Title is also manageable from widgets as well."
-msgstr "Dette er din tredje hjem-widget-box. For å redigere, gå til Utseende > Widgets og velg åttende widgeten fra toppen i morådet åtte med navn Hjem Widget 3. Tittelen er også håndterbar fra widgeten."
+msgstr "Čia yra Jūsų trečio Pradinio valdiklio sritis. Norėdami paredaguoti prašome eiti į Išvaizda > Valdikliai ir pasirinkti 8-ąjį valdiklį nuo viršaus esantį aštuntoje srityje pavadintoje Pradinio valdiklis Nr.3. Valdiklių pavadinimas taip pat yra redaguojamas."
 
 #: single.php
 msgid "About"
-msgstr "Om"
+msgstr "Apie"
 
 #: sitemap.php
 msgid "Categories"
-msgstr "Kategorier"
+msgstr "Kategorijos"
 
 #: sitemap.php
 msgid "Latest Posts"
-msgstr "Siste innlegg"
+msgstr "Vėliausi skelbimai"
 
 #: sitemap.php
 msgid "Pages"
-msgstr "Sider"
+msgstr "Puslapiai"
 
 #: includes/functions.php
 msgid "Top Menu"
-msgstr "Topp Meny"
+msgstr "Viršutinis meniu"
 
 #: includes/functions.php
 msgid "Header Menu"
-msgstr "Overskrift Meny"
+msgstr "Antraštės meniu"
 
 #: includes/functions.php
 msgid "Sub-Header Menu"
-msgstr "Mellomoverskrift Undermeny"
+msgstr "Sub-antraštės meniu"
 
 #: includes/functions.php
 msgid "Footer Menu"
-msgstr "Fot Meny"
+msgstr "Paraštės meniu"
 
 #: includes/functions.php
 msgid "Archive for "
-msgstr "Arkiv for "
+msgstr "Archyvas už"
 
 #: includes/functions.php
 msgid "Search results for "
-msgstr "Søkeresultat for "
+msgstr "paieškos rezultatai"
 
 #: includes/functions.php
 msgid "Posts tagged "
-msgstr "Innlegg tagget "
+msgstr "Pažymėti skelbimai"
 
 #: includes/functions.php
 msgid "All posts by "
-msgstr "Alle innlegg av "
+msgstr "Visi skelbimai pagal"
 
 #: includes/functions.php
 msgid "Error 404 "
-msgstr "Feil 404 "
+msgstr "Klaida 404"
 
 #: includes/functions.php
 msgid "Page"
-msgstr "Side"
+msgstr "Puslapis"
 
 #: includes/functions.php
 msgid "Untitled"
-msgstr "Uten navn"
+msgstr "Be pavadinimo"
 
 #: includes/functions.php
 msgid "Main Sidebar"
-msgstr "Hoved Sidepanel"
+msgstr "Pagrindinis šoninis meniu"
 
 #: includes/functions.php
 msgid "Area One - sidebar.php"
-msgstr "Område en - sidebar.php"
+msgstr "Pirma sritis - sidebar.php"
 
 #: includes/functions.php
 msgid "Right Sidebar"
-msgstr "Høyre sidepanel"
+msgstr "Dešinys šoninis meniu"
 
 #: includes/functions.php
 msgid "Area Two - sidebar-right.php"
-msgstr "Område to - sidebar-right.php"
+msgstr "Antra sritis - sidebar-right.php"
 
 #: includes/functions.php
 msgid "Left Sidebar"
-msgstr "Venstre sidepanel"
+msgstr "Kairysis šoninis meniu"
 
 #: includes/functions.php
 msgid "Area Three - sidebar-left.php"
-msgstr "Område tre - sidebar-left.php"
+msgstr "Trečia sritis - sidebar-left.php"
 
 #: includes/functions.php
 msgid "Left Sidebar Half Page"
-msgstr "Venstre sidepanel halvside"
+msgstr "Kairysis šoninis meniu pusė puslapio"
 
 #: includes/functions.php
 msgid "Area Four - sidebar-left-half.php"
-msgstr "Område fire - sidebar-left-half.php"
+msgstr "Ketvirta sritis - sidebar-left-half.php"
 
 #: includes/functions.php
 msgid "Right Sidebar Half Page"
-msgstr "Høyre sidepanel halvside"
+msgstr "Dešinysis šoninis meniu pusė puslapio"
 
 #: includes/functions.php
 msgid "Area Five - sidebar-right-half.php"
-msgstr "Område fem - sidebar-right-half.php"
+msgstr "Penkta sritis - sidebar-right-half.php"
 
 #: includes/functions.php
 msgid "Area Six - sidebar-home.php"
-msgstr "Område seks - sidebar-home.php"
+msgstr "Šešta sritis - sidebar-home.php"
 
 #: includes/functions.php
 msgid "Area Seven - sidebar-home.php"
-msgstr "Område sju  - sidebar-home.php"
+msgstr "Septinta sritis - sidebar-home.php"
 
 #: includes/functions.php
 msgid "Area Eight - sidebar-home.php"
-msgstr "Område Åtte - sidebar-home.php"
+msgstr "Aštunta sritis - sidebar-home.php"
 
 #: includes/functions.php
 msgid "Gallery Sidebar"
-msgstr "Galleri Sidebar"
+msgstr "Galerijos šoninis meniu"
 
 #: includes/functions.php
 msgid "Area Nine - sidebar-gallery.php"
-msgstr "Område ni - sidebar-gallery.php"
+msgstr "Devinta sritis - sidebar-gallery.php"
 
 #: includes/theme-options.php
 msgid "Theme Options"
-msgstr "Tema innstillninger"
+msgstr "Šablono pasirinktys"
 
 #: includes/theme-options.php
 msgid "Options Saved"
-msgstr "Innstillninger lagret"
+msgstr "Pasirinktys išsaugotos"
 
 #: includes/theme-options.php
 msgid "Theme Elements"
-msgstr "Tema elementer"
+msgstr "Šablono elementai"
 
 #: includes/theme-options.php
 msgid "Disable Breadcrumb Lists?"
-msgstr "Deaktiver brødsmule liste?"
+msgstr "Išjungti Breadcrumb sąrašus?"
 
 #: includes/theme-options.php
 msgid "Check to disable"
-msgstr "Velg for å deaktivere"
+msgstr "Pažymėkite norėdami išjungti"
 
 #: includes/theme-options.php
 msgid "Disable Call to Action Button?"
-msgstr "Innaktiver Call to Action-knappen?"
+msgstr "Išjungti Kvietimo veikti mygtuką?"
 
 #: includes/theme-options.php
 msgid "Save Options"
-msgstr "Lagre innstillninger"
+msgstr "Saugojimo pasirinktys"
 
 #: includes/theme-options.php
 msgid "Logo Upload"
-msgstr "Last opp logo"
+msgstr "Logotipo įkėlimas"
 
 #: includes/theme-options.php
 msgid "Custom Header"
-msgstr "Egendefinert overskrift"
+msgstr "Pasirinktinė Antraštė"
 
 #: includes/theme-options.php
 msgid "Need to replace or remove default logo?"
-msgstr "Trenger du bytte ut eller fjerne standard logoen?"
+msgstr "Reikia pakeisti ar pašalinti numatytąjį logotipą?"
 
 #: includes/theme-options.php
 msgid "<a href=\"%s\">Click here</a>."
-msgstr "<a href=\"%s\">Klicka här</a>."
+msgstr "<a href=\"%s\">Spauskite čia</a>."
 
 #: includes/theme-options.php
 msgid "Home Page"
-msgstr "Startside"
+msgstr "Pagrindinis puslapis"
 
 #: includes/theme-options.php
 msgid "Headline"
-msgstr "Overskrift"
+msgstr "Antraštė"
 
 #: includes/theme-options.php
 msgid "Enter your headline"
-msgstr "Skriv inn Overskrift"
+msgstr "Įveskite savo Antraštę"
 
 #: includes/theme-options.php
 msgid "Subheadline"
-msgstr "Mellomoverskrift"
+msgstr "Paantraštė"
 
 #: includes/theme-options.php
 msgid "Enter your subheadline"
-msgstr "Skriv in underoverskrift"
+msgstr "Įveskite savo paantraštę"
 
 #: includes/theme-options.php
 msgid "Content Area"
-msgstr "Innholdsområdet"
+msgstr "Turinio sritis"
 
 #: includes/theme-options.php
 msgid "Enter your content"
-msgstr "Endre ditt innhold"
+msgstr "Įveskite savo turinį"
 
 #: includes/theme-options.php
 msgid "Call to Action (URL)"
-msgstr "Call to Action (URL)"
+msgstr "Kvietimo veikti (URL)"
 
 #: includes/theme-options.php
 msgid "Enter your call to action URL"
-msgstr "Ange din call to action-URL"
+msgstr "Įveskite Kvietimo veikti URL"
 
 #: includes/theme-options.php
 msgid "Call to Action (Text)"
-msgstr "Call to Action (Text)"
+msgstr "Kvietimo veikti (tekstas)"
 
 #: includes/theme-options.php
 msgid "Enter your call to action text"
-msgstr "Skriv inn din call to action-text"
+msgstr "Įveskite Kvietimo veikti tekstą"
 
 #: includes/theme-options.php
 msgid "Featured Content"
-msgstr "Presentert Innhold"
+msgstr "Teminis turinys"
 
 #: includes/theme-options.php
 msgid "http://themeid.com/forum/topic/510/theme-options-featured-content/"
@@ -669,55 +670,55 @@ msgstr "http://themeid.com/forum/topic/510/theme-options-featured-content/"
 
 #: includes/theme-options.php
 msgid "See Docs"
-msgstr "Se Dokumentasjonen"
+msgstr "Žiūrėkite dokumentus"
 
 #: includes/theme-options.php
 msgid "Paste your video or image source"
-msgstr "Legg inn video eller bilde kilde"
+msgstr "Įklijuokite savo video ar paveikslėlio šaltinį"
 
 #: includes/theme-options.php
 msgid "Webmaster Tools"
-msgstr "Google Webmaster Tools"
+msgstr "Tinklapio administratoriaus įrankiai"
 
 #: includes/theme-options.php
 msgid "Google Site Verification"
-msgstr "Google Site Verification"
+msgstr "Google tinklapio tapatumo patikrinimas"
 
 #: includes/theme-options.php
 msgid "Enter your Google ID number only"
-msgstr "Angi ditt Google ID-nummer"
+msgstr "Įveskite tik Jūsų Google ID numerį"
 
 #: includes/theme-options.php
 msgid "Bing Site Verification"
-msgstr "Bing Site Verification"
+msgstr "Bing tinklapio tapatumo patikrinimas"
 
 #: includes/theme-options.php
 msgid "Enter your Bing ID number only"
-msgstr "Angi ditt Bing ID-nummer"
+msgstr "Įveskite tik Jūsų Bing ID numerį"
 
 #: includes/theme-options.php
 msgid "Yahoo Site Verification"
-msgstr "Yahoo Site Verification"
+msgstr "Yahoo tinklapio tapatumo patikrinimas"
 
 #: includes/theme-options.php
 msgid "Enter your Yahoo ID number only"
-msgstr "Angi ditt Yahoo ID-nummer"
+msgstr "Įveskite tik Jūsų Yahoo ID numerį"
 
 #: includes/theme-options.php
 msgid "Site Statistics Tracker"
-msgstr "Site Statistics Tracker"
+msgstr "Tinklapio statistikos registratorius"
 
 #: includes/theme-options.php
 msgid "Leave blank if plugin handles your webmaster tools"
-msgstr "Sett blank om du har en plugin som håndterer webmaster tools"
+msgstr "Palikite tuščią jei įskiepis tvarko Jūsų tinklapio administratoriaus įrankius"
 
 #: includes/theme-options.php
 msgid "Google Analytics, StatCounter, any other or all of them."
-msgstr "Google Analytics, StatCounter, en av dem eller alle."
+msgstr "Google Analytics, StatCounter, bet kuris kitas ar jie visi."
 
 #: includes/theme-options.php
 msgid "Social Icons"
-msgstr "Sosiale ikoner"
+msgstr "Socialinės piktogramos"
 
 #: includes/theme-options.php
 msgid "Twitter"
@@ -725,7 +726,7 @@ msgstr "Twitter"
 
 #: includes/theme-options.php
 msgid "Enter your Twitter URL"
-msgstr "Angi din Twitter-URL"
+msgstr "Įveskite savo Twitter URL"
 
 #: includes/theme-options.php
 msgid "Facebook"
@@ -733,7 +734,7 @@ msgstr "Facebook"
 
 #: includes/theme-options.php
 msgid "Enter your Facebook URL"
-msgstr "Angi din Facebook-URL"
+msgstr "Įveskite savo Facebook URL"
 
 #: includes/theme-options.php
 msgid "LinkedIn"
@@ -741,7 +742,7 @@ msgstr "LinkedIn"
 
 #: includes/theme-options.php
 msgid "Enter your LinkedIn URL"
-msgstr "Angi din LinkedIn-URL"
+msgstr "Įveskite savo LinkedIn URL"
 
 #: includes/theme-options.php
 msgid "YouTube"
@@ -749,7 +750,7 @@ msgstr "YouTube"
 
 #: includes/theme-options.php
 msgid "Enter your YouTube URL"
-msgstr "Angi din YouTube-URL"
+msgstr "Įveskite savo YouTube URL"
 
 #: includes/theme-options.php
 msgid "StumbleUpon"
@@ -757,23 +758,23 @@ msgstr "StumbleUpon"
 
 #: includes/theme-options.php
 msgid "Enter your StumbleUpon URL"
-msgstr "Angi din StumbleUpon-URL"
+msgstr "Įveskite savo StumbleUpon URL"
 
 #: includes/theme-options.php
 msgid "RSS Feed"
-msgstr "RSS-strøm"
+msgstr "RSS srautas"
 
 #: includes/theme-options.php
 msgid "Enter your RSS Feed URL"
-msgstr "Angi ditt RSS-flod URL"
+msgstr "Įveskite savo RSS srauto URL"
 
 #: includes/theme-options.php
 msgid "Google+"
-msgstr "Google+"
+msgstr "Google"
 
 #: includes/theme-options.php
 msgid "Enter your Google+ URL"
-msgstr "Ange din Google+-URL"
+msgstr "Įveskite savo Google URL"
 
 #: includes/theme-options.php
 msgid "Instagram"
@@ -781,7 +782,7 @@ msgstr "Instagram"
 
 #: includes/theme-options.php
 msgid "Enter your Instagram URL"
-msgstr "Angi din Instagram URL"
+msgstr "Įveskite savo Instagram URL"
 
 #: includes/theme-options.php
 msgid "Pinterest"
@@ -789,15 +790,15 @@ msgstr "Pinterest"
 
 #: includes/theme-options.php
 msgid "Enter your Pinterest URL"
-msgstr "Angi din Pinterest-URL"
+msgstr "Įveskite savo Pinterest URL"
 
 #: includes/theme-options.php
 msgid "Yelp!"
-msgstr "Yelp!"
+msgstr "Padėkite!"
 
 #: includes/theme-options.php
 msgid "Enter your Yelp! URL"
-msgstr "Angi din Yelp!-URL"
+msgstr "Įveskite savo Padėkite! URL"
 
 #: includes/theme-options.php
 msgid "Vimeo"
@@ -805,7 +806,7 @@ msgstr "Vimeo"
 
 #: includes/theme-options.php
 msgid "Enter your Vimeo URL"
-msgstr "Angi din Vimeo-URL"
+msgstr "Įveskite savo Vimeo URL"
 
 #: includes/theme-options.php
 msgid "foursquare"
@@ -813,21 +814,21 @@ msgstr "foursquare"
 
 #: includes/theme-options.php
 msgid "Enter your foursquare URL"
-msgstr "Angi din foursquare-URL"
+msgstr "Įveskite savo foursquare URL"
 
 #: includes/theme-options.php
 msgid "Custom CSS Styles"
-msgstr "Egne CSS-stiler"
+msgstr "Savi CSS stiliai"
 
 #: includes/theme-options.php
 msgid "https://developer.mozilla.org/en/CSS"
-msgstr "http://no.wikipedia.org/wiki/Cascading_Style_Sheets"
+msgstr "https://developer.mozilla.org/en/CSS"
 
 #: includes/theme-options.php
 msgid "CSS Tutorial"
-msgstr "CSS-veiledning"
+msgstr "CSS vadovėlis"
 
 #: includes/theme-options.php
 msgid "Enter your custom CSS styles."
-msgstr "Fyll inn din egen CSSkode."
+msgstr "Įveskite savo CSS stilius."
 
