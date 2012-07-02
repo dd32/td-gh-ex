@@ -4,14 +4,15 @@
 			<div id="footer-widgets">
 				<div id="footer-widgets-wrapper">
 					<?php dynamic_sidebar('Footer') ?>
+					<div class="clear"></div>
 				</div>
 			</div>
 		<?php endif; ?>
 	</div>
 	
 	<div id="footer">
-		<?php if(simple_options_get('messages', 'copyright') != '') : ?>
-			<div class="copyright"><?php print simple_options_get('messages', 'copyright') ?></div>
+		<?php if(so_setting('text_copyright') != '') : ?>
+			<div class="copyright"><?php print so_setting('text_copyright') ?></div>
 		<?php endif; ?>
 
 		<?php origami_attribution_footer('<div class="designed">', '</div>') ?>

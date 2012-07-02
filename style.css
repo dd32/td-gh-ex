@@ -5,7 +5,7 @@ Description: Origami is a simple, responsive media blogging theme that places st
 Tags: one-column, flexible-width, post-formats, custom-menu, theme-options, threaded-comments, translation-ready, photoblogging
 Author: SiteOrigin
 Author URI: http://siteorigin.com
-Version: 1.0.4
+Version: 1.1
 License: GPL
 License URI: http://wordpress.org/about/gpl/
 */
@@ -993,6 +993,18 @@ a img.aligncenter {
 	margin: 10px 0;
 }
 
+.commentform-error {
+	background: #f3dfdf;
+	border: 1px solid #dfb6b7;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	color: #946d6e;
+	font-size: 12px;
+	margin-bottom: 5px;
+	padding: 5px;
+}
+
 .comments-disabled {
 	margin-top: 30px;
 }
@@ -1008,19 +1020,21 @@ a img.aligncenter {
 	
 	background-color: #F9F9F9;
 	border-top: 1px solid #EEEEEE;
-	display: table;
 	margin-top: 30px;
 	padding: 20px 0;
 }
 
 #footer-widgets-wrapper {
-	display: table-row;
-	margin: 0 -15px;
+	margin-bottom: -30px;
 }
 
 #footer-widgets .widget {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 	color: #777;
-	display: table-cell;
+	float: left;
+	margin-bottom: 30px;
 	padding: 0 15px;
 	word-wrap: break-word;
 }

@@ -2,26 +2,14 @@
 # This file is distributed under the GNU General Public License 2.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: origami 1.0.4\n"
-"POT-Creation-Date: 2012-06-21T11:08:24+02:00\n"
+"Project-Id-Version: origami 1.1\n"
+"POT-Creation-Date: 2012-07-02T21:10:39+02:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
 msgid "Not Found"
-msgstr ""
-
-msgid "Recent Posts"
-msgstr ""
-
-msgid "By Year"
-msgstr ""
-
-msgid "By Month"
-msgstr ""
-
-msgid "Categories"
 msgstr ""
 
 msgid "Columns"
@@ -75,45 +63,97 @@ msgstr ""
 msgid "dismiss"
 msgstr ""
 
-msgid "Hi! I'm Greg from SiteOrigin."
+msgid "Hi! I'm Greg Priday from SiteOrigin."
 msgstr ""
 
-msgid "I hope you enjoy my free WordPress theme."
+msgid "I hope you enjoy my WordPress theme."
 msgstr ""
 
 msgid "Please follow me on Twitter and Facebook for updates."
 msgstr ""
 
-msgid "General"
+msgid "Premium Upgrade"
 msgstr ""
 
-msgid "Website Logo"
+msgid "If you like %s, you'll love the premium upgrade - <a href='%s' target='_blank'>find out more</a>"
 msgstr ""
 
-msgid "Website Favicon"
+msgid "Check out the <a href='%s'>documentation</a> for %s. "
 msgstr ""
 
-msgid "Site Messages"
+msgid "Please like and follow SiteOrigin to hear about my new WordPress freebies."
 msgstr ""
 
-msgid "Footer Copyright"
+msgid "Theme Settings"
 msgstr ""
 
-msgid "Copyright %s"
+msgid "Save Settings"
+msgstr ""
+
+msgid "<a href=\"%s\" target=\"_blank\">Documentation</a> for %s is available on SiteOrigin."
+msgstr ""
+
+msgid "Theme Documentation"
+msgstr ""
+
+msgid "Enabled"
+msgstr ""
+
+msgid "<a href=\"%s\" target=\"_blank\">Premium version</a> only"
+msgstr ""
+
+msgid "Unknown Field Type"
+msgstr ""
+
+msgid "Premium Theme Support"
+msgstr ""
+
+msgid "Please email <a href='%s'>support@siteorigin.com</a> for premium support. "
+msgstr ""
+
+msgid "Make sure you include your order number or just mention that you're a premium user so we can prioritize your email."
+msgstr ""
+
+msgid "Theme Support"
+msgstr ""
+
+msgid "We offer priority email support to everyone who upgrades to <a href=\"%s\">%s Premium</a>."
+msgstr ""
+
+msgid "As a free user, you can contact us with bug reports and pre-sales questions - <a href='%s'>support@siteorigin.com</a>. "
+msgstr ""
+
+msgid "We still love you, even if you're using %s Free. We just want to offer the best service possible to the fine people who have purchased our Premium themes."
+msgstr ""
+
+msgid "Colors"
+msgstr ""
+
+msgid "Link Color"
+msgstr ""
+
+msgid "Page Border Color"
+msgstr ""
+
+msgid "Main page border color"
+msgstr ""
+
+msgid "Footer Copyright Color"
+msgstr ""
+
+msgid "Footer Copyright Link Color"
+msgstr ""
+
+msgid "Site Text"
+msgstr ""
+
+msgid "Copyright"
 msgstr ""
 
 msgid "404 Message"
 msgstr ""
 
-# not found error
-msgid "We couldn't find what you were looking for."
-msgstr ""
-
 msgid "No Search Results"
-msgstr ""
-
-# no results message
-msgid "No results for your query."
 msgstr ""
 
 msgid "Display"
@@ -122,28 +162,49 @@ msgstr ""
 msgid "Display Post Author"
 msgstr ""
 
-msgid "display"
-msgstr ""
-
 msgid "Display Comment Count"
 msgstr ""
 
-msgid "Use Content Columns"
+msgid "Use Columns"
 msgstr ""
 
-msgid "use"
+msgid "Display featured Image"
 msgstr ""
 
-msgid "Theme Options"
+msgid "Featured image above posts"
 msgstr ""
 
-msgid "Install Simple Options"
+msgid "Footer Attribution Link"
 msgstr ""
 
-msgid "%s uses the Simple Options plugin to handle theme options."
+msgid "Remove the \"theme by SiteOrigin\" in your footer."
 msgstr ""
 
-msgid "It's a free plugin that only takes a few seconds to install."
+msgid "Comments"
+msgstr ""
+
+msgid "Ajax Comments"
+msgstr ""
+
+msgid "Users can comment without leaving the page."
+msgstr ""
+
+msgid "Responsive Layout"
+msgstr ""
+
+msgid "Responsive Footer Widgets"
+msgstr ""
+
+msgid "Widgets collapse for mobile devices."
+msgstr ""
+
+msgid "Copyright %s"
+msgstr ""
+
+msgid "We couldn't find what you were looking for."
+msgstr ""
+
+msgid "No results for your query."
 msgstr ""
 
 msgid "Footer"
@@ -156,18 +217,6 @@ msgid "Powered By %s"
 msgstr ""
 
 msgid "Theme By %s"
-msgstr ""
-
-msgid "Theme Help"
-msgstr ""
-
-msgid "Origami Help"
-msgstr ""
-
-msgid "Origami's full, PDF documentation is available for free download from SiteOrigin."
-msgstr ""
-
-msgid "Download"
 msgstr ""
 
 msgid "Newer Entries"
@@ -192,4 +241,16 @@ msgid "Pages:"
 msgstr ""
 
 msgid "Continue Reading"
+msgstr ""
+
+msgid "Recent Posts"
+msgstr ""
+
+msgid "By Year"
+msgstr ""
+
+msgid "By Month"
+msgstr ""
+
+msgid "Categories"
 msgstr ""
