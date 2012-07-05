@@ -4,13 +4,12 @@ Theme Name: Simple Catch
 Theme URI: http://catchthemes.com/wp-themes/simplecatch
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
-Description: Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Page Template for Layout, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework.
-Version: 1.2.3
+Version: 1.2.8
 License: GNU General Public License
 
 == Theme Description ==
 
-SimpleCatch is a simple and clean WordPress Theme. Easy Customize through Theme Options and Custom Widgets. Features: Featured Image Slider, Custom Menu, Theme Options, Custom Widgets and Support for popular plugins. It is based on popular 978 Grid System CSS Framework.
+Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Page Template for Layout, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework.
 
 == Features ==  
 Featured Image Slider, Custom Drop-down Menu, Theme Options, Custom Widgets, flexible position of sidebar and Support for popular plugins.
@@ -97,7 +96,7 @@ Tags Used: black, gray, silver, white, light, one-column, two-columns, left-side
 == Changelog ==
 Version 1.2.1
 * Fixed the Slider Image Link
-* Modify the Continue Reading Link
+* Modified the Continue Reading Link
 * Added Social Icons for Pinterest and Google+
 * Added CSS to Support WP-PageNavi and Contact Form 7 Plugins
 
@@ -114,10 +113,10 @@ Version 1.2.3
 * Added Custom CSS Styles option in Theme Options
 * Added Webmaster Tools and verification of Google, Yahoo and Bing
 Version 1.2.4
-*Fixed the action hook for simplecatch_haedercode to simplecatch_footercode
+* Fixed the action hook for simplecatch_haedercode to simplecatch_footercode
 Version 1.2.5
-* Cleaning and fixing the theme_options.php
-* Cleaning and fixing the Simplecatch_functins.php
+* Cleaned and Fixed the theme_options.php
+* Cleaned and Fixed the Simplecatch_functins.php
 * Added Social Icons for Delicious and Last.fm
 Version 1.2.6
 * Fixed CSS for Dropdown menu height to accept longer titles
@@ -125,16 +124,21 @@ Version 1.2.6
 * Added more slider options under Slider Options
 
 Version 1.2.7
-* Cleaning and arranging simpecatch_functions.php
-* Cleaning and fixing searchform.php
-* Cleaning Header.php file
-* Fixing slider to make compatible with ie7 and ie8
-* Fixing css to make compatible with ie8
-* Fixing image.php file
+* Cleaned and arranging simpecatch_functions.php
+* Cleaned and fixing searchform.php
+* Cleaned Header.php file
+* Fixed slider to make compatible with ie7 and ie8
+* Fixed css to make compatible with ie8
+* Fixed image.php file
 * ul,next and previous bullet changed from jpg image format to png image format
 
+Version 1.2.8
+* Added option in Featured Slider to Exclude Slider Posts from Homepage.
+* Cleaned simplecatch_functions.php file.
+* Cleaned searchform.php file.
+* Fixed Layout settings of theme option.
 
 == Upcoming Plan ==
 * Add more option in theme option for feed redirect, excerpt length
-* Add option in Featured Slider to remove duplicate post in the homepage, feature slider image height option
+* Add feature slider image height option
 * Responsive Design 

@@ -13,11 +13,11 @@ if( !isset( $options[ 'search_display_text' ] ) ) {
 if( !isset( $options[ 'search_button_text' ] ) ) {
 	$options[ 'search_button_text' ] = "Search";
 }
-$search_display_text = $options[ 'search_display_text' ];
-$search_button_text = $options[ 'search_button_text' ];
+$simplecatch_search_display_text = $options[ 'search_display_text' ];
+$simplecatch_search_button_text = $options[ 'search_button_text' ];
 ?>
     <form method="get" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-    	<input type="text" value="<?php echo esc_attr( $search_display_text ); ?>" name="s" id="s" title="Type Keyword" onblur="if ('' == this.value) this.value = this.defaultValue;" onfocus="if (this.defaultValue == this.value) this.value='';"/>
-        <button><?php printf( __( '%s', 'simplecatch' ), esc_attr( $search_button_text ) ); ?></button>
+    	<input type="text" value="<?php echo esc_attr( $simplecatch_search_display_text ); ?>" name="s" id="s" title="Type Keyword" onblur="if ('' == this.value) this.value = this.defaultValue;" onfocus="if (this.defaultValue == this.value) this.value='';"/>
+        <button><?php printf( __( '%s', 'simplecatch' ), esc_attr( $simplecatch_search_button_text ) ); ?></button>
         <div class="CL"></div>
     </form>

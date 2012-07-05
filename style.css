@@ -4,7 +4,7 @@ Theme URI: http://catchthemes.com/wp-themes/simplecatch
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
 Description: Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Page Template for Layout, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework.
-Version: 1.2.7
+Version: 1.2.8
 License: GNU General Public License
 License URI: license.txt
 Tags: black, gray, silver, white, light, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, custom-menu, featured-images, full-width-template, theme-options, threaded-comments
@@ -175,7 +175,7 @@ blockquote p {
 	border-bottom:1px solid #dadada;
 	border-left:1px solid #dadada;
 	display:block;
-	background:url(images/ul-bg.png) right 8px no-repeat #fff;
+	background:url(images/breadcrumb-bg.png) right 8px no-repeat #fff;
 	color:#888;
 }
 .breadcrumb ul li a:hover {
@@ -237,7 +237,7 @@ hr {
 	overflow:hidden;
 }
 ul {
-	list-style:outside url(images/ul-bg.jpg);
+	list-style:outside url(images/ul-bg.png);
 	margin: 0 0 20px 20px;
 }
 ol {
@@ -1484,13 +1484,13 @@ ul.default-wp-page li.next {
 	float:right;
 }
 ul.default-wp-page li.previous a {
-	background: url(images/ul-bg-previous.jpg) no-repeat left 9px;
+	background: url(images/ul-bg-prev.png) no-repeat left 9px;
 	padding:0 0 30px 15px;
 	float:left;
 	display:block;
 }
 ul.default-wp-page li.next a {
-	background: url(images/ul-bg.jpg) no-repeat right 9px;
+	background: url(images/ul-bg.png) no-repeat right 9px;
 	padding:0 15px 30px 0;
 	float:right;
 	display:block;

@@ -431,6 +431,8 @@ function simplecatch_options_page() {
                                 </td>
                             </tr>
 
+                            <?php if( !isset( $options[ 'reset_settings' ] ) ) { $options[ 'reset_settings' ] = "0"; } ?>
+                            <?php if( $options[ 'reset_settings' ] == "1" ) { $options[ 'reset_settings' ] = "0"; } ?>
                             <tr>                            
                             <th scope="row"><h4><?php _e( 'Reset Settings:', 'simplecatch' ); ?></h4></th>
                             <td><input type="checkbox" id="headerlogo" name="simplecatch_options[reset_settings]" value="1" <?php isset($options['reset_settings']) ? checked( '1', $options['reset_settings'] ) : checked('0', '1'); ?> /></td>
@@ -481,6 +483,10 @@ function simplecatch_options_slider_page(){
                 <div id="featuredslider">
                     <h2><?php _e( 'Featured Slider Options', 'simplecatch' ); ?></h2>
                     <table class="form-table">
+                        <tr>                            
+                            <th scope="row"><h4><?php _e( 'Exclude Slider Posts from Homepage', 'simplecatch' ); ?></h4></th>
+                            <td><input type="checkbox" id="headerlogo" name="simplecatch_options_slider[exclude_slider_post]" value="1" <?php isset($options['exclude_slider_post']) ? checked( '1', $options['exclude_slider_post'] ) : checked('0', '1'); ?> /></td>
+                        </tr>
                         <tr>
                             <th scope="row"><h4><?php _e( 'Number of Slides', 'simplecatch' ); ?></h4></th>
                             <td><input type="text" name="simplecatch_options_slider[slider_qty]" value="<?php if ( array_key_exists ( 'slider_qty', $options ) ) echo intval( $options[ 'slider_qty' ] ); ?>" /></td>
@@ -496,7 +502,7 @@ function simplecatch_options_slider_page(){
                             <?php endfor; ?>
 							</tbody>
                     </table>
-					<p><?php _e( 'Note: Here You can put your Post IDs which displays on Homepage as slider.', 'simplecatch' ); ?> </p>
+					<p><?php _e( 'Note: Here You can put your Post IDs which displays on Homepage as slider. <br />Check the box Exclude Slider Posts from Homepage if you want to remove the duplicate post from slider to homepage', 'simplecatch' ); ?> </p>
                     <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
                 </div> <!-- #featuredslider --> 
 
@@ -594,7 +600,12 @@ function simplecatch_options_validation( $options ){
 	}
 	// Our checkbox value is either 0 or 1 
 	$options_validated[ 'remove_favicon' ] = $options[ 'remove_favicon' ] == 1 ? 1 : 0 ;
-	
+
+    if ( !isset( $options['exclude_slider_post'] ) ) {
+        $options['exclude_slider_post'] = null;
+    }
+    // Our checkbox value is either 0 or 1 
+    $options_validated[ 'exclude_slider_post' ] = $options[ 'exclude_slider_post' ] == 1 ? 1 : 0 ;	
 	
 	//data validation for Featured Slider
 	if ( isset( $options[ 'slider_qty' ] ) ) {

@@ -10,18 +10,18 @@ function simplecatch_scripts_method() {
 	wp_register_script( 'jquery-cycle', get_stylesheet_directory_uri() . '/js/jquery.cycle.all.js', '2.9999' );
 	
 	// registering custom scrtips
-	wp_register_script( 'pass_js_value', get_stylesheet_directory_uri() . '/js/simplecatch_custom_scripts.js', array( 'jquery', 'jquery-cycle' ), '1.0', true );
+	wp_register_script( 'simplecatch_custom_slider', get_stylesheet_directory_uri() . '/js/simplecatch_custom_scripts.js', array( 'jquery', 'jquery-cycle' ), '1.0', true );
 	
 	// enqueue JQuery Scripts	
-	wp_enqueue_script( 'pass_js_value' );	
+	wp_enqueue_script( 'simplecatch_custom_slider' );	
 
 
 	//browser specific queuing i.e. for IE 1-6
-	$ua = strtolower($_SERVER['HTTP_USER_AGENT']);
-	if(preg_match('/(?i)msie [1-6]/',$_SERVER['HTTP_USER_AGENT'])) {
+	$simplecatch_ua = strtolower($_SERVER['HTTP_USER_AGENT']);
+	if(preg_match('/(?i)msie [1-6]/',$simplecatch_ua)) {
 		wp_enqueue_script( 'pngfix', get_stylesheet_directory_uri() . '/js/pngfix.js' );	  
 	}
-	 if(preg_match('/(?i)msie [1-8]/',$_SERVER['HTTP_USER_AGENT'])) {
+	 if(preg_match('/(?i)msie [1-8]/',$simplecatch_ua)) {
 	 	wp_enqueue_style( 'iebelow8', get_stylesheet_directory_uri() . '/css/ie.css', true );
 	}
 	
@@ -675,7 +675,7 @@ function simplecatch_pass_slider_value() {
 	$transition_delay = $options[ 'transition_delay' ] * 1000;
 	$transition_duration = $options[ 'transition_duration' ] * 1000;
 	wp_localize_script( 
-		'pass_js_value',
+		'simplecatch_custom_slider',
 		'js_value',
 		array(
 			'transition_effect' => $transition_effect,

@@ -16,10 +16,33 @@ get_header(); ?>
 
 	<div id="main" class="layout-978">
     	<div id="content" class="col8 no-margin-left"> 
-                      
+
+            <?php
+            $options = get_option( 'simplecatch_options_slider' );
+            ?>
 			<?php if ( have_posts() ) : 
-            
-    				while( have_posts() ):the_post(); ?>	
+                    if( !isset( $options[ 'exclude_slider_post' ] ) ) {
+                        $options[ 'exclude_slider_post' ] = "0";
+                    }
+                    $temp = $wp_query;
+                    $wp_query = null;
+                    if ( $options[ 'exclude_slider_post'] != "0" && !empty( $options[ 'featured_slider' ] ) ) {                        
+                        $args = array(
+                        'post__not_in' => $options[ 'featured_slider' ],
+                        'post_type' => 'post',
+                        'paged' => $paged
+                        );
+                        $wp_query = new WP_Query( $args );  
+                    }
+                    else {
+                        $args = array(
+                        'post_type' => 'post',
+                        'paged' => $paged
+                        );
+                        $wp_query = new WP_Query( $args );
+                    }                  
+    				while( $wp_query->have_posts() ):$wp_query->the_post();
+                    ?>	
             
                         <div <?php post_class(); ?> >
                             <?php //If category has thumbnail it displays thumbnail and excerpt of content else excerpt only 
@@ -44,7 +67,8 @@ get_header(); ?>
                         </div><!-- .post -->
                         <hr />
                     
-  			 <?php endwhile;
+          			<?php endwhile;
+                    
             		// Checking WP Page Numbers plugin exist
 					if ( function_exists('wp_pagenavi' ) ) : 
 						wp_pagenavi();
@@ -62,7 +86,13 @@ get_header(); ?>
 								<li class="next"><?php previous_posts_link( __( 'Next', 'simplecatch' ) ); ?></li>
 							</ul>
                         <?php endif;
- 					endif; ?>
+ 					endif; 
+
+                    wp_reset_postdata();
+                    $wp_query = null;
+                    $wp_query = $temp;
+                    ?>
+
                     			
 			<?php else : ?>
                     <div class="post">
