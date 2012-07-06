@@ -6,6 +6,10 @@
 
 <div id="footer">
 
+<?php
+		 if ( !function_exists('dynamic_sidebar') || ! dynamic_sidebar( 'primary-widget-area' ) ) { 
+			if ( ! dynamic_sidebar( ) ) { ?>
+			
 
 <h2>Pages</h2>
 <div class="content">
@@ -37,7 +41,10 @@
 </ul>
 </div>
   
-<?php if ( !function_exists('dynamic_sidebar')         || !dynamic_sidebar() ); ?>
+  
+
+  
+		<?php } }; // end primary widget area ?>
 
 <h2>Info</h2>
 <div class="content"><p>

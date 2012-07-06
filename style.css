@@ -4,8 +4,8 @@ Author: Emma Conway
 Author URI: http://www.applianceuk.com
 Theme URI: http://www.applianceuk.com/appliance
 Description: Appliance is a clean and minimalist theme that is ideal for blogs / magazines / portfolios.  Spacious, minimalist, clean, light and very fast to load.
-Version: 1
-Tags: white, light, one-column, fixed-width, featured-images, photoblogging, microformats, theme-options
+Version: 1.1
+Tags: white, light, one-column, fixed-width, featured-images, photoblogging, microformats
 License: GNU General Public License v2.0
 License URI: http: //www.gnu.org/licenses/gpl-2.0.html
 */
@@ -567,31 +567,34 @@ div.postimage img:hover {
 }
 
 
-table#calendar_wrap {
+#calendar_wrap {
 	width: 230px;
 	overflow: hidden;
 	clear: both;
+	margin:20px auto 20px auto;
+	text-align:center;
 }
 
 #wp-calendar {
-	font-family: "Times New Roman";
-	font-size: 13px;
+	font-family: "Verdana";
+	font-size: 11px;
 	text-decoration: none;
 	color: #5B708E;
 	clear: both;
 	width: 210px;
 	margin: 6px auto 6px auto;
 	padding: 0px 10px 0px 10px;
+	text-align:center;
 }
 #wp-calendar a {
-	font-family: "Times New Roman";
-	font-size: 13px;
+	font-family: "Verdana";
+	font-size: 11px;
 	text-decoration: none;
 	color: #333333;
 }
 #wp-calendar a:hover {
-	font-family: "Times New Roman";
-	font-size: 13px;
+	font-family: "Verdana";
+	font-size: 11px;
 	text-decoration: none;
 	color: #5B708E;
 }
