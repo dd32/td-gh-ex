@@ -53,7 +53,7 @@
 		 * however you like to.
 		*/
 		?>
-		 <?php _e( 'By', 'atheros' ); ?> <a href="<?php echo esc_url( __( 'http://www.crowthemes.com/', 'atheros' ) ); ?>"><?php printf( 'crowthemes.com' ); ?></a>
+		 <?php _e( 'By', 'atheros' ); ?> <a href="<?php echo esc_url( __( 'http://www.olexa.de/', 'atheros' ) ); ?>"><?php printf( 'www.olexa.de' ); ?></a>
 
 </div>
 <?php
