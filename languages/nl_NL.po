@@ -3,9 +3,9 @@ msgstr ""
 "Project-Id-Version: Responsive Theme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-25 13:42:58 UTC\n"
-"PO-Revision-Date: 2012-07-06 21:08+0100\n"
+"PO-Revision-Date: 2012-07-08 17:08+0100\n"
 "Last-Translator: grapplerulrich <grapplerulrich@gmail.com>\n"
-"Language-Team: Danish, Denmark\n"
+"Language-Team: Dutch, Netherlands\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,7 +24,7 @@ msgstr ""
 #: archive.php
 #: 404.php
 msgid "404 &#8212; Fancy meeting you here!"
-msgstr "404 &#8212; Har vi ikke set hinanden før ;-)"
+msgstr "404 &#8212; Leuk om je hier tegen te komen!"
 
 #: page.php
 #: landing-page.php
@@ -36,7 +36,7 @@ msgstr "404 &#8212; Har vi ikke set hinanden før ;-)"
 #: archive.php
 #: 404.php
 msgid "Don&#39;t panic, we&#39;ll get through this together. Let&#39;s explore our options here."
-msgstr "Gå ikke i panik, vi kommer igennem dette sammen. Lad os udforske vores muligheder her."
+msgstr "Niet in paniek raken. Laten we kijken wat de mogelijkheden hier zijn."
 
 #: page.php
 #: landing-page.php
@@ -50,7 +50,7 @@ msgstr "Gå ikke i panik, vi kommer igennem dette sammen. Lad os udforske vores 
 #: archive.php
 #: 404.php
 msgid "You can return"
-msgstr "Du kan vende tilbage"
+msgstr "Je kan teruggaan"
 
 #: page.php
 #: landing-page.php
@@ -62,7 +62,7 @@ msgstr "Du kan vende tilbage"
 #: archive.php
 #: 404.php
 msgid "Home"
-msgstr "Hjem"
+msgstr "Thuis"
 
 #: 404.php
 #: page.php
@@ -76,7 +76,7 @@ msgstr "Hjem"
 #: blog-excerpt.php
 #: archive.php
 msgid "&larr; Home"
-msgstr "&larr; Hjem"
+msgstr "&larr; Thuis"
 
 #: page.php
 #: landing-page.php
@@ -90,30 +90,30 @@ msgstr "&larr; Hjem"
 #: archive.php
 #: 404.php
 msgid "or search for the page you were looking for"
-msgstr "eller søg efter siden, som du ledte efter"
+msgstr "of zoek naar de pagina die je zocht"
 
 #: archive.php
 msgid "Daily Archives: %s"
-msgstr "Dagligt arkiv: %s"
+msgstr "Dagelijks archief: %s"
 
 #: archive.php
 msgid "Monthly Archives: %s"
-msgstr "Månedligt arkiv: %s"
+msgstr "Maandelijks archief: %s"
 
 #: archive.php
 msgid "Yearly Archives: %s"
-msgstr "Årligt arkiv: %s"
+msgstr "Jaarlijks archief: %s"
 
 #: archive.php
 msgid "Blog Archives"
-msgstr "Blog arkiv"
+msgstr "Blog archief"
 
 #: index.php
 #: blog.php
 #: blog-excerpt.php
 #: archive.php
 msgid "Permanent Link to %s"
-msgstr "Permanent Link til %s"
+msgstr "Permanente Link naar %s"
 
 #: page.php
 #: index.php
@@ -125,7 +125,7 @@ msgstr "Permanent Link til %s"
 #: blog-excerpt.php
 #: archive.php
 msgid "<span class=\"%1$s\">Posted on</span> %2$s by %3$s"
-msgstr "<span class=\"%1$s\">Udgivet den</span> %2$s af %3$s"
+msgstr "<span class=\"%1$s\">Geplaatst op</span> %2$s door %3$s"
 
 #: page.php
 #: index.php
@@ -137,7 +137,7 @@ msgstr "<span class=\"%1$s\">Udgivet den</span> %2$s af %3$s"
 #: blog-excerpt.php
 #: archive.php
 msgid "View all posts by %s"
-msgstr "Se alle artikler af %s"
+msgstr "Bekijken alle berichten geplaatst door %s"
 
 #: page.php
 #: index.php
@@ -149,7 +149,7 @@ msgstr "Se alle artikler af %s"
 #: blog-excerpt.php
 #: archive.php
 msgid "No Comments &darr;"
-msgstr "Ingen kommentarer &darr;"
+msgstr "Geen Reacties &darr;"
 
 #: page.php
 #: index.php
@@ -161,7 +161,7 @@ msgstr "Ingen kommentarer &darr;"
 #: blog-excerpt.php
 #: archive.php
 msgid "1 Comment &darr;"
-msgstr "1 kommentar &darr;"
+msgstr "1 Reactie &darr;"
 
 #: page.php
 #: index.php
@@ -173,7 +173,7 @@ msgstr "1 kommentar &darr;"
 #: blog-excerpt.php
 #: archive.php
 msgid "% Comments &darr;"
-msgstr "% kommentarer &darr;"
+msgstr "% Reacties &darr;"
 
 #: page.php
 #: landing-page.php
@@ -186,7 +186,7 @@ msgstr "% kommentarer &darr;"
 #: blog-excerpt.php
 #: archive.php
 msgid "Pages:"
-msgstr "Sider:"
+msgstr "Pagina&#39;s"
 
 #: page.php
 #: landing-page.php
@@ -199,7 +199,7 @@ msgstr "Sider:"
 #: blog-excerpt.php
 #: archive.php
 msgid "Tagged with:"
-msgstr "Etiket:"
+msgstr "Getagd met"
 
 #: page.php
 #: landing-page.php
@@ -212,7 +212,7 @@ msgstr "Etiket:"
 #: blog-excerpt.php
 #: archive.php
 msgid "Posted in %s"
-msgstr "Udgivet i %s"
+msgstr "Geplaatst in %s"
 
 #: page.php
 #: landing-page.php
@@ -225,7 +225,7 @@ msgstr "Udgivet i %s"
 #: blog-excerpt.php
 #: archive.php
 msgid "Edit"
-msgstr "Edit"
+msgstr "Bewerken"
 
 #: page.php
 #: landing-page.php
@@ -237,7 +237,7 @@ msgstr "Edit"
 #: blog-excerpt.php
 #: archive.php
 msgid "&#8249; Older posts"
-msgstr "&#8249; Ældre artikler"
+msgstr "&#8249; Oudere berichten"
 
 #: page.php
 #: landing-page.php
@@ -249,37 +249,29 @@ msgstr "&#8249; Ældre artikler"
 #: blog-excerpt.php
 #: archive.php
 msgid "Newer posts &#8250;"
-msgstr "Nyere artikler &#8250;"
+msgstr "Nieuwere berichten &#8250;"
 
-#: page.php
-#: landing-page.php
-#: index.php
-#: full-width-page.php
-#: content-sidebar-page.php
-#: content-sidebar-half-page.php
-#: blog.php
-#: image.php
 msgid "Read more &#8250;"
-msgstr "Læs mere &#8250;"
+msgstr "Lees meer &#8250;"
 
 #: comments.php
 msgid "This post is password protected. Enter the password to view any comments."
-msgstr "Artiklen er beskyttet af kodeord. Indtast kodeordet for at se kommentarerne."
+msgstr "Dit bericht is beschermd met een paswoord. Geef het paswoord om reacties te zien"
 
 #: comments.php
 msgid "&#8249; Older comments"
-msgstr "&#8249; Ældre kommentarer"
+msgstr "&#8249; Oudere reacties"
 
 #. Don't translate the zero value there is no point
 #: comments.php
 msgid "One comment on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
-msgstr[0] "En kommentar til &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s kommentarer til &ldquo;%2$s&rdquo;"
+msgstr[0] "1 Reactie op &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s reacties op &ldquo;%2$s&rdquo;"
 
 #: comments.php
 msgid "Newer comments &#8250;"
-msgstr "Nyere kommentarer &#8250;"
+msgstr "Nieuwere reacties &#8250;"
 
 #: comments.php
 msgid "Pings&#47;Trackbacks"
@@ -287,11 +279,11 @@ msgstr "Pings&#47;Trackbacks"
 
 #: comments.php
 msgid "for"
-msgstr "for"
+msgstr "op"
 
 #: comments.php
 msgid "Name"
-msgstr "Navn"
+msgstr "Naam"
 
 #: comments.php
 msgid "E-mail"
@@ -301,13 +293,12 @@ msgstr "E-mail"
 msgid "Website"
 msgstr "Website"
 
-#: footer.php
 msgid "&copy;"
 msgstr "&copy;"
 
 #: footer.php
 msgid "scroll to top"
-msgstr "Til toppen"
+msgstr "scroll naar boven"
 
 #: footer.php
 msgid "&uarr;"
@@ -323,11 +314,10 @@ msgstr "Responsive Theme"
 
 #: footer.php
 msgid "powered by"
-msgstr "powered by"
+msgstr "ondersteund door"
 
-#: footer.php
 msgid "http://wordpress.org/"
-msgstr "http://da.wordpress.org/"
+msgstr "http://nl.wordpress.org/"
 
 #: footer.php
 msgid "WordPress"
@@ -335,69 +325,67 @@ msgstr "WordPress"
 
 #: home.php
 msgid "Hello, World!"
-msgstr "Hej, Frederik!"
+msgstr "Hallo, Wereld!"
 
-#: home.php
 msgid "Your H2 subheadline here"
-msgstr "Din H2 overskrift her"
+msgstr "Je H2 subkoptekst hier"
 
-#: home.php
 msgid "Your title, subtitle and this very content is editable from Theme Option. Call to Action button and its destination link as well. Image on your right can be an image or even YouTube video if you like."
-msgstr "Din titel, undertitel og indholdet er redigerbar fra Theme Option. Billedet i den højre side kan være et billede eller endda YouTube-video, hvis du vil."
+msgstr "Je titel, subtitel en deze inhoud zijn te bewerken vanuit Thema Keuze. Evenals de Actie knop en de bestemmingslink. Afbeelding aan de rechterkant kan een afbeelding zijn of zelfs een Youtube video als je dat wil."
 
 #: home.php
 msgid "Call to Action"
-msgstr "Kik indenfor"
+msgstr "Actie"
 
 #: image.php
 msgid "&#8249; Return to"
-msgstr "&#8249; Retur til"
+msgstr "&#8249; Keer terug naar"
 
 #: index.php
 #: image.php
 msgid "Don't panic, we'll get through this together. Let's explore our options here."
-msgstr "Gå ikke i panik, vi kommer igennem dette sammen. Lad os udforske vores muligheder her."
+msgstr "Niet in paniek raken. Laten we kijken wat de mogelijkheden hier zijn."
 
 #: index.php
 #: image.php
 msgid "home"
-msgstr "hjem"
+msgstr "thuis"
 
 #: search.php
 msgid "Search Results for: %s"
-msgstr "Søgeresultater for: %s"
+msgstr "Zoekresultaten voor: %s"
 
 #: search.php
 msgid "Your search for"
-msgstr "Din søgning efter"
+msgstr "Je zoektocht naar"
 
 #: search.php
 msgid "did not match any entries"
-msgstr "svarede ikke til nogen indtastninger"
+msgstr "er zijn geen overeenkomsten gevonden"
 
 #: searchform.php
 msgid "search here &hellip;"
-msgstr "Søg her ..."
+msgstr "zoek hier &hellip;"
 
 #: searchform.php
 msgid "Go"
-msgstr "Udfør"
+msgstr "Ga"
 
 #: sidebar-gallery.php
 msgid "Image Information"
-msgstr "Billed information"
+msgstr "Afbeelding Informatie"
 
 #: sidebar-gallery.php
 msgid "Full Size:"
-msgstr "Fuld opløsning:"
+msgstr "Volledige Grootte"
 
 #: sidebar-gallery.php
 msgid "Aperture: f&#47;"
-msgstr "Blænde: f&#47;"
+msgstr "Opening f&#47;"
 
 #: sidebar-gallery.php
 msgid "Focal Length:"
-msgstr "Brændvidde:"
+msgstr "Brandpuntafstand"
 
 #: sidebar-gallery.php
 msgid "mm"
@@ -405,199 +393,187 @@ msgstr "mm"
 
 #: sidebar-gallery.php
 msgid "ISO:"
-msgstr "ISO:"
+msgstr "ISO"
 
 #: sidebar-gallery.php
 msgid "Shutter:"
-msgstr "Shutter:"
+msgstr "Sluiter"
 
 #: sidebar-gallery.php
 msgid "Camera:"
-msgstr "Kamera:"
+msgstr "Camera"
 
-#: sidebar.php
-#: sidebar-right.php
-#: sidebar-right-half.php
-#: sidebar-left.php
-#: sidebar-left-half.php
-#: sidebar-half-left.php
 msgid "In Archive"
-msgstr "I arkiv"
+msgstr "In het Archief"
 
 #: includes/functions.php
 #: sidebar-home.php
 msgid "Home Widget 1"
-msgstr "Hjemme Widget 1"
+msgstr "Thuis Widget 1"
 
 #: sidebar-home.php
 msgid "This is your first home widget box. To edit please go to Appearance > Widgets and choose 6th widget from the top in area six called Home Widget 1. Title is also manageable from widgets as well."
-msgstr "Dette er dit første widget boks på forsiden. For at redigere den skal du gå til Udseende> Widgets og vælge den 6. Widget fra toppen i område seks kaldet Hjem Widget 1. Titlen kan også ændres."
+msgstr "Dit is je eerste thuis widget box. Om te bewerken ga naar Uiterlijk > Widgets en kies het 6e widget van boven in gebied 6 genaamd Thuis Widget 1. Titel is ook te bewerken vanuit de widgets. "
 
 #: includes/functions.php
 #: sidebar-home.php
 msgid "Home Widget 2"
-msgstr "Hjemme Widget 2"
+msgstr "Thuis Widget 2"
 
 #: sidebar-home.php
 msgid "This is your second home widget box. To edit please go to Appearance > Widgets and choose 7th widget from the top in area seven called Home Widget 2. Title is also manageable from widgets as well."
-msgstr "Dette er dit første widget boks på forsiden. For at redigere den skal du gå til Udseende> Widgets og vælge den 7. Widget fra toppen i område seks kaldet Hjem Widget 2. Titlen kan også ændres."
+msgstr "Dit is je tweede thuis widget box. Om te bewerken ga naar Uiterlijk > Widgets en kies het 7e widget van boven in gebied 7 genaamd Thuis Widget 2. Titel is ook te bewerken vanuit de widgets."
 
 #: includes/functions.php
 #: sidebar-home.php
 msgid "Home Widget 3"
-msgstr "Hjemme Widget 3"
+msgstr "Thuis Widget 3"
 
 #: sidebar-home.php
 msgid "This is your third home widget box. To edit please go to Appearance > Widgets and choose 8th widget from the top in area eight called Home Widget 3. Title is also manageable from widgets as well."
-msgstr "Dette er dit første widget boks på forsiden. For at redigere den skal du gå til Udseende> Widgets og vælge den 8. Widget fra toppen i område seks kaldet Hjem Widget 3. Titlen kan også ændres."
+msgstr "Dit is je derde thuis widget box. Om te bewerken ga naar Uiterlijk > Widgets en kies het 8e widget van boven in gebied 8 genaamd Thuis Widget 3. Titel is ook te bewerken vanuit de widgets."
 
 #: single.php
 msgid "About"
-msgstr "Om"
+msgstr "Over"
 
 #: sitemap.php
 msgid "Categories"
-msgstr "Kategorier"
+msgstr "Categorie&#235;n"
 
 #: sitemap.php
 msgid "Latest Posts"
-msgstr "Nyeste artikler"
+msgstr "Laatste Berichten"
 
 #: sitemap.php
 msgid "Pages"
-msgstr "Sider"
+msgstr "Pagina&#39;s"
 
 #: includes/functions.php
 msgid "Top Menu"
-msgstr "Top Menu"
+msgstr "Bovenste Menu"
 
 #: includes/functions.php
 msgid "Header Menu"
-msgstr "Titel menu"
+msgstr "Header Menu"
 
 #: includes/functions.php
 msgid "Sub-Header Menu"
-msgstr "Undertitel menu"
+msgstr "Sub-Header Menu"
 
 #: includes/functions.php
 msgid "Footer Menu"
-msgstr "Sidefods menu"
+msgstr "Voettekst Menu"
 
-#: includes/functions.php
 msgid "Archive for "
-msgstr "Arkiv for "
+msgstr "Archief voor "
 
-#: includes/functions.php
 msgid "Search results for "
-msgstr "Søgeresultater for "
+msgstr "Zoekresultaten voor "
 
-#: includes/functions.php
 msgid "Posts tagged "
-msgstr "Artikler med etiketten "
+msgstr "Berichten getagd met "
 
-#: includes/functions.php
 msgid "All posts by "
-msgstr "Alle artikler af "
+msgstr "Alle berichten van "
 
-#: includes/functions.php
 msgid "Error 404 "
-msgstr "Fejl 404 "
+msgstr "Fout 404 "
 
 #: includes/functions.php
 msgid "Page"
-msgstr "Side"
+msgstr "Pagina"
 
 #: includes/functions.php
 msgid "Untitled"
-msgstr "Uden titel"
+msgstr "Zonder Titel"
 
 #: includes/functions.php
 msgid "Main Sidebar"
-msgstr "Hoved panel"
+msgstr "Hoofd Sidebar"
 
 #: includes/functions.php
 msgid "Area One - sidebar.php"
-msgstr "Område et - sidebar.php"
+msgstr "Gebied Een - sidebar.php"
 
 #: includes/functions.php
 msgid "Right Sidebar"
-msgstr "Højre panel"
+msgstr "Rechter Sidebar"
 
-#: includes/functions.php
 msgid "Area Two - sidebar-right.php"
-msgstr "Område to - sidebar-right.php"
+msgstr "Gebied Twee - sidebar-right.php"
 
 #: includes/functions.php
 msgid "Left Sidebar"
-msgstr "Venstre panel"
+msgstr "Linker Sidebar"
 
 #: includes/functions.php
 msgid "Area Three - sidebar-left.php"
-msgstr "Område 3 - sidebar-left.php"
+msgstr "Gebied Drie - sidebar-left.php"
 
 #: includes/functions.php
 msgid "Left Sidebar Half Page"
-msgstr "Venstre panel - Halv side"
+msgstr "Linker Sidebar Halverwege Pagina"
 
 #: includes/functions.php
 msgid "Area Four - sidebar-left-half.php"
-msgstr "Område fire - sidebar-left-half.php"
+msgstr "Gebied Vier - sidebar-left-half.php"
 
 #: includes/functions.php
 msgid "Right Sidebar Half Page"
-msgstr "Højre panel - Halv side"
+msgstr "Rechter Sidebar Halverwege Pagina"
 
 #: includes/functions.php
 msgid "Area Five - sidebar-right-half.php"
-msgstr "Område fem - sidebar-right-half.php"
+msgstr "Gebied Vijf - sidebar-right-half.php"
 
 #: includes/functions.php
 msgid "Area Six - sidebar-home.php"
-msgstr "Område seks - sidebar-home.php"
+msgstr "Gebied Zes - sidebar-right-half.php"
 
 #: includes/functions.php
 msgid "Area Seven - sidebar-home.php"
-msgstr "Område syv - sidebar-home.php"
+msgstr "Gebied Zeven - sidebar-home.php"
 
 #: includes/functions.php
 msgid "Area Eight - sidebar-home.php"
-msgstr "Område 8 - sidebar-home.php"
+msgstr "Gebied Acht - sidebar-home.php"
 
 #: includes/functions.php
 msgid "Gallery Sidebar"
-msgstr "Galleri panel"
+msgstr "Galerij Sidebar"
 
 #: includes/functions.php
 msgid "Area Nine - sidebar-gallery.php"
-msgstr "Område ni - sidebar-gallery.php"
+msgstr "Gebied Negen - sidebar-gallery.php"
 
 #: includes/theme-options.php
 msgid "Theme Options"
-msgstr "Indstillinger for skabelon"
+msgstr "Thema Opties"
 
 #: includes/theme-options.php
 msgid "Options Saved"
-msgstr "Indstillinger er gemt"
+msgstr "Opties Bewaard"
 
 #: includes/theme-options.php
 msgid "Theme Elements"
-msgstr "Layout elementer"
+msgstr "Thema Elementen"
 
 #: includes/theme-options.php
 msgid "Disable Breadcrumb Lists?"
-msgstr "Deaktiver Breadcrumb Lister?"
+msgstr "Schakel Kruimelpad uit"
 
 #: includes/theme-options.php
 msgid "Check to disable"
-msgstr "Klik for at deaktivere"
+msgstr "Selecteer om uit te schakelen"
 
 #: includes/theme-options.php
 msgid "Disable Call to Action Button?"
-msgstr "Deaktiver 'Kik indenfor' knap"
+msgstr "Schakel Actie Knop uit"
 
 #: includes/theme-options.php
 msgid "Save Options"
-msgstr "Gem indstillinger"
+msgstr "Bewaar Opties"
 
 #: includes/theme-options.php
 msgid "Logo Upload"
@@ -605,63 +581,63 @@ msgstr "Logo Upload"
 
 #: includes/theme-options.php
 msgid "Custom Header"
-msgstr "Brugerdefineret sidehoved"
+msgstr "Aangepaste Header"
 
 #: includes/theme-options.php
 msgid "Need to replace or remove default logo?"
-msgstr "Vil du ændre eller fjerne standard logoet?"
+msgstr "Wil je het standaard logo vervangen of verwijderen?"
 
 #: includes/theme-options.php
 msgid "<a href=\"%s\">Click here</a>."
-msgstr "<a href=\"%s\">Klik her</a>."
+msgstr "<a href=\"%s\">Klik hier</a>."
 
 #: includes/theme-options.php
 msgid "Home Page"
-msgstr "Hjemmeside"
+msgstr "Thuis Pagina"
 
 #: includes/theme-options.php
 msgid "Headline"
-msgstr "Titel"
+msgstr "Kopzin"
 
 #: includes/theme-options.php
 msgid "Enter your headline"
-msgstr "Indtast din titel"
+msgstr "Vul je kopzin in"
 
 #: includes/theme-options.php
 msgid "Subheadline"
-msgstr "Titel 2"
+msgstr "Subkopzin"
 
 #: includes/theme-options.php
 msgid "Enter your subheadline"
-msgstr "Indtast under titel"
+msgstr "Vul je subkopzin in"
 
 #: includes/theme-options.php
 msgid "Content Area"
-msgstr "Indhold"
+msgstr "Inhoud Gebied"
 
 #: includes/theme-options.php
 msgid "Enter your content"
-msgstr "Indtast dit indhold"
+msgstr "Vul je inhoud in"
 
 #: includes/theme-options.php
 msgid "Call to Action (URL)"
-msgstr "Kik indenfor (URL)"
+msgstr "Actie (URL)"
 
 #: includes/theme-options.php
 msgid "Enter your call to action URL"
-msgstr "Indtast 'Kik indenfor' URL"
+msgstr "Vul je actie URL in"
 
 #: includes/theme-options.php
 msgid "Call to Action (Text)"
-msgstr "'Kik indenfor' (Tekst)"
+msgstr "Actie (Tekst)"
 
 #: includes/theme-options.php
 msgid "Enter your call to action text"
-msgstr "Indtast teksten til 'Kik indenfor'"
+msgstr "Vul je actie tekst in"
 
 #: includes/theme-options.php
 msgid "Featured Content"
-msgstr "Fremhævet indhold"
+msgstr "Uitgelichte Inhoud"
 
 #: includes/theme-options.php
 msgid "http://themeid.com/forum/topic/510/theme-options-featured-content/"
@@ -669,55 +645,55 @@ msgstr "http://themeid.com/forum/topic/510/theme-options-featured-content/"
 
 #: includes/theme-options.php
 msgid "See Docs"
-msgstr "Se dokumentationen"
+msgstr "Zie Docs"
 
 #: includes/theme-options.php
 msgid "Paste your video or image source"
-msgstr "Indsæt din video eller billede her"
+msgstr "Plak je video- of afbeeldingsbron"
 
 #: includes/theme-options.php
 msgid "Webmaster Tools"
-msgstr "Webmaster Tools"
+msgstr "Webmaster Gereedschap"
 
 #: includes/theme-options.php
 msgid "Google Site Verification"
-msgstr "Google Site Verifikation"
+msgstr "Google Site Verificatie"
 
 #: includes/theme-options.php
 msgid "Enter your Google ID number only"
-msgstr "Indtast dit Google ID nummer"
+msgstr "Vul alleen je Google ID nummer in"
 
 #: includes/theme-options.php
 msgid "Bing Site Verification"
-msgstr "Bing Site Verifikation"
+msgstr "Bing Site Verificatie"
 
 #: includes/theme-options.php
 msgid "Enter your Bing ID number only"
-msgstr "Indtast dit Bing ID nummer"
+msgstr "Vul alleen je Bing ID nummer in"
 
 #: includes/theme-options.php
 msgid "Yahoo Site Verification"
-msgstr "Yahoo Site Verifikation"
+msgstr "Yahoo Site Verificatie"
 
 #: includes/theme-options.php
 msgid "Enter your Yahoo ID number only"
-msgstr "Indtast dit Yahoo ID nummer"
+msgstr "Vul alleen je Yahoo ID nummer in"
 
 #: includes/theme-options.php
 msgid "Site Statistics Tracker"
-msgstr "Site Statistics Tracker"
+msgstr "Site Statistieken Tracker"
 
 #: includes/theme-options.php
 msgid "Leave blank if plugin handles your webmaster tools"
-msgstr "Feltet skal være blank, hvis 'webmaster tools' plugin er installeret"
+msgstr "Laat leeg als een plugin je webmaster gereedschap afhandelt"
 
 #: includes/theme-options.php
 msgid "Google Analytics, StatCounter, any other or all of them."
-msgstr "Google Analytics, StatCounter, een af dem eller alle."
+msgstr "Google Analytics, StatCounter, een andere of ze allemaal"
 
 #: includes/theme-options.php
 msgid "Social Icons"
-msgstr "Sociale ikoner"
+msgstr "Sociale Icons"
 
 #: includes/theme-options.php
 msgid "Twitter"
@@ -725,7 +701,7 @@ msgstr "Twitter"
 
 #: includes/theme-options.php
 msgid "Enter your Twitter URL"
-msgstr "Indtast din Twitter URL"
+msgstr "Vul je Twitter URL in"
 
 #: includes/theme-options.php
 msgid "Facebook"
@@ -733,15 +709,14 @@ msgstr "Facebook"
 
 #: includes/theme-options.php
 msgid "Enter your Facebook URL"
-msgstr "Indtast din Facebook URL"
+msgstr "Vul je Facebook URL in"
 
 #: includes/theme-options.php
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: includes/theme-options.php
 msgid "Enter your LinkedIn URL"
-msgstr "Indtast din LinkedIn URL"
+msgstr "Vul je LinkedIn URL in"
 
 #: includes/theme-options.php
 msgid "YouTube"
@@ -749,7 +724,7 @@ msgstr "YouTube"
 
 #: includes/theme-options.php
 msgid "Enter your YouTube URL"
-msgstr "Indtast din YouTube URL"
+msgstr "Vul je YouTube URL in"
 
 #: includes/theme-options.php
 msgid "StumbleUpon"
@@ -757,7 +732,7 @@ msgstr "StumbleUpon"
 
 #: includes/theme-options.php
 msgid "Enter your StumbleUpon URL"
-msgstr "Indtast din StumbleUpon URL"
+msgstr "Vul je StumbleUpon URL in"
 
 #: includes/theme-options.php
 msgid "RSS Feed"
@@ -765,7 +740,7 @@ msgstr "RSS Feed"
 
 #: includes/theme-options.php
 msgid "Enter your RSS Feed URL"
-msgstr "Indtast din RSS Feed URL"
+msgstr "Vul je RSS Feed URL in"
 
 #: includes/theme-options.php
 msgid "Google+"
@@ -773,7 +748,7 @@ msgstr "Google+"
 
 #: includes/theme-options.php
 msgid "Enter your Google+ URL"
-msgstr "Indtast din Google+ URL"
+msgstr "Vul je Google+ URL in"
 
 #: includes/theme-options.php
 msgid "Instagram"
@@ -781,7 +756,7 @@ msgstr "Instagram"
 
 #: includes/theme-options.php
 msgid "Enter your Instagram URL"
-msgstr "Indtast din Instagram URL"
+msgstr "Vul je Instagram URL in"
 
 #: includes/theme-options.php
 msgid "Pinterest"
@@ -789,7 +764,7 @@ msgstr "Pinterest"
 
 #: includes/theme-options.php
 msgid "Enter your Pinterest URL"
-msgstr "Indtast din Pinterest URL"
+msgstr "Vul je Pinterest URL in"
 
 #: includes/theme-options.php
 msgid "Yelp!"
@@ -797,7 +772,7 @@ msgstr "Yelp!"
 
 #: includes/theme-options.php
 msgid "Enter your Yelp! URL"
-msgstr "Indtast din Yelp! URL"
+msgstr "Vul je Yelp! URL in"
 
 #: includes/theme-options.php
 msgid "Vimeo"
@@ -805,7 +780,7 @@ msgstr "Vimeo"
 
 #: includes/theme-options.php
 msgid "Enter your Vimeo URL"
-msgstr "Indtast din Vimeo URL"
+msgstr "Vul je Vimeo URL in"
 
 #: includes/theme-options.php
 msgid "foursquare"
@@ -813,21 +788,20 @@ msgstr "foursquare"
 
 #: includes/theme-options.php
 msgid "Enter your foursquare URL"
-msgstr "Indtast din foursquare URL"
+msgstr "Vul je foursquare URL in"
 
 #: includes/theme-options.php
 msgid "Custom CSS Styles"
-msgstr "Eget CSS Styles"
+msgstr "Custom CSS Styles"
 
-#: includes/theme-options.php
 msgid "https://developer.mozilla.org/en/CSS"
-msgstr "https://developer.mozilla.org/en/CSS"
+msgstr "https://developer.mozilla.org/nl/CSS"
 
 #: includes/theme-options.php
 msgid "CSS Tutorial"
-msgstr "CCS Vejledning"
+msgstr "CSS Leerprogramma"
 
 #: includes/theme-options.php
 msgid "Enter your custom CSS styles."
-msgstr "Indtast brugerdefineret CSS."
+msgstr "Vul je aangepaste CSS stijlen in"
 

@@ -111,4 +111,13 @@ function responsive_widgets_end() {
     do_action('responsive_widgets_end');
 }
 
+/**
+ * Theme Options
+ *
+ * @see theme-options.php
+ */
+function responsive_theme_options() {
+    do_action('responsive_theme_options');
+}
+
 ?>
