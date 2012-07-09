@@ -3,7 +3,7 @@
     * The template for displaying the footer of the theme.
     *
     * @author Aurelio De Rosa <aurelioderosa@gmail.com>
-    * @version 1.0.3
+    * @version 1.0.4
     * @link http://wordpress.org/extend/themes/annarita
     * @package AurelioDeRosa
     * @subpackage Annarita
@@ -18,7 +18,7 @@
                {
                   wp_nav_menu(array(
                      'theme_location' => 'footer-menu',
-                     'container' => 'nav',
+                     'container' => 'nav'
                   ));
                }
 
@@ -31,6 +31,7 @@
                   <?php
                }
             ?>
+            <br class="clear-both" />
             <small id="copyright" class="clear-both alignleft">
                <?php
                   _e('Template', 'annarita');
@@ -40,7 +41,7 @@
                <img src="<?php echo get_template_directory_uri(); ?>/images/rose.png" alt="rose icon" />
                <?php printf(__('created by %s', 'annarita'), 'Aurelio De Rosa'); ?>
             </small>
-            <a id="go-to-top" href="#" title="<?php _e('Go to top', 'annarita'); ?>" class="alignright">&#8657; <?php _e('Go to top', 'annarita'); ?></a>
+            <a id="go-to-top" href="#" title="<?php _e('Go to top', 'annarita'); ?>">&#8657; <?php _e('Go to top', 'annarita'); ?></a>
             <br class="clear-both" />
          </footer>
          <?php wp_footer(); ?>

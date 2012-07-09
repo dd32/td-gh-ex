@@ -3,7 +3,7 @@
     * The template for displaying 404 pages (Not Found).
     *
     * @author Aurelio De Rosa <aurelioderosa@gmail.com>
-    * @version 1.0.3
+    * @version 1.0.4
     * @link http://wordpress.org/extend/themes/annarita
     * @package AurelioDeRosa
     * @subpackage Annarita

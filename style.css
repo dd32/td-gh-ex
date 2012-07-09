@@ -4,7 +4,7 @@
     Description: Annarita is a very lightweight and adaptable theme based on HTML5 and CSS3. It lets you to create custom menu, sidebars, header image, background and support for featured images and it shows a special ribbon for "sticky" posts. It has the support to customize some settings of the theme. The sidebars can be hidden by the users with a click and this status can be persistent (if the admin enables the relative setting saving the preference using cookie in the Settings page). Basically it supports related posts and microformats as hcard and hreview (using a custom post type). For the reviews the theme has a custom widget to best show them. Annarita has two dedicated areas to publish advertisements, one above the header and one in the footer.
     Author: Aurelio De Rosa
     Author URI: http://www.audero.it
-    Version: 1.0.3
+    Version: 1.0.4
     Tags: blue, gray, black, red, white, two-columns, three-columns, fixed-width, custom-background, custom-header, custom-menu, featured-images, sticky-post, threaded-comments, translation-ready
 
     License: GNU General Public License version 3
@@ -142,10 +142,15 @@ footer
 embed,
 iframe,
 object,
-img,
 video
 {
    max-width: 100%;
+}
+
+img
+{
+   max-width: 100%;
+   height: auto;
 }
 
 input,
@@ -515,6 +520,8 @@ article.hentry > footer
 
 div.pagination
 {
+   font-size: 15px;
+   font-weight: bold;
    margin: 1em 0em 0.5em 0em;
 }
 
@@ -639,6 +646,7 @@ div.user-card
 
 footer.main-footer
 {
+   position: relative;
    background-color: #ADADAD;
 }
 
@@ -649,37 +657,35 @@ footer.main-footer a
 
 nav.menu-footer-container > ul
 {
-   padding: 0px;
+   padding-top: 10px;
    width: 90%;
    margin: 0px auto;
    font-weight: bold;
+   list-style-type: none;
 }
 
 nav.menu-footer-container > ul > li
 {
-   list-style-type: circle;
    float: left;
-   width: 32%;
-   margin-right: 1%;
+   margin: 5px 10px;
 }
 
-nav.menu-footer-container > ul ul
+nav.menu-footer-container ul.sub-menu
 {
-   padding-left: 10px;
-   font-weight: normal;
-   list-style-type: none;
+   display: none;
 }
 
 small#copyright
 {
-   margin-top: 5px;
+   margin-top: 10px;
    padding-left: 10px;
 }
 
 a#go-to-top
 {
-   margin-top: 10px;
-   margin-right: 5px;
+   position: absolute;
+   bottom: 5px;
+   right: 5px;
    font-size: 16px;
 }
 
@@ -713,3 +719,77 @@ img.annarita-review-widget-thumbnail
    width: 95%;
    height: 100%;
 }
+
+
+
+
+
+
+/*#footer {
+	clear: both;
+	height: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 60px;
+	width: 960px;
+}
+#footer li.current_page_item a {
+	background-color: transparent;
+	color: #a97;
+}
+#footer .children {
+	display: none;
+}
+#footer .social {
+	padding-top: 18px;
+}
+#footer h1 {
+	border-bottom: 1px solid #fff;
+	font-size: 400%;
+	font-weight: 100;
+	text-transform: uppercase;
+}
+#footer h1 a:hover {
+	color: #a97;
+}
+#footer-outside {
+	background-color: #ccc;
+	clear: both;
+	width: 100%;
+}
+#footer ul {
+	clear: both;
+	margin-top: 15px;
+}
+#footer-menu {
+	padding-top: 15px;
+}
+#footer .sub-menu {
+display: none;
+}
+#footer-copy {
+	clear: both;
+	margin-top: 60px;
+}
+#footer p {
+	color: #fff;
+}
+#footer a {
+	color: #fff;
+}
+#footer a:hover {
+	color: #a97;
+}
+#footer li {
+	float: left;
+	list-style: none;
+}
+#footer li a {
+	color: #fff;
+	margin-top: 10px;
+	padding-right: 30px;
+	text-transform: uppercase;
+}
+#footer li a:hover {
+	color: #a97;
+}*/

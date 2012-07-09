@@ -4,8 +4,8 @@ Theme Name: Annarita
 Theme URI: http://wordpress.org/extend/themes/annarita
 Author: Aurelio De Rosa
 Author URI: http://www.audero.it
-Version: 1.0.3
-Tested up to: 3.3.2
+Version: 1.0.4
+Tested up to: 3.4.1
 Tags: blue, gray, black, red, white, two-columns, three-columns, fixed-width, custom-background, custom-header, custom-menu, featured-images, sticky-post, threaded-comments, translation-ready
 
 License: GNU General Public License version 3
@@ -44,7 +44,7 @@ Installing the theme is very straightforward and consist of the following steps:
 
 == Changelog ==
 
-= 1.0.3 =
+= 1.0.4 =
 * The first public version
 
 == Dedication ==

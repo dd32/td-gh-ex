@@ -5,7 +5,7 @@
  * Others are attached to action and filter hooks in WordPress to change core functionality.
  *
  * @author Aurelio De Rosa <aurelioderosa@gmail.com>
- * @version 1.0.3
+ * @version 1.0.4
  * @link http://wordpress.org/extend/themes/annarita
  * @package AurelioDeRosa
  * @subpackage Annarita
@@ -22,8 +22,8 @@ function annarita_setup()
 
 function annarita_setup_scripts()
 {
-   wp_enqueue_script('superfish-hover', get_template_directory_uri() . '/js/hoverIntent.js', array('jquery'));
    wp_enqueue_script('superfish', get_template_directory_uri() . '/js/superfish.js', array('jquery'));
+   wp_enqueue_script('superfish-hover', get_template_directory_uri() . '/js/superfish-hover.js', array('jquery'));
    wp_enqueue_script('jquery-cookie', get_template_directory_uri() . '/js/jquery.cookie.js', array('jquery'));
    wp_enqueue_script('annarita-functions', get_template_directory_uri() . '/js/functions.js', array('jquery'));
    wp_localize_script(
@@ -263,7 +263,7 @@ function annarita_get_real_meta($meta)
 
    foreach($meta as $key => $value)
    {
-      if ($key[0] == '_')
+      if ($key[0] == '_' || strcasecmp($key, 'enclosure') == 0)
          unset($meta[$key]);
    }
 
@@ -289,8 +289,8 @@ function annarita_header_style()
       header.main-header
       {
          background-image: url('<?php header_image(); ?>');
-         width: <?php echo HEADER_IMAGE_WIDTH; ?>px;
-         height: <?php echo HEADER_IMAGE_HEIGHT; ?>px;
+         width: <?php echo get_theme_support('custom-header', 'width') ?>px;
+         height: <?php echo get_theme_support('custom-header', 'height') ?>px;
       }
 
       a.header-link
@@ -312,9 +312,9 @@ function annarita_admin_header_style()
         #headimg
         {
            background-image: url('<?php header_image(); ?>');
-           width: <?php echo HEADER_IMAGE_WIDTH; ?>px;
-           height: <?php echo HEADER_IMAGE_HEIGHT; ?>px;
            background: no-repeat;
+           width: <?php echo get_theme_support('custom-header', 'width') ?>px;
+           height: <?php echo get_theme_support('custom-header', 'height') ?>px;
         }
     </style><?php
 }
@@ -425,16 +425,6 @@ $custom_header_support = array(
       'admin-head-callback' => 'annarita_admin_header_style'
 );
 add_theme_support('custom-header', $custom_header_support);
-
-if (! function_exists('get_custom_header'))
-{
-   define('HEADER_TEXTCOLOR', $custom_header_support['default-text-color']);
-   define('HEADER_IMAGE', get_template_directory_uri() . '/images/header.jpg');
-   define('HEADER_IMAGE_WIDTH', $custom_header_support['width']);
-   define('HEADER_IMAGE_HEIGHT', $custom_header_support['height']);
-   add_custom_image_header($custom_header_support['wp-head-callback'], $custom_header_support['admin-head-callback']);
-   add_custom_background();
-}
 
 add_filter('excerpt_more', 'annarita_excerpt_more');
 add_filter('wp_title', 'annarita_title_filter');

@@ -3,7 +3,7 @@
     * The template for displaying a single page.
     *
     * @author Aurelio De Rosa <aurelioderosa@gmail.com>
-    * @version 1.0.3
+    * @version 1.0.4
     * @link http://wordpress.org/extend/themes/annarita
     * @package AurelioDeRosa
     * @subpackage Annarita
