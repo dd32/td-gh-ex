@@ -61,7 +61,7 @@
             </div><!-- #mainmenu-->  
             <div class="row-end"></div>   
         <?php 
-        // This functions passes the value of slider effect to js file 
+        // This function passes the value of slider effect to js file 
         if( function_exists( 'simplecatch_pass_slider_value' ) ) {
         	simplecatch_pass_slider_value();
         }

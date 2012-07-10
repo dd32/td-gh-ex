@@ -4,7 +4,7 @@ Theme Name: Simple Catch
 Theme URI: http://catchthemes.com/wp-themes/simplecatch
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
-Version: 1.2.9
+Version: 1.3.0
 License: GNU General Public License
 
 == Theme Description ==
@@ -143,6 +143,9 @@ Version 1.2.9
 * Removed the inline script from searchform.php
 * Theme options are saved in single option array from multiple options array
 * Unwanted wp_query removed and instead used pre_get_posts hook to alter main loop in homepage
+
+Version 1.3.0
+* Added Theme Optin array Backward Comaptibility for simplecatch version 1.2.7 and below
 
 == Upcoming Plan ==
 * Add more option in theme option for feed redirect, excerpt length

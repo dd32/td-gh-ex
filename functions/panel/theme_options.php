@@ -765,4 +765,21 @@ function simplecatch_post_invalidate_caches(){
 }
 //Add action hook here save post
 add_action( 'save_post', 'simplecatch_post_invalidate_caches' );
+
+/**
+ * Backward Comaptibility for simplecatch version 1.2.7 and below
+ *
+ * Fetch the old values of options array and merge it with new one
+ * @used init hook
+ */
+function simplecatch_backward_compatibility() {
+	$old = get_option('simplecatch_options_slider');
+	if( !empty( $old ) ) {
+		$new = get_option( 'simplecatch_options' );
+		$result = array_merge( $new, $old );
+		update_option( 'simplecatch_options', $result );
+		delete_option( 'simplecatch_options_slider');
+	}
+}
+add_action('init','simplecatch_backward_compatibility');
 ?>
