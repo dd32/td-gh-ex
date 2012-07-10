@@ -16,56 +16,31 @@ get_header(); ?>
 
 	<div id="main" class="layout-978">
     	<div id="content" class="col8 no-margin-left"> 
-
-            <?php
-            $options = get_option( 'simplecatch_options_slider' );
-            ?>
 			<?php if ( have_posts() ) : 
-                    if( !isset( $options[ 'exclude_slider_post' ] ) ) {
-                        $options[ 'exclude_slider_post' ] = "0";
-                    }
-                    $temp = $wp_query;
-                    $wp_query = null;
-                    if ( $options[ 'exclude_slider_post'] != "0" && !empty( $options[ 'featured_slider' ] ) ) {                        
-                        $args = array(
-                        'post__not_in' => $options[ 'featured_slider' ],
-                        'post_type' => 'post',
-                        'paged' => $paged
-                        );
-                        $wp_query = new WP_Query( $args );  
-                    }
-                    else {
-                        $args = array(
-                        'post_type' => 'post',
-                        'paged' => $paged
-                        );
-                        $wp_query = new WP_Query( $args );
-                    }                  
-    				while( $wp_query->have_posts() ):$wp_query->the_post();
-                    ?>	
+                while( have_posts() ):the_post(); ?>	
             
-                        <div <?php post_class(); ?> >
-                            <?php //If category has thumbnail it displays thumbnail and excerpt of content else excerpt only 
-                            if ( has_post_thumbnail() ) : ?>
-                                <div class="col3 post-img">
-                                    <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( the_title_attribute( 'echo=0' ) ); ?>" ><?php the_post_thumbnail( 'featured' ); ?></a>
-                                </div> <!-- .col3 -->  
-                                <div class="col5">
-                            <?php else : ?>
-                            	<div class="col8">
-                            <?php endif; ?> 
-                                    <h2 class="entry-title"><a href="<?php the_permalink() ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="bookmark" ><?php the_title(); ?></a></h2>
-                                    <ul class="post-by">
-                                        <li class="no-padding-left"><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" title="<?php echo esc_attr(get_the_author_meta( 'display_name' ) ); ?>">By &nbsp;<?php the_author_meta( 'display_name' );?></a></li>
-                                        <li><?php the_time( 'j F, Y' ); ?></li>
-                                        <li class="last"><?php comments_popup_link( 'No Comments ', '1 Comment ', '% Comments ' ); ?></li>
-                                    </ul>
-                               		<?php the_excerpt(); ?>
-                                </div>   
-                             
-                                <div class="row-end"></div>
-                        </div><!-- .post -->
-                        <hr />
+                    <div <?php post_class(); ?> >
+                        <?php //If category has thumbnail it displays thumbnail and excerpt of content else excerpt only 
+                        if ( has_post_thumbnail() ) : ?>
+                            <div class="col3 post-img">
+                                <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( the_title_attribute( 'echo=0' ) ); ?>" ><?php the_post_thumbnail( 'featured' ); ?></a>
+                            </div> <!-- .col3 -->  
+                            <div class="col5">
+                        <?php else : ?>
+                            <div class="col8">
+                        <?php endif; ?> 
+                                <h2 class="entry-title"><a href="<?php the_permalink() ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="bookmark" ><?php the_title(); ?></a></h2>
+                                <ul class="post-by">
+                                    <li class="no-padding-left"><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" title="<?php echo esc_attr(get_the_author_meta( 'display_name' ) ); ?>">By &nbsp;<?php the_author_meta( 'display_name' );?></a></li>
+                                    <li><?php the_time( 'j F, Y' ); ?></li>
+                                    <li class="last"><?php comments_popup_link( 'No Comments ', '1 Comment ', '% Comments ' ); ?></li>
+                                </ul>
+                                <?php the_excerpt(); ?>
+                            </div>   
+                         
+                            <div class="row-end"></div>
+                    </div><!-- .post -->
+                    <hr />
                     
           			<?php endwhile;
                     
@@ -87,10 +62,6 @@ get_header(); ?>
 							</ul>
                         <?php endif;
  					endif; 
-
-                    wp_reset_postdata();
-                    $wp_query = null;
-                    $wp_query = $temp;
                     ?>
 
                     			

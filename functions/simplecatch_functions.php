@@ -315,8 +315,8 @@ function simplecatch_sliders() {
 	global $post;
 	//delete_transient( 'simplecatch_sliders' );
 		
-	// get data value from simplecatch_options_slider through theme options
-	$options = get_option( 'simplecatch_options_slider' );
+	// get data value from simplecatch_options through theme options
+	$options = get_option( 'simplecatch_options' );
 	// get slider_qty from theme options
 	if( isset( $options[ 'slider_qty' ] ) ) {
 		$postperpage = $options[ 'slider_qty' ];
@@ -661,7 +661,7 @@ add_filter( 'simplecatch_credits', 'simplecatch_footer' );
  * Function to pass the slider value
  */
 function simplecatch_pass_slider_value() {
-	$options = get_option( 'simplecatch_options_slider' );
+	$options = get_option( 'simplecatch_options' );
 	if( !isset( $options[ 'transition_effect' ] ) ) {
 		$options[ 'transition_effect' ] = "fade";
 	}
@@ -684,6 +684,26 @@ function simplecatch_pass_slider_value() {
 		)
 	);
 }// simplecatch_pass_slider_value
+
+/**
+ * Alter the query for the main loop in home page
+ * @uses pre_get_posts hook
+ */
+function simple_catch_alter_home( $query ){
+	$options = get_option( 'simplecatch_options' );
+	if( !isset( $options[ 'exclude_slider_post' ] ) ) {
+ 		$options[ 'exclude_slider_post' ] = "0";
+ 	}
+    if ( $options[ 'exclude_slider_post'] != "0" && !empty( $options[ 'featured_slider' ] ) ) {
+		if( $query->is_main_query() && $query->is_home() ) {
+			$query->query_vars['post__not_in'] = $options[ 'featured_slider' ];
+
+		}
+	}
+}
+add_action( 'pre_get_posts','simple_catch_alter_home' );
+
+
 
 /**
  * function that displays frquently asked question in theme option

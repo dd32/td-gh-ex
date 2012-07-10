@@ -76,7 +76,6 @@ add_action( 'admin_menu', 'simplecatch_options_menu' );
  */
 function simplecatch_register_settings(){
 	register_setting( 'simplecatch_options', 'simplecatch_options', 'simplecatch_options_validation' );
-	register_setting( 'simplecatch_options_slider', 'simplecatch_options_slider', 'simplecatch_options_validation' );
 }
 add_action( 'admin_init', 'simplecatch_register_settings' );
 
@@ -134,6 +133,7 @@ function simplecatch_options_page() {
                         <tbody>
                             <tr>                            
                                 <th scope="row"><h4><?php _e( 'Disable Header Logo:', 'simplecatch' ); ?></h4></th>
+                                <input type='hidden' value='0' name='simplecatch_options[remove_header_logo]'>
                                 <td><input type="checkbox" id="headerlogo" name="simplecatch_options[remove_header_logo]" value="1" <?php isset($options['remove_header_logo']) ? checked( '1', $options['remove_header_logo'] ) : checked('0', '1'); ?> /></td>
                             </tr>
                             <tr>                            
@@ -166,6 +166,7 @@ function simplecatch_options_page() {
                         <tbody>
                             <tr>                            
                                 <th scope="row"><h4><?php _e( 'Disable Footer Logo:', 'simplecatch' ); ?></h4></th>
+                                 <input type='hidden' value='0' name='simplecatch_options[remove_footer_logo]'>
                                 <td><input type="checkbox" id="headerlogo" name="simplecatch_options[remove_footer_logo]" value="1" <?php isset($options['remove_footer_logo']) ? checked( '1', $options['remove_footer_logo'] ) : checked('0', '1'); ?> /></td>
                             </tr>
                             <tr>   
@@ -202,6 +203,7 @@ function simplecatch_options_page() {
                         <tbody>
                             <tr>
                                 <th scope="row"><h4><?php _e( 'Disable Favicon:', 'simplecatch' ); ?></h4></th>
+                                 <input type='hidden' value='0' name='simplecatch_options[remove_favicon]'>
                                 <td><input type="checkbox" id="favicon" name="simplecatch_options[remove_favicon]" value="1" <?php isset($options['remove_favicon']) ? checked( '1', $options['remove_favicon'] ) : checked('0', '1'); ?> /></td>
                             </tr>
                             <tr>                            
@@ -435,6 +437,7 @@ function simplecatch_options_page() {
                             <?php if( $options[ 'reset_settings' ] == "1" ) { $options[ 'reset_settings' ] = "0"; } ?>
                             <tr>                            
                             <th scope="row"><h4><?php _e( 'Reset Settings:', 'simplecatch' ); ?></h4></th>
+                            <input type='hidden' value='0' name='simplecatch_options[reset_settings]'>
                             <td><input type="checkbox" id="headerlogo" name="simplecatch_options[reset_settings]" value="1" <?php isset($options['reset_settings']) ? checked( '1', $options['reset_settings'] ) : checked('0', '1'); ?> /></td>
                             </tr>
 
@@ -460,8 +463,8 @@ function simplecatch_options_slider_page(){
     	
         <form method="post" action="options.php">
 			<?php
-                settings_fields( 'simplecatch_options_slider' );
-                $options = get_option( 'simplecatch_options_slider' );
+                settings_fields( 'simplecatch_options' );
+                $options = get_option( 'simplecatch_options' );
                 
                 if( is_array( $options ) && ( !array_key_exists( 'slider_qty', $options ) || !is_numeric( $options[ 'slider_qty' ] ) ) ) $options[ 'slider_qty' ] = 4;
                 elseif( !is_array( $options ) ) $options = array( 'slider_qty' => 4);
@@ -484,25 +487,26 @@ function simplecatch_options_slider_page(){
                     <h2><?php _e( 'Featured Slider Options', 'simplecatch' ); ?></h2>
                     <table class="form-table">
                         <tr>                            
-                            <th scope="row"><h4><?php _e( 'Exclude Slider Posts from Homepage', 'simplecatch' ); ?></h4></th>
-                            <td><input type="checkbox" id="headerlogo" name="simplecatch_options_slider[exclude_slider_post]" value="1" <?php isset($options['exclude_slider_post']) ? checked( '1', $options['exclude_slider_post'] ) : checked('0', '1'); ?> /></td>
+                            <th scope="row"><h4><?php _e( 'Exclude Slider post from Home page posts:', 'simplecatch' ); ?></h4></th>
+                             <input type='hidden' value='0' name='simplecatch_options[exclude_slider_post]'>
+                            <td><input type="checkbox" id="headerlogo" name="simplecatch_options[exclude_slider_post]" value="1" <?php isset($options['exclude_slider_post']) ? checked( '1', $options['exclude_slider_post'] ) : checked('0', '1'); ?> /></td>
                         </tr>
                         <tr>
                             <th scope="row"><h4><?php _e( 'Number of Slides', 'simplecatch' ); ?></h4></th>
-                            <td><input type="text" name="simplecatch_options_slider[slider_qty]" value="<?php if ( array_key_exists ( 'slider_qty', $options ) ) echo intval( $options[ 'slider_qty' ] ); ?>" /></td>
+                            <td><input type="text" name="simplecatch_options[slider_qty]" value="<?php if ( array_key_exists ( 'slider_qty', $options ) ) echo intval( $options[ 'slider_qty' ] ); ?>" /></td>
                         </tr>
                         <tbody class="sortable">
                             <?php for ( $i = 1; $i <= $options[ 'slider_qty' ]; $i++ ): ?>
                             <tr>
                                 <th scope="row"><label class="handle"><?php _e( 'Featured Col #', 'simplecatch' ); ?><span class="count"><?php echo absint( $i ); ?></span></label></th>
-                                <td><input type="text" name="simplecatch_options_slider[featured_slider][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'featured_slider', $options ) && array_key_exists( $i, $options[ 'featured_slider' ] ) ) echo absint( $options[ 'featured_slider' ][ $i ] ); ?>" />
+                                <td><input type="text" name="simplecatch_options[featured_slider][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'featured_slider', $options ) && array_key_exists( $i, $options[ 'featured_slider' ] ) ) echo absint( $options[ 'featured_slider' ][ $i ] ); ?>" />
                                 <a href="<?php bloginfo ( 'url' );?>/wp-admin/post.php?post=<?php if( array_key_exists ( 'featured_slider', $options ) && array_key_exists ( $i, $options[ 'featured_slider' ] ) ) echo absint( $options[ 'featured_slider' ][ $i ] ); ?>&action=edit" class="button" title="<?php esc_attr_e('Click Here To Edit'); ?>" target="_blank"><?php _e( 'Click Here To Edit', 'simplecatch' ); ?></a>
                                 </td>
                             </tr> 							
                             <?php endfor; ?>
 							</tbody>
                     </table>
-					<p><?php _e( 'Note: Here You can put your Post IDs which displays on Homepage as slider. <br />Check the box Exclude Slider Posts from Homepage if you want to remove the duplicate post from slider to homepage', 'simplecatch' ); ?> </p>
+					<p><?php _e( 'Note: Here You can put your Post IDs which displays on Homepage as slider.', 'simplecatch' ); ?> </p>
                     <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
                 </div> <!-- #featuredslider --> 
 
@@ -512,7 +516,8 @@ function simplecatch_options_slider_page(){
                     <table class="form-table">   
                         <tr>                            
                             <th scope="row"><h4><?php _e( 'Disable Slider Background Effect:', 'simplecatch' ); ?></h4></th>
-                            <td><input type="checkbox" id="headerlogo" name="simplecatch_options_slider[remove_noise_effect]" value="1" <?php isset($options['remove_noise_effect']) ? checked( '1', $options['remove_noise_effect'] ) : checked('0', '1'); ?> /></td>
+                             <input type='hidden' value='0' name='simplecatch_options[remove_noise_effect]'>
+                            <td><input type="checkbox" id="headerlogo" name="simplecatch_options[remove_noise_effect]" value="1" <?php isset($options['remove_noise_effect']) ? checked( '1', $options['remove_noise_effect'] ) : checked('0', '1'); ?> /></td>
                         </tr>
 
                         <tr>
@@ -521,7 +526,7 @@ function simplecatch_options_slider_page(){
                             </th>
                             <?php if( !isset( $options['transition_effect'] ) ) { $options['transition_effect'] = "fade"; } ?>
                             <td>
-                                <select id="simplecatch_cycle_style" name="simplecatch_options_slider[transition_effect]">
+                                <select id="simplecatch_cycle_style" name="simplecatch_options[transition_effect]">
                                     <option value="fade" <?php selected('fade', $options['transition_effect']); ?>><?php _e( 'fade', 'simplecatch' ); ?></option>
                                     <option value="wipe" <?php selected('wipe', $options['transition_effect']); ?>><?php _e( 'wipe', 'simplecatch' ); ?></option>
                                     <option value="scrollUp" <?php selected('scrollUp', $options['transition_effect']); ?>><?php _e( 'scrollUp', 'simplecatch' ); ?></option>
@@ -540,7 +545,7 @@ function simplecatch_options_slider_page(){
                         <tr>
                             <th scope="row"><h4><?php _e( 'Transition Delay', 'simplecatch' ); ?></h4></th>
                             <td>
-                                <input type="text" name="simplecatch_options_slider[transition_delay]" value="<?php if( isset( $options [ 'transition_delay' ] ) ) echo $options[ 'transition_delay' ]; ?>" size="4" />
+                                <input type="text" name="simplecatch_options[transition_delay]" value="<?php if( isset( $options [ 'transition_delay' ] ) ) echo $options[ 'transition_delay' ]; ?>" size="4" />
                                <span class="description"><?php _e( 'second(s)', 'simplecatch' ); ?></span>
                             </td>
                         </tr>
@@ -549,7 +554,7 @@ function simplecatch_options_slider_page(){
                         <tr>
                             <th scope="row"><h4><?php _e( 'Transition Length', 'simplecatch' ); ?></h4></th>
                             <td>
-                                <input type="text" name="simplecatch_options_slider[transition_duration]" value="<?php if( isset( $options [ 'transition_duration' ] ) ) echo $options[ 'transition_duration' ]; ?>" size="4" />
+                                <input type="text" name="simplecatch_options[transition_duration]" value="<?php if( isset( $options [ 'transition_duration' ] ) ) echo $options[ 'transition_duration' ]; ?>" size="4" />
                                 <span class="description"><?php _e( 'second(s)', 'simplecatch' ); ?></span>
                             </td>
                         </tr>                      
@@ -571,42 +576,38 @@ function simplecatch_options_slider_page(){
  * @return array
  */
 function simplecatch_options_validation( $options ){
-	$options_validated = array();
+	$options_validated = get_option('simplecatch_options');
 	
 	// data validation for logo
 	if ( isset( $options[ 'featured_logo_header' ] ) ) {
 		$options_validated[ 'featured_logo_header' ] = esc_url_raw( $options[ 'featured_logo_header' ] );
 	}
-	if ( !isset( $options['remove_header_logo'] ) ) {
-		$options['remove_header_logo'] = null;
+	if ( isset( $options['remove_header_logo'] ) ) {
+		// Our checkbox value is either 0 or 1 
+		$options_validated[ 'remove_header_logo' ] = $options[ 'remove_header_logo' ];
 	}
-	// Our checkbox value is either 0 or 1 
-	$options_validated[ 'remove_header_logo' ] = $options[ 'remove_header_logo' ] == 1 ? 1 : 0 ;
-	
 	if ( isset( $options[ 'featured_logo_footer' ] ) ) {
 		$options_validated[ 'featured_logo_footer' ] = esc_url_raw( $options[ 'featured_logo_footer' ] );
 	}
-	if ( !isset( $options['remove_footer_logo'] ) ) {
-		$options['remove_footer_logo'] = null;
+	if ( isset( $options['remove_footer_logo'] ) ) {
+		// Our checkbox value is either 0 or 1 
+		$options_validated[ 'remove_footer_logo' ] = $options[ 'remove_footer_logo' ];
 	}
-	// Our checkbox value is either 0 or 1 
-	$options_validated[ 'remove_footer_logo' ] = $options[ 'remove_footer_logo' ] == 1 ? 1 : 0 ;
-	
+		
 	if ( isset( $options[ 'fav_icon' ] ) ) {
 		$options_validated[ 'fav_icon' ] = esc_url_raw( $options[ 'fav_icon' ] );
 	}
-	if ( !isset( $options['remove_favicon'] ) ) {
-		$options['remove_favicon'] = null;
+	if ( isset( $options['remove_favicon'] ) ) {
+		// Our checkbox value is either 0 or 1 
+		$options_validated[ 'remove_favicon' ] = $options[ 'remove_favicon' ];
 	}
-	// Our checkbox value is either 0 or 1 
-	$options_validated[ 'remove_favicon' ] = $options[ 'remove_favicon' ] == 1 ? 1 : 0 ;
 
-    if ( !isset( $options['exclude_slider_post'] ) ) {
-        $options['exclude_slider_post'] = null;
-    }
-    // Our checkbox value is either 0 or 1 
-    $options_validated[ 'exclude_slider_post' ] = $options[ 'exclude_slider_post' ] == 1 ? 1 : 0 ;	
+    if ( isset( $options['exclude_slider_post'] ) ) {
+        // Our checkbox value is either 0 or 1 
+   		$options_validated[ 'exclude_slider_post' ] = $options[ 'exclude_slider_post' ];	
 	
+    }
+    
 	//data validation for Featured Slider
 	if ( isset( $options[ 'slider_qty' ] ) ) {
 		$options_validated[ 'slider_qty' ] = absint( $options[ 'slider_qty' ] ) ? $options [ 'slider_qty' ] : 4;
@@ -619,12 +620,11 @@ function simplecatch_options_validation( $options ){
 		if ( intval( $options[ 'featured_slider' ][ $i ] ) ) $options_validated[ 'featured_slider' ][ $i ] = absint($options[ 'featured_slider' ][ $i ] );
 	}
 
-    if ( !isset( $options['remove_noise_effect'] ) ) {
-        $options['remove_noise_effect'] = null;
+    if ( isset( $options['remove_noise_effect'] ) ) {
+        // Our checkbox value is either 0 or 1 
+		$options_validated[ 'remove_noise_effect' ] = $options[ 'remove_noise_effect' ];
     }
-    // Our checkbox value is either 0 or 1 
-    $options_validated[ 'remove_noise_effect' ] = $options[ 'remove_noise_effect' ] == 1 ? 1 : 0 ;
-
+    
     if( isset( $options[ 'transition_effect' ] ) ) {
         $options_validated['transition_effect'] = wp_filter_nohtml_kses( $options['transition_effect'] );
     }
@@ -727,10 +727,10 @@ function simplecatch_options_validation( $options ){
     if( isset( $options[ 'search_button_text' ] ) ) {
         $options_validated[ 'search_button_text' ] = sanitize_text_field( $options[ 'search_button_text' ] );    
     }   
-    if ( !isset( $options['reset_settings'] ) ) {
-        $options['reset_settings'] = null;
+    if ( isset( $options['reset_settings'] ) ) {
+        $options_validated[ 'reset_settings' ] = $options[ 'reset_settings' ];
     }    
-    $options_validated[ 'reset_settings' ] = $options[ 'reset_settings' ] == 1 ? 1 : 0 ;
+    
     if( $options[ 'reset_settings' ] == 1 ) {
         $options_validated[ 'more_tag_text' ] = "Continue Reading &rarr;";
         $options_validated[ 'search_display_text' ] = "Type Keyword";
