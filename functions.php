@@ -31,6 +31,10 @@ if ( is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" ) {
 function mantra_header() {
     do_action('mantra_header');
 }
+// SEO hook
+function mantra_seo_hook() {
+    do_action('mantra_seo_hook');
+}
 // Adding the viewport meta if the mobile view has been enabled
 add_action('wp_head', 'mantra_mobile_meta');
 
@@ -81,8 +85,12 @@ foreach ($mantra_options as $key => $value) {
 
 		add_action('wp_print_styles', 'mantra_style',1 );
 		add_action('wp_head', 'mantra_custom_styles' ,8);
-		add_action('wp_head', 'mantra_customcss',9);
+if($mantra_customcss!="/* Mantra Custom CSS */")		add_action('wp_head', 'mantra_customcss',9);
 		add_action('wp_head', 'mantra_google_styles');
+		
+// JS loading and hook into wp_enque_scripts
+
+	add_action('wp_head', 'mantra_customjs' );
 		
 
  $mantra_totalSize = $mantra_sidebar + $mantra_sidewidth+50;
@@ -97,17 +105,22 @@ foreach ($mantra_options as $key => $value) {
 
 // If frontend - load the js for the menu and the social icons animations
 	if ( !is_admin() ) {
-		wp_register_script('menu',get_template_directory_uri() . '/js/menu.js', array('jquery') );
-		wp_enqueue_script('menu');
-		// If the back to top button is enabled - load it's js
+		wp_register_script('frontend',get_template_directory_uri() . '/js/frontend.js', array('jquery') );
+		wp_enqueue_script('frontend');
+		// If the back to top button is enabled - load its js
 			if($mantra_backtop =="Enable") {
 							wp_register_script('top',get_template_directory_uri() . '/js/top.js', array('jquery'));
 							wp_enqueue_script('top');}
   		// If mantra from page is enabled and the current page is home page - load the nivo slider js							
 		if($mantra_frontpage =="Enable" && is_home()) {
 							wp_register_script('nivoSlider',get_template_directory_uri() . '/js/nivo-slider.js', array('jquery'));
-							wp_enqueue_script('nivoSlider');}
-  									}
+							wp_enqueue_script('nivoSlider');
+							}
+  	}
+	
+	
+
+	
 
 	/* We add some JavaScript to pages with the comment form
 	 * to support sites with threaded comments (when in use).
@@ -606,6 +619,14 @@ printf ( comments_popup_link( __( 'Leave a comment', 'mantra' ), __( '<b>1</b> C
 
 }
 
+// Remove category from rel in categry tags.
+add_filter( 'the_category', 'mantra_remove_category_tag' ); 
+add_filter( 'get_the_category_list', 'mantra_remove_category_tag' ); 
+
+function mantra_remove_category_tag( $text ) { 
+$text = str_replace('rel="category tag"', 'rel="tag"', $text); return $text; 
+}
+
 
 if ( ! function_exists( 'mantra_posted_in' ) ) :
 /**
@@ -702,7 +723,7 @@ $image_src = echo_first_image($post->ID);
 							
 	}
 
-add_filter( 'post_thumbnail_html', 'mantra_thumbnail_link', 10, 3 );	
+if ($mantra_fpost=='Enable' && $mantra_fpostlink) add_filter( 'post_thumbnail_html', 'mantra_thumbnail_link', 10, 3 );	
 
 /**
  * The thumbnail gets a link to the post's page
@@ -860,7 +881,7 @@ function mantra_filter_wp_title( $title ) {
     // Get the Site Name
     $site_name = get_bloginfo( 'name' );
     // Prepend name
-    $filtered_title = $site_name .' | '. $title;
+    $filtered_title = $title.' - '.$site_name;
 	// Get the Site Description
  	$site_description = get_bloginfo( 'description' );
     // If site front page, append description
@@ -876,8 +897,165 @@ function mantra_filter_wp_title( $title ) {
     // Return the modified title
     return $filtered_title;
 }
-// Hook into 'wp_title'
 add_filter( 'wp_title', 'mantra_filter_wp_title' );
+
+function mantra_seo_description() {
+	global $mantra_options;
+	foreach ($mantra_options as $key => $value) {
+     ${"$key"} = $value ;}
+
+		if (is_home() && $mantra_seo_home_desc) {
+			echo PHP_EOL.'<meta name="description" content="';
+			echo $mantra_seo_home_desc;
+			echo '" />'; }
+		else if ((is_single() || is_page()) && !is_404()) {
+				if ($mantra_seo_gen_desc =="Auto") {
+					global $post;
+					$content_post = get_post($post->ID);
+					$content = $content_post->post_content;
+					$content = preg_replace(array('/\s{2,}/', '/[\t\n]/'), ' ', $content);
+					$content = strip_tags($content);
+					$content = str_replace('"','',$content);
+					$content = preg_replace('/((\w+\W+\'*){'.(33).'}(\w+))(.*)/', '${1}', $content);
+			}
+			else if ($mantra_seo_gen_desc=="Manual") {
+			global $post,$mantra_meta_box_description;
+			$content =  get_post_meta($post->ID,'SEOdescription_value',true);
+			}
+
+			echo PHP_EOL.'<meta name="description" content="';
+			echo $content;
+			echo '" />'; }
+		else if (is_category() && category_description() != "") {
+			echo PHP_EOL.'<meta name="description" content="';
+			echo  trim(strip_tags(category_description()));
+			echo '" />'; }
+		
+
+}
+
+function mantra_seo_start() {
+echo '<!-- Mantra SEO Elements -->'.PHP_EOL;
+}
+
+function mantra_seo_ending() {
+echo '<!-- end of Mantra SEO -->'.PHP_EOL;
+}
+
+function mantra_seo_name() {
+	global $mantra_options;
+	foreach ($mantra_options as $key => $value) {
+     ${"$key"} = $value ;}
+echo '<meta name="author" content="'.$mantra_seo_author.'" />';
+}
+
+function mantra_seo_title() {
+echo "<title>".wp_title( '', false, 'right' )."</title>";
+}
+
+
+// Mantra seo function
+function mantra_seo_generator() {
+global $mantra_options;
+foreach ($mantra_options as $key => $value) {
+${"$key"} = $value ;}
+	 
+add_action ('mantra_seo_hook','mantra_seo_start');
+add_action ('mantra_seo_hook','mantra_seo_title');
+add_action ('mantra_seo_hook','mantra_seo_description');
+
+remove_action('wp_head', 'adjacent_posts_rel_link_wp_head');
+add_action ('mantra_seo_hook','adjacent_posts_rel_link_wp_head');
+remove_action('wp_head', 'rel_canonical');
+add_action ('mantra_seo_hook','rel_canonical');
+remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 );
+add_action ('mantra_seo_hook','wp_shortlink_wp_head');
+if($mantra_seo_author!="Do not use") 
+	add_action ('mantra_seo_hook','mantra_seo_name');
+
+add_action ('mantra_seo_hook','mantra_seo_ending');
+}
+if($mantra_seo=="Enable") mantra_seo_generator() ; 
+	else add_action ('mantra_seo_hook','mantra_seo_title',0);
+
+
+/*
+Plugin Name: Custom Write Panel
+Plugin URI: http://wefunction.com/2008/10/tutorial-create-custom-write-panels-in-wordpress
+Description: Allows custom fields to be added to the WordPress Post Page
+Version: 1.0
+Author: Spencer
+Author URI: http://wefunction.com
+/* ----------------------------------------------*/
+ 
+$mantra_meta_box_description =
+array(
+"image" => array(
+"name" => "SEOdescription",
+"std" => "",
+"title" => "Input the SEO description for this post/page here (about 160 characters): ",
+"description" => "This description is for SEO purposes only. It will be used as a meta in your HTML header. It won't be vislbe anywhere else.<br> More SEO options in the Mantra Settings Page >> Misc Options >> SEO.")
+);
+
+function mantra_meta_box_description() {
+global $post, $mantra_meta_box_description;
+ 
+foreach($mantra_meta_box_description as $meta_box) {
+$meta_box_value = get_post_meta($post->ID, $meta_box['name'].'_value', true);
+ 
+if($meta_box_value == "")
+$meta_box_value = $meta_box['std'];
+ 
+echo '<input type="hidden" name="'.$meta_box['name'].'_noncename" id="'.$meta_box['name'].'_noncename" value="'.wp_create_nonce( plugin_basename(__FILE__) ).'" />';
+  
+echo '<p>'.$meta_box['title'].'</p>';
+ 
+echo '<textarea rows="5" cols="150" name="'.$meta_box['name'].'_value" size="55" >'.$meta_box_value.'</textarea><br>';
+ 
+echo '<p><label for="'.$meta_box['name'].'_value">'.$meta_box['description'].'</label></p>';
+}
+}
+
+function mantra_create_meta_box() {
+global $theme_name;
+if ( function_exists('add_meta_box') ) {
+add_meta_box( 'new-meta-boxes', 'Mantra SEO - Description', 'mantra_meta_box_description', 'post', 'normal', 'high' );
+add_meta_box( 'new-meta-boxes', 'Mantra SEO - Description', 'mantra_meta_box_description', 'page', 'normal', 'high' );
+}
+}
+
+function mantra_save_postdata( $post_id ) {
+global $post, $mantra_meta_box_description;
+ 
+foreach($mantra_meta_box_description as $meta_box) {
+// Verify
+if ( !wp_verify_nonce( $_POST[$meta_box['name'].'_noncename'], plugin_basename(__FILE__) )) {
+return $post_id;
+}
+ 
+if ( 'page' == $_POST['post_type'] ) {
+if ( !current_user_can( 'edit_page', $post_id ))
+return $post_id;
+} else {
+if ( !current_user_can( 'edit_post', $post_id ))
+return $post_id;
+}
+ 
+$data = $_POST[$meta_box['name'].'_value'];
+ 
+if(get_post_meta($post_id, $meta_box['name'].'_value') == "")
+add_post_meta($post_id, $meta_box['name'].'_value', $data, true);
+elseif($data != get_post_meta($post_id, $meta_box['name'].'_value', true))
+update_post_meta($post_id, $meta_box['name'].'_value', $data);
+elseif($data == "")
+delete_post_meta($post_id, $meta_box['name'].'_value', get_post_meta($post_id, $meta_box['name'].'_value', true));
+}
+}
+if ($mantra_seo_gen_desc=="Manual") {
+	add_action('admin_menu', 'mantra_create_meta_box');
+	add_action('save_post', 'mantra_save_postdata');
+}
+
 
 /**
  * Show the social icons in case they are enabled.
@@ -892,12 +1070,13 @@ function mantra_set_social_icons() {
 for ($i=1; $i<=9; $i+=2) {
 	$j=$i+1;
 	if ( ${"mantra_social$j"} ) {?>
-		<a target="_blank" href="<?php echo ${"mantra_social$j"}; ?>" class="socialicons" id="<?php echo ${"mantra_social$i"}; ?>" title="<?php echo ${"mantra_social$i"}; ?>"><img alt="<?php echo ${"mantra_social$i"}; ?>" src="<?php echo get_template_directory_uri().'/images/socials/'.${"mantra_social$i"}.'.png'; ?>" /></a><?php 
+		<a target="_blank" rel="nofollow" href="<?php echo ${"mantra_social$j"}; ?>" class="socialicons social-<?php echo ${"mantra_social$i"}; ?>" title="<?php echo ${"mantra_social$i"}; ?>"><img alt="<?php echo ${"mantra_social$i"}; ?>" src="<?php echo get_template_directory_uri().'/images/socials/'.${"mantra_social$i"}.'.png'; ?>" /></a><?php 
 				} 
 		}
 }
 
 // Get any existing copy of our transient data
+delete_transient( 'theme_info');
 if ( false === ( $theme_info = get_transient( 'theme_info' ) ) ) {
     // It wasn't there, so regenerate the data and save the transient
  if ( ! function_exists( 'get_custom_header' ) ) {  $theme_info = get_theme_data( get_theme_root() . '/mantra/style.css' ); }
@@ -954,197 +1133,6 @@ endwhile; else: endif;
 wp_reset_query();
 
 return $testVar;
-}
-
-/**
- * Export Mantra settings to file
- */
-
-function mantra_export_options(){
-
-    ob_clean();
-	
-	/* Check authorisation */
-	$authorised = true;
-	// Check nonce
-	if ( ! wp_verify_nonce( $_POST['mantra-export'], 'mantra-export' ) ) { 
-		$authorised = false;
-	}
-	// Check permissions
-	if ( ! current_user_can( 'edit_theme_options' ) ){
-		$authorised = false;
-	}
-
-	if ( $authorised) {
-global $mantra_options;
-/*date_default_timezone_set('UTC');
-$today = date("YmdGis");
-$name = 'mantra-settings'.$today.'.txt';*/
-		$name = 'mantra-settings.txt';
-		$data = $mantra_options;
-		$data = json_encode( $data );
-		$size = strlen( $data );
-	
-		header( 'Content-Type: text/plain' );
-		header( 'Content-Disposition: attachment; filename="'.$name.'"' );
-		header( "Content-Transfer-Encoding: binary" );
-		header( 'Accept-Ranges: bytes' );
-	
-		/* The three lines below basically make the download non-cacheable */
-		header( "Cache-control: private" );
-		header( 'Pragma: private' );
-		header( "Expires: Mon, 26 Jul 1997 05:00:00 GMT" );
-	
-		header( "Content-Length: " . $size);
-		print( $data );
-}
-die();
-}
-
-if ( isset( $_POST['mantra_export'] ) ){
-	add_action( 'init', 'mantra_export_options' );
-}
-
-/**
- * This file manages the theme settings uploading and import operations.
- * Uses the theme page to create a new form for uplaoding the settings
- * Uses WP_Filesystem
-*/
-function mantra_import_form(){            
-    
-    $bytes = apply_filters( 'import_upload_size_limit', wp_max_upload_size() );
-    $size = wp_convert_bytes_to_hr( $bytes );
-    $upload_dir = wp_upload_dir();
-    if ( ! empty( $upload_dir['error'] ) ) :
-        ?><div class="error"><p><?php _e('Before you can upload your import file, you will need to fix the following error:', 'mantra'); ?></p>
-            <p><strong><?php echo $upload_dir['error']; ?></strong></p></div><?php
-    else :
-    ?>
-
-    <div class="wrap">
-		<div style="width:400px;display:block;margin-left:30px;">
-        <div id="icon-tools" class="icon32"><br></div>
-        <h2><?php echo __( 'Import Mantra Theme Options', 'mantra' );?></h2>    
-        <form enctype="multipart/form-data" id="import-upload-form" method="post" action="">
-        	<p><?php _e('Hi! This is where you import the  Mantra settings.<i> Please remember that this is still an experimental feature.</i>', 'mantra'); ?></p>
-            <p>
-                <label for="upload"><strong><?php _e('Just choose a file from your computer:', 'mantra'); ?> </strong><i>(mantra-settings.txt)</i></label> 
-		       <input type="file" id="upload" name="import" size="25"  />
-				<span style="font-size:10px;">(<?php  printf( __( 'Maximum size: %s', 'mantra' ), $size ); ?> )</span>
-                <input type="hidden" name="action" value="save" />
-                <input type="hidden" name="max_file_size" value="<?php echo $bytes; ?>" />
-                <?php wp_nonce_field('mantra-import', 'mantra-import'); ?>
-                <input type="hidden" name="mantra_import_confirmed" value="true" />
-            </p>
-            <input type="submit" class="button" value="<?php _e('And import!', 'mantra'); ?>" />            
-        </form>
-	</div>
-    </div> <!-- end wrap -->
-    <?php
-    endif;
-} // Closes the mantra_import_form() function definition 
-
-
-/**
- * This actual import of the options from the file to the settings array.
-*/
-function mantra_import_file() {
-    global $mantra_options;
-    
-    /* Check authorisation */
-    $authorised = true;
-    // Check nonce
-    if (!wp_verify_nonce($_POST['mantra-import'], 'mantra-import')) {$authorised = false;}
-    // Check permissions
-    if (!current_user_can('edit_theme_options')){ $authorised = false; }
-    
-    // If the user is authorised, import the theme's options to the database
-    if ($authorised) {?>
-        <?php
-        // make sure there is an import file uploaded
-        if ( (isset($_FILES["import"]["size"]) &&  ($_FILES["import"]["size"] > 0) ) ) {
-
-			$form_fields = array('import');
-			$method = '';
-			
-			$url = wp_nonce_url('themes.php?page=mantra-page', 'mantra-import');
-			
-			// Get file writing credentials
-			if (false === ($creds = request_filesystem_credentials($url, $method, false, false, $form_fields) ) ) {
-				return true;
-			}
-			
-			if ( ! WP_Filesystem($creds) ) {
-				// our credentials were no good, ask the user for them again
-				request_filesystem_credentials($url, $method, true, false, $form_fields);
-				return true;
-			}
-			
-			// Write the file if credentials are good
-			$upload_dir = wp_upload_dir();
-			$filename = trailingslashit($upload_dir['path']).'mantra_options.txt';
-				 
-			// by this point, the $wp_filesystem global should be working, so let's use it to create a file
-			global $wp_filesystem;
-			if ( ! $wp_filesystem->move($_FILES['import']['tmp_name'], $filename, true) ) {
-				echo 'Error saving file!';
-				return;
-			}
-			
-			$file = $_FILES['import'];
-			
-			if ($file['type'] == 'text/plain') {
-				$data = $wp_filesystem->get_contents($filename);
-				// try to read the file
-				if ($data !== FALSE){
-					$settings = json_decode($data, true);
-					// try to read the settings array
-					if (isset($settings['mantra_db'])){ ?>
-        <div class="wrap">
-        <div id="icon-tools" class="icon32"><br></div>
-        <h2><?php echo __( 'Import Mantra Theme Options ', 'mantra' );?></h2> <?php 
-						$settings = array_merge($mantra_options, $settings);
-						update_option('ma_options', $settings);
-						echo '<div class="updated fade"><p>'. __('Great! The options have been imported!', 'mantra').'<br />';
-						echo '<a href="themes.php?page=mantra-page">'.__('Go back to the Mantra options page and check them out!', 'mantra').'<a></p></div>';
-					} 
-					else { // else: try to read the settings array
-						echo '<div class="error"><p><strong>'.__('Oops, there\'s a small problem.', 'mantra').'</strong><br />';
-						echo __('The uploaded file does not contain valid Mantra options. Make sure the file is exported from the Mantra Options page.', 'mantra').'</p></div>';
-						mantra_import_form();
-					}                    
-				} 
-				else { // else: try to read the file
-					echo '<div class="error"><p><strong>'.__('Oops, there\'s a small problem.', 'mantra').'</strong><br />';
-					echo __('The uploaded file could not be read.', 'mantra').'</p></div>';
-					mantra_import_form();
-				} 
-			}
-			else { // else: make sure the file uploaded was a plain text file
-				echo '<div class="error"><p><strong>'.__('Oops, there\'s a small problem.', 'mantra').'</strong><br />';
-				echo __('The uploaded file is not supported. Make sure the file was exported from the Mantra page and that it is a text file.', 'mantra').'</p></div>';
-				mantra_import_form();
-			}
-			
-			// Delete the file after we're done
-			$wp_filesystem->delete($filename);
-			
-        }
-        else { // else: make sure there is an import file uploaded           
-            echo '<div class="error"><p>'.__( 'Oops! The file is empty or there was no file. This error could also be caused by uploads being disabled in your php.ini or by post_max_size being defined as smaller than upload_max_filesize in php.ini.', 'mantra' ).'</p></div>';
-			mantra_import_form();        
-        }
-        echo '</div> <!-- end wrap -->';
-    }
-    else {
-        wp_die(__('ERROR: You are not authorised to perform that operation', 'mantra'));            
-    }           
-} // Closes the mantra_import_file() function definition 
-
-// Truncate function for use in the Admin RSS feed 
-function mantra_truncate_words($string,$words=20, $ellipsis=' ...') {
- $new = preg_replace('/((\w+\W+\'*){'.($words-1).'}(\w+))(.*)/', '${1}', $string);
- return $new.$ellipsis;
 }
 
 // Front page generator

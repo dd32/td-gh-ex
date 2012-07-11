@@ -176,6 +176,18 @@ $mantra_options= mantra_get_theme_options();
 foreach ($mantra_options as $key => $value) {
      ${"$key"} = esc_attr($value) ; }
 
-if ($mantra_customcss != "") { echo '<style>'.htmlspecialchars_decode($mantra_customcss, ENT_QUOTES).'</style>';}
-							}
+if ($mantra_customcss != "") { 
+		echo '<style>'.htmlspecialchars_decode($mantra_customcss, ENT_QUOTES).'</style>';
+			}
+}
+
+function mantra_customjs() {
+$mantra_options= mantra_get_theme_options();
+foreach ($mantra_options as $key => $value) {
+     ${"$key"} = esc_attr($value) ; }
+
+if ($mantra_customjs != "") { 
+			echo '<script>'.htmlspecialchars_decode($mantra_customjs, ENT_QUOTES).'</script>';
+			}
+}
 ?>

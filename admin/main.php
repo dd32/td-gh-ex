@@ -28,22 +28,7 @@ $mantra_options= mantra_get_theme_options();
 
 // Registering and enqueuing all scripts and styles for the init hook
 function mantra_init() {
-if (is_admin() ) {
-	wp_register_script('adminjs',get_template_directory_uri() . '/admin/js/admin.js', array('jquery') );
-	wp_enqueue_script('adminjs');
-	wp_enqueue_script("farbtastic");
-	wp_enqueue_style( 'farbtastic' );
-    wp_enqueue_script('jquery-ui-accordion');
-	wp_enqueue_script('jquery-ui-slider');	
-// For backwards compatibility where Mantra is installed on older versions of WP where the ui accordion and slider is not included
-	if (!wp_script_is('jquery-ui-accordion',$list='registered')) {
-		wp_register_script('cr2_accordion',get_template_directory_uri() . '/admin/js/accordion-slider.js', array('jquery') );
-		wp_enqueue_script('cr2_accordion');
-		}	
-	wp_enqueue_script('media-upload');
-	wp_enqueue_script('thickbox');
-	wp_enqueue_style('thickbox');
-	}
+//Loading Mantra text domain into the admin section 
 		load_theme_textdomain( 'mantra', get_template_directory_uri() . '/languages' );
 }
 
@@ -65,6 +50,25 @@ if (is_admin() ) {
 
 // The settings sectoions. All the referenced functions are found in admin-functions.php
 function mantra_init_fn(){
+
+// The farbtastic color selector already included in WP 
+	wp_enqueue_script("farbtastic");
+	wp_enqueue_style( 'farbtastic' );
+//Jquery accordion and slider libraries alreay included in WP
+    wp_enqueue_script('jquery-ui-accordion');
+	wp_enqueue_script('jquery-ui-slider');	
+// For backwards compatibility where Mantra is installed on older versions of WP where the ui accordion and slider are not included
+	if (!wp_script_is('jquery-ui-accordion',$list='registered')) {
+		wp_register_script('cr2_accordion',get_template_directory_uri() . '/admin/js/accordion-slider.js', array('jquery') );
+		wp_enqueue_script('cr2_accordion');
+		}	
+// For the WP uploader
+	wp_enqueue_script('media-upload');
+	wp_enqueue_script('thickbox');
+	wp_enqueue_style('thickbox');	
+// The js used in the admin
+	wp_register_script('madminjs',get_template_directory_uri() . '/admin/js/admin.js' );
+	wp_enqueue_script('madminjs');
 
 	register_setting('ma_options', 'ma_options', 'ma_options_validate' );
 	add_settings_section('layout_section', __('Layout Settings','mantra'), 'section_layout_fn', __FILE__);
@@ -176,17 +180,18 @@ function mantra_init_fn(){
 	add_settings_field('mantra_mobile', __('Mobile view','mantra') , 'setting_mobile_fn', __FILE__, 'misc_section');
 	add_settings_field('mantra_favicon', __('FavIcon','mantra') , 'setting_favicon_fn', __FILE__, 'misc_section');
 	add_settings_field('mantra_customcss', __('Custom CSS','mantra') , 'setting_customcss_fn', __FILE__, 'misc_section');
-
+	add_settings_field('mantra_customjs', __('Custom JavaScript','mantra') , 'setting_customjs_fn', __FILE__, 'misc_section');
+	add_settings_field('mantra_seo', __('SEO Settings','mantra') , 'setting_seo_fn', __FILE__, 'misc_section');
 }
 
  // Display the admin options page
 function mantra_page_fn() {
- // Load the input page
+ // Load the import form page if the import button has been pressed
 	if (isset($_POST['mantra_import'])) {            
 		mantra_import_form();
 		return;                           
 	}
- // Load the input page after upload button has been pressed
+ // Load the import form  page after upload button has been pressed
 	if (isset($_POST['mantra_import_confirmed'])) {            
 		mantra_import_file();
 		return;                           
@@ -311,103 +316,6 @@ uGoJV/7kErByS98U5Gze/kUo5OvpezDjckdR0TJfoNFDKiAit+Qf9+ToViM/CmY2cONArejftWlnEKik
 </div><!--  wrap -->
 
 <script>
-jQuery(document).ready(function() {
-jQuery('#mantra_defaults').click (function() {
-if (!confirm('Reset Mantra Settings to Defaults?')) {
-                return false;}
- });
- 
-// Hide or show dimmensions
-jQuery('#mantra_dimselect').change(function() {
- if(jQuery('#mantra_dimselect option:selected').val()=="Absolute") {jQuery('#relativedim').hide("normal");jQuery('#absolutedim').show("normal");}
-else {jQuery('#relativedim').show("normal");jQuery('#absolutedim').hide("normal");}
-});
-if(jQuery('#mantra_dimselect option:selected').val()=="Absolute") {jQuery('#relativedim').hide("normal");jQuery('#absolutedim').show("normal");}
-else {jQuery('#relativedim').show("normal");jQuery('#absolutedim').hide("normal");}
-
-// Hide or show slider settings
-jQuery('#mantra_slideType').change(function() {
-jQuery('.slideDivs').hide("normal");
-	switch (jQuery('#mantra_slideType option:selected').val()) {
-
-		case "Custom Slides" :
- 		jQuery('#sliderCustomSlides').show("normal");
-		break;
-
-		case "Latest Posts" :
- 		jQuery('#sliderLatestPosts').show("normal");
-		break;
-
-		case "Random Posts" :
- 		jQuery('#sliderRandomPosts').show("normal");
-		break;
-
-		case "Sticky Posts" :
- 		jQuery('#sliderStickyPosts').show("normal");
-		break;
-
-		case "Latest Posts from Category" :
- 		jQuery('#sliderLatestCateg').show("normal");
-		break;
-
-		case "Random Posts from Category" :
- 		jQuery('#sliderRandomCateg').show("normal");
-		break;
-
-		case "Specific Posts" :
- 		jQuery('#sliderSpecificPosts').show("normal");
-		break;
-
-}
-
-});
-
-jQuery('.slideDivs').hide("normal");
-	switch (jQuery('#mantra_slideType option:selected').val()) {
-
-		case "Custom Slides" :
- 		jQuery('#sliderCustomSlides').show("normal");
-		break;
-
-		case "Latest Posts" :
- 		jQuery('#sliderLatestPosts').show("normal");
-		break;
-
-		case "Random Posts" :
- 		jQuery('#sliderRandomPosts').show("normal");
-		break;
-
-		case "Sticky Posts" :
- 		jQuery('#sliderStickyPosts').show("normal");
-		break;
-
-		case "Latest Posts from Category" :
- 		jQuery('#sliderLatestCateg').show("normal");
-		break;
-
-		case "Random Posts from Category" :
- 		jQuery('#sliderRandomCateg').show("normal");
-		break;
-
-		case "Specific Posts" :
- 		jQuery('#sliderSpecificPosts').show("normal");
-		break;
-};
-
-// Color selector enabler
-function startfarb(a,b) {
-jQuery(b).css('display','none');
-	
-   jQuery(b).farbtastic(a);
-	jQuery(a).click(function() {
-  if(jQuery(b).css('display') == 'none')	jQuery(b).show(300);
-});
-
-	jQuery(document).mousedown( function() {
-			jQuery(b).hide(700);
-		});
-}
-
 startfarb("#mantra_backcolor","#mantra_backcolor2");
 startfarb("#mantra_headercolor","#mantra_headercolor2");
 startfarb("#mantra_prefootercolor","#mantra_prefootercolor2");
@@ -427,25 +335,17 @@ startfarb("#mantra_footerhover","#mantra_footerhover2");
 
 startfarb("#mantra_fronttitlecolor","#mantra_fronttitlecolor2");
 
-  });
+function startfarb(a,b) {
+	jQuery(b).css('display','none');	
+	jQuery(b).farbtastic(a);
+	
+	jQuery(a).click(function() {
+			if(jQuery(b).css('display') == 'none')	jQuery(b).show(300);
+		});
 
-	jQuery('.form-table').wrap('<div>');
-	jQuery(function() {
-		jQuery( "#accordion" ).accordion({
-				 header: 'h3',
-			autoHeight: false,
-			collapsible: true,
-			navigation: true,
-			active: false });
-
-	});
-
-function changeBorder (idName, className) {
-jQuery('.'+className).removeClass( 'checkedClass' );
-jQuery('.'+className).removeClass( 'borderful' );
-jQuery('#'+idName).addClass( 'borderful' );
-
-return 0;
+	jQuery(document).mousedown( function() {
+			jQuery(b).hide(700);
+		});
 }
 </script>
 

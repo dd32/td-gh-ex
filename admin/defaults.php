@@ -159,6 +159,7 @@ $mantra_defaults = array(
 "mantra_excerpttags" => "Disable",
 
 "mantra_fpost" => "Disable",
+"mantra_fpostlink" => "1",
 "mantra_fauto" => "Disable",
 "mantra_falign" => "Left",
 "mantra_fwidth" => "250",
@@ -186,6 +187,11 @@ $mantra_defaults = array(
 "mantra_pagination" => "Enable",
 "mantra_mobile" => "Disable",
 "mantra_favicon" => "",
-"mantra_customcss" => "/* Mantra Custom CSS */  ");
+"mantra_customcss" => "/* Mantra Custom CSS */  ",
+"mantra_customjs" => "",
+"mantra_seo" => "Enable",
+"mantra_seo_home_desc" => "",
+"mantra_seo_gen_desc" => "Auto",
+"mantra_seo_author" => "Do not use");
 
 ?>

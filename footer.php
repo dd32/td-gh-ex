@@ -40,7 +40,7 @@ foreach ($mantra_options as $key => $value) {
 			| <?php echo '<b title="'.$mantra_theme_data['Version'].'">'.$mantra_theme_data['Name'].'</b> Theme by '.$mantra_theme_data['Author']; ?> | Powered by
 			<?php do_action( 'mantra_credits' ); ?>
 				<a href="<?php echo esc_url('http://wordpress.org/' ); ?>"
-						title="<?php esc_attr_e('Semantic Personal Publishing Platform', 'mantra'); ?>" rel="generator">
+						title="<?php esc_attr_e('Semantic Personal Publishing Platform', 'mantra'); ?>">
 					<?php printf(' %s.', 'WordPress' ); ?>
 				</a>
 			</div>

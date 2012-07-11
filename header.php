@@ -8,29 +8,18 @@
  * @subpackage mantra
  * @since mantra 0.5
  */
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+ ?><!DOCTYPE html >
 <html <?php language_attributes(); ?>>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=<?php bloginfo( 'charset' ); ?>" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
-<title><?php
-	/*
-	 * Print the <title> tag based on what is being viewed.
-	 */
-	wp_title( '', true, 'right' );
-
-	?></title>
-<?php
+<?php  	mantra_seo_hook(); 
 /* This  retrieves  admin options. */
-
 $mantra_options= mantra_get_theme_options();
 foreach ($mantra_options as $key => $value) {	
      ${"$key"} = $value ;
 }
-?>
-
-<link rel="profile" href="http://gmpg.org/xfn/11" />
+?><link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <!--[if lt IE 9]>
 <script>
@@ -43,23 +32,18 @@ document.createElement('footer');
 document.createElement('hgroup');
 </script>
 <![endif]-->
-
 <?php if ($mantra_options['mantra_favicon']) { ?> <link rel="shortcut icon" href="<?php echo $mantra_options['mantra_favicon']; ?>" />
 <?php }
-
 	/* Always have wp_head() just before the closing </head>
 	 * tag of your theme, or you will break many plugins, which
 	 * generally use this hook to add elements to <head> such
 	 * as styles, scripts, and meta tags.
-	 */
-	 
+	 */	 
  	mantra_header(); 
 	wp_head(); ?>
-
 </head>
-
 <body <?php body_class(); ?>>
-<script>
+<script type="text/javascript">
     jQuery(document).ready(function() {
     jQuery("#content img").addClass("<?php echo 'image'.$mantra_image;?>");
 	  jQuery(function () {
@@ -68,7 +52,6 @@ document.createElement('hgroup');
 					});
   });
     });
-
 </script>
 
 <div id="toTop"> </div>
@@ -99,17 +82,17 @@ document.createElement('hgroup');
 					// Houston, we have a new header image!
 					//echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' ); 
 					 $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), array(HEADER_IMAGE_WIDTH,HEADER_IMAGE_HEIGHT) ); 
-	 ?><style>
+	 ?><style type="text/css">
 	 #branding {background:url(<?php echo $image[0]; ?>) no-repeat;height:<?php echo HEADER_IMAGE_HEIGHT; ?>px;}
       </style>  
 				<?php else : if (get_header_image() != '') { ?>
-					<style> #branding {background:url("<?php header_image(); ?>") no-repeat; <?php if ($mantra_dimselect=="Absolute") { ?>width:<?php echo HEADER_IMAGE_WIDTH; ?>px; <?php } ?> height:<?php echo HEADER_IMAGE_HEIGHT; ?>px;} 
+					<style type="text/css"> #branding {background:url("<?php header_image(); ?>") no-repeat; <?php if ($mantra_dimselect=="Absolute") { ?>width:<?php echo HEADER_IMAGE_WIDTH; ?>px; <?php } ?> height:<?php echo HEADER_IMAGE_HEIGHT; ?>px;} 
 						 </style>
 				<?php } else { ?><?php } ?>
 				<?php endif; 
 
 				if ($mantra_options['mantra_linkheader']=="Enable") { ?>  
-				<style>
+				<style type="text/css">
 					#linky { display:block; position:absolute; width:<?php echo HEADER_IMAGE_WIDTH; ?>px; height:<?php echo HEADER_IMAGE_HEIGHT; ?>px; z-index:1; }
 					#branding { height:<?php echo HEADER_IMAGE_HEIGHT; ?>px; }
 					#site-title, #site-description, #sheader { position:relative; z-index:2 }
@@ -129,9 +112,6 @@ document.createElement('hgroup');
 		</div><!-- #masthead -->
 
 <div style="clear:both;"> </div>
-
-
-
 
 	</header><!-- #header -->
 	<div id="main">
