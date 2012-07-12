@@ -47,6 +47,7 @@ echo '<'.'?'.'xml version="1.0" encoding="'.get_bloginfo( 'charset' ).'"'.'?'.'>
 </head>
 <body <?php body_class(); ?>>
 <div id="<?php echo raindrops_warehouse('raindrops_page_width'); ?>" class="<?php echo 'yui-'.raindrops_warehouse('raindrops_col_width'); ?> hfeed">
+<?php raindrops_prepend_doc();?>
 <div id="top">
 <div id="hd">
 <?php
@@ -96,6 +97,7 @@ if( raindrops_warehouse( 'raindrops_show_menu_primary' ) == "show" ){ ?>
 wp_nav_menu( array('container_class' => 'menu-header', 'theme_location' => 'primary') ); ?>
 </div>
 <br class="clear" />
+<?php raindrops_after_nav_menu();?>
 </div>
 <?php  }//raindrops_warehouse( 'raindrops_show_menu_primary' ) ?>
 <div id="bd" class="clearfix">
