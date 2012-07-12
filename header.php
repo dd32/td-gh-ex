@@ -3,7 +3,7 @@
     * The template for displaying the header of the theme.
     *
     * @author Aurelio De Rosa <aurelioderosa@gmail.com>
-    * @version 1.0.4
+    * @version 1.0.5
     * @link http://wordpress.org/extend/themes/annarita
     * @package AurelioDeRosa
     * @subpackage Annarita
@@ -69,7 +69,8 @@
             {
                wp_nav_menu(array(
                   'theme_location' => 'header-menu',
-                  'container' => ''
+                  'container' => '',
+                  'menu_id' => 'menu-header'
                ));
             }
             else
