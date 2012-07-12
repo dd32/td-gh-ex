@@ -413,11 +413,7 @@ function catchbox_settings_field_feed_redirect() {
 function catchbox_settings_field_custom_css() {
 	$options = catchbox_get_theme_options();
 	?>
-     <textarea id="custom-css" cols="90" rows="12" name="catchbox_theme_options[custom_css]">
-     
-     <?php if (!empty($options['custom_css'])) esc_attr($options['custom_css']); ?>
-     
-     </textarea>
+     <textarea id="custom-css" cols="90" rows="12" name="catchbox_theme_options[custom_css]"><?php if (!empty($options['custom_css'] ) )echo esc_attr($options['custom_css']); ?></textarea>
 
 	<?php
 }
@@ -515,7 +511,12 @@ function catchbox_options_slider_page() {
                 </div>
             <?php endif; ?> 
            	<div id="featuredslider">
-                <table class="form-table">
+                <table class="form-table">               
+                	<tr>                            
+                        <th scope="row"><h4><?php _e( 'Exclude Slider post from Home page posts:', 'catchresponsive' ); ?></h4></th>
+                        <input type='hidden' value='0' name='catchbox_options_slider[exclude_slider_post]'>
+                        <td><input type="checkbox" id="headerlogo" name="catchbox_options_slider[exclude_slider_post]" value="1" <?php isset($options['exclude_slider_post']) ? checked( '1', $options['exclude_slider_post'] ) : checked('0', '1'); ?> /></td>
+                    </tr>
                     <tr>
                         <th scope="row"><h4><?php _e( 'Number of Slides', 'catchbox' ); ?></h4></th>
                         <td><input type="text" name="catchbox_options_slider[slider_qty]" value="<?php if ( array_key_exists ( 'slider_qty', $options ) ) echo intval( $options[ 'slider_qty' ] ); ?>" /></td>
@@ -741,6 +742,11 @@ function catchbox_options_validation($options) {
 		if ( absint( $options[ 'featured_slider' ][ $i ] ) ) 
 			$options_validated[ 'featured_slider' ][ $i ] = absint($options[ 'featured_slider' ][ $i ] );
 	}
+	if ( isset( $options['exclude_slider_post'] ) ) {
+        // Our checkbox value is either 0 or 1 
+   		$options_validated[ 'exclude_slider_post' ] = $options[ 'exclude_slider_post' ];	
+	
+    }
 	//Clearing the theme option cache
 	if( function_exists( 'catchbox_themeoption_invalidate_caches' ) )  { catchbox_themeoption_invalidate_caches(); }
 	
@@ -891,7 +897,7 @@ add_action( 'wp_enqueue_scripts', 'catchbox_enqueue_color_scheme' );
  * @since Catch Box 1.0
  */
 function catchbox_inline_css() {
-    $options = get_option('catchbox_get_theme_options');
+    $options = catchbox_get_theme_options();
     if ($options['custom_css']) {
 		echo '<!-- '.get_bloginfo('name').' Custom CSS Styles -->' . "\n";
         echo '<style type="text/css" media="screen">' . "\n";
@@ -1134,7 +1140,7 @@ add_action('catchbox_startgenerator_open', 'catchbox_socialprofile');
  * Redirect WordPress Feeds To FeedBurner
  */
 function catchbox_rss_redirect() {
-	$options = get_option('catchbox_get_theme_options');
+	$options = catchbox_get_theme_options();
     if ($options['feed_url']) {
 		$url = 'Location: '.$options['feed_url'];
 		if ( is_feed() && !preg_match('/feedburner|feedvalidator/i', $_SERVER['HTTP_USER_AGENT']))

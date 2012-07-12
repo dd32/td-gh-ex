@@ -58,3 +58,8 @@ Version 1.0.7
 * Cleaned header.php file.
 * Fixed functions.php file.
 * Fixed theme_options.php file
+
+Version 1.0.8
+* Added option to exclude featured slider post from Home page posts.
+* Fixed issue with inline CSS option
+* Cleaned theme-options.php

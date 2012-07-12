@@ -773,3 +773,21 @@ function catchbox_enqueue_comment_reply_script() {
 	}
 }
 add_action( 'comment_form_before', 'catchbox_enqueue_comment_reply_script' );
+
+/**
+ * Alter the query for the main loop in home page
+ * @uses pre_get_posts hook
+ */
+function catch_box_alter_home( $query ){
+	$options = get_option( 'catchbox_options_slider' );
+	if( !isset( $options[ 'exclude_slider_post' ] ) ) {
+ 		$options[ 'exclude_slider_post' ] = "0";
+ 	}
+    if ( $options[ 'exclude_slider_post'] != "0" && !empty( $options[ 'featured_slider' ] ) ) {
+		if( $query->is_main_query() && $query->is_home() ) {
+			$query->query_vars['post__not_in'] = $options[ 'featured_slider' ];
+
+		}
+	}
+}
+add_action( 'pre_get_posts','catch_box_alter_home' );
