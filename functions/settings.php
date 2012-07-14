@@ -25,6 +25,10 @@ function origami_settings_init(){
 		'description' => __('Featured image above posts', 'origami')
 	));
 
+	so_settings_add_field('display', 'header_search', 'checkbox', __('Header Search', 'origami'), array(
+		'description' => __('Search input in header', 'origami')
+	));
+
 	so_settings_add_teaser('display', 'attribution', __('Footer Attribution Link', 'origami'), array(
 		'description' => __('Remove the "theme by SiteOrigin" in your footer.', 'origami')
 	));
@@ -101,11 +105,15 @@ function origami_settings_defaults($defaults){
 		? $simple_options['display_use_columns'] : true;
 	
 	$defaults['display_featured_image'] = true;
+	$defaults['display_header_search'] = true;
 	$defaults['display_attribution'] = true;
 	$defaults['display_loop_comments'] = false;
 	
 	$defaults['comments_ajax'] = true;
 	$defaults['responsive_footer'] = true;
+
+	$defaults['social_share'] = true;
+	$defaults['social_twitter'] = '';
 	
 	return $defaults;
 }

@@ -7,8 +7,7 @@
  */
 function so_settings_init($theme_name = null){
 	if(empty($theme_name)) {
-		$theme = wp_get_theme();
-		$theme_name = $theme->get_template();
+		$theme_name = basename(get_template_directory());
 	}
 	
 	$GLOBALS['so_settings_theme_name'] = $theme_name;
@@ -32,16 +31,16 @@ function so_settings_init($theme_name = null){
  */
 function so_settings_help_tab(){
 	$screen = get_current_screen();
-	$theme = wp_get_theme();
+	$theme = basename(get_template_directory());
 	
 	ob_start();
 	?>
 	<p>
 		<?php
 		printf(
-			__('<a href="%s" target="_blank">Documentation</a> for %s is available on SiteOrigin.', 'siteorigin'),
-			'http://siteorigin.com/doc/'.$theme->get_template().'/',
-			$theme->get('Name')
+			__("Please read %s's <a href='%s'>Documentation</a>.", 'siteorigin'),
+			ucfirst($theme),
+			admin_url('themes.php?page=so_theme_docs')
 		);
 		?>
 	</p>
@@ -220,7 +219,7 @@ function so_settings_field($args){
 		case 'teaser' :
 			?>
 			<div class="premium-teaser">
-				<?php printf(__('<a href="%s" target="_blank">Premium version</a> only', 'siteorigin'), function_exists('so_premium_get_url') ? so_premium_get_url() : '#') ?>
+				<?php printf(__('<a href="%s">Premium version</a> only', 'siteorigin'), admin_url('themes.php?page=premium_upgrade')) ?>
 			</div>
 			<?php
 			break;

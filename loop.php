@@ -35,9 +35,7 @@
 				$columns = get_post_meta($post->ID, 'content_columns', true);
 				if($columns === false) $columns = 2;
 			}
-			else{
-				$columns = 1;
-			}
+			else $columns = 1;
 			?>
 			<div class="content column-<?php print $columns ?>">
 				<?php if(has_post_thumbnail() && get_post_format() == 'image') : ?>
@@ -84,7 +82,7 @@
 					
 					<?php if(is_singular() && so_setting('social_share')) locate_template('social-share.php', true); ?>
 				</div>
-			<?php endif; ?>
+			<?php elseif(so_setting('social_share') && function_exists('so_share_render')) : so_share_render(array('twitter' => so_setting('social_twitter'))); endif; ?>
 				
 			<?php if(is_singular()) : ?>
 				<div id="single-comments-wrapper">
