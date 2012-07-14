@@ -1,6 +1,6 @@
 <?php
 
-define('SO_THEME_VERSION', '1.2');
+define('SO_THEME_VERSION', '1.2.1');
 define('SO_THEME_ENDPOINT', 'http://siteorigin.com');
 
 // Include premium functions if it exists
