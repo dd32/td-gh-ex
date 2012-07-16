@@ -1,0 +1,1104 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Responsive v1.6.7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-04-25 13:42:58 UTC\n"
+"PO-Revision-Date: 2012-07-12 06:02:49+0000\n"
+"Last-Translator: grapplerulrich <grapplerulrich@gmail.com>\n"
+"Language-Team: Italian, Italy\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: \n"
+"X-Poedit-Country: \n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: \n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: 404.php:26
+#: archive.php:103
+#: blog-excerpt.php:95
+#: blog.php:94
+#: content-sidebar-half-page.php:91
+#: content-sidebar-page.php:91
+#: full-width-page.php:91
+#: image.php:84
+#: index.php:84
+#: landing-page.php:59
+#: page.php:90
+#: sidebar-content-half-page.php:91
+#: sidebar-content-page.php:91
+#: single.php:97
+#: sitemap.php:80
+#@ responsive
+msgid "404 &#8212; Fancy meeting you here!"
+msgstr "404 &#8212; Non hai trovato ci&#242; che cercavi!"
+
+#: 404.php:27
+#: archive.php:104
+#: blog-excerpt.php:96
+#: blog.php:95
+#: content-sidebar-half-page.php:92
+#: content-sidebar-page.php:92
+#: full-width-page.php:92
+#: landing-page.php:60
+#: page.php:91
+#: search.php:79
+#: sidebar-content-half-page.php:92
+#: sidebar-content-page.php:92
+#: single.php:98
+#: sitemap.php:81
+#@ responsive
+msgid "Don&#39;t panic, we&#39;ll get through this together. Let&#39;s explore our options here."
+msgstr "Niente panico! Esplora le opzioni che hai a disposizione."
+
+#: 404.php:28
+#: archive.php:105
+#: blog-excerpt.php:97
+#: blog.php:96
+#: content-sidebar-half-page.php:93
+#: content-sidebar-page.php:93
+#: full-width-page.php:93
+#: image.php:86
+#: index.php:86
+#: landing-page.php:61
+#: page.php:92
+#: search.php:80
+#: sidebar-content-half-page.php:93
+#: sidebar-content-page.php:93
+#: single.php:99
+#: sitemap.php:82
+#@ responsive
+msgid "You can return"
+msgstr "Puoi tornare alla"
+
+#: 404.php:28
+#: archive.php:105
+#: blog-excerpt.php:97
+#: blog.php:96
+#: content-sidebar-half-page.php:93
+#: content-sidebar-page.php:93
+#: full-width-page.php:93
+#: includes/functions.php:285
+#: landing-page.php:61
+#: page.php:92
+#: search.php:80
+#: sidebar-content-half-page.php:93
+#: sidebar-content-page.php:93
+#: single.php:99
+#: sitemap.php:82
+#@ responsive
+msgid "Home"
+msgstr "Home"
+
+#: 404.php:28
+#: archive.php:105
+#: blog-excerpt.php:97
+#: blog.php:96
+#: content-sidebar-half-page.php:93
+#: content-sidebar-page.php:93
+#: full-width-page.php:93
+#: image.php:86
+#: index.php:86
+#: landing-page.php:61
+#: page.php:92
+#: search.php:80
+#: sidebar-content-half-page.php:93
+#: sidebar-content-page.php:93
+#: single.php:99
+#: sitemap.php:82
+#@ responsive
+msgid "&larr; Home"
+msgstr "&larr; Home"
+
+#: 404.php:28
+#: archive.php:105
+#: blog-excerpt.php:97
+#: blog.php:96
+#: content-sidebar-half-page.php:93
+#: content-sidebar-page.php:93
+#: full-width-page.php:93
+#: image.php:86
+#: index.php:86
+#: landing-page.php:61
+#: page.php:92
+#: search.php:80
+#: sidebar-content-half-page.php:93
+#: sidebar-content-page.php:93
+#: single.php:99
+#: sitemap.php:82
+#@ responsive
+msgid "or search for the page you were looking for"
+msgstr "o effettuare una ricerca"
+
+#: archive.php:34
+#, php-format
+#@ responsive
+msgid "Daily Archives: %s"
+msgstr "Archivio Giornaliero: %s"
+
+#: archive.php:36
+#, php-format
+#@ responsive
+msgid "Monthly Archives: %s"
+msgstr "Archivio Mensile: %s"
+
+#: archive.php:38
+#, php-format
+#@ responsive
+msgid "Yearly Archives: %s"
+msgstr "Archivio Annuale: %s"
+
+#: archive.php:40
+#@ responsive
+msgid "Blog Archives"
+msgstr "Archivio Blog"
+
+#: archive.php:47
+#: blog-excerpt.php:41
+#: blog.php:40
+#: index.php:30
+#: search.php:33
+#: sitemap.php:51
+#, php-format
+#@ responsive
+msgid "Permanent Link to %s"
+msgstr "Link Permanente a %s"
+
+#: archive.php:51
+#: blog-excerpt.php:45
+#: blog.php:44
+#: content-sidebar-half-page.php:41
+#: content-sidebar-page.php:41
+#: full-width-page.php:41
+#: image.php:35
+#: index.php:34
+#: page.php:40
+#: search.php:37
+#: sidebar-content-half-page.php:41
+#: sidebar-content-page.php:41
+#: single.php:39
+#, php-format
+#@ responsive
+msgid "<span class=\"%1$s\">Posted on</span> %2$s by %3$s"
+msgstr "<span class=\"%1$s\">Pubblicato il</span> %2$s da %3$s"
+
+#: archive.php:59
+#: blog-excerpt.php:53
+#: blog.php:52
+#: content-sidebar-half-page.php:49
+#: content-sidebar-page.php:49
+#: full-width-page.php:49
+#: image.php:43
+#: index.php:42
+#: page.php:48
+#: search.php:45
+#: sidebar-content-half-page.php:49
+#: sidebar-content-page.php:49
+#: single.php:47
+#, php-format
+#@ responsive
+msgid "View all posts by %s"
+msgstr "Vedi tutti gli articoli di %s"
+
+#: archive.php:67
+#: blog-excerpt.php:61
+#: blog.php:60
+#: content-sidebar-half-page.php:57
+#: content-sidebar-page.php:57
+#: full-width-page.php:57
+#: image.php:51
+#: index.php:50
+#: page.php:56
+#: search.php:53
+#: sidebar-content-half-page.php:57
+#: sidebar-content-page.php:57
+#: single.php:55
+#@ responsive
+msgid "No Comments &darr;"
+msgstr "Nessun Commento &darr;"
+
+#: archive.php:67
+#: blog-excerpt.php:61
+#: blog.php:60
+#: content-sidebar-half-page.php:57
+#: content-sidebar-page.php:57
+#: full-width-page.php:57
+#: image.php:51
+#: index.php:50
+#: page.php:56
+#: search.php:53
+#: sidebar-content-half-page.php:57
+#: sidebar-content-page.php:57
+#: single.php:55
+#@ responsive
+msgid "1 Comment &darr;"
+msgstr "1 Commento &darr;"
+
+#: archive.php:67
+#: blog-excerpt.php:61
+#: blog.php:60
+#: content-sidebar-half-page.php:57
+#: content-sidebar-page.php:57
+#: full-width-page.php:57
+#: image.php:51
+#: index.php:50
+#: page.php:56
+#: search.php:53
+#: sidebar-content-half-page.php:57
+#: sidebar-content-page.php:57
+#: single.php:55
+#@ responsive
+msgid "% Comments &darr;"
+msgstr "% Commenti &darr;"
+
+#: archive.php:79
+#: blog-excerpt.php:73
+#: blog.php:72
+#: content-sidebar-half-page.php:65
+#: content-sidebar-page.php:65
+#: full-width-page.php:65
+#: image.php:60
+#: index.php:62
+#: landing-page.php:35
+#: page.php:64
+#: search.php:60
+#: sidebar-content-half-page.php:65
+#: sidebar-content-page.php:65
+#: single.php:73
+#: sitemap.php:63
+#@ responsive
+msgid "Pages:"
+msgstr "Pagine:"
+
+#: archive.php:83
+#: blog-excerpt.php:77
+#: blog.php:76
+#: content-sidebar-half-page.php:70
+#: content-sidebar-page.php:70
+#: full-width-page.php:70
+#: image.php:70
+#: index.php:66
+#: landing-page.php:40
+#: page.php:69
+#: sidebar-content-half-page.php:70
+#: sidebar-content-page.php:70
+#: single.php:77
+#@ responsive
+msgid "Tagged with:"
+msgstr "Taggato con:"
+
+#: archive.php:84
+#: blog-excerpt.php:78
+#: blog.php:77
+#: content-sidebar-half-page.php:71
+#: content-sidebar-page.php:71
+#: full-width-page.php:71
+#: image.php:71
+#: index.php:67
+#: landing-page.php:41
+#: page.php:70
+#: sidebar-content-half-page.php:71
+#: sidebar-content-page.php:71
+#: single.php:78
+#, php-format
+#@ responsive
+msgid "Posted in %s"
+msgstr "Pubblicato in %s"
+
+#: archive.php:87
+#: blog-excerpt.php:81
+#: blog.php:80
+#: content-sidebar-half-page.php:75
+#: content-sidebar-page.php:75
+#: full-width-page.php:75
+#: image.php:75
+#: index.php:70
+#: landing-page.php:45
+#: page.php:74
+#: search.php:64
+#: sidebar-content-half-page.php:75
+#: sidebar-content-page.php:75
+#: single.php:81
+#: sitemap.php:66
+#@ responsive
+msgid "Edit"
+msgstr "Modifica"
+
+#: archive.php:96
+#: blog-excerpt.php:88
+#: blog.php:87
+#: content-sidebar-half-page.php:84
+#: content-sidebar-page.php:84
+#: full-width-page.php:84
+#: index.php:77
+#: landing-page.php:52
+#: page.php:83
+#: search.php:71
+#: sidebar-content-half-page.php:84
+#: sidebar-content-page.php:84
+#: single.php:90
+#: sitemap.php:73
+#@ responsive
+msgid "&#8249; Older posts"
+msgstr "&#8249; Articoli pi&#249; vecchi"
+
+#: archive.php:97
+#: blog-excerpt.php:89
+#: blog.php:88
+#: content-sidebar-half-page.php:85
+#: content-sidebar-page.php:85
+#: full-width-page.php:85
+#: index.php:78
+#: landing-page.php:53
+#: page.php:84
+#: search.php:72
+#: sidebar-content-half-page.php:85
+#: sidebar-content-page.php:85
+#: single.php:91
+#: sitemap.php:74
+#@ responsive
+msgid "Newer posts &#8250;"
+msgstr "Articoli pi&#249; nuovi &#8250;"
+
+#: blog.php:71
+#: content-sidebar-half-page.php:64
+#: content-sidebar-page.php:64
+#: full-width-page.php:64
+#: image.php:59
+#: includes/functions.php:229
+#: index.php:61
+#: landing-page.php:34
+#: page.php:63
+#: sidebar-content-half-page.php:64
+#: sidebar-content-page.php:64
+#: single.php:61
+#@ responsive
+msgid "Read more &#8250;"
+msgstr "Leggi altro &#8250;"
+
+#: comments.php:22
+#@ responsive
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "Questo articolo &#232; protetto da passwod. Inserisci la password per vedere i commenti."
+
+#: comments.php:36
+#: comments.php:47
+#@ responsive
+msgid "&#8249; Older comments"
+msgstr "&#8249; Commenti pi&#249; vecchi"
+
+#: comments.php:29
+#, php-format
+#@ responsive
+msgid "One comment on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+
+#: comments.php:37
+#: comments.php:48
+#@ responsive
+msgid "Newer comments &#8250;"
+msgstr "Commenti recenti &#8250;"
+
+#: comments.php:59
+#@ responsive
+msgid "Pings&#47;Trackbacks"
+msgstr "Pings&#47;Trackbacks"
+
+#: comments.php:62
+#@ responsive
+msgid "for"
+msgstr "per"
+
+#: comments.php:75
+#@ responsive
+msgid "Name"
+msgstr "Nome"
+
+#: comments.php:77
+#@ responsive
+msgid "E-mail"
+msgstr "E-Mail"
+
+#: comments.php:79
+#@ responsive
+msgid "Website"
+msgstr "Website"
+
+#: footer.php:104
+#@ responsive
+msgid "&copy;"
+msgstr "©"
+
+#: footer.php:109
+#@ responsive
+msgid "scroll to top"
+msgstr "vai in alto"
+
+#: footer.php:109
+#@ responsive
+msgid "&uarr;"
+msgstr "↑"
+
+#: footer.php:112
+#@ responsive
+msgid "http://themeid.com/responsive-theme/"
+msgstr "http://themeid.com/responsive-theme/"
+
+#: footer.php:112
+#@ responsive
+msgid "Responsive Theme"
+msgstr "Responsive Theme"
+
+#: footer.php:114
+#@ responsive
+msgid "powered by"
+msgstr ""
+
+#: footer.php:114
+#@ responsive
+msgid "http://wordpress.org/"
+msgstr "http://it.wordpress.org/"
+
+#: footer.php:114
+#@ responsive
+msgid "WordPress"
+msgstr "WordPress"
+
+#: home.php:39
+#@ responsive
+msgid "Hello, World!"
+msgstr "Ciao, Mondo!"
+
+#: home.php:53
+#@ responsive
+msgid "Your H2 subheadline here"
+msgstr "Sottotitolo H2 qui"
+
+#: home.php:67
+#@ responsive
+msgid ""
+"Your title, subtitle and this very content is editable from Theme Option. \n"
+"\t\t\t\t\t      Call to Action button and its destination link as well. Image on your right \n"
+"\t\t\t\t\t\t  can be an image or even YouTube video if you like."
+msgstr ""
+"Il tuo titolo, sottotitolo e il contenuto sono modificabili da Opzioni Tema. \n"
+"\t\t\t\t\t     Ugualmente il bottone Richiama un&#39;Azione e il suo link di destinazione. L&#39;immagine alla tua destra \n"
+"\t\t\t\t\t\t  pu&#242; essere un&#39;immagine o un link youtube."
+
+#: home.php:87
+#@ responsive
+msgid "Call to Action"
+msgstr "Richiama un&#39;Azione"
+
+#: image.php:31
+#@ responsive
+msgid "&#8249; Return to"
+msgstr "&#8249; Torna a"
+
+#: image.php:85
+#: index.php:85
+#@ responsive
+msgid "Don't panic, we'll get through this together. Let's explore our options here."
+msgstr "Niente panico! Esplora le opzioni che hai a disposizione."
+
+#: image.php:86
+#: index.php:86
+#@ responsive
+msgid "home"
+msgstr "home"
+
+#: search.php:27
+#, php-format
+#@ responsive
+msgid "Search Results for: %s"
+msgstr "Risultati della ricerca di: %s"
+
+#: search.php:78
+#@ responsive
+msgid "Your search for"
+msgstr ""
+
+#: search.php:78
+#@ responsive
+msgid "did not match any entries"
+msgstr ""
+
+#: searchform.php:22
+#@ responsive
+msgid "search here &hellip;"
+msgstr "ricerca &hellip;"
+
+#: searchform.php:23
+#@ responsive
+msgid "Go"
+msgstr "Vai"
+
+#: sidebar-gallery.php:25
+#@ responsive
+msgid "Image Information"
+msgstr "Informazioni Immagine"
+
+#: sidebar-gallery.php:30
+#@ responsive
+msgid "Full Size:"
+msgstr "Dimensione intera:"
+
+#: sidebar-gallery.php:33
+#@ responsive
+msgid "Aperture: f&#47;"
+msgstr "Apertura: f&#47;"
+
+#: sidebar-gallery.php:37
+#@ responsive
+msgid "Focal Length:"
+msgstr "Lunghezza focale:"
+
+#: sidebar-gallery.php:37
+#@ responsive
+msgid "mm"
+msgstr "mm"
+
+#: sidebar-gallery.php:41
+#@ responsive
+msgid "ISO:"
+msgstr "ISO:"
+
+#: sidebar-gallery.php:45
+#@ responsive
+msgid "Shutter:"
+msgstr "Shutter:"
+
+#: sidebar-gallery.php:62
+#@ responsive
+msgid "Camera:"
+msgstr "Camera:"
+
+#: sidebar-half-left.php:27
+#: sidebar-left-half.php:27
+#: sidebar-left.php:27
+#: sidebar-right-half.php:27
+#: sidebar-right.php:27
+#: sidebar.php:27
+#@ responsive
+msgid "In Archive"
+msgstr "In Archivio"
+
+#: includes/functions.php:481
+#: sidebar-home.php:28
+#@ responsive
+msgid "Home Widget 1"
+msgstr "Widget Home 1"
+
+#: sidebar-home.php:29
+#@ responsive
+msgid "This is your first home widget box. To edit please go to Appearance > Widgets and choose 6th widget from the top in area six called Home Widget 1. Title is also manageable from widgets as well."
+msgstr "Questo &#232; il tuo primo widget box della home. Per modificarlo vai su Aspetto > Widget e scegli il sesto widget dall&#39;alto chiamato Widget Home 1. Potrai modificarne anche il titolo."
+
+#: includes/functions.php:491
+#: sidebar-home.php:43
+#@ responsive
+msgid "Home Widget 2"
+msgstr "Widget Home 2"
+
+#: sidebar-home.php:44
+#@ responsive
+msgid "This is your second home widget box. To edit please go to Appearance > Widgets and choose 7th widget from the top in area seven called Home Widget 2. Title is also manageable from widgets as well."
+msgstr "Questo &#232; il tuo secondo widget box della home. Per modificarlo vai su Aspetto > Widget e scegli il settimo widget dall&#39;alto chiamato Widget Home 2. Potrai modificarne anche il titolo."
+
+#: includes/functions.php:501
+#: sidebar-home.php:58
+#@ responsive
+msgid "Home Widget 3"
+msgstr "Widget Home 3"
+
+#: sidebar-home.php:59
+#@ responsive
+msgid "This is your third home widget box. To edit please go to Appearance > Widgets and choose 8th widget from the top in area eight called Home Widget 3. Title is also manageable from widgets as well."
+msgstr "Questo &#232; il tuo terzo widget box della home. Per modificarlo vai su Aspetto > Widget e scegli l&#39;ottavo widget dall&#39;alto chiamato Widget Home 3. Potrai modificarne anche il titolo."
+
+#: single.php:67
+#@ responsive
+msgid "About"
+msgstr "About"
+
+#: sitemap.php:42
+#@ responsive
+msgid "Categories"
+msgstr "Categorie"
+
+#: sitemap.php:47
+#@ responsive
+msgid "Latest Posts"
+msgstr "Articoli Recenti"
+
+#: sitemap.php:58
+#@ responsive
+msgid "Pages"
+msgstr "Pagine"
+
+#: includes/functions.php:74
+#@ responsive
+msgid "Top Menu"
+msgstr "Menu Top"
+
+#: includes/functions.php:75
+#@ responsive
+msgid "Header Menu"
+msgstr "Menu Header"
+
+#: includes/functions.php:76
+#@ responsive
+msgid "Sub-Header Menu"
+msgstr "Menu Sub-Header"
+
+#: includes/functions.php:77
+#@ responsive
+msgid "Footer Menu"
+msgstr "Menu Footer"
+
+#: includes/functions.php:304
+#@ responsive
+msgid "Archive for "
+msgstr "Archivio per "
+
+#: includes/functions.php:357
+#@ responsive
+msgid "Search results for "
+msgstr "Risultati ricerca per "
+
+#: includes/functions.php:360
+#@ responsive
+msgid "Posts tagged "
+msgstr "Articoli taggati "
+
+#: includes/functions.php:365
+#@ responsive
+msgid "All posts by "
+msgstr "Tutti gli articoli di "
+
+#: includes/functions.php:368
+#@ responsive
+msgid "Error 404 "
+msgstr "Errore 404 "
+
+#: includes/functions.php:373
+#@ responsive
+msgid "Page"
+msgstr "Pagina"
+
+#: includes/functions.php:419
+#@ responsive
+msgid "Untitled"
+msgstr "Senza Nome"
+
+#: includes/functions.php:431
+#@ responsive
+msgid "Main Sidebar"
+msgstr "Barra laterale principale"
+
+#: includes/functions.php:432
+#@ responsive
+msgid "Area One - sidebar.php"
+msgstr "Area One - sidebar.php"
+
+#: includes/functions.php:441
+#@ responsive
+msgid "Right Sidebar"
+msgstr "Barra laterale destra"
+
+#: includes/functions.php:442
+#@ responsive
+msgid "Area Two - sidebar-right.php"
+msgstr "Area Two - sidebar-right.php"
+
+#: includes/functions.php:451
+#@ responsive
+msgid "Left Sidebar"
+msgstr "Barra laterale sinistra"
+
+#: includes/functions.php:452
+#@ responsive
+msgid "Area Three - sidebar-left.php"
+msgstr "Area Three - sidebar-left.php"
+
+#: includes/functions.php:461
+#@ responsive
+msgid "Left Sidebar Half Page"
+msgstr "Barra laterale sinistra Met&#224; Pagina"
+
+#: includes/functions.php:462
+#@ responsive
+msgid "Area Four - sidebar-left-half.php"
+msgstr "Area Four - sidebar-left-half.php"
+
+#: includes/functions.php:471
+#@ responsive
+msgid "Right Sidebar Half Page"
+msgstr "Barra laterale destra Met&#224; Pagina"
+
+#: includes/functions.php:472
+#@ responsive
+msgid "Area Five - sidebar-right-half.php"
+msgstr "Area Five - sidebar-right-half.php"
+
+#: includes/functions.php:482
+#@ responsive
+msgid "Area Six - sidebar-home.php"
+msgstr "Area Six - sidebar-home.php"
+
+#: includes/functions.php:492
+#@ responsive
+msgid "Area Seven - sidebar-home.php"
+msgstr "Area Seven - sidebar-home.php"
+
+#: includes/functions.php:502
+#@ responsive
+msgid "Area Eight - sidebar-home.php"
+msgstr "Area Eight - sidebar-home.php"
+
+#: includes/functions.php:511
+#@ responsive
+msgid "Gallery Sidebar"
+msgstr "Barra laterale Galleria"
+
+#: includes/functions.php:512
+#@ responsive
+msgid "Area Nine - sidebar-gallery.php"
+msgstr "Area Nine - sidebar-gallery.php"
+
+#: includes/theme-options.php:45
+#: includes/theme-options.php:118
+#@ responsive
+msgid "Theme Options"
+msgstr "Opzioni Tema"
+
+#: includes/theme-options.php:122
+#@ responsive
+msgid "Options Saved"
+msgstr "Opzioni Salvate"
+
+#: includes/theme-options.php:131
+#@ responsive
+msgid "Theme Elements"
+msgstr "Elementi Tema"
+
+#: includes/theme-options.php:140
+#@ responsive
+msgid "Disable Breadcrumb Lists?"
+msgstr "Disabilita lista Breadcrumb?"
+
+#: includes/theme-options.php:143
+#: includes/theme-options.php:154
+#@ responsive
+msgid "Check to disable"
+msgstr "Clicca per disabilitare"
+
+#: includes/theme-options.php:151
+#@ responsive
+msgid "Disable Call to Action Button?"
+msgstr "Disabilita il bottone Richiama un&#39;Azione"
+
+#: includes/theme-options.php:156
+#: includes/theme-options.php:253
+#: includes/theme-options.php:311
+#: includes/theme-options.php:398
+#: includes/theme-options.php:424
+#@ responsive
+msgid "Save Options"
+msgstr "Salva Opzioni"
+
+#: includes/theme-options.php:163
+#@ responsive
+msgid "Logo Upload"
+msgstr "Upload Logo"
+
+#: includes/theme-options.php:171
+#@ responsive
+msgid "Custom Header"
+msgstr "Intestazione Personalizzata"
+
+#: includes/theme-options.php:174
+#, php-format
+#@ responsive
+msgid "Need to replace or remove default logo? <a href=\"%s\">Click here</a>."
+msgstr "Hai bisogno di modificare o eliminare il logo di default? <a href=\"%s\">Clicca qui</a>."
+
+#: includes/theme-options.php:181
+#@ responsive
+msgid "Home Page"
+msgstr "Home Page"
+
+#: includes/theme-options.php:189
+#@ responsive
+msgid "Headline"
+msgstr "Titolo"
+
+#: includes/theme-options.php:192
+#@ responsive
+msgid "Enter your headline"
+msgstr "Inserisci il titolo"
+
+#: includes/theme-options.php:200
+#@ responsive
+msgid "Subheadline"
+msgstr "Sottotitolo"
+
+#: includes/theme-options.php:203
+#@ responsive
+msgid "Enter your subheadline"
+msgstr "Inserisci il Sottotitolo"
+
+#: includes/theme-options.php:211
+#@ responsive
+msgid "Content Area"
+msgstr "Contenuto"
+
+#: includes/theme-options.php:214
+#@ responsive
+msgid "Enter your content"
+msgstr "Inserisci il tuo contenuto"
+
+#: includes/theme-options.php:222
+#@ responsive
+msgid "Call to Action (URL)"
+msgstr "Richiama un&#39;Azione (URL)"
+
+#: includes/theme-options.php:225
+#@ responsive
+msgid "Enter your call to action URL"
+msgstr "Inserisci il testo del campo Richiama un&#39;Azione"
+
+#: includes/theme-options.php:233
+#@ responsive
+msgid "Call to Action (Text)"
+msgstr "Richiama un&#39;Azione (Text)"
+
+#: includes/theme-options.php:236
+#@ responsive
+msgid "Enter your call to action text"
+msgstr "Inserisci il testo del campo Richiama un&#39;Azione"
+
+#: includes/theme-options.php:245
+#@ responsive
+msgid "Featured Content"
+msgstr "Contenuto correlato"
+
+#: includes/theme-options.php:246
+#@ responsive
+msgid "http://themeid.com/forum/topic/510/theme-options-featured-content/"
+msgstr "http://themeid.com/forum/topic/510/theme-options-featured-content/"
+
+#: includes/theme-options.php:246
+#: includes/theme-options.php:247
+#@ responsive
+msgid "See Docs"
+msgstr ""
+
+#: includes/theme-options.php:251
+#@ responsive
+msgid "Paste your video or image source"
+msgstr "Incolla l&#39;url del tuo video o della tua immagine"
+
+#: includes/theme-options.php:260
+#@ responsive
+msgid "Webmaster Tools"
+msgstr "Strumenti Webmaster"
+
+#: includes/theme-options.php:269
+#@ responsive
+msgid "Google Site Verification"
+msgstr "Verifica Google Site"
+
+#: includes/theme-options.php:272
+#@ responsive
+msgid "Enter your Google ID number only"
+msgstr "Inserisci il tuo Google ID"
+
+#: includes/theme-options.php:280
+#@ responsive
+msgid "Bing Site Verification"
+msgstr "Verifica Bing Site"
+
+#: includes/theme-options.php:283
+#@ responsive
+msgid "Enter your Bing ID number only"
+msgstr "Inserisci il tuo Bing ID"
+
+#: includes/theme-options.php:291
+#@ responsive
+msgid "Yahoo Site Verification"
+msgstr "Verifica Yahoo Site"
+
+#: includes/theme-options.php:294
+#@ responsive
+msgid "Enter your Yahoo ID number only"
+msgstr "Inserisci il tuo Yahoo ID"
+
+#: includes/theme-options.php:303
+#@ responsive
+msgid "Site Statistics Tracker"
+msgstr "Tracker Statistiche Sito"
+
+#: includes/theme-options.php:304
+#@ responsive
+msgid "Leave blank if plugin handles your webmaster tools"
+msgstr ""
+
+#: includes/theme-options.php:309
+#@ responsive
+msgid "Google Analytics, StatCounter, any other or all of them."
+msgstr "Google Analytics, StatCounter, o altri."
+
+#: includes/theme-options.php:318
+#@ responsive
+msgid "Social Icons"
+msgstr "Icone Social"
+
+#: includes/theme-options.php:327
+#@ responsive
+msgid "Twitter"
+msgstr "Twitter"
+
+#: includes/theme-options.php:330
+#@ responsive
+msgid "Enter your Twitter URL"
+msgstr "Inserisci il tuo indirizzo Twitter"
+
+#: includes/theme-options.php:333
+#@ responsive
+msgid "Facebook"
+msgstr "Facebook"
+
+#: includes/theme-options.php:336
+#@ responsive
+msgid "Enter your Facebook URL"
+msgstr "Inserisci il tuo indirizzo Facebook"
+
+#: includes/theme-options.php:339
+#@ responsive
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: includes/theme-options.php:342
+#@ responsive
+msgid "Enter your LinkedIn URL"
+msgstr "Inserisci il tuo indirizzo LinkedIn"
+
+#: includes/theme-options.php:345
+#@ responsive
+msgid "YouTube"
+msgstr "YouTube"
+
+#: includes/theme-options.php:348
+#@ responsive
+msgid "Enter your YouTube URL"
+msgstr "Inserisci il tuo indirizzo YouTube"
+
+#: includes/theme-options.php:351
+#@ responsive
+msgid "StumbleUpon"
+msgstr "StumbleUpon"
+
+#: includes/theme-options.php:354
+#@ responsive
+msgid "Enter your StumbleUpon URL"
+msgstr "Inserisci il tuo indirizzo StumbleUpon"
+
+#: includes/theme-options.php:357
+#@ responsive
+msgid "RSS Feed"
+msgstr "Feed RSS"
+
+#: includes/theme-options.php:360
+#@ responsive
+msgid "Enter your RSS Feed URL"
+msgstr "Inserisci il tuo indirizzo per i Feed RSS"
+
+#: includes/theme-options.php:363
+#@ responsive
+msgid "Google+"
+msgstr "Google +"
+
+#: includes/theme-options.php:366
+#@ responsive
+msgid "Enter your Google+ URL"
+msgstr "Inserisci il tuo indirizzo Google+"
+
+#: includes/theme-options.php:369
+#@ responsive
+msgid "Instagram"
+msgstr "Instagram"
+
+#: includes/theme-options.php:372
+#@ responsive
+msgid "Enter your Instagram URL"
+msgstr "Inserisci il tuo indirizzo Instagram"
+
+#: includes/theme-options.php:375
+#@ responsive
+msgid "Pinterest"
+msgstr "Pinterest"
+
+#: includes/theme-options.php:378
+#@ responsive
+msgid "Enter your Pinterest URL"
+msgstr "Inserisci il tuo indirizzo Pinterest"
+
+#: includes/theme-options.php:405
+#: includes/theme-options.php:415
+#@ responsive
+msgid "Custom CSS Styles"
+msgstr ""
+
+#: includes/theme-options.php:416
+#@ responsive
+msgid "https://developer.mozilla.org/en/CSS"
+msgstr "https://developer.mozilla.org/it/CSS"
+
+#: includes/theme-options.php:416
+#: includes/theme-options.php:417
+#@ responsive
+msgid "CSS Tutorial"
+msgstr ""
+
+#: includes/theme-options.php:422
+#@ responsive
+msgid "Enter your custom CSS styles."
+msgstr ""
+
+#: includes/theme-options.php:381
+#@ responsive
+msgid "Yelp!"
+msgstr ""
+
+#: includes/theme-options.php:384
+#@ responsive
+msgid "Enter your Yelp! URL"
+msgstr ""
+
+#: includes/theme-options.php:387
+#@ responsive
+msgid "Vimeo"
+msgstr ""
+
+#: includes/theme-options.php:390
+#@ responsive
+msgid "Enter your Vimeo URL"
+msgstr ""
+
+#: includes/theme-options.php:393
+#@ responsive
+msgid "foursquare"
+msgstr ""
+
+#: includes/theme-options.php:396
+#@ responsive
+msgid "Enter your foursquare URL"
+msgstr ""
+
