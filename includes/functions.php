@@ -17,8 +17,6 @@ if ( !defined('ABSPATH')) exit;
  * @link           http://codex.wordpress.org/Theme_Development#Functions_File
  * @since          available since Release 1.0
  */
-?>
-<?php
 
 /*=======================================================================
  * Fire up the engines to start theme setup.
@@ -49,7 +47,7 @@ if (!function_exists('sampression_setup')):
             $locale_file = get_template_directory().'/languages/$locale.php';
             if (is_readable( $locale_file))
 	            require_once( $locale_file);
-						
+				
         /**
          * Add callback for custom TinyMCE editor stylesheets. (editor-style.css)
          * @see http://codex.wordpress.org/Function_Reference/add_editor_style
@@ -75,8 +73,7 @@ if (!function_exists('sampression_setup')):
          * @see http://codex.wordpress.org/Function_Reference/register_nav_menus
          */	
         register_nav_menus(array(
-			'top-menu'         => __('Top Menu', 'sampression'),
-	        'filter-menu'      => __('Filter Menu', 'sampression')
+			'top-menu'         => __('Top Menu', 'sampression')
 		    )
 	    );
 		
@@ -240,8 +237,8 @@ add_filter( 'comment_excerpt', 'wp_filter_nohtml_kses' );
 /*=======================================================================
  * Run function during a themes initialization. It clear all widgets
  *=======================================================================*/
-add_action( 'setup_theme', 'sampression_setup' );
-function sampression_setup() {
+add_action( 'setup_theme', 'sampression_widget_reset' );
+function sampression_widget_reset() {
     if(isset( $_GET['activated'] )) {
         add_filter( 'sidebars_widgets', 'disable_all_widgets' );
         function disable_all_widgets( $sidebars_widgets ) {
@@ -250,7 +247,6 @@ function sampression_setup() {
         }
     }
 }
-
 
 /*=======================================================================
  * WordPress Widgets start right here.
@@ -454,12 +450,24 @@ function sampression_logo() {
 * embed the javascript file that makes the AJAX request to filter category in top nav
 *=======================================================================*/
 
- wp_enqueue_script( 'my-ajax-request', get_template_directory_uri() . '/lib/js/load_content.js', array( 'jquery' ), '1.1', true );
+if (!is_admin())
+	add_action('wp_enqueue_scripts', 'sampression_ajax');
+	
+
+if (!function_exists('sampression_ajax')) {
+
+	function sampression_ajax() {
+		wp_enqueue_script("jquery");
+		
+		 wp_enqueue_script( 'my-ajax-request', get_template_directory_uri() . '/lib/js/load_content.js', '' , '1.1', true );
+		 wp_localize_script( 'my-ajax-request', 'MyAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+	}
+
+}
 
 /*=======================================================================
 * declare the URL to the file that handles the AJAX request (wp-admin/admin-ajax.php)
 *=======================================================================*/
-wp_localize_script( 'my-ajax-request', 'MyAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 
 add_action( 'wp_ajax_nopriv_filter-cat-data', 'filter_cat_callback' );
 add_action( 'wp_ajax_filter-cat-data', 'filter_cat_callback' );

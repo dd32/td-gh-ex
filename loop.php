@@ -21,6 +21,13 @@ if ( !defined('ABSPATH')) exit;
 
       <h3 class="post-title"><a href="<?php the_permalink() ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="bookmark" ><?php the_title(); ?></a></h3>
       
+      <?php if ( comments_open() ) : ?>
+            <span class="col count-comment">
+            <span class="pointer"></span>
+            <?php comments_popup_link(__('0', 'sampression'), __('1', 'sampression'), __('%', 'sampression')); ?>
+            </span>
+     <?php endif; ?>
+      
       <?php if ( has_post_thumbnail() ) { ?>
         <div class="featured-img">
         <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( the_title_attribute( 'echo=0' ) ); ?>" ><?php the_post_thumbnail( 'large' ); ?></a>
@@ -49,15 +56,6 @@ if ( !defined('ABSPATH')) exit;
 						)
                 );
             ?>
-
-			<?php if ( comments_open() ) : ?>
-            <span class="col count-comment">
-            <span class="pointer"></span>
-            <?php comments_popup_link(__('0', 'sampression'), __('1', 'sampression'), __('%', 'sampression')); ?>
-            </span>
-            <?php endif; ?>
-        
-        
       </div>
       <div class="meta">
         <div class="cats"><?php printf(__('<span class="ico">Categories</span><div class="overflow-hidden cat-listing">%s</div>', 'responsive'), get_the_category_list(', ')); ?></div>

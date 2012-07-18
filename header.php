@@ -71,7 +71,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class('top'); ?>>
 
 <header id="header">
   <div class="container">
@@ -99,9 +99,9 @@
       <nav id="top-nav">
         <?php
 		//Check if the Custom Navigation is available
-		 if ( has_nav_menu('primary') ) {
+		 if ( has_nav_menu('top-menu') ) {
 			wp_nav_menu( array (
-				'theme_location'    => 'primary',
+				'theme_location'    => 'top-menu',
 				'container'         => '',
 				'menu_class'           => 'clearfix',
 				'depth'             => 1, // set to 1 to disable dropdowns
@@ -158,8 +158,6 @@
         endforeach;
         ?>
     </ul>
-    
-    
     
     <!-- Check Viewport: If the normal design couldn't fit with viewport, the Categories will appear via CSS with Select Menu form -->
     <select name="get-cats" id="get-cats">

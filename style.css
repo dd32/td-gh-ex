@@ -1,11 +1,11 @@
 /*
 Theme Name: Sampression Lite
-Theme URI: http://www.sampression.com/sampression-lite
+Theme URI: http://www.sampression.com/themes/sampression-lite/
 Author: Sampression
 Author URI: http://sampression.com
 Description: Sampression Lite is a fully responsive WordPress theme, perfect for blogging. It's lightweight responsive design allows this theme to adapt across a range of screen sizes. Besides an elegant design, Sampression Lite features customizable menus and widgets, along with a threaded comments section. It supports sticky notes with special effects and allows the best placement of feature images on posts. Under the advanced section this theme allows Admin to insert codes in the header and footer section. Sampression Lite was given a magical layout by <a href="http://isotope.metafizzy.co/">isotope</a> jQuery.
 
-Version: 1.0
+Version: 1.1
 License: GNU General Public License v2 or later
 License URI: license.txt
 Tags: white, orange, green, one-column, two-columns, flexible-width, featured-image-header, featured-images, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
@@ -35,7 +35,7 @@ Tags: white, orange, green, one-column, two-columns, flexible-width, featured-im
 
 /* #Reset & Basics (Inspired by E. Meyers)
 ================================================== */
-	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 		margin: 0;
 		padding: 0;
 		border: 0;
@@ -735,6 +735,9 @@ article.post {
 article.post.corner-stamp, .sticky {
 	background-color:#EAF8F6;
 	}
+article.post.corner-stamp .entry {
+	border:none;
+	}
 
 
 article.post:after {
@@ -760,7 +763,7 @@ article.post .post-title {
 	font-size:14px;
 	line-height:16px;
 	font-weight:bold;
-	padding:10px 20px;
+	padding:10px 35px 10px 20px;
 	margin:0;
 	word-wrap:break-word;
 	}
@@ -779,12 +782,14 @@ article.post .post-title a:hover {
 article.post .featured-img {
 	height:80px;
 	overflow:hidden;
+	margin-bottom:10px;
 	}
 body.single article.post .featured-img {
 	height:auto;
+	margin:0;
 	}
 article.post .entry {
-	padding:10px 20px;
+	padding:0 20px 10px 20px;
 	word-wrap: break-word;
 	}
 body.single article.post .entry,
@@ -856,7 +861,15 @@ body.single article.post .meta .col {
 	}
 
 .count-comment {
+	position:absolute;
+	right:10px;
+	top:10px;
+	z-index:10;
+	}
+body.single .count-comment {
 	position:relative;
+	top:inherit;
+	right:inherit;
 	float:right;
 	}
 .count-comment a {
@@ -883,6 +896,7 @@ body.single article.post .meta .col {
 	left:5px;
 	bottom:-2px;
 	}
+
 
 @-moz-document url-prefix() { 
   .count-comment .pointer {
