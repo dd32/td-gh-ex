@@ -3,49 +3,49 @@
 
 // General suboptions description
 
-function  section_layout_fn() {
+function  cryout_section_layout_fn() {
 
 //	echo "<p>".__("Settings for adjusting your blog's layout.", "mantra")."</p>";
 }
 
-function  section_presentation_fn() {
+function   cryout_section_presentation_fn() {
 
 //	echo "<p>".__("Settings for adjusting your blog's layout.", "mantra")."</p>";
 }
 
 
-function  section_text_fn() {
+function   cryout_section_text_fn() {
 	//echo "<p>".__("All text related customization options.", "mantra")."</p>";
 }
 
-function  section_graphics_fn() {
+function   cryout_section_graphics_fn() {
 //	echo "<p>".__("Settings for hiding or showing different graphics.", "mantra")."</p>";
 }
 
-function  section_post_fn() {
+function   cryout_section_post_fn() {
 	//echo "<p>".__("Settings for hiding or showing different post tags.", "mantra")."</p>";
 }
 
-function  section_excerpt_fn() {
+function   cryout_section_excerpt_fn() {
 //	echo "<p>".__("Settings for post excerpts", "mantra")."</p>";
 }
 
-function  section_appereance_fn() {
+function   cryout_section_appereance_fn() {
 //	echo "<p>".__("Set text and background colors.", "mantra")."</p>";
 }
 
 
-function  section_featured_fn() {
+function   cryout_section_featured_fn() {
 //	echo "<p>".__("Insert the addreses for your social media. Leave blank if not the case.
 //	Please type the whole address (including <i>http://</i> ) Example : <u>http://www.facebook.com</u>.", "mantra")."</p>";
 }
 
-function  section_social_fn() {
+function   cryout_section_social_fn() {
 //	echo "<p>".__("Insert the addreses for your social media. Leave blank if not the case.
 //	Please type the whole address (including <i>http://</i> ) Example : <u>http://www.facebook.com</u>.", "mantra")."</p>";
 }
 
-function  misc_social_fn() {
+function   cryout_section_misc_fn() {
 
 }
 
@@ -55,7 +55,7 @@ function  misc_social_fn() {
 
 
 // RADIO-BUTTON - Name: ma_options[side]
-function setting_side_fn() {
+function cryout_setting_side_fn() {
 global $mantra_options;
 	$items = array("1c", "2cSr", "2cSl", "3cSr" , "3cSl", "3cSs");
 	$layout_text["1c"] = __("One column (no sidebars)","mantra");
@@ -82,7 +82,7 @@ global $mantra_options;
 }
 
  //SLIDER - Name: ma_options[sidewidth]
-function setting_sidewidth_fn()
+function cryout_setting_sidewidth_fn()
    {
 global $mantra_options;
 	$items = array ("Absolute" , "Relative");
@@ -228,7 +228,7 @@ jQuery(function() {
 
 
  //SELECT - Name: ma_options[hheight]
-function  setting_hheight_fn() {
+function  cryout_setting_hheight_fn() {
 	global $mantra_options;?>
 <input id='mantra_hheight' name='ma_options[mantra_hheight]' size='4' type='text' value='<?php echo esc_attr( intval($mantra_options['mantra_hheight'] )) ?>'  />  px
 <?php
@@ -243,7 +243,7 @@ echo "<div><small>".__("Select the header's height. After saving the settings go
 
 
 //CHECKBOX - Name: ma_options[frontpage]
-function setting_frontpage_fn() {
+function cryout_setting_frontpage_fn() {
 	global $mantra_options;
 	$items = array ("Enable" , "Disable");
 	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
@@ -260,8 +260,9 @@ foreach($items as $id=>$item) {
 }
 
 //CHECKBOX - Name: ma_options[frontslider]
-function setting_frontslider_fn() {
+function cryout_setting_frontslider_fn() {
 	global $mantra_options;
+
 
 	echo "<div class='slmini'><b>".__("Slider Dimensions:","mantra")."</b> ";
 	echo "<input id='mantra_fpsliderwidth' name='ma_options[mantra_fpsliderwidth]' size='4' type='text' value='".esc_attr( $mantra_options['mantra_fpsliderwidth'] )."'  /> px (".__("width","mantra").") <strong>X</strong> ";
@@ -323,6 +324,7 @@ jQuery(document).ready(function(){
 			$categoryName=this.options[this.selectedIndex].value.replace(/\/category\/archives\//i,"");
 			doAjaxRequest();
      });
+		 
 });
 function doAjaxRequest(){
      // here is where the request will happen
@@ -372,7 +374,7 @@ function doAjaxRequest(){
 }
 
 //CHECKBOX - Name: ma_options[frontslider2]
-function setting_frontslider2_fn() {
+function cryout_setting_frontslider2_fn() {
 	global $mantra_options;
 ?>
 
@@ -438,19 +440,20 @@ foreach($items as $id=>$item) {
  <input id='mantra_slideNumber' name='ma_options[mantra_slideNumber]' size='3' type='text' value='<?php echo esc_attr( $mantra_options['mantra_slideNumber'] ) ?>'  /> 
  </span>
 
+
 <div id="sliderCustomSlides" class="slideDivs">
 <div class="slidebox"> 
 <h4 class="slidetitle" ><?php _e("Slide 1","mantra");?> </h4>
 <div class="slidercontent">
 <h5><?php _e("Image","mantra");?></h5>
-<input type="text" value="<?php echo  $mantra_options['mantra_sliderimg1']; ?>" name="ma_options[mantra_sliderimg1]" id="mantra_sliderimg1" class="slideimages" />
+<input type="text" value="<?php echo  esc_url($mantra_options['mantra_sliderimg1']); ?>" name="ma_options[mantra_sliderimg1]" id="mantra_sliderimg1" class="slideimages" />
 <span class="description"><a href="#" class="upload_image_button"><?php _e( 'Upload or select image from gallery', 'mantra' );?></a> </span>                                
 <h5> <?php _e("Title","mantra");?> </h5>
 <input id='mantra_slidertitle1' name='ma_options[mantra_slidertitle1]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_slidertitle1'] ) ?>'  />            
 <h5> <?php _e("Text","mantra");?> </h5>
-<textarea id='mantra_slidertext1' name='ma_options[mantra_slidertext1]' rows='3' cols='50' type='textarea' ><?php echo $mantra_options['mantra_slidertext1'] ?></textarea>
+<textarea id='mantra_slidertext1' name='ma_options[mantra_slidertext1]' rows='3' cols='50' type='textarea' ><?php echo esc_attr($mantra_options['mantra_slidertext1']) ?></textarea>
 <h5> <?php _e("Link","mantra");?> </h5>
-<input id='mantra_sliderlink1' name='ma_options[mantra_sliderlink1]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_sliderlink1'] ) ?>'  />            
+<input id='mantra_sliderlink1' name='ma_options[mantra_sliderlink1]' size='50' type='text' value='<?php echo esc_url( $mantra_options['mantra_sliderlink1'] ) ?>'  />            
 </div>
 </div>
 
@@ -458,14 +461,14 @@ foreach($items as $id=>$item) {
 <h4 class="slidetitle" > <?php _e("Slide 2","mantra");?> </h4>
 <div class="slidercontent">
 <h5><?php _e("Image","mantra");?></h5>
-<input type="text" value="<?php echo  $mantra_options['mantra_sliderimg2']; ?>" name="ma_options[mantra_sliderimg2]" id="mantra_sliderimg2" class="slideimages" />
+<input type="text" value="<?php echo  esc_url($mantra_options['mantra_sliderimg2']); ?>" name="ma_options[mantra_sliderimg2]" id="mantra_sliderimg2" class="slideimages" />
 <span class="description"><a href="#" class="upload_image_button"><?php _e( 'Upload or select image from gallery', 'mantra' );?></a> </span>     
 <h5> <?php _e("Title","mantra");?> </h5>
 <input id='mantra_slidertitle2' name='ma_options[mantra_slidertitle2]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_slidertitle2'] ) ?>'  />                            
 <h5> <?php _e("Text","mantra");?> </h5>
-<textarea id='mantra_slidertext2' name='ma_options[mantra_slidertext2]' rows='3' cols='50' type='textarea' ><?php echo $mantra_options['mantra_slidertext2'] ?></textarea>
+<textarea id='mantra_slidertext2' name='ma_options[mantra_slidertext2]' rows='3' cols='50' type='textarea' ><?php echo esc_attr($mantra_options['mantra_slidertext2']) ?></textarea>
 <h5> <?php _e("Link","mantra");?> </h5>
-<input id='mantra_sliderlink2' name='ma_options[mantra_sliderlink2]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_sliderlink2'] ) ?>'  />            
+<input id='mantra_sliderlink2' name='ma_options[mantra_sliderlink2]' size='50' type='text' value='<?php echo esc_url( $mantra_options['mantra_sliderlink2'] ) ?>'  />            
 </div>
 </div>
 
@@ -473,14 +476,14 @@ foreach($items as $id=>$item) {
 <h4 class="slidetitle" > <?php _e("Slide 3","mantra");?> </h4>
 <div class="slidercontent">
 <h5><?php _e("Image","mantra");?></h5>
-<input type="text" value="<?php echo  $mantra_options['mantra_sliderimg3']; ?>" name="ma_options[mantra_sliderimg3]" id="mantra_sliderimg3" class="slideimages" />
+<input type="text" value="<?php echo  esc_url($mantra_options['mantra_sliderimg3']); ?>" name="ma_options[mantra_sliderimg3]" id="mantra_sliderimg3" class="slideimages" />
 <span class="description"><a href="#" class="upload_image_button"><?php _e( 'Upload or select image from gallery', 'mantra' );?></a> </span>   
 <h5> <?php _e("Title","mantra");?> </h5>
 <input id='mantra_slidertitle3' name='ma_options[mantra_slidertitle3]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_slidertitle3'] ) ?>'  />                              
 <h5> <?php _e("Text","mantra");?> </h5>
-<textarea id='mantra_slidertext3' name='ma_options[mantra_slidertext3]' rows='3' cols='50' type='textarea' ><?php echo $mantra_options['mantra_slidertext3'] ?></textarea>
+<textarea id='mantra_slidertext3' name='ma_options[mantra_slidertext3]' rows='3' cols='50' type='textarea' ><?php echo esc_attr($mantra_options['mantra_slidertext3']) ?></textarea>
 <h5> <?php _e("Link","mantra");?> </h5>
-<input id='mantra_sliderlink3' name='ma_options[mantra_sliderlink3]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_sliderlink3'] ) ?>'  />            
+<input id='mantra_sliderlink3' name='ma_options[mantra_sliderlink3]' size='50' type='text' value='<?php echo esc_url( $mantra_options['mantra_sliderlink3'] ) ?>'  />            
 </div>
 </div>
 
@@ -488,14 +491,14 @@ foreach($items as $id=>$item) {
 <h4 class="slidetitle" > <?php _e("Slide 4","mantra");?> </h4>
 <div class="slidercontent">
 <h5><?php _e("Image","mantra");?></h5>
-<input type="text" value="<?php echo  $mantra_options['mantra_sliderimg4']; ?>" name="ma_options[mantra_sliderimg4]" id="mantra_sliderimg4" class="slideimages" />
+<input type="text" value="<?php echo  esc_url($mantra_options['mantra_sliderimg4']); ?>" name="ma_options[mantra_sliderimg4]" id="mantra_sliderimg4" class="slideimages" />
 <span class="description"><a href="#" class="upload_image_button"><?php _e( 'Upload or select image from gallery', 'mantra' );?></a> </span>   
 <h5> <?php _e("Title","mantra");?> </h5>
 <input id='mantra_slidertitle4' name='ma_options[mantra_slidertitle4]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_slidertitle4'] ) ?>'  />                              
 <h5> <?php _e("Text","mantra");?> </h5>
-<textarea id='mantra_slidertext4' name='ma_options[mantra_slidertext4]' rows='3' cols='50' type='textarea' ><?php echo $mantra_options['mantra_slidertext4'] ?></textarea>
+<textarea id='mantra_slidertext4' name='ma_options[mantra_slidertext4]' rows='3' cols='50' type='textarea' ><?php echo esc_attr($mantra_options['mantra_slidertext4']) ?></textarea>
 <h5> <?php _e("Link","mantra");?> </h5>
-<input id='mantra_sliderlink4' name='ma_options[mantra_sliderlink4]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_sliderlink4'] ) ?>'  />            
+<input id='mantra_sliderlink4' name='ma_options[mantra_sliderlink4]' size='50' type='text' value='<?php echo esc_url( $mantra_options['mantra_sliderlink4'] ) ?>'  />            
 </div>
 </div>
 
@@ -503,14 +506,14 @@ foreach($items as $id=>$item) {
 <h4 class="slidetitle" > <?php _e("Slide 5","mantra");?></h4>
 <div class="slidercontent">
 <h5><?php _e("Image","mantra");?></h5>
-<input type="text" value="<?php echo  $mantra_options['mantra_sliderimg5']; ?>" name="ma_options[mantra_sliderimg5]" id="mantra_sliderimg5" class="slideimages" />
+<input type="text" value="<?php echo  esc_url($mantra_options['mantra_sliderimg5']); ?>" name="ma_options[mantra_sliderimg5]" id="mantra_sliderimg5" class="slideimages" />
 <span class="description"><a href="#" class="upload_image_button"><?php _e( 'Upload or select image from gallery', 'mantra' );?></a> </span>
 <h5> <?php _e("Title","mantra");?> </h5>
 <input id='mantra_slidertitle5' name='ma_options[mantra_slidertitle5]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_slidertitle5'] ) ?>'  />                                 
 <h5> <?php _e("Text","mantra");?> </h5>
-<textarea id='mantra_slidertext5' name='ma_options[mantra_slidertext5]' rows='3' cols='50' type='textarea' ><?php echo $mantra_options['mantra_slidertext5'] ?></textarea>
+<textarea id='mantra_slidertext5' name='ma_options[mantra_slidertext5]' rows='3' cols='50' type='textarea' ><?php echo esc_attr($mantra_options['mantra_slidertext5']) ?></textarea>
 <h5> <?php _e("Link","mantra");?> </h5>
-<input id='mantra_sliderlink5' name='ma_options[mantra_sliderlink5]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_sliderlink5'] ) ?>'  />            
+<input id='mantra_sliderlink5' name='ma_options[mantra_sliderlink5]' size='50' type='text' value='<?php echo esc_url( $mantra_options['mantra_sliderlink5'] ) ?>'  />            
 </div>
 </div>
 <?php	echo "<small>".__("Your slides' content. Only the image is required, all other fields are optional. Only the slides with an image selected will become acitve and visible in the live slider.","mantra")."</small>"; 
@@ -520,7 +523,7 @@ foreach($items as $id=>$item) {
 }
 
 //CHECKBOX - Name: ma_options[frontcolumns]
-function setting_frontcolumns_fn() {
+function cryout_setting_frontcolumns_fn() {
 	global $mantra_options;
 
 echo "<div class='slmini'><b>".__("Number of columns:","mantra")."</b> ";
@@ -546,14 +549,14 @@ echo "<div class='slmini'><b>".__("Image Height:","mantra")."</b> ";
 <h4 class="slidetitle" > <?php _e("1st Column","mantra");?> </h4>
 <div class="slidercontent">
 <h5><?php _e("Image","mantra");?></h5>
-<input type="text" value="<?php echo  $mantra_options['mantra_columnimg1']; ?>" name="ma_options[mantra_columnimg1]" id="mantra_columnimg1" class="slideimages" />
+<input type="text" value="<?php echo esc_url($mantra_options['mantra_columnimg1']); ?>" name="ma_options[mantra_columnimg1]" id="mantra_columnimg1" class="slideimages" />
 <span class="description"><a href="#" class="upload_image_button"><?php _e( 'Upload or select image from gallery', 'mantra' );?></a> </span>                                
 <h5> <?php _e("Title","mantra");?> </h5>
 <input id='mantra_columntitle1' name='ma_options[mantra_columntitle1]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_columntitle1'] ) ?>'  />            
 <h5> <?php _e("Text","mantra");?> </h5>
-<textarea id='mantra_columntext1' name='ma_options[mantra_columntext1]' rows='3' cols='50' type='textarea' ><?php echo $mantra_options['mantra_columntext1'] ?></textarea>
+<textarea id='mantra_columntext1' name='ma_options[mantra_columntext1]' rows='3' cols='50' type='textarea' ><?php echo esc_attr($mantra_options['mantra_columntext1']) ?></textarea>
 <h5> <?php _e("Link","mantra");?> </h5>
-<input id='mantra_columnlink1' name='ma_options[mantra_columnlink1]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_columnlink1'] ) ?>'  />            
+<input id='mantra_columnlink1' name='ma_options[mantra_columnlink1]' size='50' type='text' value='<?php echo esc_url( $mantra_options['mantra_columnlink1'] ) ?>'  />            
 </div>
 </div>
 
@@ -561,14 +564,14 @@ echo "<div class='slmini'><b>".__("Image Height:","mantra")."</b> ";
 <h4 class="slidetitle" >  <?php _e("2nd Column","mantra");?></h4>
 <div class="slidercontent">
 <h5><?php _e("Image","mantra");?></h5>
-<input type="text" value="<?php echo  $mantra_options['mantra_columnimg2']; ?>" name="ma_options[mantra_columnimg2]" id="mantra_columnimg2" class="slideimages" />
+<input type="text" value="<?php echo  esc_url($mantra_options['mantra_columnimg2']); ?>" name="ma_options[mantra_columnimg2]" id="mantra_columnimg2" class="slideimages" />
 <span class="description"><a href="#" class="upload_image_button"><?php _e( 'Upload or select image from gallery', 'mantra' );?></a> </span>     
 <h5> <?php _e("Title","mantra");?> </h5>
 <input id='mantra_columntitle2' name='ma_options[mantra_columntitle2]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_columntitle2'] ) ?>'  />                            
 <h5> <?php _e("Text","mantra");?> </h5>
-<textarea id='mantra_columntext2' name='ma_options[mantra_columntext2]' rows='3' cols='50' type='textarea' ><?php echo $mantra_options['mantra_columntext2'] ?></textarea>
+<textarea id='mantra_columntext2' name='ma_options[mantra_columntext2]' rows='3' cols='50' type='textarea' ><?php echo esc_attr($mantra_options['mantra_columntext2']) ?></textarea>
 <h5> <?php _e("Link","mantra");?> </h5>
-<input id='mantra_columnlink2' name='ma_options[mantra_columnlink2]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_columnlink2'] ) ?>'  />            
+<input id='mantra_columnlink2' name='ma_options[mantra_columnlink2]' size='50' type='text' value='<?php echo esc_url( $mantra_options['mantra_columnlink2'] ) ?>'  />            
 </div>
 </div>
 
@@ -576,14 +579,14 @@ echo "<div class='slmini'><b>".__("Image Height:","mantra")."</b> ";
 <h4 class="slidetitle" > <?php _e("3rd Column","mantra");?>  </h4>
 <div class="slidercontent">
 <h5><?php _e("Image","mantra");?></h5>
-<input type="text" value="<?php echo  $mantra_options['mantra_columnimg3']; ?>" name="ma_options[mantra_columnimg3]" id="mantra_columnimg3" class="slideimages" />
+<input type="text" value="<?php echo  esc_url($mantra_options['mantra_columnimg3']); ?>" name="ma_options[mantra_columnimg3]" id="mantra_columnimg3" class="slideimages" />
 <span class="description"><a href="#" class="upload_image_button"><?php _e( 'Upload or select image from gallery', 'mantra' );?></a> </span>   
 <h5> Title </h5>
 <input id='mantra_columntitle3' name='ma_options[mantra_columntitle3]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_columntitle3'] ) ?>'  />                              
 <h5> <?php _e("Text","mantra");?> </h5>
-<textarea id='mantra_columntext3' name='ma_options[mantra_columntext3]' rows='3' cols='50' type='textarea' ><?php echo $mantra_options['mantra_columntext3'] ?></textarea>
+<textarea id='mantra_columntext3' name='ma_options[mantra_columntext3]' rows='3' cols='50' type='textarea' ><?php echo esc_attr($mantra_options['mantra_columntext3']) ?></textarea>
 <h5> <?php _e("Link","mantra");?> </h5>
-<input id='mantra_columnlink3' name='ma_options[mantra_columnlink3]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_columnlink3'] ) ?>'  />            
+<input id='mantra_columnlink3' name='ma_options[mantra_columnlink3]' size='50' type='text' value='<?php echo esc_url( $mantra_options['mantra_columnlink3'] ) ?>'  />            
 </div>
 </div>
 
@@ -591,14 +594,14 @@ echo "<div class='slmini'><b>".__("Image Height:","mantra")."</b> ";
 <h4 class="slidetitle" >  <?php _e("4th Column","mantra");?> </h4>
 <div class="slidercontent">
 <h5><?php _e("Image","mantra");?></h5>
-<input type="text" value="<?php echo  $mantra_options['mantra_columnimg4']; ?>" name="ma_options[mantra_columnimg4]" id="mantra_columnimg4" class="slideimages" />
+<input type="text" value="<?php echo  esc_url($mantra_options['mantra_columnimg4']); ?>" name="ma_options[mantra_columnimg4]" id="mantra_columnimg4" class="slideimages" />
 <span class="description"><a href="#" class="upload_image_button"><?php _e( 'Upload or select image from gallery', 'mantra' );?></a> </span>   
 <h5> <?php _e("Title","mantra");?> </h5>
 <input id='mantra_columntitle4' name='ma_options[mantra_columntitle4]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_columntitle4'] ) ?>'  />                              
 <h5> <?php _e("Text","mantra");?> </h5>
-<textarea id='mantra_columntext4' name='ma_options[mantra_columntext4]' rows='3' cols='50' type='textarea' ><?php echo $mantra_options['mantra_columntext4'] ?></textarea>
+<textarea id='mantra_columntext4' name='ma_options[mantra_columntext4]' rows='3' cols='50' type='textarea' ><?php echo esc_attr($mantra_options['mantra_columntext4']) ?></textarea>
 <h5> <?php _e("Link","mantra");?> </h5>
-<input id='mantra_columnlink4' name='ma_options[mantra_columnlink4]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_columnlink4'] ) ?>'  />            
+<input id='mantra_columnlink4' name='ma_options[mantra_columnlink4]' size='50' type='text' value='<?php echo esc_url( $mantra_options['mantra_columnlink4'] ) ?>'  />            
 </div>
 </div>
 
@@ -607,7 +610,7 @@ echo "<div class='slmini'><b>".__("Image Height:","mantra")."</b> ";
 
 
 //CHECKBOX - Name: ma_options[fronttext]
-function setting_fronttext_fn() {
+function cryout_setting_fronttext_fn() {
 	global $mantra_options;
 
 echo "<div class='slidebox'><h4 class='slidetitle'> ".__("Extra Text","mantra")." </h4><div  class='slidercontent'><h5>".__("Top Title","mantra")."</h5> ";
@@ -621,9 +624,9 @@ echo "<h5>".__("Title color","mantra")."</h5> ";
 	echo "<div><small>".__("The titles' color (Default value is 333333).","mantra")."</small></div>";
 
 echo "<h5>".__("Bottom Text 1","mantra")."</h5> ";
-	echo "<textarea id='mantra_fronttext3' name='ma_options[mantra_fronttext3]' rows='3' cols='50' type='textarea' >{$mantra_options['mantra_fronttext3']}  </textarea>";
+	echo "<textarea id='mantra_fronttext3' name='ma_options[mantra_fronttext3]' rows='3' cols='50' type='textarea' >".esc_attr($mantra_options['mantra_fronttext3'])." </textarea>";
 echo "<h5>".__("Bottom Text 2","mantra")." </h5> ";
-		echo "<textarea id='mantra_fronttext4' name='ma_options[mantra_fronttext4]' rows='3' cols='50' type='textarea' >{$mantra_options['mantra_fronttext4']}  </textarea></div></div>";
+		echo "<textarea id='mantra_fronttext4' name='ma_options[mantra_fronttext4]' rows='3' cols='50' type='textarea' >".esc_attr($mantra_options['mantra_fronttext4'])." </textarea></div></div>";
 
 echo "<div><small>".__("More text for your front page. The top title is above the slider, the second title between the slider and the columns and 2 more rows of text under the columns.
 		 It's all optional so leave any input field empty if it's not required. ","mantra")."</small></div>";
@@ -673,7 +676,7 @@ echo "</div></div>";
 ////////////////////////////////
 
 //SELECT - Name: ma_options[fontsize]
-function  setting_fontsize_fn() {
+function  cryout_setting_fontsize_fn() {
 	global $mantra_options;
 	$items =array ("12px", "13px" , "14px" , "15px" , "16px", "17px", "18px");
 	echo "<select id='mantra_fontsize' name='ma_options[mantra_fontsize]'>";
@@ -688,7 +691,7 @@ function  setting_fontsize_fn() {
 
 
 //SELECT - Name: ma_options[fontfamily]
-function  setting_fontfamily_fn() {
+function  cryout_setting_fontfamily_fn() {
 	global $mantra_options;
 	global $fontSans, $fontSerif, $fontMono, $fontCursive;
 
@@ -729,12 +732,12 @@ foreach($fontCursive as $item) {
 
 	echo "<div><small>".__("Select the font family you'll use in your blog. All content text will be affected (including menu buttons). ","mantra")."</small></div>";
 	echo "<div><small>".__("Or insert your Google Font below. Please only isert the <strong>name</strong> of the font.<br /> Ex: Marko One. Go to <a href='http://www.google.com/webfonts' > google fonts </a> for some font inspiration.","mantra")."</small></div>";
-	echo '<input type="text" size="45" value="'.$mantra_options['mantra_googlefont'].'"  name="ma_options[mantra_googlefont]" id="mantra_googlefont" />';
+	echo '<input type="text" size="45" value="'.esc_attr($mantra_options['mantra_googlefont']).'"  name="ma_options[mantra_googlefont]" id="mantra_googlefont" />';
 
 }
 
 //SELECT - Name: ma_options[fonttitle]
-function  setting_fonttitle_fn() {
+function  cryout_setting_fonttitle_fn() {
 	global $mantra_options;
 	global $fontSans, $fontSerif, $fontMono, $fontCursive;
 
@@ -778,14 +781,14 @@ foreach($fontCursive as $item) {
 	echo "<div><small>".__("Select the font family you want for your titles. It will affect post titles and page titles. Leave 'Default' and the general font you selected will be used.","mantra")."</small></div>";
 
 	echo "<div><small>".__("Or insert your Google Font below. Please only isert the <strong>name</strong> of the font.<br /> Ex: Marko One. Go to <a href='http://www.google.com/webfonts' > google fonts </a> for some font inspiration.","mantra")."</small></div>";
-	echo '<input type="text" size="45" value="'.$mantra_options['mantra_googlefonttitle'].'"  name="ma_options[mantra_googlefonttitle]" id="mantra_googlefonttitle" />';
+	echo '<input type="text" size="45" value="'.esc_attr($mantra_options['mantra_googlefonttitle']).'"  name="ma_options[mantra_googlefonttitle]" id="mantra_googlefonttitle" />';
 
 
 
 }
 
 //SELECT - Name: ma_options[fontside]
-function  setting_fontside_fn() {
+function  cryout_setting_fontside_fn() {
 	global $mantra_options;
 	global $fontSans, $fontSerif, $fontMono, $fontCursive;
 
@@ -829,14 +832,14 @@ foreach($fontCursive as $item) {
 	echo "<div><small>".__("Select the font family you want your sidebar(s) to have. Text in sidebars will be affected, including any widgets. Leave 'Default' and the general font you selected will be used.","mantra")."</small></div>";
 
 	echo "<div><small>".__("Or insert your Google Font below. Please only isert the <strong>name</strong> of the font.<br /> Ex: Marko One. Go to <a href='http://www.google.com/webfonts' > google fonts </a> for some font inspiration.","mantra")."</small></div>";
-	echo '<input type="text" size="45" value="'.$mantra_options['mantra_googlefontside'].'"  name="ma_options[mantra_googlefontside]" id="mantra_googlefontside" />';
+	echo '<input type="text" size="45" value="'.esc_attr($mantra_options['mantra_googlefontside']).'"  name="ma_options[mantra_googlefontside]" id="mantra_googlefontside" />';
 
 
 }
 
 
 //SELECT - Name: ma_options[fontsubheader]
-function  setting_fontsubheader_fn() {
+function  cryout_setting_fontsubheader_fn() {
 	global $mantra_options;
 	global $fontSans, $fontSerif, $fontMono, $fontCursive;
 
@@ -880,13 +883,13 @@ foreach($fontCursive as $item) {
 	echo "<div><small>".__("Select the font family you want your subheaders to have (h2 - h6 tags will be affected). Leave 'Default' and the general font you selected will be used.","mantra")."</small></div>";
 
 	echo "<div><small>".__("Or insert your Google Font below. Please only isert the <strong>name</strong> of the font.<br /> Ex: Marko One. Go to <a href='http://www.google.com/webfonts' > google fonts </a> for some font inspiration.","mantra")."</small></div>";
-	echo '<input type="text" size="45" value="'.$mantra_options['mantra_googlefontsubheader'].'"  name="ma_options[mantra_googlefontsubheader]" id="mantra_googlefontsubheader" />';
+	echo '<input type="text" size="45" value="'.esc_attr($mantra_options['mantra_googlefontsubheader']).'"  name="ma_options[mantra_googlefontsubheader]" id="mantra_googlefontsubheader" />';
 
 
 }
 
 //SELECT - Name: ma_options[headfontsize]
-function  setting_headfontsize_fn() {
+function  cryout_setting_headfontsize_fn() {
 	global $mantra_options;
 	$items = array ("Default" , "14px" , "16px" , "18px" , "20px", "22px" , "24px" , "26px" , "28px" , "30px" , "32px" , "34px" , "36px", "38px" , "40px");
 	$itemsare = array( __("Default","mantra") ,"14px" , "16px" , "18px" , "20px", "22px" , "24px" , "26px" , "28px" , "30px" , "32px" , "34px" , "36px", "38px" , "40px");
@@ -901,7 +904,7 @@ foreach($items as $id=>$item) {
 }
 
 //SELECT - Name: ma_options[sidefontsize]
-function  setting_sidefontsize_fn() {
+function  cryout_setting_sidefontsize_fn() {
 	global $mantra_options;
 	$items = array ("Default" , "8px" , "9px" , "10px" , "11px", "12px" , "13px" , "14px" , "15px" , "16px" , "17px" , "18px");
 	$itemsare = array( __("Default","mantra") , "8px" , "9px" , "10px" , "11px", "12px" , "13px" , "14px" , "15px" , "16px" , "17px" , "18px");
@@ -916,7 +919,7 @@ foreach($items as $id=>$item) {
 }
 
 //SELECT - Name: ma_options[textalign]
-function  setting_textalign_fn() {
+function  cryout_setting_textalign_fn() {
 	global $mantra_options;
 	$items = array ("Default" , "Left" , "Right" , "Justify" , "Center");
 	$itemsare = array( __("Default","mantra"), __("Left","mantra"), __("Right","mantra"), __("Justify","mantra"), __("Center","mantra"));
@@ -931,7 +934,7 @@ foreach($items as $id=>$item) {
 }
 
 //SELECT - Name: ma_options[parindent]
-function  setting_parindent_fn() {
+function  cryout_setting_parindent_fn() {
 	global $mantra_options;
 	$items = array ("0px" , "5px" , "10px" , "15px" , "20px");
 	echo "<select id='mantra_parindent' name='ma_options[mantra_parindent]'>";
@@ -946,7 +949,7 @@ foreach($items as $item) {
 
 
 //CHECKBOX - Name: ma_options[headerindent]
-function setting_headerindent_fn() {
+function cryout_setting_headerindent_fn() {
 	global $mantra_options;
 	$items = array ("Enable" , "Disable");
 	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
@@ -961,7 +964,7 @@ foreach($items as $id=>$item) {
 }
 
 //SELECT - Name: ma_options[lineheight]
-function  setting_lineheight_fn() {
+function  cryout_setting_lineheight_fn() {
 	global $mantra_options;
 	$items = array ("Default" ,"0.8em" , "0.9em", "1.0em" , "1.1em" , "1.2em" , "1.3em", "1.4em" , "1.5em" , "1.6em" , "1.7em" , "1.8em" , "1.9em" , "2.0em");
 	$itemsare = array( __("Default","mantra"),"0.8em" , "0.9em", "1.0em" , "1.1em" , "1.2em" , "1.3em", "1.4em" , "1.5em" , "1.6em" , "1.7em" , "1.8em" , "1.9em" , "2.0em");
@@ -976,7 +979,7 @@ foreach($items as $id=>$item) {
 }
 
 //SELECT - Name: ma_options[wordspace]
-function  setting_wordspace_fn() {
+function  cryout_setting_wordspace_fn() {
 	global $mantra_options;
 	$items = array ("Default" ,"-3px" , "-2px", "-1px" , "0px" , "1px" , "2px", "3px" , "4px" , "5px" , "10px");
 	$itemsare = array( __("Default","mantra"),"-3px" , "-2px", "-1px" , "0px" , "1px" , "2px", "3px" , "4px" , "5px" , "10px");
@@ -991,7 +994,7 @@ foreach($items as $id=>$item) {
 }
 
 //SELECT - Name: ma_options[letterspace]
-function  setting_letterspace_fn() {
+function  cryout_setting_letterspace_fn() {
 	global $mantra_options;
 	$items = array ("Default" ,"-0.05em" , "-0.04em", "-0.03em" , "-0.02em" , "-0.01em" , "0.01em", "0.02em" , "0.03em" , "0.04em" , "0.05em");
 	$itemsare = array( __("Default","mantra"),"-0.05em" , "-0.04em", "-0.03em" , "-0.02em" , "-0.01em" , "0.01em", "0.02em" , "0.03em" , "0.04em" , "0.05em");
@@ -1008,7 +1011,7 @@ foreach($items as $id=>$item) {
 
 
 //CHECKBOX - Name: ma_options[textshadow]
-function setting_textshadow_fn() {
+function cryout_setting_textshadow_fn() {
 	global $mantra_options;
 	$items = array ("Enable" , "Disable");
 	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
@@ -1027,7 +1030,7 @@ foreach($items as $id=>$item) {
 ////////////////////////////////
 
 //TEXT - Name: ma_options[backcolor]
-function  setting_backcolor_fn() {
+function  cryout_setting_backcolor_fn() {
 	global $mantra_options;
 	echo '<input type="text" id="mantra_backcolor" name="ma_options[mantra_backcolor]" value="'.esc_attr( $mantra_options['mantra_backcolor'] ).'"  />';
     echo '<div id="mantra_backcolor2"></div>';
@@ -1035,7 +1038,7 @@ function  setting_backcolor_fn() {
 }
 
 //TEXT - Name: ma_options[headercolor]
-function  setting_headercolor_fn() {
+function  cryout_setting_headercolor_fn() {
 	global $mantra_options;
 	echo '<input type="text" id="mantra_headercolor" name="ma_options[mantra_headercolor]" value="'.esc_attr( $mantra_options['mantra_headercolor'] ).'"  />';
 	echo '<div id="mantra_headercolor2"></div>';
@@ -1043,7 +1046,7 @@ function  setting_headercolor_fn() {
 }
 
 //TEXT - Name: ma_options[prefootercolor]
-function  setting_prefootercolor_fn() {
+function  cryout_setting_prefootercolor_fn() {
 	global $mantra_options;
 	echo '<input type="text" id="mantra_prefootercolor" name="ma_options[mantra_prefootercolor]" value="'.esc_attr( $mantra_options['mantra_prefootercolor'] ).'"  />';
 	echo '<div id="mantra_prefootercolor2"></div>';
@@ -1051,7 +1054,7 @@ function  setting_prefootercolor_fn() {
 }
 
 //TEXT - Name: ma_options[footercolor]
-function  setting_footercolor_fn() {
+function  cryout_setting_footercolor_fn() {
 	global $mantra_options;
 	echo '<input type="text" id="mantra_footercolor" name="ma_options[mantra_footercolor]" value="'.esc_attr( $mantra_options['mantra_footercolor'] ).'"  />';
 	echo '<div id="mantra_footercolor2"></div>';
@@ -1059,7 +1062,7 @@ function  setting_footercolor_fn() {
 }
 
 //TEXT - Name: ma_options[titlecolor]
-function  setting_titlecolor_fn() {
+function  cryout_setting_titlecolor_fn() {
 	global $mantra_options;
 	echo '<input type="text" id="mantra_titlecolor" name="ma_options[mantra_titlecolor]" value="'.esc_attr( $mantra_options['mantra_titlecolor'] ).'"  />';
 	echo '<div id="mantra_titlecolor2"></div>';
@@ -1067,7 +1070,7 @@ function  setting_titlecolor_fn() {
 }
 
 //TEXT - Name: ma_options[descriptioncolor]
-function  setting_descriptioncolor_fn() {
+function  cryout_setting_descriptioncolor_fn() {
 	global $mantra_options;
 	echo '<input type="text" id="mantra_descriptioncolor" name="ma_options[mantra_descriptioncolor]" value="'.esc_attr( $mantra_options['mantra_descriptioncolor'] ).'"  />';
 	echo '<div id="mantra_descriptioncolor2"></div>';
@@ -1075,7 +1078,7 @@ function  setting_descriptioncolor_fn() {
 }
 
 //TEXT - Name: ma_options[contentcolor]
-function  setting_contentcolor_fn() {
+function  cryout_setting_contentcolor_fn() {
 	global $mantra_options;
 	echo '<input type="text" id="mantra_contentcolor" name="ma_options[mantra_contentcolor]" value="'.esc_attr( $mantra_options['mantra_contentcolor'] ).'"  />';
 	echo '<div id="mantra_contentcolor2"></div>';
@@ -1083,7 +1086,7 @@ function  setting_contentcolor_fn() {
 }
 
 //TEXT - Name: ma_options[linkscolor]
-function  setting_linkscolor_fn() {
+function  cryout_setting_linkscolor_fn() {
 	global $mantra_options;
 	echo '<input type="text" id="mantra_linkscolor" name="ma_options[mantra_linkscolor]" value="'.esc_attr( $mantra_options['mantra_linkscolor'] ).'"  />';
 	echo '<div id="mantra_linkscolor2"></div>';
@@ -1091,7 +1094,7 @@ function  setting_linkscolor_fn() {
 }
 
 //TEXT - Name: ma_options[hovercolor]
-function  setting_hovercolor_fn() {
+function  cryout_setting_hovercolor_fn() {
 	global $mantra_options;
 	echo '<input type="text" id="mantra_hovercolor" name="ma_options[mantra_hovercolor]" value="'.esc_attr( $mantra_options['mantra_hovercolor'] ).'"  />';
 	echo '<div id="mantra_hovercolor2"></div>';
@@ -1099,7 +1102,7 @@ function  setting_hovercolor_fn() {
 }
 
 //TEXT - Name: ma_options[headtextcolor]
-function  setting_headtextcolor_fn() {
+function  cryout_setting_headtextcolor_fn() {
 	global $mantra_options;
 	echo '<input type="text" id="mantra_headtextcolor" name="ma_options[mantra_headtextcolor]" value="'.esc_attr( $mantra_options['mantra_headtextcolor'] ).'"  />';
 	echo '<div id="mantra_headtextcolor2"></div>';
@@ -1107,7 +1110,7 @@ function  setting_headtextcolor_fn() {
 }
 
 //TEXT - Name: ma_options[headtexthover]
-function  setting_headtexthover_fn() {
+function  cryout_setting_headtexthover_fn() {
 	global $mantra_options;
 	echo '<input type="text" id="mantra_headtexthover" name="ma_options[mantra_headtexthover]" value="'.esc_attr( $mantra_options['mantra_headtexthover'] ).'"  />';
 	echo '<div id="mantra_headtexthover2"></div>';
@@ -1115,7 +1118,7 @@ function  setting_headtexthover_fn() {
 }
 
 //TEXT - Name: ma_options[sideheadbackcolor]
-function  setting_sideheadbackcolor_fn() {
+function  cryout_setting_sideheadbackcolor_fn() {
 	global $mantra_options;
 	echo '<input type="text" id="mantra_sideheadbackcolor" name="ma_options[mantra_sideheadbackcolor]" value="'.esc_attr( $mantra_options['mantra_sideheadbackcolor'] ).'"  />';
 	echo '<div id="mantra_sideheadbackcolor2"></div>';
@@ -1124,7 +1127,7 @@ function  setting_sideheadbackcolor_fn() {
 }
 
 //TEXT - Name: ma_options[sideheadtextcolor]
-function  setting_sideheadtextcolor_fn() {
+function  cryout_setting_sideheadtextcolor_fn() {
 	global $mantra_options;
 	echo '<input type="text" id="mantra_sideheadtextcolor" name="ma_options[mantra_sideheadtextcolor]" value="'.esc_attr( $mantra_options['mantra_sideheadtextcolor'] ).'"  />';
 	echo '<div id="mantra_sideheadtextcolor2"></div>';
@@ -1132,7 +1135,7 @@ function  setting_sideheadtextcolor_fn() {
 }
 
 //TEXT - Name: ma_options[footerheader]
-function  setting_footerheader_fn() {
+function  cryout_setting_footerheader_fn() {
 	global $mantra_options;
 	echo '<input type="text" id="mantra_footerheader" name="ma_options[mantra_footerheader]" value="'.esc_attr( $mantra_options['mantra_footerheader'] ).'"  />';
 	echo '<div id="mantra_footerheader2"></div>';
@@ -1140,7 +1143,7 @@ function  setting_footerheader_fn() {
 }
 
 //TEXT - Name: ma_options[footertext]
-function  setting_footertext_fn() {
+function  cryout_setting_footertext_fn() {
 	global $mantra_options;
 	echo '<input type="text" id="mantra_footertext" name="ma_options[mantra_footertext]" value="'.esc_attr( $mantra_options['mantra_footertext'] ).'"  />';
 	echo '<div id="mantra_footertext2"></div>';
@@ -1148,7 +1151,7 @@ function  setting_footertext_fn() {
 }
 
 //TEXT - Name: ma_options[footerhover]
-function  setting_footerhover_fn() {
+function  cryout_setting_footerhover_fn() {
 	global $mantra_options;
 	echo '<input type="text" id="mantra_footerhover" name="ma_options[mantra_footerhover]" value="'.esc_attr( $mantra_options['mantra_footerhover'] ).'"  />';
 	echo '<div id="mantra_footerhover2"></div>';
@@ -1161,7 +1164,7 @@ function  setting_footerhover_fn() {
 ////////////////////////////////
 
 //SELECT - Name: ma_options[caption]
-function  setting_caption_fn() {
+function  cryout_setting_caption_fn() {
 global $mantra_options;
 	$items = array ("White" , "Light" , "Light Gray" , "Gray" , "Dark Gray" , "Black");
 	$itemsare = array( __("White","mantra"), __("Light","mantra"), __("Light Gray","mantra"), __("Gray","mantra"), __("Dark Gray","mantra"), __("Black","mantra"));
@@ -1176,7 +1179,7 @@ foreach($items as $id=>$item) {
 }
 
 // RADIO-BUTTON - Name: ma_options[image]
-function setting_image_fn() {
+function cryout_setting_image_fn() {
 	global $mantra_options;
 	$items = array("None", "One", "Two", "Three" , "Four", "Five", "Six", "Seven");
 	foreach($items as $item) {
@@ -1192,7 +1195,7 @@ function setting_image_fn() {
 }
 
 // RADIO-BUTTON - Name: ma_options[pin]
-function setting_pin_fn() {
+function cryout_setting_pin_fn() {
 global $mantra_options;
 	$items = array("mantra_dot", "Pin1", "Pin2", "Pin3" , "Pin4", "Pin5");
 	foreach($items as $item) {
@@ -1207,7 +1210,7 @@ global $mantra_options;
 }
 
 // RADIO-BUTTON - Name: ma_options[sidebullet]
-function setting_sidebullet_fn() {
+function cryout_setting_sidebullet_fn() {
 	global $mantra_options;
 	$items = array("mantra_dot2", "arrow_black", "arrow_white", "bullet_dark" , "bullet_gray", "bullet_light", "square_dark", "square_white", "triangle_dark" , "triangle_gray", "triangle_white", "folder_black", "folder_light");
 	foreach($items as $item) {
@@ -1222,7 +1225,7 @@ function setting_sidebullet_fn() {
 }
 
 //CHECKBOX - Name: ma_options[metaback]
-function setting_metaback_fn() {
+function cryout_setting_metaback_fn() {
 	global $mantra_options;
 	$items = array ("Gray" , "White", "None");
 	$itemsare = array( __("Gray","mantra"), __("White","mantra"), __("None","mantra"));
@@ -1238,7 +1241,7 @@ foreach($items as $id=>$item) {
 }
 
 //CHECKBOX - Name: ma_options[postseparator]
-function setting_postseparator_fn() {
+function cryout_setting_postseparator_fn() {
 	global $mantra_options;
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
@@ -1254,7 +1257,7 @@ foreach($items as $id=>$item) {
 }
 
 //CHECKBOX - Name: ma_options[contentlist]
-function setting_contentlist_fn() {
+function cryout_setting_contentlist_fn() {
 	global $mantra_options;
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
@@ -1271,7 +1274,7 @@ foreach($items as $id=>$item) {
 
 
 //CHECKBOX - Name: ma_options[title]
-function setting_title_fn() {
+function cryout_setting_title_fn() {
 	global $mantra_options;
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
@@ -1286,7 +1289,7 @@ foreach($items as $id=>$item) {
 
 }
 //CHECKBOX - Name: ma_options[pagetitle]
-function setting_pagetitle_fn() {
+function cryout_setting_pagetitle_fn() {
 	global $mantra_options;
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
@@ -1301,7 +1304,7 @@ foreach($items as $id=>$item) {
 }
 
 //CHECKBOX - Name: ma_options[categtitle]
-function setting_categtitle_fn() {
+function cryout_setting_categtitle_fn() {
 	global $mantra_options;
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
@@ -1316,7 +1319,7 @@ foreach($items as $id=>$item) {
 }
 
 //CHECKBOX - Name: ma_options[tables]
-function setting_tables_fn() {
+function cryout_setting_tables_fn() {
 	global $mantra_options;
 	$items = array ("Enable" , "Disable");
 	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
@@ -1331,7 +1334,7 @@ foreach($items as $id=>$item) {
 }
 
 //CHECKBOX - Name: ma_options[comtext]
-function setting_comtext_fn() {
+function cryout_setting_comtext_fn() {
 	global $mantra_options;
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
@@ -1346,7 +1349,7 @@ foreach($items as $id=>$item) {
 }
 
 //CHECKBOX - Name: ma_options[comclosed]
-function setting_comclosed_fn() {
+function cryout_setting_comclosed_fn() {
 	global $mantra_options;
 	$items = array ("Show" , "Hide in posts", "Hide in pages", "Hide everywhere");
 	$itemsare = array( __("Show","mantra"), __("Hide in posts","mantra"), __("Hide in pages","mantra"), __("Hide everywhere","mantra"));
@@ -1362,7 +1365,7 @@ foreach($items as $id=>$item) {
 
 
 //CHECKBOX - Name: ma_options[comoff]
-function setting_comoff_fn() {
+function cryout_setting_comoff_fn() {
 	global $mantra_options;
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
@@ -1378,7 +1381,7 @@ foreach($items as $id=>$item) {
 
 
 //CHECKBOX - Name: ma_options[backtop]
-function setting_backtop_fn() {
+function cryout_setting_backtop_fn() {
 	global $mantra_options;
 	$items = array ("Enable" , "Disable");
 	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
@@ -1393,9 +1396,9 @@ foreach($items as $id=>$item) {
 }
 
 // TEXTBOX - Name: ma_options[copyright]
-function setting_copyright_fn() {
+function cryout_setting_copyright_fn() {
 	global $mantra_options;
-	echo "<textarea id='mantra_copyright' name='ma_options[mantra_copyright]' rows='3' cols='40' type='textarea' >{$mantra_options['mantra_copyright']}  </textarea>";
+	echo "<textarea id='mantra_copyright' name='ma_options[mantra_copyright]' rows='3' cols='40' type='textarea' >".esc_textarea($mantra_options['mantra_copyright'])." </textarea>";
 	echo "<div><small>".__("Insert custom text or HTML code that will appear last in you footer. <br /> You can use HTML to insert links, images and special characters like &copy .","mantra")."</small></div>";
 }
 
@@ -1405,7 +1408,7 @@ function setting_copyright_fn() {
 ////////////////////////////////
 
 //CHECKBOX - Name: ma_options[postdate]
-function setting_postcomlink_fn() {
+function cryout_setting_postcomlink_fn() {
 	global $mantra_options;
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
@@ -1420,7 +1423,7 @@ foreach($items as $id=>$item) {
 }
 
 //CHECKBOX - Name: ma_options[postdate]
-function setting_postdate_fn() {
+function cryout_setting_postdate_fn() {
 	global $mantra_options;
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
@@ -1435,7 +1438,7 @@ foreach($items as $id=>$item) {
 }
 
 //CHECKBOX - Name: ma_options[posttime]
-function setting_posttime_fn() {
+function cryout_setting_posttime_fn() {
 	global $mantra_options;
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
@@ -1450,7 +1453,7 @@ foreach($items as $id=>$item) {
 }
 
 //CHECKBOX - Name: ma_options[postauthor]
-function setting_postauthor_fn() {
+function cryout_setting_postauthor_fn() {
 	global $mantra_options;
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
@@ -1465,7 +1468,7 @@ foreach($items as $id=>$item) {
 }
 
 //CHECKBOX - Name: ma_options[postcateg]
-function setting_postcateg_fn() {
+function cryout_setting_postcateg_fn() {
 	global $mantra_options;
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
@@ -1480,7 +1483,7 @@ foreach($items as $id=>$item) {
 }
 
 //CHECKBOX - Name: ma_options[posttag]
-function setting_posttag_fn() {
+function cryout_setting_posttag_fn() {
 	global $mantra_options;
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
@@ -1495,7 +1498,7 @@ foreach($items as $id=>$item) {
 }
 
 //CHECKBOX - Name: ma_options[postbook]
-function setting_postbook_fn() {
+function cryout_setting_postbook_fn() {
 	global $mantra_options;
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
@@ -1510,7 +1513,7 @@ foreach($items as $id=>$item) {
 }
 
 //CHECKBOX - Name: ma_options[postmetas]
-function setting_postmetas_fn() {
+function cryout_setting_postmetas_fn() {
 	global $mantra_options;
 	$items = array ("Show" , "Hide");
 	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
@@ -1531,7 +1534,7 @@ foreach($items as $id=>$item) {
 
 
 //CHECKBOX - Name: ma_options[excerpthome]
-function setting_excerpthome_fn() {
+function cryout_setting_excerpthome_fn() {
 	global $mantra_options;
 	$items = array ("Excerpt" , "Full Post");
 	$itemsare = array( __("Excerpt","mantra"), __("Full Post","mantra"));
@@ -1546,7 +1549,7 @@ foreach($items as $id=>$item) {
 }
 
 //CHECKBOX - Name: ma_options[excerptsticky]
-function setting_excerptsticky_fn() {
+function cryout_setting_excerptsticky_fn() {
 	global $mantra_options;
 	$items = array ("Excerpt" , "Full Post");
 	$itemsare = array( __("Excerpt","mantra"), __("Full Post","mantra"));
@@ -1562,7 +1565,7 @@ foreach($items as $id=>$item) {
 
 
 //CHECKBOX - Name: ma_options[excerptarchive]
-function setting_excerptarchive_fn() {
+function cryout_setting_excerptarchive_fn() {
 	global $mantra_options;
 	$items = array ("Excerpt" , "Full Post");
 	$itemsare = array( __("Excerpt","mantra"), __("Full Post","mantra"));
@@ -1578,7 +1581,7 @@ foreach($items as $id=>$item) {
 
 
 // TEXTBOX - Name: ma_options[excerptwords]
-function setting_excerptwords_fn() {
+function cryout_setting_excerptwords_fn() {
 	global $mantra_options;
 	echo "<input id='mantra_excerptwords' name='ma_options[mantra_excerptwords]' size='6' type='text' value='".esc_attr( $mantra_options['mantra_excerptwords'] )."'  />";
 	echo "<div><small>".__("The number of words an excerpt will have. When that number is reached the post will be interrupted by a <i>Continue reading</i> link that
@@ -1586,7 +1589,7 @@ function setting_excerptwords_fn() {
 }
 
 //CHECKBOX - Name: ma_options[magazinelayout]
-function setting_magazinelayout_fn() {
+function cryout_setting_magazinelayout_fn() {
 	global $mantra_options;
 	$items = array ("Enable" , "Disable");
 	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
@@ -1601,21 +1604,21 @@ foreach($items as $id=>$item) {
 }
 
 // TEXTBOX - Name: ma_options[excerptdots]
-function setting_excerptdots_fn() {
+function cryout_setting_excerptdots_fn() {
 	global $mantra_options;
 	echo "<input id='mantra_excerptdots' name='ma_options[mantra_excerptdots]' size='40' type='text' value='".esc_attr( $mantra_options['mantra_excerptdots'] )."'  />";
 	echo "<div><small>".__("Replaces the three dots ('[...])' that are appended automatically to excerpts.","mantra")."</small></div>";
 }
 
 // TEXTBOX - Name: ma_options[excerptcont]
-function setting_excerptcont_fn() {
+function cryout_setting_excerptcont_fn() {
 	global $mantra_options;
 	echo "<input id='mantra_excerptcont' name='ma_options[mantra_excerptcont]' size='40' type='text' value='".esc_attr( $mantra_options['mantra_excerptcont'] )."'  />";
 	echo "<div><small>".__("Edit the 'Continue Reading' link added to your post excerpts.","mantra")."</small></div>";
 }
 
 //CHECKBOX - Name: ma_options[excerpttags]
-function setting_excerpttags_fn() {
+function cryout_setting_excerpttags_fn() {
 	global $mantra_options;
 	$items = array ("Enable" , "Disable");
 	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
@@ -1638,7 +1641,7 @@ they are not left open. So if within your post you have an opened HTML tag but t
 
 
 //CHECKBOX - Name: ma_options[fpost]
-function setting_fpost_fn() {
+function cryout_setting_fpost_fn() {
 	global $mantra_options;
 	$items = array ("Enable" , "Disable");
 	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
@@ -1661,7 +1664,7 @@ foreach($items as $id=>$item) {
 }
 
 //CHECKBOX - Name: ma_options[fauto]
-function setting_fauto_fn() {
+function cryout_setting_fauto_fn() {
 	global $mantra_options;
 	$items = array ("Enable" , "Disable");
 	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
@@ -1677,7 +1680,7 @@ foreach($items as $id=>$item) {
 
 
 //CHECKBOX - Name: ma_options[falign]
-function setting_falign_fn() {
+function cryout_setting_falign_fn() {
 	global $mantra_options;
 	$items = array ("Left" , "Center", "Right");
 	$itemsare = array( __("Left","mantra"), __("Center","mantra"), __("Right","mantra"));
@@ -1693,7 +1696,7 @@ foreach($items as $id=>$item) {
 
 
 // TEXTBOX - Name: ma_options[fwidth]
-function setting_fsize_fn() {
+function cryout_setting_fsize_fn() {
 	global $mantra_options;
 	echo "<input id='mantra_fwidth' name='ma_options[mantra_fwidth]' size='4' type='text' value='".esc_attr( $mantra_options['mantra_fwidth'] )."'  />px (width) <b>X</b> ";
 	echo "<input id='mantra_fheight' name='ma_options[mantra_fheight]' size='4' type='text' value='".esc_attr( $mantra_options['mantra_fheight'] )."'  />px (height)";
@@ -1710,7 +1713,7 @@ function setting_fsize_fn() {
 
 
 //CHECKBOX - Name: ma_options[fheader]
-function setting_fheader_fn() {
+function cryout_setting_fheader_fn() {
 	global $mantra_options;
 	$items = array ("Enable" , "Disable");
 	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
@@ -1731,7 +1734,7 @@ foreach($items as $id=>$item) {
 ////////////////////////
 
 // TEXTBOX - Name: ma_options[social1]
-function setting_socials1_fn() {
+function cryout_setting_socials1_fn() {
 	global $mantra_options, $socialNetworks;
 	echo "<select id='mantra_social1' name='ma_options[mantra_social1]'>";
 foreach($socialNetworks as $item) {
@@ -1741,12 +1744,12 @@ foreach($socialNetworks as $item) {
 }
 	echo "</select><span class='address_span'> &raquo; </span>";
 
-	echo "<input id='mantra_social2' name='ma_options[mantra_social2]' size='32' type='text'  value='".esc_attr( $mantra_options['mantra_social2'] )."'  />";
+	echo "<input id='mantra_social2' name='ma_options[mantra_social2]' size='32' type='text'  value='".esc_url( $mantra_options['mantra_social2'] )."'  />";
 	echo "<div><small>".__("Select your desired Social network from the left dropdown menu and insert your corresponding address in the right input field. (ex: <i>http://www.facebook.com/yourname</i> )","mantra")."</small></div>";
 }
 
 // TEXTBOX - Name: ma_options[social2]
-function setting_socials2_fn() {
+function cryout_setting_socials2_fn() {
 	global $mantra_options, $socialNetworks;
 	echo "<select id='mantra_social3' name='ma_options[mantra_social3]'>";
 foreach($socialNetworks as $item) {
@@ -1755,12 +1758,12 @@ foreach($socialNetworks as $item) {
 	echo ">$item</option>";
 }
 	echo "</select><span class='address_span'> &raquo; </span>";
-	echo "<input id='mantra_tweeter' name='ma_options[mantra_social4]' size='32' type='text'  value='".esc_attr( $mantra_options['mantra_social4'] )."'  />";
+	echo "<input id='mantra_tweeter' name='ma_options[mantra_social4]' size='32' type='text'  value='".esc_url( $mantra_options['mantra_social4'] )."'  />";
 	echo "<div><small>".__("You can insert up to 5 different social sites and addresses.","mantra")."</small></div> ";
 }
 
 // TEXTBOX - Name: ma_options[social3]
-function setting_socials3_fn() {
+function cryout_setting_socials3_fn() {
 	global $mantra_options, $socialNetworks;
 	echo "<select id='mantra_social5' name='ma_options[mantra_social5]'>";
 	foreach($socialNetworks as $item) {
@@ -1769,12 +1772,12 @@ function setting_socials3_fn() {
 	echo ">$item</option>";
 }
 	echo "</select><span class='address_span'> &raquo; </span>";
-	echo "<input id='mantra_rss' name='ma_options[mantra_social6]' size='32' type='text'  value='".esc_attr( $mantra_options['mantra_social6'] )."'  />";
+	echo "<input id='mantra_rss' name='ma_options[mantra_social6]' size='32' type='text'  value='".esc_url( $mantra_options['mantra_social6'] )."'  />";
 	echo "<div><small>".__("There are a total of 27 social networks to choose from. ","mantra")."</small></div>";
 }
 
 // TEXTBOX - Name: ma_options[social4]
-function setting_socials4_fn() {
+function cryout_setting_socials4_fn() {
 	global $mantra_options, $socialNetworks;
 	echo "<select id='mantra_social7' name='ma_options[mantra_social7]'>";
 	foreach($socialNetworks as $item) {
@@ -1783,12 +1786,12 @@ function setting_socials4_fn() {
 	echo ">$item</option>";
 }
 	echo "</select><span class='address_span'> &raquo; </span>";
-	echo "<input id='mantra_rss' name='ma_options[mantra_social8]' size='32' type='text'  value='".esc_attr( $mantra_options['mantra_social8'] )."'  />";
+	echo "<input id='mantra_rss' name='ma_options[mantra_social8]' size='32' type='text'  value='".esc_url( $mantra_options['mantra_social8'] )."'  />";
 	echo "<div><small>".__("You can leave any number of inputs empty. ","mantra")."</small></div>";
 }
 
 // TEXTBOX - Name: ma_options[social5]
-function setting_socials5_fn() {
+function cryout_setting_socials5_fn() {
 	global $mantra_options, $socialNetworks;
 	echo "<select id='mantra_social9' name='ma_options[mantra_social9]'>";
 	foreach($socialNetworks as $item) {
@@ -1797,12 +1800,12 @@ function setting_socials5_fn() {
 	echo ">$item</option>";
 }
 	echo "</select><span class='address_span'> &raquo; </span>";
-	echo "<input id='mantra_rss' name='ma_options[mantra_social10]' size='32' type='text'  value='".esc_attr( $mantra_options['mantra_social10'] )."'  />";
+	echo "<input id='mantra_rss' name='ma_options[mantra_social10]' size='32' type='text'  value='".esc_url( $mantra_options['mantra_social10'] )."'  />";
 	echo "<div><small>".__("You can choose the same social media any number of times.  ","mantra")."</small></div>";
 }
 
 // TEXTBOX - Name: ma_options[socialsdisplay]
-function setting_socialsdisplay_fn() {
+function cryout_setting_socialsdisplay_fn() {
 global $mantra_options;
 		$items = array( "Header", "CLeft", "CRight" , "Footer");
 
@@ -1839,7 +1842,7 @@ global $mantra_options;
 
 
 //CHECKBOX - Name: ma_options[linkheader]
-function setting_linkheader_fn() {
+function cryout_setting_linkheader_fn() {
 	global $mantra_options;
 	$items = array ("Enable" , "Disable");
 	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
@@ -1854,7 +1857,7 @@ foreach($items as $id=>$item) {
 }
 
 //CHECKBOX - Name: ma_options[breadcrumbs]
-function setting_breadcrumbs_fn() {
+function cryout_setting_breadcrumbs_fn() {
 	global $mantra_options;
 	$items = array ("Enable" , "Disable");
 	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
@@ -1869,7 +1872,7 @@ foreach($items as $id=>$item) {
 }
 
 //CHECKBOX - Name: ma_options[pagination]
-function setting_pagination_fn() {
+function cryout_setting_pagination_fn() {
 	global $mantra_options;
 	$items = array ("Enable" , "Disable");
 	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
@@ -1884,7 +1887,7 @@ foreach($items as $id=>$item) {
 }
 
 //CHECKBOX - Name: ma_options[mobile]
-function setting_mobile_fn() {
+function cryout_setting_mobile_fn() {
 	global $mantra_options;
 	$items = array ("Enable" , "Disable");
 	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
@@ -1899,12 +1902,12 @@ foreach($items as $id=>$item) {
 }
 
 // TEXTBOX - Name: ma_options[favicon]
-function setting_favicon_fn() {
+function cryout_setting_favicon_fn() {
 	global $mantra_options;
 	echo '<div>';
 ?>
- <img src='<?php echo  $mantra_options['mantra_favicon']; ?>' class="imagebox" width="64" height="64"/>
-<input type="text" size="60" value="<?php echo  $mantra_options['mantra_favicon']; ?>" name="ma_options[mantra_favicon]" id="mantra_favicon" class="slideimages" />
+ <img src='<?php echo  esc_url($mantra_options['mantra_favicon']); ?>' class="imagebox" width="64" height="64"/>
+<input type="text" size="60" value="<?php echo  esc_url($mantra_options['mantra_favicon']); ?>" name="ma_options[mantra_favicon]" id="mantra_favicon" class="slideimages" />
 <span class="description"><a href="#" class="upload_image_button"><br /><?php _e( 'Upload or select favicon from gallery', 'mantra' );?></a> </span> 
 </div>
 
@@ -1914,19 +1917,19 @@ echo "<div><small>".__("Limitations: It has to be an image. It should be max 64x
 }
 
 // TEXTBOX - Name: ma_options[customcss]
-function setting_customcss_fn() {
+function cryout_setting_customcss_fn() {
 	global $mantra_options;
-	echo "<textarea id='mantra_customcss' name='ma_options[mantra_customcss]' rows='8' cols='70' type='textarea' >{$mantra_options['mantra_customcss']}  </textarea>";
+	echo "<textarea id='mantra_customcss' name='ma_options[mantra_customcss]' rows='8' cols='70' type='textarea' >".esc_textarea($mantra_options['mantra_customcss'])." </textarea>";
 	echo "<div><small>".__("Insert your custom CSS here. Any CSS declarations made here will overwrite Mantra's (even the custom options specified right here in the Mantra Settings page). <br /> Your custom CSS will be preserved when updating the theme.","mantra")."</small></div>";
 }
 
 // TEXTBOX - Name: ma_options[customjs]
-function setting_customjs_fn() {
+function cryout_setting_customjs_fn() {
 	global $mantra_options;
-	echo "<textarea id='mantra_customjs' name='ma_options[mantra_customjs]' rows='8' cols='70' type='textarea' >{$mantra_options['mantra_customjs']}  </textarea>";
+	echo "<textarea id='mantra_customjs' name='ma_options[mantra_customjs]' rows='8' cols='70' type='textarea' >".esc_textarea($mantra_options['mantra_customjs'])." </textarea>";
 	echo "<div><small>".__("Insert your custom Javascript code here. (Google Analytics and any other forms of Analytic software).","mantra")."</small></div>";
 }
-function setting_seo_fn() {
+function cryout_setting_seo_fn() {
 	global $mantra_options;
 	$items = array ("Enable" , "Disable");
 	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));

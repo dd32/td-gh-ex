@@ -21,83 +21,158 @@ $sidebarSize= intval(($mantra_sidebarRel/$totalwidth*100)-2);
 
 <style type="text/css">
 <?php 
+/* 
+ * LAYOUT CSS
+ */
+
 /* ABSOLUTE DIMENSIONS. */
 
 if ($mantra_dimselect=="Absolute") { ?>
 #wrapper, #access, #colophon, #branding, #main { width:<?php echo ($totalwidth) ?>px ;}
 #access .menu-header, div.menu {width:<?php echo ($totalwidth-12) ?>px ;}
+<?php if (is_page_template() && !is_page_template('template-blog.php') && !is_page_template('template-onecolumn.php') && !is_page_template('template-page-with-intro.php')) {
 
-<?php if ($mantra_side == "1c" || $mantra_side =="Disable") { ?>
-#content {width:<?php echo ($totalwidth-50) ?>px; margin:20px;}  <?php }
-
-?><?php if ($mantra_side == "2cSr" || $mantra_side == "Right") { ?>
+ if (is_page_template("template-twocolumns-right.php") ) { ?>
 #content { width:<?php echo ($contentSize- 10) ?>px;}
 #primary,#secondary {width:<?php echo ($sidebarSize  ) ?>px;}<?php }
 
-?><?php if ($mantra_side == "2cSl" || $mantra_side == "Left") { ?>
-#content { width:<?php echo ($contentSize - 10) ?>px;float:right;margin:0 20px 0 0;}
+?><?php  if ( is_page_template("template-twocolumns-left.php")) { ?>
+#content { width:<?php echo ($contentSize - 10) ?>px;float:right;margin:10px 20px 0 0;}
 #primary,#secondary {width:<?php echo ($sidebarSize ) ?>px;float:left;padding-left:0px;clear:left;border:none;border-right:1px dashed #EEE;padding-right:20px;}
 .widget-title { -moz-border-radius-topleft:0px; -webkit-border-radius:0px;border-radius-topleft:0px ; -moz-border-radius-topright:10px ;border-radius-topright:10px ;	border-top-right-radius:10px;
-	-webkit-border-top-right-radius:10px;text-align:right;padding-right:5%;width:100%;} <?php } 
+	-webkit-border-top-right-radius:10px;text-align:right;padding-right:5%;width:100%;margin-left:-10px;} <?php } 
 
-?><?php if ($mantra_side == "3cSr" ) { ?>
+?><?php  if ( is_page_template("template-threecolumns-right.php")) { ?>
 #content { width:<?php echo ($contentSize- 20) ?>px;}
 #primary,#secondary {width:<?php echo ($mantra_sidebar/2  ) ?>px;} <?php } 
 
-?><?php if ($mantra_side == "3cSl" ) { ?>
-#content { width:<?php echo ($contentSize - 20) ?>px;float:right;margin:0 20px 0 0;display:block;}
+?><?php  if ( is_page_template("template-threecolumns-left.php")) { ?>
+#content { width:<?php echo ($contentSize - 20) ?>px;float:right;margin:10px 20px 0 0;display:block;}
 #primary,#secondary {width:<?php echo ($sidebarSize/2 ) ?>px;float:left;padding-left:0px;;border:none;border-right:1px dashed #EEE;padding-right:20px;}
 .widget-title { -moz-border-radius-topleft:0px; -webkit-border-radius:0px;border-radius-topleft:0px ; -moz-border-radius-topright:10px ;border-radius-topright:10px ;	border-top-right-radius:10px;
-	-webkit-border-top-right-radius:10px;text-align:right;padding-right:5%;width:100%;} <?php } 
+	-webkit-border-top-right-radius:10px;text-align:right;padding-right:8%;width:100%;margin-left:-8px;} <?php } 
 
-?><?php if ($mantra_side == "3cSs" ) { ?>
-#content { width:<?php echo ($contentSize - 20) ?>px;float:right;margin:0 <?php echo $sidebarSize/2+40 ?>px 0 <?php echo -($contentSize+$sidebarSize) ?>px;display:block;}
+?><?php  if (is_page_template("template-threecolumns-center.php")) { ?>
+#content { width:<?php echo ($contentSize - 20) ?>px;float:right;margin:10px <?php echo $sidebarSize/2+30 ?>px 0 <?php echo -($contentSize+$sidebarSize) ?>px;display:block;}
 #primary {width:<?php echo ($sidebarSize/2 ) ?>px;float:left;padding-left:0px;border:none;border-right:1px dashed #EEE;padding-right:20px;}
 #secondary {width:<?php echo ($sidebarSize/2 ) ?>px;float:right;}
 #primary .widget-title { -moz-border-radius-topleft:0px; -webkit-border-radius:0px;border-radius-topleft:0px ; -moz-border-radius-topright:10px ;border-radius-topright:10px ;	border-top-right-radius:10px;
-	-webkit-border-top-right-radius:10px;text-align:right;padding-right:5%;width:100%;} <?php } ?><?php 
-}
+	-webkit-border-top-right-radius:10px;text-align:right;padding-right:15px;width:100%;margin-left:-8px;} <?php } 
+	
+	} //is_page_template
+	else { // IF NO PAGE TEMPLATE HAS BEEN SELECTED
+	
+	 if ($mantra_side == "1c" ) { ?>
+#content {width:<?php echo ($totalwidth-50) ?>px; margin:20px;}  <?php }
+
+?><?php  if ($mantra_side == "2cSr" ) { ?>
+#content { width:<?php echo ($contentSize- 10) ?>px;}
+#primary,#secondary {width:<?php echo ($sidebarSize  ) ?>px;}<?php }
+
+?><?php  if ($mantra_side == "2cSl" ) { ?>
+#content { width:<?php echo ($contentSize - 10) ?>px;float:right;margin:10px 20px 0 0;}
+#primary,#secondary {width:<?php echo ($sidebarSize ) ?>px;float:left;padding-left:0px;clear:left;border:none;border-right:1px dashed #EEE;padding-right:20px;}
+.widget-title { -moz-border-radius-topleft:0px; -webkit-border-radius:0px;border-radius-topleft:0px ; -moz-border-radius-topright:10px ;border-radius-topright:10px ;	border-top-right-radius:10px;
+	-webkit-border-top-right-radius:10px;text-align:right;padding-right:5%;width:100%;margin-left:-10px;} <?php } 
+
+?><?php  if ($mantra_side == "3cSr" ) { ?>
+#content { width:<?php echo ($contentSize- 20) ?>px;}
+#primary,#secondary {width:<?php echo ($mantra_sidebar/2  ) ?>px;} <?php } 
+
+?><?php  if ($mantra_side == "3cSl" ) { ?>
+#content { width:<?php echo ($contentSize - 20) ?>px;float:right;margin:10px 20px 0 0;display:block;}
+#primary,#secondary {width:<?php echo ($sidebarSize/2 ) ?>px;float:left;padding-left:0px;;border:none;border-right:1px dashed #EEE;padding-right:20px;}
+.widget-title { -moz-border-radius-topleft:0px; -webkit-border-radius:0px;border-radius-topleft:0px ; -moz-border-radius-topright:10px ;border-radius-topright:10px ;	border-top-right-radius:10px;
+	-webkit-border-top-right-radius:10px;text-align:right;padding-right:8%;width:100%;margin-left:-8px;} <?php } 
+
+?><?php  if ($mantra_side == "3cSs") { ?>
+#content { width:<?php echo ($contentSize - 20) ?>px;float:right;margin:10px <?php echo $sidebarSize/2+30 ?>px 0 <?php echo -($contentSize+$sidebarSize) ?>px;display:block;}
+#primary {width:<?php echo ($sidebarSize/2 ) ?>px;float:left;padding-left:0px;border:none;border-right:1px dashed #EEE;padding-right:20px;}
+#secondary {width:<?php echo ($sidebarSize/2 ) ?>px;float:right;}
+#primary .widget-title { -moz-border-radius-topleft:0px; -webkit-border-radius:0px;border-radius-topleft:0px ; -moz-border-radius-topright:10px ;border-radius-topright:10px ;	border-top-right-radius:10px;
+	-webkit-border-top-right-radius:10px;text-align:right;padding-right:15px;width:100%;margin-left:-8px;} <?php } 
+	
+	}//else
+}//absolute dim
 
 /* RELATIVE DIMENSIONS. */
 
 else if ($mantra_dimselect=="Relative") { ?>
 #wrapper { width:<?php echo ($totalwidth) ?>% ;}
- #access, #colophon, #branding, #main {width:100%;}
+#access, #colophon, #branding, #main {width:100%;}
 #access .menu-header, div.menu {width:96% ;}
 #content {margin-left:2%;}
 #primary, #secondary {padding-left:1%;}
+<?php
+	if (is_page_template() && !is_page_template('template-blog.php') && !is_page_template('template-onecolumn.php') && !is_page_template('template-page-with-intro.php')) {
 
-<?php if ($mantra_side == "1c" || $mantra_side =="Disable") { ?>
-#content {width:96%; margin:20px;}  <?php }
-
-?><?php if ($mantra_side == "2cSr" || $mantra_side == "Right") { ?>
+?><?php if (is_page_template("template-twocolumns-right.php")) { ?>
 #content { width:<?php echo ($contentSize) ?>%;}
 #primary,#secondary {width:<?php echo ($sidebarSize ) ?>%;}<?php }
 
-?><?php if ($mantra_side == "2cSl" || $mantra_side == "Left") { ?>
-#content { width:<?php echo ($contentSize ) ?>%;float:right;margin:0 20px 0 0;}
+?><?php if (is_page_template("template-twocolumns-left.php")) { ?>
+#content { width:<?php echo ($contentSize ) ?>%;float:right;margin:10px 20px 0 0;}
 #primary,#secondary {width:<?php echo ($sidebarSize ) ?>%;float:left;padding-left:0px;clear:left;border:none;border-right:1px dashed #EEE;padding-right:20px;}
 .widget-title { -moz-border-radius-topleft:0px; -webkit-border-radius:0px;border-radius-topleft:0px ; -moz-border-radius-topright:10px ;border-radius-topright:10px ;	border-top-right-radius:10px;
-	-webkit-border-top-right-radius:10px;text-align:right;padding-right:5%;width:95%;} <?php } 
+	-webkit-border-top-right-radius:10px;text-align:right;padding-right:5%;width:95%;margin-left:-10px;} <?php } 
+
+?><?php if ( is_page_template("template-threecolumns-right.php")) { ?>
+#content { width:<?php echo ($contentSize-2) ?>%;}
+#primary,#secondary {width:<?php echo ($sidebarSize/2  ) ?>%;} <?php } 
+
+?><?php if (is_page_template("template-threecolumns-left.php")) { ?>
+#content { width:<?php echo ($contentSize-2) ?>%;float:right;margin:10px 20px 0 0;display:block;}
+#primary,#secondary {width:<?php echo ($sidebarSize/2 ) ?>%;float:left;padding-left:0px;;border:none;border-right:1px dashed #EEE;padding-right:10px;}
+.widget-title { -moz-border-radius-topleft:0px; -webkit-border-radius:0px;border-radius-topleft:0px ; -moz-border-radius-topright:10px ;border-radius-topright:10px ;	border-top-right-radius:10px;
+	-webkit-border-top-right-radius:10px;text-align:right;padding-right:8%;width:95%;margin-left:-8px;} <?php } 
+
+?><?php if ( is_page_template("template-threecolumns-center.php")) { ?>
+#content { width:<?php echo ($contentSize-1 ) ?>%;float:right;margin:10px <?php echo $sidebarSize/2+2 ?>% 0 <?php echo -($contentSize+$sidebarSize) ?>%;display:block;}
+#primary {width:<?php echo ($sidebarSize/2 ) ?>%;float:left;padding-left:0px;border:none;border-right:1px dashed #EEE;padding-right:20px;}
+#secondary {width:<?php echo ($sidebarSize/2 ) ?>%;float:right;}
+#primary .widget-title { -moz-border-radius-topleft:0px; -webkit-border-radius:0px;border-radius-topleft:0px ; -moz-border-radius-topright:10px ;border-radius-topright:10px ;	border-top-right-radius:10px;
+	-webkit-border-top-right-radius:10px;text-align:right;padding-right:8%;width:100%;margin-left:-8px;} <?php } 
+	}// is_page_template
+	
+	 else {  // IF NO PAGE TEMPLATE HAS BEEN SELECTED
+	 
+ if ($mantra_side == "1c") { ?>
+#content {width:96%; margin:20px;}  <?php }
+
+?><?php if ($mantra_side == "2cSr" ) { ?>
+#content { width:<?php echo ($contentSize) ?>%;}
+#primary,#secondary {width:<?php echo ($sidebarSize ) ?>%;}<?php }
+
+?><?php if ($mantra_side == "2cSl" ) { ?>
+#content { width:<?php echo ($contentSize ) ?>%;float:right;margin:10px 20px 0 0;}
+#primary,#secondary {width:<?php echo ($sidebarSize ) ?>%;float:left;padding-left:0px;clear:left;border:none;border-right:1px dashed #EEE;padding-right:20px;}
+.widget-title { -moz-border-radius-topleft:0px; -webkit-border-radius:0px;border-radius-topleft:0px ; -moz-border-radius-topright:10px ;border-radius-topright:10px ;	border-top-right-radius:10px;
+	-webkit-border-top-right-radius:10px;text-align:right;padding-right:5%;width:95%;margin-left:-10px;} <?php } 
 
 ?><?php if ($mantra_side == "3cSr" ) { ?>
 #content { width:<?php echo ($contentSize-2) ?>%;}
 #primary,#secondary {width:<?php echo ($sidebarSize/2  ) ?>%;} <?php } 
 
 ?><?php if ($mantra_side == "3cSl" ) { ?>
-#content { width:<?php echo ($contentSize-2) ?>%;float:right;margin:0 20px 0 0;display:block;}
+#content { width:<?php echo ($contentSize-2) ?>%;float:right;margin:10px 20px 0 0;display:block;}
 #primary,#secondary {width:<?php echo ($sidebarSize/2 ) ?>%;float:left;padding-left:0px;;border:none;border-right:1px dashed #EEE;padding-right:10px;}
 .widget-title { -moz-border-radius-topleft:0px; -webkit-border-radius:0px;border-radius-topleft:0px ; -moz-border-radius-topright:10px ;border-radius-topright:10px ;	border-top-right-radius:10px;
-	-webkit-border-top-right-radius:10px;text-align:right;padding-right:5%;width:95%;} <?php } 
+	-webkit-border-top-right-radius:10px;text-align:right;padding-right:8%;width:95%;margin-left:-8px;} <?php } 
 
-?><?php if ($mantra_side == "3cSs" ) { ?>
-#content { width:<?php echo ($contentSize ) ?>%;float:right;margin:0 <?php echo $sidebarSize/2+2 ?>% 0 <?php echo -($contentSize+$sidebarSize) ?>%;display:block;}
+?><?php if ($mantra_side == "3cSs") { ?>
+#content { width:<?php echo ($contentSize-1 ) ?>%;float:right;margin:10px <?php echo $sidebarSize/2+2 ?>% 0 <?php echo -($contentSize+$sidebarSize) ?>%;display:block;}
 #primary {width:<?php echo ($sidebarSize/2 ) ?>%;float:left;padding-left:0px;border:none;border-right:1px dashed #EEE;padding-right:20px;}
 #secondary {width:<?php echo ($sidebarSize/2 ) ?>%;float:right;}
 #primary .widget-title { -moz-border-radius-topleft:0px; -webkit-border-radius:0px;border-radius-topleft:0px ; -moz-border-radius-topright:10px ;border-radius-topright:10px ;	border-top-right-radius:10px;
-	-webkit-border-top-right-radius:10px;text-align:right;padding-right:5%;width:100%;} <?php } ?><?php
-} ?>
+	-webkit-border-top-right-radius:10px;text-align:right;padding-right:8%;width:100%;margin-left:-8px;} <?php } 
+	 
+	 }//else
+} 
 
+/* 
+ * THE REST OF THE CSS
+ */
+?>
 #content p, #content ul, #content ol {
 font-size:<?php echo $mantra_fontsize ?>;
 <?php if ($mantra_lineheight != "Default") { ?>line-height:<?php echo $mantra_lineheight ?>; <?php }
@@ -116,7 +191,7 @@ font-size:<?php echo $mantra_fontsize ?>;
  <?php } else if ($mantra_caption == "Black") {?> background-color:#000;color:#CCC;}
 <?php }
 ?><?php if ($mantra_metaback == "White") { ?> .entry-meta { background:#FFF;} <?php } else if ($mantra_metaback == "None") { ?> .entry-meta { background:#FFF;border:none;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;} <?php }
-?><?php if ($mantra_postseparator == "Show") { ?> article.post { padding-bottom:10px;border-bottom:3px solid #EEE} <?php }
+?><?php if ($mantra_postseparator == "Show") { ?> article.post, article.page { padding-bottom:10px;border-bottom:3px solid #EEE} <?php }
 ?><?php if ($mantra_contentlist == "Hide") { ?> #content ul li { background-image:none ; padding-left:0;} <?php }
 ?><?php if ($mantra_title == "Hide") { ?> #site-title, #site-description { visibility:hidden;} <?php }
 ?><?php if ($mantra_comtext == "Hide") { ?> #respond .form-allowed-tags { display:none;} <?php }
@@ -164,9 +239,31 @@ font-size:<?php echo $mantra_fontsize ?>;
 ?><?php if ($mantra_postbook == "Hide") { ?> .entry-utility span.bl_bookmark {display:none;} <?php }
 ?><?php if ($mantra_parindent != "0px") { ?>  p {text-indent:<?php echo $mantra_parindent;?> ;} <?php }
 ?><?php if ($mantra_posttime == "Hide") { ?> .entry-meta .entry-time {display:none;} <?php } 
-?><?php if ($mantra_postmetas == "Hide") { ?> #content .entry-meta, #content .entry-meta2, #content .entry-meta3, .entry-utility {display:none;} <?php } ?>
-</style>
+?><?php if ($mantra_postmetas == "Hide") { ?> #content .entry-meta, #content .entry-meta2, #content .entry-meta3, .entry-utility {display:none;} <?php } ?><?php
+// Header styling and image loading
+// Check if this is a post or page, if it has a thumbnail, and if it's a big one
+global $post;
+					if ( is_singular() &&
+							has_post_thumbnail( $post->ID ) && $mantra_fheader == "Enable" &&
+							(  $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ) ) &&
+							$image[1] >= HEADER_IMAGE_WIDTH ) : ?>
+							
+									#branding {background:url(<?php echo $image[0]; ?>) no-repeat;height:<?php echo HEADER_IMAGE_HEIGHT; ?>px;}
+   
+					<?php else : if (get_header_image() != '') { ?>
+						  #branding {background:url("<?php header_image(); ?>") no-repeat; 
+								<?php if ($mantra_dimselect=="Absolute") { ?>
+										width:<?php echo HEADER_IMAGE_WIDTH; ?>px; <?php } ?> height:<?php echo HEADER_IMAGE_HEIGHT; ?>px;} 
+																	<?php } 
+					else {} 
+					endif;
 
+				if ($mantra_options['mantra_linkheader']=="Enable") { ?>  
+					#linky { display:block; position:absolute; width:<?php echo HEADER_IMAGE_WIDTH; ?>px; height:<?php echo HEADER_IMAGE_HEIGHT; ?>px; z-index:1; }
+					#branding { height:<?php echo HEADER_IMAGE_HEIGHT; ?>px; }
+					#site-title, #site-description, #sheader { position:relative; z-index:2 }
+				<?php } ?>
+</style>
 <?php  } 
 
 // Mantra function for inseting into the header the Custom Css field in the theme options

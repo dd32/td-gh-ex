@@ -65,7 +65,7 @@ global $mantra_defaults;
 	
 	$input['mantra_hheight'] =  intval(wp_kses_data($input['mantra_hheight']));
 	
-	$input['mantra_copyright'] =  wp_kses_post($input['mantra_copyright']);
+	$input['mantra_copyright'] =  trim(wp_kses_post($input['mantra_copyright']));
 
 	$input['mantra_backcolor'] =  wp_kses_data($input['mantra_backcolor']);
 	$input['mantra_headercolor'] =  wp_kses_data($input['mantra_headercolor']);
@@ -91,13 +91,13 @@ global $mantra_defaults;
 	$input['mantra_fwidth'] =  intval(wp_kses_data($input['mantra_fwidth']));
 	$input['mantra_fheight'] =  intval(wp_kses_data($input['mantra_fheight']));
 
-	$input['mantra_social2'] =  esc_url($input['mantra_social2']);
-	$input['mantra_social4'] =  esc_url($input['mantra_social4']);
-	$input['mantra_social6'] =  esc_url($input['mantra_social6']);
-	$input['mantra_social8'] =  esc_url($input['mantra_social8']);
-	$input['mantra_social10'] = esc_url($input['mantra_social10']);
+	$input['mantra_social2'] =  esc_url_raw($input['mantra_social2']);
+	$input['mantra_social4'] =  esc_url_raw($input['mantra_social4']);
+	$input['mantra_social6'] =  esc_url_raw($input['mantra_social6']);
+	$input['mantra_social8'] =  esc_url_raw($input['mantra_social8']);
+	$input['mantra_social10'] = esc_url_raw($input['mantra_social10']);
 
-	$input['mantra_favicon'] =  wp_kses_data($input['mantra_favicon']);
+	$input['mantra_favicon'] =  esc_url_raw($input['mantra_favicon']);
 	$input['mantra_customcss'] =  wp_kses_post(trim($input['mantra_customcss']));
 	$input['mantra_customjs'] =  wp_kses_post(trim($input['mantra_customjs']));
 	$input['mantra_seo_home_desc'] =  wp_kses_post(trim($input['mantra_seo_home_desc']));
@@ -142,42 +142,42 @@ global $mantra_defaults;
 	$input['mantra_sliderimg1'] =  wp_kses_data($input['mantra_sliderimg1']);
 	$input['mantra_slidertitle1'] =  wp_kses_data($input['mantra_slidertitle1']);
 	$input['mantra_slidertext1'] =  wp_kses_post($input['mantra_slidertext1']);
-	$input['mantra_sliderlink1'] =  esc_url($input['mantra_sliderlink1']);
+	$input['mantra_sliderlink1'] =  esc_url_raw($input['mantra_sliderlink1']);
 	$input['mantra_sliderimg2'] =  wp_kses_data($input['mantra_sliderimg2']);
 	$input['mantra_slidertitle2'] =  wp_kses_data($input['mantra_slidertitle2']);
 	$input['mantra_slidertext2'] =  wp_kses_post($input['mantra_slidertext2']);
-	$input['mantra_sliderlink2'] =  esc_url($input['mantra_sliderlink2']);
+	$input['mantra_sliderlink2'] =  esc_url_raw($input['mantra_sliderlink2']);
 	$input['mantra_sliderimg3'] =  wp_kses_data($input['mantra_sliderimg3']);
 	$input['mantra_slidertitle3'] =  wp_kses_data($input['mantra_slidertitle3']);
 	$input['mantra_slidertext3'] =  wp_kses_post($input['mantra_slidertext3']);
-	$input['mantra_sliderlink3'] =  esc_url($input['mantra_sliderlink3']);
+	$input['mantra_sliderlink3'] =  esc_url_raw($input['mantra_sliderlink3']);
 	$input['mantra_sliderimg4'] =  wp_kses_data($input['mantra_sliderimg4']);
 	$input['mantra_slidertitle4'] =  wp_kses_data($input['mantra_slidertitle4']);
 	$input['mantra_slidertext4'] =  wp_kses_post($input['mantra_slidertext4']);
-	$input['mantra_sliderlink4'] =  esc_url($input['mantra_sliderlink4']);
+	$input['mantra_sliderlink4'] =  esc_url_raw($input['mantra_sliderlink4']);
 	$input['mantra_sliderimg5'] =  wp_kses_data($input['mantra_sliderimg5']);
 	$input['mantra_slidertitle5'] =  wp_kses_data($input['mantra_slidertitle5']);
 	$input['mantra_slidertext5'] =  wp_kses_post($input['mantra_slidertext5']);
-	$input['mantra_sliderlink5'] =  esc_url($input['mantra_sliderlink5']);
+	$input['mantra_sliderlink5'] =  esc_url_raw($input['mantra_sliderlink5']);
 
 	$input['mantra_colimageheight'] = intval(wp_kses_data($input['mantra_colimageheight']));
 
 	$input['mantra_columnimg1'] =  wp_kses_data($input['mantra_columnimg1']);
 	$input['mantra_columntitle1'] =  wp_kses_data($input['mantra_columntitle1']);
 	$input['mantra_columntext1'] =  wp_kses_post($input['mantra_columntext1']);
-	$input['mantra_columnlink1'] =  esc_url($input['mantra_columnlink1']);
+	$input['mantra_columnlink1'] =  esc_url_raw($input['mantra_columnlink1']);
 	$input['mantra_columnimg2'] =  wp_kses_data($input['mantra_columnimg2']);
 	$input['mantra_columntitle2'] =  wp_kses_data($input['mantra_columntitle2']);
 	$input['mantra_columntext2'] =  wp_kses_post($input['mantra_columntext2']);
-	$input['mantra_columnlink2'] =  esc_url($input['mantra_columnlink2']);
+	$input['mantra_columnlink2'] =  esc_url_raw($input['mantra_columnlink2']);
 	$input['mantra_columnimg3'] =  wp_kses_data($input['mantra_columnimg3']);
 	$input['mantra_columntitle3'] =  wp_kses_data($input['mantra_columntitle3']);
 	$input['mantra_columntext3'] =  wp_kses_post($input['mantra_columntext3']);
-	$input['mantra_columnlink3'] =  esc_url($input['mantra_columnlink3']);
+	$input['mantra_columnlink3'] =  esc_url_raw($input['mantra_columnlink3']);
 	$input['mantra_columnimg4'] =  wp_kses_data($input['mantra_columnimg4']);
 	$input['mantra_columntitle4'] =  wp_kses_data($input['mantra_columntitle4']);
 	$input['mantra_columntext4'] =  wp_kses_post($input['mantra_columntext4']);
-	$input['mantra_columnlink4'] =  esc_url($input['mantra_columnlink4']);
+	$input['mantra_columnlink4'] =  esc_url_raw($input['mantra_columnlink4']);
 
 	$input['mantra_columnreadmore'] =  wp_kses($input['mantra_columnreadmore'],'');
 

@@ -1,5 +1,5 @@
 <?php /*
-Template Name: page-with-intro
+Template Name: Category page with intro
 */ ?>
 
 

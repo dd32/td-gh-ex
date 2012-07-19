@@ -1,5 +1,5 @@
 <?php /*
-Template Name: page-blog
+Template Name: Blog Template ( Posts Page)
 */ ?>
 
 

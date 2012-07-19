@@ -3,6 +3,7 @@
  */
 
 jQuery(document).ready(function() {
+
 // WP image uploader for custom use in the admin section
 		var uploadparent = 0;
 		var old_send_to_editor = window.send_to_editor;
@@ -28,7 +29,7 @@ jQuery(document).ready(function() {
 			} else {
 				old_send_to_editor();
 			}
-		}
+			}
 
 // Show/hide slides		
 		jQuery('.slidetitle').click(function() {

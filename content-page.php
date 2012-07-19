@@ -1,14 +1,13 @@
-<?php /*
-Template Name: page-test
-*/
+<?php
+/**
+ *
+ * Learn more: http://codex.wordpress.org/Post_Formats
+ *
+ * @package Cryout Creations
+ * @subpackage Mantra
+ */
 
-get_header(); ?>
-
-		<section id="container">
-	
-			<div id="content" role="main">
-
-<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+if ( have_posts()  ) while ( have_posts() ) : the_post(); ?>
 
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<?php if ( is_front_page() ) { ?>
@@ -29,10 +28,3 @@ get_header(); ?>
 
 
 <?php } endwhile; ?>
-
-			</div><!-- #content -->
-			<?php get_sidebar(); ?>
-		</section><!-- #container -->
-
-
-<?php get_footer(); ?>

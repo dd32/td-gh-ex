@@ -27,7 +27,7 @@ $mantra_options= mantra_get_theme_options();
 foreach ($mantra_options as $key => $value) {	
      ${"$key"} = $value ;
 }
-        $mantra_theme_data = get_transient( 'theme_info'); 
+        $mantra_theme_data = get_transient( 'cryout_theme_info'); 
 ?>
 
 

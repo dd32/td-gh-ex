@@ -68,10 +68,10 @@ global $mantra_options;
 foreach ($mantra_options as $key => $value) {
     							 ${"$key"} = $value ;
 									}
-	wp_register_style( 'mantra_googlefont', $mantra_googlefont2 );
-	wp_register_style( 'mantra_googlefonttitle', $mantra_googlefonttitle2 );
-	wp_register_style( 'mantra_googlefontside', $mantra_googlefontside2 );
-	wp_register_style( 'mantra_googlefontsubheader', $mantra_googlefontsubheader2 );
+	wp_register_style( 'mantra_googlefont', esc_attr($mantra_googlefont2 ));
+	wp_register_style( 'mantra_googlefonttitle', esc_attr($mantra_googlefonttitle2 ));
+	wp_register_style( 'mantra_googlefontside',esc_attr($mantra_googlefontside2) );
+	wp_register_style( 'mantra_googlefontsubheader', esc_attr($mantra_googlefontsubheader2) );
 	wp_enqueue_style( 'mantra_googlefont');
 	wp_enqueue_style( 'mantra_googlefonttitle');
 	wp_enqueue_style( 'mantra_googlefontside');
@@ -105,21 +105,14 @@ foreach ($mantra_options as $key => $value) {
 
 // If frontend - load the js for the menu and the social icons animations
 	if ( !is_admin() ) {
-		wp_register_script('frontend',get_template_directory_uri() . '/js/frontend.js', array('jquery') );
-		wp_enqueue_script('frontend');
-		// If the back to top button is enabled - load its js
-			if($mantra_backtop =="Enable") {
-							wp_register_script('top',get_template_directory_uri() . '/js/top.js', array('jquery'));
-							wp_enqueue_script('top');}
+		wp_register_script('cryout-frontend',get_template_directory_uri() . '/js/frontend.js', array('jquery') );
+		wp_enqueue_script('cryout-frontend');
   		// If mantra from page is enabled and the current page is home page - load the nivo slider js							
 		if($mantra_frontpage =="Enable" && is_home()) {
-							wp_register_script('nivoSlider',get_template_directory_uri() . '/js/nivo-slider.js', array('jquery'));
-							wp_enqueue_script('nivoSlider');
+							wp_register_script('cryout-nivoSlider',get_template_directory_uri() . '/js/nivo-slider.js', array('jquery'));
+							wp_enqueue_script('cryout-nivoSlider');
 							}
   	}
-	
-	
-
 	
 
 	/* We add some JavaScript to pages with the comment form
@@ -931,15 +924,6 @@ function mantra_seo_description() {
 			echo  trim(strip_tags(category_description()));
 			echo '" />'; }
 		
-
-}
-
-function mantra_seo_start() {
-echo '<!-- Mantra SEO Elements -->'.PHP_EOL;
-}
-
-function mantra_seo_ending() {
-echo '<!-- end of Mantra SEO -->'.PHP_EOL;
 }
 
 function mantra_seo_name() {
@@ -959,21 +943,12 @@ function mantra_seo_generator() {
 global $mantra_options;
 foreach ($mantra_options as $key => $value) {
 ${"$key"} = $value ;}
-	 
-add_action ('mantra_seo_hook','mantra_seo_start');
 add_action ('mantra_seo_hook','mantra_seo_title');
 add_action ('mantra_seo_hook','mantra_seo_description');
 
-remove_action('wp_head', 'adjacent_posts_rel_link_wp_head');
-add_action ('mantra_seo_hook','adjacent_posts_rel_link_wp_head');
-remove_action('wp_head', 'rel_canonical');
-add_action ('mantra_seo_hook','rel_canonical');
-remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 );
-add_action ('mantra_seo_hook','wp_shortlink_wp_head');
-if($mantra_seo_author!="Do not use") 
+if($mantra_seo_author && $mantra_seo_author!="Do not use") 
 	add_action ('mantra_seo_hook','mantra_seo_name');
 
-add_action ('mantra_seo_hook','mantra_seo_ending');
 }
 if($mantra_seo=="Enable") mantra_seo_generator() ; 
 	else add_action ('mantra_seo_hook','mantra_seo_title',0);
@@ -1018,10 +993,8 @@ echo '<p><label for="'.$meta_box['name'].'_value">'.$meta_box['description'].'</
 
 function mantra_create_meta_box() {
 global $theme_name;
-if ( function_exists('add_meta_box') ) {
 add_meta_box( 'new-meta-boxes', 'Mantra SEO - Description', 'mantra_meta_box_description', 'post', 'normal', 'high' );
 add_meta_box( 'new-meta-boxes', 'Mantra SEO - Description', 'mantra_meta_box_description', 'page', 'normal', 'high' );
-}
 }
 
 function mantra_save_postdata( $post_id ) {
@@ -1070,19 +1043,18 @@ function mantra_set_social_icons() {
 for ($i=1; $i<=9; $i+=2) {
 	$j=$i+1;
 	if ( ${"mantra_social$j"} ) {?>
-		<a target="_blank" rel="nofollow" href="<?php echo ${"mantra_social$j"}; ?>" class="socialicons social-<?php echo ${"mantra_social$i"}; ?>" title="<?php echo ${"mantra_social$i"}; ?>"><img alt="<?php echo ${"mantra_social$i"}; ?>" src="<?php echo get_template_directory_uri().'/images/socials/'.${"mantra_social$i"}.'.png'; ?>" /></a><?php 
+		<a target="_blank" rel="nofollow" href="<?php echo esc_url(${"mantra_social$j"}); ?>" class="socialicons social-<?php echo esc_attr(${"mantra_social$i"}); ?>" title="<?php echo esc_attr(${"mantra_social$i"}); ?>"><img alt="<?php echo esc_attr(${"mantra_social$i"}); ?>" src="<?php echo get_template_directory_uri().'/images/socials/'.${"mantra_social$i"}.'.png'; ?>" /></a><?php 
 				} 
 		}
 }
 
 // Get any existing copy of our transient data
-delete_transient( 'theme_info');
-if ( false === ( $theme_info = get_transient( 'theme_info' ) ) ) {
+if ( false === ( $cryout_theme_info = get_transient( 'cryout_theme_info' ) ) ) {
     // It wasn't there, so regenerate the data and save the transient
- if ( ! function_exists( 'get_custom_header' ) ) {  $theme_info = get_theme_data( get_theme_root() . '/mantra/style.css' ); }
-else { $theme_info = wp_get_theme( );}
+ if ( ! function_exists( 'get_custom_header' ) ) {  $cryout_theme_info = get_theme_data( get_theme_root() . '/mantra/style.css' ); }
+else { $cryout_theme_info = wp_get_theme( );}
 
-     set_transient( 'theme_info',  $theme_info ,60*60);
+     set_transient( 'cryout_theme_info',  $cryout_theme_info ,60*60);
 }
 
 
@@ -1286,7 +1258,7 @@ float:left;
 <?php  
 
 // First FrontPage Title
-if($mantra_fronttext1) {?><div id="front-text1"> <h1><?php echo $mantra_fronttext1 ?> </h1></div><?php }
+if($mantra_fronttext1) {?><div id="front-text1"> <h1><?php echo esc_attr($mantra_fronttext1) ?> </h1></div><?php }
 
 // When a post query has been selected from the Slider type in the admin area
 if ($mantra_slideType != 'Custom Slides') { 
@@ -1336,7 +1308,7 @@ $i=0;	$j=0;?>
 
  		 $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ),array($mantra_fpsliderwidth,$mantra_fpsliderheight)); 
 		 $i++; ?>
-         <a href="<?php the_permalink(); ?>"><img width="<?php echo $mantra_fpsliderwidth ?>" src="<?php echo $image[0]; ?>"  alt="" <?php if ($mantra_slidertitle1 || $mantra_slidertext1 ) { ?> title="#caption<?php echo $i;?>" <?php }?> /></a> 
+         <a href="<?php the_permalink(); ?>"><img width="<?php echo absint($mantra_fpsliderwidth) ?>" src="<?php echo $image[0]; ?>"  alt=""  title="#caption<?php echo $i;?>"  /></a> 
 
 	<?php endwhile; // end of the loop.   
 ?> 
@@ -1362,7 +1334,7 @@ $i=0;	$j=0;?>
             <div class="ribbon"></div>
             <div id="slider" class="nivoSlider">
 				<?php  for ($i=1;$i<=5;$i++)
-					if(${"mantra_sliderimg$i"}) {?>    <a href='<?php echo ${"mantra_sliderlink$i"} ?>'><img width='<?php echo $mantra_fpsliderwidth ?>' src='<?php echo ${"mantra_sliderimg$i"} ?>'  alt="" <?php if (${"mantra_slidertitle$i"} || ${"mantra_slidertext$i"} ) { ?>title="#caption<?php echo $i;?>" <?php }?> /></a><?php }  ?> 
+					if(${"mantra_sliderimg$i"}) {?>    <a href='<?php echo esc_url(${"mantra_sliderlink$i"}) ?>'><img width='<?php echo absint($mantra_fpsliderwidth) ?>' src='<?php echo esc_url(${"mantra_sliderimg$i"}) ?>'  alt="" <?php if (${"mantra_slidertitle$i"} || ${"mantra_slidertext$i"} ) { ?>title="#caption<?php echo $i;?>" <?php }?> /></a><?php }  ?> 
             </div> 
 			<?php for ($i=1;$i<=5;$i++) { ?>
             <div id="caption<?php echo $i;?>" class="nivo-html-caption">
@@ -1373,29 +1345,29 @@ $i=0;	$j=0;?>
 <?php } 
 
 // Second FrontPage title
- if($mantra_fronttext2) {?><div id="front-text2"> <h1><?php echo $mantra_fronttext2 ?> </h1></div><?php } 
+ if($mantra_fronttext2) {?><div id="front-text2"> <h1><?php echo esc_attr($mantra_fronttext2) ?> </h1></div><?php } 
  
 // Frontpage columns
   if($mantra_nrcolumns) { ?>
 <div id="front-columns"> 
 	<div id="column1">
-	<a  href="<?php echo $mantra_columnlink1 ?>">	<div class="column-image" ><img  src="<?php echo $mantra_columnimg1 ?>" id="columnImage1" alt="" /> </div> <h3><?php echo $mantra_columntitle1 ?></h3> </a><div class="column-text"><?php echo $mantra_columntext1 ?></div>
-	<?php if($mantra_columnreadmore) {?>	<div class="columnmore"> <a href="<?php echo $mantra_columnlink1 ?>"><?php echo $mantra_columnreadmore ?> &raquo;</a> </div><?php } ?>
+	<a  href="<?php echo esc_url($mantra_columnlink1) ?>">	<div class="column-image" ><img  src="<?php echo esc_url($mantra_columnimg1) ?>" id="columnImage1" alt="" /> </div> <h3><?php echo $mantra_columntitle1 ?></h3> </a><div class="column-text"><?php echo $mantra_columntext1 ?></div>
+	<?php if($mantra_columnreadmore) {?>	<div class="columnmore"> <a href="<?php echo esc_url($mantra_columnlink1) ?>"><?php echo esc_attr($mantra_columnreadmore) ?> &raquo;</a> </div><?php } ?>
 	</div>
 <?php  if($mantra_nrcolumns != '1') { ?>
 	<div id="column2">
-		<a  href="<?php echo $mantra_columnlink2 ?>">	<div class="column-image" ><img  src="<?php echo $mantra_columnimg2 ?>" id="columnImage2" alt="" /> </div> <h3><?php echo $mantra_columntitle2 ?></h3> </a><div class="column-text"><?php echo $mantra_columntext2 ?></div>
-	<?php if($mantra_columnreadmore) {?>	<div class="columnmore"> <a href="<?php echo $mantra_columnlink2 ?>"><?php echo $mantra_columnreadmore ?> &raquo;</a> </div><?php } ?>
+		<a  href="<?php echo esc_url($mantra_columnlink2) ?>">	<div class="column-image" ><img  src="<?php echo esc_url($mantra_columnimg2) ?>" id="columnImage2" alt="" /> </div> <h3><?php echo $mantra_columntitle2 ?></h3> </a><div class="column-text"><?php echo $mantra_columntext2 ?></div>
+	<?php if($mantra_columnreadmore) {?>	<div class="columnmore"> <a href="<?php echo esc_url($mantra_columnlink2) ?>"><?php echo esc_attr($mantra_columnreadmore) ?> &raquo;</a> </div><?php } ?>
 	</div>
 <?php  if($mantra_nrcolumns != '2') { ?>
 	<div id="column3">
-		<a  href="<?php echo $mantra_columnlink3 ?>">	<div class="column-image" ><img  src="<?php echo $mantra_columnimg3 ?>" id="columnImage3" alt="" /> </div> <h3><?php echo $mantra_columntitle3 ?></h3> </a><div class="column-text"><?php echo $mantra_columntext3 ?></div>
-	<?php if($mantra_columnreadmore) {?>	<div class="columnmore"> <a href="<?php echo $mantra_columnlink3 ?>"><?php echo $mantra_columnreadmore ?> &raquo;</a> </div><?php } ?>
+		<a  href="<?php echo esc_url($mantra_columnlink3) ?>">	<div class="column-image" ><img  src="<?php echo esc_url($mantra_columnimg3) ?>" id="columnImage3" alt="" /> </div> <h3><?php echo $mantra_columntitle3 ?></h3> </a><div class="column-text"><?php echo $mantra_columntext3 ?></div>
+	<?php if($mantra_columnreadmore) {?>	<div class="columnmore"> <a href="<?php echo esc_url($mantra_columnlink3) ?>"><?php echo esc_attr($mantra_columnreadmore) ?> &raquo;</a> </div><?php } ?>
 	</div>
 <?php  if($mantra_nrcolumns == '4') { ?>
 	<div id="column4">
-		<a  href="<?php echo $mantra_columnlink4 ?>">	<div class="column-image" ><img  src="<?php echo $mantra_columnimg4 ?>" id="columnImage4" alt="" /> </div> <h3><?php echo $mantra_columntitle4 ?></h3> </a><div class="column-text"><?php echo $mantra_columntext4 ?></div>
-	<?php if($mantra_columnreadmore) {?>	<div class="columnmore"> <a href="<?php echo $mantra_columnlink4 ?>"><?php echo $mantra_columnreadmore ?> &raquo;</a> </div><?php } ?>
+		<a  href="<?php echo esc_url($mantra_columnlink4) ?>">	<div class="column-image" ><img  src="<?php echo esc_url($mantra_columnimg4) ?>" id="columnImage4" alt="" /> </div> <h3><?php echo $mantra_columntitle4 ?></h3> </a><div class="column-text"><?php echo $mantra_columntext4 ?></div>
+	<?php if($mantra_columnreadmore) {?>	<div class="columnmore"> <a href="<?php echo esc_url($mantra_columnlink4) ?>"><?php echo esc_attr($mantra_columnreadmore) ?> &raquo;</a> </div><?php } ?>
 	</div>
 <?php } } }?>
 </div>

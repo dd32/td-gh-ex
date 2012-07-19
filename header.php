@@ -32,7 +32,7 @@ document.createElement('footer');
 document.createElement('hgroup');
 </script>
 <![endif]-->
-<?php if ($mantra_options['mantra_favicon']) { ?> <link rel="shortcut icon" href="<?php echo $mantra_options['mantra_favicon']; ?>" />
+<?php if ($mantra_options['mantra_favicon']) { ?> <link rel="shortcut icon" href="<?php echo esc_url($mantra_options['mantra_favicon']); ?>" />
 <?php }
 	/* Always have wp_head() just before the closing </head>
 	 * tag of your theme, or you will break many plugins, which
@@ -82,23 +82,8 @@ document.createElement('hgroup');
 					// Houston, we have a new header image!
 					//echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' ); 
 					 $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), array(HEADER_IMAGE_WIDTH,HEADER_IMAGE_HEIGHT) ); 
-	 ?><style type="text/css">
-	 #branding {background:url(<?php echo $image[0]; ?>) no-repeat;height:<?php echo HEADER_IMAGE_HEIGHT; ?>px;}
-      </style>  
-				<?php else : if (get_header_image() != '') { ?>
-					<style type="text/css"> #branding {background:url("<?php header_image(); ?>") no-repeat; <?php if ($mantra_dimselect=="Absolute") { ?>width:<?php echo HEADER_IMAGE_WIDTH; ?>px; <?php } ?> height:<?php echo HEADER_IMAGE_HEIGHT; ?>px;} 
-						 </style>
-				<?php } else { ?><?php } ?>
-				<?php endif; 
-
-				if ($mantra_options['mantra_linkheader']=="Enable") { ?>  
-				<style type="text/css">
-					#linky { display:block; position:absolute; width:<?php echo HEADER_IMAGE_WIDTH; ?>px; height:<?php echo HEADER_IMAGE_HEIGHT; ?>px; z-index:1; }
-					#branding { height:<?php echo HEADER_IMAGE_HEIGHT; ?>px; }
-					#site-title, #site-description, #sheader { position:relative; z-index:2 }
-				</style>
-				<?php } ?>
-				
+					 endif; 
+	 ?>
 				<div style="clear:both;"></div>
 			
 			</div><!-- #branding --> 
