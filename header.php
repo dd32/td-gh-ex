@@ -30,30 +30,22 @@
 <div id="header">
 	<div class="top-bg"></div>
   		<div class="layout-978">
-        	<div class="logo-wrap">
-            	<h1 id="site-title">
-                	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-						<?php
-							//Displays the header logo 	
-							if( function_exists( 'simplecatch_headerlogo' ) ) :
-								simplecatch_headerlogo();
-							endif; 
-				
-							echo esc_attr( get_bloginfo( 'name', 'display' ) ); 
-						?>
-                    </a>
-                </h1>
-            	<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
-        	</div><!-- .logo-wrap -->
+        	<?php 
+        		// Funcition to show the header logo, site title and site description
+        		if ( function_exists( 'simplecatch_headerdetails' ) ) :
+					simplecatch_headerdetails(); 
+				endif;
+			?>
+
         	<div class="social-search">
-            		<?php
-						// simplecatch_headersocialnetworks displays social links given from theme option in header 
-						if ( function_exists( 'simplecatch_headersocialnetworks' ) ) :
-							simplecatch_headersocialnetworks(); 
-						endif;
-						// get search form
-						get_search_form();
-					?>      
+				<?php
+                    // simplecatch_headersocialnetworks displays social links given from theme option in header 
+                    if ( function_exists( 'simplecatch_headersocialnetworks' ) ) :
+                        simplecatch_headersocialnetworks(); 
+                    endif;
+                    // get search form
+                    get_search_form();
+                ?>      
         	</div><!-- .social-search -->
     		<div class="row-end"></div>
             <div id="mainmenu">
@@ -61,14 +53,14 @@
             </div><!-- #mainmenu-->  
             <div class="row-end"></div>   
         <?php 
-        // This function passes the value of slider effect to js file 
-        if( function_exists( 'simplecatch_pass_slider_value' ) ) {
-        	simplecatch_pass_slider_value();
-        }
-		// Display slider in home page and breadcrumb in other pages 
-		if ( function_exists( 'simplecatch_sliderbreadcrumb' ) ) :
-			simplecatch_sliderbreadcrumb(); 
-		endif;
+			// This function passes the value of slider effect to js file 
+			if( function_exists( 'simplecatch_pass_slider_value' ) ) {
+				simplecatch_pass_slider_value();
+			}
+			// Display slider in home page and breadcrumb in other pages 
+			if ( function_exists( 'simplecatch_sliderbreadcrumb' ) ) :
+				simplecatch_sliderbreadcrumb(); 
+			endif;
 		?> 
 	</div><!-- .layout-978 -->
 </div><!-- #header -->

@@ -14,3 +14,7 @@
 .form-table th {
 	padding: 0px;
 }
+
+.form-table select[multiple] {
+    height: 200px;
+}

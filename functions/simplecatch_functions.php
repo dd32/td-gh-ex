@@ -189,31 +189,48 @@ endif;
  *
  * @uses set_transient and delete_transient 
  */
-function simplecatch_headerlogo() {
-	//delete_transient( 'simplecatch_headerlogo' );	
+
+function simplecatch_headerdetails() {
+	//delete_transient( 'simplecatch_headerdetails' );	
+
+	// get data value from simplecatch_options through theme options
+	$options = get_option( 'simplecatch_options' );	
 		
-	if ( !$simplecatch_headerlogo = get_transient( 'simplecatch_headerlogo' ) ) {
-		// get data value from simplecatch_options through theme options
-		$options = get_option( 'simplecatch_options' );	
-		if( !isset( $options[ 'remove_header_logo' ] ) ) {
-			$options[ 'remove_header_logo' ] = "0";
-		}
+	if ( ( !$simplecatch_headerdetails = get_transient( 'simplecatch_headerdetails' ) ) && ( empty( $options[ 'remove_header_logo' ] ) || empty( $options[ 'remove_site_title' ] ) || empty( $options[ 'remove_site_description' ] ) ) ) {
+
 		echo '<!-- refreshing cache -->';
-		if ( $options[ 'remove_header_logo' ] == "0" ) :
-		// if not empty featured_logo_header on theme options
-			if ( !empty( $options[ 'featured_logo_header' ] ) ):
-				$simplecatch_headerlogo = 
-					'<img src="'.esc_url( $options['featured_logo_header'] ).'" alt="'.get_bloginfo( 'name' ).'" />';
-			else:
-				// if empty featured_logo_header on theme options, display default logo
-				$simplecatch_headerlogo ='<img src="'. get_template_directory_uri().'/images/logo.png" alt="logo" />';
-			endif;
-		endif;
 		
-	set_transient( 'simplecatch_headerlogo', $simplecatch_headerlogo, 86940 );
+		$simplecatch_headerdetails = '<div class="logo-wrap">';
+
+		if( empty( $options[ 'remove_header_logo' ] ) || empty( $options[ 'remove_site_title' ] ) ) {
+			$simplecatch_headerdetails .= '<h1 id="site-title">'.'<a href="'.esc_url( home_url( '/' ) ).' title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'">';
+
+			if( empty( $options[ 'remove_header_logo' ] ) ) {
+				if ( empty( $options[ 'featured_logo_header' ] ) ):
+					$simplecatch_headerdetails .= '<img src="'.esc_url( $options['featured_logo_header'] ).'" alt="'.get_bloginfo( 'name' ).'" />';
+				else:
+					// if empty featured_logo_header on theme options, display default logo
+					$simplecatch_headerdetails .='<img src="'. get_template_directory_uri().'/images/logo.png" alt="logo" />';
+				endif;
+			}
+
+			if ( empty( $options[ 'remove_site_title' ] ) ) {
+				$simplecatch_headerdetails .= '<span>'.esc_attr( get_bloginfo( 'name', 'display' ) ).'</span>'; 
+			}
+
+			$simplecatch_headerdetails .= '</a></h1>';
+		}
+
+		if( empty( $options[ 'remove_site_description' ] ) ) {
+			$simplecatch_headerdetails .= '<h2 id="site-description">'.get_bloginfo( 'description' ).'</h2>';
+		}	
+
+		$simplecatch_headerdetails .= '</div><!-- .logo-wrap -->';
+		
+	set_transient( 'simplecatch_headerdetails', $simplecatch_headerdetails, 86940 );
 	}
-	echo $simplecatch_headerlogo;	
-} // simplecatch_headerlogo
+	echo $simplecatch_headerdetails;	
+} // simplecatch_headerdetails
 
 
 /**
@@ -697,7 +714,11 @@ function simple_catch_alter_home( $query ){
     if ( $options[ 'exclude_slider_post'] != "0" && !empty( $options[ 'featured_slider' ] ) ) {
 		if( $query->is_main_query() && $query->is_home() ) {
 			$query->query_vars['post__not_in'] = $options[ 'featured_slider' ];
-
+		}
+	}
+	if ( !empty( $options[ 'front_page_category' ] ) ) {
+		if( $query->is_main_query() && $query->is_home() ) {
+			$query->query_vars['category__in'] = $options[ 'front_page_category' ];
 		}
 	}
 }

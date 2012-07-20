@@ -111,6 +111,7 @@ function simplecatch_options_page() {
                     <li><a href="#faq"><?php _e( 'FAQ', 'simplecatch' );?></a></li>
                     <li><a href="#logo"><?php _e( 'Logo', 'simplecatch' );?></a></li>
                     <li><a href="#favicon"><?php _e( 'Fav Icon', 'simplecatch' );?></a></li>
+                    <li><a href="#frontpage"><?php _e( 'Front Page', 'simplecatch' );?></a></li>
                     <li><a href="#socialicons"><?php _e( 'Social Icons', 'simplecatch' );?></a></li>
                     <li><a href="#customstyle"><?php _e( 'Custom CSS Styles', 'simplecatch' );?></a></li>
                    	<li><a href="#webmaster"><?php _e( 'Webmaster Tools', 'simplecatch' );?></a></li>
@@ -159,6 +160,16 @@ function simplecatch_options_page() {
                                         }
                                     ?>
                                 </td>
+                            </tr>
+                            <tr>                            
+                                <th scope="row"><h4><?php _e( 'Disable Site Title:', 'simplecatch' ); ?></h4></th>
+                                <input type='hidden' value='0' name='simplecatch_options[remove_site_title]'>
+                                <td><input type="checkbox" id="headerlogo" name="simplecatch_options[remove_site_title]" value="1" <?php isset($options['remove_site_title']) ? checked( '1', $options['remove_site_title'] ) : checked('0', '1'); ?> /></td>
+                            </tr>  
+                            <tr>                            
+                                <th scope="row"><h4><?php _e( 'Disable Site Description:', 'simplecatch' ); ?></h4></th>
+                                <input type='hidden' value='0' name='simplecatch_options[remove_site_description]'>
+                                <td><input type="checkbox" id="headerlogo" name="simplecatch_options[remove_site_description]" value="1" <?php isset($options['remove_site_description']) ? checked( '1', $options['remove_site_description'] ) : checked('0', '1'); ?> /></td>
                             </tr>
                         </tbody>
                     </table>
@@ -233,6 +244,37 @@ function simplecatch_options_page() {
                     </table>
 					<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
       			</div> <!-- #favicon -->
+                
+                <div id="frontpage">
+              		<h2><?php _e( 'Front Page Category Setting', 'simplecatch' ); ?></h2> 
+                    <table class="form-table">
+                        <tbody>
+                        	<tr>
+                            	<th scope="row">
+                                	<h4><?php _e( 'Front page posts categories:', 'simplecatch' ); ?></h4>
+                                    <p>
+                                    	<small><?php _e( 'Only posts that belong to the categories selected here will be displayed on the front page.', 'simplecatch' ); ?></small>
+                                	</p>
+                           		</th>
+                            	<td>
+                                    <select name="simplecatch_options[front_page_category][]" id="frontpage_posts_cats" multiple="multiple" class="select-multiple">
+                                        <option value="" <?php if ( empty( $options['front_page_category'] ) ) { echo 'selected="selected"'; } ?>><?php _e( '--Disabled--', 'simplecatch' ); ?></option>
+                                        <?php /* Get the list of categories */ 
+                                            $categories = get_categories();
+											if( empty ( $options['front_page_category'] ) )
+												$options['front_page_category']=array();
+                                            foreach ( $categories as $category) :
+                                        ?>
+                                        <option value="<?php echo $category->cat_ID; ?>" <?php if ( in_array( $category->cat_ID, $options['front_page_category'] ) ) {echo 'selected="selected"';}?>><?php echo $category->cat_name; ?></option>
+                                        <?php endforeach; ?>
+                                    </select><br />
+                                    <span class="description"><?php _e( 'You may select multiple categories by holding down the CTRL key.', 'simplecatch' ); ?></span>
+                            	</td>
+                        	</tr>
+                        </tbody>
+                  	</table>
+                     <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
+               	</div><!-- #frontpage -->
                 
 				<div id="socialicons">
                     <h2><?php _e( 'Social Icons', 'simplecatch' ); ?></h2>                 
@@ -586,6 +628,14 @@ function simplecatch_options_validation( $options ){
 		// Our checkbox value is either 0 or 1 
 		$options_validated[ 'remove_header_logo' ] = $options[ 'remove_header_logo' ];
 	}
+	if ( isset( $options['remove_site_title'] ) ) {
+        // Our checkbox value is either 0 or 1 
+        $options_validated[ 'remove_site_title' ] = $options[ 'remove_site_title' ];
+    }
+    if ( isset( $options['remove_site_description'] ) ) {
+        // Our checkbox value is either 0 or 1 
+        $options_validated[ 'remove_site_description' ] = $options[ 'remove_site_description' ];
+    }
 	if ( isset( $options[ 'featured_logo_footer' ] ) ) {
 		$options_validated[ 'featured_logo_footer' ] = esc_url_raw( $options[ 'featured_logo_footer' ] );
 	}
@@ -607,6 +657,14 @@ function simplecatch_options_validation( $options ){
    		$options_validated[ 'exclude_slider_post' ] = $options[ 'exclude_slider_post' ];	
 	
     }
+	// Front page posts categories
+	if ( ! in_array ( '', (array) $options['front_page_category'] ) ) {
+		if ( in_array ( false, array_map( 'ctype_digit', (array) $options['front_page_category'] ) ) ) {
+			unset($options['front_page_category']);
+		} else {
+			$options_validated['front_page_category'] = $options['front_page_category'];
+		}
+	}
     
 	//data validation for Featured Slider
 	if ( isset( $options[ 'slider_qty' ] ) ) {
@@ -747,7 +805,7 @@ function simplecatch_options_validation( $options ){
  * Clearing the cache if any changes in Admin Theme Option
  */
 function simplecatch_themeoption_invalidate_caches(){
-	delete_transient( 'simplecatch_headerlogo' ); 	// header logo on header
+	delete_transient( 'simplecatch_headerdetails' ); 	// header logo on header
 	delete_transient( 'simplecatch_footerlogo' );  // footer logo on footer
 	delete_transient( 'simplecatch_favicon' );	  // favicon on cpanel/ backend and frontend
 	delete_transient( 'simplecatch_sliders' ); // featured slider
@@ -782,4 +840,5 @@ function simplecatch_backward_compatibility() {
 	}
 }
 add_action('init','simplecatch_backward_compatibility');
+
 ?>
