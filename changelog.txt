@@ -8,6 +8,12 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(07/19/2012) - Improvements - Version 1.7.2
+[+] Multilingual Ready (wmpl.org)
+[+] style.css
+    - b,i,iframe,embed and object
+
+
 (07/09/2012) - Improvements and Maintenance - Version 1.7.0/1
 [+] New Languages
     - Chinese
