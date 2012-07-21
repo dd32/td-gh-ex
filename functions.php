@@ -75,10 +75,10 @@ function catchbox_setup() {
 	if ( ! isset( $content_width ) )
 	$content_width = 818;
 	
-	/**
-	 * Loading Text Domain Catch Box
+	/* Make Catch Box available for translation.
+	 * Translations can be added to the /languages/ directory.
 	 */
-	load_theme_textdomain( 'catchbox' );
+	load_theme_textdomain( 'catchbox', get_template_directory() . '/languages' );	
 
 	/**
      * Add callback for custom TinyMCE editor stylesheets. (editor-style.css)
