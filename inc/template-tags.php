@@ -12,7 +12,7 @@ if ( ! function_exists( 'skylark_content_nav' ) ):
 /**
  * Display navigation to next/previous pages when applicable
  *
- * @since skylark 1.0
+ * @since Skylark 1.0
  */
 function skylark_content_nav( $nav_id ) {
 	global $wp_query;
@@ -53,7 +53,7 @@ if ( ! function_exists( 'skylark_comment' ) ) :
  *
  * Used as a callback by wp_list_comments() for displaying the comments.
  *
- * @since skylark 1.0
+ * @since Skylark 1.0
  */
 function skylark_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
@@ -107,7 +107,7 @@ if ( ! function_exists( 'skylark_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  *
- * @since skylark 1.0
+ * @since Skylark 1.0
  */
 function skylark_posted_on() {
 	printf( __( 'Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline"> by <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'skylark' ),
@@ -125,7 +125,7 @@ endif;
 /**
  * Returns true if a blog has more than 1 category
  *
- * @since skylark 1.0
+ * @since Skylark 1.0
  */
 function skylark_categorized_blog() {
 	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
@@ -150,29 +150,50 @@ function skylark_categorized_blog() {
 }
 
 /*	Custom Excerpt  */
-	
-if( !function_exists( 'skylark_excerpt_length' ) ) {
-    function skylark_excerpt_length($length) {
-    	return 20; 
+
+if( ! function_exists( 'skylark_excerpt_length' ) ) {
+    function skylark_excerpt_length( $length ) {
+    	return 20;
     }
-    
-    add_filter('excerpt_length', 'skylark_excerpt_length');
+    add_filter( 'excerpt_length', 'skylark_excerpt_length' );
 }
 
-/*	Configure Excerpt String  */
-
-if( !function_exists( 'skylark_excerpt_more' ) ) {
-    function skylark_excerpt_more($excerpt) {
-    	return str_replace('[...]', '...', $excerpt); 
-    }
-    
-    add_filter('wp_trim_excerpt', 'skylark_excerpt_more');
+/**
+ * Returns a "Continue Reading" link for excerpts
+ */
+function skylark_reading_link() {
+	return ' <span class="more-link"><a href="'. esc_url( get_permalink() ) . '">' . __( 'Continue Reading', 'skylark' ) . '</a></span>';
 }
+
+/**
+ * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and skylark_reading_link().
+ *
+ * To override this in a child theme, remove the filter and add your own
+ * function tied to the excerpt_more filter hook.
+ */
+function skylark_auto_excerpt_more( $more ) {
+	return ' &hellip;' . skylark_reading_link();
+}
+add_filter( 'excerpt_more', 'skylark_auto_excerpt_more' );
+
+/**
+ * Adds a pretty "Continue Reading" link to custom post excerpts.
+ *
+ * To override this link in a child theme, remove the filter and add your own
+ * function tied to the get_the_excerpt filter hook.
+ */
+function skylark_custom_excerpt_more( $output ) {
+	if ( has_excerpt() && ! is_attachment() ) {
+		$output .= skylark_reading_link();
+	}
+	return $output;
+}
+add_filter( 'get_the_excerpt', 'skylark_custom_excerpt_more' );
 
 /**
  * Flush out the transients used in skylark_categorized_blog
  *
- * @since skylark 1.0
+ * @since Skylark 1.0
  */
 function skylark_category_transient_flusher() {
 	// Like, beat it. Dig?
@@ -180,3 +201,14 @@ function skylark_category_transient_flusher() {
 }
 add_action( 'edit_category', 'skylark_category_transient_flusher' );
 add_action( 'save_post', 'skylark_category_transient_flusher' );
+
+/**
+ * Enqueue Skylark Fonts
+ *
+ * @since Skylark 1.0.1
+ */
+function skylark_fonts() {
+	wp_enqueue_style( 'open-sans', 'http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700');
+}
+add_action( 'wp_enqueue_scripts', 'skylark_fonts' );
+add_action( 'admin_print_styles-appearance_page_custom-header', 'skylark_fonts' );

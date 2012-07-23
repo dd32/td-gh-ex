@@ -9,18 +9,7 @@
  */
 
 get_header(); ?>
-<header class="site-title"><h1>			
-			<?php if ( is_day() ) : ?>
-				<?php printf( __( 'Daily Archives: <span>%s</span>', 'skylark' ), get_the_date() ); ?>
-			<?php elseif ( is_month() ) : ?>
-				<?php printf( __( 'Monthly Archives: <span>%s</span>', 'skylark' ), get_the_date( 'F Y' ) ); ?>
-			<?php elseif ( is_year() ) : ?>
-				<?php printf( __( 'Yearly Archives: <span>%s</span>', 'skylark' ), get_the_date( 'Y' ) ); ?>
-			<?php else : ?>
-				<?php _e( 'Blog Archives', 'skylark' ); ?>
-			<?php endif; ?>
-</h1> <div class="searchform"><?php get_search_form(); ?></div>
-</header><!-- end site title -->
+
 
 		<section id="primary" class="site-content">
 			<div id="content" role="main">
@@ -28,7 +17,41 @@ get_header(); ?>
 			<?php if ( have_posts() ) : ?>
 
 				<header class="page-header">
+					<h1 class="page-title">
+						<?php
+							if ( is_category() ) {
+								printf( __( 'Category Archives: %s', 'skylark' ), '<span>' . single_cat_title( '', false ) . '</span>' );
 
+							} elseif ( is_tag() ) {
+								printf( __( 'Tag Archives: %s', 'skylark' ), '<span>' . single_tag_title( '', false ) . '</span>' );
+
+							} elseif ( is_author() ) {
+								/* Queue the first post, that way we know
+								 * what author we're dealing with (if that is the case).
+								*/
+								the_post();
+								printf( __( 'Author Archives: %s', 'skylark' ), '<span class="vcard"><a class="url fn n" href="' . get_author_posts_url( get_the_author_meta( "ID" ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' );
+								/* Since we called the_post() above, we need to
+								 * rewind the loop back to the beginning that way
+								 * we can run the loop properly, in full.
+								 */
+								rewind_posts();
+
+							} elseif ( is_day() ) {
+								printf( __( 'Daily Archives: %s', 'skylark' ), '<span>' . get_the_date() . '</span>' );
+
+							} elseif ( is_month() ) {
+								printf( __( 'Monthly Archives: %s', 'skylark' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
+
+							} elseif ( is_year() ) {
+								printf( __( 'Yearly Archives: %s', 'skylark' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
+
+							} else {
+								_e( 'Archives', 'skylark' );
+
+							}
+						?>
+					</h1>
 					<?php
 						if ( is_category() ) {
 							// show an optional category description
@@ -47,8 +70,6 @@ get_header(); ?>
 
 				<?php rewind_posts(); ?>
 
-				<?php skylark_content_nav( 'nav-above' ); ?>
-
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 
@@ -66,16 +87,7 @@ get_header(); ?>
 
 			<?php else : ?>
 
-				<article id="post-0" class="post no-results not-found">
-					<header class="entry-header">
-						<h1 class="entry-title"><?php _e( 'Nothing Found', 'skylark' ); ?></h1>
-					</header><!-- .entry-header -->
-
-					<div class="entry-content">
-						<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'skylark' ); ?></p>
-						<?php get_search_form(); ?>
-					</div><!-- .entry-content -->
-				</article><!-- #post-0 -->
+				<?php get_template_part( 'no-results', 'archive' ); ?>
 
 			<?php endif; ?>
 

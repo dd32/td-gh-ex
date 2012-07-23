@@ -1,26 +1,25 @@
 <?php
 /**
- * The template for displaying 404 pages (Not Found).
+ * The template for displaying 404 pages (Not Found)
  *
  * @package Skylark
  * @since Skylark 1.0
  */
 
 get_header(); ?>
-<header class="site-title">
-	<h1><?php _e( 'Oops! That page can&rsquo;t be found.', 'skylark' ); ?>
-</h1> <div class="searchform"><?php get_search_form(); ?></div>
-</header>
 
 	<div id="primary" class="site-content">
 		<div id="content" role="main">
 
 			<article id="post-0" class="post error404 not-found">
-
+				<header class="entry-header">
+					<h1 class="entry-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'skylark' ); ?></h1>
+				</header>
 
 				<div class="entry-content">
 					<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'skylark' ); ?></p>
 
+					<?php get_search_form(); ?>
 
 					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
 

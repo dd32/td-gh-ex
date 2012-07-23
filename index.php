@@ -11,73 +11,38 @@
  * @package Skylark
  * @since Skylark 1.0
  */
+		$latest_sticky_id = array();
 
 get_header(); ?>
 
-<div id="homecontainer">
+		<div id="primary" class="site-content">
+			<div id="content" role="main">
 
-	
-<div id="homepage">
-<div class="action">
-     	<?php query_posts("post_type=calltoaction&orderby=rand&showposts=1");        
-        global $more; $more = 0; ?>
-		<?php while (have_posts()) : the_post(); ?>
-		<div class="posts<?php echo $i; ?>">
-		<?php the_content(); ?>
-		</div>
-		<?php endwhile; ?>
-</div><!-- end .action -->
+			<?php if ( have_posts() ) : ?>
 
-<div id="latestwork">
-<div class="latestdescription">
-	<h2>Work</h2>
-	<p>A collection of our most recent projects</p>
-</div><!-- end #latestdescription -->
-<div class="latestworkswrap">
-     <?php query_posts("post_type=projects&showposts=4");        
-        global $more; $more = 0; ?>
-        <?php $i = 0; ?>
-		<?php while (have_posts()) : the_post(); ?>
-		<?php $i++; ?>
-		<div class="posts<?php echo $i; ?>">
-			
-		<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_post_thumbnail('small-thumbnail'); ?></a>
-		
-		<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+				<?php /* Start the Loop */ ?>
+				<?php while ( have_posts() ) : the_post(); ?>
 
-		</div>
-		<?php endwhile; ?>
-		</div><!-- end .latestpostswrap -->
-</div><!-- end #latestposts -->
+					<?php
+						/* Include the Post-Format-specific template for the content.
+						 * If you want to overload this in a child theme then include a file
+						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+						 */
+						get_template_part( 'content', get_post_format() );
+					?>
 
+				<?php endwhile; ?>
 
-<div id="latestposts">
-<div class="latestdescription">
-	<h2>News</h2>
-	<p>Our latest news and announcements</p>
-</div><!-- end #latestdescription -->
-<div class="latestpostswrap">
-     <?php query_posts("category_name=&showposts=4");        
-        global $more; $more = 0; ?>
-        <?php $i = 0; ?>
-		<?php while (have_posts()) : the_post(); ?>
-		<?php $i++; ?>
-		<div class="posts<?php echo $i; ?>">
-		<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_post_thumbnail('small-thumbnail'); ?></a>
-		
-		<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-		<span class="thedate"><?php the_time('m/d/Y') ?></span>
-			<div class="latest-entry">
-				<?php the_excerpt(); ?>
-			</div>
+				<?php skylark_content_nav( 'nav-below' ); ?>
 
-		</div>
-		<?php endwhile; ?>
-		</div><!-- end .latestpostswrap -->
-</div><!-- end #latestposts -->
+			<?php elseif ( current_user_can( 'edit_posts' ) ) : ?>
 
+				<?php get_template_part( 'no-results', 'index' ); ?>
 
-</div><!-- end #homepage -->
-</div>
+			<?php endif; ?>
 
+			</div><!-- #content -->
+		</div><!-- #primary .site-content -->
+
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

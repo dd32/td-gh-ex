@@ -1,64 +1,24 @@
-=== Skylark ===
+== Skylark 1.1 ==
+Designed and developed by http://blankthemes.com. 
 
-Skylark is a simple portfolio/business WordPress theme with multiple page templates. 
+== Theme Support ==
+For support, please visit: http://help.blankthemes.com/
+All support issues are responded to within 2-4 business days.
 
+== Theme Setup ==
 
-// Changelog
+1. How to setup your homepage:
+Create a new page called 'home.' Under page templates select 'showcase template.' Then publish your page. Then still being in your WordPress dashboard: go to Settings > Reading.  Be sure 'static page' is checked and choose a page for your front page. In this section, you can also choose a page to be your blog page.
 
-= Version 1.0
-* Initial release
+2. How to add posts to the slider:
+To add a post to the slider, the post itself needs be be a 'sticky' post and must have a featured image.
 
+3. How to add a description under the slider:
+To add a description, you'll need to be in your WordPress dashboard. From there go to Appearance > Theme Options. Then under 'Brief introductory message' add your message. Be sure to save.
 
-====
-// Regarding the logo and main menu
+4. How to have posts show on homepage under slider:
+You'll need to select a primary category for posts to show under the slider. To do this, you'll need to be in your WordPress dashboard. From there, go to appearance > theme option. Then select your 'Primary Featured Category'.
 
-The logo is using the 'Maven Pro' font from Google Web Fonts.
+5. How to add posts to the 'Work' page template:
+To add posts to the work page template, you'll need select ether 'image, gallery, or video' as a post format. Posts must also have a featured image.
 
-For best results, try keeping the number of parent pages to a maximum of 6. Lower if you have a longer site title. If you have a lot of pages, simply adjust them so they are sub pages.
-
-// Homepage slider setup
-
-1. To setup the slider section, you need to create a post under the 'My Projects' custom post type. 
-2. For your featured image, please make sure the dimensions are the following: 680px x 476px.
-
-// Call to Action section
-The homepage features a random 'call to action' section. To take advantage of this, simply create a post under the 'Call to Action' custom post type.
-
-For best results, keep the content short.
-
-// Work Section & News Section
-
-1. For content to appear under the 'Work' section on the homepage, you need to create a post under the 'My Projects' custom post type. 
-
-For best results, make sure your featured image is at least the following dimensions: 680px x 476px.
-
-2. We realize that some may want to change the following on the homepage:
-
-'Work
-A collection of our most recent projects'
-
-'News
-Our latest news and announcements'
-
-To adjust the above, you'll need to edit the 'index.php' file
-
-// How to create a 'Portfolio' or 'Work' page
-
-To create a portfolio/work page, simply create a page titled 'Portfolio' or 'Work.' Before publishing, please be sure to select one of the following page templates:
-
-Portfolio Template Two Column
-Portfolio Template Three Column
-Portfolio Template Four Column
-
-For items to appear in these page templates, you need to create a post under the 'My Projects' custom post type. To make your items filterable, while create a post under the 'My Projects' custom post type, simply create a 'Skill Type' which is located to the right of the post editor.
-
-
-
-// Support
-
-Further support can be found at http://blankthemes.com/.
-
-
-
-
- 
