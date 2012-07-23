@@ -2,7 +2,7 @@
 /**
  * @package Ascetica
  * @subpackage Functions
- * @version 0.1.8
+ * @version 0.2.1
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
@@ -27,7 +27,7 @@ function ascetica_theme_setup() {
 	add_theme_support( 'hybrid-core-menus', array( 'primary' ) );
 	add_theme_support( 'hybrid-core-sidebars', array( 'primary', 'secondary', 'subsidiary', 'after-singular' ) );
 	add_theme_support( 'hybrid-core-widgets' );
-	add_theme_support( 'hybrid-core-theme-settings', array( 'footer' ) );
+	add_theme_support( 'hybrid-core-theme-settings', array( 'footer', 'about' ) );
 	add_theme_support( 'hybrid-core-meta-box-footer' );
 	add_theme_support( 'hybrid-core-shortcodes' );
 	add_theme_support( 'hybrid-core-template-hierarchy' );
@@ -74,7 +74,7 @@ function ascetica_theme_setup() {
 	add_action( 'wp_head', 'ascetica_style_settings' );
 	
 	/* Add support for custom backgrounds */
-	add_custom_background();
+	add_theme_support( 'custom-background' );
 	
 	/* Add theme settings */
 	if ( is_admin() )
@@ -85,9 +85,6 @@ function ascetica_theme_setup() {
 	
 	/* Widgets */
 	add_action( 'widgets_init', 'ascetica_register_widgets' );
-	
-	/* Undergister sidebar */
-	add_action( 'widgets_init', 'ascetica_unregister_sidebar', 999 );
 	
 	/* Add support for Post Formats */
 	add_theme_support( 'post-formats', array( 'gallery' ) );	
@@ -322,9 +319,28 @@ function ascetica_register_widgets() {
 		
 }
 
+/**
+ * Ascetica site title.
+ * 
+ */
+function ascetica_site_title() {
+	
+	if ( hybrid_get_setting( 'ascetica_logo_url' ) ) {	
+	
+		$tag = ( is_front_page() ) ? 'h1' : 'div';	
+			
+		echo '<' . $tag . ' id="site-title">' . "\n";
+			echo '<a href="' . get_home_url() . '" title="' . get_bloginfo( 'name' ) . '" rel="Home">' . "\n";
+				echo '<img class="logo" src="' . esc_url( hybrid_get_setting( 'ascetica_logo_url' ) ) . '" alt="' . get_bloginfo( 'name' ) . '" />' . "\n";
+			echo '</a>' . "\n";
+		echo '</' . $tag . '>' . "\n";
+	
+	} else {
+	
+		hybrid_site_title();
+	
+	}
 
-function ascetica_unregister_sidebar() {
-	unregister_sidebar( 'secondary' );
 }
 
 ?>

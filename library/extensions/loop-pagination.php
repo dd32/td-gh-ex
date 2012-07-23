@@ -7,14 +7,14 @@
  * possibly be using.  Instead, they can simply build pagination right into their themes.
  *
  * This program is free software; you can redistribute it and/or modify it under the terms of the GNU 
- * General Public License version 2, as published by the Free Software Foundation.  You may NOT assume 
- * that you can use any other version of the GPL.
+ * General Public License as published by the Free Software Foundation; either version 2 of the License, 
+ * or (at your option) any later version.
  *
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without 
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
  * @package LoopPagination
- * @version 0.1.4
+ * @version 0.1.5
  * @author Justin Tadlock <justin@justintadlock.com>
  * @copyright Copyright (c) 2010 - 2012, Justin Tadlock
  * @link http://devpress.com/blog/loop-pagination-for-theme-developers
@@ -64,8 +64,9 @@ function loop_pagination( $args = array() ) {
 	);
 
 	/* Add the $base argument to the array if the user is using permalinks. */
-	if( $wp_rewrite->using_permalinks() )
-		$defaults['base'] = user_trailingslashit( trailingslashit( get_pagenum_link() ) . 'page/%#%' );
+	if ( $wp_rewrite->using_permalinks() )
+		$defaults['base'] = str_replace( 2, '%#%', esc_url( get_pagenum_link( 2 ) ) );
+		//$defaults['base'] = user_trailingslashit( trailingslashit( get_pagenum_link() ) . 'page/%#%' );
 
 	/* If we're on a search results page, we need to change this up a bit. */
 	if ( is_search() ) {

@@ -30,10 +30,14 @@
 		<div id="footer">
 
 			<?php do_atomic( 'open_footer' ); // ascetica_open_footer ?>
+
+			<div class="footer-content">
 				
 				<?php echo apply_atomic_shortcode( 'footer_content', hybrid_get_setting( 'footer_insert' ) ); ?>
 
 				<?php do_atomic( 'footer' ); // ascetica_footer ?>
+
+			</div>
 
 			<?php do_atomic( 'close_footer' ); // ascetica_close_footer ?>
 

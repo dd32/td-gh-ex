@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Hybrid Core in Finnish\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-03-18 21:42+0200\n"
-"PO-Revision-Date: 2012-04-26 22:23+0200\n"
+"PO-Revision-Date: 2012-05-22 16:53+0200\n"
 "Last-Translator: Sami Keijonen <sami.keijonen@foxnet.fi>\n"
 "Language-Team: Foxnet <sami.keijonen@foxnet.fi>\n"
 "MIME-Version: 1.0\n"
@@ -530,7 +530,7 @@ msgstr "Etusivu"
 #: extensions/breadcrumb-trail.php:296
 #: functions/context.php:412
 msgid "g:i a"
-msgstr "g:i a"
+msgstr "G:i"
 
 #: extensions/breadcrumb-trail.php:299
 #, php-format
@@ -605,7 +605,7 @@ msgstr "F Y"
 
 #: extensions/breadcrumb-trail.php:524
 msgid "F j, Y"
-msgstr "F j, Y"
+msgstr "j.m.Y"
 
 #: extensions/custom-field-series.php:86
 msgid "Articles in this series"
@@ -738,7 +738,7 @@ msgstr "Copyright (c) %1$s"
 
 #: functions/core-seo.php:112
 msgid "l, F jS, Y, g:i a"
-msgstr "l, F jS, Y, g:i a"
+msgstr "l j.m.Y, G:i"
 
 #: functions/deprecated.php:572
 #, php-format

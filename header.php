@@ -60,19 +60,7 @@
 		
 						<div id="branding">
 							
-							<?php if ( hybrid_get_setting( 'ascetica_logo_url' ) ) { ?>			
-								
-								<h1 id="site-title">
-									<a href="<?php echo home_url(); ?>" title="<?php echo bloginfo( 'name' ); ?>" rel="Home">
-										<img class="logo" src="<?php echo esc_url( hybrid_get_setting( 'ascetica_logo_url' ) ); ?>" alt="<?php echo bloginfo( 'name' ); ?>" />
-									</a>
-								</h1>
-							
-							<?php } else { ?>
-							
-								<?php hybrid_site_title(); ?>
-							
-							<?php } ?>
+							<?php ascetica_site_title(); ?>
 							
 						</div><!-- #branding -->
 						
