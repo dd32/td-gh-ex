@@ -4,7 +4,7 @@ Theme Name: Simple Catch
 Theme URI: http://catchthemes.com/wp-themes/simplecatch
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
-Version: 1.3.1
+Version: 1.3.1.1
 License: GNU General Public License
 
 == Theme Description ==
@@ -150,6 +150,9 @@ Version 1.3.0
 Version 1.3.1
 * Added option to show posts from only selected category in homepage.
 * Added option to disable site title and site description
+
+Version 1.3.1.1
+* Fixed logo condition in simplecatch_headerdetails() function
 
 == Upcoming Plan ==
 * Add more option in theme option for feed redirect, excerpt length

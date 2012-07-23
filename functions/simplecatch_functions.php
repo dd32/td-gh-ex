@@ -206,7 +206,7 @@ function simplecatch_headerdetails() {
 			$simplecatch_headerdetails .= '<h1 id="site-title">'.'<a href="'.esc_url( home_url( '/' ) ).' title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'">';
 
 			if( empty( $options[ 'remove_header_logo' ] ) ) {
-				if ( empty( $options[ 'featured_logo_header' ] ) ):
+				if ( !empty( $options[ 'featured_logo_header' ] ) ):
 					$simplecatch_headerdetails .= '<img src="'.esc_url( $options['featured_logo_header'] ).'" alt="'.get_bloginfo( 'name' ).'" />';
 				else:
 					// if empty featured_logo_header on theme options, display default logo
