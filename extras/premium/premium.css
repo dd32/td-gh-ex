@@ -16,14 +16,6 @@
     color: #888;
 }
 
-#theme-upgrade a.download{
-    width:214px;
-    height:53px;
-    display: inline-block;
-    background: url(img/download.png) no-repeat;
-    text-indent: -9999px;
-}
-
 #theme-upgrade h3{
     font-size: 18px;
     margin: 1.5em 0;

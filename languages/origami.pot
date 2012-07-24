@@ -2,8 +2,8 @@
 # This file is distributed under the GNU General Public License 2.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: origami 1.2.1\n"
-"POT-Creation-Date: 2012-07-14T17:00:08+02:00\n"
+"Project-Id-Version: origami 1.2.2\n"
+"POT-Creation-Date: 2012-07-24T13:48:31+02:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -72,15 +72,6 @@ msgstr ""
 msgid "Please follow me on Twitter and Facebook for updates."
 msgstr ""
 
-msgid "Theme Documentation"
-msgstr ""
-
-msgid "Theme Docs"
-msgstr ""
-
-msgid "Do you like %s? Follow me for more freebies."
-msgstr ""
-
 msgid "Premium Upgrade"
 msgstr ""
 
@@ -147,6 +138,9 @@ msgstr ""
 msgid "Please read %s's <a href='%s'>Documentation</a>."
 msgstr ""
 
+msgid "Theme Documentation"
+msgstr ""
+
 msgid "Enabled"
 msgstr ""
 
@@ -165,7 +159,7 @@ msgstr ""
 msgid "Theme Support"
 msgstr ""
 
-msgid "We offer priority email support to everyone who upgrades to <a href=\"%s\">%s Premium</a>."
+msgid "We offer email support to everyone who upgrades to <a href=\"%s\">%s Premium</a>."
 msgstr ""
 
 msgid "We still love you, even if you're using %s Free. We just want to offer the best service possible to the fine people who have purchased our Premium themes."
@@ -352,4 +346,52 @@ msgid "Display post sharing on post pages."
 msgstr ""
 
 msgid "Twitter Username"
+msgstr ""
+
+msgid "Upgrade To Origami Premium"
+msgstr ""
+
+msgid "If you've enjoyed using Origami, you'll going to love Origami Premium. It's a robust upgrade to Origami that gives you loads of cool features and email support. At just <strong>$5</strong>, it's a cost effective way to give your site a professional edge."
+msgstr ""
+
+msgid "If you're not delighted with Origami Premium, I'll give you a full refund"
+msgstr ""
+
+msgid "Remember, if you're not satisfied, you get your money back"
+msgstr ""
+
+msgid "Email Support"
+msgstr ""
+
+msgid "Need help setting up Origami? Upgrading to Origami Premium gives you access to email support for answers to any questions you can't find in the theme documentation."
+msgstr ""
+
+msgid "Remove Attribution Links"
+msgstr ""
+
+msgid "Origami premium gives you the option to easily remove the \"Powered by WordPress, Theme by SiteOrigin\" text from your footer. "
+msgstr ""
+
+msgid "The final puzzle piece in making Origami truly responsive. Origami Premium has footer widgets that collapse below each other on narrower resolution devices."
+msgstr ""
+
+msgid "Want to keep the conversation flowing? Ajax comments means your visitors can comment without reloading your page. So commenting wont interrupt a video or lose their position in one of your galleries."
+msgstr ""
+
+msgid "Social Sharing"
+msgstr ""
+
+msgid "Origami Premium includes social sharing for Facebook, Twitter and Google Plus. They fit right into the clean design of Origami."
+msgstr ""
+
+msgid "CSS Editor"
+msgstr ""
+
+msgid "A simple CSS editor that lets you easily add code that changes the look of Origami. You can count on our support staff to help you with CSS snippets to get the look you're after. Best of all, your changes will persist across updates."
+msgstr ""
+
+msgid "Continued Updates"
+msgstr ""
+
+msgid "You'll get continued updates, ensuring that your Origami powered site keeps on working with the latest version of WordPress for years to come."
 msgstr ""

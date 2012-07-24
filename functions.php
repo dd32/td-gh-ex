@@ -1,6 +1,6 @@
 <?php
 
-define('SO_THEME_VERSION', '1.2.1');
+define('SO_THEME_VERSION', '1.2.2');
 define('SO_THEME_ENDPOINT', 'http://siteorigin.com');
 
 // Include premium functions if it exists
@@ -8,14 +8,16 @@ if(file_exists(get_template_directory().'/premium/functions.php'))
 	include_once(get_template_directory().'/premium/functions.php');
 
 // Include all the SiteOrigin extras
-if(!defined('SO_IS_PREMIUM')) require_once(get_template_directory().'/extras/premium/premium.php');
+if(!defined('SO_IS_PREMIUM')) {
+	require_once(get_template_directory().'/extras/premium/premium.php');
+	require_once(get_template_directory().'/upgrade/upgrade.php');
+}
+
 require_once(get_template_directory().'/extras/settings/settings.php');
 require_once(get_template_directory().'/extras/update.php');
-require_once(get_template_directory().'/extras/docs/docs.php');
+require_once(get_template_directory().'/extras/admin/admin.php');
 
 require_once(get_template_directory().'/functions/settings.php');
-
-require_once(get_template_directory().'/extras/admin/admin.php');
 
 
 if(!function_exists('origami_setup')) :
@@ -213,7 +215,7 @@ if(!function_exists('origami_attribution_footer')) :
  * @param string $after Displayed after the attribution link
  */
 function origami_attribution_footer($before, $after){
-	if(!so_setting('display_attribution')) return false;
+	if(!so_setting('display_attribution') && defined('SO_IS_PREMIUM')) return false;
 	
 	print $before;
 	printf(__('Powered By %s', 'origami'), '<a href="http://wordpress.org">WordPress</a>');
