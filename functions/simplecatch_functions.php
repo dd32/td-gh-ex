@@ -203,7 +203,7 @@ function simplecatch_headerdetails() {
 		$simplecatch_headerdetails = '<div class="logo-wrap">';
 
 		if( empty( $options[ 'remove_header_logo' ] ) || empty( $options[ 'remove_site_title' ] ) ) {
-			$simplecatch_headerdetails .= '<h1 id="site-title">'.'<a href="'.esc_url( home_url( '/' ) ).' title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'">';
+			$simplecatch_headerdetails .= '<h1 id="site-title">'.'<a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'">';
 
 			if( empty( $options[ 'remove_header_logo' ] ) ) {
 				if ( !empty( $options[ 'featured_logo_header' ] ) ):

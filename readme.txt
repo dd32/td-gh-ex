@@ -4,7 +4,7 @@ Theme Name: Simple Catch
 Theme URI: http://catchthemes.com/wp-themes/simplecatch
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
-Version: 1.3.1.1
+Version: 1.3.1.2
 License: GNU General Public License
 
 == Theme Description ==
@@ -153,6 +153,9 @@ Version 1.3.1
 
 Version 1.3.1.1
 * Fixed logo condition in simplecatch_headerdetails() function
+
+Version 1.3.1.2
+* Fixed Link for logo and site title in simplecatch_headerdetails() function 
 
 == Upcoming Plan ==
 * Add more option in theme option for feed redirect, excerpt length
