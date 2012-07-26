@@ -471,7 +471,16 @@ function catchbox_theme_options_render_page() {
 	?>
 	<div class="wrap">
 		<?php screen_icon(); ?>
-		<h2><?php printf( __( '%s Theme Options By', 'catchbox' ), wp_get_theme() ); ?> <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catchbox' ) ); ?>" title="<?php echo esc_attr( 'Catch Themes', 'catchbox' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'catchbox' ); ?></a></h2>
+        
+		<h2>
+			<?php 
+            if( function_exists( 'wp_get_theme' ) ) {
+                printf( __( '%s Theme Options By', 'catchbox' ), wp_get_theme() );
+            } else {
+                printf( __( '%s Theme Options By', 'catchbox' ), get_current_theme() );
+            }
+			?> 
+            <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catchbox' ) ); ?>" title="<?php echo esc_attr( 'Catch Themes', 'catchbox' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'catchbox' ); ?></a></h2>
 		<?php settings_errors(); ?>
 
 		<form method="post" action="options.php">
@@ -494,7 +503,15 @@ function catchbox_options_slider_page() {
 	?>
 	<div class="wrap">
     	<?php screen_icon(); ?>
-		<h2><?php printf( __( '%s Featured Slider By', 'catchbox' ), wp_get_theme() ); ?> <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catchbox' ) ); ?>" title="<?php echo esc_attr( 'Catch Themes', 'catchbox' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'catchbox' ); ?></a></h2>
+		<h2>
+			<?php 
+            if( function_exists( 'wp_get_theme' ) ) {
+                printf( __( '%s Theme Options By', 'catchbox' ), wp_get_theme() );
+            } else {
+                printf( __( '%s Theme Options By', 'catchbox' ), get_current_theme() );
+            }
+			?>
+            <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catchbox' ) ); ?>" title="<?php echo esc_attr( 'Catch Themes', 'catchbox' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'catchbox' ); ?></a></h2>
     	
         <form method="post" action="options.php">
 			<?php
@@ -549,7 +566,14 @@ function catchbox_options_social_links() {
 	?>
 	<div class="wrap">
     	<?php screen_icon(); ?>
-		<h2><?php printf( __( '%s Social Links By', 'catchbox' ), wp_get_theme() ); ?> <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catchbox' ) ); ?>" title="<?php echo esc_attr( 'Catch Themes', 'catchbox' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'catchbox' ); ?></a></h2>
+		<h2>
+			<?php 
+            if( function_exists( 'wp_get_theme' ) ) {
+                printf( __( '%s Theme Options By', 'catchbox' ), wp_get_theme() );
+            } else {
+                printf( __( '%s Theme Options By', 'catchbox' ), get_current_theme() );
+            }
+			?> <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catchbox' ) ); ?>" title="<?php echo esc_attr( 'Catch Themes', 'catchbox' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'catchbox' ); ?></a></h2>
         
 		<form method="post" action="options.php">
 			<?php
@@ -664,7 +688,15 @@ function catchbox_options_webmaster_tools() {
 	?>
     <div class="wrap">
     	<?php screen_icon(); ?>
-		<h2><?php printf( __( '%s Webmaster Tools By', 'catchbox' ), wp_get_theme() ); ?> <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catchbox' ) ); ?>" title="<?php echo esc_attr( 'Catch Themes', 'catchbox' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'catchbox' ); ?></a></h2>
+		<h2>
+			<?php 
+            if( function_exists( 'wp_get_theme' ) ) {
+                printf( __( '%s Theme Options By', 'catchbox' ), wp_get_theme() );
+            } else {
+                printf( __( '%s Theme Options By', 'catchbox' ), get_current_theme() );
+            }
+			?>
+            <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catchbox' ) ); ?>" title="<?php echo esc_attr( 'Catch Themes', 'catchbox' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'catchbox' ); ?></a></h2>
 
 		<form method="post" action="options.php">
 			<?php

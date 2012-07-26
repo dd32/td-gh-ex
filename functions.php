@@ -334,6 +334,9 @@ function catchbox_filter_wp_title( $title ) {
         // Append Site Description to title
         $filtered_title .= ' &raquo; '.$site_description;
     }
+	if( is_feed() ) {
+		$filtered_title = '';
+	}
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 ) {
