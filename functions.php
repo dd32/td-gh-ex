@@ -56,6 +56,9 @@ function simplecatch_setup() {
 	// Load up our Simple Catch's Functions
 	require( get_template_directory() . '/functions/simplecatch_functions.php' );
 	
+	// Load up our Simple Catch's metabox
+	require( get_template_directory() . '/functions/simplecatch_metabox.php' );
+	
 	// This theme uses Featured Images (also known as post thumbnails) for per-post/per-page.
 	add_theme_support( 'post-thumbnails' );
 	

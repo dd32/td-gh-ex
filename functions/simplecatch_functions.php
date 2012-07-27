@@ -95,6 +95,9 @@ function simplecatch_filter_wp_title( $title ) {
         	$filtered_title .= ' &#124; '. $site_description;
 		}
     }
+	elseif( is_feed() ) {
+		$filtered_title = '';
+	}
 	else {	
 		// Prepend name
 		$filtered_title = $title .' &#124; '. $site_name;
@@ -222,7 +225,7 @@ function simplecatch_headerdetails() {
 		}
 
 		if( empty( $options[ 'remove_site_description' ] ) ) {
-			$simplecatch_headerdetails .= '<h2 id="site-description">'.get_bloginfo( 'description' ).'</h2>';
+			$simplecatch_headerdetails .= '<h2 id="site-description">'.esc_attr( get_bloginfo( 'description' ) ).'</h2>';
 		}	
 
 		$simplecatch_headerdetails .= '</div><!-- .logo-wrap -->';
@@ -358,6 +361,7 @@ function simplecatch_sliders() {
 					<div class="featured">
 						<div class="slide-image">';
 							if( has_post_thumbnail() ) {
+
 								$simplecatch_sliders .= '<a href="' . get_permalink() . '" title="Permalink to '.the_title('','',false).'">';
 
 								if( !isset( $options[ 'remove_noise_effect'] ) ) {
@@ -564,14 +568,13 @@ function simplecatch_headersocialnetworks() {
  
 function simplecatch_site_verification() {
 	//delete_transient( 'simplecatch_site_verification' );
-	
-	
-	
+
 	if ( ( !$simplecatch_site_verification = get_transient( 'simplecatch_site_verification' ) ) )  {
 		// get the data value from theme options
 		$options = get_option( 'simplecatch_options' );
 		echo '<!-- refreshing cache -->';	
-	
+		
+		$simplecatch_site_verification = '';
 		//google
 		if ( !empty( $options['google_verification'] ) ) {
 			$simplecatch_site_verification .= '<meta name="google-site-verification" content="' .  $options['google_verification'] . '" />' . "\n";
@@ -591,6 +594,7 @@ function simplecatch_site_verification() {
 		if ( !empty( $options['analytic_header'] ) ) {
 			$simplecatch_site_verification .=  $options[ 'analytic_header' ] ;
 		}
+		set_transient( 'simplecatch_site_verification', $simplecatch_site_verification, 86940 );
 	}
 	echo $simplecatch_site_verification;
 }
@@ -608,6 +612,7 @@ add_action('wp_head', 'simplecatch_site_verification');
 function simplecatch_footercode() {
 	//delete_transient( 'simplecatch_footercode' );	
 	
+
 	if ( ( !$simplecatch_footercode = get_transient( 'simplecatch_footercode' ) ) ) {
 		// get the data value from theme options
 		$options = get_option( 'simplecatch_options' );
@@ -724,8 +729,140 @@ function simple_catch_alter_home( $query ){
 }
 add_action( 'pre_get_posts','simple_catch_alter_home' );
 
+/**
+ * Add specific CSS class by filter
+ * @uses body_class filter hook
+ * @since Simple Catch 1.3.2
+ */  
+function simplecatch_class_names($classes) { 
+	global $post;
+	if( $post )
+		$layout = get_post_meta( $post->ID,'Sidebar-layout', true ); 
+	if( empty( $layout ) || ( !is_page() && !is_single() ) )
+		$layout='default';
+		
+	$options = get_option( 'simplecatch_options' );
+	if( empty( $options['sidebar_layout'] ) )
+		$themeoption_layout='right-sidebar';
+	else
+		$themeoption_layout = $options['sidebar_layout'];
+	
+	if( ( $layout == 'no-sidebar' || ( $layout=='default' && $themeoption_layout == 'no-sidebar') ) ){
+		$classes[] = 'no-sidebar';
+	}
+	return $classes;
+}
+add_filter('body_class','simplecatch_class_names');
 
+/**
+ * Display the page/post content
+ * @since Simple Catch 1.3.2
+ */
+function simplecatch_content() {
+	global $post;
+	$layout = get_post_meta( $post->ID,'Sidebar-layout', true ); 
+	if( empty( $layout ) )
+		$layout='default';
+		
+	get_header(); 
+	
+    if( $layout=='default') {
+		$options = get_option( 'simplecatch_options' );
+		if( empty( $options['sidebar_layout'] ) )
+			$themeoption_layout='right-sidebar';
+		else
+			$themeoption_layout = $options['sidebar_layout'];
+			
+		if( $themeoption_layout == 'left-sidebar' ) {
+			get_template_part( 'content-sidebar','left' );
+		}
+		elseif( $themeoption_layout == 'right-sidebar' ) {
+			get_template_part( 'content-sidebar','right' );
+		}
+		else {
+			get_template_part( 'content-sidebar','no' );
+		}
+	}
+	elseif( $layout=='left-sidebar' ) { 
+		get_template_part( 'content-sidebar','left' );
+	}
+	elseif( $layout=='right-sidebar' ) {
+		get_template_part( 'content-sidebar','right' );
+	}
+	else{
+		get_template_part( 'content-sidebar','no' );
+	}
+	
+	get_footer(); 
+ }
+ 
+ /**
+ * Display the page/post loop part
+ * @since Simple Catch 1.3.2
+ */
+function simplecatch_loop() {
 
+	if( is_page() ): ?>
+    
+		<div <?php post_class(); ?> >
+			<h2 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
+       		<?php the_content(); ?>
+		</div><!-- .post -->
+        
+    <?php elseif( is_single() ): ?>
+    
+		<div <?php post_class(); ?>>
+			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>"><?php the_title(); ?></a></h2>
+            <ul class="post-by">
+                <li class="no-padding-left"><a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>" 
+                    title="<?php echo esc_attr( get_the_author_meta( 'display_name' ) ); ?>">By &nbsp;<?php the_author_meta( 'display_name' ); ?></a></li>
+                <li><?php the_time( 'j F, Y' ); ?></li>
+                <li><?php comments_popup_link( 'No Comments ', '1 Comment ', '% Comments ' ); ?></li>
+            </ul>
+            <?php the_content();
+            // copy this <!--nextpage--> and paste at the post content where you want to break the page
+			 wp_link_pages(array( 
+					'before'			=> '<div class="pagination">Pages: ',
+					'after' 			=> '</div>',
+					'link_before' 		=> '<span>',
+					'link_after'       	=> '</span>',
+					'pagelink' 			=> '%',
+					'echo' 				=> 1 
+				) );
+			$tag = get_the_tags();
+			if (! $tag ) { ?>
+				<div class='tags'><?php _e( 'Categories: ', 'simplecatch' ); ?> <?php the_category(', '); ?> </div>
+			<?php } else { 
+					 the_tags( '<div class="tags"> Tags: ', ', ', '</div>'); 
+			} ?>
+		</div> <!-- .post -->
+	<?php endif;
+}
+
+/**
+ * Display the header div
+ * @since Simple Catch 1.3.2
+ */
+function simplecatch_display_div() {
+	echo '<div id="main" class="layout-978">';
+	$options = get_option( 'simplecatch_options' );
+	if( empty( $options['sidebar_layout'] ) )
+		$themeoption_layout='right-sidebar';
+	else
+		$themeoption_layout = $options['sidebar_layout'];
+		
+	if( $themeoption_layout == 'left-sidebar' ) {	
+		get_sidebar();
+		echo '<div id="content" class="col8">';
+	}
+	elseif( $themeoption_layout == 'right-sidebar' ) {
+		echo '<div id="content" class="col8 no-margin-left">';
+	}
+	else {
+		echo '<div id="content" class="col8">';
+	}
+	return $themeoption_layout;
+}
 /**
  * function that displays frquently asked question in theme option
  */

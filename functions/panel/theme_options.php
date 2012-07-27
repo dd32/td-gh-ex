@@ -87,7 +87,7 @@ add_action( 'admin_init', 'simplecatch_register_settings' );
  */
 function simplecatch_options_page() {
 ?>
-	<div class="wrap">
+	<div id="catchthemes" class="wrap">
     	
     	<form method="post" action="options.php">
 			<?php
@@ -454,6 +454,27 @@ function simplecatch_options_page() {
 
                 <div id="layout">
                     <h2><?php _e( 'Customize Layout Settings', 'simplecatch' ); ?></h2>
+                    <?php if( !isset( $options['sidebar_layout'] ) )
+						$options['sidebar_layout']='right-sidebar';
+					?>
+                    <table class="form-table">  
+                    	<tbody>
+                        	<tr>
+                            	<th scope="row"><label><h4><?php _e( 'Default sidebar layout', 'simplecatch' ); ?></h4></label></th>
+                                <td>
+                                    <label title="no-sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/images/no-sidebar.gif" alt="Content-Sidebar" /><br />
+                                    <input type="radio" name="simplecatch_options[sidebar_layout]" id="no-sidebar" <?php checked($options['sidebar_layout'], 'no-sidebar') ?> value="no-sidebar"  />
+          </label>
+                                    <label title="left-Sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/images/left-sidebar.gif" alt="Content-Sidebar" /><br />
+                                    <input type="radio" name="simplecatch_options[sidebar_layout]" id="left-sidebar" <?php checked($options['sidebar_layout'], 'left-sidebar') ?> value="left-sidebar"  />
+          </label>
+                                    <label title="right-sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/images/right-sidebar.gif" alt="Content-Sidebar" /><br />
+                                    <input type="radio" name="simplecatch_options[sidebar_layout]" id="right-sidebar" <?php checked($options['sidebar_layout'], 'right-sidebar') ?> value="right-sidebar"  />
+          </label>
+                                </td>
+                           	</tr>
+                        </tbody>
+                    </table>
                     <table class="form-table">  
                         <tbody> 
                             <?php if( !isset( $options[ 'more_tag_text' ] ) ) { $options[ 'more_tag_text' ] = "Continue Reading &rarr;"; } ?>   
@@ -501,7 +522,7 @@ function simplecatch_options_page() {
  */
 function simplecatch_options_slider_page(){
 ?>
-	<div class="wrap">
+	<div id="catchthemes" class="wrap">
     	
         <form method="post" action="options.php">
 			<?php
@@ -776,6 +797,9 @@ function simplecatch_options_validation( $options ){
 	}		
 	
     // Layout settings verification
+	if( isset( $options[ 'sidebar_layout' ] ) ) {
+		 $options_validated[ 'sidebar_layout' ] = $options[ 'sidebar_layout' ];
+	}
     if( isset( $options[ 'more_tag_text' ] ) ) {
         $options_validated[ 'more_tag_text' ] = sanitize_text_field( $options[ 'more_tag_text' ] );
     }   
@@ -814,6 +838,14 @@ function simplecatch_themeoption_invalidate_caches(){
 	delete_transient( 'simplecatch_footercode' ); // scripts which loads on footer
 	delete_transient( 'simplecatch_inline_css' ); // Custom Inline CSS
 }
+/*
+ * Clears caching for header title and description
+ */
+function simplecatch_header_caching() {
+	delete_transient( 'simplecatch_headerdetails' );
+}
+add_action('update_option_blogname','simplecatch_header_caching');
+add_action('update_option_blogdescription','simplecatch_header_caching');
 
 /*
  * Clearing the cache if any changes in post or page
@@ -828,6 +860,7 @@ add_action( 'save_post', 'simplecatch_post_invalidate_caches' );
  * Backward Comaptibility for simplecatch version 1.2.7 and below
  *
  * Fetch the old values of options array and merge it with new one
+ * Fetch the old meta values of the page template and update the layout metabox using those metavalues
  * @used init hook
  */
 function simplecatch_backward_compatibility() {
@@ -838,7 +871,49 @@ function simplecatch_backward_compatibility() {
 		update_option( 'simplecatch_options', $result );
 		delete_option( 'simplecatch_options_slider');
 	}
+
 }
 add_action('init','simplecatch_backward_compatibility');
+
+/**
+ * Backward Comaptibility for simplecatch version below 1.3.2
+ *
+ * Fetch the old meta values of the page template and update the layout metabox using those metavalues
+ * @used init hook
+ */
+function simplecatch_template_backward_compatibility() {
+	global $post;
+	$reset_template=get_option('reset_template');
+	
+	if( empty( $reset_template ) ):
+		
+		$query = new WP_Query( array( 'post_type' => 'page','posts_per_page' => -1 ) );
+		while( $query->have_posts() ): $query->the_post();
+			$flag = get_post_meta( $post->ID, '_wp_page_template', 'true' );
+			if( $flag == 'sidebar-right.php' )
+				update_post_meta( $post->ID, 'Sidebar-layout', 'right-sidebar' );
+			elseif( $flag == 'sidebar-left.php')
+				update_post_meta( $post->ID, 'Sidebar-layout', 'left-sidebar' );
+			elseif( $flag == 'default'|| $flag == '' )
+				update_post_meta( $post->ID, 'Sidebar-layout', 'no-sidebar');
+			
+			delete_post_meta( $post->ID, '_wp_page_template');
+		 endwhile;
+		// Reset Post Data
+		wp_reset_postdata();
+		update_option( 'reset_template',true );
+		
+	endif;
+}
+add_action('init','simplecatch_template_backward_compatibility');
+
+/**
+ * Delete the database option on theme switch
+ * @used switch_theme hook
+ */
+function simplecatch_reset_template_cache() {
+	delete_option( 'reset_template' );
+}
+add_action( 'switch_theme', 'simplecatch_reset_template_cache');
 
 ?>

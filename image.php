@@ -7,11 +7,12 @@
  * @since Simple Catch 1.0
  */
 
-get_header(); ?>
+get_header(); 
  
-<div id="main" class="layout-978">
-	<div id="content" class="col8 no-margin-left">
-			<?php while ( have_posts() ) : the_post(); ?>
+	if( function_exists( 'simplecatch_display_div' ) ) {
+		$themeoption_layout = simplecatch_display_div();
+		}
+		while ( have_posts() ) : the_post(); ?>
 				<div <?php post_class(); ?>>
 					<h2 class="entry-title"><a href="<?php echo get_permalink( $post->post_parent ); ?>" title="<?php esc_attr( printf( 'Return to %s', get_the_title( $post->post_parent ) ) ); ?>"><?php printf( '%s', get_the_title( $post->post_parent ) ); ?></a>: <span class="img-title"><?php the_title(); ?></span></h2>
 
@@ -90,7 +91,10 @@ get_header(); ?>
          
     </div><!-- #content -->
         
-	<?php get_sidebar(); ?>  
+	<?php 
+    if( $themeoption_layout == 'right-sidebar' ) {
+        get_sidebar(); 
+    }?>
              
 </div><!-- #main -->
     

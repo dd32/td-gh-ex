@@ -4,12 +4,12 @@ Theme Name: Simple Catch
 Theme URI: http://catchthemes.com/wp-themes/simplecatch
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
-Version: 1.3.1.2
+Version: 1.3.2
 License: GNU General Public License
 
 == Theme Description ==
 
-Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Page Template for Layout, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework.
+Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework.
 
 == Features ==  
 Featured Image Slider, Custom Drop-down Menu, Theme Options, Custom Widgets, flexible position of sidebar and Support for popular plugins.
@@ -156,6 +156,13 @@ Version 1.3.1.1
 
 Version 1.3.1.2
 * Fixed Link for logo and site title in simplecatch_headerdetails() function 
+
+Version 1.3.2
+* Added sidebar layout option metabox in post and page
+* Added default sidebar layout option in Theme options.
+* Fixed the issue of Dual title in feed
+* Fixed the site verification, site title, Description caching issue
+* Fixed the css issue for search title
 
 == Upcoming Plan ==
 * Add more option in theme option for feed redirect, excerpt length
