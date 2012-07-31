@@ -4,7 +4,7 @@ Author: Emma Conway
 Author URI: http://www.applianceuk.com
 Theme URI: http://www.applianceuk.com/appliance
 Description: Appliance is a clean and minimalist theme that is ideal for blogs / magazines / portfolios.  Spacious, minimalist, clean, light and very fast to load.
-Version: 1.1
+Version: 1.2
 Tags: white, light, one-column, fixed-width, featured-images, photoblogging, microformats
 License: GNU General Public License v2.0
 License URI: http: //www.gnu.org/licenses/gpl-2.0.html
@@ -170,7 +170,7 @@ body {
 	font-family:verdana;
 	line-height: 1.7em;
 	clear: left;
-	margin: 0px 0px 0px 0px;
+	margin: 0px 0px 15px 0px;
 	color:#5B708E;
 }
 #maincontent p a:hover {
@@ -621,19 +621,20 @@ table#wp-calendar {
 }
 code {
 	font-size: 1.2em;
-	display: block;
+	display: inline;
 	padding: 5px 5px 5px 8px;
 	margin: 5px 0 15px 0;
 }
 
 
 img.centered {
+	clear: both;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
 img.aligncenter {
-	display: block;
+	display: inline;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -648,6 +649,7 @@ img.alignleft {
 	display: inline;
 }
 .aligncenter {
+	clear: both;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -895,18 +897,11 @@ h3#reply-title {
 	text-align: center;
 	background-color: #f3f3f3;
 	padding-top: 4px;
-	margin: 10px;
-	-moz-border-radius: 3px;
-	-khtml-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 	clear: both;
 }
-.wp-caption img {
-	margin: 0;
-	padding: 0;
-	border: 0 none;
-}
+
 .wp-caption-dd {
 	font-size: 11px;
 	line-height: 17px;
@@ -914,6 +909,11 @@ h3#reply-title {
 	margin: 0;
 }
 
+.wp-caption img {
+	display: block;
+	margin: 0 auto;
+	max-width: 98%;
+}
 .clearfix: after {
 	content: ".";
 	display: block;

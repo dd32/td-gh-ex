@@ -7,13 +7,7 @@
 
 
 <div class="postbg">
-<div class="postimage"><a href="<?php the_permalink()?>" title="<?php the_title_attribute(); ?>" rel="bookmark">
-<?php if (  (function_exists('has_post_thumbnail')) && (has_post_thumbnail())  ) {
-echo get_the_post_thumbnail($post->ID);
-} else {
-echo appliance_main_image();
-} ?>
-</a></div>
+<div class="postimage"><a href="<?php the_permalink()?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_post_thumbnail(); ?></a></div>
 <div class="postcontent">
 <h3><a href="<?php the_permalink()?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title()?></a></h3>
 <div class="posttext"><?php the_excerpt(); ?></div>
@@ -42,8 +36,10 @@ echo $category[0]->cat_name;
 </div>
 		
 <?php else : ?>
+<div id="maincontent">
 <h1><?php _e('No posts found','appliance')?></h1>
 <p><?php _e('There are no posts to display here.','appliance')?></p>
+</div>
 <?php endif; ?>
 
 

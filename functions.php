@@ -4,12 +4,12 @@ if (!is_admin())
         add_action('wp_enqueue_scripts', 'appliance_js');
 	function appliance_js() {
         wp_enqueue_script( 'mootools', get_template_directory_uri() . '/js/mootools.js' );      
-        wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js' );
+        wp_enqueue_script( 'appliance-script', get_template_directory_uri() . '/js/script.js' );
         wp_enqueue_script( 'mootools-more', get_template_directory_uri() . '/js/mootools-more.js' );
         wp_enqueue_style( 'appliance-style', get_stylesheet_uri() );
+        if ( is_singular() && get_option( 'thread_comments' ) )
+	wp_enqueue_script( 'comment-reply' );
 }
-
-
 
 add_theme_support( 'post-thumbnails' );
 set_post_thumbnail_size( 214, 120, true );
@@ -25,9 +25,9 @@ $files = get_children('post_parent='.get_the_ID().'&post_type=attachment
     $imagepieces = explode('"', $image);
     $imagepath = $imagepieces[1];
     $main=wp_get_attachment_url($num);
-		$template=get_template_directory();
-		$the_title=get_the_title();
-    print "<img src='$main' alt='$the_title' class='frame' />";
+	$template=get_template_directory();
+	$the_title= the_title_attribute( 'echo=0');
+	print "<img src='$main' alt='$the_title' class='frame' />";
   endif;
 }
 
@@ -94,20 +94,16 @@ function appliance_comment( $comment, $args, $depth ) {
 //Required by WordPress
 	add_theme_support('automatic-feed-links');
 	
-	//COMMENTS SCRIPT
-		if ( is_singular() && get_option( 'thread_comments' ) )
-			wp_enqueue_script( 'comment-reply' );
 	
 	//CONTENT WIDTH
-		if ( ! isset( $content_width ) ) $content_width = 1200;
-	
-	//MENU
-		//Register the main menu
-			if ( function_exists( 'register_nav_menu' ) ) {
-				register_nav_menu( 'main-menu', __('Main menu','appliance') );
-			}
-	
+		if ( ! isset( $content_width ) ) $content_width = 1000;
 
+
+//LOCALIZATION
+	
+	//Enable localization
+		load_theme_textdomain('appliance',get_template_directory() . '/languages');
+		
 	
 // filter function for wp_title
 function appliance_filter_wp_title( $old_title, $sep, $sep_location ){

@@ -7,7 +7,7 @@
 	
 <title><?php wp_title( '|', true, 'left' ); ?></title>
 
-<link rel="profile" href="http://microformats.org/profile/hcard"/>
+<link rel="profile" href=" http://gmpg.org/xfn/11" />
 
 <?php wp_head()?>
 </head>
