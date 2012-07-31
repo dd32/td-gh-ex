@@ -3,7 +3,7 @@
  * The template used for displaying page content in page.php
  *
  * @package Skirmish
- * @since Skirmish 1.6
+ * @since Skirmish 1.8
  */
 ?>
 

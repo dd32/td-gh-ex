@@ -3,7 +3,7 @@
  * The template for displaying search forms in skirmish
  *
  * @package Skirmish
- * @since Skirmish 1.6
+ * @since Skirmish 1.8
  */
 ?>
 	<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">

@@ -3,7 +3,7 @@
  * The Sidebar containing the main widget areas.
  *
  * @package Skirmish
- * @since Skirmish 1.6
+ * @since Skirmish 1.8
  */
 ?>
 		<div id="secondary" class="widget-area" role="complementary">

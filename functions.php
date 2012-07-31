@@ -3,7 +3,7 @@
  * skirmish functions and definitions
  *
  * @package Skirmish
- * @since Skirmish 1.6
+ * @since Skirmish 1.8
  */
 
 /**
@@ -97,6 +97,19 @@ function skirmish_widgets_init() {
 }
 add_action( 'widgets_init', 'skirmish_widgets_init' );
 
+
+/**
+ * if lt IE 9
+ */
+function skirmish_head(){
+?>
+<!--[if lt IE 9]>
+<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+<?php
+}
+add_action( 'wp_head', 'skirmish_head');
+
 /**
  * Enqueue scripts and styles
  */
@@ -112,6 +125,8 @@ function skirmish_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+	
+	wp_enqueue_style( 'fonts', 'http://fonts.googleapis.com/css?family=Lusitana|Droid+Sans' );
 
 	if ( is_singular() && wp_attachment_is_image( $post->ID ) ) {
 		wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );

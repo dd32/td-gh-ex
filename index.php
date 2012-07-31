@@ -9,7 +9,7 @@
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
  * @package Skirmish
- * @since Skirmish 1.6
+ * @since Skirmish 1.8
  */
 
 get_header(); ?>

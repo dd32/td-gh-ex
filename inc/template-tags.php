@@ -5,7 +5,7 @@
  * Eventually, some of the functionality here could be replaced by core features
  *
  * @package Skirmish
- * @since Skirmish 1.6
+ * @since Skirmish 1.8
  */
 
 if ( ! function_exists( 'skirmish_content_nav' ) ):

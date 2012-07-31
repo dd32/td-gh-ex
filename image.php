@@ -3,7 +3,7 @@
  * The template for displaying image attachments.
  *
  * @package Skirmish
- * @since Skirmish 1.6
+ * @since Skirmish 1.8
  */
 
 get_header();

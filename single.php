@@ -3,7 +3,7 @@
  * The Template for displaying all single posts.
  *
  * @package Skirmish
- * @since Skirmish 1.6
+ * @since Skirmish 1.8
  */
 
 get_header(); ?>

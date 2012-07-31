@@ -3,7 +3,7 @@
  * The template for displaying 404 pages (Not Found).
  *
  * @package Skirmish
- * @since Skirmish 1.6
+ * @since Skirmish 1.8
  */
 
 get_header(); ?>
