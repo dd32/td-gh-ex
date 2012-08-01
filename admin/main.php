@@ -17,8 +17,21 @@ require_once(dirname(__FILE__) . "/admin-functions.php");
 require_once(dirname(__FILE__) . "/sanitize.php");
 }
 
-//  Hooks/Filters
+// Getting the theme options and making sure defaults are used if no values are set
+function mantra_get_theme_options() {
+	global $mantra_defaults;
+	$optionsMantra = get_option( 'ma_options', $mantra_defaults );
+	$optionsMantra = array_merge($mantra_defaults, $optionsMantra);
+return $optionsMantra;
+}
 
+$mantra_options= mantra_get_theme_options();
+foreach ($mantra_options as $key => $value) {
+     ${"$key"} = $value ;
+}
+
+
+//  Hooks/Filters
 add_action('admin_init', 'mantra_init_fn' );
 add_action('admin_menu', 'mantra_add_page_fn');
 add_action('init', 'mantra_init');

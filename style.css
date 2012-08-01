@@ -4,7 +4,7 @@ Theme URI: http://www.riotreactions.com/mantra
 Description: Mantra is a do-it-yourself WordPress theme, featuring a pack of over 100 customization options and easy to use tweaks capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (1,2 or 3 columns), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 35 font-families plus all Google Fonts), text and header sizes, post metas, post excerpts, post formats, header and background images, custom menus, 27 social media links and icons, pins, bullets and much much more. With a fully responsive layout,a customizable showcase presentation page, animated slider, magazine and blog layouts, 8 widget areas, modern graphics and an easy and intuitive admin section, you can start creating your dream site right now.
 Author: Cryout Creations
 Author URI: http://www.cryoutcreations.com
-Version: 1.9.4
+Version: 1.9.5
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, red, blue, white, silver, light, dark, one-column, two-columns, three-columns, right-sidebar, left-sidebar, flexible-width, fixed-width, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, front-page-post-form, full-width-template,  microformats, post-formats, rtl-language-support,  sticky-post, theme-options, threaded-comments, translation-ready
@@ -319,7 +319,7 @@ ol li {
 }
 
 #content ul>li {
-	background: url(images/mantra_bullet.png) 0px 10px no-repeat;
+	background: url(images/bullet.png) 0px 10px no-repeat;
 	text-indent:20px;
 }
 
@@ -508,17 +508,17 @@ div.menu li {
 	float: left;
 	position: relative;
 	padding:0px;
-	background:url(images/mantra_menu.png) top left no-repeat;
+	background:url(images/menu.png) top left no-repeat;
 	height: 27px;
 	margin-left:10px;
 }
 
  #access   li.current_page_item {
-	background:url(images/mantra_menu_current.png) top left no-repeat;
+	background:url(images/menu_current.png) top left no-repeat;
 }
 
  #access  li.current-menu-item {
-	background:url(images/mantra_menu_current.png) top left no-repeat;
+	background:url(images/menu_current.png) top left no-repeat;
 }
 
 #access a {
@@ -531,7 +531,7 @@ div.menu li {
 	padding-right:25px;
 	text-decoration: none;
 	font-weight:normal !important;
-	background:url(images/mantra_menu.png) top right no-repeat;
+	background:url(images/menu.png) top right no-repeat;
 	position:relative;
 	right:-10px;
 }
@@ -548,7 +548,7 @@ div.menu li:hover, #access a:hover {
 	left: 0px important;
 	float: left;
 	z-index: 99999;
-	background:url(images/mantra_menu_down.png)  0px 0px no-repeat;
+	background:url(images/menu_down.png)  0px 0px no-repeat;
 	padding:12px 0px 0px;
 	/*border-bottom:1px solid #CCC;*/
 }
@@ -611,7 +611,7 @@ div.menu li:hover, #access a:hover {
 #access ul ul ul {
 	left: 100%;
 	top: 0;
-	background:url(images/mantra_menu_right.png)  0px 0px no-repeat;
+	background:url(images/menu_right.png)  0px 0px no-repeat;
 	padding:0px 0px 0px 12px;
 	/*border:1px solid #CCC;*/
 }
@@ -631,7 +631,7 @@ div.menu li:hover, #access a:hover {
 #access ul li.current-menu-item > a{
 
 	color: #000 !important;
-	background:url(images/mantra_menu_current.png) top right no-repeat;
+	background:url(images/menu_current.png) top right no-repeat;
 }
 
 #access ul ul li.current_page_item ,
@@ -649,7 +649,7 @@ div.menu li:hover, #access a:hover {
 * html #access ul li.current-menu-parent a,
 * html #access ul li a:hover {
 	color: #5F5B5B ;
-	background:url(images/mantra_menu_current.png) top right no-repeat;
+	background:url(images/menu_current.png) top right no-repeat;
 }
 
 
@@ -2320,12 +2320,21 @@ background:#FAFAFA;
 /* The Nivo Slider styles */
 .nivoSlider {
 	position:relative;
+	width:100%;
+	height:auto;
+	overflow: hidden;
 }
 .nivoSlider img {
 	position:absolute;
 	top:0px;
 	left:0px;
 }
+.nivo-main-image {
+	display: block !important;
+	position: relative !important; 
+	width: 100% !important;
+}
+
 /* If an image is wrapped in a link */
 .nivoSlider a.nivo-imageLink {
 	position:absolute;
@@ -2345,12 +2354,16 @@ background:#FAFAFA;
 	position:absolute;
 	z-index:5;
 	height:100%;
+	top:0;
 }
 .nivo-box {
 	display:block;
 	position:absolute;
 	z-index:5;
+	overflow:hidden;
 }
+.nivo-box img { display:block; }
+
 /* Caption styles */
 .nivo-caption {
 	position:absolute;
@@ -2358,9 +2371,17 @@ background:#FAFAFA;
 	bottom:0px;
 	background:#000;
 	color:#fff;
-	opacity:0.8; /* Overridden by captionOpacity setting */
 	width:100%;
 	z-index:8;
+	padding: 5px 10px;
+	opacity: 0.8;
+	overflow: hidden;
+	display: none;
+	-moz-opacity: 0.8;
+	filter:alpha(opacity=8);
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
 }
 .nivo-caption p {
 	padding:5px;
@@ -2386,9 +2407,11 @@ background:#FAFAFA;
 	right:0px;
 }
 /* Control nav styles (e.g. 1,2,3...) */
+.nivo-controlNav {
+	text-align:center;
+	padding: 15px 0;
+}
 .nivo-controlNav a {
-	position:relative;
-	z-index:9;
 	cursor:pointer;
 }
 .nivo-controlNav a.active {
@@ -2404,10 +2427,9 @@ Version: 1.0
 Author: Gilbert Pellegrom
 Author URI: http://dev7studios.com
 */
-
 .theme-default .nivoSlider {
 	position:relative;
-	background:#fff url(images/loading.gif) no-repeat 50% 50%;
+	background:#fff url(images/nivoslider/loading.gif) no-repeat 50% 50%;
     margin-bottom:50px;
     -webkit-box-shadow: 0px 1px 5px 0px #4a4a4a;
     -moz-box-shadow: 0px 1px 5px 0px #4a4a4a;
@@ -2425,20 +2447,17 @@ Author URI: http://dev7studios.com
 }
 
 .theme-default .nivo-controlNav {
-	position:absolute;
-	left:50%;
-	bottom:-42px;
-    margin-left:-30px; /* Tweak this to center bullets */
+	text-align: center;
+	padding: 20px 0;
 }
 .theme-default .nivo-controlNav a {
-	display:block;
+	display:inline-block;
 	width:22px;
 	height:22px;
-	background:url(images/bullets.png) no-repeat;
+	background:url(images/nivoslider/bullets.png) no-repeat;
 	text-indent:-9999px;
 	border:0;
-	margin-right:3px;
-	float:left;
+	margin: 0 2px;
 }
 .theme-default .nivo-controlNav a.active {
 	background-position:0 -22px;
@@ -2448,7 +2467,7 @@ Author URI: http://dev7studios.com
 	display:block;
 	width:30px;
 	height:30px;
-	background:url(images/arrows.png) no-repeat;
+	background:url(images/nivoslider/arrows.png) no-repeat;
 	text-indent:-9999px;
 	border:0;
 }
@@ -2469,6 +2488,21 @@ Author URI: http://dev7studios.com
 }
 .theme-default .nivo-caption a:hover {
     color:#fff;
+}
+
+.theme-default .nivo-controlNav.nivo-thumbs-enabled {
+	width: 100%;
+}
+.theme-default .nivo-controlNav.nivo-thumbs-enabled a {
+	width: auto;
+	height: auto;
+	background: none;
+	margin-bottom: 5px;
+}
+.theme-default .nivo-controlNav.nivo-thumbs-enabled img {
+	display: block;
+	width: 120px;
+	height: auto;
 }
 
 #front-columns {
@@ -2528,6 +2562,129 @@ padding:10px;
 .tinynav  option {
 
 }
+
+/* Multi-column short code */
+.multi-column {display: block; width: 100%; float: left; margin: 10px 0;}
+.short-columns {display: inline-block; float: left; margin: 0 3px; padding: 4px; }
+.column-12 {width: 48%;}
+.column-13 {width: 31%;}
+.column-14 {width: 23%;}
+.column-16 {width: 14.5%;}
+.column-23 {width: 64%;}
+.column-34 {width: 73%;}
+.column-56 {width: 80%;}
+.column-1 {width: 100%; margin: 0}
+.multi-column .short-columns:first-child {padding-left: 0; margin-left: 0}
+.multi-column .short-columns:last-child {padding-right: 0; margin-right: 0}
+
+/* Pull quotes short code*/
+.pullquote {
+	font-family: Verdana, arial, sans-serif;
+	font-size:1.2em !important;
+	margin-top: 15px !important;
+	margin-bottom: 10px !important;
+	width: 33%;
+	color: #000;
+}
+.pullquote p{
+
+	font-family: "Pontano Sans", arial, sans-serif;
+	font-size:1.2em !important;
+	color: #000;
+}
+
+/* buttons */
+.short-button-light {
+	color: #454545 !important;
+	padding: 1px 10px;
+	background: -moz-linear-gradient(
+		top,
+		#fcfcfc 0%,
+		#d6d5d3);
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#fcfcfc),
+		to(#d6d5d3));
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #f7f7f7;
+	-moz-box-shadow:
+		0px 0px 1px rgba(000,000,000,0.5),
+		inset 0px 0px 1px rgba(255,255,255,0.7);
+	-webkit-box-shadow:
+		0px 0px 1px rgba(000,000,000,0.5),
+		inset 0px 0px 1px rgba(255,255,255,0.7);
+	box-shadow:
+		0px 0px 1px rgba(000,000,000,0.5),
+		inset 0px 0px 1px rgba(255,255,255,0.7);
+	text-shadow:
+		-1px -1px 0px rgba(252,252,252,0.4),
+		0px 0px 0px rgba(255,255,255,0.3);
+}
+
+.short-button-dark {
+	color: #ffffff !important;
+	padding: 1px 7px;
+	background: -moz-linear-gradient(
+		top,
+		#6b6b6b 0%,
+		#000000);
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#6b6b6b),
+		to(#000000));
+	-moz-border-radius: 5px;
+	-webkit-border-radius:5px;
+	border-radius: 5px;
+	border: 1px solid #666;
+	-moz-box-shadow:
+		0px 0px 1px rgba(000,000,000,0.5),
+		inset 0px 0px 1px rgba(255,255,255,0.7);
+	-webkit-box-shadow:
+		0px 0px 1px rgba(000,000,000,0.5),
+		inset 0px 0px 1px rgba(255,255,255,0.7);
+	box-shadow:
+		0px 0px 1px rgba(000,000,000,0.5),
+		inset 0px 0px 1px rgba(255,255,255,0.7);
+	text-shadow:
+		0px -1px 0px rgba(000,000,000,0.4),
+		0px 1px 0px rgba(255,255,255,0.3);
+}
+
+.short-button-color {
+	color: #ffffff !important;
+	padding: 1px 7px;
+	background: #47afff;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #878787;
+	-moz-box-shadow:
+		0px 0px 1px rgba(000,000,000,0.5),
+		inset 0px 0px 0px rgba(255,255,255,0.7);
+	-webkit-box-shadow:
+		0px 0px 1px rgba(000,000,000,0.5),
+		inset 0px 0px 0px rgba(255,255,255,0.7);
+	box-shadow:
+		0px 0px 1px rgba(000,000,000,0.5),
+		inset 0px 0px 0px rgba(255,255,255,0.7);
+	text-shadow:
+		-1px -1px 0px rgba(000,000,000,0.4),
+		0px 0px 0px rgba(255,255,255,0.3);
+}
+
+.short-button-color:hover, .short-button-light:hover, .short-button-dark:hover {
+text-decoration:underline;
+}
+
+
+
+
+
+
+
+
 
 
 /* FIN! */

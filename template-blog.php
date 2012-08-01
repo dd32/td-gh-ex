@@ -13,7 +13,7 @@ Template Name: Blog Template ( Posts Page)
 
 	<?php 
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-query_posts('post_status=publish,future&orderby=date&order=desc&posts_per_page='.get_option('posts_per_page').'&paged=' . $paged);?>
+query_posts('post_status=publish&orderby=date&order=desc&posts_per_page='.get_option('posts_per_page').'&paged=' . $paged);?>
 
 
 		<?php if ( have_posts() ) : ?>

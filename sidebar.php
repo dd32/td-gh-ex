@@ -13,7 +13,7 @@ foreach ($mantra_options as $key => $value) {
      ${"$key"} = esc_attr($value) ;
 }
 
-if (is_page_template() ) {
+if (is_page_template() && !is_page_template('template-blog.php') && !is_page_template('template-onecolumn.php') && !is_page_template('template-page-with-intro.php') ) {
 ?>
 	<div id="primary" class="widget-area" role="complementary">
 

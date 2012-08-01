@@ -45,16 +45,21 @@ document.createElement('hgroup');
 <body <?php body_class(); ?>>
 <script type="text/javascript">
     jQuery(document).ready(function() {
+	// Add custom borders to images
     jQuery("#content img").addClass("<?php echo 'image'.$mantra_image;?>");
 	  jQuery(function () {
+	// Add select navigation to small screens
     jQuery("#prime_nav").tinyNav({
 	header: true // Show header instead of the active item
 					});
-  });
-    });
+	});
+    // Add responsive videos
+    jQuery("#container").fitVids();
+
+    }); // document ready
 </script>
 
-<div id="toTop"> </div>
+<?php if ($mantra_backtop=="Enable") { ?><div id="toTop"> </div> <?php } ?>
 
 <div id="wrapper" class="hfeed">
 
