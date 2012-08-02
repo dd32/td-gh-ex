@@ -8,8 +8,7 @@
  * @author         Sampression (sampression.com)
  * @copyright      2012 Sampression
  * @license        license.txt
- * @version        Release: 1.0
- * @filesource     wp-content/themes/sampression/header.php
+ * @version        Release: 1.1
  * @link           http://codex.wordpress.org/Theme_Development#Document_Head_.28header.php.29
  * @since          available since Release 1.0
  */
@@ -47,11 +46,11 @@
 	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
     <script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
 <![endif]-->
+<?php wp_footer(); ?>
 
 <?php
 	/* Include codes in Footer from Theme Option (Advance) */
 	 echo get_option( 'opt_sam_footer' ); ?>
 
-<?php wp_footer(); ?>
 </body>
 </html>

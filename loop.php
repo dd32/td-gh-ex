@@ -11,8 +11,7 @@ if ( !defined('ABSPATH')) exit;
  * @author         Sampression (sampression.com)
  * @copyright      2012 Sampression
  * @license        license.txt
- * @version        Release: 1.0
- * @filesource     wp-content/themes/sampression/header.php
+ * @version        Release: 1.1
  * @since          available since Release 1.0
  */
 ?>
@@ -35,7 +34,7 @@ if ( !defined('ABSPATH')) exit;
 		<!-- .featured-img -->
       <?php } ?>
       
-      <div class="entry">
+      <div class="entry clearfix">
         <?php the_excerpt(); ?>
         <?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'sampression' ) . '</span>', 'after' => '</div>' ) ); ?>
       </div>
@@ -71,7 +70,5 @@ if ( !defined('ABSPATH')) exit;
       	<div class="edit"><span class="ico">Edit</span> <?php edit_post_link( __( 'Edit this post', 'sampression' ) ); ?> </div>
       </div>
 	  <?php } ?>
-      
-    <?php // if ( is_sticky() ) { echo '</section>'; } else { echo '</article>'; } ?>
-    
+         
     </article>

@@ -12,7 +12,6 @@ if ( !defined('ABSPATH')) exit;
  * @copyright      2012 Sampression
  * @license        license.txt
  * @version        Release: 1.0
- * @filesource     wp-content/themes/sampression/header.php
  * @link           http://codex.wordpress.org/Theme_Development#Document_Head_.28header.php.29
  * @since          available since Release 1.0
  */
@@ -39,18 +38,25 @@ if ( !defined('ABSPATH')) exit;
 	wp_reset_query();
 	
 	// Exclude Sticky Posts and show remaining normal posts
-	query_posts( array( 'post__not_in' => get_option( 'sticky_posts' ) ) );
+	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	query_posts( array(
+		'post__not_in' => get_option( 'sticky_posts' ),
+		'paged' => $paged
+		) );
+		
 		while (have_posts()) : the_post();
 		get_template_part( 'loop', 'index' );
-	endwhile;
-	wp_reset_query();
+	
+		endwhile;
+	
 	?>
-  
-    
+
      </div>
   <!-- #post-listing --> 
-
-  <?php  else: ?>
+  <?php
+	  sampression_content_nav( 'nav-below' );
+	  else:
+	?>
     
     <article id="post-0" class="no-results not-found">
         <header class="entry-header">

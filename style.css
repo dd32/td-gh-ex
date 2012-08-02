@@ -5,7 +5,7 @@ Author: Sampression
 Author URI: http://sampression.com
 Description: Sampression Lite is a fully responsive WordPress theme, perfect for blogging. It's lightweight responsive design allows this theme to adapt across a range of screen sizes. Besides an elegant design, Sampression Lite features customizable menus and widgets, along with a threaded comments section. It supports sticky notes with special effects and allows the best placement of feature images on posts. Under the advanced section this theme allows Admin to insert codes in the header and footer section. Sampression Lite was given a magical layout by <a href="http://isotope.metafizzy.co/">isotope</a> jQuery.
 
-Version: 1.1
+Version: 1.1.1
 License: GNU General Public License v2 or later
 License URI: license.txt
 Tags: white, orange, green, one-column, two-columns, flexible-width, featured-image-header, featured-images, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
@@ -96,7 +96,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	.subheader { color: #777; }
 
 	p { margin: 0 0 20px 0; }
-	p img { margin: 0; }
 	p.lead { font-size: 21px; line-height: 27px; color: #777;  }
 
 	em { font-style: italic; }
@@ -122,8 +121,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 /* #Lists
 ================================================== */
-	ul, ol { margin-bottom: 20px; }
-	ul { list-style: none outside; }
+	ul, ol, dl { margin-bottom: 20px; }
+	ul { list-style: disc; }
+	ul ul { list-style:circle; }
 	ol { list-style: decimal; }
 	ol, ul.square, ul.circle, ul.disc { margin-left: 30px; }
 	ul.square { list-style: square outside; }
@@ -136,14 +136,24 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	li { line-height: 18px; margin-bottom: 12px; }
 	ul.large li { line-height: 21px; }
 	li p { line-height: 21px; }
+	dl dt {
+		font-weight:bold;
+		}
+	dl dd {
+		margin:0 0 10px 20px;
+		}
 
 /* #Images/videos
 ================================================== */
 	img {
 		max-width: 100%;
-		height: auto;
-		width:auto;
+		height:auto;
 		 }
+	embed, object {
+		max-width:100%;
+		max-height:100%;
+		position:relative;
+		}
 	
 /* #Helper classes
 ================================================== */
@@ -170,17 +180,19 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	.navigation-image a {border:none}	
 
 /* images */
-	p img { padding: 0; max-width: 100%;}
-	img.centered { display: block; margin-left: auto; margin-right: auto;}
-	img.alignright { padding: 4px; margin: 0 0 2px 7px; display: inline;}
-	img.alignleft {	padding: 4px; margin: 0 7px 2px 0; display: inline; }
+	p img { padding: 0;}
+	img.aligncenter { display: block; margin:5px auto; }
+	img.alignright { padding: 4px; margin: 5px 5px 5px 20px; display: inline;}
+	img.alignleft {	padding: 4px; margin: 5px 20px 5px 5px; display: inline; }
 	.alignright { float: right; }
 	.alignleft { float: left; }
 
 /* Captions */
-	.wp-caption {	border: 1px solid #ddd;	text-align: center;	background-color: #fafafa;	padding-top: 5px;	margin: 5px 25px 25px 0px;	-moz-border-radius: 3px;	-khtml-border-radius: 3px;	-webkit-border-radius: 3px;	border-radius: 3px;}
+	.wp-caption {	border: 1px solid #ddd;	text-align: center;	background-color: #fafafa;	padding-top: 5px;	margin:10px;	-moz-border-radius: 3px;	-khtml-border-radius: 3px;	-webkit-border-radius: 3px;	border-radius: 3px;}
 	.wp-caption img {	margin: 0;	padding: 0;	border: 0 none;}
 	.wp-caption p.wp-caption-text {	font-size: 12px; line-height: 16px;	padding: 4px 4px 5px 0;	margin: 0; color:#666;}
+	.wp-caption.alignleft { margin:0 20px 5px 0; }
+	.wp-caption.alignright { margin:0 0 5px 20px; }
 
 /* Various Tags & Classes */
 	acronym, abbr, span.caps { cursor: help;}
@@ -387,6 +399,11 @@ table th {
 ================================================== */
 address, pre {
 	margin-bottom:20px;
+	}
+pre {
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:14px;
+	margin-left:20px;
 	}
 #site-title {
 	color:#FE6E41;
@@ -811,6 +828,7 @@ body.single article.post .meta .col {
 
 .meta {
 	font-size:11px;
+	clear:both;
 	}
 .meta, .meta a {
 	color:#9BB0AB;
@@ -908,6 +926,10 @@ body.single .meta .overflow-hidden,
 body.page .meta .overflow-hidden {
 	overflow:visible;
 	}
+.page-link {
+	clear:both;
+	padding-top:10px;
+	}
 
 /*** Post Navigation ***/
 .post-navigation {}
@@ -916,6 +938,10 @@ body.page .meta .overflow-hidden {
 	padding-top:10px;
 	clear:both;
 	}
+#nav-above {
+	margin-bottom:20px;
+	}
+
 
 	
 	
@@ -1199,9 +1225,10 @@ ol.commentlist article.comment {
 	border-top:1px solid #9BC2B9;
 	padding:20px;
 	}
-.corner-stamp .categories {
+.corner-stamp .categories, .corner-stamp .categories ul, .corner-stamp .categories ol {
 	margin:0;
 	padding:0;
+	list-style:none;
 	}
 .corner-stamp .categories li {
 	margin:0;

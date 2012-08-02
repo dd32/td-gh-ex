@@ -8,8 +8,7 @@
  * @author         Sampression (sampression.com)
  * @copyright      2012 Sampression
  * @license        license.txt
- * @version        Release: 1.0
- * @filesource     wp-content/themes/sampression/header.php
+ * @version        Release: 1.1
  * @link           http://codex.wordpress.org/Theme_Development#Document_Head_.28header.php.29
  * @since          available since Release 1.0
  */
@@ -50,25 +49,24 @@
     <!-- CSS: Versioning enabled for caching
     ================================================== -->
     <!-- Skeleton Stylesheet: Responsive with 960 -->
-    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/lib/css/skeleton.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/css/skeleton.css">
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
+    <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
     <!-- Getting Google Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Droid+Serif:700,400,400italic,700italic' rel='stylesheet' type='text/css'>
 	
     <!-- Favicons
     ================================================== -->
 	<?php sampression_favicon(); ?>
+	
+	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+	
+	<?php wp_head(); ?>
     
     <?php
 	/* Include codes in Header from Theme Option (Advance) */
 	 echo get_option( 'opt_sam_header' ); ?>
     
-    
-	
-	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-	
-	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class('top'); ?>>

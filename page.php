@@ -8,8 +8,7 @@
  * @author         Idealaya
  * @copyright      2012 Sampression
  * @license        license.txt
- * @version        Release: 1.0
- * @filesource     wp-content/themes/sampression/page.php
+ * @version        Release: 1.1
  * @since          available since Release 1.0
  */
 ?>
@@ -30,7 +29,7 @@
        
     </header>
    
-    <div class="entry">
+    <div class="entry clearfix">
       <?php the_content(); ?>
       
       <?php if(is_user_logged_in()){ ?>

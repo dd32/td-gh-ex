@@ -115,7 +115,7 @@ function sampression_options_tabs($tab) {
                 	<?php if(get_option('opt_sam_apple_icons_57')) { ?>
                     <img src="<?php echo get_option('opt_sam_apple_icons_57'); ?>" alt="Apple Icon 57 x 57" width="57" />
                     <?php } else { ?>
-                    <img src="<?php bloginfo('template_url'); ?>/images/apple-touch-icon.png" alt="Apple Icon 57 x 57" width="57" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png" alt="Apple Icon 57 x 57" width="57" />
                     <?php } ?>
                     <p class="note"><?php _e('file name should be "apple-touch-icon.png"', 'sampression'); ?></p>
                 </div>
@@ -128,7 +128,7 @@ function sampression_options_tabs($tab) {
                 	<?php if(get_option('opt_sam_apple_icons_72')) { ?>
                     <img src="<?php echo get_option('opt_sam_apple_icons_72'); ?>" alt="Apple Icon 72 x 72" width="72" />
                     <?php } else { ?>
-                    <img src="<?php bloginfo('template_url'); ?>/images/apple-touch-icon-72x72.png" alt="Apple Icon 72 x 72" width="72" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon-72x72.png" alt="Apple Icon 72 x 72" width="72" />
                     <?php } ?>
                     <p class="note"><?php _e('file name should be "apple-touch-icon-72x72.png"', 'sampression'); ?></p>
                 </div>
@@ -141,7 +141,7 @@ function sampression_options_tabs($tab) {
                 	<?php if(get_option('opt_sam_apple_icons_114')) { ?>
                     <img src="<?php echo get_option('opt_sam_apple_icons_114'); ?>" alt="Apple Icon 114 x 114" width="114" />
                     <?php } else { ?>
-                    <img src="<?php bloginfo('template_url'); ?>/images/apple-touch-icon-114x114.png" alt="Apple Icon 114 x 114" width="114" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon-114x114.png" alt="Apple Icon 114 x 114" width="114" />
                     <?php } ?>
                     <p class="note"><?php _e('file name should be "apple-touch-icon-114x114.png"', 'sampression'); ?></p>
                 </div>

@@ -3,16 +3,16 @@
 if ( !defined('ABSPATH')) exit;
 
 /**
- * Category Template
+ * Tag Template
  *
  *
- * @file           category.php
+ * @file           tag.php
  * @package        Sampression Lite 
  * @author         Sampression (sampression.com)
  * @copyright      2012 Sampression
  * @license        license.txt
  * @version        Release: 1.0
- * @since          available since Release 1.0
+ * @since          available since Release 1.1.1
  */
 ?>
 <?php get_header(); ?>
@@ -21,14 +21,14 @@ if ( !defined('ABSPATH')) exit;
   <?php if (have_posts()) : ?>
 
 <header class="page-header columns sixteen">
-    <h2 class="page-title quick-note"><?php
-        printf( __( 'Category Archives: %s', 'sampression' ), '<span>' . single_cat_title( '', false ) . '</span>' ); ?>
+    <h2 class="page-title quick-note">
+	<?php printf( __( 'Tag Archives: %s', 'sampression' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?>
     </h2>
 
     <?php
-        $category_description = category_description();
-        if ( ! empty( $category_description ) )
-         echo apply_filters( 'category_archive_meta', '<div class="category-archive-meta">' . $category_description . '</div>' );
+        $tag_description = tag_description();
+		if ( ! empty( $tag_description ) )
+			echo apply_filters( 'tag_archive_meta', '<div class="tag-archive-meta">' . $tag_description . '</div>' );
     ?>
 </header>
 <!-- .page-header -->

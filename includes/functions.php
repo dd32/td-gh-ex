@@ -156,8 +156,7 @@ function sampression_content_nav( $nav_id ) {
 		</nav><!-- #nav-above -->
 	<?php endif;
 }
-endif; // Sampression_content_nav
-
+endif; 
 
 
 /*=======================================================================
@@ -230,9 +229,9 @@ function sampression_cat_slug() {
 /*=======================================================================
  * Disabling HTML support tags in Comments
  *=======================================================================*/
-add_filter( 'comment_text', 'wp_filter_nohtml_kses' );
+/*add_filter( 'comment_text', 'wp_filter_nohtml_kses' );
 add_filter( 'comment_text_rss', 'wp_filter_nohtml_kses' );
-add_filter( 'comment_excerpt', 'wp_filter_nohtml_kses' );
+add_filter( 'comment_excerpt', 'wp_filter_nohtml_kses' );*/
 
 /*=======================================================================
  * Run function during a themes initialization. It clear all widgets
@@ -316,7 +315,7 @@ function sampression_comment( $comment, $args, $depth ) {
 		case 'trackback' :
 	?>
 	<li class="post pingback">
-		<p><?php _e( 'Pingback:' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit' ), '<span class="edit-link">', '</span>' ); ?></p>
+		<p><?php _e( 'Pingback:', 'sampression' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit','sampression' ), '<span class="edit-link">', '</span>' ); ?></p>
 	<?php
 			break;
 		default :
@@ -344,7 +343,7 @@ function sampression_comment( $comment, $args, $depth ) {
 					<?php
 					
 						/* translators: 1: comment author, 2: date and time */
-						printf( __( '%1$s on %2$s' ),
+						printf( __( '%1$s on %2$s', 'sampression' ),
 							sprintf( '<span class="fn">%s</span>', get_comment_author_link()),
 							sprintf( '<a href="%1$s"><time pubdate datetime="%2$s">%3$s</time></a>',
 								esc_url( get_comment_link( $comment->comment_ID ) ),
@@ -355,7 +354,7 @@ function sampression_comment( $comment, $args, $depth ) {
 						);
 					?>
 
-					<?php edit_comment_link( __( 'Edit' ), '<span class="edit-link">', '</span>' ); ?>
+					<?php edit_comment_link( __( 'Edit', 'sampression' ), '<span class="edit-link">', '</span>' ); ?>
 				</div><!-- .comment-author  -->
                 
                 <div class="reply">

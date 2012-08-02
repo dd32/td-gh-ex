@@ -13,14 +13,13 @@ if ( !defined('ABSPATH')) exit;
  * @copyright      2012 Sampression
  * @license        license.txt
  * @version        Release: 1.0
- * @filesource     wp-content/themes/sampression/comments.php
  * @link           http://codex.wordpress.org/Theme_Development#Comments_.28comments.php.29
  * @since          available since Release 1.0
  */
 ?>
 	<div id="comments">
 	<?php if ( post_password_required() ) : ?>
-		<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'twentyeleven' ); ?></p>
+		<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'sampression' ); ?></p>
 	</div><!-- #comments -->
 	<?php
 			/* Stop the rest of comments.php from being processed,
@@ -36,26 +35,26 @@ if ( !defined('ABSPATH')) exit;
 	<?php if ( have_comments() ) : ?>
 		<h2 id="comments-title">
 			<?php
-				printf( _n( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'twentyeleven' ),
+				printf( _n( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'sampression' ),
 					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
 			?>
 		</h2>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-above">
-			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'twentyeleven' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'twentyeleven' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'twentyeleven' ) ); ?></div>
+			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'sampression' ); ?></h1>
+			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'sampression' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'sampression' ) ); ?></div>
 		</nav>
 		<?php endif; // check for comment navigation ?>
 
 		<ol class="commentlist">
 			<?php
 				/* Loop through and list the comments. Tell wp_list_comments()
-				 * to use twentyeleven_comment() to format the comments.
+				 * to use sampression_comment() to format the comments.
 				 * If you want to overload this in a child theme then you can
-				 * define twentyeleven_comment() and that will be used instead.
-				 * See twentyeleven_comment() in twentyeleven/functions.php for more.
+				 * define sampression_comment() and that will be used instead.
+				 * See sampression_comment() in sampression/functions.php for more.
 				 */
 				wp_list_comments( array( 'callback' => 'sampression_comment' ) );
 			?>
@@ -63,9 +62,9 @@ if ( !defined('ABSPATH')) exit;
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below">
-			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'twentyeleven' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'twentyeleven' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'twentyeleven' ) ); ?></div>
+			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'sampression' ); ?></h1>
+			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'sampression' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'sampression' ) ); ?></div>
 		</nav>
 		<?php endif; // check for comment navigation ?>
 
@@ -75,7 +74,7 @@ if ( !defined('ABSPATH')) exit;
 		 */
 		elseif ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-		<p class="nocomments"><?php _e( 'Comments are closed.', 'twentyeleven' ); ?></p>
+		<p class="nocomments"><?php _e( 'Comments are closed.', 'sampression' ); ?></p>
 	<?php endif; ?>
 
 	<?php comment_form(); ?>

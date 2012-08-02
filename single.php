@@ -12,8 +12,7 @@ if ( !defined('ABSPATH')) exit;
  * @author         Sampression (sampression.com)
  * @copyright      2012
  * @license        license.txt
- * @version        Release: 1.0
- * @filesource     wp-content/themes/sampression/single.php
+ * @version        Release: 1.1
  * @link           http://codex.wordpress.org/Theme_Development#Single_Post_.28single.php.29
  * @since          available since Release 1.0
  */
@@ -21,6 +20,14 @@ get_header(); ?>
 	
 
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+        
+        <nav id="nav-above" class="post-navigation clearfix columns twelve">
+            <h3 class="assistive-text hidden"><?php _e( 'Post navigation', 'sampression' ); ?></h3>
+            <div class="nav-previous alignleft"><?php previous_post_link( '%link', __( '<span class="meta-nav">&larr;</span> Previous', 'sampression' ) ); ?></div>
+            <div class="nav-next alignright"><?php next_post_link( '%link', __( 'Next <span class="meta-nav">&rarr;</span>', 'sampression' ) ); ?></div>
+        </nav><!-- #nav-above -->
+                    
+        
         <section id="content" class="columns twelve" role="main">
 		
 		<article <?php post_class('post'); ?> id="post-<?php the_ID(); ?>">
@@ -72,10 +79,14 @@ get_header(); ?>
 	  <?php } ?>
             
             </div>
+            <!-- .meta -->
             
-            <div class="entry">
+            <div class="entry clearfix">
 				<?php the_content(); ?>
+                
+                <?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'sampression' ) . '</span>', 'after' => '</div>' ) ); ?>
             </div>
+            
 		</article>
         
 				<?php comments_template( '', true ); ?>

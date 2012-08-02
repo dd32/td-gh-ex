@@ -12,7 +12,6 @@ if ( !defined('ABSPATH')) exit;
  * @copyright      2012 Sampression
  * @license        license.txt
  * @version        Release: 1.0
- * @filesource     wp-content/themes/sampression/search.php
  * @since          available since Release 1.0
  */
 ?>
