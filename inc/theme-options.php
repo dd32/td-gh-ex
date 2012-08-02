@@ -480,7 +480,7 @@ function catchbox_theme_options_render_page() {
                 printf( __( '%s Theme Options By', 'catchbox' ), get_current_theme() );
             }
 			?> 
-            <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catchbox' ) ); ?>" title="<?php echo esc_attr( 'Catch Themes', 'catchbox' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'catchbox' ); ?></a></h2>
+            <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catchbox' ) ); ?>" title="<?php echo esc_attr_e( 'Catch Themes', 'catchbox' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'catchbox' ); ?></a></h2>
 		<?php settings_errors(); ?>
 
 		<form method="post" action="options.php">
@@ -511,7 +511,7 @@ function catchbox_options_slider_page() {
                 printf( __( '%s Theme Options By', 'catchbox' ), get_current_theme() );
             }
 			?>
-            <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catchbox' ) ); ?>" title="<?php echo esc_attr( 'Catch Themes', 'catchbox' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'catchbox' ); ?></a></h2>
+            <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catchbox' ) ); ?>" title="<?php echo esc_attr_e( 'Catch Themes', 'catchbox' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'catchbox' ); ?></a></h2>
     	
         <form method="post" action="options.php">
 			<?php
@@ -530,7 +530,7 @@ function catchbox_options_slider_page() {
            	<div id="featuredslider">
                 <table class="form-table">               
                 	<tr>                            
-                        <th scope="row"><h4><?php _e( 'Exclude Slider post from Home page posts:', 'catchresponsive' ); ?></h4></th>
+                        <th scope="row"><h4><?php _e( 'Exclude Slider post from Home page posts:', 'catchbox' ); ?></h4></th>
                         <input type='hidden' value='0' name='catchbox_options_slider[exclude_slider_post]'>
                         <td><input type="checkbox" id="headerlogo" name="catchbox_options_slider[exclude_slider_post]" value="1" <?php isset($options['exclude_slider_post']) ? checked( '1', $options['exclude_slider_post'] ) : checked('0', '1'); ?> /></td>
                     </tr>
@@ -573,7 +573,7 @@ function catchbox_options_social_links() {
             } else {
                 printf( __( '%s Theme Options By', 'catchbox' ), get_current_theme() );
             }
-			?> <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catchbox' ) ); ?>" title="<?php echo esc_attr( 'Catch Themes', 'catchbox' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'catchbox' ); ?></a></h2>
+			?> <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catchbox' ) ); ?>" title="<?php echo esc_attr_e( 'Catch Themes', 'catchbox' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'catchbox' ); ?></a></h2>
         
 		<form method="post" action="options.php">
 			<?php
@@ -696,7 +696,7 @@ function catchbox_options_webmaster_tools() {
                 printf( __( '%s Theme Options By', 'catchbox' ), get_current_theme() );
             }
 			?>
-            <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catchbox' ) ); ?>" title="<?php echo esc_attr( 'Catch Themes', 'catchbox' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'catchbox' ); ?></a></h2>
+            <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catchbox' ) ); ?>" title="<?php echo esc_attr_e( 'Catch Themes', 'catchbox' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'catchbox' ); ?></a></h2>
 
 		<form method="post" action="options.php">
 			<?php

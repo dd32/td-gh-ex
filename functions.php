@@ -75,10 +75,16 @@ function catchbox_setup() {
 	if ( ! isset( $content_width ) )
 	$content_width = 818;
 	
-	/* Make Catch Box available for translation.
-	 * Translations can be added to the /languages/ directory.
+	/* Catch Box is now available for translation.
+	 * Add your files into /languages/ directory.
+	 * @see http://codex.wordpress.org/Function_Reference/load_theme_textdomain
 	 */
-	load_theme_textdomain( 'catchbox', get_template_directory() . '/languages' );	
+	load_theme_textdomain( 'catchbox', get_template_directory() . '/languages' );
+	
+	$locale = get_locale();
+    $locale_file = get_template_directory().'/languages/$locale.php';
+    if (is_readable( $locale_file))
+		require_once( $locale_file);
 
 	/**
      * Add callback for custom TinyMCE editor stylesheets. (editor-style.css)
