@@ -9,7 +9,7 @@
  
 	global $post;
 	if( $post )
-		$layout = get_post_meta( $post->ID,'Sidebar-layout', true ); 
+		$layout = get_post_meta( $post->ID,'simplecatch-sidebarlayout', true ); 
 		
 	if( empty( $layout ) || ( !is_page() && !is_single() ) )
 		$layout='default';

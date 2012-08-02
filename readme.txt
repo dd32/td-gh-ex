@@ -4,7 +4,7 @@ Theme Name: Simple Catch
 Theme URI: http://catchthemes.com/wp-themes/simplecatch
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
-Version: 1.3.2
+Version: 1.3.3
 License: GNU General Public License
 
 == Theme Description ==
@@ -164,6 +164,13 @@ Version 1.3.2
 * Fixed the site verification, site title, Description caching issue
 * Fixed the css issue for search title
 
+Version 1.3.3
+* Added Excerpt Length option to alter the excerpt length in Layout Settings.
+* Fixed content.php file.
+* Used get_option( 'date_format' ) rather than hardcoding format.
+* Made Post author link prefix translation ready.
+* Changing the key name for post custom metadata i.e. 'Sidebar-layout' keyname changed to 'simplecatch-sidebarlayout'.
+
 == Upcoming Plan ==
-* Add more option in theme option for feed redirect, excerpt length
+* Add more option in theme option for feed redirect
 * Add feature slider image height option

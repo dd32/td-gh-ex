@@ -496,6 +496,12 @@ function simplecatch_options_page() {
                                 </td>
                             </tr>
 
+                            <?php if( empty( $options[ 'excerpt_length' ] ) ) { $options[ 'excerpt_length' ] = 30; } ?>
+                            <tr>
+                                <th scope="row"><h4><?php _e( 'Excerpt length(words)', 'simplecatch' ); ?></h4></th>
+                                <td><input type="text" name="simplecatch_options[excerpt_length]" value="<?php if ( isset( $options[ 'excerpt_length' ] ) ) echo intval( $options[ 'excerpt_length' ] ); ?>" /></td>
+                            </tr>
+
                             <?php if( !isset( $options[ 'reset_settings' ] ) ) { $options[ 'reset_settings' ] = "0"; } ?>
                             <?php if( $options[ 'reset_settings' ] == "1" ) { $options[ 'reset_settings' ] = "0"; } ?>
                             <tr>                            
@@ -809,6 +815,10 @@ function simplecatch_options_validation( $options ){
     if( isset( $options[ 'search_button_text' ] ) ) {
         $options_validated[ 'search_button_text' ] = sanitize_text_field( $options[ 'search_button_text' ] );    
     }   
+    //data validation for excerpt length
+    if ( isset( $options[ 'excerpt_length' ] ) ) {
+        $options_validated[ 'excerpt_length' ] = absint( $options[ 'excerpt_length' ] ) ? $options [ 'excerpt_length' ] : 30;
+    }
     if ( isset( $options['reset_settings'] ) ) {
         $options_validated[ 'reset_settings' ] = $options[ 'reset_settings' ];
     }    
@@ -816,7 +826,8 @@ function simplecatch_options_validation( $options ){
     if( $options[ 'reset_settings' ] == 1 ) {
         $options_validated[ 'more_tag_text' ] = "Continue Reading &rarr;";
         $options_validated[ 'search_display_text' ] = "Type Keyword";
-        $options_validated[ 'search_button_text' ] = "Search"; 
+        $options_validated[ 'search_button_text' ] = "Search";
+        $options_validated[ 'excerpt_length' ] = 30; 
     }
 
 	//Clearing the theme option cache
@@ -894,7 +905,7 @@ function simplecatch_template_backward_compatibility() {
 				update_post_meta( $post->ID, 'Sidebar-layout', 'right-sidebar' );
 			elseif( $flag == 'sidebar-left.php')
 				update_post_meta( $post->ID, 'Sidebar-layout', 'left-sidebar' );
-			elseif( $flag == 'default'|| $flag == '' )
+			elseif( $flag == 'default' )
 				update_post_meta( $post->ID, 'Sidebar-layout', 'no-sidebar');
 			
 			delete_post_meta( $post->ID, '_wp_page_template');
@@ -905,7 +916,35 @@ function simplecatch_template_backward_compatibility() {
 		
 	endif;
 }
-add_action('init','simplecatch_template_backward_compatibility');
+add_action('init','simplecatch_template_backward_compatibility', 10 );
+
+/**
+ * Backward Comaptibility for simplecatch version 1.3.2
+ * Deleting Sidebar-layout meta key from database and replacing it with simplecatch-sidebarlayout 
+ *
+ * Fetch the old meta values of the page and post template and update the layout metabox using those metavalues
+ * @used init hook
+ */
+function simplecatch_sidebar_layout_backward_compatibility() {
+    global $post;
+    $reset_sidebar_layoutkey = get_option('reset_sidebar_layoutkey');
+
+    if( empty( $reset_sidebar_layoutkey ) ):
+	    // Updating the date format
+		update_option( 'date_format', 'j F, Y' );
+        $query = new WP_Query( array( 'post_type' => array('page', 'post'),'posts_per_page' => -1 ) );
+        while( $query->have_posts() ): $query->the_post();
+            $flag = get_post_meta( $post->ID, 'Sidebar-layout', 'true' );
+			update_post_meta( $post->ID, 'simplecatch-sidebarlayout', $flag );
+            delete_post_meta( $post->ID, 'Sidebar-layout');
+         endwhile;
+        // Reset Post Data
+        wp_reset_postdata();
+        update_option( 'reset_sidebar_layoutkey',true );
+        
+    endif;
+}
+add_action('init','simplecatch_sidebar_layout_backward_compatibility', 20 );
 
 /**
  * Delete the database option on theme switch
@@ -913,6 +952,7 @@ add_action('init','simplecatch_template_backward_compatibility');
  */
 function simplecatch_reset_template_cache() {
 	delete_option( 'reset_template' );
+    delete_option( 'reset_sidebar_layoutkey' );
 }
 add_action( 'switch_theme', 'simplecatch_reset_template_cache');
 

@@ -122,7 +122,9 @@ add_filter( 'wp_title', 'simplecatch_filter_wp_title' );
  * @uses filter excerpt_length
  */
 function simplecatch_excerpt_length( $length ) {
-	return 30;
+	$options = get_option( 'simplecatch_options' );
+	if( empty( $options[ 'excerpt_length' ] ) ) { $options[ 'excerpt_length' ] = 30; }
+	return $options[ 'excerpt_length' ];
 }
 add_filter( 'excerpt_length', 'simplecatch_excerpt_length' );
 
@@ -737,7 +739,7 @@ add_action( 'pre_get_posts','simple_catch_alter_home' );
 function simplecatch_class_names($classes) { 
 	global $post;
 	if( $post )
-		$layout = get_post_meta( $post->ID,'Sidebar-layout', true ); 
+		$layout = get_post_meta( $post->ID,'simplecatch-sidebarlayout', true ); 
 	if( empty( $layout ) || ( !is_page() && !is_single() ) )
 		$layout='default';
 		
@@ -760,7 +762,7 @@ add_filter('body_class','simplecatch_class_names');
  */
 function simplecatch_content() {
 	global $post;
-	$layout = get_post_meta( $post->ID,'Sidebar-layout', true ); 
+	$layout = get_post_meta( $post->ID,'simplecatch-sidebarlayout', true ); 
 	if( empty( $layout ) )
 		$layout='default';
 		
@@ -815,9 +817,9 @@ function simplecatch_loop() {
 			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>"><?php the_title(); ?></a></h2>
             <ul class="post-by">
                 <li class="no-padding-left"><a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>" 
-                    title="<?php echo esc_attr( get_the_author_meta( 'display_name' ) ); ?>">By &nbsp;<?php the_author_meta( 'display_name' ); ?></a></li>
-                <li><?php the_time( 'j F, Y' ); ?></li>
-                <li><?php comments_popup_link( 'No Comments ', '1 Comment ', '% Comments ' ); ?></li>
+                    title="<?php echo esc_attr( get_the_author_meta( 'display_name' ) ); ?>"><?php _e( 'By', 'simplecatch' ); ?>&nbsp;<?php the_author_meta( 'display_name' );?></a></li>
+                <li><?php $simplecatch_date_format = get_option( 'date_format' ); the_time( $simplecatch_date_format ); ?></li>
+                <li><?php comments_popup_link( __( 'No Comments', 'simplecatch' ), __( '1 Comment', 'simplecatch' ), __( '% Comments', 'simplecatch' ) ); ?></li>
             </ul>
             <?php the_content();
             // copy this <!--nextpage--> and paste at the post content where you want to break the page

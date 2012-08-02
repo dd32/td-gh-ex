@@ -18,9 +18,9 @@ get_header();
 
                     <ul class="post-by">
                         <li class="no-padding-left"><a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>" 
-                            title="<?php echo esc_attr( get_the_author_meta( 'display_name' ) ); ?>">By &nbsp;<?php the_author_meta( 'display_name' ); ?></a></li>
-                        <li><?php the_time( 'j F, Y' ); ?></li>
-                        <li><?php comments_popup_link( 'No Comments ', '1 Comment ', '% Comments ' ); ?></li>
+                            title="<?php echo esc_attr( get_the_author_meta( 'display_name' ) ); ?>"><?php _e( 'By', 'simplecatch' ); ?>&nbsp;<?php the_author_meta( 'display_name' );?></a></li>
+                        <li><?php $simplecatch_date_format = get_option( 'date_format' ); the_time( $simplecatch_date_format ); ?></li>
+                        <li><?php comments_popup_link( __( 'No Comments', 'simplecatch' ), __( '1 Comment', 'simplecatch' ), __( '% Comments', 'simplecatch' ) ); ?></li>
                     </ul>
                 	<div class="entry-content">
 						<div class="entry-attachment">
