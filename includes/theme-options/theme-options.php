@@ -5,7 +5,7 @@
 add_action('admin_menu', 'sampression_theme_options');
 
 function sampression_theme_options() {
-	add_theme_page('Sempression Theme Option', 'Theme Option', 'read', 'sampression-options', 'build_sampression_options');
+	add_theme_page('Sempression Theme Option', 'Theme Options', 'read', 'sampression-options', 'build_sampression_options');
 }
 
 /*=======================================================================
@@ -15,7 +15,7 @@ function sampression_admin_enqueue_scripts( $hook_suffix ) {
 	wp_enqueue_script('media-upload');
 	wp_enqueue_script('thickbox');
 	wp_enqueue_style( 'sampression-theme-options', get_template_directory_uri() . '/includes/theme-options/theme-options.css', false, '1.0' );
-	wp_enqueue_style('thickbox', get_bloginfo('siteurl') . 'wp-includes/js/thickbox/thickbox.css', false, false, 'screen');
+	wp_enqueue_style('thickbox', get_template_directory_uri() . 'wp-includes/js/thickbox/thickbox.css', false, false, 'screen');
 	wp_enqueue_script( 'sampression-theme-options', get_template_directory_uri() . '/includes/theme-options/theme-options.js', array( 'jquery' ), '1.0' );
 }
 

@@ -227,13 +227,6 @@ function sampression_cat_slug() {
 }
 
 /*=======================================================================
- * Disabling HTML support tags in Comments
- *=======================================================================*/
-/*add_filter( 'comment_text', 'wp_filter_nohtml_kses' );
-add_filter( 'comment_text_rss', 'wp_filter_nohtml_kses' );
-add_filter( 'comment_excerpt', 'wp_filter_nohtml_kses' );*/
-
-/*=======================================================================
  * Run function during a themes initialization. It clear all widgets
  *=======================================================================*/
 add_action( 'setup_theme', 'sampression_widget_reset' );

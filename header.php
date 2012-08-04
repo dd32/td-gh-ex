@@ -46,13 +46,12 @@
 	?>
     </title>
 	
-    <!-- CSS: Versioning enabled for caching
+    <!-- CSS
     ================================================== -->
-    <!-- Skeleton Stylesheet: Responsive with 960 -->
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/lib/css/skeleton.css">
-    <!-- Main Stylesheet -->
     <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-    <!-- Getting Google Fonts -->
+    
+     <!-- Getting Google Fonts
+    ================================================== -->
     <link href='http://fonts.googleapis.com/css?family=Droid+Serif:700,400,400italic,700italic' rel='stylesheet' type='text/css'>
 	
     <!-- Favicons
@@ -60,17 +59,15 @@
 	<?php sampression_favicon(); ?>
 	
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-	
-	<?php wp_head(); ?>
     
-    <?php
+	<?php
 	/* Include codes in Header from Theme Option (Advance) */
 	 echo get_option( 'opt_sam_header' ); ?>
-    
+     
+	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class('top'); ?>>
-
 <header id="header">
   <div class="container">
     <div class="columns nine">

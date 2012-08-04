@@ -46,11 +46,10 @@
 	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
     <script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
 <![endif]-->
-<?php wp_footer(); ?>
-
 <?php
 	/* Include codes in Footer from Theme Option (Advance) */
 	 echo get_option( 'opt_sam_footer' ); ?>
-
+     
+<?php wp_footer(); ?>
 </body>
 </html>

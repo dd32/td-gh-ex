@@ -1,23 +1,23 @@
-=== simplecatch ===
+=== Sampression Lite ===
 
-Theme Name: Simple Catch
-Theme URI: http://catchthemes.com/wp-themes/simplecatch
-Author: Catch Themes Team
-Author URI: http://catchthemes.com
-Description: Simple Catch is a simple and clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Featured Image Slider, Custom Menu, Theme Options, Custom Widgets, Three Custom Page Template for Layout and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework.
-Version: 1.2.2
-License: GNU General Public License
+Theme Name: Sampression Lite
+Theme URI: http://www.sampression.com/sampression-lite/
+Author: Sampression
+Author URI: http://www.sampression.com
+
+Version: 1.1.2
+License: GNU General Public License v2 or later
+License URI: license.txt
+*/
 
 == Theme Description ==
-
-SimpleCatch is a simple and clean WordPress Theme. Easy Customize through Theme Options and Custom Widgets. Features: Featured Image Slider, Custom Menu, Theme Options, Custom Widgets and Support for popular plugins. It is based on popular 978 Grid System CSS Framework.
+Sampression Lite is a fully responsive WordPress theme, perfect for blogging. It's lightweight responsive design allows this theme to adapt across a range of screen sizes. Besides an elegant design, Sampression Lite features customizable menus and widgets, along with a threaded comments section. It supports sticky notes with special effects and allows the best placement of feature images on posts. Under the advanced section this theme allows Admin to insert codes in the header and footer section. Sampression Lite was given a magical layout by <a href="http://isotope.metafizzy.co/">isotope</a> jQuery.
 
 == Features ==  
-Featured Image Slider, Custom Drop-down Menu, Theme Options, Custom Widgets, flexible position of sidebar and Support for popular plugins.
+Responsive, Theme Options, Custom Widgets, Custom Menu, iSotope jQuery, Sticky Post
 
 == Tags ==
-
-Tags Used: black, gray, silver, white, light, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, custom-menu, featured-images, full-width-template, theme-options, threaded-comments
+Tags Used: white, orange, green, one-column, two-columns, flexible-width, featured-image-header, featured-images, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 
 == Installation ==
 
@@ -28,77 +28,27 @@ Tags Used: black, gray, silver, white, light, one-column, two-columns, left-side
  = If you have any errors, use alternate method.
 
 2. Alternate: 
- = Unzip the template file (simplecatch.zip) that you have downloaded. 
- = Via FTP, upload the whole folder (simplecatch) to your server and place it in the /wp-content/themes/ folder. 
+ = Unzip the template file (sampression-lite.zip) that you have downloaded. 
+ = Via FTP, upload the whole folder (sampression-lite) to your server and place it in the /wp-content/themes/ folder. 
  = Do not change directory name. 
- = The template files should thus be here now: /wp-content/themes/simplecatch/index.php (for example).
+ = The template files should thus be here now: /wp-content/themes/sampression-lite/index.php (for example).
 
-3. Log into your WP admin panel and click on the Design tab. 
-4. Now click on the simplecatch theme to activate it.
-5. Complete all of the required inputs on the simplecatch Options page (in the WP admin panel) and click "Save Changes".
+3. Log into your WP admin panel and click on the Appearance then goto Themes tab. 
+4. Now click on the sampression-lite theme to activate it.
+5. Complete all of the required inputs on the theme Options page (in the WP admin panel) and click "Save Changes".
 
+6. Change Logo and Favicon:
+ = Login to your wp-admin area and go to Appearance -> Theme Options.
+ = Select Logo & Icons Tab
+ = Upload your required logo asw well other favicons and different sizes of apple touch icons.
 
-== Frequently Asked Questions ==
-
-1. How to change logo on Header and Footer?
- = Login to WordPress Dashboard.
- = Click on Theme Options under Appearance.
- = Select the Logo Tab.
- = Click on Add Header logo and Footer logo button.
- = Browse the Logo image from desired location and insert into the Post.
- = Click on Save button. Now you can see the preview image on your right side. 
-
-
-2. How to change fav icon? 
- = Login to WordPress Dashboard.
- = Click on Theme Options under Appearance.
- = Select the Fav Icon Tab.
- = Click on Add Fav Icon button.
- = Browse the fav icon image from desired location and insert into the Post.
- = Click on Save button. Now you can see the preview image on your right side.
-			
-3. How to insert Social links on the right side of header?
- = Login to WordPress Dashboard.
- = Click on Theme Options under Appearance.
- = Select the Social Links Tab.
- = Here you can see different social links like facebook, twitter etc.
- = Give the social links on its respective socal fields. For example http://www.facebook.com. for facebook etc.
- = Click on Save button.
-		
-4. How to insert scripts on header or footer?
- = Login to WordPress Dashboard.
- = Click on Theme Options under Appearance.
- = Select the Analytic Option Tab.
- = Here you can put different scripts like, google, facebook etc.
- = Put the script on upper textarea which you want to load on header.
- = Put the script on lower textarea which you want to load on footer.
- = Click on Save button.
-		
-5. How to choose featured slider?
- = Login to WordPress Dashboard.
- = Click on Featured Slider under Appearance.
- = Give the No. of slides and click on Save Button.
- = Now there is list of the Featured Col #1, #2 etc.
- = To Give the Post ID's, click on "Click Here to Edit" Button which redirect you into the edit posts.
- = Now find the post ID's which you want to display and keep that ID's on blank Featured Col #1..... 
- = Click on Save button.
-		
-6. How to create pagination in single post if the post is too long?
- = Login to WordPress Dashboard.
- = Click on the Post.
- = Edit the specific post which you want to breakdown into more pages.
- = Now Keep the cursor to the exact place of post where you like to break.
- = Then copy this shortcode <!--nextpage--> and paste it.
- = You can repeat this shortcode many times where you wan to break down.
- = Update the post.
- = Click on Save button.
-
-
-== Changelog ==
-Version 1.2.1
-* Fixed the Slider Image Link
-* Modify the Continue Reading Link
-* Added the Social Icon for Pinterest and Google+
-* Added CSS to Support WP-PageNavi and Contact Form 7 Plugins
-Version 1.2.2
-* Fixed css for Pinterest
+7. Social Media:
+ = Login to your wp-admin area and go to Appearance -> Theme Options.
+ = Select Social Media tab
+ = Here you can add your facebook and twitter id which appears at the top of the site after search section.
+ 
+8. Advance Setting:
+ = Login to your wp-admin area and go to Appearance -> Theme Options.
+ = Select Advance tab
+ = Here, additionally you can add different codes to the header and footer of theme. Please be careful to add codes becuase it might crop your theme files/funtions.
+ 
