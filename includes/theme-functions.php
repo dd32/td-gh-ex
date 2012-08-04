@@ -6,16 +6,10 @@ if ( ! function_exists( 'graphene_get_header_image' ) ) :
 	function graphene_get_header_image( $post_id = NULL){
 		global $graphene_settings;
 		
-		if ( is_singular() && has_post_thumbnail( $post_id ) && ( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'post-thumbnail' ) ) &&  $image[1] >= HEADER_IMAGE_WIDTH && !$graphene_settings['featured_img_header']) {
+		if ( is_singular() && has_post_thumbnail( $post_id ) && ( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'post-thumbnail' ) ) &&  $image[1] >= HEADER_IMAGE_WIDTH && !$graphene_settings['featured_img_header'] ) {
 			// Houston, we have a new header image!
-			// Gets only the image url. It's a pain, I know! Wish WordPress has better options on this one
-			$header_img = get_the_post_thumbnail( $post_id, 'post-thumbnail' );
-			$header_img = explode( '" class="', $header_img);
-			$header_img = $header_img[0];
-			$header_img = explode( 'src="', $header_img);
-			$header_img = $header_img[1]; // only the url
-		}
-		else if ( $graphene_settings['use_random_header_img']){
+			$header_img = $image[0]; // only the url
+		} else if ( $graphene_settings['use_random_header_img'] ){
 			$default_header_images = graphene_get_default_headers();
 			$randomkey = array_rand( $default_header_images);
 			$header_img = str_replace( '%s', get_template_directory_uri(), $default_header_images[$randomkey]['url']);
@@ -34,6 +28,11 @@ endif;
 */
 function graphene_body_class( $classes ){
     
+	global $graphene_settings;
+	
+	if ( $graphene_settings['slider_full_width'] ) $classes[] = 'full-width-slider';
+	if ( $graphene_settings['slider_position'] ) $classes[] = 'bottom-slider';
+	
     $column_mode = graphene_column_mode();
     $classes[] = $column_mode;
     // for easier CSS
@@ -42,6 +41,8 @@ function graphene_body_class( $classes ){
     } else if ( strpos( $column_mode, 'three_col' ) === 0 ){
         $classes[] = 'three-columns';
     }
+	
+	if ( has_nav_menu( 'secondary-menu' ) ) $classes[] = 'have-secondary-menu';
     
     // Prints the body class
     return $classes;

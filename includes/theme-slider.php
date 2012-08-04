@@ -23,7 +23,7 @@ if ( ! function_exists( 'graphene_scrollable' ) ) :
 							speed: <?php echo $speed; ?>
 						})
 						.navigator({	  
-							navi: ".slider_nav",
+							navi: '.slider_nav',
 							naviItem: 'a',
 							activeClass: 'active'                                                               
 						})
@@ -35,12 +35,15 @@ if ( ! function_exists( 'graphene_scrollable' ) ) :
 					$.graphene_slider = $("#slider_root").data("scrollable");
 					
 				<?php else : 
-						if ( $graphene_settings['slider_animation'] == 'vertical-slide' )
+						if ( $graphene_settings['slider_animation'] == 'vertical-slide' ){
 							$effect = 'slide';
-						if ( $graphene_settings['slider_animation'] == 'fade' )
+						}
+						if ( $graphene_settings['slider_animation'] == 'fade' ){
 							$effect = 'fade';
-						if ( $graphene_settings['slider_animation'] == 'none' )
+						}
+						if ( $graphene_settings['slider_animation'] == 'none' ){
 							$effect = 'default';
+						}
 				?>
 				
 					$( ".slider_nav" )
@@ -73,9 +76,9 @@ endif;
  * Creates the functions that output the slider
 */
 function graphene_slider(){
-	global $graphene_settings, $in_slider;
+	global $graphene_settings, $graphene_in_slider;
 	
-	$in_slider = true;
+	$graphene_in_slider = true;
 	if ( $graphene_settings['slider_display_style'] == 'bgimage-excerpt' )
 		graphene_set_excerpt_length( 35 );
 	
@@ -119,10 +122,11 @@ function graphene_slider(){
 			}
 
             
-			$slider_link_url = esc_url( get_post_meta( get_the_ID(), '_graphene_slider_url', true ) );
+			$slider_link_url = esc_url( graphene_get_post_meta( get_the_ID(), 'slider_url' ) );
 			if ( ! $slider_link_url )
 				$slider_link_url = get_permalink();
-                        
+            
+			$slider_link_url = apply_filters( 'graphene_slider_link_url', $slider_link_url, get_the_ID() );  
 			?>
             
             <div <?php graphene_grid( 'slider_post clearfix', 16, 11, 8, true, true ); ?> id="slider-post-<?php the_ID(); ?>" <?php echo $style; ?>>
@@ -135,13 +139,14 @@ function graphene_slider(){
                 <?php if ( $graphene_settings['slider_display_style'] == 'thumbnail-excerpt' ) : ?>
 					<?php /* The slider post's featured image */ ?>
                     <?php 
-                    if ( get_post_meta( get_the_ID(), '_graphene_slider_img', true ) != 'disabled' && ! ( ( get_post_meta( get_the_ID(), '_graphene_slider_img', true ) == 'global' || get_post_meta( get_the_ID(), '_graphene_slider_img', true ) == '' ) && $graphene_settings['slider_img'] == 'disabled' ) ) : 
-					$image = graphene_get_slider_image( get_the_ID(), apply_filters( 'graphene_slider_image_size', 'thumbnail' ) );
-					if ( $image ) :
-					?>
-                    <div class="sliderpost_featured_image">
-                        <a href="<?php echo $slider_link_url; ?>"><?php echo $image;	?></a>
-                    </div>
+					$slider_img_setting = graphene_get_post_meta( get_the_ID(), 'slider_img' );
+                    if ( $slider_img_setting != 'disabled' && ! ( ( $slider_img_setting == 'global' || $slider_img_setting == '' ) && $graphene_settings['slider_img'] == 'disabled' ) ) : 
+						$image = graphene_get_slider_image( get_the_ID(), apply_filters( 'graphene_slider_image_size', 'thumbnail' ) );
+						if ( $image ) :
+						?>
+						<div class="sliderpost_featured_image">
+							<a href="<?php echo $slider_link_url; ?>"><?php echo $image; ?></a>
+						</div>
                     <?php endif; endif; ?>
                 <?php endif; ?>
                 
@@ -186,7 +191,7 @@ function graphene_slider(){
 	do_action( 'graphene_after_slider' );
 	
 	graphene_reset_excerpt_length();
-	$in_slider = false;
+	$graphene_in_slider = false;
 }
 /* Create an intermediate function that controls where the slider should be displayed */
 if ( ! function_exists( 'graphene_display_slider' ) ) :
@@ -201,10 +206,17 @@ if ( ! function_exists( 'graphene_display_slider' ) ) :
 endif;
 /* Hook the slider to the appropriate action hook */
 if ( ! $graphene_settings['slider_disable'] ){
-	if ( ! $graphene_settings['slider_position'] )
-		add_action( 'graphene_top_content', 'graphene_display_slider' );
-	else
-		add_action( 'graphene_bottom_content', 'graphene_display_slider' );
+	if ( ! $graphene_settings['slider_position'] ) {
+		if ( $graphene_settings['slider_full_width'] )
+			add_action( 'graphene_before_content-main', 'graphene_display_slider' );
+		else
+			add_action( 'graphene_top_content', 'graphene_display_slider' );	
+	} else {
+		if ( $graphene_settings['slider_full_width'] )
+			add_action( 'graphene_after_content', 'graphene_display_slider' );
+		else
+			add_action( 'graphene_bottom_content', 'graphene_display_slider', 11 );
+	}
 }
 
 
@@ -227,11 +239,11 @@ if ( ! function_exists( 'graphene_get_slider_image' ) ) :
 		
 		// First get the settings
 		$global_setting = ( $graphene_settings['slider_img'] ) ? $graphene_settings['slider_img'] : 'featured_image';
-		$local_setting = get_post_meta( $post_id, '_graphene_slider_img', true );
-		$local_setting = ( $local_setting ) ? $local_setting : 'global';
+		$local_setting = graphene_get_post_meta( $post_id, 'slider_img' );
+		$local_setting = ( $local_setting ) ? $local_setting : '';
 		
 		// Determine which image should be displayed
-		$final_setting = ( $local_setting == 'global' ) ? $global_setting : $local_setting;
+		$final_setting = ( $local_setting == '' ) ? $global_setting : $local_setting;
 		
 		// Build the html based on the final setting
 		$html = '';
@@ -256,16 +268,16 @@ if ( ! function_exists( 'graphene_get_slider_image' ) ) :
 			
 			if ( ! $urlonly ){
 				$html .= '';
-				if ( $local_setting != 'global' ) :
-					$html .= '<img src="' . esc_url( get_post_meta( $post_id, '_graphene_slider_imgurl', true ) ) . '" alt="" />';
+				if ( $local_setting != '' ) :
+					$html .= '<img src="' . esc_url( graphene_get_post_meta( $post_id, 'slider_imgurl' ) ) . '" alt="" />';
 				else :
 					$html .= '<img src="' . esc_url( $graphene_settings['slider_imgurl'] ) . '" alt="" />';
 				endif;
 			} else {
-				if ( $local_setting != 'global' ) :
-					$html .= esc_url( get_post_meta( $post_id, '_graphene_slider_imgurl', true) );
+				if ( $local_setting != '' ) :
+					$html .= esc_url( graphene_get_post_meta( $post_id, 'slider_imgurl' ) );
 				else :
-					$html .=esc_url(  $graphene_settings['slider_imgurl'] );
+					$html .= esc_url(  $graphene_settings['slider_imgurl'] );
 				endif;
 			}
 			
@@ -341,13 +353,15 @@ endif;
  */
 function graphene_exclude_slider_categories( $request ){
 	global $graphene_settings, $graphene_defaults;
-	
+
 	if ( $graphene_settings['slider_type'] != 'categories' ) return $request;
 	if ( is_admin() ) return $request;
 	
 	if ( $graphene_settings['slider_exclude_categories'] != $graphene_defaults['slider_exclude_categories'] ){
 		$dummy_query = new WP_Query();
     	$dummy_query->parse_query( $request );
+		
+		if ( get_option( 'show_on_front' ) == 'page' && $dummy_query->query_vars['page_id'] == get_option( 'page_on_front' ) ) return $request;
 		
 		if ( ( $graphene_settings['slider_exclude_categories'] == 'everywhere' ) || 
 				$graphene_settings['slider_exclude_categories'] == 'homepage' && $dummy_query->is_home() )

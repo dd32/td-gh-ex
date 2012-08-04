@@ -21,6 +21,12 @@ function graphene_options_general() {
                     </tr>
                 </table>
                 <table class="form-table<?php if ( $graphene_settings['slider_disable'] == true ) echo ' hide'; ?>">
+                	<tr>
+                        <th scope="row">
+                            <label for="slider_full_width"><?php _e( 'Extend slider to full width of the theme', 'graphene' ); ?></label>
+                        </th>
+                        <td><input type="checkbox" name="graphene_settings[slider_full_width]" id="slider_full_width" <?php checked( $graphene_settings['slider_full_width'] ); ?> value="true" /></td>
+                    </tr>
                     <tr>
                         <th scope="row">
                             <label><?php _e( 'What do you want to show in the slider', 'graphene' ); ?></label><br />                            
@@ -178,6 +184,8 @@ function graphene_options_general() {
                         <td><input type="checkbox" name="graphene_settings[slider_position]" id="slider_position" <?php checked( $graphene_settings['slider_position'] ); ?> value="true" /></td>
                     </tr>                    
                 </table>
+                
+                <p class="submit clearfix"><input type="submit" class="button" value="<?php _e( 'Save All Options', 'graphene' ); ?>" /></p>
             </div>
         </div>
         
@@ -211,6 +219,8 @@ function graphene_options_general() {
                         </td>
                     </tr>
                 </table>
+                
+                <p class="submit clearfix"><input type="submit" class="button" value="<?php _e( 'Save All Options', 'graphene' ); ?>" /></p>
             </div>
         </div>
         
@@ -289,6 +299,8 @@ function graphene_options_general() {
                 <?php else : ?>
                 <p><?php _e( '<strong>Note:</strong> homepage panes are only displayed when using a <a href="http://codex.wordpress.org/Creating_a_Static_Front_Page">static front page</a>.', 'graphene' ); ?></p>
                 <?php endif; ?>
+                
+                <p class="submit clearfix"><input type="submit" class="button" value="<?php _e( 'Save All Options', 'graphene' ); ?>" /></p>
             </div>
         </div>
         
@@ -315,6 +327,8 @@ function graphene_options_general() {
                         </td>
                     </tr>
                 </table>
+                
+                <p class="submit clearfix"><input type="submit" class="button" value="<?php _e( 'Save All Options', 'graphene' ); ?>" /></p>
             </div>
         </div>
         
@@ -346,6 +360,8 @@ function graphene_options_general() {
                         </td>                            
                     </tr>
                 </table>
+                
+                <p class="submit clearfix"><input type="submit" class="button" value="<?php _e( 'Save All Options', 'graphene' ); ?>" /></p>
             </div>
         </div>
         
@@ -385,6 +401,8 @@ function graphene_options_general() {
                         <td><input type="checkbox" name="graphene_settings[alt_home_footerwidget]" id="alt_home_footerwidget" <?php checked( $graphene_settings['alt_home_footerwidget'] ); ?> value="true" /></td>
                     </tr>
                 </table>
+                
+                <p class="submit clearfix"><input type="submit" class="button" value="<?php _e( 'Save All Options', 'graphene' ); ?>" /></p>
             </div>
         </div>
                 
@@ -521,12 +539,14 @@ function graphene_options_general() {
                                     <td><input type="text" id="new-socialprofile-iconurl" class="widefat code" /></td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2"><a href="#" id="new-socialprofile-add"><?php _e( 'Add new Social Media Profile', 'graphene' ); ?></a></td>
+                                    <td colspan="2"><a href="#" id="new-socialprofile-add"><?php _e( 'Add this social media profile', 'graphene' ); ?></a></td>
                                 </tr>
                             </table>
                         </td>
                     </tr>
                 </table>
+                
+                <p class="submit clearfix"><input type="submit" class="button" value="<?php _e( 'Save All Options', 'graphene' ); ?>" /></p>
             </div>
         </div>
         
@@ -576,6 +596,8 @@ function graphene_options_general() {
                         </td>
                     </tr>
                 </table>
+                
+                <p class="submit clearfix"><input type="submit" class="button" value="<?php _e( 'Save All Options', 'graphene' ); ?>" /></p>
             </div>
         </div> 
         
@@ -609,6 +631,8 @@ function graphene_options_general() {
                         <td><textarea name="graphene_settings[adsense_code]" id="adsense_code" cols="60" rows="10" class="widefat code"><?php echo htmlentities(stripslashes( $graphene_settings['adsense_code'] ) ); ?></textarea></td>
                     </tr>
                 </table>
+                
+                <p class="submit clearfix"><input type="submit" class="button" value="<?php _e( 'Save All Options', 'graphene' ); ?>" /></p>
             </div>
         </div>
         
@@ -639,6 +663,8 @@ function graphene_options_general() {
                         <td><textarea name="graphene_settings[ga_code]" id="ga_code" cols="60" rows="7" class="widefat code"><?php echo htmlentities(stripslashes( $graphene_settings['ga_code'] ) ); ?></textarea></td>
                     </tr>
                 </table>
+                
+                <p class="submit clearfix"><input type="submit" class="button" value="<?php _e( 'Save All Options', 'graphene' ); ?>" /></p>
             </div>
         </div>
         
@@ -672,6 +698,8 @@ function graphene_options_general() {
                         <td><input type="checkbox" name="graphene_settings[hide_return_top]" id="hide_return_top" <?php checked( $graphene_settings['hide_return_top'] ); ?> value="true" /></td>
                     </tr>
                 </table>
+                
+                <p class="submit clearfix"><input type="submit" class="button" value="<?php _e( 'Save All Options', 'graphene' ); ?>" /></p>
             </div>
         </div> 
         
@@ -695,6 +723,8 @@ function graphene_options_general() {
                         <td><input type="checkbox" name="graphene_settings[print_button]" id="print_button" <?php checked( $graphene_settings['print_button'] ); ?> value="true" /></td>                        
                     </tr>
                 </table>
+                
+                <p class="submit clearfix"><input type="submit" class="button" value="<?php _e( 'Save All Options', 'graphene' ); ?>" /></p>
             </div>
         </div>  
 

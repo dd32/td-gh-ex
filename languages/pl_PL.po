@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: Graphene 1.1.1.1 theme for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-05-04 17:53+1200\n"
-"PO-Revision-Date: 2012-05-07 19:31+0100\n"
-"Last-Translator: Dariusz Francuz <francuzpm@gmail.com>\n"
+"PO-Revision-Date: 2012-07-04 12:17+1200\n"
+"Last-Translator: Syahir Hakim <syahir@khairul-syahir.com>\n"
 "Language-Team: Dariusz Francuz <francuzpm@gmail.com>, Agard Khaardin <AgardKhaardin@gmail.com> <francuzpm@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -98,16 +98,16 @@ msgstr "Ten wpis jest chroniony hasłem. Podaj hasło aby zobaczyć komentarze."
 msgid "1 comment"
 msgid_plural "%d comments"
 msgstr[0] "1 komentarz"
-msgstr[1] "1 komentarz"
-msgstr[2] "1 komentarz"
+msgstr[1] "%d komentarz"
+msgstr[2] "%d komentarz"
 
 #: comments.php:60
 #, php-format
 msgid "1 ping"
 msgid_plural "%d pings"
 msgstr[0] "1 ping"
-msgstr[1] "1 ping"
-msgstr[2] "1 ping"
+msgstr[1] "%d pingi"
+msgstr[2] "%d pingów"
 
 #: comments.php:118
 msgid "Comments have been disabled."
@@ -612,7 +612,7 @@ msgstr "Użyj kolorowych pasków nagłówka "
 
 #: admin/options-display.php:25
 msgid "Link header image to front page"
-msgstr "Odsyłacz do obrazka w nagłówku strony głównej"
+msgstr "Link w obrazku nagłówka do strony głównej"
 
 #: admin/options-display.php:28
 msgid "Check this if you disable the header texts and want the header image to be linked to the front page."
@@ -1190,7 +1190,7 @@ msgstr "Wysokość linii (odstępu pomiędzy wierszami) tekstu"
 
 #: admin/options-display.php:731
 msgid "Link Text"
-msgstr "Text Linku"
+msgstr "Tekst linku"
 
 #: admin/options-display.php:735
 msgid "Text decoration (normal state )"
@@ -2295,11 +2295,11 @@ msgstr "Kontynuuj czytanie &raquo;"
 
 #: includes/theme-loop.php:143
 msgid "Older posts &laquo;"
-msgstr "Starsze posty &laquo"
+msgstr "Starsze posty &laquo;"
 
 #: includes/theme-loop.php:144
 msgid "&raquo; Newer posts"
-msgstr "&raquo; Brak postów"
+msgstr "&raquo; Nowsze posty"
 
 #: includes/theme-loop.php:146
 msgid "Next page &raquo;"

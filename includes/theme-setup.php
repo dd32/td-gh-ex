@@ -7,7 +7,7 @@ if ( ! function_exists( 'graphene_db_init' ) ) :
 		global $graphene_settings, $graphene_defaults;
 		
 		/* Run DB updater if needed */
-		include( get_template_directory() . '/admin/db-updater.php' );
+		include( $graphene_settings['template_dir'] . '/admin/db-updater.php' );
 		graphene_update_db();
 		$graphene_settings = get_option( 'graphene_settings', array() );
 		if ( $graphene_settings )
@@ -39,8 +39,14 @@ function graphene_get_content_width(){
 
 	return graphene_grid_width( -($gutter * 2) + $diff, 16, 11, 8 );
 }
-global $content_width;
-$content_width = graphene_get_content_width();
+
+
+function graphene_set_content_width(){
+	global $content_width;
+	$content_width = graphene_get_content_width();
+}
+add_action( 'template_redirect', 'graphene_set_content_width' );
+graphene_set_content_width();
 
 
 if ( ! function_exists( 'graphene_setup' ) ):
@@ -58,19 +64,25 @@ function graphene_setup() {
 	if ( $graphene_settings['slider_display_style'] == 'bgimage-excerpt' ) {
 		$height = ( $graphene_settings['slider_height']) ? $graphene_settings['slider_height'] : 240;
 		$frontpage_id = ( get_option( 'show_on_front' ) == 'posts' ) ? NULL : get_option( 'page_on_front' );
-		$column_mode = graphene_column_mode( $frontpage_id );
 		
-		if ( strpos( $column_mode, 'two_col' ) === 0 )
-			$column_mode = 'two_col';
-		elseif ( strpos( $column_mode, 'three_col' ) === 0 )
-			$column_mode = 'three_col';
-		else 
-			$column_mode = NULL;
+		if ( $graphene_settings['slider_full_width'] ) {
+			$slider_width = graphene_grid_width( '', 16 );
+		} else {
 			
-		if ( $column_mode )
-			$slider_width = $graphene_settings['column_width'][$column_mode]['content'];
-		else 
-			$slider_width = graphene_grid_width( '', 16, 11, 8, $frontpage_id );
+			$column_mode = graphene_column_mode( $frontpage_id );
+			
+			if ( strpos( $column_mode, 'two_col' ) === 0 )
+				$column_mode = 'two_col';
+			elseif ( strpos( $column_mode, 'three_col' ) === 0 )
+				$column_mode = 'three_col';
+			else 
+				$column_mode = NULL;
+			
+			if ( $column_mode )
+				$slider_width = $graphene_settings['column_width'][$column_mode]['content'];
+			else 
+				$slider_width = graphene_grid_width( '', 16, 11, 8, $frontpage_id );
+		}
 		
 		add_image_size( 'graphene_slider', apply_filters( 'graphene_slider_image_width', $slider_width ), $height, true);
 	}

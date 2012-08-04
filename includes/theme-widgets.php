@@ -24,15 +24,15 @@ class Graphene_Widget_Twitter extends WP_Widget{
 			wp_enqueue_script( 'graphene-twitter', get_template_directory_uri() . '/js/twitter.js', array(), '', false );
 	}
 	
-	function widget( $args, $instance){		// This function displays the widget
-		extract( $args);
-		
+	function widget( $args, $instance ){		// This function displays the widget
+		extract( $args );
+
 		// User selected settings
 		global $twitter_username;
 		global $twitter_tweetcount;
 		global $twitter_followercount;
 		global $graphene_twitter_newwindow;
-		$twitter_title = $instance['twitter_title'];
+		$twitter_title = graphene_icl_t( $args['widget_id'], $instance['twitter_title'] );
 		$twitter_username = $instance['twitter_username'];
 		$twitter_tweetcount = $instance['twitter_tweetcount'];
 		$twitter_followercount = $instance['twitter_followercount'];
@@ -69,20 +69,22 @@ class Graphene_Widget_Twitter extends WP_Widget{
 		// add_action( 'wp_footer', 'graphene_add_twitter_script' );
 	}
 	
-	function update( $new_instance, $old_instance){	// This function processes and updates the settings
+	function update( $new_instance, $old_instance ){	// This function processes and updates the settings
 		$instance = $old_instance;
 		
 		// Strip tags (if needed) and update the widget settings
 		$instance['twitter_username'] = strip_tags( $new_instance['twitter_username']);
 		$instance['twitter_tweetcount'] = strip_tags( $new_instance['twitter_tweetcount']);
-		$instance['twitter_title'] = strip_tags( $new_instance['twitter_title']);
+		$instance['twitter_title'] = strip_tags( $new_instance['twitter_title'] );
 		$instance['twitter_followercount'] = ( isset( $new_instance['twitter_followercount'] ) ) ? true : false ;
 		$instance['new_window'] = ( isset( $new_instance['new_window'] ) ) ? true : false ;
+		
+		graphene_wpml_register_strings( array( 'value' => $instance['twitter_title'], 'name' => $this->id ) );
 		
 		return $instance;
 	}
 	
-	function form( $instance){		// This function sets up the settings form
+	function form( $instance ){		// This function sets up the settings form
 		
 		// Set up default widget settings
 		$defaults = array( 'twitter_username' => 'username',
@@ -116,20 +118,6 @@ class Graphene_Widget_Twitter extends WP_Widget{
         <?php
 	}
 }
-
-/* The function that prints the Twitter script to the footer */
-if (!function_exists( 'graphene_add_twitter_script' ) ) :
-	function graphene_add_twitter_script(){
-		global $twitter_username;
-		global $twitter_tweetcount;
-		echo '<!-- BEGIN Twitter Updates script -->';
-		// include_once( 'js/twitter.js' );
-		?>
-        <script type="text/javascript" src="http://api.twitter.com/1/statuses/user_timeline.json?screen_name=<?php echo $twitter_username; ?>&count=<?php echo $twitter_tweetcount; ?>&page=1&include_rts=true&include_entities=true&callback=twitterCallback2"></script>
-		<?php
-		echo '<!-- END Twitter Updates script -->';
-	}
-endif;
 
 
 /**

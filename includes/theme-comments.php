@@ -188,8 +188,8 @@ function graphene_get_comment_count( $type = 'comments', $only_approved_comments
  * Custom jQuery script for the comments/pings tabs
 */
 function graphene_tabs_js(){ 
-	global $tabbed;
-	if ( $tabbed ) :
+	global $graphene_tabbed_comment;
+	if ( $graphene_tabbed_comment ) :
 ?>
 	<script type="text/javascript">
 		//<![CDATA[

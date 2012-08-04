@@ -164,14 +164,14 @@ endif;
  * For development and debugging use
 */
 if ( ! function_exists( 'disect_it' ) ) :
-function disect_it( $var = NULL, $exit = true, $comment = false){
-	if ( $var !== NULL){
-		if ( $comment) {echo '<!--';}
+function disect_it( $var = NULL, $exit = true, $comment = false ){
+	if ( $var !== NULL ){
+		if ( $comment ) {echo '<!--';}
 		echo '<pre>';
-		print_r( $var);
+		print_r( $var );
 		echo '</pre>';
-		if ( $comment) {echo '-->';}
-		if ( $exit) {exit();}
+		if ( $comment ) {echo '-->';}
+		if ( $exit ) {exit();}
 	} else {
 		echo '<strong>ERROR:</strong> You must pass a variable as argument to the <code>disect_it()</code> function.';	
 	}
@@ -251,4 +251,3 @@ function graphene_is_wp_version( $is_ver = '' ) {
 }
 
 endif;
-?>

@@ -41,7 +41,7 @@ global $graphene_settings;
 <?php if ( have_comments() ) : ?>
 
 <?php /* Get the comments and pings count */ 
-	global $tabbed;
+	global $graphene_tabbed_comment;
 	$comments_num = graphene_get_comment_count();
 	// to also show comments awaiting approval
 	$allcomments_num = graphene_get_comment_count( 'comments', false );
@@ -50,7 +50,7 @@ global $graphene_settings;
 		$comment_count = sprintf( _n( '1 comment', '%d comments', $comments_num, 'graphene' ), number_format_i18n( $comments_num ) );
 	if ( $pings_num ) 
 		$ping_count = sprintf( _n( '1 ping', '%d pings', $pings_num, 'graphene' ), number_format_i18n( $pings_num ) );
-	$tabbed = ( $comments_num && $pings_num ) ? true : false;
+	$graphene_tabbed_comment = ( $comments_num && $pings_num ) ? true : false;
 	
 	$class = 'clearfix';
 	if ( ! $comments_num ) $class .= ' no-comment';
@@ -61,10 +61,10 @@ global $graphene_settings;
 
 <div id="comments" class="<?php echo $class; ?>">
     <?php if ( $comments_num ) : ?>
-    	<h4 class="comments gutter-left current"><?php if ($tabbed) {echo '<a href="#">'.$comment_count.'</a>';} else {echo $comment_count;}?></h4>
+    	<h4 class="comments gutter-left current"><?php if ($graphene_tabbed_comment) {echo '<a href="#">'.$comment_count.'</a>';} else {echo $comment_count;}?></h4>
 	<?php endif; ?>
     <?php if ( $pings_num ) : ?>
-	    <h4 class="pings gutter-left"><?php if ($tabbed) {echo '<a href="#">'.$ping_count.'</a>';} else {echo $ping_count;}?></h4>
+	    <h4 class="pings gutter-left"><?php if ($graphene_tabbed_comment) {echo '<a href="#">'.$ping_count.'</a>';} else {echo $ping_count;}?></h4>
     <?php endif; ?>
     
     <?php if ( ( ( $is_paginated && get_option( 'comments_per_page' ) > 3 ) || ! $is_paginated ) && ( $comments_num > 3 || $pings_num > 6 ) ) : ?>

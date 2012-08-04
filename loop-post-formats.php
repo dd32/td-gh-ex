@@ -82,7 +82,6 @@
         <div class="entry-description"><?php the_excerpt(); ?></div>
         <?php endif; ?>
                
-		<?php /* translators: This is the PHP date formatting string for the image post format. See http://php.net/manual/en/function.date.php for more details. */ ?>
         <p class="entry-date updated"><?php printf( __( 'Posted on: %s', 'graphene' ), '<br /><span>' . get_the_time( __( 'F j, Y', 'graphene' ) ) . '</span>' ); ?></p>
         <?php endif; ?>
         

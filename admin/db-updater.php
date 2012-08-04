@@ -5,22 +5,28 @@
 */
 function graphene_update_db(){
 	global $graphene_defaults;
-    return;    
+    
 	if ( get_option( 'graphene_ga_code' ) === '' ){       
 		graphene_update_db_to_1_0();
 	}
 	
 	$current_settings = get_option( 'graphene_settings', array() );
+	
 	if ( $current_settings && array_key_exists( 'db_version', $current_settings ) ) {
-		if ( $current_settings['db_version'] === '1.0' )
+		if ( $current_settings['db_version'] === '1.0' ) {
 			graphene_update_db_to_1_1();
+			$current_settings = get_option( 'graphene_settings', array() );
+		}
 	}
-        
-	$current_settings = get_option( 'graphene_settings', array() );
+
 	if ( $current_settings && array_key_exists( 'db_version', $current_settings ) ) {
-		if ( $current_settings['db_version'] === '1.1' )
-		graphene_update_db_to_1_2();
+		if ( $current_settings['db_version'] === '1.1' ) {
+			graphene_update_db_to_1_2();
+			$current_settings = get_option( 'graphene_settings', array() );
+		}
 	}
+	
+	graphene_convert_meta();
 }
 
 function graphene_update_db_to_1_0(){
@@ -301,5 +307,43 @@ function graphene_update_db_to_1_2(){
     }    
     
     update_option('graphene_settings', $graphene_settings);        
+}
+
+
+/**
+ * This DB update converts the theme's custom fields into a single database entry for each posts and pages
+ */
+function graphene_convert_meta(){    
+
+	/* Check if there's any old custom fields in the database */
+	global $wpdb;
+	$q = "SELECT * FROM " . $wpdb->prefix . "postmeta WHERE meta_key LIKE '_graphene_%' AND meta_key <> '_graphene_meta'";
+	$r = $wpdb->get_results( $q );
+	if ( $wpdb->num_rows == 0 ) return;
+	
+	/* Get all posts */
+	$args = array(
+				'post_type'			=> array( 'post', 'page' ),
+				'post_status'		=> 'any',
+				'posts_per_page'	=> -1,
+			);
+	$posts = new WP_Query( $args );
+	
+	/* Do the conversion */
+	$custom_fields = graphene_custom_fields_defaults();
+	while ( $posts->have_posts() ) {
+		$posts->the_post(); global $post;
+		
+		$graphene_meta = array();
+		foreach ( $custom_fields as $custom_field => $default_val ) {
+			$current_value = get_post_meta( $post->ID, '_graphene_' . $custom_field, true );
+			if ( $current_value !== false ) {
+				if ( $default_val !== $current_value ) $graphene_meta[$custom_field] = $current_value;
+				delete_post_meta( $post->ID, '_graphene_' . $custom_field );
+			}
+		}
+		if ( $graphene_meta ) update_post_meta( $post->ID, '_graphene_meta', $graphene_meta );
+	}
+	wp_reset_postdata();
 }
 ?>

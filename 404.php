@@ -28,8 +28,8 @@ get_header();
     <div class="entry clearfix">
         <h2><?php _e( 'Error 404 - Page Not Found', 'graphene' ); ?></h2>
         <div class="entry-content clearfix">
-            <p><?php _e( "Sorry, I've looked everywhere but I can't find the page you're looking for.", 'graphene' ); ?></p>
-            <p><?php _e( "If you follow the link from another website, I may have removed or renamed the page some time ago. You may want to try searching for the page:", 'graphene' ); ?></p>
+            <p><?php _e( 'Sorry, I\'ve looked everywhere but I can\'t find the page you\'re looking for.', 'graphene' ); ?></p>
+            <p><?php _e( 'If you follow the link from another website, I may have removed or renamed the page some time ago. You may want to try searching for the page:', 'graphene' ); ?></p>
             
             <?php get_search_form(); ?>
         </div>

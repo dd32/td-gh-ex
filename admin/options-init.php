@@ -4,7 +4,7 @@
  * these setting via a global variable call, so database query is only
  * done once.
 */
-require_once( get_template_directory() . '/admin/options-defaults.php' );
+require( get_template_directory() . '/admin/options-defaults.php' );
 $graphene_defaults = apply_filters( 'graphene_defaults', $graphene_defaults );
 function graphene_get_settings(){
 	global $graphene_defaults;
@@ -14,19 +14,24 @@ function graphene_get_settings(){
 global $graphene_settings;
 $graphene_settings = graphene_get_settings();
 
+/* Get the WPML helper functions */
+include( get_template_directory() . '/admin/wpml-helper.php' );
 
 /**
  * Includes the files where our theme options are defined
 */
-include( get_template_directory() . '/admin/options.php' );
-include( get_template_directory() . '/admin/faq.php' );
+include( $graphene_settings['template_dir'] . '/admin/options.php' );
+include( $graphene_settings['template_dir'] . '/admin/faq.php' );
 
 /* Include the settings validator */
-include( get_template_directory() . '/admin/options-validator.php');
+include( $graphene_settings['template_dir'] . '/admin/options-validator.php');
+
+/* Indlude AJAX handler */
+include( $graphene_settings['template_dir'] . '/admin/ajax-handler.php');
 
 /* Include the feature pointer */
 /* Disabled for now until a proper API has been implemented in WordPress core */
-// include( get_template_directory() . '/admin/feature-pointers.php');
+// include( $graphene_settings['template_dir'] . '/admin/feature-pointers.php');
 
 /** 
  * Adds the theme options page
@@ -40,6 +45,9 @@ function graphene_options_init() {
 	add_action( 'admin_print_styles-' . $graphene_settings['hook_suffix'], 'graphene_admin_options_style' );
 	add_action( 'admin_print_styles-' . $graphene_settings['hook_suffix_faq'], 'graphene_admin_options_style' );
 	add_action( 'admin_print_scripts-' . $graphene_settings['hook_suffix'], 'graphene_admin_scripts' );
+	add_action( 'admin_head-' . $graphene_settings['hook_suffix'], 'graphene_custom_style' );
+	add_action( 'admin_head-' . $graphene_settings['hook_suffix'], 'graphene_register_t_options' );
+	add_action( 'admin_head-' . $graphene_settings['hook_suffix'], 'graphene_wpml_register_strings', 20 );
 	
 	do_action( 'graphene_options_init' );
 }
@@ -63,12 +71,13 @@ function graphene_options_js(){
 	
 	$tab = 'general'; // default set the current tab to general
 	// detect any other allowed tabs
-	if ( isset( $_GET['tab'] ) && in_array( $_GET['tab'], array('general', 'display', 'advanced')) ){ $tab = $_GET['tab']; }
+	if ( isset( $_GET['tab'] ) && in_array( $_GET['tab'], array('general', 'display', 'colours', 'advanced' ) ) ){ $tab = $_GET['tab']; }
 	?>
 	<script type="text/javascript">
 	//<![CDATA[
 		var graphene_tab = '<?php echo $tab; ?>';
-		var graphene_settings = <?php echo json_encode($graphene_settings); ?>;
+		var graphene_settings = <?php echo json_encode( $graphene_settings ); ?>;
+		var graphene_uri = '<?php echo get_template_directory_uri(); ?>';
 	//]]>
 	</script>
 	<?php
@@ -100,10 +109,10 @@ if ( ! function_exists( 'graphene_admin_options_style' ) ) :
 		wp_enqueue_style( 'thickbox' );
 		// wp_enqueue_style( 'wp-pointer' );
 		
-		if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'display' ) {
-			wp_enqueue_style( 'farbtastic' );
+		if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'display' )
 			wp_enqueue_style( 'jquery-ui-slider' );
-		}
+		else if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'colours' )
+			wp_enqueue_style( 'farbtastic' );
 	}
 endif;
 
@@ -119,12 +128,12 @@ function graphene_admin_scripts() {
 	wp_enqueue_script( 'graphene-admin-js' );
     // wp_enqueue_script( 'wp-pointer' );
 	
-	if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'display' ) {
-		wp_enqueue_script( 'farbtastic' );
+	if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'display' )
 		wp_enqueue_script( 'jquery-ui-slider' );
-	} else {
+	else if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'colours' )
+		wp_enqueue_script( 'farbtastic' );
+	else 
 		wp_enqueue_script( 'jquery-ui-sortable' );     
-	}
 }
 
 
@@ -158,14 +167,30 @@ endif;
 
 
 /**
+ * Output the options content
+ *
+ * @param string $tab The slug of the option tab to display
+ *
+ * @package Graphene
+ * @since Graphene 1.8
+ */
+if ( ! function_exists( 'graphene_options_tabs_content' ) ) :
+function graphene_options_tabs_content( $tab ){
+	require( get_template_directory() . '/admin/options-' . $tab . '.php' );
+	call_user_func( 'graphene_options_' . $tab );
+}
+endif;
+
+
+/**
  * Include the file for additional user fields
 */
-include( get_template_directory() . '/admin/user.php' );
+include( $graphene_settings['template_dir'] . '/admin/user.php' );
 
 /**
  * Include the file for additional custom fields in posts and pages editing screens
 */
-include( get_template_directory() . '/admin/custom-fields.php' );
+include( $graphene_settings['template_dir'] . '/admin/custom-fields.php' );
 
 
 /**

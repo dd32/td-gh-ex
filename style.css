@@ -1,8 +1,8 @@
 /*
 Theme Name: Graphene
 Theme URI: http://www.khairul-syahir.com/wordpress-dev/graphene-theme
-Description: The Graphene theme for WordPress is a stylish, neat, and tight WordPress theme supporting configurable columns layout and columns widths options. It includes 4 predefined widget areas, with the ability to add countless more widget areas, as well as determine the number of columns to display in the footer widget area. It includes action hooks for unprecedented customisability, and jQuery slider for your featured posts. Compatibility support has been added for the bbPress plugin. It has built-in Twitter widget, allows for customisable colours, header and background, as well as built-in AdSense placement and social sharing buttons. It also supports custom menu with drop-down navigation, and threaded comments of up to 10 levels deep! The codes are written so that you can easily override or add functionality to the theme by using your own child theme without altering the parent theme's code. Seriously, there's too many features for this theme to describe them all here! This theme has been tested and confirmed compatible with IE7 and above, Mozilla Firefox, Google Chrome, Opera, and Safari. The theme currently has been translated into more than 25 languages, and fully supports right-to-left languages. See the <a href="http://www.khairul-syahir.com/wordpress-dev/graphene-theme#changelog">theme's changelog</a>.
-Version: 1.7.3
+Description: We believe that every theme should facilitate creative writing, not hinder it. We also believe that each site should have the opportunity to be unique. Since the theme's inception, we have received countless suggestions and requests on features that really matter. We listened, and we delivered. Here's a theme that's packed full of features that you need, yet far from being overwhelming. Here's a theme that's easy to use for beginners, yet well documented and powerful enough to be endlessly customisable to users with even only moderate technical skills. Here's a theme that's available in more than  30 languages and is backed with active community support, where questions, ideas and suggestions are always welcomed. And best of all, here's a theme that's completely free. Here's a theme that's yours to make it special.
+Version: 1.8
 Author: Syahir Hakim
 Author URI: http://www.khairul-syahir.com
 Tags: black, blue, white, one-column, two-columns, three-columns, right-sidebar, left-sidebar, fixed-width, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, rtl-language-support, post-formats, featured-image-header, featured-images, full-width-template, microformats
@@ -499,7 +499,7 @@ a:hover {
 	left: 50%;
 	margin-left: -480px;
 }
-.header_title {
+#header .header_title {
 	font: normal 32px "Pontano Sans", arial, sans-serif;
 	letter-spacing: -1px;
 	position: absolute;
@@ -601,8 +601,15 @@ a:hover {
 /* Top level header menu, default state */
 #header-menu-wrap {
 	position: relative;	
-	background: url(images/sprite_h.png) left -3px repeat-x #101010;
+	background: url(images/sprite_h.png) left -4px repeat-x #101010;
 	z-index: 15;
+}
+.have-secondary-menu #header-menu-wrap {
+	border-bottom: 1px solid #000;
+}
+.dropdown #header-menu-wrap {
+	background: none;
+	border: none;
 }
 #header-menu,
 #secondary-menu {
@@ -690,8 +697,8 @@ a:hover {
 /* Top level, default state */
 #secondary-menu-wrap {
 	width: 100%;
-	border-top: 1px solid #000;
-	background: url(images/sprite_h.png) left -940px repeat-x #222;
+	border-top: 1px solid #2C2C2C;
+	background: #222;
 }
 #secondary-menu > li {
 	font: normal 11px arial;
@@ -715,7 +722,7 @@ a:hover {
 #secondary-menu > li:hover,
 #secondary-menu > li.current-menu-item,
 #secondary-menu > li.current-menu-ancestor {
-	background: url(images/sprite_h.png) left -1014px repeat-x #dfdfdf;
+	background: #eee;
 }
 #secondary-menu > li:hover > a,
 #secondary-menu > li.current-menu-item > a,
@@ -808,21 +815,29 @@ a:hover {
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColorStr='#0F2D4D', EndColorStr='#2880C3')";
 	background: linear-gradient(left top, #0F2D4D, #2880C3);
 	margin-bottom: 20px;
-	padding-bottom: 25px;
-	padding-top: 15px;
+	padding: 25px 0;
 	position: relative;
 	width: 100%;
+	clear: both;
+}
+.full-width-slider .featured_slider {
+	margin: 0 10px 20px;
+}
+.bottom-slider .featured_slider {
+	margin-bottom: 0;
 }
 .bgimage-excerpt.featured_slider {
-	margin-top: -9px;
-	padding-top: 0;
+	padding: 0;
 	-pie-background: none;
 	background: none;
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(enabled='false')";
 }
+.thumbnail-excerpt.featured_slider {
+	margin-bottom: 30px;
+}
 .featured_slider #slider_root {
 	background: #fff;
-	margin: 10px auto 0;
+	margin: 0 auto;
 	overflow: hidden;
 	position: relative;
 	height: 240px;
@@ -915,7 +930,7 @@ a:hover {
 .bgimage-excerpt .slider_post h2 a,
 .bgimage-excerpt .slider_post h2 a:visited {
 	color: #fff;
-	font: normal 18px arial;
+	font: normal 20px "Pontano Sans", arial, sans-serif;
 }
 .bgimage-excerpt .slider_post_entry p {
 	color: #ccc;
@@ -935,7 +950,8 @@ a:hover {
 .block-button:visited,
 .Button,
 .button,
-#commentform #submit {
+#commentform #submit,
+.wpsc_buy_button {
 	background: url(images/bg-block-button.png) left bottom repeat-x #1C5FA5;
 	background: -moz-linear-gradient(#2982C5, #1C5FA5);
 	background: -webkit-linear-gradient(#2982C5, #1C5FA5);
@@ -964,7 +980,8 @@ a:hover {
 }
 .block-button:hover,
 .button:hover,
-#commentform #submit:hover {
+#commentform #submit:hover,
+.wpsc_buy_button:hover {
 	background: url(images/bg-block-button-hover.png) left bottom repeat-x #1C5FA5;
 	background: -moz-linear-gradient(#2982C5, #15467A);
 	background: -webkit-linear-gradient(#2982C5, #15467A);
@@ -976,15 +993,15 @@ a:hover {
 }
 .slider_nav {
 	clear: both;
-	height: 20px;
-	position: absolute;
-	right: 10px;
-	bottom: 0;
-	text-align: right;
+	height: 10px;
+	margin-top: 5px;
+	text-align: center;
+	width: 100%;
 }
-.bgimage-excerpt .slider_nav {
-	right: 0;
-	}
+.thumbnail-excerpt .slider_nav {
+	position: absolute;
+	bottom: -15px;
+}
 .slider_nav a span {
 	display: none;
 }
@@ -992,9 +1009,9 @@ a:hover {
 .slider_nav a:visited {
 	background: url(images/sprite_master.png) -80px -37px no-repeat;
 	display: inline-block;
-	margin-left: 3px;
-	width: 12px;
-	height: 12px;
+	margin: 0 3px;
+	width: 10px;
+	height: 10px;
 }
 .slider_nav a.active,
 .slider_nav a.active:visited,
@@ -1071,7 +1088,7 @@ a:hover {
 }
 .post-title,
 .post-title a {
-	font: 22px arial;
+	font: 24px "Pontano Sans", sans-serif;
 	color: #1772af;
 	margin-top: -3px;
 }
@@ -1210,29 +1227,29 @@ a:hover {
 .comment-entry h5,
 .comment-entry h6 {
 	color: #333;
-	font: bold 16px arial;
+	font: normal 18px "Pontano Sans", arial, sans-serif;
 	margin: 20px 0 5px 0;
 }
 .entry-content h1,
 .comment-entry h1 {
-	font-size: 20px;
+	font-size: 22px;
 }
 .entry-content h2,
 .comment-entry h2 {
 	border-bottom: none;
-	font-size: 18px;
+	font-size: 20px;
 }
 .entry-content h4,
 .comment-entry h4 {
-	font-size: 14px;
+	font-size: 16px;
 }
 .entry-content h5,
 .comment-entry h5 {
-	font-size: 13px;
+	font-size: 14px;
 }
 .entry-content h6,
 .comment-entry h6 {
-	font-size: 12px;
+	font-size: 13px;
 }
 .entry-content p,
 .comment-entry p,
@@ -1326,16 +1343,19 @@ table {
 table td,
 table th,
 table tr {
-	border: 1px solid #ccc;
+	border: 1px solid #e6e6e6;
 	font-family: arial;
 	padding: 2px 5px;
 }
 table th {
-	background: #e0e0e0;
-	border-bottom-width: 2px;
+	background: #eee;
+	background: -webkit-linear-gradient(#f6f6f6,#eee);
+	background: -moz-linear-gradient(#f6f6f6,#eee);
+	background: linear-gradient(#f6f6f6,#eee);
+	padding: 10px 5px;
 }
 table tr {
-	background: #f3f3f3;
+	background: #fbfbfb;
 }
 table tr.alternate {
 	background: #fff;
@@ -1356,7 +1376,7 @@ blockquote p {
 	color: #474747 !important;
 	margin-bottom: 5px;
 	margin-top: 0 !important;
-	text-indent: 35px;
+	text-indent: 30px;
 }
 blockquote cite {
 	display: block;
@@ -1744,7 +1764,7 @@ h3.author-post-list {
 	background: url(images/sprite_master.png) -880px 6px no-repeat;
 	clear: both;
 	color: #929292;
-	font: normal 20px arial;
+	font: normal 20px "Pontano Sans", arial, sans-serif;
 	margin-top: 20px;
 	margin-bottom: 5px;
 	padding-left: 25px;
@@ -2002,10 +2022,10 @@ h3.author-post-list {
 	border-radius: 5px 5px 0 0;
 	color: #fff;
 	*display: inline;
-	font: bold 16px/20px arial;
+	font: 18px/20px "Pontano Sans", arial, sans-serif;
 	margin: -15px 0 5px -12px;
 	padding: 7px 12px;
-	text-shadow: 0 -1px 0 #555;
+	text-shadow: 0 -1px 0 #333;
 	width: 100%;
 	zoom: 1;
 }
@@ -2157,7 +2177,7 @@ h3.author-post-list {
 	vertical-align: top;
 }
 .two-columns .homepage_pane {
-	width: 48.4375% !important;
+	width: 48% !important;
 }
 .homepage_pane .excerpt-thumb {
 	text-align: center;
@@ -2175,7 +2195,7 @@ h3.author-post-list {
 }
 .homepage_pane .post-title a, 
 .homepage_pane .post-title a:visited{
-	font: normal 20px arial;	
+	font: normal 20px "Pontano Sans", arial, sans-serif;
 }
 .homepage_pane .post-excerpt{
 	color: #696a6a;
@@ -2255,7 +2275,6 @@ h3.author-post-list {
 	border-left: 1px solid #222;
     list-style: none;
 }
-
 .footer-menu-wrap ul.sub-menu li {
     display: block;
     font-size: 12px;
@@ -2319,8 +2338,8 @@ h3.author-post-list {
     color: #5E6F33;
 }
 .pullquote {
-	border-top: 5px solid #000;
-	border-bottom: 5px solid #000;
+	border-top: 1px solid #bbb;
+	border-bottom: 3px solid #222;
 	font: normal 22px "Pontano Sans", arial, sans-serif;
 	padding-bottom: 10px;
 	margin-top: 15px !important;
@@ -2405,4 +2424,202 @@ h3.author-post-list {
 .mysocial-icon {
 	width: 32px;
 	height: 32px; 
+}
+
+/* WP e-Commerce */
+.entry-content .product_average_vote img {
+	border: none;
+	margin: 0;
+}
+div.product_footer {
+	width: 100%;
+	border: none;
+}
+.wpsc_container span.votetext {
+	width: 100%;
+}
+.wpsc_container img {
+	max-width: 100%;
+}
+span.vote_total,
+span.vote_total span {
+	float: none !important;
+	font-size: 1em !important;
+}
+.default_product_display .wpsc_product_price,
+.single_product_display .product_description,
+.single_product_display .single_additional_description,
+.single_product_display .wpsc_product_price,
+.default_product_display .wpsc_variation_forms label,
+.single_product_display form.product_form fieldset p, 
+#content .single_product_display form.product_form fieldset p {
+	font: normal 12px/18px arial;
+}
+.wpsc_product_price .currentprice {
+	font-weight: bold;
+}
+.single_product_display form.product_form fieldset legend, 
+#content .single_product_display form.product_form fieldset legend,
+.default_product_display form.product_form fieldset legend, 
+#content .default_product_display form.product_form fieldset legend,
+.default_product_display h2.prodtitle, 
+#content .default_product_display h2.prodtitle {
+	font: bold 18px "Pontano Sans", arial, sans-serif;
+	margin: 5px 0 0;
+	padding: 0;
+}
+form.product_form fieldset,
+.single_product_display form.product_form fieldset,
+#content .single_product_display form.product_form fieldset {
+	margin-top: 10px;
+}
+#single_product_page_container,
+#checkout_page_container {
+	width: 100%;
+}
+.single_product_display .imagecol img.product_image,
+#default_products_page_container .imagecol img, 
+#list_view_products_page_container img, 
+#grid_view_products_page_container img {
+	background: none;
+	border: 4px solid #eee;
+	margin: 0;
+}
+.single_product_display {
+	padding: 0;
+}
+.wpsc_variation_forms table {
+	width: 100%;
+}
+.wpsc table td,
+.wpsc table th,
+.wpsc table tr,
+.wpsc_variation_forms table td,
+.wpsc_variation_forms table th,
+.wpsc_variation_forms table tr,
+.widget_wpsc_shopping_cart table td,
+.widget_wpsc_shopping_cart table th,
+.widget_wpsc_shopping_cart table tr {
+	border: none;
+	background: none;
+}
+.single_product_display .wpsc_variation_forms table td.col1, 
+#content .single_product_display .wpsc_variation_forms table tr td.col1,
+.default_product_display .wpsc_variation_forms table td.col1, 
+#content .default_product_display .wpsc_variation_forms table tr td.col1 {
+	width: 20%;
+}
+.single_product_display .wpsc_variation_forms table td.col2, 
+#content .single_product_display .wpsc_variation_forms table tr td.col2 {
+	width: 80%;
+}
+.single_product_display form.product_form input, 
+#content .single_product_display form.product_form input,
+#checkout_page_container textarea, 
+#checkout_page_container input, 
+#content #checkout_page_container textarea, 
+#content #checkout_page_container input {
+	font: normal 12px arial;
+}
+#checkout_page_container textarea, 
+#checkout_page_container input[type="text"],
+#checkout_page_container select {
+	padding: 3px 5px;
+	border: 1px solid #ddd;
+	font: normal 12px arial;
+}
+.wpsc_checkout_table input[type="text"],
+.wpsc_checkout_table textarea {
+	width: 250px;
+}
+.wpsc_checkout_table select {
+	width: 262px;
+}
+#checkout_page_container .wpsc_email_address {
+	float: left;
+	margin-right: 10px;
+}
+.wpsc_checkout_table {
+	clear: both;
+}
+.wpsc_checkout_table td {
+	padding: 5px 0 !important;
+}
+.default_product_display .imagecol {
+	margin-top: 10px;
+}
+.default_product_display {
+	padding: 0;
+	margin-top: 10px;
+}
+.shopping-cart-wrapper .shoppingcart {
+	padding: 0;
+	margin-top: 10px;
+}
+.widget_wpsc_shopping_cart .cart-widget-total td {
+	background: #f6f6f6;
+	border: none;
+}
+.shopping-cart-wrapper .shoppingcart table th {
+	border-bottom: 1px solid #eee;
+}
+.shopping-cart-wrapper .shoppingcart table #quantity {
+	width: 30px;
+}
+.shopping-cart-wrapper .shoppingcart table #price {
+	width: 70px;
+}
+.shopping-cart-wrapper .shoppingcart table #remove {
+	width: 10px;
+}
+.shopping-cart-wrapper .wpsc_empty_the_cart {
+	float: left;
+	text-align: left;
+}
+.shopping-cart-wrapper .checkout-shipping, 
+.shopping-cart-wrapper .checkout-tax, 
+.widget_wpsc_shopping_cart #cart-widget-links {
+	padding-top: 10px;
+}
+.custom_text {
+	clear: both;
+}
+#content img#wpsc_checkout_gravatar {
+	display: none;
+}
+#checkout_page_container table.checkout_cart {
+	width: 100%;
+	border: 1px solid #e6e6e6;
+}
+.checkout_cart .header th {
+	border-bottom: 1px solid #eee;
+	background: #eee;
+	background: -moz-linear-gradient(#f6f6f6,#eee);
+	background: -webkit-linear-gradient(#f6f6f6,#eee);
+	background: linear-gradient(#f6f6f6,#eee);
+	border: 1px solid #e6e6e6;
+	padding: 10px 5px;
+}
+#content #checkout_page_container table.checkout_cart tr.product_row td,
+#content #checkout_page_container table.checkout_cart tr.product_row {
+	padding: 5px;
+	text-align: center;
+	background: #fbfbfb;
+}
+#content #checkout_page_container table.checkout_cart tr.alt td {
+	background: #fff;
+}
+#content #checkout_page_container table.checkout_cart tr.product_row .wpsc_product_name {
+	text-align: left;
+}
+.wpsc_email_address_p {
+	display: block;
+	margin-top: -5px !important;
+}
+.wpsc_email_address_p input {
+	width: 250px;
+}
+#checkout_page_container .checkout-total {
+	margin-left: 10px;
+	font-weight: bold;
 }

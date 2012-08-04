@@ -24,4 +24,19 @@ if ( class_exists( 'bbPress' ) ) :
 	}
 	add_filter( 'post_class', 'graphene_bbpress_post_class' );
 endif;
-?>
+
+
+/* WP e-Commerce compat stuffs */
+if ( function_exists( 'is_products_page' ) ) :
+
+/**
+ * Disable child page listing for Products page
+ */
+function graphene_wpsc_disable_child(){
+	if ( ! is_products_page() ) return;
+	global $graphene_settings;
+	$graphene_settings['child_page_listing'] = 'hide';
+}
+add_action( 'wp_head', 'graphene_wpsc_disable_child' );
+ 
+endif;
