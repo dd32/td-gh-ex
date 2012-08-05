@@ -1,25 +1,18 @@
 <?php
-
 // Exit if accessed directly
 if ( !defined('ABSPATH')) exit;
 
-/**
- * Single Template
+ /**
+ * The Template for displaying all single posts.
  *
- *
- * @file           single.php
- * @package        Sampression Lite 
- * @author         Sampression (sampression.com)
- * @copyright      2012
- * @license        license.txt
- * @version        Release: 1.1
- * @link           http://codex.wordpress.org/Theme_Development#Single_Post_.28single.php.29
- * @since          available since Release 1.0
+ * @package WordPress
+ * @subpackage Sampression-Lite
+ * @since Sampression Lite 1.0
  */
+ 
 get_header(); ?>
 	
-
-		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
         
         <nav id="nav-above" class="post-navigation clearfix columns twelve">
             <h3 class="assistive-text hidden"><?php _e( 'Post navigation', 'sampression' ); ?></h3>

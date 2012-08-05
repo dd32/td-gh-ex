@@ -1,20 +1,18 @@
 <?php
-
 // Exit if accessed directly
 if ( !defined('ABSPATH')) exit;
 
 /**
- * Comments Template
+ * The template for displaying Comments.
  *
+ * The area of the page that contains both current comments
+ * and the comment form. The actual display of comments is
+ * handled by a callback to sampression_comment() which is
+ * located in the includes/functions.php file.
  *
- * @file           comments.php
- * @package        Sampression Lite 
- * @author         Sampression (sampression.com) 
- * @copyright      2012 Sampression
- * @license        license.txt
- * @version        Release: 1.0
- * @link           http://codex.wordpress.org/Theme_Development#Comments_.28comments.php.29
- * @since          available since Release 1.0
+ * @package WordPress
+ * @subpackage Sampression-Lite
+ * @since Sampression Lite 1.0
  */
 ?>
 	<div id="comments">

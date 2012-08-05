@@ -3,16 +3,11 @@
 if ( !defined('ABSPATH')) exit;
 
 /**
- * Loop Template
+ * The loop that displays posts.
  *
- *
- * @file           loop.php
- * @package        Responsive 
- * @author         Sampression (sampression.com)
- * @copyright      2012 Sampression
- * @license        license.txt
- * @version        Release: 1.1
- * @since          available since Release 1.0
+ * @package WordPress
+ * @subpackage Sampression-Lite
+ * @since Sampression Lite 1.0
  */
 ?>
 

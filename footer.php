@@ -1,16 +1,10 @@
 <?php
 /**
- * Footer Template
+ * The template for displaying the footer.
  *
- *
- * @file           footer.php
- * @package        Responsive 
- * @author         Sampression (sampression.com)
- * @copyright      2012 Sampression
- * @license        license.txt
- * @version        Release: 1.1
- * @link           http://codex.wordpress.org/Theme_Development#Document_Head_.28header.php.29
- * @since          available since Release 1.0
+ * @package WordPress
+ * @subpackage Sampression-Lite
+ * @since Sampression Lite 1.0
  */
 ?>
 

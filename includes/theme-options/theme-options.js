@@ -1,3 +1,8 @@
+/**
+Author: Sampression
+Author URI: sampression.com
+This Script helps in Theme Options to make the Browse button functional and like wise...
+*/
 jQuery(document).ready(function() {
 	jQuery('.upload_image_button').click(function() {
 		window.send_to_editor = function(html) {

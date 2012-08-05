@@ -4,17 +4,11 @@
 if ( !defined('ABSPATH')) exit;
 
 /**
- * Right side Widget Template
+ * The Sidebar containing the Right widget area.
  *
- *
- * @file           sidebar-right.php
- * @package        Sampression Lite 
- * @author         Sampression (sampression.com)
- * @copyright      2012
- * @license        license.txt
- * @version        Release: 1.0
- * @link           http://codex.wordpress.org/Theme_Development#Widgets_.28sidebar.php.29
- * @since          available since Release 1.0
+ * @package WordPress
+ * @subpackage Sampression-Lite
+ * @since Sampression Lite 1.0
  */
 ?>
 <aside id="sidebar" class="columns four sidebar-right" role="complementary">

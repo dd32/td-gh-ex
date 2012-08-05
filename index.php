@@ -3,20 +3,19 @@
 if ( !defined('ABSPATH')) exit;
 
 /**
- * Index Template
+ * The main template file.
  *
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
+ * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @file           index.php
- * @package        Responsive 
- * @author         Sampression (sampression.com)
- * @copyright      2012 Sampression
- * @license        license.txt
- * @version        Release: 1.0
- * @link           http://codex.wordpress.org/Theme_Development#Document_Head_.28header.php.29
- * @since          available since Release 1.0
+ * @package WordPress
+ * @subpackage Sampression-Lite
  */
-?>
-<?php get_header(); ?>
+
+get_header(); ?>
 
 <section id="content" class="clearfix">
 	

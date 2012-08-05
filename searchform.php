@@ -3,16 +3,11 @@
 if ( !defined('ABSPATH')) exit;
 
 /**
- * Searchform Template
+ * The template for displaying search forms
  *
- *
- * @file           searchform.php
- * @package        Sampression Lite 
- * @author         Sampression (sampression.com)
- * @copyright      2012 Sampression
- * @license        license.txt
- * @version        Release: 1.0
- * @since          available since Release 1.0
+ * @package WordPress
+ * @subpackage Sampression-Lite
+ * @since Sampression Lite 1.0
  */
 ?>
 <form method="get" id="searchform" class="clearfix" action="<?php echo esc_url( home_url( '/' ) ); ?>">

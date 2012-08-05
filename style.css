@@ -4,12 +4,12 @@ Theme URI: http://www.sampression.com/sampression-lite/
 Author: Sampression
 Author URI: http://www.sampression.com
 
-Description: Sampression Lite is a fully responsive WordPress theme, perfect for blogging. It's lightweight responsive design allows this theme to adapt across a range of screen sizes. Besides an elegant design, Sampression Lite features customizable menus and widgets, along with a threaded comments section. It supports sticky notes with special effects and allows the best placement of feature images on posts. Under the advanced section this theme allows Admin to insert codes in the header and footer section. Sampression Lite was given a magical layout by <a href="http://isotope.metafizzy.co/">isotope</a> jQuery.
+Description: Sampression Lite is a fully responsive theme, perfect for blogging. It's lightweight responsive design allows this theme to adapt across a range of screen sizes. Besides an elegant design, Sampression Lite features customizable menus and widgets, along with a threaded comments section. It supports sticky notes with special effects and allows the best placement of feature images on posts. Under the advanced tab this theme allows Admin to insert codes in the header and footer section.
 
-Version: 1.1.2
+Version: 1.1.2.1
 License: GNU General Public License v2 or later
 License URI: license.txt
-Tags: white, orange, green, one-column, two-columns, flexible-width, featured-image-header, featured-images, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: white, orange, green, one-column, two-columns, flexible-width, featured-image-header, featured-images, post-formats, sticky-post, theme-options, threaded-comments
 */
 
 /* Table of Content
@@ -512,7 +512,7 @@ a#logo-area:link {
 	margin:0 5px 0 0;
 	float:left;
 	}
-#searchform input, .sm-top a, #get-cats {
+#searchform input, .sm-top a, #get-cats, select {
 	display:inline;
 	float:left;
 	position:relative;
@@ -522,11 +522,13 @@ a#logo-area:link {
 	box-shadow:2px 2px 3px #D2DFDC;
 	-moz-box-shadow:2px 2px 3px #D2DFDC;
 	-webkit-box-shadow:2px 2px 3px #D2DFDC;
-	
+	}
+#searchform input {
 	-moz-border-radius: 0;
 	  -webkit-border-radius: 0;
 	  border-radius: 0;
 	}
+	
 #searchform:hover input {
 	border-color:#8AB7AD;
 	}
@@ -605,10 +607,13 @@ a#logo-area:link {
 
 
 /* Primary Navigation */
-#get-cats {
+select {
+	background-color:#fff;
 	background-position:200px -181px;
-	display:none;
 	padding:5px;
+	}
+#get-cats {
+	display:none;
 	margin-left:90px;
 	}
 #primary-nav {

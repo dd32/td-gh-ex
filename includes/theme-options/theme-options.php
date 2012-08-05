@@ -9,7 +9,7 @@ function sampression_theme_options() {
 }
 
 /*=======================================================================
- * Enqueueing js and css files for theme options
+ * Getting js and css files for theme options
  *=======================================================================*/
 function sampression_admin_enqueue_scripts( $hook_suffix ) {
 	wp_enqueue_script('media-upload');
@@ -22,7 +22,7 @@ function sampression_admin_enqueue_scripts( $hook_suffix ) {
 add_action( 'admin_print_styles-appearance_page_sampression-options', 'sampression_admin_enqueue_scripts' );
 
 /*=======================================================================
- * Callback function of admin_menu
+ * Building tabs for Theme Options
  *=======================================================================*/
 function build_sampression_options() {
 	$tabs = array( 'icons' => 'Logo &amp; Icons', 'social-media' => 'Social Media', 'advance' => 'Advance' );
@@ -57,7 +57,7 @@ function build_sampression_options() {
 }
 
 /*=======================================================================
- * Buiding tabs of theme options
+ * Buiding different tab cotent for Theme Options
  *=======================================================================*/
 function sampression_options_tabs($tab) {
 	?>

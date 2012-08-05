@@ -3,19 +3,14 @@
 if ( !defined('ABSPATH')) exit;
 
 /**
- * Category Template
+ * The template for displaying Category Archive pages.
  *
- *
- * @file           category.php
- * @package        Sampression Lite 
- * @author         Sampression (sampression.com)
- * @copyright      2012 Sampression
- * @license        license.txt
- * @version        Release: 1.0
- * @since          available since Release 1.0
+ * @package WordPress
+ * @subpackage Sampression-Lite
+ * @since Sampression Lite 1.0
  */
-?>
-<?php get_header(); ?>
+
+get_header(); ?>
 
 <section id="content"  class="clearfix">
   <?php if (have_posts()) : ?>

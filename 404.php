@@ -3,20 +3,14 @@
 if ( !defined('ABSPATH')) exit;
 
 /**
- * 404 Template
+ * The template for displaying 404 pages (Not Found).
  *
- *
- * @file           404.php
- * @package        Sampression Lite 
- * @author         Sampression (sampression.com)
- * @copyright      2012 Sampression
- * @license        license.txt
- * @version        Release: 1.0
- * @link           http://codex.wordpress.org/Creating_an_Error_404_Page
- * @since          available since Release 1.0
+ * @package WordPress
+ * @subpackage Sampression-Lite
+ * @since Sampression Lite 1.0
  */
-?>
-<?php get_header(); ?>
+
+get_header(); ?>
 
 <section id="content" class="clearfix">
   <div class="columns twelve offset-by-two">

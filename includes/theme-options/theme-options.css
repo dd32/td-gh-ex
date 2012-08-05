@@ -1,6 +1,5 @@
-/*
-This stylesheet is use for The Adming Style for e.g. Styling the Custom Fields
-*/
+@charset "utf-8";
+/* CSS Document for Admin Styles (Theme Options style) */
 
 .group:before, .group:after { content: "\0020"; display: block; height: 0; visibility: hidden; }
 .group:after { clear: both; }

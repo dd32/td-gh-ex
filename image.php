@@ -1,21 +1,17 @@
 <?php
-
 // Exit if accessed directly
 if ( !defined('ABSPATH')) exit;
 
 /**
- * Image Template
+ * The template for displaying image attachments.
  *
- *
- * @file           image.php
- * @package        Sampression Lite 
- * @author         Sampression (sampression.com)
- * @copyright      2012
- * @license        license.txt
- * @version        Release: 1.0
- * @since          available since Release 1.1.1
+ * @package WordPress
+ * @subpackage Sampression-Lite
+ * @since Sampression Lite 1.1.1
  */
+ 
 get_header(); ?>
+
 <?php if (have_posts()) : ?>
 <section id="content" class="columns twelve" role="main">
 			<?php while ( have_posts() ) : the_post(); ?>

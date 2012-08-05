@@ -4,18 +4,18 @@
 if ( !defined('ABSPATH')) exit;
 
 /**
- * Theme's Functions and Definitions
+ * Simple Catch functions and definitions
  *
+ * Sets up the theme and provides some helper functions. Some helper functions
+ * are used in the theme as custom template tags. Others are attached to action and
+ * filter hooks in WordPress to change core functionality.
  *
- * @file           functions.php
- * @package        Sampression Lite 
- * @author         Sampression (sampression.com)
- * @copyright      2012 Sampression
- * @license        license.txt
- * @version        Release: 1.0
- * @filesource     wp-content/themes/sampression/includes/functions.php
- * @link           http://codex.wordpress.org/Theme_Development#Functions_File
- * @since          available since Release 1.0
+ * The first function, sampression_setup(), sets up the theme by registering support
+ * for various features in WordPress, such as post thumbnails, navigation menus, and the like.
+ *
+ * @package WordPress
+ * @subpackage Sampression-Lite
+ * @since Sampression Lite 1.0
  */
 
 /*=======================================================================
@@ -38,15 +38,8 @@ if (!function_exists('sampression_setup')):
 
         /**
          * Sampression is now available for translations.
-         * Add your files into /languages/ directory.
-		 * @see http://codex.wordpress.org/Function_Reference/load_theme_textdomain
          */
-	    load_theme_textdomain('sampression', get_template_directory().'/languages');
-
-            $locale = get_locale();
-            $locale_file = get_template_directory().'/languages/$locale.php';
-            if (is_readable( $locale_file))
-	            require_once( $locale_file);
+	    load_theme_textdomain('sampression');
 				
         /**
          * Add callback for custom TinyMCE editor stylesheets. (editor-style.css)
@@ -76,8 +69,6 @@ if (!function_exists('sampression_setup')):
 			'top-menu'         => __('Top Menu', 'sampression')
 		    )
 	    );
-		
-	
 
     }
 
@@ -247,7 +238,7 @@ function sampression_widgets_init() {
 	
 	register_sidebar(array(
 		'name' => __('Bottom Widget 1', 'responsive'),
-		'description' => __('Appears on bottom of the Page - First Widget - sidebar.php', 'sampression'),
+		'description' => __('Appears on bottom of the Page - First Widget - Please insert only one widget for better appearance.', 'sampression'),
 		'id' => 'bottom-widget-1',
 		'before_title' => '<header class="widget-title">',
 		'after_title' => '</header>',
@@ -257,7 +248,7 @@ function sampression_widgets_init() {
 	
 	register_sidebar(array(
 		'name' => __('Bottom Widget 2', 'responsive'),
-		'description' => __('Appears on bottom of the Page - Second Widget - sidebar.php', 'sampression'),
+		'description' => __('Appears on bottom of the Page - Second Widget - Please insert only one widget for better appearance.', 'sampression'),
 		'id' => 'bottom-widget-2',
 		'before_title' => '<header class="widget-title">',
 		'after_title' => '</header>',
@@ -267,7 +258,7 @@ function sampression_widgets_init() {
 	
 	register_sidebar(array(
 		'name' => __('Bottom Widget 3', 'responsive'),
-		'description' => __('Appears on bottom of the Page - Third Widget - sidebar.php', 'sampression'),
+		'description' => __('Appears on bottom of the Page - Third Widget - Please insert only one widget for better appearance.', 'sampression'),
 		'id' => 'bottom-widget-3',
 		'before_title' => '<header class="widget-title">',
 		'after_title' => '</header>',
@@ -277,7 +268,7 @@ function sampression_widgets_init() {
 	
 	register_sidebar(array(
 		'name' => __('Inner Sidebar', 'responsive'),
-		'description' => __('Appears on right of the Interior Pages - sidebar-right.php', 'sampression'),
+		'description' => __('Appears on right of the Interior Pages - Can use as much widgets as you wish.', 'sampression'),
 		'id' => 'right-sidebar',
 		'before_title' => '<header class="widget-title">',
 		'after_title' => '</header><div class="widget-entry">',
@@ -379,7 +370,7 @@ function sampression_comment( $comment, $args, $depth ) {
 endif; // ends check for sampression_comment()
 
 /*=======================================================================
- * Function for get favicon, apple touch icons
+ * Function to get favicon and different sizes of apple touch icons
  *=======================================================================*/
  
 function sampression_favicon() {
@@ -422,7 +413,7 @@ function sampression_favicon() {
 }
 
 /*=======================================================================
- * Function for get logo
+ * Function to get default logo by Sampression theme
  *=======================================================================*/
  
 function sampression_logo() {
@@ -439,7 +430,7 @@ function sampression_logo() {
 
 
 /*=======================================================================
-* embed the javascript file that makes the AJAX request to filter category in top nav
+* embed the javascript file that makes the AJAX request to filter category in Primary Navigation
 *=======================================================================*/
 
 if (!is_admin())

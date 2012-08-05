@@ -1,16 +1,12 @@
 <?php
 /**
- * Header Template
+ * The Header for our theme.
  *
+ * Displays all of the <head> section and everything untill Primary Navigation
  *
- * @file           header.php
- * @package        Responsive 
- * @author         Sampression (sampression.com)
- * @copyright      2012 Sampression
- * @license        license.txt
- * @version        Release: 1.1
- * @link           http://codex.wordpress.org/Theme_Development#Document_Head_.28header.php.29
- * @since          available since Release 1.0
+ * @package WordPress
+ * @subpackage Sampression-Lite
+ * @since Sampression Lite 1.0
  */
 ?>
 <!doctype html>
@@ -22,7 +18,6 @@
 <html <?php language_attributes(); ?> class="no-js"> <!--<![endif]--><head>
 
 	<meta charset="<?php bloginfo('charset'); ?>">
-	<meta name="author" content="LastDoor Solutions | www.lastdoorsolutions.com">
 	<!-- Mobile Specific Metas
   	================================================== -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2">
@@ -45,18 +40,18 @@
 		echo " | $site_description";
 	?>
     </title>
+    
+    <!-- Favicons
+    ================================================== -->
+	<?php sampression_favicon(); ?>
 	
     <!-- CSS
     ================================================== -->
-    <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+    <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_uri(); ?>" />
     
      <!-- Getting Google Fonts
     ================================================== -->
     <link href='http://fonts.googleapis.com/css?family=Droid+Serif:700,400,400italic,700italic' rel='stylesheet' type='text/css'>
-	
-    <!-- Favicons
-    ================================================== -->
-	<?php sampression_favicon(); ?>
 	
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
     
@@ -166,7 +161,6 @@
         ?>
     </select>
     
-
     </div>
   </div>
 </nav>

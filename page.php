@@ -1,18 +1,19 @@
 <?php
 /**
- * Page Template
+ * The template for displaying all pages.
  *
+ * This is the template that displays all pages by default.
+ * Please note that this is the WordPress construct of pages
+ * and that other 'pages' on your WordPress site will use a
+ * different template.
  *
- * @file           page.php
- * @package        Sampression Lite 
- * @author         Idealaya
- * @copyright      2012 Sampression
- * @license        license.txt
- * @version        Release: 1.1
- * @since          available since Release 1.0
+ * @package WordPress
+ * @subpackage Sampression-Lite
+ * @since Sampression Lite 1.0
  */
-?>
-<?php get_header(); ?>
+
+get_header(); ?>
+
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 <section id="content" class="columns twelve" role="main">
   <article <?php post_class('post'); ?> id="post-<?php the_ID(); ?>">
@@ -31,6 +32,8 @@
    
     <div class="entry clearfix">
       <?php the_content(); ?>
+      
+      <?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'sampression' ) . '</span>', 'after' => '</div>' ) ); ?>
       
       <?php if(is_user_logged_in()){ ?>
        <div class="meta">

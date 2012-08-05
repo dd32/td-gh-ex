@@ -5,19 +5,19 @@ Theme URI: http://www.sampression.com/sampression-lite/
 Author: Sampression
 Author URI: http://www.sampression.com
 
-Version: 1.1.2
+Version: 1.1.2.1
 License: GNU General Public License v2 or later
 License URI: license.txt
 */
 
 == Theme Description ==
-Sampression Lite is a fully responsive WordPress theme, perfect for blogging. It's lightweight responsive design allows this theme to adapt across a range of screen sizes. Besides an elegant design, Sampression Lite features customizable menus and widgets, along with a threaded comments section. It supports sticky notes with special effects and allows the best placement of feature images on posts. Under the advanced section this theme allows Admin to insert codes in the header and footer section. Sampression Lite was given a magical layout by <a href="http://isotope.metafizzy.co/">isotope</a> jQuery.
+Sampression Lite is a fully responsive WordPress theme, perfect for blogging. It's lightweight responsive design allows this theme to adapt across a range of screen sizes. Besides an elegant design, Sampression Lite features customizable menus and widgets, along with a threaded comments section. It supports sticky notes with special effects and allows the best placement of feature images on posts. Under the advanced tab this theme allows Admin to insert codes in the header and footer section.
 
 == Features ==  
-Responsive, Theme Options, Custom Widgets, Custom Menu, iSotope jQuery, Sticky Post
+Responsive, Theme Options, Custom Widgets, Custom Menu, iSotope jQuery, Sticky Post, First level menu only
 
 == Tags ==
-Tags Used: white, orange, green, one-column, two-columns, flexible-width, featured-image-header, featured-images, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
+Tags Used: white, orange, green, one-column, two-columns, flexible-width, featured-image-header, featured-images, post-formats, sticky-post, theme-options, threaded-comments
 
 == Installation ==
 
@@ -35,20 +35,20 @@ Tags Used: white, orange, green, one-column, two-columns, flexible-width, featur
 
 3. Log into your WP admin panel and click on the Appearance then goto Themes tab. 
 4. Now click on the sampression-lite theme to activate it.
-5. Complete all of the required inputs on the theme Options page (in the WP admin panel) and click "Save Changes".
+5. Complete all of the required inputs on the theme Options page (in the WP admin panel) and click "Save".
 
 6. Change Logo and Favicon:
  = Login to your wp-admin area and go to Appearance -> Theme Options.
  = Select Logo & Icons Tab
- = Upload your required logo asw well other favicons and different sizes of apple touch icons.
+ = Upload your required logo as well favicon and different sizes of apple touch icons.
 
 7. Social Media:
  = Login to your wp-admin area and go to Appearance -> Theme Options.
  = Select Social Media tab
- = Here you can add your facebook and twitter id which appears at the top of the site after search section.
+ = Here you can add your facebook and twitter id which appears at the top of the site after search form.
  
 8. Advance Setting:
  = Login to your wp-admin area and go to Appearance -> Theme Options.
  = Select Advance tab
- = Here, additionally you can add different codes to the header and footer of theme. Please be careful to add codes becuase it might crop your theme files/funtions.
+ = Here, additionally you can add different codes to the header and footer of theme. Please be careful to add codes becuase it might crop the functionality and appearance of theme.
  
