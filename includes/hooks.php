@@ -120,4 +120,14 @@ function responsive_theme_options() {
     do_action('responsive_theme_options');
 }
 
+/**
+ * WooCommerce
+ *
+ * Unhook/Hook the WooCommerce Wrappers
+ */
+remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
+add_action('woocommerce_before_main_content', create_function('', 'echo "<div id=\"content-woocommerce\" class=\"grid col-620\">";'), 10);
+add_action('woocommerce_after_main_content', create_function('', 'echo "</div><!-- end of #content-woocommerce -->";'), 10);
 ?>

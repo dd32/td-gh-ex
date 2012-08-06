@@ -8,11 +8,22 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(08/06/2012) - Improvements - Version 1.7.3
+[+] WooCommerce Compatible
+[+] New Languages
+    - Japanese
+	- Chinese (Taiwan)
+[*] responsive.pot
+[*] style.css for WooCommerce Compatibility 
+
+----
+
 (07/19/2012) - Improvements - Version 1.7.2
 [+] Multilingual Ready (wmpl.org)
 [+] style.css
     - b,i,iframe,embed and object
 
+----
 
 (07/09/2012) - Improvements and Maintenance - Version 1.7.0/1
 [+] New Languages

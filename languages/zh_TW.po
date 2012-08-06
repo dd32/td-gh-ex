@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: Responsive Theme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-25 13:42:58 UTC\n"
-"PO-Revision-Date: 2012-08-06 21:21+0100\n"
+"PO-Revision-Date: 2012-08-06 21:23+0100\n"
 "Last-Translator: Ulrich Pogson <grapplerulrich@gmail.com>\n"
-"Language-Team: Spanish, Spain\n"
+"Language-Team: Chinese, Taiwan\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: WebTranslateIt.com\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: page.php
 #: landing-page.php
@@ -24,7 +24,7 @@ msgstr ""
 #: archive.php
 #: 404.php
 msgid "404 &#8212; Fancy meeting you here!"
-msgstr "404 &#8212; Qu&eacute; raro encontrarnos aqu&iacute;!"
+msgstr "404 &#8212; 真湊巧，竟在這兒遇見您！"
 
 #: page.php
 #: landing-page.php
@@ -36,7 +36,7 @@ msgstr "404 &#8212; Qu&eacute; raro encontrarnos aqu&iacute;!"
 #: archive.php
 #: 404.php
 msgid "Don&#39;t panic, we&#39;ll get through this together. Let&#39;s explore our options here."
-msgstr "No te preocupes, vamos a salir de esto juntos. Vamos a explorar nuestras opciones aqu&iacute;."
+msgstr "別慌張，我們將一起解決這問題。我們來看看有什麼辦法。"
 
 #: page.php
 #: landing-page.php
@@ -50,7 +50,7 @@ msgstr "No te preocupes, vamos a salir de esto juntos. Vamos a explorar nuestras
 #: archive.php
 #: 404.php
 msgid "You can return"
-msgstr "Puedes regresar"
+msgstr "您可以返回"
 
 #: page.php
 #: landing-page.php
@@ -62,7 +62,7 @@ msgstr "Puedes regresar"
 #: archive.php
 #: 404.php
 msgid "Home"
-msgstr "Inicio"
+msgstr "首頁"
 
 #: 404.php
 #: page.php
@@ -76,7 +76,7 @@ msgstr "Inicio"
 #: blog-excerpt.php
 #: archive.php
 msgid "&larr; Home"
-msgstr "← Inicio"
+msgstr "&larr; 首頁"
 
 #: page.php
 #: landing-page.php
@@ -90,30 +90,30 @@ msgstr "← Inicio"
 #: archive.php
 #: 404.php
 msgid "or search for the page you were looking for"
-msgstr "o busca la p&aacute;gina que necesitabas"
+msgstr "或搜尋您正在尋找的頁面"
 
 #: archive.php
 msgid "Daily Archives: %s"
-msgstr "Archivos diarios: %s"
+msgstr "按日查看: %s"
 
 #: archive.php
 msgid "Monthly Archives: %s"
-msgstr "Archivos Mensuales: %s"
+msgstr "按月查看: %s"
 
 #: archive.php
 msgid "Yearly Archives: %s"
-msgstr "Archivo Anual: %s"
+msgstr "按年查看: %s"
 
 #: archive.php
 msgid "Blog Archives"
-msgstr "Archivo del sitio"
+msgstr "文章歸檔"
 
 #: index.php
 #: blog.php
 #: blog-excerpt.php
 #: archive.php
 msgid "Permanent Link to %s"
-msgstr "Enlace Permanente a %s"
+msgstr "固定連結 %s"
 
 #: page.php
 #: index.php
@@ -125,7 +125,7 @@ msgstr "Enlace Permanente a %s"
 #: blog-excerpt.php
 #: archive.php
 msgid "<span class=\"%1$s\">Posted on</span> %2$s by %3$s"
-msgstr "<span class=\"%1$s\">Publicado en</span> %2$s por %3$s"
+msgstr "<span class=\"%1$s\">發表於</span> %2$s 作者 %3$s"
 
 #: page.php
 #: index.php
@@ -137,7 +137,7 @@ msgstr "<span class=\"%1$s\">Publicado en</span> %2$s por %3$s"
 #: blog-excerpt.php
 #: archive.php
 msgid "View all posts by %s"
-msgstr "Ver todas las entradas de %s"
+msgstr "查看 %s 的所有文章"
 
 #: page.php
 #: index.php
@@ -149,7 +149,7 @@ msgstr "Ver todas las entradas de %s"
 #: blog-excerpt.php
 #: archive.php
 msgid "No Comments &darr;"
-msgstr "Sin Comentarios ↓"
+msgstr "暫無迴響 &darr;"
 
 #: page.php
 #: index.php
@@ -161,7 +161,7 @@ msgstr "Sin Comentarios ↓"
 #: blog-excerpt.php
 #: archive.php
 msgid "1 Comment &darr;"
-msgstr "1 Comentario ↓"
+msgstr "1 個迴響 &darr;"
 
 #: page.php
 #: index.php
@@ -173,7 +173,7 @@ msgstr "1 Comentario ↓"
 #: blog-excerpt.php
 #: archive.php
 msgid "% Comments &darr;"
-msgstr "% Comentarios ↓"
+msgstr "% 個迴響 &darr;"
 
 #: page.php
 #: landing-page.php
@@ -186,7 +186,7 @@ msgstr "% Comentarios ↓"
 #: blog-excerpt.php
 #: archive.php
 msgid "Pages:"
-msgstr "P&aacute;ginas:"
+msgstr "頁數:"
 
 #: page.php
 #: landing-page.php
@@ -199,7 +199,7 @@ msgstr "P&aacute;ginas:"
 #: blog-excerpt.php
 #: archive.php
 msgid "Tagged with:"
-msgstr "Etiquetado con:"
+msgstr "標籤:"
 
 #: page.php
 #: landing-page.php
@@ -212,7 +212,7 @@ msgstr "Etiquetado con:"
 #: blog-excerpt.php
 #: archive.php
 msgid "Posted in %s"
-msgstr "Publicado en: %s"
+msgstr "文章分類 %s"
 
 #: page.php
 #: landing-page.php
@@ -225,7 +225,7 @@ msgstr "Publicado en: %s"
 #: blog-excerpt.php
 #: archive.php
 msgid "Edit"
-msgstr "Editar"
+msgstr "編輯"
 
 #: page.php
 #: landing-page.php
@@ -237,7 +237,7 @@ msgstr "Editar"
 #: blog-excerpt.php
 #: archive.php
 msgid "&#8249; Older posts"
-msgstr "‹ Entradas m&aacute;s antiguas"
+msgstr "&#8249; 較早文章"
 
 #: page.php
 #: landing-page.php
@@ -249,7 +249,7 @@ msgstr "‹ Entradas m&aacute;s antiguas"
 #: blog-excerpt.php
 #: archive.php
 msgid "Newer posts &#8250;"
-msgstr "Entradas m&aacute;s recientes ›"
+msgstr "較新文章 &#8250;"
 
 #: page.php
 #: landing-page.php
@@ -260,45 +260,44 @@ msgstr "Entradas m&aacute;s recientes ›"
 #: blog.php
 #: image.php
 msgid "Read more &#8250;"
-msgstr "Leer más ›"
+msgstr "查閱全文 &#8250;"
 
 #: comments.php
 msgid "This post is password protected. Enter the password to view any comments."
-msgstr "Esta entrada est&aacute; protegida. Introduce la contraseña para ver los comentarios."
+msgstr "文章已被鎖定，請輸入密碼查看迴響。"
 
 #: comments.php
 msgid "&#8249; Older comments"
-msgstr "‹ Comentarios m&aacute;s antiguos"
+msgstr "&#8249; 較早迴響"
 
 #: comments.php
 msgid "One comment on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
-msgstr[0] "Un comentario sobre “%2$s”"
-msgstr[1] "%1$s comentarios sobre “%2$s”"
+msgstr[0] "一個迴響在 \"%2$s\""
 
 #: comments.php
 msgid "Newer comments &#8250;"
-msgstr "Comentarios m&aacute;s recientes ›"
+msgstr "較新迴響 &#8250;"
 
 #: comments.php
 msgid "Pings&#47;Trackbacks"
-msgstr "Pings/Trackbacks"
+msgstr "Pings&#47;Trackbacks"
 
 #: comments.php
 msgid "for"
-msgstr "para"
+msgstr "對"
 
 #: comments.php
 msgid "Name"
-msgstr "Nombre"
+msgstr "姓名"
 
 #: comments.php
 msgid "E-mail"
-msgstr "Correo electr&oacute;nico"
+msgstr "E-mail"
 
 #: comments.php
 msgid "Website"
-msgstr "Sitio web"
+msgstr "個人網站"
 
 #: footer.php
 msgid "&copy;"
@@ -306,7 +305,7 @@ msgstr "&copy;"
 
 #: footer.php
 msgid "scroll to top"
-msgstr "subir"
+msgstr "回到頂部"
 
 #: footer.php
 msgid "&uarr;"
@@ -322,11 +321,11 @@ msgstr "Responsive Theme"
 
 #: footer.php
 msgid "powered by"
-msgstr "Funciona con"
+msgstr "採用"
 
 #: footer.php
 msgid "http://wordpress.org/"
-msgstr "http://es.wordpress.org/"
+msgstr "http://tw.wordpress.org/"
 
 #: footer.php
 msgid "WordPress"
@@ -334,85 +333,85 @@ msgstr "WordPress"
 
 #: home.php
 msgid "Hello, World!"
-msgstr "¡Hola, Mundo!"
+msgstr "哈囉，世界！"
 
 #: home.php
 msgid "Your H2 subheadline here"
-msgstr "Subt&iacute;tulo H2"
+msgstr "這是您的 H2 副標題"
 
 #: home.php
 msgid "Your title, subtitle and this very content is editable from Theme Option. Call to Action button and its destination link as well. Image on your right can be an image or even YouTube video if you like."
-msgstr "Tu t&iacute;tulo, subt&iacute;tulo y este contenido son editables en Opciones del tema. El bot&oacute;n Llamada a la acci&oacute;n y su enlace de destino tambi&eacute;n. La imagen a su derecha puede ser una imagen o un v&iacute;deo de YouTube si lo prefieres."
+msgstr "您可以在主題設置編輯標題、副標題，以及“開始行動”按鈕， 右側可以放置圖片或者影片。"
 
 #: home.php
 msgid "Call to Action"
-msgstr "Llamada a la acci&oacute;n"
+msgstr "開始行動"
 
 #: image.php
 msgid "&#8249; Return to"
-msgstr "&#8249; Volver a"
+msgstr "&#8249; 返回"
 
 #: index.php
 #: image.php
 msgid "Don't panic, we'll get through this together. Let's explore our options here."
-msgstr "No te preocupes, vamos a salir de esto juntos. Vamos a explorar nuestras opciones aqu&iacute;."
+msgstr "別慌張，我們將一起解決這問題。我們來看看有什麼辦法。"
 
 #: index.php
 #: image.php
 msgid "home"
-msgstr "inicio"
+msgstr "首頁"
 
 #: search.php
 msgid "Search Results for: %s"
-msgstr "Resultados de la b&uacute;squeda para: %s"
+msgstr "搜尋結果: %s"
 
 #: search.php
 msgid "Your search for"
-msgstr "Tu b&uacute;squeda para"
+msgstr "關鍵字"
 
 #: search.php
 msgid "did not match any entries"
-msgstr "no ha encontrado ninguna entrada"
+msgstr "沒有搜尋到相應內容"
 
 #: searchform.php
 msgid "search here &hellip;"
-msgstr "buscar aqu&iacute;..."
+msgstr "在此搜尋 &hellip;"
 
 #: searchform.php
 msgid "Go"
-msgstr "Ir"
+msgstr "搜尋"
 
 #: sidebar-gallery.php
 msgid "Image Information"
-msgstr "Datos de la imagen"
+msgstr "圖片資訊"
 
 #: sidebar-gallery.php
 msgid "Full Size:"
-msgstr "Tama&ntilde;o completo:"
+msgstr "完整尺寸:"
 
 #: sidebar-gallery.php
 msgid "Aperture: f&#47;"
-msgstr "Apertura: f&#47;"
+msgstr "光圈: f&#47;"
 
 #: sidebar-gallery.php
 msgid "Focal Length:"
-msgstr "Distancia focal:"
+msgstr "焦距:"
 
 #: sidebar-gallery.php
 msgid "mm"
-msgstr "mm"
+msgstr "毫米"
 
 #: sidebar-gallery.php
 msgid "ISO:"
-msgstr "ISO:"
+msgstr "感光度:"
 
 #: sidebar-gallery.php
 msgid "Shutter:"
-msgstr "Obturador:"
+msgstr "快門速度:"
 
 #: sidebar-gallery.php
 msgid "Camera:"
-msgstr "C&aacute;mara:"
+msgstr "相機:"
 
 #: sidebar.php
 #: sidebar-right.php
@@ -421,94 +420,94 @@ msgstr "C&aacute;mara:"
 #: sidebar-left-half.php
 #: sidebar-half-left.php
 msgid "In Archive"
-msgstr "En archivo"
+msgstr "歸檔"
 
 #: includes/functions.php
 #: sidebar-home.php
 msgid "Home Widget 1"
-msgstr "Widget 1 de la p&aacute;gina inicial"
+msgstr "首頁模組 1"
 
 #: sidebar-home.php
 msgid "This is your first home widget box. To edit please go to Appearance > Widgets and choose 6th widget from the top in area six called Home Widget 1. Title is also manageable from widgets as well."
-msgstr "Este es tu primer widget de la p&aacute;gina de inicio. Para editarlo, por favor, vete a Apariencia> Widgets y elige el sexto widget, llamado Widget 1 de la p&aacute;gina inicial. Su t&iacute;tulo tambi&eacute;n es editable."
+msgstr "這是首頁上第一個模組，請在控制台 > 外觀 > 模組中修改此處的文字。"
 
 #: includes/functions.php
 #: sidebar-home.php
 msgid "Home Widget 2"
-msgstr "Widget 2 de la p&aacute;gina inicial"
+msgstr "首頁模組 2"
 
 #: sidebar-home.php
 msgid "This is your second home widget box. To edit please go to Appearance > Widgets and choose 7th widget from the top in area seven called Home Widget 2. Title is also manageable from widgets as well."
-msgstr "Este es tu segundo widget de la p&aacute;gina de inicio. Para editarlo, por favor, vete a Apariencia> Widgets y elige el s&eacute;ptimo widget, llamado Widget 2 de la p&aacute;gina inicial. Su t&iacute;tulo tambi&eacute;n es editable."
+msgstr "這是首頁上第二個模組，請在控制台 > 外觀 > 控制台中修改此處的文字。"
 
 #: includes/functions.php
 #: sidebar-home.php
 msgid "Home Widget 3"
-msgstr "Widget 3 de la p&aacute;gina inicial"
+msgstr "首頁模組 3"
 
 #: sidebar-home.php
 msgid "This is your third home widget box. To edit please go to Appearance > Widgets and choose 8th widget from the top in area eight called Home Widget 3. Title is also manageable from widgets as well."
-msgstr "Este es tu tercer widget de la p&aacute;gina de inicio. Para editarlo, por favor, vete a Apariencia> Widgets y elige el octavo widget, llamado Widget 3 de la p&aacute;gina inicial. Su t&iacute;tulo tambi&eacute;n es editable."
+msgstr "這是首頁上第三個模組，請在控制台 > 外觀 > 控制台中修改此處的文字。"
 
 #: single.php
 msgid "About"
-msgstr "Sobre nosotros"
+msgstr "關於"
 
 #: sitemap.php
 msgid "Categories"
-msgstr "Categor&iacute;as"
+msgstr "文章分類"
 
 #: sitemap.php
 msgid "Latest Posts"
-msgstr "&Uacute;ltimas entradas"
+msgstr "最新文章"
 
 #: sitemap.php
 msgid "Pages"
-msgstr "P&aacute;ginas"
+msgstr "頁面"
 
 #: includes/functions.php
 msgid "Top Menu"
-msgstr "Men&uacute; superior"
+msgstr "頂部選單"
 
 #: includes/functions.php
 msgid "Header Menu"
-msgstr "Men&uacute; de la cabecera"
+msgstr "導覽列"
 
 #: includes/functions.php
 msgid "Sub-Header Menu"
-msgstr "Submen&uacute; de la cabecera"
+msgstr "次導覽列"
 
 #: includes/functions.php
 msgid "Footer Menu"
-msgstr "Men&uacute; del pie de p&aacute;gina"
+msgstr "底部選單"
 
 #: includes/functions.php
 msgid "Archive for "
-msgstr "Archivos de "
+msgstr "文章歸檔"
 
 #: includes/functions.php
 msgid "Search results for "
-msgstr "Resultados de b&uacute;squeda para "
+msgstr "搜尋結果"
 
 #: includes/functions.php
 msgid "Posts tagged "
-msgstr "Entradas etiquetadas con "
+msgstr "標籤"
 
 #: includes/functions.php
 msgid "All posts by "
-msgstr "Todas las entradas de "
+msgstr "該作者的所有文章"
 
 #: includes/functions.php
 msgid "Error 404 "
-msgstr "Error 404 "
+msgstr "404 錯誤"
 
 #: includes/functions.php
 msgid "Page"
-msgstr "P&aacute;gina"
+msgstr "頁面"
 
 #: includes/functions.php
 msgid "Untitled"
-msgstr "Sin t&iacute;tulo"
+msgstr "無標題"
 
 #: includes/functions.php
 msgid "http://themeid.com/support/"
@@ -516,7 +515,7 @@ msgstr "http://themeid.com/support/"
 
 #: includes/functions.php
 msgid "Theme Support"
-msgstr "Soporte del tema"
+msgstr "佈景主題協助"
 
 #: includes/functions.php
 msgid "http://themeid.com/themes/"
@@ -524,7 +523,7 @@ msgstr "http://themeid.com/themes/"
 
 #: includes/functions.php
 msgid "More Themes"
-msgstr "M&aacute;s temas"
+msgstr "更多佈景主題"
 
 #: includes/functions.php
 msgid "http://themeid.com/showcase/"
@@ -532,7 +531,7 @@ msgstr "http://themeid.com/showcase/"
 
 #: includes/functions.php
 msgid "Showcase"
-msgstr "Escaparate"
+msgstr "成果展示"
 
 #: includes/functions.php
 msgid "http://themeid.com/donate/"
@@ -540,159 +539,159 @@ msgstr "http://themeid.com/donate/"
 
 #: includes/functions.php
 msgid "Donate Now"
-msgstr "Donar ahora"
+msgstr "現在贊助"
 
 #: includes/functions.php
 msgid "Main Sidebar"
-msgstr "Barra lateral principal"
+msgstr "主邊欄"
 
 #: includes/functions.php
 msgid "Area One - sidebar.php"
-msgstr "&Aacute;rea uno - sidebar.php"
+msgstr "1 號區域 - sidebar.php"
 
 #: includes/functions.php
 msgid "Right Sidebar"
-msgstr "Barra lateral derecha"
+msgstr "右側邊欄"
 
 #: includes/functions.php
 msgid "Area Two - sidebar-right.php"
-msgstr "&Aacute;rea dos - sidebar-right.php"
+msgstr "2 號區域 - sidebar-right.php"
 
 #: includes/functions.php
 msgid "Left Sidebar"
-msgstr "Barra lateral izquierda"
+msgstr "左側邊欄"
 
 #: includes/functions.php
 msgid "Area Three - sidebar-left.php"
-msgstr "&Aacute;rea tres- sidebar-left.php"
+msgstr "3 號區域 - sidebar-left.php"
 
 #: includes/functions.php
 msgid "Left Sidebar Half Page"
-msgstr "Barra lateral izquierda en media p&aacute;gina"
+msgstr "半頁左側邊欄"
 
 #: includes/functions.php
 msgid "Area Four - sidebar-left-half.php"
-msgstr "&Aacute;rea cuatro - sidebar-left-half.php"
+msgstr "4 號區域 - sidebar-left-half.php"
 
 #: includes/functions.php
 msgid "Right Sidebar Half Page"
-msgstr "Barra lateral derecha en media p&aacute;gina"
+msgstr "半頁右側邊欄"
 
 #: includes/functions.php
 msgid "Area Five - sidebar-right-half.php"
-msgstr "&Aacute;rea cinco - sidebar-right-half.php"
+msgstr "5 號區域 - sidebar-right-half.php"
 
 #: includes/functions.php
 msgid "Area Six - sidebar-home.php"
-msgstr "&Aacute;rea seis - sidebar-home.php"
+msgstr "6 號區域 - sidebar-home.php"
 
 #: includes/functions.php
 msgid "Area Seven - sidebar-home.php"
-msgstr "&Aacute;rea siete - sidebar-home.php"
+msgstr "7 號區域 - sidebar-home.php"
 
 #: includes/functions.php
 msgid "Area Eight - sidebar-home.php"
-msgstr "&Aacute;rea ocho - sidebar-home.php"
+msgstr "8 號區域 - sidebar-home.php"
 
 #: includes/functions.php
 msgid "Gallery Sidebar"
-msgstr "Galer&iacute;a en barra lateral"
+msgstr "相簿邊欄"
 
 #: includes/functions.php
 msgid "Area Nine - sidebar-gallery.php"
-msgstr "&Aacute;rea nueve - sidebar-home.php"
+msgstr "9 號區域 - sidebar-gallery.php"
 
 #: includes/theme-options.php
 msgid "Theme Options"
-msgstr "Opciones del tema"
+msgstr "主題選項"
 
 #: includes/theme-options.php
 msgid "Options Saved"
-msgstr "Opciones guardadas"
+msgstr "選項已儲存"
 
 #: includes/theme-options.php
 msgid "Theme Elements"
-msgstr "Elementos del tema"
+msgstr "主題元素"
 
 #: includes/theme-options.php
 msgid "Disable Breadcrumb Lists?"
-msgstr "Desactivar ruta breadcrumb?"
+msgstr "取消路徑導覽？"
 
 #: includes/theme-options.php
 msgid "Check to disable"
-msgstr "Seleccionar para desactivarlo"
+msgstr "勾選以取消"
 
 #: includes/theme-options.php
 msgid "Disable Call to Action Button?"
-msgstr "Desactivar el bot&oacute;n Llamada a la acci&oacute;n?"
+msgstr "取消“開始行動”按鈕？"
 
 #: includes/theme-options.php
 msgid "Save Options"
-msgstr "Guardar opciones"
+msgstr "儲存選項"
 
 #: includes/theme-options.php
 msgid "Logo Upload"
-msgstr "Subir logo"
+msgstr "上傳 Logo"
 
 #: includes/theme-options.php
 msgid "Custom Header"
-msgstr "Personalizar cabecera"
+msgstr "自訂 Header"
 
 #: includes/theme-options.php
 msgid "Need to replace or remove default logo?"
-msgstr "Necesitas sustituir o eliminar el logo predefinido"
+msgstr "需要取代或移除預設 Logo？"
 
 #: includes/theme-options.php
 msgid "<a href=\"%s\">Click here</a>."
-msgstr "<a href=%s>Pulsa aqu&iacute;</a>."
+msgstr "<a href=\"%s\">點此</a>。"
 
 #: includes/theme-options.php
 msgid "Home Page"
-msgstr "P&aacute;gina de inicio"
+msgstr "首頁"
 
 #: includes/theme-options.php
 msgid "Headline"
-msgstr "T&iacute;tulo"
+msgstr "標題"
 
 #: includes/theme-options.php
 msgid "Enter your headline"
-msgstr "Introduce tu t&iacute;tulo"
+msgstr "輸入標題"
 
 #: includes/theme-options.php
 msgid "Subheadline"
-msgstr "Subt&iacute;tulo"
+msgstr "副標題"
 
 #: includes/theme-options.php
 msgid "Enter your subheadline"
-msgstr "Introduce tu subt&iacute;tulo"
+msgstr "輸入副標題"
 
 #: includes/theme-options.php
 msgid "Content Area"
-msgstr "&Aacute;rea de contenido"
+msgstr "正文"
 
 #: includes/theme-options.php
 msgid "Enter your content"
-msgstr "Introduce tu contenido"
+msgstr "輸入正文"
 
 #: includes/theme-options.php
 msgid "Call to Action (URL)"
-msgstr "Llamada a la acci&oacute;n (URL)"
+msgstr "開始行動 (連結)"
 
 #: includes/theme-options.php
 msgid "Enter your call to action URL"
-msgstr "Introduce la URL para tu Llamada a la acci&oacute;n"
+msgstr "輸入“開始行動”按鈕的連結"
 
 #: includes/theme-options.php
 msgid "Call to Action (Text)"
-msgstr "Llamada a la acci&oacute;n (texto)"
+msgstr "開始行動 (文字)"
 
 #: includes/theme-options.php
 msgid "Enter your call to action text"
-msgstr "Introduce el texto para tu Llamada a la acci&oacute;n"
+msgstr "輸入“開始行動”按鈕的文字"
 
 #: includes/theme-options.php
 msgid "Featured Content"
-msgstr "Contenido destacado"
+msgstr "右側內容"
 
 #: includes/theme-options.php
 msgid "http://themeid.com/forum/topic/510/theme-options-featured-content/"
@@ -700,55 +699,55 @@ msgstr "http://themeid.com/forum/topic/510/theme-options-featured-content/"
 
 #: includes/theme-options.php
 msgid "See Docs"
-msgstr "Ver documentaci&oacute;n"
+msgstr "查閱說明文件"
 
 #: includes/theme-options.php
 msgid "Paste your video or image source"
-msgstr "Pega el c&oacute;digo de tu v&iacute;deo o imagen"
+msgstr "在此處貼上影片或圖片代碼"
 
 #: includes/theme-options.php
 msgid "Webmaster Tools"
-msgstr "Herramientas de webm&aacute;ster"
+msgstr "站長工具"
 
 #: includes/theme-options.php
 msgid "Google Site Verification"
-msgstr "Verificaci&oacute;n del sitio en Google"
+msgstr "Google 站長工具"
 
 #: includes/theme-options.php
 msgid "Enter your Google ID number only"
-msgstr "Introduce s&oacute;lo tu n&uacute;mero de ID de Google"
+msgstr "輸入您的 Google ID"
 
 #: includes/theme-options.php
 msgid "Bing Site Verification"
-msgstr "Verificaci&oacute;n del sitio en Bing"
+msgstr "Bing 站長工具"
 
 #: includes/theme-options.php
 msgid "Enter your Bing ID number only"
-msgstr "Introduce s&oacute;lo tu n&uacute;mero de ID de Bing"
+msgstr "輸入您的 Bing ID"
 
 #: includes/theme-options.php
 msgid "Yahoo Site Verification"
-msgstr "Verificaci&oacute;n del sitio en Yahoo"
+msgstr "Yahoo 站長工具"
 
 #: includes/theme-options.php
 msgid "Enter your Yahoo ID number only"
-msgstr "Introduce s&oacute;lo tu n&uacute;mero de ID de Yahoo"
+msgstr "輸入您的 Yahoo ID"
 
 #: includes/theme-options.php
 msgid "Site Statistics Tracker"
-msgstr "Gestor de estad&iacute;sticas del sitio"
+msgstr "網站統計工具"
 
 #: includes/theme-options.php
 msgid "Leave blank if plugin handles your webmaster tools"
-msgstr "Deja en blanco si un plugin gestiona tus herramientas de webm&aacute;ster"
+msgstr "如果有外掛程式接管該功能請留空"
 
 #: includes/theme-options.php
 msgid "Google Analytics, StatCounter, any other or all of them."
-msgstr "Google Analytics, StatCounter, cualquier otro, o todos ellos."
+msgstr "Google Analytics、StatCounter 以及類似的東西。"
 
 #: includes/theme-options.php
 msgid "Social Icons"
-msgstr "Iconos sociales"
+msgstr "社交網路圖示"
 
 #: includes/theme-options.php
 msgid "Twitter"
@@ -756,7 +755,7 @@ msgstr "Twitter"
 
 #: includes/theme-options.php
 msgid "Enter your Twitter URL"
-msgstr "Introduce tu URL de Twitter"
+msgstr "輸入您的 Twitter 網址"
 
 #: includes/theme-options.php
 msgid "Facebook"
@@ -764,7 +763,7 @@ msgstr "Facebook"
 
 #: includes/theme-options.php
 msgid "Enter your Facebook URL"
-msgstr "Introduce tu URL de Facebook"
+msgstr "輸入您的 Facebook 位址"
 
 #: includes/theme-options.php
 msgid "LinkedIn"
@@ -772,7 +771,7 @@ msgstr "LinkedIn"
 
 #: includes/theme-options.php
 msgid "Enter your LinkedIn URL"
-msgstr "Introduce tu URL de LinkedIn"
+msgstr "輸入您的 LinkedIn 位址"
 
 #: includes/theme-options.php
 msgid "YouTube"
@@ -780,7 +779,7 @@ msgstr "YouTube"
 
 #: includes/theme-options.php
 msgid "Enter your YouTube URL"
-msgstr "Introduce tu URL de YouTube"
+msgstr "輸入您的 YouTube 位址"
 
 #: includes/theme-options.php
 msgid "StumbleUpon"
@@ -788,15 +787,15 @@ msgstr "StumbleUpon"
 
 #: includes/theme-options.php
 msgid "Enter your StumbleUpon URL"
-msgstr "Introduce tu URL de StumbleUpon"
+msgstr "輸入您的 StumbleUpon 位址"
 
 #: includes/theme-options.php
 msgid "RSS Feed"
-msgstr "Canal RSS"
+msgstr "RSS Feed"
 
 #: includes/theme-options.php
 msgid "Enter your RSS Feed URL"
-msgstr "Introduce la URL de tu canal RSS"
+msgstr "輸入您的 RSS Feed 位址"
 
 #: includes/theme-options.php
 msgid "Google+"
@@ -804,7 +803,7 @@ msgstr "Google+"
 
 #: includes/theme-options.php
 msgid "Enter your Google+ URL"
-msgstr "Introduce tu URL de Google+"
+msgstr "輸入您的 Google+ 網址"
 
 #: includes/theme-options.php
 msgid "Instagram"
@@ -812,7 +811,7 @@ msgstr "Instagram"
 
 #: includes/theme-options.php
 msgid "Enter your Instagram URL"
-msgstr "Introduce tu URL de Instagram"
+msgstr "輸入您的 Instagram 網址"
 
 #: includes/theme-options.php
 msgid "Pinterest"
@@ -820,7 +819,7 @@ msgstr "Pinterest"
 
 #: includes/theme-options.php
 msgid "Enter your Pinterest URL"
-msgstr "Introduce tu URL de Pinterest"
+msgstr "輸入您的 Pinterest 網址"
 
 #: includes/theme-options.php
 msgid "Yelp!"
@@ -828,7 +827,7 @@ msgstr "Yelp!"
 
 #: includes/theme-options.php
 msgid "Enter your Yelp! URL"
-msgstr "Introduce tu URL de Yelp!"
+msgstr "輸入您的 Yelp! 網址"
 
 #: includes/theme-options.php
 msgid "Vimeo"
@@ -836,29 +835,29 @@ msgstr "Vimeo"
 
 #: includes/theme-options.php
 msgid "Enter your Vimeo URL"
-msgstr "Introduce tu URL de Vimeo"
+msgstr "輸入您的 Vimeo 網址"
 
 #: includes/theme-options.php
 msgid "foursquare"
-msgstr "Foursquare"
+msgstr "foursquare"
 
 #: includes/theme-options.php
 msgid "Enter your foursquare URL"
-msgstr "Introduce tu URL de Foursquare"
+msgstr "輸入你的 foursquare 網址"
 
 #: includes/theme-options.php
 msgid "Custom CSS Styles"
-msgstr "Estilos CSS personalizados"
+msgstr "自訂 CSS 樣式"
 
 #: includes/theme-options.php
 msgid "https://developer.mozilla.org/en/CSS"
-msgstr "https://developer.mozilla.org/es/CSS"
+msgstr "https://developer.mozilla.org/zh_tw/CSS"
 
 #: includes/theme-options.php
 msgid "CSS Tutorial"
-msgstr "Tutorial de CSS"
+msgstr "CSS 自訂指南"
 
 #: includes/theme-options.php
 msgid "Enter your custom CSS styles."
-msgstr "Introduce tus estilos CSS personalizados"
+msgstr "輸入自訂的 CSS 樣式。"
 
