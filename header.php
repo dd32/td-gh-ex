@@ -49,5 +49,5 @@ wp_head(); ?>
             
       <?php 
 	  	  
-	  the_post_thumbnail('thumbnail', array('class' => 'alignleft')); ?>
+	  the_post_thumbnail('thumbnail'); ?>
 	  

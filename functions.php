@@ -15,7 +15,6 @@
 	if ( ! isset( $content_width ) ) $content_width = 584;
 
 
-
 // 	Checks is WP is at least a certain version (makes sure it has sufficient comparison decimals). This function is required if the version check needed
 	function is_wp_version( $is_ver ) {
     $wp_ver = explode( '.', get_bloginfo( 'version' ) );
@@ -37,10 +36,6 @@
 	add_filter( 'wp_title', 'colorful_filter_wp_title' );
 
 
-// 	Tell WordPress for the Feed Link
-	add_editor_style();
-	add_theme_support( 'automatic-feed-links' );
-	
 // 	This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images
 	if ( function_exists( 'add_theme_support' ) ) { 
 	add_theme_support( 'post-thumbnails' );
@@ -51,6 +46,7 @@
 	add_image_size( 'category-thumb', 300, 9999 ); //300 pixels wide (and unlimited height)
 	}
 	
+	add_editor_style();
 		
 // 	WordPress 3.4 Custom Background Support	
 	$colorful_custom_background = array(
@@ -75,51 +71,19 @@
 	'admin-preview-callback' => '',
 	);
 	add_theme_support( 'custom-header', $colorful_custom_header );
-
-// 	Functions for adding some custom code within the head tag of site
-	function colorful_custom_code() {
-?>
 	
-	<style type="text/css">
-	.site-title a, 
-	.site-title a:active, 
-	.site-title a:hover {
-	
-	color: #<?php echo get_header_textcolor(); ?>;
-	}
-	
-	</style>
-	<link href='http://fonts.googleapis.com/css?family=Creepster' rel='stylesheet' type='text/css'>
-    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-	<script type="text/javascript"> 
-	$(document).ready(function(){
-
-	$("#colorful-main-menu ul ul").css({display: "none"});
-
-    $('#colorful-main-menu ul li').hover(
-
-	    function() { jQuery(this).find('ul:first').slideDown(200).css('visibility', 'visible'); $(this).addClass('selected'); },
-
-		function() { jQuery(this).find('ul:first').slideUp(200); $(this).removeClass('selected'); });
-
-	});
-
-	</script>
-	<?php 
-		
-	
-	}
-	
-	add_action('wp_head', 'colorful_custom_code');
-	
-//	Enqueue comment replay script
-	function colorful_enqueue_comment_reply() {
+// 	Functions for adding script
+	function d5corporate_enqueue_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) { 
 		wp_enqueue_script( 'comment-reply' ); 
 	}
+	
+	wp_enqueue_script( 'jquery' );
+	wp_enqueue_script( 'd5corporate-menu-style', get_template_directory_uri(). '/js/menu.js' );
+	wp_enqueue_style('d5businessline-gfonts1', 'http://fonts.googleapis.com/css?family=Creepster', false );
+	
 	}
-	add_action( 'wp_enqueue_scripts', 'colorful_enqueue_comment_reply' );
-
+	add_action( 'wp_enqueue_scripts', 'd5corporate_enqueue_scripts' );
 
 //	Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and colorful_continue_reading_link().
 //	function tied to the excerpt_more filter hook.

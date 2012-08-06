@@ -37,15 +37,13 @@ get_header(); ?>
 		</div>		
 		<?php get_sidebar(); ?>
         <?php else: ?>
-		<br /><br /><h1 class="arc-post-title">Sorry, we couldn't find anything that matched your search.</h1>
+		<div id="content">
+        <br /><br /><h1 class="arc-post-title">Sorry, we couldn't find anything that matched your search.</h1>
 		
 		<h3 class="arc-src"><span>You Can Try Another Search...</span></h3>
 		<?php get_search_form(); ?>
-		<p><a href="<?php echo home_url(); ?>" title="Browse the Home Page">&laquo; Or Return to the Home Page</a></p><br />
-		<h2 class="post-title-color"><center>You can also Visit the Following. These are the Featured Contents</center></h2>
-		<div class="content-ver-sep"></div><br />
-		<?php get_template_part( 'featured-box' ); ?>
-
+		<p><a href="<?php echo home_url(); ?>" title="Browse the Home Page">&laquo; Or Return to the Home Page</a></p>
+		</div>	
 	<?php endif; ?>
 	
 <?php get_footer(); ?>
