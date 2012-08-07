@@ -128,6 +128,15 @@ function responsive_theme_options() {
 remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
 remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
 
-add_action('woocommerce_before_main_content', create_function('', 'echo "<div id=\"content-woocommerce\" class=\"grid col-620\">";'), 10);
-add_action('woocommerce_after_main_content', create_function('', 'echo "</div><!-- end of #content-woocommerce -->";'), 10);
+add_action('woocommerce_before_main_content', 'responsive_woocommerce_wrapper', 10);
+add_action('woocommerce_after_main_content', 'responsive_woocommerce_wrapper_end', 10);
+ 
+function responsive_woocommerce_wrapper() {
+  echo '<div id="content-woocommerce" class="grid col-620">';
+}
+ 
+function responsive_woocommerce_wrapper_end() {
+  echo '</div><!-- end of #content-woocommerce -->';
+}
+
 ?>
