@@ -2,8 +2,7 @@
 /**
  * The template for displaying the footer.
  *
- * @package WordPress
- * @subpackage Sampression-Lite
+ * @package Sampression-Lite
  * @since Sampression Lite 1.0
  */
 ?>

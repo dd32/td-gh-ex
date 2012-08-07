@@ -4,7 +4,7 @@
 if ( !defined('ABSPATH')) exit;
 
 /**
- * Simple Catch functions and definitions
+ * Sampression Lite functions and definitions
  *
  * Sets up the theme and provides some helper functions. Some helper functions
  * are used in the theme as custom template tags. Others are attached to action and
@@ -13,8 +13,7 @@ if ( !defined('ABSPATH')) exit;
  * The first function, sampression_setup(), sets up the theme by registering support
  * for various features in WordPress, such as post thumbnails, navigation menus, and the like.
  *
- * @package WordPress
- * @subpackage Sampression-Lite
+ * @package Sampression-Lite
  * @since Sampression Lite 1.0
  */
 

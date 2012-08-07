@@ -10,8 +10,7 @@ if ( !defined('ABSPATH')) exit;
  * handled by a callback to sampression_comment() which is
  * located in the includes/functions.php file.
  *
- * @package WordPress
- * @subpackage Sampression-Lite
+ * @package Sampression-Lite
  * @since Sampression Lite 1.0
  */
 ?>

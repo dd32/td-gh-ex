@@ -11,8 +11,7 @@ if ( !defined('ABSPATH')) exit;
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package WordPress
- * @subpackage Sampression-Lite
+ * @package Sampression-Lite
  */
 
 get_header(); ?>

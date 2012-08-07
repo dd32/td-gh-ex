@@ -4,8 +4,7 @@ if ( !defined('ABSPATH')) exit;
 /**
  * The template used to display Tag Archive pages
  *
- * @package WordPress
- * @subpackage Sampression-Lite
+ * @package Sampression-Lite
  * @since Sampression Lite 1.1.1
  */
 get_header(); ?>

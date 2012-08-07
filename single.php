@@ -5,8 +5,7 @@ if ( !defined('ABSPATH')) exit;
  /**
  * The Template for displaying all single posts.
  *
- * @package WordPress
- * @subpackage Sampression-Lite
+ * @package Sampression-Lite
  * @since Sampression Lite 1.0
  */
  

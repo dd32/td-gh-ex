@@ -10,8 +10,7 @@ if ( !defined('ABSPATH')) exit;
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package WordPress
- * @subpackage Sampression-Lite
+ * @package Sampression-Lite
  * @since Sampression Lite 1.0
  */
 

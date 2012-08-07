@@ -4,8 +4,7 @@
  *
  * Displays all of the <head> section and everything untill Primary Navigation
  *
- * @package WordPress
- * @subpackage Sampression-Lite
+ * @package Sampression-Lite
  * @since Sampression Lite 1.0
  */
 ?>

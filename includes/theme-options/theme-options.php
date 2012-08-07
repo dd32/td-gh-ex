@@ -1,4 +1,12 @@
 <?php
+
+/**
+ * Sampression Lite Theme Options
+ *
+ * @package Sampression-Lite
+ * @since Sampression Lite 1.0
+ */
+
 /*=======================================================================
  * Function to build theme options
  *=======================================================================*/

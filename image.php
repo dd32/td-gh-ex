@@ -5,8 +5,7 @@ if ( !defined('ABSPATH')) exit;
 /**
  * The template for displaying image attachments.
  *
- * @package WordPress
- * @subpackage Sampression-Lite
+ * @package Sampression-Lite
  * @since Sampression Lite 1.1.1
  */
  

@@ -6,8 +6,7 @@ if ( !defined('ABSPATH')) exit;
 /**
  * The Sidebar containing the main widget area.
  *
- * @package WordPress
- * @subpackage Sampression-Lite
+ * @package Sampression-Lite
  * @since Sampression Lite 1.0
  */
 ?>

@@ -5,7 +5,7 @@ Theme URI: http://www.sampression.com/sampression-lite/
 Author: Sampression
 Author URI: http://www.sampression.com
 
-Version: 1.1.2.1
+Version: 1.1.2.1.1
 License: GNU General Public License v2 or later
 License URI: license.txt
 */
@@ -52,3 +52,6 @@ Tags Used: white, orange, green, one-column, two-columns, flexible-width, featur
  = Select Advance tab
  = Here, additionally you can add different codes to the header and footer of theme. Please be careful to add codes becuase it might crop the functionality and appearance of theme.
  
+ 9. Copyright & License
+ = Sampression Lite, Copyright 2012 Sampression.com
+ = Sampression Lite is distributed under the terms of the GNU GPL.
