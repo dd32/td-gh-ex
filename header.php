@@ -15,7 +15,7 @@
 <meta name="viewport" content="width=device-width" />
 <title><?php wp_title() ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" />
+<?php wp_enqueue_style('colorful-style', get_stylesheet_uri(), false, '1.2');?>
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
@@ -49,5 +49,5 @@ wp_head(); ?>
             
       <?php 
 	  	  
-	  the_post_thumbnail('thumbnail'); ?>
+	 
 	  

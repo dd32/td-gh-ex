@@ -25,9 +25,10 @@ get_header(); ?>
 				<h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
 				<div class="content-ver-sep"></div>
   				<div class="entrytext">
-  				<?php the_content('<p class="read-more">Read the rest of this page &raquo;</p>'); ?>
- 
- 				<div class="up-bottom-border">
+ <?php the_post_thumbnail('thumbnail'); ?>
+ <?php the_content('<p class="read-more">Read the rest of this page &raquo;</p>'); ?>
+ <div class="clear"> </div>
+ <div class="up-bottom-border">
  				<p class="postmetadata"><?php edit_post_link('Edit', '', ' | '); ?>  <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?> <?php the_tags('<br />Tags: ', ', ', '<br />'); ?></p>
  				</div></div></div>
 				

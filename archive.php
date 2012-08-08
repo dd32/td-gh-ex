@@ -44,9 +44,10 @@ get_header(); ?>
                 <h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
 				<div class="content-ver-sep"> </div>	
 				<div class="entrytext">
-					<?php the_content('<p class="read-more">Read the rest of this page &raquo;</p>'); ?>
+ <?php the_post_thumbnail('thumbnail'); ?>
+ <?php the_content('<p class="read-more">Read the rest of this page &raquo;</p>'); ?>
 				</div>
-				
+				<div class="clear"> </div>
                 <div class="up-bottom-border">
 				<p class="postmetadata">Posted in <?php the_category(', ') ?> | <?php edit_post_link('Edit', '', ' | '); ?>  <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?> <?php the_tags('<br />Tags: ', ', ', '<br />'); ?></p>
 				</div>
@@ -68,9 +69,7 @@ get_header(); ?>
 		<h3 class="arc-src"><span>You Can Try the Search...</span></h3>
 		<?php get_search_form(); ?>
 		<p><a href="<?php echo home_url(); ?>" title="Browse the Home Page">&laquo; Or Return to the Home Page</a></p><br />
-		<h2 class="post-title-color"><center>You can also Visit the Following. These are the Featured Contents</center></h2>
-		<div class="content-ver-sep"></div><br />
-		<?php get_template_part( 'featured-box' ); ?>
+		
 
 	<?php endif; ?>
 

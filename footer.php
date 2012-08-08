@@ -19,7 +19,7 @@
    	get_sidebar( 'footer' );
 ?>
 </div>
-<div id="creditline">Copyright:&nbsp; <?php bloginfo( 'name' ); ?>&nbsp; <?php colorful_credit(); ?></div>
+<div id="creditline">&copy;&nbsp;<?php echo date("Y") ?>&nbsp;<?php bloginfo( 'name' ); colorful_credit(); ?></div>
 
 <?php wp_footer(); ?>
 </div> <!-- footer-content -->

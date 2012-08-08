@@ -1,6 +1,6 @@
 <?php
 
-/* COLORFUL Theme'sSingle Page to display Single Page or Post
+/* 	COLORFUL Theme'sSingle Page to display Single Page or Post
 	Copyright: 2012, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since COLORFUL 1.0
@@ -17,10 +17,10 @@ get_header(); ?>
             <p class="postmetadataw">Posted by: <?php the_author_posts_link() ?> | on <?php the_time('F j, Y'); ?></p> 
                         
             <div class="content-ver-sep"> </div>
-            <div class="entrytext">
+            <div class="entrytext"><?php the_post_thumbnail('thumbnail'); ?>
 			<?php the_content(); ?>
             </div>
-            
+            <div class="clear"> </div>
             <div class="up-bottom-border">
             <p class="postmetadata">Posted in <?php the_category(', ') ?> | <?php edit_post_link('Edit', '', ' | '); ?>  <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?> <?php the_tags('<br />Tags: ', ', ', '<br />'); ?></p>
             <?php  wp_link_pages( array( 'before' => '<div class="page-link"><span>' . 'Pages:' . '</span>', 'after' => '</div>' ) ); ?>

@@ -8,7 +8,7 @@
 
 
 <form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-		<label for="s" class="assistive-text"><?php _e( '', 'colorful' ); ?></label>
-		<input type="text" class="field" name="s" id="s" placeholder="<?php esc_attr_e( 'Search Text Here', 'colorful' ); ?>" />
-		<input type="submit" class="submit" name="submit" id="searchsubmit" value="<?php esc_attr_e( 'Search', 'colorful' ); ?>" />
+		<label for="s" class="assistive-text"><?php ''; ?></label>
+		<input type="text" class="field" name="s" id="s" placeholder="Search Text Here" />
+		<input type="submit" class="submit" name="submit" id="searchsubmit" value="Search" />
 </form>

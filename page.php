@@ -14,13 +14,14 @@
 		<h1 class="page-title"><?php the_title(); ?></h1>
 			<div class="content-ver-sep"> </div>
             <div class="entrytext">
-				<?php the_content('<p class="read-more">Read the rest of this page &raquo;</p>'); ?>
+ <?php the_post_thumbnail('thumbnail'); ?>
+ <?php the_content('<p class="read-more">Read the rest of this page &raquo;</p>'); ?>
 
 				<?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
 
 			</div>
 		</div>
-		<?php endwhile; ?>
+		<?php endwhile; ?><div class="clear"> </div>
 	<?php edit_post_link('Edit This Entry', '<p>', '</p>'); ?>
 	<?php comments_template('', true); ?>
 	<?php else: ?>

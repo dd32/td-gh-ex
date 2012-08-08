@@ -73,17 +73,17 @@
 	add_theme_support( 'custom-header', $colorful_custom_header );
 	
 // 	Functions for adding script
-	function d5corporate_enqueue_scripts() {
+	function colorful_enqueue_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) { 
 		wp_enqueue_script( 'comment-reply' ); 
 	}
 	
 	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'd5corporate-menu-style', get_template_directory_uri(). '/js/menu.js' );
-	wp_enqueue_style('d5businessline-gfonts1', 'http://fonts.googleapis.com/css?family=Creepster', false );
+	wp_enqueue_script( 'colorful-menu-style', get_template_directory_uri(). '/js/menu.js' );
+	wp_enqueue_style('colorful-gfonts', 'http://fonts.googleapis.com/css?family=Creepster', false );
 	
 	}
-	add_action( 'wp_enqueue_scripts', 'd5corporate_enqueue_scripts' );
+	add_action( 'wp_enqueue_scripts', 'colorful_enqueue_scripts' );
 
 //	Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and colorful_continue_reading_link().
 //	function tied to the excerpt_more filter hook.
@@ -94,7 +94,7 @@
 
 //	D5 BusinessLine and WordPress Credit
 	function colorful_credit() {
-		echo '| COLORFUL Theme by: <a href="http://d5creation.com" target="_blank"><img  width="30px" src="' . get_template_directory_uri() . '/images/d5logofooter.png" /> D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a>';
+		echo '&nbsp| COLORFUL Theme by: <a href="http://d5creation.com" target="_blank"><img  width="30px" src="' . get_template_directory_uri() . '/images/d5logofooter.png" /> D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a>';
 	}
 
 
@@ -120,7 +120,7 @@
 	function colorful_widgets_init() {
 
 	register_sidebar( array(
-		'name' => __( 'Primary Sidebar', 'colorful' ),
+		'name' =>  'Primary Sidebar',
 		'id' => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -129,7 +129,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Secondary Sidebar', 'colorful' ),
+		'name' =>  'Secondary Sidebar',
 		'id' => 'sidebar-2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -138,9 +138,9 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Area One', 'colorful' ),
+		'name' =>  'Footer Area One',
 		'id' => 'sidebar-3',
-		'description' => __( 'An optional widget area for your site footer', 'colorful' ),
+		'description' =>  'An optional widget area for your site footer',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -148,9 +148,9 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Area Two', 'colorful' ),
+		'name' =>  'Footer Area Two',
 		'id' => 'sidebar-4',
-		'description' => __( 'An optional widget area for your site footer', 'colorful' ),
+		'description' =>  'An optional widget area for your site footer',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
