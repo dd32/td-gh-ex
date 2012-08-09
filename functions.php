@@ -9,7 +9,7 @@
  * The first function, simplecatch_setup(), sets up the theme by registering support
  * for various features in WordPress, such as post thumbnails, navigation menus, and the like.
  *
- * @package WordPress
+ * @package Catch Themes
  * @subpackage Simple_Catch
  * @since Simple Catch 1.0
  */
@@ -44,8 +44,13 @@ if ( ! function_exists( 'simplecatch_setup' ) ):
  */
 function simplecatch_setup() {
 
-	// Loading textdomain simplecatch
-	load_theme_textdomain( 'simplecatch' );
+	/* Make Simple Catch available for translation.
+	 * Translations can be added to the /languages/ directory.
+	 */
+	load_theme_textdomain( 'simplecatch', get_template_directory() . '/languages' );
+
+	// Load up Catch Roofing's theme options defaults
+	require( get_template_directory() . '/functions/simplecatch_themeoptions_defaults.php' );
 	
 	// Load up our theme options page and related code.
 	require( get_template_directory() . '/functions/panel/theme_options.php' );

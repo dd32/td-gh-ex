@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section 
  *
- * @package WordPress
+ * @package Catch Themes
  * @subpackage Simple_Catch
  * @since Simple Catch 1.0
  */
@@ -15,7 +15,7 @@
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 <title><?php wp_title(''); ?></title>
  
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_uri(); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <?php
 	/* Always have wp_head() just before the closing </head>

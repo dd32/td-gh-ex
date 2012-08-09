@@ -2,7 +2,7 @@
 /**
  * The template for displaying the footer.
  *
- * @package WordPress
+ * @package Catch Themes
  * @subpackage Simple_Catch
  * @since Simple Catch 1.0
  */

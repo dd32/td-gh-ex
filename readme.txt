@@ -4,19 +4,19 @@ Theme Name: Simple Catch
 Theme URI: http://catchthemes.com/wp-themes/simplecatch
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
-Version: 1.3.3
+Version: 1.3.4
 License: GNU General Public License
 
 == Theme Description ==
 
-Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework.
+Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework. Now, it's translation ready.
 
 == Features ==  
 Featured Image Slider, Custom Drop-down Menu, Theme Options, Custom Widgets, flexible position of sidebar and Support for popular plugins.
 
 == Tags ==
 
-Tags Used: black, gray, silver, white, light, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, custom-menu, featured-images, full-width-template, theme-options, threaded-comments
+Tags Used: black, gray, silver, white, light, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, custom-menu, featured-images, full-width-template, theme-options, threaded-comments, translation-ready
 
 == Installation ==
 
@@ -170,6 +170,13 @@ Version 1.3.3
 * Used get_option( 'date_format' ) rather than hardcoding format.
 * Made Post author link prefix translation ready.
 * Changing the key name for post custom metadata i.e. 'Sidebar-layout' keyname changed to 'simplecatch-sidebarlayout'.
+
+Version 1.3.4
+* Initialized all theme options variables and created simplecatch_themeoptions_defaults.php file.
+* Fixed add_image_scripts.js
+* Stored all theme options variables in a global variable and used it instead of get_option.
+* Change stylesheet URL to get_stylesheet_uri()
+* Added catchbox.pot file to make theme translation ready
 
 == Upcoming Plan ==
 * Add more option in theme option for feed redirect

@@ -2,7 +2,7 @@
 /**
  * Simple Catch Custom meta box
  *
- * @package WordPress
+ * @package Catch Themes
  * @subpackage Simple_Catch
  * @since Simple Catch 1.3.2
  */

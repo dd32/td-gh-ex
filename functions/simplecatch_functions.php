@@ -122,8 +122,9 @@ add_filter( 'wp_title', 'simplecatch_filter_wp_title' );
  * @uses filter excerpt_length
  */
 function simplecatch_excerpt_length( $length ) {
-	$options = get_option( 'simplecatch_options' );
-	if( empty( $options[ 'excerpt_length' ] ) ) { $options[ 'excerpt_length' ] = 30; }
+	global $simplecatch_options_settings;
+    $options = $simplecatch_options_settings;
+
 	return $options[ 'excerpt_length' ];
 }
 add_filter( 'excerpt_length', 'simplecatch_excerpt_length' );
@@ -132,10 +133,9 @@ add_filter( 'excerpt_length', 'simplecatch_excerpt_length' );
  * Returns a "Continue Reading" link for excerpts
  */
 function simplecatch_continue_reading() {
-	$options = get_option( 'simplecatch_options' );
-	if( !isset( $options[ 'more_tag_text' ] ) ) {
-		$options[ 'more_tag_text' ] = "Continue Reading &rarr;";
-	}
+	global $simplecatch_options_settings;
+    $options = $simplecatch_options_settings;
+    
 	$more_tag_text = $options[ 'more_tag_text' ];
 	return ' <a class="readmore" href="'. esc_url( get_permalink() ) . '">' . sprintf( __( '%s', 'simplecatch' ), esc_attr( $more_tag_text ) ) . '</a>';
 }
@@ -198,8 +198,8 @@ endif;
 function simplecatch_headerdetails() {
 	//delete_transient( 'simplecatch_headerdetails' );	
 
-	// get data value from simplecatch_options through theme options
-	$options = get_option( 'simplecatch_options' );	
+	global $simplecatch_options_settings;
+    $options = $simplecatch_options_settings;	
 		
 	if ( ( !$simplecatch_headerdetails = get_transient( 'simplecatch_headerdetails' ) ) && ( empty( $options[ 'remove_header_logo' ] ) || empty( $options[ 'remove_site_title' ] ) || empty( $options[ 'remove_site_description' ] ) ) ) {
 
@@ -253,11 +253,9 @@ function simplecatch_footerlogo() {
 	//delete_transient('simplecatch_footerlogo');	
 	
 	if ( !$simplecatch_footerlogo = get_transient( 'simplecatch_footerlogo' ) ) {
-		// get data value from catch_options through theme options
-		$options = get_option( 'simplecatch_options' );
-		if( !isset( $options[ 'remove_footer_logo' ] ) ) {
-			$options[ 'remove_footer_logo' ] = "0";
-		}
+		global $simplecatch_options_settings;
+        $options = $simplecatch_options_settings;
+
 		echo '<!-- refreshing cache -->';
 		if ( $options[ 'remove_footer_logo' ] == "0" ) :
 		
@@ -294,11 +292,9 @@ function simplecatch_favicon() {
 	//delete_transient( 'simplecatch_favicon' );	
 	
 	if( ( !$simplecatch_favicon = get_transient( 'simplecatch_favicon' ) ) ) {
-		// get data value from simplecatch_options through theme options
-		$options = get_option( 'simplecatch_options' );
-		if( !isset( $options[ 'remove_favicon' ] ) ) {
-			$options[ 'remove_favicon' ] = "0";
-		}
+		global $simplecatch_options_settings;
+        $options = $simplecatch_options_settings;
+		
 		echo '<!-- refreshing cache -->';
 		if ( $options[ 'remove_favicon' ] == "0" ) :
 			// if not empty fav_icon on theme options
@@ -337,12 +333,10 @@ function simplecatch_sliders() {
 	global $post;
 	//delete_transient( 'simplecatch_sliders' );
 		
-	// get data value from simplecatch_options through theme options
-	$options = get_option( 'simplecatch_options' );
-	// get slider_qty from theme options
-	if( isset( $options[ 'slider_qty' ] ) ) {
-		$postperpage = $options[ 'slider_qty' ];
-	}
+	global $simplecatch_options_settings;
+    $options = $simplecatch_options_settings;
+
+	$postperpage = $options[ 'slider_qty' ];
 	
 	if( ( !$simplecatch_sliders = get_transient( 'simplecatch_sliders' ) ) && !empty( $options[ 'featured_slider' ] ) ) {
 		echo '<!-- refreshing cache -->';
@@ -439,8 +433,8 @@ function simplecatch_sliderbreadcrumb() {
 function simplecatch_headersocialnetworks() {
 	//delete_transient( 'simplecatch_headersocialnetworks' );
 	
-	// get the data value from theme options
-	$options = get_option( 'simplecatch_options' );
+	global $simplecatch_options_settings;
+    $options = $simplecatch_options_settings;
 	
 	if ( ( !$simplecatch_headersocialnetworks = get_transient( 'simplecatch_headersocialnetworks' ) ) &&  ( !empty( $options[ 'social_facebook' ] ) || !empty( $options[ 'social_twitter' ] ) || !empty( $options[ 'social_googleplus' ] ) || !empty( $options[ 'social_pinterest' ] ) || !empty( $options[ 'social_youtube' ] ) || !empty( $options[ 'social_linkedin' ] ) || !empty( $options[ 'social_slideshare' ] )  || !empty( $options[ 'social_foursquare' ] ) || !empty( $options[ 'social_rss' ] )   || !empty( $options[ 'social_vimeo' ] ) || !empty( $options[ 'social_flickr' ] ) || !empty( $options[ 'social_tumblr' ] ) || !empty( $options[ 'social_deviantart' ] ) || !empty( $options[ 'social_dribbble' ] ) || !empty( $options[ 'social_myspace' ] ) || !empty( $options[ 'social_wordpress' ] ) || !empty( $options[ 'social_delicious' ] ) || !empty( $options[ 'social_lastfm' ] ) ) )  {
 	
@@ -572,8 +566,9 @@ function simplecatch_site_verification() {
 	//delete_transient( 'simplecatch_site_verification' );
 
 	if ( ( !$simplecatch_site_verification = get_transient( 'simplecatch_site_verification' ) ) )  {
-		// get the data value from theme options
-		$options = get_option( 'simplecatch_options' );
+
+		global $simplecatch_options_settings;
+        $options = $simplecatch_options_settings;
 		echo '<!-- refreshing cache -->';	
 		
 		$simplecatch_site_verification = '';
@@ -616,8 +611,9 @@ function simplecatch_footercode() {
 	
 
 	if ( ( !$simplecatch_footercode = get_transient( 'simplecatch_footercode' ) ) ) {
-		// get the data value from theme options
-		$options = get_option( 'simplecatch_options' );
+
+		global $simplecatch_options_settings;
+        $options = $simplecatch_options_settings;
 		echo '<!-- refreshing cache -->';	
 		
 		//site stats, analytics header code
@@ -641,8 +637,9 @@ function simplecatch_inline_css() {
 	//delete_transient( 'simplecatch_inline_css' );	
 	
 	if ( ( !$simplecatch_inline_css = get_transient( 'simplecatch_inline_css' ) ) ) {
-		// get the data value from theme options
-		$options = get_option( 'simplecatch_options' );
+		global $simplecatch_options_settings;
+        $options = $simplecatch_options_settings;
+
 		echo '<!-- refreshing cache -->' . "\n";
 		if( !empty( $options[ 'custom_css' ] ) ) {
 			$simplecatch_inline_css	= '<!-- '.get_bloginfo('name').' Custom CSS Styles -->' . "\n";
@@ -685,16 +682,9 @@ add_filter( 'simplecatch_credits', 'simplecatch_footer' );
  * Function to pass the slider value
  */
 function simplecatch_pass_slider_value() {
-	$options = get_option( 'simplecatch_options' );
-	if( !isset( $options[ 'transition_effect' ] ) ) {
-		$options[ 'transition_effect' ] = "fade";
-	}
-	if( !isset( $options[ 'transition_delay' ] ) ) {
-		$options[ 'transition_delay' ] = 4;
-	}
-	if( !isset( $options[ 'transition_duration' ] ) ) {
-		$options[ 'transition_duration' ] = 1;
-	}
+	global $simplecatch_options_settings;
+    $options = $simplecatch_options_settings;
+
 	$transition_effect = $options[ 'transition_effect' ];
 	$transition_delay = $options[ 'transition_delay' ] * 1000;
 	$transition_duration = $options[ 'transition_duration' ] * 1000;
@@ -714,10 +704,9 @@ function simplecatch_pass_slider_value() {
  * @uses pre_get_posts hook
  */
 function simple_catch_alter_home( $query ){
-	$options = get_option( 'simplecatch_options' );
-	if( !isset( $options[ 'exclude_slider_post' ] ) ) {
- 		$options[ 'exclude_slider_post' ] = "0";
- 	}
+	global $simplecatch_options_settings;
+    $options = $simplecatch_options_settings;
+
     if ( $options[ 'exclude_slider_post'] != "0" && !empty( $options[ 'featured_slider' ] ) ) {
 		if( $query->is_main_query() && $query->is_home() ) {
 			$query->query_vars['post__not_in'] = $options[ 'featured_slider' ];
@@ -743,11 +732,10 @@ function simplecatch_class_names($classes) {
 	if( empty( $layout ) || ( !is_page() && !is_single() ) )
 		$layout='default';
 		
-	$options = get_option( 'simplecatch_options' );
-	if( empty( $options['sidebar_layout'] ) )
-		$themeoption_layout='right-sidebar';
-	else
-		$themeoption_layout = $options['sidebar_layout'];
+	global $simplecatch_options_settings;
+    $options = $simplecatch_options_settings;
+		
+	$themeoption_layout = $options['sidebar_layout'];
 	
 	if( ( $layout == 'no-sidebar' || ( $layout=='default' && $themeoption_layout == 'no-sidebar') ) ){
 		$classes[] = 'no-sidebar';
@@ -769,11 +757,10 @@ function simplecatch_content() {
 	get_header(); 
 	
     if( $layout=='default') {
-		$options = get_option( 'simplecatch_options' );
-		if( empty( $options['sidebar_layout'] ) )
-			$themeoption_layout='right-sidebar';
-		else
-			$themeoption_layout = $options['sidebar_layout'];
+		global $simplecatch_options_settings;
+        $options = $simplecatch_options_settings;
+
+		$themeoption_layout = $options['sidebar_layout'];
 			
 		if( $themeoption_layout == 'left-sidebar' ) {
 			get_template_part( 'content-sidebar','left' );
@@ -847,11 +834,11 @@ function simplecatch_loop() {
  */
 function simplecatch_display_div() {
 	echo '<div id="main" class="layout-978">';
-	$options = get_option( 'simplecatch_options' );
-	if( empty( $options['sidebar_layout'] ) )
-		$themeoption_layout='right-sidebar';
-	else
-		$themeoption_layout = $options['sidebar_layout'];
+
+	global $simplecatch_options_settings;
+    $options = $simplecatch_options_settings;
+		
+	$themeoption_layout = $options['sidebar_layout'];
 		
 	if( $themeoption_layout == 'left-sidebar' ) {	
 		get_sidebar();
@@ -870,63 +857,63 @@ function simplecatch_display_div() {
  */
 function simplecatch_faq() {
 ?>
-		<h2>FAQ: Frequently Asked Questions</h2>
-		<h3>1. How to change logo on Header and Footer? </h3>
+		<h2><?php _e( 'FAQ: Frequently Asked Questions', 'simplecatch' ); ?></h2>
+		<h3><?php _e( '1. How to change logo on Header and Footer? ', 'simplecatch' ); ?></h3>
 		<ul>
-			<li> Click on Theme Options under Appearance. </li>
-			<li> Select the Logo Tab. You can see the default logo previews. </li>
-			<li> Now click on Change Header Logo and Footer Logo button. </li>
-			<li> Browse the Logo image from desired location and insert into the Post. </li>
-			<li> Click on Save button. Now you can see the previews.</li>
+			<li><?php  _e( 'Click on Theme Options under Appearance. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Select the Logo Tab. You can see the default logo previews. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Now click on Change Header Logo and Footer Logo button. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Browse the Logo image from desired location and insert into the Post. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Click on Save button. Now you can see the previews. ', 'simplecatch' ); ?></li>
 		</ul>
 		
-		<h3>2. How to change fav icon? </h3>
+		<h3><?php  _e( '2. How to change fav icon? ', 'simplecatch' ); ?></h3>
 		<ul>
-			<li> Click on Theme Options under Appearance. </li>
-			<li> Select the Fav Icon Tab. You can see the default fav icon preview. </li>
-			<li> Now click on Change Fav Icon button. </li>
-			<li> Browse the fav icon image from desired location and insert into the Post. </li>
-			<li> Click on Save button. Now you can see the preview.</li>
+			<li><?php  _e( 'Click on Theme Options under Appearance. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Select the Fav Icon Tab. You can see the default fav icon preview. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Now click on Change Fav Icon button. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Browse the fav icon image from desired location and insert into the Post. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Click on Save button. Now you can see the preview. ', 'simplecatch' ); ?></li>
 		</ul>
 			
-		<h3>3. How to insert Social links on the right side of header? </h3>
+		<h3><?php  _e( '3. How to insert Social links on the right side of header? ', 'simplecatch' ); ?></h3>
 		<ul>
-			<li> Click on Theme Options under Appearance. </li>
-			<li> Select the Social Links Tab.</li>
-			<li> Here you can see different social links like facebook, twitter etc. </li>
-			<li> Give the social links on its respective socal fields. For example http://www.facebook.com. for facebook etc.</li>
-			<li> Click on Save button.</li>
+			<li><?php  _e( 'Click on Theme Options under Appearance. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Select the Social Links Tab. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Here you can see different social links like facebook, twitter etc. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Give the social links on its respective socal fields. For example http://www.facebook.com. for facebook etc. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Click on Save button. ', 'simplecatch' ); ?></li>
 		</ul>
 		
-		<h3>4. How to insert Analytic scripts? </h3>
+		<h3><?php  _e( '4. How to insert Analytic scripts? ', 'simplecatch' ); ?></h3>
 		<ul>
-			<li> Click on Theme Options under Appearance. </li>
-			<li> Select the Analytic Option Tab.</li>
-			<li> Here you can put different scripts like, google, facebook etc. </li>
-			<li> Put the script on upper textarea which you want to load on header. </li>
-			<li> Put the script on lower textarea which you want to load on footer. </li>
-			<li> Click on Save button.</li>
+			<li><?php  _e( 'Click on Theme Options under Appearance. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Select the Analytic Option Tab. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Here you can put different scripts like, google, facebook etc. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Put the script on upper textarea which you want to load on header. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Put the script on lower textarea which you want to load on footer. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Click on Save button. ', 'simplecatch' ); ?></li>
 		</ul>
 		
-		<h3>5. How to choose featured slider? </h3>
+		<h3><?php  _e( '5. How to choose featured slider? ', 'simplecatch' ); ?></h3>
 		<ul>
-			<li> Click on Featured Slider under Appearance. </li>
-			<li> Give the No. of slides and click on Save Button. </li>
-			<li> Now there is list of the Featured Col #1, #2 etc.</li>
-			<li> To Give the Post ID's, click on "Click Here to Edit" Button which redirect you into the edit posts.</li>
-			<li> Now find the post ID's which you want to display and keep that ID's on blank Featured Col #1..... </li>
-			<li> Click on Save button.</li>
+			<li><?php  _e( 'Click on Featured Slider under Appearance. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Give the No. of slides and click on Save Button. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Now there is list of the Featured Col #1, #2 etc. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'To Give the Post ID\'s, click on "Click Here to Edit" Button which redirect you into the edit posts. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Now find the post ID\'s which you want to display and keep that ID\'s on blank Featured Col #1.....  ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Click on Save button. ', 'simplecatch' ); ?></li>
 		</ul>
 		
-		<h3>6. How to create pagination in single post if the post is too long? </h3>
+		<h3><?php  _e( '6. How to create pagination in single post if the post is too long? ', 'simplecatch' ); ?></h3>
 		<ul>
-			<li> Click on the Post. </li>
-			<li> Edit the specific post which you want to breakdown into more pages. </li>
-			<li> Now Keep the cursor to the exact place of post where you like to break. </li>
-			<li> Then copy this shortcode <!--nextpage--> and paste it.</li>
-			<li> You can repeat this shortcode many times where you wan to break down.</li>
-			<li> Update the post. </li>
-			<li> Click on Save button.</li>
+			<li><?php  _e( 'Click on the Post. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Edit the specific post which you want to breakdown into more pages. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Now Keep the cursor to the exact place of post where you like to break. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Then copy this shortcode <!--nextpage--> and paste it. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'You can repeat this shortcode many times where you wan to break down. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Update the post. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Click on Save button. ', 'simplecatch' ); ?></li>
 		</ul>
                     
 <?php

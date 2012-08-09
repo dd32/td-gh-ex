@@ -2,7 +2,7 @@
 /**
  * This is the template that displays content for index and archive page
  *
- * @package WordPress
+ * @package Catch Themes
  * @subpackage Simple_Catch
  * @since Simple Catch 1.3.2
  */
@@ -15,13 +15,15 @@
                         <?php //If category has thumbnail it displays thumbnail and excerpt of content else excerpt only 
                         if ( has_post_thumbnail() ) : ?>
                             <div class="col3 post-img">
-                                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" ><?php the_post_thumbnail( 'featured' ); ?></a>
+                                <a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'simplecatch' ), the_title_attribute( 'echo=0' ) ); ?>"><?php the_post_thumbnail( 'featured' ); ?></a>
                             </div> <!-- .col3 -->  
+                            
                             <div class="col5">
                         <?php else : ?>
                             <div class="col8">
                         <?php endif; ?> 
-                                <h2 class="entry-title"><a href="<?php the_permalink() ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="bookmark" ><?php the_title(); ?></a></h2>
+                                <h2 class="entry-title"><a href="<?php the_permalink() ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'simplecatch' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark" ><?php the_title(); ?></a></h2>
+
                                 <ul class="post-by">
                                     <li class="no-padding-left"><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" title="<?php echo esc_attr(get_the_author_meta( 'display_name' ) ); ?>"><?php _e( 'By', 'simplecatch' ); ?>&nbsp;<?php the_author_meta( 'display_name' );?></a></li>
                                     <li><?php $simplecatch_date_format = get_option( 'date_format' ); the_time( $simplecatch_date_format ); ?></li>

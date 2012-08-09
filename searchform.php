@@ -2,17 +2,13 @@
 /**
  * The template for displaying search forms in Simple Catch
  *
- * @package WordPress
+ * @package Catch Themes
  * @subpackage Simple_Catch
  * @since Simple Catch 1.0
  */
-$options = get_option( 'simplecatch_options' );
-if( !isset( $options[ 'search_display_text' ] ) ) {
-	$options[ 'search_display_text' ] = "Type Keyword";
-}
-if( !isset( $options[ 'search_button_text' ] ) ) {
-	$options[ 'search_button_text' ] = "Search";
-}
+global $simplecatch_options_settings;
+$options = $simplecatch_options_settings;
+
 $simplecatch_search_display_text = $options[ 'search_display_text' ];
 $simplecatch_search_button_text = $options[ 'search_button_text' ];
 ?>

@@ -9,7 +9,7 @@
  */
 class CustomTagWidget extends WP_Widget {
 		function CustomTagWidget() {
-			$widget_ops = array('description' => 'Displays Custom Tag Cloud');
+			$widget_ops = array('description' => __( 'Displays Custom Tag Cloud', 'simplecatch' ) );
 			$control_ops = array('width' => 400, 'height' => 500);
 			parent::WP_Widget(false,$name='Custom Tag Cloud',$widget_ops,$control_ops);
 		}

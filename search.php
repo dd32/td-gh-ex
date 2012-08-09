@@ -2,7 +2,7 @@
 /**
  * The template for displaying Search Results pages.
  *
- * @package WordPress
+ * @package Catch Themes
  * @subpackage Simple_Catch
  * @since Simple Catch 1.0
  */
@@ -14,7 +14,7 @@ get_header();
 	}
       
 	if (have_posts()): ?>
-		<h2 class="entry-title"><?php printf( 'Showing results for: <span class="img-title">%s</span>', get_search_query() ); ?></h2>
+		<h2 class="entry-title"><?php printf( __( 'Showing results for: <span class="img-title">%s</span>', 'simplecatch' ), get_search_query() ); ?></h2>
 		
 		<?php while (have_posts()) : the_post(); ?>
 		
@@ -43,7 +43,7 @@ get_header();
 			<?php endif; 
 		
 	else : ?>
-		<h2><?php printf('Your search <span> "%s" </span> did not match any documents', get_search_query() ); ?></h2>
+		<h2><?php printf( __( 'Your search <span> "%s" </span> did not match any documents', 'simplecatch' ), get_search_query() ); ?></h2>
 		<div class="post">
 			<h5><?php _e( 'A few suggestions', 'simplecatch' ); ?></h5>
 			<ul>

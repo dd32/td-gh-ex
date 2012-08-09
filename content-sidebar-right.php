@@ -2,7 +2,7 @@
 /**
  * This is the template that displays page/post with right sidebar
  *
- * @package WordPress
+ * @package Catch Themes
  * @subpackage Simple_Catch
  * @since Simple Catch 1.3.2
  */

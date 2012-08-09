@@ -2,7 +2,7 @@
 /**
  * The Sidebar containing the main widget area.
  *
- * @package WordPress
+ * @package Catch Themes
  * @subpackage Simple_Catch
  * @since Simple Catch 1.0
  */
@@ -14,11 +14,10 @@
 	if( empty( $layout ) || ( !is_page() && !is_single() ) )
 		$layout='default';
 		
-	$options = get_option( 'simplecatch_options' );
-	if( empty( $options['sidebar_layout'] ) )
-		$themeoption_layout='right-sidebar';
-	else
-		$themeoption_layout = $options['sidebar_layout'];
+	global $simplecatch_options_settings;
+    $options = $simplecatch_options_settings;
+	
+	$themeoption_layout = $options['sidebar_layout'];
 	
 	if( $layout=='left-sidebar' ||( $layout=='default' && $themeoption_layout == 'left-sidebar') ) {
 		echo '<div id="sidebar" class="col4 no-margin-left">';

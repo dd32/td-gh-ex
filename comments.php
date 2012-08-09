@@ -5,7 +5,7 @@
  * The area of the page that contains both current comments
  * and the comment form. 
  *
- * @package WordPress
+ * @package Catch Themes
  * @subpackage Simple_Catch
  * @since Simple Catch 1.0
  */
@@ -26,7 +26,7 @@
 	if ( have_comments() ): ?>
 		<div id="comments">	
             <h2 id="comments-title">
-                <?php comments_number('No Comments', 'One Comment', '% Comments' );?>
+                <?php comments_number(__( 'No Comments', 'simplecatch' ), __( '1 Comment', 'simplecatch' ), __( '% Comments', 'simplecatch' ) );?>
             </h2><!-- #comments -->
     
             <div class="navigation clearfix">
@@ -77,7 +77,7 @@
 			'title_reply'          => 	__( 'Leave a Comment', 'simplecatch' ),
 			'comment_notes_before' =>	 '',
 			'comment_field'        => 	'<label>Comment</label><textarea name="comment" id="comment" rows="10" tabindex="4"></textarea>',
-			'label_submit'         =>	 __( 'Submit','Submit' ),
+			'label_submit'         =>	 __( 'Submit','simplecatch' ),
 			'comment_notes_after'  => 	'',
 			'fields'               => 	apply_filters( 'comment_form_default_fields', $fields )
 			 );
