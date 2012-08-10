@@ -3,93 +3,330 @@ Theme Name: Adsticle
 Author URI: http://wpmole.com
 Description: Adsticle is a simple wordpress theme. Adsticle supports 6 widget area, custom header, custom background, custom theme colors, options for AdSense code(Adsticle=Adsense+Article) and some other featuring.
 Author: WPMOLE
-Version: 2.1.6
+Version: 2.1.7
 License: GNU/GPL Version 3 or later. 
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: featured-images, sticky-post, threaded-comments, theme-options, rtl-language-support, editor-style, custom-header, custom-colors, blavatar, custom-background, two-columns, right-sidebar, fixed-width, custom-menu, featured-images, translation-ready, black, blue, brown, gray, green, orange, pink, purple, red, silver, tan, white, yellow, dark, light
 Copyright: (c) 2011 WPMOLE
 */
 
-html,body,p,h1,h2,h3,h4,h5,em,i,table,tr,td,th,form,input,textarea,select,li,ol,ul,strong{margin:0;padding:0;}
-html{font-size:62.5%;}
-em,i{font-style:normal;}
-li{list-style-type:none;}
-h1,h2,h3,h4,h5{font-weight:400;padding:5px 0; font-weight: none; line-height: 1.3em;}
-p{padding:5px 0;}
-a:active,a:focus,img,input,select{outline:0;}
-a,a:link,a:active,a:visited{color:red;cursor:pointer;text-decoration:underline;}
-a:hover{color:red;text-decoration:underline;}
-img{border:none;}
-.clear{clear:both;font-size:0;line-height:0;height:0;}
-body{background-color:gray;font-size:14px;line-height: 1.4em;color:green;font-family:"Verdana", "Adobe Garamond", "Georgia", "Times New Roman", "serif";}
+html,
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+em,
+i,
+table,
+tr,
+td,
+th,
+form,
+input,
+textarea,
+select,
+li,
+ol,
+ul,
+strong {
+	margin:0;
+	padding:0;
+}
+html {
+	font-size:62.5%;
+}
+em,
+i {
+	font-style:normal;
+}
+li {
+	list-style-type:none;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-weight:400;
+	padding:5px 0; 
+	font-weight: none; 
+	line-height: 1.3em;
+}
+p {
+	padding:5px 0;
+}
+a:active,
+a:focus,
+img,
+input,
+select {
+	outline:0;
+}
+a,
+a:link,
+a:active,
+a:visited {
+	color:red;
+	cursor:pointer;
+	text-decoration:underline;
+}
+a:hover {
+	color:red;
+	text-decoration:underline;
+}
+img {
+	border:none;
+}
+.clear {
+	clear:both;
+	font-size:0;
+	line-height:0;
+	height:0;
+}
+body {
+	background-color:gray;
+	font-size:14px;
+	line-height: 1.4em;
+	color:green;
+	font-family:"Verdana", "Adobe Garamond", "Georgia", "Times New Roman", "serif";
+}
 
-.wrapper {width: 1000px; margin: 0 auto; position: relative; min-height: 100%;}
+.wrapper {
+	width: 1000px; 
+	margin: 0 auto; 
+	position: relative; 
+	min-height: 100%;
+}
 
-::selection {background:blue; color:yellow;}
+::selection {
+	background:blue; 
+	color:yellow;
+}
 
-.header  {width:100%; height: 80px;}
-.header  .title {position:absolute; top: 5px; left: 10px; width:500px; height: 80px; }
-.header  .title  h1 {margin-left: 10px; font-size: 30px; margin: 0px; padding:0px}
-.header  .title  h1 a {text-decoration: none;}
-.header  .title  span {font-size: 14px; margin:0px; padding:0px; text-transform:uppercase;}
-.header .ads468-60 {position:absolute; top: 10px; left: 522px; width:468px; height: 60px; overflow: hidden;}
+.header  {
+	width:100%; 
+	height: 80px;
+}
+.header  .title {
+	position:absolute; 
+	top: 5px; 
+	left: 10px; 
+	width:500px; 
+	height: 80px;
+	overflow: hidden;
+}
+.header  .title  h1 {
+	margin-left: 10px; 
+	font-size: 30px; 
+	margin: 0px; 
+	padding:0px
+}
+.header  .title  h1 a {
+	text-decoration: none;
+}
+.header  .title  span {
+	font-size: 14px; 
+	margin:0px; 
+	padding:0px; 
+	text-transform:uppercase; 
+	overflow: hidden;
+}
+.header .ads468-60 {
+	position:absolute; 
+	top: 10px; 
+	left: 522px; 
+	width:468px; 
+	height: 60px; 
+	overflow: hidden;
+}
 
-.footer{clear:left; width:100%;height:60px;background-color:red; border-top: 3px solid green;}
-.footer .fl, .footer .fr {display:inline;}
-.footer .fl { float:left; padding: 10px 0px 0px 10px}
-.footer .fr { float:right; padding: 10px 10px 0px 0px}
+.footer {
+	clear:left; 
+	width:100%;
+	height:60px;
+	background-color:red; 
+	border-top: 3px solid green;
+}
+.footer .fl, 
+.footer .fr {
+	display:inline;
+}
+.footer .fl {
+	float:left; 
+	padding: 10px 0px 0px 10px;
+}
+.footer .fr { 
+	float:right; 
+	padding: 10px 10px 0px 0px;
+}
 
-.middle{width:100%; background-color:lightblue; overflow:hidden;}
+.middle {
+	width:100%; 
+	background-color:lightblue; 
+	overflow:hidden;
+}
 
-.middle .content, .middle .sidebar {display:inline; margin-bottom:30px}
-.middle .content{float:left; width:650px; margin-left: 10px; overflow:hidden;}
-.middle .sidebar {margin:0 5px 0 20px; float:left; width: 305px; overflow:hidden;}
+.middle .content, 
+.middle .sidebar {
+	display:inline; 
+	margin-bottom:30px;
+}
+.middle .content {
+	float:left; 
+	width:650px; 
+	margin-left: 10px; 
+	overflow:hidden;
+}
+.middle .sidebar {
+	margin:0 5px 0 20px; 
+	float:left; 
+	width: 305px; 
+	overflow:hidden;
+}
 
-.sidebar-big {clear:both; overflow:hidden; } 
+.sidebar-big {
+	clear:both; 
+	overflow:hidden;
+} 
 
-.sidebar-2column1{width:150px; float: left; clear:both; overflow:hidden;}
-.sidebar-2column2{width:150px; float: right; overflow:hidden;}
+.sidebar-2column1 {
+	width:150px; 
+	float: left; 
+	clear:both; 
+	overflow:hidden;
+}
+.sidebar-2column2 {
+	width:150px; 
+	float: right; 
+	overflow:hidden;
+}
 
-.widget {padding-bottom: 5px; padding-top: 15px;}
-.widget h3, .widget h2 {font-size: 16px; font-weight: none; text-transform:uppercase; padding-bottom:5px; margin-bottom:5px;}
-.widget {padding-top: 20px; padding-bottom: 10px}
-.widget, .widget p, .widget li {font-size: 14px;}
-.widget p {padding: 0px; margin-bottom: 5px; }
-.widget a {color: red; text-decoration: none;}
-.widget a:hover {border-color: #000;}
-.widget ul ul {border: none; margin-left: 1.3em; padding: 0; }
+.widget {
+	padding-bottom: 5px; 
+	padding-top: 15px;
+}
+.widget h3, 
+.widget h2 {
+	font-size: 16px; 
+	font-weight: none; 
+	text-transform:uppercase; 
+	padding-bottom:5px; 
+	margin-bottom:5px;
+}
+.widget {
+	padding-top: 20px; 
+	padding-bottom: 10px;
+}
+.widget, 
+.widget p, 
+.widget li {
+	font-size: 14px;
+}
+.widget p {
+	padding: 0px; 
+	margin-bottom: 5px;
+}
+.widget a {
+	color: red; 
+	text-decoration: none;
+}
+.widget a:hover {
+	border-color: #000;
+}
+.widget ul ul {
+	border: none; 
+	margin-left: 1.3em; 
+	padding: 0; 
+}
 
-.post {width: 100%}
-.post  h1{font-size: 30px; color: red; margin-top: 15px; padding: 0px}
-.post  h1 a{text-decoration:none;}
-.meta{font-size: 12px; color: gray; text-transform:uppercase; padding-bottom: 10px; }
-.post_content {font-size: 16px; padding-top: 10px; }
-.post_content  p{padding-bottom: 15px}
-.post .addcomment, .footer .readmore {display:inline;}
-.post .readmore {float:left;}
-.post .addcomment {float:right;}
+.post {
+	width: 100%;
+}
+.post  h1{
+	font-size: 30px; 
+	color: red; 
+	margin-top: 15px; 
+	padding: 0px;
+}
+.post  h1 a{
+	text-decoration:none;
+}
+.meta {
+	font-size: 12px; 
+	color: gray; 
+	text-transform:uppercase; 
+	padding-bottom: 10px;
+}
+.post_content {
+	font-size: 16px; 
+	padding-top: 10px;
+}
+.post_content  p{
+	padding-bottom: 15px;
+}
+.post .addcomment, 
+.footer .readmore {
+	display:inline;
+}
+.post .readmore {
+	float:left;
+}
+.post .addcomment {
+	float:right;
+}
 
-.page-link{clear:both; padding-bottom:10px; padding-top:5px;}
-.taggs {clear:both; padding-top:10px;} 
+.page-link{
+	clear:both; 
+	padding-bottom:10px; 
+	padding-top:5px;
+}
+.taggs {
+	clear:both; 
+	padding-top:10px;
+} 
 
-.navigation {text-align: center; padding-top: 25px;}
+.navigation {
+	text-align: center; 
+	padding-top: 25px;
+}
 
-.sticky {background: red;}
+.sticky {
+	background: red;
+}
+
+table {
+	padding:5px;
+	width:100%;
+}
+td {
+	padding:10px;
+}
 
 .post_content ul li {
 	list-style-type: disc;
 	margin-left: 20px;	
 	padding: 2px;
-	}
+}
 	
 .post_content ol li {
 	list-style-type: decimal;
 	margin-left: 30px;	
 	padding: 2px;
-	}
+}
 	
-.post_content ul ul {border: none; margin-left: 1.3em; padding: 0; }
-.post_content ol ol {border: none; margin-left: 1.3em; padding: 0; }
+.post_content ul ul {
+	border: none; 
+	margin-left: 1.3em; 
+	padding: 0; 
+}
+.post_content ol ol {
+	border: none; 
+	margin-left: 1.3em; 
+	padding: 0;
+}
 
 .ads_728-15-top {
 	display: block;
@@ -152,16 +389,24 @@ h3#comments-title {
 	list-style-type: disc;
 	margin-left: 20px;	
 	padding: 2px;
-	}
+}
 	
 #comments .comment-body ol li {
 	list-style-type: decimal;
 	margin-left: 30px;	
 	padding: 2px;
-	}
+}
 	
-#comments .comment-body ul ul {border: none; margin-left: 1.3em; padding: 0; }
-#comments .comment-body ol ol {border: none; margin-left: 1.3em; padding: 0; }
+#comments .comment-body ul ul {
+	border: none; 
+	margin-left: 1.3em; 
+	padding: 0; 
+}
+#comments .comment-body ol ol {
+	border: none; 
+	margin-left: 1.3em; 
+	padding: 0; 
+}
 	
 #comments .comment-body p:last-child {
 	margin-bottom: 6px;
@@ -537,5 +782,25 @@ div.menu li {
 	display: table-cell; vertical-align: middle;
 	padding:12px;
 }
-.post_nav_l{float:left;}
-.post_nav_r{float:right;}
+.post_nav_l {
+	float:left;
+}
+.post_nav_r {
+	float:right;
+}
+
+.big-pic {
+	margin: 10px;
+	text-align:center;
+	width: 70px;
+}
+.prev-pic {
+	float: left; 
+	font-size: 16px;
+	margin-left: 10px;
+}
+.next-pic {
+	float: right;
+	font-size: 16px;	
+	margin-right: 10px;
+}

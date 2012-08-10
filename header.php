@@ -3,11 +3,13 @@
 <head profile="http://gmpg.org/xfn/11">
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 <title><?php 
-    global $page, $paged;
+    global $page, $paged;?>
 
-	wp_title( '|', true, 'right' );
-	bloginfo( 'name' );
-	
+
+ <?php wp_title('|',true,'left'); ?>
+
+
+	 <?php 
 	$site_description = get_bloginfo( 'description', 'display' );
 	if ( $site_description && ( is_home() || is_front_page() ) )
 		echo " | $site_description";
@@ -18,8 +20,11 @@
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php 
+function oenology_enqueue_comment_reply() {
   if ( is_singular() && get_option( 'thread_comments' ) )
 	wp_enqueue_script( 'comment-reply' );
+	}
+add_action( 'wp_enqueue_scripts', 'oenology_enqueue_comment_reply' );
 ?>
 <?php wp_head(); ?> 
 </head><?php flush(); ?>
