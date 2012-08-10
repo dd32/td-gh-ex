@@ -1,6 +1,6 @@
 <?php
 
-define('SO_THEME_VERSION', '1.2.2');
+define('SO_THEME_VERSION', '1.2.4');
 define('SO_THEME_ENDPOINT', 'http://siteorigin.com');
 
 // Include premium functions if it exists
@@ -28,6 +28,10 @@ if(!function_exists('origami_setup')) :
  */
 function origami_setup(){
 	so_settings_init();
+	
+	// Load the text domains
+	load_theme_textdomain( 'origami', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'siteorigin', get_template_directory() . '/languages' );
 	
 	add_theme_support( 'automatic-feed-links' );
 	
@@ -239,7 +243,8 @@ function origami_comment($comment, $args, $depth){
 	?>
 	<li <?php comment_class() ?> id="comment-<?php comment_ID() ?>">
 		<div class="comment-wrapper">
-			<?php if(empty($comment->comment_type)) : ?>
+			<?php $type = get_comment_type($comment->comment_ID); ?>
+			<?php if($type == 'comment') : ?>
 			<div class="avatar-container">
 				<?php print get_avatar(get_comment_author_email(), $depth == 1 ? 60 : 45) ?>
 			</div>
@@ -399,3 +404,17 @@ function origami_print_styles(){
 	<?php
 }
 add_action('wp_print_styles', 'origami_print_styles');
+
+if(!function_exists('origami_html_shiv')) :
+/**
+ * Display the HTML5 shiv code
+ */
+function origami_html_shiv(){
+	?>
+	<!--[if lt IE 9]>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.js" type="text/javascript"></script>
+	<![endif]-->
+	<?php
+}
+endif;
+add_action('wp_head', 'origami_html_shiv');
