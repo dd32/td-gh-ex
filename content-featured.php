@@ -2,7 +2,7 @@
 /**
  * The template for displaying content featured in the showcase.php page template
  *
- * @package WordPress
+ * @package Catch Themes
  * @subpackage Catch_Box
  * @since Catch Box 1.0
  */

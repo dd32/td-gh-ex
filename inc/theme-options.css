@@ -33,3 +33,68 @@ body.rtl .image-radio-option label {
 	float: right;
 	margin: 0 2px 20px 30px;
 }
+
+.option-container {
+	width: 90%;
+}
+h3.option-toggle {
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-top-right-radius: 3px;
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-topright: 3px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	margin: 20px 0 0 0;
+	min-width: 600px;
+	border:1px solid #dfdfdf;
+	background-color: #F1F1F1;
+	background-image: -ms-linear-gradient(top, #F9F9F9, #ECECEC);
+	background-image: -moz-linear-gradient(top, #F9F9F9, #ECECEC);
+	background-image: -o-linear-gradient(top, #F9F9F9, #ECECEC);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#F9F9F9), to(#ECECEC));
+	background-image: -webkit-linear-gradient(top, #F9F9F9, #ECECEC);
+	background-image: linear-gradient(top, #F9F9F9, #ECECEC);
+	height: 34px;
+	line-height: 34px;
+	font-size: 15px;
+	font-weight: normal;
+	float: left;
+	padding: 0;
+    width: 98%;
+}
+h3.option-toggle a {
+	background:url(images/arrow-light.png) 99% 50% no-repeat;
+	color: #464646;
+	padding-left: 10px;
+	text-decoration: none;
+	display: block;
+	text-shadow:#fff 0 1px 0;
+}
+h3.option-toggle a:hover,
+h3.option-active a {
+	background:url(images/arrow-dark.png) 99% 50% no-repeat;
+	color: #444;
+}
+.option-content {
+	-webkit-border-bottom-right-radius: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+	-moz-border-radius-bottomright: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+	margin: 0;
+	min-width: 600px;
+	padding: 0;
+	border: 1px solid #dfdfdf;
+	border-top:none;
+	background: #fcfcfc;
+	overflow: hidden;
+	font-size: 12px;
+	clear: both;
+	color: #333;
+	width: 98%;
+}
+.option-content p {
+	padding-left: 10px;
+}
+

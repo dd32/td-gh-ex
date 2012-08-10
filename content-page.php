@@ -2,7 +2,7 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package WordPress
+ * @package Catch Themes
  * @subpackage Catch_Box
  * @since Catch Box 1.0
  */

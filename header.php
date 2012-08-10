@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="main">
  *
- * @package WordPress
+ * @package Catch Themes
  * @subpackage Catch_Box
  * @since Catch Box 1.0
  */

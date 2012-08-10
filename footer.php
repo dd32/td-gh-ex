@@ -4,7 +4,7 @@
  *
  * Contains the closing of the id=main div and all content after
  *
- * @package WordPress
+ * @package Catch Themes
  * @subpackage Catch_Box
  * @since Catch Box 1.0
  */

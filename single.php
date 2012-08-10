@@ -2,7 +2,7 @@
 /**
  * The Template for displaying all single posts.
  *
- * @package WordPress
+ * @package Catch Themes
  * @subpackage Catch_Box
  * @since Catch Box 1.0
  */

@@ -2,7 +2,7 @@
 /**
  * The template for displaying content in the single.php template
  *
- * @package WordPress
+ * @package Catch Themes
  * @subpackage Catch_Box
  * @since Catch Box 1.0
  */

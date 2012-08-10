@@ -2,7 +2,7 @@
 /**
  * The Footer widget areas.
  *
- * @package WordPress
+ * @package Catch Themes
  * @subpackage Catch_Box
  * @since Catch Box 1.0
  */

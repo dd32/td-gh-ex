@@ -7,7 +7,7 @@
  * handled by a callback to catchbox_comment() which is
  * located in the functions.php file.
  *
- * @package WordPress
+ * @package Catch Themes
  * @subpackage Catch_Box
  * @since Catch Box 1.0
  */

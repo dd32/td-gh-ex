@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Post_Formats
  *
- * @package WordPress
+ * @package Catch Themes
  * @subpackage Catch_Box
  */
 ?>

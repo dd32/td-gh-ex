@@ -2,7 +2,7 @@
 /**
  * The Sidebar containing the main widget area.
  *
- * @package WordPress
+ * @package Catch Themes
  * @subpackage Catch_Box
  * @since Catch Box 1.0
  */

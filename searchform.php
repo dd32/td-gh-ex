@@ -2,7 +2,7 @@
 /**
  * The template for displaying search forms in Catch Box
  *
- * @package WordPress
+ * @package Catch Themes
  * @subpackage Catch_Box
  * @since Catch Box 1.0
  */

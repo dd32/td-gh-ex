@@ -33,7 +33,7 @@
  *
  * For more information on hooks, actions, and filters, see http://codex.wordpress.org/Plugin_API.
  *
- * @package WordPress
+ * @package Catch Themes
  * @subpackage Catch_Box
  * @since Catch Box 1.0
  */
@@ -680,6 +680,37 @@ if ( !function_exists('catchbox_sort_query_by_post_in') ) :
 
 endif;
 
+
+/**
+ * Function to pass the variables for php to js file.
+ * This funcition passes the slider effect variables.
+ */
+
+function catchbox_pass_slider_value() {
+	$options = get_option( 'catchbox_options_slider' );
+	if( !isset( $options[ 'transition_effect' ] ) ) {
+		$options[ 'transition_effect' ] = "fade";
+	}
+	if( !isset( $options[ 'transition_delay' ] ) ) {
+		$options[ 'transition_delay' ] = 4;
+	}
+	if( !isset( $options[ 'transition_duration' ] ) ) {
+		$options[ 'transition_duration' ] = 1;
+	}
+	$transition_effect = $options[ 'transition_effect' ];
+	$transition_delay = $options[ 'transition_delay' ] * 1000;
+	$transition_duration = $options[ 'transition_duration' ] * 1000;
+	wp_localize_script( 
+		'cycle-setup',
+		'js_value',
+		array(
+			'transition_effect' => $transition_effect,
+			'transition_delay' => $transition_delay,
+			'transition_duration' => $transition_duration
+		)
+	);
+}//catchbox_pass_slider_value
+
 /**
  * This function to display featured posts on index.php
  *
@@ -750,7 +781,7 @@ function catchbox_scripts_method() {
 	wp_register_script( 'jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.all.js', '2.9999.5' );
 	
 	// registering custom scrtips
-	wp_register_script( 'cycle-setup', get_template_directory_uri() . '/js/cycle_setup.js', array( 'jquery', 'jquery-cycle' ), '1.0' );
+	wp_register_script( 'cycle-setup', get_template_directory_uri() . '/js/cycle_setup.js', array( 'jquery', 'jquery-cycle' ), '1.0', true );
 	
 	// enqueue JQuery Cycle Scripts	only in Homepage
 	if(is_home() || is_front_page()) {

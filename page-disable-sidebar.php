@@ -3,7 +3,7 @@
  * Template Name: Disable Sidebar Template
  * Description: A Page Template that disables a sidebar to pages
  *
- * @package WordPress
+ * @package Catch Themes
  * @subpackage Catch_Box
  * @since Catch Box 1.0
  */
