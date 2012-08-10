@@ -233,6 +233,14 @@ function  cryout_setting_hheight_fn() {
 <input id='mantra_hheight' name='ma_options[mantra_hheight]' size='4' type='text' value='<?php echo esc_attr( intval($mantra_options['mantra_hheight'] )) ?>'  />  px
 <?php
 $totally = $mantra_options['mantra_sidebar']+$mantra_options['mantra_sidewidth']+50;
+
+$checkedClass = ($mantra_options['mantra_hcenter']=='1') ? ' checkedClass' : '';
+
+echo " <label id='hcenter' for='mantra_hcenter' class='socialsdisplay $checkedClass'><input  ";
+		 checked($mantra_options['mantra_hcenter'],'1');
+echo "value='1' id='mantra_hcenter'  name='ma_options[mantra_hcenter]' type='checkbox' style='margin-left:20px;'/> Center the header image horizontally </label>";
+
+
 echo "<div><small>".__("Select the header's height. After saving the settings go and upload your new header image. The header's width will be = ","mantra").$totally."px.</small></div>";
 }
 
@@ -280,6 +288,12 @@ function cryout_setting_frontslider_fn() {
 }
 	echo "</select>";
 	echo "<small>".__("The transition effect your slider will have.","mantra")."</small></div>";
+	
+	echo "<div class='slmini'><b>".__("Border Settings:","mantra")."</b> ";
+	echo __('Width' ,'mantra').": <input id='mantra_fpsliderborderwidth' name='ma_options[mantra_fpsliderborderwidth]' size='2' type='text' value='".esc_attr( $mantra_options['mantra_fpsliderborderwidth'] )."'  /> px / ";
+	echo __('Color','mantra').': <input type="text" id="mantra_fpsliderbordercolor" name="ma_options[mantra_fpsliderbordercolor]"  style="width:100px;" value="'.esc_attr( $mantra_options['mantra_fpsliderbordercolor'] ).'"  />';
+	echo '<div id="mantra_fpsliderbordercolor2"></div>';
+	echo "<small>".__("The width and color of the slider's border.","mantra")."</small></div>";
 
 	echo "<div class='slmini'><b>".__("Animation Time:","mantra")."</b> ";
 	echo "<input id='mantra_fpslidertime' name='ma_options[mantra_fpslidertime]' size='4' type='text' value='".esc_attr( $mantra_options['mantra_fpslidertime'] )."'  /> ".__("milliseconds (1000ms = 1 second) ","mantra");
@@ -1045,6 +1059,20 @@ function  cryout_setting_headercolor_fn() {
 	echo "<div><small>".__("Header background color (Default value is 333333). You can delete all inside text for no background color.","mantra")."</small></div>";
 }
 
+function  cryout_setting_contentbg_fn() {
+	global $mantra_options;
+	echo '<input type="text" id="mantra_contentbg" name="ma_options[mantra_contentbg]" value="'.esc_attr( $mantra_options['mantra_contentbg'] ).'"  />';
+	echo '<div id="mantra_contentbg2"></div>';
+	echo "<div><small>".__("Content background color (Default value is FAFAFA). Works best with really light colors.","mantra")."</small></div>";
+}
+
+function  cryout_setting_menubg_fn() {
+	global $mantra_options;
+	echo '<input type="text" id="mantra_menubg" name="ma_options[mantra_menubg]" value="'.esc_attr( $mantra_options['mantra_menubg'] ).'"  />';
+	echo '<div id="mantra_menubg2"></div>';
+	echo "<div><small>".__("Main menu background color (Default value is FAFAFA). Should be the same color as the content bg or something just as light.","mantra")."</small></div>";
+}
+
 //TEXT - Name: ma_options[prefootercolor]
 function  cryout_setting_prefootercolor_fn() {
 	global $mantra_options;
@@ -1212,7 +1240,7 @@ global $mantra_options;
 // RADIO-BUTTON - Name: ma_options[sidebullet]
 function cryout_setting_sidebullet_fn() {
 	global $mantra_options;
-	$items = array("mantra_dot2", "arrow_black", "arrow_white", "bullet_dark" , "bullet_gray", "bullet_light", "square_dark", "square_white", "triangle_dark" , "triangle_gray", "triangle_white", "folder_black", "folder_light");
+	$items = array("mantra_dot2", "arrow_black", "arrow_white", "bullet_dark" , "bullet_gray", "bullet_light", "square_dark", "square_white", "triangle_dark" , "triangle_gray", "triangle_white");
 	foreach($items as $item) {
 		$none='';
 		if ($item == 'mantra_dot2') { $none='None'; }
@@ -1946,7 +1974,7 @@ foreach($items as $id=>$item) {
 	echo "<div class='slmini'>";
 		echo "<b> Homepage Meta Description </b>";
 		echo "<textarea id='mantra_seo_home_desc' name='ma_options[mantra_seo_home_desc]' rows='2' cols=50' type='textarea' >{$mantra_options['mantra_seo_home_desc']}  </textarea>";
-		echo "<small> This si unique and you should fill this in. Describe your site the best you can and try not to go over 160 characters. </small>";
+		echo "<small> This is unique and you should fill this in. Describe your site the best you can and try not to go over 160 characters. </small>";
 	echo "</div>";
 	
 	echo "<div class='slmini'>";

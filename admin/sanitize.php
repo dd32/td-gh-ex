@@ -69,6 +69,8 @@ global $mantra_defaults;
 
 	$input['mantra_backcolor'] =  wp_kses_data($input['mantra_backcolor']);
 	$input['mantra_headercolor'] =  wp_kses_data($input['mantra_headercolor']);
+	$input['mantra_contentbg'] =  wp_kses_data($input['mantra_contentbg']);
+	$input['mantra_menubg'] =  wp_kses_data($input['mantra_menubg']);
 	$input['mantra_prefootercolor'] =  wp_kses_data($input['mantra_prefootercolor']);
 	$input['mantra_footercolor'] =  wp_kses_data($input['mantra_footercolor']);
 	$input['mantra_titlecolor'] =  wp_kses_data($input['mantra_titlecolor']);
@@ -132,6 +134,8 @@ global $mantra_defaults;
 	$input['mantra_googlefonttitle2'] = $mantra_googlefonttitle2;
 	$input['mantra_googlefontside2'] = $mantra_googlefontside2;
 	$input['mantra_googlefontsubheader2'] = $mantra_googlefontsubheader2;
+	
+	$input['mantra_fpsliderborderwidth'] =  intval(wp_kses_data($input['mantra_fpsliderborderwidth']));
 
 	$input['mantra_slideNumber'] =  intval(wp_kses_data($input['mantra_slideNumber']));
 	$input['mantra_slideSpecific'] = wp_kses_data($input['mantra_slideSpecific']);
@@ -183,6 +187,7 @@ global $mantra_defaults;
 
 	$input['mantra_fronttext1'] =  wp_kses_data($input['mantra_fronttext1']);
 	$input['mantra_fronttext2'] =  wp_kses_data($input['mantra_fronttext2']);
+	$input['mantra_fpsliderbordercolor'] =  wp_kses_data($input['mantra_fpsliderbordercolor']);
 	$input['mantra_fronttitlecolor'] =  wp_kses_data($input['mantra_fronttitlecolor']);
 	$input['mantra_fronttext3'] = trim( wp_kses_post($input['mantra_fronttext3']));
 	$input['mantra_fronttext4'] = trim (wp_kses_post($input['mantra_fronttext4']));

@@ -47,14 +47,17 @@ document.createElement('hgroup');
     jQuery(document).ready(function() {
 	// Add custom borders to images
     jQuery("#content img").addClass("<?php echo 'image'.$mantra_image;?>");
-	  jQuery(function () {
+	
+ <?php if ($mantra_options['mantra_mobile']=="Enable") { // If mobile view is enabled ?> 	
+	jQuery(function () {
 	// Add select navigation to small screens
     jQuery("#prime_nav").tinyNav({
 	header: true // Show header instead of the active item
 					});
 	});
     // Add responsive videos
-    jQuery("#container").fitVids();
+  jQuery("#container").fitVids(); 
+  <?php } ?>
 
     }); // document ready
 </script>
@@ -97,7 +100,7 @@ document.createElement('hgroup');
 			  <?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
 				<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'mantra' ); ?>"><?php _e( 'Skip to content', 'mantra' ); ?></a></div>
 				<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */
-				 wp_nav_menu( array( 'container_class' => 'menu-header', 'menu_id' =>'prime_nav', 'theme_location' => 'primary' ) ); ?>
+				 wp_nav_menu( array( 'container_class' => 'menu', 'menu_id' =>'prime_nav', 'theme_location' => 'primary' ) ); ?>
 			</nav><!-- #access -->
 		</div><!-- #masthead -->
 

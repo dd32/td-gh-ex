@@ -67,7 +67,7 @@ margin:0 auto;
 	margin:30px auto 0;
 	display:block;
 	float:none;
-	border:10px solid #eee;
+	border:<?php echo $mantra_fpsliderborderwidth.'px solid '.$mantra_fpsliderbordercolor; ?>;
 }
 
 #front-text1 h1 , #front-text2 h1{
@@ -148,13 +148,7 @@ float:left;
 .theme-default .nivo-controlNav a {
     background: none;
 	text-decoration:underline;
-	margin-right:5px;
-    display: block;
-    float: left;
-	text-align:center;
-    height: 16px;
-    text-indent:0;
-    width: 16px;
+	text-indent:0;
 }
 <?php } else if ($mantra_fpslidernav=="None") {?>
 .theme-default .nivo-controlNav {display:none;}

@@ -1,13 +1,16 @@
 /*
-Theme Name: Mantra
-Theme URI: http://www.riotreactions.com/mantra
-Description: Mantra is a do-it-yourself WordPress theme, featuring a pack of over 100 customization options and easy to use tweaks capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (1,2 or 3 columns), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 35 font-families plus all Google Fonts), text and header sizes, post metas, post excerpts, post formats, header and background images, custom menus, 27 social media links and icons, pins, bullets and much much more. With a fully responsive layout,a customizable showcase presentation page, animated slider, magazine and blog layouts, 8 widget areas, modern graphics and an easy and intuitive admin section, you can start creating your dream site right now.
-Author: Cryout Creations
-Author URI: http://www.cryoutcreations.com
-Version: 1.9.5.1
-License: GNU General Public License v2.0
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: black, red, blue, white, silver, light, dark, one-column, two-columns, three-columns, right-sidebar, left-sidebar, flexible-width, fixed-width, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, front-page-post-form, full-width-template,  microformats, post-formats, rtl-language-support,  sticky-post, theme-options, threaded-comments, translation-ready
+ * Theme Name: Mantra
+ * Theme URI: http://www.riotreactions.com/mantra
+ * Description: Mantra is a do-it-yourself WordPress theme, featuring a pack of over 100 customization options and easy to use tweaks capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (1,2 or 3 columns), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 35 font-families plus all Google Fonts), text and header sizes, post metas, post excerpts, post formats, header and background images, custom menus, 27 social media links and icons, pins, bullets and much much more. With a fully responsive layout,a customizable showcase presentation page, animated slider, magazine and blog layouts, 8 widget areas, modern graphics and an easy and intuitive admin section, you can start creating your dream site right now.
+ * Author: Cryout Creations
+ * Author URI: http://www.cryoutcreations.com
+ * Version: 1.9.6
+ * License: GNU General Public License v2.0
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * Tags: black, red, blue, white, silver, light, dark, one-column, two-columns, three-columns, right-sidebar, left-sidebar, flexible-width, fixed-width, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, front-page-post-form, full-width-template,  microformats, post-formats, rtl-language-support,  sticky-post, theme-options, threaded-comments, translation-ready
+ *
+ * Copyright (c) 2011-2012 Cryout Creations
+ * http://www.cryoutcreations.com
 */
 
 
@@ -208,7 +211,6 @@ code {
 -------------------------------------------------------------- */
 
 /* The main theme structure */
-#access .menu-header,
 div.menu,
 #colophon,
 #branding,
@@ -446,7 +448,7 @@ a:hover {
 }
 #site-title {
 	float: left;
-	font-size: 30px;
+	font-size: 36px;
 	line-height: 60px;
 	margin-top:10px;
 	margin-left:20px;
@@ -458,19 +460,22 @@ a:hover {
 	text-decoration: none;
 	font-variant: small-caps;
     letter-spacing: -0.02em;
- 	text-shadow: -2px -2px 0px #000;
+ 	-moz-text-shadow: -2px -2px 0px #000;
+	-webkit-text-shadow: -2px -2px 0px #000;
+	text-shadow: -2px -2px 0px #000;
 }
 #site-description {
 	display:inline;
 	float: left;
-	font-size: 18px;
+	font-size: 15px;
 	line-height:60px;
 	margin-top:10px;
 	margin-left:20px;
 	color:#999;
-	border-left:1px solid #666;
-	padding-left:20px;
+	padding-left:10px;
 	letter-spacing: 0.1em;
+	-moz-text-shadow: 0px -1px 0px #000;
+	-webkit-text-shadow: 0px -1px 0px #000;
 	text-shadow: 0px -1px 0px #000;
 }
 
@@ -484,137 +489,104 @@ a:hover {
 	margin: 0 auto;
 	margin-top:10px;
 }
-#access .menu-header,
-div.menu {
-	font-size: 14px;
-	margin-left: 12px;
 
-}
-#access .menu-header ul,
-div.menu ul {
-	list-style: none;
-	margin: 0;
+
+ #access  ul  li.current_page_item,  #access ul li.current-menu-item  {
+-moz-box-shadow:none;
+-webkit-box-shadow:none;
+box-shadow:none;
+background:#fff;
 }
 
-#access .menu-header ul.sub-menu li { 
-	padding:3px;
-	box-shadow: 3px 3px 3px #999; 
-	-moz-box-shadow: 3px 3px 3px #999; 
-	-webkit-box-shadow: 3px 3px 3px #999; 
-}
-
-#access .menu-header li,
-div.menu li {
-	float: left;
-	position: relative;
-	padding:0px;
-	background:url(images/menu.png) top left no-repeat;
-	height: 27px;
-	margin-left:10px;
-}
-
- #access   li.current_page_item {
-	background:url(images/menu_current.png) top left no-repeat;
-}
-
- #access  li.current-menu-item {
-	background:url(images/menu_current.png) top left no-repeat;
-}
 
 #access a {
+	display:block;
 	color: #5F5B5B;
-	display: block;
-	height: 27px;
-	margin-left:10px;
-	padding-right: 10px;
-	padding-top:4px;
-	padding-right:25px;
 	text-decoration: none;
-	font-weight:normal !important;
-	background:url(images/menu.png) top right no-repeat;
-	position:relative;
-	right:-10px;
+	padding:0.2em 1.2em;
+	font-size:14px;
 }
 
-#access .menu-header li:hover,
-div.menu li:hover, #access a:hover {
+#access ul  li {
+display:block;
+float:left;
+background:#FAFAFA;
+-webkit-border-radius:7px 7px 0 0;
+-moz-border-radius:7px 7px 0 0;
+border-radius:7px 7px 0 0;
+margin:0 3px;
+-moz-box-shadow:0 -3px 4px rgba(0,0,0,0.1) inset;
+-webkit-box-shadow:0 -3px 4px rgba(0,0,0,0.1) inset;
+box-shadow:0 -3px 4px rgba(0,0,0,0.1) inset;
+}
+
+#access a:hover {
 	color:#0C85CD ;
 }
 
 #access ul ul {
 	display: none;
 	position: absolute;
-	top: 29px;
-	left: 0px important;
-	float: left;
+	clear:both;
 	z-index: 99999;
-	background:url(images/menu_down.png)  0px 0px no-repeat;
-	padding:12px 0px 0px;
-	/*border-bottom:1px solid #CCC;*/
+	margin-left:0px;
+	-moz-box-shadow:0px 0px 3px #CCC ;
+	-webkit-box-shadow:0px 0px 3px #CCC;
+	box-shadow:0px 0px 3px #CCC;
 }
-#access ul ul li {
-	display:block !important;
-	background:#FFF !important;
-/*	border-left:1px solid #CCC;
-	border-right:1px solid #CCC;*/
-	margin-left:0 !important;
-	margin-right:0px !important;
-	/*padding-left:10px;
-	padding-right:10px;*/ /* disabled for submenu width fix */
-	padding-top:6px;
-
-}
-
-#access ul { }
-#access ul li { }
-#access ul li ul {
-      display: none; /* submenu width fix */ }
-
-#access ul ul li {  /* level 2 */
-      border: 0;
+#access ul ul li { /* level 2 */
+	  margin:0;
       width: 100%; /* submenu width fix */
-      border-left: 1px solid #EEE;
-      border-right: 1px solid #EEE;
-      border-bottom: 1px solid #EEE;
-      white-space: pre;
+      border-bottom: 1px solid rgba(220,220,220,0.3);
+     /* white-space: pre;*/
 
-       }
+	background:#FFF;
+	-webkit-border-radius: 0;
+	-moz-border-radius:0;
+	border-radius: 0;
+	-moz-box-shadow:none ;
+	-webkit-box-shadow:none ;
+	box-shadow:none;
+	display:block;
+	float:left;
+	clear:both;
+	min-width:150px;
+}
+
+
+#access ul ul ul {
+position:absolute;
+	left: 100%;
+	top: 0px;
+	margin:0;
+}
+
+
 #access ul ul ul li { /* level 3 */
       border: 0;
      /* width: 100%;*/
 	  width: auto;
 	  display: block;
       float: none;
-      border-top: 1px solid #EEE;
-      border-right: 1px solid #EEE;
-      border-bottom: 1px solid #EEE;
-      white-space: pre; /* submenu width fix */
- }
-#access ul ul a { 
-	display: block; 
-	padding: 3px 20px 0 10px !important; /* submenu width fix */  
+      border-bottom: 1px solid rgba(220,220,220,0.3);
+     /* white-space: pre; /* submenu width fix */
  }
 
+
 #access ul ul a, #access ul ul ul a {
-	margin:0 !important;
-	/*padding:0 !important;*/
-	left:0 !important;
+	display:block;
+	float:none;
 	color:#5F5B5B;
-	border-bottom:none;
-	background:none !important;
+	width:100% ;
+padding-top: 0.5em ;
+padding-bottom: 0.5em ;
 	}
 
 #access ul ul li:hover, #access ul ul ul li:hover {
-	background:#FCFCFC !important;
+	background:#FCFCFC ;
 	}
 
-#access ul ul ul {
-	left: 100%;
-	top: 0;
-	background:url(images/menu_right.png)  0px 0px no-repeat;
-	padding:0px 0px 0px 12px;
-	/*border:1px solid #CCC;*/
-}
+
 
 #access li:hover > a {
 	color:#0E85CD ;
@@ -631,7 +603,6 @@ div.menu li:hover, #access a:hover {
 #access ul li.current-menu-item > a{
 
 	color: #000 !important;
-	background:url(images/menu_current.png) top right no-repeat;
 }
 
 #access ul ul li.current_page_item ,
@@ -649,7 +620,6 @@ div.menu li:hover, #access a:hover {
 * html #access ul li.current-menu-parent a,
 * html #access ul li a:hover {
 	color: #5F5B5B ;
-	background:url(images/menu_current.png) top right no-repeat;
 }
 
 
@@ -1338,8 +1308,11 @@ h3#reply-title {
 	margin-bottom: 0;
 }
 h3#comments-title {
-	padding-top:4px;padding-bottom:4px;padding-left:10px;
-	margin-top	: 20px; margin-bottom:20px;;
+	padding-top:4px;
+	padding-bottom:4px;
+	padding-left:10px;
+	margin-top: 20px;
+	margin-bottom:20px;;
 }
 .commentlist {
 	list-style: none;
@@ -1353,6 +1326,8 @@ h3#comments-title {
 	padding: 0 10px 10px 56px;
 	position: relative;
 	-moz-box-shadow:3px 3px 5px #EEE;
+	-webkit-box-shadow:3px 3px 5px #EEE;
+	box-shadow:3px 3px 5px #EEE;
 	background:#FFF;
 	background-image:none;
 	list-style:none;
@@ -1447,9 +1422,7 @@ a.comment-edit-link:hover {
 	border:1px solid #EEE;
 	margin-right:10px;
 	margin-bottom:10px;
-	-moz-box-shadow: 3px 3px 5px #EEEEEE;
 }
-
 
 .nopassword,
 .nocomments, .nocomments2 {
@@ -1600,13 +1573,13 @@ display:block;
 	color:#555;
 	border:1px solid #CCC;
 	border-radius:5px;
-	-moz-border-radius:3px;
-	-webkit-border-width:3px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
 	padding:2px 5px;
 	background-color:#FFF;
-	box-shadow: inset 0px -10px 10px 0px #EEE;
 	-moz-box-shadow: inset 0px -10px 10px 0px #EEE;
 	-webkit-box-shadow: inset 0px -10px 10px 0px #EEE;
+	box-shadow: inset 0px -10px 10px 0px #EEE;
 }
 
 #respond .form-submit input#submit:hover {
@@ -1671,9 +1644,9 @@ border:none;
 cursor:pointer;
 font-size:12px;
 color:#EEE;
-text-shadow:0px -1px 0px #000;
--moz-text-shadow:0px -1px 0px #000;
+-moz-text-shadow::0px -1px 0px #000;
 -webkit-text-shadow:0px -1px 0px #000;
+text-shadow:0px -1px 0px #000;
 font-family:Arial !important;
 }
 
@@ -1710,11 +1683,10 @@ color:#0D85CC;
 	margin-bottom:10px;
 	background-color:#333;
 	width:105%;
-	border-radius-topleft:10px;
-	border-top-left-radius:10px;
-	-webkit-border-top-left-radius:10px;
-	-moz-border-radius-topleft:10px;
-	-webkit-border-radius-topleft:10px;
+	-moz-border-radius:10px 0 0 0;
+	-webkit-border-radius:10px 0 0 0;
+	border-radius:10px 0 0 0;
+
 }
 
 #footer-widget-area .widget-title {
@@ -1756,8 +1728,6 @@ color:#0D85CC;
 .widget-container li {
 	display:block;float:none;
 	margin:4px 0;
-
-
 }
 
 .widget-area a:link,
@@ -1771,8 +1741,6 @@ color:#0D85CC;
 .widget-area a:hover {
 	color:#333;
 }
-
-
 
 .widget-area .entry-meta {
 	font-size: 11px;
@@ -1807,11 +1775,9 @@ color:#0D85CC;
 	color: #000;
 }
 #wp-calendar tbody td {
-
 	padding: 3px 0 2px;
 	text-align: center;
 	border:1px solid #EEE;
-
 }
 
 #wp-calendar tbody td:hover {
@@ -1879,8 +1845,6 @@ margin-top:10px;
 	text-align:center;
 	color:#999;
 }
-
-
 
 
 
@@ -2161,9 +2125,6 @@ background: url("images/icon-back.png") repeat;
 -webkit-border-radius:10px;
 border-radius:10px;
 padding:10px;
--moz-box-shadow: 0px 0px 2px #AAA;
--webkit-box-shadow: 0px 0px 2px #AAA;
-box-shadow: 0px 0px 2px #AAA;
 }
  .sticky hgroup {
 
@@ -2677,13 +2638,6 @@ padding:10px;
 .short-button-color:hover, .short-button-light:hover, .short-button-dark:hover {
 text-decoration:underline;
 }
-
-
-
-
-
-
-
 
 
 

@@ -14,6 +14,7 @@ The Mantra Theme uses:
 - Nivo Slider by Gilbert Pellegrom / under the MIT license / http://nivo.dev7studios.com/
 - tinyNav by @viljamis / under the MIT license / http://tinynav.viljamis.com/
 - FitVids by Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com
+- CSS3 PIE / Dual-licensed  Apache License 2.0 or GPLv2 / http://css3pie.com/
 
 Mantra is available in these languages:
 English - default
