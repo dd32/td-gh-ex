@@ -1,0 +1,512 @@
+/*
+Theme Name: Commodore
+Description: HTML5 and CSS3 Theme in the style of the good old Commodore 64.
+Author: United Networks
+Version: 1.0
+Tags: blue, light, two-columns, one-column, right-sidebar
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Theme URI: http://www.myfictionalkid.com
+Author URI: http://www.unitednetworksonline.com/themes/
+*/
+@font-face {
+font-family: c64;
+src: local('c64'), url('C64.ttf') format('truetype');
+}
+html {
+ height: 100%;
+}
+body {
+margin: auto;
+    height: 100%;
+    width: 90%;
+padding: 0;
+font-family: c64, courier, monospaced;
+color: #A6A1FF;
+background-color: #A6A1FF;
+position: relative;
+font-size: 14px;
+line-height: 1.7em;
+background-size: 100%;
+min-height: 100%;
+}
+#container {
+    background:#4342E6;
+    margin: 50px auto;
+    max-width: 960px;
+}
+.content {
+    padding: 5px;
+    min-height: 500px;
+}
+.content a {
+color: #A6A1FF;
+}
+.content a:hover {
+    background-color: white;
+    color: black;
+    text-decoration: none;
+}
+a:hover {
+    background-color: white;
+    color: black;
+    text-decoration: none;
+}
+mark {
+background-color: #fff;
+font-weight: bold;
+color: #000;
+}
+#wrapper {
+width: 960px;
+margin: 0 auto;
+}
+.header {
+padding: 10px 0 20px 0;
+    text-align: center;
+}
+.header h1 {
+text-align: center;
+font-size: 30px;
+font-weight: bold;
+letter-spacing: -0.06em;
+line-height: 30px;
+width: 930px;
+margin: 0 auto 5px auto;
+}
+.header h1 a {
+color: #A6A1FF;
+text-decoration: none;
+}
+.header h1 a:hover {
+background-color: white;
+color: black;
+text-decoration: none;
+}
+.header h2 a:hover {
+background-color: white;
+color: black;
+text-decoration: none;
+}
+.header p {
+font-size: 14px;
+font-weight: bold;
+padding: 0 0 0 0;
+margin: 0 0 0 0;
+letter-spacing: 0em;
+width: 930px;
+margin: 0 auto;
+}
+body.has_sidebar .content {
+width: 720px;
+margin: 0 auto;
+position: relative;
+float: left;
+}
+#cursor {
+    /*position:absolute;
+*/
+    background:#A6A1FF;
+    width:19px;
+    height:19px;
+    font-size:1px;
+    position: relative;
+    margin-left: 1px;
+display:inline-block;
+vertical-align:top;
+}
+section {
+display: block;
+}
+article.post header h2, article.post header h1, article.page header h1, nav aside h3, .comments h2 {
+font-size: 20px;
+    margin: 0px}
+article.post section,  article.page section, nav aside ul {
+ padding: 15px;
+ }
+.post a:hover {
+background-color: #fff;
+color: #000;
+text-decoration: none;
+}
+.post a img {
+border: 1px solid #ccc;
+padding: 5px;
+}
+.post a:hover img {
+border-color: black;
+}
+.post time a {
+  color: inherit;
+  text-decoration: none;
+}
+blockquote {
+  padding: 0 40px;
+  position: relative;
+  border: 1px dashed #ccc;
+  margin: 0 0 20px 0;
+}
+blockquote cite {
+ font-weight: bold;
+ }
+blockquote:before {
+  content: '\201C';
+  font-size: 55px;
+  color: #ccc;
+  position: absolute;
+  top: 0px;
+  left: 10px;
+}
+blockquote:after {
+  content: '\201D';
+  font-size: 55px;
+  color: #ccc;
+  position: absolute;
+  bottom: -30px;
+  right: 10px;
+}
+table {
+ width: 100%;
+ border: 1px solid #ccc;
+  font-size: 12px;
+ margin-bottom: 20px;
+}
+th {
+ background-color: #666;
+color: #fff;
+text-align: left;
+}
+th, td {
+padding: 5px;
+}
+dl {
+font-size: 12px;
+}
+dt {
+font-weight: bold;
+}
+dd {
+margin-bottom: 5px;
+margin-left: 10px;
+}
+address {
+ font-size: 12px;
+}
+acronym {
+border-bottom: 1px dashed #ccc;
+}
+s, strike, del {
+text-decoration: line-through;
+}
+.size-full {
+max-width: 550px;
+height: auto;
+overflow: hidden;
+}
+footer {
+text-align: center;
+color: #A6A1FF;
+padding: 10px 0;
+display: block;
+clear: both;
+}
+footer a {
+color: inherit;
+}
+nav {
+display: block;
+text-align: left;
+font-size: 12px;
+width: 200px;
+float: right;
+}
+nav ul {
+list-style: none;
+line-height: 1.6em;
+padding: 0;
+margin: 0 0 0 0;
+color: #666;
+}
+nav a {
+color: #999;
+text-decoration: none;
+}
+/* comments */
+#comments, .nocomments {
+ clear: both;
+ }
+.commentlist {
+list-style: none;
+padding: 15px 15px 0 15px;
+margin: 0;
+}
+.children {
+ list-style: none;
+ }
+.comment {
+padding: 0;
+position: relative;
+min-height: 60px;
+border-bottom: 1px dotted #fff;
+margin-bottom: 20px;
+}
+.comment-body {
+ padding-left: 90px;
+  margin-top: 0px;
+}
+.comment p {
+font-size: 12px;
+line-height: 1.6em;
+margin-bottom: 10px;
+}
+.vcard {
+font-size: 12px;
+line-height: 1.6em;
+}
+.commentmetadata {
+font-size: 12px;
+line-height: 1.6em;
+}
+.even {
+}
+.avatar {
+position: absolute;
+top: 0px;
+left: 0px;
+}
+/* ping backs */
+.pingback, .trackback {
+padding: 0;
+position: relative;
+min-height: 60px;
+border-bottom: 1px dotted #fff;
+margin-bottom: 20px;
+}
+.pingback p, .trackback p {
+font-size: 12px;
+line-height: 1.6em;
+margin-bottom: 10px;
+}
+div.reply {
+padding-bottom: 10px;
+clear: both;
+}
+a.comment-reply-link {
+font-size: 12px;
+font-weight: bold;
+}
+/* comment form */
+#respond {
+clear: both;
+padding: 15px 15px 15px 15px;
+}
+#respond h3 {
+margin: 0 0 15px 0;
+padding: 0 0 0 0;
+}
+#commentform p {
+clear: both;
+}
+#commentform p input, #commentform p textarea {
+width: 400px;
+float: right;
+}
+p.form-allowed-tags {
+clear: both;
+padding-top: 20px;
+color: #999;
+}
+p.form-submit input {
+width: auto !important;
+}
+/* archive thumbnail thingy */
+#archive article {
+position: relative;
+}
+#archive article div {
+margin: 0 0 0 130px;
+}
+#archive article img {
+position: absolute;
+padding: 5px;
+border: 1px solid #eee !important;
+top: 75px;
+left: 0px;
+}
+/* footer nav thingy */
+.prevnext {
+list-style: none;
+padding: 0;
+margin: 0;
+text-align: center;
+font-size: 12px;
+width: 720px;
+}
+.prevnext a {
+color: #fff;
+background-color: #000;
+text-decoration: none;
+padding: 3px 5px;
+}
+.prevnext a:hover {
+color: #999;
+}
+.prevnext li {
+display: inline;
+padding: 10px;
+}
+/* compulsory wordpress stuff */
+.wp-caption {
+margin-bottom: 20px;
+text-align: center;
+overflow: hidden;
+max-width: 528px !important;
+height: auto;
+}
+.wp-caption img {
+margin: 5px;
+border: none;
+  margin: 0 0 2px 0;
+}
+.wp-caption p.wp-caption-text {
+color: #888;
+font-size: 12px;
+margin: 5px 0 5px 0;
+}
+.gallery .gallery-caption {
+color: #888;
+font-size: 12px;
+margin: 0 0 12px;
+}
+.alignleft,img.alignleft {
+display: inline;
+float: left;
+margin-right: 24px;
+margin-top: 4px;
+}
+.alignright,img.alignright {
+display: inline;
+float: right;
+margin-left: 24px;
+margin-top: 4px;
+}
+.aligncenter,img.aligncenter {
+clear: both;
+display: block;
+margin-left: auto;
+margin-right: auto;
+}img.alignleft,img.alignright,img.aligncenter {
+margin-bottom: 12px;
+}
+.sticky {
+ border: 1px dashed #ccc;
+ padding: 10px;
+}
+.commentlist .bypostauthor {
+  font-weight: bold;
+}
+hr.clearfix {
+ clear: both;
+ visibility: hidden;
+ }
+
+/* widgets */
+.widget_rss {
+position: relative;
+}
+.widget_rss ul a {
+ display: block;
+ }
+.widget_rss ul li {
+  margin-bottom: 10px;
+}
+.widget_rss .rss-date {
+  color: #ccc;
+  display: block;
+}
+.widget_rss .rssSummary {
+  line-height: 1.6em;
+   }
+a.rsswidget  img {
+position: absolute;
+top: 5px;
+left: 15px;
+opacity: 0.5;
+}
+.widget_text div {
+ color: #999;
+padding: 15px;
+}
+.widget_tag_cloud .tagcloud {
+padding: 15px;
+font-size: 0.9em;
+}
+.widget_recent_comments ul li a {
+  display: block;
+}
+.widget_search form {
+padding: 15px;
+text-align: right;
+}
+.widget_search form label {
+display: none;
+}
+.widget_search form input#s {
+background-color: #000;
+border: 1px solid #666;
+padding: 5px;
+width: 150px;
+color: #fff;
+}
+.widget_pages ul.children {
+padding: 0 0 0 15px !important;
+margin: 0 0 0 0 !important;
+}
+#wp-calendar {
+ font-size: 0.8em;
+ width: 140px;
+  border-collapse: collapse;
+}
+#wp-calendar td, #wp-calendar th {
+  padding: 0px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+#wp-calendar td {
+ color: #999;
+ }
+#wp-calendar caption {
+ font-weight: bold;
+ }
+.pie_search_form #s{
+left: -1000px;
+position: absolute;
+border:0 none;
+background:transparent none;
+cursor:none;
+color: #A6A1FF;
+font-family: c64,courier,monospaced;
+font-size: 14px;
+line-height: 1.7em;
+}
+#terminal {
+margin: 1px 1px 15px;
+cursor: text;
+height: auto;
+overflow: hidden;
+max-width:900px;
+}
+#writer {
+color: #A6A1FF;
+display: inline-block;
+font-family: c64,courier,monospaced;
+font-size: 14px;
+height:22px;
+line-height: 1.7em;
+overflow: hidden;
+max-width: 870px;
+vertical-align:top;
+}
+#getter {
+margin: 1px;
+}
