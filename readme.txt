@@ -5,7 +5,7 @@ Theme URI: http://www.sampression.com/sampression-lite/
 Author: Sampression
 Author URI: http://www.sampression.com
 
-Version: 1.1.2.1.1
+Version: 1.1.2.1.2
 License: GNU General Public License v2 or later
 License URI: license.txt
 */
@@ -14,10 +14,10 @@ License URI: license.txt
 Sampression Lite is a fully responsive WordPress theme, perfect for blogging. It's lightweight responsive design allows this theme to adapt across a range of screen sizes. Besides an elegant design, Sampression Lite features customizable menus and widgets, along with a threaded comments section. It supports sticky notes with special effects and allows the best placement of feature images on posts. Under the advanced tab this theme allows Admin to insert codes in the header and footer section.
 
 == Features ==  
-Responsive, Theme Options, Custom Widgets, Custom Menu, iSotope jQuery, Sticky Post, First level menu only
+Responsive, Theme Options, Custom Widgets, Custom Menu, iSotope jQuery, Sticky Post, Single layer menu is showing
 
 == Tags ==
-Tags Used: white, orange, green, one-column, two-columns, flexible-width, featured-image-header, featured-images, post-formats, sticky-post, theme-options, threaded-comments
+Tags: white, orange, green, one-column, two-columns, flexible-width, custom-menu, featured-image-header, featured-images, post-formats, sticky-post, theme-options, threaded-comments, right-sidebar
 
 == Installation ==
 
@@ -55,3 +55,9 @@ Tags Used: white, orange, green, one-column, two-columns, flexible-width, featur
  9. Copyright & License
  = Sampression Lite, Copyright 2012 Sampression.com
  = Sampression Lite is distributed under the terms of the GNU GPL.
+ 
+ == Changelog ==
+Version 1.1.2.1.2
+ = Fixed repeating latest posts twice in home page.
+ = Fixed right sidebar widgetize problem.
+ = Fixed style for right sidebar search widget.

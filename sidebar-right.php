@@ -14,7 +14,7 @@ if ( !defined('ABSPATH')) exit;
 
 	<?php
 	// Showing Default Widgets untill User put any widget in "Right Sidebar"
-	 if (!dynamic_sidebar('interior-sidebar')) : ?>
+	 if (!dynamic_sidebar('right-sidebar')) : ?>
             <section class="widget">
                 <header class="widget-title"><?php _e('Most Popular', 'sampression'); ?></header>
                 <div class="widget-entry">

@@ -4,12 +4,12 @@ Theme URI: http://www.sampression.com/sampression-lite/
 Author: Sampression
 Author URI: http://www.sampression.com
 
-Description: Sampression Lite is a fully responsive theme, perfect for blogging. It's lightweight responsive design allows this theme to adapt across a range of screen sizes. Besides an elegant design, Sampression Lite features customizable menus and widgets, along with a threaded comments section. It supports sticky notes with special effects and allows the best placement of feature images on posts. Under the advanced tab this theme allows Admin to insert codes in the header and footer section.
+Description: Sampression Lite is a fully responsive theme, perfect for blogging. It's lightweight responsive design allows this theme to adapt across a range of screen sizes. Besides an elegant design, Sampression Lite features customizable menus and widgets, along with a threaded comments section. It supports sticky notes with special effects and allows the best placement of feature images on posts. Currently it is supporting single layer menu only.
 
-Version: 1.1.2.1.1
+Version: 1.1.2.1.2
 License: GNU General Public License v2 or later
 License URI: license.txt
-Tags: white, orange, green, one-column, two-columns, flexible-width, featured-image-header, featured-images, post-formats, sticky-post, theme-options, threaded-comments
+Tags: white, orange, green, one-column, two-columns, flexible-width, custom-menu, featured-image-header, featured-images, post-formats, sticky-post, theme-options, threaded-comments, right-sidebar
 */
 
 /* Table of Content
@@ -30,7 +30,7 @@ Tags: white, orange, green, one-column, two-columns, flexible-width, featured-im
 	#Gallery
 	-----------------------------------------------
 	
-	#Common Classes
+	#Common Styles
 	#Site Styles
 	#Media Queries
 	*/
@@ -1012,6 +1012,14 @@ body.page .meta .overflow-hidden {
 	}
 .widget-commentlist .cmt-txt {
 	overflow:hidden;
+	}
+
+/* interior widget search */
+.sidebar-right .widget.widget_search .widget-entry {
+	margin-left:0;
+	}
+.sidebar-right #searchform input#s {
+	width:166px;
 	}
 
 /* Single */

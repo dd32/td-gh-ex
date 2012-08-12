@@ -23,16 +23,18 @@ get_header(); ?>
   
 	<?php 
 		// Show only one Sticky Post
+	$sticky = get_option( 'sticky_posts' );
 	$args = array(
 		'posts_per_page' => 1,
-		'post__in'  => get_option( 'sticky_posts' ),
+		'post__in'  => $sticky,
 		'ignore_sticky_posts' => 1
 	);
 	query_posts( $args );
-	
+	if ( $sticky[0] ) {
 	while (have_posts()) : the_post();
 		get_template_part( 'loop', 'index' ); 
-	endwhile; 
+	endwhile;
+	}
 	wp_reset_query();
 	
 	// Exclude Sticky Posts and show remaining normal posts
