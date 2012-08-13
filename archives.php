@@ -41,13 +41,13 @@
 <h3><a href="<?php the_permalink()?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title()?></a></h3>
 <div class="posttext"><?php the_excerpt(); ?></div>
 </div>
-<div class="postreadmore"><h5><a href="<?php the_permalink()?>" title="Read more on <?php the_title_attribute(); ?>" rel="bookmark">Read more</a></h5></div>
+<div class="postreadmore"><h5><a href="<?php the_permalink()?>" title="<?php _e('Read more on','appliance');?> <?php the_title_attribute(); ?>" rel="bookmark"><?php _e('Read more','appliance');?></a></h5></div>
 <div class="smldivider"></div>
 <div class="postcats"><?php
 $category = get_the_category(); 
 echo $category[0]->cat_name;
 ?></div>
-<div class="postcomments"><a href="<?php the_permalink()?>#comments" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php comments_number( '0 Comments', '1 Comment', '% Comments' ); ?></a></div>
+<div class="postcomments"><a href="<?php the_permalink()?>#comments" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php comments_number ('0 Comments', '1 Comment', '% Comments', 'appliance'); ?></a></div>
 </div>
 
 <?php endwhile; ?>

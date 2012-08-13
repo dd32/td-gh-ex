@@ -8,8 +8,8 @@
 <?php the_content()?>
 			
 			<div class="postfooter">
-			<?php the_date()?> <?php wp_link_pages('before=Pages&after='); ?><br/>
-			Categories: <?php the_category(', '); ?> <?php if(has_tag()){the_tags( _e('Tags','appliance') . ': ', ', ');}?>
+			<?php the_date()?> <?php wp_link_pages( array( 'before' => __('Pages', 'appliance'), 'after' =>'' ) ); ?><br/>
+			<?php _e('Categories','appliance');?>: <?php the_category(', '); ?> <?php if(has_tag()){the_tags( _e('Tags','appliance') . ': ', ', ');}?>
 			</div>
 			
 		

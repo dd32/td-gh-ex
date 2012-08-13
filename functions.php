@@ -112,13 +112,13 @@ function appliance_filter_wp_title( $old_title, $sep, $sep_location ){
 			
 		// find the type of index page this is
 		if( is_category() ) 
-				$insert = $ssep . 'Category';
+				$insert = $ssep . __( 'Category', 'appliance' );
 		elseif( is_tag() ) 
-				$insert = $ssep . 'Tag';
+				$insert = $ssep . __( 'Tag', 'appliance' );
 		elseif( is_author() ) 
-				$insert = $ssep . 'Author';
+				$insert = $ssep . __( 'Author', 'appliance' );
 		elseif( is_year() || is_month() || is_day() ) 
-				$insert = $ssep . 'Archives';
+				$insert = $ssep . __( 'Archives', 'appliance' );
 		else 
 				$insert = NULL;
 			
