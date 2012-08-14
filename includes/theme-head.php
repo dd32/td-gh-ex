@@ -25,7 +25,7 @@ function graphene_build_style( $styles, $extra_args = array() ){
 				$opts[$key] = $graphene_settings[$opt];
 			}
 			$args = array_merge( array( $style ), $opts, $extra_args );
-			$out .= call_user_func_array( 'sprintf', $args );
+			if ( $args ) $out .= call_user_func_array( 'sprintf', $args );
 		}
 	}
 	
@@ -119,11 +119,11 @@ function graphene_get_custom_style(){
 		$style .= '.header_title, .header_title a, .header_title a:visited, .header_title a:hover, .header_desc {color:#' . $header_textcolour . ';}';
 		
 	/* Set the width of the bottom widget items if number of columns is specified */
-	if ( $widgetcolumn != $graphene_defaults['footerwidget_column'] ) {
+	if ( $widgetcolumn != $graphene_defaults['footerwidget_column'] && $widgetcolumn) {
 		$widget_width = floor( ( ( ( $container_width - $gutter * 2 ) - 20 * ( $widgetcolumn - 1 ) ) / $widgetcolumn ) - 20 );
 		$style .= '#sidebar_bottom .sidebar-wrap{width:' . $widget_width . 'px}';
 	}
-	if ( $graphene_settings['alt_home_footerwidget'] && $widgetcolumn_alt != $graphene_defaults['alt_footerwidget_column'] ) {
+	if ( $graphene_settings['alt_home_footerwidget'] && $widgetcolumn_alt != $graphene_defaults['alt_footerwidget_column'] && $widgetcolumn_alt ) {
 		$widget_width = floor( ( ( ( $container_width - $gutter * 2 ) - 20 * ( $widgetcolumn_alt - 1 ) ) / $widgetcolumn_alt ) - 20 );
 		$style .= '.home #sidebar_bottom .sidebar-wrap{width:' . $widget_width . 'px}';
 	}
@@ -175,7 +175,7 @@ function graphene_get_custom_style(){
 	$font_style .= ( $graphene_settings['header_title_font_size']) ? 'font-size:'.$graphene_settings['header_title_font_size'].';' : '';
 	$font_style .= ( $graphene_settings['header_title_font_weight']) ? 'font-weight:'.$graphene_settings['header_title_font_weight'].';' : '';
 	$font_style .= ( $graphene_settings['header_title_font_style']) ? 'font-style:'.$graphene_settings['header_title_font_style'].';' : '';
-	if ( $font_style ) { $style .= '.header_title { '.$font_style.' }'; }
+	if ( $font_style ) { $style .= '#header .header_title { '.$font_style.' }'; }
 
 	/* Header description text style */ 
 	$font_style = '';
@@ -184,7 +184,7 @@ function graphene_get_custom_style(){
 	$font_style .= ( $graphene_settings['header_desc_font_lineheight']) ? 'line-height:'.$graphene_settings['header_desc_font_lineheight'].';' : '';
 	$font_style .= ( $graphene_settings['header_desc_font_weight']) ? 'font-weight:'.$graphene_settings['header_desc_font_weight'].';' : '';
 	$font_style .= ( $graphene_settings['header_desc_font_style']) ? 'font-style:'.$graphene_settings['header_desc_font_style'].';' : '';
-	if ( $font_style ) { $style .= '.header_desc { '.$font_style.' }'; }
+	if ( $font_style ) { $style .= '#header .header_desc { '.$font_style.' }'; }
 	
 	/* Content text style */ 
 	$font_style = '';
@@ -252,7 +252,10 @@ function graphene_get_custom_style(){
 function graphene_get_custom_colours( $hook_suffix = '', $force_all = false ){
 	global $graphene_settings, $graphene_defaults;
 	
-	if ( ! $hook_suffix && is_admin() ) $hook_suffix = get_current_screen()->base;
+	if ( ! $hook_suffix && is_admin() ) {
+		$current_screen = get_current_screen();
+		$hook_suffix = $current_screen->base;
+	}
 	$tab = ( isset( $_GET['tab'] ) ) ? $_GET['tab'] : '';
     
 	$style = '';
@@ -266,6 +269,7 @@ function graphene_get_custom_colours( $hook_suffix = '', $force_all = false ){
 													background: %2$s;
 													background: -moz-linear-gradient(%1$s, %2$s);
 													background: -webkit-linear-gradient(%1$s, %2$s);
+													background: -o-linear-gradient(%1$s, %2$s);
 													-ms-filter: "progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColorStr=\'%1$s\', EndColorStr=\'%2$s\')";
 													background: linear-gradient(%1$s, %2$s);
 												}',
@@ -281,7 +285,8 @@ function graphene_get_custom_colours( $hook_suffix = '', $force_all = false ){
 														background: %2$s;
 														background: -moz-linear-gradient(%1$s, %2$s);
 														background: -webkit-linear-gradient(%1$s, %2$s);
-														-ms-filter: "progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColorStr=\'%1$s\', EndColorStr=\'%2$s\')";
+														background: -o-linear-gradient(%1$s, %2$s);
+														-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr=\'%1$s\', EndColorStr=\'%2$s\')";
 														background: linear-gradient(%1$s, %2$s);
 													}',
 					'menu_primary_border'		=> '#header-menu-wrap {border-bottom: 1px solid %s}',
@@ -292,6 +297,7 @@ function graphene_get_custom_colours( $hook_suffix = '', $force_all = false ){
 														background: %2$s;
 														background: -moz-linear-gradient(%1$s, %2$s);
 														background: -webkit-linear-gradient(%1$s, %2$s);
+														background: -o-linear-gradient(%1$s, %2$s);
 														-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr=\'%1$s\', EndColorStr=\'%2$s\')";
 														background: linear-gradient(%1$s, %2$s);
 													}',
@@ -307,6 +313,7 @@ function graphene_get_custom_colours( $hook_suffix = '', $force_all = false ){
 														background: %2$s;
 														background: -moz-linear-gradient(%1$s, %2$s);
 														background: -webkit-linear-gradient(%1$s, %2$s);
+														background: -o-linear-gradient(%1$s, %2$s);
 														-ms-filter: "progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColorStr=\'%1$s\', EndColorStr=\'%2$s\')";
 														background: linear-gradient(%1$s, %2$s);
 													}',
@@ -316,6 +323,7 @@ function graphene_get_custom_colours( $hook_suffix = '', $force_all = false ){
 														background: %2$s;
 														background: -moz-linear-gradient(%1$s, %2$s);
 														background: -webkit-linear-gradient(%1$s, %2$s);
+														background: -o-linear-gradient(%1$s, %2$s);
 														-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr=\'%1$s\', EndColorStr=\'%2$s\')";
 														background: linear-gradient(%1$s, %2$s);
 													}',
@@ -341,6 +349,7 @@ function graphene_get_custom_colours( $hook_suffix = '', $force_all = false ){
 														background: %2$s;
 														background: -moz-linear-gradient(%1$s, %2$s);
 														background: -webkit-linear-gradient(%1$s, %2$s);
+														background: -o-linear-gradient(%1$s, %2$s);
 														-ms-filter: "progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColorStr=\'%1$s\', EndColorStr=\'%2$s\')";
 														background: linear-gradient(%1$s, %2$s);
 													}',
@@ -350,6 +359,7 @@ function graphene_get_custom_colours( $hook_suffix = '', $force_all = false ){
 														background: %2$s;
 														background: -moz-linear-gradient(%1$s, %2$s);
 														background: -webkit-linear-gradient(%1$s, %2$s);
+														background: -o-linear-gradient(%1$s, %2$s);
 														-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr=\'%1$s\', EndColorStr=\'%2$s\')";
 														background: linear-gradient(%1$s, %2$s);
 													}',
@@ -373,10 +383,10 @@ function graphene_get_custom_colours( $hook_suffix = '', $force_all = false ){
 		$colours = array(
 						'bg_widget_item'			=> '.sidebar div.sidebar-wrap{background-color: %s}',
 						'bg_widget_box_shadow'		=> '.sidebar div.sidebar-wrap{
-														-moz-box-shadow: 0 0 5px %s;
-														-webkit-box-shadow: 0 0 5px %s;
-														box-shadow: 0 0 5px %s;
-													}',
+															-moz-box-shadow: 0 0 5px %1$s;
+															-webkit-box-shadow: 0 0 5px %1$s;
+															box-shadow: 0 0 5px %1$s;
+														}',
 						'bg_widget_list'			=> '.sidebar ul li{border-color: %s}',
 						'bg_widget_header_border' 	=> '.sidebar h3{border-color: %s}',
 						'bg_widget_title'			=> '.sidebar h3, .sidebar h3 a, .sidebar h3 a:visited{color: %s}',
@@ -386,6 +396,7 @@ function graphene_get_custom_colours( $hook_suffix = '', $force_all = false ){
 															background: %2$s;
 															background: -moz-linear-gradient(%1$s, %2$s);
 															background: -webkit-linear-gradient(%1$s, %2$s);
+															background: -o-linear-gradient(%1$s, %2$s);
 															-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr=\'%1$s\', EndColorStr=\'%2$s\')";
 															background: linear-gradient(%1$s, %2$s);
 														}',
@@ -401,6 +412,7 @@ function graphene_get_custom_colours( $hook_suffix = '', $force_all = false ){
 																background: %2$s;
 																background: -moz-linear-gradient(left top,%1$s, %2$s);
 																background: -webkit-linear-gradient(left top,%1$s, %2$s);
+																background: -o-linear-gradient(%1$s, %2$s);
 																-ms-filter: "progid:DXImageTransform.Microsoft.gradient(gradientType=1,startColorStr=\'%1$s\', EndColorStr=\'%2$s\')";
 																background: linear-gradient(left top,%1$s, %2$s);
 															}',
@@ -415,6 +427,7 @@ function graphene_get_custom_colours( $hook_suffix = '', $force_all = false ){
 									background: %5$s;
 									background: -moz-linear-gradient(%1$s,%5$s);
 									background: -webkit-linear-gradient(%1$s,%5$s);
+									background: -o-linear-gradient(%1$s, %5$s);
 									-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr=\'%1$s\', EndColorStr=\'%5$s\')";
 									background: linear-gradient(%1$s,%5$s);
 									border-color: %5$s;
@@ -428,6 +441,7 @@ function graphene_get_custom_colours( $hook_suffix = '', $force_all = false ){
 									background: %5$s;
 									background: -moz-linear-gradient(%1$s,%6$s);
 									background: -webkit-linear-gradient(%1$s,%6$s);
+									background: -o-linear-gradient(%1$s, %6$s);
 									-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr=\'%1$s\', EndColorStr=\'%6$s\')";
 									background: linear-gradient(%1$s,%6$s);
 									color: %2$s;
@@ -445,6 +459,7 @@ function graphene_get_custom_colours( $hook_suffix = '', $force_all = false ){
 												  background: %2$s;
 												  background: -moz-linear-gradient(left top,%1$s, %2$s);
 												  background: -webkit-linear-gradient(left top,%1$s, %2$s);
+												  background: -o-linear-gradient(left top,%1$s, %2$s);
 												  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(gradientType=1,startColorStr=\'%1$s\', EndColorStr=\'%2$s\')";
 												  background: linear-gradient(left top,%1$s, %2$s);
 											  	}',
@@ -501,6 +516,7 @@ function graphene_get_custom_colours( $hook_suffix = '', $force_all = false ){
 								  background: %2$s;
 								  background: -moz-linear-gradient(left top,%1$s, %2$s);
 								  background: -webkit-linear-gradient(left top,%1$s, %2$s);
+								  background: -o-linear-gradient(left top,%1$s, %2$s);
 								  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(gradientType=1,startColorStr=\'%1$s\', EndColorStr=\'%2$s\')";
 								  background: linear-gradient(left top,%1$s, %2$s);
 							  }',
@@ -671,6 +687,7 @@ function graphene_ie_css3(){ ?>
       <style type="text/css" media="screen">
       	#footer, div.sidebar-wrap, .block-button, .featured_slider, #slider_root, #nav li ul, .pie{behavior: url(<?php echo get_template_directory_uri(); ?>/js/PIE.php);}
         .featured_slider{margin-top:0 !important;}
+        #header-menu-wrap {z-index:5}
       </style>
     <![endif]-->
     <?php

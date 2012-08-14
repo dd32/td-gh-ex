@@ -166,7 +166,8 @@ function graphene_post_nav(){
 	global $graphene_settings;
 	
 	$args = array(
-				'format' 		=> '&laquo; %link',
+				'format_prev'	=> '&laquo; %link',
+				'format_next'	=> '%link &raquo;',
 				'link'			=> '%title',
 				'in_same_cat' 	=> false,
 				'excluded_cats' => '',
@@ -178,8 +179,8 @@ function graphene_post_nav(){
 	$args = apply_filters( 'graphene_post_nav_args', $args );
 	?>
 	<div class="post-nav clearfix">
-		<p class="previous"><?php previous_post_link( $args['format'], $args['link'], $args['in_same_cat'], $args['excluded_cats'] ); ?></p>
-		<p class="next-post"><?php next_post_link( $args['format'], $args['link'], $args['in_same_cat'], $args['excluded_cats'] ); ?></p>
+		<p class="previous"><?php previous_post_link( $args['format_prev'], $args['link'], $args['in_same_cat'], $args['excluded_cats'] ); ?></p>
+		<p class="next-post"><?php next_post_link( $args['format_next'], $args['link'], $args['in_same_cat'], $args['excluded_cats'] ); ?></p>
 		<?php do_action( 'graphene_post_nav' ); ?>
 	</div>
 	<?php
@@ -542,6 +543,10 @@ function graphene_get_post_meta( $post_id, $field = '' ){
 	if ( ! is_array( $graphene_post_meta ) ) $graphene_post_meta = array();
 	
 	if ( ! array_key_exists( $post_id, $graphene_post_meta ) ) {
+		
+		if ( get_post_meta( $post_id, '_graphene_slider_img' ) ) 
+			graphene_convert_meta( $post_id );
+		
 		$current_post_meta = get_post_meta( $post_id, '_graphene_meta', true );
 		if ( ! $current_post_meta ) 
 			$graphene_post_meta[$post_id] = graphene_custom_fields_defaults();
@@ -552,8 +557,10 @@ function graphene_get_post_meta( $post_id, $field = '' ){
 	if ( ! $field ) {
 		$post_meta = $graphene_post_meta[$post_id];
 	} else {
+		if ( ! in_array( $field, array( 'slider_imgurl', 'slider_url' ) ) && $graphene_post_meta[$post_id][$field] == 'global' ) 
+			$graphene_post_meta[$post_id][$field] = '';
 		$post_meta = $graphene_post_meta[$post_id][$field];
 	}
 	
-	return apply_filters( 'graphene_post_meta', $post_meta, $post_id, $field );
+	return apply_filters( 'graphene_get_post_meta', $post_meta, $post_id, $field );
 }

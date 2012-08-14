@@ -2,7 +2,7 @@
 Theme Name: Graphene
 Theme URI: http://www.khairul-syahir.com/wordpress-dev/graphene-theme
 Description: We believe that every theme should facilitate creative writing, not hinder it. We also believe that each site should have the opportunity to be unique. Since the theme's inception, we have received countless suggestions and requests on features that really matter. We listened, and we delivered. Here's a theme that's packed full of features that you need, yet far from being overwhelming. Here's a theme that's easy to use for beginners, yet well documented and powerful enough to be endlessly customisable to users with even only moderate technical skills. Here's a theme that's available in more than  30 languages and is backed with active community support, where questions, ideas and suggestions are always welcomed. And best of all, here's a theme that's completely free. Here's a theme that's yours to make it special.
-Version: 1.8
+Version: 1.8.1
 Author: Syahir Hakim
 Author URI: http://www.khairul-syahir.com
 Tags: black, blue, white, one-column, two-columns, three-columns, right-sidebar, left-sidebar, fixed-width, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, rtl-language-support, post-formats, featured-image-header, featured-images, full-width-template, microformats
@@ -570,7 +570,7 @@ a:hover {
 	padding: 0;
 	list-style: none; 
 	line-height: 1;
-	z-index: 20;
+	z-index: 5;
 }
 #nav li:hover ul ul,
 #nav li:hover ul ul ul,
@@ -600,9 +600,8 @@ a:hover {
 
 /* Top level header menu, default state */
 #header-menu-wrap {
-	position: relative;	
 	background: url(images/sprite_h.png) left -4px repeat-x #101010;
-	z-index: 15;
+	position: relative;
 }
 .have-secondary-menu #header-menu-wrap {
 	border-bottom: 1px solid #000;
@@ -614,6 +613,7 @@ a:hover {
 #header-menu,
 #secondary-menu {
 	margin: 0 10px;
+	z-index: 10;
 }
 #header-menu > li {
 	font: normal 14px arial;
@@ -784,6 +784,7 @@ a:hover {
 	background: -moz-linear-gradient(left top, #0F2D4D, #2880C3);
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColorStr='#0F2D4D', EndColorStr='#2880C3')";
 	background: -webkit-linear-gradient(left top, #0F2D4D, #2880C3);
+	background: -o-linear-gradient(left top, #0F2D4D, #2880C3);
 	-pie-background: linear-gradient(left top, #0F2D4D, #2880C3);
 	color: #e3e3e3;
 	font-size: 16px;
@@ -812,6 +813,7 @@ a:hover {
 	background: #0F2D4D;
 	background: -moz-linear-gradient(left top, #0F2D4D, #2880C3);
 	background: -webkit-linear-gradient(left top, #0F2D4D, #2880C3);
+	background: -o-linear-gradient(left top, #0F2D4D, #2880C3);
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColorStr='#0F2D4D', EndColorStr='#2880C3')";
 	background: linear-gradient(left top, #0F2D4D, #2880C3);
 	margin-bottom: 20px;
@@ -955,6 +957,7 @@ a:hover {
 	background: url(images/bg-block-button.png) left bottom repeat-x #1C5FA5;
 	background: -moz-linear-gradient(#2982C5, #1C5FA5);
 	background: -webkit-linear-gradient(#2982C5, #1C5FA5);
+	background: -o-linear-gradient(#2982C5, #1C5FA5);
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#2982C5', EndColorStr='#1C5FA5')";
 	background: linear-gradient(#2982C5, #1C5FA5);
 	
@@ -985,6 +988,7 @@ a:hover {
 	background: url(images/bg-block-button-hover.png) left bottom repeat-x #1C5FA5;
 	background: -moz-linear-gradient(#2982C5, #15467A);
 	background: -webkit-linear-gradient(#2982C5, #15467A);
+	background: -o-linear-gradient(#2982C5, #15467A);
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#2982C5', EndColorStr='#15467A')";
 	background: linear-gradient(#2982C5, #15467A);
 	color: #fff;
@@ -1351,6 +1355,7 @@ table th {
 	background: #eee;
 	background: -webkit-linear-gradient(#f6f6f6,#eee);
 	background: -moz-linear-gradient(#f6f6f6,#eee);
+	background: -o-linear-gradient(#f6f6f6,#eee);
 	background: linear-gradient(#f6f6f6,#eee);
 	padding: 10px 5px;
 }
@@ -2014,6 +2019,7 @@ h3.author-post-list {
 	background: url(images/bg-sidebar-h3.png) left bottom repeat-x #3C9CD2;
 	background: -moz-linear-gradient(#3C9CD2, #1F6EB6);
 	background: -webkit-linear-gradient(#3C9CD2, #1F6EB6);
+	background: -o-linear-gradient(#3C9CD2, #1F6EB6);
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#3C9CD2', EndColorStr='#1F6EB6')";
 	background: linear-gradient(#3C9CD2, #1F6EB6);
 	border-bottom: 1px solid #195392;
@@ -2596,6 +2602,7 @@ form.product_form fieldset,
 	background: #eee;
 	background: -moz-linear-gradient(#f6f6f6,#eee);
 	background: -webkit-linear-gradient(#f6f6f6,#eee);
+	background: -o-linear-gradient(#f6f6f6,#eee);
 	background: linear-gradient(#f6f6f6,#eee);
 	border: 1px solid #e6e6e6;
 	padding: 10px 5px;

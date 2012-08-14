@@ -71,7 +71,9 @@ function graphene_icl_t( $name, $value = '', $context = 'Graphene theme' ){
  * Registers the translatable options
  */
 function graphene_register_t_options(){
+	if ( ! function_exists( 'icl_t' ) ) return;
 	global $graphene_settings;
+	
 	$options = array( 
 					array( 'name' => 'Copyright text', 'value' => $graphene_settings['copy_text'], 'context' => '' ) ,
 					array( 'name' => 'Home nav menu description', 'value' => $graphene_settings['navmenu_home_desc'], 'context' => '' ) 

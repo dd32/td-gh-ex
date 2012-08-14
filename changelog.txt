@@ -4,6 +4,17 @@ http://www.khairul-syahir.com
 
 CHANGELOG
 
+Version 1.8.1
+	* Added gradient support for Opera
+	* Fixed a bug with slider image not showing
+	* Fixed header text style customisation being overridden
+	* Fixed sprintf php warning in theme-head.php line 28
+	* Fixed post navigation using the same « for both previous and next post
+	* Fixed a conflict of "graphene_post_meta" action hook widget area with the filter hook of the same name. The filter hook is renamed to "graphene_get_post_meta"
+	* Fixed z-index and gradient issue of the primary menu on IE
+	* Refactored post meta conversion script to run per-post on request instead of all at once
+	* Excluded theme's directory from the exported theme settings
+
 Version 1.8
 	* Added option to add custom tags into the theme's <head> element in Graphene Option > Advanced > Custom <head> Tags
 	* Added option to extend the slider to the full width of the theme
