@@ -4,7 +4,7 @@ Theme Name: Simple Catch
 Theme URI: http://catchthemes.com/wp-themes/simplecatch
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
-Version: 1.3.5
+Version: 1.3.5.1
 License: GNU General Public License
 
 == Theme Description ==
@@ -181,9 +181,10 @@ Version 1.3.4
 Version 1.3.5
 * Changed theme options user interface design.
 * Added Toggle effect on Theme Options. Added admin_js file for the toggle effect.
-* Minify js files
-* Moving JS file form header to footer
+* Larger size js file(jquery.cycle.all.min.js) are minified.
 
+Version 1.3.5.1
+* Adding back missing tanslation ready file in function
 
 == Upcoming Plan ==
 * Add option for feed redirect

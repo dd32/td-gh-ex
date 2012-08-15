@@ -44,10 +44,18 @@ if ( ! function_exists( 'simplecatch_setup' ) ):
  */
 function simplecatch_setup() {
 
-	// Loading textdomain simplecatch
-	load_theme_textdomain( 'simplecatch' );
+	/* Simple Catch is now available for translation.
+	 * Add your files into /languages/ directory.
+	 * @see http://codex.wordpress.org/Function_Reference/load_theme_textdomain
+	 */
+	load_theme_textdomain( 'simplecatch', get_template_directory() . '/languages' );
+	
+	$locale = get_locale();
+    $locale_file = get_template_directory().'/languages/$locale.php';
+    if (is_readable( $locale_file))
+		require_once( $locale_file);	
 
-	// Load up Catch Roofing's theme options defaults
+	// Load up theme options defaults
 	require( get_template_directory() . '/functions/simplecatch_themeoptions_defaults.php' );
 	
 	// Load up our theme options page and related code.
