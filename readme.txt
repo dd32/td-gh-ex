@@ -82,3 +82,7 @@ Version 1.1.1
 Version 1.1.2
 * Added slider effect options in slider options.
 * Added toggle effects on Options
+
+Version 1.1.3
+* Added option to change excerpt length in Theme Options
+* Minified js files jquery.cycle.all.min.js and pngfix.min.js

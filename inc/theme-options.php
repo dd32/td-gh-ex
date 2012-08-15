@@ -100,8 +100,16 @@ function catchbox_theme_options_init() {
 	);
 	
 	add_settings_field(
+		'excerpt_length', // Unique identifier for the settings section
+		__( 'Excerpt Length in Words', 'catchbox' ), // Setting field label
+		'catchbox_settings_field_excerpt_length', // Function that renders the settings field
+		'theme_options', // Menu slug, used to uniquely identify the page; see catchbox_theme_options_add_page()
+		'general' // Settings section. Same as the first argument in the add_settings_section() above
+	);
+	
+	add_settings_field(
 		'feed_redirect', // Unique identifier for the settings section
-		__( 'Feed redirect', 'catchbox' ), // Setting field label
+		__( 'Feed Redirect URL', 'catchbox' ), // Setting field label
 		'catchbox_settings_field_feed_redirect', // Function that renders the settings field
 		'theme_options', // Menu slug, used to uniquely identify the page; see catchbox_theme_options_add_page()
 		'general' // Settings section. Same as the first argument in the add_settings_section() above
@@ -315,10 +323,12 @@ function catchbox_content_layout() {
  */
 function catchbox_get_default_theme_options() {
 	$default_theme_options = array(
+		'excerpt_length'=>40,
 		'color_scheme' => 'light',
 		'link_color'   => catchbox_get_default_link_color( 'light' ),
 		'theme_layout' => 'content-sidebar',
 		'content_layout' => 'excerpt',
+		
 	);
 
 	if ( is_rtl() )
@@ -410,6 +420,21 @@ function catchbox_settings_field_feed_redirect() {
 }
 
 /**
+ * Renders the excerpt length setting field.
+ *
+ * @since Catch Box 1.1.3
+ */
+function catchbox_settings_field_excerpt_length() {
+	$options = catchbox_get_theme_options();
+	if( empty( $options['excerpt_length'] ) )
+		$options = catchbox_get_default_theme_options();
+	?>
+   
+	<input type="text" name="catchbox_theme_options[excerpt_length]" id="excerpt-length" size="3" value="<?php if ( isset( $options[ 'excerpt_length' ] ) ) echo absint( $options[ 'excerpt_length'] ); ?>" /> 
+	<?php
+}
+
+/**
  * Renders the Custom CSS styles setting fields
  *
  * @since Catch Box 1.0
@@ -417,7 +442,8 @@ function catchbox_settings_field_feed_redirect() {
 function catchbox_settings_field_custom_css() {
 	$options = catchbox_get_theme_options();
 	?>
-     <textarea id="custom-css" cols="90" rows="12" name="catchbox_theme_options[custom_css]"><?php if (!empty($options['custom_css'] ) )echo esc_attr($options['custom_css']); ?></textarea>
+     <textarea id="custom-css" cols="90" rows="12" name="catchbox_theme_options[custom_css]"><?php if (!empty($options['custom_css'] ) )echo esc_attr($options['custom_css']); ?></textarea> <br />
+     <?php _e('CSS Tutorial from W3Schools.', 'catchbox'); ?> <a class="button" href="<?php echo esc_url( __( 'http://www.w3schools.com/css/default.asp','catchbox' ) ); ?>" title="<?php esc_attr_e( 'CSS Tutorial', 'catchbox' ); ?>" target="_blank"><?php _e( 'Click Here to Read', 'catchbox' );?></a>
 
 	<?php
 }
@@ -977,6 +1003,9 @@ function catchbox_theme_options_validate( $input ) {
 	// Theme layout must be in our array of theme layout options
 	if ( isset( $input['content_layout'] ) && array_key_exists( $input['content_layout'], catchbox_content_layout() ) )
 		$output['content_layout'] = $input['content_layout'];
+		
+	if ( isset( $input['excerpt_length'] ) )	
+		$output['excerpt_length'] = absint($input['excerpt_length']);
 	
 	if ( isset( $input['feed_url'] ) )	
 		$output['feed_url'] = esc_url_raw($input['feed_url']);
@@ -984,6 +1013,7 @@ function catchbox_theme_options_validate( $input ) {
 	if ( isset( $input['custom_css'] ) )	
 		$output['custom_css'] = wp_kses_stripslashes($input['custom_css']);
 		
+	if( function_exists( 'catchbox_themeoption_invalidate_caches' ) )  { catchbox_themeoption_invalidate_caches(); }
 	return apply_filters( 'catchbox_theme_options_validate', $output, $input, $defaults );
 }
 

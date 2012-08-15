@@ -356,13 +356,18 @@ function catchbox_filter_wp_title( $title ) {
 add_filter( 'wp_title', 'catchbox_filter_wp_title', 10, 3 );
 
 /**
- * Sets the post excerpt length to 40 words.
+ * Sets the post excerpt length.
  *
  * To override this length in a child theme, remove the filter and add your own
  * function tied to the excerpt_length filter hook.
  */
 function catchbox_excerpt_length( $length ) {
-	return 40;
+	$options = catchbox_get_theme_options();
+	if( empty( $options['excerpt_length'] ) )
+		$options = catchbox_get_default_theme_options();
+		
+	$length = $options['excerpt_length'];
+	return $length;
 }
 add_filter( 'excerpt_length', 'catchbox_excerpt_length' );
 
@@ -724,7 +729,7 @@ function catchbox_pass_slider_value() {
 function catchbox_sliders() {	
 	global $post;
 	
-	//delete_transient( 'catchbox_sliders' );
+	delete_transient( 'catchbox_sliders' );
 		
 	// get data value from catchbox_options_slider through theme options
 	$options = get_option( 'catchbox_options_slider' );
@@ -744,11 +749,12 @@ function catchbox_sliders() {
 				'ignore_sticky_posts' => 1 // ignore sticky posts
 			));
 				
-			while ( $get_featured_posts->have_posts()) : $get_featured_posts->the_post();
+			$i; while ( $get_featured_posts->have_posts()) : $get_featured_posts->the_post(); $i++;
 				$title_attribute = esc_attr( apply_filters( 'the_title', get_the_title( $post->ID ) ) );
 				
+				if ( $i == 1 ) { $classes = "slides displayblock"; } else { $classes = "slides displaynone"; }
 				$catchbox_sliders .= '
-				<div class="slides">
+				<div class="'.$classes.'">
 					<a href="'.get_permalink().'" title="'.sprintf( esc_attr__( 'Permalink to %s', 'catchbox' ), the_title_attribute( 'echo=0' ) ).'" rel="bookmark">
 							'.get_the_post_thumbnail( $post->ID, 'featured-slider', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class'	=> 'pngfix' ) ).'
 					</a>
@@ -777,21 +783,18 @@ function catchbox_sliders() {
  * hooks action wp_enqueue_scripts
  */
 function catchbox_scripts_method() {	
-	//registering JQuery circle all and JQuery set up as dependent on Jquery-cycle
-	wp_register_script( 'jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.all.js', '2.9999.5' );
+	//Register JQuery circle all and JQuery set up as dependent on Jquery-cycle
+	wp_register_script( 'jquery-cycle', get_stylesheet_directory_uri() . '/js/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
 	
-	// registering custom scrtips
-	wp_register_script( 'cycle-setup', get_template_directory_uri() . '/js/cycle_setup.js', array( 'jquery', 'jquery-cycle' ), '1.0', true );
-	
-	// enqueue JQuery Cycle Scripts	only in Homepage
+	//Enqueue Slider Script only in Front Page
 	if(is_home() || is_front_page()) {
-		wp_enqueue_script( 'cycle-setup' );	
+		wp_enqueue_script( 'cycle-setup', get_template_directory_uri() . '/js/cycle_setup.js', array( 'jquery-cycle' ), '1.0', true );
 	}
 
-	//browser specific queuing i.e. for IE 1-6
+	//Browser Specific Enqueue Script i.e. for IE 1-6
 	$catchbox_ua = strtolower($_SERVER['HTTP_USER_AGENT']);
 	if(preg_match('/(?i)msie [1-6]/',$catchbox_ua)) {
-		wp_enqueue_script( 'catchbox-pngfix', get_stylesheet_directory_uri() . '/js/pngfix.js' );	  
+		wp_enqueue_script( 'catchbox-pngfix', get_stylesheet_directory_uri() . '/js/pngfix.min.js' );	  
 	}
 	//browser specific queuing i.e. for IE 1-8
 	if(preg_match('/(?i)msie [1-8]/',$catchbox_ua)) {

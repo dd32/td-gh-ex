@@ -12,14 +12,7 @@
  * @subpackage Catch_Box
  */
 
-get_header(); ?>
-
-		<div id="primary">
-			<div id="content" role="main">
-
-    			<?php if ( function_exists( 'catchbox_pass_slider_value' ) ) { catchbox_pass_slider_value(); } ?>
-            	<?php if ( function_exists( 'catchbox_sliders' ) ) { catchbox_sliders(); } ?>
-            	
+get_header(); ?>            	
 
 			<?php if ( have_posts() ) : ?>
 
