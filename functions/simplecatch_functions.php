@@ -6,20 +6,21 @@
  * hooks action wp_enqueue_scripts
  */
 function simplecatch_scripts_method() {	
-	//registering JQuery circle all and JQuery set up as dependent on Jquery-cycle
-	wp_register_script( 'jquery-cycle', get_stylesheet_directory_uri() . '/js/jquery.cycle.all.js', '2.9999' );
+	//Register JQuery circle all and JQuery set up as dependent on Jquery-cycle
+	wp_register_script( 'jquery-cycle', get_stylesheet_directory_uri() . '/js/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
 	
-	// registering custom scrtips
-	wp_register_script( 'simplecatch_custom_slider', get_stylesheet_directory_uri() . '/js/simplecatch_custom_scripts.js', array( 'jquery', 'jquery-cycle' ), '1.0', true );
-	
-	// enqueue JQuery Scripts	
-	wp_enqueue_script( 'simplecatch_custom_slider' );	
+	//Enqueue Slider Script only in Front Page
+	if ( is_home() || is_front_page() ) {
+		wp_enqueue_script( 'simplecatch_custom_slider', get_stylesheet_directory_uri() . '/js/simplecatch_custom_scripts.js', array( 'jquery-cycle' ), '1.0', true );
+	}
 
+	//Enqueue Search Script
+	wp_enqueue_script ( 'simplecatch_search', get_stylesheet_directory_uri() . '/js/simplecatch_search.js', array( 'jquery' ), '1.0', true );
 
-	//browser specific queuing i.e. for IE 1-6
+	//Browser Specific Enqueue Script i.e. for IE 1-6
 	$simplecatch_ua = strtolower($_SERVER['HTTP_USER_AGENT']);
 	if(preg_match('/(?i)msie [1-6]/',$simplecatch_ua)) {
-		wp_enqueue_script( 'pngfix', get_stylesheet_directory_uri() . '/js/pngfix.js' );	  
+		wp_enqueue_script( 'pngfix', get_stylesheet_directory_uri() . '/js/pngfix.min.js' );	  
 	}
 	 if(preg_match('/(?i)msie [1-8]/',$simplecatch_ua)) {
 	 	wp_enqueue_style( 'iebelow8', get_stylesheet_directory_uri() . '/css/ie.css', true );

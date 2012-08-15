@@ -44,10 +44,8 @@ if ( ! function_exists( 'simplecatch_setup' ) ):
  */
 function simplecatch_setup() {
 
-	/* Make Simple Catch available for translation.
-	 * Translations can be added to the /languages/ directory.
-	 */
-	load_theme_textdomain( 'simplecatch', get_template_directory() . '/languages' );
+	// Loading textdomain simplecatch
+	load_theme_textdomain( 'simplecatch' );
 
 	// Load up Catch Roofing's theme options defaults
 	require( get_template_directory() . '/functions/simplecatch_themeoptions_defaults.php' );
