@@ -6,8 +6,8 @@ Author URI: http://www.sampression.com
 
 Description: Sampression Lite is a fully responsive theme, perfect for blogging. It's lightweight responsive design allows this theme to adapt across a range of screen sizes. Besides an elegant design, Sampression Lite features customizable menus and widgets, along with a threaded comments section. It supports sticky notes with special effects and allows the best placement of feature images on posts. Currently it is supporting single layer menu only.
 
-Version: 1.1.2.1.2
-License: GNU General Public License v2 or later
+Version: 1.2
+License: GNU General Public License v2
 License URI: license.txt
 Tags: white, orange, green, one-column, two-columns, flexible-width, custom-menu, featured-image-header, featured-images, post-formats, sticky-post, theme-options, threaded-comments, right-sidebar
 */
@@ -534,7 +534,8 @@ a#logo-area:link {
 	}
 #searchform input#s {
 	border-right:none;
-	width:206px;
+	width:200px;
+	padding-left:10px;
 	height:16px;
 	z-index:0;
 	
@@ -565,6 +566,16 @@ a#logo-area:link {
       -moz-border-radius-bottomright:5px;
       -webkit-border-bottom-right-radius:5px;
 	  }
+	  
+#searchform ::-webkit-input-placeholder {
+	color:#ddd;
+	font-style:italic;
+}
+
+#searchform :-moz-placeholder {  
+   color:#ddd;
+	font-style:italic; 
+}
 
 /* Top Social Medias */
 .sm-top {
@@ -885,8 +896,12 @@ body.single article.post .meta .col {
 	width:13px;
 	}
 
-#post-listing article.post .entry p:last-child {
+#post-listing article.post .entry p {
 	margin-bottom:0;
+	}
+#post-listing article.post .read-more {
+	display:block;
+	padding:10px 0 0 0;
 	}
 
 .count-comment {
@@ -1323,7 +1338,7 @@ body#page-not-found #content {
 			background-position:0 -45px;
 			}
 		#searchform input#s {
-			width:200px;
+			width:190px;
 			}
 			}
 
@@ -1378,7 +1393,8 @@ body#page-not-found #content {
 			display:block;
 			}
 		#primary-nav .nav-label {
-			margin-top:10px;
+			margin-top:0;
+			top:15px;
 			}
 		#btn-nav-opt {
 			display:none;
@@ -1457,7 +1473,7 @@ body#page-not-found #content {
 	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 	@media only screen and (max-width: 479px) {
 		#searchform input#s {
-			width:180px;
+			width:170px;
 			}
 		#get-cats {
 			margin-left:76px;
@@ -1468,7 +1484,6 @@ body#page-not-found #content {
 			}
 		#primary-nav .nav-label {
 			left:0;
-			top:5px;
 			}
 		
 		/* Comments */
@@ -1497,6 +1512,7 @@ body#page-not-found #content {
 .isotope-hidden.isotope-item {
   pointer-events: none;
   z-index: 1;
+  display:none;
 }
 
 /**** Isotope CSS3 transitions ****/

@@ -5,16 +5,16 @@ Theme URI: http://www.sampression.com/sampression-lite/
 Author: Sampression
 Author URI: http://www.sampression.com
 
-Version: 1.1.2.1.2
-License: GNU General Public License v2 or later
+Version: 1.2
+License: GNU General Public License v2
 License URI: license.txt
 */
 
 == Theme Description ==
-Sampression Lite is a fully responsive WordPress theme, perfect for blogging. It's lightweight responsive design allows this theme to adapt across a range of screen sizes. Besides an elegant design, Sampression Lite features customizable menus and widgets, along with a threaded comments section. It supports sticky notes with special effects and allows the best placement of feature images on posts. Under the advanced tab this theme allows Admin to insert codes in the header and footer section.
+Sampression Lite is a fully responsive theme, perfect for blogging. It's lightweight responsive design allows this theme to adapt across a range of screen sizes. Besides an elegant design, Sampression Lite features customizable menus and widgets, along with a threaded comments section. It supports sticky notes with special effects and allows the best placement of feature images on posts. Currently it is supporting single layer menu only.
 
 == Features ==  
-Responsive, Theme Options, Custom Widgets, Custom Menu, iSotope jQuery, Sticky Post, Single layer menu is showing
+Responsive, Html5, CSS3, Best Practices, Theme Options, Custom Widgets, Custom Menu, iSotope jQuery, Sticky Post, W3C validated, Single layer menu is showing
 
 == Tags ==
 Tags: white, orange, green, one-column, two-columns, flexible-width, custom-menu, featured-image-header, featured-images, post-formats, sticky-post, theme-options, threaded-comments, right-sidebar
@@ -52,12 +52,21 @@ Tags: white, orange, green, one-column, two-columns, flexible-width, custom-menu
  = Select Advance tab
  = Here, additionally you can add different codes to the header and footer of theme. Please be careful to add codes becuase it might crop the functionality and appearance of theme.
  
- 9. Copyright & License
+9. Copyright & License
  = Sampression Lite, Copyright 2012 Sampression.com
  = Sampression Lite is distributed under the terms of the GNU GPL.
  
  == Changelog ==
-Version 1.1.2.1.2
+ Version 1.1.2.1.2
  = Fixed repeating latest posts twice in home page.
  = Fixed right sidebar widgetize problem.
  = Fixed style for right sidebar search widget.
+ 
+ Version 1.2
+ = Major fixes on missing function for excerpt.
+ = Added Custom Read More on excerpt.
+ = Minor fixes for Search Form Placeholder Text.
+ = Added Back to gallery link to Single Image Gallery Post.
+ = Fixed Theme Textdomain.
+ = Removed Categories Listing form Search Result page.
+ = Multi layout (auto resize and auto append ) fixed with isotope script.

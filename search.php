@@ -22,16 +22,6 @@ get_header(); ?>
 
 <div id="post-listing" class="clearfix">
   
-  <section class="corner-stamp post columns four">
-  <header><h3><?php _e('Categories', 'sampression'); ?></h3></header>
-  <div class="entry">
-    <ul class="categories">
-    	<?php wp_list_categories('title_li'); ?> 
-    </ul>
-  </div>
-  </section>
-  <!-- .corner-stamp -->
-  
    <?php
   	while (have_posts()) : the_post(); 
     get_template_part( 'loop', 'search' );

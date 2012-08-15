@@ -22,11 +22,11 @@ get_header(); ?>
 <header class="page-header columns sixteen">
     <h2 class="quick-note columns sixteen">
         <?php if ( is_day() ) : ?>
-            <?php printf( __( 'Daily Archives: %s', 'responsive' ), '<span>' . get_the_date() . '</span>' ); ?>
+            <?php printf( __( 'Daily Archives: %s', 'sampression' ), '<span>' . get_the_date() . '</span>' ); ?>
         <?php elseif ( is_month() ) : ?>
-            <?php printf( __( 'Monthly Archives: %s', 'responsive' ), '<span>' . get_the_date( 'F Y' ) . '</span>' ); ?>
+            <?php printf( __( 'Monthly Archives: %s', 'sampression' ), '<span>' . get_the_date( 'F Y' ) . '</span>' ); ?>
         <?php elseif ( is_year() ) : ?>
-            <?php printf( __( 'Yearly Archives: %s', 'responsive' ), '<span>' . get_the_date( 'Y' ) . '</span>' ); ?>
+            <?php printf( __( 'Yearly Archives: %s', 'sampression' ), '<span>' . get_the_date( 'Y' ) . '</span>' ); ?>
         <?php else : ?>
             <?php _e( 'Blog Archives', 'sampression' ); ?>
         <?php endif; ?>

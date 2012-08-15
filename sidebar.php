@@ -78,7 +78,7 @@ if ( !defined('ABSPATH')) exit;
             
                 <header class="widget-title"><?php _e('About me', 'sampression'); ?></header>
                 <div class="widget-entry">
-				<?php _e('This is your Third Bottom Widget box (Bottom Widget 3). To edit please go to Appearance > Widgets and choose 3rd widget from the top in area second called Bottom Widget 3. Title is also manageable from widgets as well.','responsive'); ?>
+				<?php _e('This is your Third Bottom Widget box (Bottom Widget 3). To edit please go to Appearance > Widgets and choose 3rd widget from the top in area second called Bottom Widget 3. Title is also manageable from widgets as well.','sampression'); ?>
 				</div>
             
 			</section><!-- end of .widget-wrapper -->

@@ -111,12 +111,12 @@ if (!function_exists('sampression_js')) {
 /*=======================================================================
  * Comment Reply
  *=======================================================================*/
-function responsive_enqueue_comment_reply() {
+function sampression_enqueue_comment_reply() {
 if ( is_singular() && comments_open() && get_option('thread_comments')) { 
 		wp_enqueue_script('comment-reply'); 
 	}
 }
-add_action( 'wp_enqueue_scripts', 'responsive_enqueue_comment_reply' );
+add_action( 'wp_enqueue_scripts', 'sampression_enqueue_comment_reply' );
 
 /*=======================================================================
  * Remove rel attribute from the category list
@@ -193,6 +193,20 @@ function sampression_excerpt_length($length) {
 add_filter('excerpt_length', 'sampression_excerpt_length');
 
 /**
+ * Returns a "Read more" link for excerpts
+ */
+function sampression_read_more() {
+    return ' <span class="read-more"><a href="' . get_permalink() . '">' . __('Read more &#8250;', 'sampression') . '</a></span>';
+}
+/**
+ * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and sampression_read_more_link().
+ */
+function sampression_auto_excerpt_more($more) {
+    return '<span class="ellipsis">&hellip;</span>' . sampression_read_more();
+}
+add_filter('excerpt_more', 'sampression_auto_excerpt_more');
+
+/**
  * Adds a pretty "Read more" link to custom post excerpts.
  */
 function sampression_custom_excerpt_more($output) {
@@ -236,7 +250,7 @@ function sampression_widget_reset() {
 function sampression_widgets_init() {
 	
 	register_sidebar(array(
-		'name' => __('Bottom Widget 1', 'responsive'),
+		'name' => __('Bottom Widget 1', 'sampression'),
 		'description' => __('Appears on bottom of the Page - First Widget - Please insert only one widget for better appearance.', 'sampression'),
 		'id' => 'bottom-widget-1',
 		'before_title' => '<header class="widget-title">',
@@ -246,7 +260,7 @@ function sampression_widgets_init() {
 	));
 	
 	register_sidebar(array(
-		'name' => __('Bottom Widget 2', 'responsive'),
+		'name' => __('Bottom Widget 2', 'sampression'),
 		'description' => __('Appears on bottom of the Page - Second Widget - Please insert only one widget for better appearance.', 'sampression'),
 		'id' => 'bottom-widget-2',
 		'before_title' => '<header class="widget-title">',
@@ -256,7 +270,7 @@ function sampression_widgets_init() {
 	));
 	
 	register_sidebar(array(
-		'name' => __('Bottom Widget 3', 'responsive'),
+		'name' => __('Bottom Widget 3', 'sampression'),
 		'description' => __('Appears on bottom of the Page - Third Widget - Please insert only one widget for better appearance.', 'sampression'),
 		'id' => 'bottom-widget-3',
 		'before_title' => '<header class="widget-title">',
@@ -266,7 +280,7 @@ function sampression_widgets_init() {
 	));
 	
 	register_sidebar(array(
-		'name' => __('Inner Sidebar', 'responsive'),
+		'name' => __('Inner Sidebar', 'sampression'),
 		'description' => __('Appears on right of the Interior Pages - Can use as much widgets as you wish.', 'sampression'),
 		'id' => 'right-sidebar',
 		'before_title' => '<header class="widget-title">',
@@ -502,7 +516,7 @@ function filter_cat_callback() {
         
       </div>
       <div class="meta">
-        <div class="cats"><?php printf(__('<span class="ico">Categories</span><div class="overflow-hidden cat-listing">%s</div>', 'responsive'), get_the_category_list(', ')); ?></div>
+        <div class="cats"><?php printf(__('<span class="ico">Categories</span><div class="overflow-hidden cat-listing">%s</div>', 'sampression'), get_the_category_list(', ')); ?></div>
       </div>
     </article>
 	<?php

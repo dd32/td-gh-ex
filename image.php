@@ -12,6 +12,12 @@ if ( !defined('ABSPATH')) exit;
 get_header(); ?>
 
 <?php if (have_posts()) : ?>
+
+ <nav id="nav-above" class="post-navigation clearfix columns twelve">
+            <h3 class="assistive-text hidden"><?php _e( 'Post navigation', 'sampression' ); ?></h3>
+            <div class="nav-previous alignleft"><?php previous_post_link( '%link', __( '<span class="meta-nav">&larr;</span> Back to Gallery', 'sampression' ) ); ?></div>
+        </nav><!-- #nav-above -->
+
 <section id="content" class="columns twelve" role="main">
 			<?php while ( have_posts() ) : the_post(); ?>
 				<article <?php post_class('post'); ?> id="post-<?php the_ID(); ?>">
@@ -36,7 +42,7 @@ get_header(); ?>
                 );
             ?>
             
-            <div class="col cats"><?php printf(__('<span class="ico">Categories</span> %s', 'responsive'), get_the_category_list(', ')); ?></div>
+            <div class="col cats"><?php printf(__('<span class="ico">Categories</span> %s', 'sampression'), get_the_category_list(', ')); ?></div>
             
             <div class="col count-comment">
 			<?php if ( comments_open() ) : ?>

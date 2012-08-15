@@ -51,7 +51,7 @@ get_header(); ?>
                 );
             ?>
             
-            <div class="col cats"><?php printf(__('<span class="ico">Categories</span> %s', 'responsive'), get_the_category_list(', ')); ?></div>
+            <div class="col cats"><?php printf(__('<span class="ico">Categories</span> %s', 'sampression'), get_the_category_list(', ')); ?></div>
             
             <div class="col count-comment">
 			<?php if ( comments_open() ) : ?>

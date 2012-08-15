@@ -51,7 +51,7 @@ if ( !defined('ABSPATH')) exit;
             ?>
       </div>
       <div class="meta">
-        <div class="cats"><?php printf(__('<span class="ico">Categories</span><div class="overflow-hidden cat-listing">%s</div>', 'responsive'), get_the_category_list(', ')); ?></div>
+        <div class="cats"><?php printf(__('<span class="ico">Categories</span><div class="overflow-hidden cat-listing">%s</div>', 'sampression'), get_the_category_list(', ')); ?></div>
       </div>
       <?php if(has_tag()) {?>
       <div class="meta">
