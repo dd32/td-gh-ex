@@ -86,3 +86,7 @@ Version 1.1.2
 Version 1.1.3
 * Added option to change excerpt length in Theme Options
 * Minified js files jquery.cycle.all.min.js and pngfix.min.js
+
+Version 1.1.3.1
+* Fixed Slider loading issue and display overlap 
+* Added un-minified version of JS as per GPL

@@ -706,7 +706,7 @@ function catchbox_pass_slider_value() {
 	$transition_delay = $options[ 'transition_delay' ] * 1000;
 	$transition_duration = $options[ 'transition_duration' ] * 1000;
 	wp_localize_script( 
-		'cycle-setup',
+		'catchbox_slider',
 		'js_value',
 		array(
 			'transition_effect' => $transition_effect,
@@ -729,7 +729,7 @@ function catchbox_pass_slider_value() {
 function catchbox_sliders() {	
 	global $post;
 	
-	delete_transient( 'catchbox_sliders' );
+	//delete_transient( 'catchbox_sliders' );
 		
 	// get data value from catchbox_options_slider through theme options
 	$options = get_option( 'catchbox_options_slider' );
@@ -788,7 +788,7 @@ function catchbox_scripts_method() {
 	
 	//Enqueue Slider Script only in Front Page
 	if(is_home() || is_front_page()) {
-		wp_enqueue_script( 'cycle-setup', get_template_directory_uri() . '/js/cycle_setup.js', array( 'jquery-cycle' ), '1.0', true );
+		wp_enqueue_script( 'catchbox_slider', get_template_directory_uri() . '/js/catchbox_slider.js', array( 'jquery-cycle' ), '1.0', true );
 	}
 
 	//Browser Specific Enqueue Script i.e. for IE 1-6

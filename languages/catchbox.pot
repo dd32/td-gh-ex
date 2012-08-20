@@ -953,6 +953,10 @@ msgstr ""
 msgid "Catch Box"
 msgstr ""
 
+#. Theme Name of the plugin/theme
+msgid "Catch Box"
+msgstr ""
+
 #. Theme URI of the plugin/theme
 msgid "http://wordpress.org/extend/themes/catch-box"
 msgstr ""
