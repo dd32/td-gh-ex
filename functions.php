@@ -1,7 +1,7 @@
 <?php
 /* 	COLORFUL Theme's Functions
 	Copyright: 2012, D5 Creation, www.d5creation.com
-	Based on the Simplest D5 Framework for WordPress
+	
 	Since COLORFUL 1.0
 */
    
@@ -48,30 +48,6 @@
 	
 	add_editor_style();
 		
-// 	WordPress 3.4 Custom Background Support	
-	$colorful_custom_background = array(
-	'default-color'          => '',
-	'default-image'          => '',
-	);
-	add_theme_support( 'custom-background', $colorful_custom_background );
-	
-// 	WordPress 3.4 Custom Header Support				
-	$colorful_custom_header = array(
-	'default-image'          => '',
-	'random-default'         => false,
-	'width'                  => 300,
-	'height'                 => 90,
-	'flex-height'            => false,
-	'flex-width'             => false,
-	'default-text-color'     => '000000',
-	'header-text'            => true,
-	'uploads'                => false,
-	'wp-head-callback' 		 => '',
-	'admin-head-callback'    => '',
-	'admin-preview-callback' => '',
-	);
-	add_theme_support( 'custom-header', $colorful_custom_header );
-	
 // 	Functions for adding script
 	function colorful_enqueue_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) { 
@@ -91,12 +67,6 @@
 	return ' &hellip;' . colorful_continue_reading_link();
 	}
 	add_filter( 'excerpt_more', 'colorful_auto_excerpt_more' );
-
-//	D5 BusinessLine and WordPress Credit
-	function colorful_credit() {
-		echo '&nbsp| COLORFUL Theme by: <a href="http://d5creation.com" target="_blank"><img  width="30px" src="' . get_template_directory_uri() . '/images/d5logofooter.png" /> D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a>';
-	}
-
 
 //	Adds a pretty "Continue Reading" link to custom post excerpts.
 	function colorful_custom_excerpt_more( $output ) {
@@ -161,5 +131,13 @@
 	add_action( 'widgets_init', 'colorful_widgets_init' );
 
 
-//	Remove WordPress Custom Header Support for the theme colorful
-//	remove_theme_support('custom-header');
+// 	When the post has no post title, but is required to link to the single-page post view.
+
+	add_filter('the_title', 'status_title');
+	function status_title($title) {
+        if ( '' == $title ) {
+            return __('Untitled','status');
+        } else {
+            return $title;
+        }
+    }

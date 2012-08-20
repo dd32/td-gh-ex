@@ -2,7 +2,6 @@
 
 /* 	COLORFUL Theme'sSingle Page to display Single Page or Post
 	Copyright: 2012, D5 Creation, www.d5creation.com
-	Based on the Simplest D5 Framework for WordPress
 	Since COLORFUL 1.0
 */
 
