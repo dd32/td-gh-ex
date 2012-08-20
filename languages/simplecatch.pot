@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/simple-catch\n"
 "POT-Creation-Date: 2012-08-09 18:24+0530\n"
-"PO-Revision-Date: 2012-08-15 20:36+0530\n"
+"PO-Revision-Date: 2012-08-20 13:06+0530\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Catch Themes <info@catchinternet.com>\n"
 "MIME-Version: 1.0\n"
@@ -166,101 +166,101 @@ msgstr ""
 msgid "Page %s"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:450
+#: ../functions/simplecatch_functions.php:451
 #, php-format
 msgid "%s in Facebook"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:456
+#: ../functions/simplecatch_functions.php:457
 #, php-format
 msgid "%s in Twitter"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:462
+#: ../functions/simplecatch_functions.php:463
 #, php-format
 msgid "%s in Google+"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:468
+#: ../functions/simplecatch_functions.php:469
 #, php-format
 msgid "%s in Linkedin"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:474
+#: ../functions/simplecatch_functions.php:475
 #, php-format
 msgid "%s in Pinterest"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:480
+#: ../functions/simplecatch_functions.php:481
 #, php-format
 msgid "%s in YouTube"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:486
+#: ../functions/simplecatch_functions.php:487
 #, php-format
 msgid "%s in Vimeo"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:492
+#: ../functions/simplecatch_functions.php:493
 #, php-format
 msgid "%s in Slideshare"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:498
+#: ../functions/simplecatch_functions.php:499
 #, php-format
 msgid "%s in Foursquare"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:504
+#: ../functions/simplecatch_functions.php:505
 #, php-format
 msgid "%s in Flickr"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:509
+#: ../functions/simplecatch_functions.php:510
 #, php-format
 msgid "%s in Tumblr"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:514
+#: ../functions/simplecatch_functions.php:515
 #, php-format
 msgid "%s in deviantART"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:519
+#: ../functions/simplecatch_functions.php:520
 #, php-format
 msgid "%s in Dribbble"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:524
+#: ../functions/simplecatch_functions.php:525
 #, php-format
 msgid "%s in MySpace"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:529
+#: ../functions/simplecatch_functions.php:530
 #, php-format
 msgid "%s in WordPress"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:534
+#: ../functions/simplecatch_functions.php:535
 #, php-format
 msgid "%s in RSS"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:539
+#: ../functions/simplecatch_functions.php:540
 #, php-format
 msgid "%s in Delicious"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:544
+#: ../functions/simplecatch_functions.php:545
 #, php-format
 msgid "%s in Last.fm"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:674
+#: ../functions/simplecatch_functions.php:675
 msgid "Design by:"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:674
+#: ../functions/simplecatch_functions.php:675
 #: ../functions/panel/theme_options.php:102
 #: ../functions/panel/theme_options.php:383
 #: ../functions/panel/theme_options.php:491
@@ -268,7 +268,7 @@ msgstr ""
 msgid "http://catchthemes.com/"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:674
+#: ../functions/simplecatch_functions.php:675
 #: ../functions/panel/theme_options.php:102
 #: ../functions/panel/theme_options.php:383
 #: ../functions/panel/theme_options.php:491
@@ -276,167 +276,261 @@ msgstr ""
 msgid "Catch Themes"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:674
+#: ../functions/simplecatch_functions.php:675
 msgid "http://wordpress.org/"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:674
+#: ../functions/simplecatch_functions.php:675
 #: ../functions/panel/theme_options.php:573
 msgid "WordPress"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:674
+#: ../functions/simplecatch_functions.php:675
 #, php-format
 msgid "Proudly powered by %s."
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:824
+#: ../functions/simplecatch_functions.php:825
 msgid "Categories: "
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:861
+#: ../functions/simplecatch_functions.php:862
 msgid "FAQ: Frequently Asked Questions"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:862
+#: ../functions/simplecatch_functions.php:863
 msgid "1. How to change logo on Header and Footer? "
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:864
-#: ../functions/simplecatch_functions.php:873
-#: ../functions/simplecatch_functions.php:882
-#: ../functions/simplecatch_functions.php:891
-msgid "Click on Theme Options under Appearance. "
-msgstr ""
-
 #: ../functions/simplecatch_functions.php:865
-msgid "Select the Logo Tab. You can see the default logo previews. "
+#: ../functions/simplecatch_functions.php:876
+#: ../functions/simplecatch_functions.php:888
+#: ../functions/simplecatch_functions.php:896
+#: ../functions/simplecatch_functions.php:905
+msgid "Click on Theme Options under Appearance."
 msgstr ""
 
 #: ../functions/simplecatch_functions.php:866
-msgid "Now click on Change Header Logo and Footer Logo button. "
+#: ../functions/simplecatch_functions.php:877
+#: ../functions/simplecatch_functions.php:889
+#: ../functions/simplecatch_functions.php:897
+msgid "Click on Design Settings Tab."
 msgstr ""
 
 #: ../functions/simplecatch_functions.php:867
-msgid "Browse the Logo image from desired location and insert into the Post. "
+msgid "Click on Logo Options. You can see the default logo previews. "
 msgstr ""
 
 #: ../functions/simplecatch_functions.php:868
-msgid "Click on Save button. Now you can see the previews. "
+msgid "Now click on Change Header Logo and Change Footer Logo button to change the Header and Footer Logo respectively."
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:869
+msgid "Browse the Logo image from desired location and upload it."
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:870
+#: ../functions/simplecatch_functions.php:881
+msgid "Once the upload in completed. Then click on insert into the Post."
 msgstr ""
 
 #: ../functions/simplecatch_functions.php:871
-msgid "2. How to change fav icon? "
+msgid "Click on Save button. Now you can see the previews. "
 msgstr ""
 
 #: ../functions/simplecatch_functions.php:874
-msgid "Select the Fav Icon Tab. You can see the default fav icon preview. "
+msgid "2. How to change fav icon? "
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:875
+#: ../functions/simplecatch_functions.php:878
+msgid "Click on Fav Icon Options. You can see the default fav icon preview. "
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:879
 msgid "Now click on Change Fav Icon button. "
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:876
-msgid "Browse the fav icon image from desired location and insert into the Post. "
+#: ../functions/simplecatch_functions.php:880
+msgid "Browse the fav icon image from desired location and upload it."
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:877
+#: ../functions/simplecatch_functions.php:882
 msgid "Click on Save button. Now you can see the preview. "
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:880
-msgid "3. How to insert Social links on the right side of header? "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:883
-msgid "Select the Social Links Tab. "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:884
-msgid "Here you can see different social links like facebook, twitter etc. "
-msgstr ""
-
 #: ../functions/simplecatch_functions.php:885
-msgid "Give the social links on its respective socal fields. For example http://www.facebook.com. for facebook etc. "
+msgid "3. Where to add Additional CSS Styles"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:886
-#: ../functions/simplecatch_functions.php:896
-#: ../functions/simplecatch_functions.php:906
+#: ../functions/simplecatch_functions.php:887
+msgid "If you are doing lot of customization then it is better to create child theme. But if you just want to change few CSS then follow the instruction."
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:890
+msgid "Now click on Custom CSS. Then add in the custom CSS."
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:891
 #: ../functions/simplecatch_functions.php:917
+#: ../functions/simplecatch_functions.php:927
+#: ../functions/simplecatch_functions.php:935
+#: ../functions/simplecatch_functions.php:945
+#: ../functions/simplecatch_functions.php:956
 msgid "Click on Save button. "
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:889
-msgid "4. How to insert Analytic scripts? "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:892
-msgid "Select the Analytic Option Tab. "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:893
-msgid "Here you can put different scripts like, google, facebook etc. "
-msgstr ""
-
 #: ../functions/simplecatch_functions.php:894
-msgid "Put the script on upper textarea which you want to load on header. "
+msgid "4. How to change Layouts? "
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:895
-msgid "Put the script on lower textarea which you want to load on footer. "
+#: ../functions/simplecatch_functions.php:898
+msgid "Click on Layout Settings."
 msgstr ""
 
 #: ../functions/simplecatch_functions.php:899
-msgid "5. How to choose featured slider? "
+msgid "Then do the desired configuration."
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:901
-msgid "Click on Featured Slider under Appearance. "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:902
-msgid "Give the No. of slides and click on Save Button. "
+#: ../functions/simplecatch_functions.php:900
+#: ../functions/simplecatch_functions.php:908
+msgid "Click on Save button."
 msgstr ""
 
 #: ../functions/simplecatch_functions.php:903
-msgid "Now there is list of the Featured Col #1, #2 etc. "
+msgid "5. How to set certain categories to display in Homepage / Frontpage ? "
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:904
-msgid "To Give the Post ID's, click on \"Click Here to Edit\" Button which redirect you into the edit posts. "
+#: ../functions/simplecatch_functions.php:906
+msgid "Click on Theme Settings Tab."
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:905
-msgid "Now find the post ID's which you want to display and keep that ID's on blank Featured Col #1.....  "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:909
-msgid "6. How to create pagination in single post if the post is too long? "
+#: ../functions/simplecatch_functions.php:907
+msgid "Then select the categories you want. You may select multiple categories by holding down the CTRL key."
 msgstr ""
 
 #: ../functions/simplecatch_functions.php:911
-msgid "Click on the Post. "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:912
-msgid "Edit the specific post which you want to breakdown into more pages. "
+msgid "6. How to Add Featured Slider? "
 msgstr ""
 
 #: ../functions/simplecatch_functions.php:913
-msgid "Now Keep the cursor to the exact place of post where you like to break. "
+msgid "Click on Featured Slider under Appearance. "
 msgstr ""
 
 #: ../functions/simplecatch_functions.php:914
-msgid "Then copy this shortcode <!--nextpage--> and paste it. "
+msgid "Give the No. of slides and click on Save Button."
 msgstr ""
 
 #: ../functions/simplecatch_functions.php:915
-msgid "You can repeat this shortcode many times where you wan to break down. "
+msgid "Now there is list of the Featured Col #1, #2 etc."
 msgstr ""
 
 #: ../functions/simplecatch_functions.php:916
+msgid "Add in the Post ID's  in Featured Col #1, #2 respectively."
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:918
+#: ../functions/simplecatch_functions.php:919
+msgid "Note:"
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:918
+msgid "When you add the Post Id's, make sure you have added in the Featured Image in your Post."
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:918
+msgid "http://en.support.wordpress.com/featured-images/#setting-a-featured-image"
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:918
+msgid "Click Here "
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:918
+msgid "To See how to add Featured Post"
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:919
+msgid "If you are unable to find the post ID then you can install the Catch IDs Plugin to find the Post IDs"
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:922
+msgid "7. How to insert Social links on the right side of header?"
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:924
+msgid "Select the Social Links under Appearance."
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:925
+msgid "Here you can see different social links like facebook, twitter etc. "
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:926
+msgid "Paste the social links URL on its respective fields. For example https://www.facebook.com/catchthemes. for facebook etc. "
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:930
+msgid "8. How to insert Site Verification IDs?"
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:932
+#: ../functions/simplecatch_functions.php:940
+msgid "Click on Webmaster Tools under Appearance. "
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:933
+msgid "Click on Site Verification. "
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:934
+msgid "Enter the Google, Yahoo, Bling Site Verification ID respectivly for which you want to verify your site."
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:938
+msgid "9. How to insert Analytics / Other scripts?"
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:941
+msgid "Click on Analytic. "
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:942
+msgid "Here you can put different scripts like, google, facebook etc. "
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:943
+msgid "Enter the script on upper textarea which you want to load on header. "
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:944
+msgid "Enter the script on lower textarea which you want to load on footer. "
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:948
+msgid "10. How to create pagination in single post if the post is too long? "
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:950
+msgid "Click on the Post. "
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:951
+msgid "Edit the specific post in which you want to breakdown into more pages. "
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:952
+msgid "Now Keep the cursor to the exact place of post where you want page break. "
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:953
+msgid "Then copy this shortcode <!--nextpage--> and paste it. "
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:954
+msgid "You can repeat this shortcode many times where you want to break down. "
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:955
 msgid "Update the post. "
 msgstr ""
 

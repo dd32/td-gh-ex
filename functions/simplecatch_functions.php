@@ -11,7 +11,7 @@ function simplecatch_scripts_method() {
 	
 	//Enqueue Slider Script only in Front Page
 	if ( is_home() || is_front_page() ) {
-		wp_enqueue_script( 'simplecatch_custom_slider', get_stylesheet_directory_uri() . '/js/simplecatch_custom_scripts.js', array( 'jquery-cycle' ), '1.0', true );
+		wp_enqueue_script( 'simplecatch_slider', get_stylesheet_directory_uri() . '/js/simplecatch_slider.js', array( 'jquery-cycle' ), '1.0', true );
 	}
 
 	//Enqueue Search Script
@@ -350,11 +350,12 @@ function simplecatch_sliders() {
 				'orderby' 		 => 'post__in',
 				'ignore_sticky_posts' => 1 // ignore sticky posts
 			));
-			while ( $get_featured_posts->have_posts()) : $get_featured_posts->the_post();
+			$i; while ( $get_featured_posts->have_posts()) : $get_featured_posts->the_post(); $i++;
 				$title_attribute = apply_filters( 'the_title', get_the_title( $post->ID ) );
 				$excerpt = get_the_excerpt();
+				if ( $i == 1 ) { $classes = "slides displayblock"; } else { $classes = "slides displaynone"; }
 				$simplecatch_sliders .= '
-				<div class="slides">
+				<div class="'.$classes.'">
 					<div class="featured">
 						<div class="slide-image">';
 							if( has_post_thumbnail() ) {
@@ -690,7 +691,7 @@ function simplecatch_pass_slider_value() {
 	$transition_delay = $options[ 'transition_delay' ] * 1000;
 	$transition_duration = $options[ 'transition_duration' ] * 1000;
 	wp_localize_script( 
-		'simplecatch_custom_slider',
+		'simplecatch_slider',
 		'js_value',
 		array(
 			'transition_effect' => $transition_effect,
@@ -861,58 +862,96 @@ function simplecatch_faq() {
 		<h2><?php _e( 'FAQ: Frequently Asked Questions', 'simplecatch' ); ?></h2>
 		<h3><?php _e( '1. How to change logo on Header and Footer? ', 'simplecatch' ); ?></h3>
 		<ul>
-			<li><?php  _e( 'Click on Theme Options under Appearance. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Select the Logo Tab. You can see the default logo previews. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Now click on Change Header Logo and Footer Logo button. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Browse the Logo image from desired location and insert into the Post. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Click on Theme Options under Appearance.', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Click on Design Settings Tab.', 'simplecatch' ); ?></li>
+            <li><?php  _e( 'Click on Logo Options. You can see the default logo previews. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Now click on Change Header Logo and Change Footer Logo button to change the Header and Footer Logo respectively.', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Browse the Logo image from desired location and upload it.', 'simplecatch' ); ?></li>
+            <li><?php  _e( 'Once the upload in completed. Then click on insert into the Post.', 'simplecatch' ); ?></li>
 			<li><?php  _e( 'Click on Save button. Now you can see the previews. ', 'simplecatch' ); ?></li>
 		</ul>
 		
 		<h3><?php  _e( '2. How to change fav icon? ', 'simplecatch' ); ?></h3>
 		<ul>
-			<li><?php  _e( 'Click on Theme Options under Appearance. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Select the Fav Icon Tab. You can see the default fav icon preview. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Click on Theme Options under Appearance.', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Click on Design Settings Tab.', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Click on Fav Icon Options. You can see the default fav icon preview. ', 'simplecatch' ); ?></li>
 			<li><?php  _e( 'Now click on Change Fav Icon button. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Browse the fav icon image from desired location and insert into the Post. ', 'simplecatch' ); ?></li>
+            <li><?php  _e( 'Browse the fav icon image from desired location and upload it.', 'simplecatch' ); ?></li>
+            <li><?php  _e( 'Once the upload in completed. Then click on insert into the Post.', 'simplecatch' ); ?></li>
 			<li><?php  _e( 'Click on Save button. Now you can see the preview. ', 'simplecatch' ); ?></li>
 		</ul>
-			
-		<h3><?php  _e( '3. How to insert Social links on the right side of header? ', 'simplecatch' ); ?></h3>
+        
+		<h3><?php  _e( '3. Where to add Additional CSS Styles', 'simplecatch' ); ?></h3>
 		<ul>
-			<li><?php  _e( 'Click on Theme Options under Appearance. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Select the Social Links Tab. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Here you can see different social links like facebook, twitter etc. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Give the social links on its respective socal fields. For example http://www.facebook.com. for facebook etc. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'If you are doing lot of customization then it is better to create child theme. But if you just want to change few CSS then follow the instruction.', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Click on Theme Options under Appearance.', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Click on Design Settings Tab.', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Now click on Custom CSS. Then add in the custom CSS.', 'simplecatch' ); ?></li>
 			<li><?php  _e( 'Click on Save button. ', 'simplecatch' ); ?></li>
-		</ul>
-		
-		<h3><?php  _e( '4. How to insert Analytic scripts? ', 'simplecatch' ); ?></h3>
+		</ul>  
+        
+		<h3><?php  _e( '4. How to change Layouts? ', 'simplecatch' ); ?></h3>
 		<ul>
-			<li><?php  _e( 'Click on Theme Options under Appearance. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Select the Analytic Option Tab. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Here you can put different scripts like, google, facebook etc. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Put the script on upper textarea which you want to load on header. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Put the script on lower textarea which you want to load on footer. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Click on Save button. ', 'simplecatch' ); ?></li>
-		</ul>
-		
-		<h3><?php  _e( '5. How to choose featured slider? ', 'simplecatch' ); ?></h3>
+			<li><?php  _e( 'Click on Theme Options under Appearance.', 'simplecatch' ); ?></li>
+            <li><?php  _e( 'Click on Design Settings Tab.', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Click on Layout Settings.', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Then do the desired configuration.', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Click on Save button.', 'simplecatch' ); ?></li>
+		</ul>   
+        
+		<h3><?php  _e( '5. How to set certain categories to display in Homepage / Frontpage ? ', 'simplecatch' ); ?></h3>
+		<ul>
+			<li><?php  _e( 'Click on Theme Options under Appearance.', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Click on Theme Settings Tab.', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Then select the categories you want. You may select multiple categories by holding down the CTRL key.', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Click on Save button.', 'simplecatch' ); ?></li>
+		</ul>  
+        
+		<h3><?php  _e( '6. How to Add Featured Slider? ', 'simplecatch' ); ?></h3>
 		<ul>
 			<li><?php  _e( 'Click on Featured Slider under Appearance. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Give the No. of slides and click on Save Button. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Now there is list of the Featured Col #1, #2 etc. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'To Give the Post ID\'s, click on "Click Here to Edit" Button which redirect you into the edit posts. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Now find the post ID\'s which you want to display and keep that ID\'s on blank Featured Col #1.....  ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Give the No. of slides and click on Save Button.', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Now there is list of the Featured Col #1, #2 etc.', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Add in the Post ID\'s  in Featured Col #1, #2 respectively.', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Click on Save button. ', 'simplecatch' ); ?></li>
+            <li><strong><?php  _e( 'Note:', 'simplecatch' ); ?></strong> <?php  _e( 'When you add the Post Id\'s, make sure you have added in the Featured Image in your Post.', 'simplecatch' ); ?> <a href="<?php echo esc_url( __( 'http://en.support.wordpress.com/featured-images/#setting-a-featured-image', 'simplecatch' ) ); ?>" target="_blank"><?php _e( 'Click Here ', 'simplecatch' ); ?></a> <?php  _e( 'To See how to add Featured Post', 'simplecatch' ); ?></li>
+            <li><strong><?php  _e( 'Note:', 'simplecatch' ); ?></strong> <?php  _e( 'If you are unable to find the post ID then you can install the Catch IDs Plugin to find the Post IDs', 'simplecatch' ); ?></li>
+		</ul>                            
+			
+		<h3><?php  _e( '7. How to insert Social links on the right side of header?', 'simplecatch' ); ?></h3>
+		<ul>
+			<li><?php  _e( 'Select the Social Links under Appearance.', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Here you can see different social links like facebook, twitter etc. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Paste the social links URL on its respective fields. For example https://www.facebook.com/catchthemes. for facebook etc. ', 'simplecatch' ); ?></li>
 			<li><?php  _e( 'Click on Save button. ', 'simplecatch' ); ?></li>
 		</ul>
+        
+		<h3><?php  _e( '8. How to insert Site Verification IDs?', 'simplecatch' ); ?></h3>
+		<ul>
+			<li><?php  _e( 'Click on Webmaster Tools under Appearance. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Click on Site Verification. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Enter the Google, Yahoo, Bling Site Verification ID respectivly for which you want to verify your site.', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Click on Save button. ', 'simplecatch' ); ?></li>
+		</ul>        
 		
-		<h3><?php  _e( '6. How to create pagination in single post if the post is too long? ', 'simplecatch' ); ?></h3>
+		<h3><?php  _e( '9. How to insert Analytics / Other scripts?', 'simplecatch' ); ?></h3>
+		<ul>
+			<li><?php  _e( 'Click on Webmaster Tools under Appearance. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Click on Analytic. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Here you can put different scripts like, google, facebook etc. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Enter the script on upper textarea which you want to load on header. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Enter the script on lower textarea which you want to load on footer. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Click on Save button. ', 'simplecatch' ); ?></li>
+		</ul>		
+
+		<h3><?php  _e( '10. How to create pagination in single post if the post is too long? ', 'simplecatch' ); ?></h3>
 		<ul>
 			<li><?php  _e( 'Click on the Post. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Edit the specific post which you want to breakdown into more pages. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Now Keep the cursor to the exact place of post where you like to break. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Edit the specific post in which you want to breakdown into more pages. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'Now Keep the cursor to the exact place of post where you want page break. ', 'simplecatch' ); ?></li>
 			<li><?php  _e( 'Then copy this shortcode <!--nextpage--> and paste it. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'You can repeat this shortcode many times where you wan to break down. ', 'simplecatch' ); ?></li>
+			<li><?php  _e( 'You can repeat this shortcode many times where you want to break down. ', 'simplecatch' ); ?></li>
 			<li><?php  _e( 'Update the post. ', 'simplecatch' ); ?></li>
 			<li><?php  _e( 'Click on Save button. ', 'simplecatch' ); ?></li>
 		</ul>
