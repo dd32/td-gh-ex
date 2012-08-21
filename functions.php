@@ -108,18 +108,8 @@
 	) );
 
 	register_sidebar( array(
-		'name' =>  'Footer Area One',
+		'name' =>  'Footer Area',
 		'id' => 'sidebar-3',
-		'description' =>  'An optional widget area for your site footer',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
-
-	register_sidebar( array(
-		'name' =>  'Footer Area Two',
-		'id' => 'sidebar-4',
 		'description' =>  'An optional widget area for your site footer',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -133,10 +123,10 @@
 
 // 	When the post has no post title, but is required to link to the single-page post view.
 
-	add_filter('the_title', 'status_title');
-	function status_title($title) {
+	add_filter('the_title', 'colorful_title');
+	function colorful_title($title) {
         if ( '' == $title ) {
-            return __('Untitled','status');
+            return '(Untitled)';
         } else {
             return $title;
         }

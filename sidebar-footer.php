@@ -6,7 +6,6 @@
 */
 	
 	if (   ! is_active_sidebar( 'sidebar-3'  )
-		&& ! is_active_sidebar( 'sidebar-4' )
 	)
 		return;
 		
@@ -17,8 +16,5 @@
 			<?php dynamic_sidebar( 'sidebar-3' ); ?>
 	<?php endif; ?>
 
-	<?php if ( is_active_sidebar( 'sidebar-4' ) ) : ?>
-			<?php dynamic_sidebar( 'sidebar-4' ); ?>
-	<?php endif; ?>
 
 
