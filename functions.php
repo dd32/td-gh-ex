@@ -2,7 +2,7 @@
 
 //Azure Basic functions and definitions
 
-// Version 2.5
+// Version 2.6
 
 // Set the content width based on the theme's design and stylesheet.
 
@@ -54,7 +54,7 @@ function azurebasic_setup() {
 
 
 	// Add support for custom backgrounds
-	add_custom_background();
+	add_theme_support( 'custom-background' );
 	
 	
 	// This theme styles the visual editor with an editor-style.css file to match the theme style.
@@ -86,7 +86,7 @@ endif; // azurebasic_setup
 	        }
 	    </style><?php
 	}
-	add_custom_image_header( '', 'admin_header_style' );
+	add_theme_support( 'custom-header' );
 	
 	
 //Sets the post excerpt length to 40 words.

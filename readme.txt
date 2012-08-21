@@ -1,5 +1,5 @@
 ﻿
-                                                 || AZURE BASIC 2.5.5 -- A Basic WordPress Theme ||
+                                                 || AZURE BASIC 2.6 -- A Basic WordPress Theme ||
 												 
 || About ||
 
@@ -46,6 +46,8 @@ Credit: Photo by Maurizio Carta, Iglesias, CI, Italy.
 
    
 || Changelog ||
+
+v2.6 - Updated functions.php for WordPress v3.4, removed deprecated functions
 
 v2.5.5 - Header image change
        - content and sidebar padding adjusted
