@@ -3,7 +3,7 @@ Theme Name: Responsive
 Theme URI: http://themeid.com/responsive-theme/ 
 Description: Responsive Theme is a flexible foundation with fluid grid system that adapts your website to any mobile devices and the desktop or any other viewing environment. Theme features 9 Page Templates, 10 Widget Areas, 6 Template Layouts, 4 Menu Positions and more. Powerful but simple Theme Options for full CMS control. Easy Logo Upload, Social Networking and Webmaster Tools. Responsive is WooCommerce Compatible, Multilingual Ready (WPML) and currently translated into 24 languages. Cross-Browser compatible and yes even the IE7. No memberships or clubs to get a FREE/Responsive Support you need. http://themeid.com/support
 
-Version: 1.7.5
+Version: 1.7.6
 Author: ThemeID 
 Author URI: http://themeid.com
 Tags: white, black, gray, light, custom-menu, custom-header, custom-background, one-column, two-columns, left-sidebar, right-sidebar, flexible-width, theme-options, threaded-comments, full-width-template, sticky-post, translation-ready
@@ -2341,7 +2341,6 @@ table.cart td.actions .coupon .input-text {
 
 /* =Clearfix
 -------------------------------------------------------------- */
-#widgets:after,
 .clearfix:after, 
 #container:after, 
 .widget-wrapper:after {
@@ -2354,21 +2353,18 @@ table.cart td.actions .coupon .input-text {
 	visibility:hidden;
 }
 
-#widgets,
 .clearfix, 
 #container, 
 .widget-wrapper {
 	display:inline-block;
 }
 
-*html #widgets,
 *html .clearfix, 
 *html #container, 
 *html .widget-wrapper {
 	height:1%;
 }
 
-#widgets,
 .clearfix, 
 #container, 
 .widget-wrapper {

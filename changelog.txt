@@ -8,6 +8,9 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(08/21/2012) - IE7 Bug Fix
+[!] widget clearfix
+
 (08/19/2012) - Maintenance and Improvements - Version 1.7.5
 [+] Shortcode support for home and featured areas
 [+] Colophon widget (on-demand)
