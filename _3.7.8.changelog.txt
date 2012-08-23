@@ -1,3 +1,11 @@
+Changelog 3.7.8:
+- Double titles when using Yoast WP SEO: http://forum.bytesforall.com/showthread.php?t=18174
+- Issue with internal SEO options: http://forum.bytesforall.com/showthread.php?t=18160
+- Issue with print style at certain sidebar config: http://forum.bytesforall.com/showthread.php?t=18125
+- sticky.gif for sticky posts not found due to space in (default) image URL, caused by line break in /functions/bfa_theme_options.php line 2240/2241
+- added new feature auto resizing of videos (embed and iframe elements), in /js.php
+
+
 Changelog 3.7.7:
 
 Based on http://themes.trac.wordpress.org/ticket/7485#comment:2
