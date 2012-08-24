@@ -112,7 +112,7 @@ Version 1.3.4
 * Fixed add_image_scripts.js
 * Stored all theme options variables in a global variable and used it instead of get_option.
 * Change stylesheet URL to get_stylesheet_uri()
-* Added catchbox.pot file to make theme translation ready
+* Added simplecatch.pot file to make theme translation ready
 
 Version 1.3.5
 * Changed theme options user interface design.
@@ -128,6 +128,12 @@ Version 1.3.5.2
 * Fixed Slider loading issue and display overlap 
 * Added un-minified version of JS as per GPL
 * Updated simplecatch.pot file
+
+Version 1.3.5.3
+* Fixed css for Title
+* Fixed css for input fields in sidebar
+* Fixing textdomain in theme option
+* Replace wp_print_styles to wp_enqueue_scripts
 
 == Upcoming Plan ==
 * Add option for feed redirect

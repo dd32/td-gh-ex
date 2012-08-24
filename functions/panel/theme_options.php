@@ -126,7 +126,7 @@ function simplecatch_theme_options_do_page() {
                 <!-- Option for Design Settings -->
                 <div id="designsettings">
                     <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Logo Options', 'catchbox' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Logo Options', 'simplecatch' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table">
                                 <tbody>
@@ -204,7 +204,7 @@ function simplecatch_theme_options_do_page() {
                     </div><!-- .option-container -->  
 
                     <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Fav Icon Options', 'catchbox' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Fav Icon Options', 'simplecatch' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table">
                                 <tbody>
@@ -243,7 +243,7 @@ function simplecatch_theme_options_do_page() {
                     </div><!-- .option-container --> 
 
                     <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Custom CSS', 'catchbox' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Custom CSS', 'simplecatch' ); ?></a></h3>
                         <div class="option-content inside"> 
                             <table class="form-table">  
                                 <tbody>       
@@ -267,7 +267,7 @@ function simplecatch_theme_options_do_page() {
                     </div><!-- .option-container --> 
 
                     <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Layout Settings', 'catchbox' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Layout Settings', 'simplecatch' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table">  
                                 <tbody>
@@ -324,7 +324,7 @@ function simplecatch_theme_options_do_page() {
                 <!-- Options for Theme Settings -->
                 <div id="themesettings">
                     <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Homepage / Frontpage Category Setting', 'catchbox' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Homepage / Frontpage Category Setting', 'simplecatch' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table">
                                 <tbody>
@@ -389,7 +389,7 @@ function simplecatch_slider_options_do_page(){
             <?php endif; ?>  
 
             <div class="option-container">
-                <h3 class="option-toggle"><a href="#"><?php _e( 'Add Slider Options', 'catchbox' ); ?></a></h3>
+                <h3 class="option-toggle"><a href="#"><?php _e( 'Add Slider Options', 'simplecatch' ); ?></a></h3>
                 <div class="option-content inside">
                     <table class="form-table">
                         <tr>                            
@@ -419,7 +419,7 @@ function simplecatch_slider_options_do_page(){
 
             <!-- Option for More Slider Options -->
             <div class="option-container">
-                <h3 class="option-toggle"><a href="#"><?php _e( 'Slider Effect Options', 'catchbox' ); ?></a></h3>
+                <h3 class="option-toggle"><a href="#"><?php _e( 'Slider Effect Options', 'simplecatch' ); ?></a></h3>
                 <div class="option-content inside">
                     <table class="form-table">   
                         <tr>                            
@@ -622,7 +622,7 @@ function simplecatch_webmaster_options_do_page(){
             <?php endif; ?>  
 
             <div class="option-container">
-                <h3 class="option-toggle"><a href="#"><?php _e( 'Site Verification', 'catchbox' ); ?></a></h3>
+                <h3 class="option-toggle"><a href="#"><?php _e( 'Site Verification', 'simplecatch' ); ?></a></h3>
                 <div class="option-content inside">
                     <table class="form-table">  
                         <tbody>    
@@ -650,7 +650,7 @@ function simplecatch_webmaster_options_do_page(){
             </div><!-- .option-container --> 
         
             <div class="option-container">
-                <h3 class="option-toggle"><a href="#"><?php _e( 'Analytics', 'catchbox' ); ?></a></h3>
+                <h3 class="option-toggle"><a href="#"><?php _e( 'Analytics', 'simplecatch' ); ?></a></h3>
                 <div class="option-content inside">
                     <table class="form-table">  
                         <tbody>       

@@ -31,6 +31,19 @@ add_action( 'wp_enqueue_scripts', 'simplecatch_scripts_method' );
 
 
 /**
+ * Register Google Font Style
+ *
+ * @uses wp_register_style and wp_enqueue_style
+ * @action wp_enqueue_scripts
+ */
+function simplecatch_load_google_fonts() {
+    wp_register_style('google-fonts', 'http://fonts.googleapis.com/css?family=Lobster');
+	wp_enqueue_style( 'google-fonts');
+}
+add_action('wp_enqueue_scripts', 'simplecatch_load_google_fonts');
+
+
+/**
  * Register script for admin section
  *
  * No scripts should be enqueued within this function.
@@ -43,19 +56,6 @@ function simplecatch_register_js() {
 	wp_register_script( 'jquery-cookie', get_stylesheet_directory_uri() . '/js/jquery.cookie.min.js', array( 'jquery' ), '1.0', true );
 }
 add_action( 'admin_enqueue_scripts', 'simplecatch_register_js' );
-
-
-/**
- * Register Google Font Style
- *
- * @uses wp_register_style and wp_enqueue_style
- * @action wp_print_styles
- */
-function simplecatch_load_google_fonts() {
-    wp_register_style('google-fonts', 'http://fonts.googleapis.com/css?family=Lobster');
-	wp_enqueue_style( 'google-fonts');
-}
-add_action('wp_print_styles', 'simplecatch_load_google_fonts');
 
 
 /**
