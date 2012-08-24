@@ -6,8 +6,8 @@
 ----------------------------------------------- */
 
 body {
-	background: #1d1d1d;
 	color: #bbb;
+	background-color: #1d1d1d;
 }
 #page {
 	background: #111;
@@ -58,6 +58,7 @@ a {
 ----------------------------------------------- */
 
 #branding {
+	background-color: #222;
 	border-color: #333;
 }
 #site-title a {
@@ -94,10 +95,17 @@ a {
 #main {
 	background-color: #222;
 }
+#slider { 
+	background-color: #111111;
+    border-color: #333333;
+}
 .page-title {
 	color: #ccc;
 }
-.hentry, .no-results {
+.page-header,
+.hentry,
+.no-results,
+.widget {
 	background-color: #111;
 	border-color: #333;
 }
@@ -408,7 +416,8 @@ section.recent-posts .other-recent-posts .comments-link a:hover {
 ----------------------------------------------- */
 
 .widget-title {
-	color: #ccc;
+	color: #ddd;
+	border-color: #333;
 }
 .widget ul li {
 	color: #888;
@@ -581,11 +590,13 @@ li.bypostauthor a.comment-reply-link:active {
 
 /* =Footer
 ----------------------------------------------- */
-
-#supplementary {
+#colophon {
 	border-color: #333;
 }
-
+#supplementary {
+	background-color: #222;
+	border-color: #333;
+}
 /* Site Generator Line */
 #site-generator {
 	background-color: #222;

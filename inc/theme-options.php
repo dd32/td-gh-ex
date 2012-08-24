@@ -69,7 +69,6 @@ function catchbox_theme_options_init() {
 		'catchbox_options_social_links',  // Database option, see catchbox_get_theme_options()			
 		'catchbox_options_social_links_validation' // The sanitization callback, see catchbox_theme_options_validate()
 	);
-	
 
 	// Register our settings field group
 	add_settings_section(
@@ -81,15 +80,28 @@ function catchbox_theme_options_init() {
 
 	// Register our individual settings fields
 	add_settings_field(
-		'color_scheme',  // Unique identifier for the field for this section
+		'color_scheme', // Unique identifier for the field for this section
 		__( 'Color Scheme', 'catchbox' ), // Setting field label
 		'catchbox_settings_field_color_scheme', // Function that renders the settings field
 		'theme_options', // Menu slug, used to uniquely identify the page; see catchbox_theme_options_add_page()
 		'general' // Settings section. Same as the first argument in the add_settings_section() above
 	);
 
-	add_settings_field( 'link_color', __( 'Link Color',     'catchbox' ), 'catchbox_settings_field_link_color', 'theme_options', 'general' );
-	add_settings_field( 'layout',     __( 'Default Layout', 'catchbox' ), 'catchbox_settings_field_layout',     'theme_options', 'general' );
+	add_settings_field( 
+		'link_color', // Unique identifier for the field for this section 
+		__( 'Link Color', 'catchbox' ), // Setting field label 
+		'catchbox_settings_field_link_color', // Function that renders the settings field
+		'theme_options', // Menu slug, used to uniquely identify the page; see catchbox_theme_options_add_page()
+		'general' // Settings section. Same as the first argument in the add_settings_section() above
+	);
+	
+	add_settings_field( 
+		'layout', // Unique identifier for the field for this section 
+		__( 'Default Layout', 'catchbox' ), // Setting field label 
+		'catchbox_settings_field_layout', // Function that renders the settings field
+		'theme_options', // Menu slug, used to uniquely identify the page; see catchbox_theme_options_add_page()
+		'general' // Settings section. Same as the first argument in the add_settings_section() above 
+	);
 
 	add_settings_field(
 		'content_layout', // Unique identifier for the settings section
@@ -211,9 +223,9 @@ function catchbox_theme_options_help() {
 	if ( method_exists( $screen, 'add_help_tab' ) ) {
 		// WordPress 3.3
 		$screen->add_help_tab( array(
-			'title' => __( 'Overview', 'catchbox' ),
-			'id' => 'theme-options-help',
-			'content' => $help,
+			'title'		=> __( 'Overview', 'catchbox' ),
+			'id'		=> 'theme-options-help',
+			'content'	=> $help,
 			)
 		);
 
@@ -236,9 +248,9 @@ function catchbox_slider_options_help() {
 	if ( method_exists( $screen, 'add_help_tab' ) ) {
 		// WordPress 3.3
 		$screen->add_help_tab( array(
-			'title' => __( 'Overview', 'catchbox' ),
-			'id' => 'slider-options-help',
-			'content' => $help,
+			'title'		=> __( 'Overview', 'catchbox' ),
+			'id'		=> 'slider-options-help',
+			'content'	=> $help,
 			)
 		);
 	}
@@ -251,18 +263,18 @@ function catchbox_slider_options_help() {
  */
 function catchbox_color_schemes() {
 	$color_scheme_options = array(
-		'light' => array(
-			'value' => 'light',
-			'label' => __( 'Light', 'catchbox' ),
-			'thumbnail' => get_template_directory_uri() . '/inc/images/light.png',
-			'default_link_color' => '#1b8be0',
+		'light' 					=> array(
+			'value'					=> 'light',
+			'label'					=> __( 'Light', 'catchbox' ),
+			'thumbnail'				=> get_template_directory_uri() . '/inc/images/light.png',
+			'default_link_color'	=> '#1b8be0',
 		),
-		'dark' => array(
-			'value' => 'dark',
-			'label' => __( 'Dark', 'catchbox' ),
-			'thumbnail' => get_template_directory_uri() . '/inc/images/dark.png',
-			'default_link_color' => '#e4741f',
-		),
+		'dark' 						=> array(
+			'value'					=> 'dark',
+			'label'					=> __( 'Dark', 'catchbox' ),
+			'thumbnail'				=> get_template_directory_uri() . '/inc/images/dark.png',
+			'default_link_color'	=> '#e4741f',
+		),	
 	);
 
 	return apply_filters( 'catchbox_color_schemes', $color_scheme_options );
@@ -275,20 +287,20 @@ function catchbox_color_schemes() {
  */
 function catchbox_layouts() {
 	$layout_options = array(
-		'content-sidebar' => array(
-			'value' => 'content-sidebar',
-			'label' => __( 'Content on left', 'catchbox' ),
-			'thumbnail' => get_template_directory_uri() . '/inc/images/content-sidebar.png',
+		'content-sidebar' 	=> array(
+			'value' 		=> 'content-sidebar',
+			'label'			=> __( 'Content on left', 'catchbox' ),
+			'thumbnail'		=> get_template_directory_uri() . '/inc/images/content-sidebar.png',
 		),
-		'sidebar-content' => array(
-			'value' => 'sidebar-content',
-			'label' => __( 'Content on right', 'catchbox' ),
-			'thumbnail' => get_template_directory_uri() . '/inc/images/sidebar-content.png',
+		'sidebar-content' 	=> array(
+			'value'			=> 'sidebar-content',
+			'label'			=> __( 'Content on right', 'catchbox' ),
+			'thumbnail'		=> get_template_directory_uri() . '/inc/images/sidebar-content.png',
 		),
-		'content' => array(
-			'value' => 'content',
-			'label' => __( 'One-column, no sidebar', 'catchbox' ),
-			'thumbnail' => get_template_directory_uri() . '/inc/images/content.png',
+		'content' 			=> array(
+			'value'			=> 'content',
+			'label'			=> __( 'One-column, no sidebar', 'catchbox' ),
+			'thumbnail'		=> get_template_directory_uri() . '/inc/images/content.png',
 		),
 	);
 
@@ -302,19 +314,20 @@ function catchbox_layouts() {
  */
 function catchbox_content_layout() {
 	$content_options = array(
-		'excerpt' => array(
-			'value' => 'excerpt',
-			'label' => __( 'Show excerpt', 'catchbox' ),
+		'excerpt'			=> array(
+			'value'			=> 'excerpt',
+			'label'			=> __( 'Show excerpt', 'catchbox' ),
+			'thumbnail'		=> get_template_directory_uri() . '/inc/images/excerpt.png',
 		),	 
-		'full-content' => array(
-			'value' => 'full-content',
-			'label' => __( 'Show full content', 'catchbox' ),
+		'full-content'		=> array(
+			'value'			=> 'full-content',
+			'label'			=> __( 'Show full content', 'catchbox' ),
+			'thumbnail'		=> get_template_directory_uri() . '/inc/images/full-content.png',
 		)
 	);
 
 	return apply_filters( 'catchbox_content_layouts', $content_options );
 }
-
 
 /**
  * Returns the default options for Catch Box.
@@ -323,11 +336,11 @@ function catchbox_content_layout() {
  */
 function catchbox_get_default_theme_options() {
 	$default_theme_options = array(
-		'excerpt_length'=>40,
-		'color_scheme' => 'light',
-		'link_color'   => catchbox_get_default_link_color( 'light' ),
-		'theme_layout' => 'content-sidebar',
-		'content_layout' => 'excerpt',
+		'excerpt_length'	=>40,
+		'color_scheme'		=> 'light',
+		'link_color'		=> catchbox_get_default_link_color( 'light' ),
+		'theme_layout'		=> 'content-sidebar',
+		'content_layout'	=> 'excerpt',
 		
 	);
 
@@ -382,7 +395,7 @@ function catchbox_settings_field_color_scheme() {
             <input type="radio" name="catchbox_theme_options[color_scheme]" value="<?php echo esc_attr( $scheme['value'] ); ?>" <?php checked( $options['color_scheme'], $scheme['value'] ); ?> />
             <input type="hidden" id="default-color-<?php echo esc_attr( $scheme['value'] ); ?>" value="<?php echo esc_attr( $scheme['default_link_color'] ); ?>" />
             <span>
-                <img src="<?php echo esc_url( $scheme['thumbnail'] ); ?>" width="136" height="122" alt="" />
+                <img src="<?php echo esc_url( $scheme['thumbnail'] ); ?>" width="164" height="122" alt="" />
                 <?php echo $scheme['label']; ?>
             </span>
         </label>
@@ -483,8 +496,9 @@ function catchbox_settings_field_content_scheme() {
             <label class="description">
                 <input type="radio" name="catchbox_theme_options[content_layout]" value="<?php echo esc_attr( $content['value'] ); ?>" <?php checked( $options['content_layout'], $content['value'] ); ?> />
                 <span>
-                    <?php echo $content['label']; ?>
-                </span>
+                	<img src="<?php echo esc_url( $content['thumbnail'] ); ?>" width="164" height="163" alt="" />
+                	<?php echo $content['label']; ?>
+            	</span>
 			</label>
 		</div>
 		<?php
@@ -1191,7 +1205,7 @@ function catchbox_socialprofile() {
 			}
 		}
 	}
-				
+			
 	if( ( !$catchbox_socialprofile = get_transient( 'catchbox_socialprofile' ) ) && ($flag == 1) ) {
 		echo '<!-- refreshing cache -->';
 		

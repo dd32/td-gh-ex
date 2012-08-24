@@ -90,3 +90,7 @@ Version 1.1.3
 Version 1.1.3.1
 * Fixed Slider loading issue and display overlap 
 * Added un-minified version of JS as per GPL
+
+Version 1.1.3.2
+* Fixed site title and heading font issue
+* Fixed dark.css for dark color scheme

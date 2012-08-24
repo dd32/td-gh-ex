@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/catch-box\n"
 "POT-Creation-Date: 2012-07-21 12:19+0530\n"
-"PO-Revision-Date: 2012-08-15 20:05+0530\n"
+"PO-Revision-Date: 2012-08-24 16:49+0530\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Catch Themes <info@catchinternet.com>\n"
 "MIME-Version: 1.0\n"
@@ -553,371 +553,371 @@ msgstr ""
 msgid "Tag Archives: %s"
 msgstr ""
 
-#: ../inc/theme-options.php:85
+#: ../inc/theme-options.php:84
 msgid "Color Scheme"
 msgstr ""
 
-#: ../inc/theme-options.php:91
+#: ../inc/theme-options.php:92
 msgid "Link Color"
 msgstr ""
 
-#: ../inc/theme-options.php:92
+#: ../inc/theme-options.php:100
 msgid "Default Layout"
 msgstr ""
 
-#: ../inc/theme-options.php:96
+#: ../inc/theme-options.php:108
 msgid "Content layout"
 msgstr ""
 
-#: ../inc/theme-options.php:104
+#: ../inc/theme-options.php:116
 msgid "Excerpt Length in Words"
 msgstr ""
 
-#: ../inc/theme-options.php:112
+#: ../inc/theme-options.php:124
 msgid "Feed Redirect URL"
 msgstr ""
 
-#: ../inc/theme-options.php:120
+#: ../inc/theme-options.php:132
 msgid "Custom CSS Styles"
 msgstr ""
 
-#: ../inc/theme-options.php:156
-#: ../inc/theme-options.php:157
+#: ../inc/theme-options.php:168
+#: ../inc/theme-options.php:169
 msgid "Theme Options"
 msgstr ""
 
-#: ../inc/theme-options.php:164
-#: ../inc/theme-options.php:165
+#: ../inc/theme-options.php:176
+#: ../inc/theme-options.php:177
 msgid "Featured Slider"
 msgstr ""
 
-#: ../inc/theme-options.php:172
-#: ../inc/theme-options.php:173
+#: ../inc/theme-options.php:184
+#: ../inc/theme-options.php:185
 msgid "Social Links"
 msgstr ""
 
-#: ../inc/theme-options.php:180
-#: ../inc/theme-options.php:181
+#: ../inc/theme-options.php:192
+#: ../inc/theme-options.php:193
 msgid "Webmaster Tools"
 msgstr ""
 
-#: ../inc/theme-options.php:197
+#: ../inc/theme-options.php:209
 msgid "Some themes provide customization options that are grouped together on a Theme Options screen. If you change themes, options may change or disappear, as they are theme-specific. Your current theme, Catch Box, provides the following Theme Options:"
 msgstr ""
 
-#: ../inc/theme-options.php:199
-#: ../inc/theme-options.php:228
+#: ../inc/theme-options.php:211
+#: ../inc/theme-options.php:240
 msgid "<strong>Color Scheme</strong>: You can choose a color palette of \"Light\" (light background with dark text) or \"Dark\" (dark background with light text) for your site."
 msgstr ""
 
-#: ../inc/theme-options.php:200
-#: ../inc/theme-options.php:229
+#: ../inc/theme-options.php:212
+#: ../inc/theme-options.php:241
 msgid "<strong>Link Color</strong>: You can choose the color used for text links on your site. You can enter the HTML color or hex code, or you can choose visually by clicking the \"Select a Color\" button to pick from a color wheel."
 msgstr ""
 
-#: ../inc/theme-options.php:201
-#: ../inc/theme-options.php:230
+#: ../inc/theme-options.php:213
+#: ../inc/theme-options.php:242
 msgid "<strong>Default Layout</strong>: You can choose if you want your site&#8217;s default layout to have a sidebar on the left, the right, or not at all."
 msgstr ""
 
-#: ../inc/theme-options.php:203
-#: ../inc/theme-options.php:232
+#: ../inc/theme-options.php:215
+#: ../inc/theme-options.php:244
 msgid "Remember to click \"Save Changes\" to save any changes you have made to the theme options."
 msgstr ""
 
-#: ../inc/theme-options.php:205
+#: ../inc/theme-options.php:217
 msgid "For more information:"
 msgstr ""
 
-#: ../inc/theme-options.php:206
+#: ../inc/theme-options.php:218
 msgid "<a href=\"http://codex.wordpress.org/Appearance_Theme_Options_Screen\" target=\"_blank\">Documentation on Theme Options</a>"
 msgstr ""
 
-#: ../inc/theme-options.php:207
+#: ../inc/theme-options.php:219
 msgid "<a href=\"http://wordpress.org/support/\" target=\"_blank\">Support Forums</a>"
 msgstr ""
 
-#: ../inc/theme-options.php:214
-#: ../inc/theme-options.php:239
+#: ../inc/theme-options.php:226
+#: ../inc/theme-options.php:251
 msgid "Overview"
 msgstr ""
 
-#: ../inc/theme-options.php:226
+#: ../inc/theme-options.php:238
 msgid "Slider Some themes provide customization options that are grouped together on a Theme Options screen. If you change themes, options may change or disappear, as they are theme-specific. Your current theme, Catch Box, provides the following Theme Options:"
 msgstr ""
 
-#: ../inc/theme-options.php:256
+#: ../inc/theme-options.php:268
 msgid "Light"
 msgstr ""
 
-#: ../inc/theme-options.php:262
+#: ../inc/theme-options.php:274
 msgid "Dark"
 msgstr ""
 
-#: ../inc/theme-options.php:280
+#: ../inc/theme-options.php:292
 msgid "Content on left"
 msgstr ""
 
-#: ../inc/theme-options.php:285
+#: ../inc/theme-options.php:297
 msgid "Content on right"
 msgstr ""
 
-#: ../inc/theme-options.php:290
+#: ../inc/theme-options.php:302
 msgid "One-column, no sidebar"
 msgstr ""
 
-#: ../inc/theme-options.php:307
+#: ../inc/theme-options.php:319
 msgid "Show excerpt"
 msgstr ""
 
-#: ../inc/theme-options.php:311
+#: ../inc/theme-options.php:324
 msgid "Show full content"
 msgstr ""
 
-#: ../inc/theme-options.php:404
+#: ../inc/theme-options.php:417
 msgid "Select a Color"
 msgstr ""
 
-#: ../inc/theme-options.php:407
+#: ../inc/theme-options.php:420
 #, php-format
 msgid "Default color: %s"
 msgstr ""
 
-#: ../inc/theme-options.php:446
+#: ../inc/theme-options.php:459
 msgid "CSS Tutorial from W3Schools."
 msgstr ""
 
-#: ../inc/theme-options.php:446
+#: ../inc/theme-options.php:459
 msgid "http://www.w3schools.com/css/default.asp"
 msgstr ""
 
-#: ../inc/theme-options.php:446
+#: ../inc/theme-options.php:459
 msgid "CSS Tutorial"
 msgstr ""
 
-#: ../inc/theme-options.php:446
+#: ../inc/theme-options.php:459
 msgid "Click Here to Read"
 msgstr ""
 
-#: ../inc/theme-options.php:508
-#: ../inc/theme-options.php:510
-#: ../inc/theme-options.php:539
-#: ../inc/theme-options.php:541
-#: ../inc/theme-options.php:651
-#: ../inc/theme-options.php:653
-#: ../inc/theme-options.php:773
-#: ../inc/theme-options.php:775
+#: ../inc/theme-options.php:522
+#: ../inc/theme-options.php:524
+#: ../inc/theme-options.php:553
+#: ../inc/theme-options.php:555
+#: ../inc/theme-options.php:665
+#: ../inc/theme-options.php:667
+#: ../inc/theme-options.php:787
+#: ../inc/theme-options.php:789
 #, php-format
 msgid "%s Theme Options By"
 msgstr ""
 
-#: ../inc/theme-options.php:513
-#: ../inc/theme-options.php:544
-#: ../inc/theme-options.php:655
-#: ../inc/theme-options.php:778
+#: ../inc/theme-options.php:527
+#: ../inc/theme-options.php:558
+#: ../inc/theme-options.php:669
+#: ../inc/theme-options.php:792
 msgid "Catch Themes"
 msgstr ""
 
-#: ../inc/theme-options.php:557
-#: ../inc/theme-options.php:664
-#: ../inc/theme-options.php:788
+#: ../inc/theme-options.php:571
+#: ../inc/theme-options.php:678
+#: ../inc/theme-options.php:802
 msgid "Settings saved."
 msgstr ""
 
-#: ../inc/theme-options.php:561
+#: ../inc/theme-options.php:575
 msgid "Slider Options"
 msgstr ""
 
-#: ../inc/theme-options.php:565
+#: ../inc/theme-options.php:579
 msgid "Exclude Slider post from Home page posts:"
 msgstr ""
 
-#: ../inc/theme-options.php:570
+#: ../inc/theme-options.php:584
 msgid "Number of Slides"
 msgstr ""
 
-#: ../inc/theme-options.php:576
+#: ../inc/theme-options.php:590
 msgid "Featured Col #"
 msgstr ""
 
-#: ../inc/theme-options.php:578
+#: ../inc/theme-options.php:592
 msgid "Click Here To Edit"
 msgstr ""
 
-#: ../inc/theme-options.php:584
+#: ../inc/theme-options.php:598
 msgid "<strong>Note</strong>: Here you add in Post IDs which displays on Homepage Featured Slider."
 msgstr ""
 
-#: ../inc/theme-options.php:585
-#: ../inc/theme-options.php:631
-#: ../inc/theme-options.php:755
-#: ../inc/theme-options.php:815
-#: ../inc/theme-options.php:840
+#: ../inc/theme-options.php:599
+#: ../inc/theme-options.php:645
+#: ../inc/theme-options.php:769
+#: ../inc/theme-options.php:829
+#: ../inc/theme-options.php:854
 msgid "Save"
 msgstr ""
 
-#: ../inc/theme-options.php:589
+#: ../inc/theme-options.php:603
 msgid "Slider Effect Options"
 msgstr ""
 
-#: ../inc/theme-options.php:594
+#: ../inc/theme-options.php:608
 msgid "Transition Effect:"
 msgstr ""
 
-#: ../inc/theme-options.php:599
+#: ../inc/theme-options.php:613
 msgid "fade"
 msgstr ""
 
-#: ../inc/theme-options.php:600
+#: ../inc/theme-options.php:614
 msgid "wipe"
 msgstr ""
 
-#: ../inc/theme-options.php:601
+#: ../inc/theme-options.php:615
 msgid "scrollUp"
 msgstr ""
 
-#: ../inc/theme-options.php:602
+#: ../inc/theme-options.php:616
 msgid "scrollDown"
 msgstr ""
 
-#: ../inc/theme-options.php:603
+#: ../inc/theme-options.php:617
 msgid "scrollLeft"
 msgstr ""
 
-#: ../inc/theme-options.php:604
+#: ../inc/theme-options.php:618
 msgid "scrollRight"
 msgstr ""
 
-#: ../inc/theme-options.php:605
+#: ../inc/theme-options.php:619
 msgid "blindX"
 msgstr ""
 
-#: ../inc/theme-options.php:606
+#: ../inc/theme-options.php:620
 msgid "blindY"
 msgstr ""
 
-#: ../inc/theme-options.php:607
+#: ../inc/theme-options.php:621
 msgid "blindZ"
 msgstr ""
 
-#: ../inc/theme-options.php:608
+#: ../inc/theme-options.php:622
 msgid "cover"
 msgstr ""
 
-#: ../inc/theme-options.php:609
+#: ../inc/theme-options.php:623
 msgid "shuffle"
 msgstr ""
 
-#: ../inc/theme-options.php:615
+#: ../inc/theme-options.php:629
 msgid "Transition Delay"
 msgstr ""
 
-#: ../inc/theme-options.php:618
-#: ../inc/theme-options.php:627
+#: ../inc/theme-options.php:632
+#: ../inc/theme-options.php:641
 msgid "second(s)"
 msgstr ""
 
-#: ../inc/theme-options.php:624
+#: ../inc/theme-options.php:638
 msgid "Transition Length"
 msgstr ""
 
-#: ../inc/theme-options.php:670
+#: ../inc/theme-options.php:684
 msgid "Facebook"
 msgstr ""
 
-#: ../inc/theme-options.php:675
+#: ../inc/theme-options.php:689
 msgid "Twitter"
 msgstr ""
 
-#: ../inc/theme-options.php:681
+#: ../inc/theme-options.php:695
 msgid "Google +"
 msgstr ""
 
-#: ../inc/theme-options.php:687
+#: ../inc/theme-options.php:701
 msgid "LinkedIn"
 msgstr ""
 
-#: ../inc/theme-options.php:693
+#: ../inc/theme-options.php:707
 msgid "Pinterest"
 msgstr ""
 
-#: ../inc/theme-options.php:699
+#: ../inc/theme-options.php:713
 msgid "Youtube"
 msgstr ""
 
-#: ../inc/theme-options.php:705
+#: ../inc/theme-options.php:719
 msgid "RSS Feed"
 msgstr ""
 
-#: ../inc/theme-options.php:711
+#: ../inc/theme-options.php:725
 msgid "Deviantart"
 msgstr ""
 
-#: ../inc/theme-options.php:717
+#: ../inc/theme-options.php:731
 msgid "Tumblr"
 msgstr ""
 
-#: ../inc/theme-options.php:723
+#: ../inc/theme-options.php:737
 msgid "Viemo"
 msgstr ""
 
-#: ../inc/theme-options.php:729
+#: ../inc/theme-options.php:743
 msgid "Dribbble"
 msgstr ""
 
-#: ../inc/theme-options.php:735
+#: ../inc/theme-options.php:749
 msgid "MySpace"
 msgstr ""
 
-#: ../inc/theme-options.php:741
+#: ../inc/theme-options.php:755
 msgid "Aim"
 msgstr ""
 
-#: ../inc/theme-options.php:747
+#: ../inc/theme-options.php:761
 msgid "Flicker"
 msgstr ""
 
-#: ../inc/theme-options.php:754
+#: ../inc/theme-options.php:768
 msgid "<strong>Note:</strong> Enter the url for correponding social networking website"
 msgstr ""
 
-#: ../inc/theme-options.php:792
+#: ../inc/theme-options.php:806
 msgid "Webmaster Site Verification IDs"
 msgstr ""
 
-#: ../inc/theme-options.php:797
+#: ../inc/theme-options.php:811
 msgid "Google Site Verification ID"
 msgstr ""
 
-#: ../inc/theme-options.php:798
+#: ../inc/theme-options.php:812
 msgid "Enter your Google ID number only"
 msgstr ""
 
-#: ../inc/theme-options.php:803
+#: ../inc/theme-options.php:817
 msgid "Yahoo Site Verification ID"
 msgstr ""
 
-#: ../inc/theme-options.php:804
+#: ../inc/theme-options.php:818
 msgid "Enter your Yahoo ID number only"
 msgstr ""
 
-#: ../inc/theme-options.php:809
+#: ../inc/theme-options.php:823
 msgid "Bing Site Verification ID"
 msgstr ""
 
-#: ../inc/theme-options.php:810
+#: ../inc/theme-options.php:824
 msgid "Enter your Bing ID number only"
 msgstr ""
 
-#: ../inc/theme-options.php:819
+#: ../inc/theme-options.php:833
 msgid "Webmaster Site Verification Code"
 msgstr ""
 
-#: ../inc/theme-options.php:824
+#: ../inc/theme-options.php:838
 msgid "Analytics, site stats Header code"
 msgstr ""
 
-#: ../inc/theme-options.php:832
+#: ../inc/theme-options.php:846
 msgid "Analytics, site stats footer code"
 msgstr ""
 
@@ -947,10 +947,6 @@ msgstr ""
 
 #: ../inc/widgets.php:57
 msgid "Alt text:"
-msgstr ""
-
-#. Theme Name of the plugin/theme
-msgid "Catch Box"
 msgstr ""
 
 #. Theme Name of the plugin/theme
