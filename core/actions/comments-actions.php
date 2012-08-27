@@ -1,4 +1,10 @@
 <?php
+
+/**
+* Exit if file is directly accessed. 
+*/ 
+if ( !defined('ABSPATH')) exit;
+
 /**
 * Comments actions used by the CyberChimps Synapse Core Framework
 *
@@ -32,7 +38,7 @@ function synapse_comments_password_required() {
 	
 	$password_text = apply_filters( 'synapse_password_required_text', 'This post is password protected. Enter the password to view comments.');
 	if ( post_password_required() ) { 
-		printf( __( $password_text, 'core' )); 
+		printf( $password_text ); 
 		return;
 	}
 }
@@ -52,6 +58,7 @@ function synapse_comments_loop() {
 			<div class="next-posts"><?php previous_comments_link() ?></div>
 			<div class="prev-posts"><?php next_comments_link() ?></div>
 		</div>
+    <div class="clear"></div>
 
 		<ol class="commentlist">
 			<?php wp_list_comments('callback=synapse_comment'); ?>
@@ -61,6 +68,7 @@ function synapse_comments_loop() {
 			<div class="next-posts"><?php previous_comments_link() ?></div>
 			<div class="prev-posts"><?php next_comments_link() ?></div>
 		</div>
+    <div class="clear"></div>
 		
 	</div><!--end comments_container-->
 	
@@ -86,7 +94,7 @@ function synapse_comments_loop() {
 	</div>
 
 	<?php if ( get_option('comment_registration') && !is_user_logged_in() ) : ?>
-		<p><?php printf (__( 'You must be', 'core' )); ?><a href="<?php echo wp_login_url( get_permalink() ); ?>"> <?php printf( __( 'logged in', 'core' ), '</a>', __('to post a comment.', 'core' )); ?></p>
+		<br /><p><?php echo __( 'You must be', 'core' ); ?><a href="<?php echo wp_login_url( get_permalink() ); ?>"> <?php echo __( 'logged in', 'core' ); ?></a> <?php echo __('to post a comment.', 'core' ); ?></p>
 	<?php else : ?>
 	
 	<?php comment_form(); ?>

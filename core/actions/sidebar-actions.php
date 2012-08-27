@@ -1,5 +1,10 @@
 <?php
 /**
+* Exit if file is directly accessed. 
+*/ 
+if ( !defined('ABSPATH')) exit;
+
+/**
 * Sidebar actions used by the CyberChimps Synapse Core Framework
 *
 * Author: Tyler Cunningham
@@ -45,7 +50,7 @@ function synapse_sidebar_init_content() {
 	$sidebar = $options->get($themeslug.'_search_sidebar');
 	}
 	elseif (is_page()) {
-	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);
+	$sidebar = get_post_meta($post->ID, $themeslug.'_page_sidebar' , true);
 	}
 	else {
 	$sidebar = $options->get($themeslug.'_blog_sidebar');

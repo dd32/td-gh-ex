@@ -1,4 +1,10 @@
 <?php
+
+/**
+* Exit if file is directly accessed. 
+*/ 
+if ( !defined('ABSPATH')) exit;
+
 global $options, $themeslug, $themenamefull;
 
 class ClassyOptions {
@@ -53,7 +59,7 @@ class ClassyOptions {
 		$wp_admin_bar->add_menu( array(
 			'parent' => 'appearance',
 			'id' => $this->id,
-			'title' => __( $this->name ),
+			'title' => $this->name,
 			'href' => admin_url( 'themes.php?page=' . $this->id )
 		));
 	}
@@ -84,7 +90,18 @@ class ClassyOptions {
 		global $themenamefull;
 		settings_errors(); ?>
 <div class="wrap">
-
+<div class="upgrade-callout">
+<p><img src="<?php echo get_template_directory_uri() ;?>/images/chimp.png" alt="CyberChimps" /><strong>Welcome to <?php echo $themenamefull; ?>! Learn more now about upgrading to <a href="http://cyberchimps.com/ifeaturepro/" target="_blank"><?php echo $themenamefull; ?> Pro</a> today.</p>
+<div class="social-container">
+<div class="social">
+<a href="https://twitter.com/cyberchimps" class="twitter-follow-button" data-show-count="false" data-size="small">Follow @cyberchimps</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+<div class="social">
+<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fcyberchimps.com%2F&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:200px; height:21px;" allowTransparency="true"></iframe>
+</div>
+</div>
+</div>
 	<div id="of_container">
 		<form action="options.php" method="post" enctype="multipart/form-data">
 			<?php settings_fields($this->id); ?>
@@ -126,7 +143,7 @@ class ClassyOptions {
 			</div>
 			<div class="of_admin_bar">
 			    <div id="top"><a href='#TOP'><img src="<?php echo get_template_directory_uri() ;?>/images/options/top.png" /></a></div>
-				<input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!' ) ); ?>' );" />
+				<input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'core' ) ); ?>' );" />
 				<div class="chimps"><a href="http://cyberchimps.com/" target="_blank"><img src="<?php echo get_template_directory_uri() ;?>/images/options/cyberchimpsmini.png" /></a></div>
 			</div>
 			<div class="clear"></div>
@@ -570,6 +587,7 @@ class ClassyOptions {
 				$output .=  "<div class='list_items'>";
 				foreach($values as $k) {
 					if(!$k) continue;
+					if(!isset($value['options'][$k])) continue;
 					$val = $value['options'][$k];
 					$output .=  "<div class='list_item'>";
 					$output .=  "<img src='$root/images/minus.png' class='action' title='Remove'/>";

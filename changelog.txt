@@ -2,12 +2,88 @@ iFeature Changelog
 
 ****************************
 
+Version 4.5.20 (08-27-12)
+-Logo url on / off option added.
+
+Version 4.5.19 (08-21-12)
+-Custom URL support.
+
+Version 4.5.18 (08-15-12)
+-Twitter bar border radius implemented.
+-wp_title fix.
+-Made meta tag language dynamic.
+
+Version 4.5.17 (08-14-12)
+-Chrome sidebar and decimal fix.
+-Presstrends fix.
+-Theme check fixes.
+
+Version 4.5.16 (08-08-12)
+-Favicon added (off by default).
+
+Version 4.5.15 (07-30-12)
+-Apple-touch icon off by default.
+
+Version 4.5.14 (07-23-12)
+-Upgrade bar improvements, added Facebook like.
+-Apple touch icon implemented.
+
+Version 4.5.13 (07-16-12)
+-German translation fix.
+-Improved marketing copy.
+-Upgrade bar added to theme options.
+-Sticky push div fix.
+
+Version 4.5.12 (07-06-12)
+-Twitter embed fix.
+-z-index nav fix.
+-Inactive element fix.
+-Sticky footer push div.
+
+Version 4.5.11 (07-02-12)
+-Added ability to turn off mobile search.
+-Fixed search bar issue when responsive design was disabled.
+-Implemented footer CSS fix.
+
+Version 4.5.10 (06-24-12)
+-Search for mobile was missing. Removed .searchform {display:none} from foundation.css
+added hide-on-phones for original search and created a new search just for phones below nav bar in header-actions.php. Centered search.
+
+Version 4.5.9 (06-20-12)
+-Fixed validation error with "Read more..."  link.
+
+Version 4.5.8 (06-15-12)
+-Replaced wp_theme_data() (deprecated) with wp_get_theme() in opt-in PressTrends function, backwards compatible with 3.3 and below.
+
+Version 4.5.7 (06-12-12)
+-Fixed breadcrumb issue related to single posts/media attachments. 
+-Fix for random "no tweets to display" message for the Twitterbar. 
+-Added code to prevent direct access to PHP files.
+
+Version 4.5.6 (06-06-12)
+-Added Czech language files.
+-Responsive design tweak for social icons.
+
+Version 4.5.5 (05-30-12)
+-Added Hindi language files.
+-Removed unused theme options and cleaned up related theme code.
+-Code cleanup in comments-actions.php.
+
+Version 4.5.4 (05-24-12)
+-Bug fix for sidebars related to last update. 
+
+Version 4.5.3 (05-22-12)
+-Added prefixes for all custom post meta data options.
+-Added function to convert previous custom post meta values to new ones.
+-Added Danish language files.
+-Added Catalan language files.
+
 Version 4.5.2 (05-15-12)
--Removed call for unecessary JS file causing errors for some users.  
+-Removed call for unnecessary JS file causing errors for some users.  
 -Updated some copy in the stylesheet. 
 
 Version 4.5.1 (05-14-12)
--Added option for responsive embeded videos (Youtube/Vimeo).
+-Added option for responsive video embeds (Youtube/Vimeo).
 -Added Polish language files.
 
 Version 4.5 (05-08-12)

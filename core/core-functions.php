@@ -1,4 +1,10 @@
 <?php
+
+/**
+* Exit if file is directly accessed. 
+*/ 
+if ( !defined('ABSPATH')) exit;
+
 /**
 * CyberChimps Synapse Core Framework functions
 *
@@ -21,16 +27,91 @@
 * @since 1.0
 */
 function synapse_text_domain() {
-	load_theme_textdomain( 'core', TEMPLATEPATH . '/core/languages' );
+	load_theme_textdomain( 'core', get_template_directory() . '/core/languages' );
 
 	    $locale = get_locale();
-	    $locale_file = TEMPLATEPATH . "/core/languages/$locale.php";
+	    $locale_file = get_template_directory() . "/core/languages/$locale.php";
 	    if ( is_readable( $locale_file ) )
 		    require_once( $locale_file );
 		
 		return;    
 }
 add_action('after_setup_theme', 'synapse_text_domain');
+
+/**
+* Load styles.
+*/ 
+
+function synapse_styles() {
+	global $options, $themeslug, $wp_styles;
+	
+	// set paths to stylesheet dir
+	$core_path =  get_template_directory_uri() ."/core/css";
+	$path = get_template_directory_uri() ."/css";
+	
+	// color
+	if ($options->get($themeslug.'_color_scheme') == '') {
+		$color = 'grey';
+	}
+	else {
+		$color = $options->get($themeslug.'_color_scheme');
+	}
+	
+	// register stylesheets
+	if ($options->get($themeslug.'_responsive_design') == '1') {
+		wp_register_style( 'foundation', $core_path.'/foundation.css' );
+	}
+	if ($options->get($themeslug.'_responsive_design') == '0') {
+		wp_register_style( 'foundation_static', $core_path.'/foundation-static.css' );
+	}
+	wp_register_style( 'foundation_apps', $core_path.'/app.css' );
+	wp_register_style( 'shortcode', $path.'/shortcode.css' );
+	wp_register_style( 'synapse_style', $path.'/style.css', array( 'foundation_apps' ) );
+	wp_register_style( 'elements', $path.'/elements.css', array( 'foundation_apps', 'synapse_style' ) );
+	wp_register_style( 'synapse_color', $path.'/color/'.$color.'.css', array( 'elements' ) );
+	
+	// ie conditional stylesheet
+	wp_register_style( 'synapse_ie', $core_path.'/ie.css' );
+	$wp_styles->add_data( 'synapse_ie', 'conditional', 'IE' );
+	
+	// child theme support
+	wp_register_style( 'child_theme', get_stylesheet_directory_uri().'/style.css', array( 'synapse_style' ) );
+	if( is_child_theme() ) {
+		wp_enqueue_style( 'child_theme' );
+	}
+	
+	// get fonts
+	if ($options->get($themeslug.'_font') == "" AND $options->get($themeslug.'_custom_font') == "") {
+		$font = apply_filters( 'synapse_default_font', 'Arial' );
+	}		
+	elseif ($options->get($themeslug.'_custom_font') != "" && $options->get($themeslug.'_font') == 'custom') {
+		$font = $options->get($themeslug.'_custom_font');	
+	}	
+	else {
+		$font = $options->get($themeslug.'_font'); 
+	} 
+	// register font stylesheet
+	wp_register_style( 'fonts', 'http://fonts.googleapis.com/css?family='.$font, array( 'synapse_style' ) ); 		
+	
+	// enqueue foundation stylesheets
+	if ($options->get($themeslug.'_responsive_design') == '1') {
+		wp_enqueue_style( 'foundation' );
+	}
+	if ($options->get($themeslug.'_responsive_design') == '0') {
+		wp_enqueue_style( 'foundation_static' );
+	}
+	wp_enqueue_style( 'foundation_apps' );
+	
+	// enqueus styles
+	wp_enqueue_style( 'shortcode' );
+	wp_enqueue_style( 'synapse_style' );
+	wp_enqueue_style( 'elements' );
+	wp_enqueue_style( 'synapse_color' );
+	wp_enqueue_style( 'fonts' );
+	wp_enqueue_style( 'synapse_ie' );
+}
+
+add_action( 'wp_enqueue_scripts', 'synapse_styles' );
 
 /**
 * Load jQuery and register additional scripts.
@@ -52,6 +133,7 @@ function synapse_scripts() {
 	wp_register_script( 'modernizr' ,$path.'/js/foundation/modernizr.foundation.js');
 	wp_register_script( 'menu' ,$path.'/js/menu.js');
 	wp_register_script( 'plusone' ,$path.'/js/plusone.js');
+	wp_register_script( 'oembed' ,$path.'/js/oembed-twitter.js');
 	
 	wp_enqueue_script ('orbit');
 	wp_enqueue_script ('apps');
@@ -60,6 +142,9 @@ function synapse_scripts() {
 	wp_enqueue_script ('tooltips');
 	wp_enqueue_script ('modernizr');
 	wp_enqueue_script ('menu');
+	wp_enqueue_script ('oembed');
+	
+	if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 	
 	if ($options->get($themeslug.'_show_gplus') == '1' OR $options->get($themeslug.'_single_show_gplus') == '1' OR $options->get($themeslug.'_archive_show_gplus') == '1') {
 		wp_enqueue_script ('plusone');
@@ -162,7 +247,7 @@ function synapse_breadcrumbs() {
     echo '<div class="row"><div id="crumbs" class="twelve columns"><div class="crumbs_text">';
  
     global $post;
-    $homeLink = get_bloginfo('url');
+    $homeLink = home_url();
     echo '<a href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
  
     if ( is_category() ) {
@@ -194,7 +279,7 @@ function synapse_breadcrumbs() {
         echo $before . get_the_title() . $after;
       } else {
         $cat = get_the_category(); $cat = $cat[0];
-        echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
+        echo is_wp_error( $cat_parents = get_category_parents($cat, TRUE, ' ' . $delimiter . ' ') ) ? '' : $cat_parents;
         echo $before . get_the_title() . $after;
       }
  
@@ -205,7 +290,7 @@ function synapse_breadcrumbs() {
     } elseif ( is_attachment() ) {
       $parent = get_post($post->post_parent);
       $cat = get_the_category($parent->ID); $cat = $cat[0];
-      echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
+      echo is_wp_error( $cat_parents = get_category_parents($cat, TRUE, ' ' . $delimiter . ' ') ) ? '' : $cat_parents;
       echo '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a> ' . $delimiter . ' ';
       echo $before . get_the_title() . $after;
  
@@ -241,14 +326,71 @@ function synapse_breadcrumbs() {
  
     if ( get_query_var('paged') ) {
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
-      echo __('Page') . ' ' . get_query_var('paged');
+      echo __('Page','core') . ' ' . get_query_var('paged');
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
     }
  
     echo '</div></div></div>';
  
   }
-} 
+}
+
+function synapse_title_tag_filter( $old_title ) {
+	global $options, $themeslug, $query, $post; 
+	
+	$blogtitle = ($options->get($themeslug.'_home_title'));
+	if (!is_404()) {
+		$title = get_post_meta($post->ID, 'seo_title' , true);
+	}
+	else {
+		$title = '';
+	}
+	
+	if (function_exists('is_tag') && is_tag()) { /*Title for tags */
+		$title_tag = get_bloginfo('name').' - Tag Archive for &quot;'.single_tag_title("", FALSE).'&quot;  ';
+	}
+	elseif (is_archive()) { /*Title for archives */ 
+		$title_tag = get_bloginfo('name').$old_title.' Archive '; 
+	}    
+	elseif (is_search()) { /*Title for search */ 
+		$title_tag = get_bloginfo('name').' - Search for &quot;'.get_search_query().'&quot;  '; 
+	}    
+	elseif (is_404()) { /*Title for 404 */
+		$title_tag = get_bloginfo('name').' - Not Found '; 
+	}
+	elseif (is_front_page() AND !is_page() AND $blogtitle == '') { /*Title if front page is latest posts and no custom title */
+		$title_tag = get_bloginfo('name').' - '.get_bloginfo('description'); 
+	}
+	elseif (is_front_page() AND !is_page() AND $blogtitle != '') { /*Title if front page is latest posts with custom title */
+		$title_tag = get_bloginfo('name').' - '.$blogtitle ; 
+	}
+	elseif (is_front_page() AND is_page() AND $title == '') { /*Title if front page is static page and no custom title */
+		$title_tag = get_bloginfo('name').' - '.get_bloginfo('description'); 
+	}
+	elseif (is_front_page() AND is_page() AND $title != '') { /*Title if front page is static page with custom title */
+		$title_tag = get_bloginfo('name').' - '.$title ; 
+	}
+	elseif (is_page() AND $title == '') { /*Title if static page is static page with no custom title */
+		$title_tag = get_bloginfo('name').$old_title; 
+	}
+	elseif (is_page() AND $title != '') { /*Title if static page is static page with custom title */
+		$title_tag = get_bloginfo('name').' - '.$title ; 
+	}
+	elseif (is_page() AND is_front_page() AND $blogtitle == '') { /*Title if blog page with no custom title */
+		$title_tag = get_bloginfo('name').$old_title; 
+	}
+	elseif ($blogtitle != '') { /*Title if blog page with custom title */ 
+		$title_tag = get_bloginfo('name').' - '.$blogtitle ; 
+	}
+	else { /*Title if blog page without custom title */
+		$title_tag = get_bloginfo('name').$old_title; 
+	}
+	
+	return $title_tag;
+}
+
+add_filter( 'wp_title', 'synapse_title_tag_filter', 10, 3 )
+ 
 
 /**
 * End

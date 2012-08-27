@@ -1,4 +1,10 @@
 <?php
+
+/**
+* Exit if file is directly accessed. 
+*/ 
+if ( !defined('ABSPATH')) exit;
+
 /*
 	Functions
 	Author: Tyler Cunningham
@@ -19,12 +25,29 @@
 	$sliderdocs = 'http://cyberchimps.com/question/using-the-ifeature-3-slider/';
 
 /**
+* Content width.
+*/ 
+if ( ! isset( $content_width ) ) $content_width = 608; //Set content width
+
+/**
 * Basic theme setup.
 */ 
 function if_theme_setup() {
-	global $content_width;
 	
-	if ( ! isset( $content_width ) ) $content_width = 608; //Set content width
+/**
+* Initialize Synapse Core Framework and Pro Extension.
+*/ 
+	require_once ( get_template_directory() . '/core/core-init.php' );
+
+/**
+* Call additional files required by theme.
+*/ 
+	require_once ( get_template_directory() . '/includes/classy-options-init.php' ); // Theme options markup.
+	require_once ( get_template_directory() . '/includes/options-functions.php' ); // Custom functions based on theme options.
+	require_once ( get_template_directory() . '/includes/meta-box.php' ); // Meta options markup.
+	require_once ( get_template_directory() . '/includes/theme-hooks.php' ); // Theme specific hooks.
+	require_once ( get_template_directory() . '/includes/theme-actions.php' ); // Actions for theme specific hooks.
+	require_once ( get_template_directory() . '/includes/presstrends.php' ); // Opt-in PressTrends option.
 	
 	add_theme_support(
 		'post-formats',
@@ -34,6 +57,9 @@ function if_theme_setup() {
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support('automatic-feed-links');
 	add_editor_style();
+	
+	ifeature_meta_update();
+	
 }
 add_action( 'after_setup_theme', 'if_theme_setup' );
 
@@ -125,7 +151,7 @@ function if_new_excerpt_more($more) {
     		$linktext = $options->get($themeslug.'_excerpt_link_text');
    		}
 
-	return '<a href="'. get_permalink($post->ID) . '"> <br /><br /> '.$linktext.'</a>';
+	return '</p><p><a href="'. get_permalink($post->ID) . '">'.$linktext.'</a></p>';
 }
 add_filter('excerpt_more', 'if_new_excerpt_more');
 
@@ -181,7 +207,7 @@ function if_render_ie_pie() { ?>
 		#wrapper input, textarea, #twitterbar, input[type=submit], input[type=reset], #imenu, .searchform, .post_container, .postformats, .postbar, .post-edit-link, .widget-container, .widget-title, .footer-widget-title, .comments_container, ol.commentlist li.even, ol.commentlist li.odd, .slider_nav, ul.metabox-tabs li, .tab-content, .list_item, .section-info, #of_container #header, .menu ul li a, .submit input, #of_container textarea, #of_container input, #of_container select, #of_container .screenshot img, #of_container .of_admin_bar, #of_container .subsection > h3, .subsection, #of_container #content .outersection .section
   		
   	{
-  		behavior: url('<?php bloginfo('stylesheet_directory'); ?>/core/library/pie/PIE.htc');
+  		behavior: url('<?php echo get_stylesheet_directory_uri(); ?>/core/library/pie/PIE.htc');
 	}
 	</style>
 <?php
@@ -205,7 +231,7 @@ add_action('wp_head', 'if_google_analytics');
 */ 
 function if_register_menus() {
 	register_nav_menus(
-	array( 'header-menu' => __( 'Header Menu' ), 'footer-menu' => __( 'Footer Menu' ))
+	array( 'header-menu' => __( 'Header Menu', 'core' ), 'footer-menu' => __( 'Footer Menu', 'core' ))
   );
 }
 add_action( 'init', 'if_register_menus' );
@@ -245,23 +271,74 @@ function if_widgets_init() {
 }
 add_action ('widgets_init', 'if_widgets_init');
 
-/**
-* Initialize Synapse Core Framework and Pro Extension.
-*/ 
-require_once ( get_template_directory() . '/core/core-init.php' );
+function ifeature_meta_update() {
+	global $theme_version;
+	
+	// Get last used theme version
+	$prev_theme_version = (get_option('if_theme_version')) ? get_option('if_theme_version') : 0;
+	
+	if ( $prev_theme_version < '4.5.3') {
 
-/**
-* Call additional files required by theme.
-*/ 
-require_once ( get_template_directory() . '/includes/classy-options-init.php' ); // Theme options markup.
-require_once ( get_template_directory() . '/includes/options-functions.php' ); // Custom functions based on theme options.
-require_once ( get_template_directory() . '/includes/meta-box.php' ); // Meta options markup.
-require_once ( get_template_directory() . '/includes/theme-hooks.php' ); // Theme specific hooks.
-require_once ( get_template_directory() . '/includes/theme-actions.php' ); // Actions for theme specific hooks.
-require_once ( get_template_directory() . '/includes/presstrends.php' ); // Opt-in PressTrends option.
+		// Update post meta_key values
+		$prev_post_meta_keys = array(
+			'slider_image' => 'if_slider_image',
+			'slider_text' => 'if_slider_text',
+		);
+		
+		foreach ($prev_post_meta_keys as $prev_key => $updated_key) {
+			ifeature_update_meta_key('post', $updated_key, $prev_key);
+		}
+		
+		// Update page meta_key values
+		$prev_page_meta_keys = array(
+			'page_sidebar' => 'if_page_sidebar',
+			'hide_page_title' => 'if_hide_page_title',
+			'page_section_order' => 'if_page_section_order',
+			'twitter_handle' => 'if_twitter_handle',
+			'twitter_reply' => 'if_twitter_reply',
+			'product_text_align' => 'if_product_text_align',
+			'product_title' => 'if_product_title',
+			'product_text' => 'if_product_text',
+			'product_type' => 'if_product_type',
+			'product_image' => 'if_product_image',
+			'product_video' => 'if_product_video',
+			'product_link_toggle' => 'if_product_link_toggle',
+			'product_link_url' => 'if_product_link_url',
+			'product_link_text' => 'if_product_link_text',
+			'seo_title' => 'if_seo_title',
+			'seo_description' => 'sif_eo_description',
+			'seo_keywords' => 'if_seo_keywords'
+		);
+		
+		foreach ($prev_page_meta_keys as $prev_key => $updated_key) {
+			ifeature_update_meta_key('post', $updated_key, $prev_key);
+		}
+	}
+	
+	if ( $prev_theme_version < $theme_version) {
+		// Set new theme version
+		update_option('if_theme_version', $theme_version);
+	}
+}
+
+function ifeature_update_meta_key($meta_type, $meta_key, $prev_meta_key) {
+	if ( !$meta_type || !$meta_key || !$prev_meta_key)
+		return false;
+
+	if ( ! $table = _get_meta_table($meta_type) )
+		return false;
+
+	global $wpdb;
+
+	$column = esc_sql($meta_type . '_id');
+
+	$prev_meta_key = stripslashes($prev_meta_key);
+	$meta_key = stripslashes($meta_key);
+	
+	$wpdb->update( $table, array( 'meta_key' => $meta_key), array( 'meta_key' => $prev_meta_key ) );
+}
 
 /**
 * End
 */
-
 ?>
