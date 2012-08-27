@@ -16,7 +16,7 @@ if ( !defined('ABSPATH')) exit;
  * @version        Release: 1.0
  * @filesource     wp-content/themes/responsive/includes/hooks.php
  * @link           http://codex.wordpress.org/Plugin_API/Hooks
- * @since          available since Release 1.0
+ * @since          available since Release 1.1
  */
 ?>
 <?php
@@ -109,6 +109,15 @@ function responsive_widgets() {
  */
 function responsive_widgets_end() {
     do_action('responsive_widgets_end');
+}
+
+/**
+ * Theme Options
+ *
+ * @see theme-options.php
+ */
+function responsive_theme_options() {
+    do_action('responsive_theme_options');
 }
 
 /**

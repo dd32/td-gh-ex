@@ -242,25 +242,15 @@ jQuery(document).ready(function ($) {
 
         // Build options
         var options = '';
-		var indent = 0;
-		var indented = ["&nbsp;"];
-		for ( var i = 0; i < 10; i++) {
-			indented.push(indented[indented.length-1]+indented[indented.length-1]);
-		}
-		indented[0] = "";
+
         $nav
           .addClass('l_' + namespace_i)
-          .children('li')
-          .each(buildNavTree=function () {
-            var a = $(this).children('a').first();
-            
+          .find('a')
+          .each(function () {
             options +=
-              '<option value="' + a.attr('href') + '">' +
-              indented[indent] + a.text() +
+              '<option value="' + $(this).attr('href') + '">' +
+              $(this).text() +
               '</option>';
-              indent++;
-              $(this).children('ul,ol').children('li').each(buildNavTree);
-              indent--;
           });
 
         // Append options into a select
@@ -283,8 +273,6 @@ jQuery(document).ready(function ($) {
         $(l_namespace_i).after($select);
 
       }
-
-	$('option[value="'+document.location+'"]').attr("selected","selected");
 
     });
 

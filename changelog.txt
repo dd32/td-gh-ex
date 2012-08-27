@@ -8,7 +8,17 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
-(08/21/2012) - IE7 Bug Fix
+
+(08/27/2012) - IE7 Bug Fix - Version 1.7.7
+[+] Theme Options, support links hook
+[+] New Languages
+    - Czech
+    - Hungarian
+    - Greek
+[*] responsive.pot
+[*] tinynav.js jQuery 1.8.0 compatibility
+
+(08/21/2012) - IE7 Bug Fix - Version 1.7.6
 [!] widget clearfix
 
 (08/19/2012) - Maintenance and Improvements - Version 1.7.5
