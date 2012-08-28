@@ -135,6 +135,8 @@ Version 1.3.5.3
 * Fixing textdomain in theme option
 * Replace wp_print_styles to wp_enqueue_scripts
 
-== Upcoming Plan ==
-* Add option for feed redirect
-* Add feature slider image height option
+Version 1.3.5.4
+* Fixed pagination float issue
+* Added pagination in page
+* Added Support for Captcha Plugin
+* Replaced get_stylesheet_directory_uri to get_template_directory_uri

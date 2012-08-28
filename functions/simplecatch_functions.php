@@ -7,23 +7,23 @@
  */
 function simplecatch_scripts_method() {	
 	//Register JQuery circle all and JQuery set up as dependent on Jquery-cycle
-	wp_register_script( 'jquery-cycle', get_stylesheet_directory_uri() . '/js/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
+	wp_register_script( 'jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
 	
 	//Enqueue Slider Script only in Front Page
 	if ( is_home() || is_front_page() ) {
-		wp_enqueue_script( 'simplecatch_slider', get_stylesheet_directory_uri() . '/js/simplecatch_slider.js', array( 'jquery-cycle' ), '1.0', true );
+		wp_enqueue_script( 'simplecatch_slider', get_template_directory_uri() . '/js/simplecatch_slider.js', array( 'jquery-cycle' ), '1.0', true );
 	}
 
 	//Enqueue Search Script
-	wp_enqueue_script ( 'simplecatch_search', get_stylesheet_directory_uri() . '/js/simplecatch_search.js', array( 'jquery' ), '1.0', true );
+	wp_enqueue_script ( 'simplecatch_search', get_template_directory_uri() . '/js/simplecatch_search.js', array( 'jquery' ), '1.0', true );
 
 	//Browser Specific Enqueue Script i.e. for IE 1-6
 	$simplecatch_ua = strtolower($_SERVER['HTTP_USER_AGENT']);
 	if(preg_match('/(?i)msie [1-6]/',$simplecatch_ua)) {
-		wp_enqueue_script( 'pngfix', get_stylesheet_directory_uri() . '/js/pngfix.min.js' );	  
+		wp_enqueue_script( 'pngfix', get_template_directory_uri() . '/js/pngfix.min.js' );	  
 	}
 	 if(preg_match('/(?i)msie [1-8]/',$simplecatch_ua)) {
-	 	wp_enqueue_style( 'iebelow8', get_stylesheet_directory_uri() . '/css/ie.css', true );
+	 	wp_enqueue_style( 'iebelow8', get_template_directory_uri() . '/css/ie.css', true );
 	}
 	
 } // simplecatch_scripts_method
@@ -53,7 +53,7 @@ add_action('wp_enqueue_scripts', 'simplecatch_load_google_fonts');
  */
 function simplecatch_register_js() {
 	//jQuery Cookie
-	wp_register_script( 'jquery-cookie', get_stylesheet_directory_uri() . '/js/jquery.cookie.min.js', array( 'jquery' ), '1.0', true );
+	wp_register_script( 'jquery-cookie', get_template_directory_uri() . '/js/jquery.cookie.min.js', array( 'jquery' ), '1.0', true );
 }
 add_action( 'admin_enqueue_scripts', 'simplecatch_register_js' );
 
@@ -797,7 +797,16 @@ function simplecatch_loop() {
     
 		<div <?php post_class(); ?> >
 			<h2 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
-       		<?php the_content(); ?>
+       		<?php the_content(); 
+			// copy this <!--nextpage--> and paste at the post content where you want to break the page
+			 wp_link_pages(array( 
+					'before'			=> '<div class="pagination">Pages: ',
+					'after' 			=> '</div>',
+					'link_before' 		=> '<span>',
+					'link_after'       	=> '</span>',
+					'pagelink' 			=> '%',
+					'echo' 				=> 1 
+				) ); ?>
 		</div><!-- .post -->
         
     <?php elseif( is_single() ): ?>
