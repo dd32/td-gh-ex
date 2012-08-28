@@ -6,10 +6,13 @@ Catch Box is simple, lightweight, box shaped, and adaptable WordPress Theme for 
 
 == Translation ==
 Catch Box theme is translation ready. 
-Added Translation for Portuguese spoken in Brazil by Valdir Trombini
+Added Translation for Portuguese spoken in Brazil by Valdir Trombini ( Email: valdir.trombini@gmail.com )
+Added Translation for Spanish by César Gómez ( Email: cesar@temperatio.com )
 
 == Menus ===
-There are 3 Menus registered in this theme. Primary, Secondary and Footer Menu. Primary and Secondary menu is dull drop down menu while the Footer menu displays only parent menu and no drop down.
+There are 3 Menus registered in this theme. Primary, Secondary and Footer menu. 
+Primary and Secondary menu is dull drop down menu while the Footer menu displays only parent menu and no drop down.
+Only Primary Menu is visible in responsive (mobile devices with max-width: 650px)
 
 == Tags ==
 dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
@@ -94,3 +97,9 @@ Version 1.1.3.1
 Version 1.1.3.2
 * Fixed site title and heading font issue
 * Fixed dark.css for dark color scheme
+
+Version 1.2
+* Added language translation file es_ES.po and es_ES.mo files
+* Replaced get_stylesheet_directory_uri to get_template_directory_uri
+* Added flexibility to height and width of Header Image (Logo)
+* Replaced the default menu to responsive inout menu for mobile devices.

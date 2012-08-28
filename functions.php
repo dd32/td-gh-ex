@@ -155,12 +155,16 @@ function catchbox_setup() {
 		add_theme_support( 'custom-header', array( 
 			// Header image random rotation default
 			'random-default'			=> false,
+			// Header image flex width
+		 	'flex-width'             	=> true,
+			// Header image flex height
+			'flex-height'            => true,
 			// Template header style callback
 			'wp-head-callback'			=> 'catchbox_header_style',
 			// Admin header style callback
 			'admin-head-callback'		=> 'catchbox_admin_header_style',
 			// Admin preview style callback
-			'admin-preview-callback'	=> 'catchbox_admin_header_image',
+			'admin-preview-callback'	=> 'catchbox_admin_header_image'
 		) );
 	} else {
 		// Backward Compatibility for WordPress Version 3.3
@@ -223,9 +227,6 @@ function catchbox_header_style() {
 			position: absolute !important;
 			clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
 			clip: rect(1px, 1px, 1px, 1px);
-		}
-		#site-logo { 
-			padding-bottom: 3.65625em;
 		}
 	<?php 
 	
@@ -784,25 +785,28 @@ function catchbox_sliders() {
  */
 function catchbox_scripts_method() {	
 	//Register JQuery circle all and JQuery set up as dependent on Jquery-cycle
-	wp_register_script( 'jquery-cycle', get_stylesheet_directory_uri() . '/js/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
+	wp_register_script( 'jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
 	
 	//Enqueue Slider Script only in Front Page
 	if(is_home() || is_front_page()) {
 		wp_enqueue_script( 'catchbox_slider', get_template_directory_uri() . '/js/catchbox_slider.js', array( 'jquery-cycle' ), '1.0', true );
 	}
+	
+	wp_enqueue_script('catchbox-menu', get_template_directory_uri() . '/js/catchbox-menu.min.js', array('jquery'), '1.1.0', true);
 
 	//Browser Specific Enqueue Script i.e. for IE 1-6
 	$catchbox_ua = strtolower($_SERVER['HTTP_USER_AGENT']);
 	if(preg_match('/(?i)msie [1-6]/',$catchbox_ua)) {
-		wp_enqueue_script( 'catchbox-pngfix', get_stylesheet_directory_uri() . '/js/pngfix.min.js' );	  
+		wp_enqueue_script( 'catchbox-pngfix', get_template_directory_uri() . '/js/pngfix.min.js' );	  
 	}
 	//browser specific queuing i.e. for IE 1-8
 	if(preg_match('/(?i)msie [1-8]/',$catchbox_ua)) {
-	 	wp_enqueue_script( 'catchbox-html5', get_stylesheet_directory_uri() . '/js/html5.js' );
+	 	wp_enqueue_script( 'catchbox-html5', get_template_directory_uri() . '/js/html5.js' );
 	}
 	
 } // catchbox_scripts_method
 add_action( 'wp_enqueue_scripts', 'catchbox_scripts_method' );
+
 
 /**
  * Enqueue Comment Reply Script
@@ -817,11 +821,12 @@ function catchbox_enqueue_comment_reply_script() {
 }
 add_action( 'comment_form_before', 'catchbox_enqueue_comment_reply_script' );
 
+
 /**
  * Alter the query for the main loop in home page
  * @uses pre_get_posts hook
  */
-function catch_box_alter_home( $query ){
+function catchbox_alter_home( $query ){
 	$options = get_option( 'catchbox_options_slider' );
 	if( !isset( $options[ 'exclude_slider_post' ] ) ) {
  		$options[ 'exclude_slider_post' ] = "0";
@@ -833,4 +838,19 @@ function catch_box_alter_home( $query ){
 		}
 	}
 }
-add_action( 'pre_get_posts','catch_box_alter_home' );
+add_action( 'pre_get_posts','catchbox_alter_home' );
+
+
+/**
+ * Remove div from wp_page_menu() and replace with ul.
+ * @uses wp_page_menu filter
+ */
+function catchbox_wp_page_menu ($page_markup) {
+    preg_match('/^<div class=\"([a-z0-9-_]+)\">/i', $page_markup, $matches);
+        $divclass = $matches[1];
+        $replace = array('<div class="'.$divclass.'">', '</div>');
+        $new_markup = str_replace($replace, '', $page_markup);
+        $new_markup = preg_replace('/^<ul>/i', '<ul class="'.$divclass.'">', $new_markup);
+        return $new_markup; }
+
+add_filter('wp_page_menu', 'catchbox_wp_page_menu');

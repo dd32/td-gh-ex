@@ -65,9 +65,11 @@
 				<div class="skip-link"><a class="assistive-text" href="#secondary" title="<?php esc_attr_e( 'Skip to secondary content', 'catchbox' ); ?>"><?php _e( 'Skip to secondary content', 'catchbox' ); ?></a></div>
 				<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu. The menu assiged to the primary position is the one used. If none is assigned, the menu with the lowest ID is used. */ ?>
                 <?php if ( has_nav_menu( 'primary', 'catchbox' ) ) { 
-					wp_nav_menu( array( 'theme_location' => 'primary' ) );
+					wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'menu-header-container' ) );
 				} else { ?>
-					<?php wp_page_menu( array( 'menu_class'  => 'default-menu' ) ); ?>
+                	<div class="menu-header-container">
+						<?php wp_page_menu( array( 'menu_class'  => 'menu' ) ); ?>
+                    </div>
 				<?php
                 } ?>   
 			</nav><!-- #access -->
