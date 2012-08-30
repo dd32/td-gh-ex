@@ -7,14 +7,13 @@ Theme Name: Mantra
 RTL Basics
 */
 
-
 body {
 	direction:rtl;
 	unicode-bidi:embed;
 }
 
 .socials, #sfooter {
-float:left;
+	float:left;
 }
 
 /*
@@ -23,55 +22,9 @@ DESCRIPTION: Two-column fixed layout with one sidebar right of content
 */
 
 #container {
-	float: right;
-	
-}
-#content {
-	
-}
-#primary,
-#secondary {
-
-}
-#secondary {
-
+	float: right;	
 }
 
-
-/* =Fonts
--------------------------------------------------------------- */
-body,
-input,
-textarea,
-.page-title span,
-.pingback a.url,
-h3#comments-title,
-h3#reply-title,
-#access .menu,
-#access div.menu ul,
-#cancel-comment-reply-link,
-.form-allowed-tags,
-#site-info,
-#site-title,
-#wp-calendar,
-.comment-meta,
-.comment-body tr th,
-.comment-body thead th,
-.entry-content label,
-.entry-content tr th,
-.entry-content thead th,
-.entry-meta,
-.entry-title,
-.entry-utility,
-#respond label,
-.navigation,
-.page-title,
-.pingback p,
-.reply,
-.widget-title,
-input[type=submit] {
-	font-family: Arial, Tahoma, sans-serif;
-}
 
 /* =Structure
 -------------------------------------------------------------- */
@@ -138,7 +91,6 @@ padding-right:12px;
     width: 27px;
 }
 
-
 blockquote {
 	font-style: normal;
 }
@@ -185,14 +137,13 @@ div.menu li{
 }
 
 #access ul ul {
-	left:auto;
-	right:0;
+margin-right:0;
+}
+
+#access ul li {
 	float:right;
 }
-#access ul ul ul {
-	left:auto;
-	right:100%;
-}
+
 
 /* =Content
 -------------------------------------------------------------- */
@@ -204,6 +155,11 @@ div.menu li{
 .page-title span {
 	font-style:normal;
 }
+
+#content ul > li {
+background-position:right 10px;
+}
+
 .entry-title,
 .entry-meta{
 	clear: right;

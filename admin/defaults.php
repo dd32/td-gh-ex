@@ -12,7 +12,7 @@ $mantra_defaults = array(
 "mantra_sidebar" => 250,
 "mantra_sidewidthRel" => 60,
 "mantra_sidebarRel" => 20,
-"mantra_hheight" => "60",
+"mantra_hheight" => "75",
 "mantra_hcenter" => "",
 
 "mantra_frontpage" => "Disable",

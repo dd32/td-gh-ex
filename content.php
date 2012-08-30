@@ -9,13 +9,8 @@
 
 $options= mantra_get_theme_options();
 foreach ($options as $key => $value) {
-
      ${"$key"} = $value ;
-
-}
-
-
-?>
+} ?>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<header class="entry-header">

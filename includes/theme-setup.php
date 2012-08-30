@@ -182,6 +182,34 @@ function mantra_page_menu_args( $args ) {
 add_filter( 'wp_page_menu_args', 'mantra_page_menu_args' );
 
 /**
+ * Create menus
+ */
+ 
+// TOP MENU
+function mantra_top_menu() {
+ if ( has_nav_menu( 'top' ) ) wp_nav_menu( array( 'container' => 'nav', 'container_class' => 'topmenu', 'theme_location' => 'top' ) ); 
+ }
+ 
+ add_action ('cryout_wrapper_hook','mantra_top_menu');
+ 
+ // MAIN MENU
+ function mantra_main_menu() {
+  /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
+<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'mantra' ); ?>"><?php _e( 'Skip to content', 'mantra' ); ?></a></div>
+<?php /* Main navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */
+wp_nav_menu( array( 'container_class' => 'menu', 'menu_id' =>'prime_nav', 'theme_location' => 'primary' ) ); 
+}
+
+add_action ('cryout_access_hook','mantra_main_menu');
+
+// FOOTER MENU
+ function mantra_footer_menu() {
+  if ( has_nav_menu( 'footer' ) ) wp_nav_menu( array( 'container' => 'nav', 'container_class' => 'footermenu', 'theme_location' => 'footer' ) ); 
+  }
+  
+  add_action ('cryout_footer_hook','mantra_footer_menu',10);
+
+/**
  * Register widgetized areas, including two sidebars and four widget-ready columns in the footer.
  *
  * To override mantra_widgets_init() in a child theme, remove the action hook and add your own

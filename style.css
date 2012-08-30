@@ -4,7 +4,7 @@
  * Description: Mantra is a do-it-yourself WordPress theme, featuring a pack of over 100 customization options and easy to use tweaks capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (1,2 or 3 columns), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 35 font-families plus all Google Fonts), text and header sizes, post metas, post excerpts, post formats, header and background images, custom menus, 27 social media links and icons, pins, bullets and much much more. With a fully responsive layout,a customizable showcase presentation page, animated slider, magazine and blog layouts, 8 widget areas, modern graphics and an easy and intuitive admin section, you can start creating your dream site right now.
  * Author: Cryout Creations
  * Author URI: http://www.riotreactions.com
- * Version: 1.9.6.2
+ * Version: 1.9.7
  * License: GNU General Public License v2.0
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Tags: black, red, blue, white, silver, light, dark, one-column, two-columns, three-columns, right-sidebar, left-sidebar, flexible-width, fixed-width, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, front-page-post-form, full-width-template,  microformats, post-formats, rtl-language-support,  sticky-post, theme-options, threaded-comments, translation-ready
@@ -223,7 +223,7 @@ div.menu,
 display:block;
 float:none;
 clear:both;
-height:60px;
+height:75px;
 padding-top:0;
 padding-top:0px;
 padding-bottom:0px;
@@ -487,7 +487,7 @@ a:hover {
 	display: block;
 	float: left;
 	margin: 0 auto;
-	margin-top:0px;
+	margin-top:10px;
 }
 
 #access ul {
@@ -533,16 +533,16 @@ box-shadow:0 -3px 4px rgba(0,0,0,0.1) inset;
 	clear:both;
 	z-index: 99999;
 	margin-left:0px;
-	-moz-box-shadow:0px 0px 3px #CCC ;
-	-webkit-box-shadow:0px 0px 3px #CCC;
-	box-shadow:0px 0px 3px #CCC;
+	-moz-box-shadow:0 10px 10px rgba(0, 0, 0, 0.3) ;
+	-webkit-box-shadow:0 10px 10px rgba(0, 0, 0, 0.3);
+	box-shadow:0 10px 10px rgba(0, 0, 0, 0.3);
 }
 #access ul ul li { /* level 2 */
 	  margin:0;
       width: 100%; /* submenu width fix */
       border-bottom: 1px solid rgba(220,220,220,0.3);
      /* white-space: pre;*/
-
+	position:relative;
 	background:#FFF;
 	-webkit-border-radius: 0;
 	-moz-border-radius:0;
@@ -580,8 +580,8 @@ position:absolute;
 	float:none;
 	color:#5F5B5B;
 	width:100% ;
-padding-top: 0.5em ;
-padding-bottom: 0.5em ;
+	padding-top: 0.6em ;
+	padding-bottom: 0.6em ;
 	}
 
 #access ul ul li:hover, #access ul ul ul li:hover {
@@ -623,7 +623,6 @@ padding-bottom: 0.5em ;
 * html #access ul li a:hover {
 	color: #5F5B5B ;
 }
-
 
 /* =Menu -SECONDARY
 -------------------------------------------------------------- */
@@ -1012,6 +1011,24 @@ body.page .edit-link {
 	padding: 0;
 }
 
+/* POST FORMATS */
+
+article.format-link, article.format-quote, article.format-image, article.format-chat, article.format-aside {
+ background-position: 10px 10px;  
+  background-repeat: no-repeat; }
+article.format-aside { background-position: 10px -7px; }
+article.format-link { background-image: url(images/post-formats/link.png); }
+article.format-quote { background-image: url(images/post-formats/quotes.png); }
+article.format-image { background-image: url(images/post-formats/picture.png); }
+article.format-chat { background-image: url(images/post-formats/bubble.png); }
+article.format-aside { background-image: url(images/post-formats/brackets.png); }
+
+article.format-link header, article.format-quote header, article.format-image header,
+article.format-chat header, article.format-aside header {
+  padding-left: 60px; }
+article.format-aside header { margin-top: 7px; }
+article.format-link h3.entry-format, article.format-quote h3.entry-format, article.format-image h3.entry-format, 
+article.format-chat h3.entry-format, article.format-aside h3.entry-format { display: none !important; }
 
 
 /* =Asides
@@ -1089,8 +1106,6 @@ body.page .edit-link {
 	float:left;
 	clear:right;
 }
-
-
 
 .status_content {
 	display:block;
@@ -1925,7 +1940,8 @@ margin:0;
 position:relative;
 left:-26px; top:0px;
 background: #777;
-width:25px;height:26px;
+width:25px;
+height:26px;
 border:none;
 cursor:pointer;
 font-size:12px;
@@ -1940,16 +1956,13 @@ width:27px;
 height:28px;
 font-size:12px;
 font-family:Arial;
-
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
-                 .widget_search #searchsubmit {   top:3px;}
-				  #container #s  {padding-top:0px;padding:bottom:0px;height:21px; }
+				  .contentsearch #searchsubmit , .widget_search #searchsubmit{margin-top:3px;}
 }
 
 .tagcloud {padding-left:15px;}
-
 
 #searchsubmit:hover {
 background:#888;

@@ -12,6 +12,12 @@
 	#wrapper, #colophon, #branding, #main, article.post, #container, #linky {
     	width: auto !important;
  	}
+	#branding {
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	background-size:cover;
+	height:auto ;
+}
 	#wrapper {
 		margin:10px !important;
 	}

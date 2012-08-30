@@ -5,7 +5,7 @@
  * @subpackage Functions
  */
  
- /**
+/**
  * Filter for page meta title.
  */
 function mantra_filter_wp_title( $title ) {
@@ -96,18 +96,28 @@ function mantra_seo_generator() {
 global $mantra_options;
 foreach ($mantra_options as $key => $value) {
 ${"$key"} = $value ;}
-add_action ('mantra_seo_hook','mantra_seo_title');
-add_action ('mantra_seo_hook','mantra_seo_description');
+add_action ('cryout_seo_hook','mantra_seo_title');
+add_action ('cryout_seo_hook','mantra_seo_description');
 
 if($mantra_seo_author && $mantra_seo_author!="Do not use") 
-	add_action ('mantra_seo_hook','mantra_seo_name');
+	add_action ('cryout_seo_hook','mantra_seo_name');
 	
-add_action ('mantra_seo_hook','mantra_seo_template');
+add_action ('cryout_seo_hook','mantra_seo_template');
 }
 if($mantra_seo=="Enable") mantra_seo_generator() ; 
-	else add_action ('mantra_seo_hook','mantra_seo_title',0);
+	else add_action ('cryout_seo_hook','mantra_seo_title',0);
 
+// Mantra favicon
+function mantra_fav_icon() {
+global $mantra_options;
+foreach ($mantra_options as $key => $value) {
+${"$key"} = $value ;}	
+	 echo '<link rel="shortcut icon" href="'.esc_url($mantra_options['mantra_favicon']).'" />'; 
+	}
 
+if ($mantra_options['mantra_favicon']) add_action ('cryout_header_hook','mantra_fav_icon');	
+
+	
 /*
 Plugin Name: Custom Write Panel
 Plugin URI: http://wefunction.com/2008/10/tutorial-create-custom-write-panels-in-wordpress

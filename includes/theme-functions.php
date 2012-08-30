@@ -1,10 +1,167 @@
 <?php 
 /**
- * Misc functions breadcrumbs / pagination / transient data
+ * Misc functions breadcrumbs / pagination / transient data /back to top button
  *
  * @package mantra
  * @subpackage Functions
  */
+ 
+ /**
+ * Loads necessary scripts
+ * Adds HTML5 tags for IE8
+ * Used in header.php
+*/
+ function mantra_header_scripts() {
+ $mantra_options= mantra_get_theme_options();
+foreach ($mantra_options as $key => $value) {	
+     ${"$key"} = $value ;
+}
+?>
+<!--[if lt IE 9]>
+<script>
+document.createElement('header');
+document.createElement('nav');
+document.createElement('section');
+document.createElement('article');
+document.createElement('aside');
+document.createElement('footer');
+document.createElement('hgroup');
+</script>
+<![endif]-->
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+	// Add custom borders to images
+    jQuery("#content img").addClass("<?php echo 'image'.$mantra_image;?>");
+	
+ <?php if ($mantra_options['mantra_mobile']=="Enable") { // If mobile view is enabled ?> 	
+	jQuery(function () {
+	// Add select navigation to small screens
+    jQuery("#prime_nav").tinyNav({
+	header: true // Show header instead of the active item
+					});
+	});
+    // Add responsive videos
+  jQuery("#container").fitVids(); 
+  <?php } ?>
+
+    }); // document ready
+</script>
+<?php
+}
+ 
+add_action('wp_head','mantra_header_scripts',100);
+ 
+ 
+/**
+ * Creates invisible div over header making it link to home page
+ * Used in header.php
+*/
+ function mantra_link_header() {
+echo '<a href="'.home_url( '/' ).'" id="linky"> </a>' ;
+}
+
+ if ($mantra_options['mantra_linkheader']=="Enable") add_action('cryout_branding_hook','mantra_link_header');
+ 
+ 
+ 
+ /**
+ * Adds title and description to heaer
+ * Used in header.php
+*/
+ function mantra_title_and_description() {
+ // Site Title
+  $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; 
+  echo '<'.$heading_tag.' id="site-title">';
+  echo '<span> <a href="'.home_url( '/' ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a> </span>';
+  echo '</'.$heading_tag.'>'; 
+  // Site Description
+  echo '<div id="site-description" >'.get_bloginfo( 'description' ).'</div>';			
+}
+
+add_action ('cryout_branding_hook','mantra_title_and_description');
+
+
+ /**
+ * Add social icons in header / undermneu left / undermenu right / footer
+ * Used in header.php and footer.php
+*/
+ function mantra_header_socials() {
+ mantra_set_social_icons('sheader');
+ }
+ 
+  function mantra_smenul_socials() {
+ mantra_set_social_icons('smenul');
+ }
+ 
+  function mantra_smenur_socials() {
+ mantra_set_social_icons('smenur');
+ }
+ 
+   function mantra_footer_socials() {
+ mantra_set_social_icons('sfooter');
+ }
+
+if($mantra_socialsdisplay0) add_action('cryout_branding_hook', 'mantra_header_socials');
+if($mantra_socialsdisplay1) add_action('cryout_forbottom_hook', 'mantra_smenul_socials');
+if($mantra_socialsdisplay2) add_action('cryout_forbottom_hook', 'mantra_smenur_socials');
+if($mantra_socialsdisplay2) add_action('cryout_footer_hook', 'mantra_footer_socials',13);
+
+/**
+ * Social icons function
+ */
+function mantra_set_social_icons($id) {
+	global $mantra_options;
+		foreach ($mantra_options as $key => $value) {
+		${"$key"} = $value ;
+					}
+echo '<div class="socials" id="'.$id.'">';
+for ($i=1; $i<=9; $i+=2) {
+	$j=$i+1;
+	if ( ${"mantra_social$j"} ) {?>
+		<a target="_blank" rel="nofollow" href="<?php echo esc_url(${"mantra_social$j"}); ?>" class="socialicons social-<?php echo esc_attr(${"mantra_social$i"}); ?>" title="<?php echo esc_attr(${"mantra_social$i"}); ?>"><img alt="<?php echo esc_attr(${"mantra_social$i"}); ?>" src="<?php echo get_template_directory_uri().'/images/socials/'.${"mantra_social$i"}.'.png'; ?>" /></a><?php 
+				} 
+		}
+echo '</div>';
+}
+
+// Get any existing copy of our transient data
+if ( false === ( $cryout_theme_info = get_transient( 'cryout_theme_info' ) ) ) {
+    // It wasn't there, so regenerate the data and save the transient
+ if ( ! function_exists( 'get_custom_header' ) ) {  $cryout_theme_info = get_theme_data( get_theme_root() . '/mantra/style.css' ); }
+else { $cryout_theme_info = wp_get_theme( );}
+
+     set_transient( 'cryout_theme_info',  $cryout_theme_info ,60*60);
+}
+
+ 
+  /**
+ * Replaces header image with featured image if there is one for single pages
+ * Used in header.php
+*/
+function mantra_header_featured_image() {			
+// Check if this is a post or page, if it has a thumbnail, and if it's a big one
+if ( is_singular() && has_post_thumbnail( $post->ID ) && $mantra_fheader == "Enable" &&
+	(  $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&
+	$image[1] >= HEADER_IMAGE_WIDTH ) :
+	// Houston, we have a new header image!
+	//echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' ); 
+	$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), array(HEADER_IMAGE_WIDTH,HEADER_IMAGE_HEIGHT) ); 
+endif; 
+}
+
+add_action ('cryout_branding_hook','mantra_header_featured_image');	 
+
+ 
+/**
+ * Mantra back to top button
+ * Creates div for js
+*/
+function mantra_back_top() {
+  echo '<div id="toTop"> </div>';
+  }
+  
+  if ($mantra_backtop=="Enable") add_action ('cryout_body_hook','mantra_back_top');
+
  
  /**
  * Creates breadcrumns with page sublevels and category sublevels.
@@ -59,6 +216,8 @@ if (is_page() && !is_front_page() || is_single() || is_category() || is_archive(
 echo '</div>';
 }
 
+ if($mantra_breadcrumbs=="Enable")  add_action ('cryout_breadcrumbs_hook','mantra_breadcrumbs');
+
 /**
  * Creates pagination for blog pages.
  */
@@ -100,34 +259,50 @@ function mantra_pagination($pages = '', $range = 2, $prefix ='')
      }
 }
 
+
 /**
- * Show the social icons in case they are enabled.
+ * Site info
  */
-function mantra_set_social_icons() {
-	global $mantra_options;
-		foreach ($mantra_options as $key => $value) {
-		${"$key"} = $value ;
-					}
-					
-for ($i=1; $i<=9; $i+=2) {
-	$j=$i+1;
-	if ( ${"mantra_social$j"} ) {?>
-		<a target="_blank" rel="nofollow" href="<?php echo esc_url(${"mantra_social$j"}); ?>" class="socialicons social-<?php echo esc_attr(${"mantra_social$i"}); ?>" title="<?php echo esc_attr(${"mantra_social$i"}); ?>"><img alt="<?php echo esc_attr(${"mantra_social$i"}); ?>" src="<?php echo get_template_directory_uri().'/images/socials/'.${"mantra_social$i"}.'.png'; ?>" /></a><?php 
-				} 
-		}
+function mantra_site_info() {
+$mantra_options= mantra_get_theme_options();
+foreach ($mantra_options as $key => $value) {	
+     ${"$key"} = $value ;
 }
+        $mantra_theme_data = get_transient( 'cryout_theme_info'); 
+?>
+		<div id="site-info" >
+				<a href="<?php echo home_url( '/' ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+			| <?php echo '<b title="'.$mantra_theme_data['Version'].'">'.$mantra_theme_data['Name'].'</b> Theme by '.$mantra_theme_data['Author']; ?> | Powered by
+			<?php do_action( 'mantra_credits' ); ?>
+				<a href="<?php echo esc_url('http://wordpress.org/' ); ?>"
+						title="<?php esc_attr_e('Semantic Personal Publishing Platform', 'mantra'); ?>">
+					<?php printf(' %s.', 'WordPress' ); ?>
+				</a>
+			</div><!-- #site-info -->
+<?php }
 
-// Get any existing copy of our transient data
-if ( false === ( $cryout_theme_info = get_transient( 'cryout_theme_info' ) ) ) {
-    // It wasn't there, so regenerate the data and save the transient
- if ( ! function_exists( 'get_custom_header' ) ) {  $cryout_theme_info = get_theme_data( get_theme_root() . '/mantra/style.css' ); }
-else { $cryout_theme_info = wp_get_theme( );}
+add_action('cryout_footer_hook','mantra_site_info',11);
 
-     set_transient( 'cryout_theme_info',  $cryout_theme_info ,60*60);
-}
+
+/**
+ * Copyright text
+ */
+function mantra_copyright() {
+$mantra_options= mantra_get_theme_options();
+foreach ($mantra_options as $key => $value) {	
+     ${"$key"} = $value ;
+	 }
+	echo '<div id="site-copyright">'.$mantra_copyright.'</div>';
+	}
+	
+	if ($mantra_copyright != '') add_action('cryout_footer_hook','mantra_copyright',12);
+	
+ 
 
 add_action('wp_ajax_nopriv_do_ajax', 'mantrra_ajax_function');
 add_action('wp_ajax_do_ajax', 'mantra_ajax_function');
+
+
 
 function mantra_ajax_function(){
 ob_clean();
