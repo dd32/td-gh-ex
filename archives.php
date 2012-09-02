@@ -5,7 +5,7 @@ Template Name: Archives
 ?>
 
 <?php get_header(); ?>
-<?php get_search_form(); ?>
+<?php //get_search_form(); ?>
 <div id="content" class="widecolumn">
 
 <?php get_search_form(); ?>

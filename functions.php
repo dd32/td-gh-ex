@@ -6,7 +6,7 @@ function pieSearchjs(){
 
 }
 add_action('wp_enqueue_scripts','pieSearchjs');
-if ( ! isset( $content_width ) ) $content_width = 550;register_sidebar(array(  'name' => 'sidebar',  'id' => 'sidebar',  	'before_widget' => '<aside id="%1$s" class="widget %2$s">',	'after_widget' => '</aside>',	'before_title' => '<header><h3 class="widgettitle">',	'after_title' => '</h3></header>',));add_theme_support('automatic-feed-links');add_theme_support('custom-background');add_editor_style();// hack to add a class to the body tag when the sidebar is active
+if ( ! isset( $content_width ) ) $content_width = 550;register_sidebar(array(  'name' => 'Sidebar',  'id' => 'sidebar',  	'before_widget' => '<aside id="%1$s" class="widget %2$s">',	'after_widget' => '</aside>',	'before_title' => '<header><h3 class="widgettitle">',	'after_title' => '</h3></header>',));add_theme_support('automatic-feed-links');add_theme_support('custom-background');add_editor_style();// hack to add a class to the body tag when the sidebar is active
 function terminally_has_sidebar($classes) {	if (is_active_sidebar('sidebar')) {		// add 'class-name' to the $classes array
 $classes[] = 'has_sidebar';			}	// return the $classes array
 return $classes;}add_filter('body_class','terminally_has_sidebar');
@@ -28,4 +28,10 @@ $form = '<form class="pie_search_form" role="search" method="get" id="searchform
  return $form;
 }
 add_filter( 'get_search_form', 'my_search_form' );
+function register_my_menus() {
+  register_nav_menus(
+    array( 'header-menu' => 'Header Menu' )
+  );
+}
+add_action( 'init', 'register_my_menus' );
 ?>

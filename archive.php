@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-<?php get_search_form(); ?>
 		<?php if (have_posts()) : ?>
 
  	  <?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
@@ -24,7 +23,8 @@
 			<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
 				
 				<header>
-				  <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?> &mdash; <time><?php the_time(get_option('date_format')) ?></time></a></h2>
+				  <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+				  <br><h3 style="padding: 0 0 0 25px; margin: -20px;"><time><?php the_time(get_option('date_format')) ?></time></h3>
 		    	</header>
 		
 		    <section>

@@ -2,12 +2,12 @@
 Theme Name: Commodore
 Description: HTML5 and CSS3 Theme in the style of the good old Commodore 64.
 Author: United Networks
-Version: 1.0
+Version: 1.1
 Tags: blue, light, two-columns, one-column, right-sidebar
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Theme URI: http://www.myfictionalkid.com
-Author URI: http://www.unitednetworksonline.com/themes/
+Theme URI: http://unitednetworksonline.com/themes/commodore/
+Author URI: http://www.unitednetworksonline.com/wordpress-themes/
 */
 @font-face {
 font-family: c64;
@@ -71,7 +71,6 @@ font-size: 30px;
 font-weight: bold;
 letter-spacing: -0.06em;
 line-height: 30px;
-width: 930px;
 margin: 0 auto 5px auto;
 }
 .header h1 a {
@@ -124,17 +123,8 @@ font-size: 20px;
 article.post section,  article.page section, nav aside ul {
  padding: 15px;
  }
-.post a:hover {
-background-color: #fff;
-color: #000;
-text-decoration: none;
-}
-.post a img {
-border: 1px solid #ccc;
-padding: 5px;
-}
 .post a:hover img {
-border-color: black;
+border: 5px solid #fff !important;
 }
 .post time a {
   color: inherit;
@@ -225,11 +215,10 @@ list-style: none;
 line-height: 1.6em;
 padding: 0;
 margin: 0 0 0 0;
-color: #666;
+color: #A6A1FF;
 }
 nav a {
-color: #999;
-text-decoration: none;
+color: #A6A1FF;
 }
 /* comments */
 #comments, .nocomments {
@@ -360,7 +349,6 @@ padding: 10px;
 margin-bottom: 20px;
 text-align: center;
 overflow: hidden;
-max-width: 528px !important;
 height: auto;
 }
 .wp-caption img {
@@ -399,8 +387,9 @@ margin-right: auto;
 margin-bottom: 12px;
 }
 .sticky {
- border: 1px dashed #ccc;
+ background-color: #5454E9;
  padding: 10px;
+ margin-bottom: 10px;
 }
 .commentlist .bypostauthor {
   font-weight: bold;
@@ -444,19 +433,8 @@ font-size: 0.9em;
 .widget_recent_comments ul li a {
   display: block;
 }
-.widget_search form {
-padding: 15px;
-text-align: right;
-}
 .widget_search form label {
 display: none;
-}
-.widget_search form input#s {
-background-color: #000;
-border: 1px solid #666;
-padding: 5px;
-width: 150px;
-color: #fff;
 }
 .widget_pages ul.children {
 padding: 0 0 0 15px !important;
@@ -483,7 +461,6 @@ left: -1000px;
 position: absolute;
 border:0 none;
 background:transparent none;
-cursor:none;
 color: #A6A1FF;
 font-family: c64,courier,monospaced;
 font-size: 14px;
@@ -509,4 +486,25 @@ vertical-align:top;
 }
 #getter {
 margin: 1px;
+}
+.menu ul {
+    margin: 0;
+    padding: 0; 
+    list-style-type: none;
+    list-style-image: none;
+}
+.menu li {display: inline; }
+.menu a {color: #A6A1FF;}
+.menu a:hover {
+    background-color: white;
+    color: black;
+    text-decoration: none;
+}
+.menu li + li {
+    background:url('images/sep.png') no-repeat top left;
+    padding-left: 15px
+}
+code {
+font-family: c64,courier,monospaced;
+font-size: 10px;
 }

@@ -5,7 +5,7 @@ Template Name: Links
 ?>
 
 <?php get_header(); ?>
-<?php get_search_form(); ?>
+<?php //get_search_form(); ?>
 <article id="links">
 <h2>Links:</h2>
 <ul>

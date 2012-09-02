@@ -4,7 +4,7 @@
 
 	<?php if (have_posts()) : ?>
 
-		<h2 class="pagetitle">Search Results for &quot;<?php the_search_query(); ?> &quot;</h2>
+		<h2 class="pagetitle">Search Results for &quot;<?php the_search_query(); ?>&quot;</h2>
 
 		<?php while (have_posts()) : the_post(); ?>
 
@@ -22,8 +22,8 @@
 
 	<?php else : ?>
 
-		<h2 class="center">No posts found. Try a different search?</h2>
-		<?php get_search_form(); ?>
+		<h2 class="center">?SYNTAX&nbsp;&nbsp;ERROR<br>READY.</h2>
+		<?php //get_search_form(); ?>
 
 	<?php endif; ?>
 

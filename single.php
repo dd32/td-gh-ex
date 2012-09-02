@@ -1,11 +1,12 @@
 <?php get_header(); ?>
-<?php get_search_form(); ?>
+<?php //get_search_form(); ?>
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 			<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
 				
 				<header>
-				  <h1><?php the_title(); ?> &mdash; <time><?php the_time(get_option('date_format')) ?></time></h1>
+				  <h1><?php the_title(); ?><h1>
+				  <br><h3 style="padding: 0 0 0 25px; margin: -20px;"><time><?php the_time(get_option('date_format')) ?></time></h3>
 		    	</header>
 		
 				<section>
@@ -15,7 +16,7 @@
 					<hr class="clearfix" />
 
         			<?php the_tags('<p class="post_tags"><mark>Tagged with:</mark> ', ' | ' ,  '</p>'); ?></p>
-			        <p class="post_categories"><mark>Categorised as:</mark> <?php the_category(' | '); ?> </p>
+			        <p class="post_categories"><mark>Categorized as:</mark> <?php the_category(' | '); ?> </p>
 					  <?php edit_post_link('Edit This Post', '<p class="postmetadata">', '</p>'); ?>
   				  <?php if(!comments_open()) { ?>
               <p>Comments are disabled on this post</p>
