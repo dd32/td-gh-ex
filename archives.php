@@ -47,7 +47,7 @@
 $category = get_the_category(); 
 echo $category[0]->cat_name;
 ?></div>
-<div class="postcomments"><a href="<?php the_permalink()?>#comments" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php comments_number ('0 Comments', '1 Comment', '% Comments', 'appliance'); ?></a></div>
+<div class="postcomments"><a href="<?php the_permalink()?>#comments" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php printf( _n( '1 comment', '%1$s comments', get_comments_number(), 'appliance' ), number_format_i18n( get_comments_number() ) ); ?></a></div>
 </div>
 
 <?php endwhile; ?>

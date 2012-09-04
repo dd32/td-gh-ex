@@ -1,21 +1,13 @@
 
 <div class="divider"></div>
 
-
-
+<div id="footermenu">
+<?php wp_nav_menu( array( 'theme_location' => 'footer-menu', 'depth' => '1' ) ); ?>
+</div>
 
 <div id="footer">
 
 <?php if ( ! dynamic_sidebar( 'primary-widget-area' ) ) : ?>
-
-			
-
-<h2><?php _e('Pages','appliance');?></h2>
-<div class="content">
-<ul>
-<?php wp_list_pages('sort_column=menu_order&title_li='); ?>
-</ul>
-</div>
 
 
 <h2><?php _e('Categories','appliance');?></h2>

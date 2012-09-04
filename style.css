@@ -4,7 +4,7 @@ Author: Emma Conway
 Author URI: http://www.applianceuk.com
 Theme URI: http://www.applianceuk.com/appliance
 Description: Appliance is a clean and minimalist theme that is ideal for blogs / magazines / portfolios.  Spacious, minimalist, clean, light and very fast to load.
-Version: 1.21
+Version: 1.22
 Tags: white, light, one-column, fixed-width, featured-images, photoblogging, microformats
 License: GNU General Public License v2.0
 License URI: http: //www.gnu.org/licenses/gpl-2.0.html
@@ -26,19 +26,17 @@ body {
 
 #header {
 	position:relative;
-	height:90px;
 	width:1000px;
 	display:block;
-	margin:0px;
+	margin:20px 0px 20px 0px;
 	padding:0px;
 	text-align:center;
 	font-family:arial;
 	text-transform:uppercase;
-	overflow:hidden;
 } 
 
 #header h1 {
-	margin:27px auto 0px auto;
+	margin:7px auto 0px auto;
 	padding:0px;
 	color:#5B708E;
 	font-size:17px;
@@ -192,6 +190,10 @@ body {
 	line-height: 1.7em;
 	clear: left;
 }
+#maincontent img{
+	margin: 5px;
+} 
+
 #maincontent .postfooter {
 	clear: both;
 	font-size: 12px;
@@ -245,6 +247,7 @@ div.postimage img:hover {
 	height:95px;
 	display:block;
 	overflow:hidden;
+	word-wrap: break-word;
 }
 .postcontent h3 {
 	font-family:arial;
@@ -422,11 +425,57 @@ div.postimage img:hover {
 	text-decoration:none;
 }
 
+#footermenu {
+	display:inline;
+	position: relative;
+	clear:both
+	width:980px;
+	margin:0px auto 0px auto;
+	text-align:center;
+}
 
+#footermenu ul {
+	margin: 0px auto 20px auto;
+	list-style-type: none;
+	white-space: nowrap;
+	width:980px;
+	height: 29px;
+	padding: 0px 0px 0px 0px;
+}
+
+#footermenu ul li {
+	float: left;
+	font-family:verdana;
+	font-size:12px;
+	color:#9CABC0;
+	font-weight:bold;
+	margin: 0;
+	padding: 10px 0px 8px 0px;
+	background: inherit;
+	border: 0px;
+	font-weight:bold;
+}
+
+#footermenu ul li a {
+	margin: 0;
+	padding: 10px 13px 8px 13px;
+	color: #9CABC0;
+	border: 0px;
+	text-decoration: none;
+}
+
+#footermenu ul li a:hover {
+	margin: 0;
+	padding: 10px 13px 8px 13px;
+	color: #5B708E;
+	border: 0px;
+	text-decoration: none;
+}
 
 #footer   {
 	margin: 20px auto 30px auto;
 	text-align:center;
+	clear:both;
 }
 #footer h2 {
 	font-family:arial;
@@ -897,8 +946,7 @@ h3#reply-title {
 	text-align: center;
 	background-color: #f3f3f3;
 	padding-top: 4px;
-	margin-top: 10px;
-	margin-bottom: 10px;
+	margin: 10px;
 	clear: both;
 }
 

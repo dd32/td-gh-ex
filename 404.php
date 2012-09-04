@@ -1,4 +1,4 @@
-<?php get_header()?>
+<?php get_header(); ?>
 <div id="maincontent">
 
 <h1><?php _e('This page cannot be found','appliance')?></h1>
@@ -10,4 +10,4 @@
 
 </div>
 
-<?php get_footer()?>
+<?php get_footer(); ?>

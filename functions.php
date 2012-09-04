@@ -31,7 +31,25 @@ $files = get_children('post_parent='.get_the_ID().'&post_type=attachment
   endif;
 }
 
+function appliance_menu() {
+  register_nav_menus(
+    array( 'footer-menu' => __( 'Footer Menu', 'appliance' ) )
+  );
+}
+add_action( 'init', 'appliance_menu' );
 
+function appliance_custom_excerpt_length( $length ) {
+	return 15;
+}
+add_filter( 'excerpt_length', 'appliance_custom_excerpt_length', 999 );
+
+function appliance_replace_excerpt($content) {
+       return str_replace(' [...]',
+               '...',
+               $content
+       );
+}
+add_filter('the_excerpt', 'appliance_replace_excerpt');
 
 
 function appliance_widgets_init() {
@@ -39,7 +57,7 @@ function appliance_widgets_init() {
 		register_sidebar( array(
 			'name' => __( 'Footer Widget Area', 'appliance' ),
 			'id' => 'primary-widget-area',
-			'description' => __( 'The footer widget area', 'appliance' ),
+			'description' => __( 'The footer widget area.  Please note that you need to specify a title for each widget, in order for it to appear.', 'appliance' ),
 			'before_widget' => '',
 			'after_widget' => '</div>',
 			'before_title' => '<h2>',

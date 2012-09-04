@@ -1,4 +1,4 @@
-<?php get_header()?>
+<?php get_header(); ?>
 	<div id="maincontent">
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); //The Loop?>
 		<div <?php post_class()?>>
@@ -20,4 +20,10 @@
 		<?php endwhile;endif;?>
 	</div>
 	
-<?php get_footer()?>
+	
+	<div id="postnavigation">
+<div id="previousposts"><?php previous_post_link('%link'); ?></div>
+<div id="nextposts"><?php next_post_link('%link'); ?></div>
+</div>
+
+<?php get_footer(); ?>

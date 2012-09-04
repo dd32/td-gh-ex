@@ -1,4 +1,4 @@
-<?php get_header()?>
+<?php get_header(); ?>
 
 
 <?php if (have_posts()) : ?><?php while (have_posts()) : the_post(); ?>
@@ -15,7 +15,7 @@
 <div class="postreadmore"><h5><a href="<?php the_permalink()?>" title="<?php _e('Read more on','appliance');?> <?php the_title_attribute(); ?>" rel="bookmark"><?php _e('Read more','appliance');?></a></h5></div>
 <div class="smldivider"></div>
 <div class="postcats"></div>
-<div class="postcomments"><a href="<?php the_permalink()?>#comments" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php comments_number ('0 Comments', '1 Comment', '% Comments', 'appliance'); ?></a></div>
+<div class="postcomments"><a href="<?php the_permalink()?>#comments" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php printf( _n( '1 comment', '%1$s comments', get_comments_number(), 'appliance' ), number_format_i18n( get_comments_number() ) ); ?></a></div>
 </div>
 
 
@@ -42,4 +42,4 @@
 
 
 
-<?php get_footer()?>
+<?php get_footer(); ?>

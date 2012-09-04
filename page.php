@@ -1,4 +1,4 @@
-<?php get_header()?>
+<?php get_header(); ?>
 	<div id="maincontent">
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); //The Loop?>
 		<div <?php post_class()?>>
@@ -17,4 +17,4 @@
 		<?php endwhile;endif;?>
 	</div>
 	
-<?php get_footer()?>
+<?php get_footer(); ?>
