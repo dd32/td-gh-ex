@@ -578,7 +578,7 @@ function catchbox_options_slider_page() {
                         <tr>                            
                             <th scope="row"><?php _e( 'Exclude Slider post from Home page posts:', 'catchbox' ); ?></th>
                             <input type='hidden' value='0' name='catchbox_options_slider[exclude_slider_post]'>
-                            <td><input type="checkbox" id="headerlogo" name="catchbox_options_slider[exclude_slider_post]" value="1" <?php isset($options['exclude_slider_post']) ? checked( '1', $options['exclude_slider_post'] ) : checked('0', '1'); ?> /></td>
+                            <td><input type="checkbox" id="headerlogo" name="catchbox_options_slider[exclude_slider_post]" value="1" <?php isset($options['exclude_slider_post']) ? checked( '1', $options['exclude_slider_post'] ) : checked('0', '1'); ?> /> <?php _e( 'Check to disable', 'catchbox' ); ?></td>
                         </tr>
                         <tr>
                             <th scope="row"><?php _e( 'Number of Slides', 'catchbox' ); ?></th>
