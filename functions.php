@@ -5,6 +5,13 @@ if ( ! function_exists( 'adt_get_option' ) ) :
     return strip_tags(stripslashes(get_option($Aoption_name, $default)));
   };
 endif;
+if ( ! function_exists( 'adt_enqueue_comment_reply' ) ) :	
+function adt_enqueue_comment_reply() {
+  if ( is_singular() && get_option( 'thread_comments' ) )
+	wp_enqueue_script( 'comment-reply' );
+	};
+	endif;
+add_action( 'wp_enqueue_scripts', 'adt_enqueue_comment_reply' );
 
 if ( ! function_exists( 'adt_template_setup' ) ) :	
   function adt_template_setup() 
@@ -37,14 +44,17 @@ if ( ! function_exists( 'adt_template_setup' ) ) :
 	add_theme_support( 'custom-background' );	
 	if ( ! defined( 'HEADER_TEXTCOLOR' ) )
 	  define( 'HEADER_TEXTCOLOR', '87fda1' );
-	if ( ! defined( 'HEADER_IMAGE' ) )
-	  define( 'HEADER_IMAGE', '%s/img/top-default1.png' );
-	define( 'HEADER_IMAGE_WIDTH', apply_filters( 'adsticle_header_image_width', 1000 ) );
-	define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'adsticle_header_image_height', 80 ) );
+	
 	//set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );
 	if ( ! defined( 'NO_HEADER_TEXT' ) )
 	  define( 'NO_HEADER_TEXT', false );
-	add_theme_support( 'custom-header');
+	  if ( ! defined( 'HEADER_IMAGE' ) )
+	  $args = array(
+	'width'         => 1000,
+	'height'        => 80,
+	'default-image' => get_template_directory_uri() . '%s/img/top-default1.png',
+);
+	add_theme_support( 'custom-header', $args );
 	register_default_headers( array(
 		'default1' => array(
 			'url' => '%s/img/top-default1.jpg',
@@ -80,19 +90,14 @@ endif;
   
   add_action('after_setup_theme', 'adt_template_setup');
   
-  add_action('init', 'adt_ilc_farbtastic_script');
   
 if ( ! function_exists( 'adt_ilc_farbtastic_script' ) ) :	
-  function adt_ilc_farbtastic_script() 
+  function adt_ilc_farbtastic_script( $hook_suffix ) 
   { 
-    if (is_admin())
-	{
       wp_enqueue_style( 'farbtastic' );
       wp_enqueue_script( 'farbtastic' );
-	};
   };
  endif;
-  add_action( 'admin_print_styles-appearance_page_theme_options', 'adt_ilc_farbtastic_script' );
   
 if ( ! function_exists( 'adt_filter_wp_title' ) ) :	
 function adt_filter_wp_title( $title ) {
@@ -104,8 +109,8 @@ endif;
 add_filter( 'wp_title', 'adt_filter_wp_title' );
 
   
-if ( ! function_exists( 'adsticle_sidebars' ) ) :	  
-  function adsticle_sidebars()
+if ( ! function_exists( 'adt_sidebars' ) ) :	  
+  function adt_sidebars()
   {
   
   if ( function_exists('register_sidebar') )
@@ -169,9 +174,9 @@ if ( ! function_exists( 'adsticle_sidebars' ) ) :
   };
  endif; 
   
-  add_action( 'widgets_init', 'adsticle_sidebars' );
-  if ( ! function_exists( 'adsticle_comment' ) ) :	
-  function adsticle_comment( $comment, $args, $depth ) {
+  add_action( 'widgets_init', 'adt_sidebars' );
+  if ( ! function_exists( 'adt_comment' ) ) :	
+  function adt_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
 		case '' :
@@ -216,9 +221,9 @@ if ( ! function_exists( 'adsticle_sidebars' ) ) :
 
 
   
-  add_action('wp_head', 'adsticle_head');
-    if ( ! function_exists( 'adsticle_head' ) ) :
-  function adsticle_head()
+  add_action('wp_head', 'adt_head');
+    if ( ! function_exists( 'adt_head' ) ) :
+  function adt_head()
   {  
     if (!is_admin())
 	{
@@ -233,7 +238,7 @@ if ( ! function_exists( 'adsticle_sidebars' ) ) :
 <style type="text/css"> 
 body, .header  {background-color:#14253e; color: <?php echo get_option('ADT_COLOR_TEXT', ADT_COLOR_TEXT); ?>}
 
-.middle, input, textarea, .ads_728-15-top, .ads_728-15-footer {background-color:<?php echo get_option('ADT_COLOR_BACKGROUND1', ADT_COLOR_BACKGROUND1); ?> }  
+.middle, input, textarea, .ads-728-15-top, .ads-728-15-footer {background-color:<?php echo get_option('ADT_COLOR_BACKGROUND1', ADT_COLOR_BACKGROUND1); ?> }  
 
 .sticky {background: <?php echo get_option('ADT_COLOR_STICKY', ADT_COLOR_STICKY); ?>}
 a, a:hover, a:link, a:active, a:visited {color:<?php echo get_option('ADT_COLOR_LINK', ADT_COLOR_LINK); ?>}
@@ -267,23 +272,28 @@ body{background-image:none;}
 	};
   };
     endif;
-if ( ! function_exists( 'adsticle_general_options_input' ) ) :	
-function adsticle_general_options_input() {  
- register_setting('adsticle_general_options_page','adsticle_general_options_page','adt_options_validate'); 	
+if ( ! function_exists( 'adt_general_options_input' ) ) :	
+function adt_general_options_input() {  
+ register_setting('adt_general_options_page','adt_general_options_page','adt_options_validate'); 	
 }
  endif;	
-add_action( 'admin_init', 'adsticle_general_options_input' );  
+add_action( 'admin_init', 'adt_general_options_input' );  
 
 
 	    if ( ! function_exists( 'adt_options_admin_menu' ) ) :
   function adt_options_admin_menu() 
   {	    
-	add_theme_page(__("Adsticle Options", 'adsticle'), __("Adsticle Options", 'adsticle'), 
-	  'edit_theme_options', 'adsticle_general_options_page', 'adsticle_general_options_page');	  
+	$adt_theme_page = add_theme_page(__("Adsticle Options", 'adsticle'), __("Adsticle Options", 'adsticle'), 
+	  'edit_theme_options', 'adt_general_options_page', 'adt_general_options_page');	
+ if(!$adt_theme_page) return;	
+    add_action('admin_print_styles-' . $adt_theme_page, 'adt_ilc_farbtastic_script'); 
   };
   endif; 
   
   add_action('admin_menu', 'adt_options_admin_menu');
+  
+     
+  
 if ( ! function_exists( 'adt_show_color_picker' ) ) :
   function adt_show_color_picker($Aname, $Aoption, $Adefault)
   {  
@@ -318,21 +328,21 @@ name="<?php echo $Aname; ?>" value="<?php echo sanitize_text_field(get_option($A
   };
  endif;  
 
-	$adsticle_options = get_option( 'adsticle_options' );
-	$ADT_COLOR_H = $adsticle_options['ADT_COLOR_H'];
-	$ADT_COLOR_LINK = $adsticle_options['ADT_COLOR_LINK'];
-	 $ADT_COLOR_TEXT = $adsticle_options['ADT_COLOR_TEXT'];
-	 $ADT_COLOR_STICKY = $adsticle_options['ADT_COLOR_STICKY'];
-	 $ADT_COLOR_BACKGROUND1 = $adsticle_options['ADT_COLOR_BACKGROUND1'];
-	 $ADT_COLOR_LINE = $adsticle_options['ADT_COLOR_LINE'];
-	 $ADT_WIDTH_LINE_MAINMENU = $adsticle_options['ADT_WIDTH_LINE_MAINMENU'];
-	 $ADT_WIDTH_LINE_WIDGET = $adsticle_options['ADT_WIDTH_LINE_WIDGET'];
-	 $ADT_WIDTH_LINE_FOOTER = $adsticle_options['ADT_WIDTH_LINE_FOOTER'];
-	 $ADT_COLOR_MENUBACKGROUND = $adsticle_options['ADT_COLOR_MENUBACKGROUND'];
-	 $adt_a468x60 = $adsticle_options[trim('adt_a468x60')];
-	 $adt_a728x15_top = $adsticle_options[trim('adt_a728x15-top')];
-	 $adt_a728x15_footer = $adsticle_options[trim('adt_a728x15-footer')];
-	 $ads_250_250_post = $adsticle_options[trim('ads_250-250-post')];
+	$adt_options = get_option( 'adt_options' );
+	$ADT_COLOR_H = $adt_options['ADT_COLOR_H'];
+	$ADT_COLOR_LINK = $adt_options['ADT_COLOR_LINK'];
+	 $ADT_COLOR_TEXT = $adt_options['ADT_COLOR_TEXT'];
+	 $ADT_COLOR_STICKY = $adt_options['ADT_COLOR_STICKY'];
+	 $ADT_COLOR_BACKGROUND1 = $adt_options['ADT_COLOR_BACKGROUND1'];
+	 $ADT_COLOR_LINE = $adt_options['ADT_COLOR_LINE'];
+	 $ADT_WIDTH_LINE_MAINMENU = $adt_options['ADT_WIDTH_LINE_MAINMENU'];
+	 $ADT_WIDTH_LINE_WIDGET = $adt_options['ADT_WIDTH_LINE_WIDGET'];
+	 $ADT_WIDTH_LINE_FOOTER = $adt_options['ADT_WIDTH_LINE_FOOTER'];
+	 $ADT_COLOR_MENUBACKGROUND = $adt_options['ADT_COLOR_MENUBACKGROUND'];
+	 $adt_a468x60 = $adt_options[trim('adt_a468x60')];
+	 $adt_a728x15_top = $adt_options[trim('adt_a728x15-top')];
+	 $adt_a728x15_footer = $adt_options[trim('adt_a728x15-footer')];
+	 $ads_250_250_post = $adt_options[trim('ads_250-250-post')];
 	 
 
 
@@ -380,18 +390,18 @@ name="<?php echo $Aname; ?>" value="<?php echo sanitize_text_field(get_option($A
   };
    endif;  
    	    if ( ! function_exists( 'adt_options_validate ' ) ) :
-  function adt_options_validate ( $adsticle_options) {  
+  function adt_options_validate ( $adt_options) {  
     $output = array();  
-    foreach( $adsticle_options as $key => $value ) {  
-        if( isset( $adsticle_options[$key] ) ) {  
-            $output[$key] = strip_tags( stripslashes( $adsticle_options[ $key ] ) );        
+    foreach( $adt_options as $key => $value ) {  
+        if( isset( $adt_options[$key] ) ) {  
+            $output[$key] = strip_tags( stripslashes( $adt_options[ $key ] ) );        
         }          
     }  
-    return apply_filters( 'adt_options_validate', $output, $adsticle_options );    
+    return apply_filters( 'adt_options_validate', $output, $adt_options );    
 }  
    endif;  
-      if ( ! function_exists( 'adsticle_general_options_page' ) ) :
-  function adsticle_general_options_page()
+      if ( ! function_exists( 'adt_general_options_page' ) ) :
+  function adt_general_options_page()
   {
     global  $_POST, $adt_favicon_url, $adt_footer_text; 
 	

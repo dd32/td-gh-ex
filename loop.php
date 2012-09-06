@@ -22,7 +22,7 @@
 		
   <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-  <div class="post_content">
+  <div class="post-content">
   <?php 
     if (!is_single() && !is_page()): ?> 
 <div class="thumbnail"> 
@@ -111,7 +111,7 @@
 <?php else: ?>
 
 <?php if (is_search()): ?>
-    <div class="post" style="padding-top:50px"><div class="post_content">
+    <div class="post" style="padding-top:50px"><div class="post-content">
     <?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'adsticle' ); ?>
 	</div></div>
 <?php endif; ?>

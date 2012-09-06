@@ -4,10 +4,7 @@
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 <title><?php 
     global $page, $paged;?>
-
-
  <?php wp_title('|',true,'left'); ?>
-
 
 	 <?php 
 	$site_description = get_bloginfo( 'description', 'display' );
@@ -17,15 +14,9 @@
 	if ( $paged >= 2 || $page >= 2 )
 		echo ' | ' . sprintf( __( 'Page %s', 'adsticle' ), max( $paged, $page ) ); 
 ?></title>
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css" />
+<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<?php 
-function oenology_enqueue_comment_reply() {
-  if ( is_singular() && get_option( 'thread_comments' ) )
-	wp_enqueue_script( 'comment-reply' );
-	}
-add_action( 'wp_enqueue_scripts', 'oenology_enqueue_comment_reply' );
-?>
+
 <?php wp_head(); ?> 
 </head><?php flush(); ?>
 <body <?php body_class(); ?>>
@@ -52,7 +43,7 @@ add_action( 'wp_enqueue_scripts', 'oenology_enqueue_comment_reply' );
 <?php endif; ?>
 
 <?php if (adt_get_option('adt_a728x15_top', '') != '' ): ?>
-<div class="ads_728-15-top">			  
+<div class="ads-728-15-top">			  
 <?php echo sanitize_text_field(adt_get_option('adt_a728x15_top')); ?>
 </div>
 <?php endif; ?>

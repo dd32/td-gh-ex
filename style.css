@@ -3,7 +3,7 @@ Theme Name: Adsticle
 Author URI: http://wpmole.com
 Description: Adsticle is a simple wordpress theme. Adsticle supports 6 widget area, custom header, custom background, custom theme colors, options for AdSense code(Adsticle=Adsense+Article) and some other featuring.
 Author: WPMOLE
-Version: 2.1.7
+Version: 2.1.8
 License: GNU/GPL Version 3 or later. 
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: featured-images, sticky-post, threaded-comments, theme-options, rtl-language-support, editor-style, custom-header, custom-colors, blavatar, custom-background, two-columns, right-sidebar, fixed-width, custom-menu, featured-images, translation-ready, black, blue, brown, gray, green, orange, pink, purple, red, silver, tan, white, yellow, dark, light
@@ -51,9 +51,8 @@ h3,
 h4,
 h5 {
 	font-weight:400;
-	padding:5px 0; 
-	font-weight: none; 
 	line-height: 1.3em;
+	padding:5px 0; 
 }
 p {
 	padding:5px 0;
@@ -83,46 +82,43 @@ img {
 .clear {
 	clear:both;
 	font-size:0;
-	line-height:0;
 	height:0;
+	line-height:0;
 }
 body {
 	background-color:gray;
-	font-size:14px;
-	line-height: 1.4em;
 	color:green;
+	font-size:14px;
 	font-family:"Verdana", "Adobe Garamond", "Georgia", "Times New Roman", "serif";
+	line-height: 1.4em;
 }
-
 .wrapper {
-	width: 1000px; 
 	margin: 0 auto; 
-	position: relative; 
 	min-height: 100%;
+	position: relative; 
+	width: 1000px; 
 }
-
 ::selection {
 	background:blue; 
 	color:yellow;
 }
-
 .header  {
 	width:100%; 
 	height: 80px;
 }
 .header  .title {
+	left: 10px; 
+	overflow: hidden;
 	position:absolute; 
 	top: 5px; 
-	left: 10px; 
 	width:500px; 
 	height: 80px;
-	overflow: hidden;
 }
 .header  .title  h1 {
-	margin-left: 10px; 
 	font-size: 30px; 
 	margin: 0px; 
-	padding:0px
+	margin-left: 10px; 
+	padding:0px;
 }
 .header  .title  h1 a {
 	text-decoration: none;
@@ -130,25 +126,24 @@ body {
 .header  .title  span {
 	font-size: 14px; 
 	margin:0px; 
+	overflow: hidden;
 	padding:0px; 
 	text-transform:uppercase; 
-	overflow: hidden;
 }
 .header .ads468-60 {
+	left: 522px; 
+	overflow: hidden;
 	position:absolute; 
 	top: 10px; 
-	left: 522px; 
 	width:468px; 
 	height: 60px; 
-	overflow: hidden;
 }
-
 .footer {
+	background-color:red; 
+	border-top: 3px solid green;
 	clear:left; 
 	width:100%;
 	height:60px;
-	background-color:red; 
-	border-top: 3px solid green;
 }
 .footer .fl, 
 .footer .fr {
@@ -162,13 +157,11 @@ body {
 	float:right; 
 	padding: 10px 10px 0px 0px;
 }
-
 .middle {
-	width:100%; 
 	background-color:lightblue; 
 	overflow:hidden;
+	width:100%; 
 }
-
 .middle .content, 
 .middle .sidebar {
 	display:inline; 
@@ -176,32 +169,30 @@ body {
 }
 .middle .content {
 	float:left; 
-	width:650px; 
 	margin-left: 10px; 
 	overflow:hidden;
+	width:650px; 
 }
 .middle .sidebar {
-	margin:0 5px 0 20px; 
 	float:left; 
-	width: 305px; 
+	margin:0 5px 0 20px; 
 	overflow:hidden;
+	width: 305px; 
 }
-
 .sidebar-big {
 	clear:both; 
 	overflow:hidden;
 } 
-
 .sidebar-2column1 {
-	width:150px; 
-	float: left; 
 	clear:both; 
+	float: left; 
 	overflow:hidden;
+	width:150px; 
 }
 .sidebar-2column2 {
-	width:150px; 
 	float: right; 
 	overflow:hidden;
+	width:150px; 
 }
 
 .widget {
@@ -211,14 +202,13 @@ body {
 .widget h3, 
 .widget h2 {
 	font-size: 16px; 
-	font-weight: none; 
-	text-transform:uppercase; 
-	padding-bottom:5px; 
 	margin-bottom:5px;
+	padding-bottom:5px; 
+	text-transform:uppercase; 
 }
 .widget {
-	padding-top: 20px; 
 	padding-bottom: 10px;
+	padding-top: 20px; 
 }
 .widget, 
 .widget p, 
@@ -226,8 +216,8 @@ body {
 	font-size: 14px;
 }
 .widget p {
-	padding: 0px; 
 	margin-bottom: 5px;
+	padding: 0px; 
 }
 .widget a {
 	color: red; 
@@ -241,13 +231,12 @@ body {
 	margin-left: 1.3em; 
 	padding: 0; 
 }
-
 .post {
 	width: 100%;
 }
 .post  h1{
-	font-size: 30px; 
 	color: red; 
+	font-size: 30px; 
 	margin-top: 15px; 
 	padding: 0px;
 }
@@ -255,16 +244,16 @@ body {
 	text-decoration:none;
 }
 .meta {
-	font-size: 12px; 
 	color: gray; 
-	text-transform:uppercase; 
+	font-size: 12px; 
 	padding-bottom: 10px;
+	text-transform:uppercase; 
 }
-.post_content {
+.post-content {
 	font-size: 16px; 
 	padding-top: 10px;
 }
-.post_content  p{
+.post-content  p{
 	padding-bottom: 15px;
 }
 .post .addcomment, 
@@ -277,7 +266,6 @@ body {
 .post .addcomment {
 	float:right;
 }
-
 .page-link{
 	clear:both; 
 	padding-bottom:10px; 
@@ -287,16 +275,13 @@ body {
 	clear:both; 
 	padding-top:10px;
 } 
-
 .navigation {
-	text-align: center; 
 	padding-top: 25px;
+	text-align: center; 
 }
-
 .sticky {
 	background: red;
 }
-
 table {
 	padding:5px;
 	width:100%;
@@ -304,51 +289,44 @@ table {
 td {
 	padding:10px;
 }
-
-.post_content ul li {
+.post-content ul li {
 	list-style-type: disc;
 	margin-left: 20px;	
 	padding: 2px;
 }
-	
-.post_content ol li {
+.post-content ol li {
 	list-style-type: decimal;
 	margin-left: 30px;	
 	padding: 2px;
 }
-	
-.post_content ul ul {
+.post-content ul ul {
 	border: none; 
 	margin-left: 1.3em; 
 	padding: 0; 
 }
-.post_content ol ol {
+.post-content ol ol {
 	border: none; 
 	margin-left: 1.3em; 
 	padding: 0;
 }
-
-.ads_728-15-top {
+.ads-728-15-top {
 	display: block;
 	float: left;
 	margin: 0 auto;
-	width: 1000px;
-	height: 25px;
 	padding-top:7px;
 	text-align: center;
+	width: 1000px;
+	height: 25px;
 }
-
-.ads_728-15-footer {
+.ads-728-15-footer {
 	display: block;
 	float: left;
 	margin: 0 auto;
-	width: 1000px;
-	text-align: center;
-	height: 25px;
 	padding-bottom:7px;
 	text-align: center;
+	width: 1000px;
+	height: 25px;
 }
-
 #comments {
 	clear: both;
 }
@@ -359,7 +337,6 @@ h3#comments-title,
 h3#reply-title {
 	color: #000;
 	font-size: 20px;
-	font-weight: none;
 	margin-bottom: 0;
 }
 h3#comments-title {
@@ -384,19 +361,16 @@ h3#comments-title {
 #comments .comment-body ol {
 	margin-bottom: 18px;
 }
-
 #comments .comment-body ul li {
 	list-style-type: disc;
 	margin-left: 20px;	
 	padding: 2px;
 }
-	
 #comments .comment-body ol li {
 	list-style-type: decimal;
 	margin-left: 30px;	
 	padding: 2px;
 }
-	
 #comments .comment-body ul ul {
 	border: none; 
 	margin-left: 1.3em; 
@@ -407,7 +381,6 @@ h3#comments-title {
 	margin-left: 1.3em; 
 	padding: 0; 
 }
-	
 #comments .comment-body p:last-child {
 	margin-bottom: 6px;
 }
@@ -418,9 +391,9 @@ h3#comments-title {
 	list-style: decimal;
 }
 .commentlist .avatar {
+	left: 0;
 	position: absolute;
 	top: 4px;
-	left: 0;
 }
 .comment-author {
 }
@@ -559,7 +532,6 @@ h3#reply-title {
 	font-size: 14px;
 	width: auto;
 }
-
 img.size-auto,
 img.size-full,
 img.size-large,
@@ -652,7 +624,7 @@ img.aligncenter {
 .gallery br+br {
 	display: none;
 }
-.post_content .attachment img {
+.post-content .attachment img {
 	display: block;
 	margin: 0 auto;
 }
@@ -691,10 +663,10 @@ div.menu li {
 	-moz-box-shadow: 0px 3px 3px gray;
 	-webkit-box-shadow: 0px 3px 3px gray;
 	display: none;
+	float: left;
+	left: 0;
 	position: absolute;
 	top: 38px;
-	left: 0;
-	float: left;
 	width: 180px;
 	z-index: 99999;
 }
@@ -733,14 +705,12 @@ div.menu li {
 * html #access ul li a:hover {
 	color: gray;
 }
-
 #wp-calendar {
 	width: 100%;
 }
 #wp-calendar caption {
 	color: #222;
 	font-size: 14px;
-	font-weight: none;
 	padding-bottom: 4px;
 	text-align: center;
 }
@@ -764,11 +734,9 @@ div.menu li {
 #wp-calendar tfoot #next {
 	text-align: right;
 }
-
 .widget_rss a.rsswidget {
 	color: #000;
 }
-
 .widget_rss .widget-title img {
 	width: 11px;
 	height: 11px;
@@ -777,18 +745,17 @@ div.menu li {
 	float:left;
 	padding-top:10px;
 }
-
 .center {
-	display: table-cell; vertical-align: middle;
+	display: table-cell; 
 	padding:12px;
+	vertical-align: middle;
 }
-.post_nav_l {
+.post-nav-l {
 	float:left;
 }
-.post_nav_r {
+.post-nav-r {
 	float:right;
 }
-
 .big-pic {
 	margin: 10px;
 	text-align:center;

@@ -22,7 +22,7 @@
 
 			<ol class="commentlist">
 				<?php
-					wp_list_comments( array( 'callback' => 'adsticle_comment' ) );
+					wp_list_comments( array( 'callback' => 'adt_comment' ) );
 				?>
 			</ol>
 
