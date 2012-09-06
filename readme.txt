@@ -108,3 +108,7 @@ Version 1.2.1
 * Fixed the Featured Image size to match with iPad display
 * Fixed css for responsive design
 * Fixed tag.php closing primary div
+
+Version 1.2.2
+* Fixed Responsive Design CSS and Image Size
+* Note if you are upgrading the theme then please use the regenerate thumbnail plugin (http://wordpress.org/extend/plugins/regenerate-thumbnails/) to regenerate the new image size for featured image. It's size is 644px width and 320px height.

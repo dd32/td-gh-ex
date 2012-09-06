@@ -69,7 +69,7 @@ footer, header, hgroup, menu, nav, section {
 ----------------------------------------------- */
 
 body {
-	padding-top: 2em;
+	padding: 2em 2em 0;
 }
 #page {
 	margin: 0 auto 2em;
@@ -1121,26 +1121,20 @@ object {
 /* Featured Slider */
 #slider {
     background-color: #555;
+	
     border-bottom: 2px solid #ccc;
+	
     border-radius: 5px;
 	-moz-border-radius: 5px;
     margin: 0 0 2em;
     position: relative;
 }
-#slider-wrap a {
-	display: block;
-	padding: 11px 11px 10px;
-	
-}
-#slider-wrap a.more-link {
-	display: inline;
-	padding: 0;
+#slider-wrap {
+	padding: 2%;
 }
 #slider-wrap img {
     border: medium none;
-	display: block;
     height: auto;
-    /*padding: 0.7em 2% 0.3em;*/
 	padding: 0;
     max-width: 100%;
 }
@@ -1151,16 +1145,16 @@ object {
 
 #slider-wrap .featured-text {
     color: #FFFFFF;
-    padding: 0 11px 10px;
 }
-#content nav#nav-slider {
-	padding: 0;
-}
+
 #nav-slider img {
 	 max-width:33px;
 	 height:auto;
 	 width:100%;
- }
+}
+#content nav#nav-slider {
+	padding: 0;
+}
 #nav-slider .nav-previous, 
 #nav-slider .nav-next {
     cursor: pointer;
@@ -1168,7 +1162,7 @@ object {
     max-width: 33px;
     opacity: 0.7;
     position: absolute;
-    top: 106px;
+    top: 30%;
     width: 6%;
     z-index: 999;
 }
@@ -1177,12 +1171,11 @@ object {
 	opacity: 10;
 }
 #nav-slider .nav-previous {
-    left: 11px;
+    left: 2%;
 }
 #nav-slider .nav-next {
-    right: 11px;
+    right: 2%;
 }
-
 /*
 Post Formats Headings
 To hide the headings, display: none the ".entry-header .entry-format" selector,
@@ -2566,30 +2559,11 @@ img#wpstats {
 
 /* =Responsive Structure
 ----------------------------------------------- */
-/* Smaller than standard 1060 (devices and browsers) */
-@media screen and (max-width: 1060px) {
-  #page {
-    max-width: 900px;
-  }
-  #nav-slider .nav-previous, 
-  #nav-slider .nav-next {
-    top: 94px;
-  }
-}
-
-@media screen and (max-width: 960px) {
-	/*  ipad */
-	#page {
-		max-width: 708px;
-	}
+@media screen and (max-width: 800px) {
 	/* Simplify the basic layout */
 	#main #content {
 		margin: 0 3%;
 		width: auto;
-	}
-	#nav-slider .nav-previous,
-	#nav-slider .nav-next {
-		top: 137px;
 	}
 	#nav-below {
 		border-bottom: 1px solid #ccc;
@@ -2653,18 +2627,24 @@ img#wpstats {
 		width: auto;
 	}	
 }
-	
-@media screen and (max-width: 767px) {
-	/*  small tablet */
-	#page {
-		max-width: 480px;
+/*
+@media (max-device-width: 800px) {	
+	#slider-wrap img {
+		padding: 0.7em 2.2% 0.3em 2%;
+		max-width: 96.2%;
 	}
+}*/
+
+@media screen and (max-width: 650px) {
 	/* @media (max-width: 650px) Reduce font-sizes for better readability on smaller devices */
 	body {
    		padding: 0;
 	}
 	body, input, textarea {
 		font-size: 13px;
+	}
+	#page {
+		margin: 0;
 	}
 	#branding,
 	#site-generator {
@@ -2696,10 +2676,6 @@ img#wpstats {
 	}
 	#access ul {
 		font-size: 12px;
-	}
-	#nav-slider .nav-previous,
-	#nav-slider .nav-next {
-		top: 82px;
 	}
 	#slider, 
 	.hentry, 
@@ -2873,11 +2849,7 @@ img#wpstats {
 		background-image: url("images/select-arrow.png");
 	}
 }
-@media screen and (max-width: 479px) {
-	/*  iphone */
-	#page {
-		max-width: 320px;
-	}
+@media screen and (max-width: 480px) {
 	#site-title {
 		font-size: 26px;
 		line-height: 36px;
@@ -2895,7 +2867,7 @@ img#wpstats {
 	}
 	#nav-slider .nav-previous,
 	#nav-slider .nav-next {
-		top: 57px;
+		top: 25%;
 	}
 	.widget_search #s {
 		width: 85%;
@@ -2907,11 +2879,7 @@ img#wpstats {
 		font-size: 9px;
 	}
 }
-@media screen and (max-width: 319px) {
-	/* small phone */
-	#page {
-		max-width: 100%;
-	}
+@media screen and (max-width: 320px) {
 	#page {
 		margin-top: 0;
 	}
@@ -2929,7 +2897,7 @@ img#wpstats {
 	}
 	#nav-slider .nav-previous,
 	#nav-slider .nav-next {
-		top: 45px;
+		top: 18%;
 	}	
 }
 
