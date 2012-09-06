@@ -642,6 +642,35 @@ function simplecatch_inline_css() {
 		global $simplecatch_options_settings;
         $options = $simplecatch_options_settings;
 
+		if( !isset( $options[ 'reset_color' ] ) ) {
+			$options[ 'reset_color' ] = "2";
+		}
+
+		if( $options[ 'reset_color' ] == "0" ) {
+			$simplecatch_inline_css	= '<!-- '.get_bloginfo('name').' Custom CSS Styles -->' . "\n";
+	        $simplecatch_inline_css .= '<style type="text/css" media="screen">' . "\n";
+			$simplecatch_inline_css .= "#main {
+										   color: ".  $options[ 'text_color' ] .";
+										}
+										#main a {
+										    color: ". $options[ 'link_color' ] .";
+										}
+										#main h1 a, #main h2 a, #main h3 a, #main h4 a, #main h5 a, #main h6 a {
+										   color: ".  $options[ 'heading_color' ] .";
+										}
+										#main #content ul.post-by li, #main #content ul.post-by li a {
+											color: ".  $options[ 'meta_color' ] .";	
+										}
+										#sidebar h3, #sidebar h4, #sidebar h5 {
+											color: ".  $options[ 'widget_heading_color' ] .";
+										}
+										#sidebar, #sidebar p, #sidebar a, #sidebar ul li a, #sidebar ol li a {
+											color: ".  $options[ 'widget_text_color' ] .";
+										}". "\n";
+			$simplecatch_inline_css .= '</style>' . "\n";
+		}
+		
+
 		echo '<!-- refreshing cache -->' . "\n";
 		if( !empty( $options[ 'custom_css' ] ) ) {
 			$simplecatch_inline_css	= '<!-- '.get_bloginfo('name').' Custom CSS Styles -->' . "\n";
@@ -863,6 +892,7 @@ function simplecatch_display_div() {
 	}
 	return $themeoption_layout;
 }
+
 /**
  * function that displays frquently asked question in theme option
  */

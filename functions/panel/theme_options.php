@@ -19,12 +19,9 @@ add_action( 'admin_menu', 'simplecatch_options_menu' );
  */
 function simplecatch_admin_scripts() {
 	//jquery-cookie registered in functions.php
-    wp_enqueue_script('simplecatch_togglejs', get_template_directory_uri().'/js/admin_js.js' );
-	wp_enqueue_script( 'simplecatch_admin', get_template_directory_uri().'/functions/panel/admin.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable' ), '1.0', false );
+	wp_enqueue_script( 'simplecatch_admin', get_template_directory_uri().'/functions/panel/admin.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable', 'farbtastic' ), '1.0', false );
 	wp_enqueue_script( 'simplecatch_upload', get_template_directory_uri().'/functions/panel/add_image_scripts.js', array( 'jquery','media-upload','thickbox' ) );
-    wp_enqueue_style( 'simplecatch_admin',get_template_directory_uri().'/functions/panel/admin.css', array(), '1.0', 'screen' );
-    //Enqueue thickbox.css
-    wp_enqueue_style( 'thickbox' );
+    wp_enqueue_style( 'simplecatch_admin',get_template_directory_uri().'/functions/panel/admin.css', array( 'farbtastic', 'thickbox' ), '1.0', 'screen' );
 }
 
 add_action('admin_print_styles-appearance_page_theme_options', 'simplecatch_admin_scripts');
@@ -241,6 +238,109 @@ function simplecatch_theme_options_do_page() {
                             <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
                         </div><!-- .option-content -->
                     </div><!-- .option-container --> 
+                    
+                    
+                    <div class="option-container">
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Content Background', 'simplecatch' ); ?></a></h3>
+                        <div class="option-content inside">
+                        	<p><?php printf(__('Need to replace default background?','simplecatch')); ?> <?php printf(__('<a class="button" href="%s">Click here</a>', 'simplecatch'), admin_url('themes.php?page=custom-background')); ?></p>
+                     			
+                    	</div><!-- .option-content -->
+                 	</div><!-- .option-container --> 
+            
+            
+            		<div class="option-container">
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Content Color Options', 'simplecatch' ); ?></a></h3>
+                        <div class="option-content inside">
+                        	<table class="form-table">  
+                                <tbody>
+                                	<tr>
+                                        <th>
+                                            <label for="simplecatch_heading_color">
+                                                <?php _e( 'Heading Color:', 'simplecatch' ); ?>
+                                            </label>
+                                        </th>
+                                        <td>
+                                            <input type="text" id="simplecatch_heading_color" name="simplecatch_options[heading_color]" size="8" value="<?php echo ( isset( $options[ 'heading_color' ] ) ) ? esc_attr( $options[ 'heading_color' ] ) : '#444444'; ?>"  />
+                                            <div id="colorpicker_heading_color" style="z-index: 100; background:#eee; border:1px solid #ccc; position:absolute; display:none;"></div>
+                                        </td>
+                                    </tr> 
+                                    <tr>
+                                        <th>
+                                            <label for="simplecatch_meta_color">
+                                                <?php _e( 'Meta Description Color:', 'simplecatch' ); ?>
+                                            </label>
+                                        </th>
+                                        <td>
+                                            <input type="text" id="simplecatch_meta_color" name="simplecatch_options[meta_color]" size="8" value="<?php echo ( isset( $options[ 'meta_color' ] ) ) ? esc_attr( $options[ 'meta_color' ] ) : '#999999'; ?>"  />
+                                            <div id="colorpicker_meta_color" style="z-index: 100; background:#eee; border:1px solid #ccc; position:absolute; display:none;"></div>
+                                        </td>
+                                    </tr> 
+                                    <tr>
+                                        <th>
+                                            <label for="simplecatch_text_color">
+                                                <?php _e( 'Text Color:', 'simplecatch' ); ?>
+                                            </label>
+                                        </th>
+                                        <td>
+                                            <input type="text" id="simplecatch_text_color" name="simplecatch_options[text_color]" size="8" value="<?php echo ( isset( $options[ 'text_color' ] ) ) ? esc_attr( $options[ 'text_color' ] ) : '#555555'; ?>"  />
+                                            <div id="colorpicker_text_color" style="z-index: 100; background:#eee; border:1px solid #ccc; position:absolute; display:none;"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <label for="simplecatch_link_color">
+                                                <?php _e( 'Link Color:', 'simplecatch' ); ?>
+                                            </label>
+                                        </th>
+                                        <td>
+                                            <input type="text" id="simplecatch_link_color" name="simplecatch_options[link_color]" size="8" value="<?php echo ( isset( $options[ 'link_color' ] ) ) ? esc_attr( $options[ 'link_color' ] ) : '#000000'; ?>"  />
+                                            <div id="colorpicker_link_color" style="z-index: 100; background:#eee; border:1px solid #ccc; position:absolute; display:none;"></div>
+                                        </td>
+                                    </tr>
+                                    
+                                    
+                                    
+        							<tr>
+                                        <th>
+                                            <label for="simplecatch_widget_heading_color">
+                                                <?php _e( 'Sidebar Widget Heading Color:', 'simplecatch' ); ?>
+                                            </label>
+                                        </th>
+                                        <td>
+                                            <input type="text" id="simplecatch_widget_heading_color" name="simplecatch_options[widget_heading_color]" size="8" value="<?php echo ( isset( $options[ 'widget_heading_color' ] ) ) ? esc_attr( $options[ 'widget_heading_color' ] ) : '#666666'; ?>"  />
+                                            <div id="colorpicker_widget_heading_color" style="z-index: 100; background:#eee; border:1px solid #ccc; position:absolute; display:none;"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <label for="simplecatch_widget_text_color">
+                                                <?php _e( 'Sidebar Widget Text Color:', 'simplecatch' ); ?>
+                                            </label>
+                                        </th>
+                                        <td>
+                                            <input type="text" id="simplecatch_widget_text_color" name="simplecatch_options[widget_text_color]" size="8" value="<?php echo ( isset( $options[ 'widget_text_color' ] ) ) ? esc_attr( $options[ 'widget_text_color' ] ) : '#666666'; ?>"  />
+                                            <div id="colorpicker_widget_text_color" style="z-index: 100; background:#eee; border:1px solid #ccc; position:absolute; display:none;"></div>
+                                        </td>
+                                    </tr>
+        
+        
+        
+                                    <?php if( $options[ 'reset_color' ] == "1" ) { $options[ 'reset_color' ] = "0"; } ?>
+                                    <tr>                            
+                                        <th scope="row"><?php _e( 'Reset Color:', 'simplecatch' ); ?></th>
+                                        <input type='hidden' value='0' name='simplecatch_options[reset_color]'>
+                                        <td>
+                                        	<input type="checkbox" id="headerlogo" name="simplecatch_options[reset_color]" value="1" <?php checked( '1', $options['reset_color'] ); ?> />
+                                       	</td>
+                                    </tr>
+                                </tbody>
+                            </table>      
+                      
+                     		<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p>	
+                    	</div><!-- .option-content -->
+                 	</div><!-- .option-container --> 
+            
 
                     <div class="option-container">
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Custom CSS', 'simplecatch' ); ?></a></h3>
@@ -726,6 +826,40 @@ function simplecatch_theme_options_validate( $options ){
 		// Our checkbox value is either 0 or 1 
 		$input_validated[ 'remove_favicon' ] = $input[ 'remove_favicon' ];
 	}
+	
+	//Color Options
+	if( isset( $input[ 'heading_color' ] ) ) {
+		$input_validated[ 'heading_color' ] = wp_filter_nohtml_kses( $input[ 'heading_color' ] );
+	}
+	if( isset( $input[ 'meta_color' ] ) ) {
+		$input_validated[ 'meta_color' ] = wp_filter_nohtml_kses( $input[ 'meta_color' ] );
+	}
+	if( isset( $input[ 'text_color' ] ) ) {
+		$input_validated[ 'text_color' ] = wp_filter_nohtml_kses( $input[ 'text_color' ] );
+	}
+	if( isset( $input[ 'link_color' ] ) ) {
+		$input_validated[ 'link_color' ] = wp_filter_nohtml_kses( $input[ 'link_color' ] );
+	}
+	
+	if( isset( $input[ 'widget_heading_color' ] ) ) {
+		$input_validated[ 'widget_heading_color' ] = wp_filter_nohtml_kses( $input[ 'widget_heading_color' ] );
+	}
+	if( isset( $input[ 'widget_text_color' ] ) ) {
+		$input_validated[ 'widget_text_color' ] = wp_filter_nohtml_kses( $input[ 'widget_text_color' ] );
+	}		
+	//Reset Color Options
+	if( $input[ 'reset_color' ] == 1 ) {
+		global $simplecatch_options_defaults;
+		$defaults = $simplecatch_options_defaults;
+
+		$input_validated[ 'heading_color' ] = $defaults[ 'heading_color' ];
+		$input_validated[ 'meta_color' ] = $defaults[ 'meta_color' ];
+		$input_validated[ 'text_color' ] = $defaults[ 'text_color' ];
+		$input_validated[ 'link_color' ] = $defaults[ 'link_color' ];
+		$input_validated[ 'widget_heading_color' ] = $defaults[ 'widget_heading_color' ]; 
+		$input_validated[ 'widget_text_color' ] = $defaults[ 'widget_text_color' ]; 
+	}
+
 
     if ( isset( $input['exclude_slider_post'] ) ) {
         // Our checkbox value is either 0 or 1 

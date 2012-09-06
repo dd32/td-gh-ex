@@ -91,6 +91,15 @@ function simplecatch_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menu( 'primary', __( 'Primary Menu', 'simplecatch' ) );
 	
+	// Add support for custom backgrounds	
+	// WordPress 3.4+
+	if ( function_exists( 'get_custom_header') ) {
+		add_theme_support( 'custom-background' );
+	} else {
+		// Backward Compatibility for WordPress Version 3.3
+		add_custom_background();
+	}	
+	
 } // simplecatch_setup
 endif;
 

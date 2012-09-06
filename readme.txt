@@ -140,3 +140,7 @@ Version 1.3.5.4
 * Added pagination in page
 * Added Support for Captcha Plugin
 * Replaced get_stylesheet_directory_uri to get_template_directory_uri
+
+Version 1.3.6
+* Added Content Color Option
+* Added Custom Background
