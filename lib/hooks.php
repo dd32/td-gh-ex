@@ -1,4 +1,6 @@
 <?php
+
+
 /**
  * Filter and actions for Raindrops theme
  *
@@ -261,5 +263,6 @@ add_action('customize_controls_print_styles','raindrops_customize_controls_print
  * @since 0.964 ?
  */
     add_filter('widget_text', 'do_shortcode');
+
 }
 ?>
