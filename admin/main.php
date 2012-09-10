@@ -129,7 +129,9 @@ function mantra_init_fn(){
 	add_settings_field('mantra_backcolor', __('Background Color','mantra') , 'cryout_setting_backcolor_fn', __FILE__, 'appereance_section');
 	add_settings_field('mantra_headercolor', __('Header (Banner and Menu) Background Color','mantra') , 'cryout_setting_headercolor_fn', __FILE__, 'appereance_section');
 	add_settings_field('mantra_contentbg', __('Content Background Color','mantra') , 'cryout_setting_contentbg_fn', __FILE__, 'appereance_section');
-	add_settings_field('mantra_menubg', __('Menu background color','mantra') , 'cryout_setting_menubg_fn', __FILE__, 'appereance_section');
+	add_settings_field('mantra_menubg', __('Menu Background Color','mantra') , 'cryout_setting_menubg_fn', __FILE__, 'appereance_section');
+	add_settings_field('mantra_s1bg', __('First Sidebar Background Color','mantra') , 'cryout_setting_first_sidebar_fn', __FILE__, 'appereance_section');
+	add_settings_field('mantra_s2bg', __('Second Sidebar Background Color','mantra') , 'cryout_setting_second_sidebar_fn', __FILE__, 'appereance_section');
 	
 	add_settings_field('mantra_titlecolor', __('Site Title Color','mantra') , 'cryout_setting_titlecolor_fn', __FILE__, 'appereance_section');
 	add_settings_field('mantra_descriptioncolor', __('Site Description Color','mantra') , 'cryout_setting_descriptioncolor_fn', __FILE__, 'appereance_section');
@@ -341,6 +343,8 @@ startfarb("#mantra_backcolor","#mantra_backcolor2");
 startfarb("#mantra_headercolor","#mantra_headercolor2");
 startfarb("#mantra_contentbg","#mantra_contentbg2");
 startfarb("#mantra_menubg","#mantra_menubg2");
+startfarb("#mantra_s1bg","#mantra_s1bg2");
+startfarb("#mantra_s2bg","#mantra_s2bg2");
 startfarb("#mantra_prefootercolor","#mantra_prefootercolor2");
 startfarb("#mantra_footercolor","#mantra_footercolor2");
 startfarb("#mantra_titlecolor","#mantra_titlecolor2");

@@ -1063,7 +1063,7 @@ function  cryout_setting_contentbg_fn() {
 	global $mantra_options;
 	echo '<input type="text" id="mantra_contentbg" name="ma_options[mantra_contentbg]" value="'.esc_attr( $mantra_options['mantra_contentbg'] ).'"  />';
 	echo '<div id="mantra_contentbg2"></div>';
-	echo "<div><small>".__("Content background color (Default value is FAFAFA). Works best with really light colors.","mantra")."</small></div>";
+	echo "<div><small>".__("Content background color (Default value is FFFFFF). Works best with really light colors.","mantra")."</small></div>";
 }
 
 function  cryout_setting_menubg_fn() {
@@ -1071,6 +1071,20 @@ function  cryout_setting_menubg_fn() {
 	echo '<input type="text" id="mantra_menubg" name="ma_options[mantra_menubg]" value="'.esc_attr( $mantra_options['mantra_menubg'] ).'"  />';
 	echo '<div id="mantra_menubg2"></div>';
 	echo "<div><small>".__("Main menu background color (Default value is FAFAFA). Should be the same color as the content bg or something just as light.","mantra")."</small></div>";
+}
+
+function  cryout_setting_first_sidebar_fn() {
+	global $mantra_options;
+	echo '<input type="text" id="mantra_s1bg" name="ma_options[mantra_s1bg]" value="'.esc_attr( $mantra_options['mantra_s1bg'] ).'"  />';
+	echo '<div id="mantra_s1bg2"></div>';
+	echo "<div><small>".__("First sidebar background color (Default value is FFFFFF).","mantra")."</small></div>";
+}
+
+function  cryout_setting_second_sidebar_fn() {
+	global $mantra_options;
+	echo '<input type="text" id="mantra_s2bg" name="ma_options[mantra_s2bg]" value="'.esc_attr( $mantra_options['mantra_s2bg'] ).'"  />';
+	echo '<div id="mantra_s2bg2"></div>';
+	echo "<div><small>".__("First sidebar background color (Default value is FFFFFF).","mantra")."</small></div>";
 }
 
 //TEXT - Name: ma_options[prefootercolor]

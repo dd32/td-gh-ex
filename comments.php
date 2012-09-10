@@ -5,7 +5,7 @@
  * The area of the page that contains both current comments
  * and the comment form.  The actual display of comments is
  * handled by a callback to mantra_comment which is
- * located in the functions.php file.
+ * located in the includes/theme-comments.php file.
  *
  * @package Cryout Creations
  * @subpackage mantra
@@ -30,49 +30,23 @@
 	// You can start editing here -- including this comment!
 ?>
 
-<?php if ( have_comments() ) : ?>
-			<h3 id="comments-title"><?php
-			printf( _n( 'One Response to %2$s', '%1$s Responses to %2$s', get_comments_number(), 'mantra' ),
-			number_format_i18n( get_comments_number() ), '<em>' . get_the_title() . '</em>' );
-			?></h3>
+<?php if ( have_comments() ) : 
+			
+	cryout_before_comments_hook(); ?>
 
-<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-			<div class="navigation">
-				<div class="nav-previous"><?php previous_comments_link( '<span class="meta-nav">&larr;</span>'.__('Older Comments', 'mantra' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments', 'mantra' ).' <span class="meta-nav">&rarr;</span>' ); ?></div>
-			</div> <!-- .navigation -->
-<?php endif; // check for comment navigation ?>
+	<ol class="commentlist">
+			
+		<?php cryout_comments_hook(); ?>
+	
+	</ol>
 
-			<ol class="commentlist">
-				<?php
-					/* Loop through and list the comments. Tell wp_list_comments()
-					 * to use mantra_comment() to format the comments.
-					 * If you want to overload this in a child theme then you can
-					 * define mantra_comment() and that will be used instead.
-					 * See mantra_comment() in mantra/functions.php for more.
-					 */
-					wp_list_comments( array( 'callback' => 'mantra_comment' ) );
-				?>
-			</ol>
+	<?php cryout_after_comments_hook(); 
 
-<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-			<div class="navigation">
-				<div class="nav-previous"><?php previous_comments_link( '<span class="meta-nav">&larr;</span>'.__('Older Comments', 'mantra' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments', 'mantra' ).' <span class="meta-nav">&rarr;</span>' ); ?></div>
-			</div><!-- .navigation -->
-<?php endif; // check for comment navigation ?>
+?><?php else : // or, if we don't have comments:
 
-<?php else : // or, if we don't have comments:
+		cryout_nocomments_hook();
 
-	/* If there are no comments and comments are closed,
-	 * let's leave a little note, shall we?
-	 */
-	if ( ! comments_open() ) :
-?>
-	<p class="nocomments"><?php _e( 'Comments are closed.', 'mantra' ); ?></p>
-<?php endif; // end ! comments_open() ?>
-
-<?php endif; // end have_comments() ?>
+ endif; // end have_comments() ?>
 
 <?php comment_form(); ?>
 

@@ -20,3 +20,4 @@ Mantra is available in these languages:
 English - default
 French - by lcapronnier@yahoo.com & erpiu@alinto.com 
 Italian - by antonio.mercurio@gmail.com 
+Persian - by sajjad.designing@gmail.com 

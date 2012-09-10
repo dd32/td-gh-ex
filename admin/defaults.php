@@ -36,7 +36,7 @@ $mantra_defaults = array(
 "mantra_slidertext1" => "And this is the text that could accompany it. It is all optional so if you delete it in the Mantra Settings there will be no more caption with the black background.",
 "mantra_sliderlink1" => "",
 "mantra_sliderimg2" => get_template_directory_uri()."/images/slider/mantra-slide2.jpg",
-"mantra_slidertitle2" => "This is yet another title",
+"mantra_slidertitle2" => "This is yet another caption title",
 "mantra_slidertext2" => "And some more text to give you as an example. You can use <a href='http://www.riotreaction.com' >links</a> and other type of <b>HTML</b> <i>formats</i>.",
 "mantra_sliderlink2" => "",
 "mantra_sliderimg3" => "",
@@ -73,8 +73,8 @@ $mantra_defaults = array(
 "mantra_columntext4" => "",
 "mantra_columnlink4" => "",
 
-"mantra_fronttext1" => "This could be a tile",
-"mantra_fronttext2" => "And this another one",
+"mantra_fronttext1" => "This could be a title",
+"mantra_fronttext2" => "And this is a second title",
 "mantra_fronttitlecolor" => "#333333",
 "mantra_fronttext3" => "And here you could have a whole lot of text. Or not. It's all up to you. Deleting all text inside the appropriate input in the Mantra Settings will remove this whole text zone. It can also contain all HTML tags.<br /> Just try everything out and see what suits you. Have fun and good luck! ",
 "mantra_fronttext4" => "",
@@ -110,6 +110,8 @@ $mantra_defaults = array(
 
 "mantra_contentbg" => "#FFFFFF",
 "mantra_menubg" => "#FAFAFA",
+"mantra_s1bg" => "#FFFFFF",
+"mantra_s2bg" => "#FFFFFF",
 "mantra_backcolor" => "#444444",
 "mantra_headercolor" => "#333333",
 "mantra_prefootercolor" => "#222222",

@@ -41,7 +41,7 @@ document.createElement('hgroup');
 					});
 	});
     // Add responsive videos
-  jQuery("#container").fitVids(); 
+  jQuery("#content").fitVids(); 
   <?php } ?>
 
     }); // document ready
@@ -104,7 +104,7 @@ add_action ('cryout_branding_hook','mantra_title_and_description');
 if($mantra_socialsdisplay0) add_action('cryout_branding_hook', 'mantra_header_socials');
 if($mantra_socialsdisplay1) add_action('cryout_forbottom_hook', 'mantra_smenul_socials');
 if($mantra_socialsdisplay2) add_action('cryout_forbottom_hook', 'mantra_smenur_socials');
-if($mantra_socialsdisplay2) add_action('cryout_footer_hook', 'mantra_footer_socials',13);
+if($mantra_socialsdisplay3) add_action('cryout_footer_hook', 'mantra_footer_socials',13);
 
 /**
  * Social icons function
@@ -138,7 +138,12 @@ else { $cryout_theme_info = wp_get_theme( );}
  * Replaces header image with featured image if there is one for single pages
  * Used in header.php
 */
-function mantra_header_featured_image() {			
+function mantra_header_featured_image() {
+global $post;	
+global $mantra_options;
+foreach ($mantra_options as $key => $value) {
+${"$key"} = $value ;
+}		
 // Check if this is a post or page, if it has a thumbnail, and if it's a big one
 if ( is_singular() && has_post_thumbnail( $post->ID ) && $mantra_fheader == "Enable" &&
 	(  $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&
@@ -240,7 +245,7 @@ function mantra_pagination($pages = '', $range = 2, $prefix ='')
 
      if(1 != $pages)
      {
-		echo "<nav class='pagination'>";
+		echo "<div class='pagination_container'><nav class='pagination'>";
          if ($prefix) {echo "<span id='paginationPrefix'>$prefix </span>";}
          if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo "<a href='".get_pagenum_link(1)."'>&laquo;</a>";
          if($paged > 1 && $showitems < $pages) echo "<a href='".get_pagenum_link($paged - 1)."'>&lsaquo;</a>";
@@ -255,7 +260,7 @@ function mantra_pagination($pages = '', $range = 2, $prefix ='')
 
          if ($paged < $pages && $showitems < $pages) echo "<a href='".get_pagenum_link($paged + 1)."'>&rsaquo;</a>";  
          if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo "<a href='".get_pagenum_link($pages)."'>&raquo;</a>";
-         echo "</nav>\n";
+         echo "</nav></div>\n";
      }
 }
 
@@ -349,6 +354,4 @@ wp_reset_query();
 
 return $testVar;
 }
-
-
 ?>

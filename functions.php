@@ -15,6 +15,7 @@ require_once(dirname(__FILE__) . "/includes/theme-styles.php"); //Register and e
 require_once(dirname(__FILE__) . "/includes/theme-loop.php"); //Loop related fiels
 require_once(dirname(__FILE__) . "/includes/theme-seo.php"); //SEO related fiels
 require_once(dirname(__FILE__) . "/includes/theme-frontpage.php"); //Frontpage generation
+require_once(dirname(__FILE__) . "/includes/theme-comments.php"); //Theme comment functions
 require_once(dirname(__FILE__) . "/includes/theme-shortcodes.php"); //Theme shortcodes
 require_once(dirname(__FILE__) . "/includes/theme-functions.php"); //Theme misc functions
 require_once(dirname(__FILE__) . "/includes/theme-hooks.php"); //Theme hooks

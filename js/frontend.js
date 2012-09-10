@@ -56,7 +56,19 @@ function(){
 
 					});
 							
-					
+// Columns equalizer
+function equalizeHeights(){
+    var h1 = jQuery("#primary").height();
+    var h2 = jQuery("#content").height();
+	var h3 = jQuery("#secondary").height();
+    var max = Math.max(h1,h2,h3);
+    jQuery("#primary").height(max); 
+	jQuery("#secondary").height(max); 
+    jQuery("#content").height(max);
+}
+equalizeHeights();
+
+							
 
 /*! http://tinynav.viljamis.com v1.03 by @viljamis */
 (function ($, window, i) {

@@ -10,24 +10,20 @@
 $options= mantra_get_theme_options();
 foreach ($options as $key => $value) {
      ${"$key"} = $value ;
-} ?>
+} 
+
+?><?php cryout_before_article_hook(); ?>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<header class="entry-header">
-			<?php if ( is_sticky() ) : ?>
+		<header class="entry-header">	
 				<hgroup>
 					<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'mantra' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-				
 				</hgroup>
-			<?php else : ?>
-			<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'mantra' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
-			<?php endif; ?>
 
 			<?php if ( 'post' == get_post_type() ) : ?>
 			<div class="entry-meta">
-	<?php if ( is_sticky() ) {  } ?>
 				<?php mantra_posted_on(); ?>
-	<?php /* if ( comments_open() && ! post_password_required() ) :*/ ?>
+				<?php /* if ( comments_open() && ! post_password_required() ) :*/ ?>
 			<div class="comments-link">
 				<?php mantra_comments_on(); ?>
 			</div>
@@ -48,7 +44,7 @@ foreach ($options as $key => $value) {
 						<?php } else { ?>
 						<div class="entry-content">
 						<?php mantra_set_featured_thumb(); ?>
-						<?php	the_content(); ?>
+						<?php the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'mantra' ) . '</span>', 'after' => '</div>' ) ); ?>
 						</div><!-- .entry-content --> 
 						<?php }   ?>
@@ -65,7 +61,7 @@ foreach ($options as $key => $value) {
 						<?php } else { ?>
 						<div class="entry-content">
 						<?php mantra_set_featured_thumb(); ?>
-						<?php	the_content(); ?>
+						<?php the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'mantra' ) . '</span>', 'after' => '</div>' ) ); ?>
 						</div><!-- .entry-content --> 
 						<?php }  ?>
@@ -81,3 +77,5 @@ if ( $tag_list ) { ?>
 		</footer><!-- #entry-meta -->
 
 	</article><!-- #post-<?php the_ID(); ?> -->
+	
+<?php cryout_after_article_hook(); ?>

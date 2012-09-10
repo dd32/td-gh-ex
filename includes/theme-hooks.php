@@ -58,4 +58,68 @@ function cryout_footer_hook() {
     do_action('cryout_footer_hook');
 }
 
+
+/**
+ * COMMENTS.PHP HOOKS
+*/
+
+// Before comments hook
+function cryout_before_comments_hook() {
+    do_action('cryout_before_comments_hook');
+}
+
+// Actual comments hook
+function cryout_comments_hook() {
+    do_action('cryout_comments_hook');
+}
+
+// After comments hook
+function cryout_after_comments_hook() {
+    do_action('cryout_after_comments_hook');
+}
+
+// No comments hook
+function cryout_nocomments_hook() {
+    do_action('cryout_nocomments_hook');
+}
+
+
+/**
+ * SIDEBAR.PHP HOOKS
+*/
+
+// No comments hook
+function cryout_before_primary_widgets_hook() {
+    do_action('cryout_before_primary_widgets_hook');
+}
+
+// No comments hook
+function cryout_after_primary_widgets_hook() {
+    do_action('cryout_after_primary_widgets_hook');
+}
+
+// No comments hook
+function cryout_before_secondary_widgets_hook() {
+    do_action('cryout_before_secondary_widgets_hook');
+}
+
+// No comments hook
+function cryout_after_secondary_widgets_hook() {
+    do_action('cryout_after_secondary_widgets_hook');
+}
+
+/**
+ * LOOP.PHP HOOKS
+*/
+
+// Before each article hook
+function cryout_before_article_hook() {
+    do_action('cryout_before_article_hook');
+}
+
+// After each article hook
+function cryout_after_article_hook() {
+    do_action('cryout_after_article_hook');
+}
+
 ?>

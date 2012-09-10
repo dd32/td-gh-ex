@@ -37,7 +37,7 @@ if ($mantra_dimselect=="Absolute") { ?>
 #primary,#secondary {width:<?php echo ($sidebarSize  ) ?>px;}<?php }
 
 ?><?php  if ( is_page_template("template-twocolumns-left.php")) { ?>
-#content { width:<?php echo ($contentSize - 10) ?>px;float:right;margin:10px 20px 0 0;}
+#content { width:<?php echo ($contentSize - 10) ?>px;float:right;margin:0px 20px 0 0;}
 #primary,#secondary {width:<?php echo ($sidebarSize ) ?>px;float:left;padding-left:0px;clear:left;border:none;border-right:1px dashed #EEE;padding-right:20px;}
 .widget-title { -moz-border-radius:0 10px 0 0; -webkit-border-radius:0 10px 0 0;border-radius:0 10px 0 0 ;text-align:right;padding-right:5%;width:100%;margin-left:-10px;} <?php } 
 
@@ -46,12 +46,12 @@ if ($mantra_dimselect=="Absolute") { ?>
 #primary,#secondary {width:<?php echo ($mantra_sidebar/2  ) ?>px;} <?php } 
 
 ?><?php  if ( is_page_template("template-threecolumns-left.php")) { ?>
-#content { width:<?php echo ($contentSize - 20) ?>px;float:right;margin:10px 20px 0 0;display:block;}
+#content { width:<?php echo ($contentSize - 20) ?>px;float:right;margin:0px 20px 0 0;display:block;}
 #primary,#secondary {width:<?php echo ($sidebarSize/2 ) ?>px;float:left;padding-left:0px;;border:none;border-right:1px dashed #EEE;padding-right:20px;}
 .widget-title { -moz-border-radius:0 10px 0 0; -webkit-border-radius:0 10px 0 0;border-radius:0 10px 0 0 ;text-align:right;padding-right:8%;width:100%;margin-left:-8px;} <?php } 
 
 ?><?php  if (is_page_template("template-threecolumns-center.php")) { ?>
-#content { width:<?php echo ($contentSize - 20) ?>px;float:right;margin:10px <?php echo $sidebarSize/2+30 ?>px 0 <?php echo -($contentSize+$sidebarSize) ?>px;display:block;}
+#content { width:<?php echo ($contentSize - 20) ?>px;float:right;margin:0px <?php echo $sidebarSize/2+30 ?>px 0 <?php echo -($contentSize+$sidebarSize) ?>px;display:block;}
 #primary {width:<?php echo ($sidebarSize/2 ) ?>px;float:left;padding-left:0px;border:none;border-right:1px dashed #EEE;padding-right:20px;}
 #secondary {width:<?php echo ($sidebarSize/2 ) ?>px;float:right;}
 #primary .widget-title { -moz-border-radius:0 10px 0 0; -webkit-border-radius:0 10px 0 0;border-radius:0 10px 0 0 ; text-align:right;padding-right:15px;width:100%;margin-left:-8px;} <?php } 
@@ -60,14 +60,14 @@ if ($mantra_dimselect=="Absolute") { ?>
 	else { // IF NO PAGE TEMPLATE HAS BEEN SELECTED
 	
 	 if ($mantra_side == "1c" ) { ?>
-#content {width:<?php echo ($totalwidth-50) ?>px; margin:20px;}  <?php }
+#content {width:<?php echo ($totalwidth-50) ?>px; margin:20px;margin-top:0px;}  <?php }
 
 ?><?php  if ($mantra_side == "2cSr" ) { ?>
 #content { width:<?php echo ($contentSize- 10) ?>px;}
 #primary,#secondary {width:<?php echo ($sidebarSize  ) ?>px;}<?php }
 
 ?><?php  if ($mantra_side == "2cSl" ) { ?>
-#content { width:<?php echo ($contentSize - 10) ?>px;float:right;margin:10px 20px 0 0;}
+#content { width:<?php echo ($contentSize - 10) ?>px;float:right;margin:0px 20px 0 0;}
 #primary,#secondary {width:<?php echo ($sidebarSize ) ?>px;float:left;padding-left:0px;clear:left;border:none;border-right:1px dashed #EEE;padding-right:20px;}
  .widget-title { -moz-border-radius:0 10px 0 0; -webkit-border-radius:0 10px 0 0;border-radius:0 10px 0 0 ; text-align:right;padding-right:5%;width:100%;margin-left:-10px;} <?php } 
 
@@ -76,12 +76,12 @@ if ($mantra_dimselect=="Absolute") { ?>
 #primary,#secondary {width:<?php echo ($mantra_sidebar/2  ) ?>px;} <?php } 
 
 ?><?php  if ($mantra_side == "3cSl" ) { ?>
-#content { width:<?php echo ($contentSize - 20) ?>px;float:right;margin:10px 20px 0 0;display:block;}
+#content { width:<?php echo ($contentSize - 20) ?>px;float:right;margin:0px 20px 0 0;display:block;}
 #primary,#secondary {width:<?php echo ($sidebarSize/2 ) ?>px;float:left;padding-left:0px;;border:none;border-right:1px dashed #EEE;padding-right:20px;}
  .widget-title { -moz-border-radius:0 10px 0 0; -webkit-border-radius:0 10px 0 0;border-radius:0 10px 0 0 ; text-align:right;padding-right:8%;width:100%;margin-left:-8px;} <?php } 
 
 ?><?php  if ($mantra_side == "3cSs") { ?>
-#content { width:<?php echo ($contentSize - 20) ?>px;float:right;margin:10px <?php echo $sidebarSize/2+30 ?>px 0 <?php echo -($contentSize+$sidebarSize) ?>px;display:block;}
+#content { width:<?php echo ($contentSize - 20) ?>px;float:right;margin:0px <?php echo $sidebarSize/2+30 ?>px 0 <?php echo -($contentSize+$sidebarSize) ?>px;display:block;}
 #primary {width:<?php echo ($sidebarSize/2 ) ?>px;float:left;padding-left:0px;border:none;border-right:1px dashed #EEE;padding-right:20px;}
 #secondary {width:<?php echo ($sidebarSize/2 ) ?>px;float:right;}
 #primary  .widget-title { -moz-border-radius:0 10px 0 0; -webkit-border-radius:0 10px 0 0;border-radius:0 10px 0 0 ; text-align:right;padding-right:15px;width:100%;margin-left:-8px;} <?php } 
@@ -105,7 +105,7 @@ else if ($mantra_dimselect=="Relative") { ?>
 #primary,#secondary {width:<?php echo ($sidebarSize ) ?>%;}<?php }
 
 ?><?php if (is_page_template("template-twocolumns-left.php")) { ?>
-#content { width:<?php echo ($contentSize ) ?>%;float:right;margin:10px 20px 0 0;}
+#content { width:<?php echo ($contentSize ) ?>%;float:right;margin:0px 20px 0 0;}
 #primary,#secondary {width:<?php echo ($sidebarSize ) ?>%;float:left;padding-left:0px;clear:left;border:none;border-right:1px dashed #EEE;padding-right:20px;}
  .widget-title { -moz-border-radius:0 10px 0 0; -webkit-border-radius:0 10px 0 0;border-radius:0 10px 0 0 ; text-align:right;padding-right:5%;width:95%;margin-left:-10px;} <?php } 
 
@@ -114,12 +114,12 @@ else if ($mantra_dimselect=="Relative") { ?>
 #primary,#secondary {width:<?php echo ($sidebarSize/2  ) ?>%;} <?php } 
 
 ?><?php if (is_page_template("template-threecolumns-left.php")) { ?>
-#content { width:<?php echo ($contentSize-2) ?>%;float:right;margin:10px 20px 0 0;display:block;}
+#content { width:<?php echo ($contentSize-2) ?>%;float:right;margin:0px 20px 0 0;display:block;}
 #primary,#secondary {width:<?php echo ($sidebarSize/2 ) ?>%;float:left;padding-left:0px;;border:none;border-right:1px dashed #EEE;padding-right:10px;}
  .widget-title { -moz-border-radius:0 10px 0 0; -webkit-border-radius:0 10px 0 0;border-radius:0 10px 0 0 ; text-align:right;padding-right:8%;width:95%;margin-left:-8px;} <?php } 
 
 ?><?php if ( is_page_template("template-threecolumns-center.php")) { ?>
-#content { width:<?php echo ($contentSize-1 ) ?>%;float:right;margin:10px <?php echo $sidebarSize/2+2 ?>% 0 <?php echo -($contentSize+$sidebarSize) ?>%;display:block;}
+#content { width:<?php echo ($contentSize-1 ) ?>%;float:right;margin:0px <?php echo $sidebarSize/2+2 ?>% 0 <?php echo -($contentSize+$sidebarSize) ?>%;display:block;}
 #primary {width:<?php echo ($sidebarSize/2 ) ?>%;float:left;padding-left:0px;border:none;border-right:1px dashed #EEE;padding-right:20px;}
 #secondary {width:<?php echo ($sidebarSize/2 ) ?>%;float:right;}
 #primary  .widget-title { -moz-border-radius:0 10px 0 0; -webkit-border-radius:0 10px 0 0;border-radius:0 10px 0 0 ; text-align:right;padding-right:8%;width:100%;margin-left:-8px;} <?php } 
@@ -135,7 +135,7 @@ else if ($mantra_dimselect=="Relative") { ?>
 #primary,#secondary {width:<?php echo ($sidebarSize ) ?>%;}<?php }
 
 ?><?php if ($mantra_side == "2cSl" ) { ?>
-#content { width:<?php echo ($contentSize ) ?>%;float:right;margin:10px 20px 0 0;}
+#content { width:<?php echo ($contentSize ) ?>%;float:right;margin:0px 20px 0 0;}
 #primary,#secondary {width:<?php echo ($sidebarSize ) ?>%;float:left;padding-left:0px;clear:left;border:none;border-right:1px dashed #EEE;padding-right:20px;}
  .widget-title { -moz-border-radius:0 10px 0 0; -webkit-border-radius:0 10px 0 0;border-radius:0 10px 0 0 ; text-align:right;padding-right:5%;width:95%;margin-left:-10px;} <?php } 
 
@@ -144,12 +144,12 @@ else if ($mantra_dimselect=="Relative") { ?>
 #primary,#secondary {width:<?php echo ($sidebarSize/2  ) ?>%;} <?php } 
 
 ?><?php if ($mantra_side == "3cSl" ) { ?>
-#content { width:<?php echo ($contentSize-2) ?>%;float:right;margin:10px 20px 0 0;display:block;}
+#content { width:<?php echo ($contentSize-2) ?>%;float:right;margin:0px 20px 0 0;display:block;}
 #primary,#secondary {width:<?php echo ($sidebarSize/2 ) ?>%;float:left;padding-left:0px;;border:none;border-right:1px dashed #EEE;padding-right:10px;}
  .widget-title { -moz-border-radius:0 10px 0 0; -webkit-border-radius:0 10px 0 0;border-radius:0 10px 0 0 ; text-align:right;padding-right:8%;width:95%;margin-left:-8px;} <?php } 
 
 ?><?php if ($mantra_side == "3cSs") { ?>
-#content { width:<?php echo ($contentSize-1 ) ?>%;float:right;margin:10px <?php echo $sidebarSize/2+2 ?>% 0 <?php echo -($contentSize+$sidebarSize) ?>%;display:block;}
+#content { width:<?php echo ($contentSize-1 ) ?>%;float:right;margin:0px <?php echo $sidebarSize/2+2 ?>% 0 <?php echo -($contentSize+$sidebarSize) ?>%;display:block;}
 #primary {width:<?php echo ($sidebarSize/2 ) ?>%;float:left;padding-left:0px;border:none;border-right:1px dashed #EEE;padding-right:20px;}
 #secondary {width:<?php echo ($sidebarSize/2 ) ?>%;float:right;}
 #primary  .widget-title { -moz-border-radius:0 10px 0 0; -webkit-border-radius:0 10px 0 0;border-radius:0 10px 0 0 ; text-align:right;padding-right:8%;width:100%;margin-left:-8px;} <?php } 
@@ -171,6 +171,8 @@ font-size:<?php echo $mantra_fontsize ?>;
 <?php if ($mantra_hcenter != "") { ?> #branding { background-position:50% 0 !important;} <?php }
 ?><?php if ($mantra_contentbg != "#FFFFFF") { ?> #main,  #access  ul  li.current_page_item,  #access ul li.current-menu-item ,#access ul ul li  { background-color:<?php echo $mantra_contentbg; ?>} <?php }
 ?><?php if ($mantra_menubg != "#FAFAFA") { ?> #access ul li { background-color:<?php echo $mantra_menubg; ?>} <?php }
+?><?php if ($mantra_s1bg != "#FFFFFF") { ?> #primary { background-color:<?php echo $mantra_s1bg; ?>} <?php }
+?><?php if ($mantra_s2bg != "#FFFFFF") { ?> #secondary { background-color:<?php echo $mantra_s2bg; ?>} <?php }
 
 ?><?php if (stripslashes($mantra_fontfamily) != '"Segoe UI", Arial, sans-serif' || $mantra_googlefont) { ?> * , .widget-title {font-family:<?php if (!$mantra_googlefont) echo $mantra_fontfamily; else echo $mantra_googlefont;  ?> ; }<?php }
 ?><?php if ($mantra_fonttitle != "Default" || $mantra_googlefonttitle) { ?> #content h1.entry-title a, #content h2.entry-title a, #content h1.entry-title , #content h2.entry-title {font-family:<?php if (!$mantra_googlefonttitle) echo $mantra_fonttitle; else echo $mantra_googlefonttitle;  ?> ; }<?php }

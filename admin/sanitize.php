@@ -71,6 +71,8 @@ global $mantra_defaults;
 	$input['mantra_headercolor'] =  wp_kses_data($input['mantra_headercolor']);
 	$input['mantra_contentbg'] =  wp_kses_data($input['mantra_contentbg']);
 	$input['mantra_menubg'] =  wp_kses_data($input['mantra_menubg']);
+	$input['mantra_s1bg'] =  wp_kses_data($input['mantra_s1bg']);
+	$input['mantra_s2bg'] =  wp_kses_data($input['mantra_s2bg']);
 	$input['mantra_prefootercolor'] =  wp_kses_data($input['mantra_prefootercolor']);
 	$input['mantra_footercolor'] =  wp_kses_data($input['mantra_footercolor']);
 	$input['mantra_titlecolor'] =  wp_kses_data($input['mantra_titlecolor']);
