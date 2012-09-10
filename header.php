@@ -75,6 +75,8 @@ if ( !defined('ABSPATH')) exit;
         </div><!-- end of #logo -->  
 
     <?php endif; // header image was removed (again) ?>
+    
+    <?php get_sidebar('top'); ?>
 			    
 				<?php wp_nav_menu(array(
 				    'container'       => '',

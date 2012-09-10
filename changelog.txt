@@ -8,6 +8,24 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(09/09/2012) - Maintenance and Improvements - Version 1.7.8
+[*] Language Revisions
+    - responsive.pot
+	- Japanese
+	- Finish
+	- Lithuanian
+[*] Script Updates
+[*] style.css
+    - IE image fixes
+	- pre code improvements
+	- general improvements and clean-ups
+[x] no-title, substituted with dates only
+[+] Retina (HiDPI) Display Support
+    - Media Queries
+[+] TinyNav - page/post select box intends
+[+] Top Widget
+
+----
 
 (08/27/2012) - IE7 Bug Fix - Version 1.7.7
 [+] Theme Options, support links hook
@@ -20,6 +38,8 @@ Changelog Legend:
 
 (08/21/2012) - IE7 Bug Fix - Version 1.7.6
 [!] widget clearfix
+
+----
 
 (08/19/2012) - Maintenance and Improvements - Version 1.7.5
 [+] Shortcode support for home and featured areas

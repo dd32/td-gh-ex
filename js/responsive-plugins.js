@@ -20,4 +20,4 @@ jQuery(document).ready(function(){
 jQuery(".menu").tinyNav({
     active: 'current_page_item', // Set the "active" class
     header: false // Show header instead of the active item
-});;
+});

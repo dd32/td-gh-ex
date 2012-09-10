@@ -214,7 +214,7 @@ function responsive_comment_list_pings( $comment ) {
 <?php }
 
 /**
- * Sets the post excerpt length to 40 characters.
+ * Sets the post excerpt length to 40 words.
  * Next few lines are adopted from Coraline
  */
 function responsive_excerpt_length($length) {
@@ -393,8 +393,8 @@ function responsive_breadcrumb_lists () {
 			// JS at the bottom for fast page loading. 
 			// except for Modernizr which enables HTML5 elements & feature detects.
 			wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/responsive-modernizr.js', array('jquery'), '2.6.1', false);
-            wp_enqueue_script('responsive-scripts', get_template_directory_uri() . '/js/responsive-scripts.js', array('jquery'), '1.2.0', true);
-			wp_enqueue_script('responsive-plugins', get_template_directory_uri() . '/js/responsive-plugins.js', array('jquery'), '1.1.0', true);
+            wp_enqueue_script('responsive-scripts', get_template_directory_uri() . '/js/responsive-scripts.js', array('jquery'), '1.2.1', true);
+			wp_enqueue_script('responsive-plugins', get_template_directory_uri() . '/js/responsive-plugins.js', array('jquery'), '1.1.1', true);
         }
 
     }
@@ -409,19 +409,6 @@ function responsive_breadcrumb_lists () {
     }
 
     add_action( 'wp_enqueue_scripts', 'responsive_enqueue_comment_reply' );
-	
-    /**
-     * Where the post has no post title, but must still display a link to the single-page post view.
-     */
-    add_filter('the_title', 'responsive_title');
-
-    function responsive_title($title) {
-        if ($title == '') {
-            return __('Untitled','responsive');
-        } else {
-            return $title;
-        }
-    }
 
     /**
      * Theme Options Support and Information
@@ -552,6 +539,16 @@ function responsive_breadcrumb_lists () {
             'before_title' => '<div class="widget-title">',
             'after_title' => '</div>',
             'before_widget' => '<div id="%1$s" class="colophon-widget widget-wrapper %2$s">',
+            'after_widget' => '</div>'
+        ));
+		
+        register_sidebar(array(
+            'name' => __('Top Widget', 'responsive'),
+            'description' => __('Area Twelve - sidebar-top.php', 'responsive'),
+            'id' => 'top-widget',
+            'before_title' => '<div class="widget-title">',
+            'after_title' => '</div>',
+            'before_widget' => '<div id="%1$s" class="%2$s">',
             'after_widget' => '</div>'
         ));
     }

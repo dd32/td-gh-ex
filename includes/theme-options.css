@@ -553,3 +553,57 @@ a.black:hover {
 	border:1px solid #000000;
 	color:#fff;
 }
+
+/* =Info Boxes
+-------------------------------------------------------------- */
+.info-box {
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	display:block;
+	margin:20px 0;
+	padding:15px;
+	text-align:left;
+}
+
+.alert {
+	background-color:#faebeb;
+	border:1px solid #dc7070;
+	color:#212121;
+}
+
+.address {
+	background-color:#f6f5ef;
+	border:1px solid #cdc9a5;
+	color:#212121;
+}
+
+.notice {
+	background-color:#fbf9e9;
+	border:1px solid #e3cf57;
+	color:#212121;
+}
+
+.success {
+	background-color:#f9fde8;
+	border:1px solid #a2bc13;
+	color:#212121;
+}
+
+.download {
+	background-color:#fff4e5;
+	border:1px solid #ff9912;
+	color:#212121;
+}
+
+.information {
+	background-color:#eef3f6;
+	border:1px solid #6ca6cd;
+	color:#212121;
+    font-size:11px;
+    text-align:center;
+}
+
+.required {
+	color:#d5243f;
+}

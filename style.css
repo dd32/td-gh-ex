@@ -1,12 +1,12 @@
 /* 
 Theme Name: Responsive 
 Theme URI: http://themeid.com/responsive-theme/ 
-Description: Responsive Theme is a flexible foundation with fluid grid system that adapts your website to any mobile devices and the desktop or any other viewing environment. Theme features 9 Page Templates, 10 Widget Areas, 6 Template Layouts, 4 Menu Positions and more. Powerful but simple Theme Options for full CMS control. Easy Logo Upload, Social Networking and Webmaster Tools. Responsive is WooCommerce Compatible, Multilingual Ready (WPML) and currently translated into 27 languages. Cross-Browser compatible and yes even the IE7. No memberships or clubs to get a FREE/Responsive Support you need. http://themeid.com/support
+Description: Responsive Theme is a flexible foundation with fluid grid system that adapts your website to mobile devices and the desktop or any other viewing environment. Theme features 9 Page Templates, 11 Widget Areas, 6 Template Layouts, 4 Menu Positions and more. Powerful but simple Theme Options for full CMS control with easy Logo Upload, Social Networking and Webmaster Tools etc. Responsive is WooCommerce Compatible, Multilingual Ready (WPML), Retina-Ready and currently translated into 28 languages. Cross-Browser compatible and yes even the IE7. No paid memberships or clubs to get a FREE/Responsive Support you need. http://themeid.com/support
 
-Version: 1.7.7
+Version: 1.7.8
 Author: ThemeID 
 Author URI: http://themeid.com
-Tags: white, black, gray, light, custom-menu, custom-header, custom-background, one-column, two-columns, left-sidebar, right-sidebar, flexible-width, theme-options, threaded-comments, full-width-template, sticky-post, translation-ready
+Tags: white, black, gray, light, custom-menu, custom-header, custom-background, one-column, two-columns, left-sidebar, right-sidebar, flexible-width, theme-options, threaded-comments, full-width-template, sticky-post, translation-ready, flexible-width
 
 License: GNU General Public License
 License URI: license.txt 
@@ -34,7 +34,7 @@ See:
 - http://themeid.com/forum/topic/505/child-theme-example/
 - http://themeid.com/forum/forum/12/responsive-documentation/
 	
-CSS Rules: Sorted alphabetically for better organization.
+CSS Rules: Sorted alphabetically.
 */
 	
 /* =Reset CSS (v2.0) http://meyerweb.com/eric/tools/css/reset/
@@ -152,11 +152,21 @@ strong {
 }
 
 pre {
-	background:#fff;
-	margin-top:20px;
-	max-width:98%;
-	padding-left:1em;
-	height:auto;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	-webkit-box-shadow:0 1px 0 #fff, inset 0 1px 1px rgba(0,0,0,0.2);
+	-moz-box-shadow:0 1px 0 #fff, inset 0 1px 1px rgba(0,0,0,0.2);
+	box-shadow:0 1px 0 #fff, inset 0 1px 1px rgba(0,0,0,0.2);
+	background:#f4f4f4;
+	border:1px solid #aaa;
+	border-bottom-color:#ccc;
+	border-radius:2px;
+    height:auto;
+	margin:0;
+	outline:none;
+	padding:6px 10px;
+	vertical-align:middle;
+    max-width:98%;
 }
 
 del {
@@ -288,13 +298,29 @@ sub {
 	margin-right:0!important;
 }
 
+/* =Responsive Images
+-------------------------------------------------------------- */
 img {
+    -ms-interpolation-mode:bicubic;
+    border:0;
 	height:auto;
 	max-width:100%;
+    vertical-align:middle;
 }
 
+.ie8 img {
+    height:auto; 
+    width:auto\9; 
+}
+
+.ie8 img.size-large {
+	max-width:60%;
+	width:auto;
+}
+
+/* =Responsive Embeds/Objects
+-------------------------------------------------------------- */
 embed,
-iframe,
 object {
 	max-width:100%;
 }
@@ -469,7 +495,7 @@ input[type='submit']:hover {
 }
 
 .ie7 .call-to-action a.button {
-	padding:15px 35px 18px 35px;
+    padding:11px 35px 19px 35px;
 }
 
 /* =Buttons (Sizes)
@@ -1448,6 +1474,25 @@ form div {
 	min-height:0;
 }
 
+.top-widget {
+    background:none;
+    border:none;
+    clear:right;
+    float:right;
+	min-height:0;
+    padding:0 3px 0 0;
+    text-align:right;
+    width:50%;
+}
+
+.top-widget #searchform {
+    margin:0;
+}
+
+#widgets.top-widget {
+    margin-top:0;
+}
+
 /* =Titles
 -------------------------------------------------------------- */
 .widget-title, 
@@ -1459,6 +1504,12 @@ form div {
 	margin:0;
 	padding:0 0 20px 0;
 	text-align:left;
+}
+
+.top-widget .widget-title {
+    font-size:14px;
+    padding:0;
+    text-align:right;
 }
 
 .widget-title a {
@@ -1486,12 +1537,11 @@ form div {
 	border-left:1px solid #ccc;
 	color:#333;
 	font-size:11px;
-	padding: 0 8px;
+	padding:0 4px 0 8px;
 }
 
 .top-menu > li:first-child > a {
 	border-left:none;
-	padding:0 8px 0 0;
 }
 
 .top-menu li a:hover {
@@ -2398,6 +2448,8 @@ BDO[DIR="rtl"] {
 }
 
 /* =Media Print
+    If you're working on a Child Theme, make sure that all
+	media queries are included in your style.css
 -------------------------------------------------------------- */
 @media print {
 
@@ -2414,15 +2466,23 @@ BDO[DIR="rtl"] {
     }
 }
 
-/* =Responsive Design
-    Media Queries
-    If you're working on a Child Theme, make sure that all
-	media queries are included in your style.css
+/*	Retina (HiDPI) Display
+    http://www.quirksmode.org/blog/archives/2012/06/devicepixelrati.html
+-------------------------------------------------------------- */
+@media 
+    only screen and (-moz-min-device-pixel-ratio:1.5), 
+    only screen and (-o-min-device-pixel-ratio:3/2), 
+    only screen and (-webkit-min-device-pixel-ratio:1.5), 
+    only screen and (min-device-pixel-ratio:1.5) {
+    
+    body {}
+}
+
+/* =Responsive (Mobile) Design
 -------------------------------------------------------------- */
 @media screen and (max-width: 980px) {
 
-    body {
-    }
+    body {}
 	
     .grid, 
 	.grid-right {
@@ -2436,15 +2496,21 @@ BDO[DIR="rtl"] {
 	.home #widgets {
 		margin-top:40px;
 	}
+    
+    #widgets.top-widget,
+    .home #widgets.top-widget {
+        margin-top:0 !important;
+    }
+    
 }
 
 @media screen and (max-width: 650px) {
 
-    body {
-    }
+    body {}
 
     #logo {
 	    float:none;
+        margin:0;
 	    text-align:center;
     }
 
@@ -2455,6 +2521,17 @@ BDO[DIR="rtl"] {
 
 	#featured-image .fluid-width-video-wrapper {
 	    margin:20px 0 0 0;
+    }
+    
+    .top-widget {
+        clear:none;
+        float:none;
+        margin:0 auto;
+        text-align:center;
+    }
+    
+    .top-widget .widget-title {
+        text-align:center;
     }
 	
     .js .menu,
@@ -2480,6 +2557,7 @@ BDO[DIR="rtl"] {
 		appearance:none;
 		background: #fff url(images/bg-select.png) no-repeat right;
 		border:1px solid #ccc;
+        font-size:12px;
 		overflow:hidden;
 		padding:0.5em 1em 0.5em 0.75em;
 	}
@@ -2504,12 +2582,10 @@ BDO[DIR="rtl"] {
 
 @media screen and (max-width: 480px) {
 
-    body {
-    }
+    body {}
 
     #logo {
 	    float:none;
-		position:relative;
 	    text-align:center;
     }
 
@@ -2546,6 +2622,8 @@ BDO[DIR="rtl"] {
 }
 
 @media screen and (max-width: 320px) {
+    
+    body {}
 	
 	#featured p {
 	    font-size:12px;
@@ -2567,6 +2645,8 @@ BDO[DIR="rtl"] {
 }
 
 @media screen and (max-width: 240px) {
+    
+    body {}
 	
 	#featured p {
 	    font-size:11px;
@@ -2584,6 +2664,14 @@ BDO[DIR="rtl"] {
     .call-to-action a.button {
 	    font-size:12px;
 	    padding:5px 15px;
+    }
+    
+    .widget-title,
+    .widget-title-home h3 {
+        font-size:14px;
+        height:13px;
+        line-height:13px;
+        text-align:center;
     }
 }
 /*"The last 29 days of the month are the hardest."- Nikola Tesla*/
