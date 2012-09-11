@@ -144,3 +144,8 @@ Version 1.3.5.4
 Version 1.3.6
 * Added Content Color Option
 * Added Custom Background
+
+Version 1.4
+* Added Feed Redirect Option in Theme Options
+* Added more FAQ
+* Change the Settings in Theme Options

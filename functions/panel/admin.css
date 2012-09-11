@@ -45,9 +45,7 @@
 #catchthemes .form-table select[multiple] {
 	height: 200px;
 }
-#catchthemes .form-table .box img {
-	max-width: 85px;
-}
+
 #catchthemes .form-table label.box {
 	float: left;
 	margin-right: 30px;

@@ -109,6 +109,7 @@ function simplecatch_theme_options_do_page() {
                     <li><a href="#faq"><?php _e( 'FAQ', 'simplecatch' );?></a></li>
                     <li><a href="#designsettings"><?php _e( 'Design Settings', 'simplecatch' );?></a></li>
                     <li><a href="#themesettings"><?php _e( 'Theme Settings', 'simplecatch' );?></a></li>
+                    <li><a href="#themesupport"><?php _e( 'Support Simple Catch', 'simplecatch' );?></a></li>
                 </ul><!-- .tabsNavigation #mainNav -->
                 
                 <div id="faq">
@@ -367,51 +368,27 @@ function simplecatch_theme_options_do_page() {
                     </div><!-- .option-container --> 
 
                     <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Layout Settings', 'simplecatch' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Default Layout', 'simplecatch' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table">  
                                 <tbody>
                                     <tr>
-                                        <th scope="row"><label><?php _e( 'Default sidebar layout', 'simplecatch' ); ?></label></th>
+                                        <th scope="row"><label><?php _e( 'Default Layout', 'simplecatch' ); ?></label></th>
                                         <td>
                                             <label title="no-sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/images/no-sidebar.gif" alt="Content-Sidebar" /><br />
                                             <input type="radio" name="simplecatch_options[sidebar_layout]" id="no-sidebar" <?php checked($options['sidebar_layout'], 'no-sidebar') ?> value="no-sidebar"  />
+                                             No Sidebar, One Column
                                             </label>
                                             <label title="left-Sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/images/left-sidebar.gif" alt="Content-Sidebar" /><br />
                                             <input type="radio" name="simplecatch_options[sidebar_layout]" id="left-sidebar" <?php checked($options['sidebar_layout'], 'left-sidebar') ?> value="left-sidebar"  />
+                                            Content on Right
                                             </label>
                                             <label title="right-sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/images/right-sidebar.gif" alt="Content-Sidebar" /><br />
                                             <input type="radio" name="simplecatch_options[sidebar_layout]" id="right-sidebar" <?php checked($options['sidebar_layout'], 'right-sidebar') ?> value="right-sidebar"  />
+                                            Content on Left
                                             </label>
                                         </td>
                                     </tr>  
-                                    <tr>
-                                        <th scope="row"><label><?php _e( 'More Tag Text', 'simplecatch' ); ?></label></th>
-                                        <td><input type="text" size="45" name="simplecatch_options[more_tag_text]" value="<?php echo esc_attr( $options[ 'more_tag_text' ] ); ?>" />
-                                        </td>
-                                    </tr> 
-                                    <tr> 
-                                        <th scope="row"><label><?php _e( 'Default Display Text in Search', 'simplecatch' ); ?></label></th>
-                                        <td><input type="text" size="45" name="simplecatch_options[search_display_text]" value="<?php echo esc_attr( $options[ 'search_display_text'] ); ?>" />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"><label><?php _e( 'Search Button\'s text', 'simplecatch' ); ?></label></th>
-                                        <td><input type="text" size="45" name="simplecatch_options[search_button_text]" value="<?php echo esc_attr( $options[ 'search_button_text' ] ); ?>" />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"><?php _e( 'Excerpt length(words)', 'simplecatch' ); ?></th>
-                                        <td><input type="text" size="3" name="simplecatch_options[excerpt_length]" value="<?php echo intval( $options[ 'excerpt_length' ] ); ?>" /></td>
-                                    </tr>
-
-                                    <?php if( $options[ 'reset_settings' ] == "1" ) { $options[ 'reset_settings' ] = "0"; } ?>
-                                    <tr>                            
-                                    <th scope="row"><?php _e( 'Reset Settings:', 'simplecatch' ); ?></th>
-                                    <input type='hidden' value='0' name='simplecatch_options[reset_settings]'>
-                                    <td><input type="checkbox" id="headerlogo" name="simplecatch_options[reset_settings]" value="1" <?php checked( '1', $options['reset_settings'] ); ?> /></td>
-                                    </tr>
-
                                 </tbody>
                             </table>
                             <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
@@ -456,8 +433,74 @@ function simplecatch_theme_options_do_page() {
                             <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->  
+                    
+                    <div class="option-container">
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Search Text Settings', 'simplecatch' ); ?></a></h3>
+                        <div class="option-content inside">
+                            <table class="form-table">  
+                                <tbody>
+                                    <tr> 
+                                        <th scope="row"><label><?php _e( 'Default Display Text in Search', 'simplecatch' ); ?></label></th>
+                                        <td><input type="text" size="45" name="simplecatch_options[search_display_text]" value="<?php echo esc_attr( $options[ 'search_display_text'] ); ?>" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><label><?php _e( 'Search Button\'s text', 'simplecatch' ); ?></label></th>
+                                        <td><input type="text" size="45" name="simplecatch_options[search_button_text]" value="<?php echo esc_attr( $options[ 'search_button_text' ] ); ?>" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
+                        </div><!-- .option-content -->
+                    </div><!-- .option-container --> 
+                    
+                    <div class="option-container">
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Excerpt / More Tag Settings', 'simplecatch' ); ?></a></h3>
+                        <div class="option-content inside">
+                            <table class="form-table">  
+                                <tbody>
+									<tr>
+                                        <th scope="row"><label><?php _e( 'More Tag Text', 'simplecatch' ); ?></label></th>
+                                        <td><input type="text" size="45" name="simplecatch_options[more_tag_text]" value="<?php echo esc_attr( $options[ 'more_tag_text' ] ); ?>" />
+                                        </td>
+                                    </tr>  
+                                     <tr>
+                                        <th scope="row"><?php _e( 'Excerpt length(words)', 'simplecatch' ); ?></th>
+                                        <td><input type="text" size="3" name="simplecatch_options[excerpt_length]" value="<?php echo intval( $options[ 'excerpt_length' ] ); ?>" /></td>
+                                    </tr>  
+                              	</tbody>
+                            </table>
+                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
+                        </div><!-- .option-content -->
+                    </div><!-- .option-container --> 
+                    
+                    <div class="option-container">
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Feed Redirect', 'simplecatch' ); ?></a></h3>
+                        <div class="option-content inside">
+                            <table class="form-table">  
+                                <tbody>
+									<tr>
+                                        <th scope="row"><label><?php _e( 'Feed Redirect URL', 'simplecatch' ); ?></label></th>
+                                        <td><input type="text" size="70" name="simplecatch_options[feed_url]" value="<?php echo esc_attr( $options[ 'feed_url' ] ); ?>" />
+                                        </td>
+                                    </tr>  
+                               	</tbody>
+                            </table>
+                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
+                        </div><!-- .option-content -->
+                    </div><!-- .option-container -->                                         
 
                 </div> <!-- #themesettings --> 
+                
+              	<div id="themesupport">
+                    <?php 
+                        //Displays Theme Suppor information witten in simplecatch_themesupport of simplecatch_functions.php 
+                        if( function_exists( 'simplecatch_themesupport' ) ): 
+                        	simplecatch_themesupport(); 
+                        endif;
+                    ?>           
+              	</div><!-- #faq -->
 
             </div><!-- #simplecatch_ad_tabs -->
 		</form>
@@ -504,7 +547,7 @@ function simplecatch_slider_options_do_page(){
                         <tbody class="sortable">
                             <?php for ( $i = 1; $i <= $options[ 'slider_qty' ]; $i++ ): ?>
                             <tr>
-                                <th scope="row"><label class="handle"><?php _e( 'Featured Col #', 'simplecatch' ); ?><span class="count"><?php echo absint( $i ); ?></span></label></th>
+                                <th scope="row"><label class="handle"><?php _e( 'Featured Slider Post #', 'simplecatch' ); ?><span class="count"><?php echo absint( $i ); ?></span></label></th>
                                 <td><input type="text" name="simplecatch_options[featured_slider][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'featured_slider', $options ) && array_key_exists( $i, $options[ 'featured_slider' ] ) ) echo absint( $options[ 'featured_slider' ][ $i ] ); ?>" />
                                 <a href="<?php bloginfo ( 'url' );?>/wp-admin/post.php?post=<?php if( array_key_exists ( 'featured_slider', $options ) && array_key_exists ( $i, $options[ 'featured_slider' ] ) ) echo absint( $options[ 'featured_slider' ][ $i ] ); ?>&action=edit" class="button" title="<?php esc_attr_e('Click Here To Edit'); ?>" target="_blank"><?php _e( 'Click Here To Edit', 'simplecatch' ); ?></a>
                                 </td>
@@ -1001,21 +1044,10 @@ function simplecatch_theme_options_validate( $options ){
     if ( isset( $input[ 'excerpt_length' ] ) ) {
         $input_validated[ 'excerpt_length' ] = absint( $input[ 'excerpt_length' ] ) ? $input [ 'excerpt_length' ] : 30;
     }
-    if ( isset( $input['reset_settings'] ) ) {
-        $input_validated[ 'reset_settings' ] = $input[ 'reset_settings' ];
-    }    
-    
-    if( $input[ 'reset_settings' ] == 1 ) {
-        global $simplecatch_options_defaults;
-        $defaults = $simplecatch_options_defaults;
 
-        $input_validated[ 'sidebar_layout' ] = $defaults[ 'sidebar_layout' ];
-        $input_validated[ 'more_tag_text' ] = $defaults[ 'more_tag_text' ];
-        $input_validated[ 'search_display_text' ] = $defaults[ 'search_display_text' ];
-        $input_validated[ 'search_button_text' ] = $defaults[ 'search_button_text' ];
-        $input_validated[ 'excerpt_length' ] = $defaults[ 'excerpt_length' ]; 
-    }
-
+	//Feed Redirect
+	$input_validated['feed_url'] = esc_url_raw($input['feed_url']);
+	
 	//Clearing the theme option cache
 	if( function_exists( 'simplecatch_themeoption_invalidate_caches' ) ) simplecatch_themeoption_invalidate_caches();
 	
@@ -1131,6 +1163,7 @@ function simplecatch_sidebar_layout_backward_compatibility() {
     endif;
 }
 add_action('init','simplecatch_sidebar_layout_backward_compatibility', 20 );
+
 
 /**
  * Delete the database option on theme switch

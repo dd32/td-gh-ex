@@ -62,8 +62,7 @@ $simplecatch_options_defaults = array(
  	'search_display_text'		=> 'Type KeyWord',
  	'search_button_text'		=> 'Search',
  	'excerpt_length'			=> 30,
- 	'reset_settings'			=> '0'
-
+	'feed_url'					=> ''
  );
 global $simplecatch_options_settings;
 $simplecatch_options_settings = simplecatch_options_set_defaults( $simplecatch_options_defaults );
