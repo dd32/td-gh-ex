@@ -17,7 +17,7 @@
             <span class="left"><?php previous_comments_link(); ?></span>
             &#9733; &#9733; &#9733; &#9733; &#9733;
             <span class="right"><?php next_comments_link(); ?></span>
-        </h6></ul>
+        </h6></ul> 
     <?php endif; ?>
     
 <?php endif; ?>
@@ -47,4 +47,10 @@
     comment_form($defaults); ?>
 
 
+<?php endif; ?>
+
+<?php if ( comments_open() || get_comment_pages_count() > 0 || !empty($comments_by_type['pings']) ) : ?>
+	<ul class="starsbar"><h6>
+		&#9733; &#9733; &#9733; &#9733; &#9733;
+	</h6></ul>
 <?php endif; ?>

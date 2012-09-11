@@ -5,7 +5,7 @@ Theme URI: http://schwarttzy.com/shop/semper-fi/
 
 Description: Dedicate to my Grandfather's Bravery in WWII, Semper Fi has a high quality newspaper feeling to it. From hidden luxurious floral patterns, to images that create the nostalgia of finely crafted paper, incredibly detailed shadowing, but most importantly, Semper Fi has the ability to respond to any width screen. From 300 pixels wide, all the way to 1920 and beyond, images, galleries, quotes, text, and titles all move fluidly to respond to any thing you through at it. (More Updates to come soon)
 
-Version: 0.1
+Version: 0.2
 
 Author: Eric Schwarz
 
@@ -27,8 +27,7 @@ License URI: http://opensource.org/licenses/AGPL-3.0
 
 ------------------------------------------------------------------*/
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, img, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
-dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {background: transparent;border: 0;font-size: 100%;margin: 0;outline: 0;padding: 0;vertical-align: baseline;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, img, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {background: transparent;border: 0;font-size: 100%;margin: 0;outline: 0;padding: 0;vertical-align: baseline;}
 h1, h2, h3, h4, h5, h6 {font-weight: normal;}
 html {min-height:100%;}
 blockquote, q {quotes:none;}
@@ -92,7 +91,6 @@ a img {border: none; }
 	font-family: Impact, fantasy;
     display: block;
     margin: 25px 0 0;
-	max-height:150px;
 	overflow: hidden;
     text-transform: uppercase;}
 #header h1 a {color:#e0dbce;}
@@ -154,7 +152,7 @@ a img {border: none; }
 
 /*------------------------------------------------------------------
 
-Actual Content of the page. Few DIVs for layout and then ul / li frame
+Just a Few DIVs for Layout
 
 ------------------------------------------------------------------*/
 
@@ -179,6 +177,13 @@ Actual Content of the page. Few DIVs for layout and then ul / li frame
 	margin:0;
 	padding:0 0 2em;}
 #center ul {float:left;}
+
+/*------------------------------------------------------------------
+
+ul / li that do the heavy lift on this theme
+
+------------------------------------------------------------------*/
+
 .browsing {width:97%;margin:.75em 1.5% 0;line-height:1.25em;}
 .browsing .underlay img, .browsing .underlay object{width:100%;height: auto;}
 .browsing li {width:30.3333%;margin:0 1.5% 1.5%;float:left;overflow:hidden;height:476px;}
@@ -196,27 +201,6 @@ Actual Content of the page. Few DIVs for layout and then ul / li frame
 .content p:first-child:first-letter {font-size:5em; line-height:.68em; text-transform:capitalize; float:left; padding:.1em .15em 0 0;}
 .title {border-top:2px solid #111; border-bottom:1px solid #24380e; margin:.5em 0em;}
 .title span { font-size: .5em; line-height:.8em;float:right; padding:.20em; text-align:center;color:#555;}
-
-/*------------------------------------------------------------------
-
-                   Widgets
-
-------------------------------------------------------------------*/
-
-.widget {margin:1.5% 1.5% 0;text-align:justify; overflow:hidden;line-height: normal; color:#222;}
-.widget li {margin:1.5% 1.5% 0; height:auto;}
-.widget a{color:#000;}
-.widget a:hover {color: #dc1111 !important;}
-.widget caption{text-align:justify;margin:.25em 0;}
-.widget li h1, .widget li h2, .widget li h3, .widget li h4, .widget li h5, .widget li h6 {width:100%;text-align:center;border-top:2px solid #111; border-bottom:1px solid #24380e;}
-.widget li ul li{padding:.5em 0;}
-
-
-li.bottomline {width:97%;margin:0 1.5%;}
-
-.finishline { margin:1% 2.52% 0;border-bottom:1px solid #111; width:94.96%;}
-
-
 .excerpt{height:175px;}
 .underlay {position: relative; width: 100%; float:left;}
 .reading .underlay {border-bottom: #111 solid 1px; padding-bottom:1.5%; text-align:center;margin:0 auto;}
@@ -243,10 +227,24 @@ li.bottomline {width:97%;margin:0 1.5%;}
 .starsbar h6{width:100%;text-align:center; line-height:1.8em;}
 .starsbar a {color:#e0dbce;}
 .starsbar a:hover {color:#777;}
-.left{float:left;}
-.right, #cancel-comment-reply-link{float:right;}
 #footer { height:1.75em; overflow:hidden; font-size:.8em; width:96%; padding:0 2%; background:#111; color: #e0dbce; text-align:center;}
 #footer p{ padding:0; margin:.25em 0; text-shadow: none;}
+li.bottomline {width:97%;margin:0 1.5%;}
+.finishline { margin:1% 2.52% 0;border-bottom:1px solid #111; width:94.96%;}
+
+/*------------------------------------------------------------------
+
+                   Widgets
+
+------------------------------------------------------------------*/
+
+.widget {margin:1.5% 1.5% 0;text-align:justify; overflow:hidden;line-height: normal; color:#222;}
+.widget li {margin:1.5% 1.5% 0; height:auto;}
+.widget a{color:#000;}
+.widget a:hover {color: #dc1111 !important;}
+.widget caption{text-align:justify;margin:.25em 0;}
+.widget li h1, .widget li h2, .widget li h3, .widget li h4, .widget li h5, .widget li h6 {width:100%;text-align:center;border-top:2px solid #111; border-bottom:1px solid #24380e;}
+.widget li ul li{padding:.5em 0;}
 
 /*------------------------------------------------------------------
 
@@ -305,7 +303,6 @@ a.comment-edit-link {color:#dc1111;}
 
 #respond label {display:inline;}
 .form-allowed-tags { display:none;}
-
 #reply-title {border-bottom:1px solid #24380e; margin:0em 0em 1em;}
 #respond, .commentbox {float:left;width:94%;padding:0em;margin:1em 3% 0em;line-height:1.25em;}
 #respond {border-top:2px solid #111;}
@@ -326,7 +323,6 @@ textarea {width:99.5%; max-width:99.5%; min-width:99.5%; border:1px solid #111;b
 .comment-form-comment textarea {width:100%; max-width:100%; min-width:100%;}
 .comment-form-comment label {margin:0 0 .6em;}
 .comment-subscription-form {font-size:.8em; color:#555; margin:.25em 0;}
-
 
 /*------------------------------------------------------------------
 
@@ -394,6 +390,8 @@ tbody tr:nth-child(odd) {
 
 ------------------------------------------------------------------*/
 
+.left{float:left;}
+.right, #cancel-comment-reply-link{float:right;}
 .wp-caption{background:rgba(0, 0, 0, 0.2); margin:.5em .5em; margin:.5em;padding:1em 1em .5em;text-align:center; box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1);}
 .wp-caption.alignright {float: right;}
 .wp-caption.alignleft {float: left;}
@@ -451,9 +449,9 @@ img {max-width:100% !important; height:auto;}
                    Jetpack Markup
 
 ------------------------------------------------------------------*/
+
 ul.tweets .timesince {background: url(images/tweet.png) top left no-repeat;font-size:.8em; display:list-item; clear:both;margin:.2em 0 0; padding:0 0 0 1.8em; color:#444;}
 .sharing ul { width:100%; float:left;}
-
 
 /*------------------------------------------------------------------
 

@@ -185,7 +185,7 @@
 <?php $semperfi_404 = true;?>
 <?php endif; ?> 
 
-<!-- Some of the Formating is weird on so the formating is beautiful when the page is created -->
+<?php /* Some of the Formating is weird below so that when the page is finished the formating looks beautiful and clean */ ?>
 <?php elseif (have_posts()) : the_post();?>
 	<div class="reading">
     <div class="spacing"></div>
@@ -198,8 +198,9 @@
 	<span id="post-<?php the_ID(); ?>" <?php post_class('content'); ?>>
 		<?php the_content(); ?>
     </span>
-    <span class="right" style="width:100%;"><?php wp_link_pages(); ?></span>
-	<?php the_tags('<br />Tags: ', ', ', ''); ?>
+    <span class="right" style="width:100%;"><?php wp_link_pages(); ?>
+	<?php if (is_single()) : ?>Post Categories: <?php the_category(', '); the_tags('</br>Tags: ', ', ', ''); endif;?>
+    </span>
 	</div>
     
     <?php if ( is_page()) : ?>
@@ -229,7 +230,7 @@
     <?php endif; ?>
 
 	
-<?php endif; ?> <!-- End  -->
+<?php endif; ?><!-- End  -->
 
 <!-- The Comments -->
 <?php if($semperfi_404): ?>
@@ -239,6 +240,7 @@
 <ul class="commentbox hidecomment">
 	<h4 class="title">Comments are closed</h4>
 </ul>
+<?php comments_template( '', true ); ?>
 <?php endif; ?>
 <!-- End Comments -->
 
@@ -249,6 +251,7 @@
 <li><?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer widget3') ) : ?><?php endif; ?></li>
 <li class="bottomline"></li>
 </ul><?php endif; ?>
+
 <!-- End Sidebar / Widget Area -->
 
 <ul class="finishline"></ul>

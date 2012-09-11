@@ -73,7 +73,7 @@ function semperfi_theme_options_do_page() {
 </span>
 
 <h3 class="title"><a href="http://schwarttzy.com/shop/semper-fi/"><span>Only</br>$15.00</span>Support Semper Fi</a></h3>
-    <span class="content"><p>Semper Fi is considered an “Up-Vert Theme,” meaning that it is first and foremost a completely free theme, but with that said, some of the additional features remain unusable until you support the theme. Once you have successfully supported the theme I provide unlimited access to free updates and downloads. These additional features require that you download and install the standard version of the theme <a href="http://schwarttzy.com/shop/semper-fi/">Semper Fi</a> on your WordPress installation. The standard version can only be downloaded after successfully supporting Semper Fi, if you run into a problem contact me with <a href="http://schwarttzy.com/about-2/">this form</a>. Finally, look for an Email that is from “Schwarttzy.com,” not the PayPal, and in that email is transaction number so you can active the theme. Active Semper Fi standard by copying and pasting the transaction number in the Activation field on the Theme Options page. Finally click save and you’ll have all the extra features for life. If you have trouble finding the Theme Option page is generally located at http://yourwebsite.com/wp-admin/themes.php?page=theme_options but I have also added a link in the admin bar at the top of the screen.</p>
+    <span class="content"><p>Semper Fi is considered an "Up-Vert Theme," meaning that it is first and foremost a completely free theme, but with that said, some of the additional features remain unusable until you support the theme. Once you have successfully supported the theme I provide unlimited access to free updates and downloads. These additional features require that you download and install the standard version of the theme <a href="http://schwarttzy.com/shop/semper-fi/">Semper Fi</a> on your WordPress installation. The standard version can only be downloaded after successfully supporting Semper Fi, if you run into a problem contact me with <a href="http://schwarttzy.com/about-2/">this form</a>. Finally, look for an Email that is from "Schwarttzy.com," not the PayPal, and in that email is transaction number so you can active the theme. Active Semper Fi standard by copying and pasting the transaction number in the Activation field on the Theme Options page. Finally click save and you will have all the extra features for life. If you have trouble finding the Theme Option page is generally located at http://yourwebsite.com/wp-admin/themes.php?page=theme_options but I have also added a link in the admin bar at the top of the screen.</p>
 			<table>
             <tr>
             	<th class="alignleft">Semper Fi Theme Features</th> <th>Free</th> <th>Premium</th>
@@ -114,7 +114,7 @@ function semperfi_theme_options_do_page() {
             	<td class="alignleft">Remove my Mark from the Footer (To be Implemented in Future Update)</td> <td></td> <td>&#9733;</td>
             </tr>
             </table>
-            <p><a href="http://schwarttzy.com/shop/semper-fi/">Support Semper Fi to get the extra Feature.</a></p>
+            <p><a href="http://schwarttzy.com/shop/semper-fi/">Support Semper Fi to enable this Feature.</a></p>
 	</span>
 
 <h3 class="title">Personalize The Backgrounds</h3>
@@ -127,7 +127,7 @@ function semperfi_theme_options_do_page() {
     <p> <?php printf('<a href="%s">Customize Background</a>', admin_url('themes.php?page=custom-background')); ?></p></span>
 
 <h3 class="title">Add your own Favicon</h3>
-	<span class="content"><p>A Favicon, as know as a Bookmark Icon, is a small icon that is generally 16x16 pixles used to help by give a visual aid to a browser tab. If you happen to need help creating a favicon for your website I recommend that you visit the website "<a href="http://www.favicon.cc/">Favicon.CC</a>" to generate your own. Once you have your favicon upload it to your website and then include the full address for the favicon to properly link.
+	<span class="content"><p>A Favicon, also know as a Bookmark Icon, is a small icon that is generally 16x16 pixles used to help by give a visual aid to a browser tab. If you happen to need help creating a favicon for your website I recommend that you visit the website "<a href="http://www.favicon.cc/">Favicon.CC</a>" to generate your own. Once you have your favicon upload it to your website and then include the full address for the favicon to properly link.
    	<p><a href="http://schwarttzy.com/shop/semper-fi/">Support Semper Fi to enable this Feature.</a></p>
 	</span>
 <h3 class="title">Typekit Fonts</h3>
