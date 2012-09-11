@@ -112,3 +112,8 @@ Version 1.2.1
 Version 1.2.2
 * Fixed Responsive Design CSS and Image Size
 * Note if you are upgrading the theme then please use the regenerate thumbnail plugin (http://wordpress.org/extend/plugins/regenerate-thumbnails/) to regenerate the new image size for featured image. It's size is 644px width and 320px height.
+
+Version 1.2.3
+* Removed extra file style.css.backsov.css
+* Added Full Width Page (no sidebar) Template
+* Added clear class for clearing floats in css

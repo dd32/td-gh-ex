@@ -627,6 +627,7 @@ function catchbox_posted_on() {
 }
 endif;
 
+
 /**
  * Adds two classes to the array of body classes.
  * The first is if the site has only had one author with published posts.
@@ -641,6 +642,10 @@ function catchbox_body_classes( $classes ) {
 
 	if ( is_page_template( 'page-disable-sidebar.php' ) || is_attachment() )
 		$classes[] = 'singular';
+		
+	if ( is_page_template( 'page-fullwidth.php' ) || is_attachment() )
+		$classes[] = 'fullwidth';
+		
 	return $classes;
 }
 add_filter( 'body_class', 'catchbox_body_classes' );
