@@ -102,6 +102,7 @@ if (!function_exists('sampression_js')) {
 	function sampression_js() {
 		wp_enqueue_script("jquery");
 		// JS at the bottom for fast page loading. 
+		wp_enqueue_script('sampression-modernizer', get_template_directory_uri() . '/lib/js/modernizr.js', array('jquery'), '2.6.1', false);
 		wp_enqueue_script('sampression-jquery-isotope', get_template_directory_uri() . '/lib/js/jquery.isotope.min.js', array('jquery'), '1.5.19', true);
 		wp_enqueue_script('sampression-custom-script', get_template_directory_uri() . '/lib/js/scripts.js', array('jquery'), '1.1', true);
 	}
@@ -138,12 +139,20 @@ if ( ! function_exists( 'sampression_content_nav' ) ) :
 
 function sampression_content_nav( $nav_id ) {
 	global $wp_query;
-
 	if ( $wp_query->max_num_pages > 1 ) : ?>
 		<nav id="<?php echo $nav_id; ?>" class="post-navigation clearfix">
-			<div class="nav-previous alignleft"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'sampression' ) ); ?></div>
-			<div class="nav-next alignright"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'sampression' ) ); ?></div>
-		</nav><!-- #nav-above -->
+        	<?php
+			// Enable the Page Navigation features for wp-pagenavi plugin
+			if(function_exists('wp_pagenavi')) {
+				wp_pagenavi();
+			} else {
+			?>
+                <div class="nav-previous alignleft"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'sampression' ) ); ?></div>
+                <div class="nav-next alignright"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'sampression' ) ); ?></div>
+            <?php
+			}
+			?>
+		</nav>
 	<?php endif;
 }
 endif; 
@@ -472,7 +481,7 @@ function filter_cat_callback() {
    $slug = $_POST['category'];
    $exc = $_POST['exclude'];
    $exclude = explode('~', $exc);
-   query_posts(array ( 'category_name' => $slug, 'post__not_in' => $exclude) );
+   query_posts(array ( 'category_name' => $slug, 'post__not_in' => $exclude, 'post_status' => 'publish' ) );
    while (have_posts()) : the_post();
    ?>
    <article id="post-<?php the_ID(); ?>" class="post item columns four <?php echo sampression_cat_slug(); ?> ">
@@ -524,3 +533,50 @@ function filter_cat_callback() {
 	wp_reset_query();
 	die();
 }
+
+/*=======================================================================
+* Get an IP of USER
+*=======================================================================*/
+
+function get_ip() {
+	if (getenv('HTTP_CLIENT_IP')) {
+		$ip = getenv('HTTP_CLIENT_IP');
+	}
+	elseif (getenv('HTTP_X_FORWARDED_FOR')) {
+		$ip = getenv('HTTP_X_FORWARDED_FOR');
+	}
+	elseif (getenv('HTTP_X_FORWARDED')) {
+		$ip = getenv('HTTP_X_FORWARDED');
+	}
+	elseif (getenv('HTTP_FORWARDED_FOR')) {
+		$ip = getenv('HTTP_FORWARDED_FOR');
+	}
+	elseif (getenv('HTTP_FORWARDED')) {
+		$ip = getenv('HTTP_FORWARDED');
+	}
+	else {
+		$ip = $_SERVER['REMOTE_ADDR'];
+	}
+	return $ip;
+}
+
+/*=======================================================================
+* Display notification/message in admin.
+*=======================================================================*/
+function showMessage($message='', $errormsg = false) {
+	if($message!='') {
+		if ($errormsg) {
+			echo '<div id="message" class="error">';
+		} else {
+			echo '<div id="message" class="updated fade">';
+		}
+		echo "<p><strong>$message</strong></p></div>";
+	}
+}
+function showNotices() {
+    if(function_exists('showMessage')) {
+		showMessage();
+	}
+}
+add_action('admin_notices', 'showNotices');
+?>

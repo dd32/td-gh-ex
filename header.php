@@ -46,19 +46,15 @@
 	
     <!-- CSS
     ================================================== -->
-    <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_uri(); ?>" />
+    <?php wp_enqueue_style('sampression-style', get_stylesheet_uri(), false, '1.3');?>
     
      <!-- Getting Google Fonts
     ================================================== -->
     <link href='http://fonts.googleapis.com/css?family=Droid+Serif:700,400,400italic,700italic' rel='stylesheet' type='text/css'>
 	
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-    
-	<?php
-	/* Include codes in Header from Theme Option (Advance) */
-	 echo get_option( 'opt_sam_header' ); ?>
-     
-	<?php wp_head(); ?>
+
+<?php wp_head(); ?>
 </head>
 
 <body <?php body_class('top'); ?>>
@@ -92,15 +88,15 @@
 			wp_nav_menu( array (
 				'theme_location'    => 'top-menu',
 				'container'         => '',
-				'menu_class'           => 'clearfix',
-				'depth'             => 1, // set to 1 to disable dropdowns
+				'menu_class'           => 'top-menu clearfix',
+				'depth'             => 0, // set to 1 to disable dropdowns
 				'fallback_cb'       => false
 			));
 		} else {
 			// Otherwise list the Pages
 			 ?>
-			<ul class="clearfix">
-				<?php wp_list_pages('title_li=&depth=1'); ?>
+			<ul class="top-menu clearfix">
+				<?php wp_list_pages('title_li=&depth=0'); ?>
 			</ul>
 			<?php
 		} ?>
@@ -118,7 +114,10 @@
 	   if( get_option( 'opt_get_twitter' ) ) {
 	    ?>
           <li class="sm-top-tw"><a href="http://www.twitter.com/<?php echo get_option( 'opt_get_twitter' ); ?>" target="_blank">Twitter</a></li>
-          
+         <?php }
+	   if( get_option( 'opt_get_gplus' ) ) {
+	    ?>
+          <li class="sm-top-gplus"><a href="<?php echo get_option( 'opt_get_gplus' ); ?>" target="_blank">Google Plus</a></li>
           <?php } ?>
        </ul>
         <!-- .sm-top --> 
@@ -142,7 +141,7 @@
         $categories = get_categories();
         foreach($categories as $category):
         ?>
-        <li><a href="javascript:void(0);" data-filter=".<?php echo $category->slug; ?>" id="<?php echo $category->slug; ?>" class="selected filter-data"><span></span><?php echo $category->name; ?></a></li>
+        <li><a href="javascript:void(0);" data-filter=".<?php echo $category->slug; ?>" id="<?php echo $category->slug; ?>" class="filter-data"><span></span><?php echo $category->name; ?></a></li>
         <?php
         endforeach;
         ?>
