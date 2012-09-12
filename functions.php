@@ -1,5 +1,5 @@
 <?php
-$bfa_ata_version = "3.7.8";
+$bfa_ata_version = "3.7.9";
 
 // Load translation file above
 load_theme_textdomain('atahualpa');
@@ -124,6 +124,14 @@ function bfa_escape($string) {
 
 
 
+/**
+ * Since 3.7.9
+ * Redirect users to Theme Options after activation, this will also create the 
+ * CSS file in the uploads dir, for the first time
+ */
+if ( is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" )
+	wp_redirect( 'themes.php?page=atahualpa-options' );
+	
 
 
 
@@ -964,6 +972,8 @@ function bfa_parse_widget_areas_callback($matches) {
 
 function bfa_is_pagetemplate_active($pagetemplate = '') {
 
+	if ($pagetemplate == '') {return 0;}
+	
 	global $wpdb;
 	$sql = "select meta_key from $wpdb->postmeta where meta_key like '_wp_page_template' and meta_value like '" . $pagetemplate . "'";
 	$result = $wpdb->query($sql);

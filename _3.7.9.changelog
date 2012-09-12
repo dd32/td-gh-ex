@@ -1,3 +1,13 @@
+Changelog 3.7.9:
+
+- Only excerpts shown contrary to corresponding setting. http://forum.bytesforall.com/showthread.php?t=18241
+- Updated atahualpa.ot file
+- Edited style.css description
+- Removed references and instructions to/for ancient WP & Atahualpa versions in readme.txt
+- Added function to redirect to theme options after activation, in functions.php
+- removed log.txt file
+
+
 Changelog 3.7.8:
 - Double titles when using Yoast WP SEO: http://forum.bytesforall.com/showthread.php?t=18174
 - Issue with internal SEO options: http://forum.bytesforall.com/showthread.php?t=18160
