@@ -3,7 +3,7 @@
  * Skylark Theme Options
  *
  * @package Skylark
- * @since Skylark 1.0.1
+ * @since Skylark 1.6
  */
 
 /**

@@ -3,7 +3,7 @@
  * The Sidebar containing the main widget areas.
  *
  * @package Skylark
- * @since Skylark 1.0
+ * @since Skylark 1.6
  */
 ?>
 		<div id="secondary" class="widget-area" role="complementary">

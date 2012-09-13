@@ -5,7 +5,7 @@
  * Eventually, some of the functionality here could be replaced by core features
  *
  * @package Skylark
- * @since Skylark 1.0
+ * @since Skylark 1.6
  */
 
 if ( ! function_exists( 'skylark_content_nav' ) ):

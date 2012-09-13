@@ -3,7 +3,7 @@
  * The template used for displaying page content in page.php
  *
  * @package Skylark
- * @since Skylark 1.0
+ * @since Skylark 1.6
  */
 ?>
 

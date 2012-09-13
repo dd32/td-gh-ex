@@ -3,7 +3,7 @@
  * The template for displaying Search Results pages.
  *
  * @package Skylark
- * @since Skylark 1.0
+ * @since Skylark 1.6
  */
 
 get_header(); ?>

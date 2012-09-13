@@ -9,7 +9,7 @@
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
  * @package Skylark
- * @since Skylark 1.0
+ * @since Skylark 1.6
  */
 		$latest_sticky_id = array();
 

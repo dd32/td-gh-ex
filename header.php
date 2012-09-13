@@ -5,7 +5,7 @@
  * Displays all of the <head> section and everything up till <div id="main">
  *
  * @package Skylark
- * @since Skylark 1.0
+ * @since Skylark 1.6
  */
 ?><!DOCTYPE html>
 <!--[if IE 8]>

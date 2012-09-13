@@ -8,7 +8,7 @@
  * located in the functions.php file.
  *
  * @package Skylark
- * @since Skylark 1.0
+ * @since Skylark 1.6
  */
 ?>
 	<div id="comments" class="comments-area">

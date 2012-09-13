@@ -3,7 +3,7 @@
  * Skylark functions and definitions
  *
  * @package Skylark
- * @since Skylark 1.0
+ * @since Skylark 1.6
  */
 
 /**

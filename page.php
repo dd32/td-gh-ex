@@ -8,7 +8,7 @@
  * different template.
  *
  * @package Skylark
- * @since Skylark 1.0
+ * @since Skylark 1.6
  */
 
 get_header(); ?>

@@ -1,9 +1,9 @@
 <?php
 /**
- * The template for displaying search forms in _s
+ * The template for displaying search forms in Skylark
  *
  * @package Skylark
- * @since Skylark 1.0
+ * @since Skylark 1.6
  */
 ?>
 	<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">

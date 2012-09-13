@@ -5,7 +5,7 @@
  * Contains the closing of the id=main div and all content after
  *
  * @package Skylark
- * @since Skylark 1.0
+ * @since Skylark 1.6
  */
 ?>
 
