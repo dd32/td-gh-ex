@@ -972,7 +972,7 @@ msgid ""
 "(Google, Yahoo and Bing site verification ID, Header and Footer codes), 7. Custom "
 "Backgrounds, 8. Custom Header, 9. Catchbox Adspace widget to add any type of "
 "Advertisements, and 10. Support popular plugins. Multilingual Ready (WPML) and "
-"also currently translated in Brazilian Portuguese and Spanish"
+"also currently translated in Brazilian Portuguese, Spanish and Danish"
 msgstr ""
 
 #. Author of the plugin/theme
