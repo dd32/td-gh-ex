@@ -1,85 +1,81 @@
 /*! http://tinynav.viljamis.com v1.03 by @viljamis */
-//Count functon for the Nav Name
-function catch_count(e) {
-	var count = 0;
-	if (!e.hasClass('root')) {
-		if (e.is('ul'))
-		count++;
-		return count + catch_count(e.parent());
-	}
-	return count;
-}
-
-(function (jQuery, window, i) {
-  jQuery.fn.tinyNav = function (options) {
+(function ($, window, i) {
+  $.fn.tinyNav = function (options) {
 
     // Default settings
-    var settings = jQuery.extend({
-      'active' : 'active', // String: Set the "active" class
+    var settings = $.extend({
+      'active' : 'selected', // String: Set the "active" class
       'header' : false // Boolean: Show header instead of the active item
     }, options);
-    
-    var counter = -1;
 
     return this.each(function () {
+
       // Used for namespacing
       i++;
 
-      var jQuerynav = jQuery(this),
+      var $nav = $(this),
         // Namespacing
         namespace = 'tinynav',
         namespace_i = namespace + i,
         l_namespace_i = '.l_' + namespace_i,
-        jQueryselect = jQuery('<select/>').addClass(namespace + ' ' + namespace_i);
+        $select = $('<select/>').addClass(namespace + ' ' + namespace_i);
 
-      if (jQuerynav.is('ul,ol')) {
-      
+      if ($nav.is('ul,ol')) {
+
         if (settings.header) {
-          jQueryselect.append(
-            jQuery('<option/>').text('Navigation')
+          $select.append(
+            $('<option/>').text('Navigation')
           );
         }
 
         // Build options
         var options = '';
-    
-        jQuerynav
+		var indent = 0;
+		var indented = ["&nbsp;"];
+		for ( var i = 0; i < 10; i++) {
+			indented.push(indented[indented.length-1]+indented[indented.length-1]);
+		}
+		indented[0] = "";
+        $nav
           .addClass('l_' + namespace_i)
-          .find('a')
-          .each(function () {
-            var y = catch_count(jQuery(this));
-            var space = "";
-            for (var x=0; x<y; x++)
-              space += "--";
-              
+          .children('li')
+          .each(buildNavTree=function () {
+            var a = $(this).children('a').first();
+            
             options +=
-              '<option value="' + jQuery(this).attr('href') + '">' + space +
-              jQuery(this).text() +
+              '<option value="' + a.attr('href') + '">' +
+              indented[indent] + a.text() +
               '</option>';
+              indent++;
+              $(this).children('ul,ol').children('li').each(buildNavTree);
+              indent--;
           });
 
         // Append options into a select
-        jQueryselect.append(options);
+        $select.append(options);
 
         // Select the active item
         if (!settings.header) {
-          jQueryselect
-            .find(':eq(' + jQuery(l_namespace_i + ' li')
-            .index(jQuery(l_namespace_i + ' li.' + settings.active)) + ')')
+          $select
+            .find(':eq(' + $(l_namespace_i + ' li')
+            .index($(l_namespace_i + ' li.' + settings.active)) + ')')
             .attr('selected', true);
         }
 
         // Change window location
-        jQueryselect.change(function () {
-          window.location.href = jQuery(this).val();
+        $select.change(function () {
+          window.location.href = $(this).val();
         });
 
         // Inject select
-        jQuery(l_namespace_i).after(jQueryselect);
+        $(l_namespace_i).after($select);
 
       }
 
+	$('option[value="'+document.location+'"]').attr("selected","selected");
+
     });
+
   };
 })(jQuery, this, 0);
 

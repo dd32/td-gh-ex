@@ -119,5 +119,5 @@ Version 1.2.3
 * Added Full Width Page (no sidebar) Template
 * Added clear class for clearing floats in css
 
-Version 1.3
+Version 1.3.0
 * Added Danish translation da_DK.po and da_DK.mo
