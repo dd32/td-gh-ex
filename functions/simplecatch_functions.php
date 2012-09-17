@@ -362,9 +362,6 @@ function simplecatch_sliders() {
 
 								$simplecatch_sliders .= '<a href="' . get_permalink() . '" title="Permalink to '.the_title('','',false).'">';
 
-								if( !isset( $options[ 'remove_noise_effect'] ) ) {
-									$options[ 'remove_noise_effect' ] = "0";
-								}
 								if( $options[ 'remove_noise_effect' ] == "0" ) {
 									$simplecatch_sliders .= '<span class="img-effect pngfix"></span>';
 								}
@@ -641,10 +638,6 @@ function simplecatch_inline_css() {
 	if ( ( !$simplecatch_inline_css = get_transient( 'simplecatch_inline_css' ) ) ) {
 		global $simplecatch_options_settings;
         $options = $simplecatch_options_settings;
-
-		if( !isset( $options[ 'reset_color' ] ) ) {
-			$options[ 'reset_color' ] = "2";
-		}
 
 		if( $options[ 'reset_color' ] == "0" ) {
 			$simplecatch_inline_css	= '<!-- '.get_bloginfo('name').' Custom CSS Styles -->' . "\n";

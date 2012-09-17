@@ -25,6 +25,7 @@ $simplecatch_options_defaults = array(
  	'link_color'				=> '#000000',
  	'widget_heading_color'		=> '#666666',
  	'widget_text_color'			=> '#666666',
+	'reset_color'				=> '2',
  	'exclude_slider_post'		=> '0',
  	'front_page_category'		=> array(),
  	'slider_qty'				=> 4,

@@ -890,6 +890,11 @@ function simplecatch_theme_options_validate( $options ){
 	if( isset( $input[ 'widget_text_color' ] ) ) {
 		$input_validated[ 'widget_text_color' ] = wp_filter_nohtml_kses( $input[ 'widget_text_color' ] );
 	}		
+	if ( isset( $input['reset_color'] ) ) {
+		// Our checkbox value is either 0 or 1 
+		$input_validated[ 'reset_color' ] = $input[ 'reset_color' ];
+	}	
+
 	//Reset Color Options
 	if( $input[ 'reset_color' ] == 1 ) {
 		global $simplecatch_options_defaults;

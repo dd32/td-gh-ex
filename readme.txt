@@ -149,3 +149,6 @@ Version 1.4
 * Added Feed Redirect Option in Theme Options
 * Added more FAQ
 * Change the Settings in Theme Options
+
+Version 1.4.1
+* Fixing Color Options
