@@ -1,0 +1,16 @@
+html {background: #CCC;}
+h1 {font-size:28px;}
+h2 {font-size:24px;}
+h3 {font-size:20px;}
+h4 {font-size:18px;}
+h5 {font-size:14px;}
+h6 {font-size:12px;}
+h1, h2, h3, h4, h5, h6 {font-weight:normal;}
+.mceContentBody {
+    background: #fff;
+    border: 1px solid #999;
+	padding: 10px;
+	margin: 6px auto;
+    font: normal 13px/20px arial, sans-serif;
+	width: 620px;
+}
