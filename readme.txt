@@ -121,3 +121,15 @@ Version 1.2.3
 
 Version 1.3.0
 * Added Danish translation da_DK.po and da_DK.mo
+
+Version 1.3.1
+* Fixed responsive css for iPhone
+* Fixed Full Width Disable Sidebar and Content on Right Layout CSS
+* Fixed widget title link text
+* Fixed Page nav wp_link_pages design
+
+Version 1.4
+* Fixed Slider Initialization 
+* Added Option to Disable Header Search in Theme Option Panel
+* Added Info bar in Theme Option Panel
+* Change the license to GPL 2

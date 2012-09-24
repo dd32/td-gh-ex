@@ -737,7 +737,7 @@ function catchbox_pass_slider_value() {
 function catchbox_sliders() {	
 	global $post;
 	
-	delete_transient( 'catchbox_sliders' );
+	//delete_transient( 'catchbox_sliders' );
 		
 	// get data value from catchbox_options_slider through theme options
 	$options = get_option( 'catchbox_options_slider' );
@@ -757,7 +757,7 @@ function catchbox_sliders() {
 				'ignore_sticky_posts' => 1 // ignore sticky posts
 			));
 				
-			$i; while ( $get_featured_posts->have_posts()) : $get_featured_posts->the_post(); $i++;
+			$i=0; while ( $get_featured_posts->have_posts()) : $get_featured_posts->the_post(); $i++;
 				$title_attribute = esc_attr( apply_filters( 'the_title', get_the_title( $post->ID ) ) );
 				
 				if ( $i == 1 ) { $classes = "slides displayblock"; } else { $classes = "slides displaynone"; }

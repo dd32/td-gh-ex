@@ -7,6 +7,7 @@
  * @since Catch Box 1.0
  */
 
+
 /**
  * Properly enqueue styles and scripts for our theme options page.
  *
@@ -24,7 +25,6 @@ add_action( 'admin_print_styles-appearance_page_theme_options', 'catchbox_admin_
 add_action( 'admin_print_styles-appearance_page_slider_options', 'catchbox_admin_enqueue_scripts' );
 add_action( 'admin_print_styles-appearance_page_social_links', 'catchbox_admin_enqueue_scripts' );
 add_action( 'admin_print_styles-appearance_page_webmaster_tools', 'catchbox_admin_enqueue_scripts' );
-
 
 
 /**
@@ -128,6 +128,14 @@ function catchbox_theme_options_init() {
 	);
 	
 	add_settings_field(
+		'disable_header_search', // Unique identifier for the settings section
+		__( 'Disable Search in Header', 'catchbox' ), // Setting field label
+		'catchbox_settings_field_disable_header_search', // Function that renders the settings field
+		'theme_options', // Menu slug, used to uniquely identify the page; see catchbox_theme_options_add_page()
+		'general' // Settings section. Same as the first argument in the add_settings_section() above
+	);	
+	
+	add_settings_field(
 		'custom_css', // Unique identifier for the settings section
 		__( 'Custom CSS Styles', 'catchbox' ), // Setting field label
 		'catchbox_settings_field_custom_css', // Function that renders the settings field
@@ -155,6 +163,7 @@ function catchbox_option_page_capability( $capability ) {
 	return 'edit_theme_options';
 }
 add_filter( 'option_page_capability_catchbox_options', 'catchbox_option_page_capability' );
+
 
 /**
  * Add our theme options page to the admin menu, including some help documentation.
@@ -204,6 +213,7 @@ function catchbox_theme_options_add_page() {
 }
 add_action( 'admin_menu', 'catchbox_theme_options_add_page' );
 
+
 function catchbox_theme_options_help() {
 
 	$help = '<p>' . __( 'Some themes provide customization options that are grouped together on a Theme Options screen. If you change themes, options may change or disappear, as they are theme-specific. Your current theme, Catch Box, provides the following Theme Options:', 'catchbox' ) . '</p>' .
@@ -233,6 +243,7 @@ function catchbox_theme_options_help() {
 	} 
 }
 
+
 function catchbox_slider_options_help() {
 
 	$help = '<p>' . __( 'Slider Some themes provide customization options that are grouped together on a Theme Options screen. If you change themes, options may change or disappear, as they are theme-specific. Your current theme, Catch Box, provides the following Theme Options:', 'catchbox' ) . '</p>' .
@@ -255,6 +266,7 @@ function catchbox_slider_options_help() {
 		);
 	}
 }
+
 
 /**
  * Returns an array of color schemes registered for Catch Box.
@@ -279,6 +291,7 @@ function catchbox_color_schemes() {
 
 	return apply_filters( 'catchbox_color_schemes', $color_scheme_options );
 }
+
 
 /**
  * Returns an array of layout options registered for Catch Box.
@@ -307,6 +320,7 @@ function catchbox_layouts() {
 	return apply_filters( 'catchbox_layouts', $layout_options );
 }
 
+
 /**
  * Returns an array of content layout options registered for Catch Box.
  *
@@ -329,6 +343,7 @@ function catchbox_content_layout() {
 	return apply_filters( 'catchbox_content_layouts', $content_options );
 }
 
+
 /**
  * Returns the default options for Catch Box.
  *
@@ -336,12 +351,12 @@ function catchbox_content_layout() {
  */
 function catchbox_get_default_theme_options() {
 	$default_theme_options = array(
-		'excerpt_length'	=>40,
-		'color_scheme'		=> 'light',
-		'link_color'		=> catchbox_get_default_link_color( 'light' ),
-		'theme_layout'		=> 'content-sidebar',
-		'content_layout'	=> 'excerpt',
-		
+		'excerpt_length'		=> 40,
+		'color_scheme'			=> 'light',
+		'link_color'			=> catchbox_get_default_link_color( 'light' ),
+		'theme_layout'			=> 'content-sidebar',
+		'content_layout'		=> 'excerpt',
+		'disable_header_search' => '0'
 	);
 
 	if ( is_rtl() )
@@ -349,6 +364,7 @@ function catchbox_get_default_theme_options() {
 
 	return apply_filters( 'catchbox_default_theme_options', $default_theme_options );
 }
+
 
 /**
  * Returns the default link color for Catch Box, based on color scheme.
@@ -371,6 +387,7 @@ function catchbox_get_default_link_color( $color_scheme = null ) {
 	return $color_schemes[ $color_scheme ]['default_link_color'];
 }
 
+
 /**
  * Returns the options array for Catch Box.
  *
@@ -379,6 +396,7 @@ function catchbox_get_default_link_color( $color_scheme = null ) {
 function catchbox_get_theme_options() {
 	return get_option( 'catchbox_theme_options', catchbox_get_default_theme_options() );
 }
+
 
 /**
  * Renders the Color Scheme setting field.
@@ -404,6 +422,7 @@ function catchbox_settings_field_color_scheme() {
 	}
 }
 
+
 /**
  * Renders the Link Color setting field.
  *
@@ -420,17 +439,7 @@ function catchbox_settings_field_link_color() {
 	<span><?php printf( __( 'Default color: %s', 'catchbox' ), '<span id="default-color">' . catchbox_get_default_link_color( $options['color_scheme'] ) . '</span>' ); ?></span>
 	<?php
 }
-/**
- * Renders the feed redirect setting field.
- *
- * @since Catch Box 1.0
- */
-function catchbox_settings_field_feed_redirect() {
-	$options = catchbox_get_theme_options();
-	?>
-	<input type="text" name="catchbox_theme_options[feed_url]" id="feed-url" size="65" value="<?php if ( isset( $options[ 'feed_url' ] ) ) echo esc_attr( $options[ 'feed_url'] ); ?>" />
-	<?php
-}
+
 
 /**
  * Renders the excerpt length setting field.
@@ -447,6 +456,35 @@ function catchbox_settings_field_excerpt_length() {
 	<?php
 }
 
+
+/**
+ * Renders the feed redirect setting field.
+ *
+ * @since Catch Box 1.0
+ */
+function catchbox_settings_field_feed_redirect() {
+	$options = catchbox_get_theme_options();
+	?>
+	<input type="text" name="catchbox_theme_options[feed_url]" id="feed-url" size="65" value="<?php if ( isset( $options[ 'feed_url' ] ) ) echo esc_attr( $options[ 'feed_url'] ); ?>" />
+	<?php
+}
+
+
+/**
+ * Renders the feed redirect setting field.
+ *
+ * @since Catch Box 1.3.1
+ */
+function catchbox_settings_field_disable_header_search() {
+	$options = catchbox_get_theme_options();
+	if( empty( $options['disable_header_search'] ) )
+		$options = catchbox_get_default_theme_options();
+	?>
+    <input type="checkbox" id="disable-header-search" name="catchbox_theme_options[disable_header_search]" value="1" <?php checked( '1', $options['disable_header_search'] ); ?> />
+	<?php
+}
+
+
 /**
  * Renders the Custom CSS styles setting fields
  *
@@ -460,6 +498,7 @@ function catchbox_settings_field_custom_css() {
 
 	<?php
 }
+
 
 /**
  * Renders the Layout setting field.
@@ -482,6 +521,7 @@ function catchbox_settings_field_layout() {
 		<?php
 	}
 }
+
 
 /**
  * Renders the Content layout setting fields.
@@ -524,7 +564,26 @@ function catchbox_theme_options_render_page() {
                 printf( __( '%s Theme Options By', 'catchbox' ), get_current_theme() );
             }
 			?> 
-            <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catchbox' ) ); ?>" title="<?php echo esc_attr_e( 'Catch Themes', 'catchbox' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'catchbox' ); ?></a></h2>
+            <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catchbox' ) ); ?>" title="<?php echo esc_attr_e( 'Catch Themes', 'catchbox' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'catchbox' ); ?></a>
+        </h2>
+        
+		<div id="info-support">
+                <a class="support button" href="<?php echo esc_url(__('http://catchthemes.com/support/','catchbox')); ?>" title="<?php esc_attr_e('Theme Support', 'catchbox'); ?>" target="_blank">
+                <?php printf(__('Theme Support','catchbox')); ?></a>
+                
+                <a class="themes button" href="<?php echo esc_url(__('http://catchthemes.com/themes/','catchbox')); ?>" title="<?php esc_attr_e('More Themes', 'catchbox'); ?>" target="_blank">
+                <?php printf(__('More Themes','catchbox')); ?></a>
+                
+                <a class="facebook button" href="<?php echo esc_url(__('http://facebook.com/catchthemes','catchbox')); ?>" title="<?php esc_attr_e('Facebook', 'catchbox'); ?>" target="_blank">
+                <?php printf(__('Facebook','catchbox')); ?></a>
+                
+                <a class="twitter button" href="<?php echo esc_url(__('http://twitter.com/#!/catchthemes','catchbox')); ?>" title="<?php esc_attr_e('Twiiter', 'catchbox'); ?>" target="_blank">
+                <?php printf(__('Twitter','catchbox')); ?></a>
+                
+                <a class="donate button" href="<?php echo esc_url(__('http://catchthemes.com/donate/','catchbox')); ?>" title="<?php esc_attr_e('Donate Now', 'catchbox'); ?>" target="_blank">
+                <?php printf(__('Donate Now','catchbox')); ?></a>
+        </div>        
+            
 		<?php settings_errors(); ?>
 
 		<form method="post" action="options.php">
@@ -537,6 +596,7 @@ function catchbox_theme_options_render_page() {
 	</div>
 	<?php
 }
+
 
 /**
  * Renders the slider options for Catch Box.
@@ -649,6 +709,7 @@ function catchbox_options_slider_page() {
 	</div><!-- .wrap -->
 <?php
 }
+
 
 /**
  * Renders the social links options for Catch Box.
@@ -772,6 +833,7 @@ function catchbox_options_social_links() {
 <?php
 }
 
+
 /**
 * Returns the options array for Catch Box.
 *
@@ -857,7 +919,7 @@ function catchbox_options_webmaster_tools() {
     	</form>
   	</div><!-- .wrap -->
 	<?php 
- }
+}
 
 
 /**
@@ -905,6 +967,7 @@ function catchbox_options_validation($options) {
 	return $options_validated;
 }
 
+
 /**
  * Sanitize and validate forms for webmaster tools options. Accepts an array, return a sanitized array.
  *
@@ -930,6 +993,7 @@ function catchbox_options_webmaster_validation( $options ) {
 	
 	return $options_validated;
 }
+
 
 /**
  * Sanitize and validate social links options form. Accepts an array, return a sanitized array.
@@ -988,6 +1052,8 @@ function catchbox_options_social_links_validation( $options ) {
 	
 	return $options_validated;
 }
+
+
 /**
  * Sanitize and validate form input. Accepts an array, return a sanitized array.
  *
@@ -1023,7 +1089,12 @@ function catchbox_theme_options_validate( $input ) {
 	
 	if ( isset( $input['feed_url'] ) )	
 		$output['feed_url'] = esc_url_raw($input['feed_url']);
-			
+		
+	if ( isset( $input['disable_header_search'] ) )
+		// Our checkbox value is either 0 or 1 
+		$output[ 'disable_header_search' ] = $input[ 'disable_header_search' ];
+	
+		
 	if ( isset( $input['custom_css'] ) )	
 		$output['custom_css'] = wp_kses_stripslashes($input['custom_css']);
 		
@@ -1152,6 +1223,7 @@ function catchbox_print_link_color_style() {
 <?php
 }
 add_action( 'wp_head', 'catchbox_print_link_color_style' );
+
 
 /**
  * Adds Catch Box layout classes to the array of body classes.

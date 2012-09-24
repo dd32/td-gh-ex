@@ -56,7 +56,12 @@
 				<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
 			</hgroup>
 
-			<?php get_search_form(); ?>
+			<?php 
+			// Check to see if header search has been disable
+			$options = catchbox_get_theme_options();
+			if ( $options ['disable_header_search'] == 0 ) :
+				get_search_form();
+            endif;  ?>
 
 			<nav id="access" role="navigation">
 				<h3 class="assistive-text"><?php _e( 'Primary menu', 'catchbox' ); ?></h3>

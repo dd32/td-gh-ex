@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/catch-box\n"
 "POT-Creation-Date: 2012-07-21 12:19+0530\n"
-"PO-Revision-Date: 2012-09-12 11:47-0300\n"
+"PO-Revision-Date: 2012-09-24 15:30+0530\n"
 "Last-Translator: Valdir <valdirtrombini@hotmail.com>\n"
 "Language-Team: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -403,104 +403,104 @@ msgstr "Menu Secundário"
 msgid "Footer Menu"
 msgstr "Menu do Rodapé"
 
-#: ../functions.php:186
+#: ../functions.php:188
 msgid "Garden"
 msgstr "Jardim"
 
-#: ../functions.php:192
+#: ../functions.php:194
 msgid "Flower"
 msgstr "Flor"
 
-#: ../functions.php:198
+#: ../functions.php:200
 msgid "Mountain"
 msgstr "Montanha"
 
-#: ../functions.php:350
+#: ../functions.php:352
 #, php-format
 msgid "Page %s"
 msgstr "Página %s"
 
-#: ../functions.php:426
+#: ../functions.php:428
 msgid "Main Sidebar"
 msgstr "Barra Lateral Principal"
 
-#: ../functions.php:435
+#: ../functions.php:437
 msgid "Footer Area One"
 msgstr "Área do Rodapé - Um"
 
-#: ../functions.php:437
-#: ../functions.php:447
-#: ../functions.php:457
+#: ../functions.php:439
+#: ../functions.php:449
+#: ../functions.php:459
 msgid "An optional widget area for your site footer"
 msgstr "Uma área Widget opcional para o rodapé do site"
 
-#: ../functions.php:445
+#: ../functions.php:447
 msgid "Footer Area Two"
 msgstr "Área do Rodapé - Dois"
 
-#: ../functions.php:455
+#: ../functions.php:457
 msgid "Footer Area Three"
 msgstr "Área do Rodapé - Três"
 
-#: ../functions.php:475
+#: ../functions.php:477
 #: ../single.php:15
 msgid "Post navigation"
 msgstr "Navegação das Postagens"
 
-#: ../functions.php:483
+#: ../functions.php:485
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> Postagens Anteriores"
 
-#: ../functions.php:484
+#: ../functions.php:486
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Postagens Recentes <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../functions.php:557
+#: ../functions.php:559
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: ../functions.php:574
+#: ../functions.php:576
 #, php-format
 msgid "%1$s on %2$s <span class=\"says\">said:</span>"
 msgstr "%1$s no dia %2$s <span class=\"says\">disse:</span>"
 
-#: ../functions.php:580
+#: ../functions.php:582
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s às %2$s"
 
-#: ../functions.php:589
+#: ../functions.php:591
 msgid "Your comment is awaiting moderation."
 msgstr "<strong>Seu Comentário está aguardando a nossa moderação. Obrigado por Comentar!</strong>"
 
-#: ../functions.php:598
+#: ../functions.php:600
 msgid "Reply <span>&darr;</span>"
 msgstr "Responder <span>&darr;</span>"
 
-#: ../functions.php:616
+#: ../functions.php:618
 #, php-format
 msgid "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> by </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
 msgstr "<span class=\"sep\">Postado em: </span><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> por: </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
 
-#: ../functions.php:656
+#: ../functions.php:663
 msgid "ID"
 msgstr "ID"
 
-#: ../header.php:62
+#: ../header.php:67
 msgid "Primary menu"
 msgstr "Menu Principal"
 
-#: ../header.php:64
-#: ../header.php:81
+#: ../header.php:69
+#: ../header.php:86
 msgid "Skip to primary content"
 msgstr "Ir para o conteúdo principal"
 
-#: ../header.php:65
-#: ../header.php:82
+#: ../header.php:70
+#: ../header.php:87
 msgid "Skip to secondary content"
 msgstr "Ir para o conteúdo secundário"
 
-#: ../header.php:79
+#: ../header.php:84
 msgid "Secondary menu"
 msgstr "Menu Secundário"
 
@@ -582,346 +582,405 @@ msgid "Feed Redirect URL"
 msgstr "Redirecionamento da URL para o seu Feed"
 
 #: ../inc/theme-options.php:132
+#, fuzzy
+msgid "Disable Search in Header"
+msgstr "Desativar a barra lateral no Tema"
+
+#: ../inc/theme-options.php:140
 msgid "Custom CSS Styles"
 msgstr "Coloque aqui a sua folha de estilo CSS personalizado!"
 
-#: ../inc/theme-options.php:168
-#: ../inc/theme-options.php:169
+#: ../inc/theme-options.php:177
+#: ../inc/theme-options.php:178
 msgid "Theme Options"
 msgstr "Opções do Tema"
 
-#: ../inc/theme-options.php:176
-#: ../inc/theme-options.php:177
+#: ../inc/theme-options.php:185
+#: ../inc/theme-options.php:186
 msgid "Featured Slider"
 msgstr "Destaque Slider"
 
-#: ../inc/theme-options.php:184
-#: ../inc/theme-options.php:185
+#: ../inc/theme-options.php:193
+#: ../inc/theme-options.php:194
 msgid "Social Links"
 msgstr "Links das Redes Sociais"
 
-#: ../inc/theme-options.php:192
-#: ../inc/theme-options.php:193
+#: ../inc/theme-options.php:201
+#: ../inc/theme-options.php:202
 msgid "Webmaster Tools"
 msgstr "Ferramenta para Webmaster"
 
-#: ../inc/theme-options.php:209
+#: ../inc/theme-options.php:219
 msgid "Some themes provide customization options that are grouped together on a Theme Options screen. If you change themes, options may change or disappear, as they are theme-specific. Your current theme, Catch Box, provides the following Theme Options:"
 msgstr "<strong>Opções para o Tema:</strong> Alguns temas oferecem opções de personalização que são agrupadas em uma tela de opções do tema. Se você alterar os temas, as opções podem mudar ou desaparecer juntamente como eles, pois, são temas específicos. Seu tema atual, <strong>Catch Box</strong>, oferece-lhe as seguintes opções temáticas:"
 
-#: ../inc/theme-options.php:211
-#: ../inc/theme-options.php:240
+#: ../inc/theme-options.php:221
+#: ../inc/theme-options.php:251
 msgid "<strong>Color Scheme</strong>: You can choose a color palette of \"Light\" (light background with dark text) or \"Dark\" (dark background with light text) for your site."
 msgstr "<strong>Esquema de Cores</strong>: Você pode escolher um esquema de cores <strong>\"Claro\"</strong> (fundo claro com texto escuro) ou <strong>\"Escuro\"</strong> (fundo escuro com texto claro) para seu site ou blog."
 
-#: ../inc/theme-options.php:212
-#: ../inc/theme-options.php:241
+#: ../inc/theme-options.php:222
+#: ../inc/theme-options.php:252
 msgid "<strong>Link Color</strong>: You can choose the color used for text links on your site. You can enter the HTML color or hex code, or you can choose visually by clicking the \"Select a Color\" button to pick from a color wheel."
 msgstr "<strong>Cor do Link</strong>: Você pode escolher a cor usada para links de texto em seu site ou blog. Você pode inserir a cor HTML ou código hexadecimal, ou ainda, você pode escolher visualmente clicando em <strong>\"Selecionar a Cor\"</strong>, é o botão que aciona uma roda de cores (paleta), com uso fácil e intuitivo, desta forma, você seleciona a sua cor preferida."
 
-#: ../inc/theme-options.php:213
-#: ../inc/theme-options.php:242
+#: ../inc/theme-options.php:223
+#: ../inc/theme-options.php:253
 msgid "<strong>Default Layout</strong>: You can choose if you want your site&#8217;s default layout to have a sidebar on the left, the right, or not at all."
 msgstr "<strong>Layout Padrão</strong>: Você pode escolher se você quizer, o layout do seu site ou blog padrão para ter uma barra lateral à esquerda, à direita, ou não ter barra lateral."
 
-#: ../inc/theme-options.php:215
-#: ../inc/theme-options.php:244
+#: ../inc/theme-options.php:225
+#: ../inc/theme-options.php:255
 msgid "Remember to click \"Save Changes\" to save any changes you have made to the theme options."
 msgstr "Lembre-se sempre de clicar em <strong>\"Salvar Alterações\"</strong> para salvar as alterações feitas nas opções do seu tema."
 
-#: ../inc/theme-options.php:217
+#: ../inc/theme-options.php:227
 msgid "For more information:"
 msgstr "Para mais informações visite:"
 
-#: ../inc/theme-options.php:218
+#: ../inc/theme-options.php:228
 msgid "<a href=\"http://codex.wordpress.org/Appearance_Theme_Options_Screen\" target=\"_blank\">Documentation on Theme Options</a>"
 msgstr "<a href=\"http://codex.wordpress.org/Appearance_Theme_Options_Screen\" target=\"_blank\">Documentação Oficial para Opções de Tema</a>"
 
-#: ../inc/theme-options.php:219
+#: ../inc/theme-options.php:229
 msgid "<a href=\"http://wordpress.org/support/\" target=\"_blank\">Support Forums</a>"
 msgstr "<a href=\"http://wordpress.org/support/\" target=\"_blank\">Forum de Suporte</a>"
 
-#: ../inc/theme-options.php:226
-#: ../inc/theme-options.php:251
+#: ../inc/theme-options.php:236
+#: ../inc/theme-options.php:262
 msgid "Overview"
 msgstr "Visão Global"
 
-#: ../inc/theme-options.php:238
+#: ../inc/theme-options.php:249
 msgid "Slider Some themes provide customization options that are grouped together on a Theme Options screen. If you change themes, options may change or disappear, as they are theme-specific. Your current theme, Catch Box, provides the following Theme Options:"
 msgstr "<strong>Slide Show</strong> - Alguns temas oferecem opções de personalização que são agrupadas em uma tela de opções de tema. Se você alterar os temas, as opções podem mudar ou desaparecer juntamente como eles, pois, são temas específicos. Seu tema atual, <strong>Catch Box</strong>, oferece-lhe as seguintes opções temáticas para sua apresentação de slides da página inicial:"
 
-#: ../inc/theme-options.php:268
+#: ../inc/theme-options.php:280
 msgid "Light"
 msgstr "Claro"
 
-#: ../inc/theme-options.php:274
+#: ../inc/theme-options.php:286
 msgid "Dark"
 msgstr "Escuro"
 
-#: ../inc/theme-options.php:292
+#: ../inc/theme-options.php:305
 msgid "Content on left"
 msgstr "Conteúdo à esquerda"
 
-#: ../inc/theme-options.php:297
+#: ../inc/theme-options.php:310
 msgid "Content on right"
 msgstr "Conteúdo à direita"
 
-#: ../inc/theme-options.php:302
+#: ../inc/theme-options.php:315
 msgid "One-column, no sidebar"
 msgstr "Uma coluna, sem nenhuma barra lateral"
 
-#: ../inc/theme-options.php:319
+#: ../inc/theme-options.php:333
 msgid "Show excerpt"
 msgstr "Mostrar excerto (resumo do post)"
 
-#: ../inc/theme-options.php:324
+#: ../inc/theme-options.php:338
 msgid "Show full content"
 msgstr "Mostrar o conteúdo completo"
 
-#: ../inc/theme-options.php:417
+#: ../inc/theme-options.php:436
 msgid "Select a Color"
 msgstr "Selecionar a Cor"
 
-#: ../inc/theme-options.php:420
+#: ../inc/theme-options.php:439
 #, php-format
 msgid "Default color: %s"
 msgstr "Esta é a cor padrão do link: %s"
 
-#: ../inc/theme-options.php:459
+#: ../inc/theme-options.php:497
 msgid "CSS Tutorial from W3Schools."
 msgstr "Aprenda tudo que você precisa saber a respeito da apresentação das folhas de estilo em cascata <strong>CSS</strong>  (<strong>C</strong>ascading <strong>S</strong>tyle <strong>S</strong>heet - Folha de Estilo em Cascata) com os tutoriais dinâmicos da escola <strong>W3Schools</strong>. (em inglês, contudo, vale o seu esforço em traduzir, para aprender esse <strong>Ensinamento Gratuito</strong> e apresentar o seu website/blog a seu gosto para o público alvo na internet!)"
 
-#: ../inc/theme-options.php:459
+#: ../inc/theme-options.php:497
 msgid "http://www.w3schools.com/css/default.asp"
 msgstr "http://www.w3schools.com/css/default.asp"
 
-#: ../inc/theme-options.php:459
+#: ../inc/theme-options.php:497
 msgid "CSS Tutorial"
 msgstr "W3Schools - Tutoriais para aprender CSS (Cascading Style Sheet - Folha de Estilo em Cascata)"
 
-#: ../inc/theme-options.php:459
+#: ../inc/theme-options.php:497
 msgid "Click Here to Read"
 msgstr "Clique aqui para aprender"
 
-#: ../inc/theme-options.php:522
-#: ../inc/theme-options.php:524
-#: ../inc/theme-options.php:553
-#: ../inc/theme-options.php:555
-#: ../inc/theme-options.php:665
-#: ../inc/theme-options.php:667
-#: ../inc/theme-options.php:787
-#: ../inc/theme-options.php:789
+#: ../inc/theme-options.php:562
+#: ../inc/theme-options.php:564
+#: ../inc/theme-options.php:613
+#: ../inc/theme-options.php:615
+#: ../inc/theme-options.php:726
+#: ../inc/theme-options.php:728
+#: ../inc/theme-options.php:849
+#: ../inc/theme-options.php:851
 #, php-format
 msgid "%s Theme Options By"
 msgstr "%s Opções para o Tema"
 
-#: ../inc/theme-options.php:527
-#: ../inc/theme-options.php:558
-#: ../inc/theme-options.php:669
-#: ../inc/theme-options.php:792
+#: ../inc/theme-options.php:567
+#: ../inc/theme-options.php:618
+#: ../inc/theme-options.php:730
+#: ../inc/theme-options.php:854
 msgid "Catch Themes"
 msgstr "Catch Themes"
 
 #: ../inc/theme-options.php:571
-#: ../inc/theme-options.php:678
-#: ../inc/theme-options.php:802
-msgid "Settings saved."
-msgstr "Configurações Salvas."
+#, fuzzy
+msgid "http://catchthemes.com/support/"
+msgstr "http://catchthemes.com/support/"
 
+#: ../inc/theme-options.php:571
+#: ../inc/theme-options.php:572
+#, fuzzy
+msgid "Theme Support"
+msgstr "Theme Support"
+
+#: ../inc/theme-options.php:574
+#, fuzzy
+msgid "http://catchthemes.com/themes/"
+msgstr "http://catchthemes.com/themes/"
+
+#: ../inc/theme-options.php:574
 #: ../inc/theme-options.php:575
-msgid "Slider Options"
-msgstr "Opções de configuração do Slider Show"
+#, fuzzy
+msgid "More Themes"
+msgstr "More Themes"
 
-#: ../inc/theme-options.php:579
-msgid "Exclude Slider post from Home page posts:"
-msgstr "Excluir da página inicial (Home), a apresentação em Slide Show."
+#: ../inc/theme-options.php:577
+#, fuzzy
+msgid "http://facebook.com/catchthemes"
+msgstr "http://facebook.com/catchthemes"
 
-#: ../inc/theme-options.php:584
-msgid "Number of Slides"
-msgstr "Escolha o número de Slides!"
-
-#: ../inc/theme-options.php:590
-msgid "Featured Col #"
-msgstr "Destaque Col #"
-
-#: ../inc/theme-options.php:592
-msgid "Click Here To Edit"
-msgstr "Clique aqui para editar"
-
-#: ../inc/theme-options.php:598
-msgid "<strong>Note</strong>: Here you add in Post IDs which displays on Homepage Featured Slider."
-msgstr "<strong>Nota:</strong> aqui você pode colocar as identificações dos artigos postados, as IDs dos posts, para que sejam exibidos em Slide Show na página inicial!<br/><strong>Importante:</strong> Lembre-se de clicar em <strong>\"Salvar Alterações\"</strong>, sempre que incluir ou alterar algum link nesta página!"
-
-#: ../inc/theme-options.php:599
-#: ../inc/theme-options.php:645
-#: ../inc/theme-options.php:769
-#: ../inc/theme-options.php:829
-#: ../inc/theme-options.php:854
-msgid "Save"
-msgstr "Salvar Alterações"
-
-#: ../inc/theme-options.php:603
-msgid "Slider Effect Options"
-msgstr "Configure aqui as opções de efeitos do Slider Show"
-
-#: ../inc/theme-options.php:608
-msgid "Transition Effect:"
-msgstr "Escolha o efeito de transição:"
-
-#: ../inc/theme-options.php:613
-msgid "fade"
-msgstr "Efeito desaparecer gradualmente"
-
-#: ../inc/theme-options.php:614
-msgid "wipe"
-msgstr "Efeito limpar"
-
-#: ../inc/theme-options.php:615
-msgid "scrollUp"
-msgstr "Efeito rolar para cima"
-
-#: ../inc/theme-options.php:616
-msgid "scrollDown"
-msgstr "Efeito rolar para baixo"
-
-#: ../inc/theme-options.php:617
-msgid "scrollLeft"
-msgstr "Efeito rolar para a esquerda"
-
-#: ../inc/theme-options.php:618
-msgid "scrollRight"
-msgstr "Efeito rolar para a direita"
-
-#: ../inc/theme-options.php:619
-msgid "blindX"
-msgstr "Efeito persiana no eixo X"
-
-#: ../inc/theme-options.php:620
-msgid "blindY"
-msgstr "Efeito persiana no eixo Y"
-
-#: ../inc/theme-options.php:621
-msgid "blindZ"
-msgstr "Efeito persiana no eixo Z"
-
-#: ../inc/theme-options.php:622
-msgid "cover"
-msgstr "Efeito sobrepor"
-
-#: ../inc/theme-options.php:623
-msgid "shuffle"
-msgstr "Efeito micelânia"
-
-#: ../inc/theme-options.php:629
-msgid "Transition Delay"
-msgstr "Regular o tempo de exposição do Slide, para leitura do texto."
-
-#: ../inc/theme-options.php:632
-#: ../inc/theme-options.php:641
-msgid "second(s)"
-msgstr "segundo(s)<br/>Exemplo: de 0.1 a 0.9 ou 1 ou 2 ou 7 ou 15 ou 23  ... o número é para sua livre escolha!<br/>Teste qualquer número e escolha o que fique melhor para a visualização!"
-
-#: ../inc/theme-options.php:638
-msgid "Transition Length"
-msgstr "Regular a velocidade da transição entre os Slides."
-
-#: ../inc/theme-options.php:684
+#: ../inc/theme-options.php:577
+#: ../inc/theme-options.php:578
+#: ../inc/theme-options.php:745
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../inc/theme-options.php:689
+#: ../inc/theme-options.php:580
+#, fuzzy
+msgid "http://twitter.com/#!/catchthemes"
+msgstr "http://twitter.com/#!/catchthemes"
+
+#: ../inc/theme-options.php:580
+#, fuzzy
+msgid "Twiiter"
+msgstr "Twitter"
+
+#: ../inc/theme-options.php:581
+#: ../inc/theme-options.php:750
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../inc/theme-options.php:695
+#: ../inc/theme-options.php:583
+#, fuzzy
+msgid "http://catchthemes.com/donate/"
+msgstr "http://catchthemes.com/donate/"
+
+#: ../inc/theme-options.php:583
+#: ../inc/theme-options.php:584
+msgid "Donate Now"
+msgstr "Donate Now"
+
+#: ../inc/theme-options.php:631
+#: ../inc/theme-options.php:739
+#: ../inc/theme-options.php:864
+msgid "Settings saved."
+msgstr "Configurações Salvas."
+
+#: ../inc/theme-options.php:635
+msgid "Slider Options"
+msgstr "Opções de configuração do Slider Show"
+
+#: ../inc/theme-options.php:639
+msgid "Exclude Slider post from Home page posts:"
+msgstr "Excluir da página inicial (Home), a apresentação em Slide Show."
+
+#: ../inc/theme-options.php:641
+msgid "Check to disable"
+msgstr ""
+
+#: ../inc/theme-options.php:644
+msgid "Number of Slides"
+msgstr "Escolha o número de Slides!"
+
+#: ../inc/theme-options.php:650
+msgid "Featured Col #"
+msgstr "Destaque Col #"
+
+#: ../inc/theme-options.php:652
+msgid "Click Here To Edit"
+msgstr "Clique aqui para editar"
+
+#: ../inc/theme-options.php:658
+msgid "<strong>Note</strong>: Here you add in Post IDs which displays on Homepage Featured Slider."
+msgstr "<strong>Nota:</strong> aqui você pode colocar as identificações dos artigos postados, as IDs dos posts, para que sejam exibidos em Slide Show na página inicial!<br/><strong>Importante:</strong> Lembre-se de clicar em <strong>\"Salvar Alterações\"</strong>, sempre que incluir ou alterar algum link nesta página!"
+
+#: ../inc/theme-options.php:659
+#: ../inc/theme-options.php:705
+#: ../inc/theme-options.php:830
+#: ../inc/theme-options.php:891
+#: ../inc/theme-options.php:916
+msgid "Save"
+msgstr "Salvar Alterações"
+
+#: ../inc/theme-options.php:663
+msgid "Slider Effect Options"
+msgstr "Configure aqui as opções de efeitos do Slider Show"
+
+#: ../inc/theme-options.php:668
+msgid "Transition Effect:"
+msgstr "Escolha o efeito de transição:"
+
+#: ../inc/theme-options.php:673
+msgid "fade"
+msgstr "Efeito desaparecer gradualmente"
+
+#: ../inc/theme-options.php:674
+msgid "wipe"
+msgstr "Efeito limpar"
+
+#: ../inc/theme-options.php:675
+msgid "scrollUp"
+msgstr "Efeito rolar para cima"
+
+#: ../inc/theme-options.php:676
+msgid "scrollDown"
+msgstr "Efeito rolar para baixo"
+
+#: ../inc/theme-options.php:677
+msgid "scrollLeft"
+msgstr "Efeito rolar para a esquerda"
+
+#: ../inc/theme-options.php:678
+msgid "scrollRight"
+msgstr "Efeito rolar para a direita"
+
+#: ../inc/theme-options.php:679
+msgid "blindX"
+msgstr "Efeito persiana no eixo X"
+
+#: ../inc/theme-options.php:680
+msgid "blindY"
+msgstr "Efeito persiana no eixo Y"
+
+#: ../inc/theme-options.php:681
+msgid "blindZ"
+msgstr "Efeito persiana no eixo Z"
+
+#: ../inc/theme-options.php:682
+msgid "cover"
+msgstr "Efeito sobrepor"
+
+#: ../inc/theme-options.php:683
+msgid "shuffle"
+msgstr "Efeito micelânia"
+
+#: ../inc/theme-options.php:689
+msgid "Transition Delay"
+msgstr "Regular o tempo de exposição do Slide, para leitura do texto."
+
+#: ../inc/theme-options.php:692
+#: ../inc/theme-options.php:701
+msgid "second(s)"
+msgstr "segundo(s)<br/>Exemplo: de 0.1 a 0.9 ou 1 ou 2 ou 7 ou 15 ou 23  ... o número é para sua livre escolha!<br/>Teste qualquer número e escolha o que fique melhor para a visualização!"
+
+#: ../inc/theme-options.php:698
+msgid "Transition Length"
+msgstr "Regular a velocidade da transição entre os Slides."
+
+#: ../inc/theme-options.php:756
 msgid "Google +"
 msgstr "Google +"
 
-#: ../inc/theme-options.php:701
+#: ../inc/theme-options.php:762
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: ../inc/theme-options.php:707
+#: ../inc/theme-options.php:768
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../inc/theme-options.php:713
+#: ../inc/theme-options.php:774
 msgid "Youtube"
 msgstr "Youtube"
 
-#: ../inc/theme-options.php:719
+#: ../inc/theme-options.php:780
 msgid "RSS Feed"
 msgstr "RSS Feed"
 
-#: ../inc/theme-options.php:725
+#: ../inc/theme-options.php:786
 msgid "Deviantart"
 msgstr "Deviantart"
 
-#: ../inc/theme-options.php:731
+#: ../inc/theme-options.php:792
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/theme-options.php:737
+#: ../inc/theme-options.php:798
 msgid "Viemo"
 msgstr "Vimeo"
 
-#: ../inc/theme-options.php:743
+#: ../inc/theme-options.php:804
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../inc/theme-options.php:749
+#: ../inc/theme-options.php:810
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../inc/theme-options.php:755
+#: ../inc/theme-options.php:816
 msgid "Aim"
 msgstr "Aim"
 
-#: ../inc/theme-options.php:761
+#: ../inc/theme-options.php:822
 msgid "Flicker"
 msgstr "Flicker"
 
-#: ../inc/theme-options.php:768
+#: ../inc/theme-options.php:829
 msgid "<strong>Note:</strong> Enter the url for correponding social networking website"
 msgstr "<strong>Nota:</strong> Digite acima o url da  Rede Social, a qual você é cadastrado, que corresponda ao seu perfil ou página nessa Rede Social, disponibilizando assim, o local onde todos podem lhe encontrar e também interagir com Você!<br/><strong>Importante:</strong> Lembre-se de clicar em <strong>\"Salvar Alterações\"</strong>, sempre que incluir ou alterar algum link nesta página!"
 
-#: ../inc/theme-options.php:806
+#: ../inc/theme-options.php:868
 msgid "Webmaster Site Verification IDs"
 msgstr "Webmaster: IDs para a verificação do seu Website."
 
-#: ../inc/theme-options.php:811
+#: ../inc/theme-options.php:873
 msgid "Google Site Verification ID"
 msgstr "ID do <strong>Google</strong> para a Verificação do seu Website"
 
-#: ../inc/theme-options.php:812
+#: ../inc/theme-options.php:874
 msgid "Enter your Google ID number only"
 msgstr "Digite somente o seu número de ID do Google."
 
-#: ../inc/theme-options.php:817
+#: ../inc/theme-options.php:879
 msgid "Yahoo Site Verification ID"
 msgstr "ID do <strong>Yahoo</strong> para a Verificação do seu Website"
 
-#: ../inc/theme-options.php:818
+#: ../inc/theme-options.php:880
 msgid "Enter your Yahoo ID number only"
 msgstr "Digite somente o seu número de ID do Yahoo."
 
-#: ../inc/theme-options.php:823
+#: ../inc/theme-options.php:885
 msgid "Bing Site Verification ID"
 msgstr "ID do <strong>Bing</strong> para a Verificação do seu Website"
 
-#: ../inc/theme-options.php:824
+#: ../inc/theme-options.php:886
 msgid "Enter your Bing ID number only"
 msgstr "Digite somente o seu número de ID do Bing."
 
-#: ../inc/theme-options.php:833
+#: ../inc/theme-options.php:895
 msgid "Webmaster Site Verification Code"
 msgstr "Webmaster: Código para a análize e estatistica do seu Website."
 
-#: ../inc/theme-options.php:838
+#: ../inc/theme-options.php:900
 msgid "Analytics, site stats Header code"
 msgstr "Analytics, disponibilize aqui o código para ser inserido no <strong>Cabeçalho (Header)</strong>, que fará a análize das estatisticas do Website."
 
-#: ../inc/theme-options.php:846
+#: ../inc/theme-options.php:908
 msgid "Analytics, site stats footer code"
 msgstr "Analytics, disponibilize aqui o código para ser inserido no <strong>Rodapé (Footer)</strong>, que fará a análize das estatisticas do Website."
 
@@ -1000,8 +1059,8 @@ msgstr "Texto alternativo (alt text):"
 #~ "propaganda relacionada ao assunto do seu website ou blog, e <strong>10-</"
 #~ "strong> Suporte aos plugins mais populares utilizados no WordPress. E "
 #~ "agora, um presente para você! O Tema <strong>Catch Box</strong> está "
-#~ "traduzido para os seguintes idiomas: para o Português do Brasil, "
-#~ "Espanhol e Dinamarquês."
+#~ "traduzido para os seguintes idiomas: para o Português do Brasil, Espanhol "
+#~ "e Dinamarquês."
 
 #~ msgid "Catch Themes Team"
 #~ msgstr "Equipe Catch Themes"
