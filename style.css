@@ -1,9 +1,9 @@
 /*
 Theme Name: Commodore
-Description: HTML5 and CSS3 Theme in the style of the good old Commodore 64.
+Description: Simple and lightweight theme in the style of the good old Commodore 64. The search box has been modified - just type and press Return to search - classic blinking cursor included!
 Author: United Networks
-Version: 1.1
-Tags: blue, light, two-columns, one-column, right-sidebar
+Version: 1.2
+Tags: blue, light, two-columns, one-column, right-sidebar, fixed-width, custom-menu
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Theme URI: http://unitednetworksonline.com/themes/commodore/
@@ -103,16 +103,13 @@ position: relative;
 float: left;
 }
 #cursor {
-    /*position:absolute;
-*/
     background:#A6A1FF;
     width:19px;
     height:19px;
     font-size:1px;
     position: relative;
-    margin-left: 1px;
-display:inline-block;
-vertical-align:top;
+    display:inline-block;
+    vertical-align:top;
 }
 section {
 display: block;

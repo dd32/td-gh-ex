@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
-<html >
-<html <?php language_attributes(); ?> xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml" itemscope itemtype="http://schema.org/Article">
+<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
 	<head>
 
 		<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
@@ -13,8 +12,6 @@
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
 		<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
-
-    <?php if (!is_admin()) { wp_enqueue_script('html5_shim'); } ?>
 
 		<?php wp_head(); ?>
 
@@ -44,6 +41,7 @@
 </script>
 	</head>
 	<body onload="flipcursor(0);initWrite();" <?php body_class(); ?>>
+
 <div id="container">
   		<header class="header">
   			<h1>**** <a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a> ****</h1>

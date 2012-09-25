@@ -21,11 +21,15 @@
 		</div>
 
 	<?php else : ?>
-
+		<h2>READY.<br><?php the_search_query(); ?></h2>
 		<h2 class="center">?SYNTAX&nbsp;&nbsp;ERROR<br>READY.</h2>
-		<?php //get_search_form(); ?>
-
 	<?php endif; ?>
+<?php if(is_active_widget(false,false,'search')){
+	//echo "Active Search Widget"; //We don't need to place the search box here, since we have already into the sidebar.
+}else{
+	get_search_form();
+}
+?>
 
 	</article>
 
