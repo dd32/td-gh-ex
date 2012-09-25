@@ -2,7 +2,7 @@
 Theme Name: QuickChic
 Theme URI: http://www.quickonlinetips.com/archives/quickchic/
 Description: 2-columns clean, lightweight, minimalistic, widget ready, SEO optimized, fast loading, easy to customize WordPress theme.
-Version: 1.3.4
+Version: 1.3.5
 Author: QuickOnlineTips
 Author URI: http://www.quickonlinetips.com/archives/wordpress-themes/
 Tags: white, pink, light, two-columns, right-sidebar, fixed-width, threaded-comments, sticky-post
@@ -11,12 +11,13 @@ License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
 /* Begin Typography & Colors 
 ------------------------------------- */
 body {
 	font-size: 75%;  
-        font-family: arial, sans serif;
+        font-family: 'Open Sans', arial, sans serif;
 	background: #fff;
 	color: #333;
         border-top: 10px solid #C32364;
@@ -59,7 +60,8 @@ small {
 	}
 
 h1, h2, h3, h4 {
-	font-weight: bold;	
+	font-weight: bold;
+	font-family: arial, sans serif;	
 	}
 
 #content h1 {
@@ -83,6 +85,7 @@ h1, h2, h3, h4 {
   	font-weight: bold; 
         margin: 10px 0 0 0;
         padding: 0;
+	font-family: arial, sans serif;
 	}
  
  
@@ -231,10 +234,10 @@ a:hover {
 
 
 .sticky {
-        background: #f9f9f9 !important; 
-        padding: 5px 10px;
+        background: #F6F6F6 !important; 
+        padding: 1px 20px;
         margin: 10px 0;
-        border: 1px solid #DDD;
+        border: 0px solid #DDD;
         border-radius: 8px; 
         -moz-border-radius: 8px;
         }
@@ -318,7 +321,7 @@ body {
 	padding: 5px 0;
 	text-align: center;
 	} 
-
+ 
 
 /*	Begin Headers
 ------------------------------------- */
@@ -341,7 +344,7 @@ h2.pagetitle, h2.pagetitle {
 	}
 
 #sidebar h4 {
-	margin: 10px 0 0;
+	margin: 25px 0 0;
 	padding: 0;
 	}
 
@@ -486,10 +489,10 @@ ol li, #sidebar ul ol li {
    cursor:pointer;
    background:#C32364;
    color:#fff;
-   padding: 4px 7px; 
-   border-radius:8px;
+   padding: 4px 7px;  
+   border-radius: 5px;
    text-transform:uppercase;
-   -moz-border-radius: 8px;
+   -moz-border-radius: 5px;
 	}
 
 .screen-reader-text {display: none;}
@@ -582,36 +585,74 @@ img.avatar {
         vertical-align:middle;
         }
 
-#respond {margin-bottom: 20px;} 
-#reply-title a {color: #C32364 !important;}
+#respond {
+	margin-bottom: 20px;
+	} 
+#reply-title a {
+	color: #C32364 !important;
+	}
 
-.bypostauthor {background: #FFF8FE !important; }
+.bypostauthor {
+	background: #FFF8FE !important; 
+	}
 
-ol.commentlist li div.comment-meta { font-size:9px; margin-bottom:10px; }
-ol.commentlist li div.comment-meta a { color:#999 !important; }
-ol.commentlist li div.comment-meta a:hover { color:#06c !important;  text-decoration:underline; }
-ol.commentlist li p { font-size:1em; margin:0 0 1em; }
+ol.commentlist li div.comment-meta { 
+	font-size:9px; margin-bottom:10px; 
+	}
+ol.commentlist li div.comment-meta a { 
+	color:#999 !important; }
+ol.commentlist li div.comment-meta a:hover { 
+	color:#06c !important;  text-decoration:underline;
+ 	}
+ol.commentlist li p {
+	 font-size:1em; margin:0 0 1em;
+	 }
 
-ol.commentlist li ul { font-size:1em; margin:0; }
-ol.commentlist li ul li { font-size:1em; list-style:square;margin:0; }
-ol.commentlist li ol li { font-size:1em; margin:0;list-style:upper-roman; }
+ol.commentlist li ul { 
+	font-size:1em; margin:0;
+ 	}
+ol.commentlist li ul li {
+	 font-size:1em; list-style:square;margin:0; 
+	}
+ol.commentlist li ol li {
+	 font-size:1em; margin:0;list-style:upper-roman;
+	 }
 
-ol.commentlist li div.reply { font-size:1em; } 
-ol.commentlist li div.reply a { text-decoration:none; padding: 5px;} 
-ol.commentlist li ul.children { list-style:none; margin:1em 0 0; text-indent:0; }
-ol.commentlist { list-style:none; margin:0 0 1em; padding:0; text-indent:0; }
+ol.commentlist li div.reply {
+ 	font-size:1em; 
+	} 
+ol.commentlist li div.reply a {
+	 text-decoration:none; padding: 5px;
+	} 
+ol.commentlist li ul.children {
+	 list-style:none; margin:1em 0 0; text-indent:0;
+	 }
+ol.commentlist {
+ 	list-style:none; margin:0 0 1em; padding:0; text-indent:0;
+ 	}
 
 ol.commentlist li.comment { 
         border:1px solid #d5d5d5; 
         padding:1em; 
         border-radius: 8px; 
-        -moz-border-radius: 8px; }
+        -moz-border-radius: 8px;
+ }
 
-ol.commentlist li.even { background:#fff; }
-ol.commentlist li.odd { background:#f9f9f9; }
-ol.commentlist li ul.children li.depth-2 {list-style:none; border-left:1px solid #ccc; margin:0 0 .25em .25em; }
-ol.commentlist li ul.children li.depth-3 {list-style:none; border-left:1px solid #ccc; margin:0 0 .25em .25em; }
-ol.commentlist li ul.children li.depth-4 {list-style:none; border-left:1px solid #ccc; margin:0 0 .25em .25em; }
+ol.commentlist li.even { 
+	background:#fff;
+ 	}
+ol.commentlist li.odd {
+	 background:#f9f9f9; 
+	}
+ol.commentlist li ul.children li.depth-2 {
+	list-style:none; border-left:1px solid #ccc; margin:0 0 .25em .25em; 
+	}
+ol.commentlist li ul.children li.depth-3 {
+	list-style:none; border-left:1px solid #ccc; margin:0 0 .25em .25em;
+	 }
+ol.commentlist li ul.children li.depth-4 {
+	list-style:none; border-left:1px solid #ccc; margin:0 0 .25em .25em;
+	 }
 
 .commentlist table td {
 	background: #FFF;
