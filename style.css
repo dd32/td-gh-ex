@@ -1,33 +1,33 @@
 /*  
 Theme Name: QuickPic
 Theme URI: http://www.quickonlinetips.com/archives/quickpic/
-Description: 1-column photoblogging theme, widget ready, fast loading, SEO optimized, easy to customize by <a href="http://www.quickonlinetips.com/">Quick Online Tips</a>.
-Version: 1.3.1
-Author: Quick Online Tips
-Author URI: http://www.quickonlinetips.com/
-Tags: fixed-width, one-column, white, photoblogging, threaded-comments, sticky-post
-.
+Description: 1-column, lightweight, widget ready, fast loading, SEO optimized, easy to customize theme, useful for photoblogging.
+Version: 1.3.10
+Author: QuickOnlineTips
+Author URI: http://www.quickonlinetips.com/archives/wordpress-themes/
+Tags: green, gray, dark, white, fixed-width, one-column, threaded-comments, sticky-post, photoblogging
+
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-.
 */
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
 
 /* Begin Typography & Colors 
 ------------------------------------- */
 body {
 	font-size: 75%;  
-	font-family: Georgia, "Times New Roman", Times, serif;  
-	background: #666;
-	color: #333;
-	text-align: center;
+        font-family: 'Open Sans', arial, sans-serif;
+	background: #444;
+	color: #000; 
 	}
 
 #navbar {
 	font-family: Arial, Helvetica, Sans-Serif;
 	font-size: 1.2em;
 	line-height: 1.3em;
-        background: #ddd;
+        background: #DDD;
         padding: 7px;
         margin: 0 0 20px 0;
         color: #666; 
@@ -66,7 +66,6 @@ body {
 	} 
 
 .narrowcolumn .postmetadata {
-	text-align: center;
 	}
 
 .alt {
@@ -84,7 +83,7 @@ small {
 	}
 
 h1, h2, h3, h4 {
-        font-family: 'PT Serif Caption', arial, serif; 
+        font-family: arial, sans-serif;
 	font-weight: bold;
 	}
 
@@ -104,7 +103,7 @@ h1, h2, h3, h4 {
 	}
 
 .blogtitle {
-	font-family: 'PT Serif Caption', arial, serif; 
+        font-family: arial, sans-serif;
         font-size: 2.8em !important; 
 	text-align: center;
  	font-weight: bold; 
@@ -129,7 +128,7 @@ h2.pagetitle {
 	}
 
 #bottombox h2 { 
-	font-family: Arial, Helvetica, Sans-Serif;
+	font-family: Arial, Sans-Serif;
 	font-size: 1.2em;
 	}
  
@@ -195,7 +194,7 @@ small, #sidebar ul ul li, #sidebar ul ol li, .nocomments, .postmetadata, blockqu
 
 pre  {  
    font: 1em 'Courier New', Courier, Fixed;
-   color: #008000;
+   color: #666;
    background: #F8F8F8;
    padding: 5px;
    line-height:1.5em;
@@ -211,7 +210,7 @@ pre  {
 
 code  {
    font: 1.1em 'Courier New', Courier, Fixed;
-   color: #008000;
+   color: #666;
    padding: 0 2px;
    background: #fff; 
    line-height:1.5em;
@@ -224,8 +223,7 @@ acronym, abbr, span.caps {
 	}
 
 a, a:visited, h2 a:hover, h3 a:hover {
-	color: #0066cc;
-        font-weight:bold;
+	color: #088000; 
 	text-decoration: none;
 	}
 
@@ -234,17 +232,21 @@ a:hover {
 	}
  
 .sticky {
-        background: #FFF8DC !important; 
-        padding: 15px;
+        background: #f9f9f9 !important; 
+        padding: 1px 20px !important;
         margin: 10px 0;
+        border: 1px solid #DDD;
+        border-radius: 8px; 
+        -moz-border-radius: 8px;
         }
 
 
 #bottombox a { 
-        color: #CCC;
+        color: #DDD;
         font-weight:bold;
 	text-decoration: none;
-	}
+	text-shadow: black 0.1em 0.1em;
+         }
 
 #bottombox a:hover { 
 	text-decoration: underline;
@@ -259,9 +261,12 @@ body {
 
 #page {
 	background-color: #fff;
-	margin: 20px auto 0px auto;
+	margin: 20px auto 20px auto;
 	padding: 0;
-	width: 610px; 
+	width: 650px; 
+        border:20px #333 solid;
+        border-radius: 15px; 
+        -moz-border-radius: 15px;
 	}
 
 #header { 
@@ -280,18 +285,17 @@ body {
 	}
 
 .narrowcolumn {
-	float: left;
-	padding: 0 0 20px 45px;
-	margin: 0px 0 0;
-	width: 520px;
+	padding: 0 0 20px 0px;
+	margin: 0px auto;
+	width: 540px;
         background: #fff;
 	} 
 
 .post {
-	margin: 0 0 40px;
-	text-align: justify;
+	margin: 0 0 20px;
+	text-align: left;
         background: #fff;
-        padding: 10px;
+        padding: 10px; 
 	}
 
 .post hr {
@@ -300,6 +304,11 @@ body {
 
 .entry{ 
         border-top: 1px solid #ddd;  
+	overflow:hidden;  
+        }
+
+.entry p { 
+        clear:both;	
         }
 
 .narrowcolumn .postmetadata {
@@ -318,15 +327,14 @@ body {
         font-size: 1.1em;
         line-height: 1.5em;
 	margin: 0 auto ;
-	width: 610px;
+	width: 650px;
 	clear: both;
         background: #333;
 	}
 
 #footer a {  
-	color: #f3f3f3;
-	text-decoration: none;
-        border-bottom: 1px dotted #ccc;
+	color: #FF0;
+	text-decoration: none; 
 	}
 
 #footer a:hover { 
@@ -344,11 +352,11 @@ body {
 /*	Begin Headers
 ------------------------------------- */
 #content h1   {
-	margin: 30px 0 0;
+	margin: 30px 0 5px 0;
 	}
 
 h2 {
-	margin: 10px 0 0;
+	margin: 10px 0 5px 0;
 	}
 
 h2.pagetitle, h2.pagetitle {
@@ -362,11 +370,10 @@ h2.pagetitle, h2.pagetitle {
 	}
 
 #bottombox h4 {
-	margin: 10px 0 0;
+	margin: 20px 0 0;
 	padding: 2px;
         color: #FF0;
-        text-transform:uppercase;
-        border-bottom: 1px dotted #666;       
+        text-transform:uppercase;      
 	}
 
 h3 {
@@ -385,14 +392,20 @@ h3.comments {
 ------------------------------------- */
 p img {
 	padding: 0;
-	max-width: 100%;
+        max-width: 100%;
 	}
  
 .entry img {
         padding:0px;
         margin: 5px 0; 
-        border: 5px solid #ddd;
+        height:auto;
         }
+
+.rssicon {
+	vertical-align:middle;
+	border:0;
+	padding-right:5px;
+	}
 
 img.centered {
 	display: block;
@@ -494,24 +507,52 @@ select {
 	width: 130px;
 	}
 
+#searchform #s {
+	width: 70%;
+	padding: 2px;
+        margin: 15px 0;
+        background: #f3f3f3; 
+        border: 1px solid #999;    
+	}
+
+#searchsubmit {
+   cursor:pointer;
+   border: solid 1px #333;
+   background:#333;
+   color:#fff;
+   font-weight:bold;
+   padding: 5px 7px;
+   border-radius: 10px; 
+  -moz-border-radius: 10px;
+	}
+
+.screen-reader-text {display: none;}
+
 #commentform input {
 	width: 170px;
 	padding: 2px;
 	margin: 5px 5px 1px 0;
-        border: 3px solid #ccc;
+        border: 1px solid #ccc;
 	}
 
 #commentform textarea {
 	width: 100%;
 	padding: 2px;
-        border: 3px solid #ccc;
+        border: 1px solid #ccc;
 	}
 
 #commentform #submit {
-	margin: 0;
-	float: left;
+        background: #005500;
+	padding; 5px;
         font-size: 0.9em;
+        color: #fff;
+        margin: 0; 
+        border: 0px;
+        text-transform:uppercase;
+        border-radius: 8px; 
+        -moz-border-radius: 8px;
 	} 
+ 
 
 /* Begin Comments
 ------------------------------------- */
@@ -558,22 +599,99 @@ img.avatar {
         padding: 0 4px 0 0; 
         vertical-align:middle;
         }
+
+#respond {
+	margin-bottom: 20px;
+	} 
+#reply-title a {
+	color: #088000 !important;
+	}
+
+.bypostauthor {
+	background: #E6FFE2 !important; 
+	}
  
-ol.commentlist li div.comment-meta { font-size:9px; }
-ol.commentlist li div.comment-meta a { color:#999 !important; }
-ol.commentlist li div.comment-meta a:hover { color:#06c !important;  text-decoration:underline; }
-ol.commentlist li p { font-size:1em; margin:0 0 1em; }
-ol.commentlist li ul { font-size:1em; list-style:square; margin:0 0 1em 2em; }
-ol.commentlist li div.reply { font-size:1em; } 
-ol.commentlist li div.reply a { text-decoration:none; background: #f3f3f3; padding: 5px;} 
-ol.commentlist li ul.children { list-style:none; margin:1em 0 0; text-indent:0; }
-ol.commentlist { list-style:none; margin:0 0 1em; padding:0; text-indent:0; }
-ol.commentlist li.comment { border:1px solid #d5d5d5; padding:1em; }
-ol.commentlist li.even { background:#fff; }
-ol.commentlist li.odd { background:#f6f6f6; }
-ol.commentlist li ul.children li.depth-2 { border-left:3px solid #999; margin:0 0 .25em .25em; }
-ol.commentlist li ul.children li.depth-3 { border-left:3px solid #999; margin:0 0 .25em .25em; }
-ol.commentlist li ul.children li.depth-4 { border-left:3px solid #999; margin:0 0 .25em .25em; }
+ol.commentlist li div.comment-meta {
+	 font-size:9px; margin-bottom:10px;
+	}
+ol.commentlist li div.comment-meta a { 
+	color:#999 !important; 
+	}
+ol.commentlist li div.comment-meta a:hover { 
+	color:#06c !important;  text-decoration:underline;
+ 	}
+ol.commentlist li p { 
+	font-size:1em; margin:0 0 1em; 
+	}
+
+ol.commentlist li ul {
+	 font-size:1em; margin:0;
+	 }
+ol.commentlist li ul li {
+	 font-size:1em; list-style:square;margin:0;
+	 }
+ol.commentlist li ol li {
+	 font-size:1em; margin:0;list-style:upper-roman; 
+	}
+
+ol.commentlist li div.reply { 
+	font-size:1em; 
+	} 
+ol.commentlist li div.reply a {
+	 text-decoration:none; padding: 5px;
+	} 
+ol.commentlist li ul.children { 
+	list-style:none; margin:1em 0 0; text-indent:0; 
+	}
+ol.commentlist { 
+	list-style:none; margin:0 0 1em; padding:0; text-indent:0; 
+	}
+
+ol.commentlist li.comment { 
+        border:1px solid #d5d5d5; 
+        padding:1em; 
+        border-radius: 8px; 
+        -moz-border-radius: 8px; 
+	}
+
+ol.commentlist li.even { 
+background:#fff; 
+	}
+ol.commentlist li.odd {
+ background:#f9f9f9; 
+	}
+ol.commentlist li ul.children li.depth-2 {
+	list-style:none; border-left:1px solid #ccc; margin:0 0 .25em .25em; 
+	}
+ol.commentlist li ul.children li.depth-3 {
+	list-style:none; border-left:1px solid #ccc; margin:0 0 .25em .25em;
+ 	}
+ol.commentlist li ul.children li.depth-4 {
+	list-style:none; border-left:1px solid #ccc; margin:0 0 .25em .25em; 
+	}
+
+.commentlist table td {
+	background: #FFF;
+	border: 1px solid #CCC;
+	padding: 10px;
+	}
+
+dl, dt, dd {
+	list-style:none;
+	padding: 0;
+	margin:0
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+  	}
+dt {
+	font-weight:bold; 
+	padding-top:5px;
+	margin-left:40px;
+	}
+dd {
+	padding-bottom: 15px;
+	}
 
 
 /* Begin bottom box
@@ -581,10 +699,10 @@ ol.commentlist li ul.children li.depth-4 { border-left:3px solid #999; margin:0 
 #bottombox {
 	font-family: Arial, Helvetica, Sans-Serif;
 	padding: 10px;
-        margin: 0 0;
+        margin: 15px 0 0 0;
         background: #005500;
         color: #ddd;
-	font-size: 1em; 
+	font-size: 1em;  
         clear: both;
         }
 
@@ -592,28 +710,35 @@ ol.commentlist li ul.children li.depth-4 { border-left:3px solid #999; margin:0 
         text-align: left;
         padding: 5px;
         background: #666;
-        margin: 0 0 5px 0; 
+        margin: 15px 0 15px 0; 
         text-align: center;
+        border-radius: 15px; 
+        -moz-border-radius: 15px;
         }
 
-
+#boxes {
+	width:100%;
+        background:#005500;
+	}
 #box1 {
         padding: 5px;
-        margin:2px;    
+        margin:5px;    
         border: 0px solid #333;
-   }
+        overflow:hidden;       
+   	float:left;
+        width: 400px;
+        background:#005500;
+	}
 
 #box2 {
-        padding: 5px;
-        margin:2px;  
-        border-left: 1px solid #333;
-        }
-
-#box3 {
-        padding: 5px;
-        margin:2px;  
-        border-left: 1px solid #333;
-        }
+        padding: 5px 5px 5px 10px;
+        margin:5px;   
+        border-left: 1px dotted #333;
+        overflow:hidden;       
+	float:right;
+        width: 180px;
+        background:#005500;
+	}
      
 #l_box {
 	width:250px;
@@ -679,6 +804,15 @@ a img {
         font-size: 1em;
 	} 
 
+
+.mainnav a {
+       background: #005500;
+       color:#FFF !important;
+       padding: 10px;
+       border-radius: 8px; 
+       -moz-border-radius: 8px;
+        }
+
 /* Captions 
 ------------------------------------- */
 .aligncenter,
@@ -686,7 +820,7 @@ div.aligncenter {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-}
+	}
 
 .wp-caption {
 	border: 1px solid #ddd;
@@ -694,49 +828,49 @@ div.aligncenter {
 	background-color: #f3f3f3;
 	padding-top: 4px;
 	margin: 10px;
-}
+	}
 
 .wp-caption img {
 	margin: 0;
 	padding: 0;
 	border: 0 none;
-}
+	}
 
 .wp-caption p.wp-caption-text {
 	font-size: 11px;
 	line-height: 17px;
 	padding: 0 4px 5px;
 	margin: 0;
-}
+	}
 
 #content .gallery {
 	margin: 0 auto 18px;
-}
+	}
 #content .gallery .gallery-item {
 	float: left;
 	margin-top: 5px;
 	text-align: center;
 	width: 33%;
-}
+	}
 #content .gallery img {
 	border: 2px solid #cfcfcf;
-}
+	}
 #content .gallery .gallery-caption {
 	color: #888;
 	font-size: 11px;
 	margin: 0 0 12px;
-}
+	}
 #content .gallery dl {
 	margin: 0;
-}
+	}
 #content .gallery img {
-	border: 10px solid #f1f1f1;
-}
+	border: 0px solid #f1f1f1;
+	}
 #content .gallery br+br {
 	display: none;
-}
+	}
 #content .attachment img { /* single attachment images should be centered */
 	display: block;
 	margin: 0 auto;
-}
+	}
 /* End captions */
