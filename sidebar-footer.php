@@ -56,5 +56,4 @@
 					</ul>
 				</div><!-- #fourth .widget-area -->
 <?php endif; ?>
-
 			</div><!-- #footer-widget-area -->

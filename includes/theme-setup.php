@@ -10,7 +10,6 @@
 
 if ( is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" ) {
 	wp_redirect( 'themes.php?page=mantra-page' );
- 
 }
 
  $mantra_totalSize = $mantra_sidebar + $mantra_sidewidth+50;
@@ -209,6 +208,7 @@ add_action ('cryout_access_hook','mantra_main_menu');
   
   add_action ('cryout_footer_hook','mantra_footer_menu',10);
 
+  
 /**
  * Register widgetized areas, including two sidebars and four widget-ready columns in the footer.
  *

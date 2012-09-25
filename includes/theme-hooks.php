@@ -122,4 +122,28 @@ function cryout_after_article_hook() {
     do_action('cryout_after_article_hook');
 }
 
+// After each article title
+function cryout_post_title_hook() {
+    do_action('cryout_post_title_hook');
+}
+
+// After each post meta
+function cryout_post_meta_hook() {
+    do_action('cryout_post_meta_hook');
+}
+
+// Before the actual post content
+function cryout_post_before_content_hook() {
+    do_action('cryout_post_before_content_hook');
+}
+
+// After the actual post content
+function cryout_post_after_content_hook() {
+    do_action('cryout_post_after_content_hook');
+}
+
+// After the actual post content
+function cryout_post_footer_hook() {
+    do_action('cryout_post_footer_hook');
+}
 ?>

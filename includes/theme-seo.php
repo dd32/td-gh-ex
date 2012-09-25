@@ -46,7 +46,7 @@ function mantra_seo_description() {
 				if ($mantra_seo_gen_desc =="Auto") {
 					global $post;
 					$content_post = get_post($post->ID);
-					$content = $content_post->post_content;
+					$content =  strip_shortcodes($content_post->post_content);
 					$content = preg_replace(array('/\s{2,}/', '/[\t\n]/'), ' ', $content);
 					$content = strip_tags($content);
 					$content = str_replace('"','',$content);

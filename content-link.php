@@ -15,7 +15,7 @@
 			<hgroup>
 				<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'mantra' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 			</hgroup>
-
+		<?php cryout_post_title_hook(); ?>
 		<div class="entry-meta2">
 		<h3 class="entry-format"><?php _e( 'Link', 'mantra' ); ?></h3>
 				<?php mantra_posted_on(); ?>
@@ -23,11 +23,12 @@
 			<div class="comments-link">
 				<?php mantra_comments_on(); ?>
 			</div>
-			<?php /* endif; */ ?>
+			<?php /* endif; */ ?><?php
+			cryout_post_meta_hook();  ?>
 			</div><!-- .entry-meta -->
 		</header><!-- .entry-header -->
-
-		<?php if ( is_search() ) : // Only display Excerpts for Search ?>
+		<?php cryout_post_before_content_hook();  
+		?><?php if ( is_search() ) : // Only display Excerpts for Search ?>
 		<div class="entry-summary">
 			<?php the_excerpt(); ?>
 		</div><!-- .entry-summary -->
@@ -36,8 +37,8 @@
 			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'mantra' ) ); ?>
 			<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'mantra' ) . '</span>', 'after' => '</div>' ) ); ?>
 		</div><!-- .entry-content -->
-		<?php endif; ?>
-
+		<?php endif; ?><?php
+		cryout_post_after_content_hook();  ?>
 		<footer class="entry-meta2">
 		<?php	$tag_list = get_the_tag_list( '', ', ' ); 
 if ( $tag_list ) { ?>
@@ -45,6 +46,7 @@ if ( $tag_list ) { ?>
  				<?php } ?>
 			
 			
-			<?php edit_post_link( __( 'Edit', 'mantra' ), '<span class="edit-link">', '</span>' ); ?>
+			<?php edit_post_link( __( 'Edit', 'mantra' ), '<span class="edit-link">', '</span>' ); ?><?php
+			cryout_post_footer_hook();  ?>
 		</footer><!-- #entry-meta -->
 	</article><!-- #post-<?php the_ID(); ?> -->

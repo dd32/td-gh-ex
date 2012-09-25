@@ -61,6 +61,7 @@ function mantra_comment( $comment, $args, $depth ) {
 	endswitch;
 }
 endif;
+
 /**
  * Removes the default styles that are packaged with the Recent Comments widget.
  *
@@ -73,14 +74,17 @@ function mantra_remove_recent_comments_style() {
 	global $wp_widget_factory;
 	remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
 }
+
 add_action( 'widgets_init', 'mantra_remove_recent_comments_style' );
 
+if ( ! function_exists( 'mantra_comments_on' ) ) :
 /**
  * Number of comments on loop post if comments are enabled.
  */
 function mantra_comments_on() {
 printf ( comments_popup_link( __( 'Leave a comment', 'mantra' ), __( '<b>1</b> Comment', 'mantra' ), __( '<b>%</b> Comments', 'mantra' ) ));
 }
+endif;
 
 /**
  * The number of comments title
@@ -105,6 +109,7 @@ if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are t
 			</div> <!-- .navigation -->
 <?php endif; // check for comment navigation 
 }
+
 add_action('cryout_before_comments_hook','mantra_comments_navigation');
 add_action('cryout_after_comments_hook','mantra_comments_navigation');
 
@@ -120,6 +125,7 @@ add_action('cryout_after_comments_hook','mantra_comments_navigation');
 function mantra_list_comments() {	
 					wp_list_comments( array( 'callback' => 'mantra_comment' ) );
 			}
+
 add_action('cryout_comments_hook','mantra_list_comments');	
 
 /*
@@ -130,6 +136,8 @@ if ( ! comments_open() ) : ?>
 	<p class="nocomments"><?php _e( 'Comments are closed.', 'mantra' ); ?></p>
 <?php endif; // end ! comments_open() 
 }
+
+
 add_action('cryout_nocomments_hook','mantra_comments_off');
 
 ?>

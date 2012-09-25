@@ -7,6 +7,7 @@
 		float:none !important;
 		margin:0 20px !important;
 		width:98% !important;
+		height:auto !important;
 	}
 	#access {width:100%;}
 	#wrapper, #colophon, #branding, #main, article.post, #container, #linky {
@@ -29,6 +30,7 @@
  	}
 	#primary, #secondary {
 		width:100% !important;
+		height:auto !important;
 	}
 	.slider-wrapper { 
 	width:95%;

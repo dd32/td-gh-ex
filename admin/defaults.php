@@ -110,8 +110,8 @@ $mantra_defaults = array(
 
 "mantra_contentbg" => "#FFFFFF",
 "mantra_menubg" => "#FAFAFA",
-"mantra_s1bg" => "#FFFFFF",
-"mantra_s2bg" => "#FFFFFF",
+"mantra_s1bg" => "",
+"mantra_s2bg" => "",
 "mantra_backcolor" => "#444444",
 "mantra_headercolor" => "#333333",
 "mantra_prefootercolor" => "#222222",

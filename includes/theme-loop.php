@@ -5,6 +5,7 @@
  * @subpackage Functions
  */
  
+
  /**
  * Sets the post excerpt length to 40 characters.
  *

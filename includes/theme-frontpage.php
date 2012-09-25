@@ -8,7 +8,7 @@
  */
  
 
- 
+ if ( ! function_exists( 'mantra_frontpage_generator' ) ) :
 // Front page generator
 function mantra_frontpage_generator() {
 $mantra_options= mantra_get_theme_options();
@@ -64,16 +64,16 @@ margin:0 auto;
 #slider{ 
 	max-width:<?php echo $mantra_fpsliderwidth ?>px ;
 	height:<?php echo $mantra_fpsliderheight ?>px ;
-	margin:30px auto 0;
+	margin:30px auto 20px;
 	display:block;
 	float:none;
 	border:<?php echo $mantra_fpsliderborderwidth.'px solid '.$mantra_fpsliderbordercolor; ?>;
 }
 
-#front-text1 h1 , #front-text2 h1{
+#front-text1 h1, #front-text2 h1{
 	display:block;
 	float:none;
-	margin:30px auto;
+	margin:35px auto;
 	text-align:center;
 	font-size:32px;
 	clear:both;
@@ -283,5 +283,5 @@ $i=0;	$j=0;?>
 </div> <!-- frontpage -->
 
  <?php  } // End of mantra_frontpage_generator
-
+endif;
 ?>

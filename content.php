@@ -19,22 +19,23 @@ foreach ($options as $key => $value) {
 				<hgroup>
 					<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'mantra' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 				</hgroup>
-
-			<?php if ( 'post' == get_post_type() ) : ?>
+			<?php cryout_post_title_hook(); 
+			?><?php if ( 'post' == get_post_type() ) : ?>
 			<div class="entry-meta">
 				<?php mantra_posted_on(); ?>
 				<?php /* if ( comments_open() && ! post_password_required() ) :*/ ?>
 			<div class="comments-link">
 				<?php mantra_comments_on(); ?>
 			</div>
-			<?php /* endif; */ ?>
+			<?php /* endif; */ ?><?php 
+			cryout_post_meta_hook();  ?>
 			</div><!-- .entry-meta -->
 			<?php endif; ?>
 
 		
 		</header><!-- .entry-header -->
-
-			<?php if ( is_archive() || is_search() ) : // Display excerpts for archives and search. ?>
+			<?php cryout_post_before_content_hook();  
+			?><?php if ( is_archive() || is_search() ) : // Display excerpts for archives and search. ?>
 			
 						<?php if ($mantra_excerptarchive != "Full Post" ){ ?>
 						<div class="entry-summary">
@@ -64,16 +65,17 @@ foreach ($options as $key => $value) {
 						<?php the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'mantra' ) . '</span>', 'after' => '</div>' ) ); ?>
 						</div><!-- .entry-content --> 
-						<?php }  ?>
+						<?php }  
 
-		<?php endif; ?>
-
+			endif; 
+		 cryout_post_after_content_hook();  ?>
 		<footer class="entry-meta2">
 	<?php	$tag_list = get_the_tag_list( '', ', ' ); 
 if ( $tag_list ) { ?>
 	<span class="bl_tagg"><?php _e( 'Tagged','mantra'); print ' '.$tag_list; ?></span>
  				<?php } ?>
-			<?php edit_post_link( __( 'Edit', 'mantra' ), '<span class="edit-link">', '</span>' ); ?>
+			<?php edit_post_link( __( 'Edit', 'mantra' ), '<span class="edit-link">', '</span>' ); ?><?php
+			cryout_post_footer_hook();  ?>
 		</footer><!-- #entry-meta -->
 
 	</article><!-- #post-<?php the_ID(); ?> -->
