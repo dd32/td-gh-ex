@@ -2,7 +2,7 @@
 Theme Name: QuickPress 
 Theme URI: http://www.quickonlinetips.com/archives/quickpress/
 Description: A lightweight, 2-3 columns, widget ready, SEO optimized, fast loading, easy to customize wordpress theme.
-Version: 1.6.8
+Version: 1.6.9
 Author: QuickOnlineTips
 Author URI: http://www.quickonlinetips.com/archives/wordpress-themes/
 Tags: white, blue, gray, silver, light, two-columns, three-columns, right-sidebar, fixed-width, threaded-comments, sticky-post
@@ -11,14 +11,15 @@ License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
 /* Begin Typography & Colors 
 ------------------------------------- */
 body {
 	font-size: 75%;  
-	font-family: Arial, Sans-Serif; 
-	background: #CCC;
-	color: #111; 
+	font-family: 'Open Sans', Arial, Sans-Serif; 
+	background: #EDE8E2;
+	color: #333; 
 	}
 
 #page {
@@ -215,12 +216,12 @@ acronym, abbr, span.caps {
 	}
 
 a, a:visited, h2 a:hover, h3 a:hover {
-	color: #1E598E;
+	color: #06C;
 	text-decoration: none;
 	}
 
 a:hover {
-	color: #000; 
+	color: #06C; 
 	}
 
 .entry a {
@@ -240,10 +241,9 @@ a:hover {
         }
 
 .sticky {
-        background: #f9f9f9 !important; 
-        padding: 0px 10px;
-        margin: 10px 0;
-        border: 1px solid #DDD;
+        background: #f6f6f6 !important; 
+        padding: 1px 20px;
+	border: 0px solid #DDD;
         border-radius: 8px; 
         -moz-border-radius: 8px;
         }
@@ -260,8 +260,8 @@ body {
 	margin: 0px auto 0;
 	padding: 0;
 	width: 1000px; 
-        border-left:0px solid #14568A; 
-        border-right: 0px solid #14568A; 
+        border-left:1px solid #CCC; 
+        border-right: 1px solid #CCC; 
         border-radius: 5px; 
         -moz-border-radius: 5px;
 	}
@@ -270,8 +270,8 @@ body {
 	background-color: #14568A;
 	margin: 0 -10px  0px -10px; 
 	padding: 15px 30px; 
-        border-radius: 15px; 
-        -moz-border-radius: 15px;
+        border-radius: 10px; 
+        -moz-border-radius: 10px;
 	}
 
 #header a {
@@ -319,7 +319,7 @@ body {
 	margin: 10px 0;
 	text-align: left;
         background: #ffffff; 
-        padding: 0px 10px;
+        padding: 1px 10px;
        	}
 
 .post hr {
@@ -352,8 +352,8 @@ body {
 	margin: 20px -10px 0 -10px;
 	width: 1020px;
 	clear: both;
-        border-radius: 10px; 
-        -moz-border-radius: 10px;
+        border-radius: 5px; 
+        -moz-border-radius: 5px;
 	}
 
 #footer p {
@@ -364,11 +364,13 @@ body {
 
 #footer a {
 	color: #FFF;
-        text-decoration: none; 	
+        text-decoration: none;
+        border-bottom: 1px dotted #CCC; 	
         }
 
 #footer a:hover {
 	color: #ccc; 
+        border-bottom: 0px dotted #CCC; 
 	} 
 
 
@@ -393,12 +395,14 @@ h2.pagetitle, h2.pagetitle {
 	}
 
 #sidebar h4 {
-	margin:  15px 0 5px 0;
-	padding: 5px;
+	margin:  20px 0 5px 0;
+	padding: 10px;
         color: #C32364;
-        background: #f9f9f9; 
-        border-bottom: 1px solid #DDD;
+        background: #f2f2f2; 
+        border: 0px solid #DDD;
         text-transform:uppercase;  
+        border-radius: 5px; 
+        -moz-border-radius: 5px;
 	}
 
 h3 {
@@ -525,8 +529,6 @@ ol li, #sidebar ul ol li {
 	} 
 
 
-
-
 /* Begin Form Elements
 ------------------------------------- */
 
@@ -539,7 +541,7 @@ ol li, #sidebar ul ol li {
 #searchsubmit {
    cursor:pointer;
    border: solid 1px #333;
-   background:#000;
+   background:#999;
    color:#fff;
    font-weight:bold;
    padding: 4px;
@@ -563,8 +565,7 @@ select {
    background:#ddd;
    color:#333; 
    padding: 1px 2px;
-}
-
+	}
 
 #commentform input {
 	width: 170px;
@@ -586,7 +587,6 @@ select {
 	    clear: both; 
 	    visibility: hidden;
 	}
-
 
 #commentform #submit {
         background: #666;
@@ -651,24 +651,61 @@ img.avatar {
         vertical-align:middle;
         }
 
-#respond {margin-bottom: 20px;} 
-#reply-title a {color: #06c !important;}
+#respond {
+	margin-bottom: 20px;
+	} 
 
-.bypostauthor {background: #FFFFEF !important; }
+#reply-title a {
+	color: #06c !important;
+	}
+
+.bypostauthor {
+	background: #FFFFEF !important;
+	 }
  
-ol.commentlist li div.comment-meta { font-size:9px; margin-bottom:10px; }
-ol.commentlist li div.comment-meta a { color:#999 !important; }
-ol.commentlist li div.comment-meta a:hover { color:#06c !important;  text-decoration:underline; }
-ol.commentlist li p { font-size:1em; margin:0 0 1em; }
+ol.commentlist li div.comment-meta { 
+	font-size:9px; margin-bottom:10px; 
+	}
 
-ol.commentlist li ul { font-size:1em; margin:0; }
-ol.commentlist li ul li { font-size:1em; list-style:square;margin:0; }
-ol.commentlist li ol li { font-size:1em; margin:0;list-style:upper-roman; }
+ol.commentlist li div.comment-meta a { 
+	color:#999 !important;
+	 }
 
-ol.commentlist li div.reply { font-size:1em; } 
-ol.commentlist li div.reply a { text-decoration:none; background: #FFF; padding: 5px;} 
-ol.commentlist li ul.children { list-style:none; margin:1em 0 0; text-indent:0; }
-ol.commentlist { list-style:none; margin:0 0 1em; padding:0; text-indent:0; }
+ol.commentlist li div.comment-meta a:hover { 
+	color:#06c !important;  text-decoration:underline; 
+	}
+
+ol.commentlist li p { 
+	font-size:1em; margin:0 0 1em;
+	 }
+
+ol.commentlist li ul {
+	font-size:1em; margin:0; 
+	}
+
+ol.commentlist li ul li {
+	font-size:1em; list-style:square;margin:0;
+	 }
+
+ol.commentlist li ol li { 
+	font-size:1em; margin:0;list-style:upper-roman;
+	 }
+
+ol.commentlist li div.reply { 
+	font-size:1em; 
+	} 
+
+ol.commentlist li div.reply a {
+	text-decoration:none; background: #FFF; padding: 5px;
+	} 
+
+ol.commentlist li ul.children { 
+	list-style:none; margin:1em 0 0; text-indent:0; 
+	}
+
+ol.commentlist { 
+	list-style:none; margin:0 0 1em; padding:0; text-indent:0; 
+	}
 
 ol.commentlist li.comment { 
         border:1px solid #d5d5d5; 
@@ -676,11 +713,25 @@ ol.commentlist li.comment {
         border-radius: 8px; 
         -moz-border-radius: 8px; }
 
-ol.commentlist li.even { background:#fff; }
-ol.commentlist li.odd { background:#f9f9f9; }
-ol.commentlist li ul.children li.depth-2 {list-style:none; border-left:1px solid #ccc; margin:0 0 .25em .25em; }
-ol.commentlist li ul.children li.depth-3 {list-style:none; border-left:1px solid #ccc; margin:0 0 .25em .25em; }
-ol.commentlist li ul.children li.depth-4 {list-style:none; border-left:1px solid #ccc; margin:0 0 .25em .25em; }
+ol.commentlist li.even { 
+	background:#fff; 
+	}
+
+ol.commentlist li.odd { 
+	background:#f9f9f9;
+	 }
+
+ol.commentlist li ul.children li.depth-2 {
+	list-style:none; border-left:1px solid #ccc; margin:0 0 .25em .25em; 
+	}
+
+ol.commentlist li ul.children li.depth-3 {
+	list-style:none; border-left:1px solid #ccc; margin:0 0 .25em .25em;
+	 }
+
+ol.commentlist li ul.children li.depth-4 {
+	list-style:none; border-left:1px solid #ccc; margin:0 0 .25em .25em; 
+	}
 
 .commentlist table td {
 	background: #FFF;

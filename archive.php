@@ -25,9 +25,6 @@
 		<h2 class="pagetitle">Blog Archives</h2>
  	  <?php } ?>
 
-
-		 
-
 		<?php while (have_posts()) : the_post(); ?>
 			<div <?php post_class() ?>>
 				<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
@@ -37,24 +34,17 @@
 					<?php the_content() ?>
    <?php the_tags( '<p>Tags: ', ', ', '</p>'); ?>
 				</div>
- 
-
-			</div>
+ 			</div>
 
 		<?php endwhile; ?>
-
 		<div class="navigation">
 			<div class="alignleft mainnav"><?php next_posts_link('&laquo; Older Entries') ?></div>
 			<div class="alignright mainnav"><?php previous_posts_link('Newer Entries &raquo;') ?></div>
 		</div>
 
 	<?php else : ?>
-
 		<h2 class="center">Not Found</h2>
-		 
-
-	<?php endif; ?>
-
+		 <?php endif; ?>
 	</div>
 
 <?php get_sidebar(); ?>
