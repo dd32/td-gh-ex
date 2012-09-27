@@ -6,10 +6,6 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_uri(); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<!--[if lte IE 9]><style type="text/css">#header h1 i{bottom:.6em;}</style><![endif]-->
-<!--[if lte IE 8]><style type="text/css">#center{width:1000px;}</style><![endif]-->
-<!--[if lte IE 7]><style type="text/css">#header{padding:0 auto;}#header ul {padding-left:1.5em;}#header ul li{float:left;}</style><![endif]-->
-<!--[if lte IE 6]><style type="text/css">#center{width:800px;}#banner{background:none;}.overlay{display:none;}.browsing li {width:47%;margin:1%;}#footer{background-color:#111);}</style><![endif]-->
 
 <!-- Begin WordPress Header -->
 <?php wp_head(); ?>
@@ -38,18 +34,35 @@
 <div id="white">
 <div id="center">
 <div id="floatfix">
-
 <?php $semperfi_404 = false;/* A 404 Error check */?> 
 <?php if (is_search()) : ?>
 <!-- Searching Code -->
-    Your search for <?php /* Search Count */ $allsearch = &new WP_Query("s=$s&showposts=-1"); $key = esc_html($s, 1); $count = $allsearch->post_count; ''; '"<span class="search-terms">'; echo $key; '</span>"'; ' resulted in '; echo $count . ' '; 'articles found.'; wp_reset_query(); ?>
-    <?php while (have_posts()) : the_post(); ?>
-    <?php the_post_thumbnail('page-thumbnail'); ?>
-    <?php the_excerpt(); ?>
-    <?php endwhile; ?>
+<?php if (have_posts()) : ?>
+	<ul class="browsing">
+    <li class="searchinfo">
+    <h2>Your Search "<?php echo get_search_query(); ?>" Returned <?php echo $wp_query->found_posts; ?> Results</h2></li>
+    <li class="searchinfo lighten">Your search for "<?php echo get_search_query(); ?>" has returned exactly <?php echo $wp_query->found_posts; ?> results, no more and no less. Hopefully what you're looking for will be found just below on this page, but if you're unable find what you are looking for you may need to use the links "Older Search Results" or "Newer Search Results" to navigate through more pages of results for "<?php echo get_search_query(); ?>." Please keep in mind that if not enough results return, the links for "Older Search Results" and "Newer Search Results" may not appear becuase there is nothing more to show.</li>
+<?php while (have_posts()) : the_post(); ?>
+	<li id="post-<?php the_ID(); ?>" <?php post_class(); ?>><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
+		<h5><span><?php the_time('M') ?><br/><?php the_time('jS') ?></span><?php if ( get_the_title() ) { the_title();} else { echo '(No Title)';} ?></h5>
+        <?php if ( has_post_thumbnail()) : ?><div class="underlay" ><?php the_post_thumbnail('big-thumbnail'); ?><img class="overlay" src="<?php echo get_stylesheet_directory_uri(); ?>/images/001.png" /></div><?php endif; ?>
+        <?php the_excerpt(); ?>
+	</a></li>
+<?php endwhile; ?>
+    </ul>
+<?php else : ?>
+	<ul class="browsing">
+    <li class="searchinfo"><h2>Your search resulted in nothing being found.</h2></li>
+    </ul>
+<?php endif; ?>
+    <ul class="starsbar"><h6>
+    	<span class="left"><?php next_posts_link('&#8249; Older Search Results'); ?></span>
+            &#9733; &#9733; &#9733; &#9733; &#9733;
+            <span class="right"><?php previous_posts_link('Newer Search Results &#8250;'); ?></span>
+    </h6></ul>
 <!-- End Search -->  
     
-<?php elseif ( have_posts() && is_home() || is_404() || is_category() || is_day() || is_month() || is_year() || is_paged() ) : ?>
+<?php elseif ( have_posts() && is_home() || is_404() || is_category() || is_day() || is_month() || is_year() || is_paged() || is_tag() ) : ?>
 <!-- Many Things -->
 	<ul class="browsing">
 <?php while (have_posts()) : the_post(); ?>
@@ -70,11 +83,9 @@
 	</ul>
 <!-- End Many Things -->
 <?php } else { ?>
-	<ul class="starsbar">
-		<h6>
+	<ul class="starsbar"><h6>
         &#9733; &#9733; &#9733; &#9733; &#9733;
-        </h6>
-	</ul>
+    </h6></ul>
 <?php } ?>
 
 <?php if (have_posts() != true) : ?>
@@ -176,11 +187,9 @@
         </div>
 		</li>
 </ol></ul>
-    <ul class="starsbar">
-    	<h6>
+    <ul class="starsbar"><h6>
 		&#9733; &#9733; &#9733; &#9733; &#9733;
-		</h6>
-	</ul>
+	</h6></ul>
 <!-- End 404 Error -->
 <?php $semperfi_404 = true;?>
 <?php endif; ?> 
@@ -233,14 +242,15 @@
 <?php endif; ?><!-- End  -->
 
 <!-- The Comments -->
-<?php if($semperfi_404): ?>
+<?php if (is_search()) : ?>
+<?php elseif($semperfi_404) : ?>
 <?php elseif ( comments_open() ) : ?>
 <?php comments_template( '', true ); ?>
 <?php elseif ( is_page() || is_single() ) : ?>
-<ul class="commentbox hidecomment">
-	<h4 class="title">Comments are closed</h4>
-</ul>
 <?php comments_template( '', true ); ?>
+<ul class="commentbox hidecomment">
+	<h4 class="title">Commenting is Closed</h4>
+</ul>
 <?php endif; ?>
 <!-- End Comments -->
 

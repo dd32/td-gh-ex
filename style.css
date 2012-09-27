@@ -5,7 +5,7 @@ Theme URI: http://schwarttzy.com/shop/semper-fi/
 
 Description: Dedicate to my Grandfather's Bravery in WWII, Semper Fi has a high quality newspaper feeling to it. From hidden luxurious floral patterns, to images that create the nostalgia of finely crafted paper, incredibly detailed shadowing, but most importantly, Semper Fi has the ability to respond to any width screen. From 300 pixels wide, all the way to 1920 and beyond, images, galleries, quotes, text, and titles all move fluidly to respond to any thing you through at it. (More Updates to come soon)
 
-Version: 0.2
+Version: 0.3
 
 Author: Eric Schwarz
 
@@ -204,6 +204,7 @@ ul / li that do the heavy lift on this theme
 .excerpt{height:175px;}
 .underlay {position: relative; width: 100%; float:left;}
 .reading .underlay {border-bottom: #111 solid 1px; padding-bottom:1.5%; text-align:center;margin:0 auto;}
+.search .reading .underlay {border-bottom: none;} 
 .reading .underlay img {width:74%;height:auto;}
 .overlay{
 	position:absolute;
@@ -222,15 +223,17 @@ ul / li that do the heavy lift on this theme
 .postimage h5 {font-variant: normal; margin:0 0 0 -.4em;}
 .postimage img {box-shadow:1px 1px 2px #111; margin:0 0 0 11%; width:68%; height:auto; text-indent:0em;}
 .starsbar {width:94%;padding:0em;margin:.5em 3% 0em;background:#222; background:rgba(0, 0, 0, 0.90);color:#e0dbce;text-shadow: 1px 1px 0 #000;}
+.search .reading .starsbar {width:100%; margin:0 0 .5em;}
 .starsbar .left {margin-left:.5em}
 .starsbar .right {margin-right:.5em}
 .starsbar h6{width:100%;text-align:center; line-height:1.8em;}
 .starsbar a {color:#e0dbce;}
 .starsbar a:hover {color:#777;}
-#footer { height:1.75em; overflow:hidden; font-size:.8em; width:96%; padding:0 2%; background:#111; color: #e0dbce; text-align:center;}
+#footer { height:1.75em; overflow:hidden; font-size:.8em; width:96%; padding:0 2%; background:#111; color: #DDD; text-align:center;}
 #footer p{ padding:0; margin:.25em 0; text-shadow: none;}
 li.bottomline {width:97%;margin:0 1.5%;}
 .finishline { margin:1% 2.52% 0;border-bottom:1px solid #111; width:94.96%;}
+.tagz {float:left; width:100%; font-size:.8em;}
 
 /*------------------------------------------------------------------
 
@@ -360,6 +363,9 @@ input[type="text"], input[type="password"], select{
 }
 input#s {background: rgba(247, 247, 247, 0.7) url(images/search.png) no-repeat;padding:.4em .25em .4em 1.75em;margin:0 0 1.5em;}
 #s, #subscribe-blog input#subscribe-field {width:50%!important; float:left;}
+li.searchinfo {width:97%;margin:.5% 1.5%; padding:0; height:auto;}
+li.searchinfo h2 {border-top:2px solid #111; border-bottom:1px solid #24380e; margin:2% 0 .5%; text-align:center;}
+.lighten { color:#333;}
 
 /*------------------------------------------------------------------
 
@@ -415,9 +421,10 @@ img.alignright {
 }
 img.endright{ margin: 0 0 1% 0;}
 img.aligncenter {
-	margin: 1% auto 1%;
+	margin:1.5% auto 1.5%;
 	text-align: center;
 	display: block;
+	max-width:100% !important; height:auto
 }
 img.alignnone {
 	display: block;
@@ -462,7 +469,7 @@ ul.tweets .timesince {background: url(images/tweet.png) top left no-repeat;font-
 @media only screen and (max-width:1000px){.tags{font-size:.8em;}}
 @media only screen and (max-width:900px){body{font-size:1.1em;}.browsing li {width:48%;margin:1%;}.browsing li.bottomline{width:97%;margin:0 1.5%;}.tags{font-size:.7em;}}
 @media only screen and (max-width:800px){.reading .underlay img {width:100%;height:auto; margin:0;}.reading .overlay {left:0;}.tags{display:none;}#header ul li:hover ul {width:100%;display:none;}}
-@media only screen and (max-width:650px){.browsing li h5 {font-size:1.9em;}.browsing li {width:98%;margin:1%;}.browsing {padding:.5em 0;}}
+@media only screen and (max-width:650px){.browsing li h5 {font-size:1.9em;}.browsing li {width:98%;margin:1%; height:auto;}.browsing {padding:.5em 0;}}
 @media only screen and (max-width:500px){#header{margin-top:0px;}body{font-size:1em;}.excerpt{height:auto;}#white{width:100%;padding:0 0% 2.5em;}}
 
 /*------------------------------------------------------------------

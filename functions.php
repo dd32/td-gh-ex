@@ -81,11 +81,23 @@ function semperfi_comment_list_pings( $comment ) {
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>"><?php echo comment_author_link(); ?></li>
 <?php }
 
-// Sets the post excerpt length to 40 characters
+// Sets the post excerpt length to 250 characters
 function semperfi_excerpt_length($length) {
     return 250; }
 
 add_filter('excerpt_length', 'semperfi_excerpt_length');
+
+// This function adds in code specifically for IE6 to IE9
+function semperfi_ie_css() {
+	echo "\n" . '<!-- IE 6 to 9 CSS Hacking -->' . "\n";
+	echo '<!--[if lte IE 9]><style type="text/css">#header h1 i{bottom:.6em;}</style><![endif]-->' . "\n";
+	echo '<!--[if lte IE 8]><style type="text/css">#center{width:1000px;}</style><![endif]-->' . "\n";
+	echo '<!--[if lte IE 7]><style type="text/css">#header{padding:0 auto;}#header ul {padding-left:1.5em;}#header ul li{float:left;}</style><![endif]-->' . "\n";
+	echo '<!--[if lte IE 6]><style type="text/css">#header.small h1{display: none;}#center{width:800px;}#banner{background:none;}.overlay{display:none;}.browsing li {width:47%;margin:1%;}#footer{background-color:#111);}</style><![endif]-->' . "\n";
+	echo "\n";
+}
+
+add_action('wp_head', 'semperfi_ie_css');
 
 // This function removes inline styles set by WordPress gallery
 function semperfi_remove_gallery_css($css) {
