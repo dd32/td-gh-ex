@@ -133,3 +133,6 @@ Version 1.4
 * Added Option to Disable Header Search in Theme Option Panel
 * Added Info bar in Theme Option Panel
 * Change the license to GPL 2
+
+Version 1.4.1
+* Fixed css for Threaded Comment Image Issue
