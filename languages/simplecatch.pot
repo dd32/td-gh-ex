@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/simple-catch\n"
-"POT-Creation-Date: 2012-08-09 18:24+0530\n"
-"PO-Revision-Date: 2012-09-10 16:47+0530\n"
+"POT-Creation-Date: 2012-09-28 16:55+0530\n"
+"PO-Revision-Date: 2012-09-28 16:55+0530\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Catch Themes <info@catchinternet.com>\n"
 "MIME-Version: 1.0\n"
@@ -166,498 +166,182 @@ msgstr ""
 msgid "Page %s"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:451
+#: ../functions/simplecatch_functions.php:448
 #, php-format
 msgid "%s in Facebook"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:457
+#: ../functions/simplecatch_functions.php:454
 #, php-format
 msgid "%s in Twitter"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:463
+#: ../functions/simplecatch_functions.php:460
 #, php-format
 msgid "%s in Google+"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:469
+#: ../functions/simplecatch_functions.php:466
 #, php-format
 msgid "%s in Linkedin"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:475
+#: ../functions/simplecatch_functions.php:472
 #, php-format
 msgid "%s in Pinterest"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:481
+#: ../functions/simplecatch_functions.php:478
 #, php-format
 msgid "%s in YouTube"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:487
+#: ../functions/simplecatch_functions.php:484
 #, php-format
 msgid "%s in Vimeo"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:493
+#: ../functions/simplecatch_functions.php:490
 #, php-format
 msgid "%s in Slideshare"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:499
+#: ../functions/simplecatch_functions.php:496
 #, php-format
 msgid "%s in Foursquare"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:505
+#: ../functions/simplecatch_functions.php:502
 #, php-format
 msgid "%s in Flickr"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:510
+#: ../functions/simplecatch_functions.php:507
 #, php-format
 msgid "%s in Tumblr"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:515
+#: ../functions/simplecatch_functions.php:512
 #, php-format
 msgid "%s in deviantART"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:520
+#: ../functions/simplecatch_functions.php:517
 #, php-format
 msgid "%s in Dribbble"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:525
+#: ../functions/simplecatch_functions.php:522
 #, php-format
 msgid "%s in MySpace"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:530
+#: ../functions/simplecatch_functions.php:527
 #, php-format
 msgid "%s in WordPress"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:535
+#: ../functions/simplecatch_functions.php:532
 #, php-format
 msgid "%s in RSS"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:540
+#: ../functions/simplecatch_functions.php:537
 #, php-format
 msgid "%s in Delicious"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:545
+#: ../functions/simplecatch_functions.php:542
 #, php-format
 msgid "%s in Last.fm"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:704
+#: ../functions/simplecatch_functions.php:697
 msgid "Design by:"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:704
+#: ../functions/simplecatch_functions.php:697
 #: ../functions/panel/theme_options.php:99
-#: ../functions/panel/theme_options.php:526
-#: ../functions/panel/theme_options.php:634
-#: ../functions/panel/theme_options.php:759
+#: ../functions/panel/theme_options.php:513
+#: ../functions/panel/theme_options.php:628
+#: ../functions/panel/theme_options.php:760
 msgid "http://catchthemes.com/"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:704
+#: ../functions/simplecatch_functions.php:697
 #: ../functions/panel/theme_options.php:99
-#: ../functions/panel/theme_options.php:526
-#: ../functions/panel/theme_options.php:634
-#: ../functions/panel/theme_options.php:759
+#: ../functions/panel/theme_options.php:513
+#: ../functions/panel/theme_options.php:628
+#: ../functions/panel/theme_options.php:760
 msgid "Catch Themes"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:704
+#: ../functions/simplecatch_functions.php:697
 msgid "http://wordpress.org/"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:704
-#: ../functions/panel/theme_options.php:716
+#: ../functions/simplecatch_functions.php:697
+#: ../functions/panel/theme_options.php:717
 msgid "WordPress"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:704
+#: ../functions/simplecatch_functions.php:697
 #, php-format
 msgid "Proudly powered by %s."
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:863
+#: ../functions/simplecatch_functions.php:856
 msgid "Categories: "
 msgstr ""
 
+#: ../functions/simplecatch_functions.php:915
+msgid "http://catchthemes.com/support/"
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:915
+#: ../functions/simplecatch_functions.php:916
+msgid "Theme Support"
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:918
+msgid "http://catchthemes.com/themes/"
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:918
 #: ../functions/simplecatch_functions.php:919
-msgid "FAQ: Frequently Asked Questions"
+msgid "More Themes"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:920
-msgid "1. How to change logo on Header and Footer? "
+#: ../functions/simplecatch_functions.php:921
+msgid "http://facebook.com/catchthemes"
 msgstr ""
 
+#: ../functions/simplecatch_functions.php:921
 #: ../functions/simplecatch_functions.php:922
-#: ../functions/simplecatch_functions.php:933
-#: ../functions/simplecatch_functions.php:952
-#: ../functions/simplecatch_functions.php:962
-#: ../functions/simplecatch_functions.php:970
-#: ../functions/simplecatch_functions.php:979
-#: ../functions/simplecatch_functions.php:988
-#: ../functions/simplecatch_functions.php:997
-msgid "Click on Theme Options under Appearance."
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:923
-#: ../functions/simplecatch_functions.php:934
-#: ../functions/simplecatch_functions.php:953
-#: ../functions/simplecatch_functions.php:963
-#: ../functions/simplecatch_functions.php:971
-msgid "Click on Design Settings Tab."
+#: ../functions/panel/theme_options.php:646
+msgid "Facebook"
 msgstr ""
 
 #: ../functions/simplecatch_functions.php:924
-msgid "Click on Logo Options. You can see the default logo previews. "
+msgid "http://twitter.com/#!/catchthemes"
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:924
+msgid "Twiiter"
 msgstr ""
 
 #: ../functions/simplecatch_functions.php:925
-msgid "Now click on Change Header Logo and Change Footer Logo button to change the Header and Footer Logo respectively."
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:926
-msgid "Browse the Logo image from desired location and upload it."
+#: ../functions/panel/theme_options.php:651
+msgid "Twitter"
 msgstr ""
 
 #: ../functions/simplecatch_functions.php:927
-#: ../functions/simplecatch_functions.php:938
-msgid "Once the upload in completed. Then click on insert into the Post."
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:928
-msgid "Click on Save button. Now you can see the previews. "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:931
-msgid "2. How to change Favicon? "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:935
-msgid "Click on Fav Icon Options. You can see the default fav icon preview. "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:936
-msgid "Now click on Change Fav Icon button. "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:937
-msgid "Browse the fav icon image from desired location and upload it."
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:939
-msgid "Click on Save button. Now you can see the preview. "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:942
-msgid "3. How to change Content Background? "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:944
-msgid "Click on Background under Appearance."
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:945
-msgid "Now you can change the backgrond image and color"
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:946
-msgid "Read more about Custom Background"
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:946
-msgid "http://en.support.wordpress.com/themes/custom-backgrounds/"
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:946
-msgid "Click Here &rarr;"
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:947
-#: ../functions/simplecatch_functions.php:956
-#: ../functions/simplecatch_functions.php:974
-#: ../functions/simplecatch_functions.php:983
-#: ../functions/simplecatch_functions.php:992
-#: ../functions/simplecatch_functions.php:1001
-msgid "Click on Save button."
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:950
-msgid "4. How to change Content Text Color? "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:954
-msgid "Click on Content Color Options."
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:955
-msgid "Slect the colors. "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:959
-msgid "5. Where to add Additional CSS Styles?"
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:961
-msgid "If you are doing lot of customization then it is better to create child theme. But if you just want to change few CSS then follow the instruction."
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:964
-msgid "Now click on Custom CSS. Then add in the custom CSS."
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:965
-#: ../functions/simplecatch_functions.php:1009
-#: ../functions/simplecatch_functions.php:1019
-#: ../functions/simplecatch_functions.php:1027
-#: ../functions/simplecatch_functions.php:1037
-msgid "Click on Save button. "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:968
-msgid "6. How to change default layout? "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:972
-msgid "Click on Default Layout."
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:973
-msgid "Then check the layout you want to activate."
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:977
-msgid "7. How to set certain categories to display in Homepage / Frontpage ? "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:980
-#: ../functions/simplecatch_functions.php:989
-#: ../functions/simplecatch_functions.php:998
-msgid "Click on Theme Settings Tab."
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:981
-msgid "Click on Homepage / Frontpage category setting."
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:982
-msgid "Then select the categories you want. You may select multiple categories by holding down the CTRL key."
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:986
-msgid "8. How to change the Search Button text"
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:990
-msgid "Click on Search Text Settings."
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:991
-msgid "Then type in the text you want to change."
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:995
-msgid "9. How to change the Excerpt Length and More Tag Text"
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:999
-msgid "Click on Excerpt / More Tag Settings."
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1000
-msgid "Type in the Number of Words and more tag text."
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1004
-msgid "10. How to Add Featured Slider? "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1006
-msgid "Click on Featured Slider under Appearance. "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1007
-msgid "Click on Add Slider Options. "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1008
-msgid "Add in the Post ID's  in Featured Slider Post#1, #2 respectively."
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1010
-#: ../functions/simplecatch_functions.php:1011
-msgid "Note:"
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1010
-msgid "When you add the Post Id's, make sure you have added in the Featured Image in your Post. Read more about Featured Image"
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1010
-msgid "http://en.support.wordpress.com/featured-images/#setting-a-featured-image"
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1010
-#: ../functions/simplecatch_functions.php:1011
-#: ../functions/simplecatch_functions.php:1052
-#: ../functions/simplecatch_functions.php:1053
-#: ../functions/simplecatch_functions.php:1054
-#: ../functions/simplecatch_functions.php:1055
-#: ../functions/simplecatch_functions.php:1068
-#: ../functions/simplecatch_functions.php:1069
-#: ../functions/simplecatch_functions.php:1070
-#: ../functions/simplecatch_functions.php:1071
-msgid "Click Here  &rarr;"
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1011
-msgid "If you are unable to find the post ID then you can install the Catch IDs Plugin to find the Post IDs"
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1011
-msgid "http://wordpress.org/extend/plugins/catch-ids/"
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1014
-msgid "11. How to insert Social links on the right side of header?"
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1016
-msgid "Click on Social Links under Appearance."
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1017
-msgid "Here you can see different social links like facebook, twitter etc. "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1018
-msgid "Paste the social links URL on its respective fields. For example https://www.facebook.com/catchthemes. for facebook etc. "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1022
-msgid "12. How to insert Site Verification IDs?"
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1024
-#: ../functions/simplecatch_functions.php:1032
-msgid "Click on Webmaster Tools under Appearance. "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1025
-msgid "Click on Site Verification. "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1026
-msgid "Enter the Google, Yahoo, Bling Site Verification ID respectivly for which you want to verify your site."
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1030
-msgid "13. How to insert Analytics / Other scripts?"
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1033
-msgid "Click on Analytic. "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1034
-msgid "Here you can put different scripts like, google, facebook etc. "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1035
-msgid "Enter the script on upper textarea which you want to load on header. "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1036
-msgid "Enter the script on lower textarea which you want to load on footer. "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1040
-msgid "14. How to create pagination in single post/page if the post/page is too long? "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1042
-msgid "Click on the post/page. "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1043
-msgid "Edit the specific post/page in which you want to breakdown into more pages. "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1044
-msgid "Now Keep the cursor to the exact place of post where you want page break. "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1045
-msgid "Then copy this shortcode <!--nextpage--> and paste it. "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1046
-msgid "You can repeat this shortcode many times where you want to break down. "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1047
-msgid "Update the post. "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1050
-msgid "15. How to support developement of Simple Catch Theme? "
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1052
-#: ../functions/simplecatch_functions.php:1068
-msgid "Support Simple Catch Theme by Donation"
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1052
-#: ../functions/simplecatch_functions.php:1068
 msgid "http://catchthemes.com/donate/"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:1053
-#: ../functions/simplecatch_functions.php:1069
-msgid "Rate Simple Catch Theme 5 star on WordPress.org"
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1053
-#: ../functions/simplecatch_functions.php:1069
-msgid "http://wordpress.org/extend/themes/simple-catch/"
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1054
-#: ../functions/simplecatch_functions.php:1070
-msgid "Like Us on Facebook"
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1054
-#: ../functions/simplecatch_functions.php:1070
-msgid "https://www.facebook.com/catchthemes"
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1055
-#: ../functions/simplecatch_functions.php:1071
-msgid "Follow Us on Twitter"
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1055
-#: ../functions/simplecatch_functions.php:1071
-msgid "https://twitter.com/catchthemes"
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:1066
-msgid "Support Simple Catch Theme "
+#: ../functions/simplecatch_functions.php:927
+#: ../functions/simplecatch_functions.php:928
+msgid "Donate Now"
 msgstr ""
 
 #: ../functions/simplecatch_metabox.php:14
@@ -709,451 +393,435 @@ msgstr ""
 msgid "Webmaster Tools"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:103
-#: ../functions/panel/theme_options.php:530
-#: ../functions/panel/theme_options.php:638
-#: ../functions/panel/theme_options.php:763
+#: ../functions/panel/theme_options.php:110
+#: ../functions/panel/theme_options.php:524
+#: ../functions/panel/theme_options.php:639
+#: ../functions/panel/theme_options.php:771
 msgid "Settings saved."
 msgstr ""
 
-#: ../functions/panel/theme_options.php:109
-msgid "FAQ"
-msgstr ""
-
-#: ../functions/panel/theme_options.php:110
+#: ../functions/panel/theme_options.php:116
 msgid "Design Settings"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:111
+#: ../functions/panel/theme_options.php:117
 msgid "Theme Settings"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:112
-msgid "Support Simple Catch"
-msgstr ""
-
-#: ../functions/panel/theme_options.php:127
+#: ../functions/panel/theme_options.php:123
 msgid "Logo Options"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:132
+#: ../functions/panel/theme_options.php:128
 msgid "Disable Header Logo:"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:137
+#: ../functions/panel/theme_options.php:133
 msgid "Header logo url:"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:145
+#: ../functions/panel/theme_options.php:141
 msgid "Change Header Logo"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:149
+#: ../functions/panel/theme_options.php:145
 msgid "Preview:"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:161
+#: ../functions/panel/theme_options.php:157
 msgid "Disable Site Title:"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:166
+#: ../functions/panel/theme_options.php:162
 msgid "Disable Site Description:"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:171
+#: ../functions/panel/theme_options.php:167
 msgid "Disable Footer Logo:"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:176
+#: ../functions/panel/theme_options.php:172
 msgid "Footer logo url: "
 msgstr ""
 
-#: ../functions/panel/theme_options.php:183
+#: ../functions/panel/theme_options.php:179
 msgid "Change Footer Logo"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:187
-#: ../functions/panel/theme_options.php:226
+#: ../functions/panel/theme_options.php:183
+#: ../functions/panel/theme_options.php:222
 msgid "Preview: "
 msgstr ""
 
-#: ../functions/panel/theme_options.php:200
-#: ../functions/panel/theme_options.php:239
-#: ../functions/panel/theme_options.php:341
-#: ../functions/panel/theme_options.php:366
-#: ../functions/panel/theme_options.php:394
-#: ../functions/panel/theme_options.php:433
-#: ../functions/panel/theme_options.php:454
-#: ../functions/panel/theme_options.php:474
-#: ../functions/panel/theme_options.php:490
-#: ../functions/panel/theme_options.php:559
-#: ../functions/panel/theme_options.php:610
-#: ../functions/panel/theme_options.php:737
-#: ../functions/panel/theme_options.php:791
-#: ../functions/panel/theme_options.php:821
+#: ../functions/panel/theme_options.php:196
+#: ../functions/panel/theme_options.php:235
+#: ../functions/panel/theme_options.php:337
+#: ../functions/panel/theme_options.php:362
+#: ../functions/panel/theme_options.php:390
+#: ../functions/panel/theme_options.php:429
+#: ../functions/panel/theme_options.php:450
+#: ../functions/panel/theme_options.php:470
+#: ../functions/panel/theme_options.php:486
+#: ../functions/panel/theme_options.php:553
+#: ../functions/panel/theme_options.php:604
+#: ../functions/panel/theme_options.php:738
+#: ../functions/panel/theme_options.php:799
+#: ../functions/panel/theme_options.php:829
 msgid "Save"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:205
+#: ../functions/panel/theme_options.php:201
 msgid "Fav Icon Options"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:210
+#: ../functions/panel/theme_options.php:206
 msgid "Disable Favicon:"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:215
+#: ../functions/panel/theme_options.php:211
 msgid "Fav Icon URL:"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:221
+#: ../functions/panel/theme_options.php:217
 msgid "Change Fav Icon"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:245
+#: ../functions/panel/theme_options.php:241
 msgid "Content Background"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:247
+#: ../functions/panel/theme_options.php:243
 msgid "Need to replace default background?"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:247
+#: ../functions/panel/theme_options.php:243
 #, php-format
 msgid "<a class=\"button\" href=\"%s\">Click here</a>"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:254
+#: ../functions/panel/theme_options.php:250
 msgid "Content Color Options"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:261
+#: ../functions/panel/theme_options.php:257
 msgid "Heading Color:"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:272
+#: ../functions/panel/theme_options.php:268
 msgid "Meta Description Color:"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:283
+#: ../functions/panel/theme_options.php:279
 msgid "Text Color:"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:294
+#: ../functions/panel/theme_options.php:290
 msgid "Link Color:"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:308
+#: ../functions/panel/theme_options.php:304
 msgid "Sidebar Widget Heading Color:"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:319
+#: ../functions/panel/theme_options.php:315
 msgid "Sidebar Widget Text Color:"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:332
+#: ../functions/panel/theme_options.php:328
 msgid "Reset Color:"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:347
+#: ../functions/panel/theme_options.php:343
 msgid "Custom CSS"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:352
+#: ../functions/panel/theme_options.php:348
 msgid "Enter your custom CSS styles."
 msgstr ""
 
-#: ../functions/panel/theme_options.php:359
+#: ../functions/panel/theme_options.php:355
 msgid "CSS Tutorial from W3Schools."
 msgstr ""
 
-#: ../functions/panel/theme_options.php:361
+#: ../functions/panel/theme_options.php:357
 msgid "http://www.w3schools.com/css/default.asp"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:361
+#: ../functions/panel/theme_options.php:357
 msgid "CSS Tutorial"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:361
+#: ../functions/panel/theme_options.php:357
 msgid "Click Here to Read"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:371
-#: ../functions/panel/theme_options.php:376
+#: ../functions/panel/theme_options.php:367
+#: ../functions/panel/theme_options.php:372
 msgid "Default Layout"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:404
+#: ../functions/panel/theme_options.php:400
 msgid "Homepage / Frontpage Category Setting"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:410
+#: ../functions/panel/theme_options.php:406
 msgid "Front page posts categories:"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:412
+#: ../functions/panel/theme_options.php:408
 msgid "Only posts that belong to the categories selected here will be displayed on the front page."
 msgstr ""
 
-#: ../functions/panel/theme_options.php:417
+#: ../functions/panel/theme_options.php:413
 msgid "--Disabled--"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:428
+#: ../functions/panel/theme_options.php:424
 msgid "You may select multiple categories by holding down the CTRL key."
 msgstr ""
 
-#: ../functions/panel/theme_options.php:438
+#: ../functions/panel/theme_options.php:434
 msgid "Search Text Settings"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:443
+#: ../functions/panel/theme_options.php:439
 msgid "Default Display Text in Search"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:448
+#: ../functions/panel/theme_options.php:444
 msgid "Search Button's text"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:459
+#: ../functions/panel/theme_options.php:455
 msgid "Excerpt / More Tag Settings"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:464
+#: ../functions/panel/theme_options.php:460
 msgid "More Tag Text"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:469
+#: ../functions/panel/theme_options.php:465
 msgid "Excerpt length(words)"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:479
+#: ../functions/panel/theme_options.php:475
 msgid "Feed Redirect"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:484
+#: ../functions/panel/theme_options.php:480
 msgid "Feed Redirect URL"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:526
+#: ../functions/panel/theme_options.php:513
 msgid "Featured Slider Options"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:535
+#: ../functions/panel/theme_options.php:529
 msgid "Add Slider Options"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:539
+#: ../functions/panel/theme_options.php:533
 msgid "Exclude Slider post from Home page posts:"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:544
+#: ../functions/panel/theme_options.php:538
 msgid "Number of Slides"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:550
+#: ../functions/panel/theme_options.php:544
 msgid "Featured Slider Post #"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:552
+#: ../functions/panel/theme_options.php:546
 msgid "Click Here To Edit"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:558
+#: ../functions/panel/theme_options.php:552
 msgid "Note: Here You can put your Post IDs which displays on Homepage as slider."
 msgstr ""
 
-#: ../functions/panel/theme_options.php:565
+#: ../functions/panel/theme_options.php:559
 msgid "Slider Effect Options"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:569
+#: ../functions/panel/theme_options.php:563
 msgid "Disable Slider Background Effect:"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:576
+#: ../functions/panel/theme_options.php:570
 msgid "Transition Effect:"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:580
+#: ../functions/panel/theme_options.php:574
 msgid "fade"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:581
+#: ../functions/panel/theme_options.php:575
 msgid "wipe"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:582
+#: ../functions/panel/theme_options.php:576
 msgid "scrollUp"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:583
+#: ../functions/panel/theme_options.php:577
 msgid "scrollDown"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:584
+#: ../functions/panel/theme_options.php:578
 msgid "scrollLeft"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:585
+#: ../functions/panel/theme_options.php:579
 msgid "scrollRight"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:586
+#: ../functions/panel/theme_options.php:580
 msgid "blindX"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:587
+#: ../functions/panel/theme_options.php:581
 msgid "blindY"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:588
+#: ../functions/panel/theme_options.php:582
 msgid "blindZ"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:589
+#: ../functions/panel/theme_options.php:583
 msgid "cover"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:590
+#: ../functions/panel/theme_options.php:584
 msgid "shuffle"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:595
+#: ../functions/panel/theme_options.php:589
 msgid "Transition Delay"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:598
-#: ../functions/panel/theme_options.php:605
+#: ../functions/panel/theme_options.php:592
+#: ../functions/panel/theme_options.php:599
 msgid "second(s)"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:602
+#: ../functions/panel/theme_options.php:596
 msgid "Transition Length"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:634
+#: ../functions/panel/theme_options.php:628
 msgid "Social Links Option"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:645
-msgid "Facebook"
-msgstr ""
-
-#: ../functions/panel/theme_options.php:650
-msgid "Twitter"
-msgstr ""
-
-#: ../functions/panel/theme_options.php:655
+#: ../functions/panel/theme_options.php:656
 msgid "Google+"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:660
+#: ../functions/panel/theme_options.php:661
 msgid "Pinterest"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:665
+#: ../functions/panel/theme_options.php:666
 msgid "Youtube"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:670
+#: ../functions/panel/theme_options.php:671
 msgid "Vimeo"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:676
+#: ../functions/panel/theme_options.php:677
 msgid "Linkedin"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:681
+#: ../functions/panel/theme_options.php:682
 msgid "Slideshare"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:686
+#: ../functions/panel/theme_options.php:687
 msgid "Foursquare"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:691
+#: ../functions/panel/theme_options.php:692
 msgid "Flickr"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:696
+#: ../functions/panel/theme_options.php:697
 msgid "Tumblr"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:701
+#: ../functions/panel/theme_options.php:702
 msgid "deviantART"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:706
+#: ../functions/panel/theme_options.php:707
 msgid "Dribbble"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:711
+#: ../functions/panel/theme_options.php:712
 msgid "MySpace"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:721
+#: ../functions/panel/theme_options.php:722
 msgid "RSS"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:726
+#: ../functions/panel/theme_options.php:727
 msgid "Delicious"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:731
+#: ../functions/panel/theme_options.php:732
 msgid "Last.fm"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:759
+#: ../functions/panel/theme_options.php:760
 msgid "Webmaster Tools Option"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:768
+#: ../functions/panel/theme_options.php:776
 msgid "Site Verification"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:773
+#: ../functions/panel/theme_options.php:781
 msgid "Google Site Verification ID"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:774
+#: ../functions/panel/theme_options.php:782
 msgid "Enter your Google ID number only"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:779
+#: ../functions/panel/theme_options.php:787
 msgid "Yahoo Site Verification ID"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:780
+#: ../functions/panel/theme_options.php:788
 msgid "Enter your Yahoo ID number only"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:785
+#: ../functions/panel/theme_options.php:793
 msgid "Bing Site Verification ID"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:786
+#: ../functions/panel/theme_options.php:794
 msgid "Enter your Bing ID number only"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:796
+#: ../functions/panel/theme_options.php:804
 msgid "Analytics"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:801
+#: ../functions/panel/theme_options.php:809
 msgid "Code to display on Header"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:807
+#: ../functions/panel/theme_options.php:815
 msgid "Note: Here you can put scripts from Google, Facebook etc. which will load on Header"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:810
+#: ../functions/panel/theme_options.php:818
 msgid "Code to display on Footer"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:817
+#: ../functions/panel/theme_options.php:825
 msgid "Note: Here you can put scripts from Google, Facebook, Add This etc. which will load on footer"
 msgstr ""
 

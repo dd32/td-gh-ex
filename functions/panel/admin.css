@@ -112,3 +112,43 @@ h3.option-toggle a:hover, h3.option-active a {
 .option-content p {
 	padding-left: 10px;
 }
+
+#info-support {
+    padding: 20px 0;
+}
+#info-support .button {
+	border: none;
+	color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    height: 25px;
+    line-height: 27px;
+    margin-left: 10px;
+    padding: 0 15px;
+	text-shadow: none;
+	opacity: 1;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	box-shadow: 0px 1px 1px #2e2f31;
+	-moz-box-shadow:0px 1px 1px #2e2f31;
+	-webkit-box-shadow:0px 1px 1px #2e2f31;	
+}
+#info-support .button:hover {
+	opacity: 0.8;
+}
+#info-support .support {
+	background:url(images/brown-bg.jpg) center top repeat-x #a1913c;
+}
+#info-support .themes { 
+	background:url(images/blue-bg.jpg) center top repeat-x #4d6175;
+}
+#info-support .facebook { 
+	background:url(images/facebook-bg.jpg) center top repeat-x #3a589c;
+}
+#info-support .twitter {
+	background:url(images/twitter-bg.jpg) center top repeat-x #d90505;
+}
+#info-support .donate { 
+	background:url(images/green-bg.jpg) center top repeat-x #5e8c10;
+}

@@ -98,6 +98,13 @@ function simplecatch_theme_options_do_page() {
             ?>   
             <?php screen_icon(); ?> <h2><?php bloginfo( 'name' ); ?> "<?php _e( 'Theme Options', 'simplecatch' ); ?>" <?php _e( 'By', 'simplecatch' ); ?> <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'simplecatch' ) ); ?>" title="<?php esc_attr_e( 'Catch Themes', 'simplecatch' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'simplecatch' ); ?></a></h2>
             
+			<?php 
+        		// Function to show the info bar
+        		if ( function_exists( 'simplecatch_infobar' ) ) :
+					simplecatch_infobar(); 
+				endif;
+			?>            
+            
             <?php if( isset( $_GET [ 'settings-updated' ] ) && $_GET[ 'settings-updated' ] == 'true' ): ?>
                     <div class="updated" id="message">
                         <p><strong><?php _e( 'Settings saved.', 'simplecatch' );?></strong></p>
@@ -106,20 +113,9 @@ function simplecatch_theme_options_do_page() {
             
             <div id="simplecatch_ad_tabs">
                 <ul class="tabNavigation" id="mainNav">
-                    <li><a href="#faq"><?php _e( 'FAQ', 'simplecatch' );?></a></li>
                     <li><a href="#designsettings"><?php _e( 'Design Settings', 'simplecatch' );?></a></li>
                     <li><a href="#themesettings"><?php _e( 'Theme Settings', 'simplecatch' );?></a></li>
-                    <li><a href="#themesupport"><?php _e( 'Support Simple Catch', 'simplecatch' );?></a></li>
                 </ul><!-- .tabsNavigation #mainNav -->
-                
-                <div id="faq">
-                    <?php 
-                        //Displays FAQ information witten in simplecatch_faq of simplecatch_functions.php 
-                        if( function_exists( 'simplecatch_faq' ) ): 
-                        	simplecatch_faq(); 
-                        endif;
-                    ?>           
-              	</div><!-- #faq -->
                    
                 <!-- Option for Design Settings -->
                 <div id="designsettings">
@@ -375,15 +371,15 @@ function simplecatch_theme_options_do_page() {
                                     <tr>
                                         <th scope="row"><label><?php _e( 'Default Layout', 'simplecatch' ); ?></label></th>
                                         <td>
-                                            <label title="no-sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/images/no-sidebar.gif" alt="Content-Sidebar" /><br />
+                                            <label title="no-sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/functions/panel/images/no-sidebar.gif" alt="Content-Sidebar" /><br />
                                             <input type="radio" name="simplecatch_options[sidebar_layout]" id="no-sidebar" <?php checked($options['sidebar_layout'], 'no-sidebar') ?> value="no-sidebar"  />
                                              No Sidebar, One Column
                                             </label>
-                                            <label title="left-Sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/images/left-sidebar.gif" alt="Content-Sidebar" /><br />
+                                            <label title="left-Sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/functions/panel/images/left-sidebar.gif" alt="Content-Sidebar" /><br />
                                             <input type="radio" name="simplecatch_options[sidebar_layout]" id="left-sidebar" <?php checked($options['sidebar_layout'], 'left-sidebar') ?> value="left-sidebar"  />
                                             Content on Right
                                             </label>
-                                            <label title="right-sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/images/right-sidebar.gif" alt="Content-Sidebar" /><br />
+                                            <label title="right-sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/functions/panel/images/right-sidebar.gif" alt="Content-Sidebar" /><br />
                                             <input type="radio" name="simplecatch_options[sidebar_layout]" id="right-sidebar" <?php checked($options['sidebar_layout'], 'right-sidebar') ?> value="right-sidebar"  />
                                             Content on Left
                                             </label>
@@ -492,15 +488,6 @@ function simplecatch_theme_options_do_page() {
                     </div><!-- .option-container -->                                         
 
                 </div> <!-- #themesettings --> 
-                
-              	<div id="themesupport">
-                    <?php 
-                        //Displays Theme Suppor information witten in simplecatch_themesupport of simplecatch_functions.php 
-                        if( function_exists( 'simplecatch_themesupport' ) ): 
-                        	simplecatch_themesupport(); 
-                        endif;
-                    ?>           
-              	</div><!-- #faq -->
 
             </div><!-- #simplecatch_ad_tabs -->
 		</form>
@@ -525,10 +512,17 @@ function simplecatch_slider_options_do_page(){
             ?>   
             <?php screen_icon(); ?> <h2><?php bloginfo( 'name' ); ?> "<?php _e( 'Featured Slider Options', 'simplecatch' ); ?>" <?php _e( 'By', 'simplecatch' ); ?> <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'simplecatch' ) ); ?>" title="<?php esc_attr_e( 'Catch Themes', 'simplecatch' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'simplecatch' ); ?></a></h2>
             
+			<?php 
+        		// Function to show the info bar
+        		if ( function_exists( 'simplecatch_infobar' ) ) :
+					simplecatch_infobar(); 
+				endif;
+			?>  
+                        
             <?php if( isset( $_GET [ 'settings-updated' ] ) && $_GET[ 'settings-updated' ] == 'true' ): ?>
-                    <div class="updated" id="message">
-                        <p><strong><?php _e( 'Settings saved.', 'simplecatch' );?></strong></p>
-                    </div>
+                <div class="updated" id="message">
+                    <p><strong><?php _e( 'Settings saved.', 'simplecatch' );?></strong></p>
+                </div>
             <?php endif; ?>  
 
             <div class="option-container">
@@ -633,10 +627,17 @@ function simplecatch_social_options_do_page(){
             ?>   
             <?php screen_icon(); ?><h2><?php bloginfo( 'name' ); ?> "<?php _e( 'Social Links Option', 'simplecatch' ); ?>" <?php _e( 'By', 'simplecatch' ); ?> <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'simplecatch' ) ); ?>" title="<?php esc_attr_e( 'Catch Themes', 'simplecatch' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'simplecatch' ); ?></a></h2>
             
+			<?php 
+        		// Function to show the info bar
+        		if ( function_exists( 'simplecatch_infobar' ) ) :
+					simplecatch_infobar(); 
+				endif;
+			?>  
+                        
             <?php if( isset( $_GET [ 'settings-updated' ] ) && $_GET[ 'settings-updated' ] == 'true' ): ?>
-                    <div class="updated" id="message">
-                        <p><strong><?php _e( 'Settings saved.', 'simplecatch' );?></strong></p>
-                    </div>
+                <div class="updated" id="message">
+                    <p><strong><?php _e( 'Settings saved.', 'simplecatch' );?></strong></p>
+                </div>
             <?php endif; ?>
 
                     <table class="form-table">
@@ -758,10 +759,17 @@ function simplecatch_webmaster_options_do_page(){
             <?php screen_icon(); ?> 
             <h2><?php bloginfo( 'name' ); ?> "<?php _e( 'Webmaster Tools Option', 'simplecatch' ); ?>" <?php _e( 'By', 'simplecatch' ); ?> <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'simplecatch' ) ); ?>" title="<?php esc_attr_e( 'Catch Themes', 'simplecatch' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'simplecatch' ); ?></a></h2>
             
+			<?php 
+        		// Function to show the info bar
+        		if ( function_exists( 'simplecatch_infobar' ) ) :
+					simplecatch_infobar(); 
+				endif;
+			?>  
+                        
             <?php if( isset( $_GET [ 'settings-updated' ] ) && $_GET[ 'settings-updated' ] == 'true' ): ?>
-                    <div class="updated" id="message">
-                        <p><strong><?php _e( 'Settings saved.', 'simplecatch' );?></strong></p>
-                    </div>
+                <div class="updated" id="message">
+                    <p><strong><?php _e( 'Settings saved.', 'simplecatch' );?></strong></p>
+                </div>
             <?php endif; ?>  
 
             <div class="option-container">

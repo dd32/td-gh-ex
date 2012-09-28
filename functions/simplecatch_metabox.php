@@ -37,19 +37,19 @@ $sidebar_layout = array(
             			'id'		=> 'simplecatch-sidebarlayout',
 						'value' 	=> 'no-sidebar',
 						'label' 	=> __( 'No sidebar', 'simplecatch' ),
-						'thumbnail' => get_template_directory_uri() . '/images/no-sidebar.gif'
+						'thumbnail' => get_template_directory_uri() . '/functions/panel/images/no-sidebar.gif'
         			),
         'left-sidebar' => array(
             			'id'		=> 'simplecatch-sidebarlayout',
 						'value' 	=> 'left-sidebar',
 						'label' 	=> __( 'Left sidebar', 'simplecatch' ),
-						'thumbnail' => get_template_directory_uri() . '/images/left-sidebar.gif'
+						'thumbnail' => get_template_directory_uri() . '/functions/panel/images/left-sidebar.gif'
        				),
         'right-sidebar' => array(
 						'id' => 'simplecatch-sidebarlayout',
 						'value' => 'right-sidebar',
 						'label' => __( 'Right sidebar', 'simplecatch' ),
-						'thumbnail' => get_template_directory_uri() . '/images/right-sidebar.gif'
+						'thumbnail' => get_template_directory_uri() . '/functions/panel/images/right-sidebar.gif'
        				)
     );
 	

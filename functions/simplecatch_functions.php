@@ -350,7 +350,7 @@ function simplecatch_sliders() {
 				'orderby' 		 => 'post__in',
 				'ignore_sticky_posts' => 1 // ignore sticky posts
 			));
-			$i; while ( $get_featured_posts->have_posts()) : $get_featured_posts->the_post(); $i++;
+			$i=0; while ( $get_featured_posts->have_posts()) : $get_featured_posts->the_post(); $i++;
 				$title_attribute = apply_filters( 'the_title', get_the_title( $post->ID ) );
 				$excerpt = get_the_excerpt();
 				if ( $i == 1 ) { $classes = "slides displayblock"; } else { $classes = "slides displaynone"; }
@@ -904,165 +904,29 @@ function simplecatch_rss_redirect() {
 }
 add_action('template_redirect', 'simplecatch_rss_redirect');
 
-/**
- * function that displays frquently asked question in theme option
- */
-function simplecatch_faq() {
-?>
-		<h2><?php _e( 'FAQ: Frequently Asked Questions', 'simplecatch' ); ?></h2>
-		<h3><?php _e( '1. How to change logo on Header and Footer? ', 'simplecatch' ); ?></h3>
-		<ul>
-			<li><?php  _e( 'Click on Theme Options under Appearance.', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Click on Design Settings Tab.', 'simplecatch' ); ?></li>
-            <li><?php  _e( 'Click on Logo Options. You can see the default logo previews. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Now click on Change Header Logo and Change Footer Logo button to change the Header and Footer Logo respectively.', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Browse the Logo image from desired location and upload it.', 'simplecatch' ); ?></li>
-            <li><?php  _e( 'Once the upload in completed. Then click on insert into the Post.', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Click on Save button. Now you can see the previews. ', 'simplecatch' ); ?></li>
-		</ul>
-		
-		<h3><?php  _e( '2. How to change Favicon? ', 'simplecatch' ); ?></h3>
-		<ul>
-			<li><?php  _e( 'Click on Theme Options under Appearance.', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Click on Design Settings Tab.', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Click on Fav Icon Options. You can see the default fav icon preview. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Now click on Change Fav Icon button. ', 'simplecatch' ); ?></li>
-            <li><?php  _e( 'Browse the fav icon image from desired location and upload it.', 'simplecatch' ); ?></li>
-            <li><?php  _e( 'Once the upload in completed. Then click on insert into the Post.', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Click on Save button. Now you can see the preview. ', 'simplecatch' ); ?></li>
-		</ul>
-        
-		<h3><?php  _e( '3. How to change Content Background? ', 'simplecatch' ); ?></h3>
-		<ul>
-			<li><?php  _e( 'Click on Background under Appearance.', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Now you can change the backgrond image and color', 'simplecatch' ); ?></li>
-            <li><?php  _e( 'Read more about Custom Background', 'simplecatch' ); ?> <a href="<?php echo esc_url( __( 'http://en.support.wordpress.com/themes/custom-backgrounds/', 'simplecatch' ) ); ?>" target="_blank"><?php  _e( 'Click Here &rarr;', 'simplecatch' ); ?></a></li>   
-			<li><?php  _e( 'Click on Save button.', 'simplecatch' ); ?></li>
-		</ul>        
-        
-		<h3><?php  _e( '4. How to change Content Text Color? ', 'simplecatch' ); ?></h3>
-		<ul>
-			<li><?php  _e( 'Click on Theme Options under Appearance.', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Click on Design Settings Tab.', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Click on Content Color Options.', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Slect the colors. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Click on Save button.', 'simplecatch' ); ?></li>
-		</ul>
-                
-		<h3><?php  _e( '5. Where to add Additional CSS Styles?', 'simplecatch' ); ?></h3>
-		<ul>
-			<li><?php  _e( 'If you are doing lot of customization then it is better to create child theme. But if you just want to change few CSS then follow the instruction.', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Click on Theme Options under Appearance.', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Click on Design Settings Tab.', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Now click on Custom CSS. Then add in the custom CSS.', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Click on Save button. ', 'simplecatch' ); ?></li>
-		</ul>  
-        
-		<h3><?php  _e( '6. How to change default layout? ', 'simplecatch' ); ?></h3>
-		<ul>
-			<li><?php  _e( 'Click on Theme Options under Appearance.', 'simplecatch' ); ?></li>
-            <li><?php  _e( 'Click on Design Settings Tab.', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Click on Default Layout.', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Then check the layout you want to activate.', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Click on Save button.', 'simplecatch' ); ?></li>
-		</ul>   
-        
-		<h3><?php  _e( '7. How to set certain categories to display in Homepage / Frontpage ? ', 'simplecatch' ); ?></h3>
-		<ul>
-			<li><?php  _e( 'Click on Theme Options under Appearance.', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Click on Theme Settings Tab.', 'simplecatch' ); ?></li>
-            <li><?php  _e( 'Click on Homepage / Frontpage category setting.', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Then select the categories you want. You may select multiple categories by holding down the CTRL key.', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Click on Save button.', 'simplecatch' ); ?></li>
-		</ul>  
-        
- 		<h3><?php  _e( '8. How to change the Search Button text', 'simplecatch' ); ?></h3>
-		<ul>
-			<li><?php  _e( 'Click on Theme Options under Appearance.', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Click on Theme Settings Tab.', 'simplecatch' ); ?></li>
-            <li><?php  _e( 'Click on Search Text Settings.', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Then type in the text you want to change.', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Click on Save button.', 'simplecatch' ); ?></li>
-		</ul>      
-        
- 		<h3><?php  _e( '9. How to change the Excerpt Length and More Tag Text', 'simplecatch' ); ?></h3>
-		<ul>
-			<li><?php  _e( 'Click on Theme Options under Appearance.', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Click on Theme Settings Tab.', 'simplecatch' ); ?></li>
-            <li><?php  _e( 'Click on Excerpt / More Tag Settings.', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Type in the Number of Words and more tag text.', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Click on Save button.', 'simplecatch' ); ?></li>
-		</ul>                 
-        
-		<h3><?php  _e( '10. How to Add Featured Slider? ', 'simplecatch' ); ?></h3>
-		<ul>
-			<li><?php  _e( 'Click on Featured Slider under Appearance. ', 'simplecatch' ); ?></li>
-            <li><?php  _e( 'Click on Add Slider Options. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Add in the Post ID\'s  in Featured Slider Post#1, #2 respectively.', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Click on Save button. ', 'simplecatch' ); ?></li>
-            <li><strong><?php  _e( 'Note:', 'simplecatch' ); ?></strong> <?php  _e( 'When you add the Post Id\'s, make sure you have added in the Featured Image in your Post. Read more about Featured Image', 'simplecatch' ); ?> <a href="<?php echo esc_url( __( 'http://en.support.wordpress.com/featured-images/#setting-a-featured-image', 'simplecatch' ) ); ?>" target="_blank"><?php _e( 'Click Here  &rarr;', 'simplecatch' ); ?></a></li>
-            <li><strong><?php  _e( 'Note:', 'simplecatch' ); ?></strong> <?php  _e( 'If you are unable to find the post ID then you can install the Catch IDs Plugin to find the Post IDs', 'simplecatch' ); ?> <a href="<?php echo esc_url( __( 'http://wordpress.org/extend/plugins/catch-ids/', 'simplecatch' ) ); ?>" target="_blank"><?php _e( 'Click Here  &rarr;', 'simplecatch' ); ?></a></li>
-		</ul>                            
-			
-		<h3><?php  _e( '11. How to insert Social links on the right side of header?', 'simplecatch' ); ?></h3>
-		<ul>
-			<li><?php  _e( 'Click on Social Links under Appearance.', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Here you can see different social links like facebook, twitter etc. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Paste the social links URL on its respective fields. For example https://www.facebook.com/catchthemes. for facebook etc. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Click on Save button. ', 'simplecatch' ); ?></li>
-		</ul>
-        
-		<h3><?php  _e( '12. How to insert Site Verification IDs?', 'simplecatch' ); ?></h3>
-		<ul>
-			<li><?php  _e( 'Click on Webmaster Tools under Appearance. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Click on Site Verification. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Enter the Google, Yahoo, Bling Site Verification ID respectivly for which you want to verify your site.', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Click on Save button. ', 'simplecatch' ); ?></li>
-		</ul>        
-		
-		<h3><?php  _e( '13. How to insert Analytics / Other scripts?', 'simplecatch' ); ?></h3>
-		<ul>
-			<li><?php  _e( 'Click on Webmaster Tools under Appearance. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Click on Analytic. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Here you can put different scripts like, google, facebook etc. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Enter the script on upper textarea which you want to load on header. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Enter the script on lower textarea which you want to load on footer. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Click on Save button. ', 'simplecatch' ); ?></li>
-		</ul>		
 
-		<h3><?php  _e( '14. How to create pagination in single post/page if the post/page is too long? ', 'simplecatch' ); ?></h3>
-		<ul>
-			<li><?php  _e( 'Click on the post/page. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Edit the specific post/page in which you want to breakdown into more pages. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Now Keep the cursor to the exact place of post where you want page break. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Then copy this shortcode <!--nextpage--> and paste it. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'You can repeat this shortcode many times where you want to break down. ', 'simplecatch' ); ?></li>
-			<li><?php  _e( 'Update the post. ', 'simplecatch' ); ?></li>
-		</ul>
-
-		<h3><?php  _e( '15. How to support developement of Simple Catch Theme? ', 'simplecatch' ); ?></h3>
-		<ul>
-			<li><?php _e( 'Support Simple Catch Theme by Donation', 'simplecatch' ); ?> <a href="<?php echo esc_url( __( 'http://catchthemes.com/donate/', 'simplecatch' ) ); ?>" target="_blank"><?php _e( 'Click Here  &rarr;', 'simplecatch' ); ?></a></li>
-			<li><?php _e( 'Rate Simple Catch Theme 5 star on WordPress.org', 'simplecatch' ); ?> <a href="<?php echo esc_url( __( 'http://wordpress.org/extend/themes/simple-catch/', 'simplecatch' ) ); ?>" target="_blank"><?php _e( 'Click Here  &rarr;', 'simplecatch' ); ?></a></li>
-			<li><?php _e( 'Like Us on Facebook', 'simplecatch' ); ?> <a href="<?php echo esc_url( __( 'https://www.facebook.com/catchthemes', 'simplecatch' ) ); ?>" target="_blank"><?php _e( 'Click Here  &rarr;', 'simplecatch' ); ?></a></li>
-			<li><?php _e( 'Follow Us on Twitter', 'simplecatch' ); ?> <a href="<?php echo esc_url( __( 'https://twitter.com/catchthemes', 'simplecatch' ) ); ?>" target="_blank"><?php _e( 'Click Here  &rarr;', 'simplecatch' ); ?></a></li>
-		</ul>        
-                    
-<?php
-}
 
 /**
- * function that displays frquently asked question in theme option
+ * function that displays info bar in Theme Options
  */
-function simplecatch_themesupport() {
+function simplecatch_infobar() {
 ?>
-		<h2><?php _e( 'Support Simple Catch Theme ', 'simplecatch' ); ?></h2>
-		<ul>
-        	<li><?php _e( 'Support Simple Catch Theme by Donation', 'simplecatch' ); ?> <a href="<?php echo esc_url( __( 'http://catchthemes.com/donate/', 'simplecatch' ) ); ?>" target="_blank"><?php _e( 'Click Here  &rarr;', 'simplecatch' ); ?></a></li>
-			<li><?php _e( 'Rate Simple Catch Theme 5 star on WordPress.org', 'simplecatch' ); ?> <a href="<?php echo esc_url( __( 'http://wordpress.org/extend/themes/simple-catch/', 'simplecatch' ) ); ?>" target="_blank"><?php _e( 'Click Here  &rarr;', 'simplecatch' ); ?></a></li>
-			<li><?php _e( 'Like Us on Facebook', 'simplecatch' ); ?> <a href="<?php echo esc_url( __( 'https://www.facebook.com/catchthemes', 'simplecatch' ) ); ?>" target="_blank"><?php _e( 'Click Here  &rarr;', 'simplecatch' ); ?></a></li>
-			<li><?php _e( 'Follow Us on Twitter', 'simplecatch' ); ?> <a href="<?php echo esc_url( __( 'https://twitter.com/catchthemes', 'simplecatch' ) ); ?>" target="_blank"><?php _e( 'Click Here  &rarr;', 'simplecatch' ); ?></a></li>
-    	</ul>  
+    <div id="info-support">
+        <a class="support button" href="<?php echo esc_url(__('http://catchthemes.com/support/','catchbox')); ?>" title="<?php esc_attr_e('Theme Support', 'catchbox'); ?>" target="_blank">
+        <?php printf(__('Theme Support','catchbox')); ?></a>
+        
+        <a class="themes button" href="<?php echo esc_url(__('http://catchthemes.com/themes/','catchbox')); ?>" title="<?php esc_attr_e('More Themes', 'catchbox'); ?>" target="_blank">
+        <?php printf(__('More Themes','catchbox')); ?></a>
+        
+        <a class="facebook button" href="<?php echo esc_url(__('http://facebook.com/catchthemes','catchbox')); ?>" title="<?php esc_attr_e('Facebook', 'catchbox'); ?>" target="_blank">
+        <?php printf(__('Facebook','catchbox')); ?></a>
+        
+        <a class="twitter button" href="<?php echo esc_url(__('http://twitter.com/#!/catchthemes','catchbox')); ?>" title="<?php esc_attr_e('Twiiter', 'catchbox'); ?>" target="_blank">
+        <?php printf(__('Twitter','catchbox')); ?></a>
+        
+        <a class="donate button" href="<?php echo esc_url(__('http://catchthemes.com/donate/','catchbox')); ?>" title="<?php esc_attr_e('Donate Now', 'catchbox'); ?>" target="_blank">
+        <?php printf(__('Donate Now','catchbox')); ?></a>
+    </div>
                      
 <?php
 }

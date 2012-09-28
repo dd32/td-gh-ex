@@ -152,3 +152,11 @@ Version 1.4
 
 Version 1.4.1
 * Fixing Color Options
+
+Version 1.4.2
+* Changed Theme URI to match with the new theme site
+* Change the license to GPL 2
+* Added Info bar in Theme Option Panel
+* Fixed Slider Initialization 
+
+
