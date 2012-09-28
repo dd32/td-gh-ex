@@ -188,7 +188,7 @@ add_filter('wp_page_menu', 'responsive_wp_page_menu');
  * number of comments (count only comments, not 
  * trackbacks/pingbacks)
  *
- * Courtesy of Chip Bennett
+ * Adopted from Chip Bennett
  */
 function responsive_comment_count( $count ) {  
 	if ( ! is_admin() ) {
@@ -215,7 +215,7 @@ function responsive_comment_list_pings( $comment ) {
 
 /**
  * Sets the post excerpt length to 40 words.
- * Next few lines are adopted from Coraline
+ * Adopted from Coraline
  */
 function responsive_excerpt_length($length) {
     return 40;
@@ -261,7 +261,6 @@ function responsive_remove_gallery_css($css) {
 
 add_filter('gallery_style', 'responsive_remove_gallery_css');
 
-
 /**
  * This function removes default styles set by WordPress recent comments widget.
  */
@@ -271,14 +270,47 @@ function responsive_remove_recent_comments_style() {
 }
 add_action( 'widgets_init', 'responsive_remove_recent_comments_style' );
 
+if ( ! function_exists( 'responsive_post_meta_data' ) ) :
+/**
+ * This function prints post meta data.
+ */
+function responsive_post_meta_data() {
+	printf( __( '<span class="%1$s">Posted on </span>%2$s<span class="%3$s"> by </span>%4$s', 'responsive' ),
+	'meta-prep meta-prep-author posted', 
+	sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="timestamp">%3$s</span></a>',
+		get_permalink(),
+		esc_attr( get_the_time() ),
+		get_the_date()
+	),
+	'byline',
+	sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>',
+		get_author_posts_url( get_the_author_meta( 'ID' ) ),
+		sprintf( esc_attr__( 'View all posts by %s', 'responsive' ), get_the_author() ),
+		get_the_author()
+	    )
+	);
+}
+endif;
+
+/**
+ * This function removes WordPress generated category and tag atributes.
+ * For W3C validation purposes only.
+ * 
+ */
+function responsive_category_rel_removal ($output) {
+    $output = str_replace(' rel="category tag"', '', $output);
+    return $output;
+}
+
+add_filter('wp_list_categories', 'responsive_category_rel_removal');
+add_filter('the_category', 'responsive_category_rel_removal');
 
 /**
  * Breadcrumb Lists
  * Allows visitors to quickly navigate back to a previous section or the root page.
  *
- * Courtesy of Dimox
+ * Adopted from Dimox
  *
- * bbPress compatibility patch by Dan Smith
  */
 function responsive_breadcrumb_lists () {
   
@@ -302,7 +334,7 @@ function responsive_breadcrumb_lists () {
       $thisCat = get_category($thisCat);
       $parentCat = get_category($thisCat->parent);
       if ($thisCat->parent != 0) echo(get_category_parents($parentCat, TRUE, ' ' . $chevron . ' '));
-      echo $before . __('Archive for ','responsive') . single_cat_title('', false) . $after;
+      echo printf( __( 'Archive for %s', 'responsive' ), single_cat_title('', false) );
  
     } elseif ( is_day() ) {
       echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $chevron . ' ';
@@ -355,15 +387,15 @@ function responsive_breadcrumb_lists () {
       echo $before . get_the_title() . $after;
  
     } elseif ( is_search() ) {
-      echo $before . __('Search results for ','responsive') . get_search_query() . $after;
+      echo printf( __( 'Search results for: %s', 'responsive' ), get_search_query() );
  
     } elseif ( is_tag() ) {
-      echo $before . __('Posts tagged ','responsive') . single_tag_title('', false) . $after;
+      echo printf( __( 'Posts tagged %s', 'responsive' ), single_tag_title('', false) );
  
     } elseif ( is_author() ) {
        global $author;
       $userdata = get_userdata($author);
-      echo $before . __('All posts by ','responsive') . $userdata->display_name . $after;
+      echo printf( __( 'View all posts by %s', 'responsive' ), $userdata->display_name );
  
     } elseif ( is_404() ) {
       echo $before . __('Error 404 ','responsive') . $after;
@@ -379,7 +411,6 @@ function responsive_breadcrumb_lists () {
  
   }
 } 
-
 
     /**
      * A safe way of adding JavaScripts to a WordPress generated page.

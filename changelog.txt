@@ -8,6 +8,30 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(09/27/2012) - Maintenance and Improvements - Version 1.7.9
+[*] Localization and Languages
+    - Global Localization Improvements
+	- New responsive.pot re-generated
+	- New Languages (32 total):
+	- Indonesian
+	- Welsh
+	- Turkish
+	- Romanian
+[*] style.css
+    - Pretty Indentation
+	- Better Form Responsiveness
+[!] style.css
+    - <hr />
+	- IE7 dropdown menu
+[x]
+    - #widgets ID from top-widget not needed
+    - X-UA-Compatible from header.php not needed 
+[+] W3C Markup Validation
+[+] RTL Support
+
+----
+
+
 (09/09/2012) - Maintenance and Improvements - Version 1.7.8
 [*] Language Revisions
     - responsive.pot

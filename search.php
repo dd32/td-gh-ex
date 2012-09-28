@@ -24,7 +24,7 @@ if ( !defined('ABSPATH')) exit;
 
 <?php if (have_posts()) : ?>
 
-    <h6><?php printf(__('Search Results for: %s', 'responsive' ), '<span>' . get_search_query() . '</span>'); ?></h6>
+    <h6><?php printf(__('Search results for: %s', 'responsive' ), '<span>' . get_search_query() . '</span>'); ?></h6>
 
 		<?php while (have_posts()) : the_post(); ?>
         
@@ -33,24 +33,12 @@ if ( !defined('ABSPATH')) exit;
                 <h1 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s', 'responsive'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h1>
                 
                 <div class="post-meta">
-                <?php 
-                    printf( __( '<span class="%1$s">Posted on</span> %2$s by %3$s', 'responsive' ),'meta-prep meta-prep-author',
-		            sprintf( '<a href="%1$s" title="%2$s" rel="bookmark">%3$s</a>',
-			            get_permalink(),
-			            esc_attr( get_the_time() ),
-			            get_the_date()
-		            ),
-		            sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>',
-			            get_author_posts_url( get_the_author_meta( 'ID' ) ),
-			        sprintf( esc_attr__( 'View all posts by %s', 'responsive' ), get_the_author() ),
-			            get_the_author()
-		                )
-			        );
-		        ?>
+                <?php responsive_post_meta_data(); ?>
+                
 				    <?php if ( comments_open() ) : ?>
                         <span class="comments-link">
                         <span class="mdash">&mdash;</span>
-                    <?php comments_popup_link(__('No Comments &darr;', 'responsive'), __('1 Comment &darr;', 'responsive'), __('% Comments &darr;', 'responsive')); ?>
+                    <?php comments_popup_link(__('No Comments &darr;', '1 Comment &darr;', '% Comments &darr;', 'responsive')); ?>
                         </span>
                     <?php endif; ?> 
                 </div><!-- end of .post-meta -->
@@ -77,7 +65,12 @@ if ( !defined('ABSPATH')) exit;
 
         <h3 class="title-404"><?php _e('Your search for', 'responsive' );?> <?php the_search_query(); ?> <?php _e('did not match any entries', 'responsive');?></h3>
         <p><?php _e('Don&#39;t panic, we&#39;ll get through this together. Let&#39;s explore our options here.', 'responsive'); ?></p>
-        <h6><?php _e('You can return', 'responsive'); ?> <a href="<?php echo home_url('/'); ?>" title="<?php esc_attr_e( 'Home', 'responsive' ); ?>"><?php _e( '&larr; Home', 'responsive' ); ?></a> <?php _e( 'or search for the page you were looking for', 'responsive' ); ?></h6>
+        <h6>
+		    <?php _e( 'You can return', 'responsive' ); ?> 
+            <a href="<?php echo home_url(); ?>" title="<?php esc_attr_e( 'Home', 'responsive' ); ?>">
+			<?php _e( '&larr; Home', 'responsive' ); ?></a> 
+			<?php _e( 'or search for the page you were looking for', 'responsive' ); ?>
+        </h6>
         <?php get_search_form(); ?>
 
 <?php endif; ?>  
