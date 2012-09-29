@@ -13,9 +13,9 @@
 	</div><!-- #main -->
 
 
-   <br style="clear:both"/>
+   <br class="clear-both" />
 </div><!-- #wrapper -->
-<div style="background-color: #6b685d;line-height:1px;height:  1px;"></div>
+<div class="footer-border" ></div>
     <div id="footer" role="contentinfo">
 
 <?php
