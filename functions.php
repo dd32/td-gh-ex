@@ -5,7 +5,7 @@
  * Others are attached to action and filter hooks in WordPress to change core functionality.
  *
  * @author Aurelio De Rosa <aurelioderosa@gmail.com>
- * @version 1.0.5
+ * @version 1.1.0
  * @link http://wordpress.org/extend/themes/annarita
  * @package AurelioDeRosa
  * @subpackage Annarita
@@ -219,7 +219,7 @@ function annarita_comment_template($comment, $args, $depth)
             <span class="nickname"><?php comment_author_link(); ?></span> <?php _e('at', 'annarita'); ?>
             <a href="<?php echo esc_url(get_comment_link($comment->comment_ID)); ?>"
                title="<?php echo __('Comment written at', 'annarita') . ' ' . date_i18n(get_option('date_format'), get_comment_time('U')); ?> ">
-               <time datetime="<?php comment_time('c'); ?>" pubdate="pubdate">
+               <time datetime="<?php comment_time('c'); ?>">
                   <?php echo date_i18n(get_option('date_format') . ' ' . get_option('time_format'), get_comment_time('U')); ?>
                </time>
             </a>
@@ -352,7 +352,7 @@ function annarita_init_theme_script()
             setRateWidth();
             <?php
             $options = get_option('annarita_options');
-            if (isset($options['sidebars_cookie']) && $options['sidebars_cookie'] == true)
+            if (isset($options['sidebars_cookie']) && $options['sidebars_cookie'] == 'true')
                annarita_show_hide_sidebar();
             ?>
          }
@@ -410,7 +410,7 @@ add_action('widgets_init', create_function('', 'register_widget("annarita_review
 add_action('wp_head', 'annarita_init_theme_script');
 
 $options = get_option('annarita_options');
-if (isset($options['sidebars_cookie']) && $options['sidebars_cookie'] == true)
+if (isset($options['sidebars_cookie']) && $options['sidebars_cookie'] == 'true')
    add_action('wp_footer', 'annarita_init_sidebar');
 
 add_theme_support('automatic-feed-links');

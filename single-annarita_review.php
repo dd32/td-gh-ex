@@ -6,7 +6,7 @@
     * search engines.
     *
     * @author Aurelio De Rosa <aurelioderosa@gmail.com>
-    * @version 1.0.5
+    * @version 1.1.0
     * @link http://wordpress.org/extend/themes/annarita
     * @package AurelioDeRosa
     * @subpackage Annarita
@@ -33,7 +33,7 @@
             <?php _e('at', 'annarita'); ?>
             <a href="<?php echo get_day_link(get_the_time('Y'), get_the_time('m'), get_the_time('d')); ?>"
                title="<?php printf(__('Posts of the %s', 'annarita'), date_i18n(get_option('date_format'), get_the_time('U')));?> ">
-               <time datetime="<?php echo get_the_time('c'); ?>" pubdate="pubdate" class="dtreviewed">
+               <time datetime="<?php echo get_the_time('c'); ?>" class="dtreviewed">
                   <?php echo date_i18n(get_option('date_format') . ' ' . get_option('time_format'), get_the_time('U')); ?>
                   <span class="value-title hidden updated" title="<?php the_time('Y-m-d'); ?>">
                      <?php the_time('Y-m-d'); ?>
@@ -85,8 +85,18 @@
       <span class="description">
          <?php the_content(); ?>
       </span>
-      <div class="pagination">
-         <?php wp_link_pages(); ?>
+      <div class="pagination clear-both">
+         <?php
+            wp_link_pages();
+            if (wp_attachment_is_image(get_the_ID()))
+            {
+            ?>
+               <div id="navigation-previous" class="alignleft"><?php previous_image_link(0); ?></div>
+               <div id="navigation-next" class="alignright"><?php next_image_link(0); ?></div>
+               <br class="clear-both" />
+            <?php
+            }
+         ?>
       </div>
    </article>
    <nav class="navigation">

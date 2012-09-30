@@ -4,8 +4,8 @@ Theme Name: Annarita
 Theme URI: http://wordpress.org/extend/themes/annarita
 Author: Aurelio De Rosa
 Author URI: http://www.audero.it
-Version: 1.0.5
-Tested up to: 3.4.1
+Version: 1.1.0
+Tested up to: 3.4.2
 Tags: blue, gray, black, red, white, two-columns, three-columns, fixed-width, custom-background, custom-header, custom-menu, featured-images, sticky-post, threaded-comments, translation-ready
 
 License: GNU General Public License version 3
@@ -43,6 +43,14 @@ Installing the theme is very straightforward and consist of the following steps:
 1. This screen shot description corresponds to screenshot.png. It show how a site looks with the theme applied.
 
 == Changelog ==
+
+= 1.1.0 =
+* Fixed a typo of the italian translation of the page 404
+* Fixed a style issue caused by a floating element at the end of a page or an article
+* Changed font of the articles and pages
+* Increased font size and line spacing of articles and pages to enhance readability
+* Added an option to hide the Extra Data Block in the theme settings
+* Deleted the pubdate attribute from the <time> tags. The pubdate attribute has been deleted from the HTML5 specifications.
 
 = 1.0.5 =
 * The first public version

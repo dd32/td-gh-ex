@@ -3,7 +3,7 @@
     * The template for displaying a single page.
     *
     * @author Aurelio De Rosa <aurelioderosa@gmail.com>
-    * @version 1.0.5
+    * @version 1.1.0
     * @link http://wordpress.org/extend/themes/annarita
     * @package AurelioDeRosa
     * @subpackage Annarita
@@ -33,14 +33,25 @@
 
          the_content();
 
-         if (count(annarita_get_real_meta(get_post_custom())) > 0)
+         $meta = annarita_get_real_meta(get_post_custom());
+         $options = get_option('annarita_options');
+         if (count($meta) > 0 && (!isset($options['extra_data']) || $options['extra_data'] == 'false'))
          {
             ?>
             <hr class="separator" />
             <h3 class="post-meta-title"><?php _e('Extra data', 'annarita'); ?></h3>
-            <div class="post-meta-container">
-               <?php the_meta(); ?>
-            </div>
+            <dl class="post-meta-container">
+               <?php
+                  foreach($meta as $key => $value)
+                  {
+                     ?>
+                     <dt class="property"><?php echo $key; ?>:</dt>
+                     <dd class="value"><?php echo implode($value, ', '); ?></dd>
+                     <?php
+                  }
+               ?>
+            </dl>
+            <br class="clear-both" />
          <?php
          }
       ?>

@@ -3,7 +3,7 @@
     * The template for displaying the header of the theme.
     *
     * @author Aurelio De Rosa <aurelioderosa@gmail.com>
-    * @version 1.0.5
+    * @version 1.1.0
     * @link http://wordpress.org/extend/themes/annarita
     * @package AurelioDeRosa
     * @subpackage Annarita
@@ -18,12 +18,13 @@
       <title><?php wp_title(); ?></title>
       <?php
          $options = get_option('annarita_options');
-         if (isset($options['favicon_checkbox']) && $options['favicon_checkbox'] == true)
+         if (isset($options['favicon_checkbox']) && $options['favicon_checkbox'] == 'true')
             echo '<link rel="shortcut icon" href="' . $options['favicon_url'] . '" />';
       ?>
       <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" media="screen" />
       <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-      <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Amethysta" type="font/woff">
+      <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Amethysta" type="text/css">
+      <link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Headland+One' type="text/css">
       <!--[if lt IE 9]>
          <script src="<?php echo get_template_directory_uri(); ?>/js/html5shim.js" type="text/javascript"></script>
       <![endif]-->

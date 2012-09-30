@@ -3,7 +3,7 @@
     * The template for displaying a single post.
     *
     * @author Aurelio De Rosa <aurelioderosa@gmail.com>
-    * @version 1.0.5
+    * @version 1.1.0
     * @link http://wordpress.org/extend/themes/annarita
     * @package AurelioDeRosa
     * @subpackage Annarita
@@ -24,7 +24,7 @@
             <?php _e('Post written by', 'annarita'); ?> <?php the_author_posts_link(); ?> <?php _e('at', 'annarita'); ?>
             <a href="<?php echo get_day_link(get_the_time('Y'), get_the_time('m'), get_the_time('d')); ?>"
                title="<?php printf(__('Posts of the %s', 'annarita'), date_i18n(get_option('date_format'), get_the_time('U')));?>">
-               <time datetime="<?php echo get_the_time('c'); ?>" pubdate="pubdate">
+               <time datetime="<?php echo get_the_time('c'); ?>">
                   <?php echo date_i18n(get_option('date_format') . ' ' . get_option('time_format'), get_the_time('U')); ?>
                </time>
             </a>
@@ -73,7 +73,8 @@
          </div>
       <?php
          $meta = annarita_get_real_meta(get_post_custom());
-         if (count($meta) > 0)
+         $options = get_option('annarita_options');
+         if (count($meta) > 0 && (!isset($options['extra_data']) || $options['extra_data'] == 'false'))
          {
             ?>
             <hr class="separator" />
@@ -100,8 +101,7 @@
       <br class="clear-both" />
    </nav>
    <?php
-      $options = get_option('annarita_options');
-      if (isset($options['related_posts']) && $options['related_posts'] == true)
+      if (isset($options['related_posts']) && $options['related_posts'] == 'true')
       {
          $posts = annarita_get_related_posts(get_the_ID());
          if (count($posts) > 0)

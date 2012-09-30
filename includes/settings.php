@@ -4,7 +4,7 @@
     * Settings page of the theme.
     *
     * @author Aurelio De Rosa <aurelioderosa@gmail.com>
-    * @version 1.0.5
+    * @version 1.1.0
     * @link http://wordpress.org/extend/themes/annarita
     * @package AurelioDeRosa
     * @subpackage Annarita
@@ -22,6 +22,7 @@
       add_settings_field('favicon_checkbox', __('Favicon', 'annarita'), 'annarita_favicon_checkbox', __FILE__, 'general-settings');
       add_settings_field('favicon_url', __('Favicon URL', 'annarita'), 'annarita_favicon_url', __FILE__, 'general-settings');
       add_settings_field('related_posts', __('Related posts', 'annarita'), 'annarita_related_posts', __FILE__, 'general-settings');
+      add_settings_field('extra_data', __('Extra data', 'annarita'), 'annarita_extra_data', __FILE__, 'general-settings');
       add_settings_field('sidebars_cookie', __('Sidebars cookie', 'annarita'), 'annarita_sidebars_cookie', __FILE__, 'general-settings');
    }
 
@@ -107,6 +108,18 @@
       <?php
          echo '<input name="annarita_options[related_posts]" type="checkbox" value="true" ';
          if (isset($options['related_posts']) && $options['related_posts'] == 'true')
+            echo 'checked="checked"';
+         echo ' />';
+   }
+
+   function annarita_extra_data()
+   {
+      $options = get_option('annarita_options');
+      ?>
+      <label for="extra-data"><?php _e('Hide extra data', 'annarita'); ?>: </label>
+      <?php
+         echo '<input name="annarita_options[extra_data]" type="checkbox" value="true" ';
+         if (isset($options['extra_data']) && $options['extra_data'] == 'true')
             echo 'checked="checked"';
          echo ' />';
    }
