@@ -334,7 +334,7 @@ function responsive_breadcrumb_lists () {
       $thisCat = get_category($thisCat);
       $parentCat = get_category($thisCat->parent);
       if ($thisCat->parent != 0) echo(get_category_parents($parentCat, TRUE, ' ' . $chevron . ' '));
-      echo printf( __( 'Archive for %s', 'responsive' ), single_cat_title('', false) );
+      echo $before . __('Archive for ','responsive') . single_cat_title('', false) . $after;
  
     } elseif ( is_day() ) {
       echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $chevron . ' ';
@@ -387,15 +387,15 @@ function responsive_breadcrumb_lists () {
       echo $before . get_the_title() . $after;
  
     } elseif ( is_search() ) {
-      echo printf( __( 'Search results for: %s', 'responsive' ), get_search_query() );
+      echo $before . __('Search results for ','responsive') . get_search_query() . $after;
  
     } elseif ( is_tag() ) {
-      echo printf( __( 'Posts tagged %s', 'responsive' ), single_tag_title('', false) );
+      echo $before . __('Posts tagged ','responsive') . single_tag_title('', false) . $after;
  
     } elseif ( is_author() ) {
        global $author;
       $userdata = get_userdata($author);
-      echo printf( __( 'View all posts by %s', 'responsive' ), $userdata->display_name );
+      echo $before . __('All posts by ','responsive') . $userdata->display_name . $after;
  
     } elseif ( is_404() ) {
       echo $before . __('Error 404 ','responsive') . $after;

@@ -8,6 +8,18 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(09/30/2012) - Quick Bug Fixes - Version 1.7.9.1
+[!] Partial Localization
+[!] Top Widget Form
+[!] Error 404 Forms
+[x] (temporary) Previously added 4 languages
+	- Indonesian
+	- Welsh
+	- Turkish
+	- Romanian
+	
+----
+
 (09/27/2012) - Maintenance and Improvements - Version 1.7.9
 [*] Localization and Languages
     - Global Localization Improvements

@@ -36,7 +36,7 @@ if ( !defined('ABSPATH')) exit;
 				    <?php if ( comments_open() ) : ?>
                         <span class="comments-link">
                         <span class="mdash">&mdash;</span>
-                    <?php comments_popup_link(__('No Comments &darr;', '1 Comment &darr;', '% Comments &darr;', 'responsive')); ?>
+                    <?php comments_popup_link(__('No Comments &darr;', 'responsive'), __('1 Comment &darr;', 'responsive'), __('% Comments &darr;', 'responsive')); ?>
                         </span>
                     <?php endif; ?> 
                 </div><!-- end of .post-meta -->
@@ -71,13 +71,7 @@ if ( !defined('ABSPATH')) exit;
 
         <h1 class="title-404"><?php _e('404 &#8212; Fancy meeting you here!', 'responsive'); ?></h1>
         <p><?php _e('Don\'t panic, we\'ll get through this together. Let\'s explore our options here.', 'responsive'); ?></p>
-        <h6>
-        <h6>
-		    <?php _e( 'You can return', 'responsive' ); ?> 
-            <a href="<?php echo home_url(); ?>" title="<?php esc_attr_e( 'Home', 'responsive' ); ?>">
-			<?php _e( '&larr; Home', 'responsive' ); ?></a> 
-			<?php _e( 'or search for the page you were looking for', 'responsive' ); ?>
-        </h6>
+        <h6><?php _e( 'You can return', 'responsive' ); ?> <a href="<?php echo home_url(); ?>/" title="<?php esc_attr_e( 'home', 'responsive' ); ?>"><?php _e( '&larr; Home', 'responsive' ); ?></a> <?php _e( 'or search for the page you were looking for', 'responsive' ); ?></h6>
         <?php get_search_form(); ?>
 
 <?php endif; ?>  

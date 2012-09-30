@@ -25,10 +25,10 @@ if ( !defined('ABSPATH')) exit;
 
 <?php if (have_comments()) : ?>
     <h6 id="comments">
-	    <?php
-		    printf( _n('One comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', get_comments_number(), 'responsive'),
-			    number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>');
-		?>
+			<?php
+				printf( _n('One comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', get_comments_number(), 'responsive'),
+					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>');
+			?>
     </h6>
 
     <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
@@ -59,7 +59,7 @@ if (!empty($comments_by_type['pings'])) : // let's seperate pings/trackbacks fro
     ($count !== 1) ? $txt = __('Pings&#47;Trackbacks','responsive') : $txt = __('Pings&#47;Trackbacks','responsive');
 ?>
 
-    <h6 id="pings"><?php printf( __( '%1$d %2$s for "%3$s"', 'responsive' ), $count, $txt, get_the_title() )?></h6>
+    <h6 id="pings"><?php echo $count . " " . $txt; ?> <?php _e('for','responsive'); ?> "<?php the_title(); ?>"</h6>
 
     <ol class="commentlist">
         <?php wp_list_comments('type=pings&max_depth=<em>'); ?>
