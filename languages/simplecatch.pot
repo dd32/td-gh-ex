@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/simple-catch\n"
 "POT-Creation-Date: 2012-09-28 16:55+0530\n"
-"PO-Revision-Date: 2012-09-28 16:55+0530\n"
+"PO-Revision-Date: 2012-10-01 16:41+0530\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Catch Themes <info@catchinternet.com>\n"
 "MIME-Version: 1.0\n"
@@ -161,106 +161,123 @@ msgstr ""
 msgid "%s"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:109
+#: ../functions/simplecatch_functions.php:100
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:448
+#: ../functions/simplecatch_functions.php:436
 #, php-format
 msgid "%s in Facebook"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:454
+#: ../functions/simplecatch_functions.php:442
 #, php-format
 msgid "%s in Twitter"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:460
+#: ../functions/simplecatch_functions.php:448
 #, php-format
 msgid "%s in Google+"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:466
+#: ../functions/simplecatch_functions.php:454
 #, php-format
 msgid "%s in Linkedin"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:472
+#: ../functions/simplecatch_functions.php:460
 #, php-format
 msgid "%s in Pinterest"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:478
+#: ../functions/simplecatch_functions.php:466
 #, php-format
 msgid "%s in YouTube"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:484
+#: ../functions/simplecatch_functions.php:472
 #, php-format
 msgid "%s in Vimeo"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:490
+#: ../functions/simplecatch_functions.php:478
 #, php-format
 msgid "%s in Slideshare"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:496
+#: ../functions/simplecatch_functions.php:484
 #, php-format
 msgid "%s in Foursquare"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:502
+#: ../functions/simplecatch_functions.php:490
 #, php-format
 msgid "%s in Flickr"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:507
+#: ../functions/simplecatch_functions.php:495
 #, php-format
 msgid "%s in Tumblr"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:512
+#: ../functions/simplecatch_functions.php:500
 #, php-format
 msgid "%s in deviantART"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:517
+#: ../functions/simplecatch_functions.php:505
 #, php-format
 msgid "%s in Dribbble"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:522
+#: ../functions/simplecatch_functions.php:510
 #, php-format
 msgid "%s in MySpace"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:527
+#: ../functions/simplecatch_functions.php:515
 #, php-format
 msgid "%s in WordPress"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:532
+#: ../functions/simplecatch_functions.php:520
 #, php-format
 msgid "%s in RSS"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:537
+#: ../functions/simplecatch_functions.php:525
 #, php-format
 msgid "%s in Delicious"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:542
+#: ../functions/simplecatch_functions.php:530
 #, php-format
 msgid "%s in Last.fm"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:697
-msgid "Design by:"
+#: ../functions/simplecatch_functions.php:685
+msgid "Powered By:"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:697
+#: ../functions/simplecatch_functions.php:685
+msgid "http://wordpress.org/"
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:685
+msgid "Powered By WordPress"
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:685
+#: ../functions/panel/theme_options.php:717
+msgid "WordPress"
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:685
+msgid "Theme:"
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:685
 #: ../functions/panel/theme_options.php:99
 #: ../functions/panel/theme_options.php:513
 #: ../functions/panel/theme_options.php:628
@@ -268,79 +285,61 @@ msgstr ""
 msgid "http://catchthemes.com/"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:697
-#: ../functions/panel/theme_options.php:99
-#: ../functions/panel/theme_options.php:513
-#: ../functions/panel/theme_options.php:628
-#: ../functions/panel/theme_options.php:760
-msgid "Catch Themes"
+#: ../functions/simplecatch_functions.php:685
+msgid "Simple Catch"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:697
-msgid "http://wordpress.org/"
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:697
-#: ../functions/panel/theme_options.php:717
-msgid "WordPress"
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:697
-#, php-format
-msgid "Proudly powered by %s."
-msgstr ""
-
-#: ../functions/simplecatch_functions.php:856
+#: ../functions/simplecatch_functions.php:844
 msgid "Categories: "
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:915
+#: ../functions/simplecatch_functions.php:903
 msgid "http://catchthemes.com/support/"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:915
-#: ../functions/simplecatch_functions.php:916
+#: ../functions/simplecatch_functions.php:903
+#: ../functions/simplecatch_functions.php:904
 msgid "Theme Support"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:918
+#: ../functions/simplecatch_functions.php:906
 msgid "http://catchthemes.com/themes/"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:918
-#: ../functions/simplecatch_functions.php:919
+#: ../functions/simplecatch_functions.php:906
+#: ../functions/simplecatch_functions.php:907
 msgid "More Themes"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:921
+#: ../functions/simplecatch_functions.php:909
 msgid "http://facebook.com/catchthemes"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:921
-#: ../functions/simplecatch_functions.php:922
+#: ../functions/simplecatch_functions.php:909
+#: ../functions/simplecatch_functions.php:910
 #: ../functions/panel/theme_options.php:646
 msgid "Facebook"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:924
+#: ../functions/simplecatch_functions.php:912
 msgid "http://twitter.com/#!/catchthemes"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:924
+#: ../functions/simplecatch_functions.php:912
 msgid "Twiiter"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:925
+#: ../functions/simplecatch_functions.php:913
 #: ../functions/panel/theme_options.php:651
 msgid "Twitter"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:927
+#: ../functions/simplecatch_functions.php:915
 msgid "http://catchthemes.com/donate/"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:927
-#: ../functions/simplecatch_functions.php:928
+#: ../functions/simplecatch_functions.php:915
+#: ../functions/simplecatch_functions.php:916
 msgid "Donate Now"
 msgstr ""
 
@@ -391,6 +390,13 @@ msgstr ""
 #: ../functions/panel/theme_options.php:65
 #: ../functions/panel/theme_options.php:66
 msgid "Webmaster Tools"
+msgstr ""
+
+#: ../functions/panel/theme_options.php:99
+#: ../functions/panel/theme_options.php:513
+#: ../functions/panel/theme_options.php:628
+#: ../functions/panel/theme_options.php:760
+msgid "Catch Themes"
 msgstr ""
 
 #: ../functions/panel/theme_options.php:110

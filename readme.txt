@@ -159,4 +159,9 @@ Version 1.4.2
 * Added Info bar in Theme Option Panel
 * Fixed Slider Initialization 
 
+Version 1.4.3
+* Fixed textdomain in Info Bar
+* Fixed float issue of Static home page.
+* Fixed footer code
+* Fixed site title though changes in wp_title and catchbox_filter_wp_title function
 

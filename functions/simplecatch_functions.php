@@ -74,46 +74,34 @@ add_action( 'comment_form_before', 'simplecatch_enqueue_comment_reply_script' );
 
 
 /**
- * Modifying the Title
+ * Creates a nicely formatted and more specific title element text
+ * for output in head of document, based on current view.
  *
- * function tied to the wp_title filter hook.
- * @uses filter wp_title
+ * @param string $title Default title text for current view.
+ * @param string $sep Optional separator.
+ * @return string Filtered title.
  */
-function simplecatch_filter_wp_title( $title ) {
-	global $page, $paged;
-	
-	// Get the Site Name
-    $site_name = get_bloginfo( 'name' );
-    
+function simplecatch_wp_title( $title, $sep ) {
+	global $paged, $page;
 
-	// For Homepage
-    if (  is_home() || is_front_page() ) {		
-		$filtered_title = $site_name;		
-        // Get the Site Description
-        $site_description = get_bloginfo( 'description' );
-		if ( !empty( $site_description ) )  {
-        	// Append Site Description to title
-        	$filtered_title .= ' &#124; '. $site_description;
-		}
-    }
-	elseif( is_feed() ) {
-		$filtered_title = '';
-	}
-	else {	
-		// Prepend name
-		$filtered_title = $title .' &#124; '. $site_name;
-	}
+	if ( is_feed() )
+		return $title;
 
-	// Add a page number if necessary:
-	if ( $paged >= 2 || $page >= 2 ) {
-		$filtered_title .= ' &#124; ' . sprintf( __( 'Page %s', 'simplecatch' ), max( $paged, $page ) );
-	}
-	
-	// Return the modified title
-    return $filtered_title;
+	// Add the site name.
+	$title .= get_bloginfo( 'name' );
 
+	// Add the site description for the home/front page.
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) )
+		$title = "$title $sep $site_description";
+
+	// Add a page number if necessary.
+	if ( $paged >= 2 || $page >= 2 )
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'simplecatch' ), max( $paged, $page ) );
+
+	return $title;
 }
-add_filter( 'wp_title', 'simplecatch_filter_wp_title' );
+add_filter( 'wp_title', 'simplecatch_wp_title', 10, 2 );
 
 
 /**
@@ -694,8 +682,8 @@ function simplecatch_custom_tag_cloud() {
 function simplecatch_footer() {
 ?>
 	<div class="col5 powered-by"> 
-		<?php _e( 'Design by:', 'simplecatch');?> <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'simplecatch' ) ); ?>" target="_blank" title="<?php esc_attr_e( 'Catch Themes', 'simplecatch' ); ?>"><?php _e( 'Catch Themes', 'simplecatch' ); ?></a> | <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'simplecatch' ) ); ?>" title="<?php esc_attr_e( 'WordPress', 'simplecatch' ); ?>" rel="generator" target="_blank" ><?php printf( __( 'Proudly powered by %s.', 'simplecatch' ), 'WordPress' ); ?></a>
-  	</div><!--.col6 powered-by-->
+        <?php _e( 'Powered By:', 'simplecatch');?> <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'simplecatch' ) ); ?>" target="_blank" title="<?php esc_attr_e( 'Powered By WordPress', 'simplecatch' ); ?>"><?php _e( 'WordPress', 'simplecatch' ); ?></a> | <?php _e( 'Theme:', 'simplecatch');?> <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'simplecatch' ) ); ?>" target="_blank" title="<?php esc_attr_e( 'Simple Catch', 'simplecatch' ); ?>"><?php _e( 'Simple Catch', 'simplecatch' ); ?></a>
+  	</div><!--.col5 powered-by-->
 
 <?php
 }
@@ -912,20 +900,20 @@ add_action('template_redirect', 'simplecatch_rss_redirect');
 function simplecatch_infobar() {
 ?>
     <div id="info-support">
-        <a class="support button" href="<?php echo esc_url(__('http://catchthemes.com/support/','catchbox')); ?>" title="<?php esc_attr_e('Theme Support', 'catchbox'); ?>" target="_blank">
-        <?php printf(__('Theme Support','catchbox')); ?></a>
+        <a class="support button" href="<?php echo esc_url(__('http://catchthemes.com/support/','catchbox')); ?>" title="<?php esc_attr_e('Theme Support', 'simplecatch'); ?>" target="_blank">
+        <?php printf(__('Theme Support','simplecatch')); ?></a>
         
-        <a class="themes button" href="<?php echo esc_url(__('http://catchthemes.com/themes/','catchbox')); ?>" title="<?php esc_attr_e('More Themes', 'catchbox'); ?>" target="_blank">
-        <?php printf(__('More Themes','catchbox')); ?></a>
+        <a class="themes button" href="<?php echo esc_url(__('http://catchthemes.com/themes/','catchbox')); ?>" title="<?php esc_attr_e('More Themes', 'simplecatch'); ?>" target="_blank">
+        <?php printf(__('More Themes','simplecatch')); ?></a>
         
-        <a class="facebook button" href="<?php echo esc_url(__('http://facebook.com/catchthemes','catchbox')); ?>" title="<?php esc_attr_e('Facebook', 'catchbox'); ?>" target="_blank">
-        <?php printf(__('Facebook','catchbox')); ?></a>
+        <a class="facebook button" href="<?php echo esc_url(__('http://facebook.com/catchthemes','catchbox')); ?>" title="<?php esc_attr_e('Facebook', 'simplecatch'); ?>" target="_blank">
+        <?php printf(__('Facebook','simplecatch')); ?></a>
         
-        <a class="twitter button" href="<?php echo esc_url(__('http://twitter.com/#!/catchthemes','catchbox')); ?>" title="<?php esc_attr_e('Twiiter', 'catchbox'); ?>" target="_blank">
-        <?php printf(__('Twitter','catchbox')); ?></a>
+        <a class="twitter button" href="<?php echo esc_url(__('http://twitter.com/#!/catchthemes','catchbox')); ?>" title="<?php esc_attr_e('Twiiter', 'simplecatch'); ?>" target="_blank">
+        <?php printf(__('Twitter','simplecatch')); ?></a>
         
-        <a class="donate button" href="<?php echo esc_url(__('http://catchthemes.com/donate/','catchbox')); ?>" title="<?php esc_attr_e('Donate Now', 'catchbox'); ?>" target="_blank">
-        <?php printf(__('Donate Now','catchbox')); ?></a>
+        <a class="donate button" href="<?php echo esc_url(__('http://catchthemes.com/donate/','catchbox')); ?>" title="<?php esc_attr_e('Donate Now', 'simplecatch'); ?>" target="_blank">
+        <?php printf(__('Donate Now','simplecatch')); ?></a>
     </div>
                      
 <?php
