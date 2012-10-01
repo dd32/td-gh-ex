@@ -321,42 +321,36 @@ endif; // catchbox_admin_header_image
 
 
 /**
- * Modifying the Title
+ * Creates a nicely formatted and more specific title element text
+ * for output in head of document, based on current view.
  *
- * function tied to the wp_title filter hook.
- * @uses filter wp_title
+ * @param string $title Default title text for current view.
+ * @param string $sep Optional separator.
+ * @return string Filtered title.
  */
-function catchbox_filter_wp_title( $title ) {
+function catchbox_filter_wp_title( $title, $sep ) {
 	global $page, $paged;
-	
-	// Get the Site Name
-    $site_name = get_bloginfo( 'name' );
-    
-	// Prepend name
-    $filtered_title = $site_name . $title;
-    
-	// If site front page, append description
-	$site_description = get_bloginfo( 'description' );
-    if ( $site_description && ( is_home() || is_front_page() ) ) {
-        // Get the Site Description
-        $site_description = get_bloginfo( 'description' );
-        // Append Site Description to title
-        $filtered_title .= ' &raquo; '.$site_description;
-    }
-	if( is_feed() ) {
-		$filtered_title = '';
-	}
 
-	// Add a page number if necessary:
-	if ( $paged >= 2 || $page >= 2 ) {
-		$filtered_title .= ' &raquo; ' . sprintf( __( 'Page %s', 'catchbox' ), max( $paged, $page ) );
-	}
-	
-	// Return the modified title
-    return $filtered_title;
+	if ( is_feed() )
+		return $title;
+
+	// Add the site name.
+	$title .= get_bloginfo( 'name' );
+
+	// Add the site description for the home/front page.
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) )
+		$title = "$title $sep $site_description";
+
+	// Add a page number if necessary.
+	if ( $paged >= 2 || $page >= 2 )
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'catchbox' ), max( $paged, $page ) );
+
+	return $title;	
 
 }
-add_filter( 'wp_title', 'catchbox_filter_wp_title', 10, 3 );
+add_filter( 'wp_title', 'catchbox_filter_wp_title', 10, 2 );
+
 
 /**
  * Sets the post excerpt length.

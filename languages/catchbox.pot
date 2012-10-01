@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/catch-box\n"
 "POT-Creation-Date: 2012-07-21 12:19+0530\n"
-"PO-Revision-Date: 2012-09-24 14:55+0530\n"
+"PO-Revision-Date: 2012-10-01 16:07+0530\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Catch Themes <info@catchinternet.com>\n"
 "MIME-Version: 1.0\n"
@@ -413,74 +413,74 @@ msgstr ""
 msgid "Mountain"
 msgstr ""
 
-#: ../functions.php:352
+#: ../functions.php:347
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: ../functions.php:428
+#: ../functions.php:422
 msgid "Main Sidebar"
 msgstr ""
 
-#: ../functions.php:437
+#: ../functions.php:431
 msgid "Footer Area One"
 msgstr ""
 
-#: ../functions.php:439
-#: ../functions.php:449
-#: ../functions.php:459
+#: ../functions.php:433
+#: ../functions.php:443
+#: ../functions.php:453
 msgid "An optional widget area for your site footer"
 msgstr ""
 
-#: ../functions.php:447
+#: ../functions.php:441
 msgid "Footer Area Two"
 msgstr ""
 
-#: ../functions.php:457
+#: ../functions.php:451
 msgid "Footer Area Three"
 msgstr ""
 
-#: ../functions.php:477
+#: ../functions.php:471
 #: ../single.php:15
 msgid "Post navigation"
 msgstr ""
 
-#: ../functions.php:485
+#: ../functions.php:479
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
 
-#: ../functions.php:486
+#: ../functions.php:480
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: ../functions.php:559
+#: ../functions.php:553
 msgid "Pingback:"
 msgstr ""
 
-#: ../functions.php:576
+#: ../functions.php:570
 #, php-format
 msgid "%1$s on %2$s <span class=\"says\">said:</span>"
 msgstr ""
 
-#: ../functions.php:582
+#: ../functions.php:576
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: ../functions.php:591
+#: ../functions.php:585
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../functions.php:600
+#: ../functions.php:594
 msgid "Reply <span>&darr;</span>"
 msgstr ""
 
-#: ../functions.php:618
+#: ../functions.php:612
 #, php-format
 msgid "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> by </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
 msgstr ""
 
-#: ../functions.php:663
+#: ../functions.php:657
 msgid "ID"
 msgstr ""
 
@@ -1022,7 +1022,7 @@ msgid ""
 "(Google, Yahoo and Bing site verification ID, Header and Footer codes), 7. Custom "
 "Backgrounds, 8. Custom Header, 9. Catchbox Adspace widget to add any type of "
 "Advertisements, and 10. Support popular plugins. Multilingual Ready (WPML) and "
-"also currently translated in Brazilian Portuguese, Spanish and Danish."
+"also currently translated in Brazilian Portuguese, Spanish, Danish and Germany."
 msgstr ""
 
 #. Author of the plugin/theme
