@@ -181,7 +181,7 @@ function sempress_comment( $comment, $args, $depth ) {
       <footer>
         <div class="comment-author vcard h-card">
           <?php echo get_avatar( $comment, 40 ); ?>
-          <?php printf( __( '%s <span class="says">says:</span>', 'sempress' ), sprintf( '<cite class="fn p-fn">%s</cite>', get_comment_author_link() ) ); ?>
+          <?php printf( __( '%s <span class="says">says:</span>', 'sempress' ), sprintf( '<cite class="fn n p-fn p-name">%s</cite>', get_comment_author_link() ) ); ?>
         </div><!-- .comment-author .vcard -->
         <?php if ( $comment->comment_approved == '0' ) : ?>
           <em><?php _e( 'Your comment is awaiting moderation.', 'sempress' ); ?></em>
@@ -217,7 +217,7 @@ if ( ! function_exists( 'sempress_posted_on' ) ) :
  * @since SemPress 1.0.0
  */
 function sempress_posted_on() {
-  printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date updated dt-updated" datetime="%3$s" itemprop="dateModified">%4$s</time></a><span class="byline"> <span class="sep"> by </span> <span class="author p-author vcard h-card" itemprop="author" itemscope itemtype="http://schema.org/Person"><a class="url u-url fn p-fn p-name n" href="%5$s" title="%6$s" rel="author" itemprop="name url">%7$s</a></span></span>', 'sempress' ),
+  printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date updated dt-updated" datetime="%3$s" itemprop="dateModified">%4$s</time></a><span class="byline"> <span class="sep"> by </span> <span class="author p-author vcard h-card" itemprop="author" itemscope itemtype="http://schema.org/Person"><a class="url u-url fn p-fn p-name n" href="%5$s" title="%6$s" rel="author" itemprop="url"><span itemprop="name">%7$s</span></a></span></span>', 'sempress' ),
     esc_url( get_permalink() ),
     esc_attr( get_the_time() ),
     esc_attr( get_the_date( 'c' ) ),
@@ -470,7 +470,7 @@ add_filter("comment_form_default_fields", "sempress_comment_input_types");
  * @return string
  */
 function sempress_search_form_input_type($form) {
-  return preg_replace('/"text"/', '"search"', $form);
+  return preg_replace('/"text"/', '"search" placeholder="'.__('Search here&hellip;', 'sempress').'"', $form);
 }
 add_filter("get_search_form", "sempress_search_form_input_type");
 
@@ -502,6 +502,18 @@ function sempress_blog_itemprop($prop) {
     echo ' itemprop="'.$prop.'"';
   }
 }
+
+/**
+ * add .attachement to the imported media-objects
+ */
+function sempress_oembed_dataparse($return, $data, $url) {
+  if ($return) {
+    $return = '<div class="media-attachment oembed">' . $return . '</div>';
+  }
+  
+  return $return;
+}
+add_filter( 'oembed_dataparse', 'sempress_oembed_dataparse', 3 );
 
 /**
  * This theme was built with PHP, Semantic HTML, CSS, love, and a SemPress.
