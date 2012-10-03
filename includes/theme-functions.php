@@ -297,7 +297,7 @@ foreach ($mantra_options as $key => $value) {
 		<div id="site-info" >
 				<a href="<?php echo home_url( '/' ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 				<?php bloginfo( 'name' ); ?></a> | Powered by <a href="<?php echo $mantra_theme_data['Author URI']?>" title="<?php echo $mantra_theme_data['Name'].
-				' by '.strip_tags($mantra_theme_data->Author);?>"> <?php echo $mantra_theme_data['Name'] ?> </a> and <a href="<?php echo esc_url('http://wordpress.org/' ); ?>" 
+				' Theme by '.strip_tags($mantra_theme_data->Author);?>"> <?php echo $mantra_theme_data['Name'] ?> </a> &amp; <a href="<?php echo esc_url('http://wordpress.org/' ); ?>" 
 				title="<?php esc_attr_e('Semantic Personal Publishing Platform', 'mantra'); ?>"> <?php printf(' %s.', 'WordPress' ); ?>
 				</a>
 			</div><!-- #site-info -->

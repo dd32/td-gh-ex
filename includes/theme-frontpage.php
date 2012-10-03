@@ -78,7 +78,6 @@ margin:0 auto;
 	font-size:32px;
 	clear:both;
 	line-height:32px;
-	font-style:italic;
 	font-weight:bold;
 	color:<?php echo $mantra_fronttitlecolor; ?>;
 }
