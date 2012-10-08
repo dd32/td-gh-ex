@@ -375,5 +375,3 @@ function graphene_display_dynamic_widget_hooks(){
     </div>
     <?php endif;
 }
-
-?>

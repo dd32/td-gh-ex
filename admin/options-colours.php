@@ -309,6 +309,8 @@ function graphene_options_colours() {
                             'bg_meta_border' => array( 'title' => __( 'Post meta and footer border', 'graphene' ) ),
                             'bg_post_top_border' => array( 'title' => __( 'Post and pages top border', 'graphene' ) ),
                             'bg_post_bottom_border' => array( 'title' => __( 'Post and pages bottom border', 'graphene' ) ),
+			    'bg_sticky_content' => array( 'title' => __( 'Sticky posts content background', 'graphene' ) ),
+			    'bg_child_page_content' => array( 'title' => __( 'Child pages content background', 'graphene' ) ),
                         );
                                                 
                         foreach ( $colour_opts as $key => $colour_opt) :

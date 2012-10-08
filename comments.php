@@ -47,9 +47,9 @@ global $graphene_settings;
 	$allcomments_num = graphene_get_comment_count( 'comments', false );
 	$pings_num = graphene_get_comment_count( 'pings' );
 	if ( $comments_num )
-		$comment_count = sprintf( _n( '1 comment', '%d comments', $comments_num, 'graphene' ), number_format_i18n( $comments_num ) );
+		$comment_count = sprintf( _n( '%d comment', '%d comments', $comments_num, 'graphene' ), number_format_i18n( $comments_num ) );
 	if ( $pings_num ) 
-		$ping_count = sprintf( _n( '1 ping', '%d pings', $pings_num, 'graphene' ), number_format_i18n( $pings_num ) );
+		$ping_count = sprintf( _n( '%d ping', '%d pings', $pings_num, 'graphene' ), number_format_i18n( $pings_num ) );
 	$graphene_tabbed_comment = ( $comments_num && $pings_num ) ? true : false;
 	
 	$class = 'clearfix';

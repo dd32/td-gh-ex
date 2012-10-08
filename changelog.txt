@@ -4,6 +4,19 @@ http://www.khairul-syahir.com
 
 CHANGELOG
 
+Version 1.8.2
+	* Fixed incorrect gradient direction in IE for several colour options
+	* Fixed a filter for default menu being added regardless of whether or not the default menu is being used
+	* Fixed translation issue for languages with more complicated singluar and plural forms
+	* Removed » from the front page browser title if site has no description
+	* Added Croation (hr) translation by Nik (katanaswords.info)
+	* Added Indonesian (id_ID) translation by Stefan Russel
+	* Added Finnish (fi) translation by Rene Rendic and Eero Tuomenoksa
+	* Added Icelandic (is_IS) translation by Sigurður Guðbrandsson
+	* Added option to change sticky posts and child pages background colour
+	* Added Delete and mark Spam links for comment listing. Only users with edit posts role will see the links
+	* Added option to hide @replies in Graphene Twitter widget
+
 Version 1.8.1
 	* Added gradient support for Opera
 	* Fixed a bug with slider image not showing
@@ -13,7 +26,7 @@ Version 1.8.1
 	* Fixed a conflict of "graphene_post_meta" action hook widget area with the filter hook of the same name. The filter hook is renamed to "graphene_get_post_meta"
 	* Fixed z-index and gradient issue of the primary menu on IE
 	* Refactored post meta conversion script to run per-post on request instead of all at once
-	* Excluded theme's directory from the exported theme settings
+	* Excluded theme's directory value from the exported theme settings
 
 Version 1.8
 	* Added option to add custom tags into the theme's <head> element in Graphene Option > Advanced > Custom <head> Tags

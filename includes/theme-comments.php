@@ -34,6 +34,7 @@ if (!function_exists( 'graphene_comment' ) ) :
 								<?php printf( __( '%1$s at %2$s', 'graphene' ), get_comment_date(), get_comment_time() ); ?>
 								<span class="timezone"><?php echo '(UTC '.get_option( 'gmt_offset' ).')'; ?></span>
                                 <?php edit_comment_link(__( 'Edit comment','graphene' ),' (',') ' ); ?>
+				<?php if ( function_exists ('graphene_delete_and_spam_comment') ) { graphene_delete_and_spam_comment(get_comment_ID()); } ?>
                                 <span class="comment-permalink"><a href="<?php echo get_comment_link(); ?>"><?php _e( 'Link to this comment', 'graphene' ); ?></a></span>
                             	<?php do_action( 'graphene_comment_metadata' ); ?>    
                             </p>
@@ -245,6 +246,17 @@ function graphene_should_show_comments() {
 
 endif;
 
+/**
+ * Delete and mark spam link for comments. Show only if current user can edit posts
+ */
+ if ( ! function_exists( 'graphene_delete_and_spam_comment' ) ) :
+function graphene_delete_and_spam_comment($id) {
+	if (current_user_can('edit_post')) {
+		echo '| <a class="comment-delete-link" title="Delete this comment" href="'.get_admin_url().'comment.php?action=cdc&c='.$id.'">Delete</a> ';
+		echo '| <a class="comment-spam-link" title="Mark this comment as Spam" href="'.get_admin_url().'comment.php?action=cdc&dt=spam&c='.$id.'">Spam</a> |';
+	}
+}
+endif;
 
 /**
  * Add script to show/hide comment permalink

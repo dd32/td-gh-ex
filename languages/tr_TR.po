@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graphene 1.0 theme for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-08 17:43+1200\n"
+"POT-Creation-Date: 2012-09-30 18:11+1200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Arvanitis <gbarin35@gmail.com>\n"
 "Language-Team: \n"
@@ -21,14 +21,17 @@ msgid "Searching for: <span>%s</span>"
 msgstr "Arama: <span>%s</span>"
 
 #: 404.php:29
+#: search-404.php:3
 msgid "Error 404 - Page Not Found"
 msgstr "Hata 404 - Sayfa bulunamadı"
 
 #: 404.php:31
+#: search-404.php:5
 msgid "Sorry, I've looked everywhere but I can't find the page you're looking for."
 msgstr "Üzgünüm, her yere baktım fakat aradığınız sayfayı bulamadım."
 
 #: 404.php:32
+#: search-404.php:6
 msgid "If you follow the link from another website, I may have removed or renamed the page some time ago. You may want to try searching for the page:"
 msgstr "Bağlantıyı diğer web sitesinden aldıysanız, kısa zaman önce sayfayı silmiş veya yeniden adlandırmış olmalıyım. Sayfa için aramayı denemek istiyorsanız:"
 
@@ -51,7 +54,6 @@ msgstr "Günlük Arşiv: %s"
 msgid "Monthly Archive: %s"
 msgstr "Aylık Arşiv: %s"
 
-#. translators: F will be replaced with month, and Y will be replaced with year, so "F Y" in English would be replaced with something like "June 2008".
 #: archive.php:28
 msgid "F Y"
 msgstr "F Y"
@@ -83,16 +85,16 @@ msgstr "Bu yazı şifre korumalıdır. Herhangi bir yoruma bakmak için şifreni
 #: loop-post-formats.php:47
 #: loop.php:170
 #, php-format
-msgid "1 comment"
+msgid "%d comment"
 msgid_plural "%d comments"
-msgstr[0] "1 yorum"
+msgstr[0] "%d yorum"
 msgstr[1] "%d yorum"
 
 #: comments.php:52
 #, php-format
-msgid "1 ping"
+msgid "%d ping"
 msgid_plural "%d pings"
-msgstr[0] "1 ping"
+msgstr[0] "%d ping"
 msgstr[1] "%d ping"
 
 #: comments.php:71
@@ -116,10 +118,8 @@ msgstr "Yorum Gönder"
 msgid "Copyright"
 msgstr "Telif"
 
-#. translators: %s will replaced by a link to the Creative Commons licence page, with "Creative Commons Licence" as the link text.
 #: footer.php:57
 #, php-format
-msgctxt "graphene"
 msgid "Except where otherwise noted, content on this site is licensed under a %s."
 msgstr "Aksi belirtilmediği durumlar dışında, bu sitenin içeriği %s lisansı altındadır."
 
@@ -135,7 +135,6 @@ msgstr "Creative Commons Lisansı BY-NC-ND"
 msgid "Return to top"
 msgstr "Başa dön"
 
-#. translators: %1$s is the link to WordPress.org, %2$s is the theme's name
 #: footer.php:90
 #, php-format
 msgid "Powered by %1$s and the %2$s."
@@ -154,7 +153,6 @@ msgstr "Ön sayfaya geri dön"
 msgid "Author's details"
 msgstr "Yazarın detayları"
 
-#. translators: %1$s is the first name, %2$s is the last name
 #: loop-author.php:25
 #, php-format
 msgid "<strong>Name:</strong> %1$s %2$s"
@@ -170,6 +168,7 @@ msgid "Biography"
 msgstr "Biyografisi"
 
 #: loop-author.php:52
+#: admin/options-general.php:253
 msgid "Latest posts"
 msgstr "En son yazıları"
 
@@ -180,6 +179,9 @@ msgstr "En son yazıları"
 #: loop-post-formats.php:31
 #: loop.php:65
 #: loop.php:134
+#: includes/theme-panes.php:77
+#: includes/theme-panes.php:88
+#: includes/theme-panes.php:101
 #, php-format
 msgid "Permalink to %s"
 msgstr "%s kalıcı bağlantısı"
@@ -260,7 +262,6 @@ msgstr "Video"
 msgid "Post format"
 msgstr "Yazı biçimi"
 
-#. translators: This is the PHP date formatting string for the status post format. See http://php.net/manual/en/function.date.php for more details.
 #: loop-post-formats.php:27
 msgid "l F j, Y"
 msgstr "F l, Y"
@@ -277,6 +278,11 @@ msgstr "Yazıyı düzenle"
 #: loop.php:170
 msgid "Leave comment"
 msgstr "Yorum bırak"
+
+#: loop-post-formats.php:47
+#: loop.php:170
+msgid "1 comment"
+msgstr "1 yorum"
 
 #: loop-post-formats.php:47
 #: loop.php:170
@@ -325,7 +331,6 @@ msgstr "Bu girişin kalanını oku &raquo;"
 msgid "Suggested results"
 msgstr "Önerilen sonuçlar"
 
-#. translators: %s is the search term
 #: search-404.php:18
 #, php-format
 msgid "I've done a courtesy search for the term %s for you. See if you can find what you're looking for in the list below."
@@ -351,18 +356,22 @@ msgid "Search"
 msgstr "Arama"
 
 #: sidebar-two.php:28
+#: includes/theme-setup.php:302
 msgid "Front Page Sidebar Two Widget Area"
 msgstr "Ön Sayfa Yan menü İkinci Bileşen Alanı"
 
 #: sidebar-two.php:30
+#: includes/theme-setup.php:267
 msgid "Sidebar Two Widget Area"
 msgstr "Yan menü İkinci Bileşen Alanı"
 
 #: sidebar.php:28
+#: includes/theme-setup.php:293
 msgid "Front Page Sidebar Widget Area"
 msgstr "Ön Sayfa Yan Menü Bileşen Alanı"
 
 #: sidebar.php:30
+#: includes/theme-setup.php:258
 msgid "Sidebar Widget Area"
 msgstr "Yan Menü Bileşen Alanı"
 
@@ -371,7 +380,6 @@ msgstr "Yan Menü Bileşen Alanı"
 msgid "Tag Archive: <span>%s</span>"
 msgstr "Etiket Arşivi: <span>%s</span>"
 
-#. translators: %1$s will be replaced by the taxonomy singular name, %2$s will be replaced by the term title
 #: taxonomy.php:15
 #, php-format
 msgid "%1$s Archive: %2$s"
@@ -393,107 +401,107 @@ msgstr "Graphene Yazı-Özel Seçenekleri"
 msgid "Graphene page-specific options"
 msgstr "Graphene Sayfa-Özel Seçenekleri"
 
-#: admin/custom-fields.php:91
+#: admin/custom-fields.php:92
 msgid "These settings will only be applied to this particular post or page you're editing. They will override the global settings set in the Graphene Options or Graphene Display options page."
 msgstr "Bu ayarlar sadece bu özel yazı ya da düzenlediğiniz sayfa için uygulanacaktır. Onlar Graphene Seçenekleri veya Graphene Görünüm seçenekleri sayfasında belirtilen genel ayarları geçersiz kılar."
 
-#: admin/custom-fields.php:92
+#: admin/custom-fields.php:93
 msgid "Slider options"
 msgstr "Gösterici Seçenekleri"
 
-#: admin/custom-fields.php:96
+#: admin/custom-fields.php:97
 #: admin/options-general.php:107
 msgid "Slider image"
 msgstr "Gösterici Resmi"
 
-#: admin/custom-fields.php:100
-#: admin/custom-fields.php:135
-#: admin/custom-fields.php:149
+#: admin/custom-fields.php:101
+#: admin/custom-fields.php:136
+#: admin/custom-fields.php:150
 msgid "Use global setting"
 msgstr "Genel ayarları kullan"
 
-#: admin/custom-fields.php:101
+#: admin/custom-fields.php:102
 #: admin/options-general.php:111
 msgid "Don't show image"
 msgstr "Resim gösterme"
 
-#: admin/custom-fields.php:102
+#: admin/custom-fields.php:103
 #: admin/options-general.php:112
 msgid "Featured Image"
 msgstr "Özellikli Resim"
 
-#: admin/custom-fields.php:103
+#: admin/custom-fields.php:104
 #: admin/options-general.php:113
 msgid "First image in post"
 msgstr "Yazının ilk resmi"
 
-#: admin/custom-fields.php:104
+#: admin/custom-fields.php:105
 #: admin/options-general.php:114
 msgid "Custom URL"
 msgstr "Özel URL"
 
-#: admin/custom-fields.php:110
+#: admin/custom-fields.php:111
 #: admin/options-general.php:120
 msgid "Custom slider image URL"
 msgstr "Özel resim gösterici URL"
 
-#: admin/custom-fields.php:114
+#: admin/custom-fields.php:115
 #: admin/options-general.php:124
 msgid "Make sure you select Custom URL in the slider image option above to use this custom url."
 msgstr "Bu özel url kullanmak için yukarıdaki resim göstericide seçeneğinde Özel URL seçtiğinizden emin olun."
 
-#: admin/custom-fields.php:119
+#: admin/custom-fields.php:120
 msgid "Custom slider URL"
 msgstr "Özel gösterici URL"
 
-#: admin/custom-fields.php:123
+#: admin/custom-fields.php:124
 msgid "Use this to override the link that is used in the slider."
 msgstr "Gösterici kullanımında bağlantıları geçersiz bırakmak için bunu kullanın."
 
-#: admin/custom-fields.php:127
+#: admin/custom-fields.php:128
 msgid "Display options"
 msgstr "Görünüm Seçenekleri"
 
-#: admin/custom-fields.php:131
+#: admin/custom-fields.php:132
 msgid "AddThis Social Sharing button"
 msgstr "AddThis Sosyal Paylaşım Düğmesi"
 
-#: admin/custom-fields.php:136
+#: admin/custom-fields.php:137
 msgid "Show button"
 msgstr "Düğme göster"
 
-#: admin/custom-fields.php:137
+#: admin/custom-fields.php:138
 msgid "Hide button"
 msgstr "Düğme gizle"
 
-#: admin/custom-fields.php:145
+#: admin/custom-fields.php:146
 #: admin/options-display.php:279
 msgid "Post date display"
 msgstr "Yazı tarihini göster"
 
-#: admin/custom-fields.php:150
+#: admin/custom-fields.php:151
 msgid "Hide date"
 msgstr "Tarih gizle"
 
-#: admin/custom-fields.php:158
+#: admin/custom-fields.php:159
 msgid "Navigation options"
 msgstr "Gezinme Seçenekleri"
 
-#: admin/custom-fields.php:162
+#: admin/custom-fields.php:163
 msgid "Description"
 msgstr "Tanım"
 
-#: admin/custom-fields.php:166
+#: admin/custom-fields.php:167
 #: admin/options-display.php:598
 msgid "Only required if you need a description in the navigation menu and you are not using a custom menu."
 msgstr "Sadece gezinme menüsü bir açıklama gerektiriyorsa gereklidir ve özel bir menü kullanmıyorsunuz."
 
-#: admin/db-updater.php:239
+#: admin/db-updater.php:237
 #, php-format
 msgid "Follow %s on Twitter"
 msgstr "%s Twitter'da izle"
 
-#: admin/db-updater.php:250
+#: admin/db-updater.php:248
 #, php-format
 msgid "Visit %s's Facebook page"
 msgstr "%s'e ait Facebook sayfasını ziyaret et"
@@ -590,14 +598,14 @@ msgstr "Graphene Seçenekler sayfasında sitenizin ön zilemesini etkinleştir"
 #: admin/options-colours.php:60
 #: admin/options-colours.php:177
 #: admin/options-colours.php:293
-#: admin/options-colours.php:327
-#: admin/options-colours.php:368
-#: admin/options-colours.php:404
-#: admin/options-colours.php:442
-#: admin/options-colours.php:481
-#: admin/options-colours.php:517
-#: admin/options-colours.php:569
-#: admin/options-colours.php:625
+#: admin/options-colours.php:329
+#: admin/options-colours.php:370
+#: admin/options-colours.php:406
+#: admin/options-colours.php:444
+#: admin/options-colours.php:483
+#: admin/options-colours.php:519
+#: admin/options-colours.php:571
+#: admin/options-colours.php:627
 #: admin/options-display.php:72
 #: admin/options-display.php:176
 #: admin/options-display.php:259
@@ -785,16 +793,16 @@ msgstr "Başlık üst kenarlık"
 #: admin/options-colours.php:232
 #: admin/options-colours.php:264
 #: admin/options-colours.php:286
-#: admin/options-colours.php:320
-#: admin/options-colours.php:360
-#: admin/options-colours.php:396
-#: admin/options-colours.php:434
-#: admin/options-colours.php:473
-#: admin/options-colours.php:510
-#: admin/options-colours.php:535
-#: admin/options-colours.php:545
-#: admin/options-colours.php:562
-#: admin/options-colours.php:618
+#: admin/options-colours.php:322
+#: admin/options-colours.php:362
+#: admin/options-colours.php:398
+#: admin/options-colours.php:436
+#: admin/options-colours.php:475
+#: admin/options-colours.php:512
+#: admin/options-colours.php:537
+#: admin/options-colours.php:547
+#: admin/options-colours.php:564
+#: admin/options-colours.php:620
 msgid "Clear"
 msgstr "Temizle"
 
@@ -862,6 +870,7 @@ msgid "Box shadow"
 msgstr "Kutu gölgesi"
 
 #: admin/options-colours.php:155
+#: admin/options-colours.php:271
 msgid "Dropdown menu (hover and active state)"
 msgstr "Açılır menü (vurgulu ve etkin durum)"
 
@@ -871,7 +880,7 @@ msgstr "İkincil menü"
 
 #: admin/options-colours.php:200
 #: admin/options-colours.php:222
-#: admin/options-colours.php:605
+#: admin/options-colours.php:607
 msgid "Background"
 msgstr "Zemin"
 
@@ -882,10 +891,6 @@ msgstr "Üst kenarlık"
 #: admin/options-colours.php:218
 msgid "Active and hover state"
 msgstr "Etkin ve vurgulu durum"
-
-#: admin/options-colours.php:271
-msgid "Dropdown menu (active and hover state)"
-msgstr "Açılır menü (etkin ve vurgulu durum)"
 
 #: admin/options-colours.php:301
 msgid "Content area"
@@ -911,213 +916,221 @@ msgstr "Yazı ve sayfaların üst kenarlığı"
 msgid "Post and pages bottom border"
 msgstr "Yazı ve sayfaların alt kenarlığı"
 
-#: admin/options-colours.php:334
+#: admin/options-colours.php:312
+msgid "Sticky posts content background"
+msgstr "Yapışkan yazıların içerik zemini"
+
+#: admin/options-colours.php:313
+msgid "Child pages content background"
+msgstr "İkincil sayfaların içerik zemini"
+
+#: admin/options-colours.php:336
 msgid "Widgets"
 msgstr "Bileşenler"
 
-#: admin/options-colours.php:339
+#: admin/options-colours.php:341
 msgid "Widget preview"
 msgstr "Bileşen ön izleme"
 
-#: admin/options-colours.php:340
+#: admin/options-colours.php:342
 msgid "Widget title"
 msgstr "Bileşen başlığı"
 
-#: admin/options-colours.php:340
+#: admin/options-colours.php:342
 msgid "List item"
 msgstr "Liste maddesi"
 
-#: admin/options-colours.php:344
+#: admin/options-colours.php:346
 msgid "Widget item background"
 msgstr "Bileşen maddesi zemini"
 
-#: admin/options-colours.php:345
+#: admin/options-colours.php:347
 msgid "Widget item list border"
 msgstr "Bileşen maddesi liste kenarlığı"
 
-#: admin/options-colours.php:346
+#: admin/options-colours.php:348
 msgid "Widget header border"
 msgstr "Bileşen başlık kenarlığı"
 
-#: admin/options-colours.php:347
+#: admin/options-colours.php:349
 msgid "Widget title colour"
 msgstr "Bileşen başlık rengi"
 
-#: admin/options-colours.php:348
+#: admin/options-colours.php:350
 msgid "Widget title text shadow colour"
 msgstr "Bileşen başlık metni gölge rengi"
 
-#: admin/options-colours.php:349
+#: admin/options-colours.php:351
 msgid "Widget header gradient bottom colour"
 msgstr "Bileşen başlığı harmanlama alt rengi"
 
-#: admin/options-colours.php:350
+#: admin/options-colours.php:352
 msgid "Widget header gradient top colour"
 msgstr "Bileşen başlığı harmanlama üst rengi"
 
-#: admin/options-colours.php:351
+#: admin/options-colours.php:353
 msgid "Widget box shadow"
 msgstr "Bileşen kutusu gölgesi"
 
-#: admin/options-colours.php:376
+#: admin/options-colours.php:378
 msgid "Slider"
 msgstr "Gösterici"
 
-#: admin/options-colours.php:381
+#: admin/options-colours.php:383
 msgid "Slider background preview"
 msgstr "Gösterici zemin ön izleme"
 
-#: admin/options-colours.php:386
+#: admin/options-colours.php:388
 msgid "Slider top left colour"
 msgstr "Gösterici üst sol rengi"
 
-#: admin/options-colours.php:387
+#: admin/options-colours.php:389
 msgid "Slider bottom right colour"
 msgstr "Gösterici alt sağ renk"
 
-#: admin/options-colours.php:412
+#: admin/options-colours.php:414
 msgid "Block buttons"
 msgstr "Engelle düğmesi"
 
-#: admin/options-colours.php:417
+#: admin/options-colours.php:419
 msgid "Block button preview"
 msgstr "Engelle düğmesi ön izleme"
 
-#: admin/options-colours.php:418
+#: admin/options-colours.php:420
 msgid "Button label"
 msgstr "Düğme etiketi"
 
-#: admin/options-colours.php:422
+#: admin/options-colours.php:424
 msgid "Button background colour"
 msgstr "Düğme zemin rengi"
 
-#: admin/options-colours.php:423
+#: admin/options-colours.php:425
 msgid "Button label colour"
 msgstr "Düğme etiket rengi"
 
-#: admin/options-colours.php:424
+#: admin/options-colours.php:426
 msgid "Button label text shadow"
 msgstr "Düğme etiket metni gölgesi"
 
-#: admin/options-colours.php:425
+#: admin/options-colours.php:427
 msgid "Button box shadow"
 msgstr "Düğme kutusu gölgesi"
 
-#: admin/options-colours.php:450
-#: admin/options-colours.php:456
+#: admin/options-colours.php:452
+#: admin/options-colours.php:458
 msgid "Archive title"
 msgstr "Arşivler başlığı"
 
-#: admin/options-colours.php:455
+#: admin/options-colours.php:457
 msgid "Archive title preview"
 msgstr "Arşiv başlığı ön izleme"
 
-#: admin/options-colours.php:456
+#: admin/options-colours.php:458
 msgid "Sample title"
 msgstr "Örnek başlık"
 
-#: admin/options-colours.php:460
+#: admin/options-colours.php:462
 msgid "Archive background gradient left colour"
 msgstr "Arşiv arkaplan girişim sol renk"
 
-#: admin/options-colours.php:461
+#: admin/options-colours.php:463
 msgid "Archive background gradient right colour"
 msgstr "Arşiv arkaplan girişim sağ renk"
 
-#: admin/options-colours.php:462
+#: admin/options-colours.php:464
 msgid "Archive label colour"
 msgstr "Arşiv etiket rengi"
 
-#: admin/options-colours.php:463
+#: admin/options-colours.php:465
 msgid "Archive text colour"
 msgstr "Arşiv metin rengi"
 
-#: admin/options-colours.php:464
+#: admin/options-colours.php:466
 msgid "Archive label and text shadow colour"
 msgstr "Arşiv etiket ve metin gölge rengi"
 
-#: admin/options-colours.php:489
+#: admin/options-colours.php:491
 msgid "Comments area"
 msgstr "Yorumlar alanı"
 
-#: admin/options-colours.php:495
+#: admin/options-colours.php:497
 msgid "Comments background"
 msgstr "Yorumlar zemini"
 
-#: admin/options-colours.php:496
+#: admin/options-colours.php:498
 msgid "Comments text"
 msgstr "Yorumlar metni"
 
-#: admin/options-colours.php:497
+#: admin/options-colours.php:499
 msgid "Threaded comments border"
 msgstr "Zincirleme yorumlar sınırı"
 
-#: admin/options-colours.php:498
+#: admin/options-colours.php:500
 msgid "Author comments background"
 msgstr "Yazarı yorumlar zemini"
 
-#: admin/options-colours.php:499
+#: admin/options-colours.php:501
 msgid "Author comments top border"
 msgstr "Üst sınır yazar yorumları"
 
-#: admin/options-colours.php:500
+#: admin/options-colours.php:502
 msgid "Author comments text"
 msgstr "Yazar yorumlar metni"
 
-#: admin/options-colours.php:501
+#: admin/options-colours.php:503
 msgid "Comment form background"
 msgstr "Yorum formu zemini"
 
-#: admin/options-colours.php:502
+#: admin/options-colours.php:504
 msgid "Comment form text"
 msgstr "Yorum formu metni"
 
-#: admin/options-colours.php:525
-#: admin/options-colours.php:531
+#: admin/options-colours.php:527
+#: admin/options-colours.php:533
 msgid "Content text"
 msgstr "İçerik metni"
 
-#: admin/options-colours.php:541
+#: admin/options-colours.php:543
 msgid "Title text"
 msgstr "Başlık metni"
 
-#: admin/options-colours.php:551
+#: admin/options-colours.php:553
 msgid "Link colour (normal state)"
 msgstr "Bağlantı rengi (normal durum)"
 
-#: admin/options-colours.php:552
+#: admin/options-colours.php:554
 msgid "Link colour (visited state)"
 msgstr "Bağlantı rengi (gezilmiş durum)"
 
-#: admin/options-colours.php:553
+#: admin/options-colours.php:555
 msgid "Link colour (hover state)"
 msgstr "Bağlantı rengi (vurgulu durum)"
 
-#: admin/options-colours.php:576
+#: admin/options-colours.php:578
 msgid "Footer"
 msgstr "Taban"
 
-#: admin/options-colours.php:581
+#: admin/options-colours.php:583
 msgid "Footer preview"
 msgstr "Taban ön izleme"
 
-#: admin/options-colours.php:606
+#: admin/options-colours.php:608
 msgid "Heading"
 msgstr "Başlık"
 
-#: admin/options-colours.php:607
+#: admin/options-colours.php:609
 msgid "Normal text"
 msgstr "Normal metin"
 
-#: admin/options-colours.php:608
+#: admin/options-colours.php:610
 msgid "Link text"
 msgstr "Bağlantı metni"
 
-#: admin/options-colours.php:609
+#: admin/options-colours.php:611
 msgid "Submenu text"
 msgstr "Altmenü metni"
 
-#: admin/options-colours.php:610
+#: admin/options-colours.php:612
 msgid "Submenu border"
 msgstr "Altmenü kenarlık"
 
@@ -2044,90 +2057,91 @@ msgstr "Tek yazı veya sayfalar için CSS baskıyı etkinleştir?"
 msgid "Show print button"
 msgstr "Baskı düğmesini göster"
 
-#: admin/options-import.php:47
-#: admin/options-import.php:178
+#: admin/options-import.php:48
+#: admin/options-import.php:179
 #: admin/options-presets.php:47
+#: admin/uninstall.php:32
 msgid "ERROR: You are not authorised to perform that operation"
 msgstr "HATA: Bu işlemi gerçekleştirmek için yetkiniz yok"
 
-#: admin/options-import.php:68
+#: admin/options-import.php:69
 msgid "Before you can upload your import file, you will need to fix the following error:"
 msgstr "Alınan dosyayı yüklemeden önce, aşağıdaki hatayı gidermeniz gerekmektedir:"
 
-#: admin/options-import.php:74
-#: admin/options-import.php:107
+#: admin/options-import.php:75
+#: admin/options-import.php:108
 msgid "Import Graphene Theme Options"
 msgstr "Graphene Tema Seçeneklerini Al"
 
-#: admin/options-import.php:76
+#: admin/options-import.php:77
 msgid "<strong>Note:</strong> This is an experimental feature. Please report any problem at the <a href=\"http://forum.khairul-syahir.com/forum/bug-report\">Support Forum</a>."
 msgstr "<strong>Not:</strong>Bu deneysel bir özelliktir. Hata raporlamalarını lütfen <a href=\"http://forum.khairul-syahir.com/forum/bug-report\">Destek Forumu</a>na yapın."
 
-#: admin/options-import.php:78
+#: admin/options-import.php:79
 msgid "Choose a file from your computer:"
 msgstr "Bilgisayarınızdan dosya seçin:"
 
-#: admin/options-import.php:78
+#: admin/options-import.php:79
 #, php-format
 msgid "Maximum size: %s"
 msgstr "Azami boyut: %s"
 
-#: admin/options-import.php:85
+#: admin/options-import.php:86
 msgid "Upload file and import"
 msgstr "Dosyayı yükle ve al"
 
-#: admin/options-import.php:150
+#: admin/options-import.php:151
 msgid "Options import completed"
 msgstr "Seçeneklerin alımı tamamlandı"
 
-#: admin/options-import.php:151
+#: admin/options-import.php:152
 msgid "Go to the Graphene options page"
 msgstr "Graphene seçenekler sayfayasına git"
 
-#: admin/options-import.php:154
-#: admin/options-import.php:159
-#: admin/options-import.php:164
+#: admin/options-import.php:155
+#: admin/options-import.php:160
+#: admin/options-import.php:165
 msgid "Sorry, there has been an error."
 msgstr "Üzgünüm, burada bir hata oluştu."
 
-#: admin/options-import.php:155
+#: admin/options-import.php:156
 msgid "The uploaded file does not contain valid Graphene options."
 msgstr "Yüklenen dosya geçerli Graphene seçenekleri içermiyor."
 
-#: admin/options-import.php:160
+#: admin/options-import.php:161
 msgid "The uploaded file could not be read."
 msgstr "Yüklenen dosya okunamadı."
 
-#: admin/options-import.php:165
+#: admin/options-import.php:166
 msgid "The uploaded file is not supported."
 msgstr "Yüklenen dosya desteklenmiyor."
 
-#: admin/options-import.php:173
+#: admin/options-import.php:174
 msgid "File is empty. Please upload something more substantial. This error could also be caused by uploads being disabled in your php.ini or by post_max_size being defined as smaller than upload_max_filesize in php.ini."
 msgstr "Dosya boştur. Daha sağlam bir şeyler yükleyin. Bu hata php.ini içinde tanımlı olan upload_post_max_size'dan daha küçük post_max_size boyutuna sahip veya php.ini dosyanız yüklemeler kapatılmış olduğunda olabilir."
 
-#: admin/options-init.php:40
+#: admin/options-init.php:42
 msgid "Graphene Options"
 msgstr "Graphene Seçenekler"
 
-#: admin/options-init.php:41
+#: admin/options-init.php:43
 msgid "Graphene FAQs"
 msgstr "Graphene SSS"
 
-#: admin/options-init.php:153
+#: admin/options-init.php:157
 msgid "Toggle all options boxes"
 msgstr "Tüm seçenek kutularına geçiş"
 
-#: admin/options-init.php:211
+#: admin/options-init.php:215
 msgid "Template preview not found."
 msgstr "Şablon ön izleme bulunamadı."
 
-#: admin/options-init.php:214
+#: admin/options-init.php:218
 msgid "default"
 msgstr "varsayılan"
 
-#: admin/options-init.php:270
 #: admin/options-init.php:274
+#: admin/options-init.php:278
 msgid "Theme default"
 msgstr "Tema varsayılanı"
 
@@ -2274,6 +2288,7 @@ msgid "ERROR: Invalid action hook selected widget action hooks."
 msgstr "HATA: Eylem kancaları bileşeni için geçersiz eylem kancası."
 
 #: admin/options.php:53
+#: admin/uninstall.php:23
 msgid "Uninstall Graphene"
 msgstr "Graphene'yi Kaldır"
 
@@ -2489,13 +2504,11 @@ msgstr "Tanımlı bu ayarlar sadece Graphene teması ile kullanılır."
 msgid "Author profile image URL"
 msgstr "Yazar profil resmi URL"
 
-#. translators: %s will be replaced by a link to the Gravatar website (http://www.gravatar.com)
 #: admin/user.php:14
 #, php-format
 msgid "You can specify the image to be displayed as the author's profile image in the Author's page. If no URL is defined here, the author's %s will be used."
 msgstr "Yazarın sayfasında yazarın profil resmi olarak görüntülenden farklı resim belirleyebilirsiniz. Burada  tanımlanmış URL yoksa, yazarın %s'ı kullanılır."
 
-#. translators: %s will be replaced by 'http://' wrapped in <code> tags
 #: admin/user.php:19
 #, php-format
 msgid "Please enter the full URL (including %s) to your profile image."
@@ -2505,7 +2518,6 @@ msgstr "Profil resminiz için lütfen (%s içeren) tam URL girin."
 msgid "<strong>Important: </strong>Image width must be less than or equal to <strong>150px</strong>."
 msgstr "<strong>Önemli: </strong>Resim genişliği <strong>150px</strong> eşit veya daha az olmalıdır."
 
-#. translators: %1$s is the comment date, %2$s is the comment time
 #: includes/theme-comments.php:34
 #, php-format
 msgid "%1$s at %2$s"
@@ -2515,80 +2527,79 @@ msgstr "%2$s de %1$s"
 msgid "Edit comment"
 msgstr "Yorumu düzenle"
 
-#: includes/theme-comments.php:37
+#: includes/theme-comments.php:38
 msgid "Link to this comment"
 msgstr "Bu yoruma bağlantı"
 
-#: includes/theme-comments.php:41
+#: includes/theme-comments.php:42
 msgid "Reply"
 msgstr "Yanıtla"
 
-#: includes/theme-comments.php:52
+#: includes/theme-comments.php:53
 msgid "Your comment is awaiting moderation."
 msgstr "Yorumunuz inceleme ve onay için bekletilmektedir."
 
-#: includes/theme-comments.php:83
+#: includes/theme-comments.php:84
 msgid "Name:"
 msgstr "Ad:"
 
-#: includes/theme-comments.php:88
+#: includes/theme-comments.php:89
 msgid "Email:"
 msgstr "E-Posta:"
 
-#: includes/theme-comments.php:93
+#: includes/theme-comments.php:94
 msgid "Website:"
 msgstr "Web siteniz:"
 
-#: includes/theme-comments.php:107
+#: includes/theme-comments.php:108
 msgid "Message:"
 msgstr "İletiniz:"
 
-#. translators: %1$s is the website's name, %2$s is the social media name
-#: includes/theme-functions.php:115
+#: includes/theme-functions.php:109
 #, php-format
 msgid "Visit %1$s's %2$s page"
 msgstr "%1$s'e ait %2$s sayfasını ziyaret et"
 
-#: includes/theme-functions.php:277
+#: includes/theme-functions.php:271
 #, php-format
 msgid "You haven't placed any widget into this widget area. Go to %1$s and place some widgets in the widget area called %2$s."
 msgstr "Bileşen alanına herhangi bir bileşen yerleştirmediniz. %1$s gidin ve %2$s olarak bilinen bileşen alanına bazı bileşenleri yerleştirin."
 
-#: includes/theme-functions.php:277
+#: includes/theme-functions.php:271
 msgid "WP Admin > Appearance > Widgets"
 msgstr "WP Yönetici > Görünüm > Bileşenler"
 
-#: includes/theme-functions.php:278
+#: includes/theme-functions.php:272
 msgid "This notice will not be displayed to your site's visitors."
 msgstr "Bu not site ziyaretçilerince görüntülenmeyecektir."
 
-#: includes/theme-loop.php:85
+#: includes/theme-loop.php:86
 msgid "Continue reading &raquo;"
 msgstr "Devamını oku &raquo;"
 
-#: includes/theme-loop.php:143
+#: includes/theme-loop.php:144
 msgid "Older posts &laquo;"
 msgstr "Eski yazılar &laquo;"
 
-#: includes/theme-loop.php:144
+#: includes/theme-loop.php:145
 msgid "&raquo; Newer posts"
 msgstr "&raquo; Yeni yazılar"
 
-#: includes/theme-loop.php:146
+#: includes/theme-loop.php:147
 msgid "Next page &raquo;"
 msgstr "Sonraki sayfaya &raquo;"
 
-#: includes/theme-loop.php:147
+#: includes/theme-loop.php:148
 msgid "&laquo; Previous page"
 msgstr "&laquo; Önceki sayfa"
 
-#: includes/theme-loop.php:454
-#: includes/theme-loop.php:455
+#: includes/theme-loop.php:457
+#: includes/theme-loop.php:458
 #, php-format
 msgid "Print this %s"
 msgstr "Bu %s bas"
 
-#: includes/theme-loop.php:493
+#: includes/theme-loop.php:498
 #, php-format
 msgid "Return to %s"
 msgstr "%s'e dön"
@@ -2674,8 +2685,8 @@ msgstr "Başlık bileşen alanı."
 msgid "Dynamically added widget area. This widget area is attached to the %s action hook."
 msgstr " Bileşen alanı dinamik olarak eklendi. Bu %s eylem kancası için eklenen bileşen alanıdır."
 
-#: includes/theme-slider.php:133
-#: includes/theme-slider.php:162
+#: includes/theme-slider.php:136
+#: includes/theme-slider.php:165
 msgid "View full post"
 msgstr "Tam yazıyı gör"
 
@@ -2683,38 +2694,56 @@ msgstr "Tam yazıyı gör"
 msgid "Display the latest Twitter status updates."
 msgstr "En son Twitter durum güncellemelerini göster."
 
-#: includes/theme-widgets.php:48
+#: includes/theme-widgets.php:51
 msgid "Loading tweets..."
 msgstr "Tweetler yükleniyor..."
 
-#: includes/theme-widgets.php:51
+#: includes/theme-widgets.php:54
 #, php-format
 msgid "Follow %s"
 msgstr "%s takipçi"
 
-#: includes/theme-widgets.php:90
+#: includes/theme-widgets.php:96
 msgid "Latest tweets"
 msgstr "Son tweetler"
 
-#: includes/theme-widgets.php:97
+#: includes/theme-widgets.php:104
 msgid "Title:"
 msgstr "Başlık:"
 
-#: includes/theme-widgets.php:101
+#: includes/theme-widgets.php:108
 msgid "Twitter Username:"
 msgstr "Twitter Kullanıcı adı:"
 
-#: includes/theme-widgets.php:105
+#: includes/theme-widgets.php:112
 msgid "Number of tweets to display:"
 msgstr "Gösterilecek tweet sayısı:"
 
-#: includes/theme-widgets.php:109
+#: includes/theme-widgets.php:116
 msgid "Show followers count"
 msgstr "Takipçi sayacını göster"
 
-#: includes/theme-widgets.php:113
+#: includes/theme-widgets.php:120
+msgid "Hide @replies"
+msgstr "@yanıtlayı gizle"
+
+#: includes/theme-widgets.php:122
+#, php-format
+msgid "Note: Selecting this sometimes result in showing less than %s tweets"
+msgstr "Not: Bunun seçilmesi bazen %s'den az tweet gösterilmesine yol açar"
+
+#: includes/theme-widgets.php:125
 msgid "Open links in new window"
 msgstr "Bağlantıları yeni pencerede aç"
+
+#~ msgid "1 ping"
+
+#~ msgid_plural "%d pings"
+#~ msgstr[0] "1 ping"
+#~ msgstr[1] "%d ping"
+
+#~ msgid "Dropdown menu (active and hover state)"
+#~ msgstr "Açılır menü (etkin ve vurgulu durum)"
 
 #~ msgid "Colours Options"
 #~ msgstr "Renk Seçenekleri"
@@ -2732,12 +2761,6 @@ msgstr "Bağlantıları yeni pencerede aç"
 #~ "<strong>HATA: graphene_get_post_image () fonksiyonunu çağıran bir "
 #~ "değişkenden görüntü elde etmek için yazının kimliğini eklemeniz "
 #~ "gereklidir.</strong>"
-
-#~ msgid "% comments"
-#~ msgstr "% yorum"
-
-#~ msgid "% pings"
-#~ msgstr "% ping"
 
 #~ msgid "Your email address will not be published."
 #~ msgstr "E-Posta adresiniz yayınlanmayacaktır."
