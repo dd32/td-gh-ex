@@ -15,7 +15,7 @@ if ( !defined('ABSPATH')) exit;
  * @version        Release: 1.0
  * @filesource     wp-content/themes/responsive/sidebar-colophon.php
  * @link           http://codex.wordpress.org/Theme_Development#Widgets_.28sidebar.php.29
- * @since          available since Release 1.0
+ * @since          available since Release 1.1
  */
 ?>
     <?php
@@ -23,7 +23,7 @@ if ( !defined('ABSPATH')) exit;
 	    )
             return;
     ?>
-    <div id="widgets" class="grid col-940">
+    <div id="colophon-widget" class="grid col-940">
         <?php responsive_widgets(); // above widgets hook ?>
         
             <?php if (is_active_sidebar('colophon-widget')) : ?>
@@ -33,4 +33,4 @@ if ( !defined('ABSPATH')) exit;
             <?php endif; //end of colophon-widget ?>
 
         <?php responsive_widgets_end(); // after widgets hook ?>
-    </div><!-- end of #widgets -->
+    </div><!-- end of #colophon-widget -->

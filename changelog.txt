@@ -8,6 +8,17 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(10/09/2012) - Maintenance and Improvements - Version 1.8.0
+[*] W3C Markup Validation
+[!] Android Squares in Menus
+[*] All New CSS Button Gradients
+[*] New Default Logo
+[*] New TinyNav Background
+[*] New Screenshot
+[*] CSS Improvements
+
+----
+
 (09/30/2012) - Quick Bug Fixes - Version 1.7.9.1
 [!] Partial Localization
 [!] Top Widget Form

@@ -23,7 +23,7 @@ if ( !defined('ABSPATH')) exit;
 	    )
             return;
     ?>
-    <div class="top-widget">
+    <div id="top-widget" class="top-widget">
         <?php responsive_widgets(); // above widgets hook ?>
         
             <?php if (is_active_sidebar('top-widget')) : ?>
@@ -33,4 +33,4 @@ if ( !defined('ABSPATH')) exit;
             <?php endif; //end of top-widget ?>
 
         <?php responsive_widgets_end(); // after widgets hook ?>
-    </div><!-- end of .top-widget -->
+    </div><!-- end of #top-widget -->
