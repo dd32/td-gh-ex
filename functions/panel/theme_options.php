@@ -92,7 +92,7 @@ function simplecatch_admin_social() { ?>
 <!-- End Social scripts -->
 <?php
 }
-add_action('admin_menu','simplecatch_admin_social', 1);
+add_action('adminmenu','simplecatch_admin_social');
 
 
 /*

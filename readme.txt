@@ -172,3 +172,6 @@ Version 1.4.4
 * Update the Add Image Script
 * Fixed layout issue with the attachments
 
+Version 1.4.5
+* Fixed Theme Option issue with Facebook and Twitter Like
+
