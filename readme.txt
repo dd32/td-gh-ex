@@ -141,3 +141,6 @@ Version 1.4.1
 Version 1.5
 * Added Germany translation de_DE.po and de_DE.mo
 * Fixed site title though changes in wp_title and catchbox_filter_wp_title function
+
+Version 1.5.1
+* Fixed css for Content on Right Layout
