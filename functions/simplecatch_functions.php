@@ -118,6 +118,7 @@ function simplecatch_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'simplecatch_excerpt_length' );
 
+
 /**
  * Returns a "Continue Reading" link for excerpts
  */
@@ -128,6 +129,7 @@ function simplecatch_continue_reading() {
 	$more_tag_text = $options[ 'more_tag_text' ];
 	return ' <a class="readmore" href="'. esc_url( get_permalink() ) . '">' . sprintf( __( '%s', 'simplecatch' ), esc_attr( $more_tag_text ) ) . '</a>';
 }
+
 
 /**
  * Replaces "[...]" (appended to automatically generated excerpts) with simplecatch_continue_reading().
@@ -183,7 +185,6 @@ endif;
  *
  * @uses set_transient and delete_transient 
  */
-
 function simplecatch_headerdetails() {
 	//delete_transient( 'simplecatch_headerdetails' );	
 
@@ -317,7 +318,6 @@ add_action( 'admin_head', 'simplecatch_favicon' );
  *
  * @uses set_transient and delete_transient
  */
-
 function simplecatch_sliders() {	
 	global $post;
 	//delete_transient( 'simplecatch_sliders' );
@@ -435,55 +435,46 @@ function simplecatch_headersocialnetworks() {
 					$simplecatch_headersocialnetworks .=
 						'<li class="facebook"><a href="'.esc_url( $options[ 'social_facebook' ] ).'" title="'.sprintf( esc_attr__( '%s in Facebook', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Facebook </a></li>';
 				}
-				
 				//Twitter
 				if ( !empty( $options[ 'social_twitter' ] ) ) {
 					$simplecatch_headersocialnetworks .=
 						'<li class="twitter"><a href="'.esc_url( $options[ 'social_twitter' ] ).'" title="'.sprintf( esc_attr__( '%s in Twitter', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Twitter </a></li>';
 				}
-				
 				//Google+
 				if ( !empty( $options[ 'social_googleplus' ] ) ) {
 					$simplecatch_headersocialnetworks .=
 						'<li class="google-plus"><a href="'.esc_url( $options[ 'social_googleplus' ] ).'" title="'.sprintf( esc_attr__( '%s in Google+', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Google+ </a></li>';
 				}
-				
 				//Linkedin
 				if ( !empty( $options[ 'social_linkedin' ] ) ) {
 					$simplecatch_headersocialnetworks .=
 						'<li class="linkedin"><a href="'.esc_url( $options[ 'social_linkedin' ] ).'" title="'.sprintf( esc_attr__( '%s in Linkedin', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Linkedin </a></li>';
 				}
-				
 				//Pinterest
 				if ( !empty( $options[ 'social_pinterest' ] ) ) {
 					$simplecatch_headersocialnetworks .=
 						'<li class="pinterest"><a href="'.esc_url( $options[ 'social_pinterest' ] ).'" title="'.sprintf( esc_attr__( '%s in Pinterest', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Twitter </a></li>';
 				}				
-				
 				//Youtube
 				if ( !empty( $options[ 'social_youtube' ] ) ) {
 					$simplecatch_headersocialnetworks .=
 						'<li class="you-tube"><a href="'.esc_url( $options[ 'social_youtube' ] ).'" title="'.sprintf( esc_attr__( '%s in YouTube', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' YouTube </a></li>';
 				}
-				
 				//Vimeo
 				if ( !empty( $options[ 'social_vimeo' ] ) ) {
 					$simplecatch_headersocialnetworks .=
 						'<li class="viemo"><a href="'.esc_url( $options[ 'social_vimeo' ] ).'" title="'.sprintf( esc_attr__( '%s in Vimeo', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Vimeo </a></li>';
 				}				
-				
 				//Slideshare
 				if ( !empty( $options[ 'social_slideshare' ] ) ) {
 					$simplecatch_headersocialnetworks .=
 						'<li class="slideshare"><a href="'.esc_url( $options[ 'social_slideshare' ] ).'" title="'.sprintf( esc_attr__( '%s in Slideshare', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Slideshare </a></li>';
 				}				
-				
 				//Foursquare
 				if ( !empty( $options[ 'social_foursquare' ] ) ) {
 					$simplecatch_headersocialnetworks .=
 						'<li class="foursquare"><a href="'.esc_url( $options[ 'social_foursquare' ] ).'" title="'.sprintf( esc_attr__( '%s in Foursquare', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' foursquare </a></li>';
 				}
-				
 				//Flickr
 				if ( !empty( $options[ 'social_flickr' ] ) ) {
 					$simplecatch_headersocialnetworks .=
@@ -548,7 +539,6 @@ function simplecatch_headersocialnetworks() {
  * @uses wp_head action to add the code in the header
  * @uses set_transient and delete_transient API for cache
  */
- 
 function simplecatch_site_verification() {
 	//delete_transient( 'simplecatch_site_verification' );
 
@@ -563,12 +553,10 @@ function simplecatch_site_verification() {
 		if ( !empty( $options['google_verification'] ) ) {
 			$simplecatch_site_verification .= '<meta name="google-site-verification" content="' .  $options['google_verification'] . '" />' . "\n";
 		}
-	
 		//bing
 		if ( !empty( $options['bing_verification'] ) ) {
 			$simplecatch_site_verification .= '<meta name="msvalidate.01" content="' .  $options['bing_verification']  . '" />' . "\n";
 		}
-	
 		//yahoo
 		 if ( !empty( $options['yahoo_verification'] ) ) {
 			$simplecatch_site_verification .= '<meta name="y_key" content="' .  $options['yahoo_verification']  . '" />' . "\n";
@@ -676,6 +664,7 @@ function simplecatch_custom_tag_cloud() {
 <?php	
 }
 
+
 /**
  * shows footer credits
  */
@@ -711,6 +700,7 @@ function simplecatch_pass_slider_value() {
 	);
 }// simplecatch_pass_slider_value
 
+
 /**
  * Alter the query for the main loop in home page
  * @uses pre_get_posts hook
@@ -732,6 +722,7 @@ function simple_catch_alter_home( $query ){
 }
 add_action( 'pre_get_posts','simple_catch_alter_home' );
 
+
 /**
  * Add specific CSS class by filter
  * @uses body_class filter hook
@@ -739,10 +730,19 @@ add_action( 'pre_get_posts','simple_catch_alter_home' );
  */  
 function simplecatch_class_names($classes) { 
 	global $post;
-	if( $post )
-		$layout = get_post_meta( $post->ID,'simplecatch-sidebarlayout', true ); 
-	if( empty( $layout ) || ( !is_page() && !is_single() ) )
+
+	if( $post ) {
+		if ( is_attachment() ) { 
+			$parent = $post->post_parent;
+			$layout = get_post_meta( $parent,'simplecatch-sidebarlayout', true );
+		} else {
+			$layout = get_post_meta( $post->ID,'simplecatch-sidebarlayout', true ); 
+		}
+	}
+	
+	if( empty( $layout ) || ( !is_page() && !is_single() ) ) {
 		$layout='default';
+	}
 		
 	global $simplecatch_options_settings;
     $options = $simplecatch_options_settings;
@@ -752,9 +752,11 @@ function simplecatch_class_names($classes) {
 	if( ( $layout == 'no-sidebar' || ( $layout=='default' && $themeoption_layout == 'no-sidebar') ) ){
 		$classes[] = 'no-sidebar';
 	}
+
 	return $classes;
 }
 add_filter('body_class','simplecatch_class_names');
+
 
 /**
  * Display the page/post content
@@ -795,9 +797,10 @@ function simplecatch_content() {
 	}
 	
 	get_footer(); 
- }
- 
- /**
+}
+
+
+/**
  * Display the page/post loop part
  * @since Simple Catch 1.3.2
  */
@@ -849,6 +852,7 @@ function simplecatch_loop() {
 	<?php endif;
 }
 
+
 /**
  * Display the header div
  * @since Simple Catch 1.3.2
@@ -874,6 +878,7 @@ function simplecatch_display_div() {
 	return $themeoption_layout;
 }
 
+
 /**
  * Redirect WordPress Feeds To FeedBurner
  */
@@ -893,30 +898,29 @@ function simplecatch_rss_redirect() {
 add_action('template_redirect', 'simplecatch_rss_redirect');
 
 
-
 /**
  * function that displays info bar in Theme Options
  */
 function simplecatch_infobar() {
 ?>
     <div id="info-support">
-        <a class="support button" href="<?php echo esc_url(__('http://catchthemes.com/support/','catchbox')); ?>" title="<?php esc_attr_e('Theme Support', 'simplecatch'); ?>" target="_blank">
-        <?php printf(__('Theme Support','simplecatch')); ?></a>
+    
+    	<div class="upgrade">
+        	<a class="upgrade button" href="<?php echo esc_url(__('http://catchthemes.com/themes/simple-catch-pro','simplecatch')); ?>" title="<?php esc_attr_e('Upgrade Simple Cacth Pro at Introductory Price $19.99 Only', 'simplecatch'); ?>" target="_blank"><?php printf(__('Upgrade Simple Cacth Pro at Introductory Price $19.99 Only','simplecatch')); ?></a>
+      	</div>
         
-        <a class="themes button" href="<?php echo esc_url(__('http://catchthemes.com/themes/','catchbox')); ?>" title="<?php esc_attr_e('More Themes', 'simplecatch'); ?>" target="_blank">
-        <?php printf(__('More Themes','simplecatch')); ?></a>
+        <div class="theme-social">
+            <div class="widget-fb">
+                <div data-show-faces="false" data-width="80" data-layout="button_count" data-send="false" data-href="<?php echo esc_url(__('http://facebook.com/catchthemes','simplecatch')); ?>" class="fb-like"></div>
+            </div>
+            <div class="widget-tw">
+                <a data-dnt="true" data-show-screen-name="true" data-show-count="true" class="twitter-follow-button" href="<?php echo esc_url(__('https://twitter.com/catchthemes','simplecatch')); ?>">Follow @catchthemes</a>
+
+            </div>
+       	</div>
         
-        <a class="facebook button" href="<?php echo esc_url(__('http://facebook.com/catchthemes','catchbox')); ?>" title="<?php esc_attr_e('Facebook', 'simplecatch'); ?>" target="_blank">
-        <?php printf(__('Facebook','simplecatch')); ?></a>
-        
-        <a class="twitter button" href="<?php echo esc_url(__('http://twitter.com/#!/catchthemes','catchbox')); ?>" title="<?php esc_attr_e('Twiiter', 'simplecatch'); ?>" target="_blank">
-        <?php printf(__('Twitter','simplecatch')); ?></a>
-        
-        <a class="donate button" href="<?php echo esc_url(__('http://catchthemes.com/donate/','catchbox')); ?>" title="<?php esc_attr_e('Donate Now', 'simplecatch'); ?>" target="_blank">
-        <?php printf(__('Donate Now','simplecatch')); ?></a>
+        <div class="clear"></div>
     </div>
                      
 <?php
 }
-	
-?>

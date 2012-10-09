@@ -114,6 +114,7 @@ h3.option-toggle a:hover, h3.option-active a {
 }
 
 #info-support {
+	clear: both;
     padding: 20px 0;
 }
 #info-support .button {
@@ -151,4 +152,25 @@ h3.option-toggle a:hover, h3.option-active a {
 }
 #info-support .donate { 
 	background:url(images/green-bg.jpg) center top repeat-x #5e8c10;
+}
+#info-support .upgrade,
+#info-support .theme-social {
+	display: inline-block;
+	float: left;
+}
+#info-support .upgrade {
+	margin-right: 10px;
+}
+#info-support .upgrade a {
+    background: url("images/green-bg.jpg") repeat-x scroll center top #5E8C10;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 16px !important;
+    height: 35px;
+    line-height: 34px;
+}
+#info-support .theme-social .widget-fb {
+    padding-bottom: 5px;
+}
+.clear {
+	clear: both;
 }

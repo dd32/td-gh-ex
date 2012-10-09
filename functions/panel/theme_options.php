@@ -11,8 +11,9 @@
 add_action( 'admin_init', 'simplecatch_register_settings' );
 add_action( 'admin_menu', 'simplecatch_options_menu' );
 
+
 /**
- * Enqueue admin script
+ * Enqueue admin script / style
  *
  * @uses wp_enqueue_script 
  * @Calling jquery, jquery-ui-tabs,jquery-cookie, jquery-ui-sortable, jquery-ui-draggable
@@ -21,13 +22,15 @@ function simplecatch_admin_scripts() {
 	//jquery-cookie registered in functions.php
 	wp_enqueue_script( 'simplecatch_admin', get_template_directory_uri().'/functions/panel/admin.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable', 'farbtastic' ), '1.0', false );
 	wp_enqueue_script( 'simplecatch_upload', get_template_directory_uri().'/functions/panel/add_image_scripts.js', array( 'jquery','media-upload','thickbox' ) );
-    wp_enqueue_style( 'simplecatch_admin',get_template_directory_uri().'/functions/panel/admin.css', array( 'farbtastic', 'thickbox' ), '1.0', 'screen' );
+	wp_enqueue_script( 'simplecatch_color', get_template_directory_uri().'/functions/panel/color_picker.js', array( 'farbtastic' ) );
+	
+    wp_enqueue_style( 'simplecatch_admin_style',get_template_directory_uri().'/functions/panel/admin.css', array( 'farbtastic', 'thickbox' ), '1.0', 'screen' );
 }
-
 add_action('admin_print_styles-appearance_page_theme_options', 'simplecatch_admin_scripts');
 add_action('admin_print_styles-appearance_page_slider_options', 'simplecatch_admin_scripts');
 add_action('admin_print_styles-appearance_page_social_options', 'simplecatch_admin_scripts');
 add_action('admin_print_styles-appearance_page_webmaster_options', 'simplecatch_admin_scripts');
+
 
 /*
  * Create a function for Theme Options Page
@@ -70,6 +73,28 @@ function simplecatch_options_menu() {
     );
 }
 
+
+/* 
+ * Admin Social Links
+ * use facebook and twitter scripts
+ */
+function simplecatch_admin_social() { ?>
+<!-- Start Social scripts -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=276203972392824";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<!-- End Social scripts -->
+<?php
+}
+add_action('admin_menu','simplecatch_admin_social', 1);
+
+
 /*
  * Register options and validation callbacks
  *
@@ -79,6 +104,7 @@ function simplecatch_options_menu() {
 function simplecatch_register_settings(){
 	register_setting( 'simplecatch_options', 'simplecatch_options', 'simplecatch_theme_options_validate' );
 }
+
 
 /*
  * Render Simple Catch Theme Options page
@@ -133,12 +159,12 @@ function simplecatch_theme_options_do_page() {
                                         <th scope="row"><?php _e( 'Header logo url:', 'simplecatch' ); ?></th>
                                         <td>
                                             <?php  if ( !empty ( $options[ 'featured_logo_header' ] ) ) { ?>
-                                                <input size="65" type="text" name="simplecatch_options[featured_logo_header]" value="<?php echo esc_url ( $options [ 'featured_logo_header' ]); ?>" class="upload" />
-                                                 <?php } else { ?>
-                                                 <input size="65" type="text" name="simplecatch_options[featured_logo_header]" value="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="logo" />
-                                                 <?php }  ?>
+                                             		<input  class="upload-url" size="65" type="text" name="simplecatch_options[featured_logo_header]" value="<?php echo esc_url ( $options [ 'featured_logo_header' ]); ?>" class="upload" />
+                                                <?php } else { ?>
+                                               		<input size="65" type="text" name="simplecatch_options[featured_logo_header]" value="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="logo" />
+                                                <?php }  ?>
                                                 
-                                                <input class="upload-button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Header Logo','simplecatch' ); ?>" />
+                                                <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Header Logo','simplecatch' ); ?>" />
                                         </td>
                                     </tr> 
                                     <tr>                            
@@ -172,11 +198,11 @@ function simplecatch_theme_options_do_page() {
                                         <th scope="row"><?php _e( 'Footer logo url: ', 'simplecatch' ); ?></th>
                                         <td>
                                             <?php  if ( !empty ( $options[ 'featured_logo_footer' ] ) ) { ?>
-                                                <input size="65" type="text" name="simplecatch_options[featured_logo_footer]" value="<?php echo esc_url( $options[ 'featured_logo_footer' ] ); ?>" class="upload" />
+                                                <input class="upload-url" size="65" type="text" name="simplecatch_options[featured_logo_footer]" value="<?php echo esc_url( $options[ 'featured_logo_footer' ] ); ?>" class="upload" />
                                             <?php } else { ?>
                                                 <input size="65" type="text" name="simplecatch_options[featured_logo_footer]" value="<?php echo get_template_directory_uri(); ?>/images/logo-foot.png" alt="logo" />
                                             <?php }  ?>                            
-                                                <input class="upload-button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Footer Logo','simplecatch' );?>" />  
+                                                <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Footer Logo','simplecatch' );?>" />  
                                         </td>
                                     </tr>
                                     <tr>
@@ -210,11 +236,11 @@ function simplecatch_theme_options_do_page() {
                                     <tr>                            
                                         <th scope="row"><?php _e( 'Fav Icon URL:', 'simplecatch' ); ?></th>
                                         <td><?php if ( !empty ( $options[ 'fav_icon' ] ) ) { ?>
-                                                <input size="65" type="text" name="simplecatch_options[fav_icon]" value="<?php echo esc_url( $options [ 'fav_icon' ] ); ?>" class="upload" />
+                                                <input class="upload-url" size="65" type="text" name="simplecatch_options[fav_icon]" value="<?php echo esc_url( $options [ 'fav_icon' ] ); ?>" class="upload" />
                                             <?php } else { ?>
                                                 <input size="65" type="text" name="simplecatch_options[fav_icon]" value="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" alt="fav" />
                                             <?php }  ?> 
-                                            <input class="upload-button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Fav Icon','simplecatch' );?>" />
+                                            <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Fav Icon','simplecatch' );?>" />
                                         </td>
                                     </tr>
                                     
@@ -235,8 +261,7 @@ function simplecatch_theme_options_do_page() {
                             <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
                         </div><!-- .option-content -->
                     </div><!-- .option-container --> 
-                    
-                    
+
                     <div class="option-container">
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Content Background', 'simplecatch' ); ?></a></h3>
                         <div class="option-content inside">
@@ -244,7 +269,6 @@ function simplecatch_theme_options_do_page() {
                      			
                     	</div><!-- .option-content -->
                  	</div><!-- .option-container --> 
-            
             
             		<div class="option-container">
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Content Color Options', 'simplecatch' ); ?></a></h3>
@@ -295,9 +319,6 @@ function simplecatch_theme_options_do_page() {
                                             <div id="colorpicker_link_color" style="z-index: 100; background:#eee; border:1px solid #ccc; position:absolute; display:none;"></div>
                                         </td>
                                     </tr>
-                                    
-                                    
-                                    
         							<tr>
                                         <th>
                                             <label for="simplecatch_widget_heading_color">
@@ -319,10 +340,7 @@ function simplecatch_theme_options_do_page() {
                                             <input type="text" id="simplecatch_widget_text_color" name="simplecatch_options[widget_text_color]" size="8" value="<?php echo ( isset( $options[ 'widget_text_color' ] ) ) ? esc_attr( $options[ 'widget_text_color' ] ) : '#666666'; ?>"  />
                                             <div id="colorpicker_widget_text_color" style="z-index: 100; background:#eee; border:1px solid #ccc; position:absolute; display:none;"></div>
                                         </td>
-                                    </tr>
-        
-        
-        
+                                    </tr>       
                                     <?php if( $options[ 'reset_color' ] == "1" ) { $options[ 'reset_color' ] = "0"; } ?>
                                     <tr>                            
                                         <th scope="row"><?php _e( 'Reset Color:', 'simplecatch' ); ?></th>
@@ -338,7 +356,6 @@ function simplecatch_theme_options_do_page() {
                     	</div><!-- .option-content -->
                  	</div><!-- .option-container --> 
             
-
                     <div class="option-container">
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Custom CSS', 'simplecatch' ); ?></a></h3>
                         <div class="option-content inside"> 
@@ -485,15 +502,18 @@ function simplecatch_theme_options_do_page() {
                             </table>
                             <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
                         </div><!-- .option-content -->
-                    </div><!-- .option-container -->                                         
+                    </div><!-- .option-container -->                                                           
 
-                </div> <!-- #themesettings --> 
-
+                </div> <!-- #themesettings -->  	
+                		
             </div><!-- #simplecatch_ad_tabs -->
+            
 		</form>
+        
 	</div><!-- .wrap -->
 <?php
 }
+
 
 /*
  * Render catch options page
@@ -604,6 +624,7 @@ function simplecatch_slider_options_do_page(){
                     <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
                 </div><!-- .option-content -->
             </div><!-- .option-container --> 
+                     
 		</form>
 	</div><!-- .wrap -->
 <?php
@@ -640,7 +661,7 @@ function simplecatch_social_options_do_page(){
                 </div>
             <?php endif; ?>
 
-                    <table class="form-table">
+            <table class="form-table">
                         <tbody>
                             <tr>
                                 <th scope="row"><h4><?php _e( 'Facebook', 'simplecatch' ); ?></h4></th>
@@ -734,12 +755,14 @@ function simplecatch_social_options_do_page(){
                                 </td>
                             </tr>
                         </tbody>
-                    </table>                           
+                    </table>    
+                                           
             <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p>
         </form>
     </div><!-- .wrap -->
 <?php
 }
+
 
 /*
  * Render catch options page
@@ -829,10 +852,13 @@ function simplecatch_webmaster_options_do_page(){
                     <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
                 </div><!-- .option-content -->
             </div><!-- .option-container -->   
+            
         </form>
+        
     </div><!-- .wrap -->
 <?php
 }
+
 
 /**
  * Validate content options
@@ -1067,6 +1093,7 @@ function simplecatch_theme_options_validate( $options ){
 	return $input_validated;
 }
 
+
 /*
  * Clearing the cache if any changes in Admin Theme Option
  */
@@ -1080,6 +1107,8 @@ function simplecatch_themeoption_invalidate_caches(){
 	delete_transient( 'simplecatch_footercode' ); // scripts which loads on footer
 	delete_transient( 'simplecatch_inline_css' ); // Custom Inline CSS
 }
+
+
 /*
  * Clears caching for header title and description
  */
@@ -1089,14 +1118,18 @@ function simplecatch_header_caching() {
 add_action('update_option_blogname','simplecatch_header_caching');
 add_action('update_option_blogdescription','simplecatch_header_caching');
 
+
 /*
  * Clearing the cache if any changes in post or page
  */
 function simplecatch_post_invalidate_caches(){
 	delete_transient( 'simplecatch_sliders' );
 }
+
+
 //Add action hook here save post
 add_action( 'save_post', 'simplecatch_post_invalidate_caches' );
+
 
 /**
  * Backward Comaptibility for simplecatch version 1.2.7 and below
@@ -1116,6 +1149,7 @@ function simplecatch_backward_compatibility() {
 
 }
 add_action('init','simplecatch_backward_compatibility');
+
 
 /**
  * Backward Comaptibility for simplecatch version below 1.3.2
@@ -1148,6 +1182,7 @@ function simplecatch_template_backward_compatibility() {
 	endif;
 }
 add_action('init','simplecatch_template_backward_compatibility', 10 );
+
 
 /**
  * Backward Comaptibility for simplecatch version 1.3.2
@@ -1187,5 +1222,3 @@ function simplecatch_reset_template_cache() {
     delete_option( 'reset_sidebar_layoutkey' );
 }
 add_action( 'switch_theme', 'simplecatch_reset_template_cache');
-
-?>
