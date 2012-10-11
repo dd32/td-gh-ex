@@ -175,3 +175,6 @@ Version 1.4.4
 Version 1.4.5
 * Fixed Theme Option issue with Facebook and Twitter Like
 
+Version 1.4.6
+* Fixed the typo for All Rights Reserved
+

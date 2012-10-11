@@ -110,7 +110,7 @@ msgid "Copyright"
 msgstr ""
 
 #: ../footer.php:17
-msgid "All Right Reserved."
+msgid "All Rights Reserved."
 msgstr ""
 
 #: ../functions.php:92

@@ -866,7 +866,7 @@ function simplecatch_webmaster_options_do_page(){
  * @uses esc_url_raw, absint, esc_textarea, sanitize_text_field, simplecatch_invalidate_caches
  * @return array
  */
-function simplecatch_theme_options_validate( $options ){
+function simplecatch_theme_options_validate( $options ) {
 	global $simplecatch_options_settings;
     $input_validated = $simplecatch_options_settings;
     $input = array();

@@ -14,7 +14,7 @@
 				<?php if( function_exists( 'simplecatch_footerlogo' ) ) :
 						simplecatch_footerlogo(); 
 					  endif;	
-				?><?php _e( 'Copyright', 'simplecatch' ); ?> &copy; <?php echo date("Y"); ?> <span><?php bloginfo('name')?></span>. <?php _e( 'All Right Reserved.', 'simplecatch' ); ?>
+				?><?php _e( 'Copyright', 'simplecatch' ); ?> &copy; <?php echo date("Y"); ?> <span><?php bloginfo('name')?></span>. <?php _e( 'All Rights Reserved.', 'simplecatch' ); ?>
             </div><!-- .col7 -->
             
            <?php do_action( 'simplecatch_credits' ); ?>
