@@ -415,7 +415,8 @@ section.recent-posts .other-recent-posts .comments-link a:hover {
 /* =Widgets
 ----------------------------------------------- */
 
-.widget-title {
+.widget-title,
+.widget-title a {
 	color: #ddd;
 	border-color: #333;
 }

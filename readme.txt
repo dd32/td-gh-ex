@@ -144,3 +144,7 @@ Version 1.5
 
 Version 1.5.1
 * Fixed css for Content on Right Layout
+
+Version 1.5.2
+* Fixed the linked widget title color in dark color scheme
+* Fixed css for menu hover for older browser and IE
