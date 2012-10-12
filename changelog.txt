@@ -8,6 +8,11 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(10/11/2012) - IE Fix - Version 1.8.0.1
+[!] IE Current Page Item Fix
+
+----
+
 (10/09/2012) - Maintenance and Improvements - Version 1.8.0
 [*] W3C Markup Validation
 [!] Android Squares in Menus
