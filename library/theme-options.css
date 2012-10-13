@@ -1,46 +1,44 @@
 
 /* Options Navigation */
 .ui-tabs-nav {
-	border-bottom: 1px solid #ccc;
-	height: 27px;
-	margin: 20px 0;
+	border-bottom: 1px solid #666;
+	height: 26px;
+	margin: 18px 0 12px;
 	padding: 0;
 }
-
 .ui-tabs-nav li {
 	display: block;
 	float: left;
 	margin: 0;
 }
-
 .ui-tabs-nav li a {
 	padding: 4px 20px 6px;
 	font-weight: bold;
 }
-
 .ui-tabs-nav li a {
+	background: #FBD275;
 	border-style: solid;
-	border-color: #CCC #CCC #F9F9F9;
+	border-color: #666 #666 #FFBB22;
 	border-width: 1px 1px 0;
-	color: #C1C1C1;
-	text-shadow: rgba(255, 255, 255, 1) 0 1px 0;
+	color: #555;
+	font-size: 13px;
 	display: inline-block;
-	padding: 4px 14px 6px;
+	padding: 4px 12px;
 	text-decoration: none;
 	margin: 0 6px -1px 0;
-	-moz-border-radius: 5px 5px 0 0;
-	-webkit-border-top-left-radius: 5px;
-	-webkit-border-top-right-radius: 5px;
-	-khtml-border-top-left-radius: 5px;
-	-khtml-border-top-right-radius: 5px;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
+	-moz-border-radius: 6px 6px 0 0;
+	-webkit-border-top-left-radius: 6px;
+	-webkit-border-top-right-radius: 6px;
+	-khtml-border-top-left-radius: 6px;
+	-khtml-border-top-right-radius: 6px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
 }
 
 .ui-tabs-nav li.ui-tabs-selected a,
 .ui-tabs-nav li.ui-state-active a {
-	border-width: 1px;
-	color: #464646;
+	background: #FFBB22;
+	color: #333;
 }
 
 
@@ -64,6 +62,8 @@
 	margin: 1em 0;
 }
 
+.wrap h2 {line-height: 28px;}
+
 .wrap h3, .wrap table {
 	display: none;
 }
@@ -71,75 +71,84 @@
 
 .form-table {
 	width: 700px !important;
-	background: url("images/roughcloth.png");
-	border: 1px solid #999;
+	background: url("../images/roughcloth.png");
+	border: 1px double #666;
 	margin-top: 10px;
-	box-shadow: 1px 1px 1px #222;
+	box-shadow: 0px 0px 2px #222;
 }
 
-.form-table th {}
-.form-table tr {
-	border-bottom: 1px solid #BBB;
+.form-table tr {border-bottom: 1px solid #BBB;}
+
+.form-table th {
+	width: 170px !important; 
 }
+
 
 #submit-top {
 	position: absolute;
-	left: 520px;
+	left: 544px;
 	margin: 0;
 }
 
 .button-save {
-	padding: 8px 40px !important;
+	padding: 8px 55px !important;
 	background: #197CD7 !important;
 	border-radius: 4px !important;
 	border: 1px solid #333 !important;
 	font: bold 14px arial, sans-serif !important;
 	cursor: pointer;
 	color: #FFF !important;
-	box-shadow: 1px 1px 1px #222;
-	width: 148px;
+	text-shadow: 0px 0px 1px #000;
+	box-shadow: 0px 0px 2px #222;
 }
 .button-save:hover {
 	background: #369EFF !important; 
 	border-color: #000 !important;
 	text-shadow: 0px 0px 3px #000;
+	box-shadow: 1px 1px 2px #222;
 }
 
 textarea, input[type="text"]{border: 1px solid #999;}
 textarea:hover, input[type="text"]:hover{border: 1px solid #0A2F89;}
 
-textarea.textarea-css {}
+textarea {resize: none;}
 
 input.regular-text, input.upload-url {width: 350px;}
-input.text-int {text-align: right;}
-
-
-#donate {
-	background: url("images/roughcloth.png");
-	position: absolute;
-    text-align: center;
-    left: 740px;
-    margin-top: 50px;
-	box-shadow: 1px 1px 1px #222;
-	border-radius: 4px;
+input.text-int {text-align: right; width: 60px;}
+input.color {width: 100px;}
+.select {
+    height: 22px;
+    padding: 2px;
+    width: 180px;
 }
 
+#donate {
+	background: url("../images/roughcloth.png");
+    text-align: center;
+    left: 750px;
+    margin-top: 152px;
+	box-shadow: 0px 0px 2px #222;
+	border-radius: 4px;
+	display: inline-block;
+	position: absolute;
+}
+
+#donate-title {
+	background: #CCC;
+    border-radius: 4px 4px 0 0;
+	border: 1px solid #666;
+}
 #donate-title h4 {
 	margin: 0 !important; 
 	padding: 6px !important;
 	font: bold 14px arial, sans-serif;
 }
-#donate-title {
-	background: #CCC;
-    border-radius: 4px 4px 0 0;
-	border: 1px solid #999;
-}
 #donate-content {
 	width: 200px;
 	height: 120px;
-	border-left: 1px solid #999;
-	border-right: 1px solid #999;
-	border-bottom: 1px solid #999;
+	border-left: 1px solid #666;
+	border-right: 1px solid #666;
+	border-bottom: 1px solid #666;
     border-radius: 0 0 4px 4px;
 }
 #donate-content > form {padding-top: 30px;}

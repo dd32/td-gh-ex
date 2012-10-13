@@ -1,11 +1,10 @@
 <?php
-// Add Stuff to admin bar
-function asteroid_admin_bar_render() {
+function ast_admin_bar_menu() {
 	global $wp_admin_bar;
 	$wp_admin_bar->add_menu( array(
-		'parent' => false, 				// parent ID or use 'false' for a root menu
-		'id' => 'asteroid_admin_bar', 	// link ID, defaults to a sanitized title value
-		'title' => ('Asteroid Options'), 	// link title
+		'parent' => false,
+		'id' => 'asteroid_admin_bar', 
+		'title' => ('Asteroid Options'), 
 		'href' => admin_url( 'themes.php?page=asteroid-options')
 	));	
 	$wp_admin_bar->add_menu( array(
@@ -15,41 +14,31 @@ function asteroid_admin_bar_render() {
 		'href' => admin_url( 'plugins.php')
 	));
 }
-add_action( 'wp_before_admin_bar_render', 'asteroid_admin_bar_render' );
+add_action( 'wp_before_admin_bar_render', 'ast_admin_bar_menu' );
 
-/**
- * Theme Options Class
- *
- * Derived from the "WordPress Settings API" by Alison Barrett
- * http://alisothegeek.com
- */
- 
+
 class My_Theme_Options {
 	
 	private $sections;
 	private $checkboxes;
 	private $settings;
-	
-	/**
-	 * Construct
-	 *
-	 * @since 1.0
-	 */
+
 	public function __construct() {
 		
-		// This will keep track of the checkbox options for the validate_settings function.
+		// keep track of checkbox options for the validate_settings function.
 		$this->checkboxes = array();
 		$this->settings = array();
 		$this->get_option();
 		
-		$this->sections['general']      = ( 'General' );
-		$this->sections['appearance']   = ( 'Appearance' );
-		$this->sections['custom-css']   = ( 'Custom CSS' );
-		$this->sections['widget-hooks'] = ( 'Widget Hooks' );
-		$this->sections['misc']   		= ( 'Misc' );
-		$this->sections['reset']        = ( 'Reset Theme' );
+		$this->sections['general']     	 	= ( 'General' );
+		$this->sections['appearance']  	 	= ( 'Appearance' );
+		$this->sections['post-page']   		= ( 'Posts & Pages' );
+		$this->sections['custom-css']  	 	= ( 'Custom CSS' );
+		$this->sections['custom-widgets']	= ( 'Custom Widgets' );
+		$this->sections['misc']   			= ( 'Misc' );
+		$this->sections['reset']        	= ( 'Reset' );
 		
-		add_action( 'admin_menu', array( &$this, 'add_pages' ) );
+		add_action( 'admin_menu', array( &$this, 'ast_add_pages' ) );
 		add_action( 'admin_init', array( &$this, 'register_settings' ) );
 		
 		if ( ! get_option( 'asteroid_options' ) )
@@ -58,8 +47,8 @@ class My_Theme_Options {
 	}
 	
 	/* Add page(s) to the admin menu */
-	public function add_pages() {
-		$admin_menu = add_theme_page( 'Asteroid Options', 'Asteroid Options', 'manage_options', 'asteroid-options', array( &$this, 'display_page' ) );
+	public function ast_add_pages() {
+		$admin_menu = add_theme_page( 'Asteroid Options', 'Asteroid Options', 'edit_theme_options', 'asteroid-options', array( &$this, 'display_page' ) );
 		
 		add_action( 'admin_print_scripts-' . $admin_menu, array( &$this, 'scripts' ) );
 		add_action( 'admin_print_styles-' . $admin_menu, array( &$this, 'styles' ) );	
@@ -93,15 +82,32 @@ class My_Theme_Options {
 		
 		if ( $type == 'checkbox' )
 			$this->checkboxes[] = $id;
-		
+			
 		add_settings_field( $id, $title, array( $this, 'display_setting' ), 'asteroid-options', $section, $field_args );
+	
 	}
 	
-
-	/* HTML to display the theme options page */
+	/*-------------------------------------
+	   HTML to display the options page
+	--------------------------------------*/
 	public function display_page() {
 		
 		echo '<div class="wrap">
+		
+		<div id="donate">
+			<div id="donate-title">
+				<h4>Support the Developer</h4>
+			</div>
+			<div id="donate-content">
+				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+				<input type="hidden" name="cmd" value="_s-xclick">
+				<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
+				<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+				<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+				</form>			
+			</div>
+		</div>
+		
 	<div class="icon32" id="icon-themes"></div>
 	<h2>' . ( 'Asteroid Options' ) . '</h2>';
 	
@@ -120,20 +126,7 @@ class My_Theme_Options {
 		echo '</ul><p id="submit-top"><input name="Submit" type="submit" class="button-save" value="' . ( 'SAVE' ) . '" /></p>';
 		do_settings_sections( $_GET['page'] );
 		echo '</div>
-	</form>
-		<div id="donate">
-			<div id="donate-title">
-				<h4>Support the Developer</h4>
-			</div>
-			<div id="donate-content">
-				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-				<input type="hidden" name="cmd" value="_s-xclick">
-				<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
-				<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-				<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-				</form>			
-			</div>
-		</div>';
+	</form>';
 
 	echo '
 	<script type="text/javascript">
@@ -150,7 +143,7 @@ class My_Theme_Options {
     }
 	});
 	</script>
-	<script type="text/javascript" src="' . get_template_directory_uri() . '/library/js/jscolor.js"></script>';
+	<script type="text/javascript" src="' . get_template_directory_uri() . '/library/js/jscolor/jscolor.js"></script>';
 
 	echo '<script type="text/javascript">
 		jQuery(document).ready(function($) {
@@ -210,11 +203,9 @@ class My_Theme_Options {
 	}
 
 	
-	/**
-	 * HTML output for text field
-	 *
-	 * @since 1.0
-	 */
+	/*-------------------------------------
+	   HTML Output
+	--------------------------------------*/
 	public function display_setting( $args = array() ) {
 		
 		extract( $args );
@@ -229,15 +220,16 @@ class My_Theme_Options {
 		$field_class = '';
 		if ( $class != '' )
 			$field_class = ' ' . $class;
+			
 		
 		switch ( $type ) {
 			
 			case 'heading':
-				echo '</td></tr><tr valign="top"></td></tr><h4>' . $desc . '</h4>';
+				echo '<h4 class="opt-heading">' . $desc . '</h4>';
 				break;
 				
 			case 'checkbox':
-				echo '<input class="checkbox' . $field_class . '" type="checkbox" id="' . $id . '" name="asteroid_options[' . $id . ']" value="1" ' . checked( $options[$id], 1, false ) . ' /> <label for="' . $id . '">' . $desc . '</label>';
+				echo '<input class="checkbox' . $field_class . '" type="checkbox" id="' . $id . '" name="asteroid_options[' . $id . ']" value="1" ' . checked( $options[$id], 1, false ) . ' /> <label for="' . $id . '"> &nbsp;' . $desc . '</label>';
 				break;
 			
 			case 'select':
@@ -268,7 +260,7 @@ class My_Theme_Options {
 				break;
 			
 			case 'textarea':
-				echo '<textarea class="' . $field_class . '" id="' . $id . '" name="asteroid_options[' . $id . ']" placeholder="' . $std . '" rows="4" cols="90">' . wp_htmledit_pre( $options[$id] ) . '</textarea>';
+				echo '<textarea class="' . $field_class . '" id="' . $id . '" name="asteroid_options[' . $id . ']" placeholder="' . $std . '" rows="8" cols="88" wrap="off">' . wp_htmledit_pre( $options[$id] ) . '</textarea>';
 				
 				if ( $desc != '' )
 					echo '<br /><span class="description">' . $desc . '</span>';
@@ -276,7 +268,7 @@ class My_Theme_Options {
 				break;
 				
 			case 'textarea-css':
-				echo '<textarea class="' . $field_class . '" id="' . $id . '" name="asteroid_options[' . $id . ']" placeholder="' . $std . '" rows="14" cols="98">' . wp_htmledit_pre( $options[$id] ) . '</textarea>';
+				echo '<textarea class="' . $field_class . '" id="' . $id . '" name="asteroid_options[' . $id . ']" placeholder="' . $std . '" rows="18" cols="95" wrap="off">' . wp_htmledit_pre( $options[$id] ) . '</textarea>';
 				
 				if ( $desc != '' )
 					echo '<br /><span class="description">' . $desc . '</span>';
@@ -318,28 +310,20 @@ class My_Theme_Options {
 		 		echo '<input class="color' . $field_class . '" type="text" id="' . $id . '" name="asteroid_options[' . $id . ']" placeholder="' . $std . '" value="' . esc_attr( $options[$id] ) . '" />';
 		 		
 		 		if ( $desc != '' )
-		 			echo '<span class="description">' . $desc . '</span>';
-		 		break;
+		 			echo '&nbsp;<span class="description">' . $desc . '</span>';
+		 		break;	
 		}
-		
 	}
 	
-	/* Define all settings and their defaults */
-	
+	/*-------------------------------------
+	   Define settings and their defaults
+	--------------------------------------*/
 	public function get_option() {
 		
 		/* General Settings
 		===========================================*/
 		
-		$this->settings['head_codes'] = array(
-			'title'   => ( 'Custom &lt;Head&gt; Codes' ),
-			'desc'    => ( 'Insert &lt;Head&gt; codes here. &nbsp;&nbsp; e.g. Google Analytics, Metas, Fonts, Scripts and what not.' ),
-			'std'     => '',
-			'type'    => 'textarea',
-			'section' => 'general'
-		);
-		
-		$this->settings['menu_search'] = array(
+		$this->settings['ast_menu_search'] = array(
 			'section' => 'general',
 			'title'   => ( 'Search Box on Menu' ),
 			'desc'    => ( 'Display a Search box on the Main Menu.' ),
@@ -347,55 +331,37 @@ class My_Theme_Options {
 			'std'     => 1 // Set to 1 to be checked by default, 0 to be unchecked by default.
 		);
 		
-		$this->settings['post_display_type'] = array(
+		$this->settings['ast_post_display_type'] = array(
 			'section' => 'general',
 			'title'   => ( 'Home Post Display' ),
 			'desc'    => ( 'Show excerpts or full posts on the home page.' ),
 			'type'    => 'radio',
-			'std'     => 'choice1',
+			'std'     => '1',
 			'choices' => array(
-				'choice1' => 'Excerpts',
-				'choice2' => 'Full Post'
+				'1' => 'Excerpts',
+				'2' => 'Full Post'
 				)
 		);
 		
-		$this->settings['loop_date_on'] = array(
-			'section' => 'general',
-			'title'   => ( 'Post Date on Loops' ),
-			'desc'    => ( 'Show the Post&rsquo;s Date before the Title on Home, Searches, Categories and Archives.' ),
-			'type'    => 'checkbox',
-			'std'     => 1
+		$this->settings['ast_head_codes'] = array(
+			'title'   => ( 'Custom &lt;Head&gt; Codes' ),
+			'desc'    => ( 'Insert &lt;Head&gt; codes here. &nbsp;&nbsp; e.g. Google Analytics, Metas, Fonts, Scripts and what not.' ),
+			'std'     => '',
+			'type'    => 'textarea',
+			'section' => 'general'
 		);
 		
-		$this->settings['single_date_on'] = array(
-			'section' => 'general',
-			'title'   => ( 'Post Date on Singles' ),
-			'desc'    => ( 'Show the Post&rsquo;s Date before the Title on Single Posts.' ),
-			'type'    => 'checkbox',
-			'std'     => 1
+		$this->settings['ast_hook_footer_links'] = array(
+			'title'   => ( 'Footer Links' ),
+			'desc'    => ( 'Insert your footer links here. &nbsp;&nbsp; Accepts html codes.' ),
+			'std'     => '',
+			'type'    => 'textarea',
+			'section' => 'general'
 		);
-		
-		$this->settings['full_post_date'] = array(
-			'section' => 'general',
-			'title'   => ( 'Show Full Post Date' ),
-			'desc'    => ( 'Show Full Post Date on Single Posts.' ),
-			'type'    => 'checkbox',
-			'std'     => 0
-		);
-		
-		$this->settings['show_post_author'] = array(
-			'section' => 'general',
-			'title'   => ( 'Show Post Author' ),
-			'desc'    => ( 'Show the Post&rsquo;s Author on Single Posts.' ),
-			'type'    => 'checkbox',
-			'std'     => 1
-		);
-
 		
 		/* Appearance
 		===========================================*/
-		
-		$this->settings['header_logo'] = array(
+		$this->settings['ast_header_logo'] = array(
 			'section' => 'appearance',
 			'title'   => ( 'Header Logo' ),
 			'desc'    => ( 'The URL of your logo. This replaces the site Title & Description.' ),
@@ -403,7 +369,7 @@ class My_Theme_Options {
 			'std'     => ''
 		);
 		
-		$this->settings['favicon'] = array(
+		$this->settings['ast_favicon'] = array(
 			'section' => 'appearance',
 			'title'   => ( 'Favicon' ),
 			'desc'    => ( 'The URL of your favicon. It should be 16x16 pixels.' ),
@@ -411,58 +377,152 @@ class My_Theme_Options {
 			'std'     => ''
 		);
 		
-		$this->settings['header_height'] = array(
-			'title'   => ( 'Header Height' ),
+		$this->settings['ast_opt_head_2_1'] = array(
+			'section' => 'appearance',
+			'title'   => ( '' ),
+			'desc'    => ( '' ),
+			'type'    => 'heading',
+			'std'     => ''
+		);
+		
+		$this->settings['ast_header_height'] = array(
+			'title'   => ( 'Height of Header' ),
 			'desc'    => ( 'px. Set the height of the Header.' ),
 			'std'     => '120',
 			'type'    => 'text-int',
 			'section' => 'appearance'
 		);
-		
-		$this->settings['main_width'] = array(
-			'title'   => ( 'Main Width' ),
+		$this->settings['ast_main_width'] = array(
+			'title'   => ( 'Width of Main' ),
 			'desc'    => ( 'px. Set the width of the main content/post area.' ),
 			'std'     => '620',
 			'type'    => 'text-int',
 			'section' => 'appearance'
 		);
 		
-		$this->settings['sidebar_width'] = array(
-			'title'   => ( 'Sidebar Width' ),
+		$this->settings['ast_sidebar_width'] = array(
+			'title'   => ( 'Width of Sidebar' ),
 			'desc'    => ( 'px. Set the width of the Sidebar.' ),
 			'std'     => '310',
 			'type'    => 'text-int',
 			'section' => 'appearance'
 		);
 		
-		$this->settings['header_bgcolor'] = array(
-			'title'   => ( '#Header Color' ),
+		$this->settings['ast_header_bgcolor'] = array(
+			'title'   => ( 'Color of Header' ),
 			'desc'    => ( 'Choose a background color for the #header container.' ),
 			'std'     => 'FFFFFF',
 			'type'    => 'color',
 			'section' => 'appearance'
 		);
-		
-		$this->settings['main_bgcolor'] = array(
-			'title'   => ( '#Main Color' ),
+				
+		$this->settings['ast_main_bgcolor'] = array(
+			'title'   => ( 'Color of Main' ),
 			'desc'    => ( 'Choose a background color for the #main container.' ),
 			'std'     => 'FFFFFF',
 			'type'    => 'color',
 			'section' => 'appearance'
 		);
 		
-		$this->settings['sidebar_bgcolor'] = array(
-			'title'   => ( '#Sidebar Color' ),
+		$this->settings['ast_sidebar_bgcolor'] = array(
+			'title'   => ( 'Color of Sidebar' ),
 			'desc'    => ( 'Choose a background color for the #sidebar container.' ),
 			'std'     => 'FFFFFF',
 			'type'    => 'color',
 			'section' => 'appearance'
 		);
 		
+		$this->settings['ast_opt_head2'] = array(
+			'section' => 'appearance',
+			'title'   => ( '' ),
+			'desc'    => ( '' ),
+			'type'    => 'heading',
+			'std'     => 0
+		);
+		
+		/* Posts & Pages
+		===========================================*/
+		$this->settings['ast_excerpt_thumbnails'] = array(
+			'section' => 'post-page',
+			'title'   => ( 'Excerpt Thumbnails' ),
+			'desc'    => ( 'Show Thumbnails on excerpts. Featured image will be used.' ),
+			'type'    => 'checkbox',
+			'std'     => 1
+		);
+		
+		$this->settings['ast_blog_date'] = array(
+			'section' => 'post-page',
+			'title'   => ( 'Publish Date on Home' ),
+			'desc'    => ( 'Show Publish Date on Blog, Archives, Searches and Excerpts.' ),
+			'type'    => 'checkbox',
+			'std'     => 0
+		);
+		
+		$this->settings['ast_post_date'] = array(
+			'section' => 'post-page',
+			'title'   => ( 'Post Publish Date' ),
+			'desc'    => ( 'Show Publish Date on Single Posts.' ),
+			'type'    => 'checkbox',
+			'std'     => 1
+		);
+		
+		$this->settings['ast_post_author'] = array(
+			'section' => 'post-page',
+			'title'   => ( 'Post Author' ),
+			'desc'    => ( 'Show the Author&rsquo;s name on Posts.' ),
+			'type'    => 'checkbox',
+			'std'     => 1
+		);
+		
+		$this->settings['ast_page_date'] = array(
+			'section' => 'post-page',
+			'title'   => ( 'Page Publish Date' ),
+			'desc'    => ( 'Show Publish Date on Single Pages' ),
+			'type'    => 'checkbox',
+			'std'     => 0
+		);
+		
+		$this->settings['ast_page_author'] = array(
+			'section' => 'post-page',
+			'title'   => ( 'Page Author' ),
+			'desc'    => ( 'Show the Author&rsquo;s name on Pages.' ),
+			'type'    => 'checkbox',
+			'std'     => 0
+		);
+		
+		$this->settings['ast_date_modified'] = array(
+			'section' => 'post-page',
+			'title'   => ( 'Show Date Modified' ),
+			'desc'    => ( 'Show the date when the Post or Page was modified.' ),
+			'type'    => 'select',
+			'std'     => 1,
+			'choices' => array(
+				0	=> 'Hidden',
+				1	=> 'On Posts',
+				2	=> 'On Pages',
+				3	=> 'Both Posts & Pages'
+				)
+		);
+		
+		$this->settings['ast_post_comments'] = array(
+			'section' => 'post-page',
+			'title'   => ( 'Post Comments' ),
+			'desc'    => ( 'Show the comments and comment form on Posts.' ),
+			'type'    => 'checkbox',
+			'std'     => 1
+		);
+		
+		$this->settings['ast_page_comments'] = array(
+			'section' => 'post-page',
+			'title'   => ( 'Page Comments' ),
+			'desc'    => ( 'Show the comments and comment form on Pages.' ),
+			'type'    => 'checkbox',
+			'std'     => 1
+		);
+		
 		/* Custom CSS
 		===========================================*/	
-		
-		$this->settings['custom_css'] = array(
+		$this->settings['ast_custom_css'] = array(
 			'title'   => ( 'Custom CSS Codes' ),
 			'desc'    => ( 'Enter custom CSS here to apply to the theme. This should override any other stylings.' ),
 			'std'     => '',
@@ -471,61 +531,109 @@ class My_Theme_Options {
 			'class'   => 'textarea-css'
 		);
 		
-		/* Widget Hooks
+		/* Custom Widgets
 		===========================================*/
 		
-		$this->settings['widget_hook_body'] = array(
-			'section' => 'widget-hooks',
-			'title'   => ( 'Body' ),
-			'desc'    => ( '' ),
+		$this->settings['ast_widget_body'] = array(
+			'section' => 'custom-widgets',
+			'title'   => ( 'Widgets on Body' ),
+			'desc'    => ( 'Allow widgets on the Body' ),
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
 		
-		$this->settings['widget_hook_header'] = array(
-			'section' => 'widget-hooks',
-			'title'   => ( 'Header' ),
-			'desc'    => ( '' ),
+		$this->settings['ast_widget_header'] = array(
+			'section' => 'custom-widgets',
+			'title'   => ( 'Widgets on Header' ),
+			'desc'    => ( 'Allow widgets on the Header' ),
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
 		
-		$this->settings['widget_hook_after_menu'] = array(
-			'section' => 'widget-hooks',
-			'title'   => ( 'After Menu' ),
-			'desc'    => ( '' ),
+		$this->settings['ast_widget_below_menu'] = array(
+			'section' => 'custom-widgets',
+			'title'   => ( 'Widgets Below Menu' ),
+			'desc'    => ( 'Allow widgets below the main menu.' ),
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
 		
-		$this->settings['widget_hook_before_post'] = array(
-			'section' => 'widget-hooks',
-			'title'   => ( 'Before Post' ),
+		$this->settings['ast_opt_head_5_1'] = array(
+			'section' => 'custom-widgets',
+			'title'   => ( '' ),
 			'desc'    => ( '' ),
+			'type'    => 'heading',
+			'std'     => ''
+		);
+		
+		$this->settings['ast_widget_before_post'] = array(
+			'section' => 'custom-widgets',
+			'title'   => ( 'Widgets Before Post' ),
+			'desc'    => ( 'Allow widgets to show after the post-title.' ),
 			'type'    => 'checkbox',
 			'std'     => 0
 		);	
 		
-		$this->settings['widget_hook_before_post_content'] = array(
-			'section' => 'widget-hooks',
-			'title'   => ( 'Before Post - Content' ),
-			'desc'    => ( '' ),
+		$this->settings['ast_widget_before_post_content'] = array(
+			'section' => 'custom-widgets',
+			'title'   => ( 'Widgets Before Post - Content' ),
+			'desc'    => ( 'Allow widgets to show before the post-content.' ),
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
 		
-		$this->settings['widget_hook_after_post_content'] = array(
-			'section' => 'widget-hooks',
-			'title'   => ( 'After Post - Content' ),
-			'desc'    => ( '' ),
+		$this->settings['ast_widget_after_post_content'] = array(
+			'section' => 'custom-widgets',
+			'title'   => ( 'Widgets After Post - Content' ),
+			'desc'    => ( 'Allow widgets to show after the post-content.' ),
 			'type'    => 'checkbox',
 			'std'     => 0 
 		);
 		
-		$this->settings['widget_hook_after_post'] = array(
-			'section' => 'widget-hooks',
-			'title'   => ( 'After Post' ),
+		$this->settings['ast_widget_after_post'] = array(
+			'section' => 'custom-widgets',
+			'title'   => ( 'Widgets After Post' ),
+			'desc'    => ( 'Allow widgets to show at the post-footer.' ),
+			'type'    => 'checkbox',
+			'std'     => 0
+		);
+		
+		$this->settings['ast_opt_head_5_2'] = array(
+			'section' => 'custom-widgets',
+			'title'   => ( '' ),
 			'desc'    => ( '' ),
+			'type'    => 'heading',
+			'std'     => ''
+		);
+		
+		$this->settings['ast_widget_before_page'] = array(
+			'section' => 'custom-widgets',
+			'title'   => ( 'Widgets Before Page' ),
+			'desc'    => ( 'Allow widgets to show after the page-title.' ),
+			'type'    => 'checkbox',
+			'std'     => 0
+		);	
+		
+		$this->settings['ast_widget_before_page_content'] = array(
+			'section' => 'custom-widgets',
+			'title'   => ( 'Widgets Before Page - Content' ),
+			'desc'    => ( 'Allow widgets to show before the page-content.' ),
+			'type'    => 'checkbox',
+			'std'     => 0
+		);
+		
+		$this->settings['ast_widget_after_page_content'] = array(
+			'section' => 'custom-widgets',
+			'title'   => ( 'Widgets After Page - Content' ),
+			'desc'    => ( 'Allow widgets to show after the page-content.' ),
+			'type'    => 'checkbox',
+			'std'     => 0 
+		);
+		
+		$this->settings['ast_widget_after_page'] = array(
+			'section' => 'custom-widgets',
+			'title'   => ( 'Widgets After Page' ),
+			'desc'    => ( 'Allow widgets to show at the page-footer.' ),
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
@@ -533,44 +641,27 @@ class My_Theme_Options {
 		/* Miscellaneous
 		===========================================*/	
 		
-		$this->settings['remove_wp_version'] = array(
+		$this->settings['ast_remove_wp_version'] = array(
 			'section' => 'misc',
-			'title'   => ( 'Remove Wordpress Version' ),
+			'title'   => ( 'Remove WordPress Version' ),
 			'desc'    => ( 'Prevent WP Version from being displayed in the &lt;Head&gt;' ),
 			'type'    => 'checkbox',
 			'std'     => 0 
 		);
 		
-		/* Hooks */	
-		
-		$this->settings['hook_body'] = array(
-			'title'   => ( '#Body' ),
-			'desc'    => ( 'Enter your scripts and html codes' ),
-			'std'     => '',
-			'type'    => 'textarea',
-			'section' => 'misc'
+		$this->settings['ast_remove_theme_link'] = array(
+			'section' => 'misc',
+			'title'   => ( 'Remove Theme link' ),
+			'desc'    => ( 'Remove the Asteroid Theme link in the footer.' ),
+			'type'    => 'checkbox',
+			'std'     => 0
 		);
 		
-		$this->settings['hook_container'] = array(
-			'title'   => ( '#Container' ),
-			'desc'    => ( 'Enter your scripts and html codes' ),
-			'std'     => '',
-			'type'    => 'textarea',
-			'section' => 'misc'
-		);
-		
-		$this->settings['hook_footer_link'] = array(
-			'title'   => ( 'Footer Links' ),
-			'desc'    => ( 'Enter your scripts and html codes' ),
-			'std'     => '',
-			'type'    => 'textarea',
-			'section' => 'misc'
-		);
-		
+			
 		/* Reset
 		===========================================*/
 		
-		$this->settings['reset_theme'] = array(
+		$this->settings['ast_reset_theme'] = array(
 			'section' => 'reset',
 			'title'   => ( 'Reset theme' ),
 			'type'    => 'checkbox',
@@ -589,11 +680,9 @@ class My_Theme_Options {
 		// code	
 	}
 	
-	/**
-	 * Initialize settings to their default values
-	 * 
-	 * @since 1.0
-	 */
+	/*-------------------------------------
+	   Initialize Settings to Defaults
+	--------------------------------------*/
 	public function initialize_settings() {
 		
 		$default_settings = array();
@@ -606,11 +695,9 @@ class My_Theme_Options {
 		
 	}
 	
-	/**
-	 * Register settings
-	 *
-	 * @since 1.0
-	 */
+	/*-------------------------------------
+	   Register Settings
+	--------------------------------------*/
 	public function register_settings() {
 		
 		register_setting( 'asteroid_options', 'asteroid_options', array ( &$this, 'validate_settings' ) );
@@ -631,11 +718,9 @@ class My_Theme_Options {
 		
 	}
 
-	/**
-	 * jQuery Tabs
-	 *
-	 * @since 1.0
-	 */
+	/*-------------------------------------
+	   jQuery Tabs
+	--------------------------------------*/
 	public function scripts() {
 		wp_print_scripts( 'jquery-ui-tabs' );
 
@@ -645,25 +730,21 @@ class My_Theme_Options {
 		wp_register_script('my-upload', get_stylesheet_directory_uri() . '/js/uploader.js', array('jquery','media-upload','thickbox'));
 	}
 	
-	/**
-	 * Styling for the theme options page
-	 *
-	 * @since 1.0
-	 */
+	/*-------------------------------------
+	   Styling for the theme options page
+	--------------------------------------*/
 	public function styles() {	
 		wp_register_style( 'mytheme-admin', get_stylesheet_directory_uri() . '/library/theme-options.css' );
 		wp_enqueue_style( 'mytheme-admin' );
 		wp_enqueue_style('thickbox');
 	}
 	
-	/**
-	 * Validate settings
-	 *
-	 * @since 1.0
-	 */
+	/*-------------------------------------
+	   Validate Settings
+	--------------------------------------*/
 	public function validate_settings( $input ) {
 		
-		if ( ! isset( $input['reset_theme'] ) ) {
+		if ( ! isset( $input['ast_reset_theme'] ) ) {
 			$options = get_option( 'asteroid_options' );
 			
 			foreach ( $this->checkboxes as $id ) {

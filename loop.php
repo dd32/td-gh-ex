@@ -1,24 +1,23 @@
 <!-- Loop Post -->
 <div class="loop-post-wrap">
-
-	<?php if ( ( asteroid_option('loop_date_on') == 1 ) && ( get_post_type() != 'page' ) ) : ?>
-		<div class="post-date">
-			<div class="mdate"><?php the_time('M') ; ?></div>
-			<div class="pdate"><?php the_time('d') ; ?></div>
-		</div>
-	<?php endif ; ?>
 					
 	<h2 class="loop-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-
-	<div class="loop-cat"><?php the_category(' '); ?></div>
+	
+	<?php if ( asteroid_option('ast_blog_date') == 1 ) : ?>
+		<div class="loop-date"><?php the_time('F j, Y'); ?></div>
+	<?php endif; ?>
+	
+	<div class="loop-categories"><?php the_category(' '); ?></div>
 
 	<div class="loop-entry">
 						
-		<?php if ((asteroid_option('post_display_type')) == 'choice1' ) : ?>
+		<?php if ( asteroid_option('ast_post_display_type') == 1 ) : ?>
 		
-			<?php if ( has_post_thumbnail()) : ?>
-				<a class="post-thumbnail left" href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumb-excerpt') ; ?></a>
-			<?php endif ; ?>	
+			<?php if ( asteroid_option('ast_excerpt_thumbnails') == 1 ) : ?>
+				<?php if ( has_post_thumbnail()) : ?>
+					<a class="post-thumbnail" href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail') ; ?></a>
+				<?php endif ; ?>
+			<?php endif ; ?>
 			
 			<?php the_excerpt(); ?>
 		
@@ -45,11 +44,12 @@
 	
 	</div>	
 
-	<?php if ((asteroid_option('post_display_type')) == 'choice1' ) : ?>
+	<?php if ( asteroid_option('ast_post_display_type') == 1 ) : ?>
 		<div class="read-more">
 			<a href="<?php the_permalink(); ?>" class="read-more-button">Read More</a>
 		</div>
+	<?php else : ?>
+		<div class="loop-tags"><?php the_tags(); ?></div>
 	<?php endif ; ?>
 	
-	<div class="clear"></div>
 </div><!-- Loop Post -->

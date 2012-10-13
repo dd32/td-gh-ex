@@ -1,16 +1,50 @@
-html {background: #CCC;}
+html {background: #E4E4E4;}
+
+.mceContentBody {
+    background: #fff;
+	padding: 10px;
+	margin: 10px auto;
+	font-family: arial, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 21px;
+	box-shadow: 0px 0px 3px black;
+	width: 620px;
+}
+
 h1 {font-size:28px;}
 h2 {font-size:24px;}
 h3 {font-size:20px;}
 h4 {font-size:18px;}
 h5 {font-size:14px;}
 h6 {font-size:12px;}
-h1, h2, h3, h4, h5, h6 {font-weight:normal;}
-.mceContentBody {
-    background: #fff;
-    border: 1px solid #999;
-	padding: 10px;
-	margin: 6px auto;
-    font: normal 13px/20px arial, sans-serif;
-	width: 620px;
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight:normal;
+	line-height: 1.2; 
+	text-shadow: 0 1px 1px #999;
+	margin-bottom: 4px;
+    margin-top: 16px;
 }
+
+p { 
+	margin-top: 4px; 
+	margin-bottom: 14px; 
+}
+
+ul li {margin-top: 4px; margin-bottom: 4px;}
+
+blockquote {
+	background: #A0C8FF;
+    border: 1px solid #999;
+    border-radius: 4px;
+    clear: both;
+    margin: 10px;
+    padding: 8px 18px 8px 10px;
+	overflow: hidden;
+}
+blockquote p {
+	font-style: italic;
+	margin: 0;
+}
+
