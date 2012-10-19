@@ -27,7 +27,7 @@ if ( ! isset( $content_width ) )
  */
 add_action( 'after_setup_theme', 'simplecatch_setup' );
 
-if ( ! function_exists( 'simplecatch_setup' ) ):
+if ( !function_exists( 'simplecatch_setup' ) ):
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -105,12 +105,12 @@ endif;
 
 
 /**
- * Register our sidebars and widgetized areas.
- *
- * uses register_sidebar
- * returns the id
+ * Register sidebars and widget areas.
  */
-if ( function_exists( 'register_sidebar' ) ) {
+function simplecatch_widgets_init() {
+	
+	register_widget( 'CustomTagWidget' );
+	
 	register_sidebar( array( 
 		'name'          => __( 'sidebar', 'simplecatch' ),
 		'id'            => 'sidebar',
@@ -119,6 +119,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3>',
 		'after_title'   => '</h3><hr/>' 
-	) ); 	
-}
-?>
+	) ); 
+	
+ }
+add_action( 'widgets_init', 'simplecatch_widgets_init' );

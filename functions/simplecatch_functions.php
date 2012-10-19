@@ -770,9 +770,9 @@ function simplecatch_content() {
 		
 	get_header(); 
 	
-    if( $layout=='default') {
+	if( $layout=='default') {
 		global $simplecatch_options_settings;
-        $options = $simplecatch_options_settings;
+		$options = $simplecatch_options_settings;
 
 		$themeoption_layout = $options['sidebar_layout'];
 			

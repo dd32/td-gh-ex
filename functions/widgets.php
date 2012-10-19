@@ -71,12 +71,4 @@ class CustomTagWidget extends WP_Widget {
 					
 		}
 }// end CustomTagWidget class
-
-/** 
- * Register CustomTagWidget widget
- */
-function TagWidget() {
-	register_widget( 'CustomTagWidget' );
- }
-add_action( 'widgets_init', 'TagWidget' );
 ?>
