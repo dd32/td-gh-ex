@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/catch-box\n"
-"POT-Creation-Date: 2012-09-11 17:33+0530\n"
+"POT-Creation-Date: 2012-10-20 09:44+0530\n"
 "PO-Revision-Date: 2012-10-01 10:46+0200\n"
 "Last-Translator: Kris Thomsen <mail@kristhomsen.dk>\n"
 "Language-Team: Kris Thomsen <mail@kristhomsen.dk>\n"
@@ -667,316 +667,320 @@ msgstr "Lyst"
 msgid "Dark"
 msgstr "Mørkt"
 
-#: ../inc/theme-options.php:305
+#: ../inc/theme-options.php:292
+msgid "Blue"
+msgstr "Blå"
+
+#: ../inc/theme-options.php:311
 msgid "Content on left"
 msgstr "Indhold til venstre"
 
-#: ../inc/theme-options.php:310
+#: ../inc/theme-options.php:316
 msgid "Content on right"
 msgstr "Indhold til højre"
 
-#: ../inc/theme-options.php:315
+#: ../inc/theme-options.php:321
 msgid "One-column, no sidebar"
 msgstr "Èn kolonne, intet sidepanel"
 
-#: ../inc/theme-options.php:333
+#: ../inc/theme-options.php:339
 msgid "Show excerpt"
 msgstr "Vis resumé"
 
-#: ../inc/theme-options.php:338
+#: ../inc/theme-options.php:344
 msgid "Show full content"
 msgstr "Vis fuldt indhold"
 
-#: ../inc/theme-options.php:436
+#: ../inc/theme-options.php:442
 msgid "Select a Color"
 msgstr "Vælg en farve"
 
-#: ../inc/theme-options.php:439
+#: ../inc/theme-options.php:445
 #, php-format
 msgid "Default color: %s"
 msgstr "Standard farve: %s"
 
-#: ../inc/theme-options.php:497
+#: ../inc/theme-options.php:503
 msgid "CSS Tutorial from W3Schools."
 msgstr "CSS-tutorial fra W3Schools."
 
-#: ../inc/theme-options.php:497
+#: ../inc/theme-options.php:503
 msgid "http://www.w3schools.com/css/default.asp"
 msgstr "http://www.w3schools.com/css/default.asp"
 
-#: ../inc/theme-options.php:497
+#: ../inc/theme-options.php:503
 msgid "CSS Tutorial"
 msgstr "CSS-tutorial fra W3Schools."
 
-#: ../inc/theme-options.php:497
+#: ../inc/theme-options.php:503
 msgid "Click Here to Read"
 msgstr "Klik her for at læse"
 
-#: ../inc/theme-options.php:562
-#: ../inc/theme-options.php:564
-#: ../inc/theme-options.php:613
-#: ../inc/theme-options.php:615
-#: ../inc/theme-options.php:726
-#: ../inc/theme-options.php:728
-#: ../inc/theme-options.php:849
-#: ../inc/theme-options.php:851
+#: ../inc/theme-options.php:568
+#: ../inc/theme-options.php:570
+#: ../inc/theme-options.php:619
+#: ../inc/theme-options.php:621
+#: ../inc/theme-options.php:732
+#: ../inc/theme-options.php:734
+#: ../inc/theme-options.php:855
+#: ../inc/theme-options.php:857
 #, php-format
 msgid "%s Theme Options By"
 msgstr "%s temaindstillinger af"
 
-#: ../inc/theme-options.php:567
-#: ../inc/theme-options.php:618
-#: ../inc/theme-options.php:730
-#: ../inc/theme-options.php:854
+#: ../inc/theme-options.php:573
+#: ../inc/theme-options.php:624
+#: ../inc/theme-options.php:736
+#: ../inc/theme-options.php:860
 msgid "Catch Themes"
 msgstr "Catch Themes"
 
-#: ../inc/theme-options.php:571
+#: ../inc/theme-options.php:577
 msgid "http://catchthemes.com/support/"
 msgstr "http://catchthemes.com/support/"
 
-#: ../inc/theme-options.php:571
-#: ../inc/theme-options.php:572
+#: ../inc/theme-options.php:577
+#: ../inc/theme-options.php:578
 msgid "Theme Support"
 msgstr "Hjælp til tema"
 
-#: ../inc/theme-options.php:574
+#: ../inc/theme-options.php:580
 msgid "http://catchthemes.com/themes/"
 msgstr "http://catchthemes.com/themes/"
 
-#: ../inc/theme-options.php:574
-#: ../inc/theme-options.php:575
+#: ../inc/theme-options.php:580
+#: ../inc/theme-options.php:581
 msgid "More Themes"
 msgstr "Flere temaer"
 
-#: ../inc/theme-options.php:577
+#: ../inc/theme-options.php:583
 msgid "http://facebook.com/catchthemes"
 msgstr "http://facebook.com/catchthemes"
 
-#: ../inc/theme-options.php:577
-#: ../inc/theme-options.php:578
-#: ../inc/theme-options.php:745
+#: ../inc/theme-options.php:583
+#: ../inc/theme-options.php:584
+#: ../inc/theme-options.php:751
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../inc/theme-options.php:580
+#: ../inc/theme-options.php:586
 msgid "http://twitter.com/#!/catchthemes"
 msgstr "http://twitter.com/#!/catchthemes"
 
-#: ../inc/theme-options.php:580
+#: ../inc/theme-options.php:586
 msgid "Twiiter"
 msgstr "Twiitter"
 
-#: ../inc/theme-options.php:581
-#: ../inc/theme-options.php:750
+#: ../inc/theme-options.php:587
+#: ../inc/theme-options.php:756
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../inc/theme-options.php:583
+#: ../inc/theme-options.php:589
 msgid "http://catchthemes.com/donate/"
 msgstr "http://catchthemes.com/donate/"
 
-#: ../inc/theme-options.php:583
-#: ../inc/theme-options.php:584
+#: ../inc/theme-options.php:589
+#: ../inc/theme-options.php:590
 msgid "Donate Now"
 msgstr "Doner Nu"
 
-#: ../inc/theme-options.php:631
-#: ../inc/theme-options.php:739
-#: ../inc/theme-options.php:864
+#: ../inc/theme-options.php:637
+#: ../inc/theme-options.php:745
+#: ../inc/theme-options.php:870
 msgid "Settings saved."
 msgstr "Indstillinger gemt."
 
-#: ../inc/theme-options.php:635
+#: ../inc/theme-options.php:641
 msgid "Slider Options"
 msgstr "Slider-indstillinger"
 
-#: ../inc/theme-options.php:639
+#: ../inc/theme-options.php:645
 msgid "Exclude Slider post from Home page posts:"
 msgstr "Ekskludér slider-indlæg fra dine Forside-indlæg:"
 
-#: ../inc/theme-options.php:641
+#: ../inc/theme-options.php:647
 msgid "Check to disable"
 msgstr "Afkryds for at deaktivere"
 
-#: ../inc/theme-options.php:644
+#: ../inc/theme-options.php:650
 msgid "Number of Slides"
 msgstr "Antal slides"
 
-#: ../inc/theme-options.php:650
+#: ../inc/theme-options.php:656
 msgid "Featured Col #"
 msgstr "Featured Kol. #"
 
-#: ../inc/theme-options.php:652
+#: ../inc/theme-options.php:658
 msgid "Click Here To Edit"
 msgstr "Klik her for at redigere"
 
-#: ../inc/theme-options.php:658
+#: ../inc/theme-options.php:664
 msgid "<strong>Note</strong>: Here you add in Post IDs which displays on Homepage Featured Slider."
 msgstr "<strong>Bemærk</strong>: Her kan du tilføje indlægs-id'er som vises i forsidens Featured-slider."
 
-#: ../inc/theme-options.php:659
-#: ../inc/theme-options.php:705
-#: ../inc/theme-options.php:830
-#: ../inc/theme-options.php:891
-#: ../inc/theme-options.php:916
+#: ../inc/theme-options.php:665
+#: ../inc/theme-options.php:711
+#: ../inc/theme-options.php:836
+#: ../inc/theme-options.php:897
+#: ../inc/theme-options.php:922
 msgid "Save"
 msgstr "Gem"
 
-#: ../inc/theme-options.php:663
+#: ../inc/theme-options.php:669
 msgid "Slider Effect Options"
 msgstr "Indstillinger for slider-effekt"
 
-#: ../inc/theme-options.php:668
+#: ../inc/theme-options.php:674
 msgid "Transition Effect:"
 msgstr "Overgangseffekt:"
 
-#: ../inc/theme-options.php:673
+#: ../inc/theme-options.php:679
 msgid "fade"
 msgstr "fade"
 
-#: ../inc/theme-options.php:674
+#: ../inc/theme-options.php:680
 msgid "wipe"
 msgstr "wipe"
 
-#: ../inc/theme-options.php:675
+#: ../inc/theme-options.php:681
 msgid "scrollUp"
 msgstr "scrollUp"
 
-#: ../inc/theme-options.php:676
+#: ../inc/theme-options.php:682
 msgid "scrollDown"
 msgstr "scrollDown"
 
-#: ../inc/theme-options.php:677
+#: ../inc/theme-options.php:683
 msgid "scrollLeft"
 msgstr "scrollLeft"
 
-#: ../inc/theme-options.php:678
+#: ../inc/theme-options.php:684
 msgid "scrollRight"
 msgstr "scrollRight"
 
-#: ../inc/theme-options.php:679
+#: ../inc/theme-options.php:685
 msgid "blindX"
 msgstr "blindX"
 
-#: ../inc/theme-options.php:680
+#: ../inc/theme-options.php:686
 msgid "blindY"
 msgstr "blindY"
 
-#: ../inc/theme-options.php:681
+#: ../inc/theme-options.php:687
 msgid "blindZ"
 msgstr "blindZ"
 
-#: ../inc/theme-options.php:682
+#: ../inc/theme-options.php:688
 msgid "cover"
 msgstr "cover"
 
-#: ../inc/theme-options.php:683
+#: ../inc/theme-options.php:689
 msgid "shuffle"
 msgstr "shuffle"
 
-#: ../inc/theme-options.php:689
+#: ../inc/theme-options.php:695
 msgid "Transition Delay"
 msgstr "Overgangsforsinkelse"
 
-#: ../inc/theme-options.php:692
-#: ../inc/theme-options.php:701
+#: ../inc/theme-options.php:698
+#: ../inc/theme-options.php:707
 msgid "second(s)"
 msgstr "sekund(er)"
 
-#: ../inc/theme-options.php:698
+#: ../inc/theme-options.php:704
 msgid "Transition Length"
 msgstr "Overgangslængde"
 
-#: ../inc/theme-options.php:756
+#: ../inc/theme-options.php:762
 msgid "Google +"
 msgstr "Google +"
 
-#: ../inc/theme-options.php:762
+#: ../inc/theme-options.php:768
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: ../inc/theme-options.php:768
+#: ../inc/theme-options.php:774
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../inc/theme-options.php:774
+#: ../inc/theme-options.php:780
 msgid "Youtube"
 msgstr "Youtube"
 
-#: ../inc/theme-options.php:780
+#: ../inc/theme-options.php:786
 msgid "RSS Feed"
 msgstr "RSS Feed"
 
-#: ../inc/theme-options.php:786
+#: ../inc/theme-options.php:792
 msgid "Deviantart"
 msgstr "Deviantart"
 
-#: ../inc/theme-options.php:792
+#: ../inc/theme-options.php:798
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/theme-options.php:798
+#: ../inc/theme-options.php:804
 msgid "Viemo"
 msgstr "Vimeo"
 
-#: ../inc/theme-options.php:804
+#: ../inc/theme-options.php:810
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../inc/theme-options.php:810
+#: ../inc/theme-options.php:816
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../inc/theme-options.php:816
+#: ../inc/theme-options.php:822
 msgid "Aim"
 msgstr "Aim"
 
-#: ../inc/theme-options.php:822
+#: ../inc/theme-options.php:828
 msgid "Flicker"
 msgstr "Flickr"
 
-#: ../inc/theme-options.php:829
+#: ../inc/theme-options.php:835
 msgid "<strong>Note:</strong> Enter the url for correponding social networking website"
 msgstr "<strong>Bemærk:</strong> Indtast url'en til den passende sociale netværks-webside"
 
-#: ../inc/theme-options.php:868
+#: ../inc/theme-options.php:874
 msgid "Webmaster Site Verification IDs"
 msgstr "Webmaster-sideverifikations-id'er"
 
-#: ../inc/theme-options.php:873
+#: ../inc/theme-options.php:879
 msgid "Google Site Verification ID"
 msgstr "Google Site-verifikations-id"
 
-#: ../inc/theme-options.php:874
+#: ../inc/theme-options.php:880
 msgid "Enter your Google ID number only"
 msgstr "Indtast kun dit Google id-nummer"
 
-#: ../inc/theme-options.php:879
+#: ../inc/theme-options.php:885
 msgid "Yahoo Site Verification ID"
 msgstr "Yahoo Site-verifikations-id"
 
-#: ../inc/theme-options.php:880
+#: ../inc/theme-options.php:886
 msgid "Enter your Yahoo ID number only"
 msgstr "Indtast kun dit Yahoo id-nummer"
 
-#: ../inc/theme-options.php:885
+#: ../inc/theme-options.php:891
 msgid "Bing Site Verification ID"
 msgstr "Bing Site-verifikations-id"
 
-#: ../inc/theme-options.php:886
+#: ../inc/theme-options.php:892
 msgid "Enter your Bing ID number only"
 msgstr "Indtast kun dit Bing id-nummer"
 
-#: ../inc/theme-options.php:895
+#: ../inc/theme-options.php:901
 msgid "Webmaster Site Verification Code"
 msgstr "Webmaster Site-verifikationskode"
 
-#: ../inc/theme-options.php:900
+#: ../inc/theme-options.php:906
 msgid "Analytics, site stats Header code"
 msgstr "Analyse, side-statistik sidehovedskode"
 
-#: ../inc/theme-options.php:908
+#: ../inc/theme-options.php:914
 msgid "Analytics, site stats footer code"
 msgstr "Analyse, sidestatistik sidefodskode"
 
@@ -1028,7 +1032,7 @@ msgstr "Alt-tekst:"
 #~ "Theme for bloggers and professionals. It is based on HTML5, CSS3 and "
 #~ "Responsive Web Design to view in various devices. 10 Best Reasons to use "
 #~ "Catch Box Theme. 1. Responsive Web Design, 2. Custom Menus (Primary, "
-#~ "Secondary and Footer menus), 3. Theme Options for light or dark color "
+#~ "Secondary and Footer menus), 3. Theme Options for light or dark or blue color "
 #~ "scheme, custom link colors, three layout choices, two content choices "
 #~ "between excerpt and content option in homepage, feed redirection, custom "
 #~ "css styles, 4. Featured Sliders where you can define number of slides and "
@@ -1044,9 +1048,9 @@ msgstr "Alt-tekst:"
 #~ "Responsive Web Design for at kunne vises på forskellige enheder. De 10 "
 #~ "bedste grunde til at bruge Catch Box-temaet. 1. Responsive Web Design, 2. "
 #~ "Tilpassede menuer (primær, sekundær og sidefodsmenuer), 3. Tema-"
-#~ "indstillinger for en lys eller mørk farvepalette, tilpassede link-farver, "
-#~ "tre layout-valg, to indholdsvalg mellem resumé- og indholdsvalg på "
-#~ "hjemmesiden, feed-omstilling, tilpassede css-stil, 4. Featured-sliders "
+#~ "indstillinger for en lys eller mørk eller blå farvepalette, tilpassede "
+#~ "link-farver, tre layout-valg, to indholdsvalg mellem resumé- og indholdsvalg "
+#~ "på hjemmesiden, feed-omstilling, tilpassede css-stil, 4. Featured-sliders "
 #~ "hvor du kan definere antal af slides og indlæg-id'er, 5. Sociale links "
 #~ "(Facebook, Twitter, RSS, Linkedin, Pinterest etc.), 6. Webmaster-"
 #~ "værktøjer (Google-, Yahoo- og Bing-sidegodkendelses-id, sidehoved- og "
@@ -1063,7 +1067,7 @@ msgstr "Alt-tekst:"
 #~ "featured-images, full-width-template, microformats, post-formats, rtl-"
 #~ "language-support, sticky-post, theme-options, translation-ready"
 #~ msgstr ""
-#~ "mørkt, lyst, hvid, sort, grå, en-kolonne, to-kolonner, venstre-sidepanel, "
+#~ "mørkt, lyst, blå, hvid, sort, grå, en-kolonne, to-kolonner, venstre-sidepanel, "
 #~ "højre-sidepanel, fast-bredde, fleksibel-bredde, tilpasset-baggrund, "
 #~ "tilpassede-farver, tilpasset-sidehoved, tilpasset-menu, redigeringsstil, "
 #~ "featured-billede-sidehoved, featured-billeder, fuld-bredde-skabelon, "

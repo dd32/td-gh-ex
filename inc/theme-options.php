@@ -287,6 +287,12 @@ function catchbox_color_schemes() {
 			'thumbnail'				=> get_template_directory_uri() . '/inc/images/dark.png',
 			'default_link_color'	=> '#e4741f',
 		),	
+		'blue' 						=> array(
+			'value'					=> 'blue',
+			'label'					=> __( 'Blue', 'catchbox' ),
+			'thumbnail'				=> get_template_directory_uri() . '/inc/images/blue.png',
+			'default_link_color'	=> '#326693',
+		),			
 	);
 
 	return apply_filters( 'catchbox_color_schemes', $color_scheme_options );
@@ -1113,6 +1119,8 @@ function catchbox_enqueue_color_scheme() {
 
 	if ( 'dark' == $color_scheme )
 		wp_enqueue_style( 'dark', get_template_directory_uri() . '/colors/dark.css', array(), null );
+	elseif ( 'blue' == $color_scheme )
+		wp_enqueue_style( 'blue', get_template_directory_uri() . '/colors/blue.css', array(), null );	
 
 	do_action( 'catchbox_enqueue_color_scheme', $color_scheme );
 }

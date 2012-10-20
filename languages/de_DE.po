@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Catch Box"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/catch-box\n"
 "POT-Creation-Date: 2012-09-28 17:13+0530\n"
-"PO-Revision-Date: 2012-10-01 16:20+0530\n"
+"PO-Revision-Date: 2012-10-20 10:03+0530\n"
 "Last-Translator: Doris Wieferich <info@nop-info.de>\n"
 "Language-Team: Doris Wieferich <info@nop-info.de>\n"
 "MIME-Version: 1.0\n"
@@ -756,368 +756,372 @@ msgstr "Hell"
 msgid "Dark"
 msgstr "Dunkel"
 
+#: inc/theme-options.php:292
+msgid "Blue"
+msgstr "blau"
+
 # @ catchbox
-#: inc/theme-options.php:305
+#: inc/theme-options.php:311
 msgid "Content on left"
 msgstr "Inhalt links"
 
 # @ catchbox
-#: inc/theme-options.php:310
+#: inc/theme-options.php:316
 msgid "Content on right"
 msgstr "Inhalt rechts"
 
 # @ catchbox
-#: inc/theme-options.php:315
+#: inc/theme-options.php:321
 msgid "One-column, no sidebar"
 msgstr "1 Spalte, keine Seitenleiste"
 
 # @ catchbox
-#: inc/theme-options.php:333
+#: inc/theme-options.php:339
 msgid "Show excerpt"
 msgstr "Zeige Textausschnitt"
 
 # @ catchbox
-#: inc/theme-options.php:338
+#: inc/theme-options.php:344
 msgid "Show full content"
 msgstr "Zeige ganzen Inhalt"
 
 # @ catchbox
-#: inc/theme-options.php:439
+#: inc/theme-options.php:445
 #, php-format
 msgid "Default color: %s"
 msgstr "Standardfarbe: %s"
 
 # @ catchbox
-#: inc/theme-options.php:497
+#: inc/theme-options.php:503
 msgid "CSS Tutorial from W3Schools."
 msgstr "CSS-Lehrgang von W3Schools."
 
 # @ catchbox
-#: inc/theme-options.php:497
+#: inc/theme-options.php:503
 msgid "http://www.w3schools.com/css/default.asp"
 msgstr "http://www.w3schools.com/css/default.asp"
 
 # @ catchbox
-#: inc/theme-options.php:497
+#: inc/theme-options.php:503
 msgid "Click Here to Read"
 msgstr "Hier klicken zum Lesen"
 
 # @ catchbox
-#: inc/theme-options.php:562
-#: inc/theme-options.php:564
-#: inc/theme-options.php:613
-#: inc/theme-options.php:615
-#: inc/theme-options.php:726
-#: inc/theme-options.php:728
-#: inc/theme-options.php:849
-#: inc/theme-options.php:851
+#: inc/theme-options.php:568
+#: inc/theme-options.php:570
+#: inc/theme-options.php:619
+#: inc/theme-options.php:621
+#: inc/theme-options.php:732
+#: inc/theme-options.php:734
+#: inc/theme-options.php:855
+#: inc/theme-options.php:857
 #, php-format
 msgid "%s Theme Options By"
 msgstr "%s Theme-Optionen von"
 
 # @ catchbox
-#: inc/theme-options.php:567
-#: inc/theme-options.php:618
-#: inc/theme-options.php:730
-#: inc/theme-options.php:854
+#: inc/theme-options.php:573
+#: inc/theme-options.php:624
+#: inc/theme-options.php:736
+#: inc/theme-options.php:860
 msgid "Catch Themes"
 msgstr "Catch Themes"
 
 # @ catchbox
-#: inc/theme-options.php:571
+#: inc/theme-options.php:577
 #, fuzzy
 msgid "http://catchthemes.com/support/"
 msgstr "http://catchthemes.com/"
 
 # @ catchbox
-#: inc/theme-options.php:572
+#: inc/theme-options.php:578
 #, fuzzy
 msgid "Theme Support"
 msgstr "Theme-Support"
 
 # @ catchbox
-#: inc/theme-options.php:574
+#: inc/theme-options.php:580
 #, fuzzy
 msgid "http://catchthemes.com/themes/"
 msgstr "http://catchthemes.com/"
 
 # @ catchbox
-#: inc/theme-options.php:575
+#: inc/theme-options.php:581
 #, fuzzy
 msgid "More Themes"
 msgstr "Mehr Themes"
 
 # @ catchbox
-#: inc/theme-options.php:577
+#: inc/theme-options.php:583
 #, fuzzy
 msgid "http://facebook.com/catchthemes"
 msgstr "http://facebook.com/catchthemes"
 
 # @ catchbox
-#: inc/theme-options.php:578
-#: inc/theme-options.php:745
+#: inc/theme-options.php:584
+#: inc/theme-options.php:751
 msgid "Facebook"
 msgstr "Facebook"
 
 # @ catchbox
-#: inc/theme-options.php:580
+#: inc/theme-options.php:586
 #, fuzzy
 msgid "http://twitter.com/#!/catchthemes"
 msgstr "http://twitter.com/#!/catchthemes"
 
 # @ catchbox
-#: inc/theme-options.php:581
-#: inc/theme-options.php:750
+#: inc/theme-options.php:587
+#: inc/theme-options.php:756
 msgid "Twitter"
 msgstr "Twitter"
 
 # @ catchbox
-#: inc/theme-options.php:583
+#: inc/theme-options.php:589
 #, fuzzy
 msgid "http://catchthemes.com/donate/"
 msgstr "http://catchthemes.com/donate/"
 
 # @ catchbox
-#: inc/theme-options.php:584
+#: inc/theme-options.php:590
 msgid "Donate Now"
 msgstr "Jetzt spenden"
 
 # @ catchbox
-#: inc/theme-options.php:631
-#: inc/theme-options.php:739
-#: inc/theme-options.php:864
+#: inc/theme-options.php:637
+#: inc/theme-options.php:745
+#: inc/theme-options.php:870
 msgid "Settings saved."
 msgstr "Einstellungen gespeichert."
 
 # @ catchbox
-#: inc/theme-options.php:635
+#: inc/theme-options.php:641
 msgid "Slider Options"
 msgstr "Slider-Optionen"
 
 # @ catchbox
-#: inc/theme-options.php:639
+#: inc/theme-options.php:645
 msgid "Exclude Slider post from Home page posts:"
 msgstr "Slider-Artikel von Blog-Artikeln trennen"
 
 # @ catchbox
-#: inc/theme-options.php:641
+#: inc/theme-options.php:647
 msgid "Check to disable"
 msgstr "Ankreuzen zum Deaktivieren"
 
 # @ catchbox
-#: inc/theme-options.php:644
+#: inc/theme-options.php:650
 msgid "Number of Slides"
 msgstr "Anzahl der Slides"
 
 # @ catchbox
-#: inc/theme-options.php:650
+#: inc/theme-options.php:656
 msgid "Featured Col #"
 msgstr "Slider Nr. "
 
 # @ default
 # @ catchbox
-#: inc/theme-options.php:652
+#: inc/theme-options.php:658
 msgid "Click Here To Edit"
 msgstr "Hier klicken zum Bearbeiten"
 
 # @ catchbox
-#: inc/theme-options.php:658
+#: inc/theme-options.php:664
 msgid "<strong>Note</strong>: Here you add in Post IDs which displays on Homepage Featured Slider."
 msgstr "<strong>Note</strong>: Fügen Sie hier die IDs der Artikel ein, die im Slider erscheinen sollen."
 
 # @ catchbox
-#: inc/theme-options.php:663
+#: inc/theme-options.php:669
 msgid "Slider Effect Options"
 msgstr "Slider-Effekt-Optionen"
 
 # @ catchbox
-#: inc/theme-options.php:668
+#: inc/theme-options.php:674
 msgid "Transition Effect:"
 msgstr "Überblendungseffekt:"
 
 # @ catchbox
-#: inc/theme-options.php:673
+#: inc/theme-options.php:679
 msgid "fade"
 msgstr "Verblassen"
 
 # @ catchbox
-#: inc/theme-options.php:674
+#: inc/theme-options.php:680
 msgid "wipe"
 msgstr "Wischen"
 
 # @ catchbox
-#: inc/theme-options.php:675
+#: inc/theme-options.php:681
 msgid "scrollUp"
 msgstr "Nach oben scrollen"
 
 # @ catchbox
-#: inc/theme-options.php:676
+#: inc/theme-options.php:682
 msgid "scrollDown"
 msgstr "Nach unten scrollen"
 
 # @ catchbox
-#: inc/theme-options.php:677
+#: inc/theme-options.php:683
 msgid "scrollLeft"
 msgstr "Nach links scrollen"
 
 # @ catchbox
-#: inc/theme-options.php:678
+#: inc/theme-options.php:684
 msgid "scrollRight"
 msgstr "Nach rechts scrollen"
 
 # @ catchbox
-#: inc/theme-options.php:679
+#: inc/theme-options.php:685
 msgid "blindX"
 msgstr "Überblenden nach X"
 
 # @ catchbox
-#: inc/theme-options.php:680
+#: inc/theme-options.php:686
 msgid "blindY"
 msgstr "Überblenden nach Y"
 
 # @ catchbox
-#: inc/theme-options.php:681
+#: inc/theme-options.php:687
 msgid "blindZ"
 msgstr "Überblenden nach Z"
 
 # @ catchbox
-#: inc/theme-options.php:682
+#: inc/theme-options.php:688
 msgid "cover"
 msgstr "Abdecken"
 
 # @ catchbox
-#: inc/theme-options.php:683
+#: inc/theme-options.php:689
 msgid "shuffle"
 msgstr "Zufall"
 
 # @ catchbox
-#: inc/theme-options.php:689
+#: inc/theme-options.php:695
 msgid "Transition Delay"
 msgstr "Überblendungseffekt-Verzögerung"
 
 # @ catchbox
-#: inc/theme-options.php:692
-#: inc/theme-options.php:701
+#: inc/theme-options.php:698
+#: inc/theme-options.php:707
 msgid "second(s)"
 msgstr "Sekunde(n)"
 
 # @ catchbox
-#: inc/theme-options.php:698
+#: inc/theme-options.php:704
 msgid "Transition Length"
 msgstr "Überblendungslänge"
 
 # @ catchbox
-#: inc/theme-options.php:756
+#: inc/theme-options.php:762
 msgid "Google +"
 msgstr "Google +"
 
 # @ catchbox
-#: inc/theme-options.php:762
+#: inc/theme-options.php:768
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
 # @ catchbox
-#: inc/theme-options.php:768
+#: inc/theme-options.php:774
 msgid "Pinterest"
 msgstr "Pinterest"
 
 # @ catchbox
-#: inc/theme-options.php:774
+#: inc/theme-options.php:780
 msgid "Youtube"
 msgstr "Youtube"
 
 # @ catchbox
-#: inc/theme-options.php:780
+#: inc/theme-options.php:786
 msgid "RSS Feed"
 msgstr "RSS Feed"
 
 # @ catchbox
-#: inc/theme-options.php:786
+#: inc/theme-options.php:792
 msgid "Deviantart"
 msgstr "Deviantart"
 
 # @ catchbox
-#: inc/theme-options.php:792
+#: inc/theme-options.php:798
 msgid "Tumblr"
 msgstr "Tumblr"
 
 # @ catchbox
-#: inc/theme-options.php:798
+#: inc/theme-options.php:804
 msgid "Viemo"
 msgstr "Viemo"
 
 # @ catchbox
-#: inc/theme-options.php:804
+#: inc/theme-options.php:810
 msgid "Dribbble"
 msgstr "Dribbble"
 
 # @ catchbox
-#: inc/theme-options.php:810
+#: inc/theme-options.php:816
 msgid "MySpace"
 msgstr "MySpace"
 
 # @ catchbox
-#: inc/theme-options.php:816
+#: inc/theme-options.php:822
 msgid "Aim"
 msgstr "Aim"
 
 # @ catchbox
-#: inc/theme-options.php:822
+#: inc/theme-options.php:828
 msgid "Flicker"
 msgstr "Flicker"
 
 # @ catchbox
-#: inc/theme-options.php:829
+#: inc/theme-options.php:835
 msgid "<strong>Note:</strong> Enter the url for correponding social networking website"
 msgstr "<strong>Hinweis:</strong> Geben Sie die URL ein, um mit Sozialen Netzwerken zu korrespondieren."
 
 # @ catchbox
-#: inc/theme-options.php:868
+#: inc/theme-options.php:874
 msgid "Webmaster Site Verification IDs"
 msgstr "Webmaster Site Verification IDs"
 
 # @ catchbox
-#: inc/theme-options.php:873
+#: inc/theme-options.php:879
 msgid "Google Site Verification ID"
 msgstr "Google Site Verification ID"
 
 # @ catchbox
-#: inc/theme-options.php:874
+#: inc/theme-options.php:880
 msgid "Enter your Google ID number only"
 msgstr "Geben Sie nur Ihre Google-ID-Nummer ein"
 
 # @ catchbox
-#: inc/theme-options.php:879
+#: inc/theme-options.php:885
 msgid "Yahoo Site Verification ID"
 msgstr "Yahoo Site Verification ID"
 
 # @ catchbox
-#: inc/theme-options.php:880
+#: inc/theme-options.php:886
 msgid "Enter your Yahoo ID number only"
 msgstr "Geben Sie nur Ihre Yahoo-ID-Nummer ein"
 
 # @ catchbox
-#: inc/theme-options.php:885
+#: inc/theme-options.php:891
 msgid "Bing Site Verification ID"
 msgstr "Bing Site Verification ID"
 
 # @ catchbox
-#: inc/theme-options.php:886
+#: inc/theme-options.php:892
 msgid "Enter your Bing ID number only"
 msgstr "Geben Sie nur Ihre Bing-ID-Nummer ein"
 
 # @ catchbox
-#: inc/theme-options.php:895
+#: inc/theme-options.php:901
 msgid "Webmaster Site Verification Code"
 msgstr "Webmaster Site Verification Code"
 
 # @ catchbox
-#: inc/theme-options.php:900
+#: inc/theme-options.php:906
 msgid "Analytics, site stats Header code"
 msgstr "Analytics, Header-Code für Seitenstatistiken"
 
 # @ catchbox
-#: inc/theme-options.php:908
+#: inc/theme-options.php:914
 msgid "Analytics, site stats footer code"
 msgstr "Analytics, Seitenfuß-Code für Seitenstatistiken"
 
