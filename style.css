@@ -1,9 +1,9 @@
 /* 
 Theme Name: Responsive 
 Theme URI: http://themeid.com/responsive-theme/ 
-Description: Responsive Theme is a flexible foundation with fluid grid system that adapts your website to mobile devices and the desktop or any other viewing environment. Theme features 9 Page Templates, 11 Widget Areas, 6 Template Layouts, 4 Menu Positions and more. Powerful but simple Theme Options for full CMS control with easy Logo Upload, Social Networking and Webmaster Tools etc. Responsive is WooCommerce Compatible, Multilingual Ready (WPML), RTL-Language Support, Retina-Ready, W3C Markup Validated and currently translated into 28 languages. Cross-Browser compatible and yes even the IE7. No paid memberships or clubs to get a FREE/Responsive Support you need. http://themeid.com/support
+Description: Responsive Theme is a flexible foundation with fluid grid system that adapts your website to mobile devices and the desktop or any other viewing environment. Theme features 9 Page Templates, 11 Widget Areas, 6 Template Layouts, 4 Menu Positions and more. Powerful but simple Theme Options for full CMS control with easy Logo Upload, Social Networking and Webmaster Tools etc. Responsive is WooCommerce Compatible, Multilingual Ready (WPML), RTL-Language Support, Retina-Ready, W3C Markup Validated and currently translated into 34 languages. Cross-Browser compatible and yes even the IE7. No paid memberships or clubs to get a FREE/Responsive Support you need. http://themeid.com/support
 
-Version: 1.8.0.1
+Version: 1.8.1
 Author: ThemeID 
 Author URI: http://themeid.com
 Tags: white, black, gray, light, custom-menu, custom-header, custom-background, one-column, two-columns, left-sidebar, right-sidebar, flexible-width, theme-options, threaded-comments, full-width-template, sticky-post, translation-ready, flexible-width, rtl-language-support
@@ -431,7 +431,7 @@ input[type='password'] {
 	cursor: text;
 }
 
-/* =IE Forms (Modernizr)
+/* =IE Forms
 -------------------------------------------------------------- */
 .ie7 area,
 .ie7 select,
@@ -1537,6 +1537,12 @@ form div {
 	min-height: 0;
 }
 
+.colophon-widget select,
+.colophon-widget input[type="text"], 
+.colophon-widget input[type="password"] {
+	width: 100%;
+}
+
 #top-widget {}
 
 .top-widget {
@@ -1636,7 +1642,7 @@ form div {
 	color: #333;
 }
 
-/* =Primary Menu
+/* =Header Menu (Primary)
 -------------------------------------------------------------- */
 .menu {
 	background-color: #585858;
@@ -1711,14 +1717,10 @@ form div {
 	min-height: 0;
 }
 
-.menu ul {
-	margin: -10px 0 0 -30px;
-	padding: 10px 30px 30px;
-}
-
+.menu ul,
 .menu ul ul {
-	margin: -30px 0 0 -10px;
-	padding: 30px 30px 30px 10px;
+	margin: 0;
+	padding: 0;
 }
 
 .menu ul li a:hover, 
@@ -1775,9 +1777,9 @@ form div {
 	background: #fff;
 	background-image: none;
 	border: 1px solid #b2b2b2;
-	border-top: none;
 	color: #444;
 	filter: none;
+    margin: -1px 0 1px 0;
 	width: auto;
 }
 
@@ -1816,7 +1818,7 @@ form div {
 	border-left: none;
 }
 
-/* =Primary Main Menu IE Fixes (Modernizr)
+/* =Primary Main Menu IE Fixes
 -------------------------------------------------------------- */
 .ie7 .menu ul {
 	background: url(images/ie7-fix.gif) repeat;
@@ -1832,7 +1834,7 @@ form div {
     display: none 
 }
 
-/* =Sub Header Menu
+/* =Sub-Header Menu
 -------------------------------------------------------------- */
 .sub-header-menu {
 	background-color: #fff;
@@ -1902,14 +1904,10 @@ form div {
 	min-height: 0;
 }
 
-.sub-header-menu ul {
-	margin: -10px 0 0 -30px;
-	padding: 10px 30px 30px;
-}
-
+.sub-header-menu ul,
 .sub-header-menu ul ul {
-	margin: -30px 0 0 -10px;
-	padding: 30px 30px 30px 10px;
+	margin: 0;
+	padding: 0;
 }
 
 .sub-header-menu ul li a:hover, 
@@ -1953,9 +1951,9 @@ form div {
 	background: #fff;
 	background-image: none;
 	border: 1px solid #d6d6d6;
-	border-top: none;
 	color: #444;
 	filter: none;
+    margin: -1px 0 1px 0;
 	width: auto;
 }
 
@@ -2000,7 +1998,7 @@ form div {
 	filter: none;
 }
 
-/* =Sub Header Menu IE Fixes (Modernizr)
+/* =Sub Header Menu IE Fixes
 -------------------------------------------------------------- */
 .ie7 .sub-header-menu ul {
 	background: url(images/ie7-fix.gif) repeat;
@@ -2027,14 +2025,15 @@ form div {
 	padding: 0 8px;
 }
 
+.footer-menu li a:hover {
+	color: #222;
+}
+
 .footer-menu > li:first-child > a {
 	border-left: none;
 	padding: 0 8px 0 0;
 }
 
-.footer-menu li a:hover {
-	color: #333;
-}
 
 /* =Navigation
 -------------------------------------------------------------- */
@@ -2420,7 +2419,6 @@ table.cart td.actions .coupon .input-text {
 /* =Footer
 -------------------------------------------------------------- */
 #footer {
-	color: #333;
 	font-size: 11px;
 	line-height: 1.5em;
 }
@@ -2431,6 +2429,7 @@ table.cart td.actions .coupon .input-text {
 }
 
 #footer a:hover {
+    color: #444;
 }
 
 #footer-wrapper .grid.col-940 {

@@ -3,21 +3,22 @@ msgstr ""
 "Project-Id-Version: Responsive Theme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-25 13:42:58 UTC\n"
-"PO-Revision-Date: 2012-09-27 16:06+0100\n"
+"PO-Revision-Date: 2012-09-27 16:09+0100\n"
 "Last-Translator: grapplerulrich <grapplerulrich@gmail.com>\n"
-"Language-Team: French, France\n"
+"Language-Team: Romanian, Romania\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: WebTranslateIt.com\n"
-"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 ? 0: (((n % 100 > 19) || ((n % 100 "
+"== 0) && (n != 0))) ? 2: 1));\n"
 
 #: sitemap.php single.php sidebar-content-page.php
 #: sidebar-content-half-page.php page.php landing-page.php index.php image.php
 #: full-width-page.php content-sidebar-page.php content-sidebar-half-page.php
 #: blog.php blog-excerpt.php archive.php 404.php
 msgid "404 &#8212; Fancy meeting you here!"
-msgstr "404 &#8212; Heureux de vous voir ici &#33;"
+msgstr "404 &#8212; Ciudat să te întâlnesc aici!"
 
 #: sitemap.php single.php sidebar-content-page.php
 #: sidebar-content-half-page.php search.php page.php landing-page.php
@@ -27,161 +28,160 @@ msgid ""
 "Don&#39;t panic, we&#39;ll get through this together. Let&#39;s explore our "
 "options here."
 msgstr ""
-"Ne paniquez pas&#44; nous allons r&#233;soudre cela ensemble&#46; Explorons "
-"les options possibles ici&#46;"
+"Nu te panica, Vom trece peste împreună. Hai să luăm în calcul toate "
+"opțiunile."
 
 #: sitemap.php single.php sidebar-content-page.php
 #: sidebar-content-half-page.php search.php page.php landing-page.php
 #: index.php image.php full-width-page.php content-sidebar-page.php
 #: content-sidebar-half-page.php blog.php blog-excerpt.php archive.php 404.php
 msgid "You can return"
-msgstr "Vous pouvez revenir en arri&#232;re"
+msgstr "Te poți întoarce"
 
 #: includes/functions.php sitemap.php single.php sidebar-content-page.php
 #: sidebar-content-half-page.php search.php index.php image.php page.php
 #: landing-page.php full-width-page.php content-sidebar-page.php
 #: content-sidebar-half-page.php blog.php blog-excerpt.php archive.php 404.php
 msgid "Home"
-msgstr "Accueil"
+msgstr "Acasă"
 
 #: sitemap.php single.php sidebar-content-page.php
 #: sidebar-content-half-page.php search.php 404.php page.php landing-page.php
 #: index.php image.php full-width-page.php content-sidebar-page.php
 #: content-sidebar-half-page.php blog.php blog-excerpt.php archive.php
 msgid "&larr; Home"
-msgstr "&larr; Accueil"
+msgstr "&larr; Acasă"
 
 #: sitemap.php single.php sidebar-content-page.php
 #: sidebar-content-half-page.php search.php page.php landing-page.php
 #: index.php image.php full-width-page.php content-sidebar-page.php
 #: content-sidebar-half-page.php blog.php blog-excerpt.php archive.php 404.php
 msgid "or search for the page you were looking for"
-msgstr "ou rechercher la page que vous demandiez"
+msgstr "sau răsfoiește pentru pagina pe care o cauți"
 
 #: archive.php
 msgid "Daily Archives: %s"
-msgstr "Archives quotidiennes&nbsp;: %s"
+msgstr "Arhive zilnice: %s"
 
 #: archive.php
 msgid "Monthly Archives: %s"
-msgstr "Archives mensuelles&nbsp;: %s"
+msgstr "Arhive lunare: %s"
 
 #: archive.php
 msgid "Yearly Archives: %s"
-msgstr "Archives annuelles&nbsp;: %s"
+msgstr "Arhive anuale: %s"
 
 #: archive.php
 msgid "Blog Archives"
-msgstr "Archives du site"
+msgstr "Arhivele Blog-ului"
 
 #: sitemap.php search.php index.php blog.php blog-excerpt.php archive.php
 msgid "Permanent Link to %s"
-msgstr "Lien permanent vers %s"
+msgstr "Legătură permanentă către %s"
 
 #: single.php sidebar-content-page.php sidebar-content-half-page.php
 #: search.php page.php index.php image.php full-width-page.php
 #: content-sidebar-page.php content-sidebar-half-page.php blog.php
 #: blog-excerpt.php archive.php
 msgid "No Comments &darr;"
-msgstr "Aucun commentaire &darr;"
+msgstr "Nici un comentariu"
 
 #: sitemap.php single.php sidebar-content-page.php
 #: sidebar-content-half-page.php search.php page.php landing-page.php
 #: index.php image.php full-width-page.php content-sidebar-page.php
 #: content-sidebar-half-page.php blog.php blog-excerpt.php archive.php
 msgid "Pages:"
-msgstr "Pages&nbsp;:"
+msgstr "Pagini"
 
 #: single.php sidebar-content-page.php sidebar-content-half-page.php page.php
 #: landing-page.php index.php image.php full-width-page.php
 #: content-sidebar-page.php content-sidebar-half-page.php blog.php
 #: blog-excerpt.php archive.php
 msgid "Tagged with:"
-msgstr "Tagu&#233;s avec&nbsp;:"
+msgstr "Etichetat cu:"
 
 #: single.php sidebar-content-page.php sidebar-content-half-page.php page.php
 #: landing-page.php index.php image.php full-width-page.php
 #: content-sidebar-page.php content-sidebar-half-page.php blog.php
 #: blog-excerpt.php archive.php
 msgid "Posted in %s"
-msgstr "Publi&#233; dans %s"
+msgstr "Postat în %s"
 
 #: sitemap.php single.php sidebar-content-page.php
 #: sidebar-content-half-page.php search.php page.php landing-page.php
 #: index.php image.php full-width-page.php content-sidebar-page.php
 #: content-sidebar-half-page.php blog.php blog-excerpt.php archive.php
 msgid "Edit"
-msgstr "Editer"
+msgstr "Modifică"
 
 #: sitemap.php single.php sidebar-content-page.php
 #: sidebar-content-half-page.php search.php page.php landing-page.php
 #: index.php full-width-page.php content-sidebar-page.php
 #: content-sidebar-half-page.php blog.php blog-excerpt.php archive.php
 msgid "&#8249; Older posts"
-msgstr "&#8249; Articles plus anciens"
+msgstr "Postări vechi"
 
 #: sitemap.php single.php sidebar-content-page.php
 #: sidebar-content-half-page.php search.php page.php landing-page.php
 #: index.php full-width-page.php content-sidebar-page.php
 #: content-sidebar-half-page.php blog.php blog-excerpt.php archive.php
 msgid "Newer posts &#8250;"
-msgstr "Articles plus r&#233;cents &#8250;"
+msgstr "Postări noi"
 
 #: includes/functions.php single.php sidebar-content-page.php
 #: sidebar-content-half-page.php page.php landing-page.php index.php
 #: full-width-page.php content-sidebar-page.php content-sidebar-half-page.php
 #: blog.php image.php
 msgid "Read more &#8250;"
-msgstr "Lire la suite &#8250;"
+msgstr "Citește mai mult"
 
 #: comments.php
 msgid ""
 "This post is password protected. Enter the password to view any comments."
 msgstr ""
-"Cet article est prot&#233;g&#233; par mot de passe. Entrez le mot de passe "
-"pour acc&#233;der aux commentaires."
+"Această postare este protejată cu parolă. Introdu parola pentru a vizualiza "
+"comentariile."
 
 #: comments.php
 msgid "&#8249; Older comments"
-msgstr "&#8249; Commentaires plus anciens"
+msgstr "Comentarii vechi"
 
 #: comments.php
 msgid "Newer comments &#8250;"
-msgstr "Commentaires plus r&#233;cents &#8250;"
+msgstr "Comentarii noi"
 
 #: comments.php
 msgid "Pings&#47;Trackbacks"
-msgstr "Pings&#47;Trackbacks"
+msgstr "Ping-uri&#47;Trackback-uri"
 
 #: comments.php
 msgid "%1$d %2$s for \"%3$s\""
-msgstr "%1$d %2$s pour \"%3$s\""
+msgstr "%1$d %2$s pentru \"%3$s\""
 
 #: comments.php
 msgid "Name"
-msgstr "Nom"
+msgstr "Nume"
 
 #: comments.php
 msgid "One comment on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
-msgstr[0] "Un commentaire pour “%2$s”"
-msgstr[1] "%1$s commentaires pour “%2$s”"
+msgstr[0] ""
 
 #: comments.php
 msgid "E-mail"
-msgstr "Courriel"
+msgstr "E-mail"
 
 #: comments.php
 msgid "Website"
-msgstr "Site Web"
+msgstr "Site"
 
 #: footer.php
 msgid "&copy;"
-msgstr "&copy;"
+msgstr "&copiază"
 
 #: footer.php
 msgid "scroll to top"
-msgstr "retour en haut"
+msgstr "defilați în susul paginii"
 
 #: footer.php
 msgid "&uarr;"
@@ -193,27 +193,27 @@ msgstr "http://themeid.com/responsive-theme/"
 
 #: footer.php
 msgid "Responsive Theme"
-msgstr "Responsive Theme"
+msgstr ""
 
 #: footer.php
 msgid "powered by"
-msgstr "Propuls&#233; par"
+msgstr "de"
 
 #: footer.php
 msgid "http://wordpress.org/"
-msgstr "http://fr.wordpress.org/"
+msgstr ""
 
 #: footer.php
 msgid "WordPress"
-msgstr "WordPress"
+msgstr ""
 
 #: home.php
 msgid "Hello, World!"
-msgstr "Bonjour tout le monde&nbsp;!"
+msgstr "Salut, lume!"
 
 #: home.php
 msgid "Your H2 subheadline here"
-msgstr "Votre sous&#45;titre H2 ici"
+msgstr "Subtitlul tău H2 aici"
 
 #: home.php
 msgid ""
@@ -221,90 +221,86 @@ msgid ""
 "Call to Action button and its destination link as well. Image on your right "
 "can be an image or even YouTube video if you like."
 msgstr ""
-"Votre titre, sous&#45;titre et contenu sont modifiables via les options du "
-"th&#232;me, ainsi que le bouton Action et son lien. L&#39;image sur votre "
-"droite peut &#234;tre une image ou m&#234;me une vid&#233;o YouTube si vous "
-"le souhaitez."
 
 #: home.php
 msgid "Call to Action"
-msgstr "Appel &#224; Action"
+msgstr "Acționează"
 
 #: image.php
 msgid "&#8249; Return to"
-msgstr "&#8249; Retour &#224;"
+msgstr "Întoarce-te la"
 
 #: index.php image.php
 msgid ""
 "Don't panic, we'll get through this together. Let's explore our options here."
 msgstr ""
-"Ne paniquez pas, nous allons r&#233;soudre ceci ensemble. Explorons nos "
-"options ici."
+"Nu te panica, Vom trece peste împreună. Hai să luăm în calcul toate "
+"opțiunile."
 
 #: index.php
 msgid "1 Comment &darr;"
-msgstr "1 commentaire &darr;"
+msgstr "Un comentariu"
 
 #: index.php
 msgid "% Comments &darr;"
-msgstr "% commentaires &darr;"
+msgstr "% comentarii"
 
 #: search.php
 msgid "Your search for"
-msgstr "Votre recherche pour"
+msgstr ""
 
 #: search.php
 msgid "did not match any entries"
-msgstr "ne retourne aucun contenu"
+msgstr ""
 
 #: searchform.php
 msgid "search here &hellip;"
-msgstr "chercher ici &hellip;"
+msgstr "caută aici"
 
 #: searchform.php
 msgid "Go"
-msgstr "Aller"
+msgstr "Mergi"
 
 #: sidebar-gallery.php
 msgid "Image Information"
-msgstr "Information relative &#224; l&#39;image"
+msgstr "Informații despre imagine"
 
 #: sidebar-gallery.php
 msgid "Full Size:"
-msgstr "Taille originale :"
+msgstr "Mărime completă:"
 
 #: sidebar-gallery.php
 msgid "Aperture: f&#47;"
-msgstr "Ouverture : f&#47;"
+msgstr "Deschidere:"
 
 #: sidebar-gallery.php
 msgid "Focal Length:"
-msgstr "Focale :"
+msgstr "Lungimea focală"
 
 #: sidebar-gallery.php
 msgid "mm"
-msgstr "mn"
+msgstr "mm"
 
 #: sidebar-gallery.php
 msgid "ISO:"
-msgstr "ISO :"
+msgstr "ISO:"
 
 #: sidebar-gallery.php
 msgid "Shutter:"
-msgstr "Vitesse d&#39;obturation :"
+msgstr "Închizător:"
 
 #: sidebar-gallery.php
 msgid "Camera:"
-msgstr "Appareil photo :"
+msgstr "Cameră:"
 
 #: sidebar.php sidebar-right.php sidebar-right-half.php sidebar-left.php
 #: sidebar-left-half.php sidebar-half-left.php
 msgid "In Archive"
-msgstr "dans les archives"
+msgstr "În arhivă"
 
 #: includes/functions.php sidebar-home.php
 msgid "Home Widget 1"
-msgstr "Accueil Widget 1"
+msgstr "Widget 1"
 
 #: sidebar-home.php
 msgid ""
@@ -312,14 +308,10 @@ msgid ""
 "Widgets and choose 6th widget from the top in area six called Home Widget 1. "
 "Title is also manageable from widgets as well."
 msgstr ""
-"Ceci est votre premier widget de page d&#39;accueil. Pour le modifier&#44; "
-"allez &#224; Apparence > Widgets et choisissez le 6&#232;me widget "
-"appel&#233; Accueil Widget 1. Le titre est &#233;galement &#233;ditable via "
-"la page d&#39;administration des widgets."
 
 #: includes/functions.php sidebar-home.php
 msgid "Home Widget 2"
-msgstr "Accueil Widget 2"
+msgstr "Widget 2"
 
 #: sidebar-home.php
 msgid ""
@@ -327,14 +319,10 @@ msgid ""
 "Widgets and choose 7th widget from the top in area seven called Home Widget "
 "2. Title is also manageable from widgets as well."
 msgstr ""
-"Ceci est votre second widget de page d&#39;accueil. Pour le modifier&#44; "
-"allez &#224; Apparence > Widgets et choisissez le 7&#232;me widget "
-"appel&#233; Accueil Widget 2. Le titre est &#233;galement &#233;ditable via "
-"la page d&#39;administration des widgets."
 
 #: includes/functions.php sidebar-home.php
 msgid "Home Widget 3"
-msgstr "Accueil Widget 3"
+msgstr "Widget 3"
 
 #: sidebar-home.php
 msgid ""
@@ -342,274 +330,270 @@ msgid ""
 "Widgets and choose 8th widget from the top in area eight called Home Widget "
 "3. Title is also manageable from widgets as well."
 msgstr ""
-"Ceci est votre troisi&#232;me widget de page d&#39;accueil. Pour le "
-"modifier&#44; allez &#224; Apparence > Widgets et choisissez le 8&#232;me "
-"widget appel&#233; Accueil Widget 3. Le titre est &#233;galement &#233;"
-"ditable via la page d&#39;administration des widgets."
 
 #: single.php
 msgid "About"
-msgstr "A propos"
+msgstr "Despre"
 
 #: sitemap.php
 msgid "Categories"
-msgstr "Cat&#233;gories"
+msgstr "Categorii"
 
 #: sitemap.php
 msgid "Latest Posts"
-msgstr "Les Derniers Articles"
+msgstr "Ultimele articole"
 
 #: sitemap.php
 msgid "Pages"
-msgstr "Pages"
+msgstr "Pagini"
 
 #: includes/functions.php
 msgid "Top Menu"
-msgstr "Top Menu"
+msgstr "Meniul Top"
 
 #: includes/functions.php
 msgid "Header Menu"
-msgstr "Menu Header"
+msgstr "Meniu antet"
 
 #: includes/functions.php
 msgid "Sub-Header Menu"
-msgstr "Sous Menu Header"
+msgstr "Meniu sub-antet"
 
 #: includes/functions.php
 msgid "Footer Menu"
-msgstr "Menu de Pied de Page"
+msgstr "Meniu subsol"
 
 #: includes/functions.php
 msgid ""
 "<span class=\"%1$s\">Posted on </span>%2$s<span class=\"%3$s\"> by </span>"
 "%4$s"
 msgstr ""
-"<span class=\"%1$s\">Post&#233; le </span>%2$s<span class=\"%3$s\"> par </"
-"span>%4$s"
+"<span class=\"%1$s\">Postat în </span>%2$s<span class=\"%3$s\"> de </span>"
+"%4$s"
 
 #: includes/functions.php
 msgid "View all posts by %s"
-msgstr "Afficher tous les articles par %s"
+msgstr "Vezi toate postările lui %s"
 
 #: includes/functions.php
 msgid "Archive for %s"
-msgstr "Archive pour %s"
+msgstr "Arhivă pentru %s"
 
 #: includes/functions.php
 msgid "Search results for: %s"
-msgstr "Résultats de recherche pour %s"
+msgstr ""
 
 #: includes/functions.php
 msgid "Posts tagged %s"
-msgstr "Publications tagu&#233;es %s"
+msgstr "Postări etichetate %s"
 
 #: includes/functions.php
 msgid "Error 404 "
-msgstr "Erreur 404 "
+msgstr "Eroare 404 "
 
 #: includes/functions.php
 msgid "Page"
-msgstr "Page"
+msgstr "Pagină"
 
 #: includes/functions.php
 msgid "http://themeid.com/support/"
-msgstr "http://themeid.com/support/"
+msgstr ""
 
 #: includes/functions.php
 msgid "Theme Support"
-msgstr "Support et Assistance (Anglais)"
+msgstr ""
 
 #: includes/functions.php
 msgid "http://themeid.com/themes/"
-msgstr "http://themeid.com/themes/"
+msgstr ""
 
 #: includes/functions.php
 msgid "More Themes"
-msgstr "Plus de thèmes"
+msgstr ""
 
 #: includes/functions.php
 msgid "http://themeid.com/showcase/"
-msgstr "http://themeid.com/showcase/"
+msgstr ""
 
 #: includes/functions.php
 msgid "Showcase"
-msgstr "Démo"
+msgstr ""
 
 #: includes/functions.php
 msgid "http://themeid.com/donate/"
-msgstr "http://themeid.com/donate/"
+msgstr ""
 
 #: includes/functions.php
 msgid "Donate Now"
-msgstr "Effectuer une donation"
+msgstr ""
 
 #: includes/functions.php
 msgid "Main Sidebar"
-msgstr "Colonne principale"
+msgstr "Bara laterală"
 
 #: includes/functions.php
 msgid "Area One - sidebar.php"
-msgstr "Zone Une &#45; sidebar.php"
+msgstr "Aria 1 - sidebar.php"
 
 #: includes/functions.php
 msgid "Right Sidebar"
-msgstr "Colonne lat&#233;rale droite"
+msgstr "Bara laterală - dreapta"
 
 #: includes/functions.php
 msgid "Area Two - sidebar-right.php"
-msgstr "Zone Deux &#45; sidebar&#45;right.php"
+msgstr "Aria 2 - sidebar-right.php"
 
 #: includes/functions.php
 msgid "Left Sidebar"
-msgstr "Colonne lat&#233;rale gauche"
+msgstr "Bară laterală - stânga"
 
 #: includes/functions.php
 msgid "Area Three - sidebar-left.php"
-msgstr "Zone Trois &#45; sidebar&#45;left.php"
+msgstr "Aria 3 - sidebar-left.php"
 
 #: includes/functions.php
 msgid "Left Sidebar Half Page"
-msgstr "Colonne lat&#233;rale gauche Demi&#45;Page"
+msgstr "Bară laterală - stânga - pe mijlocul paginii"
 
 #: includes/functions.php
 msgid "Area Four - sidebar-left-half.php"
-msgstr "Zone Quatre &#45; sidebar-left&#45;half.php"
+msgstr "Aria 4 - sidebar-left-half.php"
 
 #: includes/functions.php
 msgid "Right Sidebar Half Page"
-msgstr "Colonne lat&#233;rale droite Demi&#45;Page"
+msgstr "Bară laterală - dreapta - pe mijlocul paginii"
 
 #: includes/functions.php
 msgid "Area Five - sidebar-right-half.php"
-msgstr "Zone Cinq &#45; sidebar-right&#45;half.php"
+msgstr "Aria 5 - sidebar-right-half.php"
 
 #: includes/functions.php
 msgid "Area Six - sidebar-home.php"
-msgstr "Zone Six &#45; sidebar&#45;home.php"
+msgstr "Aria 6 - sidebar-home.php"
 
 #: includes/functions.php
 msgid "Area Seven - sidebar-home.php"
-msgstr "Zone Sept &#45; sidebar&#45;home.php"
+msgstr "Aria 7 - sidebar-home.php"
 
 #: includes/functions.php
 msgid "Area Eight - sidebar-home.php"
-msgstr "Zone Huit &#45; sidebar&#45;home.php"
+msgstr "Aria 8 - sidebar-home.php"
 
 #: includes/functions.php
 msgid "Gallery Sidebar"
-msgstr "Barre lat&#233;rale Galerie"
+msgstr "Bară laterală - galerie"
 
 #: includes/functions.php
 msgid "Area Nine - sidebar-gallery.php"
-msgstr "Zone Neuf &#45; sidebar&#45;gallery.php"
+msgstr "Aria 9 - sidebar-gallery.php"
 
 #: includes/functions.php
 msgid "Colophon Widget"
-msgstr "Widget Colophon"
+msgstr ""
 
 #: includes/functions.php
 msgid "Area Ten - sidebar-colophon.php"
-msgstr "Zone dix - sidebar-colophon.php"
+msgstr ""
 
 #: includes/functions.php
 msgid "Top Widget"
-msgstr "Widget supérieur"
+msgstr ""
 
 #: includes/functions.php
 msgid "Area Twelve - sidebar-top.php"
-msgstr "Zone douze - sidebar-top.php"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Theme Options"
-msgstr "Options du th&#232;me"
+msgstr "Opțiuni șablon"
 
 #: includes/theme-options.php
 msgid "Options Saved"
-msgstr "Options enregistr&#233;es"
+msgstr "Opțiunile au fost salvate."
 
 #: includes/theme-options.php
 msgid "Theme Elements"
-msgstr "El&#233;ments du Th&#232;me"
+msgstr "Elementele șablonului"
 
 #: includes/theme-options.php
 msgid "Disable Breadcrumb Lists?"
-msgstr "D&#233;activer le chemin de navigation (Breadcrumb) ?"
+msgstr "Dezactivați liste Breadcrumb?"
 
 #: includes/theme-options.php
 msgid "Check to disable"
-msgstr "Validez pour d&#233;sactiver"
+msgstr "Bifează pentru dezactivare"
 
 #: includes/theme-options.php
 msgid "Disable Call to Action Button?"
-msgstr "Désactiver le bouton Appel à action ?"
+msgstr "Dezactivează butonul Acționeaza?"
 
 #: includes/theme-options.php
 msgid "Save Options"
-msgstr "Sauvegarder les options"
+msgstr "Salvează opțiunile"
 
 #: includes/theme-options.php
 msgid "Logo Upload"
-msgstr "T&#233;l&#233;charger le Logo"
+msgstr "Încarcă Logo"
 
 #: includes/theme-options.php
 msgid "Custom Header"
-msgstr "En-tête Personnalis&#233;e"
+msgstr "Antet personalizat"
 
 #: includes/theme-options.php
 msgid "Need to replace or remove default logo?"
-msgstr "Besoin de remplacer ou de supprimer le logo par d&#233;faut ?"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "<a href=\"%s\">Click here</a>."
-msgstr "<a href=\"%s\">Cliquez ici</a>."
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Home Page"
-msgstr "Page d'accueil"
+msgstr "Pagină de start"
 
 #: includes/theme-options.php
 msgid "Headline"
-msgstr "Titre"
+msgstr "Titlu"
 
 #: includes/theme-options.php
 msgid "Enter your headline"
-msgstr "Saisissez votre titre"
+msgstr "Introdu titlul"
 
 #: includes/theme-options.php
 msgid "Subheadline"
-msgstr "Sous-Titre"
+msgstr "Subtitlu"
 
 #: includes/theme-options.php
 msgid "Enter your subheadline"
-msgstr "Saisissez votre sous&#45;titre"
+msgstr "Introdu subtitlul"
 
 #: includes/theme-options.php
 msgid "Content Area"
-msgstr "Zone Contenu"
+msgstr "Arie de conținut"
 
 #: includes/theme-options.php
 msgid "Enter your content"
-msgstr "Saisissez votre contenu"
+msgstr "Introdu conținutul"
 
 #: includes/theme-options.php
 msgid "Call to Action (URL)"
-msgstr "Appel &#224; Action (URL)"
+msgstr "Acționează (URL)"
 
 #: includes/theme-options.php
 msgid "Enter your call to action URL"
-msgstr "Saisissez votre lien pour l&#39;Appel &#224; Action"
+msgstr "Introdu URL-ul pentru acționare"
 
 #: includes/theme-options.php
 msgid "Call to Action (Text)"
-msgstr "Appel &#224; Action (Texte)"
+msgstr "Acționare (Text)"
 
 #: includes/theme-options.php
 msgid "Enter your call to action text"
-msgstr "Saisissez votre texte pour l&#39;Appel &#224; Action"
+msgstr "Introdu textul pentru acționare"
 
 #: includes/theme-options.php
 msgid "Featured Content"
-msgstr "Contenu mis en Vedette"
+msgstr "Conținut promovat"
 
 #: includes/theme-options.php
 msgid "http://themeid.com/forum/topic/510/theme-options-featured-content/"
@@ -617,55 +601,55 @@ msgstr "http://themeid.com/forum/topic/510/theme-options-featured-content/"
 
 #: includes/theme-options.php
 msgid "See Docs"
-msgstr "Voir la Documentation"
+msgstr "Vezi Docs"
 
 #: includes/theme-options.php
 msgid "Paste your shortcode, video or image source"
-msgstr "Collez ici votre shortcode, votre html pour l'image ou la video"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Webmaster Tools"
-msgstr "Outils Webmaster"
+msgstr "Uneltele Webmaster-ului"
 
 #: includes/theme-options.php
 msgid "Google Site Verification"
-msgstr "V&#233;rification Google Site"
+msgstr "Verificarea de către Google"
 
 #: includes/theme-options.php
 msgid "Enter your Google ID number only"
-msgstr "Saisissez votre identifiant Google (chiffres uniquement)"
+msgstr "Introdu numărul de ID Google"
 
 #: includes/theme-options.php
 msgid "Bing Site Verification"
-msgstr "V&#233;rification Bing"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Enter your Bing ID number only"
-msgstr "Saisissez votre identifiant Bing (chiffres uniquement)"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Yahoo Site Verification"
-msgstr "V&#233;rification du Site avec Yahoo"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Enter your Yahoo ID number only"
-msgstr "Saisissez votre identifiant Yahoo (chiffres uniquement)"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Site Statistics Tracker"
-msgstr "Code de Tracking pour les statistiques du site"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Leave blank if plugin handles your webmaster tools"
-msgstr "Laisser vide si des plugins assurent d&#233;jà ces fonctions"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Google Analytics, StatCounter, any other or all of them."
-msgstr "Google Analytics, Compteurs, Trackeurs, et autre ..."
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Social Icons"
-msgstr "R&#233;seaux Sociaux"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Twitter"
@@ -673,7 +657,7 @@ msgstr "Twitter"
 
 #: includes/theme-options.php
 msgid "Enter your Twitter URL"
-msgstr "Saisissez l&#39;url Twitter"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Facebook"
@@ -681,15 +665,15 @@ msgstr "Facebook"
 
 #: includes/theme-options.php
 msgid "Enter your Facebook URL"
-msgstr "Saisissez l&#39;url Facebook"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "LinkedIn"
-msgstr "LinkedIn"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Enter your LinkedIn URL"
-msgstr "Saisissez l&#39;url Linkedin"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "YouTube"
@@ -697,116 +681,116 @@ msgstr "YouTube"
 
 #: includes/theme-options.php
 msgid "Enter your YouTube URL"
-msgstr "Saisissez l&#39;url Youtube"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "StumbleUpon"
-msgstr "StumbleUpon"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Enter your StumbleUpon URL"
-msgstr "Saisissez l&#39;url StumbleUpon"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "RSS Feed"
-msgstr "Flux RSS"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Enter your RSS Feed URL"
-msgstr "Saisissez l&#39;url du Flux RSS"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Google+"
-msgstr "Google&#43;"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Enter your Google+ URL"
-msgstr "Saisissez l&#39;url Google&#43;"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Instagram"
-msgstr "Instagram"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Enter your Instagram URL"
-msgstr "Saisissez l&#39;url Instagram"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Pinterest"
-msgstr "Pinterest"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Enter your Pinterest URL"
-msgstr "Saisissez l&#39;url Pinterest"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Yelp!"
-msgstr "A l&apos;Aide !"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Enter your Yelp! URL"
-msgstr "saisissez votre lien d&apos;assistance"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Vimeo"
-msgstr "Vimeo"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Enter your Vimeo URL"
-msgstr "Saisissez votre lien Vimeo"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "foursquare"
-msgstr "foursquare"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Enter your foursquare URL"
-msgstr "Saisissez votre lien Foursquare"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Custom CSS Styles"
-msgstr "CSS personnalis&#233;"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "https://developer.mozilla.org/en/CSS"
-msgstr "https://developer.mozilla.org/fr/CSS"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "CSS Tutorial"
-msgstr "Tutoriel CSS"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Enter your custom CSS styles."
-msgstr "Saisissez vos CSS personnalis&#233;s."
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Custom Scripts"
-msgstr "Scripts personnalisés"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Custom Scripts for Header and Footer"
-msgstr "Scripts personnalisés pour l'entête et le pied de page"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "http://codex.wordpress.org/Using_Javascript"
-msgstr "http://codex.wordpress.org/Using_Javascript"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Quick Tutorial"
-msgstr "Tutoriel succinst"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Embeds to header.php &darr;"
-msgstr "Inclus dans header.php &darr;"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Enter your custom header script."
-msgstr "Saisissez ici le script personnalisé pour l'entête"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Embeds to footer.php &darr;"
-msgstr "Inclus dans footer.php &darr;"
+msgstr ""
 
 #: includes/theme-options.php
 msgid "Enter your custom footer script."
-msgstr "Saisissez ici le script personnalisé pour le pied de page"
+msgstr ""

@@ -7,7 +7,7 @@ jQuery(function(){
 });
 // FitVids
 jQuery(document).ready(function(){
-// Target your .container, .wrapper, .post, etc.
+// Target your #container, #wrapper etc.
     jQuery("#wrapper").fitVids();
 });
 
