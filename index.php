@@ -1,66 +1,47 @@
 <?php
 /**
+ * The main template file.
+ *
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
+ * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ *
  * @package Babylog
+ * @since Babylog 1.0
  */
 
-get_header();
+get_header(); ?>
 
-?>
+		<div id="primary" class="content-area">
+			<div id="content" class="site-content" role="main">
 
-	<div id="content" class="content">
+			<?php if ( have_posts() ) : ?>
 
-	<?php if (have_posts()) : ?>
+				<?php /* Start the Loop */ ?>
+				<?php while ( have_posts() ) : the_post(); ?>
 
-		<?php while (have_posts()) : the_post(); ?>
+					<?php
+						/* Include the Post-Format-specific template for the content.
+						 * If you want to overload this in a child theme then include a file
+						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+						 */
+						get_template_part( 'content', get_post_format() );
+					?>
 
-			<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
-			<div class="post_header">
-				<h2 class="page_title">
-					<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permanent Link to' , 'babylog' ) ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-				</h2>
-				<span class="post_date">
-					<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permanent Link to' , 'babylog' ) ?> <?php the_title_attribute(); ?>"><?php the_time( get_option( 'date_format' ) ); ?></a>
-				</span>
-			</div>
-				
+				<?php endwhile; ?>
 
-				<div class="entry">
-					<small><?php _e( 'by' , 'babylog' ); ?> <?php the_author() ?></small>
-					
-					<?php the_content( __( 'Read the rest of this entry' , 'babylog' ) . ' &raquo;'); ?>
-					
-					<?php wp_link_pages( array( 'before' => '<p class="clear"><strong>' . __( 'Pages:' , 'babylog' ) . '</strong> ', 'after' => '</p>', 'next_or_number' => 'number' ) ); ?>
-					
-					<p><?php edit_post_link( __( 'Edit this entry' , 'babylog' ) ); ?></p>
-					
-					<hr />					
-					<?php the_category() ?>
-				
-					<div class="comments-link"><?php comments_popup_link( __( 'No Comments' , 'babylog' ) . ' &#187;', '1 ' . __( 'Comment' , 'babylog' ) . ' &#187;', '% ' . __( 'Comments' , 'babylog' ) . ' &#187;'); ?></div>
-					<div class="clear"></div>
-					
-				</div>
-				
-				
-			</div>
+				<?php babylog_content_nav( 'nav-below' ); ?>
 
-		<?php endwhile; ?>
+			<?php elseif ( current_user_can( 'edit_posts' ) ) : ?>
 
-		<div class="navigation">
-			<div class="alignleft"><?php next_posts_link('&laquo;' . __( 'Older Entries' , 'babylog' ) ) ?></div>
-			<div class="alignright"><?php previous_posts_link( __( 'Newer Entries' , 'babylog' ) . ' &raquo;') ?></div>
-		</div>
+				<?php get_template_part( 'no-results', 'index' ); ?>
 
-	<?php else : ?>
+			<?php endif; ?>
 
-		<h2 class="page_title"><?php _e( 'Not Found' , 'babylog' ) ?></h2>
-		<p class="aligncenter"><?php _e( 'Sorry, no posts matched your criteria.', 'babylog' ) ?></p>
-		<?php get_search_form(); ?>
-
-	<?php endif; ?>
-
-	</div>
+			</div><!-- #content .site-content -->
+		</div><!-- #primary .content-area -->
 
 <?php get_sidebar(); ?>
-
 <?php get_footer(); ?>

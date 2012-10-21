@@ -4,6 +4,15 @@ Awesome Google Web Font: Vidaloka by Cyreal - https://profiles.google.com/alexei
 
 Version history:
 
+v2.0 - Many changes:
+* Now uses _s theme as a base -- the underlying code has changed significantly! This is particularly important if you're using a child theme or have made CSS modifications -- they may not work if you upgrade.
+* Removes Custom CSS theme option, since this functionality is included in Jetpack
+* New RTL styles included
+* Fully responsive for mobile devices
+* Improvements to navigation menu appearance
+* New theme option to remove the baby graphic
+* General code cleanup
+
 v1.4.7 - Cleaned up functions.php
 
 v1.4.6 - Removed subpage link list and back-to-previous-page links in page.php and page-nosidebar.php (this should be optional plugin functionality).

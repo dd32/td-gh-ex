@@ -1,34 +1,40 @@
 <?php
 /**
+ * The Sidebar containing the main widget areas.
+ *
  * @package Babylog
+ * @since Babylog 1.0
  */
 ?>
+		<div id="secondary" class="widget-area" role="complementary">
+			<?php do_action( 'before_sidebar' ); ?>
+			<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
 
-<ul id="sidebar" class="sidebar">
-<?php if ( !dynamic_sidebar( __( 'Right Sidebar', 'babylog' ) ) ) : ?>
-	<li id="pages" class="widget">
-	<h2 class="widgettitle"><?php _e( 'Pages' , 'babylog' ) ?></h2>
-		<ul>
-			<?php wp_list_pages('title_li='); ?>
-		</ul>
-	</li>
-	<li id="archives" class="widget">
-	<h2 class="widgettitle"><?php _e( 'Archives' , 'babylog' ) ?></h2>
-		<ul>
-			<?php wp_get_archives( 'type=monthly' ); ?>
-		</ul>
-	</li>
-	<li id="meta" class="widget">
-	 <h2 class="widgettitle"><?php _e( 'Meta' , 'babylog' ) ?></h2>
-	 <ul>
-	         <?php wp_register(); ?>
-	         <li><?php wp_loginout(); ?></li>
-	         <?php wp_meta(); ?>
-	 </ul>
-	</li>
-	<li id="search" class="widget widget_search">
-		<?php get_search_form(); ?>
-	</li>
-<?php endif; ?>
+				<aside id="search" class="widget widget_search">
+					<div class="widget-contents">
+						<?php get_search_form(); ?>
+					</div>
+				</aside>
 
-</ul>
+				<aside id="archives" class="widget">
+					<h1 class="widget-title"><?php _e( 'Archives', 'babylog' ); ?></h1>
+					<div class="widget-contents">
+						<ul>
+							<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
+						</ul>
+					</div>
+				</aside>
+
+				<aside id="meta" class="widget">
+					<h1 class="widget-title"><?php _e( 'Meta', 'babylog' ); ?></h1>
+					<div class="widget-contents">
+						<ul>
+							<?php wp_register(); ?>
+							<li><?php wp_loginout(); ?></li>
+							<?php wp_meta(); ?>
+						</ul>
+					</div>
+				</aside>
+
+			<?php endif; // end sidebar widget area ?>
+		</div><!-- #secondary .widget-area -->
