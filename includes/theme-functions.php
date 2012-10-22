@@ -6,7 +6,7 @@
  * @subpackage Functions
  */
  
- if ( ! function_exists( 'mantra_header_scripts' ) ) :
+
  /**
  * Loads necessary scripts
  * Adds HTML5 tags for IE8
@@ -32,12 +32,12 @@ document.createElement('hgroup');
 <script type="text/javascript">
     jQuery(document).ready(function() {
 	// Add custom borders to images
-    jQuery("#content img").addClass("<?php echo 'image'.$mantra_image;?>");
+    jQuery(".entry-content img").addClass("<?php echo 'image'.$mantra_image;?>");
 	
  <?php if ($mantra_mobile=="Enable") { // If mobile view is enabled ?> 	
 	jQuery(function () {
 	// Add select navigation to small screens
-    jQuery("#prime_nav").tinyNav({
+    jQuery("#access .menu ul:first-child").tinyNav({
 	header: true // Show header instead of the active item
 					});
 	});
@@ -53,12 +53,12 @@ document.createElement('hgroup');
 </script>
 <?php
 }
-endif;
+
 
 add_action('wp_footer','mantra_header_scripts',100);
  
  
-if ( ! function_exists( 'mantra_link_header' ) ) :
+
 /**
  * Creates invisible div over header making it link to home page
  * Used in header.php
@@ -67,12 +67,12 @@ if ( ! function_exists( 'mantra_link_header' ) ) :
 echo '<a href="'.home_url( '/' ).'" id="linky"> </a>' ;
 
 }
-endif;
+
 
 if ($mantra_options['mantra_linkheader']=="Enable") add_action('cryout_branding_hook','mantra_link_header');
  
  
-if ( ! function_exists( 'mantra_title_and_description' ) ) :
+
  /**
  * Adds title and description to heaer
  * Used in header.php
@@ -86,7 +86,7 @@ if ( ! function_exists( 'mantra_title_and_description' ) ) :
   // Site Description
   echo '<div id="site-description" >'.get_bloginfo( 'description' ).'</div>';			
 }
-endif;
+
 
 add_action ('cryout_branding_hook','mantra_title_and_description');
 
@@ -145,7 +145,8 @@ else { $cryout_theme_info = wp_get_theme( );}
      set_transient( 'cryout_theme_info',  $cryout_theme_info ,60*60);
 }
 
-if ( ! function_exists( 'mantra_header_featured_image' ) ) :
+
+
   /**
  * Replaces header image with featured image if there is one for single pages
  * Used in header.php
@@ -165,11 +166,11 @@ if ( is_singular() && has_post_thumbnail( $post->ID ) && $mantra_fheader == "Ena
 	$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), array(HEADER_IMAGE_WIDTH,HEADER_IMAGE_HEIGHT) ); 
 endif; 
 }
-endif;
+
 
 add_action ('cryout_branding_hook','mantra_header_featured_image');	 
 
-if ( ! function_exists( 'mantra_back_top' ) ) :
+
 /**
  * Mantra back to top button
  * Creates div for js
@@ -177,12 +178,12 @@ if ( ! function_exists( 'mantra_back_top' ) ) :
 function mantra_back_top() {
   echo '<div id="toTop"> </div>';
   }
-endif; 
+
 
 if ($mantra_backtop=="Enable") add_action ('cryout_body_hook','mantra_back_top');
 
 
-if ( ! function_exists( 'mantra_breadcrumbs' ) ) :
+
  /**
  * Creates breadcrumns with page sublevels and category sublevels.
  */
@@ -235,7 +236,7 @@ if (is_page() && !is_front_page() || is_single() || is_category() || is_archive(
     }
 echo '</div>';
 }
-endif;
+
 
 if($mantra_breadcrumbs=="Enable")  add_action ('cryout_breadcrumbs_hook','mantra_breadcrumbs');
 
@@ -283,7 +284,7 @@ function mantra_pagination($pages = '', $range = 2, $prefix ='')
 }
 endif;
 
-if ( ! function_exists( 'mantra_site_info' ) ) :
+
 /**
  * Site info
  */
@@ -296,17 +297,16 @@ foreach ($mantra_options as $key => $value) {
 ?>
 		<div id="site-info" >
 				<a href="<?php echo home_url( '/' ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-				<?php bloginfo( 'name' ); ?></a> | Powered by <a href="<?php echo $mantra_theme_data['Author URI']?>" title="<?php echo $mantra_theme_data['Name'].
-				' Theme by '.strip_tags($mantra_theme_data->Author);?>"> <?php echo $mantra_theme_data['Name'] ?> </a> &amp; <a href="<?php echo esc_url('http://wordpress.org/' ); ?>" 
+				<?php bloginfo( 'name' ); ?></a> | Powered by <a href="<?php echo $mantra_theme_data['Author URI']?>" title="<?php echo 'Mantra Theme by '.
+				strip_tags($mantra_theme_data->Author);?>"><?php echo 'Mantra' ?></a> &amp; <a href="<?php echo esc_url('http://wordpress.org/' ); ?>" 
 				title="<?php esc_attr_e('Semantic Personal Publishing Platform', 'mantra'); ?>"> <?php printf(' %s.', 'WordPress' ); ?>
 				</a>
 			</div><!-- #site-info -->
 <?php }
-endif;
 
 add_action('cryout_footer_hook','mantra_site_info',11);
 
-if ( ! function_exists( 'mantra_copyright' ) ) :
+
 /**
  * Copyright text
  */
@@ -317,7 +317,7 @@ foreach ($mantra_options as $key => $value) {
 	 }
 	echo '<div id="site-copyright">'.$mantra_copyright.'</div>';
 }
-endif;
+
 
 if ($mantra_copyright != '') add_action('cryout_footer_hook','mantra_copyright',12);
 	

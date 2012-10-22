@@ -117,7 +117,7 @@
 	.tinynav	{ 
 	display: block; 
 	}
-    #prime_nav { 
+    #access .menu ul:first-child { 
 	display: none;
 	}
 

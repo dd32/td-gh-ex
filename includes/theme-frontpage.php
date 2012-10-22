@@ -15,6 +15,7 @@ $mantra_options= mantra_get_theme_options();
 foreach ($mantra_options as $key => $value) {
      ${"$key"} = $value ;
 }
+add_image_size('slider',$mantra_fpsliderwidth,$mantra_fpsliderheight,true);
 ?>
 
 <script type="text/javascript">
@@ -207,7 +208,7 @@ $i=0;	$j=0;?>
 	 // Loop for creating the slides
 	if ( $custom_query->have_posts() ) while ( $custom_query->have_posts()) : $custom_query->the_post();  
 
- 		 $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ),'full'); 
+ 		 $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ),'slider'); 
 		 $i++; ?>
          <a href="<?php the_permalink(); ?>"><img src="<?php echo $image[0]; ?>"  alt=""  title="#caption<?php echo $i;?>"  /></a> 
 

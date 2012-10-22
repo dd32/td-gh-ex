@@ -103,7 +103,7 @@ $locale_file = get_template_directory() . "/languages/$locale.php";
 	global $mantra_totalSize;
 	define( 'HEADER_IMAGE_WIDTH', apply_filters( 'mantra_header_image_width', $mantra_totalSize ) );
 	define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'mantra_header_image_height', $mantra_hheight) );
-	set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );
+	set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );	
 
 	// Add a way for the custom header to be styled in the admin panel that controls
 	// custom headers. See mantra_admin_header_style(), below.

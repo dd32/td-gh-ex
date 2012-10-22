@@ -28,7 +28,6 @@ foreach ($mantra_options as $key => $value) {
 // Loading the style.css
 	wp_register_style( 'mantras', get_stylesheet_uri() );
 	wp_enqueue_style( 'mantras');
-// Loading the style-mobile.css if the mobile view is enabled
 
 }
 
@@ -47,6 +46,7 @@ foreach ($mantra_options as $key => $value) {
 	wp_enqueue_style( 'mantra_googlefonttitle');
 	wp_enqueue_style( 'mantra_googlefontside');
 	wp_enqueue_style( 'mantra_googlefontsubheader');
+	// Loading the style-mobile.css if the mobile view is enabled
 	if($mantra_mobile=="Enable") {	wp_register_style( 'mantra-mobile', get_template_directory_uri() . '/style-mobile.css' );
 	wp_enqueue_style( 'mantra-mobile');}
 
@@ -107,14 +107,14 @@ article.sticky , .imageTwo, .imageThree, .imageFour, .imageSix, .imageSeven, .ed
 .widget-title, #footer-widget-area .widget-title, .entry-meta,.entry-meta .comments-link,
 .short-button-light, .short-button-dark ,.short-button-color ,blockquote  {
      position:relative;
-     behavior: url('.get_stylesheet_directory_uri().'/js/PIE/PIE.php);
+     behavior: url('.get_template_directory_uri().'/js/PIE/PIE.php);
    }
    
 input[type="text"],textarea ,#site-title a ,#site-description, #access  ul  li.current_page_item,  #access ul li.current-menu-item ,
 #access ul  li ,#access ul ul ,#access ul ul li,  #content .wp-caption,.commentlist li.comment	,.commentlist .avatar,
 #respond .form-submit input#submit, .contentsearch #searchsubmit , .widget_search #s, #search #s  ,  .widget_search #searchsubmit ,
 .nivo-caption, .theme-default .nivoSlider {
-     behavior: url('.get_stylesheet_directory_uri().'/js/PIE/PIE.php);
+     behavior: url('.get_template_directory_uri().'/js/PIE/PIE.php);
    }
 </style>
 <![endif]-->
