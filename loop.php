@@ -1,7 +1,16 @@
 <!-- Loop Post -->
 <div class="loop-post-wrap">
 					
-	<h2 class="loop-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+	<h2 class="loop-title"><a href="<?php the_permalink(); ?>">
+		<?php 
+			if ( the_title( '', '', false ) != '' ){
+				echo the_title();
+			}	
+			else {						
+				echo 'Untitled';
+			}
+		?>
+	</a></h2>
 	
 	<?php if ( asteroid_option('ast_blog_date') == 1 ) : ?>
 		<div class="loop-date"><?php the_time('F j, Y'); ?></div>
@@ -19,8 +28,10 @@
 				<?php endif ; ?>
 			<?php endif ; ?>
 			
-			<?php the_excerpt(); ?>
-		
+			<div class="excerpt-text">
+				<?php the_excerpt(); ?>
+			</div>
+			
 		<?php else : ?>				
 		
 			<?php the_content(); ?>

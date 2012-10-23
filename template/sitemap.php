@@ -7,7 +7,7 @@
 
 <?php get_header();?>
 
-<div id="main" >
+<div id="content" >
 
 	<div class="single-wrap sitemap-template">	
 	
@@ -28,7 +28,7 @@
 					<?php endwhile; ?>
 			</ul>		
 	</div>
-</div><!-- #main -->
+</div>
 
 <?php get_sidebar(); ?>
 

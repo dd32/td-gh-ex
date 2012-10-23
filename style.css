@@ -4,7 +4,7 @@ Theme URI: http://ronangelo.com/asteroid/
 Description: Asteroid is a simple, clean and responsive theme. It incorporates various widget areas that make management of banners and ads a lot easier, especially for ad-supported sites.
 Author: ronangelo
 Author URI: http://ronangelo.com/
-Version: 1.0.1
+Version: 1.0.2
 Tags: black, white, gray, two-columns, right-sidebar, fixed-width, custom-header, custom-background, featured-images, custom-menu, custom-colors, theme-options, threaded-comments, sticky-post, editor-style, full-width-template, threaded-comments
 
 License: GNU General Public License, Version 3 or later
@@ -34,8 +34,8 @@ h1 {font-size:28px;}
 h2 {font-size:24px;}
 h3 {font-size:20px;}
 h4 {font-size:18px;}
-h5 {font-size:14px;}
-h6 {font-size:12px;}
+h5 {font-size:16px;}
+h6 {font-size:14px;}
 h1,h2,h3,h4,h5,h6{clear: both;}
 
 p {font: normal 13px/20px arial, sans-serif;}
@@ -54,8 +54,9 @@ a, textarea, input, button {
 }
 
 
-/* Containers */
-
+/*-------------------------------------
+   Main Containers
+--------------------------------------*/
 #container {
 	width:960px;
 	background: #FFF; 
@@ -66,39 +67,93 @@ a, textarea, input, button {
 }
 
 #header {
-	height: 120px;
+	min-height: 120px;
 	overflow: hidden;
 }
+	#header-info-wrap {
+		float: left;
+		margin-bottom: 8px;
+	}
+		#header-info-wrap hgroup {
+			margin-top: 18px;
+			margin-left: 10px
+		}
+			#site-title {
+				font-size:44px;  
+				text-shadow: 0 2px 2px #000;
+			}
+			#site-title a {color: #FFA900; line-height: 1;}
+			#site-title a:hover {color: #F00;}
 
-#header-info-wrap {
-    float: left;
-	position: absolute;
-	margin-bottom: 10px;
+			#site-description {
+				font-size: 16px;
+				font-weight: bold;
+				margin-top: 6px;
+			}
+
+#main {
+	background: #FFF; 
+	overflow: hidden;
+	width: 100%;
 }
+	#content {
+		display: table-cell; 
+		vertical-align: top;
+		width: 620px;
+		padding: 0 10px 20px;
+		border-right: 1px solid #555;
+	}
+		#bottom-navi {
+			border-top: 1px solid #AAA;
+			padding-top: 16px;
+			padding-bottom: 6px;
+			margin-top: 16px;
+		}
 
-#header-info-wrap hgroup {
-	margin-top: 14px;
-	margin-left: 10px
+	#content-nosidebar {
+		padding: 0 10px 20px;
+	}
+
+	#sidebar {
+		display: table-cell; 
+		vertical-align: top;
+		width: 310px;
+		padding: 0 5px 20px;
+	}
+
+#footer {
+	background: url("images/bg-footer.png") #333;
+	border-top: 1px solid #000;
 }
+	#footer-area {
+		overflow: hidden;
+		min-height: 20px; 
+		box-shadow: 0 1px 2px #000 inset;
+	}
+	#footer-bottom {
+		overflow: auto;
+		background: #000; 
+		min-height: 10px; 
+		padding: 6px; 
+	}
+		#footer-links {
+			float: left; 
+			color: #CCC;
+		}
+		
+		#theme-credit {
+			color: #BBB;
+			float: right;
+			font: bold 12px verdana,sans-serif;
+			margin-top: 4px;
+		}
 
-#site-title {
-	font-size:44px;  
-	text-shadow: 0 2px 2px #000;
-}
-#site-title a {color: #FFA900; line-height: 1;}
-#site-title a:hover {color: #F00;}
-
-#site-description {
-    font-size: 16px;
-    font-weight: bold;
-	margin-top: 6px;
-}
-
-
-/* The Navigation */
-
+		
+/*-------------------------------------
+   The Main Menu
+--------------------------------------*/
 #nav {
-	background: #333;
+	background-color: #333;
 	border-top: 1px solid #000;
 	border-bottom: 1px solid #000;
 	float: left;
@@ -106,57 +161,93 @@ a, textarea, input, button {
 	z-index: 20;
 }
 
-/* menu items */
+#nav .menu {
+	float: left;
+	border-right: 1px solid #555;
+}
+
+#nav .menu > li:first-child {
+	border-left: none;
+}
+
 #nav .menu li {
 	float:left;
 	position: relative;
-	border-right: 1px solid #000;
 }
-/* menu root items text */	
+
+#nav .menu > li {
+	border-right: 1px solid #000;
+	border-left: 1px solid #555;
+}
+
 #nav .menu > li > a {
 	min-width: 70px; 
 	text-align: center;
 }
+
 #nav .menu  li  a {
 	display: block;
-	padding: 9px 14px;
+	padding: 8px 14px;
 	font: bold 16px arial, sans-serif;
 	color: #FFF;
 	text-shadow: 0 2px 2px #000;
 }
 #nav .menu  li  a:hover {
-	background: #FFF;
+	background-color: #FFF;
 	color: #000;
 	text-shadow:  none;
+}
+
+#nav .menu > .parent-menu-item > a:after {
+    content: url("images/arrow-down-w.png");
+	padding-left: 6px;
+}
+#nav .menu > .parent-menu-item > a:hover:after {
+    content: url("images/arrow-down-b.png");
 }
 
 #nav .sub-menu {
-	width: 160px;
-	background: #333;
-	border-left: 1px solid #000;
-	border-right: 1px solid #000;
-	border-bottom: 1px solid #000;
+	width: 170px;
+	background-color: #292929;
+	border: 1px solid #000;
 	position: absolute;
 	z-index: 30;
-	display: none;	/* hide sub-menu initially */
+	display: none;	/* initial hide */
+	box-shadow: 0 1px 4px #000;
 }
+
+#nav .sub-menu li {
+	border-top: 1px solid #3C3C3C;
+	border-bottom: 1px solid #000; 
+}
+#nav .sub-menu li:first-child {border-top: none;}
+#nav .sub-menu li:last-child {border-bottom: none;}
+
 #nav .sub-menu li a {
-	width: 140px;
 	float: left;
-	padding: 9px 10px;
-	border-top: 1px solid #000;
-	text-shadow: 0 1px 1px #000;
-	line-height: 26px;
+	width: 142px;
+	padding: 10px 14px;
 	font: 13px arial, sans-serif;
+	text-shadow: 0 1px 1px #000;
+	color: #FFF;
 }
+
 #nav .sub-menu li a:hover {
-	background: #FFF;
+	background-color: #FFF;
 	color: #000;
 	text-shadow:  none;
 }
 
-/* submenu border allowance */
-#nav .menu > li:hover > ul, #nav .menu > ul > li:hover > ul {left: -1px;} 
+#nav .sub-menu li .sub-menu {margin-top: -1px;}
+
+#nav .sub-menu > .parent-menu-item > a {
+    background-image: url("images/arrow-right-w.png");
+	background-repeat: no-repeat;
+	background-position: 98% center;
+}
+#nav .sub-menu > .parent-menu-item > a:hover {
+    background-image: url("images/arrow-right-b.png");
+}
 
 /* Display Sub-Menus */
 #nav li:hover > ul { display: inline;}	
@@ -176,6 +267,8 @@ a, textarea, input, button {
 #nav .menu > ul > .page_item {
 	border-top: 1px solid #222;
 	border-bottom: 1px solid #000;
+	border-right: 1px solid #000;
+	border-left: 1px solid #555;
 }
 #nav .children {
 	width: 160px;
@@ -194,96 +287,42 @@ a, textarea, input, button {
 	padding: 9px 10px;
 }
 
+
 /* menu search form */
 #nav-search {
 	display: inline-block;
 	float: right;
-	margin-top: 6px;
-	margin-right: 30px;
+	margin: 6px 20px 4px 10px;
+}
+#nav .ast-search{
+	background: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+	box-shadow: none;
 	overflow: hidden;
 }
-#nav-search #searchinput{
-	display: inline-block;
-    float: left;
-    margin-top: 2px;
-	margin-right: 2px;
+#nav .ast-search-input{
 	color: #666;
+	border: 1px solid #222;
+	width: 150px;
+	padding: 2px;
+	margin-top: 1px;
 }
-#nav-search #searchsubmit {
-	display: inline-block;
-	float: left;
+#nav .ast-search-submit {
     background: url("images/find.png") no-repeat transparent;
-    border: none;   
-    height: 26px;
-	width: 26px;
-	cursor: pointer;	
+	height: 22px;
+	width: 22px;
+    border: none; 
+	cursor: pointer;
+	margin: 0 2px;
+	color: transparent;
 }
 
 
-/* -------- CONTENT -------- */
-#content {
-	background: #FFF; 
-	overflow: hidden;
-	width: 100%;
-}
-
-#main {
-	display: table-cell; 
-	vertical-align: top;
-	width: 620px;
-	padding: 0 10px 20px;
-	border-right: 1px solid #555;
-}
-
-#main-nosidebar {
-	padding: 0 10px 20px;
-}
-
-#sidebar {
-	display: table-cell; 
-	vertical-align: top;
-    width: 310px;
-    padding: 0 5px 20px;
-}
-
-#bottom-navi {
-    border-top: 1px solid #AAA;
-    padding-top: 16px;
-	padding-bottom: 6px;
-	margin-top: 16px;
-}
-
-#footer {
-	background: url("images/bg-footer.png") #333;
-	border-top: 1px solid #000;
-}
-
-#footer-area {
-	overflow: hidden;
-	min-height: 20px; 
-	box-shadow: 0 1px 2px #000 inset;
-}
-
-#footer-bottom {
-	background: #000; 
-	min-height: 18px; 
-	padding: 8px; 
-}
-#footer-links {
-	float: left; 
-	color: #CCC;
-}
-#theme-credit {
-    color: #BBBBBB;
-    float: right;
-    font: bold 10px verdana,sans-serif;
-    margin-top: 4px;
-    text-transform: uppercase;
-}
-
-
-/* Widgets */
-
+/*-------------------------------------
+   Widgets
+--------------------------------------*/
 #widgets-wrap-sidebar  a {color: #0E4D7A;}
 #widgets-wrap-sidebar  a:hover {color: #FF0000;}
 .widget-sidebar {margin-top: 20px; margin-bottom: 20px; position: relative;}
@@ -320,8 +359,9 @@ a, textarea, input, button {
 .widget-footer a {color: #FC9A08; text-shadow: 2px 2px 2px #000;}
 
 
-/* Custom Widgets */
-
+/*-------------------------------------
+   Custom Widgets
+--------------------------------------*/
 #widgets-wrap-header {
 	float: right; 
 	margin-top: 10px; 
@@ -358,8 +398,9 @@ a, textarea, input, button {
 }
 
 
-/* Specific Widget Stylings */
-
+/*-------------------------------------
+   Specific Widget Stylings
+--------------------------------------*/
 #wp-calendar {
     border-collapse: collapse;
 	text-align: center;
@@ -387,25 +428,24 @@ a, textarea, input, button {
 
 .tagcloud {padding: 0 14px;}
 
-.widget_search {margin-left: 10px;}
-
 .widget_pages .children li {border-bottom: none;}
 
 
-/* ------ Looped ------ */
+/*-------------------------------------
+   Looped
+--------------------------------------*/
 
 .loop-post-wrap {
-	background: #DDDDDD;
+	background: #DDD;
     border: 1px solid #666;
+	box-shadow: 0 0 3px #333;
     margin-top: 20px;
     padding: 8px;
 }
 
 .sticky .loop-post-wrap {
 	background: #FCFF82;
-    border-color: #052B70 #333 #333;
-    border-style: solid;
-    border-width: 6px 1px 1px;
+    border: 1px solid #101010;
 }
 
 .loop-title {margin-bottom: 2px; line-height: 1; display: inline;}
@@ -445,6 +485,11 @@ a, textarea, input, button {
 }
 .post-thumbnail img { float: left; }
 
+.excerpt-text p {
+	margin-bottom: 0 !important;
+	margin-top: 0 !important;
+}
+
 .read-more {overflow: hidden;}
 .read-more-button {	
 	background: #444;
@@ -467,12 +512,13 @@ a, textarea, input, button {
 .loop-tags {margin: 4px 0;}
 
 
-/* ------ Single ------ */
+/*-------------------------------------
+   Single
+--------------------------------------*/
 
 .post-edit-link {   
     background: #F9F972;
     border: 1px solid #111;
-    border-radius: 4px;
     color: #222;
     float: right;
     padding: 2px 6px;
@@ -516,7 +562,12 @@ a, textarea, input, button {
 	overflow: hidden; 
 }
 
-.page-links {text-align: center; font-weight: bold; padding: 2px;}
+.page-links {
+	margin-top: 6px;
+	text-align: center; 
+	font-weight: bold; 
+	padding: 2px;
+}
 .page-links  > div > * {
 	border: 1px solid #666; 
 	padding: 2px 6px; 
@@ -524,6 +575,10 @@ a, textarea, input, button {
 	background: #FFF;
 }
 .single-wrap .updated {color: #666; font-size: 11px;}
+
+.next-previous-attachment {
+	overflow: hidden;
+}
 
 .next-previous-post {
 	overflow: hidden;
@@ -536,8 +591,9 @@ a, textarea, input, button {
 .sitemap-template {padding-left: 30px; padding-bottom: 30px;}
 
 
-/* -------- Post, Page & Comment Elements -------- */
-
+/*-------------------------------------
+   Post, Page and Comment Elements
+--------------------------------------*/
 .loop-entry p, .single-entry p, .comment-body p { 
 	margin-top: 4px; 
 	margin-bottom: 14px; 
@@ -564,12 +620,11 @@ a, textarea, input, button {
 }
 
 blockquote {
-	background: #A0C8FF;
-    border: 1px solid #999;
-    border-radius: 4px;
-    clear: both;
+	background: #E0E0E0;
+    border-left: 6px solid #666;
+	clear: both;
     margin: 10px;
-    padding: 8px 18px 8px 10px;
+    padding: 8px 12px;
 	overflow: hidden;
 }
 blockquote p {
@@ -639,7 +694,9 @@ blockquote cite:before {
 .wp-smiley {border: none !important; margin: 0 !important;}
 
 
-
+/*-------------------------------------
+   Comments
+--------------------------------------*/
 #comments-wrap {margin-top: 20px; margin-bottom:20px; padding-top: 10px;}
 
 #comments-wrap .bypostauthor .comment-body, #comments-wrap .comment-author-admin .comment-body {
@@ -648,11 +705,11 @@ blockquote cite:before {
     border-width: 6px 1px 1px;
 }
 #comments-wrap .comment-body {
-	background: #FFFE98;
+	background: #FEFDAD;
 	margin: 8px 0;
 	padding: 8px; 
-	border-top: 4px solid #666;
-	box-shadow: 0 1px 3px #333;
+	border-top: 6px solid #555;
+	box-shadow: 0 1px 3px #111;
 }
 #comments-wrap .comment-body .says {margin-left: 8px;}
 #comments-wrap .comment-body p {clear: both;}
@@ -663,13 +720,15 @@ blockquote cite:before {
 #comments-wrap .comment-meta {margin-bottom:6px; float: right;}
 #comments-wrap .reply {margin: 12px auto 0; overflow: hidden;}
 #comments-wrap .reply a {
-	background: #F9FF34;
-    border: 1px solid;
-    border-radius: 4px;
+	background: #FFF;
+    border: 1px solid #333;
     font-size: 12px;
     font-weight: bold;
 	padding: 0 10px;
 	float: right;
+	margin-bottom: 2px;
+	margin-right: 2px;
+	box-shadow: 1px 1px 2px #333;
 }
 #comments-wrap .children {margin: 8px 0 0 30px;}
 
@@ -711,9 +770,33 @@ blockquote cite:before {
 	margin-top: 6px;
 }
 
+/*-------------------------------------
+   Searchform
+--------------------------------------*/
+.ast-search{
+	background: #D0C776;
+    margin: 20px auto;
+    padding: 10px;
+    width: 220px;
+	box-shadow: 0 0 2px #000;
+	overflow: hidden;
+}
+.ast-search-input {
+	display: inline-block;
+	float: left;
+	width: 148px;
+}
+.ast-search-submit {
+	display: inline-block;
+	float: left;
+	width: 60px;
+	margin-left: 6px;
+}
 
-/* 404 Page */
-#not-found-wrap {
+/*-------------------------------------
+   404 Page
+--------------------------------------*/
+.not-found-wrap {
 	background: #FFFE74;
 	margin: 40px auto; 
 	width: 420px;
@@ -722,43 +805,36 @@ blockquote cite:before {
 	box-shadow: 0 0 2px #000;
 	text-align: center;
 }
-#not-found-wrap h2 {
+.not-found-wrap h2 {
     background: #222;
     color: #FFF;
     padding: 16px;  
 }
-#not-found-wrap p {
+.not-found-wrap p {
 	margin: 20px auto 24px;
 	color: #333;
 	font-size: 14px;
 }
-#error-search{
-	background: #D0C776;
-    margin: 20px auto;
-    padding: 10px;
-    width: 220px;
-	box-shadow: 0 0 2px #000;
-	overflow: hidden;
-}
-#error-search #searchinput, 
-#error-search #searchsubmit {
-	display: inline-block;
-	float: left;
-}
 
-/* Responsive Properties */
+
+/*-------------------------------------
+   Responsive Properties
+--------------------------------------*/
 @media screen and (max-width:900px){	
-	.menu > li {border-bottom: 1px solid #000 !important;}
+	#nav-search { float: left !important;}
+	.menu > li {border-bottom: 1px solid #222 !important;}
 }
 
 @media screen and (max-width:800px){
-	#main { border-right: none !important; width: 84% !important; }	
+	#content { border-right: none !important; width: 84% !important; }	
 	#sidebar { float: left !important; width: 98% !important; }
-	.single-entry img {max-width: 80%; height: auto;}
 }
 
 @media screen and (max-width:768px){
-	#nav-search { float: none !important; margin: 6px 0 0 6px !important; }
+	#header-info-wrap img {max-width: 96% !important; height: auto !important;}
+	.single-entry img {max-width: 96% !important; height: auto !important;}
+	.wp-caption {max-width: 96% !important; width: auto !important;}
+	.aligncenter {display: table !important;}
 }
 
 @media screen and (max-width:480px){
@@ -770,13 +846,21 @@ blockquote cite:before {
 		margin-right: auto!important;
 		text-align: center !important;
 	}
-	.menu {float: none !important;} /* Make menu width 100% */
-	.menu li {float: none !important; border-right: none !important;}
-	.menu > li {border-top: 1px solid #222 !important;}
-	#nav-search {width: 100% !important;}
-	#searchinput {width: 80% !important;}
+	/* Make menu width 100% */
+	.menu {float: none !important; border: none !important;}
+	.menu > li {
+		float: none !important;
+		border-top: 1px solid #222 !important;
+		border-bottom: 1px solid #000 !important;
+		border-left: none !important;
+		border-right: none !important;
+	}
+	#nav-search {width: 96% !important;}
+	#nav .ast-search-input {width: 84% !important;}
+	#nav .ast-search-submit {float: left !important;}
 	.loop-date {float: none !important;}
 	#comments-wrap {max-width: 98% !important;}
+	.not-found-wrap {width: auto !important; max-width: 96% !important;}
 }
 
 @media screen and (max-width:320px){

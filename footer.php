@@ -1,4 +1,4 @@
-</div> <!-- #Content End -->
+</div> <!-- #Main End -->
 
 <div id="footer">
 

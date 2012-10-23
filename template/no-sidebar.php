@@ -1,13 +1,13 @@
 <?php
 /**
- * Template Name: No Sidebar
+ * Template Name: Full, No Sidebar
  *
  */ 
 ?>
 
 <?php get_header(); ?>
  
- <div id="main-nosidebar">
+ <div id="content-nosidebar">
  
     <?php
 		the_post();

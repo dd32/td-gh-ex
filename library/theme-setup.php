@@ -7,11 +7,27 @@ function asteroid_option( $option ) {
 		return false;
 }
 
-// enables post and comment RSS feed links to head
+/*-------------------------------------
+	Register & Print the stylesheet
+--------------------------------------*/
+function ast_enqueue_styles(){
+	if ( ! is_admin() ) {
+		wp_register_style('asteroid-main-style', get_stylesheet_uri(), array(), '1.0.2', 'screen'); 
+		wp_enqueue_style( 'asteroid-main-style' );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'ast_enqueue_styles' );
+
+
+/*----------------------------------------
+	Enables RSS feed links to the head
+-----------------------------------------*/
 if ( function_exists( 'add_theme_support' ) ) add_theme_support( 'automatic-feed-links' );
 
 
-//Custom Background
+/*----------------------------------------
+	Custom Body Background
+-----------------------------------------*/
 $ast_cust_background = array(
 	'default-color' => 'FFFFFF',
 	'default-image' => get_template_directory_uri() . '/images/bg.png',
@@ -19,11 +35,13 @@ $ast_cust_background = array(
 add_theme_support( 'custom-background', $ast_cust_background );
 
 
-//Custom Header
+/*----------------------------------------
+	Custom Header
+-----------------------------------------*/
 $ast_cust_header = array(
 	'default-image'          => '',
 	'random-default'         => false,
-	'width'                  => asteroid_option('ast_main_width') + asteroid_option('ast_sidebar_width') + 30,
+	'width'                  => asteroid_option('ast_content_width') + asteroid_option('ast_sidebar_width') + 30,
 	'height'                 => asteroid_option('ast_header_height'),
 	'flex-height'            => true,
 	'flex-width'             => true,
@@ -37,11 +55,15 @@ $ast_cust_header = array(
 add_theme_support( 'custom-header', $ast_cust_header );
 
 
-// Register custom menu "Primary"
+/*----------------------------------------
+	Register Custom Menu
+-----------------------------------------*/
 if ( function_exists( 'register_nav_menu' ) ) register_nav_menu( 'ast-menu-primary', 'Primary' );
 
 
-// Check for submenus and add a class to parent menu items
+/*----------------------------------------
+	Add class to Menu item with child
+-----------------------------------------*/
 function ast_check_for_submenu($classes, $item) {
     global $wpdb;
     $has_children = $wpdb->get_var("SELECT COUNT(meta_id) FROM wp_postmeta WHERE meta_key='_menu_item_menu_item_parent' AND meta_value='".$item->ID."'");
@@ -51,7 +73,9 @@ function ast_check_for_submenu($classes, $item) {
 add_filter( 'nav_menu_css_class', 'ast_check_for_submenu', 10, 2);
 
 
-// Register Sidebars
+/*----------------------------------------
+	Register Sidebars
+-----------------------------------------*/
 if (function_exists( 'register_sidebar' ) ) {
 	// sidebar widgets
 	register_sidebar(array(
@@ -61,7 +85,6 @@ if (function_exists( 'register_sidebar' ) ) {
 		'after_widget' 	=> '</div>',
 		'before_title' 	=> '<h4>',
 		'after_title' 	=> '</h4>',) );
-	
 	// footer widgets
 	register_sidebar(array(
 		'name' 			=> 'Footer',
@@ -71,8 +94,6 @@ if (function_exists( 'register_sidebar' ) ) {
 		'before_title' 	=> '<h4>',
 		'after_title' 	=> '</h4>',) );
 
-// Custom Widget Hooks
-	
 	// Body Widget
 	if ( asteroid_option('ast_widget_body') == 1 ) {
 		register_sidebar(array(
@@ -97,6 +118,7 @@ if (function_exists( 'register_sidebar' ) ) {
 			'before_widget' => '<div id="%1$s" class="widget-below-menu %2$s">',
 			'after_widget' 	=> '</div>',) );
 	}
+	
 	// Before Post
 	if ( asteroid_option('ast_widget_before_post') == 1 ) {
 		register_sidebar(array(
@@ -165,9 +187,13 @@ if (function_exists( 'register_sidebar' ) ) {
 }
 
 
-// Add support for thumbnails, featured image
+/*----------------------------------------
+	Add support for thumbnails
+-----------------------------------------*/
 add_theme_support( 'post-thumbnails' );
 
 
-// Add Custom CSS to Post Editor
+/*----------------------------------------
+	Add Custom CSS to Post Editor
+-----------------------------------------*/
 add_editor_style('library/editor-style.css');

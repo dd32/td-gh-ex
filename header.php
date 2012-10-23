@@ -5,12 +5,9 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<title><?php wp_title( '|', true, 'right' ); bloginfo( 'name' ); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
-	<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" media="screen" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
-	
 	<?php wp_head(); ?>
-	<?php do_action('ast_hook_custom_css'); ?>
 </head>
 
 <body <?php body_class(); ?> >
@@ -23,7 +20,7 @@
 		
 <div id="container">
 		
-	<div id="header" class="clear" style="background-image:url('<?php header_image(); ?>'); background-size:<?php echo get_custom_header()->width . "px " . get_custom_header()->height . "px" ?>;">
+	<div id="header">
 
 		<div id="header-info-wrap">
 		
@@ -56,12 +53,11 @@
 			'container' 		=> 	false )
 			); 
 		?>
-		
+		<!-- Searchform -->
 		<?php if ( asteroid_option('ast_menu_search') == 1 ) : ?>
-			<form role="search" method="get" id="nav-search" action="<?php echo home_url( '/' ); ?>">
-				<input type="text" id="searchinput" value="Search" onfocus="if (this.value == 'Search') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search';}" name="s" />
-				<input type="submit" id="searchsubmit" value="" />
-			</form>
+			<div id="nav-search">
+				<?php get_search_form(); ?>
+			</div>
 		<?php endif; ?>	
 	</nav>
 
@@ -71,4 +67,4 @@
 		</div>
 	<?php endif; ?>
 
-<div id="content">
+<div id="main">

@@ -6,7 +6,13 @@ function ast_admin_bar_menu() {
 		'id' => 'asteroid_admin_bar', 
 		'title' => ('Asteroid Options'), 
 		'href' => admin_url( 'themes.php?page=asteroid-options')
-	));	
+	));
+	$wp_admin_bar->add_menu( array(
+		'parent' => 'appearance',
+		'id' => 'theme_editor_admin_bar', 	
+		'title' => ('Editor'), 
+		'href' => admin_url( 'theme-editor.php')
+	));
 	$wp_admin_bar->add_menu( array(
 		'parent' => 'appearance',
 		'id' => 'plugins_admin_bar', 	
@@ -99,6 +105,7 @@ class My_Theme_Options {
 				<h4>Support the Developer</h4>
 			</div>
 			<div id="donate-content">
+				<p>If you liked this theme, please consider donating a small amount.</p>
 				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 				<input type="hidden" name="cmd" value="_s-xclick">
 				<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
@@ -392,9 +399,9 @@ class My_Theme_Options {
 			'type'    => 'text-int',
 			'section' => 'appearance'
 		);
-		$this->settings['ast_main_width'] = array(
-			'title'   => ( 'Width of Main' ),
-			'desc'    => ( 'px. Set the width of the main content/post area.' ),
+		$this->settings['ast_content_width'] = array(
+			'title'   => ( 'Width of Content' ),
+			'desc'    => ( 'px. Set the width of the content/post area.' ),
 			'std'     => '620',
 			'type'    => 'text-int',
 			'section' => 'appearance'
@@ -416,9 +423,9 @@ class My_Theme_Options {
 			'section' => 'appearance'
 		);
 				
-		$this->settings['ast_main_bgcolor'] = array(
-			'title'   => ( 'Color of Main' ),
-			'desc'    => ( 'Choose a background color for the #main container.' ),
+		$this->settings['ast_content_bgcolor'] = array(
+			'title'   => ( 'Color of Content' ),
+			'desc'    => ( 'Choose a background color for the #content container.' ),
 			'std'     => 'FFFFFF',
 			'type'    => 'color',
 			'section' => 'appearance'
@@ -672,8 +679,11 @@ class My_Theme_Options {
 		
 	}
 	
+	/*-------------------------------------
+	   Description for pages
+	--------------------------------------*/
 	public function display_section() {
-		// code
+		// None
 	}
 	
 	public function display_about_section() {

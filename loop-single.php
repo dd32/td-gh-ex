@@ -4,9 +4,16 @@
 <div class="post-edit"><?php edit_post_link( 'Edit This' ); ?></div>
 
 <header>	
-	<h1 class="single-title">
-		<a href="<?php the_permalink(); ?>" class="entry-title"><?php the_title(); ?></a>
-	</h1>
+	<h1 class="single-title"><a href="<?php the_permalink(); ?>" class="entry-title">
+		<?php 
+			if ( the_title( '', '', false ) != '' ){
+				echo the_title();
+			}	
+			else {						
+				echo 'Untitled';
+			}
+		?>
+	</a></h1>
 </header>
 
 <!-- Widgets: Before Post -->
@@ -70,6 +77,14 @@
 
 </div><!-- End of Single-Entry -->
 
+<?php if ( !is_attachment() && is_single() && asteroid_option('ast_date_modified') == 1 ) : ?>
+	<div class="updated">Updated: <?php the_modified_time('F j, Y'); ?> at <?php the_modified_time('g:i a'); ?></div>
+<?php elseif ( !is_attachment() && is_page() && asteroid_option('ast_date_modified') == 2 )  : ?>
+	<div class="updated">Updated: <?php the_modified_time('F j, Y'); ?> at <?php the_modified_time('g:i a'); ?></div>
+<?php elseif ( !is_attachment() && asteroid_option('ast_date_modified') == 3 ) : ?>
+	<div class="updated">Updated: <?php the_modified_time('F j, Y'); ?> at <?php the_modified_time('g:i a'); ?></div>
+<?php endif ; ?>
+
 <div class="page-links">
 	<?php wp_link_pages( array(
 		'before'           => '<div>' . 'Pages: ',
@@ -85,15 +100,14 @@
 	?>
 </div>
 
-<?php if ( is_single() && asteroid_option('ast_date_modified') == 1 ) : ?>
-	<div class="updated">Updated: <?php the_modified_time('F j, Y'); ?> at <?php the_modified_time('g:i a'); ?></div>
-<?php elseif ( is_page() && asteroid_option('ast_date_modified') == 2 )  : ?>
-	<div class="updated">Updated: <?php the_modified_time('F j, Y'); ?> at <?php the_modified_time('g:i a'); ?></div>
-<?php elseif ( asteroid_option('ast_date_modified') == 3 ) : ?>
-	<div class="updated">Updated: <?php the_modified_time('F j, Y'); ?> at <?php the_modified_time('g:i a'); ?></div>
-<?php endif ; ?>
-
 <div class="single-tags"><?php the_tags(); ?></div>
+
+<?php if ( is_attachment() ) : ?>
+	<div class="next-previous-attachment">
+		<div class="left"><?php previous_image_link(0,'&laquo; Previous Image') ?></div>
+		<div class="right"><?php next_image_link(0,'Next Image &raquo;') ?></div>
+	</div>
+<?php endif; ?>
 
 <!-- Widgets: After Post -->
 <?php if ( ( is_active_sidebar( 'widgets_after_post' ) ) && !is_page() ) : ?>
@@ -105,6 +119,7 @@
 <?php endif ; ?>
 
 </article><!-- Single End -->
+
 
 <?php if (! is_page() ) : ?>
 	<div class="next-previous-post">

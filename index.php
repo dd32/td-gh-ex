@@ -1,6 +1,6 @@
 <?php get_header();?>
 
-<div id="main" >
+<div id="content" >
 
 	<!-- Start the Loop -->
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>  
@@ -18,13 +18,10 @@
 	<?php endwhile; else: ?>
 	
 		<!-- Post Not Found --> 
-		<div id="not-found-wrap">
-			<h2>Search Results : Nothing Found</h2>
+		<div class="not-found-wrap">
+			<h2>Search Results: Nothing Found</h2>
 			<p>Try a new keyword.</p>
-			<form role="search" method="get" id="searchform404" action="<?php echo home_url( '/' ); ?>">
-				<input type="text" id="searchinput404" value="Search" onfocus="if (this.value == 'Search') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search';}" name="s" />
-				<input type="submit" id="searchsubmit404" value="Search" />
-			</form>
+			<?php get_search_form(); ?>
 		</div>
 
 	<!-- End Loop -->
@@ -42,7 +39,7 @@
 		</div>
 	<?php endif; ?>
 
-</div> <!-- #Main End -->
+</div> <!-- #Content End -->
 
 <?php get_sidebar(); ?>
 

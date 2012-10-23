@@ -1,8 +1,11 @@
 <?php
-if ( ! isset( $content_width ) ) $content_width = asteroid_option('ast_main_width');
+if ( ! isset( $content_width ) ) {
+	$content_width = asteroid_option('ast_content_width');
+}
 
-
-// <head> Codes : Scripts, Links, Metas.
+/*-------------------------------------
+	Favicon + <HEAD> Contents
+--------------------------------------*/
 function ast_print_head_codes() {
 	echo "\n\n" . '<!-- Asteroid Head -->' . "\n";
 	
@@ -16,51 +19,93 @@ function ast_print_head_codes() {
 add_action( 'wp_head', 'ast_print_head_codes' );
 
 
-// <head> CSS : Div Widths and BG Color.
+/*-------------------------------------
+	Header Background
+--------------------------------------*/
+function ast_header_image() {
+	if (!( get_header_image() == '' )) {
+		echo '<style type="text/css" media="screen">' . "\n";
+		echo '#header {' . "\n";
+		echo 'background-image: url(' . get_header_image() . ');' . "\n"; 
+		echo 'background-size: ' . get_custom_header()->width . 'px ' . get_custom_header()->height . 'px;' . "\n";
+		echo '}' . "\n";
+		echo '</style>' . "\n\n";
+	}
+}
+add_action( 'wp_head', 'ast_header_image' );
+
+
+/*-------------------------------------
+	Header Text Color
+--------------------------------------*/
+function ast_header_text_color() {
+	if (!( get_header_textcolor() == 'FFA900' )){
+		echo '<style type="text/css" media="screen">' . "\n";
+		echo '#site-title a, #site-description {color:#' . get_header_textcolor() . ';}' . "\n";
+		echo '</style>' . "\n";
+	}
+}
+add_action( 'wp_head', 'ast_header_text_color' );
+
+
+/*-------------------------------------
+	Container Widths and BG Colors
+--------------------------------------*/
 function ast_print_layout() {
-	$main_x = asteroid_option('ast_main_width');
+	$content_x = asteroid_option('ast_content_width');
 	$sidebar_x = asteroid_option('ast_sidebar_width');
 	
 	echo "\n" . '<style type="text/css" media="screen">' . "\n";
-	echo '#container {width:' . ( $main_x + $sidebar_x + 30 ) . 'px;}' . "\n";
-	echo '#header {height:' . asteroid_option('ast_header_height') . 'px; background-color: #' . asteroid_option('ast_header_bgcolor') . ';}' . "\n";
-	echo '#main {width:' . $main_x . 'px; max-width:' . $main_x . 'px; background-color: #' . asteroid_option('ast_main_bgcolor') . ';}' . "\n";
+	echo '#container {width:' . ( $content_x + $sidebar_x + 30 ) . 'px;}' . "\n";
+	echo '#header {min-height:' . asteroid_option('ast_header_height') . 'px; background-color: #' . asteroid_option('ast_header_bgcolor') . ';}' . "\n";
+	echo '#content {width:' . $content_x . 'px; max-width:' . $content_x . 'px; background-color: #' . asteroid_option('ast_content_bgcolor') . ';}' . "\n";
 	echo '#sidebar {width:' . $sidebar_x . 'px; background-color: #' . asteroid_option('ast_sidebar_bgcolor') . ';}' . "\n";
 	echo '</style>';
 }
-add_action( 'ast_hook_custom_css', 'ast_print_layout', 600 );
+add_action( 'wp_head', 'ast_print_layout', 600 );
 
 
-// <head> CSS : Custom CSS
+/*-------------------------------------
+	Custom CSS
+--------------------------------------*/
 function ast_print_custom_css() {
 	echo "\n\n" . '<!-- Asteroid Custom CSS -->' . "\n";
 	echo '<style type="text/css" media="screen">' . "\n" . asteroid_option('ast_custom_css') . "\n" . '</style>' . "\n";
 	echo '<!-- Asteroid Custom CSS End -->' . "\n\n";
 }
-add_action( 'ast_hook_custom_css', 'ast_print_custom_css', 990 );
+add_action( 'wp_head', 'ast_print_custom_css', 990 );
 
 
-// Remove Wordpress Version in <head>
+/*-------------------------------------
+	Remove WordPress Generator
+--------------------------------------*/
 if ( asteroid_option('ast_remove_wp_version') == 1 ) {
 	remove_action( 'wp_head', 'wp_generator' );
 }
 
 
-// Excerpt Length
+/*-------------------------------------
+	Excerpt Length
+--------------------------------------*/
 function ast_excerpt_length( $length ) {
 	return 55;
 }
-add_filter( 'excerpt_length', 'ast_excerpt_length', 900 );
+add_filter( 'excerpt_length', 'ast_excerpt_length' );
 
 
-// Add Footer Links 
+/*-------------------------------------
+	Footer Links
+--------------------------------------*/
 function ast_do_hook_footer_links() {
 	if (!( asteroid_option('ast_hook_footer_links') == '' )) echo asteroid_option('ast_hook_footer_links');
 }
 add_action( 'ast_hook_footer_links', 'ast_do_hook_footer_links' );
 
 
-// Remove rel attribute from the category list. Only for Html5 Validation
+/*-------------------------------------
+	Remove rel attr from category
+	HTML5 Validation
+--------------------------------------*/
 function ast_remove_category_rel($output){
 	$output = str_replace(' rel="category tag"', '', $output);
 	return $output;}
