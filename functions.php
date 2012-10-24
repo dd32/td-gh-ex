@@ -75,6 +75,8 @@ function sempress_setup() {
    * Add support for the Aside and Gallery Post Formats
    */
   add_theme_support( 'post-formats', array( 'aside', 'image', 'gallery', 'quote', 'link', 'audio', 'video', 'status' ) );
+
+  add_editor_style( 'editor-style.css' );
 }
 endif; // sempress_setup
 
@@ -125,6 +127,27 @@ function sempress_widgets_init() {
   ) );
 }
 add_action( 'init', 'sempress_widgets_init' );
+
+if ( ! function_exists( 'sempress_enqueue_scripts' ) ) :
+/**
+ * Enqueue theme scripts
+ *
+ * @uses wp_enqueue_scripts() To enqueue scripts
+ *
+ * @since SemPress 1.1.1
+ */
+function sempress_enqueue_scripts() {
+	// Add HTML5 support to older versions of IE
+	if ( isset( $_SERVER['HTTP_USER_AGENT'] ) &&
+		 ( false !== strpos( $_SERVER['HTTP_USER_AGENT'], 'MSIE' ) ) &&
+		 ( false === strpos( $_SERVER['HTTP_USER_AGENT'], 'MSIE 9' ) ) ) {
+    
+    wp_enqueue_script('html5', get_template_directory_uri() . '/js/html5.js', false, '3.6');
+	}
+}
+endif;
+
+add_action( 'wp_enqueue_scripts', 'sempress_enqueue_scripts' );
 
 if ( ! function_exists( 'sempress_content_nav' ) ):
 /**
@@ -181,7 +204,7 @@ function sempress_comment( $comment, $args, $depth ) {
       <footer>
         <div class="comment-author vcard h-card">
           <?php echo get_avatar( $comment, 40 ); ?>
-          <?php printf( __( '%s <span class="says">says:</span>', 'sempress' ), sprintf( '<cite class="fn n p-fn p-name">%s</cite>', get_comment_author_link() ) ); ?>
+          <?php printf( __( '%s <span class="says">says:</span>', 'sempress' ), sprintf( '<cite class="fn p-fn p-name">%s</cite>', get_comment_author_link() ) ); ?>
         </div><!-- .comment-author .vcard -->
         <?php if ( $comment->comment_approved == '0' ) : ?>
           <em><?php _e( 'Your comment is awaiting moderation.', 'sempress' ); ?></em>
@@ -217,7 +240,7 @@ if ( ! function_exists( 'sempress_posted_on' ) ) :
  * @since SemPress 1.0.0
  */
 function sempress_posted_on() {
-  printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date updated dt-updated" datetime="%3$s" itemprop="dateModified">%4$s</time></a><span class="byline"> <span class="sep"> by </span> <span class="author p-author vcard h-card" itemprop="author" itemscope itemtype="http://schema.org/Person"><a class="url u-url fn p-fn p-name n" href="%5$s" title="%6$s" rel="author" itemprop="url"><span itemprop="name">%7$s</span></a></span></span>', 'sempress' ),
+  printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date updated dt-updated" datetime="%3$s" itemprop="dateModified">%4$s</time></a><span class="byline"> <span class="sep"> by </span> <span class="author p-author vcard hcard h-card" itemprop="author" itemscope itemtype="http://schema.org/Person"><a class="url u-url fn p-fn p-name" href="%5$s" title="%6$s" rel="author" itemprop="url"><span itemprop="name">%7$s</span></a></span></span>', 'sempress' ),
     esc_url( get_permalink() ),
     esc_attr( get_the_time() ),
     esc_attr( get_the_date( 'c' ) ),
@@ -376,71 +399,6 @@ function sempress_get_post_id() {
   $post_id = "post-" . get_the_ID();
   
   return apply_filters('sempress_post_id', $post_id, get_the_ID());
-}
-
-/**
- * Displays a blog description (context sensitive)
- */
-function sempress_meta_description( $display = true ) {
-  $description = wp_trim_words( wptexturize ( get_bloginfo( "description" ) ) );
-
-  if ( is_singular() ) {
-    global $post;
-    $description = wp_trim_words( wptexturize ( strip_shortcodes($post->post_content) ), 25, '...' );
-  }
-  
-  if ( is_category() )
-    $description = wp_trim_words( wptexturize ( category_description() ), 25, '...' );
-  
-  if ( is_tag() )
-    $description = wp_trim_words( wptexturize ( tag_description() ), 25, '...' );
-  
-  if ($display) {
-    echo $description;
-  } else {
-    return $description;
-  } 
-}
-
-/**
- * Displays a blogs keywords (context sensitive)
- */
-function sempress_meta_keywords( $display = true ) {
-  $keywords = "";
-  $output = array();
-
-  if ( is_category() || is_tag() || is_tax() ) {
-    global $wp_query;
-    $term = $wp_query->get_queried_object();
-    $keywords = $term->name;
-  }
-  
-  if ( is_single() ) {
-    $tags  = get_the_tags();
-    if ( $tags ) {
-      foreach ( $tags as $tag ) {
-        $output[] = trim($tag->name);
-      }
-      $keywords = implode(", ", $output);
-    }
-  }
-  
-  // if tags are still empty take the most used
-  if (empty($keywords)) {
-    $tags = get_tags(array("orderby" => "count", "order" => "desc", "number" => 10));
-    if ( $tags ) {
-      foreach ( $tags as $tag ) {
-        $output[] = trim($tag->name);
-      }
-      $keywords = implode(", ", $output);
-    }
-  }
-
-  if ($display) {
-    echo $keywords;
-  } else {
-    return $keywords;
-  }
 }
 
 /**
