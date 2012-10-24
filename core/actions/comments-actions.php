@@ -83,7 +83,7 @@ function synapse_comments_loop() {
 	
 <?php endif; ?>
 
-<?php if ( comments_open() ) : ?>
+<?php if ( comments_open() && ! post_password_required() ) : ?>
 
 <div class="comments_container">
 
