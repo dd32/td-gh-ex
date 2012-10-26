@@ -167,5 +167,52 @@ function semperfi_is_sidebar_active($index) {
 	if ($widgetcolums[$index]) {
 		return true; }
 		return false; }
+		
+
+/*------------------------------------------------------------------
+
+		Sets up the Customize.php for Semper Fi (More to come)
+
+------------------------------------------------------------------*/
+
+function semperfi_customize($wp_customize) {
+	
+	// Add the option to use the CSS3 property Background-size
+	$wp_customize->add_setting( 'backgroundsize_setting', array(
+		'default'           => 'auto',
+		'control'           => 'select',
+		'transport'         => 'postMessage',));
+
+	$wp_customize->add_control( 'backgroundsize_control', array(
+		'label'				=> 'Background Size',
+		'section'			=> 'background_image',
+		'settings'			=> 'backgroundsize_setting',
+		'type'				=> 'radio',
+		'choices'			=> array(
+			'auto'			=> 'Auto (Default)',
+			'contain'		=> 'Contain',
+			'cover'			=> 'Cover',), )); }
+
+add_action('customize_register', 'semperfi_customize');
+
+// Preview CSS3 Property Background-size in Customizer
+function semperfi_backgroundsize_preview() {
+	wp_enqueue_script('semperfi-background-size', get_template_directory_uri() . '/js/background-size-preview.js', array('jquery'), '1.3', true);}
+
+add_action( 'customize_controls_print_footer_scripts', 'semperfi_backgroundsize_preview', 10 );
+
+// Inject the CSS3 property Background-size
+function semperfi_inline_css() {
+    $options = get_option('backgroundsize_setting');
+	if ( get_theme_mod('backgroundsize_setting') != 'auto' ) {
+		echo "\n" . '<!-- Custom CSS Styles -->' . "\n";
+        echo '<style type="text/css" media="screen">' . "\n";
+		echo 'body {' . "\n";
+		echo '	background-size: ' . get_theme_mod('backgroundsize_setting') . ';}' . "\n";
+		echo '</style>' . "\n";
+		echo '<!-- End Custom CSS -->' . "\n";
+		echo "\n";} }
+
+add_action('wp_head', 'semperfi_inline_css'); 
 
 ?>

@@ -3,15 +3,15 @@ Theme Name: Semper Fi Lite
 
 Theme URI: http://schwarttzy.com/shop/semper-fi/
 
-Description: Dedicate to my Grandfather's Bravery in WWII, Semper Fi has a high quality newspaper feeling to it. From hidden luxurious floral patterns, to images that create the nostalgia of finely crafted paper, incredibly detailed shadowing, but most importantly, Semper Fi has the ability to respond to any width screen. From 300 pixels wide, all the way to 1920 and beyond, images, galleries, quotes, text, and titles all move fluidly to respond to any thing you through at it. (More Updates to come soon)
+Description: Dedicate to my Grandfather's Bravery in WWII, Semper Fi has a high quality newspaper feeling to it. From hidden luxurious floral patterns, to images that create the nostalgia of finely crafted paper, incredibly detailed shadowing, but most importantly, Semper Fi has the ability to respond to any width screen. From 300 pixels wide, all the way to 1920 and beyond, images, galleries, quotes, text, and titles all move fluidly to respond to any thing you through at it. (More Updates to come soon, Theme Options is a thing of the pass, Theme Customizer is better!)
 
-Version: 0.3
+Version: 0.5
 
 Author: Eric Schwarz
 
 Author URI: http://schwarttzy.com/about-2/
 
-Tags:  black, white, green, tan, custom-background, flexible-width, theme-options, threaded-comments, full-width-template, sticky-post,  featured-images, one-column
+Tags:  black, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, flexible-width, full-width-template, green, one-column, photoblogging, tan, theme-options, sticky-post, theme-options, threaded-comments, white
 
 Copyright (C) 2003-2012 Eric Schwarz - Schwarttzy
 
@@ -49,15 +49,9 @@ body {
 	background:center top fixed url(images/might.jpg);
 	background-size:cover;
 	text-shadow:0 0 2px #eee;
-	text-shadow:0 0 2px rgba(238, 238, 238, 0.85);
-	}
+	text-shadow:0 0 2px rgba(238, 238, 238, 0.85);}
 body.custom-background {
-	background:none;
-	-o-background-size: cover;
-	-moz-background-size: cover;
-	-webkit-background-size: cover;
-	background-size: cover;
-	}
+	background:none;}
 h1{font-size:3.5em;}h2{font-size:2.5em;}h3{font-size:2em;}h4{font-size:1.75em;}h5{font-size:1.4em;}h6{font-size:1em;}
 h1,h2,h3,h4,h5,h6{font-variant:small-caps;line-height:normal;}
 a {color: #dc1111;outline: none; text-decoration: none; }
@@ -185,7 +179,7 @@ ul / li that do the heavy lift on this theme
 ------------------------------------------------------------------*/
 
 .browsing {width:97%;margin:.75em 1.5% 0;line-height:1.25em;}
-.browsing .underlay img, .browsing .underlay object{width:100%;height: auto;}
+.browsing .underlay img, .browsing .underlay object{width:99%;height: auto;}
 .browsing li {width:30.3333%;margin:0 1.5% 1.5%;float:left;overflow:hidden;height:476px;}
 .browsing li h5 {height:1.3em;line-height:1.3em;border-top:2px solid #111; border-bottom:1px solid #24380e; margin:.1em 0 .3em;height:1.3em; overflow:hidden; text-align:left;}
 .browsing li h5 span { font-size: .6em; line-height:.9em;float:right; padding:.20em; text-align:center;}

@@ -237,16 +237,15 @@
 		</h6>
 	</ul>
     <?php endif; ?>
-
 	
-<?php endif; ?><!-- End  -->
+<?php endif; ?><!-- End of Post / Page Stuff -->
 
 <!-- The Comments -->
 <?php if (is_search()) : ?>
 <?php elseif($semperfi_404) : ?>
 <?php elseif ( comments_open() ) : ?>
 <?php comments_template( '', true ); ?>
-<?php elseif ( is_page() || is_single() ) : ?>
+<?php elseif ( ( is_page() && comments_open() ) || is_single() ) : ?>
 <?php comments_template( '', true ); ?>
 <ul class="commentbox hidecomment">
 	<h4 class="title">Commenting is Closed</h4>
@@ -255,13 +254,13 @@
 <!-- End Comments -->
 
 <!-- The Sidebar / Widget Area -->
-<?php if (semperfi_is_sidebar_active('widget') ) : ?><ul class="browsing widget">
-<li><?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer widget1') ) : ?><?php endif; ?></li>
-<li><?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer widget2') ) : ?><?php endif; ?></li>
-<li><?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer widget3') ) : ?><?php endif; ?></li>
+<?php if (semperfi_is_sidebar_active('widget')) : ?><ul class="browsing widget">
+<li><?php if (!dynamic_sidebar('footer widget1')) : ?><?php endif; ?></li>
+<li><?php if (!dynamic_sidebar('footer widget2')) : ?><?php endif; ?></li>
+<li><?php if (!dynamic_sidebar('footer widget3')) : ?><?php endif; ?></li>
 <li class="bottomline"></li>
-</ul><?php endif; ?>
-
+</ul>
+<?php endif; ?>
 <!-- End Sidebar / Widget Area -->
 
 <ul class="finishline"></ul>
