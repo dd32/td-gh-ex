@@ -906,7 +906,7 @@ function simplecatch_infobar() {
     <div id="info-support">
     
     	<div class="upgrade">
-        	<a class="upgrade button" href="<?php echo esc_url(__('http://catchthemes.com/themes/simple-catch-pro','simplecatch')); ?>" title="<?php esc_attr_e('Upgrade Simple Cacth Pro at Introductory Price $19.99 Only', 'simplecatch'); ?>" target="_blank"><?php printf(__('Upgrade Simple Cacth Pro at Introductory Price $19.99 Only','simplecatch')); ?></a>
+        	<a class="upgrade button" href="<?php echo esc_url(__('http://catchthemes.com/themes/simple-catch-pro','simplecatch')); ?>" title="<?php esc_attr_e('Upgrade Simple Catch Pro at Introductory Price $19.99 Only', 'simplecatch'); ?>" target="_blank"><?php printf(__('Upgrade Simple Catch Pro at Introductory Price $19.99 Only','simplecatch')); ?></a>
       	</div>
         
         <div class="theme-social">

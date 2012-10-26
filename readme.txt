@@ -185,3 +185,6 @@ Version 1.4.6
 Version 1.4.7
 * Fixed menu highlight for current menu
 * Added Polish translation pl_PL.po and pl_PL.mo
+
+Version 1.4.8
+* Fixed simplecatch.pot file for comment form labels
