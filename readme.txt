@@ -149,5 +149,8 @@ Version 1.5.2
 * Fixed the linked widget title color in dark color scheme
 * Fixed css for menu hover for older browser and IE
 
-Version 1.5.2
+Version 1.5.3
 * Added Blue Color Scheme
+
+Version 1.5.4
+* Fixed Default Layout and Page Template Issue with body_class filter

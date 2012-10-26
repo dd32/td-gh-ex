@@ -5,7 +5,6 @@ msgstr ""
 "Project-Id-Version: Catch Box"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/catch-box\n"
 "POT-Creation-Date: 2012-09-28 17:13+0530\n"
-"PO-Revision-Date: 2012-10-20 10:03+0530\n"
 "Last-Translator: Doris Wieferich <info@nop-info.de>\n"
 "Language-Team: Doris Wieferich <info@nop-info.de>\n"
 "MIME-Version: 1.0\n"
@@ -538,7 +537,7 @@ msgid "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel=
 msgstr "<span class=\"sep\">Veröffentlicht am </span><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> von </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
 
 # @ catchbox
-#: functions.php:657
+#: functions.php:667
 msgid "ID"
 msgstr "ID"
 

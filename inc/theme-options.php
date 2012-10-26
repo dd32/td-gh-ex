@@ -316,8 +316,8 @@ function catchbox_layouts() {
 			'label'			=> __( 'Content on right', 'catchbox' ),
 			'thumbnail'		=> get_template_directory_uri() . '/inc/images/sidebar-content.png',
 		),
-		'content' 			=> array(
-			'value'			=> 'content',
+		'content-onecolumn'	=> array(
+			'value'			=> 'content-onecolumn',
 			'label'			=> __( 'One-column, no sidebar', 'catchbox' ),
 			'thumbnail'		=> get_template_directory_uri() . '/inc/images/content.png',
 		),
@@ -1231,34 +1231,6 @@ function catchbox_print_link_color_style() {
 <?php
 }
 add_action( 'wp_head', 'catchbox_print_link_color_style' );
-
-
-/**
- * Adds Catch Box layout classes to the array of body classes.
- *
- * @since Catch Box 1.0
- */
-function catchbox_layout_classes( $existing_classes ) {
-	$options = catchbox_get_theme_options();
-	$current_layout = $options['theme_layout'];
-
-	if ( in_array( $current_layout, array( 'content-sidebar', 'sidebar-content' ) ) )
-		$classes = array( 'two-column' );
-	else
-		$classes = array( 'one-column' );
-
-	if ( 'content-sidebar' == $current_layout )
-		$classes[] = 'right-sidebar';
-	elseif ( 'sidebar-content' == $current_layout )
-		$classes[] = 'left-sidebar';
-	else
-		$classes[] = $current_layout;
-
-	$classes = apply_filters( 'catchbox_layout_classes', $classes, $current_layout );
-
-	return array_merge( $existing_classes, $classes );
-}
-add_filter( 'body_class', 'catchbox_layout_classes' );
 
 
 /**
