@@ -138,9 +138,7 @@
 
     if ( ! function_exists( 'artblog_admin_header_style' ) ) :
         /**
-        * Styles the header image displayed on the Appearance > Header admin panel.
         *
-        * Referenced via add_custom_image_header() in artblog_setup().
         *
         */
         function artblog_admin_header_style() {
