@@ -116,12 +116,7 @@
             );
 
 
-            // support for older version of wordpress
-            global $wp_version;
-            if ( version_compare( $wp_version, '3.4', '>=' ) )
                 add_theme_support( 'custom-header',$defaults );
-            else
-                add_custom_image_header( '','artblog_admin_header_style');
 
 
 
