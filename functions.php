@@ -1,7 +1,7 @@
 <?php
 
-define('SO_THEME_VERSION', '1.2.5');
-define('SO_THEME_ENDPOINT', 'http://siteorigin.com');
+define('SO_THEME_VERSION', 'trunk');
+define('SO_THEME_ENDPOINT', 'http://siteorigin.dynalias.com');
 
 // Include premium functions if it exists
 if(file_exists(get_template_directory().'/premium/functions.php'))
@@ -130,11 +130,13 @@ if(!function_exists('origami_enqueue_scripts')) :
  * @return void
  */
 function origami_enqueue_scripts(){
-	wp_enqueue_script('modernizr', get_template_directory_uri().'/js/modernizr.min.js', array(), '2.0.6');
-	wp_enqueue_script('fitvids', get_template_directory_uri().'/js/jquery.fitvids.min.js', array('jquery'), '1.0');
-	wp_enqueue_script('origami', get_template_directory_uri().'/js/origami.min.js', array('jquery', 'modernizr'), SO_THEME_VERSION);
+	wp_enqueue_style('origami', get_stylesheet_uri(), array(), SO_THEME_VERSION);
 	
-	wp_enqueue_script('flexslider', get_template_directory_uri().'/js/jquery.flexslider.min.js', array('jquery'), '1.8');
+	wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/modernizr.min.js', array(), '2.0.6');
+	wp_enqueue_script('fitvids', get_template_directory_uri() . '/js/jquery.fitvids.min.js', array('jquery'), '1.0');
+	wp_enqueue_script('origami', get_template_directory_uri() . '/js/origami.min.js', array('jquery', 'modernizr'), SO_THEME_VERSION);
+	
+	wp_enqueue_script('flexslider', get_template_directory_uri() . '/js/jquery.flexslider.min.js', array('jquery'), '1.8');
 	wp_enqueue_style('flexslider', get_template_directory_uri().'/css/flexslider.css', array(), '1.8');
 
 	if ( is_singular() ) wp_enqueue_script( "comment-reply" );

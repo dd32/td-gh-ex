@@ -80,7 +80,7 @@ function so_settings_render(){
 
 function so_settings_enqueue_scripts($prefix){
 	if($prefix != 'appearance_page_theme_settings_page') return;
-	wp_enqueue_script( 'siteorigin-settings', get_template_directory_uri().'/extras/settings/settings.js', array('jquery'), SO_THEME_VERSION );
+	wp_enqueue_script( 'siteorigin-settings', get_template_directory_uri() . '/extras/settings/settings.min.js', array('jquery'), SO_THEME_VERSION );
 	wp_enqueue_style( 'siteorigin-settings', get_template_directory_uri().'/extras/settings/settings.css', array(), SO_THEME_VERSION );
 	
 	wp_enqueue_style( 'farbtastic' );

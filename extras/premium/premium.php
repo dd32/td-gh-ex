@@ -172,8 +172,8 @@ function so_premium_page_render(){
 function so_premium_admin_enqueue($prefix){
 	if($prefix != 'appearance_page_premium_upgrade') return;
 
-	wp_enqueue_script('siteorigin-magnifier', get_template_directory_uri().'/extras/premium/magnifier.js', array('jquery'), SO_THEME_VERSION);
-	wp_enqueue_script('siteorigin-premium-upgrade', get_template_directory_uri().'/extras/premium/premium.js', array('jquery'), SO_THEME_VERSION);
+	wp_enqueue_script('siteorigin-magnifier', get_template_directory_uri() . '/extras/premium/magnifier.min.js', array('jquery'), SO_THEME_VERSION);
+	wp_enqueue_script('siteorigin-premium-upgrade', get_template_directory_uri() . '/extras/premium/premium.min.js', array('jquery'), SO_THEME_VERSION);
 	wp_enqueue_style('siteorigin-premium-upgrade', get_template_directory_uri().'/extras/premium/premium.css', array(), SO_THEME_VERSION);
 }
 add_action('admin_enqueue_scripts', 'so_premium_admin_enqueue');

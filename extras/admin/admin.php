@@ -58,7 +58,7 @@ function so_adminbar_enqueue($suffix){
 	// Only enqueue these if there's an active admin bar
 	if(empty($GLOBALS['so_adminbar_active'])) return;
 	
-	wp_enqueue_script('siteorigin-admin-bar', get_template_directory_uri().'/extras/admin/assets/bar.js', array('jquery'));
+	wp_enqueue_script('siteorigin-admin-bar', get_template_directory_uri() . '/extras/admin/assets/bar.min.js', array('jquery'));
 	wp_enqueue_style('siteorigin-admin-bar', get_template_directory_uri().'/extras/admin/assets/bar.css');
 }
 add_action('admin_enqueue_scripts', 'so_adminbar_enqueue');

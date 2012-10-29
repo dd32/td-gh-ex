@@ -1,6 +1,7 @@
 html .mceContentBody {
 	max-width: 904px;
 }
+
 * {
 	color: inherit;
 	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
@@ -8,24 +9,26 @@ html .mceContentBody {
 	font-weight: 400;
 }
 
-/* @group WP Core */
+/* =WP Core 
+-------------------------------------------------------------- */
 
 .alignnone {
 	margin: 5px 20px 20px 0;
 }
 
-.aligncenter, div.aligncenter {
-	display:block;
+.aligncenter,
+div.aligncenter {
+	display: block;
 	margin: 20px auto 20px auto;
 }
 
 .alignright {
-	float:right;
+	float: right;
 	margin: 5px 0 20px 20px;
 }
 
 .alignleft {
-	float:left;
+	float: left;
 	margin: 5px 20px 20px 0;
 }
 
@@ -35,7 +38,7 @@ html .mceContentBody {
 }
 
 a img.alignright {
-	float:right;
+	float: right;
 	margin: 5px 0 20px 20px;
 }
 
@@ -44,30 +47,28 @@ a img.alignnone {
 }
 
 a img.alignleft {
-	float:left;
+	float: left;
 	margin: 5px 20px 20px 0;
 }
 
 a img.aligncenter {
 	display: block;
 	margin-left: auto;
-	margin-right: auto
+	margin-right: auto;
 }
 
 .wp-caption {
 	background: #EFEFEF;
 	border: 1px solid #C0C0C0;
-	max-width: 100%; /* Image does not overflow the content area */
-	padding: 5px 3px 10px 3px;
-	text-align: center;
-	
-	box-sizing:border-box;
-	-webkit-box-sizing:border-box;
-	-moz-box-sizing:border-box;
-	
-	box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
 	-webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
 	-moz-box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
+	box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	max-width: 100%; /* Image does not overflow the content area */ 
+	padding: 5px 3px 10px 3px;
+	text-align: center;
 }
 
 .wp-caption.alignnone {
@@ -83,39 +84,41 @@ a img.aligncenter {
 }
 
 .wp-caption img {
-	border: 0 none;
-	height: auto;
-	margin:0;
-	max-width: 98.5%;
-	padding:0;
 	width: auto;
+	height: auto;
+	
+	border: 0 none;
+	margin: 0;
+	max-width: 98.5%;
+	padding: 0;
 }
 
 .wp-caption p.wp-caption-text {
-	font-size: 11px;
-	margin:0;
-	line-height: 1;
-	padding: 4px 5px 0 5px;
 	color: #666;
+	font-size: 11px;
 	font-style: italic;
+	line-height: 1;
+	margin: 0;
+	padding: 4px 5px 0 5px;
 }
 
-.sticky{}
-.gallery-caption{}
+.sticky {
+}
 
-/* @end */
+.gallery-caption {
+}
 
-html .mceContentBody *:first-child{
+html .mceContentBody *:first-child {
 	margin-top: 0px;
 }
 
-html .mceContentBody *:last-child{
+html .mceContentBody *:last-child {
 	margin-bottom: 0px;
 }
 
-ul{
-	padding-left: 1em;
+ul {
 	margin-bottom: 1.5em;
+	padding-left: 1em;
 }
 
 a {
@@ -130,99 +133,106 @@ dl {
 	margin: 2em 0;
 }
 
-ul li{
+ul li {
 	display: list-item;
 	line-height: 1.75em;
 	list-style: url(images/bullet.png);
 	list-style-position: outside;
 }
 
-ol{
+ol {
 	list-style: outside decimal;
-	padding-left: 2.5em;
 	margin-bottom: 1.5em;
+	padding-left: 2.5em;
 }
 
-ol li{
+ol li {
 	display: list-item;
 	line-height: 1.75em;
 }
 
 ul ul,
-ol ol{
+ol ol {
 	margin-bottom: 0;
 }
 
-blockquote{
-	padding: 1.5em 20px 1.5em 60px;
-	font-style: italic;
-	color: #666;
+blockquote {
 	position: relative;
+	
 	background: url(images/quote.png) no-repeat 10px center;
+	color: #666;
+	font-style: italic;
+	padding: 1.5em 20px 1.5em 60px;
 }
 
-blockquote cite{
-	font-weight: bold;
+blockquote cite {
 	color: #333;
+	font-weight: bold;
 }
 
-blockquote p:first-child{
+blockquote p:first-child {
 	margin-top: 0;
 }
 
-blockquote p:last-child{
+blockquote p:last-child {
 	margin-bottom: 0;
 }
 
 strong,
-b{
+b {
 	font-weight: bold;
 }
 
 em,
-i{
+i {
 	font-style: italic;
 }
 
-img{
-	max-width: 100%;
+img {
 	height: auto;
+	
+	max-width: 100%;
 }
 
-hr{
+hr {
 	border: 0px;
 	border-top: 1px solid #CCC;
 }
 
 sup,
 sub {
-	font-size: 10px;
-	height: 0;
-	line-height: 1;
 	position: relative;
+	height: 0;
+	
+	font-size: 10px;
+	line-height: 1;
 	vertical-align: baseline;
 }
+
 sup {
 	bottom: 1ex;
+	
 }
+
 sub {
 	top: .5ex;
+	
 }
 
-/* @group Definition list */
+/* =Definition list 
+-------------------------------------------------------------- */
 
-dl dt{
+dl dt {
 	font-weight: bold;
 }
 
-dl dd{
-	padding-left: 1.5em;
+dl dd {
 	margin-bottom: 1.5em;
+	padding-left: 1.5em;
 }
 
-/* @end */
-
-/* @group Headings */
+/* =Headings 
+-------------------------------------------------------------- */
 
 h1,
 h2,
@@ -259,32 +269,27 @@ h6 {
 	font-size: 12.48px;
 }
 
+/* =Table 
+-------------------------------------------------------------- */
 
-
-/* @end */
-
-
-
-/* @group Table */
-
-table{
+table {
 	width: 100%;
+	
 	margin: 1em 0;
 }
 
-th{
+th {
+	border-bottom: 3px solid #C0C0C0;
 	font-size: 1.1em;
 	font-weight: bold;
 	padding: 8px;
+}
+
+thead th {
 	border-bottom: 3px solid #C0C0C0;
 }
 
-thead th{
-	border-bottom: 3px solid #C0C0C0;
-}
-
-td{
+td {
 	padding: 8px;
 }
 
-/* @end */
