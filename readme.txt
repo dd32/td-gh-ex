@@ -154,3 +154,7 @@ Version 1.5.3
 
 Version 1.5.4
 * Fixed Default Layout and Page Template Issue with body_class filter
+
+Version 1.5.5
+* Fixed body_class filter loop for layout issue found in version 1.5.4
+* Fixed CSS for Content on Right Layout 
