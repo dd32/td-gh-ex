@@ -4,12 +4,16 @@ Theme URI: http://aplau.com/aplau
 Description:  Aplau is a Premium Quality WordPress Theme based on HTML, CSS and PHP. This theme is powered with custom menu, sidebar widget, theme options, advertisement and analytics ready features. This theme is also loads very first and maximum search engine friendly. Aplau theme is Designed and developed by <a href="http://aplau.com">Aplau Themes</a>. 
 Author: Aplau
 Author URI: http://aplau.com
-Version: 1.0
+Version: 1.1
 
 Tags: black, blue, white, light, orange, green, two-columns, fixed-width, custom-menu, theme-options, right-sidebar, threaded-comments, sticky-post, microformats, editor-style
 
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+Aplau WordPress Theme, Copyright 2012 Aplau.  http://aplau.com
+Aplau is distributed under the terms of the GNU GPL
+
 */
 
 /* =Reset default browser CSS.
@@ -111,7 +115,7 @@ DESCRIPTION: Full width content with no sidebar; used for attachment pages
 
 .single-attachment #content {
 	margin: 0 auto;
-	width: 900px;
+	width: 930px;
 }
 
 
@@ -173,7 +177,7 @@ div.menu,
 #main,
 #wrapper {
 	margin: 0px auto;
-	width: 900px;
+	width: 930px;
 }
 #wrapper {
 	background: #fff;
@@ -337,7 +341,7 @@ a:hover {
 /* Text meant only for screen readers */
 .screen-reader-text {
 	position: absolute;
-	left: -9000px;
+	left: -9300px;
 }
 
 
@@ -408,13 +412,13 @@ position:absolute; left:-9999px;
 	display: block;
 	float: left;
 	margin: 0 auto;
-	width: 900px;
+	width: 930px;
 }
 #access .menu-header,
 div.menu {
 	font-size: 13px;
 	margin: 0 auto;
-	width:  900px;
+	width:  930px;
 }
 #access .menu-header ul,
 div.menu ul {
@@ -1315,7 +1319,7 @@ h3#reply-title {
 }
 #colophon {
     padding-right:0px;
-    width:900px;
+    width:930px;
     margin:0 auto;
     display:block;
 	margin-top: 0px;

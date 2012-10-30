@@ -124,6 +124,19 @@ add_filter( 'excerpt_length', 'aplau_excerpt_length' );
 add_filter( 'wp_title', 'aplau_filter_wp_title' );
 
 /**
+ * Where the post has no post title, but must still display a link to the single-page post view.
+ */
+add_filter('the_title', 'aplau_title');
+
+function aplau_title($title) {
+    if ($title == '') {
+        return 'Untitled';
+    } else {
+        return $title;
+    }
+}
+
+/**
  * Returns a "Continue Reading" link for excerpts
  * @since aplau 1.0
  * @return string "Continue Reading" link

@@ -1,7 +1,7 @@
 <?php
 $themename = "Aplau";
 $shortname = "aplau";
-$version = "1.0";
+$version = "1.1";
 
 // Create theme options
 global $options;

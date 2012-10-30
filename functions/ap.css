@@ -38,7 +38,7 @@ h3.section_title{
 background: url('images/ts.png') no-repeat scroll 5px 5px #f1f1f1;
 border:1px solid #E6E6E6;
 color:#707070;
-box-shadow: 0 1px 1px 0px #ddd;
+box-shadow: 0 1px 1px 0 #ddd;
 cursor:pointer;
 font-size:1.2em;
 margin:0;
@@ -96,7 +96,7 @@ label{
 
 .options_input input[type="text"], .options_input select{
 	width:275px;
-	font-size:12px;
+	font-size:14px;
 	padding:1px;
 	color:#666;
 	background: #fff;
