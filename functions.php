@@ -1,7 +1,7 @@
 <?php
 
-define('SO_THEME_VERSION', 'trunk');
-define('SO_THEME_ENDPOINT', 'http://siteorigin.dynalias.com');
+define( 'SO_THEME_VERSION' , '1.2.7' );
+define( 'SO_THEME_ENDPOINT' , 'http://siteorigin.com' );
 
 // Include premium functions if it exists
 if(file_exists(get_template_directory().'/premium/functions.php'))
