@@ -5,7 +5,7 @@ Theme URI: http://schwarttzy.com/shop/semper-fi/
 
 Description: Dedicate to my Grandfather's Bravery in WWII, Semper Fi has a high quality newspaper feeling to it. From hidden luxurious floral patterns, to images that create the nostalgia of finely crafted paper, incredibly detailed shadowing, but most importantly, Semper Fi has the ability to respond to any width screen. From 300 pixels wide, all the way to 1920 and beyond, images, galleries, quotes, text, and titles all move fluidly to respond to any thing you through at it. (More Updates to come soon, Theme Options is a thing of the pass, Theme Customizer is better!)
 
-Version: 0.5
+Version: 0.6
 
 Author: Eric Schwarz
 
@@ -65,7 +65,7 @@ a img {border: none; }
 ------------------------------------------------------------------*/
 
 #header {
-	background: url(images/title.png);
+	background: bottom url(images/title.png);
 	border-top:solid 1px #222;
 	border-bottom:solid 1px #222;
 	left: 0;
@@ -223,7 +223,7 @@ ul / li that do the heavy lift on this theme
 .starsbar h6{width:100%;text-align:center; line-height:1.8em;}
 .starsbar a {color:#e0dbce;}
 .starsbar a:hover {color:#777;}
-#footer { height:1.75em; overflow:hidden; font-size:.8em; width:96%; padding:0 2%; background:#111; color: #DDD; text-align:center;}
+#footer { height:1.75em; overflow:hidden; font-size:.8em; width:96%; padding:0 2%; background:#111; color: #DDD; text-align:center; visibility:visible;}
 #footer p{ padding:0; margin:.25em 0; text-shadow: none;}
 li.bottomline {width:97%;margin:0 1.5%;}
 .finishline { margin:1% 2.52% 0;border-bottom:1px solid #111; width:94.96%;}

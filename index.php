@@ -270,9 +270,7 @@
 <!-- Closing the Layout of the Page with a Finishing Touch. -->
 
 <div id="footer">
-
 <p>Good Old Fasioned Hand Written Code by <a href="http://schwarttzy.com/about-2/">Eric J. Schwarz</a> <!-- <?php echo get_num_queries(); ?> queries in <?php timer_stop(1); ?> seconds --></p>
-
 </div>
 
 <!-- Start of WordPress Footer  -->
