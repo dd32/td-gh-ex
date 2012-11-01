@@ -1,0 +1,110 @@
+/*** ESSENTIAL STYLES ***/
+#nav2, #nav2 * {
+	margin:			0;
+	padding:		0;
+	list-style:		none;
+}
+#nav2 {
+	line-height:	1.0;
+}
+#nav2 ul {
+	position:		absolute;
+	top:			-999em;
+	width:			13em; /* left offset of submenus need to match (see below) */
+}
+#nav2 ul li {
+	width:			100%;
+}
+#nav2 li:hover {
+	visibility:		inherit; /* fixes IE7 'sticky bug' */
+}
+#nav2 li {
+	float:			left;
+	position:		relative;
+}
+#nav2 a {
+	display:		block;
+	position:		relative;
+}
+#nav2 li:hover ul,
+#nav2 li.sfHover ul {
+	left:			0;
+	top:			42px; /* match top ul list item height */
+	z-index:		99;
+}
+ul#nav2 li:hover li ul,
+ul#nav2 li.sfHover li ul {
+	top:			-999em;
+}
+ul#nav2 li li:hover ul,
+ul#nav2 li li.sfHover ul {
+	left:			13em; /* match ul width */
+	top:			0;
+}
+ul#nav2 li li:hover li ul,
+ul#nav2 li li.sfHover li ul {
+	top:			-999em;
+}
+ul#nav2 li li li:hover ul,
+ul#nav2 li li li.sfHover ul {
+	left:			13em; /* match ul width */
+	top:			0px;
+}
+
+/*** DEMO SKIN ***/
+#nav2 {
+	float:	left;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+}
+#nav2 a {
+	padding: 1em 1em 1em 1em;
+	text-decoration:none;
+}
+
+
+#nav2 a, #nav2 a:visited  { /* visited pseudo selector so IE6 applies text colour*/
+	color: #fff;
+}
+
+#nav2 li {
+	border-right: 1px solid #444;
+}
+
+#nav2 li li{
+	border-right: 0px;
+}
+
+#nav2 li li:first-child{
+	
+}
+
+#nav2 li li a {
+	background:	#fff;
+	border-bottom: 1px solid #ddd;
+	color: #000;
+	padding: 0.6em 1em;
+}
+
+#nav2 li li a:visited {
+	color: #000;
+}
+
+#nav2 li ul {
+	background:	#fff;
+	color: #000;
+}
+
+#nav2 li:hover, #nav2 li.sfHover,
+#nav2 li:hover > a,
+#nav2 a:focus, #nav2 a:hover, #nav2 a:active {
+	outline: 0;
+	color: #000;
+	background: #f1f1f1;
+}
+
+#nav2 li ul li:hover, #nav2 li ul li.sfHover,
+#nav2 li ul li a:focus, #nav2 li ul li a:hover, #nav2 li ul li a:active {
+	outline: 0;
+	color: #000;
+}
