@@ -1,4 +1,20 @@
 Changelog -----------------------------------
+version:0.993
+
+added
+    The addition of new functionality.
+     Recent versins Raindrops
+        Custom field name css is addition single post and page style rules.
+     New versins Raindrops
+        The style described by the custom field css expresses each style
+        for each style correctly also a category and an archive page.
+
+        You only specify a class and an element and can create style rule.
+        Raindrops adds the CSS specificity.
+
+    Added mobile meta tag when using fluid page width.
+----------------------------------------------
+Changelog -----------------------------------
 version:0.991
 
 fixed
