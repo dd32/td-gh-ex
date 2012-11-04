@@ -15,7 +15,7 @@
 <meta name="viewport" content="width=device-width" />
 <title><?php wp_title() ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<?php wp_enqueue_style('smallbusiness-style', get_stylesheet_uri(), false, '1.0');?>
+<?php wp_enqueue_style('smallbusiness-style', get_stylesheet_uri(), false, '1.01');?>
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
@@ -42,7 +42,7 @@ wp_head(); ?>
         
 		<h2 class="site-title-hidden"><?php bloginfo( 'description' ); ?></h2
                 
-        <!-- Site Main Menu Goes Here -->
+        ><!-- Site Main Menu Goes Here -->
         <nav id="smallbusiness-main-menu">
 		<?php if ( has_nav_menu( 'main-menu' ) ) :  wp_nav_menu( array( 'theme_location' => 'main-menu' )); else: wp_page_menu(); endif; ?>
         </nav>

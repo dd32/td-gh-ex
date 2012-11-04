@@ -28,7 +28,7 @@
 	}
 	add_filter( 'wp_title', 'smallbusiness_filter_wp_title' );
 	
-	add_editor_style();
+	add_editor_style('editor-style.css');
 
 // 	This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images
 	add_theme_support( 'post-thumbnails' );
@@ -197,23 +197,6 @@
             return '(Untitled)';
         } else { return $title; } 
     }
-
-	// 	WordPress Login Form Customization
-	function smallbusiness_login_logo() { ?>
-    <style type="text/css">
-        body.login div#login h1 a {
-            background-image: url(<?php echo get_template_directory_uri(); ?>/images/logo.png);
-            padding-bottom: 30px;
-        }
-    </style>
-	<?php }
-	add_action( 'login_enqueue_scripts', 'smallbusiness_login_logo' );
-
-	function smallbusiness_login_logo_url() {
-    return esc_url( home_url( '/' ) );
-	}
-	add_filter( 'login_headerurl', 'smallbusiness_login_logo_url' );
-	
 
 //	Remove WordPress Custom Header Support for the theme smallbusiness
 //	remove_theme_support('custom-header');
