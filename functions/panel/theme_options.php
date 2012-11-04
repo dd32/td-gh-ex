@@ -6,8 +6,6 @@
  * @subpackage Simple_Catch
  * @since Simple Catch 1.0
  */
-
- 
 add_action( 'admin_init', 'simplecatch_register_settings' );
 add_action( 'admin_menu', 'simplecatch_options_menu' );
 
@@ -409,7 +407,6 @@ function simplecatch_theme_options_do_page() {
                     </div><!-- .option-container -->   
 
                 </div> <!-- #designsettings -->  
-
 
                 <!-- Options for Theme Settings -->
                 <div id="themesettings">
@@ -928,7 +925,7 @@ function simplecatch_theme_options_validate( $options ) {
 		// Our checkbox value is either 0 or 1 
 		$input_validated[ 'reset_color' ] = $input[ 'reset_color' ];
 	}	
-
+	
 	//Reset Color Options
 	if( $input[ 'reset_color' ] == 1 ) {
 		global $simplecatch_options_defaults;
@@ -942,21 +939,20 @@ function simplecatch_theme_options_validate( $options ) {
 		$input_validated[ 'widget_text_color' ] = $defaults[ 'widget_text_color' ]; 
 	}
 
-
     if ( isset( $input['exclude_slider_post'] ) ) {
         // Our checkbox value is either 0 or 1 
    		$input_validated[ 'exclude_slider_post' ] = $input[ 'exclude_slider_post' ];	
+	}
 	
-    }
 	// Front page posts categories
-	if ( ! in_array ( '', (array) $input['front_page_category'] ) ) {
+	if ( ! in_array ( '', (array) isset( $input['front_page_category'] ) ) ) {
 		if ( in_array ( false, array_map( 'ctype_digit', (array) $input['front_page_category'] ) ) ) {
 			unset($input['front_page_category']);
 		} else {
 			$input_validated['front_page_category'] = $input['front_page_category'];
 		}
 	}
-    
+	
 	//data validation for Featured Slider
 	if ( isset( $input[ 'slider_qty' ] ) ) {
 		$input_validated[ 'slider_qty' ] = absint( $input[ 'slider_qty' ] ) ? $input [ 'slider_qty' ] : 4;
@@ -964,10 +960,13 @@ function simplecatch_theme_options_validate( $options ) {
 	if ( isset( $input[ 'featured_slider' ] ) ) {
 		$input_validated[ 'featured_slider' ] = array();
 	}	
- 	if( isset( $input[ 'slider_qty' ] ) )	
-	for ( $i = 1; $i <= $input [ 'slider_qty' ]; $i++ ) {
-		if ( intval( $input[ 'featured_slider' ][ $i ] ) ) $input_validated[ 'featured_slider' ][ $i ] = absint($input[ 'featured_slider' ][ $i ] );
-	}
+ 	if ( isset( $input[ 'slider_qty' ] ) )	{	
+		for ( $i = 1; $i <= $input [ 'slider_qty' ]; $i++ ) {
+			if ( !empty( $input[ 'featured_slider' ][ $i ] ) && intval( $input[ 'featured_slider' ][ $i ] ) ) {
+				$input_validated[ 'featured_slider' ][ $i ] = absint($input[ 'featured_slider' ][ $i ] );
+			}
+		}
+	}	
 
     if ( isset( $input['remove_noise_effect'] ) ) {
         // Our checkbox value is either 0 or 1 
@@ -1085,7 +1084,9 @@ function simplecatch_theme_options_validate( $options ) {
     }
 
 	//Feed Redirect
-	$input_validated['feed_url'] = esc_url_raw($input['feed_url']);
+	if ( isset( $input[ 'feed_url' ] ) ) {
+		$input_validated['feed_url'] = esc_url_raw($input['feed_url']);
+	}
 	
 	//Clearing the theme option cache
 	if( function_exists( 'simplecatch_themeoption_invalidate_caches' ) ) simplecatch_themeoption_invalidate_caches();

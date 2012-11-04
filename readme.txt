@@ -188,3 +188,7 @@ Version 1.4.7
 
 Version 1.4.8
 * Fixed simplecatch.pot file for comment form labels
+
+Version 1.4.9
+* Improving Theme Options data validation
+
