@@ -1,14 +1,14 @@
-# Copyright (C) 2010 Beach
-# This file is distributed under the same license as the Beach package.
+# Copyright (C) 2012 Gibbo and Automattic
+# This file is distributed under the GNU General Public License.
 msgid ""
 msgstr ""
-"Project-Id-Version: Beach 1.0.3\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tag/beach\n"
-"POT-Creation-Date: 2011-10-04 22:59:23+00:00\n"
+"Project-Id-Version: Beach 1.1\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tags/beach\n"
+"POT-Creation-Date: 2012-11-06 02:48:55+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2010-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2012-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
@@ -87,7 +87,7 @@ msgid "Permalink to %s"
 msgstr ""
 
 #: content-aside.php:14 content-status.php:16 content.php:28 content.php:32
-#: functions.php:99
+#: functions.php:101
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
@@ -171,40 +171,40 @@ msgstr ""
 msgid "Secondary Menu"
 msgstr ""
 
-#: functions.php:69
+#: functions.php:71
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:88
+#: functions.php:90
 msgid "Post navigation"
 msgstr ""
 
-#: functions.php:89
+#: functions.php:91
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
 
-#: functions.php:90
+#: functions.php:92
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: functions.php:131
+#: functions.php:133
 msgid "%s <span class=\"says\">says:</span>"
 msgstr ""
 
-#: functions.php:134
+#: functions.php:136
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
 #. translators: 1: date, 2: time
-#: functions.php:142
+#: functions.php:144
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: functions.php:144 functions.php:165
+#: functions.php:146 functions.php:167
 msgid "(Edit)"
 msgstr ""
 
-#: functions.php:165
+#: functions.php:167
 msgid "Pingback:"
 msgstr ""
 
@@ -315,5 +315,9 @@ msgid ""
 "blue, green, two-columns, fixed-width, custom-menu, full-width-template, "
 "microformats, post-formats, rtl-language-support, sticky-post, translation-"
 "ready, blog, journal, nature, outdoors, seasonal, travel, cartoony, clean, "
-"colorful, hand-drawn, outdoorsy, vibrant, whimsical"
+"colorful, hand-drawn, outdoorsy, vibrant, whimsical, infinite-scroll"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Full-width, no sidebar"
 msgstr ""

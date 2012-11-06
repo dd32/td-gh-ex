@@ -12,16 +12,16 @@
  */
 load_theme_textdomain( 'beach', get_template_directory() . '/languages' );
 
-$locale = get_locale();
-$locale_file = get_template_directory() . "/languages/$locale.php";
-if ( is_readable( $locale_file ) )
-	require_once( $locale_file );
-
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) )
 	$content_width = 530;
+
+/**
+ * Load Jetpack compatibility file.
+ */
+require( get_template_directory() . '/inc/jetpack.compat.php' );
 
 /**
  * Set $themecolors array.
@@ -51,6 +51,8 @@ add_theme_support( 'automatic-feed-links' );
  * Add Post Format support
  */
 add_theme_support( 'post-formats', array( 'aside', 'gallery', 'quote', 'status' ) );
+
+add_theme_support( 'print-style' );
 
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.

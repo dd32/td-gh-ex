@@ -7,7 +7,7 @@
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<header class="entry-header">
-			<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'beach' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+			<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'beach' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
 			<div class="entry-meta">
 				<?php
@@ -38,7 +38,7 @@
 										<a class="size-thumbnail" href="<?php the_permalink(); ?>"><?php echo $image_img_tag; ?></a>
 									</div><!-- .gallery-thumb -->
 									<p><em><?php printf( _n( 'This gallery contains <a %1$s>%2$s photo</a>.', 'This gallery contains <a %1$s>%2$s photos</a>.', $total_images, 'toolbox' ),
-											'href="' . get_permalink() . '" title="' . sprintf( esc_attr__( 'Permalink to %s', 'toolbox' ), the_title_attribute( 'echo=0' ) ) . '" rel="bookmark"',
+											'href="' . get_permalink() . '" title="' . esc_attr( sprintf( __( 'Permalink to %s', 'beach' ), the_title_attribute( 'echo=0' ) ) ) . '" rel="bookmark"',
 											number_format_i18n( $total_images )
 										); ?></em></p>
 							<?php endif; ?>
