@@ -1,4 +1,10 @@
 <?php
+
+/**
+* Exit if file is directly accessed. 
+*/ 
+if ( !defined('ABSPATH')) exit;
+
 /**
 * Search actions used by the CyberChimps Synapse Core Framework
 *
@@ -66,7 +72,7 @@ function synapse_search_content() {
 
 	<?php else : ?>
 
-		<h2><?php printf( __( $noresults, 'core' )) ; ?></h2>
+		<h2><?php printf( $noresults ) ; ?></h2>
 
 	<?php endif; ?>
 		</div><!--end content_padding-->
