@@ -8,6 +8,13 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+----
+
+(11/07/2012) - Maintenance and Improvements - Version 1.8.2
+[*] Localization Improvements
+[*] TinyNav Update
+[*] CSS Improvements
+
 (10/11/2012) - IE Fix - Version 1.8.0.1
 [!] IE Current Page Item Fix
 

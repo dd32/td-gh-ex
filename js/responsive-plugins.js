@@ -19,5 +19,5 @@ jQuery(document).ready(function(){
 // Responsive Menu
 jQuery(".menu").tinyNav({
     active: 'current_page_item', // Set the "active" class
-    header: false // Show header instead of the active item
+    //header: Navigation // Show header instead of the active item
 });
