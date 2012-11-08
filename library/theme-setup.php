@@ -12,7 +12,7 @@ function asteroid_option( $option ) {
 --------------------------------------*/
 function ast_enqueue_styles(){
 	if ( ! is_admin() ) {
-		wp_register_style('asteroid-main-style', get_stylesheet_uri(), array(), '1.0.2', 'screen'); 
+		wp_register_style('asteroid-main-style', get_stylesheet_uri(), array(), '1.0.3', 'screen'); 
 		wp_enqueue_style( 'asteroid-main-style' );
 	}
 }
@@ -83,7 +83,7 @@ if (function_exists( 'register_sidebar' ) ) {
 		'id' 			=> 'widgets_sidebar',
 		'before_widget' => '<div id="%1$s" class="widget-sidebar %2$s">',
 		'after_widget' 	=> '</div>',
-		'before_title' 	=> '<h4>',
+		'before_title' 	=> '<h4 class="widget-title">',
 		'after_title' 	=> '</h4>',) );
 	// footer widgets
 	register_sidebar(array(
@@ -91,7 +91,7 @@ if (function_exists( 'register_sidebar' ) ) {
 		'id' 			=> 'widgets_footer',
 		'before_widget' => '<div id="%1$s" class="widget-footer %2$s">',
 		'after_widget' 	=> '</div>',
-		'before_title' 	=> '<h4>',
+		'before_title' 	=> '<h4 class="widget-title">',
 		'after_title' 	=> '</h4>',) );
 
 	// Body Widget
@@ -100,7 +100,9 @@ if (function_exists( 'register_sidebar' ) ) {
 			'name' 			=> 'Body',
 			'id' 			=> 'widgets_body',
 			'before_widget' => '<div id="%1$s" class="widget-body %2$s">',
-			'after_widget' 	=> '</div>',) );
+			'after_widget' 	=> '</div>',
+			'before_title' 	=> '<h4 class="widget-title">',
+			'after_title' 	=> '</h4>',) );
 	}
 	// Header Widget
 	if ( asteroid_option('ast_widget_header') == 1 ) {
@@ -108,7 +110,9 @@ if (function_exists( 'register_sidebar' ) ) {
 			'name' 			=> 'Header',
 			'id' 			=> 'widgets_header',
 			'before_widget' => '<div id="%1$s" class="widget-header %2$s">',
-			'after_widget' 	=> '</div>',) );
+			'after_widget' 	=> '</div>',
+			'before_title' 	=> '<h4 class="widget-title">',
+			'after_title' 	=> '</h4>',) );
 	}
 	// Below Menu
 	if ( asteroid_option('ast_widget_below_menu') == 1 ) {
@@ -116,7 +120,9 @@ if (function_exists( 'register_sidebar' ) ) {
 			'name' 			=> 'Below Menu',
 			'id' 			=> 'widgets_below_menu',
 			'before_widget' => '<div id="%1$s" class="widget-below-menu %2$s">',
-			'after_widget' 	=> '</div>',) );
+			'after_widget' 	=> '</div>',
+			'before_title' 	=> '<h4 class="widget-title">',
+			'after_title' 	=> '</h4>',) );
 	}
 	
 	// Before Post
@@ -125,7 +131,9 @@ if (function_exists( 'register_sidebar' ) ) {
 			'name' 			=> 'Before Post',
 			'id' 			=> 'widgets_before_post',
 			'before_widget' => '<div id="%1$s" class="widget-before-post %2$s">',
-			'after_widget' 	=> '</div>',) );
+			'after_widget' 	=> '</div>',
+			'before_title' 	=> '<h4 class="widget-title">',
+			'after_title' 	=> '</h4>',) );
 	}
 	// Before Post Content
 	if ( asteroid_option('ast_widget_before_post_content') == 1 ) {
@@ -133,7 +141,9 @@ if (function_exists( 'register_sidebar' ) ) {
 			'name' 			=> 'Before Post - Content',
 			'id' 			=> 'widgets_before_post_content',
 			'before_widget' => '<div id="%1$s" class="widget-before-post-content %2$s">',
-			'after_widget' 	=> '</div>',) );
+			'after_widget' 	=> '</div>',
+			'before_title' 	=> '<h4 class="widget-title">',
+			'after_title' 	=> '</h4>',) );
 	}
 	// After Post Content
 	if ( asteroid_option('ast_widget_after_post_content') == 1 ) {
@@ -141,7 +151,9 @@ if (function_exists( 'register_sidebar' ) ) {
 			'name' 			=> 'After Post - Content',
 			'id' 			=> 'widgets_after_post_content',
 			'before_widget' => '<div id="%1$s" class="widget-after-post-content %2$s">',
-			'after_widget' 	=> '</div>',) );
+			'after_widget' 	=> '</div>',
+			'before_title' 	=> '<h4 class="widget-title">',
+			'after_title' 	=> '</h4>',) );
 	}
 	// After Post
 	if ( asteroid_option('ast_widget_after_post') == 1 ) {
@@ -149,7 +161,9 @@ if (function_exists( 'register_sidebar' ) ) {
 			'name' 			=> 'After Post',
 			'id' 			=> 'widgets_after_post',
 			'before_widget' => '<div id="%1$s" class="widget-after-post %2$s">',
-			'after_widget' 	=> '</div>',) );
+			'after_widget' 	=> '</div>',
+			'before_title' 	=> '<h4 class="widget-title">',
+			'after_title' 	=> '</h4>',) );
 	}
 		
 	// Before Page
@@ -158,7 +172,9 @@ if (function_exists( 'register_sidebar' ) ) {
 			'name' 			=> 'Before Page',
 			'id' 			=> 'widgets_before_page',
 			'before_widget' => '<div id="%1$s" class="widget-before-page %2$s">',
-			'after_widget' 	=> '</div>',) );
+			'after_widget' 	=> '</div>',
+			'before_title' 	=> '<h4 class="widget-title">',
+			'after_title' 	=> '</h4>',) );
 	}
 	// Before Page Content
 	if ( asteroid_option('ast_widget_before_page_content') == 1 ) {
@@ -166,7 +182,9 @@ if (function_exists( 'register_sidebar' ) ) {
 			'name' 			=> 'Before Page - Content',
 			'id' 			=> 'widgets_before_page_content',
 			'before_widget' => '<div id="%1$s" class="widget-before-page-content %2$s">',
-			'after_widget' 	=> '</div>',) );
+			'after_widget' 	=> '</div>',
+			'before_title' 	=> '<h4 class="widget-title">',
+			'after_title' 	=> '</h4>',) );
 	}
 	// After Page Content
 	if ( asteroid_option('ast_widget_after_page_content') == 1 ) {
@@ -174,7 +192,9 @@ if (function_exists( 'register_sidebar' ) ) {
 			'name' 			=> 'After Page - Content',
 			'id' 			=> 'widgets_after_page_content',
 			'before_widget' => '<div id="%1$s" class="widget-after-page-content %2$s">',
-			'after_widget' 	=> '</div>',) );
+			'after_widget' 	=> '</div>',
+			'before_title' 	=> '<h4 class="widget-title">',
+			'after_title' 	=> '</h4>',) );
 	}
 	// After Page
 	if ( asteroid_option('ast_widget_after_page') == 1 ) {
@@ -182,7 +202,9 @@ if (function_exists( 'register_sidebar' ) ) {
 			'name' 			=> 'After Page',
 			'id' 			=> 'widgets_after_page',
 			'before_widget' => '<div id="%1$s" class="widget-after-page %2$s">',
-			'after_widget' 	=> '</div>',) );
+			'after_widget' 	=> '</div>',
+			'before_title' 	=> '<h4 class="widget-title">',
+			'after_title' 	=> '</h4>',) );
 	}
 }
 

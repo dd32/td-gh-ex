@@ -683,11 +683,11 @@ class My_Theme_Options {
 	   Description for pages
 	--------------------------------------*/
 	public function display_section() {
-		// None
+		// No Description
 	}
 	
 	public function display_about_section() {
-		// code	
+		// No Description	
 	}
 	
 	/*-------------------------------------

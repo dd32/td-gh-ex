@@ -4,7 +4,7 @@ Theme URI: http://ronangelo.com/asteroid/
 Description: Asteroid is a simple, clean and responsive theme. It incorporates various widget areas that make management of banners and ads a lot easier, especially for ad-supported sites.
 Author: ronangelo
 Author URI: http://ronangelo.com/
-Version: 1.0.2
+Version: 1.0.3
 Tags: black, white, gray, two-columns, right-sidebar, fixed-width, custom-header, custom-background, featured-images, custom-menu, custom-colors, theme-options, threaded-comments, sticky-post, editor-style, full-width-template, threaded-comments
 
 License: GNU General Public License, Version 3 or later
@@ -76,7 +76,7 @@ a, textarea, input, button {
 	}
 		#header-info-wrap hgroup {
 			margin-top: 18px;
-			margin-left: 10px
+			margin-left: 18px
 		}
 			#site-title {
 				font-size:44px;  
@@ -328,7 +328,7 @@ a, textarea, input, button {
 .widget-sidebar {margin-top: 20px; margin-bottom: 20px; position: relative;}
 .widget-sidebar ul {padding: 0 14px; list-style: none;}
 .widget-sidebar li {border-bottom: 1px solid #CFCFCF;padding: 4px 0 2px;}
-.widget-sidebar h4 {background:#CCC; padding: 3px 0 3px 8px; margin-bottom: 4px; font-size: 16px; border:1px solid #999;}
+.widget-sidebar h4 {background:#CCC; padding: 3px 0 3px 8px; margin-bottom: 4px; border:1px solid #999;}
 .widget-sidebar img {
     display: block;
     margin: 10px auto !important;
@@ -344,13 +344,13 @@ a, textarea, input, button {
 	margin-left: 8px;
 	margin-bottom: 6px;
 	width: 230px;
+	overflow: hidden;
 }
 .widget-footer h4 {	
 	background: #222;
     border: 1px solid #000;
     border-radius: 6px;
     color: #FFF;
-    font-size: 16px;
     padding: 3px 6px 3px 8px;
     text-shadow: 2px 2px 2px #000;
 }
@@ -362,6 +362,8 @@ a, textarea, input, button {
 /*-------------------------------------
    Custom Widgets
 --------------------------------------*/
+.widget-title  {font-size: 16px;}
+
 #widgets-wrap-header {
 	float: right; 
 	margin-top: 10px; 
@@ -375,7 +377,23 @@ a, textarea, input, button {
 	box-shadow: 0 -1px 2px #000 inset;
 	overflow: hidden;
 }
-.widget-below-menu {display: inline-block;}
+.widget-below-menu {
+	float: left;
+	color: #FFF;
+	margin: 6px;
+}
+.widget-below-menu .widget-title {
+	background: none repeat scroll 0 0 #222;
+    border: 1px solid #000;
+    border-radius: 6px 6px 6px 6px;
+    color: #FFF;
+    padding: 3px 6px 3px 8px;
+    text-shadow: 2px 2px 2px #000;
+}
+.widget-below-menu a {color: #FC9A08; text-shadow: 2px 2px 2px #000;}
+.widget-below-menu ul {padding: 4px 8px 6px;}
+.widget-below-menu .textwidget {padding: 6px;}
+
 
 #widgets-wrap-before-post, #widgets-wrap-before-page {
 	overflow: hidden;
@@ -576,6 +594,9 @@ a, textarea, input, button {
 }
 .single-wrap .updated {color: #666; font-size: 11px;}
 
+.type-attachment .single-entry .attachment {
+    text-align: center;
+}
 .next-previous-attachment {
 	overflow: hidden;
 }
@@ -775,9 +796,9 @@ blockquote cite:before {
 --------------------------------------*/
 .ast-search{
 	background: #D0C776;
-    margin: 20px auto;
     padding: 10px;
     width: 220px;
+	margin: auto auto;
 	box-shadow: 0 0 2px #000;
 	overflow: hidden;
 }
@@ -815,6 +836,7 @@ blockquote cite:before {
 	color: #333;
 	font-size: 14px;
 }
+.not-found-wrap .ast-search {margin: 20px auto;}
 
 
 /*-------------------------------------
