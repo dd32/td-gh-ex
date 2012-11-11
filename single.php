@@ -20,8 +20,8 @@
 		<?php endwhile;endif;?>
 	</div>
 	
-	
-	<div id="postnavigation">
+<div class="divider"></div>
+<div id="postnavigation">
 <div id="previousposts"><?php previous_post_link('%link'); ?></div>
 <div id="nextposts"><?php next_post_link('%link'); ?></div>
 </div>

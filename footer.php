@@ -38,7 +38,7 @@
 <div class="content"><p>
 <?php _e('Copyright','appliance');?> &copy; <?php echo date('Y')?> <a title="<?php bloginfo('title')?>" href="<?php echo site_url()?>"><?php bloginfo('title')?></a>
 <br/><br/>
-<?php printf( __( 'Powered by <a href="http://wordpress.org" title="%1$s">%2$s</a> and <a href="http://www.applianceuk.com" title="%3$s">%4$s</a>', 'appliance' ), esc_attr('WordPress'), esc_attr( 'WordPress'), esc_attr('Appliance'), esc_attr( 'Appliance' )); ?>
+<?php printf( __( 'Powered by <a href="http://wordpress.org" title="%1$s">%2$s</a> and <a href="http://www.applymedia.co.uk" title="%3$s">%4$s</a>', 'appliance' ), esc_attr('WordPress'), esc_attr( 'WordPress'), esc_attr('Apply Media'), esc_attr( 'Apply Media' )); ?>
 </p>
 </div>
 

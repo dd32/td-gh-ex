@@ -29,7 +29,6 @@ echo $category[0]->cat_name;
 </div>
 
 <div class="divider"></div>
-
 <div id="postnavigation">
 <div id="previousposts"><?php next_posts_link( __( 'Previous Entries', 'appliance' ) ); ?></div>
 <div id="nextposts"><?php previous_posts_link( __( 'Next Entries', 'appliance' ) ); ?></div>
