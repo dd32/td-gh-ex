@@ -202,9 +202,9 @@ function sempress_comment( $comment, $args, $depth ) {
   <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
     <article id="comment-<?php comment_ID(); ?>" class="comment <?php $comment->comment_type; ?>">
       <footer>
-        <div class="comment-author vcard h-card">
+        <div class="comment-author vcard hcard h-card">
           <?php echo get_avatar( $comment, 40 ); ?>
-          <?php printf( __( '%s <span class="says">says:</span>', 'sempress' ), sprintf( '<cite class="fn p-fn p-name">%s</cite>', get_comment_author_link() ) ); ?>
+          <?php printf( __( '%s <span class="says">says:</span>', 'sempress' ), sprintf( '<cite class="fn p-name">%s</cite>', get_comment_author_link() ) ); ?>
         </div><!-- .comment-author .vcard -->
         <?php if ( $comment->comment_approved == '0' ) : ?>
           <em><?php _e( 'Your comment is awaiting moderation.', 'sempress' ); ?></em>
@@ -240,7 +240,7 @@ if ( ! function_exists( 'sempress_posted_on' ) ) :
  * @since SemPress 1.0.0
  */
 function sempress_posted_on() {
-  printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date updated dt-updated" datetime="%3$s" itemprop="dateModified">%4$s</time></a><span class="byline"> <span class="sep"> by </span> <span class="author p-author vcard hcard h-card" itemprop="author" itemscope itemtype="http://schema.org/Person"><a class="url u-url fn p-fn p-name" href="%5$s" title="%6$s" rel="author" itemprop="url"><span itemprop="name">%7$s</span></a></span></span>', 'sempress' ),
+  printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date updated dt-updated" datetime="%3$s" itemprop="dateModified">%4$s</time></a><span class="byline"> <span class="sep"> by </span> <span class="author p-author vcard hcard h-card" itemprop="author" itemscope itemtype="http://schema.org/Person"><a class="url uid u-url u-uid fn p-name" href="%5$s" title="%6$s" rel="author" itemprop="url"><span itemprop="name">%7$s</span></a></span></span>', 'sempress' ),
     esc_url( get_permalink() ),
     esc_attr( get_the_time() ),
     esc_attr( get_the_date( 'c' ) ),
@@ -296,7 +296,37 @@ add_filter( 'body_class', 'sempress_body_classes' );
 function sempress_post_classes( $classes ) {
   // Adds a class for microformats v2
   $classes[] = 'h-entry';
-
+  
+  // adds microformats 2 activity-stream support
+  // for pages and articles
+  if ( get_post_type() == "page" ) {
+    $classes[] = "h-as-page";
+  }
+  if ( !get_post_format() && get_post_type() == "post" ) {
+    $classes[] = "h-as-article";
+  }
+  
+  // adds some more microformats 2 classes based on the
+  // posts "format"
+  switch ( get_post_format() ) {
+    case "aside":
+    case "status":
+      $classes[] = "h-as-note";
+      break;
+    case "audio":
+      $classes[] = "h-as-audio";
+      break;
+    case "video":
+      $classes[] = "h-as-video";
+      break;
+    case "image":
+      $classes[] = "h-as-image";
+      break;
+    case "link":
+      $classes[] = "h-as-bookmark";
+      break;
+  }
+  
   return $classes;
 }
 add_filter( 'post_class', 'sempress_post_classes' );
