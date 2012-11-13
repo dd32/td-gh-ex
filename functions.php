@@ -635,13 +635,13 @@ function catchbox_body_classes( $classes ) {
 	if ( function_exists( 'is_multi_author' ) && !is_multi_author() ) {
 		$classes[] = 'single-author';
 	}
-	if ( $layout == 'content-sidebar' && !is_page_template( 'page-disable-sidebar.php' ) && !is_page_template( 'page-fullwidth.php' ) ) {
+	if ( $layout == 'content-sidebar' && !is_page_template( 'page-disable-sidebar.php' ) && !is_page_template( 'page-fullwidth.php' )  && !is_page_template( 'page-onecolumn.php' ) ) {
 		$classes[] = 'content-sidebar';
 	}
-	elseif ( $layout == 'sidebar-content' && !is_page_template( 'page-disable-sidebar.php' ) && !is_page_template( 'page-fullwidth.php' ) ) {
+	elseif ( $layout == 'sidebar-content' && !is_page_template( 'page-disable-sidebar.php' ) && !is_page_template( 'page-fullwidth.php' )  && !is_page_template( 'page-onecolumn.php' ) ) {
 		$classes[] = 'sidebar-content';
 	}
-	elseif ( $layout == 'content-onecolumn' && !is_page_template( 'page-disable-sidebar.php' ) && !is_page_template( 'page-fullwidth.php' ) ) {
+	elseif ( $layout == 'content-onecolumn' || is_page_template( 'page-onecolumn.php' ) && !is_page_template( 'page-disable-sidebar.php' ) && !is_page_template( 'page-fullwidth.php' ) ) {
 		$classes[] = 'content-onecolumn';
 	}	
 	elseif ( is_page_template( 'page-disable-sidebar.php' ) || is_attachment() ) {

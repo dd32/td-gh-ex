@@ -10,7 +10,7 @@
 $options = catchbox_get_theme_options();
 $layout = $options['theme_layout'];
 	
-if ( $layout == 'content-onecolumn' || is_page_template( 'page-disable-sidebar.php' ) ) : 
+if ( $layout == 'content-onecolumn' || is_page_template( 'page-disable-sidebar.php' ) || is_page_template( 'page-fullwidth.php' ) || is_page_template( 'page-onecolumn.php' ) ) : 
 	return false;
 else :
 ?>
