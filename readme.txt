@@ -192,3 +192,7 @@ Version 1.4.8
 Version 1.4.9
 * Improving Theme Options data validation
 
+Version 1.4.9.1
+* Fixed CSS Pagination with WP-PageNavi and WP Page Numbers Plugins
+* Fixed CSS for default textarea
+

@@ -4,7 +4,7 @@ Theme URI: http://catchthemes.com/themes/simple-catch
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
 Description: Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework. Multilingual Ready (WPML) and also currently translated in Polish. 
-Version: 1.4.9
+Version: 1.4.9.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, gray, silver, white, light, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, custom-menu, featured-images, full-width-template, theme-options, threaded-comments, translation-ready
@@ -215,7 +215,6 @@ input[type=text]:focus, input.text:focus, input.title:focus, textarea:focus, sel
 }
 textarea {
 	padding:10px;
-	background-color: #F3F3F3;
 }
 /* Contact Form 7 Support */
 .wpcf7-form span.wpcf7-not-valid-tip {
@@ -1418,21 +1417,33 @@ img.size-medium,
 }
 /* =Pagination
 -------------------------------------------------------------- */
-#wp_page_numbers, #content .wp-pagenavi {
-	float:right;
-	padding-bottom:30px;
+#content #wp_page_numbers, 
+#content .wp-pagenavi {
+	float: right;
+	margin: 0;
+	padding-bottom: 30px;
+	width: auto;
 }
-#wp_page_numbers ul {
-	list-style:none;
+#content #wp_page_numbers ul {
+	border: none;
+	list-style: none;
 }
-#wp_page_numbers ul li {
+#content #wp_page_numbers ul li.page_info,
+#content .wp-pagenavi .pages {
+	background: none;
+	border: none;
+	color: #aaa;
+	font-size: 14px;
 	float:left;
-	margin-left:10px;
-	color:#aaa;
-	line-height:30px;
-	font-size:12px;
+	line-height: 30px;
+    padding: 2px;
 }
-#wp_page_numbers ul li a, #content .wp-pagenavi a, #content .wp-pagenavi span {
+#content #wp_page_numbers ul li {
+	margin-left: 10px;	
+}
+#content #wp_page_numbers ul li a,
+#content .wp-pagenavi a, 
+#content .wp-pagenavi span {
 	border: none;
 	float:left;
 	height:32px;
@@ -1445,14 +1456,17 @@ img.size-medium,
 	padding:0 12px;
 	text-decoration:none;
 }
-#content .wp-pagenavi a, #content .wp-pagenavi span {
+#content .wp-pagenavi a, 
+#content .wp-pagenavi span {
 	margin: 0 0 0 10px;
 }
-#wp_page_numbers ul li a:hover, #content .wp-pagenavi a:hover {
+#content #wp_page_numbers ul li a:hover,
+#content .wp-pagenavi a:hover {
 	background:#444;
 	color:#fff;
 }
-#wp_page_numbers ul li.active_page a, #content .wp-pagenavi span.current {
+#content #wp_page_numbers ul li.active_page a, 
+#content .wp-pagenavi span.current {
 	background:#444;
 	color:#fff;
 	font-weight: normal;
