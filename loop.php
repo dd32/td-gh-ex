@@ -59,6 +59,13 @@
 		<div class="read-more">
 			<a href="<?php the_permalink(); ?>" class="read-more-button">Read More</a>
 		</div>
+		
+		<!-- Widgets: Below Excerpts -->
+		<?php if ( is_active_sidebar( 'widgets_below_excerpts' ) )  : ?>
+			<div id="widgets-wrap-below-excerpts">
+				<?php dynamic_sidebar( 'widgets_below_excerpts' ); ?>
+			</div>
+		<?php endif ; ?>
 	<?php else : ?>
 		<div class="loop-tags"><?php the_tags(); ?></div>
 	<?php endif ; ?>

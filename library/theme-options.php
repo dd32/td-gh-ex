@@ -340,12 +340,12 @@ class My_Theme_Options {
 		
 		$this->settings['ast_post_display_type'] = array(
 			'section' => 'general',
-			'title'   => ( 'Home Post Display' ),
-			'desc'    => ( 'Show excerpts or full posts on the home page.' ),
+			'title'   => ( 'Post Display on Blog' ),
+			'desc'    => ( 'Show excerpts or full posts on non-singular pages.' ),
 			'type'    => 'radio',
 			'std'     => '1',
 			'choices' => array(
-				'1' => 'Excerpts',
+				'1' => 'Excerpt',
 				'2' => 'Full Post'
 				)
 		);
@@ -459,10 +459,10 @@ class My_Theme_Options {
 		
 		$this->settings['ast_blog_date'] = array(
 			'section' => 'post-page',
-			'title'   => ( 'Publish Date on Home' ),
+			'title'   => ( 'Blog Publish Date' ),
 			'desc'    => ( 'Show Publish Date on Blog, Archives, Searches and Excerpts.' ),
 			'type'    => 'checkbox',
-			'std'     => 0
+			'std'     => 1
 		);
 		
 		$this->settings['ast_post_date'] = array(
@@ -565,6 +565,22 @@ class My_Theme_Options {
 			'std'     => 0
 		);
 		
+		$this->settings['ast_widget_before_content'] = array(
+			'section' => 'custom-widgets',
+			'title'   => ( 'Widgets Before Content' ),
+			'desc'    => ( 'Allow widgets on top of the content.' ),
+			'type'    => 'checkbox',
+			'std'     => 0
+		);
+		
+		$this->settings['ast_widget_below_excerpts'] = array(
+			'section' => 'custom-widgets',
+			'title'   => ( 'Widgets Below Excerpts' ),
+			'desc'    => ( 'Allow widgets below the excerpts.' ),
+			'type'    => 'checkbox',
+			'std'     => 0
+		);
+		
 		$this->settings['ast_opt_head_5_1'] = array(
 			'section' => 'custom-widgets',
 			'title'   => ( '' ),
@@ -658,8 +674,8 @@ class My_Theme_Options {
 		
 		$this->settings['ast_remove_theme_link'] = array(
 			'section' => 'misc',
-			'title'   => ( 'Remove Theme link' ),
-			'desc'    => ( 'Remove the Asteroid Theme link in the footer.' ),
+			'title'   => ( 'Remove Theme URL' ),
+			'desc'    => ( 'Remove the Asteroid Theme URL in the footer.' ),
 			'type'    => 'checkbox',
 			'std'     => 0
 		);

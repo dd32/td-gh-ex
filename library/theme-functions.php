@@ -59,7 +59,7 @@ function ast_print_layout() {
 	echo '#container {width:' . ( $content_x + $sidebar_x + 30 ) . 'px;}' . "\n";
 	echo '#header {min-height:' . asteroid_option('ast_header_height') . 'px; background-color: #' . asteroid_option('ast_header_bgcolor') . ';}' . "\n";
 	echo '#content {width:' . $content_x . 'px; max-width:' . $content_x . 'px; background-color: #' . asteroid_option('ast_content_bgcolor') . ';}' . "\n";
-	echo '#sidebar {width:' . $sidebar_x . 'px; background-color: #' . asteroid_option('ast_sidebar_bgcolor') . ';}' . "\n";
+	echo '#sidebar {width:' . $sidebar_x . 'px; max-width:' . $sidebar_x . 'px; background-color: #' . asteroid_option('ast_sidebar_bgcolor') . ';}' . "\n";
 	echo '</style>';
 }
 add_action( 'wp_head', 'ast_print_layout', 600 );

@@ -2,6 +2,13 @@
 
 <div id="content" >
 
+	<!-- Widgets: Before Content -->
+	<?php if ( is_active_sidebar( 'widgets_before_content' ) )  : ?>
+		<div id="widgets-wrap-before-content">
+			<?php dynamic_sidebar( 'widgets_before_content' ); ?>
+		</div>
+	<?php endif ; ?>
+
 	<!-- Start the Loop -->
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>  
 		

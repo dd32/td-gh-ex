@@ -12,7 +12,7 @@ function asteroid_option( $option ) {
 --------------------------------------*/
 function ast_enqueue_styles(){
 	if ( ! is_admin() ) {
-		wp_register_style('asteroid-main-style', get_stylesheet_uri(), array(), '1.0.3', 'screen'); 
+		wp_register_style('asteroid-main-style', get_stylesheet_uri(), array(), '1.0.4', 'screen'); 
 		wp_enqueue_style( 'asteroid-main-style' );
 	}
 }
@@ -64,13 +64,13 @@ if ( function_exists( 'register_nav_menu' ) ) register_nav_menu( 'ast-menu-prima
 /*----------------------------------------
 	Add class to Menu item with child
 -----------------------------------------*/
-function ast_check_for_submenu($classes, $item) {
+function ast_add_parent_menu_class($classes, $item) {
     global $wpdb;
     $has_children = $wpdb->get_var("SELECT COUNT(meta_id) FROM wp_postmeta WHERE meta_key='_menu_item_menu_item_parent' AND meta_value='".$item->ID."'");
     if ($has_children > 0) array_push($classes,'parent-menu-item');
     return $classes;
 }
-add_filter( 'nav_menu_css_class', 'ast_check_for_submenu', 10, 2);
+add_filter( 'nav_menu_css_class', 'ast_add_parent_menu_class', 10, 2);
 
 
 /*----------------------------------------
@@ -120,6 +120,26 @@ if (function_exists( 'register_sidebar' ) ) {
 			'name' 			=> 'Below Menu',
 			'id' 			=> 'widgets_below_menu',
 			'before_widget' => '<div id="%1$s" class="widget-below-menu %2$s">',
+			'after_widget' 	=> '</div>',
+			'before_title' 	=> '<h4 class="widget-title">',
+			'after_title' 	=> '</h4>',) );
+	}
+	// Before Content
+	if ( asteroid_option('ast_widget_before_content') == 1 ) {
+		register_sidebar(array(
+			'name' 			=> 'Before Content',
+			'id' 			=> 'widgets_before_content',
+			'before_widget' => '<div id="%1$s" class="widget-before-content %2$s">',
+			'after_widget' 	=> '</div>',
+			'before_title' 	=> '<h4 class="widget-title">',
+			'after_title' 	=> '</h4>',) );
+	}
+	// Below Excerpts
+	if ( asteroid_option('ast_widget_below_excerpts') == 1 ) {
+		register_sidebar(array(
+			'name' 			=> 'Below Excerpts',
+			'id' 			=> 'widgets_below_excerpts',
+			'before_widget' => '<div id="%1$s" class="widget-below-excerpts %2$s">',
 			'after_widget' 	=> '</div>',
 			'before_title' 	=> '<h4 class="widget-title">',
 			'after_title' 	=> '</h4>',) );

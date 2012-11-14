@@ -4,7 +4,7 @@ Theme URI: http://ronangelo.com/asteroid/
 Description: Asteroid is a simple, clean and responsive theme. It incorporates various widget areas that make management of banners and ads a lot easier, especially for ad-supported sites.
 Author: ronangelo
 Author URI: http://ronangelo.com/
-Version: 1.0.3
+Version: 1.0.4
 Tags: black, white, gray, two-columns, right-sidebar, fixed-width, custom-header, custom-background, featured-images, custom-menu, custom-colors, theme-options, threaded-comments, sticky-post, editor-style, full-width-template, threaded-comments
 
 License: GNU General Public License, Version 3 or later
@@ -47,10 +47,10 @@ a {
 a:hover {color: #f00;}
 
 a, textarea, input, button {
-	-moz-transition: all 0.14s ease-out; 
-	-webkit-transition: all 0.14s ease-out; 
-	-o-transition: all 0.14s ease-out;
-	transition: all 0.14s ease-out;
+	-moz-transition: all 0.10s ease-out; 
+	-webkit-transition: all 0.10s ease-out; 
+	-o-transition: all 0.10s ease-out;
+	transition: all 0.10s ease-out;
 }
 
 
@@ -75,7 +75,7 @@ a, textarea, input, button {
 		margin-bottom: 8px;
 	}
 		#header-info-wrap hgroup {
-			margin-top: 18px;
+			margin-top: 20px;
 			margin-left: 18px
 		}
 			#site-title {
@@ -142,10 +142,11 @@ a, textarea, input, button {
 		}
 		
 		#theme-credit {
-			color: #BBB;
+			color: #CCC;
 			float: right;
-			font: bold 12px verdana,sans-serif;
+			font: normal 11px verdana, tahoma, sans-serif;
 			margin-top: 4px;
+			text-transform: uppercase;
 		}
 
 		
@@ -198,12 +199,16 @@ a, textarea, input, button {
 	text-shadow:  none;
 }
 
+/* Root-Menu Parent Arrows */
 #nav .menu > .parent-menu-item > a:after {
-    content: url("images/arrow-down-w.png");
-	padding-left: 6px;
+	content: "";
+	padding-left: 16px;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAJCAQAAAChr3WYAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABSSURBVHjajM6xEUBQFETR+42EftTyU5GUCgQa0IXy5MyYK+CNgMBGuyfaJO8U/MWShoWKDQCpWcmInU92syBif9NhK4E4qjpcKxBnp+jp6+c5ACEGPYQx6rvMAAAAAElFTkSuQmCC);
+	background-repeat: no-repeat;
+	background-position: right 60%;
 }
 #nav .menu > .parent-menu-item > a:hover:after {
-    content: url("images/arrow-down-b.png");
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAJCAQAAAChr3WYAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABOSURBVHjajM6xDUBgGITh59exj1m0Ki0TKCxgC+PpSeRTEBEU7rq3eO9SeCfzFyalSW4BoTCroBFX1wNBe6JNfdf0Quie9tFwDX393AcAPOIVqZz6wD8AAAAASUVORK5CYII=);
 }
 
 #nav .sub-menu {
@@ -240,13 +245,14 @@ a, textarea, input, button {
 
 #nav .sub-menu li .sub-menu {margin-top: -1px;}
 
+/* Sub-Menu Parent Arrows */
 #nav .sub-menu > .parent-menu-item > a {
-    background-image: url("images/arrow-right-w.png");
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAKCAQAAADMDLw1AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABSSURBVHjaYvjP8J/hP8N/bSjN8J8BxrjyPxxd6Nn/X/8TUIXu/P///+//AmShu/8hoOk/AxMDKuBlQFNVh6zxyf////NRjb/9Pw3dEaYIpwIGAFJfYxqarDBZAAAAAElFTkSuQmCC);
 	background-repeat: no-repeat;
 	background-position: 98% center;
 }
 #nav .sub-menu > .parent-menu-item > a:hover {
-    background-image: url("images/arrow-right-b.png");
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAKCAQAAADMDLw1AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABRSURBVHjaYvjP8J/hPwODNgMU/GdggApdYQhHF3rG8IshAVXoDsN/hr8MBchCd6GMpv8MTAyogJcBTVUdssYnDP8Z8lGNv82Qhu4IU4RTAQMAwv82R52l8+0AAAAASUVORK5CYII=);	
 }
 
 /* Display Sub-Menus */
@@ -310,7 +316,9 @@ a, textarea, input, button {
 	margin-top: 1px;
 }
 #nav .ast-search-submit {
-    background: url("images/find.png") no-repeat transparent;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAQkSURBVHjahNR7SJV3HMfxtx5tx0sWqFRmDlRai2mtGhITNthGoAQTmuYidolBi/pnsWBbzWhIFIvVPzkTIke1DWGDLWpmNW8nnZeTecvTOZrrdDkeWzPF27HjZ388P+Ngyn7whR/P8/B6vs+X5/fhJSANeB3YDXwKbAb2A+8DO2DBAUh9GTasg9fegvTDYM8GjgFvAkdMfQwkAXEAs+FdwCZgHyTuhZwiKK6Gi39A6xVwXoXKn+HIR7D5MCzLAo7+H7wH+MDqOqcMLreBXKAOUI/Ze0B3QA9Bv0L9Lth6ACKPzgdnWzciv4IvHPCkC9QE+gvUDGoBtYLazItcID/IC1MlcKQIonfMhtOBdWD7Gr68DsEmUB3IYeAW85IWUGdEhLpsNnWAukH3TJXBt4UQtXwGXgWsAHIhrx7GGkHVBr0OajR1KytLg+fOabimRsPXrunRiRPypKSoB3Qf5IOpffBJ/Awcb3W7rBQamkHXQLUhcAPodl6eJv1+BSVNmwpKGnM69Xdmpm6DHlljcmdAWjRGz4F8h0H/DIEdoNaUFI16PJqWNO73a7C8XI8rKvR0bEzTkkYuXJDHZlMfaAS0A/ZkQBhJsOgbKK0HXZkDduXl6amkydFR9RUUqBV0E+QvKlJQUuDBA93LzpYH9A/oN/g9DmJZDevLoKF2Flxv4N6dO63OWlrUnpSkG6B2kCc9XVPBoKaePNHD/Hy5QQPWn+NNgGQyIPcMeGvmgOtAPTk5VsePH6tv+3Y5DTxw8KDVsc/3rOMB62tGEmA1GfDuGXg4G64DOWw23S8pUWB6WlOSxvr75Tt+XIOnTikwPm59SVWVPFFR6jVwuwVnshreKIOO0FFUg+rCwuQ9eVKTkiYmJxUIBp//K1wu9a9ZI7c5jQMgJwwmwEqWw4pi+MVh4Kug2shIeUtLNSFpIhBQQNKo16vB8+f1b2Wlhmpq5C8uVm9qqlygPgMPgi5B0yJIJA7Cc+CzBoNeCQ9X37FjmggGNR4IaELSqM8n95YtarXb1RETo67YWHVHROiWyY4+UD9oGLQXvrPBAsKtk5f5E/jqQfXJyRpyuawRSBodGJC7oEBNoBsmJ7pAt0xeuOHZfLthch28EwsQAURC5HtwyAFy2O3ynj2rsZERDff2qic/X43W7J4FUCh8G3QXNAT6HE4vhthYQlYMLN0Pl52gpsREdW7bppsbN+r6HMk2A/eY2Q6BfoC2eCt6nl/xsPIQVDebqKwLSbdQuNPAd01GlEP7i7BxxgkLRcPNhYWQsg2+vwTjXQZqNzWTw3dAD6xr0/ugIhEyYwD7fHCM2b8C0Wsh90M4fRrcVRCY6bwOAhVwZzf8uBYKbbAYYCnwwnxwtNlnmThdD1ELIW0JvP0qbN0AhUmwKQ5WZUNMlHneDiyZBf83AOdz6zRw4uZiAAAAAElFTkSuQmCC);
+	background-repeat: no-repeat;
+	background-color: transparent;
 	height: 22px;
 	width: 22px;
     border: none; 
@@ -325,14 +333,30 @@ a, textarea, input, button {
 --------------------------------------*/
 #widgets-wrap-sidebar  a {color: #0E4D7A;}
 #widgets-wrap-sidebar  a:hover {color: #FF0000;}
-.widget-sidebar {margin-top: 20px; margin-bottom: 20px; position: relative;}
-.widget-sidebar ul {padding: 0 14px; list-style: none;}
+.widget-sidebar {
+    margin: 16px auto 24px;
+    padding: 0 6px;
+    position: relative;
+    word-wrap: break-word;
+}
+.widget-sidebar h4 {
+    background: #CCC;
+    border: 1px solid #888;
+	margin: 0 0 4px -6px;
+    padding: 3px 0 3px 10px;
+    width: 100%;
+}
+.widget-sidebar ul {list-style: none; padding-left: 6px; padding-right: 4px;}
 .widget-sidebar li {border-bottom: 1px solid #CFCFCF;padding: 4px 0 2px;}
-.widget-sidebar h4 {background:#CCC; padding: 3px 0 3px 8px; margin-bottom: 4px; border:1px solid #999;}
 .widget-sidebar img {
     display: block;
-    margin: 10px auto !important;
+    margin: 0 auto !important;
 }
+.widget-sidebar select {
+    margin-bottom: 4px;
+    margin-top: 4px;
+}
+
 #widgets-wrap-footer {
 	overflow: hidden;
 	padding-bottom: 10px;
@@ -357,6 +381,7 @@ a, textarea, input, button {
 .widget-footer ul {padding: 4px 8px 6px;}
 .widget-footer li {padding: 2px 0 2px;}
 .widget-footer a {color: #FC9A08; text-shadow: 2px 2px 2px #000;}
+.widget-footer .ast-search {padding: 6px;}
 
 
 /*-------------------------------------
@@ -394,6 +419,13 @@ a, textarea, input, button {
 .widget-below-menu ul {padding: 4px 8px 6px;}
 .widget-below-menu .textwidget {padding: 6px;}
 
+#widgets-wrap-before-content {overflow: hidden;}
+.widget-before-content {margin-top: 10px;}
+
+#widgets-wrap-below-excerpts {
+	overflow: hidden;
+    margin-top: 2px;
+}
 
 #widgets-wrap-before-post, #widgets-wrap-before-page {
 	overflow: hidden;
@@ -448,6 +480,8 @@ a, textarea, input, button {
 
 .widget_pages .children li {border-bottom: none;}
 
+.recentcomments .url {color: #7E0E0E !important;}
+
 
 /*-------------------------------------
    Looped
@@ -457,7 +491,8 @@ a, textarea, input, button {
 	background: #DDD;
     border: 1px solid #666;
 	box-shadow: 0 0 3px #333;
-    margin-top: 20px;
+    margin-top: 16px;
+	margin-bottom: 18px;
     padding: 8px;
 }
 
@@ -484,7 +519,7 @@ a, textarea, input, button {
 	border: 1px solid #999;
 	padding: 1px 4px;
 	border-radius: 4px;
-	color: #444;
+	color: #303030;
 }
 .loop-categories a:hover {color: #F00;}
 
@@ -731,6 +766,7 @@ blockquote cite:before {
 	padding: 8px; 
 	border-top: 6px solid #555;
 	box-shadow: 0 1px 3px #111;
+	word-wrap: break-word;
 }
 #comments-wrap .comment-body .says {margin-left: 8px;}
 #comments-wrap .comment-body p {clear: both;}
@@ -767,7 +803,9 @@ blockquote cite:before {
 	font-size: 14px;
 	text-transform: uppercase;
 }
-#respond label {display:block;}
+.comment-form-author label, .comment-form-email label, .comment-form-url label {
+    display: block;
+}
 #respond .required {display:none;}
 #respond #closed {font-style:italic;}
 
@@ -849,7 +887,7 @@ blockquote cite:before {
 
 @media screen and (max-width:800px){
 	#content { border-right: none !important; width: 84% !important; }	
-	#sidebar { float: left !important; width: 98% !important; }
+	#sidebar { float: left !important; width: 98% !important; max-width: 100% !important;}
 }
 
 @media screen and (max-width:768px){
@@ -868,6 +906,8 @@ blockquote cite:before {
 		margin-right: auto!important;
 		text-align: center !important;
 	}
+	#header-info-wrap #header-logo {margin-left: 0 !important;}
+	#header-info-wrap hgroup {margin-left: 0 !important;}
 	/* Make menu width 100% */
 	.menu {float: none !important; border: none !important;}
 	.menu > li {
@@ -880,7 +920,6 @@ blockquote cite:before {
 	#nav-search {width: 96% !important;}
 	#nav .ast-search-input {width: 84% !important;}
 	#nav .ast-search-submit {float: left !important;}
-	.loop-date {float: none !important;}
 	#comments-wrap {max-width: 98% !important;}
 	.not-found-wrap {width: auto !important; max-width: 96% !important;}
 }
