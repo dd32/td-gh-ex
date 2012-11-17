@@ -8,6 +8,11 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+
+(11/14/2012) - Maintenance and Improvements - Version 1.8.3
+[*] TinyNav Update - https://github.com/viljamis/TinyNav.js
+[*] CSS Fix for TinyNav on the landing page template
+
 ----
 
 (11/07/2012) - Maintenance and Improvements - Version 1.8.2
