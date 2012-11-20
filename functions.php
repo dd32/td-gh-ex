@@ -949,7 +949,7 @@ if(!function_exists("add_raindrops_stylesheet") and $wp_version >= 3.4 ){
             wp_enqueue_style( 'raindrops_fonts');
             $language           = get_locale();
             $lang   = $stylesheet_uri.'/languages/css/'.$language.'.css';
-            if(!file_exists($stylesheet_path.$language.'.css')){$lang    = $template_uri.'/languages/css/'.$language.'.css';}
+            if(!file_exists($stylesheet_path.'/languages/css/'.$language.'.css')){$lang    = $template_uri.'/languages/css/'.$language.'.css';}
             wp_register_style('lang_style', $lang,array('raindrops_fonts'),$raindrops_version,'all');
             wp_enqueue_style( 'lang_style');
             if(raindrops_warehouse_clone("raindrops_style_type") !== 'w3standard'){
@@ -4119,7 +4119,6 @@ if( ! function_exists( 'raindrops_mobile_meta' ) ){
         }
     }
 }
-
 /**
  *
  *
