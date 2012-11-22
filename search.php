@@ -6,8 +6,9 @@
 */
 
 get_header(); ?>
-<div class="pagenev"><div class="conwidth"><?php design_breadcrumbs() ?></div></div>
+<div class="pagenev"><div class="conwidth"><?php design_breadcrumbs(); ?></div></div>
 <div id="container">
+		<?php if (have_posts()) : ?>
 		<div id="content">
         <h1 class="arc-post-title">Search Results</h1>
 		
