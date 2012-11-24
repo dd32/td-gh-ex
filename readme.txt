@@ -2,7 +2,7 @@
 * by the Catch Themes team, http://catchthemes.com/
 
 == ABOUT Simple Catch==
-Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework. Multilingual Ready (WPML) and also currently translated in Polish.
+Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework. Multilingual Ready (WPML) and also currently translated in Polish and Russian.
 
 == UPGRADE to Simple Catch Pro ==
 Simple Catch Pro is an advance version of our popular theme Simple Catch. It is based on HTML5, CSS3 and Responsive Web Design to view in various devices. Some of the additional features includes: Featured Image Slider, Responsive Design, Additional Layout Options, Custom Footer Editor, and Adspace Widget for Advertisement.
@@ -10,6 +10,7 @@ Simple Catch Pro is an advance version of our popular theme Simple Catch. It is 
 == Translation ==
 Simple Catch theme is translation ready. 
 Added Translation for Polish by Piotrek Jas (fansitejustgames@gmail.com)
+Added Translation for Russian by  Alexey Kurpachev (kurpachev@gmail.com)
 
 == Features ==  
 Featured Image Slider, Custom Drop-down Menu, Theme Options, Custom Widgets, flexible position of sidebar and Support for popular plugins.
@@ -195,4 +196,8 @@ Version 1.4.9
 Version 1.4.9.1
 * Fixed CSS Pagination with WP-PageNavi and WP Page Numbers Plugins
 * Fixed CSS for default textarea
+
+Version 1.5
+* Added Russian translation ru_RU.po and ru_RU.mo
+* Added Word Wrap for commentlist in style.css
 
