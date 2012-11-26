@@ -187,8 +187,7 @@ function semperfi_customize($wp_customize) {
 	// Add the option to use the CSS3 property Background-size
 	$wp_customize->add_setting( 'backgroundsize_setting', array(
 		'default'           => 'auto',
-		'control'           => 'select',
-		'transport'         => 'postMessage',));
+		'control'           => 'select',));
 
 	$wp_customize->add_control( 'backgroundsize_control', array(
 		'label'				=> 'Background Size',
@@ -199,6 +198,22 @@ function semperfi_customize($wp_customize) {
 			'auto'			=> 'Auto (Default)',
 			'contain'		=> 'Contain',
 			'cover'			=> 'Cover',), ));
+			
+	// Change up the type of paper in the background
+	$wp_customize->add_setting( 'backgroundpaper_setting', array(
+		'default'           => 'clean',
+		'control'           => 'select',));
+
+	$wp_customize->add_control( 'backgroundpaper_control', array(
+		'label'				=> 'Background Paper Image',
+		'section'			=> 'background_image',
+		'settings'			=> 'backgroundpaper_setting',
+		'type'				=> 'radio',
+		'choices'			=> array(
+			'clean'			=> 'Clean but Used (Default)',
+			'peppered'		=> 'Peppered',
+			'vintage'		=> 'Vintage',
+			'canvas'		=> 'Heavy Canvas',), ));
 	
 	// Choose the Different Images for the Banner
 	$wp_customize->add_section( 'bannerimage_section', array(
@@ -251,26 +266,23 @@ function semperfi_inline_css() {
 
 	// this is a huge or statement
 	$options = get_option('backgroundsize_setting');
+	$options = get_option('backgroundpaper_setting');
 	$options = get_option('titlecolor_setting');
 	$options = get_option('taglinecolor_setting');
 	$options = get_option('bannerimage_setting');
-	
-	if (get_theme_mod('backgroundsize_setting') != 'auto' ||
-		get_theme_mod('titlecolor_setting') != '#e0dbce' ||
-		get_theme_mod('taglinecolor_setting') != '#3e5a21' ||
-		get_option('bannerimage_setting') != 'blue' ) {
 
 		echo '<!-- Custom CSS Styles -->' . "\n";
         echo '<style type="text/css" media="screen">' . "\n";
 		if ( get_theme_mod('backgroundsize_setting') != 'auto' ) echo '	body {background-size:' . get_theme_mod('backgroundsize_setting') . ';}' . "\n";
-		if ( get_theme_mod('titlecolor_setting') != '#e0dbce') echo '	#header h1 a {color:' . get_theme_mod('titlecolor_setting') . ';}' . "\n";
-		if ( get_theme_mod('taglinecolor_setting') != '#3e5a21') echo '	#header h1 i {color:' . get_theme_mod('taglinecolor_setting') . ';}' . "\n";
-		if ( get_option('bannerimage_setting') != 'blue') echo '	#header {' . "\n" . '		background: bottom url(' . get_template_directory_uri() . '/images/' . get_option('bannerimage_setting') .  ');';
+		echo '	#floatfix {background-image:url(' . get_template_directory_uri() . '/images/' . get_theme_mod('backgroundpaper_setting') . '.png);}' . "\n";
+		echo '	#header h1 a {color:' . get_theme_mod('titlecolor_setting') . ';}' . "\n";
+		echo '	#header h1 i {color:' . get_theme_mod('taglinecolor_setting') . ';}' . "\n";
+		echo '	#header {' . "\n" . '		background: bottom url(' . get_template_directory_uri() . '/images/' . get_option('bannerimage_setting') .  ');';
 		if ( get_option('bannerimage_setting') == 'marble.png') echo "\n" . '		border-top:solid 1px #010101; ' . "\n" . '		border-bottom:solid 1px #010101;}' . "\n";
 		if ( get_option('bannerimage_setting') == 'green.png') echo "\n" . '		border-top:solid 1px #0e0e02; ' . "\n" . '		border-bottom:solid 1px #0e0e02;}' . "\n";
 		echo '</style>' . "\n";
 		echo '<!-- End Custom CSS -->' . "\n";
-		echo "\n";} }
+		echo "\n";}
 
 add_action('wp_head', 'semperfi_inline_css'); 
 
@@ -340,6 +352,16 @@ function semperfi_theme_options_do_page() { ?>
         <td>&#9733;</td>
         </tr>
         <tr>
+        <td class="justify">Choose from 4 different Background Paper Images</td>
+        <td>&#9733;</td>
+        <td>&#9733;</td>
+        </tr>
+        <tr>
+        <td class="justify">Upload your own Background for the Paper Image</td>
+        <td></td>
+        <td>&#9733;</td>
+        </tr>
+        <tr>
         <td class="justify">Multiple Menu Banner Images to Choose</td>
         <td>&#9733;</td>
         <td>&#9733;</td>
@@ -354,7 +376,7 @@ function semperfi_theme_options_do_page() { ?>
         <td></td>
         <td>&#9733;</td>
         </tr>
-	<tr>
+		<tr>
         <td class="justify">Change the Link Colors in the Menu</td>
         <td></td>
         <td>&#9733;</td>
@@ -396,6 +418,9 @@ function semperfi_theme_options_do_page() { ?>
         <th class="justify"></th>
         </tr>
         <tr>
+        <th>.7</th>
+        <td class="justify">Small update to add in a new feature and rewrite some of the code. The new feature allows for someone to choose from 4 different choices for the white background that looks like paper. This feature is located under the "Background" tab on the "<a href="<?php echo home_url(); ?>/wp-admin/customize.php">Theme Customizer</a> Page." As for the rewrite of the code, I decided to have the Style.CSS file leave partially unfinished and have the default choice, or the choices currently chosen, finish the file Style.CSS with the missing code in the Header of the page. By choosing to leave the code out, browsers such as in firefox, chrome, IE, etc. will only see the CSS code once and won't have to write over and duplicate entries. Basically it keeps things lighter and cleaner.</td>
+        </tr>
         <th>.6</th>
         <td class="justify">Quick update to add some more features to the theme along with a better "Theme Information" page. It is now possible to choose one of three different banners on the <a href="<?php echo home_url(); ?>/wp-admin/customize.php">Theme Customizer</a> page. I plan to add even more choices in the future for the banner, and on a side note you can upload you own with Semper Fi. Added in the ablity to easily change the color on Site Title and also the Site Slogan on the <a href="<?php echo home_url(); ?>/wp-admin/customize.php">Theme Customizer</a> page too. I have removed the file "theme-options.php" from the theme and the that was in there has been move to the file "functions.php" which is in the same folder. Finally the javascript file "background-size-preview.js" which handled the background changing on the <a href="<?php echo home_url(); ?>/wp-admin/customize.php">Theme Customizer</a> has been rename to "customizer.js" becuase it makes more sense since adding a bunch of code.</td>
         </tr>
@@ -414,6 +439,9 @@ function semperfi_theme_options_do_page() { ?>
         <th class="justify"></th>
         </tr>
         <tr>
+        <th>3</th>
+        <td class="justify">Semper Fi, the standard version received a similar update to "Lite" in .7 including the same new features and small rewrite of some code. It too now includes 4 different choices for the white background that looks like paper, but unlike "Lite" the standard version of Semper Fi allows you upload your own image also. Semper Fi also had the same rewrite of code so that the code basically leaves Style.CSS uncomplete and has the final bit of code added in the header based on either the default choices, or the ones currently chosen in <a href="<?php echo home_url(); ?>/wp-admin/customize.php">Theme Customizer</a>. All in all the point is to reduce the footprint of code, and the possibility of downloading unnecessary content.</td>
+        </tr>
         <th>2</th>
         <td class="justify">This is the first update after the initial release of the “Lite” version of “Semper Fi” and includes a bunch of changes for the better. Both “Semper Fi” and “Semper Fi Lite” now use Theme Customizer instead of Theme Options to customize the page, allowing for the administrator to visually see the changes to the website before the changes take effect in real time. I have included all the promised functionality into the theme with this update, except for a custom logo which will be in future update. Which means you can change the color on the Links, Menu, Title, and Slogan for now, and more in the future. This update also includes the ablitiy to choose from the three standard options for the banner, but unquie to the Semper Fi you can upload your own image for the banner, where as you can't in Lite. Finally, with this update I have added in the ablity for you quickly remove the footer that says "Good Old Fasioned Hand Written Code by Eric J. Schwarz" from the theme.</td>
         </tr>
