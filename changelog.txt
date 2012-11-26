@@ -8,6 +8,18 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(11/25/2012) - Maintenance and Improvements - Version 1.8.4
+[*] blog-excerpt.php Template now uses a default sidebar
+[*] content-sidebar-page.php Template is now the only 
+    Template where right sidebar is assigned to.
+[*] IE9+ Conditionals
+[x] IE6 Conditionals
+[+] IE Conditionals to target non-ie browsers.
+[+] FitVids support for YouTube's "privacy-enhanced" mode.
+[+] Border Radius and improvements for Author's Box.
+[!] <pre> code fix
+
+----
 
 (11/14/2012) - Maintenance and Improvements - Version 1.8.3
 [*] TinyNav Update - https://github.com/viljamis/TinyNav.js
