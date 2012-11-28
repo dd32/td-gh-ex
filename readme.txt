@@ -164,3 +164,6 @@ Version 1.5.5.1
 
 Version 1.5.6
 * Added One-column, no sidebar page template and sidebar option
+
+Version 1.5.6.1
+* Added Word Wrap for commentlist in style.css
