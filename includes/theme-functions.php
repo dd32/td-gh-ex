@@ -30,9 +30,10 @@ document.createElement('hgroup');
 </script>
 <![endif]-->
 <script type="text/javascript">
-    jQuery(document).ready(function() {
+    window.onload = function () {
 	// Add custom borders to images
     jQuery(".entry-content img").addClass("<?php echo 'image'.$mantra_image;?>");
+	jQuery(".entry-summary img").addClass("<?php echo 'image'.$mantra_image;?>");
 	
  <?php if ($mantra_mobile=="Enable") { // If mobile view is enabled ?> 	
 	jQuery(function () {
@@ -42,22 +43,20 @@ document.createElement('hgroup');
 					});
 	});
     // Add responsive videos
-  jQuery("#content").fitVids(); 
+  jQuery(".entry-content").fitVids(); 
   <?php } 
    // Check if sidebars have user colors and if so equalize their heights
    if (($mantra_s1bg || $mantra_s2bg) ) { ?>
 		equalizeHeights();
 <?php } ?>  
-    }); // document ready
+    }; // window onload
 
 </script>
 <?php
 }
 
-
 add_action('wp_footer','mantra_header_scripts',100);
- 
- 
+
 
 /**
  * Creates invisible div over header making it link to home page

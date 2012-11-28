@@ -12,10 +12,11 @@
  * @subpackage Mantra
  */
 get_header(); 
-if ($mantra_frontpage!="Enable" || !is_front_page() ) {
+if ($mantra_frontpage=="Enable" && is_front_page() ) {
+mantra_frontpage_generator();
+} 
+else {
 ?>
-
-
 		<section id="container">
 				
 			<div id="content" role="main">
@@ -28,7 +29,7 @@ if ($mantra_frontpage!="Enable" || !is_front_page() ) {
 				<?php while ( have_posts() ) : the_post(); ?>
 
 					<?php get_template_part( 'content', get_post_format() ); ?>
-
+										
 				<?php endwhile; ?>
 
 					<?php if($mantra_pagination=="Enable") mantra_pagination(); else mantra_content_nav( 'nav-below' ); ?>
@@ -52,8 +53,5 @@ if ($mantra_frontpage!="Enable" || !is_front_page() ) {
 	<?php get_sidebar(); ?>
 		</section><!-- #container -->
 
-<?php } else { 
-	mantra_frontpage_generator();
-}
-
- get_footer(); ?>
+<?php } // else
+get_footer(); ?>

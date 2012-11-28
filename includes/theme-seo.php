@@ -113,6 +113,7 @@ global $mantra_options;
 foreach ($mantra_options as $key => $value) {
 ${"$key"} = $value ;}	
 	 echo '<link rel="shortcut icon" href="'.esc_url($mantra_options['mantra_favicon']).'" />'; 
+	 echo '<link rel="apple-touch-icon" href="'.esc_url($mantra_options['mantra_favicon']).'" />'; 
 	}
 
 if ($mantra_options['mantra_favicon']) add_action ('cryout_header_hook','mantra_fav_icon');	

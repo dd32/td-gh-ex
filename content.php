@@ -80,4 +80,5 @@ if ( $tag_list ) { ?>
 
 	</article><!-- #post-<?php the_ID(); ?> -->
 	
+	
 <?php cryout_after_article_hook(); ?>

@@ -164,7 +164,7 @@ function mantra_init_fn(){
 	add_settings_field('mantra_comtext', __('Text Under Comments','mantra') , 'cryout_setting_comtext_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_comclosed', __('Comments are closed text','mantra') , 'cryout_setting_comclosed_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_comoff', __('Comments off','mantra') , 'cryout_setting_comoff_fn', __FILE__, 'graphics_section');
-	add_settings_field('mantra_copyright', __('Insert footer copyright','mantra') , 'cryout_setting_copyright_fn', __FILE__, 'graphics_section');
+	add_settings_field('mantra_copyright', __('Custom Footer Text','mantra') , 'cryout_setting_copyright_fn', __FILE__, 'graphics_section');
 
 	add_settings_field('mantra_postcomlink', __('Post Comments Link','mantra') , 'cryout_setting_postcomlink_fn', __FILE__, 'post_section');
 	add_settings_field('mantra_postdate', __('Post Date','mantra') , 'cryout_setting_postdate_fn', __FILE__, 'post_section');

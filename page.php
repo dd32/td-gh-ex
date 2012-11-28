@@ -11,8 +11,12 @@
  * @subpackage mantra
  * @since mantra 0.5
  */
-get_header(); ?>
-
+get_header(); 
+if ($mantra_frontpage=="Enable" && is_front_page() ) {
+mantra_frontpage_generator();
+} 
+else {
+?>
 		<section id="container">
 	
 			<div id="content" role="main">
@@ -24,4 +28,5 @@ get_header(); ?>
 		</section><!-- #container -->
 
 
-<?php get_footer(); ?>
+<?php } // else
+get_footer(); ?>

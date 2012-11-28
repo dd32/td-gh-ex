@@ -1,5 +1,4 @@
-
-<?php $search_text = "Search"; ?>
+<?php $search_text = __( 'Search', 'mantra' ); ?> 
 <form method="get" id="searchform"
 action="<?php echo home_url( '/' ); ?>/">
 <input type="text" value="<?php echo $search_text; ?>"

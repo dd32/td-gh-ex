@@ -8,20 +8,22 @@ jQuery(document).ready(function() {
 		var uploadparent = 0;
 		var old_send_to_editor = window.send_to_editor;
 		var old_tb_remove = window.tb_remove;
-		
+
 		jQuery('.upload_image_button').click(function(){
 			uploadparent = jQuery(this).closest('div');
-			tb_show('', 'media-upload.php?post_id=0&amp;type=file&amp;TB_iframe=true');
+			//Change "insert into post" to "Use this Button"
+     		tbframe_interval = setInterval( function() {jQuery('#TB_iframeContent').contents().find('.savesend .button').val('Use This Image');}, 2000);
+			tb_show('Select File', 'media-upload.php?post_id=0&amp;type=file&amp;TB_iframe=true');
 			return false;
 		});
-		
+
 		window.tb_remove = function() {
 			uploadparent = 0;
 			old_tb_remove();
 		}
-		
+
 		window.send_to_editor = function(html) {
-			if(uploadparent){              
+			if(uploadparent){
 				imgurl = jQuery('img',html).attr('src');
 				uploadparent.find('.slideimages').attr('value', imgurl);
 				uploadparent.find('.imagebox').attr('src', imgurl);
@@ -29,9 +31,10 @@ jQuery(document).ready(function() {
 			} else {
 				old_send_to_editor();
 			}
-			}
-
-// Show/hide slides		
+			}			
+			
+			
+// Show/hide slides
 		jQuery('.slidetitle').click(function() {
 				jQuery(this).next().toggle("fast");
 				});
@@ -41,17 +44,17 @@ jQuery(document).ready(function() {
 jQuery('#mantra_defaults').click (function() {
 		if (!confirm('Reset Mantra Settings to Defaults?')) { return false;}
 	});
- 
+
 // Hide or show dimmensions
 jQuery('#mantra_dimselect').change(function() {
 	if	(jQuery('#mantra_dimselect option:selected').val()=="Absolute") {
 				jQuery('#relativedim').hide("normal");jQuery('#absolutedim').show("normal");
 				}
-	else {	
+	else {
 				jQuery('#relativedim').show("normal");jQuery('#absolutedim').hide("normal");
 				}
 	});
-	
+
 if (jQuery('#mantra_dimselect option:selected').val()=="Absolute") {
 		jQuery('#relativedim').hide("normal");jQuery('#absolutedim').show("normal");}
 else {
@@ -153,7 +156,7 @@ jQuery('#mantra_slideType').change(function(){
 			jQuery('#slider-post-number').show();
 else 		jQuery('#slider-post-number').hide();
      });//onchange funciton
-	 
+
 
 
 // Create accordion from existing settings table
@@ -164,10 +167,10 @@ else 		jQuery('#slider-post-number').hide();
 				autoHeight: false,
 				collapsible: true,
 				navigation: true,
-				active: false 
+				active: false
 				});
 					});
-					
+
 
   });// ready
 

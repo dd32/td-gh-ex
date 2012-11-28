@@ -262,8 +262,8 @@ foreach($items as $id=>$item) {
 	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
-	echo "<div><small>".__("Enable the presentation front-page. This will become your new home page and it will replace whatever page you have selected as homepage. It has a slider and columns for presentation
-		text and images.","mantra")."</small></div>";
+	echo "<div><small>".__("Enable the presentation front-page. This will become your new home page. It has a slider and columns for presentation
+		text and images.<br>If you have this enabled but don't see a Presentation page then go to <a href='options-reading.php'> Settings &raquo; Reading </a> and make sure you have selected <strong>Front Page Displays</strong> as <Strong>Your Latest Posts</strong>.","mantra")."</small></div>";
 
 }
 

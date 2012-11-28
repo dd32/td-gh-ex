@@ -103,16 +103,20 @@ function mantra_ie_pie() {
 <!--[if lte IE 8]>
 <style type="text/css" media="screen">
  #access ul  li,
-article.sticky , .imageTwo, .imageThree, .imageFour, .imageSix, .imageSeven, .edit-link a ,
-.widget-title, #footer-widget-area .widget-title, .entry-meta,.entry-meta .comments-link,
+.edit-link a ,
+ #footer-widget-area .widget-title, .entry-meta,.entry-meta .comments-link,
 .short-button-light, .short-button-dark ,.short-button-color ,blockquote  {
      position:relative;
      behavior: url('.get_template_directory_uri().'/js/PIE/PIE.php);
    }
+
+#access ul ul {
+-pie-box-shadow:0px 5px 5px #999;
+}
    
-input[type="text"],textarea ,#site-title a ,#site-description, #access  ul  li.current_page_item,  #access ul li.current-menu-item ,
-#access ul  li ,#access ul ul ,#access ul ul li,  #content .wp-caption,.commentlist li.comment	,.commentlist .avatar,
-#respond .form-submit input#submit, .contentsearch #searchsubmit , .widget_search #s, #search #s  ,  .widget_search #searchsubmit ,
+#access  ul  li.current_page_item,  #access ul li.current-menu-item ,
+#access ul  li ,#access ul ul ,#access ul ul li, .commentlist li.comment	,.commentlist .avatar,
+ .contentsearch #searchsubmit , .widget_search #s, #search #s  ,  .widget_search #searchsubmit ,
 .nivo-caption, .theme-default .nivoSlider {
      behavior: url('.get_template_directory_uri().'/js/PIE/PIE.php);
    }
