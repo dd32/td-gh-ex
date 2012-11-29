@@ -1,8 +1,13 @@
-For support, please post here: http://wordpress.org/tags/babylog?forum_id=5#postform
+For support, please post here: http://wordpress.org/support/theme/babylog
 
 Awesome Google Web Font: Vidaloka by Cyreal - https://profiles.google.com/alexei.vanyashin/about
 
 Version history:
+
+v2.0.1 -
+* Improve appearance of title-less widgets
+* Display byline properly on multi-author blogs and on single post view
+* Make single attachment page full width
 
 v2.0 - Many changes:
 * Now uses _s theme as a base -- the underlying code has changed significantly! This is particularly important if you're using a child theme or have made CSS modifications -- they may not work if you upgrade.

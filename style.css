@@ -4,7 +4,7 @@ Theme URI: http://carolinethemes.com/2011/11/27/wordpress-theme-babylog/
 Author: Caroline Moore
 Author URI: http://carolinemoore.net/
 Description: PLEASE NOTE: 2.0 is a major update. Please check the included readme for details before upgrading. Babylog is a sweet, illustrated theme for baby blogs featuring four color palettes and a customizable baby header graphic.
-Version: 2.0
+Version: 2.0.1
 License: GNU General Public License
 License URI: license.txt
 Tags: light, blue, pink, green, purple, brown, two-columns, right-sidebar, fixed-width, custom-background, custom-header, custom-menu, rtl-language-support, theme-options, translation-ready
@@ -627,7 +627,7 @@ a:active {
 ------------------------------------------------ */
 
 .page-template-page-nosidebar-php #content,
-.attachment.page #content {
+.single-attachment #content {
 	margin: 0;
 }
 
@@ -993,6 +993,9 @@ ul.children .reply {
 .bypostauthor {
 	background-color: rgba(119,119,119,.05);
 }
+.says {
+	display: none;
+}
 .comment-content,
 .comment-content .comment-meta,
 .reply {
@@ -1024,9 +1027,6 @@ ul.children .reply {
 	padding: 20px;
 	margin-bottom: 0px;
 }
-.says {
-	display: none;
-}
 #cancel-comment-reply-link {
 	float: right;
 }
@@ -1051,6 +1051,11 @@ ul.children .reply {
 	border-bottom-left-radius: 8px;
 	padding: 5px 10px 10px 10px;
 }
+.widget-notitle-content-container {
+	background: #fff;
+	border-radius: 9px;
+	padding: 5px 10px 10px 10px;
+}
 .widget-contents:before,
 .widget-contents:after {
 	clear: both;
@@ -1067,7 +1072,7 @@ ul.children .reply {
 	font-size: 20px;
 	font-weight: normal;
 	line-height: normal;
-	margin: 0;
+	margin: -15px 0 0;
 	padding: 8px;
 }
 .widget-title a {
@@ -1284,4 +1289,87 @@ ul.children .reply {
 	.page-title {
 		margin: 0 1.6em;
 	}
+}
+
+
+/* =Infinite Scroll
+----------------------------------------------- */
+
+/**
+ * Globally hidden elements when IS is supported and in use.
+ */
+.infinite-scroll #nav-above, /* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll #nav-below,
+.infinite-scroll.neverending #colophon { /* Theme Footer (when set to scrolling) */
+	display: none;
+}
+
+/**
+ * When IS has reached its end we need to re-display elements that were hidden (via .neverending) before
+ */
+.infinity-end.neverending #colophon {
+	display: block;
+}
+
+/**
+ * Global style tweaks when IS is supported and in use
+ */
+.infinite-scroll .infinite-wrap, /* Each IS loop content wrapper (multiple instances) */
+.infinite-scroll .infinite-loader, /* Each IS loading spinner (multiple instances) */
+.infinite-scroll #infinite-handle /* The Load more posts button */ {
+	clear: both;
+}
+.infinite-scroll .infinite-wrap {
+	border-top: none;
+	padding: 0;
+}
+.infinite-scroll #infinite-footer .container { /* IS border */
+	border-color: #e7e7e7;
+}
+#infinite-footer .blog-info a,
+#infinite-footer .blog-credits a,
+#infinite-footer .blog-credits,
+#infinite-handle span,
+#infinite-handle span:before {
+	color: #fff;
+}
+#infinite-footer .blog-info a:hover,
+#infinite-footer .blog-credits a:hover,
+#infinite-handle span:hover,
+#infinite-handle span:hover:before {
+	color: rgba(255,255,255,.8);
+}
+.theme-color-purple.infinite-scroll #infinite-footer .container,
+.theme-color-purple #infinite-handle span {
+	background-color: rgba(156,106,170,.8);
+	border-color: #bfa1c6;
+}
+.theme-color-blue.infinite-scroll #infinite-footer .container,
+.theme-color-blue #infinite-handle span {
+	background-color: rgba(81,140,158,.8);
+	border-color: #86afbf;
+}
+.theme-color-green.infinite-scroll #infinite-footer .container,
+.theme-color-green #infinite-handle span {
+	background-color: rgba(110,178,103,.8);
+	border-color: #c2e2bf;
+}
+.theme-color-pink.infinite-scroll #infinite-footer .container,
+.theme-color-pink #infinite-handle span {
+	background-color: rgba(196,75,75,.8);
+	border-color: #e29393;
+}
+
+/**
+ * Make sure that clicking Load more posts doesn't cause any jarringness.
+ */
+.infinite-scroll #infinite-handle {
+	float: left;
+	height: 70px;
+}
+.infinite-scroll #infinite-handle span {
+	display: block;
+}
+.infinite-scroll .infinite-loader {
+	margin: 0 0 50px;
 }

@@ -110,7 +110,7 @@ if ( ! function_exists( 'babylog_posted_on' ) ) :
  * @since Babylog 1.0
  */
 function babylog_posted_on() {
-	printf( __( 'By <span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span></span>', 'babylog' ),
+	printf( __( '<span class="byline">By <span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span></span></span>', 'babylog' ),
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 		esc_attr( sprintf( __( 'View all posts by %s', 'babylog' ), get_the_author() ) ),
 		esc_html( get_the_author() )
