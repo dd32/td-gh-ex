@@ -1,0 +1,8 @@
+*** application Changelog ***
+
+1-12-2012 - version 1.3
+ * Options panel updated.
+ * template-blog.php file added.
+ * front-page.php file added.
+ * Other small style css bug changes.
+ * read-me file adeded.

@@ -5,7 +5,7 @@
 					<div>
 					<?php $req=''; ?>
 					<input type="submit" id="searchsubmit" value="" />
-               		<input type="text" value="Search" name="s" id="s"  onfocus="if(this.value=='Search'){this.value=''};" onblur="if(this.value==''){this.value='Search'};" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
+               		<input type="text" value="Search" name="s" id="s"  onfocus="if(this.value=='Search'){this.value=''};" onblur="if(this.value==''){this.value='<?php _e( 'Search', 'application' ); ?>'};" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
                 	
 					</div>
                		</form>

@@ -2,10 +2,10 @@
 Theme Name: application
 Theme URI: http://theme9.themeszen.com
 Description: A very neat and clean white business theme. The theme supports widgets. And features theme-options, threaded-comments and multi-level dropdown menu. A simple and neat typography.
-Version: 1.2
+Version: 1.3
 Author: Manish Gori
 Author URI: http://themeszen.com
-Tags: white,translation-ready,threaded-comments,light,one-column,theme-options
+Tags: white,threaded-comments,light,one-column,theme-options
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -373,7 +373,7 @@ th {
 /*menu bar*/
 /*////////////////////////////////////////////////////////////////////////////////////////////*/
 
-.menu {
+.menubar {
 	float: left;
 	z-index: 2;
 	background: url("images/menu_bg.png") repeat-y top left;
@@ -399,6 +399,127 @@ th {
 
 #home_btn a:hover{
 	background: url("images/home_icon_on.png") no-repeat;
+}
+
+/*homepage boxes*/
+/*////////////////////////////////////////////////////////////////////////////////////////////*/
+
+#box{
+	width:  948px;; 
+	height:  310px;
+	float: left;
+	-moz-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #dddddd;
+	overflow: hidden;
+	margin: 15px 0px;
+	background: url("images/home-box-bg.gif") repeat-y top left;
+}
+
+.boxes{
+	width:217px;
+	height: 300px;
+	float: left;
+	margin: 0px 10px;
+}
+
+.box-head {
+	float: left;
+	height: 185px;
+	padding: 15px 5px;
+	overflow: hidden;
+
+}
+
+.title-box{
+	padding-bottom: 5px;
+	font-weight: bold; font-size: 1em; line-height: 18px;
+}
+
+.title-box a{
+	color: #333;
+}
+
+.box-content {
+	float: left;
+}
+
+.quote-box {
+	width:  948px;; 
+	height: 95px;  
+	float: left;
+	-moz-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #dddddd;
+	overflow: hidden;
+}
+
+.q-box-content {
+	width: 668px;
+	padding: 15px 15px;
+	float: left;
+}
+
+.box-btn img{
+	margin: 24px;
+}
+
+/* slideshow */
+/*////////////////////////////////////////////////////////////////////////////////////////////*/
+
+#slider-container{
+    width:  948px;
+	height:  380px;  
+	float: left;
+	z-index: 1;
+	position:relative;
+	-moz-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #dddddd;
+}
+
+/* slideshow */
+/*////////////////////////////////////////////////////////////////////////////////////////////*/
+
+#nav a, #s7 strong { margin: 0 2px; padding: 1px 9px; color: #000; text-decoration: none }
+
+#nav a.activeSlide { color: #000; background: #ccc; }
+
+#nav a:focus { outline: none; }
+
+#output { text-align: left; }
+
+#nav { width: 948px; margin: 0 auto; text-align: left;  position: absolute; bottom:10px; left: 15px; z-index:99;}
+
+#slideshow { margin: 0 auto; position:relative;}
+
+#slideshow div { width:948px; height: 380px; margin:0;  }
+
+.information{
+    float: left;
+    width: 348px;
+    margin: 0 20px;
+	height: 380px;
+}
+
+.information h2{
+    margin-top: 54px;
+    display: block;
+    font-size: 29px;
+    line-height: 36px;
+}
+.information p{
+    margin: 0;
+}
+.information p{
+    font-size: 12px;
+    margin: 18px 0;
 }
 
 /* post */
@@ -596,6 +717,24 @@ h3#comments-title {
 #comments .comment-body blockquote p:last-child {
 	margin-bottom: 24px;
 }
+
+#comments .comment-body ul { margin: 0 0 10px 10px; }
+#comments .comment-body ul li {
+	display: block;
+	margin: 5px 0;
+	padding: 0 0 0 17px;
+	background: url(images/bullet.png) no-repeat 0 5px;
+}
+
+#comments .comment-body ol {
+	margin: 5px 0 15px 20px;
+}
+#comments .comment-body ol li { 
+	margin: 5px 0;
+	list-style: decimal;
+	padding: 0 0 0 5px;
+ }
+
 .commentlist ol {
 	list-style: decimal;
 }
@@ -784,6 +923,20 @@ h3#reply-title {
 	float: right;
 }
 
+#nav-single {
+    overflow:hidden;
+    margin-top:20px;
+    margin-bottom:10px;
+}
+.nav-previous {
+    float: left;
+    width: 50%;
+}
+.nav-next {
+    float: right;
+    text-align: right;
+    width: 50%;
+}
 
 /*--widget-formatting*/
 /*////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -881,16 +1034,16 @@ h3#reply-title {
 img.alignleft {
 	display: inline;
 	float: left;
-	margin-right: 15px;
-	margin-top: 4px;
+	margin-right: 22px;
+	margin-top: 9px;
 }
 
 .alignright,
 img.alignright {
 	display: inline;
 	float: right;
-	margin-left: 15px;
-	margin-top: 4px;
+	margin-left: 22px;
+	margin-top: 8px;
 }
 .aligncenter,
 img.aligncenter {
@@ -907,17 +1060,9 @@ img.alignleft,
 img.alignright,
 img.aligncenter
 {
-	margin-bottom: 6px;
+	margin-bottom: 10px;
 }
 
-img.alignnone,
-.alignnone {
-	display: inline;
-	float: left;
-	margin-right: 15px;
-	margin-top: 4px;
-	margin-bottom: 12px;
-}
 
 .wp-caption {
 	border: none;
@@ -932,13 +1077,16 @@ img.alignnone,
 	-khtml-border-radius: 0;
 	-webkit-border-radius: 0;
 	border-radius: 0;
+	max-width:96%;
 }
 .wp-caption img {
 	margin: 5px;
+	width: 96%;
 }
 .wp-caption p.wp-caption-text {
 	margin: 0 0 4px;
 }
+
 .wp-smiley {
 	margin:0;
 }

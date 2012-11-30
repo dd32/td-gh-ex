@@ -27,9 +27,9 @@
 			
 			<div id="footer-info">		
 				
-				<span id="copyright">Copyright <?php echo get_the_date( 'Y' ); ?>
- <?php echo get_option('app_footer_text') ?> | Powered by <a href="http://www.wordpress.com">WordPress</a> | application theme by <a href="http://www.themeszen.com">themeszen</a></span>
-				<span id="follow-us">Follow us: <a href="<?php echo get_option('app_feedburner') ?>">RSS</a> | <a href="<?php echo get_option('app_twitter') ?> ">Twitter</a></span>
+				<span id="copyright"><?php _e( 'Copyright ', 'application' ); ?><?php echo date( 'Y' ); ?>
+ <?php echo get_option('app_footer_text') ?> | <?php _e( 'Powered by', 'application' ); ?> <a href="http://www.wordpress.org">WordPress</a> | application theme by <a href="http://www.themeszen.com">themeszen</a></span>
+				<span id="follow-us"><?php _e( 'Follow us: ', 'application' ); ?><a href="<?php echo get_option('app_facebook') ?>">Facebook</a> | <a href="<?php echo get_option('app_twitter') ?> ">Twitter</a></span>
 			
 			</div>
 	

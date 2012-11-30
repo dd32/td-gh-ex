@@ -28,6 +28,12 @@
 						
 						<?php the_tags('Social tagging: ',' > '); ?>
 						
+					<nav id="nav-single"> <span class="nav-previous">
+            <?php previous_post_link( '%link', '<span class="meta-nav">&larr;</span> Previous Post '); ?>
+            </span> <span class="nav-next">
+            <?php next_post_link( '%link', 'Next Post <span class="meta-nav">&rarr;</span>'); ?>
+            </span> </nav>						
+						
 					</div><!--post-entry end-->
 	
 
