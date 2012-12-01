@@ -68,9 +68,9 @@
 		$req = get_option( 'require_name_email' );
 	    $aria_req = ( $req ? " aria-required='true'" : '' );
 		$fields =  array(
-			'author'	=>	'<label>'. __('Name','simplecatch') .'</label><input type="text" class="text" placeholder="'.esc_attr( 'Name ( required )' ).'" name="author"'. $aria_req .' />',
-			'email' 	=>  '<label>'. __('Email','simplecatch') .'</label><input type="text" class="text" placeholder="'.esc_attr( 'Email ( required )' ).'" name="email"'. $aria_req .' />',
-			'url'    	=>	 '<label>'. __('Website','simplecatch') .'</label><input type="text" class="text" placeholder="'.esc_attr( 'Website' ).'" name="subject"'. $aria_req .' />' 
+			'author'	=>	'<label>'. __('Name','simplecatch') .'</label><input type="text" class="text" placeholder="'.esc_attr__( 'Name ( required )', 'simplecatch' ).'" name="author"'. $aria_req .' />',
+			'email' 	=>  '<label>'. __('Email','simplecatch') .'</label><input type="text" class="text" placeholder="'.esc_attr__( 'Email ( required )', 'simplecatch' ).'" name="email"'. $aria_req .' />',
+			'url'    	=>	 '<label>'. __('Website','simplecatch') .'</label><input type="text" class="text" placeholder="'.esc_attr__( 'Website', 'simplecatch' ).'" name="subject"'. $aria_req .' />' 
 		);
 			
 		$args = array(

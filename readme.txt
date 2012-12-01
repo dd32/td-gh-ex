@@ -201,3 +201,7 @@ Version 1.5
 * Added Russian translation ru_RU.po and ru_RU.mo
 * Added Word Wrap for commentlist in style.css
 
+Version 1.5.1
+* Added missing text translation ready
+* Updated simplecatch.pot, pl_PL.po and ru_RU.po
+

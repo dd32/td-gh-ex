@@ -388,15 +388,15 @@ function simplecatch_theme_options_do_page() {
                                         <td>
                                             <label title="no-sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/functions/panel/images/no-sidebar.gif" alt="Content-Sidebar" /><br />
                                             <input type="radio" name="simplecatch_options[sidebar_layout]" id="no-sidebar" <?php checked($options['sidebar_layout'], 'no-sidebar') ?> value="no-sidebar"  />
-                                             No Sidebar, One Column
+                                            <?php _e( 'No Sidebar, One Column', 'simplecatch' ); ?>
                                             </label>
                                             <label title="left-Sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/functions/panel/images/left-sidebar.gif" alt="Content-Sidebar" /><br />
                                             <input type="radio" name="simplecatch_options[sidebar_layout]" id="left-sidebar" <?php checked($options['sidebar_layout'], 'left-sidebar') ?> value="left-sidebar"  />
-                                            Content on Right
+                                            <?php _e( 'Content on Right', 'simplecatch' ); ?>
                                             </label>
                                             <label title="right-sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/functions/panel/images/right-sidebar.gif" alt="Content-Sidebar" /><br />
                                             <input type="radio" name="simplecatch_options[sidebar_layout]" id="right-sidebar" <?php checked($options['sidebar_layout'], 'right-sidebar') ?> value="right-sidebar"  />
-                                            Content on Left
+                                            <?php _e( 'Content on Left', 'simplecatch' ); ?>
                                             </label>
                                         </td>
                                     </tr>  
