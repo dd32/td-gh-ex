@@ -1,6 +1,7 @@
 <?php
 function bfa_ata_admin() {
-    global $bfa_ata, $bfa_ata_version, $options, $templateURI;
+    global $bfa_ata, $bfa_ata_version, $options;
+    $templateURI = get_template_directory_uri(); 
 
     if ( isset($_REQUEST['saved']) ) echo '<div id="message" class="updated fade"><p><strong>Atahualpa settings saved.</strong></p></div>';
     if ( isset($_REQUEST['reset']) ) echo '<div id="message" class="updated fade"><p><strong>Atahualpa settings reset.</strong></p></div>';
@@ -134,7 +135,7 @@ if($value['category'] == "postinfos" AND isset($value['switch'])) { ?>
 			<h3>Icons</h3>
 			<strong>Currently available images (Once you uploaded yours they will be listed here):</strong>
 			<br /><br />
-			<?php if ($handle = opendir( TEMPLATEPATH . '/images/icons/')) {
+			<?php if ($handle = opendir( get_template_directory() . '/images/icons/')) {
 				while (false !== ($file = readdir($handle))) {
 					if ($file != "." && $file != "..") $files[] = $file;
 				}
@@ -267,8 +268,8 @@ if($value['category'] == "postinfos" AND isset($value['switch'])) { ?>
 			<br /><br />NOTE: On single post pages the <code>%comments('...')%</code> link won't display anything because the comments are on the same page. 
 			If you still 
 			want to link to the comments, the comment section and the comment form start with named anchors, so you use something like this:<br /> 
-			<code>&lt;?php echo '&lt;a href="'.getH().'comments"&gt;Skip to comments&lt;/a&gt;'; ?&gt;</code> or <code>&lt;?php echo 
-			'&lt;a href="'.getH().'commentform"&gt;Skip to comments form&lt;/a&gt;'; ?&gt;</code>
+			<code>&lt;?php echo '&lt;a href="'.bfa_getH().'comments"&gt;Skip to comments&lt;/a&gt;'; ?&gt;</code> or <code>&lt;?php echo 
+			'&lt;a href="'.bfa_getH().'commentform"&gt;Skip to comments form&lt;/a&gt;'; ?&gt;</code>
 			<hr><code>%comments-rss('linktext')%</code> - Displays the comment feed link for a post, with linktext as the link text.
 			<hr><code>%trackback%</code> - Displays the trackback URL for the current post.
 			<hr><code>%trackback-linked('linktext')%</code> - Displays a link to the trackback URL, with linktext as the link text.
@@ -364,7 +365,9 @@ if ($value['type'] == "text") {
 	if ( isset($value['size'])) 
 		echo "size=" . $value['size'] . ($value['size'] > 20 ? ' style="width: 95%;"' : ' '); 
 	
-	echo ( eregi("color", $value['id']) ? 'class="color" ' : '' ) . 
+//	Note: eregi() is depreciated in php 5.3
+//	echo ( eregi("color", $value['id']) ? 'class="color" ' : '' ) . 
+	echo ( preg_match("/"."color"."/i", $value['id']) ? 'class="color" ' : '' ) . 
 	'name="' . $value['id'] . '" id="' . $value['id'] . '" type="' . $value['type'] . '" value="';
 	 
 	if ( isset($bfa_ata[ $value['id'] ]) ) 

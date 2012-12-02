@@ -8,9 +8,15 @@ function bfa_meta_tags() {
 	   If yes, the Bytes For All SEO options will be deactivated,
 	   no matter what the option "Use Bytes For All SEO options?" is set to. */
 
+	// if "SEO Ultimate" Plugin (http://www.seodesignsolutions.com/wordpress-seo/) is installed
+	if(class_exists('seo_ultimate') OR
+
+	// if "WP SEO" Plugin  is installed
+	defined('WPSEO_PATH') OR
+	 
 	// if "All-In-One_SEO" Plugin (http://semperfiwebdesign.com) is installed
-	if(class_exists('All_in_One_SEO_Pack'))
-	{ ?> <title><?php wp_title(''); ?></title> <?php }
+	class_exists('All_in_One_SEO_Pack'))
+	{	?> <title><?php wp_title(''); ?></title> <?php }
 	
 	// if "WpSEO" Plugin (http://www.wpseo.de/) is installed
 	elseif (class_exists('wpSEO') OR
@@ -80,7 +86,7 @@ function bfa_meta_tags() {
 			// cat titles don't get a filter, so htmlentities is required
 			$bfa_ata_page_title = htmlentities(single_cat_title('', false),ENT_QUOTES,'UTF-8');
 
-		} elseif ( function_exists('is_tag') AND is_tag() ) {
+		} elseif ( is_tag() ) {
 			// tag titles get their own filter from WP
 			$bfa_ata_page_title = htmlentities(single_tag_title('', false),ENT_QUOTES,'UTF-8');
 
@@ -144,8 +150,8 @@ function bfa_meta_tags() {
 	<?php 
 
 	// META DESCRIPTION & KEYWORDS for (only) the HOMEPAGE.
-	if ( function_exists('is_front_page') ? is_front_page() : is_home() ) {
-	#if ( is_home() ) {
+	if ( is_front_page() ) {
+
 		if ( trim($bfa_ata['homepage_meta_description'] ) != "" ) {
 			echo "<meta name=\"description\" content=\"" .
 			htmlentities($bfa_ata['homepage_meta_description'],ENT_QUOTES,'UTF-8') . "\" />\n";

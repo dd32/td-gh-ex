@@ -1,6 +1,7 @@
 <?php # error_reporting(E_ALL & ~E_NOTICE);
-#include_once (TEMPLATEPATH . '/functions.php'); 
-global $templateURI,  $homeURL; 
+$templateURI = get_template_directory_uri(); 
+$homeURL = get_home_url();  
+
 if ( isset($bfa_ata_preview) OR $bfa_ata['css_external'] == "Inline" OR 
 ( isset($bfa_ata_debug) AND $bfa_ata['allow_debug'] == "Yes" ) ) {
 	echo '<style type="text/css">'; 
@@ -432,7 +433,6 @@ div.opacityleft {
 	height: <?php echo $bfa_ata['headerimage_height']; ?>px;
 	width: <?php echo $bfa_ata['header_opacity_left_width']; ?>px; 
 	filter: alpha(opacity=<?php echo $bfa_ata['header_opacity_left']; ?>);
-	-moz-opacity:.<?php echo $bfa_ata['header_opacity_left']; ?>;
 	opacity:.<?php echo $bfa_ata['header_opacity_left']; ?>;
 	}
 <?php } ?>
@@ -449,7 +449,6 @@ div.opacityright {
 	height: <?php echo $bfa_ata['headerimage_height']; ?>px;
 	width: <?php echo $bfa_ata['header_opacity_right_width']; ?>px; 
 	filter: alpha(opacity=<?php echo $bfa_ata['header_opacity_right']; ?>);
-	-moz-opacity:.<?php echo $bfa_ata['header_opacity_right']; ?>;
 	opacity:.<?php echo $bfa_ata['header_opacity_right']; ?>;
 	}
 <?php } ?>
@@ -1430,9 +1429,6 @@ ul.children div.comment-container {
 	border: dotted 1px #ccc;
 	padding: 10px;
 	margin: 0 10px 8px 0;
-   	-moz-border-radius: 5px;
-   	-khtml-border-radius: 5px;
-   	-webkit-border-radius: 5px;
    	border-radius: 5px;
 	}
 
@@ -1500,9 +1496,6 @@ div.comment-number a:active {
 .page-numbers {
 	padding: 2px 6px;
 	border: solid 1px #000000;
-	-moz-border-radius: 6px;
-	-khtml-border-radius: 6px;
-	-webkit-border-radius: 6px;
 	border-radius: 6px;
 	}
 
@@ -1542,7 +1535,6 @@ div.xhtml-tags {
 abbr em {
 	border: none !important;
 	border-top: dashed 1px #aaa !important;
-	display: -moz-inline-box !important; /* Firefox 2 doesn't know default "inline-block" */
 	display: inline-block !important;
 	background: url(<?php echo $templateURI; ?>/images/commentluv.gif) 0% 90% no-repeat;
 	margin-top: 8px;
@@ -1676,14 +1668,7 @@ td#right ul.tw-nav-list li {
 	margin: 0 0 -1px 5px;
     border: solid 1px #ccc;
 	border-bottom: none;
-	-moz-border-radius: 5px;
-	-khtml-border-radius: 5px;
-	-webkit-border-radius: 5px;
 	border-radius: 5px;
-	-moz-border-radius-bottomright: 0;
-	-moz-border-radius-bottomleft: 0;
-	-webkit-border-bottom-right-radius: 0;
-	-webkit-border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;
 	border-bottom-left-radius: 0;
 	background: #eee;
@@ -1749,7 +1734,7 @@ img {
 							the right sidebar while being resized. Change this 
 							to 100% if you want, if your images
 							don't have padding and a border */
-	width: auto 100%;
+	width: auto;
 <?php } ?>
 	margin: 5px 0 5px 0;
 	}
@@ -1977,14 +1962,12 @@ div.sociable-tagline {
 
 .sociable-hovers {
 	opacity: .4;
-	-moz-opacity: .4;
 	filter: alpha(opacity=40);
 	vertical-align: text-bottom;
 	}
 	
 .sociable-hovers:hover {
 	opacity: 1;
-	-moz-opacity: 1;
 	filter: alpha(opacity=100);
 	}
 
@@ -2057,8 +2040,10 @@ include (WP_PLUGIN_DIR.'/wp-pagenavi/pagenavi-css.css');
 	#header, 
 	#footer, 
 	.colone, 
+	.colone-inner,
+	.colthree-inner,
 	.colthree,
-	.navigation, 
+	.navigation,
 	.navigation-top,
 	.navigation-middle,
 	.navigation-bottom,

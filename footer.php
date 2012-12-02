@@ -10,7 +10,7 @@ list($bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2, $bfa_ata['
 <?php if ( $right_col2 == "on" ) { ?>
 <td id="right-inner">
 
-	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Right Inner Sidebar') ) : ?>
+	<?php if ( !dynamic_sidebar('Right Inner Sidebar') ) : ?>
 
 		<div class="widget widget_categories"><div class="widget-title">
 		<h3><?php _e('Categories','atahualpa'); ?></h3>
@@ -43,7 +43,7 @@ list($bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2, $bfa_ata['
 <?php if ( $right_col == "on" ) { ?>
 <td id="right">
 
-	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Right Sidebar') ) : ?>
+	<?php if ( !dynamic_sidebar('Right Sidebar') ) : ?>
 	
 		<!-- Default content here -->
     	<div class="widget"><div class="widget-title"><h3>Recent Posts</h3></div>
@@ -92,9 +92,7 @@ list($bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2, $bfa_ata['
 
 <!-- Footer -->
 <td id="footer" colspan="<?php echo $cols; ?>">
-    <p>
     <?php echo bfa_footer(); ?>
-    </p>
     <?php if ($bfa_ata['footer_show_queries'] == "Yes - visible") { ?>
     <p>
     <?php echo $wpdb->num_queries; ?><?php _e(' queries. ','atahualpa'); ?><?php timer_stop(1); ?><?php _e(' seconds.','atahualpa'); ?>

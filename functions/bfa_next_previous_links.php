@@ -1,7 +1,7 @@
 <?php
 /* Check if several pages exist to avoid empty
    next/prev navigation on multi post pages */
-function show_posts_nav() {
+function bfa_show_posts_nav() {
 	global $wp_query;
 	return ($wp_query->max_num_pages > 1) ? TRUE : FALSE;
 }
@@ -11,8 +11,9 @@ function show_posts_nav() {
    Available parameters for $location: Top, Bottom. Default: Top */
 function bfa_next_previous_page_links($location = "Top") {
 
-	global $bfa_ata, $homeURL;
-
+	global $bfa_ata;
+    $homeURL = get_home_url();  
+	
 	if ( !is_single() AND !is_page() AND
     strpos($bfa_ata['location_multi_next_prev'],$location) !== FALSE AND
     
@@ -20,45 +21,32 @@ function bfa_next_previous_page_links($location = "Top") {
     intval(get_query_var('email')) != 1 AND
     
     // display only if next/prev links actually exist
-    show_posts_nav() ) {
+    bfa_show_posts_nav() ) {
 
-		if ( function_exists('wp_pagenavi') ) {
+		if( function_exists('wp_pagenavi') ) {
 
 			echo '<div class="wp-pagenavi-navigation">'; wp_pagenavi();
 			echo '</div>';
 
 		} else {
 
-			if($bfa_ata['home_multi_next_prev'] != '') { 
+			if( $bfa_ata['home_multi_next_prev'] != '' ) { 
 				ob_start();
 					echo '<div class="home"><a href="' . $homeURL . '/">' . 
 					$bfa_ata['home_multi_next_prev'] . '</a></div>'; 
 					$nav_home_div_on = ob_get_contents(); 
 				ob_end_clean();
 				
-				// for WP 2.5 and newer
-				if ( function_exists('is_front_page') ) {
-
-					// make sure this is the real homepage and not a subsequent page
-					if ( is_front_page() AND !is_paged() ) {
-						$nav_home_add = ""; $nav_home_div = ""; 
-					} else {
-						$nav_home_add = '-home';
-						$nav_home_div = $nav_home_div_on; 
-					}
-				} 
-				
-				/* For WP 2.3 and older: Make sure this is the real homepage
-				   and not a subsequent page */
-				elseif ( is_home() AND !is_paged() ) {
-					$nav_home_add = ""; $nav_home_div = "";
-				} else { 
-					$nav_home_add = '-home'; 
+				// make sure this is the real homepage and not a subsequent page
+				if( is_front_page() AND !is_paged() ) {
+					$nav_home_add = ""; $nav_home_div = ""; 
+				} else {
+					$nav_home_add = '-home';
 					$nav_home_div = $nav_home_div_on; 
-				}	
+				}
 			} else {
-					$nav_home_add = ''; 
-					$nav_home_div = ''; 
+				$nav_home_add = ''; 
+				$nav_home_div = ''; 
 			}
 			
 			echo '<div class="clearfix navigation-'.strtolower($location).'">
@@ -85,7 +73,8 @@ function bfa_next_previous_page_links($location = "Top") {
    Available parameters for $location: Top, Middle, Bottom. Default: Top  */
 function bfa_next_previous_post_links($location = "Top") {
 
-global $bfa_ata, $homeURL;
+    global $bfa_ata;
+    $homeURL = get_home_url();  
 
 	if ( is_single() AND strpos($bfa_ata['location_single_next_prev'],$location) !== FALSE AND
 	

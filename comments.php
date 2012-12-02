@@ -93,7 +93,7 @@ global $aria_req, $post_id, $required_text;
 // author, email and url fields are set in a separate variable first:
 $fields =  array(
 	'author' => '<p><input class="text author" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' tabindex="1" />' . 
-				'&nbsp;&nbsp;<label for="author"><strong>' . __( 'Name' ,'atahualpa') . '</strong> ' . ( $req ? __('(required)','atahualpa') : '' ) . '</label></p>',
+				'&nbsp;&nbsp;<label for="author"><strong>' . __( 'Name ' ,'atahualpa') . '</strong> ' . ( $req ? __('(required)','atahualpa') : '' ) . '</label></p>',
 	'email'  => '<p><input class="text email" id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . '  tabindex="2" />' . 
 				'&nbsp;&nbsp;<label for="email"><strong>' . __( 'Email' ,'atahualpa') . '</strong> ' . ( $req ? __('(will not be published) (required)','atahualpa') : '' ) . '</label></p>',
 	'url'    => '<p><input class="text url" id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30"  tabindex="3" />' . 
@@ -115,8 +115,8 @@ if ($bfa_ata['show_xhtml_tags'] == "Yes") {
 $comment_form_settings = array(
 	'fields'               => apply_filters( 'comment_form_default_fields', $fields ),
 	'comment_field'        => '<p><textarea name="comment" id="comment" rows="10" cols="10" tabindex="4"></textarea></p>',
-	'must_log_in'          => '<p class="must-log-in">' .  sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
-	'logged_in_as'         => '<p class="logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
+	'must_log_in'          => '<p class="must-log-in">' .  sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'atahualpa' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
+	'logged_in_as'         => '<p class="logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'atahualpa' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
 	'comment_notes_before' => '',
 	'comment_notes_after'  => $comment_notes_after,
 	'id_form'              => 'commentform',

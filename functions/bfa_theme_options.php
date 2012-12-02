@@ -104,18 +104,18 @@ if (defined('ABSPATH')) {
 	}
 }
 
-// different options text for different WP versions
-if( function_exists('wp_list_comments') ) {
-	// WP 2.7+
-	$go_to_pages = "go to Site Admin -> Pages -> Edit";
-	$go_to_cats = "go to Site Admin -> Posts -> Categories";
-	$path_to_widgets = "Appearance";
-} else {
-	// WP 2.6 and older
-	$go_to_pages = "go to Site Admin -> Manage -> Pages";
-	$go_to_cats = "go to Site Admin -> Manage -> Categories";
-	$path_to_widgets = "Design (\"Presentation\" in WP 2.3 and older)";
-}
+
+$go_to_pages = "go to Site Admin -> Manage -> Pages";
+$go_to_cats = "go to Site Admin -> Manage -> Categories";
+$path_to_widgets = "Design (\"Presentation\" in WP 2.3 and older)";
+
+
+
+
+
+
+
+
 
 // array of theme options starts here. Set the category of the first option of every new option category to "category_name", except for the very first option, which will be hard coded in functions.php
 $options1 = array(
@@ -252,8 +252,8 @@ $options1 = array(
             "id" => "add_blogtitle",
             "type" => "select",
             "std" => "Page Title - Blog Title",
-            "options" => array("Page Title - Blog Title", "Blog Title -
-            Page Title", "Page Title"),
+            "options" => array("Page Title - Blog Title", 
+            "Blog Title - Page Title", "Page Title"),
             "info" => "Show the blog title in front of or after the page title,
             in the meta title tag of every page? Or, show only the page title?"),
 
@@ -1379,9 +1379,7 @@ $options1 = array(
 	array(    "name" => "Content ABOVE the LOOP",
     	    "category" => "center",
             "id" => "content_above_loop",
-            "std" => "<?php bfa_next_previous_page_links('Top'); ?>
-
-<?php if( is_category() AND function_exists('page2cat_output')) { page2cat_output(\$cat); } ?>",
+            "std" => "<?php bfa_next_previous_page_links('Top'); ?>",
             "type" => "textarea-large",
             "info" => "Edit/add/remove content above THE LOOP. The Loop is the content that Wordpress outputs for a particular page. This 
 can be a list of posts (thus the name \"Loop\"), or a single 
@@ -2023,7 +2021,7 @@ $options3 = array(
 area, the center column or the footer area. This page here only explains how to use this feature. To actually add a new widget area 
 you'll have to go to one of the following menu tabs:
 <ul><li><a href=\"javascript: myflowers.expandit('header-tab')\">Style & edit HEADER AREA</a>: Put the code into the text area named \"Configure Header Area\".</li>
-<li><a href=\"javascript: myflowers.expandit('center-tab')\">Style & edit CENTER COLUMN</a>: Put the code into ANY of the text areas EXCEPT the first one, named \"Center column style\".</li>
+<li><a href=\"javascript: myflowers.expandit('center-tab')\">Style & edit CENTER COLUMN</a>: If you want to add a widget area to the Center Column, you must edit \"index.php\" in the theme folder and add the widget area code there.</li>
 <li><a href=\"javascript: myflowers.expandit('footer-style-tab')\">Style & edit FOOTER</a>: Put the code into the text area named \"Footer: Content\".</li>
 <li>Technically, you could also hard code widget areas into one of the Atahualpa files such as index.php, header.php or footer.php (by using the code as shown below). 
 You should avoid this though, because you'd have to re-do these file edits whenever you upgrade to a new version of Atahualpa. Most of the time it will be unnecessary anyway as there 
@@ -2032,7 +2030,7 @@ database and automatically carried over to new Atahualpa versions when you upgra
 
 <h3>Usage</h3>
 The code to create new widget areas is a PHP function with parameters:<br />
-<code>&lt;?php bfa_widget_area('parameter=value&paramater=value&paramater=value'); ?&gt;</code>
+<code>&lt;?php bfa_widget_area('parameter=value&#38;paramater=value&#38;paramater=value'); ?&gt;</code>
 
 <h3>Min. required paramaters</h3>
 This is the shortest and most basic way you can create a widget area.<br />
@@ -2239,8 +2237,7 @@ __('Category:','atahualpa') . " %categories-linked(', ')% %edit(' | ', '" . __('
     array(    "name" => "POST Container: STICKY",
     	    "category" => "posts",
             "id" => "post_container_sticky_style",
-            "std" => "background: #eee url(" . $templateURI .
-            "/images/sticky.gif) 99% 5% no-repeat;\nborder: dashed 1px #cccccc;\npadding: 10px;",
+            "std" => "background: #eee url(" . $templateURI . "/images/sticky.gif) 99% 5% no-repeat;\nborder: dashed 1px #cccccc;\npadding: 10px;",
             "type" => "textarea-large",
             "info" => "<img src=\"" . $templateURI . "/options/images/post-container.gif\"
 			style=\"float: right; margin: 0 0 10px 10px;\">" . "Additional styles for <strong>the container
@@ -2965,7 +2962,9 @@ text-align: center;\ncolor: #777777;\nfont-size: 95%;",
 			between <code>&lt;head&gt;</code> and <code>&lt;/head&gt;</code>. <strong>Note:</strong> Any HTML you put here shouldn't be
 			\"visible\" HTML such as a table or a DIV container. If you put HTML here, then it would be machine parsable code, something like a 
 			meta tag, such as:<br /><code>&lt;meta name=\"author\" content=\"John W. Doe\" /&gt;</code>.
-			<br /><br />Since 3.6.5 <span style='color:red'>PHP code cannot be used anymore</span> in HTML/CSS Inserts."),
+			<br /><br />Since 3.6.5 <span style='color:red'>PHP code cannot be used anymore</span> in HTML/CSS Inserts.
+			<strong>Google Analytics code</strong> would go here. '. 
+			"),
 
     array(    "name" => "HTML Inserts: Body Tag",
     	    "category" => "html-inserts",
@@ -2997,7 +2996,6 @@ text-align: center;\ncolor: #777777;\nfont-size: 95%;",
 			"editable" => "yes", 
             "info" => "Add code here (JavaScript, HTML, CSS) that you want to put into the body section of the website, 
 			between <code>&lt;body&gt;</code> and <code>&lt;/body&gt;</code>, right before <code>&lt;/body&gt;</code>.
-			<strong>Google Analytics</strong> code would go here, and most other tracking code probably too.
 			<br /><br />Since 3.6.5 <span style='color:red'>PHP code cannot be used anymore</span> in HTML/CSS Inserts."),
 
     array(    "name" => "CSS Inserts",
@@ -3011,7 +3009,12 @@ text-align: center;\ncolor: #777777;\nfont-size: 95%;",
 			<code>.newclass {<br />color: #123456;<br />border: solid 1px #000000;<br />
 			font-family: arial, \"comic sans ms\", sans-serif;<br />background: url(". $css_img_path ."images/myimage.gif);
             <br />}</code>
-			<br /><br />Since 3.6.5 <span style='color:red'>PHP code cannot be used anymore</span> in HTML/CSS Inserts."),
+			<br /><br /><strong>Example 2</strong><br /><code>h1 { font-size: 34px; line-height: 1.2; margin: 0.3em 0 10px; }<br />
+h2 { font-size: 28px; line-height: 1.3; margin: 1em 0 .2em; }<br />
+h3 { font-size: 24px; line-height: 1.3; margin: 1em 0 .2em; }<br />
+h4 { font-size: 19px; margin: 1.33em 0 .2em; }<br />
+h5 { font-size: 1.3em; margin: 1.67em 0; font-weight: bold; }<br />
+h6 { font-size: 1.15em; margin: 1.67em 0; font-weight: bold; }<br /></code><br />Since 3.6.5 <span style='color:red'>PHP code cannot be used anymore</span> in HTML/CSS Inserts."),
 
 
 // New category: Archives page

@@ -2,18 +2,18 @@
 list($bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2, $bfa_ata['h_blogtitle'], $bfa_ata['h_posttitle']) = bfa_get_options();
 get_header(); 
 extract($bfa_ata); 
+global $bfa_ata_postcount;
 ?>
 
 <?php /* If there are any posts: */
-if (have_posts()) : $bfa_ata['postcount'] = 0; /* Postcount needed for option "XX first posts full posts, rest excerpts" */ ?>
+if (have_posts()) : $bfa_ata_postcount = 0; /* Postcount needed for option "XX first posts full posts, rest excerpts" */ ?>
 
 	<?php // Deactivated since 3.6.5
 	# include 'bfa://content_above_loop'; 
 	// Uses the following static code instead: ?>
 	<?php bfa_next_previous_page_links('Top'); // For MULTI post pages if activated at ATO -> Next/Previous Navigation:  ?>
-	<?php if( is_category() AND function_exists('page2cat_output')) { page2cat_output($cat); } // For the plugin Page2Cat http://wordpress.org/extend/plugins/page2cat/ ?>
 
-	<?php while (have_posts()) : the_post(); $bfa_ata['postcount']++; ?>
+	<?php while (have_posts()) : the_post(); $bfa_ata_postcount++; ?>
 	
 		<?php // Deactivated since 3.6.5
 		#include 'bfa://content_inside_loop'; 
@@ -30,6 +30,7 @@ if (have_posts()) : $bfa_ata['postcount'] = 0; /* Postcount needed for option "X
 		<?php bfa_post_byline('<div class="post-byline">','</div>'); ?>
 		<?php bfa_post_bodycopy('<div class="post-bodycopy clearfix">','</div>'); ?>
 		<?php bfa_post_pagination('<p class="post-pagination"><strong>'.__('Pages:','atahualpa').'</strong>','</p>'); ?>
+		<?php bfa_archives_page('<div class="archives-page">','</div>'); // Archives Pages. Displayed on a specific static page, if configured at ATO -> Archives Pages: ?>
 		<?php bfa_post_footer('<div class="post-footer">','</div>'); ?>
 		</div><!-- / Post -->	
 						
@@ -41,7 +42,6 @@ if (have_posts()) : $bfa_ata['postcount'] = 0; /* Postcount needed for option "X
 	<?php bfa_next_previous_post_links('Middle'); // Displayed on SINGLE post pages if activated at ATO -> Next/Previous Navigation: ?>
 	<?php bfa_get_comments(); // Load Comments template (on single post pages, and static pages, if set on options page): ?>
 	<?php bfa_next_previous_post_links('Bottom'); // Displayed on SINGLE post pages if activated at ATO -> Next/Previous Navigation: ?>
-	<?php bfa_archives_page('<div class="archives-page">','</div>'); // Archives Pages. Displayed on a specific static page, if configured at ATO -> Archives Pages: ?>
 	<?php bfa_next_previous_page_links('Bottom'); // Displayed on MULTI post pages if activated at ATO -> Next/Previous Navigation: ?>
 
 <?php /* END of: If there are any posts */

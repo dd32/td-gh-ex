@@ -1,11 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<?php global $templateURI,  $homeURL; ?>
+<?php 
+	$templateURI = get_template_directory_uri(); 
+	$homeURL = get_home_url();  ?>
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
 <head>
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 <?php // if index.php or another page template (copied from index.php) was not used
 if (!isset($bfa_ata))  
 list($bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2, $bfa_ata['h_blogtitle'], $bfa_ata['h_posttitle']) = bfa_get_options(); ?>
+<?php global $post_id; ?>
 <?php if ( isset($bfa_ata['IEDocType']) ) { 
 switch ( $bfa_ata['IEDocType'] ) { 
 	case "None":
@@ -38,7 +41,7 @@ switch ( $bfa_ata['IEDocType'] ) {
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <?php if ( $bfa_ata['css_external'] == "External" ) { ?><link rel="stylesheet" href="<?php echo $homeURL; ?>/?bfa_ata_file=css" type="text/css" media="all" /><?php } ?>
-<?php if ( function_exists('wp_list_comments') AND is_singular() ) { 	wp_enqueue_script( 'comment-reply' ); } ?>
+<?php if ( function_exists('wp_list_comments') AND is_singular() AND (comments_open( $post_id ))) { 	wp_enqueue_script( 'comment-reply' ); } ?>
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?><?php bfa_incl('html_inserts_body_tag'); ?>>

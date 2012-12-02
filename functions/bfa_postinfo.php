@@ -1,7 +1,8 @@
 <?php
 // Callback function for image replacement
 function bfa_image_files($matches) {
-	global $templateURI;
+	$templateURI = get_template_directory_uri(); 
+
 	return '<img src="' . $templateURI . 
 	'/images/icons/' . $matches[1] . '" alt="" />';
 }
@@ -13,8 +14,25 @@ function bfa_meta_value($matches) {
 	return get_post_meta($post->ID, $matches[1], true);
 }
 
+// Date callback
+function bfa_parse_date_callback( $matches ) {
+	ob_start(); 
+		the_time($matches[2]); 
+		$date = ob_get_contents(); 
+	ob_end_clean();	
+	return $date;
+}
 
-function postinfo($postinfo_string) {
+// Date modified callback
+function bfa_parse_date_modified_callback( $matches ) {
+	ob_start(); 
+		the_modified_time($matches[2]); 
+		$date_modified = ob_get_contents(); 
+	ob_end_clean();	
+	return $date_modified;
+}
+
+function bfa_postinfo($postinfo_string) {
 
 	// one theme option needed below for nofollow trackback / RSS links yes/no
 	global $bfa_ata, $post;
@@ -182,30 +200,13 @@ function postinfo($postinfo_string) {
 
 	// Date & Time
 	if ( strpos($postinfo_string,'%date(') !== FALSE ) {
-		while ( strpos($postinfo,'%date(') !== FALSE ) {
-			$date_param = preg_match("/(.*)\%date\('(.*?)'\)(.*)/i",$postinfo,$date_matches);
-			ob_start(); 
-				the_time($date_matches[2]); 
-				$date = ob_get_contents(); 
-			ob_end_clean();
-			$postinfo = preg_replace("/(.*)%date\((.*?)\)%(.*)/i", "\${1}" .
-	        $date. "\${3}", $postinfo);
-		}
+		$postinfo = preg_replace_callback("/%date\((.*?)'(.*?)'(.*?)\)%/is","bfa_parse_date_callback",$postinfo);
 	}
 
 	// Date & Time, last modified
 	if ( strpos($postinfo_string,'%date-modified(') !== FALSE ) {
-		while ( strpos($postinfo,'%date-modified(') !== FALSE ) {
-			$date_param = preg_match("/(.*)\%date-modified\('(.*?)'\)(.*)/i",
-	        $postinfo_string,$date_matches);
-			ob_start(); 
-				the_modified_time($date_matches[2]); 
-				$date_modified = ob_get_contents(); 
-			ob_end_clean();
-			$postinfo = preg_replace("/(.*)%date-modified\((.*?)\)%(.*)/i", "\${1}" .
- 	       $date_modified. "\${3}", $postinfo);
-		}
-	}
+		$postinfo = preg_replace_callback("/%date-modified\((.*?)'(.*?)'(.*?)\)%/is","bfa_parse_date_modified_callback",$postinfo);
+	}	
 
 	// Tags, linked - since WP 2.3
 	if ( strpos($postinfo_string,'%tags-linked') !== FALSE ) {
@@ -470,8 +471,10 @@ function postinfo($postinfo_string) {
 
 	// For the "Sociable" plugin
 	if ( strpos($postinfo_string,'%sociable%') !== FALSE ) {
-		$sociable = ( (function_exists('sociable_html2') AND
-        function_exists('sociable_html') ) ? $sociable = sociable_html2() : "" );
+		ob_start(); 
+			$sociable = ( (function_exists('sociable_html2') AND function_exists( do_sociable() ) ) ? do_sociable() : "");
+			$sociable = ob_get_contents();
+		ob_end_clean();
 		$postinfo = str_replace("%sociable%", $sociable, $postinfo);
 	}
 
@@ -514,7 +517,7 @@ function postinfo($postinfo_string) {
 	return $postinfo;
 }
 
-function getH() {
+function bfa_getH() {
 	global $bfa_ata, $post;
 	return('#');
 }

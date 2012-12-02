@@ -1,7 +1,9 @@
 <?php
 function bfa_header_config() {
 
-	global $bfa_ata, $post, $templateURI, $homeURL;
+	global $bfa_ata, $post;
+	$templateURI = get_template_directory_uri(); 
+    $homeURL = get_home_url();  
 
 	// Since 3.6: bfa_header_config() instead of bfa_header_config($header_items)
 	$header_items = $bfa_ata['configure_header'];
@@ -14,7 +16,7 @@ function bfa_header_config() {
 	OR strpos($header_items,'%page-right') !== FALSE ) {
 
 		// Since 3.5.2: New WP 3 menu system:
-		if ( function_exists('wp_nav_menu') AND has_nav_menu('menu1') ) 
+		if ( has_nav_menu('menu1') ) 
 		{
 			if ( strpos($header_items,'%pages') !== FALSE ) 
 				$alignment = "left";
@@ -44,11 +46,7 @@ function bfa_header_config() {
 			if ( $bfa_ata['home_page_menu_bar'] != '' ) 
 			{
 				echo '<li class="page_item';
-				if ( function_exists('is_front_page') ) {
-					if ( is_front_page() ) { 
-						echo ' current_page_item';
-					}
-				} elseif ( is_home() ) { 
+				if ( is_front_page() OR is_home() ) { 
 					echo ' current_page_item';	
 				}
 				echo '"><a href="' . $homeURL . '/" title="'; bloginfo('name'); echo '"><span>' . 
@@ -79,7 +77,7 @@ function bfa_header_config() {
 	OR strpos($header_items,'%cat-right') !== FALSE ) {
 
 		// Since 3.5.2: New WP 3 menu system:
-		if ( function_exists('wp_nav_menu') AND has_nav_menu('menu2') ) 
+		if ( has_nav_menu('menu2') ) 
 		{
 			if ( strpos($header_items,'%cats') !== FALSE ) 
 				$alignment = "left";
@@ -109,12 +107,8 @@ function bfa_header_config() {
 			if ( $bfa_ata['home_cat_menu_bar'] != '' ) 
 			{
 				echo '<li class="cat-item';
-				if ( function_exists('is_front_page') ) {
-					if ( is_front_page() OR is_home() )  
+				if ( is_front_page() OR is_home() )  
 						echo ' current-cat';
-				} elseif ( is_home() ) { 
-					echo ' current-cat';	
-				}
 				echo '"><a href="' . $homeURL . '/" title="'; bloginfo('name'); echo '">' . 
 				$bfa_ata['home_cat_menu_bar'] . '</a></li>' . "\n";	
 			}	
@@ -168,11 +162,11 @@ function bfa_header_config() {
 					'/wp-content/blogs.dir/' . $wpdb->blogid . '/files';
 					
 					// see if user has uploaded his own "logosymbol.gif" somewhere into his upload folder, version 1:
-					$wpmu_logosymbol = m_find_in_dir($upload_path1,$bfa_ata['logo']); $upload_path = $upload_path1;
+					$wpmu_logosymbol = bfa_m_find_in_dir($upload_path1,$bfa_ata['logo']); $upload_path = $upload_path1;
 					
 					// try version 2 if no logosymbol.gif was found:
 					if ( !$wpmu_logosymbol ) 
-						$wpmu_logosymbol = m_find_in_dir($upload_path2,$bfa_ata['logo']); $upload_path = $upload_path2;
+						$wpmu_logosymbol = bfa_m_find_in_dir($upload_path2,$bfa_ata['logo']); $upload_path = $upload_path2;
 					
 					// if we found logosymbol.gif one way or another, figure out the public URL
 					if ( $wpmu_logosymbol ) 

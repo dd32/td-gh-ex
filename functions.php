@@ -1,5 +1,5 @@
 <?php
-$bfa_ata_version = "3.7.1";
+$bfa_ata_version = "3.7.10";
 
 // Load translation file above
 load_theme_textdomain('atahualpa');
@@ -11,9 +11,9 @@ load_theme_textdomain('atahualpa');
 #remove_filter('the_title', 'wptexturize');
 
 // get default theme options
-include_once (TEMPLATEPATH . '/functions/bfa_theme_options.php');
+include_once (get_template_directory() . '/functions/bfa_theme_options.php');
 // Load options
-include_once (TEMPLATEPATH . '/functions/bfa_get_options.php');
+include_once (get_template_directory() . '/functions/bfa_get_options.php');
 list($bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2, $bfa_ata['h_blogtitle'], $bfa_ata['h_posttitle']) = bfa_get_options();
 // Sidebars:
 if ( function_exists('register_sidebar') ) {
@@ -66,59 +66,52 @@ if ( function_exists('register_sidebar') ) {
 
 #global $bfa_ata;
 // Load functions
-include_once (TEMPLATEPATH . '/functions/bfa_header_config.php');
-include_once (TEMPLATEPATH . '/functions/bfa_meta_tags.php');
-include_once (TEMPLATEPATH . '/functions/bfa_hor_cats.php');
-include_once (TEMPLATEPATH . '/functions/bfa_hor_pages.php');
+include_once (get_template_directory() . '/functions/bfa_header_config.php');
+include_once (get_template_directory() . '/functions/bfa_meta_tags.php');
+include_once (get_template_directory() . '/functions/bfa_hor_cats.php');
+include_once (get_template_directory() . '/functions/bfa_hor_pages.php');
 // New WP3 menus:
-include_once (TEMPLATEPATH . '/functions/bfa_new_wp3_menus.php');
-include_once (TEMPLATEPATH . '/functions/bfa_footer.php');
-include_once (TEMPLATEPATH . '/functions/bfa_recent_comments.php');
-include_once (TEMPLATEPATH . '/functions/bfa_popular_posts.php');
-include_once (TEMPLATEPATH . '/functions/bfa_popular_in_cat.php');
-include_once (TEMPLATEPATH . '/functions/bfa_subscribe.php');
-include_once (TEMPLATEPATH . '/functions/bfa_postinfo.php');
-include_once (TEMPLATEPATH . '/functions/bfa_rotating_header_images.php');
-include_once (TEMPLATEPATH . '/functions/bfa_next_previous_links.php');
-include_once (TEMPLATEPATH . '/functions/bfa_post_parts.php');
+include_once (get_template_directory() . '/functions/bfa_new_wp3_menus.php');
+include_once (get_template_directory() . '/functions/bfa_footer.php');
+include_once (get_template_directory() . '/functions/bfa_recent_comments.php');
+include_once (get_template_directory() . '/functions/bfa_popular_posts.php');
+include_once (get_template_directory() . '/functions/bfa_popular_in_cat.php');
+include_once (get_template_directory() . '/functions/bfa_subscribe.php');
+include_once (get_template_directory() . '/functions/bfa_postinfo.php');
+include_once (get_template_directory() . '/functions/bfa_rotating_header_images.php');
+include_once (get_template_directory() . '/functions/bfa_next_previous_links.php');
+include_once (get_template_directory() . '/functions/bfa_post_parts.php');
 if (!function_exists('paged_comments'))  
-	include_once (TEMPLATEPATH . '/functions/bfa_custom_comments.php');
+	include_once (get_template_directory() . '/functions/bfa_custom_comments.php');
 	
 // Since 3.5.2: JSON for PHP 4 & 5.1:
 if (!function_exists('json_decode')) {
-	include_once (TEMPLATEPATH . '/functions/JSON.php');
+	include_once (get_template_directory() . '/functions/JSON.php');
 	function json_encode($data) { $json = new Services_JSON(); return( $json->encode($data) ); }
 	function json_decode($data) { $json = new Services_JSON(); return( $json->decode($data) ); }
 }
-function toArray($data) {
+function bfa_toArray($data) {
     if (is_object($data)) $data = get_object_vars($data);
     return is_array($data) ? array_map(__FUNCTION__, $data) : $data;
 }
 
-// old, propretiary bodyclasses() of Atahualpa. Usage: bodyclasses()
-// include_once (TEMPLATEPATH . '/functions/bfa_bodyclasses.php');
-// new, default Wordpress body_class(). usage: body_class()
-// include only in WP 2.3 - WP 2.7 . From WP 2.8 on it is a core Wordpress function:
-/*
-if (!function_exists('body_class'))
-	include_once (TEMPLATEPATH . '/functions/bfa_body_class.php');
-*/
+
 
 // For plugin "Sociable":
 if (function_exists('sociable_html')) 
-	include_once (TEMPLATEPATH . '/functions/bfa_sociable2.php'); 
+	include_once (get_template_directory() . '/functions/bfa_sociable2.php'); 
 
 // "Find in directory" function, needed for finding header images on WPMU
 if (file_exists(ABSPATH."/wpmu-settings.php")) 
-	include_once (TEMPLATEPATH . '/functions/bfa_m_find_in_dir.php');
+	include_once (get_template_directory() . '/functions/bfa_m_find_in_dir.php');
 
 // CSS for admin area
-include_once (TEMPLATEPATH . '/functions/bfa_css_admin_head.php');
+include_once (get_template_directory() . '/functions/bfa_css_admin_head.php');
 // Add the CSS to the <head>...</head> of the theme option admin area
 add_action('admin_head', 'bfa_add_stuff_admin_head');
 
-include_once (TEMPLATEPATH . '/functions/bfa_ata_add_admin.php');
-include_once (TEMPLATEPATH . '/functions/bfa_ata_admin.php');
+include_once (get_template_directory() . '/functions/bfa_ata_add_admin.php');
+include_once (get_template_directory() . '/functions/bfa_ata_admin.php');
 add_action('admin_menu', 'bfa_ata_add_admin');
 
 
@@ -131,10 +124,18 @@ function bfa_escape($string) {
 
 
 
+/**
+ * Since 3.7.9
+ * Redirect users to Theme Options after activation, this will also create the 
+ * CSS file in the uploads dir, for the first time
+ */
+if ( is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" )
+	wp_redirect( 'themes.php?page=atahualpa-options' );
+	
 
 
 
-function footer_output($footer_content) {
+function bfa_footer_output($footer_content) {
 	global $bfa_ata;
 	$footer_content .= '<br />Powered by <a href="http://wordpress.org/">WordPress</a> &amp; <a href="http://forum.bytesforall.com/">Atahualpa</a>';
 	return $footer_content;
@@ -142,16 +143,16 @@ function footer_output($footer_content) {
 
 // Move Featured Content Gallery down in script order in wp_head(), so that jQuery can finish before mootools
 // Since 3.6 this probably won't work because as per the new WP rules wp_head() must be right before </head>
-function remove_featured_gallery_scripts() {
+function bfa_remove_featured_gallery_scripts() {
        remove_action('wp_head', 'gallery_styles');
 }
-add_action('init','remove_featured_gallery_scripts', 1);
+add_action('init','bfa_remove_featured_gallery_scripts', 1);
 
-function addscripts_featured_gallery() {
+function bfa_addscripts_featured_gallery() {
 	if(!function_exists('gallery_styles')) return;
 	gallery_styles();
 }
-add_action('wp_head', 'addscripts_featured_gallery', 12);
+add_action('wp_head', 'bfa_addscripts_featured_gallery', 12);
 
 /*
  * Add custom header inserts through wp_head
@@ -160,30 +161,24 @@ add_action('wp_head', 'addscripts_featured_gallery', 12);
  *
 @ since 3.6.5
 */
-function add_html_inserts_header() {
+function bfa_add_html_inserts_header() {
 	global $bfa_ata;
 	if( $bfa_ata['html_inserts_header'] != '' ) bfa_incl('html_inserts_header'); 
 }
-add_action('wp_head', 'add_html_inserts_header', 20);
+add_action('wp_head', 'bfa_add_html_inserts_header', 20);
 
 // new comment template for WP 2.7+, legacy template for old WP 2.6 and older
 // Since 3.6.: ToDo: Remove legacy.comments.php after a while. Older WP's won't work anyway 
 // with the new WP requirements to REPLACE older functions with newer ones introduced in 2.8 (i.e. get_the_author_meta)
 if ( !function_exists('paged_comments') ) {
-	include_once (TEMPLATEPATH . '/functions/bfa_custom_comments.php'); 
-	function legacy_comments($file) {
-		if( !function_exists('wp_list_comments') ) 
-			$file = TEMPLATEPATH . '/legacy.comments.php';
-		return $file;
-	}
-	add_filter('comments_template', 'legacy_comments');
+	include_once (get_template_directory() . '/functions/bfa_custom_comments.php'); 
 }
 
 // remove WP default inline CSS for ".recentcomments a" from header
-function remove_wp_widget_recent_comments_style() {
+function bfa_remove_wp_widget_recent_comments_style() {
       remove_filter('wp_head', 'wp_widget_recent_comments_style' );
 }
-add_filter( 'wp_head', 'remove_wp_widget_recent_comments_style', 1 );
+add_filter( 'wp_head', 'bfa_remove_wp_widget_recent_comments_style', 1 );
 
 
 /* Remove plugin CSS & JS and include them in the theme's main CSS and JS files
@@ -204,8 +199,8 @@ if ( function_exists('akst_share_link') ) {
 /* EXTERNAL OR INTERNAL CSS & JS, PLUS COMPRESSION & DEBUG */
 
 // Register new query variables "bfa_ata_file" and "bfa_debug" with Wordpress
-add_filter('query_vars', 'add_new_var_to_wp');
-function add_new_var_to_wp($public_query_vars) {
+add_filter('query_vars', 'bfa_add_new_var_to_wp');
+function bfa_add_new_var_to_wp($public_query_vars) {
 	$public_query_vars[] = 'bfa_ata_file';
 	$public_query_vars[] = 'bfa_debug';
 	return $public_query_vars;
@@ -233,29 +228,31 @@ add_action('template_redirect', 'bfa_css_js_redirect');
 add_action('wp_head', 'bfa_inline_css_js');
 
 // since 3.4.3 
-function add_js_link() {
-	global $bfa_ata, $homeURL;
+function bfa_add_js_link() {
+	global $bfa_ata;
+	$homeURL = get_home_url();  
+	
 	if ( $bfa_ata['javascript_external'] == "External" ) { ?>
 	<script type="text/javascript" src="<?php echo $homeURL; ?>/?bfa_ata_file=js"></script>
 	<?php } 
 }
-add_action('wp_head', 'add_js_link');
+add_action('wp_head', 'bfa_add_js_link');
 
 function bfa_css_js_redirect() {
 	global $bfa_ata;
 	$bfa_ata_query_var_file = get_query_var('bfa_ata_file');
 	if ( $bfa_ata_query_var_file == "css" OR $bfa_ata_query_var_file == "js" ) {
-		include_once (TEMPLATEPATH . '/' . $bfa_ata_query_var_file . '.php');
+		include_once (get_template_directory() . '/' . $bfa_ata_query_var_file . '.php');
 		exit; // this stops WordPress entirely
 	}
 	// Since 3.4.7: Import/Export Settings
 	if ( $bfa_ata_query_var_file == "settings-download" ) {
 		if(isset($_FILES['userfile'])) $uploadedfile = $_FILES['userfile'];
-		include_once (TEMPLATEPATH . '/download.php');
+		include_once (get_template_directory() . '/download.php');
 		exit; // this stops WordPress entirely
 	}
 	if ( $bfa_ata_query_var_file == "settings-upload" ) {
-		include_once (TEMPLATEPATH . '/upload.php');
+		include_once (get_template_directory() . '/upload.php');
 		exit; // this stops WordPress entirely
 	}
 }
@@ -266,11 +263,11 @@ function bfa_inline_css_js() {
 	$bfa_ata_debug = get_query_var('bfa_debug');
 	if ( $bfa_ata_preview == 1 OR $bfa_ata['css_external'] == "Inline" OR 
 	( $bfa_ata_debug == 1 AND $bfa_ata['allow_debug'] == "Yes" ) ) {
-		include_once (TEMPLATEPATH . '/css.php');
+		include_once (get_template_directory() . '/css.php');
 	}
 	if ( $bfa_ata_preview == 1 OR $bfa_ata['javascript_external'] == "Inline" OR 
 	( $bfa_ata_debug == 1 AND $bfa_ata['allow_debug'] == "Yes" ) ) {
-		include_once (TEMPLATEPATH . '/js.php');
+		include_once (get_template_directory() . '/js.php');
 	}
 }
 
@@ -693,32 +690,6 @@ function bfa_ata_save_postdata( $post_id ) {
 }
 
 
-// Since 3.4.3: Add Spam and Delete links to comments
-/* Since 3.4.7 deactivated because it's causing issues see http://forum.bytesforall.com/showthread.php?t=6742
-function delete_comment_link($id) {  
-	if (current_user_can('edit_post')) {  
-		echo '| <a href="'.admin_url("comment.php?action=cdc&c=$id").'">Delete</a> ';  
-		echo '| <a href="'.admin_url("comment.php?action=cdc&dt=spam&c=$id").'">Spam</a>';  
-	}  
-}  
-*/
-
-// Add "in-cat-catname" to body_class of single post pages
-/*
-function add_cats_to_body_class($classes='') {
-	if (is_single()) {
-		global $post;
-		$categories = get_the_category($post->ID);
-		foreach ($categories as $category) {
-			$classes[] = 'in-cat-' . $category->category_nicename;
-		}
-	}
-	return $classes;
-}
-add_filter('body_class', 'add_cats_to_body_class');
-*/
-
-
 
 if ( function_exists( 'add_theme_support' ) ) { // Added in 2.9
 
@@ -748,8 +719,8 @@ add_action( 'wp_ajax_import_bfa_settings_now', 'bfa_import_settings_now' );
 
 // Since 3.5.2: New menu system in WP 3
 if (function_exists('register_nav_menus')) {
-add_action( 'init', 'register_new_menus' );
-	function register_new_menus() {
+add_action( 'init', 'bfa_register_new_menus' );
+	function bfa_register_new_menus() {
 		register_nav_menus(
 			array(
 				'menu1' => __( 'Menu 1','atahualpa' ),
@@ -875,26 +846,36 @@ $homeURL = esc_url( home_url() );
 // Since 3.6: Include Javascripts here and with wp_enqueue instead of header.php
 $isIE6 = (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE 6.') !== FALSE);
  
-if ( !is_admin() ) { 
-	
-	wp_enqueue_script('jquery');
+// Since 3.7.4: Enqueue with add_action
+function bfa_enqueue_scripts() {
+	global $isIE6, $bfa_ata;
+	$templateURI = get_template_directory_uri(); 
 
-	if ($bfa_ata['pngfix_selectors'] != "" AND $isIE6 = TRUE) 
-	{
-		wp_register_script('ddroundies', $templateURI . '/js/DD_roundies.js', false, '0.0.2a' );
-		wp_enqueue_script('ddroundies');
-		add_action('wp_head', 'ddroundiesHead');
-	}
 	
-	if (strpos($bfa_ata['configure_header'],'%image')!== FALSE AND $bfa_ata['header_image_javascript'] != "0" 
-	AND $bfa_ata['crossslide_fade'] != "0") {
-		wp_register_script('crossslide', $templateURI . '/js/jquery.cross-slide.js', array('jquery'), '0.3.2' );
-		wp_enqueue_script('crossslide');
+	if ( !is_admin() ) { 
+		
+		wp_enqueue_script('jquery');
+
+		if ($bfa_ata['pngfix_selectors'] != "" AND $isIE6 = TRUE) 
+		{
+			wp_register_script('ddroundies', $templateURI . '/js/DD_roundies.js', false, '0.0.2a' );
+			wp_enqueue_script('ddroundies');
+			add_action('wp_head', 'bfa_ddroundiesHead');
+		}
+		
+		if (strpos($bfa_ata['configure_header'],'%image')!== FALSE AND $bfa_ata['header_image_javascript'] != "0" 
+		AND $bfa_ata['crossslide_fade'] != "0") {
+			wp_register_script('crossslide', $templateURI . '/js/jquery.cross-slide.js', array('jquery'), '0.3.2' );
+			wp_enqueue_script('crossslide');
+		}
 	}
 }
+add_action('wp_enqueue_scripts', 'bfa_enqueue_scripts'); // For use on the Front end (ie. Theme)
+
+
 
 // Since 3.6.1: Add ddroundies script in head this way:
-function ddroundiesHead() {
+function bfa_ddroundiesHead() {
 	global $bfa_ata;
 	echo '
 <!--[if IE 6]>
@@ -962,55 +943,16 @@ function bfa_incl($option) {
 
 	global $bfa_ata;
 	
-	// 'extension_loaded' or 'ini_get' aren't always correct according to http://stackoverflow.com/questions/3383916/how-to-check-whether-suhosin-is-installed
-	/*
-	ob_start(); 
-	phpinfo();
-	$phpinfo = ob_get_contents();
-	ob_end_clean();
-	if (strpos($phpinfo, "Suhosin") !== FALSE)
-    $suhosin = "yes";
-	*/
-	/*
-	if($suhosin == "yes") echo $bfa_ata[$option] 
-	else include('bfa://' . $option);
-	*/
 	$result = bfa_parse_widget_areas($bfa_ata[$option]);
 
 	echo $result;
 }
 
-/*
-function bfa_parse_widget_areas($content) {
-	// For custom widget areas
-	//$widget_option_matches = array();
-				
-	if ( strpos($content,'<?php bfa_widget_area') !== FALSE ) {
-
-
-			$widget_options = preg_match("/(.*)<\?php bfa_widget_area\('(.*?)'\)(.*)\?>(.*)/im",
-	        $content,$widget_option_matches);
-			
-			parse_str($widget_option_matches[2], $widget_option_array);
-			
-			ob_start(); 
-				bfa_widget_area($widget_option_array);
-	      		$widget_area = ob_get_contents();
-			ob_end_clean();
-			
-			$content = preg_replace("/(.*)<\?php bfa_widget_area(.*)\('(.*?)'\)(.*)\?>(.*)/im", "\${1}" .
-    	    $widget_area . "\${5}", $content);	
-	}
-
-	# echo $bfa_ata[$option];
-	return $content; // .  $widget_option_matches[2];
-}	
-*/
 
 function bfa_parse_widget_areas($content) {
 				
 	if ( strpos($content,'<?php bfa_widget_area') !== FALSE ) {
-		$content = preg_replace_callback("|<\?php bfa_widget_area(.*)\((.*)'(.*?)'(.*)\)(.*)\?>|","bfa_parse_widget_areas_callback",$content);
+		$content = preg_replace_callback("/<\?php bfa_widget_area(.*?)\((.*?)'(.*?)'(.*?)\)(.*?)\?>/s","bfa_parse_widget_areas_callback",$content);
 	}
 
 	return $content; 
@@ -1032,5 +974,18 @@ function bfa_parse_widget_areas_callback($matches) {
 	return $widget_area;
 }
 
+function bfa_is_pagetemplate_active($pagetemplate = '') {
+
+	if ($pagetemplate == '') {return 0;}
+	
+	global $wpdb;
+	$sql = "select meta_key from $wpdb->postmeta where meta_key like '_wp_page_template' and meta_value like '" . $pagetemplate . "'";
+	$result = $wpdb->query($sql);
+	if ($result) {
+		return 1;
+	} else {
+		return 0;
+	}
+}
 
 ?>
