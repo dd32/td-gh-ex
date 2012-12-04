@@ -125,7 +125,7 @@
 
 	register_sidebar( array(
 		'name' => __( 'Footer Area One', 'design' ),
-		'id' => 'sidebar-3',
+		'id' => 'sidebar-2',
 		'description' => __( 'An optional widget area for your site footer', 'design' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -135,7 +135,7 @@
 
 	register_sidebar( array(
 		'name' => __( 'Footer Area Two', 'design' ),
-		'id' => 'sidebar-4',
+		'id' => 'sidebar-3',
 		'description' => __( 'An optional widget area for your site footer', 'design' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -145,7 +145,7 @@
 
 	register_sidebar( array(
 		'name' => __( 'Footer Area Three', 'design' ),
-		'id' => 'sidebar-5',
+		'id' => 'sidebar-4',
 		'description' => __( 'An optional widget area for your site footer', 'design' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -155,7 +155,7 @@
 	
 	register_sidebar( array(
 		'name' => __( 'Footer Area Four', 'design' ),
-		'id' => 'sidebar-6',
+		'id' => 'sidebar-5',
 		'description' => __( 'An optional widget area for your site footer', 'design' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",

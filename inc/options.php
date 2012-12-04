@@ -61,6 +61,13 @@ function optionsframework_options() {
 		'std' => 'All the developers of D5 Creation have come from the disadvantaged part or group of the society. All have established themselves after a long and hard struggle in their life ----- D5 Creation Team',
 		'type' => 'textarea');
 		
+	$options[] = array(
+		'name' => 'Show the Footer Sidebar.',
+		'desc' => 'Uncheck this if you do not want to show the footer sidebar (Widgets) automatically.',
+		'id' => 'fsidebar',
+		'std' => '1',
+		'type' => 'checkbox');
+		
 // Front Page Fearured Images
 
 	$fbsin=array("1","2","3");
