@@ -134,7 +134,7 @@
 	
 	register_sidebar( array(
 		'name' => 'Front Page Sidebar',
-		'id' => 'sidebar-1',
+		'id' => 'sidebar-2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -144,7 +144,7 @@
 	
 	register_sidebar( array(
 		'name' => 'Main Sidebar',
-		'id' => 'sidebar-2',
+		'id' => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
