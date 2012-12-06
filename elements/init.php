@@ -29,7 +29,7 @@ function cyberchimps_add_elements_style() {
 	wp_enqueue_script( 'elements_js', array( 'jquery' ) );
 }
 
-add_action( 'wp_enqueue_scripts', 'cyberchimps_add_elements_style' );
+add_action( 'wp_enqueue_scripts', 'cyberchimps_add_elements_style', 30 );
 
 // Load elements
 	// Set directory path

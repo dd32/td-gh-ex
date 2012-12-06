@@ -47,10 +47,10 @@ function cyberchimps_core_scripts() {
 	// Load Custom JS
 	wp_enqueue_script( 'custom', $js_path . 'custom.js', array( 'jquery' ), true );
 	
-	// Load JS for swipe functionality in slider
-	wp_enqueue_script( 'event-swipe-move', $js_path . 'jquery.event.move.js', array('jquery') );
-	wp_enqueue_script( 'event-swipe', $js_path . 'jquery.event.swipe.js', array('jquery') );
-	wp_enqueue_script( 'swipe', $js_path . 'swipe.js', array('jquery') );
+	//touch swipe gestures
+	wp_enqueue_script( 'jquery-mobile-touch', $js_path . 'jquery.mobile.custom.min.js', array('jquery') );
+	wp_enqueue_script( 'slider-call', $js_path . 'swipe-call.js', array('jquery', 'jquery-mobile-touch') );
+	
 	
 	// Load Bootstrap Library Items
 	wp_enqueue_style( 'bootstrap-style', $bootstrap_path . 'css/bootstrap.min.css', false, '2.0.4' );
@@ -78,7 +78,6 @@ function cyberchimps_core_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'cyberchimps_core_scripts', 20 );
-
 function cyberchimps_create_layout() {
 	global $post;
 	
@@ -814,7 +813,9 @@ function cyberchimps_options_help_text() {
 	if( cyberchimps_theme_check() == 'free' ) {
 	$text .= 	'<div class="row-fluid">
 						<div class="span6">
+						<a href="'. apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' ). '" title="'. apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' ). '">
 						<div class="cc_help_upgrade_bar">'. sprintf( __( 'Upgrade to %1$s', 'cyberchimps' ), apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' ) ) .'</div>
+						</a>
 						</div>
 						</div>
 						</div>
