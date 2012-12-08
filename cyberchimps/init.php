@@ -75,6 +75,18 @@ function cyberchimps_core_setup_theme() {
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'cyberchimps' ),
 	) );
+	
+	//set up defaults
+	$option_defaults['modal_welcome_note_display'] = true;
+	if( ! get_option( 'cyberchimps_options' ) ) {
+		update_option( 'cyberchimps_options', $option_defaults );
+	}
+	//if not then theme switch reset modal to true so that new values can be saved in the database
+	elseif( get_option( 'cyberchimps_options' ) && isset( $_GET['activated'] ) ) {
+		$options = get_option( 'cyberchimps_options' );
+		$options['modal_welcome_note_display'] = true;
+		update_option( 'cyberchimps_options', $options );
+	}
 }
 endif; // cyberchimps_core_setup_theme
 add_action( 'after_setup_theme', 'cyberchimps_core_setup_theme' );
@@ -114,6 +126,22 @@ function cyberchimps_custom_background_cb() {
 		$attachment = " background-attachment: $attachment;";
 
 		$style .= $image . $repeat . $position . $attachment;
+	}
+	if ( ! $background && ! $color && $cc_background != 'none' ) {
+		$img_url = get_template_directory_uri().'/cyberchimps/lib/images/backgrounds/'.$cc_background.'.jpg';
+		$image = "background-image: url( '$img_url' );";
+		$style .= $image; ?>
+		<style type="text/css">
+			body { <?php echo trim( $style ); ?> }
+		</style>
+<?php
+	}
+	else {
+?>
+<style type="text/css" id="custom-background-css">
+	body.custom-background { <?php echo trim( $style ); ?> }
+</style>
+<?php
 	}
 	}
 
@@ -165,11 +193,3 @@ add_action('after_setup_theme', 'cyberchimps_load_hooks');
 if ( is_admin() && isset($_GET['activated'] ) && $pagenow =="themes.php" ) {
 	wp_redirect( 'themes.php?page=cyberchimps-theme-options' );	
 }
-
-// force save after theme switch so that any new options get saved to the database
-function cyberchimps_save_new_options() {
-	$options = get_option( 'cyberchimps_options' );
-	$options['modal_welcome_note_display'] = 1;
-	update_option( 'cyberchimps_options', $options );
-}
-add_action('switch_theme', 'cyberchimps_save_new_options');
