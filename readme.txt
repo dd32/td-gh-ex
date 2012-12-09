@@ -167,3 +167,6 @@ Version 1.5.6
 
 Version 1.5.6.1
 * Added Word Wrap for commentlist in style.css
+
+Version 1.6
+* Added favicon url option in Theme Options

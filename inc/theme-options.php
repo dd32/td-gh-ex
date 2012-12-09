@@ -20,6 +20,8 @@ function catchbox_admin_enqueue_scripts( $hook_suffix ) {
 	wp_enqueue_style( 'catchbox-theme-options', get_template_directory_uri() . '/inc/theme-options.css', false, '2011-04-28' );
 	wp_enqueue_script( 'catchbox-theme-options', get_template_directory_uri() . '/inc/theme-options.js', array( 'farbtastic' ), '2011-06-10' );
 	wp_enqueue_style( 'farbtastic' );
+	wp_enqueue_script( 'simplecatch_upload', get_template_directory_uri().'/inc/add_image_scripts.js', array( 'jquery','media-upload','thickbox' ) );
+	wp_enqueue_style( 'thickbox' );
 }
 add_action( 'admin_print_styles-appearance_page_theme_options', 'catchbox_admin_enqueue_scripts' );
 add_action( 'admin_print_styles-appearance_page_slider_options', 'catchbox_admin_enqueue_scripts' );
@@ -77,6 +79,15 @@ function catchbox_theme_options_init() {
 		'__return_false', // Section callback (we don't want anything)
 		'theme_options' // Menu slug, used to uniquely identify the page; see catchbox_theme_options_add_page()
 	);
+	
+	// Register our individual settings fields
+	add_settings_field(
+		'favicon', // Unique identifier for the field for this section
+		__( 'Favicon URL', 'catchbox' ), // Setting field label
+		'catchbox_settings_field_favicon', // Function that renders the settings field
+		'theme_options', // Menu slug, used to uniquely identify the page; see catchbox_theme_options_add_page()
+		'general' // Settings section. Same as the first argument in the add_settings_section() above
+	);	
 
 	// Register our individual settings fields
 	add_settings_field(
@@ -265,6 +276,20 @@ function catchbox_slider_options_help() {
 			)
 		);
 	}
+}
+
+
+/**
+ * Renders the favicon url setting field.
+ *
+ * @since Catch Box 1.6
+ */
+function catchbox_settings_field_favicon() {
+	$options = catchbox_get_theme_options();
+	?>
+	<input class="upload-url" type="text" name="catchbox_theme_options[fav_icon]" id="fav-icon" size="65" value="<?php if ( isset( $options[ 'fav_icon' ] ) ) echo esc_attr( $options[ 'fav_icon'] ); ?>" />
+    <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Add/Change Favicon','simplecatch' );?>" />
+	<?php
 }
 
 
@@ -1070,6 +1095,10 @@ function catchbox_options_social_links_validation( $options ) {
  */
 function catchbox_theme_options_validate( $input ) {
 	$output = $defaults = catchbox_get_default_theme_options();
+	
+	// favicon url
+	if ( isset( $input['fav_icon'] ) )	
+		$output['fav_icon'] = esc_url_raw($input['fav_icon']);	
 
 	// Color scheme must be in our array of color scheme options
 	if ( isset( $input['color_scheme'] ) && array_key_exists( $input['color_scheme'], catchbox_color_schemes() ) )
@@ -1089,24 +1118,62 @@ function catchbox_theme_options_validate( $input ) {
 	// Theme layout must be in our array of theme layout options
 	if ( isset( $input['content_layout'] ) && array_key_exists( $input['content_layout'], catchbox_content_layout() ) )
 		$output['content_layout'] = $input['content_layout'];
-		
+	
+	// excerpt length
 	if ( isset( $input['excerpt_length'] ) )	
 		$output['excerpt_length'] = absint($input['excerpt_length']);
 	
+	// feed url
 	if ( isset( $input['feed_url'] ) )	
 		$output['feed_url'] = esc_url_raw($input['feed_url']);
-		
+	
+	// Disable Header Search
 	if ( isset( $input['disable_header_search'] ) )
 		// Our checkbox value is either 0 or 1 
 		$output[ 'disable_header_search' ] = $input[ 'disable_header_search' ];
 	
-		
+	// Custom CSS 	
 	if ( isset( $input['custom_css'] ) )	
 		$output['custom_css'] = wp_kses_stripslashes($input['custom_css']);
 		
 	if( function_exists( 'catchbox_themeoption_invalidate_caches' ) )  { catchbox_themeoption_invalidate_caches(); }
 	return apply_filters( 'catchbox_theme_options_validate', $output, $input, $defaults );
 }
+
+/**
+ * Get the favicon Image from theme options
+ *
+ * @uses favicon 
+ * @get the data value of image from theme options
+ * @display favicon
+ *
+ * @uses set_transient and delete_transient 
+ */
+function catchbox_favicon() {
+	//delete_transient( 'catchbox_favicon' );	
+	
+	if ( !$catchbox_favicon = get_transient( 'catchbox_favicon' ) ) {
+		
+		$options = catchbox_get_theme_options();
+		$favicon = $options['fav_icon'];
+		
+		if ( !empty( $favicon ) )  {
+			$catchbox_favicon = '<link rel="shortcut icon" href="'.esc_url( $favicon ).'" type="image/x-icon" />'; 	
+		}
+		
+		set_transient( 'catchbox_favicon', $catchbox_favicon, 86940 );
+		
+	}
+	
+	echo $catchbox_favicon ;	
+	
+}
+
+//Load Favicon in Header Section
+add_action('wp_head', 'catchbox_favicon');
+
+//Load Favicon in Admin Section
+add_action( 'admin_head', 'catchbox_favicon' );
 
 /**
  * Enqueue the styles for the current color scheme.
@@ -1364,6 +1431,7 @@ add_action('template_redirect', 'catchbox_rss_redirect');
  * @uses delete_transient
  */
 function catchbox_themeoption_invalidate_caches() {
+	delete_transient( 'catchbox_favicon' );	//Favicon
 	delete_transient( 'catchbox_sliders' ); // Featured Slider
 	delete_transient( 'catchbox_socialprofile' ); //Social Profile
 }
