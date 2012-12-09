@@ -642,7 +642,7 @@ function simplecatch_inline_css() {
 
 		echo '<!-- refreshing cache -->' . "\n";
 		if( !empty( $options[ 'custom_css' ] ) ) {
-			$simplecatch_inline_css	= '<!-- '.get_bloginfo('name').' Custom CSS Styles -->' . "\n";
+			$simplecatch_inline_css	.= '<!-- '.get_bloginfo('name').' Custom Content Color CSS Styles -->' . "\n";
 	        $simplecatch_inline_css .= '<style type="text/css" media="screen">' . "\n";
 			$simplecatch_inline_css .=  $options['custom_css'] . "\n";
 			$simplecatch_inline_css .= '</style>' . "\n";
@@ -906,7 +906,7 @@ function simplecatch_infobar() {
     <div id="info-support">
     
     	<div class="upgrade">
-        	<a class="upgrade button" href="<?php echo esc_url(__('http://catchthemes.com/themes/simple-catch-pro','simplecatch')); ?>" title="<?php esc_attr_e('Upgrade Simple Catch Pro at Introductory Price $19.99 Only', 'simplecatch'); ?>" target="_blank"><?php printf(__('Upgrade Simple Catch Pro at Introductory Price $19.99 Only','simplecatch')); ?></a>
+        	<a class="upgrade button" href="<?php echo esc_url(__('http://catchthemes.com/themes/simple-catch-pro','simplecatch')); ?>" title="<?php esc_attr_e('Upgrade to Simple Catch Pro', 'simplecatch'); ?>" target="_blank"><?php printf(__('Upgrade to Simple Catch Pro','simplecatch')); ?></a>
       	</div>
         
         <div class="theme-social">

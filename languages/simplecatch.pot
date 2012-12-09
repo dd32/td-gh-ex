@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/simple-catch\n"
 "POT-Creation-Date: 2012-09-28 16:55+0530\n"
-"PO-Revision-Date: 2012-11-28 22:33+0530\n"
+"PO-Revision-Date: 2012-12-09 16:33+0530\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Catch Themes <info@catchinternet.com>\n"
 "MIME-Version: 1.0\n"
@@ -322,7 +322,7 @@ msgid "http://catchthemes.com/themes/simple-catch-pro"
 msgstr ""
 
 #: ../functions/simplecatch_functions.php:909
-msgid "Upgrade Simple Catch Pro at Introductory Price $19.99 Only"
+msgid "Upgrade to Simple Catch Pro"
 msgstr ""
 
 #: ../functions/simplecatch_functions.php:914
@@ -339,7 +339,12 @@ msgid "Select Sidebar layout"
 msgstr ""
 
 #: ../functions/simplecatch_metabox.php:33
-msgid "Default Layout Set in <a href=\""
+msgid "Default Layout Set in"
+msgstr ""
+
+#: ../functions/simplecatch_metabox.php:33
+#: ../functions/panel/theme_options.php:141
+msgid "Theme Settings"
 msgstr ""
 
 #: ../functions/simplecatch_metabox.php:39
@@ -398,10 +403,6 @@ msgstr ""
 
 #: ../functions/panel/theme_options.php:140
 msgid "Design Settings"
-msgstr ""
-
-#: ../functions/panel/theme_options.php:141
-msgid "Theme Settings"
 msgstr ""
 
 #: ../functions/panel/theme_options.php:147
@@ -841,19 +842,15 @@ msgstr ""
 msgid "Note: Here you can put scripts from Google, Facebook, Add This etc. which will load on footer"
 msgstr ""
 
-#. Theme URI of the plugin/theme
-msgid "http://wordpress.org/extend/themes/simple-catch"
-msgstr ""
-
 #. Description of the plugin/theme
 msgid ""
 "Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize"
 "through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, "
-Three Custom Layouts, Featured Slider, Theme Options (Header Logo, Footer Logo, "
-Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular "
-plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based "
-on popular 978 Grid System CSS Framework. Multilingual Ready (WPML) and also "
-"currently translated in Polish and Russian."
+"Three Custom Layouts, Featured Slider, Theme Options (Header Logo, Footer Logo, "
+"Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular "
+"plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based "
+"on popular 978 Grid System CSS Framework. Multilingual Ready (WPML) and also "
+"currently translated in Polish, Russian and Finnish."
 msgstr ""
 
 #. Author of the plugin/theme

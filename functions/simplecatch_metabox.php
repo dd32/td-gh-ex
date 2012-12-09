@@ -30,7 +30,7 @@ $sidebar_layout = array(
 		 'default-sidebar' => array(
             			'id'		=> 'simplecatch-sidebarlayout',
 						'value' 	=> 'default',
-						'label' 	=> __( 'Default Layout Set in <a href="'.get_bloginfo('url').'/wp-admin/themes.php?page=simplecatch_options" target="_blank">Theme Settings</a>', 'simplecatch' ),
+						'label' 	=> __( 'Default Layout Set in', 'simplecatch' ).' <a href="'.get_bloginfo('url').'/wp-admin/themes.php?page=theme_options" target="_blank">'. __( 'Theme Settings', 'simplecatch' ).'</a>',
 						'thumbnail' => ' '
         			),
         'no-sidebar' => array(

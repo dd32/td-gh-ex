@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/simple-catch\n"
-"POT-Creation-Date: 2012-11-13 02:14+0400\n"
-"PO-Revision-Date: 2012-11-14 00:31+0400\n"
+"POT-Creation-Date: 2012-09-28 16:55+0530\n"
+"PO-Revision-Date: 2012-12-09 16:35+0530\n"
 "Last-Translator: Alexey Kurpachev <kurpachev@gmail.com>\n"
 "Language-Team:  <kurpachev@gmail.com>\n"
 "Language: Russian\n"
@@ -75,9 +75,17 @@ msgstr "Комментарии закрыты."
 msgid "Name"
 msgstr "Имя"
 
+#: ../comments.php:71
+msgid "Name ( required )"
+msgstr "Имя (обязательно)"
+
 #: ../comments.php:72
 msgid "Email"
 msgstr "Email"
+
+#: ../comments.php:72
+msgid "Email ( required )"
+msgstr "Email (обязательно)"
 
 #: ../comments.php:73
 msgid "Website"
@@ -93,13 +101,13 @@ msgstr "Комментарий"
 
 #: ../comments.php:80
 msgid "Submit"
-msgstr "Подтвердить"
+msgstr "Отправить"
 
 #: ../content.php:18
 #: ../content.php:25
 #, php-format
 msgid "Permalink to %s"
-msgstr ""
+msgstr "Постоянная ссылка на %s"
 
 #: ../content.php:28
 #: ../image.php:46
@@ -109,12 +117,12 @@ msgstr " "
 #: ../content.php:54
 #: ../search.php:39
 msgid "Previous"
-msgstr "Предыдущий"
+msgstr "Пред."
 
 #: ../content.php:55
 #: ../search.php:40
 msgid "Next"
-msgstr "Следующий"
+msgstr "След."
 
 #: ../content.php:64
 msgid "Not found"
@@ -122,11 +130,11 @@ msgstr "Не найдено"
 
 #: ../content.php:65
 msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
-msgstr "Извинените, но никаких результатов найдено не было для запрашиваемого архива. Возможно, поиск поможет найти связанное сообщение."
+msgstr "Извините, но для запрашиваемого архива, поиск не дал никаких результатов . Возможно, поиск поможет найти связанное сообщение."
 
 #: ../footer.php:17
 msgid "Copyright"
-msgstr "Права вледения"
+msgstr "Права владения"
 
 #: ../footer.php:17
 msgid "All Rights Reserved."
@@ -143,11 +151,11 @@ msgstr "боковая панель"
 
 #: ../image.php:106
 msgid "Previous Image"
-msgstr "Предыдущее изображение"
+msgstr "Пред. изображение"
 
 #: ../image.php:107
 msgid "Next Image"
-msgstr "Следующее изображение"
+msgstr "След. изображение"
 
 #: ../search.php:17
 #, php-format
@@ -157,7 +165,7 @@ msgstr "Показ результатов для: <span class=\"img-title\">%s</
 #: ../search.php:46
 #, php-format
 msgid "Your search <span> \"%s\" </span> did not match any documents"
-msgstr "Ваш поисковый запрос <span> \"%s\" </span> не соответствовал никаким документам"
+msgstr "По вашему поисковому запросу <span> \"%s\" </span> не найдено ни одного документа"
 
 #: ../search.php:48
 msgid "A few suggestions"
@@ -186,94 +194,94 @@ msgid "Page %s"
 msgstr "Страница %s"
 
 #: ../functions/simplecatch_functions.php:436
-#, fuzzy, php-format
+#, php-format
 msgid "%s in Facebook"
-msgstr "Facebook"
+msgstr "%s в Facebook"
 
 #: ../functions/simplecatch_functions.php:441
-#, fuzzy, php-format
+#, php-format
 msgid "%s in Twitter"
-msgstr "Twitter"
+msgstr "%s в Twitter"
 
 #: ../functions/simplecatch_functions.php:446
-#, fuzzy, php-format
+#, php-format
 msgid "%s in Google+"
-msgstr "Google+"
+msgstr "%s в Google+"
 
 #: ../functions/simplecatch_functions.php:451
-#, fuzzy, php-format
+#, php-format
 msgid "%s in Linkedin"
-msgstr "Linkedin"
+msgstr "%s в Linkedin"
 
 #: ../functions/simplecatch_functions.php:456
-#, fuzzy, php-format
+#, php-format
 msgid "%s in Pinterest"
-msgstr "Pinterest"
+msgstr "%s в Pinterest"
 
 #: ../functions/simplecatch_functions.php:461
-#, fuzzy, php-format
+#, php-format
 msgid "%s in YouTube"
-msgstr "Youtube"
+msgstr "%s в Youtube"
 
 #: ../functions/simplecatch_functions.php:466
-#, fuzzy, php-format
+#, php-format
 msgid "%s in Vimeo"
-msgstr "Vimeo"
+msgstr "%s в Vimeo"
 
 #: ../functions/simplecatch_functions.php:471
-#, fuzzy, php-format
+#, php-format
 msgid "%s in Slideshare"
-msgstr "Slideshare"
+msgstr "%s в Slideshare"
 
 #: ../functions/simplecatch_functions.php:476
-#, fuzzy, php-format
+#, php-format
 msgid "%s in Foursquare"
-msgstr "Foursquare"
+msgstr "%s в Foursquare"
 
 #: ../functions/simplecatch_functions.php:481
-#, fuzzy, php-format
+#, php-format
 msgid "%s in Flickr"
-msgstr "Flickr"
+msgstr "%s в Flickr"
 
 #: ../functions/simplecatch_functions.php:486
-#, fuzzy, php-format
+#, php-format
 msgid "%s in Tumblr"
-msgstr "Tumblr"
+msgstr "%s в Tumblr"
 
 #: ../functions/simplecatch_functions.php:491
-#, fuzzy, php-format
+#, php-format
 msgid "%s in deviantART"
-msgstr "deviantART"
+msgstr "%s в deviantART"
 
 #: ../functions/simplecatch_functions.php:496
-#, fuzzy, php-format
+#, php-format
 msgid "%s in Dribbble"
-msgstr "Dribbble"
+msgstr "%s в Dribbble"
 
 #: ../functions/simplecatch_functions.php:501
-#, fuzzy, php-format
+#, php-format
 msgid "%s in MySpace"
-msgstr "MySpace"
+msgstr "%s в MySpace"
 
 #: ../functions/simplecatch_functions.php:506
-#, fuzzy, php-format
+#, php-format
 msgid "%s in WordPress"
-msgstr "WordPress"
+msgstr "%s в WordPress"
 
 #: ../functions/simplecatch_functions.php:511
 #, php-format
 msgid "%s in RSS"
-msgstr ""
+msgstr "%s в RSS"
 
 #: ../functions/simplecatch_functions.php:516
-#, fuzzy, php-format
+#, php-format
 msgid "%s in Delicious"
-msgstr "Delicious"
+msgstr "%s в Delicious"
 
 #: ../functions/simplecatch_functions.php:521
-#, fuzzy, php-format
+#, php-format
 msgid "%s in Last.fm"
-msgstr "Last.fm"
+msgstr "%s в Last.fm"
 
 #: ../functions/simplecatch_functions.php:674
 msgid "Powered By:"
@@ -317,8 +325,8 @@ msgid "http://catchthemes.com/themes/simple-catch-pro"
 msgstr "http://catchthemes.com/themes/simple-catch-pro"
 
 #: ../functions/simplecatch_functions.php:909
-msgid "Upgrade Simple Catch Pro at Introductory Price $19.99 Only"
-msgstr "Обновите до Simple Catch Pro по начальной цене всего $19.99"
+msgid "Upgrade to Simple Catch Pro"
+msgstr "Обновите до Simple Catch Pro"
 
 #: ../functions/simplecatch_functions.php:914
 msgid "http://facebook.com/catchthemes"
@@ -334,8 +342,13 @@ msgid "Select Sidebar layout"
 msgstr "Выберите разметку страницы"
 
 #: ../functions/simplecatch_metabox.php:33
-msgid "Default Layout Set in <a href=\""
-msgstr "Разметка страницы по умолчанию установлена в <a href=\""
+msgid "Default Layout Set in"
+msgstr "По умолчанию, установлено в разделе"
+
+#: ../functions/simplecatch_metabox.php:33
+#: ../functions/panel/theme_options.php:141
+msgid "Theme Settings"
+msgstr "Настройки темы"
 
 #: ../functions/simplecatch_metabox.php:39
 msgid "No sidebar"
@@ -395,17 +408,13 @@ msgstr "Настройки сохранены."
 msgid "Design Settings"
 msgstr "Настройки дизайна"
 
-#: ../functions/panel/theme_options.php:141
-msgid "Theme Settings"
-msgstr "Настройки темы"
-
 #: ../functions/panel/theme_options.php:147
 msgid "Logo Options"
 msgstr "Настройки логотипа"
 
 #: ../functions/panel/theme_options.php:152
 msgid "Disable Header Logo:"
-msgstr "Отключить логотип в шапке (Header Logo):"
+msgstr "Отключить логотип в шапке:"
 
 #: ../functions/panel/theme_options.php:157
 msgid "Header logo url:"
@@ -429,7 +438,7 @@ msgstr "Отключить слоган сайта:"
 
 #: ../functions/panel/theme_options.php:191
 msgid "Disable Footer Logo:"
-msgstr "Отключить логотип нижнего колонтитула (Footer Logo):"
+msgstr "Отключить логотип нижнего колонтитула:"
 
 #: ../functions/panel/theme_options.php:196
 msgid "Footer logo url: "
@@ -551,17 +560,29 @@ msgstr "Нажмите здесь, чтобы прочитать"
 msgid "Default Layout"
 msgstr "Разметка страницы по-умолчанию"
 
+#: ../functions/panel/theme_options.php:391
+msgid "No Sidebar, One Column"
+msgstr "Одна колонка"
+
+#: ../functions/panel/theme_options.php:395
+msgid "Content on Right"
+msgstr "Содержимое справа"
+
+#: ../functions/panel/theme_options.php:399
+msgid "Content on Left"
+msgstr "Содержимое слева"
+
 #: ../functions/panel/theme_options.php:414
 msgid "Homepage / Frontpage Category Setting"
-msgstr "Домашняя / Главная страницы (настройки)"
+msgstr "Настройка категорий Главной / Домашней страниц"
 
 #: ../functions/panel/theme_options.php:420
 msgid "Front page posts categories:"
-msgstr "Категории на главной странице:"
+msgstr "Категории на Главной странице:"
 
 #: ../functions/panel/theme_options.php:422
 msgid "Only posts that belong to the categories selected here will be displayed on the front page."
-msgstr "Только те сообщения, которые относятся к категориям, выбранным здесь будут отображаться на главной странице."
+msgstr "Только те сообщения, которые относятся к категориям, выбранным здесь будут отображаться на Главной странице."
 
 #: ../functions/panel/theme_options.php:427
 msgid "--Disabled--"
@@ -585,7 +606,7 @@ msgstr "Текст кнопки поиска"
 
 #: ../functions/panel/theme_options.php:469
 msgid "Excerpt / More Tag Settings"
-msgstr "Выдержки / Тег \"Далее\" (настройки)"
+msgstr "Настройки Выдержек / Тега \"Далее\""
 
 #: ../functions/panel/theme_options.php:474
 msgid "More Tag Text"
@@ -601,11 +622,11 @@ msgstr "Переадресация канала новостей"
 
 #: ../functions/panel/theme_options.php:494
 msgid "Feed Redirect URL"
-msgstr "URL переадресации канала новостей"
+msgstr "URL для переадресации канала новостей"
 
 #: ../functions/panel/theme_options.php:530
 msgid "Featured Slider Options"
-msgstr "Настройки отображаемого слайдера"
+msgstr "Настройки слайдера"
 
 #: ../functions/panel/theme_options.php:546
 msgid "Add Slider Options"
@@ -621,7 +642,7 @@ msgstr "Кол-во слайдов"
 
 #: ../functions/panel/theme_options.php:561
 msgid "Featured Slider Post #"
-msgstr "Сообщение для слайдера #"
+msgstr "Сообщение для слайда #"
 
 #: ../functions/panel/theme_options.php:563
 msgid "Click Here To Edit"
@@ -629,11 +650,11 @@ msgstr "Нажмите для редактирования"
 
 #: ../functions/panel/theme_options.php:569
 msgid "Note: Here You can put your Post IDs which displays on Homepage as slider."
-msgstr "Примечание: Здесь Вы можете добавить свои Post IDs, которые будут выводиться на Домашнюю страницу в качестве слайдера."
+msgstr "Примечание: Здесь Вы можете добавить ID своих сообщений, которые будут выводиться на Домашнюю страницу в виде слайдера."
 
 #: ../functions/panel/theme_options.php:576
 msgid "Slider Effect Options"
-msgstr "Эффекты слайдера (настройки)"
+msgstr "Настройки эффектов слайдера"
 
 #: ../functions/panel/theme_options.php:580
 msgid "Disable Slider Background Effect:"
@@ -702,7 +723,7 @@ msgstr "Длительность эффекта перехода"
 
 #: ../functions/panel/theme_options.php:646
 msgid "Social Links Option"
-msgstr "Социальные Сети (настройки ссылок)"
+msgstr "Настройки ссылок на Социальные Сети"
 
 #: ../functions/panel/theme_options.php:664
 msgid "Facebook"
@@ -774,7 +795,7 @@ msgstr "Last.fm"
 
 #: ../functions/panel/theme_options.php:780
 msgid "Webmaster Tools Option"
-msgstr "Инструменты веб-мастера  (настройки)"
+msgstr "Настройки инструментов веб-мастера"
 
 #: ../functions/panel/theme_options.php:796
 msgid "Site Verification"
@@ -824,3 +845,36 @@ msgstr "Код для отображения в нижнем колонтиту�
 msgid "Note: Here you can put scripts from Google, Facebook, Add This etc. which will load on footer"
 msgstr "Примечание: Здесь вы можете добавить скрипты от Google, Facebook, Add This и т.п., которые будут загружаться в нижнем колонтитуле"
 
+#. Description of the plugin/theme
+msgid ""
+"Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy "
+"Customizethrough Theme Options and Custom Widgets. Features: Custom Menu, "
+"Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options (Header "
+"Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster "
+"Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, "
+"WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS "
+"Framework. Multilingual Ready (WPML) and also currently translated in "
+"Polish, Russian and Finnish."
+msgstr ""
+"Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy "
+"Customizethrough Theme Options and Custom Widgets. Features: Custom Menu, "
+"Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options (Header "
+"Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster "
+"Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, "
+"WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS "
+"Framework. Multilingual Ready (WPML) and also currently translated in "
+"Polish, Russian and Finnish."
+
+#. Author of the plugin/theme
+msgid "Catch Themes Team"
+msgstr "Catch Themes Team"
+
+#. Tags of the plugin/theme
+msgid ""
+"black, gray, silver, white, light, one-column, two-columns, left-sidebar, "
+"right-sidebar, fixed-width, custom-menu, featured-images, full-width-"
+"template, theme-options, threaded-comments, translation-ready"
+msgstr ""
+"black, gray, silver, white, light, one-column, two-columns, left-sidebar, "
+"right-sidebar, fixed-width, custom-menu, featured-images, full-width-"
+"template, theme-options, threaded-comments, translation-ready"

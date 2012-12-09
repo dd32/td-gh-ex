@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/simple-catch\n"
 "POT-Creation-Date: 2012-09-28 16:55+0530\n"
-"PO-Revision-Date: 2012-11-28 19:20+0200\n"
+"PO-Revision-Date: 2012-12-09 16:42+0530\n"
 "Last-Translator: Piotr <fansitepoprostugry@gmail.com>\n"
 "Language-Team: Catch Themes <fansitejustgames@gmail.com>\n"
 "Language: pl\n"
@@ -35,9 +35,7 @@ msgstr "Może to być spowodowane przez:"
 
 #: ../404.php:16
 msgid "You have typed the web address incorrectly, or the page you were looking for may have been moved, updated or deleted."
-msgstr ""
-"Wprowadziłeś niepoprawny adres strony albo wyszukiwana strona została "
-"przeniesiona, zaktualizowana lub usunięta."
+msgstr "Wprowadziłeś niepoprawny adres strony albo wyszukiwana strona została przeniesiona, zaktualizowana lub usunięta."
 
 #: ../404.php:17
 msgid "Please try the following options instead:"
@@ -45,14 +43,11 @@ msgstr "Prosimy spróbować następujących opcji:"
 
 #: ../404.php:18
 msgid "Check for a mis-typed URL error, then press the refresh button on your browser or Use the search box at the Header."
-msgstr ""
-"Sprawdź poprawność adresu URL, następnie odśwież stronę lub użyj "
-"wyszukiwarki w nagłówku strony."
+msgstr "Sprawdź poprawność adresu URL, następnie odśwież stronę lub użyj wyszukiwarki w nagłówku strony."
 
 #: ../comments.php:21
 msgid "This post is password protected. Enter the password to view comments."
-msgstr ""
-"Ten wpis jest zabezpieczony hasłem. Wpisz hasło, by zobaczyć komentarze."
+msgstr "Ten wpis jest zabezpieczony hasłem. Wpisz hasło, by zobaczyć komentarze."
 
 #: ../comments.php:29
 #: ../content.php:30
@@ -135,9 +130,7 @@ msgstr "Nie znaleziono"
 
 #: ../content.php:65
 msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
-msgstr ""
-"Przepraszamy, ale nie ma wpisów w wybranych archiwum. Być może wyszukiwanie "
-"będzie pomocne."
+msgstr "Przepraszamy, ale nie ma wpisów w wybranych archiwum. Być może wyszukiwanie będzie pomocne."
 
 #: ../footer.php:17
 msgid "Copyright"
@@ -332,8 +325,8 @@ msgid "http://catchthemes.com/themes/simple-catch-pro"
 msgstr "http://catchthemes.com/themes/simple-catch-pro"
 
 #: ../functions/simplecatch_functions.php:909
-msgid "Upgrade Simple Catch Pro at Introductory Price $19.99 Only"
-msgstr "Uaktualnij Simple Cacth Pro w początkowej cenie za jedyne $19.99"
+msgid "Upgrade to Simple Catch Pro"
+msgstr "Uaktualnij do Simple Catch Pro"
 
 #: ../functions/simplecatch_functions.php:914
 msgid "http://facebook.com/catchthemes"
@@ -349,8 +342,14 @@ msgid "Select Sidebar layout"
 msgstr "Wybierz układ paska bocznego"
 
 #: ../functions/simplecatch_metabox.php:33
-msgid "Default Layout Set in <a href=\""
-msgstr "Domyślny wygląd w <a href=\""
+#, fuzzy
+msgid "Default Layout Set in"
+msgstr "Domyślny wygląd w"
+
+#: ../functions/simplecatch_metabox.php:33
+#: ../functions/panel/theme_options.php:141
+msgid "Theme Settings"
+msgstr "Ustawienia motywu"
 
 #: ../functions/simplecatch_metabox.php:39
 msgid "No sidebar"
@@ -409,10 +408,6 @@ msgstr "Ustawienia zapisane."
 #: ../functions/panel/theme_options.php:140
 msgid "Design Settings"
 msgstr "Ustawienia wyglądu"
-
-#: ../functions/panel/theme_options.php:141
-msgid "Theme Settings"
-msgstr "Ustawienia motywu"
 
 #: ../functions/panel/theme_options.php:147
 msgid "Logo Options"
@@ -656,9 +651,7 @@ msgstr "Kliknij tutaj, by edytować"
 
 #: ../functions/panel/theme_options.php:569
 msgid "Note: Here You can put your Post IDs which displays on Homepage as slider."
-msgstr ""
-"Rada: Wpisz tutaj ID wpisów, które mają być wyświetlone na stronie głównej "
-"jako pokaz slajdów."
+msgstr "Rada: Wpisz tutaj ID wpisów, które mają być wyświetlone na stronie głównej jako pokaz slajdów."
 
 #: ../functions/panel/theme_options.php:576
 msgid "Slider Effect Options"
@@ -843,9 +836,7 @@ msgstr "Kod do wyświetlenia w nagłówku"
 
 #: ../functions/panel/theme_options.php:835
 msgid "Note: Here you can put scripts from Google, Facebook etc. which will load on Header"
-msgstr ""
-"Rada: Tutaj możesz wpisać kod skryptu od Google, Facebooka, itp. który "
-"będzie załadowany w nagłówku"
+msgstr "Rada: Tutaj możesz wpisać kod skryptu od Google, Facebooka, itp. który będzie załadowany w nagłówku"
 
 #: ../functions/panel/theme_options.php:838
 msgid "Code to display on Footer"
@@ -853,9 +844,7 @@ msgstr "Kod do wyświetlenia w stopce"
 
 #: ../functions/panel/theme_options.php:845
 msgid "Note: Here you can put scripts from Google, Facebook, Add This etc. which will load on footer"
-msgstr ""
-"Rada: Tutaj możesz wpisać kod skryptu od Google, Facebooka, Add This itp. "
-"który będzie załadowany w stopce"
+msgstr "Rada: Tutaj możesz wpisać kod skryptu od Google, Facebooka, Add This itp. który będzie załadowany w stopce"
 
 #. Theme URI of the plugin/theme
 msgid "http://wordpress.org/extend/themes/simple-catch"
@@ -865,7 +854,16 @@ msgstr "http://wordpress.org/extend/themes/simple-catch"
 msgid ""
 "Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize"
 "through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, "
+"Three Custom Layouts, Featured Slider, Theme Options (Header Logo, Footer Logo, "
+"Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular "
+"plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based "
+"on popular 978 Grid System CSS Framework. Multilingual Ready (WPML) and also "
+"currently translated in Polish, Russian and Finnish."
 msgstr ""
-"Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy "
-"Customizethrough Theme Options and Custom Widgets. Features: Custom Menu, "
-"Custom Widgets, "
+"Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize"
+"through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, "
+"Three Custom Layouts, Featured Slider, Theme Options (Header Logo, Footer Logo, "
+"Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular "
+"plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based "
+"on popular 978 Grid System CSS Framework. Multilingual Ready (WPML) and also "
+"currently translated in Polish, Russian and Finnish."

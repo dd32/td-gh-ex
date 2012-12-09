@@ -3,8 +3,8 @@ Theme Name: Simple Catch
 Theme URI: http://catchthemes.com/themes/simple-catch
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
-Description: Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework. Multilingual Ready (WPML) and also currently translated in Polish and Russian. 
-Version: 1.5.1
+Description: Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework. Multilingual Ready (WPML) and also currently translated in Polish, Russian and Finnish. 
+Version: 1.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, gray, silver, white, light, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, custom-menu, featured-images, full-width-template, theme-options, threaded-comments, translation-ready
@@ -1051,7 +1051,7 @@ input[type=submit] {
 	margin: 0 30px 0 0;
 	text-align: left;
 	clear:left;
-	width: 54px;
+	width: 75px;
 }
 #respond #commentform .comment-subscription-form {
 	margin: 20px 0 0 84px;
@@ -1085,7 +1085,7 @@ input[type=submit] {
 	border: 1px solid #ccc;
 	color:#aaa;
 	height:205px;
-	width:530px;
+	width:510px;
 	margin:0px 0 20px;
 	font:14px Arial, Helvetica, sans-serif;
 	line-height:22px;
@@ -1103,7 +1103,7 @@ input[type=submit] {
 	text-align: center;
 	width:138px;
 	display:block;
-	margin-left:84px;
+	margin-left:105px;
 	margin-bottom: 0px;
 	text-shadow: 0 1px 0px #fff;
 	box-shadow: 2px 2px 2px #e0e0e0;

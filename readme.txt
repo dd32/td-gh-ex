@@ -2,7 +2,7 @@
 * by the Catch Themes team, http://catchthemes.com/
 
 == ABOUT Simple Catch==
-Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework. Multilingual Ready (WPML) and also currently translated in Polish and Russian.
+Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework. Multilingual Ready (WPML) and also currently translated in Polish, Russian and Finnish.
 
 == UPGRADE to Simple Catch Pro ==
 Simple Catch Pro is an advance version of our popular theme Simple Catch. It is based on HTML5, CSS3 and Responsive Web Design to view in various devices. Some of the additional features includes: Featured Image Slider, Responsive Design, Additional Layout Options, Custom Footer Editor, and Adspace Widget for Advertisement.
@@ -11,6 +11,7 @@ Simple Catch Pro is an advance version of our popular theme Simple Catch. It is 
 Simple Catch theme is translation ready. 
 Added Translation for Polish by Piotrek Jas (fansitejustgames@gmail.com)
 Added Translation for Russian by  Alexey Kurpachev (kurpachev@gmail.com)
+Added Translation for Finnish by Juha Louhiranta (charni@gmail.com)
 
 == Features ==  
 Featured Image Slider, Custom Drop-down Menu, Theme Options, Custom Widgets, flexible position of sidebar and Support for popular plugins.
@@ -205,3 +206,8 @@ Version 1.5.1
 * Added missing text translation ready
 * Updated simplecatch.pot, pl_PL.po and ru_RU.po
 
+Version 1.6
+* Added Finnish translation fi.po and fi.mo
+* Added missing text translation ready
+* Updated simplecatch.pot, pl_PL.po and ru_RU.po
+* Fixed conflict with Custom CSS and Content Color Options CSS
