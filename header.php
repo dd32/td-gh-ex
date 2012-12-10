@@ -44,27 +44,11 @@
 
 	?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
-
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script> 
-<script type="text/javascript"> 
-$(document).ready(function(){
-
-	$("#access ul ul").css({display: "none"});
-
-    $('#access ul li').hover(
-
-	    function() { $('ul', this).slideDown(200).css('visibility', 'visible'); $(this).addClass('selected'); },
-
-		function() { $('ul', this).slideUp(200); $(this).removeClass('selected'); });
-
-});
-</script>
-
 
 <?php
 	/* We add some JavaScript to pages with the comment form
@@ -78,6 +62,8 @@ $(document).ready(function(){
 	 * generally use this hook to add elements to <head> such
 	 * as styles, scripts, and meta tags.
 	 */
+	wp_enqueue_script( 'jquery');
+	wp_enqueue_script( 'slide-setting', get_template_directory_uri() . '/js/slide-settings.js' );
 	wp_head();
 ?>
 
@@ -124,5 +110,5 @@ $(document).ready(function(){
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 			</nav><!-- #access -->        
             
-<?php include ("slide-image.php")  ?> 
+<?php get_template_part ("slide-image")  ?> 
 	<div id="main">

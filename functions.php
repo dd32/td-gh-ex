@@ -76,10 +76,10 @@ function d5socialia_setup() {
 	 * If you're building a theme based on D5 Socialia, use a find and replace
 	 * to change 'd5socialia' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'd5socialia', TEMPLATEPATH . '/languages' );
+	load_theme_textdomain( 'd5socialia', get_template_directory() . '/languages' );
 
 	$locale = get_locale();
-	$locale_file = TEMPLATEPATH . "/languages/$locale.php";
+	$locale_file = get_template_directory() . "/languages/$locale.php";
 	if ( is_readable( $locale_file ) )
 		require_once( $locale_file );
 
