@@ -425,22 +425,6 @@ function cyberchimps_featured_image() {
 		endif;
 }
 
-// add breadcrumbs to single posts and archive pages if set in options
-function cyberchimps_breadcrumbs() {
-	global $post;
-	
-	if( is_single() ) {
-		$show = ( cyberchimps_option( 'single_post_breadcrumbs' ) ) ? cyberchimps_option( 'single_post_breadcrumbs' ) : false; 
-	}
-	elseif( is_archive() ) {
-		$show = ( cyberchimps_option( 'archive_breadcrumbs' ) ) ? cyberchimps_option( 'archive_breadcrumbs' ) : false;  
-	}
-	if( isset( $show ) ):
-		do_action( 'breadcrumbs' );
-	endif;
-}
-add_action( 'cyberchimps_before_container', 'cyberchimps_breadcrumbs' );
-
 function cyberchimps_post_format_icon() {
 	global $post;
 	
@@ -771,7 +755,7 @@ add_action( 'cyberchimps_before_content', 'cyberchimps_half_slider' );
 
 // Modal welcome note
 function cyberchimps_modal_welcome_note() { 
-	if( cyberchimps_option( 'modal_welcome_note_display' ) == 1 ): ?>
+	if( cyberchimps_get_option( 'modal_welcome_note_display', 0 ) == 1 ): ?>
   <div class="modal" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
       <h3 id="myModalLabel">Welcome</h3>

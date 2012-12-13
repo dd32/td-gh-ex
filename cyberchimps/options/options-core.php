@@ -305,9 +305,9 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$options_carousel_cats = array();
 	$carousel_categories = get_terms( 'carousel_categories', array( 'hide_empty' => 0 ) );
 	if( ! is_wp_error( $carousel_categories ) ) {
-	foreach( $carousel_categories as $carousel_cat ) {
-		$options_carousel_cats[$carousel_cat->term_id] = $carousel_cat->name;
-	}
+		foreach( $carousel_categories as $carousel_cat ) {
+			$options_carousel_cats[$carousel_cat->term_id] = $carousel_cat->name;
+		}
 	}
 	
 	// Get custom categories of boxes element
@@ -323,18 +323,27 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$options_portfolio_cats = array();
 	$portfolio_categories = get_terms( 'portfolio_cats', array( 'hide_empty' => 0 ) );
 	if( ! is_wp_error( $portfolio_categories ) ) {
-	foreach( $portfolio_categories as $portfolio_cat ) {
-		$options_portfolio_cats[$portfolio_cat->term_id] = $portfolio_cat->name;
-	}
+		foreach( $portfolio_categories as $portfolio_cat ) {
+			$options_portfolio_cats[$portfolio_cat->term_id] = $portfolio_cat->name;
+		}
 	}
 	
-	//Pull all slider categories
+	// Pull all slider categories
 	$options_slide_cats = array();
 	$slide_categories = get_terms( 'slide_categories', array( 'hide_empty' => 0 ) );
 	if( ! is_wp_error( $portfolio_categories ) ) {
-	foreach( $slide_categories as $slide_cat ) {
-		$options_slide_cats[$slide_cat->term_id] = $slide_cat->name;
+		foreach( $slide_categories as $slide_cat ) {
+			$options_slide_cats[$slide_cat->term_id] = $slide_cat->name;
+		}
 	}
+	
+	// Get all post categories
+	$all_cats = array();
+	$all_categories = get_terms( 'category');
+	if( ! is_wp_error( $all_categories ) ) {
+		foreach( $all_categories as $all_cat ) {
+			$all_cats[$all_cat->term_id] = $all_cat->name;
+		}
 	}
 	
 	// Pull all tags into an array
@@ -343,7 +352,6 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	foreach ( $options_tags_obj as $tag ) {
 		$options_tags[$tag->term_id] = $tag->name;
 	}
-
 
 	// Pull all the pages into an array
 	$options_pages = array();
@@ -596,16 +604,6 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'section' => 'cyberchimps_typography_section',
 		'heading' => 'cyberchimps_design_heading'
 	);	
-	
-/* CUSTOM CSS */
-		$fields_list[] = array(
-		'name' => __('Custom CSS', 'cyberchimps'),
-		'id' => 'custom_css',
-		'std' => '',
-		'type' => 'csstextarea',
-		'section' => 'cyberchimps_custom_css_section',
-		'heading' => 'cyberchimps_design_heading'
-	);
 	
 /*************************** HEADER STARTS ***************************************************/
 	
@@ -1771,6 +1769,7 @@ if( $theme_check == 'pro' ):
 		);
 	}
 	/********* BOXES OPTIONS ENDS ***********/
+	
 endif;// end pro option fields
 
 	/********* TWITTERBAR OPTIONS STARTS ***********/
