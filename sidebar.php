@@ -1,14 +1,3 @@
-<?php
-	// A sub-nav sidebar
-	if ( is_active_sidebar( 'sub-navigation' ) ) : ?>
-
-		<div id="sub-nav" class="widget-area" role="complementary">
-			<ul class="xoxo">
-				<?php dynamic_sidebar( 'sub-navigation' ); ?>
-			</ul>
-		</div>
-<?php endif; ?>
-
 <?php	
 	if ( is_active_sidebar( 'primary-widget-area' ) ) : ?>
 

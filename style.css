@@ -1,18 +1,18 @@
 /*
 Theme Name: Adam's Razor
 Theme URI: http://adamlofting.com/adams-razor
-Description: "Entities must not be multiplied beyond necessity" - this is my application of Occam's Razor to WordPress theme design. You can spend time on design once you've written everything you want to write. Until then... skip to content. It's extremely light-weight, so before installing too many plug-ins, think of Thoreau: "A man is rich in proportion to the number of things he can afford to let alone." Enjoy. Adam.
+Description: "Entities must not be multiplied beyond necessity" - this is my application of Occam's Razor to WordPress theme design. You can spend time on design once you've written everything you want to write. It's extremely light-weight, so before installing too many plug-ins, think of Thoreau: "A man is rich in proportion to the number of things he can afford to let alone." Enjoy. Adam. P.S This theme is responsive.
 Author: Adam Lofting
 Author URI: http://adamlofting.com
-Version: 0.7
+Version: 1.0
 License: GNU General Public License
 License URI: license.txt
-Tags: white, light, right-sidebar, flexible-width, custom-menu, full-width-template, sticky-post, threaded-comments, translation-ready
+Tags: white, light, right-sidebar, flexible-width, custom-menu, custom-header, full-width-template, sticky-post, threaded-comments, translation-ready
 */
 
 /* This theme has been built up from a heavily stripped back version of twentyten. */
 
-/* = No reset. No reset needed.
+/* = No CSS reset. We're prioritising simplicity over cross-browser 'identicalness'.
 -------------------------------------------------------------- */
 
 
@@ -47,7 +47,7 @@ html, body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	margin-top: 0.618em;
+	margin-top: 1em;
 	margin-bottom: 0.618em;	
 }
 
@@ -60,10 +60,10 @@ p {
 	margin-bottom: 0;	
 }
 
-#site-title  {
-	margin-top: 0.618em;
-	margin-bottom: 0;
-	line-height: 1.1;
+pre, code {
+	font-size: 0.8em;
+	overflow: scroll;
+	background: #F9F9F9;
 }
 
 div#site-title  {
@@ -77,6 +77,8 @@ blockquote {
 ul, ol {
 	margin: 0.618em;
 	padding: 1em;	
+	margin-bottom: 0;
+	padding-bottom: 0;
 }
 
 ul ul, 
@@ -84,9 +86,7 @@ ul ol,
 ol  ol,
 ol ul {
 	margin-top: 0;
-	margin-bottom: 0;
 	padding-top: 0;
-	padding-bottom: 0;
 }
 
 ol ol {
@@ -107,16 +107,16 @@ a {
 }
 
 a:visited {
-	color:#0b0080
+	color:#0b0080;
 }
 
 a:active {
-	color:#faa700
+	color:#faa700;
 }
 
 a:hover,
 a:focus {
-	text-decoration:underline
+	text-decoration:underline;
 }
 
 .skip-link {	
@@ -132,22 +132,14 @@ a:focus {
 	margin-top: 0;
 	text-align: center;
 	display: block;
+	font-style: italic;
 }
 
 .gallery-caption {
 	font-size: 0.618em;
 }
 
-/* Links that don't leave the page in red */
-
-a.skip-link:link,
-a.skip-link:hover,
-a.skip-link:visited {
-	color: #DD4433;
-}
-
 /* Grey text */
-#site-description,
 #site-info, 
 #site-generator {
 	color: #999;
@@ -167,8 +159,9 @@ body {
 	width: 100%;
 }
 
-#branding {
-	padding: 0.618em 5%;
+#branding,
+#access {
+	padding: 0 5%;
 }
 
 #content,
@@ -251,8 +244,27 @@ th, td {
 	display: inline;	
 	float: left;
 	width: 100%;
-	background: #F9F9F9;
-	border-bottom: 1px solid #DDD;	
+	background: #666;
+	padding: 15px 0 30px;
+}
+
+#site-title  {
+	margin-top: 0.618em;
+	margin-bottom: 0;
+	line-height: 1.1;
+	background: url(img/transstrong.png);
+	padding: 0.318em 40px 0.318em 20px;
+	display: inline-block;
+	float: left;
+}
+
+#site-description {
+	display: inline-block;
+	float: left;
+	background: url(img/transmid.png);
+	padding: 10px 40px 10px 20px;
+	clear: left;
+	color: #666;
 }
 
 /* =Menu
@@ -260,26 +272,27 @@ th, td {
 #access ul {
 	display: inline;	
 	float: left;	
+	clear: left;
 	padding: 0;
-	margin: 0.618em 5%;
+	margin: 0 0 0.618em 0;
 	font-size: 0.618em;
 	position: relative;
-	left: -0.618em;
 }
 
-#access ul li{
+#access ul li {
 	display: inline;	
 }
 
-#access ul li a{
+#access ul li a {
 	display: inline;	
 	float: left;
-	padding: 0.618em;
-	margin: 0 0.381em 0.381em 0;
+	padding: 0.618em 20px;
+	margin: 0;
+	background: url(img/translow.png);
 }
 
-#access ul li a:hover{
-	background: #DDD;
+#access ul li a:hover {
+	background: url(img/transstrong.png);
 }
 
 /* =Content
@@ -325,6 +338,10 @@ img {
 	border-width: 0px;
 }
 
+.size-thumbnail {
+	margin: 0 0.618em 0.618em 0;
+}
+
 .aligncenter,
 div.alignnone {
 	display: block;
@@ -344,10 +361,6 @@ div.alignnone {
 	display: inline;
 	float: right;
 	margin: 0.618em 0 1.618em 1.618em;
-}
-
-.size-thumbnail {
-	margin: 0 0.618em 0.618em 0;
 }
 
 

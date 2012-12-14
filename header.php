@@ -20,6 +20,13 @@
 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_uri(); ?>" />
+<style type="text/css">
+	@media (min-width: 480px) {  
+		#header {
+			background-image: url(<?php header_image(); ?>);
+		}
+	}
+</style>
 <?php wp_head(); ?>
 </head>
 
@@ -33,8 +40,7 @@
 					<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>	
 				</<?php echo $heading_tag; ?>>
 				<div id="site-description">
-					<?php bloginfo( 'description' ); ?> - 
-					<a class="skip-link" href="#content" title="<?php esc_attr_e( 'Skip to content', 'adams-razor' ); ?>"><?php _e( 'Skip to content', 'adams-razor' ); ?></a>
+					<?php bloginfo( 'description' ); ?>
 				</div>				
 			</div>
 

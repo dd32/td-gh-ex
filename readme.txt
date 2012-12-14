@@ -7,6 +7,8 @@
 
 Features:
 
+* Custom header image
+
 * Option to include code (such as analytics javascript) before the </head> tag or </body> tag. See Appearance > Adam's Razor Options.
 
 There are some deliberate functional limitations in this theme:

@@ -4,6 +4,7 @@ require_once ( get_template_directory() . '/theme-options.php' );
 
 add_action( 'after_setup_theme', 'adamsrazor_setup' );
 
+// Custom setup options
 if ( ! function_exists( 'adamsrazor_setup' ) ):
 function adamsrazor_setup() {
 		
@@ -26,26 +27,54 @@ function adamsrazor_setup() {
 }
 endif;
 
+
+// Custom header
+$args = array(
+	'flex-height'            => true,
+	'height'                 => 300,
+	'flex-width'             => true,
+	'width'                  => 1600,
+	'default-image'          => get_template_directory_uri() . '/default/header.jpg',
+	'random-default'         => false,
+	'default-text-color'     => '',
+	'header-text'            => false,
+	'uploads'                => true,
+	'wp-head-callback'       => '',
+	'admin-head-callback'    => '',
+	'admin-preview-callback' => '',
+);
+add_theme_support( 'custom-header', $args );
+
+
+// Show home link in menu
 function adamsrazor_page_menu_args( $args ) {
 	$args['show_home'] = true;
 	return $args;
 }
 add_filter( 'wp_page_menu_args', 'adamsrazor_page_menu_args' );
 
+
+// Excerpt
 function adamsrazor_excerpt_length( $length ) {
 	return 140;
 }
 add_filter( 'excerpt_length', 'adamsrazor_excerpt_length' );
 
+
+// Continue reading text
 function adamsrazor_continue_reading_link() {
 	return ' <a href="'. get_permalink() . '">' . __( 'Continue reading <span class="meta-nav">&raquo;</span>', 'adams-razor' ) . '</a>';
 }
 
+
+// Auto excerpt
 function adamsrazor_auto_excerpt_more( $more ) {
 	return ' &hellip;' . adamsrazor_continue_reading_link();
 }
 add_filter( 'excerpt_more', 'adamsrazor_auto_excerpt_more' );
 
+
+// Custom excert
 function adamsrazor_custom_excerpt_more( $output ) {
 	if ( has_excerpt() && ! is_attachment() ) {
 		$output .= adamsrazor_continue_reading_link();
@@ -54,11 +83,15 @@ function adamsrazor_custom_excerpt_more( $output ) {
 }
 add_filter( 'get_the_excerpt', 'adamsrazor_custom_excerpt_more' );
 
+
+// Remove default gallery inline CSS
 function adamsrazor_remove_default_gallery_css ( $css ) {
 	return str_replace("border: 2px solid #cfcfcf;", "", $css);
 }
 add_filter('gallery_style', 'adamsrazor_remove_default_gallery_css'	);
 
+
+// Define widgets
 function adamsrazor_widgets_init() {
 
 	register_sidebar( array(
@@ -103,6 +136,8 @@ function adamsrazor_widgets_init() {
 }
 add_action( 'widgets_init', 'adamsrazor_widgets_init' );
 
+
+// Formatting of date on posts
 if ( ! function_exists( 'adamsrazor_post_meta_date' ) ) :
 function adamsrazor_post_meta_date() {
 	printf( __( '<span class="%1$s">Published on</span> %2$s <span class="meta-sep">by</span> %3$s', 'adams-razor' ),
@@ -119,6 +154,8 @@ function adamsrazor_post_meta_date() {
 }
 endif;
 
+
+// Formatting of categories
 if ( ! function_exists( 'adamsrazor_posted_in' ) ) :
 function adamsrazor_posted_in() {
 	
@@ -143,33 +180,44 @@ endif;
 
 
 // remove inline style from captions
-// adapted from: http://troychaplin.ca/blog/wordpress-functions/remove-automatically-generated-inline-style-on-images-with-caption-in-wordpress/
+// adapted from: http://troychaplin.ca/2012/06/updated-function-fix-inline-style-that-added-image-caption-wordpress-3-4/
 add_shortcode('wp_caption', 'adamsrazor_fixed_img_caption_shortcode');
 add_shortcode('caption', 'adamsrazor_fixed_img_caption_shortcode');
-function adamsrazor_fixed_img_caption_shortcode($attr, $content = null) {
-	// Allow plugins/themes to override the default caption template.
+function fixed_img_caption_shortcode($attr, $content = null) {
+ 
+	if ( ! isset( $attr['caption'] ) ) {
+		if ( preg_match( '#((?:<a [^>]+>\s*)?<img [^>]+>(?:\s*</a>)?)(.*)#is', $content, $matches ) ) {
+			$content = $matches[1];
+			$attr['caption'] = trim( $matches[2] );
+		}
+	}
+	 
 	$output = apply_filters('img_caption_shortcode', '', $attr, $content);
-	if ( $output != '' ) return $output;
+	if ( $output != '' ) {
+		return $output;
+	}
+	 
 	extract(shortcode_atts(array(
-		'id'=> '',
-		'align'	=> 'alignnone',
-		'width'	=> '',
-		'caption' => ''), $attr));
-	if ( 1 > (int) $width || empty($caption) )
-	return $content;
+		'id' => '',
+		'align' => 'alignnone',
+		'width' => '',
+		'caption' => ''
+		), $attr));
+	 
+	if ( 1 > (int) $width || empty($caption) ) {
+		return $content;
+	}
 	
+	// adaption ($custom width used in returl below)
 	$custom_width = "32em"; //max width for bigger images
 	if ($width < 528) $custom_width = $width . 'px';
-	
+
 	if ( $id ) $id = 'id="' . esc_attr($id) . '" ';
-	return '<div ' . $id . 'class="wp-caption ' . esc_attr($align) . '" style="width:' . $custom_width . '" >'
-	. do_shortcode( $content ) . '<span class="wp-caption-text">'
-	. $caption . '</span></div>';
+	return '<div ' . $id . 'class="wp-caption ' . esc_attr($align) . '" style="width: ' . $custom_width . 'px">' . do_shortcode( $content ) . '<p>' . $caption . '</p></div>';
 }
 
 
-
-
+// Custom comment form
 if ( ! function_exists( 'adamsrazor_comment' ) ) :
 function adamsrazor_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
@@ -214,11 +262,14 @@ function adamsrazor_comment( $comment, $args, $depth ) {
 }
 endif;
 
+
 function adamsrazor_enqueue_scripts(){
 	if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); 	
 }
 add_action( 'wp_enqueue_scripts', 'adamsrazor_enqueue_scripts');
 
+
+// Option to add custom tracking and JS code to header and footer
 function adamsrazor_custom_head(){
 	$options = get_option('adamsrazor_theme_options');	
 	echo htmlspecialchars_decode($options['precloseheadtag']);
