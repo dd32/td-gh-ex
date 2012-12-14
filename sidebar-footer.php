@@ -1,5 +1,5 @@
 <?php
-/* Design Theme's Footer Sidebar Area
+/* 	Design Theme's Footer Sidebar Area
 	Copyright: 2012, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Design 1.0
@@ -32,7 +32,7 @@
 
 	<div id="footer-widgets" class="widget">
     <?php if ( is_active_sidebar( 'sidebar-3' ) ) : dynamic_sidebar( 'sidebar-3' ); else: if (of_get_option ( 'fsidebar', '1') == '1'):?>
-        <aside class="widget widget_text"><h3 class="widget-title">Sample Text</h3><div class="textwidget">The Customizable Background and other options of Design Theme will give the WordPress Driven Site an attractive look. Design Theme is super elegant and Professional Responsive which will create the business widely expressed.</div></aside>
+        <aside class="widget widget_text"><h3 class="widget-title">Sample Text</h3><div class="textwidget">The Customizable Background and other options of Design Theme will give the WordPress Driven Site an attractive look. You can chnage these texts or insert new itms from Appearence > Widgets. You will also find Theme Options..</div></aside>
        <?php endif; endif;?>
 	</div><!-- #second .widget-area -->
 	
