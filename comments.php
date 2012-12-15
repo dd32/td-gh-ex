@@ -3,37 +3,34 @@
     
 	<?php return; } ?>
 
+<ul id="comments">
 <?php if (have_comments()) : ?>
-	<ul class="commentbox">
-        <h4 class="title">Comments</h4>
+<li>
+	<h2 class="title">Comments</h2>
     
-        <ol class="commentlist">
-            <?php wp_list_comments('avatar_size=100&type=comment'); ?>
-        </ol>
-	</ul>
-    
+	<ol class="commentlist">
+		<?php wp_list_comments('avatar_size=250&type=comment'); ?>
+	</ol>
+</li>
+
     <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-        <ul class="starsbar"><h6>
-            <span class="left"><?php previous_comments_link(); ?></span>
-            &#9733; &#9733; &#9733; &#9733; &#9733;
-            <span class="right"><?php next_comments_link(); ?></span>
-        </h6></ul> 
+     <li class="stars"><span class="left"><?php previous_comments_link(); ?></span><span class="right"><?php next_comments_link(); ?></span></li>
     <?php endif; ?>
     
 <?php endif; ?>
 
 <?php if (!empty($comments_by_type['pings'])) : ?>
-    <ul class="commentbox">
-        <h4 class="title">Pings &amp; Trackbacks</h4>
+<li>
+	<h2 class="title">Pings &amp; Trackbacks</h2>
     
-        <ol class="commentlist">
-            <?php wp_list_comments('type=pings&max_depth=<em>'); ?>
-        </ol>
-    </ul>
+	<ol class="commentlist">
+		<?php wp_list_comments('type=pings&max_depth=<em>'); ?>
+	</ol>
+</li>
 <?php endif; ?>
  
 <?php if (comments_open()) : ?>
-
+<li>
     <?php $fields = array(
 			'author' => '<p class="comment-form-author">' . '<label for="author">' . __('Name','responsive') . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
 			'<input id="author" name="author" type="text" value="' . esc_attr($commenter['comment_author']) . '" size="30" /></p>',
@@ -46,11 +43,10 @@
 
     comment_form($defaults); ?>
 
-
+</li>
 <?php endif; ?>
 
 <?php if ( comments_open() || get_comment_pages_count() > 0 || !empty($comments_by_type['pings']) ) : ?>
-	<ul class="starsbar"><h6>
-		&#9733; &#9733; &#9733; &#9733; &#9733;
-	</h6></ul>
+	<li class="stars"></li>
 <?php endif; ?>
+</ul>

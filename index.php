@@ -13,96 +13,92 @@
 
 </head>
 <body <?php body_class(); ?>>
-<div id="header">
-
-<!-- The Website Title and Slogan -->
-<h1 id="fittext3"><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a><i>- <?php bloginfo('description');?> -</i></h1>
-<!-- End Website Title and Slogan -->
 
 <!-- The Navigation Menu -->
-<ul>
+<ul id="header">
+
+<!-- The Website Title and Slogan -->
+<h1 id="fittext3"><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a><i><?php bloginfo('description');?></i></h1>
+<!-- End Website Title and Slogan -->
+    
 <?php if ( has_nav_menu( 'bar' ) ) :  wp_nav_menu( array( 'theme_location' => 'bar', 'depth' => 2 ) ); else : ?>
 <?php wp_list_pages( 'title_li=&depth=2' ); ?>
 <?php endif; ?>
 </ul>
 <!-- End Navigation Menu -->
 
-</div>
 
 <!-- Setting up The Layout of the Webpage -->
-<div id="banner"></div>
-<div id="white">
-<div id="center">
-<div id="floatfix">
+<div id="centered">
+<div id="margin">
+
 <?php $semperfi_404 = false;/* A 404 Error check */?> 
 <?php if (is_search()) : ?>
+
 <!-- Searching Code -->
 <?php if (have_posts()) : ?>
-	<ul class="browsing">
-    <li class="searchinfo">
-    <h2>Your Search "<?php echo get_search_query(); ?>" Returned <?php echo $wp_query->found_posts; ?> Results</h2></li>
-    <li class="searchinfo lighten">Your search for "<?php echo get_search_query(); ?>" has returned exactly <?php echo $wp_query->found_posts; ?> results, no more and no less. Hopefully what you're looking for will be found just below on this page, but if you're unable find what you are looking for you may need to use the links "Older Search Results" or "Newer Search Results" to navigate through more pages of results for "<?php echo get_search_query(); ?>." Please keep in mind that if not enough results return, the links for "Older Search Results" and "Newer Search Results" may not appear becuase there is nothing more to show.</li>
+<ul id="paged">
+    <li>
+    	<h2>Your Search "<?php echo get_search_query(); ?>" Returned <?php echo $wp_query->found_posts; ?> Results</h2>
+    	<p>Your search for "<?php echo get_search_query(); ?>" has returned exactly <?php echo $wp_query->found_posts; ?> results, no more and no less. Hopefully what you're looking for will be found just below on this page, but if you're unable find what you are looking for you may need to use the links "Older Search Results" or "Newer Search Results" to navigate through more pages of results for "<?php echo get_search_query(); ?>." Please keep in mind that if not enough results return, the links for "Older Search Results" and "Newer Search Results" may not appear becuase there is nothing more to show.</p>
+    </li>
 <?php while (have_posts()) : the_post(); ?>
+
 	<li id="post-<?php the_ID(); ?>" <?php post_class(); ?>><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
-		<h5><span><?php the_time('M') ?><br/><?php the_time('jS') ?></span><?php if ( get_the_title() ) { the_title();} else { echo '(No Title)';} ?></h5>
-        <?php if ( has_post_thumbnail()) : ?><div class="underlay" ><?php the_post_thumbnail('big-thumbnail'); ?><img class="overlay" src="<?php echo get_stylesheet_directory_uri(); ?>/images/001.png" /></div><?php endif; ?>
+		<h2><span><?php the_time('M') ?><br/><?php the_time('jS') ?></span><?php if ( get_the_title() ) { the_title();} else { echo '(No Title)';} ?></h2>
+        <?php if ( has_post_thumbnail()) : ?><div class="under"><?php the_post_thumbnail('page-thumbnail'); ?><div class="over"></div></div><?php endif; ?>
         <?php the_excerpt(); ?>
 	</a></li>
 <?php endwhile; ?>
-    </ul>
+
 <?php else : ?>
-	<ul class="browsing">
-    <li class="searchinfo"><h2>Your search resulted in nothing being found.</h2></li>
-    </ul>
+
+<ul id="paged">
+    <li>
+    	<h2>Your search resulted with nothing being found.</h2>
+	</li>
+</ul>
 <?php endif; ?>
-    <ul class="starsbar"><h6>
-    	<span class="left"><?php next_posts_link('&#8249; Older Search Results'); ?></span>
-            &#9733; &#9733; &#9733; &#9733; &#9733;
-            <span class="right"><?php previous_posts_link('Newer Search Results &#8250;'); ?></span>
-    </h6></ul>
-<!-- End Search -->  
-    
-<?php elseif ( have_posts() && is_home() || is_404() || is_category() || is_day() || is_month() || is_year() || is_paged() || is_tag() ) : ?>
-<!-- Many Things -->
-	<ul class="browsing">
+<li class="stars"><span class="left"><a href="http://test.schwarttzy.com/page/2/" >&#8249; Older Posts</a></span><span class="right"><a href="http://test.schwarttzy.com/" >Newer Posts &#8250;</a></span></li>
+</ul>
+<!-- End Search -->
+<?php elseif ( have_posts() && is_home() || is_category() || is_day() || is_month() || is_year() || is_paged() || is_tag() ) : ?>
+
+<!-- Paged -->
+<ul id="paged">
+
 <?php while (have_posts()) : the_post(); ?>
 	<li id="post-<?php the_ID(); ?>" <?php post_class(); ?>><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
-		<h5><span><?php the_time('M') ?><br/><?php the_time('jS') ?></span><?php if ( get_the_title() ) { the_title();} else { echo '(No Title)';} ?></h5>
-        <?php if ( has_post_thumbnail()) : ?><div class="underlay" ><?php the_post_thumbnail('big-thumbnail'); ?><img class="overlay" src="<?php echo get_stylesheet_directory_uri(); ?>/images/001.png" /></div><?php endif; ?>
+		<h2><span><?php the_time('M') ?><br/><?php the_time('jS') ?></span><?php if ( get_the_title() ) { the_title();} else { echo '(No Title)';} ?></h2>
+        <?php if ( has_post_thumbnail()) : ?><div class="under"><?php the_post_thumbnail('page-thumbnail'); ?><div class="over"></div></div><?php endif; ?>
         <?php the_excerpt(); ?>
 	</a></li>
+
 <?php endwhile; ?>
-    </ul>
 <?php if ( $wp_query->max_num_pages > 1 ) { ?>
-	<ul class="starsbar">
-    	<h6>
-        	<span class="left"><?php next_posts_link('&#8249; Older Posts'); ?></span>
-            &#9733; &#9733; &#9733; &#9733; &#9733;
-            <span class="right"><?php previous_posts_link('Newer Posts &#8250;'); ?></span>
-		</h6>
-	</ul>
-<!-- End Many Things -->
+<li class="stars"><span class="left"><?php next_posts_link('&#8249; Older Posts'); ?></span><span class="right"><?php previous_posts_link('Newer Search Results &#8250;'); ?></span></li>
 <?php } else { ?>
-	<ul class="starsbar"><h6>
-        &#9733; &#9733; &#9733; &#9733; &#9733;
-    </h6></ul>
+<li class="stars"></li>
 <?php } ?>
 
-<?php if (have_posts() != true) : ?>
+</ul>
+<!-- End Many Things -->
+<?php elseif ( is_404() ) : ?>
 
 <!-- 404 Error -->
-<div class="reading">
-    <div class="spacing"></div>
-    <h3 class="title">Code 404.</h3>
-    <div class="underlay"><img src="<?php echo get_template_directory_uri(); ?>/images/error404.jpg" class="attachment-page-thumbnail wp-post-image"></div>
-    <span class="content"><p>Echo Bravo Eight Two Four Five. This is Three Two One One Romeo. Be advised. We're recieving a coding error 404. Repeat, We're recieving a coding error 404. You are to be extracked at the rondevu point at <?php echo date('H') ?>57 Hundred Hours. Over and out.</p></span>
-    </div>
-    <ul class="commentbox">
+<ul id="comments">
+    <li>
+    	<h2>Code Error 404</h2>
+        <img src="<?php echo get_template_directory_uri(); ?>/images/error404.jpg" class="attachment-page-thumbnail wp-post-image">
+		<p>Echo Bravo Eight Two Four Five. This is Three Two One One Romeo. Be advised. We're recieving a coding error 404. Repeat, We're recieving a coding error 404. You are to be extracked at the rondevu point at <?php echo date('H') ?>57 Hundred Hours. Over and out.</p>
+	</li>
+    
+	<li class="comments">
     <h4 class="title">Comments</h4>
     
     <ol class="commentlist">
 		<li class="comment even thread-even">
-				<div id="div-comment-1280" class="comment-body">
+				<div class="comment-body">
                     <div class="comment-author vcard">
                         <img src="<?php echo get_template_directory_uri(); ?>/images/gary.jpg" class="avatar avatar-100 photo grav-hashed grav-hijack" height="100" width="100"> <cite class="fn">Gary</cite> <span class="says">says:</span>
                     </div>
@@ -110,7 +106,7 @@
 					</div>
 		</li>
 		<li class="comment odd alt">
-				<div id="div-comment-1280" class="comment-body">
+				<div class="comment-body">
                     <div class="comment-author vcard">
                         <img src="<?php echo get_template_directory_uri(); ?>/images/mike.jpg" class="avatar avatar-100 photo grav-hashed grav-hijack" height="100" width="100"> <cite class="fn">Mike</cite> <span class="says">says:</span>
                     </div>
@@ -118,7 +114,7 @@
 					</div>
 		</li>
         <li class="comment even thread-even">
-				<div id="div-comment-1280" class="comment-body">
+				<div class="comment-body">
                     <div class="comment-author vcard">
                         <img src="<?php echo get_template_directory_uri(); ?>/images/gary.jpg" class="avatar avatar-100 photo grav-hashed grav-hijack" height="100" width="100"> <cite class="fn">Gary</cite> <span class="says">says:</span>
                     </div>
@@ -126,7 +122,7 @@
 					</div>
 		</li>
 		<li class="comment odd alt">
-				<div id="div-comment-1280" class="comment-body">
+				<div class="comment-body">
                     <div class="comment-author vcard">
                         <img src="<?php echo get_template_directory_uri(); ?>/images/mike.jpg" class="avatar avatar-100 photo grav-hashed grav-hijack" height="100" width="100"> <cite class="fn">Mike</cite> <span class="says">says:</span>
                     </div>
@@ -134,7 +130,7 @@
 					</div>
 		</li>
         <li class="comment even thread-even">
-				<div id="div-comment-1280" class="comment-body">
+				<div class="comment-body">
                     <div class="comment-author vcard">
                         <img src="<?php echo get_template_directory_uri(); ?>/images/gary.jpg" class="avatar avatar-100 photo grav-hashed grav-hijack" height="100" width="100"> <cite class="fn">Gary</cite> <span class="says">says:</span>
                     </div>
@@ -142,7 +138,7 @@
 					</div>
 		</li>
         <li class="comment odd alt">
-				<div id="div-comment-1280" class="comment-body">
+				<div class="comment-body">
                     <div class="comment-author vcard">
                         <img src="<?php echo get_template_directory_uri(); ?>/images/blackhawk.jpg" class="avatar avatar-100 photo grav-hashed grav-hijack" height="100" width="100"> <cite class="fn">Blackhawk Helicopter</cite> <span class="says">says:</span>
                     </div>
@@ -150,7 +146,7 @@
 					</div>
 		</li>
         <li class="comment even thread-even">
-				<div id="div-comment-1280" class="comment-body">
+				<div class="comment-body">
                     <div class="comment-author vcard">
                         <img src="<?php echo get_template_directory_uri(); ?>/images/mike.jpg" class="avatar avatar-100 photo grav-hashed grav-hijack" height="100" width="100"> <cite class="fn">Mike</cite> <span class="says">says:</span>
                     </div>
@@ -158,7 +154,7 @@
 					</div>
 		</li>
         <li class="comment odd alt">
-				<div id="div-comment-1280" class="comment-body">
+				<div class="comment-body">
                     <div class="comment-author vcard">
                         <img src="<?php echo get_template_directory_uri(); ?>/images/pilot.jpg" class="avatar avatar-100 photo grav-hashed grav-hijack" height="100" width="100"> <cite class="fn">Gary</cite> <span class="says">says:</span>
                     </div>
@@ -166,7 +162,7 @@
 					</div>
 		</li>
         <li class="comment even thread-even">
-				<div id="div-comment-1280" class="comment-body">
+				<div class="comment-body">
                     <div class="comment-author vcard">
                         <img src="<?php echo get_template_directory_uri(); ?>/images/gary.jpg" class="avatar avatar-100 photo grav-hashed grav-hijack" height="100" width="100"> <cite class="fn">Gary</cite> <span class="says">says:</span>
                     </div>
@@ -174,7 +170,7 @@
 					</div>
 		</li>
         <li class="comment odd alt">
-				<div id="div-comment-1280" class="comment-body">
+				<div class="comment-body">
                     <div class="comment-author vcard">
                         <img src="<?php echo get_template_directory_uri(); ?>/images/pilot.jpg" class="avatar avatar-100 photo grav-hashed grav-hijack" height="100" width="100"> <cite class="fn">Gary</cite> <span class="says">says:</span>
                     </div>
@@ -182,62 +178,34 @@
 					</div>
 		</li>
         <li class="comment even thread-even">
-        <div id="div-comment-1280" class="comment-body">
+        <div class="comment-body">
 		<p>Hurry up and click the <a href="<?php echo home_url(); ?>/">Extraction Point</a>.</p>
         </div>
 		</li>
-</ol></ul>
-    <ul class="starsbar"><h6>
-		&#9733; &#9733; &#9733; &#9733; &#9733;
-	</h6></ul>
+	</ol>
+    </li>
+        <li class="stars"></li>
+</ul>
 <!-- End 404 Error -->
 <?php $semperfi_404 = true;?>
-<?php endif; ?> 
 
 <?php /* Some of the Formating is weird below so that when the page is finished the formating looks beautiful and clean */ ?>
 <?php elseif (have_posts()) : the_post();?>
-	<div class="reading">
-    <div class="spacing"></div>
-	<h3 class="title"><?php if ( is_page()) : else : ?><span><?php the_time('M') ?><br/><?php the_time('jS') ?></span><?php endif; ?><?php if ( get_the_title() ) { the_title();} else { echo '(No Title)';} ?></h3>
-	<?php if ( has_post_thumbnail()) : ?><div class="underlay">
-		<?php the_post_thumbnail('big-thumbnail'); ?>
-        
-    </div>
-<?php endif; ?>
-	<span id="post-<?php the_ID(); ?>" <?php post_class('content'); ?>>
+<ul id="single">
+    <li id="post-<?php the_ID(); ?>" <?php post_class('content'); ?>>
+    	<h2><?php if ( is_page()) : else : ?><span><?php the_time('M') ?><br/><?php the_time('jS') ?></span><?php endif; ?><?php if ( get_the_title() ) { the_title();} else { echo '(No Title)';} ?></h2>
 		<?php the_content(); ?>
-    </span>
-    <span class="right" style="width:100%;"><?php wp_link_pages(); ?>
-	<?php if (is_single()) : ?>Post Categories: <?php the_category(', '); the_tags('</br>Tags: ', ', ', ''); endif;?>
-    </span>
-	</div>
+    	<span class="pagesandtags"><?php wp_link_pages(); ?>
+		<?php if (is_single()) : ?>Post Categories: <?php the_category(', '); the_tags('</br>Tags: ', ', ', ''); endif;?><?php if ( is_single($post) && !comments_open() ) : ?> Commenting is closed.<?php endif; ?>
+        </span>
+    </li>
     
-    <?php if ( is_page()) : ?>
-    <ul class="starsbar">
-    	<h6>
-            <span class="left"><?php previous_post_link('%link', '&#8249; Older Pages'); ?></span>
-            &#9733; &#9733; &#9733; &#9733; &#9733;
-            <span class="right"><?php next_post_link('%link', 'Newer Pages &#8250;'); ?></span>
-     	</h6>
-	</ul>
-    <?php elseif (is_attachment()) : ?>
-    <ul class="starsbar">
-    	<h6>
-        	<span class="left"><?php previous_image_link( false, '&#8249; Previous Image'); ?></span>
-            &#9733; &#9733; &#9733; &#9733; &#9733;
-            <span class="right"><?php next_image_link( false, 'Next Image &#8250;'); ?></span>
-		</h6>
-	</ul>
-    <?php else : ?>
-	<ul class="starsbar">
-    	<h6>
-        	<span class="left"><?php previous_post_link('%link', '&#8249; Older Post'); ?></span>
-            &#9733; &#9733; &#9733; &#9733; &#9733;
-            <span class="right"><?php next_post_link('%link', 'Newer Post &#8250;'); ?></span>
-		</h6>
-	</ul>
-    <?php endif; ?>
-	
+<?php if ( is_single() ) : ?>
+        <li class="stars"><span class="left"><?php previous_post_link('%link', '&#8249; %title'); ?></span><span class="right"><?php next_post_link('%link', '%title &#8250;'); ?></span></li>
+<?php elseif ( is_attachment() ) : ?>
+        <li class="stars"><span class="left"><?php previous_image_link( false, '&#8249; Previous Image'); ?></span><span class="right"><?php next_image_link( false, 'Next Image &#8250;'); ?></span></li>
+<?php endif; ?>
+</ul>
 <?php endif; ?><!-- End of Post / Page Stuff -->
 
 <!-- The Comments -->
@@ -247,14 +215,11 @@
 <?php comments_template( '', true ); ?>
 <?php elseif ( ( is_page() && comments_open() ) || is_single() ) : ?>
 <?php comments_template( '', true ); ?>
-<ul class="commentbox hidecomment">
-	<h4 class="title">Commenting is Closed</h4>
-</ul>
 <?php endif; ?>
 <!-- End Comments -->
 
 <!-- The Sidebar / Widget Area -->
-<?php if (semperfi_is_sidebar_active('widget')) : ?><ul class="browsing widget">
+<?php if (semperfi_is_sidebar_active('widget')) : ?><ul id="paged" class="widget">
 <li><?php if (!dynamic_sidebar('footer widget1')) : ?><?php endif; ?></li>
 <li><?php if (!dynamic_sidebar('footer widget2')) : ?><?php endif; ?></li>
 <li><?php if (!dynamic_sidebar('footer widget3')) : ?><?php endif; ?></li>
@@ -263,8 +228,6 @@
 <?php endif; ?>
 <!-- End Sidebar / Widget Area -->
 
-<ul class="finishline"></ul>
-</div>
 </div>
 </div>
 <!-- Closing the Layout of the Page with a Finishing Touch. -->

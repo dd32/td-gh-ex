@@ -27,10 +27,7 @@ if (!function_exists('semperfi_setup')):
 
         // This feature enables post-thumbnail support for a theme
 		add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
-			add_image_size( 'page-thumbnail', 460, 259, true );
-			add_image_size( 'big-thumbnail', 610, 355, true );
-			add_image_size( 'tall-thumbnail', 300, 355, true );
-			add_image_size( 'small-thumbnail', 300, 173, true );
+			add_image_size( 'page-thumbnail', 600, 355, true );
 
         // This feature enables custom-menus support for a theme
         register_nav_menus(array(
@@ -144,8 +141,8 @@ function semperfi_widgets_init() {
 		'description' => 'Widgets in this area will be shown below the the content of every page.',
 		'before_widget' => '',
 		'after_widget' => '',
-		'before_title' => '<h5>',
-		'after_title' => '</h5>', )); }
+		'before_title' => '<h2>',
+		'after_title' => '</h2>', )); }
 	
 add_action('widgets_init', 'semperfi_widgets_init');
 
@@ -231,7 +228,8 @@ function semperfi_customize($wp_customize) {
 		'settings'		=> 'bannerimage_setting',
 		'type'			=> 'radio',
 		'choices'		=> array(
-			'blue'		=> 'Blue',
+			'blue.png'	=> 'Blue',
+			'purple.png'=> 'Purple',
 			'marble.png'=> 'Marble',
 			'green.png'	=> 'Green', ), ));
 		
@@ -274,12 +272,10 @@ function semperfi_inline_css() {
 		echo '<!-- Custom CSS Styles -->' . "\n";
         echo '<style type="text/css" media="screen">' . "\n";
 		if ( get_theme_mod('backgroundsize_setting') != 'auto' ) echo '	body {background-size:' . get_theme_mod('backgroundsize_setting') . ';}' . "\n";
-		echo '	#floatfix {background-image:url(' . get_template_directory_uri() . '/images/' . get_theme_mod('backgroundpaper_setting') . '.png);}' . "\n";
+		echo '	#margin {background-image:url(' . get_template_directory_uri() . '/images/' . get_theme_mod('backgroundpaper_setting') . '.png);}' . "\n";
 		echo '	#header h1 a {color:' . get_theme_mod('titlecolor_setting') . ';}' . "\n";
 		echo '	#header h1 i {color:' . get_theme_mod('taglinecolor_setting') . ';}' . "\n";
-		echo '	#header {' . "\n" . '		background: bottom url(' . get_template_directory_uri() . '/images/' . get_option('bannerimage_setting') .  ');';
-		if ( get_option('bannerimage_setting') == 'marble.png') echo "\n" . '		border-top:solid 1px #010101; ' . "\n" . '		border-bottom:solid 1px #010101;}' . "\n";
-		if ( get_option('bannerimage_setting') == 'green.png') echo "\n" . '		border-top:solid 1px #0e0e02; ' . "\n" . '		border-bottom:solid 1px #0e0e02;}' . "\n";
+		echo '	#header {background: bottom url(' . get_template_directory_uri() . '/images/' . get_option('bannerimage_setting') .  ');' . "\n";
 		echo '</style>' . "\n";
 		echo '<!-- End Custom CSS -->' . "\n";
 		echo "\n";}
@@ -408,6 +404,7 @@ function semperfi_theme_options_do_page() { ?>
         </tr>
         </tbody>
 	</table>
+    <p>Don't see a feature that you want, maybe theres plugin that doesn't work right, <a href="http://schwarttzy.com/contact-me/">send me an Email about it</a>.</p>
 	</span>
     <h3 class="title">Semper Fi Lite Version Information</h3>
     <span class="content">
@@ -416,6 +413,10 @@ function semperfi_theme_options_do_page() { ?>
         <tr>
         <th>Version</th>
         <th class="justify"></th>
+        </tr>
+        <tr>
+        <th>.8</th>
+        <td class="justify">Decided to rewrite the theme over again, completely from scratch, after having an amazing thought. The responsive website movement is because the vast number of different size resolutions of screen that we view the content. This amazing thought came to me that I could base everything off of em, which is the average width of one letter on your screen. Unlike using pixels to decide how the website displays where you have no idea what the end users font size is, using em give you a relatively good idea. Doing it this way I have optimized the readability of website based on how the user want to view the website. I also cleaned some code up to lighten the load on browsers and bring a more unified experience whether you're using Chrome, Firefox, or Internet Explorer.</td>
         </tr>
         <tr>
         <th>.7</th>
@@ -437,6 +438,10 @@ function semperfi_theme_options_do_page() { ?>
         <tr>
         <th>Version</th>
         <th class="justify"></th>
+        </tr>
+        <tr>
+        <th>4</th>
+        <td class="justify">Semper Fi, the standard version received a similar update to "Lite" in .7 including the same new features and small rewrite of some code. Theres no real difference between the two except for the additional features.</td>
         </tr>
         <tr>
         <th>3</th>
