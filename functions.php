@@ -262,16 +262,9 @@ add_action( 'customize_controls_print_footer_scripts', 'semperfi_customizer_prev
 // Inject the Customizer Choices into the Theme
 function semperfi_inline_css() {
 
-	// this is a huge or statement
-	$options = get_option('backgroundsize_setting');
-	$options = get_option('backgroundpaper_setting');
-	$options = get_option('titlecolor_setting');
-	$options = get_option('taglinecolor_setting');
-	$options = get_option('bannerimage_setting');
-
 		echo '<!-- Custom CSS Styles -->' . "\n";
         echo '<style type="text/css" media="screen">' . "\n";
-		if ( get_theme_mod('backgroundsize_setting') != 'auto' ) echo '	body {background-size:' . get_theme_mod('backgroundsize_setting') . ';}' . "\n";
+		if ( get_theme_mod('backgroundsize_setting') != 'auto' ) echo '	body.custom-background {background-size:' . get_theme_mod('backgroundsize_setting') . ';}' . "\n";
 		echo '	#margin {background-image:url(' . get_template_directory_uri() . '/images/' . get_theme_mod('backgroundpaper_setting') . '.png);}' . "\n";
 		echo '	#header h1 a {color:' . get_theme_mod('titlecolor_setting') . ';}' . "\n";
 		echo '	#header h1 i {color:' . get_theme_mod('taglinecolor_setting') . ';}' . "\n";
@@ -413,6 +406,10 @@ function semperfi_theme_options_do_page() { ?>
         <tr>
         <th>Version</th>
         <th class="justify"></th>
+        </tr>
+        <tr>
+        <th>.9</th>
+        <td class="justify">Just a mix up in the code that would cause some errors in version .8</td>
         </tr>
         <tr>
         <th>.8</th>

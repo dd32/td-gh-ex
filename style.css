@@ -5,7 +5,7 @@ Theme URI: http://schwarttzy.com/shop/semper-fi/
 
 Description: Dedicate to my Grandfather's Bravery in WWII, Semper Fi has a high quality newspaper feeling to it. From hidden luxurious floral patterns, to images that create the nostalgia of finely crafted paper, incredibly detailed shadowing, but most importantly, Semper Fi has the ability to respond to any width screen. From 300 pixels wide, all the way to 1920 and beyond, images, galleries, quotes, text, and titles all move fluidly to respond to any thing you throw at it.
 
-Version: 0.8
+Version: 0.9
 
 Author: Eric Schwarz
 
@@ -47,6 +47,8 @@ body {
 	font:normal 107% adobe-text-pro, Cambria, Georgia, "Times New Roman", Times, serif;
 	text-align:center;
 	text-shadow:0 0 2px rgba(238, 238, 238, 0.85);}
+	
+body.custom-background {background:none;}
 
 h1, h2, h3, h4, h5, h6{font-family:Impact, fantasy; font-variant:small-caps; font-weight:lighter; margin:0 0 .25em; text-transform:uppercase;}
 
@@ -208,9 +210,9 @@ a:hover {color: #555;}
 #header li ul li a {color:#e0dbce;}
 #header li a:hover {color:#CCC; }
 #header li ul li a:hover {color:#3e5a21;}  /*<------------------------------------- replace small */
-#header.small {position:fixed; margin-top:0px;}
-.admin-bar #header.small {margin-top:28px;}
-#header.small h1 {display:none;}
+#header.hidden {position:fixed; margin-top:0px;}
+.admin-bar #header.hidden {margin-top:28px;}
+#header.hidden h1 {display:none;}
 
 
 /* Widgets & Sidebar
@@ -518,8 +520,5 @@ ul.tweets .timesince {background:url(images/tweet.png) center left no-repeat; cl
 	.noimage, .under {margin:0 0 .32725em;}
 	#paged>li h2, #single>li h2:first-of-type, #comments>li>h2:first-of-type, #reply-title {letter-spacing:.043em; } }
 
-/* --------------------------------------------------------------
-
-						Fortitudo Et Honos
-
+/* Fortitudo Et Honos
 -------------------------------------------------------------- */
