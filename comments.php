@@ -64,23 +64,12 @@
 	
  	<?php 
 	if (comments_open()): // The comment form 
-
-		$req = get_option( 'require_name_email' );
-	    $aria_req = ( $req ? " aria-required='true'" : '' );
-		$fields =  array(
-			'author'	=>	'<label>'. __('Name','simplecatch') .'</label><input type="text" class="text" placeholder="'.esc_attr__( 'Name ( required )', 'simplecatch' ).'" name="author"'. $aria_req .' />',
-			'email' 	=>  '<label>'. __('Email','simplecatch') .'</label><input type="text" class="text" placeholder="'.esc_attr__( 'Email ( required )', 'simplecatch' ).'" name="email"'. $aria_req .' />',
-			'url'    	=>	 '<label>'. __('Website','simplecatch') .'</label><input type="text" class="text" placeholder="'.esc_attr__( 'Website', 'simplecatch' ).'" name="subject"'. $aria_req .' />' 
-		);
-			
 		$args = array(
-			'title_reply'          => 	__( 'Leave a Comment', 'simplecatch' ),
 			'comment_notes_before' =>	 '',
-			'comment_field'        => 	'<label>'. __('Comment','simplecatch') .'</label><textarea name="comment" id="comment" rows="10" tabindex="4"></textarea>',
-			'label_submit'         =>	 __( 'Submit','simplecatch' ),
 			'comment_notes_after'  => 	'',
 			'fields'               => 	apply_filters( 'comment_form_default_fields', $fields )
 			 );
 		
-		comment_form($args);  
+		comment_form($args);
+		
 	endif; // if you delete this the sky will fall on your head ?>

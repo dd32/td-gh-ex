@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/simple-catch\n"
 "POT-Creation-Date: 2012-09-28 16:55+0530\n"
-"PO-Revision-Date: 2012-12-09 16:33+0530\n"
+"PO-Revision-Date: 2012-12-15 22:53+0530\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Catch Themes <info@catchinternet.com>\n"
 "MIME-Version: 1.0\n"
@@ -66,38 +66,6 @@ msgstr ""
 
 #: ../comments.php:60
 msgid "Comments are closed."
-msgstr ""
-
-#: ../comments.php:71
-msgid "Name"
-msgstr ""
-
-#: ../comments.php:71
-msgid "Name ( required )"
-msgstr ""
-
-#: ../comments.php:72
-msgid "Email"
-msgstr ""
-
-#: ../comments.php:72
-msgid "Email ( required )"
-msgstr ""
-
-#: ../comments.php:73
-msgid "Website"
-msgstr ""
-
-#: ../comments.php:77
-msgid "Leave a Comment"
-msgstr ""
-
-#: ../comments.php:79
-msgid "Comment"
-msgstr ""
-
-#: ../comments.php:80
-msgid "Submit"
 msgstr ""
 
 #: ../content.php:18
@@ -331,6 +299,23 @@ msgstr ""
 
 #: ../functions/simplecatch_functions.php:917
 msgid "https://twitter.com/catchthemes"
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:937
+msgid "Name"
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:937
+#: ../functions/simplecatch_functions.php:938
+msgid "( required )"
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:938
+msgid "Email"
+msgstr ""
+
+#: ../functions/simplecatch_functions.php:939
+msgid "Website"
 msgstr ""
 
 #: ../functions/simplecatch_metabox.php:14

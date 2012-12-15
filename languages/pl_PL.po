@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/simple-catch\n"
 "POT-Creation-Date: 2012-09-28 16:55+0530\n"
-"PO-Revision-Date: 2012-12-09 16:42+0530\n"
+"PO-Revision-Date: 2012-12-15 22:56+0530\n"
 "Last-Translator: Piotr <fansitepoprostugry@gmail.com>\n"
 "Language-Team: Catch Themes <fansitejustgames@gmail.com>\n"
 "Language: pl\n"
@@ -70,38 +70,6 @@ msgstr "Komentarzy: %"
 #: ../comments.php:60
 msgid "Comments are closed."
 msgstr "Komentarze są wyłączone."
-
-#: ../comments.php:71
-msgid "Name"
-msgstr "Podpis"
-
-#: ../comments.php:71
-msgid "Name ( required )"
-msgstr "Podpis ( wymagany )"
-
-#: ../comments.php:72
-msgid "Email"
-msgstr "Email"
-
-#: ../comments.php:72
-msgid "Email ( required )"
-msgstr "Email ( wymagany )"
-
-#: ../comments.php:73
-msgid "Website"
-msgstr "WWW"
-
-#: ../comments.php:77
-msgid "Leave a Comment"
-msgstr "Zostaw komentarz"
-
-#: ../comments.php:79
-msgid "Comment"
-msgstr "Komentarz"
-
-#: ../comments.php:80
-msgid "Submit"
-msgstr "Wyślij"
 
 #: ../content.php:18
 #: ../content.php:25
@@ -336,13 +304,29 @@ msgstr "http://facebook.com/catchthemes"
 msgid "https://twitter.com/catchthemes"
 msgstr "https://twitter.com/catchthemes"
 
+#: ../functions/simplecatch_functions.php:937
+msgid "Name"
+msgstr "Podpis"
+
+#: ../functions/simplecatch_functions.php:937
+#: ../functions/simplecatch_functions.php:938
+msgid "( required )"
+msgstr "( wymagany )"
+
+#: ../functions/simplecatch_functions.php:938
+msgid "Email"
+msgstr "Email"
+
+#: ../functions/simplecatch_functions.php:939
+msgid "Website"
+msgstr "WWW"
+
 #: ../functions/simplecatch_metabox.php:14
 #: ../functions/simplecatch_metabox.php:20
 msgid "Select Sidebar layout"
 msgstr "Wybierz układ paska bocznego"
 
 #: ../functions/simplecatch_metabox.php:33
-#, fuzzy
 msgid "Default Layout Set in"
 msgstr "Domyślny wygląd w"
 
@@ -846,24 +830,24 @@ msgstr "Kod do wyświetlenia w stopce"
 msgid "Note: Here you can put scripts from Google, Facebook, Add This etc. which will load on footer"
 msgstr "Rada: Tutaj możesz wpisać kod skryptu od Google, Facebooka, Add This itp. który będzie załadowany w stopce"
 
-#. Theme URI of the plugin/theme
-msgid "http://wordpress.org/extend/themes/simple-catch"
-msgstr "http://wordpress.org/extend/themes/simple-catch"
+#~ msgid "http://wordpress.org/extend/themes/simple-catch"
+#~ msgstr "http://wordpress.org/extend/themes/simple-catch"
 
-#. Description of the plugin/theme
-msgid ""
-"Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize"
-"through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, "
-"Three Custom Layouts, Featured Slider, Theme Options (Header Logo, Footer Logo, "
-"Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular "
-"plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based "
-"on popular 978 Grid System CSS Framework. Multilingual Ready (WPML) and also "
-"currently translated in Polish, Russian and Finnish."
-msgstr ""
-"Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize"
-"through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, "
-"Three Custom Layouts, Featured Slider, Theme Options (Header Logo, Footer Logo, "
-"Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular "
-"plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based "
-"on popular 978 Grid System CSS Framework. Multilingual Ready (WPML) and also "
-"currently translated in Polish, Russian and Finnish."
+#~ msgid ""
+#~ "Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy "
+#~ "Customizethrough Theme Options and Custom Widgets. Features: Custom Menu, "
+#~ "Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options "
+#~ "(Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, "
+#~ "Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, "
+#~ "Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 "
+#~ "Grid System CSS Framework. Multilingual Ready (WPML) and also currently "
+#~ "translated in Polish, Russian and Finnish."
+#~ msgstr ""
+#~ "Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy "
+#~ "Customizethrough Theme Options and Custom Widgets. Features: Custom Menu, "
+#~ "Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options "
+#~ "(Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, "
+#~ "Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, "
+#~ "Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 "
+#~ "Grid System CSS Framework. Multilingual Ready (WPML) and also currently "
+#~ "translated in Polish, Russian and Finnish."

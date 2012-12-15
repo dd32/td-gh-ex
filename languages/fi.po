@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/simple-catch\n"
 "POT-Creation-Date: 2012-09-28 16:55+0530\n"
-"PO-Revision-Date: 2012-12-09 16:49+0530\n"
+"PO-Revision-Date: 2012-12-15 22:54+0530\n"
 "Last-Translator: Juha Louhiranta <charni@gmail.com>\n"
 "Language-Team: Catch Themes <charni@gmail.com>\n"
 "Language: \n"
@@ -67,38 +67,6 @@ msgstr "% kommenttia"
 #: ../comments.php:60
 msgid "Comments are closed."
 msgstr "Kommentointi on suljettu."
-
-#: ../comments.php:71
-msgid "Name"
-msgstr "Nimi"
-
-#: ../comments.php:71
-msgid "Name ( required )"
-msgstr "Nimi ( pakollinen )"
-
-#: ../comments.php:72
-msgid "Email"
-msgstr "Sähköposti"
-
-#: ../comments.php:72
-msgid "Email ( required )"
-msgstr "Sähköposti ( pakollinen )"
-
-#: ../comments.php:73
-msgid "Website"
-msgstr "Kotisivu"
-
-#: ../comments.php:77
-msgid "Leave a Comment"
-msgstr "Jätä kommentti"
-
-#: ../comments.php:79
-msgid "Comment"
-msgstr "Kommentti"
-
-#: ../comments.php:80
-msgid "Submit"
-msgstr "Lähetä"
 
 #: ../content.php:18
 #: ../content.php:25
@@ -333,13 +301,29 @@ msgstr "http://facebook.com/catchthemes"
 msgid "https://twitter.com/catchthemes"
 msgstr "https://twitter.com/catchthemes"
 
+#: ../functions/simplecatch_functions.php:937
+msgid "Name"
+msgstr "Nimi"
+
+#: ../functions/simplecatch_functions.php:937
+#: ../functions/simplecatch_functions.php:938
+msgid "( required )"
+msgstr "( pakollinen )"
+
+#: ../functions/simplecatch_functions.php:938
+msgid "Email"
+msgstr "Sähköposti"
+
+#: ../functions/simplecatch_functions.php:939
+msgid "Website"
+msgstr "Kotisivu"
+
 #: ../functions/simplecatch_metabox.php:14
 #: ../functions/simplecatch_metabox.php:20
 msgid "Select Sidebar layout"
 msgstr "Valitse sivupalkin tyyli"
 
 #: ../functions/simplecatch_metabox.php:33
-#, fuzzy
 msgid "Default Layout Set in"
 msgstr "Oletusulkoasu, joka on asetettu paikassa"
 
@@ -884,285 +868,3 @@ msgstr "Huom. Tähän voit laittaa Google-, Facebook-, Add This jne. skriptisi, 
 
 #~ msgid "FAQ: Frequently Asked Questions"
 #~ msgstr "UKK: Usein kysytyt kysymykset"
-
-#~ msgid "1. How to change logo on Header and Footer? "
-#~ msgstr "1. How to change logo on Header and Footer? "
-
-#~ msgid "Click on Theme Options under Appearance."
-#~ msgstr "Click on Theme Options under Appearance."
-
-#~ msgid "Click on Design Settings Tab."
-#~ msgstr "Click on Design Settings Tab."
-
-#~ msgid "Click on Logo Options. You can see the default logo previews. "
-#~ msgstr "Click on Logo Options. You can see the default logo previews. "
-
-#~ msgid ""
-#~ "Now click on Change Header Logo and Change Footer Logo button to change "
-#~ "the Header and Footer Logo respectively."
-#~ msgstr ""
-#~ "Now click on Change Header Logo and Change Footer Logo button to change "
-#~ "the Header and Footer Logo respectively."
-
-#~ msgid "Browse the Logo image from desired location and upload it."
-#~ msgstr "Browse the Logo image from desired location and upload it."
-
-#~ msgid "Once the upload in completed. Then click on insert into the Post."
-#~ msgstr "Once the upload in completed. Then click on insert into the Post."
-
-#~ msgid "Click on Save button. Now you can see the previews. "
-#~ msgstr "Click on Save button. Now you can see the previews. "
-
-#~ msgid "2. How to change Favicon? "
-#~ msgstr "2. How to change Favicon? "
-
-#~ msgid ""
-#~ "Click on Fav Icon Options. You can see the default fav icon preview. "
-#~ msgstr ""
-#~ "Click on Fav Icon Options. You can see the default fav icon preview. "
-
-#~ msgid "Now click on Change Fav Icon button. "
-#~ msgstr "Now click on Change Fav Icon button. "
-
-#~ msgid "Browse the fav icon image from desired location and upload it."
-#~ msgstr "Browse the fav icon image from desired location and upload it."
-
-#~ msgid "Click on Save button. Now you can see the preview. "
-#~ msgstr "Click on Save button. Now you can see the preview. "
-
-#~ msgid "3. How to change Content Background? "
-#~ msgstr "3. How to change Content Background? "
-
-#~ msgid "Click on Background under Appearance."
-#~ msgstr "Click on Background under Appearance."
-
-#~ msgid "Now you can change the backgrond image and color"
-#~ msgstr "Now you can change the backgrond image and color"
-
-#~ msgid "Read more about Custom Background"
-#~ msgstr "Read more about Custom Background"
-
-#~ msgid "http://en.support.wordpress.com/themes/custom-backgrounds/"
-#~ msgstr "http://en.support.wordpress.com/themes/custom-backgrounds/"
-
-#~ msgid "Click Here &rarr;"
-#~ msgstr "Click Here &rarr;"
-
-#~ msgid "Click on Save button."
-#~ msgstr "Click on Save button."
-
-#~ msgid "4. How to change Content Text Color? "
-#~ msgstr "4. How to change Content Text Color? "
-
-#~ msgid "Click on Content Color Options."
-#~ msgstr "Click on Content Color Options."
-
-#~ msgid "Slect the colors. "
-#~ msgstr "Slect the colors. "
-
-#~ msgid "5. Where to add Additional CSS Styles?"
-#~ msgstr "5. Where to add Additional CSS Styles?"
-
-#~ msgid ""
-#~ "If you are doing lot of customization then it is better to create child "
-#~ "theme. But if you just want to change few CSS then follow the instruction."
-#~ msgstr ""
-#~ "If you are doing lot of customization then it is better to create child "
-#~ "theme. But if you just want to change few CSS then follow the instruction."
-
-#~ msgid "Now click on Custom CSS. Then add in the custom CSS."
-#~ msgstr "Now click on Custom CSS. Then add in the custom CSS."
-
-#~ msgid "Click on Save button. "
-#~ msgstr "Click on Save button. "
-
-#~ msgid "6. How to change default layout? "
-#~ msgstr "6. How to change default layout? "
-
-#~ msgid "Click on Default Layout."
-#~ msgstr "Click on Default Layout."
-
-#~ msgid "Then check the layout you want to activate."
-#~ msgstr "Then check the layout you want to activate."
-
-#~ msgid ""
-#~ "7. How to set certain categories to display in Homepage / Frontpage ? "
-#~ msgstr ""
-#~ "7. How to set certain categories to display in Homepage / Frontpage ? "
-
-#~ msgid "Click on Theme Settings Tab."
-#~ msgstr "Click on Theme Settings Tab."
-
-#~ msgid "Click on Homepage / Frontpage category setting."
-#~ msgstr "Click on Homepage / Frontpage category setting."
-
-#~ msgid ""
-#~ "Then select the categories you want. You may select multiple categories "
-#~ "by holding down the CTRL key."
-#~ msgstr ""
-#~ "Then select the categories you want. You may select multiple categories "
-#~ "by holding down the CTRL key."
-
-#~ msgid "8. How to change the Search Button text"
-#~ msgstr "8. How to change the Search Button text"
-
-#~ msgid "Click on Search Text Settings."
-#~ msgstr "Click on Search Text Settings."
-
-#~ msgid "Then type in the text you want to change."
-#~ msgstr "Then type in the text you want to change."
-
-#~ msgid "9. How to change the Excerpt Length and More Tag Text"
-#~ msgstr "9. How to change the Excerpt Length and More Tag Text"
-
-#~ msgid "Click on Excerpt / More Tag Settings."
-#~ msgstr "Click on Excerpt / More Tag Settings."
-
-#~ msgid "Type in the Number of Words and more tag text."
-#~ msgstr "Type in the Number of Words and more tag text."
-
-#~ msgid "10. How to Add Featured Slider? "
-#~ msgstr "10. How to Add Featured Slider? "
-
-#~ msgid "Click on Featured Slider under Appearance. "
-#~ msgstr "Click on Featured Slider under Appearance. "
-
-#~ msgid "Click on Add Slider Options. "
-#~ msgstr "Click on Add Slider Options. "
-
-#~ msgid "Add in the Post ID's  in Featured Slider Post#1, #2 respectively."
-#~ msgstr "Add in the Post ID's  in Featured Slider Post#1, #2 respectively."
-
-#~ msgid "Note:"
-#~ msgstr "Note:"
-
-#~ msgid ""
-#~ "When you add the Post Id's, make sure you have added in the Featured "
-#~ "Image in your Post. Read more about Featured Image"
-#~ msgstr ""
-#~ "When you add the Post Id's, make sure you have added in the Featured "
-#~ "Image in your Post. Read more about Featured Image"
-
-#~ msgid ""
-#~ "http://en.support.wordpress.com/featured-images/#setting-a-featured-image"
-#~ msgstr ""
-#~ "http://en.support.wordpress.com/featured-images/#setting-a-featured-image"
-
-#~ msgid "Click Here  &rarr;"
-#~ msgstr "Click Here  &rarr;"
-
-#~ msgid ""
-#~ "If you are unable to find the post ID then you can install the Catch IDs "
-#~ "Plugin to find the Post IDs"
-#~ msgstr ""
-#~ "If you are unable to find the post ID then you can install the Catch IDs "
-#~ "Plugin to find the Post IDs"
-
-#~ msgid "http://wordpress.org/extend/plugins/catch-ids/"
-#~ msgstr "http://wordpress.org/extend/plugins/catch-ids/"
-
-#~ msgid "11. How to insert Social links on the right side of header?"
-#~ msgstr "11. How to insert Social links on the right side of header?"
-
-#~ msgid "Click on Social Links under Appearance."
-#~ msgstr "Click on Social Links under Appearance."
-
-#~ msgid "Here you can see different social links like facebook, twitter etc. "
-#~ msgstr ""
-#~ "Here you can see different social links like facebook, twitter etc. "
-
-#~ msgid ""
-#~ "Paste the social links URL on its respective fields. For example https://"
-#~ "www.facebook.com/catchthemes. for facebook etc. "
-#~ msgstr ""
-#~ "Paste the social links URL on its respective fields. For example https://"
-#~ "www.facebook.com/catchthemes. for facebook etc. "
-
-#~ msgid "12. How to insert Site Verification IDs?"
-#~ msgstr "12. How to insert Site Verification IDs?"
-
-#~ msgid "Click on Webmaster Tools under Appearance. "
-#~ msgstr "Click on Webmaster Tools under Appearance. "
-
-#~ msgid "Click on Site Verification. "
-#~ msgstr "Click on Site Verification. "
-
-#~ msgid ""
-#~ "Enter the Google, Yahoo, Bling Site Verification ID respectivly for which "
-#~ "you want to verify your site."
-#~ msgstr ""
-#~ "Enter the Google, Yahoo, Bling Site Verification ID respectivly for which "
-#~ "you want to verify your site."
-
-#~ msgid "13. How to insert Analytics / Other scripts?"
-#~ msgstr "13. How to insert Analytics / Other scripts?"
-
-#~ msgid "Click on Analytic. "
-#~ msgstr "Click on Analytic. "
-
-#~ msgid "Here you can put different scripts like, google, facebook etc. "
-#~ msgstr "Here you can put different scripts like, google, facebook etc. "
-
-#~ msgid ""
-#~ "Enter the script on upper textarea which you want to load on header. "
-#~ msgstr ""
-#~ "Enter the script on upper textarea which you want to load on header. "
-
-#~ msgid ""
-#~ "Enter the script on lower textarea which you want to load on footer. "
-#~ msgstr ""
-#~ "Enter the script on lower textarea which you want to load on footer. "
-
-#~ msgid ""
-#~ "14. How to create pagination in single post/page if the post/page is too "
-#~ "long? "
-#~ msgstr ""
-#~ "14. How to create pagination in single post/page if the post/page is too "
-#~ "long? "
-
-#~ msgid "Click on the post/page. "
-#~ msgstr "Click on the post/page. "
-
-#~ msgid ""
-#~ "Edit the specific post/page in which you want to breakdown into more "
-#~ "pages. "
-#~ msgstr ""
-#~ "Edit the specific post/page in which you want to breakdown into more "
-#~ "pages. "
-
-#~ msgid ""
-#~ "Now Keep the cursor to the exact place of post where you want page break. "
-#~ msgstr ""
-#~ "Now Keep the cursor to the exact place of post where you want page break. "
-
-#~ msgid "Then copy this shortcode <!--nextpage--> and paste it. "
-#~ msgstr "Then copy this shortcode <!--nextpage--> and paste it. "
-
-#~ msgid ""
-#~ "You can repeat this shortcode many times where you want to break down. "
-#~ msgstr ""
-#~ "You can repeat this shortcode many times where you want to break down. "
-
-#~ msgid "Update the post. "
-#~ msgstr "Update the post. "
-
-#~ msgid "15. How to support developement of Simple Catch Theme? "
-#~ msgstr "15. How to support developement of Simple Catch Theme? "
-
-#~ msgid "Support Simple Catch Theme by Donation"
-#~ msgstr "Support Simple Catch Theme by Donation"
-
-#~ msgid "Rate Simple Catch Theme 5 star on WordPress.org"
-#~ msgstr "Rate Simple Catch Theme 5 star on WordPress.org"
-
-#~ msgid "http://wordpress.org/extend/themes/simple-catch/"
-#~ msgstr "http://wordpress.org/extend/themes/simple-catch/"
-
-#~ msgid "Like Us on Facebook"
-#~ msgstr "Like Us on Facebook"
-
-#~ msgid "Follow Us on Twitter"
-#~ msgstr "Follow Us on Twitter"
-
-#~ msgid "FAQ"
-#~ msgstr "UKK"

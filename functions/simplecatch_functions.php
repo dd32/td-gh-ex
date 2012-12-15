@@ -924,3 +924,20 @@ function simplecatch_infobar() {
                      
 <?php
 }
+
+
+/**
+ * Altering Comment Form Fields
+ * @uses comment_form_default_fields filter
+ */
+function simplecatch_comment_form_fields( $fields ) {
+	$req = get_option( 'require_name_email' );
+	$aria_req = ( $req ? " aria-required='true'" : '' );
+	
+    $fields['author'] = '<label for="author">' . __('Name','simplecatch') . '</label><input type="text" class="text" placeholder="'.esc_attr__( 'Name', 'simplecatch' ) .'&nbsp;'. ( $req ? esc_attr__( '( required )', 'simplecatch' ) : '' ) .'" name="author"'. $aria_req .' />';
+	$fields['email'] = '<label for="author">' . __('Email','simplecatch') . '</label><input type="text" class="text" placeholder="'.esc_attr__( 'Email', 'simplecatch' ) .'&nbsp;'. ( $req ? esc_attr__( '( required )', 'simplecatch' ) : '' ) .'" name="email"'. $aria_req .' />';
+	$fields['url'] = '<label for="author">' . __('Website','simplecatch') . '</label><input type="text" class="text" placeholder="'.esc_attr__( 'Website', 'simplecatch' ) .'" name="email"'. $aria_req .' />';
+
+    return $fields;
+}
+add_filter( 'comment_form_default_fields', 'simplecatch_comment_form_fields' );

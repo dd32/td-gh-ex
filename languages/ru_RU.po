@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/simple-catch\n"
 "POT-Creation-Date: 2012-09-28 16:55+0530\n"
-"PO-Revision-Date: 2012-12-09 16:35+0530\n"
+"PO-Revision-Date: 2012-12-15 22:58+0530\n"
 "Last-Translator: Alexey Kurpachev <kurpachev@gmail.com>\n"
 "Language-Team:  <kurpachev@gmail.com>\n"
 "Language: Russian\n"
@@ -71,38 +71,6 @@ msgstr "% Комментари(я,ев)"
 msgid "Comments are closed."
 msgstr "Комментарии закрыты."
 
-#: ../comments.php:71
-msgid "Name"
-msgstr "Имя"
-
-#: ../comments.php:71
-msgid "Name ( required )"
-msgstr "Имя (обязательно)"
-
-#: ../comments.php:72
-msgid "Email"
-msgstr "Email"
-
-#: ../comments.php:72
-msgid "Email ( required )"
-msgstr "Email (обязательно)"
-
-#: ../comments.php:73
-msgid "Website"
-msgstr "Веб-сайт"
-
-#: ../comments.php:77
-msgid "Leave a Comment"
-msgstr "Оставьте комментарий"
-
-#: ../comments.php:79
-msgid "Comment"
-msgstr "Комментарий"
-
-#: ../comments.php:80
-msgid "Submit"
-msgstr "Отправить"
-
 #: ../content.php:18
 #: ../content.php:25
 #, php-format
@@ -112,7 +80,7 @@ msgstr "Постоянная ссылка на %s"
 #: ../content.php:28
 #: ../image.php:46
 msgid "By"
-msgstr " "
+msgstr "на"
 
 #: ../content.php:54
 #: ../search.php:39
@@ -335,6 +303,23 @@ msgstr "http://facebook.com/catchthemes"
 #: ../functions/simplecatch_functions.php:917
 msgid "https://twitter.com/catchthemes"
 msgstr "https://twitter.com/catchthemes"
+
+#: ../functions/simplecatch_functions.php:937
+msgid "Name"
+msgstr "Имя"
+
+#: ../functions/simplecatch_functions.php:937
+#: ../functions/simplecatch_functions.php:938
+msgid "( required )"
+msgstr "( обязательно )"
+
+#: ../functions/simplecatch_functions.php:938
+msgid "Email"
+msgstr "Email"
+
+#: ../functions/simplecatch_functions.php:939
+msgid "Website"
+msgstr "Веб-сайт"
 
 #: ../functions/simplecatch_metabox.php:14
 #: ../functions/simplecatch_metabox.php:20
@@ -845,36 +830,33 @@ msgstr "Код для отображения в нижнем колонтиту�
 msgid "Note: Here you can put scripts from Google, Facebook, Add This etc. which will load on footer"
 msgstr "Примечание: Здесь вы можете добавить скрипты от Google, Facebook, Add This и т.п., которые будут загружаться в нижнем колонтитуле"
 
-#. Description of the plugin/theme
-msgid ""
-"Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy "
-"Customizethrough Theme Options and Custom Widgets. Features: Custom Menu, "
-"Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options (Header "
-"Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster "
-"Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, "
-"WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS "
-"Framework. Multilingual Ready (WPML) and also currently translated in "
-"Polish, Russian and Finnish."
-msgstr ""
-"Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy "
-"Customizethrough Theme Options and Custom Widgets. Features: Custom Menu, "
-"Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options (Header "
-"Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster "
-"Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, "
-"WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS "
-"Framework. Multilingual Ready (WPML) and also currently translated in "
-"Polish, Russian and Finnish."
+#~ msgid ""
+#~ "Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy "
+#~ "Customizethrough Theme Options and Custom Widgets. Features: Custom Menu, "
+#~ "Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options "
+#~ "(Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, "
+#~ "Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, "
+#~ "Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 "
+#~ "Grid System CSS Framework. Multilingual Ready (WPML) and also currently "
+#~ "translated in Polish, Russian and Finnish."
+#~ msgstr ""
+#~ "Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy "
+#~ "Customizethrough Theme Options and Custom Widgets. Features: Custom Menu, "
+#~ "Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options "
+#~ "(Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, "
+#~ "Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, "
+#~ "Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 "
+#~ "Grid System CSS Framework. Multilingual Ready (WPML) and also currently "
+#~ "translated in Polish, Russian and Finnish."
 
-#. Author of the plugin/theme
-msgid "Catch Themes Team"
-msgstr "Catch Themes Team"
+#~ msgid "Catch Themes Team"
+#~ msgstr "Catch Themes Team"
 
-#. Tags of the plugin/theme
-msgid ""
-"black, gray, silver, white, light, one-column, two-columns, left-sidebar, "
-"right-sidebar, fixed-width, custom-menu, featured-images, full-width-"
-"template, theme-options, threaded-comments, translation-ready"
-msgstr ""
-"black, gray, silver, white, light, one-column, two-columns, left-sidebar, "
-"right-sidebar, fixed-width, custom-menu, featured-images, full-width-"
-"template, theme-options, threaded-comments, translation-ready"
+#~ msgid ""
+#~ "black, gray, silver, white, light, one-column, two-columns, left-sidebar, "
+#~ "right-sidebar, fixed-width, custom-menu, featured-images, full-width-"
+#~ "template, theme-options, threaded-comments, translation-ready"
+#~ msgstr ""
+#~ "black, gray, silver, white, light, one-column, two-columns, left-sidebar, "
+#~ "right-sidebar, fixed-width, custom-menu, featured-images, full-width-"
+#~ "template, theme-options, threaded-comments, translation-ready"

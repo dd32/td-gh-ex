@@ -211,3 +211,7 @@ Version 1.6
 * Added missing text translation ready
 * Updated simplecatch.pot, pl_PL.po and ru_RU.po
 * Fixed conflict with Custom CSS and Content Color Options CSS
+
+Version 1.6.1
+* Updated screenshot to match with WordPress 3.5 version update
+* Added comment form fields alteration function to match with WordPress 3.5 version update
