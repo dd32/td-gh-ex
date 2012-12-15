@@ -837,7 +837,7 @@ add_action( 'comment_form_before', 'catchbox_enqueue_comment_reply_script' );
  * Alter the query for the main loop in home page
  * @uses pre_get_posts hook
  */
-function catchbox_alter_home( $query ){
+function catchbox_alter_home( $query ) {
 	$options = get_option( 'catchbox_options_slider' );
 	if( !isset( $options[ 'exclude_slider_post' ] ) ) {
  		$options[ 'exclude_slider_post' ] = "0";
@@ -856,7 +856,7 @@ add_action( 'pre_get_posts','catchbox_alter_home' );
  * Remove div from wp_page_menu() and replace with ul.
  * @uses wp_page_menu filter
  */
-function catchbox_wp_page_menu ($page_markup) {
+function catchbox_wp_page_menu( $page_markup ) {
     preg_match('/^<div class=\"([a-z0-9-_]+)\">/i', $page_markup, $matches);
         $divclass = $matches[1];
         $replace = array('<div class="'.$divclass.'">', '</div>');
@@ -864,4 +864,20 @@ function catchbox_wp_page_menu ($page_markup) {
         $new_markup = preg_replace('/^<ul>/i', '<ul class="'.$divclass.'">', $new_markup);
         return $new_markup; }
 
-add_filter('wp_page_menu', 'catchbox_wp_page_menu');
+add_filter( 'wp_page_menu', 'catchbox_wp_page_menu' );
+
+
+/**
+ * Altering Comment Form Fields
+ * @uses comment_form_default_fields filter
+ */
+function catchbox_comment_form_fields( $fields ) {
+	$req = get_option( 'require_name_email' );
+	$aria_req = ( $req ? " aria-required='true'" : '' );
+    $fields['author'] = '<p class="comment-form-author"><label for="author">' . __( 'Name' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
+        '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>';
+    $fields['email'] = '<p class="comment-form-email"><label for="email">' . __( 'Email' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
+        '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>'; 
+    return $fields;
+}
+add_filter( 'comment_form_default_fields', 'catchbox_comment_form_fields' );

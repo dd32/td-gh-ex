@@ -491,6 +491,14 @@ msgstr "<span class=\"sep\">Skrevet d. </span><a href=\"%1$s\" title=\"%2$s\" re
 msgid "ID"
 msgstr "ID"
 
+#: ../functions.php:877
+msgid "Name"
+msgstr "Navn"
+
+#: ../functions.php:879
+msgid "Email"
+msgstr "Email"
+
 #: ../header.php:67
 msgid "Primary menu"
 msgstr "Primær menu"

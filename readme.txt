@@ -170,3 +170,8 @@ Version 1.5.6.1
 
 Version 1.6
 * Added favicon url option in Theme Options
+
+Version 1.6.1
+* Updated screenshot to match with WordPress 3.5 version update
+* Added comment form fields alteration function to match with WordPress 3.5 version update
+* Fixed spanish translation issue with the closing of span tag

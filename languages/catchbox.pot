@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/catch-box\n"
 "POT-Creation-Date: 2012-07-21 12:19+0530\n"
-"PO-Revision-Date: 2012-12-09 21:56+0530\n"
+"PO-Revision-Date: 2012-12-12 23:46+0530\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Catch Themes <info@catchinternet.com>\n"
 "MIME-Version: 1.0\n"
@@ -97,16 +97,17 @@ msgstr ""
 msgid "Category Archives: %s"
 msgstr ""
 
-#: ../comments.php:17
-msgid "This post is password protected. Enter the password to view any comments."
-msgstr ""
-
 #: ../comments.php:33
 #, php-format
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
+
+#: ../comments.php:33
+#, php-format
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgstr ""
 
 #: ../comments.php:40
 #: ../comments.php:60
@@ -482,6 +483,14 @@ msgstr ""
 
 #: ../functions.php:667
 msgid "ID"
+msgstr ""
+
+#: ../functions.php:877
+msgid "Name"
+msgstr ""
+
+#: ../functions.php:879
+msgid "Email"
 msgstr ""
 
 #: ../header.php:67

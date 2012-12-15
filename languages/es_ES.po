@@ -179,7 +179,7 @@ msgstr "%"
 #: ../content-status.php:34
 #: ../content.php:54
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Seguir leyendo <span class=\"meta-nav\">&rarr;</ span>"
+msgstr "Seguir leyendo <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../content-aside.php:35
 #: ../content-featured.php:24
@@ -342,7 +342,7 @@ msgstr "Este artículo fue publicado por <a href=\"%6$s\">%5$s</a>. <a href=\"%3
 #: ../content-single.php:80
 #, php-format
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Ver todos los mensajes de %s <span class=\"meta-nav\">&rarr;</ span>"
+msgstr "Ver todos los mensajes de %s <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../content-status.php:16
 msgid "Status"
@@ -479,11 +479,19 @@ msgstr "Responder <span>&darr;</span>"
 #: ../functions.php:612
 #, php-format
 msgid "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> by </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
-msgstr "<span class=\"sep\">Publicado el</span> <a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a> <span class=\"by-author\"><span class=\"sep\"> por </span> <span class=\"author vcard\"> <a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></ span></span>"
+msgstr "<span class=\"sep\">Publicado el</span> <a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a> <span class=\"by-author\"><span class=\"sep\"> por </span> <span class=\"author vcard\"> <a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
 
 #: ../functions.php:667
 msgid "ID"
 msgstr "ID"
+
+#: ../functions.php:877
+msgid "Name"
+msgstr "Nombre"
+
+#: ../functions.php:879
+msgid "Email"
+msgstr "Email"
 
 #: ../header.php:67
 msgid "Primary menu"
@@ -545,11 +553,11 @@ msgstr "Meta"
 
 #: ../single.php:16
 msgid "<span class=\"meta-nav\">&larr;</span> Previous"
-msgstr "<span class=\"meta-nav\">&larr;</ span> Anterior"
+msgstr "<span class=\"meta-nav\">&larr;</span> Anterior"
 
 #: ../single.php:17
 msgid "Next <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Siguiente <span class=\"meta-nav\">&rarr;</ span>"
+msgstr "Siguiente <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../tag.php:16
 #, php-format
