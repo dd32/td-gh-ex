@@ -61,7 +61,11 @@
 
 
 // 	Functions for adding script
-	function design_enqueue_scripts() {
+	function design_enqueue_scripts() { ?>
+	<!--[if lt IE 9]>
+	<?php wp_enqueue_script( 'html5forie', get_template_directory_uri(). '/js/html5.js'); ?>
+	<![endif]-->
+	<?php
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) { 
 		wp_enqueue_script( 'comment-reply' ); 
 	}
