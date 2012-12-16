@@ -1,10 +1,10 @@
 /*
 Theme Name: Baris
-Theme URI: http://malvouz.com/baris
+Theme URI: http://www.malvouz.com/omega/2012/12/16/baris-theme/
 Description: Baris is a responsive and minimalist. Build on HTML5 and CSS3. Also you can put your widget at 4 different place. This theme is for you who love simplicty and make you should to touch your reader's heart because your reader focus on content.
 Author: Malvouz
-Author URI: http://www.malvouz.com
-Version: 1.0
+Author URI: http://www.malvouz.com/omega
+Version: 1.1
 Tags: white, light, one-column, left-sidebar, right-sidebar, flexible-width, threaded-comments, sticky-post, translation-ready, custom-background
 License: GNU/GPL Version 2 or later
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -101,7 +101,8 @@ header p{
 	margin:10px 0px 30px 0px;
 	padding:0px 0px 0px 16px;
 	font-family:'Droid Serif',  Times, serif;
-	line-height:21px;
+	line-height:23px;
+	font-size:14px;
 	font-style:italic;
 	border-left:8px solid #f0f0f0;
 }
@@ -624,6 +625,67 @@ header h1 a:hover{
 	text-decoration:none;
 }
 
+/* Headings
+--------------------------------------------- */
+#content article h1 {
+	padding:0px 0px 0px 0px;
+	font-size: 22px;
+	line-height:28px;
+}
+#content h2 {
+	padding:0px 0px 0px 0px;
+	font-size: 18px;
+	line-height:26px;
+}
+#content h3 {
+	padding:0px 0px 2px 0px;
+	font-size: 16px;
+	line-height:24px;
+}
+#content h4 {
+	padding:0px 0px 2px 0px;
+	font-size: 15px;
+	line-height:21px;
+}
+#content h5 {
+	padding:0px 0px 2px 0px;
+	font-size: 14px;
+	line-height:20px;
+}
+#content h6 {
+	padding:0px 0px 2px 0px;
+	font-size: 13px;
+	line-height:19px;
+}
+
+/* Lists
+--------------------------------------------- */
+#content article ul, #content article ul {
+	padding:20px 0px 0px 25px;
+}
+#content article ul li, #content article ul li {
+	padding:0px 0px 20px 0px;
+	font-size: 14px;
+	line-height:23px;
+	list-style: square !important;
+}
+#content article ol, #content article ol {
+	padding:20px 0px 0px 30px;
+}
+#content article ol li, #content article ol li {
+	padding:0px 0px 20px 0px;
+	font-size: 14px;
+	line-height:23px;
+	list-style: decimal;
+}
+#content  article ol ol li, #content article ol li ol li {
+	list-style: upper-alpha !important;
+}
+#content  article ol ol ol li, #content article ol li ol ol li{
+	list-style: lower-roman !important;
+}
+
+/* --- Link --- */
 #content h2 a {
 	color:#468ACA;
 }
@@ -657,6 +719,15 @@ ul.sidebar a, p.meta-date a, .comment-meta a, p.logged-in-as a, aarticle-edit-li
 	#container { width: 620px; }
 		#content { width: 620px; }
 #content img { float: none; margin: 0 0 10px 0; width: 100%; }
+#content img.alignleft {
+	margin: 0px 0px 0px 0px;
+}
+#content img.alignright {
+	margin: 0px 0px 0px 0px;
+}
+#content img.alignnone {
+	margin: 0px 0px 0px 0px;
+}
 
 	.gallery .gallery-item {
 	margin: 0px 0px 0px 0px;
@@ -682,6 +753,8 @@ ul.sidebar a, p.meta-date a, .comment-meta a, p.logged-in-as a, aarticle-edit-li
 	letter-spacing:0.1em;
 }
 }
+
+
 
 /* --------------------------------------------
    Tablet Portrait
