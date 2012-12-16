@@ -22,6 +22,11 @@ JSColor - A lightweight Javascript color-picker maintained by Jan Odvárko.
 jscolor is released under a GNU Lesser General Public License. jscolor.com
 
 == CHANGELOG ==
+Version 1.0.5
+     * New full-width footer widget area.
+     * Changed widgets below menu from float-left to full-width.
+     * Post elements' Ids and Classes renamed.
+
 Version 1.0.4
 	* Added New Widget Areas.
 	* Fixed Sidebar widgets' padding & word-wrap.

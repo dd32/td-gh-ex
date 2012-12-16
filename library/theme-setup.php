@@ -12,7 +12,7 @@ function asteroid_option( $option ) {
 --------------------------------------*/
 function ast_enqueue_styles(){
 	if ( ! is_admin() ) {
-		wp_register_style('asteroid-main-style', get_stylesheet_uri(), array(), '1.0.4', 'screen'); 
+		wp_register_style('asteroid-main-style', get_stylesheet_uri(), array(), '1.0.5', 'screen'); 
 		wp_enqueue_style( 'asteroid-main-style' );
 	}
 }
@@ -85,11 +85,21 @@ if (function_exists( 'register_sidebar' ) ) {
 		'after_widget' 	=> '</div>',
 		'before_title' 	=> '<h4 class="widget-title">',
 		'after_title' 	=> '</h4>',) );
+	// footer widget full
+	register_sidebar(array(
+		'name' 			=> 'Footer: Full Width',
+		'id' 			=> 'widgets_footer_full',
+		'description'	=> 'Widget spans the entire width of the footer. Ideal for horizontal banners & 728x90 ads.',
+		'before_widget' => '<div id="%1$s" class="widget-footer-full %2$s">',
+		'after_widget' 	=> '</div>',
+		'before_title' 	=> '<h4 class="widget-title">',
+		'after_title' 	=> '</h4>',) );
 	// footer widgets
 	register_sidebar(array(
-		'name' 			=> 'Footer',
-		'id' 			=> 'widgets_footer',
-		'before_widget' => '<div id="%1$s" class="widget-footer %2$s">',
+		'name' 			=> 'Footer: 3 Column',
+		'id' 			=> 'widgets_footer_3',
+		'description'	=> 'Widgets are arranged into 3 columns.',
+		'before_widget' => '<div id="%1$s" class="widget-footer-3 %2$s">',
 		'after_widget' 	=> '</div>',
 		'before_title' 	=> '<h4 class="widget-title">',
 		'after_title' 	=> '</h4>',) );
@@ -119,6 +129,7 @@ if (function_exists( 'register_sidebar' ) ) {
 		register_sidebar(array(
 			'name' 			=> 'Below Menu',
 			'id' 			=> 'widgets_below_menu',
+			'description'	=> 'Widget spans the entire width of the container. Ideal for horizontal banners & 728x90 ads.',
 			'before_widget' => '<div id="%1$s" class="widget-below-menu %2$s">',
 			'after_widget' 	=> '</div>',
 			'before_title' 	=> '<h4 class="widget-title">',

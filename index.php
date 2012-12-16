@@ -12,20 +12,16 @@
 	<!-- Start the Loop -->
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>  
 		
-		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
-		
 			<?php if ( !is_singular() ) : ?>
 					<?php get_template_part('loop'); ?>
 			<?php else : ?>	
 					<?php get_template_part('loop','single'); ?>
 			<?php endif; ?>
-
-		</div>
 			
 	<?php endwhile; else: ?>
 	
 		<!-- Post Not Found --> 
-		<div class="not-found-wrap">
+		<div class="wrap-404-box">
 			<h2>Search Results: Nothing Found</h2>
 			<p>Try a new keyword.</p>
 			<?php get_search_form(); ?>

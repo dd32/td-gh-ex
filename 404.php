@@ -2,7 +2,7 @@
 
 <div id="content">
 
-	<div class="not-found-wrap">
+	<div class="wrap-404-box">
 		<h2>Error 404 !</h2>
 		
 		<p>Sorry. The Page or File you were looking for was not found.</p>

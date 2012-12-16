@@ -340,7 +340,7 @@ class My_Theme_Options {
 		
 		$this->settings['ast_post_display_type'] = array(
 			'section' => 'general',
-			'title'   => ( 'Post Display on Blog' ),
+			'title'   => ( 'Post Display on Blog View' ),
 			'desc'    => ( 'Show excerpts or full posts on non-singular pages.' ),
 			'type'    => 'radio',
 			'std'     => '1',

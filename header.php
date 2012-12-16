@@ -56,7 +56,11 @@
 		<!-- Searchform -->
 		<?php if ( asteroid_option('ast_menu_search') == 1 ) : ?>
 			<div id="nav-search">
-				<?php get_search_form(); ?>
+				<!-- Custom -->
+				<form id="searchform" role="search" method="get" action="<?php echo home_url( '/' ); ?>">
+					<input id="s" type="text" value="Search" onfocus="if (this.value == 'Search') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search';}" name="s" />
+					<input id="searchsubmit" type="submit" value="" />
+				</form>
 			</div>
 		<?php endif; ?>	
 	</nav>
