@@ -1,4 +1,3 @@
-/* Options Navigation */
 .ui-tabs-nav {
 	border-bottom: 1px solid #666;
 	height: 26px;
@@ -70,7 +69,7 @@
 
 .form-table {
 	width: 700px !important;
-	background: url("../images/roughcloth.png");
+	background: url("../images/bg-honeycomb.png") #CCC;
 	border: 1px double #666;
 	margin-top: 10px;
 	box-shadow: 0px 0px 2px #222;
@@ -78,10 +77,14 @@
 
 .form-table tr {border-bottom: 1px solid #BBB;}
 
-.form-table th {
-	width: 170px !important; 
-}
+.form-table th {width: 170px !important;}
 
+.form-table th label {
+    background: #F0F0F0;
+	padding: 3px 6px;
+    border-radius: 3px;
+	box-shadow: 1px 1px 2px #333;
+}
 
 #submit-top {
 	position: absolute;
@@ -125,17 +128,23 @@ input.color {width: 100px;}
 	background: #EEE;
     text-align: center;
     left: 750px;
-    margin-top: 152px;
-	box-shadow: 0px 0px 2px #222;
-	border-radius: 4px;
+    margin-top: 150px;
 	display: inline-block;
 	position: absolute;
+	border: 1px solid #666;
+	border-radius: 4px;
+	box-shadow: 0px 0px 2px #222;
 }
 
 #donate-title {
-	background: #CCC;
+	background: #CCC; /* Old browsers */
+	background: -moz-linear-gradient(top, #EEE 0%, #BBB 100%); /* FF3.6+ */
+	background: -webkit-linear-gradient(top,  #EEE 0%,#BBB 100%); /* Chrome10+ */
+	background: -o-linear-gradient(top, #EEE 0%,#BBB 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #EEE 0%,#BBB 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #EEE 0%,#BBB 100%); /* W3C */
     border-radius: 4px 4px 0 0;
-	border: 1px solid #666;
+	border-bottom: 1px solid #CCC;
 }
 #donate-title h4 {
 	margin: 0 !important; 
@@ -145,9 +154,7 @@ input.color {width: 100px;}
 #donate-content {
 	width: 210px;
 	height: 128px;
-	border-left: 1px solid #666;
-	border-right: 1px solid #666;
-	border-bottom: 1px solid #666;
+	border-top: 1px solid #888;
     border-radius: 0 0 4px 4px;
 }
 #donate-content p {margin: 0; padding: 10px 4px 8px;}

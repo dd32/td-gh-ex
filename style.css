@@ -4,7 +4,7 @@ Theme URI: http://ronangelo.com/asteroid/
 Description: Asteroid is a simple, clean and responsive theme. It incorporates various widget areas that make management of banners and ads a lot easier, especially for ad-supported sites.
 Author: ronangelo
 Author URI: http://ronangelo.com/
-Version: 1.0.5
+Version: 1.0.6
 Tags: black, white, gray, two-columns, right-sidebar, fixed-width, custom-header, custom-background, featured-images, custom-menu, custom-colors, theme-options, threaded-comments, sticky-post, editor-style, full-width-template, threaded-comments
 
 License: GNU General Public License, Version 3 or later
@@ -38,16 +38,15 @@ h1,h2,h3,h4,h5,h6{clear: both;}
 a {color: #0E4D7A; text-decoration: none;}
 a:hover {color: #f00;}
 
-.left {float:left;}
-.right {float:right;}
-.clear {clear:both;}
-
+.left {float: left;}
+.right {float: right;}
+.clear {clear: both;}
 
 /*-------------------------------------
    Main Containers
 --------------------------------------*/
 #container {
-	width:960px;
+	width: 960px;
 	background: #FFF; 
 	border: 8px solid #000;
 	margin: 20px auto;
@@ -109,7 +108,7 @@ a:hover {color: #f00;}
 	}
 
 #footer {
-	background: url("images/bg-footer.png") #333;
+	background: url("images/bg-fabric.png") #333;
 	border-top: 1px solid #000;
 	color: #FFF;
 	text-shadow: 1px 1px 1px #000;
@@ -201,7 +200,7 @@ a:hover {color: #f00;}
 }
 
 #nav .sub-menu {
-	width: 170px;
+	width: 180px;
 	background-color: #292929;
 	border: 1px solid #000;
 	position: absolute;
@@ -219,7 +218,7 @@ a:hover {color: #f00;}
 
 #nav .sub-menu li a {
 	float: left;
-	width: 142px;
+	width: 152px;
 	padding: 10px 14px;
 	font: 13px arial, sans-serif;
 	text-shadow: 0 1px 1px #000;
@@ -362,7 +361,7 @@ a:hover {color: #f00;}
 .widget-header {padding: 10px;}
 
 #widgets-wrap-below-menu {
-	background: url("images/bg-footer.png");
+	background: url("images/bg-fabric.png");
 	overflow: hidden;
 	padding: 6px;
 	box-shadow: 0 -1px 2px #000 inset;	
@@ -476,8 +475,9 @@ a:hover {color: #f00;}
 	
 }
 .blog-view .entry-categories a:hover {
-	background: rgba(0, 0, 0, 0.8);
+	background: rgba(0, 0, 0, 0.75);
 	color: #FFF;
+	border-color: #000;
 }
 
 .blog-view .entry-content {
@@ -580,13 +580,12 @@ a:hover {color: #f00;}
 .single-view .entry-content {
 	overflow: hidden;
 	margin-bottom: 10px; 
-	padding-left: 6px; 
 	font: normal 14px/21px arial, sans-serif;
 }
 
 .single-view .updated {color: #666; font-size: 11px;}
 
-.type-attachment .attachment img {margin: 8px auto;}
+.type-attachment .attachment img {display: block; margin: 8px auto;}
 .next-previous-attachment {overflow: hidden;}
 
 .next-previous-post {
@@ -641,9 +640,14 @@ blockquote cite:before {
     content: "- ";
 }
 address {margin-bottom: 10px;}
-pre {border: 1px solid #E0E0E0; padding: 10px;}
 
-img {display: block;}
+pre {
+    background: #EEE;
+    border: 1px solid #CCC;
+    overflow: auto;
+    padding: 10px;
+}
+
 .entry-content p img { margin: 8px; }
 
 .wp-caption img {display: inline-block;}

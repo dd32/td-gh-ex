@@ -14,14 +14,18 @@ make management of banners and ads a lot easier, especially for ad-supported sit
 Credits go to www.subtlepatterns.com for the following textures which are 
 licensed under Creative Commons Attribution-ShareAlike 3.0 Unported.
 - random_grey_variations.png 
-- classy_fabric.png 
-- roughcloth.png
+- classy_fabric.png
 
 == Script Credits ==
 JSColor - A lightweight Javascript color-picker maintained by Jan Odvárko.
 jscolor is released under a GNU Lesser General Public License. jscolor.com
 
 == CHANGELOG ==
+Version 1.0.6
+     * Changed some functions to work with a child-theme.
+	 * Merged theme-setup.php & theme-functions.php with functions.php
+	 * Minor CSS Tweaks.
+	 
 Version 1.0.5
      * New full-width footer widget area.
      * Changed widgets below menu from float-left to full-width.

@@ -1,26 +1,28 @@
 <?php
-function ast_admin_bar_menu() {
-	global $wp_admin_bar;
-	$wp_admin_bar->add_menu( array(
-		'parent' => false,
-		'id' => 'asteroid_admin_bar', 
-		'title' => ('Asteroid Options'), 
-		'href' => admin_url( 'themes.php?page=asteroid-options')
-	));
-	$wp_admin_bar->add_menu( array(
-		'parent' => 'appearance',
-		'id' => 'theme_editor_admin_bar', 	
-		'title' => ('Editor'), 
-		'href' => admin_url( 'theme-editor.php')
-	));
-	$wp_admin_bar->add_menu( array(
-		'parent' => 'appearance',
-		'id' => 'plugins_admin_bar', 	
-		'title' => ('Plugins'), 
-		'href' => admin_url( 'plugins.php')
-	));
+function asteroid_admin_bar_menu() {
+	if ( current_user_can( 'edit_theme_options' ) ) {
+		global $wp_admin_bar;
+		$wp_admin_bar->add_menu( array(
+			'parent' => false,
+			'id' => 'asteroid_admin_bar', 
+			'title' => ('Asteroid Options'), 
+			'href' => admin_url( 'themes.php?page=asteroid-options')
+		));
+		$wp_admin_bar->add_menu( array(
+			'parent' => 'appearance',
+			'id' => 'theme_editor_admin_bar', 	
+			'title' => ('Editor'), 
+			'href' => admin_url( 'theme-editor.php')
+		));
+		$wp_admin_bar->add_menu( array(
+			'parent' => 'appearance',
+			'id' => 'plugins_admin_bar', 	
+			'title' => ('Plugins'), 
+			'href' => admin_url( 'plugins.php')
+		));
+	}
 }
-add_action( 'wp_before_admin_bar_render', 'ast_admin_bar_menu' );
+add_action( 'wp_before_admin_bar_render', 'asteroid_admin_bar_menu' );
 
 
 class My_Theme_Options {
@@ -39,8 +41,8 @@ class My_Theme_Options {
 		$this->sections['general']     	 	= ( 'General' );
 		$this->sections['appearance']  	 	= ( 'Appearance' );
 		$this->sections['post-page']   		= ( 'Posts & Pages' );
+		$this->sections['widget-areas']		= ( 'Widget Areas' );
 		$this->sections['custom-css']  	 	= ( 'Custom CSS' );
-		$this->sections['custom-widgets']	= ( 'Custom Widgets' );
 		$this->sections['misc']   			= ( 'Misc' );
 		$this->sections['reset']        	= ( 'Reset' );
 		
@@ -371,7 +373,7 @@ class My_Theme_Options {
 		$this->settings['ast_header_logo'] = array(
 			'section' => 'appearance',
 			'title'   => ( 'Header Logo' ),
-			'desc'    => ( 'The URL of your logo. This replaces the site Title & Description.' ),
+			'desc'    => ( 'The URL of your logo. This replaces the Title & Tagline.' ),
 			'type'    => 'upload',
 			'std'     => ''
 		);
@@ -381,14 +383,6 @@ class My_Theme_Options {
 			'title'   => ( 'Favicon' ),
 			'desc'    => ( 'The URL of your favicon. It should be 16x16 pixels.' ),
 			'type'    => 'upload',
-			'std'     => ''
-		);
-		
-		$this->settings['ast_opt_head_2_1'] = array(
-			'section' => 'appearance',
-			'title'   => ( '' ),
-			'desc'    => ( '' ),
-			'type'    => 'heading',
 			'std'     => ''
 		);
 		
@@ -438,15 +432,7 @@ class My_Theme_Options {
 			'type'    => 'color',
 			'section' => 'appearance'
 		);
-		
-		$this->settings['ast_opt_head2'] = array(
-			'section' => 'appearance',
-			'title'   => ( '' ),
-			'desc'    => ( '' ),
-			'type'    => 'heading',
-			'std'     => 0
-		);
-		
+	
 		/* Posts & Pages
 		===========================================*/
 		$this->settings['ast_excerpt_thumbnails'] = array(
@@ -459,7 +445,7 @@ class My_Theme_Options {
 		
 		$this->settings['ast_blog_date'] = array(
 			'section' => 'post-page',
-			'title'   => ( 'Blog Publish Date' ),
+			'title'   => ( 'Blog View Publish Date' ),
 			'desc'    => ( 'Show Publish Date on Blog, Archives, Searches and Excerpts.' ),
 			'type'    => 'checkbox',
 			'std'     => 1
@@ -527,6 +513,113 @@ class My_Theme_Options {
 			'std'     => 1
 		);
 		
+		/* Custom Widgets
+		===========================================*/
+		
+		$this->settings['ast_widget_body'] = array(
+			'section' => 'widget-areas',
+			'title'   => ( 'Body' ),
+			'desc'    => ( 'Allow widgets on the Body' ),
+			'type'    => 'checkbox',
+			'std'     => 0
+		);
+		
+		$this->settings['ast_widget_header'] = array(
+			'section' => 'widget-areas',
+			'title'   => ( 'Header' ),
+			'desc'    => ( 'Allow widgets on the Header' ),
+			'type'    => 'checkbox',
+			'std'     => 0
+		);
+		
+		$this->settings['ast_widget_below_menu'] = array(
+			'section' => 'widget-areas',
+			'title'   => ( 'Below Menu' ),
+			'desc'    => ( 'Allow widgets below the main menu.' ),
+			'type'    => 'checkbox',
+			'std'     => 0
+		);
+		
+		$this->settings['ast_widget_before_content'] = array(
+			'section' => 'widget-areas',
+			'title'   => ( 'Before Content' ),
+			'desc'    => ( 'Allow widgets on top of the content.' ),
+			'type'    => 'checkbox',
+			'std'     => 0
+		);
+		
+		$this->settings['ast_widget_below_excerpts'] = array(
+			'section' => 'widget-areas',
+			'title'   => ( 'Below Excerpts' ),
+			'desc'    => ( 'Allow widgets below the excerpts.' ),
+			'type'    => 'checkbox',
+			'std'     => 0
+		);
+		
+		$this->settings['ast_widget_before_post'] = array(
+			'section' => 'widget-areas',
+			'title'   => ( 'Before Post' ),
+			'desc'    => ( 'Allow widgets to show after the post-title.' ),
+			'type'    => 'checkbox',
+			'std'     => 0
+		);	
+		
+		$this->settings['ast_widget_before_post_content'] = array(
+			'section' => 'widget-areas',
+			'title'   => ( 'Before Post - Content' ),
+			'desc'    => ( 'Allow widgets to show before the post-content.' ),
+			'type'    => 'checkbox',
+			'std'     => 0
+		);
+		
+		$this->settings['ast_widget_after_post_content'] = array(
+			'section' => 'widget-areas',
+			'title'   => ( 'After Post - Content' ),
+			'desc'    => ( 'Allow widgets to show after the post-content.' ),
+			'type'    => 'checkbox',
+			'std'     => 0 
+		);
+		
+		$this->settings['ast_widget_after_post'] = array(
+			'section' => 'widget-areas',
+			'title'   => ( 'After Post' ),
+			'desc'    => ( 'Allow widgets to show at the post-footer.' ),
+			'type'    => 'checkbox',
+			'std'     => 0
+		);
+		
+		$this->settings['ast_widget_before_page'] = array(
+			'section' => 'widget-areas',
+			'title'   => ( 'Before Page' ),
+			'desc'    => ( 'Allow widgets to show after the page-title.' ),
+			'type'    => 'checkbox',
+			'std'     => 0
+		);	
+		
+		$this->settings['ast_widget_before_page_content'] = array(
+			'section' => 'widget-areas',
+			'title'   => ( 'Before Page - Content' ),
+			'desc'    => ( 'Allow widgets to show before the page-content.' ),
+			'type'    => 'checkbox',
+			'std'     => 0
+		);
+		
+		$this->settings['ast_widget_after_page_content'] = array(
+			'section' => 'widget-areas',
+			'title'   => ( 'After Page - Content' ),
+			'desc'    => ( 'Allow widgets to show after the page-content.' ),
+			'type'    => 'checkbox',
+			'std'     => 0 
+		);
+		
+		$this->settings['ast_widget_after_page'] = array(
+			'section' => 'widget-areas',
+			'title'   => ( 'After Page' ),
+			'desc'    => ( 'Allow widgets to show at the page-footer.' ),
+			'type'    => 'checkbox',
+			'std'     => 0
+		);
+				
 		/* Custom CSS
 		===========================================*/	
 		$this->settings['ast_custom_css'] = array(
@@ -536,129 +629,6 @@ class My_Theme_Options {
 			'type'    => 'textarea-css',
 			'section' => 'custom-css',
 			'class'   => 'textarea-css'
-		);
-		
-		/* Custom Widgets
-		===========================================*/
-		
-		$this->settings['ast_widget_body'] = array(
-			'section' => 'custom-widgets',
-			'title'   => ( 'Widgets on Body' ),
-			'desc'    => ( 'Allow widgets on the Body' ),
-			'type'    => 'checkbox',
-			'std'     => 0
-		);
-		
-		$this->settings['ast_widget_header'] = array(
-			'section' => 'custom-widgets',
-			'title'   => ( 'Widgets on Header' ),
-			'desc'    => ( 'Allow widgets on the Header' ),
-			'type'    => 'checkbox',
-			'std'     => 0
-		);
-		
-		$this->settings['ast_widget_below_menu'] = array(
-			'section' => 'custom-widgets',
-			'title'   => ( 'Widgets Below Menu' ),
-			'desc'    => ( 'Allow widgets below the main menu.' ),
-			'type'    => 'checkbox',
-			'std'     => 0
-		);
-		
-		$this->settings['ast_widget_before_content'] = array(
-			'section' => 'custom-widgets',
-			'title'   => ( 'Widgets Before Content' ),
-			'desc'    => ( 'Allow widgets on top of the content.' ),
-			'type'    => 'checkbox',
-			'std'     => 0
-		);
-		
-		$this->settings['ast_widget_below_excerpts'] = array(
-			'section' => 'custom-widgets',
-			'title'   => ( 'Widgets Below Excerpts' ),
-			'desc'    => ( 'Allow widgets below the excerpts.' ),
-			'type'    => 'checkbox',
-			'std'     => 0
-		);
-		
-		$this->settings['ast_opt_head_5_1'] = array(
-			'section' => 'custom-widgets',
-			'title'   => ( '' ),
-			'desc'    => ( '' ),
-			'type'    => 'heading',
-			'std'     => ''
-		);
-		
-		$this->settings['ast_widget_before_post'] = array(
-			'section' => 'custom-widgets',
-			'title'   => ( 'Widgets Before Post' ),
-			'desc'    => ( 'Allow widgets to show after the post-title.' ),
-			'type'    => 'checkbox',
-			'std'     => 0
-		);	
-		
-		$this->settings['ast_widget_before_post_content'] = array(
-			'section' => 'custom-widgets',
-			'title'   => ( 'Widgets Before Post - Content' ),
-			'desc'    => ( 'Allow widgets to show before the post-content.' ),
-			'type'    => 'checkbox',
-			'std'     => 0
-		);
-		
-		$this->settings['ast_widget_after_post_content'] = array(
-			'section' => 'custom-widgets',
-			'title'   => ( 'Widgets After Post - Content' ),
-			'desc'    => ( 'Allow widgets to show after the post-content.' ),
-			'type'    => 'checkbox',
-			'std'     => 0 
-		);
-		
-		$this->settings['ast_widget_after_post'] = array(
-			'section' => 'custom-widgets',
-			'title'   => ( 'Widgets After Post' ),
-			'desc'    => ( 'Allow widgets to show at the post-footer.' ),
-			'type'    => 'checkbox',
-			'std'     => 0
-		);
-		
-		$this->settings['ast_opt_head_5_2'] = array(
-			'section' => 'custom-widgets',
-			'title'   => ( '' ),
-			'desc'    => ( '' ),
-			'type'    => 'heading',
-			'std'     => ''
-		);
-		
-		$this->settings['ast_widget_before_page'] = array(
-			'section' => 'custom-widgets',
-			'title'   => ( 'Widgets Before Page' ),
-			'desc'    => ( 'Allow widgets to show after the page-title.' ),
-			'type'    => 'checkbox',
-			'std'     => 0
-		);	
-		
-		$this->settings['ast_widget_before_page_content'] = array(
-			'section' => 'custom-widgets',
-			'title'   => ( 'Widgets Before Page - Content' ),
-			'desc'    => ( 'Allow widgets to show before the page-content.' ),
-			'type'    => 'checkbox',
-			'std'     => 0
-		);
-		
-		$this->settings['ast_widget_after_page_content'] = array(
-			'section' => 'custom-widgets',
-			'title'   => ( 'Widgets After Page - Content' ),
-			'desc'    => ( 'Allow widgets to show after the page-content.' ),
-			'type'    => 'checkbox',
-			'std'     => 0 
-		);
-		
-		$this->settings['ast_widget_after_page'] = array(
-			'section' => 'custom-widgets',
-			'title'   => ( 'Widgets After Page' ),
-			'desc'    => ( 'Allow widgets to show at the page-footer.' ),
-			'type'    => 'checkbox',
-			'std'     => 0
 		);
 		
 		/* Miscellaneous
@@ -679,7 +649,6 @@ class My_Theme_Options {
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
-		
 			
 		/* Reset
 		===========================================*/
@@ -749,18 +718,18 @@ class My_Theme_Options {
 	--------------------------------------*/
 	public function scripts() {
 		wp_print_scripts( 'jquery-ui-tabs' );
-
+		
+		wp_enqueue_script('my-upload');
 		wp_enqueue_script('media-upload');
 		wp_enqueue_script('thickbox');
-		wp_enqueue_script('my-upload');
-		wp_register_script('my-upload', get_stylesheet_directory_uri() . '/js/uploader.js', array('jquery','media-upload','thickbox'));
+		wp_register_script('my-upload', get_template_directory_uri() . '/js/uploader.js', array('jquery','media-upload','thickbox'));
 	}
 	
 	/*-------------------------------------
 	   Styling for the theme options page
 	--------------------------------------*/
 	public function styles() {	
-		wp_register_style( 'mytheme-admin', get_stylesheet_directory_uri() . '/library/theme-options.css' );
+		wp_register_style( 'mytheme-admin', get_template_directory_uri() . '/library/theme-options.css' );
 		wp_enqueue_style( 'mytheme-admin' );
 		wp_enqueue_style('thickbox');
 	}
@@ -787,10 +756,10 @@ class My_Theme_Options {
 
 $theme_options = new My_Theme_Options();
 
-function mytheme_option( $option ) {
+function asteroid_option( $option ) {
 	$options = get_option( 'asteroid_options' );
 	if ( isset( $options[$option] ) )
-		return $options[$option];
+		return $options[$option]; 
 	else
 		return false;
 }

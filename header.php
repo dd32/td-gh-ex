@@ -25,7 +25,7 @@
 		<div id="header-info-wrap">
 		
 			<?php if ( asteroid_option('ast_header_logo') != '' ) : ?>
-				<div id="header-logo"><a href="<?php echo home_url(); ?>"><img src="<?php echo asteroid_option('ast_header_logo'); ?>" /></a></div>
+				<div id="header-logo"><a href="<?php echo home_url(); ?>"><img src="<?php echo asteroid_option('ast_header_logo'); ?>" alt="" /></a></div>
 			<?php else : ?>
 				<?php if (! ('blank' == get_header_textcolor() )) : ?>
 					<hgroup>
