@@ -215,3 +215,6 @@ Version 1.6
 Version 1.6.1
 * Updated screenshot to match with WordPress 3.5 version update
 * Added comment form fields alteration function to match with WordPress 3.5 version update
+
+Version 1.6.2
+* Fixed the comment validation issue.

@@ -935,8 +935,8 @@ function simplecatch_comment_form_fields( $fields ) {
 	$aria_req = ( $req ? " aria-required='true'" : '' );
 	
     $fields['author'] = '<label for="author">' . __('Name','simplecatch') . '</label><input type="text" class="text" placeholder="'.esc_attr__( 'Name', 'simplecatch' ) .'&nbsp;'. ( $req ? esc_attr__( '( required )', 'simplecatch' ) : '' ) .'" name="author"'. $aria_req .' />';
-	$fields['email'] = '<label for="author">' . __('Email','simplecatch') . '</label><input type="text" class="text" placeholder="'.esc_attr__( 'Email', 'simplecatch' ) .'&nbsp;'. ( $req ? esc_attr__( '( required )', 'simplecatch' ) : '' ) .'" name="email"'. $aria_req .' />';
-	$fields['url'] = '<label for="author">' . __('Website','simplecatch') . '</label><input type="text" class="text" placeholder="'.esc_attr__( 'Website', 'simplecatch' ) .'" name="email"'. $aria_req .' />';
+	$fields['email'] = '<label for="email">' . __('Email','simplecatch') . '</label><input type="text" class="text" placeholder="'.esc_attr__( 'Email', 'simplecatch' ) .'&nbsp;'. ( $req ? esc_attr__( '( required )', 'simplecatch' ) : '' ) .'" name="email"'. $aria_req .' />';
+	$fields['url'] = '<label for="url">' . __('Website','simplecatch') . '</label><input type="text" class="text" placeholder="'.esc_attr__( 'Website', 'simplecatch' ) .'" name="url"'. $aria_req .' />';
 
     return $fields;
 }
