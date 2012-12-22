@@ -174,4 +174,7 @@ Version 1.6
 Version 1.6.1
 * Updated screenshot to match with WordPress 3.5 version update
 * Added comment form fields alteration function to match with WordPress 3.5 version update
-* Fixed spanish translation issue with the closing of span tag
+* Fixed Spanish translation issue with the closing of span tag
+
+Version 1.6.2
+* Fixed Spanish translation issue in es_ES.mo
