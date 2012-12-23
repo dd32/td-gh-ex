@@ -4,8 +4,37 @@
  */
 jQuery(document).ready(function($) {
 	
-	//options submit check to make sure that the drag and drop element is not empty
+	// Custom CSS validation
+	function validate_custom_css() {
+		var custom_css = jQuery('#custom_css').val();
+		var allowed = /[a-zA-Z0-9 \:\{\}\;\<\>\-\.\,\#\!\%\"\'\@\_\[\]\*\/]$/;
+
+		if( custom_css.length == 0 ) {
+			return true;
+		}
+		if( !allowed.test(custom_css)) {
+			jQuery('#custom-css-msg').html("Please enter only valid custom CSS");
+			return false;
+		}
+		else {
+			jQuery('#custom-css-msg').html("");
+			return true;
+		}
+	}
+	
+	// Validate custom CSS on blur of the field.
+	jQuery('#custom_css').blur(function() {
+		validate_custom_css();
+	});
+	
 	$('#cyberchimps_options_page').submit(function(){
+	
+		// Check for custom css
+		if( !validate_custom_css() ) {
+			return false;
+		}
+	
+		//options submit check to make sure that the drag and drop element is not empty
 		var header = $('#header_section_order').find('.blog-section-order-tracker').val();
 		var blog = $('#blog_section_order').find('.blog-section-order-tracker').val();
 		if( header == '' ) {
@@ -21,7 +50,7 @@ jQuery(document).ready(function($) {
 	});
 	
 	// Hide/show onclick over subsection
-	/*jQuery(".section-group>h3").click(function() {
+	jQuery(".section-group>h3").click(function() {
 		var $this = $(this);
 		
 		$this.parent().find('div.clear').css("display", "none");
@@ -35,15 +64,16 @@ jQuery(document).ready(function($) {
 	});
 	
 	// Hide all subsections at the beginging.
-	jQuery(".field-container").hide();
+	jQuery(".field-container-wrapper").hide();
 	
 	// Show default subsections
-	jQuery("#cyberchimps_blog_options_section h3").click();
+	jQuery("#cyberchimps_blog_drag_and_drop_section h3").click();
 	jQuery("#cyberchimps_help_section h3").click();
 	jQuery("#cyberchimps_footer_section h3").click();
 	jQuery("#cyberchimps_import_export_section h3").click();
 	jQuery("#cyberchimps_custom_layout_section h3").click();
-	jQuery("#cyberchimps_single_post_section h3").click();*/
+	jQuery("#cyberchimps_single_post_section h3").click();
+	jQuery("#cyberchimps_header_drag_drop_section h3").click();
 	
 	var page_subsection_map = {
 		slider_lite			: "cyberchimps_blog_slider_lite_section",

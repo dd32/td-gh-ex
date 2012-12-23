@@ -4,7 +4,7 @@ Theme URI: http://cyberchimps.com/ifeature-free/
 Author: CyberChimps
 Author URI: http://www.cyberchimps.com/
 Description: iFeature 5 is the World's first Touch Friendly Responsive Drag & Drop Wordpress Theme. It lets you create amazing responsive websites that you can control on any touch friendly device including the iPad, iPhone, and Android devices. iFeature 5 allows you to setup an entire website in minutes with touch friendly Drag and Drop Options on a per-page basis allowing you control the look and feel of every page. WARNING: iFeature 5 is a completely new code base. Please backup iFeature 4.5 before upgrading!
-Version: 5.0.4
+Version: 5.0.5
 Tags: white, black, silver, light, gray, green, orange, pink, red, two-columns, right-sidebar, flexible-width, fixed-width, custom-background, custom-colors, custom-menu, featured-images, post-formats, theme-options, threaded-comments, sticky-post, full-width-template
 License: GNU General Public License
 License URI: http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
@@ -271,6 +271,46 @@ header #search #searchform {
 .navbar .btn-navbar {
 	margin-bottom: 5px;
 }
+@media (max-width: 979px) {
+	.nav-collapse.in {
+		background-image: none;
+		background-color: #747474;
+	}
+	.nav-collapse.in .nav li {
+		background-color: #747474;
+	}
+	.nav-collapse.in .nav ul {
+		background: #747474;
+	}
+	.navbar .nav > li > .dropdown-menu::before, .navbar .nav > li > .dropdown-menu::after {
+		display: none;
+	}
+	.navbar-inverse .nav-collapse.in .nav > li > a:hover, .navbar-inverse .nav-collapse.in .dropdown-menu a:hover {
+		color: #fff;
+		background-color: #666;
+	}
+	.navbar-inverse .nav-collapse.in .nav li a, .nav-collapse.in .dropdown-menu a {
+		color: #fff;
+		font-weight: normal;
+		text-shadow: none;
+	}
+	.navbar-inverse .nav-collapse.in .nav > li.current-menu-item > a, .navbar-inverse .nav-collapse.in .nav > li.current-menu-ancestor > a {
+		color: #fff;
+		box-shadow: none;
+		background: #666;
+	}
+	.nav-collapse.in .dropdown .caret {
+		display: none;
+	}
+	.nav-collapse.in .dropdown-menu {
+		display: block;
+	}
+	.navbar-inverse .nav-collapse.in .dropdown-menu .active > a, .navbar-inverse .nav li.dropdown.active > .dropdown-toggle {
+		color: #fff;
+		background-image: none;
+		background-color: #666;
+	}
+}
 
 /********************************************************************************************************************/
 /******************************************** MAIN CONTENT **********************************************************/
@@ -504,7 +544,6 @@ footer.entry-meta {
 .tag-links {
   display: inline-block;
   margin-left: 0;
-  height: 25px;
 }
 .tag-links a {
   float: left;
@@ -541,6 +580,7 @@ footer.entry-meta {
 .edit-link {
   clear: both;
   display: block;
+	margin: 10px 0;
 }
 .edit-link a {
   color: #fff;

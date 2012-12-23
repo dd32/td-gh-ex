@@ -26,7 +26,15 @@
 			// get the page title toggle option
 			 $page_title = get_post_meta( get_the_ID(), 'cyberchimps_page_title_toggle', true);
 			 
-			if( $page_title == "1" || $page_title == "" ) :
+			if( is_search() ):
+			?>
+				<h2 class='entry-title'>
+					<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'cyberchimps' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
+						<?php ( get_the_title() )? the_title() : the_permalink(); ?>
+					</a>
+				</h2>
+			<?php	
+			elseif( $page_title == "1" || $page_title == "" ) :
 				echo "<h2 class='entry-title'>";
 				( get_the_title() )? the_title() : the_permalink();
 				echo "</h2>";
@@ -68,7 +76,7 @@
   
 		<div class="entry-content">
     	<?php cyberchimps_featured_image(); ?>
-			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'cyberchimps' ) ); ?>
+			<?php the_content( __( 'Continue reading', 'cyberchimps' ) . ' <span class="meta-nav">&rarr;</span>' ); ?>
 			<?php edit_post_link( __( 'Edit', 'cyberchimps' ), '<span class="edit-link">', '</span>' ); ?>
 			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'cyberchimps' ), 'after' => '</div>' ) ); ?>
 		</div><!-- .entry-content -->
@@ -82,7 +90,7 @@
     <?php else: ?>
     	<div class="entry-content">
     		<?php cyberchimps_featured_image(); ?>
-				<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'cyberchimps' ) ); ?>
+				<?php the_content( __( 'Continue reading', 'cyberchimps' ) . ' <span class="meta-nav">&rarr;</span>' ); ?>
 				<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'cyberchimps' ), 'after' => '</div>' ) ); ?>
 			</div><!-- .entry-content -->
     <?php endif; ?>
@@ -113,7 +121,7 @@
     <?php else: ?>
     	<div class="entry-content">
     		<?php cyberchimps_featured_image(); ?>
-				<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'cyberchimps' ) ); ?>
+				<?php the_content( __( 'Continue reading', 'cyberchimps' ) . ' <span class="meta-nav">&rarr;</span>' ); ?>
 				<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'cyberchimps' ), 'after' => '</div>' ) ); ?>
 			</div><!-- .entry-content -->
     <?php endif; ?>
@@ -123,8 +131,7 @@
 		<?php if ( 'post' == get_post_type() && cyberchimps_option( 'post_byline_tags' ) ) : // Hide category and tag text for pages on Search ?>
 	<footer class="entry-meta">
     	
-		<?php cyberchimps_post_tags(); ?>
-		        	
-	</footer><!-- #entry-meta -->
+		<?php cyberchimps_post_tags(); ?>       	
+	</footer><!-- #entry-meta --> 
   <?php endif; // End if 'post' == get_post_type() ?>	
 </article><!-- #post-<?php the_ID(); ?> -->

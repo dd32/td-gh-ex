@@ -125,7 +125,7 @@ function cyberchimps_options_page() {
 				<div class="span4">
         	<div class="cc-title">
             <div class="icon32" id="icon-tools"> <br /> </div>
-              <h2><?php printf( __( '%1s Options', 'cyberchimps' ), apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps' ) ); ?></h2>
+              <h2><?php printf( '%1s ' .  __( 'Options', 'cyberchimps' ), apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps' ) ); ?></h2>
             </div><!-- cc-title -->
 				</div><!-- span4 -->
 				<div class="span8">
@@ -315,11 +315,17 @@ function cyberchimps_do_settings_sections( $page ) {
 		if ( $section['title'] ) {
 			echo "<h3>{$section['title']}<span></span></h3>\n";
 		}
+		
+		// wrapper div of all field-container divs
+		echo '<div class="field-container-wrapper">';
+		
 		call_user_func($section['callback'], $section);
 		
 		if ( isset($wp_settings_fields) && isset($wp_settings_fields[$page]) && isset($wp_settings_fields[$page][$section['id']]) ) {
 			cyberchimps_do_settings_fields($page, $section['id']);
 		}
+		
+		echo '</div>'; // .field-container ends
 		echo '<div class="clear"></div></div>';
 	}
 }
@@ -613,6 +619,7 @@ function cyberchimps_fields_callback( $value ) {
 
 			$val = stripslashes( $val );
 			$output .= '<textarea id="' . esc_attr( $value['id'] ) . '" class="of-input" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" rows="' . $rows . '">' . strip_tags( $val ) . '</textarea>';
+			$output .= '<div id="custom-css-msg"></div>';
 			break;
 		
 		// Select Box

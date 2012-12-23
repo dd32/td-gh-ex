@@ -45,7 +45,9 @@ function cyberchimps_comment( $comment, $args, $depth ) {
 			<footer>
 				<div class="comment-author vcard">
 					<?php echo get_avatar( $comment, 40 ); ?>
-					<?php printf( __( '%s <span class="says">says:</span>', 'cyberchimps' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+					<?php printf( '%1$s <span class="says">%2$s</span>', sprintf( '<cite class="fn">%1$s</cite>',
+												get_comment_author_link() ),
+												__( 'says', 'cyberchimps' ) ); ?>
 				</div><!-- .comment-author .vcard -->
 				<?php if ( $comment->comment_approved == '0' ) : ?>
 					<em><?php _e( 'Your comment is awaiting moderation.', 'cyberchimps' ); ?></em>
@@ -310,13 +312,14 @@ function ifeature_fields_filter( $fields ) {
 add_filter( 'cyberchimps_field_filter', 'ifeature_fields_filter', 2 );
 
 //add home button to menu
-function ifeature_add_home_menu( $menu ) {
-	//check if the toggle is set and if it is add the home button to the start of the menu
+function ifeature_add_home_menu( $menu, $args ) {
+
+	//check if the toggle is set. And if it is, then add the home button to the start of the primary menu.
 	$is_home = cyberchimps_option( 'menu_home_button' );
-	if( $is_home == 1 ) {
+	if( $is_home == 1 && $args->theme_location == 'primary' ) {
 		$home = '<li id="menu-item-ifeature-home"><a href="'. home_url() .'"><img src="'. get_template_directory_uri() .'/images/home.png" alt="Home" /></a></li>';
 		$menu = $home . $menu;
 	}
 	return $menu;
 }
-add_filter( 'wp_nav_menu_items', 'ifeature_add_home_menu' );
+add_filter( 'wp_nav_menu_items', 'ifeature_add_home_menu', 10, 2 );
