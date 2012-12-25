@@ -178,3 +178,6 @@ Version 1.6.1
 
 Version 1.6.2
 * Fixed Spanish translation issue in es_ES.mo
+
+Version 1.6.3
+* Fixed Google's Structured Data Testing Tool reports the error 'Warning: Missing required field "updated"'

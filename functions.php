@@ -601,6 +601,7 @@ function catchbox_comment( $comment, $args, $depth ) {
 }
 endif; // ends check for catchbox_comment()
 
+
 if ( ! function_exists( 'catchbox_posted_on' ) ) : 
 /**
  * Prints HTML with meta information for the current post-date/time and author.
@@ -609,7 +610,7 @@ if ( ! function_exists( 'catchbox_posted_on' ) ) :
  * @since Catch Box 1.0
  */
 function catchbox_posted_on() {
-	printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'catchbox' ),
+	printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date updated" datetime="%3$s" pubdate>%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'catchbox' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
