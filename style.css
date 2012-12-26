@@ -4,8 +4,8 @@ Theme URI: http://www.malvouz.com/omega/2012/12/16/baris-theme/
 Description: Baris is a responsive and minimalist. Build on HTML5 and CSS3. Also you can put your widget at 4 different place. This theme is for you who love simplicty and make you should to touch your reader's heart because your reader focus on content.
 Author: Malvouz
 Author URI: http://www.malvouz.com/omega
-Version: 1.1
-Tags: white, light, one-column, left-sidebar, right-sidebar, flexible-width, threaded-comments, sticky-post, translation-ready, custom-background
+Version: 1.2
+Tags: white, light, one-column, custom-menu, custom-background, left-sidebar, right-sidebar, flexible-width, threaded-comments, sticky-post
 License: GNU/GPL Version 2 or later
 License URI: http://www.gnu.org/licenses/gpl.html
 */
@@ -138,11 +138,9 @@ header p{
 	border-left:1px solid #4C4C4C;
 	border-right:1px solid #4C4C4C;
 }
-#content img {
-	max-width: 100%;
-	width: auto;
-	height: auto;
+#content img {	
 }
+
 #content img.wp-post-image {
 	margin: 5px 15px 5px 0 !important;
 	padding: 0;
@@ -216,6 +214,18 @@ aarticle-edit-link {
 
 #content article p.meta-date span.separator{
 	padding: 0px 5px 0px 5px;
+}
+
+/* Image
+--------------------------------------------- */
+
+img.size-auto,
+img.size-full,
+img.size-large,
+img.size-medium,
+.attachment img {
+	max-width: 100%; /* When images are too wide for containing element, force them to fit. */
+	height: auto; /* Override height to match resized width for correct aspect ratio. */
 }
 
 /* Single Post
@@ -311,6 +321,7 @@ h1.archive {
 
 .widget-wrapper{
 	margin:40px 0 0px 0;
+	clear:both;
 }
 
 .widget-wrapper h3.widget-title{
@@ -350,9 +361,10 @@ h1.archive {
 .search-input {
 	
 	width: 125px;
-	margin:0px 0px 4px 0px;
+	margin:0px 0px 40px 0px;
 	font-size:12px;
 	float:left;
+	
 }
 #searchsubmit {
 	margin:0 0 0 5px;
@@ -364,6 +376,7 @@ h1.archive {
 	font-size:12px;
 	color:#fff;
 	cursor:pointer;
+	
 }
 
 /* --- Calendar Widget --- */
@@ -573,7 +586,38 @@ form#commentform p.form-submit input#submit {
 	letter-spacing:0.1em;
 }
 
+/* Menu
+--------------------------------------------- */
 
+.header-nav {
+}
+
+/* Bottom Menu */
+.footer-nav {
+	text-align: center;
+	margin-bottom:40px;
+}
+
+.botnav {margin:5px 0;}
+
+.botnav li{
+	display: inline-block;
+}
+
+.botnav li  a{
+	display: block; padding-right: 35px; padding-bottom:20px;
+}
+
+.botnav li:last-child a{
+	padding-right:0;
+}
+
+.botnav li ul {
+	display:none;
+}
+
+	
+	
 /* Footer
 --------------------------------------------- */
 footer {
@@ -791,12 +835,14 @@ ul.sidebar a, p.meta-date a, .comment-meta a, p.logged-in-as a, aarticle-edit-li
 	.widget-wrapper{
 		margin:30px 10px 10px 10px;
 		padding:0px 0px 40px 0px;
+		clear:both;
 	}
 	
 	header{
 	text-align:center;
 	margin-bottom:50px;
 }
+	
 }
 /* FLOATS CLEARING
 --------------------------------------------- */

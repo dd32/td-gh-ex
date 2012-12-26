@@ -5,8 +5,11 @@
 	<?php if(is_sticky()) echo __('<h3 class="sticky">Sticky Post</h3>', 'baris'); ?>
 	
 	<h2><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'baris' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-	<p class="meta"><span><?php the_time('d F Y') ?> <?php _e( 'by', 'baris' ); ?> <?php the_author() ?></span><br/>				
+	<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'baris' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><p class="meta"><span><?php the_time('d F Y') ?></a> <?php _e( 'by', 'baris' ); ?> <?php the_author() ?></span><br/>				
 	<?php the_content(__( 'Continue Reading &rarr;', 'baris')); ?></p>
+	
+	<div class="clear"></div>
+	<?php wp_link_pages(array('before' => '<div class="link-page">' .__('Pages:', 'baris'), 'after' => '</div>')); ?>
 	<div class="clear"></div>
 	
 	<p class="meta-date">

@@ -10,7 +10,15 @@
 		<div class="clear"></div>
 		
 		<?php wp_link_pages(array('before' => '<div class="link-page">' .__('Pages:', 'baris'), 'after' => '</div>')); ?>
-	
+		
+		<div class="clear"></div>
+		
+		<?php if(is_attachment()): ?>
+		<p class="previous"><?php previous_image_link( false ,  __('&larr;  Previous Image', 'baris')); ?></p>
+		<p class="next"><?php next_image_link( false ,  __('Next Image &rarr;', 'baris')); ?></p>
+		<?php endif; ?>
+		<div class="clear"></div>
+		
 		<?php // If a user has filled the description ?>
 		<?php if (get_the_author_meta('description')): ?>
 			<div id="author-info" class="clearfix">
@@ -39,16 +47,18 @@
 					
 				<?php endif; ?>
 	
+	
 				<?php edit_post_link( __( 'Edit &rarr;', 'baris' ), '<span class="separator">|</span>', '' ); ?>
 	</p>
 	<?php comments_template( '', true ); ?>
 	</article>
 	</div>
+	
 	<?php endwhile; ?>
 	
 	<p class="previous"><?php previous_post_link( '%link',  __( '&larr;  Previous Post', 'Previous post link', 'ari' ) ); ?></p>
 	<p class="next"><?php next_post_link( '%link', __( 'Next Post &rarr;', 'Next post link', 'ari' ) ); ?></p>
-	
+	 
 	
 </div>
 

@@ -4,15 +4,6 @@
 if ( ! isset( $content_width ) )
 	$content_width = 620;
 
-/* Available for translation */
-load_theme_textdomain( 'baris', get_template_directory() . '/languages' );
-
-	$locale = get_locale();
-	$locale_file = get_template_directory() . "/languages/$locale.php";
-	if ( is_readable( $locale_file ) )
-		require_once( $locale_file );
-		
-
 /* Add Custom Background  */
 $args = array(
 	'default-color'          => '',
@@ -21,13 +12,29 @@ $args = array(
 	'admin-head-callback'    => '',
 	'admin-preview-callback' => ''
 );
+
 add_theme_support( 'custom-background', $args );		
 
-global $wp_version;
-if ( version_compare( $wp_version, '3.4', '>=' ) ) 
-	add_theme_support( 'custom-background', $args ); 
-else
-	add_custom_background( $args );
+/* Add Custom Menu */
+register_nav_menu('top', 'Top Menu');
+register_nav_menu('bottom', 'Bottom Menu');
+
+add_action('wp_enqueue_scripts', 'custom_menu');
+
+function custom_menu(){
+
+	wp_deregister_script('jquery');
+	wp_register_script('jquery', get_template_directory_uri().'/js/jquery-1.2.6.min.js', array());
+	wp_enqueue_script('jquery');
+	
+	/* Register Javascript */
+	wp_register_script( 'hover', get_template_directory_uri().'/js/hoverIntent.js', array('jquery') );
+	wp_register_script( 'superfish', get_template_directory_uri().'/js/superfish.js', array('jquery') );
+
+	/* Call Javascript */
+	wp_enqueue_script( 'hover' );
+	wp_enqueue_script( 'superfish' );
+}
 
 /* Add Left and Right Sidebar */
 add_action( 'widgets_init', 'baris_widgets_init' );
@@ -177,5 +184,3 @@ endif;
 /* Remove the default CSS style from the WP image gallery */
 add_filter('gallery_style', create_function('$a', 'return "
 <div class=\'gallery\'>";'));
-
-
