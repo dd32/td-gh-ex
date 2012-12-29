@@ -232,7 +232,7 @@ function of_recognized_background_repeat() {
 		'no-repeat' => 'No Repeat', 
 		'repeat-x'  => 'Repeat Horizontally', 
 		'repeat-y'  => 'Repeat Vertically', 
-		'repeat'    => 'Repeat All', 
+		'repeat'    => 'Repeat All',
 		);
 	return apply_filters( 'of_recognized_background_repeat', $default );
 }
@@ -247,7 +247,7 @@ function of_recognized_background_position() {
 	$default = array(
 		'top left'      => 'Top Left', 
 		'top center'    => 'Top Center', 
-		'top right'     => 'Top Right', 
+		'top right'     => 'Top Right',
 		'center left'   => 'Middle Left', 
 		'center center' => 'Middle Center', 
 		'center right'  => 'Middle Right', 
@@ -343,7 +343,7 @@ function of_recognized_font_styles() {
 	$default = array(
 		'normal'      => 'Normal', 
 		'italic'      => 'Italic', 
-		'bold'        => 'Bold', 
+		'bold'        => 'Bold',
 		'bold italic' => 'Bold Italic'
 		);
 	return apply_filters( 'of_recognized_font_styles', $default );
