@@ -7,6 +7,21 @@ License: GPLv2
 Version: 1.3
 */
 
+/*
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
 
 /* Make sure we don't expose any info if called directly */
 
@@ -55,7 +70,7 @@ function optionsframework_init() {
 	
 	// Loads the options array from the theme
 	if ( $optionsfile = locate_template( array('options.php') ) ) {
-		get_template_part($optionsfile);
+		require_once($optionsfile);
 	}
 	else if (file_exists( dirname( __FILE__ ) . '/options.php' ) ) {
 		require_once dirname( __FILE__ ) . '/options.php';
@@ -220,7 +235,7 @@ if ( !function_exists( 'optionsframework_page' ) ) {
 			<?php optionsframework_fields(); /* Settings */ ?>
 			<div id="optionsframework-submit">
 				<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'optionsframework' ); ?>" />
-				<input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'optionsframework' ); ?>" onclick="return confirm( '<?php print esc_js( 'Click OK to reset. Any theme settings will be lost!'); ?>' );" />
+				<input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'optionsframework' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'options_framework_theme' ) ); ?>' );" />
 				<div class="clear"></div>
 			</div>
 			</form>
@@ -252,7 +267,7 @@ function optionsframework_validate( $input ) {
 	 */
 
 	if ( isset( $_POST['reset'] ) ) {
-		add_settings_error( 'options-framework', 'restore_defaults', 'Default options restored.',  'updated fade' );
+		add_settings_error( 'options-framework', 'restore_defaults', __( 'Default options restored.', 'options_framework_theme' ), 'updated fade' );
 		return of_get_default_values();
 	} else {
 	
@@ -295,7 +310,7 @@ function optionsframework_validate( $input ) {
 			}
 		}
 
-		add_settings_error( 'options-framework', 'save_options', 'Options saved.',  'updated fade' );
+		add_settings_error( 'options-framework', 'save_options', __( 'Options saved.', 'options_framework_theme' ), 'updated fade' );
 		return $clean;
 	}
 
@@ -346,7 +361,7 @@ function optionsframework_adminbar() {
 	$wp_admin_bar->add_menu( array(
 			'parent' => 'appearance',
 			'id' => 'of_theme_options',
-			'title' => 'smallbusiness Options',
+			'title' => 'Small Business Options',
 			'href' => admin_url( 'themes.php?page=options-framework' )
 		));
 }
