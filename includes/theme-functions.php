@@ -43,7 +43,7 @@ document.createElement('hgroup');
 					});
 	});
     // Add responsive videos
-  jQuery(".entry-content").fitVids(); 
+  // jQuery(".entry-content").fitVids(); 
   <?php } 
    // Check if sidebars have user colors and if so equalize their heights
    if (($mantra_s1bg || $mantra_s2bg) ) { ?>

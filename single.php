@@ -21,9 +21,9 @@ get_header(); ?>
 
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<h1 class="entry-title"><?php the_title(); ?></h1>
-
+					<?php cryout_post_title_hook(); ?>
 					<div class="entry-meta">
-						<?php mantra_posted_on(); ?>
+						<?php mantra_posted_on(); cryout_post_meta_hook(); ?>
 					</div><!-- .entry-meta -->
 
 					<div class="entry-content">
@@ -50,7 +50,7 @@ get_header(); ?>
 
 					<div class="entry-utility">
 						<?php mantra_posted_in(); ?>
-						<?php edit_post_link( __( 'Edit', 'mantra' ), '<span class="edit-link">', '</span>' ); ?>
+						<?php edit_post_link( __( 'Edit', 'mantra' ), '<span class="edit-link">', '</span>' ); cryout_post_footer_hook(); ?>
 					</div><!-- .entry-utility -->
 				</div><!-- #post-## -->
 

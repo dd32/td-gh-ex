@@ -132,20 +132,33 @@ if ( ! function_exists( 'mantra_posted_on' ) ) :
  * @since mantra 0.5
  */
 function mantra_posted_on() {
+global $mantra_options;
+foreach ($mantra_options as $key => $value) {
+     ${"$key"} = $value ;
+}
 
-	printf( '&nbsp; %4$s <span class="onDate"> %3$s <span class="bl_sep">|</span> </span>  <span class="bl_categ"> %2$s </span>  ',
+// If date is hidden don't give it a value
+$date_string='<span class="onDate"> %3$s <span class="bl_sep">|</span> </span>';
+if ($mantra_postdate == "Hide")  $date_string='';
+
+// If author is hidden don't give it a value 
+$author_string = sprintf( '<span class="author vcard" >'.__( 'By ','mantra'). ' <a class="url fn n" href="%1$s" title="%2$s">%3$s</a> <span class="bl_sep">|</span></span>',
+			get_author_posts_url( get_the_author_meta( 'ID' ) ),
+			sprintf( esc_attr__( 'View all posts by %s', 'mantra' ), get_the_author() ),
+			get_the_author()
+		) ;
+if ($mantra_postauthor == "Hide")  $author_string='';
+
+// Print the meta data
+	printf( '&nbsp; %4$s  '.$date_string.' <span class="bl_categ"> %2$s </span>  ',
 		'meta-prep meta-prep-author',
 		get_the_category_list( ', ' ),
 		sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span> <span class="entry-time"> - %2$s</span></a>',
 			get_permalink(),
 			esc_attr( get_the_time() ),
 			get_the_date()
-		),
-		sprintf( '<span class="author vcard" >'.__( 'By ','mantra'). ' <a class="url fn n" href="%1$s" title="%2$s">%3$s</a> <span class="bl_sep">|</span></span>',
-			get_author_posts_url( get_the_author_meta( 'ID' ) ),
-			sprintf( esc_attr__( 'View all posts by %s', 'mantra' ), get_the_author() ),
-			get_the_author()
-		)
+		), $author_string
+
 	);
 }
 endif;

@@ -213,7 +213,7 @@ font-size:<?php echo $mantra_fontsize ?>;
 ?><?php if ($mantra_sideheadbackcolor != "444444") { ?> .widget-title,#footer-widget-area .widget-title { background-color:<?php echo $mantra_sideheadbackcolor; ?> ;}<?php }
 ?><?php if ($mantra_sideheadtextcolor != "2EA5FD") { ?> .widget-title { color:<?php echo $mantra_sideheadtextcolor; ?>  ;}<?php }
 
-?><?php if ($mantra_magazinelayout == "Enable") { ?> article.post{float:left;width:47%;margin-right:3%; }  article.sticky { margin-right:3%;padding:0; }<?php }
+?><?php if ($mantra_magazinelayout == "Enable") { ?> #content article.post{float:left;width:47%;margin-right:3%; }  #content article.sticky { margin-right:3%;padding:0; } #content article:nth-of-type(2n+1) {clear: both;}  <?php }
 
 ?><?php if (1) { ?> #footer-widget-area .widget-title { color:<?php echo $mantra_footerheader; ?> ; ;}<?php }
 ?><?php if (1) { ?> #footer-widget-area a { color:<?php echo $mantra_footertext; ?>  ;}<?php }
