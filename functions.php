@@ -2617,8 +2617,7 @@ if ( ! function_exists( 'raindrops_admin_header_image' ) ){
     if( raindrops_warehouse( 'raindrops_style_type' ) == 'w3standard' ){
             $block_style = 'background-repeat:no-repeat;background-position:center;background-color:#000;';
     }
-            if ( 'blank' == get_theme_mod('header_textcolor') or
-                 '' == get_theme_mod( 'header_textcolor' )  ){
+            if ( 'blank' == get_theme_mod('header_textcolor') ){
                 $description_style = ' style="display:none;"';
             }elseif(preg_match("!([0-9a-f]{6}|[0-9a-f]{3})!si", get_theme_mod('header_textcolor'))){
 
@@ -2710,6 +2709,7 @@ if ( ! function_exists( 'raindrops_admin_header_image' ) ){
  */
     if ( ! function_exists( 'raindrops_site_description' ) ){
         function raindrops_site_description($args = array()){
+
            if ('blank' == get_theme_mod('header_textcolor') or
                      '' == get_theme_mod('header_textcolor')  ){
                 $raindrops_show_hide = '';
@@ -2726,7 +2726,6 @@ if ( ! function_exists( 'raindrops_admin_header_image' ) ){
             extract( $args, EXTR_SKIP );
             $html = '<div id="site-description" %1$s>%2$s</div>';
             $html = sprintf( $html, $switch, $text );
-
             return apply_filters("raindrops_site_description",$html);
         }
     }
