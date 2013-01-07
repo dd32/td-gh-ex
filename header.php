@@ -19,15 +19,15 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>"/>
 	<?php if( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
 	<?php wp_head(); ?>
-	
-	<script type="text/javascript">
-		jQuery(function(){
-			jQuery('ul.sf-menu').superfish();
-		});
-	</script>
 </head>
 
 <body <?php body_class(); ?>>
+
+<script type="text/javascript">
+		jQuery(function(){
+			jQuery('ul.sf-menu').superfish();
+		});
+</script>
   
 <div id="container" class="clearfix">
 	<header>
