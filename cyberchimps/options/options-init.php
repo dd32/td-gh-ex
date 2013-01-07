@@ -606,6 +606,21 @@ function cyberchimps_fields_callback( $value ) {
 			$output .= '<textarea id="' . esc_attr( $value['id'] ) . '" class="of-input" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" rows="' . $rows . '">' . esc_textarea( $val ) . '</textarea>';
 			break;
 		
+		// Unfiltered Textarea
+		case 'unfiltered_textarea':
+			$rows = '8';
+
+			if ( isset( $value['settings']['rows'] ) ) {
+				$custom_rows = $value['settings']['rows'];
+				if ( is_numeric( $custom_rows ) ) {
+					$rows = $custom_rows;
+				}
+			}
+
+			$val = stripslashes( $val );
+			$output .= '<textarea id="' . esc_attr( $value['id'] ) . '" class="of-input" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" rows="' . $rows . '">' . esc_textarea( $val ) . '</textarea>';
+			break;
+			
 		// css Textarea
 		case 'csstextarea':
 			$rows = '8';
@@ -990,6 +1005,11 @@ function cyberchimps_options_validate( $input ) {
 			
 			// Set checkbox to false if it wasn't sent in the $_POST
 			if ( 'checkbox' == $option['type'] && ! isset( $input[$id] ) ) {
+				$input[$id] = false;
+			}
+			
+			// Set checkbox to false if it wasn't sent in the $_POST
+			if ( 'images' == $option['type'] && ! isset( $input[$id] ) ) {
 				$input[$id] = false;
 			}
 		

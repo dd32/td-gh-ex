@@ -63,25 +63,13 @@ jQuery(document).ready(function($) {
 		}
 	});
 	
-	// Hide all subsections at the beginging.
-	jQuery(".field-container-wrapper").hide();
-	
-	// Show default subsections
-	jQuery("#cyberchimps_blog_drag_and_drop_section h3").click();
-	jQuery("#cyberchimps_help_section h3").click();
-	jQuery("#cyberchimps_footer_section h3").click();
-	jQuery("#cyberchimps_import_export_section h3").click();
-	jQuery("#cyberchimps_custom_layout_section h3").click();
-	jQuery("#cyberchimps_single_post_section h3").click();
-	jQuery("#cyberchimps_header_drag_drop_section h3").click();
-	
 	var page_subsection_map = {
 		slider_lite			: "cyberchimps_blog_slider_lite_section",
 		page_slider			: "cyberchimps_blog_slider_section",
 		callout_section		: "cyberchimps_blog_callout_section",
 		twitterbar_section	: "cyberchimps_twitterbar_section",
 		carousel_section	: "cyberchimps_carousel_section",
-		magazine			: "cyberchimps_blog_magazine_section",
+		//magazine			: "cyberchimps_blog_magazine_section",
 		portfolio_lite		: "cyberchimps_blog_portfolio_lite_section",
 		portfolio_pro		: "cyberchimps_blog_portfolio_pro_section",
 		recent_posts		: "cyberchimps_blog_recent_posts_section",

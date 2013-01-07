@@ -130,6 +130,10 @@
 .box-image {
 	max-height: 200px;
 }
+
+#widget-boxes-container .box {
+	text-align: center;
+}
 /************************* Style for Boxes starts ***********************/
 
 /************************** Style for Slider Lite starts ************************/

@@ -22,9 +22,10 @@ if ( !defined('ABSPATH') ) { die('-1'); }
 add_action ('slider_lite', 'cyberchimps_slider_lite_content' );
 
 function cyberchimps_slider_lite_content() {
-
 	global $wp_query, $post;
 	
+	// Set directory uri
+	$directory_uri = get_template_directory_uri();
 	$slide = array();
 	$link = array();
 		
@@ -40,13 +41,13 @@ function cyberchimps_slider_lite_content() {
 	
 	else {
 		
-		$slides[0]['img'] = cyberchimps_option( 'image_one_slide' );
-		$slides[1]['img'] = cyberchimps_option( 'image_two_slide' );
-		$slides[2]['img'] = cyberchimps_option( 'image_three_slide' );
+		$slides[0]['img'] = cyberchimps_get_option( 'image_one_slide', $directory_uri . apply_filters( 'cyberchimps_slider_lite_img1' ,'/images/branding/slide1.jpg' ) );
+		$slides[1]['img'] = cyberchimps_get_option( 'image_two_slide', $directory_uri .  apply_filters( 'cyberchimps_slider_lite_img2' ,'/elements/lib/images/slider/slide1.jpg' ) );
+		$slides[2]['img'] = cyberchimps_get_option( 'image_three_slide', $directory_uri .  apply_filters( 'cyberchimps_slider_lite_img3' ,'/elements/lib/images/slider/slide1.jpg' ) );
 	
-		$slides[0]['link'] = cyberchimps_option( 'image_one_slide_url' );
-		$slides[1]['link'] = cyberchimps_option( 'image_two_slide_url' );
-		$slides[2]['link'] = cyberchimps_option( 'image_three_slide_url' );
+		$slides[0]['link'] = cyberchimps_get_option( 'image_one_slide_url', apply_filters( 'cyberchimps_slider_lite_url1', 'http://cyberchimps.com' ) );
+		$slides[1]['link'] = cyberchimps_get_option( 'image_two_slide_url', apply_filters( 'cyberchimps_slider_lite_url2', 'http://cyberchimps.com' ) );
+		$slides[2]['link'] = cyberchimps_get_option( 'image_three_slide_url', apply_filters( 'cyberchimps_slider_lite_url3', 'http://cyberchimps.com' ) );
 
 	}
 	$i = 0;

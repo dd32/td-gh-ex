@@ -187,11 +187,11 @@ if( $theme_check == 'pro' ):
 		'heading' => 'cyberchimps_blog_heading'
 	);
 	
-	$sections_list[] = array(
+	/*$sections_list[] = array(
 		'id' => 'cyberchimps_blog_magazine_section',
 		'label' => __('Magazine Options', 'cyberchimps'),
 		'heading' => 'cyberchimps_blog_heading'
-	);
+	);*/
 	
 	$sections_list[] = array(
 		'id' => 'cyberchimps_blog_portfolio_pro_section',
@@ -943,6 +943,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'name' => __('Post Formats Icons', 'cyberchimps'),
 		'id' => 'post_format_icons',
 		'type' => 'toggle',
+		'std' => 0,
 		'section' => 'cyberchimps_blog_options_section',
 		'heading' => 'cyberchimps_blog_heading');
 	
@@ -1395,9 +1396,18 @@ if( $theme_check == 'pro' ):
 
 	/********* MAGAZINE STARTS *****************/
 	
-	$fields_list[] = array(
+	/*$fields_list[] = array(
 		'name' => __('Meta Data', 'cyberchimps'),
 		'id' => 'blog_magazine_metadata',
+		'type' => 'toggle',
+		'std' => 'checked',
+		'section' => 'cyberchimps_blog_magazine_section',
+		'heading' => 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[] = array(
+		'name' => __('Featured Image', 'cyberchimps'),
+		'id' => 'blog_magazine_featured_image',
 		'type' => 'toggle',
 		'std' => 'checked',
 		'section' => 'cyberchimps_blog_magazine_section',
@@ -1430,6 +1440,7 @@ if( $theme_check == 'pro' ):
 		'name' => __('Number of Featured Posts', 'cyberchimps'),
 		'id' => 'blog_magazine_no_of_posts',
 		'type' => 'select',
+		'std' => '4',
 		'options' => array(
 			'4'  => '4',
 			'5'  => '5',  '6'  => '6',  '7'  => '7',  '8'  => '8',
@@ -1463,6 +1474,7 @@ if( $theme_check == 'pro' ):
 		'name' => __('Number of Wide Posts', 'cyberchimps'),
 		'id' => 'blog_magazine_no_of_wide_posts',
 		'type' => 'select',
+		'std' => '6',
 		'options' => array(
 			'1'  => '1',  '2'  => '2',  '3'  => '3',  '4'  => '4',
 			'5'  => '5',  '6'  => '6',  '7'  => '7',  '8'  => '8',
@@ -1472,7 +1484,7 @@ if( $theme_check == 'pro' ):
 		),
 		'section' => 'cyberchimps_blog_magazine_section',
 		'heading' => 'cyberchimps_blog_heading'
-	);
+	);*/
 	/********* MAGAZINE ENDS *****************/
 
 	/********* BLOG SLIDER STARTS ***********/
@@ -1697,7 +1709,7 @@ if( $theme_check == 'pro' ):
 		'id' => 'html_box',
 		'std' => '',
 		'desc' => __( 'Enter your custom HTML code here', 'cyberchimps' ),
-		'type' => 'textarea',
+		'type' => 'unfiltered_textarea',
 		'section' => 'cyberchimps_html_box_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);
