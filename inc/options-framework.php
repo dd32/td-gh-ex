@@ -61,9 +61,10 @@ function optionsframework_init() {
 	require_once dirname( __FILE__ ) . '/options-interface.php';
 	require_once dirname( __FILE__ ) . '/options-medialibrary-uploader.php';
 	
+	
 	// Loads the options array from the theme
 	if ( $optionsfile = locate_template( array('options.php') ) ) {
-		require_once($optionsfile);
+		get_template_part($optionsfile);
 	}
 	else if (file_exists( dirname( __FILE__ ) . '/options.php' ) ) {
 		require_once dirname( __FILE__ ) . '/options.php';

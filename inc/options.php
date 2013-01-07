@@ -22,7 +22,6 @@ function optionsframework_option_name() {
  * http://codex.wordpress.org/Function_Reference/load_theme_textdomain
  */
 
-
 function optionsframework_options() {
 	
 	add_filter( 'wp_default_editor', create_function('', 'return "html";') );

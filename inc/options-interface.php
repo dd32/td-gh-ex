@@ -107,6 +107,7 @@ function optionsframework_fields() {
 
 		switch ( $value['type'] ) {
 
+		
 		// Basic text input
 		case 'text':
 			$output .= '<input id="' . esc_attr( $value['id'] ) . '" class="of-input" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" type="text" value="' . esc_attr( $val ) . '" />';
