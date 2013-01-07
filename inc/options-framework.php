@@ -62,6 +62,7 @@ function optionsframework_load_sanitization() {
  *
  */
 
+
 function optionsframework_init() {
 
 	// Include the required files
@@ -70,7 +71,7 @@ function optionsframework_init() {
 	
 	// Loads the options array from the theme
 	if ( $optionsfile = locate_template( array('options.php') ) ) {
-		require_once($optionsfile);
+		get_template_part($optionsfile);
 	}
 	else if (file_exists( dirname( __FILE__ ) . '/options.php' ) ) {
 		require_once dirname( __FILE__ ) . '/options.php';

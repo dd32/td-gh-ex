@@ -35,6 +35,7 @@ function optionsframework_options() {
 		'desc' => '<span class="donation">If you like this FREEE Theme You can consider for a small Donation to us. Your Donation will be spent for the Disadvantaged Children and Students. You can visit our <a href="http://d5creation.com/donate/" target="_blank"><strong>DONATION PAGE</strong></a> and Take your decision.</span><br /><br /><span class="donation">Need Logo Inserter, More Slides, More Control, More Features and Options? Try <a href="http://d5creation.com/theme/smallbusiness/" target="_blank"><strong>Small Business Pro</strong></a> for Many Exciting Features with Dedicated Support from D5 Creation team. There are Promotional Offers. You can avail those promotions from <a href="http://d5creation.com/" target="_blank">D5 Creation Site</a>.</span><br /><br /><span class="donation"><a href="http://demo.d5creation.com/wp/themes/smallbusiness/" target="_blank">Live Demo</a> of Small Business with the Pro version.</span>',
 		'type' => 'info');
 	
+	
 	$options[] = array(
 		'name' => 'Front Page Heading',
 		'desc' => 'Input your heading text here. Plese limit it within 100 Letters.',
