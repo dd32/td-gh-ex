@@ -1,9 +1,12 @@
 <?php get_header(); ?>
 
 
-<?php if (have_posts()) : ?><?php while (have_posts()) : the_post(); ?>
+<?php if (have_posts()) : ?>
+<div id="maincontent">
+<h1><?php printf( __( 'Search Results for: %s', 'appliance' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+</div>
 
-
+<?php while (have_posts()) : the_post(); ?>
 
 
 <div class="postbg">

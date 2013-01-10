@@ -4,7 +4,7 @@ The image shown for each post is the featured image (you can define this when ed
 
 Post titles are restricted to one line displayed in order to maintain a consistent appearance throughout the website.
 
-Please note: When setting up widgets - you need to specify a title for each widget, in order for it to appear.
+Please note: When setting up widgets - you need to specify a title for each widget, in order for it to appear.  In particular for the Search Widget - this widget does not have a title by default - so you will need to specify this (i.e. type in a title for this widget such as "Search").
 
 This theme is free for both personal and commercial use.
 

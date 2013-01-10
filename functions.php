@@ -51,13 +51,22 @@ function appliance_replace_excerpt($content) {
 }
 add_filter('the_excerpt', 'appliance_replace_excerpt');
 
+add_filter('the_title', 'appliance_title');
+function appliance_title($title) {
+if ($title == '') {
+return 'This Post Has No Title';
+} else {
+return $title;
+}
+}
+
 
 function appliance_widgets_init() {
 		// Footer Menu
 		register_sidebar( array(
 			'name' => __( 'Footer Widget Area', 'appliance' ),
 			'id' => 'primary-widget-area',
-			'description' => __( 'The footer widget area.  Please note that you need to specify a title for each widget, in order for it to appear.', 'appliance' ),
+			'description' => __( 'The footer widget area.  Please note that you need to specify a title for each widget, in order for it to appear.  In particular, you need to type in a title for the Search Widget. ', 'appliance' ),
 			'before_widget' => '',
 			'after_widget' => '</div>',
 			'before_title' => '<h2>',

@@ -14,10 +14,7 @@
 </div>
 <div class="postreadmore"><h5><a href="<?php the_permalink()?>" title="<?php _e('Read more on','appliance');?> <?php the_title_attribute(); ?>" rel="bookmark"><?php _e('Read more','appliance');?></a></h5></div>
 <div class="smldivider"></div>
-<div class="postcats"><?php
-$category = get_the_category(); 
-echo $category[0]->cat_name;
-?></div>
+<div class="postcats"><a href="<?php echo site_url()?>/?cat=<?php $category = get_the_category(); echo $category[0]->term_id;?>"><?php $category = get_the_category(); echo $category[0]->cat_name;?></a></div>
 <div class="postcomments"><a href="<?php the_permalink()?>#comments" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php printf( _n( '1 comment', '%1$s comments', get_comments_number(), 'appliance' ), number_format_i18n( get_comments_number() ) ); ?></a></div>
 </div>
 

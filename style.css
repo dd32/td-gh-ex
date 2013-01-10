@@ -4,7 +4,7 @@ Author: Emma Conway
 Author URI: http://www.applymedia.co.uk
 Theme URI: http://www.applymedia.co.uk/appliance
 Description: Appliance is a clean and minimalist theme that is ideal for blogs / magazines / portfolios.  Spacious, minimalist, clean, light and very fast to load.
-Version: 1.24
+Version: 1.25
 Tags: white, light, one-column, fixed-width, featured-images, photoblogging, microformats
 License: GNU General Public License v2.0
 License URI: http: //www.gnu.org/licenses/gpl-2.0.html
@@ -85,7 +85,7 @@ body {
 	color:#5B708E;
 } 
 #maincontent h1 {
-	margin: 0px auto 0px auto;
+	margin: 0px auto 10px auto;
 	padding: 0px;
 	font-family: Arial;
 	font-size: 17px;
@@ -257,7 +257,7 @@ div.postimage img:hover {
 	text-transform:uppercase;
 	margin:0px 0px 0px 0px;
 	padding:0px 0px 0px 0px;
-	line-height:0.9em;
+	line-height:1em;
 }
 .postcontent h3 a {
 	color:#5B708E;
@@ -425,7 +425,7 @@ div.postimage img:hover {
 #footermenu {
 	display:inline;
 	position: relative;
-	clear:both
+	clear:both;
 	width:980px;
 	margin:0px auto 0px auto;
 	text-align:center;
@@ -782,10 +782,10 @@ h3#comments-title {
 #comments .comment-body ol {
 	margin-bottom: 18px;
 }
-#comments .comment-body p: last-child {
+#comments .comment-body p:last-child {
 	margin-bottom: 6px;
 }
-#comments .comment-body blockquote p: last-child {
+#comments .comment-body blockquote p:last-child {
 	margin-bottom: 24px;
 }
 .commentlist ol {
@@ -956,7 +956,7 @@ h3#reply-title {
 	margin: 0 auto;
 	max-width: 98%;
 }
-.clearfix: after {
+.clearfix:after {
 	content: ".";
 	display: block;
 	height: 0;

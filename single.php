@@ -8,7 +8,7 @@
 <?php the_content()?>
 			
 			<div class="postfooter">
-			<?php the_date()?> <?php wp_link_pages( array( 'before' => __('Pages', 'appliance'), 'after' =>'' ) ); ?><br/>
+			<a href="<?php the_permalink(); ?>"><?php the_date()?></a> <?php wp_link_pages( array( 'before' => __('Pages', 'appliance'), 'after' =>'' ) ); ?><br/>
 			<?php _e('Categories','appliance');?>: <?php the_category(', '); ?> <?php if(has_tag()){the_tags( _e('Tags','appliance') . ': ', ', ');}?>
 			</div>
 			
