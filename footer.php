@@ -50,10 +50,10 @@
 		 * Seriously, developing this awesome theme took a lot
 		 * of effort and time, weeks and weeks of voluntary unpaid work. I only ask 
 		 * that you retain this link here, and you can use and/or modify the theme
-		 * however you like to.
+		 * however you like to. Of course you can remove the whole line. :-)
 		*/
 		?>
-		 <?php _e( 'By', 'atheros' ); ?> <a href="<?php echo esc_url( __( 'http://www.olexa.de/', 'atheros' ) ); ?>"><?php printf( 'www.olexa.de' ); ?></a>
+		 <?php _e( 'By', 'atheros' ); ?> <a href="<?php echo esc_url( __( 'http://www.otto-gutschein.net/', 'atheros' ) ); ?>"><?php printf( 'Otto Gutschein' ); ?></a> Themes.
 
 </div>
 <?php

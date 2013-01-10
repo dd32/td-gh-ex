@@ -2,16 +2,20 @@ atheros
 
 ================================================================================
 
-Version: 1.0.7
-Release date: July 07 2012
+Version: 1.0.8
+Release date: January 10 2013
 
 Comments, Feedback and Bugs:
-http://www.olexa.de/atheros-theme/
+http://www.otto-gutschein.net/atheros-theme/
 
 The CSS, XHTML and design is released under GPL:
 http://www.opensource.org/licenses/gpl-license.php
 
 ================================================================================
+
+
+Version: 1.0.8.  - January 10 2013
+Changed Credits to personal site.
 
 Version: 1.0.4.  - April 11 2011
 Shadowimages changed to .png - so user can set custom backgroundcolor
