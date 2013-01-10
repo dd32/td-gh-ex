@@ -17,7 +17,7 @@
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
 	background-size:cover;
-	height:auto ;
+	//height:auto ;
 }
 	#wrapper {
 		margin:10px !important;
@@ -48,7 +48,7 @@
 		margin:0 10px !important
 	}
 	#access {
-	background:#ddd;
+	/*background:#ddd;*/
 	}
 	#column3 {
 	clear:left !important;

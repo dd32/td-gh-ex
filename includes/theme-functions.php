@@ -39,11 +39,11 @@ document.createElement('hgroup');
 	jQuery(function () {
 	// Add select navigation to small screens
     jQuery("#access .menu ul:first-child").tinyNav({
-	header: true // Show header instead of the active item
+	header: false // Show header instead of the active item
 					});
 	});
     // Add responsive videos
-  // jQuery(".entry-content").fitVids(); 
+  if (jQuery(window).width() < 800) jQuery(".entry-content").fitVids(); 
   <?php } 
    // Check if sidebars have user colors and if so equalize their heights
    if (($mantra_s1bg || $mantra_s2bg) ) { ?>

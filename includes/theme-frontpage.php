@@ -194,7 +194,7 @@ break;
  case 'Specific Posts' :
  // Transofm string separated by commas into array
 $pieces_array = explode(",", $mantra_slideSpecific);
-$custom_query->query(array( 'post_type' => 'any', 'post__in' => $pieces_array, 'ignore_sticky_posts' => 1 ));
+$custom_query->query(array( 'post_type' => 'any', 'post__in' => $pieces_array, 'ignore_sticky_posts' => 1,'orderby' => 'post__in' ));
 break;
 
 }

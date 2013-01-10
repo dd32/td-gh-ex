@@ -79,7 +79,7 @@ foreach ($mantra_options as $key => $value) {
 		wp_register_script('cryout-frontend',get_template_directory_uri() . '/js/frontend.js', array('jquery') );
 		wp_enqueue_script('cryout-frontend');
   		// If mantra from page is enabled and the current page is home page - load the nivo slider js							
-		if($mantra_frontpage == "Enable" && is_home()) {
+		if($mantra_frontpage == "Enable" && is_front_page()) {
 							wp_register_script('cryout-nivoSlider',get_template_directory_uri() . '/js/nivo-slider.js', array('jquery'));
 							wp_enqueue_script('cryout-nivoSlider');
 							}
