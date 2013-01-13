@@ -186,41 +186,41 @@ endif;
  * @uses set_transient and delete_transient 
  */
 function simplecatch_headerdetails() {
-	//delete_transient( 'simplecatch_headerdetails' );	
+	delete_transient( 'simplecatch_headerdetails' );	
 
 	global $simplecatch_options_settings;
     $options = $simplecatch_options_settings;	
 		
 	if ( ( !$simplecatch_headerdetails = get_transient( 'simplecatch_headerdetails' ) ) && ( empty( $options[ 'remove_header_logo' ] ) || empty( $options[ 'remove_site_title' ] ) || empty( $options[ 'remove_site_description' ] ) ) ) {
-
 		echo '<!-- refreshing cache -->';
-		
 		$simplecatch_headerdetails = '<div class="logo-wrap">';
-
-		if( empty( $options[ 'remove_header_logo' ] ) || empty( $options[ 'remove_site_title' ] ) ) {
-			$simplecatch_headerdetails .= '<h1 id="site-title">'.'<a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'">';
-
-			if( empty( $options[ 'remove_header_logo' ] ) ) {
-				if ( !empty( $options[ 'featured_logo_header' ] ) ):
-					$simplecatch_headerdetails .= '<img src="'.esc_url( $options['featured_logo_header'] ).'" alt="'.get_bloginfo( 'name' ).'" />';
-				else:
-					// if empty featured_logo_header on theme options, display default logo
-					$simplecatch_headerdetails .='<img src="'. get_template_directory_uri().'/images/logo.png" alt="logo" />';
-				endif;
-			}
-
-			if ( empty( $options[ 'remove_site_title' ] ) ) {
-				$simplecatch_headerdetails .= '<span>'.esc_attr( get_bloginfo( 'name', 'display' ) ).'</span>'; 
-			}
-
+		
+		if( empty( $options[ 'remove_header_logo' ] ) ) {
+			$simplecatch_headerdetails .= '<h1 id="site-logo"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'">';
+			
+			if ( !empty( $options[ 'featured_logo_header' ] ) ):
+				$simplecatch_headerdetails .= '<img src="'.esc_url( $options['featured_logo_header'] ).'" alt="'.get_bloginfo( 'name' ).'" />';
+			else:
+				// if empty featured_logo_header on theme options, display default logo
+				$simplecatch_headerdetails .='<img src="'. get_template_directory_uri().'/images/logo.png" alt="logo" />';
+			endif;
+			
 			$simplecatch_headerdetails .= '</a></h1>';
+		}			
+
+		if( empty( $options[ 'remove_site_title' ] ) || empty( $options[ 'remove_site_description' ] ) ) {
+			$simplecatch_headerdetails .= '<div id="site-details">';
+			
+			if ( empty( $options[ 'remove_site_title' ] ) ) {
+				$simplecatch_headerdetails .= '<h1 id="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'">'.esc_attr( get_bloginfo( 'name', 'display' ) ).'</a></h1>'; 
+			}
+			
+			if ( empty( $options[ 'remove_site_description' ] ) ) {
+				$simplecatch_headerdetails .= '<h2 id="site-description">'.esc_attr( get_bloginfo( 'description' ) ).'</h2>';		
+			}	
+			
+			$simplecatch_headerdetails .= '</div><!-- .site-details -->';	
 		}
-
-		if( empty( $options[ 'remove_site_description' ] ) ) {
-			$simplecatch_headerdetails .= '<h2 id="site-description">'.esc_attr( get_bloginfo( 'description' ) ).'</h2>';
-		}	
-
-		$simplecatch_headerdetails .= '</div><!-- .logo-wrap -->';
 		
 	set_transient( 'simplecatch_headerdetails', $simplecatch_headerdetails, 86940 );
 	}
