@@ -4,7 +4,7 @@ Theme URI: http://catchthemes.com/themes/simple-catch
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
 Description: Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework. Multilingual Ready (WPML) and also currently translated in Polish, Russian, Finnish, French and Dutch. 
-Version: 1.8
+Version: 1.8.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, gray, silver, white, light, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, custom-menu, featured-images, full-width-template, theme-options, threaded-comments, translation-ready
@@ -407,6 +407,22 @@ a.readmore:hover {
 	margin-top:54px;
 	min-width: 610px;
 }
+#site-logo {
+    display: inline-block;
+    float: left;
+    padding-bottom: 0;
+}
+#site-logo a img {
+    float: left;
+    height: auto;
+    max-width: 100%;
+    padding-right: 20px;
+}
+#site-details {
+    display: inline-block;
+    float: left;
+    padding-right: 20px;
+}
 h1#site-title {
 	font-size: 45px;
 	font-family: 'Lobster';
@@ -418,11 +434,6 @@ h1#site-title a {
 }
 h1#site-title a:hover {
 	color: #444444;
-}
-h1#site-title a img {
-	max-height: 90px;
-	float:left;
-	padding-right:20px;
 }
 h2#site-description {
 	font:14px Arial, Helvetica, sans-serif;

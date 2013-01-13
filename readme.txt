@@ -226,3 +226,6 @@ Version 1.7
 
 Version 1.8
 * Added Dutch translation nl_NL.po and nl_NL.mo
+
+Version 1.8.1
+* Added Logo and site title separator
