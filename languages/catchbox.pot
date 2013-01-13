@@ -3,9 +3,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tags/catch-box\n"
-"POT-Creation-Date: 2012-07-21 12:19+0530\n"
-"PO-Revision-Date: 2012-12-12 23:46+0530\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-01-13 22:04+0530\n"
+"PO-Revision-Date: 2013-01-13 22:05+0530\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Catch Themes <info@catchinternet.com>\n"
 "MIME-Version: 1.0\n"
@@ -97,17 +97,16 @@ msgstr ""
 msgid "Category Archives: %s"
 msgstr ""
 
+#: ../comments.php:17
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr ""
+
 #: ../comments.php:33
 #, php-format
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
-
-#: ../comments.php:33
-#, php-format
-msgid "One thought on &ldquo;%2$s&rdquo;"
-msgstr ""
 
 #: ../comments.php:40
 #: ../comments.php:60
@@ -476,20 +475,20 @@ msgstr ""
 msgid "Reply <span>&darr;</span>"
 msgstr ""
 
-#: ../functions.php:612
+#: ../functions.php:613
 #, php-format
-msgid "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> by </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+msgid "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date updated\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> by </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
 msgstr ""
 
-#: ../functions.php:667
+#: ../functions.php:668
 msgid "ID"
 msgstr ""
 
-#: ../functions.php:877
+#: ../functions.php:878
 msgid "Name"
 msgstr ""
 
-#: ../functions.php:879
+#: ../functions.php:880
 msgid "Email"
 msgstr ""
 
@@ -755,7 +754,7 @@ msgid "Theme Support"
 msgstr ""
 
 #: ../inc/theme-options.php:605
-msgid "http://catchthemes.com/themes/"
+msgid "http://catchthemes.com/themes/catch-box-pro/"
 msgstr ""
 
 #: ../inc/theme-options.php:605
@@ -778,9 +777,6 @@ msgid "http://twitter.com/#!/catchthemes"
 msgstr ""
 
 #: ../inc/theme-options.php:611
-msgid "Twiiter"
-msgstr ""
-
 #: ../inc/theme-options.php:612
 #: ../inc/theme-options.php:781
 msgid "Twitter"

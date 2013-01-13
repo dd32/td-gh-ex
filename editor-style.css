@@ -24,28 +24,32 @@ body {
 h1,h2,h3,h4,h5,h6 {
 	clear: both;
 }
-h1,
+h1 {
+	font-size: 26px;
+}
 h2 {
-	color: #000;
-	font-size: 15px;
-	font-weight: bold;
-	margin: 0 0 .8125em;
+	 font-size: 24px;
 }
 h3 {
-	font-size: 10px;
-	letter-spacing: 0.1em;
-	line-height: 2.6em;
-	text-transform: uppercase;
+    font-size: 22px;
+	font-weight: bold;
+	margin: 0 0 0.8125em;
 }
-h4, h5, h6 {
-	font-size: 14px;
-	margin: 0;
+h4 {
+    font-size: 20px;
+	margin: 0 0 0.5em;
+}
+h5 {
+    font-size: 18px;
+}
+h6 {
+    font-size: 16px;
 }
 hr {
 	background-color: #ccc;
 	border: 0;
 	height: 1px;
-	margin-bottom: 1.625em;
+	margin-bottom: 2em;
 }
 
 /* Text elements */
@@ -53,14 +57,13 @@ p, ul, ol, dl {
 	font-weight: 300;
 }
 p {
-	margin-bottom: 1.625em;
+	margin-bottom: 2em;
 }
 ul, ol {
-	margin: 0 0 1.625em 2.5em;
-	padding: 0;
+	margin: 0 0 2em 2.5em;
 }
 ul {
-	list-style: square;
+	list-style: disc;
 }
 ol {
 	list-style-type: decimal;
@@ -78,14 +81,13 @@ ul ul, ol ol, ul ol, ol ul {
 	margin-bottom: 0;
 }
 dl {
-	margin: 0 1.625em;
+	margin: 0 2em;
 }
 dt {
-	font-size: 15px;
 	font-weight: bold;
 }
 dd {
-	margin: 0 0 1.625em;
+	margin-bottom: 2em;
 }
 strong {
 	font-weight: bold;

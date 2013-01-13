@@ -185,3 +185,8 @@ Version 1.6.3
 
 Version 1.7
 * Added French translation fr_FR.po and fr_FR.mo
+
+Version 1.7.1
+* Added sidebar in image.php to match layout for image
+* Fixed editor css
+* Fixed language file catchbox.pot
