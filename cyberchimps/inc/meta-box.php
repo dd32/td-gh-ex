@@ -40,6 +40,7 @@ function cyberchimps_init_meta_boxes() {
 	$image_path		 = $directory_uri . "/cyberchimps/lib/images/";
 	$portfolio_image = $image_path . "portfolio.jpg";
 	$slider_image	 = $directory_uri . "/elements/lib/images/slider/slide1.jpg";
+	$default_profile = $image_path . "default_profile_pic.png";
 	
 	// Declare variables
 	$portfolio_options = array(); 
@@ -99,6 +100,7 @@ function cyberchimps_init_meta_boxes() {
 	$all_cats = array();
 	$all_categories = get_terms( 'category');
 	if( ! is_wp_error( $all_categories ) ) {
+		$all_cats['all'] = "All";
 		foreach( $all_categories as $all_cat ) {
 			$all_cats[$all_cat->term_id] = $all_cat->name;
 		}
@@ -138,11 +140,12 @@ function cyberchimps_init_meta_boxes() {
 					'std' => array( 'page_section' )
 				))
 			->pagehelp('', __( 'Need Help?', 'cyberchimps' ), '')
-		/*->tab("Magazine Layout Options")
+		->tab("Magazine Layout Options")
 			->checkbox('cyberchimps_magazine_meta_data_toggle', __( 'Meta Data', 'cyberchimps' ), '', array('std' => '1'))
 			->checkbox('cyberchimps_magazine_featured_image', __( 'Featured Image', 'cyberchimps' ), '', array( 'std' => 1 ) )
+			->select('cyberchimps_magazine_category', __( 'Category', 'cyberchimps' ), '', array('options' => ( $all_cats ? $all_cats : array( 'cc_no_options' => __( 'You need to create a Category', 'cyberchimps' ) ) ) ) )
 			->select('cyberchimps_magazine_no_of_columns', __( 'Number of Columns', 'cyberchimps' ), '', array('options' => array( 2 => '2', 3 => '3')) )
-			->select('cyberchimps_magazine_no_of_posts', __( 'Number of Posts', 'cyberchimps' ), '', array('options' => array( 4 => '4', 5 => '5', 6 => '6', 7 => '7', 8 => '8', 9 => '9', 10 => '10', 11 => '11', 12 => '12', 13 => '13', 14 => '14', 15 => '15', 16 => '16', 17 => '17', 18 => '18', 19 => '19', 20 => '20')) )
+			->select('cyberchimps_magazine_no_of_rows', __( 'Number of Posts', 'cyberchimps' ), '', array('options' => array( 1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5', 6 => '6', 7 => '7', 8 => '8', 9 => '9', 10 => '10', 11 => '11', 12 => '12', 13 => '13', 14 => '14', 15 => '15', 16 => '16', 17 => '17', 18 => '18', 19 => '19', 20 => '20')) )
 			->checkbox('cyberchimps_magazine_wide_post_toggle', __( 'Wide Posts Below Magazine', 'cyberchimps' ), '', array('std' => '1'))
 			->select('cyberchimps_magazine_no_of_wide_posts', __( 'Number of Wide Posts ', 'cyberchimps' ), '',
 						array('options' => array(1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5', 6 => '6', 7 => '7', 8 => '8', 9 => '9', 10 => '10', 11 => '11', 12 => '12', 13 => '13', 14 => '14', 15 => '15', 16 => '16', 17 => '17', 18 => '18', 19 => '19', 20 => '20')))
@@ -231,6 +234,35 @@ function cyberchimps_init_meta_boxes() {
 			->text('cyberchimps_twitter_handle', __( 'Twitter Handle', 'cyberchimps' ), __( 'Enter your Twitter handle if using the Twitter bar', 'cyberchimps' ) )
 		->tab("Boxes Options")
 			->select('boxes_category', __( 'Boxes Category', 'cyberchimps' ), '', array('options' => ( $boxes_options ? $boxes_options : array( 'cc_no_options' => __( 'You need to create a Category', 'cyberchimps' ) ) ) ) )
+		->tab("Profile Options")
+			->text('profile_name', __( 'Profile Name', 'cyberchimps' ), "" )
+			->single_image('profile_picture', __( 'Profile Picture', 'cyberchimps' ), '', array('std' => $default_profile))
+			->text('profile_profession', __( 'Profession', 'cyberchimps' ), "" )
+			->textarea('profile_about', __( 'About', 'cyberchimps' ), '')
+			->text('profile_location', __( 'Location', 'cyberchimps' ), "" )
+			->text('profile_phone', __( 'Phone Number', 'cyberchimps' ), "" )
+			->text('profile_email', __( 'Email Address', 'cyberchimps' ), "" )
+			->text('profile_website', __( 'Website Address', 'cyberchimps' ), "" )
+			->checkbox('profile_twitter', __( 'Twitter', 'cyberchimps' ), '', array('std' => '1'))
+			->text('profile_twitter_url', __( 'Twitter URL', 'cyberchimps' ), "", array('std' => 'http://www.twitter.com/' ) )
+			->checkbox('profile_facebook', __( 'Facebook', 'cyberchimps' ), '', array('std' => '1'))
+			->text('profile_facebook_url', __( 'Facebook URL', 'cyberchimps' ), "", array('std' => 'http://www.facebook.com/' ) )
+			->checkbox('profile_google', __( 'Google+', 'cyberchimps' ), '', array('std' => '1'))
+			->text('profile_google_url', __( 'Google+ URL', 'cyberchimps' ), "", array('std' => 'http://www.google.com/' ) )
+			->checkbox('profile_flickr', __( 'Flicker', 'cyberchimps' ), '')
+			->text('profile_flickr_url', __( 'Flicker URL', 'cyberchimps' ), "", array('std' => 'http://www.flickr.com/' ) )
+			->checkbox('profile_pinterest', __( 'Pinterest', 'cyberchimps' ), '')
+			->text('profile_pinterest_url', __( 'Pinterest URL', 'cyberchimps' ), "", array('std' => 'http://www.pinterest.com/' ) )
+			->checkbox('profile_linkedin', __( 'Linked In', 'cyberchimps' ), '')
+			->text('profile_linkedin_url', __( 'Linked In URL', 'cyberchimps' ), "", array('std' => 'http://www.linkedin.com/' ) )
+			->checkbox('profile_youtube', __( 'Youtube', 'cyberchimps' ), '')
+			->text('profile_youtube_url', __( 'Youtube URL', 'cyberchimps' ), "" , array('std' => 'http://www.youtube.com/' ))
+			->checkbox('profile_rss', __( 'RSS', 'cyberchimps' ), '')
+			->text('profile_rss_url', __( 'RSS URL', 'cyberchimps' ), "", array('std' => get_bloginfo_rss( 'rss_url' ) ) )
+			->checkbox('profile_email_id', __( 'Email', 'cyberchimps' ), '')
+			->text('profile_email_id_url', __( 'Email URL', 'cyberchimps' ), "" )
+			->checkbox('profile_googlemaps', __( 'Google Map', 'cyberchimps' ), '' )
+			->text('profile_googlemaps_url', __( 'Google Map URL', 'cyberchimps' ), "", array('std' => 'http://www.maps.google.com/' ) )
 		->end();
 
 	foreach ($meta_boxes as $meta_box) {

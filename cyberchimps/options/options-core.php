@@ -187,11 +187,11 @@ if( $theme_check == 'pro' ):
 		'heading' => 'cyberchimps_blog_heading'
 	);
 	
-	/*$sections_list[] = array(
+	$sections_list[] = array(
 		'id' => 'cyberchimps_blog_magazine_section',
 		'label' => __('Magazine Options', 'cyberchimps'),
 		'heading' => 'cyberchimps_blog_heading'
-	);*/
+	);
 	
 	$sections_list[] = array(
 		'id' => 'cyberchimps_blog_portfolio_pro_section',
@@ -222,6 +222,12 @@ endif;
 		'id' => 'cyberchimps_featured_posts_section',
 		'label' => __('Featured Posts Options', 'cyberchimps'),
 		'heading' => 'cyberchimps_blog_heading'
+	);*/
+	
+	$sections_list[] = array(
+		'id'		=> 'cyberchimps_profile_section',
+		'label'		=> __('Profile Options', 'cyberchimps'),
+		'heading'	=> 'cyberchimps_blog_heading'
 	);
 	
 /*************************** TEMPLATE ************************************************/
@@ -300,7 +306,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		$options_categories['all'] = 'All';
 		$options_categories[$category->cat_ID] = $category->cat_name;
 	}
-	
+
 	// Pull all carousel categories
 	$options_carousel_cats = array();
 	$carousel_categories = get_terms( 'carousel_categories', array( 'hide_empty' => 0 ) );
@@ -506,19 +512,18 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	);
 	
 /* CUSTOM COLORS */
-	$fields_list[] = array(
-		'id' => 'cyberchimps_skin_color',
-		'class' => '',
-		'name' => __('Select a Skin Color', 'cyberchimps'),
-		'type' => 'select',
-		'std' => 'default',
-		'options' => apply_filters( 'cyberchimps_skin_color', array( 
-			'default' => __('Default', 'cyberchimps')
+	$fields_list[]	= array(
+		'name'		=> __('Select a Skin Color', 'cyberchimps'),
+		'id'		=> 'cyberchimps_skin_color',
+		'std'		=> 'default',
+		'type'		=> 'images',
+		'options'	=> apply_filters( 'cyberchimps_skin_color', array(
+			'default'	=> $directory_uri . '/inc/css/skins/images/default.png'
 		) ),
-		'section' => 'cyberchimps_custom_colors_section',
-		'heading' => 'cyberchimps_design_heading',
+		'section'	=> 'cyberchimps_custom_colors_section',
+		'heading'	=> 'cyberchimps_design_heading'
 	);
-	
+
 	/** COMMENTED OUT - Using WP background customization
 	$fields_list[] = array(
 		'name' => __('Background Color', 'cyberchimps'),
@@ -1396,95 +1401,105 @@ if( $theme_check == 'pro' ):
 
 	/********* MAGAZINE STARTS *****************/
 	
-	/*$fields_list[] = array(
-		'name' => __('Meta Data', 'cyberchimps'),
-		'id' => 'blog_magazine_metadata',
-		'type' => 'toggle',
-		'std' => 'checked',
-		'section' => 'cyberchimps_blog_magazine_section',
-		'heading' => 'cyberchimps_blog_heading'
+	$fields_list[]	= array(
+		'name'		=> __('Meta Data', 'cyberchimps'),
+		'id'		=> 'blog_magazine_metadata',
+		'type'		=> 'toggle',
+		'std'		=> 'checked',
+		'section'	=> 'cyberchimps_blog_magazine_section',
+		'heading'	=> 'cyberchimps_blog_heading'
 	);
 	
-	$fields_list[] = array(
-		'name' => __('Featured Image', 'cyberchimps'),
-		'id' => 'blog_magazine_featured_image',
-		'type' => 'toggle',
-		'std' => 'checked',
-		'section' => 'cyberchimps_blog_magazine_section',
-		'heading' => 'cyberchimps_blog_heading'
+	$fields_list[]	= array(
+		'name'		=> __('Featured Image', 'cyberchimps'),
+		'id'		=> 'blog_magazine_featured_image',
+		'type'		=> 'toggle',
+		'std'		=> 'checked',
+		'section'	=> 'cyberchimps_blog_magazine_section',
+		'heading'	=> 'cyberchimps_blog_heading'
 	);
 	
-	$fields_list[] = array(
-		'name' => __('Featured Excerpt Length', 'cyberchimps'),
-		'id' => 'blog_magazine_excerpt_length',
-		'type' => 'text',
-		'std' => '70',
-		'section' => 'cyberchimps_blog_magazine_section',
-		'heading' => 'cyberchimps_blog_heading'
+	$fields_list[]	= array(
+		'name'		=> __('Category', 'cyberchimps'),
+		'id'		=> 'blog_magazine_category',
+		'type'		=> 'select',
+		'options'	=> $options_categories,
+		'section'	=> 'cyberchimps_blog_magazine_section',
+		'heading'	=> 'cyberchimps_blog_heading'
 	);
 	
-	$fields_list[] = array(
-		'name' => __('Number of Columns', 'cyberchimps'),
-		'id' => 'blog_magazine_no_of_columns',
-		'type' => 'select',
-		'std' => 2,
-		'options' => array(
+	$fields_list[]	= array(
+		'name'		=> __('Featured Excerpt Length', 'cyberchimps'),
+		'id'		=> 'blog_magazine_excerpt_length',
+		'type'		=> 'text',
+		'std'		=> '70',
+		'section'	=> 'cyberchimps_blog_magazine_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('Number of Columns', 'cyberchimps'),
+		'id'		=> 'blog_magazine_no_of_columns',
+		'type'		=> 'select',
+		'std'		=> 2,
+		'options'	=> array(
 			2 => '2',
 			3 => '3'
 		),
-		'section' => 'cyberchimps_blog_magazine_section',
-		'heading' => 'cyberchimps_blog_heading'
+		'section'	=> 'cyberchimps_blog_magazine_section',
+		'heading'	=> 'cyberchimps_blog_heading'
 	);
 	
-	$fields_list[] = array(
-		'name' => __('Number of Featured Posts', 'cyberchimps'),
-		'id' => 'blog_magazine_no_of_posts',
-		'type' => 'select',
-		'std' => '4',
-		'options' => array(
-			'4'  => '4',
+	$fields_list[]	= array(
+		'name'		=> __('Number of Rows', 'cyberchimps'),
+		'id'		=> 'blog_magazine_no_of_rows',
+		'type'		=> 'select',
+		'std'		=> '2',
+		'options'	=> array(
+			'1' => '1', '2' => '2', '3' => '3', '4'  => '4',
 			'5'  => '5',  '6'  => '6',  '7'  => '7',  '8'  => '8',
-			'9'  => '9',  '10' => '10', '11' => '11',  '12' => '12',
+			'9'  => '9',  '10' => '10', '11' => '11', '12' => '12',
 			'13' => '13', '14' => '14', '15' => '15', '16' => '16',
 			'17' => '17', '18' => '18', '19' => '19', '20' => '20'
 		),
-		'section' => 'cyberchimps_blog_magazine_section',
-		'heading' => 'cyberchimps_blog_heading'
+		'section'	=> 'cyberchimps_blog_magazine_section',
+		'heading'	=> 'cyberchimps_blog_heading'
 	);
 	
-	$fields_list[] = array(
-		'name' => __('Wide Posts Below Magazine', 'cyberchimps'),
-		'id' => 'blog_magazine_wide_post',
-		'type' => 'toggle',
-		'std' => 'checked',
-		'section' => 'cyberchimps_blog_magazine_section',
-		'heading' => 'cyberchimps_blog_heading'
+	$fields_list[]	= array(
+		'name'		=> __('Wide Posts Below Magazine', 'cyberchimps'),
+		'id'		=> 'blog_magazine_wide_post',
+		'type'		=> 'toggle',
+		'std'		=> 'checked',
+		'section'	=> 'cyberchimps_blog_magazine_section',
+		'heading'	=> 'cyberchimps_blog_heading'
 	);
 	
-	$fields_list[] = array(
-		'name' => __('Wide Post Excerpt Length', 'cyberchimps'),
-		'id' => 'blog_magazine_wide_excerpt_length',
-		'type' => 'text',
-		'std' => '130',
-		'section' => 'cyberchimps_blog_magazine_section',
-		'heading' => 'cyberchimps_blog_heading'
+	$fields_list[]	= array(
+		'name'		=> __('Wide Post Excerpt Length', 'cyberchimps'),
+		'id'		=> 'blog_magazine_wide_excerpt_length',
+		'type'		=> 'text',
+		'std'		=> '130',
+		'section'	=> 'cyberchimps_blog_magazine_section',
+		'heading'	=> 'cyberchimps_blog_heading'
 	);
 	
-	$fields_list[] = array(
-		'name' => __('Number of Wide Posts', 'cyberchimps'),
-		'id' => 'blog_magazine_no_of_wide_posts',
-		'type' => 'select',
-		'std' => '6',
-		'options' => array(
+	$fields_list[]	= array(
+		'name'		=> __('Number of Wide Posts', 'cyberchimps'),
+		'id'		=> 'blog_magazine_no_of_wide_posts',
+		'type'		=> 'select',
+		'std'		=> '6',
+		'options'	=> array(
 			'1'  => '1',  '2'  => '2',  '3'  => '3',  '4'  => '4',
 			'5'  => '5',  '6'  => '6',  '7'  => '7',  '8'  => '8',
-			'9'  => '9',  '10' => '10', '11' => '11',  '12' => '12',
+			'9'  => '9',  '10' => '10', '11' => '11', '12' => '12',
 			'13' => '13', '14' => '14', '15' => '15', '16' => '16',
 			'17' => '17', '18' => '18', '19' => '19', '20' => '20'
 		),
-		'section' => 'cyberchimps_blog_magazine_section',
-		'heading' => 'cyberchimps_blog_heading'
-	);*/
+		'section'	=> 'cyberchimps_blog_magazine_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
 	/********* MAGAZINE ENDS *****************/
 
 	/********* BLOG SLIDER STARTS ***********/
@@ -1827,7 +1842,251 @@ endif;// end pro option fields
 		'section' => 'cyberchimps_featured_posts_section',
 		'heading' => 'cyberchimps_blog_heading'
 	);
+	/********* FEATURED POSTS ENDS ************/
+	
+	/********* PROFILE OPTIONS STARTS **********/
+	$fields_list[]	= array(
+		'name'		=> __('Profile Name', 'cyberchimps'),
+		'id'		=> 'profile_name',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('Profile Picture', 'cyberchimps'),
+		'desc'		=> __('Enter URL or upload picture', 'cyberchimps'),
+		'id'		=> 'profile_picture',
+		'type'		=> 'upload',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('Profession', 'cyberchimps'),
+		'id'		=> 'profile_profession',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('About', 'cyberchimps'),
+		'id'		=> 'profile_about',
+		'std'		=> '',
+		'type'		=> 'textarea',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('Location', 'cyberchimps'),
+		'id'		=> 'profile_location',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('Phone Number', 'cyberchimps'),
+		'id'		=> 'profile_phone',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('Email Address', 'cyberchimps'),
+		'id'		=> 'profile_email',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('Website Address', 'cyberchimps'),
+		'id'		=> 'profile_website',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	/* Social options for profile starts */
+	$fields_list[]	= array(
+		'name'		=> __('Twitter', 'cyberchimps'),
+		'id' 		=> 'profile_twitter',
+		'std'		=> 'checked',
+		'type'		=> 'toggle',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading');
 		
+	$fields_list[]	= array(
+		'name'		=> __('Twitter URL', 'cyberchimps'),
+		'id'		=> 'profile_twitter_url',
+		'class'		=> 'profile_twitter_toggle',
+		'std'		=> 'http://www.twitter.com/',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+
+	$fields_list[]	= array(
+		'name'		=> __('Facebook', 'cyberchimps'),
+		'id'		=> 'profile_facebook',
+		'std'		=> 'checked',
+		'type'		=> 'toggle',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading');
+
+	$fields_list[]	= array(
+		'name'		=> __('Facebook URL', 'cyberchimps'),
+		'id'		=> 'profile_facebook_url',
+		'class'		=> 'profile_facebook_toggle',
+		'std'		=> 'http://www.facebook.com/',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('Google+', 'cyberchimps'),
+		'id'		=> 'profile_google',
+		'std'		=> 'checked',
+		'type'		=> 'toggle',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading');
+		
+	$fields_list[]	= array(
+		'name'		=> __('Google+ URL', 'cyberchimps'),
+		'id'		=> 'profile_google_url',
+		'class'		=> 'profile_google_toggle',
+		'std'		=> 'http://www.google.com/',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('Flickr', 'cyberchimps'),
+		'id'		=> 'profile_flickr',
+		'type'		=> 'toggle',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading');
+		
+	$fields_list[]	= array(
+		'name'		=> __('Flickr URL', 'cyberchimps'),
+		'id'		=> 'profile_flickr_url',
+		'class'		=> 'profile_flickr_toggle',
+		'std'		=> 'http://www.flickr.com/',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('Pinterest', 'cyberchimps'),
+		'id'		=> 'profile_pinterest',
+		'type'		=> 'toggle',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading');
+		
+	$fields_list[]	= array(
+		'name'		=> __('Pinterest URL', 'cyberchimps'),
+		'id'		=> 'profile_pinterest_url',
+		'class'		=> 'profile_pinterest_toggle',
+		'std'		=> 'http://www.pinterest.com/',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('LinkedIn', 'cyberchimps'),
+		'id'		=> 'profile_linkedin',
+		'type'		=> 'toggle',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading');
+		
+	$fields_list[] = array(
+		'name'		=> __('LinkedIn URL', 'cyberchimps'),
+		'id'		=> 'profile_linkedin_url',
+		'class'		=> 'profile_linkedin_toggle',
+		'std'		=> 'http://www.linkedin.com/',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('YouTube', 'cyberchimps'),
+		'id'		=> 'profile_youtube',
+		'type'		=> 'toggle',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading');
+		
+	$fields_list[]	= array(
+		'name'		=> __('YouTube URL', 'cyberchimps'),
+		'id'		=> 'profile_youtube_url',
+		'class'		=> 'profile_youtube_toggle',
+		'std'		=> 'http://www.youtube.com/',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('RSS', 'cyberchimps'),
+		'id'		=> 'profile_rss',
+		'type'		=> 'toggle',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading');
+		
+	$fields_list[]	= array(
+		'name'		=> __('RSS URL', 'cyberchimps'),
+		'id'		=> 'profile_rss_url',
+		'class'		=> 'profile_rss_toggle',
+		'std'		=> get_bloginfo_rss( 'rss_url' ),
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('Email', 'cyberchimps'),
+		'id'		=> 'profile_email_id',
+		'type'		=> 'toggle',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading');
+		
+	$fields_list[]	= array(
+		'name'		=> __('Email Address', 'cyberchimps'),
+		'id'		=> 'profile_email_id_url',
+		'class'		=> 'profile_email_id_toggle',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	$fields_list[]	= array(
+		'name'		=> __('Google Maps', 'cyberchimps'),
+		'id'		=> 'profile_googlemaps',
+		'type'		=> 'toggle',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading');
+	
+	$fields_list[]	= array(
+		'name'		=> __('Google Maps URL', 'cyberchimps'),
+		'id'		=> 'profile_googlemaps_url',
+		'class'		=> 'profile_googlemaps_toggle',
+		'std'		=> 'http://www.maps.google.com/',
+		'type'		=> 'text',
+		'section'	=> 'cyberchimps_profile_section',
+		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	/* Social options for profile ends */
+	
+	/********* PROFILE OPTIONS ENDS ************/
+	
 /*************************** TEMPLATES ***************************************************/
 	
 /* SINGLE POSTS */
