@@ -2,7 +2,7 @@
 /*
 	Template Name: Front Page
 	Design Theme's Front Page to Display the Home Page if Selected
-	Copyright: 2012, D5 Creation, www.d5creation.com
+	Copyright: 2012-2013, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Design 1.0
 */
