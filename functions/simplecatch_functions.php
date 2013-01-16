@@ -194,7 +194,6 @@ function simplecatch_headerdetails() {
 	if ( ( !$simplecatch_headerdetails = get_transient( 'simplecatch_headerdetails' ) ) && ( empty( $options[ 'remove_header_logo' ] ) || empty( $options[ 'remove_site_title' ] ) || empty( $options[ 'remove_site_description' ] ) ) ) {
 		echo '<!-- refreshing cache -->';
 		$simplecatch_headerdetails = '<div class="logo-wrap">';
-		
 		if( empty( $options[ 'remove_header_logo' ] ) ) {
 			$simplecatch_headerdetails .= '<h1 id="site-logo"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'">';
 			
@@ -221,6 +220,7 @@ function simplecatch_headerdetails() {
 			
 			$simplecatch_headerdetails .= '</div><!-- .site-details -->';	
 		}
+        $simplecatch_headerdetails .= '</div><!-- .logo-wrap -->';	
 		
 	set_transient( 'simplecatch_headerdetails', $simplecatch_headerdetails, 86940 );
 	}
