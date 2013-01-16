@@ -1,4 +1,9 @@
-<?php if ( post_password_required())
+<?php 
+/*
+@package WordPress
+@subpackage Rockers 
+*/
+if ( post_password_required())
     return; ?>
 <div id="comments" class="comments-area">
     <?php if (have_comments()) : ?>
@@ -9,8 +14,10 @@
         <?php if ( get_comment_pages_count() > 1 && get_option('page_comments')) : ?>
             <nav id="comment-pagination-bottom" class="navigation">
                 <h1 class="accessibility section-heading"><?php _e('Comment navigation', 'rockers'); ?></h1>
-                <div class="prev-link"><?php previous_comments_link( __('&larr; Older Comments', 'rockers')); ?></div>
-                <div class="next-link"><?php next_comments_link( __('Newer Comments &rarr;', 'rockers')); ?></div>
+                <ul>
+                    <li class="prev-link"><?php previous_comments_link( __('&larr; Older Comments', 'rockers')); ?></li>
+                    <li class="next-link"><?php next_comments_link( __('Newer Comments &rarr;', 'rockers')); ?></li>
+                </ul>
             </nav>
         <?php endif;
         elseif ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments')) : ?>

@@ -1,4 +1,9 @@
-<?php get_header(); ?>
+<?php 
+/*
+@package WordPress
+@subpackage Rockers 
+*/
+get_header(); ?>
     <div id="content">
         <?php if (have_posts()) : ?>
             <header class="page-header">

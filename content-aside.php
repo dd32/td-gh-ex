@@ -6,7 +6,7 @@
             </div>
         </div>
         <footer class="post-meta">
-            <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __('Permalink to %s', 'rockers'), the_title_attribute('echo=0')) ); ?>" rel="bookmark"><?php echo get_the_date(); ?></a>
-            <?php edit_post_link( __('Edit', 'rockers'), '<span class="edit-link">', '</span>'); ?>
+            <p><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __('Permalink to %s', 'rockers'), the_title_attribute('echo=0')) ); ?>" rel="bookmark"><?php echo get_the_date(); ?></a></p>
+            <p><?php edit_post_link( __('Edit', 'rockers'), '<span class="edit-link">', '</span>'); ?></p>
         </footer>
     </article>

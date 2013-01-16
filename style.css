@@ -4,7 +4,7 @@ Author: Alberto Ramacciotti
 Author URI: http://ramacciotti.altervista.org
 Theme URI: http://ramacciotti.altervista.org/archivio/articolo/rockers-theme
 Description: Rockers is a responsive theme for bloggers with a clean design.
-Version: 1.0
+Version: 2.0
 License: GNU General Public License v2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, left-sidebar, light, flexible-width, custom-menu, editor-style, threaded-comments, featured-images, sticky-post, translation-ready, post-formats, rtl-language-support, threaded-comments
@@ -126,7 +126,14 @@ label ~ span.required,
 .widget-twitter .timesince,
 img#wpstats,
 .menu a,
-.menu a:visited {
+.menu a:visited,
+.prev-link a,
+.prev-link a:visited,
+.next-link a, 
+.next-link a:visited,
+.blog-header h1 a,
+.blog-header h1 a:visited,
+.post-meta span.edit-link {
     display: block;
 }
 
@@ -147,7 +154,10 @@ audio:not([controls]),
 #pagination-top,
 .menu ul.nav-menu,
 .menu div.nav-menu > ul,
-.single-author .post-meta .by-author {
+.single-author .post-meta .by-author,
+.skip-link,
+.screen-reader-text,
+.accessibility {
     display: none;
 }
 
@@ -263,6 +273,7 @@ h6,
 .format-status .post-header:after,
 footer#footer,
 .post-meta,
+.navigation,
 #numbered-pagination,
 .template-front-page .aside,
 .post-content  ol li.posts-by-tag-item {
@@ -281,7 +292,6 @@ article.post-password-required input[type=submit] {
 }
 
 .posts-by-tag-item img {
-    float: left;
     margin: 0 1em 1em 0;
 }
 
@@ -335,7 +345,7 @@ article.format-quote footer.post-meta,
 article.format-link footer.post-meta,
 article.format-status footer.post-meta {
     font-size: 14px;
-    line-height: 2.181818182;
+    line-height: 2;
 }
 
 #s {
@@ -359,9 +369,15 @@ li.bypostauthor cite span {
     box-shadow: 0 1px 2px rgba(64, 64, 64, 0.1);
     border: 0;
 }
+.menu-toggle:active,
+.menu-toggle.toggled-on {
+    color: #e8e2c6;
+    background-color: transparent;
+    border: 0;
+}
 
 .menu-toggle:hover {
-    color: #5e5e5e;
+    color: #cccccc;
 }
 
 input[type="submit"]:hover {
@@ -374,8 +390,6 @@ input[type="submit"]:hover {
     background-image: linear-gradient(to bottom, #5e1900, #aa5e11);
 }
 
-.menu-toggle:active,
-.menu-toggle.toggled-on,
 input[type="submit"]:active,
 article.post-password-required input[type=submit]:active,
 input[type="submit"].toggled-on {
@@ -440,11 +454,22 @@ video {
     max-width: 100% !important;
 }
 
-.alignleft {
+.alignleft,
+.posts-by-tag-item img,
+.prev-link,
+.previous-image,
+article.format-link .post-content,
+.format-status .post-header img,
+.comments-area article header img,
+.template-front-page .aside .widget-text img,
+label ~ span.required {
     float: left;
 }
 
-.alignright {
+.alignright,
+.next-link,
+.next-image,
+article.format-link header {
     float: right;
 }
 
@@ -515,13 +540,11 @@ img.wp-smiley,
 
 .prev-link,
 .previous-image {
-    float: left;
     width: 50%;
 }
 
 .next-link,
 .next-image {
-    float: right;
     text-align: right;
     width: 50%;
 }
@@ -529,12 +552,15 @@ img.wp-smiley,
 .prev-link a,
 .prev-link a:visited,
 .next-link a, 
-.next-link a:visited,
-.prev-link a:hover,
-.next-link a:hover {
-    display: block;
+.next-link a:visited {
     line-height: 4;
     text-transform: uppercase;
+    border-bottom: 0;
+}
+
+.prev-link a:hover,
+.next-link a:hover {
+    color: #444444;
     border-bottom: 0;
 }
 
@@ -555,7 +581,7 @@ img.wp-smiley,
 .author-description p {
     color: #5e1900;
     font-size: 14px;
-    line-height: 1.846153846;
+    line-height: 1.8;
 }
 
 .author.archive .author-info {
@@ -609,13 +635,6 @@ a:hover {
     border-bottom: 1px solid #c5d3fc;
 }
 
-.skip-link,
-.screen-reader-text,
-.accessibility {
-    position: absolute !important;
-    clip: rect(1px, 1px, 1px, 1px);
-}
-
 .site {
     padding: 0;
     color: #000000;
@@ -648,7 +667,6 @@ a:hover {
     font-weight: normal;
     color: #1f1d0e;
     border: 0;
-    display: block;
 }
 
 .blog-header h1 a:visited,
@@ -737,6 +755,12 @@ a:hover {
 
 #content article {
     margin-bottom: 100px;
+}
+
+.sticky .post-content p {
+    font-size: 1.4em;
+    line-height: 1.6;
+    margin-bottom: .5em;
 }
 
 .sticky .wp-caption + p {
@@ -829,7 +853,7 @@ footer#footer a:hover {
 .comments-link {
     margin: 24px 0;
     font-size: .875em;
-    line-height: 1.2857;
+    line-height: 1.4;
     color: #5e1900;
     font-weight: bold;
     text-transform: uppercase;
@@ -842,9 +866,9 @@ footer#footer a:hover {
 
 .post-content h1,
 .comment-content h1 {
-    font-size: 1.375em;
-    line-height: 1.6364;
-    margin-top: .8182em;
+    font-size: 1.3em;
+    line-height: 1.6;
+    margin-top: 1em;
 }
 
 .post-content h2,
@@ -875,16 +899,16 @@ footer#footer a:hover {
 
 .post-content h5,
 .comment-content h5 {
-    font-size: 0.875em;
-    line-height: 1.2857;
-    margin-top: 1.2857em;
+    font-size: .875em;
+    line-height: 1.4;
+    margin-top: 1.4em;
 }
 
 .post-content h6,
 .comment-content h6 {
-    font-size: 0.875em;
-    line-height: 1.2857;
-    margin-top: 1.2857em;
+    font-size: .875em;
+    line-height: 1.4;
+    margin-top: 1.4em;
 }
 
 .post-content p,
@@ -906,7 +930,7 @@ footer#footer a:hover {
 .post-content ul,
 .comment-content ul {
     margin: 0 0 24px;
-    line-height: 1.714285714;
+    line-height: 1.7;
 }
 
 .post-content ul ul,
@@ -975,7 +999,7 @@ footer#footer a:hover {
 
 .post-content address,
 .comment-content address {
-    line-height: 1.714285714;
+    line-height: 1.7;
     margin: 0 0 24px;
 }
 
@@ -1007,12 +1031,12 @@ img.aligncenter {
 .post-content dt,
 .comment-content dt {
     font-weight: bold;
-    line-height: 1.714285714;
+    line-height: 1.7;
 }
 
 .post-content dd,
 .comment-content dd {
-    line-height: 1.714285714;
+    line-height: 1.7;
     margin-bottom: 24px;
 }
 
@@ -1039,6 +1063,7 @@ img.aligncenter {
 #numbered-pagination {
     line-height: 1.5;
     text-transform: uppercase;
+    margin-top: 1em;
 }
 
 #numbered-pagination a {
@@ -1130,7 +1155,7 @@ article.format-aside .aside {
 
 article.format-aside p {
     font-size: 14px;
-    line-height: 1.846153846;
+    line-height: 1.8;
     color: #4a5466;
 }
 
@@ -1141,19 +1166,18 @@ article.format-aside p:last-child {
 
 article.format-image footer h1 {
     font-size: 14px;
-    line-height: 1.846153846;
+    line-height: 1.8;
 }
 
 article.format-image footer h2 {
     font-size: 14px;
-    line-height: 2.181818182;
+    line-height: 2;
 }
 
 article.format-link header {
     padding: 0 10px;
-    float: right;
     font-size: 14px;
-    line-height: 2.181818182;
+    line-height: 2;
     font-weight: bold;
     font-style: italic;
     color: #848484;
@@ -1162,8 +1186,7 @@ article.format-link header {
 }
 
 article.format-link .post-content {
-    max-width: 80%;
-    float: left;
+    width: 80%;
 }
 
 article.format-link .post-content a {
@@ -1181,8 +1204,8 @@ article.format-quote .post-content blockquote {
     font-size: 15px;
     line-height: 1.6;
     font-style: normal;
-    color: #f1edda;
-    background-color: #efefef;
+    color: #111111;
+    background-color: #efebd3;
 }
 
 .format-status .post-header {
@@ -1202,7 +1225,6 @@ article.format-quote .post-content blockquote {
 }
 
 .format-status .post-header img {
-    float: left;
     margin-right: 21px;
 }
 
@@ -1222,7 +1244,6 @@ article.format-quote .post-content blockquote {
 }
 
 .comments-area article header img {
-    float: left;
     padding: 0;
     margin-right: 1em;
     line-height: 1;
@@ -1267,7 +1288,7 @@ article.format-quote .post-content blockquote {
 
 a.comment-reply-link {
     font-size: 14px;
-    line-height: 1.846153846;
+    line-height: 1.8;
     color: #111111;
 }
 
@@ -1277,7 +1298,7 @@ a.comment-reply-link:hover {
 
 .commentlist .pingback {
     margin-bottom: 24px;
-    line-height: 1.714285714;
+    line-height: 1.7;
 }
 
 .commentlist .children {
@@ -1289,7 +1310,7 @@ a.comment-reply-link:hover {
 }
 
 #respond h3#reply-title {
-    font-size: 16px;
+    font-size: 1.25em;
     line-height: 1.5;
 }
 
@@ -1311,7 +1332,7 @@ a.comment-reply-link:hover {
 }
 
 #respond form label {
-    line-height: 1.714285714;
+    line-height: 1.7;
 }
 
 #respond form input[type="text"],
@@ -1319,7 +1340,7 @@ a.comment-reply-link:hover {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     font-size: 14px;
-    line-height: 1.714285714;
+    line-height: 1.7;
     padding: 10px;
     width: 100%;
 }
@@ -1336,7 +1357,6 @@ a.comment-reply-link:hover {
 }
 
 label ~ span.required {
-    float: left;
     margin: -18px 0 0 -16px;
 }
 
@@ -1345,9 +1365,9 @@ label ~ span.required {
 }
 
 .post-meta span.edit-link {
-    display: block;
-    margin: 5em 0;
+    margin: 1.5em 0;
     font-weight: bold;
+    font-size: 2em;
 }
 
 .template-front-page .aside {
@@ -1358,13 +1378,12 @@ label ~ span.required {
 .template-front-page .aside .widget li {
     margin: 8px 0 0;
     font-size: 14px;
-    line-height: 1.714285714;
+    line-height: 1.7;
     list-style-type: square;
     list-style-position: inside;
 }
 
 .template-front-page .aside .widget-text img {
-    float: left;
     margin: 8px 24px 8px 0;
 }
 
@@ -1387,7 +1406,7 @@ label ~ span.required {
     margin: 0;
     width: 100%;
     font-size: 14px;
-    line-height: 1.846153846;
+    line-height: 1.8;
     color: #111111;
 }
 
@@ -1398,7 +1417,7 @@ label ~ span.required {
 
 .widget-search label {
     font-size: 14px;
-    line-height: 1.846153846;
+    line-height: 1.8;
 }
 
 .widget-twitter li {
@@ -1411,6 +1430,11 @@ label ~ span.required {
 
 img#wpstats {
     margin: 0 auto 24px;
+}
+
+.page.full-width #content {
+    float: none;
+    width: 100%;
 }
 
 @media screen and (min-width: 320px) {
@@ -1566,19 +1590,19 @@ img#wpstats {
 
     .template-front-page.has-post-thumbnail article {
         float: left;
-        width: 47.916666667%;
+        width: 47%;
     }
 
     .post-page-image {
         float: right;
         margin-bottom: 0;
-        width: 47.916666667%;
+        width: 47%;
     }
 
     .template-front-page .aside .widget,
     .template-front-page.two-sidebars .aside .front-widgets {
         float: left;
-        width: 51.875%;
+        width: 51%;
         margin: 24px 13px;
     }
 
@@ -1589,7 +1613,7 @@ img#wpstats {
     .template-front-page .aside .widget:nth-child(even),
     .template-front-page.two-sidebars .aside .front-widgets + .front-widgets {
         float: right;
-        width: 39.0625%;
+        width: 39%;
         margin: 24px 13px;
     }
 
@@ -1758,7 +1782,7 @@ img#wpstats {
 .ie .skip-link,
 .ie .screen-reader-text,
 .ie .accessibility {
-    clip: rect(1px 1px 1px 1px);
+    display: none;
 }
 
 .ie .site {
@@ -1768,7 +1792,7 @@ img#wpstats {
 
 .ie #content {
     float: right;
-    width: 65.104166667%;
+    width: 65%;
 }
 
 .ie .full-width #content {
@@ -1778,7 +1802,7 @@ img#wpstats {
 
 .ie .aside {
     float: right;
-    width: 26.041666667%;
+    width: 26%;
 }
 
 .ie img.size-full,

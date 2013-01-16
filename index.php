@@ -1,4 +1,9 @@
-<?php get_header();
+<?php 
+/*
+@package WordPress
+@subpackage Rockers 
+*/
+get_header();
 $sticky = get_option( 'sticky_posts' );
 $args = array(
     'posts_per_page' => 1,

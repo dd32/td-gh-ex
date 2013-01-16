@@ -1,4 +1,9 @@
-<?php get_header(); ?>
+<?php 
+/*
+@package WordPress
+@subpackage Rockers 
+*/
+get_header(); ?>
     <div id="wrapper" class="content">
         <div id="content">
             <article id="post-0" class="post error404 no-results not-found">

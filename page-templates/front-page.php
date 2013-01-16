@@ -1,4 +1,11 @@
-<?php get_header(); ?>
+<?php 
+/* 
+Template Name: Front Page Template
+@package WordPress
+@subpackage Rockers 
+*/
+
+get_header(); ?>
     <div id="content">
         <?php while (have_posts()) : the_post();
             if (has_post_thumbnail()) : ?>

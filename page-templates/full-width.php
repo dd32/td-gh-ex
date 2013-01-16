@@ -1,4 +1,11 @@
-<?php get_header(); ?>
+<?php 
+/* 
+Template Name: Full-width Page Template, No Sidebar
+@package WordPress
+@subpackage Rockers 
+*/
+
+get_header(); ?>
     <div id="content">
         <?php while (have_posts()) : the_post();
             get_template_part('content', 'page');
