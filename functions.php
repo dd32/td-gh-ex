@@ -99,6 +99,12 @@ function simplecatch_setup() {
 		// Backward Compatibility for WordPress Version 3.3
 		add_custom_background();
 	}	
+
+	//Redirect to Theme Options Page on Activation
+	global $pagenow;
+	if ( is_admin() && isset($_GET['activated'] ) && $pagenow =="themes.php" ) {
+		wp_redirect( 'themes.php?page=theme_options' );
+	}
 	
 } // simplecatch_setup
 endif;

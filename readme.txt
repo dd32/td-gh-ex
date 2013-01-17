@@ -229,3 +229,8 @@ Version 1.8
 
 Version 1.9
 * Added Logo and site title separator
+
+Version 1.9.1
+* Redesign whole Theme Options panel
+* Made Header Logo and Favicon disable by default. 
+* Added action to redirect to Theme Options upon activation

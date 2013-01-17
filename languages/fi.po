@@ -3,15 +3,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tags/simple-catch\n"
-"POT-Creation-Date: 2012-09-28 16:55+0530\n"
-"PO-Revision-Date: 2012-12-15 22:54+0530\n"
-"Last-Translator: Juha Louhiranta <charni@gmail.com>\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-01-18 00:56+0530\n"
+"PO-Revision-Date: 2013-01-18 00:56+0530\n"
+"Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Catch Themes <charni@gmail.com>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "X-Poedit-KeywordsList: __;_e;_x;_ex;_n;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -109,8 +109,8 @@ msgstr "Kaikki oikeudet pidätetään."
 msgid "Primary Menu"
 msgstr "Päävalikko"
 
-#: ../functions.php:115
-#: ../functions.php:117
+#: ../functions.php:121
+#: ../functions.php:123
 msgid "sidebar"
 msgstr "sivupalkki"
 
@@ -158,163 +158,144 @@ msgstr "%s"
 msgid "Page %s"
 msgstr "Sivu %s"
 
-#: ../functions/simplecatch_functions.php:436
+#: ../functions/simplecatch_functions.php:432
 #, php-format
 msgid "%s in Facebook"
 msgstr "%s Facebookissa"
 
-#: ../functions/simplecatch_functions.php:441
+#: ../functions/simplecatch_functions.php:437
 #, php-format
 msgid "%s in Twitter"
 msgstr "%s Twitterissä"
 
-#: ../functions/simplecatch_functions.php:446
+#: ../functions/simplecatch_functions.php:442
 #, php-format
 msgid "%s in Google+"
 msgstr "%s Google+:ssa"
 
-#: ../functions/simplecatch_functions.php:451
+#: ../functions/simplecatch_functions.php:447
 #, php-format
 msgid "%s in Linkedin"
 msgstr "%s Linkedin:ssä"
 
-#: ../functions/simplecatch_functions.php:456
+#: ../functions/simplecatch_functions.php:452
 #, php-format
 msgid "%s in Pinterest"
 msgstr "%s Pinterestissä"
 
-#: ../functions/simplecatch_functions.php:461
+#: ../functions/simplecatch_functions.php:457
 #, php-format
 msgid "%s in YouTube"
 msgstr "%s YouTubessa"
 
-#: ../functions/simplecatch_functions.php:466
+#: ../functions/simplecatch_functions.php:462
 #, php-format
 msgid "%s in Vimeo"
 msgstr "%s Vimeossa"
 
-#: ../functions/simplecatch_functions.php:471
+#: ../functions/simplecatch_functions.php:467
 #, php-format
 msgid "%s in Slideshare"
 msgstr "%s Slidesharessa"
 
-#: ../functions/simplecatch_functions.php:476
+#: ../functions/simplecatch_functions.php:472
 #, php-format
 msgid "%s in Foursquare"
 msgstr "%s Foursquaressa"
 
-#: ../functions/simplecatch_functions.php:481
+#: ../functions/simplecatch_functions.php:477
 #, php-format
 msgid "%s in Flickr"
 msgstr "%s Flickrissä"
 
-#: ../functions/simplecatch_functions.php:486
+#: ../functions/simplecatch_functions.php:482
 #, php-format
 msgid "%s in Tumblr"
 msgstr "%s Tumblrissa"
 
-#: ../functions/simplecatch_functions.php:491
+#: ../functions/simplecatch_functions.php:487
 #, php-format
 msgid "%s in deviantART"
 msgstr "%s deviantARTissa"
 
-#: ../functions/simplecatch_functions.php:496
+#: ../functions/simplecatch_functions.php:492
 #, php-format
 msgid "%s in Dribbble"
 msgstr "%s Dribbblessä"
 
-#: ../functions/simplecatch_functions.php:501
+#: ../functions/simplecatch_functions.php:497
 #, php-format
 msgid "%s in MySpace"
 msgstr "%s MySpacessa"
 
-#: ../functions/simplecatch_functions.php:506
+#: ../functions/simplecatch_functions.php:502
 #, php-format
 msgid "%s in WordPress"
 msgstr "%s WordPressissä"
 
-#: ../functions/simplecatch_functions.php:511
+#: ../functions/simplecatch_functions.php:507
 #, php-format
 msgid "%s in RSS"
 msgstr "%s RSS feed"
 
-#: ../functions/simplecatch_functions.php:516
+#: ../functions/simplecatch_functions.php:512
 #, php-format
 msgid "%s in Delicious"
 msgstr "%s Delicious:ssä"
 
-#: ../functions/simplecatch_functions.php:521
+#: ../functions/simplecatch_functions.php:517
 #, php-format
 msgid "%s in Last.fm"
 msgstr "%s Last.fm:ssä"
 
-#: ../functions/simplecatch_functions.php:674
+#: ../functions/simplecatch_functions.php:670
 msgid "Powered By:"
 msgstr "Alustana toimii:"
 
-#: ../functions/simplecatch_functions.php:674
+#: ../functions/simplecatch_functions.php:670
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: ../functions/simplecatch_functions.php:674
+#: ../functions/simplecatch_functions.php:670
 msgid "Powered By WordPress"
 msgstr "Alustana toimii WordPress"
 
-#: ../functions/simplecatch_functions.php:674
-#: ../functions/panel/theme_options.php:735
+#: ../functions/simplecatch_functions.php:670
+#: ../functions/panel/theme_options.php:664
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../functions/simplecatch_functions.php:674
+#: ../functions/simplecatch_functions.php:670
 msgid "Theme:"
 msgstr "Teema:"
 
-#: ../functions/simplecatch_functions.php:674
-#: ../functions/panel/theme_options.php:123
-#: ../functions/panel/theme_options.php:530
-#: ../functions/panel/theme_options.php:646
-#: ../functions/panel/theme_options.php:780
+#: ../functions/simplecatch_functions.php:670
+#: ../functions/panel/theme_options.php:118
 msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
-#: ../functions/simplecatch_functions.php:674
+#: ../functions/simplecatch_functions.php:670
 msgid "Simple Catch"
 msgstr "Simple Catch"
 
-#: ../functions/simplecatch_functions.php:847
+#: ../functions/simplecatch_functions.php:843
 msgid "Categories: "
 msgstr "Kategoriat:"
 
-#: ../functions/simplecatch_functions.php:909
-msgid "http://catchthemes.com/themes/simple-catch-pro"
-msgstr "http://catchthemes.com/themes/simple-catch-pro"
-
-#: ../functions/simplecatch_functions.php:909
-msgid "Upgrade to Simple Catch Pro"
-msgstr "Päivitä Simple Cacth Pro"
-
-#: ../functions/simplecatch_functions.php:914
-msgid "http://facebook.com/catchthemes"
-msgstr "http://facebook.com/catchthemes"
-
-#: ../functions/simplecatch_functions.php:917
-msgid "https://twitter.com/catchthemes"
-msgstr "https://twitter.com/catchthemes"
-
-#: ../functions/simplecatch_functions.php:937
+#: ../functions/simplecatch_functions.php:905
 msgid "Name"
 msgstr "Nimi"
 
-#: ../functions/simplecatch_functions.php:937
-#: ../functions/simplecatch_functions.php:938
+#: ../functions/simplecatch_functions.php:905
+#: ../functions/simplecatch_functions.php:906
 msgid "( required )"
 msgstr "( pakollinen )"
 
-#: ../functions/simplecatch_functions.php:938
+#: ../functions/simplecatch_functions.php:906
 msgid "Email"
 msgstr "Sähköposti"
 
-#: ../functions/simplecatch_functions.php:939
+#: ../functions/simplecatch_functions.php:907
 msgid "Website"
 msgstr "Kotisivu"
 
@@ -328,7 +309,7 @@ msgid "Default Layout Set in"
 msgstr "Oletusulkoasu, joka on asetettu paikassa"
 
 #: ../functions/simplecatch_metabox.php:33
-#: ../functions/panel/theme_options.php:141
+#: ../functions/panel/theme_options.php:144
 msgid "Theme Settings"
 msgstr "Teeman asetukset"
 
@@ -348,487 +329,577 @@ msgstr "Oikean sivupalkki"
 msgid "Displays Custom Tag Cloud"
 msgstr "Näyttää mukautetun Tagipilven"
 
-#: ../functions/panel/theme_options.php:42
-#: ../functions/panel/theme_options.php:43
-#: ../functions/panel/theme_options.php:123
+#: ../functions/panel/theme_options.php:39
+#: ../functions/panel/theme_options.php:40
 msgid "Theme Options"
 msgstr "Teeman asetukset"
 
-#: ../functions/panel/theme_options.php:50
-msgid "Slider Options"
-msgstr "Korostettujen artikkeleiden asetukset"
+#: ../functions/panel/theme_options.php:101
+#, fuzzy
+msgid "Options Saved"
+msgstr "Asetukset tallennettu."
 
-#: ../functions/panel/theme_options.php:51
-msgid "Featured Slider"
-msgstr "Korostetut artikkelit"
+#: ../functions/panel/theme_options.php:108
+msgid "http://facebook.com/catchthemes"
+msgstr "http://facebook.com/catchthemes"
 
-#: ../functions/panel/theme_options.php:58
-#: ../functions/panel/theme_options.php:59
-msgid "Social Links"
-msgstr "Sosiaaliset linkit"
+#: ../functions/panel/theme_options.php:110
+msgid "https://twitter.com/catchthemes"
+msgstr "https://twitter.com/catchthemes"
 
-#: ../functions/panel/theme_options.php:66
-#: ../functions/panel/theme_options.php:67
-msgid "Webmaster Tools"
-msgstr "Webmasterin työkalut"
+#: ../functions/panel/theme_options.php:116
+#, fuzzy
+msgid "Theme Options By"
+msgstr "Teeman asetukset"
 
-#: ../functions/panel/theme_options.php:123
-#: ../functions/panel/theme_options.php:530
-#: ../functions/panel/theme_options.php:646
-#: ../functions/panel/theme_options.php:780
+#: ../functions/panel/theme_options.php:118
+#: ../functions/panel/theme_options.php:119
 msgid "Catch Themes"
 msgstr "Catch Themes"
 
-#: ../functions/panel/theme_options.php:134
-#: ../functions/panel/theme_options.php:541
-#: ../functions/panel/theme_options.php:657
-#: ../functions/panel/theme_options.php:791
-msgid "Settings saved."
-msgstr "Asetukset tallennettu."
+#: ../functions/panel/theme_options.php:124
+#, fuzzy
+msgid "http://catchthemes.com/themes/simple-catch-pro/"
+msgstr "http://catchthemes.com/themes/simple-catch-pro"
 
-#: ../functions/panel/theme_options.php:140
+#: ../functions/panel/theme_options.php:124
+msgid "Upgrade to Simple Catch Pro"
+msgstr "Päivitä Simple Cacth Pro"
+
+#: ../functions/panel/theme_options.php:129
+#, fuzzy
+msgid "http://catchthemes.com/support-forum/forum/simple-catch-public/"
+msgstr "http://catchthemes.com/themes/simple-catch-pro"
+
+#: ../functions/panel/theme_options.php:129
+msgid "Support Forum"
+msgstr ""
+
+#: ../functions/panel/theme_options.php:130
+#, fuzzy
+msgid "http://catchthemes.com/theme-instructions/simple-catch/"
+msgstr "http://catchthemes.com/themes/simple-catch-pro"
+
+#: ../functions/panel/theme_options.php:130
+#, fuzzy
+msgid "Theme Instruction"
+msgstr "Teeman asetukset"
+
+#: ../functions/panel/theme_options.php:131
+#, fuzzy
+msgid "https://www.facebook.com/catchthemes/"
+msgstr "http://facebook.com/catchthemes"
+
+#: ../functions/panel/theme_options.php:131
+#, fuzzy
+msgid "Like Catch Themes on Facebook"
+msgstr "Catch Themes Team"
+
+#: ../functions/panel/theme_options.php:131
+#: ../functions/panel/theme_options.php:593
+msgid "Facebook"
+msgstr "Facebook"
+
+#: ../functions/panel/theme_options.php:132
+#, fuzzy
+msgid "https://twitter.com/catchthemes/"
+msgstr "https://twitter.com/catchthemes"
+
+#: ../functions/panel/theme_options.php:132
+#, fuzzy
+msgid "Follow Catch Themes on Twitter"
+msgstr "Catch Themes Team"
+
+#: ../functions/panel/theme_options.php:132
+#: ../functions/panel/theme_options.php:598
+msgid "Twitter"
+msgstr "Twitter"
+
+#: ../functions/panel/theme_options.php:133
+#, fuzzy
+msgid "http://wordpress.org/support/view/theme-reviews/simple-catch"
+msgstr "http://wordpress.org/extend/themes/simple-catch"
+
+#: ../functions/panel/theme_options.php:133
+#, fuzzy
+msgid "Rate us 5 Star on WordPress"
+msgstr "%s WordPressissä"
+
+#: ../functions/panel/theme_options.php:133
+msgid "5 Star Rating"
+msgstr ""
+
+#: ../functions/panel/theme_options.php:143
 msgid "Design Settings"
 msgstr "Ulkoasun asetukset"
 
+#: ../functions/panel/theme_options.php:145
+#, fuzzy
+msgid "Featured Post Slider"
+msgstr "Korostetut artikkelit"
+
+#: ../functions/panel/theme_options.php:146
+msgid "Social Links"
+msgstr "Sosiaaliset linkit"
+
 #: ../functions/panel/theme_options.php:147
+msgid "Webmaster Tools"
+msgstr "Webmasterin työkalut"
+
+#: ../functions/panel/theme_options.php:153
 msgid "Logo Options"
 msgstr "Logon asetukset"
 
-#: ../functions/panel/theme_options.php:152
-msgid "Disable Header Logo:"
-msgstr "Poista käytöstä otsakkeen logo:"
-
-#: ../functions/panel/theme_options.php:157
+#: ../functions/panel/theme_options.php:158
 msgid "Header logo url:"
 msgstr "Otsakkeen logon URL:"
 
-#: ../functions/panel/theme_options.php:165
-msgid "Change Header Logo"
+#: ../functions/panel/theme_options.php:162
+#, fuzzy
+msgid "Change Logo"
 msgstr "Vaihda otsakkeen logo"
 
-#: ../functions/panel/theme_options.php:169
+#: ../functions/panel/theme_options.php:165
+msgid "Upload Logo"
+msgstr ""
+
+#: ../functions/panel/theme_options.php:172
 msgid "Preview:"
 msgstr "Esikatselu:"
 
-#: ../functions/panel/theme_options.php:181
-msgid "Disable Site Title:"
+#: ../functions/panel/theme_options.php:178
+msgid "No Header Image Found. Upload Header Image."
+msgstr ""
+
+#: ../functions/panel/theme_options.php:185
+#, fuzzy
+msgid "Disable Site Title?"
 msgstr "Poista sivuston otsikko käytöstä:"
 
-#: ../functions/panel/theme_options.php:186
-msgid "Disable Site Description:"
+#: ../functions/panel/theme_options.php:187
+#: ../functions/panel/theme_options.php:192
+#: ../functions/panel/theme_options.php:220
+msgid "Check to Disable."
+msgstr ""
+
+#: ../functions/panel/theme_options.php:190
+#, fuzzy
+msgid "Disable Site Description?"
 msgstr "Poista sivuston kuvaus käytöstä:"
 
-#: ../functions/panel/theme_options.php:191
-msgid "Disable Footer Logo:"
-msgstr "Poista alatunnisteen logo käytöstä:"
-
-#: ../functions/panel/theme_options.php:196
+#: ../functions/panel/theme_options.php:195
 msgid "Footer logo url: "
 msgstr "Alatunnisteen logon URL:"
 
-#: ../functions/panel/theme_options.php:203
+#: ../functions/panel/theme_options.php:202
 msgid "Change Footer Logo"
 msgstr "Vaihda alatunnisteen logo"
 
-#: ../functions/panel/theme_options.php:207
-#: ../functions/panel/theme_options.php:246
+#: ../functions/panel/theme_options.php:206
+#: ../functions/panel/theme_options.php:247
 msgid "Preview: "
 msgstr "Esikatselu:"
 
-#: ../functions/panel/theme_options.php:220
-#: ../functions/panel/theme_options.php:259
-#: ../functions/panel/theme_options.php:353
-#: ../functions/panel/theme_options.php:377
-#: ../functions/panel/theme_options.php:405
-#: ../functions/panel/theme_options.php:443
-#: ../functions/panel/theme_options.php:464
-#: ../functions/panel/theme_options.php:484
-#: ../functions/panel/theme_options.php:500
-#: ../functions/panel/theme_options.php:570
-#: ../functions/panel/theme_options.php:621
-#: ../functions/panel/theme_options.php:757
-#: ../functions/panel/theme_options.php:819
-#: ../functions/panel/theme_options.php:849
+#: ../functions/panel/theme_options.php:218
+#, fuzzy
+msgid "Disable Footer Logo?"
+msgstr "Poista alatunnisteen logo käytöstä:"
+
+#: ../functions/panel/theme_options.php:224
+#: ../functions/panel/theme_options.php:261
+#: ../functions/panel/theme_options.php:355
+#: ../functions/panel/theme_options.php:379
+#: ../functions/panel/theme_options.php:407
+#: ../functions/panel/theme_options.php:444
+#: ../functions/panel/theme_options.php:465
+#: ../functions/panel/theme_options.php:485
+#: ../functions/panel/theme_options.php:501
+#: ../functions/panel/theme_options.php:532
+#: ../functions/panel/theme_options.php:583
+#: ../functions/panel/theme_options.php:713
+#: ../functions/panel/theme_options.php:743
 msgid "Save"
 msgstr "Tallenna"
 
-#: ../functions/panel/theme_options.php:225
+#: ../functions/panel/theme_options.php:229
 msgid "Fav Icon Options"
 msgstr "Faviconin asetukset"
 
-#: ../functions/panel/theme_options.php:230
-msgid "Disable Favicon:"
-msgstr "Poista Favicon käytöstä:"
-
-#: ../functions/panel/theme_options.php:235
-msgid "Fav Icon URL:"
+#: ../functions/panel/theme_options.php:234
+#, fuzzy
+msgid "Favicon URL:"
 msgstr "Faviconin URL:"
 
-#: ../functions/panel/theme_options.php:241
-msgid "Change Fav Icon"
+#: ../functions/panel/theme_options.php:237
+#, fuzzy
+msgid "Change Favicon"
 msgstr "Vaihda Favicon"
 
-#: ../functions/panel/theme_options.php:264
+#: ../functions/panel/theme_options.php:240
+#, fuzzy
+msgid "Upload Favicon"
+msgstr "Poista Favicon käytöstä:"
+
+#: ../functions/panel/theme_options.php:253
+msgid "No Favicon Found. Upload Favicon."
+msgstr ""
+
+#: ../functions/panel/theme_options.php:266
 msgid "Content Background"
 msgstr "Sisällön tausta"
 
-#: ../functions/panel/theme_options.php:266
+#: ../functions/panel/theme_options.php:268
 msgid "Need to replace default background?"
 msgstr "Täytyykö oletustaustakuva vaihtaa?"
 
-#: ../functions/panel/theme_options.php:266
+#: ../functions/panel/theme_options.php:268
 #, php-format
 msgid "<a class=\"button\" href=\"%s\">Click here</a>"
 msgstr "<a class=\"button\" href=\"%s\">Klikkaa tästä</a>"
 
-#: ../functions/panel/theme_options.php:272
+#: ../functions/panel/theme_options.php:274
 msgid "Content Color Options"
 msgstr "Sisällön väriasetukset"
 
-#: ../functions/panel/theme_options.php:279
+#: ../functions/panel/theme_options.php:281
 msgid "Heading Color:"
 msgstr "Otsikon väri:"
 
-#: ../functions/panel/theme_options.php:290
+#: ../functions/panel/theme_options.php:292
 msgid "Meta Description Color:"
 msgstr "Kuvauksen väri:"
 
-#: ../functions/panel/theme_options.php:301
+#: ../functions/panel/theme_options.php:303
 msgid "Text Color:"
 msgstr "Tekstin väri:"
 
-#: ../functions/panel/theme_options.php:312
+#: ../functions/panel/theme_options.php:314
 msgid "Link Color:"
 msgstr "Linkin väri:"
 
-#: ../functions/panel/theme_options.php:323
+#: ../functions/panel/theme_options.php:325
 msgid "Sidebar Widget Heading Color:"
 msgstr "Sivupalkin vimpaimen otsakkeen väri:"
 
-#: ../functions/panel/theme_options.php:334
+#: ../functions/panel/theme_options.php:336
 msgid "Sidebar Widget Text Color:"
 msgstr "Sivupalkin vimpaimen tekstin väri:"
 
-#: ../functions/panel/theme_options.php:344
+#: ../functions/panel/theme_options.php:346
 msgid "Reset Color:"
 msgstr "Resetoi värit:"
 
-#: ../functions/panel/theme_options.php:358
+#: ../functions/panel/theme_options.php:360
 msgid "Custom CSS"
 msgstr "Mukautettu CSS"
 
-#: ../functions/panel/theme_options.php:363
+#: ../functions/panel/theme_options.php:365
 msgid "Enter your custom CSS styles."
 msgstr "Kirjoita tähän mukautetut CSS-tyylisi."
 
-#: ../functions/panel/theme_options.php:370
+#: ../functions/panel/theme_options.php:372
 msgid "CSS Tutorial from W3Schools."
 msgstr " W3Schools:n CSS-tutoriaali."
 
-#: ../functions/panel/theme_options.php:372
+#: ../functions/panel/theme_options.php:374
 msgid "http://www.w3schools.com/css/default.asp"
 msgstr "http://www.w3schools.com/css/default.asp"
 
-#: ../functions/panel/theme_options.php:372
+#: ../functions/panel/theme_options.php:374
 msgid "CSS Tutorial"
 msgstr "CSS-tutoriaali"
 
-#: ../functions/panel/theme_options.php:372
+#: ../functions/panel/theme_options.php:374
 msgid "Click Here to Read"
 msgstr "Paina tästä lukeaksesi"
 
-#: ../functions/panel/theme_options.php:382
-#: ../functions/panel/theme_options.php:387
+#: ../functions/panel/theme_options.php:384
+#: ../functions/panel/theme_options.php:389
 msgid "Default Layout"
 msgstr "Oletusulkoasu"
 
-#: ../functions/panel/theme_options.php:391
+#: ../functions/panel/theme_options.php:393
 msgid "No Sidebar, One Column"
 msgstr "Ei sivupalkkia, yksi palsta"
 
-#: ../functions/panel/theme_options.php:395
+#: ../functions/panel/theme_options.php:397
 msgid "Content on Right"
 msgstr "Sisältö oikealla"
 
-#: ../functions/panel/theme_options.php:399
+#: ../functions/panel/theme_options.php:401
 msgid "Content on Left"
 msgstr "Sisältö vasemmalla"
 
-#: ../functions/panel/theme_options.php:414
+#: ../functions/panel/theme_options.php:415
 msgid "Homepage / Frontpage Category Setting"
 msgstr "Kotisivun / Etusivun kategorian asetus"
 
-#: ../functions/panel/theme_options.php:420
+#: ../functions/panel/theme_options.php:421
 msgid "Front page posts categories:"
 msgstr "Etusivun artikkeleiden kategoriat:"
 
-#: ../functions/panel/theme_options.php:422
+#: ../functions/panel/theme_options.php:423
 msgid "Only posts that belong to the categories selected here will be displayed on the front page."
 msgstr "Ainoastaan artikkelit, jotka kuuluvat valittuihin kategorioihin, näytetään etusivulla."
 
-#: ../functions/panel/theme_options.php:427
+#: ../functions/panel/theme_options.php:428
 msgid "--Disabled--"
 msgstr "--Pois käytöstä--"
 
-#: ../functions/panel/theme_options.php:438
+#: ../functions/panel/theme_options.php:439
 msgid "You may select multiple categories by holding down the CTRL key."
 msgstr "Voit valita useita kategorioita pitämällä CTRL-nappia pohjassa."
 
-#: ../functions/panel/theme_options.php:448
+#: ../functions/panel/theme_options.php:449
 msgid "Search Text Settings"
 msgstr "Hakukentän tekstin asetukset"
 
-#: ../functions/panel/theme_options.php:453
+#: ../functions/panel/theme_options.php:454
 msgid "Default Display Text in Search"
 msgstr "Hakukentässä näytettävä oletusteksti"
 
-#: ../functions/panel/theme_options.php:458
+#: ../functions/panel/theme_options.php:459
 msgid "Search Button's text"
 msgstr "Hakunappulan teksti"
 
-#: ../functions/panel/theme_options.php:469
+#: ../functions/panel/theme_options.php:470
 msgid "Excerpt / More Tag Settings"
 msgstr "Katkelman / Lisää merkinnän asetukset"
 
-#: ../functions/panel/theme_options.php:474
+#: ../functions/panel/theme_options.php:475
 msgid "More Tag Text"
 msgstr "Lisää merkinnän teksti"
 
-#: ../functions/panel/theme_options.php:479
+#: ../functions/panel/theme_options.php:480
 msgid "Excerpt length(words)"
 msgstr "Katkelman pituus(sanoja)"
 
-#: ../functions/panel/theme_options.php:489
+#: ../functions/panel/theme_options.php:490
 msgid "Feed Redirect"
 msgstr "Syötteen uudelleenohjaus"
 
-#: ../functions/panel/theme_options.php:494
+#: ../functions/panel/theme_options.php:495
 msgid "Feed Redirect URL"
 msgstr "Syötteen uudelleenohjaus URL"
 
-#: ../functions/panel/theme_options.php:530
-msgid "Featured Slider Options"
-msgstr "Korostettujen artikkelien asetukset"
-
-#: ../functions/panel/theme_options.php:546
+#: ../functions/panel/theme_options.php:508
 msgid "Add Slider Options"
 msgstr "Korostettujen artikkelien asetukset"
 
-#: ../functions/panel/theme_options.php:550
+#: ../functions/panel/theme_options.php:512
 msgid "Exclude Slider post from Home page posts:"
 msgstr "Älä näytä korostettua artikkelia etusivun artikkelien joukossa:"
 
-#: ../functions/panel/theme_options.php:555
+#: ../functions/panel/theme_options.php:517
 msgid "Number of Slides"
 msgstr "Korostettujen artikkelien lukumäärä"
 
-#: ../functions/panel/theme_options.php:561
+#: ../functions/panel/theme_options.php:523
 msgid "Featured Slider Post #"
 msgstr "Korostetun artikkelin #"
 
-#: ../functions/panel/theme_options.php:563
+#: ../functions/panel/theme_options.php:525
 msgid "Click Here To Edit"
 msgstr "Klikkaa muokataksesi"
 
-#: ../functions/panel/theme_options.php:569
+#: ../functions/panel/theme_options.php:531
 msgid "Note: Here You can put your Post IDs which displays on Homepage as slider."
 msgstr "Huom. Tähän voit laittaa artikkelin ID:t, jotka korostetaan etusivulla."
 
-#: ../functions/panel/theme_options.php:576
+#: ../functions/panel/theme_options.php:538
 msgid "Slider Effect Options"
 msgstr "Korostettujen artikkelien efektiasetukset"
 
-#: ../functions/panel/theme_options.php:580
+#: ../functions/panel/theme_options.php:542
 msgid "Disable Slider Background Effect:"
 msgstr "Poista korostettujen artikkelien taustakuvaefekti käytöstä:"
 
-#: ../functions/panel/theme_options.php:587
+#: ../functions/panel/theme_options.php:549
 msgid "Transition Effect:"
 msgstr "Siirtymisen efekti:"
 
-#: ../functions/panel/theme_options.php:591
+#: ../functions/panel/theme_options.php:553
 msgid "fade"
 msgstr "fade"
 
-#: ../functions/panel/theme_options.php:592
+#: ../functions/panel/theme_options.php:554
 msgid "wipe"
 msgstr "wipe"
 
-#: ../functions/panel/theme_options.php:593
+#: ../functions/panel/theme_options.php:555
 msgid "scrollUp"
 msgstr "scrollUp"
 
-#: ../functions/panel/theme_options.php:594
+#: ../functions/panel/theme_options.php:556
 msgid "scrollDown"
 msgstr "scrollDown"
 
-#: ../functions/panel/theme_options.php:595
+#: ../functions/panel/theme_options.php:557
 msgid "scrollLeft"
 msgstr "scrollLeft"
 
-#: ../functions/panel/theme_options.php:596
+#: ../functions/panel/theme_options.php:558
 msgid "scrollRight"
 msgstr "scrollRight"
 
-#: ../functions/panel/theme_options.php:597
+#: ../functions/panel/theme_options.php:559
 msgid "blindX"
 msgstr "blindX"
 
-#: ../functions/panel/theme_options.php:598
+#: ../functions/panel/theme_options.php:560
 msgid "blindY"
 msgstr "blindY"
 
-#: ../functions/panel/theme_options.php:599
+#: ../functions/panel/theme_options.php:561
 msgid "blindZ"
 msgstr "blindZ"
 
-#: ../functions/panel/theme_options.php:600
+#: ../functions/panel/theme_options.php:562
 msgid "cover"
 msgstr "cover"
 
-#: ../functions/panel/theme_options.php:601
+#: ../functions/panel/theme_options.php:563
 msgid "shuffle"
 msgstr "shuffle"
 
-#: ../functions/panel/theme_options.php:606
+#: ../functions/panel/theme_options.php:568
 msgid "Transition Delay"
 msgstr "Siirtymisen viive"
 
-#: ../functions/panel/theme_options.php:609
-#: ../functions/panel/theme_options.php:616
+#: ../functions/panel/theme_options.php:571
+#: ../functions/panel/theme_options.php:578
 msgid "second(s)"
 msgstr "sekunti(a)"
 
-#: ../functions/panel/theme_options.php:613
+#: ../functions/panel/theme_options.php:575
 msgid "Transition Length"
 msgstr "Siirtymisen kesto"
 
-#: ../functions/panel/theme_options.php:646
-msgid "Social Links Option"
-msgstr "Sosiaalisten linkkien asetukset"
-
-#: ../functions/panel/theme_options.php:664
-msgid "Facebook"
-msgstr "Facebook"
-
-#: ../functions/panel/theme_options.php:669
-msgid "Twitter"
-msgstr "Twitter"
-
-#: ../functions/panel/theme_options.php:674
+#: ../functions/panel/theme_options.php:603
 msgid "Google+"
 msgstr "Google+"
 
-#: ../functions/panel/theme_options.php:679
+#: ../functions/panel/theme_options.php:608
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../functions/panel/theme_options.php:684
+#: ../functions/panel/theme_options.php:613
 msgid "Youtube"
 msgstr "Youtube"
 
-#: ../functions/panel/theme_options.php:689
+#: ../functions/panel/theme_options.php:618
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../functions/panel/theme_options.php:695
+#: ../functions/panel/theme_options.php:624
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: ../functions/panel/theme_options.php:700
+#: ../functions/panel/theme_options.php:629
 msgid "Slideshare"
 msgstr "Slideshare"
 
-#: ../functions/panel/theme_options.php:705
+#: ../functions/panel/theme_options.php:634
 msgid "Foursquare"
 msgstr "Foursquare"
 
-#: ../functions/panel/theme_options.php:710
+#: ../functions/panel/theme_options.php:639
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../functions/panel/theme_options.php:715
+#: ../functions/panel/theme_options.php:644
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../functions/panel/theme_options.php:720
+#: ../functions/panel/theme_options.php:649
 msgid "deviantART"
 msgstr "deviantART"
 
-#: ../functions/panel/theme_options.php:725
+#: ../functions/panel/theme_options.php:654
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../functions/panel/theme_options.php:730
+#: ../functions/panel/theme_options.php:659
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../functions/panel/theme_options.php:740
+#: ../functions/panel/theme_options.php:669
 msgid "RSS"
 msgstr "RSS"
 
-#: ../functions/panel/theme_options.php:745
+#: ../functions/panel/theme_options.php:674
 msgid "Delicious"
 msgstr "Delicious"
 
-#: ../functions/panel/theme_options.php:750
+#: ../functions/panel/theme_options.php:679
 msgid "Last.fm"
 msgstr "Last.fm"
 
-#: ../functions/panel/theme_options.php:780
-msgid "Webmaster Tools Option"
-msgstr "Webmaster Tools asetukset"
-
-#: ../functions/panel/theme_options.php:796
+#: ../functions/panel/theme_options.php:690
 msgid "Site Verification"
 msgstr "Sivuston varmennus"
 
-#: ../functions/panel/theme_options.php:801
+#: ../functions/panel/theme_options.php:695
 msgid "Google Site Verification ID"
 msgstr "Googlen sivuston varmennus-ID"
 
-#: ../functions/panel/theme_options.php:802
+#: ../functions/panel/theme_options.php:696
 msgid "Enter your Google ID number only"
 msgstr "Syötä ainoastaan Google ID -numerosi"
 
-#: ../functions/panel/theme_options.php:807
+#: ../functions/panel/theme_options.php:701
 msgid "Yahoo Site Verification ID"
 msgstr "Yahoon sivuston varmennus-ID"
 
-#: ../functions/panel/theme_options.php:808
+#: ../functions/panel/theme_options.php:702
 msgid "Enter your Yahoo ID number only"
 msgstr "Syötä ainoastaan Yahoo ID -numerosi"
 
-#: ../functions/panel/theme_options.php:813
+#: ../functions/panel/theme_options.php:707
 msgid "Bing Site Verification ID"
 msgstr "Bingin sivuston varmennus-ID"
 
-#: ../functions/panel/theme_options.php:814
+#: ../functions/panel/theme_options.php:708
 msgid "Enter your Bing ID number only"
 msgstr "Syötä ainostaan Bing ID -numerosi"
 
-#: ../functions/panel/theme_options.php:824
-msgid "Analytics"
-msgstr "Analytics"
+#: ../functions/panel/theme_options.php:718
+msgid "Analytics/ Header / Footer Codes"
+msgstr ""
 
-#: ../functions/panel/theme_options.php:829
+#: ../functions/panel/theme_options.php:723
 msgid "Code to display on Header"
 msgstr "Otsakkeessa käytettävä koodi"
 
-#: ../functions/panel/theme_options.php:835
+#: ../functions/panel/theme_options.php:729
 msgid "Note: Here you can put scripts from Google, Facebook etc. which will load on Header"
 msgstr "Huom. Tähän voit asettaa Google-, Facebook jne. -skriptisi, jotka ladataan otsakkeessa."
 
-#: ../functions/panel/theme_options.php:838
+#: ../functions/panel/theme_options.php:732
 msgid "Code to display on Footer"
 msgstr "Alatunnisteessa käytettävä koodi"
 
-#: ../functions/panel/theme_options.php:845
+#: ../functions/panel/theme_options.php:739
 msgid "Note: Here you can put scripts from Google, Facebook, Add This etc. which will load on footer"
 msgstr "Huom. Tähän voit laittaa Google-, Facebook-, Add This jne. skriptisi, jotka ladataan alatunnisteessa."
 
-#~ msgid "http://wordpress.org/extend/themes/simple-catch"
-#~ msgstr "http://wordpress.org/extend/themes/simple-catch"
+#~ msgid "Slider Options"
+#~ msgstr "Korostettujen artikkeleiden asetukset"
+
+#~ msgid "Disable Header Logo:"
+#~ msgstr "Poista käytöstä otsakkeen logo:"
+
+#~ msgid "Featured Slider Options"
+#~ msgstr "Korostettujen artikkelien asetukset"
+
+#~ msgid "Social Links Option"
+#~ msgstr "Sosiaalisten linkkien asetukset"
+
+#~ msgid "Webmaster Tools Option"
+#~ msgstr "Webmaster Tools asetukset"
+
+#~ msgid "Analytics"
+#~ msgstr "Analytics"
 
 #~ msgid ""
 #~ "Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy "
@@ -838,9 +909,6 @@ msgstr "Huom. Tähän voit laittaa Google-, Facebook-, Add This jne. skriptisi, 
 #~ "Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy "
 #~ "Customizethrough Theme Options and Custom Widgets. Features: Custom Menu, "
 #~ "Custom Widgets, "
-
-#~ msgid "Catch Themes Team"
-#~ msgstr "Catch Themes Team"
 
 #~ msgid ""
 #~ "black, gray, silver, white, light, one-column, two-columns, left-sidebar, "

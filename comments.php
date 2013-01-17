@@ -62,14 +62,4 @@
 		
 	endif;?>
 	
- 	<?php 
-	if (comments_open()): // The comment form 
-		$args = array(
-			'comment_notes_before' =>	 '',
-			'comment_notes_after'  => 	'',
-			'fields'               => 	apply_filters( 'comment_form_default_fields', $fields )
-			 );
-		
-		comment_form($args);
-		
-	endif; // if you delete this the sky will fall on your head ?>
+    <?php comment_form(); ?>

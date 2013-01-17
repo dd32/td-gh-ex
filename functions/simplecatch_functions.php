@@ -191,10 +191,10 @@ function simplecatch_headerdetails() {
 	global $simplecatch_options_settings;
     $options = $simplecatch_options_settings;	
 		
-	if ( ( !$simplecatch_headerdetails = get_transient( 'simplecatch_headerdetails' ) ) && ( empty( $options[ 'remove_header_logo' ] ) || empty( $options[ 'remove_site_title' ] ) || empty( $options[ 'remove_site_description' ] ) ) ) {
+	if ( ( !$simplecatch_headerdetails = get_transient( 'simplecatch_headerdetails' ) ) && ( empty( $options[ 'featured_logo_header' ] ) || empty( $options[ 'remove_site_title' ] ) || empty( $options[ 'remove_site_description' ] ) ) ) {
 		echo '<!-- refreshing cache -->';
 		$simplecatch_headerdetails = '<div class="logo-wrap">';
-		if( empty( $options[ 'remove_header_logo' ] ) ) {
+		if( !empty( $options[ 'featured_logo_header' ] ) ) {
 			$simplecatch_headerdetails .= '<h1 id="site-logo"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'">';
 			
 			if ( !empty( $options[ 'featured_logo_header' ] ) ):
@@ -286,17 +286,13 @@ function simplecatch_favicon() {
         $options = $simplecatch_options_settings;
 		
 		echo '<!-- refreshing cache -->';
-		if ( $options[ 'remove_favicon' ] == "0" ) :
-			// if not empty fav_icon on theme options
-			if ( !empty( $options[ 'fav_icon' ] ) ) :
-				$simplecatch_favicon = '<link rel="shortcut icon" href="'.esc_url( $options[ 'fav_icon' ] ).'" type="image/x-icon" />'; 	
-			else:
-				// if empty fav_icon on theme options, display default fav icon
-				$simplecatch_favicon = '<link rel="shortcut icon" href="'. get_template_directory_uri() .'/images/favicon.ico" type="image/x-icon" />';
-			endif;
+		
+		// if not empty fav_icon on theme options
+		if ( !empty( $options[ 'fav_icon' ] ) ) :
+			$simplecatch_favicon = '<link rel="shortcut icon" href="'.esc_url( $options[ 'fav_icon' ] ).'" type="image/x-icon" />'; 	
 		endif;
 		
-	set_transient( 'simplecatch_favicon', $simplecatch_favicon, 86940 );	
+		set_transient( 'simplecatch_favicon', $simplecatch_favicon, 86940 );	
 	}	
 	echo $simplecatch_favicon ;	
 } // simplecatch_favicon
@@ -899,34 +895,6 @@ add_action('template_redirect', 'simplecatch_rss_redirect');
 
 
 /**
- * function that displays info bar in Theme Options
- */
-function simplecatch_infobar() {
-?>
-    <div id="info-support">
-    
-    	<div class="upgrade">
-        	<a class="upgrade button" href="<?php echo esc_url(__('http://catchthemes.com/themes/simple-catch-pro','simplecatch')); ?>" title="<?php esc_attr_e('Upgrade to Simple Catch Pro', 'simplecatch'); ?>" target="_blank"><?php printf(__('Upgrade to Simple Catch Pro','simplecatch')); ?></a>
-      	</div>
-        
-        <div class="theme-social">
-            <div class="widget-fb">
-                <div data-show-faces="false" data-width="80" data-layout="button_count" data-send="false" data-href="<?php echo esc_url(__('http://facebook.com/catchthemes','simplecatch')); ?>" class="fb-like"></div>
-            </div>
-            <div class="widget-tw">
-                <a data-dnt="true" data-show-screen-name="true" data-show-count="true" class="twitter-follow-button" href="<?php echo esc_url(__('https://twitter.com/catchthemes','simplecatch')); ?>">Follow @catchthemes</a>
-
-            </div>
-       	</div>
-        
-        <div class="clear"></div>
-    </div>
-                     
-<?php
-}
-
-
-/**
  * Altering Comment Form Fields
  * @uses comment_form_default_fields filter
  */
@@ -941,3 +909,18 @@ function simplecatch_comment_form_fields( $fields ) {
     return $fields;
 }
 add_filter( 'comment_form_default_fields', 'simplecatch_comment_form_fields' );
+
+
+/**
+ * Altering Comment Form Defaults
+ *
+ * @uses comment_form_defaults filter
+ */
+function simplecatch_comment_form_defaults( $defaults ) {
+
+	$defaults['comment_notes_before'] = '';
+	$defaults['comment_notes_after'] = '';
+
+	return $defaults;
+}
+add_filter( 'comment_form_defaults', 'simplecatch_comment_form_defaults' );
