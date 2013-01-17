@@ -190,7 +190,8 @@ p.description {
 	background-color:#fff;
 	width:780px;
 	margin-bottom:20px;
-	font-family:Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-family:Arial, Helvetica, sans-serif;
+	line-height:120%;
 }
 .tSRSIntro .tShare {
 	margin-top:5px;
@@ -250,8 +251,9 @@ a.tSRS {
 }
 .tBottom span {
 	font-size:11px;
-	color:#999;
+	color:#555;
 	display:block;
+  line-height:12px;
 }
 .tBottom a {
 	display:block;
@@ -282,8 +284,7 @@ a.tSRS {
 }
 .tUsefulLinks li {
 	padding:0;
-	margin:0 0 0 20px;
-	list-style:square;
+	margin:0;
 	font-size:11px;
 }
 .tSupport {
