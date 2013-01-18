@@ -11,8 +11,6 @@ if ( !defined('ABSPATH')) exit;
 		$content_width = 648;
 			
 // Ladies, Gentalmen, boys and girls let's start our engines
-add_action('after_setup_theme', 'adventure_setup');
-
 if (!function_exists('adventure_setup')):
 
     function adventure_setup() {
@@ -31,11 +29,9 @@ if (!function_exists('adventure_setup')):
 
         // WordPress 3.4+
 		if ( function_exists('get_custom_header')) {
-        	add_theme_support('custom-background'); }
-		
-	}
-
-endif;
+        	add_theme_support('custom-background'); } } endif;
+			
+add_action('after_setup_theme', 'adventure_setup');
 
 // Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link
 function adventure_page_menu_args( $args ) {
@@ -110,17 +106,24 @@ function adventure_enqueue_comment_reply() {
 add_action( 'wp_enqueue_scripts', 'adventure_enqueue_comment_reply' );
 
 //	A safe way of adding javascripts to a WordPress generated page
-if (!is_admin())
-	add_action('wp_enqueue_scripts', 'adventure_js');
-
 if (!function_exists('adventure_js')) {
 	function adventure_js() {
 			// JS at the bottom for fast page loading
 			wp_enqueue_script('adventure-jquery-easing', get_template_directory_uri() . '/js/jquery.easing.js', array('jquery'), '1.3', true);
-			wp_enqueue_script('adventure-jquery-sidebar', get_template_directory_uri() . '/js/jquery.sidebar.fix.js', array('jquery'), '1.3', true);
             wp_enqueue_script('adventure-menu-scrolling', get_template_directory_uri() . '/js/jquery.menu.scrolling.js', array('jquery'), '1', true);
 			wp_enqueue_script('adventure-scripts', get_template_directory_uri() . '/js/jquery.fittext.js', array('jquery'), '1.0', true);
 			wp_enqueue_script('adventure-fittext', get_template_directory_uri() . '/js/jquery.fittext.sizing.js', array('jquery'), '1', true);  } }
+
+if (!is_admin()) add_action('wp_enqueue_scripts', 'adventure_js');		
+
+// Wrap Video with a DIV for a CSS Resposive Video
+function wrap_embed_with_div($html, $url, $attr) { 
+	// YouTube isn't in here because it provides sufficient mark-ups to just use their html elements
+	if (preg_match("/vimeo/", $html)) { return '<div class="video-container">' . $html . '</div>'; }
+	if (preg_match("/wordpress.tv/", $html)) { return '<div class="video-container">' . $html . '</div>'; } }
+	// Don't see your video host in here? Just add it in, make sure you have the forward slash marks
+
+add_filter('embed_oembed_html', 'wrap_embed_with_div', 10, 3);
 
 // Redirect to the theme options Page after theme is activated
 if ( is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" )
@@ -191,6 +194,16 @@ function adventure_customize($wp_customize) {
 			'contain'		=> 'Contain',
 			'cover'			=> 'Cover',), ));
 			
+	// Change the color of the Content Background
+	$wp_customize->add_setting( 'backgroundcolor_setting', array(
+		'default'           => '#b4b09d',
+		'control'           => 'select',));
+		
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'backgroundcolor_control', array(
+		'label'				=> 'Content Background Color',
+		'section'			=> 'background_image',
+		'settings'			=> 'backgroundcolor_setting', )));
+
 	// Change the opacity of the Content Background
 	$wp_customize->add_setting( 'contentbackground_setting', array(
 		'default'           => '.80',
@@ -286,18 +299,23 @@ add_action( 'customize_controls_print_footer_scripts', 'adventure_customizer_pre
 		
 // Inject the Customizer Choices into the Theme
 function adventure_inline_css() {
+	
+		$hex = str_replace("#", "", get_theme_mod('backgroundcolor_setting'));
 
-	// this is a huge or statement
-	$options = get_option('backgroundsize_setting');
-	$options = get_option('backgroundpaper_setting');
-	$options = get_option('titlecolor_setting');
-	$options = get_option('taglinecolor_setting');
-	$options = get_option('bannerimage_setting');
-
+		if(strlen($hex) == 3) {
+			$r = hexdec(substr($hex,0,1).substr($hex,0,1));
+			$g = hexdec(substr($hex,1,1).substr($hex,1,1));
+			$b = hexdec(substr($hex,2,1).substr($hex,2,1)); }
+		else {
+			$r = hexdec(substr($hex,0,2));
+			$g = hexdec(substr($hex,2,2));
+			$b = hexdec(substr($hex,4,2)); }
+		
+		echo 'nope' . $hex;
 		echo '<!-- Custom CSS Styles -->' . "\n";
         echo '<style type="text/css" media="screen">' . "\n";
 		if ( get_theme_mod('backgroundsize_setting') != 'auto' ) echo '	body {background-size:' . get_theme_mod('backgroundsize_setting') . ';}' . "\n";
-		echo '	#content>li {background: rgba(180, 176, 157, ' .  get_theme_mod('contentbackground_setting') .  ');}' . "\n";
+		echo '	#content>li {background: rgba(' . $r .',' . $g .', ' . $b . ', ' .  get_theme_mod('contentbackground_setting') .  ');}' . "\n";
 		echo '	li#sidebar {background: rgba(0, 0, 0, ' .  get_theme_mod('sidebarbackground_setting') .  ');}' . "\n";
 		echo '	#navi h1 a {color:' . get_theme_mod('titlecolor_setting') . ';}' . "\n";
 		echo '	#navi h1 i {color:' . get_theme_mod('taglinecolor_setting') . ';}' . "\n";
@@ -420,7 +438,7 @@ function adventure_theme_options_do_page() { ?>
         </tr>
         </tbody>
 	</table>
-    <p>Don't see a feature that you want, maybe a plugin that doesn't work right, why not <a href="http://schwarttzy.com/contact-me/">send me an Email about it</a>? 
+    <p>Don't see a feature that you want, maybe theres plugin that doesn't work right, <a href="http://schwarttzy.com/contact-me/">send me an Email about it</a>.</p>
 	</li>
     
     <li>
@@ -430,6 +448,10 @@ function adventure_theme_options_do_page() { ?>
         <tr>
         <th>Version</th>
         <th class="justify"></th>
+        </tr>
+        </tr>
+        <th>1.9</th>
+        <td class="justify">This is main an update to fix issues that I and others (like you) have found and fixed for the theme. The content no longer shifts to the right after the sidebar and embed video from YouTube and Vimeo are now responsive when embedded, plus some other minor stuff. I have also introduced the ablity change the color of the content of the background of content. In the next update I will include the ablity to change the sidebar.</td>
         </tr>
         </tr>
         <th>1.8</th>
@@ -448,6 +470,10 @@ function adventure_theme_options_do_page() { ?>
         <th class="justify"></th>
         </tr>
         <tr>
+        <th>3</th>
+        <td class="justify">Nothing extra, just the same great code that Adventure 1.9 recieved in the latest update to the themes.</td>
+        </tr>
+        <tr>
         <th>2</th>
         <td class="justify">Since completely rewriting all the code for Adventure, and because Adventure+ is dependant and Adventure, I have designated that version 2 of Adventure+ is considered the initial re-release.</td>
         </tr>
@@ -457,9 +483,7 @@ function adventure_theme_options_do_page() { ?>
     
     <li>
     <h4>About the Theme Adventure</h4>
-	<p>I dedicate this theme to my Grandfather, Eldon Schwarz, for his strength and courage in WWII. He is the sole survivor of the crew aboard the B17 Flying Fortress #44-6349, of the 483rd Bombardment Group, in the 840th Bomb Squadron and a prisoner of war from August 7, 1943 to November 5, 1945. I miss you Grandpa.</p>
-    <p>This theme began with me reading a newspaper from May 8, 1945. Just holding it I could sense that a lot time and planning went into simple things like font, layout, and especially choosing the paper's material. I marveled at the quality that clearly went into this paper. Even with how old the newspaper was, it makes modern newspapers just seem like a mere shadow of themselves clinging to their former glory.</p>
-    <p>Because of that I decided that I had to create a theme that feels like a newspaper, rich with details and fine quality. From hidden luxurious floral patterns, images that create the nostalgia of finely crafted paper, to incredibly detailed shadowing, but most importantly, the ability to respond to any width screen. "Adventure" is a completely flexible theme able to stretch from 300 pixels wide, all the way to 1920 and beyond. Images, galleries, quotes, text, titles, they all move fluidly to respond to any thing you through at it.</p>
+	<p>Inspired by a certain GPS Manufacture, I designed this theme to feel like you're looking through a window out into the wilderness and hopefully inspire you to explore. I'm constantly adding new features to this theme to allow you to personalize it to your own needs. If you want a new feature or just want to be able to change something just ask me and I would be happy to add it for you. I would like to thank you for your support, visit the Theme URI for the update history, and Enjoy!</p>
     </li>
     
     <ul id="finishing"></ul>

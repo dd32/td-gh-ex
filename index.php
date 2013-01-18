@@ -17,13 +17,11 @@
 
 <!-- Setting up The Layout of the Webpage -->
 <ul id="spacing"></ul>
-<ul id="content">
+<ul id="content" <?php if (adventure_is_sidebar_active('widget')) : ?><?php else : ?>class="floatnone" <?php endif; ?>>
 
 <!-- Searching Code -->
 
 <!-- End Search -->
-
-
 	
 <?php if (adventure_is_sidebar_active('widget')) : ?>
 <!-- The Sidebar -->
@@ -33,7 +31,6 @@
 <!-- No Sidebar -->
 <?php endif; ?>
 
-    
 <?php $semperfi_404 = false;/* A 404 Error check */?>
 <?php if (is_search()) : ?>
 <!-- Searching Code -->
@@ -131,8 +128,6 @@
 	<?php endif; ?>
 </ul>
 <!-- End Navigation Menu -->
-
-<script> if (matchMedia('only screen and (max-width: 700px)').matches) { $('#sidebar').insertBefore('#finishing'); } </script>
 
 <!-- Start of WordPress Footer  -->
 <?php wp_footer(); ?>

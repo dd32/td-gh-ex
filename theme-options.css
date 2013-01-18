@@ -77,7 +77,7 @@ table td {border-top:1px solid #111; border-right:1px solid #111; padding:.5em .
 table tr td:last-child {border-right:none;}
 tbody tr:nth-child(odd) {
    background:#EEE;
-   background:rgba(0, 0, 0, 0.1);
+   background:rgba(0, 0, 0, 0.08);
    border:none;}
 .justify {text-align:justify;}
 @media only screen and (max-width:700px), only screen and (max-device-width : 700px){ #content>li {width:85%;} }

@@ -4,7 +4,7 @@ Theme URI: http://schwarttzy.com/shop/adventureplus/
 Author: Eric Schwarz
 Author URI: http://schwarttzy.com/about-2/
 Description: Inspired by a certain GPS Manufacture, I designed this theme to feel like you're looking through a window out into the wilderness and hopefully inspire you to explore. I'm constantly adding new features to this theme to allow you to personalize it to your own needs. If you want a new feature or just want to be able to change something just ask me and I would be happy to add it for you. I would like to thank you for your support, visit the Theme URI for the update history, and Enjoy!
-Version: 1.8
+Version: 1.9
 License: GNU General Public License
 License URI: license.txt
 Tags: white, purple, one-column, two-columns, fixed-width, custom-menu, custom-background, custom-colors, featured-images, theme-options, custom-header, editor-style, flexible-header, flexible-width, full-width-template, theme-options, sticky-post, threaded-comments
@@ -38,8 +38,7 @@ body {
 	background-attachment: fixed;
 	background-size: cover;
 	color:#000;
-	font-family: sans-serif;
-	font-size:.9em;
+	font:normal 107% sans-serif;
 	height: 100%;
 	text-align:center;
 	width: 100%;}
@@ -52,7 +51,7 @@ h3	{font-size:1.8em;}
 h4	{font-size:1.6em;}
 h5	{font-size:1.3em;}
 h6	{font-size:1.1em;}
-h1,h2,h3,h4,h5,h6{line-height:normal; -family: sans-serif; clear:both;}
+h1,h2,h3,h4,h5,h6{line-height:normal; font-family: adobe-text-pro, sans-serif; clear:both;}
 
 a {
 	-webkit-transition: color 0.12s ease-in-out;
@@ -89,13 +88,15 @@ ul, li {display:inline-block;}
 
 #content {
 	margin:0 auto;
+	padding:0 2.5%;
 	position: relative;
-	width:100%;
-	max-width:1100px;
-	min-width:500px;}
+	width:95%;
+	max-width:70em;
+	min-width:30em;}
 	
 #content>li {
-	line-height: 1.2em;
+	float:left;
+	line-height: 1.3em;
 	margin:0 0 2.25em;
 	padding: 2%;
 	border: 3px solid #4a4646;
@@ -103,7 +104,9 @@ ul, li {display:inline-block;}
 	box-shadow: 1px 1px 3px #111;
 	text-align: justify;
 	text-shadow:0 0 1px #AAA;
-	width:59%;}
+	width:62%;}
+	
+#content.floatnone>li {float:none;}
 
 #content>li h4:first-child  {margin:0 0 1.5em;}
 
@@ -133,12 +136,12 @@ li#sidebar {
 	color:#cccbc4;
 	float:right;
 	font-size:.95em;
-	margin:0 3% 3em;
+	margin:0 0 3em;
 	text-align:left;
 	text-shadow:0 0 1px #666;
 	width:25%;}
 	
-#sidebar li, #sidebar ul {width:100%; list-style:none;}
+#sidebar li, #sidebar ul {width:100%; list-style:none; overflow: hidden;}
 
 #sidebar input {width:60%;}
 #sidebar input#searchsubmit {width:35%; margin:0;}
@@ -315,7 +318,7 @@ textarea {width:99.5%; max-width:99.5%; min-width:99.5%; border:1px solid #111;b
 	position: absolute;
 	padding:.5em 0;
 	text-align:justify;
-	top:2.14em;
+	top:2.78em;
 	width:14em;
 	z-index:1;}
 	
@@ -347,7 +350,7 @@ table td {border-top:1px solid #111;border-right:1px solid #111;padding:.5em .5e
 table tr td:last-child {border-right:none;}
 tbody tr:nth-child(odd) {
    background:#EEE;
-   background:rgba(0, 0, 0, 0.1);
+   background:rgba(0, 0, 0, 0.08);
    border:none;}
 
 /* Minor alterations specifically for the WordPress Calendar Widget */
@@ -419,6 +422,7 @@ img.aligncenter {
 img.alignnone {
 	display: block;
 	margin: .5em 0;}
+img#wpstats {display:none;}
 .wp-caption{
 	border-radius: .2em;
 	background:rgba(0, 0, 0, 0.2);
@@ -433,7 +437,8 @@ img.alignnone {
 .wp-caption-text {color:#111; font-family: Georgia, "Bitstream Charter", serif; text-align:center;}
 pre {background:rgba(255, 255, 255, 0.6); overflow:scroll; padding:.5em 5%;}
 ins { color:#dc1111;}
-iframe, embed, img {max-width:100% !important; height:auto !important;}
+img {max-width:100% !important; height:auto !important;}
+iframe, embed {max-width:100% !important;} 
 .gallery { float:left;width:100%; padding:0; margin:1em 0;}
 .gallery-item {float:left;}
 .gallery-caption {font-size:.7em; color:#333; text-align:center;}
@@ -455,6 +460,17 @@ sup, sub {
 	vertical-align: baseline;}
 sup {bottom: .3em;}
 sub {top: .3em;}
+.video-container, .embed-youtube {
+	margin:0 0 2.5%;
+	padding:0 0 56.25%;
+	position:relative;
+	width:100%;}
+.video-container iframe, .embed-youtube iframe, .video-container object, .video-container embed {
+	height:100%!important;
+	left:0!important;
+	position:absolute!important;
+	top:0!important;
+	width:100%!important;}
 .sticky{}
 .bypostauthor{}
 
@@ -464,23 +480,32 @@ sub {top: .3em;}
 
 ------------------------------------------------------------------*/
 
-@media only screen and (max-width:700px), only screen and (max-device-width : 700px){
-#content>li {
+@media only screen and (max-width:55em) {
+#content>li, li#sidebar {
+	float:none;
 	margin:1.5% 2%;
 	padding: 2%;
 	width:80%;}
-	
-li#sidebar {
-	margin:1.5% 2%;
-	padding: 2%;
-	width:80%;
-	float:none;}
 	
 #navi li:hover ul {display:none;}
 
 #content>li .commentbox .children {width:94%;}
 
 .comment-meta {display:none;} }
+
+@media only screen and (min-width:80em) {
+
+#content {padding:0 2.5% 0 12.5%; width:85%;}
+
+#content.floatnone {padding:0 2.5%;} }
+
+/* Resizing Based on How Many Letters You can Fit on Screen
+-------------------------------------------------------------- */
+@media only screen and (max-width:100em) { body {font:normal 104%} }
+@media only screen and (max-width:82em) { body {font:normal 101%} }
+@media only screen and (max-width:70em) { body {font:normal 98%} }
+@media only screen and (max-width:50em) { body {font:normal 95%} }
+@media only screen and (max-width:35em) { body {font:normal 91%}
 			        
 /*------------------------------------------------------------------
 
