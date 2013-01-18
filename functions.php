@@ -310,8 +310,7 @@ function adventure_inline_css() {
 			$r = hexdec(substr($hex,0,2));
 			$g = hexdec(substr($hex,2,2));
 			$b = hexdec(substr($hex,4,2)); }
-		
-		echo 'nope' . $hex;
+
 		echo '<!-- Custom CSS Styles -->' . "\n";
         echo '<style type="text/css" media="screen">' . "\n";
 		if ( get_theme_mod('backgroundsize_setting') != 'auto' ) echo '	body {background-size:' . get_theme_mod('backgroundsize_setting') . ';}' . "\n";
@@ -450,7 +449,7 @@ function adventure_theme_options_do_page() { ?>
         <th class="justify"></th>
         </tr>
         </tr>
-        <th>1.9</th>
+        <th>2.1</th>
         <td class="justify">This is main an update to fix issues that I and others (like you) have found and fixed for the theme. The content no longer shifts to the right after the sidebar and embed video from YouTube and Vimeo are now responsive when embedded, plus some other minor stuff. I have also introduced the ablity change the color of the content of the background of content. In the next update I will include the ablity to change the sidebar.</td>
         </tr>
         </tr>
