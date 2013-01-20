@@ -234,3 +234,7 @@ Version 1.9.1
 * Redesign whole Theme Options panel
 * Made Header Logo and Favicon disable by default. 
 * Added action to redirect to Theme Options upon activation
+
+Version 1.9.1.1
+* Replace footer logo with generic WP logo as per the WPRT instruction
+* Fixed the condition of header logo

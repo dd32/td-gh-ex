@@ -191,7 +191,7 @@ function simplecatch_headerdetails() {
 	global $simplecatch_options_settings;
     $options = $simplecatch_options_settings;	
 		
-	if ( ( !$simplecatch_headerdetails = get_transient( 'simplecatch_headerdetails' ) ) && ( empty( $options[ 'featured_logo_header' ] ) || empty( $options[ 'remove_site_title' ] ) || empty( $options[ 'remove_site_description' ] ) ) ) {
+	if ( ( !$simplecatch_headerdetails = get_transient( 'simplecatch_headerdetails' ) ) && ( !empty( $options[ 'featured_logo_header' ] ) || empty( $options[ 'remove_site_title' ] ) || empty( $options[ 'remove_site_description' ] ) ) ) {
 		echo '<!-- refreshing cache -->';
 		$simplecatch_headerdetails = '<div class="logo-wrap">';
 		if( !empty( $options[ 'featured_logo_header' ] ) ) {
