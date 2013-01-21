@@ -1,15 +1,18 @@
-# Copyright SiteOrigin (c) 2012
+# Copyright SiteOrigin (c) 2013
 # This file is distributed under the GNU General Public License 2.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: origami 1.2.7\n"
-"POT-Creation-Date: 2012-10-30T18:00:34+02:00\n"
+"Project-Id-Version: origami 1.3\n"
+"POT-Creation-Date: 2013-01-21T15:53:35+02:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
 msgid "Not Found"
+msgstr ""
+
+msgid "We couldn't find what you were looking for."
 msgstr ""
 
 msgid "Columns"
@@ -63,6 +66,9 @@ msgstr ""
 msgid "dismiss"
 msgstr ""
 
+msgid "Create custom tileable background images using our free <a href='%s' target='_blank'>background image generator</a>."
+msgstr ""
+
 msgid "Hi! I'm Greg Priday from SiteOrigin."
 msgstr ""
 
@@ -70,6 +76,60 @@ msgid "I hope you enjoy my WordPress theme."
 msgstr ""
 
 msgid "Please follow me on Twitter and Facebook for updates."
+msgstr ""
+
+msgid "You're using %s in demo mode. <a href='%s'>Click here</a> to disable all demo content."
+msgstr ""
+
+msgid "Disable Demo Mode"
+msgstr ""
+
+msgid "Disable"
+msgstr ""
+
+msgid "Check this box to disable demo mode. You can't re-enable the demo mode."
+msgstr ""
+
+msgid "Save Settings"
+msgstr ""
+
+msgid "Search"
+msgstr ""
+
+msgid "Navigate"
+msgstr ""
+
+msgid "Back"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Panels"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Done"
+msgstr ""
+
+msgid "Are you sure you want to delete these columns?"
+msgstr ""
+
+msgid "Are you sure you want to delete this widget?"
+msgstr ""
+
+msgid "Panels is a drag and drop page builder. You can find the <a href=\"%s\">full documentation</a> on SiteOrigin."
+msgstr ""
+
+msgid "Add Widget"
+msgstr ""
+
+msgid "Add Columns"
+msgstr ""
+
+msgid "Additional widgets are available in <a href=\"%s\">%s Premium</a>"
 msgstr ""
 
 msgid "Premium Upgrade"
@@ -81,7 +141,10 @@ msgstr ""
 msgid "After you pay for %s Premium, we'll email you a download link and an order number to your <strong>PayPal email address</strong>. "
 msgstr ""
 
-msgid "You can install manually, or enter your order number here to enable an automatic upgrade."
+msgid "Use <a href='%s' target='_blank'>this form</a> if you don't receive your order number in the next 15 minutes. "
+msgstr ""
+
+msgid "Be sure to check your spam folder."
 msgstr ""
 
 msgid "Order Number"
@@ -91,6 +154,12 @@ msgid "Enable Upgrade"
 msgstr ""
 
 msgid "Already Paid?"
+msgstr ""
+
+msgid "Buy Upgrade"
+msgstr ""
+
+msgid "Your Order Number Is [%s]"
 msgstr ""
 
 msgid "There was a problem contacting our validation servers."
@@ -123,31 +192,128 @@ msgstr ""
 msgid "Note that you need a valid order number to receive automatic updates in the future."
 msgstr ""
 
+msgid "This feature is available in <strong>%s Premium</strong> - <strong class=\"upgrade\">Upgrade Now</strong>"
+msgstr ""
+
 msgid "Check out the <a href='%s'>documentation</a> for %s. "
 msgstr ""
 
 msgid "Please like and follow SiteOrigin to hear about my new WordPress freebies."
 msgstr ""
 
+msgid "%s Theme Settings"
+msgstr ""
+
 msgid "Theme Settings"
-msgstr ""
-
-msgid "Save Settings"
-msgstr ""
-
-msgid "Please read %s's <a href='%s'>Documentation</a>."
-msgstr ""
-
-msgid "Theme Documentation"
 msgstr ""
 
 msgid "Enabled"
 msgstr ""
 
-msgid "<a href=\"%s\">Premium version</a> only"
+msgid "You need to <a href=\"%s\">upgrade</a> to WordPress 3.5 to use media fields"
+msgstr ""
+
+msgid "Select Media"
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+msgid "This setting is available in <strong>%s Premium</strong> - <strong class=\"upgrade\">Upgrade Now</strong>"
 msgstr ""
 
 msgid "Unknown Field Type"
+msgstr ""
+
+msgid "Settings saved."
+msgstr ""
+
+msgid "Read %s's <a href='%s'>theme documentation</a> for help with these settings."
+msgstr ""
+
+msgid "Settings Help"
+msgstr ""
+
+msgid "Set Media File"
+msgstr ""
+
+msgid "Sliders"
+msgstr ""
+
+msgid "Slider"
+msgstr ""
+
+# siteorigin
+msgid "Add New"
+msgstr ""
+
+msgid "Add New Slider"
+msgstr ""
+
+msgid "Edit Slider"
+msgstr ""
+
+msgid "New Slider"
+msgstr ""
+
+msgid "All Sliders"
+msgstr ""
+
+msgid "View Slider"
+msgstr ""
+
+msgid "Search Sliders"
+msgstr ""
+
+msgid "No sliders found"
+msgstr ""
+
+msgid "No sliders found in Trash"
+msgstr ""
+
+msgid "Slider Slides"
+msgstr ""
+
+msgid "Slides"
+msgstr ""
+
+msgid "URL"
+msgstr ""
+
+msgid "Upgrade to <a href=\"%s\">%s Premium</a> to link slides to URLS"
+msgstr ""
+
+msgid "Insert a slider."
+msgstr ""
+
+msgid "Please select a slider."
+msgstr ""
+
+msgid "Image Size"
+msgstr ""
+
+msgid "New Item"
+msgstr ""
+
+msgid "Title Text"
+msgstr ""
+
+msgid "Extra Text"
+msgstr ""
+
+msgid "Image"
+msgstr ""
+
+msgid "None"
+msgstr ""
+
+msgid "Are you sure you want to delete this?"
+msgstr ""
+
+msgid "Add Slide"
+msgstr ""
+
+msgid "Upload Media"
 msgstr ""
 
 msgid "Premium Theme Support"
@@ -172,6 +338,72 @@ msgid "Order Code"
 msgstr ""
 
 msgid "Find your order code in your original download email from SiteOrigin"
+msgstr ""
+
+msgid "Call To Action"
+msgstr ""
+
+msgid "A call to action block, generally for your home page."
+msgstr ""
+
+msgid "Headline"
+msgstr ""
+
+msgid "Text"
+msgstr ""
+
+msgid "Button Text"
+msgstr ""
+
+msgid "Button URL"
+msgstr ""
+
+msgid "Button Style"
+msgstr ""
+
+msgid "Button"
+msgstr ""
+
+msgid "Display a button."
+msgstr ""
+
+msgid "Click Me"
+msgstr ""
+
+msgid "Alignment"
+msgstr ""
+
+msgid "Icon and Text"
+msgstr ""
+
+msgid "A block of text with an icon."
+msgstr ""
+
+msgid "Post List"
+msgstr ""
+
+msgid "Displays a list of posts."
+msgstr ""
+
+msgid "Post Type"
+msgstr ""
+
+msgid "Post Count"
+msgstr ""
+
+msgid "Order By"
+msgstr ""
+
+msgid "Show Post Title"
+msgstr ""
+
+msgid "Displays a simple headline."
+msgstr ""
+
+msgid "Headline Text"
+msgstr ""
+
+msgid "Size"
 msgstr ""
 
 msgid "Colors"
@@ -267,10 +499,13 @@ msgstr ""
 msgid "Display post sharing on the single post pages."
 msgstr ""
 
-msgid "Copyright %s"
+msgid "Twitter Username"
 msgstr ""
 
-msgid "We couldn't find what you were looking for."
+msgid "Recommend your Twitter account after someone tweets your post."
+msgstr ""
+
+msgid "Copyright %s"
 msgstr ""
 
 msgid "No results for your query."
@@ -345,13 +580,70 @@ msgstr ""
 msgid "like"
 msgstr ""
 
-msgid "Display Social Sharing"
+msgid "Destination URL"
 msgstr ""
 
-msgid "Display post sharing on post pages."
+msgid "Google Map"
 msgstr ""
 
-msgid "Twitter Username"
+msgid "Displays a very simple Google map"
+msgstr ""
+
+msgid "Map Location"
+msgstr ""
+
+msgid "The Map address"
+msgstr ""
+
+msgid "Height"
+msgstr ""
+
+msgid "The height of the map, the width is decided by the size of its panel."
+msgstr ""
+
+msgid "Zoom"
+msgstr ""
+
+msgid "The zoom of the map."
+msgstr ""
+
+msgid "Embedded Video"
+msgstr ""
+
+msgid "Embeds a video."
+msgstr ""
+
+msgid "Video"
+msgstr ""
+
+msgid "Bullet List"
+msgstr ""
+
+msgid "A simple bullet list."
+msgstr ""
+
+msgid "Default"
+msgstr ""
+
+msgid "List Text"
+msgstr ""
+
+msgid "Use a * at the beginning of each list entry line."
+msgstr ""
+
+msgid "Contact Form 7"
+msgstr ""
+
+msgid "Displays a contact form."
+msgstr ""
+
+msgid "This widget requires the Contact Form 7 plugin."
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "Contact Form"
 msgstr ""
 
 msgid "Upgrade To Origami Premium"
@@ -366,10 +658,10 @@ msgstr ""
 msgid "Remember, if you're not satisfied, you get your money back"
 msgstr ""
 
-msgid "Email Support"
+msgid "Premium Support"
 msgstr ""
 
-msgid "Need help setting up Origami? Upgrading to Origami Premium gives you access to email support for answers to any questions you can't find in the theme documentation."
+msgid "Need help setting up Origami? Upgrading to Origami Premium gives you prioritized support on our support forums."
 msgstr ""
 
 msgid "Remove Attribution Links"
