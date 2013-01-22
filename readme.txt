@@ -2,7 +2,7 @@
 * by the Catch Themes team, http://catchthemes.com/
 
 == ABOUT Simple Catch==
-Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework. Multilingual Ready (WPML) and also currently translated in Polish, Russian, Finnish, French and Dutch. 
+Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework. Multilingual Ready (WPML) and also currently translated in Polish, Russian, Finnish, French, Dutch and Greek. 
 
 == UPGRADE to Simple Catch Pro ==
 Simple Catch Pro is an advance version of our popular theme Simple Catch. It is based on HTML5, CSS3 and Responsive Web Design to view in various devices. Some of the additional features includes: Featured Image Slider, Responsive Design, Additional Layout Options, Custom Footer Editor, and Adspace Widget for Advertisement.
@@ -14,6 +14,7 @@ Added Translation for Russian by  Alexey Kurpachev (kurpachev@gmail.com)
 Added Translation for Finnish by Juha Louhiranta (charni@gmail.com)
 Added Translation for French by Wolforg (contact@wolforg.eu) and Athéna G (webmaster@athena.georgakelos.net)
 Added Translation for Dutch by Thomas Gerard (beldin2000@gmail.com)
+Added Translation for Greek by Dimitris Antonakis (dimantonak@gmail.com)
 
 == Features ==  
 Featured Image Slider, Custom Drop-down Menu, Theme Options, Custom Widgets, flexible position of sidebar and Support for popular plugins.
@@ -238,3 +239,9 @@ Version 1.9.1
 Version 1.9.1.1
 * Replace footer logo with generic WP logo as per the WPRT instruction
 * Fixed the condition of header logo
+
+Version 2.0
+* Added Greek translation el.po and el.mo
+* Language File Update for Polish
+* Added Save Button on Social Links Option Panel
+* Logo Upload Issue in Option Panel

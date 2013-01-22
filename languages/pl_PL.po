@@ -1,19 +1,20 @@
 # Copyright (C) 2012 the Catch Themes Team
 # This file is distributed under the  GNU General Public License.
-# Piotr <fansitepoprostugry@gmail.com>, 2012.
+# Piotr <fansitepoprostugry@gmail.com>, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-18 00:57+0530\n"
-"PO-Revision-Date: 2013-01-18 00:57+0530\n"
-"Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
-"Language-Team: Catch Themes <fansitejustgames@gmail.com>\n"
+"POT-Creation-Date: 2013-01-18 00:56+0530\n"
+"PO-Revision-Date: 2013-01-20 13:33+0200\n"
+"Last-Translator: Piotr <fansitepoprostugry@gmail.com>\n"
+"Language-Team: Piotrekkk\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pl\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Virtaal 0.7.1\n"
 "X-Poedit-KeywordsList: __;_e;_x;_ex;_n;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
@@ -34,7 +35,9 @@ msgstr "Może to być spowodowane przez:"
 
 #: ../404.php:16
 msgid "You have typed the web address incorrectly, or the page you were looking for may have been moved, updated or deleted."
-msgstr "Wprowadziłeś niepoprawny adres strony albo wyszukiwana strona została przeniesiona, zaktualizowana lub usunięta."
+msgstr ""
+"Wprowadziłeś niepoprawny adres strony albo wyszukiwana strona została "
+"przeniesiona, zaktualizowana lub usunięta."
 
 #: ../404.php:17
 msgid "Please try the following options instead:"
@@ -42,11 +45,14 @@ msgstr "Prosimy spróbować następujących opcji:"
 
 #: ../404.php:18
 msgid "Check for a mis-typed URL error, then press the refresh button on your browser or Use the search box at the Header."
-msgstr "Sprawdź poprawność adresu URL, następnie odśwież stronę lub użyj wyszukiwarki w nagłówku strony."
+msgstr ""
+"Sprawdź poprawność adresu URL, następnie odśwież stronę lub użyj "
+"wyszukiwarki w nagłówku strony."
 
 #: ../comments.php:21
 msgid "This post is password protected. Enter the password to view comments."
-msgstr "Ten wpis jest zabezpieczony hasłem. Wpisz hasło, by zobaczyć komentarze."
+msgstr ""
+"Ten wpis jest zabezpieczony hasłem. Wpisz hasło, by zobaczyć komentarze."
 
 #: ../comments.php:29
 #: ../content.php:30
@@ -97,7 +103,9 @@ msgstr "Nie znaleziono"
 
 #: ../content.php:65
 msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
-msgstr "Przepraszamy, ale nie ma wpisów w wybranych archiwum. Być może wyszukiwanie będzie pomocne."
+msgstr ""
+"Przepraszamy, ale nie ma wpisów w wybranych archiwum. Być może wyszukiwanie "
+"będzie pomocne."
 
 #: ../footer.php:17
 msgid "Copyright"
@@ -308,7 +316,7 @@ msgstr "Wybierz układ paska bocznego"
 
 #: ../functions/simplecatch_metabox.php:33
 msgid "Default Layout Set in"
-msgstr "Domyślny wygląd w"
+msgstr "Domyślny wygląd"
 
 #: ../functions/simplecatch_metabox.php:33
 #: ../functions/panel/theme_options.php:144
@@ -334,10 +342,9 @@ msgstr "Wyświetla własną chmurę tagów"
 #: ../functions/panel/theme_options.php:39
 #: ../functions/panel/theme_options.php:40
 msgid "Theme Options"
-msgstr "Opcje motywu"
+msgstr "Ustawienia motywu"
 
 #: ../functions/panel/theme_options.php:101
-#, fuzzy
 msgid "Options Saved"
 msgstr "Ustawienia zapisane."
 
@@ -350,9 +357,8 @@ msgid "https://twitter.com/catchthemes"
 msgstr "https://twitter.com/catchthemes"
 
 #: ../functions/panel/theme_options.php:116
-#, fuzzy
 msgid "Theme Options By"
-msgstr "Opcje motywu"
+msgstr "Ustawienia motywu, autor:"
 
 #: ../functions/panel/theme_options.php:118
 #: ../functions/panel/theme_options.php:119
@@ -360,7 +366,6 @@ msgid "Catch Themes"
 msgstr "Catch Themes"
 
 #: ../functions/panel/theme_options.php:124
-#, fuzzy
 msgid "http://catchthemes.com/themes/simple-catch-pro/"
 msgstr "http://catchthemes.com/themes/simple-catch-pro"
 
@@ -369,32 +374,28 @@ msgid "Upgrade to Simple Catch Pro"
 msgstr "Uaktualnij do Simple Catch Pro"
 
 #: ../functions/panel/theme_options.php:129
-#, fuzzy
 msgid "http://catchthemes.com/support-forum/forum/simple-catch-public/"
-msgstr "http://catchthemes.com/themes/simple-catch-pro"
+msgstr "http://catchthemes.com/support-forum/forum/simple-catch-public/"
 
 #: ../functions/panel/theme_options.php:129
 msgid "Support Forum"
-msgstr ""
+msgstr "Forum pomocy"
 
 #: ../functions/panel/theme_options.php:130
-#, fuzzy
 msgid "http://catchthemes.com/theme-instructions/simple-catch/"
-msgstr "http://catchthemes.com/themes/simple-catch-pro"
+msgstr "http://catchthemes.com/theme-instructions/simple-catch/"
 
 #: ../functions/panel/theme_options.php:130
-#, fuzzy
 msgid "Theme Instruction"
-msgstr "Opcje motywu"
+msgstr "Instrukcja motywu"
 
 #: ../functions/panel/theme_options.php:131
-#, fuzzy
 msgid "https://www.facebook.com/catchthemes/"
-msgstr "http://facebook.com/catchthemes"
+msgstr "https://www.facebook.com/catchthemes/"
 
 #: ../functions/panel/theme_options.php:131
 msgid "Like Catch Themes on Facebook"
-msgstr ""
+msgstr "Polub Catch Themes na Facebooku"
 
 #: ../functions/panel/theme_options.php:131
 #: ../functions/panel/theme_options.php:593
@@ -402,13 +403,12 @@ msgid "Facebook"
 msgstr "Facebook"
 
 #: ../functions/panel/theme_options.php:132
-#, fuzzy
 msgid "https://twitter.com/catchthemes/"
-msgstr "https://twitter.com/catchthemes"
+msgstr "https://twitter.com/catchthemes/"
 
 #: ../functions/panel/theme_options.php:132
 msgid "Follow Catch Themes on Twitter"
-msgstr ""
+msgstr "Obserwuj Catch Themes na Twitterze"
 
 #: ../functions/panel/theme_options.php:132
 #: ../functions/panel/theme_options.php:598
@@ -416,27 +416,24 @@ msgid "Twitter"
 msgstr "Twitter"
 
 #: ../functions/panel/theme_options.php:133
-#, fuzzy
 msgid "http://wordpress.org/support/view/theme-reviews/simple-catch"
-msgstr "http://wordpress.org/extend/themes/simple-catch"
+msgstr "http://wordpress.org/support/view/theme-reviews/simple-catch"
 
 #: ../functions/panel/theme_options.php:133
-#, fuzzy
 msgid "Rate us 5 Star on WordPress"
-msgstr "%s na WordPressie"
+msgstr "Zagłosuj 5 gwiazdkami na WordPressie"
 
 #: ../functions/panel/theme_options.php:133
 msgid "5 Star Rating"
-msgstr ""
+msgstr "5 gwiazdek"
 
 #: ../functions/panel/theme_options.php:143
 msgid "Design Settings"
 msgstr "Ustawienia wyglądu"
 
 #: ../functions/panel/theme_options.php:145
-#, fuzzy
 msgid "Featured Post Slider"
-msgstr "Pokaz slajdów"
+msgstr "Pokaz slajdów ze wpisów"
 
 #: ../functions/panel/theme_options.php:146
 msgid "Social Links"
@@ -448,20 +445,19 @@ msgstr "Narzędzia programisty"
 
 #: ../functions/panel/theme_options.php:153
 msgid "Logo Options"
-msgstr "Opcje loga"
+msgstr "Ustawienia logo"
 
 #: ../functions/panel/theme_options.php:158
 msgid "Header logo url:"
 msgstr "Adres logo w nagłówku:"
 
 #: ../functions/panel/theme_options.php:162
-#, fuzzy
 msgid "Change Logo"
-msgstr "Zmień logo w nagłówku"
+msgstr "Zmień logo"
 
 #: ../functions/panel/theme_options.php:165
 msgid "Upload Logo"
-msgstr ""
+msgstr "Prześlij logo"
 
 #: ../functions/panel/theme_options.php:172
 msgid "Preview:"
@@ -469,23 +465,21 @@ msgstr "Podgląd:"
 
 #: ../functions/panel/theme_options.php:178
 msgid "No Header Image Found. Upload Header Image."
-msgstr ""
+msgstr "Nie znaleziono obrazka logo. Prześlij obrazek logo."
 
 #: ../functions/panel/theme_options.php:185
-#, fuzzy
 msgid "Disable Site Title?"
-msgstr "Wyłącz tytuł strony:"
+msgstr "Wyłączyć tytuł strony?"
 
 #: ../functions/panel/theme_options.php:187
 #: ../functions/panel/theme_options.php:192
 #: ../functions/panel/theme_options.php:220
 msgid "Check to Disable."
-msgstr ""
+msgstr "Zaznacz, by wyłączyć."
 
 #: ../functions/panel/theme_options.php:190
-#, fuzzy
 msgid "Disable Site Description?"
-msgstr "Wyłącz opis strony:"
+msgstr "Wyłączyć opis strony?"
 
 #: ../functions/panel/theme_options.php:195
 msgid "Footer logo url: "
@@ -498,12 +492,11 @@ msgstr "Zmień logo w stopce"
 #: ../functions/panel/theme_options.php:206
 #: ../functions/panel/theme_options.php:247
 msgid "Preview: "
-msgstr "Podgląd:"
+msgstr "Podgląd: "
 
 #: ../functions/panel/theme_options.php:218
-#, fuzzy
 msgid "Disable Footer Logo?"
-msgstr "Wyłącz logo w stopce:"
+msgstr "Wyłączyć logo w stopce?"
 
 #: ../functions/panel/theme_options.php:224
 #: ../functions/panel/theme_options.php:261
@@ -523,26 +516,23 @@ msgstr "Zapisz"
 
 #: ../functions/panel/theme_options.php:229
 msgid "Fav Icon Options"
-msgstr "Opcje favikony"
+msgstr "Ustawienia favikony"
 
 #: ../functions/panel/theme_options.php:234
-#, fuzzy
 msgid "Favicon URL:"
 msgstr "Adres favikony:"
 
 #: ../functions/panel/theme_options.php:237
-#, fuzzy
 msgid "Change Favicon"
 msgstr "Zmień favikonę"
 
 #: ../functions/panel/theme_options.php:240
-#, fuzzy
 msgid "Upload Favicon"
-msgstr "Wyłącz favikonę:"
+msgstr "Prześlij favikonę"
 
 #: ../functions/panel/theme_options.php:253
 msgid "No Favicon Found. Upload Favicon."
-msgstr ""
+msgstr "Nie znaleziono favikony. Prześlij favikonę."
 
 #: ../functions/panel/theme_options.php:266
 msgid "Content Background"
@@ -616,7 +606,7 @@ msgstr "Kliknij tutaj, by przeczytać"
 #: ../functions/panel/theme_options.php:384
 #: ../functions/panel/theme_options.php:389
 msgid "Default Layout"
-msgstr "Domyślny wygląd"
+msgstr "Domyślny układ"
 
 #: ../functions/panel/theme_options.php:393
 msgid "No Sidebar, One Column"
@@ -668,7 +658,7 @@ msgstr "Ustawienia zalążka wpisu"
 
 #: ../functions/panel/theme_options.php:475
 msgid "More Tag Text"
-msgstr "Napis na odnośniku do pełengo wpisu:"
+msgstr "Napis na odnośniku do pełnego wpisu:"
 
 #: ../functions/panel/theme_options.php:480
 msgid "Excerpt length(words)"
@@ -704,7 +694,9 @@ msgstr "Kliknij tutaj, by edytować"
 
 #: ../functions/panel/theme_options.php:531
 msgid "Note: Here You can put your Post IDs which displays on Homepage as slider."
-msgstr "Rada: Wpisz tutaj ID wpisów, które mają być wyświetlone na stronie głównej jako pokaz slajdów."
+msgstr ""
+"Rada: Wpisz tutaj ID wpisów, które mają być wyświetlone na stronie głównej "
+"jako pokaz slajdów."
 
 #: ../functions/panel/theme_options.php:538
 msgid "Slider Effect Options"
@@ -865,7 +857,7 @@ msgstr "Wpisz tylko Twój identyfikator Binga"
 
 #: ../functions/panel/theme_options.php:718
 msgid "Analytics/ Header / Footer Codes"
-msgstr ""
+msgstr "Analityka - kody w nagłówku i w stopce"
 
 #: ../functions/panel/theme_options.php:723
 msgid "Code to display on Header"
@@ -873,7 +865,9 @@ msgstr "Kod do wyświetlenia w nagłówku"
 
 #: ../functions/panel/theme_options.php:729
 msgid "Note: Here you can put scripts from Google, Facebook etc. which will load on Header"
-msgstr "Rada: Tutaj możesz wpisać kod skryptu od Google, Facebooka, itp. który będzie załadowany w nagłówku"
+msgstr ""
+"Rada: Tutaj możesz wpisać kod skryptu od Google, Facebooka, itp. który "
+"będzie załadowany w nagłówku"
 
 #: ../functions/panel/theme_options.php:732
 msgid "Code to display on Footer"
@@ -881,41 +875,6 @@ msgstr "Kod do wyświetlenia w stopce"
 
 #: ../functions/panel/theme_options.php:739
 msgid "Note: Here you can put scripts from Google, Facebook, Add This etc. which will load on footer"
-msgstr "Rada: Tutaj możesz wpisać kod skryptu od Google, Facebooka, Add This itp. który będzie załadowany w stopce"
-
-#~ msgid "Slider Options"
-#~ msgstr "Opcje pokazu slajdów"
-
-#~ msgid "Disable Header Logo:"
-#~ msgstr "Wyłącz logo w nagłówku:"
-
-#~ msgid "Featured Slider Options"
-#~ msgstr "Opcje pokazu slajdów"
-
-#~ msgid "Social Links Option"
-#~ msgstr "Opcje linków społecznościowych"
-
-#~ msgid "Webmaster Tools Option"
-#~ msgstr "Opcje narzędzi programisty"
-
-#~ msgid "Analytics"
-#~ msgstr "Analityka"
-
-#~ msgid ""
-#~ "Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy "
-#~ "Customizethrough Theme Options and Custom Widgets. Features: Custom Menu, "
-#~ "Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options "
-#~ "(Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, "
-#~ "Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, "
-#~ "Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 "
-#~ "Grid System CSS Framework. Multilingual Ready (WPML) and also currently "
-#~ "translated in Polish, Russian and Finnish."
-#~ msgstr ""
-#~ "Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy "
-#~ "Customizethrough Theme Options and Custom Widgets. Features: Custom Menu, "
-#~ "Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options "
-#~ "(Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, "
-#~ "Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, "
-#~ "Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 "
-#~ "Grid System CSS Framework. Multilingual Ready (WPML) and also currently "
-#~ "translated in Polish, Russian and Finnish."
+msgstr ""
+"Rada: Tutaj możesz wpisać kod skryptu od Google, Facebooka, Add This itp. "
+"który będzie załadowany w stopce"

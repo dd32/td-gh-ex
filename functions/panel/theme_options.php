@@ -136,8 +136,7 @@ function simplecatch_theme_options_do_page() {
                  
           	</div><!-- #theme-option-header -->  
           
-          
-            
+                     
             <div id="simplecatch_ad_tabs">
                 <ul class="tabNavigation" id="mainNav">
                     <li><a href="#designsettings"><?php _e( 'Design Settings', 'simplecatch' );?></a></li>
@@ -158,10 +157,10 @@ function simplecatch_theme_options_do_page() {
                                         <th scope="row"><?php _e( 'Header logo url:', 'simplecatch' ); ?></th>
                                         <td>
                                             <?php  if ( !empty ( $options[ 'featured_logo_header' ] ) ) { ?>
-                                             		<input  class="upload-url" size="65" type="text" name="simplecatch_options[featured_logo_header]" value="<?php echo esc_url ( $options [ 'featured_logo_header' ]); ?>" class="upload" />
+                                             		<input  class="upload-url" size="65" type="text" name="simplecatch_options[featured_logo_header]" value="<?php echo esc_url ( $options [ 'featured_logo_header' ]); ?>" />
                                                    	<input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Logo','simplecatch' ); ?>" />
                                                 <?php } else { ?>
-                                               		<input size="65" type="text" name="simplecatch_options[featured_logo_header]" value="" alt="logo" />
+                                               		<input class="upload-url" size="65" type="text" name="simplecatch_options[featured_logo_header]" value="" alt="logo" />
                                                     <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Upload Logo','simplecatch' ); ?>" />
                                                 <?php }  ?>
                                                 
@@ -681,7 +680,7 @@ function simplecatch_theme_options_do_page() {
                                     </td>
                                 </tr>
                             </tbody>
-                        </table>     
+                        </table><p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p>      
                 	</div><!-- .option-container -->                       
                 </div><!-- #sociallinks -->                
                 

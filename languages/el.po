@@ -1,0 +1,921 @@
+# Copyright (C) 2012 the Catch Themes Team
+# This file is distributed under the  GNU General Public License.
+msgid ""
+msgstr ""
+"Project-Id-Version: Simple Catch\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-01-20 19:45+0530\n"
+"PO-Revision-Date: 2013-01-20 19:45+0530\n"
+"Last-Translator: Dimitris Antonakis <dimantonak@gmail.com>\n"
+"Language-Team: Catch Themes <fansitejustgames@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"X-Poedit-KeywordsList: __;_e;_x;_ex;_n;esc_attr_e;esc_attr__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:13
+msgid "Error 404 - Page Not Found."
+msgstr "Σφάλμα 404 - Η σελίδα δεν βράθηκε."
+
+#: ../404.php:14
+msgid "We&rsquo;re sorry! This page is not available."
+msgstr "Η σελίδα δεν είναι διαθέσιμη."
+
+#: ../404.php:15
+msgid "This might be because:"
+msgstr "Αυτό μπορεί να οφείλειται:"
+
+#: ../404.php:16
+msgid "You have typed the web address incorrectly, or the page you were looking for may have been moved, updated or deleted."
+msgstr "Έχετε πληκτρολογήσε λανθασμένη διεύθυνση ή η σελίδα που ψάχνετε έχει μετακινηθεί, ανανεωθεί ή διαγραφεί."
+
+#: ../404.php:17
+msgid "Please try the following options instead:"
+msgstr "Δοκιμάστε τις ακόλουθες επιλογές:"
+
+#: ../404.php:18
+msgid "Check for a mis-typed URL error, then press the refresh button on your browser or Use the search box at the Header."
+msgstr "Ελέγξτε για κάποιο λάθος στο URL, έπειτα ανανεώστε τη σελίδα του προγράμματος πλοήγησης ή κάντε μια αναζήτηση απο το αντίστοιχο πεδίο."
+
+#: ../comments.php:21
+msgid "This post is password protected. Enter the password to view comments."
+msgstr "Η δημοσίευση προστατεύεται απο κωδικό. Πληκτρολογήστε τον κωδικό για να δείτε τα σχόλια."
+
+#: ../comments.php:29
+#: ../content.php:30
+#: ../image.php:48
+msgid "No Comments"
+msgstr "Χωρίς Σχόλια"
+
+#: ../comments.php:29
+#: ../content.php:30
+#: ../image.php:48
+msgid "1 Comment"
+msgstr "1 Σχόλιο"
+
+#: ../comments.php:29
+#: ../content.php:30
+#: ../image.php:48
+msgid "% Comments"
+msgstr "% Σχόλια"
+
+#: ../comments.php:60
+msgid "Comments are closed."
+msgstr "Τα σχόλια έχουν κλείσει."
+
+#: ../content.php:18
+#: ../content.php:25
+#, php-format
+msgid "Permalink to %s"
+msgstr "Μόνιμη διεύθυνση για %s"
+
+#: ../content.php:28
+#: ../image.php:46
+msgid "By"
+msgstr "Από :"
+
+#: ../content.php:54
+#: ../search.php:39
+msgid "Previous"
+msgstr "Προηγούμενο"
+
+#: ../content.php:55
+#: ../search.php:40
+msgid "Next"
+msgstr "Επόμενο"
+
+#: ../content.php:64
+msgid "Not found"
+msgstr "Δεν βρέθηκε"
+
+#: ../content.php:65
+msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
+msgstr "Δεν βρέθηκαν αποτελέσματα για το ζητούμενο αρχείο. Αναζητήστε μια σχετική δημοσίευση."
+
+#: ../footer.php:17
+msgid "Copyright"
+msgstr "Copyright"
+
+#: ../footer.php:17
+msgid "All Rights Reserved."
+msgstr "Με την επιφύλαξη παντός δικαιώματος."
+
+#: ../functions.php:92
+msgid "Primary Menu"
+msgstr "Κυρίως Μενού"
+
+#: ../functions.php:121
+#: ../functions.php:123
+msgid "sidebar"
+msgstr "πλαινή μπάρα"
+
+#: ../image.php:106
+msgid "Previous Image"
+msgstr "Προηγούμενη Εικόνα"
+
+#: ../image.php:107
+msgid "Next Image"
+msgstr "Επόμενη Εικόνα"
+
+#: ../search.php:17
+#, php-format
+msgid "Showing results for: <span class=\"img-title\">%s</span>"
+msgstr "Αποτελέσματα για: <span class=\"img-title\">%s</span>"
+
+#: ../search.php:46
+#, php-format
+msgid "Your search <span> \"%s\" </span> did not match any documents"
+msgstr "Η αναζήτηση <span> \"%s\" </span> δεν ήταν επιτυχής"
+
+#: ../search.php:48
+msgid "A few suggestions"
+msgstr "Εναλλακτικά"
+
+#: ../search.php:50
+msgid "Make sure all words are spelled correctly"
+msgstr "Σιγουρευτείτε οτι έχετε πληκτρολογήσει τον όρο σωστά"
+
+#: ../search.php:51
+msgid "Try different keywords"
+msgstr "Δοκιμάστε διαφορετικές λέξεις κλειδιά"
+
+#: ../search.php:52
+msgid "Try more general keywords"
+msgstr "Δοκιμάστε γενικότερους όρους αναζήτησης"
+
+#: ../searchform.php:17
+#, php-format
+msgid "%s"
+msgstr "%s"
+
+#: ../functions/simplecatch_functions.php:100
+#, php-format
+msgid "Page %s"
+msgstr "Σελίδα %s"
+
+#: ../functions/simplecatch_functions.php:432
+#, php-format
+msgid "%s in Facebook"
+msgstr "%s στο Facebook"
+
+#: ../functions/simplecatch_functions.php:437
+#, php-format
+msgid "%s in Twitter"
+msgstr "%s στο Twitter"
+
+#: ../functions/simplecatch_functions.php:442
+#, php-format
+msgid "%s in Google+"
+msgstr "%s στο Google+"
+
+#: ../functions/simplecatch_functions.php:447
+#, php-format
+msgid "%s in Linkedin"
+msgstr "%s στο Linkedin"
+
+#: ../functions/simplecatch_functions.php:452
+#, php-format
+msgid "%s in Pinterest"
+msgstr "%s στο Pinterest"
+
+#: ../functions/simplecatch_functions.php:457
+#, php-format
+msgid "%s in YouTube"
+msgstr "%s στο YouTube"
+
+#: ../functions/simplecatch_functions.php:462
+#, php-format
+msgid "%s in Vimeo"
+msgstr "%s στο Vimeo"
+
+#: ../functions/simplecatch_functions.php:467
+#, php-format
+msgid "%s in Slideshare"
+msgstr "%s στο Slideshare"
+
+#: ../functions/simplecatch_functions.php:472
+#, php-format
+msgid "%s in Foursquare"
+msgstr "%s στο Foursquare"
+
+#: ../functions/simplecatch_functions.php:477
+#, php-format
+msgid "%s in Flickr"
+msgstr "%s στο Flickr"
+
+#: ../functions/simplecatch_functions.php:482
+#, php-format
+msgid "%s in Tumblr"
+msgstr "%s στο Tumblr"
+
+#: ../functions/simplecatch_functions.php:487
+#, php-format
+msgid "%s in deviantART"
+msgstr "%s στο deviantART"
+
+#: ../functions/simplecatch_functions.php:492
+#, php-format
+msgid "%s in Dribbble"
+msgstr "%s στο Dribbble"
+
+#: ../functions/simplecatch_functions.php:497
+#, php-format
+msgid "%s in MySpace"
+msgstr "%s στο MySpace"
+
+#: ../functions/simplecatch_functions.php:502
+#, php-format
+msgid "%s in WordPress"
+msgstr "%s στο WordPress"
+
+#: ../functions/simplecatch_functions.php:507
+#, php-format
+msgid "%s in RSS"
+msgstr "%s σε RSS"
+
+#: ../functions/simplecatch_functions.php:512
+#, php-format
+msgid "%s in Delicious"
+msgstr "%s στο Delicious"
+
+#: ../functions/simplecatch_functions.php:517
+#, php-format
+msgid "%s in Last.fm"
+msgstr "%s στο Last.fm"
+
+#: ../functions/simplecatch_functions.php:670
+msgid "Powered By:"
+msgstr "Με την υποστήριξη:"
+
+#: ../functions/simplecatch_functions.php:670
+msgid "http://wordpress.org/"
+msgstr "http://wordpress.org"
+
+#: ../functions/simplecatch_functions.php:670
+msgid "Powered By WordPress"
+msgstr "Με την υποστήριξη του Wordpress"
+
+#: ../functions/simplecatch_functions.php:670
+#: ../functions/panel/theme_options.php:663
+msgid "WordPress"
+msgstr "WordPress"
+
+#: ../functions/simplecatch_functions.php:670
+msgid "Theme:"
+msgstr "Θέμα:"
+
+#: ../functions/simplecatch_functions.php:670
+#: ../functions/panel/theme_options.php:118
+msgid "http://catchthemes.com/"
+msgstr "http://catchthemes.com"
+
+#: ../functions/simplecatch_functions.php:670
+msgid "Simple Catch"
+msgstr "Simple Catch"
+
+#: ../functions/simplecatch_functions.php:843
+msgid "Categories: "
+msgstr "Κατηγορίες:"
+
+#: ../functions/simplecatch_functions.php:905
+msgid "Name"
+msgstr "Όνομα"
+
+#: ../functions/simplecatch_functions.php:905
+#: ../functions/simplecatch_functions.php:906
+msgid "( required )"
+msgstr "( Απαιτείται )"
+
+#: ../functions/simplecatch_functions.php:906
+msgid "Email"
+msgstr "Email"
+
+#: ../functions/simplecatch_functions.php:907
+msgid "Website"
+msgstr "Website"
+
+#: ../functions/simplecatch_metabox.php:14
+#: ../functions/simplecatch_metabox.php:20
+msgid "Select Sidebar layout"
+msgstr "Επιλέξτε τη μοροφοποίηση της πλαινής μπάρας"
+
+#: ../functions/simplecatch_metabox.php:33
+msgid "Default Layout Set in"
+msgstr "Προεπιλεγμένη μορφοποίηση"
+
+#: ../functions/simplecatch_metabox.php:33
+#: ../functions/panel/theme_options.php:143
+msgid "Theme Settings"
+msgstr "Theme Settings"
+
+#: ../functions/simplecatch_metabox.php:39
+msgid "No sidebar"
+msgstr "No sidebar"
+
+#: ../functions/simplecatch_metabox.php:45
+msgid "Left sidebar"
+msgstr "Left sidebar"
+
+#: ../functions/simplecatch_metabox.php:51
+msgid "Right sidebar"
+msgstr "Right sidebar"
+
+#: ../functions/widgets.php:12
+msgid "Displays Custom Tag Cloud"
+msgstr "Displays Custom Tag Cloud"
+
+#: ../functions/panel/theme_options.php:39
+#: ../functions/panel/theme_options.php:40
+msgid "Theme Options"
+msgstr "Theme Options"
+
+#: ../functions/panel/theme_options.php:101
+#, fuzzy
+msgid "Options Saved"
+msgstr "Settings saved."
+
+#: ../functions/panel/theme_options.php:108
+msgid "http://facebook.com/catchthemes"
+msgstr "http://facebook.com/catchthemes"
+
+#: ../functions/panel/theme_options.php:110
+msgid "https://twitter.com/catchthemes"
+msgstr "https://twitter.com/catchthemes"
+
+#: ../functions/panel/theme_options.php:116
+#, fuzzy
+msgid "Theme Options By"
+msgstr "Theme Options"
+
+#: ../functions/panel/theme_options.php:118
+#: ../functions/panel/theme_options.php:119
+msgid "Catch Themes"
+msgstr "Catch Themes"
+
+#: ../functions/panel/theme_options.php:124
+#, fuzzy
+msgid "http://catchthemes.com/themes/simple-catch-pro/"
+msgstr "http://catchthemes.com/themes/simple-catch-pro"
+
+#: ../functions/panel/theme_options.php:124
+msgid "Upgrade to Simple Catch Pro"
+msgstr "Upgrade to Simple Catch Pr"
+
+#: ../functions/panel/theme_options.php:129
+#, fuzzy
+msgid "http://catchthemes.com/support-forum/forum/simple-catch-public/"
+msgstr "http://catchthemes.com/themes/simple-catch-pro"
+
+#: ../functions/panel/theme_options.php:129
+msgid "Support Forum"
+msgstr ""
+
+#: ../functions/panel/theme_options.php:130
+#, fuzzy
+msgid "http://catchthemes.com/theme-instructions/simple-catch/"
+msgstr "http://catchthemes.com/themes/simple-catch-pro"
+
+#: ../functions/panel/theme_options.php:130
+#, fuzzy
+msgid "Theme Instruction"
+msgstr "Theme Options"
+
+#: ../functions/panel/theme_options.php:131
+#, fuzzy
+msgid "https://www.facebook.com/catchthemes/"
+msgstr "http://facebook.com/catchthemes"
+
+#: ../functions/panel/theme_options.php:131
+#, fuzzy
+msgid "Like Catch Themes on Facebook"
+msgstr "Catch Themes Team"
+
+#: ../functions/panel/theme_options.php:131
+#: ../functions/panel/theme_options.php:592
+msgid "Facebook"
+msgstr "Facebook"
+
+#: ../functions/panel/theme_options.php:132
+#, fuzzy
+msgid "https://twitter.com/catchthemes/"
+msgstr "https://twitter.com/catchthemes"
+
+#: ../functions/panel/theme_options.php:132
+#, fuzzy
+msgid "Follow Catch Themes on Twitter"
+msgstr "Catch Themes Team"
+
+#: ../functions/panel/theme_options.php:132
+#: ../functions/panel/theme_options.php:597
+msgid "Twitter"
+msgstr "Twitter"
+
+#: ../functions/panel/theme_options.php:133
+#, fuzzy
+msgid "http://wordpress.org/support/view/theme-reviews/simple-catch"
+msgstr "http://wordpress.org/extend/themes/simple-catch"
+
+#: ../functions/panel/theme_options.php:133
+#, fuzzy
+msgid "Rate us 5 Star on WordPress"
+msgstr "%s στο WordPress"
+
+#: ../functions/panel/theme_options.php:133
+msgid "5 Star Rating"
+msgstr ""
+
+#: ../functions/panel/theme_options.php:142
+msgid "Design Settings"
+msgstr "Design Settings"
+
+#: ../functions/panel/theme_options.php:144
+#, fuzzy
+msgid "Featured Post Slider"
+msgstr "Featured Slider"
+
+#: ../functions/panel/theme_options.php:145
+msgid "Social Links"
+msgstr "Social Links"
+
+#: ../functions/panel/theme_options.php:146
+msgid "Webmaster Tools"
+msgstr "Webmaster Tools"
+
+#: ../functions/panel/theme_options.php:152
+msgid "Logo Options"
+msgstr "Logo Options"
+
+#: ../functions/panel/theme_options.php:157
+msgid "Header logo url:"
+msgstr "Header logo url:"
+
+#: ../functions/panel/theme_options.php:161
+#, fuzzy
+msgid "Change Logo"
+msgstr "Change Header Logo"
+
+#: ../functions/panel/theme_options.php:164
+msgid "Upload Logo"
+msgstr ""
+
+#: ../functions/panel/theme_options.php:171
+msgid "Preview:"
+msgstr "Preview:"
+
+#: ../functions/panel/theme_options.php:177
+msgid "No Header Image Found. Upload Header Image."
+msgstr ""
+
+#: ../functions/panel/theme_options.php:184
+#, fuzzy
+msgid "Disable Site Title?"
+msgstr "Disable Site Title:"
+
+#: ../functions/panel/theme_options.php:186
+#: ../functions/panel/theme_options.php:191
+#: ../functions/panel/theme_options.php:219
+msgid "Check to Disable."
+msgstr ""
+
+#: ../functions/panel/theme_options.php:189
+#, fuzzy
+msgid "Disable Site Description?"
+msgstr "Disable Site Description:"
+
+#: ../functions/panel/theme_options.php:194
+msgid "Footer logo url: "
+msgstr "Footer logo url: "
+
+#: ../functions/panel/theme_options.php:201
+msgid "Change Footer Logo"
+msgstr "Change Footer Logo"
+
+#: ../functions/panel/theme_options.php:205
+#: ../functions/panel/theme_options.php:246
+msgid "Preview: "
+msgstr "Preview: "
+
+#: ../functions/panel/theme_options.php:217
+#, fuzzy
+msgid "Disable Footer Logo?"
+msgstr "Disable Footer Logo:"
+
+#: ../functions/panel/theme_options.php:223
+#: ../functions/panel/theme_options.php:260
+#: ../functions/panel/theme_options.php:354
+#: ../functions/panel/theme_options.php:378
+#: ../functions/panel/theme_options.php:406
+#: ../functions/panel/theme_options.php:443
+#: ../functions/panel/theme_options.php:464
+#: ../functions/panel/theme_options.php:484
+#: ../functions/panel/theme_options.php:500
+#: ../functions/panel/theme_options.php:531
+#: ../functions/panel/theme_options.php:582
+#: ../functions/panel/theme_options.php:712
+#: ../functions/panel/theme_options.php:742
+msgid "Save"
+msgstr "Save"
+
+#: ../functions/panel/theme_options.php:228
+msgid "Fav Icon Options"
+msgstr "Fav Icon Options"
+
+#: ../functions/panel/theme_options.php:233
+#, fuzzy
+msgid "Favicon URL:"
+msgstr "Fav Icon URL:"
+
+#: ../functions/panel/theme_options.php:236
+#, fuzzy
+msgid "Change Favicon"
+msgstr "Change Fav Icon"
+
+#: ../functions/panel/theme_options.php:239
+#, fuzzy
+msgid "Upload Favicon"
+msgstr "Disable Favicon:"
+
+#: ../functions/panel/theme_options.php:252
+msgid "No Favicon Found. Upload Favicon."
+msgstr ""
+
+#: ../functions/panel/theme_options.php:265
+msgid "Content Background"
+msgstr "Content Background"
+
+#: ../functions/panel/theme_options.php:267
+msgid "Need to replace default background?"
+msgstr "Need to replace default background?"
+
+#: ../functions/panel/theme_options.php:267
+#, php-format
+msgid "<a class=\"button\" href=\"%s\">Click here</a>"
+msgstr "<a class=\"button\" href=\"%s\">Click here</a>"
+
+#: ../functions/panel/theme_options.php:273
+msgid "Content Color Options"
+msgstr "Content Color Options"
+
+#: ../functions/panel/theme_options.php:280
+msgid "Heading Color:"
+msgstr "Heading Color:"
+
+#: ../functions/panel/theme_options.php:291
+msgid "Meta Description Color:"
+msgstr "Meta Description Color:"
+
+#: ../functions/panel/theme_options.php:302
+msgid "Text Color:"
+msgstr "Text Color:"
+
+#: ../functions/panel/theme_options.php:313
+msgid "Link Color:"
+msgstr "Link Color:"
+
+#: ../functions/panel/theme_options.php:324
+msgid "Sidebar Widget Heading Color:"
+msgstr "Sidebar Widget Heading Color:"
+
+#: ../functions/panel/theme_options.php:335
+msgid "Sidebar Widget Text Color:"
+msgstr "Sidebar Widget Text Color:"
+
+#: ../functions/panel/theme_options.php:345
+msgid "Reset Color:"
+msgstr "Reset Color:"
+
+#: ../functions/panel/theme_options.php:359
+msgid "Custom CSS"
+msgstr "Custom CSS"
+
+#: ../functions/panel/theme_options.php:364
+msgid "Enter your custom CSS styles."
+msgstr "Enter your custom CSS styles."
+
+#: ../functions/panel/theme_options.php:371
+msgid "CSS Tutorial from W3Schools."
+msgstr "CSS Tutorial from W3Schools."
+
+#: ../functions/panel/theme_options.php:373
+msgid "http://www.w3schools.com/css/default.asp"
+msgstr "http://www.w3schools.com/css/default.asp"
+
+#: ../functions/panel/theme_options.php:373
+msgid "CSS Tutorial"
+msgstr "CSS Tutorial"
+
+#: ../functions/panel/theme_options.php:373
+msgid "Click Here to Read"
+msgstr "Click Here to Read"
+
+#: ../functions/panel/theme_options.php:383
+#: ../functions/panel/theme_options.php:388
+msgid "Default Layout"
+msgstr "Default Layout"
+
+#: ../functions/panel/theme_options.php:392
+msgid "No Sidebar, One Column"
+msgstr "No Sidebar, One Column"
+
+#: ../functions/panel/theme_options.php:396
+msgid "Content on Right"
+msgstr "Content on Right"
+
+#: ../functions/panel/theme_options.php:400
+msgid "Content on Left"
+msgstr "Content on Left"
+
+#: ../functions/panel/theme_options.php:414
+msgid "Homepage / Frontpage Category Setting"
+msgstr "Homepage / Frontpage Category Setting"
+
+#: ../functions/panel/theme_options.php:420
+msgid "Front page posts categories:"
+msgstr "Front page posts categories:"
+
+#: ../functions/panel/theme_options.php:422
+msgid "Only posts that belong to the categories selected here will be displayed on the front page."
+msgstr "Only posts that belong to the categories selected here will be displayed on the front page."
+
+#: ../functions/panel/theme_options.php:427
+msgid "--Disabled--"
+msgstr "--Disabled--"
+
+#: ../functions/panel/theme_options.php:438
+msgid "You may select multiple categories by holding down the CTRL key."
+msgstr "You may select multiple categories by holding down the CTRL key."
+
+#: ../functions/panel/theme_options.php:448
+msgid "Search Text Settings"
+msgstr "Search Text Settings"
+
+#: ../functions/panel/theme_options.php:453
+msgid "Default Display Text in Search"
+msgstr "Default Display Text in Search"
+
+#: ../functions/panel/theme_options.php:458
+msgid "Search Button's text"
+msgstr "Search Button's text"
+
+#: ../functions/panel/theme_options.php:469
+msgid "Excerpt / More Tag Settings"
+msgstr "Excerpt / More Tag Settings"
+
+#: ../functions/panel/theme_options.php:474
+msgid "More Tag Text"
+msgstr "More Tag Text"
+
+#: ../functions/panel/theme_options.php:479
+msgid "Excerpt length(words)"
+msgstr "Excerpt length(words)"
+
+#: ../functions/panel/theme_options.php:489
+msgid "Feed Redirect"
+msgstr "Feed Redirect"
+
+#: ../functions/panel/theme_options.php:494
+msgid "Feed Redirect URL"
+msgstr "Feed Redirect URL"
+
+#: ../functions/panel/theme_options.php:507
+msgid "Add Slider Options"
+msgstr "Add Slider Options"
+
+#: ../functions/panel/theme_options.php:511
+msgid "Exclude Slider post from Home page posts:"
+msgstr "Exclude Slider post from Home page posts:"
+
+#: ../functions/panel/theme_options.php:516
+msgid "Number of Slides"
+msgstr "Number of Slides"
+
+#: ../functions/panel/theme_options.php:522
+msgid "Featured Slider Post #"
+msgstr "Featured Slider Post #"
+
+#: ../functions/panel/theme_options.php:524
+msgid "Click Here To Edit"
+msgstr "Click Here To Edit"
+
+#: ../functions/panel/theme_options.php:530
+msgid "Note: Here You can put your Post IDs which displays on Homepage as slider."
+msgstr "Note: Here You can put your Post IDs which displays on Homepage as slider."
+
+#: ../functions/panel/theme_options.php:537
+msgid "Slider Effect Options"
+msgstr "Slider Effect Options"
+
+#: ../functions/panel/theme_options.php:541
+msgid "Disable Slider Background Effect:"
+msgstr "Disable Slider Background Effect:"
+
+#: ../functions/panel/theme_options.php:548
+msgid "Transition Effect:"
+msgstr "Transition Effect:"
+
+#: ../functions/panel/theme_options.php:552
+msgid "fade"
+msgstr "fade"
+
+#: ../functions/panel/theme_options.php:553
+msgid "wipe"
+msgstr "wipe"
+
+#: ../functions/panel/theme_options.php:554
+msgid "scrollUp"
+msgstr "scrollUp"
+
+#: ../functions/panel/theme_options.php:555
+msgid "scrollDown"
+msgstr "scrollDown"
+
+#: ../functions/panel/theme_options.php:556
+msgid "scrollLeft"
+msgstr "scrollLeft"
+
+#: ../functions/panel/theme_options.php:557
+msgid "scrollRight"
+msgstr "scrollRight"
+
+#: ../functions/panel/theme_options.php:558
+msgid "blindX"
+msgstr "blindX"
+
+#: ../functions/panel/theme_options.php:559
+msgid "blindY"
+msgstr "blindY"
+
+#: ../functions/panel/theme_options.php:560
+msgid "blindZ"
+msgstr "blindZ"
+
+#: ../functions/panel/theme_options.php:561
+msgid "cover"
+msgstr "cover"
+
+#: ../functions/panel/theme_options.php:562
+msgid "shuffle"
+msgstr "shuffle"
+
+#: ../functions/panel/theme_options.php:567
+msgid "Transition Delay"
+msgstr "Transition Delay"
+
+#: ../functions/panel/theme_options.php:570
+#: ../functions/panel/theme_options.php:577
+msgid "second(s)"
+msgstr "second(s)"
+
+#: ../functions/panel/theme_options.php:574
+msgid "Transition Length"
+msgstr "Transition Length"
+
+#: ../functions/panel/theme_options.php:602
+msgid "Google+"
+msgstr "Google+"
+
+#: ../functions/panel/theme_options.php:607
+msgid "Pinterest"
+msgstr "Pinterest"
+
+#: ../functions/panel/theme_options.php:612
+msgid "Youtube"
+msgstr "Youtube"
+
+#: ../functions/panel/theme_options.php:617
+msgid "Vimeo"
+msgstr "Vimeo"
+
+#: ../functions/panel/theme_options.php:623
+msgid "Linkedin"
+msgstr "Linkedin"
+
+#: ../functions/panel/theme_options.php:628
+msgid "Slideshare"
+msgstr "Slideshare"
+
+#: ../functions/panel/theme_options.php:633
+msgid "Foursquare"
+msgstr "Foursquare"
+
+#: ../functions/panel/theme_options.php:638
+msgid "Flickr"
+msgstr "Flickr"
+
+#: ../functions/panel/theme_options.php:643
+msgid "Tumblr"
+msgstr "Tumblr"
+
+#: ../functions/panel/theme_options.php:648
+msgid "deviantART"
+msgstr "deviantART"
+
+#: ../functions/panel/theme_options.php:653
+msgid "Dribbble"
+msgstr "Dribbble"
+
+#: ../functions/panel/theme_options.php:658
+msgid "MySpace"
+msgstr "MySpace"
+
+#: ../functions/panel/theme_options.php:668
+msgid "RSS"
+msgstr "RSS"
+
+#: ../functions/panel/theme_options.php:673
+msgid "Delicious"
+msgstr "Delicious"
+
+#: ../functions/panel/theme_options.php:678
+msgid "Last.fm"
+msgstr "Last.fm"
+
+#: ../functions/panel/theme_options.php:689
+msgid "Site Verification"
+msgstr "Site Verification"
+
+#: ../functions/panel/theme_options.php:694
+msgid "Google Site Verification ID"
+msgstr "Google Site Verification ID"
+
+#: ../functions/panel/theme_options.php:695
+msgid "Enter your Google ID number only"
+msgstr "Enter your Google ID number only"
+
+#: ../functions/panel/theme_options.php:700
+msgid "Yahoo Site Verification ID"
+msgstr "Yahoo Site Verification ID"
+
+#: ../functions/panel/theme_options.php:701
+msgid "Enter your Yahoo ID number only"
+msgstr "Enter your Yahoo ID number only"
+
+#: ../functions/panel/theme_options.php:706
+msgid "Bing Site Verification ID"
+msgstr "Bing Site Verification ID"
+
+#: ../functions/panel/theme_options.php:707
+msgid "Enter your Bing ID number only"
+msgstr "Enter your Bing ID number only"
+
+#: ../functions/panel/theme_options.php:717
+msgid "Analytics/ Header / Footer Codes"
+msgstr ""
+
+#: ../functions/panel/theme_options.php:722
+msgid "Code to display on Header"
+msgstr "Code to display on Header"
+
+#: ../functions/panel/theme_options.php:728
+msgid "Note: Here you can put scripts from Google, Facebook etc. which will load on Header"
+msgstr "Note: Here you can put scripts from Google, Facebook etc. which will load on Header"
+
+#: ../functions/panel/theme_options.php:731
+msgid "Code to display on Footer"
+msgstr "Code to display on Footer"
+
+#: ../functions/panel/theme_options.php:738
+msgid "Note: Here you can put scripts from Google, Facebook, Add This etc. which will load on footer"
+msgstr "Note: Here you can put scripts from Google, Facebook, Add This etc. which will load on footer"
+
+#~ msgid "Slider Options"
+#~ msgstr "Slider Options"
+
+#~ msgid "Disable Header Logo:"
+#~ msgstr "Disable Header Logo:"
+
+#~ msgid "Featured Slider Options"
+#~ msgstr "Featured Slider Options"
+
+#~ msgid "Social Links Option"
+#~ msgstr "Social Links Option"
+
+#~ msgid "Webmaster Tools Option"
+#~ msgstr "Webmaster Tools Option"
+
+#~ msgid "Analytics"
+#~ msgstr "Analytics"
+
+#~ msgid ""
+#~ "Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy "
+#~ "Customizethrough Theme Options and Custom Widgets. Features: Custom Menu, "
+#~ "Custom Widgets, "
+#~ msgstr ""
+#~ "Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy "
+#~ "Customizethrough Theme Options and Custom Widgets. Features: Custom Menu, "
+#~ "Custom Widgets, "
+
+#~ msgid ""
+#~ "black, gray, silver, white, light, one-column, two-columns, left-sidebar, "
+#~ "right-sidebar, fixed-width, custom-menu, featured-images, full-width-"
+#~ "template, theme-options, threaded-comments, translation-ready"
+#~ msgstr ""
+#~ "black, gray, silver, white, light, one-column, two-columns, left-sidebar, "
+#~ "right-sidebar, fixed-width, custom-menu, featured-images, full-width-"
+#~ "template, theme-options, threaded-comments, translation-ready"

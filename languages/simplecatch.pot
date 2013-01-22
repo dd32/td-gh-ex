@@ -499,6 +499,7 @@ msgstr ""
 #: ../functions/panel/theme_options.php:501
 #: ../functions/panel/theme_options.php:532
 #: ../functions/panel/theme_options.php:583
+#: ../functions/panel/theme_options.php:683
 #: ../functions/panel/theme_options.php:713
 #: ../functions/panel/theme_options.php:743
 msgid "Save"
