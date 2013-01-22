@@ -28,7 +28,7 @@ class catchbox_adwidget extends WP_Widget {
 	 */
 	function form($instance) {
 		$instance = wp_parse_args( (array) $instance, array( 'title' => '', 'adcode' => '', 'image' => '', 'href' => '', 'alt' => '' ) );
-		$title = sanitize_title( $instance[ 'title' ] );
+		$title = esc_attr( $instance[ 'title' ] ); 
 		$adcode = esc_textarea( $instance[ 'adcode' ] );
 		$image = esc_url( $instance[ 'image' ] );
 		$href = esc_url( $instance[ 'href' ] );
@@ -73,7 +73,7 @@ class catchbox_adwidget extends WP_Widget {
 	 */
 	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
-		$instance['title'] = stripslashes($new_instance['title']);
+		$instance['title'] = strip_tags($new_instance['title']);
 		$instance['adcode'] = wp_kses_stripslashes($new_instance['adcode']);
 		$instance['image'] = esc_url_raw($new_instance['image']);
 		$instance['href'] = esc_url_raw($new_instance['href']);
