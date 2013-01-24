@@ -187,11 +187,11 @@ if( $theme_check == 'pro' ):
 		'heading' => 'cyberchimps_blog_heading'
 	);
 	
-	$sections_list[] = array(
+	/*$sections_list[] = array(
 		'id' => 'cyberchimps_blog_magazine_section',
 		'label' => __('Magazine Options', 'cyberchimps'),
 		'heading' => 'cyberchimps_blog_heading'
-	);
+	);*/
 	
 	$sections_list[] = array(
 		'id' => 'cyberchimps_blog_portfolio_pro_section',
@@ -224,11 +224,11 @@ endif;
 		'heading' => 'cyberchimps_blog_heading'
 	);*/
 	
-	$sections_list[] = array(
+	/*$sections_list[] = array(
 		'id'		=> 'cyberchimps_profile_section',
 		'label'		=> __('Profile Options', 'cyberchimps'),
 		'heading'	=> 'cyberchimps_blog_heading'
-	);
+	);*/
 	
 /*************************** TEMPLATE ************************************************/
 
@@ -721,12 +721,13 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$fields_list[]	= array(
 		'name'		=> __('Choose your icon style', 'cyberchimps'),
 		'id'		=> 'theme_backgrounds',
-		'std'		=> 'default',
+		'std'		=> apply_filters( 'cyberchimps_social_icon_default', 'default' ),
 		'type'		=> 'images',
-		'options'	=> array(
-			'default'	=> $imagepath . 'social/thumbs/icons-default.png',
-			'legacy'	=> $imagepath . 'social/thumbs/icons-classic.png',
-			'round'		=> $imagepath . 'social/thumbs/icons-round.png'),
+		'options'	=> apply_filters( 'cyberchimps_social_icon_options', array(
+									'default'	=> $imagepath . 'social/thumbs/icons-default.png',
+									'legacy'	=> $imagepath . 'social/thumbs/icons-classic.png',
+									'round'		=> $imagepath . 'social/thumbs/icons-round.png' 
+									) ),
 		'section'	=> 'cyberchimps_header_social_section',
 		'heading'	=> 'cyberchimps_header_heading'
 	);
@@ -1399,7 +1400,7 @@ if( $theme_check == 'pro' ):
 	);
 	/********* PORTFOLIO PRO ENDS *****************/
 
-	/********* MAGAZINE STARTS *****************/
+	/********* MAGAZINE STARTS *****************
 	
 	$fields_list[]	= array(
 		'name'		=> __('Meta Data', 'cyberchimps'),
@@ -1844,7 +1845,7 @@ endif;// end pro option fields
 	);
 	/********* FEATURED POSTS ENDS ************/
 	
-	/********* PROFILE OPTIONS STARTS **********/
+	/********* PROFILE OPTIONS STARTS **********
 	$fields_list[]	= array(
 		'name'		=> __('Profile Name', 'cyberchimps'),
 		'id'		=> 'profile_name',
@@ -1911,7 +1912,7 @@ endif;// end pro option fields
 		'heading'	=> 'cyberchimps_blog_heading'
 	);
 	
-	/* Social options for profile starts */
+	/* Social options for profile starts 
 	$fields_list[]	= array(
 		'name'		=> __('Twitter', 'cyberchimps'),
 		'id' 		=> 'profile_twitter',
