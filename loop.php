@@ -1,5 +1,4 @@
 <?php ?>
-
 <?php /* Display navigation to next/previous pages when applicable */ ?>
 <?php if ( $wp_query->max_num_pages > 1 ) : ?>
 	<div id="nav-above" class="navigation">
@@ -109,11 +108,13 @@
 
 	<?php else : ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'aplau' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-
+			<h2 class="entry-title">
+			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?> </a>
+			<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'aplau' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 			<div class="entry-meta">
 				<?php aplau_posted_on(); ?>
 			</div><!-- .entry-meta -->
+
 
 	<?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>
 			<div class="entry-summary">
@@ -155,8 +156,23 @@
 
 <?php /* Display navigation to next/previous pages when applicable */ ?>
 <?php if (  $wp_query->max_num_pages > 1 ) : ?>
-				<div id="nav-below" class="navigation">
-					<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&#171;</span> Previous Posts', 'aplau' ) ); ?></div>
-					<div class="nav-next"><?php previous_posts_link( __( 'New posts <span class="meta-nav">&#187;</span>', 'aplau' ) ); ?></div>
-				</div><!-- #nav-below -->
+	<div id="nav-below" class="navigation">
+<?php
+global $wp_query;
+$total_pages = $wp_query->max_num_pages;
+if ($total_pages > 1){
+  $current_page = max(1, get_query_var('paged'));
+  echo '<div class="page-link">';
+  echo paginate_links(array(
+      'base' => get_pagenum_link(1) . '%_%',
+      'format' => 'page/%#%',
+      'current' => $current_page,
+      'total' => $total_pages,
+      'prev_text' => '<span class="meta-nav">&#171;</span>',
+      'next_text' => '<span class="meta-nav">&#187;</span>'
+    ));
+  echo '</div>';
+}
+?>
+	</div><!-- #nav-below -->
 <?php endif; ?>

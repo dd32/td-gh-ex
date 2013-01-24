@@ -1,10 +1,10 @@
 /*
 Theme Name: Aplau
 Theme URI: http://aplau.com/aplau
-Description:  Aplau is a Premium Quality WordPress Theme based on HTML, CSS and PHP. This theme is powered with custom menu, sidebar widget, theme options, advertisement and analytics ready features. This theme is also loads very first and maximum search engine friendly. Aplau theme is Designed and developed by <a href="http://aplau.com">Aplau Themes</a>. 
+Description:  Aplau is a Premium Quality WordPress Theme based on HTML, CSS, PHP and <a href="http://aplau.com">Aplau Framework</a>. This theme is powered with custom menu, sidebar widget, theme options, advertisement and analytics ready features. This theme is loads very first and maximum search engine friendly with custom menu, custom logo, advertisement and analytics ready features with theme options.
 Author: Aplau
 Author URI: http://aplau.com
-Version: 1.1
+Version: 1.2.1
 
 Tags: black, blue, white, light, orange, green, two-columns, fixed-width, custom-menu, theme-options, right-sidebar, threaded-comments, sticky-post, microformats, editor-style
 
@@ -646,7 +646,6 @@ float: right;
 }
 .entry-content,
 .entry-summary {
-	clear: both;
 	padding: 12px 0 0 0;
 }
 #content .entry-summary p:last-child {
@@ -885,7 +884,15 @@ img.aligncenter {
 .wp-caption p.wp-caption-text {
 	color: #888;
 	font-size: 12px;
-	margin: 5px;
+	margin: 0 5px;
+}
+.wp-post-image {
+float: left;
+padding-right: 10px;
+padding-bottom: 5px;
+padding-top: 5px;
+width: 120px;
+height: 120px;
 }
 .wp-smiley {
 	margin: 0;

@@ -1,5 +1,5 @@
 === Aplau Readme (readme.txt) ===
-* This file was introduced with version 1.0 of Snow and will be maintained with future releases. The following information may be found and/or updated as needed:
+* This file was introduced with version 1.0 of Aplau and will be maintained with future releases. The following information may be found and/or updated as needed:
 
 == Contents ==
 * Basic FAQ
@@ -15,4 +15,4 @@ A: Yes
 * Custom Dropdown menu works when customized.
 
 == Changelog ==
-* This is the 1st version
+* This is the 3rd version
