@@ -1891,6 +1891,7 @@ $GLOBALS['content_width'] = $content_width = 600;
 add_action('init', 'arjuna_textdomain');
 function arjuna_textdomain(){
 	load_theme_textdomain('Arjuna', get_template_directory() . '/languages');
+	wp_enqueue_script('jquery');
 }
 
 //CSS
