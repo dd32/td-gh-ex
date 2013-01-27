@@ -1,5 +1,12 @@
 Changelog -----------------------------------
-version:1.002
+version:1.003
+modified
+    Modified raindrops_loop_class()
+    Modified html5 figure elements add
+    Modified extra sidebar position css
+----------------------------------------------
+Changelog -----------------------------------
+version:1.001
 fixed
     Fixed Custom Header Image works improperly when 'Organize my uploads into month- and year-based folders'.
 Add
