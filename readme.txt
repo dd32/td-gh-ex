@@ -196,3 +196,6 @@ Version 1.7.2
 * Fixed Polish translation pl_PL.po and pl_PL.mo
 * Updated Spanish and German translation
 * Fixed the title for Catch Box Adspace Widget
+
+Version 1.7.2.1
+* Fixed Undefined variable: commenter in catchbox_comment_form_fields() function

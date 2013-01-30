@@ -867,7 +867,6 @@ function catchbox_wp_page_menu( $page_markup ) {
 
 add_filter( 'wp_page_menu', 'catchbox_wp_page_menu' );
 
-
 /**
  * Altering Comment Form Fields
  * @uses comment_form_default_fields filter
@@ -875,6 +874,7 @@ add_filter( 'wp_page_menu', 'catchbox_wp_page_menu' );
 function catchbox_comment_form_fields( $fields ) {
 	$req = get_option( 'require_name_email' );
 	$aria_req = ( $req ? " aria-required='true'" : '' );
+	$commenter = wp_get_current_commenter();
     $fields['author'] = '<p class="comment-form-author"><label for="author">' . __( 'Name' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
         '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>';
     $fields['email'] = '<p class="comment-form-email"><label for="email">' . __( 'Email' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
