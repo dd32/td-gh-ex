@@ -4,7 +4,7 @@
 /* CSS for the upgrade page */
 
 #theme-upgrade {
-	width: 700px;
+	width: 640px;
 	
 }
 
@@ -25,7 +25,11 @@
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 	font-size: 18px;
 	font-weight: 300;
-	margin: 1.5em 0;
+	margin: 0 0 1em 0;
+}
+
+#theme-upgrade .content p {
+	margin: 0 0 2.5em 0;
 }
 
 /* The promo image */
@@ -99,6 +103,20 @@
 #theme-upgrade-already-paid {
 	float: right;
 	margin-top: 15px;
+}
+
+#theme-upgrade .feature-image-wrapper {
+	background: #F6F6F6;
+	border: 1px solid #D0D0D0;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+	float: right;
+	margin-bottom: 20px;
+	margin-left: 25px;
+	padding: 5px;
+}
+
+#theme-upgrade .feature-image {
+	cursor: pointer;
 }
 
 /* =Buy Button 

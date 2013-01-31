@@ -64,9 +64,6 @@ function siteorigin_settings_render() {
 function siteorigin_settings_enqueue_scripts( $prefix ) {
 	if ( $prefix != 'appearance_page_theme_settings_page' ) return;
 
-	// This is for the premium update notifications
-	siteorigin_premium_enqueue_teaser();
-	
 	wp_enqueue_script( 'siteorigin-settings', get_template_directory_uri() . '/extras/settings/settings.min.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
 	wp_enqueue_style( 'siteorigin-settings', get_template_directory_uri() . '/extras/settings/settings.css', array(), SITEORIGIN_THEME_VERSION );
 
@@ -84,7 +81,7 @@ function siteorigin_settings_enqueue_scripts( $prefix ) {
 	}
 	
 	// This is for the media uploader
-	wp_enqueue_media();
+	if ( function_exists( 'wp_enqueue_media' ) ) wp_enqueue_media();
 }
 
 /**
@@ -179,13 +176,14 @@ function siteorigin_settings_add_teaser( $section, $id, $name, $args = array() )
  * Get the value of a setting, or the default value.
  *
  * @param string $name The setting name
+ * @param mixed $default The default setting
  * @return mixed
  */
 function siteorigin_setting( $name , $default = null) {
 	if ( !is_null( $default ) && empty( $GLOBALS[ 'siteorigin_settings' ][ $name ] ) ) return $default;
 
 	if ( !isset( $GLOBALS[ 'siteorigin_settings' ][ $name ] ) ) {
-		trigger_error( 'Calling undefined setting [' . $name . ']' );
+		trigger_error( sprintf( __( 'Calling undefined setting [%s]', 'siteorigin' ), $name ) );
 		return null;
 	}
 	else return $GLOBALS['siteorigin_settings'][ $name ];
@@ -244,7 +242,7 @@ function siteorigin_settings_field( $args ) {
 
 		case 'color' :
 			if(wp_script_is('wp-color-picker', 'registered')){
-				?><input type="text" value="<?php echo esc_attr( $current ) ?>" class="color-field" /><?php
+				?><input type="text" value="<?php echo esc_attr( $current ) ?>" class="color-field" name="<?php echo esc_attr( $field_name ) ?>" /><?php
 			}
 			else{
 				?>
@@ -293,7 +291,7 @@ function siteorigin_settings_field( $args ) {
 			?>
 			<a class="premium-teaser siteorigin-premium-teaser" href="<?php echo admin_url( 'themes.php?page=premium_upgrade' ) ?>" target="_blank">
 				<em></em>
-				<?php printf( __( 'This setting is available in <strong>%s Premium</strong> - <strong class="upgrade">Upgrade Now</strong>', 'siteorigin' ), ucfirst($theme) ) ?>
+				<?php printf( __( 'Only available in <strong>%s Premium</strong> - <strong class="upgrade">Upgrade Now</strong>', 'siteorigin' ), ucfirst($theme) ) ?>
 				<?php if(!empty($args['teaser-image'])) : ?>
 					<div class="teaser-image"><img src="<?php echo esc_url($args['teaser-image']) ?>" width="220" height="120" /><div class="pointer"></div></div>
 				<?php endif; ?>

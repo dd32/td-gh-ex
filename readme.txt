@@ -57,3 +57,15 @@ Using wp_enqueue_style to enqueue style.css
 
 1.2.7
 Fixed theme endpoint and version number
+
+1.3.2
+Fixed a bug in the custom gallery.
+Fixed translation issues.
+General code clean up.
+
+1.4
+Updated and integrated the latest SiteOrigin framework
+Integrated page builder
+Added widgets
+Various bug fixes
+A few additional options

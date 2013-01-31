@@ -1,11 +1,16 @@
 /*
+Http: //wpdev.dynalias.com/origami/wp-content/themes/origami/style.css?ver=trunk
+Version: 1.4
+*/
+
+/*
 Theme Name: Origami
 Theme URI: http://siteorigin.com/theme/origami
-Description: Origami is a simple, responsive media blogging theme that places strong emphasis on your content. It looks great on mobile devices, even the videos and galleries scale to fit small screens. The options panel is easy to understand with a minimal set of options.
+Description: Origami is a simple, responsive media blogging theme that places strong emphasis on your content. It looks great on mobile devices, even the videos and galleries scale to fit small screens. The options panel is easy to understand with a minimal set of options. Origami includes a powerful drag and drop page builder for creating unlimited page layouts. So you can use Origami as a simple blog or a complete business website. 
 Tags: one-column, flexible-width, post-formats, custom-menu, theme-options, threaded-comments, translation-ready, photoblogging
 Author: SiteOrigin
 Author URI: http://siteorigin.com/
-Version: 1.3
+Version: trunk
 License: GPL v2.0
 License URI: license.txt
 */
@@ -258,6 +263,7 @@ body {
 	background: #F9F9F9;
 	border: 1px solid #EEEEEE;
 	border-width: 1px 0;
+	display: block;
 	margin-bottom: 25px;
 	padding: 0;
 	text-align: center;
@@ -280,7 +286,7 @@ body {
 	position: absolute;
 	top: 100%;
 	left: 0px;
-	width: 135px;
+	width: 160px;
 	
 	background: #F5F5F5;
 	background-color: #F4F4F4;
@@ -294,11 +300,11 @@ body {
 #menu ul li ul li a {
 	color: #606060;
 	font-size: 0.9em;
-	padding: 25px;
+	padding: 25px 0;
 }
 
 #menu ul ul li {
-	width: 135px;
+	width: 160px;
 	
 	padding: 10px 0;
 	text-align: center;
@@ -307,6 +313,30 @@ body {
 #menu ul li:hover ul {
 	display: block;
 	visibility: visible;
+}
+
+.mobilenav {
+	background: #F9F9F9;
+	border: 1px solid #EEEEEE;
+	border-width: 1px 0;
+	color: #606060;
+	display: block;
+	font-size: 14px;
+	font-weight: 500;
+	margin-bottom: 25px;
+	padding: 22px 0;
+	text-align: center;
+	text-decoration: none;
+}
+
+.mobilenav .mobilenav-icon {
+	width: 13px;
+	height: 15px;
+	
+	background: green;
+	background: url(./images/navigate.png) no-repeat;
+	display: inline-block;
+	margin: 0 7px -3px 0;
 }
 
 /* =Post 
@@ -358,37 +388,27 @@ h1.entry-title a {
 	text-decoration: none;
 }
 
-.post .content {
-	color: #525252;
-	font-size: 13px;
-	margin-bottom: 20px;
+.post-navigation {
+	margin-bottom: 35px;
+	margin-top: 15px;
 }
 
-.post .content.column-2 {
-	-moz-column-count: 2;
-	-webkit-column-count: 2;
-	column-count: 2;
-	-moz-column-gap: 30px;
-	-webkit-column-gap: 30px;
-	column-gap: 30px;
+.post-navigation a {
+	color: #505050;
+	display: block;
+	text-decoration: none;
 }
 
-.post .content.column-3 {
-	-moz-column-count: 3;
-	-webkit-column-count: 3;
-	column-count: 3;
-	-moz-column-gap: 30px;
-	-webkit-column-gap: 30px;
-	column-gap: 30px;
+.post-navigation a:hover {
+	color: #333;
 }
 
-.post .content.column-4 {
-	-moz-column-count: 4;
-	-webkit-column-count: 4;
-	column-count: 4;
-	-moz-column-gap: 30px;
-	-webkit-column-gap: 30px;
-	column-gap: 30px;
+.post-navigation a[rel=prev] {
+	float: left;
+}
+
+.post-navigation a[rel=next] {
+	float: right;
 }
 
 @media screen and (max-width:480px) {
@@ -410,9 +430,9 @@ h1.entry-title a {
 }
 
 .post img.main-image {
-	width: 100%;
 	height: auto;
 	
+	max-width: 100%;
 }
 
 .post img.main-image.mobile {
@@ -487,6 +507,39 @@ h1.entry-title a {
 
 /* =Content 
 -------------------------------------------------------------- */
+
+.post .content {
+	color: #606060;
+	font-size: 13px;
+	margin-bottom: 20px;
+}
+
+.post .content.column-2 {
+	-moz-column-count: 2;
+	-webkit-column-count: 2;
+	column-count: 2;
+	-moz-column-gap: 30px;
+	-webkit-column-gap: 30px;
+	column-gap: 30px;
+}
+
+.post .content.column-3 {
+	-moz-column-count: 3;
+	-webkit-column-count: 3;
+	column-count: 3;
+	-moz-column-gap: 30px;
+	-webkit-column-gap: 30px;
+	column-gap: 30px;
+}
+
+.post .content.column-4 {
+	-moz-column-count: 4;
+	-webkit-column-count: 4;
+	column-count: 4;
+	-moz-column-gap: 30px;
+	-webkit-column-gap: 30px;
+	column-gap: 30px;
+}
 
 /* =Content  : WP Core 
 -------------------------------------------------------------- */
@@ -720,7 +773,7 @@ a img.aligncenter {
 .content h5,
 .content h6,
 .content strong {
-	color: #333333;
+	color: #404040;
 	margin: 1.5em 0;
 }
 
@@ -1144,12 +1197,140 @@ h1.archive-title {
 	text-decoration: none;
 }
 
-/* =Flex Slider 
+/* =Panels 
 -------------------------------------------------------------- */
 
-.flexslider ul.slides li img {
+.panel-grid {
+	margin: 0 -15px 30px -15px;
+}
+
+.panel-grid-cell {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0 15px;
+}
+
+.panel-grid-cell .panel {
+	margin-bottom: 30px;
+}
+
+.panel-grid-cell .panel:last-child {
+	margin-bottom: 0;
+}
+
+.panel {
+	margin-bottom: 15px;
+	min-height: 1em;
+}
+
+.panel.panel-last-child {
+	margin-bottom: 0;
+}
+
+.panel h3.widget-title {
+	font-size: 115%;
+	margin-bottom: 15px;
+}
+
+/* =Widgets 
+-------------------------------------------------------------- */
+
+/* =Widgets  : Button 
+-------------------------------------------------------------- */
+
+.widget .button {
+	background: #484744;
+	border: none;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	color: #FFF;
+	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */ 
+	display: inline-block;
+	font-size: 13px;
+	padding: 12px 35px;
+	text-decoration: none;
+}
+
+.button-container.align-center {
+	text-align: center;
+}
+
+.button-container.align-left {
+	text-align: left;
+}
+
+.button-container.align-right {
+	text-align: right;
+}
+
+/* =Widgets  : Call To Action 
+-------------------------------------------------------------- */
+
+.widget_call-to-action {
+	position: relative;
+	
+	background: #F9F9F9;
+	border: 1px solid #EEEEEE;
+	border-width: 1px 0;
+	padding: 25px 15px;
+}
+
+.widget_call-to-action .cta-headline {
+	color: #444444;
+	margin-bottom: 0;
+}
+
+.widget_call-to-action .cta-sub-text {
+	color: #777777;
+	margin-bottom: 0;
+	margin-top: 10px;
+}
+
+.widget_call-to-action .button {
+	position: absolute;
+	top: 50%;
+	right: 15px;
+	
+	margin-top: -22px;
+}
+
+@media screen and (max-width:480px) {
+	
+	.widget_call-to-action .button {
+		position: static;
+		
+		display: block;
+		margin-top: 10px;
+		text-align: center;
+	}
+
+}
+
+/* =Widgets  : Icon and Text 
+-------------------------------------------------------------- */
+
+.widget_icon-text h3.widget-title {
+	font-size: 15px;
+	line-height: 1.5em;
+	margin-bottom: 0.5em;
+}
+
+.widget_icon-text .feature-icon {
+	width: 32px;
+	height: 32px;
+	
+	float: left;
+}
+
+.widget_icon-text .feature-icon img {
 	width: 100%;
 	height: auto;
 	
+}
+
+.widget_icon-text .widget-text {
+	margin-left: 45px;
 }
 

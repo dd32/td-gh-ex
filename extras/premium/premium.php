@@ -6,7 +6,7 @@
  * @action admin_menu
  */
 function siteorigin_premium_admin_menu() {
-	// Don't display this page if the user has alreeady upgraded to premium
+	// Don't display this page if the user has already upgraded to premium
 	if ( defined( 'SITEORIGIN_IS_PREMIUM' ) ) return;
 
 	add_theme_page( __( 'Premium Upgrade', 'siteorigin' ), __( 'Premium Upgrade', 'siteorigin' ), 'switch_themes', 'premium_upgrade', 'siteorigin_premium_page_render' );
@@ -90,8 +90,10 @@ function siteorigin_premium_page_render() {
 				<?php endif; ?>
 				<div class="content">
 					<?php if ( !empty( $premium['features'] ) ) : foreach ( $premium['features'] as $feature ) : ?>
+						<?php if(!empty($feature['image'])) echo '<div class="feature-image-wrapper"><img src="'.esc_url($feature['image']).'" width="220" height="120" class="feature-image" /></div>' ?>
 						<h3><?php echo $feature['heading'] ?></h3>
 						<p><?php echo $feature['content'] ?></p>
+						<div class="clear"></div>
 					<?php endforeach; endif; ?>
 				</div>
 
@@ -202,22 +204,52 @@ function siteorigin_premium_page_render() {
  * @action admin_enqueue_scripts
  */
 function siteorigin_premium_admin_enqueue( $prefix ) {
-	if ( $prefix != 'appearance_page_premium_upgrade' ) return;
-
-	wp_enqueue_script( 'siteorigin-magnifier', get_template_directory_uri() . '/extras/premium/magnifier.min.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
-	wp_enqueue_script( 'siteorigin-cycle', get_template_directory_uri() . '/extras/premium/cycle.min.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
-	wp_enqueue_script( 'siteorigin-premium-upgrade', get_template_directory_uri() . '/extras/premium/premium.min.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
-	wp_enqueue_style( 'siteorigin-premium-upgrade', get_template_directory_uri() . '/extras/premium/premium.css', array(), SITEORIGIN_THEME_VERSION );
+	$screen = get_current_screen();
+	if ( $prefix == 'appearance_page_premium_upgrade' ) {
+		wp_enqueue_script( 'siteorigin-magnifier', get_template_directory_uri() . '/extras/premium/magnifier.min.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
+		wp_enqueue_script( 'siteorigin-cycle', get_template_directory_uri() . '/extras/premium/cycle.min.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
+		wp_enqueue_script( 'siteorigin-premium-upgrade', get_template_directory_uri() . '/extras/premium/premium.min.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
+		wp_enqueue_style( 'siteorigin-premium-upgrade', get_template_directory_uri() . '/extras/premium/premium.css', array(), SITEORIGIN_THEME_VERSION );
+	}
+	elseif ( ( $prefix == 'post.php' || $prefix == 'post-new.php' ) && !defined( 'SITEORIGIN_IS_PREMIUM' ) && !empty( $GLOBALS[ 'siteorigin_premium_teaser_post_types' ] ) ) {
+		// Enqueue if we're on a post page that has requested premium teasers.
+		$screen = get_current_screen();
+		if ( is_array( $GLOBALS[ 'siteorigin_premium_teaser_post_types' ] ) && in_array( $screen->id, $GLOBALS[ 'siteorigin_premium_teaser_post_types' ] ) ) {
+			wp_enqueue_style( 'siteorigin-premium-teaser', get_template_directory_uri() . '/extras/premium/premium-teaser.css', array(), SITEORIGIN_THEME_VERSION );
+			wp_enqueue_script( 'siteorigin-premium-teaser', get_template_directory_uri() . '/extras/premium/premium-teaser.min.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
+		}
+	}
+	elseif ( $screen->id == 'page' && get_theme_support( 'siteorigin-panels' ) !== false && !defined( 'SITEORIGIN_IS_PREMIUM' ) ) {
+		wp_enqueue_style( 'siteorigin-premium-teaser', get_template_directory_uri() . '/extras/premium/premium-teaser.css', array(), SITEORIGIN_THEME_VERSION );
+		wp_enqueue_script( 'siteorigin-premium-teaser', get_template_directory_uri() . '/extras/premium/premium-teaser.min.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
+	}
+	elseif ( in_array( $prefix, apply_filters( 'siteorigin_premium_teaser_pages', array( 'appearance_page_theme_settings_page' ) ) ) ) {
+		// Enqueue the premium teasers if we're on the theme settings page
+		wp_enqueue_style( 'siteorigin-premium-teaser', get_template_directory_uri() . '/extras/premium/premium-teaser.css', array(), SITEORIGIN_THEME_VERSION );
+		wp_enqueue_script( 'siteorigin-premium-teaser', get_template_directory_uri() . '/extras/premium/premium-teaser.min.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
+	}
 }
+
 add_action( 'admin_enqueue_scripts', 'siteorigin_premium_admin_enqueue' );
 
-function siteorigin_premium_enqueue_teaser(){
-	wp_enqueue_style( 'siteorigin-premium-teaser', get_template_directory_uri() . '/extras/premium/premium-teaser.css', array(), SITEORIGIN_THEME_VERSION );
-	wp_enqueue_script( 'siteorigin-premium-teaser', get_template_directory_uri() . '/extras/premium/premium-teaser.min.js', array('jquery'), SITEORIGIN_THEME_VERSION );
+/**
+ * Adds one or more post types to the list that are requesting the premium teaser scripts.
+ * 
+ * @param $post_types
+ */
+function siteorigin_premium_teaser_post_types( $post_types ) {
+	$post_types = (array)$post_types;
+	if ( empty( $GLOBALS[ 'siteorigin_premium_teaser_post_types' ] ) )
+		$GLOBALS[ 'siteorigin_premium_teaser_post_types' ] = array();
+
+	$GLOBALS[ 'siteorigin_premium_teaser_post_types' ] = array_merge(
+		$GLOBALS[ 'siteorigin_premium_teaser_post_types' ],
+		$post_types
+	);
 }
 
 function siteorigin_premium_call_function($callback, $param_array, $args = array()){
-	if(defined('SITEORIGIN_IS_PREMIUM') && function_exists($callback)){
+	if(function_exists($callback)){
 		call_user_func_array($callback, $param_array);
 	}
 	else{
@@ -226,7 +258,7 @@ function siteorigin_premium_call_function($callback, $param_array, $args = array
 		?>
 		<a class="siteorigin-premium-teaser" href="<?php echo admin_url( 'themes.php?page=premium_upgrade' ) ?>" target="_blank">
 			<em></em>
-			<?php printf( __( 'This feature is available in <strong>%s Premium</strong> - <strong class="upgrade">Upgrade Now</strong>', 'siteorigin' ), ucfirst($theme) ) ?>
+			<?php printf( __( 'Only available in <strong>%s Premium</strong> - <strong class="upgrade">Upgrade Now</strong>', 'siteorigin' ), ucfirst($theme) ) ?>
 			<?php if(!empty($args['teaser-image'])) : ?>
 				<div class="teaser-image"><img src="<?php echo esc_url($args['teaser-image']) ?>" width="220" height="120" /><div class="pointer"></div></div>
 			<?php endif; ?>
@@ -237,4 +269,21 @@ function siteorigin_premium_call_function($callback, $param_array, $args = array
 		endif;
 		if(!empty($args['after'])) echo $args['after'];
 	}
+}
+
+function siteorigin_premium_teaser($text, $args = null){
+	if(defined('SITEORIGIN_IS_PREMIUM')) return;
+
+	?>
+	<a class="siteorigin-premium-teaser" href="<?php echo admin_url( 'themes.php?page=premium_upgrade' ) ?>" target="_blank">
+		<em></em>
+		<?php echo $text ?>
+		<?php if(!empty($args['teaser-image'])) : ?>
+			<div class="teaser-image"><img src="<?php echo esc_url($args['teaser-image']) ?>" width="220" height="120" /><div class="pointer"></div></div>
+		<?php endif; ?>
+	</a>
+	<?php if(!empty($args['description'])) : ?>
+		<div class="siteorigin-premium-teaser-description"><?php echo $args['description'] ?></div>
+	<?php
+	endif;
 }

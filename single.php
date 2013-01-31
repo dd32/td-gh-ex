@@ -36,7 +36,7 @@
 	}
 	else $columns = 1;
 	?>
-	<div class="content column-<?php print $columns ?>">
+	<div class="content column-<?php echo $columns ?>">
 		<?php if(has_post_thumbnail() && get_post_format() == 'image') : ?>
 		<div class="featured-image">
 			<?php the_post_thumbnail(null, array('class' => 'main-image desktop')) ?>
@@ -52,9 +52,9 @@
 	wp_link_pages(array(
 		'before' => '<p class="page-links content">' . __('Pages:', 'origami'),
 		'after' => '</p>',
-	))
+	));
 	?>
-
+	
 	<?php $tags = wp_get_post_tags($post->ID); ?>
 	<?php if(!empty($tags) || !is_singular() || siteorigin_setting('social_share')) : ?>
 	<div class="below-content">
@@ -80,6 +80,13 @@
 
 		<div class="clear"></div>
 	</div>
+	<?php endif; ?>
+
+	<?php if(siteorigin_setting('display_next_prev')) : ?>
+		<div class="post-navigation">
+			<?php next_post_link('%link'); previous_post_link('%link'); ?>
+			<div class="clear"></div>
+		</div>
 	<?php endif; ?>
 
 	<?php if(is_singular()) : ?>
