@@ -43,10 +43,12 @@
 			if( 'post' == get_post_type() && is_single() ) :
 			
 				// get the post title toggle option
-				$post_title = cyberchimps_get_option( 'single_post_title' );
+				$post_title = cyberchimps_option( 'single_post_title' );
 				if( $post_title == "1" ) : ?>
 					<h2 class="entry-title">
-						<?php ( get_the_title() )? the_title() : the_permalink(); ?>
+						<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'cyberchimps' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
+							<?php ( get_the_title() )? the_title() : the_permalink(); ?>
+						</a>
 					</h2>
 		<?php	endif;
 			else : ?>
@@ -61,12 +63,11 @@
 			
 		if ( 'post' == get_post_type() ) : ?>
 			<div class="entry-meta">
-				<?php
-				cyberchimps_posted_on();
-				cyberchimps_posted_by();
-				cyberchimps_posted_in();
-				cyberchimps_post_comments();
-				?>
+				<?php cyberchimps_posted_on(); ?>
+				
+				<?php cyberchimps_posted_in() ?>
+        
+				<?php cyberchimps_post_comments() ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->

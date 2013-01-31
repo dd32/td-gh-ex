@@ -48,86 +48,62 @@
 </head>
 
 <body <?php body_class(); ?>>
-
-<!-- ---------------- Top Header ------------------- -->
-<?php 
-	if( cyberchimps_get_option( 'top_header_bar', 1 ) ): ?>
-		<div class="container-full-width" id="top_header">
+<?php // top header bar section ?>
+		<div class="container-full">
     	<div class="container">
-    		<div class="container-fluid">
-	      	<div class="row-fluid">
-		      	<div class="span6">
-		        	<div class="top-head-description">
-		        		<?php echo get_bloginfo( 'description' ); ?>
-		          </div>
-		        </div>
-		        <div class="top-head-social span6">
-		        	<?php cyberchimps_header_social_icons(); ?>
-		        </div>
-	        </div>
-      	</div>
+      	<div class="row-fluid">
+      	<div class="span6">
+        	<div class="top-head-description">
+        		<?php echo get_bloginfo( 'description' ); ?>
+          </div>
+        </div>
+        <div class="top-head-social span6">
+        	<?php cyberchimps_header_social_icons(); ?>
+        </div>
+        </div>
       </div>
     </div>
-<?php endif; ?>
 
-<!-- ---------------- Header --------------------- -->
-
-<div class="container-full-width">
+<div class="container">
 	
-	<div class="container">
-		
-		<?php do_action('cyberchimps_before_wrapper'); ?>
-		
-			<div class="container-fluid">	
-				
-				<?php do_action('cyberchimps_header'); ?>
+<?php do_action('cyberchimps_before_wrapper'); ?>
+
+<div id="wrapper" class="container-fluid">	
+	
+	<?php do_action('cyberchimps_header'); ?>
+	
+	<?php do_action('cyberchimps_before_navigation'); ?>
+
+	<nav id="navigation" role="navigation">
+      <div class="main-navigation navbar navbar-inverse">
+        <div class="navbar-inner">
+        	<div class="container">
+          	<?php /* hide collapsing menu if not responsive */
+						if( cyberchimps_get_option( 'responsive_design', 'checked' ) ): ?>
+  					<div class="nav-collapse collapse">
+            <?php endif; ?>
+          		<?php wp_nav_menu( array( 'theme_location'  => 'primary', 'menu_class' => 'nav', 'walker' => new cyberchimps_walker(), 'fallback_cb' => 'cyberchimps_fallback_menu' ) ); ?>
 			
-			</div><!-- container fluid -->
-	
-	</div><!-- container -->
-
-</div><!-- container full width -->
-	
-<?php do_action('cyberchimps_before_navigation'); ?>
-
-<!-- ---------------- Menu ----------------------- -->
-
-<div class="container-full-width" id="main_navigation">
-	<div class="container">
-		<div class="container-fluid">
-			<nav id="navigation" role="navigation">
-		      <div class="main-navigation navbar navbar-inverse">
-		        <div class="navbar-inner">
-		        	<div class="container">
-		          	<?php /* hide collapsing menu if not responsive */
-								if( cyberchimps_get_option( 'responsive_design', 'checked' ) ): ?>
-		  					<div class="nav-collapse collapse">
-		            <?php endif; ?>
-		          		<?php wp_nav_menu( array( 'theme_location'  => 'primary', 'menu_class' => 'nav', 'walker' => new cyberchimps_walker(), 'fallback_cb' => 'cyberchimps_fallback_menu' ) ); ?>
-					
-					<?php if( cyberchimps_get_option( 'searchbar', 1 ) == "1" ) : ?>
-						
-							<?php get_search_form(); ?>
-						
-					<?php endif; ?>
-		      
-		      <?php /* hide collapsing menu if not responsive */
-					if( cyberchimps_get_option( 'responsive_design', 'checked' ) ): ?>
-					</div><!-- collapse -->
-					
-		            <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-		            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-		              <span class="icon-bar"></span>
-		              <span class="icon-bar"></span>
-		              <span class="icon-bar"></span>
-		            </a>
-		      <?php endif; ?>
-		          </div><!-- container -->
-		        </div><!-- .navbar-inner .row-fluid -->
-		      </div><!-- main-navigation navbar -->
-			</nav><!-- #navigation -->
-		</div><!-- container-fluid -->
-	</div><!-- container -->
-</div><!-- container full width -->
+			<?php if( cyberchimps_get_option( 'searchbar', 1 ) == "1" ) : ?>
+				
+					<?php get_search_form(); ?>
+				
+			<?php endif; ?>
+      
+      <?php /* hide collapsing menu if not responsive */
+			if( cyberchimps_get_option( 'responsive_design', 'checked' ) ): ?>
+			</div><!-- collapse -->
+			
+            <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+      <?php endif; ?>
+          </div><!-- container -->
+        </div><!-- .navbar-inner .row-fluid -->
+      </div><!-- main-navigation navbar -->
+	</nav><!-- #navigation -->
 	
 	<?php do_action('cyberchimps_after_navigation'); ?>

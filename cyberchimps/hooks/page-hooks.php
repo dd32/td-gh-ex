@@ -33,22 +33,8 @@ function cyberchimps_page_section_order_action() {
 			foreach ( $page_section_order as $func) {
 			
 				// checks if slider is selected at half size, if it is it removes it so we can display it above page content
-				if( $func == 'page_slider' && $slider_size == 'half' ) {
-					$func = '';
-				}
-				else {
-				?>
-					<div class="container-full-width" id="<?php echo $func; ?>_section">
-						<div class="container">	
-							<div class="container-fluid">
-								<?php
-								do_action($func);
-								?>
-							</div> 	<!-- .container-fluid-->
-						</div> 	<!-- .container -->
-					</div> 	<!-- .container-full-width -->
-				<?php
-				}
+				$func = ( $func == 'page_slider' && $slider_size == 'half' ) ? '' : $func;
+				do_action($func);
 			}
 		}
 	}
@@ -57,7 +43,7 @@ function cyberchimps_page_section_order_action() {
 		echo get_the_password_form();
 	}	
 }
-add_action( 'cyberchimps_page_content', 'cyberchimps_page_section_order_action' );
+add_action('cyberchimps_page_content', 'cyberchimps_page_section_order_action');
 
 function cyberchimps_page(){ ?>
 <div id="container" <?php cyberchimps_filter_container_class(); ?>>

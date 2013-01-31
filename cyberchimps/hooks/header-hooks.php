@@ -18,13 +18,13 @@
 function cyberchimps_header_section_order() {
 	//get the defaults from the themes function file and turn the key into the value in a new array to mirror what happens within the theme when their are options saved in the database
 	$defaults = array();
-	$default = apply_filters( 'header_drag_and_drop_default', array( 'cyberchimps_header_content'    => __( 'Logo + Icons', 'cyberchimps_core' ) ) );
+	$default = apply_filters( 'header_drag_and_drop_default', array( 'cyberchimps_header_content'    => __( 'Logo + Icons', 'cyberchimps' ) ) );
 	foreach( $default as $key => $val ){
 		$defaults[] = $key;
 	}
 	// call the database results and if they don't exist then call the defaults from above
 	$header_section = cyberchimps_get_option( 'header_section_order', $defaults );
-	$header_section = ( $header_section == '' ) ? $defaults : $header_section;
+	$header_section = ( $header_section == '' ) ? array( 'cyberchimps_header_content' ) : $header_section;
 	
 	if ( is_array( $header_section ) ) {
 		foreach( $header_section as $func ) {
@@ -152,9 +152,9 @@ function cyberchimps_header_logo() {
 }
 
 function cyberchimps_header_site_title() { ?>	
-	<div class="hgroup">
+	<hgroup>
 		<h1 class="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-	</div>
+	</hgroup>
 <?php }
 
 

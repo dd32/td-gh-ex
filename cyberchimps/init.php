@@ -56,8 +56,6 @@ function cyberchimps_core_setup_theme() {
 	}
 
 	// Core Translations can be filed in the /inc/languages/ directory
-	load_theme_textdomain( 'cyberchimps_core', $directory . '/cyberchimps/lib/languages' );
-	load_theme_textdomain( 'cyberchimps_elements', $directory . '/elements/lib/languages' );
 	load_theme_textdomain( 'cyberchimps', $directory . '/inc/languages' );
 	
 	// Add support for the Aside Post Formats
@@ -78,7 +76,7 @@ function cyberchimps_core_setup_theme() {
 	
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'cyberchimps_core' ),
+		'primary' => __( 'Primary Menu', 'cyberchimps' ),
 	) );
 	
 	//set up defaults
@@ -86,11 +84,10 @@ function cyberchimps_core_setup_theme() {
 	if( ! get_option( 'cyberchimps_options' ) && isset( $_GET['activated'] ) ) {
 		update_option( 'cyberchimps_options', $option_defaults );
 	}
-	//if not then set up defaults for this theme
+	//if not then theme switch reset modal to true so that new values can be saved in the database
 	elseif( get_option( 'cyberchimps_options' ) && isset( $_GET['activated'] ) ) {
 		$options = get_option( 'cyberchimps_options' );
-		$options['header_section_order'] = $option_defaults['header_section_order'];
-		$options['theme_backgrounds'] = $option_defaults['theme_backgrounds'];
+		$options['modal_welcome_note_display'] = true;
 		update_option( 'cyberchimps_options', $options );
 	}
 }
@@ -154,30 +151,30 @@ function cyberchimps_custom_background_cb() {
 // Register our sidebars and widgetized areas.
 function cyberchimps_widgets_init() {
 	register_sidebar( array(
-		'name'			=> __( 'Sidebar Left', 'cyberchimps_core' ),
-		'id'			=> 'sidebar-left',
-		'before_widget'	=> apply_filters( 'cyberchimps_sidebar_before_widget', '<aside id="%1$s" class="widget-container %2$s">' ),
-		'after_widget'	=> apply_filters( 'cyberchimps_sidebar_after_widget', '</aside>' ),
-		'before_title'	=> '<h3 class="widget-title">',
-		'after_title'	=> '</h3>',
+		'name' => __( 'Sidebar Left', 'cyberchimps' ),
+		'id' => 'sidebar-left',
+		'before_widget' => '<aside id="%1$s" class="widget-container %2$s">',
+		'after_widget' => "</aside>",
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
 	));
 	
 	register_sidebar( array(
-		'name'			=> __( 'Sidebar Right', 'cyberchimps_core' ),
-		'id'			=> 'sidebar-right',
-		'before_widget'	=> apply_filters( 'cyberchimps_sidebar_before_widget', '<aside id="%1$s" class="widget-container %2$s">' ),
-		'after_widget'	=> apply_filters( 'cyberchimps_sidebar_after_widget', '</aside>' ),
-		'before_title'	=> '<h3 class="widget-title">',
-		'after_title'	=> '</h3>',
+		'name' => __( 'Sidebar Right', 'cyberchimps' ),
+		'id' => 'sidebar-right',
+		'before_widget' => '<aside id="%1$s" class="widget-container %2$s">',
+		'after_widget' => "</aside>",
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
 	));
 	
 	register_sidebar( array(
-		'name'			=> __( 'Footer Widgets', 'cyberchimps_core' ),
-		'id'			=> 'cyberchimps-footer-widgets',
-		'before_widget'	=> apply_filters( 'cyberchimps_sidebar_before_widget', '<aside id="%1$s" class="widget-container span3 %2$s">' ),
-		'after_widget'	=> apply_filters( 'cyberchimps_sidebar_after_widget', '</aside>' ),
-		'before_title'	=> '<h3 class="widget-title">',
-		'after_title'	=> '</h3>',
+		'name' => __( 'Footer Widgets', 'cyberchimps' ),
+		'id' => 'cyberchimps-footer-widgets',
+		'before_widget' => '<aside id="%1$s" class="widget-container span3 %2$s">',
+		'after_widget' => "</aside>",
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
 	));
 }
 add_action( 'widgets_init', 'cyberchimps_widgets_init' );
