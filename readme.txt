@@ -199,3 +199,7 @@ Version 1.7.2
 
 Version 1.7.2.1
 * Fixed Undefined variable: commenter in catchbox_comment_form_fields() function
+
+Version 1.7.2.2
+* Fixed Missing text domain in comment catchbox_comment_form_fields() function
+* Fixed Debugger notices for feed_url, fav_icon, and custom_css

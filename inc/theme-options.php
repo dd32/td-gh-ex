@@ -1155,10 +1155,9 @@ function catchbox_favicon() {
 	if ( !$catchbox_favicon = get_transient( 'catchbox_favicon' ) ) {
 		
 		$options = catchbox_get_theme_options();
-		$favicon = $options['fav_icon'];
 		
-		if ( !empty( $favicon ) )  {
-			$catchbox_favicon = '<link rel="shortcut icon" href="'.esc_url( $favicon ).'" type="image/x-icon" />'; 	
+		if ( !empty( $options['fav_icon'] ) )  {
+			$catchbox_favicon = '<link rel="shortcut icon" href="'.esc_url( $options[ 'fav_icon' ] ).'" type="image/x-icon" />'; 	
 		}
 		
 		set_transient( 'catchbox_favicon', $catchbox_favicon, 86940 );
@@ -1200,7 +1199,7 @@ add_action( 'wp_enqueue_scripts', 'catchbox_enqueue_color_scheme' );
  */
 function catchbox_inline_css() {
     $options = catchbox_get_theme_options();
-    if ($options['custom_css']) {
+	if ( !empty( $options['custom_css'] ) ) {	
 		echo '<!-- '.get_bloginfo('name').' Custom CSS Styles -->' . "\n";
         echo '<style type="text/css" media="screen">' . "\n";
 		echo $options['custom_css'] . "\n";
@@ -1416,7 +1415,7 @@ add_action('catchbox_startgenerator_open', 'catchbox_socialprofile');
  */
 function catchbox_rss_redirect() {
 	$options = catchbox_get_theme_options();
-    if ($options['feed_url']) {
+	if ( !empty( $options['feed_url'] ) ) {	
 		$url = 'Location: '.$options['feed_url'];
 		if ( is_feed() && !preg_match('/feedburner|feedvalidator/i', $_SERVER['HTTP_USER_AGENT']))
 		{
