@@ -159,17 +159,6 @@ function antmagazine_widgets_init() {
 		'after_title' => '</h3>',
 	) );
 
-	// Area 6, located in the footer. Empty by default.
-	register_sidebar( array(
-		'name' => __( 'Fourth Footer Widget Area', 'antmagazine' ),
-		'id' => 'fourth-footer-widget-area',
-		'description' => __( 'The fourth footer widget area', 'antmagazine' ),
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
-
 }
 if ( ! function_exists( 'antmagazine_posted_on' ) ) :
 /**

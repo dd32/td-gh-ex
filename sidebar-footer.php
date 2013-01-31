@@ -8,11 +8,11 @@
 			
 			<ul class="xoxo">
 						<li class="widget-container"><h3 class="widget-title">Meta</h3>			<ul>
-			<li><a href="http://localhost/wordpress/wp-admin/">Site Admin</a></li>			<li><a href="http://localhost/wordpress/wp-login.php?action=logout&#038;_wpnonce=9bec108013">Log out</a></li>
-			<li><a href="http://localhost/wordpress/?feed=rss2" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
-			<li><a href="http://localhost/wordpress/?feed=comments-rss2" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li>Site Admin</li>			<li>Log out</li>
+			<li>Entries <abbr title="Really Simple Syndication">RSS</abbr></li>
+			<li>Comments <abbr title="Really Simple Syndication">RSS</abbr></li>
 			<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>
-						</ul>	</li>	</ul>			
+						</ul>	</li>	</ul>				
 					
 <?php } ?>
 

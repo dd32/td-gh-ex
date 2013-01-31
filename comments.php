@@ -73,6 +73,6 @@
 
 <?php endif; // end have_comments() ?>
 
-<?php comment_form(array('comment_notes_before'=>'' ,'comment_notes_after'=>'' ,'label_submit'=>'Submit Comment') ); ?>
+<?php comment_form(array('comment_notes_before'=>'' ,'comment_notes_after'=>'') ); ?>
 
 </div><!-- #comments -->

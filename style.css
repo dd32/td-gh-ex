@@ -1,13 +1,28 @@
 /*
 Theme Name: Ant Magazine
-Theme URI: http://www.antthemes.com/antmagazine/
+Theme URI: http://antthemes.com/?page_id=827
 Description: A very neat and clean black and white magazine theme. The theme supports widgets. And features theme-options, threaded-comments and multi-level dropdown menu. A simple and neat typography.
-Version: 1.0
+Version: 1.1
 Author: Manishg
 Author URI: http://antthemes.com/
 Tags: black,translation-ready,threaded-comments,light,two-columns,theme-options,white
-License: GNU General Public License v2.0
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GNU General Public License, v2 (or newer)
+License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ *
+ * Ant Magazine WordPress Theme, Copyright (C) 2013 Manish Gori
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * Note: see the "license.htm" page for copyright and 
+ * license information for bundled resources, including images
 */
 
 @import "css/reset.css";
@@ -441,6 +456,10 @@ span#follow-box img{
 	position: relative;
 }
 
+#sidebar #search {
+	margin-top: 20px;
+}
+
 #search #searchsubmit {
 	background:url(images/go-btn.png) no-repeat top right;
 	width:28px;
@@ -663,6 +682,7 @@ color: #000;
 	list-style: none;
 }
 
+#sidebar { word-wrap: break-word;}
 
 /* =Comments
 -------------------------------------------------------------- */

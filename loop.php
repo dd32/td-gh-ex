@@ -35,7 +35,7 @@
 			
 	<?php else : ?>
 	
- 	<?php if ( function_exists("has_post_thumbnail") && has_post_thumbnail() ) { the_post_thumbnail(array(620,240), array("class" => "alignleft post_thumbnail")); } ?>
+ 	<?php if ( has_post_thumbnail() ) { the_post_thumbnail(array(620,240), array("class" => "alignleft post_thumbnail")); } ?>
 	
 	
 			<?php the_content( __( '<span class="read-more">Read More</span>', 'antmagazine' ) ); ?>

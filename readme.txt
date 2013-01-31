@@ -22,17 +22,10 @@ of your WordPress installation. You will then be able to activate the theme.
 Support is available at the http://antthemes.com/forum/.
 
 = How to use menus =
-For Menus: Use wordpress Menu system under Appearance tab. Also, make sure menu titles are not long as they might overlap.
+For Menus: Use wordpress Menu system under Appearance tab. 
 
-== Credits ==
-jQuery http://jquery.com/
+Note: Also, make sure menu titles are not long as they might overlap.
 
-== License and Copyright ==
-Superfish: Dual licensed under the MIT and GPL licenses.
-FitVids: Released under the WTFPL license.
-Flex Slider: By woothemes under GPL license.
-Modernizr: Available under the BSD and MIT licenses.
-matchMedia() polyfill: Dual MIT/BSD license.
 
 Thanks for downloading the AntMagazine theme.
 
