@@ -15,7 +15,6 @@ $mantra_options= mantra_get_theme_options();
 foreach ($mantra_options as $key => $value) {
      ${"$key"} = $value ;
 }
-add_image_size('slider',$mantra_fpsliderwidth,$mantra_fpsliderheight,true);
 ?>
 
 <script type="text/javascript">

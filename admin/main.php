@@ -246,7 +246,7 @@ function mantra_page_fn() {
 				<input name="ma_options[mantra_submit]" type="submit" style="float:right;"   value="<?php _e('Save Changes','mantra'); ?>" />
 			</div>
 		</form>
-		<?php   $mantra_theme_data = get_transient( 'cryout_theme_info');  ?>
+		<?php   $mantra_theme_data = get_transient( 'mantra_theme_info');  ?>
 		<span id="version"> 
 		<?php echo $mantra_theme_data['Name'].' v. '.$mantra_theme_data['Version'].' by '.$mantra_theme_data['Author']; ?>
 		</span>

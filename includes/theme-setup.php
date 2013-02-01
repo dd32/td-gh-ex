@@ -105,6 +105,9 @@ $locale_file = get_template_directory() . "/languages/$locale.php";
 	define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'mantra_header_image_height', $mantra_hheight) );
 	set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );	
 
+	global $mantra_fpsliderwidth;
+	global $mantra_fpsliderheight;
+	add_image_size('slider',$mantra_fpsliderwidth,$mantra_fpsliderheight,true);
 	// Add a way for the custom header to be styled in the admin panel that controls
 	// custom headers. See mantra_admin_header_style(), below.
 	define( 'NO_HEADER_TEXT', true );

@@ -32,8 +32,8 @@ document.createElement('hgroup');
 <script type="text/javascript">
     window.onload = function () {
 	// Add custom borders to images
-    jQuery(".entry-content img").addClass("<?php echo 'image'.$mantra_image;?>");
-	jQuery(".entry-summary img").addClass("<?php echo 'image'.$mantra_image;?>");
+    jQuery("img.alignnone, img.alignleft, img.aligncenter,  img.alignright").addClass("<?php echo 'image'.$mantra_image;?>");
+
 	
  <?php if ($mantra_mobile=="Enable") { // If mobile view is enabled ?> 	
 	jQuery(function () {
@@ -136,12 +136,12 @@ echo '</div>';
 endif;
 
 // Get any existing copy of our transient data
-if ( false === ( $cryout_theme_info = get_transient( 'cryout_theme_info' ) ) ) {
+if ( false === ( $mantra_theme_info = get_transient( 'mantra_theme_info' ) ) ) {
     // It wasn't there, so regenerate the data and save the transient
- if ( ! function_exists( 'get_custom_header' ) ) {  $cryout_theme_info = get_theme_data( get_theme_root() . '/mantra/style.css' ); }
-else { $cryout_theme_info = wp_get_theme( );}
+ if ( ! function_exists( 'get_custom_header' ) ) {  $mantra_theme_info = get_theme_data( get_theme_root() . '/mantra/style.css' ); }
+else { $mantra_theme_info = wp_get_theme( );}
 
-     set_transient( 'cryout_theme_info',  $cryout_theme_info ,60*60);
+     set_transient( 'mantra_theme_info',  $mantra_theme_info ,60*60);
 }
 
 
@@ -291,16 +291,14 @@ function mantra_site_info() {
 $mantra_options= mantra_get_theme_options();
 foreach ($mantra_options as $key => $value) {	
      ${"$key"} = $value ;
-}		//delete_transient( 'cryout_theme_info');
-        $mantra_theme_data = get_transient( 'cryout_theme_info'); 
-?>
-		<div id="site-info" >
-				<a href="<?php echo home_url( '/' ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-				<?php bloginfo( 'name' ); ?></a> | Powered by <a href="<?php echo $mantra_theme_data['Author URI']?>" title="<?php echo 'Mantra Theme by '.
-				strip_tags($mantra_theme_data->Author);?>"><?php echo 'Mantra' ?></a> &amp; <a href="<?php echo esc_url('http://wordpress.org/' ); ?>" 
-				title="<?php esc_attr_e('Semantic Personal Publishing Platform', 'mantra'); ?>"> <?php printf(' %s.', 'WordPress' ); ?>
-				</a>
-			</div><!-- #site-info -->
+}	?>
+	<div id="site-info" >
+		<a href="<?php echo home_url( '/' ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+			<?php bloginfo( 'name' ); ?></a> | <?php _e('Powered by','mantra')?> <a href="<?php echo 'http://www.cryoutcreations.eu';?>" title="<?php echo 'Mantra Theme by '.
+			'Cryout Creations';?>"><?php echo 'Mantra' ?></a> &amp; <a href="<?php echo esc_url('http://wordpress.org/' ); ?>" 
+			title="<?php esc_attr_e('Semantic Personal Publishing Platform', 'mantra'); ?>"> <?php printf(' %s.', 'WordPress' ); ?>
+		</a>
+	</div><!-- #site-info -->
 <?php }
 
 add_action('cryout_footer_hook','mantra_site_info',11);
