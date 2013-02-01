@@ -245,3 +245,7 @@ Version 2.0
 * Language File Update for Polish
 * Added Save Button on Social Links Option Panel
 * Logo Upload Issue in Option Panel
+
+Version 2.0.1
+* Added Simple Catch Social Icons Widget
+* Fixed Simple Catch Tag Clouds Widget

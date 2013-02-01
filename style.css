@@ -4,7 +4,7 @@ Theme URI: http://catchthemes.com/themes/simple-catch
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
 Description: Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework. Multilingual Ready (WPML) and also currently translated in Polish, Russian, Finnish, French, Dutch and Greek. 
-Version: 2.0
+Version: 2.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, gray, silver, white, light, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, custom-menu, featured-images, full-width-template, theme-options, threaded-comments, translation-ready
@@ -442,26 +442,31 @@ h2#site-description {
 }
 
 /* Social-Search */
-#header .social-search ul.social-profile li a {
-	text-indent: -99999px;
-}
 #header .social-search {
 	float: right;
 	width: 306px;
 	padding-right: 20px;
 	margin-top: 40px;
 }
-#header .social-search ul.social-profile {
-	float: right;
+ul.social-profile {
 	list-style: none;
 	margin: -10px 0 0;
 }
-#header .social-search ul.social-profile li {
-	float: left;
-    margin-left: 10px;
-	margin-top: 10px;
+#header ul.social-profile {
+	float: right;
 }
-#header .social-search ul.social-profile li a {
+ul.social-profile li {
+	float: left;
+	margin: 10px 10px 0 0;
+}
+	
+#header ul.social-profile li {
+	margin: 10px 0 0 10px;
+}
+ul.social-profile li a {
+	text-indent: -99999px;
+}
+ul.social-profile li a {
 	background: url(images/social-profile.png) right bottom no-repeat;
     display: block;
 	height: 33px;
@@ -469,114 +474,114 @@ h2#site-description {
 	text-indent: -99999px;
 
 }
-#header .social-search ul.social-profile li.facebook a {
+ul.social-profile li.facebook a {
 	background-position: 0 0;
 }
-#header .social-search ul.social-profile li.facebook a:hover {
+ul.social-profile li.facebook a:hover {
 	background-position: 0 -43px;
 }
-#header .social-search ul.social-profile li.twitter a {
+ul.social-profile li.twitter a {
 	background-position: -44px 0;
 }
-#header .social-search ul.social-profile li.twitter a:hover {
+ul.social-profile li.twitter a:hover {
 	background-position: -44px -43px;
 }
-#header .social-search ul.social-profile li.you-tube a {
+ul.social-profile li.you-tube a {
 	background-position: -87px 0;
 }
-#header .social-search ul.social-profile li.you-tube a:hover {
+ul.social-profile li.you-tube a:hover {
 	background-position: -87px -43px;
 }
-#header .social-search ul.social-profile li.rss a {
+ul.social-profile li.rss a {
 	background-position: -130px 0;
 }
-#header .social-search ul.social-profile li.rss a:hover {
+ul.social-profile li.rss a:hover {
 	background-position: -130px -43px;
 }
-#header .social-search ul.social-profile li.google-plus a {
+ul.social-profile li.google-plus a {
 	background-position: -173px 0;
 }
-#header .social-search ul.social-profile li.google-plus a:hover {
+ul.social-profile li.google-plus a:hover {
 	background-position: -173px -43px;
 }
-#header .social-search ul.social-profile li.pinterest a {
+ul.social-profile li.pinterest a {
 	background-position: -216px 0;
 }
-#header .social-search ul.social-profile li.pinterest a:hover {
+ul.social-profile li.pinterest a:hover {
 	background-position: -216px -43px;
 }
-#header .social-search ul.social-profile li.slideshare a {
+ul.social-profile li.slideshare a {
 	background-position: -259px 0;
 }
-#header .social-search ul.social-profile li.slideshare a:hover {
+ul.social-profile li.slideshare a:hover {
 	background-position: -259px -43px;
 }
-#header .social-search ul.social-profile li.foursquare a {
+ul.social-profile li.foursquare a {
 	background-position: -302px 0;
 }
-#header .social-search ul.social-profile li.foursquare a:hover {
+ul.social-profile li.foursquare a:hover {
 	background-position: -302px -43px;
 }
-#header .social-search ul.social-profile li.viemo a {
+ul.social-profile li.viemo a {
 	background-position: -345px 0;
 }
-#header .social-search ul.social-profile li.viemo a:hover {
+ul.social-profile li.viemo a:hover {
 	background-position: -345px -43px;
 }
-#header .social-search ul.social-profile li.myspace a {
+ul.social-profile li.myspace a {
 	background-position: -388px 0;
 }
-#header .social-search ul.social-profile li.myspace a:hover {
+ul.social-profile li.myspace a:hover {
 	background-position: -388px -43px;
 }
-#header .social-search ul.social-profile li.flickr a {
+ul.social-profile li.flickr a {
 	background-position: -431px 0;
 }
-#header .social-search ul.social-profile li.flickr a:hover {
+ul.social-profile li.flickr a:hover {
 	background-position: -431px -43px;
 }
-#header .social-search ul.social-profile li.dribbble a {
+ul.social-profile li.dribbble a {
 	background-position: -474px 0;
 }
-#header .social-search ul.social-profile li.dribbble a:hover {
+ul.social-profile li.dribbble a:hover {
 	background-position: -474px -43px;
 }
-#header .social-search ul.social-profile li.wordpress a {
+ul.social-profile li.wordpress a {
 	 background-position: -517px 0;
 }
-#header .social-search ul.social-profile li.wordpress a:hover {
+ul.social-profile li.wordpress a:hover {
 	background-position: -517px -43px;
 }
-#header .social-search ul.social-profile li.deviantart a {
+ul.social-profile li.deviantart a {
 	background-position: -560px 0;
 }
-#header .social-search ul.social-profile li.deviantart a:hover {
+ul.social-profile li.deviantart a:hover {
 	background-position: -560px -43px;
 }
-#header .social-search ul.social-profile li.linkedin a {
+ul.social-profile li.linkedin a {
 	background-position: -603px 0;
 }
-#header .social-search ul.social-profile li.linkedin a:hover {
+ul.social-profile li.linkedin a:hover {
 	background-position: -603px -43px;
 }
-#header .social-search ul.social-profile li.tumblr a {
+ul.social-profile li.tumblr a {
    	background-position: -646px 0;
 
 }
-#header .social-search ul.social-profile li.tumblr a:hover {
+ul.social-profile li.tumblr a:hover {
 	background-position: -646px -43px;
 }
-#header .social-search ul.social-profile li.delicious a {
+ul.social-profile li.delicious a {
 	background-position: -689px 0;
 }
-#header .social-search ul.social-profile li.delicious a:hover {
+ul.social-profile li.delicious a:hover {
 	background-position: -689px -43px;
 }
-#header .social-search ul.social-profile li.lastfm a {
+ul.social-profile li.lastfm a {
    	background-position: -732px 0;
 
 }
-#header .social-search ul.social-profile li.lastfm a:hover {
+ul.social-profile li.lastfm a:hover {
 	background-position: -732px -43px;
 }
 

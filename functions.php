@@ -116,6 +116,7 @@ endif;
 function simplecatch_widgets_init() {
 	
 	register_widget( 'CustomTagWidget' );
+	register_widget( 'simplecatch_social_widget' );
 	
 	register_sidebar( array( 
 		'name'          => __( 'sidebar', 'simplecatch' ),

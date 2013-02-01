@@ -4,9 +4,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-20 19:45+0530\n"
-"PO-Revision-Date: 2013-01-20 19:45+0530\n"
-"Last-Translator: Dimitris Antonakis <dimantonak@gmail.com>\n"
+"POT-Creation-Date: 2013-02-01 21:58+0530\n"
+"PO-Revision-Date: 2013-02-01 21:58+0530\n"
+"Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Catch Themes <fansitejustgames@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -110,8 +110,8 @@ msgstr "Με την επιφύλαξη παντός δικαιώματος."
 msgid "Primary Menu"
 msgstr "Κυρίως Μενού"
 
-#: ../functions.php:121
-#: ../functions.php:123
+#: ../functions.php:122
+#: ../functions.php:124
 msgid "sidebar"
 msgstr "πλαινή μπάρα"
 
@@ -326,9 +326,24 @@ msgstr "Left sidebar"
 msgid "Right sidebar"
 msgstr "Right sidebar"
 
-#: ../functions/widgets.php:12
-msgid "Displays Custom Tag Cloud"
+#: ../functions/widgets.php:18
+#, fuzzy
+msgid "Displays Custom Tag Cloud designed for Simple Catch Theme."
 msgstr "Displays Custom Tag Cloud"
+
+#: ../functions/widgets.php:19
+#, fuzzy
+msgid "Simple Catch Tag Clouds"
+msgstr "Simple Catch"
+
+#: ../functions/widgets.php:101
+msgid "Displays Social Icons added from Theme Options Panel."
+msgstr ""
+
+#: ../functions/widgets.php:102
+#, fuzzy
+msgid "Simple Catch Social Icons"
+msgstr "Simple Catch"
 
 #: ../functions/panel/theme_options.php:39
 #: ../functions/panel/theme_options.php:40
@@ -517,6 +532,7 @@ msgstr "Disable Footer Logo:"
 #: ../functions/panel/theme_options.php:500
 #: ../functions/panel/theme_options.php:531
 #: ../functions/panel/theme_options.php:582
+#: ../functions/panel/theme_options.php:683
 #: ../functions/panel/theme_options.php:712
 #: ../functions/panel/theme_options.php:742
 msgid "Save"

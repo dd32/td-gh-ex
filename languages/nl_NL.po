@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-18 00:57+0530\n"
-"PO-Revision-Date: 2013-01-18 00:57+0530\n"
+"POT-Creation-Date: 2013-02-01 21:58+0530\n"
+"PO-Revision-Date: 2013-02-01 21:58+0530\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Thomas Gerard <beldin2000@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -110,8 +110,8 @@ msgstr "Alle rechten voorbehouden."
 msgid "Primary Menu"
 msgstr "Hoofmenu"
 
-#: ../functions.php:121
-#: ../functions.php:123
+#: ../functions.php:122
+#: ../functions.php:124
 msgid "sidebar"
 msgstr "zijbalk"
 
@@ -262,7 +262,7 @@ msgid "Powered By WordPress"
 msgstr "Met dank aan Wordpress"
 
 #: ../functions/simplecatch_functions.php:670
-#: ../functions/panel/theme_options.php:664
+#: ../functions/panel/theme_options.php:663
 msgid "WordPress"
 msgstr "WordPress"
 
@@ -310,7 +310,7 @@ msgid "Default Layout Set in"
 msgstr "Standaard layoutweergave in"
 
 #: ../functions/simplecatch_metabox.php:33
-#: ../functions/panel/theme_options.php:144
+#: ../functions/panel/theme_options.php:143
 msgid "Theme Settings"
 msgstr "Thema-instellingen"
 
@@ -326,9 +326,24 @@ msgstr "Linkerzijbalk"
 msgid "Right sidebar"
 msgstr "Rechterzijbalk"
 
-#: ../functions/widgets.php:12
-msgid "Displays Custom Tag Cloud"
+#: ../functions/widgets.php:18
+#, fuzzy
+msgid "Displays Custom Tag Cloud designed for Simple Catch Theme."
 msgstr "Geef de tag cloud weer"
+
+#: ../functions/widgets.php:19
+#, fuzzy
+msgid "Simple Catch Tag Clouds"
+msgstr "Simple Catch"
+
+#: ../functions/widgets.php:101
+msgid "Displays Social Icons added from Theme Options Panel."
+msgstr ""
+
+#: ../functions/widgets.php:102
+#, fuzzy
+msgid "Simple Catch Social Icons"
+msgstr "Simple Catch"
 
 #: ../functions/panel/theme_options.php:39
 #: ../functions/panel/theme_options.php:40
@@ -397,7 +412,7 @@ msgid "Like Catch Themes on Facebook"
 msgstr "Catch Themes Team"
 
 #: ../functions/panel/theme_options.php:131
-#: ../functions/panel/theme_options.php:593
+#: ../functions/panel/theme_options.php:592
 msgid "Facebook"
 msgstr "Facebook"
 
@@ -412,7 +427,7 @@ msgid "Follow Catch Themes on Twitter"
 msgstr "Catch Themes Team"
 
 #: ../functions/panel/theme_options.php:132
-#: ../functions/panel/theme_options.php:598
+#: ../functions/panel/theme_options.php:597
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -430,457 +445,458 @@ msgstr "%s in WordPress"
 msgid "5 Star Rating"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:143
+#: ../functions/panel/theme_options.php:142
 msgid "Design Settings"
 msgstr "Ontwerpinstellingen"
 
-#: ../functions/panel/theme_options.php:145
+#: ../functions/panel/theme_options.php:144
 #, fuzzy
 msgid "Featured Post Slider"
 msgstr "Tekstglijder"
 
-#: ../functions/panel/theme_options.php:146
+#: ../functions/panel/theme_options.php:145
 msgid "Social Links"
 msgstr "Links naar sociale netwerksites"
 
-#: ../functions/panel/theme_options.php:147
+#: ../functions/panel/theme_options.php:146
 msgid "Webmaster Tools"
 msgstr "Webmaster tools"
 
-#: ../functions/panel/theme_options.php:153
+#: ../functions/panel/theme_options.php:152
 msgid "Logo Options"
 msgstr "Logo-opties"
 
-#: ../functions/panel/theme_options.php:158
+#: ../functions/panel/theme_options.php:157
 msgid "Header logo url:"
 msgstr "URL van het logo in de hoofding:"
 
-#: ../functions/panel/theme_options.php:162
+#: ../functions/panel/theme_options.php:161
 #, fuzzy
 msgid "Change Logo"
 msgstr "Verander het logo in de hoofding"
 
-#: ../functions/panel/theme_options.php:165
+#: ../functions/panel/theme_options.php:164
 msgid "Upload Logo"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:172
+#: ../functions/panel/theme_options.php:171
 msgid "Preview:"
 msgstr "Voorbeeld:"
 
-#: ../functions/panel/theme_options.php:178
+#: ../functions/panel/theme_options.php:177
 msgid "No Header Image Found. Upload Header Image."
 msgstr ""
 
-#: ../functions/panel/theme_options.php:185
+#: ../functions/panel/theme_options.php:184
 #, fuzzy
 msgid "Disable Site Title?"
 msgstr "Verberg de titel van de website:"
 
-#: ../functions/panel/theme_options.php:187
-#: ../functions/panel/theme_options.php:192
-#: ../functions/panel/theme_options.php:220
+#: ../functions/panel/theme_options.php:186
+#: ../functions/panel/theme_options.php:191
+#: ../functions/panel/theme_options.php:219
 msgid "Check to Disable."
 msgstr ""
 
-#: ../functions/panel/theme_options.php:190
+#: ../functions/panel/theme_options.php:189
 #, fuzzy
 msgid "Disable Site Description?"
 msgstr "Verberg de omschrijving van de website:"
 
-#: ../functions/panel/theme_options.php:195
+#: ../functions/panel/theme_options.php:194
 msgid "Footer logo url: "
 msgstr "URL van het logo in de voettekst:"
 
-#: ../functions/panel/theme_options.php:202
+#: ../functions/panel/theme_options.php:201
 msgid "Change Footer Logo"
 msgstr "Verander het logo in de voettekst"
 
-#: ../functions/panel/theme_options.php:206
-#: ../functions/panel/theme_options.php:247
+#: ../functions/panel/theme_options.php:205
+#: ../functions/panel/theme_options.php:246
 msgid "Preview: "
 msgstr "Voorbeeld:"
 
-#: ../functions/panel/theme_options.php:218
+#: ../functions/panel/theme_options.php:217
 #, fuzzy
 msgid "Disable Footer Logo?"
 msgstr "Verberg het logo in de voettekst:"
 
-#: ../functions/panel/theme_options.php:224
-#: ../functions/panel/theme_options.php:261
-#: ../functions/panel/theme_options.php:355
-#: ../functions/panel/theme_options.php:379
-#: ../functions/panel/theme_options.php:407
-#: ../functions/panel/theme_options.php:444
-#: ../functions/panel/theme_options.php:465
-#: ../functions/panel/theme_options.php:485
-#: ../functions/panel/theme_options.php:501
-#: ../functions/panel/theme_options.php:532
-#: ../functions/panel/theme_options.php:583
-#: ../functions/panel/theme_options.php:713
-#: ../functions/panel/theme_options.php:743
+#: ../functions/panel/theme_options.php:223
+#: ../functions/panel/theme_options.php:260
+#: ../functions/panel/theme_options.php:354
+#: ../functions/panel/theme_options.php:378
+#: ../functions/panel/theme_options.php:406
+#: ../functions/panel/theme_options.php:443
+#: ../functions/panel/theme_options.php:464
+#: ../functions/panel/theme_options.php:484
+#: ../functions/panel/theme_options.php:500
+#: ../functions/panel/theme_options.php:531
+#: ../functions/panel/theme_options.php:582
+#: ../functions/panel/theme_options.php:683
+#: ../functions/panel/theme_options.php:712
+#: ../functions/panel/theme_options.php:742
 msgid "Save"
 msgstr "Bewaar"
 
-#: ../functions/panel/theme_options.php:229
+#: ../functions/panel/theme_options.php:228
 msgid "Fav Icon Options"
 msgstr "Fav Icon opties"
 
-#: ../functions/panel/theme_options.php:234
+#: ../functions/panel/theme_options.php:233
 #, fuzzy
 msgid "Favicon URL:"
 msgstr "URL van de favicon:"
 
-#: ../functions/panel/theme_options.php:237
+#: ../functions/panel/theme_options.php:236
 #, fuzzy
 msgid "Change Favicon"
 msgstr "Verander het fav icon"
 
-#: ../functions/panel/theme_options.php:240
+#: ../functions/panel/theme_options.php:239
 #, fuzzy
 msgid "Upload Favicon"
 msgstr "Favicon uitschakelen:"
 
-#: ../functions/panel/theme_options.php:253
+#: ../functions/panel/theme_options.php:252
 msgid "No Favicon Found. Upload Favicon."
 msgstr ""
 
-#: ../functions/panel/theme_options.php:266
+#: ../functions/panel/theme_options.php:265
 msgid "Content Background"
 msgstr "Achtergrond van de inhoud"
 
-#: ../functions/panel/theme_options.php:268
+#: ../functions/panel/theme_options.php:267
 msgid "Need to replace default background?"
 msgstr "Wens je de standaard achtergrond te wijzigen?"
 
-#: ../functions/panel/theme_options.php:268
+#: ../functions/panel/theme_options.php:267
 #, php-format
 msgid "<a class=\"button\" href=\"%s\">Click here</a>"
 msgstr "<a class=\"button\" href=\"%s\">Klik hier</a>"
 
-#: ../functions/panel/theme_options.php:274
+#: ../functions/panel/theme_options.php:273
 msgid "Content Color Options"
 msgstr "Kleurmogelijkheden van de inhoud"
 
-#: ../functions/panel/theme_options.php:281
+#: ../functions/panel/theme_options.php:280
 msgid "Heading Color:"
 msgstr "Kleur van de hoofding:"
 
-#: ../functions/panel/theme_options.php:292
+#: ../functions/panel/theme_options.php:291
 msgid "Meta Description Color:"
 msgstr "Kleur van de meta-omschrijving:"
 
-#: ../functions/panel/theme_options.php:303
+#: ../functions/panel/theme_options.php:302
 msgid "Text Color:"
 msgstr "Tekstkleur:"
 
-#: ../functions/panel/theme_options.php:314
+#: ../functions/panel/theme_options.php:313
 msgid "Link Color:"
 msgstr "Linkkleur:"
 
-#: ../functions/panel/theme_options.php:325
+#: ../functions/panel/theme_options.php:324
 msgid "Sidebar Widget Heading Color:"
 msgstr "Kleur van de hoofding van een widget in de zijbalk:"
 
-#: ../functions/panel/theme_options.php:336
+#: ../functions/panel/theme_options.php:335
 msgid "Sidebar Widget Text Color:"
 msgstr "Tekstkleur van een widget in de zijbalk:"
 
-#: ../functions/panel/theme_options.php:346
+#: ../functions/panel/theme_options.php:345
 msgid "Reset Color:"
 msgstr "Kleuren resetten:"
 
-#: ../functions/panel/theme_options.php:360
+#: ../functions/panel/theme_options.php:359
 msgid "Custom CSS"
 msgstr "Aangepaste CSS"
 
-#: ../functions/panel/theme_options.php:365
+#: ../functions/panel/theme_options.php:364
 msgid "Enter your custom CSS styles."
 msgstr "Vul hier je eigen CSS stijlen in."
 
-#: ../functions/panel/theme_options.php:372
+#: ../functions/panel/theme_options.php:371
 msgid "CSS Tutorial from W3Schools."
 msgstr "CSS handleiding op W3Schools."
 
-#: ../functions/panel/theme_options.php:374
+#: ../functions/panel/theme_options.php:373
 msgid "http://www.w3schools.com/css/default.asp"
 msgstr "http://www.w3schools.com/css/default.asp"
 
-#: ../functions/panel/theme_options.php:374
+#: ../functions/panel/theme_options.php:373
 msgid "CSS Tutorial"
 msgstr "CSS handleiding"
 
-#: ../functions/panel/theme_options.php:374
+#: ../functions/panel/theme_options.php:373
 msgid "Click Here to Read"
 msgstr "Lees deze hier"
 
-#: ../functions/panel/theme_options.php:384
-#: ../functions/panel/theme_options.php:389
+#: ../functions/panel/theme_options.php:383
+#: ../functions/panel/theme_options.php:388
 msgid "Default Layout"
 msgstr "Standaard layout"
 
-#: ../functions/panel/theme_options.php:393
+#: ../functions/panel/theme_options.php:392
 msgid "No Sidebar, One Column"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:397
+#: ../functions/panel/theme_options.php:396
 msgid "Content on Right"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:401
+#: ../functions/panel/theme_options.php:400
 msgid "Content on Left"
 msgstr "Kleurmogelijkheden van de inhoud"
 
-#: ../functions/panel/theme_options.php:415
+#: ../functions/panel/theme_options.php:414
 msgid "Homepage / Frontpage Category Setting"
 msgstr "Categorie-instelling van de homepagina/startpagina"
 
-#: ../functions/panel/theme_options.php:421
+#: ../functions/panel/theme_options.php:420
 msgid "Front page posts categories:"
 msgstr "Berichtcategorieën op de homepagina:"
 
-#: ../functions/panel/theme_options.php:423
+#: ../functions/panel/theme_options.php:422
 msgid "Only posts that belong to the categories selected here will be displayed on the front page."
 msgstr "Enkel berichten die tot de geselecteerde categorieën behoren, zullen worden weergegeven op de homepagina."
 
-#: ../functions/panel/theme_options.php:428
+#: ../functions/panel/theme_options.php:427
 msgid "--Disabled--"
 msgstr "--Uitgeschakeld--"
 
-#: ../functions/panel/theme_options.php:439
+#: ../functions/panel/theme_options.php:438
 msgid "You may select multiple categories by holding down the CTRL key."
 msgstr "Je kan meerdere categorieën selecteren door de CTRL-knop ingedrukt te houden."
 
-#: ../functions/panel/theme_options.php:449
+#: ../functions/panel/theme_options.php:448
 msgid "Search Text Settings"
 msgstr "Zoekinstellingen"
 
-#: ../functions/panel/theme_options.php:454
+#: ../functions/panel/theme_options.php:453
 msgid "Default Display Text in Search"
 msgstr "Standaard weer te geven tekst in de zoekfunctie"
 
-#: ../functions/panel/theme_options.php:459
+#: ../functions/panel/theme_options.php:458
 msgid "Search Button's text"
 msgstr "Tekst van de zoekknop"
 
-#: ../functions/panel/theme_options.php:470
+#: ../functions/panel/theme_options.php:469
 msgid "Excerpt / More Tag Settings"
 msgstr "Uitgelichte tekst / \"Lees meer\" instellingen"
 
-#: ../functions/panel/theme_options.php:475
+#: ../functions/panel/theme_options.php:474
 msgid "More Tag Text"
 msgstr "Tekst weer te geven als \"Lees meer\""
 
-#: ../functions/panel/theme_options.php:480
+#: ../functions/panel/theme_options.php:479
 msgid "Excerpt length(words)"
 msgstr "Lengte van de uitgelichte tekst (in aantal woorden)"
 
-#: ../functions/panel/theme_options.php:490
+#: ../functions/panel/theme_options.php:489
 msgid "Feed Redirect"
 msgstr "Feed redirect"
 
-#: ../functions/panel/theme_options.php:495
+#: ../functions/panel/theme_options.php:494
 msgid "Feed Redirect URL"
 msgstr "URL voor de redirect feed"
 
-#: ../functions/panel/theme_options.php:508
+#: ../functions/panel/theme_options.php:507
 msgid "Add Slider Options"
 msgstr "Opties voor tekstglijder"
 
-#: ../functions/panel/theme_options.php:512
+#: ../functions/panel/theme_options.php:511
 msgid "Exclude Slider post from Home page posts:"
 msgstr "Bericht in glijder niet meer weergeven op de homepagina:"
 
-#: ../functions/panel/theme_options.php:517
+#: ../functions/panel/theme_options.php:516
 msgid "Number of Slides"
 msgstr "Aantal slides"
 
-#: ../functions/panel/theme_options.php:523
+#: ../functions/panel/theme_options.php:522
 msgid "Featured Slider Post #"
 msgstr "Uitgelichte tekst #"
 
-#: ../functions/panel/theme_options.php:525
+#: ../functions/panel/theme_options.php:524
 msgid "Click Here To Edit"
 msgstr "Klik hier om naar de berichten te gaan"
 
-#: ../functions/panel/theme_options.php:531
+#: ../functions/panel/theme_options.php:530
 msgid "Note: Here You can put your Post IDs which displays on Homepage as slider."
 msgstr "Tip: vul hier het berichtID in van de tekst die je wenst te gebruiken in de glijder."
 
-#: ../functions/panel/theme_options.php:538
+#: ../functions/panel/theme_options.php:537
 msgid "Slider Effect Options"
 msgstr "Glijder effectmogelijkheden"
 
-#: ../functions/panel/theme_options.php:542
+#: ../functions/panel/theme_options.php:541
 msgid "Disable Slider Background Effect:"
 msgstr "Verberg het achtergrondeffect van de glijder:"
 
-#: ../functions/panel/theme_options.php:549
+#: ../functions/panel/theme_options.php:548
 msgid "Transition Effect:"
 msgstr "Overgangseffect:"
 
-#: ../functions/panel/theme_options.php:553
+#: ../functions/panel/theme_options.php:552
 msgid "fade"
 msgstr "vervagen"
 
-#: ../functions/panel/theme_options.php:554
+#: ../functions/panel/theme_options.php:553
 msgid "wipe"
 msgstr "vegen"
 
-#: ../functions/panel/theme_options.php:555
+#: ../functions/panel/theme_options.php:554
 msgid "scrollUp"
 msgstr "naar boven"
 
-#: ../functions/panel/theme_options.php:556
+#: ../functions/panel/theme_options.php:555
 msgid "scrollDown"
 msgstr "naar beneden"
 
-#: ../functions/panel/theme_options.php:557
+#: ../functions/panel/theme_options.php:556
 msgid "scrollLeft"
 msgstr "naar links"
 
-#: ../functions/panel/theme_options.php:558
+#: ../functions/panel/theme_options.php:557
 msgid "scrollRight"
 msgstr "naar rechts"
 
-#: ../functions/panel/theme_options.php:559
+#: ../functions/panel/theme_options.php:558
 msgid "blindX"
 msgstr "lamellenX"
 
-#: ../functions/panel/theme_options.php:560
+#: ../functions/panel/theme_options.php:559
 msgid "blindY"
 msgstr "lamellenY"
 
-#: ../functions/panel/theme_options.php:561
+#: ../functions/panel/theme_options.php:560
 msgid "blindZ"
 msgstr "lamellenZ"
 
-#: ../functions/panel/theme_options.php:562
+#: ../functions/panel/theme_options.php:561
 msgid "cover"
 msgstr "bedekken"
 
-#: ../functions/panel/theme_options.php:563
+#: ../functions/panel/theme_options.php:562
 msgid "shuffle"
 msgstr "schudden"
 
-#: ../functions/panel/theme_options.php:568
+#: ../functions/panel/theme_options.php:567
 msgid "Transition Delay"
 msgstr "Overgangsvertraging"
 
-#: ../functions/panel/theme_options.php:571
-#: ../functions/panel/theme_options.php:578
+#: ../functions/panel/theme_options.php:570
+#: ../functions/panel/theme_options.php:577
 msgid "second(s)"
 msgstr "second(en)"
 
-#: ../functions/panel/theme_options.php:575
+#: ../functions/panel/theme_options.php:574
 msgid "Transition Length"
 msgstr "Duur van een overgang"
 
-#: ../functions/panel/theme_options.php:603
+#: ../functions/panel/theme_options.php:602
 msgid "Google+"
 msgstr "Google"
 
-#: ../functions/panel/theme_options.php:608
+#: ../functions/panel/theme_options.php:607
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../functions/panel/theme_options.php:613
+#: ../functions/panel/theme_options.php:612
 msgid "Youtube"
 msgstr "Youtube"
 
-#: ../functions/panel/theme_options.php:618
+#: ../functions/panel/theme_options.php:617
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../functions/panel/theme_options.php:624
+#: ../functions/panel/theme_options.php:623
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: ../functions/panel/theme_options.php:629
+#: ../functions/panel/theme_options.php:628
 msgid "Slideshare"
 msgstr "Slideshare"
 
-#: ../functions/panel/theme_options.php:634
+#: ../functions/panel/theme_options.php:633
 msgid "Foursquare"
 msgstr "Foursquare"
 
-#: ../functions/panel/theme_options.php:639
+#: ../functions/panel/theme_options.php:638
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../functions/panel/theme_options.php:644
+#: ../functions/panel/theme_options.php:643
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../functions/panel/theme_options.php:649
+#: ../functions/panel/theme_options.php:648
 msgid "deviantART"
 msgstr "deviantART"
 
-#: ../functions/panel/theme_options.php:654
+#: ../functions/panel/theme_options.php:653
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../functions/panel/theme_options.php:659
+#: ../functions/panel/theme_options.php:658
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../functions/panel/theme_options.php:669
+#: ../functions/panel/theme_options.php:668
 msgid "RSS"
 msgstr "RSS"
 
-#: ../functions/panel/theme_options.php:674
+#: ../functions/panel/theme_options.php:673
 msgid "Delicious"
 msgstr "Delicious"
 
-#: ../functions/panel/theme_options.php:679
+#: ../functions/panel/theme_options.php:678
 msgid "Last.fm"
 msgstr "Last.fm"
 
-#: ../functions/panel/theme_options.php:690
+#: ../functions/panel/theme_options.php:689
 msgid "Site Verification"
 msgstr "Website verificatie"
 
-#: ../functions/panel/theme_options.php:695
+#: ../functions/panel/theme_options.php:694
 msgid "Google Site Verification ID"
 msgstr "Google Site verificatie-ID"
 
-#: ../functions/panel/theme_options.php:696
+#: ../functions/panel/theme_options.php:695
 msgid "Enter your Google ID number only"
 msgstr "Vul hier (alleen) uw Google ID nummer in"
 
-#: ../functions/panel/theme_options.php:701
+#: ../functions/panel/theme_options.php:700
 msgid "Yahoo Site Verification ID"
 msgstr "Yahoo Site verificatie-ID"
 
-#: ../functions/panel/theme_options.php:702
+#: ../functions/panel/theme_options.php:701
 msgid "Enter your Yahoo ID number only"
 msgstr "Vul hier (alleen) uwYahoo-nummer in"
 
-#: ../functions/panel/theme_options.php:707
+#: ../functions/panel/theme_options.php:706
 msgid "Bing Site Verification ID"
 msgstr "Bing site verificatie-ID"
 
-#: ../functions/panel/theme_options.php:708
+#: ../functions/panel/theme_options.php:707
 msgid "Enter your Bing ID number only"
 msgstr "Vul hier (alleen) uwYahoo-nummer in"
 
-#: ../functions/panel/theme_options.php:718
+#: ../functions/panel/theme_options.php:717
 msgid "Analytics/ Header / Footer Codes"
 msgstr ""
 
-#: ../functions/panel/theme_options.php:723
+#: ../functions/panel/theme_options.php:722
 msgid "Code to display on Header"
 msgstr "Code weergegeven in de hoofding"
 
-#: ../functions/panel/theme_options.php:729
+#: ../functions/panel/theme_options.php:728
 msgid "Note: Here you can put scripts from Google, Facebook etc. which will load on Header"
 msgstr "Tip: hier kan je scripts van Google, Facebook etc gaan invullen, die dan zullen geladen worden in de hoofding"
 
-#: ../functions/panel/theme_options.php:732
+#: ../functions/panel/theme_options.php:731
 msgid "Code to display on Footer"
 msgstr "Code weergegeven in de voettekst"
 
-#: ../functions/panel/theme_options.php:739
+#: ../functions/panel/theme_options.php:738
 msgid "Note: Here you can put scripts from Google, Facebook, Add This etc. which will load on footer"
 msgstr "Tip: hier kan je scripts van Google, Facebook etc gaan invullen, die dan zullen geladen worden in de voettekst"
 
