@@ -6,18 +6,17 @@
 
 function optionsframework_tabs() {
 	$counter = 0;
-	$optionsframework_settings = get_option('options_framework_theme');
 	$options = optionsframework_options();
 	$menu = '';
 
 	foreach ($options as $value) {
-		$counter++;
 		// Heading for Navigation
 		if ($value['type'] == "heading") {
-			$id = ! empty( $value['id'] ) ? $value['id'] : $value['name'];
-			$jquery_click_hook = preg_replace('/[^a-zA-Z0-9._\-]/', '', strtolower($id) );
-			$jquery_click_hook = "of-option-" . $jquery_click_hook . $counter;
-			$menu .= '<a id="'.  esc_attr( $jquery_click_hook ) . '-tab" class="nav-tab" title="' . esc_attr( $value['name'] ) . '" href="' . esc_attr( '#'.  $jquery_click_hook ) . '">' . esc_html( $value['name'] ) . '</a>';
+			$counter++;
+			$class = '';
+			$class = ! empty( $value['id'] ) ? $value['id'] : $value['name'];
+			$class = preg_replace('/[^a-zA-Z0-9._\-]/', '', strtolower($class) ) . '-tab';
+			$menu .= '<a id="options-group-'.  $counter . '-tab" class="nav-tab ' . $class .'" title="' . esc_attr( $value['name'] ) . '" href="' . esc_attr( '#options-group-'.  $counter ) . '">' . esc_html( $value['name'] ) . '</a>';
 		}
 	}
 
@@ -38,7 +37,7 @@ function optionsframework_fields() {
 		$option_name = $optionsframework_settings['id'];
 	}
 	else {
-		$option_name = 'optionsframework';
+		$option_name = 'options_framework_theme';
 	};
 
 	$settings = get_option($option_name);
@@ -49,7 +48,6 @@ function optionsframework_fields() {
 
 	foreach ( $options as $value ) {
 
-		$counter++;
 		$val = '';
 		$select_value = '';
 		$checked = '';
@@ -63,7 +61,7 @@ function optionsframework_fields() {
 
 			$id = 'section-' . $value['id'];
 
-			$class = 'section ';
+			$class = 'section';
 			if ( isset( $value['type'] ) ) {
 				$class .= ' section-' . $value['type'];
 			}
@@ -107,7 +105,6 @@ function optionsframework_fields() {
 
 		switch ( $value['type'] ) {
 
-		
 		// Basic text input
 		case 'text':
 			$output .= '<input id="' . esc_attr( $value['id'] ) . '" class="of-input" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" type="text" value="' . esc_attr( $val ) . '" />';
@@ -212,7 +209,8 @@ function optionsframework_fields() {
 
 		// Uploader
 		case "upload":
-			$output .= optionsframework_medialibrary_uploader( $value['id'], $val, null );
+			$output .= optionsframework_uploader( $value['id'], $val, null );
+			
 			break;
 
 		// Typography
@@ -301,12 +299,13 @@ function optionsframework_fields() {
 			}
 			$output .= '<input name="' . esc_attr( $option_name . '[' . $value['id'] . '][color]' ) . '" id="' . esc_attr( $value['id'] . '_color' ) . '" class="of-color of-background-color"  type="text" value="' . esc_attr( $background['color'] ) . '"' . $default_color .' />';
 
-			// Background Image - New AJAX Uploader using Media Library
+			// Background Image
 			if (!isset($background['image'])) {
 				$background['image'] = '';
 			}
-
-			$output .= optionsframework_medialibrary_uploader( $value['id'], $background['image'], null, '',0,'image');
+			
+			$output .= optionsframework_uploader( $value['id'], $background['image'], null, esc_attr( $option_name . '[' . $value['id'] . '][image]' ) );
+			
 			$class = 'of-background-properties';
 			if ( '' == $background['image'] ) {
 				$class .= ' hide';
@@ -388,16 +387,16 @@ function optionsframework_fields() {
 
 		// Heading for Navigation
 		case "heading":
+			$counter++;
 			if ($counter >= 2) {
 				$output .= '</div>'."\n";
 			}
-			$jquery_click_hook = preg_replace('/[^a-zA-Z0-9._\-]/', '', strtolower($value['name']) );
-			$jquery_click_hook = "of-option-" . $jquery_click_hook . $counter;
-			$menu .= '<a id="'.  esc_attr( $jquery_click_hook ) . '-tab" class="nav-tab" title="' . esc_attr( $value['name'] ) . '" href="' . esc_attr( '#'.  $jquery_click_hook ) . '">' . esc_html( $value['name'] ) . '</a>';
-			$output .= '<div class="group" id="' . esc_attr( $jquery_click_hook ) . '">';
+			$class = '';
+			$class = ! empty( $value['id'] ) ? $value['id'] : $value['name'];
+			$class = preg_replace('/[^a-zA-Z0-9._\-]/', '', strtolower($class) );
+			$output .= '<div id="options-group-' . $counter . '" class="group ' . $class . '">';
 			$output .= '<h3>' . esc_html( $value['name'] ) . '</h3>' . "\n";
 			break;
-
 		}
 
 		if ( ( $value['type'] != "heading" ) && ( $value['type'] != "info" ) ) {

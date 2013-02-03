@@ -229,9 +229,9 @@ add_filter( 'of_font_face', 'of_sanitize_font_face' );
  */
 function of_recognized_background_repeat() {
 	$default = array(
-		'no-repeat' => 'No Repeat', 
-		'repeat-x'  => 'Repeat Horizontally', 
-		'repeat-y'  => 'Repeat Vertically', 
+		'no-repeat' => 'No Repeat',
+		'repeat-x'  => 'Repeat Horizontally',
+		'repeat-y'  => 'Repeat Vertically',
 		'repeat'    => 'Repeat All',
 		);
 	return apply_filters( 'of_recognized_background_repeat', $default );
@@ -245,14 +245,14 @@ function of_recognized_background_repeat() {
  */
 function of_recognized_background_position() {
 	$default = array(
-		'top left'      => 'Top Left', 
-		'top center'    => 'Top Center', 
+		'top left'      => 'Top Left',
+		'top center'    => 'Top Center',
 		'top right'     => 'Top Right',
-		'center left'   => 'Middle Left', 
-		'center center' => 'Middle Center', 
-		'center right'  => 'Middle Right', 
-		'bottom left'   => 'Bottom Left', 
-		'bottom center' => 'Bottom Center', 
+		'center left'   => 'Middle Left',
+		'center center' => 'Middle Center',
+		'center right'  => 'Middle Right',
+		'bottom left'   => 'Bottom Left',
+		'bottom center' => 'Bottom Center',
 		'bottom right'  => 'Bottom Right'
 		);
 	return apply_filters( 'of_recognized_background_position', $default );
@@ -266,7 +266,7 @@ function of_recognized_background_position() {
  */
 function of_recognized_background_attachment() {
 	$default = array(
-		'scroll' => 'Scroll Normally', 
+		'scroll' => 'Scroll Normally',
 		'fixed'  => 'Fixed in Place'
 		);
 	return apply_filters( 'of_recognized_background_attachment', $default );
@@ -341,8 +341,8 @@ function of_recognized_font_faces() {
  */
 function of_recognized_font_styles() {
 	$default = array(
-		'normal'      => 'Normal', 
-		'italic'      => 'Italic', 
+		'normal'      => 'Normal',
+		'italic'      => 'Italic',
 		'bold'        => 'Bold',
 		'bold italic' => 'Bold Italic'
 		);
