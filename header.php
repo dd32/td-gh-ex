@@ -15,7 +15,7 @@
 <meta name="viewport" content="width=device-width" />
 <title><?php wp_title() ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<?php wp_enqueue_style('smallbusiness-style', get_stylesheet_uri(), false, '1.5');?>
+<?php wp_enqueue_style('smallbusiness-style', get_stylesheet_uri(), false, '1.6');?>
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 <?php 

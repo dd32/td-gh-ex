@@ -434,6 +434,7 @@
 						var cal = $('#' + $(this).data('colorpickerId'));
 						cal.data('colorpicker').color = col;
 						cal.data('colorpicker').origColor = col;
+
 						fillRGBFields(col, cal.get(0));
 						fillHSBFields(col, cal.get(0));
 						fillHexFields(col, cal.get(0));
