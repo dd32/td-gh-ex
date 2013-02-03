@@ -30,7 +30,6 @@ html {
 }
 
 .panel-type-list .panel-type-wrapper {
-	background: #808080;
 	background: #f8f8f8;
 	background: -moz-linear-gradient(top, #f8f8f8 0%, #ececec 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f8f8), color-stop(100%,#ececec));
@@ -38,26 +37,35 @@ html {
 	background: -o-linear-gradient(top, #f8f8f8 0%,#ececec 100%);
 	background: -ms-linear-gradient(top, #f8f8f8 0%,#ececec 100%);
 	background: linear-gradient(to bottom, #f8f8f8 0%,#ececec 100%);
-	border: 1px solid #dfdfdf;
+	border: 1px solid #cccccc;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.05);
 	cursor: pointer;
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#ececec',GradientType=0 );
-	padding: 10px;
+	padding: 8px;
+}
+
+.panel-type-list .panel-type-wrapper:hover {
+	border-color: #C0C0C0;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 .panel-type-list .panel-type h3 {
 	height: 1.2em;
 	
-	font-weight: 600;
+	color: #333333;
+	font-size: 14px;
 	margin: 0 0 7px 0;
 }
 
 .panel-type-list .panel-type small {
-	height: 3em;
+	height: 2.5em;
 	
 	display: block;
+	font-size: 11px;
+	line-height: 1.25em;
+	overflow: hidden;
 }
 
 /* =Grid 
@@ -70,7 +78,7 @@ html {
 #panels-container .grid {
 	position: relative;
 	
-	background: url(images/grid-bg.png) repeat;
+	background: #edf8fe url("images/cell-selected.png") repeat;
 	margin-bottom: 20px;
 }
 
@@ -78,15 +86,22 @@ html {
 	position: absolute;
 	top: 0;
 	
-	background: #fff8bd;
-	border: 1px solid #ecd800;
+	background: #e4eff4;
+	border: 1px solid #bcccd2;
+}
+
+#panels-container .grid .cell.cell-selected {
+	background: #d0eaf5 url("images/cell-selected.png") repeat; /* background: #fff8bd url("images/cell-selected.png") repeat;
+    border-color: #ecd800;*/ 
+	border-color: #a5c4ce;
+	box-shadow: 0 0 4px rgba(80, 109, 118, 0.3);
 }
 
 #panels-container .grid .cell .cell-wrapper {
 	-webkit-box-sizing: border-box; /* 6px bottom to remove bottom margin from panels */ 
 	-moz-box-sizing: border-box; /* 6px bottom to remove bottom margin from panels */ 
 	box-sizing: border-box;
-	padding: 10px 10px 6px 10px; /* 6px bottom to remove bottom margin from panels */ 
+	padding: 10px 10px 4px 10px; /* 6px bottom to remove bottom margin from panels */ 
 }
 
 #panels-container .grid .cell.first {
@@ -149,8 +164,8 @@ html {
 }
 
 #panels-container .grid .ui-resizable-handle.ui-resizable-w {
-	left: -12px;
-	width: 12px;
+	left: -11px;
+	width: 10px;
 	
 	background: rgba(0,150,211, 0);
 	cursor: move;
@@ -191,7 +206,6 @@ html {
 }
 
 #add-to-panels {
-	padding-top: 10px;
 }
 
 /* =The Resizable Helper 
@@ -213,34 +227,72 @@ html {
 
 .panels-container .panel {
 	background: #f8f8f8;
-	background: -moz-linear-gradient(top, #f8f8f8 0%, #ececec 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f8f8), color-stop(100%,#ececec));
-	background: -webkit-linear-gradient(top, #f8f8f8 0%,#ececec 100%);
-	background: -o-linear-gradient(top, #f8f8f8 0%,#ececec 100%);
-	background: -ms-linear-gradient(top, #f8f8f8 0%,#ececec 100%);
-	background: linear-gradient(to bottom, #f8f8f8 0%,#ececec 100%);
-	border: 1px solid #dfdfdf;
+	background-image: -webkit-gradient(linear, left bottom, left top, from(#e9ebeb), to(#f8f8f8));
+	background-image: -webkit-linear-gradient(bottom, #e9ebeb, #f8f8f8);
+	background-image: -moz-linear-gradient(bottom, #e9ebeb, #f8f8f8);
+	background-image: -o-linear-gradient(bottom, #e9ebeb, #f8f8f8);
+	background-image: linear-gradient(to top, #e9ebeb, #f8f8f8);
+	border: 1px solid;
+	border-color: #c9c9c9 #c2c2c3 #babbbf #c1c2c3;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.08), inset 0 0 2px #FFF;
+	-moz-box-shadow: 0 1px 1px rgba(0,0,0,0.08), inset 0 0 2px #FFF;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.08), inset 0 0 2px #FFF;
 	cursor: move;
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#ececec',GradientType=0 );
-	margin-bottom: 4px;
+	margin-bottom: 5px;
 }
 
 .panels-container .panel .panel-wrapper {
-	padding: 7px;
+	padding: 7px 9px;
 }
 
 .panels-container .panel h4 {
 	height: 1em;
 	
+	color: #474747;
 	cursor: pointer;
 	display: inline-block;
 	font-weight: 600;
 	line-height: 1;
-	margin: 0 0 8px 0;
+	margin: 0 0 3px 0;
+	margin-right: 15px;
 	overflow: hidden;
+	text-shadow: 0 1px 0 #FFF;
+}
+
+.panels-container .panel .title a {
+	display: none;
+	margin-right: 3px;
+}
+
+.panels-container .panel:hover .title a {
+	display: inline-block;
+	opacity: 0.5;
+}
+
+.panels-container .panel.panel-being-dragged .title .actions {
+	display: none;
+}
+
+.panels-container .panel .title .actions {
+	cursor: pointer;
+	float: right;
+	padding: 0 0 0 15px;
+}
+
+.panels-container .panel .title .actions:hover a {
+	opacity: 1;
+}
+
+.panels-container .panel:hover .title a.delete {
+	color: #FF0000;
+}
+
+.panels-container .panel:hover .title a.delete:hover {
+	background: #FF0000;
+	color: white;
 }
 
 .panels-container .panel.ui-sortable-helper h4 {
@@ -248,22 +300,37 @@ html {
 }
 
 .panels-container .panel small {
+	height: 16px;
+	
 	display: block;
+	overflow: hidden;
 }
 
 .panels-container .panel .form {
 	display: none;
 }
 
+/* Acts as a placeholder for dragging */
+
 .panels-container .ui-state-highlight {
-	height: 51px;
+	position: relative;
+	height: 47px;
 	
-	background: rgba(255,255,255,0.4);
-	border: 1px dashed #dfdfdf;
+	background: #ddebef;
+	border: 1px solid;
+	border-color: #bcccd2;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
-	margin-bottom: 4px;
+	-moz-box-shadow: 0 1px 0 rgba(255,255,255,0.7), inset 0 1px 2px rgba(0,0,0,0.06);
+	-webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.7), inset 0 1px 2px rgba(0,0,0,0.06);
+	box-shadow: 0 1px 0 rgba(255,255,255,0.7), inset 0 1px 2px rgba(0,0,0,0.06);
+	margin-bottom: 5px;
+}
+
+.cell-selected .panels-container .ui-state-highlight {
+	background: #c8e1ec;
+	border-color: #a4c4ce;
 }
 
 /* =Dialogs 
@@ -322,19 +389,79 @@ html {
 }
 
 #so-panels-panels h3.hndle {
-	background-color: #E9E9E9;
-	background-image: -ms-linear-gradient(bottom,#DDD,#E9E9E9);
-	background-image: -moz-linear-gradient(bottom,#DDD,#E9E9E9);
-	background-image: -o-linear-gradient(bottom,#DDD,#E9E9E9);
-	background-image: -webkit-linear-gradient(bottom,#DDD,#E9E9E9);
-	background-image: linear-gradient(bottom,#DDD,#E9E9E9);
+	background: #eee;
+	background-image: -webkit-gradient(linear, left bottom, left top, from(#e5e5e5), to(#f4f4f4));
+	background-image: -webkit-linear-gradient(bottom, #e5e5e5, #f4f4f4);
+	background-image: -moz-linear-gradient(bottom, #e5e5e5, #f4f4f4);
+	background-image: -o-linear-gradient(bottom, #e5e5e5, #f4f4f4);
+	background-image: linear-gradient(to top, #e5e5e5, #f4f4f4);
 	border-bottom: 1px solid #CCC;
+	padding: 4px 9px 4px 9px;
 }
 
-#content-panels.panels-tab-active {
-	background-color: #E9E9E9;
-	border-color: #CCC #CCC #E9E9E9 #CCC;
+#so-panels-panels h3.hndle button {
+	background: #eee;
+	background-image: -webkit-gradient(linear, left bottom, left top, from(#e3e3e3), to(#fff));
+	background-image: -webkit-linear-gradient(bottom, #e3e3e3, #fff);
+	background-image: -moz-linear-gradient(bottom, #e3e3e3, #fff);
+	background-image: -o-linear-gradient(bottom, #e3e3e3, #fff);
+	background-image: linear-gradient(to top, #e3e3e3, #fff);
+	border-color: #aaa;
+	-moz-box-shadow: 0 1px 1px rgba(0,0,0,0.06);
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.06);
+	box-shadow: 0 1px 1px rgba(0,0,0,0.06);
+	float: left;
+	margin-right: 2px;
+	padding: 7px 8px;
+}
+
+#so-panels-panels h3.hndle button:active {
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+#so-panels-panels .inside {
+	padding: 5px 12px 5px 10px;
+}
+
+#wp-content-wrap.panels-active .switch-panels {
+	background: #f4f4f4;
+	border-color: #CCC #CCC #f4f4f4 #CCC;
 	color: #333;
 	z-index: 10;
+}
+
+#panels-undo-message {
+	position: fixed;
+	top: 23px;
+	left: 50%;
+	width: 250px;
+	
+	border-top: none;
+	-webkit-border-top-left-radius: 0px;
+	border-top-left-radius: 0px;
+	-webkit-border-top-right-radius: 0px;
+	border-top-right-radius: 0px;
+	margin-left: -125px;
+	text-align: center;
+	z-index: 100;
+}
+
+#panels-home-page #post-body {
+	display: none;
+}
+
+#post-body-wrapper {
+	background: url("images/loader.gif") no-repeat center center;
+	min-height: 100px;
+}
+
+#so-panels-panels .dialog-form a {
+	outline: 0;
+}
+
+.so-gallery-widget-select-attachments {
+	float: right;
 }
 

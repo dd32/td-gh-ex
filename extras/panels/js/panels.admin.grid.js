@@ -16,7 +16,10 @@ jQuery( function ( $ ) {
      * @param $$
      */
     window.panels.setupGrid = function ( $$ ) {
-        window.panels.resizeCells( $$ );
+        // Hide the undo message
+        $('#panels-undo-message' ).fadeOut(function(){ $(this ).remove() });
+        
+        $$.panelsResizeCells();
 
         $$.find( '.grid .cell' ).not( '.first' ).each( function () {
             var sharedCellWidth, sharedCellLeft;
@@ -48,7 +51,7 @@ jQuery( function ( $ ) {
                             $( this ).attr( 'data-percent', percent ).find( 'input[name$="[weight]"]' ).val( percent );
                         } );
 
-                    window.panels.resizeCells( $$, true );
+                    $$.panelsResizeCells(true);
                 }
             } );
         } );
@@ -61,28 +64,46 @@ jQuery( function ( $ ) {
             c1.attr( 'data-percent', totalPercent / 2 ).find( 'input[name$="[weight]"]' ).val( totalPercent / 2 );
             c2.attr( 'data-percent', totalPercent / 2 ).find( 'input[name$="[weight]"]' ).val( totalPercent / 2 );
             c1.add( c2 ).find( '.cell-width-value span' ).html( Math.round( totalPercent / 2 * 1000 ) / 10 + '%' );
-            window.panels.resizeCells( $$ );
+            $$.panelsResizeCells();
 
             return false;
         } );
 
         $$.find( '.grid .cell' )
+            .click(function(){
+                $( '.grid .cell' ).removeClass('cell-selected');
+                $(this ).addClass('cell-selected');
+            })
             .each( function () {
                 var percent = Number( $( this ).attr( 'data-percent' ) );
                 $( this ).find( '.cell-width-value span' ).html( Math.round( percent * 1000 ) / 10 + '%' );
             } )
             .find( '.panels-container' )
+            // This sortable handles the widgets inside the cell
             .sortable( {
                 placeholder:"ui-state-highlight",
                 connectWith:".panels-container",
                 tolerance:  'pointer',
-                change:     function () {
-                    window.panels.resizeCells( $$, true );
+                change:     function (ui) {
+                    var thisContainer = $('#panels-container .ui-state-highlight' ).closest('.cell' ).get(0);
+                    if(typeof this.lastContainer != 'undefined' && this.lastContainer != thisContainer){
+                        // Resize the new and the last containers
+                        $(this.lastContainer ).closest('.grid-container').panelsResizeCells();
+                        $(thisContainer).closest('.grid-container').panelsResizeCells();
+                        thisContainer.click();
+                    }
+                    
+                    // Refresh all the cell sizes after we stop sorting
+                    this.lastContainer = thisContainer; 
+                    
                 },
-                stop:       function () {
+                helper: function(e, el){
+                    return el.clone().css('opacity', 0.9).addClass('panel-being-dragged');
+                },
+                stop:       function (ui, el) {
                     // Refresh all the cell sizes after we stop sorting
                     $( '#panels-container .grid-container' ).each( function () {
-                        window.panels.resizeCells( $( this ), true );
+                        $(this).panelsResizeCells();
                     } );
                 },
                 receive:    function () {
@@ -91,7 +112,10 @@ jQuery( function ( $ ) {
             } )
             .bind( 'refreshcells', function () {
                 // Set the cell for each panel
-                window.panels.resizeCells( $$ );
+                // Refresh all the cell sizes after we stop sorting
+                $( '#panels-container .grid-container' ).each( function () {
+                    $(this).panelsResizeCells(true);
+                } );
 
                 $( '#panels-container .panel' ).each( function () {
                     var container = $( this ).closest( '.grid-container' );
@@ -109,37 +133,36 @@ jQuery( function ( $ ) {
     /**
      * Resize all the cells
      *
-     * @param $$
      * @param onlyHeight
      */
-    window.panels.resizeCells = function ( $$, onlyHeight ) {
-        if ( onlyHeight == undefined ) onlyHeight = false;
+    $.fn.panelsResizeCells = function(){
+        
+        return $(this ).each(function(){
+            var $$ = $(this);
 
-        $$.find( '.grid .cell, .grid .cell-wrapper' ).css( 'height', 'auto' );
-        var totalWidth = $$.find( '.grid' ).outerWidth();
+            $$.find( '.grid, .grid .cell .cell-wrapper' ).css( 'height', 'auto' );
+            var totalWidth = $$.find( '.grid' ).outerWidth();
 
-        if ( $$.find( '.grid .cell' ).length > 1 ) {
+            if ( $$.find( '.grid .cell' ).length > 1 ) {
+                $$.find( '.grid .cell' ).each( function () {
+                    if ( $( this ).is( '.first, .last' ) ) totalWidth -= 6;
+                    else totalWidth -= 12;
+                } );
+            }
+            
+            var left = 0;
+            var maxHeight = 0;
             $$.find( '.grid .cell' ).each( function () {
-                if ( $( this ).is( '.first, .last' ) ) totalWidth -= 6;
-                else totalWidth -= 12;
-            } );
-        }
-
-        var left = 0;
-        var maxHeight = 0;
-        $$.find( '.grid .cell' ).each( function () {
-            maxHeight = Math.max( maxHeight, $( this ).outerHeight() );
-            if ( !onlyHeight ) {
+                maxHeight = Math.max( maxHeight, $( this ).height() );
                 $( this )
                     .width( Math.floor( totalWidth * Number( $( this ).attr( 'data-percent' ) ) ) )
                     .css( 'left', left );
                 left += $( this ).width() + 12;
-            }
-        } );
-        maxHeight = Math.max( maxHeight, 50 );
-
-        $$.find( '.grid' ).height( maxHeight );
-        $$.find( '.grid .cell .cell-wrapper' ).css( 'height', maxHeight );
+            } );
+            
+            // Resize all the grids and cell wrappers
+            $$.find( '.grid, .grid .cell .cell-wrapper' ).css( 'height', Math.max( maxHeight, 68 ) );
+        })
     }
 
     var gridId = 0;
@@ -150,15 +173,17 @@ jQuery( function ( $ ) {
      *
      * @param cells
      * @param weights
+     * @param noSlide
      * @return {*}
      */
     window.panels.createGrid = function ( cells, weights ) {
-        if ( weights == undefined ) {
+        if ( weights == null || weights.length == 0 ) {
             weights = [];
             for ( var i = 0; i < cells; i++ ) {
                 weights[i] = 1;
             }
         }
+        
         var weightSum = weights.reduce( function ( a, b ) {
             return a + b;
         } );
@@ -179,22 +204,92 @@ jQuery( function ( $ ) {
                     } )
                     .attr( 'data-tooltip', panelsLoc.buttons['delete'] )
                     .click( function () {
-                        // Use this to indicate which grid we're going to remove
-                        container.css( 'opacity', 0.25 );
-                        if ( confirm( panelsLoc.messages['confirmDeleteColumns'] ) ) {
-                            container.slideUp( function () {
+                        $( this ).removeTooltip();
+                        
+                        // Create an array that represents this grid
+                        var containerData = [];
+                        container.find('.cell' ).each(function(i, el){
+                            containerData[i] = {
+                                'weight' : Number($(this ).attr('data-percent')),
+                                'widgets' : []
+                            };
+                            $(this ).find('.panel' ).each(function(j, el){
+                                containerData[i]['widgets'][j] = {
+                                    type : $(this ).attr('data-type'),
+                                    data : $(this ).getPanelData()
+                                }
+                            })
+                        });
+                        
+                        // Register this with the undo manager
+                        window.panels.undoManager.register(
+                            this,
+                            function(containerData, position){
+                                // Readd the grid
+                                var weights = [];
+                                for(var i = 0; i < containerData.length; i++){
+                                    weights[i] = containerData[i].weight;
+                                }
+                                
+                                var gridContainer = window.panels.createGrid( weights.length, weights );
+                                window.panels.setupGrid( gridContainer );
+                                
+                                // Now, start adding the widgets
+                                for(var i = 0; i < containerData.length; i++){
+                                    for(var j = 0; j < containerData[i].widgets.length; j++){
+                                        // Readd the panel
+                                        var theWidget = containerData[i].widgets[j];
+                                        var panel = $('#panels-dialog').panelsCreatePanel(theWidget.type, theWidget.data);
+                                        window.panels.addPanel(panel, gridContainer.find('.panels-container' ).eq(i));
+                                    }
+                                }
+                                
+                                // Finally, reposition the gridContainer
+                                if(position != gridContainer.index()){
+                                    var current = $('#panels-container .grid-container' ).eq(position);
+                                    if(current.length){
+                                        gridContainer.insertBefore(current);
+                                        $( '#panels-container' ).sortable( "refresh" )
+                                        $( '#panels-container' ).find( '.cell' ).each( function () {
+                                            // Store which grid this is in by finding the index of the closest .grid-container
+                                            $( this ).find( 'input[name$="[grid]"]' ).val( $( '#panels-container .grid-container' ).index( $( this ).closest( '.grid-container' ) ) );
+                                        } );
 
-                                container.remove();
-
-                                $( '#panels-container' )
-                                    .sortable( "refresh" )
-                                    .find( '.panels-container' ).trigger( 'refreshcells' );
-                            } );
-                        }
-                        else {
-                            // Restore the container
-                            container.animate( {opacity:1}, 'normal' );
-                        }
+                                        $( '#panels-container .panels-container' ).trigger( 'refreshcells' );
+                                    }
+                                }
+                                
+                                gridContainer.hide().slideDown();
+                                
+                                
+                                
+                            },
+                            [containerData, container.index()],
+                            'Remove Panel'
+                        );
+                        
+                        // Create the undo notification
+                        $('#panels-undo-message' ).remove();
+                        $('<div id="panels-undo-message" class="updated"><p>' + panelsLoc.messages.deleteColumns + ' - <a href="#" class="undo">' + panelsLoc.buttons.undo + '</a></p></div>' )
+                            .appendTo('body')
+                            .hide()
+                            .fadeIn()
+                            .find('a.undo')
+                            .click(function(){
+                                window.panels.undoManager.undo();
+                                $('#panels-undo-message' ).fadeOut(function(){ $(this ).remove() });
+                                return false;
+                            })
+                        ;
+                        
+                        // Finally, remove the grid container
+                        container.slideUp( function () {
+                            container.remove();
+                            $( '#panels-container' )
+                                .sortable( "refresh" )
+                                .find( '.panels-container' ).trigger( 'refreshcells' );
+                        } );
+                        
                         return false;
                     } )
 
@@ -208,7 +303,7 @@ jQuery( function ( $ ) {
 
         for ( var i = 0; i < cells; i++ ) {
             var cell = $(
-                '<div class="cell" data-weight="1" data-percent="' + (weights[i] / weightSum) + '">' +
+                '<div class="cell" data-percent="' + (weights[i] / weightSum) + '">' +
                     '<div class="cell-wrapper panels-container"></div>' +
                     '<div class="cell-width"><div class="cell-width-left"></div><div class="cell-width-right"></div><div class="cell-width-line"></div><div class="cell-width-value"><span></span></div></div>' +
                     '</div>'
@@ -226,9 +321,8 @@ jQuery( function ( $ ) {
             cellId++;
         }
         grid.append( $( '<div />' ).addClass( 'clear' ) );
-
         gridId++;
-
+        
         return container;
     }
 
@@ -241,10 +335,7 @@ jQuery( function ( $ ) {
 
     $( window ).bind( 'resize', function ( event ) {
         if ( $( event.target ).hasClass( 'ui-resizable' ) ) return;
-
-        $( '#panels-container .grid-container' ).each( function () {
-            window.panels.resizeCells( $( this ) );
-        } );
+        $( '#panels-container .grid-container' ).panelsResizeCells();
     } );
 
     // Create a sortable for the grids
@@ -282,20 +373,12 @@ jQuery( function ( $ ) {
                 num = Math.round( num );
                 num = Math.max( 1, num );
                 num = Math.min( 10, num );
-                window.panels.setupGrid( window.panels.createGrid( num ) );
+                var gridContainer = window.panels.createGrid( num );
+                window.panels.setupGrid( gridContainer );
+                gridContainer.hide().slideDown();
                 $( this ).dialog( 'close' );
             }
         }
-    } );
-
-    // Clicking on any of the grids in the grid add dialog
-    $( '#grid-add-dialog .panel-grid' ).click( function () {
-        var $$ = $( this );
-        var cells = $$.attr( 'data-cells' ).split( '|' );
-        cells = cells.map( Number );
-        window.panels.setupGrid( window.panels.createGrid( cells.length, cells, $$.attr( 'data-type' ) ) );
-
-        $( '#grid-add-dialog' ).dialog( 'close' );
     } );
 
     $( '#so-panels-panels .handlediv' ).click( function () {

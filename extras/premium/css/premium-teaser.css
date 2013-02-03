@@ -66,7 +66,7 @@
 	width: 35px;
 	height: 100%;
 	
-	background: rgba(255,255,255,0.125) url(img/upgrade.png) no-repeat 1px center;
+	background: rgba(255,255,255,0.125) url(../img/upgrade.png) no-repeat 1px center;
 	border-right: 1px solid rgba(0,0,0,0.09);
 	-moz-transition: 0.25s;
 	-webkit-transition: 0.25s;
@@ -106,7 +106,7 @@
 	width: 10px;
 	height: 13px;
 	
-	background: url('img/pointer.png') no-repeat left top;
+	background: url('../img/pointer.png') no-repeat left top;
 	margin-top: -6px;
 }
 

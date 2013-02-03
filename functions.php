@@ -1,6 +1,6 @@
 <?php
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.4' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.4.1' );
 define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://siteorigin.com' );
 
 // Include premium functions if it exists
@@ -64,8 +64,6 @@ function origami_setup(){
 		'header-text' => false,
 	));
 	
-	add_theme_support('siteorigin-panels');
-	
 	add_editor_style();
 	
 	// Set up the image sizes
@@ -79,7 +77,7 @@ function origami_setup(){
 	 */
 	add_theme_support( 'siteorigin-panels', array(
 		'margin-bottom' => 30,
-		'responsive' => true
+		'responsive' => true,
 	) );
 }
 endif;
@@ -105,6 +103,8 @@ function origami_widgets_init(){
 	register_widget( 'SiteOrigin_Widgets_Headline' );
 	register_widget( 'SiteOrigin_Widgets_Gallery' );
 	register_widget( 'SiteOrigin_Widgets_IconText' );
+	register_widget( 'SiteOrigin_Widgets_Image' );
+	register_widget( 'SiteOrigin_Widgets_PostContent' );
 }
 endif;
 add_action('widgets_init', 'origami_widgets_init');

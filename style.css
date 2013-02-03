@@ -1,6 +1,6 @@
 /*
 Http: //wpdev.dynalias.com/origami/wp-content/themes/origami/style.css?ver=trunk
-Version: 1.4
+Version: 1.4.1
 */
 
 /*
@@ -1265,6 +1265,11 @@ h1.archive-title {
 	text-align: right;
 }
 
+.button-container.align-full .button {
+	display: block;
+	text-align: center;
+}
+
 /* =Widgets  : Call To Action 
 -------------------------------------------------------------- */
 
@@ -1332,5 +1337,43 @@ h1.archive-title {
 
 .widget_icon-text .widget-text {
 	margin-left: 45px;
+}
+
+/* =Widgets  : Headline Widget 
+-------------------------------------------------------------- */
+
+.widget_headline .widget-title span {
+	display: block;
+	line-height: 1.3em;
+}
+
+.widget_headline .widget-title .size-medium {
+	font-size: 130%;
+}
+
+.widget_headline .widget-title .size-large {
+	font-size: 160%;
+}
+
+.widget_headline .widget-title .size-extra-large {
+	font-size: 190%;
+}
+
+.widget_headline .align-left {
+	text-align: left;
+}
+
+.widget_headline .align-center {
+	text-align: center;
+}
+
+.widget_headline .align-right {
+	text-align: right;
+}
+
+.widget img {
+	height: auto;
+	
+	max-width: 100%;
 }
 

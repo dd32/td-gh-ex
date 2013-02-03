@@ -80,7 +80,7 @@
 #promo-image {
 	position: relative;
 	
-	background: #EAEAEA url(img/loader.gif) no-repeat center center;
+	background: #EAEAEA url(../img/loader.gif) no-repeat center center;
 }
 
 /* Overlay */
@@ -208,10 +208,15 @@
 /* =Testimonials 
 -------------------------------------------------------------- */
 
+#theme-upgrade .testimonials-heading {
+	margin: 45px 0 25px 0;
+	text-align: center;
+}
+
 #theme-upgrade .testimonials {
 	font: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 	list-style: none;
-	margin-top: 25px;
+	margin-top: 0;
 }
 
 #theme-upgrade .testimonials .avatar {
