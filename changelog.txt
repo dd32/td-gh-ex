@@ -8,6 +8,13 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(02/04/2013) - Minor Bug Release - Version 1.8.9.2
+
+[!] TinyNav [object]
+[^] MS filter is back in.
+
+----
+
 (02/03/2013) - Maintenance and Minor Bug Release - Version 1.8.9.1
 
 [!] Title Tag while AIOSEOP not activated.
