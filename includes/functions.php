@@ -246,23 +246,11 @@ add_filter( 'wp_title', 'responsive_wp_title', 10, 2 );
  *
  */
 function responsive_wp_title_check() {
-	// if All in One SEO is activated
-	if ( ! defined( 'AIOSEOP_VERSION' ) ); 
+	if ( defined( 'AIOSEOP_VERSION' ) ) {
+		remove_filter( 'wp_title', 'responsive_wp_title', 10, 2 );
+	}
 }
-remove_filter( 'wp_title', 'responsive_wp_title', 10, 3 );
-
-/**
- * wp_title() Filter Remove
- *
- * @see http://codex.wordpress.org/Plugin_API/Filter_Reference/wp_title
- *
- */
-function responsive_wp_title_remove() {
-    if ( defined('WPSEO_VERSION') ) {
-    }
-}
-remove_filter( 'wp_title', 'responsive_wp_title', 10, 3 );
-
+add_action( 'after_setup_theme', 'responsive_wp_title_check', 5 );
 
 /**
  * Filter 'get_comments_number'

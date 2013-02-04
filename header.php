@@ -31,14 +31,14 @@ if ( !defined('ABSPATH')) exit;
 
 <title>
 <?php
-if ( !defined( 'WPSEO_VERSION' ) ) {
-    // WordPress SEO is not activated
-    wp_title( '&#124;', true, 'right' );
+if ( defined( 'WPSEO_VERSION' ) ) {
+    // WordPress SEO is activated
+        wp_title();
 
 } else {
 	
-    // WordPress SEO is activated
-    wp_title();
+    // WordPress SEO is not activated
+	wp_title( '&#124;', true, 'right' );
 }
 ?>
 </title>

@@ -8,6 +8,11 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(02/03/2013) - Maintenance and Minor Bug Release - Version 1.8.9.1
+
+[!] Title Tag while AIOSEOP not activated.
+[!] SB Holder for landing page templates.
+
 ----
 
 (02/03/2013) - Maintenance and Minor Bug Release - Version 1.8.9
