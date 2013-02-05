@@ -1,15 +1,12 @@
 <?php
-/**
- * Integrates this theme with SiteOrigin panels page builder.
- */
 
 /**
- * Adds default page layouts
- *
+ * Adds page layouts
+ * 
  * @param $layouts
  */
 function origami_prebuilt_page_layouts($layouts){
-	$layouts['home'] = array (
+	$layouts['business_home'] = array (
 		'name' => __('Business Home Page', 'origami'),
 		'widgets' =>
 		array (
@@ -117,17 +114,7 @@ function origami_prebuilt_page_layouts($layouts){
 			),
 		),
 	);
-
+	
 	return $layouts;
 }
 add_filter('siteorigin_panels_prebuilt_layouts', 'origami_prebuilt_page_layouts');
-
-function origami_panels_settings($settings){
-	$settings['home-page'] = true;
-	$settings['responsive'] = true;
-	$settings['margin-bottom'] = 30;
-	$settings['margin-sides'] = 30;
-	
-	return $settings;
-}
-add_filter('sitesiteorigin_panels_settings', 'origami_panels_settings');

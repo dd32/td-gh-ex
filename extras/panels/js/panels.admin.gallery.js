@@ -1,10 +1,3 @@
-/**
- * Intercepts the standard WordPress gallery insert and edit.
- *
- * @copyright Greg Priday 2013
- * @license GPL 2.0 http://www.gnu.org/licenses/gpl-2.0.html
- */
-
 jQuery(function($){
     var originalInsert = wp.media.editor.insert;
     
@@ -18,13 +11,13 @@ jQuery(function($){
             var ids = attachments.models.map(function(e){ return e.id });
             
             // Create a new gallery panel
-            var panel = $('#panels-dialog').panelsCreatePanel('SiteOrigin_Panels_Widgets_Gallery', {
+            var panel = $('#panels-dialog').panelsCreatePanel('SiteOrigin_Widgets_Gallery', {
                 'ids' : ids.join(',') 
             });
             
             // The panel couldn't be created. Possible the widgets gallery isn't being used.
             if(panel == null) originalInsert(h);
-            else panels.addPanel(panel, null, null, true);
+            else window.panels.addPanel(panel, null, null, true);
             
             return;
         }
@@ -35,21 +28,21 @@ jQuery(function($){
             var panel;
             if($el.prop("tagName") == 'A' && $el.children().eq(0 ).prop('tagName') == 'IMG'){
                 // This is an image with a link
-                panel = $('#panels-dialog').panelsCreatePanel('SiteOrigin_Panels_Widgets_Image', {
+                panel = $('#panels-dialog').panelsCreatePanel('SiteOrigin_Widgets_Image', {
                     'href' : $el.attr('href'),
                     'src' : $el.children().eq(0 ).attr('src')
                 });
             }
             else if($el.prop("tagName") == 'IMG'){
                 // This is just an image tag
-                panel = $('#panels-dialog').panelsCreatePanel('SiteOrigin_Panels_Widgets_Image', {
+                panel = $('#panels-dialog').panelsCreatePanel('SiteOrigin_Widgets_Image', {
                     'src' : $el.children().eq(0 ).attr('src')
                 });
             }
 
             // The panel couldn't be created. Possible the widgets gallery isn't being used.
             if(panel == null) originalInsert(h);
-            else panels.addPanel(panel, null, null, true);
+            else window.panels.addPanel(panel, null, null, true);
             
             return;
         }
@@ -66,11 +59,10 @@ jQuery(function($){
 
         // Activate the media editor
         var $$ = $(this);
-        
+
         var dialog = $('.panels-admin-dialog:visible' );
         var val = dialog.find('*[name$="[ids]"]').val();
         if(val.indexOf('{demo') === 0 || val.indexOf('{default') === 0) val = '-'; // This removes the demo or default content
-        if(val == '' && $('#post_ID' ).val() == null) val = '-';
 
         // Close the gallery dialog so it doesn't interfere with wp.media.gallery
         dialog.find('.ui-dialog-content' ).dialog('close');

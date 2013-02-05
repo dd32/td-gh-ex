@@ -359,10 +359,9 @@ html {
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
 	color: white;
-	font-size: 11px; /* Higher than the admin bar */ 
+	font-size: 11px;
 	padding: 4px 8px;
 	z-index: 9999;
-	z-index: 999999;
 }
 
 .panels-tooltip .pointer {
@@ -422,10 +421,6 @@ html {
 	box-shadow: none;
 }
 
-#so-panels-panels h3.hndle button.preview {
-	float: right;
-}
-
 #so-panels-panels .inside {
 	padding: 5px 12px 5px 10px;
 }
@@ -468,133 +463,5 @@ html {
 
 .so-gallery-widget-select-attachments {
 	float: right;
-}
-
-#panels-home-page #post-body-wrapper {
-	margin-top: 10px;
-}
-
-/* The toggle switch */
-
-#panels-toggle-switch {
-	position: relative;
-	width: 75px;
-	height: 28px;
-	
-	background: #67afd8;
-	-webkit-border-radius: 15px;
-	-moz-border-radius: 15px;
-	border-radius: 15px;
-	box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
-	cursor: pointer;
-	display: inline-block;
-	margin-bottom: -6px;
-	margin-left: 35px;
-	overflow: hidden;
-}
-
-#panels-toggle-switch .handle {
-	position: absolute;
-	top: 3px;
-	left: 35px;
-	width: 35px;
-	height: 23px;
-	
-}
-
-#panels-toggle-switch .on-text,
-#panels-toggle-switch .off-text {
-	position: absolute;
-	top: 50%;
-	
-	font-size: 11px;
-	font-weight: bold;
-	line-height: 1;
-	margin-top: -6px;
-}
-
-#panels-toggle-switch .on-text {
-	left: 10px;
-	
-	color: #004f72;
-	opacity: 1;
-	text-shadow: 0 1px 0 rgba(255,255,255,0.5);
-}
-
-#panels-toggle-switch .off-text {
-	right: -23px;
-	
-	color: #919191;
-	opacity: 0;
-	text-shadow: 0 1px 0 rgba(255,255,255,0.5);
-}
-
-/* Now for the off state */
-
-#panels-toggle-switch.state-off {
-	background: #e9e9e9;
-}
-
-#panels-toggle-switch.state-off .handle {
-	left: 4px;
-	
-}
-
-#panels-toggle-switch.state-off .on-text {
-	left: -21px;
-	
-	opacity: 0;
-}
-
-#panels-toggle-switch.state-off .off-text {
-	right: 8px;
-	
-	opacity: 1;
-}
-
-/* Hovers */
-
-#panels-toggle-switch.state-on:hover {
-	background: #6fb7e0;
-}
-
-#panels-toggle-switch.state-off:hover {
-	background: #eeeeee;
-}
-
-#panels-toggle-switch.state-off.subtle-move:hover .handle {
-	left: 7px;
-	
-}
-
-#panels-toggle-switch.state-off.subtle-move:hover .off-text {
-	right: 5px;
-	
-	opacity: 0.8;
-}
-
-/* Transitions */
-
-#panels-toggle-switch,
-#panels-toggle-switch > * {
-	-moz-transition: all 0.22s;
-	-webkit-transition: all 0.22s;
-	-o-transition: all 0.22s;
-	transition: all 0.22s;
-}
-
-/* The preview button */
-
-#panels-home-page #post-body-content {
-	position: relative;
-	
-}
-
-#panels-home-page #post-preview {
-	position: absolute;
-	top: 0;
-	right: 0;
-	
-	z-index: 10;
 }
 

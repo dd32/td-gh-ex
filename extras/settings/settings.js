@@ -27,65 +27,27 @@ jQuery( function ( $ ) {
                 } );
         } );
     }
-
+    
     // Handle the media uploader
-    $('a.media-upload-button' ).click(function(event){
-        var $$ = $(this);
-        var $c = $(this ).closest('td');
-        var frame = $(this ).data('frame');
-        
-        // If the media frame already exists, reopen it.
-        if ( frame ) {
-            frame.open();
-            return false;
-        }
+    $('a.media-upload-button' ).click(function(){
+        var $$ = $(this ).closest('td');
+        wp.media.editor.open('settings');
 
-        // Create the media frame.
-        frame = wp.media({
-            // Set the title of the modal.
-            title: $$.data('choose'),
-
-            // Tell the modal to show only images.
-            library: {
-                type: 'image'
-            },
-
-            // Customize the submit button.
-            button: {
-                // Set the text of the button.
-                text: $$.data('update'),
-                // Tell the button not to close the modal, since we're
-                // going to refresh the page when the image is selected.
-                close: false
-            }
-        });
-        
-        // Store the frame
-        $$.data('frame', frame);
-
-        // When an image is selected, run a callback.
-        frame.on( 'select', function() {
-            // Grab the selected attachment.
-            var attachment = frame.state().get('selection').first().attributes;
-
-            $c.find('.current .title' ).html(attachment.title);
-            $c.find('input[type=hidden]' ).val(attachment.id);
-
+        // We want our own insert into post handler
+        wp.media.editor.send.attachment = function(props, attachment){
+            $$.find('.current .title' ).html(attachment.title);
+            $$.find('input[type=hidden]' ).val(attachment.id);
+            
             if(typeof attachment.sizes != 'undefined'){
                 if(typeof attachment.sizes.thumbnail != 'undefined')
-                    $c.find('.current .thumbnail' ).attr('src', attachment.sizes.thumbnail.url).fadeIn();
+                    $$.find('.current .thumbnail' ).attr('src', attachment.sizes.thumbnail.url).fadeIn();
                 else
-                    $c.find('.current .thumbnail' ).attr('src', attachment.sizes.full.url).fadeIn();
+                    $$.find('.current .thumbnail' ).attr('src', attachment.sizes.full.url).fadeIn();
             }
             else{
-                $c.find('.current .thumbnail' ).attr('src', attachment.icon).fadeIn();
+                $$.find('.current .thumbnail' ).attr('src', attachment.icon).fadeIn();
             }
-            
-            frame.close();
-        });
-
-        // Finally, open the modal.
-        frame.open();
+        }
         
         return false;
     });
@@ -122,7 +84,6 @@ jQuery( function ( $ ) {
     // We're going to use jQuery to transform the settings page into a tabbed interface
     var $$ = $( 'form[action="options.php"]' );
     var tabs = $( '<h2></h2>' ).attr('id', 'siteorigin-settings-tab-wrapper').addClass( 'nav-tab-wrapper' ).prependTo( $$ );
-    
     $$.find( 'h3' ).each( function ( i, el ) {
         var h = $( el ).hide();
         var a = $( '<a href="#"></a>' ).addClass( 'nav-tab' ).html( h.html() ).appendTo( tabs );
@@ -143,7 +104,7 @@ jQuery( function ( $ ) {
             return false;
         } );
 
-        if ( i == getUserSetting('siteorigin_settings_tab', 0) || (i == 0 && getUserSetting('siteorigin_settings_tab', 0) > $$.find( 'h3' ).length) ) a.click();
+        if ( i == getUserSetting('siteorigin_settings_tab', 0) ) a.click();
     } );
     
     // Autofill
@@ -153,26 +114,7 @@ jQuery( function ( $ ) {
             c.val($(this ).val());
             $(this ).val('')
         });
-
-    // Highlight the correct setting
-    if(window.location.hash != ''){
-        // Through a simple twist of fate, has is hash == the ID
-        $(window.location.hash).each(function(){
-            var $$ = $(this);
-
-            var tr = $$.closest('tr');
-            var table = $$.closest('table');
-            if(!table.hasClass('form-table')) return;
-
-            $('#siteorigin-settings-tab-wrapper > a').eq($('table.form-table').index(table)).click();
-            tr.addClass('highlight');
-            setTimeout(function(){
-                tr.find('input,select').focus();
-            }, 250);
-        })
-
-    }
-
+    
     setTimeout( function () {
         $( '#setting-updated' ).slideUp();
     }, 5000 );

@@ -1,10 +1,3 @@
-/**
- * Handles pre-built Panel layouts.
- *
- * @copyright Greg Priday 2013
- * @license GPL 2.0 http://www.gnu.org/licenses/gpl-2.0.html
- */
-
 jQuery(function($){
     $( '#grid-prebuilt-dialog' ).show().dialog( {
         dialogClass: 'panels-admin-dialog',
@@ -19,28 +12,27 @@ jQuery(function($){
         },
         buttons : [
             {
-                text : panels.i10n.buttons.cancel,
+                text : panelsLoc.buttons.cancel,
                 click: function(){
                     $( '#grid-prebuilt-dialog' ).dialog('close');
                 }
             },
             {
-                text: panels.i10n.buttons.insert,
+                text: panelsLoc.buttons.insert,
                 click: function(){
                     var $$ = $('#grid-prebuilt-input' );
                     if($$.val() == '') {
                         
                     }
-
-                    var s = $$.find(':selected');
-                    if(s.attr('data-layout-id') == null){
-                        return;
-                    }
                     
-                    if(confirm(panels.i10n.messages.confirmLayout)){
-                        // Clear the grids and load the prebuilt layout
-                        panels.clearGrids();
-                        panels.loadPanels(panelsPrebuiltLayouts[s.attr('data-layout-id')]);
+                    if(confirm(panelsLoc.messages.confirmLayout)){
+                        var s = $$.find(':selected');
+
+                        // First clear the grids
+                        window.panels.clearGrids();
+
+                        // Then load the prebuilt layout
+                        window.panels.loadPanels(panelsPrebuiltLayouts[s.attr('data-layout-id')]);
                     }
                     $( '#grid-prebuilt-dialog' ).dialog('close');
                 }

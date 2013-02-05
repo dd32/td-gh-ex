@@ -1,20 +1,16 @@
 /*
- * jQuery FlexSlider v2.0
- * http://www.woothemes.com/flexslider/
+ * jQuery FlexSlider v1.8
+ * http://flex.madebymufffin.com
  *
- * Copyright 2012 WooThemes
- * Free to use under the GPLv2 license.
- * http://www.gnu.org/licenses/gpl-2.0.html
- *
- * Contributing author: Tyler Smith (@mbmufffin)
+ * Copyright 2011, Tyler Smith
+ * Free to use under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
  */
 
 /* Browser Resets */
 
 .flex-container a:active,
-.flexslider a:active,
-.flex-container a:focus,
-.flexslider a:focus {
+.flexslider a:active {
 	outline: none;
 }
 
@@ -30,20 +26,29 @@
 *********************************/
 
 .flexslider {
-	margin: 0;
+	width: 100%;
+	
+}
+
+.flexslider a {
+	text-decoration: none;
+}
+
+.flexslider .slides {
+	margin-bottom: 0;
 	padding: 0;
 }
 
 .flexslider .slides > li {
 	display: none;
+	list-style: none;
 }
 
 /* Hide the slides before the JS is loaded. Avoids image jumping */
 
 .flexslider .slides img {
-	width: 100%;
-	
 	display: block;
+	max-width: 100%;
 }
 
 .flex-pauseplay span {
@@ -165,13 +170,13 @@ html[xmlns] .slides {
 	text-indent: -9999px;
 }
 
-.flexslider .flex-direction-nav li .flex-next {
+.flexslider .flex-direction-nav li .next {
 	right: -16px;
 	
 	background-position: right 0;
 }
 
-.flexslider .flex-direction-nav li .flex-prev {
+.flexslider .flex-direction-nav li .prev {
 	left: -16px;
 	
 }
@@ -217,7 +222,7 @@ html[xmlns] .slides {
 	text-indent: -9999px;
 }
 
-.flexslider .flex-control-nav li a.flex-active {
+.flexslider .flex-control-nav li a.active {
 	background-position: 0 bottom;
 	cursor: default;
 }
