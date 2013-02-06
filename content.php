@@ -19,8 +19,9 @@
 					<?php printf( __( 'Categories: %2$s', 'baris' ), 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list( ', ' ) ); ?>
 					
 				<?php endif; ?>
+				<span class="separator">|</span>
 				<?php
-					$tags_list = get_the_tag_list( '<span class="separator">|</span>', ', ' );
+					$tags_list = get_the_tag_list( '', ', ' );
 					if ( $tags_list ):
 				?>
 					<?php printf( __( 'Tags: %2$s', 'baris' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list ); ?>
