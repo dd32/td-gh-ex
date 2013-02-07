@@ -4,7 +4,35 @@
  */
 jQuery(document).ready(function($) {
 	
+	// Custom CSS validation
+	function validate_custom_css() {
+		var custom_css = jQuery('#custom_css').val();
+		var allowed = /[a-zA-Z0-9 \:\{\}\;\<\>\-\.\,\#\!\%\"\'\@\_\[\]\*\/]$/;
+
+		if( custom_css.length == 0 ) {
+			return true;
+		}
+		if( !allowed.test(custom_css)) {
+			jQuery('#custom-css-msg').html("Please enter only valid custom CSS");
+			return false;
+		}
+		else {
+			jQuery('#custom-css-msg').html("");
+			return true;
+		}
+	}
+	
+	// Validate custom CSS on blur of the field.
+	jQuery('#custom_css').blur(function() {
+		validate_custom_css();
+	});
+	
 	$('#cyberchimps_options_page').submit(function(){
+	
+		// Check for custom css
+		if( !validate_custom_css() ) {
+			return false;
+		}
 	
 		//options submit check to make sure that the drag and drop element is not empty
 		var header = $('#header_section_order').find('.blog-section-order-tracker').val();
@@ -45,13 +73,13 @@ jQuery(document).ready(function($) {
 		callout_section		: "cyberchimps_blog_callout_section",
 		twitterbar_section	: "cyberchimps_twitterbar_section",
 		carousel_section	: "cyberchimps_carousel_section",
-		magazine			: "cyberchimps_blog_magazine_section",
+		//magazine			: "cyberchimps_blog_magazine_section",
 		portfolio_lite		: "cyberchimps_blog_portfolio_lite_section",
 		portfolio_pro		: "cyberchimps_blog_portfolio_pro_section",
-        product_element     : "cyberchimps_product_section",
 		recent_posts		: "cyberchimps_blog_recent_posts_section",
 		html_box			: "cyberchimps_html_box_section",
 		boxes				: "cyberchimps_boxes_section",
+		boxes_lite 			: "cyberchimps_blog_boxes_lite_section",
 		//profile				: "cyberchimps_profile_section"
 	};
 	
@@ -362,43 +390,6 @@ jQuery(document).ready(function($) {
 					$("#font_demo_text > p").css("font-weight", style);
 	});
 
-	// Script to show hide the Google Text Font input depending on the value of the Text select
-	var text = $('#typography_options_face').val();
-	
-	if(text != 'Google Fonts'){
-		$('#google_font_field').parent().hide();
-	}
-	else{
-		$('#google_font_field').parent().show();
-	}
-	$('#typography_options_face').change(function(){
-		var text_change = $(this).val();
-		if(text_change != 'Google Fonts'){
-			$('#google_font_field').parent().hide();
-		}
-		else{
-			$('#google_font_field').parent().show();
-		}
-	});
-
-	// Script to hide show the Google Heading Font input depending on value of the Heading select
-	var font = $('#font_family_headings').val();
-	if(font != 'Google Fonts'){
-		$('#google_font_headings').parent().hide();
-	}
-	else{
-		$('#google_font_headings').parent().show();
-	}
-	$('#font_family_headings').change(function(){
-		var font_change = $(this).val();
-		if(font_change != 'Google Fonts'){
-			$('#google_font_headings').parent().hide();
-		}
-		else{
-			$('#google_font_headings').parent().show();
-		}
-	});
-	
 /* Hide/Show toggle items */	
 	$('.field-container').children('.toggle-container').each(function(){
 		var toggle = $(this).children(':input');
@@ -413,43 +404,6 @@ jQuery(document).ready(function($) {
 					}
 				}).change();
 	});
-
-    /**
-     * Select toggle function watches select inputs and hides/shows relevant sections
-     *
-     * select option must have class select-toggle
-     *
-     * any elements to hide/show must have a class like option-select-toggle
-     *
-     */
-    function select_toggle() {
-        // Loop through all options
-        $('.select-toggle option').each(function(){
-            // Get option name
-            var value = $(this).val();
-            // Create class name for elements
-            var classes = '.' + value + '-select-toggle';
-            // If the option is selected show that element
-            if(this.selected){
-                $(classes).parent('.field-container').show();
-            }
-            // Otherwise hide it
-            else {
-                $(classes).parent('.field-container').hide();
-            }
-        })
-    }
-    // Run the function once on page load
-    $('.select-toggle').each(function(){
-        select_toggle();
-    })
-    // Run the function on select change
-    $('.select-toggle').change(function(){
-        select_toggle();
-    });
-    /**
-     * End of select hide/show function
-     */
 
 /* add controls for modal welcome note */
 	$('#welcomeModal').modal();

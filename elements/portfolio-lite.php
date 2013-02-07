@@ -63,32 +63,32 @@ function cyberchimps_portfolio_lite_content() {
 	else {
 		
 		// Geting title option
-		$title_enable = cyberchimps_get_option('cyberchimps_blog_portfolio_title_toggle');
-		$title = cyberchimps_get_option('cyberchimps_blog_portfolio_title');
+		$title_enable = cyberchimps_option('cyberchimps_blog_portfolio_title_toggle');
+		$title = cyberchimps_option('cyberchimps_blog_portfolio_title');
 	
 		// Getting Image URL for each protfolio
-		$img1 = cyberchimps_get_option('cyberchimps_blog_portfolio_lite_image_one');
-		$img2 = cyberchimps_get_option('cyberchimps_blog_portfolio_lite_image_two');
-		$img3 = cyberchimps_get_option('cyberchimps_blog_portfolio_lite_image_three');
-		$img4 = cyberchimps_get_option('cyberchimps_blog_portfolio_lite_image_four');
+		$img1 = cyberchimps_option('cyberchimps_blog_portfolio_lite_image_one');
+		$img2 = cyberchimps_option('cyberchimps_blog_portfolio_lite_image_two');
+		$img3 = cyberchimps_option('cyberchimps_blog_portfolio_lite_image_three');
+		$img4 = cyberchimps_option('cyberchimps_blog_portfolio_lite_image_four');
 	
 		// Getting caption for each protfolio
-		$caption1 = cyberchimps_get_option('cyberchimps_blog_portfolio_lite_image_one_caption');
-		$caption2 = cyberchimps_get_option('cyberchimps_blog_portfolio_lite_image_two_caption');
-		$caption3 = cyberchimps_get_option('cyberchimps_blog_portfolio_lite_image_three_caption');
-		$caption4 = cyberchimps_get_option('cyberchimps_blog_portfolio_lite_image_four_caption');
+		$caption1 = cyberchimps_option('cyberchimps_blog_portfolio_lite_image_one_caption');
+		$caption2 = cyberchimps_option('cyberchimps_blog_portfolio_lite_image_two_caption');
+		$caption3 = cyberchimps_option('cyberchimps_blog_portfolio_lite_image_three_caption');
+		$caption4 = cyberchimps_option('cyberchimps_blog_portfolio_lite_image_four_caption');
 		
 		// Getting Custom URL toggle
-		$url_toggle1 = cyberchimps_get_option('cyberchimps_blog_portfolio_link_toggle_one');
-		$url_toggle2 = cyberchimps_get_option('cyberchimps_blog_portfolio_link_toggle_two');
-		$url_toggle3 = cyberchimps_get_option('cyberchimps_blog_portfolio_link_toggle_three');
-		$url_toggle4 = cyberchimps_get_option('cyberchimps_blog_portfolio_link_toggle_four');
+		$url_toggle1 = cyberchimps_option('cyberchimps_blog_portfolio_link_toggle_one');
+		$url_toggle2 = cyberchimps_option('cyberchimps_blog_portfolio_link_toggle_two');
+		$url_toggle3 = cyberchimps_option('cyberchimps_blog_portfolio_link_toggle_three');
+		$url_toggle4 = cyberchimps_option('cyberchimps_blog_portfolio_link_toggle_four');
 		
 		// Getting URL of custom link
-		$url1 = cyberchimps_get_option('cyberchimps_blog_portfolio_link_url_one');
-		$url2 = cyberchimps_get_option('cyberchimps_blog_portfolio_link_url_two');
-		$url3 = cyberchimps_get_option('cyberchimps_blog_portfolio_link_url_three');
-		$url4 = cyberchimps_get_option('cyberchimps_blog_portfolio_link_url_four');
+		$url1 = cyberchimps_option('cyberchimps_blog_portfolio_link_url_one');
+		$url2 = cyberchimps_option('cyberchimps_blog_portfolio_link_url_two');
+		$url3 = cyberchimps_option('cyberchimps_blog_portfolio_link_url_three');
+		$url4 = cyberchimps_option('cyberchimps_blog_portfolio_link_url_four');
 	}
 
 	// Set the title to default value if null is supplied
@@ -150,38 +150,30 @@ function cyberchimps_portfolio_lite_content() {
 			
 				<!-- Portfolio 1 -->
 				<li id="portfolio_wrap" class="span3">
-        <div class="portfolio_item">
 					<a href='<?php echo esc_url( $portfolio_link1 ); ?>' <?php echo esc_attr( $portfolio_rel1 ); ?> title='<?php echo esc_attr( $caption1 ); ?>'><img src='<?php echo esc_url( $img1 ); ?>'  alt='Image 1'/>
 						<div class='portfolio_caption'><?php echo esc_html( $caption1 ); ?></div>
 					</a>
-        </div>
 				</li>
 		
 				<!-- Portfolio 2 -->
 				<li id="portfolio_wrap" class="span3">
-        <div class="portfolio_item">
 					<a href='<?php echo esc_url( $portfolio_link2 ); ?>' <?php echo esc_attr( $portfolio_rel2 ); ?> title='<?php echo esc_attr( $caption2 ); ?>'><img src='<?php echo esc_url( $img2 ); ?>'  alt='Image 1'/>
 						<div class='portfolio_caption'><?php echo esc_html( $caption2 ); ?></div>
 					</a>
-        </div>
 				</li>
 		
 				<!-- Portfolio 3 -->
 				<li id="portfolio_wrap" class="span3">
-        <div class="portfolio_item">
 					<a href='<?php echo esc_url( $portfolio_link3 );?>' <?php echo esc_attr( $portfolio_rel3 ); ?> title='<?php echo esc_attr( $caption3 ); ?>'><img src='<?php echo esc_url( $img3 ); ?>'  alt='Image 1'/>
 						<div class='portfolio_caption'><?php echo esc_html( $caption3 ); ?></div>
 					</a>
-        </div>
 				</li>
 			
 				<!-- Portfolio 4 -->
 				<li id="portfolio_wrap" class="span3">
-        <div class="portfolio_item">
 					<a href='<?php echo esc_url( $portfolio_link4 ); ?>' <?php echo esc_attr( $portfolio_rel4 ); ?> title='<?php echo esc_attr( $caption4 ); ?>'><img src='<?php echo esc_url( $img4 ); ?>'  alt='Image 1'/>
 						<div class='portfolio_caption'><?php echo esc_html( $caption4 ); ?></div>
 					</a>
-        </div>
 				</li>
 			</ul>
 		</div>  <!-- End of #gallery -->
