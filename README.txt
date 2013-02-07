@@ -1,4 +1,4 @@
-Landscape WordPress Theme by BlankThemes.com
+Landscape WordPress Theme, Copyright 2013 BlankThemes.com
 ===
 
 Landscape is a responsive, single column, WordPress theme for personal blogs.
