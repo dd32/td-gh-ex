@@ -1,3 +1,10 @@
+/**
+ * Intercepts the standard WordPress gallery insert and edit.
+ *
+ * @copyright Greg Priday 2013
+ * @license GPL 2.0 http://www.gnu.org/licenses/gpl-2.0.html
+ */
+
 jQuery(function($){
     var originalInsert = wp.media.editor.insert;
     
@@ -17,7 +24,7 @@ jQuery(function($){
             
             // The panel couldn't be created. Possible the widgets gallery isn't being used.
             if(panel == null) originalInsert(h);
-            else window.panels.addPanel(panel, null, null, true);
+            else panels.addPanel(panel, null, null, true);
             
             return;
         }
@@ -42,7 +49,7 @@ jQuery(function($){
 
             // The panel couldn't be created. Possible the widgets gallery isn't being used.
             if(panel == null) originalInsert(h);
-            else window.panels.addPanel(panel, null, null, true);
+            else panels.addPanel(panel, null, null, true);
             
             return;
         }
@@ -59,10 +66,11 @@ jQuery(function($){
 
         // Activate the media editor
         var $$ = $(this);
-
+        
         var dialog = $('.panels-admin-dialog:visible' );
         var val = dialog.find('*[name$="[ids]"]').val();
         if(val.indexOf('{demo') === 0 || val.indexOf('{default') === 0) val = '-'; // This removes the demo or default content
+        if(val == '' && $('#post_ID' ).val() == null) val = '-';
 
         // Close the gallery dialog so it doesn't interfere with wp.media.gallery
         dialog.find('.ui-dialog-content' ).dialog('close');

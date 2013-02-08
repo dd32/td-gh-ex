@@ -2,8 +2,8 @@
 # This file is distributed under the GNU General Public License 2.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: origami 1.4.2\n"
-"POT-Creation-Date: 2013-02-05T07:33:27+02:00\n"
+"Project-Id-Version: origami 1.4.3\n"
+"POT-Creation-Date: 2013-02-08T18:04:57+02:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -105,7 +105,7 @@ msgstr ""
 msgid "Home Page"
 msgstr ""
 
-msgid "Panels"
+msgid "Page Builder"
 msgstr ""
 
 msgid "Advanced functionality like the ability to create post type and page templates"
@@ -138,16 +138,37 @@ msgstr ""
 msgid "Are you sure you want to load this layout? It will overwrite your current page."
 msgstr ""
 
-msgid "Panels is a drag and drop page builder. You can find the <a href=\"%s\">full documentation</a> on SiteOrigin."
+msgid "Edit Home Page"
 msgstr ""
 
-msgid "Edit Home Page"
+msgid "ON"
+msgstr ""
+
+msgid "OFF"
 msgstr ""
 
 msgid "Home page updated. <a href=\"%s\">View page</a>"
 msgstr ""
 
+msgid "Preview Changes"
+msgstr ""
+
 msgid "Save Home Page"
+msgstr ""
+
+msgid "This interface requires Javascript"
+msgstr ""
+
+msgid "SiteOrigin themes include a unique page building tool."
+msgstr ""
+
+msgid "You can use this tool to create home and sub pages, filled your own widgets."
+msgstr ""
+
+msgid "The page layouts are responsive and completely customizable."
+msgstr ""
+
+msgid "Read the <a href='%s' target='_blank'>full documentation</a> on SiteOrigin's support site."
 msgstr ""
 
 msgid "Add Widget"
@@ -177,7 +198,7 @@ msgstr ""
 msgid "Premium Upgrade"
 msgstr ""
 
-msgid "There's a premium version of %s available, <a href='%s'>find out more</a>."
+msgid "There's a premium version of %s coming soon."
 msgstr ""
 
 msgid "After you pay for %s Premium, we'll email you a download link and an order number to your <strong>PayPal email address</strong>. "
@@ -258,7 +279,10 @@ msgstr ""
 msgid "You need to <a href=\"%s\">upgrade</a> to WordPress 3.5 to use media fields"
 msgstr ""
 
-msgid "Select Media"
+msgid "Choose Media"
+msgstr ""
+
+msgid "Set Media"
 msgstr ""
 
 msgid "Remove"
@@ -356,21 +380,6 @@ msgid "Add Slide"
 msgstr ""
 
 msgid "Upload Media"
-msgstr ""
-
-msgid "Premium Theme Support"
-msgstr ""
-
-msgid "Need some theme support? Just fill out a <a href='%s'>support request</a> and we'll get back to you. "
-msgstr ""
-
-msgid "Theme Support"
-msgstr ""
-
-msgid "We offer email support to everyone who upgrades to <a href=\"%s\">%s Premium</a>."
-msgstr ""
-
-msgid "We still love you, even if you're using %s Free. We just want to offer the best service possible to the fine people who have purchased our Premium themes."
 msgstr ""
 
 msgid "%s Order Code"
@@ -503,6 +512,18 @@ msgid "Image URL"
 msgstr ""
 
 msgid "Destination URL"
+msgstr ""
+
+msgid "This is a default gallery."
+msgstr ""
+
+msgid "Edit it by editing the gallery widget."
+msgstr ""
+
+msgid "You can easily add your own images and captions."
+msgstr ""
+
+msgid "With a beautifully simple interface."
 msgstr ""
 
 msgid "Business Home Page"
@@ -713,9 +734,6 @@ msgid "Back"
 msgstr ""
 
 msgid "Close"
-msgstr ""
-
-msgid "Use As Post Type Template"
 msgstr ""
 
 msgid "like"

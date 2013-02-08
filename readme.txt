@@ -15,6 +15,8 @@ This theme includes the following external libraries
 * Modernizr under MIT & BSD licenses
 * Selectivizr by Keith Clark under MIT license
 
+Images in demo folder are from Pixabay. Licensed under public domain.
+
 -----------------------------------------------
 Change Log:
 -----------------------------------------------
@@ -72,3 +74,7 @@ A few additional options
 
 1.4.2
 Usability improvements to Panels.
+
+1.4.3
+Added home page builder
+Fixed issue with column setting
