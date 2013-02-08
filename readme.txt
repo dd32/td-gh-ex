@@ -2,7 +2,7 @@
 * by the Catch Themes team, http://catchthemes.com/
 
 == ABOUT Catch Box==
-Catch Box is simple, lightweight, box shaped, and adaptable WordPress Theme for bloggers and professionals. It is based on HTML5, CSS3 and Responsive Web Design to view in various devices. 10 Best Reasons to use Catch Box Theme. 1. Responsive Web Design, 2. Custom Menus (Primary, Secondary and Footer menus), 3. Theme Options for light or dark or blue color scheme, custom link colors, three layout choices, two content choices between excerpt and content option in homepage, feed redirection, custom css styles, 4. Featured Sliders where you can define number of slides and post IDs, 5. Social Links (Facebook, Twitter, RSS, Linkedin, Pinterest, etc), 6. Webmaster Tools (Google, Yahoo and Bing site verification ID, Header and Footer codes), 7. Custom Backgrounds, 8. Custom Header, 9. Catchbox Adspace widget to add any type of Advertisements, and 10. Support popular plugins. Multilingual Ready (WPML) and also currently translated in Brazilian Portuguese, Spanish, Danish, Germany, French and Polish.
+Catch Box is simple, lightweight, box shaped, and adaptable WordPress Theme for bloggers and professionals. It is based on HTML5, CSS3 and Responsive Web Design to view in various devices. 10 Best Reasons to use Catch Box Theme. 1. Responsive Web Design, 2. Custom Menus (Primary, Secondary and Footer menus), 3. Theme Options for light or dark or blue color scheme, custom link colors, three layout choices, two content choices between excerpt and content option in homepage, feed redirection, custom css styles, 4. Featured Sliders where you can define number of slides and post IDs, 5. Social Links (Facebook, Twitter, RSS, Linkedin, Pinterest, etc), 6. Webmaster Tools (Google, Yahoo and Bing site verification ID, Header and Footer codes), 7. Custom Backgrounds, 8. Custom Header, 9. Catchbox Adspace widget to add any type of Advertisements, and 10. Support popular plugins. Multilingual Ready (WPML) and also currently translated in Brazilian Portuguese, Spanish, Danish, Germany, French, Polish and Czech. Free Support Forum at http://catchthemes.com/support-forum/forum/catch-box-public/
 
 == Translation ==
 Catch Box theme is translation ready. 
@@ -12,6 +12,7 @@ Added Translation for Danish by Kris Thomsen ( Email: mail@kristhomsen.dk )
 Added Translation for Germany by Heinz Peter Brinkmann
 Added Translation for French by  D'CLIC (contact@dclic.info) and and Athéna G (webmaster@athena.georgakelos.net)
 Added Translation for Polish by Piotr (fansitepoprostugry@gmail.com)
+Added Translation for Czech by Marek Přidal (m.pridal29@gmail.com)
 
 == Menus ===
 There are 3 Menus registered in this theme. Primary, Secondary and Footer menu. 
@@ -203,3 +204,7 @@ Version 1.7.2.1
 Version 1.7.2.2
 * Fixed Missing text domain in comment catchbox_comment_form_fields() function
 * Fixed Debugger notices for feed_url, fav_icon, and custom_css
+
+Version 1.8
+* Added Czech translation cs_CZ.po and cs_CZ.mo
+* Updated French Language 

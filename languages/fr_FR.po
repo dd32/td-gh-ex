@@ -3,10 +3,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tags/catch-box\n"
-"POT-Creation-Date: 2012-07-21 12:19+0530\n"
-"PO-Revision-Date: 2013-01-05 23:53+0530\n"
-"Last-Translator: Ulrich Pogson <grapplerulrich@gmail.com>\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-04 22:33+0530\n"
+"PO-Revision-Date: 2013-02-04 22:33+0530\n"
+"Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: D'CLIC <contact@dclic.info>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -37,7 +37,7 @@ msgstr "Vous avez tapé une adresse incorrecte, ou la page que vous cherchez a p
 
 #: ../404.php:21
 msgid "Please try the following options instead:"
-msgstr "Veuillez essayer les solutions ci-dessous :"
+msgstr "Veuillez essayer les solutions ci-dessous:"
 
 #: ../404.php:22
 msgid "Check for a mis-typed URL error, then press the refresh button on your browser or Use the search box below."
@@ -608,7 +608,7 @@ msgstr "Options du thème"
 #: ../inc/theme-options.php:196
 #: ../inc/theme-options.php:197
 msgid "Featured Slider"
-msgstr ""
+msgstr "Diaporama en vedette"
 
 #: ../inc/theme-options.php:204
 #: ../inc/theme-options.php:205
@@ -622,39 +622,39 @@ msgstr "Webmaster Tools"
 
 #: ../inc/theme-options.php:230
 msgid "Some themes provide customization options that are grouped together on a Theme Options screen. If you change themes, options may change or disappear, as they are theme-specific. Your current theme, Catch Box, provides the following Theme Options:"
-msgstr ""
+msgstr "Certains thèmes proposent des options de personnalisation qui sont regroupées sur le thème Options de l'écran. Si vous modifiez les thèmes, les options peuvent changer ou disparaître, car ils ont un thème spécifique. Votre thème actuel, zone de capture, fournit les options de thèmes suivants:"
 
 #: ../inc/theme-options.php:232
 #: ../inc/theme-options.php:262
 msgid "<strong>Color Scheme</strong>: You can choose a color palette of \"Light\" (light background with dark text) or \"Dark\" (dark background with light text) for your site."
-msgstr ""
+msgstr "Vous pouvez choisir une palette de couleur de \"Light\" (light background with dark text) or \"Dark\" (dark background with light text) pour votre site."
 
 #: ../inc/theme-options.php:233
 #: ../inc/theme-options.php:263
 msgid "<strong>Link Color</strong>: You can choose the color used for text links on your site. You can enter the HTML color or hex code, or you can choose visually by clicking the \"Select a Color\" button to pick from a color wheel."
-msgstr ""
+msgstr "<strong>Link Color</strong>: Vous pouvez choisir la couleur utilisée pour les liens textes sur le site. Vous pouvez entrer la couleur HTML ou le code HEX, ou vous pouvez choisir visuellement en cliquant le bouton \"Select a Color\" pour choisir dans le cercle de couleurs."
 
 #: ../inc/theme-options.php:234
 #: ../inc/theme-options.php:264
 msgid "<strong>Default Layout</strong>: You can choose if you want your site&#8217;s default layout to have a sidebar on the left, the right, or not at all."
-msgstr ""
+msgstr "<strong>Default Layout</strong>: Vous pouvez choisir si vous voulez que la disposition de votre site&#8217;s ai une barre du coté gauche, du coté droit, ou pas du tout"
 
 #: ../inc/theme-options.php:236
 #: ../inc/theme-options.php:266
 msgid "Remember to click \"Save Changes\" to save any changes you have made to the theme options."
-msgstr ""
+msgstr "Souvenez-vous d'appuyer \"Save Changes\" pour sauvegarder n'importe quel changement que vous avez fait dans les options de thème."
 
 #: ../inc/theme-options.php:238
 msgid "For more information:"
-msgstr "Pour plus d'informations :"
+msgstr "Pour plus d'informations:"
 
 #: ../inc/theme-options.php:239
 msgid "<a href=\"http://codex.wordpress.org/Appearance_Theme_Options_Screen\" target=\"_blank\">Documentation on Theme Options</a>"
-msgstr ""
+msgstr "<a href=\"http://codex.wordpress.org/Appearance_Theme_Options_Screen\" target=\"_blank\">Documentation on Theme Options</a>"
 
 #: ../inc/theme-options.php:240
 msgid "<a href=\"http://wordpress.org/support/\" target=\"_blank\">Support Forums</a>"
-msgstr ""
+msgstr "<a href=\"http://wordpress.org/support/\" target=\"_blank\">Support Forums</a>"
 
 #: ../inc/theme-options.php:247
 #: ../inc/theme-options.php:273
@@ -663,7 +663,7 @@ msgstr "Aperçu"
 
 #: ../inc/theme-options.php:260
 msgid "Slider Some themes provide customization options that are grouped together on a Theme Options screen. If you change themes, options may change or disappear, as they are theme-specific. Your current theme, Catch Box, provides the following Theme Options:"
-msgstr ""
+msgstr "Diaporama Certains thèmes proposent des options de personnalisation qui sont regroupées sur le thème Options de l'écran. Si vous modifiez les thèmes, les options peuvent changer ou disparaître, car ils ont un thème spécifique. Votre thème actuel, zone de capture, fournit les options de thèmes suivants:"
 
 #: ../inc/theme-options.php:291
 msgid "Add/Change Favicon"
@@ -671,15 +671,15 @@ msgstr "Add/Change Favicon"
 
 #: ../inc/theme-options.php:305
 msgid "Light"
-msgstr ""
+msgstr "Pale"
 
 #: ../inc/theme-options.php:311
 msgid "Dark"
-msgstr ""
+msgstr "Foncé"
 
 #: ../inc/theme-options.php:317
 msgid "Blue"
-msgstr ""
+msgstr "Bleu"
 
 #: ../inc/theme-options.php:336
 msgid "Content on left"
@@ -691,7 +691,7 @@ msgstr "Contenur sur la droite"
 
 #: ../inc/theme-options.php:346
 msgid "One-column, no sidebar"
-msgstr ""
+msgstr "Une colonne, pas de barre de côté"
 
 #: ../inc/theme-options.php:364
 msgid "Show excerpt"
@@ -712,19 +712,19 @@ msgstr "Couleur par défaut: %s"
 
 #: ../inc/theme-options.php:528
 msgid "CSS Tutorial from W3Schools."
-msgstr ""
+msgstr "Tutoriel CSS de  W3Schools."
 
 #: ../inc/theme-options.php:528
 msgid "http://www.w3schools.com/css/default.asp"
-msgstr ""
+msgstr "http://www.w3schools.com/css/default.asp"
 
 #: ../inc/theme-options.php:528
 msgid "CSS Tutorial"
-msgstr ""
+msgstr "Tutoriel CSS"
 
 #: ../inc/theme-options.php:528
 msgid "Click Here to Read"
-msgstr ""
+msgstr "Appuyez ici pour lire"
 
 #: ../inc/theme-options.php:593
 #: ../inc/theme-options.php:595
@@ -743,7 +743,7 @@ msgstr ""
 #: ../inc/theme-options.php:761
 #: ../inc/theme-options.php:885
 msgid "Catch Themes"
-msgstr ""
+msgstr "Catch Themes"
 
 #: ../inc/theme-options.php:602
 msgid "http://catchthemes.com/support/"
@@ -778,9 +778,6 @@ msgid "http://twitter.com/#!/catchthemes"
 msgstr "http://twitter.com/#!/catchthemes"
 
 #: ../inc/theme-options.php:611
-msgid "Twitter"
-msgstr "Twitter"
-
 #: ../inc/theme-options.php:612
 #: ../inc/theme-options.php:781
 msgid "Twitter"
@@ -793,7 +790,7 @@ msgstr "http://catchthemes.com/donate/"
 #: ../inc/theme-options.php:614
 #: ../inc/theme-options.php:615
 msgid "Donate Now"
-msgstr ""
+msgstr "Faites une donation maintenant"
 
 #: ../inc/theme-options.php:662
 #: ../inc/theme-options.php:770
@@ -819,7 +816,7 @@ msgstr "Nombre de slides"
 
 #: ../inc/theme-options.php:681
 msgid "Featured Col #"
-msgstr ""
+msgstr "En vedette Col #"
 
 #: ../inc/theme-options.php:683
 msgid "Click Here To Edit"
@@ -847,47 +844,47 @@ msgstr "Effet de transition :"
 
 #: ../inc/theme-options.php:704
 msgid "fade"
-msgstr ""
+msgstr "Palir"
 
 #: ../inc/theme-options.php:705
 msgid "wipe"
-msgstr ""
+msgstr "essuyer"
 
 #: ../inc/theme-options.php:706
 msgid "scrollUp"
-msgstr ""
+msgstr "Defiler vers le haut"
 
 #: ../inc/theme-options.php:707
 msgid "scrollDown"
-msgstr ""
+msgstr "défiler vers le bas"
 
 #: ../inc/theme-options.php:708
 msgid "scrollLeft"
-msgstr ""
+msgstr "Defiler vers la gauche"
 
 #: ../inc/theme-options.php:709
 msgid "scrollRight"
-msgstr ""
+msgstr "Defiler vers la droite"
 
 #: ../inc/theme-options.php:710
 msgid "blindX"
-msgstr ""
+msgstr "blindX"
 
 #: ../inc/theme-options.php:711
 msgid "blindY"
-msgstr ""
+msgstr "blindY"
 
 #: ../inc/theme-options.php:712
 msgid "blindZ"
-msgstr ""
+msgstr "blindZ"
 
 #: ../inc/theme-options.php:713
 msgid "cover"
-msgstr ""
+msgstr "Couverture"
 
 #: ../inc/theme-options.php:714
 msgid "shuffle"
-msgstr ""
+msgstr "aléatoire"
 
 #: ../inc/theme-options.php:720
 msgid "Transition Delay"
@@ -904,123 +901,123 @@ msgstr "Durée de la transition"
 
 #: ../inc/theme-options.php:787
 msgid "Google +"
-msgstr ""
+msgstr "Google +"
 
 #: ../inc/theme-options.php:793
 msgid "LinkedIn"
-msgstr ""
+msgstr "LinkedIn"
 
 #: ../inc/theme-options.php:799
 msgid "Pinterest"
-msgstr ""
+msgstr "Pinterest"
 
 #: ../inc/theme-options.php:805
 msgid "Youtube"
-msgstr ""
+msgstr "Youtube"
 
 #: ../inc/theme-options.php:811
 msgid "RSS Feed"
-msgstr ""
+msgstr "RSS Feed"
 
 #: ../inc/theme-options.php:817
 msgid "Deviantart"
-msgstr ""
+msgstr "Deviantart"
 
 #: ../inc/theme-options.php:823
 msgid "Tumblr"
-msgstr ""
+msgstr "Tumblr"
 
 #: ../inc/theme-options.php:829
 msgid "Viemo"
-msgstr ""
+msgstr "Viemo"
 
 #: ../inc/theme-options.php:835
 msgid "Dribbble"
-msgstr ""
+msgstr "Dribbble"
 
 #: ../inc/theme-options.php:841
 msgid "MySpace"
-msgstr ""
+msgstr "MySpace"
 
 #: ../inc/theme-options.php:847
 msgid "Aim"
-msgstr ""
+msgstr "Aim"
 
 #: ../inc/theme-options.php:853
 msgid "Flicker"
-msgstr ""
+msgstr "Flicker"
 
 #: ../inc/theme-options.php:860
 msgid "<strong>Note:</strong> Enter the url for correponding social networking website"
-msgstr ""
+msgstr "<strong>Note:</strong> Entrer le lien URL qui correspond à votre site de reseau social"
 
 #: ../inc/theme-options.php:899
 msgid "Webmaster Site Verification IDs"
-msgstr ""
+msgstr "Site de vérification d'identification du webmaster"
 
 #: ../inc/theme-options.php:904
 msgid "Google Site Verification ID"
-msgstr ""
+msgstr "Verification ID site Google"
 
 #: ../inc/theme-options.php:905
 msgid "Enter your Google ID number only"
-msgstr ""
+msgstr "Entrez votre numéro d'identification Google seulement"
 
 #: ../inc/theme-options.php:910
 msgid "Yahoo Site Verification ID"
-msgstr ""
+msgstr "Site de verification d'ID Yahoo"
 
 #: ../inc/theme-options.php:911
 msgid "Enter your Yahoo ID number only"
-msgstr ""
+msgstr "Entrez votre numéro d'identification Yahoo seulement"
 
 #: ../inc/theme-options.php:916
 msgid "Bing Site Verification ID"
-msgstr ""
+msgstr "Site de Verification d'ID Bing"
 
 #: ../inc/theme-options.php:917
 msgid "Enter your Bing ID number only"
-msgstr ""
+msgstr "Entrez votre numéro d'identification Bing seulement"
 
 #: ../inc/theme-options.php:926
 msgid "Webmaster Site Verification Code"
-msgstr ""
+msgstr "Site de verification de code Webmaster"
 
 #: ../inc/theme-options.php:931
 msgid "Analytics, site stats Header code"
-msgstr ""
+msgstr "Analytics, Statistiques du site code de haut de page"
 
 #: ../inc/theme-options.php:939
 msgid "Analytics, site stats footer code"
-msgstr ""
+msgstr "Analytics, Statistiques du site code de bas de page"
 
 #: ../inc/widgets.php:20
 msgid "Use this widget to add any type of Ad as a widget."
-msgstr ""
+msgstr "Utilisez ce Widget pour ajouter n'importe quel type d'annonce comme étant un widget"
 
 #: ../inc/widgets.php:21
 msgid "Catch Box Adspace Widget"
-msgstr ""
+msgstr "Catch Box Adspace Widget"
 
 #: ../inc/widgets.php:38
 msgid "Title (optional):"
-msgstr ""
+msgstr "Titre (optionnel):"
 
 #: ../inc/widgets.php:43
 msgid "Ad Code:"
-msgstr ""
+msgstr "Ad Code:"
 
 #: ../inc/widgets.php:49
 msgid "Image Url:"
-msgstr ""
+msgstr "Image Url:"
 
 #: ../inc/widgets.php:53
 msgid "Link URL:"
-msgstr ""
+msgstr "Lien URL:"
 
 #: ../inc/widgets.php:57
 msgid "Alt text:"
-msgstr ""
+msgstr "Text Alt"
 
 #~ msgid "Disable Sidebar Template"
 #~ msgstr "Désactiver la barre latérale"
