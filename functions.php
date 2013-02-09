@@ -1,6 +1,6 @@
 <?php
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.4.3' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.4.4' );
 define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://siteorigin.com' );
 
 // Include premium functions if it exists
