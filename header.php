@@ -63,5 +63,6 @@
                     simplecatch_sliderbreadcrumb(); 
                 endif;
             ?> 
-	</div><!-- .layout-978 -->
+		</div><!-- .layout-978 -->
+    <div class="bottom-bg"></div>
 </div><!-- #header -->

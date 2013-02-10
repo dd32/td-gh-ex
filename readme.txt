@@ -2,7 +2,7 @@
 * by the Catch Themes team, http://catchthemes.com/
 
 == ABOUT Simple Catch==
-Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework. Multilingual Ready (WPML) and also currently translated in Polish, Russian, Finnish, French, Dutch and Greek. 
+Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework. Multilingual Ready (WPML) and also currently translated in Polish, Russian, Finnish, French, Dutch and Greek. Free Support Forum at http://catchthemes.com/support-forum/forum/simple-catch-public/
 
 == UPGRADE to Simple Catch Pro ==
 Simple Catch Pro is an advance version of our popular theme Simple Catch. It is based on HTML5, CSS3 and Responsive Web Design to view in various devices. Some of the additional features includes: Featured Image Slider, Responsive Design, Additional Layout Options, Custom Footer Editor, and Adspace Widget for Advertisement.
@@ -249,3 +249,7 @@ Version 2.0
 Version 2.0.1
 * Added Simple Catch Social Icons Widget
 * Fixed Simple Catch Tag Clouds Widget
+
+Version 2.0.1.1
+* Minor CSS edits for Header Logo, Site Details and background
+* Added Support Forum URL in Theme Description
