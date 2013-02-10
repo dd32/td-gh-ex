@@ -1,4 +1,10 @@
 Changelog -----------------------------------
+version:1.008
+Fixed
+    Fixed NOTICE: wp-content/themes/raindrops/functions.php:3033 - Undefined variable: uri
+    Fixed NOTICE: wp-content/themes/raindrops/functions.php:3946 - Undefined variable: calendar_output
+----------------------------------------------
+Changelog -----------------------------------
 version:1.007
 Fixed
     Fixed no use getimagesize() another page width 750px,950px,974px        Change get_custom_header()
